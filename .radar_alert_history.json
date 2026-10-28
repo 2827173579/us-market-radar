@@ -78,8 +78,8 @@
       "last_notified_at": 0.0
     },
     "SKHY": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1793222169.8988872
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "GOOGL": {
       "state": "STOP_LOSS",
@@ -226,6 +226,10 @@
       "last_notified_at": 1793218297.9936516
     },
     "PORT_SOXL": {
+      "state": "PORT_NORMAL",
+      "last_notified_at": 0.0
+    },
+    "PORT_SOXS": {
       "state": "PORT_NORMAL",
       "last_notified_at": 0.0
     }
