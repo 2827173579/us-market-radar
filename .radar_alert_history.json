@@ -118,8 +118,8 @@
       "last_notified_at": 0.0
     },
     "NVDA": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1793187956.3123035
     },
     "AMD": {
       "state": "NORMAL",
@@ -222,12 +222,12 @@
       "last_notified_at": 0.0
     },
     "PORT_INTC": {
-      "state": "INTC_NEAR_GOAL",
-      "last_notified_at": 1793187473.7821777
+      "state": "INTC_GOAL_ACHIEVED",
+      "last_notified_at": 1793187956.3123035
     },
     "PORT_SOXL": {
-      "state": "PORT_NORMAL",
-      "last_notified_at": 0.0
+      "state": "SOXL_NEAR_GOAL",
+      "last_notified_at": 1793187956.3123035
     }
   }
 }
