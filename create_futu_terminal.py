@@ -1224,7 +1224,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 <div class="w-tab active" data-filter="all">全部 ({len(stocks_data) + len(macro_data)})</div>
                 <div class="w-tab" data-filter="starred" style="color: #ffd700; font-weight: 700; background: rgba(255, 215, 0, 0.08);">⭐ 建仓盯盘 (<span id="starredCount">0</span>)</div>
                 <div class="w-tab" data-filter="pit" style="color: #00e676; font-weight: 700; background: rgba(0, 230, 118, 0.08);">🟢 黄金坑</div>
-                <div class="w-tab" data-filter="take_profit" style="color: #d946ef; font-weight: 700; background: rgba(217, 70, 239, 0.08);">🟣 冲顶减仓</div>
+                <div class="w-tab" data-filter="take_profit" style="color: #d946ef; font-weight: 700; background: rgba(217, 70, 239, 0.08);">🟣 止盈减仓</div>
                 <div class="w-tab" data-filter="stop" style="color: #ff5252; font-weight: 700; background: rgba(255, 82, 82, 0.08);">🔴 破位/回踩</div>
                 <div class="w-tab" data-filter="stocks">个股 ({len(stocks_data)})</div>
                 <div class="w-tab" data-filter="macro">ETF ({len(macro_data)})</div>
@@ -1767,7 +1767,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             "QQQI": "NASDAQ:QQQI",
             "VIXY": "AMEX:VIXY",
             "SQQQ": "NASDAQ:SQQQ",
-            "SOXS": "SOXS",
+            "SOXS": "AMEX:SOXS",
             "NVDA": "NASDAQ:NVDA",
             "TSM": "NYSE:TSM",
             "AMD": "NASDAQ:AMD",
@@ -1779,7 +1779,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             "META": "NASDAQ:META",
             "AAPL": "NASDAQ:AAPL",
             "AMZN": "NASDAQ:AMZN",
-            "PLTR": "NYSE:PLTR",
+            "PLTR": "NASDAQ:PLTR",
             "CRWV": "NASDAQ:CRWV",
             "NBIS": "NASDAQ:NBIS",
             "VST": "NYSE:VST",
@@ -2393,11 +2393,19 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 themeBg = "linear-gradient(135deg, rgba(217, 70, 239, 0.08), #181b22)";
                 themeBorder = "#d946ef";
                 actionType = "高位减仓 / 锁定利润";
-                mainVerdict = "🟣 冲顶减仓 · 启动分批锁定胜果";
-                actionDirective = `【获利了结指引】技术面进入统计学极度超买高潮区 (RSI ${{curRsi.toFixed(1)}}，偏离 ${{curBias.toFixed(1)}}%)。持仓者建议分批卖出 1/3 ~ 1/2 锁定丰厚利润，剩余底仓以 EMA20 ($${{curEma20.toFixed(2)}}) 作为移动保护止损！`;
-                allocLabel = "止盈指令：";
-                allocSub = "落袋为安锁定胜果";
-                allocVal = "分批减半";
+                if (curSig.includes("跌破EMA20")) {{
+                    mainVerdict = "🟣 跌破EMA20 · 移动止盈落袋";
+                    actionDirective = `【移动止盈指引】标的现价 ($${{lastPrice.toFixed(2)}}) 跌破 20日均线 EMA20 ($${{curEma20.toFixed(2)}})，主升浪推进节奏受阻。已持仓者建议执行移动止盈落袋为安，保护浮盈；未建仓者切勿在此盲目抄底接下坠飞刀。`;
+                    allocLabel = "止盈指令：";
+                    allocSub = "破EMA20移动落袋";
+                    allocVal = "止盈离场";
+                }} else {{
+                    mainVerdict = "🟣 冲顶减仓 · 启动分批锁定胜果";
+                    actionDirective = `【获利了结指引】技术面进入统计学极度超买高潮区 (RSI ${{curRsi.toFixed(1)}}，偏离 ${{curBias.toFixed(1)}}%)。持仓者建议分批卖出 1/3 ~ 1/2 锁定丰厚利润，剩余底仓以 EMA20 ($${{curEma20.toFixed(2)}}) 作为移动保护止损！`;
+                    allocLabel = "止盈指令：";
+                    allocSub = "落袋为安锁定胜果";
+                    allocVal = "分批减半";
+                }}
             }} else if (isBullTrend) {{
                 themeColor = "#29b6f6";
                 themeBg = "linear-gradient(135deg, rgba(41, 182, 246, 0.08), #181b22)";
