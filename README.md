@@ -6,7 +6,6 @@
 
 ### 🌐 手机与电脑端在线看盘地址 (GitHub Pages)
 
-👉 **在线终端访问地址**: `https://2827173579.github.io/us-market-radar/`
 
 * **手机一键生成桌面 App (PWA)**:
   * **iPhone (Safari)**: 点击底部「分享」图标 ➡️ 选择「添加到主屏幕」
