@@ -1376,7 +1376,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                             <div style="font-size: 10px; color: #6b7280;" id="pOptimalNote">黄金坑中下轴支撑</div>
                         </div>
                         <div style="background: rgba(0,0,0,0.3); border-radius: 6px; padding: 6px 8px; border: 1px solid rgba(0,230,118,0.2);">
-                            <div style="font-size: 11px; color: #9ca3af;">📦 首批30%股数 ($900限额)</div>
+                            <div style="font-size: 11px; color: #9ca3af;">📦 首批30%底仓 ($660限额 · 占总资金30%)</div>
                             <div id="pBatch1Shares" style="font-size: 16px; font-weight: 800; color: #00e676; font-family: 'DIN Alternate', sans-serif;">0.00 股</div>
                             <div style="font-size: 10px; color: #6b7280;" id="pBatch1Val">约 $0.00 (3-3-4第一笔)</div>
                         </div>
@@ -1496,7 +1496,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                         <!-- 碎股资金建议区域 (根据状态智能变色提示) -->
                         <div id="pAllocationSection" style="background: rgba(255,255,255,0.04); border-radius: 6px; padding: 6px 10px; display: flex; align-items: center; justify-content: space-between; border: 1px solid rgba(255,255,255,0.05);">
                             <div>
-                                <div style="font-size: 11px; color: #9ca3af;" id="pAllocLabel">单股配置参考 ($900上限)：</div>
+                                <div style="font-size: 11px; color: #9ca3af;" id="pAllocLabel">单股配置参考 ($660上限 · 占总资金30%)：</div>
                                 <div style="font-size: 10px; color: #6b7280;" id="pAllocSub">金字塔分批吸筹标准</div>
                             </div>
                             <div class="fractional-badge" id="pFractional" style="margin: 0; font-size: 16px; color: #00e5ff;">-- 股</div>
@@ -2288,7 +2288,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             let fibReason = "";
             let macroReason = "";
             let actionDirective = "";
-            let allocLabel = "单股配置参考 ($900上限)：";
+            let allocLabel = "单股配置参考 ($660上限 · 占总资金30%)：";
             let allocSub = "按纪律逢低分批吸筹";
             let allocVal = data.fractional_shares ? (data.fractional_shares.toFixed(2) + " 股") : "--";
 
@@ -2358,8 +2358,8 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 themeBorder = "#00e676";
                 actionType = "分批低吸建仓";
                 mainVerdict = "🟢 黄金坑就位 · 绝佳低吸建仓窗口";
-                actionDirective = `【分批建仓窗口】标的波段回调幅度充分 (RSI ${{curRsi.toFixed(1)}} 超卖)，已进入 0.5~0.618 强力防守带。建议严格执行单股 $900 限额，以金字塔式逢低吸筹 ${{data.fractional_shares ? data.fractional_shares.toFixed(2) : '--'}} 股，严禁情绪化一次性重仓！`;
-                allocLabel = "单股配置建议 ($900上限)：";
+                actionDirective = `【分批建仓窗口】标的波段回调幅度充分 (RSI ${{curRsi.toFixed(1)}} 超卖)，已进入 0.5~0.618 强力防守带。建议严格执行单股 $660 限额 (总资金 $2,200 的 30%)，以金字塔式逢低吸筹 ${{data.fractional_shares ? data.fractional_shares.toFixed(2) : '--'}} 股，严禁情绪化一次性重仓！`;
+                allocLabel = "单股配置建议 ($660上限 · 占总资金30%)：";
                 allocSub = "金字塔分批建仓";
                 allocVal = data.fractional_shares ? (data.fractional_shares.toFixed(2) + " 股") : "--";
             }} else if (isStop) {{
@@ -2451,7 +2451,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 const midAxis = curFibLow + 0.382 * (curFibHigh - curFibLow);
                 optimalLimit = Math.round(midAxis * 100) / 100;
             }}
-            const maxAlloc = data.max_alloc || 900.0;
+            const maxAlloc = data.max_alloc || 660.0;
             const totalFractional = data.fractional_shares || (curActive > 0 ? (maxAlloc / curActive) : 0);
             const b1Shares = Math.round(totalFractional * 0.30 * 100) / 100;
             const b1Val = Math.round(b1Shares * optimalLimit * 100) / 100;
