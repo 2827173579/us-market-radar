@@ -1,0 +1,201 @@
+{
+  "weather": "阴天防守",
+  "targets": {
+    "AAOI": {
+      "state": "NORMAL",
+      "last_notified_at": 0.0
+    },
+    "CRWV": {
+      "state": "NORMAL",
+      "last_notified_at": 0.0
+    },
+    "OKLO": {
+      "state": "NORMAL",
+      "last_notified_at": 0.0
+    },
+    "CRDO": {
+      "state": "NORMAL",
+      "last_notified_at": 0.0
+    },
+    "CCXI": {
+      "state": "STOP_LOSS",
+      "last_notified_at": 1793146487.151871
+    },
+    "NBIS": {
+      "state": "STOP_LOSS",
+      "last_notified_at": 1793146487.151871
+    },
+    "ASTS": {
+      "state": "NORMAL",
+      "last_notified_at": 0.0
+    },
+    "COHR": {
+      "state": "NORMAL",
+      "last_notified_at": 0.0
+    },
+    "FPS": {
+      "state": "NORMAL",
+      "last_notified_at": 0.0
+    },
+    "STX": {
+      "state": "NORMAL",
+      "last_notified_at": 0.0
+    },
+    "RKLB": {
+      "state": "NORMAL",
+      "last_notified_at": 0.0
+    },
+    "WDC": {
+      "state": "NORMAL",
+      "last_notified_at": 0.0
+    },
+    "VRT": {
+      "state": "NORMAL",
+      "last_notified_at": 0.0
+    },
+    "AMAT": {
+      "state": "NORMAL",
+      "last_notified_at": 0.0
+    },
+    "SNDK": {
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1793146487.151871
+    },
+    "BE": {
+      "state": "NORMAL",
+      "last_notified_at": 0.0
+    },
+    "ORCL": {
+      "state": "NORMAL",
+      "last_notified_at": 0.0
+    },
+    "INTC": {
+      "state": "INTC_TRIM1_READY",
+      "last_notified_at": 1793146487.151871
+    },
+    "AVGO": {
+      "state": "NORMAL",
+      "last_notified_at": 0.0
+    },
+    "SKHY": {
+      "state": "NORMAL",
+      "last_notified_at": 0.0
+    },
+    "GOOGL": {
+      "state": "NORMAL",
+      "last_notified_at": 0.0
+    },
+    "CEG": {
+      "state": "NORMAL",
+      "last_notified_at": 0.0
+    },
+    "ASML": {
+      "state": "NORMAL",
+      "last_notified_at": 0.0
+    },
+    "AMZN": {
+      "state": "NORMAL",
+      "last_notified_at": 0.0
+    },
+    "LITE": {
+      "state": "NORMAL",
+      "last_notified_at": 0.0
+    },
+    "VST": {
+      "state": "NORMAL",
+      "last_notified_at": 0.0
+    },
+    "TSM": {
+      "state": "GOLDEN_PIT",
+      "last_notified_at": 1793146487.151871
+    },
+    "AXP": {
+      "state": "NORMAL",
+      "last_notified_at": 0.0
+    },
+    "DELL": {
+      "state": "GOLDEN_PIT",
+      "last_notified_at": 1793146487.151871
+    },
+    "NVDA": {
+      "state": "GOLDEN_PIT",
+      "last_notified_at": 1793146487.151871
+    },
+    "AMD": {
+      "state": "GOLDEN_PIT",
+      "last_notified_at": 1793146487.151871
+    },
+    "META": {
+      "state": "GOLDEN_PIT",
+      "last_notified_at": 1793146487.151871
+    },
+    "MRVL": {
+      "state": "GOLDEN_PIT",
+      "last_notified_at": 1793146487.151871
+    },
+    "HPE": {
+      "state": "GOLDEN_PIT",
+      "last_notified_at": 1793146487.151871
+    },
+    "MU": {
+      "state": "GOLDEN_PIT",
+      "last_notified_at": 1793146487.151871
+    },
+    "KO": {
+      "state": "NORMAL",
+      "last_notified_at": 0.0
+    },
+    "MSFT": {
+      "state": "NORMAL",
+      "last_notified_at": 0.0
+    },
+    "SPCX": {
+      "state": "NORMAL",
+      "last_notified_at": 0.0
+    },
+    "AAPL": {
+      "state": "NORMAL",
+      "last_notified_at": 0.0
+    },
+    "MSTR": {
+      "state": "NORMAL",
+      "last_notified_at": 0.0
+    },
+    "TSLA": {
+      "state": "NORMAL",
+      "last_notified_at": 0.0
+    },
+    "CRWD": {
+      "state": "NORMAL",
+      "last_notified_at": 0.0
+    },
+    "PLTR": {
+      "state": "NORMAL",
+      "last_notified_at": 0.0
+    },
+    "QQQM": {
+      "state": "NORMAL",
+      "last_notified_at": 0.0
+    },
+    "SOXX": {
+      "state": "NORMAL",
+      "last_notified_at": 0.0
+    },
+    "SOXL": {
+      "state": "SOXL_TRIM1_READY",
+      "last_notified_at": 1793146487.151871
+    },
+    "KORU": {
+      "state": "NORMAL",
+      "last_notified_at": 0.0
+    },
+    "SQQQ": {
+      "state": "NORMAL",
+      "last_notified_at": 0.0
+    },
+    "SOXS": {
+      "state": "NORMAL",
+      "last_notified_at": 0.0
+    }
+  }
+}
