@@ -2,8 +2,8 @@
   "weather": "阴天防守",
   "targets": {
     "AAOI": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1793206672.6284065
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "CRWV": {
       "state": "NORMAL",
@@ -130,8 +130,8 @@
       "last_notified_at": 0.0
     },
     "MRVL": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1793206792.5581882
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "HPE": {
       "state": "NORMAL",
