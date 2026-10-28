@@ -57,8 +57,10 @@ jobs:
         run: |
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Actions"
-          DURATION="${{ github.event.inputs.duration_minutes || '240' }}"
-          INTERVAL="${{ github.event.inputs.interval_seconds || '60' }}"
+          DURATION="${{ github.event.inputs.duration_minutes }}"
+          [ -z "$DURATION" ] && DURATION="240"
+          INTERVAL="${{ github.event.inputs.interval_seconds }}"
+          [ -z "$INTERVAL" ] && INTERVAL="60"
           # 如果是夜盘亚太时段 (UTC 00:00~08:00 / 韩国 09:00~17:00)，自适应切为 2 分钟 (120s) 巡检守护
           if [ "${{ github.event.schedule }}" = "0 0 * * 1-5" ] || [ "${{ github.event.schedule }}" = "0 4 * * 1-5" ]; then
             INTERVAL="120"

@@ -3214,21 +3214,25 @@ def main():
             run_radar_cycle(is_first_run=False, round_idx=round_idx)
             # 云端同步持久化至 Git 仓库，令手机端 GitHub Pages 秒级保持最新
             try:
+                import shutil
+                if os.path.exists("futu_pro_terminal.html"):
+                    shutil.copyfile("futu_pro_terminal.html", "index.html")
                 subprocess.run(
-                    ["git", "add", "index.html", "futu_pro_terminal.html", ".terminal_notifications.json", ".options_cache.json", ".radar_alert_history.json"],
-                    check=False, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL
-                )
-                subprocess.run(["git", "pull", "--rebase"], check=False, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-                subprocess.run(
-                    ["git", "commit", "-m", f"⚡ [云端同步] 第 {round_idx} 轮 {interval_sec}s 极速实盘刷新"],
-                    check=False, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL
+                    ["git", "add", "index.html", "futu_pro_terminal.html", ".terminal_notifications.json", ".options_cache.json", ".radar_alert_history.json", "macro_radar.html", "stocks_radar.html"],
+                    check=False
                 )
                 subprocess.run(
-                    ["git", "push"],
+                    ["git", "commit", "-m", f"⚡ [实盘同步] 第 {round_idx} 轮极速刷新 ({now_ts})"],
                     check=False, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL
                 )
-            except Exception:
-                pass
+                subprocess.run(["git", "pull", "--rebase", "-X", "theirs", "origin", "main"], check=False, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+                push_res = subprocess.run(["git", "push", "origin", "HEAD:main"], check=False, capture_output=True, text=True)
+                if push_res.returncode == 0:
+                    print(f"[+] ✅ 成功推送第 {round_idx} 轮数据至 GitHub Pages (commit 成功)！")
+                else:
+                    print(f"[*] Git 推送反馈: {push_res.stderr.strip()[:100]}")
+            except Exception as e:
+                print(f"[!] Git 同步异常: {e}")
             round_idx += 1
             cost = time.time() - c_start
             sleep_time = max(2.0, float(interval_sec) - cost)
