@@ -2,8 +2,8 @@
   "weather": "阴天防守",
   "targets": {
     "AAOI": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1793211472.6294003
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "CRWV": {
       "state": "NORMAL",
@@ -98,16 +98,16 @@
       "last_notified_at": 0.0
     },
     "LITE": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1793211472.6294003
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "VST": {
       "state": "NORMAL",
       "last_notified_at": 0.0
     },
     "TSM": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1793211592.6739874
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "AXP": {
       "state": "NORMAL",
@@ -174,8 +174,8 @@
       "last_notified_at": 1793199600.366241
     },
     "QQQM": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1793211712.0918212
     },
     "SOXX": {
       "state": "WATCHLIST_ENTRY_READY",
