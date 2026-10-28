@@ -106,8 +106,8 @@
       "last_notified_at": 0.0
     },
     "TSM": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1793213152.761048
     },
     "AXP": {
       "state": "NORMAL",
@@ -126,8 +126,8 @@
       "last_notified_at": 0.0
     },
     "META": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1793213033.3676367
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "MRVL": {
       "state": "NORMAL",
@@ -194,8 +194,8 @@
       "last_notified_at": 0.0
     },
     "SOXS": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1793213152.761048
     },
     "MCD": {
       "state": "NORMAL",
@@ -222,8 +222,8 @@
       "last_notified_at": 0.0
     },
     "PORT_INTC": {
-      "state": "INTC_GOAL_ACHIEVED",
-      "last_notified_at": 1793213033.3676367
+      "state": "INTC_NEAR_GOAL",
+      "last_notified_at": 1793213152.761048
     },
     "PORT_SOXL": {
       "state": "SOXL_GOAL_ACHIEVED",
