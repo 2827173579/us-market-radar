@@ -1,21 +1,21 @@
 [
   {
     "id": "STOP_GOOGL_2026-10-28",
-    "time": "10-28 23:49",
+    "time": "10-28 23:50",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
     "ticker": "GOOGL",
     "name": "Alphabet",
     "cat": "生态平台",
-    "price": 293.35,
+    "price": 292.8032,
     "pct_change": 1.3444,
     "title": "🔴 GOOGL (Alphabet) 跌破波段斐波那契下沿",
-    "desc": "偏离 MA50 -14.1%，放量跌破坑底 $342.44，空头宣泄期严禁左侧接刀！"
+    "desc": "偏离 MA50 -14.2%，放量跌破坑底 $342.44，空头宣泄期严禁左侧接刀！"
   },
   {
     "id": "5M_TSM_2026-10-28",
-    "time": "10-28 23:49",
+    "time": "10-28 23:50",
     "category": "5m_entry",
     "cat_label": "🎯 5m买点",
     "level": "success",
@@ -35,7 +35,7 @@
   },
   {
     "id": "TP_PLTR_2026-10-28",
-    "time": "10-28 23:49",
+    "time": "10-28 23:50",
     "category": "take_profit",
     "cat_label": "🟣 冲顶减仓",
     "level": "purple",
@@ -49,7 +49,7 @@
   },
   {
     "id": "TP_CRWD_2026-10-28",
-    "time": "10-28 23:49",
+    "time": "10-28 23:50",
     "category": "take_profit",
     "cat_label": "🟣 冲顶减仓",
     "level": "purple",
@@ -63,17 +63,17 @@
   },
   {
     "id": "PORT_SOXS_HOLD_2026-10-28",
-    "time": "10-28 23:49",
+    "time": "10-28 23:50",
     "category": "portfolio",
     "cat_label": "💼 持仓风控",
     "level": "info",
     "ticker": "SOXS",
     "name": "3倍做空半导体",
     "cat": "反向对冲",
-    "price": 42.34,
+    "price": 42.3754,
     "pct_change": -6.4,
     "title": "💼 SOXS 实盘持仓跟踪",
-    "desc": "持仓 5 股 · 成本 $41.34 ｜ 现价 $42.34 (+2.42%)",
+    "desc": "持仓 5 股 · 成本 $41.34 ｜ 现价 $42.38 (+2.50%)",
     "cost": 41.34,
     "shares": 5.0,
     "stop_loss": 38.0,
@@ -82,7 +82,7 @@
   },
   {
     "id": "WEATHER_阴天防守_2026-10-28",
-    "time": "10-28 23:49",
+    "time": "10-28 23:50",
     "category": "macro_weather",
     "cat_label": "⛅ 宏观气象",
     "level": "info",
