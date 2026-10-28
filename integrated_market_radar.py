@@ -1707,6 +1707,10 @@ def compute_indicators(df):
     df["MA50"] = close.rolling(50, min_periods=20).mean()
     df["Bias_MA50"] = ((close - df["MA50"]) / df["MA50"]) * 100
 
+    # 20 日移动均线 MA20 & 偏离度
+    df["MA20"] = close.rolling(20, min_periods=10).mean()
+    df["Bias_MA20"] = ((close - df["MA20"]) / df["MA20"]) * 100
+
     # 20 日指数移动平均线 EMA20 (用于主升浪移动止损与跟踪止盈)
     df["EMA20"] = close.ewm(span=20, adjust=False).mean()
 
@@ -1747,32 +1751,119 @@ def compute_indicators(df):
 # ==============================================================================
 # 四、 宏观气象与个股碎股信号判定
 # ==============================================================================
-def evaluate_market_weather(macro_dict):
-    """根据 QQQM 与 SMH 偏离 MA50 程度及 VIX、TLT 评定宏观气象"""
-    qqqm_bias = macro_dict.get("QQQM", {}).get("bias", 0.0)
-    smh_bias = macro_dict.get("SMH", {}).get("bias", 0.0)
-    spy_bias = macro_dict.get("SPY", {}).get("bias", 0.0)
-    vixy_last = macro_dict.get("VIXY", {}).get("last", 0.0)
-    tlt_bias = macro_dict.get("TLT", {}).get("bias", 0.0)
+def evaluate_market_weather(macro_dict, history_dict=None):
+    """
+    根据四大量化模型评定宏观气象与作战军规 (V3 深度升级版)：
+    1. VIXY 三因子复合脉冲模型 (单日涨跌幅, MA20偏离度, 60日分位)
+    2. TLT 美债双向利率状态机 (估值顺风, 利率杀估值, 衰退避险, 中性震荡)
+    3. 晴天做多一票否决权 (Veto) 机制 (高位急跌, 破MA20, 恐慌脉冲)
+    4. SMH/IGV 相对强弱动态驱动风格主线军规
+    """
+    qqqm_info = macro_dict.get("QQQM", {})
+    smh_info = macro_dict.get("SMH", {})
+    spy_info = macro_dict.get("SPY", {})
+    vixy_info = macro_dict.get("VIXY", {})
+    tlt_info = macro_dict.get("TLT", {})
 
-    if qqqm_bias >= 0 and smh_bias >= 0:
-        weather = "晴天做多"
-        icon = "☀️"
-        color = "#00e676"
-        desc = "纳指基准与半导体双双站上 MA50 生命线，风险偏好处于高位。"
-        tactics = "顺势进攻核心科技与算力龙头，逢调整积极分批建仓优质标的。"
+    qqqm_bias = qqqm_info.get("bias", 0.0)
+    qqqm_ma20_bias = qqqm_info.get("bias_ma20", 0.0)
+    qqqm_pct = qqqm_info.get("pct_change", 0.0)
+    qqqm_last = qqqm_info.get("last", 0.0)
+    qqqm_ma20 = qqqm_info.get("ma20", 0.0)
+
+    smh_bias = smh_info.get("bias", 0.0)
+    smh_ma20_bias = smh_info.get("bias_ma20", 0.0)
+    smh_pct = smh_info.get("pct_change", 0.0)
+    smh_last = smh_info.get("last", 0.0)
+    smh_ma20 = smh_info.get("ma20", 0.0)
+
+    spy_bias = spy_info.get("bias", 0.0)
+
+    vixy_last = vixy_info.get("last", 0.0)
+    vixy_pct = vixy_info.get("pct_change", 0.0)
+    vixy_ma20_bias = vixy_info.get("bias_ma20", 0.0)
+    vixy_pos_60 = vixy_info.get("pos_60", 0.5) * 100.0 if vixy_info.get("pos_60") is not None else 50.0
+
+    tlt_bias = tlt_info.get("bias", 0.0)
+
+    # 1. 模型 1: VIXY 三因子复合脉冲模型
+    is_vix_panic = bool((vixy_pct >= 7.5) or (vixy_ma20_bias >= 10.0) or (vixy_pos_60 >= 75.0))
+
+    # 2. 模型 2: TLT 美债双向利率状态机
+    if tlt_bias <= -2.0:
+        tlt_state = "🔴 利率杀估值"
+        tlt_color = "#ff5252"
+        tlt_desc = "长端美债大跌，国债收益率飙升压制高估值科技"
+    elif tlt_bias >= 1.0 and qqqm_bias < 0.0:
+        tlt_state = "🟡 避险买盘"
+        tlt_color = "#ffd54f"
+        tlt_desc = "科技转弱，资金弃股投债流入避险资产"
+    elif tlt_bias >= 0.0 and qqqm_bias >= 0.0:
+        tlt_state = "🟢 估值顺风"
+        tlt_color = "#00e676"
+        tlt_desc = "股债双牛环境，宏观流动性充沛利好估值扩张"
+    else:
+        tlt_state = "⚪ 中性震荡"
+        tlt_color = "#9ca3af"
+        tlt_desc = "长端美债处于正常噪音区间，无剧烈流动性外溢"
+
+    # 3. 模型 3: 晴天做多基准与一票否决权 (Veto)
+    is_bull_base = (qqqm_bias >= 0.25) and (smh_bias >= 0.25)
+
+    veto_reasons = []
+    if is_vix_panic:
+        veto_reasons.append("VIXY恐慌脉冲")
+    if (qqqm_ma20 > 0 and qqqm_last < qqqm_ma20) and (smh_ma20 > 0 and smh_last < smh_ma20):
+        veto_reasons.append("QQQM与SMH双破MA20")
+    if qqqm_pct <= -1.8:
+        veto_reasons.append(f"QQQM急杀{qqqm_pct:.1f}%")
+    if smh_pct <= -2.8:
+        veto_reasons.append(f"SMH大跌{smh_pct:.1f}%")
+
+    if is_bull_base:
+        if veto_reasons:
+            weather = "阴天防守"
+            icon = "⛅"
+            color = "#29b6f6"
+            veto_str = "、".join(veto_reasons)
+            desc = f"【⚠️一票否决预警：{veto_str}】大盘均线虽处高位但遭遇短期剧烈承压，严禁盲目顶峰追高！"
+            base_tactics = "严格控制总仓位，已持仓位保本止损，单股执行 $660(30%) 集中试仓上限，耐心等待分歧消化。"
+        else:
+            weather = "晴天做多"
+            icon = "☀️"
+            color = "#00e676"
+            desc = "纳指基准与半导体双双站上 MA50 生命线，风险偏好处于高位。"
+            base_tactics = "顺势进攻核心科技与算力龙头，逢调整积极分批建仓优质标的。"
     elif qqqm_bias < -3.0 and smh_bias < -3.0:
         weather = "暴雨空仓"
         icon = "🌧️"
         color = "#ff1744"
         desc = "科技基准与半导体共振破位下行，系统性流动性挤压，严禁盲目抄底。"
-        tactics = "严格执行个股硬止损，碎股进攻全面暂停，保留充沛现金与防守底仓。"
+        base_tactics = "严格执行个股硬止损，碎股进攻全面暂停，保留充沛现金与防守底仓。"
     else:
         weather = "阴天防守"
         icon = "⛅"
         color = "#29b6f6"
         desc = "大盘与核心芯片主线出现分化或均线争夺，市场进入结构性轮动。"
-        tactics = "严格控制总仓位，单股执行 $660(30%) 集中试仓上限，紧盯黄金坑分批防守。"
+        base_tactics = "严格控制总仓位，单股执行 $660(30%) 集中试仓上限，紧盯黄金坑分批防守。"
+
+    # 4. 模型 4: SMH/IGV 相对强弱动态追加作战军规
+    style_suffix = ""
+    if history_dict and "SMH" in history_dict and "IGV" in history_dict:
+        try:
+            s_close = history_dict["SMH"]["Close"]
+            i_close = history_dict["IGV"]["Close"]
+            ratio_s = s_close / i_close
+            cur_ratio = float(ratio_s.iloc[-1])
+            ratio_ma20 = float(ratio_s.rolling(20, min_periods=5).mean().iloc[-1])
+            if cur_ratio >= ratio_ma20:
+                style_suffix = " ｜ 🔥 风格主线：算力硬件领涨（优先聚焦芯片/光通信/电力）"
+            else:
+                style_suffix = " ｜ 🔄 风格主线：硬件休整、软件应用占优（严禁追高芯片，关注软件与高低切）"
+        except Exception:
+            style_suffix = ""
+
+    tactics = base_tactics + style_suffix
 
     return {
         "weather": weather,
@@ -1781,10 +1872,21 @@ def evaluate_market_weather(macro_dict):
         "desc": desc,
         "tactics": tactics,
         "qqqm_bias": qqqm_bias,
+        "qqqm_ma20_bias": qqqm_ma20_bias,
+        "qqqm_pct": qqqm_pct,
         "smh_bias": smh_bias,
+        "smh_ma20_bias": smh_ma20_bias,
+        "smh_pct": smh_pct,
         "spy_bias": spy_bias,
         "vixy_last": vixy_last,
-        "tlt_bias": tlt_bias
+        "vixy_pct": vixy_pct,
+        "vixy_ma20_bias": vixy_ma20_bias,
+        "vixy_pos_60": vixy_pos_60,
+        "is_vix_panic": is_vix_panic,
+        "tlt_bias": tlt_bias,
+        "tlt_state": tlt_state,
+        "tlt_color": tlt_color,
+        "tlt_desc": tlt_desc
     }
 
 def evaluate_stock_signal(
@@ -1960,25 +2062,43 @@ def generate_macro_radar_html(macro_data, weather_info, history_dict, update_tim
         rows=2, cols=2,
         subplot_titles=(
             "<b>核心资产 180 日累计收益率走势 (%)</b>",
-            "<b>12 只 ETF 均线偏离度对比 (MA50 Bias %)</b>",
+            "<b>核心基准 ETF 均线偏离度对比 (MA50 Bias %)</b>",
             "<b>半导体 vs 软件 SaaS 相对强弱 (SMH / IGV)</b>",
-            "<b>恐慌指数 (VIXY) · 黄金 (GLD) · 美债 (TLT) 避险水温</b>"
+            "<b>恐慌指数 (VIXY) · 黄金 (GLD) · 美债 (TLT) 偏离 MA20 水温 (%)</b>"
         ),
         vertical_spacing=0.12,
         horizontal_spacing=0.08
     )
 
+    # 1. 核心资产 180 日收益走势 (开启顶部图例 + 曲线末端直接标注代码与收益率)
     palette = {"QQQM": "#00e676", "SPY": "#29b6f6", "DIA": "#4fc3f7", "SMH": "#ff9100", "IWM": "#ab47bc", "TLT": "#ffd54f", "GLD": "#ffb300"}
     for t, color in palette.items():
         if t in history_dict and len(history_dict[t]) > 0:
             series = history_dict[t]["Close"]
             norm_ret = ((series / series.iloc[0]) - 1.0) * 100
             name = MONITORED_TARGETS["ETFS"].get(t, {}).get("name", t)
-            fig.add_trace(go.Scatter(x=series.index, y=norm_ret, mode="lines", name=f"{t} ({name})", line=dict(color=color, width=1.8)), row=1, col=1)
+            latest_ret = float(norm_ret.iloc[-1])
+            fig.add_trace(go.Scatter(
+                x=series.index, y=norm_ret, mode="lines",
+                name=f"{t} ({name}) {latest_ret:+.1f}%",
+                line=dict(color=color, width=1.8)
+            ), row=1, col=1)
+            # 在每条曲线最右侧末端直接标注 代码 + 收益率%
+            fig.add_trace(go.Scatter(
+                x=[series.index[-1]], y=[latest_ret],
+                mode="text",
+                text=[f" <b>{t} {latest_ret:+.1f}%</b>"],
+                textposition="middle right",
+                textfont=dict(color=color, size=10),
+                showlegend=False,
+                hoverinfo="skip"
+            ), row=1, col=1)
 
-    # MA50 偏离度横向对比
-    tickers_sorted = sorted(macro_data.keys(), key=lambda x: macro_data[x]["bias"])
-    biases = [macro_data[t]["bias"] for t in tickers_sorted]
+    # 2. 核心基准 ETF MA50 偏离度对比 (剔除杠杆 ETF: KORU, SOXL, SOXS, SQQQ；加 cliponaxis=False 与 1.35x 边距防截断)
+    leveraged_exclude = {"KORU", "SOXL", "SOXS", "SQQQ"}
+    clean_macro = {t: v for t, v in macro_data.items() if t not in leveraged_exclude}
+    tickers_sorted = sorted(clean_macro.keys(), key=lambda x: clean_macro[x]["bias"])
+    biases = [clean_macro[t]["bias"] for t in tickers_sorted]
     bar_colors = ["#00e676" if b >= 0 else "#ff5252" for b in biases]
     fig.add_trace(go.Bar(
         y=tickers_sorted,
@@ -1987,33 +2107,55 @@ def generate_macro_radar_html(macro_data, weather_info, history_dict, update_tim
         marker_color=bar_colors,
         text=[f"{b:+.2f}%" for b in biases],
         textposition="outside",
+        cliponaxis=False,
         name="MA50偏离度"
     ), row=1, col=2)
     fig.add_vline(x=0, line_dash="dash", line_color="rgba(255,255,255,0.4)", row=1, col=2)
+    
+    min_bias = min(biases) if biases else -5.0
+    max_bias = max(biases) if biases else 5.0
+    left_x = min_bias * 1.35 if min_bias < 0 else -1.5
+    right_x = max_bias * 1.35 if max_bias > 0 else 1.5
+    fig.update_xaxes(range=[left_x, right_x], row=1, col=2)
 
-    # SMH / IGV 相对强度
+    # 3. SMH / IGV 相对强度与 20日均线
     if "SMH" in history_dict and "IGV" in history_dict:
         ratio = history_dict["SMH"]["Close"] / history_dict["IGV"]["Close"]
-        ratio_ma20 = ratio.rolling(20).mean()
-        fig.add_trace(go.Scatter(x=ratio.index, y=ratio, mode="lines", line=dict(color="#00e5ff", width=1.5), name="SMH/IGV 比率"), row=2, col=1)
-        fig.add_trace(go.Scatter(x=ratio.index, y=ratio_ma20, mode="lines", line=dict(color="#ffa726", width=1.2, dash="dot"), name="20日比率均线"), row=2, col=1)
+        ratio_ma20 = ratio.rolling(20, min_periods=5).mean()
+        cur_r = float(ratio.iloc[-1])
+        cur_rma20 = float(ratio_ma20.iloc[-1])
+        r_state = "硬件占优" if cur_r >= cur_rma20 else "软件占优"
+        fig.add_trace(go.Scatter(x=ratio.index, y=ratio, mode="lines", line=dict(color="#00e5ff", width=1.5), name=f"SMH/IGV 比率 ({cur_r:.2f} · {r_state})"), row=2, col=1)
+        fig.add_trace(go.Scatter(x=ratio.index, y=ratio_ma20, mode="lines", line=dict(color="#ffa726", width=1.2, dash="dot"), name=f"20日比率均线 ({cur_rma20:.2f})"), row=2, col=1)
 
-    # 避险三剑客对比
-    if "VIXY" in history_dict:
-        fig.add_trace(go.Scatter(x=history_dict["VIXY"].index, y=history_dict["VIXY"]["Close"], line=dict(color="#ff1744", width=1.5), name="VIXY 恐慌"), row=2, col=2)
-    if "GLD" in history_dict:
-        fig.add_trace(go.Scatter(x=history_dict["GLD"].index, y=history_dict["GLD"]["Close"], line=dict(color="#ffb300", width=1.5), name="GLD 黄金"), row=2, col=2)
-    if "TLT" in history_dict:
-        fig.add_trace(go.Scatter(x=history_dict["TLT"].index, y=history_dict["TLT"]["Close"], line=dict(color="#ffd54f", width=1.5), name="TLT 美债"), row=2, col=2)
+    # 4. 恐慌指数 (VIXY) · 黄金 (GLD) · 美债 (TLT) 偏离各自 MA20 水温 (%)
+    risk_off_palette = [
+        ("VIXY", "#ff1744", "VIXY 恐慌"),
+        ("GLD", "#ffb300", "GLD 黄金"),
+        ("TLT", "#ffd54f", "TLT 美债")
+    ]
+    for sym, clr, lbl in risk_off_palette:
+        if sym in history_dict and len(history_dict[sym]) >= 20:
+            c = history_dict[sym]["Close"]
+            ma20 = c.rolling(20, min_periods=5).mean()
+            bias20 = ((c - ma20) / ma20) * 100
+            latest_b20 = float(bias20.iloc[-1])
+            fig.add_trace(go.Scatter(
+                x=bias20.index, y=bias20,
+                mode="lines",
+                line=dict(color=clr, width=1.6),
+                name=f"{lbl} ({latest_b20:+.1f}%)"
+            ), row=2, col=2)
+    fig.add_hline(y=0, line_dash="dash", line_color="rgba(255,255,255,0.3)", row=2, col=2)
 
     fig.update_layout(
         template="plotly_dark",
         plot_bgcolor="#131722",
         paper_bgcolor="#131722",
         height=720,
-        margin=dict(l=50, r=40, t=60, b=40),
+        margin=dict(l=50, r=40, t=75, b=40),
         hovermode="x unified",
-        legend=dict(orientation="h", yanchor="bottom", y=-0.12, xanchor="center", x=0.5, font=dict(size=10))
+        legend=dict(orientation="h", yanchor="bottom", y=1.03, xanchor="center", x=0.5, font=dict(size=10))
     )
     chart_div = fig.to_html(full_html=False, include_plotlyjs="cdn")
 
@@ -2121,12 +2263,16 @@ def generate_macro_radar_html(macro_data, weather_info, history_dict, update_tim
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: 10px;
-            padding: 12px 18px;
+            padding: 10px 14px;
             text-align: center;
-            min-width: 100px;
+            min-width: 125px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }}
-        .stat-label {{ font-size: 12px; color: #9ca3af; margin-bottom: 4px; }}
-        .stat-value {{ font-size: 18px; font-weight: 700; }}
+        .stat-label {{ font-size: 11px; color: #9ca3af; margin-bottom: 4px; white-space: nowrap; }}
+        .stat-value {{ font-size: 17px; font-weight: 700; line-height: 1.2; }}
+        .stat-sub {{ font-size: 11px; margin-top: 4px; color: #9ca3af; white-space: nowrap; }}
         
         .chart-section {{
             background: #131722;
@@ -2207,18 +2353,22 @@ def generate_macro_radar_html(macro_data, weather_info, history_dict, update_tim
             <div class="stat-box">
                 <div class="stat-label">QQQM 偏离 MA50</div>
                 <div class="stat-value" style="color: {'#00e676' if weather_info['qqqm_bias']>=0 else '#ff5252'};">{weather_info['qqqm_bias']:+.2f}%</div>
+                <div class="stat-sub">MA20: {weather_info.get('qqqm_ma20_bias', 0.0):+.1f}% | 今日: {weather_info.get('qqqm_pct', 0.0):+.2f}%</div>
             </div>
             <div class="stat-box">
                 <div class="stat-label">SMH 偏离 MA50</div>
                 <div class="stat-value" style="color: {'#00e676' if weather_info['smh_bias']>=0 else '#ff5252'};">{weather_info['smh_bias']:+.2f}%</div>
+                <div class="stat-sub">MA20: {weather_info.get('smh_ma20_bias', 0.0):+.1f}% | 今日: {weather_info.get('smh_pct', 0.0):+.2f}%</div>
             </div>
-            <div class="stat-box">
-                <div class="stat-label">VIXY 恐慌最新</div>
-                <div class="stat-value" style="color: #ffd54f;">${weather_info['vixy_last']:.2f}</div>
+            <div class="stat-box" style="border-color: {'#ff1744' if weather_info.get('is_vix_panic') else 'rgba(255, 255, 255, 0.08)'};">
+                <div class="stat-label">VIXY 恐慌指数</div>
+                <div class="stat-value" style="color: {'#ff1744' if weather_info.get('is_vix_panic') else '#ffd54f'};">${weather_info['vixy_last']:.2f}</div>
+                <div class="stat-sub" style="color: {'#ff5252' if weather_info.get('is_vix_panic') else '#9ca3af'};">MA20: {weather_info.get('vixy_ma20_bias', 0.0):+.1f}% | 60d: {weather_info.get('vixy_pos_60', 50.0):.0f}%</div>
             </div>
-            <div class="stat-box">
-                <div class="stat-label">TLT 债市偏离</div>
-                <div class="stat-value" style="color: {'#00e676' if weather_info['tlt_bias']>=0 else '#ff5252'};">{weather_info['tlt_bias']:+.2f}%</div>
+            <div class="stat-box" style="border-color: {weather_info.get('tlt_color', '#9ca3af')}44;">
+                <div class="stat-label">美债利率定性</div>
+                <div class="stat-value" style="color: {weather_info.get('tlt_color', '#9ca3af')}; font-size: 15px;">{weather_info.get('tlt_state', '⚪ 中性震荡')}</div>
+                <div class="stat-sub">TLT偏离: {weather_info['tlt_bias']:+.2f}%</div>
             </div>
         </div>
     </div>
@@ -2636,7 +2786,7 @@ def display_terminal_tables(macro_data, stocks_data, weather_info, has_realtime=
             f"[bold {weather_info['color']}]{weather_info['icon']} 宏观气象模式：【{weather_info['weather']}】[/bold {weather_info['color']}]\n"
             f"[bold cyan]研判说明：[/bold cyan]{weather_info['desc']}\n"
             f"[bold yellow]作战军规：[/bold yellow]{weather_info['tactics']}\n"
-            f"[dim]大盘偏离：QQQM ({weather_info['qqqm_bias']:+.2f}%) | SMH ({weather_info['smh_bias']:+.2f}%) | SPY ({weather_info['spy_bias']:+.2f}%) | VIXY (${weather_info['vixy_last']:.2f}) | TLT ({weather_info['tlt_bias']:+.2f}%)[/dim]"
+            f"[dim]大盘偏离：QQQM ({weather_info['qqqm_bias']:+.2f}%) | SMH ({weather_info['smh_bias']:+.2f}%) | VIXY (${weather_info['vixy_last']:.2f} · MA20:{weather_info.get('vixy_ma20_bias',0.0):+.1f}%) | TLT ({weather_info.get('tlt_state','中性')} / {weather_info['tlt_bias']:+.2f}%)[/dim]"
         )
         console.print(Panel(weather_text, title=f"[bold white]🏛️ 宏观大盘司令塔 · 气象研判卡片{realtime_tag}[/bold white]", box=box.ROUNDED))
 
@@ -2824,6 +2974,10 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
                 pct_change = rq["pct_change"]
                 is_realtime = True
                 history_dict[ticker].loc[history_dict[ticker].index[-1], "Close"] = last
+                if rq.get("high", 0) > 0:
+                    history_dict[ticker].loc[history_dict[ticker].index[-1], "High"] = max(float(history_dict[ticker]["High"].iloc[-1]), rq["high"])
+                if rq.get("low", 0) > 0:
+                    history_dict[ticker].loc[history_dict[ticker].index[-1], "Low"] = min(float(history_dict[ticker]["Low"].iloc[-1]), rq["low"])
             else:
                 df_raw = history_dict[ticker]
                 rth_c = intraday_map.get(ticker, {}).get("rth_close", 0.0)
@@ -2867,10 +3021,12 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
             history_dict[ticker] = df
             ma200 = float(df["MA200"].iloc[-1]) if "MA200" in df else float(df["MA50"].iloc[-1])
             ma50 = float(df["MA50"].iloc[-1])
+            ma20 = float(df["MA20"].iloc[-1]) if "MA20" in df else float(df["Close"].rolling(20, min_periods=10).mean().iloc[-1])
             ema20 = float(df["EMA20"].iloc[-1]) if "EMA20" in df else float(df["Close"].ewm(span=20, adjust=False).mean().iloc[-1])
             atr = float(df["ATR_14"].iloc[-1])
             rsi = float(df["RSI_14"].iloc[-1])
             bias = ((last - ma50) / ma50) * 100
+            bias_ma20 = ((last - ma20) / ma20) * 100
             ret_20d = float(df["Ret_20d"].iloc[-1]) if "Ret_20d" in df and not np.isnan(df["Ret_20d"].iloc[-1]) else 0.0
             rs_20d = ret_20d - qqqm_ret_20d
 
@@ -2936,8 +3092,11 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
                 "session_tag": session_tag,
                 "ma200": ma200,
                 "ma50": ma50,
+                "ma20": ma20,
                 "ema20": ema20,
                 "bias": bias,
+                "bias_ma20": bias_ma20,
+                "pos_60": pos_60,
                 "atr": atr,
                 "rsi": rsi,
                 "fib_low": fib_low,
@@ -2951,7 +3110,7 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
                 **options_map.get(ticker, {})
             }
 
-    weather_info = evaluate_market_weather(macro_data)
+    weather_info = evaluate_market_weather(macro_data, history_dict=history_dict)
 
     # 4. 处理全量个股数据并计算碎股、日线信号与 5m 日内建仓信号
     stocks_list = []
