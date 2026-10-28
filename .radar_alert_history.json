@@ -106,8 +106,8 @@
       "last_notified_at": 0.0
     },
     "TSM": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1793213152.761048
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "AXP": {
       "state": "NORMAL",
@@ -226,8 +226,8 @@
       "last_notified_at": 1793213152.761048
     },
     "PORT_SOXL": {
-      "state": "SOXL_GOAL_ACHIEVED",
-      "last_notified_at": 1793213033.3676367
+      "state": "SOXL_NEAR_GOAL",
+      "last_notified_at": 1793213273.6746454
     }
   }
 }
