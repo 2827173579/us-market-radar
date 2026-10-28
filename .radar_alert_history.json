@@ -2,8 +2,8 @@
   "weather": "阴天防守",
   "targets": {
     "AAOI": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1793210632.5067625
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "CRWV": {
       "state": "NORMAL",
@@ -130,8 +130,8 @@
       "last_notified_at": 0.0
     },
     "MRVL": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1793210632.5067625
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "HPE": {
       "state": "NORMAL",
@@ -226,8 +226,8 @@
       "last_notified_at": 1793203072.6475642
     },
     "PORT_SOXL": {
-      "state": "SOXL_NEAR_GOAL",
-      "last_notified_at": 1793210632.5067625
+      "state": "PORT_NORMAL",
+      "last_notified_at": 0.0
     }
   }
 }
