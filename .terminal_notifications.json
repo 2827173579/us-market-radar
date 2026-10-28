@@ -1,49 +1,49 @@
 [
   {
     "id": "STOP_GOOGL_2026-10-29",
-    "time": "10-29 07:06",
+    "time": "10-29 07:08",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
     "ticker": "GOOGL",
     "name": "Alphabet",
     "cat": "生态平台",
-    "price": 290.15,
+    "price": 289.93,
     "pct_change": 1.3444,
     "title": "🔴 GOOGL (Alphabet) 跌破波段斐波那契下沿",
-    "desc": "偏离 MA50 -15.0%，放量跌破坑底 $342.44，空头宣泄期严禁左侧接刀！"
+    "desc": "偏离 MA50 -15.1%，放量跌破坑底 $342.44，空头宣泄期严禁左侧接刀！"
   },
   {
     "id": "TP_PLTR_2026-10-29",
-    "time": "10-29 07:06",
+    "time": "10-29 07:08",
     "category": "take_profit",
     "cat_label": "🟣 冲顶减仓",
     "level": "purple",
     "ticker": "PLTR",
     "name": "Palantir",
     "cat": "企业AI",
-    "price": 194.63,
+    "price": 194.6154,
     "pct_change": -0.9661,
     "title": "🟣 PLTR (Palantir) 极度超买，触发高位减仓指令",
     "desc": "偏离 MA50 +4.5%，RSI 53.9，进入极端冲顶兑现区，建议分批减半锁定利润！"
   },
   {
     "id": "TP_CRWD_2026-10-29",
-    "time": "10-29 07:06",
+    "time": "10-29 07:08",
     "category": "take_profit",
     "cat_label": "🟣 冲顶减仓",
     "level": "purple",
     "ticker": "CRWD",
     "name": "CrowdStrike",
     "cat": "AI安全",
-    "price": 251.5,
+    "price": 250.5,
     "pct_change": -0.5074,
     "title": "🟣 CRWD (CrowdStrike) 极度超买，触发高位减仓指令",
-    "desc": "偏离 MA50 +5.7%，RSI 59.5，进入极端冲顶兑现区，建议分批减半锁定利润！"
+    "desc": "偏离 MA50 +5.3%，RSI 59.5，进入极端冲顶兑现区，建议分批减半锁定利润！"
   },
   {
     "id": "5M_QQQM_2026-10-29",
-    "time": "10-29 07:06",
+    "time": "10-29 07:08",
     "category": "5m_entry",
     "cat_label": "🎯 5m买点",
     "level": "success",
@@ -63,7 +63,7 @@
   },
   {
     "id": "PORT_SOXS_HOLD_2026-10-29",
-    "time": "10-29 07:06",
+    "time": "10-29 07:08",
     "category": "portfolio",
     "cat_label": "💼 持仓风控",
     "level": "info",
@@ -82,7 +82,7 @@
   },
   {
     "id": "WEATHER_阴天防守_2026-10-29",
-    "time": "10-29 07:06",
+    "time": "10-29 07:08",
     "category": "macro_weather",
     "cat_label": "⛅ 宏观气象",
     "level": "info",
