@@ -2,20 +2,26 @@ name: US Market Radar 24/7 Engine (All Sessions: Pre, Regular, Post & Night)
 
 on:
   schedule:
-    # 1. 🌙 美股盘前早班车 (美东 04:00~08:00 / 韩国 17:00~21:00，每 15 分钟巡检盘前抢跑)
-    - cron: '*/15 8-11 * * 1-5'
-    # 2. 🔥 盘前冲刺 + 常规早盘 (美东 08:00~12:00 / 韩国 21:00~01:00，常驻 240 分钟，每 60 秒极速轮询)
+    # 1. 🌌 亚太日间与美股夜盘前半场 (美东 20:00~00:00 / 韩国 09:00~13:00，常驻 240分钟，⚡ 每 2 分钟极速守护)
+    - cron: '0 0 * * 1-5'
+    # 2. 🌌 亚太日间与美股夜盘后半场 (美东 00:00~04:00 / 韩国 13:00~17:00，常驻 240分钟，⚡ 每 2 分钟极速守护)
+    - cron: '0 4 * * 1-5'
+    # 3. 🌙 美股盘前早班车抢跑 (美东 04:00~08:00 / 韩国 17:00~21:00，常驻 240分钟，🔥 每 1 分钟极速轮询)
+    - cron: '0 8 * * 1-5'
+    # 4. 🔥 盘前冲刺 + 常规早盘 (美东 08:00~12:00 / 韩国 21:00~01:00，常驻 240分钟，🔥 每 1 分钟极速轮询)
     - cron: '0 12 * * 1-5'
-    # 3. 🎯 午盘 + 尾盘冲刺 + 盘后巨头财报首发 (美东 12:00~16:30 / 韩国 01:00~05:30，常驻 270 分钟，每 60 秒极速轮询)
+    # 5. 🎯 午盘 + 尾盘冲刺 (美东 12:00~16:30 / 韩国 01:00~05:30，常驻 270分钟，🔥 每 1 分钟极速轮询)
     - cron: '0 16 * * 1-5'
-    # 4. 🌙 盘后重头戏与业绩电话会 (美东 16:30~20:00 / 韩国 05:30~09:00，常驻 210 分钟，每 60 秒捕捉财报盘后暴涨暴跌)
+    # 6. 🌙 盘后重头戏与业绩电话会 (美东 16:30~20:00 / 韩国 05:30~09:00，常驻 210分钟，🔥 每 1 分钟捕捉财报盘后暴涨暴跌)
     - cron: '30 20 * * 1-5'
-    # 5. 🌌 夜盘与亚太日间时段 (美东 20:00~04:00 / 韩国 09:00~17:00，每 1 小时自动定时巡检)
-    - cron: '0 0,1,2,3,4,5,6,7 * * *'
   workflow_dispatch:
     inputs:
       duration_minutes:
-        description: '持续运行分钟数 (每 60 秒极速扫描并推微信)'
+        description: '持续运行分钟数'
+        required: false
+        default: '60'
+      interval_seconds:
+        description: '每轮轮询间隔秒数 (默认 60s，夜盘推荐 120s)'
         required: false
         default: '60'
 
@@ -50,11 +56,9 @@ jobs:
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Actions"
           DURATION="${{ github.event.inputs.duration_minutes || '240' }}"
-          # 判断如果是定点简易巡检还是盘中常驻守护
-          if [ "${{ github.event_name }}" = "schedule" ] && ( [ "${{ github.event.schedule }}" = "0 0,1,2,3,4,5,6,7 * * *" ] || [ "${{ github.event.schedule }}" = "*/15 8-11 * * 1-5" ] ); then
-            python integrated_market_radar.py --once
-            git add index.html futu_pro_terminal.html .terminal_notifications.json .options_cache.json .radar_alert_history.json || true
-            git diff --quiet && git diff --staged --quiet || (git commit -m "⚡ [自动更新] 盘前/夜盘定时巡检完成 [skip ci]" && git push)
-          else
-            python integrated_market_radar.py --loop-daemon --duration-minutes $DURATION
+          INTERVAL="${{ github.event.inputs.interval_seconds || '60' }}"
+          # 如果是夜盘亚太时段 (UTC 00:00~08:00 / 韩国 09:00~17:00)，自适应切为 2 分钟 (120s) 巡检守护
+          if [ "${{ github.event.schedule }}" = "0 0 * * 1-5" ] || [ "${{ github.event.schedule }}" = "0 4 * * 1-5" ]; then
+            INTERVAL="120"
           fi
+          python integrated_market_radar.py --loop-daemon --duration-minutes $DURATION --interval-seconds $INTERVAL

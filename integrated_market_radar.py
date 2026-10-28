@@ -3166,13 +3166,19 @@ def main():
     # 检查是否为云端/守护进程长轮询极速模式 (--loop-daemon)
     if "--loop-daemon" in sys.argv:
         duration_min = 180
+        interval_sec = 60
         for i, arg in enumerate(sys.argv):
             if arg == "--duration-minutes" and i + 1 < len(sys.argv):
                 try:
                     duration_min = int(sys.argv[i + 1])
                 except Exception:
                     pass
-        print(f"\n🚀 启动云端 1 分钟 (60s) 极速长轮询守护引擎 (计划持续运行 {duration_min} 分钟)")
+            elif arg == "--interval-seconds" and i + 1 < len(sys.argv):
+                try:
+                    interval_sec = max(30, int(sys.argv[i + 1]))
+                except Exception:
+                    pass
+        print(f"\n🚀 启动云端 {interval_sec} 秒极速长轮询守护引擎 (计划持续运行 {duration_min} 分钟)")
         start_time = time.time()
         end_time = start_time + duration_min * 60
         round_idx = 1
@@ -3180,7 +3186,7 @@ def main():
             c_start = time.time()
             now_ts = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
             print(f"\n" + "-" * 75)
-            print(f"⏱️ [{now_ts}] [第 {round_idx} 轮] 执行全市场 60 秒极速同步与期权扫描...")
+            print(f"⏱️ [{now_ts}] [第 {round_idx} 轮] 执行全市场 {interval_sec} 秒极速同步与期权扫描...")
             print("-" * 75)
             run_radar_cycle(is_first_run=False, round_idx=round_idx)
             # 云端同步持久化至 Git 仓库，令手机端 GitHub Pages 秒级保持最新
@@ -3189,8 +3195,9 @@ def main():
                     ["git", "add", "index.html", "futu_pro_terminal.html", ".terminal_notifications.json", ".options_cache.json", ".radar_alert_history.json"],
                     check=False, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL
                 )
+                subprocess.run(["git", "pull", "--rebase"], check=False, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
                 subprocess.run(
-                    ["git", "commit", "-m", f"⚡ [云端同步] 第 {round_idx} 轮 60s 极速实盘刷新 [skip ci]"],
+                    ["git", "commit", "-m", f"⚡ [云端同步] 第 {round_idx} 轮 {interval_sec}s 极速实盘刷新 [skip ci]"],
                     check=False, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL
                 )
                 subprocess.run(
@@ -3201,7 +3208,7 @@ def main():
                 pass
             round_idx += 1
             cost = time.time() - c_start
-            sleep_time = max(2.0, 60.0 - cost)
+            sleep_time = max(2.0, float(interval_sec) - cost)
             print(f"[*] 本轮扫描耗时 {cost:.1f}s，休眠 {sleep_time:.1f}s 后进入下一轮...")
             time.sleep(sleep_time)
         print("\n✅ 云端守护计划周期已圆满完成。")
