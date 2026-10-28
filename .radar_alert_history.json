@@ -98,8 +98,8 @@
       "last_notified_at": 0.0
     },
     "LITE": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1793211112.8375905
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "VST": {
       "state": "NORMAL",
@@ -118,8 +118,8 @@
       "last_notified_at": 0.0
     },
     "NVDA": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1793211352.5718925
     },
     "AMD": {
       "state": "NORMAL",
@@ -174,8 +174,8 @@
       "last_notified_at": 1793199600.366241
     },
     "QQQM": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1793211352.5718925
     },
     "SOXX": {
       "state": "WATCHLIST_ENTRY_READY",
