@@ -57,10 +57,23 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="60">
+    <meta http-equiv="refresh" content="90">
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
+    <script>
+        // ⚡ 客户端智能防缓存自动刷新 (彻底突破 GitHub Pages / Fastly CDN 10分钟 max-age=600 强缓存)
+        setTimeout(function() {{
+            try {{
+                var cleanPath = window.location.pathname;
+                var searchParams = new URLSearchParams(window.location.search);
+                searchParams.set('_t', Date.now());
+                window.location.replace(cleanPath + '?' + searchParams.toString() + window.location.hash);
+            }} catch(e) {{
+                window.location.reload();
+            }}
+        }}, 60000);
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -1284,10 +1297,10 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 </div>
             </div>
 
-            <!-- 2. 实盘持仓专属风控与自救解套监测哨 -->
+            <!-- 2. 实盘持仓专属风控与解套跟踪哨 -->
             <div class="panel-box intc-card" id="intcTacticalBox" data-cat="risk">
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-                    <div class="intc-title" id="intcCardTitle" style="margin-bottom: 0;">🛡️ 实盘持仓自救与风控哨</div>
+                    <div class="intc-title" id="intcCardTitle" style="margin-bottom: 0;">🛡️ 实盘底仓风控与解套哨</div>
                     <span class="card-toggle-btn" onclick="toggleCard(this)">▲</span>
                 </div>
                 <div class="panel-box-content">
@@ -1308,7 +1321,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                         <span style="font-weight: 700; color: #ff5252;" id="intcPnlRatio">-5.77% (-$38.60)</span>
                     </div>
                     <div class="intc-rule-item">
-                        <span style="color: #ffd700;">🎯 第一减仓回笼现金位</span>
+                        <span style="color: #ffd700;">🎯 第一阶段目标/反抽减压位</span>
                         <span style="font-weight: 700; color: #ffd700;" id="intcTrim1Val">$91.80 (卖 5 股回笼 ~$459)</span>
                     </div>
                     <div class="intc-rule-item">
@@ -2198,7 +2211,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 const trimShareStr = Number.isInteger(trim1Shares) ? trim1Shares.toFixed(0) : trim1Shares.toFixed(5);
 
                 const titleEl = document.getElementById("intcCardTitle");
-                if (titleEl) titleEl.innerText = `🛡️ ${{ticker}} 实盘持仓自救与风控哨`;
+                if (titleEl) titleEl.innerText = `🛡️ ${{ticker}} 实盘底仓风控与解套哨`;
                 document.getElementById("intcCostBase").innerText = `$${{cost.toFixed(2)}} (持仓 ${{shareStr}} 股)`;
                 document.getElementById("intcTotalCost").innerText = `$${{totalCost.toFixed(2)}}`;
                 document.getElementById("intcCurrentVal").innerText = `$${{totalVal.toFixed(2)}}`;
@@ -2219,14 +2232,14 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 }} else if (curPriceVal >= targetVal) {{
                     descEl.innerHTML = `<span style="color:#00e676; font-weight:bold;">🎉 ${{sessLabel}}解套达成：现价 $${{curPriceVal.toFixed(2)}} 已触达 $${{targetVal.toFixed(2)}} 成本目标，建议分批止盈落袋！</span>`;
                 }} else if (curPriceVal >= trim1) {{
-                    descEl.innerHTML = `<span style="color:#38bdf8; font-weight:bold;">📈 ${{sessLabel}}持仓跟踪：现价 $${{curPriceVal.toFixed(2)}} 已越过减仓参考线 ($${{trim1.toFixed(2)}})，技术面处于反转/反抽通道，依托 EMA20 顺势保护。</span>`;
+                    const holdNote = curPriceVal >= curEma20 ? "站稳 EMA20 顺势持有" : "反抽均线压制位，依托客观指标防守";
+                    descEl.innerHTML = `<span style="color:#38bdf8; font-weight:bold;">📈 ${{sessLabel}}持仓跟踪：现价 $${{curPriceVal.toFixed(2)}} 已越过参考减仓线 ($${{trim1.toFixed(2)}})，${{holdNote}}。</span>`;
                 }} else {{
-                    const distTrim = trim1 - curPriceVal;
                     const isLevEtf = ["SOXL", "KORU", "SQQQ", "SOXS"].includes(ticker);
                     const extraTip = ticker === "INTC"
-                        ? "⚠️10/29盘后财报，优先逢反抽减仓回笼现金！"
-                        : (isLevEtf ? "3倍杠杆严禁死扛加仓，借反抽分批减重回笼现金！" : "严格执行第一减仓位与硬止损纪律，动态保护本金！");
-                    descEl.innerHTML = `<span style="color:#93c5fd;">🟡 ${{sessLabel}}自救监测：距第一减仓位 ($${{trim1.toFixed(2)}}) 差 $${{distTrim.toFixed(2)}}，距止损线缓冲 +$${{bufferStop.toFixed(2)}}。${{extraTip}}</span>`;
+                        ? "⚠️10/29盘后财报窗口，重点防范业绩波动风险。"
+                        : (isLevEtf ? "3倍杠杆高波动标的，严格遵循硬止损线与客观形态！" : "严格遵循底线止损纪律，动态跟踪趋势。");
+                    descEl.innerHTML = `<span style="color:#93c5fd;">💼 ${{sessLabel}}实盘风控：距止损底线缓冲 +$${{bufferStop.toFixed(2)}} (${{bufferPct.toFixed(1)}}%)。${{extraTip}}</span>`;
                 }}
             }} else {{
                 intcBox.style.display = "none";

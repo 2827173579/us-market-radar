@@ -52,7 +52,7 @@ MONITORED_TARGETS = {
         "IWM":  {"name": "罗素2000", "sub": "小盘流动性温度计", "cat": "小盘弹性"},
         "SMH":  {"name": "半导体ETF", "sub": "硬科技与周期先导", "cat": "半导体"},
         "SOXX": {"name": "费城半导体ETF", "sub": "iShares核心半导体指数基准", "cat": "半导体"},
-        "SOXL": {"name": "3倍做多半导体", "sub": "费半三倍正向杠杆·实盘持仓自救哨", "cat": "正向杠杆", "cost": 108.2109, "shares": 12.22594, "trim1": 94.50, "trim1_shares": 4.22594, "trim2": 102.50, "base_val": 82.09, "target": 108.21},
+        "SOXL": {"name": "3倍做多半导体", "sub": "费半三倍正向杠杆·实盘底仓跟踪", "cat": "正向杠杆", "cost": 108.2109, "shares": 12.22594, "trim1": 94.50, "trim1_shares": 4.22594, "trim2": 102.50, "base_val": 82.09, "target": 108.21},
         "KORU": {"name": "3倍做多韩国", "sub": "韩国股市3倍正向杠杆·三星海力士先导", "cat": "正向杠杆"},
         "IGV":  {"name": "软件科技ETF", "sub": "SaaS与AI企业级应用", "cat": "云与软件"},
         "TLT":  {"name": "20年+美债", "sub": "长端利率与避险情绪", "cat": "利率债券"},
@@ -103,7 +103,7 @@ MONITORED_TARGETS = {
         # 7. 价值蓝筹与核心风控仓位
         "KO":    {"name": "可口可乐", "sub": "全球消费防御与抗通胀现金奶牛", "cat": "价值蓝筹", "cost": 0.0, "shares": 0.0, "max_alloc": 900.0, "base_val": 68.0},
         "AXP":   {"name": "美国运通", "sub": "高端消费信贷与抗衰退金融底座", "cat": "金融蓝筹", "cost": 0.0, "shares": 0.0, "max_alloc": 900.0, "base_val": 270.0},
-        "INTC":  {"name": "Intel", "sub": "IDM2.0转型·实盘持仓自救哨", "cat": "芯片算力", "cost": 95.53429, "shares": 7.0, "max_alloc": 900.0, "trim1": 91.80, "trim1_shares": 5.0, "base_val": 88.0, "target": 95.53},
+        "INTC":  {"name": "Intel", "sub": "IDM2.0转型·实盘底仓跟踪", "cat": "芯片算力", "cost": 95.53429, "shares": 7.0, "max_alloc": 900.0, "trim1": 91.80, "trim1_shares": 5.0, "base_val": 88.0, "target": 95.53},
 
         # 8. 物理AI与自动驾驶
         "TSLA":  {"name": "特斯拉", "sub": "FSD端到端与物理AI人形机器人", "cat": "物理AI", "cost": 0.0, "shares": 0.0, "max_alloc": 900.0, "base_val": 320.0},
@@ -1424,11 +1424,7 @@ def dispatch_wechat_radar_alerts(macro_data, stocks_data, weather_info, now_str)
                 md.append(f"> ⚠️ **{t_sym} 逼近止损线预警！**")
                 md.append(f"> 现价 **`${last_p:.2f}`** ｜ 止损线 **`${stop_val:.2f}`** (仅剩缓冲 **`${buffer:.2f}`** / `{buffer_pct:.1f}%`)")
                 md.append(f"> 🛡️ **防御纪律**：准备防守，若跌破 `${stop_val:.2f}` 坚决减仓！")
-            elif st.endswith("_TRIM1_READY"):
-                cash_back = trim1_s * last_p
-                md.append(f"> 🎯 **{t_sym} 触达第一减仓回笼位 (${trim1:.2f})！**")
-                md.append(f"> 现价 **`${last_p:.2f}`** (`{pnl_pct:+.2f}%`) ｜ 持仓 `{shares:g} 股`")
-                md.append(f"> 💰 **操作建议**：建议卖出 **`{trim1_s:g} 股`**，回笼约 **`${cash_back:.0f}`** 现金降低杠杆！")
+            # _TRIM1_READY 机械催卖已彻底废除
             elif st.endswith("_GOAL_ACHIEVED"):
                 md.append(f"> 🎉 **{t_sym} 达成成本解套目标 (${target:.2f})！**")
                 md.append(f"> 现价 **`${last_p:.2f}`** 已覆盖成本，建议分批落袋清仓回笼全部本金！")
@@ -3232,7 +3228,7 @@ def main():
                     ["git", "commit", "-m", f"⚡ [实盘同步] 第 {round_idx} 轮极速刷新 ({now_ts})"],
                     check=False, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL
                 )
-                subprocess.run(["git", "pull", "--rebase", "-X", "theirs", "origin", "main"], check=False, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+                subprocess.run(["git", "pull", "--rebase", "--autostash", "-X", "theirs", "origin", "main"], check=False, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
                 push_res = subprocess.run(["git", "push", "origin", "HEAD:main"], check=False, capture_output=True, text=True)
                 if push_res.returncode == 0:
                     print(f"[+] ✅ 成功推送第 {round_idx} 轮数据至 GitHub Pages (PAT 触发部署成功)！")

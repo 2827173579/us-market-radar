@@ -27,6 +27,10 @@ on:
         default: '60'
         type: string
 
+concurrency:
+  group: us-market-radar
+  cancel-in-progress: true
+
 permissions:
   contents: write
 
@@ -51,7 +55,22 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      - name: 🛡️ 本地优先检测 (本地活跃时云端避让防限流与冲突)
+        id: check_local
+        run: |
+          LAST_COMMIT_TS=$(git log -1 --format=%ct)
+          NOW_TS=$(date +%s)
+          DIFF_SEC=$((NOW_TS - LAST_COMMIT_TS))
+          echo "距上次实盘推送时间: ${DIFF_SEC} 秒"
+          if [ "$DIFF_SEC" -lt 600 ] && [ "${{ github.event_name }}" = "schedule" ]; then
+            echo "::notice ::✅ 本地守护进程正在活跃运行中 (最近推送于 ${DIFF_SEC}s 前)，云端定时任务自动避让，规避 429 API 限流与重复告警。"
+            echo "skip_run=true" >> $GITHUB_OUTPUT
+          else
+            echo "skip_run=false" >> $GITHUB_OUTPUT
+          fi
+
       - name: 🚀 执行全市场 65 只标的极速扫描与微信告警
+        if: steps.check_local.outputs.skip_run != 'true'
         env:
           FINNHUB_API_KEY: ${{ secrets.FINNHUB_API_KEY }}
           PUSHPLUS_TOKEN: ${{ secrets.PUSHPLUS_TOKEN }}
