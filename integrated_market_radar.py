@@ -2259,7 +2259,7 @@ def generate_stocks_radar_html(stocks_data, history_dict, update_time_str="", ha
         update_time_str = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
     # INTC 数据提取与风控参数
-    intc_info = next((s for s in stocks_data if s["ticker"] == "INTC"), stocks_data[0])
+    intc_info = next((s for s in stocks_data if s.get("ticker") == "INTC"), stocks_data[0] if stocks_data else {})
     intc_last = intc_info["last"]
     intc_cost = intc_info.get("cost", 95.0)
     intc_shares = intc_info.get("shares", 10.0)
@@ -3110,7 +3110,11 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
     # 5. 终端打印规整 Rich 表格
     display_terminal_tables(macro_data, stocks_sorted, weather_info, has_realtime=has_realtime)
 
-    # 6. 生成三大交互式 HTML 看板 (静默覆盖写入)
+    # 6. 生成三大交互式 HTML 看板 (静默覆盖写入，且具备空数据自动跳过保护)
+    if not stocks_sorted or not macro_data:
+        print("[!] ⚠️ 警告: 本轮抓取标的数异常为空 (疑似网络瞬时断连)，保留上一轮有效看板数据，跳过覆盖写入以防页面白屏。")
+        return
+
     generate_macro_radar_html(macro_data, weather_info, history_dict, update_time_str=now_str, has_realtime=has_realtime)
     generate_stocks_radar_html(stocks_sorted, history_dict, update_time_str=now_str, has_realtime=has_realtime)
     
@@ -3222,7 +3226,10 @@ def main():
             print(f"\n" + "-" * 75)
             print(f"⏱️ [{now_ts}] [第 {round_idx} 轮] 执行全市场 {interval_sec} 秒极速同步与期权扫描...")
             print("-" * 75)
-            run_radar_cycle(is_first_run=False, round_idx=round_idx)
+            try:
+                run_radar_cycle(is_first_run=False, round_idx=round_idx)
+            except Exception as e:
+                print(f"[!] ⚠️ 守护进程自动拦截异常并继续运行: {e}")
             # 云端同步持久化至 Git 仓库，令手机端 GitHub Pages 秒级保持最新
             try:
                 import shutil

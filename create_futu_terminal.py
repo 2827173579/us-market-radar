@@ -1189,14 +1189,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 </div>
             </div>
 
-            <!-- 🌌 24H夜盘切换按钮 -->
-            <div class="period-tab" id="btnToggle24h" onclick="toggle24hSession()" style="color:#c084fc; border: 1px solid rgba(192,132,252,0.4); background: rgba(192,132,252,0.12); margin-left: 6px; padding: 0 8px; font-weight: 700;" title="点击切换 24H夜盘全时段 / 传统延展时段">🌌 24H夜盘</div>
 
-            <!-- ⚡ 富途牛牛原生夜盘分时直达入口 -->
-            <a id="btnFutuDirect" href="https://www.futunn.com/stock/INTC-US" target="_blank" style="margin-left: auto; text-decoration: none; display: flex; align-items: center; gap: 4px; padding: 2px 9px; font-size: 11px; font-weight: 700; color: #ff9100; background: rgba(255, 145, 0, 0.12); border: 1px solid rgba(255, 145, 0, 0.35); border-radius: 4px; cursor: pointer; transition: all 0.2s;" title="在富途牛牛中查看原版秒级夜盘分时与深度买卖五档">
-                <span>⚡ 富途牛牛夜盘分时</span>
-                <span style="font-size: 9px; opacity: 0.8;">↗</span>
-            </a>
         </div>
 
         <div class="header-right">
@@ -1830,33 +1823,13 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
         let currentTicker = "INTC";
         let currentInterval = "D";
         let currentStyle = "1"; // 1=K线, 3=分时面积图
-        let is24hSession = true; // 默认开启 24H夜盘
 
-        function toggle24hSession() {{
-            is24hSession = !is24hSession;
-            const btn = document.getElementById("btnToggle24h");
-            if (btn) {{
-                if (is24hSession) {{
-                    btn.style.color = "#c084fc";
-                    btn.style.background = "rgba(192,132,252,0.25)";
-                    btn.style.borderColor = "#c084fc";
-                    btn.innerText = "🌌 24H夜盘 (开)";
-                }} else {{
-                    btn.style.color = "#9ca3af";
-                    btn.style.background = "rgba(156,163,175,0.1)";
-                    btn.style.borderColor = "rgba(156,163,175,0.3)";
-                    btn.innerText = "🌌 24H夜盘 (关)";
-                }}
-            }}
-            loadTvWidget(currentTicker, currentInterval, currentStyle);
-        }}
-
-        // 初始化 TradingView 图表挂载
+        // 初始化 TradingView 图表挂载 (默认开启 Pre/Post 盘前盘后延展时段)
         function loadTvWidget(ticker, interval, style) {{
             const container = document.getElementById("tv_chart_container");
             container.innerHTML = "";
             const tvSymbol = SYMBOL_MAP[ticker] || ("NASDAQ:" + ticker);
-            const targetSession = is24hSession ? "24h" : "extended";
+            const targetSession = "extended";
 
             try {{
                 new TradingView.widget({{
@@ -2139,11 +2112,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 localStorage.setItem("lastSelectedTicker", ticker);
             }} catch(e) {{}}
 
-            // 动态更新富途牛牛原生直达链接
-            const futuBtn = document.getElementById("btnFutuDirect");
-            if (futuBtn) {{
-                futuBtn.href = `https://www.futunn.com/stock/${{ticker}}-US`;
-            }}
+
 
             // 📱 手机端联动：若在行情列表视图下点击了标的，自动跳到 K线 视窗查看
             if (window.innerWidth <= 768 && currentMobileTab === "watchlist") {{

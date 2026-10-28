@@ -19,7 +19,7 @@
     },
     "CCXI": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793160981.4560668
+      "last_notified_at": 1793175469.6904004
     },
     "NBIS": {
       "state": "NORMAL",
@@ -58,8 +58,8 @@
       "last_notified_at": 0.0
     },
     "SNDK": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1793164838.1826582
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "BE": {
       "state": "NORMAL",
@@ -222,8 +222,8 @@
       "last_notified_at": 0.0
     },
     "PORT_INTC": {
-      "state": "INTC_NEAR_GOAL",
-      "last_notified_at": 1793158603.6853025
+      "state": "INTC_GOAL_ACHIEVED",
+      "last_notified_at": 1793175469.6904004
     },
     "PORT_SOXL": {
       "state": "PORT_NORMAL",
