@@ -2019,6 +2019,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                         is_stop: m.is_stop,
                         is_deep_pullback: m.is_deep_pullback,
                         is_take_profit: m.is_take_profit,
+                        is_crash_halt: Boolean(m.is_crash_halt),
                         optimal_limit: m.optimal_limit,
                         limit_note: m.limit_note,
                         entry_stop_loss: m.entry_stop_loss,
@@ -2170,12 +2171,12 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 }}
             }}
 
-            // 1. 基础指标与六维量化矩阵
+            // 1. 基础指标与六维量化矩阵 (优先穿透盘前/盘后实时真实成交价)
             const curLast = data.last || 0;
-            const curActive = data.active_price || curLast;
+            const curActive = (data.ext_price && data.ext_price > 0) ? data.ext_price : (data.active_price || curLast);
             const curMa50 = data.ma50 || 0;
             const curEma20 = data.ema20 || curMa50;
-            const curBias = data.bias !== undefined ? data.bias : (curMa50 > 0 ? ((curLast - curMa50)/curMa50*100) : 0);
+            const curBias = data.bias !== undefined ? data.bias : (curMa50 > 0 ? ((curActive - curMa50)/curMa50*100) : 0);
             const curAtr = data.atr || 0;
             const curRsi = data.rsi !== undefined ? data.rsi : 50;
             const curVolRatio = data.vol_ratio !== undefined ? data.vol_ratio : 1.0;
@@ -2189,8 +2190,10 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             document.getElementById("pMa50").innerText = curMa50 ? ("$" + curMa50.toFixed(2)) : "--";
             
             const biasEl = document.getElementById("pBias");
-            if (data.bias !== undefined) {{
-                biasEl.innerText = (curBias >= 0 ? "+" : "") + curBias.toFixed(2) + "%";
+            if (data.bias !== undefined || curMa50 > 0) {{
+                const hasExt = Boolean(data.ext_price && data.ext_price > 0 && data.session_tag);
+                const extNote = hasExt ? ` <span style="font-size:10px; color:#9ca3af;">(含${{data.session_tag}})</span>` : "";
+                biasEl.innerHTML = (curBias >= 0 ? "+" : "") + curBias.toFixed(2) + "%" + extNote;
                 biasEl.style.color = curBias >= 0 ? "#00e676" : "#ff5252";
             }}
             document.getElementById("pEma20").innerText = curEma20 ? ("$" + curEma20.toFixed(2)) : "--";
@@ -2454,19 +2457,21 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             document.getElementById("pFractional").style.color = themeColor;
 
             // 7. 日内精准建仓挂单指南测算与盯盘 UI 同步
-            let optimalLimit = data.optimal_limit || curActive;
-            if (!data.optimal_limit && curFibHigh > curFibLow) {{
+            // 7. 日内精准建仓挂单指南测算与盯盘 UI 同步 (加装暴跌熔断保护闸)
+            const isCrashHalt = Boolean(data.is_crash_halt || (data.optimal_limit === 0 && data.limit_note && data.limit_note.includes("破位")));
+            let optimalLimit = data.optimal_limit !== undefined ? data.optimal_limit : curActive;
+            if (optimalLimit === 0 && !isCrashHalt && curFibHigh > curFibLow) {{
                 const midAxis = curFibLow + 0.382 * (curFibHigh - curFibLow);
                 optimalLimit = Math.round(midAxis * 100) / 100;
             }}
             const maxAlloc = data.max_alloc || 660.0;
             const totalFractional = data.fractional_shares || (curActive > 0 ? (maxAlloc / curActive) : 0);
-            const b1Shares = Math.round(totalFractional * 0.30 * 100) / 100;
-            const b1Val = Math.round(b1Shares * optimalLimit * 100) / 100;
-            const rawPitStop = curFibLow > 0 ? curFibLow * 0.97 : (optimalLimit * 0.96);
-            const fallbackStop = (rawPitStop >= optimalLimit * 0.90 && rawPitStop <= optimalLimit * 0.985) ? rawPitStop : (optimalLimit * 0.96);
-            const stopLoss = data.entry_stop_loss || Math.round(fallbackStop * 100) / 100;
-            const stopLossPct = data.stop_loss_pct !== undefined ? data.stop_loss_pct : (optimalLimit > 0 ? ((stopLoss - optimalLimit) / optimalLimit * 100) : -4.0);
+            const b1Shares = isCrashHalt ? 0 : Math.round(totalFractional * 0.30 * 100) / 100;
+            const b1Val = isCrashHalt ? 0 : Math.round(b1Shares * optimalLimit * 100) / 100;
+            const rawPitStop = curFibLow > 0 ? curFibLow * 0.97 : (optimalLimit > 0 ? optimalLimit * 0.96 : 0);
+            const fallbackStop = (optimalLimit > 0 && rawPitStop >= optimalLimit * 0.90 && rawPitStop <= optimalLimit * 0.985) ? rawPitStop : (optimalLimit * 0.96);
+            const stopLoss = isCrashHalt ? 0 : (data.entry_stop_loss || Math.round(fallbackStop * 100) / 100);
+            const stopLossPct = isCrashHalt ? 0 : (data.stop_loss_pct !== undefined ? data.stop_loss_pct : (optimalLimit > 0 ? ((stopLoss - optimalLimit) / optimalLimit * 100) : -4.0));
 
             // 5分钟量化日内买点状态横幅渲染
             const intraBannerEl = document.getElementById("pIntradayBanner");
@@ -2527,27 +2532,54 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             }}
 
             const optEl = document.getElementById("pOptimalLimit");
-            if (optEl) optEl.innerText = "$" + optimalLimit.toFixed(2);
-            
-            const diffPct = curActive > 0 ? ((optimalLimit - curActive) / curActive * 100) : 0;
             const noteEl = document.getElementById("pOptimalNote");
-            if (noteEl) {{
-                const basisText = data.limit_note || "黄金坑中下轴支撑";
-                const hasPctInNote = basisText.includes("%");
-                if (diffPct < -0.05) {{
-                    noteEl.innerText = hasPctInNote ? basisText : `${{basisText}} (较现价折让 ${{diffPct.toFixed(1)}}%)`;
-                    noteEl.style.color = "#ffd700";
-                }} else {{
-                    noteEl.innerText = hasPctInNote ? `${{basisText}} · 已达击球区` : `${{basisText}} (已达目标击球区)`;
-                    noteEl.style.color = "#00e676";
-                }}
-            }}
             const b1El = document.getElementById("pBatch1Shares");
-            if (b1El) b1El.innerText = b1Shares.toFixed(2) + " 股";
             const b1ValEl = document.getElementById("pBatch1Val");
-            if (b1ValEl) b1ValEl.innerText = `约 $${{b1Val.toFixed(1)}} (3-3-4首笔30%)`;
             const stopEl = document.getElementById("pEntryStopLoss");
-            if (stopEl) stopEl.innerHTML = stopLoss > 0 ? `$${{stopLoss.toFixed(2)}} <span style="font-size:10px; color:#f87171;">(${{stopLossPct.toFixed(1)}}%)</span>` : "--";
+
+            if (isCrashHalt) {{
+                if (optEl) {{
+                    optEl.innerText = "⛔ 暂停挂单 (暴跌宣泄期)";
+                    optEl.style.color = "#ff5252";
+                    optEl.style.fontSize = "15px";
+                }}
+                if (noteEl) {{
+                    noteEl.innerText = data.limit_note || "单日/盘后剧烈跳空破位，严禁首日左侧挂单接飞刀";
+                    noteEl.style.color = "#ff5252";
+                }}
+                if (b1El) {{
+                    b1El.innerText = "0.00 股 (冻结)";
+                    b1El.style.color = "#9ca3af";
+                }}
+                if (b1ValEl) {{
+                    b1ValEl.innerText = "已触发暴跌熔断保护";
+                    b1ValEl.style.color = "#ff5252";
+                }}
+                if (stopEl) {{
+                    stopEl.innerHTML = `<span style="color:#ff5252; font-size:12px; font-weight:bold;">⛔ 观望不设单</span>`;
+                }}
+            }} else {{
+                if (optEl) {{
+                    optEl.innerText = (optimalLimit && optimalLimit > 0) ? ("$" + optimalLimit.toFixed(2)) : "--";
+                    optEl.style.color = "#ffd700";
+                    optEl.style.fontSize = "22px";
+                }}
+                const diffPct = curActive > 0 ? ((optimalLimit - curActive) / curActive * 100) : 0;
+                if (noteEl) {{
+                    const basisText = data.limit_note || "黄金坑中下轴支撑";
+                    const hasPctInNote = basisText.includes("%");
+                    if (diffPct < -0.05) {{
+                        noteEl.innerText = hasPctInNote ? basisText : `${{basisText}} (较现价折让 ${{diffPct.toFixed(1)}}%)`;
+                        noteEl.style.color = "#ffd700";
+                    }} else {{
+                        noteEl.innerText = hasPctInNote ? `${{basisText}} · 已达击球区` : `${{basisText}} (已达目标击球区)`;
+                        noteEl.style.color = "#00e676";
+                    }}
+                }}
+                if (b1El) b1El.innerText = b1Shares.toFixed(2) + " 股";
+                if (b1ValEl) b1ValEl.innerText = `约 $${{b1Val.toFixed(1)}} (3-3-4首笔30%)`;
+                if (stopEl) stopEl.innerHTML = stopLoss > 0 ? `$${{stopLoss.toFixed(2)}} <span style="font-size:10px; color:#f87171;">($${{stopLossPct.toFixed(1)}}%)</span>` : "--";
+            }}
             const bandEl = document.getElementById("pEntryFibBand");
             if (bandEl) bandEl.innerText = (curFibLow && curFibHigh) ? (`$${{curFibLow.toFixed(2)}} ~ $${{curFibHigh.toFixed(2)}}`) : "--";
 
@@ -2558,10 +2590,22 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                     optBox.style.display = "block";
                     const pcrBadge = document.getElementById("pPcrSentimentBadge");
                     if (pcrBadge) {{
-                        pcrBadge.innerText = data.pcr_sentiment || "🟡 多空均衡";
-                        pcrBadge.style.color = data.pcr_color || "#ffd700";
-                        pcrBadge.style.background = (data.pcr_color || "#ffd700") + "22";
-                        pcrBadge.style.border = "1px solid " + (data.pcr_color || "#ffd700") + "55";
+                        if (curActive > 0 && data.exp_low && data.exp_low > 0 && curActive < data.exp_low) {{
+                            pcrBadge.innerText = "🔴 击穿期权下轨 (多头被埋)";
+                            pcrBadge.style.color = "#ff5252";
+                            pcrBadge.style.background = "rgba(255, 82, 82, 0.22)";
+                            pcrBadge.style.border = "1px solid #ff5252";
+                        }} else if (curActive > 0 && data.exp_high && data.exp_high > 0 && curActive > data.exp_high) {{
+                            pcrBadge.innerText = "🔥 突破期权上轨 (逼空加速)";
+                            pcrBadge.style.color = "#00e676";
+                            pcrBadge.style.background = "rgba(0, 230, 118, 0.22)";
+                            pcrBadge.style.border = "1px solid #00e676";
+                        }} else {{
+                            pcrBadge.innerText = data.pcr_sentiment || "🟡 多空均衡";
+                            pcrBadge.style.color = data.pcr_color || "#ffd700";
+                            pcrBadge.style.background = (data.pcr_color || "#ffd700") + "22";
+                            pcrBadge.style.border = "1px solid " + (data.pcr_color || "#ffd700") + "55";
+                        }}
                     }}
                     const pcrVal = document.getElementById("pOptionsPcr");
                     if (pcrVal) {{

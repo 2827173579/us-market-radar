@@ -666,7 +666,8 @@ def fetch_earnings_calendar_map(tickers, api_key):
         try:
             from datetime import timedelta
             ticker_set = set(tickers)
-            chunks = [(today + timedelta(days=i), today + timedelta(days=i+3)) for i in range(0, 44, 4)]
+            # 从 -1 天开始抓取分片，完美覆盖跨时区（美东昨天/刚发完24h内）的财报
+            chunks = [(today + timedelta(days=i), today + timedelta(days=i+3)) for i in range(-1, 44, 4)]
 
             def _fetch_chunk(d_pair):
                 d_from, d_to = d_pair
@@ -700,16 +701,17 @@ def fetch_earnings_calendar_map(tickers, api_key):
         try:
             e_date = datetime.strptime(info["date"], "%Y-%m-%d").date()
             days = (e_date - today).days
-            if days < 0:
+            # 扩展到 -1 天容差，解决跨时区导致的当天盘后财报在亚洲次日清晨被当作过期丢弃的致命Bug
+            if days < -1:
                 result[t] = {"earnings_date": "", "days_to_earnings": None, "earnings_tag": "", "is_earnings_risk": False}
                 continue
             hr_code = info.get("hour", "")
             hr_str = "盘前" if hr_code == "bmo" else ("盘后" if hr_code == "amc" else "")
             short_d = info["date"][5:].replace("-", "/")
-            if days == 0:
-                tag = f"🚨 今日{hr_str}发财报({short_d})"
+            if days in [0, -1]:
+                tag = f"🔴 财报大考/刚披露 ({short_d}{hr_str})"
                 is_risk = True
-            elif days <= 5:
+            elif 1 <= days <= 5:
                 tag = f"⚠️ {days}天后{hr_str}财报({short_d})"
                 is_risk = True
             else:
@@ -972,11 +974,12 @@ def fetch_options_anomaly_map(focus_tickers, spot_map=None):
 
     return cached_map
 
-def evaluate_intraday_entry(active_price, fib_low, fib_high, ma50, is_pit, is_stop, dist_to_pit, intra_info, earnings_info=None, rs_20d=0.0, atr=0.0, daily_rsi=50.0, options_info=None):
+def evaluate_intraday_entry(active_price, fib_low, fib_high, ma50, is_pit, is_stop, dist_to_pit, intra_info, earnings_info=None, rs_20d=0.0, atr=0.0, daily_rsi=50.0, options_info=None, pct_change=0.0, ext_pct=None):
     """
     真正的 5 分钟级日内量化建仓评估器：
     1. 科学测算建议挂单价 optimal_limit 与防守止损线 entry_stop_loss (严禁止损线高于买入价倒挂)
     2. 结合日线黄金坑位置 + 5m RSI 超卖底背离 + 日内 VWAP 均价线 + 5m 相对量比 RVOL + 财报日历避雷，判定是否触发日内买点
+    3. 加装【极端跳空/暴跌防手痒熔断闸】：单日急跌或盘后跳空破位时，强制冻结挂单与底仓推荐
     """
     vwap = intra_info.get("vwap", 0.0) or active_price
     rsi_5m = intra_info.get("rsi_5m", 50.0)
@@ -990,6 +993,32 @@ def evaluate_intraday_entry(active_price, fib_low, fib_high, ma50, is_pit, is_st
     days_to_e = e_info.get("days_to_earnings")
     is_e_risk = e_info.get("is_earnings_risk", False)
     e_tag = e_info.get("earnings_tag", "")
+
+    # 0. 极端跳空/暴跌防手痒熔断闸判定 (严格限定为当日/盘后急杀，不误伤已筑底股票)
+    safe_ext = ext_pct if ext_pct is not None else 0.0
+    is_crash_halt = (
+        (pct_change <= -5.0) or
+        (ext_pct is not None and ext_pct <= -4.5) or
+        ((pct_change + safe_ext) <= -5.5) or
+        (fib_low > 0 and active_price < fib_low * 0.92 and (pct_change <= -2.5 or (ext_pct is not None and ext_pct <= -2.5)))
+    )
+
+    if is_crash_halt:
+        return {
+            "optimal_limit": 0.0,
+            "limit_note": "单日/盘后剧烈跳空破位，严禁首日左侧挂单接飞刀",
+            "entry_stop_loss": 0.0,
+            "stop_loss_pct": 0.0,
+            "intraday_entry_ready": False,
+            "intraday_status_text": "⛔ 暂停挂单 (暴跌宣泄期)",
+            "intraday_reason": f"标的触发暴跌熔断(日盘 {pct_change:+.2f}%, 盘后 {safe_ext:+.2f}%)，单日/盘后剧烈跳空破位，严禁首日左侧挂单接飞刀(需等待3日宣泄企稳)",
+            "is_crash_halt": True,
+            "vwap": round(vwap, 2),
+            "rsi_5m": round(rsi_5m, 1),
+            "rvol_5m": round(rvol_5m, 2),
+            "rs_20d": round(rs_20d, 2),
+            **e_info
+        }
 
     # 1. 科学挂单买入价测算
     pit_mid_low = round(fib_low + 0.382 * (fib_high - fib_low), 2) if fib_high > fib_low else active_price
@@ -1016,7 +1045,7 @@ def evaluate_intraday_entry(active_price, fib_low, fib_high, ma50, is_pit, is_st
             raw_def_limit = min(active_price * 0.985, vwap_anchor)
             optimal_limit = round(max(active_price * 0.962, raw_def_limit), 2)
             diff_p = (optimal_limit - active_price) / active_price * 100
-            limit_note = f"破坑深调·回踩VWAP防守单 ({diff_p:+.1f}%)"
+            limit_note = f"破坑深调·支撑防守单 ({diff_p:+.1f}%)"
     else:
         optimal_limit = round(active_price * 0.99, 2)
         limit_note = "现价下方1%分批限价单 (-1.0%)"
@@ -1107,6 +1136,7 @@ def evaluate_intraday_entry(active_price, fib_low, fib_high, ma50, is_pit, is_st
         "intraday_entry_ready": intraday_entry_ready,
         "intraday_status_text": intraday_status_text,
         "intraday_reason": intraday_reason,
+        "is_crash_halt": False,
         "vwap": round(vwap, 2),
         "rsi_5m": round(rsi_5m, 1),
         "rvol_5m": round(rvol_5m, 2),
@@ -3040,8 +3070,15 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
             open_price = float(df["Open"].iloc[-1]) if "Open" in df else last
             prev_close = float(df["Close"].iloc[-2]) if len(df) >= 2 else last
             prev_ema20 = float(df["EMA20"].iloc[-2]) if ("EMA20" in df and len(df) >= 2) else ema20
+            # 盘前盘后价格联动：以真实成交有效价重新计算 bias 与 dist_to_pit，绝不顶着日盘收盘价的温和假象
+            effective_price = active_price if (active_price > 0 and ext_price is not None and ext_price > 0) else last
+            effective_bias = round(((effective_price - ma50) / ma50) * 100, 2) if ma50 > 0 else 0.0
+            effective_bias_ma20 = round(((effective_price - ma20) / ma20) * 100, 2) if ma20 > 0 else 0.0
+            bias = effective_bias
+            bias_ma20 = effective_bias_ma20
+
             eval_res = evaluate_stock_signal(
-                ticker, last, ma50, bias, rsi, vol_ratio, fib_low, fib_high, meta,
+                ticker, effective_price, ma50, effective_bias, rsi, vol_ratio, fib_low, fib_high, meta,
                 atr=atr, ema20=ema20, high_bias_recently=high_bias_recently,
                 prev_close=prev_close, prev_ema20=prev_ema20, prev_rsi=prev_rsi,
                 min_rsi_5d=min_rsi_5d, pos_60=pos_60, open_price=open_price
@@ -3049,8 +3086,9 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
             intra_eval = evaluate_intraday_entry(
                 active_price, fib_low, fib_high, ma50,
                 eval_res["is_pit"], eval_res["is_stop"], eval_res["dist_to_pit"], intra_info,
-                earnings_info=None, rs_20d=rs_20d, atr=atr, daily_rsi=rsi,
-                options_info=options_map.get(ticker)
+                earnings_info=earnings_map.get(ticker), rs_20d=rs_20d, atr=atr, daily_rsi=rsi,
+                options_info=options_map.get(ticker),
+                pct_change=pct_change, ext_pct=ext_pct
             )
 
             if bias > 0:
@@ -3181,9 +3219,13 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
 
             prev_close = float(df["Close"].iloc[-2]) if len(df) >= 2 else last
             prev_ema20 = float(df["EMA20"].iloc[-2]) if ("EMA20" in df and len(df) >= 2) else ema20
-            bias = ((last - ma50) / ma50) * 100
+            # 盘前盘后价格联动：以真实成交有效价重新计算 bias 与 dist_to_pit，绝不顶着日盘收盘价的温和假象
+            effective_price = active_price if (active_price > 0 and ext_price is not None and ext_price > 0) else last
+            effective_bias = round(((effective_price - ma50) / ma50) * 100, 2) if ma50 > 0 else 0.0
+            bias = effective_bias
+
             eval_res = evaluate_stock_signal(
-                ticker, last, ma50, bias, rsi, vol_ratio, fib_low, fib_high, meta,
+                ticker, effective_price, ma50, effective_bias, rsi, vol_ratio, fib_low, fib_high, meta,
                 atr=atr, weather_info=weather_info, macro_data=macro_data, ema20=ema20,
                 high_bias_recently=high_bias_recently, prev_close=prev_close, prev_ema20=prev_ema20,
                 prev_rsi=prev_rsi, min_rsi_5d=min_rsi_5d, pos_60=pos_60, open_price=open_price
@@ -3192,7 +3234,8 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
                 active_price, fib_low, fib_high, ma50,
                 eval_res["is_pit"], eval_res["is_stop"], eval_res["dist_to_pit"], intra_info,
                 earnings_info=earnings_map.get(ticker), rs_20d=rs_20d, atr=atr, daily_rsi=rsi,
-                options_info=options_map.get(ticker)
+                options_info=options_map.get(ticker),
+                pct_change=pct_change, ext_pct=ext_pct
             )
 
             stocks_list.append({
