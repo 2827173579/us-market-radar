@@ -1,0 +1,44 @@
+name: US Market Radar 24/7 Engine
+
+on:
+  schedule:
+    # 美东时间 周一至周五 08:00 ~ 18:00 (UTC 12:00 ~ 22:59)，每 10 分钟自动轮询一次
+    - cron: '*/10 12-22 * * 1-5'
+  workflow_dispatch: # 随时支持在 GitHub 网页上点击一键即时触发
+
+permissions:
+  contents: write
+
+jobs:
+  radar-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 检出仓库代码
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: 设置 Python 3.10 环境
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+          cache: 'pip'
+
+      - name: 安装量化与数据分析依赖
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: 🚀 执行全市场 58 只标的即时数据同步与期权扫描
+        env:
+          FINNHUB_API_KEY: ${{ secrets.FINNHUB_API_KEY }}
+          PUSHPLUS_TOKEN: ${{ secrets.PUSHPLUS_TOKEN }}
+        run: |
+          python integrated_market_radar.py --once
+
+      - name: 💾 将最新生成的看板与通知持久化同步至 GitHub Pages
+        run: |
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Actions"
+          git add index.html futu_pro_terminal.html macro_radar.html stocks_radar.html target_watchlist.json user_portfolio.json .terminal_notifications.json .options_cache.json .radar_alert_history.json || true
+          git diff --quiet && git diff --staged --quiet || (git commit -m "⚡ [自动更新] 美股量化雷达实时同步完成 [skip ci]" && git push)

@@ -1,0 +1,26 @@
+{
+  "INTC": {
+    "name": "英特尔",
+    "cat": "芯片半导体",
+    "shares": 7.0,
+    "cost": 95.53429,
+    "trim1": 91.8,
+    "trim1_shares": 5.0,
+    "trim2": 95.53,
+    "base_val": 88.0,
+    "target": 95.53,
+    "note": "Firstrade实盘持仓"
+  },
+  "SOXL": {
+    "name": "3倍做多半导体",
+    "cat": "正向杠杆ETF",
+    "shares": 12.22594,
+    "cost": 108.2109,
+    "trim1": 94.5,
+    "trim1_shares": 4.22594,
+    "trim2": 102.5,
+    "base_val": 82.09,
+    "target": 108.21,
+    "note": "Firstrade实盘持仓"
+  }
+}
