@@ -19,7 +19,7 @@
     },
     "CCXI": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793175469.6904004
+      "last_notified_at": 1793189874.8389294
     },
     "NBIS": {
       "state": "NORMAL",
@@ -118,8 +118,8 @@
       "last_notified_at": 0.0
     },
     "NVDA": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1793189754.8068798
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "AMD": {
       "state": "NORMAL",
@@ -178,8 +178,8 @@
       "last_notified_at": 1793185675.6152956
     },
     "SOXX": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1793189275.3571007
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "SOXL": {
       "state": "NORMAL",
