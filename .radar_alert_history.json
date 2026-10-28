@@ -118,16 +118,16 @@
       "last_notified_at": 0.0
     },
     "NVDA": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1793193356.5394027
     },
     "AMD": {
       "state": "NORMAL",
       "last_notified_at": 0.0
     },
     "META": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1793193356.5394027
     },
     "MRVL": {
       "state": "NORMAL",
@@ -174,8 +174,8 @@
       "last_notified_at": 0.0
     },
     "QQQM": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1793192994.147645
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "SOXX": {
       "state": "WATCHLIST_ENTRY_READY",
