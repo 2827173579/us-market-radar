@@ -118,8 +118,8 @@
       "last_notified_at": 0.0
     },
     "NVDA": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1793208713.339067
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "AMD": {
       "state": "NORMAL",
@@ -130,8 +130,8 @@
       "last_notified_at": 0.0
     },
     "MRVL": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1793209433.0060313
     },
     "HPE": {
       "state": "NORMAL",
