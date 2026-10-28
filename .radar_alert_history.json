@@ -98,8 +98,8 @@
       "last_notified_at": 0.0
     },
     "LITE": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1793201634.157161
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "VST": {
       "state": "NORMAL",
@@ -118,8 +118,8 @@
       "last_notified_at": 0.0
     },
     "NVDA": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1793201753.4221423
     },
     "AMD": {
       "state": "NORMAL",
@@ -130,8 +130,8 @@
       "last_notified_at": 0.0
     },
     "MRVL": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1793201520.303493
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "HPE": {
       "state": "NORMAL",
