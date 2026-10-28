@@ -1,7 +1,7 @@
 [
   {
     "id": "STOP_GOOGL_2026-10-28",
-    "time": "10-28 23:44",
+    "time": "10-28 23:45",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -9,13 +9,13 @@
     "name": "Alphabet",
     "cat": "生态平台",
     "price": 293.23,
-    "pct_change": 0.2216089504448475,
+    "pct_change": 1.3444,
     "title": "🔴 GOOGL (Alphabet) 跌破波段斐波那契下沿",
     "desc": "偏离 MA50 -14.1%，放量跌破坑底 $342.44，空头宣泄期严禁左侧接刀！"
   },
   {
     "id": "5M_TSM_2026-10-28",
-    "time": "10-28 23:44",
+    "time": "10-28 23:45",
     "category": "5m_entry",
     "cat_label": "🎯 5m买点",
     "level": "success",
@@ -35,7 +35,7 @@
   },
   {
     "id": "5M_SKHY_2026-10-28",
-    "time": "10-28 23:44",
+    "time": "10-28 23:45",
     "category": "5m_entry",
     "cat_label": "🎯 5m买点",
     "level": "success",
@@ -55,7 +55,7 @@
   },
   {
     "id": "TP_CRWD_2026-10-28",
-    "time": "10-28 23:44",
+    "time": "10-28 23:45",
     "category": "take_profit",
     "cat_label": "🟣 冲顶减仓",
     "level": "purple",
@@ -69,7 +69,7 @@
   },
   {
     "id": "TP_PLTR_2026-10-28",
-    "time": "10-28 23:44",
+    "time": "10-28 23:45",
     "category": "take_profit",
     "cat_label": "🟣 冲顶减仓",
     "level": "purple",
@@ -83,7 +83,7 @@
   },
   {
     "id": "PORT_SOXS_HOLD_2026-10-28",
-    "time": "10-28 23:44",
+    "time": "10-28 23:45",
     "category": "portfolio",
     "cat_label": "💼 持仓风控",
     "level": "info",
@@ -102,7 +102,7 @@
   },
   {
     "id": "WEATHER_阴天防守_2026-10-28",
-    "time": "10-28 23:44",
+    "time": "10-28 23:45",
     "category": "macro_weather",
     "cat_label": "⛅ 宏观气象",
     "level": "info",
