@@ -18,8 +18,8 @@
       "last_notified_at": 0.0
     },
     "CCXI": {
-      "state": "STOP_LOSS",
-      "last_notified_at": 1793189874.8389294
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "NBIS": {
       "state": "NORMAL",
@@ -98,8 +98,8 @@
       "last_notified_at": 0.0
     },
     "LITE": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1793194317.466858
     },
     "VST": {
       "state": "NORMAL",
@@ -118,16 +118,16 @@
       "last_notified_at": 0.0
     },
     "NVDA": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1793194198.150718
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "AMD": {
       "state": "NORMAL",
       "last_notified_at": 0.0
     },
     "META": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1793194317.466858
     },
     "MRVL": {
       "state": "NORMAL",
@@ -162,8 +162,8 @@
       "last_notified_at": 0.0
     },
     "TSLA": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "TAKE_PROFIT",
+      "last_notified_at": 1793194317.466858
     },
     "CRWD": {
       "state": "NORMAL",
@@ -178,8 +178,8 @@
       "last_notified_at": 1793193594.6988645
     },
     "SOXX": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1793193716.3929055
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "SOXL": {
       "state": "NORMAL",
@@ -218,8 +218,8 @@
       "last_notified_at": 0.0
     },
     "MRNA": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "TAKE_PROFIT",
+      "last_notified_at": 1793194317.466858
     },
     "PORT_INTC": {
       "state": "INTC_NEAR_GOAL",
