@@ -222,8 +222,8 @@
       "last_notified_at": 0.0
     },
     "PORT_INTC": {
-      "state": "INTC_NEAR_GOAL",
-      "last_notified_at": 1793183035.0443695
+      "state": "INTC_GOAL_ACHIEVED",
+      "last_notified_at": 1793183392.5263374
     },
     "PORT_SOXL": {
       "state": "PORT_NORMAL",
