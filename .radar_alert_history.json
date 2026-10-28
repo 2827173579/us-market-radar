@@ -170,12 +170,12 @@
       "last_notified_at": 1793221412.8471394
     },
     "PLTR": {
-      "state": "TAKE_PROFIT",
-      "last_notified_at": 1793223389.9234452
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "QQQM": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1793222169.8988872
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "SOXX": {
       "state": "WATCHLIST_ENTRY_READY",
