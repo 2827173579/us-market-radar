@@ -3034,10 +3034,24 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             return audioCtx;
         }}
 
-        // 首次点击任意位置解锁音频引擎 (规避浏览器 Autoplay 限制)
-        document.addEventListener("click", function unlockAudio() {{
-            getAudioContext();
-        }}, {{ once: true }});
+        // 🎵 全局手势无感解锁音频引擎 (规避现代浏览器 Autoplay 限制)
+        let isAudioUnlocked = false;
+        function unlockAudioEngine() {{
+            const ctx = getAudioContext();
+            if (ctx && ctx.state === "suspended") {{
+                ctx.resume().then(() => {{
+                    isAudioUnlocked = true;
+                    // 若有挂起的声音队列，立即开始播放
+                    if (soundQueue.length > 0) processSoundQueue();
+                }}).catch(() => {{}});
+            }} else {{
+                isAudioUnlocked = true;
+                if (soundQueue.length > 0) processSoundQueue();
+            }}
+        }}
+        ["click", "touchstart", "keydown", "mousedown"].forEach(evt => {{
+            window.addEventListener(evt, unlockAudioEngine, {{ passive: true }});
+        }});
 
         function toggleSoundAlerts() {{
             isSoundEnabled = !isSoundEnabled;
@@ -3068,25 +3082,62 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
         }}
 
         const SOUND_FILE_MAP = {{
-            "5m_entry": `${{API_BASE}}/sounds/5m_entry.wav`,
-            "portfolio": `${{API_BASE}}/sounds/risk_alarm.wav`,
-            "golden_pit": `${{API_BASE}}/sounds/golden_pit.wav`,
-            "stop_loss": `${{API_BASE}}/sounds/breakdown.wav`,
-            "take_profit": `${{API_BASE}}/sounds/take_profit.wav`,
-            "macro_weather": `${{API_BASE}}/sounds/weather.wav`
+            "5m_entry": "sounds/5m_entry.wav",
+            "portfolio": "sounds/risk_alarm.wav",
+            "golden_pit": "sounds/golden_pit.wav",
+            "stop_loss": "sounds/breakdown.wav",
+            "take_profit": "sounds/take_profit.wav",
+            "macro_weather": "sounds/weather.wav"
         }};
+
+        // 🎵 声音队列调度器 (实现多条通知按先后顺序依次播放，间隔 520ms)
+        const soundQueue = [];
+        let isPlayingSoundQueue = false;
+
+        function queueAlertSound(category, forcePlay = false) {{
+            if (!isSoundEnabled && !forcePlay) return;
+            soundQueue.push({{ category, forcePlay }});
+            processSoundQueue();
+        }}
+
+        function processSoundQueue() {{
+            if (isPlayingSoundQueue || soundQueue.length === 0) return;
+            if (!isSoundEnabled) {{
+                soundQueue.length = 0;
+                return;
+            }}
+
+            isPlayingSoundQueue = true;
+            const item = soundQueue.shift();
+            playAlertSound(item.category, item.forcePlay);
+
+            // 每条提示音播放后，间隔 520ms 播放下一条，避免声音撞车混杂
+            setTimeout(() => {{
+                isPlayingSoundQueue = false;
+                if (soundQueue.length > 0) {{
+                    processSoundQueue();
+                }}
+            }}, 520);
+        }}
 
         function playAlertSound(category, forcePlay = false) {{
             if (!isSoundEnabled && !forcePlay) return;
 
-            // 优先尝试本地 sounds/*.wav 播放，失败则无缝由 Web Audio 电子合成器兜底
             const filePath = SOUND_FILE_MAP[category] || "sounds/5m_entry.wav";
             try {{
                 const audio = new Audio(filePath);
-                audio.volume = 0.85;
+                audio.volume = 0.88;
                 const p = audio.play();
                 if (p !== undefined) {{
-                    p.catch(() => synthAlertSound(category));
+                    p.then(() => {{
+                        isAudioUnlocked = true;
+                    }}).catch(err => {{
+                        // 若被浏览器 Autoplay 拦截，启用 Web Audio 兜底合成
+                        synthAlertSound(category);
+                        if (!isAudioUnlocked && err && err.name === "NotAllowedError") {{
+                            showToast("🔊 收到预警！点击页面任意处即可开启声音播放");
+                        }}
+                    }});
                 }}
             }} catch(e) {{
                 synthAlertSound(category);
@@ -3159,22 +3210,52 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             osc.stop(startTime + duration + 0.05);
         }}
 
-        // 已播放过的通知 ID 集合，避免重复响铃轰炸（跨刷新持久化）
+        // 已播放过的通知 ID 集合（跨刷新持久化）
         let knownNotifIds = new Set();
+        let isFirstEverVisit = false;
         try {{
-            const savedIds = JSON.parse(localStorage.getItem("terminalKnownNotifIds") || "[]");
-            if (Array.isArray(savedIds)) savedIds.forEach(id => knownNotifIds.add(id));
+            const rawSaved = localStorage.getItem("terminalKnownNotifIds");
+            if (rawSaved === null) {{
+                isFirstEverVisit = true;
+            }} else {{
+                const savedIds = JSON.parse(rawSaved);
+                if (Array.isArray(savedIds)) savedIds.forEach(id => knownNotifIds.add(id));
+            }}
         }} catch(e) {{}}
-        terminalNotifications.forEach(n => {{
-            if (n && n.id) knownNotifIds.add(n.id);
-        }});
+
         function persistKnownNotifIds() {{
             try {{
-                const arr = Array.from(knownNotifIds).slice(-120);
+                const arr = Array.from(knownNotifIds).slice(-200);
                 localStorage.setItem("terminalKnownNotifIds", JSON.stringify(arr));
             }} catch(e) {{}}
         }}
-        persistKnownNotifIds();
+
+        // 首次打开终端时静默记录当前已有通知，避免初次载入发出几十声响铃
+        if (isFirstEverVisit) {{
+            terminalNotifications.forEach(n => {{
+                if (n && n.id) knownNotifIds.add(n.id);
+            }});
+            persistKnownNotifIds();
+        }} else {{
+            // 若为常规刷新或更新，检查是否有新放入 INITIAL_NOTIFICATIONS 的全新预警
+            const initialFresh = [];
+            terminalNotifications.forEach(n => {{
+                if (n && n.id && !knownNotifIds.has(n.id)) {{
+                    initialFresh.push(n);
+                    knownNotifIds.add(n.id);
+                }}
+            }});
+            if (initialFresh.length > 0) {{
+                persistKnownNotifIds();
+                // 延迟 800ms 待 DOM 就绪后按先后顺序依次排队播报
+                setTimeout(() => {{
+                    initialFresh.slice(0, 6).forEach(item => {{
+                        queueAlertSound(item.category || "5m_entry");
+                    }});
+                    showToast(`🔔 收到 ${{initialFresh.length}} 条全新实盘量化预警！`);
+                }}, 800);
+            }}
+        }}
 
         function handleIncomingNotifications(newNotifs) {{
             if (!Array.isArray(newNotifs)) return;
@@ -3185,32 +3266,38 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                     knownNotifIds.add(n.id);
                 }}
             }});
-            if (freshItems.length > 0) persistKnownNotifIds();
 
             terminalNotifications = newNotifs;
             renderNotifList(currentNotifCat);
 
-            // 若有全新预警，按最高优先级播放对应提示音
+            // 🎯 用户指令：每推送一个新消息都给提示音！多个消息按先后顺序挨个排队提示
             if (freshItems.length > 0) {{
-                const priorityOrder = ["portfolio", "5m_entry", "stop_loss", "take_profit", "golden_pit", "macro_weather"];
-                let topCat = "5m_entry";
-                for (let p of priorityOrder) {{
-                    if (freshItems.some(x => x.category === p)) {{
-                        topCat = p;
-                        break;
-                    }}
-                }}
-                playAlertSound(topCat);
-                showToast(`🔔 收到 ${{freshItems.length}} 条全新实盘量化预警！`);
+                persistKnownNotifIds();
+                // 限制单批最多排队 6 声，防止极端异常情况下过多轰炸
+                const playList = freshItems.slice(0, 6);
+                playList.forEach(item => {{
+                    queueAlertSound(item.category || "5m_entry");
+                }});
+                showToast(`🔔 收到 ${{freshItems.length}} 条全新量化预警，正在播报提示音...`);
             }}
         }}
 
+        // 智能轮询：本地环境调 API，GitHub Pages 静态环境无缝读 .terminal_notifications.json
         function pollLatestNotifications() {{
-            fetch(`${{API_BASE}}/api/notifications`)
-                .then(r => r.json())
+            const isLocal = window.location.hostname === "127.0.0.1" || window.location.hostname === "localhost";
+            const notifUrl = isLocal 
+                ? `${{API_BASE}}/api/notifications` 
+                : `.terminal_notifications.json?_t=${{Date.now()}}`;
+
+            fetch(notifUrl)
+                .then(r => {{
+                    if (!r.ok) throw new Error("HTTP " + r.status);
+                    return r.json();
+                }})
                 .then(res => {{
-                    if (res && Array.isArray(res.notifications)) {{
-                        handleIncomingNotifications(res.notifications);
+                    const list = Array.isArray(res) ? res : (res && Array.isArray(res.notifications) ? res.notifications : null);
+                    if (list) {{
+                        handleIncomingNotifications(list);
                     }}
                 }})
                 .catch(() => {{}});
