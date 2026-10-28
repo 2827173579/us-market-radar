@@ -421,9 +421,9 @@ def start_star_api_server(port=8765):
     print(f"[*] 📱 移动端/局域网看盘地址: http://{lan_ip}:{port} (同一Wi-Fi下手机浏览器直接打开)")
     print(f"[*] 💻 电脑端本地看盘地址: http://127.0.0.1:{port}")
 
-# 本地轻量同步锁与 3 分钟轮询周期
+# 本地轻量同步锁与 1 分钟 (60秒) 极速轮询周期
 LOCK_FILE = os.path.join(SCRATCH_DIR, ".radar_last_sync")
-SYNC_INTERVAL = 180  # 3 分钟 (180 秒) 自动轮询周期
+SYNC_INTERVAL = 60  # 1 分钟 (60 秒) 极速自动轮询周期
 
 def get_last_sync_time():
     """读取本地同步时间戳"""
@@ -3153,11 +3153,55 @@ def main():
         print("\n[+] ✅ 手动单次同步完成，已更新 .radar_last_sync 锁文件，后台守护进程倒计时已自动同步重置！")
         sys.exit(0)
 
+    # 检查是否为云端/守护进程长轮询极速模式 (--loop-daemon)
+    if "--loop-daemon" in sys.argv:
+        duration_min = 180
+        for i, arg in enumerate(sys.argv):
+            if arg == "--duration-minutes" and i + 1 < len(sys.argv):
+                try:
+                    duration_min = int(sys.argv[i + 1])
+                except Exception:
+                    pass
+        print(f"\n🚀 启动云端 1 分钟 (60s) 极速长轮询守护引擎 (计划持续运行 {duration_min} 分钟)")
+        start_time = time.time()
+        end_time = start_time + duration_min * 60
+        round_idx = 1
+        while time.time() < end_time:
+            c_start = time.time()
+            now_ts = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            print(f"\n" + "-" * 75)
+            print(f"⏱️ [{now_ts}] [第 {round_idx} 轮] 执行全市场 60 秒极速同步与期权扫描...")
+            print("-" * 75)
+            run_radar_cycle(is_first_run=False, round_idx=round_idx)
+            # 云端同步持久化至 Git 仓库，令手机端 GitHub Pages 秒级保持最新
+            try:
+                subprocess.run(
+                    ["git", "add", "index.html", "futu_pro_terminal.html", ".terminal_notifications.json", ".options_cache.json", ".radar_alert_history.json"],
+                    check=False, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL
+                )
+                subprocess.run(
+                    ["git", "commit", "-m", f"⚡ [云端同步] 第 {round_idx} 轮 60s 极速实盘刷新 [skip ci]"],
+                    check=False, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL
+                )
+                subprocess.run(
+                    ["git", "push"],
+                    check=False, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL
+                )
+            except Exception:
+                pass
+            round_idx += 1
+            cost = time.time() - c_start
+            sleep_time = max(2.0, 60.0 - cost)
+            print(f"[*] 本轮扫描耗时 {cost:.1f}s，休眠 {sleep_time:.1f}s 后进入下一轮...")
+            time.sleep(sleep_time)
+        print("\n✅ 云端守护计划周期已圆满完成。")
+        sys.exit(0)
+
     total_etfs = len(MONITORED_TARGETS['ETFS'])
     total_stocks = len(MONITORED_TARGETS['STOCKS'])
     total_targets = total_etfs + total_stocks
     print(f"🚀 启动 Integrated Market Radar 智能轮询守护引擎 ({total_targets} 标的全量架构)")
-    print(f"监控标的: {total_etfs} 只宏观/行业 ETF + {total_stocks} 只核心个股 (共 {total_targets} 只标的) | 自动轮询: 180 秒 (3分钟)")
+    print(f"监控标的: {total_etfs} 只宏观/行业 ETF + {total_stocks} 只核心个股 (共 {total_targets} 只标的) | 自动轮询: 60 秒 (1分钟极速)")
     print(f"频控保护: workers=4, jitter=0.02~0.06s, 智能 429 降级保护")
     print(f"同步锁机制: 实时监听 .radar_last_sync，手动刷新批处理自动重置倒计时，彻底杜绝冲突")
     print("提示: 按 Ctrl+C 可随时安全退出。")
@@ -3165,7 +3209,7 @@ def main():
 
     round_count = 1
 
-    # 首次启动：先检查距离上一次刷新是否已满 180 秒，或直接执行第一轮
+    # 首次启动：先检查距离上一次刷新是否已满 60 秒，或直接执行第一轮
     last_sync = get_last_sync_time()
     elapsed = time.time() - last_sync
     if elapsed >= SYNC_INTERVAL or last_sync == 0.0:

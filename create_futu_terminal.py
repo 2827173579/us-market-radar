@@ -57,7 +57,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="180">
+    <meta http-equiv="refresh" content="60">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -1531,7 +1531,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
         <div style="display: flex; align-items: center; gap: 14px;">
             <span style="color: #60a5fa; cursor: pointer; text-decoration: underline;" onclick="toggleFullscreen()" title="点击全屏或按F11">🖥️ 全屏模式(F11)</span>
             <span style="color: #9ca3af;">💡 按 <b>Ctrl + -</b> 可调小比例更清爽</span>
-            <span>⏱️ 3分钟自动轮询 | 标的池: {len(stocks_data) + len(macro_data)}只 | 数据更新于: {update_time_str}</span>
+            <span>⏱️ 1分钟极速自动轮询 | 标的池: {len(stocks_data) + len(macro_data)}只 | 数据更新于: {update_time_str}</span>
         </div>
     </footer>
 

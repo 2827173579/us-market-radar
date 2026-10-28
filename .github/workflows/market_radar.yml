@@ -1,10 +1,19 @@
-name: US Market Radar 24/7 Engine
+name: US Market Radar 24/7 Engine (1-Min Ultra-Fast)
 
 on:
   schedule:
-    # 美东时间 周一至周五 08:00 ~ 18:00 (UTC 12:00 ~ 22:59)，每 10 分钟自动轮询一次
-    - cron: '*/10 12-22 * * 1-5'
-  workflow_dispatch: # 随时支持在 GitHub 网页上点击一键即时触发
+    # 1. 美股盘前 + 早盘冲锋段 (UTC 12:30 / 美东 08:30 / 韩国 21:30 启动，云端常驻运行 240 分钟，每 60 秒极速轮询)
+    - cron: '30 12 * * 1-5'
+    # 2. 美股午盘 + 尾盘冲刺 + 盘后段 (UTC 16:30 / 美东 12:30 / 韩国 01:30 启动，云端常驻运行 270 分钟，覆盖至盘后)
+    - cron: '30 16 * * 1-5'
+    # 3. 亚洲/欧洲日间休市时段 (每 2 小时定时静默巡检一次)
+    - cron: '0 0,2,4,6,8,10 * * *'
+  workflow_dispatch:
+    inputs:
+      duration_minutes:
+        description: '持续运行分钟数 (每 60 秒极速扫描并推微信)'
+        required: false
+        default: '60'
 
 permissions:
   contents: write
@@ -29,16 +38,19 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: 🚀 执行全市场 58 只标的即时数据同步与期权扫描
+      - name: 🚀 执行全市场 58 只标的 60 秒极速常驻扫描与微信告警
         env:
           FINNHUB_API_KEY: ${{ secrets.FINNHUB_API_KEY }}
           PUSHPLUS_TOKEN: ${{ secrets.PUSHPLUS_TOKEN }}
         run: |
-          python integrated_market_radar.py --once
-
-      - name: 💾 将最新生成的看板与通知持久化同步至 GitHub Pages
-        run: |
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Actions"
-          git add index.html futu_pro_terminal.html macro_radar.html stocks_radar.html target_watchlist.json user_portfolio.json .terminal_notifications.json .options_cache.json .radar_alert_history.json || true
-          git diff --quiet && git diff --staged --quiet || (git commit -m "⚡ [自动更新] 美股量化雷达实时同步完成 [skip ci]" && git push)
+          # 如果是手动触发，按输入分钟运行；休市定时运行 1 轮；开盘时段常驻 240/270 分钟
+          DURATION="${{ github.event.inputs.duration_minutes || '240' }}"
+          if [ "${{ github.event_name }}" = "schedule" ] && [ "${{ github.event.schedule }}" = "0 0,2,4,6,8,10 * * *" ]; then
+            python integrated_market_radar.py --once
+            git add index.html futu_pro_terminal.html .terminal_notifications.json .options_cache.json .radar_alert_history.json || true
+            git diff --quiet && git diff --staged --quiet || (git commit -m "⚡ [自动更新] 休市定时巡检完成 [skip ci]" && git push)
+          else
+            python integrated_market_radar.py --loop-daemon --duration-minutes $DURATION
+          fi
