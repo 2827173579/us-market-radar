@@ -1,7 +1,7 @@
 [
   {
     "id": "STOP_CCXI_2026-10-28",
-    "time": "10-28 14:29",
+    "time": "10-28 14:31",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -15,7 +15,7 @@
   },
   {
     "id": "5M_SNDK_2026-10-28",
-    "time": "10-28 14:29",
+    "time": "10-28 14:31",
     "category": "5m_entry",
     "cat_label": "🎯 5m买点",
     "level": "success",
@@ -23,7 +23,7 @@
     "name": "闪迪",
     "cat": "闪存存储",
     "price": 1309.898,
-    "pct_change": 3.9233,
+    "pct_change": -0.06360671362412902,
     "title": "🎯 SNDK (闪迪) 触发 5分钟级买点共振",
     "desc": "日线超跌(RSI 36.9)后触发5m量价同步共振：站稳VWAP($1295.81) + 5m量比2.41x(≥1.2x) + 5m RSI(61.7)收阳确认 ｜ ⚠️ 1天后盘后财报(10/29)，谨防财报跳空盲盒(建议减半仓位或等财报落地) ｜ ⚡期权多头共振(🟢 资金偏多看涨, 主力Call $1300 Call (3,476张 · $22.07M))",
     "optimal_limit": 1289.33,
@@ -35,7 +35,7 @@
   },
   {
     "id": "PORT_INTC_HOLD_2026-10-28",
-    "time": "10-28 14:29",
+    "time": "10-28 14:31",
     "category": "portfolio",
     "cat_label": "💼 持仓风控",
     "level": "info",
@@ -54,7 +54,7 @@
   },
   {
     "id": "PORT_SOXL_HOLD_2026-10-28",
-    "time": "10-28 14:29",
+    "time": "10-28 14:31",
     "category": "portfolio",
     "cat_label": "💼 持仓风控",
     "level": "info",
@@ -73,7 +73,7 @@
   },
   {
     "id": "WEATHER_阴天防守_2026-10-28",
-    "time": "10-28 14:29",
+    "time": "10-28 14:31",
     "category": "macro_weather",
     "cat_label": "⛅ 宏观气象",
     "level": "info",
