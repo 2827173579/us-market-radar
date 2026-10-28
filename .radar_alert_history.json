@@ -78,8 +78,8 @@
       "last_notified_at": 0.0
     },
     "SKHY": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1793199473.1401725
     },
     "GOOGL": {
       "state": "NORMAL",
@@ -118,8 +118,8 @@
       "last_notified_at": 0.0
     },
     "NVDA": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1793199240.4752402
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "AMD": {
       "state": "NORMAL",
@@ -170,8 +170,8 @@
       "last_notified_at": 0.0
     },
     "PLTR": {
-      "state": "TAKE_PROFIT",
-      "last_notified_at": 1793199116.8325047
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "QQQM": {
       "state": "WATCHLIST_ENTRY_READY",
