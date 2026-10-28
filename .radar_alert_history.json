@@ -59,7 +59,7 @@
     },
     "SNDK": {
       "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1793146487.151871
+      "last_notified_at": 1793158603.6853025
     },
     "BE": {
       "state": "NORMAL",
@@ -70,8 +70,8 @@
       "last_notified_at": 0.0
     },
     "INTC": {
-      "state": "INTC_TRIM1_READY",
-      "last_notified_at": 1793146487.151871
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "AVGO": {
       "state": "NORMAL",
@@ -182,8 +182,8 @@
       "last_notified_at": 0.0
     },
     "SOXL": {
-      "state": "SOXL_TRIM1_READY",
-      "last_notified_at": 1793146487.151871
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "KORU": {
       "state": "NORMAL",
@@ -219,6 +219,14 @@
     },
     "MRNA": {
       "state": "NORMAL",
+      "last_notified_at": 0.0
+    },
+    "PORT_INTC": {
+      "state": "INTC_NEAR_GOAL",
+      "last_notified_at": 1793158603.6853025
+    },
+    "PORT_SOXL": {
+      "state": "PORT_NORMAL",
       "last_notified_at": 0.0
     }
   }

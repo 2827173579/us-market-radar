@@ -1925,7 +1925,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 else if (filter === "pit" && s.is_pit) match = true;
                 else if (filter === "take_profit" && (s.is_take_profit || (s.signal && (s.signal.includes("止盈") || s.signal.includes("冲顶"))))) match = true;
                 else if (filter === "stop" && (s.is_stop || s.is_deep_pullback || (s.signal && (s.signal.includes("破位") || s.signal.includes("跌破") || s.signal.includes("回踩"))))) match = true;
-                else if (filter === "芯片与半导体" && (s.cat === "芯片算力" || s.cat === "晶圆代工" || s.cat === "制造设备" || s.cat === "通信芯片")) match = true;
+                else if (filter === "芯片与半导体" && (s.cat === "芯片算力" || s.cat === "晶圆代工" || s.cat === "制造设备" || s.cat === "通信芯片" || s.cat === "芯片半导体")) match = true;
                 else if (filter === "存储闪存" && (s.cat === "存储芯片" || s.cat === "闪存存储" || s.cat === "数据存储")) match = true;
                 else if (filter === "云与软件" && (s.cat === "云与软件" || s.cat === "生态平台" || s.cat === "社交AI" || s.cat === "终端硬件" || s.cat === "云与电商" || s.cat === "企业AI" || s.cat === "算力租赁")) match = true;
                 else if (filter === "液冷服务器" && (s.cat === "液冷散热" || s.cat === "服务器ODM")) match = true;
@@ -1948,7 +1948,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 if (filter === "all" || filter === "macro") match = true;
                 else if (filter === "starred" && targetWatchlist.includes(t)) match = true;
                 else if (filter === "pit" && (m.is_pit || (m.signal && m.signal.includes("黄金坑")))) match = true;
-                else if (filter === "take_profit" && (m.is_take_profit || (m.signal && (m.signal.includes("止盈") || m.signal.includes("超买") || m.signal.includes("冲顶") || m.signal.includes("减仓"))))) match = true;
+                else if (filter === "take_profit" && (m.is_take_profit || (m.signal && (m.signal.includes("止盈") || m.signal.includes("超买") || m.signal.includes("冲顶"))))) match = true;
                 else if (filter === "stop" && (m.is_stop || m.is_deep_pullback || (m.signal && (m.signal.includes("破位") || m.signal.includes("跌破") || m.signal.includes("回踩"))))) match = true;
                 else if (filter === "芯片与半导体" && (t === "SMH" || t === "SOXX" || t === "SOXL" || t === "SOXS" || t === "KORU")) match = true;
                 else if (filter === "云与软件" && (t === "QQQM" || t === "IGV" || t === "SQQQ")) match = true;
@@ -2033,7 +2033,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 const isUp = pct >= 0;
                 const pctColor = isUp ? "#00e676" : "#ff5252";
                 const pctBg = isUp ? "rgba(0,230,118,0.15)" : "rgba(255,82,82,0.15)";
-                const isTakeProfit = item.is_take_profit || (item.signal && (item.signal.includes("止盈") || item.signal.includes("超买") || item.signal.includes("冲顶") || item.signal.includes("减仓")));
+                const isTakeProfit = item.is_take_profit || (item.signal && (item.signal.includes("止盈") || item.signal.includes("超买") || item.signal.includes("冲顶")));
                 const isStop = item.is_stop || (item.signal && (item.signal.includes("破位") || item.signal.includes("跌破")));
                 const isPullback = item.is_deep_pullback || (item.signal && item.signal.includes("回踩"));
                 const isStarred = targetWatchlist.includes(item.ticker);
@@ -2216,7 +2216,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 }} else if (curPriceVal >= targetVal) {{
                     descEl.innerHTML = `<span style="color:#00e676; font-weight:bold;">🎉 ${{sessLabel}}解套达成：现价 $${{curPriceVal.toFixed(2)}} 已触达 $${{targetVal.toFixed(2)}} 成本目标，建议分批止盈落袋！</span>`;
                 }} else if (curPriceVal >= trim1) {{
-                    descEl.innerHTML = `<span style="color:#ffd700; font-weight:bold;">🎯 ${{sessLabel}}触达第一减仓位 ($${{trim1.toFixed(2)}})：现价 $${{curPriceVal.toFixed(2)}}，建议立即挂单卖出 ${{trimShareStr}} 股，回笼约 $${{trim1Cash}} 现金降杠杆！</span>`;
+                    descEl.innerHTML = `<span style="color:#38bdf8; font-weight:bold;">📈 ${{sessLabel}}持仓跟踪：现价 $${{curPriceVal.toFixed(2)}} 已越过减仓参考线 ($${{trim1.toFixed(2)}})，技术面处于反转/反抽通道，依托 EMA20 顺势保护。</span>`;
                 }} else {{
                     const distTrim = trim1 - curPriceVal;
                     const isLevEtf = ["SOXL", "KORU", "SQQQ", "SOXS"].includes(ticker);

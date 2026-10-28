@@ -102,7 +102,7 @@ MONITORED_TARGETS = {
         # 7. 价值蓝筹与核心风控仓位
         "KO":    {"name": "可口可乐", "sub": "全球消费防御与抗通胀现金奶牛", "cat": "价值蓝筹", "cost": 0.0, "shares": 0.0, "max_alloc": 900.0, "base_val": 68.0},
         "AXP":   {"name": "美国运通", "sub": "高端消费信贷与抗衰退金融底座", "cat": "金融蓝筹", "cost": 0.0, "shares": 0.0, "max_alloc": 900.0, "base_val": 270.0},
-        "INTC":  {"name": "Intel", "sub": "IDM2.0转型·实盘持仓自救哨", "cat": "专属风控", "cost": 95.53429, "shares": 7.0, "max_alloc": 900.0, "trim1": 91.80, "trim1_shares": 5.0, "base_val": 88.0, "target": 95.53},
+        "INTC":  {"name": "Intel", "sub": "IDM2.0转型·实盘持仓自救哨", "cat": "芯片算力", "cost": 95.53429, "shares": 7.0, "max_alloc": 900.0, "trim1": 91.80, "trim1_shares": 5.0, "base_val": 88.0, "target": 95.53},
 
         # 8. 物理AI与自动驾驶
         "TSLA":  {"name": "特斯拉", "sub": "FSD端到端与物理AI人形机器人", "cat": "物理AI", "cost": 0.0, "shares": 0.0, "max_alloc": 900.0, "base_val": 320.0},
@@ -1213,7 +1213,7 @@ def dispatch_wechat_radar_alerts(macro_data, stocks_data, weather_info, now_str)
         is_stop = s.get("is_stop", False)
         is_etf = ticker in macro_data
 
-        # 当前核心主状态 (只有同时满足：自选盯盘 + 5分钟级日内买点确认就位，才触发 WATCHLIST_ENTRY_READY)
+        # 当前核心技术状态 (自选盯盘+5m买点共振、黄金坑、技术止损、冲顶止盈；持仓股一视同仁，绝不被清零覆盖)
         current_state = "NORMAL"
         if is_stop and not is_etf:
             current_state = "STOP_LOSS"
@@ -1224,27 +1224,7 @@ def dispatch_wechat_radar_alerts(macro_data, stocks_data, weather_info, now_str)
         elif s.get("is_take_profit") and not is_etf:
             current_state = "TAKE_PROFIT"
 
-        # 实盘持仓专属风控与自救减仓监测：全时段实时生效价 active_price 穿透 (支持 user_portfolio.json 动态任意持仓)
-        if s.get("shares", 0) > 0:
-            cost = s.get("cost", 95.53)
-            stop_val = s.get("base_val", 88.00)
-            trim1 = s.get("trim1", 0.0)
-            target = s.get("target", cost)
-            buffer_pct = (active_price - stop_val) / stop_val * 100 if stop_val > 0 else 99.0
-            if stop_val > 0 and active_price <= stop_val:
-                current_state = f"{ticker}_CRITICAL_STOP"  # 破位硬止损
-            elif stop_val > 0 and buffer_pct <= 3.0:
-                current_state = f"{ticker}_NEAR_STOP"      # 距止损 <= 3%，紧迫预警
-            elif target > 0 and active_price >= target:
-                current_state = f"{ticker}_GOAL_ACHIEVED"  # 达标全解套
-            elif trim1 > 0 and active_price >= trim1:
-                current_state = f"{ticker}_TRIM1_READY"    # 触达第一减仓回笼现金位
-            elif target > 0 and (target - active_price) / target <= 0.03:
-                current_state = f"{ticker}_NEAR_GOAL"      # 距解套 <= 3%
-            else:
-                current_state = "NORMAL"              # 普通浮亏/波动区间保持静默，不骚扰微信
-
-        # 判断是否需要报警 (自选建仓就位享受 2 小时冷却，其它状态 4 小时冷却)
+        # 1. 客观技术面报警判定 (自选建仓就位享受 2 小时冷却，其它状态 4 小时冷却)
         prev_record = targets_history.get(ticker, {})
         prev_state = prev_record.get("state", "NORMAL")
         last_notified_at = prev_record.get("last_notified_at", 0.0)
@@ -1257,7 +1237,7 @@ def dispatch_wechat_radar_alerts(macro_data, stocks_data, weather_info, now_str)
             elif (current_time - last_notified_at) >= cooldown:
                 should_alert = True  # 持续异常且满冷却周期，定期提醒
 
-        # 更新历史状态
+        # 更新技术历史状态
         if current_state != "NORMAL":
             targets_history[ticker] = {
                 "state": current_state,
@@ -1291,15 +1271,6 @@ def dispatch_wechat_radar_alerts(macro_data, stocks_data, weather_info, now_str)
                     "top_put_info": s.get("top_put_info", "--"),
                     "exp_move_str": s.get("exp_move_str", "--")
                 })
-            elif s.get("shares", 0) > 0 and current_state.startswith(f"{ticker}_"):
-                intc_alerts.append({
-                    "ticker": ticker, "name": name, "last": active_price,
-                    "state": current_state, "cost": s.get("cost", 95.53),
-                    "shares": s.get("shares", 0.0),
-                    "trim1": s.get("trim1", 0.0), "trim1_shares": s.get("trim1_shares", 0.0),
-                    "stop_val": s.get("base_val", 88.00), "target": s.get("target", 95.53),
-                    "session_tag": session_tag
-                })
             elif current_state == "GOLDEN_PIT":
                 pit_alerts.append({
                     "ticker": ticker, "name": name, "cat": cat, "last": last,
@@ -1317,6 +1288,52 @@ def dispatch_wechat_radar_alerts(macro_data, stocks_data, weather_info, now_str)
                     "ticker": ticker, "name": name, "cat": cat, "last": last,
                     "bias": bias, "rsi": rsi, "reason": s.get("tp_reason", "")
                 })
+
+        # 2. 实盘持仓专属风控底线监测 (硬止损与成本解套)，独立记录冷却，绝不覆盖常规技术面买点与状态！
+        if s.get("shares", 0) > 0:
+            cost = s.get("cost", 95.53)
+            stop_val = s.get("base_val", 88.00)
+            target = s.get("target", cost)
+            buffer_pct = (active_price - stop_val) / stop_val * 100 if stop_val > 0 else 99.0
+            
+            p_state = "PORT_NORMAL"
+            if stop_val > 0 and active_price <= stop_val:
+                p_state = f"{ticker}_CRITICAL_STOP"
+            elif stop_val > 0 and buffer_pct <= 3.0:
+                p_state = f"{ticker}_NEAR_STOP"
+            elif target > 0 and active_price >= target:
+                p_state = f"{ticker}_GOAL_ACHIEVED"
+            elif target > 0 and (target - active_price) / target <= 0.03:
+                p_state = f"{ticker}_NEAR_GOAL"
+            
+            p_key = f"PORT_{ticker}"
+            p_prev = targets_history.get(p_key, {})
+            p_prev_state = p_prev.get("state", "PORT_NORMAL")
+            p_last_notified = p_prev.get("last_notified_at", 0.0)
+            
+            p_alert = False
+            if p_state != "PORT_NORMAL":
+                if p_state != p_prev_state:
+                    p_alert = True
+                elif (current_time - p_last_notified) >= ALERT_COOLDOWN_SECONDS:
+                    p_alert = True
+                targets_history[p_key] = {
+                    "state": p_state,
+                    "last_notified_at": current_time if p_alert else p_last_notified
+                }
+                if p_alert:
+                    intc_alerts.append({
+                        "ticker": ticker, "name": name, "last": active_price,
+                        "state": p_state, "cost": cost,
+                        "shares": s.get("shares", 0.0),
+                        "stop_val": stop_val, "target": target,
+                        "session_tag": session_tag
+                    })
+            else:
+                targets_history[p_key] = {
+                    "state": "PORT_NORMAL",
+                    "last_notified_at": 0.0
+                }
 
     # 2. 宏观气象突变检查
     current_weather = weather_info.get("weather", "晴天做多")
@@ -1528,12 +1545,7 @@ def generate_and_sync_notifications(macro_data, stocks_data, weather_info, now_s
                 p_substate = "GOAL"
                 p_title = f"🎉 {ticker} 达成 ${target:.2f} 全仓解套目标！"
                 p_desc = f"现价 ${active_price:.2f} 已覆盖持仓成本，建议分批落袋锁定本金！"
-            elif trim1 > 0 and active_price >= trim1:
-                p_level = "warning"
-                p_substate = "TRIM1"
-                cash_back = trim1_shares * active_price
-                p_title = f"🎯 {ticker} 触达第一减仓位 (${trim1:.2f})！"
-                p_desc = f"现价 ${active_price:.2f}，建议卖出 {trim1_shares:g} 股回笼约 ${cash_back:.0f} 现金降杠杆！"
+            # 取消机械催卖 TRIM1，持仓进入平稳跟踪
 
             new_notifs.append({
                 "id": f"PORT_{ticker}_{p_substate}_{date_tag}",
@@ -1846,10 +1858,7 @@ def evaluate_stock_signal(
             is_tp = True
             tp_reasons.append(f"放量赶顶滞涨(量比{vol_ratio:.1f},RSI{rsi:.1f})")
 
-        # 规则 3: 个人底仓浮盈丰厚锁定 (浮盈 >= 25%)
-        elif (cost > 0 and (last - cost) / cost >= 0.25):
-            is_tp = True
-            tp_reasons.append(f"持仓浮盈达标(+{(last - cost) / cost * 100:.1f}%)")
+        # 规则 3: 取消机械浮盈止盈，让客观主升浪沿EMA20奔跑
 
         # 规则 4: 跌破 EMA20 移动止盈 (1.前一日在EMA20上方,今日首日跌破; 2.仍在MA50上方且bias>0; 3.不在黄金坑或破位状态; 4.近期曾高位加速)
         is_break_ema20 = (
@@ -2856,7 +2865,19 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
             fib_low = float(df["Fib_Low"].iloc[-1])
             fib_high = float(df["Fib_High"].iloc[-1])
             vol_ratio = float(df["Vol_Ratio"].iloc[-1])
-            eval_res = evaluate_stock_signal(ticker, last, ma50, bias, rsi, vol_ratio, fib_low, fib_high, meta, atr=atr, ema20=ema20)
+            high_bias_recently = bool((df["Bias_MA50"].iloc[max(0, len(df)-11):-1] >= 8.0).any()) if "Bias_MA50" in df and len(df) >= 2 else False
+            prev_rsi = float(df["RSI_14"].iloc[-2]) if len(df) >= 2 else rsi
+            min_rsi_5d = float(df["Min_RSI_5d"].iloc[-1]) if "Min_RSI_5d" in df else rsi
+            pos_60 = float(df["Pos_60"].iloc[-1]) if "Pos_60" in df and not np.isnan(df["Pos_60"].iloc[-1]) else 0.5
+            open_price = float(df["Open"].iloc[-1]) if "Open" in df else last
+            prev_close = float(df["Close"].iloc[-2]) if len(df) >= 2 else last
+            prev_ema20 = float(df["EMA20"].iloc[-2]) if ("EMA20" in df and len(df) >= 2) else ema20
+            eval_res = evaluate_stock_signal(
+                ticker, last, ma50, bias, rsi, vol_ratio, fib_low, fib_high, meta,
+                atr=atr, ema20=ema20, high_bias_recently=high_bias_recently,
+                prev_close=prev_close, prev_ema20=prev_ema20, prev_rsi=prev_rsi,
+                min_rsi_5d=min_rsi_5d, pos_60=pos_60, open_price=open_price
+            )
             intra_eval = evaluate_intraday_entry(
                 active_price, fib_low, fib_high, ma50,
                 eval_res["is_pit"], eval_res["is_stop"], eval_res["dist_to_pit"], intra_info,
