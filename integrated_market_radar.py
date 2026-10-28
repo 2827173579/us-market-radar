@@ -12,6 +12,7 @@ Integrated Market Radar & Futu Pro Terminal - 37 标的全量量化终端与司�
 """
 
 import sys
+import subprocess
 import os
 import time
 import random
