@@ -98,16 +98,16 @@
       "last_notified_at": 0.0
     },
     "LITE": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1793199354.5167103
     },
     "VST": {
       "state": "NORMAL",
       "last_notified_at": 0.0
     },
     "TSM": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1793199354.5167103
     },
     "AXP": {
       "state": "NORMAL",
@@ -130,8 +130,8 @@
       "last_notified_at": 0.0
     },
     "MRVL": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1793199354.5167103
     },
     "HPE": {
       "state": "NORMAL",
@@ -174,12 +174,12 @@
       "last_notified_at": 1793199116.8325047
     },
     "QQQM": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1793199354.5167103
     },
     "SOXX": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1793199354.5167103
     },
     "SOXL": {
       "state": "NORMAL",
@@ -194,8 +194,8 @@
       "last_notified_at": 0.0
     },
     "SOXS": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1793199116.8325047
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "MCD": {
       "state": "NORMAL",
