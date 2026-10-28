@@ -1730,6 +1730,20 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             }});
         }}
 
+        // 优先检查当前浏览器本地持久化缓存 (跨电脑刷新不丢失)
+        try {{
+            const savedCustom = localStorage.getItem("user_custom_portfolio");
+            if (savedCustom) {{
+                const parsed = JSON.parse(savedCustom);
+                if (parsed && typeof parsed === "object" && Object.keys(parsed).length > 0) {{
+                    userPortfolio = parsed;
+                    syncPortfolioToRuntimeData(userPortfolio);
+                    renderWatchlist(currentFilter);
+                    selectTicker(currentTicker);
+                }}
+            }}
+        }} catch(e) {{}}
+
         fetch(`${{API_BASE}}/api/portfolio`)
             .then(r => r.json())
             .then(res => {{
@@ -2909,7 +2923,11 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             }});
 
             userPortfolio = newPort;
+            try {{
+                localStorage.setItem("user_custom_portfolio", JSON.stringify(newPort));
+            }} catch(e) {{}}
 
+            const isLocal = window.location.hostname === "127.0.0.1" || window.location.hostname === "localhost";
             // 1. 同步提交至 8765 守护服务写入 user_portfolio.json
             fetch(`${{API_BASE}}/api/portfolio`, {{
                 method: "POST",
@@ -2918,13 +2936,17 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             }})
             .then(r => r.json())
             .then(res => {{
-                showToast("✅ 持仓已成功保存至 user_portfolio.json！");
+                showToast("✅ 持仓已成功保存至量化主机 user_portfolio.json！");
             }})
             .catch(e => {{
-                const rawParam = encodeURIComponent(JSON.stringify(newPort));
-                fetch(`${{API_BASE}}/api/save_portfolio?data=${{rawParam}}`)
-                    .then(() => showToast("✅ 持仓已成功保存至 user_portfolio.json！"))
-                    .catch(() => showToast("✅ 本地持仓已更新！"));
+                if (isLocal) {{
+                    const rawParam = encodeURIComponent(JSON.stringify(newPort));
+                    fetch(`${{API_BASE}}/api/save_portfolio?data=${{rawParam}}`)
+                        .then(() => showToast("✅ 持仓已成功保存至量化主机 user_portfolio.json！"))
+                        .catch(() => showToast("✅ 本地持仓已更新！"));
+                }} else {{
+                    showToast("✅ 持仓已保存至当前浏览器缓存（刷新不丢失）");
+                }}
             }});
 
             // 2. 实时热更新前端数据源（含清理已删除持仓），无需刷新页面
