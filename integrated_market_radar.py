@@ -518,15 +518,15 @@ def get_us_market_session():
     hour = now_ny.hour + now_ny.minute / 60.0
 
     if weekday >= 5:
-        return "WEEKEND", "周末休市"
+        return "WEEKEND", "☕ 周末休市"
     elif 9.5 <= hour < 16.0:
-        return "REGULAR", "常规交易盘中"
+        return "REGULAR", "🟢 常规盘中"
     elif 4.0 <= hour < 9.5:
         return "PRE_MARKET", "🌅 盘前交易"
     elif 16.0 <= hour < 20.0:
         return "POST_MARKET", "🌙 盘后交易"
     else:
-        return "OVERNIGHT", "🌃 夜盘/盘后"
+        return "OVERNIGHT", "🌌 美股夜盘"
 
 def fetch_intraday_5m_and_ext_data(tickers):
     """
@@ -2846,7 +2846,14 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
                     ext_change = ep - last
                     ext_pct = (ext_change / last) * 100
                     active_price = ep
-                    session_tag = "盘前" if session_code == "PRE_MARKET" else "盘后"
+                    if session_code == "PRE_MARKET":
+                        session_tag = "盘前"
+                    elif session_code == "POST_MARKET":
+                        session_tag = "盘后"
+                    elif session_code == "OVERNIGHT":
+                        session_tag = "夜盘"
+                    else:
+                        session_tag = "休市"
 
             df = compute_indicators(history_dict[ticker])
             history_dict[ticker] = df
@@ -2979,7 +2986,14 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
                     ext_change = ep - last
                     ext_pct = (ext_change / last) * 100
                     active_price = ep
-                    session_tag = "盘前" if session_code == "PRE_MARKET" else "盘后"
+                    if session_code == "PRE_MARKET":
+                        session_tag = "盘前"
+                    elif session_code == "POST_MARKET":
+                        session_tag = "盘后"
+                    elif session_code == "OVERNIGHT":
+                        session_tag = "夜盘"
+                    else:
+                        session_tag = "休市"
 
             df = compute_indicators(history_dict[ticker])
             history_dict[ticker] = df
@@ -3102,7 +3116,7 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
     
     target_watchlist = load_target_watchlist()
     terminal_notifications = generate_and_sync_notifications(macro_data, stocks_sorted, weather_info, now_str)
-    futu_html = build_futu_terminal_html(stocks_sorted, macro_data, weather_info, update_time_str=now_str, has_realtime=has_realtime, target_watchlist=target_watchlist, user_portfolio=user_portfolio, terminal_notifications=terminal_notifications)
+    futu_html = build_futu_terminal_html(stocks_sorted, macro_data, weather_info, update_time_str=now_str, has_realtime=has_realtime, target_watchlist=target_watchlist, user_portfolio=user_portfolio, terminal_notifications=terminal_notifications, session_code=session_code, session_name=session_name)
     with open(FUTU_HTML_FILE, "w", encoding="utf-8") as f:
         f.write(futu_html)
     index_html_path = os.path.join(SCRATCH_DIR, "index.html")

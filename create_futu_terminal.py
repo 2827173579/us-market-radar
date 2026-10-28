@@ -5,7 +5,19 @@ Helper module to build the Futu-Style Pro Terminal (futu_pro_terminal.html)
 """
 import json
 
-def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_str="", has_realtime=False, target_watchlist=None, user_portfolio=None, terminal_notifications=None):
+def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_str="", has_realtime=False, target_watchlist=None, user_portfolio=None, terminal_notifications=None, session_code="REGULAR", session_name="常规盘中"):
+    is_overnight = (session_code == "OVERNIGHT")
+    if session_code == "OVERNIGHT":
+        session_badge_html = '<span class="tool-link" style="color: #c084fc; border: 1px solid rgba(192, 132, 252, 0.45); background: rgba(192, 132, 252, 0.12); padding: 4px 7px; font-weight: 700;">🌌 美股夜盘</span>'
+    elif session_code == "POST_MARKET":
+        session_badge_html = '<span class="tool-link" style="color: #93c5fd; border: 1px solid rgba(147, 197, 253, 0.4); background: rgba(147, 197, 253, 0.1); padding: 4px 7px; font-weight: 700;">🌙 盘后交易</span>'
+    elif session_code == "PRE_MARKET":
+        session_badge_html = '<span class="tool-link" style="color: #fb923c; border: 1px solid rgba(251, 146, 60, 0.4); background: rgba(251, 146, 60, 0.1); padding: 4px 7px; font-weight: 700;">🌅 盘前交易</span>'
+    elif session_code == "WEEKEND":
+        session_badge_html = '<span class="tool-link" style="color: #9ca3af; border: 1px solid rgba(156, 163, 175, 0.4); background: rgba(156, 163, 175, 0.1); padding: 4px 7px;">☕ 周末休市</span>'
+    else:
+        session_badge_html = '<span class="tool-link" style="color: #4ade80; border: 1px solid rgba(74, 222, 128, 0.4); background: rgba(74, 222, 128, 0.1); padding: 4px 7px; font-weight: 700;">🟢 常规盘中</span>'
+
     if target_watchlist is None:
         try:
             import os
@@ -1176,6 +1188,15 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                     <div class="dropdown-item" data-period="240" data-label="4小时">4小时</div>
                 </div>
             </div>
+
+            <!-- 🌌 24H夜盘切换按钮 -->
+            <div class="period-tab" id="btnToggle24h" onclick="toggle24hSession()" style="color:#c084fc; border: 1px solid rgba(192,132,252,0.4); background: rgba(192,132,252,0.12); margin-left: 6px; padding: 0 8px; font-weight: 700;" title="点击切换 24H夜盘全时段 / 传统延展时段">🌌 24H夜盘</div>
+
+            <!-- ⚡ 富途牛牛原生夜盘分时直达入口 -->
+            <a id="btnFutuDirect" href="https://www.futunn.com/stock/INTC-US" target="_blank" style="margin-left: auto; text-decoration: none; display: flex; align-items: center; gap: 4px; padding: 2px 9px; font-size: 11px; font-weight: 700; color: #ff9100; background: rgba(255, 145, 0, 0.12); border: 1px solid rgba(255, 145, 0, 0.35); border-radius: 4px; cursor: pointer; transition: all 0.2s;" title="在富途牛牛中查看原版秒级夜盘分时与深度买卖五档">
+                <span>⚡ 富途牛牛夜盘分时</span>
+                <span style="font-size: 9px; opacity: 0.8;">↗</span>
+            </a>
         </div>
 
         <div class="header-right">
@@ -1191,12 +1212,11 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             </div>
             <!-- 持仓管理 -->
             <button onclick="openPortfolioModal()" class="tool-link" style="background: rgba(255,105,0,0.18); border: 1px solid rgba(255,105,0,0.45); color: #ff6900; font-weight: 700; cursor: pointer; padding: 4px 8px;">💼 实盘持仓</button>
-            <!-- 盘前盘后精简标签 -->
-            <span class="tool-link" style="color: #93c5fd; border: 1px solid rgba(147, 197, 253, 0.3); background: rgba(147, 197, 253, 0.08); padding: 4px 7px;">🌙 盘后</span>
+            <!-- 市场时段状态标签 (动态四元划分) -->
+            {session_badge_html}
             <!-- 外部看板精简按钮 -->
             <a href="stocks_radar.html" target="_blank" class="tool-link" style="padding: 4px 7px;">🎯 个股雷达</a>
             <a href="macro_radar.html" target="_blank" class="tool-link" style="padding: 4px 7px;">🏛️ 司令塔</a>
-            {f'<span class="live-tag" style="padding: 3px 8px;"><span class="live-dot"></span>Finnhub 实时</span>' if has_realtime else '<span class="tool-link" style="padding: 4px 7px;">延时</span>'}
         </div>
     </header>
 
@@ -1810,12 +1830,33 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
         let currentTicker = "INTC";
         let currentInterval = "D";
         let currentStyle = "1"; // 1=K线, 3=分时面积图
+        let is24hSession = true; // 默认开启 24H夜盘
+
+        function toggle24hSession() {{
+            is24hSession = !is24hSession;
+            const btn = document.getElementById("btnToggle24h");
+            if (btn) {{
+                if (is24hSession) {{
+                    btn.style.color = "#c084fc";
+                    btn.style.background = "rgba(192,132,252,0.25)";
+                    btn.style.borderColor = "#c084fc";
+                    btn.innerText = "🌌 24H夜盘 (开)";
+                }} else {{
+                    btn.style.color = "#9ca3af";
+                    btn.style.background = "rgba(156,163,175,0.1)";
+                    btn.style.borderColor = "rgba(156,163,175,0.3)";
+                    btn.innerText = "🌌 24H夜盘 (关)";
+                }}
+            }}
+            loadTvWidget(currentTicker, currentInterval, currentStyle);
+        }}
 
         // 初始化 TradingView 图表挂载
         function loadTvWidget(ticker, interval, style) {{
             const container = document.getElementById("tv_chart_container");
             container.innerHTML = "";
             const tvSymbol = SYMBOL_MAP[ticker] || ("NASDAQ:" + ticker);
+            const targetSession = is24hSession ? "24h" : "extended";
 
             try {{
                 new TradingView.widget({{
@@ -1837,7 +1878,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                         "pre_post_market_sessions"
                     ],
                     "overrides": {{
-                        "mainSeriesProperties.sessionId": "extended"
+                        "mainSeriesProperties.sessionId": targetSession
                     }},
                     "studies": [
                         "MASimple@tv-basicstudies",
@@ -1846,7 +1887,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                     ]
                 }});
             }} catch(e) {{
-                const iframeUrl = `https://s.tradingview.com/widgetembed/?frameElementId=tv_widget&symbol=${{encodeURIComponent(tvSymbol)}}&interval=${{interval}}&hidesidetoolbar=0&symboledit=1&saveimage=0&toolbarbg=14161b&theme=dark&style=${{style||'1'}}&timezone=America%2FNew_York&locale=zh_CN&extended_hours=1&sessionId=extended`;
+                const iframeUrl = `https://s.tradingview.com/widgetembed/?frameElementId=tv_widget&symbol=${{encodeURIComponent(tvSymbol)}}&interval=${{interval}}&hidesidetoolbar=0&symboledit=1&saveimage=0&toolbarbg=14161b&theme=dark&style=${{style||'1'}}&timezone=America%2FNew_York&locale=zh_CN&extended_hours=1&sessionId=${{targetSession}}`;
                 container.innerHTML = `<iframe src="${{iframeUrl}}" style="width:100%; height:100%; border:none;"></iframe>`;
             }}
         }}
@@ -2082,7 +2123,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                         <div class="s-pct" style="color:${{pctColor}}; background:${{pctBg}}; padding:1px 5px; border-radius:3px;">
                             ${{isUp ? '+' : ''}}${{pct.toFixed(2)}}%
                         </div>
-                        ${{hasExt ? `<div style="font-size:10px; color:#93c5fd; margin-top:2px;">🌙${{item.session_tag}} $${{item.ext_price.toFixed(2)}} <span style="color:${{extColor}};">(${{extPct >= 0 ? '+' : ''}}${{extPct.toFixed(2)}}%)</span></div>` : ''}}
+                        ${{hasExt ? `<div style="font-size:10px; color:#93c5fd; margin-top:2px;">${{item.session_tag.includes("夜盘") ? '🌌' : (item.session_tag.includes("盘前") ? '🌅' : '🌙')}}${{item.session_tag}} $${{item.ext_price.toFixed(2)}} <span style="color:${{extColor}};">(${{extPct >= 0 ? '+' : ''}}${{extPct.toFixed(2)}}%)</span></div>` : ''}}
                     </div>
                 `;
 
@@ -2097,6 +2138,12 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             try {{
                 localStorage.setItem("lastSelectedTicker", ticker);
             }} catch(e) {{}}
+
+            // 动态更新富途牛牛原生直达链接
+            const futuBtn = document.getElementById("btnFutuDirect");
+            if (futuBtn) {{
+                futuBtn.href = `https://www.futunn.com/stock/${{ticker}}-US`;
+            }}
 
             // 📱 手机端联动：若在行情列表视图下点击了标的，自动跳到 K线 视窗查看
             if (window.innerWidth <= 768 && currentMobileTab === "watchlist") {{
@@ -2127,7 +2174,8 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                     const extSign = extPct >= 0 ? "+" : "";
                     const extClr = extPct >= 0 ? "#00e676" : "#ff5252";
                     extBadgeEl.style.display = "inline-block";
-                    extBadgeEl.innerHTML = `🌙 ${{data.session_tag}}: <b>$${{data.ext_price.toFixed(2)}}</b> <span style="color:${{extClr}}; margin-left:3px;">(${{extSign}}${{extPct.toFixed(2)}}%)</span>`;
+                    const sIcon = data.session_tag.includes("夜盘") ? "🌌" : (data.session_tag.includes("盘前") ? "🌅" : "🌙");
+                    extBadgeEl.innerHTML = `${{sIcon}} ${{data.session_tag}}: <b>$${{data.ext_price.toFixed(2)}}</b> <span style="color:${{extClr}}; margin-left:3px;">(${{extSign}}${{extPct.toFixed(2)}}%)</span>`;
                 }} else {{
                     extBadgeEl.style.display = "none";
                 }}
