@@ -106,8 +106,8 @@
       "last_notified_at": 0.0
     },
     "TSM": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1793216428.8863544
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "AXP": {
       "state": "NORMAL",
@@ -130,8 +130,8 @@
       "last_notified_at": 0.0
     },
     "MRVL": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1793217143.5638897
     },
     "HPE": {
       "state": "NORMAL",
@@ -170,8 +170,8 @@
       "last_notified_at": 0.0
     },
     "PLTR": {
-      "state": "TAKE_PROFIT",
-      "last_notified_at": 1793214000.806233
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "QQQM": {
       "state": "NORMAL",
@@ -222,8 +222,8 @@
       "last_notified_at": 0.0
     },
     "PORT_INTC": {
-      "state": "INTC_NEAR_GOAL",
-      "last_notified_at": 1793213152.761048
+      "state": "INTC_GOAL_ACHIEVED",
+      "last_notified_at": 1793217143.5638897
     },
     "PORT_SOXL": {
       "state": "SOXL_NEAR_GOAL",
