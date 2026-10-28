@@ -3220,7 +3220,7 @@ def main():
                 )
                 subprocess.run(["git", "pull", "--rebase"], check=False, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
                 subprocess.run(
-                    ["git", "commit", "-m", f"⚡ [云端同步] 第 {round_idx} 轮 {interval_sec}s 极速实盘刷新 [skip ci]"],
+                    ["git", "commit", "-m", f"⚡ [云端同步] 第 {round_idx} 轮 {interval_sec}s 极速实盘刷新"],
                     check=False, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL
                 )
                 subprocess.run(

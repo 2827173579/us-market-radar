@@ -58,6 +58,9 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="refresh" content="60">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
