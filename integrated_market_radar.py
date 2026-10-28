@@ -1806,30 +1806,9 @@ def evaluate_stock_signal(
     is_momentum = False
 
     # --------------------------------------------------------------------------
-    # 分支 A: 实盘持仓专属风控 (支持 user_portfolio.json 动态任意持仓个股)
+    # 分支 A: 反向/波动率衰减型对冲工具 (SQQQ, SOXS, VIXY)
     # --------------------------------------------------------------------------
-    if meta.get("shares", 0) > 0 and meta.get("cost", 0) > 0 and ticker not in MONITORED_TARGETS["ETFS"]:
-        stop_val = meta.get("base_val", 0.0)
-        cost = meta.get("cost", 95.00)
-        trim1 = meta.get("trim1", 0.0)
-        target = meta.get("target", cost)
-        if stop_val > 0 and last <= stop_val:
-            signals.append("🔴 触及硬止损")
-        elif target > 0 and last >= target:
-            signals.append("🟣 达成解套")
-            tp_reasons.append(f"解套目标达成(${target:.2f})")
-        elif trim1 > 0 and last >= trim1:
-            signals.append(f"🎯 触达减仓位(${trim1:.2f})")
-        elif last < cost:
-            dist_cost = ((cost - last) / cost) * 100
-            signals.append(f"🟡 浮亏监测(-{dist_cost:.1f}%)")
-        else:
-            signals.append("🟢 浮盈保护")
-
-    # --------------------------------------------------------------------------
-    # 分支 B: 反向/波动率衰减型对冲工具 (SQQQ, SOXS, VIXY)
-    # --------------------------------------------------------------------------
-    elif ticker in ["SQQQ", "SOXS", "VIXY"]:
+    if ticker in ["SQQQ", "SOXS", "VIXY"]:
         if bias > 5.0 and vol_ratio >= 1.2:
             signals.append("🛡️ 对冲防御激活")
         elif bias < -5.0:
@@ -1838,7 +1817,7 @@ def evaluate_stock_signal(
             signals.append("⚪ 观望对冲")
 
     # --------------------------------------------------------------------------
-    # 分支 C: 常规个股与基准 ETF
+    # 分支 B: 全市场通用客观量化诊断 (持仓标的与观察标的一视同仁，杜绝虚假冲顶)
     # --------------------------------------------------------------------------
     else:
         # 1. 破位止损判定 (量价+K线确认: 放量下跌才是真破位，底部放量反包阳线不作止损)

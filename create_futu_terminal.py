@@ -1923,7 +1923,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 if (filter === "all" || filter === "stocks") match = true;
                 else if (filter === "starred" && targetWatchlist.includes(s.ticker)) match = true;
                 else if (filter === "pit" && s.is_pit) match = true;
-                else if (filter === "take_profit" && (s.is_take_profit || (s.signal && (s.signal.includes("止盈") || s.signal.includes("冲顶") || s.signal.includes("减仓"))))) match = true;
+                else if (filter === "take_profit" && (s.is_take_profit || (s.signal && (s.signal.includes("止盈") || s.signal.includes("冲顶"))))) match = true;
                 else if (filter === "stop" && (s.is_stop || s.is_deep_pullback || (s.signal && (s.signal.includes("破位") || s.signal.includes("跌破") || s.signal.includes("回踩"))))) match = true;
                 else if (filter === "芯片与半导体" && (s.cat === "芯片算力" || s.cat === "晶圆代工" || s.cat === "制造设备" || s.cat === "通信芯片")) match = true;
                 else if (filter === "存储闪存" && (s.cat === "存储芯片" || s.cat === "闪存存储" || s.cat === "数据存储")) match = true;
