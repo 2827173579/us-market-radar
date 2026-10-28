@@ -62,8 +62,8 @@
       "last_notified_at": 0.0
     },
     "BE": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1793218531.7589412
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "ORCL": {
       "state": "NORMAL",
@@ -78,8 +78,8 @@
       "last_notified_at": 0.0
     },
     "SKHY": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1793218531.7589412
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "GOOGL": {
       "state": "NORMAL",
@@ -106,8 +106,8 @@
       "last_notified_at": 0.0
     },
     "TSM": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1793218531.7589412
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "AXP": {
       "state": "NORMAL",
@@ -130,8 +130,8 @@
       "last_notified_at": 1793217505.070341
     },
     "MRVL": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1793218531.7589412
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "HPE": {
       "state": "NORMAL",
@@ -174,12 +174,12 @@
       "last_notified_at": 0.0
     },
     "QQQM": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1793218531.7589412
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "SOXX": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1793218531.7589412
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "SOXL": {
       "state": "NORMAL",
@@ -190,12 +190,12 @@
       "last_notified_at": 0.0
     },
     "SQQQ": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1793218651.8773067
     },
     "SOXS": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1793218651.8773067
     },
     "MCD": {
       "state": "NORMAL",
@@ -226,8 +226,8 @@
       "last_notified_at": 1793218297.9936516
     },
     "PORT_SOXL": {
-      "state": "SOXL_NEAR_GOAL",
-      "last_notified_at": 1793217814.2127407
+      "state": "PORT_NORMAL",
+      "last_notified_at": 0.0
     }
   }
 }
