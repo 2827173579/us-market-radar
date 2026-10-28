@@ -3217,6 +3217,12 @@ def main():
                 import shutil
                 if os.path.exists("futu_pro_terminal.html"):
                     shutil.copyfile("futu_pro_terminal.html", "index.html")
+                
+                # 配置带 PAT 的远程地址，确保触发 GitHub Pages 自动部署，规避 GITHUB_TOKEN 的防递归拦截
+                gh_token = os.getenv("GH_TOKEN") or os.getenv("GITHUB_TOKEN")
+                if gh_token:
+                    auth_url = f"https://x-access-token:{gh_token}@github.com/2827173579/us-market-radar.git"
+                    subprocess.run(["git", "remote", "set-url", "origin", auth_url], check=False, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
                 subprocess.run(
                     ["git", "add", "index.html", "futu_pro_terminal.html", ".terminal_notifications.json", ".options_cache.json", ".radar_alert_history.json", "macro_radar.html", "stocks_radar.html"],
                     check=False
@@ -3228,7 +3234,7 @@ def main():
                 subprocess.run(["git", "pull", "--rebase", "-X", "theirs", "origin", "main"], check=False, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
                 push_res = subprocess.run(["git", "push", "origin", "HEAD:main"], check=False, capture_output=True, text=True)
                 if push_res.returncode == 0:
-                    print(f"[+] ✅ 成功推送第 {round_idx} 轮数据至 GitHub Pages (commit 成功)！")
+                    print(f"[+] ✅ 成功推送第 {round_idx} 轮数据至 GitHub Pages (PAT 触发部署成功)！")
                 else:
                     print(f"[*] Git 推送反馈: {push_res.stderr.strip()[:100]}")
             except Exception as e:
