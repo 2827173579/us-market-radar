@@ -144,10 +144,10 @@ MONITORED_TARGETS = {
 # ==============================================================================
 # 二、 Finnhub 频控与并发抓取引擎 (Jitter + 429 智能降级)
 # ==============================================================================
-FINNHUB_API_KEY = os.environ.get("FINNHUB_API_KEY", "d9be4q1r01qmk4glemdgd9be4q1r01qmk4gleme0")
+FINNHUB_API_KEY = os.environ.get("FINNHUB_API_KEY") or "d9be4q1r01qmk4glemdgd9be4q1r01qmk4gleme0"
 
 # PushPlus 微信推送配置与去重缓存
-PUSHPLUS_TOKEN = os.environ.get("PUSHPLUS_TOKEN", "eca6f1f8c3494843aa7f1170e34fd2b6")
+PUSHPLUS_TOKEN = os.environ.get("PUSHPLUS_TOKEN") or "eca6f1f8c3494843aa7f1170e34fd2b6"
 SCRATCH_DIR = os.path.dirname(os.path.abspath(__file__))
 MACRO_HTML_FILE = os.path.join(SCRATCH_DIR, "macro_radar.html")
 STOCKS_HTML_FILE = os.path.join(SCRATCH_DIR, "stocks_radar.html")
@@ -579,6 +579,7 @@ def fetch_intraday_5m_and_ext_data(tickers):
                     vwap = float((tp_rth * vol_rth).sum() / vol_rth.sum()) if vol_rth.sum() > 0 else float(c[rth_mask].mean())
                     rth_low = float(l[rth_mask].min())
                     rth_high = float(h[rth_mask].max())
+                    rth_close = float(c[rth_mask].iloc[-1])
                     # 剔除 15:55 收盘集合竞价(MOC)脉冲毛刺，计算真实 5m 相对量比
                     rth_no_moc = (ny_idx.date == (ny_idx[rth_mask][-1].date())) & (ny_hr >= 9.5) & (ny_hr < 15.9)
                     vol_clean = v[rth_no_moc] if rth_no_moc.sum() >= 5 else vol_rth
@@ -592,6 +593,7 @@ def fetch_intraday_5m_and_ext_data(tickers):
                     vwap = float(c.iloc[-20:].mean())
                     rth_low = float(l.iloc[-20:].min())
                     rth_high = float(h.iloc[-20:].max())
+                    rth_close = float(c.iloc[-1])
                     rvol_5m = 1.0
 
                 # 计算 5 分钟级别 Wilder's RSI(14)
@@ -618,7 +620,8 @@ def fetch_intraday_5m_and_ext_data(tickers):
                     "is_5m_green": is_5m_green,
                     "is_5m_higher_low": is_5m_higher_low,
                     "rth_low": round(rth_low, 2),
-                    "rth_high": round(rth_high, 2)
+                    "rth_high": round(rth_high, 2),
+                    "rth_close": round(rth_close, 4)
                 }
             except Exception:
                 continue
@@ -2778,8 +2781,9 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
     print(f"[*] 🕒 当前美东市场时段状态: 【{session_name}】")
 
     # 2. 并发秒级拉取 Finnhub 实时报价 (max_workers=2, 稳态间隔防 429)
-    # 免费额度 60次/分。全标的 64 只，优先个股 (49只) + 持仓 ETF (SOXL)，宏观 ETF 走 Yahoo 实盘扩展价
-    finnhub_tickers = [tk for tk in all_tickers if tk in all_stocks or (user_portfolio and tk in user_portfolio) or tk == 'SOXL']
+    # 免费额度 60次/分。全标的 64 只，必须 100% 优先保障 15 只宏观大盘基准 ETF (QQQM/SMH/SPY等决定气象与黄金坑闸门) + 43 只核心科技股 = 58 只走 Finnhub；其余 6 只低波防守股走 Yahoo 5m RTH 实时穿透
+    _defensive_6 = {"KO", "PEP", "MCD", "AXP", "V", "CCXI"}
+    finnhub_tickers = [tk for tk in all_tickers if tk not in _defensive_6 or (user_portfolio and tk in user_portfolio)]
     realtime_quotes = fetch_finnhub_quotes_batch(finnhub_tickers, FINNHUB_API_KEY) if FINNHUB_API_KEY else {}
 
     # 2.5 批量拉取 5 分钟级日内指标 (VWAP / 5m RSI / 5m RVOL) 与盘前盘后最新成交价
@@ -2828,10 +2832,19 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
                 history_dict[ticker].loc[history_dict[ticker].index[-1], "Close"] = last
             else:
                 df_raw = history_dict[ticker]
-                last = float(df_raw["Close"].iloc[-1])
-                change = float(df_raw["Close"].diff().iloc[-1]) if len(df_raw) >= 2 else 0.0
-                pct_change = (change / float(df_raw["Close"].iloc[-2])) * 100 if len(df_raw) >= 2 else 0.0
-                is_realtime = False
+                rth_c = intraday_map.get(ticker, {}).get("rth_close", 0.0)
+                if rth_c > 0:
+                    last = float(rth_c)
+                    prev_c = float(df_raw["Close"].iloc[-1]) if abs(rth_c - float(df_raw["Close"].iloc[-1])) > 0.01 else (float(df_raw["Close"].iloc[-2]) if len(df_raw) >= 2 else last)
+                    change = last - prev_c
+                    pct_change = (change / prev_c) * 100 if prev_c > 0 else 0.0
+                    is_realtime = True
+                    history_dict[ticker].loc[history_dict[ticker].index[-1], "Close"] = last
+                else:
+                    last = float(df_raw["Close"].iloc[-1])
+                    change = float(df_raw["Close"].diff().iloc[-1]) if len(df_raw) >= 2 else 0.0
+                    pct_change = (change / float(df_raw["Close"].iloc[-2])) * 100 if len(df_raw) >= 2 else 0.0
+                    is_realtime = False
 
             # 提取盘前/盘后独立价格与 5m 日内数据
             intra_info = intraday_map.get(ticker, {})
@@ -2940,10 +2953,19 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
                 history_dict[ticker].loc[history_dict[ticker].index[-1], "Close"] = last
             else:
                 df_raw = history_dict[ticker]
-                last = float(df_raw["Close"].iloc[-1])
-                change = float(df_raw["Close"].diff().iloc[-1]) if len(df_raw) >= 2 else 0.0
-                pct_change = (change / float(df_raw["Close"].iloc[-2])) * 100 if len(df_raw) >= 2 else 0.0
-                is_realtime = False
+                rth_c = intraday_map.get(ticker, {}).get("rth_close", 0.0)
+                if rth_c > 0:
+                    last = float(rth_c)
+                    prev_c = float(df_raw["Close"].iloc[-1]) if abs(rth_c - float(df_raw["Close"].iloc[-1])) > 0.01 else (float(df_raw["Close"].iloc[-2]) if len(df_raw) >= 2 else last)
+                    change = last - prev_c
+                    pct_change = (change / prev_c) * 100 if prev_c > 0 else 0.0
+                    is_realtime = True
+                    history_dict[ticker].loc[history_dict[ticker].index[-1], "Close"] = last
+                else:
+                    last = float(df_raw["Close"].iloc[-1])
+                    change = float(df_raw["Close"].diff().iloc[-1]) if len(df_raw) >= 2 else 0.0
+                    pct_change = (change / float(df_raw["Close"].iloc[-2])) * 100 if len(df_raw) >= 2 else 0.0
+                    is_realtime = False
 
             # 提取盘前/盘后独立价格与 5m 日内指标 (不篡改日线 Close，保证 MA50/RSI/日阳线纯净)
             intra_info = intraday_map.get(ticker, {})

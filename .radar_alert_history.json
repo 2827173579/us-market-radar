@@ -90,16 +90,16 @@
       "last_notified_at": 0.0
     },
     "ASML": {
-      "state": "GOLDEN_PIT",
-      "last_notified_at": 1793147653.4529512
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "AMZN": {
       "state": "NORMAL",
       "last_notified_at": 0.0
     },
     "LITE": {
-      "state": "GOLDEN_PIT",
-      "last_notified_at": 1793147653.4529512
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "VST": {
       "state": "NORMAL",
@@ -118,16 +118,16 @@
       "last_notified_at": 0.0
     },
     "NVDA": {
-      "state": "GOLDEN_PIT",
-      "last_notified_at": 1793146487.151871
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "AMD": {
       "state": "NORMAL",
       "last_notified_at": 0.0
     },
     "META": {
-      "state": "GOLDEN_PIT",
-      "last_notified_at": 1793146487.151871
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "MRVL": {
       "state": "NORMAL",
@@ -138,8 +138,8 @@
       "last_notified_at": 0.0
     },
     "MU": {
-      "state": "GOLDEN_PIT",
-      "last_notified_at": 1793146487.151871
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "KO": {
       "state": "NORMAL",
@@ -190,8 +190,8 @@
       "last_notified_at": 0.0
     },
     "SQQQ": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1793149089.9098752
     },
     "SOXS": {
       "state": "NORMAL",
