@@ -20,10 +20,12 @@ on:
         description: '持续运行分钟数'
         required: false
         default: '60'
+        type: string
       interval_seconds:
         description: '每轮轮询间隔秒数 (默认 60s，夜盘推荐 120s)'
         required: false
         default: '60'
+        type: string
 
 permissions:
   contents: write
