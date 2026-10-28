@@ -1722,7 +1722,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             }})
             .catch(e => {{}});
 
-        // TradingView 交易所标的代码映射 (全量 64 只)
+        // TradingView 交易所标的代码映射 (全量 65 只)
         const SYMBOL_MAP = {{
             "QQQM": "NASDAQ:QQQM",
             "SPY": "AMEX:SPY",
@@ -1787,7 +1787,8 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             "MCD": "NYSE:MCD",
             "NKE": "NYSE:NKE",
             "V": "NYSE:V",
-            "PEP": "NASDAQ:PEP"
+            "PEP": "NASDAQ:PEP",
+            "IBIT": "NASDAQ:IBIT"
         }};
 
         let currentTicker = "INTC";
@@ -1951,6 +1952,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 else if (filter === "stop" && (m.is_stop || m.is_deep_pullback || (m.signal && (m.signal.includes("破位") || m.signal.includes("跌破") || m.signal.includes("回踩"))))) match = true;
                 else if (filter === "芯片与半导体" && (t === "SMH" || t === "SOXX" || t === "SOXL" || t === "SOXS" || t === "KORU")) match = true;
                 else if (filter === "云与软件" && (t === "QQQM" || t === "IGV" || t === "SQQQ")) match = true;
+                else if (filter === "物理与安全" && (t === "IBIT")) match = true;
 
                 if (match) {{
                     items.push({{
