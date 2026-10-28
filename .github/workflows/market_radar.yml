@@ -42,7 +42,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: 🚀 执行全市场 58 只标的极速扫描与微信告警
+      - name: 🚀 执行全市场 64 只标的极速扫描与微信告警
         env:
           FINNHUB_API_KEY: ${{ secrets.FINNHUB_API_KEY }}
           PUSHPLUS_TOKEN: ${{ secrets.PUSHPLUS_TOKEN }}

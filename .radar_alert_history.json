@@ -22,8 +22,8 @@
       "last_notified_at": 1793146487.151871
     },
     "NBIS": {
-      "state": "STOP_LOSS",
-      "last_notified_at": 1793146487.151871
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "ASTS": {
       "state": "NORMAL",
@@ -90,52 +90,52 @@
       "last_notified_at": 0.0
     },
     "ASML": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "GOLDEN_PIT",
+      "last_notified_at": 1793147653.4529512
     },
     "AMZN": {
       "state": "NORMAL",
       "last_notified_at": 0.0
     },
     "LITE": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "GOLDEN_PIT",
+      "last_notified_at": 1793147653.4529512
     },
     "VST": {
       "state": "NORMAL",
       "last_notified_at": 0.0
     },
     "TSM": {
-      "state": "GOLDEN_PIT",
-      "last_notified_at": 1793146487.151871
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "AXP": {
       "state": "NORMAL",
       "last_notified_at": 0.0
     },
     "DELL": {
-      "state": "GOLDEN_PIT",
-      "last_notified_at": 1793146487.151871
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "NVDA": {
       "state": "GOLDEN_PIT",
       "last_notified_at": 1793146487.151871
     },
     "AMD": {
-      "state": "GOLDEN_PIT",
-      "last_notified_at": 1793146487.151871
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "META": {
       "state": "GOLDEN_PIT",
       "last_notified_at": 1793146487.151871
     },
     "MRVL": {
-      "state": "GOLDEN_PIT",
-      "last_notified_at": 1793146487.151871
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "HPE": {
-      "state": "GOLDEN_PIT",
-      "last_notified_at": 1793146487.151871
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "MU": {
       "state": "GOLDEN_PIT",
@@ -194,6 +194,30 @@
       "last_notified_at": 0.0
     },
     "SOXS": {
+      "state": "NORMAL",
+      "last_notified_at": 0.0
+    },
+    "MCD": {
+      "state": "NORMAL",
+      "last_notified_at": 0.0
+    },
+    "PEP": {
+      "state": "NORMAL",
+      "last_notified_at": 0.0
+    },
+    "NKE": {
+      "state": "NORMAL",
+      "last_notified_at": 0.0
+    },
+    "V": {
+      "state": "NORMAL",
+      "last_notified_at": 0.0
+    },
+    "LLY": {
+      "state": "NORMAL",
+      "last_notified_at": 0.0
+    },
+    "MRNA": {
       "state": "NORMAL",
       "last_notified_at": 0.0
     }

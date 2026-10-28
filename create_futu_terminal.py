@@ -1207,6 +1207,8 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 <div class="w-tab" data-filter="能源电力">能源与核电</div>
                 <div class="w-tab" data-filter="太空商业">太空商业</div>
                 <div class="w-tab" data-filter="物理与安全">物理AI与资产</div>
+                <div class="w-tab" data-filter="生物医药">生物医药</div>
+                <div class="w-tab" data-filter="价值消费">价值消费</div>
             </div>
             <div class="watchlist-container" id="watchlistContainer">
                 <!-- 由 JavaScript 动态渲染自选股条目 -->
@@ -1720,7 +1722,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             }})
             .catch(e => {{}});
 
-        // TradingView 交易所标的代码映射 (全量 57 只)
+        // TradingView 交易所标的代码映射 (全量 64 只)
         const SYMBOL_MAP = {{
             "QQQM": "NASDAQ:QQQM",
             "SPY": "AMEX:SPY",
@@ -1779,7 +1781,13 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             "SKHY": "NASDAQ:SKHY",
             "STX": "NASDAQ:STX",
             "ORCL": "NYSE:ORCL",
-            "CCXI": "NASDAQ:CCXI"
+            "CCXI": "NASDAQ:CCXI",
+            "LLY": "NYSE:LLY",
+            "MRNA": "NASDAQ:MRNA",
+            "MCD": "NYSE:MCD",
+            "NKE": "NYSE:NKE",
+            "V": "NYSE:V",
+            "PEP": "NASDAQ:PEP"
         }};
 
         let currentTicker = "INTC";
@@ -1924,6 +1932,8 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 else if (filter === "能源电力" && (s.cat === "能源电力" || s.cat === "核能电力")) match = true;
                 else if (filter === "太空商业" && s.cat === "太空商业") match = true;
                 else if (filter === "物理与安全" && (s.cat === "物理AI" || s.cat === "AI安全" || s.cat === "数字资产" || s.cat === "价值蓝筹" || s.cat === "金融蓝筹" || s.cat === "专属风控")) match = true;
+                else if (filter === "生物医药" && (s.cat === "生物医药" || s.cat === "医药健康")) match = true;
+                else if (filter === "价值消费" && (s.cat === "价值蓝筹" || s.cat === "可选消费" || s.cat === "金融科技" || s.cat === "金融蓝筹")) match = true;
                 else if (s.cat === filter) match = true;
 
                 if (match) {{

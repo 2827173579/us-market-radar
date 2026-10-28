@@ -129,7 +129,15 @@ MONITORED_TARGETS = {
 
         # 13. 企业级算力云与资本载体
         "ORCL":  {"name": "甲骨文", "sub": "OCI云基础设施与企业大模型底座", "cat": "云与软件", "cost": 0.0, "shares": 0.0, "max_alloc": 900.0, "base_val": 110.0},
-        "CCXI":  {"name": "Churchill XI", "sub": "科技并购与成长资本载体", "cat": "资本运作", "cost": 0.0, "shares": 0.0, "max_alloc": 900.0, "base_val": 10.0}
+        "CCXI":  {"name": "Churchill XI", "sub": "科技并购与成长资本载体", "cat": "资本运作", "cost": 0.0, "shares": 0.0, "max_alloc": 900.0, "base_val": 10.0},
+
+        # 14. 医药健康、消费龙头与全球支付网络
+        "LLY":   {"name": "礼来", "sub": "全球GLP-1减肥药与制药万亿新贵", "cat": "生物医药", "cost": 0.0, "shares": 0.0, "max_alloc": 900.0, "base_val": 780.0},
+        "MRNA":  {"name": "Moderna", "sub": "mRNA疫苗与肿瘤前沿疗法先锋", "cat": "生物医药", "cost": 0.0, "shares": 0.0, "max_alloc": 900.0, "base_val": 45.0},
+        "MCD":   {"name": "麦当劳", "sub": "全球快餐连锁与抗周期现金流巨无霸", "cat": "价值蓝筹", "cost": 0.0, "shares": 0.0, "max_alloc": 900.0, "base_val": 280.0},
+        "NKE":   {"name": "耐克", "sub": "全球运动鞋服总龙头·去库存与品牌复苏", "cat": "可选消费", "cost": 0.0, "shares": 0.0, "max_alloc": 900.0, "base_val": 70.0},
+        "V":     {"name": "Visa", "sub": "全球卡组织支付网络垄断寡头", "cat": "金融科技", "cost": 0.0, "shares": 0.0, "max_alloc": 900.0, "base_val": 290.0},
+        "PEP":   {"name": "百事可乐", "sub": "食品饮料防守抗通胀消费龙头", "cat": "价值蓝筹", "cost": 0.0, "shares": 0.0, "max_alloc": 900.0, "base_val": 160.0}
     }
 }
 
@@ -2770,7 +2778,9 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
     print(f"[*] 🕒 当前美东市场时段状态: 【{session_name}】")
 
     # 2. 并发秒级拉取 Finnhub 实时报价 (max_workers=2, 稳态间隔防 429)
-    realtime_quotes = fetch_finnhub_quotes_batch(all_tickers, FINNHUB_API_KEY) if FINNHUB_API_KEY else {}
+    # 免费额度 60次/分。全标的 64 只，优先个股 (49只) + 持仓 ETF (SOXL)，宏观 ETF 走 Yahoo 实盘扩展价
+    finnhub_tickers = [tk for tk in all_tickers if tk in all_stocks or (user_portfolio and tk in user_portfolio) or tk == 'SOXL']
+    realtime_quotes = fetch_finnhub_quotes_batch(finnhub_tickers, FINNHUB_API_KEY) if FINNHUB_API_KEY else {}
 
     # 2.5 批量拉取 5 分钟级日内指标 (VWAP / 5m RSI / 5m RVOL) 与盘前盘后最新成交价
     print(f"[*] 📊 正在同步 {len(all_tickers)} 只标的【5分钟级 VWAP/RSI/量比 日内择时指标 & 盘前盘后最新报价】...")
