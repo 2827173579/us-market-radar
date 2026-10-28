@@ -1,13 +1,17 @@
-name: US Market Radar 24/7 Engine (1-Min Ultra-Fast)
+name: US Market Radar 24/7 Engine (All Sessions: Pre, Regular, Post & Night)
 
 on:
   schedule:
-    # 1. 美股盘前 + 早盘冲锋段 (UTC 12:30 / 美东 08:30 / 韩国 21:30 启动，云端常驻运行 240 分钟，每 60 秒极速轮询)
-    - cron: '30 12 * * 1-5'
-    # 2. 美股午盘 + 尾盘冲刺 + 盘后段 (UTC 16:30 / 美东 12:30 / 韩国 01:30 启动，云端常驻运行 270 分钟，覆盖至盘后)
-    - cron: '30 16 * * 1-5'
-    # 3. 亚洲/欧洲日间休市时段 (每 2 小时定时静默巡检一次)
-    - cron: '0 0,2,4,6,8,10 * * *'
+    # 1. 🌙 美股盘前早班车 (美东 04:00~08:00 / 韩国 17:00~21:00，每 15 分钟巡检盘前抢跑)
+    - cron: '*/15 8-11 * * 1-5'
+    # 2. 🔥 盘前冲刺 + 常规早盘 (美东 08:00~12:00 / 韩国 21:00~01:00，常驻 240 分钟，每 60 秒极速轮询)
+    - cron: '0 12 * * 1-5'
+    # 3. 🎯 午盘 + 尾盘冲刺 + 盘后巨头财报首发 (美东 12:00~16:30 / 韩国 01:00~05:30，常驻 270 分钟，每 60 秒极速轮询)
+    - cron: '0 16 * * 1-5'
+    # 4. 🌙 盘后重头戏与业绩电话会 (美东 16:30~20:00 / 韩国 05:30~09:00，常驻 210 分钟，每 60 秒捕捉财报盘后暴涨暴跌)
+    - cron: '30 20 * * 1-5'
+    # 5. 🌌 夜盘与亚太日间时段 (美东 20:00~04:00 / 韩国 09:00~17:00，每 1 小时自动定时巡检)
+    - cron: '0 0,1,2,3,4,5,6,7 * * *'
   workflow_dispatch:
     inputs:
       duration_minutes:
@@ -38,19 +42,19 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: 🚀 执行全市场 58 只标的 60 秒极速常驻扫描与微信告警
+      - name: 🚀 执行全市场 58 只标的极速扫描与微信告警
         env:
           FINNHUB_API_KEY: ${{ secrets.FINNHUB_API_KEY }}
           PUSHPLUS_TOKEN: ${{ secrets.PUSHPLUS_TOKEN }}
         run: |
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Actions"
-          # 如果是手动触发，按输入分钟运行；休市定时运行 1 轮；开盘时段常驻 240/270 分钟
           DURATION="${{ github.event.inputs.duration_minutes || '240' }}"
-          if [ "${{ github.event_name }}" = "schedule" ] && [ "${{ github.event.schedule }}" = "0 0,2,4,6,8,10 * * *" ]; then
+          # 判断如果是定点简易巡检还是盘中常驻守护
+          if [ "${{ github.event_name }}" = "schedule" ] && ( [ "${{ github.event.schedule }}" = "0 0,1,2,3,4,5,6,7 * * *" ] || [ "${{ github.event.schedule }}" = "*/15 8-11 * * 1-5" ] ); then
             python integrated_market_radar.py --once
             git add index.html futu_pro_terminal.html .terminal_notifications.json .options_cache.json .radar_alert_history.json || true
-            git diff --quiet && git diff --staged --quiet || (git commit -m "⚡ [自动更新] 休市定时巡检完成 [skip ci]" && git push)
+            git diff --quiet && git diff --staged --quiet || (git commit -m "⚡ [自动更新] 盘前/夜盘定时巡检完成 [skip ci]" && git push)
           else
             python integrated_market_radar.py --loop-daemon --duration-minutes $DURATION
           fi
