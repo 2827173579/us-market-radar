@@ -34,8 +34,8 @@
       "last_notified_at": 1793268386.3415024
     },
     "FPS": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "STOP_LOSS",
+      "last_notified_at": 1793281228.2419202
     },
     "STX": {
       "state": "STOP_LOSS",
@@ -78,8 +78,8 @@
       "last_notified_at": 0.0
     },
     "SKHY": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1793281228.2419202
     },
     "GOOGL": {
       "state": "STOP_LOSS",
@@ -102,8 +102,8 @@
       "last_notified_at": 0.0
     },
     "VST": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "GOLDEN_PIT",
+      "last_notified_at": 1793281228.2419202
     },
     "TSM": {
       "state": "NORMAL",
@@ -126,16 +126,16 @@
       "last_notified_at": 0.0
     },
     "META": {
-      "state": "GOLDEN_PIT",
-      "last_notified_at": 1793280868.4597266
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1793281228.2419202
     },
     "MRVL": {
       "state": "STOP_LOSS",
       "last_notified_at": 1793280868.4597266
     },
     "HPE": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "GOLDEN_PIT",
+      "last_notified_at": 1793281228.2419202
     },
     "MU": {
       "state": "NORMAL",
@@ -150,8 +150,8 @@
       "last_notified_at": 0.0
     },
     "SPCX": {
-      "state": "GOLDEN_PIT",
-      "last_notified_at": 1793281108.315102
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1793281228.2419202
     },
     "AAPL": {
       "state": "NORMAL",
@@ -174,8 +174,8 @@
       "last_notified_at": 0.0
     },
     "QQQM": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1793281228.2419202
     },
     "SOXX": {
       "state": "NORMAL",
@@ -230,8 +230,8 @@
       "last_notified_at": 0.0
     },
     "PORT_SOXS": {
-      "state": "PORT_NORMAL",
-      "last_notified_at": 0.0
+      "state": "SOXS_HEDGE_CLIMAX",
+      "last_notified_at": 1793281228.2419202
     }
   },
   "position_peaks": {
