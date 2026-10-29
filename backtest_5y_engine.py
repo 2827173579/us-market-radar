@@ -208,7 +208,9 @@ class TransactionLedger:
         replayed_open_summary = {}
         for tk, p in replayed_holdings.items():
             df_tk = indicators_data[tk]
-            final_c = float(df_tk.loc[final_date]["Close"]) if final_date in df_tk.index else p["entry_price"]
+            if final_date not in df_tk.index:
+                raise KeyError(f"CRITICAL: 标的 {tk} 在期末日 {final_date.strftime('%Y-%m-%d')} 缺失收盘价行情，严禁回退伪造价格！")
+            final_c = float(df_tk.loc[final_date]["Close"])
             mv = p["shares"] * final_c
             replayed_terminal_mkt_val += mv
             replayed_open_summary[tk] = {
@@ -284,7 +286,9 @@ class TransactionLedger:
             daily_mkt_val = 0.0
             for tk, pos in cur_holdings.items():
                 df_tk = indicators_data[tk]
-                c_price = float(df_tk.loc[cur_date]["Close"]) if cur_date in df_tk.index else pos["entry_price"]
+                if cur_date not in df_tk.index:
+                    raise KeyError(f"CRITICAL: 标的 {tk} 在持仓日 {cur_date.strftime('%Y-%m-%d')} 缺失收盘价行情，严禁回退伪造价格！")
+                c_price = float(df_tk.loc[cur_date]["Close"])
                 daily_mkt_val += pos["shares"] * c_price
 
             daily_equity = cur_cash + daily_mkt_val
@@ -1284,7 +1288,9 @@ def run_simulation(execution_mode="NEXT_OPEN", custom_data=None, custom_core_sto
 
     for ticker, pos in active_positions.items():
         df_tk = indicators_data[ticker]
-        final_close = float(df_tk.loc[final_date]["Close"]) if final_date in df_tk.index else pos["entry_price"]
+        if final_date not in df_tk.index:
+            raise KeyError(f"CRITICAL: 标的 {ticker} 在期末日 {final_date.strftime('%Y-%m-%d')} 缺失收盘价行情，严禁回退伪造价格！")
+        final_close = float(df_tk.loc[final_date]["Close"])
         mkt_val = pos["shares"] * final_close
         unrealized_dollar = pos["shares"] * (final_close - pos["entry_price"])
         unrealized_pct = ((final_close - pos["entry_price"]) / pos["entry_price"]) * 100.0

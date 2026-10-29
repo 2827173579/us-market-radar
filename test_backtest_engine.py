@@ -642,5 +642,26 @@ class TestProductionBacktestEngine(unittest.TestCase):
             ledger.independent_audit_replay(indicators_data, date)
 
 
+    # --------------------------------------------------------------------------
+    # Test 23: Fault Injection - Missing Close During Holding Raises KeyError
+    # --------------------------------------------------------------------------
+    def test_fault_injection_missing_close_during_holding(self):
+        """
+        Fault Injection: When a position is held on Day T, but Day T Close data
+        is missing from the market DataFrame, reconstruct_daily_equity_curve MUST
+        strictly raise KeyError and REFUSE to silently fallback to entry_price!
+        """
+        res, custom_data = self._create_full_trade_simulation()
+        ledger = res["ledger"]
+
+        # Artificially remove Day 67 from TEST_TK
+        bad_custom_data = dict(custom_data)
+        bad_custom_data["TEST_TK"] = custom_data["TEST_TK"].drop(index=[self.dates[67]])
+
+        with self.assertRaises(KeyError) as ctx:
+            ledger.reconstruct_daily_equity_curve(bad_custom_data, res["trading_dates"])
+        self.assertIn("严禁回退伪造价格", str(ctx.exception))
+
+
 if __name__ == "__main__":
     unittest.main()
