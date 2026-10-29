@@ -83,7 +83,7 @@
     },
     "GOOGL": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793295506.9021878
+      "last_notified_at": 1793310026.65527
     },
     "CEG": {
       "state": "NORMAL",
@@ -98,8 +98,8 @@
       "last_notified_at": 1793302346.138156
     },
     "LITE": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1793310026.65527
     },
     "VST": {
       "state": "NORMAL",
