@@ -38,8 +38,8 @@
       "last_notified_at": 0.0
     },
     "STX": {
-      "state": "STOP_LOSS",
-      "last_notified_at": 1793282788.7345142
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "RKLB": {
       "state": "NORMAL",
@@ -62,8 +62,8 @@
       "last_notified_at": 0.0
     },
     "BE": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1793289267.564279
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "ORCL": {
       "state": "NORMAL",
@@ -78,8 +78,8 @@
       "last_notified_at": 0.0
     },
     "SKHY": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1793289386.5692813
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "GOOGL": {
       "state": "STOP_LOSS",
@@ -98,16 +98,16 @@
       "last_notified_at": 0.0
     },
     "LITE": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1793289507.6061895
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "VST": {
       "state": "NORMAL",
       "last_notified_at": 0.0
     },
     "TSM": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1793289507.6061895
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "AXP": {
       "state": "NORMAL",
@@ -174,12 +174,12 @@
       "last_notified_at": 0.0
     },
     "QQQM": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1793289267.564279
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "SOXX": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1793289507.6061895
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "SOXL": {
       "state": "NORMAL",
@@ -194,8 +194,8 @@
       "last_notified_at": 0.0
     },
     "SOXS": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1793289626.1821797
     },
     "MCD": {
       "state": "NORMAL",
@@ -226,8 +226,8 @@
       "last_notified_at": 1793285786.1037834
     },
     "PORT_SOXL": {
-      "state": "PORT_NORMAL",
-      "last_notified_at": 0.0
+      "state": "SOXL_NEAR_GOAL",
+      "last_notified_at": 1793289626.1821797
     },
     "PORT_SOXS": {
       "state": "PORT_NORMAL",
