@@ -46,8 +46,8 @@
       "last_notified_at": 1793304033.6063118
     },
     "WDC": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "STOP_LOSS",
+      "last_notified_at": 1793307747.0013802
     },
     "VRT": {
       "state": "NORMAL",
@@ -126,8 +126,8 @@
       "last_notified_at": 0.0
     },
     "META": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1793307506.881301
+      "state": "GOLDEN_PIT",
+      "last_notified_at": 1793307747.0013802
     },
     "MRVL": {
       "state": "STOP_LOSS",
@@ -150,8 +150,8 @@
       "last_notified_at": 0.0
     },
     "SPCX": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1793307026.3417022
+      "state": "GOLDEN_PIT",
+      "last_notified_at": 1793307747.0013802
     },
     "AAPL": {
       "state": "NORMAL",
