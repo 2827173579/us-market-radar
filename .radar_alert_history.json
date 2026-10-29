@@ -78,16 +78,16 @@
       "last_notified_at": 0.0
     },
     "SKHY": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1793296705.1547885
     },
     "GOOGL": {
       "state": "STOP_LOSS",
       "last_notified_at": 1793295506.9021878
     },
     "CEG": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "GOLDEN_PIT",
+      "last_notified_at": 1793296705.1547885
     },
     "ASML": {
       "state": "NORMAL",
@@ -106,8 +106,8 @@
       "last_notified_at": 0.0
     },
     "TSM": {
-      "state": "GOLDEN_PIT",
-      "last_notified_at": 1793296345.7697945
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1793296705.1547885
     },
     "AXP": {
       "state": "NORMAL",
@@ -178,8 +178,8 @@
       "last_notified_at": 1793296590.5800402
     },
     "SOXX": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1793296705.1547885
     },
     "SOXL": {
       "state": "NORMAL",
