@@ -78,8 +78,8 @@
       "last_notified_at": 0.0
     },
     "SKHY": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1793281827.5286396
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "GOOGL": {
       "state": "STOP_LOSS",
@@ -102,8 +102,8 @@
       "last_notified_at": 1793281827.5286396
     },
     "VST": {
-      "state": "GOLDEN_PIT",
-      "last_notified_at": 1793281827.5286396
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "TSM": {
       "state": "NORMAL",
@@ -150,8 +150,8 @@
       "last_notified_at": 0.0
     },
     "SPCX": {
-      "state": "GOLDEN_PIT",
-      "last_notified_at": 1793281827.5286396
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1793281947.3441148
     },
     "AAPL": {
       "state": "NORMAL",
