@@ -1,7 +1,7 @@
 [
   {
     "id": "STOP_CCXI_2026-10-29",
-    "time": "10-29 00:13",
+    "time": "10-29 00:28",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -15,7 +15,7 @@
   },
   {
     "id": "5M_META_2026-10-29",
-    "time": "10-29 00:13",
+    "time": "10-29 00:28",
     "category": "5m_entry",
     "cat_label": "🎯 5m买点",
     "level": "success",
@@ -25,17 +25,17 @@
     "price": 616.0408,
     "pct_change": -1.2416,
     "title": "🎯 META (Meta) 触发 5分钟级买点共振",
-    "desc": "日线超跌(RSI 30.8)后触发5m量价同步共振：站稳VWAP($614.81) + 5m量比1.44x(≥1.2x) + 5m RSI(36.7)收阳确认 ｜ ⚡期权多头共振(🟢 资金偏多看涨, 主力Call $630 Call (15,776张 · $4.10M))",
+    "desc": "日线超跌(RSI 30.8)后触发5m量价同步共振：站稳VWAP($614.81) + 5m量比1.44x(≥1.2x) + 5m RSI(36.7)收阳确认 ｜ ⚡期权多头共振(🔥 机构极度看涨, 主力Call $615 Call (2,401张 · $3.54M))",
     "optimal_limit": 606.8,
     "limit_note": "破坑深调·支撑防守单 (-1.5%)",
     "stop_loss": 577.26,
     "batch1_shares": 0.32,
     "batch1_val": 194.2,
-    "options_summary": "🟢 资金偏多看涨 (张数PCR 0.46 / 资金 0.96) | 主力Call $630 Call (15,776张 · $4.10M)"
+    "options_summary": "🔥 机构极度看涨 (张数PCR 0.43 / 资金 0.55) | 主力Call $615 Call (2,401张 · $3.54M)"
   },
   {
     "id": "5M_SKHY_2026-10-29",
-    "time": "10-29 00:13",
+    "time": "10-29 00:28",
     "category": "5m_entry",
     "cat_label": "🎯 5m买点",
     "level": "success",
@@ -45,17 +45,17 @@
     "price": 159.2296,
     "pct_change": 13.3049,
     "title": "🎯 SKHY (SK Hynix) 触发 5分钟级买点共振",
-    "desc": "日内触及黄金坑支撑区($159.23)，连续两根5m K线不创新低且收阳企稳(5m RSI 46.0，量比1.93x) ｜ ⚡期权多头共振(🔥 机构极度看涨, 主力Call $160 Call (15,083张 · $9.64M))",
+    "desc": "日内触及黄金坑支撑区($159.23)，连续两根5m K线不创新低且收阳企稳(5m RSI 46.0，量比1.93x) ｜ ⚡期权多头共振(🟢 资金偏多看涨, 主力Call $160 Call (1,911张 · $1.70M))",
     "optimal_limit": 158.75,
     "limit_note": "已入坑底核心区·贴支撑低吸 (-0.3%)",
     "stop_loss": 152.46,
     "batch1_shares": 1.24,
     "batch1_val": 196.8,
-    "options_summary": "🔥 机构极度看涨 (张数PCR 0.53 / 资金 0.19) | 主力Call $160 Call (15,083张 · $9.64M)"
+    "options_summary": "🟢 资金偏多看涨 (张数PCR 1.01 / 资金 0.48) | 主力Call $160 Call (1,911张 · $1.70M)"
   },
   {
     "id": "TP_CRWD_2026-10-29",
-    "time": "10-29 00:13",
+    "time": "10-29 00:28",
     "category": "take_profit",
     "cat_label": "🟣 冲顶减仓",
     "level": "purple",
@@ -69,7 +69,7 @@
   },
   {
     "id": "5M_QQQM_2026-10-29",
-    "time": "10-29 00:13",
+    "time": "10-29 00:28",
     "category": "5m_entry",
     "cat_label": "🎯 5m买点",
     "level": "success",
@@ -89,7 +89,7 @@
   },
   {
     "id": "5M_SOXX_2026-10-29",
-    "time": "10-29 00:13",
+    "time": "10-29 00:28",
     "category": "5m_entry",
     "cat_label": "🎯 5m买点",
     "level": "success",
@@ -99,17 +99,17 @@
     "price": 511.5,
     "pct_change": 2.1289,
     "title": "🎯 SOXX (费城半导体ETF) 触发 5分钟级买点共振",
-    "desc": "日内触及黄金坑支撑区($511.50)，连续两根5m K线不创新低且收阳企稳(5m RSI 46.2，量比2.04x) ｜ ⚡期权多头共振(🔴 资金偏空对冲, 主力Call $512.5 Call (710张 · $1.02M))",
+    "desc": "日内触及黄金坑支撑区($511.50)，连续两根5m K线不创新低且收阳企稳(5m RSI 46.2，量比2.04x) ｜ ⚡期权多头共振(🔥 机构极度看涨, 主力Call $540 Call (7,618张 · $4.91M))",
     "optimal_limit": 511.87,
     "limit_note": "已入坑底核心区·贴支撑低吸 (+0.1%)",
     "stop_loss": 504.08,
     "batch1_shares": 0.39,
     "batch1_val": 199.6,
-    "options_summary": "🔴 资金偏空对冲 (张数PCR 7.83 / 资金 0.72) | 主力Call $512.5 Call (710张 · $1.02M)"
+    "options_summary": "🔥 机构极度看涨 (张数PCR 0.21 / 资金 0.20) | 主力Call $540 Call (7,618张 · $4.91M)"
   },
   {
     "id": "PORT_SOXS_HOLD_2026-10-29",
-    "time": "10-29 00:13",
+    "time": "10-29 00:28",
     "category": "portfolio",
     "cat_label": "💼 持仓风控",
     "level": "info",
@@ -128,7 +128,7 @@
   },
   {
     "id": "WEATHER_阴天防守_2026-10-29",
-    "time": "10-29 00:13",
+    "time": "10-29 00:28",
     "category": "macro_weather",
     "cat_label": "⛅ 宏观气象",
     "level": "info",
@@ -141,36 +141,36 @@
     "desc": "大盘与核心芯片主线出现分化或均线争夺，市场进入结构性轮动。 ｜ 操盘军规：严格控制总仓位，单股执行 $660(30%) 集中试仓上限，紧盯黄金坑分批防守。 ｜ 🔄 风格主线：硬件休整、软件应用占优（严禁追高芯片，关注软件与高低切）"
   },
   {
-    "id": "STOP_GOOGL_2026-10-28",
-    "time": "10-28 23:59",
+    "id": "STOP_GOOGL_2026-10-29",
+    "time": "10-29 07:42",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
-    "ticker": "GOOGL",
-    "name": "Alphabet",
-    "cat": "生态平台",
-    "price": 292.5012,
-    "pct_change": 1.3444,
-    "title": "🔴 GOOGL (Alphabet) 跌破波段斐波那契下沿",
-    "desc": "偏离 MA50 -14.3%，放量跌破坑底 $342.44，空头宣泄期严禁左侧接刀！"
+    "ticker": "CCXI",
+    "name": "Churchill XI",
+    "cat": "资本运作",
+    "price": 10.2407,
+    "pct_change": 0.14648661344841765,
+    "title": "🔴 CCXI (Churchill XI) 跌破波段斐波那契下沿",
+    "desc": "偏离 MA50 -17.2%，放量跌破坑底 $13.37，空头宣泄期严禁左侧接刀！"
   },
   {
-    "id": "TP_PLTR_2026-10-28",
-    "time": "10-28 23:59",
+    "id": "TP_PLTR_2026-10-29",
+    "time": "10-29 07:42",
     "category": "take_profit",
     "cat_label": "🟣 冲顶减仓",
     "level": "purple",
     "ticker": "PLTR",
     "name": "Palantir",
     "cat": "企业AI",
-    "price": 195.0465,
+    "price": 194.67,
     "pct_change": -0.9661,
     "title": "🟣 PLTR (Palantir) 极度超买，触发高位减仓指令",
-    "desc": "偏离 MA50 +4.7%，RSI 53.9，进入极端冲顶兑现区，建议分批减半锁定利润！"
+    "desc": "偏离 MA50 +4.5%，RSI 53.9，进入极端冲顶兑现区，建议分批减半锁定利润！"
   },
   {
-    "id": "5M_TSM_2026-10-28",
-    "time": "10-28 23:58",
+    "id": "5M_TSM_2026-10-29",
+    "time": "10-29 07:34",
     "category": "5m_entry",
     "cat_label": "🎯 5m买点",
     "level": "success",
