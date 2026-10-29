@@ -39,7 +39,7 @@
     },
     "STX": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793289868.0182133
+      "last_notified_at": 1793304386.7822137
     },
     "RKLB": {
       "state": "STOP_LOSS",
@@ -54,8 +54,8 @@
       "last_notified_at": 0.0
     },
     "AMAT": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "STOP_LOSS",
+      "last_notified_at": 1793304386.7822137
     },
     "SNDK": {
       "state": "STOP_LOSS",
@@ -86,8 +86,8 @@
       "last_notified_at": 1793295506.9021878
     },
     "CEG": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "GOLDEN_PIT",
+      "last_notified_at": 1793304386.7822137
     },
     "ASML": {
       "state": "NORMAL",
@@ -126,8 +126,8 @@
       "last_notified_at": 0.0
     },
     "META": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1793304146.3821645
+      "state": "GOLDEN_PIT",
+      "last_notified_at": 1793304386.7822137
     },
     "MRVL": {
       "state": "STOP_LOSS",
@@ -237,6 +237,6 @@
   "position_peaks": {
     "INTC": 93.49,
     "SOXL": 108.2109,
-    "SOXS": 45.2497
+    "SOXS": 46.78
   }
 }
