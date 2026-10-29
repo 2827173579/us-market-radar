@@ -794,6 +794,7 @@ def run_simulation(execution_mode="NEXT_OPEN", custom_data=None, custom_core_sto
                             "entry_capital": pos["entry_capital"],
                             "pnl_dollar": round(total_trade_pnl_dollar, 2),
                             "pnl_pct": round(total_trade_pnl_pct, 2),
+                            "signal_type": pos.get("signal_type", "🟢 黄金坑低吸"),
                             "exit_reason": order["reason"],
                             "trimmed_50": pos["trimmed"],
                             "is_win": total_trade_pnl_dollar > 0.0
@@ -996,6 +997,7 @@ def run_simulation(execution_mode="NEXT_OPEN", custom_data=None, custom_core_sto
                     "entry_capital": pos["entry_capital"],
                     "pnl_dollar": round(total_trade_pnl_dollar, 2),
                     "pnl_pct": round(total_trade_pnl_pct, 2),
+                    "signal_type": pos.get("signal_type", "🟢 黄金坑低吸"),
                     "exit_reason": exit_reason,
                     "trimmed_50": pos["trimmed"],
                     "is_win": total_trade_pnl_dollar > 0.0
@@ -1114,6 +1116,7 @@ def run_simulation(execution_mode="NEXT_OPEN", custom_data=None, custom_core_sto
                         "entry_capital": pos["entry_capital"],
                         "pnl_dollar": round(total_trade_pnl_dollar, 2),
                         "pnl_pct": round(total_trade_pnl_pct, 2),
+                        "signal_type": pos.get("signal_type", "🟢 黄金坑低吸"),
                         "exit_reason": signal_exit_reason,
                         "trimmed_50": pos["trimmed"],
                         "is_win": total_trade_pnl_dollar > 0.0
