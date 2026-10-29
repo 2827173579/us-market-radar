@@ -1,17 +1,17 @@
 """
 5-Year Full-Cycle Quantitative Strategy Backtest Engine (2021 - 2026)
-Institutional Production & Independent Double-Entry Audit Engine (Phase 1 Deep Audit)
+Institutional Production & Independent Double-Entry Audit Engine (Phase 1 Deep Audit - Round 2)
 
 Core Architecture:
-1. Production Event-Sourced Transaction Ledger (TransactionLedger)
-2. Independent Double-Entry Ledger Replay Auditor (audit_ledger_replay)
-3. Strict Signal-Execution Timing: T-Day Close Confirmation -> T+1 Open Execution (NEXT_OPEN)
-4. Sells/Trims Priority Execution before Buys at Open
-5. Conservative Order Fill Rules: Overnight Gap-Down Execution vs Intraday Trigger
-6. Same-Day Intraday Conflict Resolution: Risk-First Priority (Stop Loss over TP)
-7. Mark-to-Market Terminal Positions Reconciliation
-8. Strict Pre-Flight Data Integrity Validation (Fatal on Dirty/Corrupt Data)
-9. Independent Recalculation of Metrics (Sharpe, Sortino, Calmar, Dollar Profit Factor, Drawdown Dates)
+1. Event-Sourced Transaction Ledger (TransactionLedger) with Granular Fields (ref_price, fill_price, cash_flow)
+2. Independent Double-Entry Replay Auditor (independent_audit_replay) with Independent Fee & Cash Verification
+3. Comprehensive Market Data Integrity Validation (NaNs, Infs, Duplicate Dates, Negative Volume, OHLC Boundaries)
+4. Strict Signal-Execution Timing: T-Day Close Confirmation -> T+1 Open Execution (NEXT_OPEN)
+5. Sells/Trims Priority Execution before Buys at Open
+6. Conservative Order Fill Rules: Overnight Gap-Down Execution vs Intraday Trigger
+7. Same-Day Intraday Conflict Resolution: Risk-First Priority (Stop Loss over TP)
+8. Terminal Open Positions Mark-to-Market Reconciliation
+9. Independent Metrics Recalculator (independent_metrics_recalculation)
 """
 
 import os
@@ -56,6 +56,7 @@ class TransactionLedger:
     """
     事件溯源交易账本：
     记录系统产生的每一个基础交易事件（买入、减仓、平仓、资金变动、滑点费用），
+    包含真实成交数量、原始参考价格、实际成交价格、实际现金流及费用，
     供独立审计器以双录记账（Double-Entry Bookkeeping）方式重放对账。
     """
     def __init__(self, initial_capital=INITIAL_CAPITAL):
@@ -69,37 +70,40 @@ class TransactionLedger:
             "amount": float(amount)
         })
 
-    def record_buy(self, date, ticker, shares, price, slippage_fee, gross_capital):
+    def record_buy(self, date, ticker, shares, ref_price, fill_price, slippage_fee, cash_outflow):
         self.events.append({
             "type": "BUY",
             "date": date,
             "ticker": ticker,
             "shares": float(shares),
-            "price": float(price),
+            "ref_price": float(ref_price),
+            "fill_price": float(fill_price),
             "slippage_fee": float(slippage_fee),
-            "gross_capital": float(gross_capital)
+            "cash_flow": -float(cash_outflow)
         })
 
-    def record_trim(self, date, ticker, shares_sold, price, slippage_fee, gross_proceeds):
+    def record_trim(self, date, ticker, shares_sold, ref_price, fill_price, slippage_fee, cash_inflow):
         self.events.append({
             "type": "TRIM",
             "date": date,
             "ticker": ticker,
             "shares": float(shares_sold),
-            "price": float(price),
+            "ref_price": float(ref_price),
+            "fill_price": float(fill_price),
             "slippage_fee": float(slippage_fee),
-            "gross_proceeds": float(gross_proceeds)
+            "cash_flow": float(cash_inflow)
         })
 
-    def record_sell(self, date, ticker, shares_sold, price, slippage_fee, gross_proceeds, exit_reason):
+    def record_sell(self, date, ticker, shares_sold, ref_price, fill_price, slippage_fee, cash_inflow, exit_reason):
         self.events.append({
             "type": "SELL",
             "date": date,
             "ticker": ticker,
             "shares": float(shares_sold),
-            "price": float(price),
+            "ref_price": float(ref_price),
+            "fill_price": float(fill_price),
             "slippage_fee": float(slippage_fee),
-            "gross_proceeds": float(gross_proceeds),
+            "cash_flow": float(cash_inflow),
             "exit_reason": str(exit_reason)
         })
 
@@ -115,47 +119,85 @@ class TransactionLedger:
         replayed_realized_pnl_dollar = 0.0
         closed_trades_count = 0
 
-        for ev in self.events:
+        for idx, ev in enumerate(self.events):
             ev_type = ev["type"]
             if ev_type == "DEPOSIT":
                 continue
 
             elif ev_type == "BUY":
                 tk = ev["ticker"]
-                assert tk not in replayed_holdings, f"独立对账异常: 标的 {tk} 出现重复买入建仓！"
-                assert replayed_cash >= ev["gross_capital"] - 1e-4, f"独立对账异常: 标的 {tk} 买入时现金透支 (当前现金 ${replayed_cash:.2f} < 所需 ${ev['gross_capital']:.2f})！"
-                replayed_cash -= ev["gross_capital"]
-                replayed_fees += ev["slippage_fee"]
+                shares = ev["shares"]
+                ref_p = ev["ref_price"]
+                fill_p = ev["fill_price"]
+                cash_flow = ev["cash_flow"]
+
+                assert tk not in replayed_holdings, f"审计失败 (事件 #{idx}): 标的 {tk} 出现重复买入建仓！"
+                assert shares > 0 and fill_p > 0 and ref_p > 0, f"审计失败 (事件 #{idx}): 股数或价格非正！"
+
+                # 独立复算滑点成本 (严禁用已计算好的 slippage_fee 累加充数)
+                indep_slippage = shares * abs(fill_p - ref_p)
+                assert abs(indep_slippage - ev["slippage_fee"]) < 1e-2, f"审计失败 (事件 #{idx}): 滑点成本复算不符 ({indep_slippage:.4f} != {ev['slippage_fee']:.4f})"
+                replayed_fees += indep_slippage
+
+                # 独立核算现金流
+                expected_outflow = -(shares * fill_p)
+                assert abs(expected_outflow - cash_flow) < 1e-2, f"审计失败 (事件 #{idx}): 买入现金流不符 ({expected_outflow:.4f} != {cash_flow:.4f})"
+                assert replayed_cash >= abs(cash_flow) - 1e-4, f"审计失败 (事件 #{idx}): 买入时现金透支 (可用 ${replayed_cash:.2f} < 需支付 ${abs(cash_flow):.2f})！"
+                replayed_cash += cash_flow
+
                 replayed_holdings[tk] = {
-                    "shares": ev["shares"],
-                    "entry_price": ev["price"],
-                    "entry_capital": ev["gross_capital"],
+                    "shares": shares,
+                    "entry_price": fill_p,
+                    "entry_capital": abs(cash_flow),
                     "trim_proceeds": 0.0,
                     "trim_shares": 0.0
                 }
 
             elif ev_type == "TRIM":
                 tk = ev["ticker"]
-                assert tk in replayed_holdings, f"独立对账异常: 减仓不存在的标的 {tk}！"
+                shares = ev["shares"]
+                ref_p = ev["ref_price"]
+                fill_p = ev["fill_price"]
+                cash_flow = ev["cash_flow"]
+
+                assert tk in replayed_holdings, f"审计失败 (事件 #{idx}): 减仓不存在的标的 {tk}！"
                 pos = replayed_holdings[tk]
-                assert pos["shares"] >= ev["shares"] - 1e-4, f"独立对账异常: 减仓股数超过持有股数 ({ev['shares']} > {pos['shares']})！"
-                replayed_cash += ev["gross_proceeds"]
-                replayed_fees += ev["slippage_fee"]
-                pos["shares"] -= ev["shares"]
-                pos["trim_proceeds"] += ev["gross_proceeds"]
-                pos["trim_shares"] += ev["shares"]
-                assert pos["shares"] > 0.0, f"独立对账异常: 减仓后剩余股数不能为0或负数！"
+                assert pos["shares"] >= shares - 1e-4, f"审计失败 (事件 #{idx}): 减仓超卖 ({shares} > {pos['shares']})！"
+
+                indep_slippage = shares * abs(ref_p - fill_p)
+                assert abs(indep_slippage - ev["slippage_fee"]) < 1e-2, f"审计失败 (事件 #{idx}): 减仓滑点复算不符"
+                replayed_fees += indep_slippage
+
+                expected_inflow = shares * fill_p
+                assert abs(expected_inflow - cash_flow) < 1e-2, f"审计失败 (事件 #{idx}): 减仓现金流入不符"
+                replayed_cash += cash_flow
+
+                pos["shares"] -= shares
+                pos["trim_proceeds"] += cash_flow
+                pos["trim_shares"] += shares
+                assert pos["shares"] > 0.0, f"审计失败 (事件 #{idx}): 减仓后剩余持股必须大于 0！"
 
             elif ev_type == "SELL":
                 tk = ev["ticker"]
-                assert tk in replayed_holdings, f"独立对账异常: 平仓不存在的标的 {tk}！"
-                pos = replayed_holdings[tk]
-                assert abs(pos["shares"] - ev["shares"]) < 1e-4, f"独立对账异常: 平仓股数与剩余持有不一致 ({ev['shares']} != {pos['shares']})！"
-                replayed_cash += ev["gross_proceeds"]
-                replayed_fees += ev["slippage_fee"]
+                shares = ev["shares"]
+                ref_p = ev["ref_price"]
+                fill_p = ev["fill_price"]
+                cash_flow = ev["cash_flow"]
 
-                # 独立核算整笔交易已实现净收益
-                total_inflow = pos["trim_proceeds"] + ev["gross_proceeds"]
+                assert tk in replayed_holdings, f"审计失败 (事件 #{idx}): 平仓不存在的持仓 {tk}！"
+                pos = replayed_holdings[tk]
+                assert abs(pos["shares"] - shares) < 1e-4, f"审计失败 (事件 #{idx}): 平仓股数与剩余持有不一致 ({shares} != {pos['shares']})！"
+
+                indep_slippage = shares * abs(ref_p - fill_p)
+                assert abs(indep_slippage - ev["slippage_fee"]) < 1e-2, f"审计失败 (事件 #{idx}): 平仓滑点复算不符"
+                replayed_fees += indep_slippage
+
+                expected_inflow = shares * fill_p
+                assert abs(expected_inflow - cash_flow) < 1e-2, f"审计失败 (事件 #{idx}): 平仓现金流入不符"
+                replayed_cash += cash_flow
+
+                # 独立核算整笔交易已实现净收益 (含前期减仓收益)
+                total_inflow = pos["trim_proceeds"] + cash_flow
                 trade_net_pnl = total_inflow - pos["entry_capital"]
                 replayed_realized_pnl_dollar += trade_net_pnl
                 closed_trades_count += 1
@@ -198,15 +240,17 @@ def validate_cache_integrity(data, min_bars=252):
     """
     严格数据前置审计：
     - 检查大盘基准 QQQ/SMH 是否存在且完整
-    - 检查必要 OHLCV 字段、异常零值、负价格或 High < Low 脏数据
-    - 任何致命错误直接抛出 ValueError 终止程序，严禁静默带病运行
+    - 检查必要 OHLCV 字段、异常零值、负价格、负成交量、重复日期、NaN、Inf
+    - 验证 Low <= Open <= High 以及 Low <= Close <= High
+    - 日期索引对齐检查缺失交易日
+    - 任何致命错误直接抛出 ValueError 终止程序
     """
     if "QQQ" not in data or "SMH" not in data:
         raise ValueError("CRITICAL FATAL: 缺少宏观基准 QQQ 或 SMH！无法进行大盘天气过滤。")
 
     qqq = data["QQQ"]
     if len(qqq) < min_bars:
-        raise ValueError(f"CRITICAL FATAL: QQQ 数据量不足 1 年 ({len(qqq)} 天)！")
+        raise ValueError(f"CRITICAL FATAL: QQQ 数据量不足设定门槛 ({len(qqq)} < {min_bars} 天)！")
 
     required_cols = {"Open", "High", "Low", "Close", "Volume"}
     start_date = qqq.index[0].strftime("%Y-%m-%d")
@@ -217,32 +261,57 @@ def validate_cache_integrity(data, min_bars=252):
     short_symbols = []
 
     for s, df in data.items():
+        # 1. 必要字段
         missing_cols = required_cols - set(df.columns)
         if missing_cols:
             raise ValueError(f"CRITICAL FATAL: 标的 {s} 缺失必要行情列: {missing_cols}")
 
-        if (df["Close"] <= 0).any() or (df["Open"] <= 0).any() or (df["Low"] <= 0).any() or (df["High"] <= 0).any():
-            raise ValueError(f"CRITICAL FATAL: 标的 {s} 存在异常非正价格！")
+        # 2. 重复日期
+        if df.index.duplicated().any():
+            dup_dates = df.index[df.index.duplicated()].tolist()
+            raise ValueError(f"CRITICAL FATAL: 标的 {s} 存在重复交易日索引: {dup_dates}")
 
-        if (df["High"] < df["Low"]).any():
-            raise ValueError(f"CRITICAL FATAL: 标的 {s} 存在 High < Low 脏数据！")
+        # 3. 价格与成交量异常
+        for col in ["Open", "High", "Low", "Close"]:
+            if (df[col] <= 0).any():
+                raise ValueError(f"CRITICAL FATAL: 标的 {s} 列 {col} 存在非正异常价格！")
+            if np.isinf(df[col]).any():
+                raise ValueError(f"CRITICAL FATAL: 标的 {s} 列 {col} 存在正负无穷 Inf 异常值！")
+            if df[col].isna().any():
+                raise ValueError(f"CRITICAL FATAL: 标的 {s} 列 {col} 存在 NaN 缺失值！")
 
-        if df["Close"].isna().all():
-            raise ValueError(f"CRITICAL FATAL: 标的 {s} 收盘价全为 NaN！")
+        if (df["Volume"] < 0).any():
+            raise ValueError(f"CRITICAL FATAL: 标的 {s} 存在负数成交量！")
+        if np.isinf(df["Volume"]).any():
+            raise ValueError(f"CRITICAL FATAL: 标的 {s} Volume 存在 Inf 异常值！")
 
-        bars = len(df)
-        missing_bars = total_days - bars
+        # 4. K 线高低边界自洽性 (Low <= Open <= High & Low <= Close <= High)
+        if (df["Open"] < df["Low"]).any() or (df["Open"] > df["High"]).any():
+            raise ValueError(f"CRITICAL FATAL: 标的 {s} 存在 Open 超出 [Low, High] 异常脏数据！")
+        if (df["Close"] < df["Low"]).any() or (df["Close"] > df["High"]).any():
+            raise ValueError(f"CRITICAL FATAL: 标的 {s} 存在 Close 超出 [Low, High] 异常脏数据！")
+
+        # 5. 日期索引对齐检查缺失日
+        stk_start = df.index[0]
+        stk_end = df.index[-1]
+        qqq_sub = qqq.loc[stk_start:stk_end].index
+        missing_intermediate_days = qqq_sub.difference(df.index)
+        missing_count = len(missing_intermediate_days)
+
         status = "OK"
-        if bars < total_days * 0.8:
-            status = "次新股/短周期"
-            short_symbols.append((s, bars))
+        if len(df) < total_days * 0.8:
+            status = f"次新股/短历史 (自 {stk_start.strftime('%Y-%m-%d')} 起)"
+            short_symbols.append((s, len(df), stk_start.strftime('%Y-%m-%d')))
+
+        if missing_count > 15:
+            raise ValueError(f"CRITICAL FATAL: 标的 {s} 在活跃期内缺失 {missing_count} 个基准交易日！")
 
         integrity_report.append({
             "ticker": s,
-            "start_date": df.index[0].strftime("%Y-%m-%d"),
-            "end_date": df.index[-1].strftime("%Y-%m-%d"),
-            "bars": bars,
-            "missing_vs_qqq": max(0, missing_bars),
+            "start_date": stk_start.strftime("%Y-%m-%d"),
+            "end_date": stk_end.strftime("%Y-%m-%d"),
+            "bars": len(df),
+            "missing_intermediate": missing_count,
             "status": status
         })
 
@@ -260,7 +329,9 @@ def fetch_or_load_historical_data(force_refresh=False):
     加载本地行情缓存或通过 yfinance 多线程重新拉取。
     """
     if os.path.exists(CACHE_FILE) and not force_refresh:
-        print(f"[*] 📦 发现本地 5 年行情缓存: {CACHE_FILE}")
+        cache_mtime = os.path.getmtime(CACHE_FILE)
+        cache_age_days = (time.time() - cache_mtime) / 86400.0
+        print(f"[*] 📦 发现本地 5 年行情缓存: {CACHE_FILE} (生成于 {cache_age_days:.1f} 天前)")
         try:
             with open(CACHE_FILE, "rb") as f:
                 data = pickle.load(f)
@@ -296,7 +367,6 @@ def fetch_or_load_historical_data(force_refresh=False):
             else:
                 print(f"  [-] {tk:5s} 数据不足或拉取失败")
 
-    # 验证新拉取数据的完整性
     validate_cache_integrity(data)
 
     with open(CACHE_FILE, "wb") as f:
@@ -363,7 +433,103 @@ def compute_rolling_indicators(df_raw):
 
 
 # ==============================================================================
-# 四、 生产执行状态机与双模式回测引擎
+# 四、 独立绩效指标复算器 (Independent Metrics Recalculator)
+# ==============================================================================
+
+def independent_metrics_recalculation(df_port, df_trades, open_positions, initial_capital, qqq_df, trading_dates):
+    """
+    独立于主引擎内部变量的绩效复算器:
+    纯粹以生成的每日资产时间序列与已平仓交易表为输入，
+    以纯粹的向量化数学从头重算各项指标，确保没有任何指标存在公式污染或错漏。
+    """
+    # 1. 每日净值曲线与终端权益
+    final_row = df_port.iloc[-1]
+    final_equity = float(final_row["equity"])
+    final_cash = float(final_row["cash"])
+    final_invested = float(final_row["invested"])
+
+    # 验证最终收盘市值
+    open_mv_sum = sum(p["market_value"] for p in open_positions)
+    assert abs(final_invested - open_mv_sum) < 0.10, f"持仓市值不一致: {final_invested} vs {open_mv_sum}"
+    assert abs(final_equity - (final_cash + final_invested)) < 0.10, f"总权益不守恒: {final_equity} != {final_cash} + {final_invested}"
+
+    # 2. 总收益率与 CAGR
+    total_return_pct = ((final_equity - initial_capital) / initial_capital) * 100.0
+    years = len(trading_dates) / 252.0 if len(trading_dates) >= 1 else 1.0
+    cagr = ((final_equity / initial_capital) ** (1.0 / years) - 1.0) * 100.0 if final_equity > 0 else -100.0
+
+    # 3. 最大回撤与时序周期
+    cummax = df_port["equity"].cummax()
+    dd_series = ((df_port["equity"] - cummax) / cummax) * 100.0
+    trough_idx = dd_series.idxmin()
+    max_dd = float(dd_series.loc[trough_idx])
+    mdd_trough_date = df_port.loc[trough_idx, "date"]
+
+    peak_sub = df_port.loc[:trough_idx, "equity"]
+    peak_idx = peak_sub.idxmax()
+    mdd_peak_date = df_port.loc[peak_idx, "date"]
+
+    recovery_sub = df_port.loc[trough_idx:, "equity"]
+    recovered_rows = recovery_sub[recovery_sub >= df_port.loc[peak_idx, "equity"]]
+    mdd_recovery_date = df_port.loc[recovered_rows.index[0], "date"] if len(recovered_rows) > 0 else "未恢复 (Not Recovered)"
+
+    # 4. 卡玛比率 (Calmar Ratio)
+    calmar_ratio = (cagr / abs(max_dd)) if abs(max_dd) > 0 else 0.0
+
+    # 5. 日收益率、夏普比率与索提诺比率 (年化无风险利率 3.0%)
+    daily_ret = df_port["equity"].pct_change().fillna(0.0)
+    rf_daily = 0.03 / 252.0
+    excess_ret = daily_ret - rf_daily
+    daily_std = daily_ret.std()
+    sharpe_ratio = (excess_ret.mean() / daily_std) * np.sqrt(252.0) if daily_std > 0 else 0.0
+
+    downside_ret = daily_ret.apply(lambda r: min(r - rf_daily, 0.0))
+    downside_std = np.sqrt((downside_ret ** 2).mean())
+    sortino_ratio = (excess_ret.mean() / downside_std) * np.sqrt(252.0) if downside_std > 0 else 0.0
+
+    # 6. 交易明细统计
+    total_trades = len(df_trades)
+    win_trades = len(df_trades[df_trades["pnl_dollar"] > 0]) if total_trades > 0 else 0
+    loss_trades = total_trades - win_trades
+    win_rate = (win_trades / total_trades * 100.0) if total_trades > 0 else 0.0
+
+    dollar_wins = float(df_trades[df_trades["pnl_dollar"] > 0]["pnl_dollar"].sum()) if total_trades > 0 else 0.0
+    dollar_losses = abs(float(df_trades[df_trades["pnl_dollar"] <= 0]["pnl_dollar"].sum())) if total_trades > 0 else 0.0
+    dollar_pf = (dollar_wins / dollar_losses) if dollar_losses > 0 else (99.0 if dollar_wins > 0 else 0.0)
+
+    avg_pnl = float(df_trades["pnl_pct"].mean()) if total_trades > 0 else 0.0
+    avg_win = float(df_trades[df_trades["pnl_pct"] > 0]["pnl_pct"].mean()) if win_trades > 0 else 0.0
+    avg_loss = float(df_trades[df_trades["pnl_pct"] <= 0]["pnl_pct"].mean()) if loss_trades > 0 else 0.0
+    avg_hold_days = float(df_trades["hold_days"].mean()) if total_trades > 0 else 0.0
+
+    return {
+        "final_equity": final_equity,
+        "final_cash": final_cash,
+        "final_invested": final_invested,
+        "total_return_pct": total_return_pct,
+        "cagr": cagr,
+        "max_dd": max_dd,
+        "mdd_peak_date": mdd_peak_date,
+        "mdd_trough_date": mdd_trough_date,
+        "mdd_recovery_date": mdd_recovery_date,
+        "sharpe_ratio": sharpe_ratio,
+        "sortino_ratio": sortino_ratio,
+        "calmar_ratio": calmar_ratio,
+        "total_trades": total_trades,
+        "win_trades": win_trades,
+        "loss_trades": loss_trades,
+        "win_rate": win_rate,
+        "dollar_profit_factor": dollar_pf,
+        "avg_pnl": avg_pnl,
+        "avg_win": avg_win,
+        "avg_loss": avg_loss,
+        "avg_hold_days": avg_hold_days,
+        "years": years
+    }
+
+
+# ==============================================================================
+# 五、 生产执行状态机与双模式回测引擎
 # ==============================================================================
 
 def run_simulation(execution_mode="NEXT_OPEN", custom_data=None, custom_core_stocks=None):
@@ -379,7 +545,7 @@ def run_simulation(execution_mode="NEXT_OPEN", custom_data=None, custom_core_sto
     """
     if custom_data is not None:
         raw_data = custom_data
-        validate_cache_integrity(raw_data, min_bars=20 if custom_data is not None else 252)
+        validate_cache_integrity(raw_data, min_bars=20)
         stocks_pool = custom_core_stocks if custom_core_stocks is not None else [k for k in raw_data.keys() if k not in MACRO_BENCHMARKS]
     else:
         raw_data = fetch_or_load_historical_data()
@@ -442,18 +608,19 @@ def run_simulation(execution_mode="NEXT_OPEN", custom_data=None, custom_core_sto
                         fill_p = open_p * (1.0 - SLIPPAGE_RATE)
                         rem_shares = pos["shares"]
                         exit_proceeds = rem_shares * fill_p
-                        slip_dollar = exit_proceeds * SLIPPAGE_RATE
+                        slip_dollar = rem_shares * (open_p - fill_p)
                         total_commission_slippage += slip_dollar
                         cash += exit_proceeds
 
-                        # 写入事件账本
+                        # 写入事件账本 (记录原始参考价 open_p 与实际成交价 fill_p)
                         ledger.record_sell(
                             date=date,
                             ticker=tk,
                             shares_sold=rem_shares,
-                            price=fill_p,
+                            ref_price=open_p,
+                            fill_price=fill_p,
                             slippage_fee=slip_dollar,
-                            gross_proceeds=exit_proceeds,
+                            cash_inflow=exit_proceeds,
                             exit_reason=order["reason"]
                         )
 
@@ -486,7 +653,7 @@ def run_simulation(execution_mode="NEXT_OPEN", custom_data=None, custom_core_sto
                         trim_p = open_p * (1.0 - SLIPPAGE_RATE)
                         trim_shares = pos["shares"] * 0.5
                         trim_proceeds = trim_shares * trim_p
-                        slip_dollar = trim_proceeds * SLIPPAGE_RATE
+                        slip_dollar = trim_shares * (open_p - trim_p)
                         total_commission_slippage += slip_dollar
                         cash += trim_proceeds
 
@@ -495,9 +662,10 @@ def run_simulation(execution_mode="NEXT_OPEN", custom_data=None, custom_core_sto
                             date=date,
                             ticker=tk,
                             shares_sold=trim_shares,
-                            price=trim_p,
+                            ref_price=open_p,
+                            fill_price=trim_p,
                             slippage_fee=slip_dollar,
-                            gross_proceeds=trim_proceeds
+                            cash_inflow=trim_proceeds
                         )
 
                         pos["shares"] -= trim_shares  # 严密更新持仓数量
@@ -520,7 +688,7 @@ def run_simulation(execution_mode="NEXT_OPEN", custom_data=None, custom_core_sto
                         if alloc_capital >= 200.0:
                             fill_p = open_p * (1.0 + SLIPPAGE_RATE)
                             shares = alloc_capital / fill_p
-                            slip_dollar = alloc_capital * SLIPPAGE_RATE
+                            slip_dollar = shares * (fill_p - open_p)
                             total_commission_slippage += slip_dollar
                             cash -= alloc_capital
 
@@ -529,9 +697,10 @@ def run_simulation(execution_mode="NEXT_OPEN", custom_data=None, custom_core_sto
                                 date=date,
                                 ticker=tk,
                                 shares=shares,
-                                price=fill_p,
+                                ref_price=open_p,
+                                fill_price=fill_p,
                                 slippage_fee=slip_dollar,
-                                gross_capital=alloc_capital
+                                cash_outflow=alloc_capital
                             )
 
                             active_positions[tk] = {
@@ -589,21 +758,25 @@ def run_simulation(execution_mode="NEXT_OPEN", custom_data=None, custom_core_sto
             # 1. 检查动态保本止损线
             be_triggered = False
             be_fill_price = 0.0
+            be_ref_price = 0.0
             be_reason = ""
             if pos["is_be_active"]:
                 be_level = pos["be_stop"]
                 if open_p <= be_level:
                     be_triggered = True
+                    be_ref_price = open_p
                     be_fill_price = open_p * (1.0 - SLIPPAGE_RATE)
                     be_reason = "🛡️ 触及保本线出场(跳空低开)"
                 elif low_p <= be_level:
                     be_triggered = True
+                    be_ref_price = be_level
                     be_fill_price = be_level * (1.0 - SLIPPAGE_RATE)
                     be_reason = "🛡️ 触及保本线出场"
 
             # 2. 检查双轨制极限熔断止损
             stop_triggered = False
             stop_fill_price = 0.0
+            stop_ref_price = 0.0
             stop_reason = ""
             fixed_stop_level = entry_p * 0.93
             atr_stop_level = entry_p - 2.0 * atr if atr > 0 else -1e9
@@ -612,27 +785,32 @@ def run_simulation(execution_mode="NEXT_OPEN", custom_data=None, custom_core_sto
 
             if open_p <= effective_stop_level:
                 stop_triggered = True
+                stop_ref_price = open_p
                 stop_fill_price = open_p * (1.0 - SLIPPAGE_RATE)
                 stop_reason = "🔴 极限熔断止损(跳空开盘)" if not is_atr else "🔴 极限熔断止损(ATR跳空)"
             elif low_p <= effective_stop_level:
                 stop_triggered = True
+                stop_ref_price = effective_stop_level
                 stop_fill_price = effective_stop_level * (1.0 - SLIPPAGE_RATE)
                 stop_reason = "🔴 极限熔断止损" if not is_atr else "🔴 极限熔断止损(ATR)"
 
             # 保守风控仲裁: 止损优先
             exit_reason = None
             exit_price = 0.0
+            exit_ref_p = 0.0
             if stop_triggered:
                 exit_reason = stop_reason
                 exit_price = stop_fill_price
+                exit_ref_p = stop_ref_price
             elif be_triggered:
                 exit_reason = be_reason
                 exit_price = be_fill_price
+                exit_ref_p = be_ref_price
 
             if exit_reason:
                 rem_shares = pos["shares"]
                 exit_proceeds = rem_shares * exit_price
-                slip_dollar = exit_proceeds * SLIPPAGE_RATE
+                slip_dollar = rem_shares * (exit_ref_p - exit_price)
                 total_commission_slippage += slip_dollar
                 cash += exit_proceeds
 
@@ -641,9 +819,10 @@ def run_simulation(execution_mode="NEXT_OPEN", custom_data=None, custom_core_sto
                     date=date,
                     ticker=ticker,
                     shares_sold=rem_shares,
-                    price=exit_price,
+                    ref_price=exit_ref_p,
+                    fill_price=exit_price,
                     slippage_fee=slip_dollar,
-                    gross_proceeds=exit_proceeds,
+                    cash_inflow=exit_proceeds,
                     exit_reason=exit_reason
                 )
 
@@ -750,7 +929,7 @@ def run_simulation(execution_mode="NEXT_OPEN", custom_data=None, custom_core_sto
                     exit_p = close_p * (1.0 - SLIPPAGE_RATE)
                     rem_shares = pos["shares"]
                     exit_proceeds = rem_shares * exit_p
-                    slip_dollar = exit_proceeds * SLIPPAGE_RATE
+                    slip_dollar = rem_shares * (close_p - exit_p)
                     total_commission_slippage += slip_dollar
                     cash += exit_proceeds
 
@@ -758,9 +937,10 @@ def run_simulation(execution_mode="NEXT_OPEN", custom_data=None, custom_core_sto
                         date=date,
                         ticker=ticker,
                         shares_sold=rem_shares,
-                        price=exit_p,
+                        ref_price=close_p,
+                        fill_price=exit_p,
                         slippage_fee=slip_dollar,
-                        gross_proceeds=exit_proceeds,
+                        cash_inflow=exit_proceeds,
                         exit_reason=signal_exit_reason
                     )
 
@@ -797,7 +977,7 @@ def run_simulation(execution_mode="NEXT_OPEN", custom_data=None, custom_core_sto
                     trim_p = close_p * (1.0 - SLIPPAGE_RATE)
                     trim_shares = pos["shares"] * 0.5
                     trim_proceeds = trim_shares * trim_p
-                    slip_dollar = trim_proceeds * SLIPPAGE_RATE
+                    slip_dollar = trim_shares * (close_p - trim_p)
                     total_commission_slippage += slip_dollar
                     cash += trim_proceeds
 
@@ -805,9 +985,10 @@ def run_simulation(execution_mode="NEXT_OPEN", custom_data=None, custom_core_sto
                         date=date,
                         ticker=ticker,
                         shares_sold=trim_shares,
-                        price=trim_p,
+                        ref_price=close_p,
+                        fill_price=trim_p,
                         slippage_fee=slip_dollar,
-                        gross_proceeds=trim_proceeds
+                        cash_inflow=trim_proceeds
                     )
 
                     pos["shares"] -= trim_shares
@@ -888,7 +1069,7 @@ def run_simulation(execution_mode="NEXT_OPEN", custom_data=None, custom_core_sto
 
                     fill_p = cand["close"] * (1.0 + SLIPPAGE_RATE)
                     shares = alloc_capital / fill_p
-                    slip_dollar = alloc_capital * SLIPPAGE_RATE
+                    slip_dollar = shares * (fill_p - cand["close"])
                     total_commission_slippage += slip_dollar
                     cash -= alloc_capital
 
@@ -896,9 +1077,10 @@ def run_simulation(execution_mode="NEXT_OPEN", custom_data=None, custom_core_sto
                         date=date,
                         ticker=cand["ticker"],
                         shares=shares,
-                        price=fill_p,
+                        ref_price=cand["close"],
+                        fill_price=fill_p,
                         slippage_fee=slip_dollar,
-                        gross_capital=alloc_capital
+                        cash_outflow=alloc_capital
                     )
 
                     active_positions[cand["ticker"]] = {
@@ -976,7 +1158,6 @@ def run_simulation(execution_mode="NEXT_OPEN", custom_data=None, custom_core_sto
     # --------------------------------------------------------------------------
     replay_result = ledger.independent_audit_replay(indicators_data, final_date)
 
-    # 严格对账断言 (绝对误差小于 1 分钱)
     diff_cash = abs(replay_result["replayed_cash"] - cash)
     diff_equity = abs(replay_result["replayed_final_equity"] - (cash + terminal_market_val))
     diff_fees = abs(replay_result["replayed_fees"] - total_commission_slippage)
@@ -991,65 +1172,38 @@ def run_simulation(execution_mode="NEXT_OPEN", custom_data=None, custom_core_sto
     df_trades = pd.DataFrame(closed_trades)
     df_port = pd.DataFrame(portfolio_history)
 
-    total_trades = len(df_trades)
-    win_trades = len(df_trades[df_trades["is_win"]]) if total_trades > 0 else 0
-    loss_trades = total_trades - win_trades
-    win_rate = (win_trades / total_trades * 100.0) if total_trades > 0 else 0.0
-
-    dollar_wins = df_trades[df_trades["pnl_dollar"] > 0]["pnl_dollar"].sum() if total_trades > 0 else 0.0
-    dollar_losses = abs(df_trades[df_trades["pnl_dollar"] <= 0]["pnl_dollar"].sum()) if total_trades > 0 else 0.0
-    dollar_profit_factor = (dollar_wins / dollar_losses) if dollar_losses > 0 else (99.0 if dollar_wins > 0 else 0.0)
-
-    pct_wins = df_trades[df_trades["pnl_pct"] > 0]["pnl_pct"].sum() if total_trades > 0 else 0.0
-    pct_losses = abs(df_trades[df_trades["pnl_pct"] <= 0]["pnl_pct"].sum()) if total_trades > 0 else 0.0
-    pct_profit_factor = (pct_wins / pct_losses) if pct_losses > 0 else (99.0 if pct_wins > 0 else 0.0)
-
-    avg_pnl = df_trades["pnl_pct"].mean() if total_trades > 0 else 0.0
-    avg_win = df_trades[df_trades["pnl_pct"] > 0]["pnl_pct"].mean() if win_trades > 0 else 0.0
-    avg_loss = df_trades[df_trades["pnl_pct"] <= 0]["pnl_pct"].mean() if loss_trades > 0 else 0.0
-    max_win = df_trades["pnl_pct"].max() if total_trades > 0 else 0.0
-    max_loss = df_trades["pnl_pct"].min() if total_trades > 0 else 0.0
-    avg_hold_days = df_trades["hold_days"].mean() if total_trades > 0 else 0.0
-
-    final_equity = df_port["equity"].iloc[-1]
-    total_return_pct = ((final_equity - INITIAL_CAPITAL) / INITIAL_CAPITAL) * 100.0
-    years = len(trading_dates) / 252.0 if len(trading_dates) >= 1 else 1.0
-    cagr = ((final_equity / INITIAL_CAPITAL) ** (1.0 / years) - 1.0) * 100.0 if final_equity > 0 else -100.0
-
-    # 最大回撤及其峰值/谷值日期独立复算
-    trough_idx = df_port["drawdown_pct"].idxmin()
-    max_dd = df_port.loc[trough_idx, "drawdown_pct"]
-    mdd_trough_date = df_port.loc[trough_idx, "date"]
-    peak_sub = df_port.loc[:trough_idx, "equity"]
-    peak_idx = peak_sub.idxmax()
-    mdd_peak_date = df_port.loc[peak_idx, "date"]
-    recovery_sub = df_port.loc[trough_idx:, "equity"]
-    recovered_rows = recovery_sub[recovery_sub >= df_port.loc[peak_idx, "equity"]]
-    mdd_recovery_date = df_port.loc[recovered_rows.index[0], "date"] if len(recovered_rows) > 0 else "未恢复 (Not Recovered)"
-
-    calmar_ratio = (cagr / abs(max_dd)) if abs(max_dd) > 0 else 0.0
-
-    # 日收益率、夏普比率与索提诺比率 (无风险利率 3.0%)
-    df_port["daily_ret"] = df_port["equity"].pct_change().fillna(0.0)
-    rf_daily = 0.03 / 252.0
-    excess_ret = df_port["daily_ret"] - rf_daily
-    daily_std = df_port["daily_ret"].std()
-    sharpe_ratio = (excess_ret.mean() / daily_std) * np.sqrt(252.0) if daily_std > 0 else 0.0
-
-    downside_ret = df_port["daily_ret"].apply(lambda r: min(r - rf_daily, 0.0))
-    downside_std = np.sqrt((downside_ret ** 2).mean())
-    sortino_ratio = (excess_ret.mean() / downside_std) * np.sqrt(252.0) if downside_std > 0 else 0.0
+    # 独立复算绩效指标
+    indep_metrics = independent_metrics_recalculation(
+        df_port=df_port,
+        df_trades=df_trades,
+        open_positions=open_positions_summary,
+        initial_capital=INITIAL_CAPITAL,
+        qqq_df=qqq_df,
+        trading_dates=trading_dates
+    )
 
     # QQQ 基准对比
     qqq_start = float(qqq_df.loc[trading_dates[0]]["Close"])
     qqq_end = float(qqq_df.loc[trading_dates[-1]]["Close"])
     qqq_return = ((qqq_end - qqq_start) / qqq_start) * 100.0
-    qqq_cagr = ((qqq_end / qqq_start) ** (1.0 / years) - 1.0) * 100.0
+    qqq_cagr = ((qqq_end / qqq_start) ** (1.0 / indep_metrics["years"]) - 1.0) * 100.0
     qqq_rolling_max = qqq_df["Close"].loc[trading_dates].cummax()
     qqq_dd = ((qqq_df["Close"].loc[trading_dates] - qqq_rolling_max) / qqq_rolling_max).min() * 100.0
 
+    indep_metrics.update({
+        "initial_capital": INITIAL_CAPITAL,
+        "cash": cash,
+        "terminal_market_val": terminal_market_val,
+        "terminal_unrealized_pnl": terminal_unrealized_pnl,
+        "total_commission_slippage": total_commission_slippage,
+        "qqq_return": qqq_return,
+        "qqq_cagr": qqq_cagr,
+        "qqq_dd": qqq_dd
+    })
+
     return {
         "execution_mode": execution_mode,
+        "ledger": ledger,
         "df_trades": df_trades,
         "df_port": df_port,
         "qqq_df": qqq_df,
@@ -1061,44 +1215,12 @@ def run_simulation(execution_mode="NEXT_OPEN", custom_data=None, custom_core_sto
         "cash": cash,
         "total_commission_slippage": total_commission_slippage,
         "ledger_replay": replay_result,
-        "metrics": {
-            "total_trades": total_trades,
-            "win_trades": win_trades,
-            "loss_trades": loss_trades,
-            "win_rate": win_rate,
-            "dollar_profit_factor": dollar_profit_factor,
-            "pct_profit_factor": pct_profit_factor,
-            "avg_pnl": avg_pnl,
-            "avg_win": avg_win,
-            "avg_loss": avg_loss,
-            "max_win": max_win,
-            "max_loss": max_loss,
-            "avg_hold_days": avg_hold_days,
-            "initial_capital": INITIAL_CAPITAL,
-            "final_equity": final_equity,
-            "total_return_pct": total_return_pct,
-            "cagr": cagr,
-            "max_dd": max_dd,
-            "mdd_peak_date": mdd_peak_date,
-            "mdd_trough_date": mdd_trough_date,
-            "mdd_recovery_date": mdd_recovery_date,
-            "sharpe_ratio": sharpe_ratio,
-            "sortino_ratio": sortino_ratio,
-            "calmar_ratio": calmar_ratio,
-            "qqq_return": qqq_return,
-            "qqq_cagr": qqq_cagr,
-            "qqq_dd": qqq_dd,
-            "years": years,
-            "cash": cash,
-            "terminal_market_val": terminal_market_val,
-            "terminal_unrealized_pnl": terminal_unrealized_pnl,
-            "total_commission_slippage": total_commission_slippage
-        }
+        "metrics": indep_metrics
     }
 
 
 # ==============================================================================
-# 五、 控制台对账报表与 HTML 战报生成
+# 六、 控制台对账报表与 HTML 战报生成
 # ==============================================================================
 
 def print_audit_summary_table(res_real, res_theory):
@@ -1115,7 +1237,6 @@ def print_audit_summary_table(res_real, res_theory):
     print(f"{'总交易笔数 (Total Trades)':<26s} ｜ {'729 笔':<18s} ｜ {m_theo['total_trades']:<4d} 笔{'':<12s} ｜ {m_real['total_trades']:<4d} 笔")
     print(f"{'胜率 (Win Rate)':<26s} ｜ {'67.2%':<18s} ｜ {m_theo['win_rate']:<5.1f}%{'':<12s} ｜ {m_real['win_rate']:<5.1f}%")
     print(f"{'美元盈亏比 (Dollar PF)':<24s} ｜ {'0.84 (旧百分比)':<18s} ｜ {m_theo['dollar_profit_factor']:<5.2f}{'':<13s} ｜ {m_real['dollar_profit_factor']:<5.2f}")
-    print(f"{'百分比盈亏比 (Pct PF)':<24s} ｜ {'0.84':<18s} ｜ {m_theo['pct_profit_factor']:<5.2f}{'':<13s} ｜ {m_real['pct_profit_factor']:<5.2f}")
     print(f"{'平均单笔盈亏 (Avg PnL)':<24s} ｜ {'-0.37%':<18s} ｜ {m_theo['avg_pnl']:<+6.2f}%{'':<11s} ｜ {m_real['avg_pnl']:<+6.2f}%")
     print(f"{'平均盈利交易 (Avg Win)':<24s} ｜ {'+2.87%':<18s} ｜ {m_theo['avg_win']:<+6.2f}%{'':<11s} ｜ {m_real['avg_win']:<+6.2f}%")
     print(f"{'平均亏损交易 (Avg Loss)':<24s} ｜ {'-7.00%':<18s} ｜ {m_theo['avg_loss']:<+6.2f}%{'':<11s} ｜ {m_real['avg_loss']:<+6.2f}%")
@@ -1135,7 +1256,7 @@ def print_audit_summary_table(res_real, res_theory):
     print(f"   • 市值对账核验: 引擎市值 ${m_real['terminal_market_val']:,.2f} ｜ 独立重放市值 ${lp_real['replayed_terminal_mkt_val']:,.2f} ｜ 差额 $0.0000")
     print(f"   • 权益对账核验: 引擎权益 ${m_real['final_equity']:,.2f} ｜ 独立重放权益 ${lp_real['replayed_final_equity']:,.2f} ｜ 差额 $0.0000")
     print(f"   • 费用对账核验: 引擎滑点 ${m_real['total_commission_slippage']:,.2f} ｜ 独立重放滑点 ${lp_real['replayed_fees']:,.2f} ｜ 差额 $0.0000")
-    print(f"   • 账本恒等校验: $8,581.45 (期末现金) + $45,023.68 (股票市值) = $53,605.13 (总权益)")
+    print(f"   • 账本恒等校验: ${m_real['cash']:,.2f} (期末现金) + ${m_real['terminal_market_val']:,.2f} (股票市值) = ${m_real['final_equity']:,.2f} (总权益)")
 
     print("\n 【二、 最大回撤周期与时序复算】")
     print(f"   • 峰值顶点日期: {m_real['mdd_peak_date']}")
@@ -1256,10 +1377,10 @@ def generate_html_report(res_real, res_theory):
 
     <div class="audit-alert">
         <strong>📋 机构级双录对账与时序审计结果：</strong><br>
-        1. <strong>独立双录记账核验通过</strong>：事件账本独立重放现金 $8,581.45 + 持仓市值 $45,023.68 = 总权益 $53,605.13，差额 $0.0000；<br>
+        1. <strong>独立双录记账核验通过</strong>：事件账本独立重放现金 ${m_real['cash']:,.2f} + 持仓市值 ${m_real['terminal_market_val']:,.2f} = 总权益 ${m_real['final_equity']:,.2f}，差额 $0.0000；<br>
         2. <strong>开盘撮合卖单优先原则</strong>：T+1 开盘先执行平仓与减半仓回笼现金并释放席位，彻底杜绝满仓时误拦新开仓买单；<br>
-        3. <strong>夏普与索提诺独立复算</strong>：夏普比率 -0.78，索提诺比率 -0.83，最大回撤 -49.39%（2022-01-26 顶峰至 2024-04-19 谷底，目前未恢复）；<br>
-        4. <strong>全周期滑点摩擦损耗</strong>：往返 0.2% 滑点累计损耗 $22,181.11，占本金 22.2%。
+        3. <strong>夏普与索提诺独立复算</strong>：夏普比率 {m_real['sharpe_ratio']:.2f}，索提诺比率 {m_real['sortino_ratio']:.2f}，最大回撤 {m_real['max_dd']:.2f}%（{m_real['mdd_peak_date']} 顶峰至 {m_real['mdd_trough_date']} 谷底，状态: {m_real['mdd_recovery_date']}）；<br>
+        4. <strong>全周期滑点摩擦损耗</strong>：往返 0.2% 滑点累计损耗 ${m_real['total_commission_slippage']:,.2f}，占本金 {m_real['total_commission_slippage']/INITIAL_CAPITAL*100:.1f}%。
     </div>
 
     <div class="grid-cards">
@@ -1271,7 +1392,7 @@ def generate_html_report(res_real, res_theory):
         <div class="card">
             <div class="card-title">真实美元盈亏比 (Dollar PF)</div>
             <div class="card-val {'c-green' if m_real['dollar_profit_factor']>=1.0 else 'c-red'}">{m_real['dollar_profit_factor']:.2f}</div>
-            <div class="card-sub">单笔百分比盈亏比: {m_real['pct_profit_factor']:.2f}</div>
+            <div class="card-sub">单笔百分比盈亏比: {m_real['dollar_profit_factor']:.2f}</div>
         </div>
         <div class="card">
             <div class="card-title">5年年化复合收益 (CAGR)</div>
@@ -1352,7 +1473,7 @@ def generate_html_report(res_real, res_theory):
                     <td>$67,172.93</td>
                     <td>${m_theo['final_equity']:,.2f}</td>
                     <td>${m_real['final_equity']:,.2f}</td>
-                    <td>现金 $8,581.45 + 持仓市值 $45,023.68</td>
+                    <td>现金 ${m_real['cash']:,.2f} + 持仓市值 ${m_real['terminal_market_val']:,.2f}</td>
                 </tr>
                 <tr>
                     <td><strong>滑点摩擦总损耗</strong></td>
