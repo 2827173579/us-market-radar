@@ -1,0 +1,1759 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>美股量化策略 5年全周期回测审计战报 (2021-2026)</title>
+    <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+    <style>
+        body {
+            background-color: #0d1117;
+            color: #c9d1d9;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #30363d;
+            padding-bottom: 16px;
+            margin-bottom: 24px;
+        }
+        .title-box h1 {
+            margin: 0;
+            font-size: 24px;
+            color: #58a6ff;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .title-box p {
+            margin: 6px 0 0 0;
+            color: #8b949e;
+            font-size: 13px;
+        }
+        .nav-btn {
+            background: #238636;
+            color: white;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 13px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: 0.2s;
+        }
+        .nav-btn:hover {
+            background: #2ea043;
+        }
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+        .kpi-card {
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 8px;
+            padding: 16px;
+        }
+        .kpi-label {
+            font-size: 12px;
+            color: #8b949e;
+            margin-bottom: 6px;
+        }
+        .kpi-val {
+            font-size: 24px;
+            font-weight: bold;
+            color: #f0f6fc;
+        }
+        .kpi-sub {
+            font-size: 11px;
+            color: #8b949e;
+            margin-top: 4px;
+        }
+        .chart-box {
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 24px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+        }
+        th, td {
+            padding: 10px 12px;
+            text-align: left;
+            border-bottom: 1px solid #21262d;
+        }
+        th {
+            background: #161b22;
+            color: #8b949e;
+            font-weight: 600;
+        }
+        tr:hover {
+            background: #1f242c;
+        }
+        .badge-win {
+            background: rgba(63, 185, 80, 0.15);
+            color: #3fb950;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+        .badge-loss {
+            background: rgba(248, 81, 73, 0.15);
+            color: #f85149;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="title-box">
+                <h1>🏛️ 美股量化策略 5年全周期回测审计战报</h1>
+                <p>区间: 2021-2026 (4.7 年 · 1200+ 交易日) ｜ 双轨制止损 + 动态保本铁盾 + 双速自适应移动止盈 1:1 实盘复刻</p>
+            </div>
+            <div>
+                <a href="futu_pro_terminal.html" class="nav-btn">📱 返回富途专业看盘终端</a>
+            </div>
+        </div>
+
+        <div class="kpi-grid">
+            <div class="kpi-card">
+                <div class="kpi-label">5年总复利收益 (策略 vs QQQ)</div>
+                <div class="kpi-val" style="color: #f85149;">-60.24%</div>
+                <div class="kpi-sub">QQQ同期基准: +116.70% (超额 Alpha: -176.94%)</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-label">年化复合收益率 (CAGR)</div>
+                <div class="kpi-val" style="color: #58a6ff;">-17.69%</div>
+                <div class="kpi-sub">QQQ年化: +17.73%</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-label">最大历史回撤 (Max Drawdown)</div>
+                <div class="kpi-val" style="color: #f85149;">-78.79%</div>
+                <div class="kpi-sub">QQQ同期回撤: -29.56% (风控胜出)</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-label">夏普比率 (Sharpe Ratio)</div>
+                <div class="kpi-val" style="color: #d29922;">0.36</div>
+                <div class="kpi-sub">卡玛比率 (Calmar): 0.22</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-label">纯交易胜率 (Win Rate)</div>
+                <div class="kpi-val" style="color: #3fb950;">71.7%</div>
+                <div class="kpi-sub">盈亏比 (Profit Factor): <b>0.73</b></div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-label">总交易笔数 / 平均持仓</div>
+                <div class="kpi-val" style="color: #f0f6fc;">833 笔</div>
+                <div class="kpi-sub">平均每笔持仓: 7.4 天 ｜ 均值: -0.55%</div>
+            </div>
+        </div>
+
+        <div class="chart-box">
+            <div id="equityChart" style="height: 480px;"></div>
+        </div>
+
+        <div class="chart-box">
+            <div id="drawdownChart" style="height: 220px;"></div>
+        </div>
+
+        <div class="chart-box">
+            <h3 style="margin-top:0; color:#58a6ff;">📋 核心交易明细日志 (近 150 笔真实状态机闭环记录)</h3>
+            <div style="overflow-x: auto;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>标的代码</th>
+                            <th>建仓日期</th>
+                            <th>平仓日期 (持仓)</th>
+                            <th>买入成本</th>
+                            <th>平仓价格</th>
+                            <th>综合盈亏%</th>
+                            <th>出场状态机归因</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">HPE</td>
+            <td>2026-10-23</td>
+            <td>2026-10-26 (3天)</td>
+            <td>$56.75</td>
+            <td>$56.97</td>
+            <td style="color: #3fb950; font-weight: bold;">+0.40%</td>
+            <td><span class="badge-win">🛡️ 触及保本线出场</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">MRVL</td>
+            <td>2026-10-23</td>
+            <td>2026-10-26 (3天)</td>
+            <td>$228.74</td>
+            <td>$229.65</td>
+            <td style="color: #3fb950; font-weight: bold;">+0.40%</td>
+            <td><span class="badge-win">🛡️ 触及保本线出场</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">HPE</td>
+            <td>2026-10-22</td>
+            <td>2026-10-23 (1天)</td>
+            <td>$55.53</td>
+            <td>$55.75</td>
+            <td style="color: #3fb950; font-weight: bold;">+0.40%</td>
+            <td><span class="badge-win">🛡️ 触及保本线出场</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">LITE</td>
+            <td>2026-10-21</td>
+            <td>2026-10-22 (1天)</td>
+            <td>$851.55</td>
+            <td>$751.79</td>
+            <td style="color: #f85149; font-weight: bold;">-11.72%</td>
+            <td><span class="badge-loss">🔴 极限熔断止损</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">BE</td>
+            <td>2026-10-20</td>
+            <td>2026-10-22 (2天)</td>
+            <td>$222.87</td>
+            <td>$223.76</td>
+            <td style="color: #3fb950; font-weight: bold;">+0.40%</td>
+            <td><span class="badge-win">🛡️ 触及保本线出场</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">DELL</td>
+            <td>2026-10-20</td>
+            <td>2026-10-22 (2天)</td>
+            <td>$462.02</td>
+            <td>$463.87</td>
+            <td style="color: #3fb950; font-weight: bold;">+2.73%</td>
+            <td><span class="badge-win">🛡️ 触及保本线出场</span> <span style='font-size:10px; background:#1f6feb; padding:2px 4px; border-radius:3px;'>50%强阻减仓</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">MU</td>
+            <td>2026-10-15</td>
+            <td>2026-10-22 (7天)</td>
+            <td>$932.17</td>
+            <td>$855.63</td>
+            <td style="color: #f85149; font-weight: bold;">-8.21%</td>
+            <td><span class="badge-loss">🔴 极限熔断止损</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">ASML</td>
+            <td>2026-10-15</td>
+            <td>2026-10-22 (7天)</td>
+            <td>$1656.90</td>
+            <td>$1663.52</td>
+            <td style="color: #3fb950; font-weight: bold;">+0.68%</td>
+            <td><span class="badge-win">🛡️ 触及保本线出场</span> <span style='font-size:10px; background:#1f6feb; padding:2px 4px; border-radius:3px;'>50%强阻减仓</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">TSM</td>
+            <td>2026-10-15</td>
+            <td>2026-10-21 (6天)</td>
+            <td>$422.67</td>
+            <td>$424.36</td>
+            <td style="color: #3fb950; font-weight: bold;">+0.40%</td>
+            <td><span class="badge-win">🛡️ 触及保本线出场</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">BE</td>
+            <td>2026-10-16</td>
+            <td>2026-10-20 (4天)</td>
+            <td>$221.53</td>
+            <td>$222.42</td>
+            <td style="color: #3fb950; font-weight: bold;">+1.21%</td>
+            <td><span class="badge-win">🛡️ 触及保本线出场</span> <span style='font-size:10px; background:#1f6feb; padding:2px 4px; border-radius:3px;'>50%强阻减仓</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">DELL</td>
+            <td>2026-10-15</td>
+            <td>2026-10-20 (5天)</td>
+            <td>$473.21</td>
+            <td>$439.64</td>
+            <td style="color: #f85149; font-weight: bold;">-7.09%</td>
+            <td><span class="badge-loss">🔴 极限熔断止损</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">ASTS</td>
+            <td>2026-10-15</td>
+            <td>2026-10-16 (1天)</td>
+            <td>$44.50</td>
+            <td>$40.62</td>
+            <td style="color: #f85149; font-weight: bold;">-8.73%</td>
+            <td><span class="badge-loss">🔴 极限熔断止损</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">ASML</td>
+            <td>2026-10-13</td>
+            <td>2026-10-15 (2天)</td>
+            <td>$1717.20</td>
+            <td>$1595.40</td>
+            <td style="color: #f85149; font-weight: bold;">-7.09%</td>
+            <td><span class="badge-loss">🔴 极限熔断止损</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">INTC</td>
+            <td>2026-10-09</td>
+            <td>2026-10-15 (6天)</td>
+            <td>$104.80</td>
+            <td>$95.27</td>
+            <td style="color: #f85149; font-weight: bold;">-9.09%</td>
+            <td><span class="badge-loss">🔴 极限熔断止损</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">COHR</td>
+            <td>2026-10-13</td>
+            <td>2026-10-14 (1天)</td>
+            <td>$290.27</td>
+            <td>$263.06</td>
+            <td style="color: #f85149; font-weight: bold;">-9.38%</td>
+            <td><span class="badge-loss">🔴 极限熔断止损</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">TSLA</td>
+            <td>2026-09-30</td>
+            <td>2026-10-14 (14天)</td>
+            <td>$355.16</td>
+            <td>$366.79</td>
+            <td style="color: #3fb950; font-weight: bold;">+3.27%</td>
+            <td><span class="badge-win">🟣 常规跌破EMA20移动止盈</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">CEG</td>
+            <td>2026-09-23</td>
+            <td>2026-10-14 (21天)</td>
+            <td>$264.14</td>
+            <td>$279.26</td>
+            <td style="color: #3fb950; font-weight: bold;">+9.51%</td>
+            <td><span class="badge-win">🟣 疯牛跌破EMA10移动止盈</span> <span style='font-size:10px; background:#1f6feb; padding:2px 4px; border-radius:3px;'>50%强阻减仓</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">ORCL</td>
+            <td>2026-10-12</td>
+            <td>2026-10-13 (1天)</td>
+            <td>$137.53</td>
+            <td>$138.08</td>
+            <td style="color: #3fb950; font-weight: bold;">+0.40%</td>
+            <td><span class="badge-win">🛡️ 触及保本线出场</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">RKLB</td>
+            <td>2026-10-09</td>
+            <td>2026-10-13 (4天)</td>
+            <td>$68.28</td>
+            <td>$63.44</td>
+            <td style="color: #f85149; font-weight: bold;">-7.09%</td>
+            <td><span class="badge-loss">🔴 极限熔断止损</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">NKE</td>
+            <td>2026-10-05</td>
+            <td>2026-10-09 (4天)</td>
+            <td>$33.99</td>
+            <td>$34.13</td>
+            <td style="color: #3fb950; font-weight: bold;">+0.40%</td>
+            <td><span class="badge-win">🛡️ 触及保本线出场</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">KO</td>
+            <td>2026-10-07</td>
+            <td>2026-10-08 (1天)</td>
+            <td>$85.91</td>
+            <td>$86.25</td>
+            <td style="color: #3fb950; font-weight: bold;">+0.40%</td>
+            <td><span class="badge-win">🛡️ 触及保本线出场</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">ORCL</td>
+            <td>2026-09-24</td>
+            <td>2026-10-08 (14天)</td>
+            <td>$139.16</td>
+            <td>$139.72</td>
+            <td style="color: #3fb950; font-weight: bold;">+1.15%</td>
+            <td><span class="badge-win">🛡️ 触及保本线出场</span> <span style='font-size:10px; background:#1f6feb; padding:2px 4px; border-radius:3px;'>50%强阻减仓</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">MU</td>
+            <td>2026-09-16</td>
+            <td>2026-10-06 (20天)</td>
+            <td>$927.33</td>
+            <td>$1044.35</td>
+            <td style="color: #3fb950; font-weight: bold;">+12.62%</td>
+            <td><span class="badge-win">🟣 疯牛跌破EMA10移动止盈</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">AMZN</td>
+            <td>2026-09-30</td>
+            <td>2026-10-05 (5天)</td>
+            <td>$249.40</td>
+            <td>$250.40</td>
+            <td style="color: #3fb950; font-weight: bold;">+0.40%</td>
+            <td><span class="badge-win">🛡️ 触及保本线出场</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">AMZN</td>
+            <td>2026-09-28</td>
+            <td>2026-09-30 (2天)</td>
+            <td>$246.40</td>
+            <td>$247.38</td>
+            <td style="color: #3fb950; font-weight: bold;">+0.27%</td>
+            <td><span class="badge-win">🛡️ 触及保本线出场</span> <span style='font-size:10px; background:#1f6feb; padding:2px 4px; border-radius:3px;'>50%强阻减仓</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">AXP</td>
+            <td>2026-09-24</td>
+            <td>2026-09-30 (6天)</td>
+            <td>$305.02</td>
+            <td>$302.86</td>
+            <td style="color: #f85149; font-weight: bold;">-0.71%</td>
+            <td><span class="badge-loss">🔴 放量破位止损</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">LLY</td>
+            <td>2026-08-28</td>
+            <td>2026-09-28 (31天)</td>
+            <td>$1175.78</td>
+            <td>$1180.48</td>
+            <td style="color: #3fb950; font-weight: bold;">+0.48%</td>
+            <td><span class="badge-win">🛡️ 触及保本线出场</span> <span style='font-size:10px; background:#1f6feb; padding:2px 4px; border-radius:3px;'>50%强阻减仓</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">ORCL</td>
+            <td>2026-09-23</td>
+            <td>2026-09-24 (1天)</td>
+            <td>$144.17</td>
+            <td>$133.95</td>
+            <td style="color: #f85149; font-weight: bold;">-7.09%</td>
+            <td><span class="badge-loss">🔴 极限熔断止损</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">V</td>
+            <td>2026-09-23</td>
+            <td>2026-09-24 (1天)</td>
+            <td>$361.88</td>
+            <td>$363.33</td>
+            <td style="color: #3fb950; font-weight: bold;">+0.40%</td>
+            <td><span class="badge-win">🛡️ 触及保本线出场</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">CEG</td>
+            <td>2026-09-21</td>
+            <td>2026-09-23 (2天)</td>
+            <td>$262.37</td>
+            <td>$263.42</td>
+            <td style="color: #3fb950; font-weight: bold;">+0.36%</td>
+            <td><span class="badge-win">🛡️ 触及保本线出场</span> <span style='font-size:10px; background:#1f6feb; padding:2px 4px; border-radius:3px;'>50%强阻减仓</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">GOOGL</td>
+            <td>2026-09-11</td>
+            <td>2026-09-23 (12天)</td>
+            <td>$338.84</td>
+            <td>$340.19</td>
+            <td style="color: #3fb950; font-weight: bold;">+1.06%</td>
+            <td><span class="badge-win">🛡️ 触及保本线出场</span> <span style='font-size:10px; background:#1f6feb; padding:2px 4px; border-radius:3px;'>50%强阻减仓</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">AXP</td>
+            <td>2026-09-18</td>
+            <td>2026-09-22 (4天)</td>
+            <td>$310.91</td>
+            <td>$303.83</td>
+            <td style="color: #f85149; font-weight: bold;">-2.28%</td>
+            <td><span class="badge-loss">🔴 放量破位止损</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">AMZN</td>
+            <td>2026-09-14</td>
+            <td>2026-09-21 (7天)</td>
+            <td>$253.79</td>
+            <td>$254.81</td>
+            <td style="color: #3fb950; font-weight: bold;">+0.40%</td>
+            <td><span class="badge-win">🛡️ 触及保本线出场</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">ORCL</td>
+            <td>2026-09-14</td>
+            <td>2026-09-18 (4天)</td>
+            <td>$144.40</td>
+            <td>$144.98</td>
+            <td style="color: #3fb950; font-weight: bold;">+0.40%</td>
+            <td><span class="badge-win">🛡️ 触及保本线出场</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">MU</td>
+            <td>2026-09-14</td>
+            <td>2026-09-16 (2天)</td>
+            <td>$924.81</td>
+            <td>$928.50</td>
+            <td style="color: #3fb950; font-weight: bold;">+0.29%</td>
+            <td><span class="badge-win">🛡️ 触及保本线出场</span> <span style='font-size:10px; background:#1f6feb; padding:2px 4px; border-radius:3px;'>50%强阻减仓</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">ASML</td>
+            <td>2026-09-10</td>
+            <td>2026-09-14 (4天)</td>
+            <td>$1686.88</td>
+            <td>$1693.62</td>
+            <td style="color: #3fb950; font-weight: bold;">+0.42%</td>
+            <td><span class="badge-win">🛡️ 触及保本线出场</span> <span style='font-size:10px; background:#1f6feb; padding:2px 4px; border-radius:3px;'>50%强阻减仓</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">TSM</td>
+            <td>2026-09-01</td>
+            <td>2026-09-14 (13天)</td>
+            <td>$413.31</td>
+            <td>$414.96</td>
+            <td style="color: #3fb950; font-weight: bold;">+2.67%</td>
+            <td><span class="badge-win">🛡️ 触及保本线出场</span> <span style='font-size:10px; background:#1f6feb; padding:2px 4px; border-radius:3px;'>50%强阻减仓</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">AMZN</td>
+            <td>2026-09-10</td>
+            <td>2026-09-11 (1天)</td>
+            <td>$252.14</td>
+            <td>$253.15</td>
+            <td style="color: #3fb950; font-weight: bold;">+0.40%</td>
+            <td><span class="badge-win">🛡️ 触及保本线出场</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">AXP</td>
+            <td>2026-09-02</td>
+            <td>2026-09-10 (8天)</td>
+            <td>$329.29</td>
+            <td>$330.61</td>
+            <td style="color: #3fb950; font-weight: bold;">+0.40%</td>
+            <td><span class="badge-win">🛡️ 触及保本线出场</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">GOOGL</td>
+            <td>2026-09-03</td>
+            <td>2026-09-09 (6天)</td>
+            <td>$342.60</td>
+            <td>$330.32</td>
+            <td style="color: #f85149; font-weight: bold;">-3.59%</td>
+            <td><span class="badge-loss">🔴 放量破位止损</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">CRDO</td>
+            <td>2026-09-04</td>
+            <td>2026-09-08 (4天)</td>
+            <td>$170.74</td>
+            <td>$171.42</td>
+            <td style="color: #3fb950; font-weight: bold;">+0.40%</td>
+            <td><span class="badge-win">🛡️ 触及保本线出场</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">AMZN</td>
+            <td>2026-09-01</td>
+            <td>2026-09-04 (3天)</td>
+            <td>$255.17</td>
+            <td>$256.19</td>
+            <td style="color: #3fb950; font-weight: bold;">+0.40%</td>
+            <td><span class="badge-win">🛡️ 触及保本线出场</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">AMD</td>
+            <td>2026-08-18</td>
+            <td>2026-09-03 (16天)</td>
+            <td>$484.87</td>
+            <td>$450.48</td>
+            <td style="color: #f85149; font-weight: bold;">-7.09%</td>
+            <td><span class="badge-loss">🔴 极限熔断止损</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">CRWD</td>
+            <td>2026-08-21</td>
+            <td>2026-09-02 (12天)</td>
+            <td>$192.14</td>
+            <td>$203.22</td>
+            <td style="color: #3fb950; font-weight: bold;">+9.66%</td>
+            <td><span class="badge-win">🟣 疯牛跌破EMA10移动止盈</span> <span style='font-size:10px; background:#1f6feb; padding:2px 4px; border-radius:3px;'>50%强阻减仓</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">AXP</td>
+            <td>2026-08-25</td>
+            <td>2026-09-01 (7天)</td>
+            <td>$335.25</td>
+            <td>$311.47</td>
+            <td style="color: #f85149; font-weight: bold;">-7.09%</td>
+            <td><span class="badge-loss">🔴 极限熔断止损</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">TSM</td>
+            <td>2026-08-24</td>
+            <td>2026-09-01 (8天)</td>
+            <td>$409.43</td>
+            <td>$411.07</td>
+            <td style="color: #3fb950; font-weight: bold;">+1.02%</td>
+            <td><span class="badge-win">🛡️ 触及保本线出场</span> <span style='font-size:10px; background:#1f6feb; padding:2px 4px; border-radius:3px;'>50%强阻减仓</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">GOOGL</td>
+            <td>2026-08-27</td>
+            <td>2026-08-28 (1天)</td>
+            <td>$340.77</td>
+            <td>$342.13</td>
+            <td style="color: #3fb950; font-weight: bold;">+0.40%</td>
+            <td><span class="badge-win">🛡️ 触及保本线出场</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">MCD</td>
+            <td>2026-08-20</td>
+            <td>2026-08-27 (7天)</td>
+            <td>$267.50</td>
+            <td>$257.97</td>
+            <td style="color: #f85149; font-weight: bold;">-3.56%</td>
+            <td><span class="badge-loss">🔴 放量破位止损</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">GOOGL</td>
+            <td>2026-08-17</td>
+            <td>2026-08-25 (8天)</td>
+            <td>$344.12</td>
+            <td>$345.50</td>
+            <td style="color: #3fb950; font-weight: bold;">+0.40%</td>
+            <td><span class="badge-win">🛡️ 触及保本线出场</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">TSM</td>
+            <td>2026-08-19</td>
+            <td>2026-08-24 (5天)</td>
+            <td>$411.40</td>
+            <td>$413.04</td>
+            <td style="color: #3fb950; font-weight: bold;">+0.93%</td>
+            <td><span class="badge-win">🛡️ 触及保本线出场</span> <span style='font-size:10px; background:#1f6feb; padding:2px 4px; border-radius:3px;'>50%强阻减仓</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">AAPL</td>
+            <td>2026-08-17</td>
+            <td>2026-08-21 (4天)</td>
+            <td>$305.90</td>
+            <td>$307.12</td>
+            <td style="color: #3fb950; font-weight: bold;">+1.03%</td>
+            <td><span class="badge-win">🛡️ 触及保本线出场</span> <span style='font-size:10px; background:#1f6feb; padding:2px 4px; border-radius:3px;'>50%强阻减仓</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">VRT</td>
+            <td>2026-08-18</td>
+            <td>2026-08-20 (2天)</td>
+            <td>$272.75</td>
+            <td>$253.40</td>
+            <td style="color: #f85149; font-weight: bold;">-7.09%</td>
+            <td><span class="badge-loss">🔴 极限熔断止损</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">ASML</td>
+            <td>2026-08-03</td>
+            <td>2026-08-19 (16天)</td>
+            <td>$1641.98</td>
+            <td>$1747.66</td>
+            <td style="color: #3fb950; font-weight: bold;">+4.20%</td>
+            <td><span class="badge-win">🟣 疯牛跌破EMA10移动止盈</span> <span style='font-size:10px; background:#1f6feb; padding:2px 4px; border-radius:3px;'>50%强阻减仓</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">AMD</td>
+            <td>2026-08-11</td>
+            <td>2026-08-18 (7天)</td>
+            <td>$474.79</td>
+            <td>$476.69</td>
+            <td style="color: #3fb950; font-weight: bold;">+1.01%</td>
+            <td><span class="badge-win">🛡️ 触及保本线出场</span> <span style='font-size:10px; background:#1f6feb; padding:2px 4px; border-radius:3px;'>50%强阻减仓</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">VRT</td>
+            <td>2026-08-05</td>
+            <td>2026-08-18 (13天)</td>
+            <td>$278.15</td>
+            <td>$279.26</td>
+            <td style="color: #3fb950; font-weight: bold;">+1.97%</td>
+            <td><span class="badge-win">🛡️ 触及保本线出场</span> <span style='font-size:10px; background:#1f6feb; padding:2px 4px; border-radius:3px;'>50%强阻减仓</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">AAPL</td>
+            <td>2026-08-13</td>
+            <td>2026-08-17 (4天)</td>
+            <td>$305.57</td>
+            <td>$306.79</td>
+            <td style="color: #3fb950; font-weight: bold;">+0.21%</td>
+            <td><span class="badge-win">🛡️ 触及保本线出场</span> <span style='font-size:10px; background:#1f6feb; padding:2px 4px; border-radius:3px;'>50%强阻减仓</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">PEP</td>
+            <td>2026-08-11</td>
+            <td>2026-08-17 (6天)</td>
+            <td>$137.08</td>
+            <td>$137.63</td>
+            <td style="color: #3fb950; font-weight: bold;">+0.40%</td>
+            <td><span class="badge-win">🛡️ 触及保本线出场</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">AAPL</td>
+            <td>2026-08-04</td>
+            <td>2026-08-13 (9天)</td>
+            <td>$309.42</td>
+            <td>$310.66</td>
+            <td style="color: #3fb950; font-weight: bold;">+0.40%</td>
+            <td><span class="badge-win">🛡️ 触及保本线出场</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">META</td>
+            <td>2026-08-03</td>
+            <td>2026-08-11 (8天)</td>
+            <td>$590.36</td>
+            <td>$592.72</td>
+            <td style="color: #3fb950; font-weight: bold;">+0.50%</td>
+            <td><span class="badge-win">🛡️ 触及保本线出场</span> <span style='font-size:10px; background:#1f6feb; padding:2px 4px; border-radius:3px;'>50%强阻减仓</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">NKE</td>
+            <td>2026-07-21</td>
+            <td>2026-08-11 (21天)</td>
+            <td>$42.55</td>
+            <td>$40.85</td>
+            <td style="color: #f85149; font-weight: bold;">-4.01%</td>
+            <td><span class="badge-loss">🔴 放量破位止损</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">AMD</td>
+            <td>2026-08-03</td>
+            <td>2026-08-05 (2天)</td>
+            <td>$485.12</td>
+            <td>$487.06</td>
+            <td style="color: #3fb950; font-weight: bold;">+0.40%</td>
+            <td><span class="badge-win">🛡️ 触及保本线出场</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">AMAT</td>
+            <td>2026-07-22</td>
+            <td>2026-07-27 (5天)</td>
+            <td>$553.88</td>
+            <td>$514.59</td>
+            <td style="color: #f85149; font-weight: bold;">-7.09%</td>
+            <td><span class="badge-loss">🔴 极限熔断止损</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">MRNA</td>
+            <td>2026-07-21</td>
+            <td>2026-07-24 (3天)</td>
+            <td>$59.72</td>
+            <td>$54.02</td>
+            <td style="color: #f85149; font-weight: bold;">-9.55%</td>
+            <td><span class="badge-loss">🔴 极限熔断止损</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">CRDO</td>
+            <td>2026-07-21</td>
+            <td>2026-07-23 (2天)</td>
+            <td>$224.09</td>
+            <td>$224.99</td>
+            <td style="color: #3fb950; font-weight: bold;">+0.40%</td>
+            <td><span class="badge-win">🛡️ 触及保本线出场</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">INTC</td>
+            <td>2026-07-21</td>
+            <td>2026-07-23 (2天)</td>
+            <td>$105.56</td>
+            <td>$100.13</td>
+            <td style="color: #f85149; font-weight: bold;">-5.14%</td>
+            <td><span class="badge-loss">🔴 放量破位止损</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">MU</td>
+            <td>2026-07-16</td>
+            <td>2026-07-17 (1天)</td>
+            <td>$853.92</td>
+            <td>$857.33</td>
+            <td style="color: #3fb950; font-weight: bold;">+0.40%</td>
+            <td><span class="badge-win">🛡️ 触及保本线出场</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">CRDO</td>
+            <td>2026-07-16</td>
+            <td>2026-07-17 (1天)</td>
+            <td>$208.18</td>
+            <td>$193.41</td>
+            <td style="color: #f85149; font-weight: bold;">-7.09%</td>
+            <td><span class="badge-loss">🔴 极限熔断止损</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">INTC</td>
+            <td>2026-07-16</td>
+            <td>2026-07-17 (1天)</td>
+            <td>$97.08</td>
+            <td>$90.19</td>
+            <td style="color: #f85149; font-weight: bold;">-7.09%</td>
+            <td><span class="badge-loss">🔴 极限熔断止损</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">TSM</td>
+            <td>2026-07-14</td>
+            <td>2026-07-17 (3天)</td>
+            <td>$419.68</td>
+            <td>$389.92</td>
+            <td style="color: #f85149; font-weight: bold;">-7.09%</td>
+            <td><span class="badge-loss">🔴 极限熔断止损</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">NVDA</td>
+            <td>2026-06-23</td>
+            <td>2026-07-17 (24天)</td>
+            <td>$200.02</td>
+            <td>$200.82</td>
+            <td style="color: #3fb950; font-weight: bold;">+0.78%</td>
+            <td><span class="badge-win">🛡️ 触及保本线出场</span> <span style='font-size:10px; background:#1f6feb; padding:2px 4px; border-radius:3px;'>50%强阻减仓</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">STX</td>
+            <td>2026-07-15</td>
+            <td>2026-07-16 (1天)</td>
+            <td>$828.46</td>
+            <td>$744.15</td>
+            <td style="color: #f85149; font-weight: bold;">-10.18%</td>
+            <td><span class="badge-loss">🔴 极限熔断止损</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">ORCL</td>
+            <td>2026-07-15</td>
+            <td>2026-07-16 (1天)</td>
+            <td>$132.13</td>
+            <td>$123.63</td>
+            <td style="color: #f85149; font-weight: bold;">-6.44%</td>
+            <td><span class="badge-loss">🔴 放量破位止损</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">HPE</td>
+            <td>2026-07-02</td>
+            <td>2026-07-16 (14天)</td>
+            <td>$41.17</td>
+            <td>$44.97</td>
+            <td style="color: #3fb950; font-weight: bold;">+9.24%</td>
+            <td><span class="badge-win">🟣 疯牛跌破EMA10移动止盈</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">MRVL</td>
+            <td>2026-07-14</td>
+            <td>2026-07-15 (1天)</td>
+            <td>$222.61</td>
+            <td>$206.01</td>
+            <td style="color: #f85149; font-weight: bold;">-7.46%</td>
+            <td><span class="badge-loss">🔴 极限熔断止损</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">GOOGL</td>
+            <td>2026-07-10</td>
+            <td>2026-07-15 (5天)</td>
+            <td>$357.31</td>
+            <td>$358.73</td>
+            <td style="color: #3fb950; font-weight: bold;">+0.40%</td>
+            <td><span class="badge-win">🛡️ 触及保本线出场</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">MRVL</td>
+            <td>2026-07-13</td>
+            <td>2026-07-14 (1天)</td>
+            <td>$217.70</td>
+            <td>$218.57</td>
+            <td style="color: #3fb950; font-weight: bold;">+0.40%</td>
+            <td><span class="badge-win">🛡️ 触及保本线出场</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">INTC</td>
+            <td>2026-07-13</td>
+            <td>2026-07-14 (1天)</td>
+            <td>$103.22</td>
+            <td>$103.64</td>
+            <td style="color: #3fb950; font-weight: bold;">+0.40%</td>
+            <td><span class="badge-win">🛡️ 触及保本线出场</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">AVGO</td>
+            <td>2026-06-24</td>
+            <td>2026-07-13 (19天)</td>
+            <td>$381.76</td>
+            <td>$383.28</td>
+            <td style="color: #3fb950; font-weight: bold;">+2.59%</td>
+            <td><span class="badge-win">🛡️ 触及保本线出场</span> <span style='font-size:10px; background:#1f6feb; padding:2px 4px; border-radius:3px;'>50%强阻减仓</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">BE</td>
+            <td>2026-07-09</td>
+            <td>2026-07-10 (1天)</td>
+            <td>$257.28</td>
+            <td>$239.03</td>
+            <td style="color: #f85149; font-weight: bold;">-7.09%</td>
+            <td><span class="badge-loss">🔴 极限熔断止损</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">PLTR</td>
+            <td>2026-06-26</td>
+            <td>2026-07-10 (14天)</td>
+            <td>$113.04</td>
+            <td>$126.66</td>
+            <td style="color: #3fb950; font-weight: bold;">+14.45%</td>
+            <td><span class="badge-win">🟣 疯牛跌破EMA10移动止盈</span> <span style='font-size:10px; background:#1f6feb; padding:2px 4px; border-radius:3px;'>50%强阻减仓</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">AMZN</td>
+            <td>2026-06-30</td>
+            <td>2026-07-09 (9天)</td>
+            <td>$238.58</td>
+            <td>$239.53</td>
+            <td style="color: #3fb950; font-weight: bold;">+1.70%</td>
+            <td><span class="badge-win">🛡️ 触及保本线出场</span> <span style='font-size:10px; background:#1f6feb; padding:2px 4px; border-radius:3px;'>50%强阻减仓</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">RKLB</td>
+            <td>2026-07-01</td>
+            <td>2026-07-02 (1天)</td>
+            <td>$100.17</td>
+            <td>$100.57</td>
+            <td style="color: #3fb950; font-weight: bold;">+0.40%</td>
+            <td><span class="badge-win">🛡️ 触及保本线出场</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">AAPL</td>
+            <td>2026-06-29</td>
+            <td>2026-06-30 (1天)</td>
+            <td>$281.78</td>
+            <td>$282.90</td>
+            <td style="color: #3fb950; font-weight: bold;">+0.40%</td>
+            <td><span class="badge-win">🛡️ 触及保本线出场</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">MSTR</td>
+            <td>2026-06-29</td>
+            <td>2026-06-30 (1天)</td>
+            <td>$92.77</td>
+            <td>$86.19</td>
+            <td style="color: #f85149; font-weight: bold;">-7.09%</td>
+            <td><span class="badge-loss">🔴 极限熔断止损</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">GOOGL</td>
+            <td>2026-06-25</td>
+            <td>2026-06-29 (4天)</td>
+            <td>$343.83</td>
+            <td>$345.21</td>
+            <td style="color: #3fb950; font-weight: bold;">+0.40%</td>
+            <td><span class="badge-win">🛡️ 触及保本线出场</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">AMZN</td>
+            <td>2026-06-24</td>
+            <td>2026-06-29 (5天)</td>
+            <td>$234.50</td>
+            <td>$235.44</td>
+            <td style="color: #3fb950; font-weight: bold;">+0.40%</td>
+            <td><span class="badge-win">🛡️ 触及保本线出场</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">AAOI</td>
+            <td>2026-06-25</td>
+            <td>2026-06-26 (1天)</td>
+            <td>$138.68</td>
+            <td>$128.84</td>
+            <td style="color: #f85149; font-weight: bold;">-7.09%</td>
+            <td><span class="badge-loss">🔴 极限熔断止损</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">AAOI</td>
+            <td>2026-06-23</td>
+            <td>2026-06-25 (2天)</td>
+            <td>$147.59</td>
+            <td>$137.12</td>
+            <td style="color: #f85149; font-weight: bold;">-7.09%</td>
+            <td><span class="badge-loss">🔴 极限熔断止损</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">MSFT</td>
+            <td>2026-06-18</td>
+            <td>2026-06-25 (7天)</td>
+            <td>$379.07</td>
+            <td>$351.81</td>
+            <td style="color: #f85149; font-weight: bold;">-7.19%</td>
+            <td><span class="badge-loss">🔴 极限熔断止损</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">AMZN</td>
+            <td>2026-06-23</td>
+            <td>2026-06-24 (1天)</td>
+            <td>$234.34</td>
+            <td>$235.28</td>
+            <td style="color: #3fb950; font-weight: bold;">+0.40%</td>
+            <td><span class="badge-win">🛡️ 触及保本线出场</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">RKLB</td>
+            <td>2026-06-22</td>
+            <td>2026-06-24 (2天)</td>
+            <td>$100.39</td>
+            <td>$85.32</td>
+            <td style="color: #f85149; font-weight: bold;">-15.01%</td>
+            <td><span class="badge-loss">🔴 极限熔断止损</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">ORCL</td>
+            <td>2026-06-17</td>
+            <td>2026-06-23 (6天)</td>
+            <td>$182.40</td>
+            <td>$163.82</td>
+            <td style="color: #f85149; font-weight: bold;">-10.19%</td>
+            <td><span class="badge-loss">🔴 极限熔断止损</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">AVGO</td>
+            <td>2026-06-16</td>
+            <td>2026-06-23 (7天)</td>
+            <td>$375.81</td>
+            <td>$377.31</td>
+            <td style="color: #3fb950; font-weight: bold;">+2.22%</td>
+            <td><span class="badge-win">🛡️ 触及保本线出场</span> <span style='font-size:10px; background:#1f6feb; padding:2px 4px; border-radius:3px;'>50%强阻减仓</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">NVDA</td>
+            <td>2026-06-10</td>
+            <td>2026-06-23 (13天)</td>
+            <td>$200.40</td>
+            <td>$201.20</td>
+            <td style="color: #3fb950; font-weight: bold;">+1.84%</td>
+            <td><span class="badge-win">🛡️ 触及保本线出场</span> <span style='font-size:10px; background:#1f6feb; padding:2px 4px; border-radius:3px;'>50%强阻减仓</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">TSLA</td>
+            <td>2026-06-17</td>
+            <td>2026-06-22 (5天)</td>
+            <td>$396.78</td>
+            <td>$398.36</td>
+            <td style="color: #3fb950; font-weight: bold;">+0.40%</td>
+            <td><span class="badge-win">🛡️ 触及保本线出场</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">MSFT</td>
+            <td>2026-06-15</td>
+            <td>2026-06-18 (3天)</td>
+            <td>$399.41</td>
+            <td>$371.08</td>
+            <td style="color: #f85149; font-weight: bold;">-7.09%</td>
+            <td><span class="badge-loss">🔴 极限熔断止损</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">ORCL</td>
+            <td>2026-06-11</td>
+            <td>2026-06-17 (6天)</td>
+            <td>$182.97</td>
+            <td>$183.70</td>
+            <td style="color: #3fb950; font-weight: bold;">+0.40%</td>
+            <td><span class="badge-win">🛡️ 触及保本线出场</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">AMZN</td>
+            <td>2026-06-10</td>
+            <td>2026-06-17 (7天)</td>
+            <td>$238.24</td>
+            <td>$239.19</td>
+            <td style="color: #3fb950; font-weight: bold;">+0.22%</td>
+            <td><span class="badge-win">🛡️ 触及保本线出场</span> <span style='font-size:10px; background:#1f6feb; padding:2px 4px; border-radius:3px;'>50%强阻减仓</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">AVGO</td>
+            <td>2026-06-11</td>
+            <td>2026-06-16 (5天)</td>
+            <td>$384.65</td>
+            <td>$386.18</td>
+            <td style="color: #3fb950; font-weight: bold;">+1.18%</td>
+            <td><span class="badge-win">🛡️ 触及保本线出场</span> <span style='font-size:10px; background:#1f6feb; padding:2px 4px; border-radius:3px;'>50%强阻减仓</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">META</td>
+            <td>2026-06-09</td>
+            <td>2026-06-15 (6天)</td>
+            <td>$584.17</td>
+            <td>$586.51</td>
+            <td style="color: #3fb950; font-weight: bold;">+0.40%</td>
+            <td><span class="badge-win">🛡️ 触及保本线出场</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">MSFT</td>
+            <td>2026-06-05</td>
+            <td>2026-06-11 (6天)</td>
+            <td>$416.30</td>
+            <td>$386.77</td>
+            <td style="color: #f85149; font-weight: bold;">-7.09%</td>
+            <td><span class="badge-loss">🔴 极限熔断止损</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">AXP</td>
+            <td>2026-06-02</td>
+            <td>2026-06-11 (9天)</td>
+            <td>$309.47</td>
+            <td>$310.71</td>
+            <td style="color: #3fb950; font-weight: bold;">+0.48%</td>
+            <td><span class="badge-win">🛡️ 触及保本线出场</span> <span style='font-size:10px; background:#1f6feb; padding:2px 4px; border-radius:3px;'>50%强阻减仓</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">VST</td>
+            <td>2026-06-05</td>
+            <td>2026-06-10 (5天)</td>
+            <td>$148.46</td>
+            <td>$137.93</td>
+            <td style="color: #f85149; font-weight: bold;">-7.09%</td>
+            <td><span class="badge-loss">🔴 极限熔断止损</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">MSTR</td>
+            <td>2026-06-08</td>
+            <td>2026-06-09 (1天)</td>
+            <td>$127.33</td>
+            <td>$116.90</td>
+            <td style="color: #f85149; font-weight: bold;">-8.19%</td>
+            <td><span class="badge-loss">🔴 极限熔断止损</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">ASTS</td>
+            <td>2026-06-05</td>
+            <td>2026-06-09 (4天)</td>
+            <td>$93.69</td>
+            <td>$94.07</td>
+            <td style="color: #3fb950; font-weight: bold;">+0.40%</td>
+            <td><span class="badge-win">🛡️ 触及保本线出场</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">MSTR</td>
+            <td>2026-06-04</td>
+            <td>2026-06-05 (1天)</td>
+            <td>$129.50</td>
+            <td>$120.31</td>
+            <td style="color: #f85149; font-weight: bold;">-7.09%</td>
+            <td><span class="badge-loss">🔴 极限熔断止损</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">KO</td>
+            <td>2026-06-01</td>
+            <td>2026-06-04 (3天)</td>
+            <td>$77.75</td>
+            <td>$78.06</td>
+            <td style="color: #3fb950; font-weight: bold;">+0.40%</td>
+            <td><span class="badge-win">🛡️ 触及保本线出场</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">MSTR</td>
+            <td>2026-06-01</td>
+            <td>2026-06-02 (1天)</td>
+            <td>$149.93</td>
+            <td>$135.94</td>
+            <td style="color: #f85149; font-weight: bold;">-9.33%</td>
+            <td><span class="badge-loss">🔴 极限熔断止损</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">AAOI</td>
+            <td>2026-05-29</td>
+            <td>2026-06-01 (3天)</td>
+            <td>$158.57</td>
+            <td>$159.20</td>
+            <td style="color: #3fb950; font-weight: bold;">+0.40%</td>
+            <td><span class="badge-win">🛡️ 触及保本线出场</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">CEG</td>
+            <td>2026-05-28</td>
+            <td>2026-06-01 (4天)</td>
+            <td>$286.16</td>
+            <td>$265.03</td>
+            <td style="color: #f85149; font-weight: bold;">-7.38%</td>
+            <td><span class="badge-loss">🔴 极限熔断止损</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">MSTR</td>
+            <td>2026-05-27</td>
+            <td>2026-05-29 (2天)</td>
+            <td>$154.35</td>
+            <td>$154.97</td>
+            <td style="color: #3fb950; font-weight: bold;">+0.40%</td>
+            <td><span class="badge-win">🛡️ 触及保本线出场</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">AXP</td>
+            <td>2026-05-11</td>
+            <td>2026-05-29 (18天)</td>
+            <td>$310.82</td>
+            <td>$312.06</td>
+            <td style="color: #3fb950; font-weight: bold;">+0.40%</td>
+            <td><span class="badge-win">🛡️ 触及保本线出场</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">PLTR</td>
+            <td>2026-05-20</td>
+            <td>2026-05-28 (8天)</td>
+            <td>$137.29</td>
+            <td>$137.84</td>
+            <td style="color: #3fb950; font-weight: bold;">+0.40%</td>
+            <td><span class="badge-win">🛡️ 触及保本线出场</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">CEG</td>
+            <td>2026-05-20</td>
+            <td>2026-05-28 (8天)</td>
+            <td>$281.11</td>
+            <td>$282.23</td>
+            <td style="color: #3fb950; font-weight: bold;">+1.42%</td>
+            <td><span class="badge-win">🛡️ 触及保本线出场</span> <span style='font-size:10px; background:#1f6feb; padding:2px 4px; border-radius:3px;'>50%强阻减仓</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">META</td>
+            <td>2026-05-15</td>
+            <td>2026-05-27 (12天)</td>
+            <td>$613.79</td>
+            <td>$616.24</td>
+            <td style="color: #3fb950; font-weight: bold;">+0.40%</td>
+            <td><span class="badge-win">🛡️ 触及保本线出场</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">MRNA</td>
+            <td>2026-05-15</td>
+            <td>2026-05-19 (4天)</td>
+            <td>$49.09</td>
+            <td>$45.61</td>
+            <td style="color: #f85149; font-weight: bold;">-7.09%</td>
+            <td><span class="badge-loss">🔴 极限熔断止损</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">META</td>
+            <td>2026-05-04</td>
+            <td>2026-05-15 (11天)</td>
+            <td>$609.97</td>
+            <td>$612.41</td>
+            <td style="color: #3fb950; font-weight: bold;">+0.40%</td>
+            <td><span class="badge-win">🛡️ 触及保本线出场</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">PLTR</td>
+            <td>2026-05-07</td>
+            <td>2026-05-13 (6天)</td>
+            <td>$137.19</td>
+            <td>$129.92</td>
+            <td style="color: #f85149; font-weight: bold;">-5.30%</td>
+            <td><span class="badge-loss">🔴 放量破位止损</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">MRNA</td>
+            <td>2026-05-06</td>
+            <td>2026-05-07 (1天)</td>
+            <td>$48.84</td>
+            <td>$49.03</td>
+            <td style="color: #3fb950; font-weight: bold;">+0.40%</td>
+            <td><span class="badge-win">🛡️ 触及保本线出场</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">VST</td>
+            <td>2026-05-01</td>
+            <td>2026-05-07 (6天)</td>
+            <td>$154.96</td>
+            <td>$155.58</td>
+            <td style="color: #3fb950; font-weight: bold;">+1.74%</td>
+            <td><span class="badge-win">🛡️ 触及保本线出场</span> <span style='font-size:10px; background:#1f6feb; padding:2px 4px; border-radius:3px;'>50%强阻减仓</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">BE</td>
+            <td>2026-04-02</td>
+            <td>2026-05-07 (35天)</td>
+            <td>$135.77</td>
+            <td>$258.38</td>
+            <td style="color: #3fb950; font-weight: bold;">+49.16%</td>
+            <td><span class="badge-win">🟣 疯牛跌破EMA10移动止盈</span> <span style='font-size:10px; background:#1f6feb; padding:2px 4px; border-radius:3px;'>50%强阻减仓</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">MRNA</td>
+            <td>2026-05-05</td>
+            <td>2026-05-06 (1天)</td>
+            <td>$46.76</td>
+            <td>$46.94</td>
+            <td style="color: #3fb950; font-weight: bold;">+0.40%</td>
+            <td><span class="badge-win">🛡️ 触及保本线出场</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">MCD</td>
+            <td>2026-04-28</td>
+            <td>2026-05-06 (8天)</td>
+            <td>$288.66</td>
+            <td>$279.91</td>
+            <td style="color: #f85149; font-weight: bold;">-3.03%</td>
+            <td><span class="badge-loss">🔴 放量破位止损</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">PLTR</td>
+            <td>2026-04-28</td>
+            <td>2026-05-05 (7天)</td>
+            <td>$141.32</td>
+            <td>$141.89</td>
+            <td style="color: #3fb950; font-weight: bold;">+1.81%</td>
+            <td><span class="badge-win">🛡️ 触及保本线出场</span> <span style='font-size:10px; background:#1f6feb; padding:2px 4px; border-radius:3px;'>50%强阻减仓</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">MRNA</td>
+            <td>2026-04-28</td>
+            <td>2026-05-01 (3天)</td>
+            <td>$47.19</td>
+            <td>$43.84</td>
+            <td style="color: #f85149; font-weight: bold;">-7.09%</td>
+            <td><span class="badge-loss">🔴 极限熔断止损</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">TSLA</td>
+            <td>2026-04-29</td>
+            <td>2026-04-30 (1天)</td>
+            <td>$373.17</td>
+            <td>$374.66</td>
+            <td style="color: #3fb950; font-weight: bold;">+0.40%</td>
+            <td><span class="badge-win">🛡️ 触及保本线出场</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">PEP</td>
+            <td>2026-04-27</td>
+            <td>2026-04-29 (2天)</td>
+            <td>$151.03</td>
+            <td>$151.64</td>
+            <td style="color: #3fb950; font-weight: bold;">+0.81%</td>
+            <td><span class="badge-win">🛡️ 触及保本线出场</span> <span style='font-size:10px; background:#1f6feb; padding:2px 4px; border-radius:3px;'>50%强阻减仓</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">AVGO</td>
+            <td>2026-04-01</td>
+            <td>2026-04-28 (27天)</td>
+            <td>$312.74</td>
+            <td>$398.07</td>
+            <td style="color: #3fb950; font-weight: bold;">+13.69%</td>
+            <td><span class="badge-win">🟣 疯牛跌破EMA10移动止盈</span> <span style='font-size:10px; background:#1f6feb; padding:2px 4px; border-radius:3px;'>50%强阻减仓</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">VST</td>
+            <td>2026-04-22</td>
+            <td>2026-04-24 (2天)</td>
+            <td>$155.47</td>
+            <td>$156.09</td>
+            <td style="color: #3fb950; font-weight: bold;">+0.40%</td>
+            <td><span class="badge-win">🛡️ 触及保本线出场</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">KO</td>
+            <td>2026-04-14</td>
+            <td>2026-04-24 (10天)</td>
+            <td>$75.04</td>
+            <td>$75.34</td>
+            <td style="color: #3fb950; font-weight: bold;">+0.40%</td>
+            <td><span class="badge-win">🛡️ 触及保本线出场</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">PEP</td>
+            <td>2026-04-22</td>
+            <td>2026-04-23 (1天)</td>
+            <td>$150.73</td>
+            <td>$151.33</td>
+            <td style="color: #3fb950; font-weight: bold;">+0.40%</td>
+            <td><span class="badge-win">🛡️ 触及保本线出场</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">CEG</td>
+            <td>2026-04-08</td>
+            <td>2026-04-21 (13天)</td>
+            <td>$283.68</td>
+            <td>$284.81</td>
+            <td style="color: #3fb950; font-weight: bold;">+1.94%</td>
+            <td><span class="badge-win">🛡️ 触及保本线出场</span> <span style='font-size:10px; background:#1f6feb; padding:2px 4px; border-radius:3px;'>50%强阻减仓</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">PEP</td>
+            <td>2026-04-07</td>
+            <td>2026-04-09 (2天)</td>
+            <td>$150.16</td>
+            <td>$150.76</td>
+            <td style="color: #3fb950; font-weight: bold;">+0.40%</td>
+            <td><span class="badge-win">🛡️ 触及保本线出场</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">VST</td>
+            <td>2026-04-01</td>
+            <td>2026-04-09 (8天)</td>
+            <td>$153.65</td>
+            <td>$154.26</td>
+            <td style="color: #3fb950; font-weight: bold;">+0.73%</td>
+            <td><span class="badge-win">🛡️ 触及保本线出场</span> <span style='font-size:10px; background:#1f6feb; padding:2px 4px; border-radius:3px;'>50%强阻减仓</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">KO</td>
+            <td>2026-04-07</td>
+            <td>2026-04-08 (1天)</td>
+            <td>$75.05</td>
+            <td>$75.35</td>
+            <td style="color: #3fb950; font-weight: bold;">+0.40%</td>
+            <td><span class="badge-win">🛡️ 触及保本线出场</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">PEP</td>
+            <td>2026-04-01</td>
+            <td>2026-04-07 (6天)</td>
+            <td>$151.57</td>
+            <td>$152.18</td>
+            <td style="color: #3fb950; font-weight: bold;">+0.77%</td>
+            <td><span class="badge-win">🛡️ 触及保本线出场</span> <span style='font-size:10px; background:#1f6feb; padding:2px 4px; border-radius:3px;'>50%强阻减仓</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">CRWD</td>
+            <td>2026-04-01</td>
+            <td>2026-04-07 (6天)</td>
+            <td>$98.43</td>
+            <td>$98.82</td>
+            <td style="color: #3fb950; font-weight: bold;">+0.77%</td>
+            <td><span class="badge-win">🛡️ 触及保本线出场</span> <span style='font-size:10px; background:#1f6feb; padding:2px 4px; border-radius:3px;'>50%强阻减仓</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">MU</td>
+            <td>2026-04-01</td>
+            <td>2026-04-02 (1天)</td>
+            <td>$368.10</td>
+            <td>$341.99</td>
+            <td style="color: #f85149; font-weight: bold;">-7.09%</td>
+            <td><span class="badge-loss">🔴 极限熔断止损</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">KO</td>
+            <td>2026-03-23</td>
+            <td>2026-03-31 (8天)</td>
+            <td>$74.26</td>
+            <td>$74.56</td>
+            <td style="color: #3fb950; font-weight: bold;">+0.40%</td>
+            <td><span class="badge-win">🛡️ 触及保本线出场</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">PEP</td>
+            <td>2026-03-18</td>
+            <td>2026-03-30 (12天)</td>
+            <td>$150.49</td>
+            <td>$151.09</td>
+            <td style="color: #3fb950; font-weight: bold;">+0.40%</td>
+            <td><span class="badge-win">🛡️ 触及保本线出场</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">MCD</td>
+            <td>2026-03-23</td>
+            <td>2026-03-27 (4天)</td>
+            <td>$304.53</td>
+            <td>$305.75</td>
+            <td style="color: #3fb950; font-weight: bold;">+0.35%</td>
+            <td><span class="badge-win">🛡️ 触及保本线出场</span> <span style='font-size:10px; background:#1f6feb; padding:2px 4px; border-radius:3px;'>50%强阻减仓</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">AMZN</td>
+            <td>2026-02-17</td>
+            <td>2026-03-27 (38天)</td>
+            <td>$201.35</td>
+            <td>$202.16</td>
+            <td style="color: #3fb950; font-weight: bold;">+3.30%</td>
+            <td><span class="badge-win">🛡️ 触及保本线出场</span> <span style='font-size:10px; background:#1f6feb; padding:2px 4px; border-radius:3px;'>50%强阻减仓</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">TSM</td>
+            <td>2026-03-23</td>
+            <td>2026-03-26 (3天)</td>
+            <td>$337.09</td>
+            <td>$338.44</td>
+            <td style="color: #3fb950; font-weight: bold;">+0.40%</td>
+            <td><span class="badge-win">🛡️ 触及保本线出场</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">CEG</td>
+            <td>2026-03-12</td>
+            <td>2026-03-20 (8天)</td>
+            <td>$300.92</td>
+            <td>$302.12</td>
+            <td style="color: #3fb950; font-weight: bold;">+0.77%</td>
+            <td><span class="badge-win">🛡️ 触及保本线出场</span> <span style='font-size:10px; background:#1f6feb; padding:2px 4px; border-radius:3px;'>50%强阻减仓</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">VST</td>
+            <td>2026-03-12</td>
+            <td>2026-03-20 (8天)</td>
+            <td>$159.04</td>
+            <td>$159.67</td>
+            <td style="color: #3fb950; font-weight: bold;">+2.54%</td>
+            <td><span class="badge-win">🛡️ 触及保本线出场</span> <span style='font-size:10px; background:#1f6feb; padding:2px 4px; border-radius:3px;'>50%强阻减仓</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">AAPL</td>
+            <td>2026-03-12</td>
+            <td>2026-03-20 (8天)</td>
+            <td>$255.56</td>
+            <td>$247.30</td>
+            <td style="color: #f85149; font-weight: bold;">-3.23%</td>
+            <td><span class="badge-loss">🔴 放量破位止损</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">NVDA</td>
+            <td>2026-03-13</td>
+            <td>2026-03-18 (5天)</td>
+            <td>$180.02</td>
+            <td>$180.74</td>
+            <td style="color: #3fb950; font-weight: bold;">+0.56%</td>
+            <td><span class="badge-win">🛡️ 触及保本线出场</span> <span style='font-size:10px; background:#1f6feb; padding:2px 4px; border-radius:3px;'>50%强阻减仓</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">META</td>
+            <td>2026-03-09</td>
+            <td>2026-03-13 (4天)</td>
+            <td>$646.37</td>
+            <td>$611.52</td>
+            <td style="color: #f85149; font-weight: bold;">-5.39%</td>
+            <td><span class="badge-loss">🔴 放量破位止损</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">AAPL</td>
+            <td>2026-03-06</td>
+            <td>2026-03-12 (6天)</td>
+            <td>$257.26</td>
+            <td>$258.29</td>
+            <td style="color: #3fb950; font-weight: bold;">+0.75%</td>
+            <td><span class="badge-win">🛡️ 触及保本线出场</span> <span style='font-size:10px; background:#1f6feb; padding:2px 4px; border-radius:3px;'>50%强阻减仓</span></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold; color: #58a6ff;">STX</td>
+            <td>2026-03-05</td>
+            <td>2026-03-12 (7天)</td>
+            <td>$366.51</td>
+            <td>$367.98</td>
+            <td style="color: #3fb950; font-weight: bold;">+0.40%</td>
+            <td><span class="badge-win">🛡️ 触及保本线出场</span></td>
+        </tr>
+        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const dates = ['2022-01-26', '2022-01-27', '2022-01-28', '2022-01-31', '2022-02-01', '2022-02-02', '2022-02-03', '2022-02-04', '2022-02-07', '2022-02-08', '2022-02-09', '2022-02-10', '2022-02-11', '2022-02-14', '2022-02-15', '2022-02-16', '2022-02-17', '2022-02-18', '2022-02-22', '2022-02-23', '2022-02-24', '2022-02-25', '2022-02-28', '2022-03-01', '2022-03-02', '2022-03-03', '2022-03-04', '2022-03-07', '2022-03-08', '2022-03-09', '2022-03-10', '2022-03-11', '2022-03-14', '2022-03-15', '2022-03-16', '2022-03-17', '2022-03-18', '2022-03-21', '2022-03-22', '2022-03-23', '2022-03-24', '2022-03-25', '2022-03-28', '2022-03-29', '2022-03-30', '2022-03-31', '2022-04-01', '2022-04-04', '2022-04-05', '2022-04-06', '2022-04-07', '2022-04-08', '2022-04-11', '2022-04-12', '2022-04-13', '2022-04-14', '2022-04-18', '2022-04-19', '2022-04-20', '2022-04-21', '2022-04-22', '2022-04-25', '2022-04-26', '2022-04-27', '2022-04-28', '2022-04-29', '2022-05-02', '2022-05-03', '2022-05-04', '2022-05-05', '2022-05-06', '2022-05-09', '2022-05-10', '2022-05-11', '2022-05-12', '2022-05-13', '2022-05-16', '2022-05-17', '2022-05-18', '2022-05-19', '2022-05-20', '2022-05-23', '2022-05-24', '2022-05-25', '2022-05-26', '2022-05-27', '2022-05-31', '2022-06-01', '2022-06-02', '2022-06-03', '2022-06-06', '2022-06-07', '2022-06-08', '2022-06-09', '2022-06-10', '2022-06-13', '2022-06-14', '2022-06-15', '2022-06-16', '2022-06-17', '2022-06-21', '2022-06-22', '2022-06-23', '2022-06-24', '2022-06-27', '2022-06-28', '2022-06-29', '2022-06-30', '2022-07-01', '2022-07-05', '2022-07-06', '2022-07-07', '2022-07-08', '2022-07-11', '2022-07-12', '2022-07-13', '2022-07-14', '2022-07-15', '2022-07-18', '2022-07-19', '2022-07-20', '2022-07-21', '2022-07-22', '2022-07-25', '2022-07-26', '2022-07-27', '2022-07-28', '2022-07-29', '2022-08-01', '2022-08-02', '2022-08-03', '2022-08-04', '2022-08-05', '2022-08-08', '2022-08-09', '2022-08-10', '2022-08-11', '2022-08-12', '2022-08-15', '2022-08-16', '2022-08-17', '2022-08-18', '2022-08-19', '2022-08-22', '2022-08-23', '2022-08-24', '2022-08-25', '2022-08-26', '2022-08-29', '2022-08-30', '2022-08-31', '2022-09-01', '2022-09-02', '2022-09-06', '2022-09-07', '2022-09-08', '2022-09-09', '2022-09-12', '2022-09-13', '2022-09-14', '2022-09-15', '2022-09-16', '2022-09-19', '2022-09-20', '2022-09-21', '2022-09-22', '2022-09-23', '2022-09-26', '2022-09-27', '2022-09-28', '2022-09-29', '2022-09-30', '2022-10-03', '2022-10-04', '2022-10-05', '2022-10-06', '2022-10-07', '2022-10-10', '2022-10-11', '2022-10-12', '2022-10-13', '2022-10-14', '2022-10-17', '2022-10-18', '2022-10-19', '2022-10-20', '2022-10-21', '2022-10-24', '2022-10-25', '2022-10-26', '2022-10-27', '2022-10-28', '2022-10-31', '2022-11-01', '2022-11-02', '2022-11-03', '2022-11-04', '2022-11-07', '2022-11-08', '2022-11-09', '2022-11-10', '2022-11-11', '2022-11-14', '2022-11-15', '2022-11-16', '2022-11-17', '2022-11-18', '2022-11-21', '2022-11-22', '2022-11-23', '2022-11-25', '2022-11-28', '2022-11-29', '2022-11-30', '2022-12-01', '2022-12-02', '2022-12-05', '2022-12-06', '2022-12-07', '2022-12-08', '2022-12-09', '2022-12-12', '2022-12-13', '2022-12-14', '2022-12-15', '2022-12-16', '2022-12-19', '2022-12-20', '2022-12-21', '2022-12-22', '2022-12-23', '2022-12-27', '2022-12-28', '2022-12-29', '2022-12-30', '2023-01-03', '2023-01-04', '2023-01-05', '2023-01-06', '2023-01-09', '2023-01-10', '2023-01-11', '2023-01-12', '2023-01-13', '2023-01-17', '2023-01-18', '2023-01-19', '2023-01-20', '2023-01-23', '2023-01-24', '2023-01-25', '2023-01-26', '2023-01-27', '2023-01-30', '2023-01-31', '2023-02-01', '2023-02-02', '2023-02-03', '2023-02-06', '2023-02-07', '2023-02-08', '2023-02-09', '2023-02-10', '2023-02-13', '2023-02-14', '2023-02-15', '2023-02-16', '2023-02-17', '2023-02-21', '2023-02-22', '2023-02-23', '2023-02-24', '2023-02-27', '2023-02-28', '2023-03-01', '2023-03-02', '2023-03-03', '2023-03-06', '2023-03-07', '2023-03-08', '2023-03-09', '2023-03-10', '2023-03-13', '2023-03-14', '2023-03-15', '2023-03-16', '2023-03-17', '2023-03-20', '2023-03-21', '2023-03-22', '2023-03-23', '2023-03-24', '2023-03-27', '2023-03-28', '2023-03-29', '2023-03-30', '2023-03-31', '2023-04-03', '2023-04-04', '2023-04-05', '2023-04-06', '2023-04-10', '2023-04-11', '2023-04-12', '2023-04-13', '2023-04-14', '2023-04-17', '2023-04-18', '2023-04-19', '2023-04-20', '2023-04-21', '2023-04-24', '2023-04-25', '2023-04-26', '2023-04-27', '2023-04-28', '2023-05-01', '2023-05-02', '2023-05-03', '2023-05-04', '2023-05-05', '2023-05-08', '2023-05-09', '2023-05-10', '2023-05-11', '2023-05-12', '2023-05-15', '2023-05-16', '2023-05-17', '2023-05-18', '2023-05-19', '2023-05-22', '2023-05-23', '2023-05-24', '2023-05-25', '2023-05-26', '2023-05-30', '2023-05-31', '2023-06-01', '2023-06-02', '2023-06-05', '2023-06-06', '2023-06-07', '2023-06-08', '2023-06-09', '2023-06-12', '2023-06-13', '2023-06-14', '2023-06-15', '2023-06-16', '2023-06-20', '2023-06-21', '2023-06-22', '2023-06-23', '2023-06-26', '2023-06-27', '2023-06-28', '2023-06-29', '2023-06-30', '2023-07-03', '2023-07-05', '2023-07-06', '2023-07-07', '2023-07-10', '2023-07-11', '2023-07-12', '2023-07-13', '2023-07-14', '2023-07-17', '2023-07-18', '2023-07-19', '2023-07-20', '2023-07-21', '2023-07-24', '2023-07-25', '2023-07-26', '2023-07-27', '2023-07-28', '2023-07-31', '2023-08-01', '2023-08-02', '2023-08-03', '2023-08-04', '2023-08-07', '2023-08-08', '2023-08-09', '2023-08-10', '2023-08-11', '2023-08-14', '2023-08-15', '2023-08-16', '2023-08-17', '2023-08-18', '2023-08-21', '2023-08-22', '2023-08-23', '2023-08-24', '2023-08-25', '2023-08-28', '2023-08-29', '2023-08-30', '2023-08-31', '2023-09-01', '2023-09-05', '2023-09-06', '2023-09-07', '2023-09-08', '2023-09-11', '2023-09-12', '2023-09-13', '2023-09-14', '2023-09-15', '2023-09-18', '2023-09-19', '2023-09-20', '2023-09-21', '2023-09-22', '2023-09-25', '2023-09-26', '2023-09-27', '2023-09-28', '2023-09-29', '2023-10-02', '2023-10-03', '2023-10-04', '2023-10-05', '2023-10-06', '2023-10-09', '2023-10-10', '2023-10-11', '2023-10-12', '2023-10-13', '2023-10-16', '2023-10-17', '2023-10-18', '2023-10-19', '2023-10-20', '2023-10-23', '2023-10-24', '2023-10-25', '2023-10-26', '2023-10-27', '2023-10-30', '2023-10-31', '2023-11-01', '2023-11-02', '2023-11-03', '2023-11-06', '2023-11-07', '2023-11-08', '2023-11-09', '2023-11-10', '2023-11-13', '2023-11-14', '2023-11-15', '2023-11-16', '2023-11-17', '2023-11-20', '2023-11-21', '2023-11-22', '2023-11-24', '2023-11-27', '2023-11-28', '2023-11-29', '2023-11-30', '2023-12-01', '2023-12-04', '2023-12-05', '2023-12-06', '2023-12-07', '2023-12-08', '2023-12-11', '2023-12-12', '2023-12-13', '2023-12-14', '2023-12-15', '2023-12-18', '2023-12-19', '2023-12-20', '2023-12-21', '2023-12-22', '2023-12-26', '2023-12-27', '2023-12-28', '2023-12-29', '2024-01-02', '2024-01-03', '2024-01-04', '2024-01-05', '2024-01-08', '2024-01-09', '2024-01-10', '2024-01-11', '2024-01-12', '2024-01-16', '2024-01-17', '2024-01-18', '2024-01-19', '2024-01-22', '2024-01-23', '2024-01-24', '2024-01-25', '2024-01-26', '2024-01-29', '2024-01-30', '2024-01-31', '2024-02-01', '2024-02-02', '2024-02-05', '2024-02-06', '2024-02-07', '2024-02-08', '2024-02-09', '2024-02-12', '2024-02-13', '2024-02-14', '2024-02-15', '2024-02-16', '2024-02-20', '2024-02-21', '2024-02-22', '2024-02-23', '2024-02-26', '2024-02-27', '2024-02-28', '2024-02-29', '2024-03-01', '2024-03-04', '2024-03-05', '2024-03-06', '2024-03-07', '2024-03-08', '2024-03-11', '2024-03-12', '2024-03-13', '2024-03-14', '2024-03-15', '2024-03-18', '2024-03-19', '2024-03-20', '2024-03-21', '2024-03-22', '2024-03-25', '2024-03-26', '2024-03-27', '2024-03-28', '2024-04-01', '2024-04-02', '2024-04-03', '2024-04-04', '2024-04-05', '2024-04-08', '2024-04-09', '2024-04-10', '2024-04-11', '2024-04-12', '2024-04-15', '2024-04-16', '2024-04-17', '2024-04-18', '2024-04-19', '2024-04-22', '2024-04-23', '2024-04-24', '2024-04-25', '2024-04-26', '2024-04-29', '2024-04-30', '2024-05-01', '2024-05-02', '2024-05-03', '2024-05-06', '2024-05-07', '2024-05-08', '2024-05-09', '2024-05-10', '2024-05-13', '2024-05-14', '2024-05-15', '2024-05-16', '2024-05-17', '2024-05-20', '2024-05-21', '2024-05-22', '2024-05-23', '2024-05-24', '2024-05-28', '2024-05-29', '2024-05-30', '2024-05-31', '2024-06-03', '2024-06-04', '2024-06-05', '2024-06-06', '2024-06-07', '2024-06-10', '2024-06-11', '2024-06-12', '2024-06-13', '2024-06-14', '2024-06-17', '2024-06-18', '2024-06-20', '2024-06-21', '2024-06-24', '2024-06-25', '2024-06-26', '2024-06-27', '2024-06-28', '2024-07-01', '2024-07-02', '2024-07-03', '2024-07-05', '2024-07-08', '2024-07-09', '2024-07-10', '2024-07-11', '2024-07-12', '2024-07-15', '2024-07-16', '2024-07-17', '2024-07-18', '2024-07-19', '2024-07-22', '2024-07-23', '2024-07-24', '2024-07-25', '2024-07-26', '2024-07-29', '2024-07-30', '2024-07-31', '2024-08-01', '2024-08-02', '2024-08-05', '2024-08-06', '2024-08-07', '2024-08-08', '2024-08-09', '2024-08-12', '2024-08-13', '2024-08-14', '2024-08-15', '2024-08-16', '2024-08-19', '2024-08-20', '2024-08-21', '2024-08-22', '2024-08-23', '2024-08-26', '2024-08-27', '2024-08-28', '2024-08-29', '2024-08-30', '2024-09-03', '2024-09-04', '2024-09-05', '2024-09-06', '2024-09-09', '2024-09-10', '2024-09-11', '2024-09-12', '2024-09-13', '2024-09-16', '2024-09-17', '2024-09-18', '2024-09-19', '2024-09-20', '2024-09-23', '2024-09-24', '2024-09-25', '2024-09-26', '2024-09-27', '2024-09-30', '2024-10-01', '2024-10-02', '2024-10-03', '2024-10-04', '2024-10-07', '2024-10-08', '2024-10-09', '2024-10-10', '2024-10-11', '2024-10-14', '2024-10-15', '2024-10-16', '2024-10-17', '2024-10-18', '2024-10-21', '2024-10-22', '2024-10-23', '2024-10-24', '2024-10-25', '2024-10-28', '2024-10-29', '2024-10-30', '2024-10-31', '2024-11-01', '2024-11-04', '2024-11-05', '2024-11-06', '2024-11-07', '2024-11-08', '2024-11-11', '2024-11-12', '2024-11-13', '2024-11-14', '2024-11-15', '2024-11-18', '2024-11-19', '2024-11-20', '2024-11-21', '2024-11-22', '2024-11-25', '2024-11-26', '2024-11-27', '2024-11-29', '2024-12-02', '2024-12-03', '2024-12-04', '2024-12-05', '2024-12-06', '2024-12-09', '2024-12-10', '2024-12-11', '2024-12-12', '2024-12-13', '2024-12-16', '2024-12-17', '2024-12-18', '2024-12-19', '2024-12-20', '2024-12-23', '2024-12-24', '2024-12-26', '2024-12-27', '2024-12-30', '2024-12-31', '2025-01-02', '2025-01-03', '2025-01-06', '2025-01-07', '2025-01-08', '2025-01-10', '2025-01-13', '2025-01-14', '2025-01-15', '2025-01-16', '2025-01-17', '2025-01-21', '2025-01-22', '2025-01-23', '2025-01-24', '2025-01-27', '2025-01-28', '2025-01-29', '2025-01-30', '2025-01-31', '2025-02-03', '2025-02-04', '2025-02-05', '2025-02-06', '2025-02-07', '2025-02-10', '2025-02-11', '2025-02-12', '2025-02-13', '2025-02-14', '2025-02-18', '2025-02-19', '2025-02-20', '2025-02-21', '2025-02-24', '2025-02-25', '2025-02-26', '2025-02-27', '2025-02-28', '2025-03-03', '2025-03-04', '2025-03-05', '2025-03-06', '2025-03-07', '2025-03-10', '2025-03-11', '2025-03-12', '2025-03-13', '2025-03-14', '2025-03-17', '2025-03-18', '2025-03-19', '2025-03-20', '2025-03-21', '2025-03-24', '2025-03-25', '2025-03-26', '2025-03-27', '2025-03-28', '2025-03-31', '2025-04-01', '2025-04-02', '2025-04-03', '2025-04-04', '2025-04-07', '2025-04-08', '2025-04-09', '2025-04-10', '2025-04-11', '2025-04-14', '2025-04-15', '2025-04-16', '2025-04-17', '2025-04-21', '2025-04-22', '2025-04-23', '2025-04-24', '2025-04-25', '2025-04-28', '2025-04-29', '2025-04-30', '2025-05-01', '2025-05-02', '2025-05-05', '2025-05-06', '2025-05-07', '2025-05-08', '2025-05-09', '2025-05-12', '2025-05-13', '2025-05-14', '2025-05-15', '2025-05-16', '2025-05-19', '2025-05-20', '2025-05-21', '2025-05-22', '2025-05-23', '2025-05-27', '2025-05-28', '2025-05-29', '2025-05-30', '2025-06-02', '2025-06-03', '2025-06-04', '2025-06-05', '2025-06-06', '2025-06-09', '2025-06-10', '2025-06-11', '2025-06-12', '2025-06-13', '2025-06-16', '2025-06-17', '2025-06-18', '2025-06-20', '2025-06-23', '2025-06-24', '2025-06-25', '2025-06-26', '2025-06-27', '2025-06-30', '2025-07-01', '2025-07-02', '2025-07-03', '2025-07-07', '2025-07-08', '2025-07-09', '2025-07-10', '2025-07-11', '2025-07-14', '2025-07-15', '2025-07-16', '2025-07-17', '2025-07-18', '2025-07-21', '2025-07-22', '2025-07-23', '2025-07-24', '2025-07-25', '2025-07-28', '2025-07-29', '2025-07-30', '2025-07-31', '2025-08-01', '2025-08-04', '2025-08-05', '2025-08-06', '2025-08-07', '2025-08-08', '2025-08-11', '2025-08-12', '2025-08-13', '2025-08-14', '2025-08-15', '2025-08-18', '2025-08-19', '2025-08-20', '2025-08-21', '2025-08-22', '2025-08-25', '2025-08-26', '2025-08-27', '2025-08-28', '2025-08-29', '2025-09-02', '2025-09-03', '2025-09-04', '2025-09-05', '2025-09-08', '2025-09-09', '2025-09-10', '2025-09-11', '2025-09-12', '2025-09-15', '2025-09-16', '2025-09-17', '2025-09-18', '2025-09-19', '2025-09-22', '2025-09-23', '2025-09-24', '2025-09-25', '2025-09-26', '2025-09-29', '2025-09-30', '2025-10-01', '2025-10-02', '2025-10-03', '2025-10-06', '2025-10-07', '2025-10-08', '2025-10-09', '2025-10-10', '2025-10-13', '2025-10-14', '2025-10-15', '2025-10-16', '2025-10-17', '2025-10-20', '2025-10-21', '2025-10-22', '2025-10-23', '2025-10-24', '2025-10-27', '2025-10-28', '2025-10-29', '2025-10-30', '2025-10-31', '2025-11-03', '2025-11-04', '2025-11-05', '2025-11-06', '2025-11-07', '2025-11-10', '2025-11-11', '2025-11-12', '2025-11-13', '2025-11-14', '2025-11-17', '2025-11-18', '2025-11-19', '2025-11-20', '2025-11-21', '2025-11-24', '2025-11-25', '2025-11-26', '2025-11-28', '2025-12-01', '2025-12-02', '2025-12-03', '2025-12-04', '2025-12-05', '2025-12-08', '2025-12-09', '2025-12-10', '2025-12-11', '2025-12-12', '2025-12-15', '2025-12-16', '2025-12-17', '2025-12-18', '2025-12-19', '2025-12-22', '2025-12-23', '2025-12-24', '2025-12-26', '2025-12-29', '2025-12-30', '2025-12-31', '2026-01-02', '2026-01-05', '2026-01-06', '2026-01-07', '2026-01-08', '2026-01-09', '2026-01-12', '2026-01-13', '2026-01-14', '2026-01-15', '2026-01-16', '2026-01-20', '2026-01-21', '2026-01-22', '2026-01-23', '2026-01-26', '2026-01-27', '2026-01-28', '2026-01-29', '2026-01-30', '2026-02-02', '2026-02-03', '2026-02-04', '2026-02-05', '2026-02-06', '2026-02-09', '2026-02-10', '2026-02-11', '2026-02-12', '2026-02-13', '2026-02-17', '2026-02-18', '2026-02-19', '2026-02-20', '2026-02-23', '2026-02-24', '2026-02-25', '2026-02-26', '2026-02-27', '2026-03-02', '2026-03-03', '2026-03-04', '2026-03-05', '2026-03-06', '2026-03-09', '2026-03-10', '2026-03-11', '2026-03-12', '2026-03-13', '2026-03-16', '2026-03-17', '2026-03-18', '2026-03-19', '2026-03-20', '2026-03-23', '2026-03-24', '2026-03-25', '2026-03-26', '2026-03-27', '2026-03-30', '2026-03-31', '2026-04-01', '2026-04-02', '2026-04-06', '2026-04-07', '2026-04-08', '2026-04-09', '2026-04-10', '2026-04-13', '2026-04-14', '2026-04-15', '2026-04-16', '2026-04-17', '2026-04-20', '2026-04-21', '2026-04-22', '2026-04-23', '2026-04-24', '2026-04-27', '2026-04-28', '2026-04-29', '2026-04-30', '2026-05-01', '2026-05-04', '2026-05-05', '2026-05-06', '2026-05-07', '2026-05-08', '2026-05-11', '2026-05-12', '2026-05-13', '2026-05-14', '2026-05-15', '2026-05-18', '2026-05-19', '2026-05-20', '2026-05-21', '2026-05-22', '2026-05-26', '2026-05-27', '2026-05-28', '2026-05-29', '2026-06-01', '2026-06-02', '2026-06-03', '2026-06-04', '2026-06-05', '2026-06-08', '2026-06-09', '2026-06-10', '2026-06-11', '2026-06-12', '2026-06-15', '2026-06-16', '2026-06-17', '2026-06-18', '2026-06-22', '2026-06-23', '2026-06-24', '2026-06-25', '2026-06-26', '2026-06-29', '2026-06-30', '2026-07-01', '2026-07-02', '2026-07-06', '2026-07-07', '2026-07-08', '2026-07-09', '2026-07-10', '2026-07-13', '2026-07-14', '2026-07-15', '2026-07-16', '2026-07-17', '2026-07-20', '2026-07-21', '2026-07-22', '2026-07-23', '2026-07-24', '2026-07-27', '2026-07-28', '2026-07-29', '2026-07-30', '2026-07-31', '2026-08-03', '2026-08-04', '2026-08-05', '2026-08-06', '2026-08-07', '2026-08-10', '2026-08-11', '2026-08-12', '2026-08-13', '2026-08-14', '2026-08-17', '2026-08-18', '2026-08-19', '2026-08-20', '2026-08-21', '2026-08-24', '2026-08-25', '2026-08-26', '2026-08-27', '2026-08-28', '2026-08-31', '2026-09-01', '2026-09-02', '2026-09-03', '2026-09-04', '2026-09-08', '2026-09-09', '2026-09-10', '2026-09-11', '2026-09-14', '2026-09-15', '2026-09-16', '2026-09-17', '2026-09-18', '2026-09-21', '2026-09-22', '2026-09-23', '2026-09-24', '2026-09-25', '2026-09-28', '2026-09-29', '2026-09-30', '2026-10-01', '2026-10-02', '2026-10-05', '2026-10-06', '2026-10-07', '2026-10-08', '2026-10-09', '2026-10-12', '2026-10-13', '2026-10-14', '2026-10-15', '2026-10-16', '2026-10-19', '2026-10-20', '2026-10-21', '2026-10-22', '2026-10-23', '2026-10-26', '2026-10-27', '2026-10-28'];
+        const strategyEquity = [100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 99980.02, 99641.56, 98907.81, 98581.4, 98581.4, 98581.4, 98581.4, 98581.4, 98581.4, 98581.4, 98581.4, 98581.4, 98581.4, 98581.4, 98581.4, 98581.4, 98581.4, 98581.4, 98581.4, 98581.4, 98581.4, 98581.4, 98581.4, 98581.4, 98581.4, 98502.64, 98970.13, 107091.66, 108446.63, 117980.34, 120636.14, 121118.46, 121497.5, 133738.15, 133910.17, 143501.35, 143406.6, 143702.02, 131263.93, 130416.12, 131318.43, 120183.86, 118309.38, 116944.77, 117933.88, 115394.58, 115984.83, 117411.91, 129784.11, 128654.39, 115103.67, 115159.31, 103563.61, 103465.56, 103789.88, 92563.43, 92563.43, 92563.43, 92471.0, 86654.15, 85992.07, 85758.51, 86001.9, 85366.44, 85366.44, 85366.44, 85366.44, 85366.44, 85366.44, 85366.44, 85366.44, 85366.44, 85366.44, 85366.44, 85366.44, 85366.44, 85349.38, 84892.01, 85912.53, 85133.76, 102832.34, 86188.53, 96022.0, 84639.27, 84077.21, 83033.61, 81633.36, 81633.36, 81633.36, 81633.36, 81633.36, 81633.36, 81633.36, 81633.36, 81633.36, 81633.36, 81633.36, 81633.36, 81633.36, 81633.36, 81617.04, 83105.22, 91861.69, 90757.19, 90926.52, 91473.8, 82328.71, 90158.89, 89594.04, 91483.09, 93128.48, 94502.29, 92784.63, 92949.43, 101570.39, 92418.48, 92695.76, 92885.35, 92790.55, 92532.23, 92773.96, 92781.07, 92769.22, 92542.18, 101878.16, 93580.59, 93933.51, 95143.92, 95171.66, 104502.07, 104110.4, 103503.06, 102247.69, 91394.78, 91216.93, 98061.52, 99597.64, 90005.5, 88967.62, 88062.22, 77347.14, 75168.44, 74264.91, 73763.24, 74496.09, 74817.05, 76215.5, 76433.25, 74410.32, 74410.25, 73101.45, 73101.45, 73101.45, 73101.45, 73101.45, 73101.45, 73101.45, 73101.45, 73101.45, 73101.45, 73101.45, 73101.45, 73101.45, 73101.45, 73101.45, 73101.45, 73101.45, 73101.45, 73101.45, 73101.45, 73101.45, 73101.45, 73101.45, 73101.45, 73101.45, 73101.45, 73101.45, 73101.45, 73101.45, 73101.45, 73101.45, 73101.45, 73101.45, 73101.45, 73101.45, 73101.45, 73101.45, 73072.24, 72952.3, 81993.72, 87323.76, 88043.19, 96263.0, 97996.88, 95718.54, 86472.51, 86592.83, 84572.85, 84886.76, 85422.85, 85639.84, 84960.86, 84644.99, 85233.42, 85204.38, 84973.45, 75154.64, 74465.04, 73688.55, 76104.61, 91886.47, 76442.32, 107713.54, 82285.16, 75207.49, 74171.5, 73006.72, 73309.14, 74067.01, 72234.8, 72571.26, 72841.15, 71595.04, 73537.35, 73277.8, 70374.79, 72972.93, 87739.29, 89296.93, 92948.54, 106590.52, 108349.68, 110621.19, 111364.88, 126453.72, 113774.95, 112893.84, 117417.84, 121742.99, 133531.03, 145370.94, 136358.49, 140515.4, 136127.86, 138817.74, 143540.28, 148105.4, 146701.71, 146579.46, 148718.54, 148395.94, 133842.15, 130381.62, 132054.74, 148904.3, 135704.21, 145537.86, 121405.37, 101242.78, 88899.35, 89211.95, 87590.32, 96822.59, 88077.83, 87474.56, 86253.84, 86878.08, 85551.71, 84620.81, 85190.73, 83062.33, 81558.78, 80102.29, 80750.65, 79224.63, 79105.81, 78614.05, 79208.49, 88454.87, 78550.97, 79330.36, 78350.89, 82903.5, 74302.09, 75865.56, 81347.82, 82524.2, 81871.62, 80828.09, 80118.37, 74826.31, 75629.95, 91424.4, 74845.33, 82994.6, 75119.98, 74820.89, 82933.62, 74670.18, 75045.07, 82678.35, 75148.36, 80779.93, 73878.19, 74896.8, 75713.4, 75410.15, 74279.49, 74333.18, 74432.98, 74918.34, 76110.4, 84528.89, 85399.62, 92741.02, 92410.62, 93277.58, 91508.78, 92977.59, 94579.66, 106270.22, 107673.59, 115954.96, 96459.98, 94944.48, 95708.06, 95246.26, 87628.12, 87893.32, 97209.94, 97275.0, 96853.67, 77208.12, 77601.18, 85367.82, 77207.36, 86164.58, 77877.0, 78220.83, 88554.7, 88350.49, 78490.19, 78597.46, 78350.57, 78419.46, 79662.33, 79323.48, 79278.75, 87799.61, 87878.84, 87487.4, 78581.36, 78803.62, 79840.8, 79752.66, 79938.66, 81313.67, 81045.73, 90052.46, 89657.68, 89384.36, 88506.23, 88390.62, 88494.37, 88732.88, 89463.97, 99779.73, 102014.99, 100388.02, 99759.8, 88902.03, 89001.37, 89423.74, 97729.19, 89957.93, 88533.37, 88377.23, 87363.0, 87783.99, 86409.23, 76976.42, 74668.82, 74021.48, 73947.56, 73507.86, 74078.72, 72337.07, 73318.84, 81618.14, 81696.66, 74290.03, 73992.89, 80033.05, 72689.72, 71568.02, 70767.34, 70862.56, 76961.83, 70010.91, 71069.9, 78983.69, 70626.53, 70775.46, 70255.16, 69891.8, 68002.51, 68751.45, 68844.24, 68060.79, 69090.05, 69533.12, 69904.57, 70846.11, 77236.35, 78047.28, 78538.87, 79758.36, 79078.78, 79491.78, 86785.06, 78572.39, 71069.47, 71398.23, 70930.51, 70258.81, 69956.52, 69322.84, 68596.22, 69086.05, 67147.19, 65518.93, 65518.93, 65518.93, 65518.93, 65466.58, 73307.56, 80320.16, 80853.35, 87728.26, 88200.36, 87200.73, 88804.66, 88995.29, 89929.94, 90833.63, 82524.62, 82511.88, 82665.81, 82509.39, 82702.51, 82393.98, 75022.86, 75104.65, 74875.86, 74621.18, 74536.93, 74045.93, 73839.68, 73280.27, 75106.57, 75896.07, 83324.04, 75535.93, 83683.92, 84422.48, 92487.18, 93244.0, 93530.56, 84701.05, 86453.95, 95013.29, 96249.71, 86810.33, 87030.61, 95545.25, 78291.98, 78114.23, 77501.28, 77456.49, 79186.71, 93088.59, 78791.88, 79429.52, 79218.73, 86472.37, 69265.5, 68989.57, 69124.76, 69502.77, 74199.46, 81153.65, 79818.99, 87738.92, 74716.43, 73467.26, 72278.38, 72819.93, 65316.2, 64497.01, 64580.87, 64194.93, 64099.27, 64363.14, 71009.12, 63543.37, 63938.04, 64731.31, 63964.41, 69786.13, 63616.19, 80676.1, 92948.71, 85843.36, 93084.53, 92653.15, 85468.31, 87918.25, 95869.23, 94782.07, 95301.64, 87001.03, 86309.3, 86172.53, 88452.7, 82164.0, 73667.72, 73346.56, 81774.63, 74638.62, 84771.87, 97217.11, 84793.54, 84224.01, 84631.96, 78421.34, 85503.33, 85925.66, 85258.56, 84152.77, 74836.87, 75305.08, 82798.55, 75393.11, 74342.21, 74607.46, 72538.27, 60693.17, 60208.25, 65794.94, 59856.81, 58843.36, 59021.49, 64230.34, 73539.56, 67269.72, 66623.17, 68729.66, 74192.45, 66331.73, 66094.45, 67847.85, 76247.53, 87949.26, 74122.05, 74419.2, 74551.62, 75420.66, 76514.43, 79663.71, 87624.64, 89384.75, 91045.11, 89994.28, 90279.65, 88955.8, 91234.97, 91076.92, 98787.37, 79305.13, 71762.5, 71788.38, 72275.32, 80304.82, 72815.96, 77866.85, 77226.76, 76488.71, 77391.09, 84318.27, 84406.17, 85069.62, 85509.72, 86106.7, 77655.35, 69365.38, 69799.05, 66314.31, 67008.24, 66417.5, 66072.36, 66370.58, 67423.86, 80626.52, 89725.23, 88218.26, 97922.9, 91276.57, 92077.74, 94046.68, 88271.66, 68968.38, 68169.41, 69668.09, 70334.05, 76207.31, 66230.29, 53214.89, 65520.24, 60808.51, 52800.03, 54413.1, 66196.4, 50840.0, 50840.0, 50840.0, 50840.0, 50840.0, 50840.0, 50840.0, 50789.23, 50359.16, 52742.38, 68806.66, 74466.59, 75403.45, 75675.42, 69686.88, 72266.16, 78523.04, 70727.06, 65019.7, 72159.17, 73857.59, 65935.02, 65921.33, 66201.5, 57867.24, 59244.03, 66073.28, 59669.13, 60313.19, 61498.21, 61240.41, 62041.74, 68416.08, 64633.34, 78433.77, 78560.42, 84551.25, 85478.47, 86539.34, 86273.23, 86437.74, 78375.97, 78499.48, 78047.46, 79536.48, 79286.66, 80209.91, 74149.47, 74807.09, 76202.23, 77363.16, 76270.1, 84549.29, 77054.93, 77176.0, 69977.05, 70091.33, 68616.58, 71679.35, 72968.41, 82002.75, 80947.88, 79378.24, 71118.3, 71173.2, 61841.54, 62135.58, 64183.38, 71021.75, 71005.21, 64097.68, 60291.62, 59515.45, 58935.15, 58661.05, 58989.01, 58278.55, 58483.51, 57799.62, 57873.12, 58632.54, 58651.67, 65278.71, 72886.43, 73945.32, 81549.16, 76177.84, 75889.2, 82024.88, 75288.25, 59825.02, 59816.5, 65546.86, 59448.99, 59152.35, 59020.82, 57917.75, 57754.47, 58534.89, 59052.45, 66439.78, 66369.76, 65251.83, 64125.13, 63859.13, 57567.46, 57687.83, 56812.65, 56523.68, 56505.6, 54797.48, 53315.46, 58701.71, 60220.43, 59648.41, 67489.95, 60834.42, 60944.31, 60787.53, 59845.02, 53922.12, 53772.95, 64661.64, 72620.83, 78684.83, 71558.83, 79026.32, 80683.08, 81371.7, 61152.31, 60791.87, 60761.35, 59598.18, 52673.88, 59638.8, 63873.7, 67132.13, 71860.14, 58409.6, 57896.48, 56743.51, 64903.02, 56172.29, 56032.94, 54733.15, 48207.82, 48207.82, 48207.82, 48207.82, 48207.82, 48207.82, 48207.82, 48207.82, 48207.82, 48207.82, 48207.82, 48207.82, 48207.82, 48207.82, 48207.82, 48207.82, 48207.82, 48207.82, 48207.82, 48207.82, 48207.82, 48207.82, 48207.82, 48207.82, 48207.82, 48207.82, 48207.82, 48207.82, 48207.82, 48207.82, 48207.82, 48207.82, 48207.82, 48207.82, 48207.82, 48207.82, 48207.82, 48207.82, 48207.82, 48207.82, 48207.82, 48207.82, 48207.82, 48198.18, 48179.78, 48060.73, 47799.01, 47839.82, 53418.42, 53434.24, 53391.09, 53675.13, 53665.91, 53545.65, 53452.55, 53221.24, 48251.9, 47960.27, 48196.83, 48206.89, 48174.76, 48279.29, 48328.96, 48420.51, 48377.25, 48367.58, 48417.88, 48325.0, 48188.06, 47719.37, 47755.34, 47584.08, 47500.84, 46871.72, 46916.76, 47119.1, 51991.33, 47273.3, 46974.39, 46953.43, 47294.04, 47280.35, 47471.3, 52670.66, 52650.92, 52610.15, 47487.18, 52694.87, 53377.68, 53567.11, 53777.11, 58731.54, 59170.1, 64645.04, 59473.61, 65294.68, 59799.89, 60026.31, 48379.47, 48392.84, 54628.77, 47946.22, 47821.19, 46639.04, 45760.0, 50861.75, 49868.98, 46004.48, 55441.52, 56912.09, 62723.22, 63568.58, 64003.25, 63301.29, 58365.68, 65017.52, 64427.75, 52845.57, 52843.65, 52827.48, 45482.5, 46498.48, 51503.47, 52251.57, 51001.05, 50569.91, 50532.81, 50917.27, 50511.04, 50565.62, 51273.89, 52829.57, 58234.53, 64046.33, 64353.18, 64394.54, 64558.33, 65679.39, 66102.54, 73316.22, 66097.35, 60748.28, 54534.18, 49121.27, 52578.52, 49464.9, 49548.73, 49592.27, 48549.43, 52142.41, 47389.63, 47206.47, 47412.57, 47119.57, 47876.95, 52813.9, 57875.51, 57616.4, 53094.68, 53355.38, 53482.67, 58348.78, 53631.45, 54802.91, 65692.27, 60578.96, 60439.96, 59381.23, 60170.29, 60620.23, 59907.17, 60024.24, 58092.95, 58240.83, 58499.64, 59166.79, 58839.19, 48114.83, 47789.26, 46976.32, 46920.19, 46969.6, 51323.44, 46475.85, 47658.92, 51277.76, 52049.49, 53093.38, 52501.97, 58943.66, 53605.08, 53335.9, 53546.15, 47224.91, 47125.99, 47252.08, 52201.0, 47336.48, 47011.71, 47024.84, 45218.47, 50659.08, 51468.86, 70814.8, 61821.99, 62477.11, 62816.49, 57926.18, 70936.0, 65237.15, 60522.06, 59145.98, 58961.54, 58782.74, 58612.26, 58965.29, 59291.23, 64988.6, 64913.34, 52195.11, 51735.26, 44713.84, 44825.91, 45838.4, 50704.3, 45083.66, 44851.32, 44364.03, 44292.22, 43645.83, 43087.63, 42744.59, 42833.43, 42433.33, 49290.91, 46851.83, 62599.81, 61589.46, 46231.08, 45690.75, 45921.6, 46265.47, 46499.4, 51240.8, 50113.68, 50819.89, 55943.89, 50904.69, 49844.66, 44955.65, 44556.4, 45092.97, 44800.48, 48321.42, 49192.93, 49699.68, 54619.4, 48747.5, 48029.22, 53708.33, 58895.01, 54283.96, 59053.85, 48016.49, 48256.49, 48161.69, 48754.25, 52988.23, 43795.9, 43957.38, 43856.63, 43812.84, 43325.79, 56535.27, 48284.24, 58506.04, 54743.93, 55860.94, 56904.38, 59670.42, 65688.38, 65670.84, 65731.36, 65767.94, 59923.12, 60992.23, 61785.02, 61458.03, 61529.51, 61296.21, 57994.2, 58038.46, 57996.56, 63859.64, 64439.81, 63832.13, 48568.95, 48486.63, 48209.4, 48285.85, 47967.37, 48098.8, 48007.79, 47740.42, 47026.04, 47061.24, 47264.79, 47612.85, 47844.28, 52078.5, 47413.07, 47637.81, 46928.13, 46025.02, 45759.16, 46136.25, 45408.32, 45077.64, 44493.18, 48134.85, 43575.55, 48207.38, 53146.73, 54064.72, 48716.11, 49457.19, 53596.86, 41644.28, 40343.52, 39196.84, 38296.16, 38985.63, 38855.32, 39227.41, 39205.25, 40123.9, 44348.99, 49067.73, 54306.39, 49741.68, 44653.35, 45695.97, 44595.33, 42266.01, 36299.48, 36299.48, 36270.48, 35891.36, 35395.37, 34806.18, 34607.14, 34760.68, 34789.36, 34632.45, 34534.59, 34670.71, 35227.81, 38364.8, 38366.52, 38439.72, 41831.41, 38702.48, 46934.77, 47339.66, 52788.16, 47936.39, 39151.53, 34964.43, 39392.06, 36541.83, 34577.91, 34476.39, 37407.85, 38716.14, 42281.07, 42586.99, 38718.69, 34402.98, 34479.65, 34423.01, 34460.54, 38279.43, 38308.72, 42281.34, 34630.87, 40413.58, 38488.79, 39626.22, 39821.55, 40348.4, 44039.0, 35667.9, 35629.28, 39957.82, 35184.23, 39053.27, 35189.98, 35572.38, 35886.79, 38221.07, 39195.18, 43059.83, 40651.44, 41001.61, 40225.55, 40086.57, 34273.73, 33772.43, 32274.75, 35952.94, 32460.37, 40350.24, 31578.78, 31578.76, 31838.52, 36057.53, 39757.52];
+        const qqqEquity = [100000.0, 98992.95, 102098.25, 105363.22, 106080.01, 106941.97, 102606.14, 103900.52, 103064.7, 104222.64, 106431.22, 104022.4, 100722.63, 100847.41, 103354.89, 103328.78, 100255.4, 99111.93, 98116.49, 95603.19, 98815.9, 100348.25, 100647.19, 99106.11, 100769.08, 99329.6, 97890.11, 94279.81, 93841.61, 97219.7, 96140.1, 94146.34, 92338.3, 95234.63, 98766.57, 99962.26, 102008.31, 101724.68, 103723.86, 102233.18, 104505.5, 104418.34, 106033.93, 107858.74, 106667.38, 105345.28, 105144.78, 107309.57, 104926.85, 102648.71, 102892.81, 101454.47, 99054.31, 98635.89, 100640.85, 98339.49, 98415.05, 100614.72, 99147.3, 97095.83, 94553.29, 95767.9, 92153.14, 92042.73, 95311.71, 91022.79, 92542.53, 92641.31, 95773.7, 90950.16, 89860.51, 86344.51, 87393.52, 84801.59, 84601.07, 87736.4, 86719.37, 88965.53, 84598.18, 84144.86, 83883.37, 85278.13, 83464.91, 84633.04, 86978.01, 89816.9, 89578.64, 88916.11, 91351.16, 88974.25, 89270.63, 90040.65, 89392.69, 86998.34, 83929.86, 80027.41, 80172.72, 82174.76, 78859.3, 79818.2, 81831.99, 81712.61, 82929.54, 85771.02, 85142.16, 82548.19, 82623.88, 81599.06, 82137.67, 83543.84, 84079.52, 85878.74, 85986.47, 84149.43, 83334.22, 83162.44, 83459.43, 84973.34, 84254.21, 86845.31, 88222.38, 89488.82, 87919.6, 87418.85, 85701.15, 89322.87, 90196.26, 91841.16, 91785.87, 91512.18, 94004.31, 94443.92, 93672.42, 93369.64, 92312.81, 94889.34, 94350.75, 96187.81, 96965.13, 96738.05, 95634.64, 95864.65, 93995.56, 91520.92, 91445.22, 91710.16, 93331.78, 89506.28, 88624.12, 87637.17, 87127.7, 87165.56, 85934.07, 85316.86, 87040.39, 87491.64, 89404.37, 90467.01, 85506.08, 86184.43, 84749.15, 84230.93, 84886.88, 84210.21, 82702.36, 81684.46, 80354.51, 80022.03, 80054.11, 81646.55, 79292.88, 77948.32, 79777.04, 82285.28, 82241.53, 81594.06, 78484.98, 77700.42, 76632.96, 76606.71, 78403.31, 76046.72, 78557.92, 79179.12, 78890.36, 78487.91, 80328.27, 81212.01, 82891.9, 81060.31, 79584.54, 82019.89, 81066.17, 80237.84, 77487.52, 75973.81, 77195.85, 78044.58, 78613.32, 76799.19, 82466.1, 83985.63, 83250.69, 84402.72, 83250.69, 83066.91, 83069.83, 82215.3, 83399.4, 84236.47, 83682.31, 82454.44, 81830.28, 85560.58, 85665.57, 85324.34, 83892.31, 82154.02, 81818.63, 82786.93, 82259.02, 83291.5, 84186.89, 83562.76, 80756.99, 79987.03, 78862.91, 78801.52, 79944.63, 77988.77, 78164.19, 77059.07, 76041.68, 77895.21, 77848.44, 77322.21, 77690.59, 76474.37, 78585.17, 79093.89, 79763.36, 81143.29, 81581.82, 82143.15, 82309.78, 81239.77, 80441.64, 82643.07, 84479.09, 84306.58, 84119.47, 85759.59, 86613.28, 84862.06, 86133.8, 87975.62, 91133.09, 89513.42, 88756.23, 90595.15, 88984.26, 88197.84, 87618.97, 89022.27, 89680.06, 90367.12, 88671.44, 88045.81, 85961.32, 86025.62, 86777.0, 85323.99, 85934.99, 85823.9, 85133.94, 85838.52, 87613.12, 87712.52, 86636.64, 87069.34, 85560.78, 84359.19, 84984.85, 86937.78, 87393.85, 89697.6, 89273.69, 89590.52, 90870.1, 89634.43, 90697.35, 91031.14, 90407.44, 89927.24, 91566.96, 92433.68, 93970.92, 93742.54, 93426.3, 92503.95, 93127.64, 93074.93, 92477.61, 91660.67, 93455.59, 93279.9, 93358.97, 93364.81, 93320.88, 92609.37, 92705.98, 92512.74, 90767.6, 91318.09, 93801.09, 94448.2, 94339.86, 93517.08, 92905.11, 92577.15, 94544.84, 94779.08, 94178.83, 95203.65, 95514.03, 95171.45, 95686.79, 95795.12, 96954.62, 98755.4, 98532.88, 98863.76, 97610.51, 97109.83, 99472.8, 102014.36, 102477.01, 101894.31, 103071.39, 103844.4, 103917.61, 103900.04, 102137.35, 103405.2, 103800.49, 105554.41, 106365.52, 107138.51, 108415.16, 107732.91, 107578.68, 106112.63, 107364.64, 106300.29, 104875.29, 106678.52, 106886.71, 106672.66, 108317.58, 108572.68, 108569.74, 107742.86, 107385.18, 107420.37, 107951.06, 109314.48, 111170.5, 111147.06, 112185.01, 113102.76, 113076.36, 110469.74, 110138.4, 110314.33, 111062.01, 110692.56, 110428.69, 112440.11, 112498.73, 112237.78, 109774.85, 109598.91, 109085.8, 110009.38, 109074.05, 107874.83, 108074.22, 107385.18, 108590.28, 107437.95, 106300.29, 105139.17, 105007.25, 106699.05, 106546.59, 108226.67, 105913.24, 106734.23, 107537.64, 109886.24, 110499.04, 110830.37, 110713.11, 110853.86, 109877.43, 109091.63, 109244.13, 110531.31, 109305.7, 109722.03, 110619.27, 108725.14, 108838.47, 108606.51, 107041.43, 105079.96, 105094.64, 105593.8, 104008.18, 104251.91, 105124.0, 105200.34, 106078.31, 104216.66, 105634.93, 105323.67, 107088.41, 107634.57, 108230.67, 109002.91, 108624.13, 107258.73, 108471.43, 108116.14, 106697.86, 105699.53, 104122.72, 104436.89, 105452.88, 102871.83, 100910.35, 101394.85, 102537.08, 103027.44, 104815.67, 106718.43, 107972.26, 108412.7, 109437.5, 109507.97, 108665.25, 111108.28, 110761.77, 113146.08, 113231.24, 113328.15, 113354.59, 114734.63, 114068.1, 114534.99, 114373.5, 114273.65, 114573.17, 114461.56, 114173.82, 114499.75, 113436.78, 113721.61, 113063.88, 114643.62, 115154.56, 116138.24, 117063.18, 118551.89, 118449.13, 119021.71, 119771.39, 120383.37, 118594.51, 119974.41, 120153.88, 120889.42, 121135.51, 121076.65, 120552.66, 118512.64, 117258.59, 116655.12, 116793.49, 119207.36, 119442.88, 120252.4, 120502.62, 120564.43, 120552.66, 119872.65, 121574.16, 123985.09, 124146.98, 124662.15, 125353.92, 125506.99, 124759.29, 126036.9, 125197.9, 122745.75, 124191.15, 126290.05, 126125.2, 125872.03, 127167.29, 127402.79, 128656.82, 128153.44, 126154.63, 127529.39, 127909.12, 126749.27, 125792.55, 125289.16, 128957.09, 128577.33, 128509.63, 128818.73, 128132.83, 129230.85, 131176.68, 130708.61, 128362.43, 129169.04, 131129.58, 129236.73, 128756.91, 130602.64, 129598.83, 129272.09, 127735.42, 128953.7, 129274.99, 130807.75, 131426.78, 131577.11, 131099.59, 130675.13, 131120.2, 130878.52, 131155.58, 130023.69, 130315.5, 128322.9, 129835.04, 129873.36, 130353.85, 129216.04, 131279.4, 129186.56, 127061.3, 127073.1, 125522.62, 124806.35, 122224.21, 123453.38, 125295.66, 125720.13, 125112.9, 127043.61, 127559.43, 125154.17, 124249.25, 125835.09, 128364.16, 129770.19, 129790.83, 129714.18, 129997.16, 130303.72, 130604.38, 131444.45, 133498.96, 133227.8, 133162.93, 134091.44, 134353.79, 134327.25, 133722.98, 134987.52, 135497.47, 134542.42, 133101.04, 132853.43, 133566.77, 133932.27, 136632.3, 136585.16, 136464.32, 137015.51, 137955.82, 139762.71, 140520.27, 141248.33, 142978.6, 143022.84, 141920.39, 141540.15, 139928.77, 141528.92, 141821.22, 142187.31, 141449.22, 142278.81, 143772.7, 144971.37, 146482.94, 146831.33, 146958.26, 148490.53, 145234.11, 146087.34, 146480.0, 146536.09, 142234.53, 141561.41, 140306.66, 142396.92, 141895.02, 136805.21, 135296.54, 136684.15, 136958.71, 135078.08, 139075.56, 135706.94, 132485.93, 128535.7, 129763.88, 128358.58, 132285.18, 132976.03, 133262.41, 136569.03, 136613.29, 140064.58, 140244.67, 142086.92, 141788.73, 142450.06, 140191.54, 141711.98, 140336.18, 140755.42, 139158.21, 138954.49, 140610.74, 136341.68, 135987.41, 136114.35, 132468.23, 134171.7, 135411.7, 138352.23, 139710.29, 140336.18, 139716.2, 139790.01, 139184.78, 142703.96, 142432.35, 142809.89, 143498.75, 143631.79, 144710.91, 143906.73, 144296.98, 142286.58, 142487.63, 142381.2, 144075.25, 142531.98, 144660.66, 145798.89, 145633.32, 145860.97, 147084.96, 145118.91, 145136.64, 145237.15, 146189.14, 146470.01, 146629.66, 144382.73, 145553.5, 146440.43, 146464.09, 147871.39, 146753.84, 143049.36, 144107.77, 143687.96, 145520.97, 149473.8, 151827.14, 152004.54, 151915.85, 151640.89, 151445.76, 150393.26, 146810.03, 147829.99, 148847.02, 148761.29, 149296.4, 149535.89, 149772.41, 150576.56, 149391.02, 150703.69, 152344.52, 152811.69, 154700.87, 154272.17, 155652.84, 154440.7, 153914.47, 156669.86, 155658.74, 156850.22, 159108.95, 158408.3, 152693.4, 152013.4, 153340.85, 154834.84, 156934.36, 156827.73, 154743.01, 152684.98, 151387.94, 151091.8, 153564.45, 155329.35, 152557.64, 152584.29, 150191.59, 149708.91, 149566.77, 153007.76, 151935.76, 154500.2, 155406.33, 157393.33, 157727.95, 156836.63, 152270.37, 154520.94, 154230.74, 154888.12, 154663.06, 153425.28, 155308.63, 156013.4, 156827.73, 154849.64, 156724.11, 156350.97, 156442.78, 158693.36, 159359.61, 159720.9, 159765.32, 159087.16, 155785.39, 153946.46, 152006.83, 152374.03, 148142.4, 150481.8, 147188.89, 146744.7, 148657.65, 144568.17, 145631.27, 139987.13, 139652.51, 141227.88, 138687.14, 142039.27, 142960.2, 140523.13, 142403.5, 141920.83, 142388.7, 145513.34, 146343.7, 143650.88, 142832.36, 139071.9, 139065.97, 140186.99, 141210.14, 133650.66, 125349.75, 125652.27, 123389.46, 138199.99, 132322.04, 134759.8, 135673.24, 135824.5, 131728.91, 131705.18, 128445.9, 131817.88, 134807.26, 138600.36, 140145.47, 140100.98, 141026.26, 141008.47, 142850.13, 144970.6, 144110.55, 142770.09, 143330.58, 144810.45, 144715.56, 150611.28, 152906.74, 153823.1, 153992.14, 154662.39, 154810.67, 154294.65, 152150.47, 152435.17, 151023.53, 154576.39, 153891.29, 154193.83, 153950.64, 155166.56, 156379.51, 156815.48, 155635.12, 157156.52, 157387.83, 158428.8, 157894.95, 158265.67, 156278.7, 158452.52, 156907.42, 156880.7, 156240.15, 157846.67, 160260.45, 160670.14, 162172.47, 162727.68, 163781.67, 162401.1, 163532.25, 165141.47, 163897.49, 163989.5, 165150.38, 164912.87, 164541.74, 165138.53, 165289.91, 165459.17, 166798.19, 166637.86, 167501.83, 166634.89, 167394.94, 167751.23, 168154.99, 168680.55, 168419.24, 168644.89, 167751.23, 164446.74, 167481.03, 166343.92, 168437.06, 169007.11, 170583.65, 170078.91, 172216.59, 172302.71, 172169.1, 171411.98, 171343.7, 169018.98, 168015.48, 167237.6, 169817.66, 169327.79, 170007.64, 170268.93, 171334.81, 169351.5, 167932.34, 169253.53, 170785.52, 171031.94, 171866.23, 172353.16, 172409.6, 173413.1, 174179.09, 175669.54, 175521.08, 175170.74, 176750.25, 177946.75, 179000.19, 177811.21, 177187.0, 176423.11, 177148.34, 177968.75, 178456.24, 179312.28, 180049.44, 179291.49, 180637.99, 179686.82, 181746.72, 181526.79, 175225.19, 178943.7, 177751.77, 179006.15, 178343.31, 179514.43, 181776.43, 181728.89, 179978.12, 181491.1, 183429.11, 186695.85, 188131.51, 188978.67, 186089.45, 186987.13, 187881.83, 184068.2, 185266.1, 181815.09, 181241.4, 185251.22, 184757.8, 184612.15, 180843.11, 180979.83, 179434.17, 177249.42, 178307.62, 174086.75, 175394.62, 179880.04, 180988.76, 182587.92, 184068.2, 183449.92, 184885.62, 185337.44, 185165.03, 185920.03, 185563.33, 185792.2, 186553.15, 185949.78, 182394.71, 181479.19, 181838.86, 178468.11, 181054.15, 183414.27, 184293.44, 185156.55, 185698.25, 185686.33, 184787.5, 184358.91, 182835.07, 182480.91, 183930.33, 185546.46, 185725.05, 184668.45, 186507.8, 186662.55, 186385.76, 184394.64, 185058.36, 184903.59, 180974.91, 183421.4, 184754.76, 185338.11, 186153.62, 187841.16, 188463.19, 187335.2, 185085.13, 186356.01, 183492.83, 180287.38, 177692.11, 181448.13, 182838.06, 181989.8, 182477.92, 178766.51, 179147.49, 178962.93, 180299.29, 179608.79, 181198.12, 178995.67, 180918.35, 183540.44, 181326.1, 180745.72, 180983.84, 179046.29, 181775.52, 181227.87, 178501.63, 180885.61, 180888.6, 180864.78, 177760.55, 176706.93, 178689.14, 179561.18, 177058.15, 176498.6, 173236.62, 175225.19, 174027.2, 175171.55, 170990.56, 167649.98, 166368.56, 172000.79, 174125.56, 174325.2, 175374.18, 175401.01, 180616.05, 181837.86, 182100.1, 183983.46, 187324.04, 189946.48, 190861.34, 193358.59, 192744.7, 192011.63, 195224.11, 194124.46, 197837.57, 197941.87, 195951.22, 197149.19, 198987.84, 200898.05, 200519.59, 203121.14, 207340.86, 207093.51, 211947.97, 212561.83, 210758.93, 212985.02, 214498.86, 211262.57, 210353.66, 209057.37, 212520.15, 212925.42, 213828.36, 217624.92, 217377.57, 219210.26, 220017.85, 221338.02, 222357.16, 221776.08, 220703.26, 210109.3, 213390.29, 210934.75, 206721.01, 213703.19, 214960.76, 221713.49, 217499.73, 215309.42, 220706.25, 220152.25, 212902.85, 211998.91, 213717.28, 210775.77, 216014.43, 219689.85, 216339.59, 212589.59, 215638.54, 211643.89, 212243.54, 215775.77, 216441.04, 212333.02, 214704.76, 214123.01, 210602.72, 207437.45, 207655.23, 211506.66, 210426.69, 206432.09, 204125.99, 203496.52, 201518.59, 197413.56, 203923.12, 205247.71, 208851.54, 215945.8, 213991.75, 213201.18, 215701.18, 215056.79, 214334.83, 215901.07, 218398.08, 218099.75, 217741.74, 214054.4, 213627.78, 212091.38, 212840.2, 210716.09, 212028.73, 212222.66, 215128.38, 213732.21, 213830.65, 211109.88, 211587.21, 214102.12, 214486.97, 214307.98, 213696.41, 211423.14, 213269.79, 211569.31, 210185.05, 210238.75, 213878.37, 215229.82, 221432.86, 223221.73, 221355.23, 221322.36, 222337.75, 219957.59, 220375.68, 220925.19, 221600.12, 223854.85, 225831.84, 226865.13, 226288.75, 223257.57, 224359.55, 222797.65, 222060.02, 217693.89, 217410.18, 211974.92, 214531.29, 214313.28, 216573.99, 210383.17, 210362.28, 212691.67, 215394.36, 216696.43];
+        const drawdown = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, -0.02, -0.36, -1.09, -1.42, -1.42, -1.42, -1.42, -1.42, -1.42, -1.42, -1.42, -1.42, -1.42, -1.42, -1.42, -1.42, -1.42, -1.42, -1.42, -1.42, -1.42, -1.42, -1.42, -1.42, -1.42, -1.5, -1.03, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, -0.07, 0.0, -8.66, -9.25, -8.62, -16.37, -17.67, -18.62, -17.93, -19.7, -19.29, -18.29, -9.69, -10.47, -19.9, -19.86, -27.93, -28.0, -27.77, -35.59, -35.59, -35.59, -35.65, -39.7, -40.16, -40.32, -40.15, -40.59, -40.59, -40.59, -40.59, -40.59, -40.59, -40.59, -40.59, -40.59, -40.59, -40.59, -40.59, -40.59, -40.61, -40.92, -40.21, -40.76, -28.44, -40.02, -33.18, -41.1, -41.49, -42.22, -43.19, -43.19, -43.19, -43.19, -43.19, -43.19, -43.19, -43.19, -43.19, -43.19, -43.19, -43.19, -43.19, -43.19, -43.2, -42.17, -36.07, -36.84, -36.73, -36.34, -42.71, -37.26, -37.65, -36.34, -35.19, -34.24, -35.43, -35.32, -29.32, -35.69, -35.49, -35.36, -35.43, -35.61, -35.44, -35.44, -35.44, -35.6, -29.1, -34.88, -34.63, -33.79, -33.77, -27.28, -27.55, -27.97, -28.85, -36.4, -36.52, -31.76, -30.69, -37.37, -38.09, -38.72, -46.18, -47.69, -48.32, -48.67, -48.16, -47.94, -46.96, -46.81, -48.22, -48.22, -49.13, -49.13, -49.13, -49.13, -49.13, -49.13, -49.13, -49.13, -49.13, -49.13, -49.13, -49.13, -49.13, -49.13, -49.13, -49.13, -49.13, -49.13, -49.13, -49.13, -49.13, -49.13, -49.13, -49.13, -49.13, -49.13, -49.13, -49.13, -49.13, -49.13, -49.13, -49.13, -49.13, -49.13, -49.13, -49.13, -49.13, -49.15, -49.23, -42.94, -39.23, -38.73, -33.01, -31.81, -33.39, -39.83, -39.74, -41.15, -40.93, -40.56, -40.4, -40.88, -41.1, -40.69, -40.71, -40.87, -47.7, -48.18, -48.72, -47.04, -36.06, -46.8, -25.04, -42.74, -47.66, -48.39, -49.2, -48.99, -48.46, -49.73, -49.5, -49.31, -50.18, -48.83, -49.01, -51.03, -49.22, -38.94, -37.86, -35.32, -25.83, -24.6, -23.02, -22.5, -12.0, -20.83, -21.44, -18.29, -15.28, -7.08, 0.0, -6.2, -3.34, -6.36, -4.51, -1.26, 0.0, -0.95, -1.03, 0.0, -0.22, -10.0, -12.33, -11.2, 0.0, -8.86, -2.26, -18.47, -32.01, -40.3, -40.09, -41.18, -34.98, -40.85, -41.25, -42.07, -41.66, -42.55, -43.17, -42.79, -44.22, -45.23, -46.21, -45.77, -46.79, -46.87, -47.2, -46.81, -40.6, -47.25, -46.72, -47.38, -44.32, -50.1, -49.05, -45.37, -44.58, -45.02, -45.72, -46.19, -49.75, -49.21, -38.6, -49.74, -44.26, -49.55, -49.75, -44.3, -49.85, -49.6, -44.48, -49.53, -45.75, -50.39, -49.7, -49.15, -49.36, -50.12, -50.08, -50.01, -49.69, -48.89, -43.23, -42.65, -37.72, -37.94, -37.36, -38.55, -37.56, -36.48, -28.63, -27.69, -22.13, -35.22, -36.24, -35.73, -36.04, -41.15, -40.97, -34.72, -34.67, -34.96, -48.15, -47.89, -42.67, -48.15, -42.13, -47.7, -47.47, -40.53, -40.67, -47.29, -47.22, -47.38, -47.34, -46.5, -46.73, -46.76, -41.04, -40.98, -41.25, -47.23, -47.08, -46.38, -46.44, -46.32, -45.39, -45.57, -39.52, -39.79, -39.97, -40.56, -40.64, -40.57, -40.41, -39.92, -32.99, -31.49, -32.58, -33.0, -40.3, -40.23, -39.95, -34.37, -39.59, -40.54, -40.65, -41.33, -41.05, -41.97, -48.3, -49.85, -50.29, -50.34, -50.63, -50.25, -51.42, -50.76, -45.19, -45.13, -50.11, -50.31, -46.25, -51.18, -51.94, -52.47, -52.41, -48.31, -52.98, -52.27, -46.96, -52.57, -52.47, -52.82, -53.06, -54.33, -53.83, -53.77, -54.29, -53.6, -53.3, -53.05, -52.42, -48.13, -47.59, -47.26, -46.44, -46.89, -46.62, -41.72, -47.23, -52.27, -52.05, -52.37, -52.82, -53.02, -53.44, -53.93, -53.6, -54.91, -56.0, -56.0, -56.0, -56.0, -56.03, -50.77, -46.06, -45.7, -41.08, -40.77, -41.44, -40.36, -40.23, -39.61, -39.0, -44.58, -44.59, -44.48, -44.59, -44.46, -44.67, -49.62, -49.56, -49.72, -49.89, -49.94, -50.27, -50.41, -50.79, -49.56, -49.03, -44.04, -49.27, -43.8, -43.3, -37.89, -37.38, -37.19, -43.12, -41.94, -36.19, -35.36, -41.7, -41.55, -35.83, -47.42, -47.54, -47.95, -47.98, -46.82, -37.48, -47.09, -46.66, -46.8, -41.93, -53.48, -53.67, -53.58, -53.32, -50.17, -45.5, -46.4, -41.08, -49.82, -50.66, -51.46, -51.1, -56.14, -56.69, -56.63, -56.89, -56.95, -56.78, -52.31, -57.33, -57.06, -56.53, -57.04, -53.13, -57.28, -45.82, -37.58, -42.35, -37.49, -37.78, -42.6, -40.96, -35.62, -36.35, -36.0, -41.57, -42.04, -42.13, -40.6, -44.82, -50.53, -50.74, -45.08, -49.87, -43.07, -34.71, -43.06, -43.44, -43.16, -47.33, -42.58, -42.29, -42.74, -43.49, -49.74, -49.43, -44.39, -49.37, -50.07, -49.9, -51.29, -59.24, -59.57, -55.81, -59.8, -60.48, -60.36, -56.86, -50.61, -54.82, -55.26, -53.84, -50.17, -55.45, -55.61, -54.44, -48.79, -40.94, -50.22, -50.02, -49.93, -49.35, -48.62, -46.5, -41.15, -39.97, -38.86, -39.56, -39.37, -40.26, -38.73, -38.84, -33.66, -46.74, -51.81, -51.79, -51.46, -46.07, -51.1, -47.71, -48.14, -48.63, -48.03, -43.37, -43.32, -42.87, -42.57, -42.17, -47.85, -53.42, -53.12, -55.47, -55.0, -55.4, -55.63, -55.43, -54.72, -45.85, -39.74, -40.76, -34.24, -38.7, -38.16, -36.84, -40.72, -53.68, -54.22, -53.21, -52.77, -48.82, -55.52, -64.26, -56.0, -59.16, -64.54, -63.46, -55.54, -65.86, -65.86, -65.86, -65.86, -65.86, -65.86, -65.86, -65.89, -66.18, -64.58, -53.79, -49.99, -49.36, -49.18, -53.2, -51.47, -47.27, -52.5, -56.33, -51.54, -50.4, -55.72, -55.73, -55.54, -61.14, -60.21, -55.63, -59.93, -59.5, -58.7, -58.87, -58.33, -54.05, -56.59, -47.33, -47.24, -43.22, -42.6, -41.88, -42.06, -41.95, -47.36, -47.28, -47.59, -46.59, -46.75, -46.13, -50.2, -49.76, -48.82, -48.05, -48.78, -43.22, -48.25, -48.17, -53.01, -52.93, -53.92, -51.86, -51.0, -44.93, -45.64, -46.69, -52.24, -52.2, -58.47, -58.27, -56.9, -52.3, -52.31, -56.95, -59.51, -60.03, -60.42, -60.6, -60.38, -60.86, -60.72, -61.18, -61.13, -60.62, -60.61, -56.16, -51.05, -50.34, -45.23, -48.84, -49.03, -44.91, -49.44, -59.82, -59.83, -55.98, -60.08, -60.27, -60.36, -61.1, -61.21, -60.69, -60.34, -55.38, -55.43, -56.18, -56.94, -57.11, -61.34, -61.26, -61.85, -62.04, -62.05, -63.2, -64.19, -60.58, -59.56, -59.94, -54.68, -59.15, -59.07, -59.18, -59.81, -63.79, -63.89, -56.58, -51.23, -47.16, -51.94, -46.93, -45.82, -45.35, -58.93, -59.17, -59.19, -59.98, -64.63, -59.95, -57.1, -54.92, -51.74, -60.77, -61.12, -61.89, -56.41, -62.28, -62.37, -63.24, -67.62, -67.62, -67.62, -67.62, -67.62, -67.62, -67.62, -67.62, -67.62, -67.62, -67.62, -67.62, -67.62, -67.62, -67.62, -67.62, -67.62, -67.62, -67.62, -67.62, -67.62, -67.62, -67.62, -67.62, -67.62, -67.62, -67.62, -67.62, -67.62, -67.62, -67.62, -67.62, -67.62, -67.62, -67.62, -67.62, -67.62, -67.62, -67.62, -67.62, -67.62, -67.62, -67.62, -67.63, -67.64, -67.72, -67.9, -67.87, -64.13, -64.12, -64.14, -63.95, -63.96, -64.04, -64.1, -64.26, -67.6, -67.79, -67.63, -67.63, -67.65, -67.58, -67.54, -67.48, -67.51, -67.52, -67.48, -67.55, -67.64, -67.95, -67.93, -68.04, -68.1, -68.52, -68.49, -68.36, -65.08, -68.25, -68.45, -68.47, -68.24, -68.25, -68.12, -64.63, -64.64, -64.67, -68.11, -64.61, -64.15, -64.03, -63.88, -60.56, -60.26, -56.59, -60.06, -56.15, -59.84, -59.69, -67.51, -67.5, -63.31, -67.8, -67.88, -68.68, -69.27, -65.84, -66.51, -69.1, -62.77, -61.78, -57.88, -57.31, -57.02, -57.49, -60.8, -56.34, -56.73, -64.51, -64.51, -64.52, -69.46, -68.77, -65.41, -64.91, -65.75, -66.04, -66.06, -65.81, -66.08, -66.04, -65.57, -64.52, -60.89, -56.99, -56.78, -56.75, -56.64, -55.89, -55.61, -50.76, -55.61, -59.2, -63.38, -67.01, -64.69, -66.78, -66.72, -66.7, -67.4, -64.98, -68.17, -68.3, -68.16, -68.36, -67.85, -64.53, -61.13, -61.31, -64.34, -64.17, -64.08, -60.81, -63.98, -63.2, -55.88, -59.32, -59.41, -60.12, -59.59, -59.29, -59.77, -59.69, -60.99, -60.89, -60.71, -60.27, -60.49, -67.69, -67.91, -68.45, -68.49, -68.46, -65.53, -68.79, -67.99, -65.56, -65.05, -64.34, -64.74, -60.42, -64.0, -64.18, -64.04, -68.29, -68.35, -68.27, -64.94, -68.21, -68.43, -68.42, -69.63, -65.98, -65.43, -52.44, -58.48, -58.04, -57.81, -61.1, -52.36, -56.19, -59.36, -60.28, -60.4, -60.52, -60.64, -60.4, -60.18, -56.36, -56.41, -64.95, -65.26, -69.97, -69.9, -69.22, -65.95, -69.72, -69.88, -70.21, -70.25, -70.69, -71.06, -71.29, -71.23, -71.5, -66.9, -68.54, -57.96, -58.64, -68.95, -69.32, -69.16, -68.93, -68.77, -65.59, -66.35, -65.87, -62.43, -65.81, -66.53, -69.81, -70.08, -69.72, -69.91, -67.55, -66.96, -66.62, -63.32, -67.26, -67.74, -63.93, -60.45, -63.54, -60.34, -67.75, -67.59, -67.66, -67.26, -64.41, -70.59, -70.48, -70.55, -70.58, -70.9, -62.03, -67.57, -60.71, -63.24, -62.49, -61.78, -59.93, -55.89, -55.9, -55.86, -55.83, -59.76, -59.04, -58.51, -58.73, -58.68, -58.84, -61.05, -61.02, -61.05, -57.11, -56.72, -57.13, -67.38, -67.44, -67.62, -67.57, -67.79, -67.7, -67.76, -67.94, -68.42, -68.39, -68.26, -68.02, -67.87, -65.03, -68.16, -68.01, -68.48, -69.09, -69.27, -69.02, -69.51, -69.73, -70.12, -67.67, -70.74, -67.63, -64.31, -63.69, -67.28, -66.79, -64.01, -72.03, -72.91, -73.68, -74.28, -73.82, -73.91, -73.66, -73.67, -73.05, -70.22, -67.05, -63.53, -66.59, -70.01, -69.31, -70.05, -71.62, -75.62, -75.62, -75.64, -75.9, -76.23, -76.63, -76.76, -76.66, -76.64, -76.74, -76.81, -76.72, -76.34, -74.24, -74.23, -74.18, -71.91, -74.01, -68.48, -68.21, -64.55, -67.81, -73.71, -76.52, -73.55, -75.46, -76.78, -76.85, -74.88, -74.0, -71.61, -71.4, -74.0, -76.9, -76.84, -76.88, -76.86, -74.29, -74.27, -71.61, -76.74, -72.86, -74.15, -73.39, -73.26, -72.9, -70.42, -76.05, -76.07, -73.17, -76.37, -73.77, -76.37, -76.11, -75.9, -74.33, -73.68, -71.08, -72.7, -72.46, -72.99, -73.08, -76.98, -77.32, -78.33, -75.86, -78.2, -72.9, -78.79, -78.79, -78.62, -75.78, -73.3];
+
+        const traceStrategy = {
+            x: dates,
+            y: strategyEquity,
+            mode: 'lines',
+            name: '量化策略净值 ($100k起步)',
+            line: { color: '#2ea043', width: 2.2 }
+        };
+
+        const traceQQQ = {
+            x: dates,
+            y: qqqEquity,
+            mode: 'lines',
+            name: 'QQQ 纳指基准 ($100k起步)',
+            line: { color: '#8b949e', width: 1.5, dash: 'dot' }
+        };
+
+        const layoutEquity = {
+            title: { text: '📈 5年全周期组合复利资金曲线对比 (Strategy vs QQQ Benchmark)', font: { color: '#f0f6fc', size: 16 } },
+            paper_bgcolor: '#161b22',
+            plot_bgcolor: '#161b22',
+            xaxis: { gridcolor: '#30363d', color: '#8b949e' },
+            yaxis: { title: '账户总资产 ($)', gridcolor: '#30363d', color: '#8b949e' },
+            legend: { font: { color: '#c9d1d9' }, orientation: 'h', y: 1.1 },
+            margin: { l: 60, r: 20, t: 60, b: 40 }
+        };
+
+        Plotly.newPlot('equityChart', [traceStrategy, traceQQQ], layoutEquity, { responsive: true });
+
+        const traceDD = {
+            x: dates,
+            y: drawdown,
+            fill: 'tozeroy',
+            mode: 'lines',
+            name: '策略动态回撤 (%)',
+            line: { color: '#f85149', width: 1.2 },
+            fillcolor: 'rgba(248, 81, 73, 0.2)'
+        };
+
+        const layoutDD = {
+            title: { text: '🌊 历史最大动态回撤水下分布图 (Drawdown Under Water)', font: { color: '#f0f6fc', size: 14 } },
+            paper_bgcolor: '#161b22',
+            plot_bgcolor: '#161b22',
+            xaxis: { gridcolor: '#30363d', color: '#8b949e' },
+            yaxis: { title: '回撤幅度 (%)', gridcolor: '#30363d', color: '#8b949e' },
+            margin: { l: 60, r: 20, t: 40, b: 40 }
+        };
+
+        Plotly.newPlot('drawdownChart', [traceDD], layoutDD, { responsive: true });
+    </script>
+</body>
+</html>
