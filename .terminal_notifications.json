@@ -1,7 +1,7 @@
 [
   {
     "id": "STOP_CCXI_2026-10-29",
-    "time": "10-29 06:19",
+    "time": "10-29 15:19",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -15,7 +15,7 @@
   },
   {
     "id": "STOP_OKLO_2026-10-29",
-    "time": "10-29 06:19",
+    "time": "10-29 15:19",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -29,7 +29,7 @@
   },
   {
     "id": "STOP_AAOI_2026-10-29",
-    "time": "10-29 06:19",
+    "time": "10-29 15:19",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -43,7 +43,7 @@
   },
   {
     "id": "STOP_CRWV_2026-10-29",
-    "time": "10-29 06:19",
+    "time": "10-29 15:19",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -57,7 +57,7 @@
   },
   {
     "id": "STOP_ASTS_2026-10-29",
-    "time": "10-29 06:19",
+    "time": "10-29 15:19",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -65,13 +65,13 @@
     "name": "AST SpaceMobile",
     "cat": "太空商业",
     "price": 41.31,
-    "pct_change": 0.8103,
+    "pct_change": 0.8222138299688653,
     "title": "🔴 ASTS (AST SpaceMobile) 跌破波段斐波那契下沿",
     "desc": "偏离 MA50 -26.2%，放量跌破坑底 $51.37，空头宣泄期严禁左侧接刀！"
   },
   {
     "id": "STOP_CRDO_2026-10-29",
-    "time": "10-29 06:19",
+    "time": "10-29 15:19",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -85,7 +85,7 @@
   },
   {
     "id": "STOP_GOOGL_2026-10-29",
-    "time": "10-29 06:19",
+    "time": "10-29 15:19",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -99,7 +99,7 @@
   },
   {
     "id": "STOP_NBIS_2026-10-29",
-    "time": "10-29 06:19",
+    "time": "10-29 15:19",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -107,13 +107,13 @@
     "name": "Nebius",
     "cat": "算力租赁",
     "price": 173.0,
-    "pct_change": 0.12613999491540678,
+    "pct_change": 6.9631,
     "title": "🔴 NBIS (Nebius) 跌破波段斐波那契下沿",
     "desc": "偏离 MA50 -18.4%，放量跌破坑底 $199.66，空头宣泄期严禁左侧接刀！"
   },
   {
     "id": "STOP_STX_2026-10-29",
-    "time": "10-29 06:19",
+    "time": "10-29 15:19",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -127,7 +127,7 @@
   },
   {
     "id": "STOP_COHR_2026-10-29",
-    "time": "10-29 06:19",
+    "time": "10-29 15:19",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -135,13 +135,13 @@
     "name": "Coherent",
     "cat": "光通信",
     "price": 244.97,
-    "pct_change": 1.6116064388092397,
+    "pct_change": 1.6116,
     "title": "🔴 COHR (Coherent) 跌破波段斐波那契下沿",
     "desc": "偏离 MA50 -13.2%，放量跌破坑底 $275.30，空头宣泄期严禁左侧接刀！"
   },
   {
     "id": "STOP_RKLB_2026-10-29",
-    "time": "10-29 06:19",
+    "time": "10-29 15:19",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -149,13 +149,13 @@
     "name": "Rocket Lab",
     "cat": "太空商业",
     "price": 57.4,
-    "pct_change": 0.4973,
+    "pct_change": 0.4973394269920565,
     "title": "🔴 RKLB (Rocket Lab) 跌破波段斐波那契下沿",
     "desc": "偏离 MA50 -11.6%，放量跌破坑底 $63.61，空头宣泄期严禁左侧接刀！"
   },
   {
     "id": "STOP_WDC_2026-10-29",
-    "time": "10-29 06:19",
+    "time": "10-29 15:19",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -169,7 +169,7 @@
   },
   {
     "id": "STOP_AMAT_2026-10-29",
-    "time": "10-29 06:19",
+    "time": "10-29 15:19",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -183,7 +183,7 @@
   },
   {
     "id": "PORT_INTC_HOLD_2026-10-29",
-    "time": "10-29 06:19",
+    "time": "10-29 15:19",
     "category": "portfolio",
     "cat_label": "💼 持仓风控",
     "level": "info",
@@ -191,7 +191,7 @@
     "name": "Intel",
     "cat": "芯片算力",
     "price": 93.02,
-    "pct_change": 1.9095,
+    "pct_change": 1.8988715348781067,
     "title": "💼 INTC 实盘持仓跟踪",
     "desc": "持仓 2 股 · 成本 $93.30 ｜ 现价 $93.02 (-0.30%)",
     "cost": 93.3,
@@ -202,7 +202,7 @@
   },
   {
     "id": "5M_META_2026-10-29",
-    "time": "10-29 06:19",
+    "time": "10-29 15:19",
     "category": "5m_entry",
     "cat_label": "🎯 5m买点",
     "level": "success",
@@ -222,7 +222,7 @@
   },
   {
     "id": "5M_SKHY_2026-10-29",
-    "time": "10-29 06:19",
+    "time": "10-29 15:19",
     "category": "5m_entry",
     "cat_label": "🎯 5m买点",
     "level": "success",
@@ -242,7 +242,7 @@
   },
   {
     "id": "TP_CRWD_2026-10-29",
-    "time": "10-29 06:19",
+    "time": "10-29 15:19",
     "category": "take_profit",
     "cat_label": "🟣 冲顶减仓",
     "level": "purple",
@@ -256,7 +256,7 @@
   },
   {
     "id": "5M_QQQM_2026-10-29",
-    "time": "10-29 06:19",
+    "time": "10-29 15:19",
     "category": "5m_entry",
     "cat_label": "🎯 5m买点",
     "level": "success",
@@ -276,7 +276,7 @@
   },
   {
     "id": "5M_SOXX_2026-10-29",
-    "time": "10-29 06:19",
+    "time": "10-29 15:19",
     "category": "5m_entry",
     "cat_label": "🎯 5m买点",
     "level": "success",
@@ -296,7 +296,7 @@
   },
   {
     "id": "PORT_SOXL_HOLD_2026-10-29",
-    "time": "10-29 06:19",
+    "time": "10-29 15:19",
     "category": "portfolio",
     "cat_label": "💼 持仓风控",
     "level": "info",
@@ -315,7 +315,7 @@
   },
   {
     "id": "STOP_KORU_2026-10-29",
-    "time": "10-29 06:19",
+    "time": "10-29 15:19",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -329,7 +329,7 @@
   },
   {
     "id": "PORT_SOXS_HOLD_2026-10-29",
-    "time": "10-29 06:19",
+    "time": "10-29 15:19",
     "category": "portfolio",
     "cat_label": "💼 持仓风控",
     "level": "info",
@@ -348,7 +348,7 @@
   },
   {
     "id": "TP_SOXS_2026-10-29",
-    "time": "10-29 06:19",
+    "time": "10-29 15:19",
     "category": "take_profit",
     "cat_label": "🟣 冲顶减仓",
     "level": "purple",
@@ -362,7 +362,7 @@
   },
   {
     "id": "WEATHER_阴天防守_2026-10-29",
-    "time": "10-29 06:19",
+    "time": "10-29 15:19",
     "category": "macro_weather",
     "cat_label": "⛅ 宏观气象",
     "level": "info",
