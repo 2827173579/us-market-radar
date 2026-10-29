@@ -106,8 +106,8 @@
       "last_notified_at": 0.0
     },
     "TSM": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1793276306.6450927
     },
     "AXP": {
       "state": "NORMAL",
@@ -178,8 +178,8 @@
       "last_notified_at": 1793275707.1317317
     },
     "SOXX": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1793276194.001296
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "SOXL": {
       "state": "NORMAL",
