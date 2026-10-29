@@ -871,22 +871,22 @@ def run_simulation(execution_mode="NEXT_OPEN", custom_data=None, custom_core_sto
                         # 规则 4: NEXT_OPEN 防跳空保护 (非合成模式严格执行)
                         sig_close = order.get("signal_close", open_p)
                         sig_low = order.get("signal_low", open_p * 0.98)
-                        # 次日直接跳空跌破信号日最低点，或隔夜低开 >1.5%，或高开过多 >2.5% (取 1.026 容差防浮点与测试合规)
-                        if not is_synthetic and (open_p < sig_low or open_p < sig_close * 0.985 or open_p > sig_close * 1.026):
+                        # 次日直接跳空跌破信号日最低点，或隔夜低开 >1.5%，或高开过多 >2.0%
+                        if not is_synthetic and (open_p < sig_low or open_p < sig_close * 0.985 or open_p > sig_close * 1.020):
                             continue  # 放弃开仓
 
-                        # 规则 4: 结构化初始止损
+                        # 规则 4: 结构化初始止损 (信号日低点下0.5*ATR与入场下1.8*ATR弹性保护，硬上限放宽至-6.8%)
                         fill_p = open_p * (1.0 + SLIPPAGE_RATE)
                         sig_atr = order.get("signal_atr", order.get("atr", 1.0))
-                        raw_stop = min(sig_low - 0.4 * sig_atr, fill_p * 0.965)
-                        stop_level = max(raw_stop, fill_p * 0.95)
+                        struct_stop = min(sig_low - 0.5 * sig_atr, fill_p - 1.8 * sig_atr)
+                        stop_level = max(struct_stop, fill_p * 0.932)
                         stop_dist_pct = (fill_p - stop_level) / fill_p
                         stop_dist_pct = max(stop_dist_pct, 0.035)
 
-                        # 规则 3: ATR 风险平价配仓 (单笔本金风险限制为当前总权益的 1.0%)
+                        # 规则 3: ATR 风险平价配仓 (单笔本金风险限制为当前总权益的 0.85%)
                         curr_invested = sum(p["shares"] * float(indicators_data[p["ticker"]]["Close"].loc[date]) for p in active_positions.values())
                         current_equity = cash + curr_invested
-                        risk_dollars = current_equity * 0.01
+                        risk_dollars = current_equity * 0.0085
                         target_notional = min(current_equity * POSITION_PCT, risk_dollars / stop_dist_pct)
                         alloc_capital = min(target_notional, cash)
 
@@ -974,27 +974,26 @@ def run_simulation(execution_mode="NEXT_OPEN", custom_data=None, custom_core_sto
                     be_fill_price = be_level * (1.0 - SLIPPAGE_RATE)
                     be_reason = "🛡️ 触及保本线出场"
 
-            # 2. 检查结构止损 + ATR 双轨
+            # 2. 检查结构止损 (遵循初始结构底线，解除反向收紧)
             stop_triggered = False
             stop_fill_price = 0.0
             stop_ref_price = 0.0
             stop_reason = ""
-            default_stop = entry_p * 0.95
+            default_stop = entry_p * 0.932
             pos_stop = pos.get("stop_level", default_stop)
-            atr_stop_level = entry_p - 2.0 * atr if atr > 0 else -1e9
-            effective_stop_level = max(pos_stop, atr_stop_level)
-            is_atr = (atr_stop_level > pos_stop)
+            effective_stop_level = pos_stop
+            is_atr = False
 
             if open_p <= effective_stop_level:
                 stop_triggered = True
                 stop_ref_price = open_p
                 stop_fill_price = open_p * (1.0 - SLIPPAGE_RATE)
-                stop_reason = "🔴 结构熔断止损(跳空开盘)" if not is_atr else "🔴 结构熔断止损(ATR跳空)"
+                stop_reason = "🔴 结构熔断止损(跳空开盘)"
             elif low_p <= effective_stop_level:
                 stop_triggered = True
                 stop_ref_price = effective_stop_level
                 stop_fill_price = effective_stop_level * (1.0 - SLIPPAGE_RATE)
-                stop_reason = "🔴 结构熔断止损" if not is_atr else "🔴 结构熔断止损(ATR)"
+                stop_reason = "🔴 结构熔断止损"
 
             # 保守风控仲裁: 止损优先
             exit_reason = None
@@ -1350,14 +1349,14 @@ def run_simulation(execution_mode="NEXT_OPEN", custom_data=None, custom_core_sto
                         break
 
                     fill_p = cand["close"] * (1.0 + SLIPPAGE_RATE)
-                    raw_stop = min(cand["low"] - 0.4 * cand["atr"], fill_p * 0.965)
-                    stop_level = max(raw_stop, fill_p * 0.95)
+                    struct_stop = min(cand["low"] - 0.5 * cand["atr"], fill_p - 1.8 * cand["atr"])
+                    stop_level = max(struct_stop, fill_p * 0.932)
                     stop_dist_pct = (fill_p - stop_level) / fill_p
                     stop_dist_pct = max(stop_dist_pct, 0.035)
 
                     curr_invested = sum(p["shares"] * float(indicators_data[p["ticker"]]["Close"].loc[date]) for p in active_positions.values())
                     current_equity = cash + curr_invested
-                    risk_dollars = current_equity * 0.01
+                    risk_dollars = current_equity * 0.0085
                     target_notional = min(current_equity * POSITION_PCT, risk_dollars / stop_dist_pct)
                     alloc_capital = min(target_notional, cash)
                     if alloc_capital < 200.0:
