@@ -58,8 +58,8 @@
       "last_notified_at": 0.0
     },
     "SNDK": {
-      "state": "STOP_LOSS",
-      "last_notified_at": 1793294186.603522
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "BE": {
       "state": "NORMAL",
@@ -106,16 +106,16 @@
       "last_notified_at": 0.0
     },
     "TSM": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1793294426.0620916
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "AXP": {
       "state": "NORMAL",
       "last_notified_at": 0.0
     },
     "DELL": {
-      "state": "GOLDEN_PIT",
-      "last_notified_at": 1793294186.603522
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "NVDA": {
       "state": "NORMAL",
@@ -126,20 +126,20 @@
       "last_notified_at": 0.0
     },
     "META": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1793294306.5921128
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "MRVL": {
       "state": "STOP_LOSS",
       "last_notified_at": 1793290346.4827302
     },
     "HPE": {
-      "state": "GOLDEN_PIT",
-      "last_notified_at": 1793294186.603522
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "MU": {
-      "state": "GOLDEN_PIT",
-      "last_notified_at": 1793294186.603522
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "KO": {
       "state": "NORMAL",
@@ -150,8 +150,8 @@
       "last_notified_at": 0.0
     },
     "SPCX": {
-      "state": "GOLDEN_PIT",
-      "last_notified_at": 1793294306.5921128
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "AAPL": {
       "state": "NORMAL",
@@ -174,12 +174,12 @@
       "last_notified_at": 0.0
     },
     "QQQM": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1793294186.603522
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "SOXX": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1793294306.5921128
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "SOXL": {
       "state": "NORMAL",
