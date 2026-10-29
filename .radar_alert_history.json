@@ -58,8 +58,8 @@
       "last_notified_at": 0.0
     },
     "SNDK": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "STOP_LOSS",
+      "last_notified_at": 1793294186.603522
     },
     "BE": {
       "state": "NORMAL",
@@ -86,8 +86,8 @@
       "last_notified_at": 1793280988.578807
     },
     "CEG": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "GOLDEN_PIT",
+      "last_notified_at": 1793294186.603522
     },
     "ASML": {
       "state": "NORMAL",
@@ -114,8 +114,8 @@
       "last_notified_at": 0.0
     },
     "DELL": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "GOLDEN_PIT",
+      "last_notified_at": 1793294186.603522
     },
     "NVDA": {
       "state": "NORMAL",
@@ -126,20 +126,20 @@
       "last_notified_at": 0.0
     },
     "META": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "GOLDEN_PIT",
+      "last_notified_at": 1793294186.603522
     },
     "MRVL": {
       "state": "STOP_LOSS",
       "last_notified_at": 1793290346.4827302
     },
     "HPE": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "GOLDEN_PIT",
+      "last_notified_at": 1793294186.603522
     },
     "MU": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "GOLDEN_PIT",
+      "last_notified_at": 1793294186.603522
     },
     "KO": {
       "state": "NORMAL",
@@ -150,8 +150,8 @@
       "last_notified_at": 0.0
     },
     "SPCX": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1793294186.603522
     },
     "AAPL": {
       "state": "NORMAL",
@@ -174,8 +174,8 @@
       "last_notified_at": 0.0
     },
     "QQQM": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1793294186.603522
     },
     "SOXX": {
       "state": "NORMAL",
