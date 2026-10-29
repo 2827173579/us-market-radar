@@ -126,8 +126,8 @@
       "last_notified_at": 0.0
     },
     "META": {
-      "state": "GOLDEN_PIT",
-      "last_notified_at": 1793299948.0480907
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1793300067.772324
     },
     "MRVL": {
       "state": "STOP_LOSS",
@@ -230,8 +230,8 @@
       "last_notified_at": 0.0
     },
     "PORT_SOXS": {
-      "state": "SOXS_HEDGE_CLIMAX",
-      "last_notified_at": 1793298867.0458426
+      "state": "PORT_NORMAL",
+      "last_notified_at": 0.0
     }
   },
   "position_peaks": {
