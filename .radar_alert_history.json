@@ -126,8 +126,8 @@
       "last_notified_at": 0.0
     },
     "META": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1793312787.0757802
+      "state": "GOLDEN_PIT",
+      "last_notified_at": 1793312906.318447
     },
     "MRVL": {
       "state": "STOP_LOSS",
@@ -150,8 +150,8 @@
       "last_notified_at": 0.0
     },
     "SPCX": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1793312787.0757802
+      "state": "GOLDEN_PIT",
+      "last_notified_at": 1793312906.318447
     },
     "AAPL": {
       "state": "NORMAL",
@@ -237,6 +237,6 @@
   "position_peaks": {
     "INTC": 93.49,
     "SOXL": 108.2109,
-    "SOXS": 47.25
+    "SOXS": 47.26
   }
 }
