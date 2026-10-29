@@ -86,8 +86,8 @@
       "last_notified_at": 1793280988.578807
     },
     "CEG": {
-      "state": "GOLDEN_PIT",
-      "last_notified_at": 1793294186.603522
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "ASML": {
       "state": "NORMAL",
@@ -106,8 +106,8 @@
       "last_notified_at": 0.0
     },
     "TSM": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1793294426.0620916
     },
     "AXP": {
       "state": "NORMAL",
