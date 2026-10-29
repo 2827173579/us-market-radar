@@ -126,8 +126,8 @@
       "last_notified_at": 0.0
     },
     "META": {
-      "state": "GOLDEN_PIT",
-      "last_notified_at": 1793311706.9935455
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1793311826.8657641
     },
     "MRVL": {
       "state": "STOP_LOSS",
@@ -150,8 +150,8 @@
       "last_notified_at": 0.0
     },
     "SPCX": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1793311587.0434382
+      "state": "GOLDEN_PIT",
+      "last_notified_at": 1793311826.8657641
     },
     "AAPL": {
       "state": "NORMAL",
