@@ -78,8 +78,8 @@
       "last_notified_at": 0.0
     },
     "SKHY": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1793287345.656387
     },
     "GOOGL": {
       "state": "STOP_LOSS",
@@ -194,8 +194,8 @@
       "last_notified_at": 0.0
     },
     "SOXS": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1793286986.1219425
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "MCD": {
       "state": "NORMAL",
