@@ -1,7 +1,7 @@
 [
   {
     "id": "STOP_GOOGL_2026-10-29",
-    "time": "10-29 10:43",
+    "time": "10-29 10:46",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -15,7 +15,7 @@
   },
   {
     "id": "PORT_INTC_HOLD_2026-10-29",
-    "time": "10-29 10:43",
+    "time": "10-29 10:46",
     "category": "portfolio",
     "cat_label": "💼 持仓风控",
     "level": "info",
@@ -34,7 +34,7 @@
   },
   {
     "id": "5M_META_2026-10-29",
-    "time": "10-29 10:43",
+    "time": "10-29 10:46",
     "category": "5m_entry",
     "cat_label": "🎯 5m买点",
     "level": "success",
@@ -54,7 +54,7 @@
   },
   {
     "id": "5M_SKHY_2026-10-29",
-    "time": "10-29 10:43",
+    "time": "10-29 10:46",
     "category": "5m_entry",
     "cat_label": "🎯 5m买点",
     "level": "success",
@@ -74,7 +74,7 @@
   },
   {
     "id": "TP_CRWD_2026-10-29",
-    "time": "10-29 10:43",
+    "time": "10-29 10:46",
     "category": "take_profit",
     "cat_label": "🟣 冲顶减仓",
     "level": "purple",
@@ -88,7 +88,7 @@
   },
   {
     "id": "TP_PLTR_2026-10-29",
-    "time": "10-29 10:43",
+    "time": "10-29 10:46",
     "category": "take_profit",
     "cat_label": "🟣 冲顶减仓",
     "level": "purple",
@@ -102,7 +102,7 @@
   },
   {
     "id": "5M_QQQM_2026-10-29",
-    "time": "10-29 10:43",
+    "time": "10-29 10:46",
     "category": "5m_entry",
     "cat_label": "🎯 5m买点",
     "level": "success",
@@ -122,7 +122,7 @@
   },
   {
     "id": "5M_SOXX_2026-10-29",
-    "time": "10-29 10:43",
+    "time": "10-29 10:46",
     "category": "5m_entry",
     "cat_label": "🎯 5m买点",
     "level": "success",
@@ -142,7 +142,7 @@
   },
   {
     "id": "PORT_SOXL_HOLD_2026-10-29",
-    "time": "10-29 10:43",
+    "time": "10-29 10:46",
     "category": "portfolio",
     "cat_label": "💼 持仓风控",
     "level": "info",
@@ -161,7 +161,7 @@
   },
   {
     "id": "PORT_SOXS_HOLD_2026-10-29",
-    "time": "10-29 10:43",
+    "time": "10-29 10:46",
     "category": "portfolio",
     "cat_label": "💼 持仓风控",
     "level": "info",
@@ -180,15 +180,15 @@
   },
   {
     "id": "WEATHER_阴天防守_2026-10-29",
-    "time": "10-29 10:43",
+    "time": "10-29 10:46",
     "category": "macro_weather",
     "cat_label": "⛅ 宏观气象",
     "level": "info",
     "ticker": "SPY",
     "name": "美股大盘全景",
     "cat": "大盘气象",
-    "price": 772.31,
-    "pct_change": 0.3443,
+    "price": 772.35,
+    "pct_change": 0.005179583526398391,
     "title": "⛅ 宏观大盘司令塔：【阴天防守】",
     "desc": "大盘与核心芯片主线出现分化或均线争夺，市场进入结构性轮动。 ｜ 操盘军规：严格控制总仓位，单股执行 $660(30%) 集中试仓上限，紧盯黄金坑分批防守。 ｜ 🔄 风格主线：硬件休整、软件应用占优（严禁追高芯片，关注软件与高低切）"
   },
