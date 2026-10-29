@@ -34,8 +34,8 @@
       "last_notified_at": 1793268386.3415024
     },
     "FPS": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "STOP_LOSS",
+      "last_notified_at": 1793276907.948301
     },
     "STX": {
       "state": "STOP_LOSS",
@@ -106,8 +106,8 @@
       "last_notified_at": 0.0
     },
     "TSM": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1793276306.6450927
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "AXP": {
       "state": "NORMAL",
@@ -222,8 +222,8 @@
       "last_notified_at": 0.0
     },
     "PORT_INTC": {
-      "state": "PORT_NORMAL",
-      "last_notified_at": 0.0
+      "state": "INTC_NEAR_GOAL",
+      "last_notified_at": 1793276907.948301
     },
     "PORT_SOXL": {
       "state": "PORT_NORMAL",
