@@ -106,8 +106,8 @@
       "last_notified_at": 0.0
     },
     "TSM": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1793299827.5591292
+      "state": "GOLDEN_PIT",
+      "last_notified_at": 1793300193.2231393
     },
     "AXP": {
       "state": "NORMAL",
@@ -126,8 +126,8 @@
       "last_notified_at": 0.0
     },
     "META": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1793300067.772324
+      "state": "GOLDEN_PIT",
+      "last_notified_at": 1793300193.2231393
     },
     "MRVL": {
       "state": "STOP_LOSS",
@@ -150,8 +150,8 @@
       "last_notified_at": 0.0
     },
     "SPCX": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1793299466.6504872
+      "state": "GOLDEN_PIT",
+      "last_notified_at": 1793300193.2231393
     },
     "AAPL": {
       "state": "NORMAL",
@@ -230,8 +230,8 @@
       "last_notified_at": 0.0
     },
     "PORT_SOXS": {
-      "state": "PORT_NORMAL",
-      "last_notified_at": 0.0
+      "state": "SOXS_HEDGE_CLIMAX",
+      "last_notified_at": 1793300193.2231393
     }
   },
   "position_peaks": {
