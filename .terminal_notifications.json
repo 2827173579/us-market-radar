@@ -1,7 +1,7 @@
 [
   {
     "id": "STOP_CCXI_2026-10-29",
-    "time": "10-29 10:27",
+    "time": "10-29 10:29",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -15,7 +15,7 @@
   },
   {
     "id": "5M_META_2026-10-29",
-    "time": "10-29 10:27",
+    "time": "10-29 10:29",
     "category": "5m_entry",
     "cat_label": "🎯 5m买点",
     "level": "success",
@@ -23,7 +23,7 @@
     "name": "Meta",
     "cat": "社交AI",
     "price": 616.0408,
-    "pct_change": -1.241555396103586,
+    "pct_change": -1.2416,
     "title": "🎯 META (Meta) 触发 5分钟级买点共振",
     "desc": "日线超跌(RSI 30.8)后触发5m量价同步共振：站稳VWAP($613.90) + 5m量比1.44x(≥1.2x) + 5m RSI(36.7)收阳确认 ｜ ⚡期权多头共振(🔥 机构极度看涨, 主力Call $615 Call (2,401张 · $3.54M))",
     "optimal_limit": 606.8,
@@ -35,7 +35,7 @@
   },
   {
     "id": "5M_SKHY_2026-10-29",
-    "time": "10-29 10:27",
+    "time": "10-29 10:29",
     "category": "5m_entry",
     "cat_label": "🎯 5m买点",
     "level": "success",
@@ -55,7 +55,7 @@
   },
   {
     "id": "TP_CRWD_2026-10-29",
-    "time": "10-29 10:27",
+    "time": "10-29 10:29",
     "category": "take_profit",
     "cat_label": "🟣 冲顶减仓",
     "level": "purple",
@@ -69,7 +69,7 @@
   },
   {
     "id": "5M_QQQM_2026-10-29",
-    "time": "10-29 10:27",
+    "time": "10-29 10:29",
     "category": "5m_entry",
     "cat_label": "🎯 5m买点",
     "level": "success",
@@ -89,7 +89,7 @@
   },
   {
     "id": "5M_SOXX_2026-10-29",
-    "time": "10-29 10:27",
+    "time": "10-29 10:29",
     "category": "5m_entry",
     "cat_label": "🎯 5m买点",
     "level": "success",
@@ -109,7 +109,7 @@
   },
   {
     "id": "PORT_SOXS_HOLD_2026-10-29",
-    "time": "10-29 10:27",
+    "time": "10-29 10:29",
     "category": "portfolio",
     "cat_label": "💼 持仓风控",
     "level": "info",
@@ -128,7 +128,7 @@
   },
   {
     "id": "WEATHER_阴天防守_2026-10-29",
-    "time": "10-29 10:27",
+    "time": "10-29 10:29",
     "category": "macro_weather",
     "cat_label": "⛅ 宏观气象",
     "level": "info",
