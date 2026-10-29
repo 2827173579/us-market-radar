@@ -46,8 +46,8 @@
       "last_notified_at": 1793268386.3415024
     },
     "WDC": {
-      "state": "STOP_LOSS",
-      "last_notified_at": 1793268386.3415024
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "VRT": {
       "state": "NORMAL",
@@ -106,8 +106,8 @@
       "last_notified_at": 0.0
     },
     "TSM": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1793280507.1186368
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "AXP": {
       "state": "NORMAL",
@@ -126,12 +126,12 @@
       "last_notified_at": 0.0
     },
     "META": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1793280629.326209
     },
     "MRVL": {
-      "state": "STOP_LOSS",
-      "last_notified_at": 1793280507.1186368
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "HPE": {
       "state": "NORMAL",
@@ -166,16 +166,16 @@
       "last_notified_at": 0.0
     },
     "CRWD": {
-      "state": "TAKE_PROFIT",
-      "last_notified_at": 1793269104.8733912
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "PLTR": {
       "state": "NORMAL",
       "last_notified_at": 0.0
     },
     "QQQM": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1793280629.326209
     },
     "SOXX": {
       "state": "WATCHLIST_ENTRY_READY",
