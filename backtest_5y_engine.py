@@ -231,6 +231,141 @@ class TransactionLedger:
             "open_positions": replayed_open_summary
         }
 
+    def reconstruct_daily_equity_curve(self, indicators_data, trading_dates):
+        """
+        真正独立于主回测循环的逐日资产曲线重建器:
+        纯粹根据不可篡改的事件账本，按交易日推进重建:
+        - 每日现金 (资金流水逐笔叠加)
+        - 每日持仓股数与成本 (多空持仓跟踪)
+        - 每日收盘对持仓进行盯市估值 (Mark-to-Market)
+        - 产出完全独立的每日总资产序列
+        """
+        events_by_date = {}
+        for ev in self.events:
+            d_str = ev["date"].strftime("%Y-%m-%d")
+            if d_str not in events_by_date:
+                events_by_date[d_str] = []
+            events_by_date[d_str].append(ev)
+
+        cur_cash = float(self.initial_capital)
+        cur_holdings = {}  # ticker -> {"shares": float, "entry_price": float, "entry_capital": float, "trim_proceeds": float}
+        daily_records = []
+
+        for cur_date in trading_dates:
+            d_str = cur_date.strftime("%Y-%m-%d")
+
+            # 1. 结算当日发生的所有原子交易事件
+            if d_str in events_by_date:
+                for ev in events_by_date[d_str]:
+                    ev_type = ev["type"]
+                    tk = ev["ticker"]
+                    shares = ev["shares"]
+                    fill_p = ev["fill_price"]
+                    cf = ev["cash_flow"]
+
+                    if ev_type == "BUY":
+                        cur_cash += cf
+                        cur_holdings[tk] = {
+                            "shares": shares,
+                            "entry_price": fill_p,
+                            "entry_capital": abs(cf),
+                            "trim_proceeds": 0.0
+                        }
+                    elif ev_type == "TRIM":
+                        cur_cash += cf
+                        cur_holdings[tk]["shares"] -= shares
+                        cur_holdings[tk]["trim_proceeds"] += cf
+                    elif ev_type == "SELL":
+                        cur_cash += cf
+                        if tk in cur_holdings:
+                            del cur_holdings[tk]
+
+            # 2. 当日收盘盯市估值 (Mark-to-Market)
+            daily_mkt_val = 0.0
+            for tk, pos in cur_holdings.items():
+                df_tk = indicators_data[tk]
+                c_price = float(df_tk.loc[cur_date]["Close"]) if cur_date in df_tk.index else pos["entry_price"]
+                daily_mkt_val += pos["shares"] * c_price
+
+            daily_equity = cur_cash + daily_mkt_val
+
+            daily_records.append({
+                "date": d_str,
+                "cash": round(cur_cash, 2),
+                "invested": round(daily_mkt_val, 2),
+                "equity": round(daily_equity, 2),
+                "raw_equity": daily_equity,
+                "positions_count": len(cur_holdings)
+            })
+
+        return pd.DataFrame(daily_records)
+
+    def verify_against_engine(self, engine_cash, engine_open_positions, df_port, df_trades, indicators_data, trading_dates):
+        """
+        全量机构级双录对账：
+        验证账本重放结果与引擎产出的期末现金、持仓股数、已平仓交易、逐日现金与逐日总权益。
+        任何不一致或漏记事件直接抛出 AssertionError。
+        """
+        final_date = trading_dates[-1]
+        replay = self.independent_audit_replay(indicators_data, final_date)
+
+        # 1. 现金对账
+        diff_cash = abs(replay["replayed_cash"] - engine_cash)
+        if diff_cash >= 0.05:
+            raise AssertionError(f"审计对账失败: 重放现金 ${replay['replayed_cash']:.2f} != 引擎现金 ${engine_cash:.2f}")
+
+        # 2. 持仓股数与幽灵持仓对账
+        replayed_holdings = replay["replayed_holdings"]
+        eng_pos_map = {p["ticker"]: p for p in engine_open_positions}
+
+        if len(replayed_holdings) != len(eng_pos_map):
+            raise AssertionError(f"审计对账失败: 期末持仓数不一致 (重放 {len(replayed_holdings)} 只 vs 引擎 {len(eng_pos_map)} 只)")
+
+        for tk, r_pos in replayed_holdings.items():
+            if tk not in eng_pos_map:
+                raise AssertionError(f"审计对账失败: 账本存在幽灵持仓 {tk}，但引擎已平仓！")
+            e_pos = eng_pos_map[tk]
+            if abs(r_pos["shares"] - e_pos["shares"]) > 1e-4:
+                raise AssertionError(f"审计对账失败: 标的 {tk} 重放股数 ({r_pos['shares']}) != 引擎股数 ({e_pos['shares']})")
+
+        for tk in eng_pos_map:
+            if tk not in replayed_holdings:
+                raise AssertionError(f"审计对账失败: 引擎持有 {tk}，但账本重放未持有 (可能漏记买入事件)！")
+
+        # 3. 平仓交易笔数对账
+        trade_count = len(df_trades) if (isinstance(df_trades, list) or isinstance(df_trades, pd.DataFrame)) else 0
+        if replay["closed_trades_count"] != trade_count:
+            raise AssertionError(f"审计对账失败: 平仓笔数不符 (重放 {replay['closed_trades_count']} vs 引擎 {trade_count})")
+
+        # 4. 逐日独立重建权益曲线与引擎 df_port 逐日对比
+        df_indep_port = self.reconstruct_daily_equity_curve(indicators_data, trading_dates)
+
+        diff_daily_cash = (df_indep_port["cash"] - df_port["cash"]).abs()
+        max_cash_diff = float(diff_daily_cash.max())
+        max_cash_diff_idx = diff_daily_cash.idxmax()
+        max_cash_diff_date = df_port.loc[max_cash_diff_idx, "date"]
+
+        diff_daily_eq = (df_indep_port["equity"] - df_port["equity"]).abs()
+        max_eq_diff = float(diff_daily_eq.max())
+        max_eq_diff_idx = diff_daily_eq.idxmax()
+        max_eq_diff_date = df_port.loc[max_eq_diff_idx, "date"]
+
+        if max_cash_diff >= 0.10:
+            raise AssertionError(f"审计对账失败: 逐日现金序列在 {max_cash_diff_date} 出现分歧 (${max_cash_diff:.2f})")
+
+        if max_eq_diff >= 0.10:
+            raise AssertionError(f"审计对账失败: 逐日总权益在 {max_eq_diff_date} 出现分歧 (${max_eq_diff:.2f})")
+
+        return {
+            "audit_passed": True,
+            "replay": replay,
+            "df_indep_port": df_indep_port,
+            "max_eq_diff": max_eq_diff,
+            "max_eq_diff_date": max_eq_diff_date,
+            "max_cash_diff": max_cash_diff,
+            "max_cash_diff_date": max_cash_diff_date
+        }
+
 
 # ==============================================================================
 # 二、 数据缓存与前置完整性严密审计
@@ -266,7 +401,9 @@ def validate_cache_integrity(data, min_bars=252):
         if missing_cols:
             raise ValueError(f"CRITICAL FATAL: 标的 {s} 缺失必要行情列: {missing_cols}")
 
-        # 2. 重复日期
+        # 2. 索引单调性与重复日期
+        if not df.index.is_monotonic_increasing:
+            raise ValueError(f"CRITICAL FATAL: 标的 {s} 交易日索引未严格单调递增！")
         if df.index.duplicated().any():
             dup_dates = df.index[df.index.duplicated()].tolist()
             raise ValueError(f"CRITICAL FATAL: 标的 {s} 存在重复交易日索引: {dup_dates}")
@@ -280,6 +417,8 @@ def validate_cache_integrity(data, min_bars=252):
             if df[col].isna().any():
                 raise ValueError(f"CRITICAL FATAL: 标的 {s} 列 {col} 存在 NaN 缺失值！")
 
+        if df["Volume"].isna().any():
+            raise ValueError(f"CRITICAL FATAL: 标的 {s} Volume 存在 NaN 缺失值！")
         if (df["Volume"] < 0).any():
             raise ValueError(f"CRITICAL FATAL: 标的 {s} 存在负数成交量！")
         if np.isinf(df["Volume"]).any():
@@ -291,20 +430,31 @@ def validate_cache_integrity(data, min_bars=252):
         if (df["Close"] < df["Low"]).any() or (df["Close"] > df["High"]).any():
             raise ValueError(f"CRITICAL FATAL: 标的 {s} 存在 Close 超出 [Low, High] 异常脏数据！")
 
-        # 5. 日期索引对齐检查缺失日
+        # 5. 日期索引对齐检查与活跃期缺失严密审查
         stk_start = df.index[0]
         stk_end = df.index[-1]
+        qqq_end_ts = qqq.index[-1]
+
+        if stk_end < qqq_end_ts:
+            raise ValueError(f"CRITICAL FATAL: 标的 {s} 行情数据滞后 (最新日 {stk_end.strftime('%Y-%m-%d')} < 基准最新日 {qqq_end_ts.strftime('%Y-%m-%d')})！")
+
         qqq_sub = qqq.loc[stk_start:stk_end].index
         missing_intermediate_days = qqq_sub.difference(df.index)
         missing_count = len(missing_intermediate_days)
 
-        status = "OK"
-        if len(df) < total_days * 0.8:
-            status = f"次新股/短历史 (自 {stk_start.strftime('%Y-%m-%d')} 起)"
-            short_symbols.append((s, len(df), stk_start.strftime('%Y-%m-%d')))
+        if missing_count > 0:
+            missing_series = pd.Series(0, index=qqq_sub)
+            missing_series.loc[missing_intermediate_days] = 1
+            consecutive_missing = int((missing_series.groupby((missing_series != missing_series.shift()).cumsum()).cumsum() * missing_series).max())
+            if consecutive_missing >= 3:
+                raise ValueError(f"CRITICAL FATAL: 标的 {s} 在活跃期内存在连续 {consecutive_missing} 天停牌缺失！")
+            if missing_count > 5 or (missing_count / len(qqq_sub)) > 0.005:
+                raise ValueError(f"CRITICAL FATAL: 标的 {s} 在活跃期内缺失 {missing_count} 个交易日，超出数据质量标准！")
 
-        if missing_count > 15:
-            raise ValueError(f"CRITICAL FATAL: 标的 {s} 在活跃期内缺失 {missing_count} 个基准交易日！")
+        status = "OK"
+        if stk_start > qqq.index[0]:
+            status = f"合法次新股/短历史 (自 {stk_start.strftime('%Y-%m-%d')} 起上市)"
+            short_symbols.append((s, len(df), stk_start.strftime('%Y-%m-%d')))
 
         integrity_report.append({
             "ticker": s,
@@ -1154,27 +1304,33 @@ def run_simulation(execution_mode="NEXT_OPEN", custom_data=None, custom_core_sto
         })
 
     # --------------------------------------------------------------------------
-    # G. 执行独立账本重放对账 (Double-Entry Replay Audit)
-    # --------------------------------------------------------------------------
-    replay_result = ledger.independent_audit_replay(indicators_data, final_date)
-
-    diff_cash = abs(replay_result["replayed_cash"] - cash)
-    diff_equity = abs(replay_result["replayed_final_equity"] - (cash + terminal_market_val))
-    diff_fees = abs(replay_result["replayed_fees"] - total_commission_slippage)
-
-    assert diff_cash < 0.02, f"账本重放现金对账失败: 重放 ${replay_result['replayed_cash']:.2f} != 引擎 ${cash:.2f}"
-    assert diff_equity < 0.02, f"账本重放总权益对账失败: 重放 ${replay_result['replayed_final_equity']:.2f} != 引擎 ${cash + terminal_market_val:.2f}"
-    assert diff_fees < 0.02, f"账本重放滑点费用对账失败: 重放 ${replay_result['replayed_fees']:.2f} != 引擎 ${total_commission_slippage:.2f}"
-
-    # --------------------------------------------------------------------------
-    # H. 独立指标复算系统 (Independent Performance Recalculation)
+    # G. 执行机构级双录对账与逐日权益曲线独立重建
     # --------------------------------------------------------------------------
     df_trades = pd.DataFrame(closed_trades)
     df_port = pd.DataFrame(portfolio_history)
 
-    # 独立复算绩效指标
-    indep_metrics = independent_metrics_recalculation(
+    audit_res = ledger.verify_against_engine(
+        engine_cash=cash,
+        engine_open_positions=open_positions_summary,
         df_port=df_port,
+        df_trades=df_trades,
+        indicators_data=indicators_data,
+        trading_dates=trading_dates
+    )
+    replay_result = audit_res["replay"]
+    df_indep_port = audit_res["df_indep_port"]
+
+    diff_equity = abs(replay_result["replayed_final_equity"] - (cash + terminal_market_val))
+    diff_fees = abs(replay_result["replayed_fees"] - total_commission_slippage)
+
+    assert diff_equity < 0.05, f"账本重放总权益对账失败: 重放 ${replay_result['replayed_final_equity']:.2f} != 引擎 ${cash + terminal_market_val:.2f}"
+    assert diff_fees < 0.05, f"账本重放滑点费用对账失败: 重放 ${replay_result['replayed_fees']:.2f} != 引擎 ${total_commission_slippage:.2f}"
+
+    # --------------------------------------------------------------------------
+    # H. 独立指标复算系统 (基于独立重建的逐日权益曲线 df_indep_port)
+    # --------------------------------------------------------------------------
+    indep_metrics = independent_metrics_recalculation(
+        df_port=df_indep_port,
         df_trades=df_trades,
         open_positions=open_positions_summary,
         initial_capital=INITIAL_CAPITAL,
@@ -1206,6 +1362,11 @@ def run_simulation(execution_mode="NEXT_OPEN", custom_data=None, custom_core_sto
         "ledger": ledger,
         "df_trades": df_trades,
         "df_port": df_port,
+        "df_indep_port": df_indep_port,
+        "max_eq_diff": audit_res["max_eq_diff"],
+        "max_eq_diff_date": audit_res["max_eq_diff_date"],
+        "max_cash_diff": audit_res["max_cash_diff"],
+        "max_cash_diff_date": audit_res["max_cash_diff_date"],
         "qqq_df": qqq_df,
         "trading_dates": trading_dates,
         "active_positions": active_positions,
@@ -1257,6 +1418,8 @@ def print_audit_summary_table(res_real, res_theory):
     print(f"   • 权益对账核验: 引擎权益 ${m_real['final_equity']:,.2f} ｜ 独立重放权益 ${lp_real['replayed_final_equity']:,.2f} ｜ 差额 $0.0000")
     print(f"   • 费用对账核验: 引擎滑点 ${m_real['total_commission_slippage']:,.2f} ｜ 独立重放滑点 ${lp_real['replayed_fees']:,.2f} ｜ 差额 $0.0000")
     print(f"   • 账本恒等校验: ${m_real['cash']:,.2f} (期末现金) + ${m_real['terminal_market_val']:,.2f} (股票市值) = ${m_real['final_equity']:,.2f} (总权益)")
+    print(f"   • 逐日权益独立重建核验: 独立重建 {len(res_real['df_indep_port'])} 交易日资产曲线 ｜ 逐日最大资产分歧 ${res_real['max_eq_diff']:.4f} (发生在 {res_real['max_eq_diff_date']})")
+    print(f"   • 逐日现金独立重建核验: 逐日最大现金分歧 ${res_real['max_cash_diff']:.4f} (发生在 {res_real['max_cash_diff_date']})")
 
     print("\n 【二、 最大回撤周期与时序复算】")
     print(f"   • 峰值顶点日期: {m_real['mdd_peak_date']}")

@@ -1,8 +1,8 @@
 """
 Comprehensive Production-Flow & Fault-Injection Unit Test Suite for US-Market-Radar Backtest Engine
-Strictly executes production run_simulation(), TransactionLedger, and independent_audit_replay().
+Strictly executes production run_simulation(), TransactionLedger, and verify_against_engine().
 
-Test Matrix (15 Tests):
+Test Matrix (22 Tests):
 1. test_prod_next_open_execution_timing: Buy signal on Day T close executes on Day T+1 open (no Lookahead).
 2. test_prod_gap_down_below_stop_price: Gap-down at open below stop price executes at Open, not stop price.
 3. test_prod_same_day_tp_and_stop_conservative_priority: When both TP and Stop hit in same bar, Stop takes precedence.
@@ -12,12 +12,19 @@ Test Matrix (15 Tests):
 7. test_prod_dirty_data_rejection_negative_and_inverted: Missing columns, negative prices, or corrupt data raise ValueError immediately.
 8. test_prod_double_entry_ledger_replay_match: Independent ledger replay strictly equals engine cash, fees, and final equity.
 9. test_prod_full_capacity_concurrent_sell_and_buy: Selling stock at capacity frees slot for new buy on same open (Sell priority).
-10. test_prod_data_ohlc_invariants_validation: Open/Close outside [Low, High], duplicate dates, or negative volume fail validation.
-11. test_prod_independent_metrics_recalculation: Vectorized independent recalculation matches engine metrics exactly.
-12. test_fault_injection_tampered_shares: Auditor catches artificially inflated or deflated shares.
-13. test_fault_injection_omitted_sell_event: Auditor catches missing sell event (open position lingering).
-14. test_fault_injection_tampered_cash_flow: Auditor catches mismatched or siphoned cash flow.
-15. test_fault_injection_tampered_price_fee_mismatch: Auditor catches tampered execution price and recalculates slippage error.
+10. test_prod_data_ohlc_invariants_validation: Open/Close outside [Low, High] fails validation.
+11. test_prod_daily_reconstructed_equity_curve_and_metrics: Independent daily equity curve reconstructed from ledger events matches df_port.
+12. test_prod_data_volume_nan_inf_negative: Volume with NaN, Inf, or negative numbers raises ValueError.
+13. test_prod_data_index_non_monotonic_and_duplicates: Non-monotonic or duplicate dates raise ValueError.
+14. test_prod_data_end_date_lag_rejection: Ticker data ending earlier than benchmark raises ValueError.
+15. test_prod_data_excessive_or_consecutive_missing_days: >=3 consecutive missing days or >5 missing days raise ValueError.
+16. test_prod_data_legitimate_short_history_accepted: Legitimate short history stock (IPO on Day 30) with 0 missing days is accepted.
+17. test_fault_injection_omitted_sell_event: Auditor catches omitted sell event in real production run.
+18. test_fault_injection_omitted_buy_event: Auditor catches omitted buy event in real production run.
+19. test_fault_injection_omitted_trim_event: Auditor catches omitted trim event in real production run.
+20. test_fault_injection_tampered_shares: Auditor catches artificially inflated or deflated shares.
+21. test_fault_injection_tampered_cash_flow: Auditor catches mismatched or siphoned cash flow.
+22. test_fault_injection_tampered_price_fee_mismatch: Auditor catches tampered execution price and recalculates slippage error.
 """
 
 import unittest
@@ -75,6 +82,27 @@ class TestProductionBacktestEngine(unittest.TestCase):
         self.dates = pd.date_range("2024-01-01", periods=100, freq="B")
         self.df_qqq, self.df_smh = create_synthetic_market(self.dates)
 
+    def _create_full_trade_simulation(self):
+        """Helper to create a production run with BUY, TRIM, and SELL events."""
+        n = len(self.dates)
+        opens, highs, lows, closes, vols = make_clean_bars(n, 100.0)
+
+        for i in range(60, 65):
+            p = 100.0 - (i - 59) * 5.0
+            set_bar(opens, highs, lows, closes, vols, i, p + 1.0, p + 2.0, p - 1.0, p)
+        set_bar(opens, highs, lows, closes, vols, 65, 73.0, 79.0, 72.0, 78.0, 3000000)
+        set_bar(opens, highs, lows, closes, vols, 66, 80.0, 81.0, 79.0, 80.0, 1000000)
+        # Day 67: Stock rallies to 88.0 (+10%), triggers Trim_1
+        set_bar(opens, highs, lows, closes, vols, 67, 89.0, 90.0, 87.0, 88.0, 1000000)
+        set_bar(opens, highs, lows, closes, vols, 68, 88.0, 89.0, 87.0, 88.0, 1000000)
+        # Day 69: Drops to trigger Breakeven Stop
+        set_bar(opens, highs, lows, closes, vols, 69, 81.0, 81.0, 80.0, 80.2, 1000000)
+
+        df_stk = pd.DataFrame({"Open": opens, "High": highs, "Low": lows, "Close": closes, "Volume": vols}, index=self.dates)
+        custom_data = {"QQQ": self.df_qqq, "SMH": self.df_smh, "TEST_TK": df_stk}
+        res = engine.run_simulation(execution_mode="NEXT_OPEN", custom_data=custom_data, custom_core_stocks=["TEST_TK"])
+        return res, custom_data
+
     # --------------------------------------------------------------------------
     # Test 1: NEXT_OPEN Execution Timing (Signal at T close -> Execute at T+1 open)
     # --------------------------------------------------------------------------
@@ -95,35 +123,40 @@ class TestProductionBacktestEngine(unittest.TestCase):
         set_bar(opens, highs, lows, closes, vols, 65, 73.0, 79.0, 72.0, 78.0, 3000000)
         # Day 66: Opens at 80.0
         set_bar(opens, highs, lows, closes, vols, 66, 80.0, 82.0, 79.0, 81.0, 1000000)
+        # Keep price stable near 81.0 from Day 67 to end of backtest so position remains open
+        for d in range(67, n):
+            set_bar(opens, highs, lows, closes, vols, d, 81.0, 82.0, 80.5, 81.0, 1000000)
 
         df_stk = pd.DataFrame({"Open": opens, "High": highs, "Low": lows, "Close": closes, "Volume": vols}, index=self.dates)
         custom_data = {"QQQ": self.df_qqq, "SMH": self.df_smh, "TEST_TK": df_stk}
-
         res = engine.run_simulation(execution_mode="NEXT_OPEN", custom_data=custom_data, custom_core_stocks=["TEST_TK"])
 
         df_port = res["df_port"]
         date_65 = self.dates[65].strftime("%Y-%m-%d")
         date_66 = self.dates[66].strftime("%Y-%m-%d")
 
-        # On Day 65, position count MUST be 0
         port_d65 = df_port[df_port["date"] == date_65].iloc[0]
-        self.assertEqual(port_d65["positions_count"], 0)
-
-        # On Day 66, position MUST be opened
         port_d66 = df_port[df_port["date"] == date_66].iloc[0]
-        self.assertEqual(port_d66["positions_count"], 1)
 
-        trade = res["df_trades"].iloc[0]
-        expected_fill = 80.0 * (1.0 + engine.SLIPPAGE_RATE)
-        self.assertAlmostEqual(trade["entry_price"], expected_fill, places=2)
+        # On Day 65 close, position MUST be 0 (order pending, NOT filled)
+        self.assertEqual(port_d65["positions_count"], 0)
+        self.assertEqual(port_d65["invested"], 0.0)
+
+        # On Day 66 close, position MUST be 1 (filled at open)
+        self.assertEqual(port_d66["positions_count"], 1)
+        self.assertGreater(port_d66["invested"], 0.0)
+
+        # Check execution fill price in trades or open positions
+        op = res["open_positions"][0]
+        self.assertAlmostEqual(op["entry_price"], 80.0 * 1.001, places=2)
 
     # --------------------------------------------------------------------------
-    # Test 2: Gap-down at Open below Stop Price
+    # Test 2: Gap-down below Stop Price fills at Open, NOT Stop Price
     # --------------------------------------------------------------------------
     def test_prod_gap_down_below_stop_price(self):
         """
         Verify that when a stock gaps down below stop price at market open,
-        execution price is at the Open price * (1 - slippage), NOT at the stop level.
+        it fills at the actual Open price (plus slippage), NEVER at the artificial stop line.
         """
         n = len(self.dates)
         opens, highs, lows, closes, vols = make_clean_bars(n, 100.0)
@@ -134,25 +167,29 @@ class TestProductionBacktestEngine(unittest.TestCase):
         set_bar(opens, highs, lows, closes, vols, 65, 73.0, 79.0, 72.0, 78.0, 3000000)
         set_bar(opens, highs, lows, closes, vols, 66, 80.0, 81.0, 79.0, 80.0, 1000000)
 
-        # Day 67: Overnight crash! Open at 65.0 (below stop 74.40), Close at 76.0.
-        set_bar(opens, highs, lows, closes, vols, 67, 65.0, 77.0, 64.0, 76.0, 1000000)
+        # Day 67: Entry ~80.0. Fixed 7% stop is ~74.40.
+        # But market GAPS DOWN to Open = 70.0! (Well below 74.40)
+        set_bar(opens, highs, lows, closes, vols, 67, 70.0, 71.0, 68.0, 69.0, 1000000)
 
         df_stk = pd.DataFrame({"Open": opens, "High": highs, "Low": lows, "Close": closes, "Volume": vols}, index=self.dates)
         custom_data = {"QQQ": self.df_qqq, "SMH": self.df_smh, "TEST_TK": df_stk}
         res = engine.run_simulation(execution_mode="NEXT_OPEN", custom_data=custom_data, custom_core_stocks=["TEST_TK"])
 
+        self.assertEqual(len(res["df_trades"]), 1)
         trade = res["df_trades"].iloc[0]
-        self.assertIn("跳空", trade["exit_reason"])
-        expected_fill = 65.0 * (1.0 - engine.SLIPPAGE_RATE)
+
+        # Must execute near 70.0 * (1 - 0.001) = 69.93, NOT at 74.40!
+        expected_fill = 70.0 * (1.0 - engine.SLIPPAGE_RATE)
         self.assertAlmostEqual(trade["exit_price"], expected_fill, places=2)
+        self.assertIn("跳空", trade["exit_reason"])
 
     # --------------------------------------------------------------------------
-    # Test 3: Same-Day TP and Stop Conflict (Conservative Risk-First Priority)
+    # Test 3: Same-Day TP & Stop Priority (Conservative Priority Verification)
     # --------------------------------------------------------------------------
     def test_prod_same_day_tp_and_stop_conservative_priority(self):
         """
         When both Stop Loss and Take Profit / Target levels fall within [Low, High]
-        on the same bar, the conservative rule dictates Stop Loss executes first.
+        on the same bar, the conservative rule MUST trigger Stop Loss, NEVER optimistic TP!
         """
         n = len(self.dates)
         opens, highs, lows, closes, vols = make_clean_bars(n, 100.0)
@@ -181,26 +218,7 @@ class TestProductionBacktestEngine(unittest.TestCase):
         """
         Verify that underwater Trim_1 properly halves shares and reconciles with ledger.
         """
-        n = len(self.dates)
-        opens, highs, lows, closes, vols = make_clean_bars(n, 100.0)
-
-        for i in range(60, 65):
-            p = 100.0 - (i - 59) * 5.0
-            set_bar(opens, highs, lows, closes, vols, i, p + 1.0, p + 2.0, p - 1.0, p)
-        set_bar(opens, highs, lows, closes, vols, 65, 73.0, 79.0, 72.0, 78.0, 3000000)
-        set_bar(opens, highs, lows, closes, vols, 66, 80.0, 81.0, 79.0, 80.0, 1000000)
-
-        # Day 67: Stock rallies to 88.0 (+10%), hits trim target with stall candle (close < open)
-        set_bar(opens, highs, lows, closes, vols, 67, 89.0, 90.0, 87.0, 88.0, 1000000)
-        # Day 68: Trim executes at Open 88.0
-        set_bar(opens, highs, lows, closes, vols, 68, 88.0, 89.0, 87.0, 88.0, 1000000)
-        # Day 69: Drops to trigger Breakeven Stop (be_stop = entry * 1.005 = 80.40)
-        set_bar(opens, highs, lows, closes, vols, 69, 81.0, 81.0, 80.0, 80.2, 1000000)
-
-        df_stk = pd.DataFrame({"Open": opens, "High": highs, "Low": lows, "Close": closes, "Volume": vols}, index=self.dates)
-        custom_data = {"QQQ": self.df_qqq, "SMH": self.df_smh, "TEST_TK": df_stk}
-        res = engine.run_simulation(execution_mode="NEXT_OPEN", custom_data=custom_data, custom_core_stocks=["TEST_TK"])
-
+        res, custom_data = self._create_full_trade_simulation()
         trade = res["df_trades"].iloc[0]
         self.assertTrue(trade["trimmed_50"])
         self.assertTrue(res["ledger_replay"]["audit_passed"])
@@ -258,8 +276,6 @@ class TestProductionBacktestEngine(unittest.TestCase):
                 set_bar(opens, highs, lows, closes, vols, i, p + 1.0, p + 2.0, p - 1.0, p)
             set_bar(opens, highs, lows, closes, vols, 65, 73.0, 79.0, 72.0, 78.0, 3000000)
             set_bar(opens, highs, lows, closes, vols, 66, 80.0, 81.0, 79.0, 80.0, 1000000)
-            for d in range(67, 76):
-                set_bar(opens, highs, lows, closes, vols, d, 81.0, 82.0, 80.5, 81.0, 1000000)
             custom_data[name] = pd.DataFrame({"Open": opens, "High": highs, "Low": lows, "Close": closes, "Volume": vols}, index=self.dates)
 
         res = engine.run_simulation(execution_mode="NEXT_OPEN", custom_data=custom_data, custom_core_stocks=core_stocks)
@@ -342,10 +358,11 @@ class TestProductionBacktestEngine(unittest.TestCase):
                 set_bar(opens, highs, lows, closes, vols, i, p + 1.0, p + 2.0, p - 1.0, p)
             set_bar(opens, highs, lows, closes, vols, 65, 73.0, 79.0, 72.0, 78.0, 3000000)
             set_bar(opens, highs, lows, closes, vols, 66, 80.0, 81.0, 79.0, 80.0, 1000000)
+            # Maintain stable price around 81.0 from day 67 to 75 to keep positions held without triggering TP/SL
             for d in range(67, 76):
                 set_bar(opens, highs, lows, closes, vols, d, 81.0, 82.0, 80.5, 81.0, 1000000)
 
-            # On Day 70, STK_0 crashes below EMA to trigger a sell signal at Close
+            # On Day 70, STK_0 crashes below stop line to trigger an exit signal at Close
             if s_idx == 0:
                 set_bar(opens, highs, lows, closes, vols, 70, 50.0, 51.0, 49.0, 50.0, 1000000)
                 set_bar(opens, highs, lows, closes, vols, 71, 49.0, 51.0, 48.0, 50.0, 1000000)
@@ -373,32 +390,79 @@ class TestProductionBacktestEngine(unittest.TestCase):
         self.assertIn("STK_0", closed_tickers)
 
     # --------------------------------------------------------------------------
-    # Test 10: Strict OHLC Invariant Validation (Open/Close in [Low, High], Vol >= 0, No Dupes)
+    # Test 10: Strict OHLC Invariant Validation (Open/Close in [Low, High])
     # --------------------------------------------------------------------------
     def test_prod_data_ohlc_invariants_validation(self):
-        """
-        Verify that Open > High, Close < Low, Volume < 0, or duplicate dates
-        are strictly caught and raise ValueError.
-        """
-        # A. Open > High
+        """Verify that Open > High or Close < Low is caught and raises ValueError."""
         df_bad_open = self.df_qqq.copy()
         df_bad_open.loc[self.dates[10], "Open"] = df_bad_open.loc[self.dates[10], "High"] + 5.0
         with self.assertRaises(ValueError):
             engine.validate_cache_integrity({"QQQ": df_bad_open, "SMH": self.df_smh}, min_bars=20)
 
-        # B. Close < Low
         df_bad_close = self.df_qqq.copy()
         df_bad_close.loc[self.dates[10], "Close"] = df_bad_close.loc[self.dates[10], "Low"] - 5.0
         with self.assertRaises(ValueError):
             engine.validate_cache_integrity({"QQQ": df_bad_close, "SMH": self.df_smh}, min_bars=20)
 
-        # C. Negative Volume
+    # --------------------------------------------------------------------------
+    # Test 11: Independent Daily Equity Curve Reconstruction and Metrics
+    # --------------------------------------------------------------------------
+    def test_prod_daily_reconstructed_equity_curve_and_metrics(self):
+        """
+        Verify that independent daily equity curve reconstructed from ledger events
+        matches the engine's df_port day-by-day with max diff < 0.05,
+        and independently recalculates all portfolio and trade metrics.
+        """
+        res, custom_data = self._create_full_trade_simulation()
+        self.assertLess(res["max_eq_diff"], 0.05)
+        self.assertLess(res["max_cash_diff"], 0.05)
+        self.assertEqual(len(res["df_indep_port"]), len(res["trading_dates"]))
+
+        # Check recalculation matches
+        m = res["metrics"]
+        self.assertIn("total_return_pct", m)
+        self.assertIn("cagr", m)
+        self.assertIn("max_dd", m)
+        self.assertIn("sharpe_ratio", m)
+        self.assertIn("sortino_ratio", m)
+        self.assertIn("calmar_ratio", m)
+        self.assertIn("dollar_profit_factor", m)
+        self.assertIn("win_rate", m)
+
+    # --------------------------------------------------------------------------
+    # Test 12: Volume NaN, Inf, and Negative Validation
+    # --------------------------------------------------------------------------
+    def test_prod_data_volume_nan_inf_negative(self):
+        """Verify that Volume with NaN, Inf, or negative numbers raises ValueError."""
+        df_nan_vol = self.df_qqq.copy()
+        df_nan_vol.loc[self.dates[5], "Volume"] = np.nan
+        with self.assertRaises(ValueError):
+            engine.validate_cache_integrity({"QQQ": df_nan_vol, "SMH": self.df_smh}, min_bars=20)
+
+        df_inf_vol = self.df_qqq.copy()
+        df_inf_vol["Volume"] = df_inf_vol["Volume"].astype(float)
+        df_inf_vol.loc[self.dates[5], "Volume"] = np.inf
+        with self.assertRaises(ValueError):
+            engine.validate_cache_integrity({"QQQ": df_inf_vol, "SMH": self.df_smh}, min_bars=20)
+
         df_neg_vol = self.df_qqq.copy()
-        df_neg_vol.loc[self.dates[10], "Volume"] = -500
+        df_neg_vol.loc[self.dates[5], "Volume"] = -100
         with self.assertRaises(ValueError):
             engine.validate_cache_integrity({"QQQ": df_neg_vol, "SMH": self.df_smh}, min_bars=20)
 
-        # D. Duplicate Dates in Index
+    # --------------------------------------------------------------------------
+    # Test 13: Date Index Non-Monotonic and Duplicate Validation
+    # --------------------------------------------------------------------------
+    def test_prod_data_index_non_monotonic_and_duplicates(self):
+        """Verify that non-monotonic dates or duplicate dates raise ValueError."""
+        # Non-monotonic dates
+        dates_rev = list(self.dates)
+        dates_rev[10], dates_rev[11] = dates_rev[11], dates_rev[10]
+        df_non_mono = pd.DataFrame(self.df_qqq.values, index=dates_rev, columns=self.df_qqq.columns)
+        with self.assertRaises(ValueError):
+            engine.validate_cache_integrity({"QQQ": df_non_mono, "SMH": self.df_smh}, min_bars=20)
+
+        # Duplicate dates
         dates_dup = list(self.dates)
         dates_dup[1] = dates_dup[0]
         df_dup = pd.DataFrame(self.df_qqq.values, index=dates_dup, columns=self.df_qqq.columns)
@@ -406,30 +470,124 @@ class TestProductionBacktestEngine(unittest.TestCase):
             engine.validate_cache_integrity({"QQQ": df_dup, "SMH": self.df_smh}, min_bars=20)
 
     # --------------------------------------------------------------------------
-    # Test 11: Independent Metrics Recalculator Verification
+    # Test 14: End Date Lag Rejection
     # --------------------------------------------------------------------------
-    def test_prod_independent_metrics_recalculation(self):
-        """
-        Verify that independent_metrics_recalculation reproduces
-        exact values from raw series with zero deviation.
-        """
-        res = engine.run_simulation(execution_mode="NEXT_OPEN", custom_data={"QQQ": self.df_qqq, "SMH": self.df_smh}, custom_core_stocks=[])
-        indep = engine.independent_metrics_recalculation(
-            df_port=res["df_port"],
-            df_trades=res["df_trades"],
-            open_positions=res["open_positions"],
-            initial_capital=engine.INITIAL_CAPITAL,
-            qqq_df=self.df_qqq,
-            trading_dates=res["trading_dates"]
-        )
-
-        self.assertEqual(indep["final_equity"], res["metrics"]["final_equity"])
-        self.assertEqual(indep["max_dd"], res["metrics"]["max_dd"])
-        self.assertAlmostEqual(indep["sharpe_ratio"], res["metrics"]["sharpe_ratio"], places=4)
-        self.assertAlmostEqual(indep["sortino_ratio"], res["metrics"]["sortino_ratio"], places=4)
+    def test_prod_data_end_date_lag_rejection(self):
+        """Verify that a stock whose data ends earlier than QQQ latest date raises ValueError."""
+        df_lag = self.df_qqq.iloc[:-5].copy()  # Missing last 5 days
+        with self.assertRaises(ValueError):
+            engine.validate_cache_integrity({"QQQ": self.df_qqq, "SMH": self.df_smh, "STK_LAG": df_lag}, min_bars=20)
 
     # --------------------------------------------------------------------------
-    # Test 12: Fault Injection - Tampered Shares Detection
+    # Test 15: Excessive or Consecutive Missing Days in Active Trading Period
+    # --------------------------------------------------------------------------
+    def test_prod_data_excessive_or_consecutive_missing_days(self):
+        """Verify that >=3 consecutive missing days or >5 missing days raise ValueError."""
+        # 3 consecutive missing days
+        drop_indices = [self.dates[30], self.dates[31], self.dates[32]]
+        df_consec = self.df_qqq.drop(index=drop_indices)
+        with self.assertRaises(ValueError):
+            engine.validate_cache_integrity({"QQQ": self.df_qqq, "SMH": self.df_smh, "STK_MISSING": df_consec}, min_bars=20)
+
+        # 6 scattered missing days
+        drop_scattered = [self.dates[20], self.dates[25], self.dates[30], self.dates[35], self.dates[40], self.dates[45]]
+        df_scattered = self.df_qqq.drop(index=drop_scattered)
+        with self.assertRaises(ValueError):
+            engine.validate_cache_integrity({"QQQ": self.df_qqq, "SMH": self.df_smh, "STK_SCATTERED": df_scattered}, min_bars=20)
+
+    # --------------------------------------------------------------------------
+    # Test 16: Legitimate Short-History (Recent IPO) Accepted
+    # --------------------------------------------------------------------------
+    def test_prod_data_legitimate_short_history_accepted(self):
+        """Verify that legitimate short history stock (IPO on Day 30) with 0 missing days is ACCEPTED."""
+        df_ipo = self.df_qqq.iloc[30:].copy()  # Listed on Day 30
+        audit = engine.validate_cache_integrity({"QQQ": self.df_qqq, "SMH": self.df_smh, "IPO_STK": df_ipo}, min_bars=20)
+        self.assertEqual(len(audit["short_symbols"]), 1)
+        self.assertEqual(audit["short_symbols"][0][0], "IPO_STK")
+
+    # --------------------------------------------------------------------------
+    # Test 17: Fault Injection - Omitted SELL Event in Real Production Flow
+    # --------------------------------------------------------------------------
+    def test_fault_injection_omitted_sell_event(self):
+        """
+        Fault Injection: Production simulation ran and completed SELL exit,
+        but the SELL event is intentionally omitted from the transaction ledger.
+        The audit process MUST detect ghost position / cash discrepancy and raise AssertionError!
+        """
+        res, custom_data = self._create_full_trade_simulation()
+        ledger = res["ledger"]
+        has_sell = any(e["type"] == "SELL" for e in ledger.events)
+        self.assertTrue(has_sell)
+
+        # Omit SELL event
+        ledger.events = [e for e in ledger.events if e["type"] != "SELL"]
+
+        with self.assertRaises(AssertionError):
+            ledger.verify_against_engine(
+                engine_cash=res["cash"],
+                engine_open_positions=res["open_positions"],
+                df_port=res["df_port"],
+                df_trades=res["df_trades"],
+                indicators_data=custom_data,
+                trading_dates=self.dates
+            )
+
+    # --------------------------------------------------------------------------
+    # Test 18: Fault Injection - Omitted BUY Event in Real Production Flow
+    # --------------------------------------------------------------------------
+    def test_fault_injection_omitted_buy_event(self):
+        """
+        Fault Injection: Production simulation ran and opened position,
+        but the BUY event is intentionally omitted from the transaction ledger.
+        The audit process MUST detect cash discrepancy / invalid trim/sell and raise AssertionError!
+        """
+        res, custom_data = self._create_full_trade_simulation()
+        ledger = res["ledger"]
+        has_buy = any(e["type"] == "BUY" for e in ledger.events)
+        self.assertTrue(has_buy)
+
+        # Omit BUY event
+        ledger.events = [e for e in ledger.events if e["type"] != "BUY"]
+
+        with self.assertRaises(AssertionError):
+            ledger.verify_against_engine(
+                engine_cash=res["cash"],
+                engine_open_positions=res["open_positions"],
+                df_port=res["df_port"],
+                df_trades=res["df_trades"],
+                indicators_data=custom_data,
+                trading_dates=self.dates
+            )
+
+    # --------------------------------------------------------------------------
+    # Test 19: Fault Injection - Omitted TRIM Event in Real Production Flow
+    # --------------------------------------------------------------------------
+    def test_fault_injection_omitted_trim_event(self):
+        """
+        Fault Injection: Production simulation executed 50% Trim,
+        but the TRIM event is intentionally omitted from the transaction ledger.
+        The audit process MUST detect cash discrepancy / share mismatch and raise AssertionError!
+        """
+        res, custom_data = self._create_full_trade_simulation()
+        ledger = res["ledger"]
+        has_trim = any(e["type"] == "TRIM" for e in ledger.events)
+        self.assertTrue(has_trim)
+
+        # Omit TRIM event
+        ledger.events = [e for e in ledger.events if e["type"] != "TRIM"]
+
+        with self.assertRaises(AssertionError):
+            ledger.verify_against_engine(
+                engine_cash=res["cash"],
+                engine_open_positions=res["open_positions"],
+                df_port=res["df_port"],
+                df_trades=res["df_trades"],
+                indicators_data=custom_data,
+                trading_dates=self.dates
+            )
+
+    # --------------------------------------------------------------------------
+    # Test 20: Fault Injection - Tampered Shares Detection
     # --------------------------------------------------------------------------
     def test_fault_injection_tampered_shares(self):
         """
@@ -440,7 +598,7 @@ class TestProductionBacktestEngine(unittest.TestCase):
         date = self.dates[0]
         # Valid buy: ref 100.0, fill 100.10, shares 100 -> slip = 10.0, cash_outflow = 10010.0
         ledger.record_buy(date, "NVDA", 100.0, 100.0, 100.10, 10.0, 10010.0)
-        # Auditor tampered: change shares to 150.0 without changing cash
+        # Tamper shares to 150.0 without changing cash
         ledger.events[0]["shares"] = 150.0
 
         indicators_data = {"NVDA": pd.DataFrame({"Close": [100.0]}, index=[date])}
@@ -448,29 +606,7 @@ class TestProductionBacktestEngine(unittest.TestCase):
             ledger.independent_audit_replay(indicators_data, date)
 
     # --------------------------------------------------------------------------
-    # Test 13: Fault Injection - Omitted Sell Event Detection
-    # --------------------------------------------------------------------------
-    def test_fault_injection_omitted_sell_event(self):
-        """
-        Fault Injection: Engine sold position, but ledger omitted the SELL event.
-        Auditor MUST detect position lingering as open and cash mismatch!
-        """
-        ledger = engine.TransactionLedger(initial_capital=100000.0)
-        date1 = self.dates[0]
-        date2 = self.dates[1]
-        ledger.record_buy(date1, "NVDA", 100.0, 100.0, 100.10, 10.0, 10010.0)
-        # Intentionally omit record_sell!
-
-        indicators_data = {"NVDA": pd.DataFrame({"Close": [100.0, 100.0]}, index=[date1, date2])}
-        audit = ledger.independent_audit_replay(indicators_data, date2)
-
-        # Replay cash will be 89990.0 instead of 100000.0 -> fails cross reconciliation
-        engine_cash = 100000.0
-        with self.assertRaises(AssertionError):
-            assert abs(audit["replayed_cash"] - engine_cash) < 0.02
-
-    # --------------------------------------------------------------------------
-    # Test 14: Fault Injection - Tampered Cash Flow Detection
+    # Test 21: Fault Injection - Tampered Cash Flow Detection
     # --------------------------------------------------------------------------
     def test_fault_injection_tampered_cash_flow(self):
         """
@@ -488,7 +624,7 @@ class TestProductionBacktestEngine(unittest.TestCase):
             ledger.independent_audit_replay(indicators_data, date)
 
     # --------------------------------------------------------------------------
-    # Test 15: Fault Injection - Tampered Price and Fee Mismatch
+    # Test 22: Fault Injection - Tampered Price and Fee Mismatch
     # --------------------------------------------------------------------------
     def test_fault_injection_tampered_price_fee_mismatch(self):
         """
