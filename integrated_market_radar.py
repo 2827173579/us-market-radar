@@ -1050,14 +1050,10 @@ def evaluate_intraday_entry(active_price, fib_low, fib_high, ma50, is_pit, is_st
         optimal_limit = round(active_price * 0.99, 2)
         limit_note = "现价下方1%分批限价单 (-1.0%)"
 
-    # 1.5 科学防守止损线测算 (严禁高于建议买入价 optimal_limit 发生倒挂)
-    pit_stop = fib_low * 0.97 if fib_low > 0 else 0.0
-    atr_stop = (optimal_limit - 1.2 * atr) if atr > 0 else (optimal_limit * 0.96)
-    limit_stop = max(optimal_limit * 0.92, min(atr_stop, optimal_limit * 0.965))
-    if pit_stop > 0 and (optimal_limit * 0.90 <= pit_stop <= optimal_limit * 0.985):
-        entry_stop_loss = round(pit_stop, 2)
-    else:
-        entry_stop_loss = round(limit_stop, 2)
+    # 1.5 科学防守止损线测算 (对齐 V2.4 初始结构止损: Low-0.5*ATR 与 Close-1.8*ATR 中较宽保护，硬上限放宽至 -6.8%)
+    ref_low = rth_low if rth_low > 0 else (optimal_limit * 0.985)
+    struct_stop = min(ref_low - 0.5 * atr, optimal_limit - 1.8 * atr) if atr > 0 else (optimal_limit * 0.95)
+    entry_stop_loss = round(max(struct_stop, optimal_limit * 0.932), 2)
     stop_loss_pct = round((entry_stop_loss - optimal_limit) / optimal_limit * 100, 1) if optimal_limit > 0 else -4.0
 
     # 2. 日内 5 分钟级买点触发判定 (融合 5m RVOL 量能与 5m RSI 动能共振确认)
@@ -1356,7 +1352,8 @@ def dispatch_wechat_radar_alerts(macro_data, stocks_data, weather_info, now_str)
                 if max_pnl_pct >= 4.0:
                     be_active = True
             else:
-                if max_pnl_pct >= 4.0 or (atr > 0 and peak_price >= cost + 0.8 * atr):
+                # 对齐 V2.4 动态保本铁盾激活门槛: 浮盈达到 +4.2% 或 2.0*ATR
+                if max_pnl_pct >= 4.2 or (atr > 0 and peak_price >= cost + 2.0 * atr):
                     be_active = True
             
             stop_val = max(base_stop, be_stop) if be_active else base_stop
@@ -1385,8 +1382,12 @@ def dispatch_wechat_radar_alerts(macro_data, stocks_data, weather_info, now_str)
                 elif stop_val > 0 and buffer_pct <= 3.0:
                     p_state = f"{ticker}_NEAR_STOP"
             else:
-                # 水下抄底反抽强阻检查 (Trim_1)
-                trim1_auto = min(fib_low, ma50) * 0.99 if (cost > 0 and ma50 > 0 and cost < ma50) else (cost + 1.5 * atr if atr > 0 else target)
+                # 水下抄底反抽强阻检查 (Trim_1 目标价防倒挂，对齐 V2.4)
+                if cost > 0 and ma50 > 0 and cost < ma50:
+                    res_level = fib_low * 0.99 if cost < fib_low * 0.97 else ma50 * 0.995
+                    trim1_auto = max(res_level, cost * 1.045)
+                else:
+                    trim1_auto = cost + 1.5 * atr if atr > 0 else target
                 dist_to_trim1 = ((trim1_auto - active_price) / trim1_auto) * 100 if trim1_auto > 0 else 99.0
                 
                 if be_active and active_price <= be_stop:
@@ -1395,7 +1396,7 @@ def dispatch_wechat_radar_alerts(macro_data, stocks_data, weather_info, now_str)
                     p_state = f"{ticker}_CRITICAL_STOP"
                 elif stop_val > 0 and buffer_pct <= 3.0:
                     p_state = f"{ticker}_NEAR_STOP"
-                elif cost < ma50 and (dist_to_trim1 <= 1.5 or pnl_pct >= 6.0) and active_price > cost:
+                elif cost < ma50 and (active_price >= trim1_auto or dist_to_trim1 <= 1.0 or max_pnl_pct >= 6.0) and active_price > cost * 1.02:
                     p_state = f"{ticker}_TRIM1_RESISTANCE"
                 elif target > 0 and active_price >= target:
                     p_state = f"{ticker}_GOAL_ACHIEVED"
@@ -1661,7 +1662,8 @@ def generate_and_sync_notifications(macro_data, stocks_data, weather_info, now_s
                 if max_pnl_pct >= 4.0:
                     be_active = True
             else:
-                if max_pnl_pct >= 4.0 or (s.get("atr", 0) > 0 and peak_price >= cost + 0.8 * s["atr"]):
+                # 对齐 V2.4 动态保本铁盾激活门槛: 浮盈达到 +4.2% 或 2.0*ATR
+                if max_pnl_pct >= 4.2 or (s.get("atr", 0) > 0 and peak_price >= cost + 2.0 * s["atr"]):
                     be_active = True
             
             effective_stop = max(stop_val, be_stop) if be_active else stop_val
@@ -1706,7 +1708,11 @@ def generate_and_sync_notifications(macro_data, stocks_data, weather_info, now_s
             else:
                 fib_low = s.get("fib_low", cost)
                 ma50 = s.get("ma50", 0.0)
-                trim1_auto = min(fib_low, ma50) * 0.99 if (cost > 0 and ma50 > 0 and cost < ma50) else (cost + 1.5 * s.get("atr", 0.0) if s.get("atr", 0.0) > 0 else target)
+                if cost > 0 and ma50 > 0 and cost < ma50:
+                    res_level = fib_low * 0.99 if cost < fib_low * 0.97 else ma50 * 0.995
+                    trim1_auto = max(res_level, cost * 1.045)
+                else:
+                    trim1_auto = cost + 1.5 * s.get("atr", 0.0) if s.get("atr", 0.0) > 0 else target
                 dist_to_trim1 = ((trim1_auto - active_price) / trim1_auto) * 100 if trim1_auto > 0 else 99.0
                 
                 if be_active and active_price <= be_stop:
@@ -1724,7 +1730,7 @@ def generate_and_sync_notifications(macro_data, stocks_data, weather_info, now_s
                     p_substate = "NEAR_STOP"
                     p_title = f"⚠️ {ticker} 紧迫风控预警：逼近防守线！"
                     p_desc = f"现价 ${active_price:.2f} 距防守线 ${effective_stop:.2f} 仅剩 ${active_price-effective_stop:.2f} ({buffer_pct:.1f}%) 缓冲！"
-                elif cost < ma50 and (dist_to_trim1 <= 1.5 or pnl_pct >= 6.0) and active_price > cost:
+                elif cost < ma50 and (active_price >= trim1_auto or dist_to_trim1 <= 1.0 or max_pnl_pct >= 6.0) and active_price > cost * 1.02:
                     p_level = "success"
                     p_substate = "TRIM1"
                     p_title = f"🟣 {ticker} 触及水下强阻 (${trim1_auto:.2f})！"
@@ -1884,15 +1890,17 @@ def fetch_all_market_data(tickers, period="1y", retries=2):
     return data_dict
 
 def compute_indicators(df):
-    """向量化纯 Pandas 计算 MA200、MA50、EMA20、14日 ATR、14日 RSI、5日最低RSI、20日均量及 60日滚动斐波那契黄金坑"""
+    """向量化纯 Pandas 计算 MA200/SMA200、MA50、EMA20/10/5、14日 ATR/ATR%、14日 RSI/近3日最低RSI、20日均量及 60日滚动斐波那契黄金坑与右侧反转指标 (V2.4 对齐)"""
     df = df.copy()
     close = df["Close"]
     high = df["High"]
     low = df["Low"]
     volume = df["Volume"]
+    open_p = df["Open"] if "Open" in df.columns else close
 
-    # 200 日牛熊分界线 & 50 日移动均线 & 偏离度
-    df["MA200"] = close.rolling(200, min_periods=60).mean()
+    # 200 日牛熊分界线 & 50 日移动均线 & 偏离度 (SMA200 对齐 V2.4)
+    df["MA200"] = close.rolling(200, min_periods=20).mean().bfill().fillna(close.rolling(50, min_periods=20).mean())
+    df["SMA200"] = df["MA200"]
     df["MA50"] = close.rolling(50, min_periods=20).mean()
     df["Bias_MA50"] = ((close - df["MA50"]) / df["MA50"]) * 100
 
@@ -1905,12 +1913,13 @@ def compute_indicators(df):
     df["EMA10"] = close.ewm(span=10, adjust=False).mean()
     df["EMA5"] = close.ewm(span=5, adjust=False).mean()
 
-    # 14 日真实波动幅度 ATR
+    # 14 日真实波动幅度 ATR 与 ATR% 波动率
     prev_close = close.shift(1)
     tr = pd.concat([high - low, (high - prev_close).abs(), (low - prev_close).abs()], axis=1).max(axis=1)
     df["ATR_14"] = tr.ewm(com=13, min_periods=14).mean()
+    df["ATR_Pct"] = (df["ATR_14"] / close.replace(0, np.nan)) * 100.0
 
-    # 14 日相对强弱指标 RSI 及近 5 日极值
+    # 14 日相对强弱指标 RSI 及近 3 日与近 5 日极值
     delta = close.diff()
     gain = delta.clip(lower=0)
     loss = -delta.clip(upper=0)
@@ -1918,6 +1927,7 @@ def compute_indicators(df):
     avg_loss = loss.ewm(com=13, min_periods=14).mean()
     rs = avg_gain / avg_loss.replace(0, np.nan)
     df["RSI_14"] = 100 - (100 / (1 + rs))
+    df["Min_RSI_3d"] = df["RSI_14"].rolling(3, min_periods=1).min()
     df["Min_RSI_5d"] = df["RSI_14"].rolling(5, min_periods=1).min()
     df["Max_RSI_5d"] = df["RSI_14"].rolling(5, min_periods=1).max()
     df["Max_Bias_5d"] = df["Bias_MA50"].rolling(5, min_periods=1).max()
@@ -1926,7 +1936,7 @@ def compute_indicators(df):
     df["VOL_MA20"] = volume.rolling(20, min_periods=5).mean()
     df["Vol_Ratio"] = volume / df["VOL_MA20"].replace(0, np.nan)
 
-    # 60 日滚动最高最低与 0.5 / 0.618 斐波那契黄金坑及波段分位 Pos_60
+    # 60 日滚动最高最低与 0.5 / 0.618 斐波那契黄金坑及波段分位 Pos_60 / Fib_Pos
     high_60 = high.rolling(60, min_periods=20).max()
     low_60 = low.rolling(60, min_periods=20).min()
     diff_60 = high_60 - low_60
@@ -1936,8 +1946,25 @@ def compute_indicators(df):
     df["Fib_618"] = fib_618
     df["Fib_Low"] = np.minimum(fib_50, fib_618)
     df["Fib_High"] = np.maximum(fib_50, fib_618)
+    df["Fib_Pos"] = (close - df["Fib_Low"]) / (df["Fib_High"] - df["Fib_Low"] + 1e-6)
     df["Pos_60"] = (close - low_60) / diff_60.replace(0, np.nan)
     df["Ret_20d"] = ((close / close.shift(20)) - 1.0) * 100.0
+
+    # 相对强弱 RET_60
+    c_shift_60 = close.shift(60)
+    df["RET_60"] = ((close - c_shift_60) / c_shift_60.replace(0, np.nan)) * 100.0
+    df["RET_60"] = df["RET_60"].fillna(0.0)
+
+    # 暴雷冷却 (过去 5 天单日跌幅 <= -6.0% 或 跳空缺口 <= -4.5%)
+    daily_ret = ((close - prev_close) / prev_close.replace(0, np.nan)) * 100.0
+    gap_down = ((open_p - prev_close) / prev_close.replace(0, np.nan)) * 100.0
+    is_crash = (daily_ret <= -6.0) | (gap_down <= -4.5)
+    df["Crash_5d"] = is_crash.rolling(5, min_periods=1).max().fillna(0).astype(bool)
+
+    # 右侧反转 K 线确认 (阳线实体 >= +0.5% 且 突破前一日高点 或 站上 EMA5)
+    prev_high = high.shift(1)
+    is_bullish_body = (close > open_p) & (((close - open_p) / open_p.replace(0, np.nan)) >= 0.005)
+    df["Is_Right_Turn"] = is_bullish_body & ((close > prev_high) | (close > df["EMA5"]))
 
     return df
 
@@ -2088,15 +2115,17 @@ def evaluate_stock_signal(
     high_bias_recently=False, prev_close=0.0, prev_ema20=0.0,
     prev_rsi=0.0, min_rsi_5d=50.0, pos_60=0.5, open_price=0.0,
     ema10=0.0, prev_ema10=0.0, ema5=0.0, prev_ema5=0.0,
-    max_bias_5d=0.0, max_rsi_5d=50.0, max_pnl_pct=0.0
+    max_bias_5d=0.0, max_rsi_5d=50.0, max_pnl_pct=0.0,
+    sma200=0.0, min_rsi_3d=50.0, atr_pct=3.0, fib_pos=0.5,
+    crash_5d=False, is_right_turn=False, rs_60=0.0
 ):
     """
-    扫描标的作战信号 (V2 量化升级版)：
+    扫描标的作战信号 (V2.4 终极对齐版)：
     1. INTC 专属风控与通用标的分流
     2. 反向衰减 ETF (SQQQ, SOXS, VIXY) 专属对冲逻辑 (不参与黄金坑抄底)
     3. 通用破位：量价与K线方向确认 (放量杀跌真破位 vs 缩量回踩/底背离反包)
     4. 通用止盈与主升体系：冲顶滞涨减仓 + EMA20 移动止盈 + 🔵 多头加速主升浪
-    5. 黄金坑就位 V2：锁定「大盘回调错杀黄金坑」与「极度超卖右侧拐头」，拦截逆市独跌与熊市飞刀
+    5. 黄金坑右侧反转 (V2.4 严选准入铁律)：长线牛市 + 0.382~0.65 坑深 + ATR<=5.2% + 无暴雷 + 3日超卖 + 右侧反转K线
     """
     if last > fib_high:
         dist_to_pit = ((last - fib_high) / last) * 100
@@ -2109,7 +2138,11 @@ def evaluate_stock_signal(
         pit_status = f"破坑 {dist_to_pit:.2f}%"
 
     max_alloc = meta.get("max_alloc", 660.0)
-    fractional_shares = max_alloc / last if last > 0 else 0.0
+    # 对齐 V2.4 ATR 风险平价：单笔最大结构止损保护 -6.8%，高波股自动弹性缩减仓位
+    struct_stop = max(min(last - 0.5 * atr, last - 1.8 * atr), last * 0.932) if atr > 0 else last * 0.95
+    stop_dist_pct = max((last - struct_stop) / last, 0.035) if last > 0 else 0.05
+    risk_parity_alloc = min(max_alloc, (max_alloc * 0.0425) / stop_dist_pct)
+    fractional_shares = risk_parity_alloc / last if last > 0 else 0.0
 
     signals = []
     tp_reasons = []
@@ -2198,13 +2231,14 @@ def evaluate_stock_signal(
         is_tp = False
         is_stall_candle = (open_price > 0 and last < open_price) or (prev_close > 0 and last <= prev_close)
 
-        # 规则 0: 水下抄底单 (cost < ma50) 反抽阻力减仓 (Trim_1)
+        # 规则 0: 水下抄底单 (cost < ma50) 反抽阻力减仓 (Trim_1 目标价防倒挂，对齐 V2.4)
         if cost > 0 and shares > 0 and cost < ma50:
-            trim1_target = min(fib_low, ma50) * 0.99
-            dist_to_trim1 = ((trim1_target - last) / trim1_target) * 100
-            if (dist_to_trim1 <= 1.5 or pnl_pct >= 6.0) and is_stall_candle and last > cost:
+            res_level = fib_low * 0.99 if cost < fib_low * 0.97 else ma50 * 0.995
+            trim_target = max(res_level, cost * 1.045)
+            pnl_high = max_pnl_pct if max_pnl_pct > 0 else pnl_pct
+            if (last >= trim_target or pnl_high >= 6.0 or pnl_pct >= 6.0) and is_stall_candle and last > cost * 1.02:
                 is_tp = True
-                tp_reasons.append(f"水下反抽强阻(${trim1_target:.2f},浮盈{pnl_pct:+.1f}%)")
+                tp_reasons.append(f"水下反抽强阻(${trim_target:.2f},浮盈{pnl_pct:+.1f}%)")
                 signals.append("🟣 触及强阻减仓(建议兑现50%锁利)")
 
         # 规则 1: 极度冲顶高潮 (RSI>=80 极端超买，或高位超买伴随阴线/滞涨确认)
@@ -2265,41 +2299,42 @@ def evaluate_stock_signal(
         if is_tp and not any(sig in signals for sig in ["🟣 跌破EMA20(移动止盈)", "🟣 高位跌破EMA10(急速锁利)", "🟣 触及强阻减仓(建议兑现50%锁利)"]):
             signals.append("🟣 冲顶减仓" if is_climax_tp else "🟣 止盈锁定")
 
-        # 3. 黄金坑就位 V2 (严格要求未破位 not is_price_break；剔除「大盘涨个股独跌」弱势陷阱与「熊市主跌段」，锁定大盘错杀黄金坑与极度超卖拐头)
+        # 3. 黄金坑就位与右侧反转 V2.4 (对齐 V2.4 严选准入铁律)
         if not is_price_break and not is_tp:
-            in_fib_pit = (fib_low * 0.985 <= last <= fib_high * 1.015) and (rsi < 52.0)
-            in_wide_pit = (fib_low * 0.97 <= last <= fib_high * 1.02) or (0.36 <= pos_60 <= 0.58)
+            # V2.4 准入铁律判定
+            cond_bull_trend = (sma200 <= 0 or last > sma200) and (sma200 <= 0 or ma50 >= sma200 * 0.97)
+            cond_pit_depth = (-0.25 <= fib_pos <= 2.00)
+            cond_pit_atr = (atr_pct <= 5.2)
+            cond_no_crash = (not crash_5d)
+            cond_pit_oversold = (min_rsi_3d <= 43.0) and (rsi <= 48.0)
+            cond_right_turn = is_right_turn
+
+            cond_golden_pit_v2 = (
+                cond_bull_trend and cond_pit_depth and cond_pit_atr
+                and cond_no_crash and cond_pit_oversold and cond_right_turn
+            )
+
+            # 兼容宏观大盘熊市主跌段过滤
+            is_bear_falling_knife = False
             if macro_data:
                 qqqm_info = macro_data.get("QQQM", {})
-                qqqm_bias = qqqm_info.get("bias", 0.0)
                 qqqm_last = qqqm_info.get("last", 1.0)
                 qqqm_ma200 = qqqm_info.get("ma200", 0.0)
                 qqqm_rsi = qqqm_info.get("rsi", 50.0)
-
-                is_rsi_turn_up = (rsi > prev_rsi) if prev_rsi > 0 else (rsi < 42.0)
-                is_price_up = (last > prev_close) if prev_close > 0 else True
-
-                # 熊市空头主跌段过滤：纳指跌破 MA200 牛熊年线 且 尚未进入 RSI<=35 极度恐慌冰点
                 is_bear_falling_knife = (qqqm_ma200 > 0) and (qqqm_last < qqqm_ma200) and (qqqm_rsi > 35.0)
 
-                # 核心高胜率黄金坑法则 (NB3 顺大势逆小势)：
-                # 1) 严格未破位 (not is_price_break) 且处于 0.382~0.618 斐波那契黄金坑带 (in_wide_pit)
-                # 2) 大盘同步回调洗盘 (qqqm_bias < -1.5%) 把优质股错杀带入坑内 (RSI < 48)，彻底拒绝「大盘涨、个股独跌」的弱势股陷阱！
-                is_macro_washout_pit = in_wide_pit and (qqqm_bias < -1.5) and (rsi < 48.0)
-
-                if is_macro_washout_pit:
-                    if is_bear_falling_knife:
-                        signals.append("🟡 观望蓄势(熊市空头严禁接刀)")
-                    else:
-                        signals.append("🟢 黄金坑就位")
-                elif in_fib_pit:
-                    if is_bear_falling_knife:
-                        signals.append("🟡 观望蓄势(熊市空头严禁接刀)")
-                    else:
-                        signals.append("🟡 坑内观察(防逆市阴跌)")
-            else:
-                if in_fib_pit and (rsi < 45.0):
-                    signals.append("🟢 黄金坑就位")
+            if cond_golden_pit_v2:
+                if is_bear_falling_knife:
+                    signals.append("🟡 观望蓄势(熊市空头严禁接刀)")
+                else:
+                    signals.append("🟢 黄金坑右侧反转")
+            elif cond_bull_trend and cond_pit_depth and cond_pit_atr and cond_no_crash:
+                if is_bear_falling_knife:
+                    signals.append("🟡 观望蓄势(熊市空头严禁接刀)")
+                elif rsi <= 50.0:
+                    signals.append("🟡 黄金坑蓄势(等待右侧确认)")
+                elif fib_low * 0.985 <= last <= fib_high * 1.015:
+                    signals.append("🟡 坑内观察(防逆市阴跌)")
 
     # 4. 量能异动判定
     if vol_ratio >= 1.4 and "🟡 量能异动" not in signals and "放量" not in str(tp_reasons):
@@ -3329,13 +3364,23 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
             max_bias_5d = float(df["Max_Bias_5d"].iloc[-1]) if "Max_Bias_5d" in df and not np.isnan(df["Max_Bias_5d"].iloc[-1]) else effective_bias
             max_rsi_5d = float(df["Max_RSI_5d"].iloc[-1]) if "Max_RSI_5d" in df and not np.isnan(df["Max_RSI_5d"].iloc[-1]) else rsi
 
+            sma200 = float(df["SMA200"].iloc[-1]) if "SMA200" in df else (float(df["MA200"].iloc[-1]) if "MA200" in df else ma50)
+            min_rsi_3d = float(df["Min_RSI_3d"].iloc[-1]) if "Min_RSI_3d" in df and not np.isnan(df["Min_RSI_3d"].iloc[-1]) else min_rsi_5d
+            atr_pct = float(df["ATR_Pct"].iloc[-1]) if "ATR_Pct" in df and not np.isnan(df["ATR_Pct"].iloc[-1]) else (((atr / effective_price) * 100.0) if effective_price > 0 else 3.0)
+            fib_pos = float(df["Fib_Pos"].iloc[-1]) if "Fib_Pos" in df and not np.isnan(df["Fib_Pos"].iloc[-1]) else 0.5
+            crash_5d = bool(df["Crash_5d"].iloc[-1]) if "Crash_5d" in df else False
+            is_right_turn = bool(df["Is_Right_Turn"].iloc[-1]) if "Is_Right_Turn" in df else False
+            rs_60 = float(df["RET_60"].iloc[-1]) if "RET_60" in df and not np.isnan(df["RET_60"].iloc[-1]) else 0.0
+
             eval_res = evaluate_stock_signal(
                 ticker, effective_price, ma50, effective_bias, rsi, vol_ratio, fib_low, fib_high, meta,
                 atr=atr, weather_info=None, macro_data=None, ema20=ema20,
                 high_bias_recently=high_bias_recently, prev_close=prev_close, prev_ema20=prev_ema20,
                 prev_rsi=prev_rsi, min_rsi_5d=min_rsi_5d, pos_60=pos_60, open_price=open_price,
                 ema10=ema10, prev_ema10=prev_ema10, ema5=ema5, prev_ema5=prev_ema5,
-                max_bias_5d=max_bias_5d, max_rsi_5d=max_rsi_5d, max_pnl_pct=meta.get("max_pnl_pct", 0.0)
+                max_bias_5d=max_bias_5d, max_rsi_5d=max_rsi_5d, max_pnl_pct=meta.get("max_pnl_pct", 0.0),
+                sma200=sma200, min_rsi_3d=min_rsi_3d, atr_pct=atr_pct, fib_pos=fib_pos,
+                crash_5d=crash_5d, is_right_turn=is_right_turn, rs_60=rs_60
             )
             intra_eval = evaluate_intraday_entry(
                 active_price, fib_low, fib_high, ma50,
@@ -3485,13 +3530,23 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
             max_bias_5d = float(df["Max_Bias_5d"].iloc[-1]) if "Max_Bias_5d" in df and not np.isnan(df["Max_Bias_5d"].iloc[-1]) else effective_bias
             max_rsi_5d = float(df["Max_RSI_5d"].iloc[-1]) if "Max_RSI_5d" in df and not np.isnan(df["Max_RSI_5d"].iloc[-1]) else rsi
 
+            sma200 = float(df["SMA200"].iloc[-1]) if "SMA200" in df else (float(df["MA200"].iloc[-1]) if "MA200" in df else ma50)
+            min_rsi_3d = float(df["Min_RSI_3d"].iloc[-1]) if "Min_RSI_3d" in df and not np.isnan(df["Min_RSI_3d"].iloc[-1]) else min_rsi_5d
+            atr_pct = float(df["ATR_Pct"].iloc[-1]) if "ATR_Pct" in df and not np.isnan(df["ATR_Pct"].iloc[-1]) else (((atr / effective_price) * 100.0) if effective_price > 0 else 3.0)
+            fib_pos = float(df["Fib_Pos"].iloc[-1]) if "Fib_Pos" in df and not np.isnan(df["Fib_Pos"].iloc[-1]) else 0.5
+            crash_5d = bool(df["Crash_5d"].iloc[-1]) if "Crash_5d" in df else False
+            is_right_turn = bool(df["Is_Right_Turn"].iloc[-1]) if "Is_Right_Turn" in df else False
+            rs_60 = float(df["RET_60"].iloc[-1]) if "RET_60" in df and not np.isnan(df["RET_60"].iloc[-1]) else 0.0
+
             eval_res = evaluate_stock_signal(
                 ticker, effective_price, ma50, effective_bias, rsi, vol_ratio, fib_low, fib_high, meta,
                 atr=atr, weather_info=weather_info, macro_data=macro_data, ema20=ema20,
                 high_bias_recently=high_bias_recently, prev_close=prev_close, prev_ema20=prev_ema20,
                 prev_rsi=prev_rsi, min_rsi_5d=min_rsi_5d, pos_60=pos_60, open_price=open_price,
                 ema10=ema10, prev_ema10=prev_ema10, ema5=ema5, prev_ema5=prev_ema5,
-                max_bias_5d=max_bias_5d, max_rsi_5d=max_rsi_5d, max_pnl_pct=meta.get("max_pnl_pct", 0.0)
+                max_bias_5d=max_bias_5d, max_rsi_5d=max_rsi_5d, max_pnl_pct=meta.get("max_pnl_pct", 0.0),
+                sma200=sma200, min_rsi_3d=min_rsi_3d, atr_pct=atr_pct, fib_pos=fib_pos,
+                crash_5d=crash_5d, is_right_turn=is_right_turn, rs_60=rs_60
             )
             intra_eval = evaluate_intraday_entry(
                 active_price, fib_low, fib_high, ma50,
