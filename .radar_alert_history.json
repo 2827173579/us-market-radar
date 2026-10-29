@@ -58,8 +58,8 @@
       "last_notified_at": 1793253933.9659684
     },
     "SNDK": {
-      "state": "STOP_LOSS",
-      "last_notified_at": 1793261081.052232
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "BE": {
       "state": "NORMAL",
@@ -175,7 +175,7 @@
     },
     "QQQM": {
       "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1793261143.9025486
+      "last_notified_at": 1793261206.8955452
     },
     "SOXX": {
       "state": "NORMAL",
