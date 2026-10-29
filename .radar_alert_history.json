@@ -3,35 +3,35 @@
   "targets": {
     "AAOI": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793268386.3415024
+      "last_notified_at": 1793282788.7345142
     },
     "CRWV": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793268386.3415024
+      "last_notified_at": 1793282788.7345142
     },
     "OKLO": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793268386.3415024
+      "last_notified_at": 1793282788.7345142
     },
     "CRDO": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793268386.3415024
+      "last_notified_at": 1793282788.7345142
     },
     "CCXI": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793268386.3415024
+      "last_notified_at": 1793282788.7345142
     },
     "NBIS": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793268386.3415024
+      "last_notified_at": 1793282788.7345142
     },
     "ASTS": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793268386.3415024
+      "last_notified_at": 1793282788.7345142
     },
     "COHR": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793268386.3415024
+      "last_notified_at": 1793282788.7345142
     },
     "FPS": {
       "state": "NORMAL",
@@ -39,7 +39,7 @@
     },
     "STX": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793268386.3415024
+      "last_notified_at": 1793282788.7345142
     },
     "RKLB": {
       "state": "NORMAL",
@@ -78,8 +78,8 @@
       "last_notified_at": 0.0
     },
     "SKHY": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1793282548.4578502
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "GOOGL": {
       "state": "STOP_LOSS",
@@ -98,8 +98,8 @@
       "last_notified_at": 0.0
     },
     "LITE": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1793281827.5286396
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "VST": {
       "state": "NORMAL",
@@ -174,12 +174,12 @@
       "last_notified_at": 0.0
     },
     "QQQM": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1793282311.5051565
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "SOXX": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1793282430.6441083
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "SOXL": {
       "state": "NORMAL",
@@ -194,8 +194,8 @@
       "last_notified_at": 0.0
     },
     "SOXS": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1793282788.7345142
     },
     "MCD": {
       "state": "NORMAL",
