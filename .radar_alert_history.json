@@ -54,8 +54,8 @@
       "last_notified_at": 0.0
     },
     "AMAT": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "STOP_LOSS",
+      "last_notified_at": 1793307146.625359
     },
     "SNDK": {
       "state": "STOP_LOSS",
@@ -126,8 +126,8 @@
       "last_notified_at": 0.0
     },
     "META": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1793307026.3417022
+      "state": "GOLDEN_PIT",
+      "last_notified_at": 1793307146.625359
     },
     "MRVL": {
       "state": "STOP_LOSS",
