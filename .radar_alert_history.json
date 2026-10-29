@@ -106,8 +106,8 @@
       "last_notified_at": 0.0
     },
     "TSM": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1793301034.599189
+      "state": "GOLDEN_PIT",
+      "last_notified_at": 1793301386.5120564
     },
     "AXP": {
       "state": "NORMAL",
@@ -126,8 +126,8 @@
       "last_notified_at": 0.0
     },
     "META": {
-      "state": "GOLDEN_PIT",
-      "last_notified_at": 1793301146.55589
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1793301386.5120564
     },
     "MRVL": {
       "state": "STOP_LOSS",
@@ -178,8 +178,8 @@
       "last_notified_at": 0.0
     },
     "SOXX": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1793301146.55589
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "SOXL": {
       "state": "NORMAL",
