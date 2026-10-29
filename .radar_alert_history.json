@@ -54,12 +54,12 @@
       "last_notified_at": 0.0
     },
     "AMAT": {
-      "state": "STOP_LOSS",
-      "last_notified_at": 1793304865.6613574
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "SNDK": {
-      "state": "STOP_LOSS",
-      "last_notified_at": 1793305346.9824893
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "BE": {
       "state": "STOP_LOSS",
@@ -78,8 +78,8 @@
       "last_notified_at": 1793304747.3964334
     },
     "SKHY": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1793305467.1218674
     },
     "GOOGL": {
       "state": "STOP_LOSS",
@@ -98,8 +98,8 @@
       "last_notified_at": 1793302346.138156
     },
     "LITE": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1793305467.1218674
     },
     "VST": {
       "state": "NORMAL",
@@ -150,8 +150,8 @@
       "last_notified_at": 0.0
     },
     "SPCX": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1793304626.906762
+      "state": "GOLDEN_PIT",
+      "last_notified_at": 1793305467.1218674
     },
     "AAPL": {
       "state": "NORMAL",
