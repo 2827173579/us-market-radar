@@ -200,18 +200,38 @@ def run_5y_backtest():
             pos["peak_price"] = max(pos["peak_price"], high, close)
             pos["max_pnl_pct"] = ((pos["peak_price"] - entry_p) / entry_p) * 100.0
 
-            # A. 动态保本铁盾激活检查
+            # A. 动态保本铁盾激活检查 (门槛提升至 +7.0% 或 1.2*ATR，给牛股充分呼吸空间)
             if not pos["is_be_active"]:
-                if pos["max_pnl_pct"] >= 4.0 or (atr > 0 and pos["peak_price"] >= entry_p + 0.8 * atr):
+                if pos["max_pnl_pct"] >= 7.0 or (atr > 0 and pos["peak_price"] >= entry_p + 1.2 * atr):
                     pos["is_be_active"] = True
-                    pos["be_stop"] = round(entry_p * 1.005, 4)
+                    pos["be_stop"] = round(entry_p * 1.01, 4)  # 锁定至少 +1.0% 净收益
 
             # -------------------- 出场规则检查 --------------------
             exit_reason = None
             exit_price = close * (1.0 - SLIPPAGE_RATE)
+            cur_pnl = ((close - entry_p) / entry_p) * 100.0
+            is_stall = (close < open_p) or (close <= prev_close)
+            atr_mult = (close - ma50) / atr if atr > 0 else 0.0
+            bias_ma50 = ((close - ma50) / ma50) * 100.0 if ma50 > 0 else 0.0
+
+            # 规则 0: 主动冲顶与目标清仓止盈 (Climax & Target TP)
+            # A. 极度冲顶高潮清仓 (RSI >= 80 或 RSI >= 75 冲高回落长上影)
+            if (rsi >= 80.0) or (((rsi >= 75.0) or (rsi >= 70.0 and bias_ma50 >= 15.0) or (atr_mult >= 2.8 and rsi >= 65.0)) and is_stall and cur_pnl >= 5.0):
+                exit_reason = "🎉 极度冲顶清仓止盈"
+                exit_price = close * (1.0 - SLIPPAGE_RATE)
+
+            # B. 放量赶顶滞涨清仓 (Bias >= 10% + 量比 >= 1.6 且收阴滞涨)
+            elif (bias_ma50 >= 10.0 and vol_ratio >= 1.6 and rsi >= 68.0 and is_stall and cur_pnl >= 5.0):
+                exit_reason = "🎉 放量赶顶清仓止盈"
+                exit_price = close * (1.0 - SLIPPAGE_RATE)
+
+            # C. 达成阶段目标清仓 (波段浮盈 >= +15.0% 且出现滞涨)
+            elif cur_pnl >= 15.0 and is_stall:
+                exit_reason = "🎉 达成阶段目标清仓止盈"
+                exit_price = close * (1.0 - SLIPPAGE_RATE)
 
             # 规则 1: 触及动态保本止损线
-            if pos["is_be_active"] and low <= pos["be_stop"]:
+            elif pos["is_be_active"] and low <= pos["be_stop"]:
                 exit_reason = "🛡️ 触及保本线出场"
                 exit_price = pos["be_stop"] * (1.0 - SLIPPAGE_RATE)
 
