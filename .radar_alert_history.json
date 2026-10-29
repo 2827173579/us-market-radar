@@ -83,7 +83,7 @@
     },
     "GOOGL": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793280988.578807
+      "last_notified_at": 1793295506.9021878
     },
     "CEG": {
       "state": "NORMAL",
@@ -178,8 +178,8 @@
       "last_notified_at": 1793295385.2562287
     },
     "SOXX": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1793294785.3584552
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "SOXL": {
       "state": "NORMAL",
