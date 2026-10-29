@@ -78,16 +78,16 @@
       "last_notified_at": 0.0
     },
     "SKHY": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1793300666.0263608
     },
     "GOOGL": {
       "state": "STOP_LOSS",
       "last_notified_at": 1793295506.9021878
     },
     "CEG": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "GOLDEN_PIT",
+      "last_notified_at": 1793300666.0263608
     },
     "ASML": {
       "state": "NORMAL",
@@ -98,8 +98,8 @@
       "last_notified_at": 0.0
     },
     "LITE": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1793300666.0263608
     },
     "VST": {
       "state": "NORMAL",
@@ -174,12 +174,12 @@
       "last_notified_at": 0.0
     },
     "QQQM": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1793300666.0263608
     },
     "SOXX": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1793300666.0263608
     },
     "SOXL": {
       "state": "NORMAL",
