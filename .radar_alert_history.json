@@ -2,60 +2,60 @@
   "weather": "阴天防守",
   "targets": {
     "AAOI": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "STOP_LOSS",
+      "last_notified_at": 1793239440.6579397
     },
     "CRWV": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "STOP_LOSS",
+      "last_notified_at": 1793239440.6579397
     },
     "OKLO": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "STOP_LOSS",
+      "last_notified_at": 1793239440.6579397
     },
     "CRDO": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "STOP_LOSS",
+      "last_notified_at": 1793239440.6579397
     },
     "CCXI": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "STOP_LOSS",
+      "last_notified_at": 1793239440.6579397
     },
     "NBIS": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "STOP_LOSS",
+      "last_notified_at": 1793239440.6579397
     },
     "ASTS": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "STOP_LOSS",
+      "last_notified_at": 1793239440.6579397
     },
     "COHR": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "STOP_LOSS",
+      "last_notified_at": 1793239440.6579397
     },
     "FPS": {
       "state": "NORMAL",
       "last_notified_at": 0.0
     },
     "STX": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "STOP_LOSS",
+      "last_notified_at": 1793239440.6579397
     },
     "RKLB": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "STOP_LOSS",
+      "last_notified_at": 1793239440.6579397
     },
     "WDC": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "STOP_LOSS",
+      "last_notified_at": 1793239440.6579397
     },
     "VRT": {
       "state": "NORMAL",
       "last_notified_at": 0.0
     },
     "AMAT": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "STOP_LOSS",
+      "last_notified_at": 1793239440.6579397
     },
     "SNDK": {
       "state": "NORMAL",
@@ -70,8 +70,8 @@
       "last_notified_at": 0.0
     },
     "INTC": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "STOP_LOSS",
+      "last_notified_at": 1793239440.6579397
     },
     "AVGO": {
       "state": "NORMAL",
@@ -166,12 +166,12 @@
       "last_notified_at": 0.0
     },
     "CRWD": {
-      "state": "TAKE_PROFIT",
-      "last_notified_at": 1793236023.6888273
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "PLTR": {
-      "state": "TAKE_PROFIT",
-      "last_notified_at": 1793237670.708368
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "QQQM": {
       "state": "WATCHLIST_ENTRY_READY",
