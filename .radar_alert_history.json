@@ -78,8 +78,8 @@
       "last_notified_at": 0.0
     },
     "SKHY": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1793281228.2419202
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "GOOGL": {
       "state": "STOP_LOSS",
@@ -126,12 +126,12 @@
       "last_notified_at": 0.0
     },
     "META": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1793281228.2419202
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "MRVL": {
-      "state": "STOP_LOSS",
-      "last_notified_at": 1793280868.4597266
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "HPE": {
       "state": "NORMAL",
@@ -222,16 +222,16 @@
       "last_notified_at": 0.0
     },
     "PORT_INTC": {
-      "state": "PORT_NORMAL",
-      "last_notified_at": 0.0
+      "state": "INTC_NEAR_GOAL",
+      "last_notified_at": 1793281590.0239706
     },
     "PORT_SOXL": {
       "state": "PORT_NORMAL",
       "last_notified_at": 0.0
     },
     "PORT_SOXS": {
-      "state": "SOXS_HEDGE_CLIMAX",
-      "last_notified_at": 1793281228.2419202
+      "state": "PORT_NORMAL",
+      "last_notified_at": 0.0
     }
   },
   "position_peaks": {
