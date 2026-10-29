@@ -1439,7 +1439,7 @@ def dispatch_wechat_radar_alerts(macro_data, stocks_data, weather_info, now_str)
         md.append("")
 
     if intc_alerts:
-        md.append("### 💼 实盘持仓风控与解套预警")
+        md.append("### 💼 实盘持仓止盈与风控跟踪")
         for a in intc_alerts:
             t_sym = a["ticker"]
             cost = a.get("cost", 95.53)
@@ -1464,10 +1464,17 @@ def dispatch_wechat_radar_alerts(macro_data, stocks_data, weather_info, now_str)
                 md.append(f"> 🛡️ **防御纪律**：准备防守，若跌破 `${stop_val:.2f}` 坚决减仓！")
             # _TRIM1_READY 机械催卖已彻底废除
             elif st.endswith("_GOAL_ACHIEVED"):
-                md.append(f"> 🎉 **{t_sym} 达成成本解套目标 (${target:.2f})！**")
-                md.append(f"> 现价 **`${last_p:.2f}`** 已覆盖成本，建议分批落袋清仓回笼全部本金！")
+                if target > cost:
+                    md.append(f"> 🎉 **{t_sym} 达成盈利止盈目标 (${target:.2f})！**")
+                    md.append(f"> 现价 **`${last_p:.2f}`** (浮盈 `{pnl_pct:+.2f}%`)，按计划分批落袋锁定利润！")
+                else:
+                    md.append(f"> 🎉 **{t_sym} 达成成本目标 (${target:.2f})！**")
+                    md.append(f"> 现价 **`${last_p:.2f}`** 已回本，可根据盘面决定是否落袋或继续持有！")
             elif st.endswith("_NEAR_GOAL"):
-                md.append(f"> 🚀 **{t_sym} 逼近解套目标**：现价 `${last_p:.2f}`，距离成本 `${target:.2f}` 仅剩 3%！")
+                if target > cost:
+                    md.append(f"> 🎯 **{t_sym} 逼近盈利止盈目标**：现价 `${last_p:.2f}`，距离止盈位 `${target:.2f}` 仅剩 3%！")
+                else:
+                    md.append(f"> 🚀 **{t_sym} 逼近保本线**：现价 `${last_p:.2f}`，距离成本 `${target:.2f}` 仅剩 3%！")
             md.append("---")
         md.append("")
 
@@ -1578,8 +1585,12 @@ def generate_and_sync_notifications(macro_data, stocks_data, weather_info, now_s
             elif target > 0 and active_price >= target:
                 p_level = "success"
                 p_substate = "GOAL"
-                p_title = f"🎉 {ticker} 达成 ${target:.2f} 全仓解套目标！"
-                p_desc = f"现价 ${active_price:.2f} 已覆盖持仓成本，建议分批落袋锁定本金！"
+                if target > cost:
+                    p_title = f"🎉 {ticker} 达成 ${target:.2f} 阶段止盈目标！"
+                    p_desc = f"现价 ${active_price:.2f} 达成盈利目标，建议按计划分批止盈锁定利润！"
+                else:
+                    p_title = f"🎉 {ticker} 达成 ${target:.2f} 回本目标！"
+                    p_desc = f"现价 ${active_price:.2f} 已回本，可依盘面决定是否落袋！"
             # 取消机械催卖 TRIM1，持仓进入平稳跟踪
 
             new_notifs.append({
