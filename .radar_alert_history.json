@@ -34,8 +34,8 @@
       "last_notified_at": 1793268386.3415024
     },
     "FPS": {
-      "state": "STOP_LOSS",
-      "last_notified_at": 1793280988.578807
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "STX": {
       "state": "STOP_LOSS",
@@ -62,8 +62,8 @@
       "last_notified_at": 0.0
     },
     "BE": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "GOLDEN_PIT",
+      "last_notified_at": 1793281108.315102
     },
     "ORCL": {
       "state": "NORMAL",
@@ -102,8 +102,8 @@
       "last_notified_at": 0.0
     },
     "VST": {
-      "state": "GOLDEN_PIT",
-      "last_notified_at": 1793280868.4597266
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "TSM": {
       "state": "NORMAL",
@@ -134,8 +134,8 @@
       "last_notified_at": 1793280868.4597266
     },
     "HPE": {
-      "state": "GOLDEN_PIT",
-      "last_notified_at": 1793280868.4597266
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "MU": {
       "state": "NORMAL",
@@ -150,8 +150,8 @@
       "last_notified_at": 0.0
     },
     "SPCX": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1793280988.578807
+      "state": "GOLDEN_PIT",
+      "last_notified_at": 1793281108.315102
     },
     "AAPL": {
       "state": "NORMAL",
@@ -174,8 +174,8 @@
       "last_notified_at": 0.0
     },
     "QQQM": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1793280988.578807
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "SOXX": {
       "state": "NORMAL",
