@@ -34,16 +34,16 @@
       "last_notified_at": 1793268386.3415024
     },
     "FPS": {
-      "state": "STOP_LOSS",
-      "last_notified_at": 1793281228.2419202
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "STX": {
       "state": "STOP_LOSS",
       "last_notified_at": 1793268386.3415024
     },
     "RKLB": {
-      "state": "STOP_LOSS",
-      "last_notified_at": 1793268386.3415024
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "WDC": {
       "state": "NORMAL",
@@ -62,8 +62,8 @@
       "last_notified_at": 0.0
     },
     "BE": {
-      "state": "GOLDEN_PIT",
-      "last_notified_at": 1793282311.5051565
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "ORCL": {
       "state": "NORMAL",
@@ -90,8 +90,8 @@
       "last_notified_at": 0.0
     },
     "ASML": {
-      "state": "GOLDEN_PIT",
-      "last_notified_at": 1793282189.865236
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "AMZN": {
       "state": "NORMAL",
@@ -102,8 +102,8 @@
       "last_notified_at": 1793281827.5286396
     },
     "VST": {
-      "state": "GOLDEN_PIT",
-      "last_notified_at": 1793282189.865236
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "TSM": {
       "state": "NORMAL",
@@ -114,8 +114,8 @@
       "last_notified_at": 0.0
     },
     "DELL": {
-      "state": "GOLDEN_PIT",
-      "last_notified_at": 1793282189.865236
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "NVDA": {
       "state": "NORMAL",
@@ -126,8 +126,8 @@
       "last_notified_at": 0.0
     },
     "META": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1793281827.5286396
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "MRVL": {
       "state": "STOP_LOSS",
@@ -150,8 +150,8 @@
       "last_notified_at": 0.0
     },
     "SPCX": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1793282189.865236
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "AAPL": {
       "state": "NORMAL",
@@ -178,8 +178,8 @@
       "last_notified_at": 1793282311.5051565
     },
     "SOXX": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1793282430.6441083
     },
     "SOXL": {
       "state": "NORMAL",
