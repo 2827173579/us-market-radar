@@ -1,14 +1,38 @@
 {
+  "INTC": {
+    "name": "英特尔",
+    "cat": "芯片算力",
+    "shares": 2.0,
+    "cost": 93.30,
+    "trim1": 95.5,
+    "trim1_shares": 1.0,
+    "trim2": 98.0,
+    "base_val": 88.0,
+    "target": 95.5,
+    "note": "Firstrade实盘底仓"
+  },
+  "SOXL": {
+    "name": "3倍做多半导体",
+    "cat": "正向杠杆",
+    "shares": 0.22594,
+    "cost": 108.2109,
+    "trim1": 105.0,
+    "trim1_shares": 0.22594,
+    "trim2": 108.21,
+    "base_val": 82.09,
+    "target": 108.21,
+    "note": "Firstrade实盘碎股"
+  },
   "SOXS": {
     "name": "3倍做空半导体",
     "cat": "反向杠杆",
-    "shares": 5.0,
-    "cost": 41.34,
-    "trim1": 45.0,
-    "trim1_shares": 2.0,
-    "trim2": 48.0,
-    "base_val": 38.0,
-    "target": 45.0,
-    "note": "Firstrade实盘持仓"
+    "shares": 7.0,
+    "cost": 42.28,
+    "trim1": 46.0,
+    "trim1_shares": 3.0,
+    "trim2": 49.0,
+    "base_val": 39.5,
+    "target": 46.0,
+    "note": "Firstrade实盘对冲"
   }
 }

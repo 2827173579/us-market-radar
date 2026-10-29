@@ -4,6 +4,7 @@ Helper module to build the Futu-Style Pro Terminal (futu_pro_terminal.html)
 支持 55 只全量标的池 (12 ETF + 43 个股)，全周期切换与分钟下拉菜单
 """
 import json
+import time
 
 def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_str="", has_realtime=False, target_watchlist=None, user_portfolio=None, terminal_notifications=None, session_code="REGULAR", session_name="常规盘中"):
     is_overnight = (session_code == "OVERNIGHT")
@@ -1677,6 +1678,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
         const WEATHER_INFO = {weather_json};
         const INITIAL_WATCHLIST = {watchlist_json};
         const INITIAL_PORTFOLIO = {portfolio_json};
+        const INITIAL_PORTFOLIO_TS = {int(time.time() * 1000)};
         const INITIAL_NOTIFICATIONS = {notifications_json};
 
         let currentFilter = "all";
@@ -1731,9 +1733,11 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
         }}
 
         // 优先检查当前浏览器本地持久化缓存 (跨电脑刷新不丢失)
+        // 优先检查当前浏览器本地持久化缓存 (远端修改时生效，但量化主机更新时以主机最新实盘为准)
         try {{
             const savedCustom = localStorage.getItem("user_custom_portfolio");
-            if (savedCustom) {{
+            const savedTs = parseInt(localStorage.getItem("user_custom_portfolio_ts") || "0");
+            if (savedCustom && savedTs > INITIAL_PORTFOLIO_TS) {{
                 const parsed = JSON.parse(savedCustom);
                 if (parsed && typeof parsed === "object" && Object.keys(parsed).length > 0) {{
                     userPortfolio = parsed;
@@ -2925,6 +2929,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             userPortfolio = newPort;
             try {{
                 localStorage.setItem("user_custom_portfolio", JSON.stringify(newPort));
+                localStorage.setItem("user_custom_portfolio_ts", Date.now().toString());
             }} catch(e) {{}}
 
             const isLocal = window.location.hostname === "127.0.0.1" || window.location.hostname === "localhost";
