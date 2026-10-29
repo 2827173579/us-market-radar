@@ -127,19 +127,19 @@
     },
     "META": {
       "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1793313391.9533377
+      "last_notified_at": 1793313647.0227716
     },
     "MRVL": {
       "state": "STOP_LOSS",
       "last_notified_at": 1793304747.3964334
     },
     "HPE": {
-      "state": "GOLDEN_PIT",
-      "last_notified_at": 1793304146.3821645
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "MU": {
-      "state": "GOLDEN_PIT",
-      "last_notified_at": 1793304146.3821645
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "KO": {
       "state": "NORMAL",
@@ -150,8 +150,8 @@
       "last_notified_at": 0.0
     },
     "SPCX": {
-      "state": "GOLDEN_PIT",
-      "last_notified_at": 1793313147.8982
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1793313647.0227716
     },
     "AAPL": {
       "state": "NORMAL",
