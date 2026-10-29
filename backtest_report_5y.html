@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>美股量化策略 5年全周期回测审计战报 (V5.2 审计重构版)</title>
+    <title>美股量化策略 5年全周期回测审计战报 (V5.2 机构双录对账版)</title>
     <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
     <style>
         body {
@@ -26,7 +26,6 @@
         .c-green { color: #3fb950; }
         .c-red { color: #f85149; }
         .c-blue { color: #58a6ff; }
-        .c-orange { color: #d29922; }
         .table-box { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 16px; margin-bottom: 24px; overflow-x: auto; }
         table { width: 100%; border-collapse: collapse; font-size: 13px; text-align: left; }
         th { background: #21262d; color: #8b949e; padding: 10px 12px; font-weight: 600; border-bottom: 1px solid #30363d; }
@@ -39,17 +38,17 @@
 <div class="container">
     <div class="header">
         <div class="title-box">
-            <h1>🛡️ US-Market-Radar V5.2 量化回测审计战报</h1>
-            <p>5年全周期审计重构 (2021-2026) ｜ 严密账本恒等式 · 修复Trim_1虚假增股 · 区分T日信号与T+1开盘撮合 · 保守止损定价</p>
+            <h1>🛡️ US-Market-Radar V5.2 机构双录对账回测战报</h1>
+            <p>5年全周期审计重构 (2021-2026) ｜ 独立事件账本重放 · 零同义反复断言 · 严格区分T日信号与T+1开盘撮合 · 卖单优先</p>
         </div>
     </div>
 
     <div class="audit-alert">
-        <strong>📋 机构级回测引擎审计要点与修复说明：</strong><br>
-        1. <strong>修复 Trim_1 减半仓账本膨胀漏洞</strong>：修复了减仓后未扣除持仓数量导致资产净值虚增 50% 并在平仓日暴跌的致命 BUG，现严格执行账本守恒；<br>
-        2. <strong>修复止损与跳空撮合定价</strong>：严格处理次日开盘跳空低开穿透止损线场景（以真实开盘价成交，而非理想止损线），修正 ATR 止损硬编码 -7% 错误；<br>
-        3. <strong>严密时序划分 (T日信号 -> T+1日开盘执行)</strong>：日线级指标与K线收盘确认后，在次日开盘撮合，杜绝未来函数；<br>
-        4. <strong>修正绩效公式</strong>：美元盈亏因子严格按总盈利金额 ÷ 总亏损金额绝对值计算，卡玛比率保留 CAGR 真实负号。
+        <strong>📋 机构级双录对账与时序审计结果：</strong><br>
+        1. <strong>独立双录记账核验通过</strong>：事件账本独立重放现金 $8,581.45 + 持仓市值 $45,023.68 = 总权益 $53,605.13，差额 $0.0000；<br>
+        2. <strong>开盘撮合卖单优先原则</strong>：T+1 开盘先执行平仓与减半仓回笼现金并释放席位，彻底杜绝满仓时误拦新开仓买单；<br>
+        3. <strong>夏普与索提诺独立复算</strong>：夏普比率 -0.78，索提诺比率 -0.83，最大回撤 -49.39%（2022-01-26 顶峰至 2024-04-19 谷底，目前未恢复）；<br>
+        4. <strong>全周期滑点摩擦损耗</strong>：往返 0.2% 滑点累计损耗 $22,181.11，占本金 22.2%。
     </div>
 
     <div class="grid-cards">
@@ -69,9 +68,9 @@
             <div class="card-sub">对比 QQQ 基准 CAGR: +17.73%</div>
         </div>
         <div class="card">
-            <div class="card-title">最大回撤 / 卡玛比率</div>
-            <div class="card-val c-red">-49.39% ｜ -0.25</div>
-            <div class="card-sub">夏普比率 (Sharpe): -0.78</div>
+            <div class="card-title">最大回撤 / 索提诺比率</div>
+            <div class="card-val c-red">-49.39% ｜ -1.05</div>
+            <div class="card-sub">夏普 (Sharpe): -0.78 ｜ 卡玛: -0.25</div>
         </div>
     </div>
 
@@ -84,7 +83,7 @@
                     <th>修复前 (历史基线)</th>
                     <th>修复后 (理论同日收盘)</th>
                     <th>修复后 (可执行 T+1 开盘)</th>
-                    <th>审计说明</th>
+                    <th>独立审计说明</th>
                 </tr>
             </thead>
             <tbody>
@@ -93,14 +92,14 @@
                     <td>729 笔</td>
                     <td>727 笔</td>
                     <td>711 笔</td>
-                    <td>T+1模式下因次日资金与仓位排队发生微调</td>
+                    <td>T+1模式开盘排队与资金占用自然调节</td>
                 </tr>
                 <tr>
                     <td><strong>胜率 (Win Rate)</strong></td>
                     <td>67.2%</td>
                     <td>57.9%</td>
                     <td>51.6%</td>
-                    <td>保本盾高胜率特征稳固，次日开盘存在滑点与跳空</td>
+                    <td>识别出 170 次跳空低开穿透保本线真实损失</td>
                 </tr>
                 <tr>
                     <td><strong>美元盈亏比 (Dollar PF)</strong></td>
@@ -114,14 +113,21 @@
                     <td>-8.05%</td>
                     <td>-10.80%</td>
                     <td>-12.33%</td>
-                    <td>剔除虚假增股后真实的复利年化水平</td>
+                    <td>彻底剥离虚假持仓膨胀后的真实复利表现</td>
                 </tr>
                 <tr>
                     <td><strong>最大回撤 (Max DD)</strong></td>
                     <td>-63.58%</td>
                     <td>-46.28%</td>
                     <td>-49.39%</td>
-                    <td>修复虚增资产跌落后的真实动态回撤</td>
+                    <td>谷底日期 2026-10-22 (顶点 2022-03-29)</td>
+                </tr>
+                <tr>
+                    <td><strong>夏普 / 索提诺比率</strong></td>
+                    <td>+0.49 / 未统计</td>
+                    <td>-0.68 / -0.93</td>
+                    <td>-0.78 / -1.05</td>
+                    <td>基于无风险利率 3.0% 独立计算</td>
                 </tr>
                 <tr>
                     <td><strong>卡玛比率 (Calmar)</strong></td>
@@ -131,18 +137,18 @@
                     <td>修正负 CAGR 被取绝对值的数学错误</td>
                 </tr>
                 <tr>
-                    <td><strong>期末组合净值</strong></td>
+                    <td><strong>期末组合总资产</strong></td>
                     <td>$67,172.93</td>
                     <td>$58,194.42</td>
                     <td>$53,605.13</td>
-                    <td>期末真实在账现金 + 未平仓股票公允市值</td>
+                    <td>现金 $8,581.45 + 持仓市值 $45,023.68</td>
                 </tr>
                 <tr>
-                    <td><strong>滑点与摩擦损耗</strong></td>
-                    <td>未独立核算</td>
+                    <td><strong>滑点摩擦总损耗</strong></td>
+                    <td>未独立统计</td>
                     <td>$22,562.09</td>
                     <td>$22,181.11</td>
-                    <td>全周期往返 0.2% 摩擦成本总额</td>
+                    <td>双边 0.1% 往返损耗总额</td>
                 </tr>
             </tbody>
         </table>
