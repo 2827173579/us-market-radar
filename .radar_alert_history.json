@@ -34,16 +34,16 @@
       "last_notified_at": 1793297305.4715586
     },
     "FPS": {
-      "state": "STOP_LOSS",
-      "last_notified_at": 1793297065.7151172
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "STX": {
       "state": "STOP_LOSS",
       "last_notified_at": 1793289868.0182133
     },
     "RKLB": {
-      "state": "STOP_LOSS",
-      "last_notified_at": 1793299109.8861923
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "WDC": {
       "state": "NORMAL",
@@ -86,16 +86,16 @@
       "last_notified_at": 1793295506.9021878
     },
     "CEG": {
-      "state": "GOLDEN_PIT",
-      "last_notified_at": 1793300666.0263608
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "ASML": {
       "state": "NORMAL",
       "last_notified_at": 0.0
     },
     "AMZN": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "STOP_LOSS",
+      "last_notified_at": 1793302346.138156
     },
     "LITE": {
       "state": "WATCHLIST_ENTRY_READY",
@@ -106,16 +106,16 @@
       "last_notified_at": 0.0
     },
     "TSM": {
-      "state": "GOLDEN_PIT",
-      "last_notified_at": 1793302228.441988
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "AXP": {
       "state": "NORMAL",
       "last_notified_at": 0.0
     },
     "DELL": {
-      "state": "GOLDEN_PIT",
-      "last_notified_at": 1793295985.4029434
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "NVDA": {
       "state": "NORMAL",
@@ -134,12 +134,12 @@
       "last_notified_at": 1793290346.4827302
     },
     "HPE": {
-      "state": "GOLDEN_PIT",
-      "last_notified_at": 1793295985.4029434
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "MU": {
-      "state": "GOLDEN_PIT",
-      "last_notified_at": 1793295985.4029434
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "KO": {
       "state": "NORMAL",
@@ -150,8 +150,8 @@
       "last_notified_at": 0.0
     },
     "SPCX": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1793302228.441988
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "AAPL": {
       "state": "NORMAL",
