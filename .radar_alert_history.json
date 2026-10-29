@@ -58,12 +58,12 @@
       "last_notified_at": 1793253933.9659684
     },
     "SNDK": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "STOP_LOSS",
+      "last_notified_at": 1793261018.537601
     },
     "BE": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793260960.9008682
+      "last_notified_at": 1793261018.537601
     },
     "ORCL": {
       "state": "NORMAL",
@@ -237,6 +237,6 @@
   "position_peaks": {
     "INTC": 93.35,
     "SOXL": 108.2109,
-    "SOXS": 43.14
+    "SOXS": 43.2714
   }
 }
