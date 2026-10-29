@@ -78,8 +78,8 @@
       "last_notified_at": 0.0
     },
     "SKHY": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1793299827.5591292
     },
     "GOOGL": {
       "state": "STOP_LOSS",
@@ -98,16 +98,16 @@
       "last_notified_at": 0.0
     },
     "LITE": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1793299827.5591292
     },
     "VST": {
       "state": "NORMAL",
       "last_notified_at": 0.0
     },
     "TSM": {
-      "state": "GOLDEN_PIT",
-      "last_notified_at": 1793299709.443754
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1793299827.5591292
     },
     "AXP": {
       "state": "NORMAL",
@@ -126,8 +126,8 @@
       "last_notified_at": 0.0
     },
     "META": {
-      "state": "GOLDEN_PIT",
-      "last_notified_at": 1793299345.8628423
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1793299827.5591292
     },
     "MRVL": {
       "state": "STOP_LOSS",
@@ -174,12 +174,12 @@
       "last_notified_at": 0.0
     },
     "QQQM": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1793299827.5591292
     },
     "SOXX": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1793299827.5591292
     },
     "SOXL": {
       "state": "NORMAL",
