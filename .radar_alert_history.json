@@ -46,8 +46,8 @@
       "last_notified_at": 1793304033.6063118
     },
     "WDC": {
-      "state": "STOP_LOSS",
-      "last_notified_at": 1793304865.6613574
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "VRT": {
       "state": "NORMAL",
@@ -58,16 +58,16 @@
       "last_notified_at": 1793304865.6613574
     },
     "SNDK": {
-      "state": "STOP_LOSS",
-      "last_notified_at": 1793295385.2562287
-    },
-    "BE": {
-      "state": "STOP_LOSS",
-      "last_notified_at": 1793304865.6613574
-    },
-    "ORCL": {
       "state": "NORMAL",
       "last_notified_at": 0.0
+    },
+    "BE": {
+      "state": "NORMAL",
+      "last_notified_at": 0.0
+    },
+    "ORCL": {
+      "state": "STOP_LOSS",
+      "last_notified_at": 1793304991.2598429
     },
     "INTC": {
       "state": "STOP_LOSS",
@@ -78,8 +78,8 @@
       "last_notified_at": 1793304747.3964334
     },
     "SKHY": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1793304991.2598429
     },
     "GOOGL": {
       "state": "STOP_LOSS",
@@ -98,8 +98,8 @@
       "last_notified_at": 1793302346.138156
     },
     "LITE": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1793304991.2598429
     },
     "VST": {
       "state": "NORMAL",
