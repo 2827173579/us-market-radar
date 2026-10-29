@@ -78,12 +78,12 @@
       "last_notified_at": 0.0
     },
     "SKHY": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1793266585.5139058
     },
     "GOOGL": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793252131.4196615
+      "last_notified_at": 1793266585.5139058
     },
     "CEG": {
       "state": "NORMAL",
@@ -106,8 +106,8 @@
       "last_notified_at": 0.0
     },
     "TSM": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1793266585.5139058
     },
     "AXP": {
       "state": "NORMAL",
