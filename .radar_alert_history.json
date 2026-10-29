@@ -54,8 +54,8 @@
       "last_notified_at": 0.0
     },
     "AMAT": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "STOP_LOSS",
+      "last_notified_at": 1793306186.3234246
     },
     "SNDK": {
       "state": "NORMAL",
@@ -66,8 +66,8 @@
       "last_notified_at": 1793305346.9824893
     },
     "ORCL": {
-      "state": "STOP_LOSS",
-      "last_notified_at": 1793305954.5688884
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "INTC": {
       "state": "STOP_LOSS",
@@ -78,8 +78,8 @@
       "last_notified_at": 1793304747.3964334
     },
     "SKHY": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1793305826.346083
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "GOOGL": {
       "state": "STOP_LOSS",
@@ -98,8 +98,8 @@
       "last_notified_at": 1793302346.138156
     },
     "LITE": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1793306186.3234246
     },
     "VST": {
       "state": "NORMAL",
@@ -114,8 +114,8 @@
       "last_notified_at": 0.0
     },
     "DELL": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "GOLDEN_PIT",
+      "last_notified_at": 1793306186.3234246
     },
     "NVDA": {
       "state": "NORMAL",
@@ -126,8 +126,8 @@
       "last_notified_at": 0.0
     },
     "META": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1793305107.5887089
+      "state": "GOLDEN_PIT",
+      "last_notified_at": 1793306186.3234246
     },
     "MRVL": {
       "state": "STOP_LOSS",
@@ -150,8 +150,8 @@
       "last_notified_at": 0.0
     },
     "SPCX": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1793306067.026298
+      "state": "GOLDEN_PIT",
+      "last_notified_at": 1793306186.3234246
     },
     "AAPL": {
       "state": "NORMAL",
