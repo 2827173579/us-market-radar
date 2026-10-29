@@ -38,8 +38,8 @@
       "last_notified_at": 0.0
     },
     "STX": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "STOP_LOSS",
+      "last_notified_at": 1793289868.0182133
     },
     "RKLB": {
       "state": "NORMAL",
@@ -98,8 +98,8 @@
       "last_notified_at": 0.0
     },
     "LITE": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1793289868.0182133
     },
     "VST": {
       "state": "NORMAL",
@@ -226,12 +226,12 @@
       "last_notified_at": 1793285786.1037834
     },
     "PORT_SOXL": {
-      "state": "SOXL_NEAR_GOAL",
-      "last_notified_at": 1793289626.1821797
+      "state": "PORT_NORMAL",
+      "last_notified_at": 0.0
     },
     "PORT_SOXS": {
-      "state": "SOXS_NEAR_STOP",
-      "last_notified_at": 1793289747.4027877
+      "state": "PORT_NORMAL",
+      "last_notified_at": 0.0
     }
   },
   "position_peaks": {
