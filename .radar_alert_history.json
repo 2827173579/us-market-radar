@@ -86,8 +86,8 @@
       "last_notified_at": 1793295506.9021878
     },
     "CEG": {
-      "state": "GOLDEN_PIT",
-      "last_notified_at": 1793296705.1547885
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "ASML": {
       "state": "NORMAL",
@@ -174,12 +174,12 @@
       "last_notified_at": 0.0
     },
     "QQQM": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1793298026.1052232
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "SOXX": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1793298026.1052232
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "SOXL": {
       "state": "NORMAL",
