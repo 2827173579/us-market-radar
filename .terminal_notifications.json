@@ -1,7 +1,7 @@
 [
   {
     "id": "STOP_CCXI_2026-10-29",
-    "time": "10-29 16:15",
+    "time": "10-29 07:17",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -15,7 +15,7 @@
   },
   {
     "id": "STOP_OKLO_2026-10-29",
-    "time": "10-29 16:15",
+    "time": "10-29 07:17",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -29,7 +29,7 @@
   },
   {
     "id": "STOP_AAOI_2026-10-29",
-    "time": "10-29 16:15",
+    "time": "10-29 07:17",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -43,7 +43,7 @@
   },
   {
     "id": "STOP_CRWV_2026-10-29",
-    "time": "10-29 16:15",
+    "time": "10-29 07:17",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -57,7 +57,7 @@
   },
   {
     "id": "STOP_ASTS_2026-10-29",
-    "time": "10-29 16:15",
+    "time": "10-29 07:17",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -71,7 +71,7 @@
   },
   {
     "id": "STOP_CRDO_2026-10-29",
-    "time": "10-29 16:15",
+    "time": "10-29 07:17",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -85,7 +85,7 @@
   },
   {
     "id": "STOP_GOOGL_2026-10-29",
-    "time": "10-29 16:15",
+    "time": "10-29 07:17",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -99,7 +99,7 @@
   },
   {
     "id": "STOP_NBIS_2026-10-29",
-    "time": "10-29 16:15",
+    "time": "10-29 07:17",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -113,7 +113,7 @@
   },
   {
     "id": "STOP_STX_2026-10-29",
-    "time": "10-29 16:15",
+    "time": "10-29 07:17",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -127,7 +127,7 @@
   },
   {
     "id": "STOP_COHR_2026-10-29",
-    "time": "10-29 16:15",
+    "time": "10-29 07:17",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -141,7 +141,7 @@
   },
   {
     "id": "STOP_RKLB_2026-10-29",
-    "time": "10-29 16:15",
+    "time": "10-29 07:17",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -155,7 +155,7 @@
   },
   {
     "id": "STOP_WDC_2026-10-29",
-    "time": "10-29 16:15",
+    "time": "10-29 07:17",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -169,7 +169,7 @@
   },
   {
     "id": "STOP_AMAT_2026-10-29",
-    "time": "10-29 16:15",
+    "time": "10-29 07:17",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -183,7 +183,7 @@
   },
   {
     "id": "PORT_INTC_HOLD_2026-10-29",
-    "time": "10-29 16:15",
+    "time": "10-29 07:17",
     "category": "portfolio",
     "cat_label": "💼 持仓风控",
     "level": "info",
@@ -202,7 +202,7 @@
   },
   {
     "id": "5M_META_2026-10-29",
-    "time": "10-29 16:15",
+    "time": "10-29 07:17",
     "category": "5m_entry",
     "cat_label": "🎯 5m买点",
     "level": "success",
@@ -222,7 +222,7 @@
   },
   {
     "id": "5M_SKHY_2026-10-29",
-    "time": "10-29 16:15",
+    "time": "10-29 07:17",
     "category": "5m_entry",
     "cat_label": "🎯 5m买点",
     "level": "success",
@@ -242,7 +242,7 @@
   },
   {
     "id": "TP_CRWD_2026-10-29",
-    "time": "10-29 16:15",
+    "time": "10-29 07:17",
     "category": "take_profit",
     "cat_label": "🟣 冲顶减仓",
     "level": "purple",
@@ -256,7 +256,7 @@
   },
   {
     "id": "5M_QQQM_2026-10-29",
-    "time": "10-29 16:15",
+    "time": "10-29 07:17",
     "category": "5m_entry",
     "cat_label": "🎯 5m买点",
     "level": "success",
@@ -264,7 +264,7 @@
     "name": "纳指100微型",
     "cat": "大盘基准",
     "price": 295.9,
-    "pct_change": 0.0033505892699298716,
+    "pct_change": 0.5893,
     "title": "🎯 QQQM (纳指100微型) 触发 5分钟级买点共振",
     "desc": "日内触及黄金坑支撑区($295.90)，连续两根5m K线不创新低且收阳企稳(5m RSI 48.4，量比1.65x)",
     "optimal_limit": 295.01,
@@ -276,7 +276,7 @@
   },
   {
     "id": "5M_SOXX_2026-10-29",
-    "time": "10-29 16:15",
+    "time": "10-29 07:17",
     "category": "5m_entry",
     "cat_label": "🎯 5m买点",
     "level": "success",
@@ -284,7 +284,7 @@
     "name": "费城半导体ETF",
     "cat": "半导体",
     "price": 511.5,
-    "pct_change": -0.017243828981345626,
+    "pct_change": 2.1289,
     "title": "🎯 SOXX (费城半导体ETF) 触发 5分钟级买点共振",
     "desc": "日内触及黄金坑支撑区($511.50)，连续两根5m K线不创新低且收阳企稳(5m RSI 45.8，量比2.03x)",
     "optimal_limit": 511.87,
@@ -296,7 +296,7 @@
   },
   {
     "id": "PORT_SOXL_HOLD_2026-10-29",
-    "time": "10-29 16:15",
+    "time": "10-29 07:17",
     "category": "portfolio",
     "cat_label": "💼 持仓风控",
     "level": "info",
@@ -304,7 +304,7 @@
     "name": "3倍做多半导体",
     "cat": "正向杠杆",
     "price": 100.85,
-    "pct_change": 0.09315465980469156,
+    "pct_change": 6.203,
     "title": "💼 SOXL 实盘持仓跟踪",
     "desc": "持仓 0.22594 股 · 成本 $108.21 ｜ 现价 $100.85 (-6.80%)",
     "cost": 108.2109,
@@ -315,7 +315,7 @@
   },
   {
     "id": "STOP_KORU_2026-10-29",
-    "time": "10-29 16:15",
+    "time": "10-29 07:17",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -323,13 +323,13 @@
     "name": "3倍做多韩国",
     "cat": "正向杠杆",
     "price": 13.03,
-    "pct_change": 16.188873515201006,
+    "pct_change": 16.1889,
     "title": "🔴 KORU (3倍做多韩国) 跌破波段斐波那契下沿",
     "desc": "偏离 MA50 -29.8%，放量跌破坑底 $15.87，空头宣泄期严禁左侧接刀！"
   },
   {
     "id": "PORT_SOXS_HOLD_2026-10-29",
-    "time": "10-29 16:15",
+    "time": "10-29 07:17",
     "category": "portfolio",
     "cat_label": "💼 持仓风控",
     "level": "info",
@@ -348,7 +348,7 @@
   },
   {
     "id": "TP_SOXS_2026-10-29",
-    "time": "10-29 16:15",
+    "time": "10-29 07:17",
     "category": "take_profit",
     "cat_label": "🟣 冲顶减仓",
     "level": "purple",
@@ -362,7 +362,7 @@
   },
   {
     "id": "WEATHER_阴天防守_2026-10-29",
-    "time": "10-29 16:15",
+    "time": "10-29 07:17",
     "category": "macro_weather",
     "cat_label": "⛅ 宏观气象",
     "level": "info",
