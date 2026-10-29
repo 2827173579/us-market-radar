@@ -54,8 +54,8 @@
       "last_notified_at": 0.0
     },
     "AMAT": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "STOP_LOSS",
+      "last_notified_at": 1793307626.9912107
     },
     "SNDK": {
       "state": "STOP_LOSS",
@@ -78,8 +78,8 @@
       "last_notified_at": 1793304747.3964334
     },
     "SKHY": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1793307626.9912107
     },
     "GOOGL": {
       "state": "STOP_LOSS",
