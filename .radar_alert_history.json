@@ -34,8 +34,8 @@
       "last_notified_at": 1793268386.3415024
     },
     "FPS": {
-      "state": "STOP_LOSS",
-      "last_notified_at": 1793276194.001296
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "STX": {
       "state": "STOP_LOSS",
@@ -78,8 +78,8 @@
       "last_notified_at": 0.0
     },
     "SKHY": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1793276786.331792
     },
     "GOOGL": {
       "state": "STOP_LOSS",
@@ -126,12 +126,12 @@
       "last_notified_at": 0.0
     },
     "META": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1793276786.331792
     },
     "MRVL": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "STOP_LOSS",
+      "last_notified_at": 1793276786.331792
     },
     "HPE": {
       "state": "NORMAL",
