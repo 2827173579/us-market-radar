@@ -58,12 +58,12 @@
       "last_notified_at": 1793304865.6613574
     },
     "SNDK": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "STOP_LOSS",
+      "last_notified_at": 1793305346.9824893
     },
     "BE": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "STOP_LOSS",
+      "last_notified_at": 1793305346.9824893
     },
     "ORCL": {
       "state": "NORMAL",
@@ -78,8 +78,8 @@
       "last_notified_at": 1793304747.3964334
     },
     "SKHY": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1793304991.2598429
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "GOOGL": {
       "state": "STOP_LOSS",
@@ -98,8 +98,8 @@
       "last_notified_at": 1793302346.138156
     },
     "LITE": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1793304991.2598429
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "VST": {
       "state": "NORMAL",
