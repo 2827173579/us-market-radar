@@ -954,22 +954,14 @@ def run_simulation(execution_mode="NEXT_OPEN", custom_data=None, custom_core_sto
             atr = float(row["ATR_14"]) if "ATR_14" in row else pos.get("entry_atr", 0.0)
             entry_p = pos["entry_price"]
 
-            # 持续记忆盘中最高价
-            pos["peak_price"] = max(pos["peak_price"], high_p, close_p)
-            pos["max_pnl_pct"] = ((pos["peak_price"] - entry_p) / entry_p) * 100.0
+            is_buy_day = (pos["entry_date"] == date)
 
-            # 动态保本铁盾激活检查 (+7.0% 门槛或 1.2*ATR)
-            if not pos["is_be_active"]:
-                if pos["max_pnl_pct"] >= 7.0 or (atr > 0 and pos["peak_price"] >= entry_p + 1.2 * atr):
-                    pos["is_be_active"] = True
-                    pos["be_stop"] = round(entry_p * 1.01, 4)
-
-            # 1. 检查动态保本止损线
+            # 1. 检查动态保本止损线 (Bug 1 修复: 仅对持仓天数 >= 1 的在仓标的生效，严禁在买入当天触发保本出场！)
             be_triggered = False
             be_fill_price = 0.0
             be_ref_price = 0.0
             be_reason = ""
-            if pos["is_be_active"]:
+            if not is_buy_day and pos.get("is_be_active", False):
                 be_level = pos["be_stop"]
                 if open_p <= be_level:
                     be_triggered = True
@@ -1061,6 +1053,15 @@ def run_simulation(execution_mode="NEXT_OPEN", custom_data=None, custom_core_sto
                     "entry_atr_pct": pos.get("entry_atr_pct", 3.0)
                 })
                 tickers_to_close_intraday.append(ticker)
+            else:
+                # 关键时序逻辑修复 (Bug 1): 当日在仓标的未触发出场，安全存活后才记录今日峰值并为次日激活保本盾
+                pos["peak_price"] = max(pos["peak_price"], high_p, close_p)
+                pos["max_pnl_pct"] = ((pos["peak_price"] - entry_p) / entry_p) * 100.0
+                if not pos["is_be_active"]:
+                    # 采纳科学折中出场方案：保本激活门槛设为 +4.2% 或 2.0 * ATR
+                    if pos["max_pnl_pct"] >= 4.2 or (atr > 0 and pos["peak_price"] >= entry_p + 2.0 * atr):
+                        pos["is_be_active"] = True
+                        pos["be_stop"] = round(entry_p * 1.005, 4)
 
         for tk in tickers_to_close_intraday:
             del active_positions[tk]
@@ -1114,9 +1115,9 @@ def run_simulation(execution_mode="NEXT_OPEN", custom_data=None, custom_core_sto
                 if vol_ratio >= 1.20 and close_p <= prev_close:
                     signal_exit_reason = "🔴 放量破位止损"
 
-            # 规则 1.5: 5 日不涨“时间止损 (Time Stop)”
-            elif not pos["trimmed"] and pos.get("bars_held", 0) >= 5 and pos["max_pnl_pct"] < 2.0 and cur_pnl < -0.5 and close_p < ema5:
-                signal_exit_reason = "⏳ 5日滞涨时间止损"
+            # 规则 1.5: 优化后 10 日破位时间止损 (Bug 4 修复: 移除 5 日误杀低波白马股逻辑)
+            elif not pos["trimmed"] and pos.get("bars_held", 0) >= 10 and cur_pnl < -2.0 and close_p < ema20:
+                signal_exit_reason = "⏳ 10日破位时间止损"
 
             # 规则 2: 水下反抽强阻减半仓 (Trim_1)
             trigger_trim = False
@@ -1288,11 +1289,12 @@ def run_simulation(execution_mode="NEXT_OPEN", custom_data=None, custom_core_sto
                     if atr_pct > 5.8 or crash_5d:
                         continue
 
-                    # 规则 1 & 2: 黄金坑右侧反转
+                    # 规则 1 & 2: 黄金坑右侧反转 (Bug 2 & Bug 3 修复)
                     cond_bull_trend = (close_p > sma200) and (ma50 >= sma200 * 0.97) and (rs_60 >= -8.0)
-                    cond_pit_depth = (fib_pos <= 0.45) or (abs(close_p - ma50) / ma50 <= 0.025)
-                    cond_pit_oversold = (min_rsi_3d <= 40.0)
-                    cond_golden_pit_v2 = cond_bull_trend and cond_pit_depth and cond_pit_oversold and is_right_turn
+                    cond_pit_depth = (-0.15 <= fib_pos <= 0.55)  # 严格限制在坑内，废除 abs(Close-MA50) 假坑绕过
+                    cond_pit_oversold = (min_rsi_3d <= 40.0) and (rsi <= 46.0)  # 限制当日 RSI 连涨追高
+                    cond_pit_atr = (atr_pct <= 4.2)  # 常规黄金坑波动率准入上限收紧至 4.2%
+                    cond_golden_pit_v2 = cond_bull_trend and cond_pit_depth and cond_pit_oversold and is_right_turn and cond_pit_atr
 
                     # 规则 1 & 2: 极度超卖右侧反包
                     if close_p > sma200:
