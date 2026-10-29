@@ -98,8 +98,8 @@
       "last_notified_at": 1793302346.138156
     },
     "LITE": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1793312546.489797
     },
     "VST": {
       "state": "NORMAL",
@@ -126,8 +126,8 @@
       "last_notified_at": 0.0
     },
     "META": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1793312187.5071647
+      "state": "GOLDEN_PIT",
+      "last_notified_at": 1793312546.489797
     },
     "MRVL": {
       "state": "STOP_LOSS",
@@ -150,8 +150,8 @@
       "last_notified_at": 0.0
     },
     "SPCX": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1793312426.6278152
+      "state": "GOLDEN_PIT",
+      "last_notified_at": 1793312546.489797
     },
     "AAPL": {
       "state": "NORMAL",
