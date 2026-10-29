@@ -1,7 +1,7 @@
 [
   {
     "id": "STOP_CCXI_2026-10-29",
-    "time": "10-29 01:12",
+    "time": "10-29 10:11",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -15,7 +15,7 @@
   },
   {
     "id": "5M_META_2026-10-29",
-    "time": "10-29 01:12",
+    "time": "10-29 10:11",
     "category": "5m_entry",
     "cat_label": "🎯 5m买点",
     "level": "success",
@@ -35,7 +35,7 @@
   },
   {
     "id": "5M_SKHY_2026-10-29",
-    "time": "10-29 01:12",
+    "time": "10-29 10:11",
     "category": "5m_entry",
     "cat_label": "🎯 5m买点",
     "level": "success",
@@ -43,7 +43,7 @@
     "name": "SK Hynix",
     "cat": "存储芯片",
     "price": 159.2296,
-    "pct_change": 13.3049,
+    "pct_change": 13.359933481085495,
     "title": "🎯 SKHY (SK Hynix) 触发 5分钟级买点共振",
     "desc": "日内触及黄金坑支撑区($159.23)，连续两根5m K线不创新低且收阳企稳(5m RSI 46.0，量比1.93x) ｜ ⚡期权多头共振(🟢 资金偏多看涨, 主力Call $160 Call (1,911张 · $1.70M))",
     "optimal_limit": 158.75,
@@ -55,7 +55,7 @@
   },
   {
     "id": "TP_CRWD_2026-10-29",
-    "time": "10-29 01:12",
+    "time": "10-29 10:11",
     "category": "take_profit",
     "cat_label": "🟣 冲顶减仓",
     "level": "purple",
@@ -63,13 +63,13 @@
     "name": "CrowdStrike",
     "cat": "AI安全",
     "price": 249.5,
-    "pct_change": -0.4962275457760852,
+    "pct_change": -0.48130328578069365,
     "title": "🟣 CRWD (CrowdStrike) 极度超买，触发高位减仓指令",
     "desc": "偏离 MA50 +5.4%，RSI 59.8，进入极端冲顶兑现区，建议分批减半锁定利润！"
   },
   {
     "id": "5M_QQQM_2026-10-29",
-    "time": "10-29 01:12",
+    "time": "10-29 10:11",
     "category": "5m_entry",
     "cat_label": "🎯 5m买点",
     "level": "success",
@@ -89,7 +89,7 @@
   },
   {
     "id": "5M_SOXX_2026-10-29",
-    "time": "10-29 01:12",
+    "time": "10-29 10:11",
     "category": "5m_entry",
     "cat_label": "🎯 5m买点",
     "level": "success",
@@ -109,7 +109,7 @@
   },
   {
     "id": "PORT_SOXS_HOLD_2026-10-29",
-    "time": "10-29 01:12",
+    "time": "10-29 10:11",
     "category": "portfolio",
     "cat_label": "💼 持仓风控",
     "level": "info",
@@ -128,7 +128,7 @@
   },
   {
     "id": "WEATHER_阴天防守_2026-10-29",
-    "time": "10-29 01:12",
+    "time": "10-29 10:11",
     "category": "macro_weather",
     "cat_label": "⛅ 宏观气象",
     "level": "info",
