@@ -34,8 +34,8 @@
       "last_notified_at": 1793282788.7345142
     },
     "FPS": {
-      "state": "STOP_LOSS",
-      "last_notified_at": 1793283147.3214908
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "STX": {
       "state": "STOP_LOSS",
@@ -174,12 +174,12 @@
       "last_notified_at": 0.0
     },
     "QQQM": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1793283519.1535156
     },
     "SOXX": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1793283519.1535156
     },
     "SOXL": {
       "state": "NORMAL",
