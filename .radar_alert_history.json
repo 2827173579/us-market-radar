@@ -46,24 +46,24 @@
       "last_notified_at": 1793304033.6063118
     },
     "WDC": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "STOP_LOSS",
+      "last_notified_at": 1793304865.6613574
     },
     "VRT": {
       "state": "NORMAL",
       "last_notified_at": 0.0
     },
     "AMAT": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "STOP_LOSS",
+      "last_notified_at": 1793304865.6613574
     },
     "SNDK": {
       "state": "STOP_LOSS",
       "last_notified_at": 1793295385.2562287
     },
     "BE": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "STOP_LOSS",
+      "last_notified_at": 1793304865.6613574
     },
     "ORCL": {
       "state": "NORMAL",
@@ -98,8 +98,8 @@
       "last_notified_at": 1793302346.138156
     },
     "LITE": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1793304626.906762
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "VST": {
       "state": "NORMAL",
