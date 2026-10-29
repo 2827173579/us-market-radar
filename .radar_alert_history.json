@@ -58,16 +58,16 @@
       "last_notified_at": 1793304865.6613574
     },
     "SNDK": {
-      "state": "STOP_LOSS",
-      "last_notified_at": 1793305107.5887089
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "BE": {
       "state": "NORMAL",
       "last_notified_at": 0.0
     },
     "ORCL": {
-      "state": "STOP_LOSS",
-      "last_notified_at": 1793304991.2598429
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "INTC": {
       "state": "STOP_LOSS",
