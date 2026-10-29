@@ -70,8 +70,8 @@
       "last_notified_at": 0.0
     },
     "INTC": {
-      "state": "STOP_LOSS",
-      "last_notified_at": 1793239440.6579397
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "AVGO": {
       "state": "NORMAL",
@@ -166,8 +166,8 @@
       "last_notified_at": 0.0
     },
     "CRWD": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "TAKE_PROFIT",
+      "last_notified_at": 1793240165.2963796
     },
     "PLTR": {
       "state": "NORMAL",
@@ -223,7 +223,7 @@
     },
     "PORT_INTC": {
       "state": "INTC_NEAR_GOAL",
-      "last_notified_at": 1793238020.0755718
+      "last_notified_at": 1793240165.2963796
     },
     "PORT_SOXL": {
       "state": "PORT_NORMAL",
@@ -233,5 +233,10 @@
       "state": "PORT_NORMAL",
       "last_notified_at": 0.0
     }
+  },
+  "position_peaks": {
+    "INTC": 93.35,
+    "SOXL": 108.2109,
+    "SOXS": 42.97
   }
 }

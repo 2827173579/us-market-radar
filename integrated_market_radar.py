@@ -1155,7 +1155,7 @@ def load_alert_history():
                 return json.load(f)
     except Exception:
         pass
-    return {"weather": "", "targets": {}}
+    return {"weather": "", "targets": {}, "position_peaks": {}}
 
 def save_alert_history(history):
     """保存预警去重历史到本地"""
@@ -1340,15 +1340,23 @@ def dispatch_wechat_radar_alerts(macro_data, stocks_data, weather_info, now_str)
             atr = s.get("atr", 0.0)
             pnl_pct = ((active_price - cost) / cost) * 100 if cost > 0 else 0.0
 
-            # 动态保本铁盾 (Breakeven Shield)
+            # 动态保本铁盾 (Breakeven Shield，基于历史最高价持久记忆)
+            position_peaks = history.setdefault("position_peaks", {})
+            saved_peak = float(position_peaks.get(ticker, cost))
+            today_high = float(s.get("high", active_price))
+            peak_price = max(saved_peak, float(cost), float(active_price), today_high)
+            position_peaks[ticker] = round(peak_price, 4)
+            s["peak_price"] = peak_price
+            max_pnl_pct = ((peak_price - cost) / cost) * 100 if cost > 0 else 0.0
+            s["max_pnl_pct"] = max_pnl_pct
+
             be_active = False
-            be_stop = cost * 1.005
+            be_stop = cost * 1.004 if ticker in ["SOXS", "SQQQ"] else cost * 1.005
             if ticker in ["SOXS", "SQQQ"]:
-                be_stop = cost * 1.004  # 对冲盘保本线
-                if pnl_pct >= 4.0:
+                if max_pnl_pct >= 4.0:
                     be_active = True
             else:
-                if pnl_pct >= 4.0 or (atr > 0 and active_price >= cost + 0.8 * atr):
+                if max_pnl_pct >= 4.0 or (atr > 0 and peak_price >= cost + 0.8 * atr):
                     be_active = True
             
             stop_val = max(base_stop, be_stop) if be_active else base_stop
@@ -1415,6 +1423,8 @@ def dispatch_wechat_radar_alerts(macro_data, stocks_data, weather_info, now_str)
                         "state": p_state, "cost": cost,
                         "shares": s.get("shares", 0.0),
                         "stop_val": stop_val, "target": target,
+                        "be_stop": be_stop, "be_active": be_active,
+                        "peak_price": peak_price, "max_pnl_pct": max_pnl_pct,
                         "session_tag": session_tag
                     })
             else:
@@ -1506,8 +1516,11 @@ def dispatch_wechat_radar_alerts(macro_data, stocks_data, weather_info, now_str)
                 md.append(f"> 现价 **`${last_p:.2f}`** (`{pnl_pct:+.2f}%`) ｜ 持仓 `{shares:g} 股` (成本 `${cost:.2f}`)")
                 md.append(f"> ⚠️ **纪律指令**：触发保命止损，请立即执行减仓避险！")
             elif st.endswith("_BREAKEVEN_STOP"):
-                md.append(f"> 🛡️ **{t_sym} 触发动态保本护盾！**")
-                md.append(f"> 现价 **`${last_p:.2f}`** 回落触碰保本线 `${stop_val:.2f}`，执行保本出场，锁定胜利果实！")
+                peak_p = a.get("peak_price", last_p)
+                max_gain = a.get("max_pnl_pct", 0.0)
+                md.append(f"> 🚨 **{t_sym} 触及动态保本止损线 (${stop_val:.2f})！**")
+                md.append(f"> 现价 **`${last_p:.2f}`** 回落跌破保本底线，历史最高曾冲至 `${peak_p:.2f}` (最高浮盈 `+{max_gain:.1f}%`)！")
+                md.append(f"> 🛡️ **纪律指令**：立即执行平仓保本，绝不让盈利单变亏损！")
             elif st.endswith("_NEAR_STOP"):
                 buffer = last_p - stop_val
                 buffer_pct = buffer / stop_val * 100
@@ -1632,15 +1645,23 @@ def generate_and_sync_notifications(macro_data, stocks_data, weather_info, now_s
             p_substate = "HOLD"
             p_title = f"💼 {ticker} 实盘持仓跟踪"
             p_desc = f"持仓 {shares:g} 股 · 成本 ${cost:.2f} ｜ 现价 ${active_price:.2f} ({pnl_pct:+.2f}%)"
-            # 动态保本铁盾 (Breakeven Shield)
+            # 动态保本铁盾 (Breakeven Shield，基于历史最高价持久记忆)
+            alert_history_temp = load_alert_history()
+            pos_peaks_dict = alert_history_temp.setdefault("position_peaks", {})
+            saved_peak = float(pos_peaks_dict.get(ticker, cost))
+            today_high = float(s.get("high", active_price))
+            peak_price = max(saved_peak, float(cost), float(active_price), today_high)
+            pos_peaks_dict[ticker] = round(peak_price, 4)
+            save_alert_history(alert_history_temp)
+            max_pnl_pct = ((peak_price - cost) / cost) * 100 if cost > 0 else 0.0
+
             be_active = False
-            be_stop = cost * 1.005
+            be_stop = cost * 1.004 if ticker in ["SOXS", "SQQQ"] else cost * 1.005
             if ticker in ["SOXS", "SQQQ"]:
-                be_stop = cost * 1.004
-                if pnl_pct >= 4.0:
+                if max_pnl_pct >= 4.0:
                     be_active = True
             else:
-                if pnl_pct >= 4.0 or (s.get("atr", 0) > 0 and active_price >= cost + 0.8 * s["atr"]):
+                if max_pnl_pct >= 4.0 or (s.get("atr", 0) > 0 and peak_price >= cost + 0.8 * s["atr"]):
                     be_active = True
             
             effective_stop = max(stop_val, be_stop) if be_active else stop_val
@@ -1658,10 +1679,10 @@ def generate_and_sync_notifications(macro_data, stocks_data, weather_info, now_s
                 is_break_ema5 = (ema5 > 0 and active_price < ema5)
                 
                 if be_active and active_price <= be_stop:
-                    p_level = "warning"
+                    p_level = "danger"
                     p_substate = "BREAKEVEN"
-                    p_title = f"🛡️ {ticker} 触发动态保本护盾！"
-                    p_desc = f"现价 ${active_price:.2f} 跌破保本线 ${be_stop:.2f}，保护本金安全离场！"
+                    p_title = f"🚨 {ticker} 触及动态保本止损线(${be_stop:.2f})！"
+                    p_desc = f"历史最高曾达 ${peak_price:.2f} (+{max_pnl_pct:.1f}%)，现价回踩跌破保本线，立即平仓保本！"
                 elif is_climax_hedge:
                     p_level = "success"
                     p_substate = "HEDGE_CLIMAX"
@@ -1689,10 +1710,10 @@ def generate_and_sync_notifications(macro_data, stocks_data, weather_info, now_s
                 dist_to_trim1 = ((trim1_auto - active_price) / trim1_auto) * 100 if trim1_auto > 0 else 99.0
                 
                 if be_active and active_price <= be_stop:
-                    p_level = "warning"
+                    p_level = "danger"
                     p_substate = "BREAKEVEN"
-                    p_title = f"🛡️ {ticker} 触发动态保本护盾！"
-                    p_desc = f"现价 ${active_price:.2f} 跌破保本线 ${be_stop:.2f}，保护本金安全离场！"
+                    p_title = f"🚨 {ticker} 触及动态保本止损线(${be_stop:.2f})！"
+                    p_desc = f"历史最高曾达 ${peak_price:.2f} (+{max_pnl_pct:.1f}%)，现价回踩跌破保本线，立即平仓保本！"
                 elif effective_stop > 0 and active_price <= effective_stop:
                     p_level = "danger"
                     p_substate = "STOP"
@@ -1898,6 +1919,8 @@ def compute_indicators(df):
     rs = avg_gain / avg_loss.replace(0, np.nan)
     df["RSI_14"] = 100 - (100 / (1 + rs))
     df["Min_RSI_5d"] = df["RSI_14"].rolling(5, min_periods=1).min()
+    df["Max_RSI_5d"] = df["RSI_14"].rolling(5, min_periods=1).max()
+    df["Max_Bias_5d"] = df["Bias_MA50"].rolling(5, min_periods=1).max()
 
     # 成交量 20 日均线与量比
     df["VOL_MA20"] = volume.rolling(20, min_periods=5).mean()
@@ -2064,7 +2087,8 @@ def evaluate_stock_signal(
     atr=0.0, weather_info=None, macro_data=None, ema20=0.0,
     high_bias_recently=False, prev_close=0.0, prev_ema20=0.0,
     prev_rsi=0.0, min_rsi_5d=50.0, pos_60=0.5, open_price=0.0,
-    ema10=0.0, prev_ema10=0.0, ema5=0.0, prev_ema5=0.0
+    ema10=0.0, prev_ema10=0.0, ema5=0.0, prev_ema5=0.0,
+    max_bias_5d=0.0, max_rsi_5d=50.0, max_pnl_pct=0.0
 ):
     """
     扫描标的作战信号 (V2 量化升级版)：
@@ -2134,28 +2158,41 @@ def evaluate_stock_signal(
     # 分支 B: 全市场通用客观量化诊断 (含水下抄底、常规主升、高位疯牛)
     # --------------------------------------------------------------------------
     else:
-        # 1. 破位止损【双轨制】：浅破看量防洗盘 + 深破无条件熔断
-        is_limit_break = (
-            (fib_low > 0 and last < fib_low * 0.93)
-            or (atr_mult <= -2.8)
-            or (cost > 0 and shares > 0 and pnl_pct <= -7.0)
-        )
+        # 1. 破位止损【双轨制】：浅破看量防洗盘 + 深破无条件熔断 (严格区分持仓股 vs 观察股)
+        has_pos = bool(cost > 0 and shares > 0)
+        custom_stop = meta.get("base_val", 0.0)
+
+        if has_pos:
+            # 【已持仓实盘标的】（水下抄底单或主升浪单）
+            # 极限止损严格以实盘买入成本、专属防守底线及单笔最大亏损为基准，杜绝被高位坑底误判！
+            is_limit_break = (
+                (custom_stop > 0 and last <= custom_stop)
+                or (pnl_pct <= -7.0)
+                or (atr > 0 and last <= cost - 2.0 * atr)
+            )
+            is_shallow_break = False
+        else:
+            # 【未持仓观察标的】
+            is_limit_break = (
+                (fib_low > 0 and last < fib_low * 0.93)
+                or (atr_mult <= -2.8)
+            )
+            is_shallow_break = (last < fib_low * 0.97) or (atr_mult <= -2.2) or (bias < -14.0)
+
         if is_limit_break:
             signals.append("🔴 破位止损(极限风控)")
             is_price_break = True
-        else:
-            is_shallow_break = (last < fib_low * 0.97) or (atr_mult <= -2.2) or (bias < -14.0)
+        elif is_shallow_break:
             is_red_drop = (prev_close <= 0) or (last <= prev_close)
-            if is_shallow_break:
-                if vol_ratio >= 1.20 and is_red_drop:
-                    signals.append("🔴 破位止损")
-                    is_price_break = True
-                else:
-                    signals.append("🟠 深度回踩(观察企稳)")
-                    is_deep_pullback = True
-                    is_price_break = False
+            if vol_ratio >= 1.20 and is_red_drop:
+                signals.append("🔴 破位止损")
+                is_price_break = True
             else:
+                signals.append("🟠 深度回踩(观察企稳)")
+                is_deep_pullback = True
                 is_price_break = False
+        else:
+            is_price_break = False
 
         # 2. 止盈与多头主升体系
         is_tp = False
@@ -2181,9 +2218,16 @@ def evaluate_stock_signal(
             is_tp = True
             tp_reasons.append(f"放量赶顶滞涨(量比{vol_ratio:.1f},RSI{rsi:.1f})")
 
-        # 规则 3: 移动止盈【EMA20 / EMA10 双速自适应变速箱】
+        # 规则 3: 移动止盈【EMA20 / EMA10 双速自适应变速箱】(融入近5日极值，防止破位当天降档漏报)
         if not is_tp:
-            is_crazy_bull = (bias >= 12.0) or (rsi >= 72.0) or (cost > 0 and shares > 0 and pnl_pct >= 12.0)
+            if max_bias_5d == 0.0:
+                max_bias_5d = bias
+            if max_rsi_5d == 50.0:
+                max_rsi_5d = rsi
+            if max_pnl_pct == 0.0 and has_pos:
+                max_pnl_pct = meta.get("max_pnl_pct", pnl_pct)
+
+            is_crazy_bull = (max_bias_5d >= 12.0) or (max_rsi_5d >= 72.0) or (has_pos and max_pnl_pct >= 12.0)
             if is_crazy_bull:
                 # 高位疯牛档: 收紧保护绳，跟踪 EMA10
                 is_break_ema10 = (
@@ -3282,13 +3326,16 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
             prev_ema10 = float(df["EMA10"].iloc[-2]) if ("EMA10" in df and len(df) >= 2) else ema10
             ema5 = float(df["EMA5"].iloc[-1]) if "EMA5" in df else ema20
             prev_ema5 = float(df["EMA5"].iloc[-2]) if ("EMA5" in df and len(df) >= 2) else ema5
+            max_bias_5d = float(df["Max_Bias_5d"].iloc[-1]) if "Max_Bias_5d" in df and not np.isnan(df["Max_Bias_5d"].iloc[-1]) else effective_bias
+            max_rsi_5d = float(df["Max_RSI_5d"].iloc[-1]) if "Max_RSI_5d" in df and not np.isnan(df["Max_RSI_5d"].iloc[-1]) else rsi
 
             eval_res = evaluate_stock_signal(
                 ticker, effective_price, ma50, effective_bias, rsi, vol_ratio, fib_low, fib_high, meta,
                 atr=atr, weather_info=None, macro_data=None, ema20=ema20,
                 high_bias_recently=high_bias_recently, prev_close=prev_close, prev_ema20=prev_ema20,
                 prev_rsi=prev_rsi, min_rsi_5d=min_rsi_5d, pos_60=pos_60, open_price=open_price,
-                ema10=ema10, prev_ema10=prev_ema10, ema5=ema5, prev_ema5=prev_ema5
+                ema10=ema10, prev_ema10=prev_ema10, ema5=ema5, prev_ema5=prev_ema5,
+                max_bias_5d=max_bias_5d, max_rsi_5d=max_rsi_5d, max_pnl_pct=meta.get("max_pnl_pct", 0.0)
             )
             intra_eval = evaluate_intraday_entry(
                 active_price, fib_low, fib_high, ma50,
@@ -3435,13 +3482,16 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
             prev_ema10 = float(df["EMA10"].iloc[-2]) if ("EMA10" in df and len(df) >= 2) else ema10
             ema5 = float(df["EMA5"].iloc[-1]) if "EMA5" in df else ema20
             prev_ema5 = float(df["EMA5"].iloc[-2]) if ("EMA5" in df and len(df) >= 2) else ema5
+            max_bias_5d = float(df["Max_Bias_5d"].iloc[-1]) if "Max_Bias_5d" in df and not np.isnan(df["Max_Bias_5d"].iloc[-1]) else effective_bias
+            max_rsi_5d = float(df["Max_RSI_5d"].iloc[-1]) if "Max_RSI_5d" in df and not np.isnan(df["Max_RSI_5d"].iloc[-1]) else rsi
 
             eval_res = evaluate_stock_signal(
                 ticker, effective_price, ma50, effective_bias, rsi, vol_ratio, fib_low, fib_high, meta,
                 atr=atr, weather_info=weather_info, macro_data=macro_data, ema20=ema20,
                 high_bias_recently=high_bias_recently, prev_close=prev_close, prev_ema20=prev_ema20,
                 prev_rsi=prev_rsi, min_rsi_5d=min_rsi_5d, pos_60=pos_60, open_price=open_price,
-                ema10=ema10, prev_ema10=prev_ema10, ema5=ema5, prev_ema5=prev_ema5
+                ema10=ema10, prev_ema10=prev_ema10, ema5=ema5, prev_ema5=prev_ema5,
+                max_bias_5d=max_bias_5d, max_rsi_5d=max_rsi_5d, max_pnl_pct=meta.get("max_pnl_pct", 0.0)
             )
             intra_eval = evaluate_intraday_entry(
                 active_price, fib_low, fib_high, ma50,
