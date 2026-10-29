@@ -1,7 +1,7 @@
 [
   {
     "id": "STOP_CCXI_2026-10-29",
-    "time": "10-29 07:33",
+    "time": "10-29 16:33",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -15,7 +15,7 @@
   },
   {
     "id": "STOP_OKLO_2026-10-29",
-    "time": "10-29 07:33",
+    "time": "10-29 16:33",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -29,7 +29,7 @@
   },
   {
     "id": "STOP_AAOI_2026-10-29",
-    "time": "10-29 07:33",
+    "time": "10-29 16:33",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -43,7 +43,7 @@
   },
   {
     "id": "STOP_CRWV_2026-10-29",
-    "time": "10-29 07:33",
+    "time": "10-29 16:33",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -57,7 +57,7 @@
   },
   {
     "id": "STOP_ASTS_2026-10-29",
-    "time": "10-29 07:33",
+    "time": "10-29 16:33",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -65,13 +65,13 @@
     "name": "AST SpaceMobile",
     "cat": "太空商业",
     "price": 41.31,
-    "pct_change": 0.8103,
+    "pct_change": 0.8222138299688653,
     "title": "🔴 ASTS (AST SpaceMobile) 跌破波段斐波那契下沿",
     "desc": "偏离 MA50 -26.2%，放量跌破坑底 $51.37，空头宣泄期严禁左侧接刀！"
   },
   {
     "id": "STOP_CRDO_2026-10-29",
-    "time": "10-29 07:33",
+    "time": "10-29 16:33",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -85,7 +85,7 @@
   },
   {
     "id": "STOP_GOOGL_2026-10-29",
-    "time": "10-29 07:33",
+    "time": "10-29 16:33",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -99,7 +99,7 @@
   },
   {
     "id": "STOP_NBIS_2026-10-29",
-    "time": "10-29 07:33",
+    "time": "10-29 16:33",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -113,7 +113,7 @@
   },
   {
     "id": "STOP_STX_2026-10-29",
-    "time": "10-29 07:33",
+    "time": "10-29 16:33",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -127,7 +127,7 @@
   },
   {
     "id": "STOP_COHR_2026-10-29",
-    "time": "10-29 07:33",
+    "time": "10-29 16:33",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -141,7 +141,7 @@
   },
   {
     "id": "STOP_RKLB_2026-10-29",
-    "time": "10-29 07:33",
+    "time": "10-29 16:33",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -149,13 +149,13 @@
     "name": "Rocket Lab",
     "cat": "太空商业",
     "price": 57.4,
-    "pct_change": 0.4973,
+    "pct_change": 0.4973394269920565,
     "title": "🔴 RKLB (Rocket Lab) 跌破波段斐波那契下沿",
     "desc": "偏离 MA50 -11.6%，放量跌破坑底 $63.61，空头宣泄期严禁左侧接刀！"
   },
   {
     "id": "STOP_WDC_2026-10-29",
-    "time": "10-29 07:33",
+    "time": "10-29 16:33",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -169,7 +169,7 @@
   },
   {
     "id": "STOP_AMAT_2026-10-29",
-    "time": "10-29 07:33",
+    "time": "10-29 16:33",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -183,7 +183,7 @@
   },
   {
     "id": "PORT_INTC_HOLD_2026-10-29",
-    "time": "10-29 07:33",
+    "time": "10-29 16:33",
     "category": "portfolio",
     "cat_label": "💼 持仓风控",
     "level": "info",
@@ -191,7 +191,7 @@
     "name": "Intel",
     "cat": "芯片算力",
     "price": 93.02,
-    "pct_change": 1.9095,
+    "pct_change": 1.8988715348781067,
     "title": "💼 INTC 实盘持仓跟踪",
     "desc": "持仓 2 股 · 成本 $93.30 ｜ 现价 $93.02 (-0.30%)",
     "cost": 93.3,
@@ -202,7 +202,7 @@
   },
   {
     "id": "5M_META_2026-10-29",
-    "time": "10-29 07:33",
+    "time": "10-29 16:33",
     "category": "5m_entry",
     "cat_label": "🎯 5m买点",
     "level": "success",
@@ -212,17 +212,17 @@
     "price": 616.0408,
     "pct_change": -1.2416,
     "title": "🎯 META (Meta) 触发 5分钟级买点共振",
-    "desc": "日线超跌(RSI 30.7)后触发5m量价同步共振：站稳VWAP($613.90) + 5m量比1.44x(≥1.2x) + 5m RSI(36.7)收阳确认",
+    "desc": "日线超跌(RSI 30.7)后触发5m量价同步共振：站稳VWAP($613.90) + 5m量比1.44x(≥1.2x) + 5m RSI(36.7)收阳确认 ｜ ⚡期权多头共振(🔥 机构极度看涨, 主力Call $615 Call (2,401张 · $3.54M))",
     "optimal_limit": 606.8,
     "limit_note": "破坑深调·支撑防守单 (-1.5%)",
     "stop_loss": 578.05,
     "batch1_shares": 0.32,
     "batch1_val": 194.2,
-    "options_summary": ""
+    "options_summary": "🔥 机构极度看涨 (张数PCR 0.43 / 资金 0.55) | 主力Call $615 Call (2,401张 · $3.54M)"
   },
   {
     "id": "5M_SKHY_2026-10-29",
-    "time": "10-29 07:33",
+    "time": "10-29 16:33",
     "category": "5m_entry",
     "cat_label": "🎯 5m买点",
     "level": "success",
@@ -232,17 +232,17 @@
     "price": 159.2296,
     "pct_change": 13.3049,
     "title": "🎯 SKHY (SK Hynix) 触发 5分钟级买点共振",
-    "desc": "日内触及黄金坑支撑区($159.23)，连续两根5m K线不创新低且收阳企稳(5m RSI 46.0，量比1.93x)",
+    "desc": "日内触及黄金坑支撑区($159.23)，连续两根5m K线不创新低且收阳企稳(5m RSI 46.0，量比1.93x) ｜ ⚡期权多头共振(🟢 资金偏多看涨, 主力Call $160 Call (1,911张 · $1.70M))",
     "optimal_limit": 158.75,
     "limit_note": "已入坑底核心区·贴支撑低吸 (-0.3%)",
     "stop_loss": 152.46,
     "batch1_shares": 1.24,
     "batch1_val": 196.8,
-    "options_summary": ""
+    "options_summary": "🟢 资金偏多看涨 (张数PCR 1.01 / 资金 0.48) | 主力Call $160 Call (1,911张 · $1.70M)"
   },
   {
     "id": "TP_CRWD_2026-10-29",
-    "time": "10-29 07:33",
+    "time": "10-29 16:33",
     "category": "take_profit",
     "cat_label": "🟣 冲顶减仓",
     "level": "purple",
@@ -256,7 +256,7 @@
   },
   {
     "id": "5M_QQQM_2026-10-29",
-    "time": "10-29 07:33",
+    "time": "10-29 16:33",
     "category": "5m_entry",
     "cat_label": "🎯 5m买点",
     "level": "success",
@@ -266,17 +266,17 @@
     "price": 295.9,
     "pct_change": 0.5893,
     "title": "🎯 QQQM (纳指100微型) 触发 5分钟级买点共振",
-    "desc": "日内触及黄金坑支撑区($295.90)，连续两根5m K线不创新低且收阳企稳(5m RSI 48.4，量比1.65x)",
+    "desc": "日内触及黄金坑支撑区($295.90)，连续两根5m K线不创新低且收阳企稳(5m RSI 48.4，量比1.65x) ｜ ⚡期权多头共振(🟡 多空博弈均衡, 主力Call $310 Call (136张 · $27k))",
     "optimal_limit": 295.01,
     "limit_note": "已入坑底核心区·贴支撑低吸 (-0.3%)",
     "stop_loss": 288.99,
     "batch1_shares": 0.67,
     "batch1_val": 197.7,
-    "options_summary": ""
+    "options_summary": "🟡 多空博弈均衡 (张数PCR 0.75 / 资金 1.28) | 主力Call $310 Call (136张 · $27k)"
   },
   {
     "id": "5M_SOXX_2026-10-29",
-    "time": "10-29 07:33",
+    "time": "10-29 16:33",
     "category": "5m_entry",
     "cat_label": "🎯 5m买点",
     "level": "success",
@@ -286,17 +286,17 @@
     "price": 511.5,
     "pct_change": 2.1289,
     "title": "🎯 SOXX (费城半导体ETF) 触发 5分钟级买点共振",
-    "desc": "日内触及黄金坑支撑区($511.50)，连续两根5m K线不创新低且收阳企稳(5m RSI 45.8，量比2.03x)",
+    "desc": "日内触及黄金坑支撑区($511.50)，连续两根5m K线不创新低且收阳企稳(5m RSI 45.8，量比2.03x) ｜ ⚡期权多头共振(🔥 机构极度看涨, 主力Call $540 Call (7,618张 · $4.91M))",
     "optimal_limit": 511.87,
     "limit_note": "已入坑底核心区·贴支撑低吸 (+0.1%)",
     "stop_loss": 504.08,
     "batch1_shares": 0.39,
     "batch1_val": 199.6,
-    "options_summary": ""
+    "options_summary": "🔥 机构极度看涨 (张数PCR 0.21 / 资金 0.20) | 主力Call $540 Call (7,618张 · $4.91M)"
   },
   {
     "id": "PORT_SOXL_HOLD_2026-10-29",
-    "time": "10-29 07:33",
+    "time": "10-29 16:33",
     "category": "portfolio",
     "cat_label": "💼 持仓风控",
     "level": "info",
@@ -315,7 +315,7 @@
   },
   {
     "id": "STOP_KORU_2026-10-29",
-    "time": "10-29 07:33",
+    "time": "10-29 16:33",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -329,7 +329,7 @@
   },
   {
     "id": "PORT_SOXS_HOLD_2026-10-29",
-    "time": "10-29 07:33",
+    "time": "10-29 16:33",
     "category": "portfolio",
     "cat_label": "💼 持仓风控",
     "level": "info",
@@ -348,7 +348,7 @@
   },
   {
     "id": "TP_SOXS_2026-10-29",
-    "time": "10-29 07:33",
+    "time": "10-29 16:33",
     "category": "take_profit",
     "cat_label": "🟣 冲顶减仓",
     "level": "purple",
@@ -362,7 +362,7 @@
   },
   {
     "id": "WEATHER_阴天防守_2026-10-29",
-    "time": "10-29 07:33",
+    "time": "10-29 16:33",
     "category": "macro_weather",
     "cat_label": "⛅ 宏观气象",
     "level": "info",
