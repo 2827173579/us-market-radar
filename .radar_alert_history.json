@@ -1,5 +1,5 @@
 {
-  "weather": "暴雨空仓",
+  "weather": "阴天防守",
   "targets": {
     "AAOI": {
       "state": "STOP_LOSS",
@@ -150,8 +150,8 @@
       "last_notified_at": 0.0
     },
     "SPCX": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1793316418.7576082
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "AAPL": {
       "state": "NORMAL",
