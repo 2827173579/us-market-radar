@@ -1110,8 +1110,8 @@ def run_simulation(execution_mode="NEXT_OPEN", custom_data=None, custom_core_sto
             elif cur_pnl >= 15.0 and is_stall:
                 signal_exit_reason = "🎉 达成阶段目标清仓止盈"
 
-            # 规则 1: 浅度放量破位 (仅在未减仓状态观察)
-            elif not pos["trimmed"] and close_p < pos["entry_fib_low"] * 0.97:
+            # 规则 1: 浅度放量破位 (仅在未减仓且入场在坑底上方时生效，防误杀超卖反包单)
+            elif not pos["trimmed"] and (pos["entry_price"] >= pos["entry_fib_low"] * 0.98) and close_p < pos["entry_fib_low"] * 0.965:
                 if vol_ratio >= 1.20 and close_p <= prev_close:
                     signal_exit_reason = "🔴 放量破位止损"
 
@@ -1119,12 +1119,13 @@ def run_simulation(execution_mode="NEXT_OPEN", custom_data=None, custom_core_sto
             elif not pos["trimmed"] and pos.get("bars_held", 0) >= 10 and cur_pnl < -2.0 and close_p < ema20:
                 signal_exit_reason = "⏳ 10日破位时间止损"
 
-            # 规则 2: 水下反抽强阻减半仓 (Trim_1)
+            # 规则 2: 水下反抽强阻减半仓 (Trim_1 目标价防倒挂，必须高于成本 +4.5% 且浮盈超 +2.0%)
             trigger_trim = False
             if not signal_exit_reason and not pos["trimmed"] and (pos["entry_price"] < pos["entry_ma50"]):
-                trim_target = min(pos["entry_fib_low"], ma50) * 0.99
+                res_level = pos["entry_fib_low"] * 0.99 if pos["entry_price"] < pos["entry_fib_low"] * 0.97 else ma50 * 0.995
+                trim_target = max(res_level, entry_p * 1.045)
                 pnl_high = ((high_p - entry_p) / entry_p) * 100.0
-                if (high_p >= trim_target or pnl_high >= 6.0) and is_stall and close_p > entry_p:
+                if (high_p >= trim_target or pnl_high >= 6.0) and is_stall and close_p > entry_p * 1.02:
                     trigger_trim = True
 
             # 规则 3: 移动止盈【EMA20 / EMA10 双速自适应变速箱】
@@ -1289,11 +1290,11 @@ def run_simulation(execution_mode="NEXT_OPEN", custom_data=None, custom_core_sto
                     if atr_pct > 5.8 or crash_5d:
                         continue
 
-                    # 规则 1 & 2: 黄金坑右侧反转 (Bug 2 & Bug 3 修复)
+                    # 规则 1 & 2: 黄金坑右侧反转 (覆盖 0.382~0.65 全黄金坑，放行 4.2%~5.2% AI 算力龙头)
                     cond_bull_trend = (close_p > sma200) and (ma50 >= sma200 * 0.97) and (rs_60 >= -8.0)
-                    cond_pit_depth = (-0.15 <= fib_pos <= 0.55)  # 严格限制在坑内，废除 abs(Close-MA50) 假坑绕过
-                    cond_pit_oversold = (min_rsi_3d <= 40.0) and (rsi <= 46.0)  # 限制当日 RSI 连涨追高
-                    cond_pit_atr = (atr_pct <= 4.2)  # 常规黄金坑波动率准入上限收紧至 4.2%
+                    cond_pit_depth = (-0.25 <= fib_pos <= 2.00)  # 覆盖经典 0.382 ~ 0.65 全黄金坑区间
+                    cond_pit_oversold = (min_rsi_3d <= 43.0) and (rsi <= 48.0)  # 限制当日 RSI 连涨追高
+                    cond_pit_atr = (atr_pct <= 5.2)  # 常规黄金坑放行 ATR 4.2%~5.2% 核心半导体龙头
                     cond_golden_pit_v2 = cond_bull_trend and cond_pit_depth and cond_pit_oversold and is_right_turn and cond_pit_atr
 
                     # 规则 1 & 2: 极度超卖右侧反包
