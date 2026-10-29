@@ -3,35 +3,35 @@
   "targets": {
     "AAOI": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793282788.7345142
+      "last_notified_at": 1793297305.4715586
     },
     "CRWV": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793282788.7345142
+      "last_notified_at": 1793297305.4715586
     },
     "OKLO": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793282788.7345142
+      "last_notified_at": 1793297305.4715586
     },
     "CRDO": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793282788.7345142
+      "last_notified_at": 1793297305.4715586
     },
     "CCXI": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793282788.7345142
+      "last_notified_at": 1793297305.4715586
     },
     "NBIS": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793282788.7345142
+      "last_notified_at": 1793297305.4715586
     },
     "ASTS": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793282788.7345142
+      "last_notified_at": 1793297305.4715586
     },
     "COHR": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793282788.7345142
+      "last_notified_at": 1793297305.4715586
     },
     "FPS": {
       "state": "STOP_LOSS",
@@ -106,8 +106,8 @@
       "last_notified_at": 0.0
     },
     "TSM": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1793297186.2776349
+      "state": "GOLDEN_PIT",
+      "last_notified_at": 1793297305.4715586
     },
     "AXP": {
       "state": "NORMAL",
