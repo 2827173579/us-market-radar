@@ -42,8 +42,8 @@
       "last_notified_at": 1793289868.0182133
     },
     "RKLB": {
-      "state": "STOP_LOSS",
-      "last_notified_at": 1793302708.4675422
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "WDC": {
       "state": "NORMAL",
@@ -178,8 +178,8 @@
       "last_notified_at": 1793303546.5288873
     },
     "SOXX": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1793303546.5288873
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "SOXL": {
       "state": "NORMAL",
