@@ -150,8 +150,8 @@
       "last_notified_at": 0.0
     },
     "SPCX": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1793311106.7692635
+      "state": "GOLDEN_PIT",
+      "last_notified_at": 1793311352.8793356
     },
     "AAPL": {
       "state": "NORMAL",
@@ -237,6 +237,6 @@
   "position_peaks": {
     "INTC": 93.49,
     "SOXL": 108.2109,
-    "SOXS": 47.19
+    "SOXS": 47.25
   }
 }
