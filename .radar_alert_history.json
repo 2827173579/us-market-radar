@@ -86,8 +86,8 @@
       "last_notified_at": 1793295506.9021878
     },
     "CEG": {
-      "state": "GOLDEN_PIT",
-      "last_notified_at": 1793306547.6383657
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "ASML": {
       "state": "NORMAL",
@@ -98,8 +98,8 @@
       "last_notified_at": 1793302346.138156
     },
     "LITE": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1793308106.5090744
     },
     "VST": {
       "state": "NORMAL",
