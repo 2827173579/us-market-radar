@@ -174,8 +174,8 @@
       "last_notified_at": 0.0
     },
     "QQQM": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1793285189.7420506
     },
     "SOXX": {
       "state": "NORMAL",
@@ -222,8 +222,8 @@
       "last_notified_at": 0.0
     },
     "PORT_INTC": {
-      "state": "PORT_NORMAL",
-      "last_notified_at": 0.0
+      "state": "INTC_NEAR_GOAL",
+      "last_notified_at": 1793285189.7420506
     },
     "PORT_SOXL": {
       "state": "PORT_NORMAL",
