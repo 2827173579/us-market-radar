@@ -126,12 +126,12 @@
       "last_notified_at": 0.0
     },
     "META": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1793347796.462479
     },
     "LITE": {
-      "state": "STOP_LOSS",
-      "last_notified_at": 1793347497.6903243
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1793347796.462479
     },
     "HPE": {
       "state": "NORMAL",
@@ -218,8 +218,8 @@
       "last_notified_at": 0.0
     },
     "PORT_SOXL": {
-      "state": "SOXL_NEAR_STOP",
-      "last_notified_at": 1793347735.9870176
+      "state": "PORT_NORMAL",
+      "last_notified_at": 0.0
     },
     "KORU": {
       "state": "NORMAL",
