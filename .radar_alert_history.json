@@ -94,16 +94,16 @@
       "last_notified_at": 1793379931.1994066
     },
     "VST": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "STOP_LOSS",
+      "last_notified_at": 1793384971.1074986
     },
     "NVDA": {
       "state": "STOP_LOSS",
       "last_notified_at": 1793379931.1994066
     },
     "ORCL": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "STOP_LOSS",
+      "last_notified_at": 1793384971.1074986
     },
     "CEG": {
       "state": "NORMAL",
@@ -122,8 +122,8 @@
       "last_notified_at": 1793380049.1221948
     },
     "SKHY": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "STOP_LOSS",
+      "last_notified_at": 1793384971.1074986
     },
     "META": {
       "state": "NORMAL",
@@ -241,6 +241,6 @@
   "position_peaks": {
     "INTC": 93.3,
     "SOXL": 108.2109,
-    "SOXS": 53.67
+    "SOXS": 54.44
   }
 }
