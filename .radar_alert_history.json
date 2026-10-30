@@ -142,8 +142,8 @@
       "last_notified_at": 0.0
     },
     "SPCX": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1793363199.0422995
     },
     "VRT": {
       "state": "NORMAL",
@@ -218,8 +218,8 @@
       "last_notified_at": 0.0
     },
     "PORT_SOXL": {
-      "state": "SOXL_CRITICAL_STOP",
-      "last_notified_at": 1793362598.6593015
+      "state": "SOXL_NEAR_STOP",
+      "last_notified_at": 1793363199.0422995
     },
     "KORU": {
       "state": "NORMAL",
