@@ -151,6 +151,7 @@ FINNHUB_API_KEY = os.environ.get("FINNHUB_API_KEY") or "d9be4q1r01qmk4glemdgd9be
 
 # PushPlus 微信推送配置与去重缓存
 PUSHPLUS_TOKEN = os.environ.get("PUSHPLUS_TOKEN") or "eca6f1f8c3494843aa7f1170e34fd2b6"
+PUSHPLUS_CHANNEL = os.environ.get("PUSHPLUS_CHANNEL") or "clawbot"
 
 # ------------------------------------------------------------------------------
 # 🎯 账户资金与风控配置 (V3.1 旗舰纯比例制 · 单股上限 25% · 1.5%风险平价一次性建仓)
@@ -167,8 +168,8 @@ ALERT_CACHE_FILE = os.path.join(SCRATCH_DIR, ".radar_alert_history.json")
 TARGET_WATCHLIST_FILE = os.path.join(SCRATCH_DIR, "target_watchlist.json")
 USER_PORTFOLIO_FILE = os.path.join(SCRATCH_DIR, "user_portfolio.json")
 NOTIFICATION_CACHE_FILE = os.path.join(SCRATCH_DIR, ".terminal_notifications.json")
-ALERT_COOLDOWN_SECONDS = 14400  # 4 小时同状态防刷冷却周期
-ENTRY_COOLDOWN_SECONDS = 7200   # 自选日内建仓 2 小时通知冷却周期
+ALERT_COOLDOWN_SECONDS = 7200   # 2 小时同状态防刷冷却周期 (避免夜盘/低频期长时间静默)
+ENTRY_COOLDOWN_SECONDS = 3600   # 自选日内建仓 1 小时通知冷却周期
 
 def load_terminal_notifications():
     """读取终端消息通知中心存档"""
@@ -1176,31 +1177,45 @@ def save_alert_history(history):
     except Exception as e:
         print(f"[!] 保存预警历史异常: {e}")
 
-def send_pushplus_wechat_alert(title, markdown_content):
-    """通过 PushPlus API 向微信推送 Markdown 卡片消息"""
+def send_pushplus_wechat_alert(title, markdown_content, channel=None):
+    """通过 PushPlus API 向微信推送 Markdown 卡片消息 (专线直达 ClawBot)"""
     if not PUSHPLUS_TOKEN or PUSHPLUS_TOKEN == "YOUR_TOKEN":
         return False
     
-    url = "http://www.pushplus.plus/send"
+    # 采用毫秒级极速 HTTPS 接口 (0.2s 极速响应，避免 http 超时)
+    url = "https://www.pushplus.plus/send"
+    target_channel = channel or globals().get("PUSHPLUS_CHANNEL", "clawbot")
     payload = {
         "token": PUSHPLUS_TOKEN,
         "title": title,
         "content": markdown_content,
         "template": "markdown"
     }
+    if target_channel:
+        payload["channel"] = target_channel
+
     try:
         req = urllib.request.Request(
             url,
             data=json.dumps(payload).encode("utf-8"),
-            headers={"Content-Type": "application/json"}
+            headers={"Content-Type": "application/json", "User-Agent": "Mozilla/5.0"}
         )
-        with urllib.request.urlopen(req, timeout=10) as resp:
+        with urllib.request.urlopen(req, timeout=12) as resp:
             data = json.loads(resp.read().decode("utf-8", errors="replace"))
             if data.get("code") == 200:
-                print(f"  [+] 📱 微信卡片推送成功: {title}")
+                print(f"  [+] 📱 微信[{target_channel}]卡片推送成功: {title}")
                 return True
             else:
-                print(f"  [!] 📱 微信推送返回错误: {data.get('msg')}")
+                print(f"  [!] 📱 微信推送返回错误: {data.get('msg')} (数据: {data.get('data')})")
+                # 若专向 channel 异常，自动回退到默认账户通道二次重试
+                if target_channel:
+                    del payload["channel"]
+                    req_fb = urllib.request.Request(url, data=json.dumps(payload).encode("utf-8"), headers={"Content-Type": "application/json", "User-Agent": "Mozilla/5.0"})
+                    with urllib.request.urlopen(req_fb, timeout=10) as resp_fb:
+                        data_fb = json.loads(resp_fb.read().decode("utf-8", errors="replace"))
+                        if data_fb.get("code") == 200:
+                            print(f"  [+] 📱 微信[默认回退通道]推送成功: {title}")
+                            return True
     except Exception as e:
         print(f"  [!] 📱 微信推送网络异常: {e}")
     return False
