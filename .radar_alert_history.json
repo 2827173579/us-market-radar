@@ -130,8 +130,8 @@
       "last_notified_at": 0.0
     },
     "LITE": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "STOP_LOSS",
+      "last_notified_at": 1793350675.792819
     },
     "HPE": {
       "state": "NORMAL",
