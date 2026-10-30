@@ -122,8 +122,8 @@
       "last_notified_at": 1793391781.47412
     },
     "SKHY": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "STOP_LOSS",
+      "last_notified_at": 1793392592.767324
     },
     "META": {
       "state": "NORMAL",
@@ -139,7 +139,7 @@
     },
     "AMD": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793385236.5899425
+      "last_notified_at": 1793392592.767324
     },
     "SPCX": {
       "state": "NORMAL",
