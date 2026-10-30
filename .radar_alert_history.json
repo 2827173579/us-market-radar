@@ -94,16 +94,16 @@
       "last_notified_at": 1793363437.0306718
     },
     "VST": {
-      "state": "STOP_LOSS",
-      "last_notified_at": 1793366921.21274
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "NVDA": {
       "state": "NORMAL",
       "last_notified_at": 0.0
     },
     "ORCL": {
-      "state": "STOP_LOSS",
-      "last_notified_at": 1793363437.0306718
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "CEG": {
       "state": "NORMAL",
@@ -126,12 +126,12 @@
       "last_notified_at": 0.0
     },
     "META": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1793366921.21274
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "LITE": {
-      "state": "STOP_LOSS",
-      "last_notified_at": 1793363437.0306718
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "HPE": {
       "state": "NORMAL",
@@ -234,8 +234,8 @@
       "last_notified_at": 0.0
     },
     "PORT_SOXS": {
-      "state": "PORT_NORMAL",
-      "last_notified_at": 0.0
+      "state": "SOXS_HEDGE_CLIMAX",
+      "last_notified_at": 1793367041.9335015
     }
   },
   "position_peaks": {
