@@ -118,8 +118,8 @@
       "last_notified_at": 1793379931.1994066
     },
     "ASML": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "STOP_LOSS",
+      "last_notified_at": 1793380049.1221948
     },
     "SKHY": {
       "state": "NORMAL",
@@ -241,6 +241,6 @@
   "position_peaks": {
     "INTC": 93.3,
     "SOXL": 108.2109,
-    "SOXS": 53.28
+    "SOXS": 53.37
   }
 }
