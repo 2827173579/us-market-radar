@@ -1976,6 +1976,7 @@
                         is_deep_pullback: m.is_deep_pullback,
                         is_take_profit: m.is_take_profit,
                         is_crash_halt: Boolean(m.is_crash_halt),
+                        is_cooling_halt: Boolean(m.is_cooling_halt),
                         optimal_limit: m.optimal_limit,
                         limit_note: m.limit_note,
                         entry_stop_loss: m.entry_stop_loss,
@@ -2221,21 +2222,24 @@
                 intcBox.style.display = "none";
             }
 
-            // 2.5 关键建仓与风控指标前置计算 (含暴跌熔断保护闸)
+            // 2.5 关键建仓与风控指标前置计算 (含暴跌熔断与冷却期保护闸)
             const isCrashHalt = Boolean(data.is_crash_halt || (data.optimal_limit === 0 && data.limit_note && data.limit_note.includes("破位")));
+            const isCoolingHalt = Boolean(data.is_cooling_halt || (data.intraday_status_text && data.intraday_status_text.includes("冷却期")));
             let optimalLimit = data.optimal_limit !== undefined ? data.optimal_limit : curActive;
-            if (optimalLimit === 0 && !isCrashHalt && curFibHigh > curFibLow) {
+            if (optimalLimit === 0 && !isCrashHalt && !isCoolingHalt && curFibHigh > curFibLow) {
                 const midAxis = curFibLow + 0.382 * (curFibHigh - curFibLow);
                 optimalLimit = Math.round(midAxis * 100) / 100;
             }
             const maxAlloc = data.max_alloc || 0;
             const totalFractional = data.fractional_shares || (curActive > 0 ? (maxAlloc / curActive) : 0);
-            const b1Shares = isCrashHalt ? 0 : Math.round(totalFractional * 100) / 100;
-            const b1Val = isCrashHalt ? 0 : Math.round(b1Shares * optimalLimit * 100) / 100;
+            const fractional = totalFractional;
+            const b1Shares = (isCrashHalt || isCoolingHalt) ? 0 : Math.round(totalFractional * 100) / 100;
+            const b1Val = (isCrashHalt || isCoolingHalt) ? 0 : Math.round(b1Shares * optimalLimit * 100) / 100;
             const rawPitStop = curFibLow > 0 ? curFibLow * 0.97 : (optimalLimit > 0 ? optimalLimit * 0.96 : 0);
             const fallbackStop = (optimalLimit > 0 && rawPitStop >= optimalLimit * 0.90 && rawPitStop <= optimalLimit * 0.985) ? rawPitStop : (optimalLimit * 0.96);
-            const stopLoss = isCrashHalt ? 0 : (data.entry_stop_loss || Math.round(fallbackStop * 100) / 100);
-            const stopLossPct = isCrashHalt ? 0 : (data.stop_loss_pct !== undefined ? data.stop_loss_pct : (optimalLimit > 0 ? ((stopLoss - optimalLimit) / optimalLimit * 100) : -4.0));
+            const stopLoss = (isCrashHalt || isCoolingHalt) ? 0 : (data.entry_stop_loss || Math.round(fallbackStop * 100) / 100);
+            const stopLossPct = (isCrashHalt || isCoolingHalt) ? 0 : (data.stop_loss_pct !== undefined ? data.stop_loss_pct : (optimalLimit > 0 ? ((stopLoss - optimalLimit) / optimalLimit * 100) : -4.0));
+            const cancelLine = Math.max(data.rth_low || 0, curLast * 0.985);
 
             // 3. 核心状态研判与四维深度成因分析
             const sig = data.signal || "";
@@ -2333,10 +2337,10 @@
                 themeBorder = "#00e676";
                 actionType = "V3.1 黄金坑右侧确认";
                 mainVerdict = "🟢 V3.1 黄金坑就位 (9:30开盘执行)";
-                actionDirective = `【V3.1 开盘执行标准】标的已触发右侧止跌企稳！9:30 开盘执行：买入上限昨收+2.0% ($${optimalLimit ? optimalLimit.toFixed(2) : '--'})，防追高；隔夜若低开跌破昨收-1.5% ($${(curLast * 0.985).toFixed(2)}) 撤单作废。仓位执行 1.5% 账户风险平价一次性建仓 (${data.fractional_shares ? data.fractional_shares.toFixed(2) : '--'} 股，单股上限 25%)，同时布设 GTC 结构止损单 ($${stopLoss > 0 ? stopLoss.toFixed(2) : '--'})！`;
+                actionDirective = `【V3.1 开盘执行标准】标的已触发右侧止跌企稳！9:30 开盘执行指令：<br>1️⃣ 9:30开盘买入上限: $${optimalLimit.toFixed(2)}<br>2️⃣ 隔夜低开作废底线: $${cancelLine.toFixed(2)}<br>3️⃣ V3.1 风险平价仓位: 约 $${b1Val} (${fractional.toFixed(2)} 股)<br>4️⃣ GTC 铁血结构止损: $${stopLoss.toFixed(2)}`;
                 allocLabel = "V3.1 仓位建议 (单股上限 25%)：";
                 allocSub = "1.5% 账户风险平价一次性建仓";
-                allocVal = data.fractional_shares ? (data.fractional_shares.toFixed(2) + " 股") : "--";
+                allocVal = fractional > 0 ? (fractional.toFixed(2) + " 股") : (data.fractional_shares ? (data.fractional_shares.toFixed(2) + " 股") : "--");
             } else if (isStop) {
                 themeColor = "#ff1744";
                 themeBg = "linear-gradient(135deg, rgba(255, 23, 68, 0.08), #181b22)";
@@ -2438,20 +2442,28 @@
             const intraReason = data.intraday_reason || "等待价格回踩至建议挂单价附近并出现 5m RSI 超卖拐头或 VWAP 突破信号。";
 
             if (intraBannerEl && intraStatusEl && intraReasonEl) {
-                intraStatusEl.innerText = intraStatusText;
-                intraReasonEl.innerText = intraReason;
-                if (isEntryReady) {
-                    intraBannerEl.style.background = "rgba(0, 230, 118, 0.16)";
-                    intraBannerEl.style.borderColor = "#00e676";
-                    intraStatusEl.style.color = "#00e676";
-                } else if (intraStatusText.includes("严禁") || intraStatusText.includes("超买") || intraStatusText.includes("跌破")) {
+                if (isCoolingHalt) {
                     intraBannerEl.style.background = "rgba(255, 82, 82, 0.14)";
-                    intraBannerEl.style.borderColor = "rgba(255, 82, 82, 0.45)";
+                    intraBannerEl.style.borderColor = "#ff5252";
                     intraStatusEl.style.color = "#ff5252";
+                    intraStatusEl.innerText = "⛔ 暴跌冷却期 (3日内曾大跌·等待日线企稳确认)";
+                    intraReasonEl.innerText = data.intraday_reason || "标的3日内曾发生单日大跌，目前处于冷却观察期，需等待日线右侧企稳确认。";
                 } else {
-                    intraBannerEl.style.background = "rgba(255, 215, 0, 0.10)";
-                    intraBannerEl.style.borderColor = "rgba(255, 215, 0, 0.35)";
-                    intraStatusEl.style.color = "#ffd700";
+                    intraStatusEl.innerText = intraStatusText;
+                    intraReasonEl.innerText = intraReason;
+                    if (isEntryReady) {
+                        intraBannerEl.style.background = "rgba(0, 230, 118, 0.16)";
+                        intraBannerEl.style.borderColor = "#00e676";
+                        intraStatusEl.style.color = "#00e676";
+                    } else if (intraStatusText.includes("严禁") || intraStatusText.includes("超买") || intraStatusText.includes("跌破") || intraStatusText.includes("冷却期")) {
+                        intraBannerEl.style.background = "rgba(255, 82, 82, 0.14)";
+                        intraBannerEl.style.borderColor = "rgba(255, 82, 82, 0.45)";
+                        intraStatusEl.style.color = "#ff5252";
+                    } else {
+                        intraBannerEl.style.background = "rgba(255, 215, 0, 0.10)";
+                        intraBannerEl.style.borderColor = "rgba(255, 215, 0, 0.35)";
+                        intraStatusEl.style.color = "#ffd700";
+                    }
                 }
             }
 
@@ -2514,6 +2526,27 @@
                 if (stopEl) {
                     stopEl.innerHTML = `<span style="color:#ff5252; font-size:12px; font-weight:bold;">⛔ 观望不设单</span>`;
                 }
+            } else if (isCoolingHalt) {
+                if (optEl) {
+                    optEl.innerText = "⛔ 暂停挂单 (暴跌冷却期)";
+                    optEl.style.color = "#ff5252";
+                    optEl.style.fontSize = "15px";
+                }
+                if (noteEl) {
+                    noteEl.innerText = data.limit_note || "3日内曾大跌·等待日线企稳确认";
+                    noteEl.style.color = "#ff5252";
+                }
+                if (b1El) {
+                    b1El.innerText = "0.0% (冻结)";
+                    b1El.style.color = "#9ca3af";
+                }
+                if (b1ValEl) {
+                    b1ValEl.innerText = "等待日线企稳确认";
+                    b1ValEl.style.color = "#ff5252";
+                }
+                if (stopEl) {
+                    stopEl.innerHTML = `<span style="color:#ff5252; font-size:12px; font-weight:bold;">⛔ 观望不设单</span>`;
+                }
             } else {
                 if (optEl) {
                     optEl.innerText = (optimalLimit && optimalLimit > 0) ? ("$" + optimalLimit.toFixed(2)) : "--";
@@ -2532,8 +2565,14 @@
                         noteEl.style.color = "#00e676";
                     }
                 }
-                if (b1El) b1El.innerText = b1Shares > 0 ? (b1Shares.toFixed(2) + " 股") : "--";
-                if (b1ValEl) b1ValEl.innerText = b1Val > 0 ? (`约 $${b1Val.toFixed(1)} · 1.5%风险平价`) : "1.5% 风险平价一次性建仓";
+                if (b1El) {
+                    b1El.innerText = b1Shares > 0 ? (b1Shares.toFixed(2) + " 股") : "--";
+                    b1El.style.color = "#00e676";
+                }
+                if (b1ValEl) {
+                    b1ValEl.innerText = b1Val > 0 ? (`约 $${b1Val.toFixed(1)} · 1.5%风险平价`) : "1.5% 风险平价一次性建仓";
+                    b1ValEl.style.color = "#6b7280";
+                }
                 if (stopEl) stopEl.innerHTML = stopLoss > 0 ? `$${stopLoss.toFixed(2)} <span style="font-size:10px; color:#f87171;">($${stopLossPct.toFixed(1)}%)</span>` : "--";
             }
             const bandEl = document.getElementById("pEntryFibBand");

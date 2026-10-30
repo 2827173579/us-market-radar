@@ -26,7 +26,7 @@ trading_dates = sorted(indicators_data["QQQ"].index)
 warmup_period = min(60, len(trading_dates) - 1)
 trading_dates = trading_dates[warmup_period:]
 
-REMOVED_TICKERS = {'KO', 'PEP', 'MCD', 'NKE', 'V', 'INTC', 'WDC', 'HPE', 'MRNA'}
+REMOVED_TICKERS = {'KO', 'PEP', 'MCD', 'NKE', 'V', 'INTC', 'WDC', 'HPE', 'MRNA', 'AXTI'}
 AGGRESSIVE_STOCKS = [t for t in CORE_STOCKS if t not in REMOVED_TICKERS]
 
 
@@ -365,6 +365,8 @@ def run_v31_synthesis(
             candidates = []
             for ticker in stocks_pool:
                 if ticker in active_positions or any(o.get("ticker") == ticker for o in pending_orders):
+                    continue
+                if ticker not in indicators_data:
                     continue
                 df_tk = indicators_data[ticker]
                 if date not in df_tk.index:

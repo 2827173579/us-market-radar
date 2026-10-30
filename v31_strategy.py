@@ -42,7 +42,7 @@ CORE_STOCKS = [
 
 MACRO_BENCHMARKS = ['QQQ', 'SMH']
 
-REMOVED_TICKERS = {'KO', 'PEP', 'MCD', 'NKE', 'V', 'INTC', 'WDC', 'HPE', 'MRNA'}
+REMOVED_TICKERS = {'KO', 'PEP', 'MCD', 'NKE', 'V', 'INTC', 'WDC', 'HPE', 'MRNA', 'AXTI'}
 AGGRESSIVE_STOCKS = [t for t in CORE_STOCKS if t not in REMOVED_TICKERS]
 
 
@@ -257,18 +257,30 @@ def compute_rolling_indicators(df: pd.DataFrame) -> pd.DataFrame:
     c_60 = close.shift(60)
     d["RET_60"] = ((close - c_60) / (c_60 + 1e-9)) * 100.0
 
-    # Crash 5d Filter
+    # Crash 5d & 3d Filter (V3.2)
     single_day_drop = (close - prev_close) / (prev_close + 1e-9) <= -0.06
     gap_down_drop = (open_p - prev_close) / (prev_close + 1e-9) <= -0.045
     is_crash_day = single_day_drop | gap_down_drop
     d["Crash_5d"] = is_crash_day.rolling(5, min_periods=1).max().astype(bool)
+    d["Crash_3d"] = is_crash_day.rolling(3, min_periods=1).max().astype(bool)
+    d["Prev_Crash_3d"] = is_crash_day.shift(1).rolling(3, min_periods=1).max().fillna(0).astype(bool)
 
     # Right-Turn Bullish Reversal
     body_pct = (close - open_p) / (open_p + 1e-9)
     prev_high = high.shift(1)
     d["Is_Right_Turn"] = (body_pct >= 0.005) & ((close > prev_high) | (close > d["EMA5"]))
+    d["Prev_Is_Right_Turn"] = d["Is_Right_Turn"].shift(1).fillna(0).astype(bool)
+
+    crash_red_body = np.where(is_crash_day & (open_p > close), open_p - close, np.where(is_crash_day, (prev_close - close).clip(lower=0.0), 0.0))
+    d["Prev_Crash_Body"] = pd.Series(crash_red_body, index=d.index).shift(1).rolling(3, min_periods=1).max().fillna(0.0)
+    d["Prev_Crash_Close"] = np.where(is_crash_day, close, np.nan)
+    d["Prev_Crash_Close"] = pd.Series(d["Prev_Crash_Close"], index=d.index).shift(1).ffill().fillna(close)
 
     return d
+
+
+# Alias for indicator computation
+compute_indicators = compute_rolling_indicators
 
 
 def load_indicators_cache(cache_file: Optional[str] = None) -> Tuple[Dict[str, pd.DataFrame], List[Any]]:
@@ -763,6 +775,8 @@ def run_v31_simulation(
             candidates = []
             for ticker in stocks_pool:
                 if ticker in active_positions or any(o.get("ticker") == ticker for o in pending_orders):
+                    continue
+                if ticker not in indicators_data:
                     continue
                 df_tk = indicators_data[ticker]
                 if date not in df_tk.index:

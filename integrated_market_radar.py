@@ -976,12 +976,20 @@ def fetch_options_anomaly_map(focus_tickers, spot_map=None):
 
     return cached_map
 
-def evaluate_intraday_entry(active_price, fib_low, fib_high, ma50, is_pit, is_stop, dist_to_pit, intra_info, earnings_info=None, rs_20d=0.0, atr=0.0, daily_rsi=50.0, options_info=None, pct_change=0.0, ext_pct=None):
+def evaluate_intraday_entry(
+    active_price, fib_low, fib_high, ma50, is_pit, is_stop, dist_to_pit, intra_info,
+    earnings_info=None, rs_20d=0.0, atr=0.0, daily_rsi=50.0, options_info=None,
+    pct_change=0.0, ext_pct=None, rth_high=None, prev_crash_3d=False,
+    prev_is_right_turn=False, ema5=0.0, prev_crash_body=0.0, prev_crash_close=0.0,
+    session_code="REGULAR"
+):
     """
-    真正的 5 分钟级日内量化建仓评估器：
-    1. 科学测算建议挂单价 optimal_limit 与防守止损线 entry_stop_loss (严禁止损线高于买入价倒挂)
-    2. 结合日线黄金坑位置 + 5m RSI 超卖底背离 + 日内 VWAP 均价线 + 5m 相对量比 RVOL + 财报日历避雷，判定是否触发日内买点
-    3. 加装【极端跳空/暴跌防手痒熔断闸】：单日急跌或盘后跳空破位时，强制冻结挂单与底仓推荐
+    真正的 5 分钟级日内量化建仓评估器 (V3.2 终极版)：
+    1. ATR 双轨自适应暴跌熔断阈值 (-max(3.8, min(5.2, 2.0 * atr_pct)))
+    2. 冲高跳水【断头铡刀】日内防接刀 (rth_high 跳水 <= -6.0% 且当日 <= -1.0%)
+    3. 盘前盘后 +3% 强势反转死锁自动解除机制
+    4. 隔夜失忆症防御：3 日暴跌冷却期冻结 (需满足右侧反转阳线或日内收复50%大阴线实体强反抽)
+    5. V3.1 9:30 开盘执行指令与挂单上限价计算
     """
     vwap = intra_info.get("vwap", 0.0) or active_price
     rsi_5m = intra_info.get("rsi_5m", 50.0)
@@ -991,21 +999,40 @@ def evaluate_intraday_entry(active_price, fib_low, fib_high, ma50, is_pit, is_st
     is_5m_green = intra_info.get("is_5m_green", True)
     is_higher_low = intra_info.get("is_5m_higher_low", True)
     rth_low = intra_info.get("rth_low", active_price)
+    curr_rth_high = rth_high if (rth_high is not None and rth_high > 0) else intra_info.get("rth_high", active_price)
+    rth_close = intra_info.get("rth_close", active_price) or active_price
     e_info = earnings_info or {}
     days_to_e = e_info.get("days_to_earnings")
     is_e_risk = e_info.get("is_earnings_risk", False)
     e_tag = e_info.get("earnings_tag", "")
-
-    # 0. 极端跳空/暴跌防手痒熔断闸判定 (严格限定为当日/盘后急杀，不误伤已筑底股票)
     safe_ext = ext_pct if ext_pct is not None else 0.0
+
+    # --------------------------------------------------------------------------
+    # 0. 极端跳空/暴跌防手痒熔断闸判定 (V3.2 ATR 双轨自适应 + 盘前盘后反转解锁 + 断头铡刀跳水)
+    # --------------------------------------------------------------------------
+    atr_pct = (atr / active_price * 100.0) if (atr > 0 and active_price > 0) else 3.0
+    crash_thresh = -max(3.8, min(5.2, 2.0 * atr_pct))
+
+    # 基础暴跌判定
+    is_base_crash = (pct_change <= crash_thresh)
+    # 盘前盘后 +3% 强势反转死锁解除 (V3.2 R1.4)
+    if safe_ext >= 3.0 and (pct_change + safe_ext) > -2.5:
+        is_base_crash = False
+
+    # 冲高跳水断头铡刀防接刀 (V3.2 R1.2)
+    intraday_flush_pct = ((active_price - curr_rth_high) / curr_rth_high * 100.0) if (curr_rth_high and curr_rth_high > 0) else 0.0
+    is_flush_crash = (intraday_flush_pct <= -6.0 and pct_change <= -1.0)
+
     is_crash_halt = (
-        (pct_change <= -5.0) or
+        is_base_crash or
+        is_flush_crash or
         (ext_pct is not None and ext_pct <= -4.5) or
         ((pct_change + safe_ext) <= -5.5) or
         (fib_low > 0 and active_price < fib_low * 0.92 and (pct_change <= -2.5 or (ext_pct is not None and ext_pct <= -2.5)))
     )
 
     if is_crash_halt:
+        crash_reason = f"日内冲高跳水 {intraday_flush_pct:+.2f}% (断头铡刀防接刀)" if is_flush_crash else f"标的触发ATR自适应暴跌熔断(日盘 {pct_change:+.2f}% ≤ {crash_thresh:.1f}%, 盘后 {safe_ext:+.2f}%)，严禁首日左侧挂单接飞刀(需等待3日宣泄企稳)"
         return {
             "optimal_limit": 0.0,
             "limit_note": "单日/盘后剧烈跳空破位，严禁首日左侧挂单接飞刀",
@@ -1013,8 +1040,9 @@ def evaluate_intraday_entry(active_price, fib_low, fib_high, ma50, is_pit, is_st
             "stop_loss_pct": 0.0,
             "intraday_entry_ready": False,
             "intraday_status_text": "⛔ 暂停挂单 (暴跌宣泄期)",
-            "intraday_reason": f"标的触发暴跌熔断(日盘 {pct_change:+.2f}%, 盘后 {safe_ext:+.2f}%)，单日/盘后剧烈跳空破位，严禁首日左侧挂单接飞刀(需等待3日宣泄企稳)",
+            "intraday_reason": crash_reason,
             "is_crash_halt": True,
+            "is_cooling_halt": False,
             "vwap": round(vwap, 2),
             "rsi_5m": round(rsi_5m, 1),
             "rvol_5m": round(rvol_5m, 2),
@@ -1022,15 +1050,44 @@ def evaluate_intraday_entry(active_price, fib_low, fib_high, ma50, is_pit, is_st
             **e_info
         }
 
-    # 1. 科学挂单买入价测算 (V3.1 T+1 开盘买入标准：当 is_pit 确认右侧买点时，使用开盘限价上限，杜绝踏空大牛股)
-    rth_close = intra_info.get("rth_close", active_price) or active_price
+    # --------------------------------------------------------------------------
+    # 0.5 隔夜失忆症与 3 日暴跌冷却期判定 (V3.2 R1.1)
+    # --------------------------------------------------------------------------
+    if prev_crash_3d:
+        # 严格企稳解锁边界：
+        # 条件 a: 前一交易日收盘已确认右侧反转阳线
+        unlock_a = bool(prev_is_right_turn)
+        # 条件 b: 日内强劲反弹 >= +2.5%，收复前次暴跌大阴线实体 > 50%，且稳居 VWAP 和 EMA5 之上
+        rebound_body_ok = (active_price >= prev_crash_close + 0.5 * prev_crash_body) if prev_crash_body > 0 else True
+        unlock_b = (pct_change >= 2.5) and rebound_body_ok and (active_price > vwap) and (ema5 > 0 and active_price > ema5)
+
+        if not (unlock_a or unlock_b):
+            return {
+                "optimal_limit": 0.0,
+                "limit_note": "3日内曾大跌·等待日线企稳确认",
+                "entry_stop_loss": 0.0,
+                "stop_loss_pct": 0.0,
+                "intraday_entry_ready": False,
+                "intraday_status_text": "⛔ 暴跌冷却期 (3日内曾大跌·等待日线企稳确认)",
+                "intraday_reason": "标的处于3日暴跌冷却期中，日线未完成企稳确认(等待收出右侧止跌K线或日内强反抽>+2.5%且收复大阴线实体50%站稳VWAP与EMA5)",
+                "is_crash_halt": False,
+                "is_cooling_halt": True,
+                "vwap": round(vwap, 2),
+                "rsi_5m": round(rsi_5m, 1),
+                "rvol_5m": round(rvol_5m, 2),
+                "rs_20d": round(rs_20d, 2),
+                **e_info
+            }
+
+    # --------------------------------------------------------------------------
+    # 1. 科学挂单买入价测算 (V3.1 T+1 开盘买入标准)
+    # --------------------------------------------------------------------------
+    is_rth_session = (session_code == "REGULAR")
+    pit_mid_low = round(fib_low + 0.382 * (fib_high - fib_low), 2) if fib_high > fib_low else active_price
     if is_pit:
-        # V3.1 标准开盘保护限价上限：开盘前取昨收 +2.0% 防追高，盘中则取现价 +0.5%
-        session_is_rth = False
-        optimal_limit = round(rth_close * 1.020, 2)
+        optimal_limit = round(active_price * 1.005, 2) if is_rth_session else round(rth_close * 1.020, 2)
         limit_note = "V3.1右侧确认·9:30开盘限价上限(昨收+2.0%防追高,低于昨收*0.985作废)"
     else:
-        pit_mid_low = round(fib_low + 0.382 * (fib_high - fib_low), 2) if fib_high > fib_low else active_price
         if fib_high > fib_low and fib_low > 0:
             if active_price > fib_high:
                 optimal_limit = round(fib_high, 2)
@@ -1092,16 +1149,21 @@ def evaluate_intraday_entry(active_price, fib_low, fib_high, ma50, is_pit, is_st
             intraday_status_text = f"⏳ 破坑深调({dist_to_pit:+.1f}%)·等5m量价共振"
             intraday_reason = f"破坑深调中(坑底${fib_low:.2f})。右侧买点需3项同步配合：①站上VWAP(${vwap:.2f}) ②5m量比≥1.20x(现{rvol_5m:.2f}x) ③5m RSI 42~62收阳(现{rsi_5m:.1f})，达标自动告警"
     elif is_pit:
-        # V3.1 右侧买点优先处理：只要未触发暴跌熔断且盘前涨跌幅在正常执行区间内，直接标记就绪
-        pre_change = safe_ext if safe_ext != 0.0 else pct_change
-        if pre_change <= 2.0 and pre_change > -1.5:
+        # V3.1 右侧买点优先处理
+        if is_rth_session:
             intraday_entry_ready = True
-            intraday_status_text = "🟢 V3.1右侧买点就绪 (9:30开盘执行)"
-            intraday_reason = f"V3.1右侧确认，开盘以限价上限${optimal_limit:.2f}(昨收+2.0%)直接下单；若开盘跌破${(rth_close*0.985):.2f}(-1.5%)则作废撤单。"
+            intraday_status_text = "🟢 V3.1右侧买点就绪 (盘中执行)"
+            intraday_reason = f"V3.1右侧确认，盘中以限价${optimal_limit:.2f}(现价+0.5%)直接挂单买入。"
         else:
-            intraday_entry_ready = False
-            intraday_status_text = f"⏳ V3.1开盘观察·盘前偏离({pre_change:+.1f}%)"
-            intraday_reason = f"已触发V3.1买点，但盘前偏离({pre_change:+.2f}%)超出[-1.5%, +2.0%]安全窗口，开盘暂缓下单观察。"
+            pre_change = safe_ext if safe_ext != 0.0 else pct_change
+            if pre_change <= 2.0 and pre_change > -1.5:
+                intraday_entry_ready = True
+                intraday_status_text = "🟢 V3.1右侧买点就绪 (9:30开盘执行)"
+                intraday_reason = f"V3.1右侧确认，开盘以限价上限${optimal_limit:.2f}(昨收+2.0%)直接下单；若开盘跌破${(rth_close*0.985):.2f}(-1.5%)则作废撤单。"
+            else:
+                intraday_entry_ready = False
+                intraday_status_text = f"⏳ V3.1开盘观察·盘前偏离({pre_change:+.1f}%)"
+                intraday_reason = f"已触发V3.1买点，但盘前偏离({pre_change:+.2f}%)超出[-1.5%, +2.0%]安全窗口，开盘暂缓下单观察。"
     elif in_buy_zone:
         if cond_oversold_turn:
             intraday_entry_ready = True
@@ -1149,6 +1211,7 @@ def evaluate_intraday_entry(active_price, fib_low, fib_high, ma50, is_pit, is_st
         "intraday_status_text": intraday_status_text,
         "intraday_reason": intraday_reason,
         "is_crash_halt": False,
+        "is_cooling_halt": False,
         "vwap": round(vwap, 2),
         "rsi_5m": round(rsi_5m, 1),
         "rvol_5m": round(rvol_5m, 2),
@@ -1653,7 +1716,7 @@ def dispatch_wechat_radar_alerts(macro_data, stocks_data, weather_info, now_str)
             t_alloc_val = t_frac * t_last
             t_alloc_pct = (t_alloc_val / TOTAL_ACCOUNT_EQUITY) * 100 if TOTAL_ACCOUNT_EQUITY > 0 else 25.0
             t_buy_limit = t_last * 1.020
-            t_cancel_line = max(a.get('rth_low', t_last * 0.985), t_last * 0.985)
+            t_cancel_line = max(a.get('low_price', a.get('rth_low', t_last * 0.985)), t_last * 0.985)
             t_stop_loss = a.get('stop_loss', round(t_last * 0.932, 2))
 
             md.append(f"> ### 🚀 **{a['ticker']}** {a['name']} ({a['cat']})")
@@ -2099,16 +2162,27 @@ def compute_indicators(df):
     df["RET_60"] = ((close - c_shift_60) / c_shift_60.replace(0, np.nan)) * 100.0
     df["RET_60"] = df["RET_60"].fillna(0.0)
 
-    # 暴雷冷却 (过去 5 天单日跌幅 <= -6.0% 或 跳空缺口 <= -4.5%)
+    # 暴跌判定与 3日冷却期计算 (V3.2 升级版)
     daily_ret = ((close - prev_close) / prev_close.replace(0, np.nan)) * 100.0
     gap_down = ((open_p - prev_close) / prev_close.replace(0, np.nan)) * 100.0
     is_crash = (daily_ret <= -6.0) | (gap_down <= -4.5)
+
+    # 保留 Crash_5d 保证向后兼容，新增 V3.2 核心指标
     df["Crash_5d"] = is_crash.rolling(5, min_periods=1).max().fillna(0).astype(bool)
+    df["Crash_3d"] = is_crash.rolling(3, min_periods=1).max().fillna(0).astype(bool)
+    df["Prev_Crash_3d"] = is_crash.shift(1).rolling(3, min_periods=1).max().fillna(0).astype(bool)
 
     # 右侧反转 K 线确认 (阳线实体 >= +0.5% 且 突破前一日高点 或 站上 EMA5)
     prev_high = high.shift(1)
     is_bullish_body = (close > open_p) & (((close - open_p) / open_p.replace(0, np.nan)) >= 0.005)
     df["Is_Right_Turn"] = is_bullish_body & ((close > prev_high) | (close > df["EMA5"]))
+    df["Prev_Is_Right_Turn"] = df["Is_Right_Turn"].shift(1).fillna(0).astype(bool)
+
+    # 记录近 3 日最近一次暴跌日的实体高度 (用于日内 50% 实体收复计算)
+    crash_red_body = np.where(is_crash & (open_p > close), open_p - close, np.where(is_crash, (prev_close - close).clip(lower=0.0), 0.0))
+    df["Prev_Crash_Body"] = pd.Series(crash_red_body, index=df.index).shift(1).rolling(3, min_periods=1).max().fillna(0.0)
+    df["Prev_Crash_Close"] = np.where(is_crash, close, np.nan)
+    df["Prev_Crash_Close"] = pd.Series(df["Prev_Crash_Close"], index=df.index).shift(1).ffill().fillna(close)
 
     return df
 
@@ -2553,7 +2627,9 @@ def evaluate_stock_signal(
         "is_stop": "🔴 破位止损" in primary_signal or "🔴 触及硬止损" in primary_signal,
         "is_deep_pullback": is_deep_pullback or ("🟠 深度回踩" in primary_signal),
         "is_take_profit": is_tp or ("🟣" in primary_signal),
-        "is_volume": "🟡 量能异动" in primary_signal
+        "is_volume": "🟡 量能异动" in primary_signal,
+        "struct_stop": round(struct_stop, 2),
+        "stop_loss": round(struct_stop, 2)
     }
 
 # ==============================================================================
@@ -3565,8 +3641,14 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
             atr_pct = float(df["ATR_Pct"].iloc[-1]) if "ATR_Pct" in df and not np.isnan(df["ATR_Pct"].iloc[-1]) else (((atr / effective_price) * 100.0) if effective_price > 0 else 3.0)
             fib_pos = float(df["Fib_Pos"].iloc[-1]) if "Fib_Pos" in df and not np.isnan(df["Fib_Pos"].iloc[-1]) else 0.5
             crash_5d = bool(df["Crash_5d"].iloc[-1]) if "Crash_5d" in df else False
+            crash_3d = bool(df["Crash_3d"].iloc[-1]) if "Crash_3d" in df else False
+            prev_crash_3d = bool(df["Prev_Crash_3d"].iloc[-1]) if "Prev_Crash_3d" in df else False
             is_right_turn = bool(df["Is_Right_Turn"].iloc[-1]) if "Is_Right_Turn" in df else False
+            prev_is_right_turn = bool(df["Prev_Is_Right_Turn"].iloc[-1]) if "Prev_Is_Right_Turn" in df else False
+            prev_crash_body = float(df["Prev_Crash_Body"].iloc[-1]) if "Prev_Crash_Body" in df and not np.isnan(df["Prev_Crash_Body"].iloc[-1]) else 0.0
+            prev_crash_close = float(df["Prev_Crash_Close"].iloc[-1]) if "Prev_Crash_Close" in df and not np.isnan(df["Prev_Crash_Close"].iloc[-1]) else 0.0
             rs_60 = float(df["RET_60"].iloc[-1]) if "RET_60" in df and not np.isnan(df["RET_60"].iloc[-1]) else 0.0
+            rth_high = float(intra_info.get("rth_high", 0.0)) if intra_info.get("rth_high", 0.0) > 0 else (float(df["High"].iloc[-1]) if "High" in df else effective_price)
 
             eval_res = evaluate_stock_signal(
                 ticker, effective_price, ma50, effective_bias, rsi, vol_ratio, fib_low, fib_high, meta,
@@ -3583,7 +3665,10 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
                 eval_res["is_pit"], eval_res["is_stop"], eval_res["dist_to_pit"], intra_info,
                 earnings_info=earnings_map.get(ticker), rs_20d=rs_20d, atr=atr, daily_rsi=rsi,
                 options_info=options_map.get(ticker),
-                pct_change=pct_change, ext_pct=ext_pct
+                pct_change=pct_change, ext_pct=ext_pct,
+                rth_high=rth_high, prev_crash_3d=prev_crash_3d, prev_is_right_turn=prev_is_right_turn,
+                ema5=ema5, prev_crash_body=prev_crash_body, prev_crash_close=prev_crash_close,
+                session_code=session_code
             )
 
             if bias > 0:
@@ -3732,8 +3817,14 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
             atr_pct = float(df["ATR_Pct"].iloc[-1]) if "ATR_Pct" in df and not np.isnan(df["ATR_Pct"].iloc[-1]) else (((atr / effective_price) * 100.0) if effective_price > 0 else 3.0)
             fib_pos = float(df["Fib_Pos"].iloc[-1]) if "Fib_Pos" in df and not np.isnan(df["Fib_Pos"].iloc[-1]) else 0.5
             crash_5d = bool(df["Crash_5d"].iloc[-1]) if "Crash_5d" in df else False
+            crash_3d = bool(df["Crash_3d"].iloc[-1]) if "Crash_3d" in df else False
+            prev_crash_3d = bool(df["Prev_Crash_3d"].iloc[-1]) if "Prev_Crash_3d" in df else False
             is_right_turn = bool(df["Is_Right_Turn"].iloc[-1]) if "Is_Right_Turn" in df else False
+            prev_is_right_turn = bool(df["Prev_Is_Right_Turn"].iloc[-1]) if "Prev_Is_Right_Turn" in df else False
+            prev_crash_body = float(df["Prev_Crash_Body"].iloc[-1]) if "Prev_Crash_Body" in df and not np.isnan(df["Prev_Crash_Body"].iloc[-1]) else 0.0
+            prev_crash_close = float(df["Prev_Crash_Close"].iloc[-1]) if "Prev_Crash_Close" in df and not np.isnan(df["Prev_Crash_Close"].iloc[-1]) else 0.0
             rs_60 = float(df["RET_60"].iloc[-1]) if "RET_60" in df and not np.isnan(df["RET_60"].iloc[-1]) else 0.0
+            rth_high = float(intra_info.get("rth_high", 0.0)) if intra_info.get("rth_high", 0.0) > 0 else (float(df["High"].iloc[-1]) if "High" in df else effective_price)
 
             eval_res = evaluate_stock_signal(
                 ticker, effective_price, ma50, effective_bias, rsi, vol_ratio, fib_low, fib_high, meta,
@@ -3750,7 +3841,10 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
                 eval_res["is_pit"], eval_res["is_stop"], eval_res["dist_to_pit"], intra_info,
                 earnings_info=earnings_map.get(ticker), rs_20d=rs_20d, atr=atr, daily_rsi=rsi,
                 options_info=options_map.get(ticker),
-                pct_change=pct_change, ext_pct=ext_pct
+                pct_change=pct_change, ext_pct=ext_pct,
+                rth_high=rth_high, prev_crash_3d=prev_crash_3d, prev_is_right_turn=prev_is_right_turn,
+                ema5=ema5, prev_crash_body=prev_crash_body, prev_crash_close=prev_crash_close,
+                session_code=session_code
             )
 
             stocks_list.append({
