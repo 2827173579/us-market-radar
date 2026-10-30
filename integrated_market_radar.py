@@ -152,9 +152,11 @@ FINNHUB_API_KEY = os.environ.get("FINNHUB_API_KEY") or "d9be4q1r01qmk4glemdgd9be
 PUSHPLUS_TOKEN = os.environ.get("PUSHPLUS_TOKEN") or "eca6f1f8c3494843aa7f1170e34fd2b6"
 
 # ------------------------------------------------------------------------------
-# 🎯 账户资金与风控配置 (激进动态纯比例制 · 单股上限 30% · 3-3-4 分批制)
+# 🎯 账户资金与风控配置 (V3.1 动态纯比例制 · 单股上限 30% · 3-3-4 分批制)
 # ------------------------------------------------------------------------------
+TOTAL_ACCOUNT_EQUITY = 10000.0      # 参考基准账户总资产 ($10,000)
 MAX_POSITION_PCT = 0.30            # 单股最大配置上限 30% (聚焦科技与算力高弹性龙头)
+MAX_ALLOC_PER_STOCK = round(TOTAL_ACCOUNT_EQUITY * MAX_POSITION_PCT, 2)  # $3,000.00
 BATCH1_PCT = 0.30                  # 首批试仓底仓比例 30% (即占总资金 9.0%)
 SCRATCH_DIR = os.path.dirname(os.path.abspath(__file__))
 MACRO_HTML_FILE = os.path.join(SCRATCH_DIR, "macro_radar.html")
@@ -1558,6 +1560,29 @@ def dispatch_wechat_radar_alerts(macro_data, stocks_data, weather_info, now_str)
                 md.append(f"> 🚨 **{t_sym} 触及动态保本止损线 (${stop_val:.2f})！**")
                 md.append(f"> 现价 **`${last_p:.2f}`** 回落跌破保本底线，历史最高曾冲至 `${peak_p:.2f}` (最高浮盈 `+{max_gain:.1f}%`)！")
                 md.append(f"> 🛡️ **纪律指令**：立即执行平仓保本，绝不让盈利单变亏损！")
+            elif st.endswith("_TIERED_LOCK_STOP"):
+                peak_p = a.get("peak_price", last_p)
+                max_gain = a.get("max_pnl_pct", 0.0)
+                be_stop = a.get("be_stop", last_p)
+                lock_pct = "+6.0%" if max_gain >= 14.0 else "+2.5%"
+                md.append(f"> 🛡️ **{t_sym} 触及阶梯锁利保护线 (${be_stop:.2f})！**")
+                md.append(f"> 现价 **`${last_p:.2f}`** 回踩触发阶梯保护，最高曾冲至 `${peak_p:.2f}` (最高浮盈 `+{max_gain:.1f}%`)！")
+                md.append(f"> 💰 **锁利纪律**：当前锁定收益至少 `{lock_pct}`，建议落袋为安，保护胜利果实！")
+            elif st.endswith("_CLIMAX_EXIT"):
+                peak_p = a.get("peak_price", last_p)
+                md.append(f"> 🎉 **{t_sym} 触发极度冲顶清仓止盈！**")
+                md.append(f"> 现价 **`${last_p:.2f}`** (浮盈 `{pnl_pct:+.1f}%`)，技术面进入极端超买赶顶高潮，主力加速拉升！")
+                md.append(f"> 🚀 **止盈纪律**：按 V3.1 规则执行全额止盈清仓，锁定超级大顶利润！")
+            elif st.endswith("_EMA10_CRAZY_EXIT"):
+                peak_p = a.get("peak_price", last_p)
+                md.append(f"> 🟣 **{t_sym} 跌破疯牛生命线 EMA10 移动止盈！**")
+                md.append(f"> 现价 **`${last_p:.2f}`** (浮盈 `{pnl_pct:+.1f}%`) 跌破 10日线，最高曾达 `${peak_p:.2f}`！")
+                md.append(f"> 🛡️ **止盈纪律**：疯牛推进动能减速，建议全额或减大半仓落袋，锁定大波段利润！")
+            elif st.endswith("_EMA20_TREND_EXIT"):
+                peak_p = a.get("peak_price", last_p)
+                md.append(f"> 🟣 **{t_sym} 跌破趋势生命线 EMA20 移动止盈！**")
+                md.append(f"> 现价 **`${last_p:.2f}`** (浮盈 `{pnl_pct:+.1f}%`) 跌破 20日线，最高曾达 `${peak_p:.2f}`！")
+                md.append(f"> 🛡️ **止盈纪律**：主升浪斜率趋缓跌破趋势线，按规则执行波段移动止盈！")
             elif st.endswith("_NEAR_STOP"):
                 buffer = last_p - stop_val
                 buffer_pct = buffer / stop_val * 100
@@ -2163,7 +2188,7 @@ def evaluate_market_weather(macro_dict, history_dict=None):
     qqq_info = macro_dict.get("QQQ", qqqm_info)
     qqq_last = qqq_info.get("last", qqqm_last)
     qqq_ma50 = qqq_info.get("ma50", 0.0)
-    qqq_sma200 = qqq_info.get("sma200", 0.0)
+    qqq_sma200 = qqq_info.get("sma200") or qqq_info.get("ma200", 0.0)
 
     is_rainstorm_env = (qqqm_bias < -3.0 and smh_bias < -3.0) or (qqq_ma50 > 0 and qqq_last < qqq_ma50 * 0.97)
     is_bear_defense_env = (qqq_sma200 > 0 and qqq_last < qqq_sma200)
@@ -2236,11 +2261,11 @@ def evaluate_stock_signal(
         dist_to_pit = ((last - fib_low) / last) * 100
         pit_status = f"破坑 {dist_to_pit:.2f}%"
 
-    max_alloc = 0.0
-    # 对齐 V2.4 ATR 风险平价：单笔最大结构止损保护 -6.8%，高波股自动弹性缩减仓位
+    # 对齐 V3.1 1.5% 风险平价配仓 (单股上限 30%，单笔最大结构止损保护 -6.8%)
+    max_alloc = round(TOTAL_ACCOUNT_EQUITY * MAX_POSITION_PCT, 2) if "TOTAL_ACCOUNT_EQUITY" in globals() else 3000.0
     struct_stop = max(min(last - 0.5 * atr, last - 1.8 * atr), last * 0.932) if atr > 0 else last * 0.95
     stop_dist_pct = max((last - struct_stop) / last, 0.035) if last > 0 else 0.05
-    risk_parity_alloc = min(max_alloc, (max_alloc * 0.0425) / stop_dist_pct)
+    risk_parity_alloc = min(max_alloc, (TOTAL_ACCOUNT_EQUITY * 0.015) / stop_dist_pct) if "TOTAL_ACCOUNT_EQUITY" in globals() else min(max_alloc, (3000.0 * 0.05) / stop_dist_pct)
     fractional_shares = risk_parity_alloc / last if last > 0 else 0.0
 
     signals = []
@@ -2349,10 +2374,7 @@ def evaluate_stock_signal(
             signals.append("🎉 极度冲顶清仓止盈")
             tp_reasons.append(f"极度冲顶高潮(RSI={rsi:.1f},偏离{bias:+.1f}%)")
 
-        # 规则 2: 放量滞涨赶顶 (高位高乖离 + 放量大换手 + 滞涨K线)
-        elif not is_tp and (bias >= 10.0 and vol_ratio >= 1.6 and rsi >= 68.0 and is_stall_candle):
-            is_tp = True
-            tp_reasons.append(f"放量赶顶滞涨(量比{vol_ratio:.1f},RSI{rsi:.1f})")
+# 规则 2: (已对齐 V3.1 V30_RUNNER 模式，移除 +10% 乖离早退截胡，全面交由 EMA10/20 变速箱跟踪)
 
         # 规则 3: 移动止盈【EMA20 / EMA10 双速自适应变速箱】(融入近5日极值，防止破位当天降档漏报)
         if not is_tp:
@@ -2405,10 +2427,10 @@ def evaluate_stock_signal(
         if not is_price_break and not is_tp:
             # V2.4 准入铁律判定
             cond_bull_trend = (sma200 <= 0 or last > sma200) and (sma200 <= 0 or ma50 >= sma200 * 0.97)
-            cond_pit_depth = (-0.25 <= fib_pos <= 2.00)
+            cond_pit_depth = (-0.20 <= fib_pos <= 2.20)
             cond_pit_atr = (atr_pct <= 5.2)
             cond_no_crash = (not crash_5d)
-            cond_pit_oversold = (min_rsi_3d <= 43.0) and (rsi <= 48.0)
+            cond_pit_oversold = (min_rsi_3d <= 45.0) and (rsi <= 50.0)
             cond_right_turn = is_right_turn
 
             cond_golden_pit_v2 = (
@@ -2434,8 +2456,11 @@ def evaluate_stock_signal(
                 if qqq_ma50 > 0 and qqq_last < qqq_ma50:
                     is_qqq_below_ma50 = True
 
+            REMOVED_TICKERS = {'KO', 'PEP', 'MCD', 'NKE', 'V', 'INTC', 'WDC', 'HPE', 'MRNA'}
             if cond_golden_pit_v2:
-                if is_bear_falling_knife:
+                if ticker in REMOVED_TICKERS:
+                    signals.append("🟡 坑内观察(低波慢牛不作开仓)")
+                elif is_bear_falling_knife:
                     signals.append("🟡 观望蓄势(熊市空头严禁接刀)")
                 elif is_qqq_below_ma50:
                     signals.append("🟡 观望蓄势(大盘破MA50防御门禁)")
@@ -2465,7 +2490,7 @@ def evaluate_stock_signal(
         "signal": primary_signal,
         "tp_reason": " · ".join(tp_reasons) if tp_reasons else "",
         "atr_mult": atr_mult,
-        "is_pit": "🟢 黄金坑就位" in primary_signal,
+        "is_pit": ("🟢 黄金坑右侧反转" in primary_signal) or ("🟢 黄金坑就位" in primary_signal),
         "is_momentum": is_momentum or ("🔵 多头加速" in primary_signal),
         "is_stop": "🔴 破位止损" in primary_signal or "🔴 触及硬止损" in primary_signal,
         "is_deep_pullback": is_deep_pullback or ("🟠 深度回踩" in primary_signal),
@@ -3541,6 +3566,7 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
                 "ext_pct": ext_pct,
                 "session_tag": session_tag,
                 "ma200": ma200,
+                "sma200": sma200,
                 "ma50": ma50,
                 "ma20": ma20,
                 "ema20": ema20,
