@@ -3,3 +3,6 @@ __pycache__/
 .radar_last_sync
 .DS_Store
 Thumbs.db
+*.pkl
+*.bak*
+*.bak_*
