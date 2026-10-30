@@ -66,8 +66,8 @@
       "last_notified_at": 1793321576.3315027
     },
     "ORCL": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "STOP_LOSS",
+      "last_notified_at": 1793324095.5749886
     },
     "INTC": {
       "state": "STOP_LOSS",
