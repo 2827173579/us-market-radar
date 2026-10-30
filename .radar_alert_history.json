@@ -234,13 +234,13 @@
       "last_notified_at": 0.0
     },
     "PORT_SOXS": {
-      "state": "SOXS_HEDGE_CLIMAX",
-      "last_notified_at": 1793379931.1994066
+      "state": "PORT_NORMAL",
+      "last_notified_at": 0.0
     }
   },
   "position_peaks": {
     "INTC": 93.3,
     "SOXL": 108.2109,
-    "SOXS": 53.63
+    "SOXS": 53.6312
   }
 }
