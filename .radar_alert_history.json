@@ -94,8 +94,8 @@
       "last_notified_at": 1793387163.3558362
     },
     "VST": {
-      "state": "STOP_LOSS",
-      "last_notified_at": 1793386018.7939456
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "NVDA": {
       "state": "STOP_LOSS",
@@ -130,8 +130,8 @@
       "last_notified_at": 1793387163.3558362
     },
     "LITE": {
-      "state": "STOP_LOSS",
-      "last_notified_at": 1793387163.3558362
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "HPE": {
       "state": "NORMAL",
