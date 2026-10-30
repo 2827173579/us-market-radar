@@ -74,8 +74,8 @@
       "last_notified_at": 1793363437.0306718
     },
     "BE": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "STOP_LOSS",
+      "last_notified_at": 1793368603.9355154
     },
     "DELL": {
       "state": "STOP_LOSS",
@@ -142,8 +142,8 @@
       "last_notified_at": 0.0
     },
     "SPCX": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1793368241.82256
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "VRT": {
       "state": "NORMAL",
@@ -218,8 +218,8 @@
       "last_notified_at": 0.0
     },
     "PORT_SOXL": {
-      "state": "SOXL_CRITICAL_STOP",
-      "last_notified_at": 1793367764.1540396
+      "state": "SOXL_NEAR_STOP",
+      "last_notified_at": 1793368603.9355154
     },
     "KORU": {
       "state": "NORMAL",
