@@ -65,81 +65,81 @@ MONITORED_TARGETS = {
     },
     "STOCKS": {
         # 1. 底层算力与半导体设备
-        "NVDA":  {"name": "NVIDIA", "sub": "全球算力总龙头", "cat": "芯片算力", "cost": 0.0, "shares": 0.0, "max_alloc": 660.0, "base_val": 130.0},
-        "TSM":   {"name": "台积电", "sub": "全球先进制程代工绝对垄断", "cat": "晶圆代工", "cost": 0.0, "shares": 0.0, "max_alloc": 660.0, "base_val": 185.0},
-        "AMD":   {"name": "AMD", "sub": "算力双雄与x86挑战者", "cat": "芯片算力", "cost": 0.0, "shares": 0.0, "max_alloc": 660.0, "base_val": 155.0},
-        "AVGO":  {"name": "博通", "sub": "网络交换与ASIC定制芯片之王", "cat": "通信芯片", "cost": 0.0, "shares": 0.0, "max_alloc": 660.0, "base_val": 170.0},
-        "ASML":  {"name": "阿斯麦", "sub": "光刻机绝对霸主", "cat": "制造设备", "cost": 0.0, "shares": 0.0, "max_alloc": 660.0, "base_val": 820.0},
-        "AMAT":  {"name": "应用材料", "sub": "半导体薄膜沉积与设备龙头", "cat": "制造设备", "cost": 0.0, "shares": 0.0, "max_alloc": 660.0, "base_val": 210.0},
+        "NVDA":  {"name": "NVIDIA", "sub": "全球算力总龙头", "cat": "芯片算力", "cost": 0.0, "shares": 0.0, "base_val": 130.0},
+        "TSM":   {"name": "台积电", "sub": "全球先进制程代工绝对垄断", "cat": "晶圆代工", "cost": 0.0, "shares": 0.0, "base_val": 185.0},
+        "AMD":   {"name": "AMD", "sub": "算力双雄与x86挑战者", "cat": "芯片算力", "cost": 0.0, "shares": 0.0, "base_val": 155.0},
+        "AVGO":  {"name": "博通", "sub": "网络交换与ASIC定制芯片之王", "cat": "通信芯片", "cost": 0.0, "shares": 0.0, "base_val": 170.0},
+        "ASML":  {"name": "阿斯麦", "sub": "光刻机绝对霸主", "cat": "制造设备", "cost": 0.0, "shares": 0.0, "base_val": 820.0},
+        "AMAT":  {"name": "应用材料", "sub": "半导体薄膜沉积与设备龙头", "cat": "制造设备", "cost": 0.0, "shares": 0.0, "base_val": 210.0},
         
         # 2. 商业化巨头与企业级AI
-        "MSFT":  {"name": "微软", "sub": "企业软件与Copilot商业化", "cat": "云与软件", "cost": 0.0, "shares": 0.0, "max_alloc": 660.0, "base_val": 420.0},
-        "GOOGL": {"name": "Alphabet", "sub": "全栈AI生态与搜索基本盘", "cat": "生态平台", "cost": 0.0, "shares": 0.0, "max_alloc": 660.0, "base_val": 170.0},
-        "META":  {"name": "Meta", "sub": "开源Llama与最强广告变现", "cat": "社交AI", "cost": 0.0, "shares": 0.0, "max_alloc": 660.0, "base_val": 560.0},
-        "AAPL":  {"name": "苹果", "sub": "端侧AI设备与消费电子闭环", "cat": "终端硬件", "cost": 0.0, "shares": 0.0, "max_alloc": 660.0, "base_val": 225.0},
-        "AMZN":  {"name": "亚马逊", "sub": "AWS算力底座与电商飞轮", "cat": "云与电商", "cost": 0.0, "shares": 0.0, "max_alloc": 660.0, "base_val": 185.0},
-        "PLTR":  {"name": "Palantir", "sub": "AIP企业级与军工落地标杆", "cat": "企业AI", "cost": 0.0, "shares": 0.0, "max_alloc": 660.0, "base_val": 42.0},
+        "MSFT":  {"name": "微软", "sub": "企业软件与Copilot商业化", "cat": "云与软件", "cost": 0.0, "shares": 0.0, "base_val": 420.0},
+        "GOOGL": {"name": "Alphabet", "sub": "全栈AI生态与搜索基本盘", "cat": "生态平台", "cost": 0.0, "shares": 0.0, "base_val": 170.0},
+        "META":  {"name": "Meta", "sub": "开源Llama与最强广告变现", "cat": "社交AI", "cost": 0.0, "shares": 0.0, "base_val": 560.0},
+        "AAPL":  {"name": "苹果", "sub": "端侧AI设备与消费电子闭环", "cat": "终端硬件", "cost": 0.0, "shares": 0.0, "base_val": 225.0},
+        "AMZN":  {"name": "亚马逊", "sub": "AWS算力底座与电商飞轮", "cat": "云与电商", "cost": 0.0, "shares": 0.0, "base_val": 185.0},
+        "PLTR":  {"name": "Palantir", "sub": "AIP企业级与军工落地标杆", "cat": "企业AI", "cost": 0.0, "shares": 0.0, "base_val": 42.0},
         
         # 3. 新算力租赁 (Neo-Cloud)
-        "CRWV":  {"name": "CoreWeave", "sub": "纯血GPU算力租赁高弹性领头羊", "cat": "算力租赁", "cost": 0.0, "shares": 0.0, "max_alloc": 660.0, "base_val": 95.0},
-        "NBIS":  {"name": "Nebius", "sub": "欧洲与全球新兴AI云服务商", "cat": "算力租赁", "cost": 0.0, "shares": 0.0, "max_alloc": 660.0, "base_val": 28.0},
+        "CRWV":  {"name": "CoreWeave", "sub": "纯血GPU算力租赁高弹性领头羊", "cat": "算力租赁", "cost": 0.0, "shares": 0.0, "base_val": 95.0},
+        "NBIS":  {"name": "Nebius", "sub": "欧洲与全球新兴AI云服务商", "cat": "算力租赁", "cost": 0.0, "shares": 0.0, "base_val": 28.0},
         
         # 4. AI数据中心能源与电力底座
-        "VST":   {"name": "Vistra Energy", "sub": "AI数据中心独立电力与核能标杆", "cat": "能源电力", "cost": 0.0, "shares": 0.0, "max_alloc": 660.0, "base_val": 125.0},
-        "BE":    {"name": "Bloom Energy", "sub": "数据中心分布式固体氧化物燃料电池", "cat": "能源电力", "cost": 0.0, "shares": 0.0, "max_alloc": 660.0, "base_val": 18.0},
+        "VST":   {"name": "Vistra Energy", "sub": "AI数据中心独立电力与核能标杆", "cat": "能源电力", "cost": 0.0, "shares": 0.0, "base_val": 125.0},
+        "BE":    {"name": "Bloom Energy", "sub": "数据中心分布式固体氧化物燃料电池", "cat": "能源电力", "cost": 0.0, "shares": 0.0, "base_val": 18.0},
         
         # 5. 光通信与电光高速互联
-        "CRDO":  {"name": "Credo", "sub": "AEC有源电缆与高速互联黑马", "cat": "高速互联", "cost": 0.0, "shares": 0.0, "max_alloc": 660.0, "base_val": 42.0},
-        "COHR":  {"name": "Coherent", "sub": "800G/1.6T光模块与碳化硅材料", "cat": "光通信", "cost": 0.0, "shares": 0.0, "max_alloc": 660.0, "base_val": 95.0},
-        "MRVL":  {"name": "Marvell", "sub": "光互联DSP芯片与定制AI芯片", "cat": "通信芯片", "cost": 0.0, "shares": 0.0, "max_alloc": 660.0, "base_val": 85.0},
-        "AAOI":  {"name": "AOI", "sub": "北美数据中心高弹性光模块", "cat": "光通信", "cost": 0.0, "shares": 0.0, "max_alloc": 660.0, "base_val": 22.0},
-        "LITE":  {"name": "Lumentum", "sub": "光纤通信器件与超快激光技术", "cat": "光通信", "cost": 0.0, "shares": 0.0, "max_alloc": 660.0, "base_val": 75.0},
+        "CRDO":  {"name": "Credo", "sub": "AEC有源电缆与高速互联黑马", "cat": "高速互联", "cost": 0.0, "shares": 0.0, "base_val": 42.0},
+        "COHR":  {"name": "Coherent", "sub": "800G/1.6T光模块与碳化硅材料", "cat": "光通信", "cost": 0.0, "shares": 0.0, "base_val": 95.0},
+        "MRVL":  {"name": "Marvell", "sub": "光互联DSP芯片与定制AI芯片", "cat": "通信芯片", "cost": 0.0, "shares": 0.0, "base_val": 85.0},
+        "AAOI":  {"name": "AOI", "sub": "北美数据中心高弹性光模块", "cat": "光通信", "cost": 0.0, "shares": 0.0, "base_val": 22.0},
+        "LITE":  {"name": "Lumentum", "sub": "光纤通信器件与超快激光技术", "cat": "光通信", "cost": 0.0, "shares": 0.0, "base_val": 75.0},
         
         # 6. 太空商业与低轨卫星
-        "SPCX":  {"name": "SpaceX", "sub": "星链与可重复火箭先驱", "cat": "太空商业", "cost": 0.0, "shares": 0.0, "max_alloc": 660.0, "base_val": 147.0},
-        "ASTS":  {"name": "AST SpaceMobile", "sub": "全球手机直连卫星宽带网络", "cat": "太空商业", "cost": 0.0, "shares": 0.0, "max_alloc": 660.0, "base_val": 26.0},
-        "RKLB":  {"name": "Rocket Lab", "sub": "中小型火箭发射与卫星制造", "cat": "太空商业", "cost": 0.0, "shares": 0.0, "max_alloc": 660.0, "base_val": 19.5},
+        "SPCX":  {"name": "SpaceX", "sub": "星链与可重复火箭先驱", "cat": "太空商业", "cost": 0.0, "shares": 0.0, "base_val": 147.0},
+        "ASTS":  {"name": "AST SpaceMobile", "sub": "全球手机直连卫星宽带网络", "cat": "太空商业", "cost": 0.0, "shares": 0.0, "base_val": 26.0},
+        "RKLB":  {"name": "Rocket Lab", "sub": "中小型火箭发射与卫星制造", "cat": "太空商业", "cost": 0.0, "shares": 0.0, "base_val": 19.5},
         
         # 7. 价值蓝筹与核心风控仓位
-        "KO":    {"name": "可口可乐", "sub": "全球消费防御与抗通胀现金奶牛", "cat": "价值蓝筹", "cost": 0.0, "shares": 0.0, "max_alloc": 660.0, "base_val": 68.0},
-        "AXP":   {"name": "美国运通", "sub": "高端消费信贷与抗衰退金融底座", "cat": "金融蓝筹", "cost": 0.0, "shares": 0.0, "max_alloc": 660.0, "base_val": 270.0},
-        "INTC":  {"name": "Intel", "sub": "IDM2.0转型·实盘底仓跟踪", "cat": "芯片算力", "cost": 95.53429, "shares": 7.0, "max_alloc": 660.0, "trim1": 91.80, "trim1_shares": 5.0, "base_val": 88.0, "target": 95.53},
+        "KO":    {"name": "可口可乐", "sub": "全球消费防御与抗通胀现金奶牛", "cat": "价值蓝筹", "cost": 0.0, "shares": 0.0, "base_val": 68.0},
+        "AXP":   {"name": "美国运通", "sub": "高端消费信贷与抗衰退金融底座", "cat": "金融蓝筹", "cost": 0.0, "shares": 0.0, "base_val": 270.0},
+        "INTC":  {"name": "Intel", "sub": "IDM2.0转型·实盘底仓跟踪", "cat": "芯片算力", "cost": 95.53429, "shares": 7.0, "trim1": 91.80, "trim1_shares": 5.0, "base_val": 88.0, "target": 95.53},
 
         # 8. 物理AI与自动驾驶
-        "TSLA":  {"name": "特斯拉", "sub": "FSD端到端与物理AI人形机器人", "cat": "物理AI", "cost": 0.0, "shares": 0.0, "max_alloc": 660.0, "base_val": 320.0},
+        "TSLA":  {"name": "特斯拉", "sub": "FSD端到端与物理AI人形机器人", "cat": "物理AI", "cost": 0.0, "shares": 0.0, "base_val": 320.0},
 
         # 9. AI液冷散热与服务器硬件
-        "VRT":   {"name": "Vertiv", "sub": "AI数据中心液冷散热与配电垄断", "cat": "液冷散热", "cost": 0.0, "shares": 0.0, "max_alloc": 660.0, "base_val": 165.0},
-        "DELL":  {"name": "戴尔科技", "sub": "企业级AI服务器与算力集成交付", "cat": "服务器ODM", "cost": 0.0, "shares": 0.0, "max_alloc": 660.0, "base_val": 380.0},
-        "HPE":   {"name": "慧与科技", "sub": "企业级AI服务器与超算基础设施", "cat": "服务器ODM", "cost": 0.0, "shares": 0.0, "max_alloc": 660.0, "base_val": 45.0},
+        "VRT":   {"name": "Vertiv", "sub": "AI数据中心液冷散热与配电垄断", "cat": "液冷散热", "cost": 0.0, "shares": 0.0, "base_val": 165.0},
+        "DELL":  {"name": "戴尔科技", "sub": "企业级AI服务器与算力集成交付", "cat": "服务器ODM", "cost": 0.0, "shares": 0.0, "base_val": 380.0},
+        "HPE":   {"name": "慧与科技", "sub": "企业级AI服务器与超算基础设施", "cat": "服务器ODM", "cost": 0.0, "shares": 0.0, "base_val": 45.0},
 
         # 10. 核电直供与SMR先进微堆
-        "CEG":   {"name": "星座能源", "sub": "微软三哩岛核电机组20年直签巨头", "cat": "核能电力", "cost": 0.0, "shares": 0.0, "max_alloc": 660.0, "base_val": 220.0},
-        "OKLO":  {"name": "Oklo", "sub": "Sam Altman背书的SMR先进微裂变堆", "cat": "核能电力", "cost": 0.0, "shares": 0.0, "max_alloc": 660.0, "base_val": 20.0},
-        "FPS":   {"name": "Forgent Power", "sub": "AI数据中心关键电力基础设施", "cat": "能源电力", "cost": 0.0, "shares": 0.0, "max_alloc": 660.0, "base_val": 20.0},
+        "CEG":   {"name": "星座能源", "sub": "微软三哩岛核电机组20年直签巨头", "cat": "核能电力", "cost": 0.0, "shares": 0.0, "base_val": 220.0},
+        "OKLO":  {"name": "Oklo", "sub": "Sam Altman背书的SMR先进微裂变堆", "cat": "核能电力", "cost": 0.0, "shares": 0.0, "base_val": 20.0},
+        "FPS":   {"name": "Forgent Power", "sub": "AI数据中心关键电力基础设施", "cat": "能源电力", "cost": 0.0, "shares": 0.0, "base_val": 20.0},
 
         # 11. HBM与存储/硬盘/NAND闪存生态
-        "MU":    {"name": "美光科技", "sub": "HBM3e高带宽内存与存储周期龙头", "cat": "存储芯片", "cost": 0.0, "shares": 0.0, "max_alloc": 660.0, "base_val": 750.0},
-        "SKHY":  {"name": "SK Hynix", "sub": "美股HBM第一龙头与先进制程", "cat": "存储芯片", "cost": 0.0, "shares": 0.0, "max_alloc": 660.0, "base_val": 115.0},
-        "WDC":   {"name": "西部数据", "sub": "AI近线高密HDD与企业级存储巨头", "cat": "数据存储", "cost": 0.0, "shares": 0.0, "max_alloc": 660.0, "base_val": 290.0},
-        "SNDK":  {"name": "闪迪", "sub": "独立上市NAND闪存与企业级SSD", "cat": "闪存存储", "cost": 0.0, "shares": 0.0, "max_alloc": 660.0, "base_val": 1050.0},
-        "STX":   {"name": "希捷科技", "sub": "AI数据中心大容量机械存储霸主", "cat": "数据存储", "cost": 0.0, "shares": 0.0, "max_alloc": 660.0, "base_val": 540.0},
+        "MU":    {"name": "美光科技", "sub": "HBM3e高带宽内存与存储周期龙头", "cat": "存储芯片", "cost": 0.0, "shares": 0.0, "base_val": 750.0},
+        "SKHY":  {"name": "SK Hynix", "sub": "美股HBM第一龙头与先进制程", "cat": "存储芯片", "cost": 0.0, "shares": 0.0, "base_val": 115.0},
+        "WDC":   {"name": "西部数据", "sub": "AI近线高密HDD与企业级存储巨头", "cat": "数据存储", "cost": 0.0, "shares": 0.0, "base_val": 290.0},
+        "SNDK":  {"name": "闪迪", "sub": "独立上市NAND闪存与企业级SSD", "cat": "闪存存储", "cost": 0.0, "shares": 0.0, "base_val": 1050.0},
+        "STX":   {"name": "希捷科技", "sub": "AI数据中心大容量机械存储霸主", "cat": "数据存储", "cost": 0.0, "shares": 0.0, "base_val": 540.0},
 
         # 12. 零信任网络安全与全球流动性杠杆
-        "CRWD":  {"name": "CrowdStrike", "sub": "AI驱动SecOps与零信任终端安全龙头", "cat": "AI安全", "cost": 0.0, "shares": 0.0, "max_alloc": 660.0, "base_val": 220.0},
-        "MSTR":  {"name": "微策略", "sub": "比特币储备国库与全球流动性杠杆", "cat": "数字资产", "cost": 0.0, "shares": 0.0, "max_alloc": 660.0, "base_val": 130.0},
+        "CRWD":  {"name": "CrowdStrike", "sub": "AI驱动SecOps与零信任终端安全龙头", "cat": "AI安全", "cost": 0.0, "shares": 0.0, "base_val": 220.0},
+        "MSTR":  {"name": "微策略", "sub": "比特币储备国库与全球流动性杠杆", "cat": "数字资产", "cost": 0.0, "shares": 0.0, "base_val": 130.0},
 
         # 13. 企业级算力云与资本载体
-        "ORCL":  {"name": "甲骨文", "sub": "OCI云基础设施与企业大模型底座", "cat": "云与软件", "cost": 0.0, "shares": 0.0, "max_alloc": 660.0, "base_val": 110.0},
-        "CCXI":  {"name": "Churchill XI", "sub": "科技并购与成长资本载体", "cat": "资本运作", "cost": 0.0, "shares": 0.0, "max_alloc": 660.0, "base_val": 10.0},
+        "ORCL":  {"name": "甲骨文", "sub": "OCI云基础设施与企业大模型底座", "cat": "云与软件", "cost": 0.0, "shares": 0.0, "base_val": 110.0},
+        "CCXI":  {"name": "Churchill XI", "sub": "科技并购与成长资本载体", "cat": "资本运作", "cost": 0.0, "shares": 0.0, "base_val": 10.0},
 
         # 14. 医药健康、消费龙头与全球支付网络
-        "LLY":   {"name": "礼来", "sub": "全球GLP-1减肥药与制药万亿新贵", "cat": "生物医药", "cost": 0.0, "shares": 0.0, "max_alloc": 660.0, "base_val": 780.0},
-        "MRNA":  {"name": "Moderna", "sub": "mRNA疫苗与肿瘤前沿疗法先锋", "cat": "生物医药", "cost": 0.0, "shares": 0.0, "max_alloc": 660.0, "base_val": 45.0},
-        "MCD":   {"name": "麦当劳", "sub": "全球快餐连锁与抗周期现金流巨无霸", "cat": "价值蓝筹", "cost": 0.0, "shares": 0.0, "max_alloc": 660.0, "base_val": 280.0},
-        "NKE":   {"name": "耐克", "sub": "全球运动鞋服总龙头·去库存与品牌复苏", "cat": "可选消费", "cost": 0.0, "shares": 0.0, "max_alloc": 660.0, "base_val": 70.0},
-        "V":     {"name": "Visa", "sub": "全球卡组织支付网络垄断寡头", "cat": "金融科技", "cost": 0.0, "shares": 0.0, "max_alloc": 660.0, "base_val": 290.0},
-        "PEP":   {"name": "百事可乐", "sub": "食品饮料防守抗通胀消费龙头", "cat": "价值蓝筹", "cost": 0.0, "shares": 0.0, "max_alloc": 660.0, "base_val": 160.0}
+        "LLY":   {"name": "礼来", "sub": "全球GLP-1减肥药与制药万亿新贵", "cat": "生物医药", "cost": 0.0, "shares": 0.0, "base_val": 780.0},
+        "MRNA":  {"name": "Moderna", "sub": "mRNA疫苗与肿瘤前沿疗法先锋", "cat": "生物医药", "cost": 0.0, "shares": 0.0, "base_val": 45.0},
+        "MCD":   {"name": "麦当劳", "sub": "全球快餐连锁与抗周期现金流巨无霸", "cat": "价值蓝筹", "cost": 0.0, "shares": 0.0, "base_val": 280.0},
+        "NKE":   {"name": "耐克", "sub": "全球运动鞋服总龙头·去库存与品牌复苏", "cat": "可选消费", "cost": 0.0, "shares": 0.0, "base_val": 70.0},
+        "V":     {"name": "Visa", "sub": "全球卡组织支付网络垄断寡头", "cat": "金融科技", "cost": 0.0, "shares": 0.0, "base_val": 290.0},
+        "PEP":   {"name": "百事可乐", "sub": "食品饮料防守抗通胀消费龙头", "cat": "价值蓝筹", "cost": 0.0, "shares": 0.0, "base_val": 160.0}
     }
 }
 
@@ -152,12 +152,10 @@ FINNHUB_API_KEY = os.environ.get("FINNHUB_API_KEY") or "d9be4q1r01qmk4glemdgd9be
 PUSHPLUS_TOKEN = os.environ.get("PUSHPLUS_TOKEN") or "eca6f1f8c3494843aa7f1170e34fd2b6"
 
 # ------------------------------------------------------------------------------
-# 🎯 账户资金与风控配置 (模式 A: 小资金集中作战 · 精选3只股 · 30%均分制)
+# 🎯 账户资金与风控配置 (激进动态纯比例制 · 单股上限 30% · 3-3-4 分批制)
 # ------------------------------------------------------------------------------
-TOTAL_ACCOUNT_EQUITY = 2200.0       # 账户实盘总资产 ($2,200)
-MAX_POSITION_PCT = 0.30            # 单股最大配置上限 30% (聚焦最多 3 只股票)
-MAX_ALLOC_PER_STOCK = round(TOTAL_ACCOUNT_EQUITY * MAX_POSITION_PCT, 2)  # $660.00
-BATCH1_PCT = 0.30                  # 首批试仓底仓比例 30% (约 $198)
+MAX_POSITION_PCT = 0.30            # 单股最大配置上限 30% (聚焦科技与算力高弹性龙头)
+BATCH1_PCT = 0.30                  # 首批试仓底仓比例 30% (即占总资金 9.0%)
 SCRATCH_DIR = os.path.dirname(os.path.abspath(__file__))
 MACRO_HTML_FILE = os.path.join(SCRATCH_DIR, "macro_radar.html")
 STOCKS_HTML_FILE = os.path.join(SCRATCH_DIR, "stocks_radar.html")
@@ -1521,7 +1519,7 @@ def dispatch_wechat_radar_alerts(macro_data, stocks_data, weather_info, now_str)
             md.append(f"> ### 🚀 **{a['ticker']}** {a['name']} ({a['cat']}){e_str}")
             md.append(f"> **现价**：`${a['last']:.2f}` (`{a['pct_change']:+.2f}%`){ext_str}{opt_tag}")
             md.append(f"> ")
-            md.append(f"> 📋 **操盘指令 (单股限额 $660 (占总资金30%))**：")
+            md.append(f"> 📋 **操盘指令 (单股上限 30% · 首笔试仓 9%)**：")
             md.append(f"> • **建议挂单**：**`${a['optimal_limit']:.2f}`** ({a['limit_note']})")
             md.append(f"> • **首批碎股**：**`{a['batch1_shares']:.2f} 股`** (约 `${a['batch1_val']:.0f}` · 30%底仓)")
             md.append(f"> • **防守止损**：**`${a['stop_loss']:.2f}`** (黄金坑底防线)")
@@ -1596,7 +1594,7 @@ def dispatch_wechat_radar_alerts(macro_data, stocks_data, weather_info, now_str)
             md.append(f"> **{a['ticker']}** ({a['name']} · {a['cat']})")
             md.append(f"> • 现价 **`${a['last']:.2f}`** ｜ 偏离度 `{a['bias']:+.1f}%` ｜ 14日RSI `{a['rsi']:.1f}`")
             md.append(f"> • 黄金坑区间：`${a['fib_low']:.2f} ~ ${a['fib_high']:.2f}` ({a['pit_status']})")
-            md.append(f"> • 碎股建议：**`{a['fractional']:.2f} 股`** (上限 $660)")
+            md.append(f"> • 仓位比例：**单股上限 30% · 首笔试仓 9.0%** (3-3-4 分批)")
             md.append("---")
         md.append("")
 
@@ -2123,7 +2121,7 @@ def evaluate_market_weather(macro_dict, history_dict=None):
             color = "#29b6f6"
             veto_str = "、".join(veto_reasons)
             desc = f"【⚠️一票否决预警：{veto_str}】大盘均线虽处高位但遭遇短期剧烈承压，严禁盲目顶峰追高！"
-            base_tactics = "严格控制总仓位，已持仓位保本止损，单股执行 $660(30%) 集中试仓上限，耐心等待分歧消化。"
+            base_tactics = "严格控制总仓位，已持仓位保本止损，单股执行 30% 仓位上限(首笔9%试仓)，耐心等待分歧消化。"
         else:
             weather = "晴天做多"
             icon = "☀️"
@@ -2141,7 +2139,7 @@ def evaluate_market_weather(macro_dict, history_dict=None):
         icon = "⛅"
         color = "#29b6f6"
         desc = "大盘与核心芯片主线出现分化或均线争夺，市场进入结构性轮动。"
-        base_tactics = "严格控制总仓位，单股执行 $660(30%) 集中试仓上限，紧盯黄金坑分批防守。"
+        base_tactics = "严格控制总仓位，单股执行 30% 仓位上限(首笔9%试仓)，紧盯黄金坑分批防守。"
 
     # 4. 模型 4: SMH/IGV 相对强弱动态追加作战军规
     style_suffix = ""
@@ -2238,7 +2236,7 @@ def evaluate_stock_signal(
         dist_to_pit = ((last - fib_low) / last) * 100
         pit_status = f"破坑 {dist_to_pit:.2f}%"
 
-    max_alloc = meta.get("max_alloc", 660.0)
+    max_alloc = 0.0
     # 对齐 V2.4 ATR 风险平价：单笔最大结构止损保护 -6.8%，高波股自动弹性缩减仓位
     struct_stop = max(min(last - 0.5 * atr, last - 1.8 * atr), last * 0.932) if atr > 0 else last * 0.95
     stop_dist_pct = max((last - struct_stop) / last, 0.035) if last > 0 else 0.05
@@ -3139,9 +3137,9 @@ def generate_stocks_radar_html(stocks_data, history_dict, update_time_str="", ha
             <div class="card-sub">现价进入 0.5 ~ 0.618 斐波那契回撤低吸防守带且 RSI < 52</div>
         </div>
         <div class="card">
-            <div class="card-title">💼 单股碎股定投配置标准</div>
-            <div class="card-value" style="color: #00e5ff;">$660.00 <span style="font-size: 14px; color: #888;">上限/股</span></div>
-            <div class="card-sub">按 $660 单股限额 (总资金 $2,200 的 30%) 集中试仓，避免重仓，严格纪律</div>
+            <div class="card-title">💼 单股仓位配置标准 (动态比例制)</div>
+            <div class="card-value" style="color: #00e5ff;">30.0% <span style="font-size: 14px; color: #888;">(首笔 9.0%)</span></div>
+            <div class="card-sub">单股上限 30% (首笔底仓 9%)，3-3-4 分批吸筹，避免情绪化重仓</div>
         </div>
         <div class="card" style="border-left: 4px solid #ff5252; background: linear-gradient(135deg, rgba(255, 82, 82, 0.08), #131722);">
             <div class="card-title">🔴 破位止损与风控警戒</div>
@@ -3176,7 +3174,7 @@ def generate_stocks_radar_html(stocks_data, history_dict, update_time_str="", ha
                     <th>14日 RSI</th>
                     <th>黄金坑区间 (0.5~0.618)</th>
                     <th>距黄金坑位置</th>
-                    <th>可买碎股数 (上限$660)</th>
+                    <th>建议建仓仓位 (单股30%上限)</th>
                     <th>作战行动信号</th>
                 </tr>
             </thead>
@@ -3258,7 +3256,7 @@ def display_terminal_tables(macro_data, stocks_data, weather_info, has_realtime=
         stocks_table.add_column("RSI", justify="right", no_wrap=True)
         stocks_table.add_column("黄金坑支撑带", justify="center", no_wrap=True)
         stocks_table.add_column("距黄金坑", justify="right", no_wrap=True)
-        stocks_table.add_column("碎股数(上限$660)", justify="right", style="bold cyan", no_wrap=True)
+        stocks_table.add_column("建议仓位比例", justify="right", style="bold cyan", no_wrap=True)
         stocks_table.add_column("作战信号", justify="center", no_wrap=True)
 
         for s in stocks_data:
@@ -3279,7 +3277,7 @@ def display_terminal_tables(macro_data, stocks_data, weather_info, has_realtime=
                 f"{s['rsi']:.1f}",
                 f"${s['fib_low']:.2f}~${s['fib_high']:.2f}",
                 f"[{dist_style}]{s['pit_status']}[/{dist_style}]",
-                f"{s['fractional_shares']:.2f} 股",
+                "上限 30% (首笔 9%)",
                 f"[{sig_style}]{s['signal']}[/{sig_style}]"
             )
         console.print(stocks_table)
@@ -3325,7 +3323,7 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
                     "name": p_info.get("name", t_sym),
                     "sub": p_info.get("note", "实盘持仓"),
                     "cat": p_info.get("cat", "自选持仓"),
-                    "max_alloc": 660.0
+                    
                 }
                 MONITORED_TARGETS["STOCKS"][t_sym] = tgt
 
@@ -3683,7 +3681,7 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
                 "trim2": meta.get("trim2", 0.0),
                 "base_val": meta.get("base_val", 0.0),
                 "target": meta.get("target", 95.53),
-                "max_alloc": meta.get("max_alloc", 660.0),
+                "max_alloc": 0.0,
                 "last": last,
                 "change": change,
                 "pct_change": pct_change,
@@ -3731,7 +3729,7 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
                     "shares": meta.get("shares", 0.0),
                     "base_val": meta.get("base_val", 0.0),
                     "target": meta.get("target", 95.50),
-                    "max_alloc": meta.get("max_alloc", 660.0),
+                    "max_alloc": 0.0,
                     "last": last,
                     "change": change,
                     "pct_change": pct_change,
