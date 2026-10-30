@@ -130,8 +130,8 @@
       "last_notified_at": 0.0
     },
     "LITE": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "STOP_LOSS",
+      "last_notified_at": 1793348816.6079705
     },
     "HPE": {
       "state": "NORMAL",
@@ -218,8 +218,8 @@
       "last_notified_at": 0.0
     },
     "PORT_SOXL": {
-      "state": "SOXL_NEAR_STOP",
-      "last_notified_at": 1793348756.4749982
+      "state": "PORT_NORMAL",
+      "last_notified_at": 0.0
     },
     "KORU": {
       "state": "NORMAL",
