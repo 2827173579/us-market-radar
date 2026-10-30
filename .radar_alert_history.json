@@ -102,8 +102,8 @@
       "last_notified_at": 1793379931.1994066
     },
     "ORCL": {
-      "state": "STOP_LOSS",
-      "last_notified_at": 1793381068.4868038
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "CEG": {
       "state": "NORMAL",
@@ -142,8 +142,8 @@
       "last_notified_at": 0.0
     },
     "SPCX": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1793381128.2615683
     },
     "VRT": {
       "state": "NORMAL",
