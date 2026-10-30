@@ -1811,6 +1811,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             "COHR": "NYSE:COHR",
             "MRVL": "NASDAQ:MRVL",
             "AAOI": "NASDAQ:AAOI",
+            "AXTI": "NASDAQ:AXTI",
             "LITE": "NASDAQ:LITE",
             "SPCX": "AMEX:SPCX",
             "ASTS": "NASDAQ:ASTS",

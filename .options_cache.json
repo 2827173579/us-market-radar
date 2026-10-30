@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "updated_at": 1793333250.565688,
+  "updated_at": 1793334413.1662073,
   "data": {
     "IWM": {
       "has_options": true,
@@ -1496,6 +1496,29 @@
       "exp_low": 132.21,
       "exp_high": 140.11,
       "exp_move_str": "±2.9% ($132.21~$140.11)"
+    },
+    "AXTI": {
+      "has_options": true,
+      "options_exp": "2026-11-06",
+      "call_vol": 2578,
+      "put_vol": 800,
+      "call_dollar": 723660.0,
+      "put_dollar": 149396.0,
+      "pcr": 0.31,
+      "dollar_pcr": 0.21,
+      "pcr_sentiment": "🔥 机构极度看涨",
+      "pcr_color": "#00e676",
+      "top_call_info": "$64 Call (802张 · $325k)",
+      "top_call_val": 324810.0,
+      "call_wall": 64.0,
+      "top_put_info": "$60 Put (80张 · $40k)",
+      "top_put_val": 39600.0,
+      "put_wall": 60.0,
+      "iv_atm": 150.1,
+      "exp_move_pct": 14.1,
+      "exp_low": 52.3,
+      "exp_high": 69.46,
+      "exp_move_str": "±14.1% ($52.30~$69.46)"
     }
   }
 }

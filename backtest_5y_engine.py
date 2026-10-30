@@ -37,7 +37,7 @@ REPORT_HTML_FILE = os.path.join(SCRATCH_DIR, "backtest_report_5y.html")
 # Monitored Core Tickers
 CORE_STOCKS = [
     'NVDA', 'TSM', 'AMD', 'AVGO', 'ASML', 'AMAT', 'MSFT', 'GOOGL', 'META', 'AAPL',
-    'AMZN', 'PLTR', 'VST', 'BE', 'CRDO', 'COHR', 'MRVL', 'AAOI', 'LITE', 'ASTS',
+    'AMZN', 'PLTR', 'VST', 'BE', 'CRDO', 'COHR', 'MRVL', 'AAOI', 'AXTI', 'LITE', 'ASTS',
     'RKLB', 'KO', 'AXP', 'INTC', 'TSLA', 'VRT', 'DELL', 'HPE', 'CEG', 'MU',
     'WDC', 'STX', 'CRWD', 'MSTR', 'ORCL', 'LLY', 'MRNA', 'MCD', 'NKE', 'V', 'PEP'
 ]

@@ -93,6 +93,7 @@ MONITORED_TARGETS = {
         "COHR":  {"name": "Coherent", "sub": "800G/1.6T光模块与碳化硅材料", "cat": "光通信", "cost": 0.0, "shares": 0.0, "base_val": 95.0},
         "MRVL":  {"name": "Marvell", "sub": "光互联DSP芯片与定制AI芯片", "cat": "通信芯片", "cost": 0.0, "shares": 0.0, "base_val": 85.0},
         "AAOI":  {"name": "AOI", "sub": "北美数据中心高弹性光模块", "cat": "光通信", "cost": 0.0, "shares": 0.0, "base_val": 22.0},
+        "AXTI":  {"name": "AXTI", "sub": "磷化铟/砷化镓光通信半导体衬底", "cat": "光通信", "cost": 0.0, "shares": 0.0, "base_val": 45.0},
         "LITE":  {"name": "Lumentum", "sub": "光纤通信器件与超快激光技术", "cat": "光通信", "cost": 0.0, "shares": 0.0, "base_val": 75.0},
         
         # 6. 太空商业与低轨卫星

@@ -232,6 +232,10 @@
     "PORT_SOXS": {
       "state": "PORT_NORMAL",
       "last_notified_at": 0.0
+    },
+    "AXTI": {
+      "state": "STOP_LOSS",
+      "last_notified_at": 1793334416.2513645
     }
   },
   "position_peaks": {
