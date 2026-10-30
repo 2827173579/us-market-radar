@@ -1515,9 +1515,14 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                         <span class="card-toggle-btn" onclick="toggleCard(this)">▲</span>
                     </div>
                 </div>
-                <div class="panel-box-content">
+                                <div class="panel-box-content">
                     <div style="font-size: 11px; color: #aaa; line-height: 1.4;" id="pWeatherDesc">
                         {weather_info.get('tactics', '严格控制总仓位，分批防守。')}
+                    </div>
+                    <div style="font-size: 11px; margin-top: 6px; padding-top: 6px; border-top: 1px dashed rgba(255,255,255,0.1); line-height: 1.3;">
+                        <span style="color: #60a5fa; font-weight: 700;">🏦 Firstrade 闲置资金泊入指示：</span>
+                        <span style="color: {weather_info.get('qqq_parking_color', '#ffd54f')}; font-weight: 800;">{weather_info.get('qqq_parking_action', '🟡 观望防守')}</span>
+                        <div style="color: #888; font-size: 10px; margin-top: 2px;">{weather_info.get('qqq_parking_desc', '大盘处于震荡期，维持轻仓现金防守')}</div>
                     </div>
                 </div>
             </div>

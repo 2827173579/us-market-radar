@@ -1348,13 +1348,22 @@ def dispatch_wechat_radar_alerts(macro_data, stocks_data, weather_info, now_str)
 
             be_active = False
             be_stop = cost * 1.004 if ticker in ["SOXS", "SQQQ"] else cost * 1.005
+            lock_label = "保本盾"
             if ticker in ["SOXS", "SQQQ"]:
                 if max_pnl_pct >= 4.0:
                     be_active = True
             else:
-                # 对齐 V2.4 动态保本铁盾激活门槛: 浮盈达到 +4.2% 或 2.0*ATR
+                # 对齐 V2.4/V3.1 动态保本铁盾激活门槛: 浮盈达到 +4.2% 或 2.0*ATR
                 if max_pnl_pct >= 4.2 or (atr > 0 and peak_price >= cost + 2.0 * atr):
                     be_active = True
+                # V3.1 终极版阶梯锁利: 浮盈 >= 8% 锁利 +2.5%, 浮盈 >= 14% 锁利 +6.0%
+                if be_active:
+                    if max_pnl_pct >= 14.0:
+                        be_stop = max(be_stop, round(cost * 1.060, 4))
+                        lock_label = "阶梯锁利(+6.0%)"
+                    elif max_pnl_pct >= 8.0:
+                        be_stop = max(be_stop, round(cost * 1.025, 4))
+                        lock_label = "阶梯锁利(+2.5%)"
             
             stop_val = max(base_stop, be_stop) if be_active else base_stop
             buffer_pct = (active_price - stop_val) / stop_val * 100 if stop_val > 0 else 99.0
@@ -1382,21 +1391,50 @@ def dispatch_wechat_radar_alerts(macro_data, stocks_data, weather_info, now_str)
                 elif stop_val > 0 and buffer_pct <= 3.0:
                     p_state = f"{ticker}_NEAR_STOP"
             else:
-                # 水下抄底反抽强阻检查 (Trim_1 目标价防倒挂，对齐 V2.4)
+                # V3.1 终极版：沿 EMA10/20 移动止盈与大牛股解封
+                ema10 = s.get("ema10", ema5)
+                ema20 = s.get("ema20", ma50)
+                rsi = s.get("rsi", 50.0)
+                bias_ma50 = ((active_price - ma50) / ma50) * 100 if ma50 > 0 else 0.0
+                max_bias_5d = s.get("max_bias_5d", bias_ma50)
+                max_rsi_5d = s.get("max_rsi_5d", rsi)
+
+                # 极度高潮顶 (只在真正极端大顶清仓)
+                is_climax_v31 = (rsi >= 82.0) or ((rsi >= 76.0 and bias_ma50 >= 20.0) and pnl_pct >= 10.0)
+
+                # 水下抄底反抽强阻检查 (Trim_1 仅对水下逆势反抽股执行减半仓锁利，多头主升浪不半路切断)
                 if cost > 0 and ma50 > 0 and cost < ma50:
                     res_level = fib_low * 0.99 if cost < fib_low * 0.97 else ma50 * 0.995
                     trim1_auto = max(res_level, cost * 1.045)
                 else:
-                    trim1_auto = cost + 1.5 * atr if atr > 0 else target
+                    trim1_auto = 0.0
                 dist_to_trim1 = ((trim1_auto - active_price) / trim1_auto) * 100 if trim1_auto > 0 else 99.0
                 
+                # EMA10/EMA20 移动止盈判断
+                is_trailing_exit = False
+                trailing_reason = ""
+                if pnl_pct >= 5.0 or max_pnl_pct >= 8.0:
+                    is_crazy = (max_bias_5d >= 12.0) or (max_rsi_5d >= 72.0) or (max_pnl_pct >= 12.0)
+                    if is_crazy:
+                        if ema10 > 0 and active_price < ema10:
+                            is_trailing_exit = True
+                            trailing_reason = "EMA10_CRAZY_EXIT"
+                    else:
+                        if ema20 > 0 and active_price < ema20 and active_price > ma50:
+                            is_trailing_exit = True
+                            trailing_reason = "EMA20_TREND_EXIT"
+
                 if be_active and active_price <= be_stop:
-                    p_state = f"{ticker}_BREAKEVEN_STOP"
+                    p_state = f"{ticker}_TIERED_LOCK_STOP" if "阶梯锁利" in lock_label else f"{ticker}_BREAKEVEN_STOP"
                 elif stop_val > 0 and active_price <= stop_val:
                     p_state = f"{ticker}_CRITICAL_STOP"
                 elif stop_val > 0 and buffer_pct <= 3.0:
                     p_state = f"{ticker}_NEAR_STOP"
-                elif cost < ma50 and (active_price >= trim1_auto or dist_to_trim1 <= 1.0 or max_pnl_pct >= 6.0) and active_price > cost * 1.02:
+                elif is_climax_v31:
+                    p_state = f"{ticker}_CLIMAX_EXIT"
+                elif is_trailing_exit:
+                    p_state = f"{ticker}_{trailing_reason}"
+                elif cost < ma50 and trim1_auto > 0 and (active_price >= trim1_auto or dist_to_trim1 <= 1.0 or max_pnl_pct >= 6.0) and active_price > cost * 1.02:
                     p_state = f"{ticker}_TRIM1_RESISTANCE"
                 elif target > 0 and active_price >= target:
                     p_state = f"{ticker}_GOAL_ACHIEVED"
@@ -1662,9 +1700,17 @@ def generate_and_sync_notifications(macro_data, stocks_data, weather_info, now_s
                 if max_pnl_pct >= 4.0:
                     be_active = True
             else:
-                # 对齐 V2.4 动态保本铁盾激活门槛: 浮盈达到 +4.2% 或 2.0*ATR
+                # 对齐 V2.4/V3.1 动态保本铁盾激活门槛: 浮盈达到 +4.2% 或 2.0*ATR
                 if max_pnl_pct >= 4.2 or (s.get("atr", 0) > 0 and peak_price >= cost + 2.0 * s["atr"]):
                     be_active = True
+                lock_label = "保本盾"
+                if be_active:
+                    if max_pnl_pct >= 14.0:
+                        be_stop = max(be_stop, round(cost * 1.060, 4))
+                        lock_label = "阶梯锁利(+6.0%)"
+                    elif max_pnl_pct >= 8.0:
+                        be_stop = max(be_stop, round(cost * 1.025, 4))
+                        lock_label = "阶梯锁利(+2.5%)"
             
             effective_stop = max(stop_val, be_stop) if be_active else stop_val
             buffer_pct = (active_price - effective_stop) / effective_stop * 100 if effective_stop > 0 else 99.0
@@ -1715,11 +1761,31 @@ def generate_and_sync_notifications(macro_data, stocks_data, weather_info, now_s
                     trim1_auto = cost + 1.5 * s.get("atr", 0.0) if s.get("atr", 0.0) > 0 else target
                 dist_to_trim1 = ((trim1_auto - active_price) / trim1_auto) * 100 if trim1_auto > 0 else 99.0
                 
+                ema10 = s.get("ema10", s.get("ema5", 0.0))
+                ema20 = s.get("ema20", ma50)
+                rsi = s.get("rsi", 50.0)
+                bias_ma50 = ((active_price - ma50) / ma50) * 100 if ma50 > 0 else 0.0
+                is_climax_v31 = (rsi >= 82.0) or ((rsi >= 76.0 and bias_ma50 >= 20.0) and pnl_pct >= 10.0)
+
+                is_trailing_exit = False
+                trailing_title = ""
+                trailing_desc = ""
+                if pnl_pct >= 5.0 or max_pnl_pct >= 8.0:
+                    is_crazy = (s.get("max_bias_5d", bias_ma50) >= 12.0) or (s.get("max_rsi_5d", rsi) >= 72.0) or (max_pnl_pct >= 12.0)
+                    if is_crazy and ema10 > 0 and active_price < ema10:
+                        is_trailing_exit = True
+                        trailing_title = f"🟣 {ticker} 跌破疯牛线 EMA10(${ema10:.2f})移动止盈！"
+                        trailing_desc = f"现价 ${active_price:.2f} 浮盈 {pnl_pct:+.1f}% 跌破 EMA10，果断全额锁利，锁定大波段利润！"
+                    elif (not is_crazy) and ema20 > 0 and active_price < ema20 and active_price > ma50:
+                        is_trailing_exit = True
+                        trailing_title = f"🟣 {ticker} 跌破趋势线 EMA20(${ema20:.2f})移动止盈！"
+                        trailing_desc = f"现价 ${active_price:.2f} 浮盈 {pnl_pct:+.1f}% 跌破 EMA20，主升浪趋缓，执行波段移动止盈！"
+
                 if be_active and active_price <= be_stop:
                     p_level = "danger"
-                    p_substate = "BREAKEVEN"
-                    p_title = f"🚨 {ticker} 触及动态保本止损线(${be_stop:.2f})！"
-                    p_desc = f"历史最高曾达 ${peak_price:.2f} (+{max_pnl_pct:.1f}%)，现价回踩跌破保本线，立即平仓保本！"
+                    p_substate = "BREAKEVEN" if lock_label == "保本盾" else "TIERED_LOCK"
+                    p_title = f"🚨 {ticker} 触及{lock_label}止损线(${be_stop:.2f})！"
+                    p_desc = f"历史最高曾达 ${peak_price:.2f} (+{max_pnl_pct:.1f}%)，现价回踩跌破{lock_label}，立即兑现锁利！"
                 elif effective_stop > 0 and active_price <= effective_stop:
                     p_level = "danger"
                     p_substate = "STOP"
@@ -1730,7 +1796,17 @@ def generate_and_sync_notifications(macro_data, stocks_data, weather_info, now_s
                     p_substate = "NEAR_STOP"
                     p_title = f"⚠️ {ticker} 紧迫风控预警：逼近防守线！"
                     p_desc = f"现价 ${active_price:.2f} 距防守线 ${effective_stop:.2f} 仅剩 ${active_price-effective_stop:.2f} ({buffer_pct:.1f}%) 缓冲！"
-                elif cost < ma50 and (active_price >= trim1_auto or dist_to_trim1 <= 1.0 or max_pnl_pct >= 6.0) and active_price > cost * 1.02:
+                elif is_climax_v31:
+                    p_level = "success"
+                    p_substate = "CLIMAX"
+                    p_title = f"🎉 {ticker} 触发极度冲顶清仓止盈（RSI={rsi:.1f}）！"
+                    p_desc = f"现价 ${active_price:.2f} 浮盈 {pnl_pct:+.1f}% 达到极端高潮顶，主力加速赶顶，建议全额清仓落袋！"
+                elif is_trailing_exit:
+                    p_level = "success"
+                    p_substate = "TRAILING"
+                    p_title = trailing_title
+                    p_desc = trailing_desc
+                elif cost < ma50 and trim1_auto > 0 and (active_price >= trim1_auto or dist_to_trim1 <= 1.0 or max_pnl_pct >= 6.0) and active_price > cost * 1.02:
                     p_level = "success"
                     p_substate = "TRIM1"
                     p_title = f"🟣 {ticker} 触及水下强阻 (${trim1_auto:.2f})！"
@@ -1745,7 +1821,7 @@ def generate_and_sync_notifications(macro_data, stocks_data, weather_info, now_s
                         p_title = f"🎉 {ticker} 达成 ${target:.2f} 回本目标！"
                         p_desc = f"现价 ${active_price:.2f} 已回本，可依盘面决定是否落袋！"
                 elif be_active:
-                    p_desc += f" ｜ 🛡️ 已激活保本护盾(底线锁定${be_stop:.2f})"
+                    p_desc += f" ｜ 🛡️ 已激活{lock_label}(底线锁定${be_stop:.2f})"
 
             new_notifs.append({
                 "id": f"PORT_{ticker}_{p_substate}_{date_tag}",
@@ -2085,12 +2161,37 @@ def evaluate_market_weather(macro_dict, history_dict=None):
 
     tactics = base_tactics + style_suffix
 
+    # 5. V3.1 旗舰轨道 2：Firstrade 零佣金 QQQ 闲置资金智能泊入与避险指示器
+    qqq_info = macro_dict.get("QQQ", qqqm_info)
+    qqq_last = qqq_info.get("last", qqqm_last)
+    qqq_ma50 = qqq_info.get("ma50", 0.0)
+    qqq_sma200 = qqq_info.get("sma200", 0.0)
+
+    is_rainstorm_env = (qqqm_bias < -3.0 and smh_bias < -3.0) or (qqq_ma50 > 0 and qqq_last < qqq_ma50 * 0.97)
+    is_bear_defense_env = (qqq_sma200 > 0 and qqq_last < qqq_sma200)
+
+    if is_rainstorm_env or is_bear_defense_env:
+        qqq_parking_action = "🔴 清空避险"
+        qqq_parking_desc = "大盘暴风雨/破防线，Firstrade 闲置资金 100% 留存美元现金，严禁泊入 QQQ"
+        qqq_parking_color = "#ff5252"
+    elif qqq_ma50 > 0 and qqq_last >= qqq_ma50 and not is_vix_panic:
+        qqq_parking_action = "🟢 100% 满额泊入"
+        qqq_parking_desc = "大盘多头安全期，Firstrade 闲置资金建议 100% 挂 MOO 泊入 QQQ 享大盘收益，有新买点时自动变现"
+        qqq_parking_color = "#00e676"
+    else:
+        qqq_parking_action = "🟡 观望防守"
+        qqq_parking_desc = "大盘处于 MA50 震荡拉锯期，暂缓新资金泊入 QQQ，保持轻仓防守"
+        qqq_parking_color = "#ffd54f"
+
     return {
         "weather": weather,
         "icon": icon,
         "color": color,
         "desc": desc,
         "tactics": tactics,
+        "qqq_parking_action": qqq_parking_action,
+        "qqq_parking_desc": qqq_parking_desc,
+        "qqq_parking_color": qqq_parking_color,
         "qqqm_bias": qqqm_bias,
         "qqqm_ma20_bias": qqqm_ma20_bias,
         "qqqm_pct": qqqm_pct,
@@ -2242,9 +2343,12 @@ def evaluate_stock_signal(
                 signals.append("🟣 触及强阻减仓(建议兑现50%锁利)")
 
         # 规则 1: 极度冲顶高潮 (RSI>=80 极端超买，或高位超买伴随阴线/滞涨确认)
-        if not is_tp and ((rsi >= 80.0) or (((rsi >= 75.0) or (rsi >= 70.0 and bias >= 15.0) or (atr_mult >= 2.8 and rsi >= 65.0)) and is_stall_candle)):
+        # 规则 1: 极度冲顶高潮 (V3.1 终极版：仅在 RSI>=82 或 RSI>=76且MA50偏离>=20%滞涨高潮顶才提示极度冲顶清仓，不再过早拦截主升浪)
+        is_extreme_climax = (rsi >= 82.0) or ((rsi >= 76.0 and bias >= 20.0) and is_stall_candle and (pnl_pct >= 10.0 if shares > 0 else True))
+        if not is_tp and is_extreme_climax:
             is_tp = True
             is_climax_tp = True
+            signals.append("🎉 极度冲顶清仓止盈")
             tp_reasons.append(f"极度冲顶高潮(RSI={rsi:.1f},偏离{bias:+.1f}%)")
 
         # 规则 2: 放量滞涨赶顶 (高位高乖离 + 放量大换手 + 滞涨K线)
@@ -2323,9 +2427,20 @@ def evaluate_stock_signal(
                 qqqm_rsi = qqqm_info.get("rsi", 50.0)
                 is_bear_falling_knife = (qqqm_ma200 > 0) and (qqqm_last < qqqm_ma200) and (qqqm_rsi > 35.0)
 
+            # V3.1 QQQ MA50 大盘准入门禁 (QQQ < MA50 时冻结个股新开仓，彻底规避震荡期连环止损)
+            is_qqq_below_ma50 = False
+            if macro_data:
+                qqq_info = macro_data.get("QQQ", macro_data.get("QQQM", {}))
+                qqq_last = qqq_info.get("last", 1.0)
+                qqq_ma50 = qqq_info.get("ma50", 0.0)
+                if qqq_ma50 > 0 and qqq_last < qqq_ma50:
+                    is_qqq_below_ma50 = True
+
             if cond_golden_pit_v2:
                 if is_bear_falling_knife:
                     signals.append("🟡 观望蓄势(熊市空头严禁接刀)")
+                elif is_qqq_below_ma50:
+                    signals.append("🟡 观望蓄势(大盘破MA50防御门禁)")
                 else:
                     signals.append("🟢 黄金坑右侧反转")
             elif cond_bull_trend and cond_pit_depth and cond_pit_atr and cond_no_crash:
