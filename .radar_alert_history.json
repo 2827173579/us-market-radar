@@ -43,7 +43,7 @@
     },
     "RKLB": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793304033.6063118
+      "last_notified_at": 1793318471.6376836
     },
     "WDC": {
       "state": "STOP_LOSS",
@@ -66,8 +66,8 @@
       "last_notified_at": 1793318347.2943661
     },
     "ORCL": {
-      "state": "STOP_LOSS",
-      "last_notified_at": 1793318347.2943661
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "INTC": {
       "state": "STOP_LOSS",
