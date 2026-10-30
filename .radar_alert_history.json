@@ -122,8 +122,8 @@
       "last_notified_at": 1793380049.1221948
     },
     "SKHY": {
-      "state": "STOP_LOSS",
-      "last_notified_at": 1793385058.7483664
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "META": {
       "state": "NORMAL",
@@ -234,8 +234,8 @@
       "last_notified_at": 0.0
     },
     "PORT_SOXS": {
-      "state": "SOXS_HEDGE_CLIMAX",
-      "last_notified_at": 1793381908.9611518
+      "state": "PORT_NORMAL",
+      "last_notified_at": 0.0
     }
   },
   "position_peaks": {
