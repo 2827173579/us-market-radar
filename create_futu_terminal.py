@@ -1813,7 +1813,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             "AAOI": "NASDAQ:AAOI",
             "AXTI": "NASDAQ:AXTI",
             "LITE": "NASDAQ:LITE",
-            "SPCX": "AMEX:SPCX",
+            "SPCX": "NASDAQ:SPCX",
             "ASTS": "NASDAQ:ASTS",
             "RKLB": "NASDAQ:RKLB",
             "KO": "NYSE:KO",
@@ -1976,7 +1976,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 let match = false;
                 if (filter === "all" || filter === "stocks") match = true;
                 else if (filter === "starred" && targetWatchlist.includes(s.ticker)) match = true;
-                else if (filter === "pit" && s.is_pit) match = true;
+                else if (filter === "pit" && (s.is_pit || (s.pit_status && (s.pit_status.includes("坑内") || s.pit_status.includes("黄金坑"))) || (s.signal && s.signal.includes("黄金坑")) || (s.dist_to_pit !== undefined && s.dist_to_pit <= 0.0 && s.dist_to_pit >= -8.0))) match = true;
                 else if (filter === "take_profit" && (s.is_take_profit || (s.signal && (s.signal.includes("止盈") || s.signal.includes("冲顶"))))) match = true;
                 else if (filter === "stop" && (s.is_stop || s.is_deep_pullback || (s.signal && (s.signal.includes("破位") || s.signal.includes("跌破") || s.signal.includes("回踩"))))) match = true;
                 else if (filter === "芯片与半导体" && (s.cat === "芯片算力" || s.cat === "晶圆代工" || s.cat === "制造设备" || s.cat === "通信芯片" || s.cat === "芯片半导体")) match = true;
@@ -2001,7 +2001,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 let match = false;
                 if (filter === "all" || filter === "macro") match = true;
                 else if (filter === "starred" && targetWatchlist.includes(t)) match = true;
-                else if (filter === "pit" && (m.is_pit || (m.signal && m.signal.includes("黄金坑")))) match = true;
+                else if (filter === "pit" && (m.is_pit || (m.signal && m.signal.includes("黄金坑")) || (m.pit_status && (m.pit_status.includes("坑内") || m.pit_status.includes("黄金坑"))) || (m.dist_to_pit !== undefined && m.dist_to_pit <= 0.0 && m.dist_to_pit >= -8.0))) match = true;
                 else if (filter === "take_profit" && (m.is_take_profit || (m.signal && (m.signal.includes("止盈") || m.signal.includes("超买") || m.signal.includes("冲顶"))))) match = true;
                 else if (filter === "stop" && (m.is_stop || m.is_deep_pullback || (m.signal && (m.signal.includes("破位") || m.signal.includes("跌破") || m.signal.includes("回踩"))))) match = true;
                 else if (filter === "芯片与半导体" && (t === "SMH" || t === "SOXX" || t === "SOXL" || t === "SOXS" || t === "KORU")) match = true;
