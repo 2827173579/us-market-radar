@@ -58,8 +58,8 @@
       "last_notified_at": 1793363437.0306718
     },
     "AMZN": {
-      "state": "STOP_LOSS",
-      "last_notified_at": 1793363437.0306718
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "SNDK": {
       "state": "STOP_LOSS",
@@ -218,8 +218,8 @@
       "last_notified_at": 0.0
     },
     "PORT_SOXL": {
-      "state": "SOXL_CRITICAL_STOP",
-      "last_notified_at": 1793363437.0306718
+      "state": "SOXL_NEAR_STOP",
+      "last_notified_at": 1793367524.0327256
     },
     "KORU": {
       "state": "NORMAL",
