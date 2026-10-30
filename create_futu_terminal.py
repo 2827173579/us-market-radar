@@ -2289,6 +2289,22 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 intcBox.style.display = "none";
             }}
 
+            // 2.5 关键建仓与风控指标前置计算 (含暴跌熔断保护闸)
+            const isCrashHalt = Boolean(data.is_crash_halt || (data.optimal_limit === 0 && data.limit_note && data.limit_note.includes("破位")));
+            let optimalLimit = data.optimal_limit !== undefined ? data.optimal_limit : curActive;
+            if (optimalLimit === 0 && !isCrashHalt && curFibHigh > curFibLow) {{
+                const midAxis = curFibLow + 0.382 * (curFibHigh - curFibLow);
+                optimalLimit = Math.round(midAxis * 100) / 100;
+            }}
+            const maxAlloc = data.max_alloc || 0;
+            const totalFractional = data.fractional_shares || (curActive > 0 ? (maxAlloc / curActive) : 0);
+            const b1Shares = isCrashHalt ? 0 : Math.round(totalFractional * 100) / 100;
+            const b1Val = isCrashHalt ? 0 : Math.round(b1Shares * optimalLimit * 100) / 100;
+            const rawPitStop = curFibLow > 0 ? curFibLow * 0.97 : (optimalLimit > 0 ? optimalLimit * 0.96 : 0);
+            const fallbackStop = (optimalLimit > 0 && rawPitStop >= optimalLimit * 0.90 && rawPitStop <= optimalLimit * 0.985) ? rawPitStop : (optimalLimit * 0.96);
+            const stopLoss = isCrashHalt ? 0 : (data.entry_stop_loss || Math.round(fallbackStop * 100) / 100);
+            const stopLossPct = isCrashHalt ? 0 : (data.stop_loss_pct !== undefined ? data.stop_loss_pct : (optimalLimit > 0 ? ((stopLoss - optimalLimit) / optimalLimit * 100) : -4.0));
+
             // 3. 核心状态研判与四维深度成因分析
             const sig = data.signal || "";
             const isPit = data.is_pit || sig.includes("黄金坑就位");
@@ -2420,9 +2436,9 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 themeBg = "linear-gradient(135deg, rgba(217, 70, 239, 0.08), #181b22)";
                 themeBorder = "#d946ef";
                 actionType = "高位减仓 / 锁定利润";
-                if (curSig.includes("跌破EMA20")) {{
+                if (sig.includes("跌破EMA20")) {{
                     mainVerdict = "🟣 跌破EMA20 · 移动止盈落袋";
-                    actionDirective = `【移动止盈指引】标的现价 ($${{lastPrice.toFixed(2)}}) 跌破 20日均线 EMA20 ($${{curEma20.toFixed(2)}})，主升浪推进节奏受阻。已持仓者建议执行移动止盈落袋为安，保护浮盈；未建仓者切勿在此盲目抄底接下坠飞刀。`;
+                    actionDirective = `【移动止盈指引】标的现价 ($${{curActive.toFixed(2)}}) 跌破 20日均线 EMA20 ($${{curEma20.toFixed(2)}})，主升浪推进节奏受阻。已持仓者建议执行移动止盈落袋为安，保护浮盈；未建仓者切勿在此盲目抄底接下坠飞刀。`;
                     allocLabel = "止盈指令：";
                     allocSub = "破EMA20移动落袋";
                     allocVal = "止盈离场";
@@ -2481,22 +2497,6 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             document.getElementById("pFractional").style.color = themeColor;
 
             // 7. 日内精准建仓挂单指南测算与盯盘 UI 同步
-            // 7. 日内精准建仓挂单指南测算与盯盘 UI 同步 (加装暴跌熔断保护闸)
-            const isCrashHalt = Boolean(data.is_crash_halt || (data.optimal_limit === 0 && data.limit_note && data.limit_note.includes("破位")));
-            let optimalLimit = data.optimal_limit !== undefined ? data.optimal_limit : curActive;
-            if (optimalLimit === 0 && !isCrashHalt && curFibHigh > curFibLow) {{
-                const midAxis = curFibLow + 0.382 * (curFibHigh - curFibLow);
-                optimalLimit = Math.round(midAxis * 100) / 100;
-            }}
-            const maxAlloc = data.max_alloc || 0;
-            const totalFractional = data.fractional_shares || (curActive > 0 ? (maxAlloc / curActive) : 0);
-            const b1Shares = isCrashHalt ? 0 : Math.round(totalFractional * 100) / 100;
-            const b1Val = isCrashHalt ? 0 : Math.round(b1Shares * optimalLimit * 100) / 100;
-            const rawPitStop = curFibLow > 0 ? curFibLow * 0.97 : (optimalLimit > 0 ? optimalLimit * 0.96 : 0);
-            const fallbackStop = (optimalLimit > 0 && rawPitStop >= optimalLimit * 0.90 && rawPitStop <= optimalLimit * 0.985) ? rawPitStop : (optimalLimit * 0.96);
-            const stopLoss = isCrashHalt ? 0 : (data.entry_stop_loss || Math.round(fallbackStop * 100) / 100);
-            const stopLossPct = isCrashHalt ? 0 : (data.stop_loss_pct !== undefined ? data.stop_loss_pct : (optimalLimit > 0 ? ((stopLoss - optimalLimit) / optimalLimit * 100) : -4.0));
-
             // 5分钟量化日内买点状态横幅渲染
             const intraBannerEl = document.getElementById("pIntradayBanner");
             const intraStatusEl = document.getElementById("pIntradayStatusText");
