@@ -2,7 +2,7 @@
   "schema_version": 3,
   "updated_at": 1793393894.621299,
   "data": {
-    "QQQM": {
+    "SOXX": {
       "has_options": true,
       "options_exp": "2026-11-20",
       "call_vol": 1146,
@@ -140,7 +140,7 @@
       "exp_high": 767.81,
       "exp_move_str": "±1.6% ($743.63~$767.81)"
     },
-    "KORU": {
+    "SMH": {
       "has_options": true,
       "options_exp": "2026-11-06",
       "call_vol": 2602,
@@ -830,7 +830,7 @@
       "exp_high": 80.94,
       "exp_move_str": "±16.9% ($57.54~$80.94)"
     },
-    "AXTI": {
+    "COHR": {
       "has_options": true,
       "options_exp": "2026-11-06",
       "call_vol": 6038,
@@ -876,7 +876,7 @@
       "exp_high": 143.31,
       "exp_move_str": "±5.7% ($127.85~$143.31)"
     },
-    "ASTS": {
+    "AXTI": {
       "has_options": true,
       "options_exp": "2026-11-06",
       "call_vol": 14219,
@@ -1129,7 +1129,7 @@
       "exp_high": 276.62,
       "exp_move_str": "±5.3% ($248.78~$276.62)"
     },
-    "FPS": {
+    "HPE": {
       "has_options": true,
       "options_exp": "2026-11-06",
       "call_vol": 536,
