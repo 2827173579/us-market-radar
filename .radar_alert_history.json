@@ -94,8 +94,8 @@
       "last_notified_at": 1793356234.944827
     },
     "VST": {
-      "state": "STOP_LOSS",
-      "last_notified_at": 1793359358.3119435
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "NVDA": {
       "state": "NORMAL",
@@ -142,8 +142,8 @@
       "last_notified_at": 0.0
     },
     "SPCX": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1793359595.0040824
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "VRT": {
       "state": "NORMAL",
