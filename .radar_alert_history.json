@@ -142,8 +142,8 @@
       "last_notified_at": 0.0
     },
     "SPCX": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1793357552.3006203
     },
     "VRT": {
       "state": "NORMAL",
@@ -241,6 +241,6 @@
   "position_peaks": {
     "INTC": 93.3,
     "SOXL": 108.2109,
-    "SOXS": 49.46
+    "SOXS": 49.54
   }
 }
