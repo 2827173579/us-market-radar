@@ -1377,9 +1377,9 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                             <div style="font-size: 10px; color: #6b7280;" id="pOptimalNote">黄金坑中下轴支撑</div>
                         </div>
                         <div style="background: rgba(0,0,0,0.3); border-radius: 6px; padding: 6px 8px; border: 1px solid rgba(0,230,118,0.2);">
-                            <div style="font-size: 11px; color: #9ca3af;" id="pBatch1Label">📦 首批底仓 (3-3-4分批试仓)</div>
-                            <div id="pBatch1Shares" style="font-size: 16px; font-weight: 800; color: #00e676; font-family: \'DIN Alternate\', sans-serif;">占总资金 9.0%</div>
-                            <div style="font-size: 10px; color: #6b7280;" id="pBatch1Val">单股上限30% · 首笔打底30%</div>
+                            <div style="font-size: 11px; color: #9ca3af;" id="pBatch1Label">📦 V3.1 建议仓位 (单股上限 25%)</div>
+                            <div id="pBatch1Shares" style="font-size: 16px; font-weight: 800; color: #00e676; font-family: \'DIN Alternate\', sans-serif;">1.5% 风险平价</div>
+                            <div style="font-size: 10px; color: #6b7280;" id="pBatch1Val">单股上限 25% · 一次性建仓</div>
                         </div>
                     </div>
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px; font-size: 11px; margin-bottom: 4px;">
@@ -1497,8 +1497,8 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                         <!-- 碎股资金建议区域 (根据状态智能变色提示) -->
                         <div id="pAllocationSection" style="background: rgba(255,255,255,0.04); border-radius: 6px; padding: 6px 10px; display: flex; align-items: center; justify-content: space-between; border: 1px solid rgba(255,255,255,0.05);">
                             <div>
-                                <div style="font-size: 11px; color: #9ca3af;" id="pAllocLabel">单股仓位建议 (占总仓位上限 30%)：</div>
-                                <div style="font-size: 10px; color: #6b7280;" id="pAllocSub">金字塔分批吸筹标准</div>
+                                <div style="font-size: 11px; color: #9ca3af;" id="pAllocLabel">单股仓位建议 (占总仓位上限 25%)：</div>
+                                <div style="font-size: 10px; color: #6b7280;" id="pAllocSub">1.5% 账户风险平价标准</div>
                             </div>
                             <div class="fractional-badge" id="pFractional" style="margin: 0; font-size: 16px; color: #00e5ff;">-- 股</div>
                         </div>
@@ -2314,9 +2314,9 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             let fibReason = "";
             let macroReason = "";
             let actionDirective = "";
-            let allocLabel = "单股仓位建议 (占总仓位上限 30%)：";
-            let allocSub = "按纪律逢低分批吸筹";
-            let allocVal = "上限 30.0%";
+            let allocLabel = "单股仓位建议 (占总仓位上限 25%)：";
+            let allocSub = "1.5% 账户风险平价标准";
+            let allocVal = "上限 25.0%";
 
             // 1. 均线形态诊断
             if (curBias > 15.0) {{
@@ -2382,11 +2382,11 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 themeColor = "#00e676";
                 themeBg = "linear-gradient(135deg, rgba(0, 230, 118, 0.08), #181b22)";
                 themeBorder = "#00e676";
-                actionType = "分批低吸建仓";
-                mainVerdict = "🟢 黄金坑就位 · 绝佳低吸建仓窗口";
-                actionDirective = `【分批建仓窗口】标的波段回调幅度充分 (RSI ${{curRsi.toFixed(1)}} 超卖)，已进入 0.5~0.618 强力防守带。建议严格执行单股上限 30% 仓位控制，以 3-3-4 节奏逢低分批吸筹 (首笔 9% 打底 · 次笔 9% 企稳 · 浮盈加 12%)，严禁情绪化一次性重仓！`;
-                allocLabel = "单股仓位建议 (占总仓位上限 30%)：";
-                allocSub = "3-3-4 分批吸筹 (首笔 9%)";
+                actionType = "V3.1 黄金坑右侧确认";
+                mainVerdict = "🟢 V3.1 黄金坑就位 (9:30开盘执行)";
+                actionDirective = `【V3.1 开盘执行标准】标的已触发右侧止跌企稳！9:30 开盘执行：买入上限昨收+2.0% ($${{optimalLimit ? optimalLimit.toFixed(2) : '--'}})，防追高；隔夜若低开跌破昨收-1.5% ($${{(curLast * 0.985).toFixed(2)}}) 撤单作废。仓位执行 1.5% 账户风险平价一次性建仓 (${{data.fractional_shares ? data.fractional_shares.toFixed(2) : '--'}} 股，单股上限 25%)，同时布设 GTC 结构止损单 ($${{stopLoss > 0 ? stopLoss.toFixed(2) : '--'}})！`;
+                allocLabel = "V3.1 仓位建议 (单股上限 25%)：";
+                allocSub = "1.5% 账户风险平价一次性建仓";
                 allocVal = data.fractional_shares ? (data.fractional_shares.toFixed(2) + " 股") : "--";
             }} else if (isStop) {{
                 themeColor = "#ff1744";
@@ -2489,7 +2489,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             }}
             const maxAlloc = data.max_alloc || 0;
             const totalFractional = data.fractional_shares || (curActive > 0 ? (maxAlloc / curActive) : 0);
-            const b1Shares = isCrashHalt ? 0 : Math.round(totalFractional * 0.30 * 100) / 100;
+            const b1Shares = isCrashHalt ? 0 : Math.round(totalFractional * 100) / 100;
             const b1Val = isCrashHalt ? 0 : Math.round(b1Shares * optimalLimit * 100) / 100;
             const rawPitStop = curFibLow > 0 ? curFibLow * 0.97 : (optimalLimit > 0 ? optimalLimit * 0.96 : 0);
             const fallbackStop = (optimalLimit > 0 && rawPitStop >= optimalLimit * 0.90 && rawPitStop <= optimalLimit * 0.985) ? rawPitStop : (optimalLimit * 0.96);
@@ -2599,8 +2599,8 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                         noteEl.style.color = "#00e676";
                     }}
                 }}
-                if (b1El) b1El.innerText = b1Shares.toFixed(2) + " 股";
-                if (b1ValEl) b1ValEl.innerText = `约 $${{b1Val.toFixed(1)}} (3-3-4首笔30%)`;
+                if (b1El) b1El.innerText = b1Shares > 0 ? (b1Shares.toFixed(2) + " 股") : "--";
+                if (b1ValEl) b1ValEl.innerText = b1Val > 0 ? (`约 $${{b1Val.toFixed(1)}} · 1.5%风险平价`) : "1.5% 风险平价一次性建仓";
                 if (stopEl) stopEl.innerHTML = stopLoss > 0 ? `$${{stopLoss.toFixed(2)}} <span style="font-size:10px; color:#f87171;">($${{stopLossPct.toFixed(1)}}%)</span>` : "--";
             }}
             const bandEl = document.getElementById("pEntryFibBand");

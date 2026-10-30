@@ -152,12 +152,12 @@ FINNHUB_API_KEY = os.environ.get("FINNHUB_API_KEY") or "d9be4q1r01qmk4glemdgd9be
 PUSHPLUS_TOKEN = os.environ.get("PUSHPLUS_TOKEN") or "eca6f1f8c3494843aa7f1170e34fd2b6"
 
 # ------------------------------------------------------------------------------
-# 🎯 账户资金与风控配置 (V3.1 动态纯比例制 · 单股上限 30% · 3-3-4 分批制)
+# 🎯 账户资金与风控配置 (V3.1 旗舰纯比例制 · 单股上限 25% · 1.5%风险平价一次性建仓)
 # ------------------------------------------------------------------------------
 TOTAL_ACCOUNT_EQUITY = 10000.0      # 参考基准账户总资产 ($10,000)
-MAX_POSITION_PCT = 0.30            # 单股最大配置上限 30% (聚焦科技与算力高弹性龙头)
-MAX_ALLOC_PER_STOCK = round(TOTAL_ACCOUNT_EQUITY * MAX_POSITION_PCT, 2)  # $3,000.00
-BATCH1_PCT = 0.30                  # 首批试仓底仓比例 30% (即占总资金 9.0%)
+MAX_POSITION_PCT = 0.25            # 单股最大配置上限 25% (V3.1 旗舰标准)
+MAX_ALLOC_PER_STOCK = round(TOTAL_ACCOUNT_EQUITY * MAX_POSITION_PCT, 2)  # $2,500.00
+BATCH1_PCT = 1.00                  # V3.1 1.5% 账户风险平价一次性建仓到位 (100%到位，不再 3-3-4 碎步)
 SCRATCH_DIR = os.path.dirname(os.path.abspath(__file__))
 MACRO_HTML_FILE = os.path.join(SCRATCH_DIR, "macro_radar.html")
 STOCKS_HTML_FILE = os.path.join(SCRATCH_DIR, "stocks_radar.html")
@@ -1020,37 +1020,40 @@ def evaluate_intraday_entry(active_price, fib_low, fib_high, ma50, is_pit, is_st
             **e_info
         }
 
-    # 1. 科学挂单买入价测算
-    pit_mid_low = round(fib_low + 0.382 * (fib_high - fib_low), 2) if fib_high > fib_low else active_price
-    if fib_high > fib_low and fib_low > 0:
-        if active_price > fib_high:
-            # 股价仍在黄金坑上方：挂黄金坑上沿埋伏
-            optimal_limit = round(fib_high, 2)
-            diff_p = (optimal_limit - active_price) / active_price * 100
-            limit_note = f"黄金坑上沿埋伏单 ({diff_p:+.1f}%)"
-        elif active_price >= pit_mid_low:
-            # 股价处于黄金坑上半区 (0.382~0.5)：挂黄金坑中下轴接针
-            optimal_limit = pit_mid_low
-            diff_p = (optimal_limit - active_price) / active_price * 100
-            limit_note = f"黄金坑0.382中下轴接针 ({diff_p:+.1f}%)"
-        elif active_price >= fib_low * 0.98:
-            # 股价已深入黄金坑下半区 (0.5~0.618 核心黄金段或微刺穿坑底 <2%)：取 VWAP 支撑或现价微折让 0.3% 吸筹
-            ref_support = min(active_price * 0.997, vwap * 0.998) if vwap > 0 else active_price * 0.997
-            optimal_limit = round(max(fib_low * 0.985, ref_support), 2)
-            diff_p = (optimal_limit - active_price) / active_price * 100
-            limit_note = f"已入坑底核心区·贴支撑低吸 ({diff_p:+.1f}%)"
-        else:
-            # 已跌破坑底 (>2%)：以日内 VWAP 支撑或现价折让 1.5%~3.5% 作为防守挂单价 (避免大反弹日取日内最低点导致偏离过大)
-            vwap_anchor = vwap * 0.995 if (vwap > 0 and vwap <= active_price) else active_price * 0.985
-            raw_def_limit = min(active_price * 0.985, vwap_anchor)
-            optimal_limit = round(max(active_price * 0.962, raw_def_limit), 2)
-            diff_p = (optimal_limit - active_price) / active_price * 100
-            limit_note = f"破坑深调·支撑防守单 ({diff_p:+.1f}%)"
+    # 1. 科学挂单买入价测算 (V3.1 T+1 开盘买入标准：当 is_pit 确认右侧买点时，使用开盘限价上限，杜绝踏空大牛股)
+    rth_close = intra_info.get("rth_close", active_price) or active_price
+    if is_pit:
+        # V3.1 标准开盘保护限价上限：开盘前取昨收 +2.0% 防追高，盘中则取现价 +0.5%
+        session_is_rth = False
+        optimal_limit = round(rth_close * 1.020, 2)
+        limit_note = "V3.1右侧确认·9:30开盘限价上限(昨收+2.0%防追高,低于昨收*0.985作废)"
     else:
-        optimal_limit = round(active_price * 0.99, 2)
-        limit_note = "现价下方1%分批限价单 (-1.0%)"
+        pit_mid_low = round(fib_low + 0.382 * (fib_high - fib_low), 2) if fib_high > fib_low else active_price
+        if fib_high > fib_low and fib_low > 0:
+            if active_price > fib_high:
+                optimal_limit = round(fib_high, 2)
+                diff_p = (optimal_limit - active_price) / active_price * 100
+                limit_note = f"黄金坑上沿埋伏单 ({diff_p:+.1f}%)"
+            elif active_price >= pit_mid_low:
+                optimal_limit = pit_mid_low
+                diff_p = (optimal_limit - active_price) / active_price * 100
+                limit_note = f"黄金坑0.382中下轴接针 ({diff_p:+.1f}%)"
+            elif active_price >= fib_low * 0.98:
+                ref_support = min(active_price * 0.997, vwap * 0.998) if vwap > 0 else active_price * 0.997
+                optimal_limit = round(max(fib_low * 0.985, ref_support), 2)
+                diff_p = (optimal_limit - active_price) / active_price * 100
+                limit_note = f"已入坑底核心区·贴支撑低吸 ({diff_p:+.1f}%)"
+            else:
+                vwap_anchor = vwap * 0.995 if (vwap > 0 and vwap <= active_price) else active_price * 0.985
+                raw_def_limit = min(active_price * 0.985, vwap_anchor)
+                optimal_limit = round(max(active_price * 0.962, raw_def_limit), 2)
+                diff_p = (optimal_limit - active_price) / active_price * 100
+                limit_note = f"破坑深调·支撑防守单 ({diff_p:+.1f}%)"
+        else:
+            optimal_limit = round(active_price * 0.99, 2)
+            limit_note = "现价下方1%分批限价单 (-1.0%)"
 
-    # 1.5 科学防守止损线测算 (对齐 V2.4 初始结构止损: Low-0.5*ATR 与 Close-1.8*ATR 中较宽保护，硬上限放宽至 -6.8%)
+    # 1.5 科学防守止损线测算 (对齐 V3.1 初始结构止损: Low-0.5*ATR 与 Close-1.8*ATR 中较宽保护，硬上限 -6.8%)
     ref_low = rth_low if rth_low > 0 else (optimal_limit * 0.985)
     struct_stop = min(ref_low - 0.5 * atr, optimal_limit - 1.8 * atr) if atr > 0 else (optimal_limit * 0.95)
     entry_stop_loss = round(max(struct_stop, optimal_limit * 0.932), 2)
@@ -1086,6 +1089,17 @@ def evaluate_intraday_entry(active_price, fib_low, fib_high, ma50, is_pit, is_st
         else:
             intraday_status_text = f"⏳ 破坑深调({dist_to_pit:+.1f}%)·等5m量价共振"
             intraday_reason = f"破坑深调中(坑底${fib_low:.2f})。右侧买点需3项同步配合：①站上VWAP(${vwap:.2f}) ②5m量比≥1.20x(现{rvol_5m:.2f}x) ③5m RSI 42~62收阳(现{rsi_5m:.1f})，达标自动告警"
+    elif is_pit:
+        # V3.1 右侧买点优先处理：只要未触发暴跌熔断且盘前涨跌幅在正常执行区间内，直接标记就绪
+        pre_change = safe_ext if safe_ext != 0.0 else pct_change
+        if pre_change <= 2.0 and pre_change > -1.5:
+            intraday_entry_ready = True
+            intraday_status_text = "🟢 V3.1右侧买点就绪 (9:30开盘执行)"
+            intraday_reason = f"V3.1右侧确认，开盘以限价上限${optimal_limit:.2f}(昨收+2.0%)直接下单；若开盘跌破${(rth_close*0.985):.2f}(-1.5%)则作废撤单。"
+        else:
+            intraday_entry_ready = False
+            intraday_status_text = f"⏳ V3.1开盘观察·盘前偏离({pre_change:+.1f}%)"
+            intraday_reason = f"已触发V3.1买点，但盘前偏离({pre_change:+.2f}%)超出[-1.5%, +2.0%]安全窗口，开盘暂缓下单观察。"
     elif in_buy_zone:
         if cond_oversold_turn:
             intraday_entry_ready = True
@@ -1310,7 +1324,9 @@ def dispatch_wechat_radar_alerts(macro_data, stocks_data, weather_info, now_str)
                 pit_alerts.append({
                     "ticker": ticker, "name": name, "cat": cat, "last": last,
                     "bias": bias, "rsi": rsi, "fib_low": fib_low, "fib_high": fib_high,
-                    "fractional": fractional, "pit_status": pit_status
+                    "fractional": fractional, "pit_status": pit_status,
+                    "stop_loss": stop_loss, "rth_low": s.get("rth_low", last * 0.985),
+                    "optimal_limit": s.get("optimal_limit", round(last * 1.020, 2))
                 })
             elif current_state == "STOP_LOSS":
                 if bias < -15.0 and s.get("vol_ratio", 1.0) >= 1.5:
@@ -1521,10 +1537,10 @@ def dispatch_wechat_radar_alerts(macro_data, stocks_data, weather_info, now_str)
             md.append(f"> ### 🚀 **{a['ticker']}** {a['name']} ({a['cat']}){e_str}")
             md.append(f"> **现价**：`${a['last']:.2f}` (`{a['pct_change']:+.2f}%`){ext_str}{opt_tag}")
             md.append(f"> ")
-            md.append(f"> 📋 **操盘指令 (单股上限 30% · 首笔试仓 9%)**：")
+            md.append(f"> 📋 **V3.1 操盘指令 (单股上限 25% · 1.5%风险平价)**：")
             md.append(f"> • **建议挂单**：**`${a['optimal_limit']:.2f}`** ({a['limit_note']})")
-            md.append(f"> • **首批碎股**：**`{a['batch1_shares']:.2f} 股`** (约 `${a['batch1_val']:.0f}` · 30%底仓)")
-            md.append(f"> • **防守止损**：**`${a['stop_loss']:.2f}`** (黄金坑底防线)")
+            md.append(f"> • **建议仓位**：**`{a.get('fractional_shares', a['batch1_shares']):.2f} 股`** (约 `${(a.get('fractional_shares', a['batch1_shares']) * a['last']):.0f}` · 1.5%风险平价一次性建仓)")
+            md.append(f"> • **防守止损**：**`${a['stop_loss']:.2f}`** (结构止损单)")
             md.append(f"> ")
             
             clean_reason = a['intraday_reason'].split(" ｜ ⚡")[0]
@@ -1614,12 +1630,25 @@ def dispatch_wechat_radar_alerts(macro_data, stocks_data, weather_info, now_str)
         md.append("")
 
     if pit_alerts:
-        md.append("### 🟢 黄金坑就位 (回调低吸清单)")
+        md.append("### 🟢 V3.1 黄金坑买点就绪 (Firstrade 9:30 开盘委托单)")
         for a in pit_alerts:
-            md.append(f"> **{a['ticker']}** ({a['name']} · {a['cat']})")
-            md.append(f"> • 现价 **`${a['last']:.2f}`** ｜ 偏离度 `{a['bias']:+.1f}%` ｜ 14日RSI `{a['rsi']:.1f}`")
+            t_last = a['last']
+            t_frac = a.get('fractional', 0.0)
+            t_alloc_val = t_frac * t_last
+            t_alloc_pct = (t_alloc_val / TOTAL_ACCOUNT_EQUITY) * 100 if TOTAL_ACCOUNT_EQUITY > 0 else 25.0
+            t_buy_limit = t_last * 1.020
+            t_cancel_line = max(a.get('rth_low', t_last * 0.985), t_last * 0.985)
+            t_stop_loss = a.get('stop_loss', round(t_last * 0.932, 2))
+
+            md.append(f"> ### 🚀 **{a['ticker']}** {a['name']} ({a['cat']})")
+            md.append(f"> • 现价 **`${t_last:.2f}`** ｜ 偏离度 `{a['bias']:+.1f}%` ｜ 14日RSI `{a['rsi']:.1f}`")
             md.append(f"> • 黄金坑区间：`${a['fib_low']:.2f} ~ ${a['fib_high']:.2f}` ({a['pit_status']})")
-            md.append(f"> • 仓位比例：**单股上限 30% · 首笔试仓 9.0%** (3-3-4 分批)")
+            md.append(f"> ")
+            md.append(f"> 📋 **Firstrade 9:30 开盘执行指令 (V3.1 标准)**：")
+            md.append(f"> 1️⃣ **9:30开盘买入上限价 (Limit)**：**`${t_buy_limit:.2f}`** (开盘高于此价放弃不追)")
+            md.append(f"> 2️⃣ **隔夜低开作废底线**：**`${t_cancel_line:.2f}`** (开盘跌破此价撤单不买)")
+            md.append(f"> 3️⃣ **V3.1 风险平价建议仓位**：约 **`${t_alloc_val:.0f}`** (`{t_frac:.2f} 股` · 占总资金 `{t_alloc_pct:.1f}%` · 1.5%风险平价一次性建仓)")
+            md.append(f"> 4️⃣ **GTC 铁血结构止损单**：**`${t_stop_loss:.2f}`**")
             md.append("---")
         md.append("")
 
@@ -2146,7 +2175,7 @@ def evaluate_market_weather(macro_dict, history_dict=None):
             color = "#29b6f6"
             veto_str = "、".join(veto_reasons)
             desc = f"【⚠️一票否决预警：{veto_str}】大盘均线虽处高位但遭遇短期剧烈承压，严禁盲目顶峰追高！"
-            base_tactics = "严格控制总仓位，已持仓位保本止损，单股执行 30% 仓位上限(首笔9%试仓)，耐心等待分歧消化。"
+            base_tactics = "严格控制总仓位，已持仓位保本止损，单股上限 25%(1.5%风险平价建仓)，耐心等待分歧消化。"
         else:
             weather = "晴天做多"
             icon = "☀️"
@@ -2164,7 +2193,7 @@ def evaluate_market_weather(macro_dict, history_dict=None):
         icon = "⛅"
         color = "#29b6f6"
         desc = "大盘与核心芯片主线出现分化或均线争夺，市场进入结构性轮动。"
-        base_tactics = "严格控制总仓位，单股执行 30% 仓位上限(首笔9%试仓)，紧盯黄金坑分批防守。"
+        base_tactics = "严格控制总仓位，单股上限 25%(1.5%风险平价建仓)，紧盯黄金坑分批防守。"
 
     # 4. 模型 4: SMH/IGV 相对强弱动态追加作战军规
     style_suffix = ""
@@ -2241,7 +2270,7 @@ def evaluate_stock_signal(
     ema10=0.0, prev_ema10=0.0, ema5=0.0, prev_ema5=0.0,
     max_bias_5d=0.0, max_rsi_5d=50.0, max_pnl_pct=0.0,
     sma200=0.0, min_rsi_3d=50.0, atr_pct=3.0, fib_pos=0.5,
-    crash_5d=False, is_right_turn=False, rs_60=0.0
+    crash_5d=False, is_right_turn=False, rs_60=0.0, low_price=None, rth_low=None
 ):
     """
     扫描标的作战信号 (V2.4 终极对齐版)：
@@ -2261,11 +2290,12 @@ def evaluate_stock_signal(
         dist_to_pit = ((last - fib_low) / last) * 100
         pit_status = f"破坑 {dist_to_pit:.2f}%"
 
-    # 对齐 V3.1 1.5% 风险平价配仓 (单股上限 30%，单笔最大结构止损保护 -6.8%)
-    max_alloc = round(TOTAL_ACCOUNT_EQUITY * MAX_POSITION_PCT, 2) if "TOTAL_ACCOUNT_EQUITY" in globals() else 3000.0
-    struct_stop = max(min(last - 0.5 * atr, last - 1.8 * atr), last * 0.932) if atr > 0 else last * 0.95
+    # 对齐 V3.1 1.5% 风险平价配仓 (单股上限 25%，当日最低价 low_price - 0.5*ATR 结构止损)
+    max_alloc = round(TOTAL_ACCOUNT_EQUITY * MAX_POSITION_PCT, 2) if "TOTAL_ACCOUNT_EQUITY" in globals() else 2500.0
+    sig_low = low_price if (low_price is not None and low_price > 0) else (rth_low if (rth_low is not None and rth_low > 0) else last)
+    struct_stop = max(min(sig_low - 0.5 * atr, last - 1.8 * atr), last * 0.932) if atr > 0 else last * 0.95
     stop_dist_pct = max((last - struct_stop) / last, 0.035) if last > 0 else 0.05
-    risk_parity_alloc = min(max_alloc, (TOTAL_ACCOUNT_EQUITY * 0.015) / stop_dist_pct) if "TOTAL_ACCOUNT_EQUITY" in globals() else min(max_alloc, (3000.0 * 0.05) / stop_dist_pct)
+    risk_parity_alloc = min(max_alloc, (TOTAL_ACCOUNT_EQUITY * 0.015) / stop_dist_pct) if "TOTAL_ACCOUNT_EQUITY" in globals() else min(max_alloc, (2500.0 * 0.05) / stop_dist_pct)
     fractional_shares = risk_parity_alloc / last if last > 0 else 0.0
 
     signals = []
@@ -2426,16 +2456,25 @@ def evaluate_stock_signal(
         # 3. 黄金坑就位与右侧反转 V2.4 (对齐 V2.4 严选准入铁律)
         if not is_price_break and not is_tp:
             # V2.4 准入铁律判定
-            cond_bull_trend = (sma200 <= 0 or last > sma200) and (sma200 <= 0 or ma50 >= sma200 * 0.97)
+            # V3.1 准入铁律 (补齐 rs_60 >= -8.0 相对强弱门槛)
+            cond_bull_trend = (sma200 <= 0 or last > sma200) and (sma200 <= 0 or ma50 >= sma200 * 0.97) and (rs_60 >= -8.0)
             cond_pit_depth = (-0.20 <= fib_pos <= 2.20)
             cond_pit_atr = (atr_pct <= 5.2)
             cond_no_crash = (not crash_5d)
             cond_pit_oversold = (min_rsi_3d <= 45.0) and (rsi <= 50.0)
             cond_right_turn = is_right_turn
 
+            # V3.1 买点 1: 🟢 黄金坑右侧反转
             cond_golden_pit_v2 = (
                 cond_bull_trend and cond_pit_depth and cond_pit_atr
                 and cond_no_crash and cond_pit_oversold and cond_right_turn
+            )
+
+            # V3.1 买点 2: 🚀 极度超卖右侧反包 (min_rsi_3d <= 32.0, 放量反包 +1.5% 且 vol_ratio >= 1.15)
+            is_reversal_body = (open_price <= 0 or last > open_price) and (prev_close <= 0 or last >= prev_close * 1.015)
+            cond_climax_reversal = (
+                cond_bull_trend and cond_no_crash and (min_rsi_3d <= 32.0)
+                and is_reversal_body and (vol_ratio >= 1.15)
             )
 
             # 兼容宏观大盘熊市主跌段过滤
@@ -2457,7 +2496,7 @@ def evaluate_stock_signal(
                     is_qqq_below_ma50 = True
 
             REMOVED_TICKERS = {'KO', 'PEP', 'MCD', 'NKE', 'V', 'INTC', 'WDC', 'HPE', 'MRNA'}
-            if cond_golden_pit_v2:
+            if cond_golden_pit_v2 or cond_climax_reversal:
                 if ticker in REMOVED_TICKERS:
                     signals.append("🟡 坑内观察(低波慢牛不作开仓)")
                 elif is_bear_falling_knife:
@@ -2465,7 +2504,10 @@ def evaluate_stock_signal(
                 elif is_qqq_below_ma50:
                     signals.append("🟡 观望蓄势(大盘破MA50防御门禁)")
                 else:
-                    signals.append("🟢 黄金坑右侧反转")
+                    if cond_climax_reversal:
+                        signals.append("🚀 极度超卖右侧反包")
+                    else:
+                        signals.append("🟢 黄金坑右侧反转")
             elif cond_bull_trend and cond_pit_depth and cond_pit_atr and cond_no_crash:
                 if is_bear_falling_knife:
                     signals.append("🟡 观望蓄势(熊市空头严禁接刀)")
@@ -2490,7 +2532,7 @@ def evaluate_stock_signal(
         "signal": primary_signal,
         "tp_reason": " · ".join(tp_reasons) if tp_reasons else "",
         "atr_mult": atr_mult,
-        "is_pit": ("🟢 黄金坑右侧反转" in primary_signal) or ("🟢 黄金坑就位" in primary_signal),
+        "is_pit": ("🟢 黄金坑右侧反转" in primary_signal) or ("🟢 黄金坑就位" in primary_signal) or ("🚀 极度超卖右侧反包" in primary_signal),
         "is_momentum": is_momentum or ("🔵 多头加速" in primary_signal),
         "is_stop": "🔴 破位止损" in primary_signal or "🔴 触及硬止损" in primary_signal,
         "is_deep_pullback": is_deep_pullback or ("🟠 深度回踩" in primary_signal),
@@ -3001,7 +3043,7 @@ def generate_stocks_radar_html(stocks_data, history_dict, update_time_str="", ha
             <td>{r['rsi']:.1f}</td>
             <td style="font-size: 12px; color: #64b5f6;">${r['fib_low']:.2f} ~ ${r['fib_high']:.2f}</td>
             <td style="{dist_style}">{r['pit_status']}</td>
-            <td style="color: #00e5ff; font-weight: bold;">{r['fractional_shares']:.2f} 股 <span style="font-size:10px; color:#888;">(~$900)</span></td>
+            <td style="color: #00e5ff; font-weight: bold;">{r['fractional_shares']:.2f} 股 <span style="font-size:10px; color:#888;">({min(25.0, (r['fractional_shares'] * r['last'] / TOTAL_ACCOUNT_EQUITY) * 100):.1f}%)</span></td>
             <td>{sig_badge}</td>
         </tr>
         """
@@ -3163,8 +3205,8 @@ def generate_stocks_radar_html(stocks_data, history_dict, update_time_str="", ha
         </div>
         <div class="card">
             <div class="card-title">💼 单股仓位配置标准 (动态比例制)</div>
-            <div class="card-value" style="color: #00e5ff;">30.0% <span style="font-size: 14px; color: #888;">(首笔 9.0%)</span></div>
-            <div class="card-sub">单股上限 30% (首笔底仓 9%)，3-3-4 分批吸筹，避免情绪化重仓</div>
+            <div class="card-value" style="color: #00e5ff;">25.0% <span style="font-size: 14px; color: #888;">(1.5%风险平价)</span></div>
+            <div class="card-sub">单股上限 25% (1.5%风险平价一次性建仓)，纪律执行防追高，拒绝情绪化重仓</div>
         </div>
         <div class="card" style="border-left: 4px solid #ff5252; background: linear-gradient(135deg, rgba(255, 82, 82, 0.08), #131722);">
             <div class="card-title">🔴 破位止损与风控警戒</div>
@@ -3199,7 +3241,7 @@ def generate_stocks_radar_html(stocks_data, history_dict, update_time_str="", ha
                     <th>14日 RSI</th>
                     <th>黄金坑区间 (0.5~0.618)</th>
                     <th>距黄金坑位置</th>
-                    <th>建议建仓仓位 (单股30%上限)</th>
+                    <th>建议建仓仓位 (单股25%上限)</th>
                     <th>作战行动信号</th>
                 </tr>
             </thead>
@@ -3302,7 +3344,7 @@ def display_terminal_tables(macro_data, stocks_data, weather_info, has_realtime=
                 f"{s['rsi']:.1f}",
                 f"${s['fib_low']:.2f}~${s['fib_high']:.2f}",
                 f"[{dist_style}]{s['pit_status']}[/{dist_style}]",
-                "上限 30% (首笔 9%)",
+                "上限 25% (1.5%风险平价)",
                 f"[{sig_style}]{s['signal']}[/{sig_style}]"
             )
         console.print(stocks_table)
@@ -3518,7 +3560,7 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
                 ema10=ema10, prev_ema10=prev_ema10, ema5=ema5, prev_ema5=prev_ema5,
                 max_bias_5d=max_bias_5d, max_rsi_5d=max_rsi_5d, max_pnl_pct=meta.get("max_pnl_pct", 0.0),
                 sma200=sma200, min_rsi_3d=min_rsi_3d, atr_pct=atr_pct, fib_pos=fib_pos,
-                crash_5d=crash_5d, is_right_turn=is_right_turn, rs_60=rs_60
+                crash_5d=crash_5d, is_right_turn=is_right_turn, rs_60=rs_60, low_price=float(df['Low'].iloc[-1]) if 'Low' in df else effective_price, rth_low=intra_info.get('rth_low', effective_price)
             )
             intra_eval = evaluate_intraday_entry(
                 active_price, fib_low, fib_high, ma50,
@@ -3685,7 +3727,7 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
                 ema10=ema10, prev_ema10=prev_ema10, ema5=ema5, prev_ema5=prev_ema5,
                 max_bias_5d=max_bias_5d, max_rsi_5d=max_rsi_5d, max_pnl_pct=meta.get("max_pnl_pct", 0.0),
                 sma200=sma200, min_rsi_3d=min_rsi_3d, atr_pct=atr_pct, fib_pos=fib_pos,
-                crash_5d=crash_5d, is_right_turn=is_right_turn, rs_60=rs_60
+                crash_5d=crash_5d, is_right_turn=is_right_turn, rs_60=rs_60, low_price=float(df['Low'].iloc[-1]) if 'Low' in df else effective_price, rth_low=intra_info.get('rth_low', effective_price)
             )
             intra_eval = evaluate_intraday_entry(
                 active_price, fib_low, fib_high, ma50,
