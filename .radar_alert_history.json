@@ -1,97 +1,97 @@
 {
-  "weather": "阴天防守",
+  "weather": "暴雨空仓",
   "targets": {
     "INTC": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793335065.3666565
+      "last_notified_at": 1793347497.6903243
     },
     "PORT_INTC": {
       "state": "INTC_CRITICAL_STOP",
-      "last_notified_at": 1793335065.3666565
+      "last_notified_at": 1793347497.6903243
     },
     "AAOI": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793335065.3666565
+      "last_notified_at": 1793347497.6903243
     },
     "CCXI": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793335065.3666565
+      "last_notified_at": 1793347497.6903243
     },
     "OKLO": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793335065.3666565
+      "last_notified_at": 1793347497.6903243
     },
     "CRWV": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793335065.3666565
+      "last_notified_at": 1793347497.6903243
     },
     "CRDO": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793335065.3666565
+      "last_notified_at": 1793347497.6903243
     },
     "COHR": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793335065.3666565
+      "last_notified_at": 1793347497.6903243
     },
     "NBIS": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793335065.3666565
+      "last_notified_at": 1793347497.6903243
     },
     "ASTS": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793335065.3666565
+      "last_notified_at": 1793347497.6903243
     },
     "AXTI": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793335065.3666565
+      "last_notified_at": 1793347497.6903243
     },
     "MRVL": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793335065.3666565
+      "last_notified_at": 1793347497.6903243
     },
     "STX": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793335065.3666565
+      "last_notified_at": 1793347497.6903243
     },
     "FPS": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793335065.3666565
+      "last_notified_at": 1793347497.6903243
     },
     "AMZN": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793335065.3666565
+      "last_notified_at": 1793347497.6903243
     },
     "SNDK": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793335065.3666565
+      "last_notified_at": 1793347497.6903243
     },
     "RKLB": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793335065.3666565
+      "last_notified_at": 1793347497.6903243
     },
     "GOOGL": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793335065.3666565
+      "last_notified_at": 1793347497.6903243
     },
     "BE": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793335065.3666565
+      "last_notified_at": 1793347497.6903243
     },
     "DELL": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793335065.3666565
+      "last_notified_at": 1793347497.6903243
     },
     "WDC": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793335065.3666565
+      "last_notified_at": 1793347497.6903243
     },
     "AVGO": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793335065.3666565
+      "last_notified_at": 1793347497.6903243
     },
     "AMAT": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793335065.3666565
+      "last_notified_at": 1793347497.6903243
     },
     "VST": {
       "state": "NORMAL",
@@ -103,7 +103,7 @@
     },
     "ORCL": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793335065.3666565
+      "last_notified_at": 1793347497.6903243
     },
     "CEG": {
       "state": "NORMAL",
@@ -130,8 +130,8 @@
       "last_notified_at": 0.0
     },
     "LITE": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1793335065.3666565
+      "state": "STOP_LOSS",
+      "last_notified_at": 1793347497.6903243
     },
     "HPE": {
       "state": "NORMAL",
@@ -142,8 +142,8 @@
       "last_notified_at": 0.0
     },
     "SPCX": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1793335065.3666565
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "VRT": {
       "state": "NORMAL",
@@ -241,6 +241,6 @@
   "position_peaks": {
     "INTC": 93.3,
     "SOXL": 108.2109,
-    "SOXS": 47.41
+    "SOXS": 48.87
   }
 }
