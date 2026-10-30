@@ -126,12 +126,12 @@
       "last_notified_at": 0.0
     },
     "META": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1793347796.462479
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "LITE": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1793347796.462479
+      "state": "STOP_LOSS",
+      "last_notified_at": 1793347856.5016787
     },
     "HPE": {
       "state": "NORMAL",
@@ -142,8 +142,8 @@
       "last_notified_at": 0.0
     },
     "SPCX": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1793347856.5016787
     },
     "VRT": {
       "state": "NORMAL",
