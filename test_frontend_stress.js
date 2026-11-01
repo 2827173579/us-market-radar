@@ -252,22 +252,28 @@ allTickers.forEach((ticker, idx) => {
 // -----------------------------------------------------------------------------
 // Phase 2: Explicit Crash-to-Normal Transition Stress Test
 // -----------------------------------------------------------------------------
+const isHalted = (data) => Boolean(data && (
+    data.is_crash_halt ||
+    data.is_cooling_halt ||
+    (data.optimal_limit === 0 && data.limit_note && (data.limit_note.includes("\u7834\u4f4d") || data.limit_note.includes("\u66b4\u8dcc") || data.limit_note.includes("\u51b7\u5374")))
+));
+
 const crashTickers = allTickers.filter(t => {
     const data = stocksData.find(s => s.ticker === t) || macroData[t];
-    return Boolean(data && (data.is_crash_halt || (data.optimal_limit === 0 && data.limit_note && data.limit_note.includes("破位"))));
+    return isHalted(data);
 });
 
 const normalTickers = allTickers.filter(t => {
     const data = stocksData.find(s => s.ticker === t) || macroData[t];
-    return Boolean(data && !data.is_crash_halt && !(data.optimal_limit === 0 && data.limit_note && data.limit_note.includes("破位")));
+    return Boolean(data && !isHalted(data));
 });
 
-console.log(`[INFO] Identified ${crashTickers.length} Crash-Halt Tickers and ${normalTickers.length} Normal Tickers`);
+console.log(`[INFO] Identified ${crashTickers.length} Crash/Cooling-Halt Tickers and ${normalTickers.length} Normal Tickers`);
 
 const transitionRemnants = [];
 
-// Pair each crash ticker with key normal tickers (e.g. IGV, AAPL, MSFT, GOOGL)
-const probeNormalTickers = normalTickers.filter(t => ['IGV', 'AAPL', 'MSFT', 'GOOGL', 'NVDA', 'QQQM'].includes(t));
+// Pair each crash ticker with key truly normal tickers (e.g. IGV, AAPL, MSFT, NVDA, QQQM)
+const probeNormalTickers = normalTickers.filter(t => ['IGV', 'AAPL', 'MSFT', 'NVDA', 'QQQM'].includes(t));
 
 crashTickers.forEach(crashTk => {
     probeNormalTickers.forEach(normTk => {
