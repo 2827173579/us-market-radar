@@ -58,8 +58,8 @@
       "last_notified_at": 1793619889.191439
     },
     "AMZN": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "STOP_LOSS",
+      "last_notified_at": 1793623005.8273067
     },
     "SNDK": {
       "state": "STOP_LOSS",
