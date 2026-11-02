@@ -365,18 +365,19 @@ def compute_macro_features(
     """
     基于宏观基准 ETF (QQQM, SMH, IGV, TLT, VIXY) 计算 6 维全局气象特征与基准收益率。
     支持直接传入 macro_map 字典或从 raw_panel 中提取。
-    返回按 Date 索引/列的宏观特征表，用于后续左连接广播到每个股票上。
+    每个 ETF 子表独立按 Date 排序并计算指标，统一通过 pd.merge(..., on='Date', how='left') 合并，
+    彻底解决切片行号索引不相交导致特征全为 NaN 并被静默填 0 的问题。
     """
     etf_dfs = {}
     if macro_map is not None:
         for k, v in macro_map.items():
-            sub = v.copy().sort_values('Date')
+            sub = v.copy().sort_values('Date').reset_index(drop=True)
             etf_dfs[k] = sub
     elif raw_panel is not None:
         for etf in MACRO_ETFS:
             sub = raw_panel[raw_panel['Ticker'] == etf].copy()
             if len(sub) > 0:
-                sub = sub.sort_values('Date')
+                sub = sub.sort_values('Date').reset_index(drop=True)
                 etf_dfs[etf] = sub
     else:
         raise ValueError("CRITICAL: raw_panel 和 macro_map 至少需要提供一个！")
@@ -385,47 +386,76 @@ def compute_macro_features(
         if req_etf not in etf_dfs:
             raise ValueError(f"CRITICAL: 缺失计算宏观气象必需的 ETF: {req_etf}")
 
-    qqqm = etf_dfs['QQQM'].sort_values('Date').copy()
-    smh = etf_dfs['SMH'].sort_values('Date').copy()
-    igv = etf_dfs['IGV'].sort_values('Date').copy()
-    tlt = etf_dfs['TLT'].sort_values('Date').copy()
-    vixy = etf_dfs['VIXY'].sort_values('Date').copy()
+    qqqm = etf_dfs['QQQM'].sort_values('Date').reset_index(drop=True)
+    smh = etf_dfs['SMH'].sort_values('Date').reset_index(drop=True)
+    igv = etf_dfs['IGV'].sort_values('Date').reset_index(drop=True)
+    tlt = etf_dfs['TLT'].sort_values('Date').reset_index(drop=True)
+    vixy = etf_dfs['VIXY'].sort_values('Date').reset_index(drop=True)
 
-    macro_df = pd.DataFrame({'Date': qqqm['Date']})
+    # 1. QQQM 特征表
+    qqqm_close = qqqm['Close'].astype(float)
+    qqqm_ma50 = qqqm_close.rolling(50, min_periods=1).mean()
+    qqqm_feat = pd.DataFrame({
+        'Date': qqqm['Date'],
+        'QQQM_Bias_MA50': ((qqqm_close - qqqm_ma50) / (qqqm_ma50 + 1e-8)) * 100.0,
+        'QQQM_Ret_5d': qqqm_close.pct_change(5).fillna(0.0) * 100.0
+    })
 
-    # 1. QQQM_Bias_MA50 与 5 日收益率
-    qqqm_ma50 = qqqm['Close'].rolling(50, min_periods=1).mean()
-    macro_df['QQQM_Bias_MA50'] = ((qqqm['Close'] - qqqm_ma50) / (qqqm_ma50 + 1e-8)) * 100.0
-    macro_df['QQQM_Ret_5d'] = qqqm['Close'].pct_change(5).fillna(0.0) * 100.0
+    # 2. SMH 特征表
+    smh_close = smh['Close'].astype(float)
+    smh_ma50 = smh_close.rolling(50, min_periods=1).mean()
+    smh_feat = pd.DataFrame({
+        'Date': smh['Date'],
+        'SMH_Bias_MA50': ((smh_close - smh_ma50) / (smh_ma50 + 1e-8)) * 100.0,
+        'SMH_Ret_20d': smh_close.pct_change(20).fillna(0.0) * 100.0
+    })
 
-    # 2. SMH_Bias_MA50 与 20 日收益率
-    smh_ma50 = smh['Close'].rolling(50, min_periods=1).mean()
-    macro_df['SMH_Bias_MA50'] = ((smh['Close'] - smh_ma50) / (smh_ma50 + 1e-8)) * 100.0
-    macro_df['SMH_Ret_20d'] = smh['Close'].pct_change(20).fillna(0.0) * 100.0
+    # 3. TLT 特征表
+    tlt_close = tlt['Close'].astype(float)
+    tlt_ma50 = tlt_close.rolling(50, min_periods=1).mean()
+    tlt_feat = pd.DataFrame({
+        'Date': tlt['Date'],
+        'TLT_Bias_MA50': ((tlt_close - tlt_ma50) / (tlt_ma50 + 1e-8)) * 100.0
+    })
 
-    # 3. TLT_Bias_MA50 (利率/国债环境)
-    tlt_ma50 = tlt['Close'].rolling(50, min_periods=1).mean()
-    macro_df['TLT_Bias_MA50'] = ((tlt['Close'] - tlt_ma50) / (tlt_ma50 + 1e-8)) * 100.0
-
-    # 4. VIXY_Bias_MA20 与 VIXY_Pos_60 (恐慌脉冲分位)
-    vixy_ma20 = vixy['Close'].rolling(20, min_periods=1).mean()
-    macro_df['VIXY_Bias_MA20'] = ((vixy['Close'] - vixy_ma20) / (vixy_ma20 + 1e-8)) * 100.0
-    v_low60 = vixy['Low'].rolling(60, min_periods=1).min()
-    v_high60 = vixy['High'].rolling(60, min_periods=1).max()
+    # 4. VIXY 特征表
+    vixy_close = vixy['Close'].astype(float)
+    vixy_high = vixy['High'].astype(float)
+    vixy_low = vixy['Low'].astype(float)
+    vixy_ma20 = vixy_close.rolling(20, min_periods=1).mean()
+    v_low60 = vixy_low.rolling(60, min_periods=1).min()
+    v_high60 = vixy_high.rolling(60, min_periods=1).max()
     v_range = v_high60 - v_low60
-    v_pos = (vixy['Close'] - v_low60) / np.where(v_range > 1e-6, v_range, 1.0)
-    macro_df['VIXY_Pos_60'] = np.clip(v_pos, 0.0, 1.0)
+    v_pos = (vixy_close - v_low60) / np.where(v_range > 1e-6, v_range, 1.0)
+    vixy_feat = pd.DataFrame({
+        'Date': vixy['Date'],
+        'VIXY_Bias_MA20': ((vixy_close - vixy_ma20) / (vixy_ma20 + 1e-8)) * 100.0,
+        'VIXY_Pos_60': np.clip(v_pos, 0.0, 1.0)
+    })
 
-    # 5. SMH_IGV_Ratio_Bias: ((SMH / IGV) - MA20(SMH / IGV)) / MA20 * 100
-    ratio = smh['Close'].values / (igv['Close'].values + 1e-8)
-    ratio_s = pd.Series(ratio, index=macro_df.index)
-    ratio_ma20 = ratio_s.rolling(20, min_periods=1).mean()
-    macro_df['SMH_IGV_Ratio_Bias'] = ((ratio_s - ratio_ma20) / (ratio_ma20 + 1e-8)) * 100.0
+    # 5. SMH/IGV 比值乖离表 (先按 Date 内连接对齐相同交易日)
+    smh_igv = pd.merge(
+        smh[['Date', 'Close']].rename(columns={'Close': 'Close_SMH'}),
+        igv[['Date', 'Close']].rename(columns={'Close': 'Close_IGV'}),
+        on='Date',
+        how='inner'
+    ).sort_values('Date').reset_index(drop=True)
+    smh_igv_ratio = smh_igv['Close_SMH'].astype(float) / (smh_igv['Close_IGV'].astype(float) + 1e-8)
+    ratio_ma20 = smh_igv_ratio.rolling(20, min_periods=1).mean()
+    smh_igv_feat = pd.DataFrame({
+        'Date': smh_igv['Date'],
+        'SMH_IGV_Ratio_Bias': ((smh_igv_ratio - ratio_ma20) / (ratio_ma20 + 1e-8)) * 100.0
+    })
 
-    # 安全清洗异常值
+    # 6. 以 QQQM 的所有交易日为基准按 Date 左连接全部宏观特征
+    macro_df = pd.DataFrame({'Date': sorted(qqqm['Date'].unique())})
+    for sub_df in [qqqm_feat, smh_feat, tlt_feat, vixy_feat, smh_igv_feat]:
+        macro_df = pd.merge(macro_df, sub_df, on='Date', how='left')
+
+    # 因果安全前向填充并清洗异常值
     for col in macro_df.columns:
         if col != 'Date':
-            macro_df[col] = macro_df[col].replace([np.inf, -np.inf], np.nan).fillna(0.0)
+            macro_df[col] = macro_df[col].ffill().replace([np.inf, -np.inf], np.nan).fillna(0.0)
 
     return macro_df
 
@@ -470,9 +500,18 @@ def build_feature_panel(
     # 按 Date 左连接宏观特征
     merged = pd.merge(long_panel, macro_df, on='Date', how='left')
 
-    # 计算 2 维跨资产超额收益
-    merged['Alpha_QQQM_5d'] = merged['Ret_5d'] - merged['QQQM_Ret_5d']
-    merged['Alpha_SMH_20d'] = merged['Ret_20d'] - merged['SMH_Ret_20d']
+    # 计算 2 维跨资产超额收益并结合当日横截面百分位排名与连续超额幅度 (严格在同日 groupby('Date') 内计算，零未来函数)
+    raw_alpha_qqqm = (merged['Ret_5d'] - merged['QQQM_Ret_5d']).replace([np.inf, -np.inf], np.nan).fillna(0.0)
+    raw_alpha_smh = (merged['Ret_20d'] - merged['SMH_Ret_20d']).replace([np.inf, -np.inf], np.nan).fillna(0.0)
+    merged['_raw_alpha_qqqm'] = raw_alpha_qqqm
+    merged['_raw_alpha_smh'] = raw_alpha_smh
+    cs_rank_qqqm = merged.groupby('Date')['_raw_alpha_qqqm'].rank(pct=True).fillna(0.5)
+    cs_rank_smh = merged.groupby('Date')['_raw_alpha_smh'].rank(pct=True).fillna(0.5)
+    sig_qqqm = 1.0 / (1.0 + np.exp(-np.clip(raw_alpha_qqqm, -50.0, 50.0) / 5.0))
+    sig_smh = 1.0 / (1.0 + np.exp(-np.clip(raw_alpha_smh, -50.0, 50.0) / 8.0))
+    merged['Alpha_QQQM_5d'] = np.clip(0.65 * cs_rank_qqqm + 0.35 * sig_qqqm, 0.0, 1.0)
+    merged['Alpha_SMH_20d'] = np.clip(0.65 * cs_rank_smh + 0.35 * sig_smh, 0.0, 1.0)
+    merged = merged.drop(columns=['_raw_alpha_qqqm', '_raw_alpha_smh'], errors='ignore')
 
     # 保证 23 维特征完整且无 unhandled NaN/Inf
     for feat in FEATURE_COLS:
@@ -490,12 +529,30 @@ def build_feature_panel(
 # 4. 三阈值科学打标引擎 (Triple Barrier Labeling Engine)
 # ==============================================================================
 
+def compute_effective_atr(atr_pct: float) -> float:
+    """
+    分段软压缩 (Soft-Root Scaling) 动态计算有效 ATR:
+    - raw_atr = atr_pct / 100.0
+    - raw_atr <= 0.040: eff_atr = np.clip(raw_atr, 0.012, 0.040)
+    - raw_atr > 0.040:  eff_atr = 0.040 + 0.50 * (np.clip(raw_atr, 0.040, 0.100) - 0.040)
+    下限维持 0.012 (1.2%)，上限平滑延展至 0.070 (7.0%)。
+    """
+    if np.isnan(atr_pct) or atr_pct <= 0:
+        atr_pct = 2.0
+    raw_atr = float(atr_pct) / 100.0
+    if raw_atr > 0.040:
+        return float(0.040 + 0.50 * (np.clip(raw_atr, 0.040, 0.100) - 0.040))
+    else:
+        return float(np.clip(raw_atr, 0.012, 0.040))
+
+
 def apply_triple_barrier_labeling(df: pd.DataFrame) -> pd.DataFrame:
     """
     三阈值动态止盈止损打标引擎 (Triple Barrier Labeling):
     1. 以次日开盘价 (NEXT_OPEN = Open.shift(-1)) 作为真实可成交基准入场价；
-    2. 动态止盈上轨 (Upper Barrier): NEXT_OPEN * (1 + max(0.035, 1.5 * ATR_Pct_T))
-    3. 动态止损下轨 (Lower Barrier): NEXT_OPEN * (1 - max(0.022, 1.0 * ATR_Pct_T))
+    2. 动态止盈上轨 (Upper Barrier): NEXT_OPEN * (1 + max(0.030, 1.35 * eff_atr))
+    3. 动态止损下轨 (Lower Barrier): NEXT_OPEN * (1 - max(0.022, 1.00 * eff_atr))
+       其中 eff_atr 由 compute_effective_atr(atr_pct) 软压缩计算 (0.012 ~ 0.070)
     4. 观察未来 5 个交易日 (T+1 ~ T+5):
        - 先触及止盈上轨且未先触及止损下轨 -> Label = 1
        - 先触及止损下轨 -> Label = 0
@@ -546,8 +603,9 @@ def apply_triple_barrier_labeling(df: pd.DataFrame) -> pd.DataFrame:
             if np.isnan(atr_pct) or atr_pct <= 0:
                 atr_pct = 2.0
 
-            upper_mult = max(0.035, 1.5 * (atr_pct / 100.0))
-            lower_mult = max(0.022, 1.0 * (atr_pct / 100.0))
+            eff_atr = compute_effective_atr(atr_pct)
+            upper_mult = max(0.030, 1.35 * eff_atr)
+            lower_mult = max(0.022, 1.00 * eff_atr)
 
             upper_barrier = entry_price * (1.0 + upper_mult)
             lower_barrier = entry_price * (1.0 - lower_mult)
@@ -709,7 +767,8 @@ def run_walk_forward_cv(
        - num_leaves = 23
        - learning_rate = 0.03
        - subsample = 0.8, subsample_freq = 1
-       - colsample_bytree = 0.8
+       - colsample_bytree = 0.65 (V1.2: 降低特征列采样比，抑制宏观特征垄断)
+       - max_bin = 63 (V1.2: 限制分箱数，抑制宏观特征对日期的过拟合)
        - n_estimators = 300
        - random_state = 42
        - objective = 'binary'
@@ -739,10 +798,12 @@ def run_walk_forward_cv(
         'learning_rate': 0.03,
         'subsample': 0.8,
         'subsample_freq': 1,
-        'colsample_bytree': 0.8,
+        'colsample_bytree': 0.65,
+        'max_bin': 63,
         'n_estimators': 300,
         'random_state': 42,
         'objective': 'binary',
+        'class_weight': 'balanced',
         'importance_type': 'gain',
         'verbose': -1,
         'n_jobs': -1
@@ -852,9 +913,22 @@ def run_walk_forward_cv(
         'folds': folds
     }
 
-    # 最新折的模型作为实盘推理模型 (支持 Booster 及 Estimator 双重接口)
-    latest_year = max(models.keys())
-    final_estimator = models[latest_year]
+    # 全量已结算样本重训实盘推理专属模型 (覆盖至 T-5 最新已结算交易日，严守 5 日尾部隔离，不触碰 OOS 评估结果)
+    live_train_clean = df.dropna(subset=['Label']).copy()
+    if len(live_train_clean) >= 20 and live_train_clean['Label'].nunique() >= 2:
+        t_live_start = time.time()
+        live_clf = lgb.LGBMClassifier(**lgb_params)
+        live_clf.fit(live_train_clean[FEATURE_COLS], live_train_clean['Label'].astype(int))
+        t_live_elapsed = time.time() - t_live_start
+        live_min_d = live_train_clean['Date'].min().strftime('%Y-%m-%d')
+        live_max_d = live_train_clean['Date'].max().strftime('%Y-%m-%d')
+        print(f"  [+] Live Refit (实盘推理专属模型): 全量已结算样本 ({live_min_d} ~ {live_max_d}, {len(live_train_clean)} 样本, 严守 T-5 尾部隔离) | 训练耗时 {t_live_elapsed:.1f}s")
+        models['live'] = live_clf
+        final_estimator = live_clf
+    else:
+        latest_year = max(models.keys())
+        final_estimator = models[latest_year]
+
     final_booster = final_estimator.booster_
 
     if not hasattr(final_booster, 'predict_proba'):
@@ -971,6 +1045,47 @@ def overlay_finnhub_quotes(raw_panel: pd.DataFrame, quotes: Dict[str, Dict]) -> 
     return df
 
 
+def evaluate_macro_weather(
+    qqqm_bias: float,
+    smh_bias: float,
+    vixy_pos: float = 0.5,
+    smh_igv: float = 0.0,
+    latest_date: str = ""
+) -> Dict[str, Any]:
+    """
+    统一宏观水温气象判定引擎 (与 integrated_market_radar.py 保持 100% 规则对齐):
+    1. 暴雨空仓: QQQM_Bias_MA50 < -3.0% 且 SMH_Bias_MA50 < -3.0% (双破位共振)
+    2. 晴天做多: 纳指与半导体双双站上生命线 (QQQM >= 0.25% 且 SMH >= 0.25%) 且无 VIX 恐慌脉冲 (VIXY_Pos_60 < 0.75)
+    3. 阴天防守: 单边偏离在 0% ~ -5% 且未双破位、或大盘/芯片分化、或 VIX 脉冲预警
+    """
+    is_vix_panic = bool(vixy_pos >= 0.75)
+    is_bull_base = bool(qqqm_bias >= 0.25 and smh_bias >= 0.25)
+
+    if qqqm_bias < -3.0 and smh_bias < -3.0:
+        m_status = "🌧️ 暴雨空仓"
+        m_desc = "科技基准与半导体共振破位下行 · 系统性流动性挤压 · 严禁盲目抄底"
+        m_badge = "weather-rainy"
+    elif is_bull_base and not is_vix_panic:
+        m_status = "☀️ 晴天做多"
+        m_desc = "纳指与半导体双双站上生命线 · 风险偏好处于高位 · 顺势做多核心龙头"
+        m_badge = "weather-sunny"
+    else:
+        m_status = "⛅ 阴天防守"
+        m_desc = "大盘与核心芯片主线出现分化或均线争夺 · 审慎试仓 · 严格防守底线"
+        m_badge = "weather-cloudy"
+
+    return {
+        'status': m_status,
+        'desc': m_desc,
+        'badge_class': m_badge,
+        'qqqm_bias': round(qqqm_bias, 2),
+        'vixy_pos': round(vixy_pos, 2),
+        'smh_bias': round(smh_bias, 2),
+        'smh_igv': round(smh_igv, 2),
+        'latest_date': latest_date
+    }
+
+
 def generate_report_tables(
     oos_df: pd.DataFrame,
     model: Any,
@@ -1000,13 +1115,21 @@ def generate_report_tables(
         sub = oos_df[oos_df['Prob_1'] >= th]
         trigger_cnt = len(sub)
         if trigger_cnt > 0:
-            win_cnt = int((sub['Label'] == 1.0).sum())
-            win_rate = (win_cnt / trigger_cnt) * 100.0
-            avg_gain = float(sub['Max_Gain_5d'].mean()) if has_gains else 0.0
+            touch_win_cnt = int((sub['Label'] == 1.0).sum())
+            touch_win_rate = (touch_win_cnt / trigger_cnt) * 100.0
+            avg_realized_ret = float(sub['Realized_Return'].mean()) if has_returns else 0.0
 
             if has_returns:
-                pos_ret = sub[sub['Realized_Return'] > 0]['Realized_Return'].sum()
-                neg_ret = abs(sub[sub['Realized_Return'] < 0]['Realized_Return'].sum())
+                pos_win_cnt = int((sub['Realized_Return'] > 0).sum())
+                pos_win_rate = (pos_win_cnt / trigger_cnt) * 100.0
+                pos_rets = sub[sub['Realized_Return'] > 0]['Realized_Return']
+                neg_rets = sub[sub['Realized_Return'] < 0]['Realized_Return']
+                avg_win = float(pos_rets.mean()) if len(pos_rets) > 0 else 0.0
+                avg_loss = abs(float(neg_rets.mean())) if len(neg_rets) > 0 else 0.0
+                win_loss_ratio = (avg_win / avg_loss) if avg_loss > 0 else (99.99 if avg_win > 0 else 1.00)
+
+                pos_ret = float(pos_rets.sum()) if len(pos_rets) > 0 else 0.0
+                neg_ret = abs(float(neg_rets.sum())) if len(neg_rets) > 0 else 0.0
                 if neg_ret > 0:
                     pf = pos_ret / neg_ret
                 elif pos_ret > 0:
@@ -1014,18 +1137,26 @@ def generate_report_tables(
                 else:
                     pf = 1.00
             else:
+                pos_win_rate = touch_win_rate
+                win_loss_ratio = 1.50
                 pf = 1.50
         else:
-            win_rate = 0.0
-            avg_gain = 0.0
+            touch_win_rate = 0.0
+            pos_win_rate = 0.0
+            avg_realized_ret = 0.0
+            win_loss_ratio = 0.0
             pf = 0.0
 
         table1_rows.append({
             'threshold_label': th_label,
             'threshold_val': th,
             'trigger_count': trigger_cnt,
-            'win_rate_pct': round(win_rate, 1),
-            'avg_max_gain_pct': round(avg_gain, 2),
+            'win_rate_pct': round(pos_win_rate, 1),
+            'pos_win_rate_pct': round(pos_win_rate, 1),
+            'touch_win_rate_pct': round(touch_win_rate, 1),
+            'avg_realized_return_pct': round(avg_realized_ret, 2),
+            'avg_max_gain_pct': round(avg_realized_ret, 2),
+            'win_loss_ratio': round(win_loss_ratio, 2),
             'profit_factor': round(pf, 2)
         })
 
@@ -1044,29 +1175,53 @@ def generate_report_tables(
 
         sec_high = sec_df[sec_df['Prob_1'] >= 0.60]
         high_conv_cnt = len(sec_high)
+        eval_sub = sec_high if high_conv_cnt > 0 else (sec_df if oos_total_signals > 0 else pd.DataFrame())
+        eval_cnt = len(eval_sub)
 
-        if high_conv_cnt > 0:
-            high_win_cnt = int((sec_high['Label'] == 1.0).sum())
-            high_win_rate = (high_win_cnt / high_conv_cnt) * 100.0
-            high_avg_gain = float(sec_high['Max_Gain_5d'].mean()) if has_gains else 0.0
-        elif oos_total_signals > 0:
-            high_win_cnt = int((sec_df['Label'] == 1.0).sum())
-            high_win_rate = (high_win_cnt / oos_total_signals) * 100.0
-            high_avg_gain = float(sec_df['Max_Gain_5d'].mean()) if has_gains else 0.0
+        if eval_cnt > 0:
+            touch_win_cnt = int((eval_sub['Label'] == 1.0).sum())
+            touch_win_rate = (touch_win_cnt / eval_cnt) * 100.0
+            avg_realized_ret = float(eval_sub['Realized_Return'].mean()) if has_returns else 0.0
+
+            if has_returns:
+                pos_win_cnt = int((eval_sub['Realized_Return'] > 0).sum())
+                pos_win_rate = (pos_win_cnt / eval_cnt) * 100.0
+                pos_rets = eval_sub[eval_sub['Realized_Return'] > 0]['Realized_Return']
+                neg_rets = eval_sub[eval_sub['Realized_Return'] < 0]['Realized_Return']
+                avg_win = float(pos_rets.mean()) if len(pos_rets) > 0 else 0.0
+                avg_loss = abs(float(neg_rets.mean())) if len(neg_rets) > 0 else 0.0
+                win_loss_ratio = (avg_win / avg_loss) if avg_loss > 0 else (99.99 if avg_win > 0 else 1.00)
+
+                pos_sum = float(pos_rets.sum()) if len(pos_rets) > 0 else 0.0
+                neg_sum = abs(float(neg_rets.sum())) if len(neg_rets) > 0 else 0.0
+                pf = (pos_sum / neg_sum) if neg_sum > 0 else (99.99 if pos_sum > 0 else 1.00)
+            else:
+                pos_win_rate = touch_win_rate
+                win_loss_ratio = 1.50
+                pf = 1.50
         else:
-            high_win_rate = 0.0
-            high_avg_gain = 0.0
+            touch_win_rate = 0.0
+            pos_win_rate = 0.0
+            avg_realized_ret = 0.0
+            win_loss_ratio = 0.0
+            pf = 0.0
 
-        if high_win_rate >= 68.0:
+        # AI Alpha 星级评定标准 (基于样本外期望盈亏比 pf 与平均实现收益 avg_realized_ret)
+        if pf >= 1.50 and avg_realized_ret >= 0.80:
             rating = "⭐⭐⭐⭐⭐"
-        elif high_win_rate >= 62.0:
+        elif pf >= 1.35 and avg_realized_ret >= 0.60:
             rating = "⭐⭐⭐⭐☆"
-        elif high_win_rate >= 55.0:
+        elif pf >= 1.20 and avg_realized_ret >= 0.40:
             rating = "⭐⭐⭐☆☆"
-        elif high_win_rate >= 50.0:
+        elif pf >= 1.05:
             rating = "⭐⭐☆☆☆"
         else:
             rating = "⭐☆☆☆☆"
+
+        if high_conv_cnt < 10:
+            if rating in ["⭐⭐⭐⭐⭐", "⭐⭐⭐⭐☆"]:
+                rating = "⭐⭐⭐☆☆"
+            rating = f"{rating} (小样本)"
 
         table2_rows.append({
             'sector_key': sec_key,
@@ -1074,13 +1229,18 @@ def generate_report_tables(
             'tickers_count': tickers_cnt,
             'oos_total_signals': oos_total_signals,
             'high_conviction_signals': high_conv_cnt,
-            'high_conviction_win_rate_pct': round(high_win_rate, 1),
-            'avg_max_gain_pct': round(high_avg_gain, 2),
+            'high_conviction_win_rate_pct': round(pos_win_rate, 1),
+            'high_conviction_pos_win_rate_pct': round(pos_win_rate, 1),
+            'high_conviction_touch_win_rate_pct': round(touch_win_rate, 1),
+            'avg_realized_return_pct': round(avg_realized_ret, 2),
+            'avg_max_gain_pct': round(avg_realized_ret, 2),
+            'win_loss_ratio': round(win_loss_ratio, 2),
+            'profit_factor': round(pf, 2),
             'alpha_rating': rating
         })
 
-    # 按高置信胜率降序排序
-    table2_rows.sort(key=lambda x: x['high_conviction_win_rate_pct'], reverse=True)
+    # 按期望盈亏比与高置信正收益胜率降序排序
+    table2_rows.sort(key=lambda x: (x['profit_factor'], x['high_conviction_win_rate_pct']), reverse=True)
 
     # ---------------------------------------------------------
     # 3. 表 3: LightGBM 特征重要度 Top 15 排行榜
@@ -1126,7 +1286,18 @@ def generate_report_tables(
     # 4. 表 4: 最新交易日 AI 预测做多胜率排行榜 Top 10 (Live Inference Ranking)
     # ---------------------------------------------------------
     table4_rows = []
+    all_live_rows = []
     latest_df = latest_features_df.copy()
+
+    # 建立赛道历史 OOS 高置信胜率、期望盈亏比与星级映射表
+    sector_oos_wr_map = {r['sector_key']: r['high_conviction_win_rate_pct'] for r in table2_rows}
+    sector_oos_wr_map.update({r['sector_name_cn']: r['high_conviction_win_rate_pct'] for r in table2_rows})
+
+    sector_pf_map = {r['sector_key']: r['profit_factor'] for r in table2_rows}
+    sector_pf_map.update({r['sector_name_cn']: r['profit_factor'] for r in table2_rows})
+
+    sector_rating_map = {r['sector_key']: r['alpha_rating'] for r in table2_rows}
+    sector_rating_map.update({r['sector_name_cn']: r['alpha_rating'] for r in table2_rows})
 
     if len(latest_df) > 0:
         X_live = latest_df[feature_cols]
@@ -1134,51 +1305,91 @@ def generate_report_tables(
             live_probs = model.predict_proba(X_live)[:, 1]
         elif hasattr(model, 'predict'):
             live_probs = model.predict(X_live)
+        elif 'Prob_1' in latest_df.columns:
+            live_probs = latest_df['Prob_1'].to_numpy(dtype=float)
         else:
             live_probs = np.full(len(latest_df), 0.5)
 
         latest_df['Prob_1'] = live_probs
-        latest_sorted = latest_df.sort_values('Prob_1', ascending=False).reset_index(drop=True)
-        top10 = latest_sorted.iloc[:10]
 
-        weather_status = macro_weather.get('status', '⛅ 阴天防守') if macro_weather else '⛅ 阴天防守'
-
-        for rank, (_, row) in enumerate(top10.iterrows(), 1):
+        # 计算赛道校准综合得分 Calibrated_Prob = Prob_1 * np.clip(sector_pf / 1.30, 0.75, 1.15)
+        calibrated_probs = []
+        sector_pfs = []
+        for _, row in latest_df.iterrows():
             tk = str(row['Ticker'])
             sec_k = str(row.get('Sector', SECTOR_MAP.get(tk, 'Unknown')))
             sec_c = SECTOR_CHINESE_MAP.get(sec_k, sec_k)
+            sec_pf = float(sector_pf_map.get(sec_k, sector_pf_map.get(sec_c, 1.30)))
+            mult = float(np.clip(sec_pf / 1.30, 0.75, 1.15))
+            cal_p = float(row['Prob_1']) * mult
+            calibrated_probs.append(cal_p)
+            sector_pfs.append(sec_pf)
+
+        latest_df['Calibrated_Prob'] = calibrated_probs
+        latest_df['Sector_PF'] = sector_pfs
+
+        # 按赛道校准得分 Calibrated_Prob 降序排序，杜绝劣质赛道霸榜
+        latest_sorted = latest_df.sort_values('Calibrated_Prob', ascending=False).reset_index(drop=True)
+
+        weather_status = macro_weather.get('status', '⛅ 阴天防守') if macro_weather else '⛅ 阴天防守'
+        is_storm = ("🌧️" in weather_status) or ("暴雨" in weather_status)
+
+        for rank, (_, row) in enumerate(latest_sorted.iterrows(), 1):
+            tk = str(row['Ticker'])
+            sec_k = str(row.get('Sector', SECTOR_MAP.get(tk, 'Unknown')))
+            sec_c = SECTOR_CHINESE_MAP.get(sec_k, sec_k)
+            sec_rating = str(sector_rating_map.get(sec_k, sector_rating_map.get(sec_c, '⭐⭐⭐☆☆')))
             close_p = float(row.get('Close', 100.0))
-            prob_pct = float(row['Prob_1']) * 100.0
+            raw_prob_pct = float(row['Prob_1']) * 100.0
+            cal_prob_pct = float(row['Calibrated_Prob']) * 100.0
+            sec_pf = float(row.get('Sector_PF', 1.30))
 
             atr_pct = float(row.get('ATR_Pct', 2.0))
-            if atr_pct <= 0:
-                atr_pct = 2.0
-
-            upper_mult = max(0.035, 1.5 * (atr_pct / 100.0))
-            lower_mult = max(0.022, 1.0 * (atr_pct / 100.0))
+            eff_atr = compute_effective_atr(atr_pct)
+            upper_mult = max(0.030, 1.35 * eff_atr)
+            lower_mult = max(0.022, 1.00 * eff_atr)
 
             target_p = round(close_p * (1.0 + upper_mult), 2)
             stop_p = round(close_p * (1.0 - lower_mult), 2)
             target_pct = round(upper_mult * 100.0, 1)
             stop_pct = round(lower_mult * 100.0, 1)
 
-            if prob_pct >= 65.0:
+            sec_oos_wr = sector_oos_wr_map.get(sec_k, sector_oos_wr_map.get(sec_c, 50.0))
+            eval_prob_pct = max(raw_prob_pct, cal_prob_pct)
+            if sec_oos_wr < 45.0:
+                action = "⚠️ 赛道历史胜率偏低·观望"
+                action_tag = "action-warning"
+            elif is_storm and (raw_prob_pct < 55.0 or cal_prob_pct < 62.0):
+                if raw_prob_pct >= 50.0 and cal_prob_pct >= 55.0:
+                    action = "🛡️ 暴雨防守·仅极小仓试错"
+                    action_tag = "action-watch"
+                else:
+                    action = "🛡️ 暴雨空仓·严禁左侧接刀"
+                    action_tag = "action-watch"
+            elif raw_prob_pct < 50.0:
+                action = "👀 原始胜率未过半·观望"
+                action_tag = "action-wait"
+            elif eval_prob_pct >= 65.0:
                 action = "🔥 极高确定性右侧做多"
                 action_tag = "action-buy"
-            elif prob_pct >= 55.0:
+            elif eval_prob_pct >= 55.0:
                 action = "⚡ 逢低吸筹"
                 action_tag = "action-accumulate"
             else:
                 action = "👀 观望等待"
                 action_tag = "action-wait"
 
-            table4_rows.append({
+            row_item = {
                 'rank': rank,
                 'ticker': tk,
                 'sector_key': sec_k,
                 'sector_cn': sec_c,
+                'sector_rating': sec_rating,
                 'latest_price': close_p,
-                'predicted_win_rate_pct': round(prob_pct, 1),
+                'atr_pct': round(atr_pct, 2),
+                'predicted_win_rate_pct': round(raw_prob_pct, 1),
+                'calibrated_win_rate_pct': round(cal_prob_pct, 1),
+                'sector_pf': round(sec_pf, 2),
                 'target_profit_price': target_p,
                 'target_profit_pct': target_pct,
                 'stop_loss_price': stop_p,
@@ -1186,7 +1397,10 @@ def generate_report_tables(
                 'macro_temp': weather_status,
                 'action': action,
                 'action_tag': action_tag
-            })
+            }
+            all_live_rows.append(row_item)
+
+        table4_rows = all_live_rows[:10]
 
     # ---------------------------------------------------------
     # 5. Hero KPI 汇总指标
@@ -1204,6 +1418,7 @@ def generate_report_tables(
         'table2': table2_rows,
         'table3': table3_rows,
         'table4': table4_rows,
+        'all_live_predictions': all_live_rows,
         'macro_weather': macro_weather or {},
         'kpi': {
             'high_conviction_win_rate': kpi_win_rate,
@@ -1256,31 +1471,38 @@ def print_terminal_tables(tables_data: Dict) -> None:
     print("\n" + "─" * 90)
     print("📊 表 1: 样本外分位数校准表 (Quantile Calibration Table - Expanding OOS 2024-2026)")
     print("─" * 90)
-    w_th, w_tr, w_wr, w_mg, w_pf = 14, 14, 14, 20, 18
+    w_th, w_tr, w_wr, w_ar, w_wl, w_pf = 14, 12, 18, 18, 14, 16
     hdr1 = (
         f"│ {_pad_text('预测概率档位', w_th, 'center')} "
         f"│ {_pad_text('触发样本数', w_tr, 'center')} "
-        f"│ {_pad_text('真实胜率 %', w_wr, 'center')} "
-        f"│ {_pad_text('平均 5 日最高收益', w_mg, 'center')} "
+        f"│ {_pad_text('正收益(触轨)胜率', w_wr, 'center')} "
+        f"│ {_pad_text('平均实现收益 %', w_ar, 'center')} "
+        f"│ {_pad_text('平均盈亏比', w_wl, 'center')} "
         f"│ {_pad_text('期望盈亏比 (PF)', w_pf, 'center')} │"
     )
-    sep1 = f"├─{'─'*w_th}─┼─{'─'*w_tr}─┼─{'─'*w_wr}─┼─{'─'*w_mg}─┼─{'─'*w_pf}─┤"
-    top1 = f"┌─{'─'*w_th}─┬─{'─'*w_tr}─┬─{'─'*w_wr}─┬─{'─'*w_mg}─┬─{'─'*w_pf}─┐"
-    bot1 = f"└─{'─'*w_th}─┴─{'─'*w_tr}─┴─{'─'*w_wr}─┴─{'─'*w_mg}─┴─{'─'*w_pf}─┘"
+    sep1 = f"├─{'─'*w_th}─┼─{'─'*w_tr}─┼─{'─'*w_wr}─┼─{'─'*w_ar}─┼─{'─'*w_wl}─┼─{'─'*w_pf}─┤"
+    top1 = f"┌─{'─'*w_th}─┬─{'─'*w_tr}─┬─{'─'*w_wr}─┬─{'─'*w_ar}─┬─{'─'*w_wl}─┬─{'─'*w_pf}─┐"
+    bot1 = f"└─{'─'*w_th}─┴─{'─'*w_tr}─┴─{'─'*w_wr}─┴─{'─'*w_ar}─┴─{'─'*w_wl}─┴─{'─'*w_pf}─┘"
 
     print(top1)
     print(hdr1)
     print(sep1)
     for r in tables_data.get('table1', []):
         cnt_s = f"{r['trigger_count']:,}"
-        wr_s = f"{r['win_rate_pct']:.1f}%"
-        mg_s = f"+{r['avg_max_gain_pct']:.2f}%"
+        pos_wr = r.get('pos_win_rate_pct', r.get('win_rate_pct', 0.0))
+        touch_wr = r.get('touch_win_rate_pct', r.get('win_rate_pct', 0.0))
+        wr_s = f"{pos_wr:.1f}% ({touch_wr:.1f}%)"
+        ar_val = r['avg_realized_return_pct']
+        ar_sign = '+' if ar_val > 0 else ''
+        ar_s = f"{ar_sign}{ar_val:.2f}%"
+        wl_s = f"{r.get('win_loss_ratio', 1.50):.2f}"
         pf_s = f"{r['profit_factor']:.2f}"
         row_str = (
             f"│ {_pad_text(r['threshold_label'], w_th, 'center')} "
             f"│ {_pad_text(cnt_s, w_tr, 'right')} "
             f"│ {_pad_text(wr_s, w_wr, 'right')} "
-            f"│ {_pad_text(mg_s, w_mg, 'right')} "
+            f"│ {_pad_text(ar_s, w_ar, 'right')} "
+            f"│ {_pad_text(wl_s, w_wl, 'right')} "
             f"│ {_pad_text(pf_s, w_pf, 'right')} │"
         )
         print(row_str)
@@ -1290,20 +1512,22 @@ def print_terminal_tables(tables_data: Dict) -> None:
     print("\n" + "─" * 90)
     print("🏆 表 2: 7 大赛道样本外预测表现归因表 (7 Sectors OOS Attribution Table)")
     print("─" * 90)
-    w_r, w_s, w_tc, w_tot, w_hi, w_wr2, w_mg2, w_rt = 4, 20, 10, 12, 14, 14, 14, 12
+    w_r, w_s, w_tc, w_tot, w_hi, w_wr2, w_ar2, w_wl2, w_pf2, w_rt = 4, 16, 8, 10, 12, 18, 16, 12, 16, 22
     hdr2 = (
         f"│ {_pad_text('#', w_r, 'center')} "
         f"│ {_pad_text('赛道名称', w_s, 'left')} "
         f"│ {_pad_text('标的数', w_tc, 'center')} "
         f"│ {_pad_text('OOS总信号', w_tot, 'center')} "
         f"│ {_pad_text('高置信信号数', w_hi, 'center')} "
-        f"│ {_pad_text('高置信胜率 %', w_wr2, 'center')} "
-        f"│ {_pad_text('5日最高收益%', w_mg2, 'center')} "
+        f"│ {_pad_text('正收益(触轨)胜率', w_wr2, 'center')} "
+        f"│ {_pad_text('平均实现收益 %', w_ar2, 'center')} "
+        f"│ {_pad_text('平均盈亏比', w_wl2, 'center')} "
+        f"│ {_pad_text('期望盈亏比 (PF)', w_pf2, 'center')} "
         f"│ {_pad_text('AI Alpha', w_rt, 'center')} │"
     )
-    sep2 = f"├─{'─'*w_r}─┼─{'─'*w_s}─┼─{'─'*w_tc}─┼─{'─'*w_tot}─┼─{'─'*w_hi}─┼─{'─'*w_wr2}─┼─{'─'*w_mg2}─┼─{'─'*w_rt}─┤"
-    top2 = f"┌─{'─'*w_r}─┬─{'─'*w_s}─┬─{'─'*w_tc}─┬─{'─'*w_tot}─┬─{'─'*w_hi}─┬─{'─'*w_wr2}─┬─{'─'*w_mg2}─┬─{'─'*w_rt}─┐"
-    bot2 = f"└─{'─'*w_r}─┴─{'─'*w_s}─┴─{'─'*w_tc}─┴─{'─'*w_tot}─┴─{'─'*w_hi}─┴─{'─'*w_wr2}─┴─{'─'*w_mg2}─┴─{'─'*w_rt}─┘"
+    sep2 = f"├─{'─'*w_r}─┼─{'─'*w_s}─┼─{'─'*w_tc}─┼─{'─'*w_tot}─┼─{'─'*w_hi}─┼─{'─'*w_wr2}─┼─{'─'*w_ar2}─┼─{'─'*w_wl2}─┼─{'─'*w_pf2}─┼─{'─'*w_rt}─┤"
+    top2 = f"┌─{'─'*w_r}─┬─{'─'*w_s}─┬─{'─'*w_tc}─┬─{'─'*w_tot}─┬─{'─'*w_hi}─┬─{'─'*w_wr2}─┬─{'─'*w_ar2}─┬─{'─'*w_wl2}─┬─{'─'*w_pf2}─┬─{'─'*w_rt}─┐"
+    bot2 = f"└─{'─'*w_r}─┴─{'─'*w_s}─┴─{'─'*w_tc}─┴─{'─'*w_tot}─┴─{'─'*w_hi}─┴─{'─'*w_wr2}─┴─{'─'*w_ar2}─┴─{'─'*w_wl2}─┴─{'─'*w_pf2}─┴─{'─'*w_rt}─┘"
 
     print(top2)
     print(hdr2)
@@ -1311,8 +1535,14 @@ def print_terminal_tables(tables_data: Dict) -> None:
     for idx, r in enumerate(tables_data.get('table2', []), 1):
         tot_s = f"{r['oos_total_signals']:,}"
         hi_s = f"{r['high_conviction_signals']:,}"
-        wr_s = f"{r['high_conviction_win_rate_pct']:.1f}%"
-        mg_s = f"+{r['avg_max_gain_pct']:.2f}%"
+        pos_wr = r.get('high_conviction_pos_win_rate_pct', r.get('high_conviction_win_rate_pct', 0.0))
+        touch_wr = r.get('high_conviction_touch_win_rate_pct', r.get('high_conviction_win_rate_pct', 0.0))
+        wr_s = f"{pos_wr:.1f}% ({touch_wr:.1f}%)"
+        ar_val = r['avg_realized_return_pct']
+        ar_sign = '+' if ar_val > 0 else ''
+        ar_s = f"{ar_sign}{ar_val:.2f}%"
+        wl_s = f"{r.get('win_loss_ratio', 1.50):.2f}"
+        pf_s = f"{r['profit_factor']:.2f}"
         row_str = (
             f"│ {_pad_text(idx, w_r, 'center')} "
             f"│ {_pad_text(r['sector_name_cn'], w_s, 'left')} "
@@ -1320,7 +1550,9 @@ def print_terminal_tables(tables_data: Dict) -> None:
             f"│ {_pad_text(tot_s, w_tot, 'right')} "
             f"│ {_pad_text(hi_s, w_hi, 'right')} "
             f"│ {_pad_text(wr_s, w_wr2, 'right')} "
-            f"│ {_pad_text(mg_s, w_mg2, 'right')} "
+            f"│ {_pad_text(ar_s, w_ar2, 'right')} "
+            f"│ {_pad_text(wl_s, w_wl2, 'right')} "
+            f"│ {_pad_text(pf_s, w_pf2, 'right')} "
             f"│ {_pad_text(r['alpha_rating'], w_rt, 'center')} │"
         )
         print(row_str)
@@ -1364,27 +1596,30 @@ def print_terminal_tables(tables_data: Dict) -> None:
     print("\n" + "─" * 90)
     print("🎯 表 4: 最新交易日 AI 预测做多胜率排行榜 Top 10 (Live Inference Ranking)")
     print("─" * 90)
-    w_r4, w_tk4, w_sec4, w_p4, w_wr4, w_tp4, w_sl4, w_mc4 = 4, 8, 16, 12, 12, 18, 18, 16
+    w_r4, w_tk4, w_sec4, w_p4, w_wr4, w_tp4, w_sl4, w_mc4, w_act4 = 4, 6, 14, 10, 18, 16, 16, 14, 28
     hdr4 = (
         f"│ {_pad_text('#', w_r4, 'center')} "
         f"│ {_pad_text('代码', w_tk4, 'center')} "
         f"│ {_pad_text('所属赛道', w_sec4, 'left')} "
         f"│ {_pad_text('最新价 ($)', w_p4, 'right')} "
-        f"│ {_pad_text('AI胜率 %', w_wr4, 'right')} "
+        f"│ {_pad_text('AI校准胜率(原始)', w_wr4, 'right')} "
         f"│ {_pad_text('建议目标止盈 ($)', w_tp4, 'right')} "
         f"│ {_pad_text('建议防守止损 ($)', w_sl4, 'right')} "
-        f"│ {_pad_text('当前宏观水温', w_mc4, 'center')} │"
+        f"│ {_pad_text('当前宏观水温', w_mc4, 'center')} "
+        f"│ {_pad_text('操作建议', w_act4, 'center')} │"
     )
-    sep4 = f"├─{'─'*w_r4}─┼─{'─'*w_tk4}─┼─{'─'*w_sec4}─┼─{'─'*w_p4}─┼─{'─'*w_wr4}─┼─{'─'*w_tp4}─┼─{'─'*w_sl4}─┼─{'─'*w_mc4}─┤"
-    top4 = f"┌─{'─'*w_r4}─┬─{'─'*w_tk4}─┬─{'─'*w_sec4}─┬─{'─'*w_p4}─┬─{'─'*w_wr4}─┬─{'─'*w_tp4}─┬─{'─'*w_sl4}─┬─{'─'*w_mc4}─┐"
-    bot4 = f"└─{'─'*w_r4}─┴─{'─'*w_tk4}─┴─{'─'*w_sec4}─┴─{'─'*w_p4}─┴─{'─'*w_wr4}─┴─{'─'*w_tp4}─┴─{'─'*w_sl4}─┴─{'─'*w_mc4}─┘"
+    sep4 = f"├─{'─'*w_r4}─┼─{'─'*w_tk4}─┼─{'─'*w_sec4}─┼─{'─'*w_p4}─┼─{'─'*w_wr4}─┼─{'─'*w_tp4}─┼─{'─'*w_sl4}─┼─{'─'*w_mc4}─┼─{'─'*w_act4}─┤"
+    top4 = f"┌─{'─'*w_r4}─┬─{'─'*w_tk4}─┬─{'─'*w_sec4}─┬─{'─'*w_p4}─┬─{'─'*w_wr4}─┬─{'─'*w_tp4}─┬─{'─'*w_sl4}─┬─{'─'*w_mc4}─┬─{'─'*w_act4}─┐"
+    bot4 = f"└─{'─'*w_r4}─┴─{'─'*w_tk4}─┴─{'─'*w_sec4}─┴─{'─'*w_p4}─┴─{'─'*w_wr4}─┴─{'─'*w_tp4}─┴─{'─'*w_sl4}─┴─{'─'*w_mc4}─┴─{'─'*w_act4}─┘"
 
     print(top4)
     print(hdr4)
     print(sep4)
     for r in tables_data.get('table4', []):
         price_s = f"${r['latest_price']:.2f}"
-        wr_s = f"{r['predicted_win_rate_pct']:.1f}%"
+        cal_p = r.get('calibrated_win_rate_pct', r['predicted_win_rate_pct'])
+        raw_p = r['predicted_win_rate_pct']
+        wr_s = f"{cal_p:.1f}% (原{raw_p:.1f}%)"
         tp_str = f"${r['target_profit_price']:.2f} (+{r['target_profit_pct']}%)"
         sl_str = f"${r['stop_loss_price']:.2f} (-{r['stop_loss_pct']}%)"
         row_str = (
@@ -1395,7 +1630,8 @@ def print_terminal_tables(tables_data: Dict) -> None:
             f"│ {_pad_text(wr_s, w_wr4, 'right')} "
             f"│ {_pad_text(tp_str, w_tp4, 'right')} "
             f"│ {_pad_text(sl_str, w_sl4, 'right')} "
-            f"│ {_pad_text(r['macro_temp'], w_mc4, 'center')} │"
+            f"│ {_pad_text(r['macro_temp'], w_mc4, 'center')} "
+            f"│ {_pad_text(r['action'], w_act4, 'center')} │"
         )
         print(row_str)
     print(bot4)
@@ -1404,7 +1640,8 @@ def print_terminal_tables(tables_data: Dict) -> None:
 
 def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5y.html') -> None:
     """
-    Milestone M3: 渲染暗黑买方风格 HTML 可视化看板 (Obsidian Palette)
+    Milestone M3 & V1.3 UI Pro: 渲染暗黑买方风格 HTML 可视化看板 (Obsidian Institutional Suite)
+    支持跨看板顶部导航、Top 10 / 全池 28 股一键切换、7 大赛道交互筛选、双层胜率进度条与富途看盘联动跳转。
     """
     kpi = tables_data.get('kpi', {})
     weather = tables_data.get('macro_weather', {})
@@ -1412,33 +1649,91 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
     t2 = tables_data.get('table2', [])
     t3 = tables_data.get('table3', [])
     t4 = tables_data.get('table4', [])
+    all_live = tables_data.get('all_live_predictions', t4) or t4
 
-    # 生成 Table 1 HTML
+    weather_status_str = weather.get('status', '☀️ 晴天做多')
+    if '🌧️' in weather_status_str or '暴雨' in weather_status_str:
+        weather_accent = '#f85149'
+        weather_bg = 'linear-gradient(135deg, rgba(248, 81, 73, 0.14) 0%, rgba(15, 23, 42, 0.95) 65%)'
+        weather_border = 'rgba(248, 81, 73, 0.45)'
+    elif '⛅' in weather_status_str or '阴天' in weather_status_str:
+        weather_accent = '#ffd54f'
+        weather_bg = 'linear-gradient(135deg, rgba(255, 213, 79, 0.12) 0%, rgba(15, 23, 42, 0.95) 65%)'
+        weather_border = 'rgba(255, 213, 79, 0.40)'
+    else:
+        weather_accent = '#3fb950'
+        weather_bg = 'linear-gradient(135deg, rgba(63, 185, 80, 0.14) 0%, rgba(15, 23, 42, 0.95) 65%)'
+        weather_border = 'rgba(63, 185, 80, 0.45)'
+
+    # 生成 Table 1 HTML (带双层进度条)
     t1_rows_html = ""
     for r in t1:
+        ret_val = r['avg_realized_return_pct']
+        ret_color = "#3fb950" if ret_val >= 0 else "#f85149"
+        ret_sign = "+" if ret_val > 0 else ""
+        pos_wr = r.get('pos_win_rate_pct', r.get('win_rate_pct', 0.0))
+        touch_wr = r.get('touch_win_rate_pct', r.get('win_rate_pct', 0.0))
+        pf_val = r['profit_factor']
+        pf_color = "#3fb950" if pf_val >= 1.50 else ("#ffd54f" if pf_val >= 1.20 else "#c9d1d9")
         t1_rows_html += f"""
         <tr>
-            <td style="font-weight: 600;"><span class="badge badge-purple">{r['threshold_label']}</span></td>
-            <td style="text-align: right; font-family: monospace;">{r['trigger_count']:,}</td>
-            <td style="text-align: right; font-weight: 700; color: #3fb950;">{r['win_rate_pct']:.1f}%</td>
-            <td style="text-align: right; color: #58a6ff;">+{r['avg_max_gain_pct']:.2f}%</td>
-            <td style="text-align: right; font-weight: 700; color: #ffd54f;">{r['profit_factor']:.2f}</td>
+            <td style="font-weight: 700;"><span class="badge badge-purple">{r['threshold_label']}</span></td>
+            <td style="text-align: right; font-family: 'JetBrains Mono', monospace; font-weight: 600;">{r['trigger_count']:,}</td>
+            <td style="text-align: right;">
+                <div style="display: flex; align-items: center; justify-content: flex-end; gap: 10px;">
+                    <div>
+                        <span style="font-weight: 800; color: #3fb950; font-size: 14px;">{pos_wr:.1f}%</span>
+                        <span style="font-size: 11px; color: #8b949e; margin-left: 3px;" title="5日内触及动态止盈上轨比率">(触轨 {touch_wr:.1f}%)</span>
+                    </div>
+                    <div class="dual-bar-track" title="外层绿条: 正收益胜率 {pos_wr:.1f}% | 内层青条: 触轨止盈率 {touch_wr:.1f}%">
+                        <div class="dual-bar-pos" style="width: {min(100.0, pos_wr)}%;"></div>
+                        <div class="dual-bar-touch" style="width: {min(100.0, touch_wr)}%;"></div>
+                    </div>
+                </div>
+            </td>
+            <td style="text-align: right; color: {ret_color}; font-family: 'JetBrains Mono', monospace; font-weight: 700;">{ret_sign}{ret_val:.2f}%</td>
+            <td style="text-align: right; font-weight: 700; color: #58a6ff; font-family: 'JetBrains Mono', monospace;">{r.get('win_loss_ratio', 1.50):.2f}</td>
+            <td style="text-align: right; font-weight: 800; color: {pf_color}; font-family: 'JetBrains Mono', monospace; font-size: 14px;">{pf_val:.2f}</td>
         </tr>
         """
 
-    # 生成 Table 2 HTML
+    # 生成 Table 2 HTML (带赛道校准乘数与双层胜率条)
     t2_rows_html = ""
     for idx, r in enumerate(t2, 1):
+        ret_val = r['avg_realized_return_pct']
+        ret_color = "#3fb950" if ret_val >= 0 else "#f85149"
+        ret_sign = "+" if ret_val > 0 else ""
+        pos_wr = r.get('high_conviction_pos_win_rate_pct', r.get('high_conviction_win_rate_pct', 0.0))
+        touch_wr = r.get('high_conviction_touch_win_rate_pct', r.get('high_conviction_win_rate_pct', 0.0))
+        pf_val = r['profit_factor']
+        mult_val = float(np.clip(pf_val / 1.30, 0.75, 1.15))
+        mult_color = "#3fb950" if mult_val > 1.02 else ("#f85149" if mult_val < 0.98 else "#8b949e")
         t2_rows_html += f"""
-        <tr>
-            <td style="text-align: center; color: #8b949e;">{idx}</td>
-            <td style="font-weight: 600;">{r['sector_name_cn']} <span style="font-size: 11px; color: #8b949e;">({r['sector_key']})</span></td>
-            <td style="text-align: center;"><span class="badge badge-blue">{r['tickers_count']}</span></td>
-            <td style="text-align: right; font-family: monospace;">{r['oos_total_signals']:,}</td>
-            <td style="text-align: right; font-family: monospace;">{r['high_conviction_signals']:,}</td>
-            <td style="text-align: right; font-weight: 700; color: #3fb950;">{r['high_conviction_win_rate_pct']:.1f}%</td>
-            <td style="text-align: right; color: #58a6ff;">+{r['avg_max_gain_pct']:.2f}%</td>
-            <td style="text-align: center; color: #ffd54f; font-size: 14px;">{r['alpha_rating']}</td>
+        <tr onclick="filterBySector('{r['sector_name_cn']}')" style="cursor: pointer;" title="点击筛选【{r['sector_name_cn']}】赛道的实盘预测标的">
+            <td style="text-align: center; color: #8b949e; font-weight: 700;">{idx}</td>
+            <td style="font-weight: 700; color: #f0f6fc;">
+                {r['sector_name_cn']}
+                <span style="font-size: 11px; color: #8b949e; font-weight: normal; margin-left: 4px;">({r['sector_key']})</span>
+            </td>
+            <td style="text-align: center;"><span class="badge badge-blue">{r['tickers_count']} 股</span></td>
+            <td style="text-align: right; font-family: 'JetBrains Mono', monospace;">{r['oos_total_signals']:,}</td>
+            <td style="text-align: right; font-family: 'JetBrains Mono', monospace; font-weight: 600;">{r['high_conviction_signals']:,}</td>
+            <td style="text-align: right;">
+                <div style="display: flex; align-items: center; justify-content: flex-end; gap: 8px;">
+                    <span><strong style="color: #3fb950;">{pos_wr:.1f}%</strong> <span style="font-size: 11px; color: #8b949e;">({touch_wr:.1f}%)</span></span>
+                    <div class="dual-bar-track" style="width: 56px;">
+                        <div class="dual-bar-pos" style="width: {min(100.0, pos_wr)}%;"></div>
+                        <div class="dual-bar-touch" style="width: {min(100.0, touch_wr)}%;"></div>
+                    </div>
+                </div>
+            </td>
+            <td style="text-align: right; color: {ret_color}; font-family: 'JetBrains Mono', monospace; font-weight: 700;">{ret_sign}{ret_val:.2f}%</td>
+            <td style="text-align: right; font-weight: 700; color: #58a6ff; font-family: 'JetBrains Mono', monospace;">{r.get('win_loss_ratio', 1.50):.2f}</td>
+            <td style="text-align: right; font-weight: 800; color: #ffd54f; font-family: 'JetBrains Mono', monospace;">
+                {pf_val:.2f}
+                <span style="font-size: 10px; color: {mult_color}; margin-left: 3px;" title="表 4 赛道先验校准乘数">({mult_val:.2f}x)</span>
+            </td>
+            <td style="text-align: center; color: #ffd54f; font-size: 13px; font-weight: 700;">{r['alpha_rating']}</td>
         </tr>
         """
 
@@ -1449,49 +1744,96 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
         t3_rows_html += f"""
         <tr>
             <td style="text-align: center; color: #8b949e; font-weight: 700;">{r['rank']}</td>
-            <td style="font-weight: 600; font-family: monospace; color: #f0f6fc;">{r['feature']}</td>
+            <td style="font-weight: 700; font-family: 'JetBrains Mono', monospace; color: #f0f6fc;">{r['feature']}</td>
             <td style="text-align: center;"><span class="badge {cat_badge}">{r['category']}</span></td>
-            <td style="text-align: right; font-family: monospace; color: #c9d1d9;">{r['total_gain']:,.1f}</td>
+            <td style="text-align: right; font-family: 'JetBrains Mono', monospace; color: #c9d1d9;">{r['total_gain']:,.1f}</td>
             <td style="text-align: right;">
                 <div style="display: flex; align-items: center; justify-content: flex-end; gap: 8px;">
-                    <span style="font-weight: 600; color: #bc8cff;">{r['gain_share_pct']:.1f}%</span>
-                    <div style="width: 50px; height: 6px; background: rgba(255,255,255,0.1); border-radius: 3px; overflow: hidden;">
-                        <div style="width: {min(100.0, r['gain_share_pct'] * 5.0)}%; height: 100%; background: #bc8cff;"></div>
+                    <span style="font-weight: 700; color: #bc8cff; font-family: 'JetBrains Mono', monospace;">{r['gain_share_pct']:.1f}%</span>
+                    <div style="width: 56px; height: 6px; background: rgba(255,255,255,0.08); border-radius: 3px; overflow: hidden;">
+                        <div style="width: {min(100.0, r['gain_share_pct'] * 4.5)}%; height: 100%; background: linear-gradient(90deg, #8957e5, #bc8cff);"></div>
                     </div>
                 </div>
             </td>
-            <td style="font-size: 13px; color: #8b949e; line-height: 1.4;">{r['rationale']}</td>
+            <td style="font-size: 12.5px; color: #8b949e; line-height: 1.45;">{r['rationale']}</td>
         </tr>
         """
 
-    # 生成 Table 4 HTML
+    # 生成 Table 4 HTML (包含全池 28 股，默认展示 Top 10，支持一键展开全池与按赛道筛选)
     t4_rows_html = ""
-    for r in t4:
-        rank_badge = "🥇" if r['rank'] == 1 else ("🥈" if r['rank'] == 2 else ("🥉" if r['rank'] == 3 else f"#{r['rank']}"))
+    for r in all_live:
+        rk = int(r['rank'])
+        rank_badge = "🥇" if rk == 1 else ("🥈" if rk == 2 else ("🥉" if rk == 3 else f"#{rk}"))
+        if "⚠️" in r['action']:
+            act_badge = "badge-gold"
+        elif "🔥" in r['action']:
+            act_badge = "badge-green"
+        elif "⚡" in r['action']:
+            act_badge = "badge-blue"
+        elif "🛡️" in r['action']:
+            act_badge = "badge-red"
+        else:
+            act_badge = "badge-purple"
+
+        cal_wr = r.get('calibrated_win_rate_pct', r['predicted_win_rate_pct'])
+        raw_wr = r['predicted_win_rate_pct']
+        atr_val = r.get('atr_pct', 2.5)
+        sec_rating = r.get('sector_rating', '⭐⭐⭐☆☆')
+        sec_pf = r.get('sector_pf', 1.30)
+        wr_color = "#3fb950" if cal_wr >= 58.0 else ("#58a6ff" if cal_wr >= 50.0 else "#8b949e")
+        hidden_style = "display: none;" if rk > 10 else ""
+
         t4_rows_html += f"""
-        <tr>
-            <td style="text-align: center; font-size: 16px;">{rank_badge}</td>
-            <td style="font-weight: 800; font-size: 16px; color: #58a6ff; letter-spacing: 0.5px;">{r['ticker']}</td>
-            <td><span class="badge badge-blue">{r['sector_cn']}</span></td>
-            <td style="text-align: right; font-weight: 700; font-family: monospace; font-size: 15px;">${r['latest_price']:.2f}</td>
+        <tr class="t4-stock-row" data-rank="{rk}" data-sector="{r['sector_cn']}" data-ticker="{r['ticker']}" style="{hidden_style}">
+            <td style="text-align: center; font-size: 15px; font-weight: 800; color: {'#ffd54f' if rk <= 3 else '#8b949e'};">{rank_badge}</td>
+            <td>
+                <a href="futu_pro_terminal.html?symbol={r['ticker']}" target="_blank" class="ticker-jump-link" title="点击在富途全周期看盘终端中打开 {r['ticker']} K线与实盘诊股">
+                    <span class="tk-code">{r['ticker']}</span>
+                    <span class="tk-jump-icon">📈 看盘</span>
+                </a>
+            </td>
+            <td>
+                <div style="display: flex; align-items: center; gap: 6px;">
+                    <span class="badge badge-blue" style="cursor: pointer;" onclick="filterBySector('{r['sector_cn']}')">{r['sector_cn']}</span>
+                    <span style="font-size: 11px; color: #ffd54f;" title="赛道 OOS 评级 (PF={sec_pf:.2f})">{sec_rating[:5]}</span>
+                </div>
+            </td>
+            <td style="text-align: right; font-weight: 700; font-family: 'JetBrains Mono', monospace; font-size: 14.5px; color: #f0f6fc;">
+                ${r['latest_price']:.2f}
+                <span style="display: block; font-size: 10px; color: #8b949e; font-weight: normal;">ATR {atr_val:.1f}%</span>
+            </td>
             <td style="text-align: right;">
                 <div style="display: flex; align-items: center; justify-content: flex-end; gap: 8px;">
-                    <span style="font-size: 15px; font-weight: 800; color: #3fb950;">{r['predicted_win_rate_pct']:.1f}%</span>
-                    <div style="width: 60px; height: 7px; background: rgba(255,255,255,0.1); border-radius: 4px; overflow: hidden;">
-                        <div style="width: {min(100.0, r['predicted_win_rate_pct'])}%; height: 100%; background: #3fb950; box-shadow: 0 0 6px #3fb950;"></div>
+                    <div>
+                        <span style="font-size: 15px; font-weight: 800; color: {wr_color}; font-family: 'JetBrains Mono', monospace;">{cal_wr:.1f}%</span>
+                        <span style="font-size: 11px; color: #8b949e; display: block;" title="LightGBM 原始未校准概率">原始 {raw_wr:.1f}%</span>
+                    </div>
+                    <div style="width: 64px; height: 8px; background: rgba(255,255,255,0.08); border-radius: 4px; overflow: hidden; position: relative;">
+                        <div style="width: {min(100.0, cal_wr)}%; height: 100%; background: {wr_color}; box-shadow: 0 0 6px {wr_color};"></div>
                     </div>
                 </div>
             </td>
-            <td style="text-align: right; color: #3fb950; font-family: monospace; font-weight: 600;">
-                ${r['target_profit_price']:.2f} <span style="font-size: 11px; opacity: 0.85;">(+{r['target_profit_pct']}%)</span>
+            <td style="text-align: right; color: #3fb950; font-family: 'JetBrains Mono', monospace; font-weight: 700;">
+                ${r['target_profit_price']:.2f} <span class="pct-pill pct-up">+{r['target_profit_pct']}%</span>
             </td>
-            <td style="text-align: right; color: #f85149; font-family: monospace; font-weight: 600;">
-                ${r['stop_loss_price']:.2f} <span style="font-size: 11px; opacity: 0.85;">(-{r['stop_loss_pct']}%)</span>
+            <td style="text-align: right; color: #f85149; font-family: 'JetBrains Mono', monospace; font-weight: 700;">
+                ${r['stop_loss_price']:.2f} <span class="pct-pill pct-down">-{r['stop_loss_pct']}%</span>
             </td>
             <td style="text-align: center;"><span class="badge badge-gold">{r['macro_temp']}</span></td>
-            <td style="text-align: center;"><span class="badge badge-green">{r['action']}</span></td>
+            <td style="text-align: center;"><span class="badge {act_badge}" style="font-size: 12px; padding: 4px 10px;">{r['action']}</span></td>
         </tr>
         """
+
+    # 构建 7 大赛道过滤按钮
+    sector_counts = {}
+    for r in all_live:
+        sc = r['sector_cn']
+        sector_counts[sc] = sector_counts.get(sc, 0) + 1
+    sector_pills_html = f'<button class="filter-pill active" data-sec="ALL" onclick="filterBySector(this.dataset.sec)">全部赛道 ({len(all_live)})</button>'
+    for r2 in t2:
+        sc_name = r2['sector_name_cn']
+        cnt = sector_counts.get(sc_name, r2['tickers_count'])
+        sector_pills_html += f'<button class="filter-pill" data-sec="{sc_name}" onclick="filterBySector(this.dataset.sec)">{sc_name} ({cnt})</button>'
 
     html_content = f"""<!DOCTYPE html>
 <html lang="zh-CN">
@@ -1502,10 +1844,10 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
     <title>AI 美股 5 年多赛道预测雷达 · 全景战报</title>
     <style>
         :root {{
-            --bg-base: #0b0e14;
-            --bg-card: #161b22;
-            --bg-card-hover: #1c2128;
-            --border-color: #30363d;
+            --bg-base: #070a0f;
+            --bg-card: #11161f;
+            --bg-card-hover: #171e2b;
+            --border-color: #262f3d;
             --text-main: #f0f6fc;
             --text-sub: #c9d1d9;
             --text-muted: #8b949e;
@@ -1524,33 +1866,91 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
 
         body {{
             background-color: var(--bg-base);
+            background-image:
+                radial-gradient(circle at 12% 8%, rgba(88, 166, 255, 0.07), transparent 32%),
+                radial-gradient(circle at 88% 12%, rgba(188, 140, 255, 0.07), transparent 32%);
             color: var(--text-sub);
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", Roboto, sans-serif;
             line-height: 1.5;
-            padding: 24px;
+            padding: 18px 24px 40px;
         }}
 
         .container {{
-            max-width: 1440px;
+            max-width: 1480px;
             margin: 0 auto;
+        }}
+
+        /* Top Suite Cross-Navigation Bar */
+        .suite-nav {{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(17, 22, 31, 0.88);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 10px 16px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 12px;
+        }}
+        .suite-nav-links {{
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }}
+        .suite-link {{
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 13px;
+            border-radius: 8px;
+            font-size: 12.5px;
+            font-weight: 600;
+            color: var(--text-sub);
+            text-decoration: none;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            transition: all 0.18s ease;
+        }}
+        .suite-link:hover {{
+            background: rgba(88, 166, 255, 0.14);
+            border-color: rgba(88, 166, 255, 0.45);
+            color: #fff;
+            transform: translateY(-1px);
+        }}
+        .suite-link.active {{
+            background: linear-gradient(135deg, rgba(188, 140, 255, 0.22), rgba(88, 166, 255, 0.18));
+            border-color: rgba(188, 140, 255, 0.55);
+            color: #e2c5ff;
+            font-weight: 700;
+            box-shadow: 0 0 12px rgba(188, 140, 255, 0.2);
+        }}
+        .suite-meta {{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 12px;
+            color: var(--text-muted);
         }}
 
         /* Header */
         .header {{
             display: flex;
             justify-content: space-between;
-            align-items: center;
+            align-items: flex-end;
             border-bottom: 1px solid var(--border-color);
-            padding-bottom: 20px;
-            margin-bottom: 24px;
+            padding-bottom: 18px;
+            margin-bottom: 22px;
             flex-wrap: wrap;
             gap: 16px;
         }}
         .header-title h1 {{
             color: var(--text-main);
-            font-size: 24px;
+            font-size: 25px;
             font-weight: 800;
-            letter-spacing: -0.5px;
+            letter-spacing: -0.4px;
             display: flex;
             align-items: center;
             gap: 10px;
@@ -1558,12 +1958,12 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
         .header-title p {{
             color: var(--text-muted);
             font-size: 13px;
-            margin-top: 4px;
+            margin-top: 5px;
         }}
         .header-status {{
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
             flex-wrap: wrap;
         }}
 
@@ -1575,6 +1975,18 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
             background: rgba(63, 185, 80, 0.12);
             border: 1px solid rgba(63, 185, 80, 0.4);
             color: var(--neon-green);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }}
+        .engine-badge {{
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(188, 140, 255, 0.12);
+            border: 1px solid rgba(188, 140, 255, 0.35);
+            color: var(--cyber-purple);
             padding: 5px 12px;
             border-radius: 20px;
             font-size: 12px;
@@ -1599,20 +2011,21 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 16px;
-            margin-bottom: 24px;
+            margin-bottom: 22px;
         }}
         .kpi-card {{
-            background: linear-gradient(145deg, #161b22 0%, #0d1117 100%);
+            background: linear-gradient(155deg, #141b26 0%, #0d121a 100%);
             border: 1px solid var(--border-color);
-            border-radius: 12px;
+            border-radius: 13px;
             padding: 18px 20px;
             position: relative;
             overflow: hidden;
-            transition: transform 0.2s, border-color 0.2s;
+            transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
         }}
         .kpi-card:hover {{
             transform: translateY(-2px);
-            border-color: rgba(88, 166, 255, 0.4);
+            border-color: rgba(88, 166, 255, 0.45);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
         }}
         .kpi-card::before {{
             content: "";
@@ -1620,10 +2033,10 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
             top: 0; left: 0; right: 0;
             height: 3px;
         }}
-        .kpi-card.green::before {{ background: var(--neon-green); }}
-        .kpi-card.gold::before {{ background: var(--warning-gold); }}
-        .kpi-card.blue::before {{ background: var(--primary-blue); }}
-        .kpi-card.purple::before {{ background: var(--cyber-purple); }}
+        .kpi-card.green::before {{ background: linear-gradient(90deg, #2ea043, #3fb950); }}
+        .kpi-card.gold::before {{ background: linear-gradient(90deg, #d29922, #ffd54f); }}
+        .kpi-card.blue::before {{ background: linear-gradient(90deg, #1f6feb, #58a6ff); }}
+        .kpi-card.purple::before {{ background: linear-gradient(90deg, #8957e5, #bc8cff); }}
 
         .kpi-label {{
             font-size: 12px;
@@ -1647,16 +2060,17 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
 
         /* Macro Weather Card */
         .weather-banner {{
-            background: linear-gradient(135deg, rgba(30, 41, 59, 0.7), rgba(15, 23, 42, 0.9));
-            border: 1px solid var(--border-color);
+            background: {weather_bg};
+            border: 1px solid {weather_border};
             border-radius: 14px;
-            padding: 20px 24px;
+            padding: 18px 24px;
             margin-bottom: 24px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
             gap: 16px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.28);
         }}
         .weather-left {{
             display: flex;
@@ -1664,31 +2078,32 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
             gap: 16px;
         }}
         .weather-icon {{
-            font-size: 42px;
+            font-size: 40px;
             line-height: 1;
+            filter: drop-shadow(0 0 10px rgba(255,255,255,0.15));
         }}
         .weather-info h2 {{
-            font-size: 20px;
+            font-size: 19px;
             font-weight: 800;
             color: var(--text-main);
             margin-bottom: 4px;
         }}
         .weather-info p {{
             font-size: 13px;
-            color: var(--text-muted);
+            color: var(--text-sub);
         }}
         .weather-stats {{
             display: flex;
-            gap: 12px;
+            gap: 10px;
             flex-wrap: wrap;
         }}
         .weather-stat-pill {{
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 8px;
+            background: rgba(13, 17, 23, 0.65);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 9px;
             padding: 8px 14px;
             text-align: center;
-            min-width: 100px;
+            min-width: 108px;
         }}
         .weather-stat-pill .lbl {{
             font-size: 11px;
@@ -1699,6 +2114,7 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
         .weather-stat-pill .val {{
             font-size: 14px;
             font-weight: 700;
+            font-family: 'JetBrains Mono', monospace;
             color: var(--text-main);
         }}
 
@@ -1707,15 +2123,16 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
             background: var(--bg-card);
             border: 1px solid var(--border-color);
             border-radius: 14px;
-            padding: 22px;
+            padding: 20px 22px;
             margin-bottom: 24px;
             overflow-x: auto;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
         }}
         .section-header {{
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 16px;
+            margin-bottom: 14px;
             flex-wrap: wrap;
             gap: 10px;
         }}
@@ -1732,6 +2149,81 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
             color: var(--text-muted);
         }}
 
+        /* Interactive Filter Toolbar for Table 4 */
+        .t4-toolbar {{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            padding: 12px 14px;
+            background: rgba(13, 17, 23, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 10px;
+            margin-bottom: 14px;
+        }}
+        .filter-pills {{
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            flex-wrap: wrap;
+        }}
+        .filter-pill {{
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.09);
+            color: var(--text-sub);
+            padding: 5px 11px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }}
+        .filter-pill:hover {{
+            background: rgba(88, 166, 255, 0.12);
+            border-color: rgba(88, 166, 255, 0.4);
+            color: #fff;
+        }}
+        .filter-pill.active {{
+            background: rgba(88, 166, 255, 0.2);
+            border-color: var(--primary-blue);
+            color: var(--primary-blue);
+            box-shadow: 0 0 8px rgba(88, 166, 255, 0.25);
+        }}
+        .t4-controls-right {{
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }}
+        .search-input {{
+            background: #0b0e14;
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            padding: 5px 10px;
+            border-radius: 6px;
+            font-size: 12px;
+            width: 150px;
+            outline: none;
+        }}
+        .search-input:focus {{
+            border-color: var(--primary-blue);
+        }}
+        .mode-btn {{
+            background: linear-gradient(135deg, rgba(188, 140, 255, 0.16), rgba(88, 166, 255, 0.16));
+            border: 1px solid rgba(188, 140, 255, 0.45);
+            color: #e2c5ff;
+            padding: 5px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }}
+        .mode-btn:hover {{
+            background: rgba(188, 140, 255, 0.28);
+            color: #fff;
+        }}
+
         table {{
             width: 100%;
             border-collapse: collapse;
@@ -1739,22 +2231,90 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
             text-align: left;
         }}
         th {{
-            background: #0d1117;
+            background: #0b0f17;
             color: var(--text-muted);
             font-weight: 600;
-            padding: 10px 14px;
+            padding: 11px 14px;
             border-bottom: 1px solid var(--border-color);
             font-size: 12px;
             white-space: nowrap;
         }}
         td {{
             padding: 12px 14px;
-            border-bottom: 1px solid rgba(48, 54, 61, 0.6);
+            border-bottom: 1px solid rgba(48, 54, 61, 0.5);
             color: var(--text-sub);
             white-space: nowrap;
         }}
         tr:hover td {{
             background-color: var(--bg-card-hover);
+        }}
+
+        /* Ticker Jump Link */
+        .ticker-jump-link {{
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            text-decoration: none;
+            padding: 3px 8px;
+            border-radius: 6px;
+            background: rgba(88, 166, 255, 0.08);
+            border: 1px solid rgba(88, 166, 255, 0.22);
+            transition: all 0.15s ease;
+        }}
+        .ticker-jump-link:hover {{
+            background: rgba(88, 166, 255, 0.2);
+            border-color: var(--primary-blue);
+            transform: translateX(2px);
+        }}
+        .tk-code {{
+            font-weight: 800;
+            font-size: 15px;
+            color: #58a6ff;
+            font-family: 'JetBrains Mono', monospace;
+            letter-spacing: 0.4px;
+        }}
+        .tk-jump-icon {{
+            font-size: 10px;
+            color: #8b949e;
+            background: rgba(255, 255, 255, 0.06);
+            padding: 1px 5px;
+            border-radius: 4px;
+        }}
+        .ticker-jump-link:hover .tk-jump-icon {{
+            color: #fff;
+            background: rgba(88, 166, 255, 0.35);
+        }}
+
+        .pct-pill {{
+            display: inline-block;
+            font-size: 11px;
+            padding: 1px 5px;
+            border-radius: 4px;
+            margin-left: 3px;
+        }}
+        .pct-up {{ background: rgba(63, 185, 80, 0.14); color: #3fb950; }}
+        .pct-down {{ background: rgba(248, 81, 73, 0.14); color: #f85149; }}
+
+        /* Dual-Layer Win Rate Bar */
+        .dual-bar-track {{
+            width: 68px;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+        }}
+        .dual-bar-pos {{
+            position: absolute;
+            top: 0; left: 0; bottom: 0;
+            background: rgba(63, 185, 80, 0.45);
+            border-radius: 4px;
+        }}
+        .dual-bar-touch {{
+            position: absolute;
+            top: 2px; left: 0; bottom: 2px;
+            background: #58a6ff;
+            border-radius: 2px;
         }}
 
         /* Badges */
@@ -1766,11 +2326,18 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
             font-weight: 600;
             white-space: nowrap;
         }}
-        .badge-green {{ background: rgba(63, 185, 80, 0.15); color: #3fb950; border: 1px solid rgba(63, 185, 80, 0.3); }}
-        .badge-blue {{ background: rgba(88, 166, 255, 0.15); color: #58a6ff; border: 1px solid rgba(88, 166, 255, 0.3); }}
-        .badge-purple {{ background: rgba(188, 140, 255, 0.15); color: #bc8cff; border: 1px solid rgba(188, 140, 255, 0.3); }}
-        .badge-gold {{ background: rgba(255, 213, 79, 0.15); color: #ffd54f; border: 1px solid rgba(255, 213, 79, 0.3); }}
-        .badge-red {{ background: rgba(248, 81, 73, 0.15); color: #f85149; border: 1px solid rgba(248, 81, 73, 0.3); }}
+        .badge-green {{ background: rgba(63, 185, 80, 0.15); color: #3fb950; border: 1px solid rgba(63, 185, 80, 0.35); }}
+        .badge-blue {{ background: rgba(88, 166, 255, 0.15); color: #58a6ff; border: 1px solid rgba(88, 166, 255, 0.35); }}
+        .badge-purple {{ background: rgba(188, 140, 255, 0.15); color: #bc8cff; border: 1px solid rgba(188, 140, 255, 0.35); }}
+        .badge-gold {{ background: rgba(255, 213, 79, 0.15); color: #ffd54f; border: 1px solid rgba(255, 213, 79, 0.35); }}
+        .badge-red {{ background: rgba(248, 81, 73, 0.15); color: #f85149; border: 1px solid rgba(248, 81, 73, 0.35); }}
+
+        /* Two-column layout for Table 1 & Table 3 on ultra-wide screens */
+        .grid-2col {{
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+        }}
 
         /* Footer */
         .footer {{
@@ -1782,17 +2349,41 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
             text-align: center;
             line-height: 1.8;
         }}
+
+        @media (max-width: 768px) {{
+            body {{ padding: 12px; }}
+            .header-title h1 {{ font-size: 20px; }}
+            .weather-banner {{ padding: 14px; }}
+            .section-card {{ padding: 14px; }}
+        }}
     </style>
 </head>
 <body>
     <div class="container">
+        <!-- Cross-Radar Unified Suite Navigation -->
+        <nav class="suite-nav">
+            <div class="suite-nav-links">
+                <a href="futu_pro_terminal.html" class="suite-link">🐮 富途全周期看盘终端</a>
+                <a href="stocks_radar.html" class="suite-link">🎯 核心个股实战雷达</a>
+                <a href="macro_radar.html" class="suite-link">🏛️ 宏观全天候司令塔</a>
+                <a href="backtest_report_5y.html" class="suite-link">🛡️ 5年历史回测对账</a>
+                <a href="predict_radar_5y.html" class="suite-link active">⚡ AI 5年多赛道预测引擎</a>
+            </div>
+            <div class="suite-meta">
+                <span>💡 点击表中任意股票代码可直接唤起富途多周期 K 线看盘</span>
+            </div>
+        </nav>
+
         <!-- Header -->
         <header class="header">
             <div class="header-title">
-                <h1>⚡ AI 美股 5 年多赛道预测雷达</h1>
-                <p>Qlib 滚动时序长表截面架构 · 7 大高弹性赛道 (28标的) + 7 宏观基准 ETF · 严格 T 日因果律与 5 日 Purge 隔离</p>
+                <h1>⚡ AI 美股 5 年多赛道预测雷达 <span style="font-size: 13px; padding: 3px 9px; border-radius: 6px; background: rgba(188,140,255,0.16); color: #bc8cff; border: 1px solid rgba(188,140,255,0.35); font-weight: 700;">V1.3 机构终极校准版</span></h1>
+                <p>微软 Qlib 滚动时序长表截面架构 · 7 大高弹性赛道 (28标的) + 7 宏观基准 ETF · 严守 T 日因果律与 5 日 Purge 隔离</p>
             </div>
             <div class="header-status">
+                <div class="engine-badge" title="实盘推理采用截至 T-5 的全部已结算历史样本重新拟合，无缝吸收 2026 最新市场微观结构">
+                    🧠 实盘模型: Full-Sample Refit (2021~T-5)
+                </div>
                 <div class="live-badge">
                     <span class="pulse-dot"></span>
                     <span>{kpi.get('data_mode', '实时在线')}</span>
@@ -1804,24 +2395,24 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
         <!-- Hero KPI Ribbon -->
         <div class="kpi-grid">
             <div class="kpi-card green">
-                <div class="kpi-label">高置信做多胜率 (>=60% 阈值)</div>
+                <div class="kpi-label">高置信正收益胜率 (>=60% 阈值)</div>
                 <div class="kpi-val" style="color: var(--neon-green);">{kpi.get('high_conviction_win_rate', 62.5):.1f}%</div>
-                <div class="kpi-sub">样本外多折实测 · 显著超越单日随机白噪声</div>
+                <div class="kpi-sub">2024-2026 样本外实测 · 含止盈触轨与 5 日正收益交割</div>
             </div>
             <div class="kpi-card gold">
-                <div class="kpi-label">期望盈亏比 (Profit Factor)</div>
+                <div class="kpi-label">高置信期望盈亏比 (Profit Factor)</div>
                 <div class="kpi-val" style="color: var(--warning-gold);">{kpi.get('profit_factor', 2.18):.2f}</div>
-                <div class="kpi-sub">高盈亏比波段交易 · 动态 ATR 止盈止损轨保障</div>
+                <div class="kpi-sub">分段软压缩 ATR 动态止盈止损轨 · 真实交割收益口径</div>
             </div>
             <div class="kpi-card purple">
                 <div class="kpi-label">领航 Alpha 赛道</div>
                 <div class="kpi-val" style="font-size: 20px; color: var(--cyber-purple);">{kpi.get('top_sector', '存储芯片')}</div>
-                <div class="kpi-sub">AI 驱动高弹性赛道 · 胜率居首</div>
+                <div class="kpi-sub">综合样本外 PF 与平均实现收益评定 · 赋能表 4 先验校准</div>
             </div>
             <div class="kpi-card blue">
-                <div class="kpi-label">最核心预测特征</div>
-                <div class="kpi-val" style="font-size: 20px; color: var(--primary-blue); font-family: monospace;">{kpi.get('top_feature', 'QQQM_Bias_MA50')}</div>
-                <div class="kpi-sub">LightGBM Gain 贡献第一大核心因子</div>
+                <div class="kpi-label">第一核心驱动因子</div>
+                <div class="kpi-val" style="font-size: 20px; color: var(--primary-blue); font-family: 'JetBrains Mono', monospace;">{kpi.get('top_feature', 'QQQM_Bias_MA50')}</div>
+                <div class="kpi-sub">colsample=0.65 & max_bin=63 树分裂防垄断正则化</div>
             </div>
         </div>
 
@@ -1830,74 +2421,66 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
             <div class="weather-left">
                 <div class="weather-icon">{weather.get('status', '☀️ 晴天做多')[:2]}</div>
                 <div class="weather-info">
-                    <h2>当前宏观环境水温: {weather.get('status', '☀️ 晴天做多')}</h2>
-                    <p>{weather.get('desc', '多头共振 · 积极进攻')}</p>
+                    <h2>当前宏观环境水温: <span style="color: {weather_accent};">{weather.get('status', '☀️ 晴天做多')}</span></h2>
+                    <p>{weather.get('desc', '多头共振 · 积极进攻')} · <span style="color: #8b949e;">表 4 决策指令已与当前宏观水温及 50% 原始胜率底线强制联动</span></p>
                 </div>
             </div>
             <div class="weather-stats">
                 <div class="weather-stat-pill">
                     <span class="lbl">QQQM MA50 乖离</span>
-                    <span class="val">{weather.get('qqqm_bias', 0.0):+.2f}%</span>
+                    <span class="val" style="color: {'#3fb950' if weather.get('qqqm_bias', 0) >= 0 else '#f85149'};">{weather.get('qqqm_bias', 0.0):+.2f}%</span>
                 </div>
                 <div class="weather-stat-pill">
                     <span class="lbl">SMH MA50 乖离</span>
-                    <span class="val">{weather.get('smh_bias', 0.0):+.2f}%</span>
+                    <span class="val" style="color: {'#3fb950' if weather.get('smh_bias', 0) >= 0 else '#f85149'};">{weather.get('smh_bias', 0.0):+.2f}%</span>
                 </div>
                 <div class="weather-stat-pill">
                     <span class="lbl">VIXY 60日脉冲</span>
-                    <span class="val">{weather.get('vixy_pos', 0.5):.2f}</span>
+                    <span class="val" style="color: {'#f85149' if weather.get('vixy_pos', 0.5) >= 0.75 else '#3fb950'};">{weather.get('vixy_pos', 0.5):.2f}</span>
                 </div>
                 <div class="weather-stat-pill">
-                    <span class="lbl">硬件/软件轮动</span>
-                    <span class="val">{weather.get('smh_igv', 0.0):+.2f}%</span>
+                    <span class="lbl">硬件/软件轮动 (SMH/IGV)</span>
+                    <span class="val" style="color: {'#58a6ff' if weather.get('smh_igv', 0) >= 0 else '#bc8cff'};">{weather.get('smh_igv', 0.0):+.2f}%</span>
                 </div>
             </div>
         </div>
 
-        <!-- Table 4: 最新交易日 AI 预测做多胜率排行榜 Top 10 -->
+        <!-- Table 4: 最新交易日 AI 预测做多胜率排行榜 -->
         <div class="section-card">
             <div class="section-header">
-                <h3>🎯 最新交易日 AI 预测做多胜率排行榜 Top 10 (Live Inference Pool)</h3>
-                <span class="sub">最后 5 个交易日尾部隔离不进训练集 · 纯净实盘前向推理 · 动态目标止盈与防守止损价</span>
+                <div>
+                    <h3 id="t4-title">🎯 表 4: 最新交易日 AI 预测做多胜率排行榜 Top 10 (Live Inference Pool)</h3>
+                    <span class="sub">按【赛道先验校准胜率 = 原始概率 × clip(赛道PF/1.30, 0.75, 1.15)】降序排列 · 分段软压缩 ATR 差异化止盈止损</span>
+                </div>
+                <div class="t4-controls-right">
+                    <input type="text" id="t4-search" class="search-input" placeholder="🔍 搜索代码 (如 NVDA)..." oninput="applyT4Filters()">
+                    <button id="t4-mode-btn" class="mode-btn" onclick="toggleT4PoolMode()">🌐 展开全池 28 股全景</button>
+                </div>
             </div>
+
+            <div class="t4-toolbar">
+                <div class="filter-pills" id="t4-sector-pills">
+                    {sector_pills_html}
+                </div>
+                <span id="t4-count-label" style="font-size: 12px; color: var(--text-muted);">当前展示: Top 10 精选标的</span>
+            </div>
+
             <table>
                 <thead>
                     <tr>
                         <th style="text-align: center;">排名</th>
-                        <th>标的代码</th>
-                        <th>所属赛道</th>
-                        <th style="text-align: right;">最新价格</th>
-                        <th style="text-align: right;">AI 上涨胜率</th>
-                        <th style="text-align: right;">建议目标止盈价</th>
-                        <th style="text-align: right;">建议防守止损价</th>
+                        <th>标的代码 (点击看盘)</th>
+                        <th>所属赛道 & 评级</th>
+                        <th style="text-align: right;">最新价 / ATR波动</th>
+                        <th style="text-align: right;">AI 校准胜率 (原始概率)</th>
+                        <th style="text-align: right;">动态目标止盈价 (Soft-ATR)</th>
+                        <th style="text-align: right;">动态防守止损价 (Soft-ATR)</th>
                         <th style="text-align: center;">宏观水温</th>
-                        <th style="text-align: center;">AI 决策建议</th>
+                        <th style="text-align: center;">AI 综合决策指令</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody id="t4-tbody">
                     {t4_rows_html}
-                </tbody>
-            </table>
-        </div>
-
-        <!-- Table 1: 样本外分位数校准表 -->
-        <div class="section-card">
-            <div class="section-header">
-                <h3>📊 表 1: 样本外分位数校准表 (Quantile Calibration Table - Expanding OOS 2024-2026)</h3>
-                <span class="sub">严格验证概率单调递增性与真实盈亏比放大效应</span>
-            </div>
-            <table>
-                <thead>
-                    <tr>
-                        <th>预测置信度档位</th>
-                        <th style="text-align: right;">触发历史样本数</th>
-                        <th style="text-align: right;">真实胜率 %</th>
-                        <th style="text-align: right;">平均 5 日最高收益率 %</th>
-                        <th style="text-align: right;">期望盈亏比 (Profit Factor)</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {t1_rows_html}
                 </tbody>
             </table>
         </div>
@@ -1905,20 +2488,22 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
         <!-- Table 2: 7 大赛道样本外预测表现归因表 -->
         <div class="section-card">
             <div class="section-header">
-                <h3>🏆 表 2: 7 大核心高弹性赛道样本外预测表现归因表 (7 Sectors OOS Attribution Table)</h3>
-                <span class="sub">按赛道高置信信号胜率排序 · 科学归因哪个赛道 AI 预测准度最高</span>
+                <h3>🏆 表 2: 7 大核心高弹性赛道样本外预测表现归因表 (7 Sectors OOS Attribution · 点击行可联动筛选表 4)</h3>
+                <span class="sub">基于 2024-2026 样本外高置信信号 (>=60%) 期望盈亏比 (PF) 与平均实现收益综合评星 · 小样本 (&lt;10笔) 强制封顶 3 星</span>
             </div>
             <table>
                 <thead>
                     <tr>
                         <th style="text-align: center;">#</th>
-                        <th>赛道名称</th>
+                        <th>赛道名称 (点击筛选)</th>
                         <th style="text-align: center;">标的数</th>
                         <th style="text-align: right;">OOS 评估样本</th>
                         <th style="text-align: right;">高置信信号数 (>=60%)</th>
-                        <th style="text-align: right;">高置信胜率 %</th>
-                        <th style="text-align: right;">平均 5 日最高收益</th>
-                        <th style="text-align: center;">AI Alpha 评级</th>
+                        <th style="text-align: right;">高置信正收益胜率 (触轨率)</th>
+                        <th style="text-align: right;">平均实现收益 %</th>
+                        <th style="text-align: right;">平均盈亏比</th>
+                        <th style="text-align: right;">期望盈亏比 PF (校准乘数)</th>
+                        <th style="text-align: center;">AI Alpha 机构评级</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -1927,11 +2512,34 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
             </table>
         </div>
 
+        <!-- Table 1: 样本外分位数校准表 -->
+        <div class="section-card">
+            <div class="section-header">
+                <h3>📊 表 1: 样本外分位数校准表 (Quantile Calibration Table - Expanding OOS 2024-2026)</h3>
+                <span class="sub">严格验证预测概率单调递增性 · 同时披露真实交割正收益胜率与 5 日触轨止盈率</span>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>预测置信度档位</th>
+                        <th style="text-align: right;">触发历史样本数</th>
+                        <th style="text-align: right;">正收益胜率 (触轨止盈率)</th>
+                        <th style="text-align: right;">平均实现收益 %</th>
+                        <th style="text-align: right;">平均盈亏比 (Win/Loss)</th>
+                        <th style="text-align: right;">期望盈亏比 (PF)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {t1_rows_html}
+                </tbody>
+            </table>
+        </div>
+
         <!-- Table 3: LightGBM 特征重要度 Top 15 -->
         <div class="section-card">
             <div class="section-header">
                 <h3>📈 表 3: LightGBM 特征重要度 (Feature Importance Gain) Top 15 排行榜</h3>
-                <span class="sub">基于增益 (Gain) 的非线性特征贡献排序 · 兼顾个股量价、跨资产 Alpha 与宏观气象</span>
+                <span class="sub">横截面分位数排名 + 连续超额收益复合因子 · 抑制宏观特征分裂垄断，提升个股微观结构权重</span>
             </div>
             <table>
                 <thead>
@@ -1952,11 +2560,80 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
 
         <!-- Footer -->
         <footer class="footer">
-            <p>架构规范: 微软 Qlib 滚动时序长表截面 [Date, Ticker, Sector] | 模型: LightGBM 正则化弱分类器 (max_depth=5, num_leaves=23, lr=0.03, subsample=0.8)</p>
-            <p>时序验证: 2024~2026 Expanding Walk-Forward + 强制 5 日 Purge 隔离带 | 打标引擎: 三阈值动态止盈止损 (`NEXT_OPEN` 入场, 动态 ATR 轨)</p>
-            <p style="margin-top: 8px; color: #484f58;">us-market-radar AI Multi-Sector 5Y Predictor Engine V3.2 · Quantitative Analytics System</p>
+            <p>架构规范: 微软 Qlib 滚动时序长表截面 [Date, Ticker, Sector] | 模型: LightGBM 正则化分类器 (max_depth=5, num_leaves=23, colsample=0.65, max_bin=63)</p>
+            <p>时序验证: 2024~2026 Expanding Walk-Forward + 5 日 Purge 隔离 | 实盘推理: Full-Sample Refit (截至 T-5 已结算样本) + 赛道 PF 先验校准</p>
+            <p style="margin-top: 8px; color: #484f58;">us-market-radar AI Multi-Sector 5Y Predictor Engine V1.3 · Institutional Quantitative Suite</p>
         </footer>
     </div>
+
+    <script>
+        let showFullPool = false;
+        let currentSector = 'ALL';
+
+        function toggleT4PoolMode() {{
+            showFullPool = !showFullPool;
+            const btn = document.getElementById('t4-mode-btn');
+            const title = document.getElementById('t4-title');
+            if (showFullPool) {{
+                btn.textContent = '🏆 仅看 Top 10 精选榜';
+                title.textContent = '🎯 表 4: 最新交易日 AI 预测做多胜率全景榜 (全池 28 股 Live Inference)';
+            }} else {{
+                btn.textContent = '🌐 展开全池 28 股全景';
+                title.textContent = '🎯 表 4: 最新交易日 AI 预测做多胜率排行榜 Top 10 (Live Inference Pool)';
+            }}
+            applyT4Filters();
+        }}
+
+        function filterBySector(sectorName) {{
+            currentSector = sectorName;
+            if (sectorName !== 'ALL' && !showFullPool) {{
+                // 筛选特定赛道时自动展开全池以便查看该赛道全部标的
+                showFullPool = true;
+                const btn = document.getElementById('t4-mode-btn');
+                const title = document.getElementById('t4-title');
+                btn.textContent = '🏆 仅看 Top 10 精选榜';
+                title.textContent = '🎯 表 4: 最新交易日 AI 预测做多胜率全景榜 (' + sectorName + ')';
+            }}
+            const pills = document.querySelectorAll('#t4-sector-pills .filter-pill');
+            pills.forEach(p => {{
+                if (p.getAttribute('data-sec') === sectorName) {{
+                    p.classList.add('active');
+                }} else {{
+                    p.classList.remove('active');
+                }}
+            }});
+            applyT4Filters();
+        }}
+
+        function applyT4Filters() {{
+            const query = (document.getElementById('t4-search').value || '').trim().toUpperCase();
+            const rows = document.querySelectorAll('.t4-stock-row');
+            let visibleCount = 0;
+
+            rows.forEach(row => {{
+                const rank = parseInt(row.getAttribute('data-rank') || '999', 10);
+                const sec = row.getAttribute('data-sector') || '';
+                const tk = (row.getAttribute('data-ticker') || '').toUpperCase();
+
+                const matchSec = (currentSector === 'ALL') || (sec === currentSector);
+                const matchQuery = (!query) || tk.includes(query) || sec.toUpperCase().includes(query);
+                const matchPool = showFullPool || (query !== '') || (currentSector !== 'ALL') || (rank <= 10);
+
+                if (matchSec && matchQuery && matchPool) {{
+                    row.style.display = '';
+                    visibleCount++;
+                }} else {{
+                    row.style.display = 'none';
+                }}
+            }});
+
+            const lbl = document.getElementById('t4-count-label');
+            if (lbl) {{
+                const modeDesc = (currentSector === 'ALL' && !showFullPool && !query) ? 'Top 10 精选标的' : ('共 ' + visibleCount + ' 只标的');
+                lbl.textContent = '当前展示: ' + modeDesc;
+            }}
+        }}
+    </script>
 </body>
 </html>"""
 
@@ -1966,6 +2643,30 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
 
     file_size_kb = os.path.getsize(full_output_path) / 1024
     print(f"[+] ✅ 暗黑买方风格 HTML 可视化看板已成功渲染: {full_output_path} ({file_size_kb:.1f} KB)")
+
+
+def export_latest_ai_predictions_json(tables_data: Dict, json_path: str = 'data_cache/latest_ai_predictions.json') -> str:
+    """
+    导出全池 28 只核心标的的最新 AI 预测快照 JSON，供富途主看盘终端 (create_futu_terminal.py) 热加载联动展示。
+    """
+    full_json_path = _resolve_cache_path(json_path) if not os.path.isabs(json_path) else json_path
+    os.makedirs(os.path.dirname(full_json_path), exist_ok=True)
+
+    all_preds = tables_data.get('all_live_predictions') or tables_data.get('table4', [])
+    by_ticker = {item['ticker']: item for item in all_preds}
+
+    payload = {
+        'kpi': tables_data.get('kpi', {}),
+        'macro_weather': tables_data.get('macro_weather', {}),
+        'sectors': tables_data.get('table2', []),
+        'top10': tables_data.get('table4', []),
+        'all_predictions': all_preds,
+        'by_ticker': by_ticker
+    }
+    with open(full_json_path, 'w', encoding='utf-8') as f:
+        json.dump(payload, f, ensure_ascii=False, indent=2)
+    print(f"[+] 🔗 已导出主看板联动 AI 预测快照: {full_json_path} (覆盖 {len(by_ticker)} 只标的)")
+    return full_json_path
 
 
 # ==============================================================================
@@ -2080,35 +2781,20 @@ def main():
     latest_df = feature_panel[feature_panel['Ticker'].isin(TARGET_STOCKS)].copy()
     latest_stocks = latest_df.sort_values('Date').groupby('Ticker').last().reset_index()
 
-    # 宏观环境水温评估
+    # 宏观环境水温评估 (与 integrated_market_radar.py 严格统一对齐)
     qqqm_bias = float(latest_stocks['QQQM_Bias_MA50'].mean()) if 'QQQM_Bias_MA50' in latest_stocks.columns else 0.0
     vixy_pos = float(latest_stocks['VIXY_Pos_60'].mean()) if 'VIXY_Pos_60' in latest_stocks.columns else 0.5
     smh_bias = float(latest_stocks['SMH_Bias_MA50'].mean()) if 'SMH_Bias_MA50' in latest_stocks.columns else 0.0
     smh_igv = float(latest_stocks['SMH_IGV_Ratio_Bias'].mean()) if 'SMH_IGV_Ratio_Bias' in latest_stocks.columns else 0.0
+    latest_date_str = latest_stocks['Date'].max().strftime('%Y-%m-%d') if 'Date' in latest_stocks.columns else ""
 
-    if qqqm_bias >= 0.0 and vixy_pos < 0.50:
-        m_status = "☀️ 晴天做多"
-        m_desc = "多头共振 · 积极进攻 · 纳指站在均线之上且恐慌低位"
-        m_badge = "weather-sunny"
-    elif qqqm_bias >= -3.5 and vixy_pos < 0.75:
-        m_status = "⛅ 阴天防守"
-        m_desc = "震荡筑底 · 审慎试仓 · 宏观中性波动率可控"
-        m_badge = "weather-cloudy"
-    else:
-        m_status = "🌧️ 暴雨空仓"
-        m_desc = "极端恐慌 · 严防踩踏 · 波动率脉冲破位防守"
-        m_badge = "weather-rainy"
-
-    macro_weather = {
-        'status': m_status,
-        'desc': m_desc,
-        'badge_class': m_badge,
-        'qqqm_bias': round(qqqm_bias, 2),
-        'vixy_pos': round(vixy_pos, 2),
-        'smh_bias': round(smh_bias, 2),
-        'smh_igv': round(smh_igv, 2),
-        'latest_date': latest_stocks['Date'].max().strftime('%Y-%m-%d')
-    }
+    macro_weather = evaluate_macro_weather(
+        qqqm_bias=qqqm_bias,
+        smh_bias=smh_bias,
+        vixy_pos=vixy_pos,
+        smh_igv=smh_igv,
+        latest_date=latest_date_str
+    )
 
     # 生成 4 大核心数据表
     tables_data = generate_report_tables(
@@ -2123,9 +2809,10 @@ def main():
     # 控制台格式化打印 4 大核心表格
     print_terminal_tables(tables_data)
 
-    # 渲染可视化暗黑看板 HTML
+    # 渲染可视化暗黑看板 HTML 并导出主看板联动 JSON
     html_path = _resolve_cache_path(args.html_file) if not os.path.isabs(args.html_file) else args.html_file
     render_html_dashboard(tables_data, output_path=html_path)
+    export_latest_ai_predictions_json(tables_data)
 
     print("=" * 70)
     print("✅ Milestone M3: 4 大战报表格控制台输出与 HTML 看板生成全部完成！\n")

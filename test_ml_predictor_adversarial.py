@@ -392,7 +392,7 @@ class TestAdversarialTripleBarrierCollisions(unittest.TestCase):
         self.assertEqual(labeled.at[0, 'Barrier_Hit'], 'collision')
 
     def test_zero_atr_floor_enforcement(self):
-        """ATR_Pct = 0.0 must be floored at min upper 3.5% and min lower 2.2%."""
+        """ATR_Pct = 0.0 must be floored at min upper 3.0% and min lower 2.2%."""
         rows = [
             {'Date': self.dates[0], 'Ticker': 'TEST', 'Open': 100.0, 'High': 100.0, 'Low': 100.0, 'Close': 100.0, 'ATR_Pct': 0.0},
             {'Date': self.dates[1], 'Ticker': 'TEST', 'Open': 100.0, 'High': 103.0, 'Low': 98.0, 'Close': 100.0, 'ATR_Pct': 0.0},
@@ -405,7 +405,7 @@ class TestAdversarialTripleBarrierCollisions(unittest.TestCase):
 
         u = labeled.at[0, 'Target_Upper']
         l = labeled.at[0, 'Target_Lower']
-        self.assertAlmostEqual(u, 103.50, places=2, msg=f"Upper barrier not floored at 3.5%: {u}")
+        self.assertAlmostEqual(u, 103.00, places=2, msg=f"Upper barrier not floored at 3.0%: {u}")
         self.assertAlmostEqual(l, 97.80, places=2, msg=f"Lower barrier not floored at 2.2%: {l}")
 
     def test_tail_5_days_strictly_nan(self):

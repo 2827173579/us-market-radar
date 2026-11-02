@@ -218,43 +218,76 @@ class OracleFeatureEngine:
     @classmethod
     def compute_macro_features(cls, macro_map: Dict[str, pd.DataFrame]) -> pd.DataFrame:
         """Compute the 6 macro features and align by Date."""
-        qqqm = macro_map['QQQM'].sort_values('Date').copy()
-        smh = macro_map['SMH'].sort_values('Date').copy()
-        tlt = macro_map['TLT'].sort_values('Date').copy()
-        vixy = macro_map['VIXY'].sort_values('Date').copy()
-        igv = macro_map['IGV'].sort_values('Date').copy()
+        qqqm = macro_map['QQQM'].sort_values('Date').reset_index(drop=True)
+        smh = macro_map['SMH'].sort_values('Date').reset_index(drop=True)
+        tlt = macro_map['TLT'].sort_values('Date').reset_index(drop=True)
+        vixy = macro_map['VIXY'].sort_values('Date').reset_index(drop=True)
+        igv = macro_map['IGV'].sort_values('Date').reset_index(drop=True)
 
-        macro_df = pd.DataFrame({'Date': qqqm['Date']})
+        # 1. QQQM 特征表
+        qqqm_close = qqqm['Close'].astype(float)
+        qqqm_ma50 = qqqm_close.rolling(50, min_periods=1).mean()
+        qqqm_feat = pd.DataFrame({
+            'Date': qqqm['Date'],
+            'QQQM_Bias_MA50': ((qqqm_close - qqqm_ma50) / (qqqm_ma50 + 1e-8)) * 100.0,
+            'QQQM_Ret_5d': qqqm_close.pct_change(5).fillna(0.0) * 100.0
+        })
 
-        # QQQM_Bias_MA50, SMH_Bias_MA50, TLT_Bias_MA50
-        qqqm_ma50 = qqqm['Close'].rolling(50, min_periods=1).mean()
-        macro_df['QQQM_Bias_MA50'] = ((qqqm['Close'] - qqqm_ma50) / (qqqm_ma50 + 1e-8)) * 100.0
-        macro_df['QQQM_Ret_5d'] = qqqm['Close'].pct_change(5).fillna(0.0) * 100.0
+        # 2. SMH 特征表
+        smh_close = smh['Close'].astype(float)
+        smh_ma50 = smh_close.rolling(50, min_periods=1).mean()
+        smh_feat = pd.DataFrame({
+            'Date': smh['Date'],
+            'SMH_Bias_MA50': ((smh_close - smh_ma50) / (smh_ma50 + 1e-8)) * 100.0,
+            'SMH_Ret_20d': smh_close.pct_change(20).fillna(0.0) * 100.0
+        })
 
-        smh_ma50 = smh['Close'].rolling(50, min_periods=1).mean()
-        macro_df['SMH_Bias_MA50'] = ((smh['Close'] - smh_ma50) / (smh_ma50 + 1e-8)) * 100.0
-        macro_df['SMH_Ret_20d'] = smh['Close'].pct_change(20).fillna(0.0) * 100.0
+        # 3. TLT 特征表
+        tlt_close = tlt['Close'].astype(float)
+        tlt_ma50 = tlt_close.rolling(50, min_periods=1).mean()
+        tlt_feat = pd.DataFrame({
+            'Date': tlt['Date'],
+            'TLT_Bias_MA50': ((tlt_close - tlt_ma50) / (tlt_ma50 + 1e-8)) * 100.0
+        })
 
-        tlt_ma50 = tlt['Close'].rolling(50, min_periods=1).mean()
-        macro_df['TLT_Bias_MA50'] = ((tlt['Close'] - tlt_ma50) / (tlt_ma50 + 1e-8)) * 100.0
-
-        # VIXY_Bias_MA20, VIXY_Pos_60
-        vixy_ma20 = vixy['Close'].rolling(20, min_periods=1).mean()
-        macro_df['VIXY_Bias_MA20'] = ((vixy['Close'] - vixy_ma20) / (vixy_ma20 + 1e-8)) * 100.0
-        v_low60 = vixy['Low'].rolling(60, min_periods=1).min()
-        v_high60 = vixy['High'].rolling(60, min_periods=1).max()
+        # 4. VIXY 特征表
+        vixy_close = vixy['Close'].astype(float)
+        vixy_high = vixy['High'].astype(float)
+        vixy_low = vixy['Low'].astype(float)
+        vixy_ma20 = vixy_close.rolling(20, min_periods=1).mean()
+        v_low60 = vixy_low.rolling(60, min_periods=1).min()
+        v_high60 = vixy_high.rolling(60, min_periods=1).max()
         v_range = v_high60 - v_low60
-        v_pos = (vixy['Close'] - v_low60) / np.where(v_range > 1e-6, v_range, 1.0)
-        macro_df['VIXY_Pos_60'] = np.clip(v_pos, 0.0, 1.0)
+        v_pos = (vixy_close - v_low60) / np.where(v_range > 1e-6, v_range, 1.0)
+        vixy_feat = pd.DataFrame({
+            'Date': vixy['Date'],
+            'VIXY_Bias_MA20': ((vixy_close - vixy_ma20) / (vixy_ma20 + 1e-8)) * 100.0,
+            'VIXY_Pos_60': np.clip(v_pos, 0.0, 1.0)
+        })
 
-        # SMH_IGV_Ratio_Bias: ((SMH / IGV) - MA20(SMH / IGV)) / MA20 * 100
-        ratio = smh['Close'] / (igv['Close'] + 1e-8)
-        ratio_ma20 = ratio.rolling(20, min_periods=1).mean()
-        macro_df['SMH_IGV_Ratio_Bias'] = ((ratio - ratio_ma20) / (ratio_ma20 + 1e-8)) * 100.0
+        # 5. SMH/IGV 比值乖离表 (先按 Date 内连接对齐相同交易日)
+        smh_igv = pd.merge(
+            smh[['Date', 'Close']].rename(columns={'Close': 'Close_SMH'}),
+            igv[['Date', 'Close']].rename(columns={'Close': 'Close_IGV'}),
+            on='Date',
+            how='inner'
+        ).sort_values('Date').reset_index(drop=True)
+        smh_igv_ratio = smh_igv['Close_SMH'].astype(float) / (smh_igv['Close_IGV'].astype(float) + 1e-8)
+        ratio_ma20 = smh_igv_ratio.rolling(20, min_periods=1).mean()
+        smh_igv_feat = pd.DataFrame({
+            'Date': smh_igv['Date'],
+            'SMH_IGV_Ratio_Bias': ((smh_igv_ratio - ratio_ma20) / (ratio_ma20 + 1e-8)) * 100.0
+        })
 
+        # 6. 以 QQQM 的所有交易日为基准按 Date 左连接全部宏观特征
+        macro_df = pd.DataFrame({'Date': sorted(qqqm['Date'].unique())})
+        for sub_df in [qqqm_feat, smh_feat, tlt_feat, vixy_feat, smh_igv_feat]:
+            macro_df = pd.merge(macro_df, sub_df, on='Date', how='left')
+
+        # 因果安全前向填充并清洗异常值
         for col in macro_df.columns:
             if col != 'Date':
-                macro_df[col] = macro_df[col].replace([np.inf, -np.inf], np.nan).fillna(0.0)
+                macro_df[col] = macro_df[col].ffill().replace([np.inf, -np.inf], np.nan).fillna(0.0)
 
         return macro_df
 
@@ -299,9 +332,11 @@ class OracleFeatureEngine:
         # Left-join macro features strictly by Date
         merged = pd.merge(long_panel, macro_features, on='Date', how='left')
 
-        # Compute Cross-Asset Alphas
+        # Compute Cross-Asset Alphas with cross-sectional rank strictly by Date
         merged['Alpha_QQQM_5d'] = merged['Ret_5d'] - merged['QQQM_Ret_5d']
         merged['Alpha_SMH_20d'] = merged['Ret_20d'] - merged['SMH_Ret_20d']
+        merged['Alpha_QQQM_5d'] = merged.groupby('Date')['Alpha_QQQM_5d'].rank(pct=True).fillna(0.5)
+        merged['Alpha_SMH_20d'] = merged.groupby('Date')['Alpha_SMH_20d'].rank(pct=True).fillna(0.5)
 
         # Ensure all 23 features exist and contain zero unhandled NaN/Inf
         for feat in cls.FEATURE_NAMES:
@@ -317,8 +352,11 @@ class OracleTripleBarrierLabeler:
     Authoritative reference implementation of Triple Barrier Labeling.
     Rules:
     - NEXT_OPEN entry price (Open.shift(-1))
-    - Dynamic Upper Barrier: NEXT_OPEN * (1 + max(0.035, 1.5 * ATR_Pct_T / 100.0))
-    - Dynamic Lower Barrier: NEXT_OPEN * (1 - max(0.022, 1.0 * ATR_Pct_T / 100.0))
+    - Soft-Root Scaling ATR:
+        raw_atr = atr_pct / 100.0
+        eff_atr = 0.040 + 0.50 * (np.clip(raw_atr, 0.040, 0.100) - 0.040) if raw_atr > 0.040 else np.clip(raw_atr, 0.012, 0.040)
+    - Dynamic Upper Barrier: NEXT_OPEN * (1 + max(0.030, 1.35 * eff_atr))
+    - Dynamic Lower Barrier: NEXT_OPEN * (1 - max(0.022, 1.00 * eff_atr))
     - Horizon: T+1 to T+5
     - Upper hit first -> 1
     - Lower hit first -> 0
@@ -354,9 +392,16 @@ class OracleTripleBarrierLabeler:
 
                 entry_price = grp.at[i, 'Entry_Price']
                 atr_pct = grp.at[i, 'ATR_Pct'] if 'ATR_Pct' in grp.columns else 2.0
+                if np.isnan(atr_pct) or atr_pct <= 0:
+                    atr_pct = 2.0
 
-                upper_mult = max(0.035, 1.5 * (atr_pct / 100.0))
-                lower_mult = max(0.022, 1.0 * (atr_pct / 100.0))
+                raw_atr = float(atr_pct) / 100.0
+                if raw_atr > 0.040:
+                    eff_atr = float(0.040 + 0.50 * (np.clip(raw_atr, 0.040, 0.100) - 0.040))
+                else:
+                    eff_atr = float(np.clip(raw_atr, 0.012, 0.040))
+                upper_mult = max(0.030, 1.35 * eff_atr)
+                lower_mult = max(0.022, 1.00 * eff_atr)
 
                 upper_barrier = entry_price * (1.0 + upper_mult)
                 lower_barrier = entry_price * (1.0 - lower_mult)
@@ -1073,12 +1118,62 @@ class TestTripleBarrierResolutionLogic(unittest.TestCase):
         labeled = labeler_fn(df)
 
         # Entry = 100.0, ATR_Pct = 2.0%
-        # Upper mult = max(0.035, 1.5 * 0.02) = 0.035 -> 103.50
-        # Lower mult = max(0.022, 1.0 * 0.02) = 0.022 -> 97.80
+        # eff_atr = clip(0.02, 0.012, 0.050) = 0.02
+        # Upper mult = max(0.030, 1.35 * 0.02) = 0.030 -> 103.00
+        # Lower mult = max(0.022, 1.00 * 0.02) = 0.022 -> 97.80
         upper = labeled.at[0, 'Target_Upper']
         lower = labeled.at[0, 'Target_Lower']
-        self.assertAlmostEqual(upper, 103.50, places=2)
+        self.assertAlmostEqual(upper, 103.00, places=2)
         self.assertAlmostEqual(lower, 97.80, places=2)
+
+    def test_soft_root_scaling_atr_boundaries(self):
+        """Validates Piecewise Soft-Root Scaling across low, normal, and extreme volatility regimes."""
+        labeler_fn, _ = get_labeling_builder()
+        # Test cases: (atr_pct, expected_eff_atr, expected_upper, expected_lower)
+        # Entry = 100.0
+        # raw <= 0.040: eff_atr = clip(raw, 0.012, 0.040)
+        # raw > 0.040:  eff_atr = 0.040 + 0.50 * (clip(raw, 0.040, 0.100) - 0.040)
+        # upper_mult = max(0.030, 1.35 * eff_atr)
+        # lower_mult = max(0.022, 1.00 * eff_atr)
+        test_cases = [
+            (0.5, 0.012, 103.00, 97.80),    # Floor 1.2%
+            (1.2, 0.012, 103.00, 97.80),    # Boundary 1.2%
+            (2.0, 0.020, 103.00, 97.80),    # 2.0% -> 1.35*0.02=0.027 < 0.030
+            (4.0, 0.040, 105.40, 96.00),    # 4.0% -> 1.35*0.04=0.054, lower=0.040
+            (5.0, 0.045, 106.075, 95.50),   # 5.0% -> eff=0.045, 1.35*0.045=0.06075, lower=0.045
+            (6.0, 0.050, 106.75, 95.00),    # 6.0% -> eff=0.050, 1.35*0.050=0.0675, lower=0.050
+            (8.0, 0.060, 108.10, 94.00),    # 8.0% -> eff=0.060, 1.35*0.060=0.081, lower=0.060
+            (10.0, 0.070, 109.45, 93.00),   # 10.0% -> eff=0.070, 1.35*0.070=0.0945, lower=0.070
+            (15.0, 0.070, 109.45, 93.00),   # 15.0% -> ceiling 0.070, upper=109.45, lower=93.00
+        ]
+        for atr_val, exp_eff, exp_u, exp_l in test_cases:
+            df = self._build_test_case_df(t1_high=102.0, t1_low=99.0, t1_open=100.0)
+            df.loc[0, 'ATR_Pct'] = atr_val
+            labeled = labeler_fn(df)
+            u = labeled.at[0, 'Target_Upper']
+            l = labeled.at[0, 'Target_Lower']
+            self.assertAlmostEqual(u, exp_u, places=2, msg=f"Upper barrier mismatch at ATR={atr_val}")
+            self.assertAlmostEqual(l, exp_l, places=2, msg=f"Lower barrier mismatch at ATR={atr_val}")
+
+    def test_soft_root_scaling_decloning(self):
+        """Verifies that high-volatility targets are no longer cloned at +6.8% / -5.0%."""
+        labeler_fn, _ = get_labeling_builder()
+        df5 = self._build_test_case_df(t1_high=102.0, t1_low=99.0, t1_open=100.0)
+        df5.loc[0, 'ATR_Pct'] = 5.0
+        lab5 = labeler_fn(df5)
+
+        df8 = self._build_test_case_df(t1_high=102.0, t1_low=99.0, t1_open=100.0)
+        df8.loc[0, 'ATR_Pct'] = 8.0
+        lab8 = labeler_fn(df8)
+
+        u5, l5 = lab5.at[0, 'Target_Upper'], lab5.at[0, 'Target_Lower']
+        u8, l8 = lab8.at[0, 'Target_Upper'], lab8.at[0, 'Target_Lower']
+
+        # Targets must be differentiated and not cloned
+        self.assertNotEqual(u5, u8, f"Upper targets cloned: {u5} vs {u8}")
+        self.assertNotEqual(l5, l8, f"Lower targets cloned: {l5} vs {l8}")
+        self.assertAlmostEqual(u5, 106.075, places=2)
+        self.assertAlmostEqual(u8, 108.100, places=2)
 
 
 class TestTailIsolationLivePool(unittest.TestCase):
@@ -1203,6 +1298,378 @@ class TestAdversarialIntegrityAndEdgeCases(unittest.TestCase):
         )
 
 
+class TestMacroFeatureIntegrity(unittest.TestCase):
+    """
+    R1 & Bug 1 Verification:
+    Macro features and cross-asset alphas must NOT collapse to zero due to index mismatch.
+    Asserts non-zero rate > 95% and std > 0.01 on both synthetic raw panel and real 5Y Parquet cache.
+    """
+    TARGET_FEATURES = [
+        'SMH_Bias_MA50',
+        'TLT_Bias_MA50',
+        'VIXY_Bias_MA20',
+        'VIXY_Pos_60',
+        'Alpha_SMH_20d'
+    ]
+
+    def test_synthetic_raw_panel_macro_features_non_zero_and_variance(self):
+        """Validates macro features on full synthetic panel where stocks and ETFs are concatenated."""
+        dates = SyntheticMarketDataGenerator.generate_trading_dates(start_date='2022-01-03', num_days=500)
+        raw_panel = SyntheticMarketDataGenerator.generate_full_raw_panel(
+            stock_tickers=['NVDA', 'TSM', 'AMD'],
+            dates=dates,
+            base_seed=42
+        )
+        panel = run_feature_pipeline(raw_panel, macro_map=None, drop_warmup=False)
+
+        self.assertGreater(len(panel), 0, "Feature panel is empty!")
+        for feat in self.TARGET_FEATURES:
+            self.assertIn(feat, panel.columns, f"Feature '{feat}' missing from panel columns!")
+            series = panel[feat]
+            non_zero_rate = float((series != 0.0).mean())
+            std_val = float(series.std())
+            self.assertGreater(
+                non_zero_rate, 0.95,
+                f"[Synthetic] Feature '{feat}' non-zero rate is {non_zero_rate:.4f} (<= 0.95). Index mismatch bug!"
+            )
+            self.assertGreater(
+                std_val, 0.01,
+                f"[Synthetic] Feature '{feat}' std is {std_val:.4f} (<= 0.01). Feature lacks variance!"
+            )
+
+    def test_real_parquet_dataset_macro_features_non_zero_and_variance(self):
+        """Validates macro features on real cached 5Y Parquet dataset (data_cache/ml_panel_5y.parquet)."""
+        parquet_path = os.path.join(PROJECT_DIR, 'data_cache', 'ml_panel_5y.parquet')
+        if not os.path.exists(parquet_path):
+            self.skipTest(f"Parquet cache file not found at: {parquet_path}")
+
+        raw_parquet_df = pd.read_parquet(parquet_path)
+        panel = run_feature_pipeline(raw_parquet_df, macro_map=None, drop_warmup=False)
+
+        self.assertGreater(len(panel), 0, "Feature panel from Parquet is empty!")
+        for feat in self.TARGET_FEATURES:
+            self.assertIn(feat, panel.columns, f"Feature '{feat}' missing from Parquet feature panel!")
+            series = panel[feat]
+            non_zero_rate = float((series != 0.0).mean())
+            std_val = float(series.std())
+            self.assertGreater(
+                non_zero_rate, 0.95,
+                f"[Real Parquet] Feature '{feat}' non-zero rate is {non_zero_rate:.4f} (<= 0.95). Silent zero failure!"
+            )
+            self.assertGreater(
+                std_val, 0.01,
+                f"[Real Parquet] Feature '{feat}' std is {std_val:.4f} (<= 0.01). Feature lacks variance!"
+            )
+
+
+class TestReportMetricsAndSectorLinkage(unittest.TestCase):
+    """
+    R2, R3 & R4 Verification:
+    - Table 1 & Table 2: Avg Realized Return, Win/Loss Ratio, and Profit Factor metrics.
+    - Table 2: Small sample (< 10 high-confidence signals) star rating capped at <= 3 stars with (小样本).
+    - Table 4: Sector OOS win rate < 45% warning linkage.
+    - Macro Weather: Strict alignment with integrated_market_radar.py logic.
+    """
+
+    def test_table1_and_table2_metric_realized_returns(self):
+        """Validates Table 1 & 2 Avg Realized Return, Win/Loss Ratio, and Profit Factor."""
+        mod = get_implementation_module()
+        if not mod or not hasattr(mod, 'generate_report_tables'):
+            self.skipTest("ml_predictor_5y.generate_report_tables not available")
+
+        np.random.seed(42)
+        n = 100
+        oos_data = {
+            'Date': pd.bdate_range('2024-01-01', periods=n),
+            'Ticker': ['NVDA'] * 50 + ['MSTR'] * 50,
+            'Sector': ['Semiconductors'] * 50 + ['Crypto_Proxy'] * 50,
+            'Close': [100.0] * n,
+            'Label': [1.0] * 60 + [0.0] * 40,
+            'Prob_1': [0.65] * 30 + [0.58] * 20 + [0.62] * 20 + [0.45] * 30,
+            'Realized_Return': [4.5] * 30 + [-2.2] * 20 + [4.5] * 30 + [-2.2] * 20
+        }
+        oos_df = pd.DataFrame(oos_data)
+        latest_df = oos_df.iloc[:2].copy()
+
+        tables = mod.generate_report_tables(
+            oos_df=oos_df,
+            model=None,
+            feature_cols=[],
+            latest_features_df=latest_df,
+            macro_weather={'status': '☀️ 晴天做多'}
+        )
+
+        # Check Table 1
+        t1 = tables['table1']
+        self.assertGreater(len(t1), 0)
+        self.assertIn('avg_realized_return_pct', t1[0])
+        self.assertIn('win_loss_ratio', t1[0])
+        self.assertIn('profit_factor', t1[0])
+        self.assertIn('pos_win_rate_pct', t1[0])
+        self.assertIn('touch_win_rate_pct', t1[0])
+
+        # Check Table 2
+        t2 = tables['table2']
+        self.assertGreater(len(t2), 0)
+        self.assertIn('avg_realized_return_pct', t2[0])
+        self.assertIn('win_loss_ratio', t2[0])
+        self.assertIn('profit_factor', t2[0])
+        self.assertIn('high_conviction_pos_win_rate_pct', t2[0])
+        self.assertIn('high_conviction_touch_win_rate_pct', t2[0])
+
+    def test_table2_institutional_star_rating_tiers(self):
+        """Validates the 5-tier institutional AI Alpha star rating standard based on PF and avg return."""
+        mod = get_implementation_module()
+        if not mod or not hasattr(mod, 'generate_report_tables'):
+            self.skipTest("ml_predictor_5y.generate_report_tables not available")
+
+        scenarios = [
+            # (pos_ret, neg_ret, n_wins, n_losses, exp_stars)
+            (4.0, -2.0, 15, 5, "⭐⭐⭐⭐⭐"),
+            (4.56, -3.20, 5, 5, "⭐⭐⭐⭐☆"),
+            (3.50, -2.60, 5, 5, "⭐⭐⭐☆☆"),
+            (2.20, -2.00, 5, 5, "⭐⭐☆☆☆"),
+            (1.50, -2.00, 5, 5, "⭐☆☆☆☆"),
+        ]
+
+        for pos_r, neg_r, n_w, n_l, exp_rating in scenarios:
+            records = []
+            for i in range(n_w):
+                records.append({
+                    'Date': pd.Timestamp('2024-01-01') + pd.Timedelta(days=i),
+                    'Ticker': 'NVDA',
+                    'Sector': 'Semiconductors',
+                    'Close': 100.0,
+                    'Label': 1.0,
+                    'Prob_1': 0.65,
+                    'Realized_Return': pos_r
+                })
+            for i in range(n_l):
+                records.append({
+                    'Date': pd.Timestamp('2024-02-01') + pd.Timedelta(days=i),
+                    'Ticker': 'NVDA',
+                    'Sector': 'Semiconductors',
+                    'Close': 100.0,
+                    'Label': 0.0,
+                    'Prob_1': 0.65,
+                    'Realized_Return': neg_r
+                })
+            oos_test_df = pd.DataFrame(records)
+            res = mod.generate_report_tables(
+                oos_df=oos_test_df,
+                model=None,
+                feature_cols=[],
+                latest_features_df=pd.DataFrame(),
+                macro_weather={'status': '☀️ 晴天做多'}
+            )
+            sec_row = [r for r in res['table2'] if r['sector_key'] == 'Semiconductors'][0]
+            self.assertEqual(sec_row['alpha_rating'], exp_rating, f"Expected {exp_rating}, got {sec_row['alpha_rating']}")
+
+    def test_table4_calibrated_probability_sorting(self):
+        """Verifies that Table 4 sorts by Calibrated_Prob = Prob_1 * clip(sector_pf / 1.30, 0.75, 1.15)."""
+        mod = get_implementation_module()
+        if not mod or not hasattr(mod, 'generate_report_tables'):
+            self.skipTest("ml_predictor_5y.generate_report_tables not available")
+
+        records = []
+        # Memory: high PF (PF >= 1.50 -> mult = 1.15)
+        for i in range(10):
+            records.append({'Date': pd.Timestamp('2024-01-01')+pd.Timedelta(days=i), 'Ticker': 'MU', 'Sector': 'Memory', 'Close': 100.0, 'Label': 1.0, 'Prob_1': 0.65, 'Realized_Return': 4.0})
+        for i in range(2):
+            records.append({'Date': pd.Timestamp('2024-02-01')+pd.Timedelta(days=i), 'Ticker': 'MU', 'Sector': 'Memory', 'Close': 100.0, 'Label': 0.0, 'Prob_1': 0.65, 'Realized_Return': -1.5})
+        # Enterprise SaaS: low PF (PF <= 0.975 -> mult = 0.75)
+        for i in range(2):
+            records.append({'Date': pd.Timestamp('2024-01-01')+pd.Timedelta(days=i), 'Ticker': 'MSFT', 'Sector': 'Enterprise_SaaS', 'Close': 100.0, 'Label': 1.0, 'Prob_1': 0.65, 'Realized_Return': 2.0})
+        for i in range(10):
+            records.append({'Date': pd.Timestamp('2024-02-01')+pd.Timedelta(days=i), 'Ticker': 'MSFT', 'Sector': 'Enterprise_SaaS', 'Close': 100.0, 'Label': 0.0, 'Prob_1': 0.65, 'Realized_Return': -2.5})
+
+        oos_df = pd.DataFrame(records)
+
+        # MSFT raw Prob_1 = 0.68 -> Calibrated = 0.68 * 0.75 = 0.510
+        # MU raw Prob_1 = 0.60 -> Calibrated = 0.60 * 1.15 = 0.690
+        # MU must rank ahead of MSFT!
+        latest_df = pd.DataFrame({
+            'Ticker': ['MSFT', 'MU'],
+            'Sector': ['Enterprise_SaaS', 'Memory'],
+            'Close': [400.0, 100.0],
+            'Prob_1': [0.68, 0.60],
+            'ATR_Pct': [2.0, 3.5]
+        })
+
+        tables = mod.generate_report_tables(
+            oos_df=oos_df,
+            model=None,
+            feature_cols=[],
+            latest_features_df=latest_df,
+            macro_weather={'status': '☀️ 晴天做多'}
+        )
+
+        t4 = tables['table4']
+        self.assertEqual(len(t4), 2)
+        self.assertEqual(t4[0]['ticker'], 'MU', f"Top 1 should be MU after calibration, got {t4[0]['ticker']}")
+        self.assertEqual(t4[1]['ticker'], 'MSFT', f"Top 2 should be MSFT after calibration, got {t4[1]['ticker']}")
+        self.assertAlmostEqual(t4[0]['calibrated_win_rate_pct'], 69.0, places=1)
+        self.assertAlmostEqual(t4[1]['calibrated_win_rate_pct'], 51.0, places=1)
+
+    def test_table2_small_sample_star_capping(self):
+        """Asserts that sectors with < 10 high-confidence signals are capped at <= 3 stars with (小样本)."""
+        mod = get_implementation_module()
+        if not mod or not hasattr(mod, 'generate_report_tables'):
+            self.skipTest("ml_predictor_5y.generate_report_tables not available")
+
+        # Mock oos_df where Crypto_Proxy has only 1 high-confidence winning signal (100% win rate)
+        n = 50
+        oos_data = {
+            'Date': pd.bdate_range('2024-01-01', periods=n),
+            'Ticker': ['MSTR'] * n,
+            'Sector': ['Crypto_Proxy'] * n,
+            'Close': [100.0] * n,
+            'Label': [1.0] + [0.0] * (n - 1),
+            'Prob_1': [0.75] + [0.45] * (n - 1),
+            'Realized_Return': [5.0] + [-2.0] * (n - 1)
+        }
+        oos_df = pd.DataFrame(oos_data)
+        latest_df = oos_df.iloc[:1].copy()
+
+        tables = mod.generate_report_tables(
+            oos_df=oos_df,
+            model=None,
+            feature_cols=[],
+            latest_features_df=latest_df,
+            macro_weather={'status': '☀️ 晴天做多'}
+        )
+
+        t2 = tables['table2']
+        crypto_row = [r for r in t2 if r['sector_key'] == 'Crypto_Proxy'][0]
+        self.assertEqual(crypto_row['high_conviction_signals'], 1)
+        self.assertEqual(crypto_row['high_conviction_win_rate_pct'], 100.0)
+        self.assertIn('(小样本)', crypto_row['alpha_rating'])
+        self.assertNotIn('⭐⭐⭐⭐⭐', crypto_row['alpha_rating'])
+        self.assertEqual(crypto_row['alpha_rating'], '⭐⭐⭐☆☆ (小样本)')
+
+    def test_table4_low_win_rate_sector_warning(self):
+        """Validates that a ticker whose sector win rate < 45% receives warning action."""
+        mod = get_implementation_module()
+        if not mod or not hasattr(mod, 'generate_report_tables'):
+            self.skipTest("ml_predictor_5y.generate_report_tables not available")
+
+        # Setup sector attribution where Crypto_Proxy has 30% win rate (< 45%)
+        # and Semiconductors has 70% win rate
+        n = 100
+        oos_data = {
+            'Date': pd.bdate_range('2024-01-01', periods=n),
+            'Ticker': ['NVDA'] * 50 + ['MSTR'] * 50,
+            'Sector': ['Semiconductors'] * 50 + ['Crypto_Proxy'] * 50,
+            'Close': [100.0] * n,
+            'Label': [1.0] * 35 + [0.0] * 15 + [1.0] * 15 + [0.0] * 35,
+            'Prob_1': [0.65] * 50 + [0.65] * 50,
+            'Realized_Return': [4.0] * 50 + [-2.0] * 50
+        }
+        oos_df = pd.DataFrame(oos_data)
+
+        # 2 stocks in latest_df
+        latest_df = pd.DataFrame({
+            'Ticker': ['NVDA', 'MSTR'],
+            'Sector': ['Semiconductors', 'Crypto_Proxy'],
+            'Close': [120.0, 300.0],
+            'Prob_1': [0.68, 0.68],
+            'ATR_Pct': [2.5, 5.0]
+        })
+
+        tables = mod.generate_report_tables(
+            oos_df=oos_df,
+            model=None,
+            feature_cols=[],
+            latest_features_df=latest_df,
+            macro_weather={'status': '☀️ 晴天做多'}
+        )
+
+        t4 = tables['table4']
+        self.assertEqual(len(t4), 2)
+        row_nvda = [r for r in t4 if r['ticker'] == 'NVDA'][0]
+        row_mstr = [r for r in t4 if r['ticker'] == 'MSTR'][0]
+
+        self.assertEqual(row_nvda['action'], "🔥 极高确定性右侧做多")
+        self.assertEqual(row_mstr['action'], "⚠️ 赛道历史胜率偏低·观望")
+
+    def test_macro_weather_alignment(self):
+        """Validates weather logic alignment with integrated_market_radar.py."""
+        mod = get_implementation_module()
+        if not mod or not hasattr(mod, 'evaluate_macro_weather'):
+            self.skipTest("ml_predictor_5y.evaluate_macro_weather not available")
+
+        # 1. Double breakdown (< -3.0 on both QQQM and SMH)
+        w1 = mod.evaluate_macro_weather(qqqm_bias=-3.2, smh_bias=-3.1)
+        self.assertEqual(w1['status'], "🌧️ 暴雨空仓")
+
+        # 2. One-sided deviation (-4.0% on QQQM, but SMH -1.0%, not double breakdown)
+        w2 = mod.evaluate_macro_weather(qqqm_bias=-4.0, smh_bias=-1.0)
+        self.assertEqual(w2['status'], "⛅ 阴天防守")
+
+        # 3. Mild pullbacks
+        w3 = mod.evaluate_macro_weather(qqqm_bias=-1.5, smh_bias=-1.5)
+        self.assertEqual(w3['status'], "⛅ 阴天防守")
+
+        # 4. Bull base (both >= 0.25%, no vix panic)
+        w4 = mod.evaluate_macro_weather(qqqm_bias=1.2, smh_bias=1.5, vixy_pos=0.3)
+        self.assertEqual(w4['status'], "☀️ 晴天做多")
+
+        # 5. VIX panic veto (both >= 0.25%, but vixy_pos >= 0.75)
+        w5 = mod.evaluate_macro_weather(qqqm_bias=1.2, smh_bias=1.5, vixy_pos=0.8)
+        self.assertEqual(w5['status'], "⛅ 阴天防守")
+
+    def test_table4_weather_and_raw_prob_gate(self):
+        """Validates raw probability < 50% gate and rainy macro weather defense in Table 4."""
+        mod = get_implementation_module()
+        if not mod or not hasattr(mod, 'generate_report_tables'):
+            self.skipTest("ml_predictor_5y.generate_report_tables not available")
+
+        n = 50
+        oos_df = pd.DataFrame({
+            'Date': pd.bdate_range('2024-01-01', periods=n),
+            'Ticker': ['MU'] * n,
+            'Sector': ['Memory'] * n,
+            'Close': [100.0] * n,
+            'Label': [1.0] * 35 + [0.0] * 15,
+            'Prob_1': [0.68] * n,
+            'Realized_Return': [4.5] * 35 + [-2.0] * 15
+        })
+
+        # Stock 1: Raw prob 48.0% (<50%) boosted by sector calibration to ~55.2%
+        # Stock 2: Raw prob 54.0% (>=50%) boosted by sector calibration to ~62.1%
+        latest_df = pd.DataFrame({
+            'Ticker': ['MU', 'WDC'],
+            'Sector': ['Memory', 'Memory'],
+            'Close': [100.0, 80.0],
+            'Prob_1': [0.48, 0.54],
+            'ATR_Pct': [3.5, 3.8]
+        })
+
+        # Case A: Sunny weather -> MU (<50% raw prob) must still be gated to Wait/Observe
+        tables_sunny = mod.generate_report_tables(
+            oos_df=oos_df,
+            model=None,
+            feature_cols=[],
+            latest_features_df=latest_df,
+            macro_weather={'status': '☀️ 晴天做多'}
+        )
+        t4_sunny = {r['ticker']: r for r in tables_sunny['table4']}
+        self.assertIn("观望", t4_sunny['MU']['action'])
+        self.assertIn(t4_sunny['WDC']['action'], ["⚡ 逢低吸筹", "🔥 极高确定性右侧做多"])
+
+        # Case B: Rainy weather -> WDC (>=60% calibrated & >=50% raw) gets defensive trial, MU gets empty defense
+        tables_rainy = mod.generate_report_tables(
+            oos_df=oos_df,
+            model=None,
+            feature_cols=[],
+            latest_features_df=latest_df,
+            macro_weather={'status': '🌧️ 暴雨空仓'}
+        )
+        t4_rainy = {r['ticker']: r for r in tables_rainy['table4']}
+        self.assertEqual(t4_rainy['MU']['action'], "🛡️ 暴雨空仓·严禁左侧接刀")
+        self.assertEqual(t4_rainy['WDC']['action'], "🛡️ 暴雨防守·仅极小仓试错")
+
+
 # ============================================================================
 # Main Execution Runner
 # ============================================================================
@@ -1219,6 +1686,8 @@ def run_suite():
     suite.addTests(loader.loadTestsFromTestCase(TestTripleBarrierResolutionLogic))
     suite.addTests(loader.loadTestsFromTestCase(TestTailIsolationLivePool))
     suite.addTests(loader.loadTestsFromTestCase(TestAdversarialIntegrityAndEdgeCases))
+    suite.addTests(loader.loadTestsFromTestCase(TestMacroFeatureIntegrity))
+    suite.addTests(loader.loadTestsFromTestCase(TestReportMetricsAndSectorLinkage))
 
     runner = unittest.TextTestRunner(verbosity=2)
     result = runner.run(suite)

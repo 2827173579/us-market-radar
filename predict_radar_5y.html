@@ -7,10 +7,10 @@
     <title>AI 美股 5 年多赛道预测雷达 · 全景战报</title>
     <style>
         :root {
-            --bg-base: #0b0e14;
-            --bg-card: #161b22;
-            --bg-card-hover: #1c2128;
-            --border-color: #30363d;
+            --bg-base: #070a0f;
+            --bg-card: #11161f;
+            --bg-card-hover: #171e2b;
+            --border-color: #262f3d;
             --text-main: #f0f6fc;
             --text-sub: #c9d1d9;
             --text-muted: #8b949e;
@@ -29,33 +29,91 @@
 
         body {
             background-color: var(--bg-base);
+            background-image:
+                radial-gradient(circle at 12% 8%, rgba(88, 166, 255, 0.07), transparent 32%),
+                radial-gradient(circle at 88% 12%, rgba(188, 140, 255, 0.07), transparent 32%);
             color: var(--text-sub);
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", Roboto, sans-serif;
             line-height: 1.5;
-            padding: 24px;
+            padding: 18px 24px 40px;
         }
 
         .container {
-            max-width: 1440px;
+            max-width: 1480px;
             margin: 0 auto;
+        }
+
+        /* Top Suite Cross-Navigation Bar */
+        .suite-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(17, 22, 31, 0.88);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 10px 16px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .suite-nav-links {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        .suite-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 13px;
+            border-radius: 8px;
+            font-size: 12.5px;
+            font-weight: 600;
+            color: var(--text-sub);
+            text-decoration: none;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            transition: all 0.18s ease;
+        }
+        .suite-link:hover {
+            background: rgba(88, 166, 255, 0.14);
+            border-color: rgba(88, 166, 255, 0.45);
+            color: #fff;
+            transform: translateY(-1px);
+        }
+        .suite-link.active {
+            background: linear-gradient(135deg, rgba(188, 140, 255, 0.22), rgba(88, 166, 255, 0.18));
+            border-color: rgba(188, 140, 255, 0.55);
+            color: #e2c5ff;
+            font-weight: 700;
+            box-shadow: 0 0 12px rgba(188, 140, 255, 0.2);
+        }
+        .suite-meta {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 12px;
+            color: var(--text-muted);
         }
 
         /* Header */
         .header {
             display: flex;
             justify-content: space-between;
-            align-items: center;
+            align-items: flex-end;
             border-bottom: 1px solid var(--border-color);
-            padding-bottom: 20px;
-            margin-bottom: 24px;
+            padding-bottom: 18px;
+            margin-bottom: 22px;
             flex-wrap: wrap;
             gap: 16px;
         }
         .header-title h1 {
             color: var(--text-main);
-            font-size: 24px;
+            font-size: 25px;
             font-weight: 800;
-            letter-spacing: -0.5px;
+            letter-spacing: -0.4px;
             display: flex;
             align-items: center;
             gap: 10px;
@@ -63,12 +121,12 @@
         .header-title p {
             color: var(--text-muted);
             font-size: 13px;
-            margin-top: 4px;
+            margin-top: 5px;
         }
         .header-status {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
             flex-wrap: wrap;
         }
 
@@ -80,6 +138,18 @@
             background: rgba(63, 185, 80, 0.12);
             border: 1px solid rgba(63, 185, 80, 0.4);
             color: var(--neon-green);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        .engine-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(188, 140, 255, 0.12);
+            border: 1px solid rgba(188, 140, 255, 0.35);
+            color: var(--cyber-purple);
             padding: 5px 12px;
             border-radius: 20px;
             font-size: 12px;
@@ -104,20 +174,21 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 16px;
-            margin-bottom: 24px;
+            margin-bottom: 22px;
         }
         .kpi-card {
-            background: linear-gradient(145deg, #161b22 0%, #0d1117 100%);
+            background: linear-gradient(155deg, #141b26 0%, #0d121a 100%);
             border: 1px solid var(--border-color);
-            border-radius: 12px;
+            border-radius: 13px;
             padding: 18px 20px;
             position: relative;
             overflow: hidden;
-            transition: transform 0.2s, border-color 0.2s;
+            transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
         }
         .kpi-card:hover {
             transform: translateY(-2px);
-            border-color: rgba(88, 166, 255, 0.4);
+            border-color: rgba(88, 166, 255, 0.45);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
         }
         .kpi-card::before {
             content: "";
@@ -125,10 +196,10 @@
             top: 0; left: 0; right: 0;
             height: 3px;
         }
-        .kpi-card.green::before { background: var(--neon-green); }
-        .kpi-card.gold::before { background: var(--warning-gold); }
-        .kpi-card.blue::before { background: var(--primary-blue); }
-        .kpi-card.purple::before { background: var(--cyber-purple); }
+        .kpi-card.green::before { background: linear-gradient(90deg, #2ea043, #3fb950); }
+        .kpi-card.gold::before { background: linear-gradient(90deg, #d29922, #ffd54f); }
+        .kpi-card.blue::before { background: linear-gradient(90deg, #1f6feb, #58a6ff); }
+        .kpi-card.purple::before { background: linear-gradient(90deg, #8957e5, #bc8cff); }
 
         .kpi-label {
             font-size: 12px;
@@ -152,16 +223,17 @@
 
         /* Macro Weather Card */
         .weather-banner {
-            background: linear-gradient(135deg, rgba(30, 41, 59, 0.7), rgba(15, 23, 42, 0.9));
-            border: 1px solid var(--border-color);
+            background: linear-gradient(135deg, rgba(248, 81, 73, 0.14) 0%, rgba(15, 23, 42, 0.95) 65%);
+            border: 1px solid rgba(248, 81, 73, 0.45);
             border-radius: 14px;
-            padding: 20px 24px;
+            padding: 18px 24px;
             margin-bottom: 24px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
             gap: 16px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.28);
         }
         .weather-left {
             display: flex;
@@ -169,31 +241,32 @@
             gap: 16px;
         }
         .weather-icon {
-            font-size: 42px;
+            font-size: 40px;
             line-height: 1;
+            filter: drop-shadow(0 0 10px rgba(255,255,255,0.15));
         }
         .weather-info h2 {
-            font-size: 20px;
+            font-size: 19px;
             font-weight: 800;
             color: var(--text-main);
             margin-bottom: 4px;
         }
         .weather-info p {
             font-size: 13px;
-            color: var(--text-muted);
+            color: var(--text-sub);
         }
         .weather-stats {
             display: flex;
-            gap: 12px;
+            gap: 10px;
             flex-wrap: wrap;
         }
         .weather-stat-pill {
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 8px;
+            background: rgba(13, 17, 23, 0.65);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 9px;
             padding: 8px 14px;
             text-align: center;
-            min-width: 100px;
+            min-width: 108px;
         }
         .weather-stat-pill .lbl {
             font-size: 11px;
@@ -204,6 +277,7 @@
         .weather-stat-pill .val {
             font-size: 14px;
             font-weight: 700;
+            font-family: 'JetBrains Mono', monospace;
             color: var(--text-main);
         }
 
@@ -212,15 +286,16 @@
             background: var(--bg-card);
             border: 1px solid var(--border-color);
             border-radius: 14px;
-            padding: 22px;
+            padding: 20px 22px;
             margin-bottom: 24px;
             overflow-x: auto;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
         }
         .section-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 16px;
+            margin-bottom: 14px;
             flex-wrap: wrap;
             gap: 10px;
         }
@@ -237,6 +312,81 @@
             color: var(--text-muted);
         }
 
+        /* Interactive Filter Toolbar for Table 4 */
+        .t4-toolbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            padding: 12px 14px;
+            background: rgba(13, 17, 23, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 10px;
+            margin-bottom: 14px;
+        }
+        .filter-pills {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            flex-wrap: wrap;
+        }
+        .filter-pill {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.09);
+            color: var(--text-sub);
+            padding: 5px 11px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+        .filter-pill:hover {
+            background: rgba(88, 166, 255, 0.12);
+            border-color: rgba(88, 166, 255, 0.4);
+            color: #fff;
+        }
+        .filter-pill.active {
+            background: rgba(88, 166, 255, 0.2);
+            border-color: var(--primary-blue);
+            color: var(--primary-blue);
+            box-shadow: 0 0 8px rgba(88, 166, 255, 0.25);
+        }
+        .t4-controls-right {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .search-input {
+            background: #0b0e14;
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            padding: 5px 10px;
+            border-radius: 6px;
+            font-size: 12px;
+            width: 150px;
+            outline: none;
+        }
+        .search-input:focus {
+            border-color: var(--primary-blue);
+        }
+        .mode-btn {
+            background: linear-gradient(135deg, rgba(188, 140, 255, 0.16), rgba(88, 166, 255, 0.16));
+            border: 1px solid rgba(188, 140, 255, 0.45);
+            color: #e2c5ff;
+            padding: 5px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+        .mode-btn:hover {
+            background: rgba(188, 140, 255, 0.28);
+            color: #fff;
+        }
+
         table {
             width: 100%;
             border-collapse: collapse;
@@ -244,22 +394,90 @@
             text-align: left;
         }
         th {
-            background: #0d1117;
+            background: #0b0f17;
             color: var(--text-muted);
             font-weight: 600;
-            padding: 10px 14px;
+            padding: 11px 14px;
             border-bottom: 1px solid var(--border-color);
             font-size: 12px;
             white-space: nowrap;
         }
         td {
             padding: 12px 14px;
-            border-bottom: 1px solid rgba(48, 54, 61, 0.6);
+            border-bottom: 1px solid rgba(48, 54, 61, 0.5);
             color: var(--text-sub);
             white-space: nowrap;
         }
         tr:hover td {
             background-color: var(--bg-card-hover);
+        }
+
+        /* Ticker Jump Link */
+        .ticker-jump-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            text-decoration: none;
+            padding: 3px 8px;
+            border-radius: 6px;
+            background: rgba(88, 166, 255, 0.08);
+            border: 1px solid rgba(88, 166, 255, 0.22);
+            transition: all 0.15s ease;
+        }
+        .ticker-jump-link:hover {
+            background: rgba(88, 166, 255, 0.2);
+            border-color: var(--primary-blue);
+            transform: translateX(2px);
+        }
+        .tk-code {
+            font-weight: 800;
+            font-size: 15px;
+            color: #58a6ff;
+            font-family: 'JetBrains Mono', monospace;
+            letter-spacing: 0.4px;
+        }
+        .tk-jump-icon {
+            font-size: 10px;
+            color: #8b949e;
+            background: rgba(255, 255, 255, 0.06);
+            padding: 1px 5px;
+            border-radius: 4px;
+        }
+        .ticker-jump-link:hover .tk-jump-icon {
+            color: #fff;
+            background: rgba(88, 166, 255, 0.35);
+        }
+
+        .pct-pill {
+            display: inline-block;
+            font-size: 11px;
+            padding: 1px 5px;
+            border-radius: 4px;
+            margin-left: 3px;
+        }
+        .pct-up { background: rgba(63, 185, 80, 0.14); color: #3fb950; }
+        .pct-down { background: rgba(248, 81, 73, 0.14); color: #f85149; }
+
+        /* Dual-Layer Win Rate Bar */
+        .dual-bar-track {
+            width: 68px;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+        }
+        .dual-bar-pos {
+            position: absolute;
+            top: 0; left: 0; bottom: 0;
+            background: rgba(63, 185, 80, 0.45);
+            border-radius: 4px;
+        }
+        .dual-bar-touch {
+            position: absolute;
+            top: 2px; left: 0; bottom: 2px;
+            background: #58a6ff;
+            border-radius: 2px;
         }
 
         /* Badges */
@@ -271,11 +489,18 @@
             font-weight: 600;
             white-space: nowrap;
         }
-        .badge-green { background: rgba(63, 185, 80, 0.15); color: #3fb950; border: 1px solid rgba(63, 185, 80, 0.3); }
-        .badge-blue { background: rgba(88, 166, 255, 0.15); color: #58a6ff; border: 1px solid rgba(88, 166, 255, 0.3); }
-        .badge-purple { background: rgba(188, 140, 255, 0.15); color: #bc8cff; border: 1px solid rgba(188, 140, 255, 0.3); }
-        .badge-gold { background: rgba(255, 213, 79, 0.15); color: #ffd54f; border: 1px solid rgba(255, 213, 79, 0.3); }
-        .badge-red { background: rgba(248, 81, 73, 0.15); color: #f85149; border: 1px solid rgba(248, 81, 73, 0.3); }
+        .badge-green { background: rgba(63, 185, 80, 0.15); color: #3fb950; border: 1px solid rgba(63, 185, 80, 0.35); }
+        .badge-blue { background: rgba(88, 166, 255, 0.15); color: #58a6ff; border: 1px solid rgba(88, 166, 255, 0.35); }
+        .badge-purple { background: rgba(188, 140, 255, 0.15); color: #bc8cff; border: 1px solid rgba(188, 140, 255, 0.35); }
+        .badge-gold { background: rgba(255, 213, 79, 0.15); color: #ffd54f; border: 1px solid rgba(255, 213, 79, 0.35); }
+        .badge-red { background: rgba(248, 81, 73, 0.15); color: #f85149; border: 1px solid rgba(248, 81, 73, 0.35); }
+
+        /* Two-column layout for Table 1 & Table 3 on ultra-wide screens */
+        .grid-2col {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+        }
 
         /* Footer */
         .footer {
@@ -287,46 +512,70 @@
             text-align: center;
             line-height: 1.8;
         }
+
+        @media (max-width: 768px) {
+            body { padding: 12px; }
+            .header-title h1 { font-size: 20px; }
+            .weather-banner { padding: 14px; }
+            .section-card { padding: 14px; }
+        }
     </style>
 </head>
 <body>
     <div class="container">
+        <!-- Cross-Radar Unified Suite Navigation -->
+        <nav class="suite-nav">
+            <div class="suite-nav-links">
+                <a href="futu_pro_terminal.html" class="suite-link">🐮 富途全周期看盘终端</a>
+                <a href="stocks_radar.html" class="suite-link">🎯 核心个股实战雷达</a>
+                <a href="macro_radar.html" class="suite-link">🏛️ 宏观全天候司令塔</a>
+                <a href="backtest_report_5y.html" class="suite-link">🛡️ 5年历史回测对账</a>
+                <a href="predict_radar_5y.html" class="suite-link active">⚡ AI 5年多赛道预测引擎</a>
+            </div>
+            <div class="suite-meta">
+                <span>💡 点击表中任意股票代码可直接唤起富途多周期 K 线看盘</span>
+            </div>
+        </nav>
+
         <!-- Header -->
         <header class="header">
             <div class="header-title">
-                <h1>⚡ AI 美股 5 年多赛道预测雷达</h1>
-                <p>Qlib 滚动时序长表截面架构 · 7 大高弹性赛道 (28标的) + 7 宏观基准 ETF · 严格 T 日因果律与 5 日 Purge 隔离</p>
+                <h1>⚡ AI 美股 5 年多赛道预测雷达 <span style="font-size: 13px; padding: 3px 9px; border-radius: 6px; background: rgba(188,140,255,0.16); color: #bc8cff; border: 1px solid rgba(188,140,255,0.35); font-weight: 700;">V1.3 机构终极校准版</span></h1>
+                <p>微软 Qlib 滚动时序长表截面架构 · 7 大高弹性赛道 (28标的) + 7 宏观基准 ETF · 严守 T 日因果律与 5 日 Purge 隔离</p>
             </div>
             <div class="header-status">
+                <div class="engine-badge" title="实盘推理采用截至 T-5 的全部已结算历史样本重新拟合，无缝吸收 2026 最新市场微观结构">
+                    🧠 实盘模型: Full-Sample Refit (2021~T-5)
+                </div>
                 <div class="live-badge">
                     <span class="pulse-dot"></span>
                     <span>yfinance 最新收盘价底模</span>
                 </div>
-                <span style="font-size: 12px; color: var(--text-muted);">同步于: 2026-11-02 10:05:52</span>
+                <span style="font-size: 12px; color: var(--text-muted);">同步于: 2026-11-02 23:01:15</span>
             </div>
         </header>
 
         <!-- Hero KPI Ribbon -->
         <div class="kpi-grid">
             <div class="kpi-card green">
-                <div class="kpi-label">高置信做多胜率 (>=60% 阈值)</div>
-                <div class="kpi-val" style="color: var(--neon-green);">61.2%</div>
-                <div class="kpi-sub">样本外多折实测 · 显著超越单日随机白噪声</div>
+                <div class="kpi-label">高置信正收益胜率 (>=60% 阈值)</div>
+                <div class="kpi-val" style="color: var(--neon-green);">51.8%</div>
+                <div class="kpi-sub">2024-2026 样本外实测 · 含止盈触轨与 5 日正收益交割</div>
             </div>
             <div class="kpi-card gold">
-                <div class="kpi-label">期望盈亏比 (Profit Factor)</div>
-                <div class="kpi-val" style="color: var(--warning-gold);">3.87</div>
-                <div class="kpi-sub">高盈亏比波段交易 · 动态 ATR 止盈止损轨保障</div>
+                <div class="kpi-label">高置信期望盈亏比 (Profit Factor)</div>
+                <div class="kpi-val" style="color: var(--warning-gold);">1.41</div>
+                <div class="kpi-sub">分段软压缩 ATR 动态止盈止损轨 · 真实交割收益口径</div>
             </div>
             <div class="kpi-card purple">
                 <div class="kpi-label">领航 Alpha 赛道</div>
-                <div class="kpi-val" style="font-size: 20px; color: var(--cyber-purple);">数据中心能源电力 (⭐⭐⭐⭐⭐)</div>
-                <div class="kpi-sub">AI 驱动高弹性赛道 · 胜率居首</div>
+                <div class="kpi-val" style="font-size: 20px; color: var(--cyber-purple);">存储芯片 (⭐⭐⭐⭐⭐)</div>
+                <div class="kpi-sub">综合样本外 PF 与平均实现收益评定 · 赋能表 4 先验校准</div>
             </div>
             <div class="kpi-card blue">
-                <div class="kpi-label">最核心预测特征</div>
-                <div class="kpi-val" style="font-size: 20px; color: var(--primary-blue); font-family: monospace;">QQQM_Bias_MA50 (20.87%)</div>
-                <div class="kpi-sub">LightGBM Gain 贡献第一大核心因子</div>
+                <div class="kpi-label">第一核心驱动因子</div>
+                <div class="kpi-val" style="font-size: 20px; color: var(--primary-blue); font-family: 'JetBrains Mono', monospace;">SMH_IGV_Ratio_Bias (12.28%)</div>
+                <div class="kpi-sub">colsample=0.65 & max_bin=63 树分裂防垄断正则化</div>
             </div>
         </div>
 
@@ -335,280 +584,1372 @@
             <div class="weather-left">
                 <div class="weather-icon">🌧️</div>
                 <div class="weather-info">
-                    <h2>当前宏观环境水温: 🌧️ 暴雨空仓</h2>
-                    <p>极端恐慌 · 严防踩踏 · 波动率脉冲破位防守</p>
+                    <h2>当前宏观环境水温: <span style="color: #f85149;">🌧️ 暴雨空仓</span></h2>
+                    <p>科技基准与半导体共振破位下行 · 系统性流动性挤压 · 严禁盲目抄底 · <span style="color: #8b949e;">表 4 决策指令已与当前宏观水温及 50% 原始胜率底线强制联动</span></p>
                 </div>
             </div>
             <div class="weather-stats">
                 <div class="weather-stat-pill">
                     <span class="lbl">QQQM MA50 乖离</span>
-                    <span class="val">-4.71%</span>
+                    <span class="val" style="color: #f85149;">-4.71%</span>
                 </div>
                 <div class="weather-stat-pill">
                     <span class="lbl">SMH MA50 乖离</span>
-                    <span class="val">+0.00%</span>
+                    <span class="val" style="color: #f85149;">-8.75%</span>
                 </div>
                 <div class="weather-stat-pill">
                     <span class="lbl">VIXY 60日脉冲</span>
-                    <span class="val">0.00</span>
+                    <span class="val" style="color: #3fb950;">0.67</span>
                 </div>
                 <div class="weather-stat-pill">
-                    <span class="lbl">硬件/软件轮动</span>
-                    <span class="val">-3.93%</span>
+                    <span class="lbl">硬件/软件轮动 (SMH/IGV)</span>
+                    <span class="val" style="color: #bc8cff;">-3.93%</span>
                 </div>
             </div>
         </div>
 
-        <!-- Table 4: 最新交易日 AI 预测做多胜率排行榜 Top 10 -->
+        <!-- Table 4: 最新交易日 AI 预测做多胜率排行榜 -->
         <div class="section-card">
             <div class="section-header">
-                <h3>🎯 最新交易日 AI 预测做多胜率排行榜 Top 10 (Live Inference Pool)</h3>
-                <span class="sub">最后 5 个交易日尾部隔离不进训练集 · 纯净实盘前向推理 · 动态目标止盈与防守止损价</span>
+                <div>
+                    <h3 id="t4-title">🎯 表 4: 最新交易日 AI 预测做多胜率排行榜 Top 10 (Live Inference Pool)</h3>
+                    <span class="sub">按【赛道先验校准胜率 = 原始概率 × clip(赛道PF/1.30, 0.75, 1.15)】降序排列 · 分段软压缩 ATR 差异化止盈止损</span>
+                </div>
+                <div class="t4-controls-right">
+                    <input type="text" id="t4-search" class="search-input" placeholder="🔍 搜索代码 (如 NVDA)..." oninput="applyT4Filters()">
+                    <button id="t4-mode-btn" class="mode-btn" onclick="toggleT4PoolMode()">🌐 展开全池 28 股全景</button>
+                </div>
             </div>
+
+            <div class="t4-toolbar">
+                <div class="filter-pills" id="t4-sector-pills">
+                    <button class="filter-pill active" data-sec="ALL" onclick="filterBySector(this.dataset.sec)">全部赛道 (28)</button><button class="filter-pill" data-sec="存储芯片" onclick="filterBySector(this.dataset.sec)">存储芯片 (3)</button><button class="filter-pill" data-sec="半导体与设备" onclick="filterBySector(this.dataset.sec)">半导体与设备 (6)</button><button class="filter-pill" data-sec="光通信与互联" onclick="filterBySector(this.dataset.sec)">光通信与互联 (5)</button><button class="filter-pill" data-sec="Neo-Cloud 算力租赁" onclick="filterBySector(this.dataset.sec)">Neo-Cloud 算力租赁 (3)</button><button class="filter-pill" data-sec="加密币股代理" onclick="filterBySector(this.dataset.sec)">加密币股代理 (4)</button><button class="filter-pill" data-sec="数据中心能源电力" onclick="filterBySector(this.dataset.sec)">数据中心能源电力 (3)</button><button class="filter-pill" data-sec="企业软件与 AI SaaS" onclick="filterBySector(this.dataset.sec)">企业软件与 AI SaaS (4)</button>
+                </div>
+                <span id="t4-count-label" style="font-size: 12px; color: var(--text-muted);">当前展示: Top 10 精选标的</span>
+            </div>
+
             <table>
                 <thead>
                     <tr>
                         <th style="text-align: center;">排名</th>
-                        <th>标的代码</th>
-                        <th>所属赛道</th>
-                        <th style="text-align: right;">最新价格</th>
-                        <th style="text-align: right;">AI 上涨胜率</th>
-                        <th style="text-align: right;">建议目标止盈价</th>
-                        <th style="text-align: right;">建议防守止损价</th>
+                        <th>标的代码 (点击看盘)</th>
+                        <th>所属赛道 & 评级</th>
+                        <th style="text-align: right;">最新价 / ATR波动</th>
+                        <th style="text-align: right;">AI 校准胜率 (原始概率)</th>
+                        <th style="text-align: right;">动态目标止盈价 (Soft-ATR)</th>
+                        <th style="text-align: right;">动态防守止损价 (Soft-ATR)</th>
                         <th style="text-align: center;">宏观水温</th>
-                        <th style="text-align: center;">AI 决策建议</th>
+                        <th style="text-align: center;">AI 综合决策指令</th>
+                    </tr>
+                </thead>
+                <tbody id="t4-tbody">
+                    
+        <tr class="t4-stock-row" data-rank="1" data-sector="光通信与互联" data-ticker="MRVL" style="">
+            <td style="text-align: center; font-size: 15px; font-weight: 800; color: #ffd54f;">🥇</td>
+            <td>
+                <a href="futu_pro_terminal.html?symbol=MRVL" target="_blank" class="ticker-jump-link" title="点击在富途全周期看盘终端中打开 MRVL K线与实盘诊股">
+                    <span class="tk-code">MRVL</span>
+                    <span class="tk-jump-icon">📈 看盘</span>
+                </a>
+            </td>
+            <td>
+                <div style="display: flex; align-items: center; gap: 6px;">
+                    <span class="badge badge-blue" style="cursor: pointer;" onclick="filterBySector('光通信与互联')">光通信与互联</span>
+                    <span style="font-size: 11px; color: #ffd54f;" title="赛道 OOS 评级 (PF=1.48)">⭐⭐⭐⭐☆</span>
+                </div>
+            </td>
+            <td style="text-align: right; font-weight: 700; font-family: 'JetBrains Mono', monospace; font-size: 14.5px; color: #f0f6fc;">
+                $196.40
+                <span style="display: block; font-size: 10px; color: #8b949e; font-weight: normal;">ATR 9.6%</span>
+            </td>
+            <td style="text-align: right;">
+                <div style="display: flex; align-items: center; justify-content: flex-end; gap: 8px;">
+                    <div>
+                        <span style="font-size: 15px; font-weight: 800; color: #3fb950; font-family: 'JetBrains Mono', monospace;">62.2%</span>
+                        <span style="font-size: 11px; color: #8b949e; display: block;" title="LightGBM 原始未校准概率">原始 54.7%</span>
+                    </div>
+                    <div style="width: 64px; height: 8px; background: rgba(255,255,255,0.08); border-radius: 4px; overflow: hidden; position: relative;">
+                        <div style="width: 62.2%; height: 100%; background: #3fb950; box-shadow: 0 0 6px #3fb950;"></div>
+                    </div>
+                </div>
+            </td>
+            <td style="text-align: right; color: #3fb950; font-family: 'JetBrains Mono', monospace; font-weight: 700;">
+                $214.37 <span class="pct-pill pct-up">+9.1%</span>
+            </td>
+            <td style="text-align: right; color: #f85149; font-family: 'JetBrains Mono', monospace; font-weight: 700;">
+                $183.09 <span class="pct-pill pct-down">-6.8%</span>
+            </td>
+            <td style="text-align: center;"><span class="badge badge-gold">🌧️ 暴雨空仓</span></td>
+            <td style="text-align: center;"><span class="badge badge-red" style="font-size: 12px; padding: 4px 10px;">🛡️ 暴雨防守·仅极小仓试错</span></td>
+        </tr>
+        
+        <tr class="t4-stock-row" data-rank="2" data-sector="半导体与设备" data-ticker="NVDA" style="">
+            <td style="text-align: center; font-size: 15px; font-weight: 800; color: #ffd54f;">🥈</td>
+            <td>
+                <a href="futu_pro_terminal.html?symbol=NVDA" target="_blank" class="ticker-jump-link" title="点击在富途全周期看盘终端中打开 NVDA K线与实盘诊股">
+                    <span class="tk-code">NVDA</span>
+                    <span class="tk-jump-icon">📈 看盘</span>
+                </a>
+            </td>
+            <td>
+                <div style="display: flex; align-items: center; gap: 6px;">
+                    <span class="badge badge-blue" style="cursor: pointer;" onclick="filterBySector('半导体与设备')">半导体与设备</span>
+                    <span style="font-size: 11px; color: #ffd54f;" title="赛道 OOS 评级 (PF=1.55)">⭐⭐⭐⭐☆</span>
+                </div>
+            </td>
+            <td style="text-align: right; font-weight: 700; font-family: 'JetBrains Mono', monospace; font-size: 14.5px; color: #f0f6fc;">
+                $204.64
+                <span style="display: block; font-size: 10px; color: #8b949e; font-weight: normal;">ATR 3.2%</span>
+            </td>
+            <td style="text-align: right;">
+                <div style="display: flex; align-items: center; justify-content: flex-end; gap: 8px;">
+                    <div>
+                        <span style="font-size: 15px; font-weight: 800; color: #58a6ff; font-family: 'JetBrains Mono', monospace;">54.7%</span>
+                        <span style="font-size: 11px; color: #8b949e; display: block;" title="LightGBM 原始未校准概率">原始 47.5%</span>
+                    </div>
+                    <div style="width: 64px; height: 8px; background: rgba(255,255,255,0.08); border-radius: 4px; overflow: hidden; position: relative;">
+                        <div style="width: 54.7%; height: 100%; background: #58a6ff; box-shadow: 0 0 6px #58a6ff;"></div>
+                    </div>
+                </div>
+            </td>
+            <td style="text-align: right; color: #3fb950; font-family: 'JetBrains Mono', monospace; font-weight: 700;">
+                $213.47 <span class="pct-pill pct-up">+4.3%</span>
+            </td>
+            <td style="text-align: right; color: #f85149; font-family: 'JetBrains Mono', monospace; font-weight: 700;">
+                $198.10 <span class="pct-pill pct-down">-3.2%</span>
+            </td>
+            <td style="text-align: center;"><span class="badge badge-gold">🌧️ 暴雨空仓</span></td>
+            <td style="text-align: center;"><span class="badge badge-red" style="font-size: 12px; padding: 4px 10px;">🛡️ 暴雨空仓·严禁左侧接刀</span></td>
+        </tr>
+        
+        <tr class="t4-stock-row" data-rank="3" data-sector="存储芯片" data-ticker="MU" style="">
+            <td style="text-align: center; font-size: 15px; font-weight: 800; color: #ffd54f;">🥉</td>
+            <td>
+                <a href="futu_pro_terminal.html?symbol=MU" target="_blank" class="ticker-jump-link" title="点击在富途全周期看盘终端中打开 MU K线与实盘诊股">
+                    <span class="tk-code">MU</span>
+                    <span class="tk-jump-icon">📈 看盘</span>
+                </a>
+            </td>
+            <td>
+                <div style="display: flex; align-items: center; gap: 6px;">
+                    <span class="badge badge-blue" style="cursor: pointer;" onclick="filterBySector('存储芯片')">存储芯片</span>
+                    <span style="font-size: 11px; color: #ffd54f;" title="赛道 OOS 评级 (PF=1.80)">⭐⭐⭐⭐⭐</span>
+                </div>
+            </td>
+            <td style="text-align: right; font-weight: 700; font-family: 'JetBrains Mono', monospace; font-size: 14.5px; color: #f0f6fc;">
+                $884.74
+                <span style="display: block; font-size: 10px; color: #8b949e; font-weight: normal;">ATR 5.8%</span>
+            </td>
+            <td style="text-align: right;">
+                <div style="display: flex; align-items: center; justify-content: flex-end; gap: 8px;">
+                    <div>
+                        <span style="font-size: 15px; font-weight: 800; color: #58a6ff; font-family: 'JetBrains Mono', monospace;">53.7%</span>
+                        <span style="font-size: 11px; color: #8b949e; display: block;" title="LightGBM 原始未校准概率">原始 46.7%</span>
+                    </div>
+                    <div style="width: 64px; height: 8px; background: rgba(255,255,255,0.08); border-radius: 4px; overflow: hidden; position: relative;">
+                        <div style="width: 53.7%; height: 100%; background: #58a6ff; box-shadow: 0 0 6px #58a6ff;"></div>
+                    </div>
+                </div>
+            </td>
+            <td style="text-align: right; color: #3fb950; font-family: 'JetBrains Mono', monospace; font-weight: 700;">
+                $943.04 <span class="pct-pill pct-up">+6.6%</span>
+            </td>
+            <td style="text-align: right; color: #f85149; font-family: 'JetBrains Mono', monospace; font-weight: 700;">
+                $841.55 <span class="pct-pill pct-down">-4.9%</span>
+            </td>
+            <td style="text-align: center;"><span class="badge badge-gold">🌧️ 暴雨空仓</span></td>
+            <td style="text-align: center;"><span class="badge badge-red" style="font-size: 12px; padding: 4px 10px;">🛡️ 暴雨空仓·严禁左侧接刀</span></td>
+        </tr>
+        
+        <tr class="t4-stock-row" data-rank="4" data-sector="半导体与设备" data-ticker="TSM" style="">
+            <td style="text-align: center; font-size: 15px; font-weight: 800; color: #8b949e;">#4</td>
+            <td>
+                <a href="futu_pro_terminal.html?symbol=TSM" target="_blank" class="ticker-jump-link" title="点击在富途全周期看盘终端中打开 TSM K线与实盘诊股">
+                    <span class="tk-code">TSM</span>
+                    <span class="tk-jump-icon">📈 看盘</span>
+                </a>
+            </td>
+            <td>
+                <div style="display: flex; align-items: center; gap: 6px;">
+                    <span class="badge badge-blue" style="cursor: pointer;" onclick="filterBySector('半导体与设备')">半导体与设备</span>
+                    <span style="font-size: 11px; color: #ffd54f;" title="赛道 OOS 评级 (PF=1.55)">⭐⭐⭐⭐☆</span>
+                </div>
+            </td>
+            <td style="text-align: right; font-weight: 700; font-family: 'JetBrains Mono', monospace; font-size: 14.5px; color: #f0f6fc;">
+                $406.13
+                <span style="display: block; font-size: 10px; color: #8b949e; font-weight: normal;">ATR 3.5%</span>
+            </td>
+            <td style="text-align: right;">
+                <div style="display: flex; align-items: center; justify-content: flex-end; gap: 8px;">
+                    <div>
+                        <span style="font-size: 15px; font-weight: 800; color: #58a6ff; font-family: 'JetBrains Mono', monospace;">53.0%</span>
+                        <span style="font-size: 11px; color: #8b949e; display: block;" title="LightGBM 原始未校准概率">原始 46.1%</span>
+                    </div>
+                    <div style="width: 64px; height: 8px; background: rgba(255,255,255,0.08); border-radius: 4px; overflow: hidden; position: relative;">
+                        <div style="width: 53.0%; height: 100%; background: #58a6ff; box-shadow: 0 0 6px #58a6ff;"></div>
+                    </div>
+                </div>
+            </td>
+            <td style="text-align: right; color: #3fb950; font-family: 'JetBrains Mono', monospace; font-weight: 700;">
+                $425.59 <span class="pct-pill pct-up">+4.8%</span>
+            </td>
+            <td style="text-align: right; color: #f85149; font-family: 'JetBrains Mono', monospace; font-weight: 700;">
+                $391.72 <span class="pct-pill pct-down">-3.5%</span>
+            </td>
+            <td style="text-align: center;"><span class="badge badge-gold">🌧️ 暴雨空仓</span></td>
+            <td style="text-align: center;"><span class="badge badge-red" style="font-size: 12px; padding: 4px 10px;">🛡️ 暴雨空仓·严禁左侧接刀</span></td>
+        </tr>
+        
+        <tr class="t4-stock-row" data-rank="5" data-sector="光通信与互联" data-ticker="AAOI" style="">
+            <td style="text-align: center; font-size: 15px; font-weight: 800; color: #8b949e;">#5</td>
+            <td>
+                <a href="futu_pro_terminal.html?symbol=AAOI" target="_blank" class="ticker-jump-link" title="点击在富途全周期看盘终端中打开 AAOI K线与实盘诊股">
+                    <span class="tk-code">AAOI</span>
+                    <span class="tk-jump-icon">📈 看盘</span>
+                </a>
+            </td>
+            <td>
+                <div style="display: flex; align-items: center; gap: 6px;">
+                    <span class="badge badge-blue" style="cursor: pointer;" onclick="filterBySector('光通信与互联')">光通信与互联</span>
+                    <span style="font-size: 11px; color: #ffd54f;" title="赛道 OOS 评级 (PF=1.48)">⭐⭐⭐⭐☆</span>
+                </div>
+            </td>
+            <td style="text-align: right; font-weight: 700; font-family: 'JetBrains Mono', monospace; font-size: 14.5px; color: #f0f6fc;">
+                $69.05
+                <span style="display: block; font-size: 10px; color: #8b949e; font-weight: normal;">ATR 11.0%</span>
+            </td>
+            <td style="text-align: right;">
+                <div style="display: flex; align-items: center; justify-content: flex-end; gap: 8px;">
+                    <div>
+                        <span style="font-size: 15px; font-weight: 800; color: #58a6ff; font-family: 'JetBrains Mono', monospace;">53.0%</span>
+                        <span style="font-size: 11px; color: #8b949e; display: block;" title="LightGBM 原始未校准概率">原始 46.5%</span>
+                    </div>
+                    <div style="width: 64px; height: 8px; background: rgba(255,255,255,0.08); border-radius: 4px; overflow: hidden; position: relative;">
+                        <div style="width: 53.0%; height: 100%; background: #58a6ff; box-shadow: 0 0 6px #58a6ff;"></div>
+                    </div>
+                </div>
+            </td>
+            <td style="text-align: right; color: #3fb950; font-family: 'JetBrains Mono', monospace; font-weight: 700;">
+                $75.58 <span class="pct-pill pct-up">+9.5%</span>
+            </td>
+            <td style="text-align: right; color: #f85149; font-family: 'JetBrains Mono', monospace; font-weight: 700;">
+                $64.22 <span class="pct-pill pct-down">-7.0%</span>
+            </td>
+            <td style="text-align: center;"><span class="badge badge-gold">🌧️ 暴雨空仓</span></td>
+            <td style="text-align: center;"><span class="badge badge-red" style="font-size: 12px; padding: 4px 10px;">🛡️ 暴雨空仓·严禁左侧接刀</span></td>
+        </tr>
+        
+        <tr class="t4-stock-row" data-rank="6" data-sector="Neo-Cloud 算力租赁" data-ticker="APLD" style="">
+            <td style="text-align: center; font-size: 15px; font-weight: 800; color: #8b949e;">#6</td>
+            <td>
+                <a href="futu_pro_terminal.html?symbol=APLD" target="_blank" class="ticker-jump-link" title="点击在富途全周期看盘终端中打开 APLD K线与实盘诊股">
+                    <span class="tk-code">APLD</span>
+                    <span class="tk-jump-icon">📈 看盘</span>
+                </a>
+            </td>
+            <td>
+                <div style="display: flex; align-items: center; gap: 6px;">
+                    <span class="badge badge-blue" style="cursor: pointer;" onclick="filterBySector('Neo-Cloud 算力租赁')">Neo-Cloud 算力租赁</span>
+                    <span style="font-size: 11px; color: #ffd54f;" title="赛道 OOS 评级 (PF=1.35)">⭐⭐⭐☆☆</span>
+                </div>
+            </td>
+            <td style="text-align: right; font-weight: 700; font-family: 'JetBrains Mono', monospace; font-size: 14.5px; color: #f0f6fc;">
+                $17.82
+                <span style="display: block; font-size: 10px; color: #8b949e; font-weight: normal;">ATR 10.7%</span>
+            </td>
+            <td style="text-align: right;">
+                <div style="display: flex; align-items: center; justify-content: flex-end; gap: 8px;">
+                    <div>
+                        <span style="font-size: 15px; font-weight: 800; color: #58a6ff; font-family: 'JetBrains Mono', monospace;">51.4%</span>
+                        <span style="font-size: 11px; color: #8b949e; display: block;" title="LightGBM 原始未校准概率">原始 49.5%</span>
+                    </div>
+                    <div style="width: 64px; height: 8px; background: rgba(255,255,255,0.08); border-radius: 4px; overflow: hidden; position: relative;">
+                        <div style="width: 51.4%; height: 100%; background: #58a6ff; box-shadow: 0 0 6px #58a6ff;"></div>
+                    </div>
+                </div>
+            </td>
+            <td style="text-align: right; color: #3fb950; font-family: 'JetBrains Mono', monospace; font-weight: 700;">
+                $19.50 <span class="pct-pill pct-up">+9.5%</span>
+            </td>
+            <td style="text-align: right; color: #f85149; font-family: 'JetBrains Mono', monospace; font-weight: 700;">
+                $16.57 <span class="pct-pill pct-down">-7.0%</span>
+            </td>
+            <td style="text-align: center;"><span class="badge badge-gold">🌧️ 暴雨空仓</span></td>
+            <td style="text-align: center;"><span class="badge badge-red" style="font-size: 12px; padding: 4px 10px;">🛡️ 暴雨空仓·严禁左侧接刀</span></td>
+        </tr>
+        
+        <tr class="t4-stock-row" data-rank="7" data-sector="Neo-Cloud 算力租赁" data-ticker="CRWV" style="">
+            <td style="text-align: center; font-size: 15px; font-weight: 800; color: #8b949e;">#7</td>
+            <td>
+                <a href="futu_pro_terminal.html?symbol=CRWV" target="_blank" class="ticker-jump-link" title="点击在富途全周期看盘终端中打开 CRWV K线与实盘诊股">
+                    <span class="tk-code">CRWV</span>
+                    <span class="tk-jump-icon">📈 看盘</span>
+                </a>
+            </td>
+            <td>
+                <div style="display: flex; align-items: center; gap: 6px;">
+                    <span class="badge badge-blue" style="cursor: pointer;" onclick="filterBySector('Neo-Cloud 算力租赁')">Neo-Cloud 算力租赁</span>
+                    <span style="font-size: 11px; color: #ffd54f;" title="赛道 OOS 评级 (PF=1.35)">⭐⭐⭐☆☆</span>
+                </div>
+            </td>
+            <td style="text-align: right; font-weight: 700; font-family: 'JetBrains Mono', monospace; font-size: 14.5px; color: #f0f6fc;">
+                $54.87
+                <span style="display: block; font-size: 10px; color: #8b949e; font-weight: normal;">ATR 12.4%</span>
+            </td>
+            <td style="text-align: right;">
+                <div style="display: flex; align-items: center; justify-content: flex-end; gap: 8px;">
+                    <div>
+                        <span style="font-size: 15px; font-weight: 800; color: #58a6ff; font-family: 'JetBrains Mono', monospace;">51.4%</span>
+                        <span style="font-size: 11px; color: #8b949e; display: block;" title="LightGBM 原始未校准概率">原始 49.5%</span>
+                    </div>
+                    <div style="width: 64px; height: 8px; background: rgba(255,255,255,0.08); border-radius: 4px; overflow: hidden; position: relative;">
+                        <div style="width: 51.4%; height: 100%; background: #58a6ff; box-shadow: 0 0 6px #58a6ff;"></div>
+                    </div>
+                </div>
+            </td>
+            <td style="text-align: right; color: #3fb950; font-family: 'JetBrains Mono', monospace; font-weight: 700;">
+                $60.06 <span class="pct-pill pct-up">+9.5%</span>
+            </td>
+            <td style="text-align: right; color: #f85149; font-family: 'JetBrains Mono', monospace; font-weight: 700;">
+                $51.03 <span class="pct-pill pct-down">-7.0%</span>
+            </td>
+            <td style="text-align: center;"><span class="badge badge-gold">🌧️ 暴雨空仓</span></td>
+            <td style="text-align: center;"><span class="badge badge-red" style="font-size: 12px; padding: 4px 10px;">🛡️ 暴雨空仓·严禁左侧接刀</span></td>
+        </tr>
+        
+        <tr class="t4-stock-row" data-rank="8" data-sector="存储芯片" data-ticker="STX" style="">
+            <td style="text-align: center; font-size: 15px; font-weight: 800; color: #8b949e;">#8</td>
+            <td>
+                <a href="futu_pro_terminal.html?symbol=STX" target="_blank" class="ticker-jump-link" title="点击在富途全周期看盘终端中打开 STX K线与实盘诊股">
+                    <span class="tk-code">STX</span>
+                    <span class="tk-jump-icon">📈 看盘</span>
+                </a>
+            </td>
+            <td>
+                <div style="display: flex; align-items: center; gap: 6px;">
+                    <span class="badge badge-blue" style="cursor: pointer;" onclick="filterBySector('存储芯片')">存储芯片</span>
+                    <span style="font-size: 11px; color: #ffd54f;" title="赛道 OOS 评级 (PF=1.80)">⭐⭐⭐⭐⭐</span>
+                </div>
+            </td>
+            <td style="text-align: right; font-weight: 700; font-family: 'JetBrains Mono', monospace; font-size: 14.5px; color: #f0f6fc;">
+                $644.58
+                <span style="display: block; font-size: 10px; color: #8b949e; font-weight: normal;">ATR 7.9%</span>
+            </td>
+            <td style="text-align: right;">
+                <div style="display: flex; align-items: center; justify-content: flex-end; gap: 8px;">
+                    <div>
+                        <span style="font-size: 15px; font-weight: 800; color: #58a6ff; font-family: 'JetBrains Mono', monospace;">51.1%</span>
+                        <span style="font-size: 11px; color: #8b949e; display: block;" title="LightGBM 原始未校准概率">原始 44.5%</span>
+                    </div>
+                    <div style="width: 64px; height: 8px; background: rgba(255,255,255,0.08); border-radius: 4px; overflow: hidden; position: relative;">
+                        <div style="width: 51.1%; height: 100%; background: #58a6ff; box-shadow: 0 0 6px #58a6ff;"></div>
+                    </div>
+                </div>
+            </td>
+            <td style="text-align: right; color: #3fb950; font-family: 'JetBrains Mono', monospace; font-weight: 700;">
+                $696.49 <span class="pct-pill pct-up">+8.1%</span>
+            </td>
+            <td style="text-align: right; color: #f85149; font-family: 'JetBrains Mono', monospace; font-weight: 700;">
+                $606.13 <span class="pct-pill pct-down">-6.0%</span>
+            </td>
+            <td style="text-align: center;"><span class="badge badge-gold">🌧️ 暴雨空仓</span></td>
+            <td style="text-align: center;"><span class="badge badge-red" style="font-size: 12px; padding: 4px 10px;">🛡️ 暴雨空仓·严禁左侧接刀</span></td>
+        </tr>
+        
+        <tr class="t4-stock-row" data-rank="9" data-sector="光通信与互联" data-ticker="LITE" style="">
+            <td style="text-align: center; font-size: 15px; font-weight: 800; color: #8b949e;">#9</td>
+            <td>
+                <a href="futu_pro_terminal.html?symbol=LITE" target="_blank" class="ticker-jump-link" title="点击在富途全周期看盘终端中打开 LITE K线与实盘诊股">
+                    <span class="tk-code">LITE</span>
+                    <span class="tk-jump-icon">📈 看盘</span>
+                </a>
+            </td>
+            <td>
+                <div style="display: flex; align-items: center; gap: 6px;">
+                    <span class="badge badge-blue" style="cursor: pointer;" onclick="filterBySector('光通信与互联')">光通信与互联</span>
+                    <span style="font-size: 11px; color: #ffd54f;" title="赛道 OOS 评级 (PF=1.48)">⭐⭐⭐⭐☆</span>
+                </div>
+            </td>
+            <td style="text-align: right; font-weight: 700; font-family: 'JetBrains Mono', monospace; font-size: 14.5px; color: #f0f6fc;">
+                $840.70
+                <span style="display: block; font-size: 10px; color: #8b949e; font-weight: normal;">ATR 8.5%</span>
+            </td>
+            <td style="text-align: right;">
+                <div style="display: flex; align-items: center; justify-content: flex-end; gap: 8px;">
+                    <div>
+                        <span style="font-size: 15px; font-weight: 800; color: #58a6ff; font-family: 'JetBrains Mono', monospace;">50.4%</span>
+                        <span style="font-size: 11px; color: #8b949e; display: block;" title="LightGBM 原始未校准概率">原始 44.2%</span>
+                    </div>
+                    <div style="width: 64px; height: 8px; background: rgba(255,255,255,0.08); border-radius: 4px; overflow: hidden; position: relative;">
+                        <div style="width: 50.4%; height: 100%; background: #58a6ff; box-shadow: 0 0 6px #58a6ff;"></div>
+                    </div>
+                </div>
+            </td>
+            <td style="text-align: right; color: #3fb950; font-family: 'JetBrains Mono', monospace; font-weight: 700;">
+                $911.88 <span class="pct-pill pct-up">+8.5%</span>
+            </td>
+            <td style="text-align: right; color: #f85149; font-family: 'JetBrains Mono', monospace; font-weight: 700;">
+                $787.97 <span class="pct-pill pct-down">-6.3%</span>
+            </td>
+            <td style="text-align: center;"><span class="badge badge-gold">🌧️ 暴雨空仓</span></td>
+            <td style="text-align: center;"><span class="badge badge-red" style="font-size: 12px; padding: 4px 10px;">🛡️ 暴雨空仓·严禁左侧接刀</span></td>
+        </tr>
+        
+        <tr class="t4-stock-row" data-rank="10" data-sector="光通信与互联" data-ticker="COHR" style="">
+            <td style="text-align: center; font-size: 15px; font-weight: 800; color: #8b949e;">#10</td>
+            <td>
+                <a href="futu_pro_terminal.html?symbol=COHR" target="_blank" class="ticker-jump-link" title="点击在富途全周期看盘终端中打开 COHR K线与实盘诊股">
+                    <span class="tk-code">COHR</span>
+                    <span class="tk-jump-icon">📈 看盘</span>
+                </a>
+            </td>
+            <td>
+                <div style="display: flex; align-items: center; gap: 6px;">
+                    <span class="badge badge-blue" style="cursor: pointer;" onclick="filterBySector('光通信与互联')">光通信与互联</span>
+                    <span style="font-size: 11px; color: #ffd54f;" title="赛道 OOS 评级 (PF=1.48)">⭐⭐⭐⭐☆</span>
+                </div>
+            </td>
+            <td style="text-align: right; font-weight: 700; font-family: 'JetBrains Mono', monospace; font-size: 14.5px; color: #f0f6fc;">
+                $210.32
+                <span style="display: block; font-size: 10px; color: #8b949e; font-weight: normal;">ATR 9.3%</span>
+            </td>
+            <td style="text-align: right;">
+                <div style="display: flex; align-items: center; justify-content: flex-end; gap: 8px;">
+                    <div>
+                        <span style="font-size: 15px; font-weight: 800; color: #58a6ff; font-family: 'JetBrains Mono', monospace;">50.4%</span>
+                        <span style="font-size: 11px; color: #8b949e; display: block;" title="LightGBM 原始未校准概率">原始 44.2%</span>
+                    </div>
+                    <div style="width: 64px; height: 8px; background: rgba(255,255,255,0.08); border-radius: 4px; overflow: hidden; position: relative;">
+                        <div style="width: 50.4%; height: 100%; background: #58a6ff; box-shadow: 0 0 6px #58a6ff;"></div>
+                    </div>
+                </div>
+            </td>
+            <td style="text-align: right; color: #3fb950; font-family: 'JetBrains Mono', monospace; font-weight: 700;">
+                $229.14 <span class="pct-pill pct-up">+8.9%</span>
+            </td>
+            <td style="text-align: right; color: #f85149; font-family: 'JetBrains Mono', monospace; font-weight: 700;">
+                $196.38 <span class="pct-pill pct-down">-6.6%</span>
+            </td>
+            <td style="text-align: center;"><span class="badge badge-gold">🌧️ 暴雨空仓</span></td>
+            <td style="text-align: center;"><span class="badge badge-red" style="font-size: 12px; padding: 4px 10px;">🛡️ 暴雨空仓·严禁左侧接刀</span></td>
+        </tr>
+        
+        <tr class="t4-stock-row" data-rank="11" data-sector="光通信与互联" data-ticker="CRDO" style="display: none;">
+            <td style="text-align: center; font-size: 15px; font-weight: 800; color: #8b949e;">#11</td>
+            <td>
+                <a href="futu_pro_terminal.html?symbol=CRDO" target="_blank" class="ticker-jump-link" title="点击在富途全周期看盘终端中打开 CRDO K线与实盘诊股">
+                    <span class="tk-code">CRDO</span>
+                    <span class="tk-jump-icon">📈 看盘</span>
+                </a>
+            </td>
+            <td>
+                <div style="display: flex; align-items: center; gap: 6px;">
+                    <span class="badge badge-blue" style="cursor: pointer;" onclick="filterBySector('光通信与互联')">光通信与互联</span>
+                    <span style="font-size: 11px; color: #ffd54f;" title="赛道 OOS 评级 (PF=1.48)">⭐⭐⭐⭐☆</span>
+                </div>
+            </td>
+            <td style="text-align: right; font-weight: 700; font-family: 'JetBrains Mono', monospace; font-size: 14.5px; color: #f0f6fc;">
+                $150.99
+                <span style="display: block; font-size: 10px; color: #8b949e; font-weight: normal;">ATR 10.3%</span>
+            </td>
+            <td style="text-align: right;">
+                <div style="display: flex; align-items: center; justify-content: flex-end; gap: 8px;">
+                    <div>
+                        <span style="font-size: 15px; font-weight: 800; color: #58a6ff; font-family: 'JetBrains Mono', monospace;">50.1%</span>
+                        <span style="font-size: 11px; color: #8b949e; display: block;" title="LightGBM 原始未校准概率">原始 44.0%</span>
+                    </div>
+                    <div style="width: 64px; height: 8px; background: rgba(255,255,255,0.08); border-radius: 4px; overflow: hidden; position: relative;">
+                        <div style="width: 50.1%; height: 100%; background: #58a6ff; box-shadow: 0 0 6px #58a6ff;"></div>
+                    </div>
+                </div>
+            </td>
+            <td style="text-align: right; color: #3fb950; font-family: 'JetBrains Mono', monospace; font-weight: 700;">
+                $165.26 <span class="pct-pill pct-up">+9.5%</span>
+            </td>
+            <td style="text-align: right; color: #f85149; font-family: 'JetBrains Mono', monospace; font-weight: 700;">
+                $140.42 <span class="pct-pill pct-down">-7.0%</span>
+            </td>
+            <td style="text-align: center;"><span class="badge badge-gold">🌧️ 暴雨空仓</span></td>
+            <td style="text-align: center;"><span class="badge badge-red" style="font-size: 12px; padding: 4px 10px;">🛡️ 暴雨空仓·严禁左侧接刀</span></td>
+        </tr>
+        
+        <tr class="t4-stock-row" data-rank="12" data-sector="加密币股代理" data-ticker="MARA" style="display: none;">
+            <td style="text-align: center; font-size: 15px; font-weight: 800; color: #8b949e;">#12</td>
+            <td>
+                <a href="futu_pro_terminal.html?symbol=MARA" target="_blank" class="ticker-jump-link" title="点击在富途全周期看盘终端中打开 MARA K线与实盘诊股">
+                    <span class="tk-code">MARA</span>
+                    <span class="tk-jump-icon">📈 看盘</span>
+                </a>
+            </td>
+            <td>
+                <div style="display: flex; align-items: center; gap: 6px;">
+                    <span class="badge badge-blue" style="cursor: pointer;" onclick="filterBySector('加密币股代理')">加密币股代理</span>
+                    <span style="font-size: 11px; color: #ffd54f;" title="赛道 OOS 评级 (PF=1.29)">⭐⭐⭐☆☆</span>
+                </div>
+            </td>
+            <td style="text-align: right; font-weight: 700; font-family: 'JetBrains Mono', monospace; font-size: 14.5px; color: #f0f6fc;">
+                $6.77
+                <span style="display: block; font-size: 10px; color: #8b949e; font-weight: normal;">ATR 9.1%</span>
+            </td>
+            <td style="text-align: right;">
+                <div style="display: flex; align-items: center; justify-content: flex-end; gap: 8px;">
+                    <div>
+                        <span style="font-size: 15px; font-weight: 800; color: #8b949e; font-family: 'JetBrains Mono', monospace;">49.8%</span>
+                        <span style="font-size: 11px; color: #8b949e; display: block;" title="LightGBM 原始未校准概率">原始 50.1%</span>
+                    </div>
+                    <div style="width: 64px; height: 8px; background: rgba(255,255,255,0.08); border-radius: 4px; overflow: hidden; position: relative;">
+                        <div style="width: 49.8%; height: 100%; background: #8b949e; box-shadow: 0 0 6px #8b949e;"></div>
+                    </div>
+                </div>
+            </td>
+            <td style="text-align: right; color: #3fb950; font-family: 'JetBrains Mono', monospace; font-weight: 700;">
+                $7.37 <span class="pct-pill pct-up">+8.9%</span>
+            </td>
+            <td style="text-align: right; color: #f85149; font-family: 'JetBrains Mono', monospace; font-weight: 700;">
+                $6.33 <span class="pct-pill pct-down">-6.6%</span>
+            </td>
+            <td style="text-align: center;"><span class="badge badge-gold">🌧️ 暴雨空仓</span></td>
+            <td style="text-align: center;"><span class="badge badge-red" style="font-size: 12px; padding: 4px 10px;">🛡️ 暴雨空仓·严禁左侧接刀</span></td>
+        </tr>
+        
+        <tr class="t4-stock-row" data-rank="13" data-sector="半导体与设备" data-ticker="AMAT" style="display: none;">
+            <td style="text-align: center; font-size: 15px; font-weight: 800; color: #8b949e;">#13</td>
+            <td>
+                <a href="futu_pro_terminal.html?symbol=AMAT" target="_blank" class="ticker-jump-link" title="点击在富途全周期看盘终端中打开 AMAT K线与实盘诊股">
+                    <span class="tk-code">AMAT</span>
+                    <span class="tk-jump-icon">📈 看盘</span>
+                </a>
+            </td>
+            <td>
+                <div style="display: flex; align-items: center; gap: 6px;">
+                    <span class="badge badge-blue" style="cursor: pointer;" onclick="filterBySector('半导体与设备')">半导体与设备</span>
+                    <span style="font-size: 11px; color: #ffd54f;" title="赛道 OOS 评级 (PF=1.55)">⭐⭐⭐⭐☆</span>
+                </div>
+            </td>
+            <td style="text-align: right; font-weight: 700; font-family: 'JetBrains Mono', monospace; font-size: 14.5px; color: #f0f6fc;">
+                $390.09
+                <span style="display: block; font-size: 10px; color: #8b949e; font-weight: normal;">ATR 5.7%</span>
+            </td>
+            <td style="text-align: right;">
+                <div style="display: flex; align-items: center; justify-content: flex-end; gap: 8px;">
+                    <div>
+                        <span style="font-size: 15px; font-weight: 800; color: #8b949e; font-family: 'JetBrains Mono', monospace;">48.8%</span>
+                        <span style="font-size: 11px; color: #8b949e; display: block;" title="LightGBM 原始未校准概率">原始 42.5%</span>
+                    </div>
+                    <div style="width: 64px; height: 8px; background: rgba(255,255,255,0.08); border-radius: 4px; overflow: hidden; position: relative;">
+                        <div style="width: 48.8%; height: 100%; background: #8b949e; box-shadow: 0 0 6px #8b949e;"></div>
+                    </div>
+                </div>
+            </td>
+            <td style="text-align: right; color: #3fb950; font-family: 'JetBrains Mono', monospace; font-weight: 700;">
+                $415.69 <span class="pct-pill pct-up">+6.6%</span>
+            </td>
+            <td style="text-align: right; color: #f85149; font-family: 'JetBrains Mono', monospace; font-weight: 700;">
+                $371.13 <span class="pct-pill pct-down">-4.9%</span>
+            </td>
+            <td style="text-align: center;"><span class="badge badge-gold">🌧️ 暴雨空仓</span></td>
+            <td style="text-align: center;"><span class="badge badge-red" style="font-size: 12px; padding: 4px 10px;">🛡️ 暴雨空仓·严禁左侧接刀</span></td>
+        </tr>
+        
+        <tr class="t4-stock-row" data-rank="14" data-sector="Neo-Cloud 算力租赁" data-ticker="NBIS" style="display: none;">
+            <td style="text-align: center; font-size: 15px; font-weight: 800; color: #8b949e;">#14</td>
+            <td>
+                <a href="futu_pro_terminal.html?symbol=NBIS" target="_blank" class="ticker-jump-link" title="点击在富途全周期看盘终端中打开 NBIS K线与实盘诊股">
+                    <span class="tk-code">NBIS</span>
+                    <span class="tk-jump-icon">📈 看盘</span>
+                </a>
+            </td>
+            <td>
+                <div style="display: flex; align-items: center; gap: 6px;">
+                    <span class="badge badge-blue" style="cursor: pointer;" onclick="filterBySector('Neo-Cloud 算力租赁')">Neo-Cloud 算力租赁</span>
+                    <span style="font-size: 11px; color: #ffd54f;" title="赛道 OOS 评级 (PF=1.35)">⭐⭐⭐☆☆</span>
+                </div>
+            </td>
+            <td style="text-align: right; font-weight: 700; font-family: 'JetBrains Mono', monospace; font-size: 14.5px; color: #f0f6fc;">
+                $154.14
+                <span style="display: block; font-size: 10px; color: #8b949e; font-weight: normal;">ATR 10.9%</span>
+            </td>
+            <td style="text-align: right;">
+                <div style="display: flex; align-items: center; justify-content: flex-end; gap: 8px;">
+                    <div>
+                        <span style="font-size: 15px; font-weight: 800; color: #8b949e; font-family: 'JetBrains Mono', monospace;">48.5%</span>
+                        <span style="font-size: 11px; color: #8b949e; display: block;" title="LightGBM 原始未校准概率">原始 46.7%</span>
+                    </div>
+                    <div style="width: 64px; height: 8px; background: rgba(255,255,255,0.08); border-radius: 4px; overflow: hidden; position: relative;">
+                        <div style="width: 48.5%; height: 100%; background: #8b949e; box-shadow: 0 0 6px #8b949e;"></div>
+                    </div>
+                </div>
+            </td>
+            <td style="text-align: right; color: #3fb950; font-family: 'JetBrains Mono', monospace; font-weight: 700;">
+                $168.71 <span class="pct-pill pct-up">+9.5%</span>
+            </td>
+            <td style="text-align: right; color: #f85149; font-family: 'JetBrains Mono', monospace; font-weight: 700;">
+                $143.35 <span class="pct-pill pct-down">-7.0%</span>
+            </td>
+            <td style="text-align: center;"><span class="badge badge-gold">🌧️ 暴雨空仓</span></td>
+            <td style="text-align: center;"><span class="badge badge-red" style="font-size: 12px; padding: 4px 10px;">🛡️ 暴雨空仓·严禁左侧接刀</span></td>
+        </tr>
+        
+        <tr class="t4-stock-row" data-rank="15" data-sector="半导体与设备" data-ticker="AMD" style="display: none;">
+            <td style="text-align: center; font-size: 15px; font-weight: 800; color: #8b949e;">#15</td>
+            <td>
+                <a href="futu_pro_terminal.html?symbol=AMD" target="_blank" class="ticker-jump-link" title="点击在富途全周期看盘终端中打开 AMD K线与实盘诊股">
+                    <span class="tk-code">AMD</span>
+                    <span class="tk-jump-icon">📈 看盘</span>
+                </a>
+            </td>
+            <td>
+                <div style="display: flex; align-items: center; gap: 6px;">
+                    <span class="badge badge-blue" style="cursor: pointer;" onclick="filterBySector('半导体与设备')">半导体与设备</span>
+                    <span style="font-size: 11px; color: #ffd54f;" title="赛道 OOS 评级 (PF=1.55)">⭐⭐⭐⭐☆</span>
+                </div>
+            </td>
+            <td style="text-align: right; font-weight: 700; font-family: 'JetBrains Mono', monospace; font-size: 14.5px; color: #f0f6fc;">
+                $504.80
+                <span style="display: block; font-size: 10px; color: #8b949e; font-weight: normal;">ATR 6.4%</span>
+            </td>
+            <td style="text-align: right;">
+                <div style="display: flex; align-items: center; justify-content: flex-end; gap: 8px;">
+                    <div>
+                        <span style="font-size: 15px; font-weight: 800; color: #8b949e; font-family: 'JetBrains Mono', monospace;">48.4%</span>
+                        <span style="font-size: 11px; color: #8b949e; display: block;" title="LightGBM 原始未校准概率">原始 42.1%</span>
+                    </div>
+                    <div style="width: 64px; height: 8px; background: rgba(255,255,255,0.08); border-radius: 4px; overflow: hidden; position: relative;">
+                        <div style="width: 48.4%; height: 100%; background: #8b949e; box-shadow: 0 0 6px #8b949e;"></div>
+                    </div>
+                </div>
+            </td>
+            <td style="text-align: right; color: #3fb950; font-family: 'JetBrains Mono', monospace; font-weight: 700;">
+                $540.16 <span class="pct-pill pct-up">+7.0%</span>
+            </td>
+            <td style="text-align: right; color: #f85149; font-family: 'JetBrains Mono', monospace; font-weight: 700;">
+                $478.61 <span class="pct-pill pct-down">-5.2%</span>
+            </td>
+            <td style="text-align: center;"><span class="badge badge-gold">🌧️ 暴雨空仓</span></td>
+            <td style="text-align: center;"><span class="badge badge-red" style="font-size: 12px; padding: 4px 10px;">🛡️ 暴雨空仓·严禁左侧接刀</span></td>
+        </tr>
+        
+        <tr class="t4-stock-row" data-rank="16" data-sector="企业软件与 AI SaaS" data-ticker="NOW" style="display: none;">
+            <td style="text-align: center; font-size: 15px; font-weight: 800; color: #8b949e;">#16</td>
+            <td>
+                <a href="futu_pro_terminal.html?symbol=NOW" target="_blank" class="ticker-jump-link" title="点击在富途全周期看盘终端中打开 NOW K线与实盘诊股">
+                    <span class="tk-code">NOW</span>
+                    <span class="tk-jump-icon">📈 看盘</span>
+                </a>
+            </td>
+            <td>
+                <div style="display: flex; align-items: center; gap: 6px;">
+                    <span class="badge badge-blue" style="cursor: pointer;" onclick="filterBySector('企业软件与 AI SaaS')">企业软件与 AI SaaS</span>
+                    <span style="font-size: 11px; color: #ffd54f;" title="赛道 OOS 评级 (PF=1.17)">⭐⭐☆☆☆</span>
+                </div>
+            </td>
+            <td style="text-align: right; font-weight: 700; font-family: 'JetBrains Mono', monospace; font-size: 14.5px; color: #f0f6fc;">
+                $105.12
+                <span style="display: block; font-size: 10px; color: #8b949e; font-weight: normal;">ATR 8.5%</span>
+            </td>
+            <td style="text-align: right;">
+                <div style="display: flex; align-items: center; justify-content: flex-end; gap: 8px;">
+                    <div>
+                        <span style="font-size: 15px; font-weight: 800; color: #8b949e; font-family: 'JetBrains Mono', monospace;">47.5%</span>
+                        <span style="font-size: 11px; color: #8b949e; display: block;" title="LightGBM 原始未校准概率">原始 52.8%</span>
+                    </div>
+                    <div style="width: 64px; height: 8px; background: rgba(255,255,255,0.08); border-radius: 4px; overflow: hidden; position: relative;">
+                        <div style="width: 47.5%; height: 100%; background: #8b949e; box-shadow: 0 0 6px #8b949e;"></div>
+                    </div>
+                </div>
+            </td>
+            <td style="text-align: right; color: #3fb950; font-family: 'JetBrains Mono', monospace; font-weight: 700;">
+                $113.99 <span class="pct-pill pct-up">+8.4%</span>
+            </td>
+            <td style="text-align: right; color: #f85149; font-family: 'JetBrains Mono', monospace; font-weight: 700;">
+                $98.55 <span class="pct-pill pct-down">-6.3%</span>
+            </td>
+            <td style="text-align: center;"><span class="badge badge-gold">🌧️ 暴雨空仓</span></td>
+            <td style="text-align: center;"><span class="badge badge-red" style="font-size: 12px; padding: 4px 10px;">🛡️ 暴雨空仓·严禁左侧接刀</span></td>
+        </tr>
+        
+        <tr class="t4-stock-row" data-rank="17" data-sector="半导体与设备" data-ticker="ASML" style="display: none;">
+            <td style="text-align: center; font-size: 15px; font-weight: 800; color: #8b949e;">#17</td>
+            <td>
+                <a href="futu_pro_terminal.html?symbol=ASML" target="_blank" class="ticker-jump-link" title="点击在富途全周期看盘终端中打开 ASML K线与实盘诊股">
+                    <span class="tk-code">ASML</span>
+                    <span class="tk-jump-icon">📈 看盘</span>
+                </a>
+            </td>
+            <td>
+                <div style="display: flex; align-items: center; gap: 6px;">
+                    <span class="badge badge-blue" style="cursor: pointer;" onclick="filterBySector('半导体与设备')">半导体与设备</span>
+                    <span style="font-size: 11px; color: #ffd54f;" title="赛道 OOS 评级 (PF=1.55)">⭐⭐⭐⭐☆</span>
+                </div>
+            </td>
+            <td style="text-align: right; font-weight: 700; font-family: 'JetBrains Mono', monospace; font-size: 14.5px; color: #f0f6fc;">
+                $1565.90
+                <span style="display: block; font-size: 10px; color: #8b949e; font-weight: normal;">ATR 4.0%</span>
+            </td>
+            <td style="text-align: right;">
+                <div style="display: flex; align-items: center; justify-content: flex-end; gap: 8px;">
+                    <div>
+                        <span style="font-size: 15px; font-weight: 800; color: #8b949e; font-family: 'JetBrains Mono', monospace;">46.8%</span>
+                        <span style="font-size: 11px; color: #8b949e; display: block;" title="LightGBM 原始未校准概率">原始 40.7%</span>
+                    </div>
+                    <div style="width: 64px; height: 8px; background: rgba(255,255,255,0.08); border-radius: 4px; overflow: hidden; position: relative;">
+                        <div style="width: 46.8%; height: 100%; background: #8b949e; box-shadow: 0 0 6px #8b949e;"></div>
+                    </div>
+                </div>
+            </td>
+            <td style="text-align: right; color: #3fb950; font-family: 'JetBrains Mono', monospace; font-weight: 700;">
+                $1649.76 <span class="pct-pill pct-up">+5.4%</span>
+            </td>
+            <td style="text-align: right; color: #f85149; font-family: 'JetBrains Mono', monospace; font-weight: 700;">
+                $1503.78 <span class="pct-pill pct-down">-4.0%</span>
+            </td>
+            <td style="text-align: center;"><span class="badge badge-gold">🌧️ 暴雨空仓</span></td>
+            <td style="text-align: center;"><span class="badge badge-red" style="font-size: 12px; padding: 4px 10px;">🛡️ 暴雨空仓·严禁左侧接刀</span></td>
+        </tr>
+        
+        <tr class="t4-stock-row" data-rank="18" data-sector="存储芯片" data-ticker="WDC" style="display: none;">
+            <td style="text-align: center; font-size: 15px; font-weight: 800; color: #8b949e;">#18</td>
+            <td>
+                <a href="futu_pro_terminal.html?symbol=WDC" target="_blank" class="ticker-jump-link" title="点击在富途全周期看盘终端中打开 WDC K线与实盘诊股">
+                    <span class="tk-code">WDC</span>
+                    <span class="tk-jump-icon">📈 看盘</span>
+                </a>
+            </td>
+            <td>
+                <div style="display: flex; align-items: center; gap: 6px;">
+                    <span class="badge badge-blue" style="cursor: pointer;" onclick="filterBySector('存储芯片')">存储芯片</span>
+                    <span style="font-size: 11px; color: #ffd54f;" title="赛道 OOS 评级 (PF=1.80)">⭐⭐⭐⭐⭐</span>
+                </div>
+            </td>
+            <td style="text-align: right; font-weight: 700; font-family: 'JetBrains Mono', monospace; font-size: 14.5px; color: #f0f6fc;">
+                $366.11
+                <span style="display: block; font-size: 10px; color: #8b949e; font-weight: normal;">ATR 6.7%</span>
+            </td>
+            <td style="text-align: right;">
+                <div style="display: flex; align-items: center; justify-content: flex-end; gap: 8px;">
+                    <div>
+                        <span style="font-size: 15px; font-weight: 800; color: #8b949e; font-family: 'JetBrains Mono', monospace;">46.2%</span>
+                        <span style="font-size: 11px; color: #8b949e; display: block;" title="LightGBM 原始未校准概率">原始 40.2%</span>
+                    </div>
+                    <div style="width: 64px; height: 8px; background: rgba(255,255,255,0.08); border-radius: 4px; overflow: hidden; position: relative;">
+                        <div style="width: 46.2%; height: 100%; background: #8b949e; box-shadow: 0 0 6px #8b949e;"></div>
+                    </div>
+                </div>
+            </td>
+            <td style="text-align: right; color: #3fb950; font-family: 'JetBrains Mono', monospace; font-weight: 700;">
+                $392.60 <span class="pct-pill pct-up">+7.2%</span>
+            </td>
+            <td style="text-align: right; color: #f85149; font-family: 'JetBrains Mono', monospace; font-weight: 700;">
+                $346.49 <span class="pct-pill pct-down">-5.4%</span>
+            </td>
+            <td style="text-align: center;"><span class="badge badge-gold">🌧️ 暴雨空仓</span></td>
+            <td style="text-align: center;"><span class="badge badge-red" style="font-size: 12px; padding: 4px 10px;">🛡️ 暴雨空仓·严禁左侧接刀</span></td>
+        </tr>
+        
+        <tr class="t4-stock-row" data-rank="19" data-sector="半导体与设备" data-ticker="AVGO" style="display: none;">
+            <td style="text-align: center; font-size: 15px; font-weight: 800; color: #8b949e;">#19</td>
+            <td>
+                <a href="futu_pro_terminal.html?symbol=AVGO" target="_blank" class="ticker-jump-link" title="点击在富途全周期看盘终端中打开 AVGO K线与实盘诊股">
+                    <span class="tk-code">AVGO</span>
+                    <span class="tk-jump-icon">📈 看盘</span>
+                </a>
+            </td>
+            <td>
+                <div style="display: flex; align-items: center; gap: 6px;">
+                    <span class="badge badge-blue" style="cursor: pointer;" onclick="filterBySector('半导体与设备')">半导体与设备</span>
+                    <span style="font-size: 11px; color: #ffd54f;" title="赛道 OOS 评级 (PF=1.55)">⭐⭐⭐⭐☆</span>
+                </div>
+            </td>
+            <td style="text-align: right; font-weight: 700; font-family: 'JetBrains Mono', monospace; font-size: 14.5px; color: #f0f6fc;">
+                $326.08
+                <span style="display: block; font-size: 10px; color: #8b949e; font-weight: normal;">ATR 4.0%</span>
+            </td>
+            <td style="text-align: right;">
+                <div style="display: flex; align-items: center; justify-content: flex-end; gap: 8px;">
+                    <div>
+                        <span style="font-size: 15px; font-weight: 800; color: #8b949e; font-family: 'JetBrains Mono', monospace;">44.4%</span>
+                        <span style="font-size: 11px; color: #8b949e; display: block;" title="LightGBM 原始未校准概率">原始 38.6%</span>
+                    </div>
+                    <div style="width: 64px; height: 8px; background: rgba(255,255,255,0.08); border-radius: 4px; overflow: hidden; position: relative;">
+                        <div style="width: 44.4%; height: 100%; background: #8b949e; box-shadow: 0 0 6px #8b949e;"></div>
+                    </div>
+                </div>
+            </td>
+            <td style="text-align: right; color: #3fb950; font-family: 'JetBrains Mono', monospace; font-weight: 700;">
+                $343.60 <span class="pct-pill pct-up">+5.4%</span>
+            </td>
+            <td style="text-align: right; color: #f85149; font-family: 'JetBrains Mono', monospace; font-weight: 700;">
+                $313.10 <span class="pct-pill pct-down">-4.0%</span>
+            </td>
+            <td style="text-align: center;"><span class="badge badge-gold">🌧️ 暴雨空仓</span></td>
+            <td style="text-align: center;"><span class="badge badge-red" style="font-size: 12px; padding: 4px 10px;">🛡️ 暴雨空仓·严禁左侧接刀</span></td>
+        </tr>
+        
+        <tr class="t4-stock-row" data-rank="20" data-sector="加密币股代理" data-ticker="COIN" style="display: none;">
+            <td style="text-align: center; font-size: 15px; font-weight: 800; color: #8b949e;">#20</td>
+            <td>
+                <a href="futu_pro_terminal.html?symbol=COIN" target="_blank" class="ticker-jump-link" title="点击在富途全周期看盘终端中打开 COIN K线与实盘诊股">
+                    <span class="tk-code">COIN</span>
+                    <span class="tk-jump-icon">📈 看盘</span>
+                </a>
+            </td>
+            <td>
+                <div style="display: flex; align-items: center; gap: 6px;">
+                    <span class="badge badge-blue" style="cursor: pointer;" onclick="filterBySector('加密币股代理')">加密币股代理</span>
+                    <span style="font-size: 11px; color: #ffd54f;" title="赛道 OOS 评级 (PF=1.29)">⭐⭐⭐☆☆</span>
+                </div>
+            </td>
+            <td style="text-align: right; font-weight: 700; font-family: 'JetBrains Mono', monospace; font-size: 14.5px; color: #f0f6fc;">
+                $143.54
+                <span style="display: block; font-size: 10px; color: #8b949e; font-weight: normal;">ATR 7.2%</span>
+            </td>
+            <td style="text-align: right;">
+                <div style="display: flex; align-items: center; justify-content: flex-end; gap: 8px;">
+                    <div>
+                        <span style="font-size: 15px; font-weight: 800; color: #8b949e; font-family: 'JetBrains Mono', monospace;">43.6%</span>
+                        <span style="font-size: 11px; color: #8b949e; display: block;" title="LightGBM 原始未校准概率">原始 43.9%</span>
+                    </div>
+                    <div style="width: 64px; height: 8px; background: rgba(255,255,255,0.08); border-radius: 4px; overflow: hidden; position: relative;">
+                        <div style="width: 43.6%; height: 100%; background: #8b949e; box-shadow: 0 0 6px #8b949e;"></div>
+                    </div>
+                </div>
+            </td>
+            <td style="text-align: right; color: #3fb950; font-family: 'JetBrains Mono', monospace; font-weight: 700;">
+                $154.39 <span class="pct-pill pct-up">+7.6%</span>
+            </td>
+            <td style="text-align: right; color: #f85149; font-family: 'JetBrains Mono', monospace; font-weight: 700;">
+                $135.51 <span class="pct-pill pct-down">-5.6%</span>
+            </td>
+            <td style="text-align: center;"><span class="badge badge-gold">🌧️ 暴雨空仓</span></td>
+            <td style="text-align: center;"><span class="badge badge-red" style="font-size: 12px; padding: 4px 10px;">🛡️ 暴雨空仓·严禁左侧接刀</span></td>
+        </tr>
+        
+        <tr class="t4-stock-row" data-rank="21" data-sector="数据中心能源电力" data-ticker="BE" style="display: none;">
+            <td style="text-align: center; font-size: 15px; font-weight: 800; color: #8b949e;">#21</td>
+            <td>
+                <a href="futu_pro_terminal.html?symbol=BE" target="_blank" class="ticker-jump-link" title="点击在富途全周期看盘终端中打开 BE K线与实盘诊股">
+                    <span class="tk-code">BE</span>
+                    <span class="tk-jump-icon">📈 看盘</span>
+                </a>
+            </td>
+            <td>
+                <div style="display: flex; align-items: center; gap: 6px;">
+                    <span class="badge badge-blue" style="cursor: pointer;" onclick="filterBySector('数据中心能源电力')">数据中心能源电力</span>
+                    <span style="font-size: 11px; color: #ffd54f;" title="赛道 OOS 评级 (PF=1.28)">⭐⭐⭐☆☆</span>
+                </div>
+            </td>
+            <td style="text-align: right; font-weight: 700; font-family: 'JetBrains Mono', monospace; font-size: 14.5px; color: #f0f6fc;">
+                $203.17
+                <span style="display: block; font-size: 10px; color: #8b949e; font-weight: normal;">ATR 9.8%</span>
+            </td>
+            <td style="text-align: right;">
+                <div style="display: flex; align-items: center; justify-content: flex-end; gap: 8px;">
+                    <div>
+                        <span style="font-size: 15px; font-weight: 800; color: #8b949e; font-family: 'JetBrains Mono', monospace;">41.9%</span>
+                        <span style="font-size: 11px; color: #8b949e; display: block;" title="LightGBM 原始未校准概率">原始 42.6%</span>
+                    </div>
+                    <div style="width: 64px; height: 8px; background: rgba(255,255,255,0.08); border-radius: 4px; overflow: hidden; position: relative;">
+                        <div style="width: 41.9%; height: 100%; background: #8b949e; box-shadow: 0 0 6px #8b949e;"></div>
+                    </div>
+                </div>
+            </td>
+            <td style="text-align: right; color: #3fb950; font-family: 'JetBrains Mono', monospace; font-weight: 700;">
+                $222.15 <span class="pct-pill pct-up">+9.3%</span>
+            </td>
+            <td style="text-align: right; color: #f85149; font-family: 'JetBrains Mono', monospace; font-weight: 700;">
+                $189.11 <span class="pct-pill pct-down">-6.9%</span>
+            </td>
+            <td style="text-align: center;"><span class="badge badge-gold">🌧️ 暴雨空仓</span></td>
+            <td style="text-align: center;"><span class="badge badge-red" style="font-size: 12px; padding: 4px 10px;">🛡️ 暴雨空仓·严禁左侧接刀</span></td>
+        </tr>
+        
+        <tr class="t4-stock-row" data-rank="22" data-sector="加密币股代理" data-ticker="IBIT" style="display: none;">
+            <td style="text-align: center; font-size: 15px; font-weight: 800; color: #8b949e;">#22</td>
+            <td>
+                <a href="futu_pro_terminal.html?symbol=IBIT" target="_blank" class="ticker-jump-link" title="点击在富途全周期看盘终端中打开 IBIT K线与实盘诊股">
+                    <span class="tk-code">IBIT</span>
+                    <span class="tk-jump-icon">📈 看盘</span>
+                </a>
+            </td>
+            <td>
+                <div style="display: flex; align-items: center; gap: 6px;">
+                    <span class="badge badge-blue" style="cursor: pointer;" onclick="filterBySector('加密币股代理')">加密币股代理</span>
+                    <span style="font-size: 11px; color: #ffd54f;" title="赛道 OOS 评级 (PF=1.29)">⭐⭐⭐☆☆</span>
+                </div>
+            </td>
+            <td style="text-align: right; font-weight: 700; font-family: 'JetBrains Mono', monospace; font-size: 14.5px; color: #f0f6fc;">
+                $43.36
+                <span style="display: block; font-size: 10px; color: #8b949e; font-weight: normal;">ATR 2.7%</span>
+            </td>
+            <td style="text-align: right;">
+                <div style="display: flex; align-items: center; justify-content: flex-end; gap: 8px;">
+                    <div>
+                        <span style="font-size: 15px; font-weight: 800; color: #8b949e; font-family: 'JetBrains Mono', monospace;">41.2%</span>
+                        <span style="font-size: 11px; color: #8b949e; display: block;" title="LightGBM 原始未校准概率">原始 41.5%</span>
+                    </div>
+                    <div style="width: 64px; height: 8px; background: rgba(255,255,255,0.08); border-radius: 4px; overflow: hidden; position: relative;">
+                        <div style="width: 41.2%; height: 100%; background: #8b949e; box-shadow: 0 0 6px #8b949e;"></div>
+                    </div>
+                </div>
+            </td>
+            <td style="text-align: right; color: #3fb950; font-family: 'JetBrains Mono', monospace; font-weight: 700;">
+                $44.94 <span class="pct-pill pct-up">+3.7%</span>
+            </td>
+            <td style="text-align: right; color: #f85149; font-family: 'JetBrains Mono', monospace; font-weight: 700;">
+                $42.19 <span class="pct-pill pct-down">-2.7%</span>
+            </td>
+            <td style="text-align: center;"><span class="badge badge-gold">🌧️ 暴雨空仓</span></td>
+            <td style="text-align: center;"><span class="badge badge-red" style="font-size: 12px; padding: 4px 10px;">🛡️ 暴雨空仓·严禁左侧接刀</span></td>
+        </tr>
+        
+        <tr class="t4-stock-row" data-rank="23" data-sector="企业软件与 AI SaaS" data-ticker="MSFT" style="display: none;">
+            <td style="text-align: center; font-size: 15px; font-weight: 800; color: #8b949e;">#23</td>
+            <td>
+                <a href="futu_pro_terminal.html?symbol=MSFT" target="_blank" class="ticker-jump-link" title="点击在富途全周期看盘终端中打开 MSFT K线与实盘诊股">
+                    <span class="tk-code">MSFT</span>
+                    <span class="tk-jump-icon">📈 看盘</span>
+                </a>
+            </td>
+            <td>
+                <div style="display: flex; align-items: center; gap: 6px;">
+                    <span class="badge badge-blue" style="cursor: pointer;" onclick="filterBySector('企业软件与 AI SaaS')">企业软件与 AI SaaS</span>
+                    <span style="font-size: 11px; color: #ffd54f;" title="赛道 OOS 评级 (PF=1.17)">⭐⭐☆☆☆</span>
+                </div>
+            </td>
+            <td style="text-align: right; font-weight: 700; font-family: 'JetBrains Mono', monospace; font-size: 14.5px; color: #f0f6fc;">
+                $521.91
+                <span style="display: block; font-size: 10px; color: #8b949e; font-weight: normal;">ATR 2.2%</span>
+            </td>
+            <td style="text-align: right;">
+                <div style="display: flex; align-items: center; justify-content: flex-end; gap: 8px;">
+                    <div>
+                        <span style="font-size: 15px; font-weight: 800; color: #8b949e; font-family: 'JetBrains Mono', monospace;">39.1%</span>
+                        <span style="font-size: 11px; color: #8b949e; display: block;" title="LightGBM 原始未校准概率">原始 43.5%</span>
+                    </div>
+                    <div style="width: 64px; height: 8px; background: rgba(255,255,255,0.08); border-radius: 4px; overflow: hidden; position: relative;">
+                        <div style="width: 39.1%; height: 100%; background: #8b949e; box-shadow: 0 0 6px #8b949e;"></div>
+                    </div>
+                </div>
+            </td>
+            <td style="text-align: right; color: #3fb950; font-family: 'JetBrains Mono', monospace; font-weight: 700;">
+                $537.76 <span class="pct-pill pct-up">+3.0%</span>
+            </td>
+            <td style="text-align: right; color: #f85149; font-family: 'JetBrains Mono', monospace; font-weight: 700;">
+                $510.17 <span class="pct-pill pct-down">-2.2%</span>
+            </td>
+            <td style="text-align: center;"><span class="badge badge-gold">🌧️ 暴雨空仓</span></td>
+            <td style="text-align: center;"><span class="badge badge-red" style="font-size: 12px; padding: 4px 10px;">🛡️ 暴雨空仓·严禁左侧接刀</span></td>
+        </tr>
+        
+        <tr class="t4-stock-row" data-rank="24" data-sector="加密币股代理" data-ticker="MSTR" style="display: none;">
+            <td style="text-align: center; font-size: 15px; font-weight: 800; color: #8b949e;">#24</td>
+            <td>
+                <a href="futu_pro_terminal.html?symbol=MSTR" target="_blank" class="ticker-jump-link" title="点击在富途全周期看盘终端中打开 MSTR K线与实盘诊股">
+                    <span class="tk-code">MSTR</span>
+                    <span class="tk-jump-icon">📈 看盘</span>
+                </a>
+            </td>
+            <td>
+                <div style="display: flex; align-items: center; gap: 6px;">
+                    <span class="badge badge-blue" style="cursor: pointer;" onclick="filterBySector('加密币股代理')">加密币股代理</span>
+                    <span style="font-size: 11px; color: #ffd54f;" title="赛道 OOS 评级 (PF=1.29)">⭐⭐⭐☆☆</span>
+                </div>
+            </td>
+            <td style="text-align: right; font-weight: 700; font-family: 'JetBrains Mono', monospace; font-size: 14.5px; color: #f0f6fc;">
+                $130.51
+                <span style="display: block; font-size: 10px; color: #8b949e; font-weight: normal;">ATR 7.7%</span>
+            </td>
+            <td style="text-align: right;">
+                <div style="display: flex; align-items: center; justify-content: flex-end; gap: 8px;">
+                    <div>
+                        <span style="font-size: 15px; font-weight: 800; color: #8b949e; font-family: 'JetBrains Mono', monospace;">38.8%</span>
+                        <span style="font-size: 11px; color: #8b949e; display: block;" title="LightGBM 原始未校准概率">原始 39.1%</span>
+                    </div>
+                    <div style="width: 64px; height: 8px; background: rgba(255,255,255,0.08); border-radius: 4px; overflow: hidden; position: relative;">
+                        <div style="width: 38.8%; height: 100%; background: #8b949e; box-shadow: 0 0 6px #8b949e;"></div>
+                    </div>
+                </div>
+            </td>
+            <td style="text-align: right; color: #3fb950; font-family: 'JetBrains Mono', monospace; font-weight: 700;">
+                $140.85 <span class="pct-pill pct-up">+7.9%</span>
+            </td>
+            <td style="text-align: right; color: #f85149; font-family: 'JetBrains Mono', monospace; font-weight: 700;">
+                $122.85 <span class="pct-pill pct-down">-5.9%</span>
+            </td>
+            <td style="text-align: center;"><span class="badge badge-gold">🌧️ 暴雨空仓</span></td>
+            <td style="text-align: center;"><span class="badge badge-red" style="font-size: 12px; padding: 4px 10px;">🛡️ 暴雨空仓·严禁左侧接刀</span></td>
+        </tr>
+        
+        <tr class="t4-stock-row" data-rank="25" data-sector="数据中心能源电力" data-ticker="VST" style="display: none;">
+            <td style="text-align: center; font-size: 15px; font-weight: 800; color: #8b949e;">#25</td>
+            <td>
+                <a href="futu_pro_terminal.html?symbol=VST" target="_blank" class="ticker-jump-link" title="点击在富途全周期看盘终端中打开 VST K线与实盘诊股">
+                    <span class="tk-code">VST</span>
+                    <span class="tk-jump-icon">📈 看盘</span>
+                </a>
+            </td>
+            <td>
+                <div style="display: flex; align-items: center; gap: 6px;">
+                    <span class="badge badge-blue" style="cursor: pointer;" onclick="filterBySector('数据中心能源电力')">数据中心能源电力</span>
+                    <span style="font-size: 11px; color: #ffd54f;" title="赛道 OOS 评级 (PF=1.28)">⭐⭐⭐☆☆</span>
+                </div>
+            </td>
+            <td style="text-align: right; font-weight: 700; font-family: 'JetBrains Mono', monospace; font-size: 14.5px; color: #f0f6fc;">
+                $138.37
+                <span style="display: block; font-size: 10px; color: #8b949e; font-weight: normal;">ATR 5.4%</span>
+            </td>
+            <td style="text-align: right;">
+                <div style="display: flex; align-items: center; justify-content: flex-end; gap: 8px;">
+                    <div>
+                        <span style="font-size: 15px; font-weight: 800; color: #8b949e; font-family: 'JetBrains Mono', monospace;">38.3%</span>
+                        <span style="font-size: 11px; color: #8b949e; display: block;" title="LightGBM 原始未校准概率">原始 38.9%</span>
+                    </div>
+                    <div style="width: 64px; height: 8px; background: rgba(255,255,255,0.08); border-radius: 4px; overflow: hidden; position: relative;">
+                        <div style="width: 38.3%; height: 100%; background: #8b949e; box-shadow: 0 0 6px #8b949e;"></div>
+                    </div>
+                </div>
+            </td>
+            <td style="text-align: right; color: #3fb950; font-family: 'JetBrains Mono', monospace; font-weight: 700;">
+                $147.19 <span class="pct-pill pct-up">+6.4%</span>
+            </td>
+            <td style="text-align: right; color: #f85149; font-family: 'JetBrains Mono', monospace; font-weight: 700;">
+                $131.84 <span class="pct-pill pct-down">-4.7%</span>
+            </td>
+            <td style="text-align: center;"><span class="badge badge-gold">🌧️ 暴雨空仓</span></td>
+            <td style="text-align: center;"><span class="badge badge-red" style="font-size: 12px; padding: 4px 10px;">🛡️ 暴雨空仓·严禁左侧接刀</span></td>
+        </tr>
+        
+        <tr class="t4-stock-row" data-rank="26" data-sector="数据中心能源电力" data-ticker="CEG" style="display: none;">
+            <td style="text-align: center; font-size: 15px; font-weight: 800; color: #8b949e;">#26</td>
+            <td>
+                <a href="futu_pro_terminal.html?symbol=CEG" target="_blank" class="ticker-jump-link" title="点击在富途全周期看盘终端中打开 CEG K线与实盘诊股">
+                    <span class="tk-code">CEG</span>
+                    <span class="tk-jump-icon">📈 看盘</span>
+                </a>
+            </td>
+            <td>
+                <div style="display: flex; align-items: center; gap: 6px;">
+                    <span class="badge badge-blue" style="cursor: pointer;" onclick="filterBySector('数据中心能源电力')">数据中心能源电力</span>
+                    <span style="font-size: 11px; color: #ffd54f;" title="赛道 OOS 评级 (PF=1.28)">⭐⭐⭐☆☆</span>
+                </div>
+            </td>
+            <td style="text-align: right; font-weight: 700; font-family: 'JetBrains Mono', monospace; font-size: 14.5px; color: #f0f6fc;">
+                $262.38
+                <span style="display: block; font-size: 10px; color: #8b949e; font-weight: normal;">ATR 4.3%</span>
+            </td>
+            <td style="text-align: right;">
+                <div style="display: flex; align-items: center; justify-content: flex-end; gap: 8px;">
+                    <div>
+                        <span style="font-size: 15px; font-weight: 800; color: #8b949e; font-family: 'JetBrains Mono', monospace;">36.9%</span>
+                        <span style="font-size: 11px; color: #8b949e; display: block;" title="LightGBM 原始未校准概率">原始 37.5%</span>
+                    </div>
+                    <div style="width: 64px; height: 8px; background: rgba(255,255,255,0.08); border-radius: 4px; overflow: hidden; position: relative;">
+                        <div style="width: 36.9%; height: 100%; background: #8b949e; box-shadow: 0 0 6px #8b949e;"></div>
+                    </div>
+                </div>
+            </td>
+            <td style="text-align: right; color: #3fb950; font-family: 'JetBrains Mono', monospace; font-weight: 700;">
+                $277.05 <span class="pct-pill pct-up">+5.6%</span>
+            </td>
+            <td style="text-align: right; color: #f85149; font-family: 'JetBrains Mono', monospace; font-weight: 700;">
+                $251.51 <span class="pct-pill pct-down">-4.1%</span>
+            </td>
+            <td style="text-align: center;"><span class="badge badge-gold">🌧️ 暴雨空仓</span></td>
+            <td style="text-align: center;"><span class="badge badge-red" style="font-size: 12px; padding: 4px 10px;">🛡️ 暴雨空仓·严禁左侧接刀</span></td>
+        </tr>
+        
+        <tr class="t4-stock-row" data-rank="27" data-sector="企业软件与 AI SaaS" data-ticker="PLTR" style="display: none;">
+            <td style="text-align: center; font-size: 15px; font-weight: 800; color: #8b949e;">#27</td>
+            <td>
+                <a href="futu_pro_terminal.html?symbol=PLTR" target="_blank" class="ticker-jump-link" title="点击在富途全周期看盘终端中打开 PLTR K线与实盘诊股">
+                    <span class="tk-code">PLTR</span>
+                    <span class="tk-jump-icon">📈 看盘</span>
+                </a>
+            </td>
+            <td>
+                <div style="display: flex; align-items: center; gap: 6px;">
+                    <span class="badge badge-blue" style="cursor: pointer;" onclick="filterBySector('企业软件与 AI SaaS')">企业软件与 AI SaaS</span>
+                    <span style="font-size: 11px; color: #ffd54f;" title="赛道 OOS 评级 (PF=1.17)">⭐⭐☆☆☆</span>
+                </div>
+            </td>
+            <td style="text-align: right; font-weight: 700; font-family: 'JetBrains Mono', monospace; font-size: 14.5px; color: #f0f6fc;">
+                $184.11
+                <span style="display: block; font-size: 10px; color: #8b949e; font-weight: normal;">ATR 5.0%</span>
+            </td>
+            <td style="text-align: right;">
+                <div style="display: flex; align-items: center; justify-content: flex-end; gap: 8px;">
+                    <div>
+                        <span style="font-size: 15px; font-weight: 800; color: #8b949e; font-family: 'JetBrains Mono', monospace;">36.7%</span>
+                        <span style="font-size: 11px; color: #8b949e; display: block;" title="LightGBM 原始未校准概率">原始 40.8%</span>
+                    </div>
+                    <div style="width: 64px; height: 8px; background: rgba(255,255,255,0.08); border-radius: 4px; overflow: hidden; position: relative;">
+                        <div style="width: 36.7%; height: 100%; background: #8b949e; box-shadow: 0 0 6px #8b949e;"></div>
+                    </div>
+                </div>
+            </td>
+            <td style="text-align: right; color: #3fb950; font-family: 'JetBrains Mono', monospace; font-weight: 700;">
+                $195.29 <span class="pct-pill pct-up">+6.1%</span>
+            </td>
+            <td style="text-align: right; color: #f85149; font-family: 'JetBrains Mono', monospace; font-weight: 700;">
+                $175.83 <span class="pct-pill pct-down">-4.5%</span>
+            </td>
+            <td style="text-align: center;"><span class="badge badge-gold">🌧️ 暴雨空仓</span></td>
+            <td style="text-align: center;"><span class="badge badge-red" style="font-size: 12px; padding: 4px 10px;">🛡️ 暴雨空仓·严禁左侧接刀</span></td>
+        </tr>
+        
+        <tr class="t4-stock-row" data-rank="28" data-sector="企业软件与 AI SaaS" data-ticker="ORCL" style="display: none;">
+            <td style="text-align: center; font-size: 15px; font-weight: 800; color: #8b949e;">#28</td>
+            <td>
+                <a href="futu_pro_terminal.html?symbol=ORCL" target="_blank" class="ticker-jump-link" title="点击在富途全周期看盘终端中打开 ORCL K线与实盘诊股">
+                    <span class="tk-code">ORCL</span>
+                    <span class="tk-jump-icon">📈 看盘</span>
+                </a>
+            </td>
+            <td>
+                <div style="display: flex; align-items: center; gap: 6px;">
+                    <span class="badge badge-blue" style="cursor: pointer;" onclick="filterBySector('企业软件与 AI SaaS')">企业软件与 AI SaaS</span>
+                    <span style="font-size: 11px; color: #ffd54f;" title="赛道 OOS 评级 (PF=1.17)">⭐⭐☆☆☆</span>
+                </div>
+            </td>
+            <td style="text-align: right; font-weight: 700; font-family: 'JetBrains Mono', monospace; font-size: 14.5px; color: #f0f6fc;">
+                $130.67
+                <span style="display: block; font-size: 10px; color: #8b949e; font-weight: normal;">ATR 6.2%</span>
+            </td>
+            <td style="text-align: right;">
+                <div style="display: flex; align-items: center; justify-content: flex-end; gap: 8px;">
+                    <div>
+                        <span style="font-size: 15px; font-weight: 800; color: #8b949e; font-family: 'JetBrains Mono', monospace;">33.4%</span>
+                        <span style="font-size: 11px; color: #8b949e; display: block;" title="LightGBM 原始未校准概率">原始 37.1%</span>
+                    </div>
+                    <div style="width: 64px; height: 8px; background: rgba(255,255,255,0.08); border-radius: 4px; overflow: hidden; position: relative;">
+                        <div style="width: 33.4%; height: 100%; background: #8b949e; box-shadow: 0 0 6px #8b949e;"></div>
+                    </div>
+                </div>
+            </td>
+            <td style="text-align: right; color: #3fb950; font-family: 'JetBrains Mono', monospace; font-weight: 700;">
+                $139.63 <span class="pct-pill pct-up">+6.9%</span>
+            </td>
+            <td style="text-align: right; color: #f85149; font-family: 'JetBrains Mono', monospace; font-weight: 700;">
+                $124.04 <span class="pct-pill pct-down">-5.1%</span>
+            </td>
+            <td style="text-align: center;"><span class="badge badge-gold">🌧️ 暴雨空仓</span></td>
+            <td style="text-align: center;"><span class="badge badge-red" style="font-size: 12px; padding: 4px 10px;">🛡️ 暴雨空仓·严禁左侧接刀</span></td>
+        </tr>
+        
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Table 2: 7 大赛道样本外预测表现归因表 -->
+        <div class="section-card">
+            <div class="section-header">
+                <h3>🏆 表 2: 7 大核心高弹性赛道样本外预测表现归因表 (7 Sectors OOS Attribution · 点击行可联动筛选表 4)</h3>
+                <span class="sub">基于 2024-2026 样本外高置信信号 (>=60%) 期望盈亏比 (PF) 与平均实现收益综合评星 · 小样本 (&lt;10笔) 强制封顶 3 星</span>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th style="text-align: center;">#</th>
+                        <th>赛道名称 (点击筛选)</th>
+                        <th style="text-align: center;">标的数</th>
+                        <th style="text-align: right;">OOS 评估样本</th>
+                        <th style="text-align: right;">高置信信号数 (>=60%)</th>
+                        <th style="text-align: right;">高置信正收益胜率 (触轨率)</th>
+                        <th style="text-align: right;">平均实现收益 %</th>
+                        <th style="text-align: right;">平均盈亏比</th>
+                        <th style="text-align: right;">期望盈亏比 PF (校准乘数)</th>
+                        <th style="text-align: center;">AI Alpha 机构评级</th>
                     </tr>
                 </thead>
                 <tbody>
                     
-        <tr>
-            <td style="text-align: center; font-size: 16px;">🥇</td>
-            <td style="font-weight: 800; font-size: 16px; color: #58a6ff; letter-spacing: 0.5px;">NOW</td>
-            <td><span class="badge badge-blue">企业软件与 AI SaaS</span></td>
-            <td style="text-align: right; font-weight: 700; font-family: monospace; font-size: 15px;">$105.12</td>
+        <tr onclick="filterBySector('存储芯片')" style="cursor: pointer;" title="点击筛选【存储芯片】赛道的实盘预测标的">
+            <td style="text-align: center; color: #8b949e; font-weight: 700;">1</td>
+            <td style="font-weight: 700; color: #f0f6fc;">
+                存储芯片
+                <span style="font-size: 11px; color: #8b949e; font-weight: normal; margin-left: 4px;">(Memory)</span>
+            </td>
+            <td style="text-align: center;"><span class="badge badge-blue">3 股</span></td>
+            <td style="text-align: right; font-family: 'JetBrains Mono', monospace;">2,118</td>
+            <td style="text-align: right; font-family: 'JetBrains Mono', monospace; font-weight: 600;">306</td>
             <td style="text-align: right;">
                 <div style="display: flex; align-items: center; justify-content: flex-end; gap: 8px;">
-                    <span style="font-size: 15px; font-weight: 800; color: #3fb950;">47.5%</span>
-                    <div style="width: 60px; height: 7px; background: rgba(255,255,255,0.1); border-radius: 4px; overflow: hidden;">
-                        <div style="width: 47.5%; height: 100%; background: #3fb950; box-shadow: 0 0 6px #3fb950;"></div>
+                    <span><strong style="color: #3fb950;">57.2%</strong> <span style="font-size: 11px; color: #8b949e;">(49.3%)</span></span>
+                    <div class="dual-bar-track" style="width: 56px;">
+                        <div class="dual-bar-pos" style="width: 57.2%;"></div>
+                        <div class="dual-bar-touch" style="width: 49.3%;"></div>
                     </div>
                 </div>
             </td>
-            <td style="text-align: right; color: #3fb950; font-family: monospace; font-weight: 600;">
-                $118.52 <span style="font-size: 11px; opacity: 0.85;">(+12.8%)</span>
+            <td style="text-align: right; color: #3fb950; font-family: 'JetBrains Mono', monospace; font-weight: 700;">+1.29%</td>
+            <td style="text-align: right; font-weight: 700; color: #58a6ff; font-family: 'JetBrains Mono', monospace;">1.35</td>
+            <td style="text-align: right; font-weight: 800; color: #ffd54f; font-family: 'JetBrains Mono', monospace;">
+                1.80
+                <span style="font-size: 10px; color: #3fb950; margin-left: 3px;" title="表 4 赛道先验校准乘数">(1.15x)</span>
             </td>
-            <td style="text-align: right; color: #f85149; font-family: monospace; font-weight: 600;">
-                $96.18 <span style="font-size: 11px; opacity: 0.85;">(-8.5%)</span>
-            </td>
-            <td style="text-align: center;"><span class="badge badge-gold">🌧️ 暴雨空仓</span></td>
-            <td style="text-align: center;"><span class="badge badge-green">👀 观望等待</span></td>
+            <td style="text-align: center; color: #ffd54f; font-size: 13px; font-weight: 700;">⭐⭐⭐⭐⭐</td>
         </tr>
         
-        <tr>
-            <td style="text-align: center; font-size: 16px;">🥈</td>
-            <td style="font-weight: 800; font-size: 16px; color: #58a6ff; letter-spacing: 0.5px;">MSFT</td>
-            <td><span class="badge badge-blue">企业软件与 AI SaaS</span></td>
-            <td style="text-align: right; font-weight: 700; font-family: monospace; font-size: 15px;">$521.91</td>
+        <tr onclick="filterBySector('半导体与设备')" style="cursor: pointer;" title="点击筛选【半导体与设备】赛道的实盘预测标的">
+            <td style="text-align: center; color: #8b949e; font-weight: 700;">2</td>
+            <td style="font-weight: 700; color: #f0f6fc;">
+                半导体与设备
+                <span style="font-size: 11px; color: #8b949e; font-weight: normal; margin-left: 4px;">(Semiconductors)</span>
+            </td>
+            <td style="text-align: center;"><span class="badge badge-blue">6 股</span></td>
+            <td style="text-align: right; font-family: 'JetBrains Mono', monospace;">4,236</td>
+            <td style="text-align: right; font-family: 'JetBrains Mono', monospace; font-weight: 600;">564</td>
             <td style="text-align: right;">
                 <div style="display: flex; align-items: center; justify-content: flex-end; gap: 8px;">
-                    <span style="font-size: 15px; font-weight: 800; color: #3fb950;">46.7%</span>
-                    <div style="width: 60px; height: 7px; background: rgba(255,255,255,0.1); border-radius: 4px; overflow: hidden;">
-                        <div style="width: 46.7%; height: 100%; background: #3fb950; box-shadow: 0 0 6px #3fb950;"></div>
+                    <span><strong style="color: #3fb950;">55.5%</strong> <span style="font-size: 11px; color: #8b949e;">(40.6%)</span></span>
+                    <div class="dual-bar-track" style="width: 56px;">
+                        <div class="dual-bar-pos" style="width: 55.5%;"></div>
+                        <div class="dual-bar-touch" style="width: 40.6%;"></div>
                     </div>
                 </div>
             </td>
-            <td style="text-align: right; color: #3fb950; font-family: monospace; font-weight: 600;">
-                $540.18 <span style="font-size: 11px; opacity: 0.85;">(+3.5%)</span>
+            <td style="text-align: right; color: #3fb950; font-family: 'JetBrains Mono', monospace; font-weight: 700;">+0.79%</td>
+            <td style="text-align: right; font-weight: 700; color: #58a6ff; font-family: 'JetBrains Mono', monospace;">1.24</td>
+            <td style="text-align: right; font-weight: 800; color: #ffd54f; font-family: 'JetBrains Mono', monospace;">
+                1.55
+                <span style="font-size: 10px; color: #3fb950; margin-left: 3px;" title="表 4 赛道先验校准乘数">(1.15x)</span>
             </td>
-            <td style="text-align: right; color: #f85149; font-family: monospace; font-weight: 600;">
-                $510.17 <span style="font-size: 11px; opacity: 0.85;">(-2.2%)</span>
-            </td>
-            <td style="text-align: center;"><span class="badge badge-gold">🌧️ 暴雨空仓</span></td>
-            <td style="text-align: center;"><span class="badge badge-green">👀 观望等待</span></td>
+            <td style="text-align: center; color: #ffd54f; font-size: 13px; font-weight: 700;">⭐⭐⭐⭐☆</td>
         </tr>
         
-        <tr>
-            <td style="text-align: center; font-size: 16px;">🥉</td>
-            <td style="font-weight: 800; font-size: 16px; color: #58a6ff; letter-spacing: 0.5px;">IBIT</td>
-            <td><span class="badge badge-blue">加密币股代理</span></td>
-            <td style="text-align: right; font-weight: 700; font-family: monospace; font-size: 15px;">$43.36</td>
+        <tr onclick="filterBySector('光通信与互联')" style="cursor: pointer;" title="点击筛选【光通信与互联】赛道的实盘预测标的">
+            <td style="text-align: center; color: #8b949e; font-weight: 700;">3</td>
+            <td style="font-weight: 700; color: #f0f6fc;">
+                光通信与互联
+                <span style="font-size: 11px; color: #8b949e; font-weight: normal; margin-left: 4px;">(Optical_Interconnect)</span>
+            </td>
+            <td style="text-align: center;"><span class="badge badge-blue">5 股</span></td>
+            <td style="text-align: right; font-family: 'JetBrains Mono', monospace;">3,530</td>
+            <td style="text-align: right; font-family: 'JetBrains Mono', monospace; font-weight: 600;">598</td>
             <td style="text-align: right;">
                 <div style="display: flex; align-items: center; justify-content: flex-end; gap: 8px;">
-                    <span style="font-size: 15px; font-weight: 800; color: #3fb950;">38.5%</span>
-                    <div style="width: 60px; height: 7px; background: rgba(255,255,255,0.1); border-radius: 4px; overflow: hidden;">
-                        <div style="width: 38.5%; height: 100%; background: #3fb950; box-shadow: 0 0 6px #3fb950;"></div>
+                    <span><strong style="color: #3fb950;">51.8%</strong> <span style="font-size: 11px; color: #8b949e;">(47.0%)</span></span>
+                    <div class="dual-bar-track" style="width: 56px;">
+                        <div class="dual-bar-pos" style="width: 51.8%;"></div>
+                        <div class="dual-bar-touch" style="width: 47.0%;"></div>
                     </div>
                 </div>
             </td>
-            <td style="text-align: right; color: #3fb950; font-family: monospace; font-weight: 600;">
-                $45.12 <span style="font-size: 11px; opacity: 0.85;">(+4.1%)</span>
+            <td style="text-align: right; color: #3fb950; font-family: 'JetBrains Mono', monospace; font-weight: 700;">+1.20%</td>
+            <td style="text-align: right; font-weight: 700; color: #58a6ff; font-family: 'JetBrains Mono', monospace;">1.38</td>
+            <td style="text-align: right; font-weight: 800; color: #ffd54f; font-family: 'JetBrains Mono', monospace;">
+                1.48
+                <span style="font-size: 10px; color: #3fb950; margin-left: 3px;" title="表 4 赛道先验校准乘数">(1.14x)</span>
             </td>
-            <td style="text-align: right; color: #f85149; font-family: monospace; font-weight: 600;">
-                $42.19 <span style="font-size: 11px; opacity: 0.85;">(-2.7%)</span>
-            </td>
-            <td style="text-align: center;"><span class="badge badge-gold">🌧️ 暴雨空仓</span></td>
-            <td style="text-align: center;"><span class="badge badge-green">👀 观望等待</span></td>
+            <td style="text-align: center; color: #ffd54f; font-size: 13px; font-weight: 700;">⭐⭐⭐⭐☆</td>
         </tr>
         
-        <tr>
-            <td style="text-align: center; font-size: 16px;">#4</td>
-            <td style="font-weight: 800; font-size: 16px; color: #58a6ff; letter-spacing: 0.5px;">MARA</td>
-            <td><span class="badge badge-blue">加密币股代理</span></td>
-            <td style="text-align: right; font-weight: 700; font-family: monospace; font-size: 15px;">$6.77</td>
+        <tr onclick="filterBySector('Neo-Cloud 算力租赁')" style="cursor: pointer;" title="点击筛选【Neo-Cloud 算力租赁】赛道的实盘预测标的">
+            <td style="text-align: center; color: #8b949e; font-weight: 700;">4</td>
+            <td style="font-weight: 700; color: #f0f6fc;">
+                Neo-Cloud 算力租赁
+                <span style="font-size: 11px; color: #8b949e; font-weight: normal; margin-left: 4px;">(Neo_Cloud)</span>
+            </td>
+            <td style="text-align: center;"><span class="badge badge-blue">3 股</span></td>
+            <td style="text-align: right; font-family: 'JetBrains Mono', monospace;">1,606</td>
+            <td style="text-align: right; font-family: 'JetBrains Mono', monospace; font-weight: 600;">330</td>
             <td style="text-align: right;">
                 <div style="display: flex; align-items: center; justify-content: flex-end; gap: 8px;">
-                    <span style="font-size: 15px; font-weight: 800; color: #3fb950;">38.3%</span>
-                    <div style="width: 60px; height: 7px; background: rgba(255,255,255,0.1); border-radius: 4px; overflow: hidden;">
-                        <div style="width: 38.3%; height: 100%; background: #3fb950; box-shadow: 0 0 6px #3fb950;"></div>
+                    <span><strong style="color: #3fb950;">50.3%</strong> <span style="font-size: 11px; color: #8b949e;">(46.4%)</span></span>
+                    <div class="dual-bar-track" style="width: 56px;">
+                        <div class="dual-bar-pos" style="width: 50.3%;"></div>
+                        <div class="dual-bar-touch" style="width: 46.4%;"></div>
                     </div>
                 </div>
             </td>
-            <td style="text-align: right; color: #3fb950; font-family: monospace; font-weight: 600;">
-                $7.70 <span style="font-size: 11px; opacity: 0.85;">(+13.7%)</span>
+            <td style="text-align: right; color: #3fb950; font-family: 'JetBrains Mono', monospace; font-weight: 700;">+1.04%</td>
+            <td style="text-align: right; font-weight: 700; color: #58a6ff; font-family: 'JetBrains Mono', monospace;">1.33</td>
+            <td style="text-align: right; font-weight: 800; color: #ffd54f; font-family: 'JetBrains Mono', monospace;">
+                1.35
+                <span style="font-size: 10px; color: #3fb950; margin-left: 3px;" title="表 4 赛道先验校准乘数">(1.04x)</span>
             </td>
-            <td style="text-align: right; color: #f85149; font-family: monospace; font-weight: 600;">
-                $6.15 <span style="font-size: 11px; opacity: 0.85;">(-9.1%)</span>
-            </td>
-            <td style="text-align: center;"><span class="badge badge-gold">🌧️ 暴雨空仓</span></td>
-            <td style="text-align: center;"><span class="badge badge-green">👀 观望等待</span></td>
+            <td style="text-align: center; color: #ffd54f; font-size: 13px; font-weight: 700;">⭐⭐⭐☆☆</td>
         </tr>
         
-        <tr>
-            <td style="text-align: center; font-size: 16px;">#5</td>
-            <td style="font-weight: 800; font-size: 16px; color: #58a6ff; letter-spacing: 0.5px;">NVDA</td>
-            <td><span class="badge badge-blue">半导体与设备</span></td>
-            <td style="text-align: right; font-weight: 700; font-family: monospace; font-size: 15px;">$204.64</td>
+        <tr onclick="filterBySector('加密币股代理')" style="cursor: pointer;" title="点击筛选【加密币股代理】赛道的实盘预测标的">
+            <td style="text-align: center; color: #8b949e; font-weight: 700;">5</td>
+            <td style="font-weight: 700; color: #f0f6fc;">
+                加密币股代理
+                <span style="font-size: 11px; color: #8b949e; font-weight: normal; margin-left: 4px;">(Crypto_Proxy)</span>
+            </td>
+            <td style="text-align: center;"><span class="badge badge-blue">4 股</span></td>
+            <td style="text-align: right; font-family: 'JetBrains Mono', monospace;">2,817</td>
+            <td style="text-align: right; font-family: 'JetBrains Mono', monospace; font-weight: 600;">455</td>
             <td style="text-align: right;">
                 <div style="display: flex; align-items: center; justify-content: flex-end; gap: 8px;">
-                    <span style="font-size: 15px; font-weight: 800; color: #3fb950;">36.4%</span>
-                    <div style="width: 60px; height: 7px; background: rgba(255,255,255,0.1); border-radius: 4px; overflow: hidden;">
-                        <div style="width: 36.4%; height: 100%; background: #3fb950; box-shadow: 0 0 6px #3fb950;"></div>
+                    <span><strong style="color: #3fb950;">49.5%</strong> <span style="font-size: 11px; color: #8b949e;">(41.5%)</span></span>
+                    <div class="dual-bar-track" style="width: 56px;">
+                        <div class="dual-bar-pos" style="width: 49.5%;"></div>
+                        <div class="dual-bar-touch" style="width: 41.5%;"></div>
                     </div>
                 </div>
             </td>
-            <td style="text-align: right; color: #3fb950; font-family: monospace; font-weight: 600;">
-                $214.45 <span style="font-size: 11px; opacity: 0.85;">(+4.8%)</span>
+            <td style="text-align: right; color: #3fb950; font-family: 'JetBrains Mono', monospace; font-weight: 700;">+0.74%</td>
+            <td style="text-align: right; font-weight: 700; color: #58a6ff; font-family: 'JetBrains Mono', monospace;">1.31</td>
+            <td style="text-align: right; font-weight: 800; color: #ffd54f; font-family: 'JetBrains Mono', monospace;">
+                1.29
+                <span style="font-size: 10px; color: #8b949e; margin-left: 3px;" title="表 4 赛道先验校准乘数">(0.99x)</span>
             </td>
-            <td style="text-align: right; color: #f85149; font-family: monospace; font-weight: 600;">
-                $198.10 <span style="font-size: 11px; opacity: 0.85;">(-3.2%)</span>
-            </td>
-            <td style="text-align: center;"><span class="badge badge-gold">🌧️ 暴雨空仓</span></td>
-            <td style="text-align: center;"><span class="badge badge-green">👀 观望等待</span></td>
+            <td style="text-align: center; color: #ffd54f; font-size: 13px; font-weight: 700;">⭐⭐⭐☆☆</td>
         </tr>
         
-        <tr>
-            <td style="text-align: center; font-size: 16px;">#6</td>
-            <td style="font-weight: 800; font-size: 16px; color: #58a6ff; letter-spacing: 0.5px;">MU</td>
-            <td><span class="badge badge-blue">存储芯片</span></td>
-            <td style="text-align: right; font-weight: 700; font-family: monospace; font-size: 15px;">$884.74</td>
+        <tr onclick="filterBySector('数据中心能源电力')" style="cursor: pointer;" title="点击筛选【数据中心能源电力】赛道的实盘预测标的">
+            <td style="text-align: center; color: #8b949e; font-weight: 700;">6</td>
+            <td style="font-weight: 700; color: #f0f6fc;">
+                数据中心能源电力
+                <span style="font-size: 11px; color: #8b949e; font-weight: normal; margin-left: 4px;">(Energy_Power)</span>
+            </td>
+            <td style="text-align: center;"><span class="badge badge-blue">3 股</span></td>
+            <td style="text-align: right; font-family: 'JetBrains Mono', monospace;">2,118</td>
+            <td style="text-align: right; font-family: 'JetBrains Mono', monospace; font-weight: 600;">310</td>
             <td style="text-align: right;">
                 <div style="display: flex; align-items: center; justify-content: flex-end; gap: 8px;">
-                    <span style="font-size: 15px; font-weight: 800; color: #3fb950;">36.2%</span>
-                    <div style="width: 60px; height: 7px; background: rgba(255,255,255,0.1); border-radius: 4px; overflow: hidden;">
-                        <div style="width: 36.2%; height: 100%; background: #3fb950; box-shadow: 0 0 6px #3fb950;"></div>
+                    <span><strong style="color: #3fb950;">50.0%</strong> <span style="font-size: 11px; color: #8b949e;">(38.4%)</span></span>
+                    <div class="dual-bar-track" style="width: 56px;">
+                        <div class="dual-bar-pos" style="width: 50.0%;"></div>
+                        <div class="dual-bar-touch" style="width: 38.4%;"></div>
                     </div>
                 </div>
             </td>
-            <td style="text-align: right; color: #3fb950; font-family: monospace; font-weight: 600;">
-                $961.22 <span style="font-size: 11px; opacity: 0.85;">(+8.6%)</span>
+            <td style="text-align: right; color: #3fb950; font-family: 'JetBrains Mono', monospace; font-weight: 700;">+0.65%</td>
+            <td style="text-align: right; font-weight: 700; color: #58a6ff; font-family: 'JetBrains Mono', monospace;">1.28</td>
+            <td style="text-align: right; font-weight: 800; color: #ffd54f; font-family: 'JetBrains Mono', monospace;">
+                1.28
+                <span style="font-size: 10px; color: #8b949e; margin-left: 3px;" title="表 4 赛道先验校准乘数">(0.98x)</span>
             </td>
-            <td style="text-align: right; color: #f85149; font-family: monospace; font-weight: 600;">
-                $833.75 <span style="font-size: 11px; opacity: 0.85;">(-5.8%)</span>
-            </td>
-            <td style="text-align: center;"><span class="badge badge-gold">🌧️ 暴雨空仓</span></td>
-            <td style="text-align: center;"><span class="badge badge-green">👀 观望等待</span></td>
+            <td style="text-align: center; color: #ffd54f; font-size: 13px; font-weight: 700;">⭐⭐⭐☆☆</td>
         </tr>
         
-        <tr>
-            <td style="text-align: center; font-size: 16px;">#7</td>
-            <td style="font-weight: 800; font-size: 16px; color: #58a6ff; letter-spacing: 0.5px;">ASML</td>
-            <td><span class="badge badge-blue">半导体与设备</span></td>
-            <td style="text-align: right; font-weight: 700; font-family: monospace; font-size: 15px;">$1565.90</td>
+        <tr onclick="filterBySector('企业软件与 AI SaaS')" style="cursor: pointer;" title="点击筛选【企业软件与 AI SaaS】赛道的实盘预测标的">
+            <td style="text-align: center; color: #8b949e; font-weight: 700;">7</td>
+            <td style="font-weight: 700; color: #f0f6fc;">
+                企业软件与 AI SaaS
+                <span style="font-size: 11px; color: #8b949e; font-weight: normal; margin-left: 4px;">(Enterprise_SaaS)</span>
+            </td>
+            <td style="text-align: center;"><span class="badge badge-blue">4 股</span></td>
+            <td style="text-align: right; font-family: 'JetBrains Mono', monospace;">2,824</td>
+            <td style="text-align: right; font-family: 'JetBrains Mono', monospace; font-weight: 600;">433</td>
             <td style="text-align: right;">
                 <div style="display: flex; align-items: center; justify-content: flex-end; gap: 8px;">
-                    <span style="font-size: 15px; font-weight: 800; color: #3fb950;">35.6%</span>
-                    <div style="width: 60px; height: 7px; background: rgba(255,255,255,0.1); border-radius: 4px; overflow: hidden;">
-                        <div style="width: 35.6%; height: 100%; background: #3fb950; box-shadow: 0 0 6px #3fb950;"></div>
+                    <span><strong style="color: #3fb950;">48.0%</strong> <span style="font-size: 11px; color: #8b949e;">(28.9%)</span></span>
+                    <div class="dual-bar-track" style="width: 56px;">
+                        <div class="dual-bar-pos" style="width: 48.0%;"></div>
+                        <div class="dual-bar-touch" style="width: 28.9%;"></div>
                     </div>
                 </div>
             </td>
-            <td style="text-align: right; color: #3fb950; font-family: monospace; font-weight: 600;">
-                $1659.07 <span style="font-size: 11px; opacity: 0.85;">(+6.0%)</span>
+            <td style="text-align: right; color: #3fb950; font-family: 'JetBrains Mono', monospace; font-weight: 700;">+0.24%</td>
+            <td style="text-align: right; font-weight: 700; color: #58a6ff; font-family: 'JetBrains Mono', monospace;">1.26</td>
+            <td style="text-align: right; font-weight: 800; color: #ffd54f; font-family: 'JetBrains Mono', monospace;">
+                1.17
+                <span style="font-size: 10px; color: #f85149; margin-left: 3px;" title="表 4 赛道先验校准乘数">(0.90x)</span>
             </td>
-            <td style="text-align: right; color: #f85149; font-family: monospace; font-weight: 600;">
-                $1503.78 <span style="font-size: 11px; opacity: 0.85;">(-4.0%)</span>
-            </td>
-            <td style="text-align: center;"><span class="badge badge-gold">🌧️ 暴雨空仓</span></td>
-            <td style="text-align: center;"><span class="badge badge-green">👀 观望等待</span></td>
-        </tr>
-        
-        <tr>
-            <td style="text-align: center; font-size: 16px;">#8</td>
-            <td style="font-weight: 800; font-size: 16px; color: #58a6ff; letter-spacing: 0.5px;">CRWV</td>
-            <td><span class="badge badge-blue">Neo-Cloud 算力租赁</span></td>
-            <td style="text-align: right; font-weight: 700; font-family: monospace; font-size: 15px;">$54.87</td>
-            <td style="text-align: right;">
-                <div style="display: flex; align-items: center; justify-content: flex-end; gap: 8px;">
-                    <span style="font-size: 15px; font-weight: 800; color: #3fb950;">35.5%</span>
-                    <div style="width: 60px; height: 7px; background: rgba(255,255,255,0.1); border-radius: 4px; overflow: hidden;">
-                        <div style="width: 35.5%; height: 100%; background: #3fb950; box-shadow: 0 0 6px #3fb950;"></div>
-                    </div>
-                </div>
-            </td>
-            <td style="text-align: right; color: #3fb950; font-family: monospace; font-weight: 600;">
-                $65.09 <span style="font-size: 11px; opacity: 0.85;">(+18.6%)</span>
-            </td>
-            <td style="text-align: right; color: #f85149; font-family: monospace; font-weight: 600;">
-                $48.05 <span style="font-size: 11px; opacity: 0.85;">(-12.4%)</span>
-            </td>
-            <td style="text-align: center;"><span class="badge badge-gold">🌧️ 暴雨空仓</span></td>
-            <td style="text-align: center;"><span class="badge badge-green">👀 观望等待</span></td>
-        </tr>
-        
-        <tr>
-            <td style="text-align: center; font-size: 16px;">#9</td>
-            <td style="font-weight: 800; font-size: 16px; color: #58a6ff; letter-spacing: 0.5px;">AAOI</td>
-            <td><span class="badge badge-blue">光通信与互联</span></td>
-            <td style="text-align: right; font-weight: 700; font-family: monospace; font-size: 15px;">$69.05</td>
-            <td style="text-align: right;">
-                <div style="display: flex; align-items: center; justify-content: flex-end; gap: 8px;">
-                    <span style="font-size: 15px; font-weight: 800; color: #3fb950;">35.4%</span>
-                    <div style="width: 60px; height: 7px; background: rgba(255,255,255,0.1); border-radius: 4px; overflow: hidden;">
-                        <div style="width: 35.4%; height: 100%; background: #3fb950; box-shadow: 0 0 6px #3fb950;"></div>
-                    </div>
-                </div>
-            </td>
-            <td style="text-align: right; color: #3fb950; font-family: monospace; font-weight: 600;">
-                $80.41 <span style="font-size: 11px; opacity: 0.85;">(+16.5%)</span>
-            </td>
-            <td style="text-align: right; color: #f85149; font-family: monospace; font-weight: 600;">
-                $61.47 <span style="font-size: 11px; opacity: 0.85;">(-11.0%)</span>
-            </td>
-            <td style="text-align: center;"><span class="badge badge-gold">🌧️ 暴雨空仓</span></td>
-            <td style="text-align: center;"><span class="badge badge-green">👀 观望等待</span></td>
-        </tr>
-        
-        <tr>
-            <td style="text-align: center; font-size: 16px;">#10</td>
-            <td style="font-weight: 800; font-size: 16px; color: #58a6ff; letter-spacing: 0.5px;">TSM</td>
-            <td><span class="badge badge-blue">半导体与设备</span></td>
-            <td style="text-align: right; font-weight: 700; font-family: monospace; font-size: 15px;">$406.13</td>
-            <td style="text-align: right;">
-                <div style="display: flex; align-items: center; justify-content: flex-end; gap: 8px;">
-                    <span style="font-size: 15px; font-weight: 800; color: #3fb950;">35.1%</span>
-                    <div style="width: 60px; height: 7px; background: rgba(255,255,255,0.1); border-radius: 4px; overflow: hidden;">
-                        <div style="width: 35.1%; height: 100%; background: #3fb950; box-shadow: 0 0 6px #3fb950;"></div>
-                    </div>
-                </div>
-            </td>
-            <td style="text-align: right; color: #3fb950; font-family: monospace; font-weight: 600;">
-                $427.75 <span style="font-size: 11px; opacity: 0.85;">(+5.3%)</span>
-            </td>
-            <td style="text-align: right; color: #f85149; font-family: monospace; font-weight: 600;">
-                $391.72 <span style="font-size: 11px; opacity: 0.85;">(-3.5%)</span>
-            </td>
-            <td style="text-align: center;"><span class="badge badge-gold">🌧️ 暴雨空仓</span></td>
-            <td style="text-align: center;"><span class="badge badge-green">👀 观望等待</span></td>
+            <td style="text-align: center; color: #ffd54f; font-size: 13px; font-weight: 700;">⭐⭐☆☆☆</td>
         </tr>
         
                 </tbody>
@@ -619,152 +1960,99 @@
         <div class="section-card">
             <div class="section-header">
                 <h3>📊 表 1: 样本外分位数校准表 (Quantile Calibration Table - Expanding OOS 2024-2026)</h3>
-                <span class="sub">严格验证概率单调递增性与真实盈亏比放大效应</span>
+                <span class="sub">严格验证预测概率单调递增性 · 同时披露真实交割正收益胜率与 5 日触轨止盈率</span>
             </div>
             <table>
                 <thead>
                     <tr>
                         <th>预测置信度档位</th>
                         <th style="text-align: right;">触发历史样本数</th>
-                        <th style="text-align: right;">真实胜率 %</th>
-                        <th style="text-align: right;">平均 5 日最高收益率 %</th>
-                        <th style="text-align: right;">期望盈亏比 (Profit Factor)</th>
+                        <th style="text-align: right;">正收益胜率 (触轨止盈率)</th>
+                        <th style="text-align: right;">平均实现收益 %</th>
+                        <th style="text-align: right;">平均盈亏比 (Win/Loss)</th>
+                        <th style="text-align: right;">期望盈亏比 (PF)</th>
                     </tr>
                 </thead>
                 <tbody>
                     
         <tr>
-            <td style="font-weight: 600;"><span class="badge badge-purple">>= 55%</span></td>
-            <td style="text-align: right; font-family: monospace;">138</td>
-            <td style="text-align: right; font-weight: 700; color: #3fb950;">50.0%</td>
-            <td style="text-align: right; color: #58a6ff;">+13.03%</td>
-            <td style="text-align: right; font-weight: 700; color: #ffd54f;">2.48</td>
+            <td style="font-weight: 700;"><span class="badge badge-purple">>= 55%</span></td>
+            <td style="text-align: right; font-family: 'JetBrains Mono', monospace; font-weight: 600;">5,342</td>
+            <td style="text-align: right;">
+                <div style="display: flex; align-items: center; justify-content: flex-end; gap: 10px;">
+                    <div>
+                        <span style="font-weight: 800; color: #3fb950; font-size: 14px;">49.0%</span>
+                        <span style="font-size: 11px; color: #8b949e; margin-left: 3px;" title="5日内触及动态止盈上轨比率">(触轨 39.6%)</span>
+                    </div>
+                    <div class="dual-bar-track" title="外层绿条: 正收益胜率 49.0% | 内层青条: 触轨止盈率 39.6%">
+                        <div class="dual-bar-pos" style="width: 49.0%;"></div>
+                        <div class="dual-bar-touch" style="width: 39.6%;"></div>
+                    </div>
+                </div>
+            </td>
+            <td style="text-align: right; color: #3fb950; font-family: 'JetBrains Mono', monospace; font-weight: 700;">+0.51%</td>
+            <td style="text-align: right; font-weight: 700; color: #58a6ff; font-family: 'JetBrains Mono', monospace;">1.28</td>
+            <td style="text-align: right; font-weight: 800; color: #ffd54f; font-family: 'JetBrains Mono', monospace; font-size: 14px;">1.23</td>
         </tr>
         
         <tr>
-            <td style="font-weight: 600;"><span class="badge badge-purple">>= 60%</span></td>
-            <td style="text-align: right; font-family: monospace;">49</td>
-            <td style="text-align: right; font-weight: 700; color: #3fb950;">61.2%</td>
-            <td style="text-align: right; color: #58a6ff;">+17.01%</td>
-            <td style="text-align: right; font-weight: 700; color: #ffd54f;">3.87</td>
+            <td style="font-weight: 700;"><span class="badge badge-purple">>= 60%</span></td>
+            <td style="text-align: right; font-family: 'JetBrains Mono', monospace; font-weight: 600;">2,996</td>
+            <td style="text-align: right;">
+                <div style="display: flex; align-items: center; justify-content: flex-end; gap: 10px;">
+                    <div>
+                        <span style="font-weight: 800; color: #3fb950; font-size: 14px;">51.8%</span>
+                        <span style="font-size: 11px; color: #8b949e; margin-left: 3px;" title="5日内触及动态止盈上轨比率">(触轨 41.6%)</span>
+                    </div>
+                    <div class="dual-bar-track" title="外层绿条: 正收益胜率 51.8% | 内层青条: 触轨止盈率 41.6%">
+                        <div class="dual-bar-pos" style="width: 51.8%;"></div>
+                        <div class="dual-bar-touch" style="width: 41.6%;"></div>
+                    </div>
+                </div>
+            </td>
+            <td style="text-align: right; color: #3fb950; font-family: 'JetBrains Mono', monospace; font-weight: 700;">+0.85%</td>
+            <td style="text-align: right; font-weight: 700; color: #58a6ff; font-family: 'JetBrains Mono', monospace;">1.31</td>
+            <td style="text-align: right; font-weight: 800; color: #ffd54f; font-family: 'JetBrains Mono', monospace; font-size: 14px;">1.41</td>
         </tr>
         
         <tr>
-            <td style="font-weight: 600;"><span class="badge badge-purple">>= 65%</span></td>
-            <td style="text-align: right; font-family: monospace;">17</td>
-            <td style="text-align: right; font-weight: 700; color: #3fb950;">82.4%</td>
-            <td style="text-align: right; color: #58a6ff;">+22.78%</td>
-            <td style="text-align: right; font-weight: 700; color: #ffd54f;">9.01</td>
+            <td style="font-weight: 700;"><span class="badge badge-purple">>= 65%</span></td>
+            <td style="text-align: right; font-family: 'JetBrains Mono', monospace; font-weight: 600;">1,440</td>
+            <td style="text-align: right;">
+                <div style="display: flex; align-items: center; justify-content: flex-end; gap: 10px;">
+                    <div>
+                        <span style="font-weight: 800; color: #3fb950; font-size: 14px;">54.6%</span>
+                        <span style="font-size: 11px; color: #8b949e; margin-left: 3px;" title="5日内触及动态止盈上轨比率">(触轨 43.5%)</span>
+                    </div>
+                    <div class="dual-bar-track" title="外层绿条: 正收益胜率 54.6% | 内层青条: 触轨止盈率 43.5%">
+                        <div class="dual-bar-pos" style="width: 54.6%;"></div>
+                        <div class="dual-bar-touch" style="width: 43.5%;"></div>
+                    </div>
+                </div>
+            </td>
+            <td style="text-align: right; color: #3fb950; font-family: 'JetBrains Mono', monospace; font-weight: 700;">+1.28%</td>
+            <td style="text-align: right; font-weight: 700; color: #58a6ff; font-family: 'JetBrains Mono', monospace;">1.37</td>
+            <td style="text-align: right; font-weight: 800; color: #3fb950; font-family: 'JetBrains Mono', monospace; font-size: 14px;">1.64</td>
         </tr>
         
         <tr>
-            <td style="font-weight: 600;"><span class="badge badge-purple">>= 70%</span></td>
-            <td style="text-align: right; font-family: monospace;">5</td>
-            <td style="text-align: right; font-weight: 700; color: #3fb950;">80.0%</td>
-            <td style="text-align: right; color: #58a6ff;">+17.02%</td>
-            <td style="text-align: right; font-weight: 700; color: #ffd54f;">9.55</td>
-        </tr>
-        
-                </tbody>
-            </table>
-        </div>
-
-        <!-- Table 2: 7 大赛道样本外预测表现归因表 -->
-        <div class="section-card">
-            <div class="section-header">
-                <h3>🏆 表 2: 7 大核心高弹性赛道样本外预测表现归因表 (7 Sectors OOS Attribution Table)</h3>
-                <span class="sub">按赛道高置信信号胜率排序 · 科学归因哪个赛道 AI 预测准度最高</span>
-            </div>
-            <table>
-                <thead>
-                    <tr>
-                        <th style="text-align: center;">#</th>
-                        <th>赛道名称</th>
-                        <th style="text-align: center;">标的数</th>
-                        <th style="text-align: right;">OOS 评估样本</th>
-                        <th style="text-align: right;">高置信信号数 (>=60%)</th>
-                        <th style="text-align: right;">高置信胜率 %</th>
-                        <th style="text-align: right;">平均 5 日最高收益</th>
-                        <th style="text-align: center;">AI Alpha 评级</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    
-        <tr>
-            <td style="text-align: center; color: #8b949e;">1</td>
-            <td style="font-weight: 600;">数据中心能源电力 <span style="font-size: 11px; color: #8b949e;">(Energy_Power)</span></td>
-            <td style="text-align: center;"><span class="badge badge-blue">3</span></td>
-            <td style="text-align: right; font-family: monospace;">2,118</td>
-            <td style="text-align: right; font-family: monospace;">1</td>
-            <td style="text-align: right; font-weight: 700; color: #3fb950;">100.0%</td>
-            <td style="text-align: right; color: #58a6ff;">+84.03%</td>
-            <td style="text-align: center; color: #ffd54f; font-size: 14px;">⭐⭐⭐⭐⭐</td>
-        </tr>
-        
-        <tr>
-            <td style="text-align: center; color: #8b949e;">2</td>
-            <td style="font-weight: 600;">存储芯片 <span style="font-size: 11px; color: #8b949e;">(Memory)</span></td>
-            <td style="text-align: center;"><span class="badge badge-blue">3</span></td>
-            <td style="text-align: right; font-family: monospace;">2,118</td>
-            <td style="text-align: right; font-family: monospace;">3</td>
-            <td style="text-align: right; font-weight: 700; color: #3fb950;">100.0%</td>
-            <td style="text-align: right; color: #58a6ff;">+22.13%</td>
-            <td style="text-align: center; color: #ffd54f; font-size: 14px;">⭐⭐⭐⭐⭐</td>
-        </tr>
-        
-        <tr>
-            <td style="text-align: center; color: #8b949e;">3</td>
-            <td style="font-weight: 600;">Neo-Cloud 算力租赁 <span style="font-size: 11px; color: #8b949e;">(Neo_Cloud)</span></td>
-            <td style="text-align: center;"><span class="badge badge-blue">3</span></td>
-            <td style="text-align: right; font-family: monospace;">1,606</td>
-            <td style="text-align: right; font-family: monospace;">4</td>
-            <td style="text-align: right; font-weight: 700; color: #3fb950;">100.0%</td>
-            <td style="text-align: right; color: #58a6ff;">+25.67%</td>
-            <td style="text-align: center; color: #ffd54f; font-size: 14px;">⭐⭐⭐⭐⭐</td>
-        </tr>
-        
-        <tr>
-            <td style="text-align: center; color: #8b949e;">4</td>
-            <td style="font-weight: 600;">光通信与互联 <span style="font-size: 11px; color: #8b949e;">(Optical_Interconnect)</span></td>
-            <td style="text-align: center;"><span class="badge badge-blue">5</span></td>
-            <td style="text-align: right; font-family: monospace;">3,530</td>
-            <td style="text-align: right; font-family: monospace;">14</td>
-            <td style="text-align: right; font-weight: 700; color: #3fb950;">71.4%</td>
-            <td style="text-align: right; color: #58a6ff;">+19.58%</td>
-            <td style="text-align: center; color: #ffd54f; font-size: 14px;">⭐⭐⭐⭐⭐</td>
-        </tr>
-        
-        <tr>
-            <td style="text-align: center; color: #8b949e;">5</td>
-            <td style="font-weight: 600;">加密币股代理 <span style="font-size: 11px; color: #8b949e;">(Crypto_Proxy)</span></td>
-            <td style="text-align: center;"><span class="badge badge-blue">4</span></td>
-            <td style="text-align: right; font-family: monospace;">2,817</td>
-            <td style="text-align: right; font-family: monospace;">11</td>
-            <td style="text-align: right; font-weight: 700; color: #3fb950;">63.6%</td>
-            <td style="text-align: right; color: #58a6ff;">+14.97%</td>
-            <td style="text-align: center; color: #ffd54f; font-size: 14px;">⭐⭐⭐⭐☆</td>
-        </tr>
-        
-        <tr>
-            <td style="text-align: center; color: #8b949e;">6</td>
-            <td style="font-weight: 600;">半导体与设备 <span style="font-size: 11px; color: #8b949e;">(Semiconductors)</span></td>
-            <td style="text-align: center;"><span class="badge badge-blue">6</span></td>
-            <td style="text-align: right; font-family: monospace;">4,236</td>
-            <td style="text-align: right; font-family: monospace;">5</td>
-            <td style="text-align: right; font-weight: 700; color: #3fb950;">60.0%</td>
-            <td style="text-align: right; color: #58a6ff;">+9.80%</td>
-            <td style="text-align: center; color: #ffd54f; font-size: 14px;">⭐⭐⭐☆☆</td>
-        </tr>
-        
-        <tr>
-            <td style="text-align: center; color: #8b949e;">7</td>
-            <td style="font-weight: 600;">企业软件与 AI SaaS <span style="font-size: 11px; color: #8b949e;">(Enterprise_SaaS)</span></td>
-            <td style="text-align: center;"><span class="badge badge-blue">4</span></td>
-            <td style="text-align: right; font-family: monospace;">2,824</td>
-            <td style="text-align: right; font-family: monospace;">11</td>
-            <td style="text-align: right; font-weight: 700; color: #3fb950;">18.2%</td>
-            <td style="text-align: right; color: #58a6ff;">+8.43%</td>
-            <td style="text-align: center; color: #ffd54f; font-size: 14px;">⭐☆☆☆☆</td>
+            <td style="font-weight: 700;"><span class="badge badge-purple">>= 70%</span></td>
+            <td style="text-align: right; font-family: 'JetBrains Mono', monospace; font-weight: 600;">586</td>
+            <td style="text-align: right;">
+                <div style="display: flex; align-items: center; justify-content: flex-end; gap: 10px;">
+                    <div>
+                        <span style="font-weight: 800; color: #3fb950; font-size: 14px;">58.9%</span>
+                        <span style="font-size: 11px; color: #8b949e; margin-left: 3px;" title="5日内触及动态止盈上轨比率">(触轨 45.9%)</span>
+                    </div>
+                    <div class="dual-bar-track" title="外层绿条: 正收益胜率 58.9% | 内层青条: 触轨止盈率 45.9%">
+                        <div class="dual-bar-pos" style="width: 58.9%;"></div>
+                        <div class="dual-bar-touch" style="width: 45.9%;"></div>
+                    </div>
+                </div>
+            </td>
+            <td style="text-align: right; color: #3fb950; font-family: 'JetBrains Mono', monospace; font-weight: 700;">+1.91%</td>
+            <td style="text-align: right; font-weight: 700; color: #58a6ff; font-family: 'JetBrains Mono', monospace;">1.40</td>
+            <td style="text-align: right; font-weight: 800; color: #3fb950; font-family: 'JetBrains Mono', monospace; font-size: 14px;">2.00</td>
         </tr>
         
                 </tbody>
@@ -775,7 +2063,7 @@
         <div class="section-card">
             <div class="section-header">
                 <h3>📈 表 3: LightGBM 特征重要度 (Feature Importance Gain) Top 15 排行榜</h3>
-                <span class="sub">基于增益 (Gain) 的非线性特征贡献排序 · 兼顾个股量价、跨资产 Alpha 与宏观气象</span>
+                <span class="sub">横截面分位数排名 + 连续超额收益复合因子 · 抑制宏观特征分裂垄断，提升个股微观结构权重</span>
             </div>
             <table>
                 <thead>
@@ -792,242 +2080,242 @@
                     
         <tr>
             <td style="text-align: center; color: #8b949e; font-weight: 700;">1</td>
-            <td style="font-weight: 600; font-family: monospace; color: #f0f6fc;">QQQM_Bias_MA50</td>
+            <td style="font-weight: 700; font-family: 'JetBrains Mono', monospace; color: #f0f6fc;">SMH_IGV_Ratio_Bias</td>
             <td style="text-align: center;"><span class="badge badge-gold">宏观气象</span></td>
-            <td style="text-align: right; font-family: monospace; color: #c9d1d9;">14,456.3</td>
+            <td style="text-align: right; font-family: 'JetBrains Mono', monospace; color: #c9d1d9;">11,583.7</td>
             <td style="text-align: right;">
                 <div style="display: flex; align-items: center; justify-content: flex-end; gap: 8px;">
-                    <span style="font-weight: 600; color: #bc8cff;">20.9%</span>
-                    <div style="width: 50px; height: 6px; background: rgba(255,255,255,0.1); border-radius: 3px; overflow: hidden;">
-                        <div style="width: 100.0%; height: 100%; background: #bc8cff;"></div>
+                    <span style="font-weight: 700; color: #bc8cff; font-family: 'JetBrains Mono', monospace;">12.3%</span>
+                    <div style="width: 56px; height: 6px; background: rgba(255,255,255,0.08); border-radius: 3px; overflow: hidden;">
+                        <div style="width: 55.26%; height: 100%; background: linear-gradient(90deg, #8957e5, #bc8cff);"></div>
                     </div>
                 </div>
             </td>
-            <td style="font-size: 13px; color: #8b949e; line-height: 1.4;">纳指100大盘50日均线乖离，系统性科技Beta环境水温计</td>
+            <td style="font-size: 12.5px; color: #8b949e; line-height: 1.45;">硬件(SMH)与软件(IGV)风格轮动比值乖离，捕捉资金在AI算力与SaaS间的风格切换</td>
         </tr>
         
         <tr>
             <td style="text-align: center; color: #8b949e; font-weight: 700;">2</td>
-            <td style="font-weight: 600; font-family: monospace; color: #f0f6fc;">SMH_IGV_Ratio_Bias</td>
+            <td style="font-weight: 700; font-family: 'JetBrains Mono', monospace; color: #f0f6fc;">VIXY_Pos_60</td>
             <td style="text-align: center;"><span class="badge badge-gold">宏观气象</span></td>
-            <td style="text-align: right; font-family: monospace; color: #c9d1d9;">12,450.2</td>
+            <td style="text-align: right; font-family: 'JetBrains Mono', monospace; color: #c9d1d9;">10,940.5</td>
             <td style="text-align: right;">
                 <div style="display: flex; align-items: center; justify-content: flex-end; gap: 8px;">
-                    <span style="font-weight: 600; color: #bc8cff;">18.0%</span>
-                    <div style="width: 50px; height: 6px; background: rgba(255,255,255,0.1); border-radius: 3px; overflow: hidden;">
-                        <div style="width: 89.9%; height: 100%; background: #bc8cff;"></div>
+                    <span style="font-weight: 700; color: #bc8cff; font-family: 'JetBrains Mono', monospace;">11.6%</span>
+                    <div style="width: 56px; height: 6px; background: rgba(255,255,255,0.08); border-radius: 3px; overflow: hidden;">
+                        <div style="width: 52.199999999999996%; height: 100%; background: linear-gradient(90deg, #8957e5, #bc8cff);"></div>
                     </div>
                 </div>
             </td>
-            <td style="font-size: 13px; color: #8b949e; line-height: 1.4;">硬件(SMH)与软件(IGV)风格轮动比值乖离，捕捉资金在AI算力与SaaS间的风格切换</td>
+            <td style="font-size: 12.5px; color: #8b949e; line-height: 1.45;">60日恐慌指数脉冲分位数，量化全市场风险偏好处于贪婪或极度恐慌底部</td>
         </tr>
         
         <tr>
             <td style="text-align: center; color: #8b949e; font-weight: 700;">3</td>
-            <td style="font-weight: 600; font-family: monospace; color: #f0f6fc;">ATR_Pct</td>
-            <td style="text-align: center;"><span class="badge badge-blue">个股量价与结构</span></td>
-            <td style="text-align: right; font-family: monospace; color: #c9d1d9;">5,789.1</td>
+            <td style="font-weight: 700; font-family: 'JetBrains Mono', monospace; color: #f0f6fc;">TLT_Bias_MA50</td>
+            <td style="text-align: center;"><span class="badge badge-gold">宏观气象</span></td>
+            <td style="text-align: right; font-family: 'JetBrains Mono', monospace; color: #c9d1d9;">10,914.3</td>
             <td style="text-align: right;">
                 <div style="display: flex; align-items: center; justify-content: flex-end; gap: 8px;">
-                    <span style="font-weight: 600; color: #bc8cff;">8.4%</span>
-                    <div style="width: 50px; height: 6px; background: rgba(255,255,255,0.1); border-radius: 3px; overflow: hidden;">
-                        <div style="width: 41.8%; height: 100%; background: #bc8cff;"></div>
+                    <span style="font-weight: 700; color: #bc8cff; font-family: 'JetBrains Mono', monospace;">11.6%</span>
+                    <div style="width: 56px; height: 6px; background: rgba(255,255,255,0.08); border-radius: 3px; overflow: hidden;">
+                        <div style="width: 52.065%; height: 100%; background: linear-gradient(90deg, #8957e5, #bc8cff);"></div>
                     </div>
                 </div>
             </td>
-            <td style="font-size: 13px; color: #8b949e; line-height: 1.4;">日线真实波动率占比，自适应动态调节止盈止损宽窄度与风险敞口</td>
+            <td style="font-size: 12.5px; color: #8b949e; line-height: 1.45;">20年+美债利率趋势偏离，映射宏观流动性宽松与贴现率预期对估值的压制</td>
         </tr>
         
         <tr>
             <td style="text-align: center; color: #8b949e; font-weight: 700;">4</td>
-            <td style="font-weight: 600; font-family: monospace; color: #f0f6fc;">Bias_SMA200</td>
-            <td style="text-align: center;"><span class="badge badge-blue">个股量价与结构</span></td>
-            <td style="text-align: right; font-family: monospace; color: #c9d1d9;">4,809.6</td>
+            <td style="font-weight: 700; font-family: 'JetBrains Mono', monospace; color: #f0f6fc;">VIXY_Bias_MA20</td>
+            <td style="text-align: center;"><span class="badge badge-gold">宏观气象</span></td>
+            <td style="text-align: right; font-family: 'JetBrains Mono', monospace; color: #c9d1d9;">9,725.3</td>
             <td style="text-align: right;">
                 <div style="display: flex; align-items: center; justify-content: flex-end; gap: 8px;">
-                    <span style="font-weight: 600; color: #bc8cff;">6.9%</span>
-                    <div style="width: 50px; height: 6px; background: rgba(255,255,255,0.1); border-radius: 3px; overflow: hidden;">
-                        <div style="width: 34.7%; height: 100%; background: #bc8cff;"></div>
+                    <span style="font-weight: 700; color: #bc8cff; font-family: 'JetBrains Mono', monospace;">10.3%</span>
+                    <div style="width: 56px; height: 6px; background: rgba(255,255,255,0.08); border-radius: 3px; overflow: hidden;">
+                        <div style="width: 46.395%; height: 100%; background: linear-gradient(90deg, #8957e5, #bc8cff);"></div>
                     </div>
                 </div>
             </td>
-            <td style="font-size: 13px; color: #8b949e; line-height: 1.4;">200日牛熊生命线偏离度，标定长期估值偏离与大周期均值回归动量</td>
+            <td style="font-size: 12.5px; color: #8b949e; line-height: 1.45;">恐慌指数20日均线乖离，预警全市场流动性冲击与系统性踩踏</td>
         </tr>
         
         <tr>
             <td style="text-align: center; color: #8b949e; font-weight: 700;">5</td>
-            <td style="font-weight: 600; font-family: monospace; color: #f0f6fc;">Ret_10d</td>
-            <td style="text-align: center;"><span class="badge badge-blue">个股量价与结构</span></td>
-            <td style="text-align: right; font-family: monospace; color: #c9d1d9;">3,093.8</td>
+            <td style="font-weight: 700; font-family: 'JetBrains Mono', monospace; color: #f0f6fc;">SMH_Bias_MA50</td>
+            <td style="text-align: center;"><span class="badge badge-gold">宏观气象</span></td>
+            <td style="text-align: right; font-family: 'JetBrains Mono', monospace; color: #c9d1d9;">9,437.4</td>
             <td style="text-align: right;">
                 <div style="display: flex; align-items: center; justify-content: flex-end; gap: 8px;">
-                    <span style="font-weight: 600; color: #bc8cff;">4.5%</span>
-                    <div style="width: 50px; height: 6px; background: rgba(255,255,255,0.1); border-radius: 3px; overflow: hidden;">
-                        <div style="width: 22.349999999999998%; height: 100%; background: #bc8cff;"></div>
+                    <span style="font-weight: 700; color: #bc8cff; font-family: 'JetBrains Mono', monospace;">10.0%</span>
+                    <div style="width: 56px; height: 6px; background: rgba(255,255,255,0.08); border-radius: 3px; overflow: hidden;">
+                        <div style="width: 45.045%; height: 100%; background: linear-gradient(90deg, #8957e5, #bc8cff);"></div>
                     </div>
                 </div>
             </td>
-            <td style="font-size: 13px; color: #8b949e; line-height: 1.4;">10日波段动量斜率，捕捉右侧突破与短中期趋势延续性</td>
+            <td style="font-size: 12.5px; color: #8b949e; line-height: 1.45;">核心半导体硬件链50日均线状态，标定科技成长风格的系统性风险水位</td>
         </tr>
         
         <tr>
             <td style="text-align: center; color: #8b949e; font-weight: 700;">6</td>
-            <td style="font-weight: 600; font-family: monospace; color: #f0f6fc;">Ret_20d</td>
-            <td style="text-align: center;"><span class="badge badge-blue">个股量价与结构</span></td>
-            <td style="text-align: right; font-family: monospace; color: #c9d1d9;">2,963.8</td>
+            <td style="font-weight: 700; font-family: 'JetBrains Mono', monospace; color: #f0f6fc;">QQQM_Bias_MA50</td>
+            <td style="text-align: center;"><span class="badge badge-gold">宏观气象</span></td>
+            <td style="text-align: right; font-family: 'JetBrains Mono', monospace; color: #c9d1d9;">8,546.4</td>
             <td style="text-align: right;">
                 <div style="display: flex; align-items: center; justify-content: flex-end; gap: 8px;">
-                    <span style="font-weight: 600; color: #bc8cff;">4.3%</span>
-                    <div style="width: 50px; height: 6px; background: rgba(255,255,255,0.1); border-radius: 3px; overflow: hidden;">
-                        <div style="width: 21.400000000000002%; height: 100%; background: #bc8cff;"></div>
+                    <span style="font-weight: 700; color: #bc8cff; font-family: 'JetBrains Mono', monospace;">9.1%</span>
+                    <div style="width: 56px; height: 6px; background: rgba(255,255,255,0.08); border-radius: 3px; overflow: hidden;">
+                        <div style="width: 40.77%; height: 100%; background: linear-gradient(90deg, #8957e5, #bc8cff);"></div>
                     </div>
                 </div>
             </td>
-            <td style="font-size: 13px; color: #8b949e; line-height: 1.4;">20日(单月)累计动量，验证机构资金中期建仓方向与趋势共振</td>
+            <td style="font-size: 12.5px; color: #8b949e; line-height: 1.45;">纳指100大盘50日均线乖离，系统性科技Beta环境水温计</td>
         </tr>
         
         <tr>
             <td style="text-align: center; color: #8b949e; font-weight: 700;">7</td>
-            <td style="font-weight: 600; font-family: monospace; color: #f0f6fc;">Vol_Ratio_20</td>
+            <td style="font-weight: 700; font-family: 'JetBrains Mono', monospace; color: #f0f6fc;">ATR_Pct</td>
             <td style="text-align: center;"><span class="badge badge-blue">个股量价与结构</span></td>
-            <td style="text-align: right; font-family: monospace; color: #c9d1d9;">2,752.6</td>
+            <td style="text-align: right; font-family: 'JetBrains Mono', monospace; color: #c9d1d9;">4,176.7</td>
             <td style="text-align: right;">
                 <div style="display: flex; align-items: center; justify-content: flex-end; gap: 8px;">
-                    <span style="font-weight: 600; color: #bc8cff;">4.0%</span>
-                    <div style="width: 50px; height: 6px; background: rgba(255,255,255,0.1); border-radius: 3px; overflow: hidden;">
-                        <div style="width: 19.85%; height: 100%; background: #bc8cff;"></div>
+                    <span style="font-weight: 700; color: #bc8cff; font-family: 'JetBrains Mono', monospace;">4.4%</span>
+                    <div style="width: 56px; height: 6px; background: rgba(255,255,255,0.08); border-radius: 3px; overflow: hidden;">
+                        <div style="width: 19.935%; height: 100%; background: linear-gradient(90deg, #8957e5, #bc8cff);"></div>
                     </div>
                 </div>
             </td>
-            <td style="font-size: 13px; color: #8b949e; line-height: 1.4;">20日均量放大倍数，甄别机构放量突破主升与缩量虚高诱多</td>
+            <td style="font-size: 12.5px; color: #8b949e; line-height: 1.45;">日线真实波动率占比，自适应动态调节止盈止损宽窄度与风险敞口</td>
         </tr>
         
         <tr>
             <td style="text-align: center; color: #8b949e; font-weight: 700;">8</td>
-            <td style="font-weight: 600; font-family: monospace; color: #f0f6fc;">Fib_Pos_60</td>
+            <td style="font-weight: 700; font-family: 'JetBrains Mono', monospace; color: #f0f6fc;">Bias_SMA200</td>
             <td style="text-align: center;"><span class="badge badge-blue">个股量价与结构</span></td>
-            <td style="text-align: right; font-family: monospace; color: #c9d1d9;">2,747.4</td>
+            <td style="text-align: right; font-family: 'JetBrains Mono', monospace; color: #c9d1d9;">3,895.2</td>
             <td style="text-align: right;">
                 <div style="display: flex; align-items: center; justify-content: flex-end; gap: 8px;">
-                    <span style="font-weight: 600; color: #bc8cff;">4.0%</span>
-                    <div style="width: 50px; height: 6px; background: rgba(255,255,255,0.1); border-radius: 3px; overflow: hidden;">
-                        <div style="width: 19.85%; height: 100%; background: #bc8cff;"></div>
+                    <span style="font-weight: 700; color: #bc8cff; font-family: 'JetBrains Mono', monospace;">4.1%</span>
+                    <div style="width: 56px; height: 6px; background: rgba(255,255,255,0.08); border-radius: 3px; overflow: hidden;">
+                        <div style="width: 18.585%; height: 100%; background: linear-gradient(90deg, #8957e5, #bc8cff);"></div>
                     </div>
                 </div>
             </td>
-            <td style="font-size: 13px; color: #8b949e; line-height: 1.4;">60日滚动斐波那契黄金坑位置，精准定位底部反弹吸筹与顶部阻力</td>
+            <td style="font-size: 12.5px; color: #8b949e; line-height: 1.45;">200日牛熊生命线偏离度，标定长期估值偏离与大周期均值回归动量</td>
         </tr>
         
         <tr>
             <td style="text-align: center; color: #8b949e; font-weight: 700;">9</td>
-            <td style="font-weight: 600; font-family: monospace; color: #f0f6fc;">EMA10_20_Spread</td>
+            <td style="font-weight: 700; font-family: 'JetBrains Mono', monospace; color: #f0f6fc;">Ret_3d</td>
             <td style="text-align: center;"><span class="badge badge-blue">个股量价与结构</span></td>
-            <td style="text-align: right; font-family: monospace; color: #c9d1d9;">2,385.8</td>
+            <td style="text-align: right; font-family: 'JetBrains Mono', monospace; color: #c9d1d9;">2,308.7</td>
             <td style="text-align: right;">
                 <div style="display: flex; align-items: center; justify-content: flex-end; gap: 8px;">
-                    <span style="font-weight: 600; color: #bc8cff;">3.4%</span>
-                    <div style="width: 50px; height: 6px; background: rgba(255,255,255,0.1); border-radius: 3px; overflow: hidden;">
-                        <div style="width: 17.2%; height: 100%; background: #bc8cff;"></div>
+                    <span style="font-weight: 700; color: #bc8cff; font-family: 'JetBrains Mono', monospace;">2.5%</span>
+                    <div style="width: 56px; height: 6px; background: rgba(255,255,255,0.08); border-radius: 3px; overflow: hidden;">
+                        <div style="width: 11.025%; height: 100%; background: linear-gradient(90deg, #8957e5, #bc8cff);"></div>
                     </div>
                 </div>
             </td>
-            <td style="font-size: 13px; color: #8b949e; line-height: 1.4;">双指数均线发散率，刻画主升浪初期均线多头排列爆发速度</td>
+            <td style="font-size: 12.5px; color: #8b949e; line-height: 1.45;">3日超短线冲刺速度，识别右侧波段启动瞬间的点火动量</td>
         </tr>
         
         <tr>
             <td style="text-align: center; color: #8b949e; font-weight: 700;">10</td>
-            <td style="font-weight: 600; font-family: monospace; color: #f0f6fc;">Ret_3d</td>
+            <td style="font-weight: 700; font-family: 'JetBrains Mono', monospace; color: #f0f6fc;">Ret_10d</td>
             <td style="text-align: center;"><span class="badge badge-blue">个股量价与结构</span></td>
-            <td style="text-align: right; font-family: monospace; color: #c9d1d9;">2,247.4</td>
+            <td style="text-align: right; font-family: 'JetBrains Mono', monospace; color: #c9d1d9;">2,259.7</td>
             <td style="text-align: right;">
                 <div style="display: flex; align-items: center; justify-content: flex-end; gap: 8px;">
-                    <span style="font-weight: 600; color: #bc8cff;">3.2%</span>
-                    <div style="width: 50px; height: 6px; background: rgba(255,255,255,0.1); border-radius: 3px; overflow: hidden;">
-                        <div style="width: 16.25%; height: 100%; background: #bc8cff;"></div>
+                    <span style="font-weight: 700; color: #bc8cff; font-family: 'JetBrains Mono', monospace;">2.4%</span>
+                    <div style="width: 56px; height: 6px; background: rgba(255,255,255,0.08); border-radius: 3px; overflow: hidden;">
+                        <div style="width: 10.799999999999999%; height: 100%; background: linear-gradient(90deg, #8957e5, #bc8cff);"></div>
                     </div>
                 </div>
             </td>
-            <td style="font-size: 13px; color: #8b949e; line-height: 1.4;">3日超短线冲刺速度，识别右侧波段启动瞬间的点火动量</td>
+            <td style="font-size: 12.5px; color: #8b949e; line-height: 1.45;">10日波段动量斜率，捕捉右侧突破与短中期趋势延续性</td>
         </tr>
         
         <tr>
             <td style="text-align: center; color: #8b949e; font-weight: 700;">11</td>
-            <td style="font-weight: 600; font-family: monospace; color: #f0f6fc;">Bias_MA50</td>
+            <td style="font-weight: 700; font-family: 'JetBrains Mono', monospace; color: #f0f6fc;">Ret_20d</td>
             <td style="text-align: center;"><span class="badge badge-blue">个股量价与结构</span></td>
-            <td style="text-align: right; font-family: monospace; color: #c9d1d9;">2,237.6</td>
+            <td style="text-align: right; font-family: 'JetBrains Mono', monospace; color: #c9d1d9;">1,991.1</td>
             <td style="text-align: right;">
                 <div style="display: flex; align-items: center; justify-content: flex-end; gap: 8px;">
-                    <span style="font-weight: 600; color: #bc8cff;">3.2%</span>
-                    <div style="width: 50px; height: 6px; background: rgba(255,255,255,0.1); border-radius: 3px; overflow: hidden;">
-                        <div style="width: 16.15%; height: 100%; background: #bc8cff;"></div>
+                    <span style="font-weight: 700; color: #bc8cff; font-family: 'JetBrains Mono', monospace;">2.1%</span>
+                    <div style="width: 56px; height: 6px; background: rgba(255,255,255,0.08); border-radius: 3px; overflow: hidden;">
+                        <div style="width: 9.495%; height: 100%; background: linear-gradient(90deg, #8957e5, #bc8cff);"></div>
                     </div>
                 </div>
             </td>
-            <td style="font-size: 13px; color: #8b949e; line-height: 1.4;">中期持仓成本偏离度，衡量波段回踩50日线的支撑强度</td>
+            <td style="font-size: 12.5px; color: #8b949e; line-height: 1.45;">20日(单月)累计动量，验证机构资金中期建仓方向与趋势共振</td>
         </tr>
         
         <tr>
             <td style="text-align: center; color: #8b949e; font-weight: 700;">12</td>
-            <td style="font-weight: 600; font-family: monospace; color: #f0f6fc;">Alpha_QQQM_5d</td>
-            <td style="text-align: center;"><span class="badge badge-purple">跨资产 Alpha</span></td>
-            <td style="text-align: right; font-family: monospace; color: #c9d1d9;">2,126.6</td>
+            <td style="font-weight: 700; font-family: 'JetBrains Mono', monospace; color: #f0f6fc;">Ret_1d</td>
+            <td style="text-align: center;"><span class="badge badge-blue">个股量价与结构</span></td>
+            <td style="text-align: right; font-family: 'JetBrains Mono', monospace; color: #c9d1d9;">1,972.1</td>
             <td style="text-align: right;">
                 <div style="display: flex; align-items: center; justify-content: flex-end; gap: 8px;">
-                    <span style="font-weight: 600; color: #bc8cff;">3.1%</span>
-                    <div style="width: 50px; height: 6px; background: rgba(255,255,255,0.1); border-radius: 3px; overflow: hidden;">
-                        <div style="width: 15.35%; height: 100%; background: #bc8cff;"></div>
+                    <span style="font-weight: 700; color: #bc8cff; font-family: 'JetBrains Mono', monospace;">2.1%</span>
+                    <div style="width: 56px; height: 6px; background: rgba(255,255,255,0.08); border-radius: 3px; overflow: hidden;">
+                        <div style="width: 9.405%; height: 100%; background: linear-gradient(90deg, #8957e5, #bc8cff);"></div>
                     </div>
                 </div>
             </td>
-            <td style="font-size: 13px; color: #8b949e; line-height: 1.4;">相比纳指100的5日超额Alpha，筛选跑赢科技大盘的领涨龙头标的</td>
+            <td style="font-size: 12.5px; color: #8b949e; line-height: 1.45;">单日动量冲击，刻画最新交易日多空博弈结果与跳空缺口</td>
         </tr>
         
         <tr>
             <td style="text-align: center; color: #8b949e; font-weight: 700;">13</td>
-            <td style="font-weight: 600; font-family: monospace; color: #f0f6fc;">Ret_5d</td>
+            <td style="font-weight: 700; font-family: 'JetBrains Mono', monospace; color: #f0f6fc;">EMA10_20_Spread</td>
             <td style="text-align: center;"><span class="badge badge-blue">个股量价与结构</span></td>
-            <td style="text-align: right; font-family: monospace; color: #c9d1d9;">1,940.4</td>
+            <td style="text-align: right; font-family: 'JetBrains Mono', monospace; color: #c9d1d9;">1,814.9</td>
             <td style="text-align: right;">
                 <div style="display: flex; align-items: center; justify-content: flex-end; gap: 8px;">
-                    <span style="font-weight: 600; color: #bc8cff;">2.8%</span>
-                    <div style="width: 50px; height: 6px; background: rgba(255,255,255,0.1); border-radius: 3px; overflow: hidden;">
-                        <div style="width: 14.0%; height: 100%; background: #bc8cff;"></div>
+                    <span style="font-weight: 700; color: #bc8cff; font-family: 'JetBrains Mono', monospace;">1.9%</span>
+                    <div style="width: 56px; height: 6px; background: rgba(255,255,255,0.08); border-radius: 3px; overflow: hidden;">
+                        <div style="width: 8.64%; height: 100%; background: linear-gradient(90deg, #8957e5, #bc8cff);"></div>
                     </div>
                 </div>
             </td>
-            <td style="font-size: 13px; color: #8b949e; line-height: 1.4;">5日周线级别收益率，捕捉多头波段脉冲与右侧买入窗口</td>
+            <td style="font-size: 12.5px; color: #8b949e; line-height: 1.45;">双指数均线发散率，刻画主升浪初期均线多头排列爆发速度</td>
         </tr>
         
         <tr>
             <td style="text-align: center; color: #8b949e; font-weight: 700;">14</td>
-            <td style="font-weight: 600; font-family: monospace; color: #f0f6fc;">Bar_Strength</td>
+            <td style="font-weight: 700; font-family: 'JetBrains Mono', monospace; color: #f0f6fc;">RSI_Slope_3d</td>
             <td style="text-align: center;"><span class="badge badge-blue">个股量价与结构</span></td>
-            <td style="text-align: right; font-family: monospace; color: #c9d1d9;">1,887.0</td>
+            <td style="text-align: right; font-family: 'JetBrains Mono', monospace; color: #c9d1d9;">1,749.5</td>
             <td style="text-align: right;">
                 <div style="display: flex; align-items: center; justify-content: flex-end; gap: 8px;">
-                    <span style="font-weight: 600; color: #bc8cff;">2.7%</span>
-                    <div style="width: 50px; height: 6px; background: rgba(255,255,255,0.1); border-radius: 3px; overflow: hidden;">
-                        <div style="width: 13.600000000000001%; height: 100%; background: #bc8cff;"></div>
+                    <span style="font-weight: 700; color: #bc8cff; font-family: 'JetBrains Mono', monospace;">1.9%</span>
+                    <div style="width: 56px; height: 6px; background: rgba(255,255,255,0.08); border-radius: 3px; overflow: hidden;">
+                        <div style="width: 8.325000000000001%; height: 100%; background: linear-gradient(90deg, #8957e5, #bc8cff);"></div>
                     </div>
                 </div>
             </td>
-            <td style="font-size: 13px; color: #8b949e; line-height: 1.4;">日内K线实体收盘强弱分位，量化尾盘多头护盘意愿与资金承接力</td>
+            <td style="font-size: 12.5px; color: #8b949e; line-height: 1.45;">3日RSI斜率加速度，探测动能指标边际突变与多头拐点</td>
         </tr>
         
         <tr>
             <td style="text-align: center; color: #8b949e; font-weight: 700;">15</td>
-            <td style="font-weight: 600; font-family: monospace; color: #f0f6fc;">RSI_Slope_3d</td>
+            <td style="font-weight: 700; font-family: 'JetBrains Mono', monospace; color: #f0f6fc;">Bias_MA50</td>
             <td style="text-align: center;"><span class="badge badge-blue">个股量价与结构</span></td>
-            <td style="text-align: right; font-family: monospace; color: #c9d1d9;">1,882.8</td>
+            <td style="text-align: right; font-family: 'JetBrains Mono', monospace; color: #c9d1d9;">1,740.2</td>
             <td style="text-align: right;">
                 <div style="display: flex; align-items: center; justify-content: flex-end; gap: 8px;">
-                    <span style="font-weight: 600; color: #bc8cff;">2.7%</span>
-                    <div style="width: 50px; height: 6px; background: rgba(255,255,255,0.1); border-radius: 3px; overflow: hidden;">
-                        <div style="width: 13.600000000000001%; height: 100%; background: #bc8cff;"></div>
+                    <span style="font-weight: 700; color: #bc8cff; font-family: 'JetBrains Mono', monospace;">1.9%</span>
+                    <div style="width: 56px; height: 6px; background: rgba(255,255,255,0.08); border-radius: 3px; overflow: hidden;">
+                        <div style="width: 8.325000000000001%; height: 100%; background: linear-gradient(90deg, #8957e5, #bc8cff);"></div>
                     </div>
                 </div>
             </td>
-            <td style="font-size: 13px; color: #8b949e; line-height: 1.4;">3日RSI斜率加速度，探测动能指标边际突变与多头拐点</td>
+            <td style="font-size: 12.5px; color: #8b949e; line-height: 1.45;">中期持仓成本偏离度，衡量波段回踩50日线的支撑强度</td>
         </tr>
         
                 </tbody>
@@ -1036,10 +2324,79 @@
 
         <!-- Footer -->
         <footer class="footer">
-            <p>架构规范: 微软 Qlib 滚动时序长表截面 [Date, Ticker, Sector] | 模型: LightGBM 正则化弱分类器 (max_depth=5, num_leaves=23, lr=0.03, subsample=0.8)</p>
-            <p>时序验证: 2024~2026 Expanding Walk-Forward + 强制 5 日 Purge 隔离带 | 打标引擎: 三阈值动态止盈止损 (`NEXT_OPEN` 入场, 动态 ATR 轨)</p>
-            <p style="margin-top: 8px; color: #484f58;">us-market-radar AI Multi-Sector 5Y Predictor Engine V3.2 · Quantitative Analytics System</p>
+            <p>架构规范: 微软 Qlib 滚动时序长表截面 [Date, Ticker, Sector] | 模型: LightGBM 正则化分类器 (max_depth=5, num_leaves=23, colsample=0.65, max_bin=63)</p>
+            <p>时序验证: 2024~2026 Expanding Walk-Forward + 5 日 Purge 隔离 | 实盘推理: Full-Sample Refit (截至 T-5 已结算样本) + 赛道 PF 先验校准</p>
+            <p style="margin-top: 8px; color: #484f58;">us-market-radar AI Multi-Sector 5Y Predictor Engine V1.3 · Institutional Quantitative Suite</p>
         </footer>
     </div>
+
+    <script>
+        let showFullPool = false;
+        let currentSector = 'ALL';
+
+        function toggleT4PoolMode() {
+            showFullPool = !showFullPool;
+            const btn = document.getElementById('t4-mode-btn');
+            const title = document.getElementById('t4-title');
+            if (showFullPool) {
+                btn.textContent = '🏆 仅看 Top 10 精选榜';
+                title.textContent = '🎯 表 4: 最新交易日 AI 预测做多胜率全景榜 (全池 28 股 Live Inference)';
+            } else {
+                btn.textContent = '🌐 展开全池 28 股全景';
+                title.textContent = '🎯 表 4: 最新交易日 AI 预测做多胜率排行榜 Top 10 (Live Inference Pool)';
+            }
+            applyT4Filters();
+        }
+
+        function filterBySector(sectorName) {
+            currentSector = sectorName;
+            if (sectorName !== 'ALL' && !showFullPool) {
+                // 筛选特定赛道时自动展开全池以便查看该赛道全部标的
+                showFullPool = true;
+                const btn = document.getElementById('t4-mode-btn');
+                const title = document.getElementById('t4-title');
+                btn.textContent = '🏆 仅看 Top 10 精选榜';
+                title.textContent = '🎯 表 4: 最新交易日 AI 预测做多胜率全景榜 (' + sectorName + ')';
+            }
+            const pills = document.querySelectorAll('#t4-sector-pills .filter-pill');
+            pills.forEach(p => {
+                if (p.getAttribute('data-sec') === sectorName) {
+                    p.classList.add('active');
+                } else {
+                    p.classList.remove('active');
+                }
+            });
+            applyT4Filters();
+        }
+
+        function applyT4Filters() {
+            const query = (document.getElementById('t4-search').value || '').trim().toUpperCase();
+            const rows = document.querySelectorAll('.t4-stock-row');
+            let visibleCount = 0;
+
+            rows.forEach(row => {
+                const rank = parseInt(row.getAttribute('data-rank') || '999', 10);
+                const sec = row.getAttribute('data-sector') || '';
+                const tk = (row.getAttribute('data-ticker') || '').toUpperCase();
+
+                const matchSec = (currentSector === 'ALL') || (sec === currentSector);
+                const matchQuery = (!query) || tk.includes(query) || sec.toUpperCase().includes(query);
+                const matchPool = showFullPool || (query !== '') || (currentSector !== 'ALL') || (rank <= 10);
+
+                if (matchSec && matchQuery && matchPool) {
+                    row.style.display = '';
+                    visibleCount++;
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+
+            const lbl = document.getElementById('t4-count-label');
+            if (lbl) {
+                const modeDesc = (currentSector === 'ALL' && !showFullPool && !query) ? 'Top 10 精选标的' : ('共 ' + visibleCount + ' 只标的');
+                lbl.textContent = '当前展示: ' + modeDesc;
+            }
+        }
+    </script>
 </body>
 </html>
