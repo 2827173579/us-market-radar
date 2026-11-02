@@ -110,16 +110,16 @@
       "last_notified_at": 0.0
     },
     "TSM": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1793641876.0351274
     },
     "MU": {
       "state": "STOP_LOSS",
       "last_notified_at": 1793640620.4991622
     },
     "ASML": {
-      "state": "STOP_LOSS",
-      "last_notified_at": 1793641755.6130774
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "SKHY": {
       "state": "NORMAL",
@@ -206,8 +206,8 @@
       "last_notified_at": 0.0
     },
     "QQQM": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1793641876.0351274
     },
     "SOXX": {
       "state": "NORMAL",
