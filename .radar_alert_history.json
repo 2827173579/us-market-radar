@@ -114,8 +114,8 @@
       "last_notified_at": 0.0
     },
     "MU": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "STOP_LOSS",
+      "last_notified_at": 1793629970.3913522
     },
     "ASML": {
       "state": "NORMAL",
@@ -234,8 +234,8 @@
       "last_notified_at": 0.0
     },
     "PORT_SOXS": {
-      "state": "PORT_NORMAL",
-      "last_notified_at": 0.0
+      "state": "SOXS_HEDGE_CLIMAX",
+      "last_notified_at": 1793629970.3913522
     }
   },
   "position_peaks": {
