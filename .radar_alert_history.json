@@ -126,8 +126,8 @@
       "last_notified_at": 0.0
     },
     "META": {
-      "state": "STOP_LOSS",
-      "last_notified_at": 1793653463.136441
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1793653532.32688
     },
     "LITE": {
       "state": "STOP_LOSS",
@@ -178,8 +178,8 @@
       "last_notified_at": 0.0
     },
     "PLTR": {
-      "state": "STOP_LOSS",
-      "last_notified_at": 1793653411.9061022
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "V": {
       "state": "NORMAL",
