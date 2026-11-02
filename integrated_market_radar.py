@@ -516,19 +516,31 @@ def fetch_finnhub_quotes_batch(tickers, api_key):
     return results
 
 def get_us_market_session():
-    """判断当前美东时间交易时段"""
+    """
+    判断当前美东时间 (America/New_York) 交易时段 (精准对齐美股 24/5 夜盘日历):
+    - 周末休市 (WEEKEND): 周五 20:00 ET 盘后结束 ~ 周日 20:00 ET 夜盘开启前
+      (即 weekday == 4 and hour >= 20.0, 或 weekday == 5 全天, 或 weekday == 6 and hour < 20.0)
+    - 美股夜盘 (OVERNIGHT, Blue Ocean ATS 20:00 ET ~ 次日 04:00 ET):
+      * 周日 20:00 ~ 24:00 ET (对应亚洲周一早盘: 夏令时北京时间 08:00/首尔 09:00 起，冬令时北京时间 09:00/首尔 10:00 起)
+      * 周一至周四 20:00 ~ 24:00 ET 及 周一至周五 00:00 ~ 04:00 ET
+    - 盘前交易 (PRE_MARKET): 周一至周五 04:00 ~ 09:30 ET
+    - 常规盘中 (REGULAR): 周一至周五 09:30 ~ 16:00 ET
+    - 盘后交易 (POST_MARKET): 周一至周五 16:00 ~ 20:00 ET
+    """
     try:
         import zoneinfo
         ny_tz = zoneinfo.ZoneInfo("America/New_York")
     except Exception:
         from datetime import timezone, timedelta
-        ny_tz = timezone(timedelta(hours=-4))
+        ny_tz = timezone(timedelta(hours=-5))
     now_ny = datetime.now(ny_tz)
-    weekday = now_ny.weekday()
+    weekday = now_ny.weekday()  # 0=Mon ... 4=Fri, 5=Sat, 6=Sun
     hour = now_ny.hour + now_ny.minute / 60.0
 
-    if weekday >= 5:
+    if weekday == 5 or (weekday == 4 and hour >= 20.0) or (weekday == 6 and hour < 20.0):
         return "WEEKEND", "☕ 周末休市"
+    elif weekday == 6 and hour >= 20.0:
+        return "OVERNIGHT", "🌌 美股夜盘"
     elif 9.5 <= hour < 16.0:
         return "REGULAR", "🟢 常规盘中"
     elif 4.0 <= hour < 9.5:
@@ -3531,7 +3543,13 @@ def display_terminal_tables(macro_data, stocks_data, weather_info, has_realtime=
 def run_radar_cycle(is_first_run=False, round_idx=1):
     """单轮执行全量标的数据抓取、实时穿透、技术指标重算与三份看板覆盖写入"""
     start_star_api_server()
-    now_str = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    try:
+        import zoneinfo
+        local_tz = zoneinfo.ZoneInfo("Asia/Seoul")
+    except Exception:
+        from datetime import timezone, timedelta
+        local_tz = timezone(timedelta(hours=9))
+    now_str = datetime.now(local_tz).strftime("%Y-%m-%d %H:%M:%S")
 
     # 0. 载入用户自主管理实盘持仓配置 (user_portfolio.json) 并无缝动态合并
     user_portfolio = load_user_portfolio()
@@ -4028,7 +4046,13 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
     
     target_watchlist = load_target_watchlist()
     terminal_notifications = generate_and_sync_notifications(macro_data, stocks_sorted, weather_info, now_str)
-    futu_html = build_futu_terminal_html(stocks_sorted, macro_data, weather_info, update_time_str=now_str, has_realtime=has_realtime, target_watchlist=target_watchlist, user_portfolio=user_portfolio, terminal_notifications=terminal_notifications, session_code=session_code, session_name=session_name)
+    try:
+        import importlib, create_futu_terminal
+        importlib.reload(create_futu_terminal)
+        _build_fn = create_futu_terminal.build_futu_terminal_html
+    except Exception:
+        _build_fn = build_futu_terminal_html
+    futu_html = _build_fn(stocks_sorted, macro_data, weather_info, update_time_str=now_str, has_realtime=has_realtime, target_watchlist=target_watchlist, user_portfolio=user_portfolio, terminal_notifications=terminal_notifications, session_code=session_code, session_name=session_name)
     with open(FUTU_HTML_FILE, "w", encoding="utf-8") as f:
         f.write(futu_html)
     index_html_path = os.path.join(SCRATCH_DIR, "index.html")
