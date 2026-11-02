@@ -169,6 +169,8 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                     if _tables_for_html["table1"] and _tables_for_html["table2"]:
                         _pred_html_path = os.path.join(sc_dir, "predict_radar_5y.html")
                         ml_predictor_5y.render_html_dashboard(_tables_for_html, output_path=_pred_html_path)
+                        import subprocess
+                        subprocess.run(["git", "add", "predict_radar_5y.html", "data_cache/latest_ai_predictions.json"], cwd=sc_dir, check=False, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
                 except Exception as _re:
                     print(f"[!] 同步重绘 predict_radar_5y.html 提示: {_re}")
     except Exception:

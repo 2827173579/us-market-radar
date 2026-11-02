@@ -2667,7 +2667,10 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
         f.write(html_content)
 
     file_size_kb = os.path.getsize(full_output_path) / 1024
-    print(f"[+] ✅ 暗黑买方风格 HTML 可视化看板已成功渲染: {full_output_path} ({file_size_kb:.1f} KB)")
+    try:
+        print(f"[+] Rendered HTML dashboard: {full_output_path} ({file_size_kb:.1f} KB)")
+    except Exception:
+        pass
 
 
 
