@@ -114,16 +114,16 @@
       "last_notified_at": 0.0
     },
     "MU": {
-      "state": "STOP_LOSS",
-      "last_notified_at": 1793631051.4181452
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "ASML": {
       "state": "NORMAL",
       "last_notified_at": 0.0
     },
     "SKHY": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1793632851.9743533
     },
     "META": {
       "state": "NORMAL",
