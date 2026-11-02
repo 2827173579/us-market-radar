@@ -3,7 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="refresh" content="120">
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <script>
+        // ⚡ 客户端智能防缓存自动刷新 (60秒穿透 GitHub Pages / Fastly CDN 10分钟强缓存)
+        setTimeout(function() {
+            try {
+                var cleanPath = window.location.pathname;
+                var searchParams = new URLSearchParams(window.location.search);
+                searchParams.set('_t', Date.now());
+                window.location.replace(cleanPath + '?' + searchParams.toString() + window.location.hash);
+            } catch(e) {
+                window.location.reload();
+            }
+        }, 60000);
+    </script>
     <title>AI 美股 5 年多赛道预测雷达 · 全景战报</title>
     <style>
         :root {
@@ -551,7 +566,7 @@
                     <span class="pulse-dot"></span>
                     <span>yfinance 最新收盘价底模</span>
                 </div>
-                <span style="font-size: 12px; color: var(--text-muted);">同步于: 2026-11-03 00:39:45</span>
+                <span style="font-size: 12px; color: var(--text-muted);">同步于: 2026-11-03 08:35:32</span>
             </div>
         </header>
 

@@ -4180,7 +4180,7 @@ def main():
                     auth_url = f"https://x-access-token:{gh_token}@github.com/2827173579/us-market-radar.git"
                     subprocess.run(["git", "remote", "set-url", "origin", auth_url], check=False, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
                 subprocess.run(
-                    ["git", "add", "index.html", "futu_pro_terminal.html", ".terminal_notifications.json", ".options_cache.json", ".radar_alert_history.json", "macro_radar.html", "stocks_radar.html"],
+                    ["git", "add", "index.html", "futu_pro_terminal.html", "predict_radar_5y.html", "data_cache/latest_ai_predictions.json", ".terminal_notifications.json", ".options_cache.json", ".radar_alert_history.json", "macro_radar.html", "stocks_radar.html"],
                     check=False
                 )
                 subprocess.run(

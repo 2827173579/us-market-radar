@@ -4,7 +4,7 @@
     "profit_factor": 1.41,
     "top_sector": "存储芯片 (⭐⭐⭐⭐⭐)",
     "top_feature": "SMH_IGV_Ratio_Bias (12.28%)",
-    "sync_time": "2026-11-03 00:39:45",
+    "sync_time": "2026-11-03 08:35:32",
     "data_mode": "yfinance 最新收盘价底模",
     "is_realtime": false
   },
@@ -18,6 +18,300 @@
     "smh_igv": -3.93,
     "latest_date": "2026-11-02"
   },
+  "table1": [
+    {
+      "threshold_label": ">= 55%",
+      "threshold_val": 0.55,
+      "trigger_count": 5342,
+      "win_rate_pct": 49.0,
+      "pos_win_rate_pct": 49.0,
+      "touch_win_rate_pct": 39.6,
+      "avg_realized_return_pct": 0.51,
+      "avg_max_gain_pct": 0.51,
+      "win_loss_ratio": 1.28,
+      "profit_factor": 1.23
+    },
+    {
+      "threshold_label": ">= 60%",
+      "threshold_val": 0.6,
+      "trigger_count": 2996,
+      "win_rate_pct": 51.8,
+      "pos_win_rate_pct": 51.8,
+      "touch_win_rate_pct": 41.6,
+      "avg_realized_return_pct": 0.85,
+      "avg_max_gain_pct": 0.85,
+      "win_loss_ratio": 1.31,
+      "profit_factor": 1.41
+    },
+    {
+      "threshold_label": ">= 65%",
+      "threshold_val": 0.65,
+      "trigger_count": 1440,
+      "win_rate_pct": 54.6,
+      "pos_win_rate_pct": 54.6,
+      "touch_win_rate_pct": 43.5,
+      "avg_realized_return_pct": 1.28,
+      "avg_max_gain_pct": 1.28,
+      "win_loss_ratio": 1.37,
+      "profit_factor": 1.64
+    },
+    {
+      "threshold_label": ">= 70%",
+      "threshold_val": 0.7,
+      "trigger_count": 586,
+      "win_rate_pct": 58.9,
+      "pos_win_rate_pct": 58.9,
+      "touch_win_rate_pct": 45.9,
+      "avg_realized_return_pct": 1.91,
+      "avg_max_gain_pct": 1.91,
+      "win_loss_ratio": 1.4,
+      "profit_factor": 2.0
+    }
+  ],
+  "table2": [
+    {
+      "sector_key": "Memory",
+      "sector_name_cn": "存储芯片",
+      "tickers_count": 3,
+      "oos_total_signals": 2118,
+      "high_conviction_signals": 306,
+      "high_conviction_win_rate_pct": 57.2,
+      "high_conviction_pos_win_rate_pct": 57.2,
+      "high_conviction_touch_win_rate_pct": 49.3,
+      "avg_realized_return_pct": 1.29,
+      "avg_max_gain_pct": 1.29,
+      "win_loss_ratio": 1.35,
+      "profit_factor": 1.8,
+      "alpha_rating": "⭐⭐⭐⭐⭐"
+    },
+    {
+      "sector_key": "Semiconductors",
+      "sector_name_cn": "半导体与设备",
+      "tickers_count": 6,
+      "oos_total_signals": 4236,
+      "high_conviction_signals": 564,
+      "high_conviction_win_rate_pct": 55.5,
+      "high_conviction_pos_win_rate_pct": 55.5,
+      "high_conviction_touch_win_rate_pct": 40.6,
+      "avg_realized_return_pct": 0.79,
+      "avg_max_gain_pct": 0.79,
+      "win_loss_ratio": 1.24,
+      "profit_factor": 1.55,
+      "alpha_rating": "⭐⭐⭐⭐☆"
+    },
+    {
+      "sector_key": "Optical_Interconnect",
+      "sector_name_cn": "光通信与互联",
+      "tickers_count": 5,
+      "oos_total_signals": 3530,
+      "high_conviction_signals": 598,
+      "high_conviction_win_rate_pct": 51.8,
+      "high_conviction_pos_win_rate_pct": 51.8,
+      "high_conviction_touch_win_rate_pct": 47.0,
+      "avg_realized_return_pct": 1.2,
+      "avg_max_gain_pct": 1.2,
+      "win_loss_ratio": 1.38,
+      "profit_factor": 1.48,
+      "alpha_rating": "⭐⭐⭐⭐☆"
+    },
+    {
+      "sector_key": "Neo_Cloud",
+      "sector_name_cn": "Neo-Cloud 算力租赁",
+      "tickers_count": 3,
+      "oos_total_signals": 1606,
+      "high_conviction_signals": 330,
+      "high_conviction_win_rate_pct": 50.3,
+      "high_conviction_pos_win_rate_pct": 50.3,
+      "high_conviction_touch_win_rate_pct": 46.4,
+      "avg_realized_return_pct": 1.04,
+      "avg_max_gain_pct": 1.04,
+      "win_loss_ratio": 1.33,
+      "profit_factor": 1.35,
+      "alpha_rating": "⭐⭐⭐☆☆"
+    },
+    {
+      "sector_key": "Crypto_Proxy",
+      "sector_name_cn": "加密币股代理",
+      "tickers_count": 4,
+      "oos_total_signals": 2817,
+      "high_conviction_signals": 455,
+      "high_conviction_win_rate_pct": 49.5,
+      "high_conviction_pos_win_rate_pct": 49.5,
+      "high_conviction_touch_win_rate_pct": 41.5,
+      "avg_realized_return_pct": 0.74,
+      "avg_max_gain_pct": 0.74,
+      "win_loss_ratio": 1.31,
+      "profit_factor": 1.29,
+      "alpha_rating": "⭐⭐⭐☆☆"
+    },
+    {
+      "sector_key": "Energy_Power",
+      "sector_name_cn": "数据中心能源电力",
+      "tickers_count": 3,
+      "oos_total_signals": 2118,
+      "high_conviction_signals": 310,
+      "high_conviction_win_rate_pct": 50.0,
+      "high_conviction_pos_win_rate_pct": 50.0,
+      "high_conviction_touch_win_rate_pct": 38.4,
+      "avg_realized_return_pct": 0.65,
+      "avg_max_gain_pct": 0.65,
+      "win_loss_ratio": 1.28,
+      "profit_factor": 1.28,
+      "alpha_rating": "⭐⭐⭐☆☆"
+    },
+    {
+      "sector_key": "Enterprise_SaaS",
+      "sector_name_cn": "企业软件与 AI SaaS",
+      "tickers_count": 4,
+      "oos_total_signals": 2824,
+      "high_conviction_signals": 433,
+      "high_conviction_win_rate_pct": 48.0,
+      "high_conviction_pos_win_rate_pct": 48.0,
+      "high_conviction_touch_win_rate_pct": 28.9,
+      "avg_realized_return_pct": 0.24,
+      "avg_max_gain_pct": 0.24,
+      "win_loss_ratio": 1.26,
+      "profit_factor": 1.17,
+      "alpha_rating": "⭐⭐☆☆☆"
+    }
+  ],
+  "table3": [
+    {
+      "rank": 1,
+      "feature": "SMH_IGV_Ratio_Bias",
+      "category": "宏观气象",
+      "category_tag": "macro",
+      "total_gain": 11583.69,
+      "gain_share_pct": 12.28,
+      "rationale": "硬件(SMH)与软件(IGV)风格轮动比值乖离，捕捉资金在AI算力与SaaS间的风格切换"
+    },
+    {
+      "rank": 2,
+      "feature": "VIXY_Pos_60",
+      "category": "宏观气象",
+      "category_tag": "macro",
+      "total_gain": 10940.54,
+      "gain_share_pct": 11.6,
+      "rationale": "60日恐慌指数脉冲分位数，量化全市场风险偏好处于贪婪或极度恐慌底部"
+    },
+    {
+      "rank": 3,
+      "feature": "TLT_Bias_MA50",
+      "category": "宏观气象",
+      "category_tag": "macro",
+      "total_gain": 10914.33,
+      "gain_share_pct": 11.57,
+      "rationale": "20年+美债利率趋势偏离，映射宏观流动性宽松与贴现率预期对估值的压制"
+    },
+    {
+      "rank": 4,
+      "feature": "VIXY_Bias_MA20",
+      "category": "宏观气象",
+      "category_tag": "macro",
+      "total_gain": 9725.34,
+      "gain_share_pct": 10.31,
+      "rationale": "恐慌指数20日均线乖离，预警全市场流动性冲击与系统性踩踏"
+    },
+    {
+      "rank": 5,
+      "feature": "SMH_Bias_MA50",
+      "category": "宏观气象",
+      "category_tag": "macro",
+      "total_gain": 9437.37,
+      "gain_share_pct": 10.01,
+      "rationale": "核心半导体硬件链50日均线状态，标定科技成长风格的系统性风险水位"
+    },
+    {
+      "rank": 6,
+      "feature": "QQQM_Bias_MA50",
+      "category": "宏观气象",
+      "category_tag": "macro",
+      "total_gain": 8546.44,
+      "gain_share_pct": 9.06,
+      "rationale": "纳指100大盘50日均线乖离，系统性科技Beta环境水温计"
+    },
+    {
+      "rank": 7,
+      "feature": "ATR_Pct",
+      "category": "个股量价与结构",
+      "category_tag": "stock",
+      "total_gain": 4176.66,
+      "gain_share_pct": 4.43,
+      "rationale": "日线真实波动率占比，自适应动态调节止盈止损宽窄度与风险敞口"
+    },
+    {
+      "rank": 8,
+      "feature": "Bias_SMA200",
+      "category": "个股量价与结构",
+      "category_tag": "stock",
+      "total_gain": 3895.21,
+      "gain_share_pct": 4.13,
+      "rationale": "200日牛熊生命线偏离度，标定长期估值偏离与大周期均值回归动量"
+    },
+    {
+      "rank": 9,
+      "feature": "Ret_3d",
+      "category": "个股量价与结构",
+      "category_tag": "stock",
+      "total_gain": 2308.68,
+      "gain_share_pct": 2.45,
+      "rationale": "3日超短线冲刺速度，识别右侧波段启动瞬间的点火动量"
+    },
+    {
+      "rank": 10,
+      "feature": "Ret_10d",
+      "category": "个股量价与结构",
+      "category_tag": "stock",
+      "total_gain": 2259.72,
+      "gain_share_pct": 2.4,
+      "rationale": "10日波段动量斜率，捕捉右侧突破与短中期趋势延续性"
+    },
+    {
+      "rank": 11,
+      "feature": "Ret_20d",
+      "category": "个股量价与结构",
+      "category_tag": "stock",
+      "total_gain": 1991.14,
+      "gain_share_pct": 2.11,
+      "rationale": "20日(单月)累计动量，验证机构资金中期建仓方向与趋势共振"
+    },
+    {
+      "rank": 12,
+      "feature": "Ret_1d",
+      "category": "个股量价与结构",
+      "category_tag": "stock",
+      "total_gain": 1972.1,
+      "gain_share_pct": 2.09,
+      "rationale": "单日动量冲击，刻画最新交易日多空博弈结果与跳空缺口"
+    },
+    {
+      "rank": 13,
+      "feature": "EMA10_20_Spread",
+      "category": "个股量价与结构",
+      "category_tag": "stock",
+      "total_gain": 1814.91,
+      "gain_share_pct": 1.92,
+      "rationale": "双指数均线发散率，刻画主升浪初期均线多头排列爆发速度"
+    },
+    {
+      "rank": 14,
+      "feature": "RSI_Slope_3d",
+      "category": "个股量价与结构",
+      "category_tag": "stock",
+      "total_gain": 1749.49,
+      "gain_share_pct": 1.85,
+      "rationale": "3日RSI斜率加速度，探测动能指标边际突变与多头拐点"
+    },
+    {
+      "rank": 15,
+      "feature": "Bias_MA50",
+      "category": "个股量价与结构",
+      "category_tag": "stock",
+      "total_gain": 1740.24,
+      "gain_share_pct": 1.85,
+      "rationale": "中期持仓成本偏离度，衡量波段回踩50日线的支撑强度"
+    }
+  ],
   "sectors": [
     {
       "sector_key": "Memory",

@@ -13,10 +13,13 @@ Architecture & Design:
 
 import os
 import sys
-if sys.platform == 'win32':
+if sys.platform == 'win32' and __name__ == '__main__':
     import io
-    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
-    sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8', errors='replace')
+    try:
+        sys.stdout.reconfigure(encoding='utf-8', errors='replace')
+        sys.stderr.reconfigure(encoding='utf-8', errors='replace')
+    except Exception:
+        pass
 import time
 import json
 import random
@@ -31,14 +34,17 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 import numpy as np
 import pandas as pd
 import yfinance as yf
-import lightgbm as lgb
-from sklearn.metrics import (
-    roc_auc_score,
-    accuracy_score,
-    precision_score,
-    recall_score,
-    brier_score_loss,
-)
+try:
+    import lightgbm as lgb
+    from sklearn.metrics import (
+        roc_auc_score,
+        accuracy_score,
+        precision_score,
+        recall_score,
+        brier_score_loss,
+    )
+except ImportError:
+    lgb = None
 
 # ==============================================================================
 # 1. 标的池与赛道定义 (35-Symbol Universe & Sector Mapping)
@@ -1844,7 +1850,22 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="refresh" content="120">
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <script>
+        // ⚡ 客户端智能防缓存自动刷新 (60秒穿透 GitHub Pages / Fastly CDN 10分钟强缓存)
+        setTimeout(function() {{
+            try {{
+                var cleanPath = window.location.pathname;
+                var searchParams = new URLSearchParams(window.location.search);
+                searchParams.set('_t', Date.now());
+                window.location.replace(cleanPath + '?' + searchParams.toString() + window.location.hash);
+            }} catch(e) {{
+                window.location.reload();
+            }}
+        }}, 60000);
+    </script>
     <title>AI 美股 5 年多赛道预测雷达 · 全景战报</title>
     <style>
         :root {{
@@ -2818,6 +2839,9 @@ def export_latest_ai_predictions_json(tables_data: Dict, json_path: str = 'data_
     payload = {
         'kpi': tables_data.get('kpi', {}),
         'macro_weather': tables_data.get('macro_weather', {}),
+        'table1': tables_data.get('table1', []),
+        'table2': tables_data.get('table2', []),
+        'table3': tables_data.get('table3', []),
         'sectors': tables_data.get('table2', []),
         'top10': tables_data.get('table4', []),
         'all_predictions': all_preds,
