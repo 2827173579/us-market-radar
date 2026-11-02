@@ -2146,6 +2146,14 @@ def fetch_all_market_data(tickers, period="1y", retries=2):
                 except Exception:
                     time.sleep(0.5)
 
+    # 统一将所有历史 K 线 DatetimeIndex 转换为 tz-naive (规避 pandas 跨时区运算 TypeError)
+    for t in data_dict:
+        try:
+            if hasattr(data_dict[t].index, "tz") and data_dict[t].index.tz is not None:
+                data_dict[t].index = data_dict[t].index.tz_localize(None)
+        except Exception:
+            pass
+
     print(f"[+] 历史形态抓取完成，成功获取 {len(data_dict)}/{len(tickers)} 只标的数据。\n")
     return data_dict
 
@@ -2343,15 +2351,20 @@ def evaluate_market_weather(macro_dict, history_dict=None):
     style_suffix = ""
     if history_dict and "SMH" in history_dict and "IGV" in history_dict:
         try:
-            s_close = history_dict["SMH"]["Close"]
-            i_close = history_dict["IGV"]["Close"]
-            ratio_s = s_close / i_close
-            cur_ratio = float(ratio_s.iloc[-1])
-            ratio_ma20 = float(ratio_s.rolling(20, min_periods=5).mean().iloc[-1])
-            if cur_ratio >= ratio_ma20:
-                style_suffix = " ｜ 🔥 风格主线：算力硬件领涨（优先聚焦芯片/光通信/电力）"
-            else:
-                style_suffix = " ｜ 🔄 风格主线：硬件休整、软件应用占优（严禁追高芯片，关注软件与高低切）"
+            s_close = history_dict["SMH"]["Close"].copy()
+            i_close = history_dict["IGV"]["Close"].copy()
+            if hasattr(s_close.index, "tz") and s_close.index.tz is not None:
+                s_close.index = s_close.index.tz_localize(None)
+            if hasattr(i_close.index, "tz") and i_close.index.tz is not None:
+                i_close.index = i_close.index.tz_localize(None)
+            ratio_s = (s_close / i_close).dropna()
+            if len(ratio_s) >= 5:
+                cur_ratio = float(ratio_s.iloc[-1])
+                ratio_ma20 = float(ratio_s.rolling(20, min_periods=5).mean().iloc[-1])
+                if cur_ratio >= ratio_ma20:
+                    style_suffix = " ｜ 🔥 风格主线：算力硬件领涨（优先聚焦芯片/光通信/电力）"
+                else:
+                    style_suffix = " ｜ 🔄 风格主线：硬件休整、软件应用占优（严禁追高芯片，关注软件与高低切）"
         except Exception:
             style_suffix = ""
 
@@ -2758,15 +2771,25 @@ def generate_macro_radar_html(macro_data, weather_info, history_dict, update_tim
     right_x = max_bias * 1.35 if max_bias > 0 else 1.5
     fig.update_xaxes(range=[left_x, right_x], row=1, col=2)
 
-    # 3. SMH / IGV 相对强度与 20日均线
+    # 3. SMH / IGV 相对强度与 20日均线 (防范时区不匹配与 NaN 空值)
     if "SMH" in history_dict and "IGV" in history_dict:
-        ratio = history_dict["SMH"]["Close"] / history_dict["IGV"]["Close"]
-        ratio_ma20 = ratio.rolling(20, min_periods=5).mean()
-        cur_r = float(ratio.iloc[-1])
-        cur_rma20 = float(ratio_ma20.iloc[-1])
-        r_state = "硬件占优" if cur_r >= cur_rma20 else "软件占优"
-        fig.add_trace(go.Scatter(x=ratio.index, y=ratio, mode="lines", line=dict(color="#00e5ff", width=1.5), name=f"SMH/IGV 比率 ({cur_r:.2f} · {r_state})"), row=2, col=1)
-        fig.add_trace(go.Scatter(x=ratio.index, y=ratio_ma20, mode="lines", line=dict(color="#ffa726", width=1.2, dash="dot"), name=f"20日比率均线 ({cur_rma20:.2f})"), row=2, col=1)
+        try:
+            s_close = history_dict["SMH"]["Close"].copy()
+            i_close = history_dict["IGV"]["Close"].copy()
+            if hasattr(s_close.index, "tz") and s_close.index.tz is not None:
+                s_close.index = s_close.index.tz_localize(None)
+            if hasattr(i_close.index, "tz") and i_close.index.tz is not None:
+                i_close.index = i_close.index.tz_localize(None)
+            ratio = (s_close / i_close).dropna()
+            if len(ratio) >= 5:
+                ratio_ma20 = ratio.rolling(20, min_periods=5).mean()
+                cur_r = float(ratio.iloc[-1])
+                cur_rma20 = float(ratio_ma20.iloc[-1])
+                r_state = "硬件占优" if cur_r >= cur_rma20 else "软件占优"
+                fig.add_trace(go.Scatter(x=ratio.index, y=ratio, mode="lines", line=dict(color="#00e5ff", width=1.5), name=f"SMH/IGV 比率 ({cur_r:.2f} · {r_state})"), row=2, col=1)
+                fig.add_trace(go.Scatter(x=ratio.index, y=ratio_ma20, mode="lines", line=dict(color="#ffa726", width=1.2, dash="dot"), name=f"20日比率均线 ({cur_rma20:.2f})"), row=2, col=1)
+        except Exception as e:
+            print(f"[!] SMH/IGV 比率图表绘制跳过: {e}")
 
     # 4. 恐慌指数 (VIXY) · 黄金 (GLD) · 美债 (TLT) 偏离各自 MA20 水温 (%)
     risk_off_palette = [
