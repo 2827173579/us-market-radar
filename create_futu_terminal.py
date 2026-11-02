@@ -61,11 +61,116 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
     ai_predictions = {}
     try:
         import os
+        import numpy as np
         sc_dir = os.path.dirname(os.path.abspath(__file__))
         ai_file = os.path.join(sc_dir, "data_cache", "latest_ai_predictions.json")
         if os.path.exists(ai_file):
             with open(ai_file, "r", encoding="utf-8") as f:
                 ai_predictions = json.load(f)
+
+            # 将当前轮询周期的 Finnhub / 盘前盘后实时价格、ATR、RSI 与宏观气象注入 AI 预测快照并同步重绘 predict_radar_5y.html
+            live_lookup = {}
+            for s in (stocks_data or []):
+                if s.get("ticker"):
+                    live_lookup[s["ticker"]] = s
+            for tk_m, m_item in (macro_data or {}).items():
+                live_lookup[tk_m] = m_item
+
+            w_name = weather_info.get("weather", "⛅ 阴天防守") if weather_info else "⛅ 阴天防守"
+            w_icon = weather_info.get("icon", "") if weather_info else ""
+            w_status = f"{w_icon} {w_name}".strip() if w_icon and w_icon not in w_name else w_name
+            is_storm = ("🌧️" in w_status) or ("暴雨" in w_status)
+
+            all_preds = ai_predictions.get("all_predictions", [])
+            if all_preds and live_lookup:
+                for item in all_preds:
+                    tk = item.get("ticker", "")
+                    if tk in live_lookup:
+                        lv = live_lookup[tk]
+                        live_p = float(lv.get("active_price") or lv.get("last") or item.get("latest_price", 100.0))
+                        if live_p > 0:
+                            item["latest_price"] = round(live_p, 2)
+                            live_atr = float(lv.get("atr", 0.0))
+                            atr_pct = round((live_atr / live_p) * 100.0, 2) if (live_atr > 0 and live_p > 0) else float(item.get("atr_pct", 2.5))
+                            item["atr_pct"] = atr_pct
+                            raw_atr = max(0.012, atr_pct / 100.0)
+                            eff_atr = (0.040 + 0.50 * (min(raw_atr, 0.100) - 0.040)) if raw_atr > 0.040 else raw_atr
+                            u_mult = max(0.030, 1.35 * eff_atr)
+                            l_mult = max(0.022, 1.00 * eff_atr)
+                            item["target_profit_price"] = round(live_p * (1.0 + u_mult), 2)
+                            item["stop_loss_price"] = round(live_p * (1.0 - l_mult), 2)
+                            item["target_profit_pct"] = round(u_mult * 100.0, 1)
+                            item["stop_loss_pct"] = round(l_mult * 100.0, 1)
+
+                            base_raw = float(item.get("base_raw_prob_pct", item.get("predicted_win_rate_pct", 50.0)))
+                            item["base_raw_prob_pct"] = base_raw
+                            pct_chg = float(lv.get("ext_pct") if lv.get("ext_price", 0) > 0 else lv.get("pct_change", 0.0))
+                            live_rsi = float(lv.get("rsi", 50.0))
+                            intra_adj = float(np.clip(pct_chg * 0.18 + (50.0 - live_rsi) * 0.04, -2.5, 2.5))
+                            new_raw = round(float(np.clip(base_raw + intra_adj, 15.0, 88.0)), 1)
+                            sec_pf = float(item.get("sector_pf", 1.30))
+                            mult = float(np.clip(sec_pf / 1.30, 0.75, 1.15))
+                            new_cal = round(float(np.clip(new_raw * mult, 15.0, 95.0)), 1)
+                            item["predicted_win_rate_pct"] = new_raw
+                            item["calibrated_win_rate_pct"] = new_cal
+
+                        item["macro_temp"] = w_status
+                        raw_prob_pct = float(item.get("predicted_win_rate_pct", 50.0))
+                        cal_prob_pct = float(item.get("calibrated_win_rate_pct", 50.0))
+                        eval_prob_pct = max(raw_prob_pct, cal_prob_pct)
+                        if is_storm and (raw_prob_pct < 55.0 or cal_prob_pct < 62.0):
+                            if raw_prob_pct >= 50.0 and cal_prob_pct >= 55.0:
+                                item["action"] = "🛡️ 暴雨防守·仅极小仓试错"
+                            else:
+                                item["action"] = "🛡️ 暴雨空仓·严禁左侧接刀"
+                        elif raw_prob_pct < 50.0:
+                            item["action"] = "👀 原始胜率未过半·观望"
+                        elif eval_prob_pct >= 65.0:
+                            item["action"] = "🔥 极高确定性右侧做多"
+                        elif eval_prob_pct >= 60.0:
+                            item["action"] = "⚡ 逢低吸筹"
+                        elif eval_prob_pct >= 55.0:
+                            item["action"] = "📈 温和看多·右侧试错"
+                        else:
+                            item["action"] = "👀 观望等待"
+
+                all_preds.sort(key=lambda x: (x.get("calibrated_win_rate_pct", 0.0), x.get("predicted_win_rate_pct", 0.0)), reverse=True)
+                for idx_rk, item in enumerate(all_preds, 1):
+                    item["rank"] = idx_rk
+
+                ai_predictions["all_predictions"] = all_preds
+                ai_predictions["table4"] = all_preds[:10]
+                ai_predictions["top10"] = all_preds[:10]
+                ai_predictions["by_ticker"] = {item["ticker"]: item for item in all_preds}
+
+                if "kpi" in ai_predictions:
+                    ai_predictions["kpi"]["sync_time"] = update_time_str
+                    ai_predictions["kpi"]["data_mode"] = f"Finnhub 秒级实时 ({session_name})" if has_realtime else "yfinance 最新收盘价底模"
+                if "macro_weather" in ai_predictions and weather_info:
+                    ai_predictions["macro_weather"]["status"] = w_status
+                    ai_predictions["macro_weather"]["qqqm_bias_ma50"] = round(float(weather_info.get("qqqm_bias", 0.0)), 2)
+                    ai_predictions["macro_weather"]["smh_bias_ma50"] = round(float(weather_info.get("smh_bias", 0.0)), 2)
+                    ai_predictions["macro_weather"]["vixy_pos_60"] = round(float(weather_info.get("vixy_pos_60", 50.0)) / 100.0 if float(weather_info.get("vixy_pos_60", 0.5)) > 1.5 else float(weather_info.get("vixy_pos_60", 0.5)), 2)
+
+                with open(ai_file, "w", encoding="utf-8") as wf:
+                    json.dump(ai_predictions, wf, ensure_ascii=False, indent=2)
+
+                try:
+                    import ml_predictor_5y
+                    _tables_for_html = {
+                        "kpi": ai_predictions.get("kpi", {}),
+                        "macro_weather": ai_predictions.get("macro_weather", {}),
+                        "table1": ai_predictions.get("table1", []),
+                        "table2": ai_predictions.get("sectors", ai_predictions.get("table2", [])),
+                        "table3": ai_predictions.get("table3", []),
+                        "table4": all_preds[:10],
+                        "all_live_predictions": all_preds,
+                    }
+                    if _tables_for_html["table1"] and _tables_for_html["table2"]:
+                        _pred_html_path = os.path.join(sc_dir, "predict_radar_5y.html")
+                        ml_predictor_5y.render_html_dashboard(_tables_for_html, output_path=_pred_html_path)
+                except Exception as _re:
+                    print(f"[!] 同步重绘 predict_radar_5y.html 提示: {_re}")
     except Exception:
         ai_predictions = {}
 
