@@ -1318,7 +1318,9 @@ def generate_report_tables(
         for _, row in latest_df.iterrows():
             tk = str(row['Ticker'])
             sec_k = str(row.get('Sector', SECTOR_MAP.get(tk, 'Unknown')))
-            sec_c = SECTOR_CHINESE_MAP.get(sec_k, sec_k)
+            sec_override = str(row.get('Sector_CN_Override', '') or '')
+            sec_c = sec_override if sec_override else SECTOR_CHINESE_MAP.get(sec_k, sec_k)
+            is_core_28 = bool(row.get('Is_Core_28', tk in SECTOR_MAP))
             sec_pf = float(sector_pf_map.get(sec_k, sector_pf_map.get(sec_c, 1.30)))
             mult = float(np.clip(sec_pf / 1.30, 0.75, 1.15))
             cal_p = float(row['Prob_1']) * mult
@@ -1337,7 +1339,9 @@ def generate_report_tables(
         for rank, (_, row) in enumerate(latest_sorted.iterrows(), 1):
             tk = str(row['Ticker'])
             sec_k = str(row.get('Sector', SECTOR_MAP.get(tk, 'Unknown')))
-            sec_c = SECTOR_CHINESE_MAP.get(sec_k, sec_k)
+            sec_override = str(row.get('Sector_CN_Override', '') or '')
+            sec_c = sec_override if sec_override else SECTOR_CHINESE_MAP.get(sec_k, sec_k)
+            is_core_28 = bool(row.get('Is_Core_28', tk in SECTOR_MAP))
             sec_rating = str(sector_rating_map.get(sec_k, sector_rating_map.get(sec_c, '⭐⭐⭐☆☆')))
             close_p = float(row.get('Close', 100.0))
             raw_prob_pct = float(row['Prob_1']) * 100.0
@@ -2454,7 +2458,7 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
                 </div>
                 <div class="t4-controls-right">
                     <input type="text" id="t4-search" class="search-input" placeholder="🔍 搜索代码 (如 NVDA)..." oninput="applyT4Filters()">
-                    <button id="t4-mode-btn" class="mode-btn" onclick="toggleT4PoolMode()">🌐 展开全池 28 股全景</button>
+                    <button id="t4-mode-btn" class="mode-btn" onclick="toggleT4PoolMode()">🌐 展开全域 70 标的全景</button>
                 </div>
             </div>
 
@@ -2576,9 +2580,9 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
             const title = document.getElementById('t4-title');
             if (showFullPool) {{
                 btn.textContent = '🏆 仅看 Top 10 精选榜';
-                title.textContent = '🎯 表 4: 最新交易日 AI 预测做多胜率全景榜 (全池 28 股 Live Inference)';
+                title.textContent = '🎯 表 4: 最新交易日 AI 预测做多胜率全景榜 (全域 70 标的全景 Live Inference)';
             }} else {{
-                btn.textContent = '🌐 展开全池 28 股全景';
+                btn.textContent = '🌐 展开全域 70 标的全景';
                 title.textContent = '🎯 表 4: 最新交易日 AI 预测做多胜率排行榜 Top 10 (Live Inference Pool)';
             }}
             applyT4Filters();
@@ -2643,6 +2647,162 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
 
     file_size_kb = os.path.getsize(full_output_path) / 1024
     print(f"[+] ✅ 暗黑买方风格 HTML 可视化看板已成功渲染: {full_output_path} ({file_size_kb:.1f} KB)")
+
+
+
+# 全域 70 标的扩展映射表 (覆盖主看盘终端全部 54 只个股 + 16 只 ETF，映射到 7 大核心赛道先验以复用 OOS 校准乘数)
+EXTENDED_RADAR_SECTOR_MAP: Dict[str, Tuple[str, str]] = {
+    # 半导体与算力硬件 / 液冷服务器
+    'INTC': ('Semiconductors', '半导体与设备'),
+    'VRT':  ('Semiconductors', 'AI液冷与服务器'),
+    'DELL': ('Semiconductors', 'AI液冷与服务器'),
+    'HPE':  ('Semiconductors', 'AI液冷与服务器'),
+    'SOXX': ('Semiconductors', '半导体ETF'),
+    'SOXL': ('Semiconductors', '半导体3倍做多'),
+    'SMH':  ('Semiconductors', '半导体ETF'),
+    'KORU': ('Memory', '韩股存储3倍做多'),
+    # 存储与闪存生态
+    'SKHY': ('Memory', '存储芯片'),
+    'SNDK': ('Memory', '存储芯片'),
+    # 光通信
+    'AXTI': ('Optical_Interconnect', '光通信与互联'),
+    # 能源与核电
+    'OKLO': ('Energy_Power', '数据中心能源电力'),
+    'FPS':  ('Energy_Power', '数据中心能源电力'),
+    # 科技巨头与软件安全
+    'GOOGL': ('Enterprise_SaaS', '科技巨头与AI生态'),
+    'META':  ('Enterprise_SaaS', '科技巨头与AI生态'),
+    'AAPL':  ('Enterprise_SaaS', '科技巨头与AI生态'),
+    'AMZN':  ('Enterprise_SaaS', '科技巨头与AI生态'),
+    'CRWD':  ('Enterprise_SaaS', '企业软件与AI安全'),
+    'IGV':   ('Enterprise_SaaS', '软件科技ETF'),
+    # 物理AI与太空商业
+    'TSLA': ('Neo_Cloud', '物理AI与太空商业'),
+    'SPCX': ('Neo_Cloud', '物理AI与太空商业'),
+    'ASTS': ('Neo_Cloud', '物理AI与太空商业'),
+    'RKLB': ('Neo_Cloud', '物理AI与太空商业'),
+    # 价值蓝筹与医药防守
+    'KO':   ('Enterprise_SaaS', '价值蓝筹与医药'),
+    'PEP':  ('Enterprise_SaaS', '价值蓝筹与医药'),
+    'MCD':  ('Enterprise_SaaS', '价值蓝筹与医药'),
+    'NKE':  ('Enterprise_SaaS', '价值蓝筹与医药'),
+    'AXP':  ('Enterprise_SaaS', '价值蓝筹与医药'),
+    'V':    ('Enterprise_SaaS', '价值蓝筹与医药'),
+    'LLY':  ('Enterprise_SaaS', '价值蓝筹与医药'),
+    'MRNA': ('Enterprise_SaaS', '价值蓝筹与医药'),
+    'CCXI': ('Enterprise_SaaS', '价值蓝筹与医药'),
+    # 宏观基准与对冲 ETF
+    'QQQM': ('Semiconductors', '大盘与宏观ETF'),
+    'SPY':  ('Enterprise_SaaS', '大盘与宏观ETF'),
+    'DIA':  ('Enterprise_SaaS', '大盘与宏观ETF'),
+    'IWM':  ('Neo_Cloud', '大盘与宏观ETF'),
+    'TLT':  ('Energy_Power', '大盘与宏观ETF'),
+    'GLD':  ('Energy_Power', '大盘与宏观ETF'),
+    'QQQI': ('Enterprise_SaaS', '大盘与宏观ETF'),
+    'VIXY': ('Crypto_Proxy', '恐慌与反向对冲'),
+    'SQQQ': ('Crypto_Proxy', '恐慌与反向对冲'),
+    'SOXS': ('Crypto_Proxy', '恐慌与反向对冲'),
+}
+
+
+def build_extended_live_features_df(
+    raw_panel: pd.DataFrame,
+    core_latest_stocks: pd.DataFrame,
+    ext_cache_file: str = 'data_cache/ml_extended_panel.parquet',
+    force_refresh: bool = False
+) -> pd.DataFrame:
+    """
+    通过 yfinance 抓取并缓存主终端其余标的的日 K 线 (零 Finnhub API 消耗)，
+    构建覆盖全域 70 只标的 (28 核心 AI 股 + 42 扩展雷达股/ETF) 的最新 T 日截面特征表。
+    """
+    full_ext_cache = _resolve_cache_path(ext_cache_file)
+    os.makedirs(os.path.dirname(full_ext_cache), exist_ok=True)
+
+    existing_syms = set(raw_panel['Ticker'].unique())
+    missing_syms = [tk for tk in EXTENDED_RADAR_SECTOR_MAP.keys() if tk not in existing_syms]
+
+    ext_frames = []
+    if os.path.exists(full_ext_cache) and not force_refresh:
+        try:
+            ext_cached_df = pd.read_parquet(full_ext_cache)
+            cached_syms = set(ext_cached_df['Ticker'].unique())
+            still_missing = [tk for tk in missing_syms if tk not in cached_syms]
+            ext_frames.append(ext_cached_df)
+            missing_syms = still_missing
+        except Exception:
+            pass
+
+    if missing_syms:
+        print(f"[*] 📥 正在通过 yfinance 补充抓取 {len(missing_syms)} 只主终端扩展标的日线数据 (0 Finnhub 消耗)...")
+        newly_fetched = []
+        for tk in missing_syms:
+            df_tk = _fetch_single_ticker(tk, start_date="2023-01-01")
+            if df_tk is not None and not df_tk.empty:
+                sec_key = EXTENDED_RADAR_SECTOR_MAP[tk][0]
+                df_tk['Ticker'] = tk
+                df_tk['Sector'] = sec_key
+                newly_fetched.append(df_tk)
+        if newly_fetched:
+            new_df = pd.concat(newly_fetched, ignore_index=True)
+            ext_frames.append(new_df)
+            combined_ext = pd.concat(ext_frames, ignore_index=True).drop_duplicates(subset=['Date', 'Ticker'], keep='last')
+            combined_ext.to_parquet(full_ext_cache, index=False)
+            ext_frames = [combined_ext]
+
+    ext_raw = pd.concat(ext_frames, ignore_index=True) if ext_frames else pd.DataFrame()
+
+    # 汇总全部 70 只标的的日线数据 (28 核心股 + 7 已经存在的宏观 ETF + 35 扩展股/ETF)
+    macro_df = compute_macro_features(raw_panel)
+    all_70_latest_rows = [core_latest_stocks.copy()]
+    core_latest_stocks['Is_Core_28'] = True
+
+    extra_latest_list = []
+    for tk, (sec_key, sec_cn_override) in EXTENDED_RADAR_SECTOR_MAP.items():
+        if tk in existing_syms:
+            sub = raw_panel[raw_panel['Ticker'] == tk].copy()
+        elif not ext_raw.empty and tk in ext_raw['Ticker'].values:
+            sub = ext_raw[ext_raw['Ticker'] == tk].copy()
+        else:
+            continue
+        if len(sub) < 5:
+            continue
+        sub['Sector'] = sec_key
+        feat_sub = compute_stock_features(sub).sort_values('Date')
+        merged_sub = pd.merge_asof(feat_sub, macro_df.sort_values('Date'), on='Date', direction='backward')
+        merged_sub['Raw_Alpha_QQQM_5d'] = merged_sub['Ret_5d'] - merged_sub['QQQM_Ret_5d'].fillna(0.0)
+        merged_sub['Raw_Alpha_SMH_20d'] = merged_sub['Ret_20d'] - merged_sub['SMH_Ret_20d'].fillna(0.0)
+        last_row = merged_sub.sort_values('Date').iloc[[-1]].copy()
+        last_row['Sector_CN_Override'] = sec_cn_override
+        last_row['Is_Core_28'] = False
+        extra_latest_list.append(last_row)
+
+    if extra_latest_list:
+        extra_df = pd.concat(extra_latest_list, ignore_index=True)
+        core_copy = core_latest_stocks.copy()
+        core_copy['Sector_CN_Override'] = ""
+        core_copy['Is_Core_28'] = True
+        full_latest = pd.concat([core_copy, extra_df], ignore_index=True)
+    else:
+        full_latest = core_latest_stocks.copy()
+        full_latest['Sector_CN_Override'] = ""
+        full_latest['Is_Core_28'] = True
+
+    # 在 70 只标的全截面上重算今日 Alpha_QQQM_5d 与 Alpha_SMH_20d (0.65 * cs_rank + 0.35 * sigmoid)
+    if 'Raw_Alpha_QQQM_5d' in full_latest.columns:
+        cs_q5 = full_latest['Raw_Alpha_QQQM_5d'].rank(pct=True, method='average').fillna(0.5)
+        sig_q5 = 1.0 / (1.0 + np.exp(-np.clip(full_latest['Raw_Alpha_QQQM_5d'] / 8.0, -15.0, 15.0)))
+        full_latest['Alpha_QQQM_5d'] = (0.65 * cs_q5 + 0.35 * sig_q5).fillna(0.5)
+
+    if 'Raw_Alpha_SMH_20d' in full_latest.columns:
+        cs_s20 = full_latest['Raw_Alpha_SMH_20d'].rank(pct=True, method='average').fillna(0.5)
+        sig_s20 = 1.0 / (1.0 + np.exp(-np.clip(full_latest['Raw_Alpha_SMH_20d'] / 15.0, -15.0, 15.0)))
+        full_latest['Alpha_SMH_20d'] = (0.65 * cs_s20 + 0.35 * sig_s20).fillna(0.5)
+
+    for col in FEATURE_COLS:
+        if col in full_latest.columns:
+            full_latest[col] = full_latest[col].replace([np.inf, -np.inf], np.nan).fillna(0.0)
+
+    return full_latest
 
 
 def export_latest_ai_predictions_json(tables_data: Dict, json_path: str = 'data_cache/latest_ai_predictions.json') -> str:
@@ -2777,9 +2937,11 @@ def main():
 
     oos_df, metrics, model = run_walk_forward_cv(labeled_panel)
 
-    # 提取用于实盘推理的最新截面数据 (28 只目标股最新一行)
+    # 提取用于实盘推理的最新截面数据 (28 只核心股 + 42 只扩展雷达标的 = 全域 70 只标的)
     latest_df = feature_panel[feature_panel['Ticker'].isin(TARGET_STOCKS)].copy()
-    latest_stocks = latest_df.sort_values('Date').groupby('Ticker').last().reset_index()
+    latest_core_stocks = latest_df.sort_values('Date').groupby('Ticker').last().reset_index()
+    latest_stocks = build_extended_live_features_df(raw_panel, latest_core_stocks, force_refresh=args.refresh)
+    print(f"[*] 🌐 全域实盘推理截面构建完成: 覆盖 {len(latest_stocks)} 只终端标的 (含 28 只核心赛道股 + {len(latest_stocks) - len(latest_core_stocks)} 只扩展个股/ETF)")
 
     # 宏观环境水温评估 (与 integrated_market_radar.py 严格统一对齐)
     qqqm_bias = float(latest_stocks['QQQM_Bias_MA50'].mean()) if 'QQQM_Bias_MA50' in latest_stocks.columns else 0.0

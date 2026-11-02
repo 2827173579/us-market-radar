@@ -79,10 +79,12 @@ MONITORED_TARGETS = {
         "AAPL":  {"name": "苹果", "sub": "端侧AI设备与消费电子闭环", "cat": "终端硬件", "cost": 0.0, "shares": 0.0, "base_val": 225.0},
         "AMZN":  {"name": "亚马逊", "sub": "AWS算力底座与电商飞轮", "cat": "云与电商", "cost": 0.0, "shares": 0.0, "base_val": 185.0},
         "PLTR":  {"name": "Palantir", "sub": "AIP企业级与军工落地标杆", "cat": "企业AI", "cost": 0.0, "shares": 0.0, "base_val": 42.0},
+        "NOW":   {"name": "ServiceNow", "sub": "企业级AI工作流与SaaS自动化龙头", "cat": "云与软件", "cost": 0.0, "shares": 0.0, "base_val": 850.0},
         
         # 3. 新算力租赁 (Neo-Cloud)
         "CRWV":  {"name": "CoreWeave", "sub": "纯血GPU算力租赁高弹性领头羊", "cat": "算力租赁", "cost": 0.0, "shares": 0.0, "base_val": 95.0},
         "NBIS":  {"name": "Nebius", "sub": "欧洲与全球新兴AI云服务商", "cat": "算力租赁", "cost": 0.0, "shares": 0.0, "base_val": 28.0},
+        "APLD":  {"name": "Applied Digital", "sub": "北美高性能HPC与AI算力中心基建", "cat": "算力租赁", "cost": 0.0, "shares": 0.0, "base_val": 7.5},
         
         # 4. AI数据中心能源与电力底座
         "VST":   {"name": "Vistra Energy", "sub": "AI数据中心独立电力与核能标杆", "cat": "能源电力", "cost": 0.0, "shares": 0.0, "base_val": 125.0},
@@ -129,6 +131,8 @@ MONITORED_TARGETS = {
         # 12. 零信任网络安全与全球流动性杠杆
         "CRWD":  {"name": "CrowdStrike", "sub": "AI驱动SecOps与零信任终端安全龙头", "cat": "AI安全", "cost": 0.0, "shares": 0.0, "base_val": 220.0},
         "MSTR":  {"name": "微策略", "sub": "比特币储备国库与全球流动性杠杆", "cat": "数字资产", "cost": 0.0, "shares": 0.0, "base_val": 130.0},
+        "COIN":  {"name": "Coinbase", "sub": "北美合规加密资产交易所与链上托管核心", "cat": "数字资产", "cost": 0.0, "shares": 0.0, "base_val": 180.0},
+        "MARA":  {"name": "MARA Holdings", "sub": "北美最大比特币算力矿企与能源数字中心", "cat": "数字资产", "cost": 0.0, "shares": 0.0, "base_val": 15.0},
 
         # 13. 企业级算力云与资本载体
         "ORCL":  {"name": "甲骨文", "sub": "OCI云基础设施与企业大模型底座", "cat": "云与软件", "cost": 0.0, "shares": 0.0, "base_val": 110.0},
@@ -3010,7 +3014,8 @@ def generate_macro_radar_html(macro_data, weather_info, history_dict, update_tim
         </div>
         <div class="header-links" style="display: flex; gap: 8px;">
             <a href="futu_pro_terminal.html" target="_blank" style="background: rgba(255,105,0,0.15); border: 1px solid rgba(255,105,0,0.4); color: #ff6900;">🐮 富途全周期看盘</a>
-            <a href="stocks_radar.html" target="_blank">🎯 核心个股雷达 (27只)</a>
+            <a href="predict_radar_5y.html" target="_blank" style="background: rgba(188,140,255,0.16); border: 1px solid rgba(188,140,255,0.45); color: #d8b4fe; font-weight: 700;">⚡ AI 5年预测雷达</a>
+            <a href="stocks_radar.html" target="_blank">🎯 核心个股雷达</a>
         </div>
     </div>
 
@@ -3372,6 +3377,7 @@ def generate_stocks_radar_html(stocks_data, history_dict, update_time_str="", ha
         </div>
         <div class="header-links" style="display: flex; gap: 8px;">
             <a href="futu_pro_terminal.html" target="_blank" style="background: rgba(255,105,0,0.15); border: 1px solid rgba(255,105,0,0.4); color: #ff6900;">🐮 富途全周期看盘</a>
+            <a href="predict_radar_5y.html" target="_blank" style="background: rgba(188,140,255,0.16); border: 1px solid rgba(188,140,255,0.45); color: #d8b4fe; font-weight: 700;">⚡ AI 5年预测雷达</a>
             <a href="macro_radar.html" target="_blank">🏛️ 宏观司令塔</a>
         </div>
     </div>
@@ -3607,8 +3613,8 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
 
     # 2. 并发秒级拉取 Finnhub 实时报价 (max_workers=2, 稳态间隔防 429)
     # 免费额度 60次/分。全标的 64 只，必须 100% 优先保障 15 只宏观大盘基准 ETF (QQQM/SMH/SPY等决定气象与黄金坑闸门) + 43 只核心科技股 = 58 只走 Finnhub；其余 6 只低波防守股走 Yahoo 5m RTH 实时穿透
-    _defensive_6 = {"KO", "PEP", "MCD", "AXP", "V", "CCXI"}
-    finnhub_tickers = [tk for tk in all_tickers if tk not in _defensive_6 or (user_portfolio and tk in user_portfolio)]
+    _defensive_6 = {"KO", "PEP", "MCD", "AXP", "V", "CCXI", "LLY", "MRNA", "NKE", "HPE"}
+    finnhub_tickers = [tk for tk in all_tickers if tk not in _defensive_6 or (user_portfolio and tk in user_portfolio)][:60]
     realtime_quotes = fetch_finnhub_quotes_batch(finnhub_tickers, FINNHUB_API_KEY) if FINNHUB_API_KEY else {}
 
     # 2.5 批量拉取 5 分钟级日内指标 (VWAP / 5m RSI / 5m RVOL) 与盘前盘后最新成交价

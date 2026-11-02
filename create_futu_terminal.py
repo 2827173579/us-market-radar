@@ -1240,7 +1240,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
         <aside class="sidebar-left" id="sidebarLeft">
             <div class="watchlist-categories">
                 <div class="w-tab active" data-filter="all">全部 ({len(stocks_data) + len(macro_data)})</div>
-                <div class="w-tab" data-filter="ai_top" style="color: #d8b4fe; font-weight: 800; background: rgba(188, 140, 255, 0.14); border: 1px solid rgba(188, 140, 255, 0.35);">⚡ AI高胜率 (28)</div>
+                <div class="w-tab" data-filter="ai_top" style="color: #d8b4fe; font-weight: 800; background: rgba(188, 140, 255, 0.14); border: 1px solid rgba(188, 140, 255, 0.35);">⚡ AI高胜率 ({len(stocks_data) + len(macro_data)})</div>
                 <div class="w-tab" data-filter="starred" style="color: #ffd700; font-weight: 700; background: rgba(255, 215, 0, 0.08);">⭐ 建仓盯盘 (<span id="starredCount">0</span>)</div>
                 <div class="w-tab" data-filter="pit" style="color: #00e676; font-weight: 700; background: rgba(0, 230, 118, 0.08);">🟢 黄金坑</div>
                 <div class="w-tab" data-filter="take_profit" style="color: #d946ef; font-weight: 700; background: rgba(217, 70, 239, 0.08);">🟣 止盈减仓</div>
