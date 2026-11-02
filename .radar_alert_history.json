@@ -114,8 +114,8 @@
       "last_notified_at": 0.0
     },
     "MU": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "STOP_LOSS",
+      "last_notified_at": 1793631051.4181452
     },
     "ASML": {
       "state": "NORMAL",
@@ -206,8 +206,8 @@
       "last_notified_at": 0.0
     },
     "QQQM": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1793631051.4181452
     },
     "SOXX": {
       "state": "NORMAL",
