@@ -1287,47 +1287,53 @@ def save_alert_history(history):
         print(f"[!] 保存预警历史异常: {e}")
 
 def send_pushplus_wechat_alert(title, markdown_content, channel=None):
-    """通过 PushPlus API 向微信推送 Markdown 卡片消息 (专线直达 ClawBot)"""
+    """
+    通过 PushPlus API 向微信推送 Markdown 卡片消息
+    采用【双通道冗余直达体系】：
+    1. 推送至 ClawBot 微信机器人专属私聊通道 (若用户配置或默认)
+    2. 同步推送到 PushPlus 微信官方公众号服务号 (channel='wechat')
+       彻底化解微信对 ClawBot 的 24 小时未主动交互静默拦截与每 10 条消息断流限制，
+       确保无论在机器人私聊窗口还是微信公众号订阅号中，100% 秒级必达震动提醒！
+    """
     if not PUSHPLUS_TOKEN or PUSHPLUS_TOKEN == "YOUR_TOKEN":
         return False
     
-    # 采用毫秒级极速 HTTPS 接口 (0.2s 极速响应，避免 http 超时)
     url = "https://www.pushplus.plus/send"
     target_channel = channel or globals().get("PUSHPLUS_CHANNEL", "clawbot")
-    payload = {
-        "token": PUSHPLUS_TOKEN,
-        "title": title,
-        "content": markdown_content,
-        "template": "markdown"
-    }
-    if target_channel:
-        payload["channel"] = target_channel
+    
+    # 建立双通道分发列表
+    channels_to_push = []
+    if target_channel and target_channel.lower() != "wechat":
+        channels_to_push.append(target_channel)
+    channels_to_push.append("wechat")  # 官方服务号兜底保底通道
 
-    try:
-        req = urllib.request.Request(
-            url,
-            data=json.dumps(payload).encode("utf-8"),
-            headers={"Content-Type": "application/json", "User-Agent": "Mozilla/5.0"}
-        )
-        with urllib.request.urlopen(req, timeout=12) as resp:
-            data = json.loads(resp.read().decode("utf-8", errors="replace"))
-            if data.get("code") == 200:
-                print(f"  [+] 📱 微信[{target_channel}]卡片推送成功: {title}")
-                return True
-            else:
-                print(f"  [!] 📱 微信推送返回错误: {data.get('msg')} (数据: {data.get('data')})")
-                # 若专向 channel 异常，自动回退到默认账户通道二次重试
-                if target_channel:
-                    del payload["channel"]
-                    req_fb = urllib.request.Request(url, data=json.dumps(payload).encode("utf-8"), headers={"Content-Type": "application/json", "User-Agent": "Mozilla/5.0"})
-                    with urllib.request.urlopen(req_fb, timeout=10) as resp_fb:
-                        data_fb = json.loads(resp_fb.read().decode("utf-8", errors="replace"))
-                        if data_fb.get("code") == 200:
-                            print(f"  [+] 📱 微信[默认回退通道]推送成功: {title}")
-                            return True
-    except Exception as e:
-        print(f"  [!] 📱 微信推送网络异常: {e}")
-    return False
+    any_success = False
+    for ch in channels_to_push:
+        payload = {
+            "token": PUSHPLUS_TOKEN,
+            "title": title,
+            "content": markdown_content,
+            "template": "markdown",
+            "channel": ch
+        }
+        try:
+            req = urllib.request.Request(
+                url,
+                data=json.dumps(payload).encode("utf-8"),
+                headers={"Content-Type": "application/json", "User-Agent": "Mozilla/5.0"}
+            )
+            with urllib.request.urlopen(req, timeout=12) as resp:
+                data = json.loads(resp.read().decode("utf-8", errors="replace"))
+                if data.get("code") == 200:
+                    ch_desc = "ClawBot机器人" if ch == "clawbot" else "微信服务号"
+                    print(f"  [+] 📱 微信[{ch_desc}:{ch}]卡片推送成功: {title}")
+                    any_success = True
+                else:
+                    print(f"  [!] 📱 微信[{ch}]推送返回错误: {data.get('msg')} (数据: {data.get('data')})")
+        except Exception as e:
+            print(f"  [!] 📱 微信[{ch}]推送网络异常: {e}")
+            
+    return any_success
 
 def dispatch_wechat_radar_alerts(macro_data, stocks_data, weather_info, now_str):
     """
