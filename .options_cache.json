@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "updated_at": 1793600918.2616744,
+  "updated_at": 1793600968.8713822,
   "data": {
     "QQQM": {
       "has_options": true,
@@ -1479,7 +1479,7 @@
       "options_exp": "2026-11-06",
       "call_vol": 18587,
       "put_vol": 7818,
-      "call_dollar": 1397753.0,
+      "call_dollar": 1397766.0,
       "put_dollar": 972927.0,
       "pcr": 0.42,
       "dollar_pcr": 0.7,
@@ -1491,14 +1491,34 @@
       "top_put_info": "$55 Put (1,093张 · $269k)",
       "top_put_val": 268878.0,
       "put_wall": 55.0,
-      "iv_atm": 103.5,
+      "iv_atm": 102.9,
       "exp_move_pct": 7.3,
-      "exp_low": 50.73,
-      "exp_high": 58.73,
-      "exp_move_str": "±7.3% ($50.73~$58.73)"
+      "exp_low": 50.98,
+      "exp_high": 59.02,
+      "exp_move_str": "±7.3% ($50.98~$59.02)"
     },
     "AMD": {
-      "has_options": false
+      "has_options": true,
+      "options_exp": "2026-11-06",
+      "call_vol": 64690,
+      "put_vol": 60293,
+      "call_dollar": 66180359.0,
+      "put_dollar": 38361469.0,
+      "pcr": 0.93,
+      "dollar_pcr": 0.58,
+      "pcr_sentiment": "🟢 资金偏多看涨",
+      "pcr_color": "#4ade80",
+      "top_call_info": "$510 Call (3,403张 · $7.81M)",
+      "top_call_val": 7809885.0,
+      "call_wall": 510.0,
+      "top_put_info": "$500 Put (1,845张 · $4.17M)",
+      "top_put_val": 4173390.0,
+      "put_wall": 500.0,
+      "iv_atm": 118.9,
+      "exp_move_pct": 8.4,
+      "exp_low": 462.4,
+      "exp_high": 547.2,
+      "exp_move_str": "±8.4% ($462.40~$547.20)"
     }
   }
 }
