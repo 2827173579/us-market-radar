@@ -242,6 +242,26 @@ allTickers.forEach((ticker, idx) => {
             }
         }
 
+        // 5. Audit Guards: No double-dollar '($-' in pEntryStopLoss, no '$0.00' limit in pActionDirective, and no Golden Pit limit on SQQQ/SOXS/VIXY
+        if (domNodes.pEntryStopLoss.innerHTML.includes('($-') || domNodes.pEntryStopLoss.innerHTML.includes('($+')) {
+            sequentialRemnants.push({
+                ticker,
+                issue: `pEntryStopLoss contains malformed double-dollar percentage: ${domNodes.pEntryStopLoss.innerHTML}`
+            });
+        }
+        if (domNodes.pActionDirective.innerHTML.includes('上限: $0.00')) {
+            sequentialRemnants.push({
+                ticker,
+                issue: `pActionDirective rendered unguarded $0.00 buy limit during halt`
+            });
+        }
+        if (['SQQQ', 'SOXS', 'VIXY'].includes(ticker) && domNodes.pOptimalLimit.innerText.startsWith('$')) {
+            sequentialRemnants.push({
+                ticker,
+                issue: `Inverse hedge ETF ${ticker} erroneously displayed golden pit buy limit ${domNodes.pOptimalLimit.innerText}`
+            });
+        }
+
         passCount++;
     } catch (err) {
         failCount++;

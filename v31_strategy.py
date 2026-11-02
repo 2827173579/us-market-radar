@@ -272,9 +272,10 @@ def compute_rolling_indicators(df: pd.DataFrame) -> pd.DataFrame:
     d["Prev_Is_Right_Turn"] = d["Is_Right_Turn"].shift(1).fillna(0).astype(bool)
 
     crash_red_body = np.where(is_crash_day & (open_p > close), open_p - close, np.where(is_crash_day, (prev_close - close).clip(lower=0.0), 0.0))
-    d["Prev_Crash_Body"] = pd.Series(crash_red_body, index=d.index).shift(1).rolling(3, min_periods=1).max().fillna(0.0)
-    d["Prev_Crash_Close"] = np.where(is_crash_day, close, np.nan)
-    d["Prev_Crash_Close"] = pd.Series(d["Prev_Crash_Close"], index=d.index).shift(1).ffill().fillna(close)
+    crash_body_series = pd.Series(np.where(is_crash_day, crash_red_body, np.nan), index=d.index)
+    crash_close_series = pd.Series(np.where(is_crash_day, close, np.nan), index=d.index)
+    d["Prev_Crash_Body"] = crash_body_series.shift(1).ffill(limit=2).fillna(0.0)
+    d["Prev_Crash_Close"] = crash_close_series.shift(1).ffill(limit=2).fillna(close)
 
     return d
 

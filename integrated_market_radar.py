@@ -981,7 +981,7 @@ def evaluate_intraday_entry(
     earnings_info=None, rs_20d=0.0, atr=0.0, daily_rsi=50.0, options_info=None,
     pct_change=0.0, ext_pct=None, rth_high=None, prev_crash_3d=False,
     prev_is_right_turn=False, ema5=0.0, prev_crash_body=0.0, prev_crash_close=0.0,
-    session_code="REGULAR"
+    session_code="REGULAR", ticker="", crash_3d=False
 ):
     """
     真正的 5 分钟级日内量化建仓评估器 (V3.2 终极版)：
@@ -1006,6 +1006,46 @@ def evaluate_intraday_entry(
     is_e_risk = e_info.get("is_earnings_risk", False)
     e_tag = e_info.get("earnings_tag", "")
     safe_ext = ext_pct if ext_pct is not None else 0.0
+
+    # --------------------------------------------------------------------------
+    # -1. 反向/波动率衰减型对冲工具专属分支 (SQQQ, SOXS, VIXY)
+    #     绝不适用多头黄金坑埋伏，也不因大盘上涨引发的正常做空衰减触发多头暴跌熔断
+    # --------------------------------------------------------------------------
+    if ticker in ("SQQQ", "SOXS", "VIXY"):
+        bias_ema5 = ((active_price - ema5) / ema5 * 100.0) if ema5 > 0 else 0.0
+        hedge_stop = round(ema5 if (ema5 > 0 and ema5 < active_price) else active_price * 0.94, 2)
+        hedge_stop_pct = round((hedge_stop - active_price) / active_price * 100.0, 1) if active_price > 0 else -6.0
+        if pct_change >= 7.0 or bias_ema5 >= 6.0:
+            h_status = "🟣 对冲恐慌极值 · 建议逢高分批收割"
+            h_reason = f"反向衰减对冲工具({ticker})日内脉冲({pct_change:+.2f}%)，不设多头黄金坑埋伏单；持仓者建议逢高分批止盈收割，未持仓者严禁追高"
+            h_note = "反向衰减对冲工具·逢高收割不挂抄底单"
+        elif ema5 > 0 and active_price < ema5:
+            h_status = "⚪ 对冲脉冲退潮 · 跌破EMA5观望"
+            h_reason = f"反向衰减对冲工具({ticker})位于5日线(EMA5 ${ema5:.2f})下方，存在长期波动率损耗，严禁按多头黄金坑逻辑左侧挂单抄底"
+            h_note = "反向衰减对冲工具·严禁黄金坑抄底"
+        else:
+            h_status = "🛡️ 反向对冲观察 · 仅限短线防御"
+            h_reason = f"反向衰减对冲工具({ticker})具备长期波动率损耗，不参与60日斐波那契黄金坑埋伏，仅在大盘系统性破位时短线快进快出"
+            h_note = "反向衰减对冲工具·不设黄金坑埋伏单"
+        return {
+            "optimal_limit": round(active_price, 2),
+            "limit_note": h_note,
+            "entry_stop_loss": hedge_stop,
+            "stop_loss_pct": hedge_stop_pct,
+            "intraday_entry_ready": False,
+            "intraday_status_text": h_status,
+            "intraday_reason": h_reason,
+            "is_crash_halt": False,
+            "is_cooling_halt": False,
+            "is_inverse_hedge": True,
+            "rth_low": round(rth_low, 2),
+            "rth_high": round(curr_rth_high, 2),
+            "vwap": round(vwap, 2),
+            "rsi_5m": round(rsi_5m, 1),
+            "rvol_5m": round(rvol_5m, 2),
+            "rs_20d": round(rs_20d, 2),
+            **e_info
+        }
 
     # --------------------------------------------------------------------------
     # 0. 极端跳空/暴跌防手痒熔断闸判定 (V3.2 ATR 双轨自适应 + 盘前盘后反转解锁 + 断头铡刀跳水)
@@ -1043,6 +1083,8 @@ def evaluate_intraday_entry(
             "intraday_reason": crash_reason,
             "is_crash_halt": True,
             "is_cooling_halt": False,
+            "rth_low": round(rth_low, 2),
+            "rth_high": round(curr_rth_high, 2),
             "vwap": round(vwap, 2),
             "rsi_5m": round(rsi_5m, 1),
             "rvol_5m": round(rvol_5m, 2),
@@ -1051,12 +1093,12 @@ def evaluate_intraday_entry(
         }
 
     # --------------------------------------------------------------------------
-    # 0.5 隔夜失忆症与 3 日暴跌冷却期判定 (V3.2 R1.1)
+    # 0.5 隔夜失忆症与 3 日暴跌冷却期判定 (V3.2 R1.1，含当日跳空低开 <= -4.5% 后弱反抽拦截)
     # --------------------------------------------------------------------------
-    if prev_crash_3d:
+    if prev_crash_3d or crash_3d:
         # 严格企稳解锁边界：
-        # 条件 a: 前一交易日收盘已确认右侧反转阳线
-        unlock_a = bool(prev_is_right_turn)
+        # 条件 a: 前一交易日收盘已确认右侧反转阳线 (仅当暴跌来自前1~3日且今日未发生新跳空暴跌时有效)
+        unlock_a = bool(prev_is_right_turn) and bool(prev_crash_3d)
         # 条件 b: 日内强劲反弹 >= +2.5%，收复前次暴跌大阴线实体 > 50%，且稳居 VWAP 和 EMA5 之上
         rebound_body_ok = (active_price >= prev_crash_close + 0.5 * prev_crash_body) if prev_crash_body > 0 else True
         unlock_b = (pct_change >= 2.5) and rebound_body_ok and (active_price > vwap) and (ema5 > 0 and active_price > ema5)
@@ -1072,6 +1114,8 @@ def evaluate_intraday_entry(
                 "intraday_reason": "标的处于3日暴跌冷却期中，日线未完成企稳确认(等待收出右侧止跌K线或日内强反抽>+2.5%且收复大阴线实体50%站稳VWAP与EMA5)",
                 "is_crash_halt": False,
                 "is_cooling_halt": True,
+                "rth_low": round(rth_low, 2),
+                "rth_high": round(curr_rth_high, 2),
                 "vwap": round(vwap, 2),
                 "rsi_5m": round(rsi_5m, 1),
                 "rvol_5m": round(rvol_5m, 2),
@@ -1212,6 +1256,8 @@ def evaluate_intraday_entry(
         "intraday_reason": intraday_reason,
         "is_crash_halt": False,
         "is_cooling_halt": False,
+        "rth_low": round(rth_low, 2),
+        "rth_high": round(curr_rth_high, 2),
         "vwap": round(vwap, 2),
         "rsi_5m": round(rsi_5m, 1),
         "rvol_5m": round(rvol_5m, 2),
@@ -1347,7 +1393,7 @@ def dispatch_wechat_radar_alerts(macro_data, stocks_data, weather_info, now_str)
             current_state = "STOP_LOSS"
         elif is_watched and intraday_ready and not is_stop:
             current_state = "WATCHLIST_ENTRY_READY"
-        elif is_pit and not is_etf:
+        elif is_pit and not is_etf and not s.get("is_crash_halt") and not s.get("is_cooling_halt"):
             current_state = "GOLDEN_PIT"
         elif s.get("is_take_profit") and not is_etf:
             current_state = "TAKE_PROFIT"
@@ -1404,7 +1450,8 @@ def dispatch_wechat_radar_alerts(macro_data, stocks_data, weather_info, now_str)
                     "ticker": ticker, "name": name, "cat": cat, "last": last,
                     "bias": bias, "rsi": rsi, "fib_low": fib_low, "fib_high": fib_high,
                     "fractional": fractional, "pit_status": pit_status,
-                    "stop_loss": stop_loss, "rth_low": s.get("rth_low", last * 0.985),
+                    "stop_loss": stop_loss, "low_price": s.get("low_price", s.get("rth_low", last * 0.985)),
+                    "rth_low": s.get("rth_low", s.get("low_price", last * 0.985)),
                     "optimal_limit": s.get("optimal_limit", round(last * 1.020, 2))
                 })
             elif current_state == "STOP_LOSS":
@@ -1975,7 +2022,7 @@ def generate_and_sync_notifications(macro_data, stocks_data, weather_info, now_s
             })
 
         # 3. 🟢 黄金坑就位通知
-        if is_pit and not is_stop:
+        if is_pit and not is_stop and not s.get("is_crash_halt") and not s.get("is_cooling_halt"):
             new_notifs.append({
                 "id": f"PIT_{ticker}_{date_tag}",
                 "time": now_str[5:16],
@@ -2178,11 +2225,12 @@ def compute_indicators(df):
     df["Is_Right_Turn"] = is_bullish_body & ((close > prev_high) | (close > df["EMA5"]))
     df["Prev_Is_Right_Turn"] = df["Is_Right_Turn"].shift(1).fillna(0).astype(bool)
 
-    # 记录近 3 日最近一次暴跌日的实体高度 (用于日内 50% 实体收复计算)
+    # 记录近 3 日最近一次暴跌日的实体高度与收盘价 (严格同日配对，用于日内 50% 实体收复计算)
     crash_red_body = np.where(is_crash & (open_p > close), open_p - close, np.where(is_crash, (prev_close - close).clip(lower=0.0), 0.0))
-    df["Prev_Crash_Body"] = pd.Series(crash_red_body, index=df.index).shift(1).rolling(3, min_periods=1).max().fillna(0.0)
-    df["Prev_Crash_Close"] = np.where(is_crash, close, np.nan)
-    df["Prev_Crash_Close"] = pd.Series(df["Prev_Crash_Close"], index=df.index).shift(1).ffill().fillna(close)
+    crash_body_series = pd.Series(np.where(is_crash, crash_red_body, np.nan), index=df.index)
+    crash_close_series = pd.Series(np.where(is_crash, close, np.nan), index=df.index)
+    df["Prev_Crash_Body"] = crash_body_series.shift(1).ffill(limit=2).fillna(0.0)
+    df["Prev_Crash_Close"] = crash_close_series.shift(1).ffill(limit=2).fillna(close)
 
     return df
 
@@ -2404,6 +2452,8 @@ def evaluate_stock_signal(
     # 分支 A: 反向/波动率衰减型对冲工具 (SQQQ, SOXS, VIXY) - 【左侧恐慌收割算法】
     # --------------------------------------------------------------------------
     if ticker in ["SQQQ", "SOXS", "VIXY"]:
+        dist_to_pit = 0.0
+        pit_status = "🛡️ 对冲工具(不计坑)"
         smh_rsi = 50.0
         if macro_data and "SMH" in macro_data:
             smh_rsi = macro_data["SMH"].get("rsi", 50.0)
@@ -2629,7 +2679,9 @@ def evaluate_stock_signal(
         "is_take_profit": is_tp or ("🟣" in primary_signal),
         "is_volume": "🟡 量能异动" in primary_signal,
         "struct_stop": round(struct_stop, 2),
-        "stop_loss": round(struct_stop, 2)
+        "stop_loss": round(struct_stop, 2),
+        "low_price": round(sig_low, 2),
+        "rth_low": round(sig_low, 2)
     }
 
 # ==============================================================================
@@ -3668,7 +3720,7 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
                 pct_change=pct_change, ext_pct=ext_pct,
                 rth_high=rth_high, prev_crash_3d=prev_crash_3d, prev_is_right_turn=prev_is_right_turn,
                 ema5=ema5, prev_crash_body=prev_crash_body, prev_crash_close=prev_crash_close,
-                session_code=session_code
+                session_code=session_code, ticker=ticker, crash_3d=crash_3d
             )
 
             if bias > 0:
@@ -3713,6 +3765,10 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
                 "ma50": ma50,
                 "ma20": ma20,
                 "ema20": ema20,
+                "ema10": ema10,
+                "ema5": ema5,
+                "max_bias_5d": max_bias_5d,
+                "max_rsi_5d": max_rsi_5d,
                 "bias": bias,
                 "bias_ma20": bias_ma20,
                 "pos_60": pos_60,
@@ -3844,7 +3900,7 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
                 pct_change=pct_change, ext_pct=ext_pct,
                 rth_high=rth_high, prev_crash_3d=prev_crash_3d, prev_is_right_turn=prev_is_right_turn,
                 ema5=ema5, prev_crash_body=prev_crash_body, prev_crash_close=prev_crash_close,
-                session_code=session_code
+                session_code=session_code, ticker=ticker, crash_3d=crash_3d
             )
 
             stocks_list.append({
@@ -3869,6 +3925,10 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
                 "ext_pct": ext_pct,
                 "ma50": ma50,
                 "ema20": ema20,
+                "ema10": ema10,
+                "ema5": ema5,
+                "max_bias_5d": max_bias_5d,
+                "max_rsi_5d": max_rsi_5d,
                 "bias": bias,
                 "atr": atr,
                 "rsi": rsi,

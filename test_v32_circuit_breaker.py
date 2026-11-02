@@ -714,6 +714,57 @@ class TestV32CircuitBreaker(unittest.TestCase):
         self.assertTrue(res_df["Prev_Crash_3d"].iloc[5], "Day 5 Prev_Crash_3d must be True")
         self.assertTrue(res_df["Prev_Crash_3d"].iloc[6], "Day 6 Prev_Crash_3d must be True")
         self.assertTrue(res_df["Prev_Crash_3d"].iloc[7], "Day 7 Prev_Crash_3d must be True")
+        # Day 8 (4 days after Day 4 crash): Prev_Crash_Body must expire to 0.0 (limit=3)
+        self.assertEqual(res_df["Prev_Crash_Body"].iloc[8], 0.0, "Prev_Crash_Body must expire after 3 days")
+
+    def test_scenario_8_inverse_hedge_etf_isolation(self):
+        """Scenario 8: Inverse/Volatility Decay Hedge ETFs (SQQQ, SOXS, VIXY) must never
+        be recommended Golden Pit buy limits or halted by bull-market rallies.
+        """
+        for tk in ("SQQQ", "SOXS", "VIXY"):
+            res = evaluate_intraday_entry(
+                active_price=41.83,
+                fib_low=35.83,
+                fib_high=37.19,
+                ma50=36.71,
+                is_pit=False,
+                is_stop=False,
+                dist_to_pit=10.0,
+                intra_info={"vwap": 41.63, "rth_low": 40.55, "rth_high": 42.96, "rth_close": 41.83},
+                pct_change=-8.5,  # Market rally causing inverse ETF to drop -8.5%
+                ema5=38.30,
+                ticker=tk,
+            )
+            self.assertTrue(res.get("is_inverse_hedge"), f"{tk} must set is_inverse_hedge=True")
+            self.assertFalse(res.get("is_crash_halt"), f"{tk} must NOT trigger is_crash_halt on market rally")
+            self.assertFalse(res.get("is_cooling_halt"), f"{tk} must NOT trigger is_cooling_halt")
+            self.assertFalse(res.get("intraday_entry_ready"), f"{tk} must NOT trigger 5m golden pit entry")
+            self.assertNotIn("埋伏单", res.get("limit_note", ""), f"{tk} limit_note must not recommend golden pit limit order")
+
+    def test_scenario_9_same_day_gap_down_cooling_and_rth_low_contract(self):
+        """Scenario 9: Same-day gap-down (crash_3d=True, prev_crash_3d=False) with weak bounce (-2.5%)
+        must remain halted in cooling/stabilization check even if prev_is_right_turn=True.
+        Also verifies rth_low / low_price are returned in output dicts.
+        """
+        res = evaluate_intraday_entry(
+            active_price=97.5,
+            fib_low=95.0,
+            fib_high=105.0,
+            ma50=98.0,
+            is_pit=True,
+            is_stop=False,
+            dist_to_pit=0.0,
+            intra_info={"vwap": 98.0, "rth_low": 94.8, "rth_high": 98.2, "rth_close": 100.0},
+            pct_change=-2.5,
+            atr=2.0,
+            prev_crash_3d=False,
+            crash_3d=True,
+            prev_is_right_turn=True,  # Yesterday was green before today's gap-down!
+            ema5=99.0,
+        )
+        self.assertTrue(res.get("is_cooling_halt"), "Same-day gap-down with weak bounce must trigger cooling halt")
+        self.assertFalse(res.get("intraday_entry_ready"))
+        self.assertEqual(res.get("rth_low"), 94.8, "rth_low must be preserved in evaluate_intraday_entry output dict")
 
 
 # ==============================================================================

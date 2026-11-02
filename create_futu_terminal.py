@@ -2045,6 +2045,10 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                         is_take_profit: m.is_take_profit,
                         is_crash_halt: Boolean(m.is_crash_halt),
                         is_cooling_halt: Boolean(m.is_cooling_halt),
+                        is_inverse_hedge: Boolean(m.is_inverse_hedge || ["SQQQ", "SOXS", "VIXY"].includes(t)),
+                        rth_low: m.rth_low || m.low_price || 0,
+                        low_price: m.low_price || m.rth_low || 0,
+                        ema5: m.ema5 || 0,
                         optimal_limit: m.optimal_limit,
                         limit_note: m.limit_note,
                         entry_stop_loss: m.entry_stop_loss,
@@ -2290,9 +2294,10 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 intcBox.style.display = "none";
             }}
 
-            // 2.5 关键建仓与风控指标前置计算 (含暴跌熔断与冷却期保护闸)
-            const isCrashHalt = Boolean(data.is_crash_halt || (data.optimal_limit === 0 && data.limit_note && data.limit_note.includes("破位")));
-            const isCoolingHalt = Boolean(data.is_cooling_halt || (data.intraday_status_text && data.intraday_status_text.includes("冷却期")));
+            // 2.5 关键建仓与风控指标前置计算 (含反向对冲工具分流、暴跌熔断与冷却期保护闸)
+            const isInverseHedge = Boolean(data.is_inverse_hedge || ["SQQQ", "SOXS", "VIXY"].includes(ticker));
+            const isCrashHalt = !isInverseHedge && Boolean(data.is_crash_halt || (data.optimal_limit === 0 && data.limit_note && data.limit_note.includes("破位")));
+            const isCoolingHalt = !isInverseHedge && Boolean(data.is_cooling_halt || (data.intraday_status_text && data.intraday_status_text.includes("冷却期")));
             let optimalLimit = data.optimal_limit !== undefined ? data.optimal_limit : curActive;
             if (optimalLimit === 0 && !isCrashHalt && !isCoolingHalt && curFibHigh > curFibLow) {{
                 const midAxis = curFibLow + 0.382 * (curFibHigh - curFibLow);
@@ -2307,7 +2312,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             const fallbackStop = (optimalLimit > 0 && rawPitStop >= optimalLimit * 0.90 && rawPitStop <= optimalLimit * 0.985) ? rawPitStop : (optimalLimit * 0.96);
             const stopLoss = (isCrashHalt || isCoolingHalt) ? 0 : (data.entry_stop_loss || Math.round(fallbackStop * 100) / 100);
             const stopLossPct = (isCrashHalt || isCoolingHalt) ? 0 : (data.stop_loss_pct !== undefined ? data.stop_loss_pct : (optimalLimit > 0 ? ((stopLoss - optimalLimit) / optimalLimit * 100) : -4.0));
-            const cancelLine = Math.max(data.rth_low || 0, curLast * 0.985);
+            const cancelLine = Math.max(data.low_price || data.rth_low || 0, curLast * 0.985);
 
             // 3. 核心状态研判与四维深度成因分析
             const sig = data.signal || "";
@@ -2399,7 +2404,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 allocLabel = "仓位指令：";
                 allocSub = "等待板块企稳确认";
                 allocVal = "暂缓加仓";
-            }} else if (isPit) {{
+            }} else if (isPit && !isCrashHalt && !isCoolingHalt) {{
                 themeColor = "#00e676";
                 themeBg = "linear-gradient(135deg, rgba(0, 230, 118, 0.08), #181b22)";
                 themeBorder = "#00e676";
@@ -2409,6 +2414,16 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 allocLabel = "V3.1 仓位建议 (单股上限 25%)：";
                 allocSub = "1.5% 账户风险平价一次性建仓";
                 allocVal = fractional > 0 ? (fractional.toFixed(2) + " 股") : (data.fractional_shares ? (data.fractional_shares.toFixed(2) + " 股") : "--");
+            }} else if (isCrashHalt || isCoolingHalt) {{
+                themeColor = "#ff5252";
+                themeBg = "linear-gradient(135deg, rgba(255, 82, 82, 0.10), #181b22)";
+                themeBorder = "#ff5252";
+                actionType = isCoolingHalt ? "暴跌冷却 / 严禁抢跑" : "暴跌熔断 / 暂停接刀";
+                mainVerdict = isCoolingHalt ? "⛔ 暴跌冷却期 (3日内曾大跌·等待日线企稳确认)" : "⛔ 暂停挂单 (暴跌宣泄期 · 防接飞刀)";
+                actionDirective = `【V3.2 熔断保护】${{data.intraday_reason || "标的触发日内暴跌熔断或处于3日暴跌冷却期内，日线尚未确认右侧企稳，严禁盲目左侧挂单抄底！"}}`;
+                allocLabel = "风控冻结：";
+                allocSub = "等待日线右侧企稳确认";
+                allocVal = "0.0% (冻结)";
             }} else if (isStop) {{
                 themeColor = "#ff1744";
                 themeBg = "linear-gradient(135deg, rgba(255, 23, 68, 0.08), #181b22)";
@@ -2510,7 +2525,19 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             const intraReason = data.intraday_reason || "等待价格回踩至建议挂单价附近并出现 5m RSI 超卖拐头或 VWAP 突破信号。";
 
             if (intraBannerEl && intraStatusEl && intraReasonEl) {{
-                if (isCoolingHalt) {{
+                if (isInverseHedge) {{
+                    intraStatusEl.innerText = intraStatusText;
+                    intraReasonEl.innerText = intraReason;
+                    if (isTakeProfit || intraStatusText.includes("收割")) {{
+                        intraBannerEl.style.background = "rgba(217, 70, 239, 0.14)";
+                        intraBannerEl.style.borderColor = "rgba(217, 70, 239, 0.45)";
+                        intraStatusEl.style.color = "#d946ef";
+                    }} else {{
+                        intraBannerEl.style.background = "rgba(56, 189, 248, 0.12)";
+                        intraBannerEl.style.borderColor = "rgba(56, 189, 248, 0.35)";
+                        intraStatusEl.style.color = "#38bdf8";
+                    }}
+                }} else if (isCoolingHalt) {{
                     intraBannerEl.style.background = "rgba(255, 82, 82, 0.14)";
                     intraBannerEl.style.borderColor = "#ff5252";
                     intraStatusEl.style.color = "#ff5252";
@@ -2573,7 +2600,28 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             const b1ValEl = document.getElementById("pBatch1Val");
             const stopEl = document.getElementById("pEntryStopLoss");
 
-            if (isCrashHalt) {{
+            if (isInverseHedge) {{
+                if (optEl) {{
+                    optEl.innerText = isTakeProfit ? "🟣 逢高分批收割" : "🛡️ 仅限短线对冲";
+                    optEl.style.color = isTakeProfit ? "#d946ef" : "#38bdf8";
+                    optEl.style.fontSize = "15px";
+                }}
+                if (noteEl) {{
+                    noteEl.innerText = data.limit_note || "反向衰减对冲工具·不设黄金坑埋伏单";
+                    noteEl.style.color = isTakeProfit ? "#d946ef" : "#38bdf8";
+                }}
+                if (b1El) {{
+                    b1El.innerText = isTakeProfit ? "分批落袋止盈" : "对冲机动仓 (≤10%)";
+                    b1El.style.color = isTakeProfit ? "#d946ef" : "#38bdf8";
+                }}
+                if (b1ValEl) {{
+                    b1ValEl.innerText = "快进快出 · 严禁黄金坑抄底";
+                    b1ValEl.style.color = "#cbd5e1";
+                }}
+                if (stopEl) {{
+                    stopEl.innerHTML = stopLoss > 0 ? `$${{stopLoss.toFixed(2)}} <span style="font-size:10px; color:#f87171;">(${{stopLossPct >= 0 ? '+' : ''}}${{stopLossPct.toFixed(1)}}% · EMA5防线)</span>` : "跌破 EMA5 离场";
+                }}
+            }} else if (isCrashHalt) {{
                 if (optEl) {{
                     optEl.innerText = "⛔ 暂停挂单 (暴跌宣泄期)";
                     optEl.style.color = "#ff5252";
@@ -2641,10 +2689,10 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                     b1ValEl.innerText = b1Val > 0 ? (`约 $${{b1Val.toFixed(1)}} · 1.5%风险平价`) : "1.5% 风险平价一次性建仓";
                     b1ValEl.style.color = "#6b7280";
                 }}
-                if (stopEl) stopEl.innerHTML = stopLoss > 0 ? `$${{stopLoss.toFixed(2)}} <span style="font-size:10px; color:#f87171;">($${{stopLossPct.toFixed(1)}}%)</span>` : "--";
+                if (stopEl) stopEl.innerHTML = stopLoss > 0 ? `$${{stopLoss.toFixed(2)}} <span style="font-size:10px; color:#f87171;">(${{stopLossPct >= 0 ? '+' : ''}}${{stopLossPct.toFixed(1)}}%)</span>` : "--";
             }}
             const bandEl = document.getElementById("pEntryFibBand");
-            if (bandEl) bandEl.innerText = (curFibLow && curFibHigh) ? (`$${{curFibLow.toFixed(2)}} ~ $${{curFibHigh.toFixed(2)}}`) : "--";
+            if (bandEl) bandEl.innerText = isInverseHedge ? "🛡️ 反向衰减对冲(不计黄金坑)" : ((curFibLow && curFibHigh) ? (`$${{curFibLow.toFixed(2)}} ~ $${{curFibHigh.toFixed(2)}}`) : "--");
 
             // 2.8 机构期权多空异动雷达动态渲染
             const optBox = document.getElementById("optionsAnomalyBox");
