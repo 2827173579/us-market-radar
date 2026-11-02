@@ -98,8 +98,8 @@
       "last_notified_at": 1793643078.0236132
     },
     "NVDA": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "STOP_LOSS",
+      "last_notified_at": 1793647639.5844538
     },
     "ORCL": {
       "state": "STOP_LOSS",
@@ -257,6 +257,6 @@
   "position_peaks": {
     "INTC": 93.3,
     "SOXL": 108.2109,
-    "SOXS": 56.7
+    "SOXS": 57.02
   }
 }
