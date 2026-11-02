@@ -3,59 +3,59 @@
   "targets": {
     "INTC": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793647875.6149917
+      "last_notified_at": 1793661657.0929668
     },
     "PORT_INTC": {
       "state": "INTC_CRITICAL_STOP",
-      "last_notified_at": 1793647875.6149917
+      "last_notified_at": 1793661657.0929668
     },
     "AAOI": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793647875.6149917
+      "last_notified_at": 1793661657.0929668
     },
     "CCXI": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793647875.6149917
+      "last_notified_at": 1793661657.0929668
     },
     "OKLO": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793647875.6149917
+      "last_notified_at": 1793661657.0929668
     },
     "CRWV": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793647875.6149917
+      "last_notified_at": 1793661657.0929668
     },
     "CRDO": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793647875.6149917
+      "last_notified_at": 1793661657.0929668
     },
     "COHR": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793647875.6149917
+      "last_notified_at": 1793661657.0929668
     },
     "NBIS": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793647875.6149917
+      "last_notified_at": 1793661657.0929668
     },
     "ASTS": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793647875.6149917
+      "last_notified_at": 1793661657.0929668
     },
     "AXTI": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793647875.6149917
+      "last_notified_at": 1793661657.0929668
     },
     "MRVL": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793647875.6149917
+      "last_notified_at": 1793661657.0929668
     },
     "STX": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793647875.6149917
+      "last_notified_at": 1793661657.0929668
     },
     "FPS": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793647875.6149917
+      "last_notified_at": 1793661657.0929668
     },
     "AMZN": {
       "state": "NORMAL",
@@ -63,63 +63,63 @@
     },
     "SNDK": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793647875.6149917
+      "last_notified_at": 1793661657.0929668
     },
     "RKLB": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793647875.6149917
+      "last_notified_at": 1793661657.0929668
     },
     "GOOGL": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793647875.6149917
+      "last_notified_at": 1793661657.0929668
     },
     "BE": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793647875.6149917
+      "last_notified_at": 1793661657.0929668
     },
     "DELL": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793647875.6149917
+      "last_notified_at": 1793661657.0929668
     },
     "WDC": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793647875.6149917
+      "last_notified_at": 1793661657.0929668
     },
     "AVGO": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793647875.6149917
+      "last_notified_at": 1793661657.0929668
     },
     "AMAT": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793647875.6149917
+      "last_notified_at": 1793661657.0929668
     },
     "VST": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793650283.1076443
+      "last_notified_at": 1793661657.0929668
     },
     "NVDA": {
-      "state": "STOP_LOSS",
-      "last_notified_at": 1793654005.5948255
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "ORCL": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793647875.6149917
+      "last_notified_at": 1793661657.0929668
     },
     "CEG": {
       "state": "NORMAL",
       "last_notified_at": 0.0
     },
     "TSM": {
-      "state": "STOP_LOSS",
-      "last_notified_at": 1793651238.9681637
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "MU": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793647875.6149917
+      "last_notified_at": 1793661657.0929668
     },
     "ASML": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793651604.148153
+      "last_notified_at": 1793661657.0929668
     },
     "SKHY": {
       "state": "NORMAL",
@@ -131,19 +131,19 @@
     },
     "LITE": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793647875.6149917
+      "last_notified_at": 1793661657.0929668
     },
     "HPE": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793654363.3334832
+      "last_notified_at": 1793661657.0929668
     },
     "AMD": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793647935.9801772
+      "last_notified_at": 1793661657.0929668
     },
     "SPCX": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793651541.5848932
+      "last_notified_at": 1793661657.0929668
     },
     "VRT": {
       "state": "NORMAL",
@@ -178,8 +178,8 @@
       "last_notified_at": 0.0
     },
     "PLTR": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "STOP_LOSS",
+      "last_notified_at": 1793661657.0929668
     },
     "V": {
       "state": "NORMAL",
@@ -219,7 +219,7 @@
     },
     "PORT_SOXL": {
       "state": "SOXL_CRITICAL_STOP",
-      "last_notified_at": 1793647875.6149917
+      "last_notified_at": 1793661657.0929668
     },
     "KORU": {
       "state": "NORMAL",
@@ -235,23 +235,23 @@
     },
     "PORT_SOXS": {
       "state": "SOXS_HEDGE_CLIMAX",
-      "last_notified_at": 1793647875.6149917
+      "last_notified_at": 1793661657.0929668
     },
     "MARA": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793647875.6149917
+      "last_notified_at": 1793661657.0929668
     },
     "APLD": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793647875.6149917
+      "last_notified_at": 1793661657.0929668
     },
     "COIN": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793647875.6149917
+      "last_notified_at": 1793661657.0929668
     },
     "NOW": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793647875.6149917
+      "last_notified_at": 1793661657.0929668
     }
   },
   "position_peaks": {
