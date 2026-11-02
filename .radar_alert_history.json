@@ -142,8 +142,8 @@
       "last_notified_at": 1793647935.9801772
     },
     "SPCX": {
-      "state": "STOP_LOSS",
-      "last_notified_at": 1793648359.37905
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "VRT": {
       "state": "NORMAL",
@@ -257,6 +257,6 @@
   "position_peaks": {
     "INTC": 93.3,
     "SOXL": 108.2109,
-    "SOXS": 57.25
+    "SOXS": 57.27
   }
 }
