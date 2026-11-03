@@ -142,8 +142,8 @@
       "last_notified_at": 1793661657.0929668
     },
     "SPCX": {
-      "state": "STOP_LOSS",
-      "last_notified_at": 1793661657.0929668
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1793667646.4417088
     },
     "VRT": {
       "state": "NORMAL",
@@ -194,8 +194,8 @@
       "last_notified_at": 0.0
     },
     "CRWD": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "TAKE_PROFIT",
+      "last_notified_at": 1793667646.4417088
     },
     "LLY": {
       "state": "NORMAL",
