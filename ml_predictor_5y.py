@@ -13,11 +13,13 @@ Architecture & Design:
 
 import os
 import sys
-if sys.platform == 'win32' and __name__ == '__main__':
+if sys.platform == 'win32':
     import io
     try:
-        sys.stdout.reconfigure(encoding='utf-8', errors='replace')
-        sys.stderr.reconfigure(encoding='utf-8', errors='replace')
+        if hasattr(sys.stdout, 'reconfigure'):
+            sys.stdout.reconfigure(encoding='utf-8', errors='replace')
+        if hasattr(sys.stderr, 'reconfigure'):
+            sys.stderr.reconfigure(encoding='utf-8', errors='replace')
     except Exception:
         pass
 
@@ -49,6 +51,7 @@ def load_env_file(env_path=None):
 load_env_file()
 
 import time
+import math
 import json
 import random
 import argparse
@@ -56,7 +59,7 @@ import unicodedata
 import urllib.request
 import urllib.error
 from datetime import datetime, timezone, timedelta
-from typing import List, Dict, Tuple, Optional, Any
+from typing import List, Dict, Tuple, Optional, Any, Union
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 import numpy as np
@@ -582,17 +585,23 @@ def compute_effective_atr(atr_pct: float) -> float:
 
 def apply_triple_barrier_labeling(df: pd.DataFrame) -> pd.DataFrame:
     """
-    三阈值动态止盈止损打标引擎 (Triple Barrier Labeling):
-    1. 以次日开盘价 (NEXT_OPEN = Open.shift(-1)) 作为真实可成交基准入场价；
-    2. 动态止盈上轨 (Upper Barrier): NEXT_OPEN * (1 + max(0.030, 1.35 * eff_atr))
-    3. 动态止损下轨 (Lower Barrier): NEXT_OPEN * (1 - max(0.022, 1.00 * eff_atr))
-       其中 eff_atr 由 compute_effective_atr(atr_pct) 软压缩计算 (0.012 ~ 0.070)
-    4. 观察未来 5 个交易日 (T+1 ~ T+5):
-       - 先触及止盈上轨且未先触及止损下轨 -> Label = 1
-       - 先触及止损下轨 -> Label = 0
-       - 5 日内均未触及 -> Label = 0 (超时)
-       - 同日同时触及上下轨 -> Label = 0 (风控第一，止损优先)
-    5. 尾部隔离：最后 5 个交易日未来路径未走完，Label 标记为 NaN，切入实盘推理池。
+    双向三阈值动态止盈止损打标引擎 (Dual Long & Short Triple Barrier Labeling Engine):
+    1. 做多 (Long):
+       - 基准入场价: NEXT_OPEN (Open.shift(-1))
+       - 动态止盈上轨 (Target_Upper): NEXT_OPEN * (1 + max(0.030, 1.35 * eff_atr))
+       - 动态止损下轨 (Target_Lower): NEXT_OPEN * (1 - max(0.022, 1.00 * eff_atr))
+       - 触及上轨 -> Label = 1, Barrier_Hit = 'upper'
+       - 触及下轨 -> Label = 0, Barrier_Hit = 'lower'
+       - 同日碰撞/超时 -> Label = 0, Barrier_Hit = 'collision'/'timeout'
+    2. 做空 (Short):
+       - 基准入场价: NEXT_OPEN (Open.shift(-1))
+       - 动态止盈下轨 (Short_Target_TP): NEXT_OPEN * (1 - max(0.030, 1.35 * eff_atr))
+       - 动态止损上轨 (Short_Target_SL): NEXT_OPEN * (1 + max(0.022, 1.00 * eff_atr))
+       - 触及下轨 (TP) -> Label_Short = 1, Barrier_Hit_Short = 'tp', Realized_Return_Short = round(tp_mult * 100.0, 4)
+       - 触及上轨 (SL) -> Label_Short = 0, Barrier_Hit_Short = 'sl', Realized_Return_Short = round(-sl_mult * 100.0, 4)
+       - 同日碰撞 -> 止损优先 Label_Short = 0, Barrier_Hit_Short = 'collision', Realized_Return_Short = round(-sl_mult * 100.0, 4)
+       - 超时未触轨 -> Label_Short = 0, Barrier_Hit_Short = 'timeout', Realized_Return_Short = round(((entry_price - c_exit) / entry_price) * 100.0, 4)
+    3. 尾部隔离：最后 5 个交易日 Label 和 Label_Short 均为 NaN，切入实盘推理池。
     """
     if 'Ticker' not in df.columns:
         df = df.copy()
@@ -606,12 +615,20 @@ def apply_triple_barrier_labeling(df: pd.DataFrame) -> pd.DataFrame:
         grp['NEXT_OPEN'] = grp['Open'].shift(-1)
         grp['Entry_Price'] = grp['NEXT_OPEN']
 
+        # 做多数组
         targets_u = np.full(n, np.nan)
         targets_l = np.full(n, np.nan)
         labels = np.full(n, np.nan)
         hits = np.array(['unresolved'] * n, dtype=object)
         max_gains = np.full(n, np.nan)
         realized_returns = np.full(n, np.nan)
+
+        # 做空数组
+        short_tp_arr = np.full(n, np.nan)
+        short_sl_arr = np.full(n, np.nan)
+        labels_short = np.full(n, np.nan)
+        hits_short = np.array(['unresolved'] * n, dtype=object)
+        realized_returns_short = np.full(n, np.nan)
 
         if n <= 5:
             grp['Target_Upper'] = targets_u
@@ -620,12 +637,19 @@ def apply_triple_barrier_labeling(df: pd.DataFrame) -> pd.DataFrame:
             grp['Barrier_Hit'] = hits
             grp['Max_Gain_5d'] = max_gains
             grp['Realized_Return'] = realized_returns
+
+            grp['Short_Target_TP'] = short_tp_arr
+            grp['Short_Target_SL'] = short_sl_arr
+            grp['Label_Short'] = labels_short
+            grp['Barrier_Hit_Short'] = hits_short
+            grp['Realized_Return_Short'] = realized_returns_short
             groups.append(grp)
             continue
 
         entry_prices = grp['Entry_Price'].to_numpy(dtype=float)
         highs = grp['High'].to_numpy(dtype=float)
         lows = grp['Low'].to_numpy(dtype=float)
+        closes = grp['Close'].to_numpy(dtype=float) if 'Close' in grp.columns else entry_prices
         atr_pcts = grp['ATR_Pct'].to_numpy(dtype=float) if 'ATR_Pct' in grp.columns else np.full(n, 2.0)
 
         for i in range(n - 5):
@@ -638,55 +662,90 @@ def apply_triple_barrier_labeling(df: pd.DataFrame) -> pd.DataFrame:
                 atr_pct = 2.0
 
             eff_atr = compute_effective_atr(atr_pct)
-            upper_mult = max(0.030, 1.35 * eff_atr)
-            lower_mult = max(0.022, 1.00 * eff_atr)
+            tp_mult = max(0.030, 1.35 * eff_atr)
+            sl_mult = max(0.022, 1.00 * eff_atr)
 
-            upper_barrier = entry_price * (1.0 + upper_mult)
-            lower_barrier = entry_price * (1.0 - lower_mult)
-
+            # 做多轨道
+            upper_barrier = entry_price * (1.0 + tp_mult)
+            lower_barrier = entry_price * (1.0 - sl_mult)
             targets_u[i] = round(upper_barrier, 4)
             targets_l[i] = round(lower_barrier, 4)
 
-            # 5 日内前向最高收益率 %
+            # 做空轨道 (Lower=TP, Upper=SL)
+            short_tp_barrier = entry_price * (1.0 - tp_mult)
+            short_sl_barrier = entry_price * (1.0 + sl_mult)
+            short_tp_arr[i] = round(short_tp_barrier, 4)
+            short_sl_arr[i] = round(short_sl_barrier, 4)
+
+            # 5 日内前向最高收益率 % (做多)
             sub_highs = highs[i + 1 : i + 6]
             if len(sub_highs) > 0:
                 max_gains[i] = round(((np.max(sub_highs) - entry_price) / entry_price) * 100.0, 4)
 
-            resolved = False
+            # 单循环同时判定多空两路触轨
+            resolved_long = False
+            resolved_short = False
+
             for step in range(1, 6):
                 k = i + step
                 h = highs[k]
                 l = lows[k]
 
-                hit_upper = (h >= upper_barrier)
-                hit_lower = (l <= lower_barrier)
+                # --- 做多判定 ---
+                if not resolved_long:
+                    hit_upper = (h >= upper_barrier)
+                    hit_lower = (l <= lower_barrier)
+                    if hit_upper and hit_lower:
+                        labels[i] = 0.0
+                        hits[i] = 'collision'
+                        realized_returns[i] = round(-sl_mult * 100.0, 4)
+                        resolved_long = True
+                    elif hit_upper:
+                        labels[i] = 1.0
+                        hits[i] = 'upper'
+                        realized_returns[i] = round(tp_mult * 100.0, 4)
+                        resolved_long = True
+                    elif hit_lower:
+                        labels[i] = 0.0
+                        hits[i] = 'lower'
+                        realized_returns[i] = round(-sl_mult * 100.0, 4)
+                        resolved_long = True
 
-                if hit_upper and hit_lower:
-                    # 同日碰撞：风控保守第一原则，判定为止损 Label = 0
-                    labels[i] = 0.0
-                    hits[i] = 'collision'
-                    realized_returns[i] = round(-lower_mult * 100.0, 4)
-                    resolved = True
-                    break
-                elif hit_upper:
-                    labels[i] = 1.0
-                    hits[i] = 'upper'
-                    realized_returns[i] = round(upper_mult * 100.0, 4)
-                    resolved = True
-                    break
-                elif hit_lower:
-                    labels[i] = 0.0
-                    hits[i] = 'lower'
-                    realized_returns[i] = round(-lower_mult * 100.0, 4)
-                    resolved = True
+                # --- 做空判定 ---
+                if not resolved_short:
+                    hit_short_tp = (l <= short_tp_barrier)
+                    hit_short_sl = (h >= short_sl_barrier)
+                    if hit_short_tp and hit_short_sl:
+                        # 同日碰撞：风控保守第一原则，判定为做空止损
+                        labels_short[i] = 0.0
+                        hits_short[i] = 'collision'
+                        realized_returns_short[i] = round(-sl_mult * 100.0, 4)
+                        resolved_short = True
+                    elif hit_short_tp:
+                        labels_short[i] = 1.0
+                        hits_short[i] = 'tp'
+                        realized_returns_short[i] = round(tp_mult * 100.0, 4)
+                        resolved_short = True
+                    elif hit_short_sl:
+                        labels_short[i] = 0.0
+                        hits_short[i] = 'sl'
+                        realized_returns_short[i] = round(-sl_mult * 100.0, 4)
+                        resolved_short = True
+
+                if resolved_long and resolved_short:
                     break
 
-            if not resolved:
-                # 超时未触及任何轨道，判定为 Label = 0
+            # 超时处理 (T+5 收盘结算)
+            c_exit = closes[i + 5] if (i + 5 < n) else entry_price
+            if not resolved_long:
                 labels[i] = 0.0
                 hits[i] = 'timeout'
-                c_exit = grp['Close'].iloc[i + 5] if (i + 5 < n and 'Close' in grp.columns) else entry_price
                 realized_returns[i] = round(((c_exit - entry_price) / entry_price) * 100.0, 4)
+
+            if not resolved_short:
+                labels_short[i] = 0.0
+                hits_short[i] = 'timeout'
+                realized_returns_short[i] = round(((entry_price - c_exit) / entry_price) * 100.0, 4)
 
         grp['Target_Upper'] = targets_u
         grp['Target_Lower'] = targets_l
@@ -694,6 +753,12 @@ def apply_triple_barrier_labeling(df: pd.DataFrame) -> pd.DataFrame:
         grp['Barrier_Hit'] = hits
         grp['Max_Gain_5d'] = max_gains
         grp['Realized_Return'] = realized_returns
+
+        grp['Short_Target_TP'] = short_tp_arr
+        grp['Short_Target_SL'] = short_sl_arr
+        grp['Label_Short'] = labels_short
+        grp['Barrier_Hit_Short'] = hits_short
+        grp['Realized_Return_Short'] = realized_returns_short
         groups.append(grp)
 
     return pd.concat(groups, axis=0).reset_index(drop=True)
@@ -787,27 +852,97 @@ def get_cv_folds(
     return folds
 
 
+def train_live_models(
+    df: pd.DataFrame,
+    feature_cols: Optional[List[str]] = None,
+    lgb_params: Optional[Dict[str, Any]] = None
+) -> Dict[str, Any]:
+    """
+    训练实盘推理专属 LightGBM 模型 (覆盖至 T-5 最新已结算交易日，严守 5 日尾部隔离):
+    - 做多专属模型: 基于 Label，class_weight='balanced'
+    - 做空专属模型: 基于 Label_Short，class_weight='balanced'
+    
+    返回:
+        Dict[str, Any]: {
+            'long': live_clf_long,
+            'short': live_clf_short,
+            'model_long': live_clf_long,
+            'model_short': live_clf_short,
+            'long_booster': live_clf_long.booster_ if live_clf_long else None,
+            'short_booster': live_clf_short.booster_ if live_clf_short else None
+        }
+    """
+    if feature_cols is None:
+        feature_cols = FEATURE_COLS
+
+    if 'Label' not in df.columns or 'Label_Short' not in df.columns:
+        df = apply_triple_barrier_labeling(df)
+
+    if lgb_params is None:
+        lgb_params = {
+            'max_depth': 5,
+            'num_leaves': 23,
+            'learning_rate': 0.03,
+            'subsample': 0.8,
+            'subsample_freq': 1,
+            'colsample_bytree': 0.65,
+            'max_bin': 63,
+            'n_estimators': 300,
+            'random_state': 42,
+            'objective': 'binary',
+            'class_weight': 'balanced',
+            'importance_type': 'gain',
+            'verbose': -1,
+            'n_jobs': -1
+        }
+
+    # 做多实盘专属模型训练
+    live_train_long = df.dropna(subset=['Label']).copy()
+    live_clf_long = None
+    if len(live_train_long) >= 20 and live_train_long['Label'].nunique() >= 2:
+        t_live_start = time.time()
+        live_clf_long = lgb.LGBMClassifier(**lgb_params)
+        live_clf_long.fit(live_train_long[feature_cols], live_train_long['Label'].astype(int))
+        t_live_elapsed = time.time() - t_live_start
+        live_min_d = live_train_long['Date'].min().strftime('%Y-%m-%d')
+        live_max_d = live_train_long['Date'].max().strftime('%Y-%m-%d')
+        print(f"  [+] Live Refit (做多专属实盘模型): 全量已结算样本 ({live_min_d} ~ {live_max_d}, {len(live_train_long)} 样本, 严守 T-5 尾部隔离) | 训练耗时 {t_live_elapsed:.1f}s")
+
+    # 做空实盘专属模型训练
+    live_train_short = df.dropna(subset=['Label_Short']).copy()
+    live_clf_short = None
+    if len(live_train_short) >= 20 and live_train_short['Label_Short'].nunique() >= 2:
+        t_live_start = time.time()
+        live_clf_short = lgb.LGBMClassifier(**lgb_params)
+        live_clf_short.fit(live_train_short[feature_cols], live_train_short['Label_Short'].astype(int))
+        t_live_elapsed = time.time() - t_live_start
+        live_min_ds = live_train_short['Date'].min().strftime('%Y-%m-%d')
+        live_max_ds = live_train_short['Date'].max().strftime('%Y-%m-%d')
+        print(f"  [+] Live Refit (做空专属实盘模型): 全量已结算样本 ({live_min_ds} ~ {live_max_ds}, {len(live_train_short)} 样本, 严守 T-5 尾部隔离) | 训练耗时 {t_live_elapsed:.1f}s")
+
+    return {
+        'long': live_clf_long,
+        'short': live_clf_short,
+        'model_long': live_clf_long,
+        'model_short': live_clf_short,
+        'long_booster': live_clf_long.booster_ if live_clf_long is not None else None,
+        'short_booster': live_clf_short.booster_ if live_clf_short is not None else None
+    }
+
+
 def run_walk_forward_cv(
     df: pd.DataFrame,
     test_years: List[int] = [2024, 2025, 2026],
     purge_days: int = 5
 ) -> Tuple[pd.DataFrame, Dict, Any]:
     """
-    Milestone M2: 严格时序滚动窗口训练与 5 日 Purge 隔离验证。
+    Milestone M1 & M2: 双向时序滚动窗口训练与 5 日 Purge 隔离验证。
     
     1. 按 Expanding Window 滚动切分 2024, 2025, 2026 三个测试年度，训练集与测试集之间强制保留 5 日 Purge 隔离带。
-    2. 使用 LightGBM (LGBMClassifier) 进行训练，严格遵守正则化参数：
-       - max_depth = 5
-       - num_leaves = 23
-       - learning_rate = 0.03
-       - subsample = 0.8, subsample_freq = 1
-       - colsample_bytree = 0.65 (V1.2: 降低特征列采样比，抑制宏观特征垄断)
-       - max_bin = 63 (V1.2: 限制分箱数，抑制宏观特征对日期的过拟合)
-       - n_estimators = 300
-       - random_state = 42
-       - objective = 'binary'
-       - importance_type = 'gain'
-    3. 汇总 3 个测试折的样本外 (OOS) 预测结果：Date, Ticker, Sector, Close, Label, Prob_1。
+    2. 使用 LightGBM (LGBMClassifier) 针对 Label (做多) 与 Label_Short (做空) 分别训练独立模型:
+       - 严格正则化参数 (max_depth=5, num_leaves=23, lr=0.03, colsample_bytree=0.65, max_bin=63)
+       - class_weight='balanced' 解决样本不均衡
+    3. 汇总 3 个测试折的样本外 (OOS) 双向预测结果：Prob_1 (做多概率), Prob_Short_1 (做空概率)。
     4. 评估样本外指标：ROC AUC, Accuracy, Precision, Recall, Brier Score。
     
     返回:
@@ -817,8 +952,8 @@ def run_walk_forward_cv(
         return pd.DataFrame(), {}, None
 
     # 如果尚未打标，自动执行三阈值动态打标
-    if 'Label' not in df.columns:
-        print("[*] 正在执行三阈值动态打标 (Triple Barrier Labeling)...")
+    if 'Label' not in df.columns or 'Label_Short' not in df.columns:
+        print("[*] 正在执行双向三阈值动态打标 (Dual Triple Barrier Labeling)...")
         df = apply_triple_barrier_labeling(df)
 
     folds = get_cv_folds(df, test_years=test_years, purge_days=purge_days)
@@ -846,6 +981,7 @@ def run_walk_forward_cv(
     oos_list = []
     fold_metrics = {}
     models = {}
+    models_short = {}
 
     print(f"[*] 🚀 开始执行 Walk-Forward Expanding 滚动时序训练 (共 {len(folds)} 个测试折，5 日 Purge 隔离)...")
 
@@ -857,42 +993,71 @@ def run_walk_forward_cv(
         train_clean = train_df.dropna(subset=['Label']).copy()
         test_clean = test_df.dropna(subset=['Label']).copy()
 
+        train_clean_short = train_df.dropna(subset=['Label_Short']).copy()
+        test_clean_short = test_df.dropna(subset=['Label_Short']).copy()
+
         if len(train_clean) == 0 or len(test_clean) == 0:
             print(f"  [-] Fold {year}: 有效样本为空，跳过！")
             continue
 
+        # --- 做多模型训练 ---
         X_train = train_clean[FEATURE_COLS]
         y_train = train_clean['Label'].astype(int)
-
         X_test = test_clean[FEATURE_COLS]
         y_test = test_clean['Label'].astype(int)
 
         t_start = time.time()
         clf = lgb.LGBMClassifier(**lgb_params)
         clf.fit(X_train, y_train)
-        t_elapsed = time.time() - t_start
-
-        # 样本外概率预测
         probs = clf.predict_proba(X_test)[:, 1]
         preds = (probs >= 0.5).astype(int)
 
+        # --- 做空模型训练 ---
+        clf_short = lgb.LGBMClassifier(**lgb_params)
+        if len(train_clean_short) >= 10 and train_clean_short['Label_Short'].nunique() >= 2:
+            clf_short.fit(train_clean_short[FEATURE_COLS], train_clean_short['Label_Short'].astype(int))
+            probs_short = clf_short.predict_proba(X_test)[:, 1]
+            preds_short = (probs_short >= 0.5).astype(int)
+        else:
+            probs_short = np.full(len(test_clean), 0.5)
+            preds_short = np.zeros(len(test_clean), dtype=int)
+        t_elapsed = time.time() - t_start
+
         cols_to_keep = ['Date', 'Ticker', 'Sector', 'Close', 'Label']
-        for col_name in ['Entry_Price', 'Target_Upper', 'Target_Lower', 'Max_Gain_5d', 'Realized_Return', 'Barrier_Hit']:
+        for col_name in ['Entry_Price', 'Target_Upper', 'Target_Lower', 'Max_Gain_5d', 'Realized_Return', 'Barrier_Hit',
+                         'Label_Short', 'Short_Target_TP', 'Short_Target_SL', 'Barrier_Hit_Short', 'Realized_Return_Short']:
             if col_name in test_clean.columns:
                 cols_to_keep.append(col_name)
         fold_oos = test_clean[cols_to_keep].copy()
         fold_oos['Prob_1'] = probs
         fold_oos['Pred_Label'] = preds
+        fold_oos['Prob_Short_1'] = probs_short
+        fold_oos['Pred_Label_Short'] = preds_short
         fold_oos['Fold_Year'] = year
         oos_list.append(fold_oos)
 
-        # 折内指标计算
+        # 折内多头指标计算
         y_t = y_test.values
         f_auc = float(roc_auc_score(y_t, probs)) if len(np.unique(y_t)) >= 2 else 0.5
         f_acc = float(accuracy_score(y_t, preds))
         f_prec = float(precision_score(y_t, preds, zero_division=0))
         f_rec = float(recall_score(y_t, preds, zero_division=0))
         f_brier = float(brier_score_loss(y_t, probs))
+
+        # 折内空头指标计算
+        if 'Label_Short' in test_clean.columns and test_clean['Label_Short'].notna().any():
+            valid_mask = test_clean['Label_Short'].notna().values
+            y_ts = test_clean.loc[valid_mask, 'Label_Short'].astype(int).values
+            p_s = probs_short[valid_mask]
+            pred_s = preds_short[valid_mask]
+            f_auc_s = float(roc_auc_score(y_ts, p_s)) if len(np.unique(y_ts)) >= 2 else 0.5
+            f_acc_s = float(accuracy_score(y_ts, pred_s))
+            f_prec_s = float(precision_score(y_ts, pred_s, zero_division=0))
+            f_rec_s = float(recall_score(y_ts, pred_s, zero_division=0))
+            f_brier_s = float(brier_score_loss(y_ts, p_s))
+            pos_rate_s = float(y_ts.mean())
+        else:
+            f_auc_s, f_acc_s, f_prec_s, f_rec_s, f_brier_s, pos_rate_s = 0.5, 0.5, 0.0, 0.0, 0.25, 0.0
 
         fold_metrics[year] = {
             'year': year,
@@ -909,21 +1074,28 @@ def run_walk_forward_cv(
             'precision': round(f_prec, 4),
             'recall': round(f_rec, 4),
             'brier_score': round(f_brier, 4),
+            'short_positive_rate': round(pos_rate_s, 4),
+            'short_auc': round(f_auc_s, 4),
+            'short_accuracy': round(f_acc_s, 4),
+            'short_precision': round(f_prec_s, 4),
+            'short_recall': round(f_rec_s, 4),
+            'short_brier_score': round(f_brier_s, 4),
             'train_time_sec': round(t_elapsed, 2)
         }
 
         models[year] = clf
+        models_short[year] = clf_short
 
         print(f"  [+] Fold {year}: 训练 ({fold_metrics[year]['train_start']} ~ {fold_metrics[year]['train_end']}, {len(train_clean)} 样本) -> "
               f"Purge 5日 -> 测试 ({fold_metrics[year]['test_start']} ~ {fold_metrics[year]['test_end']}, {len(test_clean)} 样本) | "
-              f"AUC: {f_auc:.4f}, ACC: {f_acc:.4f}, Precision: {f_prec:.4f}, Brier: {f_brier:.4f} ({t_elapsed:.1f}s)")
+              f"做多 AUC: {f_auc:.4f}, ACC: {f_acc:.4f} | 做空 AUC: {f_auc_s:.4f}, ACC: {f_acc_s:.4f} ({t_elapsed:.1f}s)")
 
     if not oos_list:
         return pd.DataFrame(), {}, None
 
     oos_predictions_df = pd.concat(oos_list, ignore_index=True)
 
-    # 全局样本外评估指标
+    # 全局样本外评估指标 - 做多
     y_all_true = oos_predictions_df['Label'].astype(int).values
     y_all_prob = oos_predictions_df['Prob_1'].values
     y_all_pred = (y_all_prob >= 0.5).astype(int)
@@ -934,6 +1106,24 @@ def run_walk_forward_cv(
     overall_rec = float(recall_score(y_all_true, y_all_pred, zero_division=0))
     overall_brier = float(brier_score_loss(y_all_true, y_all_prob))
 
+    # 全局样本外评估指标 - 做空
+    if 'Label_Short' in oos_predictions_df.columns and oos_predictions_df['Label_Short'].notna().any():
+        valid_s_mask = oos_predictions_df['Label_Short'].notna().values
+        y_all_s_true = oos_predictions_df.loc[valid_s_mask, 'Label_Short'].astype(int).values
+        y_all_s_prob = oos_predictions_df.loc[valid_s_mask, 'Prob_Short_1'].values
+        y_all_s_pred = (y_all_s_prob >= 0.5).astype(int)
+        overall_auc_s = float(roc_auc_score(y_all_s_true, y_all_s_prob)) if len(np.unique(y_all_s_true)) >= 2 else 0.5
+        overall_acc_s = float(accuracy_score(y_all_s_true, y_all_s_pred))
+        overall_prec_s = float(precision_score(y_all_s_true, y_all_s_pred, zero_division=0))
+        overall_rec_s = float(recall_score(y_all_s_true, y_all_s_pred, zero_division=0))
+        overall_brier_s = float(brier_score_loss(y_all_s_true, y_all_s_prob))
+        pos_s_samples = int(y_all_s_true.sum())
+        pos_s_ratio = round(float(y_all_s_true.mean()), 4)
+    else:
+        overall_auc_s, overall_acc_s, overall_prec_s, overall_rec_s, overall_brier_s = 0.5, 0.5, 0.0, 0.0, 0.25
+        pos_s_samples = 0
+        pos_s_ratio = 0.0
+
     overall_metrics = {
         'auc': round(overall_auc, 4),
         'accuracy': round(overall_acc, 4),
@@ -943,25 +1133,35 @@ def run_walk_forward_cv(
         'total_samples': len(oos_predictions_df),
         'positive_samples': int(y_all_true.sum()),
         'positive_ratio': round(float(y_all_true.mean()), 4),
+        'short_auc': round(overall_auc_s, 4),
+        'short_accuracy': round(overall_acc_s, 4),
+        'short_precision': round(overall_prec_s, 4),
+        'short_recall': round(overall_rec_s, 4),
+        'short_brier_score': round(overall_brier_s, 4),
+        'short_positive_samples': pos_s_samples,
+        'short_positive_ratio': pos_s_ratio,
         'fold_metrics': fold_metrics,
         'folds': folds
     }
 
     # 全量已结算样本重训实盘推理专属模型 (覆盖至 T-5 最新已结算交易日，严守 5 日尾部隔离，不触碰 OOS 评估结果)
-    live_train_clean = df.dropna(subset=['Label']).copy()
-    if len(live_train_clean) >= 20 and live_train_clean['Label'].nunique() >= 2:
-        t_live_start = time.time()
-        live_clf = lgb.LGBMClassifier(**lgb_params)
-        live_clf.fit(live_train_clean[FEATURE_COLS], live_train_clean['Label'].astype(int))
-        t_live_elapsed = time.time() - t_live_start
-        live_min_d = live_train_clean['Date'].min().strftime('%Y-%m-%d')
-        live_max_d = live_train_clean['Date'].max().strftime('%Y-%m-%d')
-        print(f"  [+] Live Refit (实盘推理专属模型): 全量已结算样本 ({live_min_d} ~ {live_max_d}, {len(live_train_clean)} 样本, 严守 T-5 尾部隔离) | 训练耗时 {t_live_elapsed:.1f}s")
+    live_models = train_live_models(df, feature_cols=FEATURE_COLS, lgb_params=lgb_params)
+    live_clf = live_models.get('long')
+    live_clf_short = live_models.get('short')
+
+    if live_clf is not None:
         models['live'] = live_clf
         final_estimator = live_clf
     else:
-        latest_year = max(models.keys())
+        latest_year = max([k for k in models.keys() if isinstance(k, int)])
         final_estimator = models[latest_year]
+
+    if live_clf_short is not None:
+        models_short['live'] = live_clf_short
+        final_estimator_short = live_clf_short
+    else:
+        int_years_s = [k for k in models_short.keys() if isinstance(k, int)]
+        final_estimator_short = models_short[max(int_years_s)] if int_years_s else final_estimator
 
     final_booster = final_estimator.booster_
 
@@ -973,6 +1173,28 @@ def run_walk_forward_cv(
     final_booster.feature_importances_ = final_estimator.feature_importances_
     final_booster.booster_ = final_booster
     final_booster.estimator_ = final_estimator
+
+    # 挂载空头专属模型与预测接口
+    final_booster.model_short = final_estimator_short
+    final_booster.short_model = getattr(final_estimator_short, 'booster_', None)
+    final_booster.short_estimator = final_estimator_short
+    if hasattr(final_estimator_short, 'predict_proba'):
+        final_booster.predict_proba_short = lambda X: final_estimator_short.predict_proba(X)
+    elif hasattr(final_estimator_short, 'predict'):
+        final_booster.predict_proba_short = lambda X: np.column_stack([
+            1.0 - final_estimator_short.predict(X),
+            final_estimator_short.predict(X)
+        ])
+    else:
+        final_booster.predict_proba_short = lambda X: np.full((len(X), 2), 0.5)
+
+    if hasattr(final_estimator_short, 'predict'):
+        final_booster.predict_short = lambda X: final_estimator_short.predict(X)
+    else:
+        final_booster.predict_short = lambda X: np.zeros(len(X), dtype=int)
+
+    overall_metrics['model_short'] = final_estimator_short
+    overall_metrics['live_models'] = live_models
 
     return oos_predictions_df, overall_metrics, final_booster
 
@@ -1113,11 +1335,226 @@ def evaluate_macro_weather(
         'desc': m_desc,
         'badge_class': m_badge,
         'qqqm_bias': round(qqqm_bias, 2),
+        'qqqm_bias_ma50': round(qqqm_bias, 2),
         'vixy_pos': round(vixy_pos, 2),
+        'vixy_pos_60': round(vixy_pos, 2),
         'smh_bias': round(smh_bias, 2),
+        'smh_bias_ma50': round(smh_bias, 2),
         'smh_igv': round(smh_igv, 2),
         'latest_date': latest_date
     }
+
+
+def load_options_cache(cache_path: Optional[str] = None) -> Dict[str, Dict[str, Any]]:
+    """加载 .options_cache.json 中的机构期权主力资金流与波动区间数据"""
+    search_paths = []
+    if cache_path:
+        search_paths.append(cache_path)
+    cur_dir = os.path.dirname(os.path.abspath(__file__))
+    search_paths.extend([
+        os.path.join(cur_dir, ".options_cache.json"),
+        os.path.join(cur_dir, "..", ".options_cache.json"),
+        os.path.join(cur_dir, "us-market-radar", ".options_cache.json"),
+        os.path.join(cur_dir, "data_cache", ".options_cache.json"),
+        os.path.join(r"C:\Users\User\.gemini\antigravity-ide\scratch", ".options_cache.json"),
+        os.path.join(r"C:\Users\User\.gemini\antigravity-ide\scratch\us-market-radar", ".options_cache.json")
+    ])
+    for p in search_paths:
+        if os.path.exists(p):
+            try:
+                with open(p, "r", encoding="utf-8") as f:
+                    c_data = json.load(f)
+                    return c_data.get("data", {})
+            except Exception:
+                continue
+    return {}
+
+
+def calibrate_short_probability(
+    raw_prob: float,
+    dollar_pcr: float = 1.0,
+    put_wall_broken: bool = False,
+    sector_bear_pf: float = 1.20,
+    macro_weather: Optional[Union[str, Dict]] = None,
+    bias_ma50: float = 0.0,
+    ema10_20_spread: float = 0.0,
+    rsi_14: float = 50.0,
+    is_crash_halt: bool = False,
+    close: Optional[float] = None,
+    put_wall: Optional[float] = None,
+    pcr: Optional[float] = None,
+) -> float:
+    """
+    空头先验概率校准引擎 (Short Inference Calibration Engine):
+    calibrated_short_win_rate_pct = model_raw_short_prob * M_sector * M_options * M_macro + Delta_tech
+
+    规则体系 (Milestone 2 Specification):
+    1. 原始概率: 归一化到 [0.0, 1.0], 具备 NaN / Inf 兜底 (默认 0.50)
+    2. 赛道下行脆弱性 M_sector: np.clip(safe_sec_pf / 1.20, 0.85, 1.15)
+    3. 机构期权雷达 M_options:
+       - eff_dollar_pcr >= 1.30 或 eff_pcr >= 1.30: 机构重度防跌做空对冲 (+4.0% ~ 1.10x)
+       - eff_dollar_pcr >= 1.15 或 eff_pcr >= 1.15: 机构适度防跌做空对冲 (+2.0% ~ 1.05x)
+       - eff_dollar_pcr <= 0.60 (包含 0.0): 机构极度看涨买Call压制 (-8.0% / 0.92x, 单调性保真)
+       - Close < put_wall: 负 Gamma 踩踏加速 (+5.0% / 1.05x)
+    4. 宏观气象 M_macro:
+       - 🌧️ 暴雨空仓: 系统性顺风做空加成 (+5.0% / 1.05x)
+       - ☀️ 晴天进攻: 逆势做空阻力逆风惩罚 (-6.0% / 0.94x)
+    5. 技术动量形态 Delta_tech:
+       - Bias_MA50 < -5.0% 且 EMA10_20_Spread < 0: 空头共振加速 (+6.0%)
+       - RSI_14 < 25.0: 严重超跌死猫跳风险 (-6.0%)
+       - Bias_MA50 > +15.0%: 严重轧空预警 (0.70x 惩罚)
+    6. 截断区间: 严格截断到 [10.0, 95.0] 区间，杜绝 0.0% 与 100.0% 极端过拟合死区
+    """
+    # 0. Sanitize raw_prob against None, NaN, Inf
+    if raw_prob is None:
+        p = 0.50
+    else:
+        try:
+            p_val = float(raw_prob)
+            if math.isnan(p_val) or math.isinf(p_val):
+                p = 0.50
+            elif p_val > 1.0:
+                p = float(np.clip(p_val / 100.0, 0.0, 1.0))
+            else:
+                p = float(np.clip(p_val, 0.0, 1.0))
+        except (ValueError, TypeError):
+            p = 0.50
+
+    # 1. 赛道下行脆弱性乘数 M_sector
+    if sector_bear_pf is None:
+        safe_sec_pf = 1.20
+    else:
+        try:
+            s_val = float(sector_bear_pf)
+            safe_sec_pf = 1.20 if (math.isnan(s_val) or math.isinf(s_val) or s_val <= 0) else s_val
+        except (ValueError, TypeError):
+            safe_sec_pf = 1.20
+    m_sector = float(np.clip(safe_sec_pf / 1.20, 0.85, 1.15))
+
+    # 2. 机构期权雷达乘数 M_options (修复单调性与 NaN/Inf)
+    m_options = 1.0
+    if dollar_pcr is None:
+        eff_dollar_pcr = 1.0
+    else:
+        try:
+            dp_val = float(dollar_pcr)
+            eff_dollar_pcr = 1.0 if (math.isnan(dp_val) or math.isinf(dp_val) or dp_val < 0) else dp_val
+        except (ValueError, TypeError):
+            eff_dollar_pcr = 1.0
+
+    if pcr is None:
+        eff_pcr = 0.0
+    else:
+        try:
+            p_pcr = float(pcr)
+            eff_pcr = 0.0 if (math.isnan(p_pcr) or math.isinf(p_pcr) or p_pcr < 0) else p_pcr
+        except (ValueError, TypeError):
+            eff_pcr = 0.0
+
+    if eff_dollar_pcr >= 1.30 or eff_pcr >= 1.30:
+        m_options *= 1.10
+    elif eff_dollar_pcr >= 1.15 or eff_pcr >= 1.15:
+        m_options *= 1.05
+    elif eff_dollar_pcr <= 0.60:  # 包含 0.0，修复单调性
+        m_options *= 0.92
+
+    # 负 Gamma 踩踏: 跌破主力 Put Wall
+    is_wall_broken = bool(put_wall_broken)
+    if not is_wall_broken and close is not None and put_wall is not None:
+        try:
+            c_val = float(close)
+            pw_val = float(put_wall)
+            if not (math.isnan(c_val) or math.isnan(pw_val) or math.isinf(c_val) or math.isinf(pw_val)):
+                if pw_val > 0 and c_val < pw_val:
+                    is_wall_broken = True
+        except (ValueError, TypeError):
+            pass
+
+    if is_wall_broken:
+        m_options *= 1.05
+
+    # 3. 宏观气象乘数 M_macro
+    m_macro = 1.0
+    if macro_weather:
+        w_str = str(macro_weather)
+        if "暴雨" in w_str or "🌧️" in w_str:
+            m_macro *= 1.05
+        elif "晴天" in w_str or "☀️" in w_str:
+            m_macro *= 0.94
+
+    # 4. 技术形态动量加减项 Delta_tech
+    try:
+        safe_bias = 0.0 if (bias_ma50 is None or math.isnan(float(bias_ma50)) or math.isinf(float(bias_ma50))) else float(bias_ma50)
+    except (ValueError, TypeError):
+        safe_bias = 0.0
+
+    try:
+        safe_spread = 0.0 if (ema10_20_spread is None or math.isnan(float(ema10_20_spread)) or math.isinf(float(ema10_20_spread))) else float(ema10_20_spread)
+    except (ValueError, TypeError):
+        safe_spread = 0.0
+
+    try:
+        safe_rsi = 50.0 if (rsi_14 is None or math.isnan(float(rsi_14)) or math.isinf(float(rsi_14))) else float(rsi_14)
+    except (ValueError, TypeError):
+        safe_rsi = 50.0
+
+    delta_tech = 0.0
+    if safe_bias < -5.0 and safe_spread < 0:
+        delta_tech += 6.0
+    if safe_rsi < 25.0:
+        delta_tech -= 6.0
+
+    # 5. 基础校准百分比分值
+    base_calibrated = p * m_sector * m_options * m_macro * 100.0
+
+    # 空头挤压预警惩罚 (Bias_MA50 > +15.0% 触发 0.70x 惩罚)
+    if safe_bias > 15.0:
+        base_calibrated *= 0.70
+
+    calibrated = base_calibrated + delta_tech
+    if math.isnan(calibrated) or math.isinf(calibrated):
+        return 50.0
+
+    # 6. 严格截断到 [10.0, 95.0]
+    return float(np.clip(calibrated, 10.0, 95.0))
+
+
+def get_short_action_directive(
+    calibrated_short_win_rate_pct: float,
+    is_crash_halt: bool = False,
+    rsi_14: float = 50.0,
+    ticker: str = "",
+    sector: str = "",
+    is_etf: bool = False
+) -> Tuple[str, str]:
+    """
+    生成做空行动决胜指令与样式标签:
+    - is_crash_halt is True: ⚠️ 暴跌宣泄中·等待反抽均线做空
+    - RSI_14 < 25.0: ⚠️ 严重超跌·谨防死猫跳·暂勿追空
+    - calibrated_short_win_rate_pct >= 65.0%: 🩸 极高胜率·顺势做空/买Put (或 🛡️ 建议买入SOXS/SQQQ对冲)
+    - 55.0% <= win_rate < 65.0%: ⚡ 逢高反抽沽空/买Put
+    - otherwise: 👀 空头动能不足·观望
+    """
+    if is_crash_halt:
+        return "⚠️ 暴跌宣泄中·等待反抽均线做空", "short-action-halt"
+    if rsi_14 < 25.0:
+        return "⚠️ 严重超跌·谨防死猫跳·暂勿追空", "short-action-oversold"
+    if calibrated_short_win_rate_pct >= 65.0:
+        semi_etfs = {"SOXX", "SOXL", "SOXS", "SMH"}
+        tech_etfs = {"QQQM", "QQQ", "SQQQ", "SPY"}
+        if is_etf and (ticker in semi_etfs or "半导体" in sector or "芯片" in sector):
+            return "🛡️ 建议买入SOXS对冲", "short-action-etf"
+        elif is_etf and (ticker in tech_etfs or "科技" in sector or "纳指" in sector):
+            return "🛡️ 建议买入SQQQ对冲", "short-action-etf"
+        elif is_etf:
+            return "🛡️ 建议买入反向ETF对冲", "short-action-etf"
+        else:
+            return "🩸 极高胜率·顺势做空/买Put", "short-action-strong"
+    elif calibrated_short_win_rate_pct >= 55.0:
+        return "⚡ 逢高反抽沽空/买Put", "short-action-rebound"
+    else:
+        return "👀 空头动能不足·观望", "short-action-wait"
+
 
 
 def generate_report_tables(
@@ -1277,6 +1714,139 @@ def generate_report_tables(
     table2_rows.sort(key=lambda x: (x['profit_factor'], x['high_conviction_win_rate_pct']), reverse=True)
 
     # ---------------------------------------------------------
+    # 2.1 表 1 (空头): 样本外分位数做空校准表 (Short Quantile Calibration Table)
+    # ---------------------------------------------------------
+    table1_short_rows = []
+    has_short_returns = 'Realized_Return_Short' in oos_df.columns
+    has_short_probs = 'Prob_Short_1' in oos_df.columns
+    has_short_labels = 'Label_Short' in oos_df.columns
+
+    for th in thresholds:
+        th_label = f">= {int(th * 100)}%"
+        sub_s = oos_df[oos_df['Prob_Short_1'] >= th] if has_short_probs else pd.DataFrame()
+        trigger_cnt_s = len(sub_s)
+        if trigger_cnt_s > 0 and has_short_labels:
+            touch_win_cnt_s = int((sub_s['Label_Short'] == 1.0).sum())
+            touch_win_rate_s = (touch_win_cnt_s / trigger_cnt_s) * 100.0
+            avg_realized_ret_s = float(sub_s['Realized_Return_Short'].mean()) if has_short_returns else 0.0
+
+            if has_short_returns:
+                pos_win_cnt_s = int((sub_s['Realized_Return_Short'] > 0).sum())
+                pos_win_rate_s = (pos_win_cnt_s / trigger_cnt_s) * 100.0
+                pos_rets_s = sub_s[sub_s['Realized_Return_Short'] > 0]['Realized_Return_Short']
+                neg_rets_s = sub_s[sub_s['Realized_Return_Short'] < 0]['Realized_Return_Short']
+                avg_win_s = float(pos_rets_s.mean()) if len(pos_rets_s) > 0 else 0.0
+                avg_loss_s = abs(float(neg_rets_s.mean())) if len(neg_rets_s) > 0 else 0.0
+                win_loss_ratio_s = (avg_win_s / avg_loss_s) if avg_loss_s > 0 else (99.99 if avg_win_s > 0 else 1.00)
+
+                pos_ret_s = float(pos_rets_s.sum()) if len(pos_rets_s) > 0 else 0.0
+                neg_ret_s = abs(float(neg_rets_s.sum())) if len(neg_rets_s) > 0 else 0.0
+                pf_s = (pos_ret_s / neg_ret_s) if neg_ret_s > 0 else (99.99 if pos_ret_s > 0 else 1.00)
+            else:
+                pos_win_rate_s = touch_win_rate_s
+                win_loss_ratio_s = 1.30
+                pf_s = 1.30
+        else:
+            touch_win_rate_s = 0.0
+            pos_win_rate_s = 0.0
+            avg_realized_ret_s = 0.0
+            win_loss_ratio_s = 0.0
+            pf_s = 0.0
+
+        table1_short_rows.append({
+            'threshold_label': th_label,
+            'threshold_val': th,
+            'trigger_count': trigger_cnt_s,
+            'win_rate_pct': round(pos_win_rate_s, 1),
+            'pos_win_rate_pct': round(pos_win_rate_s, 1),
+            'touch_win_rate_pct': round(touch_win_rate_s, 1),
+            'avg_realized_return_pct': round(avg_realized_ret_s, 2),
+            'avg_max_gain_pct': round(avg_realized_ret_s, 2),
+            'win_loss_ratio': round(win_loss_ratio_s, 2),
+            'profit_factor': round(pf_s, 2)
+        })
+
+    # ---------------------------------------------------------
+    # 2.2 表 2 (空头): 7 大赛道样本外做空表现归因表 (7 Sectors OOS Short Attribution Table)
+    # ---------------------------------------------------------
+    table2_short_rows = []
+    for sec_key in unique_sectors:
+        sec_cn = SECTOR_CHINESE_MAP.get(sec_key, sec_key)
+        sec_tickers = [tk for tk, s in SECTOR_MAP.items() if s == sec_key]
+        tickers_cnt = len(sec_tickers)
+
+        sec_df = oos_df[oos_df['Sector'] == sec_key] if 'Sector' in oos_df.columns else pd.DataFrame()
+        oos_total_signals_s = len(sec_df)
+
+        sec_high_s = sec_df[sec_df['Prob_Short_1'] >= 0.55] if (has_short_probs and len(sec_df) > 0) else pd.DataFrame()
+        high_conv_cnt_s = len(sec_high_s)
+        eval_sub_s = sec_high_s if high_conv_cnt_s > 0 else (sec_df if oos_total_signals_s > 0 else pd.DataFrame())
+        eval_cnt_s = len(eval_sub_s)
+
+        if eval_cnt_s > 0 and has_short_labels:
+            touch_win_cnt_s = int((eval_sub_s['Label_Short'] == 1.0).sum())
+            touch_win_rate_s = (touch_win_cnt_s / eval_cnt_s) * 100.0
+            avg_realized_ret_s = float(eval_sub_s['Realized_Return_Short'].mean()) if has_short_returns else 0.0
+
+            if has_short_returns:
+                pos_win_cnt_s = int((eval_sub_s['Realized_Return_Short'] > 0).sum())
+                pos_win_rate_s = (pos_win_cnt_s / eval_cnt_s) * 100.0
+                pos_rets_s = eval_sub_s[eval_sub_s['Realized_Return_Short'] > 0]['Realized_Return_Short']
+                neg_rets_s = eval_sub_s[eval_sub_s['Realized_Return_Short'] < 0]['Realized_Return_Short']
+                avg_win_s = float(pos_rets_s.mean()) if len(pos_rets_s) > 0 else 0.0
+                avg_loss_s = abs(float(neg_rets_s.mean())) if len(neg_rets_s) > 0 else 0.0
+                win_loss_ratio_s = (avg_win_s / avg_loss_s) if avg_loss_s > 0 else (99.99 if avg_win_s > 0 else 1.00)
+
+                pos_sum_s = float(pos_rets_s.sum()) if len(pos_rets_s) > 0 else 0.0
+                neg_sum_s = abs(float(neg_rets_s.sum())) if len(neg_rets_s) > 0 else 0.0
+                pf_s = (pos_sum_s / neg_sum_s) if neg_sum_s > 0 else (99.99 if pos_sum_s > 0 else 1.00)
+            else:
+                pos_win_rate_s = touch_win_rate_s
+                win_loss_ratio_s = 1.30
+                pf_s = 1.30
+        else:
+            touch_win_rate_s = 0.0
+            pos_win_rate_s = 0.0
+            avg_realized_ret_s = 0.0
+            win_loss_ratio_s = 0.0
+            pf_s = 1.20
+
+        # AI Short Alpha 星级评定标准
+        if pf_s >= 1.45 and avg_realized_ret_s >= 0.60:
+            rating_s = "⭐⭐⭐⭐⭐"
+        elif pf_s >= 1.30 and avg_realized_ret_s >= 0.40:
+            rating_s = "⭐⭐⭐⭐☆"
+        elif pf_s >= 1.15:
+            rating_s = "⭐⭐⭐☆☆"
+        elif pf_s >= 1.05:
+            rating_s = "⭐⭐☆☆☆"
+        else:
+            rating_s = "⭐☆☆☆☆"
+
+        if high_conv_cnt_s < 10:
+            if rating_s in ["⭐⭐⭐⭐⭐", "⭐⭐⭐⭐☆"]:
+                rating_s = "⭐⭐⭐☆☆"
+            rating_s = f"{rating_s} (小样本)"
+
+        table2_short_rows.append({
+            'sector_key': sec_key,
+            'sector_name_cn': sec_cn,
+            'tickers_count': tickers_cnt,
+            'oos_total_signals': oos_total_signals_s,
+            'high_conviction_signals': high_conv_cnt_s,
+            'high_conviction_win_rate_pct': round(pos_win_rate_s, 1),
+            'high_conviction_pos_win_rate_pct': round(pos_win_rate_s, 1),
+            'high_conviction_touch_win_rate_pct': round(touch_win_rate_s, 1),
+            'avg_realized_return_pct': round(avg_realized_ret_s, 2),
+            'avg_max_gain_pct': round(avg_realized_ret_s, 2),
+            'win_loss_ratio': round(win_loss_ratio_s, 2),
+            'profit_factor': round(pf_s, 2),
+            'alpha_rating': rating_s
+        })
+
+    table2_short_rows.sort(key=lambda x: (x['profit_factor'], x['high_conviction_win_rate_pct']), reverse=True)
+
+    # ---------------------------------------------------------
     # 3. 表 3: LightGBM 特征重要度 Top 15 排行榜
     # ---------------------------------------------------------
     table3_rows = []
@@ -1317,13 +1887,15 @@ def generate_report_tables(
         })
 
     # ---------------------------------------------------------
-    # 4. 表 4: 最新交易日 AI 预测做多胜率排行榜 Top 10 (Live Inference Ranking)
+    # 4. 表 4: 最新交易日 AI 预测做多胜率与做空胜率双向决策池 (Live Dual Inference Ranking)
     # ---------------------------------------------------------
     table4_rows = []
+    top_long_stocks = []
+    top_short_stocks = []
     all_live_rows = []
     latest_df = latest_features_df.copy()
 
-    # 建立赛道历史 OOS 高置信胜率、期望盈亏比与星级映射表
+    # 建立多头与空头赛道历史 OOS 高置信胜率、期望盈亏比与星级映射表
     sector_oos_wr_map = {r['sector_key']: r['high_conviction_win_rate_pct'] for r in table2_rows}
     sector_oos_wr_map.update({r['sector_name_cn']: r['high_conviction_win_rate_pct'] for r in table2_rows})
 
@@ -1333,8 +1905,16 @@ def generate_report_tables(
     sector_rating_map = {r['sector_key']: r['alpha_rating'] for r in table2_rows}
     sector_rating_map.update({r['sector_name_cn']: r['alpha_rating'] for r in table2_rows})
 
+    sector_short_pf_map = {r['sector_key']: r['profit_factor'] for r in table2_short_rows}
+    sector_short_pf_map.update({r['sector_name_cn']: r['profit_factor'] for r in table2_short_rows})
+
+    # 读取当前期权主力雷达缓存
+    options_cache_data = load_options_cache()
+
     if len(latest_df) > 0:
         X_live = latest_df[feature_cols]
+
+        # 多头原始概率提取
         if hasattr(model, 'predict_proba'):
             live_probs = model.predict_proba(X_live)[:, 1]
         elif hasattr(model, 'predict'):
@@ -1346,11 +1926,20 @@ def generate_report_tables(
 
         latest_df['Prob_1'] = live_probs
 
-        # 计算赛道校准综合得分 Calibrated_Prob = Prob_1 * np.clip(sector_pf / 1.30, 0.75, 1.15)
-        # 实盘截面 (含 Bias_MA50 特征) 同步执行 3 项右侧纪律修正:
-        # 1) 破位飞刀一票否决 (Bias_MA50 < -12% 触发 0.68~0.82x 破位惩罚，严禁享受 1.15x 赛道加成)
-        # 2) 黄金坑/右侧抗跌结构奖励 (-12% <= Bias_MA50 <= 12% 享有右侧结构溢价)
-        # 3) 正股与 ETF 严格分池排序 (54 只正股优先排入 Top 10 精选榜，ETF 独立归入 ETF 专区)
+        # 空头原始概率提取
+        if hasattr(model, 'predict_proba_short'):
+            live_short_probs = model.predict_proba_short(X_live)[:, 1]
+        elif hasattr(model, 'model_short') and hasattr(model.model_short, 'predict_proba'):
+            live_short_probs = model.model_short.predict_proba(X_live)[:, 1]
+        elif hasattr(model, 'short_estimator') and hasattr(model.short_estimator, 'predict_proba'):
+            live_short_probs = model.short_estimator.predict_proba(X_live)[:, 1]
+        elif 'Prob_Short_1' in latest_df.columns:
+            live_short_probs = latest_df['Prob_Short_1'].to_numpy(dtype=float)
+        else:
+            live_short_probs = np.full(len(latest_df), 0.45)
+
+        latest_df['Prob_Short_1'] = live_short_probs
+
         has_live_structure = ('Bias_MA50' in latest_df.columns)
         pure_etf_15 = {'QQQM', 'SPY', 'DIA', 'IWM', 'SMH', 'SOXX', 'SOXL', 'KORU', 'IGV', 'TLT', 'GLD', 'QQQI', 'VIXY', 'SQQQ', 'SOXS'}
         is_70_pool = (len(latest_df) > 28)
@@ -1434,7 +2023,11 @@ def generate_report_tables(
             is_core_28 = bool(row.get('Is_Core_28', tk in SECTOR_MAP))
             is_broken = bool(row.get('Is_Broken', False))
             is_etf = bool(row.get('Is_ETF', False))
+            is_crash_halt = bool(row.get('is_crash_halt', False))
+            is_cooling_halt = bool(row.get('is_cooling_halt', False))
+
             bias_ma50_val = round(float(row.get('Bias_MA50', 0.0)), 2) if has_live_structure else 0.0
+            ema10_20_spread_val = round(float(row.get('EMA10_20_Spread', 0.0)), 2) if has_live_structure else 0.0
             rsi_14_val = round(float(row.get('RSI_14', 50.0)), 1) if has_live_structure else 50.0
             sec_rating = str(sector_rating_map.get(sec_k, sector_rating_map.get(sec_c, '⭐⭐⭐☆☆')))
             close_p = float(row.get('Close', 100.0))
@@ -1453,9 +2046,13 @@ def generate_report_tables(
             target_pct = round(upper_mult * 100.0, 1)
             stop_pct = round(lower_mult * 100.0, 1)
 
+            # 多头行动建议
             sec_oos_wr = sector_oos_wr_map.get(sec_k, sector_oos_wr_map.get(sec_c, 50.0))
             eval_prob_pct = max(raw_prob_pct, cal_prob_pct)
-            if sec_oos_wr < 45.0:
+            if is_crash_halt or is_cooling_halt:
+                action = "🚨 暴跌熔断·严禁左侧接刀"
+                action_tag = "action-warning"
+            elif sec_oos_wr < 45.0:
                 action = "⚠️ 赛道历史胜率偏低·观望"
                 action_tag = "action-warning"
             elif is_broken:
@@ -1481,6 +2078,51 @@ def generate_report_tables(
                 action = "👀 观望等待"
                 action_tag = "action-wait"
 
+            # ---------------------------------------------------------
+            # 空头胜率预测与先验校准 (Short Inference & Prior Calibration)
+            # ---------------------------------------------------------
+            raw_short_p = float(row.get('Prob_Short_1', 0.45))
+            opt_info = options_cache_data.get(tk, {})
+            dollar_pcr_val = float(opt_info.get('dollar_pcr', 1.0)) if opt_info.get('dollar_pcr') is not None else 1.0
+            pcr_val = float(opt_info.get('pcr', 1.0)) if opt_info.get('pcr') is not None else 1.0
+            pcr_sentiment_val = str(opt_info.get('pcr_sentiment', '⛅ 中性'))
+            put_wall_val = float(opt_info.get('put_wall', 0.0)) if opt_info.get('put_wall') is not None else round(close_p * 0.95, 2)
+            call_wall_val = float(opt_info.get('call_wall', 0.0)) if opt_info.get('call_wall') is not None else round(close_p * 1.05, 2)
+            iv_atm_val = float(opt_info.get('iv_atm', 0.0)) if opt_info.get('iv_atm') is not None else 30.0
+
+            sec_bear_pf = float(sector_short_pf_map.get(sec_k, sector_short_pf_map.get(sec_c, 1.20)))
+
+            cal_short_p = calibrate_short_probability(
+                raw_prob=raw_short_p,
+                dollar_pcr=dollar_pcr_val,
+                put_wall_broken=(close_p < put_wall_val) if put_wall_val > 0 else False,
+                sector_bear_pf=sec_bear_pf,
+                macro_weather=weather_status,
+                bias_ma50=bias_ma50_val,
+                ema10_20_spread=ema10_20_spread_val,
+                rsi_14=rsi_14_val,
+                is_crash_halt=is_crash_halt,
+                close=close_p,
+                put_wall=put_wall_val,
+                pcr=pcr_val
+            )
+
+            # 空头动态止盈下沿与防守止损上沿
+            short_entry_p = close_p
+            short_tp_p = round(short_entry_p * (1.0 - upper_mult), 2)  # 下方跌幅达到 TP 止盈
+            short_sl_p = round(short_entry_p * (1.0 + lower_mult), 2)  # 上方反弹达到 SL 止损
+            short_tp_pct = round(upper_mult * 100.0, 1)
+            short_sl_pct = round(lower_mult * 100.0, 1)
+
+            short_action, short_action_tag = get_short_action_directive(
+                calibrated_short_win_rate_pct=cal_short_p,
+                is_crash_halt=is_crash_halt,
+                rsi_14=rsi_14_val,
+                ticker=tk,
+                sector=sec_c,
+                is_etf=is_etf
+            )
+
             row_item = {
                 'rank': rank,
                 'ticker': tk,
@@ -1488,11 +2130,17 @@ def generate_report_tables(
                 'sector_cn': sec_c,
                 'sector_rating': sec_rating,
                 'latest_price': close_p,
+                'current_price': close_p,
                 'atr_pct': round(atr_pct, 2),
                 'bias_ma50': bias_ma50_val,
                 'rsi_14': rsi_14_val,
                 'is_broken': is_broken,
                 'is_etf': is_etf,
+                'is_crash_halt': is_crash_halt,
+                'is_cooling_halt': is_cooling_halt,
+                'macro_temp': weather_status,
+
+                # 多头决策字段
                 'model_raw_prob_pct': round(model_raw_pct, 1),
                 'base_raw_prob_pct': round(raw_prob_pct, 1),
                 'predicted_win_rate_pct': round(raw_prob_pct, 1),
@@ -1502,13 +2150,46 @@ def generate_report_tables(
                 'target_profit_pct': target_pct,
                 'stop_loss_price': stop_p,
                 'stop_loss_pct': stop_pct,
-                'macro_temp': weather_status,
                 'action': action,
-                'action_tag': action_tag
+                'action_tag': action_tag,
+
+                # 空头决策字段 (Milestone 2 Dual Inference)
+                'model_raw_short_prob_pct': round(raw_short_p * 100.0 if raw_short_p <= 1.0 else raw_short_p, 1),
+                'calibrated_short_win_rate_pct': round(cal_short_p, 1),
+                'short_entry_price': short_entry_p,
+                'short_target_profit_price': short_tp_p,
+                'short_target_profit_pct': short_tp_pct,
+                'short_stop_loss_price': short_sl_p,
+                'short_stop_loss_pct': short_sl_pct,
+                'dollar_pcr': round(dollar_pcr_val, 2),
+                'pcr': round(pcr_val, 2),
+                'pcr_sentiment': pcr_sentiment_val,
+                'put_wall': put_wall_val,
+                'call_wall': call_wall_val,
+                'iv_atm': iv_atm_val,
+                'short_action': short_action,
+                'short_action_tag': short_action_tag,
             }
             all_live_rows.append(row_item)
 
-        table4_rows = [r for r in all_live_rows if not r.get('is_etf', False)][:10] or all_live_rows[:10]
+        # 多头精选榜 Top 10 (正股优先，右侧结构完好优先)
+        top_long_stocks = [r.copy() for r in all_live_rows if not r.get('is_etf', False)][:10] or [r.copy() for r in all_live_rows[:10]]
+        for idx_rk, item in enumerate(top_long_stocks, 1):
+            item['rank'] = idx_rk
+
+        # 空头精选榜 Top 10 (非熔断健康做空标的优先，严格按 calibrated_short_win_rate_pct 降序排序)
+        short_candidates_sorted = sorted(
+            all_live_rows,
+            key=lambda x: (
+                1 if (x.get('is_crash_halt') or x.get('is_cooling_halt')) else 0,
+                -float(x.get('calibrated_short_win_rate_pct', 0.0))
+            )
+        )
+        top_short_stocks = [r.copy() for r in short_candidates_sorted if not (r.get('is_crash_halt') or r.get('is_cooling_halt'))][:10] or [r.copy() for r in short_candidates_sorted[:10]]
+        for idx_rk, item in enumerate(top_short_stocks, 1):
+            item['rank'] = idx_rk
+
+        table4_rows = top_long_stocks
 
     # ---------------------------------------------------------
     # 5. Hero KPI 汇总指标
@@ -1526,6 +2207,11 @@ def generate_report_tables(
         'table2': table2_rows,
         'table3': table3_rows,
         'table4': table4_rows,
+        'table1_short': table1_short_rows,
+        'table2_short': table2_short_rows,
+        'top_long': top_long_stocks,
+        'top_short': top_short_stocks,
+        'top10': top_long_stocks,
         'all_live_predictions': all_live_rows,
         'macro_weather': macro_weather or {},
         'kpi': {
@@ -1867,7 +2553,99 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
         </tr>
         """
 
-    # 生成 Table 4 HTML (包含全池 70 标的，默认 Top 10 仅展示右侧完好正股，支持一键展开全池与按赛道/ETF筛选)
+    # 确保 all_live 中所有标的均具备 short_rank 且获取 top_short (Milestone 3 双向榜单)
+    short_sorted = sorted(
+        all_live,
+        key=lambda x: (
+            1 if (x.get('is_crash_halt') or x.get('is_cooling_halt')) else 0,
+            -float(x.get('calibrated_short_win_rate_pct', 0.0))
+        )
+    )
+    for idx_s, item in enumerate(short_sorted, 1):
+        if 'short_rank' not in item or not item['short_rank']:
+            item['short_rank'] = idx_s
+
+    top_short = tables_data.get('top_short', [])
+    if not top_short:
+        top_short = [r for r in short_sorted if not (r.get('is_crash_halt') or r.get('is_cooling_halt'))][:5] or short_sorted[:5]
+
+    # 生成 Table 4-B 空头排行榜 HTML (9 列: 排名/代码/赛道/现价ATR/做空胜率/空头止盈/空头止损/期权PCR/做空指令)
+    t4_short_rows_html = ""
+    for idx_s, r in enumerate(top_short[:5], 1):
+        s_rk = int(r.get('short_rank', r.get('rank', idx_s)))
+        tk_str = str(r.get('ticker', ''))
+        sec_rating = r.get('sector_rating', '⭐⭐⭐☆☆')
+        cal_s_wr = float(r.get('calibrated_short_win_rate_pct', 50.0))
+        raw_s_wr = float(r.get('model_raw_short_prob_pct', r.get('short_raw_prob_pct', 45.0)))
+        atr_val = float(r.get('atr_pct', 2.5))
+        bias_val = r.get('bias_ma50', 0.0)
+        bias_col = "#f85149" if bias_val < -5.0 else ("#3fb950" if bias_val > 5.0 else "#8b949e")
+        
+        s_tp = float(r.get('short_target_profit_price', r['latest_price'] * 0.96))
+        s_tp_pct = float(r.get('short_target_profit_pct', 4.0))
+        s_sl = float(r.get('short_stop_loss_price', r['latest_price'] * 1.03))
+        s_sl_pct = float(r.get('short_stop_loss_pct', 3.0))
+        
+        d_pcr = float(r.get('dollar_pcr', 1.0))
+        pcr_sent = str(r.get('pcr_sentiment', '⛅ 中性'))
+        pcr_badge_style = "badge-red" if d_pcr >= 1.30 or "做空" in pcr_sent or "Put" in pcr_sent else ("badge-gold" if d_pcr >= 1.0 else "badge-blue")
+        
+        s_act = str(r.get('short_action', '👀 空头动能不足·观望'))
+        if "🚨" in s_act or "熔断" in s_act or "破位" in s_act or "🩸" in s_act:
+            s_act_badge = "badge-red"
+        elif "🛡️" in s_act or "对冲" in s_act:
+            s_act_badge = "badge-purple"
+        elif "⚠️" in s_act:
+            s_act_badge = "badge-gold"
+        else:
+            s_act_badge = "badge-blue"
+
+        t4_short_rows_html += f"""
+        <tr class="t4-short-row" data-rank="{s_rk}" data-sector="{r['sector_cn']}" data-ticker="{r['ticker']}">
+            <td style="text-align: center; font-size: 15px; font-weight: 800; color: #f85149;">🩸#{s_rk}</td>
+            <td>
+                <a href="futu_pro_terminal.html?symbol={r['ticker']}" target="_blank" class="ticker-jump-link" title="点击在富途全周期看盘终端中查看 {r['ticker']} 空头走势与主力 Put 大单">
+                    <span class="tk-code">{r['ticker']}</span>
+                    <span class="tk-jump-icon" style="color: #f85149; border-color: rgba(248,81,73,0.4);">📉 看空</span>
+                </a>
+            </td>
+            <td>
+                <div style="display: flex; align-items: center; gap: 6px;">
+                    <span class="badge badge-purple" style="cursor: pointer;" onclick="filterBySector('{r['sector_cn']}')">{r['sector_cn']}</span>
+                    <span style="font-size: 11px; color: #ffd54f;" title="赛道评级">{sec_rating[:5]}</span>
+                </div>
+            </td>
+            <td style="text-align: right; font-weight: 700; font-family: 'JetBrains Mono', monospace; font-size: 14.5px; color: #f0f6fc;">
+                ${r['latest_price']:.2f}
+                <span style="display: block; font-size: 10px; color: #8b949e; font-weight: normal;">ATR {atr_val:.1f}% · <span style="color: {bias_col};">MA50 {bias_val:+.1f}%</span></span>
+            </td>
+            <td style="text-align: right;">
+                <div style="display: flex; align-items: center; justify-content: flex-end; gap: 8px;">
+                    <div>
+                        <span style="font-size: 15px; font-weight: 800; color: #f85149; font-family: 'JetBrains Mono', monospace;">{cal_s_wr:.1f}%</span>
+                        <span style="font-size: 11px; color: #8b949e; display: block;" title="AI 空头先验校准胜率">原始 {raw_s_wr:.1f}%</span>
+                    </div>
+                    <div style="width: 64px; height: 8px; background: rgba(255,255,255,0.08); border-radius: 4px; overflow: hidden; position: relative;">
+                        <div style="width: {min(100.0, cal_s_wr)}%; height: 100%; background: #f85149; box-shadow: 0 0 6px #f85149;"></div>
+                    </div>
+                </div>
+            </td>
+            <td style="text-align: right; color: #3fb950; font-family: 'JetBrains Mono', monospace; font-weight: 700;">
+                ${s_tp:.2f} <span class="pct-pill pct-up">-{s_tp_pct:.1f}%</span>
+            </td>
+            <td style="text-align: right; color: #f85149; font-family: 'JetBrains Mono', monospace; font-weight: 700;">
+                ${s_sl:.2f} <span class="pct-pill pct-down">+{s_sl_pct:.1f}%</span>
+            </td>
+            <td style="text-align: center;">
+                <span class="badge {pcr_badge_style}" style="font-size: 11px; padding: 3px 8px;">PCR {d_pcr:.2f} · {pcr_sent}</span>
+            </td>
+            <td style="text-align: center;">
+                <span class="badge {s_act_badge}" style="font-size: 12px; padding: 4px 10px;">{s_act}</span>
+            </td>
+        </tr>
+        """
+
+    # 生成 Table 4-A 做多排行榜与全域 70 标的 HTML (默认展示 Top 5，支持展开全池与按赛道/ETF筛选)
     t4_rows_html = ""
     pure_etf_set = {'QQQM', 'SPY', 'DIA', 'IWM', 'SMH', 'SOXX', 'SOXL', 'KORU', 'IGV', 'TLT', 'GLD', 'QQQI', 'VIXY', 'SQQQ', 'SOXS', 'IBIT'}
     etf_count = 0
@@ -1901,10 +2679,20 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
         sec_rating = r.get('sector_rating', '⭐⭐⭐☆☆')
         sec_pf = r.get('sector_pf', 1.30)
         wr_color = "#3fb950" if cal_wr >= 58.0 else ("#58a6ff" if cal_wr >= 50.0 else "#8b949e")
-        hidden_style = "display: none;" if (rk > 10 or is_etf_row) else ""
+        hidden_style = "display: none;" if (rk > 5 or is_etf_row) else ""
+
+        # 多空双向并列字段 (在全景视角下列出空头胜率与止盈止损)
+        cal_s_wr = float(r.get('calibrated_short_win_rate_pct', 50.0))
+        s_tp = float(r.get('short_target_profit_price', r['latest_price'] * 0.96))
+        s_tp_pct = float(r.get('short_target_profit_pct', 4.0))
+        s_sl = float(r.get('short_stop_loss_price', r['latest_price'] * 1.03))
+        s_sl_pct = float(r.get('short_stop_loss_pct', 3.0))
+        d_pcr = float(r.get('dollar_pcr', 1.0))
+        s_act = str(r.get('short_action', '👀 观望'))
+        short_rk = int(r.get('short_rank', 999))
 
         t4_rows_html += f"""
-        <tr class="t4-stock-row" data-rank="{rk}" data-sector="{r['sector_cn']}" data-ticker="{r['ticker']}" data-isetf="{'1' if is_etf_row else '0'}" style="{hidden_style}">
+        <tr class="t4-stock-row" data-rank="{rk}" data-short-rank="{short_rk}" data-sector="{r['sector_cn']}" data-ticker="{r['ticker']}" data-isetf="{'1' if is_etf_row else '0'}" style="{hidden_style}">
             <td style="text-align: center; font-size: 15px; font-weight: 800; color: {'#ffd54f' if rk <= 3 else '#8b949e'};">{rank_badge}</td>
             <td>
                 <a href="futu_pro_terminal.html?symbol={r['ticker']}" target="_blank" class="ticker-jump-link" title="点击在富途全周期看盘终端中打开 {r['ticker']} K线与实盘诊股">
@@ -1926,7 +2714,8 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
                 <div style="display: flex; align-items: center; justify-content: flex-end; gap: 8px;">
                     <div>
                         <span style="font-size: 15px; font-weight: 800; color: {wr_color}; font-family: 'JetBrains Mono', monospace;">{cal_wr:.1f}%</span>
-                        <span style="font-size: 11px; color: #8b949e; display: block;" title="右侧结构修正后概率">原始 {raw_wr:.1f}%</span>
+                        <span style="font-size: 11px; color: #8b949e; display: block;" title="右侧结构修正后做多胜率">原多 {raw_wr:.1f}%</span>
+                        <span class="t4-all-short-sub" style="font-size: 10px; color: #f85149; display: none;" title="AI 做空校准胜率">🩸做空 {cal_s_wr:.1f}%</span>
                     </div>
                     <div style="width: 64px; height: 8px; background: rgba(255,255,255,0.08); border-radius: 4px; overflow: hidden; position: relative;">
                         <div style="width: {min(100.0, cal_wr)}%; height: 100%; background: {wr_color}; box-shadow: 0 0 6px {wr_color};"></div>
@@ -1935,12 +2724,20 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
             </td>
             <td style="text-align: right; color: #3fb950; font-family: 'JetBrains Mono', monospace; font-weight: 700;">
                 ${r['target_profit_price']:.2f} <span class="pct-pill pct-up">+{r['target_profit_pct']}%</span>
+                <span class="t4-all-short-sub" style="display: none; font-size: 10px; color: #8b949e; font-weight: normal;">空止盈 ${s_tp:.2f} (-{s_tp_pct:.1f}%)</span>
             </td>
             <td style="text-align: right; color: #f85149; font-family: 'JetBrains Mono', monospace; font-weight: 700;">
                 ${r['stop_loss_price']:.2f} <span class="pct-pill pct-down">-{r['stop_loss_pct']}%</span>
+                <span class="t4-all-short-sub" style="display: none; font-size: 10px; color: #8b949e; font-weight: normal;">空止损 ${s_sl:.2f} (+{s_sl_pct:.1f}%)</span>
             </td>
-            <td style="text-align: center;"><span class="badge badge-gold">{r['macro_temp']}</span></td>
-            <td style="text-align: center;"><span class="badge {act_badge}" style="font-size: 12px; padding: 4px 10px;">{r['action']}</span></td>
+            <td style="text-align: center;">
+                <span class="badge badge-gold">{r['macro_temp']}</span>
+                <span class="t4-all-short-sub" style="display: none; font-size: 10px; color: #8b949e; margin-top: 2px;">PCR {d_pcr:.2f}</span>
+            </td>
+            <td style="text-align: center;">
+                <span class="badge {act_badge}" style="font-size: 12px; padding: 4px 10px;">{r['action']}</span>
+                <div class="t4-all-short-sub" style="display: none; font-size: 10px; color: #f85149; margin-top: 2px;">{s_act}</div>
+            </td>
         </tr>
         """
 
@@ -2469,6 +3266,39 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
         .badge-gold {{ background: rgba(255, 213, 79, 0.15); color: #ffd54f; border: 1px solid rgba(255, 213, 79, 0.35); }}
         .badge-red {{ background: rgba(248, 81, 73, 0.15); color: #f85149; border: 1px solid rgba(248, 81, 73, 0.35); }}
 
+        /* Milestone 3: Segmented Dual Ranking Controls */
+        .t4-segmented-bar {{
+            display: flex;
+            gap: 10px;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+        }}
+        .t4-seg-btn {{
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
+            color: var(--text-sub);
+            padding: 8px 18px;
+            border-radius: 8px;
+            font-size: 13.5px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }}
+        .t4-seg-btn:hover {{
+            background: rgba(88, 166, 255, 0.15);
+            color: #fff;
+            border-color: rgba(88, 166, 255, 0.45);
+        }}
+        .t4-seg-btn.active {{
+            background: linear-gradient(135deg, rgba(88, 166, 255, 0.28), rgba(188, 140, 255, 0.28));
+            border-color: #58a6ff;
+            color: #fff;
+            box-shadow: 0 0 12px rgba(88, 166, 255, 0.35);
+        }}
+        .t4-card-short {{
+            border-left: 4px solid #f85149 !important;
+        }}
+
         /* Two-column layout for Table 1 & Table 3 on ultra-wide screens */
         .grid-2col {{
             display: grid;
@@ -2582,44 +3412,84 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
             </div>
         </div>
 
-        <!-- Table 4: 最新交易日 AI 预测做多胜率排行榜 -->
-        <div class="section-card">
-            <div class="section-header">
-                <div>
-                    <h3 id="t4-title">🎯 表 4: 最新交易日 AI 预测做多胜率排行榜 Top 10 (Live Inference Pool)</h3>
-                    <span class="sub">按【赛道先验校准胜率 = 原始概率 × clip(赛道PF/1.30, 0.75, 1.15)】降序排列 · 分段软压缩 ATR 差异化止盈止损</span>
+        <!-- Table 4: Segmented Dual-Ranking Architecture (Milestone M3) -->
+        <div class="t4-segmented-bar">
+            <button class="t4-seg-btn active" data-view="dual" onclick="switchT4View('dual')">⚔️ 多空双向大榜 (Dual Top 5)</button>
+            <button class="t4-seg-btn" data-view="long" onclick="switchT4View('long')">🔥 做多高胜率 Top 5 (Long Pool)</button>
+            <button class="t4-seg-btn" data-view="short" onclick="switchT4View('short')">🩸 做空高胜率 Top 5 (Short Pool)</button>
+            <button class="t4-seg-btn" data-view="all" onclick="switchT4View('all')">🌐 全域 70 标的全景截面</button>
+        </div>
+
+        <div id="t4-view-container">
+            <!-- Card 4-A: 做多胜率 Top 5 (Bullish Conviction) -->
+            <div class="section-card t4-card t4-card-long" id="cardT4Long">
+                <div class="section-header">
+                    <div>
+                        <h3 id="t4-long-title">🔥 表 4-A: 最新交易日 AI 预测做多胜率排行榜 Top 5 (Bullish Conviction)</h3>
+                        <span class="sub" id="t4-long-sub">5日触顶止盈概率领先 · 赛道先验正向校准 · 严格剔除破位飞刀与暴跌熔断</span>
+                    </div>
+                    <div class="t4-controls-right" id="t4-long-controls">
+                        <input type="text" id="t4-search" class="search-input" placeholder="🔍 搜索代码 (如 NVDA)..." oninput="applyT4Filters()">
+                        <button id="t4-mode-btn" class="mode-btn" onclick="toggleT4PoolMode()">🌐 展开全域 70 标的全景</button>
+                    </div>
                 </div>
-                <div class="t4-controls-right">
-                    <input type="text" id="t4-search" class="search-input" placeholder="🔍 搜索代码 (如 NVDA)..." oninput="applyT4Filters()">
-                    <button id="t4-mode-btn" class="mode-btn" onclick="toggleT4PoolMode()">🌐 展开全域 70 标的全景</button>
+
+                <div class="t4-toolbar" id="t4-long-toolbar">
+                    <div class="filter-pills" id="t4-sector-pills">
+                        {sector_pills_html}
+                    </div>
+                    <span id="t4-count-label" style="font-size: 12px; color: var(--text-muted);">当前展示: Top 5 精选正股</span>
                 </div>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="text-align: center;">排名</th>
+                            <th>标的代码 (点击看盘)</th>
+                            <th>所属赛道 & 评级</th>
+                            <th style="text-align: right;">最新价 / ATR波动</th>
+                            <th style="text-align: right;">AI 校准胜率 (原始概率)</th>
+                            <th style="text-align: right;">动态目标止盈价 (Soft-ATR)</th>
+                            <th style="text-align: right;">动态防守止损价 (Soft-ATR)</th>
+                            <th style="text-align: center;">宏观水温</th>
+                            <th style="text-align: center;">AI 综合决策指令</th>
+                        </tr>
+                    </thead>
+                    <tbody id="t4-tbody">
+                        {t4_rows_html}
+                    </tbody>
+                </table>
             </div>
 
-            <div class="t4-toolbar">
-                <div class="filter-pills" id="t4-sector-pills">
-                    {sector_pills_html}
+            <!-- Card 4-B: 做空/破位下杀胜率 Top 5 (Bearish Breakdown) -->
+            <div class="section-card t4-card t4-card-short" id="cardT4Short" style="margin-top: 18px;">
+                <div class="section-header">
+                    <div>
+                        <h3>🩸 表 4-B: 最新交易日 AI 预测做空/破位下杀胜率排行榜 Top 5 (Bearish Breakdown)</h3>
+                        <span class="sub">5日下杀触轨做空胜率 · 均线空头排列 + 期权 Dollar PCR 压盘 · 反抽做空/买Put/反向ETF对冲</span>
+                    </div>
+                    <span class="badge badge-red" style="font-size: 12px; padding: 4px 10px;">机构做空对冲池 (Bearish Pool)</span>
                 </div>
-                <span id="t4-count-label" style="font-size: 12px; color: var(--text-muted);">当前展示: Top 10 精选标的</span>
-            </div>
 
-            <table>
-                <thead>
-                    <tr>
-                        <th style="text-align: center;">排名</th>
-                        <th>标的代码 (点击看盘)</th>
-                        <th>所属赛道 & 评级</th>
-                        <th style="text-align: right;">最新价 / ATR波动</th>
-                        <th style="text-align: right;">AI 校准胜率 (原始概率)</th>
-                        <th style="text-align: right;">动态目标止盈价 (Soft-ATR)</th>
-                        <th style="text-align: right;">动态防守止损价 (Soft-ATR)</th>
-                        <th style="text-align: center;">宏观水温</th>
-                        <th style="text-align: center;">AI 综合决策指令</th>
-                    </tr>
-                </thead>
-                <tbody id="t4-tbody">
-                    {t4_rows_html}
-                </tbody>
-            </table>
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="text-align: center;">排名</th>
+                            <th>标的代码 (点击看盘)</th>
+                            <th>所属赛道 & 评级</th>
+                            <th style="text-align: right;">现价 / 波动偏离</th>
+                            <th style="text-align: right;">AI 做空胜率 (原始概率)</th>
+                            <th style="text-align: right;">空头动态止盈 (Soft-ATR)</th>
+                            <th style="text-align: right;">空头防守止损 (均线上沿)</th>
+                            <th style="text-align: center;">期权 Dollar PCR 评级</th>
+                            <th style="text-align: center;">AI 综合做空决胜指令</th>
+                        </tr>
+                    </thead>
+                    <tbody id="t4-short-tbody">
+                        {t4_short_rows_html}
+                    </tbody>
+                </table>
+            </div>
         </div>
 
         <!-- Table 2: 7 大赛道样本外预测表现归因表 -->
@@ -2706,30 +3576,71 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
     <script>
         let showFullPool = false;
         let currentSector = 'ALL';
+        let currentT4View = 'dual';
+
+        function switchT4View(view) {{
+            currentT4View = view;
+            try {{
+                localStorage.setItem("predict_t4_view", view);
+            }} catch(e) {{}}
+
+            document.querySelectorAll('.t4-seg-btn').forEach(btn => {{
+                if (btn.getAttribute('data-view') === view) {{
+                    btn.classList.add('active');
+                }} else {{
+                    btn.classList.remove('active');
+                }}
+            }});
+
+            const cardLong = document.getElementById('cardT4Long');
+            const cardShort = document.getElementById('cardT4Short');
+            const title = document.getElementById('t4-long-title');
+            const modeBtn = document.getElementById('t4-mode-btn');
+
+            if (view === 'dual') {{
+                if (cardLong) cardLong.style.display = '';
+                if (cardShort) cardShort.style.display = '';
+                showFullPool = false;
+                if (title) title.textContent = '🔥 表 4-A: 最新交易日 AI 预测做多胜率排行榜 Top 5 (Bullish Conviction)';
+                if (modeBtn) modeBtn.textContent = '🌐 展开全域 70 标的全景';
+                document.querySelectorAll('.t4-all-short-sub').forEach(el => el.style.display = 'none');
+                applyT4Filters(5);
+            }} else if (view === 'long') {{
+                if (cardLong) cardLong.style.display = '';
+                if (cardShort) cardShort.style.display = 'none';
+                showFullPool = false;
+                if (title) title.textContent = '🔥 表 4-A: 最新交易日 AI 预测做多高胜率 Top 5 (Long Pool)';
+                if (modeBtn) modeBtn.textContent = '🌐 展开全域 70 标的全景';
+                document.querySelectorAll('.t4-all-short-sub').forEach(el => el.style.display = 'none');
+                applyT4Filters(5);
+            }} else if (view === 'short') {{
+                if (cardLong) cardLong.style.display = 'none';
+                if (cardShort) cardShort.style.display = '';
+            }} else if (view === 'all') {{
+                if (cardLong) cardLong.style.display = '';
+                if (cardShort) cardShort.style.display = 'none';
+                showFullPool = true;
+                if (title) title.textContent = '🌐 表 4: 全域 70 标的全景截面 (全量 AI 实时推理 · 多空双向指标)';
+                if (modeBtn) modeBtn.textContent = '🏆 仅看 Top 5 精选榜';
+                document.querySelectorAll('.t4-all-short-sub').forEach(el => el.style.display = 'block');
+                applyT4Filters(70);
+            }}
+        }}
 
         function toggleT4PoolMode() {{
-            showFullPool = !showFullPool;
-            const btn = document.getElementById('t4-mode-btn');
-            const title = document.getElementById('t4-title');
-            if (showFullPool) {{
-                btn.textContent = '🏆 仅看 Top 10 精选榜';
-                title.textContent = '🎯 表 4: 最新交易日 AI 预测做多胜率全景榜 (全域 70 标的全景 Live Inference)';
+            if (currentT4View === 'all') {{
+                switchT4View('dual');
             }} else {{
-                btn.textContent = '🌐 展开全域 70 标的全景';
-                title.textContent = '🎯 表 4: 最新交易日 AI 预测做多胜率排行榜 Top 10 (Live Inference Pool)';
+                switchT4View('all');
             }}
-            applyT4Filters();
         }}
 
         function filterBySector(sectorName) {{
             currentSector = sectorName;
-            if (sectorName !== 'ALL' && !showFullPool) {{
-                // 筛选特定赛道时自动展开全池以便查看该赛道全部标的
+            if (sectorName !== 'ALL' && currentT4View !== 'all') {{
                 showFullPool = true;
-                const btn = document.getElementById('t4-mode-btn');
-                const title = document.getElementById('t4-title');
-                btn.textContent = '🏆 仅看 Top 10 精选榜';
-                title.textContent = '🎯 表 4: 最新交易日 AI 预测做多胜率全景榜 (' + sectorName + ')';
+                const title = document.getElementById('t4-long-title');
+                if (title) title.textContent = '🎯 表 4: 最新交易日 AI 预测做多胜率全景榜 (' + sectorName + ')';
             }}
             const pills = document.querySelectorAll('#t4-sector-pills .filter-pill');
             pills.forEach(p => {{
@@ -2739,12 +3650,13 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
                     p.classList.remove('active');
                 }}
             }});
-            applyT4Filters();
+            applyT4Filters(showFullPool ? 70 : 5);
         }}
 
-        function applyT4Filters() {{
+        function applyT4Filters(limit) {{
             const query = (document.getElementById('t4-search').value || '').trim().toUpperCase();
-            const rows = document.querySelectorAll('.t4-stock-row');
+            const rows = document.querySelectorAll('#t4-tbody .t4-stock-row');
+            let maxCount = limit || (showFullPool ? 70 : 5);
             let visibleCount = 0;
 
             rows.forEach(row => {{
@@ -2755,7 +3667,7 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
 
                 const matchSec = (currentSector === 'ALL') || (currentSector === 'ETF_POOL' && isEtf) || (sec === currentSector);
                 const matchQuery = (!query) || tk.includes(query) || sec.toUpperCase().includes(query);
-                const matchPool = showFullPool || (query !== '') || (currentSector !== 'ALL') || (rank <= 10 && !isEtf);
+                const matchPool = showFullPool || (query !== '') || (currentSector !== 'ALL') || (rank <= maxCount && !isEtf);
 
                 if (matchSec && matchQuery && matchPool) {{
                     row.style.display = '';
@@ -2767,10 +3679,18 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
 
             const lbl = document.getElementById('t4-count-label');
             if (lbl) {{
-                const modeDesc = (currentSector === 'ALL' && !showFullPool && !query) ? 'Top 10 精选正股' : ('共 ' + visibleCount + ' 只标的');
+                const modeDesc = (currentSector === 'ALL' && !showFullPool && !query) ? `Top ${{maxCount}} 精选正股` : ('共 ' + visibleCount + ' 只标的');
                 lbl.textContent = '当前展示: ' + modeDesc;
             }}
         }}
+
+        document.addEventListener('DOMContentLoaded', function() {{
+            let savedView = 'dual';
+            try {{
+                savedView = localStorage.getItem('predict_t4_view') || 'dual';
+            }} catch(e) {{}}
+            switchT4View(savedView);
+        }});
     </script>
 </body>
 </html>"""
@@ -2944,7 +3864,7 @@ def build_extended_live_features_df(
 
 def export_latest_ai_predictions_json(tables_data: Dict, json_path: str = 'data_cache/latest_ai_predictions.json') -> str:
     """
-    导出全池 28 只核心标的的最新 AI 预测快照 JSON，供富途主看盘终端 (create_futu_terminal.py) 热加载联动展示。
+    导出全池最新 AI 预测快照 JSON (含做多 Top 10 与做空 Top 10 双向决策池)，供主看盘终端热加载联动展示。
     """
     full_json_path = _resolve_cache_path(json_path) if not os.path.isabs(json_path) else json_path
     os.makedirs(os.path.dirname(full_json_path), exist_ok=True)
@@ -2952,20 +3872,65 @@ def export_latest_ai_predictions_json(tables_data: Dict, json_path: str = 'data_
     all_preds = tables_data.get('all_live_predictions') or tables_data.get('table4', [])
     by_ticker = {item['ticker']: item for item in all_preds}
 
+    top_long = tables_data.get('top_long') or tables_data.get('table4', [])
+    top_short = tables_data.get('top_short', [])
+
+    # 规范化宏观气象键别名对齐
+    mw = dict(tables_data.get('macro_weather', {}))
+    if 'qqqm_bias' in mw and 'qqqm_bias_ma50' not in mw:
+        mw['qqqm_bias_ma50'] = mw['qqqm_bias']
+    elif 'qqqm_bias_ma50' in mw and 'qqqm_bias' not in mw:
+        mw['qqqm_bias'] = mw['qqqm_bias_ma50']
+
+    if 'smh_bias' in mw and 'smh_bias_ma50' not in mw:
+        mw['smh_bias_ma50'] = mw['smh_bias']
+    elif 'smh_bias_ma50' in mw and 'smh_bias' not in mw:
+        mw['smh_bias'] = mw['smh_bias_ma50']
+
+    if 'vixy_pos' in mw and 'vixy_pos_60' not in mw:
+        mw['vixy_pos_60'] = mw['vixy_pos']
+    elif 'vixy_pos_60' in mw and 'vixy_pos' not in mw:
+        mw['vixy_pos'] = mw['vixy_pos_60']
+
     payload = {
         'kpi': tables_data.get('kpi', {}),
-        'macro_weather': tables_data.get('macro_weather', {}),
+        'macro_weather': mw,
         'table1': tables_data.get('table1', []),
         'table2': tables_data.get('table2', []),
         'table3': tables_data.get('table3', []),
+        'table1_short': tables_data.get('table1_short', []),
+        'table2_short': tables_data.get('table2_short', []),
         'sectors': tables_data.get('table2', []),
-        'top10': tables_data.get('table4', []),
+        'top10': top_long,
+        'top_long': top_long,
+        'top_short': top_short,
         'all_predictions': all_preds,
         'by_ticker': by_ticker
     }
     with open(full_json_path, 'w', encoding='utf-8') as f:
         json.dump(payload, f, ensure_ascii=False, indent=2)
-    print(f"[+] 🔗 已导出主看板联动 AI 预测快照: {full_json_path} (覆盖 {len(by_ticker)} 只标的)")
+
+    # Maintain real-time byte-for-byte dual-path synchronization
+    try:
+        import shutil
+        norm_p = os.path.normpath(os.path.abspath(full_json_path))
+        if os.sep + "us-market-radar" + os.sep in norm_p:
+            sister_path = norm_p.replace(os.sep + "us-market-radar" + os.sep, os.sep)
+        else:
+            parts = norm_p.split(os.sep)
+            if "scratch" in parts:
+                idx = parts.index("scratch")
+                parts.insert(idx + 1, "us-market-radar")
+                sister_path = os.sep.join(parts)
+            else:
+                sister_path = None
+        if sister_path and sister_path != norm_p:
+            os.makedirs(os.path.dirname(sister_path), exist_ok=True)
+            shutil.copyfile(norm_p, sister_path)
+    except Exception:
+        pass
+
+    print(f"[+] 🔗 已导出主看板联动 AI 预测快照: {full_json_path} (覆盖 {len(by_ticker)} 只标的, 多头 Top {len(top_long)}, 空头 Top {len(top_short)})")
     return full_json_path
 
 
@@ -3073,7 +4038,12 @@ def main():
     n_pos = int((labeled_panel['Label'] == 1.0).sum())
     pos_rate = (n_pos / n_valid * 100.0) if n_valid > 0 else 0.0
     n_tail = int(labeled_panel['Label'].isna().sum())
-    print(f"[*] 打标统计: 总样本 {n_total} 条 | 有效标签 {n_valid} 条 | 正样本 {n_pos} 笔 ({pos_rate:.1f}%) | 尾部实盘隔离 {n_tail} 条")
+    print(f"[*] 做多打标统计: 总样本 {n_total} 条 | 有效标签 {n_valid} 条 | 正样本 {n_pos} 笔 ({pos_rate:.1f}%) | 尾部实盘隔离 {n_tail} 条")
+
+    n_valid_s = int(labeled_panel['Label_Short'].notna().sum())
+    n_pos_s = int((labeled_panel['Label_Short'] == 1.0).sum())
+    pos_rate_s = (n_pos_s / n_valid_s * 100.0) if n_valid_s > 0 else 0.0
+    print(f"[*] 做空打标统计: 总样本 {n_total} 条 | 有效标签 {n_valid_s} 条 | 正样本 {n_pos_s} 笔 ({pos_rate_s:.1f}%) | 尾部实盘隔离 {n_tail} 条")
 
     oos_df, metrics, model = run_walk_forward_cv(labeled_panel)
 

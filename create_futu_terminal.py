@@ -107,6 +107,11 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                             item["target_profit_pct"] = round(u_mult * 100.0, 1)
                             item["stop_loss_pct"] = round(l_mult * 100.0, 1)
 
+                            item["short_target_profit_price"] = round(live_p * (1.0 - u_mult), 2)
+                            item["short_stop_loss_price"] = round(live_p * (1.0 + l_mult), 2)
+                            item["short_target_profit_pct"] = round(u_mult * 100.0, 1)
+                            item["short_stop_loss_pct"] = round(l_mult * 100.0, 1)
+
                             live_bias = float(lv.get("bias", item.get("bias_ma50", 0.0)))
                             live_rsi = float(lv.get("rsi", item.get("rsi_14", 50.0)))
                             item["bias_ma50"] = round(live_bias, 2)
@@ -167,6 +172,17 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                         else:
                             item["action"] = "👀 观望等待"
 
+                # 空头排序并分配 short_rank
+                short_candidates_sorted = sorted(
+                    all_preds,
+                    key=lambda x: (
+                        1 if (x.get("is_crash_halt") or x.get("is_cooling_halt")) else 0,
+                        -float(x.get("calibrated_short_win_rate_pct", 0.0))
+                    )
+                )
+                for idx_s, item in enumerate(short_candidates_sorted, 1):
+                    item["short_rank"] = idx_s
+
                 all_preds.sort(
                     key=lambda x: (
                         2 if x.get("is_etf") else (1 if (x.get("is_broken") or x.get("is_crash_halt") or x.get("is_cooling_halt")) else 0),
@@ -178,9 +194,12 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                     item["rank"] = idx_rk
 
                 top10_stocks = [p for p in all_preds if not p.get("is_etf")][:10] or all_preds[:10]
+                top_short_stocks = [p for p in short_candidates_sorted if not (p.get("is_crash_halt") or p.get("is_cooling_halt"))][:10] or short_candidates_sorted[:10]
                 ai_predictions["all_predictions"] = all_preds
                 ai_predictions["table4"] = top10_stocks
                 ai_predictions["top10"] = top10_stocks
+                ai_predictions["top_long"] = top10_stocks
+                ai_predictions["top_short"] = top_short_stocks
                 ai_predictions["by_ticker"] = {item["ticker"]: item for item in all_preds}
 
                 if "kpi" in ai_predictions:
@@ -202,6 +221,18 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 with open(ai_file, "w", encoding="utf-8") as wf:
                     json.dump(ai_predictions, wf, ensure_ascii=False, indent=2)
 
+                # Maintain real-time byte-for-byte dual-path synchronization
+                try:
+                    import shutil
+                    if "us-market-radar" in sc_dir:
+                        sister_ai_file = os.path.abspath(os.path.join(sc_dir, "..", "data_cache", "latest_ai_predictions.json"))
+                    else:
+                        sister_ai_file = os.path.abspath(os.path.join(sc_dir, "us-market-radar", "data_cache", "latest_ai_predictions.json"))
+                    os.makedirs(os.path.dirname(sister_ai_file), exist_ok=True)
+                    shutil.copyfile(ai_file, sister_ai_file)
+                except Exception:
+                    pass
+
                 try:
                     import ml_predictor_5y
                     _tables_for_html = {
@@ -210,7 +241,9 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                         "table1": ai_predictions.get("table1", []),
                         "table2": ai_predictions.get("sectors", ai_predictions.get("table2", [])),
                         "table3": ai_predictions.get("table3", []),
-                        "table4": all_preds[:10],
+                        "table4": top10_stocks,
+                        "top_long": top10_stocks,
+                        "top_short": top_short_stocks,
                         "all_live_predictions": all_preds,
                     }
                     if _tables_for_html["table1"] and _tables_for_html["table2"]:
@@ -1404,6 +1437,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             <div class="watchlist-categories">
                 <div class="w-tab active" data-filter="all">全部 ({len(stocks_data) + len(macro_data)})</div>
                 <div class="w-tab" data-filter="ai_top" style="color: #d8b4fe; font-weight: 800; background: rgba(188, 140, 255, 0.14); border: 1px solid rgba(188, 140, 255, 0.35);">⚡ AI高胜率 ({len(stocks_data) + len(macro_data)})</div>
+                <div class="w-tab" data-filter="ai_short" style="color: #ff5252; font-weight: 800; background: rgba(248, 81, 73, 0.14); border: 1px solid rgba(248, 81, 73, 0.35);">🩸 AI做空榜 (Top 5)</div>
                 <div class="w-tab" data-filter="starred" style="color: #ffd700; font-weight: 700; background: rgba(255, 215, 0, 0.08);">⭐ 建仓盯盘 (<span id="starredCount">0</span>)</div>
                 <div class="w-tab" data-filter="pit" style="color: #00e676; font-weight: 700; background: rgba(0, 230, 118, 0.08);">🟢 黄金坑</div>
                 <div class="w-tab" data-filter="take_profit" style="color: #d946ef; font-weight: 700; background: rgba(217, 70, 239, 0.08);">🟣 止盈减仓</div>
@@ -1541,36 +1575,64 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                         <span>🧠 AI 5年多赛道波段预测哨</span>
                     </span>
                     <div style="display: flex; align-items: center; gap: 6px;">
-                        <span id="pAiRankBadge" style="font-size: 11px; padding: 2px 7px; border-radius: 4px; background: rgba(188,140,255,0.18); color: #e2c5ff; font-weight: 700;">🏆 全池 #--</span>
+                        <span id="pAiRankBadge" style="font-size: 11px; padding: 2px 7px; border-radius: 4px; background: rgba(188,140,255,0.18); color: #e2c5ff; font-weight: 700;">多 #-- · 空 #--</span>
+                        <a id="pAiTvLink" href="https://www.tradingview.com" target="_blank" style="font-size: 11px; padding: 2px 7px; border-radius: 4px; background: rgba(41,98,255,0.18); border: 1px solid rgba(41,98,255,0.45); color: #2962ff; text-decoration: none; font-weight: 700;" title="在 TradingView 中打开独立图表">📈 TV ↗</a>
                         <a href="predict_radar_5y.html" target="_blank" style="font-size: 11px; padding: 2px 7px; border-radius: 4px; background: rgba(96,165,250,0.18); border: 1px solid rgba(96,165,250,0.45); color: #60a5fa; text-decoration: none; font-weight: 700;" title="打开 AI 5年多赛道预测全景战报">⚡ 5年战报 ↗</a>
                         <span class="card-toggle-btn" onclick="toggleCard(this)">▲</span>
                     </div>
                 </div>
                 <div class="panel-box-content" id="pAiCardBody">
+                    <!-- 1. Dominant Decision Banner -->
                     <div id="pAiActionBanner" style="background: rgba(188, 140, 255, 0.12); border: 1px solid rgba(188, 140, 255, 0.35); border-radius: 5px; padding: 6px 9px; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center;">
                         <span id="pAiActionText" style="font-size: 12px; font-weight: 800; color: #e2c5ff;">--</span>
                         <span id="pAiSectorStar" style="font-size: 11px; color: #ffd54f; font-weight: 700;">--</span>
                     </div>
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 6px;">
-                        <div style="background: rgba(0,0,0,0.3); border-radius: 6px; padding: 6px 8px; border: 1px solid rgba(188,140,255,0.22);">
-                            <div style="font-size: 11px; color: #9ca3af;">🔮 AI 赛道校准胜率</div>
-                            <div id="pAiCalWinRate" style="font-size: 17px; font-weight: 800; color: #3fb950; font-family: 'DIN Alternate', monospace;">--%</div>
-                            <div style="font-size: 10px; color: #8b949e;" id="pAiRawWinRate">原始概率: --% · PF --</div>
+
+                    <!-- 2. Dual Comparison Tug-of-War Probability Module -->
+                    <div style="background: rgba(0,0,0,0.35); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 8px 10px; margin-bottom: 8px;">
+                        <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 4px;">
+                            <div>
+                                <span style="font-size: 11px; color: #9ca3af;">🔥 做多校准胜率</span>
+                                <span id="pAiLongWr" style="font-size: 16px; font-weight: 800; color: #3fb950; font-family: 'DIN Alternate', monospace; margin-left: 4px;">--%</span>
+                            </div>
+                            <div style="text-align: right;">
+                                <span style="font-size: 11px; color: #9ca3af;">🩸 做空校准胜率</span>
+                                <span id="pAiShortWr" style="font-size: 16px; font-weight: 800; color: #f85149; font-family: 'DIN Alternate', monospace; margin-left: 4px;">--%</span>
+                            </div>
                         </div>
-                        <div style="background: rgba(0,0,0,0.3); border-radius: 6px; padding: 6px 8px; border: 1px solid rgba(56,189,248,0.2);">
-                            <div style="font-size: 11px; color: #9ca3af;">🌡️ AI 宏观气象底座</div>
-                            <div id="pAiMacroWeather" style="font-size: 14px; font-weight: 800; color: #38bdf8; margin-top: 2px;">--</div>
-                            <div style="font-size: 10px; color: #8b949e;" id="pAiAtrInfo">Soft-ATR 波动率: --%</div>
+
+                        <!-- Bidirectional Energy Bar -->
+                        <div style="height: 10px; width: 100%; background: rgba(255,255,255,0.06); border-radius: 5px; overflow: hidden; display: flex; position: relative;">
+                            <div id="pAiLongBar" style="height: 100%; width: 50%; background: linear-gradient(90deg, #238636, #3fb950); transition: width 0.3s ease;"></div>
+                            <div style="width: 2px; height: 100%; background: #ffffff; opacity: 0.5; z-index: 2;"></div>
+                            <div id="pAiShortBar" style="height: 100%; width: 50%; background: linear-gradient(90deg, #f85149, #da3633); transition: width 0.3s ease;"></div>
+                        </div>
+
+                        <!-- Raw Prob & PCR Sub-text -->
+                        <div style="display: flex; justify-content: space-between; margin-top: 4px; font-size: 10px; color: #8b949e;">
+                            <span id="pAiLongRaw">原始多: --%</span>
+                            <span id="pAiPcrSentiment">期权 PCR: --</span>
+                            <span id="pAiShortRaw">原始空: --%</span>
                         </div>
                     </div>
+
+                    <!-- 3. Dual-Track 4-Pill Dynamic Price Targets -->
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px; font-size: 11px;">
-                        <div style="background: rgba(0,0,0,0.25); border-radius: 4px; padding: 5px 7px; border: 1px solid rgba(63,185,80,0.18);">
-                            <span style="color: #9ca3af;">🎯 5日动态止盈：</span>
+                        <div style="background: rgba(63,185,80,0.08); border-radius: 4px; padding: 5px 7px; border: 1px solid rgba(63,185,80,0.25);">
+                            <div style="color: #9ca3af; font-size: 10px;">🎯 多头目标止盈</div>
                             <b style="color: #3fb950;" id="pAiTargetPrice">--</b>
                         </div>
-                        <div style="background: rgba(0,0,0,0.25); border-radius: 4px; padding: 5px 7px; border: 1px solid rgba(248,81,73,0.18);">
-                            <span style="color: #9ca3af;">🛡️ 5日动态止损：</span>
+                        <div style="background: rgba(248,81,73,0.08); border-radius: 4px; padding: 5px 7px; border: 1px solid rgba(248,81,73,0.25);">
+                            <div style="color: #9ca3af; font-size: 10px;">🛡️ 多头防守止损</div>
                             <b style="color: #f85149;" id="pAiStopPrice">--</b>
+                        </div>
+                        <div style="background: rgba(248,81,73,0.08); border-radius: 4px; padding: 5px 7px; border: 1px solid rgba(248,81,73,0.25);">
+                            <div style="color: #9ca3af; font-size: 10px;">🩸 空头目标下杀</div>
+                            <b style="color: #f85149;" id="pAiShortTargetPrice">--</b>
+                        </div>
+                        <div style="background: rgba(63,185,80,0.08); border-radius: 4px; padding: 5px 7px; border: 1px solid rgba(63,185,80,0.25);">
+                            <div style="color: #9ca3af; font-size: 10px;">🛡️ 空头反抽防守</div>
+                            <b style="color: #3fb950;" id="pAiShortStopPrice">--</b>
                         </div>
                     </div>
                 </div>
@@ -2205,7 +2267,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 let match = false;
                 const aiByTicker = (AI_PREDICTIONS && AI_PREDICTIONS.by_ticker) ? AI_PREDICTIONS.by_ticker : {{}};
                 if (filter === "all" || filter === "stocks") match = true;
-                else if (filter === "ai_top" && Boolean(aiByTicker[s.ticker])) match = true;
+                else if ((filter === "ai_top" || filter === "ai_short") && Boolean(aiByTicker[s.ticker])) match = true;
                 else if (filter === "starred" && targetWatchlist.includes(s.ticker)) match = true;
                 else if (filter === "pit" && !s.is_crash_halt && !s.is_cooling_halt && !s.is_inverse_hedge && (s.is_pit || (s.pit_status && (s.pit_status.includes("坑内") || s.pit_status.includes("黄金坑"))) || (s.signal && s.signal.includes("黄金坑")) || (s.dist_to_pit !== undefined && s.dist_to_pit <= 0.0 && s.dist_to_pit >= -8.0))) match = true;
                 else if (filter === "take_profit" && (s.is_take_profit || (s.signal && (s.signal.includes("止盈") || s.signal.includes("冲顶"))))) match = true;
@@ -2231,6 +2293,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 const m = MACRO_DATA[t];
                 let match = false;
                 if (filter === "all" || filter === "macro") match = true;
+                else if ((filter === "ai_top" || filter === "ai_short") && Boolean(AI_PREDICTIONS && AI_PREDICTIONS.by_ticker && AI_PREDICTIONS.by_ticker[t])) match = true;
                 else if (filter === "starred" && targetWatchlist.includes(t)) match = true;
                 else if (filter === "pit" && !m.is_crash_halt && !m.is_cooling_halt && !m.is_inverse_hedge && !["SQQQ", "SOXS", "VIXY"].includes(t) && (m.is_pit || (m.signal && m.signal.includes("黄金坑")) || (m.pit_status && (m.pit_status.includes("坑内") || m.pit_status.includes("黄金坑"))) || (m.dist_to_pit !== undefined && m.dist_to_pit <= 0.0 && m.dist_to_pit >= -8.0))) match = true;
                 else if (filter === "take_profit" && (m.is_take_profit || (m.signal && (m.signal.includes("止盈") || m.signal.includes("超买") || m.signal.includes("冲顶"))))) match = true;
@@ -2321,6 +2384,12 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                     const rb = (AI_PREDICTIONS.by_ticker[b.ticker] && AI_PREDICTIONS.by_ticker[b.ticker].rank) || 999;
                     return ra - rb;
                 }});
+            }} else if (filter === "ai_short" && AI_PREDICTIONS && AI_PREDICTIONS.by_ticker) {{
+                items.sort((a, b) => {{
+                    const ra = (AI_PREDICTIONS.by_ticker[a.ticker] && AI_PREDICTIONS.by_ticker[a.ticker].short_rank) || 999;
+                    const rb = (AI_PREDICTIONS.by_ticker[b.ticker] && AI_PREDICTIONS.by_ticker[b.ticker].short_rank) || 999;
+                    return ra - rb;
+                }});
             }}
 
             items.forEach(item => {{
@@ -2357,7 +2426,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                             ${{isTakeProfit ? '<span style="color:#d946ef; font-size:10px; margin-left:3px;">🟣盈</span>' : ''}}
                             ${{isStop ? '<span style="color:#ff5252; font-size:10px; margin-left:3px;">🔴破</span>' : ''}}
                             ${{isPullback ? '<span style="color:#ff9100; font-size:10px; margin-left:3px;">🟠回</span>' : ''}}
-                            ${{(AI_PREDICTIONS && AI_PREDICTIONS.by_ticker && AI_PREDICTIONS.by_ticker[item.ticker]) ? `<span style="background:rgba(188,140,255,0.18); color:${{AI_PREDICTIONS.by_ticker[item.ticker].calibrated_win_rate_pct >= 58 ? '#4ade80' : '#d8b4fe'}}; border:1px solid rgba(188,140,255,0.38); border-radius:3px; padding:0 3px; font-size:9px; margin-left:3px;" title="AI 5年多赛道预测校准胜率 (#${{AI_PREDICTIONS.by_ticker[item.ticker].rank}})">⚡AI ${{AI_PREDICTIONS.by_ticker[item.ticker].calibrated_win_rate_pct.toFixed(0)}}%</span>` : ''}}
+                            ${{(AI_PREDICTIONS && AI_PREDICTIONS.by_ticker && AI_PREDICTIONS.by_ticker[item.ticker]) ? (filter === "ai_short" ? `<span style="background:rgba(248,81,73,0.18); color:#f85149; border:1px solid rgba(248,81,73,0.38); border-radius:3px; padding:0 3px; font-size:9px; margin-left:3px;" title="AI 5年做空胜率 (#${{AI_PREDICTIONS.by_ticker[item.ticker].short_rank || '--'}})">🩸空 ${{((AI_PREDICTIONS.by_ticker[item.ticker].calibrated_short_win_rate_pct || 50.0)).toFixed(0)}}%</span>` : `<span style="background:rgba(188,140,255,0.18); color:${{AI_PREDICTIONS.by_ticker[item.ticker].calibrated_win_rate_pct >= 58 ? '#4ade80' : '#d8b4fe'}}; border:1px solid rgba(188,140,255,0.38); border-radius:3px; padding:0 3px; font-size:9px; margin-left:3px;" title="AI 5年多赛道预测校准胜率 (#${{AI_PREDICTIONS.by_ticker[item.ticker].rank}})">⚡AI ${{AI_PREDICTIONS.by_ticker[item.ticker].calibrated_win_rate_pct.toFixed(0)}}%</span>`) : ''}}
                         </div>
                         <div class="s-name">${{item.name}} · ${{item.cat || ''}}</div>
                     </div>
@@ -2932,61 +3001,103 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             const bandEl = document.getElementById("pEntryFibBand");
             if (bandEl) bandEl.innerText = isInverseHedge ? "🛡️ 反向衰减对冲(不计黄金坑)" : ((curFibLow && curFibHigh) ? (`$${{curFibLow.toFixed(2)}} ~ $${{curFibHigh.toFixed(2)}}`) : "--");
 
-            // 2.6 AI 5年多赛道波段预测哨动态渲染
+            // 2.6 AI 5年多赛道波段预测哨动态渲染 (多空拔河对决)
             const aiBox = document.getElementById("aiPredictionBox");
             if (aiBox) {{
                 const aiMap = (AI_PREDICTIONS && AI_PREDICTIONS.by_ticker) ? AI_PREDICTIONS.by_ticker : {{}};
                 const aiItem = aiMap[ticker];
                 if (aiItem) {{
                     aiBox.style.display = "block";
+
+                    // 1. Header Rank Badge & TradingView Chart Link
                     const rkBadge = document.getElementById("pAiRankBadge");
                     if (rkBadge) {{
-                        const medal = aiItem.rank === 1 ? "🥇" : (aiItem.rank === 2 ? "🥈" : (aiItem.rank === 3 ? "🥉" : "🏆"));
-                        rkBadge.innerText = `${{medal}} 全池 #${{aiItem.rank}} / 28`;
+                        const longRank = aiItem.rank !== undefined ? aiItem.rank : "--";
+                        const shortRank = aiItem.short_rank !== undefined ? aiItem.short_rank : "--";
+                        rkBadge.innerText = `多 #${{longRank}} · 空 #${{shortRank}}`;
                     }}
+                    const tvSym = (typeof SYMBOL_MAP !== "undefined" && SYMBOL_MAP[ticker]) ? SYMBOL_MAP[ticker] : ("NASDAQ:" + ticker);
+                    const tvExtBtn = document.getElementById("pAiTvLink");
+                    if (tvExtBtn) {{
+                        tvExtBtn.href = `https://www.tradingview.com/chart/?symbol=${{encodeURIComponent(tvSym)}}`;
+                    }}
+
+                    // 2. Dominant Action Banner
                     const actBanner = document.getElementById("pAiActionBanner");
                     const actText = document.getElementById("pAiActionText");
                     const secStar = document.getElementById("pAiSectorStar");
-                    if (actText) actText.innerText = aiItem.action || "--";
-                    if (secStar) secStar.innerText = `${{aiItem.sector_cn}} ${{aiItem.sector_rating ? aiItem.sector_rating.slice(0, 5) : ''}}`;
+                    const longWr = aiItem.calibrated_win_rate_pct !== undefined ? aiItem.calibrated_win_rate_pct : 50.0;
+                    const shortWr = aiItem.calibrated_short_win_rate_pct !== undefined ? aiItem.calibrated_short_win_rate_pct : 50.0;
+                    if (actText) {{
+                        if (aiItem.short_action && (shortWr > longWr || (aiItem.short_action.includes("🩸") && !aiItem.action))) {{
+                            actText.innerText = aiItem.short_action;
+                        }} else {{
+                            actText.innerText = aiItem.action || aiItem.short_action || "--";
+                        }}
+                    }}
+                    if (secStar) {{
+                        secStar.innerText = `${{aiItem.sector_cn || ''}} ${{aiItem.sector_rating ? aiItem.sector_rating.slice(0, 5) : ''}}`;
+                    }}
                     if (actBanner && actText) {{
-                        if ((aiItem.action || "").includes("🔥")) {{
+                        const curText = actText.innerText || "";
+                        if (curText.includes("🔥")) {{
                             actBanner.style.background = "rgba(63, 185, 80, 0.16)";
                             actBanner.style.borderColor = "rgba(63, 185, 80, 0.45)";
                             actText.style.color = "#3fb950";
-                        }} else if ((aiItem.action || "").includes("⚡")) {{
+                        }} else if (curText.includes("⚡")) {{
                             actBanner.style.background = "rgba(88, 166, 255, 0.16)";
                             actBanner.style.borderColor = "rgba(88, 166, 255, 0.45)";
                             actText.style.color = "#58a6ff";
-                        }} else if ((aiItem.action || "").includes("🛡️") || (aiItem.action || "").includes("🚨")) {{
-                            actBanner.style.background = "rgba(248, 81, 73, 0.14)";
-                            actBanner.style.borderColor = "rgba(248, 81, 73, 0.42)";
+                        }} else if (curText.includes("🩸") || curText.includes("破位") || curText.includes("买Put") || curText.includes("做空")) {{
+                            actBanner.style.background = "rgba(248, 81, 73, 0.16)";
+                            actBanner.style.borderColor = "rgba(248, 81, 73, 0.45)";
                             actText.style.color = "#f87171";
+                        }} else if (curText.includes("🛡️") || curText.includes("🚨")) {{
+                            actBanner.style.background = "rgba(255, 152, 0, 0.14)";
+                            actBanner.style.borderColor = "rgba(255, 152, 0, 0.42)";
+                            actText.style.color = "#ffb74d";
                         }} else {{
                             actBanner.style.background = "rgba(255, 213, 79, 0.12)";
                             actBanner.style.borderColor = "rgba(255, 213, 79, 0.38)";
                             actText.style.color = "#ffd54f";
                         }}
                     }}
-                    const calEl = document.getElementById("pAiCalWinRate");
-                    if (calEl) {{
-                        const cw = aiItem.calibrated_win_rate_pct || 0;
-                        calEl.innerText = `${{cw.toFixed(1)}}%`;
-                        calEl.style.color = cw >= 58.0 ? "#3fb950" : (cw >= 50.0 ? "#58a6ff" : "#9ca3af");
+
+                    // 3. Dual Tug-of-War Probability Module
+                    const lwrEl = document.getElementById("pAiLongWr");
+                    if (lwrEl) lwrEl.innerText = `${{longWr.toFixed(1)}}%`;
+                    const swrEl = document.getElementById("pAiShortWr");
+                    if (swrEl) swrEl.innerText = `${{shortWr.toFixed(1)}}%`;
+
+                    const totalWr = (longWr + shortWr) || 100.0;
+                    const longRatio = Math.max(10, Math.min(90, (longWr / totalWr) * 100));
+                    const shortRatio = 100 - longRatio;
+
+                    const lBar = document.getElementById("pAiLongBar");
+                    if (lBar) lBar.style.width = `${{longRatio.toFixed(1)}}%`;
+                    const sBar = document.getElementById("pAiShortBar");
+                    if (sBar) sBar.style.width = `${{shortRatio.toFixed(1)}}%`;
+
+                    const lRawEl = document.getElementById("pAiLongRaw");
+                    if (lRawEl) {{
+                        const rawL = aiItem.predicted_win_rate_pct !== undefined ? aiItem.predicted_win_rate_pct : (aiItem.model_raw_prob_pct || 50.0);
+                        lRawEl.innerText = `原始多: ${{rawL.toFixed(1)}}%`;
                     }}
-                    const rawEl = document.getElementById("pAiRawWinRate");
-                    if (rawEl) {{
-                        rawEl.innerText = `原始概率: ${{(aiItem.predicted_win_rate_pct || 0).toFixed(1)}}% · 赛道PF ${{(aiItem.sector_pf || 1.3).toFixed(2)}}`;
+                    const pcrEl = document.getElementById("pAiPcrSentiment");
+                    if (pcrEl) {{
+                        if (aiItem.dollar_pcr !== undefined) {{
+                            pcrEl.innerText = `PCR: ${{aiItem.dollar_pcr.toFixed(2)}} ${{aiItem.pcr_sentiment || ''}}`;
+                        }} else {{
+                            pcrEl.innerText = aiItem.pcr_sentiment || "期权PCR: 正常";
+                        }}
                     }}
-                    const mwEl = document.getElementById("pAiMacroWeather");
-                    if (mwEl) {{
-                        mwEl.innerText = aiItem.macro_temp || "⛅ 阴天防守";
-                        mwEl.style.color = (aiItem.macro_temp || "").includes("🌧️") ? "#f87171" : ((aiItem.macro_temp || "").includes("☀️") ? "#4ade80" : "#ffd54f");
+                    const sRawEl = document.getElementById("pAiShortRaw");
+                    if (sRawEl) {{
+                        const rawS = aiItem.short_raw_prob_pct !== undefined ? aiItem.short_raw_prob_pct : (aiItem.short_model_raw_prob_pct || 50.0);
+                        sRawEl.innerText = `原始空: ${{rawS.toFixed(1)}}%`;
                     }}
-                    const atrEl = document.getElementById("pAiAtrInfo");
-                    if (atrEl) {{
-                        atrEl.innerText = `ATR(14): ${{(aiItem.atr_pct || 2.5).toFixed(2)}}% · T+5 交割`;
-                    }}
+
+                    // 4. Dual-Track 4-Pill Dynamic Price Targets
                     const tpEl = document.getElementById("pAiTargetPrice");
                     if (tpEl) {{
                         tpEl.innerHTML = `$${{(aiItem.target_profit_price || 0).toFixed(2)}} <span style="font-size:10px; opacity:0.85;">(+${{(aiItem.target_profit_pct || 0).toFixed(1)}}%)</span>`;
@@ -2994,6 +3105,14 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                     const slEl = document.getElementById("pAiStopPrice");
                     if (slEl) {{
                         slEl.innerHTML = `$${{(aiItem.stop_loss_price || 0).toFixed(2)}} <span style="font-size:10px; opacity:0.85;">(-${{(aiItem.stop_loss_pct || 0).toFixed(1)}}%)</span>`;
+                    }}
+                    const stpEl = document.getElementById("pAiShortTargetPrice");
+                    if (stpEl) {{
+                        stpEl.innerHTML = `$${{(aiItem.short_target_profit_price || 0).toFixed(2)}} <span style="font-size:10px; opacity:0.85;">(-${{(aiItem.short_target_profit_pct || 0).toFixed(1)}}%)</span>`;
+                    }}
+                    const sslEl = document.getElementById("pAiShortStopPrice");
+                    if (sslEl) {{
+                        sslEl.innerHTML = `$${{(aiItem.short_stop_loss_price || 0).toFixed(2)}} <span style="font-size:10px; opacity:0.85;">(+${{(aiItem.short_stop_loss_pct || 0).toFixed(1)}}%)</span>`;
                     }}
                 }} else {{
                     aiBox.style.display = "none";

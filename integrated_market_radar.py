@@ -30,6 +30,8 @@ import pandas as pd
 import yfinance as yf
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
+import math
+from typing import Optional, Union, Dict, Tuple
 
 from create_futu_terminal import build_futu_terminal_html
 
@@ -1082,6 +1084,193 @@ def fetch_options_anomaly_map(focus_tickers, spot_map=None):
             print(f"[!] 期权缓存写入异常: {e}")
 
     return cached_map
+
+
+def calibrate_short_probability(
+    raw_prob: float,
+    dollar_pcr: float = 1.0,
+    put_wall_broken: bool = False,
+    sector_bear_pf: float = 1.20,
+    macro_weather: Optional[Union[str, Dict]] = None,
+    bias_ma50: float = 0.0,
+    ema10_20_spread: float = 0.0,
+    rsi_14: float = 50.0,
+    is_crash_halt: bool = False,
+    close: Optional[float] = None,
+    put_wall: Optional[float] = None,
+    pcr: Optional[float] = None,
+) -> float:
+    """
+    空头先验概率校准引擎 (Short Inference Calibration Engine):
+    calibrated_short_win_rate_pct = model_raw_short_prob * M_sector * M_options * M_macro + Delta_tech
+
+    规则体系 (Milestone 2 Specification):
+    1. 原始概率: 归一化到 [0.0, 1.0], 具备 NaN / Inf 兜底 (默认 0.50)
+    2. 赛道下行脆弱性 M_sector: np.clip(safe_sec_pf / 1.20, 0.85, 1.15)
+    3. 机构期权雷达 M_options:
+       - eff_dollar_pcr >= 1.30 或 eff_pcr >= 1.30: 机构重度防跌做空对冲 (+4.0% ~ 1.10x)
+       - eff_dollar_pcr >= 1.15 或 eff_pcr >= 1.15: 机构适度防跌做空对冲 (+2.0% ~ 1.05x)
+       - eff_dollar_pcr <= 0.60 (包含 0.0): 机构极度看涨买Call压制 (-8.0% / 0.92x, 单调性保真)
+       - Close < put_wall: 负 Gamma 踩踏加速 (+5.0% / 1.05x)
+    4. 宏观气象 M_macro:
+       - 🌧️ 暴雨空仓: 系统性顺风做空加成 (+5.0% / 1.05x)
+       - ☀️ 晴天进攻: 逆势做空阻力逆风惩罚 (-6.0% / 0.94x)
+    5. 技术动量形态 Delta_tech:
+       - Bias_MA50 < -5.0% 且 EMA10_20_Spread < 0: 空头共振加速 (+6.0%)
+       - RSI_14 < 25.0: 严重超跌死猫跳风险 (-6.0%)
+       - Bias_MA50 > +15.0%: 严重轧空预警 (0.70x 惩罚)
+    6. 截断区间: 严格截断到 [10.0, 95.0] 区间，杜绝 0.0% 与 100.0% 极端过拟合死区
+    """
+    # 0. Sanitize raw_prob against None, NaN, Inf
+    if raw_prob is None:
+        p = 0.50
+    else:
+        try:
+            p_val = float(raw_prob)
+            if math.isnan(p_val) or math.isinf(p_val):
+                p = 0.50
+            elif p_val > 1.0:
+                p = float(np.clip(p_val / 100.0, 0.0, 1.0))
+            else:
+                p = float(np.clip(p_val, 0.0, 1.0))
+        except (ValueError, TypeError):
+            p = 0.50
+
+    # 1. 赛道下行脆弱性乘数 M_sector
+    if sector_bear_pf is None:
+        safe_sec_pf = 1.20
+    else:
+        try:
+            s_val = float(sector_bear_pf)
+            safe_sec_pf = 1.20 if (math.isnan(s_val) or math.isinf(s_val) or s_val <= 0) else s_val
+        except (ValueError, TypeError):
+            safe_sec_pf = 1.20
+    m_sector = float(np.clip(safe_sec_pf / 1.20, 0.85, 1.15))
+
+    # 2. 机构期权雷达乘数 M_options (修复单调性与 NaN/Inf)
+    m_options = 1.0
+    if dollar_pcr is None:
+        eff_dollar_pcr = 1.0
+    else:
+        try:
+            dp_val = float(dollar_pcr)
+            eff_dollar_pcr = 1.0 if (math.isnan(dp_val) or math.isinf(dp_val) or dp_val < 0) else dp_val
+        except (ValueError, TypeError):
+            eff_dollar_pcr = 1.0
+
+    if pcr is None:
+        eff_pcr = 0.0
+    else:
+        try:
+            p_pcr = float(pcr)
+            eff_pcr = 0.0 if (math.isnan(p_pcr) or math.isinf(p_pcr) or p_pcr < 0) else p_pcr
+        except (ValueError, TypeError):
+            eff_pcr = 0.0
+
+    if eff_dollar_pcr >= 1.30 or eff_pcr >= 1.30:
+        m_options *= 1.10
+    elif eff_dollar_pcr >= 1.15 or eff_pcr >= 1.15:
+        m_options *= 1.05
+    elif eff_dollar_pcr <= 0.60:  # 包含 0.0，修复单调性
+        m_options *= 0.92
+
+    # 负 Gamma 踩踏: 跌破主力 Put Wall
+    is_wall_broken = bool(put_wall_broken)
+    if not is_wall_broken and close is not None and put_wall is not None:
+        try:
+            c_val = float(close)
+            pw_val = float(put_wall)
+            if not (math.isnan(c_val) or math.isnan(pw_val) or math.isinf(c_val) or math.isinf(pw_val)):
+                if pw_val > 0 and c_val < pw_val:
+                    is_wall_broken = True
+        except (ValueError, TypeError):
+            pass
+
+    if is_wall_broken:
+        m_options *= 1.05
+
+    # 3. 宏观气象乘数 M_macro
+    m_macro = 1.0
+    if macro_weather:
+        w_str = str(macro_weather)
+        if "暴雨" in w_str or "🌧️" in w_str:
+            m_macro *= 1.05
+        elif "晴天" in w_str or "☀️" in w_str:
+            m_macro *= 0.94
+
+    # 4. 技术形态动量加减项 Delta_tech
+    try:
+        safe_bias = 0.0 if (bias_ma50 is None or math.isnan(float(bias_ma50)) or math.isinf(float(bias_ma50))) else float(bias_ma50)
+    except (ValueError, TypeError):
+        safe_bias = 0.0
+
+    try:
+        safe_spread = 0.0 if (ema10_20_spread is None or math.isnan(float(ema10_20_spread)) or math.isinf(float(ema10_20_spread))) else float(ema10_20_spread)
+    except (ValueError, TypeError):
+        safe_spread = 0.0
+
+    try:
+        safe_rsi = 50.0 if (rsi_14 is None or math.isnan(float(rsi_14)) or math.isinf(float(rsi_14))) else float(rsi_14)
+    except (ValueError, TypeError):
+        safe_rsi = 50.0
+
+    delta_tech = 0.0
+    if safe_bias < -5.0 and safe_spread < 0:
+        delta_tech += 6.0
+    if safe_rsi < 25.0:
+        delta_tech -= 6.0
+
+    # 5. 基础校准百分比分值
+    base_calibrated = p * m_sector * m_options * m_macro * 100.0
+
+    # 空头挤压预警惩罚 (Bias_MA50 > +15.0% 触发 0.70x 惩罚)
+    if safe_bias > 15.0:
+        base_calibrated *= 0.70
+
+    calibrated = base_calibrated + delta_tech
+    if math.isnan(calibrated) or math.isinf(calibrated):
+        return 50.0
+
+    # 6. 严格截断到 [10.0, 95.0]
+    return float(np.clip(calibrated, 10.0, 95.0))
+
+
+def get_short_action_directive(
+    calibrated_short_win_rate_pct: float,
+    is_crash_halt: bool = False,
+    rsi_14: float = 50.0,
+    ticker: str = "",
+    sector: str = "",
+    is_etf: bool = False
+) -> Tuple[str, str]:
+    """
+    生成做空行动决胜指令与样式标签:
+    - is_crash_halt is True: ⚠️ 暴跌宣泄中·等待反抽均线做空
+    - RSI_14 < 25.0: ⚠️ 严重超跌·谨防死猫跳·暂勿追空
+    - calibrated_short_win_rate_pct >= 65.0%: 🩸 极高胜率·顺势做空/买Put (或 🛡️ 建议买入SOXS/SQQQ对冲)
+    - 55.0% <= win_rate < 65.0%: ⚡ 逢高反抽沽空/买Put
+    - otherwise: 👀 空头动能不足·观望
+    """
+    if is_crash_halt:
+        return "⚠️ 暴跌宣泄中·等待反抽均线做空", "short-action-halt"
+    if rsi_14 < 25.0:
+        return "⚠️ 严重超跌·谨防死猫跳·暂勿追空", "short-action-oversold"
+    if calibrated_short_win_rate_pct >= 65.0:
+        semi_etfs = {"SOXX", "SOXL", "SOXS", "SMH"}
+        tech_etfs = {"QQQM", "QQQ", "SQQQ", "SPY"}
+        if is_etf and (ticker in semi_etfs or "半导体" in sector or "芯片" in sector):
+            return "🛡️ 建议买入SOXS对冲", "short-action-etf"
+        elif is_etf and (ticker in tech_etfs or "科技" in sector or "纳指" in sector):
+            return "🛡️ 建议买入SQQQ对冲", "short-action-etf"
+        elif is_etf:
+            return "🛡️ 建议买入反向ETF对冲", "short-action-etf"
+        else:
+            return "🩸 极高胜率·顺势做空/买Put", "short-action-strong"
+    elif calibrated_short_win_rate_pct >= 55.0:
+        return "⚡ 逢高反抽沽空/买Put", "short-action-rebound"
+    else:
+        return "👀 空头动能不足·观望", "short-action-wait"
+
 
 def evaluate_intraday_entry(
     active_price, fib_low, fib_high, ma50, is_pit, is_stop, dist_to_pit, intra_info,
