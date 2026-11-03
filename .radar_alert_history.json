@@ -3,59 +3,59 @@
   "targets": {
     "INTC": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793661657.0929668
+      "last_notified_at": 1793668857.8008735
     },
     "PORT_INTC": {
       "state": "INTC_CRITICAL_STOP",
-      "last_notified_at": 1793661657.0929668
+      "last_notified_at": 1793668857.8008735
     },
     "AAOI": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793661657.0929668
+      "last_notified_at": 1793668857.8008735
     },
     "CCXI": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793661657.0929668
+      "last_notified_at": 1793668857.8008735
     },
     "OKLO": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793661657.0929668
+      "last_notified_at": 1793668857.8008735
     },
     "CRWV": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793661657.0929668
+      "last_notified_at": 1793668857.8008735
     },
     "CRDO": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793661657.0929668
+      "last_notified_at": 1793668857.8008735
     },
     "COHR": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793661657.0929668
+      "last_notified_at": 1793668857.8008735
     },
     "NBIS": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793661657.0929668
+      "last_notified_at": 1793668857.8008735
     },
     "ASTS": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793661657.0929668
+      "last_notified_at": 1793668857.8008735
     },
     "AXTI": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793661657.0929668
+      "last_notified_at": 1793668857.8008735
     },
     "MRVL": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793661657.0929668
+      "last_notified_at": 1793668857.8008735
     },
     "STX": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793661657.0929668
+      "last_notified_at": 1793668857.8008735
     },
     "FPS": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793661657.0929668
+      "last_notified_at": 1793668857.8008735
     },
     "AMZN": {
       "state": "NORMAL",
@@ -63,39 +63,39 @@
     },
     "SNDK": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793661657.0929668
+      "last_notified_at": 1793668857.8008735
     },
     "RKLB": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793661657.0929668
+      "last_notified_at": 1793668857.8008735
     },
     "GOOGL": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793661657.0929668
+      "last_notified_at": 1793668857.8008735
     },
     "BE": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793661657.0929668
+      "last_notified_at": 1793668857.8008735
     },
     "DELL": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793661657.0929668
+      "last_notified_at": 1793668857.8008735
     },
     "WDC": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793661657.0929668
+      "last_notified_at": 1793668857.8008735
     },
     "AVGO": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793661657.0929668
+      "last_notified_at": 1793668857.8008735
     },
     "AMAT": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793661657.0929668
+      "last_notified_at": 1793668857.8008735
     },
     "VST": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793661657.0929668
+      "last_notified_at": 1793668857.8008735
     },
     "NVDA": {
       "state": "STOP_LOSS",
@@ -103,7 +103,7 @@
     },
     "ORCL": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793661657.0929668
+      "last_notified_at": 1793668857.8008735
     },
     "CEG": {
       "state": "NORMAL",
@@ -115,11 +115,11 @@
     },
     "MU": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793661657.0929668
+      "last_notified_at": 1793668857.8008735
     },
     "ASML": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793661657.0929668
+      "last_notified_at": 1793668857.8008735
     },
     "SKHY": {
       "state": "STOP_LOSS",
@@ -131,15 +131,15 @@
     },
     "LITE": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793661657.0929668
+      "last_notified_at": 1793668857.8008735
     },
     "HPE": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793661657.0929668
+      "last_notified_at": 1793668857.8008735
     },
     "AMD": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793661657.0929668
+      "last_notified_at": 1793668857.8008735
     },
     "SPCX": {
       "state": "WATCHLIST_ENTRY_READY",
@@ -219,7 +219,7 @@
     },
     "PORT_SOXL": {
       "state": "SOXL_CRITICAL_STOP",
-      "last_notified_at": 1793661657.0929668
+      "last_notified_at": 1793668857.8008735
     },
     "KORU": {
       "state": "NORMAL",
@@ -235,23 +235,23 @@
     },
     "PORT_SOXS": {
       "state": "SOXS_HEDGE_CLIMAX",
-      "last_notified_at": 1793661657.0929668
+      "last_notified_at": 1793668857.8008735
     },
     "MARA": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793661657.0929668
+      "last_notified_at": 1793668857.8008735
     },
     "APLD": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793661657.0929668
+      "last_notified_at": 1793668857.8008735
     },
     "COIN": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793661657.0929668
+      "last_notified_at": 1793668857.8008735
     },
     "NOW": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793661657.0929668
+      "last_notified_at": 1793668857.8008735
     }
   },
   "position_peaks": {
