@@ -4,7 +4,7 @@
     "profit_factor": 1.41,
     "top_sector": "存储芯片 (⭐⭐⭐⭐⭐)",
     "top_feature": "SMH_IGV_Ratio_Bias (12.28%)",
-    "sync_time": "2026-11-03 10:23:09",
+    "sync_time": "2026-11-03 10:24:09",
     "data_mode": "Finnhub 秒级实时 (🌌 美股夜盘)",
     "is_realtime": false
   },
@@ -12,9 +12,9 @@
     "status": "🌧️ 暴雨空仓",
     "desc": "科技基准与半导体共振破位下行 · 系统性流动性挤压 · 严禁盲目抄底",
     "badge_class": "weather-rainy",
-    "qqqm_bias": -4.71,
-    "vixy_pos": 0.67,
-    "smh_bias": -8.75,
+    "qqqm_bias": -5.86,
+    "vixy_pos": 0.68,
+    "smh_bias": -10.72,
     "smh_igv": -3.93,
     "latest_date": "2026-11-02",
     "qqqm_bias_ma50": -5.86,
@@ -446,35 +446,12 @@
       "stop_loss_pct": 3.0,
       "macro_temp": "🌧️ 暴雨空仓",
       "action": "🛡️ 暴雨防守·仅极小仓试错",
-      "action_tag": "action-watch"
+      "action_tag": "action-watch",
+      "is_crash_halt": false,
+      "is_cooling_halt": false
     },
     {
       "rank": 2,
-      "ticker": "TSM",
-      "sector_key": "Semiconductors",
-      "sector_cn": "半导体与设备",
-      "sector_rating": "⭐⭐⭐⭐☆",
-      "latest_price": 399.3,
-      "atr_pct": 3.38,
-      "bias_ma50": -8.08,
-      "rsi_14": 36.2,
-      "is_broken": false,
-      "is_etf": false,
-      "model_raw_prob_pct": 45.4,
-      "base_raw_prob_pct": 51.4,
-      "predicted_win_rate_pct": 51.4,
-      "calibrated_win_rate_pct": 59.1,
-      "sector_pf": 1.55,
-      "target_profit_price": 417.52,
-      "target_profit_pct": 4.6,
-      "stop_loss_price": 385.8,
-      "stop_loss_pct": 3.4,
-      "macro_temp": "🌧️ 暴雨空仓",
-      "action": "🛡️ 暴雨防守·仅极小仓试错",
-      "action_tag": "action-watch"
-    },
-    {
-      "rank": 3,
       "ticker": "AAPL",
       "sector_key": "Neo_Cloud",
       "sector_cn": "科技巨头与AI生态",
@@ -496,110 +473,12 @@
       "stop_loss_pct": 2.2,
       "macro_temp": "🌧️ 暴雨空仓",
       "action": "🛡️ 暴雨防守·仅极小仓试错",
-      "action_tag": "action-watch"
+      "action_tag": "action-watch",
+      "is_crash_halt": false,
+      "is_cooling_halt": false
     },
     {
-      "rank": 4,
-      "ticker": "ASML",
-      "sector_key": "Semiconductors",
-      "sector_cn": "半导体与设备",
-      "sector_rating": "⭐⭐⭐⭐☆",
-      "latest_price": 1531.06,
-      "atr_pct": 3.84,
-      "bias_ma50": -10.03,
-      "rsi_14": 35.9,
-      "is_broken": false,
-      "is_etf": false,
-      "model_raw_prob_pct": 40.7,
-      "base_raw_prob_pct": 46.7,
-      "predicted_win_rate_pct": 46.7,
-      "calibrated_win_rate_pct": 53.7,
-      "sector_pf": 1.55,
-      "target_profit_price": 1610.43,
-      "target_profit_pct": 5.2,
-      "stop_loss_price": 1472.27,
-      "stop_loss_pct": 3.8,
-      "macro_temp": "🌧️ 暴雨空仓",
-      "action": "🛡️ 暴雨空仓·严禁左侧接刀",
-      "action_tag": "action-watch"
-    },
-    {
-      "rank": 5,
-      "ticker": "VRT",
-      "sector_key": "Semiconductors",
-      "sector_cn": "AI液冷与服务器",
-      "sector_rating": "⭐⭐⭐⭐☆",
-      "latest_price": 225.0,
-      "atr_pct": 6.3,
-      "bias_ma50": -7.19,
-      "rsi_14": 48.0,
-      "is_broken": false,
-      "is_etf": false,
-      "model_raw_prob_pct": 39.5,
-      "base_raw_prob_pct": 45.5,
-      "predicted_win_rate_pct": 45.5,
-      "calibrated_win_rate_pct": 52.3,
-      "sector_pf": 1.55,
-      "target_profit_price": 240.64,
-      "target_profit_pct": 7.0,
-      "stop_loss_price": 213.41,
-      "stop_loss_pct": 5.2,
-      "macro_temp": "🌧️ 暴雨空仓",
-      "action": "🛡️ 暴雨空仓·严禁左侧接刀",
-      "action_tag": "action-watch"
-    },
-    {
-      "rank": 6,
-      "ticker": "AMZN",
-      "sector_key": "Neo_Cloud",
-      "sector_cn": "科技巨头与AI生态",
-      "sector_rating": "⭐⭐⭐☆☆",
-      "latest_price": 246.55,
-      "atr_pct": 2.94,
-      "bias_ma50": -3.08,
-      "rsi_14": 42.7,
-      "is_broken": false,
-      "is_etf": false,
-      "model_raw_prob_pct": 40.3,
-      "base_raw_prob_pct": 48.8,
-      "predicted_win_rate_pct": 48.8,
-      "calibrated_win_rate_pct": 50.7,
-      "sector_pf": 1.35,
-      "target_profit_price": 256.34,
-      "target_profit_pct": 4.0,
-      "stop_loss_price": 239.3,
-      "stop_loss_pct": 2.9,
-      "macro_temp": "🌧️ 暴雨空仓",
-      "action": "🛡️ 暴雨空仓·严禁左侧接刀",
-      "action_tag": "action-watch"
-    },
-    {
-      "rank": 7,
-      "ticker": "AVGO",
-      "sector_key": "Semiconductors",
-      "sector_cn": "半导体与设备",
-      "sector_rating": "⭐⭐⭐⭐☆",
-      "latest_price": 323.34,
-      "atr_pct": 3.89,
-      "bias_ma50": -8.26,
-      "rsi_14": 39.4,
-      "is_broken": false,
-      "is_etf": false,
-      "model_raw_prob_pct": 38.0,
-      "base_raw_prob_pct": 44.0,
-      "predicted_win_rate_pct": 44.0,
-      "calibrated_win_rate_pct": 50.6,
-      "sector_pf": 1.55,
-      "target_profit_price": 340.32,
-      "target_profit_pct": 5.3,
-      "stop_loss_price": 310.76,
-      "stop_loss_pct": 3.9,
-      "macro_temp": "🌧️ 暴雨空仓",
-      "action": "🛡️ 暴雨空仓·严禁左侧接刀",
-      "action_tag": "action-watch"
-    },
-    {
-      "rank": 8,
+      "rank": 3,
       "ticker": "PEP",
       "sector_key": "Energy_Power",
       "sector_cn": "价值蓝筹与医药",
@@ -621,10 +500,12 @@
       "stop_loss_pct": 2.2,
       "macro_temp": "🌧️ 暴雨空仓",
       "action": "🛡️ 暴雨空仓·严禁左侧接刀",
-      "action_tag": "action-watch"
+      "action_tag": "action-watch",
+      "is_crash_halt": false,
+      "is_cooling_halt": false
     },
     {
-      "rank": 9,
+      "rank": 4,
       "ticker": "KO",
       "sector_key": "Energy_Power",
       "sector_cn": "价值蓝筹与医药",
@@ -646,10 +527,12 @@
       "stop_loss_pct": 2.2,
       "macro_temp": "🌧️ 暴雨空仓",
       "action": "🛡️ 暴雨空仓·严禁左侧接刀",
-      "action_tag": "action-watch"
+      "action_tag": "action-watch",
+      "is_crash_halt": false,
+      "is_cooling_halt": false
     },
     {
-      "rank": 10,
+      "rank": 5,
       "ticker": "MSFT",
       "sector_key": "Enterprise_SaaS",
       "sector_cn": "企业软件与 AI SaaS",
@@ -671,7 +554,144 @@
       "stop_loss_pct": 2.3,
       "macro_temp": "🌧️ 暴雨空仓",
       "action": "🛡️ 暴雨空仓·严禁左侧接刀",
-      "action_tag": "action-watch"
+      "action_tag": "action-watch",
+      "is_crash_halt": false,
+      "is_cooling_halt": false
+    },
+    {
+      "rank": 6,
+      "ticker": "SPCX",
+      "sector_key": "Neo_Cloud",
+      "sector_cn": "物理AI与太空商业",
+      "sector_rating": "⭐⭐⭐☆☆",
+      "latest_price": 137.22,
+      "atr_pct": 5.46,
+      "bias_ma50": -8.27,
+      "rsi_14": 38.2,
+      "is_broken": false,
+      "is_etf": false,
+      "model_raw_prob_pct": 40.5,
+      "base_raw_prob_pct": 46.6,
+      "predicted_win_rate_pct": 46.6,
+      "calibrated_win_rate_pct": 48.4,
+      "sector_pf": 1.35,
+      "target_profit_price": 145.98,
+      "target_profit_pct": 6.4,
+      "stop_loss_price": 130.73,
+      "stop_loss_pct": 4.7,
+      "macro_temp": "🌧️ 暴雨空仓",
+      "action": "🛡️ 暴雨空仓·严禁左侧接刀",
+      "action_tag": "action-watch",
+      "is_crash_halt": false,
+      "is_cooling_halt": false
+    },
+    {
+      "rank": 7,
+      "ticker": "CEG",
+      "sector_key": "Energy_Power",
+      "sector_cn": "数据中心能源电力",
+      "sector_rating": "⭐⭐⭐☆☆",
+      "latest_price": 257.73,
+      "atr_pct": 4.63,
+      "bias_ma50": -5.43,
+      "rsi_14": 44.0,
+      "is_broken": false,
+      "is_etf": false,
+      "model_raw_prob_pct": 38.3,
+      "base_raw_prob_pct": 46.8,
+      "predicted_win_rate_pct": 46.8,
+      "calibrated_win_rate_pct": 46.1,
+      "sector_pf": 1.28,
+      "target_profit_price": 272.75,
+      "target_profit_pct": 5.8,
+      "stop_loss_price": 246.61,
+      "stop_loss_pct": 4.3,
+      "macro_temp": "🌧️ 暴雨空仓",
+      "action": "🛡️ 暴雨空仓·严禁左侧接刀",
+      "action_tag": "action-watch",
+      "is_crash_halt": false,
+      "is_cooling_halt": false
+    },
+    {
+      "rank": 8,
+      "ticker": "MRNA",
+      "sector_key": "Energy_Power",
+      "sector_cn": "价值蓝筹与医药",
+      "sector_rating": "⭐⭐⭐☆☆",
+      "latest_price": 220.18,
+      "atr_pct": 9.07,
+      "bias_ma50": 20.67,
+      "rsi_14": 56.9,
+      "is_broken": false,
+      "is_etf": false,
+      "model_raw_prob_pct": 45.3,
+      "base_raw_prob_pct": 46.8,
+      "predicted_win_rate_pct": 46.8,
+      "calibrated_win_rate_pct": 46.1,
+      "sector_pf": 1.28,
+      "target_profit_price": 239.6,
+      "target_profit_pct": 8.8,
+      "stop_loss_price": 205.79,
+      "stop_loss_pct": 6.5,
+      "macro_temp": "🌧️ 暴雨空仓",
+      "action": "🛡️ 暴雨空仓·严禁左侧接刀",
+      "action_tag": "action-watch",
+      "is_crash_halt": false,
+      "is_cooling_halt": false
+    },
+    {
+      "rank": 9,
+      "ticker": "VST",
+      "sector_key": "Energy_Power",
+      "sector_cn": "数据中心能源电力",
+      "sector_rating": "⭐⭐⭐☆☆",
+      "latest_price": 135.23,
+      "atr_pct": 5.21,
+      "bias_ma50": -6.68,
+      "rsi_14": 39.4,
+      "is_broken": false,
+      "is_etf": false,
+      "model_raw_prob_pct": 40.5,
+      "base_raw_prob_pct": 46.6,
+      "predicted_win_rate_pct": 46.6,
+      "calibrated_win_rate_pct": 45.9,
+      "sector_pf": 1.28,
+      "target_profit_price": 143.64,
+      "target_profit_pct": 6.2,
+      "stop_loss_price": 129.0,
+      "stop_loss_pct": 4.6,
+      "macro_temp": "🌧️ 暴雨空仓",
+      "action": "🛡️ 暴雨空仓·严禁左侧接刀",
+      "action_tag": "action-watch",
+      "is_crash_halt": false,
+      "is_cooling_halt": false
+    },
+    {
+      "rank": 10,
+      "ticker": "AXP",
+      "sector_key": "Energy_Power",
+      "sector_cn": "价值蓝筹与医药",
+      "sector_rating": "⭐⭐⭐☆☆",
+      "latest_price": 328.24,
+      "atr_pct": 2.01,
+      "bias_ma50": 3.64,
+      "rsi_14": 63.2,
+      "is_broken": false,
+      "is_etf": false,
+      "model_raw_prob_pct": 44.5,
+      "base_raw_prob_pct": 46.0,
+      "predicted_win_rate_pct": 46.0,
+      "calibrated_win_rate_pct": 45.3,
+      "sector_pf": 1.28,
+      "target_profit_price": 338.09,
+      "target_profit_pct": 3.0,
+      "stop_loss_price": 321.02,
+      "stop_loss_pct": 2.2,
+      "macro_temp": "🌧️ 暴雨空仓",
+      "action": "🛡️ 暴雨空仓·严禁左侧接刀",
+      "action_tag": "action-watch",
+      "is_crash_halt": false,
+      "is_cooling_halt": false
     }
   ],
   "all_predictions": [
@@ -698,35 +718,12 @@
       "stop_loss_pct": 3.0,
       "macro_temp": "🌧️ 暴雨空仓",
       "action": "🛡️ 暴雨防守·仅极小仓试错",
-      "action_tag": "action-watch"
+      "action_tag": "action-watch",
+      "is_crash_halt": false,
+      "is_cooling_halt": false
     },
     {
       "rank": 2,
-      "ticker": "TSM",
-      "sector_key": "Semiconductors",
-      "sector_cn": "半导体与设备",
-      "sector_rating": "⭐⭐⭐⭐☆",
-      "latest_price": 399.3,
-      "atr_pct": 3.38,
-      "bias_ma50": -8.08,
-      "rsi_14": 36.2,
-      "is_broken": false,
-      "is_etf": false,
-      "model_raw_prob_pct": 45.4,
-      "base_raw_prob_pct": 51.4,
-      "predicted_win_rate_pct": 51.4,
-      "calibrated_win_rate_pct": 59.1,
-      "sector_pf": 1.55,
-      "target_profit_price": 417.52,
-      "target_profit_pct": 4.6,
-      "stop_loss_price": 385.8,
-      "stop_loss_pct": 3.4,
-      "macro_temp": "🌧️ 暴雨空仓",
-      "action": "🛡️ 暴雨防守·仅极小仓试错",
-      "action_tag": "action-watch"
-    },
-    {
-      "rank": 3,
       "ticker": "AAPL",
       "sector_key": "Neo_Cloud",
       "sector_cn": "科技巨头与AI生态",
@@ -748,110 +745,12 @@
       "stop_loss_pct": 2.2,
       "macro_temp": "🌧️ 暴雨空仓",
       "action": "🛡️ 暴雨防守·仅极小仓试错",
-      "action_tag": "action-watch"
+      "action_tag": "action-watch",
+      "is_crash_halt": false,
+      "is_cooling_halt": false
     },
     {
-      "rank": 4,
-      "ticker": "ASML",
-      "sector_key": "Semiconductors",
-      "sector_cn": "半导体与设备",
-      "sector_rating": "⭐⭐⭐⭐☆",
-      "latest_price": 1531.06,
-      "atr_pct": 3.84,
-      "bias_ma50": -10.03,
-      "rsi_14": 35.9,
-      "is_broken": false,
-      "is_etf": false,
-      "model_raw_prob_pct": 40.7,
-      "base_raw_prob_pct": 46.7,
-      "predicted_win_rate_pct": 46.7,
-      "calibrated_win_rate_pct": 53.7,
-      "sector_pf": 1.55,
-      "target_profit_price": 1610.43,
-      "target_profit_pct": 5.2,
-      "stop_loss_price": 1472.27,
-      "stop_loss_pct": 3.8,
-      "macro_temp": "🌧️ 暴雨空仓",
-      "action": "🛡️ 暴雨空仓·严禁左侧接刀",
-      "action_tag": "action-watch"
-    },
-    {
-      "rank": 5,
-      "ticker": "VRT",
-      "sector_key": "Semiconductors",
-      "sector_cn": "AI液冷与服务器",
-      "sector_rating": "⭐⭐⭐⭐☆",
-      "latest_price": 225.0,
-      "atr_pct": 6.3,
-      "bias_ma50": -7.19,
-      "rsi_14": 48.0,
-      "is_broken": false,
-      "is_etf": false,
-      "model_raw_prob_pct": 39.5,
-      "base_raw_prob_pct": 45.5,
-      "predicted_win_rate_pct": 45.5,
-      "calibrated_win_rate_pct": 52.3,
-      "sector_pf": 1.55,
-      "target_profit_price": 240.64,
-      "target_profit_pct": 7.0,
-      "stop_loss_price": 213.41,
-      "stop_loss_pct": 5.2,
-      "macro_temp": "🌧️ 暴雨空仓",
-      "action": "🛡️ 暴雨空仓·严禁左侧接刀",
-      "action_tag": "action-watch"
-    },
-    {
-      "rank": 6,
-      "ticker": "AMZN",
-      "sector_key": "Neo_Cloud",
-      "sector_cn": "科技巨头与AI生态",
-      "sector_rating": "⭐⭐⭐☆☆",
-      "latest_price": 246.55,
-      "atr_pct": 2.94,
-      "bias_ma50": -3.08,
-      "rsi_14": 42.7,
-      "is_broken": false,
-      "is_etf": false,
-      "model_raw_prob_pct": 40.3,
-      "base_raw_prob_pct": 48.8,
-      "predicted_win_rate_pct": 48.8,
-      "calibrated_win_rate_pct": 50.7,
-      "sector_pf": 1.35,
-      "target_profit_price": 256.34,
-      "target_profit_pct": 4.0,
-      "stop_loss_price": 239.3,
-      "stop_loss_pct": 2.9,
-      "macro_temp": "🌧️ 暴雨空仓",
-      "action": "🛡️ 暴雨空仓·严禁左侧接刀",
-      "action_tag": "action-watch"
-    },
-    {
-      "rank": 7,
-      "ticker": "AVGO",
-      "sector_key": "Semiconductors",
-      "sector_cn": "半导体与设备",
-      "sector_rating": "⭐⭐⭐⭐☆",
-      "latest_price": 323.34,
-      "atr_pct": 3.89,
-      "bias_ma50": -8.26,
-      "rsi_14": 39.4,
-      "is_broken": false,
-      "is_etf": false,
-      "model_raw_prob_pct": 38.0,
-      "base_raw_prob_pct": 44.0,
-      "predicted_win_rate_pct": 44.0,
-      "calibrated_win_rate_pct": 50.6,
-      "sector_pf": 1.55,
-      "target_profit_price": 340.32,
-      "target_profit_pct": 5.3,
-      "stop_loss_price": 310.76,
-      "stop_loss_pct": 3.9,
-      "macro_temp": "🌧️ 暴雨空仓",
-      "action": "🛡️ 暴雨空仓·严禁左侧接刀",
-      "action_tag": "action-watch"
-    },
-    {
-      "rank": 8,
+      "rank": 3,
       "ticker": "PEP",
       "sector_key": "Energy_Power",
       "sector_cn": "价值蓝筹与医药",
@@ -873,10 +772,12 @@
       "stop_loss_pct": 2.2,
       "macro_temp": "🌧️ 暴雨空仓",
       "action": "🛡️ 暴雨空仓·严禁左侧接刀",
-      "action_tag": "action-watch"
+      "action_tag": "action-watch",
+      "is_crash_halt": false,
+      "is_cooling_halt": false
     },
     {
-      "rank": 9,
+      "rank": 4,
       "ticker": "KO",
       "sector_key": "Energy_Power",
       "sector_cn": "价值蓝筹与医药",
@@ -898,10 +799,12 @@
       "stop_loss_pct": 2.2,
       "macro_temp": "🌧️ 暴雨空仓",
       "action": "🛡️ 暴雨空仓·严禁左侧接刀",
-      "action_tag": "action-watch"
+      "action_tag": "action-watch",
+      "is_crash_halt": false,
+      "is_cooling_halt": false
     },
     {
-      "rank": 10,
+      "rank": 5,
       "ticker": "MSFT",
       "sector_key": "Enterprise_SaaS",
       "sector_cn": "企业软件与 AI SaaS",
@@ -923,10 +826,12 @@
       "stop_loss_pct": 2.3,
       "macro_temp": "🌧️ 暴雨空仓",
       "action": "🛡️ 暴雨空仓·严禁左侧接刀",
-      "action_tag": "action-watch"
+      "action_tag": "action-watch",
+      "is_crash_halt": false,
+      "is_cooling_halt": false
     },
     {
-      "rank": 11,
+      "rank": 6,
       "ticker": "SPCX",
       "sector_key": "Neo_Cloud",
       "sector_cn": "物理AI与太空商业",
@@ -948,10 +853,12 @@
       "stop_loss_pct": 4.7,
       "macro_temp": "🌧️ 暴雨空仓",
       "action": "🛡️ 暴雨空仓·严禁左侧接刀",
-      "action_tag": "action-watch"
+      "action_tag": "action-watch",
+      "is_crash_halt": false,
+      "is_cooling_halt": false
     },
     {
-      "rank": 12,
+      "rank": 7,
       "ticker": "CEG",
       "sector_key": "Energy_Power",
       "sector_cn": "数据中心能源电力",
@@ -973,10 +880,12 @@
       "stop_loss_pct": 4.3,
       "macro_temp": "🌧️ 暴雨空仓",
       "action": "🛡️ 暴雨空仓·严禁左侧接刀",
-      "action_tag": "action-watch"
+      "action_tag": "action-watch",
+      "is_crash_halt": false,
+      "is_cooling_halt": false
     },
     {
-      "rank": 13,
+      "rank": 8,
       "ticker": "MRNA",
       "sector_key": "Energy_Power",
       "sector_cn": "价值蓝筹与医药",
@@ -998,35 +907,12 @@
       "stop_loss_pct": 6.5,
       "macro_temp": "🌧️ 暴雨空仓",
       "action": "🛡️ 暴雨空仓·严禁左侧接刀",
-      "action_tag": "action-watch"
+      "action_tag": "action-watch",
+      "is_crash_halt": false,
+      "is_cooling_halt": false
     },
     {
-      "rank": 14,
-      "ticker": "MSTR",
-      "sector_key": "Crypto_Proxy",
-      "sector_cn": "加密币股代理",
-      "sector_rating": "⭐⭐⭐☆☆",
-      "latest_price": 131.04,
-      "atr_pct": 7.24,
-      "bias_ma50": -8.79,
-      "rsi_14": 40.2,
-      "is_broken": false,
-      "is_etf": false,
-      "model_raw_prob_pct": 40.5,
-      "base_raw_prob_pct": 46.5,
-      "predicted_win_rate_pct": 46.5,
-      "calibrated_win_rate_pct": 46.1,
-      "sector_pf": 1.29,
-      "target_profit_price": 140.98,
-      "target_profit_pct": 7.6,
-      "stop_loss_price": 123.68,
-      "stop_loss_pct": 5.6,
-      "macro_temp": "🌧️ 暴雨空仓",
-      "action": "🛡️ 暴雨空仓·严禁左侧接刀",
-      "action_tag": "action-watch"
-    },
-    {
-      "rank": 15,
+      "rank": 9,
       "ticker": "VST",
       "sector_key": "Energy_Power",
       "sector_cn": "数据中心能源电力",
@@ -1048,10 +934,12 @@
       "stop_loss_pct": 4.6,
       "macro_temp": "🌧️ 暴雨空仓",
       "action": "🛡️ 暴雨空仓·严禁左侧接刀",
-      "action_tag": "action-watch"
+      "action_tag": "action-watch",
+      "is_crash_halt": false,
+      "is_cooling_halt": false
     },
     {
-      "rank": 16,
+      "rank": 10,
       "ticker": "AXP",
       "sector_key": "Energy_Power",
       "sector_cn": "价值蓝筹与医药",
@@ -1073,10 +961,12 @@
       "stop_loss_pct": 2.2,
       "macro_temp": "🌧️ 暴雨空仓",
       "action": "🛡️ 暴雨空仓·严禁左侧接刀",
-      "action_tag": "action-watch"
+      "action_tag": "action-watch",
+      "is_crash_halt": false,
+      "is_cooling_halt": false
     },
     {
-      "rank": 17,
+      "rank": 11,
       "ticker": "CRWD",
       "sector_key": "Energy_Power",
       "sector_cn": "企业软件与AI安全",
@@ -1098,10 +988,12 @@
       "stop_loss_pct": 4.7,
       "macro_temp": "🌧️ 暴雨空仓",
       "action": "🛡️ 暴雨空仓·严禁左侧接刀",
-      "action_tag": "action-watch"
+      "action_tag": "action-watch",
+      "is_crash_halt": false,
+      "is_cooling_halt": false
     },
     {
-      "rank": 18,
+      "rank": 12,
       "ticker": "TSLA",
       "sector_key": "Neo_Cloud",
       "sector_cn": "物理AI与太空商业",
@@ -1123,10 +1015,12 @@
       "stop_loss_pct": 3.3,
       "macro_temp": "🌧️ 暴雨空仓",
       "action": "🛡️ 暴雨空仓·严禁左侧接刀",
-      "action_tag": "action-watch"
+      "action_tag": "action-watch",
+      "is_crash_halt": false,
+      "is_cooling_halt": false
     },
     {
-      "rank": 19,
+      "rank": 13,
       "ticker": "NKE",
       "sector_key": "Energy_Power",
       "sector_cn": "价值蓝筹与医药",
@@ -1148,10 +1042,12 @@
       "stop_loss_pct": 2.7,
       "macro_temp": "🌧️ 暴雨空仓",
       "action": "🛡️ 暴雨空仓·严禁左侧接刀",
-      "action_tag": "action-watch"
+      "action_tag": "action-watch",
+      "is_crash_halt": false,
+      "is_cooling_halt": false
     },
     {
-      "rank": 20,
+      "rank": 14,
       "ticker": "META",
       "sector_key": "Neo_Cloud",
       "sector_cn": "科技巨头与AI生态",
@@ -1173,35 +1069,12 @@
       "stop_loss_pct": 3.8,
       "macro_temp": "🌧️ 暴雨空仓",
       "action": "🛡️ 暴雨空仓·严禁左侧接刀",
-      "action_tag": "action-watch"
+      "action_tag": "action-watch",
+      "is_crash_halt": false,
+      "is_cooling_halt": false
     },
     {
-      "rank": 21,
-      "ticker": "PLTR",
-      "sector_key": "Enterprise_SaaS",
-      "sector_cn": "企业软件与 AI SaaS",
-      "sector_rating": "⭐⭐☆☆☆",
-      "latest_price": 172.99,
-      "atr_pct": 4.79,
-      "bias_ma50": -7.39,
-      "rsi_14": 38.0,
-      "is_broken": false,
-      "is_etf": false,
-      "model_raw_prob_pct": 42.2,
-      "base_raw_prob_pct": 47.8,
-      "predicted_win_rate_pct": 47.8,
-      "calibrated_win_rate_pct": 43.0,
-      "sector_pf": 1.17,
-      "target_profit_price": 183.25,
-      "target_profit_pct": 5.9,
-      "stop_loss_price": 165.39,
-      "stop_loss_pct": 4.4,
-      "macro_temp": "🌧️ 暴雨空仓",
-      "action": "🛡️ 暴雨空仓·严禁左侧接刀",
-      "action_tag": "action-watch"
-    },
-    {
-      "rank": 22,
+      "rank": 15,
       "ticker": "LLY",
       "sector_key": "Energy_Power",
       "sector_cn": "价值蓝筹与医药",
@@ -1223,10 +1096,12 @@
       "stop_loss_pct": 3.2,
       "macro_temp": "🌧️ 暴雨空仓",
       "action": "🛡️ 暴雨空仓·严禁左侧接刀",
-      "action_tag": "action-watch"
+      "action_tag": "action-watch",
+      "is_crash_halt": false,
+      "is_cooling_halt": false
     },
     {
-      "rank": 23,
+      "rank": 16,
       "ticker": "V",
       "sector_key": "Energy_Power",
       "sector_cn": "价值蓝筹与医药",
@@ -1248,10 +1123,12 @@
       "stop_loss_pct": 2.2,
       "macro_temp": "🌧️ 暴雨空仓",
       "action": "🛡️ 暴雨空仓·严禁左侧接刀",
-      "action_tag": "action-watch"
+      "action_tag": "action-watch",
+      "is_crash_halt": false,
+      "is_cooling_halt": false
     },
     {
-      "rank": 24,
+      "rank": 17,
       "ticker": "MCD",
       "sector_key": "Energy_Power",
       "sector_cn": "价值蓝筹与医药",
@@ -1273,7 +1150,198 @@
       "stop_loss_pct": 2.2,
       "macro_temp": "🌧️ 暴雨空仓",
       "action": "🛡️ 暴雨空仓·严禁左侧接刀",
-      "action_tag": "action-watch"
+      "action_tag": "action-watch",
+      "is_crash_halt": false,
+      "is_cooling_halt": false
+    },
+    {
+      "rank": 18,
+      "ticker": "TSM",
+      "sector_key": "Semiconductors",
+      "sector_cn": "半导体与设备",
+      "sector_rating": "⭐⭐⭐⭐☆",
+      "latest_price": 399.3,
+      "atr_pct": 3.38,
+      "bias_ma50": -8.08,
+      "rsi_14": 36.2,
+      "is_broken": false,
+      "is_etf": false,
+      "model_raw_prob_pct": 45.4,
+      "base_raw_prob_pct": 51.4,
+      "predicted_win_rate_pct": 51.4,
+      "calibrated_win_rate_pct": 59.1,
+      "sector_pf": 1.55,
+      "target_profit_price": 417.52,
+      "target_profit_pct": 4.6,
+      "stop_loss_price": 385.8,
+      "stop_loss_pct": 3.4,
+      "macro_temp": "🌧️ 暴雨空仓",
+      "action": "🚨 暴跌熔断·严禁左侧接刀",
+      "action_tag": "action-watch",
+      "is_crash_halt": false,
+      "is_cooling_halt": true
+    },
+    {
+      "rank": 19,
+      "ticker": "ASML",
+      "sector_key": "Semiconductors",
+      "sector_cn": "半导体与设备",
+      "sector_rating": "⭐⭐⭐⭐☆",
+      "latest_price": 1531.06,
+      "atr_pct": 3.84,
+      "bias_ma50": -10.03,
+      "rsi_14": 35.9,
+      "is_broken": false,
+      "is_etf": false,
+      "model_raw_prob_pct": 40.7,
+      "base_raw_prob_pct": 46.7,
+      "predicted_win_rate_pct": 46.7,
+      "calibrated_win_rate_pct": 53.7,
+      "sector_pf": 1.55,
+      "target_profit_price": 1610.43,
+      "target_profit_pct": 5.2,
+      "stop_loss_price": 1472.27,
+      "stop_loss_pct": 3.8,
+      "macro_temp": "🌧️ 暴雨空仓",
+      "action": "🚨 暴跌熔断·严禁左侧接刀",
+      "action_tag": "action-watch",
+      "is_crash_halt": true,
+      "is_cooling_halt": false
+    },
+    {
+      "rank": 20,
+      "ticker": "VRT",
+      "sector_key": "Semiconductors",
+      "sector_cn": "AI液冷与服务器",
+      "sector_rating": "⭐⭐⭐⭐☆",
+      "latest_price": 225.0,
+      "atr_pct": 6.3,
+      "bias_ma50": -7.19,
+      "rsi_14": 48.0,
+      "is_broken": false,
+      "is_etf": false,
+      "model_raw_prob_pct": 39.5,
+      "base_raw_prob_pct": 45.5,
+      "predicted_win_rate_pct": 45.5,
+      "calibrated_win_rate_pct": 52.3,
+      "sector_pf": 1.55,
+      "target_profit_price": 240.64,
+      "target_profit_pct": 7.0,
+      "stop_loss_price": 213.41,
+      "stop_loss_pct": 5.2,
+      "macro_temp": "🌧️ 暴雨空仓",
+      "action": "🚨 暴跌熔断·严禁左侧接刀",
+      "action_tag": "action-watch",
+      "is_crash_halt": true,
+      "is_cooling_halt": false
+    },
+    {
+      "rank": 21,
+      "ticker": "AMZN",
+      "sector_key": "Neo_Cloud",
+      "sector_cn": "科技巨头与AI生态",
+      "sector_rating": "⭐⭐⭐☆☆",
+      "latest_price": 246.55,
+      "atr_pct": 2.94,
+      "bias_ma50": -3.08,
+      "rsi_14": 42.7,
+      "is_broken": false,
+      "is_etf": false,
+      "model_raw_prob_pct": 40.3,
+      "base_raw_prob_pct": 48.8,
+      "predicted_win_rate_pct": 48.8,
+      "calibrated_win_rate_pct": 50.7,
+      "sector_pf": 1.35,
+      "target_profit_price": 256.34,
+      "target_profit_pct": 4.0,
+      "stop_loss_price": 239.3,
+      "stop_loss_pct": 2.9,
+      "macro_temp": "🌧️ 暴雨空仓",
+      "action": "🚨 暴跌熔断·严禁左侧接刀",
+      "action_tag": "action-watch",
+      "is_crash_halt": false,
+      "is_cooling_halt": true
+    },
+    {
+      "rank": 22,
+      "ticker": "AVGO",
+      "sector_key": "Semiconductors",
+      "sector_cn": "半导体与设备",
+      "sector_rating": "⭐⭐⭐⭐☆",
+      "latest_price": 323.34,
+      "atr_pct": 3.89,
+      "bias_ma50": -8.26,
+      "rsi_14": 39.4,
+      "is_broken": false,
+      "is_etf": false,
+      "model_raw_prob_pct": 38.0,
+      "base_raw_prob_pct": 44.0,
+      "predicted_win_rate_pct": 44.0,
+      "calibrated_win_rate_pct": 50.6,
+      "sector_pf": 1.55,
+      "target_profit_price": 340.32,
+      "target_profit_pct": 5.3,
+      "stop_loss_price": 310.76,
+      "stop_loss_pct": 3.9,
+      "macro_temp": "🌧️ 暴雨空仓",
+      "action": "🚨 暴跌熔断·严禁左侧接刀",
+      "action_tag": "action-watch",
+      "is_crash_halt": false,
+      "is_cooling_halt": true
+    },
+    {
+      "rank": 23,
+      "ticker": "MSTR",
+      "sector_key": "Crypto_Proxy",
+      "sector_cn": "加密币股代理",
+      "sector_rating": "⭐⭐⭐☆☆",
+      "latest_price": 131.04,
+      "atr_pct": 7.24,
+      "bias_ma50": -8.79,
+      "rsi_14": 40.2,
+      "is_broken": false,
+      "is_etf": false,
+      "model_raw_prob_pct": 40.5,
+      "base_raw_prob_pct": 46.5,
+      "predicted_win_rate_pct": 46.5,
+      "calibrated_win_rate_pct": 46.1,
+      "sector_pf": 1.29,
+      "target_profit_price": 140.98,
+      "target_profit_pct": 7.6,
+      "stop_loss_price": 123.68,
+      "stop_loss_pct": 5.6,
+      "macro_temp": "🌧️ 暴雨空仓",
+      "action": "🚨 暴跌熔断·严禁左侧接刀",
+      "action_tag": "action-watch",
+      "is_crash_halt": false,
+      "is_cooling_halt": true
+    },
+    {
+      "rank": 24,
+      "ticker": "PLTR",
+      "sector_key": "Enterprise_SaaS",
+      "sector_cn": "企业软件与 AI SaaS",
+      "sector_rating": "⭐⭐☆☆☆",
+      "latest_price": 172.99,
+      "atr_pct": 4.79,
+      "bias_ma50": -7.39,
+      "rsi_14": 38.0,
+      "is_broken": false,
+      "is_etf": false,
+      "model_raw_prob_pct": 42.2,
+      "base_raw_prob_pct": 47.8,
+      "predicted_win_rate_pct": 47.8,
+      "calibrated_win_rate_pct": 43.0,
+      "sector_pf": 1.17,
+      "target_profit_price": 183.25,
+      "target_profit_pct": 5.9,
+      "stop_loss_price": 165.39,
+      "stop_loss_pct": 4.4,
+      "macro_temp": "🌧️ 暴雨空仓",
+      "action": "🚨 暴跌熔断·严禁左侧接刀",
+      "action_tag": "action-watch",
+      "is_crash_halt": true,
+      "is_cooling_halt": false
     },
     {
       "rank": 25,
@@ -1297,8 +1365,10 @@
       "stop_loss_price": 369.36,
       "stop_loss_pct": 6.1,
       "macro_temp": "🌧️ 暴雨空仓",
-      "action": "🚨 破位飞刀·严禁左侧抄底",
-      "action_tag": "action-warning"
+      "action": "🚨 暴跌熔断·严禁左侧接刀",
+      "action_tag": "action-warning",
+      "is_crash_halt": true,
+      "is_cooling_halt": false
     },
     {
       "rank": 26,
@@ -1322,8 +1392,10 @@
       "stop_loss_price": 99.68,
       "stop_loss_pct": 6.0,
       "macro_temp": "🌧️ 暴雨空仓",
-      "action": "🚨 破位飞刀·严禁左侧抄底",
-      "action_tag": "action-warning"
+      "action": "🚨 暴跌熔断·严禁左侧接刀",
+      "action_tag": "action-warning",
+      "is_crash_halt": false,
+      "is_cooling_halt": true
     },
     {
       "rank": 27,
@@ -1347,8 +1419,10 @@
       "stop_loss_price": 161.2,
       "stop_loss_pct": 7.0,
       "macro_temp": "🌧️ 暴雨空仓",
-      "action": "🚨 破位飞刀·严禁左侧抄底",
-      "action_tag": "action-warning"
+      "action": "🚨 暴跌熔断·严禁左侧接刀",
+      "action_tag": "action-warning",
+      "is_crash_halt": true,
+      "is_cooling_halt": false
     },
     {
       "rank": 28,
@@ -1372,8 +1446,10 @@
       "stop_loss_price": 56.34,
       "stop_loss_pct": 7.0,
       "macro_temp": "🌧️ 暴雨空仓",
-      "action": "🚨 破位飞刀·严禁左侧抄底",
-      "action_tag": "action-warning"
+      "action": "🚨 暴跌熔断·严禁左侧接刀",
+      "action_tag": "action-warning",
+      "is_crash_halt": true,
+      "is_cooling_halt": false
     },
     {
       "rank": 29,
@@ -1397,8 +1473,10 @@
       "stop_loss_price": 23.05,
       "stop_loss_pct": 7.0,
       "macro_temp": "🌧️ 暴雨空仓",
-      "action": "🚨 破位飞刀·严禁左侧抄底",
-      "action_tag": "action-warning"
+      "action": "🚨 暴跌熔断·严禁左侧接刀",
+      "action_tag": "action-warning",
+      "is_crash_halt": true,
+      "is_cooling_halt": false
     },
     {
       "rank": 30,
@@ -1422,8 +1500,10 @@
       "stop_loss_price": 34.11,
       "stop_loss_pct": 7.0,
       "macro_temp": "🌧️ 暴雨空仓",
-      "action": "🚨 破位飞刀·严禁左侧抄底",
-      "action_tag": "action-warning"
+      "action": "🚨 暴跌熔断·严禁左侧接刀",
+      "action_tag": "action-warning",
+      "is_crash_halt": true,
+      "is_cooling_halt": false
     },
     {
       "rank": 31,
@@ -1447,8 +1527,10 @@
       "stop_loss_price": 797.72,
       "stop_loss_pct": 5.0,
       "macro_temp": "🌧️ 暴雨空仓",
-      "action": "🚨 破位飞刀·严禁左侧抄底",
-      "action_tag": "action-watch"
+      "action": "🚨 暴跌熔断·严禁左侧接刀",
+      "action_tag": "action-watch",
+      "is_crash_halt": true,
+      "is_cooling_halt": false
     },
     {
       "rank": 32,
@@ -1472,8 +1554,10 @@
       "stop_loss_price": 22.2,
       "stop_loss_pct": 6.0,
       "macro_temp": "🌧️ 暴雨空仓",
-      "action": "🚨 破位飞刀·严禁左侧抄底",
-      "action_tag": "action-warning"
+      "action": "🚨 暴跌熔断·严禁左侧接刀",
+      "action_tag": "action-warning",
+      "is_crash_halt": true,
+      "is_cooling_halt": false
     },
     {
       "rank": 33,
@@ -1497,8 +1581,10 @@
       "stop_loss_price": 49.37,
       "stop_loss_pct": 5.8,
       "macro_temp": "🌧️ 暴雨空仓",
-      "action": "🚨 破位飞刀·严禁左侧抄底",
-      "action_tag": "action-warning"
+      "action": "🚨 暴跌熔断·严禁左侧接刀",
+      "action_tag": "action-warning",
+      "is_crash_halt": true,
+      "is_cooling_halt": false
     },
     {
       "rank": 34,
@@ -1522,8 +1608,10 @@
       "stop_loss_price": 1019.1,
       "stop_loss_pct": 6.6,
       "macro_temp": "🌧️ 暴雨空仓",
-      "action": "🚨 破位飞刀·严禁左侧抄底",
-      "action_tag": "action-warning"
+      "action": "🚨 暴跌熔断·严禁左侧接刀",
+      "action_tag": "action-warning",
+      "is_crash_halt": true,
+      "is_cooling_halt": false
     },
     {
       "rank": 35,
@@ -1547,8 +1635,10 @@
       "stop_loss_price": 47.29,
       "stop_loss_pct": 7.0,
       "macro_temp": "🌧️ 暴雨空仓",
-      "action": "🚨 破位飞刀·严禁左侧抄底",
-      "action_tag": "action-warning"
+      "action": "🚨 暴跌熔断·严禁左侧接刀",
+      "action_tag": "action-warning",
+      "is_crash_halt": true,
+      "is_cooling_halt": false
     },
     {
       "rank": 36,
@@ -1572,8 +1662,10 @@
       "stop_loss_price": 8.89,
       "stop_loss_pct": 5.0,
       "macro_temp": "🌧️ 暴雨空仓",
-      "action": "🚨 破位飞刀·严禁左侧抄底",
-      "action_tag": "action-warning"
+      "action": "🚨 暴跌熔断·严禁左侧接刀",
+      "action_tag": "action-warning",
+      "is_crash_halt": false,
+      "is_cooling_halt": true
     },
     {
       "rank": 37,
@@ -1597,8 +1689,10 @@
       "stop_loss_price": 447.83,
       "stop_loss_pct": 5.1,
       "macro_temp": "🌧️ 暴雨空仓",
-      "action": "🚨 破位飞刀·严禁左侧抄底",
-      "action_tag": "action-watch"
+      "action": "🚨 暴跌熔断·严禁左侧接刀",
+      "action_tag": "action-watch",
+      "is_crash_halt": true,
+      "is_cooling_halt": false
     },
     {
       "rank": 38,
@@ -1622,8 +1716,10 @@
       "stop_loss_price": 15.26,
       "stop_loss_pct": 7.0,
       "macro_temp": "🌧️ 暴雨空仓",
-      "action": "🚨 破位飞刀·严禁左侧抄底",
-      "action_tag": "action-warning"
+      "action": "🚨 暴跌熔断·严禁左侧接刀",
+      "action_tag": "action-warning",
+      "is_crash_halt": true,
+      "is_cooling_halt": false
     },
     {
       "rank": 39,
@@ -1647,8 +1743,10 @@
       "stop_loss_price": 189.13,
       "stop_loss_pct": 6.9,
       "macro_temp": "🌧️ 暴雨空仓",
-      "action": "🚨 破位飞刀·严禁左侧抄底",
-      "action_tag": "action-warning"
+      "action": "🚨 暴跌熔断·严禁左侧接刀",
+      "action_tag": "action-warning",
+      "is_crash_halt": true,
+      "is_cooling_halt": false
     },
     {
       "rank": 40,
@@ -1659,7 +1757,7 @@
       "latest_price": 6.45,
       "atr_pct": 10.12,
       "bias_ma50": -37.78,
-      "rsi_14": 25.7,
+      "rsi_14": 25.6,
       "is_broken": true,
       "is_etf": false,
       "model_raw_prob_pct": 49.8,
@@ -1672,8 +1770,10 @@
       "stop_loss_price": 6.0,
       "stop_loss_pct": 7.0,
       "macro_temp": "🌧️ 暴雨空仓",
-      "action": "🚨 破位飞刀·严禁左侧抄底",
-      "action_tag": "action-warning"
+      "action": "🚨 暴跌熔断·严禁左侧接刀",
+      "action_tag": "action-warning",
+      "is_crash_halt": true,
+      "is_cooling_halt": false
     },
     {
       "rank": 41,
@@ -1697,8 +1797,10 @@
       "stop_loss_price": 131.01,
       "stop_loss_pct": 7.0,
       "macro_temp": "🌧️ 暴雨空仓",
-      "action": "🚨 破位飞刀·严禁左侧抄底",
-      "action_tag": "action-warning"
+      "action": "🚨 暴跌熔断·严禁左侧接刀",
+      "action_tag": "action-warning",
+      "is_crash_halt": true,
+      "is_cooling_halt": false
     },
     {
       "rank": 42,
@@ -1722,8 +1824,10 @@
       "stop_loss_price": 48.43,
       "stop_loss_pct": 5.5,
       "macro_temp": "🌧️ 暴雨空仓",
-      "action": "🚨 破位飞刀·严禁左侧抄底",
-      "action_tag": "action-watch"
+      "action": "🚨 暴跌熔断·严禁左侧接刀",
+      "action_tag": "action-watch",
+      "is_crash_halt": true,
+      "is_cooling_halt": false
     },
     {
       "rank": 43,
@@ -1734,7 +1838,7 @@
       "latest_price": 137.2,
       "atr_pct": 7.59,
       "bias_ma50": -23.62,
-      "rsi_14": 29.8,
+      "rsi_14": 29.9,
       "is_broken": true,
       "is_etf": false,
       "model_raw_prob_pct": 44.3,
@@ -1747,8 +1851,10 @@
       "stop_loss_price": 129.25,
       "stop_loss_pct": 5.8,
       "macro_temp": "🌧️ 暴雨空仓",
-      "action": "🚨 破位飞刀·严禁左侧抄底",
-      "action_tag": "action-warning"
+      "action": "🚨 暴跌熔断·严禁左侧接刀",
+      "action_tag": "action-warning",
+      "is_crash_halt": true,
+      "is_cooling_halt": false
     },
     {
       "rank": 44,
@@ -1772,8 +1878,10 @@
       "stop_loss_price": 556.68,
       "stop_loss_pct": 6.4,
       "macro_temp": "🌧️ 暴雨空仓",
-      "action": "🚨 破位飞刀·严禁左侧抄底",
-      "action_tag": "action-warning"
+      "action": "🚨 暴跌熔断·严禁左侧接刀",
+      "action_tag": "action-warning",
+      "is_crash_halt": true,
+      "is_cooling_halt": false
     },
     {
       "rank": 45,
@@ -1797,8 +1905,10 @@
       "stop_loss_price": 360.61,
       "stop_loss_pct": 4.8,
       "macro_temp": "🌧️ 暴雨空仓",
-      "action": "🚨 破位飞刀·严禁左侧抄底",
-      "action_tag": "action-warning"
+      "action": "🚨 暴跌熔断·严禁左侧接刀",
+      "action_tag": "action-warning",
+      "is_crash_halt": true,
+      "is_cooling_halt": false
     },
     {
       "rank": 46,
@@ -1822,8 +1932,10 @@
       "stop_loss_price": 140.81,
       "stop_loss_pct": 5.2,
       "macro_temp": "🌧️ 暴雨空仓",
-      "action": "🚨 破位飞刀·严禁左侧抄底",
-      "action_tag": "action-watch"
+      "action": "🚨 暴跌熔断·严禁左侧接刀",
+      "action_tag": "action-watch",
+      "is_crash_halt": false,
+      "is_cooling_halt": true
     },
     {
       "rank": 47,
@@ -1847,8 +1959,10 @@
       "stop_loss_price": 637.98,
       "stop_loss_pct": 7.0,
       "macro_temp": "🌧️ 暴雨空仓",
-      "action": "🚨 破位飞刀·严禁左侧抄底",
-      "action_tag": "action-watch"
+      "action": "🚨 暴跌熔断·严禁左侧接刀",
+      "action_tag": "action-watch",
+      "is_crash_halt": true,
+      "is_cooling_halt": false
     },
     {
       "rank": 48,
@@ -1872,8 +1986,10 @@
       "stop_loss_price": 132.62,
       "stop_loss_pct": 7.0,
       "macro_temp": "🌧️ 暴雨空仓",
-      "action": "🚨 破位飞刀·严禁左侧抄底",
-      "action_tag": "action-warning"
+      "action": "🚨 暴跌熔断·严禁左侧接刀",
+      "action_tag": "action-warning",
+      "is_crash_halt": true,
+      "is_cooling_halt": false
     },
     {
       "rank": 49,
@@ -1897,8 +2013,10 @@
       "stop_loss_price": 44.92,
       "stop_loss_pct": 7.0,
       "macro_temp": "🌧️ 暴雨空仓",
-      "action": "🚨 破位飞刀·严禁左侧抄底",
-      "action_tag": "action-warning"
+      "action": "🚨 暴跌熔断·严禁左侧接刀",
+      "action_tag": "action-warning",
+      "is_crash_halt": true,
+      "is_cooling_halt": false
     },
     {
       "rank": 50,
@@ -1922,8 +2040,10 @@
       "stop_loss_price": 186.97,
       "stop_loss_pct": 7.0,
       "macro_temp": "🌧️ 暴雨空仓",
-      "action": "🚨 破位飞刀·严禁左侧抄底",
-      "action_tag": "action-warning"
+      "action": "🚨 暴跌熔断·严禁左侧接刀",
+      "action_tag": "action-warning",
+      "is_crash_halt": true,
+      "is_cooling_halt": false
     },
     {
       "rank": 51,
@@ -1947,8 +2067,10 @@
       "stop_loss_price": 59.24,
       "stop_loss_pct": 7.0,
       "macro_temp": "🌧️ 暴雨空仓",
-      "action": "🚨 破位飞刀·严禁左侧抄底",
-      "action_tag": "action-warning"
+      "action": "🚨 暴跌熔断·严禁左侧接刀",
+      "action_tag": "action-warning",
+      "is_crash_halt": true,
+      "is_cooling_halt": false
     },
     {
       "rank": 52,
@@ -1972,8 +2094,10 @@
       "stop_loss_price": 319.54,
       "stop_loss_pct": 5.7,
       "macro_temp": "🌧️ 暴雨空仓",
-      "action": "🚨 破位飞刀·严禁左侧抄底",
-      "action_tag": "action-warning"
+      "action": "🚨 暴跌熔断·严禁左侧接刀",
+      "action_tag": "action-warning",
+      "is_crash_halt": true,
+      "is_cooling_halt": false
     },
     {
       "rank": 53,
@@ -1997,8 +2121,10 @@
       "stop_loss_price": 270.0,
       "stop_loss_pct": 3.7,
       "macro_temp": "🌧️ 暴雨空仓",
-      "action": "🚨 破位飞刀·严禁左侧抄底",
-      "action_tag": "action-warning"
+      "action": "🚨 暴跌熔断·严禁左侧接刀",
+      "action_tag": "action-warning",
+      "is_crash_halt": false,
+      "is_cooling_halt": true
     },
     {
       "rank": 54,
@@ -2022,8 +2148,10 @@
       "stop_loss_price": 113.19,
       "stop_loss_pct": 5.2,
       "macro_temp": "🌧️ 暴雨空仓",
-      "action": "🚨 破位飞刀·严禁左侧抄底",
-      "action_tag": "action-watch"
+      "action": "🚨 暴跌熔断·严禁左侧接刀",
+      "action_tag": "action-watch",
+      "is_crash_halt": true,
+      "is_cooling_halt": false
     },
     {
       "rank": 55,
@@ -2047,8 +2175,10 @@
       "stop_loss_price": 9.89,
       "stop_loss_pct": 7.0,
       "macro_temp": "🌧️ 暴雨空仓",
-      "action": "🛡️ 暴雨防守·仅极小仓试错",
-      "action_tag": "action-watch"
+      "action": "🚨 暴跌熔断·严禁左侧接刀",
+      "action_tag": "action-watch",
+      "is_crash_halt": true,
+      "is_cooling_halt": false
     },
     {
       "rank": 56,
@@ -2072,8 +2202,10 @@
       "stop_loss_price": 64.88,
       "stop_loss_pct": 7.0,
       "macro_temp": "🌧️ 暴雨空仓",
-      "action": "🛡️ 暴雨防守·仅极小仓试错",
-      "action_tag": "action-watch"
+      "action": "🚨 暴跌熔断·严禁左侧接刀",
+      "action_tag": "action-watch",
+      "is_crash_halt": true,
+      "is_cooling_halt": false
     },
     {
       "rank": 57,
@@ -2098,7 +2230,9 @@
       "stop_loss_pct": 2.2,
       "macro_temp": "🌧️ 暴雨空仓",
       "action": "🛡️ 暴雨防守·仅极小仓试错",
-      "action_tag": "action-watch"
+      "action_tag": "action-watch",
+      "is_crash_halt": false,
+      "is_cooling_halt": false
     },
     {
       "rank": 58,
@@ -2122,8 +2256,10 @@
       "stop_loss_price": 491.38,
       "stop_loss_pct": 3.8,
       "macro_temp": "🌧️ 暴雨空仓",
-      "action": "🛡️ 暴雨防守·仅极小仓试错",
-      "action_tag": "action-watch"
+      "action": "🚨 暴跌熔断·严禁左侧接刀",
+      "action_tag": "action-watch",
+      "is_crash_halt": true,
+      "is_cooling_halt": false
     },
     {
       "rank": 59,
@@ -2147,8 +2283,10 @@
       "stop_loss_price": 42.29,
       "stop_loss_pct": 2.9,
       "macro_temp": "🌧️ 暴雨空仓",
-      "action": "🛡️ 暴雨空仓·严禁左侧接刀",
-      "action_tag": "action-watch"
+      "action": "🚨 暴跌熔断·严禁左侧接刀",
+      "action_tag": "action-watch",
+      "is_crash_halt": false,
+      "is_cooling_halt": true
     },
     {
       "rank": 60,
@@ -2172,8 +2310,10 @@
       "stop_loss_price": 437.08,
       "stop_loss_pct": 4.3,
       "macro_temp": "🌧️ 暴雨空仓",
-      "action": "🛡️ 暴雨空仓·严禁左侧接刀",
-      "action_tag": "action-watch"
+      "action": "🚨 暴跌熔断·严禁左侧接刀",
+      "action_tag": "action-watch",
+      "is_crash_halt": true,
+      "is_cooling_halt": false
     },
     {
       "rank": 61,
@@ -2198,7 +2338,9 @@
       "stop_loss_pct": 2.2,
       "macro_temp": "🌧️ 暴雨空仓",
       "action": "🛡️ 暴雨空仓·严禁左侧接刀",
-      "action_tag": "action-watch"
+      "action_tag": "action-watch",
+      "is_crash_halt": false,
+      "is_cooling_halt": false
     },
     {
       "rank": 62,
@@ -2223,7 +2365,9 @@
       "stop_loss_pct": 3.0,
       "macro_temp": "🌧️ 暴雨空仓",
       "action": "🛡️ 暴雨空仓·严禁左侧接刀",
-      "action_tag": "action-watch"
+      "action_tag": "action-watch",
+      "is_crash_halt": false,
+      "is_cooling_halt": false
     },
     {
       "rank": 63,
@@ -2248,7 +2392,9 @@
       "stop_loss_pct": 4.4,
       "macro_temp": "🌧️ 暴雨空仓",
       "action": "🛡️ 暴雨空仓·严禁左侧接刀",
-      "action_tag": "action-watch"
+      "action_tag": "action-watch",
+      "is_crash_halt": false,
+      "is_cooling_halt": false
     },
     {
       "rank": 64,
@@ -2273,7 +2419,9 @@
       "stop_loss_pct": 2.2,
       "macro_temp": "🌧️ 暴雨空仓",
       "action": "🛡️ 暴雨空仓·严禁左侧接刀",
-      "action_tag": "action-watch"
+      "action_tag": "action-watch",
+      "is_crash_halt": false,
+      "is_cooling_halt": false
     },
     {
       "rank": 65,
@@ -2298,7 +2446,9 @@
       "stop_loss_pct": 2.2,
       "macro_temp": "🌧️ 暴雨空仓",
       "action": "🛡️ 暴雨空仓·严禁左侧接刀",
-      "action_tag": "action-watch"
+      "action_tag": "action-watch",
+      "is_crash_halt": false,
+      "is_cooling_halt": false
     },
     {
       "rank": 66,
@@ -2323,7 +2473,9 @@
       "stop_loss_pct": 2.2,
       "macro_temp": "🌧️ 暴雨空仓",
       "action": "🛡️ 暴雨空仓·严禁左侧接刀",
-      "action_tag": "action-watch"
+      "action_tag": "action-watch",
+      "is_crash_halt": false,
+      "is_cooling_halt": false
     },
     {
       "rank": 67,
@@ -2348,7 +2500,9 @@
       "stop_loss_pct": 2.2,
       "macro_temp": "🌧️ 暴雨空仓",
       "action": "🛡️ 暴雨空仓·严禁左侧接刀",
-      "action_tag": "action-watch"
+      "action_tag": "action-watch",
+      "is_crash_halt": false,
+      "is_cooling_halt": false
     },
     {
       "rank": 68,
@@ -2373,7 +2527,9 @@
       "stop_loss_pct": 2.2,
       "macro_temp": "🌧️ 暴雨空仓",
       "action": "🛡️ 暴雨空仓·严禁左侧接刀",
-      "action_tag": "action-watch"
+      "action_tag": "action-watch",
+      "is_crash_halt": false,
+      "is_cooling_halt": false
     },
     {
       "rank": 69,
@@ -2398,7 +2554,9 @@
       "stop_loss_pct": 6.7,
       "macro_temp": "🌧️ 暴雨空仓",
       "action": "🛡️ 暴雨空仓·严禁左侧接刀",
-      "action_tag": "action-watch"
+      "action_tag": "action-watch",
+      "is_crash_halt": false,
+      "is_cooling_halt": false
     },
     {
       "rank": 70,
@@ -2423,7 +2581,9 @@
       "stop_loss_pct": 4.3,
       "macro_temp": "🌧️ 暴雨空仓",
       "action": "🛡️ 暴雨空仓·严禁左侧接刀",
-      "action_tag": "action-watch"
+      "action_tag": "action-watch",
+      "is_crash_halt": false,
+      "is_cooling_halt": false
     }
   ],
   "by_ticker": {
@@ -2450,35 +2610,12 @@
       "stop_loss_pct": 3.0,
       "macro_temp": "🌧️ 暴雨空仓",
       "action": "🛡️ 暴雨防守·仅极小仓试错",
-      "action_tag": "action-watch"
-    },
-    "TSM": {
-      "rank": 2,
-      "ticker": "TSM",
-      "sector_key": "Semiconductors",
-      "sector_cn": "半导体与设备",
-      "sector_rating": "⭐⭐⭐⭐☆",
-      "latest_price": 399.3,
-      "atr_pct": 3.38,
-      "bias_ma50": -8.08,
-      "rsi_14": 36.2,
-      "is_broken": false,
-      "is_etf": false,
-      "model_raw_prob_pct": 45.4,
-      "base_raw_prob_pct": 51.4,
-      "predicted_win_rate_pct": 51.4,
-      "calibrated_win_rate_pct": 59.1,
-      "sector_pf": 1.55,
-      "target_profit_price": 417.52,
-      "target_profit_pct": 4.6,
-      "stop_loss_price": 385.8,
-      "stop_loss_pct": 3.4,
-      "macro_temp": "🌧️ 暴雨空仓",
-      "action": "🛡️ 暴雨防守·仅极小仓试错",
-      "action_tag": "action-watch"
+      "action_tag": "action-watch",
+      "is_crash_halt": false,
+      "is_cooling_halt": false
     },
     "AAPL": {
-      "rank": 3,
+      "rank": 2,
       "ticker": "AAPL",
       "sector_key": "Neo_Cloud",
       "sector_cn": "科技巨头与AI生态",
@@ -2500,110 +2637,12 @@
       "stop_loss_pct": 2.2,
       "macro_temp": "🌧️ 暴雨空仓",
       "action": "🛡️ 暴雨防守·仅极小仓试错",
-      "action_tag": "action-watch"
-    },
-    "ASML": {
-      "rank": 4,
-      "ticker": "ASML",
-      "sector_key": "Semiconductors",
-      "sector_cn": "半导体与设备",
-      "sector_rating": "⭐⭐⭐⭐☆",
-      "latest_price": 1531.06,
-      "atr_pct": 3.84,
-      "bias_ma50": -10.03,
-      "rsi_14": 35.9,
-      "is_broken": false,
-      "is_etf": false,
-      "model_raw_prob_pct": 40.7,
-      "base_raw_prob_pct": 46.7,
-      "predicted_win_rate_pct": 46.7,
-      "calibrated_win_rate_pct": 53.7,
-      "sector_pf": 1.55,
-      "target_profit_price": 1610.43,
-      "target_profit_pct": 5.2,
-      "stop_loss_price": 1472.27,
-      "stop_loss_pct": 3.8,
-      "macro_temp": "🌧️ 暴雨空仓",
-      "action": "🛡️ 暴雨空仓·严禁左侧接刀",
-      "action_tag": "action-watch"
-    },
-    "VRT": {
-      "rank": 5,
-      "ticker": "VRT",
-      "sector_key": "Semiconductors",
-      "sector_cn": "AI液冷与服务器",
-      "sector_rating": "⭐⭐⭐⭐☆",
-      "latest_price": 225.0,
-      "atr_pct": 6.3,
-      "bias_ma50": -7.19,
-      "rsi_14": 48.0,
-      "is_broken": false,
-      "is_etf": false,
-      "model_raw_prob_pct": 39.5,
-      "base_raw_prob_pct": 45.5,
-      "predicted_win_rate_pct": 45.5,
-      "calibrated_win_rate_pct": 52.3,
-      "sector_pf": 1.55,
-      "target_profit_price": 240.64,
-      "target_profit_pct": 7.0,
-      "stop_loss_price": 213.41,
-      "stop_loss_pct": 5.2,
-      "macro_temp": "🌧️ 暴雨空仓",
-      "action": "🛡️ 暴雨空仓·严禁左侧接刀",
-      "action_tag": "action-watch"
-    },
-    "AMZN": {
-      "rank": 6,
-      "ticker": "AMZN",
-      "sector_key": "Neo_Cloud",
-      "sector_cn": "科技巨头与AI生态",
-      "sector_rating": "⭐⭐⭐☆☆",
-      "latest_price": 246.55,
-      "atr_pct": 2.94,
-      "bias_ma50": -3.08,
-      "rsi_14": 42.7,
-      "is_broken": false,
-      "is_etf": false,
-      "model_raw_prob_pct": 40.3,
-      "base_raw_prob_pct": 48.8,
-      "predicted_win_rate_pct": 48.8,
-      "calibrated_win_rate_pct": 50.7,
-      "sector_pf": 1.35,
-      "target_profit_price": 256.34,
-      "target_profit_pct": 4.0,
-      "stop_loss_price": 239.3,
-      "stop_loss_pct": 2.9,
-      "macro_temp": "🌧️ 暴雨空仓",
-      "action": "🛡️ 暴雨空仓·严禁左侧接刀",
-      "action_tag": "action-watch"
-    },
-    "AVGO": {
-      "rank": 7,
-      "ticker": "AVGO",
-      "sector_key": "Semiconductors",
-      "sector_cn": "半导体与设备",
-      "sector_rating": "⭐⭐⭐⭐☆",
-      "latest_price": 323.34,
-      "atr_pct": 3.89,
-      "bias_ma50": -8.26,
-      "rsi_14": 39.4,
-      "is_broken": false,
-      "is_etf": false,
-      "model_raw_prob_pct": 38.0,
-      "base_raw_prob_pct": 44.0,
-      "predicted_win_rate_pct": 44.0,
-      "calibrated_win_rate_pct": 50.6,
-      "sector_pf": 1.55,
-      "target_profit_price": 340.32,
-      "target_profit_pct": 5.3,
-      "stop_loss_price": 310.76,
-      "stop_loss_pct": 3.9,
-      "macro_temp": "🌧️ 暴雨空仓",
-      "action": "🛡️ 暴雨空仓·严禁左侧接刀",
-      "action_tag": "action-watch"
+      "action_tag": "action-watch",
+      "is_crash_halt": false,
+      "is_cooling_halt": false
     },
     "PEP": {
-      "rank": 8,
+      "rank": 3,
       "ticker": "PEP",
       "sector_key": "Energy_Power",
       "sector_cn": "价值蓝筹与医药",
@@ -2625,10 +2664,12 @@
       "stop_loss_pct": 2.2,
       "macro_temp": "🌧️ 暴雨空仓",
       "action": "🛡️ 暴雨空仓·严禁左侧接刀",
-      "action_tag": "action-watch"
+      "action_tag": "action-watch",
+      "is_crash_halt": false,
+      "is_cooling_halt": false
     },
     "KO": {
-      "rank": 9,
+      "rank": 4,
       "ticker": "KO",
       "sector_key": "Energy_Power",
       "sector_cn": "价值蓝筹与医药",
@@ -2650,10 +2691,12 @@
       "stop_loss_pct": 2.2,
       "macro_temp": "🌧️ 暴雨空仓",
       "action": "🛡️ 暴雨空仓·严禁左侧接刀",
-      "action_tag": "action-watch"
+      "action_tag": "action-watch",
+      "is_crash_halt": false,
+      "is_cooling_halt": false
     },
     "MSFT": {
-      "rank": 10,
+      "rank": 5,
       "ticker": "MSFT",
       "sector_key": "Enterprise_SaaS",
       "sector_cn": "企业软件与 AI SaaS",
@@ -2675,10 +2718,12 @@
       "stop_loss_pct": 2.3,
       "macro_temp": "🌧️ 暴雨空仓",
       "action": "🛡️ 暴雨空仓·严禁左侧接刀",
-      "action_tag": "action-watch"
+      "action_tag": "action-watch",
+      "is_crash_halt": false,
+      "is_cooling_halt": false
     },
     "SPCX": {
-      "rank": 11,
+      "rank": 6,
       "ticker": "SPCX",
       "sector_key": "Neo_Cloud",
       "sector_cn": "物理AI与太空商业",
@@ -2700,10 +2745,12 @@
       "stop_loss_pct": 4.7,
       "macro_temp": "🌧️ 暴雨空仓",
       "action": "🛡️ 暴雨空仓·严禁左侧接刀",
-      "action_tag": "action-watch"
+      "action_tag": "action-watch",
+      "is_crash_halt": false,
+      "is_cooling_halt": false
     },
     "CEG": {
-      "rank": 12,
+      "rank": 7,
       "ticker": "CEG",
       "sector_key": "Energy_Power",
       "sector_cn": "数据中心能源电力",
@@ -2725,10 +2772,12 @@
       "stop_loss_pct": 4.3,
       "macro_temp": "🌧️ 暴雨空仓",
       "action": "🛡️ 暴雨空仓·严禁左侧接刀",
-      "action_tag": "action-watch"
+      "action_tag": "action-watch",
+      "is_crash_halt": false,
+      "is_cooling_halt": false
     },
     "MRNA": {
-      "rank": 13,
+      "rank": 8,
       "ticker": "MRNA",
       "sector_key": "Energy_Power",
       "sector_cn": "价值蓝筹与医药",
@@ -2750,35 +2799,12 @@
       "stop_loss_pct": 6.5,
       "macro_temp": "🌧️ 暴雨空仓",
       "action": "🛡️ 暴雨空仓·严禁左侧接刀",
-      "action_tag": "action-watch"
-    },
-    "MSTR": {
-      "rank": 14,
-      "ticker": "MSTR",
-      "sector_key": "Crypto_Proxy",
-      "sector_cn": "加密币股代理",
-      "sector_rating": "⭐⭐⭐☆☆",
-      "latest_price": 131.04,
-      "atr_pct": 7.24,
-      "bias_ma50": -8.79,
-      "rsi_14": 40.2,
-      "is_broken": false,
-      "is_etf": false,
-      "model_raw_prob_pct": 40.5,
-      "base_raw_prob_pct": 46.5,
-      "predicted_win_rate_pct": 46.5,
-      "calibrated_win_rate_pct": 46.1,
-      "sector_pf": 1.29,
-      "target_profit_price": 140.98,
-      "target_profit_pct": 7.6,
-      "stop_loss_price": 123.68,
-      "stop_loss_pct": 5.6,
-      "macro_temp": "🌧️ 暴雨空仓",
-      "action": "🛡️ 暴雨空仓·严禁左侧接刀",
-      "action_tag": "action-watch"
+      "action_tag": "action-watch",
+      "is_crash_halt": false,
+      "is_cooling_halt": false
     },
     "VST": {
-      "rank": 15,
+      "rank": 9,
       "ticker": "VST",
       "sector_key": "Energy_Power",
       "sector_cn": "数据中心能源电力",
@@ -2800,10 +2826,12 @@
       "stop_loss_pct": 4.6,
       "macro_temp": "🌧️ 暴雨空仓",
       "action": "🛡️ 暴雨空仓·严禁左侧接刀",
-      "action_tag": "action-watch"
+      "action_tag": "action-watch",
+      "is_crash_halt": false,
+      "is_cooling_halt": false
     },
     "AXP": {
-      "rank": 16,
+      "rank": 10,
       "ticker": "AXP",
       "sector_key": "Energy_Power",
       "sector_cn": "价值蓝筹与医药",
@@ -2825,10 +2853,12 @@
       "stop_loss_pct": 2.2,
       "macro_temp": "🌧️ 暴雨空仓",
       "action": "🛡️ 暴雨空仓·严禁左侧接刀",
-      "action_tag": "action-watch"
+      "action_tag": "action-watch",
+      "is_crash_halt": false,
+      "is_cooling_halt": false
     },
     "CRWD": {
-      "rank": 17,
+      "rank": 11,
       "ticker": "CRWD",
       "sector_key": "Energy_Power",
       "sector_cn": "企业软件与AI安全",
@@ -2850,10 +2880,12 @@
       "stop_loss_pct": 4.7,
       "macro_temp": "🌧️ 暴雨空仓",
       "action": "🛡️ 暴雨空仓·严禁左侧接刀",
-      "action_tag": "action-watch"
+      "action_tag": "action-watch",
+      "is_crash_halt": false,
+      "is_cooling_halt": false
     },
     "TSLA": {
-      "rank": 18,
+      "rank": 12,
       "ticker": "TSLA",
       "sector_key": "Neo_Cloud",
       "sector_cn": "物理AI与太空商业",
@@ -2875,10 +2907,12 @@
       "stop_loss_pct": 3.3,
       "macro_temp": "🌧️ 暴雨空仓",
       "action": "🛡️ 暴雨空仓·严禁左侧接刀",
-      "action_tag": "action-watch"
+      "action_tag": "action-watch",
+      "is_crash_halt": false,
+      "is_cooling_halt": false
     },
     "NKE": {
-      "rank": 19,
+      "rank": 13,
       "ticker": "NKE",
       "sector_key": "Energy_Power",
       "sector_cn": "价值蓝筹与医药",
@@ -2900,10 +2934,12 @@
       "stop_loss_pct": 2.7,
       "macro_temp": "🌧️ 暴雨空仓",
       "action": "🛡️ 暴雨空仓·严禁左侧接刀",
-      "action_tag": "action-watch"
+      "action_tag": "action-watch",
+      "is_crash_halt": false,
+      "is_cooling_halt": false
     },
     "META": {
-      "rank": 20,
+      "rank": 14,
       "ticker": "META",
       "sector_key": "Neo_Cloud",
       "sector_cn": "科技巨头与AI生态",
@@ -2925,35 +2961,12 @@
       "stop_loss_pct": 3.8,
       "macro_temp": "🌧️ 暴雨空仓",
       "action": "🛡️ 暴雨空仓·严禁左侧接刀",
-      "action_tag": "action-watch"
-    },
-    "PLTR": {
-      "rank": 21,
-      "ticker": "PLTR",
-      "sector_key": "Enterprise_SaaS",
-      "sector_cn": "企业软件与 AI SaaS",
-      "sector_rating": "⭐⭐☆☆☆",
-      "latest_price": 172.99,
-      "atr_pct": 4.79,
-      "bias_ma50": -7.39,
-      "rsi_14": 38.0,
-      "is_broken": false,
-      "is_etf": false,
-      "model_raw_prob_pct": 42.2,
-      "base_raw_prob_pct": 47.8,
-      "predicted_win_rate_pct": 47.8,
-      "calibrated_win_rate_pct": 43.0,
-      "sector_pf": 1.17,
-      "target_profit_price": 183.25,
-      "target_profit_pct": 5.9,
-      "stop_loss_price": 165.39,
-      "stop_loss_pct": 4.4,
-      "macro_temp": "🌧️ 暴雨空仓",
-      "action": "🛡️ 暴雨空仓·严禁左侧接刀",
-      "action_tag": "action-watch"
+      "action_tag": "action-watch",
+      "is_crash_halt": false,
+      "is_cooling_halt": false
     },
     "LLY": {
-      "rank": 22,
+      "rank": 15,
       "ticker": "LLY",
       "sector_key": "Energy_Power",
       "sector_cn": "价值蓝筹与医药",
@@ -2975,10 +2988,12 @@
       "stop_loss_pct": 3.2,
       "macro_temp": "🌧️ 暴雨空仓",
       "action": "🛡️ 暴雨空仓·严禁左侧接刀",
-      "action_tag": "action-watch"
+      "action_tag": "action-watch",
+      "is_crash_halt": false,
+      "is_cooling_halt": false
     },
     "V": {
-      "rank": 23,
+      "rank": 16,
       "ticker": "V",
       "sector_key": "Energy_Power",
       "sector_cn": "价值蓝筹与医药",
@@ -3000,10 +3015,12 @@
       "stop_loss_pct": 2.2,
       "macro_temp": "🌧️ 暴雨空仓",
       "action": "🛡️ 暴雨空仓·严禁左侧接刀",
-      "action_tag": "action-watch"
+      "action_tag": "action-watch",
+      "is_crash_halt": false,
+      "is_cooling_halt": false
     },
     "MCD": {
-      "rank": 24,
+      "rank": 17,
       "ticker": "MCD",
       "sector_key": "Energy_Power",
       "sector_cn": "价值蓝筹与医药",
@@ -3025,7 +3042,198 @@
       "stop_loss_pct": 2.2,
       "macro_temp": "🌧️ 暴雨空仓",
       "action": "🛡️ 暴雨空仓·严禁左侧接刀",
-      "action_tag": "action-watch"
+      "action_tag": "action-watch",
+      "is_crash_halt": false,
+      "is_cooling_halt": false
+    },
+    "TSM": {
+      "rank": 18,
+      "ticker": "TSM",
+      "sector_key": "Semiconductors",
+      "sector_cn": "半导体与设备",
+      "sector_rating": "⭐⭐⭐⭐☆",
+      "latest_price": 399.3,
+      "atr_pct": 3.38,
+      "bias_ma50": -8.08,
+      "rsi_14": 36.2,
+      "is_broken": false,
+      "is_etf": false,
+      "model_raw_prob_pct": 45.4,
+      "base_raw_prob_pct": 51.4,
+      "predicted_win_rate_pct": 51.4,
+      "calibrated_win_rate_pct": 59.1,
+      "sector_pf": 1.55,
+      "target_profit_price": 417.52,
+      "target_profit_pct": 4.6,
+      "stop_loss_price": 385.8,
+      "stop_loss_pct": 3.4,
+      "macro_temp": "🌧️ 暴雨空仓",
+      "action": "🚨 暴跌熔断·严禁左侧接刀",
+      "action_tag": "action-watch",
+      "is_crash_halt": false,
+      "is_cooling_halt": true
+    },
+    "ASML": {
+      "rank": 19,
+      "ticker": "ASML",
+      "sector_key": "Semiconductors",
+      "sector_cn": "半导体与设备",
+      "sector_rating": "⭐⭐⭐⭐☆",
+      "latest_price": 1531.06,
+      "atr_pct": 3.84,
+      "bias_ma50": -10.03,
+      "rsi_14": 35.9,
+      "is_broken": false,
+      "is_etf": false,
+      "model_raw_prob_pct": 40.7,
+      "base_raw_prob_pct": 46.7,
+      "predicted_win_rate_pct": 46.7,
+      "calibrated_win_rate_pct": 53.7,
+      "sector_pf": 1.55,
+      "target_profit_price": 1610.43,
+      "target_profit_pct": 5.2,
+      "stop_loss_price": 1472.27,
+      "stop_loss_pct": 3.8,
+      "macro_temp": "🌧️ 暴雨空仓",
+      "action": "🚨 暴跌熔断·严禁左侧接刀",
+      "action_tag": "action-watch",
+      "is_crash_halt": true,
+      "is_cooling_halt": false
+    },
+    "VRT": {
+      "rank": 20,
+      "ticker": "VRT",
+      "sector_key": "Semiconductors",
+      "sector_cn": "AI液冷与服务器",
+      "sector_rating": "⭐⭐⭐⭐☆",
+      "latest_price": 225.0,
+      "atr_pct": 6.3,
+      "bias_ma50": -7.19,
+      "rsi_14": 48.0,
+      "is_broken": false,
+      "is_etf": false,
+      "model_raw_prob_pct": 39.5,
+      "base_raw_prob_pct": 45.5,
+      "predicted_win_rate_pct": 45.5,
+      "calibrated_win_rate_pct": 52.3,
+      "sector_pf": 1.55,
+      "target_profit_price": 240.64,
+      "target_profit_pct": 7.0,
+      "stop_loss_price": 213.41,
+      "stop_loss_pct": 5.2,
+      "macro_temp": "🌧️ 暴雨空仓",
+      "action": "🚨 暴跌熔断·严禁左侧接刀",
+      "action_tag": "action-watch",
+      "is_crash_halt": true,
+      "is_cooling_halt": false
+    },
+    "AMZN": {
+      "rank": 21,
+      "ticker": "AMZN",
+      "sector_key": "Neo_Cloud",
+      "sector_cn": "科技巨头与AI生态",
+      "sector_rating": "⭐⭐⭐☆☆",
+      "latest_price": 246.55,
+      "atr_pct": 2.94,
+      "bias_ma50": -3.08,
+      "rsi_14": 42.7,
+      "is_broken": false,
+      "is_etf": false,
+      "model_raw_prob_pct": 40.3,
+      "base_raw_prob_pct": 48.8,
+      "predicted_win_rate_pct": 48.8,
+      "calibrated_win_rate_pct": 50.7,
+      "sector_pf": 1.35,
+      "target_profit_price": 256.34,
+      "target_profit_pct": 4.0,
+      "stop_loss_price": 239.3,
+      "stop_loss_pct": 2.9,
+      "macro_temp": "🌧️ 暴雨空仓",
+      "action": "🚨 暴跌熔断·严禁左侧接刀",
+      "action_tag": "action-watch",
+      "is_crash_halt": false,
+      "is_cooling_halt": true
+    },
+    "AVGO": {
+      "rank": 22,
+      "ticker": "AVGO",
+      "sector_key": "Semiconductors",
+      "sector_cn": "半导体与设备",
+      "sector_rating": "⭐⭐⭐⭐☆",
+      "latest_price": 323.34,
+      "atr_pct": 3.89,
+      "bias_ma50": -8.26,
+      "rsi_14": 39.4,
+      "is_broken": false,
+      "is_etf": false,
+      "model_raw_prob_pct": 38.0,
+      "base_raw_prob_pct": 44.0,
+      "predicted_win_rate_pct": 44.0,
+      "calibrated_win_rate_pct": 50.6,
+      "sector_pf": 1.55,
+      "target_profit_price": 340.32,
+      "target_profit_pct": 5.3,
+      "stop_loss_price": 310.76,
+      "stop_loss_pct": 3.9,
+      "macro_temp": "🌧️ 暴雨空仓",
+      "action": "🚨 暴跌熔断·严禁左侧接刀",
+      "action_tag": "action-watch",
+      "is_crash_halt": false,
+      "is_cooling_halt": true
+    },
+    "MSTR": {
+      "rank": 23,
+      "ticker": "MSTR",
+      "sector_key": "Crypto_Proxy",
+      "sector_cn": "加密币股代理",
+      "sector_rating": "⭐⭐⭐☆☆",
+      "latest_price": 131.04,
+      "atr_pct": 7.24,
+      "bias_ma50": -8.79,
+      "rsi_14": 40.2,
+      "is_broken": false,
+      "is_etf": false,
+      "model_raw_prob_pct": 40.5,
+      "base_raw_prob_pct": 46.5,
+      "predicted_win_rate_pct": 46.5,
+      "calibrated_win_rate_pct": 46.1,
+      "sector_pf": 1.29,
+      "target_profit_price": 140.98,
+      "target_profit_pct": 7.6,
+      "stop_loss_price": 123.68,
+      "stop_loss_pct": 5.6,
+      "macro_temp": "🌧️ 暴雨空仓",
+      "action": "🚨 暴跌熔断·严禁左侧接刀",
+      "action_tag": "action-watch",
+      "is_crash_halt": false,
+      "is_cooling_halt": true
+    },
+    "PLTR": {
+      "rank": 24,
+      "ticker": "PLTR",
+      "sector_key": "Enterprise_SaaS",
+      "sector_cn": "企业软件与 AI SaaS",
+      "sector_rating": "⭐⭐☆☆☆",
+      "latest_price": 172.99,
+      "atr_pct": 4.79,
+      "bias_ma50": -7.39,
+      "rsi_14": 38.0,
+      "is_broken": false,
+      "is_etf": false,
+      "model_raw_prob_pct": 42.2,
+      "base_raw_prob_pct": 47.8,
+      "predicted_win_rate_pct": 47.8,
+      "calibrated_win_rate_pct": 43.0,
+      "sector_pf": 1.17,
+      "target_profit_price": 183.25,
+      "target_profit_pct": 5.9,
+      "stop_loss_price": 165.39,
+      "stop_loss_pct": 4.4,
+      "macro_temp": "🌧️ 暴雨空仓",
+      "action": "🚨 暴跌熔断·严禁左侧接刀",
+      "action_tag": "action-watch",
+      "is_crash_halt": true,
+      "is_cooling_halt": false
     },
     "DELL": {
       "rank": 25,
@@ -3049,8 +3257,10 @@
       "stop_loss_price": 369.36,
       "stop_loss_pct": 6.1,
       "macro_temp": "🌧️ 暴雨空仓",
-      "action": "🚨 破位飞刀·严禁左侧抄底",
-      "action_tag": "action-warning"
+      "action": "🚨 暴跌熔断·严禁左侧接刀",
+      "action_tag": "action-warning",
+      "is_crash_halt": true,
+      "is_cooling_halt": false
     },
     "NOW": {
       "rank": 26,
@@ -3074,8 +3284,10 @@
       "stop_loss_price": 99.68,
       "stop_loss_pct": 6.0,
       "macro_temp": "🌧️ 暴雨空仓",
-      "action": "🚨 破位飞刀·严禁左侧抄底",
-      "action_tag": "action-warning"
+      "action": "🚨 暴跌熔断·严禁左侧接刀",
+      "action_tag": "action-warning",
+      "is_crash_halt": false,
+      "is_cooling_halt": true
     },
     "MRVL": {
       "rank": 27,
@@ -3099,8 +3311,10 @@
       "stop_loss_price": 161.2,
       "stop_loss_pct": 7.0,
       "macro_temp": "🌧️ 暴雨空仓",
-      "action": "🚨 破位飞刀·严禁左侧抄底",
-      "action_tag": "action-warning"
+      "action": "🚨 暴跌熔断·严禁左侧接刀",
+      "action_tag": "action-warning",
+      "is_crash_halt": true,
+      "is_cooling_halt": false
     },
     "INTC": {
       "rank": 28,
@@ -3124,8 +3338,10 @@
       "stop_loss_price": 56.34,
       "stop_loss_pct": 7.0,
       "macro_temp": "🌧️ 暴雨空仓",
-      "action": "🚨 破位飞刀·严禁左侧抄底",
-      "action_tag": "action-warning"
+      "action": "🚨 暴跌熔断·严禁左侧接刀",
+      "action_tag": "action-warning",
+      "is_crash_halt": true,
+      "is_cooling_halt": false
     },
     "FPS": {
       "rank": 29,
@@ -3149,8 +3365,10 @@
       "stop_loss_price": 23.05,
       "stop_loss_pct": 7.0,
       "macro_temp": "🌧️ 暴雨空仓",
-      "action": "🚨 破位飞刀·严禁左侧抄底",
-      "action_tag": "action-warning"
+      "action": "🚨 暴跌熔断·严禁左侧接刀",
+      "action_tag": "action-warning",
+      "is_crash_halt": true,
+      "is_cooling_halt": false
     },
     "ASTS": {
       "rank": 30,
@@ -3174,8 +3392,10 @@
       "stop_loss_price": 34.11,
       "stop_loss_pct": 7.0,
       "macro_temp": "🌧️ 暴雨空仓",
-      "action": "🚨 破位飞刀·严禁左侧抄底",
-      "action_tag": "action-warning"
+      "action": "🚨 暴跌熔断·严禁左侧接刀",
+      "action_tag": "action-warning",
+      "is_crash_halt": true,
+      "is_cooling_halt": false
     },
     "MU": {
       "rank": 31,
@@ -3199,8 +3419,10 @@
       "stop_loss_price": 797.72,
       "stop_loss_pct": 5.0,
       "macro_temp": "🌧️ 暴雨空仓",
-      "action": "🚨 破位飞刀·严禁左侧抄底",
-      "action_tag": "action-watch"
+      "action": "🚨 暴跌熔断·严禁左侧接刀",
+      "action_tag": "action-watch",
+      "is_crash_halt": true,
+      "is_cooling_halt": false
     },
     "OKLO": {
       "rank": 32,
@@ -3224,8 +3446,10 @@
       "stop_loss_price": 22.2,
       "stop_loss_pct": 6.0,
       "macro_temp": "🌧️ 暴雨空仓",
-      "action": "🚨 破位飞刀·严禁左侧抄底",
-      "action_tag": "action-warning"
+      "action": "🚨 暴跌熔断·严禁左侧接刀",
+      "action_tag": "action-warning",
+      "is_crash_halt": true,
+      "is_cooling_halt": false
     },
     "RKLB": {
       "rank": 33,
@@ -3249,8 +3473,10 @@
       "stop_loss_price": 49.37,
       "stop_loss_pct": 5.8,
       "macro_temp": "🌧️ 暴雨空仓",
-      "action": "🚨 破位飞刀·严禁左侧抄底",
-      "action_tag": "action-warning"
+      "action": "🚨 暴跌熔断·严禁左侧接刀",
+      "action_tag": "action-warning",
+      "is_crash_halt": true,
+      "is_cooling_halt": false
     },
     "SNDK": {
       "rank": 34,
@@ -3274,8 +3500,10 @@
       "stop_loss_price": 1019.1,
       "stop_loss_pct": 6.6,
       "macro_temp": "🌧️ 暴雨空仓",
-      "action": "🚨 破位飞刀·严禁左侧抄底",
-      "action_tag": "action-warning"
+      "action": "🚨 暴跌熔断·严禁左侧接刀",
+      "action_tag": "action-warning",
+      "is_crash_halt": true,
+      "is_cooling_halt": false
     },
     "CRWV": {
       "rank": 35,
@@ -3299,8 +3527,10 @@
       "stop_loss_price": 47.29,
       "stop_loss_pct": 7.0,
       "macro_temp": "🌧️ 暴雨空仓",
-      "action": "🚨 破位飞刀·严禁左侧抄底",
-      "action_tag": "action-warning"
+      "action": "🚨 暴跌熔断·严禁左侧接刀",
+      "action_tag": "action-warning",
+      "is_crash_halt": true,
+      "is_cooling_halt": false
     },
     "CCXI": {
       "rank": 36,
@@ -3324,8 +3554,10 @@
       "stop_loss_price": 8.89,
       "stop_loss_pct": 5.0,
       "macro_temp": "🌧️ 暴雨空仓",
-      "action": "🚨 破位飞刀·严禁左侧抄底",
-      "action_tag": "action-warning"
+      "action": "🚨 暴跌熔断·严禁左侧接刀",
+      "action_tag": "action-warning",
+      "is_crash_halt": false,
+      "is_cooling_halt": true
     },
     "AMD": {
       "rank": 37,
@@ -3349,8 +3581,10 @@
       "stop_loss_price": 447.83,
       "stop_loss_pct": 5.1,
       "macro_temp": "🌧️ 暴雨空仓",
-      "action": "🚨 破位飞刀·严禁左侧抄底",
-      "action_tag": "action-watch"
+      "action": "🚨 暴跌熔断·严禁左侧接刀",
+      "action_tag": "action-watch",
+      "is_crash_halt": true,
+      "is_cooling_halt": false
     },
     "APLD": {
       "rank": 38,
@@ -3374,8 +3608,10 @@
       "stop_loss_price": 15.26,
       "stop_loss_pct": 7.0,
       "macro_temp": "🌧️ 暴雨空仓",
-      "action": "🚨 破位飞刀·严禁左侧抄底",
-      "action_tag": "action-warning"
+      "action": "🚨 暴跌熔断·严禁左侧接刀",
+      "action_tag": "action-warning",
+      "is_crash_halt": true,
+      "is_cooling_halt": false
     },
     "BE": {
       "rank": 39,
@@ -3399,8 +3635,10 @@
       "stop_loss_price": 189.13,
       "stop_loss_pct": 6.9,
       "macro_temp": "🌧️ 暴雨空仓",
-      "action": "🚨 破位飞刀·严禁左侧抄底",
-      "action_tag": "action-warning"
+      "action": "🚨 暴跌熔断·严禁左侧接刀",
+      "action_tag": "action-warning",
+      "is_crash_halt": true,
+      "is_cooling_halt": false
     },
     "MARA": {
       "rank": 40,
@@ -3411,7 +3649,7 @@
       "latest_price": 6.45,
       "atr_pct": 10.12,
       "bias_ma50": -37.78,
-      "rsi_14": 25.7,
+      "rsi_14": 25.6,
       "is_broken": true,
       "is_etf": false,
       "model_raw_prob_pct": 49.8,
@@ -3424,8 +3662,10 @@
       "stop_loss_price": 6.0,
       "stop_loss_pct": 7.0,
       "macro_temp": "🌧️ 暴雨空仓",
-      "action": "🚨 破位飞刀·严禁左侧抄底",
-      "action_tag": "action-warning"
+      "action": "🚨 暴跌熔断·严禁左侧接刀",
+      "action_tag": "action-warning",
+      "is_crash_halt": true,
+      "is_cooling_halt": false
     },
     "CRDO": {
       "rank": 41,
@@ -3449,8 +3689,10 @@
       "stop_loss_price": 131.01,
       "stop_loss_pct": 7.0,
       "macro_temp": "🌧️ 暴雨空仓",
-      "action": "🚨 破位飞刀·严禁左侧抄底",
-      "action_tag": "action-warning"
+      "action": "🚨 暴跌熔断·严禁左侧接刀",
+      "action_tag": "action-warning",
+      "is_crash_halt": true,
+      "is_cooling_halt": false
     },
     "HPE": {
       "rank": 42,
@@ -3474,8 +3716,10 @@
       "stop_loss_price": 48.43,
       "stop_loss_pct": 5.5,
       "macro_temp": "🌧️ 暴雨空仓",
-      "action": "🚨 破位飞刀·严禁左侧抄底",
-      "action_tag": "action-watch"
+      "action": "🚨 暴跌熔断·严禁左侧接刀",
+      "action_tag": "action-watch",
+      "is_crash_halt": true,
+      "is_cooling_halt": false
     },
     "COIN": {
       "rank": 43,
@@ -3486,7 +3730,7 @@
       "latest_price": 137.2,
       "atr_pct": 7.59,
       "bias_ma50": -23.62,
-      "rsi_14": 29.8,
+      "rsi_14": 29.9,
       "is_broken": true,
       "is_etf": false,
       "model_raw_prob_pct": 44.3,
@@ -3499,8 +3743,10 @@
       "stop_loss_price": 129.25,
       "stop_loss_pct": 5.8,
       "macro_temp": "🌧️ 暴雨空仓",
-      "action": "🚨 破位飞刀·严禁左侧抄底",
-      "action_tag": "action-warning"
+      "action": "🚨 暴跌熔断·严禁左侧接刀",
+      "action_tag": "action-warning",
+      "is_crash_halt": true,
+      "is_cooling_halt": false
     },
     "STX": {
       "rank": 44,
@@ -3524,8 +3770,10 @@
       "stop_loss_price": 556.68,
       "stop_loss_pct": 6.4,
       "macro_temp": "🌧️ 暴雨空仓",
-      "action": "🚨 破位飞刀·严禁左侧抄底",
-      "action_tag": "action-warning"
+      "action": "🚨 暴跌熔断·严禁左侧接刀",
+      "action_tag": "action-warning",
+      "is_crash_halt": true,
+      "is_cooling_halt": false
     },
     "AMAT": {
       "rank": 45,
@@ -3549,8 +3797,10 @@
       "stop_loss_price": 360.61,
       "stop_loss_pct": 4.8,
       "macro_temp": "🌧️ 暴雨空仓",
-      "action": "🚨 破位飞刀·严禁左侧抄底",
-      "action_tag": "action-warning"
+      "action": "🚨 暴跌熔断·严禁左侧接刀",
+      "action_tag": "action-warning",
+      "is_crash_halt": true,
+      "is_cooling_halt": false
     },
     "SKHY": {
       "rank": 46,
@@ -3574,8 +3824,10 @@
       "stop_loss_price": 140.81,
       "stop_loss_pct": 5.2,
       "macro_temp": "🌧️ 暴雨空仓",
-      "action": "🚨 破位飞刀·严禁左侧抄底",
-      "action_tag": "action-watch"
+      "action": "🚨 暴跌熔断·严禁左侧接刀",
+      "action_tag": "action-watch",
+      "is_crash_halt": false,
+      "is_cooling_halt": true
     },
     "LITE": {
       "rank": 47,
@@ -3599,8 +3851,10 @@
       "stop_loss_price": 637.98,
       "stop_loss_pct": 7.0,
       "macro_temp": "🌧️ 暴雨空仓",
-      "action": "🚨 破位飞刀·严禁左侧抄底",
-      "action_tag": "action-watch"
+      "action": "🚨 暴跌熔断·严禁左侧接刀",
+      "action_tag": "action-watch",
+      "is_crash_halt": true,
+      "is_cooling_halt": false
     },
     "NBIS": {
       "rank": 48,
@@ -3624,8 +3878,10 @@
       "stop_loss_price": 132.62,
       "stop_loss_pct": 7.0,
       "macro_temp": "🌧️ 暴雨空仓",
-      "action": "🚨 破位飞刀·严禁左侧抄底",
-      "action_tag": "action-warning"
+      "action": "🚨 暴跌熔断·严禁左侧接刀",
+      "action_tag": "action-warning",
+      "is_crash_halt": true,
+      "is_cooling_halt": false
     },
     "AXTI": {
       "rank": 49,
@@ -3649,8 +3905,10 @@
       "stop_loss_price": 44.92,
       "stop_loss_pct": 7.0,
       "macro_temp": "🌧️ 暴雨空仓",
-      "action": "🚨 破位飞刀·严禁左侧抄底",
-      "action_tag": "action-warning"
+      "action": "🚨 暴跌熔断·严禁左侧接刀",
+      "action_tag": "action-warning",
+      "is_crash_halt": true,
+      "is_cooling_halt": false
     },
     "COHR": {
       "rank": 50,
@@ -3674,8 +3932,10 @@
       "stop_loss_price": 186.97,
       "stop_loss_pct": 7.0,
       "macro_temp": "🌧️ 暴雨空仓",
-      "action": "🚨 破位飞刀·严禁左侧抄底",
-      "action_tag": "action-warning"
+      "action": "🚨 暴跌熔断·严禁左侧接刀",
+      "action_tag": "action-warning",
+      "is_crash_halt": true,
+      "is_cooling_halt": false
     },
     "AAOI": {
       "rank": 51,
@@ -3699,8 +3959,10 @@
       "stop_loss_price": 59.24,
       "stop_loss_pct": 7.0,
       "macro_temp": "🌧️ 暴雨空仓",
-      "action": "🚨 破位飞刀·严禁左侧抄底",
-      "action_tag": "action-warning"
+      "action": "🚨 暴跌熔断·严禁左侧接刀",
+      "action_tag": "action-warning",
+      "is_crash_halt": true,
+      "is_cooling_halt": false
     },
     "WDC": {
       "rank": 52,
@@ -3724,8 +3986,10 @@
       "stop_loss_price": 319.54,
       "stop_loss_pct": 5.7,
       "macro_temp": "🌧️ 暴雨空仓",
-      "action": "🚨 破位飞刀·严禁左侧抄底",
-      "action_tag": "action-warning"
+      "action": "🚨 暴跌熔断·严禁左侧接刀",
+      "action_tag": "action-warning",
+      "is_crash_halt": true,
+      "is_cooling_halt": false
     },
     "GOOGL": {
       "rank": 53,
@@ -3749,8 +4013,10 @@
       "stop_loss_price": 270.0,
       "stop_loss_pct": 3.7,
       "macro_temp": "🌧️ 暴雨空仓",
-      "action": "🚨 破位飞刀·严禁左侧抄底",
-      "action_tag": "action-warning"
+      "action": "🚨 暴跌熔断·严禁左侧接刀",
+      "action_tag": "action-warning",
+      "is_crash_halt": false,
+      "is_cooling_halt": true
     },
     "ORCL": {
       "rank": 54,
@@ -3774,8 +4040,10 @@
       "stop_loss_price": 113.19,
       "stop_loss_pct": 5.2,
       "macro_temp": "🌧️ 暴雨空仓",
-      "action": "🚨 破位飞刀·严禁左侧抄底",
-      "action_tag": "action-watch"
+      "action": "🚨 暴跌熔断·严禁左侧接刀",
+      "action_tag": "action-watch",
+      "is_crash_halt": true,
+      "is_cooling_halt": false
     },
     "KORU": {
       "rank": 55,
@@ -3799,8 +4067,10 @@
       "stop_loss_price": 9.89,
       "stop_loss_pct": 7.0,
       "macro_temp": "🌧️ 暴雨空仓",
-      "action": "🛡️ 暴雨防守·仅极小仓试错",
-      "action_tag": "action-watch"
+      "action": "🚨 暴跌熔断·严禁左侧接刀",
+      "action_tag": "action-watch",
+      "is_crash_halt": true,
+      "is_cooling_halt": false
     },
     "SOXL": {
       "rank": 56,
@@ -3824,8 +4094,10 @@
       "stop_loss_price": 64.88,
       "stop_loss_pct": 7.0,
       "macro_temp": "🌧️ 暴雨空仓",
-      "action": "🛡️ 暴雨防守·仅极小仓试错",
-      "action_tag": "action-watch"
+      "action": "🚨 暴跌熔断·严禁左侧接刀",
+      "action_tag": "action-watch",
+      "is_crash_halt": true,
+      "is_cooling_halt": false
     },
     "QQQM": {
       "rank": 57,
@@ -3850,7 +4122,9 @@
       "stop_loss_pct": 2.2,
       "macro_temp": "🌧️ 暴雨空仓",
       "action": "🛡️ 暴雨防守·仅极小仓试错",
-      "action_tag": "action-watch"
+      "action_tag": "action-watch",
+      "is_crash_halt": false,
+      "is_cooling_halt": false
     },
     "SMH": {
       "rank": 58,
@@ -3874,8 +4148,10 @@
       "stop_loss_price": 491.38,
       "stop_loss_pct": 3.8,
       "macro_temp": "🌧️ 暴雨空仓",
-      "action": "🛡️ 暴雨防守·仅极小仓试错",
-      "action_tag": "action-watch"
+      "action": "🚨 暴跌熔断·严禁左侧接刀",
+      "action_tag": "action-watch",
+      "is_crash_halt": true,
+      "is_cooling_halt": false
     },
     "IBIT": {
       "rank": 59,
@@ -3899,8 +4175,10 @@
       "stop_loss_price": 42.29,
       "stop_loss_pct": 2.9,
       "macro_temp": "🌧️ 暴雨空仓",
-      "action": "🛡️ 暴雨空仓·严禁左侧接刀",
-      "action_tag": "action-watch"
+      "action": "🚨 暴跌熔断·严禁左侧接刀",
+      "action_tag": "action-watch",
+      "is_crash_halt": false,
+      "is_cooling_halt": true
     },
     "SOXX": {
       "rank": 60,
@@ -3924,8 +4202,10 @@
       "stop_loss_price": 437.08,
       "stop_loss_pct": 4.3,
       "macro_temp": "🌧️ 暴雨空仓",
-      "action": "🛡️ 暴雨空仓·严禁左侧接刀",
-      "action_tag": "action-watch"
+      "action": "🚨 暴跌熔断·严禁左侧接刀",
+      "action_tag": "action-watch",
+      "is_crash_halt": true,
+      "is_cooling_halt": false
     },
     "GLD": {
       "rank": 61,
@@ -3950,7 +4230,9 @@
       "stop_loss_pct": 2.2,
       "macro_temp": "🌧️ 暴雨空仓",
       "action": "🛡️ 暴雨空仓·严禁左侧接刀",
-      "action_tag": "action-watch"
+      "action_tag": "action-watch",
+      "is_crash_halt": false,
+      "is_cooling_halt": false
     },
     "IGV": {
       "rank": 62,
@@ -3975,7 +4257,9 @@
       "stop_loss_pct": 3.0,
       "macro_temp": "🌧️ 暴雨空仓",
       "action": "🛡️ 暴雨空仓·严禁左侧接刀",
-      "action_tag": "action-watch"
+      "action_tag": "action-watch",
+      "is_crash_halt": false,
+      "is_cooling_halt": false
     },
     "VIXY": {
       "rank": 63,
@@ -4000,7 +4284,9 @@
       "stop_loss_pct": 4.4,
       "macro_temp": "🌧️ 暴雨空仓",
       "action": "🛡️ 暴雨空仓·严禁左侧接刀",
-      "action_tag": "action-watch"
+      "action_tag": "action-watch",
+      "is_crash_halt": false,
+      "is_cooling_halt": false
     },
     "IWM": {
       "rank": 64,
@@ -4025,7 +4311,9 @@
       "stop_loss_pct": 2.2,
       "macro_temp": "🌧️ 暴雨空仓",
       "action": "🛡️ 暴雨空仓·严禁左侧接刀",
-      "action_tag": "action-watch"
+      "action_tag": "action-watch",
+      "is_crash_halt": false,
+      "is_cooling_halt": false
     },
     "SPY": {
       "rank": 65,
@@ -4050,7 +4338,9 @@
       "stop_loss_pct": 2.2,
       "macro_temp": "🌧️ 暴雨空仓",
       "action": "🛡️ 暴雨空仓·严禁左侧接刀",
-      "action_tag": "action-watch"
+      "action_tag": "action-watch",
+      "is_crash_halt": false,
+      "is_cooling_halt": false
     },
     "TLT": {
       "rank": 66,
@@ -4075,7 +4365,9 @@
       "stop_loss_pct": 2.2,
       "macro_temp": "🌧️ 暴雨空仓",
       "action": "🛡️ 暴雨空仓·严禁左侧接刀",
-      "action_tag": "action-watch"
+      "action_tag": "action-watch",
+      "is_crash_halt": false,
+      "is_cooling_halt": false
     },
     "DIA": {
       "rank": 67,
@@ -4100,7 +4392,9 @@
       "stop_loss_pct": 2.2,
       "macro_temp": "🌧️ 暴雨空仓",
       "action": "🛡️ 暴雨空仓·严禁左侧接刀",
-      "action_tag": "action-watch"
+      "action_tag": "action-watch",
+      "is_crash_halt": false,
+      "is_cooling_halt": false
     },
     "QQQI": {
       "rank": 68,
@@ -4125,7 +4419,9 @@
       "stop_loss_pct": 2.2,
       "macro_temp": "🌧️ 暴雨空仓",
       "action": "🛡️ 暴雨空仓·严禁左侧接刀",
-      "action_tag": "action-watch"
+      "action_tag": "action-watch",
+      "is_crash_halt": false,
+      "is_cooling_halt": false
     },
     "SOXS": {
       "rank": 69,
@@ -4150,7 +4446,9 @@
       "stop_loss_pct": 6.7,
       "macro_temp": "🌧️ 暴雨空仓",
       "action": "🛡️ 暴雨空仓·严禁左侧接刀",
-      "action_tag": "action-watch"
+      "action_tag": "action-watch",
+      "is_crash_halt": false,
+      "is_cooling_halt": false
     },
     "SQQQ": {
       "rank": 70,
@@ -4175,7 +4473,9 @@
       "stop_loss_pct": 4.3,
       "macro_temp": "🌧️ 暴雨空仓",
       "action": "🛡️ 暴雨空仓·严禁左侧接刀",
-      "action_tag": "action-watch"
+      "action_tag": "action-watch",
+      "is_crash_halt": false,
+      "is_cooling_halt": false
     }
   },
   "table4": [
@@ -4202,35 +4502,12 @@
       "stop_loss_pct": 3.0,
       "macro_temp": "🌧️ 暴雨空仓",
       "action": "🛡️ 暴雨防守·仅极小仓试错",
-      "action_tag": "action-watch"
+      "action_tag": "action-watch",
+      "is_crash_halt": false,
+      "is_cooling_halt": false
     },
     {
       "rank": 2,
-      "ticker": "TSM",
-      "sector_key": "Semiconductors",
-      "sector_cn": "半导体与设备",
-      "sector_rating": "⭐⭐⭐⭐☆",
-      "latest_price": 399.3,
-      "atr_pct": 3.38,
-      "bias_ma50": -8.08,
-      "rsi_14": 36.2,
-      "is_broken": false,
-      "is_etf": false,
-      "model_raw_prob_pct": 45.4,
-      "base_raw_prob_pct": 51.4,
-      "predicted_win_rate_pct": 51.4,
-      "calibrated_win_rate_pct": 59.1,
-      "sector_pf": 1.55,
-      "target_profit_price": 417.52,
-      "target_profit_pct": 4.6,
-      "stop_loss_price": 385.8,
-      "stop_loss_pct": 3.4,
-      "macro_temp": "🌧️ 暴雨空仓",
-      "action": "🛡️ 暴雨防守·仅极小仓试错",
-      "action_tag": "action-watch"
-    },
-    {
-      "rank": 3,
       "ticker": "AAPL",
       "sector_key": "Neo_Cloud",
       "sector_cn": "科技巨头与AI生态",
@@ -4252,110 +4529,12 @@
       "stop_loss_pct": 2.2,
       "macro_temp": "🌧️ 暴雨空仓",
       "action": "🛡️ 暴雨防守·仅极小仓试错",
-      "action_tag": "action-watch"
+      "action_tag": "action-watch",
+      "is_crash_halt": false,
+      "is_cooling_halt": false
     },
     {
-      "rank": 4,
-      "ticker": "ASML",
-      "sector_key": "Semiconductors",
-      "sector_cn": "半导体与设备",
-      "sector_rating": "⭐⭐⭐⭐☆",
-      "latest_price": 1531.06,
-      "atr_pct": 3.84,
-      "bias_ma50": -10.03,
-      "rsi_14": 35.9,
-      "is_broken": false,
-      "is_etf": false,
-      "model_raw_prob_pct": 40.7,
-      "base_raw_prob_pct": 46.7,
-      "predicted_win_rate_pct": 46.7,
-      "calibrated_win_rate_pct": 53.7,
-      "sector_pf": 1.55,
-      "target_profit_price": 1610.43,
-      "target_profit_pct": 5.2,
-      "stop_loss_price": 1472.27,
-      "stop_loss_pct": 3.8,
-      "macro_temp": "🌧️ 暴雨空仓",
-      "action": "🛡️ 暴雨空仓·严禁左侧接刀",
-      "action_tag": "action-watch"
-    },
-    {
-      "rank": 5,
-      "ticker": "VRT",
-      "sector_key": "Semiconductors",
-      "sector_cn": "AI液冷与服务器",
-      "sector_rating": "⭐⭐⭐⭐☆",
-      "latest_price": 225.0,
-      "atr_pct": 6.3,
-      "bias_ma50": -7.19,
-      "rsi_14": 48.0,
-      "is_broken": false,
-      "is_etf": false,
-      "model_raw_prob_pct": 39.5,
-      "base_raw_prob_pct": 45.5,
-      "predicted_win_rate_pct": 45.5,
-      "calibrated_win_rate_pct": 52.3,
-      "sector_pf": 1.55,
-      "target_profit_price": 240.64,
-      "target_profit_pct": 7.0,
-      "stop_loss_price": 213.41,
-      "stop_loss_pct": 5.2,
-      "macro_temp": "🌧️ 暴雨空仓",
-      "action": "🛡️ 暴雨空仓·严禁左侧接刀",
-      "action_tag": "action-watch"
-    },
-    {
-      "rank": 6,
-      "ticker": "AMZN",
-      "sector_key": "Neo_Cloud",
-      "sector_cn": "科技巨头与AI生态",
-      "sector_rating": "⭐⭐⭐☆☆",
-      "latest_price": 246.55,
-      "atr_pct": 2.94,
-      "bias_ma50": -3.08,
-      "rsi_14": 42.7,
-      "is_broken": false,
-      "is_etf": false,
-      "model_raw_prob_pct": 40.3,
-      "base_raw_prob_pct": 48.8,
-      "predicted_win_rate_pct": 48.8,
-      "calibrated_win_rate_pct": 50.7,
-      "sector_pf": 1.35,
-      "target_profit_price": 256.34,
-      "target_profit_pct": 4.0,
-      "stop_loss_price": 239.3,
-      "stop_loss_pct": 2.9,
-      "macro_temp": "🌧️ 暴雨空仓",
-      "action": "🛡️ 暴雨空仓·严禁左侧接刀",
-      "action_tag": "action-watch"
-    },
-    {
-      "rank": 7,
-      "ticker": "AVGO",
-      "sector_key": "Semiconductors",
-      "sector_cn": "半导体与设备",
-      "sector_rating": "⭐⭐⭐⭐☆",
-      "latest_price": 323.34,
-      "atr_pct": 3.89,
-      "bias_ma50": -8.26,
-      "rsi_14": 39.4,
-      "is_broken": false,
-      "is_etf": false,
-      "model_raw_prob_pct": 38.0,
-      "base_raw_prob_pct": 44.0,
-      "predicted_win_rate_pct": 44.0,
-      "calibrated_win_rate_pct": 50.6,
-      "sector_pf": 1.55,
-      "target_profit_price": 340.32,
-      "target_profit_pct": 5.3,
-      "stop_loss_price": 310.76,
-      "stop_loss_pct": 3.9,
-      "macro_temp": "🌧️ 暴雨空仓",
-      "action": "🛡️ 暴雨空仓·严禁左侧接刀",
-      "action_tag": "action-watch"
-    },
-    {
-      "rank": 8,
+      "rank": 3,
       "ticker": "PEP",
       "sector_key": "Energy_Power",
       "sector_cn": "价值蓝筹与医药",
@@ -4377,10 +4556,12 @@
       "stop_loss_pct": 2.2,
       "macro_temp": "🌧️ 暴雨空仓",
       "action": "🛡️ 暴雨空仓·严禁左侧接刀",
-      "action_tag": "action-watch"
+      "action_tag": "action-watch",
+      "is_crash_halt": false,
+      "is_cooling_halt": false
     },
     {
-      "rank": 9,
+      "rank": 4,
       "ticker": "KO",
       "sector_key": "Energy_Power",
       "sector_cn": "价值蓝筹与医药",
@@ -4402,10 +4583,12 @@
       "stop_loss_pct": 2.2,
       "macro_temp": "🌧️ 暴雨空仓",
       "action": "🛡️ 暴雨空仓·严禁左侧接刀",
-      "action_tag": "action-watch"
+      "action_tag": "action-watch",
+      "is_crash_halt": false,
+      "is_cooling_halt": false
     },
     {
-      "rank": 10,
+      "rank": 5,
       "ticker": "MSFT",
       "sector_key": "Enterprise_SaaS",
       "sector_cn": "企业软件与 AI SaaS",
@@ -4427,7 +4610,144 @@
       "stop_loss_pct": 2.3,
       "macro_temp": "🌧️ 暴雨空仓",
       "action": "🛡️ 暴雨空仓·严禁左侧接刀",
-      "action_tag": "action-watch"
+      "action_tag": "action-watch",
+      "is_crash_halt": false,
+      "is_cooling_halt": false
+    },
+    {
+      "rank": 6,
+      "ticker": "SPCX",
+      "sector_key": "Neo_Cloud",
+      "sector_cn": "物理AI与太空商业",
+      "sector_rating": "⭐⭐⭐☆☆",
+      "latest_price": 137.22,
+      "atr_pct": 5.46,
+      "bias_ma50": -8.27,
+      "rsi_14": 38.2,
+      "is_broken": false,
+      "is_etf": false,
+      "model_raw_prob_pct": 40.5,
+      "base_raw_prob_pct": 46.6,
+      "predicted_win_rate_pct": 46.6,
+      "calibrated_win_rate_pct": 48.4,
+      "sector_pf": 1.35,
+      "target_profit_price": 145.98,
+      "target_profit_pct": 6.4,
+      "stop_loss_price": 130.73,
+      "stop_loss_pct": 4.7,
+      "macro_temp": "🌧️ 暴雨空仓",
+      "action": "🛡️ 暴雨空仓·严禁左侧接刀",
+      "action_tag": "action-watch",
+      "is_crash_halt": false,
+      "is_cooling_halt": false
+    },
+    {
+      "rank": 7,
+      "ticker": "CEG",
+      "sector_key": "Energy_Power",
+      "sector_cn": "数据中心能源电力",
+      "sector_rating": "⭐⭐⭐☆☆",
+      "latest_price": 257.73,
+      "atr_pct": 4.63,
+      "bias_ma50": -5.43,
+      "rsi_14": 44.0,
+      "is_broken": false,
+      "is_etf": false,
+      "model_raw_prob_pct": 38.3,
+      "base_raw_prob_pct": 46.8,
+      "predicted_win_rate_pct": 46.8,
+      "calibrated_win_rate_pct": 46.1,
+      "sector_pf": 1.28,
+      "target_profit_price": 272.75,
+      "target_profit_pct": 5.8,
+      "stop_loss_price": 246.61,
+      "stop_loss_pct": 4.3,
+      "macro_temp": "🌧️ 暴雨空仓",
+      "action": "🛡️ 暴雨空仓·严禁左侧接刀",
+      "action_tag": "action-watch",
+      "is_crash_halt": false,
+      "is_cooling_halt": false
+    },
+    {
+      "rank": 8,
+      "ticker": "MRNA",
+      "sector_key": "Energy_Power",
+      "sector_cn": "价值蓝筹与医药",
+      "sector_rating": "⭐⭐⭐☆☆",
+      "latest_price": 220.18,
+      "atr_pct": 9.07,
+      "bias_ma50": 20.67,
+      "rsi_14": 56.9,
+      "is_broken": false,
+      "is_etf": false,
+      "model_raw_prob_pct": 45.3,
+      "base_raw_prob_pct": 46.8,
+      "predicted_win_rate_pct": 46.8,
+      "calibrated_win_rate_pct": 46.1,
+      "sector_pf": 1.28,
+      "target_profit_price": 239.6,
+      "target_profit_pct": 8.8,
+      "stop_loss_price": 205.79,
+      "stop_loss_pct": 6.5,
+      "macro_temp": "🌧️ 暴雨空仓",
+      "action": "🛡️ 暴雨空仓·严禁左侧接刀",
+      "action_tag": "action-watch",
+      "is_crash_halt": false,
+      "is_cooling_halt": false
+    },
+    {
+      "rank": 9,
+      "ticker": "VST",
+      "sector_key": "Energy_Power",
+      "sector_cn": "数据中心能源电力",
+      "sector_rating": "⭐⭐⭐☆☆",
+      "latest_price": 135.23,
+      "atr_pct": 5.21,
+      "bias_ma50": -6.68,
+      "rsi_14": 39.4,
+      "is_broken": false,
+      "is_etf": false,
+      "model_raw_prob_pct": 40.5,
+      "base_raw_prob_pct": 46.6,
+      "predicted_win_rate_pct": 46.6,
+      "calibrated_win_rate_pct": 45.9,
+      "sector_pf": 1.28,
+      "target_profit_price": 143.64,
+      "target_profit_pct": 6.2,
+      "stop_loss_price": 129.0,
+      "stop_loss_pct": 4.6,
+      "macro_temp": "🌧️ 暴雨空仓",
+      "action": "🛡️ 暴雨空仓·严禁左侧接刀",
+      "action_tag": "action-watch",
+      "is_crash_halt": false,
+      "is_cooling_halt": false
+    },
+    {
+      "rank": 10,
+      "ticker": "AXP",
+      "sector_key": "Energy_Power",
+      "sector_cn": "价值蓝筹与医药",
+      "sector_rating": "⭐⭐⭐☆☆",
+      "latest_price": 328.24,
+      "atr_pct": 2.01,
+      "bias_ma50": 3.64,
+      "rsi_14": 63.2,
+      "is_broken": false,
+      "is_etf": false,
+      "model_raw_prob_pct": 44.5,
+      "base_raw_prob_pct": 46.0,
+      "predicted_win_rate_pct": 46.0,
+      "calibrated_win_rate_pct": 45.3,
+      "sector_pf": 1.28,
+      "target_profit_price": 338.09,
+      "target_profit_pct": 3.0,
+      "stop_loss_price": 321.02,
+      "stop_loss_pct": 2.2,
+      "macro_temp": "🌧️ 暴雨空仓",
+      "action": "🛡️ 暴雨空仓·严禁左侧接刀",
+      "action_tag": "action-watch",
+      "is_crash_halt": false,
+      "is_cooling_halt": false
     }
   ]
 }
