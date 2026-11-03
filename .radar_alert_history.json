@@ -110,8 +110,8 @@
       "last_notified_at": 0.0
     },
     "TSM": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1793749852.6559691
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "MU": {
       "state": "NORMAL",
@@ -138,8 +138,8 @@
       "last_notified_at": 0.0
     },
     "AMD": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1793750005.8453038
     },
     "SPCX": {
       "state": "NORMAL",
