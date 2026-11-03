@@ -148,14 +148,41 @@ MONITORED_TARGETS = {
     }
 }
 
+def load_env_file(env_path=None):
+    """安全加载本地 .env 文件至 os.environ"""
+    if env_path is None:
+        env_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), ".env")
+    try:
+        from dotenv import load_dotenv
+        if os.path.exists(env_path):
+            load_dotenv(env_path, override=False)
+            return
+    except ImportError:
+        pass
+    if os.path.exists(env_path):
+        try:
+            with open(env_path, "r", encoding="utf-8") as f:
+                for line in f:
+                    line = line.strip()
+                    if not line or line.startswith("#") or "=" not in line:
+                        continue
+                    k, v = line.split("=", 1)
+                    k, v = k.strip(), v.strip().strip("'\"")
+                    if k and k not in os.environ:
+                        os.environ[k] = v
+        except Exception:
+            pass
+
+load_env_file()
+
 # ==============================================================================
 # 二、 Finnhub 频控与并发抓取引擎 (Jitter + 429 智能降级)
 # ==============================================================================
-FINNHUB_API_KEY = os.environ.get("FINNHUB_API_KEY") or "d9be4q1r01qmk4glemdgd9be4q1r01qmk4gleme0"
+FINNHUB_API_KEY = os.environ.get("FINNHUB_API_KEY", "").strip()
 
 # PushPlus 微信推送配置与去重缓存
-PUSHPLUS_TOKEN = os.environ.get("PUSHPLUS_TOKEN") or "eca6f1f8c3494843aa7f1170e34fd2b6"
-PUSHPLUS_CHANNEL = os.environ.get("PUSHPLUS_CHANNEL") or "clawbot"
+PUSHPLUS_TOKEN = os.environ.get("PUSHPLUS_TOKEN", "").strip()
+PUSHPLUS_CHANNEL = os.environ.get("PUSHPLUS_CHANNEL", "clawbot").strip()
 
 # ------------------------------------------------------------------------------
 # 🎯 账户资金与风控配置 (V3.1 旗舰纯比例制 · 单股上限 25% · 1.5%风险平价一次性建仓)
@@ -469,12 +496,72 @@ def update_last_sync_time():
     except Exception as e:
         print(f"[!] 同步锁写入异常: {e}")
 
+class FinnhubRateLimiter:
+    """
+    稳态令牌桶速率限制器 (Token Bucket Rate Limiter)
+    - 免费额度红线: 60 次/分钟
+    - 稳态流控目标: 最大 50 次/分钟 (0.833 req/s)
+    - 最小请求间隔 (min_interval): 1.05 秒 (严防突发并发打穿 Finnhub 滑动窗口)
+    - 线程安全: threading.Lock 保护状态
+    - 遭遇 429 智能指数退避: 首次 10 秒，二次 20 秒
+    """
+    def __init__(self, max_per_minute: float = 50.0, min_interval: float = 1.05):
+        self.capacity = float(max_per_minute)
+        self.tokens = float(max_per_minute)
+        self.fill_rate = float(max_per_minute) / 60.0
+        self.min_interval = float(min_interval)
+        self.last_fill_time = time.time()
+        self.last_request_time = 0.0
+        self.lock = threading.Lock()
+
+    def acquire(self):
+        """阻塞获取调用令牌，确保请求速率与间隔满足安全红线"""
+        with self.lock:
+            now = time.time()
+            # 1. 刷新令牌桶
+            elapsed = now - self.last_fill_time
+            self.tokens = min(self.capacity, self.tokens + elapsed * self.fill_rate)
+            self.last_fill_time = now
+
+            # 2. 如果令牌不足，等待补充
+            if self.tokens < 1.0:
+                needed = (1.0 - self.tokens) / self.fill_rate
+                if needed > 0:
+                    time.sleep(needed)
+                now = time.time()
+                self.tokens = 0.0
+                self.last_fill_time = now
+            else:
+                self.tokens -= 1.0
+
+            # 3. 强制最小请求间隔 (min_interval = 1.05s)
+            time_since_last = now - self.last_request_time
+            if time_since_last < self.min_interval:
+                sleep_needed = self.min_interval - time_since_last
+                time.sleep(sleep_needed)
+                now = time.time()
+
+            self.last_request_time = now
+
+    def handle_429(self, attempt: int = 0):
+        """429 限流保护与指数退避 (首次 10 秒，二次 20 秒)"""
+        with self.lock:
+            backoff = 10.0 if attempt == 0 else 20.0
+            print(f"[!] ⚠️ Finnhub 触发 429 限流，执行指数退避休眠 {backoff:.1f} 秒...")
+            # 清空令牌，避免退避结束后瞬间再次并发
+            self.tokens = 0.0
+            self.last_fill_time = time.time() + backoff
+            self.last_request_time = time.time() + backoff
+        time.sleep(backoff)
+
+FINNHUB_LIMITER = FinnhubRateLimiter(max_per_minute=50.0, min_interval=1.05)
+
 def fetch_single_finnhub_quote(symbol, api_key):
-    """单标的通过 Finnhub REST API 获取秒级报价 (加 0.30~0.40s 控速与 429 自动避让保护)"""
-    time.sleep(random.uniform(0.30, 0.40))
+    """单标的通过 Finnhub REST API 获取秒级报价 (加 1.05s 稳态令牌桶频控与 429 指数退避保护)"""
     url = f"https://finnhub.io/api/v1/quote?symbol={symbol}&token={api_key}"
     for attempt in range(2):
         try:
+            FINNHUB_LIMITER.acquire()
             req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"})
             with urllib.request.urlopen(req, timeout=6) as resp:
                 data = json.loads(resp.read().decode())
@@ -492,7 +579,7 @@ def fetch_single_finnhub_quote(symbol, api_key):
         except urllib.error.HTTPError as e:
             if e.code == 429:
                 if attempt == 0:
-                    time.sleep(2.0)
+                    FINNHUB_LIMITER.handle_429(attempt)
                     continue
                 print(f"[!] [Finnhub 频控预警] {symbol} 触发 429 限流保护，该标的将自动使用 yfinance 底模数据。")
             else:
@@ -502,11 +589,11 @@ def fetch_single_finnhub_quote(symbol, api_key):
     return symbol, None
 
 def fetch_finnhub_quotes_batch(tickers, api_key):
-    """限额并发抓取 (max_workers=2)，严控每分钟调用在 60 次安全红线内"""
+    """限额并发抓取 (max_workers=2)，由 FinnhubRateLimiter 严控在 50 次/分安全红线内"""
     if not api_key:
         return {}
     results = {}
-    print(f"[*] 🚀 启动 Finnhub 稳态频控引擎 (workers=2, pace=0.35s)，平稳抓取 {len(tickers)} 只标的实时报价...")
+    print(f"[*] 🚀 启动 Finnhub 稳态频控引擎 (workers=2, bucket=50/min, min_interval=1.05s)，平稳抓取 {len(tickers)} 只标的实时报价...")
     with ThreadPoolExecutor(max_workers=2) as executor:
         future_to_sym = {executor.submit(fetch_single_finnhub_quote, t, api_key): t for t in tickers}
         for future in as_completed(future_to_sym):
@@ -608,6 +695,7 @@ def fetch_intraday_5m_and_ext_data(tickers):
                     rth_low = float(l[rth_mask].min())
                     rth_high = float(h[rth_mask].max())
                     rth_close = float(c[rth_mask].iloc[-1])
+                    rth_date = str(ny_idx[rth_mask][-1].date())
                     # 剔除 15:55 收盘集合竞价(MOC)脉冲毛刺，计算真实 5m 相对量比
                     rth_no_moc = (ny_idx.date == (ny_idx[rth_mask][-1].date())) & (ny_hr >= 9.5) & (ny_hr < 15.9)
                     vol_clean = v[rth_no_moc] if rth_no_moc.sum() >= 5 else vol_rth
@@ -622,6 +710,7 @@ def fetch_intraday_5m_and_ext_data(tickers):
                     rth_low = float(l.iloc[-20:].min())
                     rth_high = float(h.iloc[-20:].max())
                     rth_close = float(c.iloc[-1])
+                    rth_date = str(last_date)
                     rvol_5m = 1.0
 
                 # 计算 5 分钟级别 Wilder's RSI(14)
@@ -649,7 +738,8 @@ def fetch_intraday_5m_and_ext_data(tickers):
                     "is_5m_higher_low": is_5m_higher_low,
                     "rth_low": round(rth_low, 2),
                     "rth_high": round(rth_high, 2),
-                    "rth_close": round(rth_close, 4)
+                    "rth_close": round(rth_close, 4),
+                    "rth_date": rth_date
                 }
             except Exception:
                 continue
@@ -691,6 +781,7 @@ def fetch_earnings_calendar_map(tickers, api_key):
                 d_from, d_to = d_pair
                 url = f"https://finnhub.io/api/v1/calendar/earnings?from={d_from}&to={d_to}&token={api_key}"
                 try:
+                    FINNHUB_LIMITER.acquire()
                     req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
                     with urllib.request.urlopen(req, timeout=5) as resp:
                         cal = json.loads(resp.read().decode()).get("earningsCalendar", [])
@@ -698,7 +789,7 @@ def fetch_earnings_calendar_map(tickers, api_key):
                 except Exception:
                     return []
 
-            with ThreadPoolExecutor(max_workers=3) as ex:
+            with ThreadPoolExecutor(max_workers=2) as ex:
                 for res_list in ex.map(_fetch_chunk, chunks):
                     for sym, d_str, hr in res_list:
                         if sym not in raw_map or d_str < raw_map[sym]["date"]:
@@ -1114,7 +1205,7 @@ def evaluate_intraday_entry(
     if prev_crash_3d or crash_3d:
         # 严格企稳解锁边界：
         # 条件 a: 前一交易日收盘已确认右侧反转阳线 (仅当暴跌来自前1~3日且今日未发生新跳空暴跌时有效)
-        unlock_a = bool(prev_is_right_turn) and bool(prev_crash_3d)
+        unlock_a = bool(prev_is_right_turn) and bool(prev_crash_3d) and (pct_change > -3.8) and (ext_pct is None or ext_pct > -4.5)
         # 条件 b: 日内强劲反弹 >= +2.5%，收复前次暴跌大阴线实体 > 50%，且稳居 VWAP 和 EMA5 之上
         rebound_body_ok = (active_price >= prev_crash_close + 0.5 * prev_crash_body) if prev_crash_body > 0 else True
         unlock_b = (pct_change >= 2.5) and rebound_body_ok and (active_price > vwap) and (ema5 > 0 and active_price > ema5)
@@ -1370,6 +1461,7 @@ def dispatch_wechat_radar_alerts(macro_data, stocks_data, weather_info, now_str)
     stop_alerts = []
     tp_alerts = []
     intc_alerts = []
+    pending_target_updates = {}
 
     # 1. 扫描个股及已加入自选盯盘或实盘持仓的 ETF (如 SOXX / SOXL / QQQM) 重大异动
     starred_etfs = [{"ticker": t, **m} for t, m in macro_data.items() if t in target_watchlist or m.get("shares", 0) > 0]
@@ -1433,13 +1525,8 @@ def dispatch_wechat_radar_alerts(macro_data, stocks_data, weather_info, now_str)
             elif (current_time - last_notified_at) >= cooldown:
                 should_alert = True  # 持续异常且满冷却周期，定期提醒
 
-        # 更新技术历史状态
-        if current_state != "NORMAL":
-            targets_history[ticker] = {
-                "state": current_state,
-                "last_notified_at": current_time if should_alert else last_notified_at
-            }
-        else:
+        # 若恢复为 NORMAL，及时清空历史警报状态
+        if current_state == "NORMAL" and prev_state != "NORMAL":
             targets_history[ticker] = {
                 "state": "NORMAL",
                 "last_notified_at": 0.0
@@ -1467,6 +1554,7 @@ def dispatch_wechat_radar_alerts(macro_data, stocks_data, weather_info, now_str)
                     "top_put_info": s.get("top_put_info", "--"),
                     "exp_move_str": s.get("exp_move_str", "--")
                 })
+                pending_target_updates[ticker] = {"state": current_state, "last_notified_at": current_time}
             elif current_state == "GOLDEN_PIT":
                 pit_alerts.append({
                     "ticker": ticker, "name": name, "cat": cat, "last": last,
@@ -1476,17 +1564,20 @@ def dispatch_wechat_radar_alerts(macro_data, stocks_data, weather_info, now_str)
                     "rth_low": s.get("rth_low", s.get("low_price", last * 0.985)),
                     "optimal_limit": s.get("optimal_limit", round(last * 1.020, 2))
                 })
+                pending_target_updates[ticker] = {"state": current_state, "last_notified_at": current_time}
             elif current_state == "STOP_LOSS":
                 if bias < -15.0 and s.get("vol_ratio", 1.0) >= 1.5:
                     stop_alerts.append({
                         "ticker": ticker, "name": name, "cat": cat, "last": last,
                         "bias": bias, "rsi": rsi, "fib_low": fib_low, "pit_status": pit_status
                     })
+                    pending_target_updates[ticker] = {"state": current_state, "last_notified_at": current_time}
             elif current_state == "TAKE_PROFIT":
                 tp_alerts.append({
                     "ticker": ticker, "name": name, "cat": cat, "last": last,
                     "bias": bias, "rsi": rsi, "reason": s.get("tp_reason", "")
                 })
+                pending_target_updates[ticker] = {"state": current_state, "last_notified_at": current_time}
 
         # 2. 实盘持仓专属风控底线监测 (硬止损、动态保本、水下强阻与对冲收割)
         if s.get("shares", 0) > 0:
@@ -1616,11 +1707,11 @@ def dispatch_wechat_radar_alerts(macro_data, stocks_data, weather_info, now_str)
                     p_alert = True
                 elif (current_time - p_last_notified) >= ALERT_COOLDOWN_SECONDS:
                     p_alert = True
-                targets_history[p_key] = {
-                    "state": p_state,
-                    "last_notified_at": current_time if p_alert else p_last_notified
-                }
                 if p_alert:
+                    pending_target_updates[p_key] = {
+                        "state": p_state,
+                        "last_notified_at": current_time
+                    }
                     intc_alerts.append({
                         "ticker": ticker, "name": name, "last": active_price,
                         "state": p_state, "cost": cost,
@@ -1631,23 +1722,21 @@ def dispatch_wechat_radar_alerts(macro_data, stocks_data, weather_info, now_str)
                         "session_tag": session_tag
                     })
             else:
-                targets_history[p_key] = {
-                    "state": "PORT_NORMAL",
-                    "last_notified_at": 0.0
-                }
+                if p_prev_state != "PORT_NORMAL":
+                    targets_history[p_key] = {
+                        "state": "PORT_NORMAL",
+                        "last_notified_at": 0.0
+                    }
 
     # 2. 宏观气象突变检查
     current_weather = weather_info.get("weather", "晴天做多")
     prev_weather = history.get("weather", "")
     weather_changed = (prev_weather and prev_weather != current_weather)
-    history["weather"] = current_weather
-
-    # 保存最新状态
-    save_alert_history(history)
 
     # 3. 组织并发送微信通知 (若无新增异动则静默)
     total_alerts = len(watchlist_entry_alerts) + len(pit_alerts) + len(stop_alerts) + len(tp_alerts) + len(intc_alerts)
     if total_alerts == 0 and not weather_changed:
+        save_alert_history(history)
         return
 
     # 生成卡片标题与正文
@@ -1816,9 +1905,16 @@ def dispatch_wechat_radar_alerts(macro_data, stocks_data, weather_info, now_str)
             md.append("---")
         md.append("")
 
-    md.append("📱 *查看全量 58 标的高清走势请打开【富途专业看盘终端】*")
-
-    send_pushplus_wechat_alert(msg_title, "\n".join(md))
+    send_success = send_pushplus_wechat_alert(msg_title, "\n".join(md))
+    if send_success:
+        targets_history.update(pending_target_updates)
+        if weather_changed:
+            history["weather"] = current_weather
+        save_alert_history(history)
+        print(f"  [+] 📱 微信预警成功推送并持久化冷却状态 ({len(pending_target_updates)} 项)")
+    else:
+        save_alert_history(history)
+        print("  [!] 📱 微信推送未成功确认，保留预警重试资格 (不更新冷却时间戳)")
 
 def generate_and_sync_notifications(macro_data, stocks_data, weather_info, now_str):
     """
@@ -2871,7 +2967,7 @@ def generate_macro_radar_html(macro_data, weather_info, history_dict, update_tim
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="refresh" content="180">
-    <title>宏观大盘司令塔 · 全局水温看板 (12只核心ETF)</title>
+    <title>宏观大盘司令塔 · 全局水温看板 (16只核心ETF · 全网70只标的)</title>
     <style>
         body {{
             background-color: #0b0e14;
@@ -3006,7 +3102,7 @@ def generate_macro_radar_html(macro_data, weather_info, history_dict, update_tim
         <div>
             <h1>🏛️ 宏观大盘司令塔 · 全局水温看板</h1>
             <div style="font-size: 12px; color: #6b7280; margin-top: 6px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
-                <span>大盘基准: QQQM / SPY / DIA / IWM | 行业风向: SMH / IGV | 避险流动性: TLT / GLD / QQQI / VIXY</span>
+                <span>全网 70 只标的监控 (16 只 ETF + 54 只核心个股) | 大盘基准: QQQM / SPY / DIA / IWM | 行业风向: SMH / IGV | 避险: TLT / GLD / VIXY</span>
                 <span style="color:#60a5fa;">⏱️ 自动刷新: 每3分钟 (180s)</span>
                 <span>最近更新: {update_time_str}</span>
                 {live_badge_html}
@@ -3016,6 +3112,7 @@ def generate_macro_radar_html(macro_data, weather_info, history_dict, update_tim
             <a href="futu_pro_terminal.html" target="_blank" style="background: rgba(255,105,0,0.15); border: 1px solid rgba(255,105,0,0.4); color: #ff6900;">🐮 富途全周期看盘</a>
             <a href="predict_radar_5y.html" target="_blank" style="background: rgba(188,140,255,0.16); border: 1px solid rgba(188,140,255,0.45); color: #d8b4fe; font-weight: 700;">⚡ AI 5年预测雷达</a>
             <a href="stocks_radar.html" target="_blank">🎯 核心个股雷达</a>
+            <a href="backtest_report_5y.html" target="_blank" style="background: rgba(59,130,246,0.15); border: 1px solid rgba(59,130,246,0.4); color: #60a5fa; font-weight: 700;">🛡️ 5Y回测</a>
         </div>
     </div>
 
@@ -3251,7 +3348,7 @@ def generate_stocks_radar_html(stocks_data, history_dict, update_time_str="", ha
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="refresh" content="180">
-    <title>核心个股碎股雷达 · 黄金坑作战与进攻看板 ({len(stocks_data)}只标的)</title>
+    <title>核心个股碎股雷达 · 黄金坑作战与进攻看板 ({len(stocks_data)}只标的 · 全网70只标的)</title>
     <style>
         body {{
             background-color: #0b0e14;
@@ -3367,7 +3464,7 @@ def generate_stocks_radar_html(stocks_data, history_dict, update_time_str="", ha
 <body>
     <div class="header">
         <div>
-            <h1>🎯 核心个股碎股雷达 · {len(stocks_data)}只标的实战看板</h1>
+            <h1>🎯 核心个股碎股雷达 · {len(stocks_data)}只标的实战看板 (全网 70 只标的 · 16 ETF + 54 个股)</h1>
             <div style="font-size: 12px; color: #6b7280; margin-top: 6px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
                 <span>覆盖赛道: 芯片算力 / 商业AI / 新算力云 / AI能源核电 / 液冷服务器 / 光通信 / 太空商业 / 存储闪存 / 物理AI安全 / 经典蓝筹</span>
                 <span style="color:#60a5fa;">⏱️ 自动刷新: 每3分钟 (180s)</span>
@@ -3379,6 +3476,7 @@ def generate_stocks_radar_html(stocks_data, history_dict, update_time_str="", ha
             <a href="futu_pro_terminal.html" target="_blank" style="background: rgba(255,105,0,0.15); border: 1px solid rgba(255,105,0,0.4); color: #ff6900;">🐮 富途全周期看盘</a>
             <a href="predict_radar_5y.html" target="_blank" style="background: rgba(188,140,255,0.16); border: 1px solid rgba(188,140,255,0.45); color: #d8b4fe; font-weight: 700;">⚡ AI 5年预测雷达</a>
             <a href="macro_radar.html" target="_blank">🏛️ 宏观司令塔</a>
+            <a href="backtest_report_5y.html" target="_blank" style="background: rgba(59,130,246,0.15); border: 1px solid rgba(59,130,246,0.4); color: #60a5fa; font-weight: 700;">🛡️ 5Y回测</a>
         </div>
     </div>
 
@@ -3391,7 +3489,7 @@ def generate_stocks_radar_html(stocks_data, history_dict, update_time_str="", ha
         </div>
         <div class="card">
             <div class="card-title">🟢 黄金坑就位与进攻机会</div>
-            <div class="card-value" style="color: #00e676;">{sum(1 for s in stocks_data if s['is_pit'])} <span style="font-size: 14px; color: #888;">/ {len(stocks_data)} 只</span></div>
+            <div class="card-value" style="color: #00e676;">{sum(1 for s in stocks_data if s.get('is_pit') and not s.get('is_crash_halt') and not s.get('is_cooling_halt') and not s.get('is_inverse_hedge'))} <span style="font-size: 14px; color: #888;">/ {len(stocks_data)} 只</span></div>
             <div class="card-sub">现价进入 0.5 ~ 0.618 斐波那契回撤低吸防守带且 RSI < 52</div>
         </div>
         <div class="card">
@@ -3612,9 +3710,9 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
     print(f"[*] 🕒 当前美东市场时段状态: 【{session_name}】")
 
     # 2. 并发秒级拉取 Finnhub 实时报价 (max_workers=2, 稳态间隔防 429)
-    # 免费额度 60次/分。全标的 64 只，必须 100% 优先保障 15 只宏观大盘基准 ETF (QQQM/SMH/SPY等决定气象与黄金坑闸门) + 43 只核心科技股 = 58 只走 Finnhub；其余 6 只低波防守股走 Yahoo 5m RTH 实时穿透
-    _defensive_6 = {"KO", "PEP", "MCD", "AXP", "V", "CCXI", "LLY", "MRNA", "NKE", "HPE"}
-    finnhub_tickers = [tk for tk in all_tickers if tk not in _defensive_6 or (user_portfolio and tk in user_portfolio)][:60]
+    # 免费额度 60次/分。全标的 70 只 (16 ETF + 54 股票)，优先保障 16 只宏观行业 ETF + 44 只核心科技股；10 只低波防守股走 Yahoo 5m RTH 实时穿透
+    DEFENSIVE_10_TICKERS = {"KO", "PEP", "MCD", "AXP", "V", "CCXI", "LLY", "MRNA", "NKE", "HPE"}
+    finnhub_tickers = [tk for tk in all_tickers if tk not in DEFENSIVE_10_TICKERS or (user_portfolio and tk in user_portfolio)][:60]
     realtime_quotes = fetch_finnhub_quotes_batch(finnhub_tickers, FINNHUB_API_KEY) if FINNHUB_API_KEY else {}
 
     # 2.5 批量拉取 5 分钟级日内指标 (VWAP / 5m RSI / 5m RVOL) 与盘前盘后最新成交价
@@ -3668,9 +3766,15 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
             else:
                 df_raw = history_dict[ticker]
                 rth_c = intraday_map.get(ticker, {}).get("rth_close", 0.0)
+                rth_date = intraday_map.get(ticker, {}).get("rth_date")
+                last_daily_date = str(df_raw.index[-1].date()) if hasattr(df_raw.index[-1], "date") else str(df_raw.index[-1])[:10]
                 if rth_c > 0:
-                    last = float(rth_c)
-                    prev_c = float(df_raw["Close"].iloc[-1]) if abs(rth_c - float(df_raw["Close"].iloc[-1])) > 0.01 else (float(df_raw["Close"].iloc[-2]) if len(df_raw) >= 2 else last)
+                    if (rth_date and last_daily_date == rth_date) or (session_code in ["POST_MARKET", "OVERNIGHT", "WEEKEND", "PRE_MARKET"] and len(df_raw) >= 2):
+                        prev_c = float(df_raw["Close"].iloc[-2]) if len(df_raw) >= 2 else float(df_raw["Close"].iloc[-1])
+                        last = float(df_raw["Close"].iloc[-1]) if session_code in ["POST_MARKET", "OVERNIGHT", "WEEKEND"] else float(rth_c)
+                    else:
+                        prev_c = float(df_raw["Close"].iloc[-1])
+                        last = float(rth_c)
                     change = last - prev_c
                     pct_change = (change / prev_c) * 100 if prev_c > 0 else 0.0
                     is_realtime = True
@@ -3854,9 +3958,15 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
             else:
                 df_raw = history_dict[ticker]
                 rth_c = intraday_map.get(ticker, {}).get("rth_close", 0.0)
+                rth_date = intraday_map.get(ticker, {}).get("rth_date")
+                last_daily_date = str(df_raw.index[-1].date()) if hasattr(df_raw.index[-1], "date") else str(df_raw.index[-1])[:10]
                 if rth_c > 0:
-                    last = float(rth_c)
-                    prev_c = float(df_raw["Close"].iloc[-1]) if abs(rth_c - float(df_raw["Close"].iloc[-1])) > 0.01 else (float(df_raw["Close"].iloc[-2]) if len(df_raw) >= 2 else last)
+                    if (rth_date and last_daily_date == rth_date) or (session_code in ["POST_MARKET", "OVERNIGHT", "WEEKEND", "PRE_MARKET"] and len(df_raw) >= 2):
+                        prev_c = float(df_raw["Close"].iloc[-2]) if len(df_raw) >= 2 else float(df_raw["Close"].iloc[-1])
+                        last = float(df_raw["Close"].iloc[-1]) if session_code in ["POST_MARKET", "OVERNIGHT", "WEEKEND"] else float(rth_c)
+                    else:
+                        prev_c = float(df_raw["Close"].iloc[-1])
+                        last = float(rth_c)
                     change = last - prev_c
                     pct_change = (change / prev_c) * 100 if prev_c > 0 else 0.0
                     is_realtime = True
@@ -4161,6 +4271,23 @@ def main():
         while time.time() < end_time:
             c_start = time.time()
             now_ts = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+            # 🛡️ 云端 Actions 互斥检测：如果由 GITHUB_ACTIONS 运行，检查是否有本地开发者的最新提交 (<15分钟)
+            if os.environ.get("GITHUB_ACTIONS") == "true":
+                try:
+                    subprocess.run(["git", "fetch", "origin", "main", "--quiet"], check=False)
+                    res = subprocess.run(["git", "log", "-1", "--format=%ae|%ct", "origin/main"], capture_output=True, text=True, check=False)
+                    if res.returncode == 0 and res.stdout.strip():
+                        parts = res.stdout.strip().split("|", 1)
+                        if len(parts) == 2:
+                            author_email, c_time_str = parts
+                            diff_sec = time.time() - float(c_time_str)
+                            if author_email != "actions@github.com" and diff_sec < 900:
+                                print(f"[!] 🛡️ 检测到本地客户端活跃提交 ({author_email}, {int(diff_sec)}s 前)，云端 Actions 优雅退出！")
+                                sys.exit(0)
+                except Exception:
+                    pass
+
             print(f"\n" + "-" * 75)
             print(f"⏱️ [{now_ts}] [第 {round_idx} 轮] 执行全市场 {interval_sec} 秒极速同步与期权扫描...")
             print("-" * 75)

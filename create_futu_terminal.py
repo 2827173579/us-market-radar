@@ -90,6 +90,8 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                     item["is_etf"] = is_etf
                     if tk in live_lookup:
                         lv = live_lookup[tk]
+                        item["is_crash_halt"] = bool(lv.get("is_crash_halt", False))
+                        item["is_cooling_halt"] = bool(lv.get("is_cooling_halt", False))
                         live_p = float(lv.get("active_price") or lv.get("last") or item.get("latest_price", 100.0))
                         if live_p > 0:
                             item["latest_price"] = round(live_p, 2)
@@ -140,11 +142,14 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                             item["calibrated_win_rate_pct"] = new_cal
 
                         item["macro_temp"] = w_status
+                        is_halt = bool(item.get("is_crash_halt") or item.get("is_cooling_halt"))
                         is_broken = bool(item.get("is_broken", False))
                         raw_prob_pct = float(item.get("predicted_win_rate_pct", 50.0))
                         cal_prob_pct = float(item.get("calibrated_win_rate_pct", 50.0))
                         eval_prob_pct = max(raw_prob_pct, cal_prob_pct)
-                        if is_broken:
+                        if is_halt:
+                            item["action"] = "🚨 暴跌熔断·严禁左侧接刀"
+                        elif is_broken:
                             item["action"] = "🚨 破位飞刀·严禁左侧抄底"
                         elif is_storm:
                             if raw_prob_pct >= 50.0 and cal_prob_pct >= 55.0:
@@ -164,7 +169,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
 
                 all_preds.sort(
                     key=lambda x: (
-                        2 if x.get("is_etf") else (1 if x.get("is_broken") else 0),
+                        2 if x.get("is_etf") else (1 if (x.get("is_broken") or x.get("is_crash_halt") or x.get("is_cooling_halt")) else 0),
                         -float(x.get("calibrated_win_rate_pct", 0.0)),
                         -float(x.get("predicted_win_rate_pct", 0.0))
                     )
@@ -183,9 +188,16 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                     ai_predictions["kpi"]["data_mode"] = f"Finnhub 秒级实时 ({session_name})" if has_realtime else "yfinance 最新收盘价底模"
                 if "macro_weather" in ai_predictions and weather_info:
                     ai_predictions["macro_weather"]["status"] = w_status
-                    ai_predictions["macro_weather"]["qqqm_bias_ma50"] = round(float(weather_info.get("qqqm_bias", 0.0)), 2)
-                    ai_predictions["macro_weather"]["smh_bias_ma50"] = round(float(weather_info.get("smh_bias", 0.0)), 2)
-                    ai_predictions["macro_weather"]["vixy_pos_60"] = round(float(weather_info.get("vixy_pos_60", 50.0)) / 100.0 if float(weather_info.get("vixy_pos_60", 0.5)) > 1.5 else float(weather_info.get("vixy_pos_60", 0.5)), 2)
+                    q_bias = round(float(weather_info.get("qqqm_bias", 0.0)), 2)
+                    s_bias = round(float(weather_info.get("smh_bias", 0.0)), 2)
+                    ai_predictions["macro_weather"]["qqqm_bias"] = q_bias
+                    ai_predictions["macro_weather"]["smh_bias"] = s_bias
+                    ai_predictions["macro_weather"]["qqqm_bias_ma50"] = q_bias
+                    ai_predictions["macro_weather"]["smh_bias_ma50"] = s_bias
+                    raw_vixy = weather_info.get("vixy_pos_60", 50.0)
+                    v_pos = round(float(raw_vixy) / 100.0 if float(raw_vixy) > 1.5 else float(raw_vixy), 2)
+                    ai_predictions["macro_weather"]["vixy_pos"] = v_pos
+                    ai_predictions["macro_weather"]["vixy_pos_60"] = v_pos
 
                 with open(ai_file, "w", encoding="utf-8") as wf:
                     json.dump(ai_predictions, wf, ensure_ascii=False, indent=2)
@@ -234,7 +246,16 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             try {{
                 var cleanPath = window.location.pathname;
                 var searchParams = new URLSearchParams(window.location.search);
+                // 清理跳转残留，防止强制复位
+                searchParams.delete('symbol');
+                searchParams.delete('ticker');
                 searchParams.set('_t', Date.now());
+
+                // 刷新前即时保存左侧滚动条与当前各状态
+                var wl = document.getElementById("watchlistContainer");
+                if (wl) {{
+                    localStorage.setItem("futu_watchlist_scroll", wl.scrollTop);
+                }}
                 window.location.replace(cleanPath + '?' + searchParams.toString() + window.location.hash);
             }} catch(e) {{
                 window.location.reload();
@@ -247,8 +268,8 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
     <meta name="apple-mobile-web-app-title" content="富途雷达">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="theme-color" content="#0b0e14">
-    <link rel="manifest" href="/manifest.json">
-    <title>富途牛牛风格 · 专业全周期量化看盘终端 (Pro Terminal · 55标的全量版)</title>
+    <link rel="manifest" href="manifest.json">
+    <title>富途牛牛风格 · 专业全周期量化看盘终端 (Pro Terminal · 70标的全量版)</title>
     <style>
         * {{
             box-sizing: border-box;
@@ -1978,7 +1999,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             }})
             .catch(e => {{}});
 
-        // TradingView 交易所标的代码映射 (全量 65 只)
+        // TradingView 交易所标的代码映射 (全量 70 只)
         const SYMBOL_MAP = {{
             "QQQM": "NASDAQ:QQQM",
             "SPY": "AMEX:SPY",
@@ -2011,6 +2032,8 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             "NBIS": "NASDAQ:NBIS",
             "VST": "NYSE:VST",
             "BE": "NYSE:BE",
+            "NOW": "NYSE:NOW",
+            "APLD": "NASDAQ:APLD",
             "CRDO": "NASDAQ:CRDO",
             "COHR": "NYSE:COHR",
             "MRVL": "NASDAQ:MRVL",
@@ -2033,6 +2056,8 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             "FPS": "NYSE:FPS",
             "CRWD": "NASDAQ:CRWD",
             "MSTR": "NASDAQ:MSTR",
+            "COIN": "NASDAQ:COIN",
+            "MARA": "NASDAQ:MARA",
             "WDC": "NASDAQ:WDC",
             "SNDK": "NASDAQ:SNDK",
             "SKHY": "NASDAQ:SKHY",
@@ -2182,7 +2207,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 if (filter === "all" || filter === "stocks") match = true;
                 else if (filter === "ai_top" && Boolean(aiByTicker[s.ticker])) match = true;
                 else if (filter === "starred" && targetWatchlist.includes(s.ticker)) match = true;
-                else if (filter === "pit" && (s.is_pit || (s.pit_status && (s.pit_status.includes("坑内") || s.pit_status.includes("黄金坑"))) || (s.signal && s.signal.includes("黄金坑")) || (s.dist_to_pit !== undefined && s.dist_to_pit <= 0.0 && s.dist_to_pit >= -8.0))) match = true;
+                else if (filter === "pit" && !s.is_crash_halt && !s.is_cooling_halt && !s.is_inverse_hedge && (s.is_pit || (s.pit_status && (s.pit_status.includes("坑内") || s.pit_status.includes("黄金坑"))) || (s.signal && s.signal.includes("黄金坑")) || (s.dist_to_pit !== undefined && s.dist_to_pit <= 0.0 && s.dist_to_pit >= -8.0))) match = true;
                 else if (filter === "take_profit" && (s.is_take_profit || (s.signal && (s.signal.includes("止盈") || s.signal.includes("冲顶"))))) match = true;
                 else if (filter === "stop" && (s.is_stop || s.is_deep_pullback || (s.signal && (s.signal.includes("破位") || s.signal.includes("跌破") || s.signal.includes("回踩"))))) match = true;
                 else if (filter === "芯片与半导体" && (s.cat === "芯片算力" || s.cat === "晶圆代工" || s.cat === "制造设备" || s.cat === "通信芯片" || s.cat === "芯片半导体")) match = true;
@@ -2207,7 +2232,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 let match = false;
                 if (filter === "all" || filter === "macro") match = true;
                 else if (filter === "starred" && targetWatchlist.includes(t)) match = true;
-                else if (filter === "pit" && (m.is_pit || (m.signal && m.signal.includes("黄金坑")) || (m.pit_status && (m.pit_status.includes("坑内") || m.pit_status.includes("黄金坑"))) || (m.dist_to_pit !== undefined && m.dist_to_pit <= 0.0 && m.dist_to_pit >= -8.0))) match = true;
+                else if (filter === "pit" && !m.is_crash_halt && !m.is_cooling_halt && !m.is_inverse_hedge && !["SQQQ", "SOXS", "VIXY"].includes(t) && (m.is_pit || (m.signal && m.signal.includes("黄金坑")) || (m.pit_status && (m.pit_status.includes("坑内") || m.pit_status.includes("黄金坑"))) || (m.dist_to_pit !== undefined && m.dist_to_pit <= 0.0 && m.dist_to_pit >= -8.0))) match = true;
                 else if (filter === "take_profit" && (m.is_take_profit || (m.signal && (m.signal.includes("止盈") || m.signal.includes("超买") || m.signal.includes("冲顶"))))) match = true;
                 else if (filter === "stop" && (m.is_stop || m.is_deep_pullback || (m.signal && (m.signal.includes("破位") || m.signal.includes("跌破") || m.signal.includes("回踩"))))) match = true;
                 else if (filter === "芯片与半导体" && (t === "SMH" || t === "SOXX" || t === "SOXL" || t === "SOXS" || t === "KORU")) match = true;
@@ -2345,22 +2370,20 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                     </div>
                 `;
 
-                div.onclick = () => selectTicker(item.ticker);
+                div.onclick = () => selectTicker(item.ticker, true);
                 container.appendChild(div);
             }});
         }}
 
         // 切换当前选中股票
-        function selectTicker(ticker) {{
+        function selectTicker(ticker, fromUserClick = false) {{
             currentTicker = ticker;
             try {{
                 localStorage.setItem("lastSelectedTicker", ticker);
             }} catch(e) {{}}
 
-
-
-            // 📱 手机端联动：若在行情列表视图下点击了标的，自动跳到 K线 视窗查看
-            if (window.innerWidth <= 768 && currentMobileTab === "watchlist") {{
+            // 📱 手机端联动：仅当用户在行情列表视图下主动点击了标的时，才自动跳到 K线 视窗查看
+            if (fromUserClick && window.innerWidth <= 768 && currentMobileTab === "watchlist") {{
                 switchMobileTab("chart");
             }}
 
@@ -2935,7 +2958,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                             actBanner.style.background = "rgba(88, 166, 255, 0.16)";
                             actBanner.style.borderColor = "rgba(88, 166, 255, 0.45)";
                             actText.style.color = "#58a6ff";
-                        }} else if ((aiItem.action || "").includes("🛡️")) {{
+                        }} else if ((aiItem.action || "").includes("🛡️") || (aiItem.action || "").includes("🚨")) {{
                             actBanner.style.background = "rgba(248, 81, 73, 0.14)";
                             actBanner.style.borderColor = "rgba(248, 81, 73, 0.42)";
                             actText.style.color = "#f87171";
@@ -3055,6 +3078,11 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 currentInterval = this.getAttribute("data-period");
                 currentStyle = this.getAttribute("data-style") || "1";
 
+                try {{
+                    localStorage.setItem("futu_kline_period", currentInterval);
+                    localStorage.setItem("futu_kline_style", currentStyle);
+                }} catch(e) {{}}
+
                 loadTvWidget(currentTicker, currentInterval, currentStyle);
             }});
         }});
@@ -3085,6 +3113,11 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 currentStyle = "1";
                 minMenu.classList.remove("show");
 
+                try {{
+                    localStorage.setItem("futu_kline_period", currentInterval);
+                    localStorage.setItem("futu_kline_style", currentStyle);
+                }} catch(e) {{}}
+
                 loadTvWidget(currentTicker, currentInterval, currentStyle);
             }});
         }});
@@ -3099,7 +3132,11 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             tab.addEventListener("click", function() {{
                 document.querySelectorAll(".w-tab").forEach(t => t.classList.remove("active"));
                 this.classList.add("active");
-                renderWatchlist(this.getAttribute("data-filter"));
+                const f = this.getAttribute("data-filter");
+                try {{
+                    localStorage.setItem("futu_watchlist_filter", f);
+                }} catch(e) {{}}
+                renderWatchlist(f);
             }});
         }});
 
@@ -3107,6 +3144,9 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
         let currentMobileTab = "watchlist";
         function switchMobileTab(tab) {{
             currentMobileTab = tab;
+            try {{
+                localStorage.setItem("futu_mobile_tab", tab);
+            }} catch(e) {{}}
             document.querySelectorAll(".m-nav-tab").forEach(t => {{
                 t.classList.toggle("active", t.getAttribute("data-tab") === tab);
             }});
@@ -3135,6 +3175,12 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 this.classList.add("active");
                 currentInterval = this.getAttribute("data-period");
                 currentStyle = this.getAttribute("data-style") || "1";
+
+                try {{
+                    localStorage.setItem("futu_kline_period", currentInterval);
+                    localStorage.setItem("futu_kline_style", currentStyle);
+                }} catch(e) {{}}
+
                 loadTvWidget(currentTicker, currentInterval, currentStyle);
             }});
         }});
@@ -3154,6 +3200,9 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
 
         // 右侧面板卡片分类筛选 (解决拥挤，一键精简)
         function filterRightCards(cat) {{
+            try {{
+                localStorage.setItem("futu_right_panel_tab", cat);
+            }} catch(e) {{}}
             document.querySelectorAll(".p-filter-pill").forEach(p => {{
                 p.classList.toggle("active", p.getAttribute("data-filter") === cat);
             }});
@@ -3758,7 +3807,36 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
 
         // 页面启动执行
         window.addEventListener("DOMContentLoaded", function() {{
-            renderWatchlist("all");
+            // 1. 还原左侧分类过滤 Tab
+            let savedFilter = "all";
+            try {{
+                savedFilter = localStorage.getItem("futu_watchlist_filter") || "all";
+            }} catch(e) {{}}
+            document.querySelectorAll(".w-tab").forEach(t => {{
+                t.classList.toggle("active", t.getAttribute("data-filter") === savedFilter);
+            }});
+            renderWatchlist(savedFilter);
+
+            // 2. 还原左侧列表滚动位置
+            const wlContainer = document.getElementById("watchlistContainer");
+            if (wlContainer) {{
+                wlContainer.addEventListener("scroll", function() {{
+                    try {{
+                        localStorage.setItem("futu_watchlist_scroll", wlContainer.scrollTop);
+                    }} catch(e) {{}}
+                }}, {{ passive: true }});
+                
+                try {{
+                    const savedScroll = localStorage.getItem("futu_watchlist_scroll");
+                    if (savedScroll) {{
+                        setTimeout(() => {{
+                            wlContainer.scrollTop = parseInt(savedScroll, 10);
+                        }}, 60);
+                    }}
+                }} catch(e) {{}}
+            }}
+
+            // 3. 确定并还原当前选中标的，同时清理 URL 参数
             let initTicker = "INTC";
             try {{
                 const urlParams = new URLSearchParams(window.location.search);
@@ -3766,19 +3844,66 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 const savedT = localStorage.getItem("lastSelectedTicker");
                 if (urlSym && (STOCKS_DATA.some(s => s.ticker === urlSym) || MACRO_DATA[urlSym])) {{
                     initTicker = urlSym;
+                    localStorage.setItem("lastSelectedTicker", urlSym);
+                    // 清理 URL 参数，防止 60 秒后强制回溯
+                    urlParams.delete("symbol");
+                    urlParams.delete("ticker");
+                    const newQuery = urlParams.toString();
+                    const cleanUrl = window.location.pathname + (newQuery ? "?" + newQuery : "") + window.location.hash;
+                    window.history.replaceState(null, "", cleanUrl);
                 }} else if (savedT && (STOCKS_DATA.some(s => s.ticker === savedT) || MACRO_DATA[savedT])) {{
                     initTicker = savedT;
                 }}
             }} catch(e) {{}}
-            selectTicker(initTicker);
+
+            // 4. 还原 K 线周期与样式
+            try {{
+                const savedPeriod = localStorage.getItem("futu_kline_period");
+                const savedStyle = localStorage.getItem("futu_kline_style");
+                if (savedPeriod) {{
+                    currentInterval = savedPeriod;
+                    currentStyle = savedStyle || "1";
+                    document.querySelectorAll(".period-tab").forEach(t => {{
+                        t.classList.toggle("active", t.getAttribute("data-period") === currentInterval);
+                    }});
+                    document.querySelectorAll(".m-period-tab").forEach(t => {{
+                        t.classList.toggle("active", t.getAttribute("data-period") === currentInterval);
+                    }});
+                    const minItem = document.querySelector(`.dropdown-item[data-period="${{currentInterval}}"]`);
+                    if (minItem) {{
+                        document.querySelectorAll(".dropdown-item").forEach(d => d.classList.remove("active"));
+                        minItem.classList.add("active");
+                        const mb = document.getElementById("minDropdownBtn");
+                        if (mb) mb.classList.add("active");
+                        const ml = document.getElementById("currentMinLabel");
+                        if (ml) ml.innerText = minItem.getAttribute("data-label");
+                    }}
+                }}
+            }} catch(e) {{}}
+
+            // 5. 选中标的 (fromUserClick=false，不破坏移动端当前视图)
+            selectTicker(initTicker, false);
+
+            // 6. 还原右侧功能面板 Tab
+            try {{
+                const savedRightTab = localStorage.getItem("futu_right_panel_tab");
+                if (savedRightTab && savedRightTab !== "all") {{
+                    filterRightCards(savedRightTab);
+                }}
+            }} catch(e) {{}}
+
+            // 7. 📱 手机端初始视图自适应：还原记忆 Tab，杜绝强制跳回自选列表
+            if (window.innerWidth <= 768) {{
+                let savedMobileTab = "watchlist";
+                try {{
+                    savedMobileTab = localStorage.getItem("futu_mobile_tab") || "watchlist";
+                }} catch(e) {{}}
+                switchMobileTab(savedMobileTab);
+            }}
+
             renderNotifList("all");
             updateSoundUI();
             setInterval(pollLatestNotifications, 20000);
-
-            // 📱 手机端初始视图自适应：默认展开行情自选列表
-            if (window.innerWidth <= 768) {{
-                switchMobileTab("watchlist");
-            }}
         }});
     </script>
 </body>

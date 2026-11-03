@@ -1,0 +1,16 @@
+{
+  "name": "富途牛牛专业全周期看盘终端",
+  "short_name": "富途雷达",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#0b0e14",
+  "theme_color": "#0b0e14",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23ff6900'/><text y='70' x='15' font-size='65'>⚡</text></svg>",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml"
+    }
+  ]
+}

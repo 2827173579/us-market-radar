@@ -766,6 +766,79 @@ class TestV32CircuitBreaker(unittest.TestCase):
         self.assertFalse(res.get("intraday_entry_ready"))
         self.assertEqual(res.get("rth_low"), 94.8, "rth_low must be preserved in evaluate_intraday_entry output dict")
 
+    def test_scenario_10_gap_down_blocks_prior_right_turn(self):
+        """Scenario 10: V3.2 Cooldown Gap Defense (Defect 5 Fix).
+        If yesterday had a green rebound (prev_is_right_turn=True, prev_crash_3d=True),
+        but today experiences a new gap-down crash (pct_change <= -3.8% or ext_pct <= -4.5%),
+        unlock_a must be blocked and cooling halt must remain active:
+        - When pct_change = -4.0% (with ATR% = 2.5%, base crash thresh = -5.0%),
+          stock is not a single-day ATR crash halt, but unlock_a MUST evaluate to False.
+          is_cooling_halt remains True and optimal_limit remains 0.0.
+        - When ext_pct = -4.8% (gap-down <= -4.5%), circuit breaker halts entry,
+          optimal_limit must be 0.0 and intraday_entry_ready must be False.
+        """
+        intra_info = {
+            "vwap": 97.0,
+            "rsi_5m": 35.0,
+            "prev_rsi_5m": 36.0,
+            "min_rsi_5m_30m": 30.0,
+            "rvol_5m": 1.2,
+            "is_5m_green": False,
+            "is_5m_higher_low": False,
+            "rth_low": 95.5,
+            "rth_high": 99.0,
+            "rth_close": 96.0,
+        }
+
+        # Case A: Regular market crash today pct_change = -4.0% (<= -3.8%)
+        # With active_price=96.0, atr=2.4 (atr_pct=2.5%), crash_thresh = -5.0%.
+        # -4.0% > -5.0%, so is_crash_halt is False, but 3-day cooling halt MUST be maintained!
+        res_a = evaluate_intraday_entry(
+            active_price=96.0,
+            fib_low=95.0,
+            fib_high=105.0,
+            ma50=98.0,
+            is_pit=True,
+            is_stop=False,
+            dist_to_pit=0.0,
+            intra_info=intra_info,
+            pct_change=-4.0,
+            atr=2.4,
+            prev_crash_3d=True,
+            crash_3d=False,
+            prev_is_right_turn=True,  # Yesterday was green!
+            ema5=97.5,
+            prev_crash_body=5.0,
+            prev_crash_close=99.0,
+        )
+        self.assertFalse(res_a.get("is_crash_halt"), "pct_change=-4.0% > crash_thresh=-5.0% does not trigger is_crash_halt")
+        self.assertTrue(res_a.get("is_cooling_halt"), "pct_change=-4.0% <= -3.8% MUST block unlock_a and keep is_cooling_halt=True")
+        self.assertEqual(res_a.get("optimal_limit"), 0.0, "Optimal limit MUST be 0.0 while in cooling halt")
+        self.assertFalse(res_a.get("intraday_entry_ready"), "intraday_entry_ready MUST be False during cooling halt")
+
+        # Case B: Extended hours gap-down ext_pct = -4.8% (<= -4.5%)
+        res_b = evaluate_intraday_entry(
+            active_price=98.0,
+            fib_low=95.0,
+            fib_high=105.0,
+            ma50=98.0,
+            is_pit=True,
+            is_stop=False,
+            dist_to_pit=0.0,
+            intra_info=intra_info,
+            pct_change=-1.0,
+            ext_pct=-4.8,
+            atr=2.0,
+            prev_crash_3d=True,
+            crash_3d=False,
+            prev_is_right_turn=True,
+            ema5=98.5,
+        )
+        self.assertTrue(res_b.get("is_crash_halt"), "ext_pct=-4.8% <= -4.5% triggers is_crash_halt")
+        self.assertEqual(res_b.get("optimal_limit"), 0.0, "Optimal limit MUST be 0.0 during crash halt")
+        self.assertFalse(res_b.get("intraday_entry_ready"), "intraday_entry_ready MUST be False")
+
+
 
 # ==============================================================================
 # Main Runner with Summary Reporting

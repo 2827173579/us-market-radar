@@ -20,6 +20,34 @@ if sys.platform == 'win32' and __name__ == '__main__':
         sys.stderr.reconfigure(encoding='utf-8', errors='replace')
     except Exception:
         pass
+
+def load_env_file(env_path=None):
+    """安全加载本地 .env 文件至 os.environ"""
+    if env_path is None:
+        env_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), ".env")
+    try:
+        from dotenv import load_dotenv
+        if os.path.exists(env_path):
+            load_dotenv(env_path, override=False)
+            return
+    except ImportError:
+        pass
+    if os.path.exists(env_path):
+        try:
+            with open(env_path, "r", encoding="utf-8") as f:
+                for line in f:
+                    line = line.strip()
+                    if not line or line.startswith("#") or "=" not in line:
+                        continue
+                    k, v = line.split("=", 1)
+                    k, v = k.strip(), v.strip().strip("'\"")
+                    if k and k not in os.environ:
+                        os.environ[k] = v
+        except Exception:
+            pass
+
+load_env_file()
+
 import time
 import json
 import random
@@ -959,7 +987,7 @@ def fetch_finnhub_realtime_quotes(tickers: List[str]) -> Dict[str, Dict]:
                                    "high": float, "low": float, "open": float, 
                                    "prev_close": float, "timestamp": int}}
     """
-    api_key = os.environ.get("FINNHUB_API_KEY") or "d9be4q1r01qmk4glemdgd9be4q1r01qmk4gleme0"
+    api_key = os.environ.get("FINNHUB_API_KEY", "").strip()
     if not api_key:
         print("[!] 未配置 Finnhub API Key，将回退 yfinance 最新收盘价！")
         return {}

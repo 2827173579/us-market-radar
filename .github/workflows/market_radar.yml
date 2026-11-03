@@ -41,7 +41,7 @@ jobs:
       - name: 检出仓库代码
         uses: actions/checkout@v4
         with:
-          fetch-depth: 1
+          fetch-depth: 10
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: 设置 Python 3.10 环境
@@ -58,12 +58,20 @@ jobs:
       - name: 🛡️ 本地优先检测 (本地活跃时云端避让防限流与冲突)
         id: check_local
         run: |
-          LAST_COMMIT_TS=$(git log -1 --format=%ct)
           NOW_TS=$(date +%s)
-          DIFF_SEC=$((NOW_TS - LAST_COMMIT_TS))
-          echo "距上次实盘推送时间: ${DIFF_SEC} 秒"
-          if [ "$DIFF_SEC" -lt 600 ] && [ "${{ github.event_name }}" = "schedule" ]; then
-            echo "::notice ::✅ 本地守护进程正在活跃运行中 (最近推送于 ${DIFF_SEC}s 前)，云端定时任务自动避让，规避 429 API 限流与重复告警。"
+          SKIP=false
+          while IFS="|" read -r email ts; do
+            if [ -n "$email" ] && [ "$email" != "actions@github.com" ]; then
+              DIFF=$((NOW_TS - ts))
+              echo "检测到非 actions 提交: $email, 提交于 ${DIFF} 秒前"
+              if [ "$DIFF" -ge 0 ] && [ "$DIFF" -lt 900 ]; then
+                SKIP=true
+                echo "::notice ::🛡️ 检测到本地客户端活跃提交 ($email, ${DIFF}s 前)，云端 Actions 优雅避让！"
+                break
+              fi
+            fi
+          done < <(git log -n 10 --format="%ae|%ct")
+          if [ "$SKIP" = "true" ] && [ "${{ github.event_name }}" = "schedule" ]; then
             echo "skip_run=true" >> $GITHUB_OUTPUT
           else
             echo "skip_run=false" >> $GITHUB_OUTPUT
