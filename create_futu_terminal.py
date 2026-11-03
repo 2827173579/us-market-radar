@@ -82,9 +82,12 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             is_storm = ("🌧️" in w_status) or ("暴雨" in w_status)
 
             all_preds = ai_predictions.get("all_predictions", [])
+            pure_etf_set = {"QQQM", "SPY", "DIA", "IWM", "SMH", "SOXX", "SOXL", "KORU", "IGV", "TLT", "GLD", "QQQI", "VIXY", "SQQQ", "SOXS", "IBIT"}
             if all_preds and live_lookup:
                 for item in all_preds:
                     tk = item.get("ticker", "")
+                    is_etf = bool(item.get("is_etf", tk in pure_etf_set))
+                    item["is_etf"] = is_etf
                     if tk in live_lookup:
                         lv = live_lookup[tk]
                         live_p = float(lv.get("active_price") or lv.get("last") or item.get("latest_price", 100.0))
@@ -102,23 +105,48 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                             item["target_profit_pct"] = round(u_mult * 100.0, 1)
                             item["stop_loss_pct"] = round(l_mult * 100.0, 1)
 
-                            base_raw = float(item.get("base_raw_prob_pct", item.get("predicted_win_rate_pct", 50.0)))
-                            item["base_raw_prob_pct"] = base_raw
+                            live_bias = float(lv.get("bias", item.get("bias_ma50", 0.0)))
+                            live_rsi = float(lv.get("rsi", item.get("rsi_14", 50.0)))
+                            item["bias_ma50"] = round(live_bias, 2)
+                            item["rsi_14"] = round(live_rsi, 1)
+
+                            model_raw = float(item.get("model_raw_prob_pct", item.get("base_raw_prob_pct", item.get("predicted_win_rate_pct", 50.0))))
+                            item["model_raw_prob_pct"] = model_raw
                             pct_chg = float(lv.get("ext_pct") if lv.get("ext_price", 0) > 0 else lv.get("pct_change", 0.0))
-                            live_rsi = float(lv.get("rsi", 50.0))
-                            intra_adj = float(np.clip(pct_chg * 0.18 + (50.0 - live_rsi) * 0.04, -2.5, 2.5))
-                            new_raw = round(float(np.clip(base_raw + intra_adj, 15.0, 88.0)), 1)
-                            sec_pf = float(item.get("sector_pf", 1.30))
-                            mult = float(np.clip(sec_pf / 1.30, 0.75, 1.15))
-                            new_cal = round(float(np.clip(new_raw * mult, 15.0, 95.0)), 1)
+                            intra_adj = float(np.clip(pct_chg * 0.12, -1.5, 1.5))
+
+                            is_broken = (not is_etf) and (live_bias < -12.0)
+                            item["is_broken"] = is_broken
+                            if is_broken:
+                                new_raw = round(float(np.clip(model_raw + intra_adj, 15.0, 85.0)), 1)
+                                breakdown_mult = float(np.clip(0.82 - max(0.0, (-12.0 - live_bias) * 0.006), 0.68, 0.82))
+                                new_cal = round(float(np.clip(new_raw * breakdown_mult, 15.0, 49.5)), 1)
+                            else:
+                                if -6.5 <= live_bias <= 4.0 and 35.0 <= live_rsi <= 62.0:
+                                    struct_boost = 8.5
+                                elif -12.0 <= live_bias < -6.5 and 30.0 <= live_rsi <= 65.0:
+                                    struct_boost = 6.0
+                                elif 4.0 < live_bias <= 12.0 and 35.0 <= live_rsi <= 68.0:
+                                    struct_boost = 5.0
+                                else:
+                                    struct_boost = 1.5
+                                new_raw = round(float(np.clip(model_raw + struct_boost + intra_adj, 15.0, 88.0)), 1)
+                                sec_pf = float(item.get("sector_pf", 1.30))
+                                mult = float(np.clip(sec_pf / 1.30, 0.75, 1.15))
+                                new_cal = round(float(np.clip(new_raw * mult, 15.0, 95.0)), 1)
+
+                            item["base_raw_prob_pct"] = new_raw
                             item["predicted_win_rate_pct"] = new_raw
                             item["calibrated_win_rate_pct"] = new_cal
 
                         item["macro_temp"] = w_status
+                        is_broken = bool(item.get("is_broken", False))
                         raw_prob_pct = float(item.get("predicted_win_rate_pct", 50.0))
                         cal_prob_pct = float(item.get("calibrated_win_rate_pct", 50.0))
                         eval_prob_pct = max(raw_prob_pct, cal_prob_pct)
-                        if is_storm and (raw_prob_pct < 55.0 or cal_prob_pct < 62.0):
+                        if is_broken:
+                            item["action"] = "🚨 破位飞刀·严禁左侧抄底"
+                        elif is_storm:
                             if raw_prob_pct >= 50.0 and cal_prob_pct >= 55.0:
                                 item["action"] = "🛡️ 暴雨防守·仅极小仓试错"
                             else:
@@ -134,13 +162,20 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                         else:
                             item["action"] = "👀 观望等待"
 
-                all_preds.sort(key=lambda x: (x.get("calibrated_win_rate_pct", 0.0), x.get("predicted_win_rate_pct", 0.0)), reverse=True)
+                all_preds.sort(
+                    key=lambda x: (
+                        2 if x.get("is_etf") else (1 if x.get("is_broken") else 0),
+                        -float(x.get("calibrated_win_rate_pct", 0.0)),
+                        -float(x.get("predicted_win_rate_pct", 0.0))
+                    )
+                )
                 for idx_rk, item in enumerate(all_preds, 1):
                     item["rank"] = idx_rk
 
+                top10_stocks = [p for p in all_preds if not p.get("is_etf")][:10] or all_preds[:10]
                 ai_predictions["all_predictions"] = all_preds
-                ai_predictions["table4"] = all_preds[:10]
-                ai_predictions["top10"] = all_preds[:10]
+                ai_predictions["table4"] = top10_stocks
+                ai_predictions["top10"] = top10_stocks
                 ai_predictions["by_ticker"] = {item["ticker"]: item for item in all_preds}
 
                 if "kpi" in ai_predictions:

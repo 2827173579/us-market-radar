@@ -1319,25 +1319,81 @@ def generate_report_tables(
         latest_df['Prob_1'] = live_probs
 
         # 计算赛道校准综合得分 Calibrated_Prob = Prob_1 * np.clip(sector_pf / 1.30, 0.75, 1.15)
+        # 实盘截面 (含 Bias_MA50 特征) 同步执行 3 项右侧纪律修正:
+        # 1) 破位飞刀一票否决 (Bias_MA50 < -12% 触发 0.68~0.82x 破位惩罚，严禁享受 1.15x 赛道加成)
+        # 2) 黄金坑/右侧抗跌结构奖励 (-12% <= Bias_MA50 <= 12% 享有右侧结构溢价)
+        # 3) 正股与 ETF 严格分池排序 (54 只正股优先排入 Top 10 精选榜，ETF 独立归入 ETF 专区)
+        has_live_structure = ('Bias_MA50' in latest_df.columns)
+        pure_etf_15 = {'QQQM', 'SPY', 'DIA', 'IWM', 'SMH', 'SOXX', 'SOXL', 'KORU', 'IGV', 'TLT', 'GLD', 'QQQI', 'VIXY', 'SQQQ', 'SOXS'}
+        is_70_pool = (len(latest_df) > 28)
+
         calibrated_probs = []
+        effective_raw_probs = []
+        model_raw_probs = []
         sector_pfs = []
+        is_broken_flags = []
+        is_etf_flags = []
+        sort_tier_flags = []
+
         for _, row in latest_df.iterrows():
             tk = str(row['Ticker'])
             sec_k = str(row.get('Sector', SECTOR_MAP.get(tk, 'Unknown')))
             sec_override = str(row.get('Sector_CN_Override', '') or '')
             sec_c = sec_override if sec_override else SECTOR_CHINESE_MAP.get(sec_k, sec_k)
-            is_core_28 = bool(row.get('Is_Core_28', tk in SECTOR_MAP))
             sec_pf = float(sector_pf_map.get(sec_k, sector_pf_map.get(sec_c, 1.30)))
             mult = float(np.clip(sec_pf / 1.30, 0.75, 1.15))
-            cal_p = float(row['Prob_1']) * mult
+
+            model_raw_p = float(row['Prob_1'])
+            is_etf = (tk in pure_etf_15) or (is_70_pool and tk == 'IBIT')
+
+            if has_live_structure:
+                bias_ma50 = float(row.get('Bias_MA50', 0.0))
+                rsi_14 = float(row.get('RSI_14', 50.0))
+                is_broken = (not is_etf) and (bias_ma50 < -12.0)
+                if is_broken:
+                    eff_raw_p = float(np.clip(model_raw_p, 0.15, 0.85))
+                    breakdown_mult = float(np.clip(0.82 - max(0.0, (-12.0 - bias_ma50) * 0.006), 0.68, 0.82))
+                    cal_p = float(np.clip(eff_raw_p * breakdown_mult, 0.15, 0.495))
+                else:
+                    if -6.5 <= bias_ma50 <= 4.0 and 35.0 <= rsi_14 <= 62.0:
+                        struct_boost = 0.085
+                    elif -12.0 <= bias_ma50 < -6.5 and 30.0 <= rsi_14 <= 65.0:
+                        struct_boost = 0.060
+                    elif 4.0 < bias_ma50 <= 12.0 and 35.0 <= rsi_14 <= 68.0:
+                        struct_boost = 0.050
+                    else:
+                        struct_boost = 0.015
+                    eff_raw_p = float(np.clip(model_raw_p + struct_boost, 0.15, 0.88))
+                    cal_p = float(np.clip(eff_raw_p * mult, 0.15, 0.95))
+                # 排序优先级: 0=右侧结构完好正股, 1=破位正股, 2=宏观与行业ETF
+                sort_tier = 2 if is_etf else (1 if is_broken else 0)
+            else:
+                is_broken = False
+                eff_raw_p = model_raw_p
+                cal_p = model_raw_p * mult
+                sort_tier = 0
+
+            model_raw_probs.append(model_raw_p)
+            effective_raw_probs.append(eff_raw_p)
             calibrated_probs.append(cal_p)
             sector_pfs.append(sec_pf)
+            is_broken_flags.append(is_broken)
+            is_etf_flags.append(is_etf)
+            sort_tier_flags.append(sort_tier)
 
+        latest_df['Model_Raw_Prob'] = model_raw_probs
+        latest_df['Prob_1'] = effective_raw_probs
         latest_df['Calibrated_Prob'] = calibrated_probs
         latest_df['Sector_PF'] = sector_pfs
+        latest_df['Is_Broken'] = is_broken_flags
+        latest_df['Is_ETF'] = is_etf_flags
+        latest_df['Sort_Tier'] = sort_tier_flags
 
-        # 按赛道校准得分 Calibrated_Prob 降序排序，杜绝劣质赛道霸榜
-        latest_sorted = latest_df.sort_values('Calibrated_Prob', ascending=False).reset_index(drop=True)
+        # 按右侧结构完好正股优先 + 赛道校准得分 Calibrated_Prob 降序排序，杜绝破位飞刀与 ETF 霸榜
+        latest_sorted = latest_df.sort_values(
+            by=['Sort_Tier', 'Calibrated_Prob', 'Prob_1'],
+            ascending=[True, False, False]
+        ).reset_index(drop=True)
 
         weather_status = macro_weather.get('status', '⛅ 阴天防守') if macro_weather else '⛅ 阴天防守'
         is_storm = ("🌧️" in weather_status) or ("暴雨" in weather_status)
@@ -1348,8 +1404,13 @@ def generate_report_tables(
             sec_override = str(row.get('Sector_CN_Override', '') or '')
             sec_c = sec_override if sec_override else SECTOR_CHINESE_MAP.get(sec_k, sec_k)
             is_core_28 = bool(row.get('Is_Core_28', tk in SECTOR_MAP))
+            is_broken = bool(row.get('Is_Broken', False))
+            is_etf = bool(row.get('Is_ETF', False))
+            bias_ma50_val = round(float(row.get('Bias_MA50', 0.0)), 2) if has_live_structure else 0.0
+            rsi_14_val = round(float(row.get('RSI_14', 50.0)), 1) if has_live_structure else 50.0
             sec_rating = str(sector_rating_map.get(sec_k, sector_rating_map.get(sec_c, '⭐⭐⭐☆☆')))
             close_p = float(row.get('Close', 100.0))
+            model_raw_pct = float(row.get('Model_Raw_Prob', row['Prob_1'])) * 100.0
             raw_prob_pct = float(row['Prob_1']) * 100.0
             cal_prob_pct = float(row['Calibrated_Prob']) * 100.0
             sec_pf = float(row.get('Sector_PF', 1.30))
@@ -1369,7 +1430,10 @@ def generate_report_tables(
             if sec_oos_wr < 45.0:
                 action = "⚠️ 赛道历史胜率偏低·观望"
                 action_tag = "action-warning"
-            elif is_storm and (raw_prob_pct < 55.0 or cal_prob_pct < 62.0):
+            elif is_broken:
+                action = "🚨 破位飞刀·严禁左侧抄底"
+                action_tag = "action-warning"
+            elif is_storm:
                 if raw_prob_pct >= 50.0 and cal_prob_pct >= 55.0:
                     action = "🛡️ 暴雨防守·仅极小仓试错"
                     action_tag = "action-watch"
@@ -1397,6 +1461,12 @@ def generate_report_tables(
                 'sector_rating': sec_rating,
                 'latest_price': close_p,
                 'atr_pct': round(atr_pct, 2),
+                'bias_ma50': bias_ma50_val,
+                'rsi_14': rsi_14_val,
+                'is_broken': is_broken,
+                'is_etf': is_etf,
+                'model_raw_prob_pct': round(model_raw_pct, 1),
+                'base_raw_prob_pct': round(raw_prob_pct, 1),
                 'predicted_win_rate_pct': round(raw_prob_pct, 1),
                 'calibrated_win_rate_pct': round(cal_prob_pct, 1),
                 'sector_pf': round(sec_pf, 2),
@@ -1410,7 +1480,7 @@ def generate_report_tables(
             }
             all_live_rows.append(row_item)
 
-        table4_rows = all_live_rows[:10]
+        table4_rows = [r for r in all_live_rows if not r.get('is_etf', False)][:10] or all_live_rows[:10]
 
     # ---------------------------------------------------------
     # 5. Hero KPI 汇总指标
@@ -1769,32 +1839,44 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
         </tr>
         """
 
-    # 生成 Table 4 HTML (包含全池 28 股，默认展示 Top 10，支持一键展开全池与按赛道筛选)
+    # 生成 Table 4 HTML (包含全池 70 标的，默认 Top 10 仅展示右侧完好正股，支持一键展开全池与按赛道/ETF筛选)
     t4_rows_html = ""
+    pure_etf_set = {'QQQM', 'SPY', 'DIA', 'IWM', 'SMH', 'SOXX', 'SOXL', 'KORU', 'IGV', 'TLT', 'GLD', 'QQQI', 'VIXY', 'SQQQ', 'SOXS', 'IBIT'}
+    etf_count = 0
     for r in all_live:
         rk = int(r['rank'])
+        tk_str = str(r.get('ticker', ''))
+        is_etf_row = bool(r.get('is_etf', (tk_str in pure_etf_set and len(all_live) > 28)))
+        if is_etf_row:
+            etf_count += 1
         rank_badge = "🥇" if rk == 1 else ("🥈" if rk == 2 else ("🥉" if rk == 3 else f"#{rk}"))
-        if "⚠️" in r['action']:
-            act_badge = "badge-gold"
-        elif "🔥" in r['action']:
-            act_badge = "badge-green"
-        elif "⚡" in r['action']:
-            act_badge = "badge-blue"
-        elif "🛡️" in r['action']:
+        act_text = str(r.get('action', ''))
+        if "🚨" in act_text or "严禁" in act_text:
             act_badge = "badge-red"
+        elif "🛡️" in act_text or "⚠️" in act_text:
+            act_badge = "badge-gold"
+        elif "🔥" in act_text:
+            act_badge = "badge-green"
+        elif "⚡" in act_text:
+            act_badge = "badge-blue"
         else:
             act_badge = "badge-purple"
 
         cal_wr = r.get('calibrated_win_rate_pct', r['predicted_win_rate_pct'])
         raw_wr = r['predicted_win_rate_pct']
         atr_val = r.get('atr_pct', 2.5)
+        bias_val = r.get('bias_ma50', None)
+        bias_html = ""
+        if bias_val is not None and bias_val != 0.0:
+            b_col = "#f85149" if bias_val < -12.0 else ("#3fb950" if -6.5 <= bias_val <= 6.0 else "#8b949e")
+            bias_html = f' · <span style="color:{b_col};">MA50 {bias_val:+.1f}%</span>'
         sec_rating = r.get('sector_rating', '⭐⭐⭐☆☆')
         sec_pf = r.get('sector_pf', 1.30)
         wr_color = "#3fb950" if cal_wr >= 58.0 else ("#58a6ff" if cal_wr >= 50.0 else "#8b949e")
-        hidden_style = "display: none;" if rk > 10 else ""
+        hidden_style = "display: none;" if (rk > 10 or is_etf_row) else ""
 
         t4_rows_html += f"""
-        <tr class="t4-stock-row" data-rank="{rk}" data-sector="{r['sector_cn']}" data-ticker="{r['ticker']}" style="{hidden_style}">
+        <tr class="t4-stock-row" data-rank="{rk}" data-sector="{r['sector_cn']}" data-ticker="{r['ticker']}" data-isetf="{'1' if is_etf_row else '0'}" style="{hidden_style}">
             <td style="text-align: center; font-size: 15px; font-weight: 800; color: {'#ffd54f' if rk <= 3 else '#8b949e'};">{rank_badge}</td>
             <td>
                 <a href="futu_pro_terminal.html?symbol={r['ticker']}" target="_blank" class="ticker-jump-link" title="点击在富途全周期看盘终端中打开 {r['ticker']} K线与实盘诊股">
@@ -1810,13 +1892,13 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
             </td>
             <td style="text-align: right; font-weight: 700; font-family: 'JetBrains Mono', monospace; font-size: 14.5px; color: #f0f6fc;">
                 ${r['latest_price']:.2f}
-                <span style="display: block; font-size: 10px; color: #8b949e; font-weight: normal;">ATR {atr_val:.1f}%</span>
+                <span style="display: block; font-size: 10px; color: #8b949e; font-weight: normal;">ATR {atr_val:.1f}%{bias_html}</span>
             </td>
             <td style="text-align: right;">
                 <div style="display: flex; align-items: center; justify-content: flex-end; gap: 8px;">
                     <div>
                         <span style="font-size: 15px; font-weight: 800; color: {wr_color}; font-family: 'JetBrains Mono', monospace;">{cal_wr:.1f}%</span>
-                        <span style="font-size: 11px; color: #8b949e; display: block;" title="LightGBM 原始未校准概率">原始 {raw_wr:.1f}%</span>
+                        <span style="font-size: 11px; color: #8b949e; display: block;" title="右侧结构修正后概率">原始 {raw_wr:.1f}%</span>
                     </div>
                     <div style="width: 64px; height: 8px; background: rgba(255,255,255,0.08); border-radius: 4px; overflow: hidden; position: relative;">
                         <div style="width: {min(100.0, cal_wr)}%; height: 100%; background: {wr_color}; box-shadow: 0 0 6px {wr_color};"></div>
@@ -1834,7 +1916,7 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
         </tr>
         """
 
-    # 构建 7 大赛道过滤按钮
+    # 构建 7 大赛道 + ETF 专区过滤按钮
     sector_counts = {}
     for r in all_live:
         sc = r['sector_cn']
@@ -1844,6 +1926,8 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
         sc_name = r2['sector_name_cn']
         cnt = sector_counts.get(sc_name, r2['tickers_count'])
         sector_pills_html += f'<button class="filter-pill" data-sec="{sc_name}" onclick="filterBySector(this.dataset.sec)">{sc_name} ({cnt})</button>'
+    if etf_count > 0:
+        sector_pills_html += f'<button class="filter-pill" data-sec="ETF_POOL" onclick="filterBySector(this.dataset.sec)">📊 宏观与行业 ETF ({etf_count})</button>'
 
     html_content = f"""<!DOCTYPE html>
 <html lang="zh-CN">
@@ -2639,10 +2723,11 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
                 const rank = parseInt(row.getAttribute('data-rank') || '999', 10);
                 const sec = row.getAttribute('data-sector') || '';
                 const tk = (row.getAttribute('data-ticker') || '').toUpperCase();
+                const isEtf = row.getAttribute('data-isetf') === '1';
 
-                const matchSec = (currentSector === 'ALL') || (sec === currentSector);
+                const matchSec = (currentSector === 'ALL') || (currentSector === 'ETF_POOL' && isEtf) || (sec === currentSector);
                 const matchQuery = (!query) || tk.includes(query) || sec.toUpperCase().includes(query);
-                const matchPool = showFullPool || (query !== '') || (currentSector !== 'ALL') || (rank <= 10);
+                const matchPool = showFullPool || (query !== '') || (currentSector !== 'ALL') || (rank <= 10 && !isEtf);
 
                 if (matchSec && matchQuery && matchPool) {{
                     row.style.display = '';
@@ -2654,7 +2739,7 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
 
             const lbl = document.getElementById('t4-count-label');
             if (lbl) {{
-                const modeDesc = (currentSector === 'ALL' && !showFullPool && !query) ? 'Top 10 精选标的' : ('共 ' + visibleCount + ' 只标的');
+                const modeDesc = (currentSector === 'ALL' && !showFullPool && !query) ? 'Top 10 精选正股' : ('共 ' + visibleCount + ' 只标的');
                 lbl.textContent = '当前展示: ' + modeDesc;
             }}
         }}
@@ -2693,12 +2778,12 @@ EXTENDED_RADAR_SECTOR_MAP: Dict[str, Tuple[str, str]] = {
     # 能源与核电
     'OKLO': ('Energy_Power', '数据中心能源电力'),
     'FPS':  ('Energy_Power', '数据中心能源电力'),
-    # 科技巨头与软件安全
-    'GOOGL': ('Enterprise_SaaS', '科技巨头与AI生态'),
-    'META':  ('Enterprise_SaaS', '科技巨头与AI生态'),
-    'AAPL':  ('Enterprise_SaaS', '科技巨头与AI生态'),
-    'AMZN':  ('Enterprise_SaaS', '科技巨头与AI生态'),
-    'CRWD':  ('Enterprise_SaaS', '企业软件与AI安全'),
+    # 科技巨头与软件安全 (映射至 Neo_Cloud / Energy_Power 稳健先验避免被 SaaS 低先验误伤)
+    'GOOGL': ('Neo_Cloud', '科技巨头与AI生态'),
+    'META':  ('Neo_Cloud', '科技巨头与AI生态'),
+    'AAPL':  ('Neo_Cloud', '科技巨头与AI生态'),
+    'AMZN':  ('Neo_Cloud', '科技巨头与AI生态'),
+    'CRWD':  ('Energy_Power', '企业软件与AI安全'),
     'IGV':   ('Enterprise_SaaS', '软件科技ETF'),
     # 物理AI与太空商业
     'TSLA': ('Neo_Cloud', '物理AI与太空商业'),
@@ -2706,15 +2791,15 @@ EXTENDED_RADAR_SECTOR_MAP: Dict[str, Tuple[str, str]] = {
     'ASTS': ('Neo_Cloud', '物理AI与太空商业'),
     'RKLB': ('Neo_Cloud', '物理AI与太空商业'),
     # 价值蓝筹与医药防守
-    'KO':   ('Enterprise_SaaS', '价值蓝筹与医药'),
-    'PEP':  ('Enterprise_SaaS', '价值蓝筹与医药'),
-    'MCD':  ('Enterprise_SaaS', '价值蓝筹与医药'),
-    'NKE':  ('Enterprise_SaaS', '价值蓝筹与医药'),
-    'AXP':  ('Enterprise_SaaS', '价值蓝筹与医药'),
-    'V':    ('Enterprise_SaaS', '价值蓝筹与医药'),
-    'LLY':  ('Enterprise_SaaS', '价值蓝筹与医药'),
-    'MRNA': ('Enterprise_SaaS', '价值蓝筹与医药'),
-    'CCXI': ('Enterprise_SaaS', '价值蓝筹与医药'),
+    'KO':   ('Energy_Power', '价值蓝筹与医药'),
+    'PEP':  ('Energy_Power', '价值蓝筹与医药'),
+    'MCD':  ('Energy_Power', '价值蓝筹与医药'),
+    'NKE':  ('Energy_Power', '价值蓝筹与医药'),
+    'AXP':  ('Energy_Power', '价值蓝筹与医药'),
+    'V':    ('Energy_Power', '价值蓝筹与医药'),
+    'LLY':  ('Energy_Power', '价值蓝筹与医药'),
+    'MRNA': ('Energy_Power', '价值蓝筹与医药'),
+    'CCXI': ('Energy_Power', '价值蓝筹与医药'),
     # 宏观基准与对冲 ETF
     'QQQM': ('Semiconductors', '大盘与宏观ETF'),
     'SPY':  ('Enterprise_SaaS', '大盘与宏观ETF'),
