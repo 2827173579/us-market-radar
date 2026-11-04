@@ -3,7 +3,7 @@
   "targets": {
     "INTC": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793754142.734983
+      "last_notified_at": 1793761677.319776
     },
     "PORT_INTC": {
       "state": "INTC_CRITICAL_STOP",
@@ -131,7 +131,7 @@
     },
     "LITE": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793754142.734983
+      "last_notified_at": 1793761677.319776
     },
     "HPE": {
       "state": "NORMAL",
@@ -235,7 +235,7 @@
     },
     "PORT_SOXS": {
       "state": "SOXS_HEDGE_CLIMAX",
-      "last_notified_at": 1793754142.734983
+      "last_notified_at": 1793761677.319776
     },
     "MARA": {
       "state": "STOP_LOSS",
