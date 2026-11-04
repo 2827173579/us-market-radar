@@ -110,8 +110,8 @@
       "last_notified_at": 0.0
     },
     "TSM": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1793752245.872333
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "MU": {
       "state": "NORMAL",
@@ -126,8 +126,8 @@
       "last_notified_at": 0.0
     },
     "META": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1793752141.87501
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "LITE": {
       "state": "STOP_LOSS",
@@ -234,8 +234,8 @@
       "last_notified_at": 0.0
     },
     "PORT_SOXS": {
-      "state": "PORT_NORMAL",
-      "last_notified_at": 0.0
+      "state": "SOXS_HEDGE_CLIMAX",
+      "last_notified_at": 1793752381.1373622
     },
     "MARA": {
       "state": "STOP_LOSS",
