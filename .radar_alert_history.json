@@ -7,7 +7,7 @@
     },
     "PORT_INTC": {
       "state": "INTC_CRITICAL_STOP",
-      "last_notified_at": 1793749852.6559691
+      "last_notified_at": 1793757067.1495087
     },
     "AAOI": {
       "state": "STOP_LOSS",
@@ -47,7 +47,7 @@
     },
     "MRVL": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793749852.6559691
+      "last_notified_at": 1793757067.1495087
     },
     "STX": {
       "state": "STOP_LOSS",
@@ -219,7 +219,7 @@
     },
     "PORT_SOXL": {
       "state": "SOXL_CRITICAL_STOP",
-      "last_notified_at": 1793749852.6559691
+      "last_notified_at": 1793757067.1495087
     },
     "KORU": {
       "state": "NORMAL",
