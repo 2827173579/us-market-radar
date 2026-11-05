@@ -3710,6 +3710,7 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
 # 全域 70 标的扩展映射表 (覆盖主看盘终端全部 54 只个股 + 16 只 ETF，映射到 7 大核心赛道先验以复用 OOS 校准乘数)
 EXTENDED_RADAR_SECTOR_MAP: Dict[str, Tuple[str, str]] = {
     # 半导体与算力硬件 / 液冷服务器
+    'QCOM': ('Semiconductors', '通信芯片与端侧AI'),
     'INTC': ('Semiconductors', '半导体与设备'),
     'VRT':  ('Semiconductors', 'AI液冷与服务器'),
     'DELL': ('Semiconductors', 'AI液冷与服务器'),

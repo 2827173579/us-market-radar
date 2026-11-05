@@ -71,6 +71,7 @@ MONITORED_TARGETS = {
         "TSM":   {"name": "台积电", "sub": "全球先进制程代工绝对垄断", "cat": "晶圆代工", "cost": 0.0, "shares": 0.0, "base_val": 185.0},
         "AMD":   {"name": "AMD", "sub": "算力双雄与x86挑战者", "cat": "芯片算力", "cost": 0.0, "shares": 0.0, "base_val": 155.0},
         "AVGO":  {"name": "博通", "sub": "网络交换与ASIC定制芯片之王", "cat": "通信芯片", "cost": 0.0, "shares": 0.0, "base_val": 170.0},
+        "QCOM":  {"name": "高通", "sub": "全球移动基带与端侧AI芯片霸主", "cat": "通信芯片", "cost": 0.0, "shares": 0.0, "base_val": 160.0},
         "ASML":  {"name": "阿斯麦", "sub": "光刻机绝对霸主", "cat": "制造设备", "cost": 0.0, "shares": 0.0, "base_val": 820.0},
         "AMAT":  {"name": "应用材料", "sub": "半导体薄膜沉积与设备龙头", "cat": "制造设备", "cost": 0.0, "shares": 0.0, "base_val": 210.0},
         
@@ -3156,7 +3157,7 @@ def generate_macro_radar_html(macro_data, weather_info, history_dict, update_tim
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="refresh" content="180">
-    <title>宏观大盘司令塔 · 全局水温看板 (16只核心ETF · 全网70只标的)</title>
+    <title>宏观大盘司令塔 · 全局水温看板 (16只核心ETF · 全网71只标的)</title>
     <style>
         body {{
             background-color: #0b0e14;
@@ -3291,7 +3292,7 @@ def generate_macro_radar_html(macro_data, weather_info, history_dict, update_tim
         <div>
             <h1>🏛️ 宏观大盘司令塔 · 全局水温看板</h1>
             <div style="font-size: 12px; color: #6b7280; margin-top: 6px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
-                <span>全网 70 只标的监控 (16 只 ETF + 54 只核心个股) | 大盘基准: QQQM / SPY / DIA / IWM | 行业风向: SMH / IGV | 避险: TLT / GLD / VIXY</span>
+                <span>全网 71 只标的监控 (16 只 ETF + 55 只核心个股) | 大盘基准: QQQM / SPY / DIA / IWM | 行业风向: SMH / IGV | 避险: TLT / GLD / VIXY</span>
                 <span style="color:#60a5fa;">⏱️ 自动刷新: 每3分钟 (180s)</span>
                 <span>最近更新: {update_time_str}</span>
                 {live_badge_html}
@@ -3537,7 +3538,7 @@ def generate_stocks_radar_html(stocks_data, history_dict, update_time_str="", ha
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="refresh" content="180">
-    <title>核心个股碎股雷达 · 黄金坑作战与进攻看板 ({len(stocks_data)}只标的 · 全网70只标的)</title>
+    <title>核心个股碎股雷达 · 黄金坑作战与进攻看板 ({len(stocks_data)}只标的 · 全网71只标的)</title>
     <style>
         body {{
             background-color: #0b0e14;
@@ -3653,7 +3654,7 @@ def generate_stocks_radar_html(stocks_data, history_dict, update_time_str="", ha
 <body>
     <div class="header">
         <div>
-            <h1>🎯 核心个股碎股雷达 · {len(stocks_data)}只标的实战看板 (全网 70 只标的 · 16 ETF + 54 个股)</h1>
+            <h1>🎯 核心个股碎股雷达 · {len(stocks_data)}只标的实战看板 (全网 71 只标的 · 16 ETF + 55 个股)</h1>
             <div style="font-size: 12px; color: #6b7280; margin-top: 6px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
                 <span>覆盖赛道: 芯片算力 / 商业AI / 新算力云 / AI能源核电 / 液冷服务器 / 光通信 / 太空商业 / 存储闪存 / 物理AI安全 / 经典蓝筹</span>
                 <span style="color:#60a5fa;">⏱️ 自动刷新: 每3分钟 (180s)</span>
@@ -3900,8 +3901,8 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
 
     # 2. 并发秒级拉取 Finnhub 实时报价 (max_workers=2, 稳态间隔防 429)
     # 免费额度 60次/分。全标的 70 只 (16 ETF + 54 股票)，优先保障 16 只宏观行业 ETF + 44 只核心科技股；10 只低波防守股走 Yahoo 5m RTH 实时穿透
-    DEFENSIVE_10_TICKERS = {"KO", "PEP", "MCD", "AXP", "V", "CCXI", "LLY", "MRNA", "NKE", "HPE"}
-    finnhub_tickers = [tk for tk in all_tickers if tk not in DEFENSIVE_10_TICKERS or (user_portfolio and tk in user_portfolio)][:60]
+    DEFENSIVE_11_TICKERS = {"KO", "PEP", "MCD", "AXP", "V", "CCXI", "LLY", "MRNA", "NKE", "HPE", "FPS"}
+    finnhub_tickers = [tk for tk in all_tickers if tk not in DEFENSIVE_11_TICKERS or (user_portfolio and tk in user_portfolio)][:60]
     realtime_quotes = fetch_finnhub_quotes_batch(finnhub_tickers, FINNHUB_API_KEY) if FINNHUB_API_KEY else {}
 
     # 2.5 批量拉取 5 分钟级日内指标 (VWAP / 5m RSI / 5m RVOL) 与盘前盘后最新成交价

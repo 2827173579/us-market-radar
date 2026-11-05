@@ -77,7 +77,8 @@ class TestDefects67910(unittest.TestCase):
         self.assertIn('"APLD": "NASDAQ:APLD"', self.terminal_html)
         self.assertIn('"COIN": "NASDAQ:COIN"', self.terminal_html)
         self.assertIn('"MARA": "NASDAQ:MARA"', self.terminal_html)
-        self.assertIn("TradingView 交易所标的代码映射 (全量 70 只)", self.terminal_html)
+        self.assertIn('"QCOM": "NASDAQ:QCOM"', self.terminal_html)
+        self.assertIn("TradingView 交易所标的代码映射 (全量 71 只)", self.terminal_html)
 
     # -------------------------------------------------------------------------
     # Defect 7: Golden Pit Filter & Card Stats Leakage Prevention
@@ -153,7 +154,7 @@ class TestDefects67910(unittest.TestCase):
             macro_html = f.read()
         self.assertIn('🛡️ 5Y回测', macro_html)
         self.assertIn('backtest_report_5y.html', macro_html)
-        self.assertIn('16只核心ETF · 全网70只标的', macro_html)
+        self.assertIn('16只核心ETF · 全网71只标的', macro_html)
 
         imr.generate_stocks_radar_html(
             stocks_data=self.stocks_sample,
@@ -164,7 +165,7 @@ class TestDefects67910(unittest.TestCase):
             stocks_html = f.read()
         self.assertIn('🛡️ 5Y回测', stocks_html)
         self.assertIn('backtest_report_5y.html', stocks_html)
-        self.assertIn('全网 70 只标的 · 16 ETF + 54 个股', stocks_html)
+        self.assertIn('全网 71 只标的 · 16 ETF + 55 个股', stocks_html)
 
     def test_defect_10_readme_documentation(self):
         """Verify README.md contains GitHub Pages URLs, PWA setup, and V3.1/V3.2 metrics."""

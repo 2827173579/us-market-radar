@@ -2061,7 +2061,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             }})
             .catch(e => {{}});
 
-        // TradingView 交易所标的代码映射 (全量 70 只)
+        // TradingView 交易所标的代码映射 (全量 71 只)
         const SYMBOL_MAP = {{
             "QQQM": "NASDAQ:QQQM",
             "SPY": "AMEX:SPY",
@@ -2082,6 +2082,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             "TSM": "NYSE:TSM",
             "AMD": "NASDAQ:AMD",
             "AVGO": "NASDAQ:AVGO",
+            "QCOM": "NASDAQ:QCOM",
             "ASML": "NASDAQ:ASML",
             "AMAT": "NASDAQ:AMAT",
             "MSFT": "NASDAQ:MSFT",
