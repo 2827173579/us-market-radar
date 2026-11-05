@@ -4,7 +4,7 @@
     "profit_factor": 1.41,
     "top_sector": "存储芯片 (⭐⭐⭐⭐⭐)",
     "top_feature": "SMH_IGV_Ratio_Bias (12.28%)",
-    "sync_time": "2026-11-05 10:00:40",
+    "sync_time": "2026-11-05 10:01:40",
     "data_mode": "Finnhub 秒级实时 (🌌 美股夜盘)",
     "is_realtime": false
   },
@@ -622,7 +622,7 @@
       "iv_atm": 61.9,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 4
+      "short_rank": 5
     },
     {
       "rank": 2,
@@ -666,7 +666,7 @@
       "iv_atm": 12.5,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 15
+      "short_rank": 16
     },
     {
       "rank": 3,
@@ -710,7 +710,7 @@
       "iv_atm": 68.0,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 6
+      "short_rank": 7
     },
     {
       "rank": 4,
@@ -754,7 +754,7 @@
       "iv_atm": 35.9,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 19
+      "short_rank": 20
     },
     {
       "rank": 5,
@@ -802,6 +802,50 @@
     },
     {
       "rank": 6,
+      "ticker": "MSTR",
+      "sector_key": "Crypto_Proxy",
+      "sector_cn": "加密币股代理",
+      "sector_rating": "⭐⭐⭐☆☆",
+      "latest_price": 144.37,
+      "current_price": 130.50999450683594,
+      "atr_pct": 6.41,
+      "bias_ma50": 0.15,
+      "rsi_14": 44.4,
+      "is_broken": false,
+      "is_etf": false,
+      "is_crash_halt": false,
+      "is_cooling_halt": false,
+      "macro_temp": "🌧️ 暴雨空仓",
+      "model_raw_prob_pct": 40.5,
+      "base_raw_prob_pct": 49.8,
+      "predicted_win_rate_pct": 49.8,
+      "calibrated_win_rate_pct": 49.4,
+      "sector_pf": 1.29,
+      "target_profit_price": 154.52,
+      "target_profit_pct": 7.0,
+      "stop_loss_price": 136.86,
+      "stop_loss_pct": 5.2,
+      "action": "🛡️ 暴雨空仓·严禁左侧接刀",
+      "action_tag": "action-watch",
+      "model_raw_short_prob_pct": 63.1,
+      "calibrated_short_win_rate_pct": 72.8,
+      "short_entry_price": 130.50999450683594,
+      "short_target_profit_price": 134.23,
+      "short_target_profit_pct": 7.0,
+      "short_stop_loss_price": 151.89,
+      "short_stop_loss_pct": 5.2,
+      "dollar_pcr": 1.33,
+      "pcr": 0.89,
+      "pcr_sentiment": "🟠 机构谨慎防跌",
+      "put_wall": 130.0,
+      "call_wall": 135.0,
+      "iv_atm": 112.6,
+      "short_action": "🩸 极高胜率·顺势做空/买Put",
+      "short_action_tag": "short-action-strong",
+      "short_rank": 2
+    },
+    {
+      "rank": 7,
       "ticker": "AXP",
       "sector_key": "Energy_Power",
       "sector_cn": "价值蓝筹与医药",
@@ -842,10 +886,10 @@
       "iv_atm": 40.9,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 24
+      "short_rank": 25
     },
     {
-      "rank": 7,
+      "rank": 8,
       "ticker": "KO",
       "sector_key": "Energy_Power",
       "sector_cn": "价值蓝筹与医药",
@@ -886,10 +930,10 @@
       "iv_atm": 31.9,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 17
+      "short_rank": 18
     },
     {
-      "rank": 8,
+      "rank": 9,
       "ticker": "AMZN",
       "sector_key": "Neo_Cloud",
       "sector_cn": "科技巨头与AI生态",
@@ -930,10 +974,10 @@
       "iv_atm": 50.4,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 14
+      "short_rank": 15
     },
     {
-      "rank": 9,
+      "rank": 10,
       "ticker": "MRNA",
       "sector_key": "Energy_Power",
       "sector_cn": "价值蓝筹与医药",
@@ -974,95 +1018,7 @@
       "iv_atm": 135.9,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 25
-    },
-    {
-      "rank": 9,
-      "ticker": "MSTR",
-      "sector_key": "Crypto_Proxy",
-      "sector_cn": "加密币股代理",
-      "sector_rating": "⭐⭐⭐☆☆",
-      "latest_price": 144.29,
-      "current_price": 130.50999450683594,
-      "atr_pct": 6.47,
-      "bias_ma50": -0.13,
-      "rsi_14": 49.7,
-      "is_broken": false,
-      "is_etf": false,
-      "is_crash_halt": false,
-      "is_cooling_halt": false,
-      "macro_temp": "🌧️ 暴雨空仓",
-      "model_raw_prob_pct": 40.5,
-      "base_raw_prob_pct": 49.1,
-      "predicted_win_rate_pct": 49.1,
-      "calibrated_win_rate_pct": 48.7,
-      "sector_pf": 1.29,
-      "target_profit_price": 154.49,
-      "target_profit_pct": 7.1,
-      "stop_loss_price": 136.73,
-      "stop_loss_pct": 5.2,
-      "action": "🛡️ 暴雨空仓·严禁左侧接刀",
-      "action_tag": "action-watch",
-      "model_raw_short_prob_pct": 63.1,
-      "calibrated_short_win_rate_pct": 72.8,
-      "short_entry_price": 130.50999450683594,
-      "short_target_profit_price": 134.09,
-      "short_target_profit_pct": 7.1,
-      "short_stop_loss_price": 151.84,
-      "short_stop_loss_pct": 5.2,
-      "dollar_pcr": 1.33,
-      "pcr": 0.89,
-      "pcr_sentiment": "🟠 机构谨慎防跌",
-      "put_wall": 130.0,
-      "call_wall": 135.0,
-      "iv_atm": 112.6,
-      "short_action": "🩸 极高胜率·顺势做空/买Put",
-      "short_action_tag": "short-action-strong",
-      "short_rank": 1
-    },
-    {
-      "rank": 10,
-      "ticker": "META",
-      "sector_key": "Neo_Cloud",
-      "sector_cn": "科技巨头与AI生态",
-      "sector_rating": "⭐⭐⭐☆☆",
-      "latest_price": 630.19,
-      "current_price": 617.6599731445312,
-      "atr_pct": 3.55,
-      "bias_ma50": -6.25,
-      "rsi_14": 37.0,
-      "is_broken": false,
-      "is_etf": false,
-      "is_crash_halt": false,
-      "is_cooling_halt": false,
-      "macro_temp": "🌧️ 暴雨空仓",
-      "model_raw_prob_pct": 36.8,
-      "base_raw_prob_pct": 45.5,
-      "predicted_win_rate_pct": 45.5,
-      "calibrated_win_rate_pct": 47.3,
-      "sector_pf": 1.35,
-      "target_profit_price": 660.39,
-      "target_profit_pct": 4.8,
-      "stop_loss_price": 607.81,
-      "stop_loss_pct": 3.5,
-      "action": "🛡️ 暴雨空仓·严禁左侧接刀",
-      "action_tag": "action-watch",
-      "model_raw_short_prob_pct": 50.3,
-      "calibrated_short_win_rate_pct": 57.8,
-      "short_entry_price": 617.6599731445312,
-      "short_target_profit_price": 599.98,
-      "short_target_profit_pct": 4.8,
-      "short_stop_loss_price": 652.56,
-      "short_stop_loss_pct": 3.5,
-      "dollar_pcr": 1.96,
-      "pcr": 0.65,
-      "pcr_sentiment": "🔴 资金偏空对冲",
-      "put_wall": 600.0,
-      "call_wall": 620.0,
-      "iv_atm": 60.1,
-      "short_action": "⚡ 逢高反抽沽空/买Put",
-      "short_action_tag": "short-action-rebound",
-      "short_rank": 5
+      "short_rank": 26
     }
   ],
   "top_long": [
@@ -1108,7 +1064,7 @@
       "iv_atm": 61.9,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 4
+      "short_rank": 5
     },
     {
       "rank": 2,
@@ -1152,7 +1108,7 @@
       "iv_atm": 12.5,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 15
+      "short_rank": 16
     },
     {
       "rank": 3,
@@ -1196,7 +1152,7 @@
       "iv_atm": 68.0,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 6
+      "short_rank": 7
     },
     {
       "rank": 4,
@@ -1240,7 +1196,7 @@
       "iv_atm": 35.9,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 19
+      "short_rank": 20
     },
     {
       "rank": 5,
@@ -1288,6 +1244,50 @@
     },
     {
       "rank": 6,
+      "ticker": "MSTR",
+      "sector_key": "Crypto_Proxy",
+      "sector_cn": "加密币股代理",
+      "sector_rating": "⭐⭐⭐☆☆",
+      "latest_price": 144.37,
+      "current_price": 130.50999450683594,
+      "atr_pct": 6.41,
+      "bias_ma50": 0.15,
+      "rsi_14": 44.4,
+      "is_broken": false,
+      "is_etf": false,
+      "is_crash_halt": false,
+      "is_cooling_halt": false,
+      "macro_temp": "🌧️ 暴雨空仓",
+      "model_raw_prob_pct": 40.5,
+      "base_raw_prob_pct": 49.8,
+      "predicted_win_rate_pct": 49.8,
+      "calibrated_win_rate_pct": 49.4,
+      "sector_pf": 1.29,
+      "target_profit_price": 154.52,
+      "target_profit_pct": 7.0,
+      "stop_loss_price": 136.86,
+      "stop_loss_pct": 5.2,
+      "action": "🛡️ 暴雨空仓·严禁左侧接刀",
+      "action_tag": "action-watch",
+      "model_raw_short_prob_pct": 63.1,
+      "calibrated_short_win_rate_pct": 72.8,
+      "short_entry_price": 130.50999450683594,
+      "short_target_profit_price": 134.23,
+      "short_target_profit_pct": 7.0,
+      "short_stop_loss_price": 151.89,
+      "short_stop_loss_pct": 5.2,
+      "dollar_pcr": 1.33,
+      "pcr": 0.89,
+      "pcr_sentiment": "🟠 机构谨慎防跌",
+      "put_wall": 130.0,
+      "call_wall": 135.0,
+      "iv_atm": 112.6,
+      "short_action": "🩸 极高胜率·顺势做空/买Put",
+      "short_action_tag": "short-action-strong",
+      "short_rank": 2
+    },
+    {
+      "rank": 7,
       "ticker": "AXP",
       "sector_key": "Energy_Power",
       "sector_cn": "价值蓝筹与医药",
@@ -1328,10 +1328,10 @@
       "iv_atm": 40.9,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 24
+      "short_rank": 25
     },
     {
-      "rank": 7,
+      "rank": 8,
       "ticker": "KO",
       "sector_key": "Energy_Power",
       "sector_cn": "价值蓝筹与医药",
@@ -1372,10 +1372,10 @@
       "iv_atm": 31.9,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 17
+      "short_rank": 18
     },
     {
-      "rank": 8,
+      "rank": 9,
       "ticker": "AMZN",
       "sector_key": "Neo_Cloud",
       "sector_cn": "科技巨头与AI生态",
@@ -1416,10 +1416,10 @@
       "iv_atm": 50.4,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 14
+      "short_rank": 15
     },
     {
-      "rank": 9,
+      "rank": 10,
       "ticker": "MRNA",
       "sector_key": "Energy_Power",
       "sector_cn": "价值蓝筹与医药",
@@ -1460,95 +1460,7 @@
       "iv_atm": 135.9,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 25
-    },
-    {
-      "rank": 9,
-      "ticker": "MSTR",
-      "sector_key": "Crypto_Proxy",
-      "sector_cn": "加密币股代理",
-      "sector_rating": "⭐⭐⭐☆☆",
-      "latest_price": 144.29,
-      "current_price": 130.50999450683594,
-      "atr_pct": 6.47,
-      "bias_ma50": -0.13,
-      "rsi_14": 49.7,
-      "is_broken": false,
-      "is_etf": false,
-      "is_crash_halt": false,
-      "is_cooling_halt": false,
-      "macro_temp": "🌧️ 暴雨空仓",
-      "model_raw_prob_pct": 40.5,
-      "base_raw_prob_pct": 49.1,
-      "predicted_win_rate_pct": 49.1,
-      "calibrated_win_rate_pct": 48.7,
-      "sector_pf": 1.29,
-      "target_profit_price": 154.49,
-      "target_profit_pct": 7.1,
-      "stop_loss_price": 136.73,
-      "stop_loss_pct": 5.2,
-      "action": "🛡️ 暴雨空仓·严禁左侧接刀",
-      "action_tag": "action-watch",
-      "model_raw_short_prob_pct": 63.1,
-      "calibrated_short_win_rate_pct": 72.8,
-      "short_entry_price": 130.50999450683594,
-      "short_target_profit_price": 134.09,
-      "short_target_profit_pct": 7.1,
-      "short_stop_loss_price": 151.84,
-      "short_stop_loss_pct": 5.2,
-      "dollar_pcr": 1.33,
-      "pcr": 0.89,
-      "pcr_sentiment": "🟠 机构谨慎防跌",
-      "put_wall": 130.0,
-      "call_wall": 135.0,
-      "iv_atm": 112.6,
-      "short_action": "🩸 极高胜率·顺势做空/买Put",
-      "short_action_tag": "short-action-strong",
-      "short_rank": 1
-    },
-    {
-      "rank": 10,
-      "ticker": "META",
-      "sector_key": "Neo_Cloud",
-      "sector_cn": "科技巨头与AI生态",
-      "sector_rating": "⭐⭐⭐☆☆",
-      "latest_price": 630.19,
-      "current_price": 617.6599731445312,
-      "atr_pct": 3.55,
-      "bias_ma50": -6.25,
-      "rsi_14": 37.0,
-      "is_broken": false,
-      "is_etf": false,
-      "is_crash_halt": false,
-      "is_cooling_halt": false,
-      "macro_temp": "🌧️ 暴雨空仓",
-      "model_raw_prob_pct": 36.8,
-      "base_raw_prob_pct": 45.5,
-      "predicted_win_rate_pct": 45.5,
-      "calibrated_win_rate_pct": 47.3,
-      "sector_pf": 1.35,
-      "target_profit_price": 660.39,
-      "target_profit_pct": 4.8,
-      "stop_loss_price": 607.81,
-      "stop_loss_pct": 3.5,
-      "action": "🛡️ 暴雨空仓·严禁左侧接刀",
-      "action_tag": "action-watch",
-      "model_raw_short_prob_pct": 50.3,
-      "calibrated_short_win_rate_pct": 57.8,
-      "short_entry_price": 617.6599731445312,
-      "short_target_profit_price": 599.98,
-      "short_target_profit_pct": 4.8,
-      "short_stop_loss_price": 652.56,
-      "short_stop_loss_pct": 3.5,
-      "dollar_pcr": 1.96,
-      "pcr": 0.65,
-      "pcr_sentiment": "🔴 资金偏空对冲",
-      "put_wall": 600.0,
-      "call_wall": 620.0,
-      "iv_atm": 60.1,
-      "short_action": "⚡ 逢高反抽沽空/买Put",
-      "short_action_tag": "short-action-rebound",
-      "short_rank": 5
+      "short_rank": 26
     }
   ],
   "top_short": [
@@ -1597,7 +1509,51 @@
       "short_rank": 1
     },
     {
-      "rank": 29,
+      "rank": 6,
+      "ticker": "MSTR",
+      "sector_key": "Crypto_Proxy",
+      "sector_cn": "加密币股代理",
+      "sector_rating": "⭐⭐⭐☆☆",
+      "latest_price": 144.37,
+      "current_price": 130.50999450683594,
+      "atr_pct": 6.41,
+      "bias_ma50": 0.15,
+      "rsi_14": 44.4,
+      "is_broken": false,
+      "is_etf": false,
+      "is_crash_halt": false,
+      "is_cooling_halt": false,
+      "macro_temp": "🌧️ 暴雨空仓",
+      "model_raw_prob_pct": 40.5,
+      "base_raw_prob_pct": 49.8,
+      "predicted_win_rate_pct": 49.8,
+      "calibrated_win_rate_pct": 49.4,
+      "sector_pf": 1.29,
+      "target_profit_price": 154.52,
+      "target_profit_pct": 7.0,
+      "stop_loss_price": 136.86,
+      "stop_loss_pct": 5.2,
+      "action": "🛡️ 暴雨空仓·严禁左侧接刀",
+      "action_tag": "action-watch",
+      "model_raw_short_prob_pct": 63.1,
+      "calibrated_short_win_rate_pct": 72.8,
+      "short_entry_price": 130.50999450683594,
+      "short_target_profit_price": 134.23,
+      "short_target_profit_pct": 7.0,
+      "short_stop_loss_price": 151.89,
+      "short_stop_loss_pct": 5.2,
+      "dollar_pcr": 1.33,
+      "pcr": 0.89,
+      "pcr_sentiment": "🟠 机构谨慎防跌",
+      "put_wall": 130.0,
+      "call_wall": 135.0,
+      "iv_atm": 112.6,
+      "short_action": "🩸 极高胜率·顺势做空/买Put",
+      "short_action_tag": "short-action-strong",
+      "short_rank": 2
+    },
+    {
+      "rank": 30,
       "ticker": "COIN",
       "sector_key": "Crypto_Proxy",
       "sector_cn": "加密币股代理",
@@ -1638,10 +1594,10 @@
       "iv_atm": 111.4,
       "short_action": "🩸 极高胜率·顺势做空/买Put",
       "short_action_tag": "short-action-strong",
-      "short_rank": 2
+      "short_rank": 3
     },
     {
-      "rank": 62,
+      "rank": 63,
       "ticker": "GLD",
       "sector_key": "Energy_Power",
       "sector_cn": "大盘与宏观ETF",
@@ -1682,7 +1638,7 @@
       "iv_atm": 33.3,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 3
+      "short_rank": 4
     },
     {
       "rank": 1,
@@ -1726,15 +1682,15 @@
       "iv_atm": 61.9,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 4
+      "short_rank": 5
     },
     {
-      "rank": 10,
+      "rank": 11,
       "ticker": "META",
       "sector_key": "Neo_Cloud",
       "sector_cn": "科技巨头与AI生态",
       "sector_rating": "⭐⭐⭐☆☆",
-      "latest_price": 630.19,
+      "latest_price": 630.2,
       "current_price": 617.6599731445312,
       "atr_pct": 3.55,
       "bias_ma50": -6.25,
@@ -1749,18 +1705,18 @@
       "predicted_win_rate_pct": 45.5,
       "calibrated_win_rate_pct": 47.3,
       "sector_pf": 1.35,
-      "target_profit_price": 660.39,
+      "target_profit_price": 660.4,
       "target_profit_pct": 4.8,
-      "stop_loss_price": 607.81,
+      "stop_loss_price": 607.83,
       "stop_loss_pct": 3.5,
       "action": "🛡️ 暴雨空仓·严禁左侧接刀",
       "action_tag": "action-watch",
       "model_raw_short_prob_pct": 50.3,
       "calibrated_short_win_rate_pct": 57.8,
       "short_entry_price": 617.6599731445312,
-      "short_target_profit_price": 599.98,
+      "short_target_profit_price": 600.0,
       "short_target_profit_pct": 4.8,
-      "short_stop_loss_price": 652.56,
+      "short_stop_loss_price": 652.57,
       "short_stop_loss_pct": 3.5,
       "dollar_pcr": 1.96,
       "pcr": 0.65,
@@ -1770,7 +1726,7 @@
       "iv_atm": 60.1,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 5
+      "short_rank": 6
     },
     {
       "rank": 3,
@@ -1814,10 +1770,10 @@
       "iv_atm": 68.0,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 6
+      "short_rank": 7
     },
     {
-      "rank": 58,
+      "rank": 59,
       "ticker": "QQQM",
       "sector_key": "Semiconductors",
       "sector_cn": "大盘与宏观ETF",
@@ -1858,10 +1814,10 @@
       "iv_atm": 31.5,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 7
+      "short_rank": 8
     },
     {
-      "rank": 68,
+      "rank": 69,
       "ticker": "SPY",
       "sector_key": "Enterprise_SaaS",
       "sector_cn": "大盘与宏观ETF",
@@ -1902,10 +1858,10 @@
       "iv_atm": 26.0,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 8
+      "short_rank": 9
     },
     {
-      "rank": 65,
+      "rank": 66,
       "ticker": "VIXY",
       "sector_key": "Crypto_Proxy",
       "sector_cn": "恐慌与反向对冲",
@@ -1944,50 +1900,6 @@
       "put_wall": 19.0,
       "call_wall": 20.0,
       "iv_atm": 83.5,
-      "short_action": "👀 空头动能不足·观望",
-      "short_action_tag": "short-action-wait",
-      "short_rank": 9
-    },
-    {
-      "rank": 72,
-      "ticker": "SQQQ",
-      "sector_key": "Crypto_Proxy",
-      "sector_cn": "恐慌与反向对冲",
-      "sector_rating": "⭐⭐⭐☆☆",
-      "latest_price": 42.06,
-      "current_price": 40.45989990234375,
-      "atr_pct": 4.82,
-      "bias_ma50": 14.08,
-      "rsi_14": 65.1,
-      "is_broken": false,
-      "is_etf": true,
-      "is_crash_halt": false,
-      "is_cooling_halt": false,
-      "macro_temp": "🌧️ 暴雨空仓",
-      "model_raw_prob_pct": 37.2,
-      "base_raw_prob_pct": 38.5,
-      "predicted_win_rate_pct": 38.5,
-      "calibrated_win_rate_pct": 38.2,
-      "sector_pf": 1.29,
-      "target_profit_price": 44.56,
-      "target_profit_pct": 6.0,
-      "stop_loss_price": 40.21,
-      "stop_loss_pct": 4.4,
-      "action": "🛡️ 暴雨空仓·严禁左侧接刀",
-      "action_tag": "action-watch",
-      "model_raw_short_prob_pct": 60.3,
-      "calibrated_short_win_rate_pct": 53.4,
-      "short_entry_price": 40.45989990234375,
-      "short_target_profit_price": 39.56,
-      "short_target_profit_pct": 6.0,
-      "short_stop_loss_price": 43.91,
-      "short_stop_loss_pct": 4.4,
-      "dollar_pcr": 0.12,
-      "pcr": 0.35,
-      "pcr_sentiment": "🛡️ 买Call对冲(看跌大盘)",
-      "put_wall": 40.0,
-      "call_wall": 42.0,
-      "iv_atm": 138.4,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
       "short_rank": 10
@@ -2036,7 +1948,7 @@
       "iv_atm": 61.9,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 4
+      "short_rank": 5
     },
     {
       "rank": 2,
@@ -2080,7 +1992,7 @@
       "iv_atm": 12.5,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 15
+      "short_rank": 16
     },
     {
       "rank": 3,
@@ -2124,7 +2036,7 @@
       "iv_atm": 68.0,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 6
+      "short_rank": 7
     },
     {
       "rank": 4,
@@ -2168,7 +2080,7 @@
       "iv_atm": 35.9,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 19
+      "short_rank": 20
     },
     {
       "rank": 5,
@@ -2216,6 +2128,50 @@
     },
     {
       "rank": 6,
+      "ticker": "MSTR",
+      "sector_key": "Crypto_Proxy",
+      "sector_cn": "加密币股代理",
+      "sector_rating": "⭐⭐⭐☆☆",
+      "latest_price": 144.37,
+      "current_price": 130.50999450683594,
+      "atr_pct": 6.41,
+      "bias_ma50": 0.15,
+      "rsi_14": 44.4,
+      "is_broken": false,
+      "is_etf": false,
+      "is_crash_halt": false,
+      "is_cooling_halt": false,
+      "macro_temp": "🌧️ 暴雨空仓",
+      "model_raw_prob_pct": 40.5,
+      "base_raw_prob_pct": 49.8,
+      "predicted_win_rate_pct": 49.8,
+      "calibrated_win_rate_pct": 49.4,
+      "sector_pf": 1.29,
+      "target_profit_price": 154.52,
+      "target_profit_pct": 7.0,
+      "stop_loss_price": 136.86,
+      "stop_loss_pct": 5.2,
+      "action": "🛡️ 暴雨空仓·严禁左侧接刀",
+      "action_tag": "action-watch",
+      "model_raw_short_prob_pct": 63.1,
+      "calibrated_short_win_rate_pct": 72.8,
+      "short_entry_price": 130.50999450683594,
+      "short_target_profit_price": 134.23,
+      "short_target_profit_pct": 7.0,
+      "short_stop_loss_price": 151.89,
+      "short_stop_loss_pct": 5.2,
+      "dollar_pcr": 1.33,
+      "pcr": 0.89,
+      "pcr_sentiment": "🟠 机构谨慎防跌",
+      "put_wall": 130.0,
+      "call_wall": 135.0,
+      "iv_atm": 112.6,
+      "short_action": "🩸 极高胜率·顺势做空/买Put",
+      "short_action_tag": "short-action-strong",
+      "short_rank": 2
+    },
+    {
+      "rank": 7,
       "ticker": "AXP",
       "sector_key": "Energy_Power",
       "sector_cn": "价值蓝筹与医药",
@@ -2256,10 +2212,10 @@
       "iv_atm": 40.9,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 24
+      "short_rank": 25
     },
     {
-      "rank": 7,
+      "rank": 8,
       "ticker": "KO",
       "sector_key": "Energy_Power",
       "sector_cn": "价值蓝筹与医药",
@@ -2300,10 +2256,10 @@
       "iv_atm": 31.9,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 17
+      "short_rank": 18
     },
     {
-      "rank": 8,
+      "rank": 9,
       "ticker": "AMZN",
       "sector_key": "Neo_Cloud",
       "sector_cn": "科技巨头与AI生态",
@@ -2344,10 +2300,10 @@
       "iv_atm": 50.4,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 14
+      "short_rank": 15
     },
     {
-      "rank": 9,
+      "rank": 10,
       "ticker": "MRNA",
       "sector_key": "Energy_Power",
       "sector_cn": "价值蓝筹与医药",
@@ -2388,59 +2344,15 @@
       "iv_atm": 135.9,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 25
+      "short_rank": 26
     },
     {
-      "rank": 9,
-      "ticker": "MSTR",
-      "sector_key": "Crypto_Proxy",
-      "sector_cn": "加密币股代理",
-      "sector_rating": "⭐⭐⭐☆☆",
-      "latest_price": 144.29,
-      "current_price": 130.50999450683594,
-      "atr_pct": 6.47,
-      "bias_ma50": -0.13,
-      "rsi_14": 49.7,
-      "is_broken": false,
-      "is_etf": false,
-      "is_crash_halt": false,
-      "is_cooling_halt": false,
-      "macro_temp": "🌧️ 暴雨空仓",
-      "model_raw_prob_pct": 40.5,
-      "base_raw_prob_pct": 49.1,
-      "predicted_win_rate_pct": 49.1,
-      "calibrated_win_rate_pct": 48.7,
-      "sector_pf": 1.29,
-      "target_profit_price": 154.49,
-      "target_profit_pct": 7.1,
-      "stop_loss_price": 136.73,
-      "stop_loss_pct": 5.2,
-      "action": "🛡️ 暴雨空仓·严禁左侧接刀",
-      "action_tag": "action-watch",
-      "model_raw_short_prob_pct": 63.1,
-      "calibrated_short_win_rate_pct": 72.8,
-      "short_entry_price": 130.50999450683594,
-      "short_target_profit_price": 134.09,
-      "short_target_profit_pct": 7.1,
-      "short_stop_loss_price": 151.84,
-      "short_stop_loss_pct": 5.2,
-      "dollar_pcr": 1.33,
-      "pcr": 0.89,
-      "pcr_sentiment": "🟠 机构谨慎防跌",
-      "put_wall": 130.0,
-      "call_wall": 135.0,
-      "iv_atm": 112.6,
-      "short_action": "🩸 极高胜率·顺势做空/买Put",
-      "short_action_tag": "short-action-strong",
-      "short_rank": 1
-    },
-    {
-      "rank": 10,
+      "rank": 11,
       "ticker": "META",
       "sector_key": "Neo_Cloud",
       "sector_cn": "科技巨头与AI生态",
       "sector_rating": "⭐⭐⭐☆☆",
-      "latest_price": 630.19,
+      "latest_price": 630.2,
       "current_price": 617.6599731445312,
       "atr_pct": 3.55,
       "bias_ma50": -6.25,
@@ -2455,18 +2367,18 @@
       "predicted_win_rate_pct": 45.5,
       "calibrated_win_rate_pct": 47.3,
       "sector_pf": 1.35,
-      "target_profit_price": 660.39,
+      "target_profit_price": 660.4,
       "target_profit_pct": 4.8,
-      "stop_loss_price": 607.81,
+      "stop_loss_price": 607.83,
       "stop_loss_pct": 3.5,
       "action": "🛡️ 暴雨空仓·严禁左侧接刀",
       "action_tag": "action-watch",
       "model_raw_short_prob_pct": 50.3,
       "calibrated_short_win_rate_pct": 57.8,
       "short_entry_price": 617.6599731445312,
-      "short_target_profit_price": 599.98,
+      "short_target_profit_price": 600.0,
       "short_target_profit_pct": 4.8,
-      "short_stop_loss_price": 652.56,
+      "short_stop_loss_price": 652.57,
       "short_stop_loss_pct": 3.5,
       "dollar_pcr": 1.96,
       "pcr": 0.65,
@@ -2476,10 +2388,10 @@
       "iv_atm": 60.1,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 5
+      "short_rank": 6
     },
     {
-      "rank": 11,
+      "rank": 12,
       "ticker": "MSFT",
       "sector_key": "Enterprise_SaaS",
       "sector_cn": "企业软件与 AI SaaS",
@@ -2520,10 +2432,10 @@
       "iv_atm": 47.4,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 12
+      "short_rank": 13
     },
     {
-      "rank": 12,
+      "rank": 13,
       "ticker": "NKE",
       "sector_key": "Energy_Power",
       "sector_cn": "价值蓝筹与医药",
@@ -2564,10 +2476,10 @@
       "iv_atm": 51.7,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 21
+      "short_rank": 22
     },
     {
-      "rank": 13,
+      "rank": 14,
       "ticker": "LLY",
       "sector_key": "Energy_Power",
       "sector_cn": "价值蓝筹与医药",
@@ -2608,10 +2520,10 @@
       "iv_atm": 54.9,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 27
+      "short_rank": 28
     },
     {
-      "rank": 14,
+      "rank": 15,
       "ticker": "V",
       "sector_key": "Energy_Power",
       "sector_cn": "价值蓝筹与医药",
@@ -2652,10 +2564,10 @@
       "iv_atm": 34.3,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 22
+      "short_rank": 23
     },
     {
-      "rank": 15,
+      "rank": 16,
       "ticker": "MCD",
       "sector_key": "Energy_Power",
       "sector_cn": "价值蓝筹与医药",
@@ -2696,10 +2608,10 @@
       "iv_atm": 51.7,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 23
+      "short_rank": 24
     },
     {
-      "rank": 16,
+      "rank": 17,
       "ticker": "TSM",
       "sector_key": "Semiconductors",
       "sector_cn": "半导体与设备",
@@ -2740,10 +2652,10 @@
       "iv_atm": 65.3,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 48
+      "short_rank": 49
     },
     {
-      "rank": 17,
+      "rank": 18,
       "ticker": "AMD",
       "sector_key": "Semiconductors",
       "sector_cn": "半导体与设备",
@@ -2784,10 +2696,10 @@
       "iv_atm": 143.0,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 32
+      "short_rank": 33
     },
     {
-      "rank": 18,
+      "rank": 19,
       "ticker": "AVGO",
       "sector_key": "Semiconductors",
       "sector_cn": "半导体与设备",
@@ -2828,10 +2740,10 @@
       "iv_atm": 75.3,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 33
+      "short_rank": 34
     },
     {
-      "rank": 19,
+      "rank": 20,
       "ticker": "TSLA",
       "sector_key": "Neo_Cloud",
       "sector_cn": "物理AI与太空商业",
@@ -2872,10 +2784,10 @@
       "iv_atm": 70.6,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 67
+      "short_rank": 68
     },
     {
-      "rank": 20,
+      "rank": 21,
       "ticker": "SPCX",
       "sector_key": "Neo_Cloud",
       "sector_cn": "物理AI与太空商业",
@@ -2916,10 +2828,10 @@
       "iv_atm": 94.7,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 49
+      "short_rank": 50
     },
     {
-      "rank": 21,
+      "rank": 22,
       "ticker": "CRWD",
       "sector_key": "Energy_Power",
       "sector_cn": "企业软件与AI安全",
@@ -2960,10 +2872,10 @@
       "iv_atm": 97.9,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 47
+      "short_rank": 48
     },
     {
-      "rank": 22,
+      "rank": 23,
       "ticker": "PLTR",
       "sector_key": "Enterprise_SaaS",
       "sector_cn": "企业软件与 AI SaaS",
@@ -3004,10 +2916,10 @@
       "iv_atm": 178.4,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 43
+      "short_rank": 44
     },
     {
-      "rank": 23,
+      "rank": 24,
       "ticker": "CEG",
       "sector_key": "Energy_Power",
       "sector_cn": "数据中心能源电力",
@@ -3048,10 +2960,10 @@
       "iv_atm": 88.1,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 63
+      "short_rank": 64
     },
     {
-      "rank": 24,
+      "rank": 25,
       "ticker": "NOW",
       "sector_key": "Enterprise_SaaS",
       "sector_cn": "企业软件与 AI SaaS",
@@ -3092,10 +3004,10 @@
       "iv_atm": 73.7,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 54
+      "short_rank": 55
     },
     {
-      "rank": 25,
+      "rank": 26,
       "ticker": "ORCL",
       "sector_key": "Enterprise_SaaS",
       "sector_cn": "企业软件与 AI SaaS",
@@ -3136,10 +3048,10 @@
       "iv_atm": 85.8,
       "short_action": "🩸 极高胜率·顺势做空/买Put",
       "short_action_tag": "short-action-strong",
-      "short_rank": 29
+      "short_rank": 30
     },
     {
-      "rank": 26,
+      "rank": 27,
       "ticker": "INTC",
       "sector_key": "Semiconductors",
       "sector_cn": "半导体与设备",
@@ -3180,10 +3092,10 @@
       "iv_atm": 106.9,
       "short_action": "⚠️ 严重超跌·谨防死猫跳·暂勿追空",
       "short_action_tag": "short-action-oversold",
-      "short_rank": 71
+      "short_rank": 72
     },
     {
-      "rank": 27,
+      "rank": 28,
       "ticker": "DELL",
       "sector_key": "Semiconductors",
       "sector_cn": "AI液冷与服务器",
@@ -3224,10 +3136,10 @@
       "iv_atm": 117.4,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 57
+      "short_rank": 58
     },
     {
-      "rank": 28,
+      "rank": 29,
       "ticker": "MRVL",
       "sector_key": "Optical_Interconnect",
       "sector_cn": "光通信与互联",
@@ -3268,10 +3180,10 @@
       "iv_atm": 135.9,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 46
+      "short_rank": 47
     },
     {
-      "rank": 29,
+      "rank": 30,
       "ticker": "COIN",
       "sector_key": "Crypto_Proxy",
       "sector_cn": "加密币股代理",
@@ -3312,10 +3224,10 @@
       "iv_atm": 111.4,
       "short_action": "🩸 极高胜率·顺势做空/买Put",
       "short_action_tag": "short-action-strong",
-      "short_rank": 2
+      "short_rank": 3
     },
     {
-      "rank": 30,
+      "rank": 31,
       "ticker": "ASTS",
       "sector_key": "Neo_Cloud",
       "sector_cn": "物理AI与太空商业",
@@ -3356,10 +3268,10 @@
       "iv_atm": 144.6,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 59
+      "short_rank": 60
     },
     {
-      "rank": 31,
+      "rank": 32,
       "ticker": "RKLB",
       "sector_key": "Neo_Cloud",
       "sector_cn": "物理AI与太空商业",
@@ -3400,10 +3312,10 @@
       "iv_atm": 129.8,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 60
+      "short_rank": 61
     },
     {
-      "rank": 32,
+      "rank": 33,
       "ticker": "MARA",
       "sector_key": "Crypto_Proxy",
       "sector_cn": "加密币股代理",
@@ -3444,10 +3356,10 @@
       "iv_atm": 6.3,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 40
+      "short_rank": 41
     },
     {
-      "rank": 33,
+      "rank": 34,
       "ticker": "OKLO",
       "sector_key": "Energy_Power",
       "sector_cn": "数据中心能源电力",
@@ -3488,51 +3400,7 @@
       "iv_atm": 160.4,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 72
-    },
-    {
-      "rank": 34,
-      "ticker": "APLD",
-      "sector_key": "Neo_Cloud",
-      "sector_cn": "Neo-Cloud 算力租赁",
-      "sector_rating": "⭐⭐⭐☆☆",
-      "latest_price": 16.56,
-      "current_price": 17.815000534057617,
-      "atr_pct": 10.61,
-      "bias_ma50": -30.01,
-      "rsi_14": 39.5,
-      "is_broken": true,
-      "is_etf": false,
-      "is_crash_halt": true,
-      "is_cooling_halt": false,
-      "macro_temp": "🌧️ 暴雨空仓",
-      "model_raw_prob_pct": 48.3,
-      "base_raw_prob_pct": 47.5,
-      "predicted_win_rate_pct": 47.5,
-      "calibrated_win_rate_pct": 33.8,
-      "sector_pf": 1.35,
-      "target_profit_price": 18.12,
-      "target_profit_pct": 9.5,
-      "stop_loss_price": 15.4,
-      "stop_loss_pct": 7.0,
-      "action": "🚨 暴跌熔断·严禁左侧接刀",
-      "action_tag": "action-warning",
-      "model_raw_short_prob_pct": 55.5,
-      "calibrated_short_win_rate_pct": 58.0,
-      "short_entry_price": 17.815000534057617,
-      "short_target_profit_price": 14.99,
-      "short_target_profit_pct": 9.5,
-      "short_stop_loss_price": 17.72,
-      "short_stop_loss_pct": 7.0,
-      "dollar_pcr": 0.9,
-      "pcr": 0.41,
-      "pcr_sentiment": "🟢 资金偏多看涨",
-      "put_wall": 16.5,
-      "call_wall": 17.0,
-      "iv_atm": 6.3,
-      "short_action": "⚡ 逢高反抽沽空/买Put",
-      "short_action_tag": "short-action-rebound",
-      "short_rank": 52
+      "short_rank": 73
     },
     {
       "rank": 35,
@@ -3580,6 +3448,50 @@
     },
     {
       "rank": 36,
+      "ticker": "APLD",
+      "sector_key": "Neo_Cloud",
+      "sector_cn": "Neo-Cloud 算力租赁",
+      "sector_rating": "⭐⭐⭐☆☆",
+      "latest_price": 16.56,
+      "current_price": 17.815000534057617,
+      "atr_pct": 10.61,
+      "bias_ma50": -30.01,
+      "rsi_14": 39.5,
+      "is_broken": true,
+      "is_etf": false,
+      "is_crash_halt": true,
+      "is_cooling_halt": false,
+      "macro_temp": "🌧️ 暴雨空仓",
+      "model_raw_prob_pct": 48.3,
+      "base_raw_prob_pct": 47.5,
+      "predicted_win_rate_pct": 47.5,
+      "calibrated_win_rate_pct": 33.8,
+      "sector_pf": 1.35,
+      "target_profit_price": 18.12,
+      "target_profit_pct": 9.5,
+      "stop_loss_price": 15.4,
+      "stop_loss_pct": 7.0,
+      "action": "🚨 暴跌熔断·严禁左侧接刀",
+      "action_tag": "action-warning",
+      "model_raw_short_prob_pct": 55.5,
+      "calibrated_short_win_rate_pct": 58.0,
+      "short_entry_price": 17.815000534057617,
+      "short_target_profit_price": 14.99,
+      "short_target_profit_pct": 9.5,
+      "short_stop_loss_price": 17.72,
+      "short_stop_loss_pct": 7.0,
+      "dollar_pcr": 0.9,
+      "pcr": 0.41,
+      "pcr_sentiment": "🟢 资金偏多看涨",
+      "put_wall": 16.5,
+      "call_wall": 17.0,
+      "iv_atm": 6.3,
+      "short_action": "⚡ 逢高反抽沽空/买Put",
+      "short_action_tag": "short-action-rebound",
+      "short_rank": 54
+    },
+    {
+      "rank": 37,
       "ticker": "CRWV",
       "sector_key": "Neo_Cloud",
       "sector_cn": "Neo-Cloud 算力租赁",
@@ -3620,10 +3532,10 @@
       "iv_atm": 165.4,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 39
+      "short_rank": 40
     },
     {
-      "rank": 37,
+      "rank": 38,
       "ticker": "FPS",
       "sector_key": "Energy_Power",
       "sector_cn": "数据中心能源电力",
@@ -3664,10 +3576,10 @@
       "iv_atm": 6.3,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 66
+      "short_rank": 67
     },
     {
-      "rank": 38,
+      "rank": 39,
       "ticker": "MU",
       "sector_key": "Memory",
       "sector_cn": "存储芯片",
@@ -3708,15 +3620,15 @@
       "iv_atm": 97.0,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 34
+      "short_rank": 35
     },
     {
-      "rank": 39,
+      "rank": 40,
       "ticker": "ASML",
       "sector_key": "Semiconductors",
       "sector_cn": "半导体与设备",
       "sector_rating": "⭐⭐⭐⭐☆",
-      "latest_price": 1479.6,
+      "latest_price": 1480.0,
       "current_price": 1565.9000244140625,
       "atr_pct": 4.03,
       "bias_ma50": -12.64,
@@ -3752,10 +3664,10 @@
       "iv_atm": 71.3,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 42
+      "short_rank": 43
     },
     {
-      "rank": 40,
+      "rank": 41,
       "ticker": "COHR",
       "sector_key": "Optical_Interconnect",
       "sector_cn": "光通信与互联",
@@ -3796,10 +3708,10 @@
       "iv_atm": 172.3,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 51
+      "short_rank": 52
     },
     {
-      "rank": 41,
+      "rank": 42,
       "ticker": "GOOGL",
       "sector_key": "Neo_Cloud",
       "sector_cn": "科技巨头与AI生态",
@@ -3840,10 +3752,10 @@
       "iv_atm": 48.3,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 65
+      "short_rank": 66
     },
     {
-      "rank": 42,
+      "rank": 43,
       "ticker": "SNDK",
       "sector_key": "Memory",
       "sector_cn": "存储芯片",
@@ -3884,10 +3796,10 @@
       "iv_atm": 127.4,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 44
+      "short_rank": 45
     },
     {
-      "rank": 43,
+      "rank": 44,
       "ticker": "CRDO",
       "sector_key": "Optical_Interconnect",
       "sector_cn": "光通信与互联",
@@ -3928,10 +3840,10 @@
       "iv_atm": 145.1,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 37
+      "short_rank": 38
     },
     {
-      "rank": 44,
+      "rank": 45,
       "ticker": "AMAT",
       "sector_key": "Semiconductors",
       "sector_cn": "半导体与设备",
@@ -3972,10 +3884,10 @@
       "iv_atm": 97.7,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 38
+      "short_rank": 39
     },
     {
-      "rank": 45,
+      "rank": 46,
       "ticker": "HPE",
       "sector_key": "Semiconductors",
       "sector_cn": "AI液冷与服务器",
@@ -4016,10 +3928,10 @@
       "iv_atm": 106.9,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 50
+      "short_rank": 51
     },
     {
-      "rank": 46,
+      "rank": 47,
       "ticker": "BE",
       "sector_key": "Energy_Power",
       "sector_cn": "数据中心能源电力",
@@ -4060,10 +3972,10 @@
       "iv_atm": 140.7,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 35
+      "short_rank": 36
     },
     {
-      "rank": 47,
+      "rank": 48,
       "ticker": "AAOI",
       "sector_key": "Optical_Interconnect",
       "sector_cn": "光通信与互联",
@@ -4104,10 +4016,10 @@
       "iv_atm": 263.2,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 45
+      "short_rank": 46
     },
     {
-      "rank": 48,
+      "rank": 49,
       "ticker": "NBIS",
       "sector_key": "Neo_Cloud",
       "sector_cn": "Neo-Cloud 算力租赁",
@@ -4148,10 +4060,10 @@
       "iv_atm": 157.9,
       "short_action": "🩸 极高胜率·顺势做空/买Put",
       "short_action_tag": "short-action-strong",
-      "short_rank": 28
+      "short_rank": 29
     },
     {
-      "rank": 49,
+      "rank": 50,
       "ticker": "AXTI",
       "sector_key": "Optical_Interconnect",
       "sector_cn": "光通信与互联",
@@ -4192,10 +4104,10 @@
       "iv_atm": 157.7,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 68
+      "short_rank": 69
     },
     {
-      "rank": 50,
+      "rank": 51,
       "ticker": "SKHY",
       "sector_key": "Memory",
       "sector_cn": "存储芯片",
@@ -4236,10 +4148,10 @@
       "iv_atm": 109.3,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 61
+      "short_rank": 62
     },
     {
-      "rank": 51,
+      "rank": 52,
       "ticker": "STX",
       "sector_key": "Memory",
       "sector_cn": "存储芯片",
@@ -4280,10 +4192,10 @@
       "iv_atm": 115.9,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 41
+      "short_rank": 42
     },
     {
-      "rank": 52,
+      "rank": 53,
       "ticker": "VST",
       "sector_key": "Energy_Power",
       "sector_cn": "数据中心能源电力",
@@ -4324,10 +4236,10 @@
       "iv_atm": 114.3,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 69
+      "short_rank": 70
     },
     {
-      "rank": 53,
+      "rank": 54,
       "ticker": "VRT",
       "sector_key": "Semiconductors",
       "sector_cn": "AI液冷与服务器",
@@ -4368,10 +4280,10 @@
       "iv_atm": 99.2,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 62
+      "short_rank": 63
     },
     {
-      "rank": 54,
+      "rank": 55,
       "ticker": "WDC",
       "sector_key": "Memory",
       "sector_cn": "存储芯片",
@@ -4412,10 +4324,10 @@
       "iv_atm": 112.0,
       "short_action": "🩸 极高胜率·顺势做空/买Put",
       "short_action_tag": "short-action-strong",
-      "short_rank": 31
+      "short_rank": 32
     },
     {
-      "rank": 55,
+      "rank": 56,
       "ticker": "LITE",
       "sector_key": "Optical_Interconnect",
       "sector_cn": "光通信与互联",
@@ -4456,10 +4368,10 @@
       "iv_atm": 137.1,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 36
+      "short_rank": 37
     },
     {
-      "rank": 56,
+      "rank": 57,
       "ticker": "KORU",
       "sector_key": "Memory",
       "sector_cn": "韩股存储3倍做多",
@@ -4500,10 +4412,10 @@
       "iv_atm": 6.3,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 64
+      "short_rank": 65
     },
     {
-      "rank": 57,
+      "rank": 58,
       "ticker": "SOXL",
       "sector_key": "Semiconductors",
       "sector_cn": "半导体3倍做多",
@@ -4544,10 +4456,10 @@
       "iv_atm": 6.3,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 70
+      "short_rank": 71
     },
     {
-      "rank": 58,
+      "rank": 59,
       "ticker": "QQQM",
       "sector_key": "Semiconductors",
       "sector_cn": "大盘与宏观ETF",
@@ -4588,51 +4500,7 @@
       "iv_atm": 31.5,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 7
-    },
-    {
-      "rank": 59,
-      "ticker": "SMH",
-      "sector_key": "Semiconductors",
-      "sector_cn": "半导体ETF",
-      "sector_rating": "⭐⭐⭐⭐☆",
-      "latest_price": 499.48,
-      "current_price": 522.489990234375,
-      "atr_pct": 3.91,
-      "bias_ma50": -12.53,
-      "rsi_14": 37.9,
-      "is_broken": false,
-      "is_etf": true,
-      "is_crash_halt": true,
-      "is_cooling_halt": false,
-      "macro_temp": "🌧️ 暴雨空仓",
-      "model_raw_prob_pct": 45.2,
-      "base_raw_prob_pct": 46.3,
-      "predicted_win_rate_pct": 46.3,
-      "calibrated_win_rate_pct": 53.2,
-      "sector_pf": 1.55,
-      "target_profit_price": 525.85,
-      "target_profit_pct": 5.3,
-      "stop_loss_price": 479.95,
-      "stop_loss_pct": 3.9,
-      "action": "🚨 暴跌熔断·严禁左侧接刀",
-      "action_tag": "action-watch",
-      "model_raw_short_prob_pct": 52.3,
-      "calibrated_short_win_rate_pct": 57.4,
-      "short_entry_price": 522.489990234375,
-      "short_target_profit_price": 473.11,
-      "short_target_profit_pct": 5.3,
-      "short_stop_loss_price": 519.01,
-      "short_stop_loss_pct": 3.9,
-      "dollar_pcr": 9.12,
-      "pcr": 4.25,
-      "pcr_sentiment": "🔴 资金偏空对冲",
-      "put_wall": 500.0,
-      "call_wall": 515.0,
-      "iv_atm": 71.7,
-      "short_action": "⚡ 逢高反抽沽空/买Put",
-      "short_action_tag": "short-action-rebound",
-      "short_rank": 55
+      "short_rank": 8
     },
     {
       "rank": 60,
@@ -4680,6 +4548,50 @@
     },
     {
       "rank": 61,
+      "ticker": "SMH",
+      "sector_key": "Semiconductors",
+      "sector_cn": "半导体ETF",
+      "sector_rating": "⭐⭐⭐⭐☆",
+      "latest_price": 499.48,
+      "current_price": 522.489990234375,
+      "atr_pct": 3.91,
+      "bias_ma50": -12.53,
+      "rsi_14": 37.9,
+      "is_broken": false,
+      "is_etf": true,
+      "is_crash_halt": true,
+      "is_cooling_halt": false,
+      "macro_temp": "🌧️ 暴雨空仓",
+      "model_raw_prob_pct": 45.2,
+      "base_raw_prob_pct": 46.3,
+      "predicted_win_rate_pct": 46.3,
+      "calibrated_win_rate_pct": 53.2,
+      "sector_pf": 1.55,
+      "target_profit_price": 525.85,
+      "target_profit_pct": 5.3,
+      "stop_loss_price": 479.95,
+      "stop_loss_pct": 3.9,
+      "action": "🚨 暴跌熔断·严禁左侧接刀",
+      "action_tag": "action-watch",
+      "model_raw_short_prob_pct": 52.3,
+      "calibrated_short_win_rate_pct": 57.4,
+      "short_entry_price": 522.489990234375,
+      "short_target_profit_price": 473.11,
+      "short_target_profit_pct": 5.3,
+      "short_stop_loss_price": 519.01,
+      "short_stop_loss_pct": 3.9,
+      "dollar_pcr": 9.12,
+      "pcr": 4.25,
+      "pcr_sentiment": "🔴 资金偏空对冲",
+      "put_wall": 500.0,
+      "call_wall": 515.0,
+      "iv_atm": 71.7,
+      "short_action": "⚡ 逢高反抽沽空/买Put",
+      "short_action_tag": "short-action-rebound",
+      "short_rank": 57
+    },
+    {
+      "rank": 62,
       "ticker": "IBIT",
       "sector_key": "Crypto_Proxy",
       "sector_cn": "加密币股代理",
@@ -4720,10 +4632,10 @@
       "iv_atm": 58.4,
       "short_action": "🛡️ 建议买入反向ETF对冲",
       "short_action_tag": "short-action-etf",
-      "short_rank": 30
+      "short_rank": 31
     },
     {
-      "rank": 62,
+      "rank": 63,
       "ticker": "GLD",
       "sector_key": "Energy_Power",
       "sector_cn": "大盘与宏观ETF",
@@ -4764,10 +4676,10 @@
       "iv_atm": 33.3,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 3
+      "short_rank": 4
     },
     {
-      "rank": 63,
+      "rank": 64,
       "ticker": "TLT",
       "sector_key": "Energy_Power",
       "sector_cn": "大盘与宏观ETF",
@@ -4808,10 +4720,10 @@
       "iv_atm": 20.8,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 20
+      "short_rank": 21
     },
     {
-      "rank": 64,
+      "rank": 65,
       "ticker": "SOXX",
       "sector_key": "Semiconductors",
       "sector_cn": "半导体ETF",
@@ -4852,10 +4764,10 @@
       "iv_atm": 78.4,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 58
+      "short_rank": 59
     },
     {
-      "rank": 65,
+      "rank": 66,
       "ticker": "VIXY",
       "sector_key": "Crypto_Proxy",
       "sector_cn": "恐慌与反向对冲",
@@ -4896,10 +4808,10 @@
       "iv_atm": 83.5,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 9
+      "short_rank": 10
     },
     {
-      "rank": 66,
+      "rank": 67,
       "ticker": "IGV",
       "sector_key": "Enterprise_SaaS",
       "sector_cn": "软件科技ETF",
@@ -4940,10 +4852,10 @@
       "iv_atm": 67.7,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 11
+      "short_rank": 12
     },
     {
-      "rank": 67,
+      "rank": 68,
       "ticker": "IWM",
       "sector_key": "Neo_Cloud",
       "sector_cn": "大盘与宏观ETF",
@@ -4984,10 +4896,10 @@
       "iv_atm": 33.7,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 16
+      "short_rank": 17
     },
     {
-      "rank": 68,
+      "rank": 69,
       "ticker": "SPY",
       "sector_key": "Enterprise_SaaS",
       "sector_cn": "大盘与宏观ETF",
@@ -5028,10 +4940,10 @@
       "iv_atm": 26.0,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 8
+      "short_rank": 9
     },
     {
-      "rank": 69,
+      "rank": 70,
       "ticker": "SOXS",
       "sector_key": "Crypto_Proxy",
       "sector_cn": "恐慌与反向对冲",
@@ -5072,10 +4984,10 @@
       "iv_atm": 246.0,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 26
+      "short_rank": 27
     },
     {
-      "rank": 70,
+      "rank": 71,
       "ticker": "DIA",
       "sector_key": "Enterprise_SaaS",
       "sector_cn": "大盘与宏观ETF",
@@ -5116,10 +5028,10 @@
       "iv_atm": 24.2,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 18
+      "short_rank": 19
     },
     {
-      "rank": 71,
+      "rank": 72,
       "ticker": "QQQI",
       "sector_key": "Enterprise_SaaS",
       "sector_cn": "大盘与宏观ETF",
@@ -5160,10 +5072,10 @@
       "iv_atm": 26.2,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 13
+      "short_rank": 14
     },
     {
-      "rank": 72,
+      "rank": 73,
       "ticker": "SQQQ",
       "sector_key": "Crypto_Proxy",
       "sector_cn": "恐慌与反向对冲",
@@ -5204,7 +5116,7 @@
       "iv_atm": 138.4,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 10
+      "short_rank": 11
     }
   ],
   "by_ticker": {
@@ -5250,7 +5162,7 @@
       "iv_atm": 61.9,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 4
+      "short_rank": 5
     },
     "CCXI": {
       "rank": 2,
@@ -5294,7 +5206,7 @@
       "iv_atm": 12.5,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 15
+      "short_rank": 16
     },
     "AAPL": {
       "rank": 3,
@@ -5338,7 +5250,7 @@
       "iv_atm": 68.0,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 6
+      "short_rank": 7
     },
     "PEP": {
       "rank": 4,
@@ -5382,10 +5294,10 @@
       "iv_atm": 35.9,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 19
+      "short_rank": 20
     },
     "MSTR": {
-      "rank": 5,
+      "rank": 6,
       "ticker": "MSTR",
       "sector_key": "Crypto_Proxy",
       "sector_cn": "加密币股代理",
@@ -5426,10 +5338,10 @@
       "iv_atm": 112.6,
       "short_action": "🩸 极高胜率·顺势做空/买Put",
       "short_action_tag": "short-action-strong",
-      "short_rank": 1
+      "short_rank": 2
     },
     "AXP": {
-      "rank": 6,
+      "rank": 7,
       "ticker": "AXP",
       "sector_key": "Energy_Power",
       "sector_cn": "价值蓝筹与医药",
@@ -5470,10 +5382,10 @@
       "iv_atm": 40.9,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 24
+      "short_rank": 25
     },
     "KO": {
-      "rank": 7,
+      "rank": 8,
       "ticker": "KO",
       "sector_key": "Energy_Power",
       "sector_cn": "价值蓝筹与医药",
@@ -5514,10 +5426,10 @@
       "iv_atm": 31.9,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 17
+      "short_rank": 18
     },
     "AMZN": {
-      "rank": 8,
+      "rank": 9,
       "ticker": "AMZN",
       "sector_key": "Neo_Cloud",
       "sector_cn": "科技巨头与AI生态",
@@ -5558,10 +5470,10 @@
       "iv_atm": 50.4,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 14
+      "short_rank": 15
     },
     "MRNA": {
-      "rank": 9,
+      "rank": 10,
       "ticker": "MRNA",
       "sector_key": "Energy_Power",
       "sector_cn": "价值蓝筹与医药",
@@ -5602,59 +5514,15 @@
       "iv_atm": 135.9,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 25
-    },
-    "MSTR": {
-      "rank": 9,
-      "ticker": "MSTR",
-      "sector_key": "Crypto_Proxy",
-      "sector_cn": "加密币股代理",
-      "sector_rating": "⭐⭐⭐☆☆",
-      "latest_price": 144.29,
-      "current_price": 130.50999450683594,
-      "atr_pct": 6.47,
-      "bias_ma50": -0.13,
-      "rsi_14": 49.7,
-      "is_broken": false,
-      "is_etf": false,
-      "is_crash_halt": false,
-      "is_cooling_halt": false,
-      "macro_temp": "🌧️ 暴雨空仓",
-      "model_raw_prob_pct": 40.5,
-      "base_raw_prob_pct": 49.1,
-      "predicted_win_rate_pct": 49.1,
-      "calibrated_win_rate_pct": 48.7,
-      "sector_pf": 1.29,
-      "target_profit_price": 154.49,
-      "target_profit_pct": 7.1,
-      "stop_loss_price": 136.73,
-      "stop_loss_pct": 5.2,
-      "action": "🛡️ 暴雨空仓·严禁左侧接刀",
-      "action_tag": "action-watch",
-      "model_raw_short_prob_pct": 63.1,
-      "calibrated_short_win_rate_pct": 72.8,
-      "short_entry_price": 130.50999450683594,
-      "short_target_profit_price": 134.09,
-      "short_target_profit_pct": 7.1,
-      "short_stop_loss_price": 151.84,
-      "short_stop_loss_pct": 5.2,
-      "dollar_pcr": 1.33,
-      "pcr": 0.89,
-      "pcr_sentiment": "🟠 机构谨慎防跌",
-      "put_wall": 130.0,
-      "call_wall": 135.0,
-      "iv_atm": 112.6,
-      "short_action": "🩸 极高胜率·顺势做空/买Put",
-      "short_action_tag": "short-action-strong",
-      "short_rank": 1
+      "short_rank": 26
     },
     "META": {
-      "rank": 10,
+      "rank": 11,
       "ticker": "META",
       "sector_key": "Neo_Cloud",
       "sector_cn": "科技巨头与AI生态",
       "sector_rating": "⭐⭐⭐☆☆",
-      "latest_price": 630.19,
+      "latest_price": 630.2,
       "current_price": 617.6599731445312,
       "atr_pct": 3.55,
       "bias_ma50": -6.25,
@@ -5669,18 +5537,18 @@
       "predicted_win_rate_pct": 45.5,
       "calibrated_win_rate_pct": 47.3,
       "sector_pf": 1.35,
-      "target_profit_price": 660.39,
+      "target_profit_price": 660.4,
       "target_profit_pct": 4.8,
-      "stop_loss_price": 607.81,
+      "stop_loss_price": 607.83,
       "stop_loss_pct": 3.5,
       "action": "🛡️ 暴雨空仓·严禁左侧接刀",
       "action_tag": "action-watch",
       "model_raw_short_prob_pct": 50.3,
       "calibrated_short_win_rate_pct": 57.8,
       "short_entry_price": 617.6599731445312,
-      "short_target_profit_price": 599.98,
+      "short_target_profit_price": 600.0,
       "short_target_profit_pct": 4.8,
-      "short_stop_loss_price": 652.56,
+      "short_stop_loss_price": 652.57,
       "short_stop_loss_pct": 3.5,
       "dollar_pcr": 1.96,
       "pcr": 0.65,
@@ -5690,10 +5558,10 @@
       "iv_atm": 60.1,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 5
+      "short_rank": 6
     },
     "MSFT": {
-      "rank": 11,
+      "rank": 12,
       "ticker": "MSFT",
       "sector_key": "Enterprise_SaaS",
       "sector_cn": "企业软件与 AI SaaS",
@@ -5734,10 +5602,10 @@
       "iv_atm": 47.4,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 12
+      "short_rank": 13
     },
     "NKE": {
-      "rank": 12,
+      "rank": 13,
       "ticker": "NKE",
       "sector_key": "Energy_Power",
       "sector_cn": "价值蓝筹与医药",
@@ -5778,10 +5646,10 @@
       "iv_atm": 51.7,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 21
+      "short_rank": 22
     },
     "LLY": {
-      "rank": 13,
+      "rank": 14,
       "ticker": "LLY",
       "sector_key": "Energy_Power",
       "sector_cn": "价值蓝筹与医药",
@@ -5822,10 +5690,10 @@
       "iv_atm": 54.9,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 27
+      "short_rank": 28
     },
     "V": {
-      "rank": 14,
+      "rank": 15,
       "ticker": "V",
       "sector_key": "Energy_Power",
       "sector_cn": "价值蓝筹与医药",
@@ -5866,10 +5734,10 @@
       "iv_atm": 34.3,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 22
+      "short_rank": 23
     },
     "MCD": {
-      "rank": 15,
+      "rank": 16,
       "ticker": "MCD",
       "sector_key": "Energy_Power",
       "sector_cn": "价值蓝筹与医药",
@@ -5910,10 +5778,10 @@
       "iv_atm": 51.7,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 23
+      "short_rank": 24
     },
     "TSM": {
-      "rank": 16,
+      "rank": 17,
       "ticker": "TSM",
       "sector_key": "Semiconductors",
       "sector_cn": "半导体与设备",
@@ -5954,10 +5822,10 @@
       "iv_atm": 65.3,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 48
+      "short_rank": 49
     },
     "AMD": {
-      "rank": 17,
+      "rank": 18,
       "ticker": "AMD",
       "sector_key": "Semiconductors",
       "sector_cn": "半导体与设备",
@@ -5998,10 +5866,10 @@
       "iv_atm": 143.0,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 32
+      "short_rank": 33
     },
     "AVGO": {
-      "rank": 18,
+      "rank": 19,
       "ticker": "AVGO",
       "sector_key": "Semiconductors",
       "sector_cn": "半导体与设备",
@@ -6042,10 +5910,10 @@
       "iv_atm": 75.3,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 33
+      "short_rank": 34
     },
     "TSLA": {
-      "rank": 19,
+      "rank": 20,
       "ticker": "TSLA",
       "sector_key": "Neo_Cloud",
       "sector_cn": "物理AI与太空商业",
@@ -6086,10 +5954,10 @@
       "iv_atm": 70.6,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 67
+      "short_rank": 68
     },
     "SPCX": {
-      "rank": 20,
+      "rank": 21,
       "ticker": "SPCX",
       "sector_key": "Neo_Cloud",
       "sector_cn": "物理AI与太空商业",
@@ -6130,10 +5998,10 @@
       "iv_atm": 94.7,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 49
+      "short_rank": 50
     },
     "CRWD": {
-      "rank": 21,
+      "rank": 22,
       "ticker": "CRWD",
       "sector_key": "Energy_Power",
       "sector_cn": "企业软件与AI安全",
@@ -6174,10 +6042,10 @@
       "iv_atm": 97.9,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 47
+      "short_rank": 48
     },
     "PLTR": {
-      "rank": 22,
+      "rank": 23,
       "ticker": "PLTR",
       "sector_key": "Enterprise_SaaS",
       "sector_cn": "企业软件与 AI SaaS",
@@ -6218,10 +6086,10 @@
       "iv_atm": 178.4,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 43
+      "short_rank": 44
     },
     "CEG": {
-      "rank": 23,
+      "rank": 24,
       "ticker": "CEG",
       "sector_key": "Energy_Power",
       "sector_cn": "数据中心能源电力",
@@ -6262,10 +6130,10 @@
       "iv_atm": 88.1,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 63
+      "short_rank": 64
     },
     "NOW": {
-      "rank": 24,
+      "rank": 25,
       "ticker": "NOW",
       "sector_key": "Enterprise_SaaS",
       "sector_cn": "企业软件与 AI SaaS",
@@ -6306,10 +6174,10 @@
       "iv_atm": 73.7,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 54
+      "short_rank": 55
     },
     "ORCL": {
-      "rank": 25,
+      "rank": 26,
       "ticker": "ORCL",
       "sector_key": "Enterprise_SaaS",
       "sector_cn": "企业软件与 AI SaaS",
@@ -6350,10 +6218,10 @@
       "iv_atm": 85.8,
       "short_action": "🩸 极高胜率·顺势做空/买Put",
       "short_action_tag": "short-action-strong",
-      "short_rank": 29
+      "short_rank": 30
     },
     "INTC": {
-      "rank": 26,
+      "rank": 27,
       "ticker": "INTC",
       "sector_key": "Semiconductors",
       "sector_cn": "半导体与设备",
@@ -6394,10 +6262,10 @@
       "iv_atm": 106.9,
       "short_action": "⚠️ 严重超跌·谨防死猫跳·暂勿追空",
       "short_action_tag": "short-action-oversold",
-      "short_rank": 71
+      "short_rank": 72
     },
     "DELL": {
-      "rank": 27,
+      "rank": 28,
       "ticker": "DELL",
       "sector_key": "Semiconductors",
       "sector_cn": "AI液冷与服务器",
@@ -6438,10 +6306,10 @@
       "iv_atm": 117.4,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 57
+      "short_rank": 58
     },
     "MRVL": {
-      "rank": 28,
+      "rank": 29,
       "ticker": "MRVL",
       "sector_key": "Optical_Interconnect",
       "sector_cn": "光通信与互联",
@@ -6482,10 +6350,10 @@
       "iv_atm": 135.9,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 46
+      "short_rank": 47
     },
     "COIN": {
-      "rank": 29,
+      "rank": 30,
       "ticker": "COIN",
       "sector_key": "Crypto_Proxy",
       "sector_cn": "加密币股代理",
@@ -6526,10 +6394,10 @@
       "iv_atm": 111.4,
       "short_action": "🩸 极高胜率·顺势做空/买Put",
       "short_action_tag": "short-action-strong",
-      "short_rank": 2
+      "short_rank": 3
     },
     "ASTS": {
-      "rank": 30,
+      "rank": 31,
       "ticker": "ASTS",
       "sector_key": "Neo_Cloud",
       "sector_cn": "物理AI与太空商业",
@@ -6570,10 +6438,10 @@
       "iv_atm": 144.6,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 59
+      "short_rank": 60
     },
     "RKLB": {
-      "rank": 31,
+      "rank": 32,
       "ticker": "RKLB",
       "sector_key": "Neo_Cloud",
       "sector_cn": "物理AI与太空商业",
@@ -6614,10 +6482,10 @@
       "iv_atm": 129.8,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 60
+      "short_rank": 61
     },
     "MARA": {
-      "rank": 32,
+      "rank": 33,
       "ticker": "MARA",
       "sector_key": "Crypto_Proxy",
       "sector_cn": "加密币股代理",
@@ -6658,10 +6526,10 @@
       "iv_atm": 6.3,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 40
+      "short_rank": 41
     },
     "OKLO": {
-      "rank": 33,
+      "rank": 34,
       "ticker": "OKLO",
       "sector_key": "Energy_Power",
       "sector_cn": "数据中心能源电力",
@@ -6702,10 +6570,10 @@
       "iv_atm": 160.4,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 72
+      "short_rank": 73
     },
     "APLD": {
-      "rank": 35,
+      "rank": 36,
       "ticker": "APLD",
       "sector_key": "Neo_Cloud",
       "sector_cn": "Neo-Cloud 算力租赁",
@@ -6746,10 +6614,10 @@
       "iv_atm": 6.3,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 53
+      "short_rank": 54
     },
     "CRWV": {
-      "rank": 36,
+      "rank": 37,
       "ticker": "CRWV",
       "sector_key": "Neo_Cloud",
       "sector_cn": "Neo-Cloud 算力租赁",
@@ -6790,10 +6658,10 @@
       "iv_atm": 165.4,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 39
+      "short_rank": 40
     },
     "FPS": {
-      "rank": 37,
+      "rank": 38,
       "ticker": "FPS",
       "sector_key": "Energy_Power",
       "sector_cn": "数据中心能源电力",
@@ -6834,10 +6702,10 @@
       "iv_atm": 6.3,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 66
+      "short_rank": 67
     },
     "MU": {
-      "rank": 38,
+      "rank": 39,
       "ticker": "MU",
       "sector_key": "Memory",
       "sector_cn": "存储芯片",
@@ -6878,15 +6746,15 @@
       "iv_atm": 97.0,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 34
+      "short_rank": 35
     },
     "ASML": {
-      "rank": 39,
+      "rank": 40,
       "ticker": "ASML",
       "sector_key": "Semiconductors",
       "sector_cn": "半导体与设备",
       "sector_rating": "⭐⭐⭐⭐☆",
-      "latest_price": 1479.6,
+      "latest_price": 1480.0,
       "current_price": 1565.9000244140625,
       "atr_pct": 4.03,
       "bias_ma50": -12.64,
@@ -6922,10 +6790,10 @@
       "iv_atm": 71.3,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 42
+      "short_rank": 43
     },
     "COHR": {
-      "rank": 40,
+      "rank": 41,
       "ticker": "COHR",
       "sector_key": "Optical_Interconnect",
       "sector_cn": "光通信与互联",
@@ -6966,10 +6834,10 @@
       "iv_atm": 172.3,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 51
+      "short_rank": 52
     },
     "GOOGL": {
-      "rank": 41,
+      "rank": 42,
       "ticker": "GOOGL",
       "sector_key": "Neo_Cloud",
       "sector_cn": "科技巨头与AI生态",
@@ -7010,10 +6878,10 @@
       "iv_atm": 48.3,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 65
+      "short_rank": 66
     },
     "SNDK": {
-      "rank": 42,
+      "rank": 43,
       "ticker": "SNDK",
       "sector_key": "Memory",
       "sector_cn": "存储芯片",
@@ -7054,10 +6922,10 @@
       "iv_atm": 127.4,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 44
+      "short_rank": 45
     },
     "CRDO": {
-      "rank": 43,
+      "rank": 44,
       "ticker": "CRDO",
       "sector_key": "Optical_Interconnect",
       "sector_cn": "光通信与互联",
@@ -7098,10 +6966,10 @@
       "iv_atm": 145.1,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 37
+      "short_rank": 38
     },
     "AMAT": {
-      "rank": 44,
+      "rank": 45,
       "ticker": "AMAT",
       "sector_key": "Semiconductors",
       "sector_cn": "半导体与设备",
@@ -7142,10 +7010,10 @@
       "iv_atm": 97.7,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 38
+      "short_rank": 39
     },
     "HPE": {
-      "rank": 45,
+      "rank": 46,
       "ticker": "HPE",
       "sector_key": "Semiconductors",
       "sector_cn": "AI液冷与服务器",
@@ -7186,10 +7054,10 @@
       "iv_atm": 106.9,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 50
+      "short_rank": 51
     },
     "BE": {
-      "rank": 46,
+      "rank": 47,
       "ticker": "BE",
       "sector_key": "Energy_Power",
       "sector_cn": "数据中心能源电力",
@@ -7230,10 +7098,10 @@
       "iv_atm": 140.7,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 35
+      "short_rank": 36
     },
     "AAOI": {
-      "rank": 47,
+      "rank": 48,
       "ticker": "AAOI",
       "sector_key": "Optical_Interconnect",
       "sector_cn": "光通信与互联",
@@ -7274,10 +7142,10 @@
       "iv_atm": 263.2,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 45
+      "short_rank": 46
     },
     "NBIS": {
-      "rank": 48,
+      "rank": 49,
       "ticker": "NBIS",
       "sector_key": "Neo_Cloud",
       "sector_cn": "Neo-Cloud 算力租赁",
@@ -7318,10 +7186,10 @@
       "iv_atm": 157.9,
       "short_action": "🩸 极高胜率·顺势做空/买Put",
       "short_action_tag": "short-action-strong",
-      "short_rank": 28
+      "short_rank": 29
     },
     "AXTI": {
-      "rank": 49,
+      "rank": 50,
       "ticker": "AXTI",
       "sector_key": "Optical_Interconnect",
       "sector_cn": "光通信与互联",
@@ -7362,10 +7230,10 @@
       "iv_atm": 157.7,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 68
+      "short_rank": 69
     },
     "SKHY": {
-      "rank": 50,
+      "rank": 51,
       "ticker": "SKHY",
       "sector_key": "Memory",
       "sector_cn": "存储芯片",
@@ -7406,10 +7274,10 @@
       "iv_atm": 109.3,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 61
+      "short_rank": 62
     },
     "STX": {
-      "rank": 51,
+      "rank": 52,
       "ticker": "STX",
       "sector_key": "Memory",
       "sector_cn": "存储芯片",
@@ -7450,10 +7318,10 @@
       "iv_atm": 115.9,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 41
+      "short_rank": 42
     },
     "VST": {
-      "rank": 52,
+      "rank": 53,
       "ticker": "VST",
       "sector_key": "Energy_Power",
       "sector_cn": "数据中心能源电力",
@@ -7494,10 +7362,10 @@
       "iv_atm": 114.3,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 69
+      "short_rank": 70
     },
     "VRT": {
-      "rank": 53,
+      "rank": 54,
       "ticker": "VRT",
       "sector_key": "Semiconductors",
       "sector_cn": "AI液冷与服务器",
@@ -7538,10 +7406,10 @@
       "iv_atm": 99.2,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 62
+      "short_rank": 63
     },
     "WDC": {
-      "rank": 54,
+      "rank": 55,
       "ticker": "WDC",
       "sector_key": "Memory",
       "sector_cn": "存储芯片",
@@ -7582,10 +7450,10 @@
       "iv_atm": 112.0,
       "short_action": "🩸 极高胜率·顺势做空/买Put",
       "short_action_tag": "short-action-strong",
-      "short_rank": 31
+      "short_rank": 32
     },
     "LITE": {
-      "rank": 55,
+      "rank": 56,
       "ticker": "LITE",
       "sector_key": "Optical_Interconnect",
       "sector_cn": "光通信与互联",
@@ -7626,10 +7494,10 @@
       "iv_atm": 137.1,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 36
+      "short_rank": 37
     },
     "KORU": {
-      "rank": 56,
+      "rank": 57,
       "ticker": "KORU",
       "sector_key": "Memory",
       "sector_cn": "韩股存储3倍做多",
@@ -7670,10 +7538,10 @@
       "iv_atm": 6.3,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 64
+      "short_rank": 65
     },
     "SOXL": {
-      "rank": 57,
+      "rank": 58,
       "ticker": "SOXL",
       "sector_key": "Semiconductors",
       "sector_cn": "半导体3倍做多",
@@ -7714,10 +7582,10 @@
       "iv_atm": 6.3,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 70
+      "short_rank": 71
     },
     "QQQM": {
-      "rank": 58,
+      "rank": 59,
       "ticker": "QQQM",
       "sector_key": "Semiconductors",
       "sector_cn": "大盘与宏观ETF",
@@ -7758,10 +7626,10 @@
       "iv_atm": 31.5,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 7
+      "short_rank": 8
     },
     "SMH": {
-      "rank": 60,
+      "rank": 61,
       "ticker": "SMH",
       "sector_key": "Semiconductors",
       "sector_cn": "半导体ETF",
@@ -7802,10 +7670,10 @@
       "iv_atm": 71.7,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 56
+      "short_rank": 57
     },
     "IBIT": {
-      "rank": 61,
+      "rank": 62,
       "ticker": "IBIT",
       "sector_key": "Crypto_Proxy",
       "sector_cn": "加密币股代理",
@@ -7846,10 +7714,10 @@
       "iv_atm": 58.4,
       "short_action": "🛡️ 建议买入反向ETF对冲",
       "short_action_tag": "short-action-etf",
-      "short_rank": 30
+      "short_rank": 31
     },
     "GLD": {
-      "rank": 62,
+      "rank": 63,
       "ticker": "GLD",
       "sector_key": "Energy_Power",
       "sector_cn": "大盘与宏观ETF",
@@ -7890,10 +7758,10 @@
       "iv_atm": 33.3,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 3
+      "short_rank": 4
     },
     "TLT": {
-      "rank": 63,
+      "rank": 64,
       "ticker": "TLT",
       "sector_key": "Energy_Power",
       "sector_cn": "大盘与宏观ETF",
@@ -7934,10 +7802,10 @@
       "iv_atm": 20.8,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 20
+      "short_rank": 21
     },
     "SOXX": {
-      "rank": 64,
+      "rank": 65,
       "ticker": "SOXX",
       "sector_key": "Semiconductors",
       "sector_cn": "半导体ETF",
@@ -7978,10 +7846,10 @@
       "iv_atm": 78.4,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 58
+      "short_rank": 59
     },
     "VIXY": {
-      "rank": 65,
+      "rank": 66,
       "ticker": "VIXY",
       "sector_key": "Crypto_Proxy",
       "sector_cn": "恐慌与反向对冲",
@@ -8022,10 +7890,10 @@
       "iv_atm": 83.5,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 9
+      "short_rank": 10
     },
     "IGV": {
-      "rank": 66,
+      "rank": 67,
       "ticker": "IGV",
       "sector_key": "Enterprise_SaaS",
       "sector_cn": "软件科技ETF",
@@ -8066,10 +7934,10 @@
       "iv_atm": 67.7,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 11
+      "short_rank": 12
     },
     "IWM": {
-      "rank": 67,
+      "rank": 68,
       "ticker": "IWM",
       "sector_key": "Neo_Cloud",
       "sector_cn": "大盘与宏观ETF",
@@ -8110,10 +7978,10 @@
       "iv_atm": 33.7,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 16
+      "short_rank": 17
     },
     "SPY": {
-      "rank": 68,
+      "rank": 69,
       "ticker": "SPY",
       "sector_key": "Enterprise_SaaS",
       "sector_cn": "大盘与宏观ETF",
@@ -8154,10 +8022,10 @@
       "iv_atm": 26.0,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 8
+      "short_rank": 9
     },
     "SOXS": {
-      "rank": 69,
+      "rank": 70,
       "ticker": "SOXS",
       "sector_key": "Crypto_Proxy",
       "sector_cn": "恐慌与反向对冲",
@@ -8198,10 +8066,10 @@
       "iv_atm": 246.0,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 26
+      "short_rank": 27
     },
     "DIA": {
-      "rank": 70,
+      "rank": 71,
       "ticker": "DIA",
       "sector_key": "Enterprise_SaaS",
       "sector_cn": "大盘与宏观ETF",
@@ -8242,10 +8110,10 @@
       "iv_atm": 24.2,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 18
+      "short_rank": 19
     },
     "QQQI": {
-      "rank": 71,
+      "rank": 72,
       "ticker": "QQQI",
       "sector_key": "Enterprise_SaaS",
       "sector_cn": "大盘与宏观ETF",
@@ -8286,10 +8154,10 @@
       "iv_atm": 26.2,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 13
+      "short_rank": 14
     },
     "SQQQ": {
-      "rank": 72,
+      "rank": 73,
       "ticker": "SQQQ",
       "sector_key": "Crypto_Proxy",
       "sector_cn": "恐慌与反向对冲",
@@ -8330,7 +8198,7 @@
       "iv_atm": 138.4,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 10
+      "short_rank": 11
     }
   },
   "table4": [
@@ -8376,7 +8244,7 @@
       "iv_atm": 61.9,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 4
+      "short_rank": 5
     },
     {
       "rank": 2,
@@ -8420,7 +8288,7 @@
       "iv_atm": 12.5,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 15
+      "short_rank": 16
     },
     {
       "rank": 3,
@@ -8464,7 +8332,7 @@
       "iv_atm": 68.0,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 6
+      "short_rank": 7
     },
     {
       "rank": 4,
@@ -8508,7 +8376,7 @@
       "iv_atm": 35.9,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 19
+      "short_rank": 20
     },
     {
       "rank": 5,
@@ -8556,6 +8424,50 @@
     },
     {
       "rank": 6,
+      "ticker": "MSTR",
+      "sector_key": "Crypto_Proxy",
+      "sector_cn": "加密币股代理",
+      "sector_rating": "⭐⭐⭐☆☆",
+      "latest_price": 144.37,
+      "current_price": 130.50999450683594,
+      "atr_pct": 6.41,
+      "bias_ma50": 0.15,
+      "rsi_14": 44.4,
+      "is_broken": false,
+      "is_etf": false,
+      "is_crash_halt": false,
+      "is_cooling_halt": false,
+      "macro_temp": "🌧️ 暴雨空仓",
+      "model_raw_prob_pct": 40.5,
+      "base_raw_prob_pct": 49.8,
+      "predicted_win_rate_pct": 49.8,
+      "calibrated_win_rate_pct": 49.4,
+      "sector_pf": 1.29,
+      "target_profit_price": 154.52,
+      "target_profit_pct": 7.0,
+      "stop_loss_price": 136.86,
+      "stop_loss_pct": 5.2,
+      "action": "🛡️ 暴雨空仓·严禁左侧接刀",
+      "action_tag": "action-watch",
+      "model_raw_short_prob_pct": 63.1,
+      "calibrated_short_win_rate_pct": 72.8,
+      "short_entry_price": 130.50999450683594,
+      "short_target_profit_price": 134.23,
+      "short_target_profit_pct": 7.0,
+      "short_stop_loss_price": 151.89,
+      "short_stop_loss_pct": 5.2,
+      "dollar_pcr": 1.33,
+      "pcr": 0.89,
+      "pcr_sentiment": "🟠 机构谨慎防跌",
+      "put_wall": 130.0,
+      "call_wall": 135.0,
+      "iv_atm": 112.6,
+      "short_action": "🩸 极高胜率·顺势做空/买Put",
+      "short_action_tag": "short-action-strong",
+      "short_rank": 2
+    },
+    {
+      "rank": 7,
       "ticker": "AXP",
       "sector_key": "Energy_Power",
       "sector_cn": "价值蓝筹与医药",
@@ -8596,10 +8508,10 @@
       "iv_atm": 40.9,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 24
+      "short_rank": 25
     },
     {
-      "rank": 7,
+      "rank": 8,
       "ticker": "KO",
       "sector_key": "Energy_Power",
       "sector_cn": "价值蓝筹与医药",
@@ -8640,10 +8552,10 @@
       "iv_atm": 31.9,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 17
+      "short_rank": 18
     },
     {
-      "rank": 8,
+      "rank": 9,
       "ticker": "AMZN",
       "sector_key": "Neo_Cloud",
       "sector_cn": "科技巨头与AI生态",
@@ -8684,10 +8596,10 @@
       "iv_atm": 50.4,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 14
+      "short_rank": 15
     },
     {
-      "rank": 9,
+      "rank": 10,
       "ticker": "MRNA",
       "sector_key": "Energy_Power",
       "sector_cn": "价值蓝筹与医药",
@@ -8728,95 +8640,7 @@
       "iv_atm": 135.9,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 25
-    },
-    {
-      "rank": 9,
-      "ticker": "MSTR",
-      "sector_key": "Crypto_Proxy",
-      "sector_cn": "加密币股代理",
-      "sector_rating": "⭐⭐⭐☆☆",
-      "latest_price": 144.29,
-      "current_price": 130.50999450683594,
-      "atr_pct": 6.47,
-      "bias_ma50": -0.13,
-      "rsi_14": 49.7,
-      "is_broken": false,
-      "is_etf": false,
-      "is_crash_halt": false,
-      "is_cooling_halt": false,
-      "macro_temp": "🌧️ 暴雨空仓",
-      "model_raw_prob_pct": 40.5,
-      "base_raw_prob_pct": 49.1,
-      "predicted_win_rate_pct": 49.1,
-      "calibrated_win_rate_pct": 48.7,
-      "sector_pf": 1.29,
-      "target_profit_price": 154.49,
-      "target_profit_pct": 7.1,
-      "stop_loss_price": 136.73,
-      "stop_loss_pct": 5.2,
-      "action": "🛡️ 暴雨空仓·严禁左侧接刀",
-      "action_tag": "action-watch",
-      "model_raw_short_prob_pct": 63.1,
-      "calibrated_short_win_rate_pct": 72.8,
-      "short_entry_price": 130.50999450683594,
-      "short_target_profit_price": 134.09,
-      "short_target_profit_pct": 7.1,
-      "short_stop_loss_price": 151.84,
-      "short_stop_loss_pct": 5.2,
-      "dollar_pcr": 1.33,
-      "pcr": 0.89,
-      "pcr_sentiment": "🟠 机构谨慎防跌",
-      "put_wall": 130.0,
-      "call_wall": 135.0,
-      "iv_atm": 112.6,
-      "short_action": "🩸 极高胜率·顺势做空/买Put",
-      "short_action_tag": "short-action-strong",
-      "short_rank": 1
-    },
-    {
-      "rank": 10,
-      "ticker": "META",
-      "sector_key": "Neo_Cloud",
-      "sector_cn": "科技巨头与AI生态",
-      "sector_rating": "⭐⭐⭐☆☆",
-      "latest_price": 630.19,
-      "current_price": 617.6599731445312,
-      "atr_pct": 3.55,
-      "bias_ma50": -6.25,
-      "rsi_14": 37.0,
-      "is_broken": false,
-      "is_etf": false,
-      "is_crash_halt": false,
-      "is_cooling_halt": false,
-      "macro_temp": "🌧️ 暴雨空仓",
-      "model_raw_prob_pct": 36.8,
-      "base_raw_prob_pct": 45.5,
-      "predicted_win_rate_pct": 45.5,
-      "calibrated_win_rate_pct": 47.3,
-      "sector_pf": 1.35,
-      "target_profit_price": 660.39,
-      "target_profit_pct": 4.8,
-      "stop_loss_price": 607.81,
-      "stop_loss_pct": 3.5,
-      "action": "🛡️ 暴雨空仓·严禁左侧接刀",
-      "action_tag": "action-watch",
-      "model_raw_short_prob_pct": 50.3,
-      "calibrated_short_win_rate_pct": 57.8,
-      "short_entry_price": 617.6599731445312,
-      "short_target_profit_price": 599.98,
-      "short_target_profit_pct": 4.8,
-      "short_stop_loss_price": 652.56,
-      "short_stop_loss_pct": 3.5,
-      "dollar_pcr": 1.96,
-      "pcr": 0.65,
-      "pcr_sentiment": "🔴 资金偏空对冲",
-      "put_wall": 600.0,
-      "call_wall": 620.0,
-      "iv_atm": 60.1,
-      "short_action": "⚡ 逢高反抽沽空/买Put",
-      "short_action_tag": "short-action-rebound",
-      "short_rank": 5
+      "short_rank": 26
     }
   ]
 }
