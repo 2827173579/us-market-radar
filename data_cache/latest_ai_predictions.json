@@ -4,7 +4,7 @@
     "profit_factor": 1.41,
     "top_sector": "存储芯片 (⭐⭐⭐⭐⭐)",
     "top_feature": "SMH_IGV_Ratio_Bias (12.28%)",
-    "sync_time": "2026-11-06 10:11:30",
+    "sync_time": "2026-11-06 10:12:30",
     "data_mode": "Finnhub 秒级实时 (🌌 美股夜盘)",
     "is_realtime": false
   },
@@ -710,7 +710,7 @@
       "iv_atm": 34.2,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 18
+      "short_rank": 17
     },
     {
       "rank": 4,
@@ -754,7 +754,7 @@
       "iv_atm": 31.6,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 17
+      "short_rank": 16
     },
     {
       "rank": 5,
@@ -798,7 +798,7 @@
       "iv_atm": 22.7,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 21
+      "short_rank": 20
     },
     {
       "rank": 6,
@@ -842,7 +842,7 @@
       "iv_atm": 29.8,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 15
+      "short_rank": 14
     },
     {
       "rank": 7,
@@ -930,7 +930,7 @@
       "iv_atm": 41.5,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 11
+      "short_rank": 10
     },
     {
       "rank": 9,
@@ -974,7 +974,7 @@
       "iv_atm": 38.3,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 22
+      "short_rank": 21
     },
     {
       "rank": 10,
@@ -1018,7 +1018,7 @@
       "iv_atm": 29.2,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 13
+      "short_rank": 12
     }
   ],
   "top_long": [
@@ -1152,7 +1152,7 @@
       "iv_atm": 34.2,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 18
+      "short_rank": 17
     },
     {
       "rank": 4,
@@ -1196,7 +1196,7 @@
       "iv_atm": 31.6,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 17
+      "short_rank": 16
     },
     {
       "rank": 5,
@@ -1240,7 +1240,7 @@
       "iv_atm": 22.7,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 21
+      "short_rank": 20
     },
     {
       "rank": 6,
@@ -1284,7 +1284,7 @@
       "iv_atm": 29.8,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 15
+      "short_rank": 14
     },
     {
       "rank": 7,
@@ -1372,7 +1372,7 @@
       "iv_atm": 41.5,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 11
+      "short_rank": 10
     },
     {
       "rank": 9,
@@ -1416,7 +1416,7 @@
       "iv_atm": 38.3,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 22
+      "short_rank": 21
     },
     {
       "rank": 10,
@@ -1460,7 +1460,7 @@
       "iv_atm": 29.2,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 13
+      "short_rank": 12
     }
   ],
   "top_short": [
@@ -1734,10 +1734,10 @@
       "sector_key": "Crypto_Proxy",
       "sector_cn": "恐慌与反向对冲",
       "sector_rating": "⭐⭐⭐☆☆",
-      "latest_price": 21.0,
+      "latest_price": 20.99,
       "current_price": 18.40999984741211,
       "atr_pct": 4.55,
-      "bias_ma50": 22.86,
+      "bias_ma50": 22.81,
       "rsi_14": 43.5,
       "is_broken": false,
       "is_etf": true,
@@ -1749,18 +1749,18 @@
       "predicted_win_rate_pct": 44.4,
       "calibrated_win_rate_pct": 44.1,
       "sector_pf": 1.29,
-      "target_profit_price": 22.21,
+      "target_profit_price": 22.2,
       "target_profit_pct": 5.8,
-      "stop_loss_price": 20.1,
+      "stop_loss_price": 20.09,
       "stop_loss_pct": 4.3,
       "action": "🛡️ 暴雨空仓·严禁左侧接刀",
       "action_tag": "action-watch",
       "model_raw_short_prob_pct": 58.1,
       "calibrated_short_win_rate_pct": 51.4,
       "short_entry_price": 18.40999984741211,
-      "short_target_profit_price": 19.79,
+      "short_target_profit_price": 19.78,
       "short_target_profit_pct": 5.8,
-      "short_stop_loss_price": 21.9,
+      "short_stop_loss_price": 21.89,
       "short_stop_loss_pct": 4.3,
       "dollar_pcr": 0.3,
       "pcr": 0.19,
@@ -1861,45 +1861,45 @@
       "short_rank": 9
     },
     {
-      "rank": 69,
-      "ticker": "IWM",
+      "rank": 8,
+      "ticker": "META",
       "sector_key": "Neo_Cloud",
-      "sector_cn": "大盘与宏观ETF",
+      "sector_cn": "科技巨头与AI生态",
       "sector_rating": "⭐⭐⭐☆☆",
-      "latest_price": 271.25,
-      "current_price": 282.7298889160156,
-      "atr_pct": 1.46,
-      "bias_ma50": -4.15,
-      "rsi_14": 57.5,
+      "latest_price": 605.55,
+      "current_price": 617.6599731445312,
+      "atr_pct": 3.69,
+      "bias_ma50": -10.07,
+      "rsi_14": 40.1,
       "is_broken": false,
-      "is_etf": true,
+      "is_etf": false,
       "is_crash_halt": false,
       "is_cooling_halt": false,
       "macro_temp": "🌧️ 暴雨空仓",
-      "model_raw_prob_pct": 35.3,
-      "base_raw_prob_pct": 43.3,
-      "predicted_win_rate_pct": 43.3,
-      "calibrated_win_rate_pct": 45.0,
+      "model_raw_prob_pct": 36.8,
+      "base_raw_prob_pct": 42.3,
+      "predicted_win_rate_pct": 42.3,
+      "calibrated_win_rate_pct": 43.9,
       "sector_pf": 1.35,
-      "target_profit_price": 279.39,
-      "target_profit_pct": 3.0,
-      "stop_loss_price": 265.28,
-      "stop_loss_pct": 2.2,
+      "target_profit_price": 635.71,
+      "target_profit_pct": 5.0,
+      "stop_loss_price": 583.2,
+      "stop_loss_pct": 3.7,
       "action": "🛡️ 暴雨空仓·严禁左侧接刀",
       "action_tag": "action-watch",
-      "model_raw_short_prob_pct": 46.3,
-      "calibrated_short_win_rate_pct": 50.1,
-      "short_entry_price": 282.7298889160156,
-      "short_target_profit_price": 263.11,
-      "short_target_profit_pct": 3.0,
-      "short_stop_loss_price": 277.22,
-      "short_stop_loss_pct": 2.2,
-      "dollar_pcr": 1.23,
-      "pcr": 1.82,
-      "pcr_sentiment": "🔴 资金偏空对冲",
-      "put_wall": 283.0,
-      "call_wall": 285.0,
-      "iv_atm": 15.9,
+      "model_raw_short_prob_pct": 50.3,
+      "calibrated_short_win_rate_pct": 49.3,
+      "short_entry_price": 617.6599731445312,
+      "short_target_profit_price": 575.38,
+      "short_target_profit_pct": 5.0,
+      "short_stop_loss_price": 627.89,
+      "short_stop_loss_pct": 3.7,
+      "dollar_pcr": 0.5,
+      "pcr": 0.5,
+      "pcr_sentiment": "🔥 机构极度看涨",
+      "put_wall": 600.0,
+      "call_wall": 650.0,
+      "iv_atm": 41.5,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
       "short_rank": 10
@@ -2036,7 +2036,7 @@
       "iv_atm": 34.2,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 18
+      "short_rank": 17
     },
     {
       "rank": 4,
@@ -2080,7 +2080,7 @@
       "iv_atm": 31.6,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 17
+      "short_rank": 16
     },
     {
       "rank": 5,
@@ -2124,7 +2124,7 @@
       "iv_atm": 22.7,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 21
+      "short_rank": 20
     },
     {
       "rank": 6,
@@ -2168,7 +2168,7 @@
       "iv_atm": 29.8,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 15
+      "short_rank": 14
     },
     {
       "rank": 7,
@@ -2256,7 +2256,7 @@
       "iv_atm": 41.5,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 11
+      "short_rank": 10
     },
     {
       "rank": 9,
@@ -2300,7 +2300,7 @@
       "iv_atm": 38.3,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 22
+      "short_rank": 21
     },
     {
       "rank": 10,
@@ -2344,7 +2344,7 @@
       "iv_atm": 29.2,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 13
+      "short_rank": 12
     },
     {
       "rank": 11,
@@ -2388,7 +2388,7 @@
       "iv_atm": 26.0,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 16
+      "short_rank": 15
     },
     {
       "rank": 12,
@@ -2432,7 +2432,7 @@
       "iv_atm": 26.2,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 14
+      "short_rank": 13
     },
     {
       "rank": 13,
@@ -2520,7 +2520,7 @@
       "iv_atm": 74.8,
       "short_action": "🩸 极高胜率·顺势做空/买Put",
       "short_action_tag": "short-action-strong",
-      "short_rank": 23
+      "short_rank": 22
     },
     {
       "rank": 15,
@@ -2652,7 +2652,7 @@
       "iv_atm": 68.6,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 51
+      "short_rank": 50
     },
     {
       "rank": 18,
@@ -2696,7 +2696,7 @@
       "iv_atm": 71.7,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 57
+      "short_rank": 56
     },
     {
       "rank": 19,
@@ -2740,7 +2740,7 @@
       "iv_atm": 53.3,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 44
+      "short_rank": 43
     },
     {
       "rank": 20,
@@ -2828,7 +2828,7 @@
       "iv_atm": 45.5,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 30
+      "short_rank": 29
     },
     {
       "rank": 22,
@@ -2872,7 +2872,7 @@
       "iv_atm": 84.7,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 55
+      "short_rank": 54
     },
     {
       "rank": 23,
@@ -2916,7 +2916,7 @@
       "iv_atm": 44.8,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 40
+      "short_rank": 39
     },
     {
       "rank": 24,
@@ -2960,7 +2960,7 @@
       "iv_atm": 83.4,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 49
+      "short_rank": 48
     },
     {
       "rank": 25,
@@ -3092,7 +3092,7 @@
       "iv_atm": 166.8,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 48
+      "short_rank": 47
     },
     {
       "rank": 28,
@@ -3136,7 +3136,7 @@
       "iv_atm": 122.7,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 45
+      "short_rank": 44
     },
     {
       "rank": 29,
@@ -3180,7 +3180,7 @@
       "iv_atm": 68.4,
       "short_action": "🩸 极高胜率·顺势做空/买Put",
       "short_action_tag": "short-action-strong",
-      "short_rank": 24
+      "short_rank": 23
     },
     {
       "rank": 30,
@@ -3224,7 +3224,7 @@
       "iv_atm": 139.0,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 61
+      "short_rank": 60
     },
     {
       "rank": 31,
@@ -3268,7 +3268,7 @@
       "iv_atm": 54.4,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 52
+      "short_rank": 51
     },
     {
       "rank": 32,
@@ -3312,7 +3312,7 @@
       "iv_atm": 111.7,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 63
+      "short_rank": 62
     },
     {
       "rank": 33,
@@ -3356,7 +3356,7 @@
       "iv_atm": 115.1,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 59
+      "short_rank": 58
     },
     {
       "rank": 34,
@@ -3400,7 +3400,7 @@
       "iv_atm": 86.4,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 54
+      "short_rank": 53
     },
     {
       "rank": 35,
@@ -3444,7 +3444,7 @@
       "iv_atm": 59.6,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 41
+      "short_rank": 40
     },
     {
       "rank": 36,
@@ -3532,7 +3532,7 @@
       "iv_atm": 51.5,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 35
+      "short_rank": 34
     },
     {
       "rank": 38,
@@ -3576,7 +3576,7 @@
       "iv_atm": 165.1,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 62
+      "short_rank": 61
     },
     {
       "rank": 39,
@@ -3620,7 +3620,7 @@
       "iv_atm": 263.2,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 39
+      "short_rank": 38
     },
     {
       "rank": 40,
@@ -3664,7 +3664,7 @@
       "iv_atm": 65.9,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 28
+      "short_rank": 27
     },
     {
       "rank": 41,
@@ -3796,7 +3796,7 @@
       "iv_atm": 71.1,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 33
+      "short_rank": 32
     },
     {
       "rank": 44,
@@ -3840,7 +3840,7 @@
       "iv_atm": 143.9,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 34
+      "short_rank": 33
     },
     {
       "rank": 45,
@@ -3884,7 +3884,7 @@
       "iv_atm": 157.9,
       "short_action": "🩸 极高胜率·顺势做空/买Put",
       "short_action_tag": "short-action-strong",
-      "short_rank": 25
+      "short_rank": 24
     },
     {
       "rank": 46,
@@ -3928,7 +3928,7 @@
       "iv_atm": 105.3,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 29
+      "short_rank": 28
     },
     {
       "rank": 47,
@@ -3972,7 +3972,7 @@
       "iv_atm": 79.7,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 42
+      "short_rank": 41
     },
     {
       "rank": 48,
@@ -4016,7 +4016,7 @@
       "iv_atm": 102.0,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 37
+      "short_rank": 36
     },
     {
       "rank": 49,
@@ -4060,7 +4060,7 @@
       "iv_atm": 48.5,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 36
+      "short_rank": 35
     },
     {
       "rank": 50,
@@ -4104,7 +4104,7 @@
       "iv_atm": 113.1,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 56
+      "short_rank": 55
     },
     {
       "rank": 51,
@@ -4148,7 +4148,7 @@
       "iv_atm": 83.2,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 31
+      "short_rank": 30
     },
     {
       "rank": 52,
@@ -4192,7 +4192,7 @@
       "iv_atm": 115.9,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 32
+      "short_rank": 31
     },
     {
       "rank": 53,
@@ -4236,7 +4236,7 @@
       "iv_atm": 80.4,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 47
+      "short_rank": 46
     },
     {
       "rank": 54,
@@ -4368,7 +4368,7 @@
       "iv_atm": 80.6,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 58
+      "short_rank": 57
     },
     {
       "rank": 57,
@@ -4412,7 +4412,7 @@
       "iv_atm": 64.3,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 38
+      "short_rank": 37
     },
     {
       "rank": 58,
@@ -4456,7 +4456,7 @@
       "iv_atm": 73.4,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 50
+      "short_rank": 49
     },
     {
       "rank": 59,
@@ -4500,7 +4500,7 @@
       "iv_atm": 73.9,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 60
+      "short_rank": 59
     },
     {
       "rank": 60,
@@ -4544,7 +4544,7 @@
       "iv_atm": 77.8,
       "short_action": "🩸 极高胜率·顺势做空/买Put",
       "short_action_tag": "short-action-strong",
-      "short_rank": 27
+      "short_rank": 26
     },
     {
       "rank": 61,
@@ -4588,7 +4588,7 @@
       "iv_atm": 24.6,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 43
+      "short_rank": 42
     },
     {
       "rank": 62,
@@ -4720,7 +4720,7 @@
       "iv_atm": 51.5,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 46
+      "short_rank": 45
     },
     {
       "rank": 65,
@@ -4808,7 +4808,7 @@
       "iv_atm": 33.5,
       "short_action": "🛡️ 建议买入反向ETF对冲",
       "short_action_tag": "short-action-etf",
-      "short_rank": 26
+      "short_rank": 25
     },
     {
       "rank": 67,
@@ -4852,7 +4852,7 @@
       "iv_atm": 11.9,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 19
+      "short_rank": 18
     },
     {
       "rank": 68,
@@ -4896,7 +4896,7 @@
       "iv_atm": 51.1,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 53
+      "short_rank": 52
     },
     {
       "rank": 69,
@@ -4904,14 +4904,14 @@
       "sector_key": "Neo_Cloud",
       "sector_cn": "大盘与宏观ETF",
       "sector_rating": "⭐⭐⭐☆☆",
-      "latest_price": 271.25,
+      "latest_price": 271.23,
       "current_price": 282.7298889160156,
       "atr_pct": 1.46,
-      "bias_ma50": -4.15,
+      "bias_ma50": -4.16,
       "rsi_14": 57.5,
       "is_broken": false,
       "is_etf": true,
-      "is_crash_halt": false,
+      "is_crash_halt": true,
       "is_cooling_halt": false,
       "macro_temp": "🌧️ 暴雨空仓",
       "model_raw_prob_pct": 35.3,
@@ -4919,18 +4919,18 @@
       "predicted_win_rate_pct": 43.3,
       "calibrated_win_rate_pct": 45.0,
       "sector_pf": 1.35,
-      "target_profit_price": 279.39,
+      "target_profit_price": 279.37,
       "target_profit_pct": 3.0,
-      "stop_loss_price": 265.28,
+      "stop_loss_price": 265.26,
       "stop_loss_pct": 2.2,
-      "action": "🛡️ 暴雨空仓·严禁左侧接刀",
+      "action": "🚨 暴跌熔断·严禁左侧接刀",
       "action_tag": "action-watch",
       "model_raw_short_prob_pct": 46.3,
       "calibrated_short_win_rate_pct": 50.1,
       "short_entry_price": 282.7298889160156,
-      "short_target_profit_price": 263.11,
+      "short_target_profit_price": 263.09,
       "short_target_profit_pct": 3.0,
-      "short_stop_loss_price": 277.22,
+      "short_stop_loss_price": 277.2,
       "short_stop_loss_pct": 2.2,
       "dollar_pcr": 1.23,
       "pcr": 1.82,
@@ -4940,7 +4940,7 @@
       "iv_atm": 15.9,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 10
+      "short_rank": 63
     },
     {
       "rank": 70,
@@ -4948,10 +4948,10 @@
       "sector_key": "Crypto_Proxy",
       "sector_cn": "恐慌与反向对冲",
       "sector_rating": "⭐⭐⭐☆☆",
-      "latest_price": 21.0,
+      "latest_price": 20.99,
       "current_price": 18.40999984741211,
       "atr_pct": 4.55,
-      "bias_ma50": 22.86,
+      "bias_ma50": 22.81,
       "rsi_14": 43.5,
       "is_broken": false,
       "is_etf": true,
@@ -4963,18 +4963,18 @@
       "predicted_win_rate_pct": 44.4,
       "calibrated_win_rate_pct": 44.1,
       "sector_pf": 1.29,
-      "target_profit_price": 22.21,
+      "target_profit_price": 22.2,
       "target_profit_pct": 5.8,
-      "stop_loss_price": 20.1,
+      "stop_loss_price": 20.09,
       "stop_loss_pct": 4.3,
       "action": "🛡️ 暴雨空仓·严禁左侧接刀",
       "action_tag": "action-watch",
       "model_raw_short_prob_pct": 58.1,
       "calibrated_short_win_rate_pct": 51.4,
       "short_entry_price": 18.40999984741211,
-      "short_target_profit_price": 19.79,
+      "short_target_profit_price": 19.78,
       "short_target_profit_pct": 5.8,
-      "short_stop_loss_price": 21.9,
+      "short_stop_loss_price": 21.89,
       "short_stop_loss_pct": 4.3,
       "dollar_pcr": 0.3,
       "pcr": 0.19,
@@ -5160,7 +5160,7 @@
       "iv_atm": 156.4,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 20
+      "short_rank": 19
     },
     {
       "rank": 75,
@@ -5248,7 +5248,7 @@
       "iv_atm": 14.5,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 12
+      "short_rank": 11
     }
   ],
   "by_ticker": {
@@ -5382,7 +5382,7 @@
       "iv_atm": 34.2,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 18
+      "short_rank": 17
     },
     "PEP": {
       "rank": 4,
@@ -5426,7 +5426,7 @@
       "iv_atm": 31.6,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 17
+      "short_rank": 16
     },
     "KO": {
       "rank": 5,
@@ -5470,7 +5470,7 @@
       "iv_atm": 22.7,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 21
+      "short_rank": 20
     },
     "AXP": {
       "rank": 6,
@@ -5514,7 +5514,7 @@
       "iv_atm": 29.8,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 15
+      "short_rank": 14
     },
     "NKE": {
       "rank": 7,
@@ -5602,7 +5602,7 @@
       "iv_atm": 41.5,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 11
+      "short_rank": 10
     },
     "LLY": {
       "rank": 9,
@@ -5646,7 +5646,7 @@
       "iv_atm": 38.3,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 22
+      "short_rank": 21
     },
     "MSFT": {
       "rank": 10,
@@ -5690,7 +5690,7 @@
       "iv_atm": 29.2,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 13
+      "short_rank": 12
     },
     "V": {
       "rank": 11,
@@ -5734,7 +5734,7 @@
       "iv_atm": 26.0,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 16
+      "short_rank": 15
     },
     "MCD": {
       "rank": 12,
@@ -5778,7 +5778,7 @@
       "iv_atm": 26.2,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 14
+      "short_rank": 13
     },
     "QCOM": {
       "rank": 13,
@@ -5866,7 +5866,7 @@
       "iv_atm": 74.8,
       "short_action": "🩸 极高胜率·顺势做空/买Put",
       "short_action_tag": "short-action-strong",
-      "short_rank": 23
+      "short_rank": 22
     },
     "MRNA": {
       "rank": 15,
@@ -5998,7 +5998,7 @@
       "iv_atm": 68.6,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 51
+      "short_rank": 50
     },
     "CRWD": {
       "rank": 18,
@@ -6042,7 +6042,7 @@
       "iv_atm": 71.7,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 57
+      "short_rank": 56
     },
     "NOW": {
       "rank": 19,
@@ -6086,7 +6086,7 @@
       "iv_atm": 53.3,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 44
+      "short_rank": 43
     },
     "INTC": {
       "rank": 20,
@@ -6174,7 +6174,7 @@
       "iv_atm": 45.5,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 30
+      "short_rank": 29
     },
     "MRVL": {
       "rank": 22,
@@ -6218,7 +6218,7 @@
       "iv_atm": 84.7,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 55
+      "short_rank": 54
     },
     "TSM": {
       "rank": 23,
@@ -6262,7 +6262,7 @@
       "iv_atm": 44.8,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 40
+      "short_rank": 39
     },
     "DELL": {
       "rank": 24,
@@ -6306,7 +6306,7 @@
       "iv_atm": 83.4,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 49
+      "short_rank": 48
     },
     "ASTS": {
       "rank": 25,
@@ -6438,7 +6438,7 @@
       "iv_atm": 166.8,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 48
+      "short_rank": 47
     },
     "MARA": {
       "rank": 28,
@@ -6482,7 +6482,7 @@
       "iv_atm": 122.7,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 45
+      "short_rank": 44
     },
     "COIN": {
       "rank": 29,
@@ -6526,7 +6526,7 @@
       "iv_atm": 68.4,
       "short_action": "🩸 极高胜率·顺势做空/买Put",
       "short_action_tag": "short-action-strong",
-      "short_rank": 24
+      "short_rank": 23
     },
     "FPS": {
       "rank": 30,
@@ -6570,7 +6570,7 @@
       "iv_atm": 139.0,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 61
+      "short_rank": 60
     },
     "PLTR": {
       "rank": 31,
@@ -6614,7 +6614,7 @@
       "iv_atm": 54.4,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 52
+      "short_rank": 51
     },
     "RKLB": {
       "rank": 32,
@@ -6658,7 +6658,7 @@
       "iv_atm": 111.7,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 63
+      "short_rank": 62
     },
     "APLD": {
       "rank": 33,
@@ -6702,7 +6702,7 @@
       "iv_atm": 115.1,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 59
+      "short_rank": 58
     },
     "SNDK": {
       "rank": 34,
@@ -6746,7 +6746,7 @@
       "iv_atm": 86.4,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 54
+      "short_rank": 53
     },
     "SPCX": {
       "rank": 35,
@@ -6790,7 +6790,7 @@
       "iv_atm": 59.6,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 41
+      "short_rank": 40
     },
     "GOOGL": {
       "rank": 36,
@@ -6878,7 +6878,7 @@
       "iv_atm": 51.5,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 35
+      "short_rank": 34
     },
     "AAOI": {
       "rank": 39,
@@ -6922,7 +6922,7 @@
       "iv_atm": 263.2,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 39
+      "short_rank": 38
     },
     "MU": {
       "rank": 40,
@@ -6966,7 +6966,7 @@
       "iv_atm": 65.9,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 28
+      "short_rank": 27
     },
     "VST": {
       "rank": 42,
@@ -7054,7 +7054,7 @@
       "iv_atm": 71.1,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 33
+      "short_rank": 32
     },
     "NBIS": {
       "rank": 45,
@@ -7098,7 +7098,7 @@
       "iv_atm": 157.9,
       "short_action": "🩸 极高胜率·顺势做空/买Put",
       "short_action_tag": "short-action-strong",
-      "short_rank": 25
+      "short_rank": 24
     },
     "CRDO": {
       "rank": 46,
@@ -7142,7 +7142,7 @@
       "iv_atm": 105.3,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 29
+      "short_rank": 28
     },
     "HPE": {
       "rank": 47,
@@ -7186,7 +7186,7 @@
       "iv_atm": 79.7,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 42
+      "short_rank": 41
     },
     "BE": {
       "rank": 48,
@@ -7230,7 +7230,7 @@
       "iv_atm": 102.0,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 37
+      "short_rank": 36
     },
     "AVGO": {
       "rank": 49,
@@ -7274,7 +7274,7 @@
       "iv_atm": 48.5,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 36
+      "short_rank": 35
     },
     "COHR": {
       "rank": 50,
@@ -7318,7 +7318,7 @@
       "iv_atm": 113.1,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 56
+      "short_rank": 55
     },
     "STX": {
       "rank": 52,
@@ -7362,7 +7362,7 @@
       "iv_atm": 115.9,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 32
+      "short_rank": 31
     },
     "AMAT": {
       "rank": 53,
@@ -7406,7 +7406,7 @@
       "iv_atm": 80.4,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 47
+      "short_rank": 46
     },
     "AXTI": {
       "rank": 55,
@@ -7494,7 +7494,7 @@
       "iv_atm": 80.6,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 58
+      "short_rank": 57
     },
     "ORCL": {
       "rank": 57,
@@ -7538,7 +7538,7 @@
       "iv_atm": 64.3,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 38
+      "short_rank": 37
     },
     "SKHY": {
       "rank": 58,
@@ -7582,7 +7582,7 @@
       "iv_atm": 73.4,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 50
+      "short_rank": 49
     },
     "VRT": {
       "rank": 59,
@@ -7626,7 +7626,7 @@
       "iv_atm": 73.9,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 60
+      "short_rank": 59
     },
     "WDC": {
       "rank": 60,
@@ -7670,7 +7670,7 @@
       "iv_atm": 77.8,
       "short_action": "🩸 极高胜率·顺势做空/买Put",
       "short_action_tag": "short-action-strong",
-      "short_rank": 27
+      "short_rank": 26
     },
     "QQQM": {
       "rank": 61,
@@ -7714,7 +7714,7 @@
       "iv_atm": 24.6,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 43
+      "short_rank": 42
     },
     "KORU": {
       "rank": 62,
@@ -7846,7 +7846,7 @@
       "iv_atm": 51.5,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 46
+      "short_rank": 45
     },
     "GLD": {
       "rank": 65,
@@ -7934,7 +7934,7 @@
       "iv_atm": 33.5,
       "short_action": "🛡️ 建议买入反向ETF对冲",
       "short_action_tag": "short-action-etf",
-      "short_rank": 26
+      "short_rank": 25
     },
     "TLT": {
       "rank": 67,
@@ -7978,7 +7978,7 @@
       "iv_atm": 11.9,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 19
+      "short_rank": 18
     },
     "SOXX": {
       "rank": 68,
@@ -8022,7 +8022,7 @@
       "iv_atm": 51.1,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "short_rank": 53
+      "short_rank": 52
     },
     "IWM": {
       "rank": 69,
@@ -8030,14 +8030,14 @@
       "sector_key": "Neo_Cloud",
       "sector_cn": "大盘与宏观ETF",
       "sector_rating": "⭐⭐⭐☆☆",
-      "latest_price": 271.25,
+      "latest_price": 271.23,
       "current_price": 282.7298889160156,
       "atr_pct": 1.46,
-      "bias_ma50": -4.15,
+      "bias_ma50": -4.16,
       "rsi_14": 57.5,
       "is_broken": false,
       "is_etf": true,
-      "is_crash_halt": false,
+      "is_crash_halt": true,
       "is_cooling_halt": false,
       "macro_temp": "🌧️ 暴雨空仓",
       "model_raw_prob_pct": 35.3,
@@ -8045,18 +8045,18 @@
       "predicted_win_rate_pct": 43.3,
       "calibrated_win_rate_pct": 45.0,
       "sector_pf": 1.35,
-      "target_profit_price": 279.39,
+      "target_profit_price": 279.37,
       "target_profit_pct": 3.0,
-      "stop_loss_price": 265.28,
+      "stop_loss_price": 265.26,
       "stop_loss_pct": 2.2,
-      "action": "🛡️ 暴雨空仓·严禁左侧接刀",
+      "action": "🚨 暴跌熔断·严禁左侧接刀",
       "action_tag": "action-watch",
       "model_raw_short_prob_pct": 46.3,
       "calibrated_short_win_rate_pct": 50.1,
       "short_entry_price": 282.7298889160156,
-      "short_target_profit_price": 263.11,
+      "short_target_profit_price": 263.09,
       "short_target_profit_pct": 3.0,
-      "short_stop_loss_price": 277.22,
+      "short_stop_loss_price": 277.2,
       "short_stop_loss_pct": 2.2,
       "dollar_pcr": 1.23,
       "pcr": 1.82,
@@ -8066,7 +8066,7 @@
       "iv_atm": 15.9,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 10
+      "short_rank": 63
     },
     "VIXY": {
       "rank": 70,
@@ -8074,10 +8074,10 @@
       "sector_key": "Crypto_Proxy",
       "sector_cn": "恐慌与反向对冲",
       "sector_rating": "⭐⭐⭐☆☆",
-      "latest_price": 21.0,
+      "latest_price": 20.99,
       "current_price": 18.40999984741211,
       "atr_pct": 4.55,
-      "bias_ma50": 22.86,
+      "bias_ma50": 22.81,
       "rsi_14": 43.5,
       "is_broken": false,
       "is_etf": true,
@@ -8089,18 +8089,18 @@
       "predicted_win_rate_pct": 44.4,
       "calibrated_win_rate_pct": 44.1,
       "sector_pf": 1.29,
-      "target_profit_price": 22.21,
+      "target_profit_price": 22.2,
       "target_profit_pct": 5.8,
-      "stop_loss_price": 20.1,
+      "stop_loss_price": 20.09,
       "stop_loss_pct": 4.3,
       "action": "🛡️ 暴雨空仓·严禁左侧接刀",
       "action_tag": "action-watch",
       "model_raw_short_prob_pct": 58.1,
       "calibrated_short_win_rate_pct": 51.4,
       "short_entry_price": 18.40999984741211,
-      "short_target_profit_price": 19.79,
+      "short_target_profit_price": 19.78,
       "short_target_profit_pct": 5.8,
-      "short_stop_loss_price": 21.9,
+      "short_stop_loss_price": 21.89,
       "short_stop_loss_pct": 4.3,
       "dollar_pcr": 0.3,
       "pcr": 0.19,
@@ -8286,7 +8286,7 @@
       "iv_atm": 156.4,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 20
+      "short_rank": 19
     },
     "SQQQ": {
       "rank": 75,
@@ -8374,7 +8374,7 @@
       "iv_atm": 14.5,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 12
+      "short_rank": 11
     }
   },
   "table4": [
@@ -8508,7 +8508,7 @@
       "iv_atm": 34.2,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 18
+      "short_rank": 17
     },
     {
       "rank": 4,
@@ -8552,7 +8552,7 @@
       "iv_atm": 31.6,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 17
+      "short_rank": 16
     },
     {
       "rank": 5,
@@ -8596,7 +8596,7 @@
       "iv_atm": 22.7,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 21
+      "short_rank": 20
     },
     {
       "rank": 6,
@@ -8640,7 +8640,7 @@
       "iv_atm": 29.8,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 15
+      "short_rank": 14
     },
     {
       "rank": 7,
@@ -8728,7 +8728,7 @@
       "iv_atm": 41.5,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 11
+      "short_rank": 10
     },
     {
       "rank": 9,
@@ -8772,7 +8772,7 @@
       "iv_atm": 38.3,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 22
+      "short_rank": 21
     },
     {
       "rank": 10,
@@ -8816,7 +8816,7 @@
       "iv_atm": 29.2,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 13
+      "short_rank": 12
     }
   ]
 }
