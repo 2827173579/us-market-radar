@@ -3,7 +3,7 @@
   "targets": {
     "INTC": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793761677.319776
+      "last_notified_at": 1793931931.9065936
     },
     "PORT_INTC": {
       "state": "INTC_CRITICAL_STOP",
@@ -11,7 +11,7 @@
     },
     "AAOI": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793668857.8008735
+      "last_notified_at": 1793931931.9065936
     },
     "CCXI": {
       "state": "NORMAL",
@@ -19,7 +19,7 @@
     },
     "OKLO": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793668857.8008735
+      "last_notified_at": 1793931931.9065936
     },
     "CRWV": {
       "state": "STOP_LOSS",
@@ -27,23 +27,23 @@
     },
     "CRDO": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793668857.8008735
+      "last_notified_at": 1793931931.9065936
     },
     "COHR": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793668857.8008735
+      "last_notified_at": 1793931931.9065936
     },
     "NBIS": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793668857.8008735
+      "last_notified_at": 1793931931.9065936
     },
     "ASTS": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793668857.8008735
+      "last_notified_at": 1793931931.9065936
     },
     "AXTI": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793668857.8008735
+      "last_notified_at": 1793931931.9065936
     },
     "MRVL": {
       "state": "STOP_LOSS",
@@ -51,7 +51,7 @@
     },
     "STX": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793668857.8008735
+      "last_notified_at": 1793931931.9065936
     },
     "FPS": {
       "state": "STOP_LOSS",
@@ -63,19 +63,19 @@
     },
     "SNDK": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793668857.8008735
+      "last_notified_at": 1793931931.9065936
     },
     "RKLB": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793668857.8008735
+      "last_notified_at": 1793931931.9065936
     },
     "GOOGL": {
       "state": "STOP_LOSS",
       "last_notified_at": 1793668857.8008735
     },
     "BE": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "STOP_LOSS",
+      "last_notified_at": 1793931931.9065936
     },
     "DELL": {
       "state": "STOP_LOSS",
@@ -83,7 +83,7 @@
     },
     "WDC": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793668857.8008735
+      "last_notified_at": 1793931931.9065936
     },
     "AVGO": {
       "state": "NORMAL",
@@ -91,15 +91,15 @@
     },
     "AMAT": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793668857.8008735
+      "last_notified_at": 1793931931.9065936
     },
     "VST": {
       "state": "STOP_LOSS",
       "last_notified_at": 1793931134.9963472
     },
     "NVDA": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "STOP_LOSS",
+      "last_notified_at": 1793931931.9065936
     },
     "ORCL": {
       "state": "STOP_LOSS",
@@ -110,20 +110,20 @@
       "last_notified_at": 0.0
     },
     "TSM": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "STOP_LOSS",
+      "last_notified_at": 1793931931.9065936
     },
     "MU": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "STOP_LOSS",
+      "last_notified_at": 1793931931.9065936
     },
     "ASML": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "STOP_LOSS",
+      "last_notified_at": 1793931931.9065936
     },
     "SKHY": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "STOP_LOSS",
+      "last_notified_at": 1793931931.9065936
     },
     "META": {
       "state": "NORMAL",
@@ -134,16 +134,16 @@
       "last_notified_at": 1793931134.9963472
     },
     "HPE": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "STOP_LOSS",
+      "last_notified_at": 1793931931.9065936
     },
     "AMD": {
       "state": "STOP_LOSS",
       "last_notified_at": 1793931134.9963472
     },
     "SPCX": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "STOP_LOSS",
+      "last_notified_at": 1793931931.9065936
     },
     "VRT": {
       "state": "STOP_LOSS",
@@ -178,8 +178,8 @@
       "last_notified_at": 0.0
     },
     "PLTR": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "STOP_LOSS",
+      "last_notified_at": 1793931931.9065936
     },
     "V": {
       "state": "NORMAL",
@@ -243,7 +243,7 @@
     },
     "APLD": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1793668857.8008735
+      "last_notified_at": 1793931931.9065936
     },
     "COIN": {
       "state": "NORMAL",
