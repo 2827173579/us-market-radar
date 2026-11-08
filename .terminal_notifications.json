@@ -1,7 +1,7 @@
 [
   {
-    "id": "STOP_AAOI_2026-11-07",
-    "time": "11-07 13:12",
+    "id": "STOP_AAOI_2026-11-09",
+    "time": "11-09 08:33",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -14,8 +14,8 @@
     "desc": "偏离 MA50 -46.4%，放量跌破坑底 $89.40，空头宣泄期严禁左侧接刀！"
   },
   {
-    "id": "STOP_AXTI_2026-11-07",
-    "time": "11-07 13:12",
+    "id": "STOP_AXTI_2026-11-09",
+    "time": "11-09 08:33",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -28,8 +28,8 @@
     "desc": "偏离 MA50 -39.0%，放量跌破坑底 $59.95，空头宣泄期严禁左侧接刀！"
   },
   {
-    "id": "STOP_CRDO_2026-11-07",
-    "time": "11-07 13:12",
+    "id": "STOP_CRDO_2026-11-09",
+    "time": "11-09 08:33",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -42,8 +42,8 @@
     "desc": "偏离 MA50 -32.0%，放量跌破坑底 $177.84，空头宣泄期严禁左侧接刀！"
   },
   {
-    "id": "STOP_SNDK_2026-11-07",
-    "time": "11-07 13:12",
+    "id": "STOP_SNDK_2026-11-09",
+    "time": "11-09 08:33",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -56,8 +56,8 @@
     "desc": "偏离 MA50 -44.1%，放量跌破坑底 $1226.27，空头宣泄期严禁左侧接刀！"
   },
   {
-    "id": "STOP_CRWV_2026-11-07",
-    "time": "11-07 13:12",
+    "id": "STOP_CRWV_2026-11-09",
+    "time": "11-09 08:33",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -70,8 +70,8 @@
     "desc": "偏离 MA50 -38.4%，放量跌破坑底 $67.21，空头宣泄期严禁左侧接刀！"
   },
   {
-    "id": "STOP_STX_2026-11-07",
-    "time": "11-07 13:12",
+    "id": "STOP_STX_2026-11-09",
+    "time": "11-09 08:33",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -84,8 +84,8 @@
     "desc": "偏离 MA50 -39.8%，放量跌破坑底 $664.69，空头宣泄期严禁左侧接刀！"
   },
   {
-    "id": "PORT_INTC_STOP_2026-11-07",
-    "time": "11-07 13:12",
+    "id": "PORT_INTC_STOP_2026-11-09",
+    "time": "11-09 08:33",
     "category": "portfolio",
     "cat_label": "💼 持仓风控",
     "level": "danger",
@@ -103,8 +103,8 @@
     "target": 95.5
   },
   {
-    "id": "STOP_INTC_2026-11-07",
-    "time": "11-07 13:12",
+    "id": "STOP_INTC_2026-11-09",
+    "time": "11-09 08:33",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -117,8 +117,8 @@
     "desc": "偏离 MA50 -42.0%，放量跌破坑底 $80.52，空头宣泄期严禁左侧接刀！"
   },
   {
-    "id": "STOP_MARA_2026-11-07",
-    "time": "11-07 13:12",
+    "id": "STOP_MARA_2026-11-09",
+    "time": "11-09 08:33",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -131,8 +131,8 @@
     "desc": "偏离 MA50 -36.0%，放量跌破坑底 $8.86，空头宣泄期严禁左侧接刀！"
   },
   {
-    "id": "STOP_ASTS_2026-11-07",
-    "time": "11-07 13:12",
+    "id": "STOP_ASTS_2026-11-09",
+    "time": "11-09 08:33",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -145,8 +145,8 @@
     "desc": "偏离 MA50 -37.7%，放量跌破坑底 $45.49，空头宣泄期严禁左侧接刀！"
   },
   {
-    "id": "STOP_WDC_2026-11-07",
-    "time": "11-07 13:12",
+    "id": "STOP_WDC_2026-11-09",
+    "time": "11-09 08:33",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -159,8 +159,8 @@
     "desc": "偏离 MA50 -34.6%，放量跌破坑底 $369.32，空头宣泄期严禁左侧接刀！"
   },
   {
-    "id": "STOP_LITE_2026-11-07",
-    "time": "11-07 13:12",
+    "id": "STOP_LITE_2026-11-09",
+    "time": "11-09 08:33",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -173,8 +173,8 @@
     "desc": "偏离 MA50 -39.6%，放量跌破坑底 $749.76，空头宣泄期严禁左侧接刀！"
   },
   {
-    "id": "STOP_MRVL_2026-11-07",
-    "time": "11-07 13:12",
+    "id": "STOP_MRVL_2026-11-09",
+    "time": "11-09 08:33",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -187,8 +187,8 @@
     "desc": "偏离 MA50 -39.4%，放量跌破坑底 $196.97，空头宣泄期严禁左侧接刀！"
   },
   {
-    "id": "STOP_FPS_2026-11-07",
-    "time": "11-07 13:12",
+    "id": "STOP_FPS_2026-11-09",
+    "time": "11-09 08:33",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -201,8 +201,8 @@
     "desc": "偏离 MA50 -39.5%，放量跌破坑底 $26.82，空头宣泄期严禁左侧接刀！"
   },
   {
-    "id": "STOP_NBIS_2026-11-07",
-    "time": "11-07 13:12",
+    "id": "STOP_NBIS_2026-11-09",
+    "time": "11-09 08:33",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -215,8 +215,8 @@
     "desc": "偏离 MA50 -35.2%，放量跌破坑底 $177.30，空头宣泄期严禁左侧接刀！"
   },
   {
-    "id": "STOP_APLD_2026-11-07",
-    "time": "11-07 13:12",
+    "id": "STOP_APLD_2026-11-09",
+    "time": "11-09 08:33",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -229,8 +229,8 @@
     "desc": "偏离 MA50 -31.9%，放量跌破坑底 $20.27，空头宣泄期严禁左侧接刀！"
   },
   {
-    "id": "STOP_DELL_2026-11-07",
-    "time": "11-07 13:12",
+    "id": "STOP_DELL_2026-11-09",
+    "time": "11-09 08:33",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -243,8 +243,8 @@
     "desc": "偏离 MA50 -34.2%，放量跌破坑底 $421.84，空头宣泄期严禁左侧接刀！"
   },
   {
-    "id": "STOP_OKLO_2026-11-07",
-    "time": "11-07 13:12",
+    "id": "STOP_OKLO_2026-11-09",
+    "time": "11-09 08:33",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -257,8 +257,8 @@
     "desc": "偏离 MA50 -29.5%，放量跌破坑底 $29.51，空头宣泄期严禁左侧接刀！"
   },
   {
-    "id": "STOP_HPE_2026-11-07",
-    "time": "11-07 13:12",
+    "id": "STOP_HPE_2026-11-09",
+    "time": "11-09 08:33",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -271,8 +271,8 @@
     "desc": "偏离 MA50 -23.9%，放量跌破坑底 $54.91，空头宣泄期严禁左侧接刀！"
   },
   {
-    "id": "STOP_COHR_2026-11-07",
-    "time": "11-07 13:12",
+    "id": "STOP_COHR_2026-11-09",
+    "time": "11-09 08:33",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -285,8 +285,8 @@
     "desc": "偏离 MA50 -27.9%，放量跌破坑底 $237.43，空头宣泄期严禁左侧接刀！"
   },
   {
-    "id": "STOP_BE_2026-11-07",
-    "time": "11-07 13:12",
+    "id": "STOP_BE_2026-11-09",
+    "time": "11-09 08:33",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -299,8 +299,8 @@
     "desc": "偏离 MA50 -29.1%，放量跌破坑底 $211.91，空头宣泄期严禁左侧接刀！"
   },
   {
-    "id": "STOP_AMAT_2026-11-07",
-    "time": "11-07 13:12",
+    "id": "STOP_AMAT_2026-11-09",
+    "time": "11-09 08:33",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -313,8 +313,8 @@
     "desc": "偏离 MA50 -24.9%，放量跌破坑底 $404.92，空头宣泄期严禁左侧接刀！"
   },
   {
-    "id": "STOP_NOW_2026-11-07",
-    "time": "11-07 13:12",
+    "id": "STOP_NOW_2026-11-09",
+    "time": "11-09 08:33",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -327,8 +327,8 @@
     "desc": "偏离 MA50 -25.2%，放量跌破坑底 $123.07，空头宣泄期严禁左侧接刀！"
   },
   {
-    "id": "STOP_VRT_2026-11-07",
-    "time": "11-07 13:12",
+    "id": "STOP_VRT_2026-11-09",
+    "time": "11-09 08:33",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -341,8 +341,8 @@
     "desc": "偏离 MA50 -22.8%，放量跌破坑底 $220.24，空头宣泄期严禁左侧接刀！"
   },
   {
-    "id": "STOP_COIN_2026-11-07",
-    "time": "11-07 13:12",
+    "id": "STOP_COIN_2026-11-09",
+    "time": "11-09 08:33",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -355,8 +355,8 @@
     "desc": "偏离 MA50 -23.4%，放量跌破坑底 $160.88，空头宣泄期严禁左侧接刀！"
   },
   {
-    "id": "STOP_MU_2026-11-07",
-    "time": "11-07 13:12",
+    "id": "STOP_MU_2026-11-09",
+    "time": "11-09 08:33",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -369,8 +369,8 @@
     "desc": "偏离 MA50 -27.7%，放量跌破坑底 $825.16，空头宣泄期严禁左侧接刀！"
   },
   {
-    "id": "STOP_SKHY_2026-11-07",
-    "time": "11-07 13:12",
+    "id": "STOP_SKHY_2026-11-09",
+    "time": "11-09 08:33",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -383,22 +383,22 @@
     "desc": "偏离 MA50 -23.3%，放量跌破坑底 $151.87，空头宣泄期严禁左侧接刀！"
   },
   {
-    "id": "STOP_ORCL_2026-11-07",
-    "time": "11-07 13:12",
+    "id": "STOP_ORCL_2026-11-09",
+    "time": "11-09 08:33",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
     "ticker": "ORCL",
     "name": "甲骨文",
     "cat": "云与软件",
-    "price": 115.98,
+    "price": 115.9804,
     "pct_change": 0.8162511133377129,
     "title": "🔴 ORCL (甲骨文) 跌破波段斐波那契下沿",
     "desc": "偏离 MA50 -16.4%，放量跌破坑底 $132.46，空头宣泄期严禁左侧接刀！"
   },
   {
-    "id": "STOP_AVGO_2026-11-07",
-    "time": "11-07 13:12",
+    "id": "STOP_AVGO_2026-11-09",
+    "time": "11-09 08:33",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -411,8 +411,8 @@
     "desc": "偏离 MA50 -15.1%，放量跌破坑底 $336.37，空头宣泄期严禁左侧接刀！"
   },
   {
-    "id": "STOP_RKLB_2026-11-07",
-    "time": "11-07 13:12",
+    "id": "STOP_RKLB_2026-11-09",
+    "time": "11-09 08:33",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -425,8 +425,8 @@
     "desc": "偏离 MA50 -14.4%，放量跌破坑底 $59.80，空头宣泄期严禁左侧接刀！"
   },
   {
-    "id": "STOP_AMD_2026-11-07",
-    "time": "11-07 13:12",
+    "id": "STOP_AMD_2026-11-09",
+    "time": "11-09 08:33",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -439,8 +439,8 @@
     "desc": "偏离 MA50 -18.1%，放量跌破坑底 $500.05，空头宣泄期严禁左侧接刀！"
   },
   {
-    "id": "STOP_PLTR_2026-11-07",
-    "time": "11-07 13:12",
+    "id": "STOP_PLTR_2026-11-09",
+    "time": "11-09 08:33",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -453,8 +453,8 @@
     "desc": "偏离 MA50 -13.5%，放量跌破坑底 $175.65，空头宣泄期严禁左侧接刀！"
   },
   {
-    "id": "STOP_ASML_2026-11-07",
-    "time": "11-07 13:12",
+    "id": "STOP_ASML_2026-11-09",
+    "time": "11-09 08:33",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -467,8 +467,8 @@
     "desc": "偏离 MA50 -14.7%，放量跌破坑底 $1560.87，空头宣泄期严禁左侧接刀！"
   },
   {
-    "id": "STOP_GOOGL_2026-11-07",
-    "time": "11-07 13:12",
+    "id": "STOP_GOOGL_2026-11-09",
+    "time": "11-09 08:33",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -481,8 +481,8 @@
     "desc": "偏离 MA50 -14.3%，放量跌破坑底 $310.25，空头宣泄期严禁左侧接刀！"
   },
   {
-    "id": "STOP_NVDA_2026-11-07",
-    "time": "11-07 13:12",
+    "id": "STOP_NVDA_2026-11-09",
+    "time": "11-09 08:33",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -495,8 +495,8 @@
     "desc": "偏离 MA50 -14.1%，放量跌破坑底 $205.11，空头宣泄期严禁左侧接刀！"
   },
   {
-    "id": "STOP_TSM_2026-11-07",
-    "time": "11-07 13:12",
+    "id": "STOP_TSM_2026-11-09",
+    "time": "11-09 08:33",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -509,8 +509,8 @@
     "desc": "偏离 MA50 -12.2%，放量跌破坑底 $403.25，空头宣泄期严禁左侧接刀！"
   },
   {
-    "id": "TP_LLY_2026-11-07",
-    "time": "11-07 13:12",
+    "id": "TP_LLY_2026-11-09",
+    "time": "11-09 08:33",
     "category": "take_profit",
     "cat_label": "🟣 冲顶减仓",
     "level": "purple",
@@ -523,8 +523,8 @@
     "desc": "偏离 MA50 +11.8%，RSI 61.1，进入极端冲顶兑现区，建议分批减半锁定利润！"
   },
   {
-    "id": "STOP_QQQM_2026-11-07",
-    "time": "11-07 13:12",
+    "id": "STOP_QQQM_2026-11-09",
+    "time": "11-09 08:33",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -537,8 +537,8 @@
     "desc": "偏离 MA50 -8.8%，放量跌破坑底 $284.70，空头宣泄期严禁左侧接刀！"
   },
   {
-    "id": "STOP_SOXX_2026-11-07",
-    "time": "11-07 13:12",
+    "id": "STOP_SOXX_2026-11-09",
+    "time": "11-09 08:33",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -551,8 +551,8 @@
     "desc": "偏离 MA50 -21.0%，放量跌破坑底 $156.75，空头宣泄期严禁左侧接刀！"
   },
   {
-    "id": "PORT_SOXL_STOP_2026-11-07",
-    "time": "11-07 13:12",
+    "id": "PORT_SOXL_STOP_2026-11-09",
+    "time": "11-09 08:33",
     "category": "portfolio",
     "cat_label": "💼 持仓风控",
     "level": "danger",
@@ -570,8 +570,8 @@
     "target": 108.21
   },
   {
-    "id": "STOP_SOXL_2026-11-07",
-    "time": "11-07 13:12",
+    "id": "STOP_SOXL_2026-11-09",
+    "time": "11-09 08:33",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -584,8 +584,8 @@
     "desc": "偏离 MA50 -59.8%，放量跌破坑底 $89.96，空头宣泄期严禁左侧接刀！"
   },
   {
-    "id": "STOP_KORU_2026-11-07",
-    "time": "11-07 13:12",
+    "id": "STOP_KORU_2026-11-09",
+    "time": "11-09 08:33",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -598,8 +598,8 @@
     "desc": "偏离 MA50 -59.2%，放量跌破坑底 $13.68，空头宣泄期严禁左侧接刀！"
   },
   {
-    "id": "PORT_SOXS_HEDGE_CLIMAX_2026-11-07",
-    "time": "11-07 13:12",
+    "id": "PORT_SOXS_HEDGE_CLIMAX_2026-11-09",
+    "time": "11-09 08:33",
     "category": "portfolio",
     "cat_label": "💼 持仓风控",
     "level": "success",
@@ -617,8 +617,8 @@
     "target": 46.0
   },
   {
-    "id": "TP_SOXS_2026-11-07",
-    "time": "11-07 13:12",
+    "id": "TP_SOXS_2026-11-09",
+    "time": "11-09 08:33",
     "category": "take_profit",
     "cat_label": "🟣 冲顶减仓",
     "level": "purple",
@@ -631,8 +631,8 @@
     "desc": "偏离 MA50 +60.0%，RSI 65.0，进入极端冲顶兑现区，建议分批减半锁定利润！"
   },
   {
-    "id": "WEATHER_暴雨空仓_2026-11-07",
-    "time": "11-07 13:12",
+    "id": "WEATHER_暴雨空仓_2026-11-09",
+    "time": "11-09 08:33",
     "category": "macro_weather",
     "cat_label": "⛅ 宏观气象",
     "level": "info",
