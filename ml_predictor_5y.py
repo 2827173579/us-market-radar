@@ -1911,7 +1911,7 @@ def compute_4h_resonance_signals(
 DEFAULT_TIME_CYCLE_TICKERS: List[str] = [
     'SOXL', 'SOXX', 'SOXS', 'SMH', 'QQQM', 'SQQQ',
     'NVDA', 'TSM', 'MU', 'AMD', 'AVGO', 'MRVL',
-    'INTC', 'SNDK', 'KORU', 'TSLA', 'PLTR', 'META', 'AAPL', 'AMZN'
+    'INTC', 'SNDK', 'KORU', 'IBIT', 'TSLA', 'PLTR', 'META', 'AAPL', 'AMZN'
 ]
 
 
@@ -4520,8 +4520,9 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
                     <button class="cycle-tab-btn" onclick="switchCycleSymbol('QQQM')">QQQM</button>
                     <button class="cycle-tab-btn" onclick="switchCycleSymbol('SQQQ')">SQQQ</button>
                     <button class="cycle-tab-btn" onclick="switchCycleSymbol('KORU')">KORU</button>
-                    <select id="cycleSymbolSelect" onchange="switchCycleSymbol(this.value)" style="background: #0b0e14; color: #e2c5ff; border: 1px solid rgba(188, 140, 255, 0.45); border-radius: 6px; padding: 4px 8px; font-size: 12px; font-weight: 700; cursor: pointer; outline: none;" title="切换全部 20 只核心标的时空推演图">
-                        <option value="SOXL">全部标的 (20只)...</option>
+                    <button class="cycle-tab-btn" onclick="switchCycleSymbol('IBIT')">IBIT (比特币)</button>
+                    <select id="cycleSymbolSelect" onchange="switchCycleSymbol(this.value)" style="background: #0b0e14; color: #e2c5ff; border: 1px solid rgba(188, 140, 255, 0.45); border-radius: 6px; padding: 4px 8px; font-size: 12px; font-weight: 700; cursor: pointer; outline: none;" title="切换全部 21 只核心标的时空推演图">
+                        <option value="SOXL">全部标的 (21只)...</option>
                         <option value="SOXL">SOXL (半导体3倍做多)</option>
                         <option value="SOXX">SOXX (半导体1倍ETF)</option>
                         <option value="SOXS">SOXS (半导体3倍做空)</option>
@@ -4537,6 +4538,7 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
                         <option value="QQQM">QQQM (纳指100ETF)</option>
                         <option value="SQQQ">SQQQ (纳指3倍做空)</option>
                         <option value="KORU">KORU (韩股3倍做多)</option>
+                        <option value="IBIT">IBIT (比特币现货ETF)</option>
                         <option value="TSLA">TSLA (特斯拉)</option>
                         <option value="PLTR">PLTR (Palantir)</option>
                         <option value="META">META (Meta)</option>

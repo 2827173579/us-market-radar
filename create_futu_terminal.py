@@ -1612,7 +1612,8 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 <div class="w-tab" data-filter="光通信">光通信</div>
                 <div class="w-tab" data-filter="能源电力">能源与核电</div>
                 <div class="w-tab" data-filter="太空商业">太空商业</div>
-                <div class="w-tab" data-filter="物理与安全">物理AI与资产</div>
+                <div class="w-tab" data-filter="物理与安全">物理AI与安全</div>
+                <div class="w-tab" data-filter="数字资产" style="color: #f59e0b; font-weight: 700;">🪙 数字资产 (BTC)</div>
                 <div class="w-tab" data-filter="生物医药">生物医药</div>
                 <div class="w-tab" data-filter="价值消费">价值消费</div>
             </div>
@@ -2454,7 +2455,8 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 else if (filter === "光通信" && (s.cat === "光通信" || s.cat === "高速互联")) match = true;
                 else if (filter === "能源电力" && (s.cat === "能源电力" || s.cat === "核能电力")) match = true;
                 else if (filter === "太空商业" && s.cat === "太空商业") match = true;
-                else if (filter === "物理与安全" && (s.cat === "物理AI" || s.cat === "AI安全" || s.cat === "数字资产" || s.cat === "价值蓝筹" || s.cat === "金融蓝筹" || s.cat === "专属风控")) match = true;
+                else if (filter === "物理与安全" && (s.cat === "物理AI" || s.cat === "AI安全" || s.cat === "价值蓝筹" || s.cat === "金融蓝筹" || s.cat === "专属风控")) match = true;
+                else if (filter === "数字资产" && (s.cat === "数字资产" || t === "MSTR" || t === "IBIT")) match = true;
                 else if (filter === "生物医药" && (s.cat === "生物医药" || s.cat === "医药健康")) match = true;
                 else if (filter === "价值消费" && (s.cat === "价值蓝筹" || s.cat === "可选消费" || s.cat === "金融科技" || s.cat === "金融蓝筹")) match = true;
                 else if (s.cat === filter) match = true;
@@ -2476,6 +2478,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 else if (filter === "芯片与半导体" && (t === "SMH" || t === "SOXX" || t === "SOXL" || t === "SOXS" || t === "KORU")) match = true;
                 else if (filter === "云与软件" && (t === "QQQM" || t === "IGV" || t === "SQQQ")) match = true;
                 else if (filter === "物理与安全" && (t === "IBIT")) match = true;
+                else if (filter === "数字资产" && (t === "IBIT" || m.cat === "数字资产")) match = true;
 
                 if (match) {{
                     items.push({{
