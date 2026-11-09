@@ -4744,7 +4744,7 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
             if (winList) {{
                 let lvlHtml = '';
                 if (data.s1 && data.s2 && data.r1 && data.r2) {{
-                    lvlHtml = '<div style="margin-bottom: 6px; padding: 4px 6px; background: rgba(255,255,255,0.04); border-radius: 4px; font-family: \'JetBrains Mono\', monospace; font-size: 11px;">' +
+                    lvlHtml = '<div style="margin-bottom: 6px; padding: 4px 6px; background: rgba(255,255,255,0.04); border-radius: 4px; font-family: monospace; font-size: 11px;">' +
                         '<span style="color:#f85149;">阻力 R1:$' + Number(data.r1).toFixed(2) + ' / R2:$' + Number(data.r2).toFixed(2) + '</span><br>' +
                         '<span style="color:#3fb950;">支撑 S1:$' + Number(data.s1).toFixed(2) + ' / S2:$' + Number(data.s2).toFixed(2) + '</span>' +
                         '</div>';
