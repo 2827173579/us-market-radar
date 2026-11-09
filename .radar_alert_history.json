@@ -7,7 +7,7 @@
     },
     "PORT_INTC": {
       "state": "INTC_CRITICAL_STOP",
-      "last_notified_at": 1794232036.0339198
+      "last_notified_at": 1794239264.492947
     },
     "AAOI": {
       "state": "STOP_LOSS",
@@ -99,7 +99,7 @@
     },
     "NVDA": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1794232036.0339198
+      "last_notified_at": 1794239264.492947
     },
     "ORCL": {
       "state": "STOP_LOSS",
@@ -219,7 +219,7 @@
     },
     "PORT_SOXL": {
       "state": "SOXL_CRITICAL_STOP",
-      "last_notified_at": 1794232036.0339198
+      "last_notified_at": 1794239264.492947
     },
     "KORU": {
       "state": "NORMAL",
