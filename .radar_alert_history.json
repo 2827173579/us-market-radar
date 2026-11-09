@@ -126,8 +126,8 @@
       "last_notified_at": 1793944690.7934802
     },
     "META": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1794241839.0753236
     },
     "LITE": {
       "state": "STOP_LOSS",
@@ -254,8 +254,8 @@
       "last_notified_at": 1793668857.8008735
     },
     "IBIT": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1794241839.0753236
     }
   },
   "position_peaks": {
