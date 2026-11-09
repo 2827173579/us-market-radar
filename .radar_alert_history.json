@@ -138,8 +138,8 @@
       "last_notified_at": 1793944690.7934802
     },
     "AMD": {
-      "state": "STOP_LOSS",
-      "last_notified_at": 1794204736.579657
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "SPCX": {
       "state": "NORMAL",
@@ -198,8 +198,8 @@
       "last_notified_at": 0.0
     },
     "LLY": {
-      "state": "TAKE_PROFIT",
-      "last_notified_at": 1794204736.579657
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "MRNA": {
       "state": "NORMAL",
