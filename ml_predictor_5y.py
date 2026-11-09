@@ -4216,6 +4216,34 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
         .t4-card-short {{
             border-left: 4px solid #f85149 !important;
         }}
+        .cycle-tab-btn {{
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
+            color: var(--text-sub);
+            padding: 5px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 700;
+            font-family: 'JetBrains Mono', monospace;
+            cursor: pointer;
+            transition: all 0.18s ease;
+        }}
+        .cycle-tab-btn:hover {{
+            background: rgba(88, 166, 255, 0.16);
+            border-color: rgba(88, 166, 255, 0.45);
+            color: #fff;
+        }}
+        .cycle-tab-btn.active {{
+            background: linear-gradient(135deg, rgba(88, 166, 255, 0.28), rgba(188, 140, 255, 0.25));
+            border-color: #58a6ff;
+            color: #fff;
+            box-shadow: 0 0 10px rgba(88, 166, 255, 0.35);
+        }}
+        .badge-orange {{
+            background: rgba(255, 148, 77, 0.18);
+            color: #ff944d;
+            border: 1px solid rgba(255, 148, 77, 0.45);
+        }}
 
         /* Two-column layout for Table 1 & Table 3 on ultra-wide screens */
         .grid-2col {{
@@ -4773,7 +4801,7 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
                 const gy = padT + (g / 4) * chartH;
                 const priceLbl = (maxY - (g / 4) * yRange).toFixed(1);
                 svg += '<line x1="' + padL + '" y1="' + gy + '" x2="' + (padL + chartW) + '" y2="' + gy + '" stroke="rgba(255,255,255,0.06)" stroke-dasharray="2,2"/>';
-                svg += '<text x="' + (padL - 6) + '" y="' + (gy + 4) + '" fill="#8b949e" font-size="10" text-anchor="end" font-family="\'JetBrains Mono\', monospace">$' + priceLbl + '</text>';
+                svg += '<text x="' + (padL - 6) + '" y="' + (gy + 4) + '" fill="#8b949e" font-size="10" text-anchor="end" font-family="monospace">$' + priceLbl + '</text>';
             }}
 
             // Draw S1 / S2 / R1 / R2 horizontal reference lines
@@ -4788,7 +4816,7 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
                 const ly = getY(Number(lv.val));
                 if (ly >= padT - 4 && ly <= padT + chartH + 4) {{
                     svg += '<line x1="' + padL + '" y1="' + ly + '" x2="' + (padL + chartW) + '" y2="' + ly + '" stroke="' + lv.color + '" stroke-width="1" stroke-dasharray="5,4"/>';
-                    svg += '<text x="' + (padL + chartW + 4) + '" y="' + (ly + 3) + '" fill="' + lv.textCol + '" font-size="9.5" font-weight="700" font-family="\'JetBrains Mono\', monospace">' + lv.key + ' $' + Number(lv.val).toFixed(1) + '</text>';
+                    svg += '<text x="' + (padL + chartW + 4) + '" y="' + (ly + 3) + '" fill="' + lv.textCol + '" font-size="9.5" font-weight="700" font-family="monospace">' + lv.key + ' $' + Number(lv.val).toFixed(1) + '</text>';
                 }}
             }});
 
@@ -4839,7 +4867,7 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
                 const sign = lastPct >= 0 ? '+' : '';
                 const pColor = lastPct >= 0 ? '#3fb950' : '#f85149';
                 svg += '<circle cx="' + lastX + '" cy="' + lastY + '" r="4" fill="#ff944d"/>';
-                svg += '<text x="' + lastX + '" y="' + (lastY - 8) + '" fill="' + pColor + '" font-size="11" font-weight="800" text-anchor="end" font-family="\'JetBrains Mono\', monospace">' + sign + lastPct + '%</text>';
+                svg += '<text x="' + lastX + '" y="' + (lastY - 8) + '" fill="' + pColor + '" font-size="11" font-weight="800" text-anchor="end" font-family="monospace">' + sign + lastPct + '%</text>';
             }}
 
             svg += '</svg>';
