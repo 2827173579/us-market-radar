@@ -1670,6 +1670,156 @@ class TestReportMetricsAndSectorLinkage(unittest.TestCase):
         self.assertEqual(t4_rainy['WDC']['action'], "🛡️ 暴雨防守·仅极小仓试错")
 
 
+
+class TestV2UpgradeDefensiveFlightAndScenarios(unittest.TestCase):
+    """
+    V2.0 升级单元测试：
+    1. 防御因子起飞与机构去杠杆预警 (Defensive Flight Alert)
+    2. A/B 双轨引擎 (右侧趋势轨 vs 空头回补滑头狙击轨 Short-Covering Sniper)
+    3. 多级点位地图 (SL < S2 < S1 < Close < R1 < R2) 与实战剧本推演
+    4. 时空周期推演 (Fourier Harmonic + Analog DTW)
+    """
+
+    def setUp(self):
+        from datetime import datetime
+        self.datetime = datetime
+        self.mod = get_implementation_module()
+        if not self.mod:
+            self.skipTest("ml_predictor_5y module not available")
+
+    def test_defensive_flight_alert_logic(self):
+        """测试防御因子起飞超额走强评分及报警触发"""
+        # Case 1: 正常科技做多行情 (高弹性跑赢防御组)
+        normal_lookup = {
+            'QQQM': {'pct_change': 1.8},
+            'SMH': {'pct_change': 2.5},
+            'NVDA': {'pct_change': 3.2},
+            'SOXL': {'pct_change': 5.0},
+            'KO': {'pct_change': 0.1},
+            'PEP': {'pct_change': 0.2},
+            'TLT': {'pct_change': -0.3},
+            'GLD': {'pct_change': 0.0},
+            'VIXY': {'pct_change': -2.5}
+        }
+        res_normal = self.mod.compute_defensive_flight_alert(live_lookup=normal_lookup)
+        self.assertFalse(res_normal['is_alert'])
+        self.assertLess(res_normal['flight_score'], 1.8)
+
+        # Case 2: 机构踩踏去杠杆避险行情 (防御组大涨，科技与半导体领跌)
+        flight_lookup = {
+            'QQQM': {'pct_change': -1.8},
+            'SMH': {'pct_change': -3.2},
+            'NVDA': {'pct_change': -4.5},
+            'SOXL': {'pct_change': -7.8},
+            'KO': {'pct_change': 1.6},
+            'PEP': {'pct_change': 1.4},
+            'TLT': {'pct_change': 1.9},
+            'GLD': {'pct_change': 2.2},
+            'VIXY': {'pct_change': 6.5}
+        }
+        res_flight = self.mod.compute_defensive_flight_alert(live_lookup=flight_lookup)
+        self.assertTrue(res_flight['is_alert'])
+        self.assertGreaterEqual(res_flight['flight_score'], 1.8)
+        self.assertIn("防御因子起飞", res_flight['alert_text'])
+        self.assertIn("警惕机构盘中去杠杆踩踏", res_flight['alert_text'])
+
+    def test_short_covering_sniper_vs_falling_knife(self):
+        """测试 A/B 双轨引擎：区分恐慌衰竭空头回补与半山腰破位飞刀"""
+        n = 50
+        oos_df = pd.DataFrame({
+            'Date': pd.bdate_range('2024-01-01', periods=n),
+            'Ticker': ['SOXL'] * n,
+            'Sector': ['Semiconductor_Equipment'] * n,
+            'Close': [45.0] * n,
+            'Label': [1.0] * 35 + [0.0] * 15,
+            'Prob_1': [0.65] * n,
+            'Realized_Return': [4.5] * 35 + [-2.0] * 15
+        })
+
+        # SOXL 满足极端超跌 (Bias=-24%, RSI=24) -> 必须解锁 B 轨空头回补
+        # BAD_STOCK 破位但不满足衰竭 (Bias=-15%, RSI=42) -> 必须保持破位飞刀
+        latest_df = pd.DataFrame({
+            'Ticker': ['SOXL', 'BAD_STOCK'],
+            'Sector': ['Semiconductor_Equipment', 'Enterprise_Software_SaaS'],
+            'Close': [45.0, 50.0],
+            'Prob_1': [0.56, 0.52],
+            'ATR_Pct': [9.5, 4.0],
+            'Bias_MA50': [-24.0, -15.0],
+            'RSI_14': [24.0, 42.0]
+        })
+
+        tables = self.mod.generate_report_tables(
+            oos_df=oos_df,
+            model=None,
+            feature_cols=[],
+            latest_features_df=latest_df,
+            macro_weather={'status': '☀️ 晴天做多'}
+        )
+
+        all_live = {r['ticker']: r for r in tables['all_live_predictions']}
+        
+        # SOXL: 空头回补滑头引擎
+        self.assertTrue(all_live['SOXL']['is_short_covering'])
+        self.assertIn("🔥 恐慌衰竭·博弈空头回补 (压力位不过就跑)", all_live['SOXL']['action'])
+        self.assertIn("空头回补", all_live['SOXL']['scenario_script'])
+
+        # BAD_STOCK: 破位飞刀·严禁左侧抄底
+        self.assertFalse(all_live['BAD_STOCK']['is_short_covering'])
+        self.assertIn("🚨 破位飞刀·严禁左侧抄底", all_live['BAD_STOCK']['action'])
+
+    def test_multi_level_scenario_map_monotonicity(self):
+        """测试多级支撑压力点位地图单调性不变式 (SL < S2 < S1 < Price < R1 < R2)"""
+        cur_p = 100.0
+        sc_map = self.mod.compute_multi_level_scenario_map(
+            ticker='NVDA',
+            price=cur_p,
+            atr_pct=4.2,
+            bias_ma50=-5.0,
+            is_short_covering=False,
+            is_broken=False,
+            put_wall=92.0,
+            call_wall=110.0
+        )
+
+        sl = sc_map['sl']
+        s2 = sc_map['s2']
+        s1 = sc_map['s1']
+        r1 = sc_map['r1']
+        r2 = sc_map['r2']
+
+        self.assertLess(sl, s2, f"SL ({sl}) must be < S2 ({s2})")
+        self.assertLess(s2, s1, f"S2 ({s2}) must be < S1 ({s1})")
+        self.assertLess(s1, cur_p, f"S1 ({s1}) must be < Current ({cur_p})")
+        self.assertLess(cur_p, r1, f"Current ({cur_p}) must be < R1 ({r1})")
+        self.assertLess(r1, r2, f"R1 ({r1}) must be < R2 ({r2})")
+        self.assertTrue(len(sc_map['scenario_script']) > 10)
+
+    def test_time_cycle_projections_generation(self):
+        """测试时空周期推演与历史相似形态匹配输出结构"""
+        dates = pd.date_range(end=self.datetime.now(), periods=100, freq='B')
+        mock_panel = pd.DataFrame({
+            'Ticker': ['SOXL'] * 100 + ['NVDA'] * 100,
+            'Date': list(dates) + list(dates),
+            'Close': [50.0 + np.sin(i / 5.0) * 8.0 + (i * 0.1) for i in range(100)] +
+                     [120.0 + np.cos(i / 4.0) * 15.0 + (i * 0.2) for i in range(100)]
+        })
+
+        projections = self.mod.generate_time_cycle_projections(
+            raw_panel=mock_panel,
+            target_tickers=['SOXL', 'NVDA'],
+            forecast_days=15
+        )
+
+        self.assertIn('SOXL', projections)
+        self.assertIn('NVDA', projections)
+        soxl_proj = projections['SOXL']
+        self.assertEqual(len(soxl_proj['projection']), 15)
+        self.assertTrue(len(soxl_proj['history']) > 0)
+        self.assertIn('analog_match', soxl_proj)
+        self.assertIn('similarity_pct', soxl_proj['analog_match'])
+        self.assertIsInstance(soxl_proj['cycle_windows'], list)
+
+
 # ============================================================================
 # Main Execution Runner
 # ============================================================================
@@ -1688,6 +1838,7 @@ def run_suite():
     suite.addTests(loader.loadTestsFromTestCase(TestAdversarialIntegrityAndEdgeCases))
     suite.addTests(loader.loadTestsFromTestCase(TestMacroFeatureIntegrity))
     suite.addTests(loader.loadTestsFromTestCase(TestReportMetricsAndSectorLinkage))
+    suite.addTests(loader.loadTestsFromTestCase(TestV2UpgradeDefensiveFlightAndScenarios))
 
     runner = unittest.TextTestRunner(verbosity=2)
     result = runner.run(suite)

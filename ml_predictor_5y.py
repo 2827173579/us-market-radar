@@ -1301,19 +1301,525 @@ def overlay_finnhub_quotes(raw_panel: pd.DataFrame, quotes: Dict[str, Dict]) -> 
     return df
 
 
+DEFENSIVE_FLIGHT_DEF_SYMBOLS = ['KO', 'PEP', 'MCD', 'LLY', 'MRNA', 'TLT', 'GLD', 'VIXY']
+DEFENSIVE_FLIGHT_OFF_SYMBOLS = ['SMH', 'SOXL', 'NVDA', 'QQQM']
+
+
+def compute_defensive_flight_alert(
+    latest_stocks_df: Optional[pd.DataFrame] = None,
+    live_lookup: Optional[Dict[str, Dict]] = None
+) -> Dict[str, Any]:
+    """
+    R1: 防御避险与去杠杆踩踏预警 (Defensive Flight Alert)
+    对比防御避险资产 (KO, PEP, MCD, LLY, MRNA, TLT, GLD, VIXY)
+    与高弹性科技成长进攻资产 (SMH, SOXL, NVDA, QQQM) 的日内/日线超额表现。
+    当防御因子超额收益分数 (flight_score) 达到或超过 +2.2% 且进攻科技处于弱势 (mean_off <= 0.0) 时，
+    触发全系统机构去杠杆踩踏警报 (🚨 防御因子起飞 · 警惕机构盘中去杠杆踩踏)。
+    """
+    def_chgs = []
+    off_chgs = []
+
+    if live_lookup:
+        for s in DEFENSIVE_FLIGHT_DEF_SYMBOLS:
+            if s in live_lookup:
+                lv = live_lookup[s]
+                pct = float(lv.get("ext_pct") if lv.get("ext_price", 0) > 0 else lv.get("pct_change", lv.get("change_pct", 0.0)))
+                def_chgs.append(pct)
+        for s in DEFENSIVE_FLIGHT_OFF_SYMBOLS:
+            if s in live_lookup:
+                lv = live_lookup[s]
+                pct = float(lv.get("ext_pct") if lv.get("ext_price", 0) > 0 else lv.get("pct_change", lv.get("change_pct", 0.0)))
+                off_chgs.append(pct)
+
+    if latest_stocks_df is not None and not latest_stocks_df.empty:
+        if not def_chgs:
+            for s in DEFENSIVE_FLIGHT_DEF_SYMBOLS:
+                sub = latest_stocks_df[latest_stocks_df['Ticker'] == s]
+                if not sub.empty and 'Ret_1d' in sub.columns:
+                    def_chgs.append(float(sub['Ret_1d'].iloc[-1]))
+        if not off_chgs:
+            for s in DEFENSIVE_FLIGHT_OFF_SYMBOLS:
+                sub = latest_stocks_df[latest_stocks_df['Ticker'] == s]
+                if not sub.empty and 'Ret_1d' in sub.columns:
+                    off_chgs.append(float(sub['Ret_1d'].iloc[-1]))
+
+    mean_def = float(np.mean(def_chgs)) if def_chgs else 0.0
+    mean_off = float(np.mean(off_chgs)) if off_chgs else 0.0
+    flight_score = round(mean_def - mean_off, 2)
+
+    # 触发条件: 超额分数 >= +2.2% 且进攻科技处于弱势 (<= 0.0%)，或极度避险 (>= 1.8% 且科技重挫 <= -1.0%)
+    is_tech_weakness = bool(mean_off <= 0.0)
+    is_alert = bool((flight_score >= 2.2 and is_tech_weakness) or (flight_score >= 1.8 and mean_off <= -1.0))
+
+    banner_text = "🚨 防御因子起飞 · 警惕机构盘中去杠杆踩踏"
+    if is_alert:
+        alert_text = f"🚨 防御因子起飞 · 警惕机构盘中去杠杆踩踏 (+{flight_score:.1f}%)"
+        badge = "badge-alert"
+    else:
+        alert_text = f"🛡️ 防御因子平稳 ({flight_score:+.1f}%) · 机构仓位均衡"
+        badge = "badge-normal"
+
+    return {
+        'is_alert': is_alert,
+        'flight_score': flight_score,
+        'def_mean_chg': round(mean_def, 2),
+        'off_mean_chg': round(mean_off, 2),
+        'alert_text': alert_text,
+        'banner_text': banner_text if is_alert else "",
+        'badge': badge
+    }
+
+
+def classify_dual_track_candidate(
+    bias_ma50: float,
+    rsi_14: float = 50.0,
+    bias_ma20: float = 0.0,
+    price: float = 0.0,
+    vwap: Optional[float] = None,
+    prior_low: Optional[float] = None,
+    atr: float = 0.0,
+    intraday_low: Optional[float] = None,
+    s2: Optional[float] = None,
+    r1: Optional[float] = None,
+    is_halt: bool = False
+) -> Dict[str, Any]:
+    """
+    R2: 双轨预测分类与空头回补滑头狙击引擎 (Dual-Track Candidate Classifier)
+    - Track A: 趋势动量与黄金坑延续 (Bias_MA50 >= -12.0%)
+    - Track B (Short-Covering Sniper): 严重超跌 (Bias_MA50 < -12.0% 且 RSI_14 < 30.0 或 Bias_MA20 < -15.0%)
+      且呈现恐慌衰竭企稳信号 (站上日内 VWAP 或 当前价格 > 前日最低价 + 0.5 * ATR)，
+      归类为战术性空头回补反弹机遇 (🔥 恐慌衰竭·博弈空头回补)，而非破位飞刀。
+    - 动态校准止损与止盈：止损锚定日内低点或 S2 支撑，第一止盈目标锚定 R1 阻力。
+    """
+    price_val = max(0.01, float(price))
+    eff_atr = float(atr) if atr > 0 else (price_val * 0.025)
+
+    if bias_ma50 >= -12.0:
+        # Track A: 趋势动量与黄金坑延续
+        return {
+            'track': 'Track A',
+            'track_name': 'Track A: 趋势动量与黄金坑延续',
+            'is_track_a': True,
+            'is_track_b': False,
+            'is_short_covering': False,
+            'is_broken': False,
+            'is_severely_oversold': False,
+            'has_exhaustion_recovery': False,
+            'action': '',
+            'target_profit_price': None,
+            'stop_loss_price': None,
+            'target_profit_pct': None,
+            'stop_loss_pct': None
+        }
+
+    # Track B: Bias_MA50 < -12.0%
+    is_severely_oversold = bool(rsi_14 < 30.0 or bias_ma20 < -15.0 or bias_ma50 <= -22.0)
+
+    # 恐慌衰竭企稳判定: 站上日内 VWAP 或 价格 > 前日最低价 + 0.5 * ATR
+    has_exhaustion_recovery = False
+    if vwap is not None and vwap > 0 and price_val >= vwap:
+        has_exhaustion_recovery = True
+    if prior_low is not None and prior_low > 0:
+        if price_val > (prior_low + 0.5 * eff_atr):
+            has_exhaustion_recovery = True
+
+    # 缺省兜底：若未提供盘前逐笔行情但指标已满足严重超跌且未熔断
+    if vwap is None and prior_low is None and is_severely_oversold:
+        has_exhaustion_recovery = True
+
+    if is_severely_oversold and has_exhaustion_recovery and not is_halt:
+        is_short_covering = True
+        is_broken = False
+        action = "🔥 恐慌衰竭·博弈空头回补 (压力位不过就跑)"
+
+        # 动态止损：锚定日内低点或 S2 支撑
+        stop_p = None
+        if intraday_low is not None and 0 < intraday_low < price_val:
+            stop_p = intraday_low
+            if s2 is not None and 0 < s2 < price_val:
+                stop_p = min(intraday_low, s2)
+        elif s2 is not None and 0 < s2 < price_val:
+            stop_p = s2
+        else:
+            stop_p = round(price_val - 1.2 * eff_atr, 2)
+
+        stop_p = round(min(stop_p, price_val * 0.985), 2)
+
+        # 动态止盈：第一目标锚定 R1 阻力
+        if r1 is not None and r1 > price_val:
+            target_p = round(r1, 2)
+        else:
+            target_p = round(price_val + 1.25 * eff_atr, 2)
+        target_p = round(max(target_p, price_val * 1.025), 2)
+
+        tp_pct = round(((target_p - price_val) / price_val) * 100.0, 1)
+        sl_pct = round(((price_val - stop_p) / price_val) * 100.0, 1)
+
+        return {
+            'track': 'Track B',
+            'track_name': 'Track B: 恐慌衰竭短线空头回补 (Short-Covering Sniper)',
+            'is_track_a': False,
+            'is_track_b': True,
+            'is_short_covering': True,
+            'is_broken': False,
+            'is_severely_oversold': True,
+            'has_exhaustion_recovery': True,
+            'action': action,
+            'target_profit_price': target_p,
+            'stop_loss_price': stop_p,
+            'target_profit_pct': tp_pct,
+            'stop_loss_pct': sl_pct
+        }
+    else:
+        is_short_covering = False
+        is_broken = True
+        action = "🚨 暴跌熔断·严禁左侧接刀" if is_halt else "🚨 破位飞刀·严禁左侧抄底"
+        return {
+            'track': 'Track B',
+            'track_name': 'Track B: 破位下杀观望 (Falling Knife)',
+            'is_track_a': False,
+            'is_track_b': True,
+            'is_short_covering': False,
+            'is_broken': True,
+            'is_severely_oversold': is_severely_oversold,
+            'has_exhaustion_recovery': has_exhaustion_recovery,
+            'action': action,
+            'target_profit_price': None,
+            'stop_loss_price': None,
+            'target_profit_pct': None,
+            'stop_loss_pct': None
+        }
+
+
+def compute_volume_profile_poc(
+    df: Optional[pd.DataFrame] = None,
+    close_series: Optional[pd.Series] = None,
+    volume_series: Optional[pd.Series] = None,
+    window: int = 20,
+    bins: int = 30
+) -> Optional[float]:
+    """
+    计算过去 20 个交易日的成交量分布筹码峰 Point of Control (POC)。
+    """
+    try:
+        if df is not None and not df.empty:
+            sub = df.tail(window)
+            c = sub['Close'].astype(float).values
+            v = sub['Volume'].astype(float).values if 'Volume' in sub.columns else np.ones(len(c))
+            h = sub['High'].astype(float).values if 'High' in sub.columns else c
+            l = sub['Low'].astype(float).values if 'Low' in sub.columns else c
+        elif close_series is not None and not close_series.empty:
+            c = close_series.tail(window).astype(float).values
+            v = volume_series.tail(window).astype(float).values if volume_series is not None else np.ones(len(c))
+            h = c
+            l = c
+        else:
+            return None
+
+        if len(c) < 3:
+            return None
+
+        min_p = float(np.min(l))
+        max_p = float(np.max(h))
+        if max_p - min_p < 1e-4:
+            return round(float(c[-1]), 2)
+
+        bin_edges = np.linspace(min_p, max_p, bins + 1)
+        bin_vols = np.zeros(bins)
+
+        typ_prices = (h + l + c) / 3.0
+        bin_indices = np.clip(np.digitize(typ_prices, bin_edges) - 1, 0, bins - 1)
+        for idx, vol in zip(bin_indices, v):
+            bin_vols[idx] += vol
+
+        max_idx = int(np.argmax(bin_vols))
+        poc = (bin_edges[max_idx] + bin_edges[max_idx + 1]) / 2.0
+        return round(float(poc), 2)
+    except Exception:
+        return None
+
+
+def compute_multi_level_scenario_map(
+    ticker: str,
+    close_price: Optional[float] = None,
+    atr_pct: float = 2.5,
+    bias_ma50: float = 0.0,
+    rsi_14: float = 50.0,
+    action: str = "",
+    is_short_covering: bool = False,
+    is_broken: bool = False,
+    put_wall: Optional[float] = None,
+    call_wall: Optional[float] = None,
+    price: Optional[float] = None,
+    current_price: Optional[float] = None,
+    df_history: Optional[pd.DataFrame] = None,
+    low_60d: Optional[float] = None,
+    high_60d: Optional[float] = None,
+    poc_20d: Optional[float] = None,
+    ema20: Optional[float] = None,
+) -> Dict[str, Any]:
+    """
+    R3: 多级支撑阻力点位地图与结构化实战剧本推演 (Multi-Level Scenario Map)
+    结合 Volume Profile 筹码峰 (POC)、斐波那契回撤/扩展与期权墙计算 5 级点位地图：
+    - S2: 极限插针支撑 (60日最低价 / 0.618 黄金分割支撑 / Put 墙底)
+    - S1: 波段支撑 (20日 POC 下沿筹码带 / 0.382~0.50 黄金回撤)
+    - R1: 第一止盈/反弹阻力 (20日 POC 核心筹码密集峰 / EMA20 生命线)
+    - R2: 极限逼空/主升目标 (上方成交套牢压力区 / 0.618 扩展位 / Call 墙顶)
+    严格遵循单调性不变式：SL < S2 < S1 < Current Price < R1 < R2。
+    """
+    raw_p = price if price is not None else (current_price if current_price is not None else (close_price if close_price is not None else 100.0))
+    close = max(0.01, float(raw_p))
+    eff_atr = compute_effective_atr(atr_pct)
+
+    # 提取历史 60 日极值与 EMA20
+    if df_history is not None and not df_history.empty:
+        sub60 = df_history.tail(60)
+        low_60d = low_60d or (float(sub60['Low'].min()) if 'Low' in sub60.columns else float(sub60['Close'].min()))
+        high_60d = high_60d or (float(sub60['High'].max()) if 'High' in sub60.columns else float(sub60['Close'].max()))
+        if ema20 is None and 'Close' in df_history.columns:
+            ema20 = float(df_history['Close'].ewm(span=20, adjust=False).mean().iloc[-1])
+        if poc_20d is None:
+            poc_20d = compute_volume_profile_poc(df=df_history, window=20)
+
+    # 估计 60 日振幅与斐波那契参考
+    if low_60d is None or high_60d is None or high_60d <= low_60d:
+        rng60 = close * max(0.08, 3.2 * eff_atr)
+        high_60d = close + 0.55 * rng60
+        low_60d = max(0.01, close - 0.45 * rng60)
+    else:
+        rng60 = max(high_60d - low_60d, close * 0.06)
+
+    # S2 (极限插针支撑): 60日低点 / 0.618 支撑 / Put wall / 动态 ATR
+    fib_s2 = high_60d - 0.618 * rng60
+    s2_candidates = [close * (1.0 - max(0.045, 1.45 * eff_atr))]
+    if 0.50 * close <= low_60d < close:
+        s2_candidates.append(low_60d)
+    if 0.50 * close <= fib_s2 < close:
+        s2_candidates.append(fib_s2)
+    if put_wall is not None and 0.50 * close <= put_wall < close:
+        s2_candidates.append(put_wall)
+    s2 = round(min(s2_candidates), 2)
+
+    # S1 (波段支撑): 20日 POC 下沿 / 0.382~0.50 回撤 / 动态 ATR
+    fib_s1 = high_60d - 0.382 * rng60
+    s1_candidates = [close * (1.0 - max(0.025, 0.75 * eff_atr))]
+    if poc_20d is not None and 0.65 * close <= (poc_20d * 0.99) < close:
+        s1_candidates.append(poc_20d * 0.99)
+    if 0.65 * close <= fib_s1 < close:
+        s1_candidates.append(fib_s1)
+    s1 = round(float(np.median(s1_candidates)), 2)
+
+    # R1 (第一止盈/反弹阻力): 20日 POC / EMA20 / 动态 ATR
+    r1_candidates = [close * (1.0 + max(0.030, 0.85 * eff_atr))]
+    if poc_20d is not None and close < poc_20d <= 1.35 * close:
+        r1_candidates.append(poc_20d)
+    if ema20 is not None and close < ema20 <= 1.35 * close:
+        r1_candidates.append(ema20)
+    r1 = round(min(r1_candidates), 2)
+
+    # R2 (极限逼空/主升目标): 60日高点 / 0.618 扩展 / Call wall / 动态 ATR
+    fib_r2 = close + 0.618 * rng60
+    r2_candidates = [close * (1.0 + max(0.060, 1.65 * eff_atr))]
+    if high_60d > close and high_60d <= 1.50 * close:
+        r2_candidates.append(high_60d)
+    if fib_r2 > close and fib_r2 <= 1.50 * close:
+        r2_candidates.append(fib_r2)
+    if call_wall is not None and close < call_wall <= 1.50 * close:
+        r2_candidates.append(call_wall)
+    r2 = round(max(r2_candidates), 2)
+
+    # 严格单调性不变式防御保证: SL < S2 < S1 < close < R1 < R2
+    min_step = max(0.01, round(close * 0.005, 2))
+
+    if s1 >= close:
+        s1 = round(close - min_step, 2)
+    if s2 >= s1:
+        s2 = round(s1 - min_step, 2)
+    sl = round(min(s2 * 0.985, s2 - min_step), 2)
+
+    if r1 <= close:
+        r1 = round(close + min_step, 2)
+    if r2 <= r1:
+        r2 = round(r1 + min_step, 2)
+
+    # 生成盘前盘中结构化实战剧本 (包含防守点位、目标阻力与失效止损)
+    if is_short_covering:
+        scenario = f"【空头回补滑头剧本】依托 S2 (${s2:.2f}) 极限插针底防守，上看第一阻力 R1 (${r1:.2f}) 空头回补反抽(不过就跑)；放量逼空看 R2 (${r2:.2f})；击穿止损位 ${sl:.2f} 严格离场防踩踏"
+    elif is_broken:
+        scenario = f"【破位飞刀剧本】均线空头排列破位，下方严防下探 S2 (${s2:.2f}) 清算底；反抽测试 R1 (${r1:.2f}) 均属诱多；防守位 ${sl:.2f}，严禁左侧接刀"
+    elif -6.5 <= bias_ma50 <= 4.0:
+        scenario = f"【黄金坑做多剧本】回踩波段支撑 S1 (${s1:.2f}) 蓄势不破，看多头反弹测试 R1 (${r1:.2f})；突破顺势看 R2 (${r2:.2f})；有效跌破止损位 ${sl:.2f} 离场"
+    elif bias_ma50 > 4.0:
+        scenario = f"【右侧主升剧本】依托波段支撑 S1 (${s1:.2f}) 逢低做多，上看阻力 R1 (${r1:.2f}) 与突破扩展目标 R2 (${r2:.2f})；关键防守位 ${sl:.2f}"
+    else:
+        scenario = f"【战术推演剧本】下方防守支撑 S1 (${s1:.2f})/S2 (${s2:.2f})，上方阻力目标 R1 (${r1:.2f})/R2 (${r2:.2f})；跌破防守止损位 ${sl:.2f} 严格离场"
+
+    return {
+        's1': s1,
+        's2': s2,
+        'sl': sl,
+        'r1': r1,
+        'r2': r2,
+        'scenario_script': scenario
+    }
+
+
+def generate_time_cycle_projections(
+    raw_panel: pd.DataFrame,
+    target_tickers: Optional[List[str]] = None,
+    forecast_days: int = 15
+) -> Dict[str, Any]:
+    """
+    时空交易法: 傅里叶谐波周期分解 + 5年历史走势相似匹配 (DTW Analog)，
+    为核心监控标的 (SOXL, QQQM, SMH, NVDA, MU, TSLA) 生成未来 10~15 天时空路径推演及红蓝变盘窗口。
+    """
+    if target_tickers is None:
+        target_tickers = ['SOXL', 'QQQM', 'SMH', 'NVDA', 'MU', 'TSLA']
+
+    results = {}
+    now = datetime.now()
+
+    future_dates = []
+    curr = now
+    while len(future_dates) < forecast_days:
+        curr += timedelta(days=1)
+        if curr.weekday() < 5:
+            future_dates.append(curr.strftime('%Y-%m-%d'))
+
+    for tk in target_tickers:
+        sub = raw_panel[raw_panel['Ticker'] == tk].sort_values('Date').reset_index(drop=True)
+        if sub.empty or len(sub) < 60:
+            sub = raw_panel[raw_panel['Ticker'] == 'QQQM'].sort_values('Date').reset_index(drop=True)
+            if sub.empty:
+                continue
+
+        closes = sub['Close'].values.astype(float)
+        cur_p = float(closes[-1])
+        n = len(closes)
+
+        # 1. 傅里叶谐波周期外推 (最近 120 天)
+        recent_n = min(120, n)
+        recent_closes = closes[-recent_n:]
+        x = np.arange(recent_n)
+        poly = np.polyfit(x, recent_closes, deg=1)
+        detrended = recent_closes - np.polyval(poly, x)
+
+        fft_vals = np.fft.rfft(detrended)
+        freqs = np.fft.rfftfreq(recent_n)
+        magnitudes = np.abs(fft_vals)
+        magnitudes[0] = 0
+
+        top_indices = np.argsort(magnitudes)[-3:]
+        future_x = np.arange(recent_n, recent_n + forecast_days)
+        future_trend = np.polyval(poly, future_x)
+
+        future_harmonic = np.zeros(forecast_days)
+        for idx in top_indices:
+            freq = freqs[idx]
+            amp = magnitudes[idx] / (recent_n / 2.0)
+            phase = np.angle(fft_vals[idx])
+            future_harmonic += amp * np.cos(2 * np.pi * freq * future_x + phase)
+
+        harm_path = future_trend + future_harmonic
+
+        # 2. 5年历史相似形态匹配 (DTW / Correlation, window=25)
+        window_len = 25
+        target_win = closes[-window_len:]
+        norm_target = (target_win - np.mean(target_win)) / (np.std(target_win) + 1e-6)
+
+        best_corr = -1.0
+        best_future = None
+        best_period = "2024-08"
+
+        for i in range(0, n - window_len - forecast_days, 2):
+            cand_win = closes[i:i + window_len]
+            std_c = np.std(cand_win)
+            if std_c < 1e-4:
+                continue
+            norm_cand = (cand_win - np.mean(cand_win)) / std_c
+            corr = float(np.corrcoef(norm_target, norm_cand)[0, 1])
+            if corr > best_corr:
+                best_corr = corr
+                fut_raw = closes[i + window_len:i + window_len + forecast_days]
+                ret_path = (fut_raw - cand_win[-1]) / cand_win[-1]
+                best_future = cur_p * (1.0 + ret_path)
+                match_dt = sub.at[i, 'Date'] if 'Date' in sub.columns else None
+                best_period = match_dt.strftime('%Y-%m') if hasattr(match_dt, 'strftime') else f"Hist-Bar {i}"
+
+        if best_future is None:
+            best_future = np.repeat(cur_p, forecast_days)
+            best_corr = 0.50
+
+        # 3. 55% 傅里叶谐波 + 45% 相似匹配融合，保持平滑连续
+        combined_path = 0.55 * harm_path + 0.45 * best_future
+        anchor_drift = combined_path[0] - cur_p
+        combined_path = combined_path - anchor_drift * np.linspace(0.8, 0.0, forecast_days)
+
+        projections = []
+        for d_idx, (dt_str, p_val) in enumerate(zip(future_dates, combined_path)):
+            projections.append({
+                'day': f"T+{d_idx + 1}",
+                'date': dt_str,
+                'price': round(float(p_val), 2),
+                'pct': round(float((p_val - cur_p) / cur_p * 100.0), 1)
+            })
+
+        cycle_windows = []
+        p_vals = [p['price'] for p in projections]
+        for k in range(1, len(p_vals) - 1):
+            if p_vals[k] < p_vals[k - 1] and p_vals[k] < p_vals[k + 1]:
+                cycle_windows.append({
+                    'type': 'bottom',
+                    'date': projections[k]['date'],
+                    'day': projections[k]['day'],
+                    'price': projections[k]['price'],
+                    'desc': '🔵 周期底回踩窗 (关注空头回补企稳)'
+                })
+            elif p_vals[k] > p_vals[k - 1] and p_vals[k] > p_vals[k + 1]:
+                cycle_windows.append({
+                    'type': 'top',
+                    'date': projections[k]['date'],
+                    'day': projections[k]['day'],
+                    'price': projections[k]['price'],
+                    'desc': '🔴 周期峰阻力窗 (高危变盘·压力不过就跑)'
+                })
+
+        hist_20 = [
+            {'date': (sub.at[i, 'Date'].strftime('%Y-%m-%d') if hasattr(sub.at[i, 'Date'], 'strftime') else str(sub.at[i, 'Date'])[:10]),
+             'price': round(float(closes[i]), 2)}
+            for i in range(max(0, n - 20), n)
+        ]
+
+        results[tk] = {
+            'ticker': tk,
+            'current_price': round(cur_p, 2),
+            'history': hist_20,
+            'projection': projections,
+            'cycle_windows': cycle_windows,
+            'analog_match': {
+                'period': best_period,
+                'similarity_pct': round(float(best_corr * 100.0), 1)
+            }
+        }
+
+    return results
+
+
 def evaluate_macro_weather(
     qqqm_bias: float,
     smh_bias: float,
     vixy_pos: float = 0.5,
     smh_igv: float = 0.0,
-    latest_date: str = ""
+    latest_date: str = "",
+    defensive_flight: Optional[Dict[str, Any]] = None
 ) -> Dict[str, Any]:
     """
     统一宏观水温气象判定引擎 (与 integrated_market_radar.py 保持 100% 规则对齐):
     1. 暴雨空仓: QQQM_Bias_MA50 < -3.0% 且 SMH_Bias_MA50 < -3.0% (双破位共振)
     2. 晴天做多: 纳指与半导体双双站上生命线 (QQQM >= 0.25% 且 SMH >= 0.25%) 且无 VIX 恐慌脉冲 (VIXY_Pos_60 < 0.75)
-    3. 阴天防守: 单边偏离在 0% ~ -5% 且未双破位、或大盘/芯片分化、或 VIX 脉冲预警
+    3. 阴天防守: 单边偏离在 0% ~ -5% 且未双破位、或大盘/芯片分化、或 VIX 脉冲预警、或防御因子起飞
     """
+    flight_info = defensive_flight or compute_defensive_flight_alert()
     is_vix_panic = bool(vixy_pos >= 0.75)
     is_bull_base = bool(qqqm_bias >= 0.25 and smh_bias >= 0.25)
 
@@ -1322,9 +1828,14 @@ def evaluate_macro_weather(
         m_desc = "科技基准与半导体共振破位下行 · 系统性流动性挤压 · 严禁盲目抄底"
         m_badge = "weather-rainy"
     elif is_bull_base and not is_vix_panic:
-        m_status = "☀️ 晴天做多"
-        m_desc = "纳指与半导体双双站上生命线 · 风险偏好处于高位 · 顺势做多核心龙头"
-        m_badge = "weather-sunny"
+        if flight_info.get('is_alert'):
+            m_status = "⛅ 阴天防守"
+            m_desc = "纳指与半导体站上均线但防御因子起飞 · 警惕机构暗中去杠杆防踩踏"
+            m_badge = "weather-cloudy"
+        else:
+            m_status = "☀️ 晴天做多"
+            m_desc = "纳指与半导体双双站上生命线 · 风险偏好处于高位 · 顺势做多核心龙头"
+            m_badge = "weather-sunny"
     else:
         m_status = "⛅ 阴天防守"
         m_desc = "大盘与核心芯片主线出现分化或均线争夺 · 审慎试仓 · 严格防守底线"
@@ -1341,7 +1852,8 @@ def evaluate_macro_weather(
         'smh_bias': round(smh_bias, 2),
         'smh_bias_ma50': round(smh_bias, 2),
         'smh_igv': round(smh_igv, 2),
-        'latest_date': latest_date
+        'latest_date': latest_date,
+        'defensive_flight': flight_info
     }
 
 
@@ -1563,7 +2075,8 @@ def generate_report_tables(
     feature_cols: List[str],
     latest_features_df: pd.DataFrame,
     macro_weather: Optional[Dict] = None,
-    is_realtime: bool = False
+    is_realtime: bool = False,
+    raw_panel: Optional[pd.DataFrame] = None
 ) -> Dict[str, Any]:
     """
     生成控制台与可视化战报 4 张核心数据表:
@@ -1950,6 +2463,7 @@ def generate_report_tables(
         sector_pfs = []
         is_broken_flags = []
         is_etf_flags = []
+        is_short_covering_flags = []
         sort_tier_flags = []
 
         for _, row in latest_df.iterrows():
@@ -1966,11 +2480,35 @@ def generate_report_tables(
             if has_live_structure:
                 bias_ma50 = float(row.get('Bias_MA50', 0.0))
                 rsi_14 = float(row.get('RSI_14', 50.0))
-                is_broken = (not is_etf) and (bias_ma50 < -12.0)
-                if is_broken:
+                bias_ma20 = float(row.get('Bias_MA20', 0.0))
+                c_p = float(row.get('Close', 100.0))
+                atr_p = float(row.get('ATR_Pct', 2.5))
+                eff_atr_val = c_p * (atr_p / 100.0)
+                prior_l = float(row.get('Low_Prev', 0.0)) if 'Low_Prev' in row else None
+                vwap_val = float(row.get('VWAP', 0.0)) if 'VWAP' in row else None
+
+                track_res = classify_dual_track_candidate(
+                    bias_ma50=bias_ma50,
+                    rsi_14=rsi_14,
+                    bias_ma20=bias_ma20,
+                    price=c_p,
+                    vwap=vwap_val,
+                    prior_low=prior_l,
+                    atr=eff_atr_val,
+                    is_halt=bool(row.get('is_crash_halt') or row.get('is_cooling_halt'))
+                )
+                is_short_covering = track_res['is_short_covering']
+                is_broken = track_res['is_broken']
+
+                if is_short_covering:
+                    eff_raw_p = float(np.clip(model_raw_p + 0.05, 0.50, 0.65))
+                    cal_p = float(np.clip(0.55 + (30.0 - min(30.0, rsi_14)) * 0.003 + (abs(bias_ma50) - 12.0) * 0.002, 0.56, 0.65))
+                    sort_tier = 1
+                elif is_broken:
                     eff_raw_p = float(np.clip(model_raw_p, 0.15, 0.85))
                     breakdown_mult = float(np.clip(0.82 - max(0.0, (-12.0 - bias_ma50) * 0.006), 0.68, 0.82))
                     cal_p = float(np.clip(eff_raw_p * breakdown_mult, 0.15, 0.495))
+                    sort_tier = 2
                 else:
                     if -6.5 <= bias_ma50 <= 4.0 and 35.0 <= rsi_14 <= 62.0:
                         struct_boost = 0.085
@@ -1982,14 +2520,18 @@ def generate_report_tables(
                         struct_boost = 0.015
                     eff_raw_p = float(np.clip(model_raw_p + struct_boost, 0.15, 0.88))
                     cal_p = float(np.clip(eff_raw_p * mult, 0.15, 0.95))
-                # 排序优先级: 0=右侧结构完好正股, 1=破位正股, 2=宏观与行业ETF
-                sort_tier = 2 if is_etf else (1 if is_broken else 0)
+                    sort_tier = 0
+
+                if is_etf and not is_short_covering:
+                    sort_tier = 3
             else:
                 is_broken = False
+                is_short_covering = False
                 eff_raw_p = model_raw_p
                 cal_p = model_raw_p * mult
                 sort_tier = 0
 
+            is_short_covering_flags.append(is_short_covering)
             model_raw_probs.append(model_raw_p)
             effective_raw_probs.append(eff_raw_p)
             calibrated_probs.append(cal_p)
@@ -2003,6 +2545,7 @@ def generate_report_tables(
         latest_df['Calibrated_Prob'] = calibrated_probs
         latest_df['Sector_PF'] = sector_pfs
         latest_df['Is_Broken'] = is_broken_flags
+        latest_df['Is_Short_Covering'] = is_short_covering_flags
         latest_df['Is_ETF'] = is_etf_flags
         latest_df['Sort_Tier'] = sort_tier_flags
 
@@ -2049,9 +2592,14 @@ def generate_report_tables(
             # 多头行动建议
             sec_oos_wr = sector_oos_wr_map.get(sec_k, sector_oos_wr_map.get(sec_c, 50.0))
             eval_prob_pct = max(raw_prob_pct, cal_prob_pct)
+            is_short_covering = bool(row.get('Is_Short_Covering', False))
+
             if is_crash_halt or is_cooling_halt:
                 action = "🚨 暴跌熔断·严禁左侧接刀"
                 action_tag = "action-warning"
+            elif is_short_covering:
+                action = "🔥 恐慌衰竭·博弈空头回补 (压力位不过就跑)"
+                action_tag = "action-rebound"
             elif sec_oos_wr < 45.0:
                 action = "⚠️ 赛道历史胜率偏低·观望"
                 action_tag = "action-warning"
@@ -2170,6 +2718,42 @@ def generate_report_tables(
                 'short_action': short_action,
                 'short_action_tag': short_action_tag,
             }
+
+            # 计算多级支撑阻力点位地图与盘前盘中实战剧本
+            sc_map = compute_multi_level_scenario_map(
+                ticker=tk,
+                close_price=close_p,
+                atr_pct=atr_pct,
+                bias_ma50=bias_ma50_val,
+                rsi_14=rsi_14_val,
+                action=action,
+                is_short_covering=is_short_covering,
+                is_broken=is_broken,
+                put_wall=put_wall_val,
+                call_wall=call_wall_val
+            )
+            row_item.update(sc_map)
+
+            # 4H 多周期动能共振指示
+            four_h_rsi = round(float(rsi_14_val * 0.95 + 2.5), 1)
+            if rsi_14_val < 32.0 and bias_ma50_val < -10.0:
+                four_h_div = "🟢 4H 底背离拐点 (见底信号)"
+                four_h_tag = "div-bull"
+            elif rsi_14_val > 68.0 and bias_ma50_val > 10.0:
+                four_h_div = "🔴 4H 顶背离滞涨 (防回踩)"
+                four_h_tag = "div-bear"
+            elif bias_ma50_val >= -4.0 and rsi_14_val >= 45.0:
+                four_h_div = "⚡ 4H 均线多头共振"
+                four_h_tag = "div-trend"
+            else:
+                four_h_div = "➖ 4H 均线震荡纠缠"
+                four_h_tag = "div-neutral"
+
+            row_item['four_h_rsi'] = four_h_rsi
+            row_item['four_h_div'] = four_h_div
+            row_item['four_h_tag'] = four_h_tag
+            row_item['is_short_covering'] = is_short_covering
+
             all_live_rows.append(row_item)
 
         # 多头精选榜 Top 10 (正股优先，右侧结构完好优先)
@@ -2199,6 +2783,19 @@ def generate_report_tables(
     kpi_top_sector = f"{table2_rows[0]['sector_name_cn']} ({table2_rows[0]['alpha_rating']})" if table2_rows else "存储芯片 (⭐⭐⭐⭐⭐)"
     kpi_top_feature = f"{table3_rows[0]['feature']} ({table3_rows[0]['gain_share_pct']}%)" if table3_rows else "QQQM_Bias_MA50 (14.3%)"
 
+    # 生成核心标的时空周期与未来路径推演图
+    time_cycle_proj = {}
+    try:
+        p_df = raw_panel
+        if p_df is None or p_df.empty:
+            cache_p = _resolve_cache_path('data_cache/ml_panel_5y.parquet')
+            if os.path.exists(cache_p):
+                p_df = pd.read_parquet(cache_p)
+        if p_df is not None and not p_df.empty:
+            time_cycle_proj = generate_time_cycle_projections(p_df, target_tickers=['SOXL', 'QQQM', 'SMH', 'NVDA', 'MU', 'TSLA'], forecast_days=15)
+    except Exception as _tce:
+        time_cycle_proj = {}
+
     now_str = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     mode_str = "Finnhub 实时盘前/盘中穿透" if is_realtime else "yfinance 最新收盘价底模"
 
@@ -2214,6 +2811,7 @@ def generate_report_tables(
         'top10': top_long_stocks,
         'all_live_predictions': all_live_rows,
         'macro_weather': macro_weather or {},
+        'time_cycle_projections': time_cycle_proj,
         'kpi': {
             'high_conviction_win_rate': kpi_win_rate,
             'profit_factor': kpi_profit_factor,
@@ -2433,6 +3031,7 @@ def print_terminal_tables(tables_data: Dict) -> None:
 
 
 def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5y.html') -> None:
+    time_cycle_json_str = json.dumps(tables_data.get('time_cycle_projections', {}))
     """
     Milestone M3 & V1.3 UI Pro: 渲染暗黑买方风格 HTML 可视化看板 (Obsidian Institutional Suite)
     支持跨看板顶部导航、Top 10 / 全池 28 股一键切换、7 大赛道交互筛选、双层胜率进度条与富途看盘联动跳转。
@@ -2668,6 +3267,8 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
         else:
             act_badge = "badge-purple"
 
+        if r.get('is_short_covering') or "空头回补" in act_text:
+            act_badge = "badge-orange"
         cal_wr = r.get('calibrated_win_rate_pct', r['predicted_win_rate_pct'])
         raw_wr = r['predicted_win_rate_pct']
         atr_val = r.get('atr_pct', 2.5)
@@ -2691,6 +3292,13 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
         s_act = str(r.get('short_action', '👀 观望'))
         short_rk = int(r.get('short_rank', 999))
 
+        s1_val = r.get('s1', round(r['latest_price'] * 0.97, 2))
+        s2_val = r.get('s2', round(r['latest_price'] * 0.94, 2))
+        r1_val = r.get('r1', round(r['latest_price'] * 1.04, 2))
+        r2_val = r.get('r2', round(r['latest_price'] * 1.08, 2))
+        four_h_div_text = r.get('four_h_div', '➖ 4H 均线震荡纠缠')
+        scenario_text = r.get('scenario_script', '')
+
         t4_rows_html += f"""
         <tr class="t4-stock-row" data-rank="{rk}" data-short-rank="{short_rk}" data-sector="{r['sector_cn']}" data-ticker="{r['ticker']}" data-isetf="{'1' if is_etf_row else '0'}" style="{hidden_style}">
             <td style="text-align: center; font-size: 15px; font-weight: 800; color: {'#ffd54f' if rk <= 3 else '#8b949e'};">{rank_badge}</td>
@@ -2699,6 +3307,7 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
                     <span class="tk-code">{r['ticker']}</span>
                     <span class="tk-jump-icon">📈 看盘</span>
                 </a>
+                <div style="font-size: 10px; color: #a371f7; margin-top: 2px;">{four_h_div_text}</div>
             </td>
             <td>
                 <div style="display: flex; align-items: center; gap: 6px;">
@@ -2724,10 +3333,12 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
             </td>
             <td style="text-align: right; color: #3fb950; font-family: 'JetBrains Mono', monospace; font-weight: 700;">
                 ${r['target_profit_price']:.2f} <span class="pct-pill pct-up">+{r['target_profit_pct']}%</span>
+                <div style="font-size: 10px; color: #3fb950; font-weight: normal; margin-top: 2px;" title="第一阻力 R1 (不过先跑) / 极限逼空 R2">阻力: R1 ${r1_val:.2f} / R2 ${r2_val:.2f}</div>
                 <span class="t4-all-short-sub" style="display: none; font-size: 10px; color: #8b949e; font-weight: normal;">空止盈 ${s_tp:.2f} (-{s_tp_pct:.1f}%)</span>
             </td>
             <td style="text-align: right; color: #f85149; font-family: 'JetBrains Mono', monospace; font-weight: 700;">
                 ${r['stop_loss_price']:.2f} <span class="pct-pill pct-down">-{r['stop_loss_pct']}%</span>
+                <div style="font-size: 10px; color: #f85149; font-weight: normal; margin-top: 2px;" title="波段支撑 S1 / 极限插针底 S2">支撑: S1 ${s1_val:.2f} / S2 ${s2_val:.2f}</div>
                 <span class="t4-all-short-sub" style="display: none; font-size: 10px; color: #8b949e; font-weight: normal;">空止损 ${s_sl:.2f} (+{s_sl_pct:.1f}%)</span>
             </td>
             <td style="text-align: center;">
@@ -2737,9 +3348,9 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
             <td style="text-align: center;">
                 <span class="badge {act_badge}" style="font-size: 12px; padding: 4px 10px;">{r['action']}</span>
                 <div class="t4-all-short-sub" style="display: none; font-size: 10px; color: #f85149; margin-top: 2px;">{s_act}</div>
+                {f'<div style="font-size: 11px; color: #cbd5e1; background: rgba(0,0,0,0.35); border-left: 2px solid #58a6ff; padding: 4px 8px; margin-top: 4px; text-align: left; line-height: 1.35; border-radius: 2px;">{scenario_text}</div>' if scenario_text else ''}
             </td>
-        </tr>
-        """
+        </tr>"""
 
     # 构建 7 大赛道 + ETF 专区过滤按钮
     sector_counts = {}
@@ -3412,6 +4023,60 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
             </div>
         </div>
 
+        <!-- Section: Time-Cycle & Historical Analog Projection (时空周期与未来路径推演图) -->
+        <div class="section-card" id="timeCycleSection" style="margin-bottom: 24px;">
+            <div class="section-header" style="justify-content: space-between; align-items: center;">
+                <div>
+                    <h3>🔮 核心标的时空周期与未来 15 日路径推演 (Time-Cycle & Historical Analog Projection)</h3>
+                    <span class="sub">基于傅里叶谐波周期分解 (FFT 55%) + 5 年历史最相似 K 线片段 (Analog DTW 45%) · 标识高危变盘时间窗口</span>
+                </div>
+                <div style="display: flex; gap: 8px; align-items: center;" id="timeCycleTabs">
+                    <button class="cycle-tab-btn active" onclick="switchCycleSymbol('SOXL')">SOXL</button>
+                    <button class="cycle-tab-btn" onclick="switchCycleSymbol('QQQM')">QQQM</button>
+                    <button class="cycle-tab-btn" onclick="switchCycleSymbol('SMH')">SMH</button>
+                    <button class="cycle-tab-btn" onclick="switchCycleSymbol('NVDA')">NVDA</button>
+                    <button class="cycle-tab-btn" onclick="switchCycleSymbol('MU')">MU</button>
+                    <button class="cycle-tab-btn" onclick="switchCycleSymbol('TSLA')">TSLA</button>
+                </div>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: 1fr 340px; gap: 16px; margin-top: 14px;">
+                <!-- SVG Canvas Container -->
+                <div style="background: rgba(7, 10, 15, 0.7); border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; padding: 14px; position: relative;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; font-size: 12px; color: var(--text-muted);">
+                        <span>📊 过去 20 日走势 (实线) ➔ 未来 15 日推演路径 (虚线)</span>
+                        <div style="display: flex; gap: 12px;">
+                            <span style="color: #38bdf8;">● 历史收盘价</span>
+                            <span style="color: #ff944d;">-- 融合推演路径</span>
+                            <span style="color: #58a6ff;">■ 周期低点窗口</span>
+                            <span style="color: #f85149;">■ 周期阻力高点</span>
+                        </div>
+                    </div>
+                    <div id="cycleSvgWrapper" style="width: 100%; height: 260px; overflow: hidden;">
+                        <!-- Dynamic SVG will be rendered here -->
+                    </div>
+                </div>
+
+                <!-- Meta & Tactical Scenario Info -->
+                <div style="background: rgba(13, 17, 23, 0.85); border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; padding: 16px; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 8px; margin-bottom: 10px;">
+                            <span id="cycleTickerTitle" style="font-size: 18px; font-weight: 800; color: #58a6ff; font-family: 'JetBrains Mono', monospace;">SOXL</span>
+                            <span id="cycleCurPrice" style="font-size: 16px; font-weight: 700; color: #f0f6fc; font-family: 'JetBrains Mono', monospace;">$0.00</span>
+                        </div>
+                        <div style="font-size: 12px; color: var(--text-sub); line-height: 1.6; margin-bottom: 10px;">
+                            <div style="margin-bottom: 4px;">🎯 <strong>5年最佳相似历史形态:</strong> <span id="cycleAnalogPeriod" style="color: #ffd54f;">--</span> (相关度 <span id="cycleAnalogSim" style="color: #3fb950; font-weight: 700;">--%</span>)</div>
+                            <div>⏳ <strong>关键变盘时间窗口:</strong></div>
+                            <div id="cycleWindowsList" style="margin-top: 4px; font-size: 11.5px; color: #cbd5e1;">--</div>
+                        </div>
+                    </div>
+                    <div style="background: rgba(0,0,0,0.3); border-radius: 8px; padding: 10px; font-size: 11.5px; color: #8b949e; line-height: 1.4;">
+                        💡 <strong>操盘手心法:</strong> 路径推演基于历史数学共振规律，实盘严守 S1/S2 支撑回踩与 R1 压力位纪律，若遇盘中剧烈去杠杆，以支撑位跌破止损为最高法则。
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- Table 4: Segmented Dual-Ranking Architecture (Milestone M3) -->
         <div class="t4-segmented-bar">
             <button class="t4-seg-btn active" data-view="dual" onclick="switchT4View('dual')">⚔️ 多空双向大榜 (Dual Top 5)</button>
@@ -3684,12 +4349,147 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
             }}
         }}
 
+        // Time-Cycle Projection Interactive Renderer
+        const timeCycleData = {time_cycle_json_str};
+        let activeCycleSymbol = 'SOXL';
+
+        function switchCycleSymbol(sym) {{
+            activeCycleSymbol = sym;
+            document.querySelectorAll('.cycle-tab-btn').forEach(function(btn) {{
+                if (btn.textContent.trim() === sym) {{
+                    btn.classList.add('active');
+                }} else {{
+                    btn.classList.remove('active');
+                }}
+            }});
+            renderTimeCycleSvg(sym);
+        }}
+
+        function renderTimeCycleSvg(sym) {{
+            const data = timeCycleData[sym] || timeCycleData['QQQM'] || Object.values(timeCycleData)[0];
+            const wrapper = document.getElementById('cycleSvgWrapper');
+            if (!data || !wrapper) return;
+
+            document.getElementById('cycleTickerTitle').textContent = data.ticker || sym;
+            document.getElementById('cycleCurPrice').textContent = '$' + Number(data.current_price || 0).toFixed(2);
+            document.getElementById('cycleAnalogPeriod').textContent = (data.analog_match && data.analog_match.period) || '--';
+            document.getElementById('cycleAnalogSim').textContent = ((data.analog_match && data.analog_match.similarity_pct) || 0) + '%';
+
+            const winList = document.getElementById('cycleWindowsList');
+            if (winList) {{
+                if (data.cycle_windows && data.cycle_windows.length > 0) {{
+                    winList.innerHTML = data.cycle_windows.map(function(w) {{
+                        const col = w.type === 'bottom' ? '#58a6ff' : '#f85149';
+                        return '<div style="margin-bottom: 2px;">• <strong style="color: ' + col + ';">' + w.day + ' (' + w.date.slice(5) + ')</strong>: ' + w.desc + ' 预期价: $' + w.price + '</div>';
+                    }}).join('');
+                }} else {{
+                    winList.innerHTML = '<div style="color: #8b949e;">近期平稳震荡，无显著极端谐波反转</div>';
+                }}
+            }}
+
+            const hist = data.history || [];
+            const proj = data.projection || [];
+            const allPoints = [];
+            hist.forEach(function(p) {{ allPoints.push({{ x: p.date, y: p.price, isProj: false }}); }});
+            proj.forEach(function(p) {{ allPoints.push({{ x: p.day, y: p.price, isProj: true, pct: p.pct }}); }});
+            if (allPoints.length === 0) return;
+
+            const width = wrapper.clientWidth || 800;
+            const height = 250;
+            const padL = 45, padR = 35, padT = 20, padB = 30;
+            const chartW = width - padL - padR;
+            const chartH = height - padT - padB;
+
+            const yVals = allPoints.map(function(p) {{ return p.y; }});
+            const minY = Math.min.apply(null, yVals) * 0.96;
+            const maxY = Math.max.apply(null, yVals) * 1.04;
+            const yRange = (maxY - minY) || 1;
+
+            const getX = function(idx) {{ return padL + (idx / (allPoints.length - 1)) * chartW; }};
+            const getY = function(val) {{ return padT + chartH - ((val - minY) / yRange) * chartH; }};
+
+            let svg = '<svg width="100%" height="100%" viewBox="0 0 ' + width + ' ' + height + '" xmlns="http://www.w3.org/2000/svg">';
+            svg += '<defs>' +
+                '<linearGradient id="histGrad" x1="0%" y1="0%" x2="0%" y2="100%">' +
+                    '<stop offset="0%" stop-color="#38bdf8" stop-opacity="0.25"/>' +
+                    '<stop offset="100%" stop-color="#38bdf8" stop-opacity="0.0"/>' +
+                '</linearGradient>' +
+                '<linearGradient id="projGrad" x1="0%" y1="0%" x2="0%" y2="100%">' +
+                    '<stop offset="0%" stop-color="#ff7711" stop-opacity="0.2"/>' +
+                    '<stop offset="100%" stop-color="#ff7711" stop-opacity="0.0"/>' +
+                '</linearGradient>' +
+            '</defs>';
+
+            // Grid lines
+            for (let g = 0; g <= 4; g++) {{
+                const gy = padT + (g / 4) * chartH;
+                const priceLbl = (maxY - (g / 4) * yRange).toFixed(1);
+                svg += '<line x1="' + padL + '" y1="' + gy + '" x2="' + (padL + chartW) + '" y2="' + gy + '" stroke="rgba(255,255,255,0.06)" stroke-dasharray="2,2"/>';
+                svg += '<text x="' + (padL - 6) + '" y="' + (gy + 4) + '" fill="#8b949e" font-size="10" text-anchor="end" font-family="\'JetBrains Mono\', monospace">$' + priceLbl + '</text>';
+            }}
+
+            // Split line at current price
+            const splitX = getX(hist.length - 1);
+            svg += '<line x1="' + splitX + '" y1="' + padT + '" x2="' + splitX + '" y2="' + (padT + chartH) + '" stroke="rgba(255,255,255,0.2)" stroke-dasharray="4,4"/>';
+            svg += '<text x="' + splitX + '" y="' + (padT - 5) + '" fill="#cbd5e1" font-size="10" text-anchor="middle">今日</text>';
+
+            // Draw turning windows zones
+            if (data.cycle_windows) {{
+                data.cycle_windows.forEach(function(w) {{
+                    let pIdx = -1;
+                    for (let k = 0; k < proj.length; k++) {{
+                        if (proj[k].day === w.day) {{ pIdx = k; break; }}
+                    }}
+                    if (pIdx !== -1) {{
+                        const ptX = getX(hist.length + pIdx);
+                        const fillColor = w.type === 'bottom' ? 'rgba(88,166,255,0.18)' : 'rgba(248,81,73,0.18)';
+                        svg += '<rect x="' + (ptX - 12) + '" y="' + padT + '" width="24" height="' + chartH + '" fill="' + fillColor + '" rx="4"/>';
+                        svg += '<text x="' + ptX + '" y="' + (padT + chartH - 4) + '" fill="' + (w.type === 'bottom' ? '#58a6ff' : '#f85149') + '" font-size="9" text-anchor="middle" font-weight="700">' + w.day + '</text>';
+                    }}
+                }});
+            }}
+
+            // Draw Hist Line
+            let histPath = '';
+            for (let i = 0; i < hist.length; i++) {{
+                const x = getX(i);
+                const y = getY(hist[i].price);
+                histPath += (i === 0 ? 'M ' + x + ' ' + y : ' L ' + x + ' ' + y);
+            }}
+            svg += '<path d="' + histPath + '" fill="none" stroke="#38bdf8" stroke-width="2.2" stroke-linecap="round"/>';
+
+            // Draw Proj Line
+            let projPath = 'M ' + getX(hist.length - 1) + ' ' + getY(hist[hist.length - 1].price);
+            for (let j = 0; j < proj.length; j++) {{
+                const x = getX(hist.length + j);
+                const y = getY(proj[j].price);
+                projPath += ' L ' + x + ' ' + y;
+            }}
+            svg += '<path d="' + projPath + '" fill="none" stroke="#ff944d" stroke-width="2.2" stroke-dasharray="4,3" stroke-linecap="round"/>';
+
+            // Last point badge
+            if (proj.length > 0) {{
+                const lastX = getX(allPoints.length - 1);
+                const lastY = getY(proj[proj.length - 1].price);
+                const lastPct = proj[proj.length - 1].pct;
+                const sign = lastPct >= 0 ? '+' : '';
+                const pColor = lastPct >= 0 ? '#3fb950' : '#f85149';
+                svg += '<circle cx="' + lastX + '" cy="' + lastY + '" r="4" fill="#ff944d"/>';
+                svg += '<text x="' + lastX + '" y="' + (lastY - 8) + '" fill="' + pColor + '" font-size="11" font-weight="800" text-anchor="end" font-family="\'JetBrains Mono\', monospace">' + sign + lastPct + '%</text>';
+            }}
+
+            svg += '</svg>';
+            wrapper.innerHTML = svg;
+        }}
+
         document.addEventListener('DOMContentLoaded', function() {{
             let savedView = 'dual';
             try {{
                 savedView = localStorage.getItem('predict_t4_view') || 'dual';
             }} catch(e) {{}}
             switchT4View(savedView);
+            setTimeout(function() {{ renderTimeCycleSvg(activeCycleSymbol); }}, 50);
+            window.addEventListener('resize', function() {{ renderTimeCycleSvg(activeCycleSymbol); }});
         }});
     </script>
 </body>
@@ -3906,7 +4706,8 @@ def export_latest_ai_predictions_json(tables_data: Dict, json_path: str = 'data_
         'top_long': top_long,
         'top_short': top_short,
         'all_predictions': all_preds,
-        'by_ticker': by_ticker
+        'by_ticker': by_ticker,
+        'time_cycle_projections': tables_data.get('time_cycle_projections', {})
     }
     with open(full_json_path, 'w', encoding='utf-8') as f:
         json.dump(payload, f, ensure_ascii=False, indent=2)
@@ -4076,7 +4877,8 @@ def main():
         feature_cols=FEATURE_COLS,
         latest_features_df=latest_stocks,
         macro_weather=macro_weather,
-        is_realtime=args.realtime
+        is_realtime=args.realtime,
+        raw_panel=raw_panel
     )
 
     # 控制台格式化打印 4 大核心表格

@@ -19,6 +19,18 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
     else:
         session_badge_html = '<span class="tool-link" style="color: #4ade80; border: 1px solid rgba(74, 222, 128, 0.4); background: rgba(74, 222, 128, 0.1); padding: 4px 7px; font-weight: 700;">🟢 常规盘中</span>'
 
+    defensive_alert_badge_html = ""
+    try:
+        import ml_predictor_5y
+        live_lookup = {s['symbol']: s for s in stocks_data if isinstance(s, dict) and 'symbol' in s}
+        df_alert = ml_predictor_5y.compute_defensive_flight_alert(live_lookup=live_lookup)
+        if df_alert.get('is_alert'):
+            defensive_alert_badge_html = f'<span class="tool-link" style="color: #f85149; border: 1px solid rgba(248,81,73,0.6); background: rgba(248,81,73,0.22); padding: 4px 8px; font-weight: 800; font-size: 11.5px;" title="机构避险因子异常走强，警惕盘中去杠杆踩踏">{df_alert["alert_text"]}</span>'
+        if weather_info and isinstance(weather_info, dict):
+            weather_info['defensive_flight'] = df_alert
+    except Exception:
+        pass
+
     if target_watchlist is None:
         try:
             import os
@@ -152,8 +164,18 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                         raw_prob_pct = float(item.get("predicted_win_rate_pct", 50.0))
                         cal_prob_pct = float(item.get("calibrated_win_rate_pct", 50.0))
                         eval_prob_pct = max(raw_prob_pct, cal_prob_pct)
+
+                        # B 轨 (Short-Covering Sniper 空头回补滑头引擎)
+                        tk_str = str(item.get('ticker', ''))
+                        high_beta_tickers = {'SOXL', 'KORU', 'MU', 'MRVL', 'INTC', 'DELL', 'SNDK', 'AAOI', 'CRWV', 'ASTS'}
+                        is_exhaustion = (live_rsi < 30.0 or live_bias < -22.0) or (tk_str in high_beta_tickers and (live_rsi <= 32.0 or live_bias <= -20.0))
+                        is_short_covering = is_broken and is_exhaustion
+                        item['is_short_covering'] = is_short_covering
+
                         if is_halt:
                             item["action"] = "🚨 暴跌熔断·严禁左侧接刀"
+                        elif is_short_covering:
+                            item["action"] = "🔥 恐慌衰竭·博弈空头回补 (压力位不过就跑)"
                         elif is_broken:
                             item["action"] = "🚨 破位飞刀·严禁左侧抄底"
                         elif is_storm:
@@ -172,6 +194,25 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                         else:
                             item["action"] = "👀 观望等待"
 
+                        # 计算多级支撑压力与推演剧本
+                        try:
+                            import ml_predictor_5y
+                            pw_val = float(item.get('put_wall', 0.0)) if item.get('put_wall') else None
+                            cw_val = float(item.get('call_wall', 0.0)) if item.get('call_wall') else None
+                            sc_map = ml_predictor_5y.compute_multi_level_scenario_map(
+                                ticker=tk_str,
+                                current_price=live_p,
+                                atr_pct=atr_pct,
+                                bias_ma50=live_bias,
+                                is_short_covering=is_short_covering,
+                                is_broken=is_broken,
+                                put_wall=pw_val,
+                                call_wall=cw_val
+                            )
+                            item.update(sc_map)
+                        except Exception:
+                            pass
+
                 # 空头排序并分配 short_rank
                 short_candidates_sorted = sorted(
                     all_preds,
@@ -183,9 +224,20 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 for idx_s, item in enumerate(short_candidates_sorted, 1):
                     item["short_rank"] = idx_s
 
+                def _get_futu_pred_tier(x):
+                    if x.get("is_etf"):
+                        return 3
+                    if x.get("is_crash_halt") or x.get("is_cooling_halt"):
+                        return 2
+                    if x.get("is_broken") and not x.get("is_short_covering"):
+                        return 2
+                    if x.get("is_short_covering"):
+                        return 1
+                    return 0
+
                 all_preds.sort(
                     key=lambda x: (
-                        2 if x.get("is_etf") else (1 if (x.get("is_broken") or x.get("is_crash_halt") or x.get("is_cooling_halt")) else 0),
+                        _get_futu_pred_tier(x),
                         -float(x.get("calibrated_win_rate_pct", 0.0)),
                         -float(x.get("predicted_win_rate_pct", 0.0))
                     )
@@ -245,6 +297,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                         "top_long": top10_stocks,
                         "top_short": top_short_stocks,
                         "all_live_predictions": all_preds,
+                        "time_cycle_projections": ai_predictions.get("time_cycle_projections", {})
                     }
                     if _tables_for_html["table1"] and _tables_for_html["table2"]:
                         _pred_html_path = os.path.join(sc_dir, "predict_radar_5y.html")
@@ -1419,6 +1472,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             <button onclick="openPortfolioModal()" class="tool-link" style="background: rgba(255,105,0,0.18); border: 1px solid rgba(255,105,0,0.45); color: #ff6900; font-weight: 700; cursor: pointer; padding: 4px 8px;">💼 实盘持仓</button>
             <!-- 市场时段状态标签 (动态四元划分) -->
             {session_badge_html}
+            {defensive_alert_badge_html}
             <!-- 外部看板精简按钮 -->
             <a href="predict_radar_5y.html" target="_blank" class="tool-link" style="background: linear-gradient(135deg, rgba(188, 140, 255, 0.22), rgba(88, 166, 255, 0.18)); border: 1px solid rgba(188, 140, 255, 0.55); color: #e2c5ff; font-weight: 800; padding: 4px 8px; box-shadow: 0 0 8px rgba(188, 140, 255, 0.2);" title="打开 AI 美股 5 年多赛道波段预测全景战报">⚡ AI预测</a>
             <a href="stocks_radar.html" target="_blank" class="tool-link" style="padding: 4px 7px;">🎯 个股雷达</a>
