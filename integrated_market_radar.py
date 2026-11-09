@@ -283,15 +283,27 @@ class WatchlistApiHandler(BaseHTTPRequestHandler):
     def do_GET(self):
         try:
             parsed = urlparse(self.path)
-            # 1. 移动端/局域网 Web 静态服务 (主页与 PWA Manifest)
+            # 1. 移动端/局域网 Web 静态服务 (主页与看板 HTML 零缓存直出)
+            target_file = None
             if parsed.path in ["/", "/index.html", "/futu_pro_terminal.html"]:
-                html_path = os.path.join(SCRATCH_DIR, "futu_pro_terminal.html")
+                target_file = "futu_pro_terminal.html"
+            elif parsed.path.strip("/").endswith(".html"):
+                target_file = os.path.basename(parsed.path)
+            elif parsed.path.startswith("/data_cache/") and parsed.path.endswith(".json"):
+                target_file = os.path.join("data_cache", os.path.basename(parsed.path))
+
+            if target_file:
+                html_path = os.path.join(SCRATCH_DIR, target_file)
                 if os.path.exists(html_path):
                     with open(html_path, "rb") as f:
                         data = f.read()
                     self.send_response(200)
-                    self.send_header("Content-Type", "text/html; charset=utf-8")
+                    ct = "text/html; charset=utf-8" if target_file.endswith(".html") else "application/json; charset=utf-8"
+                    self.send_header("Content-Type", ct)
                     self.send_header("Access-Control-Allow-Origin", "*")
+                    self.send_header("Cache-Control", "no-cache, no-store, must-revalidate")
+                    self.send_header("Pragma", "no-cache")
+                    self.send_header("Expires", "0")
                     self.send_header("Content-Length", str(len(data)))
                     self.end_headers()
                     self.wfile.write(data)
@@ -4454,11 +4466,14 @@ def main():
                     interval_sec = max(30, int(sys.argv[i + 1]))
                 except Exception:
                     pass
-        print(f"\n🚀 启动云端 {interval_sec} 秒极速长轮询守护引擎 (计划持续运行 {duration_min} 分钟)")
+        if duration_min <= 0:
+            print(f"\n🚀 启动全天候无上限极速长轮询守护引擎 (每 {interval_sec} 秒轮询一次 · 24/7 永久驻留)")
+        else:
+            print(f"\n🚀 启动云端 {interval_sec} 秒极速长轮询守护引擎 (计划持续运行 {duration_min} 分钟)")
         start_time = time.time()
         end_time = start_time + duration_min * 60
         round_idx = 1
-        while time.time() < end_time:
+        while (duration_min <= 0) or (time.time() < end_time):
             c_start = time.time()
             now_ts = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
