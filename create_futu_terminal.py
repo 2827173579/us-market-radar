@@ -157,13 +157,14 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                     # A/B 双轨分类引擎 (Track A 趋势动量 vs Track B Short-Covering Sniper 空头回补滑头引擎)
                     try:
                         import ml_predictor_5y
-                        prior_low_val = float(lv.get('low') or lv.get('low_price') or lv.get('rth_low') or 0.0) or None
-                        vwap_val = float(lv.get('vwap', 0.0)) if lv.get('vwap') else (live_p * 0.995 if float(lv.get('pct_change', 0.0)) > 0.3 else None)
+                        prior_low_val = float(item.get('low_prev') or lv.get('prev_low') or 0.0) or None
+                        vwap_val = float(lv.get('vwap', 0.0)) if (lv.get('vwap') and float(lv.get('vwap', 0.0)) > 0) else None
+                        live_bias_20 = float(lv.get('bias_ma20') or item.get('bias_ma20') or (live_bias * 0.75))
                         live_atr_val = live_atr if live_atr > 0 else (live_p * (atr_pct / 100.0))
                         track_res = ml_predictor_5y.classify_dual_track_candidate(
                             bias_ma50=live_bias,
                             rsi_14=live_rsi,
-                            bias_ma20=float(lv.get('bias_ma20', live_bias * 0.7)),
+                            bias_ma20=live_bias_20,
                             price=live_p,
                             vwap=vwap_val,
                             prior_low=prior_low_val,
@@ -204,8 +205,13 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                         fh_bonus = 0.0
 
                     if is_short_covering:
-                        new_raw = round(float(np.clip(model_raw + 5.0 + intra_adj, 50.0, 65.0)), 1)
-                        new_cal = round(float(np.clip(55.0 + max(0.0, 36.0 - min(36.0, live_rsi)) * 0.3 + (abs(live_bias) - 12.0) * 0.2, 56.5, 65.0)), 1)
+                        new_raw = round(float(np.clip(model_raw + intra_adj, 15.0, 85.0)), 1)
+                        new_cal = round(ml_predictor_5y.compute_track_b_empirical_win_rate(
+                            bias_ma50=live_bias,
+                            rsi_14=live_rsi,
+                            bias_ma20=live_bias_20,
+                            model_raw_prob=new_raw
+                        ) * 100.0, 1)
                     elif is_broken:
                         new_raw = round(float(np.clip(model_raw + intra_adj, 15.0, 85.0)), 1)
                         breakdown_mult = float(np.clip(0.82 - max(0.0, (-12.0 - live_bias) * 0.006), 0.68, 0.82))
