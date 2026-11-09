@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "updated_at": 1794182954.7603827,
+  "updated_at": 1794183087.2287536,
   "data": {
     "IWM": {
       "has_options": true,
@@ -902,29 +902,6 @@
     "AAOI": {
       "has_options": true,
       "options_exp": "2026-11-13",
-      "call_vol": 8221,
-      "put_vol": 4614,
-      "call_dollar": 1384918.0,
-      "put_dollar": 716148.0,
-      "pcr": 0.56,
-      "dollar_pcr": 0.52,
-      "pcr_sentiment": "🟢 资金偏多看涨",
-      "pcr_color": "#4ade80",
-      "top_call_info": "$50 Call (880张 · $355k)",
-      "top_call_val": 354640.0,
-      "call_wall": 50.0,
-      "top_put_info": "$48 Put (394张 · $115k)",
-      "top_put_val": 115442.0,
-      "put_wall": 48.0,
-      "iv_atm": 169.2,
-      "exp_move_pct": 13.5,
-      "exp_low": 43.36,
-      "exp_high": 56.9,
-      "exp_move_str": "±13.5% ($43.36~$56.90)"
-    },
-    "AAOI": {
-      "has_options": true,
-      "options_exp": "2026-11-13",
       "call_vol": 67722,
       "put_vol": 65296,
       "call_dollar": 20623177.0,
@@ -1634,6 +1611,29 @@
       "exp_low": 37.3,
       "exp_high": 39.92,
       "exp_move_str": "±3.4% ($37.30~$39.92)"
+    },
+    "SPCX": {
+      "has_options": true,
+      "options_exp": "2026-11-13",
+      "call_vol": 67722,
+      "put_vol": 65296,
+      "call_dollar": 20623177.0,
+      "put_dollar": 10621766.0,
+      "pcr": 0.96,
+      "dollar_pcr": 0.52,
+      "pcr_sentiment": "🟢 资金偏多看涨",
+      "pcr_color": "#4ade80",
+      "top_call_info": "$135 Call (8,041张 · $3.92M)",
+      "top_call_val": 3915967.0,
+      "call_wall": 135.0,
+      "top_put_info": "$130 Put (4,931张 · $1.66M)",
+      "top_put_val": 1661747.0,
+      "put_wall": 130.0,
+      "iv_atm": 82.8,
+      "exp_move_pct": 6.6,
+      "exp_low": 125.41,
+      "exp_high": 143.13,
+      "exp_move_str": "±6.6% ($125.41~$143.13)"
     }
   }
 }

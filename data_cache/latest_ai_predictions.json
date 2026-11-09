@@ -4,7 +4,7 @@
     "profit_factor": 1.41,
     "top_sector": "存储芯片 (⭐⭐⭐⭐⭐)",
     "top_feature": "SMH_IGV_Ratio_Bias (12.28%)",
-    "sync_time": "2026-11-09 09:07:47",
+    "sync_time": "2026-11-09 09:09:59",
     "data_mode": "Finnhub 秒级实时 (☕ 周末休市)",
     "is_realtime": false
   },
@@ -1553,7 +1553,7 @@
       "short_rank": 2
     },
     {
-      "rank": 67,
+      "rank": 70,
       "ticker": "GLD",
       "sector_key": "Energy_Power",
       "sector_cn": "大盘与宏观ETF",
@@ -1685,7 +1685,7 @@
       "short_rank": 5
     },
     {
-      "rank": 72,
+      "rank": 75,
       "ticker": "IGV",
       "sector_key": "Enterprise_SaaS",
       "sector_cn": "软件科技ETF",
@@ -1773,7 +1773,7 @@
       "short_rank": 7
     },
     {
-      "rank": 73,
+      "rank": 76,
       "ticker": "SPY",
       "sector_key": "Enterprise_SaaS",
       "sector_cn": "大盘与宏观ETF",
@@ -2652,7 +2652,7 @@
       "iv_atm": 47.6,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 74
+      "short_rank": 76
     },
     {
       "rank": 18,
@@ -3136,7 +3136,7 @@
       "iv_atm": 140.7,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 76
+      "short_rank": 79
     },
     {
       "rank": 29,
@@ -4327,7 +4327,7 @@
       "short_rank": 69
     },
     {
-      "rank": 58,
+      "rank": 56,
       "ticker": "AXTI",
       "sector_key": "Optical_Interconnect",
       "sector_cn": "光通信与互联",
@@ -4503,7 +4503,7 @@
       "short_rank": 66
     },
     {
-      "rank": 62,
+      "rank": 60,
       "ticker": "ORCL",
       "sector_key": "Enterprise_SaaS",
       "sector_cn": "企业软件与 AI SaaS",
@@ -4547,7 +4547,7 @@
       "short_rank": 47
     },
     {
-      "rank": 63,
+      "rank": 61,
       "ticker": "WDC",
       "sector_key": "Memory",
       "sector_cn": "存储芯片",
@@ -4676,54 +4676,10 @@
       "iv_atm": 156.7,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 75
+      "short_rank": 77
     },
     {
       "rank": 64,
-      "ticker": "SOXL",
-      "sector_key": "Semiconductors",
-      "sector_cn": "半导体3倍做多",
-      "sector_rating": "⭐⭐⭐⭐☆",
-      "latest_price": 46.31,
-      "current_price": 80.04499816894531,
-      "atr_pct": 29.31,
-      "bias_ma50": -59.8,
-      "rsi_14": 29.2,
-      "is_broken": false,
-      "is_etf": true,
-      "is_crash_halt": false,
-      "is_cooling_halt": true,
-      "macro_temp": "🌧️ 暴雨空仓",
-      "model_raw_prob_pct": 52.2,
-      "base_raw_prob_pct": 53.8,
-      "predicted_win_rate_pct": 53.8,
-      "calibrated_win_rate_pct": 61.9,
-      "sector_pf": 1.55,
-      "target_profit_price": 50.69,
-      "target_profit_pct": 9.5,
-      "stop_loss_price": 43.07,
-      "stop_loss_pct": 7.0,
-      "action": "🚨 暴跌熔断·严禁左侧接刀",
-      "action_tag": "action-watch",
-      "model_raw_short_prob_pct": 47.5,
-      "calibrated_short_win_rate_pct": 48.4,
-      "short_entry_price": 80.04499816894531,
-      "short_target_profit_price": 41.93,
-      "short_target_profit_pct": 9.5,
-      "short_stop_loss_price": 49.55,
-      "short_stop_loss_pct": 7.0,
-      "dollar_pcr": 0.71,
-      "pcr": 0.43,
-      "pcr_sentiment": "🟢 资金偏多看涨",
-      "put_wall": 65.0,
-      "call_wall": 80.0,
-      "iv_atm": 150.4,
-      "short_action": "👀 空头动能不足·观望",
-      "short_action_tag": "short-action-wait",
-      "short_rank": 73
-    },
-    {
-      "rank": 65,
       "ticker": "KORU",
       "sector_key": "Memory",
       "sector_cn": "韩股存储3倍做多",
@@ -4767,6 +4723,50 @@
       "short_rank": 78
     },
     {
+      "rank": 65,
+      "ticker": "SOXL",
+      "sector_key": "Semiconductors",
+      "sector_cn": "半导体3倍做多",
+      "sector_rating": "⭐⭐⭐⭐☆",
+      "latest_price": 46.31,
+      "current_price": 80.04499816894531,
+      "atr_pct": 29.31,
+      "bias_ma50": -59.8,
+      "rsi_14": 29.2,
+      "is_broken": false,
+      "is_etf": true,
+      "is_crash_halt": false,
+      "is_cooling_halt": true,
+      "macro_temp": "🌧️ 暴雨空仓",
+      "model_raw_prob_pct": 52.2,
+      "base_raw_prob_pct": 53.8,
+      "predicted_win_rate_pct": 53.8,
+      "calibrated_win_rate_pct": 61.9,
+      "sector_pf": 1.55,
+      "target_profit_price": 50.69,
+      "target_profit_pct": 9.5,
+      "stop_loss_price": 43.07,
+      "stop_loss_pct": 7.0,
+      "action": "🚨 暴跌熔断·严禁左侧接刀",
+      "action_tag": "action-watch",
+      "model_raw_short_prob_pct": 47.5,
+      "calibrated_short_win_rate_pct": 48.4,
+      "short_entry_price": 80.04499816894531,
+      "short_target_profit_price": 41.93,
+      "short_target_profit_pct": 9.5,
+      "short_stop_loss_price": 49.55,
+      "short_stop_loss_pct": 7.0,
+      "dollar_pcr": 0.71,
+      "pcr": 0.43,
+      "pcr_sentiment": "🟢 资金偏多看涨",
+      "put_wall": 65.0,
+      "call_wall": 80.0,
+      "iv_atm": 150.4,
+      "short_action": "👀 空头动能不足·观望",
+      "short_action_tag": "short-action-wait",
+      "short_rank": 73
+    },
+    {
       "rank": 66,
       "ticker": "SOXL",
       "sector_key": "Semiconductors",
@@ -4808,7 +4808,7 @@
       "iv_atm": 150.4,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 75
+      "short_rank": 74
     },
     {
       "rank": 67,
@@ -4852,7 +4852,7 @@
       "iv_atm": 150.4,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 76
+      "short_rank": 75
     },
     {
       "rank": 68,
@@ -5036,11 +5036,11 @@
       "sector_key": "Crypto_Proxy",
       "sector_cn": "加密币股代理",
       "sector_rating": "⭐⭐⭐☆☆",
-      "latest_price": 81.85,
+      "latest_price": 42.9,
       "current_price": 81.83999633789062,
-      "atr_pct": 0.95,
-      "bias_ma50": 2.04,
-      "rsi_14": 61.6,
+      "atr_pct": 3.02,
+      "bias_ma50": -6.35,
+      "rsi_14": 38.6,
       "is_broken": false,
       "is_etf": true,
       "is_crash_halt": false,
@@ -5051,19 +5051,19 @@
       "predicted_win_rate_pct": 49.7,
       "calibrated_win_rate_pct": 48.9,
       "sector_pf": 1.28,
-      "target_profit_price": 84.31,
-      "target_profit_pct": 3.0,
-      "stop_loss_price": 80.05,
-      "stop_loss_pct": 2.2,
+      "target_profit_price": 44.65,
+      "target_profit_pct": 4.1,
+      "stop_loss_price": 41.6,
+      "stop_loss_pct": 3.0,
       "action": "🛡️ 暴雨空仓·严禁左侧接刀",
       "action_tag": "action-watch",
       "model_raw_short_prob_pct": 52.4,
       "calibrated_short_win_rate_pct": 43.1,
       "short_entry_price": 81.83999633789062,
-      "short_target_profit_price": 79.39,
-      "short_target_profit_pct": 3.0,
-      "short_stop_loss_price": 83.65,
-      "short_stop_loss_pct": 2.2,
+      "short_target_profit_price": 41.15,
+      "short_target_profit_pct": 4.1,
+      "short_stop_loss_price": 44.19,
+      "short_stop_loss_pct": 3.0,
       "dollar_pcr": 0.01,
       "pcr": 0.35,
       "pcr_sentiment": "🔥 机构极度看涨",
@@ -5119,7 +5119,7 @@
       "short_rank": 16
     },
     {
-      "rank": 71,
+      "rank": 74,
       "ticker": "QQQI",
       "sector_key": "Enterprise_SaaS",
       "sector_cn": "大盘与宏观ETF",
@@ -5163,7 +5163,7 @@
       "short_rank": 18
     },
     {
-      "rank": 72,
+      "rank": 75,
       "ticker": "IGV",
       "sector_key": "Enterprise_SaaS",
       "sector_cn": "软件科技ETF",
@@ -5207,7 +5207,7 @@
       "short_rank": 6
     },
     {
-      "rank": 73,
+      "rank": 76,
       "ticker": "SPY",
       "sector_key": "Enterprise_SaaS",
       "sector_cn": "大盘与宏观ETF",
@@ -5251,7 +5251,7 @@
       "short_rank": 8
     },
     {
-      "rank": 74,
+      "rank": 77,
       "ticker": "VIXY",
       "sector_key": "Crypto_Proxy",
       "sector_cn": "恐慌与反向对冲",
@@ -5295,7 +5295,7 @@
       "short_rank": 12
     },
     {
-      "rank": 75,
+      "rank": 78,
       "ticker": "DIA",
       "sector_key": "Enterprise_SaaS",
       "sector_cn": "大盘与宏观ETF",
@@ -5339,7 +5339,7 @@
       "short_rank": 20
     },
     {
-      "rank": 76,
+      "rank": 79,
       "ticker": "SOXS",
       "sector_key": "Crypto_Proxy",
       "sector_cn": "恐慌与反向对冲",
@@ -5383,7 +5383,7 @@
       "short_rank": 30
     },
     {
-      "rank": 77,
+      "rank": 80,
       "ticker": "SQQQ",
       "sector_key": "Crypto_Proxy",
       "sector_cn": "恐慌与反向对冲",
@@ -6174,7 +6174,7 @@
       "iv_atm": 47.6,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 74
+      "short_rank": 76
     },
     "MSTR": {
       "rank": 18,
@@ -6394,10 +6394,10 @@
       "iv_atm": 72.2,
       "short_action": "⚠️ 严重超跌·谨防死猫跳·暂勿追空",
       "short_action_tag": "short-action-oversold",
-      "short_rank": 77
+      "short_rank": 80
     },
     "TSM": {
-      "rank": 25,
+      "rank": 23,
       "ticker": "TSM",
       "sector_key": "Semiconductors",
       "sector_cn": "半导体与设备",
@@ -6658,7 +6658,7 @@
       "iv_atm": 140.7,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 76
+      "short_rank": 79
     },
     "PLTR": {
       "rank": 29,
@@ -7717,7 +7717,7 @@
       "short_rank": 64
     },
     "VRT": {
-      "rank": 61,
+      "rank": 59,
       "ticker": "VRT",
       "sector_key": "Semiconductors",
       "sector_cn": "AI液冷与服务器",
@@ -7761,7 +7761,7 @@
       "short_rank": 66
     },
     "ORCL": {
-      "rank": 62,
+      "rank": 60,
       "ticker": "ORCL",
       "sector_key": "Enterprise_SaaS",
       "sector_cn": "企业软件与 AI SaaS",
@@ -7805,7 +7805,7 @@
       "short_rank": 47
     },
     "WDC": {
-      "rank": 63,
+      "rank": 61,
       "ticker": "WDC",
       "sector_key": "Memory",
       "sector_cn": "存储芯片",
@@ -7893,7 +7893,7 @@
       "short_rank": 51
     },
     "KORU": {
-      "rank": 63,
+      "rank": 64,
       "ticker": "KORU",
       "sector_key": "Memory",
       "sector_cn": "韩股存储3倍做多",
@@ -7934,10 +7934,10 @@
       "iv_atm": 156.7,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 75
+      "short_rank": 78
     },
     "SOXL": {
-      "rank": 64,
+      "rank": 67,
       "ticker": "SOXL",
       "sector_key": "Semiconductors",
       "sector_cn": "半导体3倍做多",
@@ -7978,7 +7978,7 @@
       "iv_atm": 150.4,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "short_rank": 73
+      "short_rank": 75
     },
     "SMH": {
       "rank": 68,
@@ -8031,7 +8031,7 @@
       "sector_cn": "加密币股代理",
       "sector_rating": "⭐⭐⭐☆☆",
       "latest_price": 42.9,
-      "current_price": 43.36000061035156,
+      "current_price": 81.83999633789062,
       "atr_pct": 3.02,
       "bias_ma50": -6.35,
       "rsi_14": 38.6,
@@ -8040,36 +8040,36 @@
       "is_crash_halt": false,
       "is_cooling_halt": false,
       "macro_temp": "🌧️ 暴雨空仓",
-      "model_raw_prob_pct": 43.5,
-      "base_raw_prob_pct": 52.0,
-      "predicted_win_rate_pct": 52.0,
-      "calibrated_win_rate_pct": 51.6,
-      "sector_pf": 1.29,
+      "model_raw_prob_pct": 41.2,
+      "base_raw_prob_pct": 49.7,
+      "predicted_win_rate_pct": 49.7,
+      "calibrated_win_rate_pct": 48.9,
+      "sector_pf": 1.28,
       "target_profit_price": 44.65,
       "target_profit_pct": 4.1,
       "stop_loss_price": 41.6,
       "stop_loss_pct": 3.0,
       "action": "🛡️ 暴雨空仓·严禁左侧接刀",
       "action_tag": "action-watch",
-      "model_raw_short_prob_pct": 56.5,
-      "calibrated_short_win_rate_pct": 65.9,
-      "short_entry_price": 43.36000061035156,
+      "model_raw_short_prob_pct": 52.4,
+      "calibrated_short_win_rate_pct": 43.1,
+      "short_entry_price": 81.83999633789062,
       "short_target_profit_price": 41.15,
       "short_target_profit_pct": 4.1,
       "short_stop_loss_price": 44.19,
       "short_stop_loss_pct": 3.0,
-      "dollar_pcr": 0.59,
-      "pcr": 1.28,
-      "pcr_sentiment": "🟡 多空博弈均衡",
-      "put_wall": 45.5,
-      "call_wall": 46.0,
-      "iv_atm": 33.5,
-      "short_action": "🛡️ 建议买入反向ETF对冲",
-      "short_action_tag": "short-action-etf",
-      "short_rank": 1
+      "dollar_pcr": 0.01,
+      "pcr": 0.35,
+      "pcr_sentiment": "🔥 机构极度看涨",
+      "put_wall": 81.0,
+      "call_wall": 78.5,
+      "iv_atm": 11.9,
+      "short_action": "👀 空头动能不足·观望",
+      "short_action_tag": "short-action-wait",
+      "short_rank": 29
     },
     "GLD": {
-      "rank": 67,
+      "rank": 70,
       "ticker": "GLD",
       "sector_key": "Energy_Power",
       "sector_cn": "大盘与宏观ETF",
@@ -8113,7 +8113,7 @@
       "short_rank": 3
     },
     "SOXX": {
-      "rank": 68,
+      "rank": 71,
       "ticker": "SOXX",
       "sector_key": "Semiconductors",
       "sector_cn": "半导体ETF",
@@ -8155,50 +8155,6 @@
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
       "short_rank": 60
-    },
-    "TLT": {
-      "rank": 69,
-      "ticker": "TLT",
-      "sector_key": "Energy_Power",
-      "sector_cn": "大盘与宏观ETF",
-      "sector_rating": "⭐⭐⭐☆☆",
-      "latest_price": 81.85,
-      "current_price": 81.83999633789062,
-      "atr_pct": 0.95,
-      "bias_ma50": 2.04,
-      "rsi_14": 61.6,
-      "is_broken": false,
-      "is_etf": true,
-      "is_crash_halt": false,
-      "is_cooling_halt": false,
-      "macro_temp": "🌧️ 暴雨空仓",
-      "model_raw_prob_pct": 41.2,
-      "base_raw_prob_pct": 49.7,
-      "predicted_win_rate_pct": 49.7,
-      "calibrated_win_rate_pct": 48.9,
-      "sector_pf": 1.28,
-      "target_profit_price": 84.31,
-      "target_profit_pct": 3.0,
-      "stop_loss_price": 80.05,
-      "stop_loss_pct": 2.2,
-      "action": "🛡️ 暴雨空仓·严禁左侧接刀",
-      "action_tag": "action-watch",
-      "model_raw_short_prob_pct": 52.4,
-      "calibrated_short_win_rate_pct": 43.1,
-      "short_entry_price": 81.83999633789062,
-      "short_target_profit_price": 79.39,
-      "short_target_profit_pct": 3.0,
-      "short_stop_loss_price": 83.65,
-      "short_stop_loss_pct": 2.2,
-      "dollar_pcr": 0.01,
-      "pcr": 0.35,
-      "pcr_sentiment": "🔥 机构极度看涨",
-      "put_wall": 81.0,
-      "call_wall": 78.5,
-      "iv_atm": 11.9,
-      "short_action": "👀 空头动能不足·观望",
-      "short_action_tag": "short-action-wait",
-      "short_rank": 29
     },
     "IWM": {
       "rank": 73,
@@ -8245,7 +8201,7 @@
       "short_rank": 16
     },
     "QQQI": {
-      "rank": 71,
+      "rank": 74,
       "ticker": "QQQI",
       "sector_key": "Enterprise_SaaS",
       "sector_cn": "大盘与宏观ETF",
@@ -8289,7 +8245,7 @@
       "short_rank": 18
     },
     "IGV": {
-      "rank": 72,
+      "rank": 75,
       "ticker": "IGV",
       "sector_key": "Enterprise_SaaS",
       "sector_cn": "软件科技ETF",
@@ -8333,7 +8289,7 @@
       "short_rank": 6
     },
     "SPY": {
-      "rank": 73,
+      "rank": 76,
       "ticker": "SPY",
       "sector_key": "Enterprise_SaaS",
       "sector_cn": "大盘与宏观ETF",
@@ -8377,7 +8333,7 @@
       "short_rank": 8
     },
     "VIXY": {
-      "rank": 74,
+      "rank": 77,
       "ticker": "VIXY",
       "sector_key": "Crypto_Proxy",
       "sector_cn": "恐慌与反向对冲",
@@ -8421,7 +8377,7 @@
       "short_rank": 12
     },
     "DIA": {
-      "rank": 75,
+      "rank": 78,
       "ticker": "DIA",
       "sector_key": "Enterprise_SaaS",
       "sector_cn": "大盘与宏观ETF",
@@ -8465,7 +8421,7 @@
       "short_rank": 20
     },
     "SOXS": {
-      "rank": 76,
+      "rank": 79,
       "ticker": "SOXS",
       "sector_key": "Crypto_Proxy",
       "sector_cn": "恐慌与反向对冲",
@@ -8509,7 +8465,7 @@
       "short_rank": 30
     },
     "SQQQ": {
-      "rank": 77,
+      "rank": 80,
       "ticker": "SQQQ",
       "sector_key": "Crypto_Proxy",
       "sector_cn": "恐慌与反向对冲",
