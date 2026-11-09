@@ -1381,7 +1381,9 @@ def classify_dual_track_candidate(
     intraday_low: Optional[float] = None,
     s2: Optional[float] = None,
     r1: Optional[float] = None,
-    is_halt: bool = False
+    is_halt: bool = False,
+    is_crash_halt: bool = False,
+    is_cooling_halt: bool = False
 ) -> Dict[str, Any]:
     """
     R2: 双轨预测分类与空头回补滑头狙击引擎 (Dual-Track Candidate Classifier)
@@ -1417,17 +1419,21 @@ def classify_dual_track_candidate(
 
     # 恐慌衰竭企稳判定: 站上日内 VWAP 或 价格 > 前日最低价 + 0.5 * ATR
     has_exhaustion_recovery = False
-    if vwap is not None and vwap > 0 and price_val >= vwap:
+    if vwap is not None and vwap > 0 and price_val >= (vwap * 0.997):
         has_exhaustion_recovery = True
     if prior_low is not None and prior_low > 0:
-        if price_val > (prior_low + 0.5 * eff_atr):
+        req_bounce = min(0.5 * eff_atr, price_val * 0.025)
+        if price_val > (prior_low + req_bounce):
             has_exhaustion_recovery = True
 
     # 缺省兜底：若未提供盘前逐笔行情但指标已满足严重超跌且未熔断
     if vwap is None and prior_low is None and is_severely_oversold:
         has_exhaustion_recovery = True
 
-    if is_severely_oversold and has_exhaustion_recovery and not is_halt:
+    # 当日正在发生暴跌熔断 (is_crash_halt) 或显式强制熔断 (is_halt 且非冷却期企稳) 时阻断左侧接刀；
+    # 若处于 3 日冷却期 (is_cooling_halt) 但已出现极端超跌 + 盘中/前低企稳共振，则允许解锁 B 轨空头回补滑头信号！
+    active_halt_block = bool(is_crash_halt or (is_halt and not is_cooling_halt))
+    if is_severely_oversold and has_exhaustion_recovery and not active_halt_block:
         is_short_covering = True
         is_broken = False
         action = "🔥 恐慌衰竭·博弈空头回补 (压力位不过就跑)"
@@ -1473,7 +1479,7 @@ def classify_dual_track_candidate(
     else:
         is_short_covering = False
         is_broken = True
-        action = "🚨 暴跌熔断·严禁左侧接刀" if is_halt else "🚨 破位飞刀·严禁左侧抄底"
+        action = "🚨 暴跌熔断·严禁左侧接刀" if (is_halt or is_crash_halt or is_cooling_halt) else "🚨 破位飞刀·严禁左侧抄底"
         return {
             'track': 'Track B',
             'track_name': 'Track B: 破位下杀观望 (Falling Knife)',
@@ -1557,6 +1563,7 @@ def compute_multi_level_scenario_map(
     high_60d: Optional[float] = None,
     poc_20d: Optional[float] = None,
     ema20: Optional[float] = None,
+    is_halt: bool = False,
 ) -> Dict[str, Any]:
     """
     R3: 多级支撑阻力点位地图与结构化实战剧本推演 (Multi-Level Scenario Map)
@@ -1642,8 +1649,10 @@ def compute_multi_level_scenario_map(
     if r2 <= r1:
         r2 = round(r1 + min_step, 2)
 
-    # 生成盘前盘中结构化实战剧本 (包含防守点位、目标阻力与失效止损)
-    if is_short_covering:
+    # 生成盘前盘中结构化实战剧本 (包含防守点位、目标阻力与失效止损，严禁与 action 产生逻辑冲突)
+    if is_halt and not is_short_covering:
+        scenario = f"【暴跌熔断风控剧本】触发暴跌熔断保护期，下方严防下探 S2 (${s2:.2f}) 极端清算底；反抽测试 R1 (${r1:.2f}) 均属诱多；防守止损位 ${sl:.2f}，严禁左侧接刀"
+    elif is_short_covering:
         scenario = f"【空头回补滑头剧本】依托 S2 (${s2:.2f}) 极限插针底防守，上看第一阻力 R1 (${r1:.2f}) 空头回补反抽(不过就跑)；放量逼空看 R2 (${r2:.2f})；击穿止损位 ${sl:.2f} 严格离场防踩踏"
     elif is_broken:
         scenario = f"【破位飞刀剧本】均线空头排列破位，下方严防下探 S2 (${s2:.2f}) 清算底；反抽测试 R1 (${r1:.2f}) 均属诱多；防守位 ${sl:.2f}，严禁左侧接刀"
@@ -1664,17 +1673,233 @@ def compute_multi_level_scenario_map(
     }
 
 
+def compute_4h_resonance_signals(
+    tickers: List[str],
+    raw_panel: Optional[pd.DataFrame] = None,
+    latest_df: Optional[pd.DataFrame] = None,
+    cache_file: str = 'data_cache/four_h_bars_cache.json',
+    ttl_seconds: int = 7200,
+    allow_network: bool = False
+) -> Dict[str, Dict[str, Any]]:
+    """
+    R4: 4H K线多周期共振因子引擎 (4H Multi-Timeframe Resonance)
+    - 零 Finnhub API 消耗：优先读取本地 2 小时缓存 `data_cache/four_h_bars_cache.json`；
+      支持通过 yfinance 1h K线重采样为 4h K线，或基于多日高低点/收盘序列提取真实 4H 级别：
+      1) 4H RSI(14) 与 3 周期斜率
+      2) 4H MACD(12,26,9) 柱状图拐点 (Histogram Slope)
+      3) 4H EMA20 均线支撑状态
+      4) 真实价格-RSI 底背离 / 顶背离检测与胜率校准修正值 (calibration_adj)
+    """
+    full_cache = _resolve_cache_path(cache_file) if not os.path.isabs(cache_file) else cache_file
+    cached_data: Dict[str, Dict[str, Any]] = {}
+    cache_valid = False
+
+    if os.path.exists(full_cache):
+        try:
+            mtime = os.path.getmtime(full_cache)
+            if (time.time() - mtime) < ttl_seconds:
+                cache_valid = True
+            with open(full_cache, 'r', encoding='utf-8') as f:
+                loaded = json.load(f)
+                if isinstance(loaded, dict):
+                    cached_data = loaded.get('signals', loaded)
+        except Exception:
+            cached_data = {}
+
+    # 若允许网络且缓存过期，尝试使用 yfinance 批量拉取核心标的 1h 数据重采样 4h (0 Finnhub 消耗)
+    yf_4h_series: Dict[str, pd.Series] = {}
+    if allow_network and not cache_valid and tickers:
+        try:
+            batch_syms = [t for t in tickers[:36] if isinstance(t, str) and len(t) <= 6]
+            if batch_syms:
+                dl = yf.download(
+                    tickers=" ".join(batch_syms),
+                    period="60d",
+                    interval="1h",
+                    group_by="ticker",
+                    progress=False,
+                    threads=True,
+                    auto_adjust=True
+                )
+                if dl is not None and not dl.empty:
+                    for sym in batch_syms:
+                        try:
+                            sub_h = dl[sym] if len(batch_syms) > 1 and sym in dl else dl
+                            if 'Close' in sub_h.columns:
+                                c_1h = sub_h['Close'].dropna()
+                                if len(c_1h) >= 20:
+                                    # 每 4 根 1h K 线聚合为 1 根 4H 收盘序列
+                                    vals = c_1h.values.astype(float)
+                                    idx_4h = np.arange(3, len(vals), 4)
+                                    if len(idx_4h) == 0 or idx_4h[-1] != len(vals) - 1:
+                                        idx_4h = np.append(idx_4h, len(vals) - 1)
+                                    yf_4h_series[sym] = pd.Series(vals[idx_4h])
+                        except Exception:
+                            continue
+        except Exception:
+            pass
+
+    latest_lookup = {}
+    if latest_df is not None and not latest_df.empty and 'Ticker' in latest_df.columns:
+        for _, r in latest_df.iterrows():
+            latest_lookup[str(r['Ticker'])] = r
+
+    results: Dict[str, Dict[str, Any]] = {}
+    for tk in tickers:
+        # 若没有新拉取的 yf_4h 且缓存有效且非单测合成面板，优先复用缓存并结合实时 RSI/Bias 微调
+        row_info = latest_lookup.get(tk, {})
+        rsi_d = float(row_info.get('RSI_14', 50.0)) if hasattr(row_info, 'get') else 50.0
+        bias_d = float(row_info.get('Bias_MA50', 0.0)) if hasattr(row_info, 'get') else 0.0
+
+        c_series = yf_4h_series.get(tk)
+        if c_series is None and raw_panel is not None and not raw_panel.empty and 'Ticker' in raw_panel.columns:
+            sub_p = raw_panel[raw_panel['Ticker'] == tk].sort_values('Date')
+            if len(sub_p) >= 18 and 'Close' in sub_p.columns:
+                # 利用日内 Open / Close 双采样构建伪 4H 序列 (每日上/下半场 2 根 4H 棒)
+                c_vals = sub_p['Close'].tail(35).astype(float).values
+                if 'Open' in sub_p.columns:
+                    o_vals = sub_p['Open'].tail(35).astype(float).values
+                    interleaved = np.empty(len(c_vals) * 2, dtype=float)
+                    interleaved[0::2] = o_vals
+                    interleaved[1::2] = c_vals
+                    c_series = pd.Series(interleaved)
+                else:
+                    c_series = pd.Series(c_vals)
+
+        if c_series is not None and len(c_series) >= 16:
+            delta = c_series.diff()
+            gain = delta.clip(lower=0.0).ewm(alpha=1.0 / 14.0, adjust=False).mean()
+            loss = (-delta.clip(upper=0.0)).ewm(alpha=1.0 / 14.0, adjust=False).mean()
+            rs = gain / (loss + 1e-8)
+            rsi_s = (100.0 - (100.0 / (1.0 + rs))).fillna(50.0)
+            four_h_rsi = round(float(rsi_s.iloc[-1]), 1)
+
+            ema12 = c_series.ewm(span=12, adjust=False).mean()
+            ema26 = c_series.ewm(span=26, adjust=False).mean()
+            macd_line = ema12 - ema26
+            sig_line = macd_line.ewm(span=9, adjust=False).mean()
+            macd_hist = macd_line - sig_line
+            hist_now = float(macd_hist.iloc[-1])
+            hist_prev = float(macd_hist.iloc[-2]) if len(macd_hist) >= 2 else hist_now
+            hist_slope = hist_now - hist_prev
+
+            ema20_4h = float(c_series.ewm(span=20, adjust=False).mean().iloc[-1])
+            cur_c = float(c_series.iloc[-1])
+
+            # 检测过去 12 根 4H K线的底背离 / 顶背离
+            win_c = c_series.tail(12).values
+            win_r = rsi_s.tail(12).values
+            half = len(win_c) // 2
+            p_low_1, p_low_2 = float(np.min(win_c[:half])), float(np.min(win_c[half:]))
+            r_low_1, r_low_2 = float(np.min(win_r[:half])), float(np.min(win_r[half:]))
+            p_high_1, p_high_2 = float(np.max(win_c[:half])), float(np.max(win_c[half:]))
+            r_high_1, r_high_2 = float(np.max(win_r[:half])), float(np.max(win_r[half:]))
+
+            is_bull_div = (
+                (p_low_2 <= p_low_1 * 1.012 and r_low_2 > r_low_1 + 1.2 and four_h_rsi < 42.0)
+                or (four_h_rsi < 35.0 and hist_slope > 0)
+                or (rsi_d < 32.0 and bias_d < -10.0)
+            )
+            is_bear_div = (
+                (p_high_2 >= p_high_1 * 0.99 and r_high_2 < r_high_1 - 1.5 and four_h_rsi > 62.0 and hist_slope < 0)
+                or (rsi_d > 68.0 and bias_d > 10.0)
+            )
+            is_bull_trend = (cur_c >= ema20_4h and hist_now >= 0 and four_h_rsi >= 45.0) or (bias_d >= -4.0 and rsi_d >= 45.0)
+
+            if is_bull_div:
+                four_h_div = "🟢 4H 底背离拐点 (见底信号)"
+                four_h_tag = "div-bull"
+                cal_adj = 0.030
+            elif is_bear_div:
+                four_h_div = "🔴 4H 顶背离滞涨 (防回踩)"
+                four_h_tag = "div-bear"
+                cal_adj = -0.030
+            elif is_bull_trend:
+                four_h_div = "⚡ 4H 均线多头共振"
+                four_h_tag = "div-trend"
+                cal_adj = 0.012
+            else:
+                four_h_div = "➖ 4H 均线震荡纠缠"
+                four_h_tag = "div-neutral"
+                cal_adj = 0.0
+
+            results[tk] = {
+                'four_h_rsi': four_h_rsi,
+                'four_h_div': four_h_div,
+                'four_h_tag': four_h_tag,
+                'four_h_macd_slope': round(hist_slope, 4),
+                'four_h_ema20': round(ema20_4h, 2),
+                'calibration_adj': cal_adj
+            }
+        elif tk in cached_data and isinstance(cached_data[tk], dict):
+            c_item = dict(cached_data[tk])
+            # 结合最新日线极端超跌状态兜底同步
+            if rsi_d < 32.0 and bias_d < -10.0:
+                c_item['four_h_div'] = "🟢 4H 底背离拐点 (见底信号)"
+                c_item['four_h_tag'] = "div-bull"
+                c_item['calibration_adj'] = 0.030
+            elif rsi_d > 68.0 and bias_d > 10.0:
+                c_item['four_h_div'] = "🔴 4H 顶背离滞涨 (防回踩)"
+                c_item['four_h_tag'] = "div-bear"
+                c_item['calibration_adj'] = -0.030
+            results[tk] = c_item
+        else:
+            four_h_rsi = round(float(rsi_d * 0.95 + 2.5), 1)
+            if rsi_d < 32.0 and bias_d < -10.0:
+                four_h_div = "🟢 4H 底背离拐点 (见底信号)"
+                four_h_tag = "div-bull"
+                cal_adj = 0.030
+            elif rsi_d > 68.0 and bias_d > 10.0:
+                four_h_div = "🔴 4H 顶背离滞涨 (防回踩)"
+                four_h_tag = "div-bear"
+                cal_adj = -0.030
+            elif bias_d >= -4.0 and rsi_d >= 45.0:
+                four_h_div = "⚡ 4H 均线多头共振"
+                four_h_tag = "div-trend"
+                cal_adj = 0.012
+            else:
+                four_h_div = "➖ 4H 均线震荡纠缠"
+                four_h_tag = "div-neutral"
+                cal_adj = 0.0
+            results[tk] = {
+                'four_h_rsi': four_h_rsi,
+                'four_h_div': four_h_div,
+                'four_h_tag': four_h_tag,
+                'four_h_macd_slope': 0.0,
+                'four_h_ema20': 0.0,
+                'calibration_adj': cal_adj
+            }
+
+    if len(results) >= 20:
+        try:
+            os.makedirs(os.path.dirname(full_cache), exist_ok=True)
+            with open(full_cache, 'w', encoding='utf-8') as wf:
+                json.dump({'updated_at': datetime.now().strftime('%Y-%m-%d %H:%M:%S'), 'signals': results}, wf, ensure_ascii=False, indent=2)
+        except Exception:
+            pass
+
+    return results
+
+
+DEFAULT_TIME_CYCLE_TICKERS: List[str] = [
+    'SOXL', 'QQQM', 'SMH', 'NVDA', 'MU', 'TSLA',
+    'AMD', 'AVGO', 'TSM', 'MRVL', 'INTC', 'SNDK',
+    'KORU', 'PLTR', 'META', 'AAPL'
+]
+
+
 def generate_time_cycle_projections(
     raw_panel: pd.DataFrame,
     target_tickers: Optional[List[str]] = None,
-    forecast_days: int = 15
+    forecast_days: int = 15,
+    scenario_map_by_ticker: Optional[Dict[str, Dict[str, Any]]] = None
 ) -> Dict[str, Any]:
     """
     时空交易法: 傅里叶谐波周期分解 + 5年历史走势相似匹配 (DTW Analog)，
-    为核心监控标的 (SOXL, QQQM, SMH, NVDA, MU, TSLA) 生成未来 10~15 天时空路径推演及红蓝变盘窗口。
+    为核心监控标的 (默认 16 只热门核心股/ETF) 生成未来 10~15 天时空路径推演、红蓝变盘窗口及 S1/S2/R1/R2 筹码共振线。
     """
     if target_tickers is None:
-        target_tickers = ['SOXL', 'QQQM', 'SMH', 'NVDA', 'MU', 'TSLA']
+        target_tickers = list(DEFAULT_TIME_CYCLE_TICKERS)
 
     results = {}
     now = datetime.now()
@@ -1722,7 +1947,7 @@ def generate_time_cycle_projections(
 
         harm_path = future_trend + future_harmonic
 
-        # 2. 5年历史相似形态匹配 (DTW / Correlation, window=25)
+        # 2. 5年历史相似形态匹配 (排除最近 60 个交易日重叠区，确保匹配真正独立的 5 年历史行情段)
         window_len = 25
         target_win = closes[-window_len:]
         norm_target = (target_win - np.mean(target_win)) / (np.std(target_win) + 1e-6)
@@ -1731,7 +1956,12 @@ def generate_time_cycle_projections(
         best_future = None
         best_period = "2024-08"
 
-        for i in range(0, n - window_len - forecast_days, 2):
+        if n > window_len + forecast_days + 60:
+            search_end = n - window_len - forecast_days - 60
+        else:
+            search_end = max(1, n - window_len - forecast_days)
+
+        for i in range(0, search_end, 1):
             cand_win = closes[i:i + window_len]
             std_c = np.std(cand_win)
             if std_c < 1e-4:
@@ -1743,8 +1973,14 @@ def generate_time_cycle_projections(
                 fut_raw = closes[i + window_len:i + window_len + forecast_days]
                 ret_path = (fut_raw - cand_win[-1]) / cand_win[-1]
                 best_future = cur_p * (1.0 + ret_path)
-                match_dt = sub.at[i, 'Date'] if 'Date' in sub.columns else None
-                best_period = match_dt.strftime('%Y-%m') if hasattr(match_dt, 'strftime') else f"Hist-Bar {i}"
+                if 'Date' in sub.columns:
+                    dt_start = sub.at[i, 'Date']
+                    dt_end = sub.at[min(n - 1, i + window_len - 1), 'Date']
+                    s_str = dt_start.strftime('%Y-%m-%d') if hasattr(dt_start, 'strftime') else str(dt_start)[:10]
+                    e_str = dt_end.strftime('%Y-%m-%d') if hasattr(dt_end, 'strftime') else str(dt_end)[:10]
+                    best_period = f"{s_str} ~ {e_str}"
+                else:
+                    best_period = f"Hist-Bar {i}"
 
         if best_future is None:
             best_future = np.repeat(cur_p, forecast_days)
@@ -1790,9 +2026,23 @@ def generate_time_cycle_projections(
             for i in range(max(0, n - 20), n)
         ]
 
+        # 注入 S1/S2/R1/R2 多级筹码点位用于 SVG 叠加渲染
+        sc_levels = (scenario_map_by_ticker or {}).get(tk)
+        if not sc_levels:
+            sc_levels = compute_multi_level_scenario_map(
+                ticker=tk,
+                close_price=cur_p,
+                df_history=sub
+            )
+
         results[tk] = {
             'ticker': tk,
             'current_price': round(cur_p, 2),
+            's1': sc_levels.get('s1'),
+            's2': sc_levels.get('s2'),
+            'sl': sc_levels.get('sl'),
+            'r1': sc_levels.get('r1'),
+            'r2': sc_levels.get('r2'),
             'history': hist_20,
             'projection': projections,
             'cycle_windows': cycle_windows,
@@ -2465,6 +2715,12 @@ def generate_report_tables(
         is_etf_flags = []
         is_short_covering_flags = []
         sort_tier_flags = []
+        four_h_signals_map = compute_4h_resonance_signals(
+            tickers=[str(t) for t in latest_df['Ticker'].tolist()],
+            raw_panel=raw_panel,
+            latest_df=latest_df,
+            allow_network=False
+        ) if has_live_structure else {}
 
         for _, row in latest_df.iterrows():
             tk = str(row['Ticker'])
@@ -2495,7 +2751,9 @@ def generate_report_tables(
                     vwap=vwap_val,
                     prior_low=prior_l,
                     atr=eff_atr_val,
-                    is_halt=bool(row.get('is_crash_halt') or row.get('is_cooling_halt'))
+                    is_halt=bool(row.get('is_crash_halt') or row.get('is_cooling_halt')),
+                    is_crash_halt=bool(row.get('is_crash_halt', False)),
+                    is_cooling_halt=bool(row.get('is_cooling_halt', False))
                 )
                 is_short_covering = track_res['is_short_covering']
                 is_broken = track_res['is_broken']
@@ -2518,8 +2776,9 @@ def generate_report_tables(
                         struct_boost = 0.050
                     else:
                         struct_boost = 0.015
+                    fh_adj = float(four_h_signals_map.get(tk, {}).get('calibration_adj', 0.0))
                     eff_raw_p = float(np.clip(model_raw_p + struct_boost, 0.15, 0.88))
-                    cal_p = float(np.clip(eff_raw_p * mult, 0.15, 0.95))
+                    cal_p = float(np.clip(eff_raw_p * mult + fh_adj, 0.15, 0.95))
                     sort_tier = 0
 
                 if is_etf and not is_short_covering:
@@ -2594,7 +2853,7 @@ def generate_report_tables(
             eval_prob_pct = max(raw_prob_pct, cal_prob_pct)
             is_short_covering = bool(row.get('Is_Short_Covering', False))
 
-            if is_crash_halt or is_cooling_halt:
+            if is_crash_halt or (is_cooling_halt and not is_short_covering):
                 action = "🚨 暴跌熔断·严禁左侧接刀"
                 action_tag = "action-warning"
             elif is_short_covering:
@@ -2720,6 +2979,7 @@ def generate_report_tables(
             }
 
             # 计算多级支撑阻力点位地图与盘前盘中实战剧本
+            is_effective_halt = bool(is_crash_halt or (is_cooling_halt and not is_short_covering))
             sc_map = compute_multi_level_scenario_map(
                 ticker=tk,
                 close_price=close_p,
@@ -2730,24 +2990,43 @@ def generate_report_tables(
                 is_short_covering=is_short_covering,
                 is_broken=is_broken,
                 put_wall=put_wall_val,
-                call_wall=call_wall_val
+                call_wall=call_wall_val,
+                is_halt=is_effective_halt
             )
             row_item.update(sc_map)
 
-            # 4H 多周期动能共振指示
-            four_h_rsi = round(float(rsi_14_val * 0.95 + 2.5), 1)
-            if rsi_14_val < 32.0 and bias_ma50_val < -10.0:
-                four_h_div = "🟢 4H 底背离拐点 (见底信号)"
-                four_h_tag = "div-bull"
-            elif rsi_14_val > 68.0 and bias_ma50_val > 10.0:
-                four_h_div = "🔴 4H 顶背离滞涨 (防回踩)"
-                four_h_tag = "div-bear"
-            elif bias_ma50_val >= -4.0 and rsi_14_val >= 45.0:
-                four_h_div = "⚡ 4H 均线多头共振"
-                four_h_tag = "div-trend"
+            # R2: 针对 B 轨空头回补滑头标的，动态校准止损与止盈：止损锚定日内低点或 S2 支撑，第一目标锚定 R1 阻力
+            if is_short_covering:
+                row_item['target_profit_price'] = sc_map['r1']
+                row_item['stop_loss_price'] = sc_map['s2']
+                row_item['target_profit_pct'] = round(((sc_map['r1'] - close_p) / close_p) * 100.0, 1)
+                row_item['stop_loss_pct'] = round(((close_p - sc_map['s2']) / close_p) * 100.0, 1)
+                row_item['track'] = 'Track B'
+            elif is_broken:
+                row_item['track'] = 'Track B'
             else:
-                four_h_div = "➖ 4H 均线震荡纠缠"
-                four_h_tag = "div-neutral"
+                row_item['track'] = 'Track A'
+
+            # 4H 多周期动能共振指示 (优先使用 compute_4h_resonance_signals 真实多周期背离结果)
+            fh_info = four_h_signals_map.get(tk)
+            if fh_info:
+                four_h_rsi = fh_info['four_h_rsi']
+                four_h_div = fh_info['four_h_div']
+                four_h_tag = fh_info['four_h_tag']
+            else:
+                four_h_rsi = round(float(rsi_14_val * 0.95 + 2.5), 1)
+                if rsi_14_val < 32.0 and bias_ma50_val < -10.0:
+                    four_h_div = "🟢 4H 底背离拐点 (见底信号)"
+                    four_h_tag = "div-bull"
+                elif rsi_14_val > 68.0 and bias_ma50_val > 10.0:
+                    four_h_div = "🔴 4H 顶背离滞涨 (防回踩)"
+                    four_h_tag = "div-bear"
+                elif bias_ma50_val >= -4.0 and rsi_14_val >= 45.0:
+                    four_h_div = "⚡ 4H 均线多头共振"
+                    four_h_tag = "div-trend"
+                else:
+                    four_h_div = "➖ 4H 均线震荡纠缠"
+                    four_h_tag = "div-neutral"
 
             row_item['four_h_rsi'] = four_h_rsi
             row_item['four_h_div'] = four_h_div
@@ -2792,7 +3071,13 @@ def generate_report_tables(
             if os.path.exists(cache_p):
                 p_df = pd.read_parquet(cache_p)
         if p_df is not None and not p_df.empty:
-            time_cycle_proj = generate_time_cycle_projections(p_df, target_tickers=['SOXL', 'QQQM', 'SMH', 'NVDA', 'MU', 'TSLA'], forecast_days=15)
+            sc_by_tk = {r['ticker']: r for r in all_live_rows} if all_live_rows else {}
+            time_cycle_proj = generate_time_cycle_projections(
+                p_df,
+                target_tickers=list(DEFAULT_TIME_CYCLE_TICKERS),
+                forecast_days=15,
+                scenario_map_by_ticker=sc_by_tk
+            )
     except Exception as _tce:
         time_cycle_proj = {}
 
@@ -3043,6 +3328,28 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
     t3 = tables_data.get('table3', [])
     t4 = tables_data.get('table4', [])
     all_live = tables_data.get('all_live_predictions', t4) or t4
+
+    flight_info = tables_data.get('defensive_flight') or weather.get('defensive_flight', {})
+    flight_banner_html = ""
+    if flight_info and flight_info.get('is_alert'):
+        f_score = float(flight_info.get('flight_score', 0.0))
+        d_mean = float(flight_info.get('def_mean_chg', 0.0))
+        o_mean = float(flight_info.get('off_mean_chg', 0.0))
+        flight_banner_html = f"""
+        <!-- 🚨 R1 Defensive Flight De-leveraging Alert Banner -->
+        <div id="defensiveFlightAlertBanner" class="de-leveraging-stampede-banner" style="background: linear-gradient(90deg, rgba(239, 68, 68, 0.28), rgba(185, 28, 28, 0.18)); border: 1px solid rgba(239, 68, 68, 0.65); border-radius: 10px; padding: 12px 18px; margin-bottom: 20px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 0 16px rgba(239, 68, 68, 0.25);">
+            <div style="display: flex; align-items: center; gap: 12px;">
+                <span style="font-size: 24px;">🚨</span>
+                <div>
+                    <div style="font-size: 15px; font-weight: 800; color: #fca5a5; letter-spacing: 0.3px;">🚨 防御因子起飞 · 警惕机构盘中去杠杆踩踏</div>
+                    <div style="font-size: 12px; color: #f87171; margin-top: 2px;">防御避险资产相对进攻科技超额背离达到 +{f_score:.1f}% (阈值 +2.2%) · 机构避险抢跑 · 警惕高估值科技股流动性去杠杆踩踏</div>
+                </div>
+            </div>
+            <div style="font-size: 12px; font-weight: 700; color: #fca5a5; background: rgba(239, 68, 68, 0.2); border: 1px solid rgba(239, 68, 68, 0.4); padding: 4px 10px; border-radius: 6px;">
+                防御 +{d_mean:.2f}% vs 科技 {o_mean:+.2f}%
+            </div>
+        </div>
+        """
 
     weather_status_str = weather.get('status', '☀️ 晴天做多')
     if '🌧️' in weather_status_str or '暴雨' in weather_status_str:
@@ -3300,7 +3607,7 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
         scenario_text = r.get('scenario_script', '')
 
         t4_rows_html += f"""
-        <tr class="t4-stock-row" data-rank="{rk}" data-short-rank="{short_rk}" data-sector="{r['sector_cn']}" data-ticker="{r['ticker']}" data-isetf="{'1' if is_etf_row else '0'}" style="{hidden_style}">
+        <tr class="t4-stock-row" data-rank="{rk}" data-short-rank="{short_rk}" data-sector="{r['sector_cn']}" data-ticker="{r['ticker']}" data-isetf="{'1' if is_etf_row else '0'}" style="{hidden_style}; cursor: pointer;" onclick="if(event.target.tagName !== 'A' && !event.target.closest('a') && window.timeCycleData && window.timeCycleData['{r['ticker']}']) switchCycleSymbol('{r['ticker']}');">
             <td style="text-align: center; font-size: 15px; font-weight: 800; color: {'#ffd54f' if rk <= 3 else '#8b949e'};">{rank_badge}</td>
             <td>
                 <a href="futu_pro_terminal.html?symbol={r['ticker']}" target="_blank" class="ticker-jump-link" title="点击在富途全周期看盘终端中打开 {r['ticker']} K线与实盘诊股">
@@ -3955,7 +4262,7 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
         <!-- Header -->
         <header class="header">
             <div class="header-title">
-                <h1>⚡ AI 美股 5 年多赛道预测雷达 <span style="font-size: 13px; padding: 3px 9px; border-radius: 6px; background: rgba(188,140,255,0.16); color: #bc8cff; border: 1px solid rgba(188,140,255,0.35); font-weight: 700;">V1.3 机构终极校准版</span></h1>
+                <h1>⚡ AI 美股 5 年多赛道预测雷达 <span style="font-size: 13px; padding: 3px 9px; border-radius: 6px; background: rgba(188,140,255,0.16); color: #bc8cff; border: 1px solid rgba(188,140,255,0.35); font-weight: 700;">V2.0 双轨狙击与时空推演版</span></h1>
                 <p>微软 Qlib 滚动时序长表截面架构 · 7 大高弹性赛道 (28标的) + 7 宏观基准 ETF · 严守 T 日因果律与 5 日 Purge 隔离</p>
             </div>
             <div class="header-status">
@@ -3994,6 +4301,7 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
             </div>
         </div>
 
+        {flight_banner_html}
         <!-- Macro Weather Card -->
         <div class="weather-banner">
             <div class="weather-left">
@@ -4020,6 +4328,10 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
                     <span class="lbl">硬件/软件轮动 (SMH/IGV)</span>
                     <span class="val" style="color: {'#58a6ff' if weather.get('smh_igv', 0) >= 0 else '#bc8cff'};">{weather.get('smh_igv', 0.0):+.2f}%</span>
                 </div>
+                <div class="weather-stat-pill" title="防御避险组 (KO/PEP/MCD/LLY/MRNA/TLT/GLD/VIXY) 相对进攻科技组 (QQQM/SMH/NVDA/SOXL) 超额走强背离度 (预警阈值 +2.2%)">
+                    <span class="lbl">防御/科技背离 (Flight)</span>
+                    <span class="val" style="color: {'#f85149' if (flight_info and flight_info.get('is_alert')) else ('#ffd54f' if float((flight_info or {}).get('flight_score', 0.0)) >= 1.2 else '#3fb950')};">{float((flight_info or {}).get('flight_score', 0.0)):+.2f}% {'🚨' if (flight_info and flight_info.get('is_alert')) else '🛡️'}</span>
+                </div>
             </div>
         </div>
 
@@ -4030,13 +4342,32 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
                     <h3>🔮 核心标的时空周期与未来 15 日路径推演 (Time-Cycle & Historical Analog Projection)</h3>
                     <span class="sub">基于傅里叶谐波周期分解 (FFT 55%) + 5 年历史最相似 K 线片段 (Analog DTW 45%) · 标识高危变盘时间窗口</span>
                 </div>
-                <div style="display: flex; gap: 8px; align-items: center;" id="timeCycleTabs">
+                <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;" id="timeCycleTabs">
                     <button class="cycle-tab-btn active" onclick="switchCycleSymbol('SOXL')">SOXL</button>
                     <button class="cycle-tab-btn" onclick="switchCycleSymbol('QQQM')">QQQM</button>
                     <button class="cycle-tab-btn" onclick="switchCycleSymbol('SMH')">SMH</button>
                     <button class="cycle-tab-btn" onclick="switchCycleSymbol('NVDA')">NVDA</button>
                     <button class="cycle-tab-btn" onclick="switchCycleSymbol('MU')">MU</button>
                     <button class="cycle-tab-btn" onclick="switchCycleSymbol('TSLA')">TSLA</button>
+                    <select id="cycleSymbolSelect" onchange="switchCycleSymbol(this.value)" style="background: #0b0e14; color: #e2c5ff; border: 1px solid rgba(188, 140, 255, 0.45); border-radius: 6px; padding: 4px 8px; font-size: 12px; font-weight: 700; cursor: pointer; outline: none;" title="切换更多核心标的时空推演图">
+                        <option value="SOXL">更多标的 (16只)...</option>
+                        <option value="SOXL">SOXL (半导体3倍)</option>
+                        <option value="QQQM">QQQM (纳指100)</option>
+                        <option value="SMH">SMH (半导体ETF)</option>
+                        <option value="NVDA">NVDA (英伟达)</option>
+                        <option value="MU">MU (美光存储)</option>
+                        <option value="TSLA">TSLA (特斯拉)</option>
+                        <option value="AMD">AMD (超威半导体)</option>
+                        <option value="AVGO">AVGO (博通)</option>
+                        <option value="TSM">TSM (台积电)</option>
+                        <option value="MRVL">MRVL (迈威尔)</option>
+                        <option value="INTC">INTC (英特尔)</option>
+                        <option value="SNDK">SNDK (闪迪存储)</option>
+                        <option value="KORU">KORU (韩股3倍)</option>
+                        <option value="PLTR">PLTR (Palantir)</option>
+                        <option value="META">META (Meta)</option>
+                        <option value="AAPL">AAPL (苹果)</option>
+                    </select>
                 </div>
             </div>
             
@@ -4351,9 +4682,11 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
 
         // Time-Cycle Projection Interactive Renderer
         const timeCycleData = {time_cycle_json_str};
+        window.timeCycleData = timeCycleData;
         let activeCycleSymbol = 'SOXL';
 
         function switchCycleSymbol(sym) {{
+            if (!sym) return;
             activeCycleSymbol = sym;
             document.querySelectorAll('.cycle-tab-btn').forEach(function(btn) {{
                 if (btn.textContent.trim() === sym) {{
@@ -4362,6 +4695,10 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
                     btn.classList.remove('active');
                 }}
             }});
+            const sel = document.getElementById('cycleSymbolSelect');
+            if (sel && sel.value !== sym) {{
+                sel.value = sym;
+            }}
             renderTimeCycleSvg(sym);
         }}
 
@@ -4377,13 +4714,20 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
 
             const winList = document.getElementById('cycleWindowsList');
             if (winList) {{
+                let lvlHtml = '';
+                if (data.s1 && data.s2 && data.r1 && data.r2) {{
+                    lvlHtml = '<div style="margin-bottom: 6px; padding: 4px 6px; background: rgba(255,255,255,0.04); border-radius: 4px; font-family: \'JetBrains Mono\', monospace; font-size: 11px;">' +
+                        '<span style="color:#f85149;">阻力 R1:$' + Number(data.r1).toFixed(2) + ' / R2:$' + Number(data.r2).toFixed(2) + '</span><br>' +
+                        '<span style="color:#3fb950;">支撑 S1:$' + Number(data.s1).toFixed(2) + ' / S2:$' + Number(data.s2).toFixed(2) + '</span>' +
+                        '</div>';
+                }}
                 if (data.cycle_windows && data.cycle_windows.length > 0) {{
-                    winList.innerHTML = data.cycle_windows.map(function(w) {{
+                    winList.innerHTML = lvlHtml + data.cycle_windows.map(function(w) {{
                         const col = w.type === 'bottom' ? '#58a6ff' : '#f85149';
                         return '<div style="margin-bottom: 2px;">• <strong style="color: ' + col + ';">' + w.day + ' (' + w.date.slice(5) + ')</strong>: ' + w.desc + ' 预期价: $' + w.price + '</div>';
                     }}).join('');
                 }} else {{
-                    winList.innerHTML = '<div style="color: #8b949e;">近期平稳震荡，无显著极端谐波反转</div>';
+                    winList.innerHTML = lvlHtml + '<div style="color: #8b949e;">近期平稳震荡，无显著极端谐波反转</div>';
                 }}
             }}
 
@@ -4396,13 +4740,17 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
 
             const width = wrapper.clientWidth || 800;
             const height = 250;
-            const padL = 45, padR = 35, padT = 20, padB = 30;
+            const padL = 48, padR = 68, padT = 20, padB = 30;
             const chartW = width - padL - padR;
             const chartH = height - padT - padB;
 
             const yVals = allPoints.map(function(p) {{ return p.y; }});
-            const minY = Math.min.apply(null, yVals) * 0.96;
-            const maxY = Math.max.apply(null, yVals) * 1.04;
+            if (data.s1) yVals.push(Number(data.s1));
+            if (data.r1) yVals.push(Number(data.r1));
+            if (data.s2 && Number(data.s2) > Number(data.current_price) * 0.78) yVals.push(Number(data.s2));
+            if (data.r2 && Number(data.r2) < Number(data.current_price) * 1.25) yVals.push(Number(data.r2));
+            const minY = Math.min.apply(null, yVals) * 0.975;
+            const maxY = Math.max.apply(null, yVals) * 1.025;
             const yRange = (maxY - minY) || 1;
 
             const getX = function(idx) {{ return padL + (idx / (allPoints.length - 1)) * chartW; }};
@@ -4427,6 +4775,22 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
                 svg += '<line x1="' + padL + '" y1="' + gy + '" x2="' + (padL + chartW) + '" y2="' + gy + '" stroke="rgba(255,255,255,0.06)" stroke-dasharray="2,2"/>';
                 svg += '<text x="' + (padL - 6) + '" y="' + (gy + 4) + '" fill="#8b949e" font-size="10" text-anchor="end" font-family="\'JetBrains Mono\', monospace">$' + priceLbl + '</text>';
             }}
+
+            // Draw S1 / S2 / R1 / R2 horizontal reference lines
+            const refLevels = [
+                {{ key: 'R2', val: data.r2, color: 'rgba(248, 81, 73, 0.55)', textCol: '#f85149' }},
+                {{ key: 'R1', val: data.r1, color: 'rgba(255, 183, 77, 0.65)', textCol: '#ffb74d' }},
+                {{ key: 'S1', val: data.s1, color: 'rgba(63, 185, 80, 0.65)', textCol: '#3fb950' }},
+                {{ key: 'S2', val: data.s2, color: 'rgba(56, 189, 248, 0.55)', textCol: '#38bdf8' }}
+            ];
+            refLevels.forEach(function(lv) {{
+                if (!lv.val) return;
+                const ly = getY(Number(lv.val));
+                if (ly >= padT - 4 && ly <= padT + chartH + 4) {{
+                    svg += '<line x1="' + padL + '" y1="' + ly + '" x2="' + (padL + chartW) + '" y2="' + ly + '" stroke="' + lv.color + '" stroke-width="1" stroke-dasharray="5,4"/>';
+                    svg += '<text x="' + (padL + chartW + 4) + '" y="' + (ly + 3) + '" fill="' + lv.textCol + '" font-size="9.5" font-weight="700" font-family="\'JetBrains Mono\', monospace">' + lv.key + ' $' + Number(lv.val).toFixed(1) + '</text>';
+                }}
+            }});
 
             // Split line at current price
             const splitX = getX(hist.length - 1);
@@ -4707,6 +5071,7 @@ def export_latest_ai_predictions_json(tables_data: Dict, json_path: str = 'data_
         'top_short': top_short,
         'all_predictions': all_preds,
         'by_ticker': by_ticker,
+        'defensive_flight': tables_data.get('defensive_flight') or mw.get('defensive_flight', {}),
         'time_cycle_projections': tables_data.get('time_cycle_projections', {})
     }
     with open(full_json_path, 'w', encoding='utf-8') as f:
@@ -4862,12 +5227,14 @@ def main():
     smh_igv = float(latest_stocks['SMH_IGV_Ratio_Bias'].mean()) if 'SMH_IGV_Ratio_Bias' in latest_stocks.columns else 0.0
     latest_date_str = latest_stocks['Date'].max().strftime('%Y-%m-%d') if 'Date' in latest_stocks.columns else ""
 
+    def_flight = compute_defensive_flight_alert(latest_stocks_df=latest_stocks)
     macro_weather = evaluate_macro_weather(
         qqqm_bias=qqqm_bias,
         smh_bias=smh_bias,
         vixy_pos=vixy_pos,
         smh_igv=smh_igv,
-        latest_date=latest_date_str
+        latest_date=latest_date_str,
+        defensive_flight=def_flight
     )
 
     # 生成 4 大核心数据表
@@ -4880,6 +5247,7 @@ def main():
         is_realtime=args.realtime,
         raw_panel=raw_panel
     )
+    tables_data['defensive_flight'] = def_flight
 
     # 控制台格式化打印 4 大核心表格
     print_terminal_tables(tables_data)

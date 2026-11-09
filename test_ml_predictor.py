@@ -1819,6 +1819,237 @@ class TestV2UpgradeDefensiveFlightAndScenarios(unittest.TestCase):
         self.assertIn('similarity_pct', soxl_proj['analog_match'])
         self.assertIsInstance(soxl_proj['cycle_windows'], list)
 
+    def test_defensive_flight_excess_score_threshold_and_banner(self):
+        """R1 深度验证：防御因子超额收益阈值 (+2.2%)、科技弱势约束与踩踏横幅"""
+        # Case A: 防御超额达到 +2.4% 且科技走弱 (mean_off = -1.2%) -> 必须触发踩踏预警
+        alert_lookup = {
+            'KO': {'pct_change': 1.2},
+            'PEP': {'pct_change': 1.0},
+            'MRNA': {'pct_change': 1.4},
+            'TLT': {'pct_change': 1.2},
+            'GLD': {'pct_change': 1.2},
+            'QQQM': {'pct_change': -1.0},
+            'SMH': {'pct_change': -1.4},
+            'NVDA': {'pct_change': -1.2},
+            'SOXL': {'pct_change': -1.2}
+        }
+        res = self.mod.compute_defensive_flight_alert(live_lookup=alert_lookup)
+        self.assertTrue(res['is_alert'])
+        self.assertGreaterEqual(res['flight_score'], 2.2)
+        self.assertEqual(res['banner_text'], "🚨 防御因子起飞 · 警惕机构盘中去杠杆踩踏")
+
+        # Case B: 防御超额达到 +2.4%，但科技也是顺势大涨 (mean_off = +1.5%) -> 科技非弱势，不得触发踩踏
+        tech_strong_lookup = {
+            'KO': {'pct_change': 4.0},
+            'PEP': {'pct_change': 3.8},
+            'TLT': {'pct_change': 3.9},
+            'GLD': {'pct_change': 4.0},
+            'QQQM': {'pct_change': 1.5},
+            'SMH': {'pct_change': 1.5},
+            'NVDA': {'pct_change': 1.5},
+            'SOXL': {'pct_change': 1.5}
+        }
+        res_strong = self.mod.compute_defensive_flight_alert(live_lookup=tech_strong_lookup)
+        self.assertFalse(res_strong['is_alert'], "Should NOT trigger alert when tech is not weak")
+
+        # Case C: 防御超额不足 +2.2% (例如 +1.5%) -> 即使科技微跌也不得误报
+        mild_lookup = {
+            'KO': {'pct_change': 0.8},
+            'PEP': {'pct_change': 0.7},
+            'TLT': {'pct_change': 0.9},
+            'GLD': {'pct_change': 1.0},
+            'QQQM': {'pct_change': -0.4},
+            'SMH': {'pct_change': -0.5},
+            'NVDA': {'pct_change': -0.6},
+            'SOXL': {'pct_change': -0.9}
+        }
+        res_mild = self.mod.compute_defensive_flight_alert(live_lookup=mild_lookup)
+        self.assertFalse(res_mild['is_alert'])
+        self.assertLess(res_mild['flight_score'], 2.2)
+
+    def test_dual_track_classification_track_a_vs_track_b(self):
+        """R2 深度验证：A/B 双轨分类架构、恐慌衰竭判定与动态止盈止损锚定"""
+        # 1. Track A: Bias_MA50 >= -12.0% (趋势动量与黄金坑延续)
+        res_a = self.mod.classify_dual_track_candidate(
+            bias_ma50=-5.0,
+            rsi_14=48.0,
+            bias_ma20=-2.0,
+            price=120.0
+        )
+        self.assertEqual(res_a['track'], 'Track A')
+        self.assertTrue(res_a['is_track_a'])
+        self.assertFalse(res_a['is_track_b'])
+        self.assertFalse(res_a['is_short_covering'])
+        self.assertFalse(res_a['is_broken'])
+
+        # 2. Track B - Short-Covering Sniper: 严重超跌 (Bias_MA50 < -12%, RSI < 30) 且站上日内 VWAP
+        res_b_vwap = self.mod.classify_dual_track_candidate(
+            bias_ma50=-18.0,
+            rsi_14=25.0,
+            bias_ma20=-16.0,
+            price=102.0,
+            vwap=100.0,
+            prior_low=98.0,
+            atr=4.0,
+            s2=96.0,
+            r1=108.0
+        )
+        self.assertEqual(res_b_vwap['track'], 'Track B')
+        self.assertTrue(res_b_vwap['is_track_b'])
+        self.assertTrue(res_b_vwap['is_short_covering'])
+        self.assertFalse(res_b_vwap['is_broken'])
+        self.assertIn("🔥 恐慌衰竭·博弈空头回补", res_b_vwap['action'])
+        # 校验止盈止损锚定: 止盈锚定 R1 (108.0), 止损锚定 S2 (96.0)
+        self.assertEqual(res_b_vwap['target_profit_price'], 108.0)
+        self.assertEqual(res_b_vwap['stop_loss_price'], 96.0)
+        self.assertGreater(res_b_vwap['target_profit_price'], 102.0)
+        self.assertLess(res_b_vwap['stop_loss_price'], 102.0)
+
+        # 3. Track B - Exhaustion recovery via price > prior_low + 0.5 * ATR
+        res_b_prior = self.mod.classify_dual_track_candidate(
+            bias_ma50=-15.0,
+            rsi_14=28.0,
+            bias_ma20=-17.0,
+            price=101.0,
+            prior_low=98.0,
+            atr=4.0,
+            s2=95.0,
+            r1=106.0
+        )
+        self.assertTrue(res_b_prior['is_short_covering'])
+        self.assertIn("🔥 恐慌衰竭·博弈空头回补", res_b_prior['action'])
+
+        # 4. Track B - Falling Knife: 破位但不满足恐慌衰竭 (RSI >= 30 且 Bias_MA20 >= -15%)
+        res_falling = self.mod.classify_dual_track_candidate(
+            bias_ma50=-14.0,
+            rsi_14=42.0,
+            bias_ma20=-8.0,
+            price=100.0,
+            prior_low=99.0,
+            atr=3.0
+        )
+        self.assertEqual(res_falling['track'], 'Track B')
+        self.assertFalse(res_falling['is_short_covering'])
+        self.assertTrue(res_falling['is_broken'])
+        self.assertIn("🚨 破位飞刀·严禁左侧抄底", res_falling['action'])
+
+    def test_volume_profile_poc_and_multi_level_monotonicity(self):
+        """R3 深度验证：Volume Profile POC 计算与多级点位地图严格单调性不变式 (SL < S2 < S1 < Close < R1 < R2)"""
+        # 1. 验证 Volume Profile POC 计算
+        n_days = 25
+        dates = pd.bdate_range('2024-01-01', periods=n_days)
+        df_poc = pd.DataFrame({
+            'Date': dates,
+            'Close': [100.0 + (i % 3) for i in range(n_days)],
+            'High': [102.0 + (i % 3) for i in range(n_days)],
+            'Low': [99.0 + (i % 3) for i in range(n_days)],
+            'Volume': [1000000.0 if i == 15 else 100000.0 for i in range(n_days)]
+        })
+        poc_val = self.mod.compute_volume_profile_poc(df_poc, window=20)
+        self.assertIsNotNone(poc_val)
+        self.assertTrue(98.0 <= poc_val <= 105.0)
+
+        # 2. 覆盖极度多样化价格与波动率场景，全面压力测试严格单调性不变式
+        test_cases = [
+            {'price': 5.20, 'atr_pct': 8.5, 'bias': -18.0, 'rsi': 22.0, 'put_wall': 4.80, 'call_wall': 6.00},
+            {'price': 45.0, 'atr_pct': 3.2, 'bias': -2.5, 'rsi': 52.0, 'put_wall': 42.0, 'call_wall': 50.0},
+            {'price': 180.50, 'atr_pct': 1.8, 'bias': 8.0, 'rsi': 65.0, 'put_wall': 175.0, 'call_wall': 195.0},
+            {'price': 950.0, 'atr_pct': 12.0, 'bias': -25.0, 'rsi': 18.0, 'put_wall': 880.0, 'call_wall': 1100.0},
+            {'price': 3200.0, 'atr_pct': 0.8, 'bias': 1.0, 'rsi': 49.0, 'put_wall': 3150.0, 'call_wall': 3300.0},
+        ]
+
+        for tc in test_cases:
+            cur_p = tc['price']
+            sc = self.mod.compute_multi_level_scenario_map(
+                ticker='TEST',
+                price=cur_p,
+                atr_pct=tc['atr_pct'],
+                bias_ma50=tc['bias'],
+                rsi_14=tc['rsi'],
+                put_wall=tc['put_wall'],
+                call_wall=tc['call_wall'],
+                df_history=df_poc
+            )
+            sl, s2, s1, r1, r2 = sc['sl'], sc['s2'], sc['s1'], sc['r1'], sc['r2']
+
+            # 核心单调性不变式断言: SL < S2 < S1 < Price < R1 < R2
+            self.assertLess(sl, s2, f"Failed for price {cur_p}: sl ({sl}) must be < s2 ({s2})")
+            self.assertLess(s2, s1, f"Failed for price {cur_p}: s2 ({s2}) must be < s1 ({s1})")
+            self.assertLess(s1, cur_p, f"Failed for price {cur_p}: s1 ({s1}) must be < price ({cur_p})")
+            self.assertLess(cur_p, r1, f"Failed for price {cur_p}: price ({cur_p}) must be < r1 ({r1})")
+            self.assertLess(r1, r2, f"Failed for price {cur_p}: r1 ({r1}) must be < r2 ({r2})")
+
+            # 验证剧本必须包含关键防守、阻力测试与止损离场点位
+            script = sc['scenario_script']
+            self.assertIn(f"${sl:.2f}", script)
+            self.assertTrue((f"${s1:.2f}" in script) or (f"${s2:.2f}" in script))
+            self.assertTrue((f"${r1:.2f}" in script) or (f"${r2:.2f}" in script))
+
+    def test_four_h_resonance_and_cooling_halt_short_covering(self):
+        """V2.0 深度验证：4H 多周期背离共振信号与 3日冷却期企稳解锁 B 轨空头回补无冲突"""
+        # 1. 验证 3日冷却期 (is_cooling_halt=True) 但日内企稳 (price >= vwap, RSI < 30) 解锁空头回补
+        res_cool_recover = self.mod.classify_dual_track_candidate(
+            bias_ma50=-22.0,
+            rsi_14=24.0,
+            bias_ma20=-16.0,
+            price=45.0,
+            vwap=44.2,
+            atr=3.5,
+            is_halt=True,
+            is_crash_halt=False,
+            is_cooling_halt=True
+        )
+        self.assertTrue(res_cool_recover['is_short_covering'])
+        self.assertIn("🔥 恐慌衰竭·博弈空头回补", res_cool_recover['action'])
+
+        # 2. 验证当日正在发生暴跌熔断 (is_crash_halt=True) 严格阻断空头回补且剧本无冲突
+        res_crash_block = self.mod.classify_dual_track_candidate(
+            bias_ma50=-22.0,
+            rsi_14=24.0,
+            bias_ma20=-16.0,
+            price=45.0,
+            vwap=44.2,
+            atr=3.5,
+            is_halt=True,
+            is_crash_halt=True,
+            is_cooling_halt=False
+        )
+        self.assertFalse(res_crash_block['is_short_covering'])
+        self.assertIn("🚨 暴跌熔断·严禁左侧接刀", res_crash_block['action'])
+
+        sc_halt = self.mod.compute_multi_level_scenario_map(
+            ticker='SOXL',
+            price=45.0,
+            atr_pct=8.0,
+            bias_ma50=-22.0,
+            rsi_14=24.0,
+            is_short_covering=False,
+            is_broken=True,
+            is_halt=True
+        )
+        self.assertIn("【暴跌熔断风控剧本】", sc_halt['scenario_script'])
+        self.assertNotIn("【空头回补滑头剧本】", sc_halt['scenario_script'])
+
+        # 3. 验证 4H 多周期共振计算引擎
+        dates = pd.bdate_range('2024-01-01', periods=40)
+        raw_p = pd.DataFrame({
+            'Date': dates,
+            'Ticker': ['SOXL'] * 40,
+            'Open': [60.0 - i * 0.4 for i in range(40)],
+            'Close': [59.5 - i * 0.4 for i in range(39)] + [45.2],
+            'High': [61.0 - i * 0.4 for i in range(40)],
+            'Low': [58.5 - i * 0.4 for i in range(40)],
+            'Volume': [1000000.0] * 40
+        })
+        fh_res = self.mod.compute_4h_resonance_signals(
+            tickers=['SOXL'],
+            raw_panel=raw_p,
+            allow_network=False
+        )
+        self.assertIn('SOXL', fh_res)
+        self.assertIn('four_h_rsi', fh_res['SOXL'])
+        self.assertIn('four_h_div', fh_res['SOXL'])
+
 
 # ============================================================================
 # Main Execution Runner

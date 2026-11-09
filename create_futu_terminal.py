@@ -19,13 +19,24 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
     else:
         session_badge_html = '<span class="tool-link" style="color: #4ade80; border: 1px solid rgba(74, 222, 128, 0.4); background: rgba(74, 222, 128, 0.1); padding: 4px 7px; font-weight: 700;">🟢 常规盘中</span>'
 
+    defensive_alert_banner_html = ""
     defensive_alert_badge_html = ""
     try:
+        import importlib
         import ml_predictor_5y
-        live_lookup = {s['symbol']: s for s in stocks_data if isinstance(s, dict) and 'symbol' in s}
-        df_alert = ml_predictor_5y.compute_defensive_flight_alert(live_lookup=live_lookup)
+        importlib.reload(ml_predictor_5y)
+        live_lookup_init = {}
+        for s in (stocks_data or []):
+            if isinstance(s, dict):
+                tk_name = s.get("ticker") or s.get("symbol")
+                if tk_name:
+                    live_lookup_init[tk_name] = s
+        for tk_m, m_item in (macro_data or {}).items():
+            live_lookup_init[tk_m] = m_item
+        df_alert = ml_predictor_5y.compute_defensive_flight_alert(live_lookup=live_lookup_init)
         if df_alert.get('is_alert'):
-            defensive_alert_badge_html = f'<span class="tool-link" style="color: #f85149; border: 1px solid rgba(248,81,73,0.6); background: rgba(248,81,73,0.22); padding: 4px 8px; font-weight: 800; font-size: 11.5px;" title="机构避险因子异常走强，警惕盘中去杠杆踩踏">{df_alert["alert_text"]}</span>'
+            defensive_alert_badge_html = f'<span class="tool-link" style="color: #f85149; border: 1px solid rgba(248,81,73,0.6); background: rgba(248,81,73,0.22); padding: 4px 8px; font-weight: 800; font-size: 11.5px;" title="机构避险因子异常走强，警惕盘中去杠杆踩踏">🚨 防御因子起飞 · 警惕机构盘中去杠杆踩踏</span>'
+            defensive_alert_banner_html = f'<div id="deleveragingAlertBanner" style="background: linear-gradient(90deg, rgba(239, 68, 68, 0.28), rgba(185, 28, 28, 0.18)); border-bottom: 1px solid rgba(239, 68, 68, 0.6); color: #fca5a5; padding: 7px 14px; font-weight: 800; font-size: 13px; display: flex; align-items: center; justify-content: center; gap: 10px; box-shadow: 0 2px 8px rgba(239, 68, 68, 0.2);"><span>🚨 防御因子起飞 · 警惕机构盘中去杠杆踩踏</span><span style="font-size: 11px; font-weight: 600; color: #f87171; background: rgba(0,0,0,0.3); padding: 2px 8px; border-radius: 4px;">超额背离 +{df_alert.get("flight_score", 0.0):.1f}%</span></div>'
         if weather_info and isinstance(weather_info, dict):
             weather_info['defensive_flight'] = df_alert
     except Exception:
@@ -95,123 +106,182 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
 
             all_preds = ai_predictions.get("all_predictions", [])
             pure_etf_set = {"QQQM", "SPY", "DIA", "IWM", "SMH", "SOXX", "SOXL", "KORU", "IGV", "TLT", "GLD", "QQQI", "VIXY", "SQQQ", "SOXS", "IBIT"}
+            offensive_lev_etfs = {"SOXL", "KORU"}
             if all_preds and live_lookup:
                 for item in all_preds:
-                    tk = item.get("ticker", "")
+                    tk = str(item.get("ticker", ""))
                     is_etf = bool(item.get("is_etf", tk in pure_etf_set))
                     item["is_etf"] = is_etf
+
+                    # 始终按当前标的初始化局部行情变量，彻底杜绝跨标的变量污染 (Bug Fix #3)
+                    lv = live_lookup.get(tk, {})
                     if tk in live_lookup:
-                        lv = live_lookup[tk]
                         item["is_crash_halt"] = bool(lv.get("is_crash_halt", False))
                         item["is_cooling_halt"] = bool(lv.get("is_cooling_halt", False))
-                        live_p = float(lv.get("active_price") or lv.get("last") or item.get("latest_price", 100.0))
-                        if live_p > 0:
-                            item["latest_price"] = round(live_p, 2)
-                            live_atr = float(lv.get("atr", 0.0))
-                            atr_pct = round((live_atr / live_p) * 100.0, 2) if (live_atr > 0 and live_p > 0) else float(item.get("atr_pct", 2.5))
-                            item["atr_pct"] = atr_pct
-                            raw_atr = max(0.012, atr_pct / 100.0)
-                            eff_atr = (0.040 + 0.50 * (min(raw_atr, 0.100) - 0.040)) if raw_atr > 0.040 else raw_atr
-                            u_mult = max(0.030, 1.35 * eff_atr)
-                            l_mult = max(0.022, 1.00 * eff_atr)
-                            item["target_profit_price"] = round(live_p * (1.0 + u_mult), 2)
-                            item["stop_loss_price"] = round(live_p * (1.0 - l_mult), 2)
-                            item["target_profit_pct"] = round(u_mult * 100.0, 1)
-                            item["stop_loss_pct"] = round(l_mult * 100.0, 1)
+                    is_crash_halt = bool(item.get("is_crash_halt", False))
+                    is_cooling_halt = bool(item.get("is_cooling_halt", False))
 
-                            item["short_target_profit_price"] = round(live_p * (1.0 - u_mult), 2)
-                            item["short_stop_loss_price"] = round(live_p * (1.0 + l_mult), 2)
-                            item["short_target_profit_pct"] = round(u_mult * 100.0, 1)
-                            item["short_stop_loss_pct"] = round(l_mult * 100.0, 1)
+                    live_p = float(lv.get("active_price") or lv.get("last") or item.get("latest_price", 100.0))
+                    if live_p <= 0:
+                        live_p = float(item.get("latest_price", 100.0))
+                    item["latest_price"] = round(live_p, 2)
+                    item["current_price"] = round(live_p, 2)
 
-                            live_bias = float(lv.get("bias", item.get("bias_ma50", 0.0)))
-                            live_rsi = float(lv.get("rsi", item.get("rsi_14", 50.0)))
-                            item["bias_ma50"] = round(live_bias, 2)
-                            item["rsi_14"] = round(live_rsi, 1)
+                    live_atr = float(lv.get("atr", 0.0))
+                    atr_pct = round((live_atr / live_p) * 100.0, 2) if (live_atr > 0 and live_p > 0) else float(item.get("atr_pct", 2.5))
+                    item["atr_pct"] = atr_pct
+                    raw_atr = max(0.012, atr_pct / 100.0)
+                    eff_atr = (0.040 + 0.50 * (min(raw_atr, 0.100) - 0.040)) if raw_atr > 0.040 else raw_atr
+                    u_mult = max(0.030, 1.35 * eff_atr)
+                    l_mult = max(0.022, 1.00 * eff_atr)
+                    item["target_profit_price"] = round(live_p * (1.0 + u_mult), 2)
+                    item["stop_loss_price"] = round(live_p * (1.0 - l_mult), 2)
+                    item["target_profit_pct"] = round(u_mult * 100.0, 1)
+                    item["stop_loss_pct"] = round(l_mult * 100.0, 1)
 
-                            model_raw = float(item.get("model_raw_prob_pct", item.get("base_raw_prob_pct", item.get("predicted_win_rate_pct", 50.0))))
-                            item["model_raw_prob_pct"] = model_raw
-                            pct_chg = float(lv.get("ext_pct") if lv.get("ext_price", 0) > 0 else lv.get("pct_change", 0.0))
-                            intra_adj = float(np.clip(pct_chg * 0.12, -1.5, 1.5))
+                    item["short_target_profit_price"] = round(live_p * (1.0 - u_mult), 2)
+                    item["short_stop_loss_price"] = round(live_p * (1.0 + l_mult), 2)
+                    item["short_target_profit_pct"] = round(u_mult * 100.0, 1)
+                    item["short_stop_loss_pct"] = round(l_mult * 100.0, 1)
 
-                            is_broken = (not is_etf) and (live_bias < -12.0)
-                            item["is_broken"] = is_broken
-                            if is_broken:
-                                new_raw = round(float(np.clip(model_raw + intra_adj, 15.0, 85.0)), 1)
-                                breakdown_mult = float(np.clip(0.82 - max(0.0, (-12.0 - live_bias) * 0.006), 0.68, 0.82))
-                                new_cal = round(float(np.clip(new_raw * breakdown_mult, 15.0, 49.5)), 1)
-                            else:
-                                if -6.5 <= live_bias <= 4.0 and 35.0 <= live_rsi <= 62.0:
-                                    struct_boost = 8.5
-                                elif -12.0 <= live_bias < -6.5 and 30.0 <= live_rsi <= 65.0:
-                                    struct_boost = 6.0
-                                elif 4.0 < live_bias <= 12.0 and 35.0 <= live_rsi <= 68.0:
-                                    struct_boost = 5.0
-                                else:
-                                    struct_boost = 1.5
-                                new_raw = round(float(np.clip(model_raw + struct_boost + intra_adj, 15.0, 88.0)), 1)
-                                sec_pf = float(item.get("sector_pf", 1.30))
-                                mult = float(np.clip(sec_pf / 1.30, 0.75, 1.15))
-                                new_cal = round(float(np.clip(new_raw * mult, 15.0, 95.0)), 1)
+                    live_bias = float(lv.get("bias", item.get("bias_ma50", 0.0)))
+                    live_rsi = float(lv.get("rsi", item.get("rsi_14", 50.0)))
+                    item["bias_ma50"] = round(live_bias, 2)
+                    item["rsi_14"] = round(live_rsi, 1)
 
-                            item["base_raw_prob_pct"] = new_raw
-                            item["predicted_win_rate_pct"] = new_raw
-                            item["calibrated_win_rate_pct"] = new_cal
+                    model_raw = float(item.get("model_raw_prob_pct", item.get("base_raw_prob_pct", item.get("predicted_win_rate_pct", 50.0))))
+                    item["model_raw_prob_pct"] = model_raw
+                    pct_chg = float(lv.get("ext_pct") if lv.get("ext_price", 0) > 0 else lv.get("pct_change", 0.0))
+                    intra_adj = float(np.clip(pct_chg * 0.12, -1.5, 1.5))
 
-                        item["macro_temp"] = w_status
-                        is_halt = bool(item.get("is_crash_halt") or item.get("is_cooling_halt"))
-                        is_broken = bool(item.get("is_broken", False))
-                        raw_prob_pct = float(item.get("predicted_win_rate_pct", 50.0))
-                        cal_prob_pct = float(item.get("calibrated_win_rate_pct", 50.0))
-                        eval_prob_pct = max(raw_prob_pct, cal_prob_pct)
-
-                        # B 轨 (Short-Covering Sniper 空头回补滑头引擎)
-                        tk_str = str(item.get('ticker', ''))
-                        high_beta_tickers = {'SOXL', 'KORU', 'MU', 'MRVL', 'INTC', 'DELL', 'SNDK', 'AAOI', 'CRWV', 'ASTS'}
-                        is_exhaustion = (live_rsi < 30.0 or live_bias < -22.0) or (tk_str in high_beta_tickers and (live_rsi <= 32.0 or live_bias <= -20.0))
-                        is_short_covering = is_broken and is_exhaustion
+                    # A/B 双轨分类引擎 (Track A 趋势动量 vs Track B Short-Covering Sniper 空头回补滑头引擎)
+                    try:
+                        import ml_predictor_5y
+                        prior_low_val = float(lv.get('low') or lv.get('low_price') or lv.get('rth_low') or 0.0) or None
+                        vwap_val = float(lv.get('vwap', 0.0)) if lv.get('vwap') else None
+                        live_atr_val = live_atr if live_atr > 0 else (live_p * (atr_pct / 100.0))
+                        track_res = ml_predictor_5y.classify_dual_track_candidate(
+                            bias_ma50=live_bias,
+                            rsi_14=live_rsi,
+                            bias_ma20=float(lv.get('bias_ma20', live_bias * 0.7)),
+                            price=live_p,
+                            vwap=vwap_val,
+                            prior_low=prior_low_val,
+                            atr=live_atr_val,
+                            is_halt=bool(is_crash_halt or is_cooling_halt),
+                            is_crash_halt=is_crash_halt,
+                            is_cooling_halt=is_cooling_halt
+                        )
+                        is_short_covering = bool(track_res['is_short_covering'])
+                        is_broken = bool(track_res['is_broken']) if (not is_etf or tk in offensive_lev_etfs) else False
                         item['is_short_covering'] = is_short_covering
+                        item['is_broken'] = is_broken
+                        item['track'] = track_res['track']
+                    except Exception:
+                        is_broken = (not is_etf or tk in offensive_lev_etfs) and (live_bias < -12.0)
+                        is_exhaustion = (live_rsi < 30.0 or live_bias < -15.0) and (pct_chg > 0 or live_p > (lv.get('low', live_p) + 0.5 * live_atr))
+                        is_short_covering = is_broken and is_exhaustion and (not is_crash_halt)
+                        item['is_short_covering'] = is_short_covering
+                        item['is_broken'] = is_broken and (not is_short_covering)
+                        item['track'] = 'Track B' if (is_broken or is_short_covering) else 'Track A'
 
-                        if is_halt:
-                            item["action"] = "🚨 暴跌熔断·严禁左侧接刀"
-                        elif is_short_covering:
-                            item["action"] = "🔥 恐慌衰竭·博弈空头回补 (压力位不过就跑)"
-                        elif is_broken:
-                            item["action"] = "🚨 破位飞刀·严禁左侧抄底"
-                        elif is_storm:
-                            if raw_prob_pct >= 50.0 and cal_prob_pct >= 55.0:
-                                item["action"] = "🛡️ 暴雨防守·仅极小仓试错"
-                            else:
-                                item["action"] = "🛡️ 暴雨空仓·严禁左侧接刀"
-                        elif raw_prob_pct < 50.0:
-                            item["action"] = "👀 原始胜率未过半·观望"
-                        elif eval_prob_pct >= 65.0:
-                            item["action"] = "🔥 极高确定性右侧做多"
-                        elif eval_prob_pct >= 60.0:
-                            item["action"] = "⚡ 逢低吸筹"
-                        elif eval_prob_pct >= 55.0:
-                            item["action"] = "📈 温和看多·右侧试错"
+                    # 4H 多周期共振状态与校准加成更新
+                    if live_rsi < 32.0 and live_bias < -10.0:
+                        item["four_h_div"] = "🟢 4H 底背离拐点 (见底信号)"
+                        item["four_h_tag"] = "div-bull"
+                        fh_bonus = 3.0
+                    elif live_rsi > 68.0 and live_bias > 10.0:
+                        item["four_h_div"] = "🔴 4H 顶背离滞涨 (防回踩)"
+                        item["four_h_tag"] = "div-bear"
+                        fh_bonus = -3.0
+                    elif live_bias >= -4.0 and live_rsi >= 45.0:
+                        item["four_h_div"] = "⚡ 4H 均线多头共振"
+                        item["four_h_tag"] = "div-trend"
+                        fh_bonus = 1.2
+                    else:
+                        item["four_h_div"] = item.get("four_h_div") or "➖ 4H 均线震荡纠缠"
+                        item["four_h_tag"] = item.get("four_h_tag") or "div-neutral"
+                        fh_bonus = 0.0
+
+                    if is_short_covering:
+                        new_raw = round(float(np.clip(model_raw + 5.0 + intra_adj, 50.0, 65.0)), 1)
+                        new_cal = round(float(np.clip(55.0 + (30.0 - min(30.0, live_rsi)) * 0.3 + (abs(live_bias) - 12.0) * 0.2, 56.0, 65.0)), 1)
+                    elif is_broken:
+                        new_raw = round(float(np.clip(model_raw + intra_adj, 15.0, 85.0)), 1)
+                        breakdown_mult = float(np.clip(0.82 - max(0.0, (-12.0 - live_bias) * 0.006), 0.68, 0.82))
+                        new_cal = round(float(np.clip(new_raw * breakdown_mult, 15.0, 49.5)), 1)
+                    else:
+                        if -6.5 <= live_bias <= 4.0 and 35.0 <= live_rsi <= 62.0:
+                            struct_boost = 8.5
+                        elif -12.0 <= live_bias < -6.5 and 30.0 <= live_rsi <= 65.0:
+                            struct_boost = 6.0
+                        elif 4.0 < live_bias <= 12.0 and 35.0 <= live_rsi <= 68.0:
+                            struct_boost = 5.0
                         else:
-                            item["action"] = "👀 观望等待"
+                            struct_boost = 1.5
+                        new_raw = round(float(np.clip(model_raw + struct_boost + intra_adj, 15.0, 88.0)), 1)
+                        sec_pf = float(item.get("sector_pf", 1.30))
+                        mult = float(np.clip(sec_pf / 1.30, 0.75, 1.15))
+                        new_cal = round(float(np.clip(new_raw * mult + fh_bonus, 15.0, 95.0)), 1)
 
-                        # 计算多级支撑压力与推演剧本
-                        try:
-                            import ml_predictor_5y
-                            pw_val = float(item.get('put_wall', 0.0)) if item.get('put_wall') else None
-                            cw_val = float(item.get('call_wall', 0.0)) if item.get('call_wall') else None
-                            sc_map = ml_predictor_5y.compute_multi_level_scenario_map(
-                                ticker=tk_str,
-                                current_price=live_p,
-                                atr_pct=atr_pct,
-                                bias_ma50=live_bias,
-                                is_short_covering=is_short_covering,
-                                is_broken=is_broken,
-                                put_wall=pw_val,
-                                call_wall=cw_val
-                            )
-                            item.update(sc_map)
-                        except Exception:
-                            pass
+                    item["base_raw_prob_pct"] = new_raw
+                    item["predicted_win_rate_pct"] = new_raw
+                    item["calibrated_win_rate_pct"] = new_cal
+                    item["macro_temp"] = w_status
+
+                    is_effective_halt = bool(is_crash_halt or (is_cooling_halt and not is_short_covering))
+                    raw_prob_pct = float(item.get("predicted_win_rate_pct", 50.0))
+                    cal_prob_pct = float(item.get("calibrated_win_rate_pct", 50.0))
+                    eval_prob_pct = max(raw_prob_pct, cal_prob_pct)
+
+                    if is_effective_halt:
+                        item["action"] = "🚨 暴跌熔断·严禁左侧接刀"
+                    elif is_short_covering:
+                        item["action"] = "🔥 恐慌衰竭·博弈空头回补 (压力位不过就跑)"
+                    elif is_broken:
+                        item["action"] = "🚨 破位飞刀·严禁左侧抄底"
+                    elif is_storm:
+                        if raw_prob_pct >= 50.0 and cal_prob_pct >= 55.0:
+                            item["action"] = "🛡️ 暴雨防守·仅极小仓试错"
+                        else:
+                            item["action"] = "🛡️ 暴雨空仓·严禁左侧接刀"
+                    elif raw_prob_pct < 50.0:
+                        item["action"] = "👀 原始胜率未过半·观望"
+                    elif eval_prob_pct >= 65.0:
+                        item["action"] = "🔥 极高确定性右侧做多"
+                    elif eval_prob_pct >= 60.0:
+                        item["action"] = "⚡ 逢低吸筹"
+                    elif eval_prob_pct >= 55.0:
+                        item["action"] = "📈 温和看多·右侧试错"
+                    else:
+                        item["action"] = "👀 观望等待"
+
+                    # 计算多级支撑压力与推演剧本 (与 is_effective_halt 严格对齐，彻底杜绝熔断与剧本冲突)
+                    try:
+                        import ml_predictor_5y
+                        pw_val = float(item.get('put_wall', 0.0)) if item.get('put_wall') else None
+                        cw_val = float(item.get('call_wall', 0.0)) if item.get('call_wall') else None
+                        sc_map = ml_predictor_5y.compute_multi_level_scenario_map(
+                            ticker=tk,
+                            current_price=live_p,
+                            atr_pct=atr_pct,
+                            bias_ma50=live_bias,
+                            rsi_14=live_rsi,
+                            action=item["action"],
+                            is_short_covering=is_short_covering,
+                            is_broken=is_broken,
+                            put_wall=pw_val,
+                            call_wall=cw_val,
+                            is_halt=is_effective_halt
+                        )
+                        item.update(sc_map)
+                        if is_short_covering:
+                            item['target_profit_price'] = sc_map['r1']
+                            item['stop_loss_price'] = sc_map['s2']
+                            item['target_profit_pct'] = round(((sc_map['r1'] - live_p) / live_p) * 100.0, 1)
+                            item['stop_loss_pct'] = round(((live_p - sc_map['s2']) / live_p) * 100.0, 1)
+                    except Exception:
+                        pass
 
                 # 空头排序并分配 short_rank
                 short_candidates_sorted = sorted(
@@ -225,14 +295,14 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                     item["short_rank"] = idx_s
 
                 def _get_futu_pred_tier(x):
-                    if x.get("is_etf"):
-                        return 3
-                    if x.get("is_crash_halt") or x.get("is_cooling_halt"):
-                        return 2
-                    if x.get("is_broken") and not x.get("is_short_covering"):
+                    if x.get("is_crash_halt") or (x.get("is_cooling_halt") and not x.get("is_short_covering")):
                         return 2
                     if x.get("is_short_covering"):
                         return 1
+                    if x.get("is_etf"):
+                        return 3
+                    if x.get("is_broken"):
+                        return 2
                     return 0
 
                 all_preds.sort(
@@ -270,6 +340,33 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                     ai_predictions["macro_weather"]["vixy_pos"] = v_pos
                     ai_predictions["macro_weather"]["vixy_pos_60"] = v_pos
 
+                _tc_proj = ai_predictions.get("time_cycle_projections", {})
+                if isinstance(_tc_proj, dict) and ai_predictions.get("by_ticker"):
+                    for _tk_c, _tc_item in _tc_proj.items():
+                        _b_item = ai_predictions["by_ticker"].get(_tk_c)
+                        if isinstance(_tc_item, dict) and isinstance(_b_item, dict):
+                            _new_cp = float(_b_item.get("latest_price") or _b_item.get("current_price") or 0.0)
+                            _old_cp = float(_tc_item.get("current_price") or 0.0)
+                            if _new_cp > 0 and _old_cp > 0 and abs(_new_cp - _old_cp) / _old_cp > 0.001:
+                                _ratio = _new_cp / _old_cp
+                                _tc_item["current_price"] = round(_new_cp, 2)
+                                for _hp in _tc_item.get("history", []):
+                                    if isinstance(_hp, dict) and _hp.get("price"):
+                                        _hp["price"] = round(float(_hp["price"]) * _ratio, 2)
+                                if _tc_item.get("history"):
+                                    _tc_item["history"][-1]["price"] = round(_new_cp, 2)
+                                for _pp in _tc_item.get("projection", []):
+                                    if isinstance(_pp, dict) and _pp.get("price"):
+                                        _pp["price"] = round(float(_pp["price"]) * _ratio, 2)
+                                for _cw in _tc_item.get("cycle_windows", []):
+                                    if isinstance(_cw, dict) and _cw.get("price"):
+                                        _cw["price"] = round(float(_cw["price"]) * _ratio, 2)
+                            for _k_lvl in ("s1", "s2", "sl", "r1", "r2"):
+                                if _b_item.get(_k_lvl) is not None:
+                                    _tc_item[_k_lvl] = _b_item[_k_lvl]
+                _def_flight_obj = (weather_info.get("defensive_flight") if isinstance(weather_info, dict) else None) or ai_predictions.get("defensive_flight", {})
+                ai_predictions["defensive_flight"] = _def_flight_obj
+
                 with open(ai_file, "w", encoding="utf-8") as wf:
                     json.dump(ai_predictions, wf, ensure_ascii=False, indent=2)
 
@@ -290,6 +387,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                     _tables_for_html = {
                         "kpi": ai_predictions.get("kpi", {}),
                         "macro_weather": ai_predictions.get("macro_weather", {}),
+                        "defensive_flight": _def_flight_obj,
                         "table1": ai_predictions.get("table1", []),
                         "table2": ai_predictions.get("sectors", ai_predictions.get("table2", [])),
                         "table3": ai_predictions.get("table3", []),
@@ -297,7 +395,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                         "top_long": top10_stocks,
                         "top_short": top_short_stocks,
                         "all_live_predictions": all_preds,
-                        "time_cycle_projections": ai_predictions.get("time_cycle_projections", {})
+                        "time_cycle_projections": _tc_proj
                     }
                     if _tables_for_html["table1"] and _tables_for_html["table2"]:
                         _pred_html_path = os.path.join(sc_dir, "predict_radar_5y.html")
@@ -1480,6 +1578,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             <a href="backtest_report_5y.html" target="_blank" class="tool-link" style="padding: 4px 7px;">🛡️ 5Y回测</a>
         </div>
     </header>
+    {defensive_alert_banner_html}
 
     <!-- 主体区域 -->
     <main class="futu-main m-view-watchlist" id="futuMain" style="position: relative;">
@@ -1688,6 +1787,19 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                             <div style="color: #9ca3af; font-size: 10px;">🛡️ 空头反抽防守</div>
                             <b style="color: #3fb950;" id="pAiShortStopPrice">--</b>
                         </div>
+                    </div>
+
+                    <!-- 4. V2.0 Multi-Level Scenario Points & 4H Resonance -->
+                    <div id="pAiV2ScenarioBox" style="margin-top: 7px; background: rgba(13, 17, 23, 0.78); border: 1px solid rgba(88, 166, 255, 0.25); border-radius: 5px; padding: 6px 8px; font-size: 11px;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+                            <span style="color: #9ca3af; font-size: 10px;">🧭 V2.0 筹码点位 & 4H 共振</span>
+                            <span id="pAiFourHDiv" style="font-size: 10px; font-weight: 700; color: #a371f7;">--</span>
+                        </div>
+                        <div id="pAiMultiLevels" style="font-family: 'DIN Alternate', monospace; font-size: 11px; color: #e5e7eb; margin-bottom: 4px; display: flex; justify-content: space-between; gap: 6px;">
+                            <span style="color: #3fb950;">支撑 S1/S2: --</span>
+                            <span style="color: #f85149;">阻力 R1/R2: --</span>
+                        </div>
+                        <div id="pAiScenarioScript" style="font-size: 10.5px; color: #cbd5e1; line-height: 1.35; border-left: 2px solid #58a6ff; padding-left: 6px;">--</div>
                     </div>
                 </div>
             </div>
@@ -3084,7 +3196,9 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                     const longWr = aiItem.calibrated_win_rate_pct !== undefined ? aiItem.calibrated_win_rate_pct : 50.0;
                     const shortWr = aiItem.calibrated_short_win_rate_pct !== undefined ? aiItem.calibrated_short_win_rate_pct : 50.0;
                     if (actText) {{
-                        if (aiItem.short_action && (shortWr > longWr || (aiItem.short_action.includes("🩸") && !aiItem.action))) {{
+                        if (aiItem.is_short_covering && aiItem.action) {{
+                            actText.innerText = aiItem.action;
+                        }} else if (aiItem.short_action && (shortWr > longWr || (aiItem.short_action.includes("🩸") && !aiItem.action))) {{
                             actText.innerText = aiItem.short_action;
                         }} else {{
                             actText.innerText = aiItem.action || aiItem.short_action || "--";
@@ -3148,7 +3262,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                     }}
                     const sRawEl = document.getElementById("pAiShortRaw");
                     if (sRawEl) {{
-                        const rawS = aiItem.short_raw_prob_pct !== undefined ? aiItem.short_raw_prob_pct : (aiItem.short_model_raw_prob_pct || 50.0);
+                        const rawS = aiItem.model_raw_short_prob_pct !== undefined ? aiItem.model_raw_short_prob_pct : (aiItem.short_raw_prob_pct !== undefined ? aiItem.short_raw_prob_pct : (aiItem.short_model_raw_prob_pct || 50.0));
                         sRawEl.innerText = `原始空: ${{rawS.toFixed(1)}}%`;
                     }}
 
@@ -3168,6 +3282,24 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                     const sslEl = document.getElementById("pAiShortStopPrice");
                     if (sslEl) {{
                         sslEl.innerHTML = `$${{(aiItem.short_stop_loss_price || 0).toFixed(2)}} <span style="font-size:10px; opacity:0.85;">(+${{(aiItem.short_stop_loss_pct || 0).toFixed(1)}}%)</span>`;
+                    }}
+
+                    // 5. V2.0 Multi-Level Scenario Points & 4H Resonance
+                    const fhEl = document.getElementById("pAiFourHDiv");
+                    if (fhEl) {{
+                        fhEl.innerText = aiItem.four_h_div || "➖ 4H 均线震荡纠缠";
+                    }}
+                    const mlEl = document.getElementById("pAiMultiLevels");
+                    if (mlEl) {{
+                        const s1v = aiItem.s1 !== undefined ? `$${{Number(aiItem.s1).toFixed(2)}}` : "--";
+                        const s2v = aiItem.s2 !== undefined ? `$${{Number(aiItem.s2).toFixed(2)}}` : "--";
+                        const r1v = aiItem.r1 !== undefined ? `$${{Number(aiItem.r1).toFixed(2)}}` : "--";
+                        const r2v = aiItem.r2 !== undefined ? `$${{Number(aiItem.r2).toFixed(2)}}` : "--";
+                        mlEl.innerHTML = `<span style="color:#3fb950;">支撑 S1:${{s1v}} / S2:${{s2v}}</span><span style="color:#f85149;">阻力 R1:${{r1v}} / R2:${{r2v}}</span>`;
+                    }}
+                    const scScriptEl = document.getElementById("pAiScenarioScript");
+                    if (scScriptEl) {{
+                        scScriptEl.innerText = aiItem.scenario_script || "--";
                     }}
                 }} else {{
                     aiBox.style.display = "none";
