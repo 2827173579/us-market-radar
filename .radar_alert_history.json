@@ -7,11 +7,11 @@
     },
     "PORT_INTC": {
       "state": "INTC_CRITICAL_STOP",
-      "last_notified_at": 1794197481.628515
+      "last_notified_at": 1794204736.579657
     },
     "AAOI": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1794197481.628515
+      "last_notified_at": 1794204736.579657
     },
     "CCXI": {
       "state": "NORMAL",
@@ -19,7 +19,7 @@
     },
     "OKLO": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1794197481.628515
+      "last_notified_at": 1794204736.579657
     },
     "CRWV": {
       "state": "STOP_LOSS",
@@ -31,7 +31,7 @@
     },
     "COHR": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1794197481.628515
+      "last_notified_at": 1794204736.579657
     },
     "NBIS": {
       "state": "STOP_LOSS",
@@ -39,7 +39,7 @@
     },
     "ASTS": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1794197481.628515
+      "last_notified_at": 1794204736.579657
     },
     "AXTI": {
       "state": "STOP_LOSS",
@@ -63,7 +63,7 @@
     },
     "SNDK": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1794197481.628515
+      "last_notified_at": 1794204736.579657
     },
     "RKLB": {
       "state": "STOP_LOSS",
@@ -139,7 +139,7 @@
     },
     "AMD": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1794197481.628515
+      "last_notified_at": 1794204736.579657
     },
     "SPCX": {
       "state": "NORMAL",
@@ -199,7 +199,7 @@
     },
     "LLY": {
       "state": "TAKE_PROFIT",
-      "last_notified_at": 1794197481.628515
+      "last_notified_at": 1794204736.579657
     },
     "MRNA": {
       "state": "NORMAL",
@@ -219,7 +219,7 @@
     },
     "PORT_SOXL": {
       "state": "SOXL_CRITICAL_STOP",
-      "last_notified_at": 1794197481.628515
+      "last_notified_at": 1794204736.579657
     },
     "KORU": {
       "state": "NORMAL",
@@ -235,7 +235,7 @@
     },
     "PORT_SOXS": {
       "state": "SOXS_HEDGE_CLIMAX",
-      "last_notified_at": 1794197481.628515
+      "last_notified_at": 1794204736.579657
     },
     "MARA": {
       "state": "STOP_LOSS",
