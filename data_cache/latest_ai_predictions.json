@@ -4,7 +4,7 @@
     "profit_factor": 1.4,
     "top_sector": "存储芯片 (⭐⭐⭐⭐⭐)",
     "top_feature": "SMH_IGV_Ratio_Bias (12.37%)",
-    "sync_time": "2026-11-09 11:56:46",
+    "sync_time": "2026-11-09 11:58:21",
     "data_mode": "Finnhub 秒级实时 (🌌 美股夜盘)",
     "is_realtime": false
   },
@@ -4663,7 +4663,7 @@
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": true,
-      "short_rank": 66
+      "short_rank": 65
     },
     {
       "rank": 45,
@@ -5323,7 +5323,7 @@
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": false,
-      "short_rank": 65
+      "short_rank": 66
     },
     {
       "rank": 57,
@@ -8515,7 +8515,7 @@
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": true,
-      "short_rank": 66
+      "short_rank": 65
     },
     "ASML": {
       "rank": 45,
@@ -9175,7 +9175,7 @@
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": false,
-      "short_rank": 65
+      "short_rank": 66
     },
     "AVGO": {
       "rank": 57,
