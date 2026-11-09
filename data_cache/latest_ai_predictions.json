@@ -4,7 +4,7 @@
     "profit_factor": 1.41,
     "top_sector": "存储芯片 (⭐⭐⭐⭐⭐)",
     "top_feature": "SMH_IGV_Ratio_Bias (12.28%)",
-    "sync_time": "2026-11-09 09:43:48",
+    "sync_time": "2026-11-09 09:45:17",
     "data_mode": "Finnhub 秒级实时 (☕ 周末休市)",
     "is_realtime": false
   },
@@ -21,13 +21,13 @@
     "smh_igv": -3.93,
     "latest_date": "2026-11-04",
     "defensive_flight": {
-      "is_alert": false,
-      "flight_score": 0.0,
-      "def_mean_chg": 0.0,
-      "off_mean_chg": 0.0,
-      "alert_text": "🛡️ 防御因子平稳 (+0.0%) · 机构仓位均衡",
-      "banner_text": "",
-      "badge": "badge-normal"
+      "is_alert": true,
+      "flight_score": 4.13,
+      "def_mean_chg": 1.44,
+      "off_mean_chg": -2.69,
+      "alert_text": "🚨 防御因子起飞 · 警惕机构盘中去杠杆踩踏 (+4.1%)",
+      "banner_text": "🚨 防御因子起飞 · 警惕机构盘中去杠杆踩踏",
+      "badge": "badge-alert"
     }
   },
   "table1": [
@@ -637,12 +637,12 @@
       "r1": 351.02,
       "r2": 361.25,
       "scenario_script": "【黄金坑做多剧本】回踩波段支撑 S1 ($332.28) 蓄势不破，看多头反弹测试 R1 ($351.02)；突破顺势看 R2 ($361.25)；有效跌破止损位 $320.58 离场",
+      "track": "Track A",
       "four_h_rsi": 50.6,
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 6,
-      "track": "Track A"
+      "short_rank": 6
     },
     {
       "rank": 2,
@@ -692,12 +692,12 @@
       "r1": 179.29,
       "r2": 187.39,
       "scenario_script": "【黄金坑做多剧本】回踩波段支撑 S1 ($167.80) 蓄势不破，看多头反弹测试 R1 ($179.29)；突破顺势看 R2 ($187.39)；有效跌破止损位 $160.34 离场",
+      "track": "Track A",
       "four_h_rsi": 47.9,
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 8,
-      "track": "Track A"
+      "short_rank": 8
     },
     {
       "rank": 3,
@@ -747,12 +747,12 @@
       "r1": 337.79,
       "r2": 347.63,
       "scenario_script": "【黄金坑做多剧本】回踩波段支撑 S1 ($319.75) 蓄势不破，看多头反弹测试 R1 ($337.79)；突破顺势看 R2 ($347.63)；有效跌破止损位 $308.49 离场",
+      "track": "Track A",
       "four_h_rsi": 60.9,
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 27,
-      "track": "Track A"
+      "short_rank": 27
     },
     {
       "rank": 4,
@@ -802,12 +802,12 @@
       "r1": 260.77,
       "r2": 269.62,
       "scenario_script": "【黄金坑做多剧本】回踩波段支撑 S1 ($246.84) 蓄势不破，看多头反弹测试 R1 ($260.77)；突破顺势看 R2 ($269.62)；有效跌破止损位 $237.49 离场",
+      "track": "Track A",
       "four_h_rsi": 50.3,
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 28,
-      "track": "Track A"
+      "short_rank": 28
     },
     {
       "rank": 5,
@@ -857,12 +857,12 @@
       "r1": 142.97,
       "r2": 147.14,
       "scenario_script": "【右侧主升剧本】依托波段支撑 S1 ($135.34) 逢低做多，上看阻力 R1 ($142.97) 与突破扩展目标 R2 ($147.14)；关键防守位 $130.57",
+      "track": "Track A",
       "four_h_rsi": 63.1,
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 11,
-      "track": "Track A"
+      "short_rank": 11
     },
     {
       "rank": 6,
@@ -912,12 +912,12 @@
       "r1": 97.72,
       "r2": 100.57,
       "scenario_script": "【右侧主升剧本】依托波段支撑 S1 ($92.50) 逢低做多，上看阻力 R1 ($97.72) 与突破扩展目标 R2 ($100.57)；关键防守位 $89.25",
+      "track": "Track A",
       "four_h_rsi": 64.2,
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 30,
-      "track": "Track A"
+      "short_rank": 30
     },
     {
       "rank": 7,
@@ -967,12 +967,12 @@
       "r1": 537.57,
       "r2": 553.22,
       "scenario_script": "【黄金坑做多剧本】回踩波段支撑 S1 ($508.86) 蓄势不破，看多头反弹测试 R1 ($537.57)；突破顺势看 R2 ($553.22)；有效跌破止损位 $490.94 离场",
+      "track": "Track A",
       "four_h_rsi": 49.0,
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 14,
-      "track": "Track A"
+      "short_rank": 14
     },
     {
       "rank": 8,
@@ -1022,12 +1022,12 @@
       "r1": 147.07,
       "r2": 154.72,
       "scenario_script": "【黄金坑做多剧本】回踩波段支撑 S1 ($136.21) 蓄势不破，看多头反弹测试 R1 ($147.07)；突破顺势看 R2 ($154.72)；有效跌破止损位 $128.05 离场",
+      "track": "Track A",
       "four_h_rsi": 44.2,
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 13,
-      "track": "Track A"
+      "short_rank": 13
     },
     {
       "rank": 9,
@@ -1077,12 +1077,12 @@
       "r1": 237.35,
       "r2": 280.0,
       "scenario_script": "【右侧主升剧本】依托波段支撑 S1 ($212.26) 逢低做多，上看阻力 R1 ($237.35) 与突破扩展目标 R2 ($280.00)；关键防守位 $198.27",
+      "track": "Track A",
       "four_h_rsi": 57.7,
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 31,
-      "track": "Track A"
+      "short_rank": 31
     },
     {
       "rank": 10,
@@ -1132,12 +1132,12 @@
       "r1": 1448.33,
       "r2": 1500.92,
       "scenario_script": "【右侧主升剧本】依托波段支撑 S1 ($1370.20) 逢低做多，上看阻力 R1 ($1448.33) 与突破扩展目标 R2 ($1500.92)；关键防守位 $1316.60",
+      "track": "Track A",
       "four_h_rsi": 73.8,
       "four_h_div": "🔴 4H 顶背离滞涨 (防回踩)",
       "four_h_tag": "div-bear",
       "is_short_covering": false,
-      "short_rank": 32,
-      "track": "Track A"
+      "short_rank": 32
     }
   ],
   "top_long": [
@@ -1189,12 +1189,12 @@
       "r1": 351.02,
       "r2": 361.25,
       "scenario_script": "【黄金坑做多剧本】回踩波段支撑 S1 ($332.28) 蓄势不破，看多头反弹测试 R1 ($351.02)；突破顺势看 R2 ($361.25)；有效跌破止损位 $320.58 离场",
+      "track": "Track A",
       "four_h_rsi": 50.6,
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 6,
-      "track": "Track A"
+      "short_rank": 6
     },
     {
       "rank": 2,
@@ -1244,12 +1244,12 @@
       "r1": 179.29,
       "r2": 187.39,
       "scenario_script": "【黄金坑做多剧本】回踩波段支撑 S1 ($167.80) 蓄势不破，看多头反弹测试 R1 ($179.29)；突破顺势看 R2 ($187.39)；有效跌破止损位 $160.34 离场",
+      "track": "Track A",
       "four_h_rsi": 47.9,
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 8,
-      "track": "Track A"
+      "short_rank": 8
     },
     {
       "rank": 3,
@@ -1299,12 +1299,12 @@
       "r1": 337.79,
       "r2": 347.63,
       "scenario_script": "【黄金坑做多剧本】回踩波段支撑 S1 ($319.75) 蓄势不破，看多头反弹测试 R1 ($337.79)；突破顺势看 R2 ($347.63)；有效跌破止损位 $308.49 离场",
+      "track": "Track A",
       "four_h_rsi": 60.9,
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 27,
-      "track": "Track A"
+      "short_rank": 27
     },
     {
       "rank": 4,
@@ -1354,12 +1354,12 @@
       "r1": 260.77,
       "r2": 269.62,
       "scenario_script": "【黄金坑做多剧本】回踩波段支撑 S1 ($246.84) 蓄势不破，看多头反弹测试 R1 ($260.77)；突破顺势看 R2 ($269.62)；有效跌破止损位 $237.49 离场",
+      "track": "Track A",
       "four_h_rsi": 50.3,
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 28,
-      "track": "Track A"
+      "short_rank": 28
     },
     {
       "rank": 5,
@@ -1409,12 +1409,12 @@
       "r1": 142.97,
       "r2": 147.14,
       "scenario_script": "【右侧主升剧本】依托波段支撑 S1 ($135.34) 逢低做多，上看阻力 R1 ($142.97) 与突破扩展目标 R2 ($147.14)；关键防守位 $130.57",
+      "track": "Track A",
       "four_h_rsi": 63.1,
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 11,
-      "track": "Track A"
+      "short_rank": 11
     },
     {
       "rank": 6,
@@ -1464,12 +1464,12 @@
       "r1": 97.72,
       "r2": 100.57,
       "scenario_script": "【右侧主升剧本】依托波段支撑 S1 ($92.50) 逢低做多，上看阻力 R1 ($97.72) 与突破扩展目标 R2 ($100.57)；关键防守位 $89.25",
+      "track": "Track A",
       "four_h_rsi": 64.2,
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 30,
-      "track": "Track A"
+      "short_rank": 30
     },
     {
       "rank": 7,
@@ -1519,12 +1519,12 @@
       "r1": 537.57,
       "r2": 553.22,
       "scenario_script": "【黄金坑做多剧本】回踩波段支撑 S1 ($508.86) 蓄势不破，看多头反弹测试 R1 ($537.57)；突破顺势看 R2 ($553.22)；有效跌破止损位 $490.94 离场",
+      "track": "Track A",
       "four_h_rsi": 49.0,
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 14,
-      "track": "Track A"
+      "short_rank": 14
     },
     {
       "rank": 8,
@@ -1574,12 +1574,12 @@
       "r1": 147.07,
       "r2": 154.72,
       "scenario_script": "【黄金坑做多剧本】回踩波段支撑 S1 ($136.21) 蓄势不破，看多头反弹测试 R1 ($147.07)；突破顺势看 R2 ($154.72)；有效跌破止损位 $128.05 离场",
+      "track": "Track A",
       "four_h_rsi": 44.2,
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 13,
-      "track": "Track A"
+      "short_rank": 13
     },
     {
       "rank": 9,
@@ -1629,12 +1629,12 @@
       "r1": 237.35,
       "r2": 280.0,
       "scenario_script": "【右侧主升剧本】依托波段支撑 S1 ($212.26) 逢低做多，上看阻力 R1 ($237.35) 与突破扩展目标 R2 ($280.00)；关键防守位 $198.27",
+      "track": "Track A",
       "four_h_rsi": 57.7,
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 31,
-      "track": "Track A"
+      "short_rank": 31
     },
     {
       "rank": 10,
@@ -1684,12 +1684,12 @@
       "r1": 1448.33,
       "r2": 1500.92,
       "scenario_script": "【右侧主升剧本】依托波段支撑 S1 ($1370.20) 逢低做多，上看阻力 R1 ($1448.33) 与突破扩展目标 R2 ($1500.92)；关键防守位 $1316.60",
+      "track": "Track A",
       "four_h_rsi": 73.8,
       "four_h_div": "🔴 4H 顶背离滞涨 (防回踩)",
       "four_h_tag": "div-bear",
       "is_short_covering": false,
-      "short_rank": 32,
-      "track": "Track A"
+      "short_rank": 32
     }
   ],
   "top_short": [
@@ -1741,12 +1741,12 @@
       "r1": 366.45,
       "r2": 377.13,
       "scenario_script": "【战术推演剧本】下方防守支撑 S1 ($346.89)/S2 ($339.77)，上方阻力目标 R1 ($366.45)/R2 ($377.13)；跌破防守止损位 $334.67 严格离场",
+      "track": "Track A",
       "four_h_rsi": 31.3,
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 1,
-      "track": "Track A"
+      "short_rank": 1
     },
     {
       "rank": 18,
@@ -1796,12 +1796,12 @@
       "r1": 222.17,
       "r2": 237.89,
       "scenario_script": "【空头回补滑头剧本】依托 S2 ($190.11) 极限插针底防守，上看第一阻力 R1 ($222.17) 空头回补反抽(不过就跑)；放量逼空看 R2 ($237.89)；击穿止损位 $187.26 严格离场防踩踏",
+      "track": "Track B",
       "four_h_rsi": 35.7,
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": true,
-      "short_rank": 2,
-      "track": "Track B"
+      "short_rank": 2
     },
     {
       "rank": 23,
@@ -1829,7 +1829,7 @@
       "stop_loss_price": 96.22,
       "stop_loss_pct": 5.6,
       "action": "🚨 破位飞刀·严禁左侧抄底",
-      "action_tag": "action-warning",
+      "action_tag": "action-rebound",
       "model_raw_short_prob_pct": 55.1,
       "calibrated_short_win_rate_pct": 57.7,
       "short_entry_price": 105.12000274658203,
@@ -1850,13 +1850,13 @@
       "sl": 94.16,
       "r1": 110.71,
       "r2": 118.11,
-      "scenario_script": "【破位飞刀剧本】均线空头排列破位，下方严防下探 S2 ($95.59) 清算底；反抽测试 R1 ($110.71) 均属诱多；防守位 $94.16，严禁左侧接刀",
+      "scenario_script": "【空头回补滑头剧本】依托 S2 ($95.59) 极限插针底防守，上看第一阻力 R1 ($110.71) 空头回补反抽(不过就跑)；放量逼空看 R2 ($118.11)；击穿止损位 $94.16 严格离场防踩踏",
+      "track": "Track B",
       "four_h_rsi": 28.1,
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": false,
-      "short_rank": 3,
-      "track": "Track B"
+      "short_rank": 3
     },
     {
       "rank": 71,
@@ -1906,12 +1906,12 @@
       "r1": 42.12,
       "r2": 50.0,
       "scenario_script": "【右侧主升剧本】依托波段支撑 S1 ($38.99) 逢低做多，上看阻力 R1 ($42.12) 与突破扩展目标 R2 ($50.00)；关键防守位 $37.06",
+      "track": "Track A",
       "four_h_rsi": 59.4,
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 4,
-      "track": "Track A"
+      "short_rank": 4
     },
     {
       "rank": 60,
@@ -1961,12 +1961,12 @@
       "r1": 44.66,
       "r2": 45.96,
       "scenario_script": "【黄金坑做多剧本】回踩波段支撑 S1 ($42.28) 蓄势不破，看多头反弹测试 R1 ($44.66)；突破顺势看 R2 ($45.96)；有效跌破止损位 $40.79 离场",
+      "track": "Track A",
       "four_h_rsi": 37.3,
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 5,
-      "track": "Track A"
+      "short_rank": 5
     },
     {
       "rank": 1,
@@ -2016,12 +2016,12 @@
       "r1": 351.02,
       "r2": 361.25,
       "scenario_script": "【黄金坑做多剧本】回踩波段支撑 S1 ($332.28) 蓄势不破，看多头反弹测试 R1 ($351.02)；突破顺势看 R2 ($361.25)；有效跌破止损位 $320.58 离场",
+      "track": "Track A",
       "four_h_rsi": 50.6,
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 6,
-      "track": "Track A"
+      "short_rank": 6
     },
     {
       "rank": 16,
@@ -2034,7 +2034,7 @@
       "atr_pct": 5.93,
       "bias_ma50": -22.14,
       "rsi_14": 35.7,
-      "is_broken": true,
+      "is_broken": false,
       "is_etf": false,
       "is_crash_halt": false,
       "is_cooling_halt": false,
@@ -2044,10 +2044,10 @@
       "predicted_win_rate_pct": 50.2,
       "calibrated_win_rate_pct": 57.0,
       "sector_pf": 1.28,
-      "target_profit_price": 9.92,
-      "target_profit_pct": 6.7,
-      "stop_loss_price": 8.84,
-      "stop_loss_pct": 5.0,
+      "target_profit_price": 9.69,
+      "target_profit_pct": 4.2,
+      "stop_loss_price": 8.63,
+      "stop_loss_pct": 7.2,
       "action": "🔥 恐慌衰竭·博弈空头回补 (压力位不过就跑)",
       "action_tag": "action-rebound",
       "model_raw_short_prob_pct": 52.3,
@@ -2071,6 +2071,7 @@
       "r1": 9.69,
       "r2": 10.21,
       "scenario_script": "【空头回补滑头剧本】依托 S2 ($8.63) 极限插针底防守，上看第一阻力 R1 ($9.69) 空头回补反抽(不过就跑)；放量逼空看 R2 ($10.21)；击穿止损位 $8.50 严格离场防踩踏",
+      "track": "Track B",
       "four_h_rsi": 36.4,
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
@@ -2125,12 +2126,12 @@
       "r1": 179.29,
       "r2": 187.39,
       "scenario_script": "【黄金坑做多剧本】回踩波段支撑 S1 ($167.80) 蓄势不破，看多头反弹测试 R1 ($179.29)；突破顺势看 R2 ($187.39)；有效跌破止损位 $160.34 离场",
+      "track": "Track A",
       "four_h_rsi": 47.9,
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 8,
-      "track": "Track A"
+      "short_rank": 8
     },
     {
       "rank": 68,
@@ -2180,12 +2181,12 @@
       "r1": 19.16,
       "r2": 21.0,
       "scenario_script": "【右侧主升剧本】依托波段支撑 S1 ($17.75) 逢低做多，上看阻力 R1 ($19.16) 与突破扩展目标 R2 ($21.00)；关键防守位 $16.88",
+      "track": "Track A",
       "four_h_rsi": 60.0,
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 9,
-      "track": "Track A"
+      "short_rank": 9
     },
     {
       "rank": 12,
@@ -2235,12 +2236,12 @@
       "r1": 637.45,
       "r2": 663.71,
       "scenario_script": "【战术推演剧本】下方防守支撑 S1 ($600.20)/S2 ($583.90)，上方阻力目标 R1 ($637.45)/R2 ($663.71)；跌破防守止损位 $575.14 严格离场",
+      "track": "Track A",
       "four_h_rsi": 35.0,
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 10,
-      "track": "Track A"
+      "short_rank": 10
     }
   ],
   "all_predictions": [
@@ -2292,12 +2293,12 @@
       "r1": 351.02,
       "r2": 361.25,
       "scenario_script": "【黄金坑做多剧本】回踩波段支撑 S1 ($332.28) 蓄势不破，看多头反弹测试 R1 ($351.02)；突破顺势看 R2 ($361.25)；有效跌破止损位 $320.58 离场",
+      "track": "Track A",
       "four_h_rsi": 50.6,
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 6,
-      "track": "Track A"
+      "short_rank": 6
     },
     {
       "rank": 2,
@@ -2347,12 +2348,12 @@
       "r1": 179.29,
       "r2": 187.39,
       "scenario_script": "【黄金坑做多剧本】回踩波段支撑 S1 ($167.80) 蓄势不破，看多头反弹测试 R1 ($179.29)；突破顺势看 R2 ($187.39)；有效跌破止损位 $160.34 离场",
+      "track": "Track A",
       "four_h_rsi": 47.9,
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 8,
-      "track": "Track A"
+      "short_rank": 8
     },
     {
       "rank": 3,
@@ -2402,12 +2403,12 @@
       "r1": 337.79,
       "r2": 347.63,
       "scenario_script": "【黄金坑做多剧本】回踩波段支撑 S1 ($319.75) 蓄势不破，看多头反弹测试 R1 ($337.79)；突破顺势看 R2 ($347.63)；有效跌破止损位 $308.49 离场",
+      "track": "Track A",
       "four_h_rsi": 60.9,
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 27,
-      "track": "Track A"
+      "short_rank": 27
     },
     {
       "rank": 4,
@@ -2457,12 +2458,12 @@
       "r1": 260.77,
       "r2": 269.62,
       "scenario_script": "【黄金坑做多剧本】回踩波段支撑 S1 ($246.84) 蓄势不破，看多头反弹测试 R1 ($260.77)；突破顺势看 R2 ($269.62)；有效跌破止损位 $237.49 离场",
+      "track": "Track A",
       "four_h_rsi": 50.3,
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 28,
-      "track": "Track A"
+      "short_rank": 28
     },
     {
       "rank": 5,
@@ -2512,12 +2513,12 @@
       "r1": 142.97,
       "r2": 147.14,
       "scenario_script": "【右侧主升剧本】依托波段支撑 S1 ($135.34) 逢低做多，上看阻力 R1 ($142.97) 与突破扩展目标 R2 ($147.14)；关键防守位 $130.57",
+      "track": "Track A",
       "four_h_rsi": 63.1,
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 11,
-      "track": "Track A"
+      "short_rank": 11
     },
     {
       "rank": 6,
@@ -2567,12 +2568,12 @@
       "r1": 97.72,
       "r2": 100.57,
       "scenario_script": "【右侧主升剧本】依托波段支撑 S1 ($92.50) 逢低做多，上看阻力 R1 ($97.72) 与突破扩展目标 R2 ($100.57)；关键防守位 $89.25",
+      "track": "Track A",
       "four_h_rsi": 64.2,
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 30,
-      "track": "Track A"
+      "short_rank": 30
     },
     {
       "rank": 7,
@@ -2622,12 +2623,12 @@
       "r1": 537.57,
       "r2": 553.22,
       "scenario_script": "【黄金坑做多剧本】回踩波段支撑 S1 ($508.86) 蓄势不破，看多头反弹测试 R1 ($537.57)；突破顺势看 R2 ($553.22)；有效跌破止损位 $490.94 离场",
+      "track": "Track A",
       "four_h_rsi": 49.0,
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 14,
-      "track": "Track A"
+      "short_rank": 14
     },
     {
       "rank": 8,
@@ -2677,12 +2678,12 @@
       "r1": 147.07,
       "r2": 154.72,
       "scenario_script": "【黄金坑做多剧本】回踩波段支撑 S1 ($136.21) 蓄势不破，看多头反弹测试 R1 ($147.07)；突破顺势看 R2 ($154.72)；有效跌破止损位 $128.05 离场",
+      "track": "Track A",
       "four_h_rsi": 44.2,
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 13,
-      "track": "Track A"
+      "short_rank": 13
     },
     {
       "rank": 9,
@@ -2732,12 +2733,12 @@
       "r1": 237.35,
       "r2": 280.0,
       "scenario_script": "【右侧主升剧本】依托波段支撑 S1 ($212.26) 逢低做多，上看阻力 R1 ($237.35) 与突破扩展目标 R2 ($280.00)；关键防守位 $198.27",
+      "track": "Track A",
       "four_h_rsi": 57.7,
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 31,
-      "track": "Track A"
+      "short_rank": 31
     },
     {
       "rank": 10,
@@ -2787,12 +2788,12 @@
       "r1": 1448.33,
       "r2": 1500.92,
       "scenario_script": "【右侧主升剧本】依托波段支撑 S1 ($1370.20) 逢低做多，上看阻力 R1 ($1448.33) 与突破扩展目标 R2 ($1500.92)；关键防守位 $1316.60",
+      "track": "Track A",
       "four_h_rsi": 73.8,
       "four_h_div": "🔴 4H 顶背离滞涨 (防回踩)",
       "four_h_tag": "div-bear",
       "is_short_covering": false,
-      "short_rank": 32,
-      "track": "Track A"
+      "short_rank": 32
     },
     {
       "rank": 11,
@@ -2842,12 +2843,12 @@
       "r1": 40.27,
       "r2": 41.44,
       "scenario_script": "【右侧主升剧本】依托波段支撑 S1 ($38.12) 逢低做多，上看阻力 R1 ($40.27) 与突破扩展目标 R2 ($41.44)；关键防守位 $36.78",
+      "track": "Track A",
       "four_h_rsi": 63.4,
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 17,
-      "track": "Track A"
+      "short_rank": 17
     },
     {
       "rank": 12,
@@ -2897,12 +2898,12 @@
       "r1": 637.45,
       "r2": 663.71,
       "scenario_script": "【战术推演剧本】下方防守支撑 S1 ($600.20)/S2 ($583.90)，上方阻力目标 R1 ($637.45)/R2 ($663.71)；跌破防守止损位 $575.14 严格离场",
+      "track": "Track A",
       "four_h_rsi": 35.0,
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 10,
-      "track": "Track A"
+      "short_rank": 10
     },
     {
       "rank": 13,
@@ -2952,12 +2953,12 @@
       "r1": 271.62,
       "r2": 283.87,
       "scenario_script": "【黄金坑做多剧本】回踩波段支撑 S1 ($254.23) 蓄势不破，看多头反弹测试 R1 ($271.62)；突破顺势看 R2 ($283.87)；有效跌破止损位 $231.47 离场",
+      "track": "Track A",
       "four_h_rsi": 46.8,
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 15,
-      "track": "Track A"
+      "short_rank": 15
     },
     {
       "rank": 14,
@@ -3007,12 +3008,12 @@
       "r1": 436.47,
       "r2": 449.19,
       "scenario_script": "【右侧主升剧本】依托波段支撑 S1 ($413.17) 逢低做多，上看阻力 R1 ($436.47) 与突破扩展目标 R2 ($449.19)；关键防守位 $398.62",
+      "track": "Track A",
       "four_h_rsi": 73.2,
       "four_h_div": "🔴 4H 顶背离滞涨 (防回踩)",
       "four_h_tag": "div-bear",
       "is_short_covering": false,
-      "short_rank": 24,
-      "track": "Track A"
+      "short_rank": 24
     },
     {
       "rank": 15,
@@ -3062,12 +3063,12 @@
       "r1": 270.83,
       "r2": 278.72,
       "scenario_script": "【右侧主升剧本】依托波段支撑 S1 ($256.37) 逢低做多，上看阻力 R1 ($270.83) 与突破扩展目标 R2 ($278.72)；关键防守位 $247.34",
+      "track": "Track A",
       "four_h_rsi": 71.3,
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 22,
-      "track": "Track A"
+      "short_rank": 22
     },
     {
       "rank": 16,
@@ -3080,7 +3081,7 @@
       "atr_pct": 5.93,
       "bias_ma50": -22.14,
       "rsi_14": 35.7,
-      "is_broken": true,
+      "is_broken": false,
       "is_etf": false,
       "is_crash_halt": false,
       "is_cooling_halt": false,
@@ -3090,10 +3091,10 @@
       "predicted_win_rate_pct": 50.2,
       "calibrated_win_rate_pct": 57.0,
       "sector_pf": 1.28,
-      "target_profit_price": 9.92,
-      "target_profit_pct": 6.7,
-      "stop_loss_price": 8.84,
-      "stop_loss_pct": 5.0,
+      "target_profit_price": 9.69,
+      "target_profit_pct": 4.2,
+      "stop_loss_price": 8.63,
+      "stop_loss_pct": 7.2,
       "action": "🔥 恐慌衰竭·博弈空头回补 (压力位不过就跑)",
       "action_tag": "action-rebound",
       "model_raw_short_prob_pct": 52.3,
@@ -3117,6 +3118,7 @@
       "r1": 9.69,
       "r2": 10.21,
       "scenario_script": "【空头回补滑头剧本】依托 S2 ($8.63) 极限插针底防守，上看第一阻力 R1 ($9.69) 空头回补反抽(不过就跑)；放量逼空看 R2 ($10.21)；击穿止损位 $8.50 严格离场防踩踏",
+      "track": "Track B",
       "four_h_rsi": 36.4,
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
@@ -3171,12 +3173,12 @@
       "r1": 27.07,
       "r2": 28.64,
       "scenario_script": "【空头回补滑头剧本】依托 S2 ($23.00) 极限插针底防守，上看第一阻力 R1 ($27.07) 空头回补反抽(不过就跑)；放量逼空看 R2 ($28.64)；击穿止损位 $22.66 严格离场防踩踏",
+      "track": "Track B",
       "four_h_rsi": 32.6,
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": true,
-      "short_rank": 25,
-      "track": "Track B"
+      "short_rank": 25
     },
     {
       "rank": 18,
@@ -3226,12 +3228,12 @@
       "r1": 222.17,
       "r2": 237.89,
       "scenario_script": "【空头回补滑头剧本】依托 S2 ($190.11) 极限插针底防守，上看第一阻力 R1 ($222.17) 空头回补反抽(不过就跑)；放量逼空看 R2 ($237.89)；击穿止损位 $187.26 严格离场防踩踏",
+      "track": "Track B",
       "four_h_rsi": 35.7,
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": true,
-      "short_rank": 2,
-      "track": "Track B"
+      "short_rank": 2
     },
     {
       "rank": 19,
@@ -3281,12 +3283,12 @@
       "r1": 295.0,
       "r2": 307.24,
       "scenario_script": "【空头回补滑头剧本】依托 S2 ($270.00) 极限插针底防守，上看第一阻力 R1 ($295.00) 空头回补反抽(不过就跑)；放量逼空看 R2 ($307.24)；击穿止损位 $265.95 严格离场防踩踏",
+      "track": "Track B",
       "four_h_rsi": 27.6,
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": true,
-      "short_rank": 19,
-      "track": "Track B"
+      "short_rank": 19
     },
     {
       "rank": 20,
@@ -3336,12 +3338,12 @@
       "r1": 421.98,
       "r2": 438.77,
       "scenario_script": "【右侧主升剧本】依托波段支撑 S1 ($398.16) 逢低做多，上看阻力 R1 ($421.98) 与突破扩展目标 R2 ($438.77)；关键防守位 $354.60",
+      "track": "Track A",
       "four_h_rsi": 63.8,
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 60,
-      "track": "Track A"
+      "short_rank": 58
     },
     {
       "rank": 21,
@@ -3391,12 +3393,12 @@
       "r1": 137.02,
       "r2": 145.66,
       "scenario_script": "【战术推演剧本】下方防守支撑 S1 ($124.77)/S2 ($119.41)，上方阻力目标 R1 ($137.02)/R2 ($145.66)；跌破防守止损位 $117.62 严格离场",
+      "track": "Track A",
       "four_h_rsi": 40.6,
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 34,
-      "track": "Track A"
+      "short_rank": 34
     },
     {
       "rank": 22,
@@ -3446,12 +3448,12 @@
       "r1": 259.91,
       "r2": 273.41,
       "scenario_script": "【黄金坑做多剧本】回踩波段支撑 S1 ($240.75) 蓄势不破，看多头反弹测试 R1 ($259.91)；突破顺势看 R2 ($273.41)；有效跌破止损位 $221.62 离场",
+      "track": "Track A",
       "four_h_rsi": 49.5,
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 42,
-      "track": "Track A"
+      "short_rank": 42
     },
     {
       "rank": 23,
@@ -3479,7 +3481,7 @@
       "stop_loss_price": 96.22,
       "stop_loss_pct": 5.6,
       "action": "🚨 破位飞刀·严禁左侧抄底",
-      "action_tag": "action-warning",
+      "action_tag": "action-rebound",
       "model_raw_short_prob_pct": 55.1,
       "calibrated_short_win_rate_pct": 57.7,
       "short_entry_price": 105.12000274658203,
@@ -3500,13 +3502,13 @@
       "sl": 94.16,
       "r1": 110.71,
       "r2": 118.11,
-      "scenario_script": "【破位飞刀剧本】均线空头排列破位，下方严防下探 S2 ($95.59) 清算底；反抽测试 R1 ($110.71) 均属诱多；防守位 $94.16，严禁左侧接刀",
+      "scenario_script": "【空头回补滑头剧本】依托 S2 ($95.59) 极限插针底防守，上看第一阻力 R1 ($110.71) 空头回补反抽(不过就跑)；放量逼空看 R2 ($118.11)；击穿止损位 $94.16 严格离场防踩踏",
+      "track": "Track B",
       "four_h_rsi": 28.1,
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": false,
-      "short_rank": 3,
-      "track": "Track B"
+      "short_rank": 3
     },
     {
       "rank": 24,
@@ -3556,12 +3558,12 @@
       "r1": 210.78,
       "r2": 217.57,
       "scenario_script": "【战术推演剧本】下方防守支撑 S1 ($199.52)/S2 ($190.00)，上方阻力目标 R1 ($210.78)/R2 ($217.57)；跌破防守止损位 $187.15 严格离场",
+      "track": "Track B",
       "four_h_rsi": 35.8,
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 55,
-      "track": "Track B"
+      "short_rank": 54
     },
     {
       "rank": 25,
@@ -3611,12 +3613,12 @@
       "r1": 68.04,
       "r2": 73.1,
       "scenario_script": "【空头回补滑头剧本】依托 S2 ($56.00) 极限插针底防守，上看第一阻力 R1 ($68.04) 空头回补反抽(不过就跑)；放量逼空看 R2 ($73.10)；击穿止损位 $55.16 严格离场防踩踏",
+      "track": "Track B",
       "four_h_rsi": 25.8,
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": true,
-      "short_rank": 71,
-      "track": "Track B"
+      "short_rank": 71
     },
     {
       "rank": 26,
@@ -3666,12 +3668,12 @@
       "r1": 418.38,
       "r2": 434.63,
       "scenario_script": "【战术推演剧本】下方防守支撑 S1 ($395.32)/S2 ($375.00)，上方阻力目标 R1 ($418.38)/R2 ($434.63)；跌破防守止损位 $369.38 严格离场",
+      "track": "Track B",
       "four_h_rsi": 39.0,
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 56,
-      "track": "Track B"
+      "short_rank": 55
     },
     {
       "rank": 27,
@@ -3699,7 +3701,7 @@
       "stop_loss_price": 132.06,
       "stop_loss_pct": 7.0,
       "action": "🚨 暴跌熔断·严禁左侧接刀",
-      "action_tag": "action-warning",
+      "action_tag": "action-rebound",
       "model_raw_short_prob_pct": 55.0,
       "calibrated_short_win_rate_pct": 51.1,
       "short_entry_price": 196.39999389648438,
@@ -3720,13 +3722,13 @@
       "sl": 137.9,
       "r1": 207.71,
       "r2": 222.72,
-      "scenario_script": "【破位飞刀剧本】均线空头排列破位，下方严防下探 S2 ($140.00) 清算底；反抽测试 R1 ($207.71) 均属诱多；防守位 $137.90，严禁左侧接刀",
+      "scenario_script": "【空头回补滑头剧本】依托 S2 ($140.00) 极限插针底防守，上看第一阻力 R1 ($207.71) 空头回补反抽(不过就跑)；放量逼空看 R2 ($222.72)；击穿止损位 $137.90 严格离场防踩踏",
+      "track": "Track B",
       "four_h_rsi": 34.8,
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": true,
-      "short_rank": 62,
-      "track": "Track B"
+      "short_rank": 61
     },
     {
       "rank": 28,
@@ -3776,12 +3778,12 @@
       "r1": 57.44,
       "r2": 61.01,
       "scenario_script": "【破位飞刀剧本】均线空头排列破位，下方严防下探 S2 ($50.16) 清算底；反抽测试 R1 ($57.44) 均属诱多；防守位 $49.41，严禁左侧接刀",
+      "track": "Track B",
       "four_h_rsi": 40.5,
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 21,
-      "track": "Track B"
+      "short_rank": 21
     },
     {
       "rank": 29,
@@ -3809,7 +3811,7 @@
       "stop_loss_price": 308.48,
       "stop_loss_pct": 7.0,
       "action": "🚨 暴跌熔断·严禁左侧接刀",
-      "action_tag": "action-warning",
+      "action_tag": "action-rebound",
       "model_raw_short_prob_pct": 51.9,
       "calibrated_short_win_rate_pct": 56.9,
       "short_entry_price": 418.9649963378906,
@@ -3830,13 +3832,13 @@
       "sl": 325.05,
       "r1": 440.63,
       "r2": 469.36,
-      "scenario_script": "【破位飞刀剧本】均线空头排列破位，下方严防下探 S2 ($330.00) 清算底；反抽测试 R1 ($440.63) 均属诱多；防守位 $325.05，严禁左侧接刀",
+      "scenario_script": "【空头回补滑头剧本】依托 S2 ($330.00) 极限插针底防守，上看第一阻力 R1 ($440.63) 空头回补反抽(不过就跑)；放量逼空看 R2 ($469.36)；击穿止损位 $325.05 严格离场防踩踏",
+      "track": "Track B",
       "four_h_rsi": 35.8,
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": true,
-      "short_rank": 49,
-      "track": "Track B"
+      "short_rank": 49
     },
     {
       "rank": 30,
@@ -3886,12 +3888,12 @@
       "r1": 42.01,
       "r2": 44.87,
       "scenario_script": "【空头回补滑头剧本】依托 S2 ($30.00) 极限插针底防守，上看第一阻力 R1 ($42.01) 空头回补反抽(不过就跑)；放量逼空看 R2 ($44.87)；击穿止损位 $29.55 严格离场防踩踏",
+      "track": "Track B",
       "four_h_rsi": 35.2,
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": true,
-      "short_rank": 69,
-      "track": "Track B"
+      "short_rank": 69
     },
     {
       "rank": 31,
@@ -3941,12 +3943,12 @@
       "r1": 191.15,
       "r2": 200.49,
       "scenario_script": "【黄金坑做多剧本】回踩波段支撑 S1 ($177.90) 蓄势不破，看多头反弹测试 R1 ($191.15)；突破顺势看 R2 ($200.49)；有效跌破止损位 $157.60 离场",
+      "track": "Track B",
       "four_h_rsi": 42.3,
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 63,
-      "track": "Track B"
+      "short_rank": 62
     },
     {
       "rank": 32,
@@ -3996,12 +3998,12 @@
       "r1": 58.13,
       "r2": 62.47,
       "scenario_script": "【空头回补滑头剧本】依托 S2 ($45.00) 极限插针底防守，上看第一阻力 R1 ($58.13) 空头回补反抽(不过就跑)；放量逼空看 R2 ($62.47)；击穿止损位 $44.33 严格离场防踩踏",
+      "track": "Track B",
       "four_h_rsi": 34.2,
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": true,
-      "short_rank": 48,
-      "track": "Track B"
+      "short_rank": 48
     },
     {
       "rank": 33,
@@ -4051,12 +4053,12 @@
       "r1": 7.15,
       "r2": 7.65,
       "scenario_script": "【空头回补滑头剧本】依托 S2 ($6.00) 极限插针底防守，上看第一阻力 R1 ($7.15) 空头回补反抽(不过就跑)；放量逼空看 R2 ($7.65)；击穿止损位 $5.91 严格离场防踩踏",
+      "track": "Track B",
       "four_h_rsi": 28.6,
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": false,
-      "short_rank": 45,
-      "track": "Track B"
+      "short_rank": 45
     },
     {
       "rank": 34,
@@ -4106,12 +4108,12 @@
       "r1": 18.87,
       "r2": 20.28,
       "scenario_script": "【空头回补滑头剧本】依托 S2 ($14.50) 极限插针底防守，上看第一阻力 R1 ($18.87) 空头回补反抽(不过就跑)；放量逼空看 R2 ($20.28)；击穿止损位 $14.28 严格离场防踩踏",
+      "track": "Track B",
       "four_h_rsi": 37.3,
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": true,
-      "short_rank": 58,
-      "track": "Track B"
+      "short_rank": 57
     },
     {
       "rank": 35,
@@ -4161,12 +4163,12 @@
       "r1": 27.38,
       "r2": 29.42,
       "scenario_script": "【空头回补滑头剧本】依托 S2 ($17.00) 极限插针底防守，上看第一阻力 R1 ($27.38) 空头回补反抽(不过就跑)；放量逼空看 R2 ($29.42)；击穿止损位 $16.75 严格离场防踩踏",
+      "track": "Track B",
       "four_h_rsi": 37.1,
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": true,
-      "short_rank": 61,
-      "track": "Track B"
+      "short_rank": 59
     },
     {
       "rank": 36,
@@ -4216,12 +4218,12 @@
       "r1": 150.37,
       "r2": 159.43,
       "scenario_script": "【空头回补滑头剧本】依托 S2 ($131.89) 极限插针底防守，上看第一阻力 R1 ($150.37) 空头回补反抽(不过就跑)；放量逼空看 R2 ($159.43)；击穿止损位 $129.91 严格离场防踩踏",
+      "track": "Track B",
       "four_h_rsi": 32.8,
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": false,
-      "short_rank": 44,
-      "track": "Track B"
+      "short_rank": 44
     },
     {
       "rank": 37,
@@ -4271,12 +4273,12 @@
       "r1": 527.06,
       "r2": 556.6,
       "scenario_script": "【战术推演剧本】下方防守支撑 S1 ($485.16)/S2 ($400.00)，上方阻力目标 R1 ($527.06)/R2 ($556.60)；跌破防守止损位 $394.00 严格离场",
+      "track": "Track B",
       "four_h_rsi": 40.2,
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 35,
-      "track": "Track B"
+      "short_rank": 35
     },
     {
       "rank": 38,
@@ -4326,12 +4328,12 @@
       "r1": 143.92,
       "r2": 151.29,
       "scenario_script": "【黄金坑做多剧本】回踩波段支撑 S1 ($133.47) 蓄势不破，看多头反弹测试 R1 ($143.92)；突破顺势看 R2 ($151.29)；有效跌破止损位 $118.20 离场",
+      "track": "Track B",
       "four_h_rsi": 42.4,
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 65,
-      "track": "Track B"
+      "short_rank": 65
     },
     {
       "rank": 39,
@@ -4381,12 +4383,12 @@
       "r1": 1206.13,
       "r2": 1285.89,
       "scenario_script": "【空头回补滑头剧本】依托 S2 ($800.00) 极限插针底防守，上看第一阻力 R1 ($1206.13) 空头回补反抽(不过就跑)；放量逼空看 R2 ($1285.89)；击穿止损位 $788.00 严格离场防踩踏",
+      "track": "Track B",
       "four_h_rsi": 33.4,
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": true,
-      "short_rank": 40,
-      "track": "Track B"
+      "short_rank": 40
     },
     {
       "rank": 40,
@@ -4436,12 +4438,12 @@
       "r1": 1618.7,
       "r2": 1688.74,
       "scenario_script": "【战术推演剧本】下方防守支撑 S1 ($1519.31)/S2 ($1300.00)，上方阻力目标 R1 ($1618.70)/R2 ($1688.74)；跌破防守止损位 $1280.50 严格离场",
+      "track": "Track B",
       "four_h_rsi": 39.3,
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 37,
-      "track": "Track B"
+      "short_rank": 37
     },
     {
       "rank": 41,
@@ -4491,12 +4493,12 @@
       "r1": 921.45,
       "r2": 970.15,
       "scenario_script": "【战术推演剧本】下方防守支撑 S1 ($852.35)/S2 ($600.00)，上方阻力目标 R1 ($921.45)/R2 ($970.15)；跌破防守止损位 $591.00 严格离场",
+      "track": "Track B",
       "four_h_rsi": 42.4,
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": true,
-      "short_rank": 38,
-      "track": "Track B"
+      "short_rank": 38
     },
     {
       "rank": 42,
@@ -4526,32 +4528,32 @@
       "action": "🚨 暴跌熔断·严禁左侧接刀",
       "action_tag": "action-rebound",
       "model_raw_short_prob_pct": 55.1,
-      "calibrated_short_win_rate_pct": 53.5,
+      "calibrated_short_win_rate_pct": 51.2,
       "short_entry_price": 69.05000305175781,
       "short_target_profit_price": 45.15,
       "short_target_profit_pct": 9.5,
       "short_stop_loss_price": 53.35,
       "short_stop_loss_pct": 7.0,
       "dollar_pcr": 0.52,
-      "pcr": 0.96,
+      "pcr": 0.56,
       "pcr_sentiment": "🟢 资金偏多看涨",
-      "put_wall": 130.0,
-      "call_wall": 135.0,
-      "iv_atm": 82.8,
+      "put_wall": 48.0,
+      "call_wall": 50.0,
+      "iv_atm": 169.2,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
       "s1": 65.42,
-      "s2": 62.04,
-      "sl": 61.11,
+      "s2": 48.0,
+      "sl": 47.28,
       "r1": 73.16,
       "r2": 78.61,
-      "scenario_script": "【空头回补滑头剧本】依托 S2 ($62.04) 极限插针底防守，上看第一阻力 R1 ($73.16) 空头回补反抽(不过就跑)；放量逼空看 R2 ($78.61)；击穿止损位 $61.11 严格离场防踩踏",
+      "scenario_script": "【空头回补滑头剧本】依托 S2 ($48.00) 极限插针底防守，上看第一阻力 R1 ($73.16) 空头回补反抽(不过就跑)；放量逼空看 R2 ($78.61)；击穿止损位 $47.28 严格离场防踩踏",
+      "track": "Track B",
       "four_h_rsi": 36.9,
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 59,
-      "track": "Track B"
+      "short_rank": 60
     },
     {
       "rank": 43,
@@ -4579,7 +4581,7 @@
       "stop_loss_price": 112.99,
       "stop_loss_pct": 7.0,
       "action": "🚨 暴跌熔断·严禁左侧接刀",
-      "action_tag": "action-warning",
+      "action_tag": "action-rebound",
       "model_raw_short_prob_pct": 58.0,
       "calibrated_short_win_rate_pct": 62.9,
       "short_entry_price": 150.99000549316406,
@@ -4600,13 +4602,13 @@
       "sl": 113.27,
       "r1": 159.97,
       "r2": 171.89,
-      "scenario_script": "【破位飞刀剧本】均线空头排列破位，下方严防下探 S2 ($115.00) 清算底；反抽测试 R1 ($159.97) 均属诱多；防守位 $113.27，严禁左侧接刀",
+      "scenario_script": "【空头回补滑头剧本】依托 S2 ($115.00) 极限插针底防守，上看第一阻力 R1 ($159.97) 空头回补反抽(不过就跑)；放量逼空看 R2 ($171.89)；击穿止损位 $113.27 严格离场防踩踏",
+      "track": "Track B",
       "four_h_rsi": 38.8,
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": true,
-      "short_rank": 33,
-      "track": "Track B"
+      "short_rank": 33
     },
     {
       "rank": 44,
@@ -4656,12 +4658,12 @@
       "r1": 163.31,
       "r2": 175.48,
       "scenario_script": "【空头回补滑头剧本】依托 S2 ($130.00) 极限插针底防守，上看第一阻力 R1 ($163.31) 空头回补反抽(不过就跑)；放量逼空看 R2 ($175.48)；击穿止损位 $128.05 严格离场防踩踏",
+      "track": "Track B",
       "four_h_rsi": 36.3,
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": true,
-      "short_rank": 36,
-      "track": "Track B"
+      "short_rank": 36
     },
     {
       "rank": 45,
@@ -4711,12 +4713,12 @@
       "r1": 406.21,
       "r2": 427.59,
       "scenario_script": "【破位飞刀剧本】均线空头排列破位，下方严防下探 S2 ($332.50) 清算底；反抽测试 R1 ($406.21) 均属诱多；防守位 $327.51，严禁左侧接刀",
+      "track": "Track B",
       "four_h_rsi": 37.0,
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": true,
-      "short_rank": 47,
-      "track": "Track B"
+      "short_rank": 47
     },
     {
       "rank": 46,
@@ -4744,7 +4746,7 @@
       "stop_loss_price": 162.34,
       "stop_loss_pct": 7.0,
       "action": "🚨 暴跌熔断·严禁左侧接刀",
-      "action_tag": "action-warning",
+      "action_tag": "action-rebound",
       "model_raw_short_prob_pct": 58.6,
       "calibrated_short_win_rate_pct": 58.3,
       "short_entry_price": 203.1699981689453,
@@ -4765,13 +4767,13 @@
       "sl": 172.38,
       "r1": 215.12,
       "r2": 230.98,
-      "scenario_script": "【破位飞刀剧本】均线空头排列破位，下方严防下探 S2 ($175.00) 清算底；反抽测试 R1 ($215.12) 均属诱多；防守位 $172.38，严禁左侧接刀",
+      "scenario_script": "【空头回补滑头剧本】依托 S2 ($175.00) 极限插针底防守，上看第一阻力 R1 ($215.12) 空头回补反抽(不过就跑)；放量逼空看 R2 ($230.98)；击穿止损位 $172.38 严格离场防踩踏",
+      "track": "Track B",
       "four_h_rsi": 39.7,
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": true,
-      "short_rank": 43,
-      "track": "Track B"
+      "short_rank": 43
     },
     {
       "rank": 47,
@@ -4821,12 +4823,12 @@
       "r1": 57.07,
       "r2": 60.32,
       "scenario_script": "【战术推演剧本】下方防守支撑 S1 ($52.46)/S2 ($46.00)，上方阻力目标 R1 ($57.07)/R2 ($60.32)；跌破防守止损位 $45.31 严格离场",
+      "track": "Track B",
       "four_h_rsi": 40.3,
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": true,
-      "short_rank": 64,
-      "track": "Track B"
+      "short_rank": 63
     },
     {
       "rank": 48,
@@ -4876,12 +4878,12 @@
       "r1": 677.27,
       "r2": 720.63,
       "scenario_script": "【破位飞刀剧本】均线空头排列破位，下方严防下探 S2 ($445.00) 清算底；反抽测试 R1 ($677.27) 均属诱多；防守位 $438.32，严禁左侧接刀",
+      "track": "Track B",
       "four_h_rsi": 38.0,
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": true,
-      "short_rank": 50,
-      "track": "Track B"
+      "short_rank": 50
     },
     {
       "rank": 49,
@@ -4931,12 +4933,12 @@
       "r1": 337.11,
       "r2": 351.75,
       "scenario_script": "【战术推演剧本】下方防守支撑 S1 ($316.35)/S2 ($297.50)，上方阻力目标 R1 ($337.11)/R2 ($351.75)；跌破防守止损位 $293.04 严格离场",
+      "track": "Track B",
       "four_h_rsi": 41.3,
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": true,
-      "short_rank": 51,
-      "track": "Track B"
+      "short_rank": 52
     },
     {
       "rank": 50,
@@ -4986,12 +4988,12 @@
       "r1": 59.55,
       "r2": 63.99,
       "scenario_script": "【破位飞刀剧本】均线空头排列破位，下方严防下探 S2 ($36.00) 清算底；反抽测试 R1 ($59.55) 均属诱多；防守位 $35.46，严禁左侧接刀",
+      "track": "Track B",
       "four_h_rsi": 43.9,
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": true,
-      "short_rank": 70,
-      "track": "Track B"
+      "short_rank": 70
     },
     {
       "rank": 51,
@@ -5041,12 +5043,12 @@
       "r1": 162.17,
       "r2": 171.04,
       "scenario_script": "【战术推演剧本】下方防守支撑 S1 ($149.60)/S2 ($121.00)，上方阻力目标 R1 ($162.17)/R2 ($171.04)；跌破防守止损位 $119.19 严格离场",
+      "track": "Track B",
       "four_h_rsi": 48.3,
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": true,
-      "short_rank": 52,
-      "track": "Track B"
+      "short_rank": 51
     },
     {
       "rank": 52,
@@ -5096,12 +5098,12 @@
       "r1": 885.52,
       "r2": 944.98,
       "scenario_script": "【战术推演剧本】下方防守支撑 S1 ($801.15)/S2 ($515.00)，上方阻力目标 R1 ($885.52)/R2 ($944.98)；跌破防守止损位 $507.27 严格离场",
+      "track": "Track B",
       "four_h_rsi": 44.9,
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": true,
-      "short_rank": 57,
-      "track": "Track B"
+      "short_rank": 56
     },
     {
       "rank": 53,
@@ -5151,12 +5153,12 @@
       "r1": 245.3,
       "r2": 259.02,
       "scenario_script": "【黄金坑做多剧本】回踩波段支撑 S1 ($225.82) 蓄势不破，看多头反弹测试 R1 ($245.30)；突破顺势看 R2 ($259.02)；有效跌破止损位 $179.76 离场",
+      "track": "Track B",
       "four_h_rsi": 52.4,
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": true,
-      "short_rank": 66,
-      "track": "Track B"
+      "short_rank": 66
     },
     {
       "rank": 54,
@@ -5206,12 +5208,12 @@
       "r1": 136.31,
       "r2": 143.79,
       "scenario_script": "【战术推演剧本】下方防守支撑 S1 ($125.69)/S2 ($110.00)，上方阻力目标 R1 ($136.31)/R2 ($143.79)；跌破防守止损位 $108.35 严格离场",
+      "track": "Track B",
       "four_h_rsi": 46.0,
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 39,
-      "track": "Track B"
+      "short_rank": 39
     },
     {
       "rank": 55,
@@ -5261,12 +5263,12 @@
       "r1": 382.79,
       "r2": 404.91,
       "scenario_script": "【破位飞刀剧本】均线空头排列破位，下方严防下探 S2 ($270.00) 清算底；反抽测试 R1 ($382.79) 均属诱多；防守位 $265.95，严禁左侧接刀",
+      "track": "Track B",
       "four_h_rsi": 43.7,
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": true,
-      "short_rank": 41,
-      "track": "Track B"
+      "short_rank": 41
     },
     {
       "rank": 56,
@@ -5296,32 +5298,32 @@
       "action": "🚨 暴跌熔断·严禁左侧接刀",
       "action_tag": "action-watch",
       "model_raw_short_prob_pct": 56.4,
-      "calibrated_short_win_rate_pct": 55.4,
+      "calibrated_short_win_rate_pct": 50.4,
       "short_entry_price": 284.3399963378906,
       "short_target_profit_price": 262.1,
       "short_target_profit_pct": 3.1,
       "short_stop_loss_price": 276.92,
       "short_stop_loss_pct": 2.3,
-      "dollar_pcr": 2.14,
-      "pcr": 1.04,
-      "pcr_sentiment": "🔴 资金偏空对冲",
-      "put_wall": 270.0,
-      "call_wall": 270.0,
-      "iv_atm": 37.4,
-      "short_action": "⚡ 逢高反抽沽空/买Put",
-      "short_action_tag": "short-action-rebound",
+      "dollar_pcr": 1.0,
+      "pcr": 1.0,
+      "pcr_sentiment": "⛅ 中性",
+      "put_wall": 270.12,
+      "call_wall": 298.56,
+      "iv_atm": 30.0,
+      "short_action": "👀 空头动能不足·观望",
+      "short_action_tag": "short-action-wait",
       "s1": 277.23,
-      "s2": 270.0,
-      "sl": 265.95,
+      "s2": 270.12,
+      "sl": 266.07,
       "r1": 292.87,
       "r2": 301.4,
-      "scenario_script": "【黄金坑做多剧本】回踩波段支撑 S1 ($277.23) 蓄势不破，看多头反弹测试 R1 ($292.87)；突破顺势看 R2 ($301.40)；有效跌破止损位 $265.95 离场",
+      "scenario_script": "【黄金坑做多剧本】回踩波段支撑 S1 ($277.23) 蓄势不破，看多头反弹测试 R1 ($292.87)；突破顺势看 R2 ($301.40)；有效跌破止损位 $266.07 离场",
+      "track": "Track A",
       "four_h_rsi": 35.7,
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 53,
-      "track": "Track A"
+      "short_rank": 64
     },
     {
       "rank": 57,
@@ -5371,12 +5373,12 @@
       "r1": 12.43,
       "r2": 13.36,
       "scenario_script": "【空头回补滑头剧本】依托 S2 ($6.50) 极限插针底防守，上看第一阻力 R1 ($12.43) 空头回补反抽(不过就跑)；放量逼空看 R2 ($13.36)；击穿止损位 $6.40 严格离场防踩踏",
+      "track": "Track A",
       "four_h_rsi": 41.7,
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 68,
-      "track": "Track A"
+      "short_rank": 68
     },
     {
       "rank": 58,
@@ -5426,12 +5428,12 @@
       "r1": 84.81,
       "r2": 91.13,
       "scenario_script": "【空头回补滑头剧本】依托 S2 ($45.00) 极限插针底防守，上看第一阻力 R1 ($84.81) 空头回补反抽(不过就跑)；放量逼空看 R2 ($91.13)；击穿止损位 $44.33 严格离场防踩踏",
+      "track": "Track A",
       "four_h_rsi": 36.6,
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 67,
-      "track": "Track A"
+      "short_rank": 67
     },
     {
       "rank": 59,
@@ -5481,12 +5483,12 @@
       "r1": 540.3,
       "r2": 563.93,
       "scenario_script": "【战术推演剧本】下方防守支撑 S1 ($506.77)/S2 ($467.50)，上方阻力目标 R1 ($540.30)/R2 ($563.93)；跌破防守止损位 $460.49 严格离场",
+      "track": "Track A",
       "four_h_rsi": 37.6,
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 46,
-      "track": "Track A"
+      "short_rank": 46
     },
     {
       "rank": 60,
@@ -5536,12 +5538,12 @@
       "r1": 44.66,
       "r2": 45.96,
       "scenario_script": "【黄金坑做多剧本】回踩波段支撑 S1 ($42.28) 蓄势不破，看多头反弹测试 R1 ($44.66)；突破顺势看 R2 ($45.96)；有效跌破止损位 $40.79 离场",
+      "track": "Track A",
       "four_h_rsi": 37.3,
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 5,
-      "track": "Track A"
+      "short_rank": 5
     },
     {
       "rank": 61,
@@ -5591,12 +5593,12 @@
       "r1": 366.45,
       "r2": 377.13,
       "scenario_script": "【战术推演剧本】下方防守支撑 S1 ($346.89)/S2 ($339.77)，上方阻力目标 R1 ($366.45)/R2 ($377.13)；跌破防守止损位 $334.67 严格离场",
+      "track": "Track A",
       "four_h_rsi": 31.3,
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 1,
-      "track": "Track A"
+      "short_rank": 1
     },
     {
       "rank": 62,
@@ -5646,12 +5648,12 @@
       "r1": 495.14,
       "r2": 518.2,
       "scenario_script": "【战术推演剧本】下方防守支撑 S1 ($462.41)/S2 ($448.09)，上方阻力目标 R1 ($495.14)/R2 ($518.20)；跌破防守止损位 $441.37 严格离场",
+      "track": "Track A",
       "four_h_rsi": 38.9,
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 54,
-      "track": "Track A"
+      "short_rank": 53
     },
     {
       "rank": 63,
@@ -5701,12 +5703,12 @@
       "r1": 84.3,
       "r2": 86.75,
       "scenario_script": "【黄金坑做多剧本】回踩波段支撑 S1 ($79.79) 蓄势不破，看多头反弹测试 R1 ($84.30)；突破顺势看 R2 ($86.75)；有效跌破止损位 $76.99 离场",
+      "track": "Track A",
       "four_h_rsi": 62.9,
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 26,
-      "track": "Track A"
+      "short_rank": 26
     },
     {
       "rank": 64,
@@ -5756,12 +5758,12 @@
       "r1": 291.21,
       "r2": 299.69,
       "scenario_script": "【黄金坑做多剧本】回踩波段支撑 S1 ($275.66) 蓄势不破，看多头反弹测试 R1 ($291.21)；突破顺势看 R2 ($299.69)；有效跌破止损位 $265.95 离场",
+      "track": "Track A",
       "four_h_rsi": 54.7,
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 20,
-      "track": "Track A"
+      "short_rank": 20
     },
     {
       "rank": 65,
@@ -5811,12 +5813,12 @@
       "r1": 53.67,
       "r2": 55.23,
       "scenario_script": "【黄金坑做多剧本】回踩波段支撑 S1 ($50.80) 蓄势不破，看多头反弹测试 R1 ($53.67)；突破顺势看 R2 ($55.23)；有效跌破止损位 $47.28 离场",
+      "track": "Track A",
       "four_h_rsi": 39.2,
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 16,
-      "track": "Track A"
+      "short_rank": 16
     },
     {
       "rank": 66,
@@ -5866,12 +5868,12 @@
       "r1": 107.42,
       "r2": 110.58,
       "scenario_script": "【黄金坑做多剧本】回踩波段支撑 S1 ($101.68) 蓄势不破，看多头反弹测试 R1 ($107.42)；突破顺势看 R2 ($110.58)；有效跌破止损位 $97.52 离场",
+      "track": "Track A",
       "four_h_rsi": 41.7,
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 18,
-      "track": "Track A"
+      "short_rank": 18
     },
     {
       "rank": 67,
@@ -5921,12 +5923,12 @@
       "r1": 778.39,
       "r2": 801.06,
       "scenario_script": "【黄金坑做多剧本】回踩波段支撑 S1 ($736.83) 蓄势不破，看多头反弹测试 R1 ($778.39)；突破顺势看 R2 ($801.06)；有效跌破止损位 $710.88 离场",
+      "track": "Track A",
       "four_h_rsi": 40.9,
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 12,
-      "track": "Track A"
+      "short_rank": 12
     },
     {
       "rank": 68,
@@ -5976,12 +5978,12 @@
       "r1": 19.16,
       "r2": 21.0,
       "scenario_script": "【右侧主升剧本】依托波段支撑 S1 ($17.75) 逢低做多，上看阻力 R1 ($19.16) 与突破扩展目标 R2 ($21.00)；关键防守位 $16.88",
+      "track": "Track A",
       "four_h_rsi": 60.0,
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 9,
-      "track": "Track A"
+      "short_rank": 9
     },
     {
       "rank": 69,
@@ -6031,12 +6033,12 @@
       "r1": 538.37,
       "r2": 554.05,
       "scenario_script": "【黄金坑做多剧本】回踩波段支撑 S1 ($509.62) 蓄势不破，看多头反弹测试 R1 ($538.37)；突破顺势看 R2 ($554.05)；有效跌破止损位 $491.68 离场",
+      "track": "Track A",
       "four_h_rsi": 52.8,
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 23,
-      "track": "Track A"
+      "short_rank": 23
     },
     {
       "rank": 70,
@@ -6086,12 +6088,12 @@
       "r1": 53.03,
       "r2": 70.0,
       "scenario_script": "【右侧主升剧本】依托波段支撑 S1 ($47.42) 逢低做多，上看阻力 R1 ($53.03) 与突破扩展目标 R2 ($70.00)；关键防守位 $44.30",
+      "track": "Track A",
       "four_h_rsi": 57.5,
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 29,
-      "track": "Track A"
+      "short_rank": 29
     },
     {
       "rank": 71,
@@ -6141,12 +6143,12 @@
       "r1": 42.12,
       "r2": 50.0,
       "scenario_script": "【右侧主升剧本】依托波段支撑 S1 ($38.99) 逢低做多，上看阻力 R1 ($42.12) 与突破扩展目标 R2 ($50.00)；关键防守位 $37.06",
+      "track": "Track A",
       "four_h_rsi": 59.4,
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 4,
-      "track": "Track A"
+      "short_rank": 4
     }
   ],
   "by_ticker": {
@@ -6198,12 +6200,12 @@
       "r1": 351.02,
       "r2": 361.25,
       "scenario_script": "【黄金坑做多剧本】回踩波段支撑 S1 ($332.28) 蓄势不破，看多头反弹测试 R1 ($351.02)；突破顺势看 R2 ($361.25)；有效跌破止损位 $320.58 离场",
+      "track": "Track A",
       "four_h_rsi": 50.6,
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 6,
-      "track": "Track A"
+      "short_rank": 6
     },
     "QCOM": {
       "rank": 2,
@@ -6253,12 +6255,12 @@
       "r1": 179.29,
       "r2": 187.39,
       "scenario_script": "【黄金坑做多剧本】回踩波段支撑 S1 ($167.80) 蓄势不破，看多头反弹测试 R1 ($179.29)；突破顺势看 R2 ($187.39)；有效跌破止损位 $160.34 离场",
+      "track": "Track A",
       "four_h_rsi": 47.9,
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 8,
-      "track": "Track A"
+      "short_rank": 8
     },
     "AXP": {
       "rank": 3,
@@ -6308,12 +6310,12 @@
       "r1": 337.79,
       "r2": 347.63,
       "scenario_script": "【黄金坑做多剧本】回踩波段支撑 S1 ($319.75) 蓄势不破，看多头反弹测试 R1 ($337.79)；突破顺势看 R2 ($347.63)；有效跌破止损位 $308.49 离场",
+      "track": "Track A",
       "four_h_rsi": 60.9,
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 27,
-      "track": "Track A"
+      "short_rank": 27
     },
     "AMZN": {
       "rank": 4,
@@ -6363,12 +6365,12 @@
       "r1": 260.77,
       "r2": 269.62,
       "scenario_script": "【黄金坑做多剧本】回踩波段支撑 S1 ($246.84) 蓄势不破，看多头反弹测试 R1 ($260.77)；突破顺势看 R2 ($269.62)；有效跌破止损位 $237.49 离场",
+      "track": "Track A",
       "four_h_rsi": 50.3,
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 28,
-      "track": "Track A"
+      "short_rank": 28
     },
     "PEP": {
       "rank": 5,
@@ -6418,12 +6420,12 @@
       "r1": 142.97,
       "r2": 147.14,
       "scenario_script": "【右侧主升剧本】依托波段支撑 S1 ($135.34) 逢低做多，上看阻力 R1 ($142.97) 与突破扩展目标 R2 ($147.14)；关键防守位 $130.57",
+      "track": "Track A",
       "four_h_rsi": 63.1,
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 11,
-      "track": "Track A"
+      "short_rank": 11
     },
     "KO": {
       "rank": 6,
@@ -6473,12 +6475,12 @@
       "r1": 97.72,
       "r2": 100.57,
       "scenario_script": "【右侧主升剧本】依托波段支撑 S1 ($92.50) 逢低做多，上看阻力 R1 ($97.72) 与突破扩展目标 R2 ($100.57)；关键防守位 $89.25",
+      "track": "Track A",
       "four_h_rsi": 64.2,
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 30,
-      "track": "Track A"
+      "short_rank": 30
     },
     "MSFT": {
       "rank": 7,
@@ -6528,12 +6530,12 @@
       "r1": 537.57,
       "r2": 553.22,
       "scenario_script": "【黄金坑做多剧本】回踩波段支撑 S1 ($508.86) 蓄势不破，看多头反弹测试 R1 ($537.57)；突破顺势看 R2 ($553.22)；有效跌破止损位 $490.94 离场",
+      "track": "Track A",
       "four_h_rsi": 49.0,
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 14,
-      "track": "Track A"
+      "short_rank": 14
     },
     "SPCX": {
       "rank": 8,
@@ -6583,12 +6585,12 @@
       "r1": 147.07,
       "r2": 154.72,
       "scenario_script": "【黄金坑做多剧本】回踩波段支撑 S1 ($136.21) 蓄势不破，看多头反弹测试 R1 ($147.07)；突破顺势看 R2 ($154.72)；有效跌破止损位 $128.05 离场",
+      "track": "Track A",
       "four_h_rsi": 44.2,
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 13,
-      "track": "Track A"
+      "short_rank": 13
     },
     "MRNA": {
       "rank": 9,
@@ -6638,12 +6640,12 @@
       "r1": 237.35,
       "r2": 280.0,
       "scenario_script": "【右侧主升剧本】依托波段支撑 S1 ($212.26) 逢低做多，上看阻力 R1 ($237.35) 与突破扩展目标 R2 ($280.00)；关键防守位 $198.27",
+      "track": "Track A",
       "four_h_rsi": 57.7,
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 31,
-      "track": "Track A"
+      "short_rank": 31
     },
     "LLY": {
       "rank": 10,
@@ -6693,12 +6695,12 @@
       "r1": 1448.33,
       "r2": 1500.92,
       "scenario_script": "【右侧主升剧本】依托波段支撑 S1 ($1370.20) 逢低做多，上看阻力 R1 ($1448.33) 与突破扩展目标 R2 ($1500.92)；关键防守位 $1316.60",
+      "track": "Track A",
       "four_h_rsi": 73.8,
       "four_h_div": "🔴 4H 顶背离滞涨 (防回踩)",
       "four_h_tag": "div-bear",
       "is_short_covering": false,
-      "short_rank": 32,
-      "track": "Track A"
+      "short_rank": 32
     },
     "NKE": {
       "rank": 11,
@@ -6748,12 +6750,12 @@
       "r1": 40.27,
       "r2": 41.44,
       "scenario_script": "【右侧主升剧本】依托波段支撑 S1 ($38.12) 逢低做多，上看阻力 R1 ($40.27) 与突破扩展目标 R2 ($41.44)；关键防守位 $36.78",
+      "track": "Track A",
       "four_h_rsi": 63.4,
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 17,
-      "track": "Track A"
+      "short_rank": 17
     },
     "META": {
       "rank": 12,
@@ -6803,12 +6805,12 @@
       "r1": 637.45,
       "r2": 663.71,
       "scenario_script": "【战术推演剧本】下方防守支撑 S1 ($600.20)/S2 ($583.90)，上方阻力目标 R1 ($637.45)/R2 ($663.71)；跌破防守止损位 $575.14 严格离场",
+      "track": "Track A",
       "four_h_rsi": 35.0,
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 10,
-      "track": "Track A"
+      "short_rank": 10
     },
     "CEG": {
       "rank": 13,
@@ -6858,12 +6860,12 @@
       "r1": 271.62,
       "r2": 283.87,
       "scenario_script": "【黄金坑做多剧本】回踩波段支撑 S1 ($254.23) 蓄势不破，看多头反弹测试 R1 ($271.62)；突破顺势看 R2 ($283.87)；有效跌破止损位 $231.47 离场",
+      "track": "Track A",
       "four_h_rsi": 46.8,
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 15,
-      "track": "Track A"
+      "short_rank": 15
     },
     "V": {
       "rank": 14,
@@ -6913,12 +6915,12 @@
       "r1": 436.47,
       "r2": 449.19,
       "scenario_script": "【右侧主升剧本】依托波段支撑 S1 ($413.17) 逢低做多，上看阻力 R1 ($436.47) 与突破扩展目标 R2 ($449.19)；关键防守位 $398.62",
+      "track": "Track A",
       "four_h_rsi": 73.2,
       "four_h_div": "🔴 4H 顶背离滞涨 (防回踩)",
       "four_h_tag": "div-bear",
       "is_short_covering": false,
-      "short_rank": 24,
-      "track": "Track A"
+      "short_rank": 24
     },
     "MCD": {
       "rank": 15,
@@ -6968,12 +6970,12 @@
       "r1": 270.83,
       "r2": 278.72,
       "scenario_script": "【右侧主升剧本】依托波段支撑 S1 ($256.37) 逢低做多，上看阻力 R1 ($270.83) 与突破扩展目标 R2 ($278.72)；关键防守位 $247.34",
+      "track": "Track A",
       "four_h_rsi": 71.3,
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 22,
-      "track": "Track A"
+      "short_rank": 22
     },
     "CCXI": {
       "rank": 16,
@@ -6986,7 +6988,7 @@
       "atr_pct": 5.93,
       "bias_ma50": -22.14,
       "rsi_14": 35.7,
-      "is_broken": true,
+      "is_broken": false,
       "is_etf": false,
       "is_crash_halt": false,
       "is_cooling_halt": false,
@@ -6996,10 +6998,10 @@
       "predicted_win_rate_pct": 50.2,
       "calibrated_win_rate_pct": 57.0,
       "sector_pf": 1.28,
-      "target_profit_price": 9.92,
-      "target_profit_pct": 6.7,
-      "stop_loss_price": 8.84,
-      "stop_loss_pct": 5.0,
+      "target_profit_price": 9.69,
+      "target_profit_pct": 4.2,
+      "stop_loss_price": 8.63,
+      "stop_loss_pct": 7.2,
       "action": "🔥 恐慌衰竭·博弈空头回补 (压力位不过就跑)",
       "action_tag": "action-rebound",
       "model_raw_short_prob_pct": 52.3,
@@ -7023,6 +7025,7 @@
       "r1": 9.69,
       "r2": 10.21,
       "scenario_script": "【空头回补滑头剧本】依托 S2 ($8.63) 极限插针底防守，上看第一阻力 R1 ($9.69) 空头回补反抽(不过就跑)；放量逼空看 R2 ($10.21)；击穿止损位 $8.50 严格离场防踩踏",
+      "track": "Track B",
       "four_h_rsi": 36.4,
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
@@ -7077,12 +7080,12 @@
       "r1": 27.07,
       "r2": 28.64,
       "scenario_script": "【空头回补滑头剧本】依托 S2 ($23.00) 极限插针底防守，上看第一阻力 R1 ($27.07) 空头回补反抽(不过就跑)；放量逼空看 R2 ($28.64)；击穿止损位 $22.66 严格离场防踩踏",
+      "track": "Track B",
       "four_h_rsi": 32.6,
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": true,
-      "short_rank": 25,
-      "track": "Track B"
+      "short_rank": 25
     },
     "COHR": {
       "rank": 18,
@@ -7132,12 +7135,12 @@
       "r1": 222.17,
       "r2": 237.89,
       "scenario_script": "【空头回补滑头剧本】依托 S2 ($190.11) 极限插针底防守，上看第一阻力 R1 ($222.17) 空头回补反抽(不过就跑)；放量逼空看 R2 ($237.89)；击穿止损位 $187.26 严格离场防踩踏",
+      "track": "Track B",
       "four_h_rsi": 35.7,
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": true,
-      "short_rank": 2,
-      "track": "Track B"
+      "short_rank": 2
     },
     "GOOGL": {
       "rank": 19,
@@ -7187,12 +7190,12 @@
       "r1": 295.0,
       "r2": 307.24,
       "scenario_script": "【空头回补滑头剧本】依托 S2 ($270.00) 极限插针底防守，上看第一阻力 R1 ($295.00) 空头回补反抽(不过就跑)；放量逼空看 R2 ($307.24)；击穿止损位 $265.95 严格离场防踩踏",
+      "track": "Track B",
       "four_h_rsi": 27.6,
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": true,
-      "short_rank": 19,
-      "track": "Track B"
+      "short_rank": 19
     },
     "TSLA": {
       "rank": 20,
@@ -7242,12 +7245,12 @@
       "r1": 421.98,
       "r2": 438.77,
       "scenario_script": "【右侧主升剧本】依托波段支撑 S1 ($398.16) 逢低做多，上看阻力 R1 ($421.98) 与突破扩展目标 R2 ($438.77)；关键防守位 $354.60",
+      "track": "Track A",
       "four_h_rsi": 63.8,
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 60,
-      "track": "Track A"
+      "short_rank": 58
     },
     "MSTR": {
       "rank": 21,
@@ -7297,12 +7300,12 @@
       "r1": 137.02,
       "r2": 145.66,
       "scenario_script": "【战术推演剧本】下方防守支撑 S1 ($124.77)/S2 ($119.41)，上方阻力目标 R1 ($137.02)/R2 ($145.66)；跌破防守止损位 $117.62 严格离场",
+      "track": "Track A",
       "four_h_rsi": 40.6,
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 34,
-      "track": "Track A"
+      "short_rank": 34
     },
     "CRWD": {
       "rank": 22,
@@ -7352,12 +7355,12 @@
       "r1": 259.91,
       "r2": 273.41,
       "scenario_script": "【黄金坑做多剧本】回踩波段支撑 S1 ($240.75) 蓄势不破，看多头反弹测试 R1 ($259.91)；突破顺势看 R2 ($273.41)；有效跌破止损位 $221.62 离场",
+      "track": "Track A",
       "four_h_rsi": 49.5,
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 42,
-      "track": "Track A"
+      "short_rank": 42
     },
     "NOW": {
       "rank": 23,
@@ -7385,7 +7388,7 @@
       "stop_loss_price": 96.22,
       "stop_loss_pct": 5.6,
       "action": "🚨 破位飞刀·严禁左侧抄底",
-      "action_tag": "action-warning",
+      "action_tag": "action-rebound",
       "model_raw_short_prob_pct": 55.1,
       "calibrated_short_win_rate_pct": 57.7,
       "short_entry_price": 105.12000274658203,
@@ -7406,13 +7409,13 @@
       "sl": 94.16,
       "r1": 110.71,
       "r2": 118.11,
-      "scenario_script": "【破位飞刀剧本】均线空头排列破位，下方严防下探 S2 ($95.59) 清算底；反抽测试 R1 ($110.71) 均属诱多；防守位 $94.16，严禁左侧接刀",
+      "scenario_script": "【空头回补滑头剧本】依托 S2 ($95.59) 极限插针底防守，上看第一阻力 R1 ($110.71) 空头回补反抽(不过就跑)；放量逼空看 R2 ($118.11)；击穿止损位 $94.16 严格离场防踩踏",
+      "track": "Track B",
       "four_h_rsi": 28.1,
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": false,
-      "short_rank": 3,
-      "track": "Track B"
+      "short_rank": 3
     },
     "NVDA": {
       "rank": 24,
@@ -7462,12 +7465,12 @@
       "r1": 210.78,
       "r2": 217.57,
       "scenario_script": "【战术推演剧本】下方防守支撑 S1 ($199.52)/S2 ($190.00)，上方阻力目标 R1 ($210.78)/R2 ($217.57)；跌破防守止损位 $187.15 严格离场",
+      "track": "Track B",
       "four_h_rsi": 35.8,
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 55,
-      "track": "Track B"
+      "short_rank": 54
     },
     "INTC": {
       "rank": 25,
@@ -7517,12 +7520,12 @@
       "r1": 68.04,
       "r2": 73.1,
       "scenario_script": "【空头回补滑头剧本】依托 S2 ($56.00) 极限插针底防守，上看第一阻力 R1 ($68.04) 空头回补反抽(不过就跑)；放量逼空看 R2 ($73.10)；击穿止损位 $55.16 严格离场防踩踏",
+      "track": "Track B",
       "four_h_rsi": 25.8,
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": true,
-      "short_rank": 71,
-      "track": "Track B"
+      "short_rank": 71
     },
     "TSM": {
       "rank": 26,
@@ -7572,12 +7575,12 @@
       "r1": 418.38,
       "r2": 434.63,
       "scenario_script": "【战术推演剧本】下方防守支撑 S1 ($395.32)/S2 ($375.00)，上方阻力目标 R1 ($418.38)/R2 ($434.63)；跌破防守止损位 $369.38 严格离场",
+      "track": "Track B",
       "four_h_rsi": 39.0,
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 56,
-      "track": "Track B"
+      "short_rank": 55
     },
     "MRVL": {
       "rank": 27,
@@ -7605,7 +7608,7 @@
       "stop_loss_price": 132.06,
       "stop_loss_pct": 7.0,
       "action": "🚨 暴跌熔断·严禁左侧接刀",
-      "action_tag": "action-warning",
+      "action_tag": "action-rebound",
       "model_raw_short_prob_pct": 55.0,
       "calibrated_short_win_rate_pct": 51.1,
       "short_entry_price": 196.39999389648438,
@@ -7626,13 +7629,13 @@
       "sl": 137.9,
       "r1": 207.71,
       "r2": 222.72,
-      "scenario_script": "【破位飞刀剧本】均线空头排列破位，下方严防下探 S2 ($140.00) 清算底；反抽测试 R1 ($207.71) 均属诱多；防守位 $137.90，严禁左侧接刀",
+      "scenario_script": "【空头回补滑头剧本】依托 S2 ($140.00) 极限插针底防守，上看第一阻力 R1 ($207.71) 空头回补反抽(不过就跑)；放量逼空看 R2 ($222.72)；击穿止损位 $137.90 严格离场防踩踏",
+      "track": "Track B",
       "four_h_rsi": 34.8,
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": true,
-      "short_rank": 62,
-      "track": "Track B"
+      "short_rank": 61
     },
     "RKLB": {
       "rank": 28,
@@ -7682,12 +7685,12 @@
       "r1": 57.44,
       "r2": 61.01,
       "scenario_script": "【破位飞刀剧本】均线空头排列破位，下方严防下探 S2 ($50.16) 清算底；反抽测试 R1 ($57.44) 均属诱多；防守位 $49.41，严禁左侧接刀",
+      "track": "Track B",
       "four_h_rsi": 40.5,
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 21,
-      "track": "Track B"
+      "short_rank": 21
     },
     "DELL": {
       "rank": 29,
@@ -7715,7 +7718,7 @@
       "stop_loss_price": 308.48,
       "stop_loss_pct": 7.0,
       "action": "🚨 暴跌熔断·严禁左侧接刀",
-      "action_tag": "action-warning",
+      "action_tag": "action-rebound",
       "model_raw_short_prob_pct": 51.9,
       "calibrated_short_win_rate_pct": 56.9,
       "short_entry_price": 418.9649963378906,
@@ -7736,13 +7739,13 @@
       "sl": 325.05,
       "r1": 440.63,
       "r2": 469.36,
-      "scenario_script": "【破位飞刀剧本】均线空头排列破位，下方严防下探 S2 ($330.00) 清算底；反抽测试 R1 ($440.63) 均属诱多；防守位 $325.05，严禁左侧接刀",
+      "scenario_script": "【空头回补滑头剧本】依托 S2 ($330.00) 极限插针底防守，上看第一阻力 R1 ($440.63) 空头回补反抽(不过就跑)；放量逼空看 R2 ($469.36)；击穿止损位 $325.05 严格离场防踩踏",
+      "track": "Track B",
       "four_h_rsi": 35.8,
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": true,
-      "short_rank": 49,
-      "track": "Track B"
+      "short_rank": 49
     },
     "ASTS": {
       "rank": 30,
@@ -7792,12 +7795,12 @@
       "r1": 42.01,
       "r2": 44.87,
       "scenario_script": "【空头回补滑头剧本】依托 S2 ($30.00) 极限插针底防守，上看第一阻力 R1 ($42.01) 空头回补反抽(不过就跑)；放量逼空看 R2 ($44.87)；击穿止损位 $29.55 严格离场防踩踏",
+      "track": "Track B",
       "four_h_rsi": 35.2,
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": true,
-      "short_rank": 69,
-      "track": "Track B"
+      "short_rank": 69
     },
     "PLTR": {
       "rank": 31,
@@ -7847,12 +7850,12 @@
       "r1": 191.15,
       "r2": 200.49,
       "scenario_script": "【黄金坑做多剧本】回踩波段支撑 S1 ($177.90) 蓄势不破，看多头反弹测试 R1 ($191.15)；突破顺势看 R2 ($200.49)；有效跌破止损位 $157.60 离场",
+      "track": "Track B",
       "four_h_rsi": 42.3,
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 63,
-      "track": "Track B"
+      "short_rank": 62
     },
     "CRWV": {
       "rank": 32,
@@ -7902,12 +7905,12 @@
       "r1": 58.13,
       "r2": 62.47,
       "scenario_script": "【空头回补滑头剧本】依托 S2 ($45.00) 极限插针底防守，上看第一阻力 R1 ($58.13) 空头回补反抽(不过就跑)；放量逼空看 R2 ($62.47)；击穿止损位 $44.33 严格离场防踩踏",
+      "track": "Track B",
       "four_h_rsi": 34.2,
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": true,
-      "short_rank": 48,
-      "track": "Track B"
+      "short_rank": 48
     },
     "MARA": {
       "rank": 33,
@@ -7957,12 +7960,12 @@
       "r1": 7.15,
       "r2": 7.65,
       "scenario_script": "【空头回补滑头剧本】依托 S2 ($6.00) 极限插针底防守，上看第一阻力 R1 ($7.15) 空头回补反抽(不过就跑)；放量逼空看 R2 ($7.65)；击穿止损位 $5.91 严格离场防踩踏",
+      "track": "Track B",
       "four_h_rsi": 28.6,
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": false,
-      "short_rank": 45,
-      "track": "Track B"
+      "short_rank": 45
     },
     "APLD": {
       "rank": 34,
@@ -8012,12 +8015,12 @@
       "r1": 18.87,
       "r2": 20.28,
       "scenario_script": "【空头回补滑头剧本】依托 S2 ($14.50) 极限插针底防守，上看第一阻力 R1 ($18.87) 空头回补反抽(不过就跑)；放量逼空看 R2 ($20.28)；击穿止损位 $14.28 严格离场防踩踏",
+      "track": "Track B",
       "four_h_rsi": 37.3,
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": true,
-      "short_rank": 58,
-      "track": "Track B"
+      "short_rank": 57
     },
     "FPS": {
       "rank": 35,
@@ -8067,12 +8070,12 @@
       "r1": 27.38,
       "r2": 29.42,
       "scenario_script": "【空头回补滑头剧本】依托 S2 ($17.00) 极限插针底防守，上看第一阻力 R1 ($27.38) 空头回补反抽(不过就跑)；放量逼空看 R2 ($29.42)；击穿止损位 $16.75 严格离场防踩踏",
+      "track": "Track B",
       "four_h_rsi": 37.1,
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": true,
-      "short_rank": 61,
-      "track": "Track B"
+      "short_rank": 59
     },
     "COIN": {
       "rank": 36,
@@ -8122,12 +8125,12 @@
       "r1": 150.37,
       "r2": 159.43,
       "scenario_script": "【空头回补滑头剧本】依托 S2 ($131.89) 极限插针底防守，上看第一阻力 R1 ($150.37) 空头回补反抽(不过就跑)；放量逼空看 R2 ($159.43)；击穿止损位 $129.91 严格离场防踩踏",
+      "track": "Track B",
       "four_h_rsi": 32.8,
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": false,
-      "short_rank": 44,
-      "track": "Track B"
+      "short_rank": 44
     },
     "AMD": {
       "rank": 37,
@@ -8177,12 +8180,12 @@
       "r1": 527.06,
       "r2": 556.6,
       "scenario_script": "【战术推演剧本】下方防守支撑 S1 ($485.16)/S2 ($400.00)，上方阻力目标 R1 ($527.06)/R2 ($556.60)；跌破防守止损位 $394.00 严格离场",
+      "track": "Track B",
       "four_h_rsi": 40.2,
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 35,
-      "track": "Track B"
+      "short_rank": 35
     },
     "VST": {
       "rank": 38,
@@ -8232,12 +8235,12 @@
       "r1": 143.92,
       "r2": 151.29,
       "scenario_script": "【黄金坑做多剧本】回踩波段支撑 S1 ($133.47) 蓄势不破，看多头反弹测试 R1 ($143.92)；突破顺势看 R2 ($151.29)；有效跌破止损位 $118.20 离场",
+      "track": "Track B",
       "four_h_rsi": 42.4,
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 65,
-      "track": "Track B"
+      "short_rank": 65
     },
     "SNDK": {
       "rank": 39,
@@ -8287,12 +8290,12 @@
       "r1": 1206.13,
       "r2": 1285.89,
       "scenario_script": "【空头回补滑头剧本】依托 S2 ($800.00) 极限插针底防守，上看第一阻力 R1 ($1206.13) 空头回补反抽(不过就跑)；放量逼空看 R2 ($1285.89)；击穿止损位 $788.00 严格离场防踩踏",
+      "track": "Track B",
       "four_h_rsi": 33.4,
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": true,
-      "short_rank": 40,
-      "track": "Track B"
+      "short_rank": 40
     },
     "ASML": {
       "rank": 40,
@@ -8342,12 +8345,12 @@
       "r1": 1618.7,
       "r2": 1688.74,
       "scenario_script": "【战术推演剧本】下方防守支撑 S1 ($1519.31)/S2 ($1300.00)，上方阻力目标 R1 ($1618.70)/R2 ($1688.74)；跌破防守止损位 $1280.50 严格离场",
+      "track": "Track B",
       "four_h_rsi": 39.3,
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 37,
-      "track": "Track B"
+      "short_rank": 37
     },
     "MU": {
       "rank": 41,
@@ -8397,12 +8400,12 @@
       "r1": 921.45,
       "r2": 970.15,
       "scenario_script": "【战术推演剧本】下方防守支撑 S1 ($852.35)/S2 ($600.00)，上方阻力目标 R1 ($921.45)/R2 ($970.15)；跌破防守止损位 $591.00 严格离场",
+      "track": "Track B",
       "four_h_rsi": 42.4,
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": true,
-      "short_rank": 38,
-      "track": "Track B"
+      "short_rank": 38
     },
     "AAOI": {
       "rank": 42,
@@ -8432,32 +8435,32 @@
       "action": "🚨 暴跌熔断·严禁左侧接刀",
       "action_tag": "action-rebound",
       "model_raw_short_prob_pct": 55.1,
-      "calibrated_short_win_rate_pct": 53.5,
+      "calibrated_short_win_rate_pct": 51.2,
       "short_entry_price": 69.05000305175781,
       "short_target_profit_price": 45.15,
       "short_target_profit_pct": 9.5,
       "short_stop_loss_price": 53.35,
       "short_stop_loss_pct": 7.0,
       "dollar_pcr": 0.52,
-      "pcr": 0.96,
+      "pcr": 0.56,
       "pcr_sentiment": "🟢 资金偏多看涨",
-      "put_wall": 130.0,
-      "call_wall": 135.0,
-      "iv_atm": 82.8,
+      "put_wall": 48.0,
+      "call_wall": 50.0,
+      "iv_atm": 169.2,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
       "s1": 65.42,
-      "s2": 62.04,
-      "sl": 61.11,
+      "s2": 48.0,
+      "sl": 47.28,
       "r1": 73.16,
       "r2": 78.61,
-      "scenario_script": "【空头回补滑头剧本】依托 S2 ($62.04) 极限插针底防守，上看第一阻力 R1 ($73.16) 空头回补反抽(不过就跑)；放量逼空看 R2 ($78.61)；击穿止损位 $61.11 严格离场防踩踏",
+      "scenario_script": "【空头回补滑头剧本】依托 S2 ($48.00) 极限插针底防守，上看第一阻力 R1 ($73.16) 空头回补反抽(不过就跑)；放量逼空看 R2 ($78.61)；击穿止损位 $47.28 严格离场防踩踏",
+      "track": "Track B",
       "four_h_rsi": 36.9,
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 59,
-      "track": "Track B"
+      "short_rank": 60
     },
     "CRDO": {
       "rank": 43,
@@ -8485,7 +8488,7 @@
       "stop_loss_price": 112.99,
       "stop_loss_pct": 7.0,
       "action": "🚨 暴跌熔断·严禁左侧接刀",
-      "action_tag": "action-warning",
+      "action_tag": "action-rebound",
       "model_raw_short_prob_pct": 58.0,
       "calibrated_short_win_rate_pct": 62.9,
       "short_entry_price": 150.99000549316406,
@@ -8506,13 +8509,13 @@
       "sl": 113.27,
       "r1": 159.97,
       "r2": 171.89,
-      "scenario_script": "【破位飞刀剧本】均线空头排列破位，下方严防下探 S2 ($115.00) 清算底；反抽测试 R1 ($159.97) 均属诱多；防守位 $113.27，严禁左侧接刀",
+      "scenario_script": "【空头回补滑头剧本】依托 S2 ($115.00) 极限插针底防守，上看第一阻力 R1 ($159.97) 空头回补反抽(不过就跑)；放量逼空看 R2 ($171.89)；击穿止损位 $113.27 严格离场防踩踏",
+      "track": "Track B",
       "four_h_rsi": 38.8,
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": true,
-      "short_rank": 33,
-      "track": "Track B"
+      "short_rank": 33
     },
     "NBIS": {
       "rank": 44,
@@ -8562,12 +8565,12 @@
       "r1": 163.31,
       "r2": 175.48,
       "scenario_script": "【空头回补滑头剧本】依托 S2 ($130.00) 极限插针底防守，上看第一阻力 R1 ($163.31) 空头回补反抽(不过就跑)；放量逼空看 R2 ($175.48)；击穿止损位 $128.05 严格离场防踩踏",
+      "track": "Track B",
       "four_h_rsi": 36.3,
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": true,
-      "short_rank": 36,
-      "track": "Track B"
+      "short_rank": 36
     },
     "AMAT": {
       "rank": 45,
@@ -8617,12 +8620,12 @@
       "r1": 406.21,
       "r2": 427.59,
       "scenario_script": "【破位飞刀剧本】均线空头排列破位，下方严防下探 S2 ($332.50) 清算底；反抽测试 R1 ($406.21) 均属诱多；防守位 $327.51，严禁左侧接刀",
+      "track": "Track B",
       "four_h_rsi": 37.0,
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": true,
-      "short_rank": 47,
-      "track": "Track B"
+      "short_rank": 47
     },
     "BE": {
       "rank": 46,
@@ -8650,7 +8653,7 @@
       "stop_loss_price": 162.34,
       "stop_loss_pct": 7.0,
       "action": "🚨 暴跌熔断·严禁左侧接刀",
-      "action_tag": "action-warning",
+      "action_tag": "action-rebound",
       "model_raw_short_prob_pct": 58.6,
       "calibrated_short_win_rate_pct": 58.3,
       "short_entry_price": 203.1699981689453,
@@ -8671,13 +8674,13 @@
       "sl": 172.38,
       "r1": 215.12,
       "r2": 230.98,
-      "scenario_script": "【破位飞刀剧本】均线空头排列破位，下方严防下探 S2 ($175.00) 清算底；反抽测试 R1 ($215.12) 均属诱多；防守位 $172.38，严禁左侧接刀",
+      "scenario_script": "【空头回补滑头剧本】依托 S2 ($175.00) 极限插针底防守，上看第一阻力 R1 ($215.12) 空头回补反抽(不过就跑)；放量逼空看 R2 ($230.98)；击穿止损位 $172.38 严格离场防踩踏",
+      "track": "Track B",
       "four_h_rsi": 39.7,
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": true,
-      "short_rank": 43,
-      "track": "Track B"
+      "short_rank": 43
     },
     "HPE": {
       "rank": 47,
@@ -8727,12 +8730,12 @@
       "r1": 57.07,
       "r2": 60.32,
       "scenario_script": "【战术推演剧本】下方防守支撑 S1 ($52.46)/S2 ($46.00)，上方阻力目标 R1 ($57.07)/R2 ($60.32)；跌破防守止损位 $45.31 严格离场",
+      "track": "Track B",
       "four_h_rsi": 40.3,
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": true,
-      "short_rank": 64,
-      "track": "Track B"
+      "short_rank": 63
     },
     "STX": {
       "rank": 48,
@@ -8782,12 +8785,12 @@
       "r1": 677.27,
       "r2": 720.63,
       "scenario_script": "【破位飞刀剧本】均线空头排列破位，下方严防下探 S2 ($445.00) 清算底；反抽测试 R1 ($677.27) 均属诱多；防守位 $438.32，严禁左侧接刀",
+      "track": "Track B",
       "four_h_rsi": 38.0,
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": true,
-      "short_rank": 50,
-      "track": "Track B"
+      "short_rank": 50
     },
     "AVGO": {
       "rank": 49,
@@ -8837,12 +8840,12 @@
       "r1": 337.11,
       "r2": 351.75,
       "scenario_script": "【战术推演剧本】下方防守支撑 S1 ($316.35)/S2 ($297.50)，上方阻力目标 R1 ($337.11)/R2 ($351.75)；跌破防守止损位 $293.04 严格离场",
+      "track": "Track B",
       "four_h_rsi": 41.3,
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": true,
-      "short_rank": 51,
-      "track": "Track B"
+      "short_rank": 52
     },
     "AXTI": {
       "rank": 50,
@@ -8892,12 +8895,12 @@
       "r1": 59.55,
       "r2": 63.99,
       "scenario_script": "【破位飞刀剧本】均线空头排列破位，下方严防下探 S2 ($36.00) 清算底；反抽测试 R1 ($59.55) 均属诱多；防守位 $35.46，严禁左侧接刀",
+      "track": "Track B",
       "four_h_rsi": 43.9,
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": true,
-      "short_rank": 70,
-      "track": "Track B"
+      "short_rank": 70
     },
     "SKHY": {
       "rank": 51,
@@ -8947,12 +8950,12 @@
       "r1": 162.17,
       "r2": 171.04,
       "scenario_script": "【战术推演剧本】下方防守支撑 S1 ($149.60)/S2 ($121.00)，上方阻力目标 R1 ($162.17)/R2 ($171.04)；跌破防守止损位 $119.19 严格离场",
+      "track": "Track B",
       "four_h_rsi": 48.3,
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": true,
-      "short_rank": 52,
-      "track": "Track B"
+      "short_rank": 51
     },
     "LITE": {
       "rank": 52,
@@ -9002,12 +9005,12 @@
       "r1": 885.52,
       "r2": 944.98,
       "scenario_script": "【战术推演剧本】下方防守支撑 S1 ($801.15)/S2 ($515.00)，上方阻力目标 R1 ($885.52)/R2 ($944.98)；跌破防守止损位 $507.27 严格离场",
+      "track": "Track B",
       "four_h_rsi": 44.9,
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": true,
-      "short_rank": 57,
-      "track": "Track B"
+      "short_rank": 56
     },
     "VRT": {
       "rank": 53,
@@ -9057,12 +9060,12 @@
       "r1": 245.3,
       "r2": 259.02,
       "scenario_script": "【黄金坑做多剧本】回踩波段支撑 S1 ($225.82) 蓄势不破，看多头反弹测试 R1 ($245.30)；突破顺势看 R2 ($259.02)；有效跌破止损位 $179.76 离场",
+      "track": "Track B",
       "four_h_rsi": 52.4,
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": true,
-      "short_rank": 66,
-      "track": "Track B"
+      "short_rank": 66
     },
     "ORCL": {
       "rank": 54,
@@ -9112,12 +9115,12 @@
       "r1": 136.31,
       "r2": 143.79,
       "scenario_script": "【战术推演剧本】下方防守支撑 S1 ($125.69)/S2 ($110.00)，上方阻力目标 R1 ($136.31)/R2 ($143.79)；跌破防守止损位 $108.35 严格离场",
+      "track": "Track B",
       "four_h_rsi": 46.0,
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 39,
-      "track": "Track B"
+      "short_rank": 39
     },
     "WDC": {
       "rank": 55,
@@ -9167,12 +9170,12 @@
       "r1": 382.79,
       "r2": 404.91,
       "scenario_script": "【破位飞刀剧本】均线空头排列破位，下方严防下探 S2 ($270.00) 清算底；反抽测试 R1 ($382.79) 均属诱多；防守位 $265.95，严禁左侧接刀",
+      "track": "Track B",
       "four_h_rsi": 43.7,
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": true,
-      "short_rank": 41,
-      "track": "Track B"
+      "short_rank": 41
     },
     "QQQM": {
       "rank": 56,
@@ -9202,32 +9205,32 @@
       "action": "🚨 暴跌熔断·严禁左侧接刀",
       "action_tag": "action-watch",
       "model_raw_short_prob_pct": 56.4,
-      "calibrated_short_win_rate_pct": 55.4,
+      "calibrated_short_win_rate_pct": 50.4,
       "short_entry_price": 284.3399963378906,
       "short_target_profit_price": 262.1,
       "short_target_profit_pct": 3.1,
       "short_stop_loss_price": 276.92,
       "short_stop_loss_pct": 2.3,
-      "dollar_pcr": 2.14,
-      "pcr": 1.04,
-      "pcr_sentiment": "🔴 资金偏空对冲",
-      "put_wall": 270.0,
-      "call_wall": 270.0,
-      "iv_atm": 37.4,
-      "short_action": "⚡ 逢高反抽沽空/买Put",
-      "short_action_tag": "short-action-rebound",
+      "dollar_pcr": 1.0,
+      "pcr": 1.0,
+      "pcr_sentiment": "⛅ 中性",
+      "put_wall": 270.12,
+      "call_wall": 298.56,
+      "iv_atm": 30.0,
+      "short_action": "👀 空头动能不足·观望",
+      "short_action_tag": "short-action-wait",
       "s1": 277.23,
-      "s2": 270.0,
-      "sl": 265.95,
+      "s2": 270.12,
+      "sl": 266.07,
       "r1": 292.87,
       "r2": 301.4,
-      "scenario_script": "【黄金坑做多剧本】回踩波段支撑 S1 ($277.23) 蓄势不破，看多头反弹测试 R1 ($292.87)；突破顺势看 R2 ($301.40)；有效跌破止损位 $265.95 离场",
+      "scenario_script": "【黄金坑做多剧本】回踩波段支撑 S1 ($277.23) 蓄势不破，看多头反弹测试 R1 ($292.87)；突破顺势看 R2 ($301.40)；有效跌破止损位 $266.07 离场",
+      "track": "Track A",
       "four_h_rsi": 35.7,
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 53,
-      "track": "Track A"
+      "short_rank": 64
     },
     "KORU": {
       "rank": 57,
@@ -9277,12 +9280,12 @@
       "r1": 12.43,
       "r2": 13.36,
       "scenario_script": "【空头回补滑头剧本】依托 S2 ($6.50) 极限插针底防守，上看第一阻力 R1 ($12.43) 空头回补反抽(不过就跑)；放量逼空看 R2 ($13.36)；击穿止损位 $6.40 严格离场防踩踏",
+      "track": "Track A",
       "four_h_rsi": 41.7,
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 68,
-      "track": "Track A"
+      "short_rank": 68
     },
     "SOXL": {
       "rank": 58,
@@ -9332,12 +9335,12 @@
       "r1": 84.81,
       "r2": 91.13,
       "scenario_script": "【空头回补滑头剧本】依托 S2 ($45.00) 极限插针底防守，上看第一阻力 R1 ($84.81) 空头回补反抽(不过就跑)；放量逼空看 R2 ($91.13)；击穿止损位 $44.33 严格离场防踩踏",
+      "track": "Track A",
       "four_h_rsi": 36.6,
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 67,
-      "track": "Track A"
+      "short_rank": 67
     },
     "SMH": {
       "rank": 59,
@@ -9387,12 +9390,12 @@
       "r1": 540.3,
       "r2": 563.93,
       "scenario_script": "【战术推演剧本】下方防守支撑 S1 ($506.77)/S2 ($467.50)，上方阻力目标 R1 ($540.30)/R2 ($563.93)；跌破防守止损位 $460.49 严格离场",
+      "track": "Track A",
       "four_h_rsi": 37.6,
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 46,
-      "track": "Track A"
+      "short_rank": 46
     },
     "IBIT": {
       "rank": 60,
@@ -9442,12 +9445,12 @@
       "r1": 44.66,
       "r2": 45.96,
       "scenario_script": "【黄金坑做多剧本】回踩波段支撑 S1 ($42.28) 蓄势不破，看多头反弹测试 R1 ($44.66)；突破顺势看 R2 ($45.96)；有效跌破止损位 $40.79 离场",
+      "track": "Track A",
       "four_h_rsi": 37.3,
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 5,
-      "track": "Track A"
+      "short_rank": 5
     },
     "GLD": {
       "rank": 61,
@@ -9497,12 +9500,12 @@
       "r1": 366.45,
       "r2": 377.13,
       "scenario_script": "【战术推演剧本】下方防守支撑 S1 ($346.89)/S2 ($339.77)，上方阻力目标 R1 ($366.45)/R2 ($377.13)；跌破防守止损位 $334.67 严格离场",
+      "track": "Track A",
       "four_h_rsi": 31.3,
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 1,
-      "track": "Track A"
+      "short_rank": 1
     },
     "SOXX": {
       "rank": 62,
@@ -9552,12 +9555,12 @@
       "r1": 495.14,
       "r2": 518.2,
       "scenario_script": "【战术推演剧本】下方防守支撑 S1 ($462.41)/S2 ($448.09)，上方阻力目标 R1 ($495.14)/R2 ($518.20)；跌破防守止损位 $441.37 严格离场",
+      "track": "Track A",
       "four_h_rsi": 38.9,
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 54,
-      "track": "Track A"
+      "short_rank": 53
     },
     "TLT": {
       "rank": 63,
@@ -9607,12 +9610,12 @@
       "r1": 84.3,
       "r2": 86.75,
       "scenario_script": "【黄金坑做多剧本】回踩波段支撑 S1 ($79.79) 蓄势不破，看多头反弹测试 R1 ($84.30)；突破顺势看 R2 ($86.75)；有效跌破止损位 $76.99 离场",
+      "track": "Track A",
       "four_h_rsi": 62.9,
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 26,
-      "track": "Track A"
+      "short_rank": 26
     },
     "IWM": {
       "rank": 64,
@@ -9662,12 +9665,12 @@
       "r1": 291.21,
       "r2": 299.69,
       "scenario_script": "【黄金坑做多剧本】回踩波段支撑 S1 ($275.66) 蓄势不破，看多头反弹测试 R1 ($291.21)；突破顺势看 R2 ($299.69)；有效跌破止损位 $265.95 离场",
+      "track": "Track A",
       "four_h_rsi": 54.7,
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 20,
-      "track": "Track A"
+      "short_rank": 20
     },
     "QQQI": {
       "rank": 65,
@@ -9717,12 +9720,12 @@
       "r1": 53.67,
       "r2": 55.23,
       "scenario_script": "【黄金坑做多剧本】回踩波段支撑 S1 ($50.80) 蓄势不破，看多头反弹测试 R1 ($53.67)；突破顺势看 R2 ($55.23)；有效跌破止损位 $47.28 离场",
+      "track": "Track A",
       "four_h_rsi": 39.2,
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 16,
-      "track": "Track A"
+      "short_rank": 16
     },
     "IGV": {
       "rank": 66,
@@ -9772,12 +9775,12 @@
       "r1": 107.42,
       "r2": 110.58,
       "scenario_script": "【黄金坑做多剧本】回踩波段支撑 S1 ($101.68) 蓄势不破，看多头反弹测试 R1 ($107.42)；突破顺势看 R2 ($110.58)；有效跌破止损位 $97.52 离场",
+      "track": "Track A",
       "four_h_rsi": 41.7,
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 18,
-      "track": "Track A"
+      "short_rank": 18
     },
     "SPY": {
       "rank": 67,
@@ -9827,12 +9830,12 @@
       "r1": 778.39,
       "r2": 801.06,
       "scenario_script": "【黄金坑做多剧本】回踩波段支撑 S1 ($736.83) 蓄势不破，看多头反弹测试 R1 ($778.39)；突破顺势看 R2 ($801.06)；有效跌破止损位 $710.88 离场",
+      "track": "Track A",
       "four_h_rsi": 40.9,
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 12,
-      "track": "Track A"
+      "short_rank": 12
     },
     "VIXY": {
       "rank": 68,
@@ -9882,12 +9885,12 @@
       "r1": 19.16,
       "r2": 21.0,
       "scenario_script": "【右侧主升剧本】依托波段支撑 S1 ($17.75) 逢低做多，上看阻力 R1 ($19.16) 与突破扩展目标 R2 ($21.00)；关键防守位 $16.88",
+      "track": "Track A",
       "four_h_rsi": 60.0,
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 9,
-      "track": "Track A"
+      "short_rank": 9
     },
     "DIA": {
       "rank": 69,
@@ -9937,12 +9940,12 @@
       "r1": 538.37,
       "r2": 554.05,
       "scenario_script": "【黄金坑做多剧本】回踩波段支撑 S1 ($509.62) 蓄势不破，看多头反弹测试 R1 ($538.37)；突破顺势看 R2 ($554.05)；有效跌破止损位 $491.68 离场",
+      "track": "Track A",
       "four_h_rsi": 52.8,
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 23,
-      "track": "Track A"
+      "short_rank": 23
     },
     "SOXS": {
       "rank": 70,
@@ -9992,12 +9995,12 @@
       "r1": 53.03,
       "r2": 70.0,
       "scenario_script": "【右侧主升剧本】依托波段支撑 S1 ($47.42) 逢低做多，上看阻力 R1 ($53.03) 与突破扩展目标 R2 ($70.00)；关键防守位 $44.30",
+      "track": "Track A",
       "four_h_rsi": 57.5,
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 29,
-      "track": "Track A"
+      "short_rank": 29
     },
     "SQQQ": {
       "rank": 71,
@@ -10047,13 +10050,22 @@
       "r1": 42.12,
       "r2": 50.0,
       "scenario_script": "【右侧主升剧本】依托波段支撑 S1 ($38.99) 逢低做多，上看阻力 R1 ($42.12) 与突破扩展目标 R2 ($50.00)；关键防守位 $37.06",
+      "track": "Track A",
       "four_h_rsi": 59.4,
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 4,
-      "track": "Track A"
+      "short_rank": 4
     }
+  },
+  "defensive_flight": {
+    "is_alert": true,
+    "flight_score": 4.13,
+    "def_mean_chg": 1.44,
+    "off_mean_chg": -2.69,
+    "alert_text": "🚨 防御因子起飞 · 警惕机构盘中去杠杆踩踏 (+4.1%)",
+    "banner_text": "🚨 防御因子起飞 · 警惕机构盘中去杠杆踩踏",
+    "badge": "badge-alert"
   },
   "time_cycle_projections": {
     "SOXL": {
@@ -11497,12 +11509,12 @@
       "r1": 351.02,
       "r2": 361.25,
       "scenario_script": "【黄金坑做多剧本】回踩波段支撑 S1 ($332.28) 蓄势不破，看多头反弹测试 R1 ($351.02)；突破顺势看 R2 ($361.25)；有效跌破止损位 $320.58 离场",
+      "track": "Track A",
       "four_h_rsi": 50.6,
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 6,
-      "track": "Track A"
+      "short_rank": 6
     },
     {
       "rank": 2,
@@ -11552,12 +11564,12 @@
       "r1": 179.29,
       "r2": 187.39,
       "scenario_script": "【黄金坑做多剧本】回踩波段支撑 S1 ($167.80) 蓄势不破，看多头反弹测试 R1 ($179.29)；突破顺势看 R2 ($187.39)；有效跌破止损位 $160.34 离场",
+      "track": "Track A",
       "four_h_rsi": 47.9,
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 8,
-      "track": "Track A"
+      "short_rank": 8
     },
     {
       "rank": 3,
@@ -11607,12 +11619,12 @@
       "r1": 337.79,
       "r2": 347.63,
       "scenario_script": "【黄金坑做多剧本】回踩波段支撑 S1 ($319.75) 蓄势不破，看多头反弹测试 R1 ($337.79)；突破顺势看 R2 ($347.63)；有效跌破止损位 $308.49 离场",
+      "track": "Track A",
       "four_h_rsi": 60.9,
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 27,
-      "track": "Track A"
+      "short_rank": 27
     },
     {
       "rank": 4,
@@ -11662,12 +11674,12 @@
       "r1": 260.77,
       "r2": 269.62,
       "scenario_script": "【黄金坑做多剧本】回踩波段支撑 S1 ($246.84) 蓄势不破，看多头反弹测试 R1 ($260.77)；突破顺势看 R2 ($269.62)；有效跌破止损位 $237.49 离场",
+      "track": "Track A",
       "four_h_rsi": 50.3,
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 28,
-      "track": "Track A"
+      "short_rank": 28
     },
     {
       "rank": 5,
@@ -11717,12 +11729,12 @@
       "r1": 142.97,
       "r2": 147.14,
       "scenario_script": "【右侧主升剧本】依托波段支撑 S1 ($135.34) 逢低做多，上看阻力 R1 ($142.97) 与突破扩展目标 R2 ($147.14)；关键防守位 $130.57",
+      "track": "Track A",
       "four_h_rsi": 63.1,
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 11,
-      "track": "Track A"
+      "short_rank": 11
     },
     {
       "rank": 6,
@@ -11772,12 +11784,12 @@
       "r1": 97.72,
       "r2": 100.57,
       "scenario_script": "【右侧主升剧本】依托波段支撑 S1 ($92.50) 逢低做多，上看阻力 R1 ($97.72) 与突破扩展目标 R2 ($100.57)；关键防守位 $89.25",
+      "track": "Track A",
       "four_h_rsi": 64.2,
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 30,
-      "track": "Track A"
+      "short_rank": 30
     },
     {
       "rank": 7,
@@ -11827,12 +11839,12 @@
       "r1": 537.57,
       "r2": 553.22,
       "scenario_script": "【黄金坑做多剧本】回踩波段支撑 S1 ($508.86) 蓄势不破，看多头反弹测试 R1 ($537.57)；突破顺势看 R2 ($553.22)；有效跌破止损位 $490.94 离场",
+      "track": "Track A",
       "four_h_rsi": 49.0,
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 14,
-      "track": "Track A"
+      "short_rank": 14
     },
     {
       "rank": 8,
@@ -11882,12 +11894,12 @@
       "r1": 147.07,
       "r2": 154.72,
       "scenario_script": "【黄金坑做多剧本】回踩波段支撑 S1 ($136.21) 蓄势不破，看多头反弹测试 R1 ($147.07)；突破顺势看 R2 ($154.72)；有效跌破止损位 $128.05 离场",
+      "track": "Track A",
       "four_h_rsi": 44.2,
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 13,
-      "track": "Track A"
+      "short_rank": 13
     },
     {
       "rank": 9,
@@ -11937,12 +11949,12 @@
       "r1": 237.35,
       "r2": 280.0,
       "scenario_script": "【右侧主升剧本】依托波段支撑 S1 ($212.26) 逢低做多，上看阻力 R1 ($237.35) 与突破扩展目标 R2 ($280.00)；关键防守位 $198.27",
+      "track": "Track A",
       "four_h_rsi": 57.7,
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 31,
-      "track": "Track A"
+      "short_rank": 31
     },
     {
       "rank": 10,
@@ -11992,12 +12004,12 @@
       "r1": 1448.33,
       "r2": 1500.92,
       "scenario_script": "【右侧主升剧本】依托波段支撑 S1 ($1370.20) 逢低做多，上看阻力 R1 ($1448.33) 与突破扩展目标 R2 ($1500.92)；关键防守位 $1316.60",
+      "track": "Track A",
       "four_h_rsi": 73.8,
       "four_h_div": "🔴 4H 顶背离滞涨 (防回踩)",
       "four_h_tag": "div-bear",
       "is_short_covering": false,
-      "short_rank": 32,
-      "track": "Track A"
+      "short_rank": 32
     }
   ]
 }
