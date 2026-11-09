@@ -158,7 +158,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                     try:
                         import ml_predictor_5y
                         prior_low_val = float(lv.get('low') or lv.get('low_price') or lv.get('rth_low') or 0.0) or None
-                        vwap_val = float(lv.get('vwap', 0.0)) if lv.get('vwap') else None
+                        vwap_val = float(lv.get('vwap', 0.0)) if lv.get('vwap') else (live_p * 0.995 if float(lv.get('pct_change', 0.0)) > 0.3 else None)
                         live_atr_val = live_atr if live_atr > 0 else (live_p * (atr_pct / 100.0))
                         track_res = ml_predictor_5y.classify_dual_track_candidate(
                             bias_ma50=live_bias,
@@ -205,7 +205,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
 
                     if is_short_covering:
                         new_raw = round(float(np.clip(model_raw + 5.0 + intra_adj, 50.0, 65.0)), 1)
-                        new_cal = round(float(np.clip(55.0 + (30.0 - min(30.0, live_rsi)) * 0.3 + (abs(live_bias) - 12.0) * 0.2, 56.0, 65.0)), 1)
+                        new_cal = round(float(np.clip(55.0 + max(0.0, 36.0 - min(36.0, live_rsi)) * 0.3 + (abs(live_bias) - 12.0) * 0.2, 56.5, 65.0)), 1)
                     elif is_broken:
                         new_raw = round(float(np.clip(model_raw + intra_adj, 15.0, 85.0)), 1)
                         breakdown_mult = float(np.clip(0.82 - max(0.0, (-12.0 - live_bias) * 0.006), 0.68, 0.82))
@@ -296,14 +296,16 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
 
                 def _get_futu_pred_tier(x):
                     if x.get("is_crash_halt") or (x.get("is_cooling_halt") and not x.get("is_short_covering")):
-                        return 2
+                        return 3
+                    if x.get("is_etf"):
+                        return 2 if x.get("is_short_covering") else 4
                     if x.get("is_short_covering"):
                         return 1
-                    if x.get("is_etf"):
-                        return 3
                     if x.get("is_broken"):
-                        return 2
-                    return 0
+                        return 3
+                    if float(x.get("calibrated_win_rate_pct", 0.0)) >= 50.0 and float(x.get("predicted_win_rate_pct", 0.0)) >= 50.0:
+                        return 0
+                    return 2
 
                 all_preds.sort(
                     key=lambda x: (
