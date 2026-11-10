@@ -1,140 +1,176 @@
-# TEST_READY — Anti-Cheat Unit Test Suite for AI Multi-Sector 5Y Predictor
+# TEST_READY — Automated Test Suite & Invariant Verification for Discord Sentinel
 
-**Milestone**: M0 (Anti-Cheat Test Suite & Infra)  
-**Target Module**: `ml_predictor_5y.py`  
-**Test Suite File**: `test_ml_predictor.py`  
-**Status**: 100% PASS (16/16 tests passing, 0 errors, 0 failures)  
-**Execution Time**: ~1.3s  
+**Milestone**: M0 (Automated Test Suite & Infra)  
+**Target Module**: `discord_sentinel.py` & `integrated_market_radar.py` linkage  
+**Test Suite File**: `test_discord_sentinel.py`  
+**Execution Time**: ~0.74s  
+**Test Framework**: Python built-in `unittest`  
+**Network Dependency**: 100% Offline (Deterministic synthetic fixtures)  
 
 ---
 
 ## 1. Quick Start / How to Run
 
-To run the complete automated anti-cheat unit test suite, execute from the repository root:
+To run the complete automated Discord Sentinel test suite from the repository root:
 
 ```powershell
-# Standard Python unittest execution
-python -m unittest test_ml_predictor.py -v
+# Direct test runner execution with summary report
+python test_discord_sentinel.py
 
-# Or direct execution
-python test_ml_predictor.py
+# Or via Python standard unittest module
+python -m unittest test_discord_sentinel.py -v
 ```
 
 ### Environment Requirements
 - Python >= 3.10 (Tested on Python 3.14-64)
-- Core dependencies: `pandas`, `numpy`, `scipy`, `lightgbm`, `scikit-learn`, `pyarrow`
+- Dependencies: `pandas`, `numpy`, `requests`, `yfinance`
 
 ---
 
-## 2. Test Suite Architecture & Structural Invariants
+## 2. Test Suite Architecture & Coverage Tiers
 
-The test suite implements 6 core structural anti-cheat invariant categories plus adversarial boundary stress testing, strictly derived from `ORIGINAL_REQUEST.md` (§R1–R4) and `TEST_INFRA.md`:
+The test suite enforces 14 rigorous invariant tests across 4 functional tiers and configuration foundations, strictly derived from `ORIGINAL_REQUEST.md`, `PROJECT.md`, `TEST_INFRA.md`, and Explorer handoffs:
 
-| # | Invariant Category | Authoritative Requirement | Test Case Method(s) | Status |
-|---|--------------------|---------------------------|---------------------|--------|
-| 1 | **Feature Causality & No Lookahead** | `ORIGINAL_REQUEST §R2` | `test_feature_causality_no_lookahead`<br>`test_ast_no_negative_shifts`<br>`test_future_spike_insensitivity` | **PASS** |
-| 2 | **Purge & Embargo Isolation** | `ORIGINAL_REQUEST §R4` | `test_purge_embargo_isolation`<br>`test_training_label_horizon_no_test_leakage` | **PASS** |
-| 3 | **Subsample & Secondary IPO Preservation** | `ORIGINAL_REQUEST §R1` | `test_subsample_and_ipo_preservation`<br>`test_ast_no_wide_dropna` | **PASS** |
-| 4 | **Extreme Market Resilience** | `ORIGINAL_REQUEST §AC` | `test_extreme_market_resilience`<br>`test_model_inference_probability_bounds` | **PASS** |
-| 5 | **Triple Barrier Resolution Logic** | `ORIGINAL_REQUEST §R3` | `test_triple_barrier_resolution_logic`<br>`test_entry_price_is_next_open`<br>`test_dynamic_atr_barrier_calculation` | **PASS** |
-| 6 | **Tail Isolation for Live Inference Pool** | `ORIGINAL_REQUEST §R3` | `test_tail_isolation_live_pool` | **PASS** |
-| 7 | **Adversarial & Boundary Stress** | `ORIGINAL_REQUEST §AC` | `test_minimal_history_short_series`<br>`test_missing_macro_dates_left_join`<br>`test_winsorization_bounds_fib_pos` | **PASS** |
-
----
-
-## 3. Detailed Breakdown of Invariant Specifications
-
-### Invariant 1: Feature Causality & No Lookahead
-- **Truncation Invariance**: Features computed on truncated series $[0 \dots T]$ strictly equal features computed on extended series $[0 \dots T+N]$ with $\max |\text{diff}| < 10^{-7}$.
-- **AST Static Scan**: Scans AST of feature engineering functions to assert zero occurrences of `shift(-k)` (negative shift) or illegal future lookahead.
-- **Future Spike Insensitivity**: Injects an adversarial +1000% jump at $T+1$; asserts exact $0.0$ difference on bar $T$ feature vector.
-
-### Invariant 2: Purge & Embargo Isolation
-- **5-Day Purge Gap**: In walk-forward cross-validation splits across 2024, 2025, and 2026, enforces that the training end date and test start date are separated by $\ge 5$ trading days ($\min(TestDate) - \max(TrainDate) \ge 5$).
-- **No Label Leakage**: Validates that for every training sample $t$, its forward 5-day labeling horizon $[t+1 \dots t+5]$ does not reach or overlap the test set ($t+5 < \min(TestDate)$).
-- **Disjoint Sets**: Date indices between training and testing sets have 0 intersection.
-
-### Invariant 3: Subsample & Secondary IPO Preservation
-- **Mature Stock History Protection**: In the Long Panel format (`[Date, Ticker, Sector]`), secondary IPO stocks (CRWV, IBIT, CRDO) do NOT truncate the 2021–2023 history of mature stocks (e.g. NVDA, TSM, MSFT).
-- **No Global Dropna**: Code scan asserts no chained wide-table `.unstack().dropna()` or `.pivot().dropna()` across tickers. Mature stocks retain 100% of their historical bars.
-
-### Invariant 4: Extreme Market Resilience
-- **Synthetic Scenarios Tested**:
-  1. Zero Volume: $Volume = 0.0$ across 100 bars.
-  2. Flat Line Zero Range: $High = Low = Close = Open = 100.0$.
-  3. Extreme Overnight Crash: -50% overnight gap down.
-- **Resilience Invariants**: Zero unhandled `NaN`, zero `Inf`, zero ZeroDivisionError.
-- **Probability Bounding**: Regularized LightGBM model inference on extreme feature vectors outputs probabilities strictly in $[0.0, 1.0]$.
-
-### Invariant 5: Triple Barrier Resolution Logic
-- **Entry Price Guarantee**: Entry price is strictly $NEXT\_OPEN = Open.shift(-1)$ (the Open price of bar $T+1$), eliminating Close-price execution bias.
-- **Path Resolution Matrix**:
-  - Upper barrier hit first $\to$ Label = 1.
-  - Lower barrier hit first $\to$ Label = 0.
-  - Neither barrier hit within $T+5$ bars $\to$ Label = 0 (Timeout).
-  - Same-day collision (both Upper and Lower hit on same bar) $\to$ Label = 0 (Conservative Stop-Loss Priority).
-- **Dynamic ATR Barriers**:
-  - $Upper = NEXT\_OPEN \times (1 + \max(0.035, 1.5 \times ATR\_Pct / 100))$
-  - $Lower = NEXT\_OPEN \times (1 - \max(0.022, 1.0 \times ATR\_Pct / 100))$
-
-### Invariant 6: Tail Isolation for Live Inference Pool
-- **Tail Exclusion**: The most recent 5 trading days are excluded from all training and validation folds.
-- **Unresolved Horizon**: The last 5 bars have `Label = NaN` because their future 5-day path has not elapsed.
-- **Live Inference Reservation**: These 5 bars are isolated for the live inference pool (`predict_pool_today`).
-
-### Invariant 7: Adversarial Integrity & Boundary Stress
-- **Minimal History**: Series with fewer than 60 bars (e.g. 25 bars) completes feature calculation without crash or unhandled NaN.
-- **Missing Macro Dates**: Desynchronized macro ETF dates (e.g. holiday or gap) safely forward-fill without corrupting stock row counts.
-- **Winsorization Clipping**: `Fib_Pos_60` is strictly bounded inside $[-0.5, 1.5]$ regardless of extreme price spikes.
+| Tier | Category Header | Authoritative Invariant | Test Method | M0 Status | Target Milestone |
+|:---|:---|:---|:---|:---:|:---:|
+| **Tier 1** | 5 Core Engineering Corrections | 4H aggregation grouping strictly by Date without cross-day stitching | `test_4h_aggregation_no_cross_day_stitching` | ⏳ Pending M1 | M1 |
+| **Tier 1** | 5 Core Engineering Corrections | Half-day early close and intraday in-progress graceful handling | `test_4h_aggregation_early_close_and_intraday` | ⏳ Pending M1 | M1 |
+| **Tier 1** | 5 Core Engineering Corrections | Pre/post-market snapshot appends temporary bar without mutating historical 15:30 bar | `test_prepost_market_snapshot_does_not_mutate_historical_bars` | ⏳ Pending M1 | M1 |
+| **Tier 1** | 5 Core Engineering Corrections | 1H S/R strict boundary invariant: `1H撑 < active_price < 1H压` under breakdown/breakout/stress | `test_1h_support_resistance_strict_boundary_protection` | ⏳ Pending M1 | M1 |
+| **Tier 1** | 5 Core Engineering Corrections | BTC-USD bypasses Finnhub quote; 51 tickers batch multi-threaded fetch without 429 risk | `test_batch_fetch_and_btc_usd_bypass` | ⏳ Pending M1 | M1 |
+| **Tier 2** | Quantitative Engine & States | 140-bar 25-bin Volume Profile POC using Typical Price $(H+L+C)/3$, flat-line & zero-vol guards | `test_volume_profile_poc_calculation` | ⏳ Pending M2 | M2 |
+| **Tier 2** | Quantitative Engine & States | 5-state RSI state machine with V3.2 3-day crash cooling `(⚠️冷却观察)` & VWAP `(✅右侧企稳)` | `test_rsi_state_machine_transitions` | ⏳ Pending M2 | M2 |
+| **Tier 2** | Quantitative Engine & States | Defense Factor Y = mean(SCHD, KO, GLD) with partial fallback & Divergence Alert (diff $\ge 25$) | `test_defense_factor_y_and_divergence` | ⏳ Pending M2 | M2 |
+| **Tier 2** | Quantitative Engine & States | 3X mirror resonance: SOXL bottom + SOXS top, TQQQ bottom + SQQQ top | `test_3x_mirror_resonance` | ⏳ Pending M2 | M2 |
+| **Tier 3** | Discord Formatting & Limits | Native Discord Markdown: zero occurrences of \`\`\` or \`\`\`text grey codeblocks | `test_embed_native_markdown_no_codeblocks` | ⏳ Pending M3 | M3 |
+| **Tier 3** | Discord Formatting & Limits | Discord payload character limit: Msg 1 $\le 2000$, Msg 2A $\le 5500$, Msg 2B $\le 5500$, $\le 10$ embeds | `test_discord_payload_character_limits` | ⏳ Pending M3 | M3 |
+| **Tier 4** | Radar Daemon Linkage & Safety | Non-blocking async daemon thread linkage (`isDaemon() == True`) with exception isolation | `test_radar_linkage_async_and_isolated` | ⏳ Pending M3 | M3 |
+| **Config** | Universe Definition | Universe contains exactly 51 unique tickers distributed across 5 tiers (4, 12, 13, 13, 9) | `test_universe_structure_and_completeness` | ✅ **PASS** | M0 |
+| **Config** | Environment Configuration | `.env` contains `DISCORD_WEBHOOK_URL` pointing to discordapp.com webhook | `test_env_webhook_configuration` | ⏳ Pending M1 | M1 |
 
 ---
 
-## 4. Test Verification Log
+## 3. Detailed Specification of Test Tiers
+
+### Tier 1: 5 Core Engineering Corrections Invariants
+1. **`test_4h_aggregation_no_cross_day_stitching`**:
+   - Generates 14 1H bars across 2 full trading days.
+   - Enforces grouping strictly by `df.index.date`.
+   - Day 1 yields Bar 1 (09:30..12:30) and Bar 2 (13:30..15:30).
+   - Invariant: Zero bars span between Day 1 and Day 2.
+   - Verifies crypto mode (`BTC-USD`): 24 1H bars per day aggregated into 6 4-hour UTC chunks strictly bounded within date.
+2. **`test_4h_aggregation_early_close_and_intraday`**:
+   - Half-day session (13:00 close): 4 1H bars produce exactly 1 4H bar; Bar 2 is safely omitted without raising errors or outputting NaN.
+   - Active session at 11:00 AM: dynamically forms Bar 1 with available bars.
+   - Empty DataFrame: returns empty DataFrame without unhandled exceptions.
+3. **`test_prepost_market_snapshot_does_not_mutate_historical_bars`**:
+   - In `PRE_MARKET`, `POST_MARKET`, `OVERNIGHT`, and `WEEKEND`, yesterday's closed 15:30 bar is verified immutable.
+   - Returned calculation DataFrame has length `len + 1` with temporary snapshot bar: `Close = active_price`, `Open = yesterday_close`, `Volume = 0.0`.
+   - In `REGULAR` market session, no synthetic bar is appended.
+4. **`test_1h_support_resistance_strict_boundary_protection`**:
+   - Monotonicity invariant: `1H撑 < active_price < 1H压` must hold 100% strictly.
+   - Breakdown condition (`low_20h >= active_price`): enforces `1H撑 = min(POC, active_price - 1.5 * ATR_1H) < active_price`.
+   - Breakout condition (`high_20h <= active_price`): enforces `1H压 = active_price + 1.5 * ATR_1H > active_price`.
+   - Stress-tested under extreme market conditions (flash crash to $5.0, massive surge to $2,000.0, degenerate empty inputs).
+5. **`test_batch_fetch_and_btc_usd_bypass`**:
+   - Mocks yfinance and requests; verifies 51 tickers are fetched in batch mode.
+   - Asserts zero calls to Finnhub quote endpoint for `BTC-USD` (avoiding Finnhub null/0 quote failure).
+
+### Tier 2: Quantitative Engine & State Machine Invariants
+6. **`test_volume_profile_poc_calculation`**:
+   - Creates 140 1H bars with known institutional volume concentration at $100.0.
+   - Asserts POC recovers the winning bin midpoint ($100.0 \pm 2.0$).
+   - Guards against zero volume (time-at-price fallback), flat lines ($High=Low=Close$), and short history.
+7. **`test_rsi_state_machine_transitions`**:
+   - Evaluates all 5 states: `[🔥 双周期见底]`, `[🛑 双周期触顶]`, `[⚡ 4H超卖]`, `[安全持股]`.
+   - Verifies V3.2 3-day crash cooling: unresolved cooling displays `[🔥 双周期见底·⚠️冷却观察]`; intraday VWAP recovery unlocks `[🔥 双周期见底·✅右侧企稳]`.
+8. **`test_defense_factor_y_and_divergence`**:
+   - Arithmetic mean of `SCHD`, `KO`, and `GLD` 4H RSI.
+   - Graceful fallback when 1 or 2 components are missing.
+   - Divergence Alert triggers when `Factor Y 4H_RSI - SOXX 4H_RSI >= 25.0` and `SOXX 4H_RSI <= 32.0`.
+9. **`test_3x_mirror_resonance`**:
+   - Asserts `SOXL` bottom + `SOXS` top triggers `⚡【SOXL×SOXS 底部共振】`.
+   - Asserts `TQQQ` bottom + `SQQQ` top triggers `⚡【TQQQ×SQQQ 底部共振】`.
+   - Asserts top resonance when bullish 3X is overbought and inverse 3X is oversold.
+
+### Tier 3: Discord Embed Formatting & Character Limits
+10. **`test_embed_native_markdown_no_codeblocks`**:
+    - Scans all titles, descriptions, and fields across all generated embeds.
+    - Zero occurrences of \`\`\` or \`\`\`text.
+    - Native bold formatting `**{sym}**` and emojis verified.
+11. **`test_discord_payload_character_limits`**:
+    - Message 1 character count $\le 2,000$ (Discord limit: 6,000).
+    - Message 2 Part 2A (Tiers 1-3, 5 embeds) total chars $\le 5,500$ (Discord limit: 6,000).
+    - Message 2 Part 2B (Tiers 4-5, 4 embeds) total chars $\le 5,500$ (Discord limit: 6,000).
+    - Total embeds per message $\le 10$, total embeds across Part 2A and 2B == 9.
+    - Each embed description $\le 4,096$ characters.
+
+### Tier 4: Radar Daemon Linkage & Safety Invariants
+12. **`test_radar_linkage_async_and_isolated`**:
+    - Verifies async background thread launch (`daemon=True`).
+    - Verifies network exceptions (timeouts, HTTP 500, HTTP 429) are caught and logged inside `run_sentinel_cycle_safe` without impacting caller.
+
+---
+
+## 4. Test Execution Output (M0 Baseline)
 
 ```text
-test_ast_no_negative_shifts (__main__.TestFeatureCausalityNoLookahead.test_ast_no_negative_shifts)
-Scans AST of feature engineering functions to assert no negative shifts. ... ok
-test_feature_causality_no_lookahead (__main__.TestFeatureCausalityNoLookahead.test_feature_causality_no_lookahead)
-Primary invariant test: Truncated series features match full series features exactly. ... ok
-test_future_spike_insensitivity (__main__.TestFeatureCausalityNoLookahead.test_future_spike_insensitivity)
-Asserts that extreme future price spikes at T+1 have 0% impact on bar T features. ... ok
-test_purge_embargo_isolation (__main__.TestPurgeEmbargoIsolation.test_purge_embargo_isolation)
-Primary invariant test: Verifies >= 5 trading day purge gap across all walk-forward folds. ... ok
-test_training_label_horizon_no_test_leakage (__main__.TestPurgeEmbargoIsolation.test_training_label_horizon_no_test_leakage)
-Validates that no training sample's 5-day labeling horizon enters the test set. ... ok
-test_ast_no_wide_dropna (__main__.TestSubsampleAndIPOPreservation.test_ast_no_wide_dropna)
-Scans code to ensure no wide-table dropna() pattern is present. ... ok
-test_subsample_and_ipo_preservation (__main__.TestSubsampleAndIPOPreservation.test_subsample_and_ipo_preservation)
-Primary invariant test: Long Panel preserves 100% of mature stock bars despite IPO stock. ... ok
-test_extreme_market_resilience (__main__.TestExtremeMarketResilience.test_extreme_market_resilience)
-Primary invariant test: Validates resilience across zero vol, zero range, and -50% crash. ... ok
-test_model_inference_probability_bounds (__main__.TestExtremeMarketResilience.test_model_inference_probability_bounds)
-Asserts LightGBM inference on extreme features yields probabilities strictly in [0.0, 1.0]. ... ok
-test_dynamic_atr_barrier_calculation (__main__.TestTripleBarrierResolutionLogic.test_dynamic_atr_barrier_calculation)
-Verifies mathematical correctness of dynamic ATR upper and lower barriers. ... ok
-test_entry_price_is_next_open (__main__.TestTripleBarrierResolutionLogic.test_entry_price_is_next_open)
-Asserts that entry price strictly equals bar T+1 Open, preventing close-price lookahead. ... ok
-test_triple_barrier_resolution_logic (__main__.TestTripleBarrierResolutionLogic.test_triple_barrier_resolution_logic)
-Primary invariant test: Covers upper, lower, timeout, and collision paths. ... ok
-test_tail_isolation_live_pool (__main__.TestTailIsolationLivePool.test_tail_isolation_live_pool)
-Primary invariant test: Tail 5 days must be excluded from train/test and have NaN labels. ... ok
-test_minimal_history_short_series (__main__.TestAdversarialIntegrityAndEdgeCases.test_minimal_history_short_series)
-Validates that a short series (< 60 bars) completes feature calculation without crash. ... ok
-test_missing_macro_dates_left_join (__main__.TestAdversarialIntegrityAndEdgeCases.test_missing_macro_dates_left_join)
-Asserts that missing macro dates (e.g. holiday mismatch) do not produce NaN or break row count. ... ok
-test_winsorization_bounds_fib_pos (__main__.TestAdversarialIntegrityAndEdgeCases.test_winsorization_bounds_fib_pos)
-Asserts Fib_Pos_60 is strictly bounded inside [-0.5, 1.5] even with wild outliers. ... ok
+================================================================================
+ 🚀 RUNNING DISCORD SENTINEL & ENGINEERING INVARIANTS TEST SUITE
+================================================================================
+test_1h_support_resistance_strict_boundary_protection (__main__.TestDiscordSentinelTier1.test_1h_support_resistance_strict_boundary_protection)
+[Engineering Correction 3] Invariant: 1H撑 < active_price < 1H压 must hold 100% strictly. ... ERROR
+test_4h_aggregation_early_close_and_intraday (__main__.TestDiscordSentinelTier1.test_4h_aggregation_early_close_and_intraday)
+[Engineering Correction 1 Edge Cases] ... ERROR
+test_4h_aggregation_no_cross_day_stitching (__main__.TestDiscordSentinelTier1.test_4h_aggregation_no_cross_day_stitching)
+[Engineering Correction 1] 4H K-line aggregation must group strictly by Date. ... ERROR
+test_batch_fetch_and_btc_usd_bypass (__main__.TestDiscordSentinelTier1.test_batch_fetch_and_btc_usd_bypass)
+[Engineering Correction 4] Finnhub 429 Protection & BTC-USD Bypass: ... ERROR
+test_prepost_market_snapshot_does_not_mutate_historical_bars (__main__.TestDiscordSentinelTier1.test_prepost_market_snapshot_does_not_mutate_historical_bars)
+[Engineering Correction 2] Outside RTH (<09:30 or >16:00 ET), yesterday's ... ERROR
+test_3x_mirror_resonance (__main__.TestDiscordSentinelTier2.test_3x_mirror_resonance)
+3X Leveraged Mirror Resonance: ... ERROR
+test_defense_factor_y_and_divergence (__main__.TestDiscordSentinelTier2.test_defense_factor_y_and_divergence)
+Defense Factor Y & Macro Divergence: ... ERROR
+test_rsi_state_machine_transitions (__main__.TestDiscordSentinelTier2.test_rsi_state_machine_transitions)
+RSI State Machine & V3.2 Cooldown / VWAP Integration: ... ERROR
+test_volume_profile_poc_calculation (__main__.TestDiscordSentinelTier2.test_volume_profile_poc_calculation)
+Volume Profile POC: 140 1H bars, 25 bins, Typical Price (H+L+C)/3, volume accumulation. ... ERROR
+test_discord_payload_character_limits (__main__.TestDiscordSentinelTier3.test_discord_payload_character_limits)
+[Payload Limit Invariant] ... ERROR
+test_embed_native_markdown_no_codeblocks (__main__.TestDiscordSentinelTier3.test_embed_native_markdown_no_codeblocks)
+[Anti-Grayblock Invariant] ... ERROR
+test_radar_linkage_async_and_isolated (__main__.TestDiscordSentinelTier4.test_radar_linkage_async_and_isolated)
+[Radar Daemon Invariant] ... FAIL
+test_env_webhook_configuration (__main__.TestDiscordSentinelUniverseAndEnv.test_env_webhook_configuration)
+Verify DISCORD_WEBHOOK_URL is configured in .env. ... FAIL
+test_universe_structure_and_completeness (__main__.TestDiscordSentinelUniverseAndEnv.test_universe_structure_and_completeness)
+Verify the 5 Tiers universe contains exactly 51 unique tickers. ... ok
 
-----------------------------------------------------------------------
-Ran 16 tests in 1.346s
-
-OK (16/16 Passed, 0 Failures, 0 Errors)
+================================================================================
+ 📊 TEST EXECUTION SUMMARY (Elapsed: 0.736s)
+================================================================================
+ Total Tests Run: 14
+ Passed:          1 (Universe completeness verified)
+ Failures:        2 (.env pending M1 setup, linkage stub)
+ Errors:          11 (NotImplementedError on interface stubs)
+================================================================================
 ```
 
 ---
 
-## 5. Progressive Testability & Milestone Integration
+## 5. Escalation & Implementation Guidance for Milestone Agents
 
-`test_ml_predictor.py` provides self-contained synthetic fixtures and authoritative reference oracles.
-- In **M0/M1**: Dynamically detects that `ml_predictor_5y.build_feature_panel` is implemented, testing its AST and numerical properties, while using reference oracles for M2 labeling and walk-forward CV.
-- In **M2**: When `apply_triple_barrier_labeling` and `run_walk_forward_cv` are implemented by the coder agent, the test suite automatically binds directly to the live implementations without requiring any test modification!
+1. **For Worker M1 (Engineering Corrections & Data Pipeline)**:
+   - Configure `DISCORD_WEBHOOK_URL` in `.env`.
+   - Implement `aggregate_1h_to_4h_df`, `append_realtime_snapshot_bar`, `compute_and_protect_1h_sr`, `fetch_sentinel_market_data` in `discord_sentinel.py`.
+   - All 5 tests in `TestDiscordSentinelTier1` + `test_env_webhook_configuration` must turn green (PASS).
+2. **For Worker M2 (Quantitative Engine & Resonance)**:
+   - Implement `compute_volume_profile_poc`, `evaluate_rsi_state`, `compute_factor_y`, `evaluate_cross_asset_resonance` in `discord_sentinel.py`.
+   - All 4 tests in `TestDiscordSentinelTier2` must turn green (PASS).
+3. **For Worker M3 (Discord Formatting, CLI & Linkage)**:
+   - Implement `build_discord_payloads`, CLI flags (`--once`, `--schedule`, `--dry-run`), and `run_sentinel_cycle_safe`.
+   - Integrate `dispatch_discord_sentinel_async` into `integrated_market_radar.py` after line 4385.
+   - All tests in `TestDiscordSentinelTier3` and `TestDiscordSentinelTier4` must turn green (PASS).
+4. **For M4 Final Integration & Auditors**:
+   - Run `python test_discord_sentinel.py` to confirm 14/14 (100% PASS).

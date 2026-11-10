@@ -2118,6 +2118,25 @@ def dispatch_wechat_radar_alerts(macro_data, stocks_data, weather_info, now_str)
         save_alert_history(history)
         print("  [!] 📱 微信推送未成功确认，保留预警重试资格 (不更新冷却时间戳)")
 
+def dispatch_discord_sentinel_async(macro_data, stocks_sorted, weather_info, now_str):
+    """
+    异步、非阻塞触发美股五大梯队量化哨兵与板块巡检 (Discord Webhook 富文本通道)。
+    在独立守护线程中运行，具备完全异常隔离，绝不阻塞主雷达 60s 轮询与终端渲染。
+    """
+    try:
+        import threading
+        import discord_sentinel
+
+        thread = threading.Thread(
+            target=discord_sentinel.run_sentinel_cycle_safe,
+            args=(macro_data, stocks_sorted, weather_info, now_str),
+            daemon=True,
+            name="DiscordSentinelDaemon"
+        )
+        thread.start()
+    except Exception as e:
+        print(f"[!] ⚠️ Discord Sentinel async launch failed: {e}")
+
 def generate_and_sync_notifications(macro_data, stocks_data, weather_info, now_str):
     """
     生成与微信通知 100% 同步的结构化分类消息中心数据，并持久化到 .terminal_notifications.json
@@ -4383,6 +4402,9 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
 
     # 7. 智能去重微信预警推送 (PushPlus 微信 Markdown 卡片通道)
     dispatch_wechat_radar_alerts(macro_data, stocks_sorted, weather_info, now_str)
+
+    # 7.5 美股五大梯队量化哨兵与板块巡检 (Discord Webhook 富文本通道)
+    dispatch_discord_sentinel_async(macro_data, stocks_sorted, weather_info, now_str)
 
     # 8. 更新本地同步锁时间戳
     update_last_sync_time()
