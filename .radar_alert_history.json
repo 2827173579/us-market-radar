@@ -19,7 +19,7 @@
     },
     "OKLO": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1794305254.9667473
+      "last_notified_at": 1794312490.7946556
     },
     "CRWV": {
       "state": "STOP_LOSS",
@@ -142,8 +142,8 @@
       "last_notified_at": 0.0
     },
     "SPCX": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1794312359.6331193
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "VRT": {
       "state": "STOP_LOSS",
