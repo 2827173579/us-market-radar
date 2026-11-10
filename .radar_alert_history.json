@@ -18,8 +18,8 @@
       "last_notified_at": 0.0
     },
     "OKLO": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "STOP_LOSS",
+      "last_notified_at": 1794304938.2803633
     },
     "CRWV": {
       "state": "STOP_LOSS",
@@ -138,8 +138,8 @@
       "last_notified_at": 1793944690.7934802
     },
     "AMD": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1794304693.7954657
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "SPCX": {
       "state": "NORMAL",
