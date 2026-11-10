@@ -126,8 +126,8 @@
       "last_notified_at": 1793944690.7934802
     },
     "META": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1794311148.51503
     },
     "LITE": {
       "state": "STOP_LOSS",
@@ -138,12 +138,12 @@
       "last_notified_at": 1793944690.7934802
     },
     "AMD": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1794311148.51503
     },
     "SPCX": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1794311026.2077484
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "VRT": {
       "state": "STOP_LOSS",
@@ -259,7 +259,7 @@
     },
     "QCOM": {
       "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1794307500.6361942
+      "last_notified_at": 1794311148.51503
     }
   },
   "position_peaks": {
