@@ -206,8 +206,8 @@
       "last_notified_at": 0.0
     },
     "QQQM": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1794310400.7381895
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "SOXX": {
       "state": "NORMAL",
@@ -258,8 +258,8 @@
       "last_notified_at": 0.0
     },
     "QCOM": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1794312237.5581353
     }
   },
   "position_peaks": {
