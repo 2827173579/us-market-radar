@@ -524,7 +524,7 @@ class TestSentinelAdversarialScenario5FactorYRobustness(unittest.TestCase):
         y_empty = ds.compute_factor_y({})
         self.assertEqual(y_empty["rsi_4h"], 50.0)
         self.assertEqual(y_empty["rsi_1d"], 50.0)
-        self.assertEqual(y_empty["status"], "[安全持股]")
+        self.assertEqual(y_empty["status"], "📈【站稳主力上方·多头顺风】")
         self.assertEqual(y_empty["price"], 0.0)
 
         # Dict with unrelated tickers
@@ -534,7 +534,7 @@ class TestSentinelAdversarialScenario5FactorYRobustness(unittest.TestCase):
         }
         y_unrelated = ds.compute_factor_y(unrelated)
         self.assertEqual(y_unrelated["rsi_4h"], 50.0)
-        self.assertEqual(y_unrelated["status"], "[安全持股]")
+        self.assertEqual(y_unrelated["status"], "📈【站稳主力上方·多头顺风】")
 
     def test_two_tickers_missing(self):
         """2 tickers missing (only 1 of SCHD, KO, GLD available)."""
@@ -547,7 +547,7 @@ class TestSentinelAdversarialScenario5FactorYRobustness(unittest.TestCase):
         self.assertAlmostEqual(y_schd["rsi_1d"], 35.0)
         self.assertAlmostEqual(y_schd["price"], 32.0)
         self.assertTrue(y_schd["support"] < y_schd["price"] < y_schd["resistance"])
-        self.assertEqual(y_schd["status"], "[🔥 双周期见底]")
+        self.assertIn("双周期见底", y_schd["status"])
 
         # Case B: Only GLD available
         data_gld = {
@@ -555,7 +555,7 @@ class TestSentinelAdversarialScenario5FactorYRobustness(unittest.TestCase):
         }
         y_gld = ds.compute_factor_y(data_gld)
         self.assertAlmostEqual(y_gld["rsi_4h"], 75.0)
-        self.assertEqual(y_gld["status"], "[🛑 双周期触顶]")
+        self.assertIn("双周期触顶", y_gld["status"])
 
     def test_missing_or_corrupt_internal_keys(self):
         """Tickers present but have None, NaN, missing, or corrupt fields."""
@@ -581,7 +581,7 @@ class TestSentinelAdversarialScenario5FactorYRobustness(unittest.TestCase):
         }
         y_0 = ds.compute_factor_y(data_0)
         self.assertEqual(y_0["rsi_4h"], 0.0)
-        self.assertEqual(y_0["status"], "[🔥 双周期见底]")
+        self.assertIn("双周期见底", y_0["status"])
 
         # Extreme top: 100.0
         data_100 = {
@@ -591,7 +591,7 @@ class TestSentinelAdversarialScenario5FactorYRobustness(unittest.TestCase):
         }
         y_100 = ds.compute_factor_y(data_100)
         self.assertEqual(y_100["rsi_4h"], 100.0)
-        self.assertEqual(y_100["status"], "[🛑 双周期触顶]")
+        self.assertIn("双周期触顶", y_100["status"])
 
     def test_resonance_and_discord_payload_integration_with_corrupt_data(self):
         """Cross-asset resonance and Discord payload generation with degenerate factor Y and missing tickers."""
@@ -611,9 +611,13 @@ class TestSentinelAdversarialScenario5FactorYRobustness(unittest.TestCase):
         self.assertIn("factor_y", res_analysis)
         self.assertEqual(res_analysis["factor_y"]["rsi_4h"], 50.0)
 
-        # Step 2: build_discord_payloads should not crash
+        # Step 2: build_discord_payloads should not crash (Payload 1 3秒抄作业总台 is always sent)
         p1, p2a, p2b = ds.build_discord_payloads(res_analysis)
-        self.assertIsNone(p1, "No alerts expected on empty analysis")
+        self.assertIsNotNone(p1, "Payload 1 overview card is always generated")
+        self.assertIsNotNone(p2a)
+        self.assertIsNotNone(p2b)
+        self.assertEqual(len(p2a.get("embeds", [])), 5)
+        self.assertEqual(len(p2b.get("embeds", [])), 4)
         self.assertIsNotNone(p2a)
         self.assertIsNotNone(p2b)
         self.assertEqual(len(p2a.get("embeds", [])), 5)

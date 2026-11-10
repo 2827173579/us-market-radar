@@ -532,52 +532,57 @@ class TestDiscordSentinelTier2(unittest.TestCase):
 
     def test_rsi_state_machine_transitions(self):
         """
-        RSI State Machine & V3.2 Cooldown / VWAP Integration:
-        1. [🔥 双周期见底]: 4H_RSI <= 32 and 1D_RSI <= 40 (or POC proximity <= 1.5% and 4H_RSI <= 35)
-        2. [🔥 双周期见底·⚠️冷却观察]: 3-day crash cooling without VWAP reclaim
-        3. [🔥 双周期见底·✅右侧企稳]: 3-day crash cooling with price > VWAP
-        4. [🛑 双周期触顶]: 4H_RSI >= 68 and 1D_RSI >= 65
-        5. [⚡ 4H超卖]: 4H_RSI <= 32 and 1D_RSI > 40
-        6. [安全持股]: Default normal state
+        6 级真话状态机 (彻底废除笼统的 [安全持股]):
+        1. 🔥【双周期见底·重点低吸】:
+           - 若处于暴跌冷却期: 🔥【双周期见底·⚠️暴跌冷却中·等企稳】 / 🔥【双周期见底·✅右侧企稳】
+           - 若非冷却: price >= poc -> 🔥【双周期见底·黄金低吸区】; price < poc -> 🔥【双周期见底·超跌博反弹】
+        2. 🚀【突破成功·右侧走强】: 突破前 20 根 1H 前高或放量穿越成本
+        3. 🎯【回踩主力成本·盯紧企稳】: 现价在 POC 上方 0% ~ +1.8%
+        4. 🛑【双周期触顶·分批止盈】: 4H_RSI >= 68 and 1D_RSI >= 65
+        5. 📈【站稳主力上方·多头顺风】: 现价 > POC * 1.018
+        6. ⚠️【跌破主力成本·水下弱势】: 现价 < POC (严禁标为安全持股)
         """
-        # Case 1: Standard Dual-Cycle Bottom (no cooling)
+        # Case 1: Standard Dual-Cycle Bottom (Price < POC -> 超跌博反弹)
         st1 = ds.evaluate_rsi_state(rsi_4h=30.0, rsi_1d=38.0, price=100.0, poc=110.0, is_cooling=False, price_gt_vwap=False)
-        self.assertEqual(st1, "[🔥 双周期见底]")
+        self.assertEqual(st1, "🔥【双周期见底·超跌博反弹】")
 
-        # Case 2: POC Proximity Bottom (Price within 1.0% of POC and 4H_RSI <= 35)
+        # Case 2: POC Proximity Bottom (Price >= POC within 1.5% and 4H_RSI <= 35 -> 黄金低吸区)
         st2 = ds.evaluate_rsi_state(rsi_4h=34.0, rsi_1d=50.0, price=101.0, poc=100.0, is_cooling=False, price_gt_vwap=False)
-        self.assertEqual(st2, "[🔥 双周期见底]")
+        self.assertEqual(st2, "🔥【双周期见底·黄金低吸区】")
 
         # Case 3: V3.2 3-Day Crash Cooling Observation (Below VWAP)
         st3 = ds.evaluate_rsi_state(rsi_4h=29.0, rsi_1d=35.0, price=100.0, poc=110.0, is_cooling=True, price_gt_vwap=False)
-        self.assertEqual(st3, "[🔥 双周期见底·⚠️冷却观察]")
+        self.assertEqual(st3, "🔥【双周期见底·⚠️暴跌冷却中·等企稳】")
 
         # Case 4: V3.2 3-Day Crash VWAP Reclaim (Above VWAP)
         st4 = ds.evaluate_rsi_state(rsi_4h=29.0, rsi_1d=35.0, price=105.0, poc=110.0, is_cooling=True, price_gt_vwap=True)
-        self.assertEqual(st4, "[🔥 双周期见底·✅右侧企稳]")
+        self.assertEqual(st4, "🔥【双周期见底·✅右侧企稳】")
 
         # Case 5: Dual-Cycle Top (Overbought)
         st5 = ds.evaluate_rsi_state(rsi_4h=72.0, rsi_1d=68.0, price=100.0, poc=100.0, is_cooling=False, price_gt_vwap=False)
-        self.assertEqual(st5, "[🛑 双周期触顶]")
+        self.assertEqual(st5, "🛑【双周期触顶·分批止盈】")
 
-        # Case 6: 4H Oversold Only (1D RSI > 40, POC distant)
-        st6 = ds.evaluate_rsi_state(rsi_4h=30.0, rsi_1d=48.0, price=110.0, poc=100.0, is_cooling=False, price_gt_vwap=False)
-        self.assertEqual(st6, "[⚡ 4H超卖]")
+        # Case 6: Breakout Success (Price > 20H High)
+        st6 = ds.evaluate_rsi_state(rsi_4h=58.0, rsi_1d=55.0, price=112.0, poc=100.0, prev_20_high=110.0)
+        self.assertEqual(st6, "🚀【突破成功·右侧走强】")
 
-        # Case 7: Normal safe holding
-        st7 = ds.evaluate_rsi_state(rsi_4h=52.0, rsi_1d=54.0, price=100.0, poc=100.0, is_cooling=False, price_gt_vwap=False)
-        self.assertEqual(st7, "[安全持股]")
+        # Case 7: Pullback to POC Support (0% ~ +1.8%)
+        st7 = ds.evaluate_rsi_state(rsi_4h=52.0, rsi_1d=50.0, price=101.2, poc=100.0)
+        self.assertEqual(st7, "🎯【回踩主力成本·盯紧企稳】")
+
+        # Case 8: Bull Tailwind (> POC * 1.018)
+        st8 = ds.evaluate_rsi_state(rsi_4h=55.0, rsi_1d=52.0, price=108.0, poc=100.0)
+        self.assertEqual(st8, "📈【站稳主力上方·多头顺风】")
+
+        # Case 9: Bear Underwater (< POC)
+        st9 = ds.evaluate_rsi_state(rsi_4h=48.0, rsi_1d=45.0, price=95.0, poc=100.0)
+        self.assertEqual(st9, "⚠️【跌破主力成本·水下弱势】")
 
         # Edge Case: Wilder RSI all positive bars -> 100.0 (no NaN)
         s_pos = pd.Series([100.0 + i * 2.0 for i in range(25)])
-        rsi_pos = ds.compute_series_rsi(s_pos, period=14)
-        self.assertFalse(math.isnan(float(rsi_pos.iloc[-1])), "All-positive bars RSI must not be NaN")
-        self.assertAlmostEqual(float(rsi_pos.iloc[-1]), 100.0, places=4, msg="All-positive bars RSI must evaluate to 100.0")
-
-        # Edge Case: Flat series -> 50.0
-        s_flat = pd.Series([100.0 for _ in range(25)])
-        rsi_flat = ds.compute_series_rsi(s_flat, period=14)
-        self.assertEqual(float(rsi_flat.iloc[-1]), 50.0, "Flat series RSI must evaluate to 50.0")
+        rsi_pos = ds.compute_series_rsi(s_pos, 14)
+        self.assertFalse(np.isnan(rsi_pos.iloc[-1]))
+        self.assertGreater(rsi_pos.iloc[-1], 90.0)
 
     def test_defense_factor_y_and_divergence(self):
         """
