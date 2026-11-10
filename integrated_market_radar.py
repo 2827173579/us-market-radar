@@ -4619,8 +4619,10 @@ def main():
                 print(f"[!] Git 同步异常: {e}")
             round_idx += 1
             cost = time.time() - c_start
-            sleep_time = max(2.0, float(interval_sec) - cost)
-            print(f"[*] 本轮扫描耗时 {cost:.1f}s，休眠 {sleep_time:.1f}s 后进入下一轮...")
+            # 为保证 GitHub Pages 构建与部署 (耗时约 75~85s) 能够 100% 部署成功且不被下一轮 commit 强行 cancel，
+            # 轮询休眠时间保底不少于 90 秒
+            sleep_time = max(90.0, float(interval_sec))
+            print(f"[*] 本轮扫描耗时 {cost:.1f}s，休眠 {sleep_time:.1f}s 进入下一轮 (确保 Pages 部署闭环)...")
             time.sleep(sleep_time)
         print("\n✅ 云端守护计划周期已圆满完成。")
         sys.exit(0)
