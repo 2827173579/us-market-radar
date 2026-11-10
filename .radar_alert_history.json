@@ -138,8 +138,8 @@
       "last_notified_at": 1793944690.7934802
     },
     "AMD": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1794338156.0568035
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "SPCX": {
       "state": "WATCHLIST_ENTRY_READY",
@@ -258,8 +258,8 @@
       "last_notified_at": 0.0
     },
     "QCOM": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1794338245.8335557
     }
   },
   "position_peaks": {
