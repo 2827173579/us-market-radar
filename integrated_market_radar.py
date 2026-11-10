@@ -4610,6 +4610,29 @@ def main():
                     check=False, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL
                 )
                 subprocess.run(["git", "pull", "--rebase", "--autostash", "-X", "theirs", "origin", "main"], check=False, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+                # 🛡️ 智能等待 GitHub Pages 上一次部署完成，彻底规避 cancel-in-progress 恶性死锁
+                try:
+                    pat_match = gh_token
+                    if not pat_match:
+                        rem_out = subprocess.check_output(["git", "remote", "get-url", "origin"], text=True)
+                        if "ghp_" in rem_out:
+                            pat_match = "ghp_" + rem_out.split("ghp_")[1].split("@")[0]
+                    if pat_match:
+                        check_url = "https://api.github.com/repos/2827173579/us-market-radar/actions/runs?per_page=1"
+                        req_chk = urllib.request.Request(check_url, headers={"Authorization": f"Bearer {pat_match}", "User-Agent": "TradeRadar-Sync"})
+                        wait_start = time.time()
+                        while time.time() - wait_start < 180:
+                            with urllib.request.urlopen(req_chk, timeout=10) as c_resp:
+                                c_data = json.loads(c_resp.read().decode("utf-8"))
+                            runs = c_data.get("workflow_runs", [])
+                            if runs and runs[0].get("status") == "in_progress":
+                                print(f"[*] ⏳ 上一轮 GitHub Pages 正在部署中 (Run {runs[0].get('id')})，等待其完成以防被 cancel (已等 {int(time.time()-wait_start)}s)...")
+                                time.sleep(12)
+                            else:
+                                break
+                except Exception as wait_err:
+                    pass
+
                 push_res = subprocess.run(["git", "push", "origin", "HEAD:main"], check=False, capture_output=True, text=True)
                 if push_res.returncode == 0:
                     print(f"[+] ✅ 成功推送第 {round_idx} 轮数据至 GitHub Pages (PAT 触发部署成功)！")
@@ -4621,7 +4644,7 @@ def main():
             cost = time.time() - c_start
             # 为保证 GitHub Pages 构建与部署 (耗时约 75~85s) 能够 100% 部署成功且不被下一轮 commit 强行 cancel，
             # 轮询休眠时间保底不少于 90 秒
-            sleep_time = max(90.0, float(interval_sec))
+            sleep_time = max(180.0, float(interval_sec))
             print(f"[*] 本轮扫描耗时 {cost:.1f}s，休眠 {sleep_time:.1f}s 进入下一轮 (确保 Pages 部署闭环)...")
             time.sleep(sleep_time)
         print("\n✅ 云端守护计划周期已圆满完成。")
