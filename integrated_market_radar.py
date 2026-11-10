@@ -4617,7 +4617,7 @@ def main():
                         req_chk = urllib.request.Request(check_url, headers={"Authorization": f"Bearer {pat_match}", "User-Agent": "TradeRadar-Gatekeeper"})
                         wait_start = time.time()
                         waited_any = False
-                        while time.time() - wait_start < 75:
+                        while time.time() - wait_start < 240:
                             with urllib.request.urlopen(req_chk, timeout=10) as c_resp:
                                 c_data = json.loads(c_resp.read().decode("utf-8"))
                             runs = c_data.get("workflow_runs", [])
