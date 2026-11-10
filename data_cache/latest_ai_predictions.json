@@ -615,63 +615,6 @@
   "top10": [
     {
       "rank": 1,
-      "ticker": "MU",
-      "sector_key": "Memory",
-      "sector_cn": "存储芯片",
-      "sector_rating": "⭐⭐⭐⭐⭐",
-      "latest_price": 715.53,
-      "current_price": 715.53,
-      "atr_pct": 8.17,
-      "bias_ma50": -25.27,
-      "bias_ma20": -21.5,
-      "low_prev": 650.0,
-      "rsi_14": 36.4,
-      "is_broken": false,
-      "is_etf": false,
-      "is_crash_halt": false,
-      "is_cooling_halt": true,
-      "macro_temp": "🌧️ 暴雨空仓",
-      "model_raw_prob_pct": 36.7,
-      "base_raw_prob_pct": 36.4,
-      "predicted_win_rate_pct": 36.4,
-      "calibrated_win_rate_pct": 53.7,
-      "sector_pf": 1.8,
-      "target_profit_price": 752.54,
-      "target_profit_pct": 5.2,
-      "stop_loss_price": 652.4,
-      "stop_loss_pct": 8.8,
-      "action": "🔥 恐慌衰竭·博弈空头回补 (压力位不过就跑)",
-      "action_tag": "action-rebound",
-      "model_raw_short_prob_pct": 63.5,
-      "calibrated_short_win_rate_pct": 65.5,
-      "short_entry_price": 690.0,
-      "short_target_profit_price": 656.75,
-      "short_target_profit_pct": 8.2,
-      "short_stop_loss_price": 759.07,
-      "short_stop_loss_pct": 6.1,
-      "dollar_pcr": 1.02,
-      "pcr": 1.27,
-      "pcr_sentiment": "🟠 机构谨慎防跌",
-      "put_wall": 600.0,
-      "call_wall": 720.0,
-      "iv_atm": 130.1,
-      "short_action": "🩸 极高胜率·顺势做空/买Put",
-      "short_action_tag": "short-action-strong",
-      "s1": 682.87,
-      "s2": 652.4,
-      "sl": 642.61,
-      "r1": 752.54,
-      "r2": 801.63,
-      "scenario_script": "【空头回补滑头剧本】依托 S2 ($652.40) 极限插针底防守，上看第一阻力 R1 ($752.54) 空头回补反抽(不过就跑)；放量逼空看 R2 ($801.63)；击穿止损位 $642.61 严格离场防踩踏",
-      "track": "Track B",
-      "four_h_rsi": 30.0,
-      "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
-      "four_h_tag": "div-bull",
-      "is_short_covering": true,
-      "short_rank": 41
-    },
-    {
-      "rank": 2,
       "ticker": "HPE",
       "sector_key": "Semiconductors",
       "sector_cn": "AI液冷与服务器",
@@ -728,7 +671,7 @@
       "short_rank": 70
     },
     {
-      "rank": 3,
+      "rank": 2,
       "ticker": "AMAT",
       "sector_key": "Semiconductors",
       "sector_cn": "半导体与设备",
@@ -782,18 +725,18 @@
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": true,
-      "short_rank": 68
+      "short_rank": 67
     },
     {
-      "rank": 4,
+      "rank": 3,
       "ticker": "AMZN",
       "sector_key": "Neo_Cloud",
       "sector_cn": "科技巨头与AI生态",
       "sector_rating": "⭐⭐⭐☆☆",
-      "latest_price": 266.35,
-      "current_price": 266.35,
-      "atr_pct": 3.63,
-      "bias_ma50": 4.88,
+      "latest_price": 265.28,
+      "current_price": 265.28,
+      "atr_pct": 3.65,
+      "bias_ma50": 4.46,
       "bias_ma20": 1.97,
       "low_prev": 252.27,
       "rsi_14": 59.2,
@@ -803,22 +746,22 @@
       "is_cooling_halt": false,
       "macro_temp": "🌧️ 暴雨空仓",
       "model_raw_prob_pct": 36.4,
-      "base_raw_prob_pct": 41.4,
-      "predicted_win_rate_pct": 41.4,
-      "calibrated_win_rate_pct": 44.2,
+      "base_raw_prob_pct": 41.3,
+      "predicted_win_rate_pct": 41.3,
+      "calibrated_win_rate_pct": 44.1,
       "sector_pf": 1.35,
-      "target_profit_price": 279.4,
+      "target_profit_price": 278.35,
       "target_profit_pct": 4.9,
-      "stop_loss_price": 256.68,
+      "stop_loss_price": 255.6,
       "stop_loss_pct": 3.6,
       "action": "🛡️ 暴雨空仓·严禁左侧接刀",
       "action_tag": "action-watch",
       "model_raw_short_prob_pct": 52.6,
       "calibrated_short_win_rate_pct": 48.4,
       "short_entry_price": 259.29998779296875,
-      "short_target_profit_price": 253.3,
+      "short_target_profit_price": 252.21,
       "short_target_profit_pct": 4.9,
-      "short_stop_loss_price": 276.02,
+      "short_stop_loss_price": 274.96,
       "short_stop_loss_pct": 3.6,
       "dollar_pcr": 0.42,
       "pcr": 0.49,
@@ -828,12 +771,12 @@
       "iv_atm": 51.0,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "s1": 259.1,
-      "s2": 252.33,
-      "sl": 248.55,
-      "r1": 274.57,
-      "r2": 285.47,
-      "scenario_script": "【右侧主升剧本】依托波段支撑 S1 ($259.10) 逢低做多，上看阻力 R1 ($274.57) 与突破扩展目标 R2 ($285.47)；关键防守位 $248.55",
+      "s1": 258.02,
+      "s2": 251.24,
+      "sl": 247.47,
+      "r1": 273.51,
+      "r2": 284.43,
+      "scenario_script": "【右侧主升剧本】依托波段支撑 S1 ($258.02) 逢低做多，上看阻力 R1 ($273.51) 与突破扩展目标 R2 ($284.43)；关键防守位 $247.47",
       "track": "Track A",
       "four_h_rsi": 50.3,
       "four_h_div": "⚡ 4H 均线多头共振",
@@ -842,7 +785,7 @@
       "short_rank": 23
     },
     {
-      "rank": 5,
+      "rank": 4,
       "ticker": "QCOM",
       "sector_key": "Semiconductors",
       "sector_cn": "通信芯片与端侧AI",
@@ -899,7 +842,7 @@
       "short_rank": 1
     },
     {
-      "rank": 6,
+      "rank": 5,
       "ticker": "V",
       "sector_key": "Energy_Power",
       "sector_cn": "价值蓝筹与医药",
@@ -956,15 +899,15 @@
       "short_rank": 27
     },
     {
-      "rank": 7,
+      "rank": 6,
       "ticker": "META",
       "sector_key": "Neo_Cloud",
       "sector_cn": "科技巨头与AI生态",
       "sector_rating": "⭐⭐⭐☆☆",
-      "latest_price": 638.15,
-      "current_price": 638.15,
+      "latest_price": 638.35,
+      "current_price": 638.35,
       "atr_pct": 3.93,
-      "bias_ma50": -5.61,
+      "bias_ma50": -5.58,
       "bias_ma20": -7.93,
       "low_prev": 583.8,
       "rsi_14": 46.5,
@@ -978,18 +921,18 @@
       "predicted_win_rate_pct": 39.8,
       "calibrated_win_rate_pct": 41.3,
       "sector_pf": 1.35,
-      "target_profit_price": 672.01,
+      "target_profit_price": 672.22,
       "target_profit_pct": 5.3,
-      "stop_loss_price": 613.07,
+      "stop_loss_price": 613.26,
       "stop_loss_pct": 3.9,
       "action": "🛡️ 暴雨空仓·严禁左侧接刀",
       "action_tag": "action-watch",
       "model_raw_short_prob_pct": 50.7,
       "calibrated_short_win_rate_pct": 54.3,
       "short_entry_price": 610.1500244140625,
-      "short_target_profit_price": 604.29,
+      "short_target_profit_price": 604.48,
       "short_target_profit_pct": 5.3,
-      "short_stop_loss_price": 663.23,
+      "short_stop_loss_price": 663.44,
       "short_stop_loss_pct": 3.9,
       "dollar_pcr": 1.04,
       "pcr": 0.65,
@@ -999,12 +942,12 @@
       "iv_atm": 61.1,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "s1": 619.34,
+      "s1": 619.53,
       "s2": 600.0,
       "sl": 591.0,
-      "r1": 659.47,
-      "r2": 687.75,
-      "scenario_script": "【黄金坑做多剧本】回踩波段支撑 S1 ($619.34) 蓄势不破，看多头反弹测试 R1 ($659.47)；突破顺势看 R2 ($687.75)；有效跌破止损位 $591.00 离场",
+      "r1": 659.67,
+      "r2": 687.96,
+      "scenario_script": "【黄金坑做多剧本】回踩波段支撑 S1 ($619.53) 蓄势不破，看多头反弹测试 R1 ($659.67)；突破顺势看 R2 ($687.96)；有效跌破止损位 $591.00 离场",
       "track": "Track A",
       "four_h_rsi": 35.0,
       "four_h_div": "➖ 4H 均线震荡纠缠",
@@ -1013,7 +956,7 @@
       "short_rank": 17
     },
     {
-      "rank": 8,
+      "rank": 7,
       "ticker": "AMD",
       "sector_key": "Semiconductors",
       "sector_cn": "半导体与设备",
@@ -1070,7 +1013,7 @@
       "short_rank": 4
     },
     {
-      "rank": 9,
+      "rank": 8,
       "ticker": "KO",
       "sector_key": "Energy_Power",
       "sector_cn": "价值蓝筹与医药",
@@ -1127,7 +1070,7 @@
       "short_rank": 28
     },
     {
-      "rank": 10,
+      "rank": 9,
       "ticker": "PEP",
       "sector_key": "Energy_Power",
       "sector_cn": "价值蓝筹与医药",
@@ -1182,68 +1125,68 @@
       "four_h_tag": "div-trend",
       "is_short_covering": false,
       "short_rank": 18
+    },
+    {
+      "rank": 10,
+      "ticker": "SPCX",
+      "sector_key": "Neo_Cloud",
+      "sector_cn": "物理AI与太空商业",
+      "sector_rating": "⭐⭐⭐☆☆",
+      "latest_price": 138.63,
+      "current_price": 138.63,
+      "atr_pct": 6.02,
+      "bias_ma50": -7.08,
+      "bias_ma20": -7.56,
+      "low_prev": 120.39,
+      "rsi_14": 48.4,
+      "is_broken": false,
+      "is_etf": false,
+      "is_crash_halt": false,
+      "is_cooling_halt": false,
+      "macro_temp": "🌧️ 暴雨空仓",
+      "model_raw_prob_pct": 31.4,
+      "base_raw_prob_pct": 37.1,
+      "predicted_win_rate_pct": 37.1,
+      "calibrated_win_rate_pct": 38.5,
+      "sector_pf": 1.35,
+      "target_profit_price": 148.01,
+      "target_profit_pct": 6.8,
+      "stop_loss_price": 131.68,
+      "stop_loss_pct": 5.0,
+      "action": "🛡️ 暴雨空仓·严禁左侧接刀",
+      "action_tag": "action-watch",
+      "model_raw_short_prob_pct": 64.5,
+      "calibrated_short_win_rate_pct": 62.6,
+      "short_entry_price": 134.27000427246094,
+      "short_target_profit_price": 129.25,
+      "short_target_profit_pct": 6.8,
+      "short_stop_loss_price": 145.58,
+      "short_stop_loss_pct": 5.0,
+      "dollar_pcr": 0.52,
+      "pcr": 0.96,
+      "pcr_sentiment": "🟢 资金偏多看涨",
+      "put_wall": 130.0,
+      "call_wall": 135.0,
+      "iv_atm": 93.2,
+      "short_action": "⚡ 逢高反抽沽空/买Put",
+      "short_action_tag": "short-action-rebound",
+      "s1": 133.42,
+      "s2": 128.56,
+      "sl": 126.63,
+      "r1": 144.53,
+      "r2": 152.37,
+      "scenario_script": "【战术推演剧本】下方防守支撑 S1 ($133.42)/S2 ($128.56)，上方阻力目标 R1 ($144.53)/R2 ($152.37)；跌破防守止损位 $126.63 严格离场",
+      "track": "Track A",
+      "four_h_rsi": 44.2,
+      "four_h_div": "➖ 4H 均线震荡纠缠",
+      "four_h_tag": "div-neutral",
+      "is_short_covering": false,
+      "short_rank": 7
     }
   ],
   "top_long": [
     {
       "rank": 1,
-      "ticker": "MU",
-      "sector_key": "Memory",
-      "sector_cn": "存储芯片",
-      "sector_rating": "⭐⭐⭐⭐⭐",
-      "latest_price": 715.53,
-      "current_price": 715.53,
-      "atr_pct": 8.17,
-      "bias_ma50": -25.27,
-      "bias_ma20": -21.5,
-      "low_prev": 650.0,
-      "rsi_14": 36.4,
-      "is_broken": false,
-      "is_etf": false,
-      "is_crash_halt": false,
-      "is_cooling_halt": true,
-      "macro_temp": "🌧️ 暴雨空仓",
-      "model_raw_prob_pct": 36.7,
-      "base_raw_prob_pct": 36.4,
-      "predicted_win_rate_pct": 36.4,
-      "calibrated_win_rate_pct": 53.7,
-      "sector_pf": 1.8,
-      "target_profit_price": 752.54,
-      "target_profit_pct": 5.2,
-      "stop_loss_price": 652.4,
-      "stop_loss_pct": 8.8,
-      "action": "🔥 恐慌衰竭·博弈空头回补 (压力位不过就跑)",
-      "action_tag": "action-rebound",
-      "model_raw_short_prob_pct": 63.5,
-      "calibrated_short_win_rate_pct": 65.5,
-      "short_entry_price": 690.0,
-      "short_target_profit_price": 656.75,
-      "short_target_profit_pct": 8.2,
-      "short_stop_loss_price": 759.07,
-      "short_stop_loss_pct": 6.1,
-      "dollar_pcr": 1.02,
-      "pcr": 1.27,
-      "pcr_sentiment": "🟠 机构谨慎防跌",
-      "put_wall": 600.0,
-      "call_wall": 720.0,
-      "iv_atm": 130.1,
-      "short_action": "🩸 极高胜率·顺势做空/买Put",
-      "short_action_tag": "short-action-strong",
-      "s1": 682.87,
-      "s2": 652.4,
-      "sl": 642.61,
-      "r1": 752.54,
-      "r2": 801.63,
-      "scenario_script": "【空头回补滑头剧本】依托 S2 ($652.40) 极限插针底防守，上看第一阻力 R1 ($752.54) 空头回补反抽(不过就跑)；放量逼空看 R2 ($801.63)；击穿止损位 $642.61 严格离场防踩踏",
-      "track": "Track B",
-      "four_h_rsi": 30.0,
-      "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
-      "four_h_tag": "div-bull",
-      "is_short_covering": true,
-      "short_rank": 41
-    },
-    {
-      "rank": 2,
       "ticker": "HPE",
       "sector_key": "Semiconductors",
       "sector_cn": "AI液冷与服务器",
@@ -1300,7 +1243,7 @@
       "short_rank": 70
     },
     {
-      "rank": 3,
+      "rank": 2,
       "ticker": "AMAT",
       "sector_key": "Semiconductors",
       "sector_cn": "半导体与设备",
@@ -1354,18 +1297,18 @@
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": true,
-      "short_rank": 68
+      "short_rank": 67
     },
     {
-      "rank": 4,
+      "rank": 3,
       "ticker": "AMZN",
       "sector_key": "Neo_Cloud",
       "sector_cn": "科技巨头与AI生态",
       "sector_rating": "⭐⭐⭐☆☆",
-      "latest_price": 266.35,
-      "current_price": 266.35,
-      "atr_pct": 3.63,
-      "bias_ma50": 4.88,
+      "latest_price": 265.28,
+      "current_price": 265.28,
+      "atr_pct": 3.65,
+      "bias_ma50": 4.46,
       "bias_ma20": 1.97,
       "low_prev": 252.27,
       "rsi_14": 59.2,
@@ -1375,22 +1318,22 @@
       "is_cooling_halt": false,
       "macro_temp": "🌧️ 暴雨空仓",
       "model_raw_prob_pct": 36.4,
-      "base_raw_prob_pct": 41.4,
-      "predicted_win_rate_pct": 41.4,
-      "calibrated_win_rate_pct": 44.2,
+      "base_raw_prob_pct": 41.3,
+      "predicted_win_rate_pct": 41.3,
+      "calibrated_win_rate_pct": 44.1,
       "sector_pf": 1.35,
-      "target_profit_price": 279.4,
+      "target_profit_price": 278.35,
       "target_profit_pct": 4.9,
-      "stop_loss_price": 256.68,
+      "stop_loss_price": 255.6,
       "stop_loss_pct": 3.6,
       "action": "🛡️ 暴雨空仓·严禁左侧接刀",
       "action_tag": "action-watch",
       "model_raw_short_prob_pct": 52.6,
       "calibrated_short_win_rate_pct": 48.4,
       "short_entry_price": 259.29998779296875,
-      "short_target_profit_price": 253.3,
+      "short_target_profit_price": 252.21,
       "short_target_profit_pct": 4.9,
-      "short_stop_loss_price": 276.02,
+      "short_stop_loss_price": 274.96,
       "short_stop_loss_pct": 3.6,
       "dollar_pcr": 0.42,
       "pcr": 0.49,
@@ -1400,12 +1343,12 @@
       "iv_atm": 51.0,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "s1": 259.1,
-      "s2": 252.33,
-      "sl": 248.55,
-      "r1": 274.57,
-      "r2": 285.47,
-      "scenario_script": "【右侧主升剧本】依托波段支撑 S1 ($259.10) 逢低做多，上看阻力 R1 ($274.57) 与突破扩展目标 R2 ($285.47)；关键防守位 $248.55",
+      "s1": 258.02,
+      "s2": 251.24,
+      "sl": 247.47,
+      "r1": 273.51,
+      "r2": 284.43,
+      "scenario_script": "【右侧主升剧本】依托波段支撑 S1 ($258.02) 逢低做多，上看阻力 R1 ($273.51) 与突破扩展目标 R2 ($284.43)；关键防守位 $247.47",
       "track": "Track A",
       "four_h_rsi": 50.3,
       "four_h_div": "⚡ 4H 均线多头共振",
@@ -1414,7 +1357,7 @@
       "short_rank": 23
     },
     {
-      "rank": 5,
+      "rank": 4,
       "ticker": "QCOM",
       "sector_key": "Semiconductors",
       "sector_cn": "通信芯片与端侧AI",
@@ -1471,7 +1414,7 @@
       "short_rank": 1
     },
     {
-      "rank": 6,
+      "rank": 5,
       "ticker": "V",
       "sector_key": "Energy_Power",
       "sector_cn": "价值蓝筹与医药",
@@ -1528,15 +1471,15 @@
       "short_rank": 27
     },
     {
-      "rank": 7,
+      "rank": 6,
       "ticker": "META",
       "sector_key": "Neo_Cloud",
       "sector_cn": "科技巨头与AI生态",
       "sector_rating": "⭐⭐⭐☆☆",
-      "latest_price": 638.15,
-      "current_price": 638.15,
+      "latest_price": 638.35,
+      "current_price": 638.35,
       "atr_pct": 3.93,
-      "bias_ma50": -5.61,
+      "bias_ma50": -5.58,
       "bias_ma20": -7.93,
       "low_prev": 583.8,
       "rsi_14": 46.5,
@@ -1550,18 +1493,18 @@
       "predicted_win_rate_pct": 39.8,
       "calibrated_win_rate_pct": 41.3,
       "sector_pf": 1.35,
-      "target_profit_price": 672.01,
+      "target_profit_price": 672.22,
       "target_profit_pct": 5.3,
-      "stop_loss_price": 613.07,
+      "stop_loss_price": 613.26,
       "stop_loss_pct": 3.9,
       "action": "🛡️ 暴雨空仓·严禁左侧接刀",
       "action_tag": "action-watch",
       "model_raw_short_prob_pct": 50.7,
       "calibrated_short_win_rate_pct": 54.3,
       "short_entry_price": 610.1500244140625,
-      "short_target_profit_price": 604.29,
+      "short_target_profit_price": 604.48,
       "short_target_profit_pct": 5.3,
-      "short_stop_loss_price": 663.23,
+      "short_stop_loss_price": 663.44,
       "short_stop_loss_pct": 3.9,
       "dollar_pcr": 1.04,
       "pcr": 0.65,
@@ -1571,12 +1514,12 @@
       "iv_atm": 61.1,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "s1": 619.34,
+      "s1": 619.53,
       "s2": 600.0,
       "sl": 591.0,
-      "r1": 659.47,
-      "r2": 687.75,
-      "scenario_script": "【黄金坑做多剧本】回踩波段支撑 S1 ($619.34) 蓄势不破，看多头反弹测试 R1 ($659.47)；突破顺势看 R2 ($687.75)；有效跌破止损位 $591.00 离场",
+      "r1": 659.67,
+      "r2": 687.96,
+      "scenario_script": "【黄金坑做多剧本】回踩波段支撑 S1 ($619.53) 蓄势不破，看多头反弹测试 R1 ($659.67)；突破顺势看 R2 ($687.96)；有效跌破止损位 $591.00 离场",
       "track": "Track A",
       "four_h_rsi": 35.0,
       "four_h_div": "➖ 4H 均线震荡纠缠",
@@ -1585,7 +1528,7 @@
       "short_rank": 17
     },
     {
-      "rank": 8,
+      "rank": 7,
       "ticker": "AMD",
       "sector_key": "Semiconductors",
       "sector_cn": "半导体与设备",
@@ -1642,7 +1585,7 @@
       "short_rank": 4
     },
     {
-      "rank": 9,
+      "rank": 8,
       "ticker": "KO",
       "sector_key": "Energy_Power",
       "sector_cn": "价值蓝筹与医药",
@@ -1699,7 +1642,7 @@
       "short_rank": 28
     },
     {
-      "rank": 10,
+      "rank": 9,
       "ticker": "PEP",
       "sector_key": "Energy_Power",
       "sector_cn": "价值蓝筹与医药",
@@ -1754,11 +1697,68 @@
       "four_h_tag": "div-trend",
       "is_short_covering": false,
       "short_rank": 18
+    },
+    {
+      "rank": 10,
+      "ticker": "SPCX",
+      "sector_key": "Neo_Cloud",
+      "sector_cn": "物理AI与太空商业",
+      "sector_rating": "⭐⭐⭐☆☆",
+      "latest_price": 138.63,
+      "current_price": 138.63,
+      "atr_pct": 6.02,
+      "bias_ma50": -7.08,
+      "bias_ma20": -7.56,
+      "low_prev": 120.39,
+      "rsi_14": 48.4,
+      "is_broken": false,
+      "is_etf": false,
+      "is_crash_halt": false,
+      "is_cooling_halt": false,
+      "macro_temp": "🌧️ 暴雨空仓",
+      "model_raw_prob_pct": 31.4,
+      "base_raw_prob_pct": 37.1,
+      "predicted_win_rate_pct": 37.1,
+      "calibrated_win_rate_pct": 38.5,
+      "sector_pf": 1.35,
+      "target_profit_price": 148.01,
+      "target_profit_pct": 6.8,
+      "stop_loss_price": 131.68,
+      "stop_loss_pct": 5.0,
+      "action": "🛡️ 暴雨空仓·严禁左侧接刀",
+      "action_tag": "action-watch",
+      "model_raw_short_prob_pct": 64.5,
+      "calibrated_short_win_rate_pct": 62.6,
+      "short_entry_price": 134.27000427246094,
+      "short_target_profit_price": 129.25,
+      "short_target_profit_pct": 6.8,
+      "short_stop_loss_price": 145.58,
+      "short_stop_loss_pct": 5.0,
+      "dollar_pcr": 0.52,
+      "pcr": 0.96,
+      "pcr_sentiment": "🟢 资金偏多看涨",
+      "put_wall": 130.0,
+      "call_wall": 135.0,
+      "iv_atm": 93.2,
+      "short_action": "⚡ 逢高反抽沽空/买Put",
+      "short_action_tag": "short-action-rebound",
+      "s1": 133.42,
+      "s2": 128.56,
+      "sl": 126.63,
+      "r1": 144.53,
+      "r2": 152.37,
+      "scenario_script": "【战术推演剧本】下方防守支撑 S1 ($133.42)/S2 ($128.56)，上方阻力目标 R1 ($144.53)/R2 ($152.37)；跌破防守止损位 $126.63 严格离场",
+      "track": "Track A",
+      "four_h_rsi": 44.2,
+      "four_h_div": "➖ 4H 均线震荡纠缠",
+      "four_h_tag": "div-neutral",
+      "is_short_covering": false,
+      "short_rank": 7
     }
   ],
   "top_short": [
     {
-      "rank": 5,
+      "rank": 4,
       "ticker": "QCOM",
       "sector_key": "Semiconductors",
       "sector_cn": "通信芯片与端侧AI",
@@ -1872,7 +1872,7 @@
       "short_rank": 2
     },
     {
-      "rank": 17,
+      "rank": 16,
       "ticker": "CEG",
       "sector_key": "Energy_Power",
       "sector_cn": "数据中心能源电力",
@@ -1929,7 +1929,7 @@
       "short_rank": 3
     },
     {
-      "rank": 8,
+      "rank": 7,
       "ticker": "AMD",
       "sector_key": "Semiconductors",
       "sector_cn": "半导体与设备",
@@ -1986,7 +1986,7 @@
       "short_rank": 4
     },
     {
-      "rank": 31,
+      "rank": 30,
       "ticker": "NOW",
       "sector_key": "Enterprise_SaaS",
       "sector_cn": "企业软件与 AI SaaS",
@@ -2043,7 +2043,7 @@
       "short_rank": 5
     },
     {
-      "rank": 32,
+      "rank": 31,
       "ticker": "NOW",
       "sector_key": "Enterprise_SaaS",
       "sector_cn": "企业软件与 AI SaaS",
@@ -2100,7 +2100,7 @@
       "short_rank": 6
     },
     {
-      "rank": 11,
+      "rank": 10,
       "ticker": "SPCX",
       "sector_key": "Neo_Cloud",
       "sector_cn": "物理AI与太空商业",
@@ -2157,7 +2157,7 @@
       "short_rank": 7
     },
     {
-      "rank": 13,
+      "rank": 12,
       "ticker": "NKE",
       "sector_key": "Energy_Power",
       "sector_cn": "价值蓝筹与医药",
@@ -2271,7 +2271,7 @@
       "short_rank": 9
     },
     {
-      "rank": 15,
+      "rank": 14,
       "ticker": "VST",
       "sector_key": "Energy_Power",
       "sector_cn": "数据中心能源电力",
@@ -2331,63 +2331,6 @@
   "all_predictions": [
     {
       "rank": 1,
-      "ticker": "MU",
-      "sector_key": "Memory",
-      "sector_cn": "存储芯片",
-      "sector_rating": "⭐⭐⭐⭐⭐",
-      "latest_price": 715.53,
-      "current_price": 715.53,
-      "atr_pct": 8.17,
-      "bias_ma50": -25.27,
-      "bias_ma20": -21.5,
-      "low_prev": 650.0,
-      "rsi_14": 36.4,
-      "is_broken": false,
-      "is_etf": false,
-      "is_crash_halt": false,
-      "is_cooling_halt": true,
-      "macro_temp": "🌧️ 暴雨空仓",
-      "model_raw_prob_pct": 36.7,
-      "base_raw_prob_pct": 36.4,
-      "predicted_win_rate_pct": 36.4,
-      "calibrated_win_rate_pct": 53.7,
-      "sector_pf": 1.8,
-      "target_profit_price": 752.54,
-      "target_profit_pct": 5.2,
-      "stop_loss_price": 652.4,
-      "stop_loss_pct": 8.8,
-      "action": "🔥 恐慌衰竭·博弈空头回补 (压力位不过就跑)",
-      "action_tag": "action-rebound",
-      "model_raw_short_prob_pct": 63.5,
-      "calibrated_short_win_rate_pct": 65.5,
-      "short_entry_price": 690.0,
-      "short_target_profit_price": 656.75,
-      "short_target_profit_pct": 8.2,
-      "short_stop_loss_price": 759.07,
-      "short_stop_loss_pct": 6.1,
-      "dollar_pcr": 1.02,
-      "pcr": 1.27,
-      "pcr_sentiment": "🟠 机构谨慎防跌",
-      "put_wall": 600.0,
-      "call_wall": 720.0,
-      "iv_atm": 130.1,
-      "short_action": "🩸 极高胜率·顺势做空/买Put",
-      "short_action_tag": "short-action-strong",
-      "s1": 682.87,
-      "s2": 652.4,
-      "sl": 642.61,
-      "r1": 752.54,
-      "r2": 801.63,
-      "scenario_script": "【空头回补滑头剧本】依托 S2 ($652.40) 极限插针底防守，上看第一阻力 R1 ($752.54) 空头回补反抽(不过就跑)；放量逼空看 R2 ($801.63)；击穿止损位 $642.61 严格离场防踩踏",
-      "track": "Track B",
-      "four_h_rsi": 30.0,
-      "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
-      "four_h_tag": "div-bull",
-      "is_short_covering": true,
-      "short_rank": 41
-    },
-    {
-      "rank": 2,
       "ticker": "HPE",
       "sector_key": "Semiconductors",
       "sector_cn": "AI液冷与服务器",
@@ -2444,7 +2387,7 @@
       "short_rank": 70
     },
     {
-      "rank": 3,
+      "rank": 2,
       "ticker": "AMAT",
       "sector_key": "Semiconductors",
       "sector_cn": "半导体与设备",
@@ -2498,18 +2441,18 @@
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": true,
-      "short_rank": 68
+      "short_rank": 67
     },
     {
-      "rank": 4,
+      "rank": 3,
       "ticker": "AMZN",
       "sector_key": "Neo_Cloud",
       "sector_cn": "科技巨头与AI生态",
       "sector_rating": "⭐⭐⭐☆☆",
-      "latest_price": 266.35,
-      "current_price": 266.35,
-      "atr_pct": 3.63,
-      "bias_ma50": 4.88,
+      "latest_price": 265.28,
+      "current_price": 265.28,
+      "atr_pct": 3.65,
+      "bias_ma50": 4.46,
       "bias_ma20": 1.97,
       "low_prev": 252.27,
       "rsi_14": 59.2,
@@ -2519,22 +2462,22 @@
       "is_cooling_halt": false,
       "macro_temp": "🌧️ 暴雨空仓",
       "model_raw_prob_pct": 36.4,
-      "base_raw_prob_pct": 41.4,
-      "predicted_win_rate_pct": 41.4,
-      "calibrated_win_rate_pct": 44.2,
+      "base_raw_prob_pct": 41.3,
+      "predicted_win_rate_pct": 41.3,
+      "calibrated_win_rate_pct": 44.1,
       "sector_pf": 1.35,
-      "target_profit_price": 279.4,
+      "target_profit_price": 278.35,
       "target_profit_pct": 4.9,
-      "stop_loss_price": 256.68,
+      "stop_loss_price": 255.6,
       "stop_loss_pct": 3.6,
       "action": "🛡️ 暴雨空仓·严禁左侧接刀",
       "action_tag": "action-watch",
       "model_raw_short_prob_pct": 52.6,
       "calibrated_short_win_rate_pct": 48.4,
       "short_entry_price": 259.29998779296875,
-      "short_target_profit_price": 253.3,
+      "short_target_profit_price": 252.21,
       "short_target_profit_pct": 4.9,
-      "short_stop_loss_price": 276.02,
+      "short_stop_loss_price": 274.96,
       "short_stop_loss_pct": 3.6,
       "dollar_pcr": 0.42,
       "pcr": 0.49,
@@ -2544,12 +2487,12 @@
       "iv_atm": 51.0,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "s1": 259.1,
-      "s2": 252.33,
-      "sl": 248.55,
-      "r1": 274.57,
-      "r2": 285.47,
-      "scenario_script": "【右侧主升剧本】依托波段支撑 S1 ($259.10) 逢低做多，上看阻力 R1 ($274.57) 与突破扩展目标 R2 ($285.47)；关键防守位 $248.55",
+      "s1": 258.02,
+      "s2": 251.24,
+      "sl": 247.47,
+      "r1": 273.51,
+      "r2": 284.43,
+      "scenario_script": "【右侧主升剧本】依托波段支撑 S1 ($258.02) 逢低做多，上看阻力 R1 ($273.51) 与突破扩展目标 R2 ($284.43)；关键防守位 $247.47",
       "track": "Track A",
       "four_h_rsi": 50.3,
       "four_h_div": "⚡ 4H 均线多头共振",
@@ -2558,7 +2501,7 @@
       "short_rank": 23
     },
     {
-      "rank": 5,
+      "rank": 4,
       "ticker": "QCOM",
       "sector_key": "Semiconductors",
       "sector_cn": "通信芯片与端侧AI",
@@ -2615,7 +2558,7 @@
       "short_rank": 1
     },
     {
-      "rank": 6,
+      "rank": 5,
       "ticker": "V",
       "sector_key": "Energy_Power",
       "sector_cn": "价值蓝筹与医药",
@@ -2672,15 +2615,15 @@
       "short_rank": 27
     },
     {
-      "rank": 7,
+      "rank": 6,
       "ticker": "META",
       "sector_key": "Neo_Cloud",
       "sector_cn": "科技巨头与AI生态",
       "sector_rating": "⭐⭐⭐☆☆",
-      "latest_price": 638.15,
-      "current_price": 638.15,
+      "latest_price": 638.35,
+      "current_price": 638.35,
       "atr_pct": 3.93,
-      "bias_ma50": -5.61,
+      "bias_ma50": -5.58,
       "bias_ma20": -7.93,
       "low_prev": 583.8,
       "rsi_14": 46.5,
@@ -2694,18 +2637,18 @@
       "predicted_win_rate_pct": 39.8,
       "calibrated_win_rate_pct": 41.3,
       "sector_pf": 1.35,
-      "target_profit_price": 672.01,
+      "target_profit_price": 672.22,
       "target_profit_pct": 5.3,
-      "stop_loss_price": 613.07,
+      "stop_loss_price": 613.26,
       "stop_loss_pct": 3.9,
       "action": "🛡️ 暴雨空仓·严禁左侧接刀",
       "action_tag": "action-watch",
       "model_raw_short_prob_pct": 50.7,
       "calibrated_short_win_rate_pct": 54.3,
       "short_entry_price": 610.1500244140625,
-      "short_target_profit_price": 604.29,
+      "short_target_profit_price": 604.48,
       "short_target_profit_pct": 5.3,
-      "short_stop_loss_price": 663.23,
+      "short_stop_loss_price": 663.44,
       "short_stop_loss_pct": 3.9,
       "dollar_pcr": 1.04,
       "pcr": 0.65,
@@ -2715,12 +2658,12 @@
       "iv_atm": 61.1,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "s1": 619.34,
+      "s1": 619.53,
       "s2": 600.0,
       "sl": 591.0,
-      "r1": 659.47,
-      "r2": 687.75,
-      "scenario_script": "【黄金坑做多剧本】回踩波段支撑 S1 ($619.34) 蓄势不破，看多头反弹测试 R1 ($659.47)；突破顺势看 R2 ($687.75)；有效跌破止损位 $591.00 离场",
+      "r1": 659.67,
+      "r2": 687.96,
+      "scenario_script": "【黄金坑做多剧本】回踩波段支撑 S1 ($619.53) 蓄势不破，看多头反弹测试 R1 ($659.67)；突破顺势看 R2 ($687.96)；有效跌破止损位 $591.00 离场",
       "track": "Track A",
       "four_h_rsi": 35.0,
       "four_h_div": "➖ 4H 均线震荡纠缠",
@@ -2729,7 +2672,7 @@
       "short_rank": 17
     },
     {
-      "rank": 8,
+      "rank": 7,
       "ticker": "AMD",
       "sector_key": "Semiconductors",
       "sector_cn": "半导体与设备",
@@ -2786,7 +2729,7 @@
       "short_rank": 4
     },
     {
-      "rank": 9,
+      "rank": 8,
       "ticker": "KO",
       "sector_key": "Energy_Power",
       "sector_cn": "价值蓝筹与医药",
@@ -2843,7 +2786,7 @@
       "short_rank": 28
     },
     {
-      "rank": 10,
+      "rank": 9,
       "ticker": "PEP",
       "sector_key": "Energy_Power",
       "sector_cn": "价值蓝筹与医药",
@@ -2900,7 +2843,7 @@
       "short_rank": 18
     },
     {
-      "rank": 11,
+      "rank": 10,
       "ticker": "SPCX",
       "sector_key": "Neo_Cloud",
       "sector_cn": "物理AI与太空商业",
@@ -2957,7 +2900,7 @@
       "short_rank": 7
     },
     {
-      "rank": 12,
+      "rank": 11,
       "ticker": "AXP",
       "sector_key": "Energy_Power",
       "sector_cn": "价值蓝筹与医药",
@@ -3014,7 +2957,7 @@
       "short_rank": 20
     },
     {
-      "rank": 13,
+      "rank": 12,
       "ticker": "NKE",
       "sector_key": "Energy_Power",
       "sector_cn": "价值蓝筹与医药",
@@ -3071,15 +3014,15 @@
       "short_rank": 8
     },
     {
-      "rank": 14,
+      "rank": 13,
       "ticker": "AAPL",
       "sector_key": "Neo_Cloud",
       "sector_cn": "科技巨头与AI生态",
       "sector_rating": "⭐⭐⭐☆☆",
-      "latest_price": 352.73,
-      "current_price": 352.73,
+      "latest_price": 352.95,
+      "current_price": 352.95,
       "atr_pct": 2.51,
-      "bias_ma50": 4.78,
+      "bias_ma50": 4.85,
       "bias_ma20": -0.3,
       "low_prev": 342.06,
       "rsi_14": 57.6,
@@ -3093,18 +3036,18 @@
       "predicted_win_rate_pct": 33.5,
       "calibrated_win_rate_pct": 36.0,
       "sector_pf": 1.35,
-      "target_profit_price": 364.68,
+      "target_profit_price": 364.91,
       "target_profit_pct": 3.4,
-      "stop_loss_price": 343.88,
+      "stop_loss_price": 344.09,
       "stop_loss_pct": 2.5,
       "action": "🛡️ 暴雨空仓·严禁左侧接刀",
       "action_tag": "action-watch",
       "model_raw_short_prob_pct": 53.5,
       "calibrated_short_win_rate_pct": 56.1,
       "short_entry_price": 342.3699951171875,
-      "short_target_profit_price": 340.78,
+      "short_target_profit_price": 340.99,
       "short_target_profit_pct": 3.4,
-      "short_stop_loss_price": 361.58,
+      "short_stop_loss_price": 361.81,
       "short_stop_loss_pct": 2.5,
       "dollar_pcr": 1.61,
       "pcr": 1.86,
@@ -3114,12 +3057,12 @@
       "iv_atm": 38.1,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "s1": 343.91,
-      "s2": 336.86,
-      "sl": 331.81,
-      "r1": 363.31,
-      "r2": 373.89,
-      "scenario_script": "【右侧主升剧本】依托波段支撑 S1 ($343.91) 逢低做多，上看阻力 R1 ($363.31) 与突破扩展目标 R2 ($373.89)；关键防守位 $331.81",
+      "s1": 344.13,
+      "s2": 337.07,
+      "sl": 332.01,
+      "r1": 363.54,
+      "r2": 374.13,
+      "scenario_script": "【右侧主升剧本】依托波段支撑 S1 ($344.13) 逢低做多，上看阻力 R1 ($363.54) 与突破扩展目标 R2 ($374.13)；关键防守位 $332.01",
       "track": "Track A",
       "four_h_rsi": 50.5,
       "four_h_div": "⚡ 4H 均线多头共振",
@@ -3128,7 +3071,7 @@
       "short_rank": 14
     },
     {
-      "rank": 15,
+      "rank": 14,
       "ticker": "VST",
       "sector_key": "Energy_Power",
       "sector_cn": "数据中心能源电力",
@@ -3185,7 +3128,7 @@
       "short_rank": 10
     },
     {
-      "rank": 16,
+      "rank": 15,
       "ticker": "LLY",
       "sector_key": "Energy_Power",
       "sector_cn": "价值蓝筹与医药",
@@ -3242,7 +3185,7 @@
       "short_rank": 11
     },
     {
-      "rank": 17,
+      "rank": 16,
       "ticker": "CEG",
       "sector_key": "Energy_Power",
       "sector_cn": "数据中心能源电力",
@@ -3299,7 +3242,7 @@
       "short_rank": 3
     },
     {
-      "rank": 18,
+      "rank": 17,
       "ticker": "MRNA",
       "sector_key": "Energy_Power",
       "sector_cn": "价值蓝筹与医药",
@@ -3356,7 +3299,7 @@
       "short_rank": 29
     },
     {
-      "rank": 19,
+      "rank": 18,
       "ticker": "MSFT",
       "sector_key": "Enterprise_SaaS",
       "sector_cn": "企业软件与 AI SaaS",
@@ -3413,7 +3356,7 @@
       "short_rank": 21
     },
     {
-      "rank": 20,
+      "rank": 19,
       "ticker": "MCD",
       "sector_key": "Energy_Power",
       "sector_cn": "价值蓝筹与医药",
@@ -3470,7 +3413,7 @@
       "short_rank": 19
     },
     {
-      "rank": 21,
+      "rank": 20,
       "ticker": "CRWD",
       "sector_key": "Energy_Power",
       "sector_cn": "企业软件与AI安全",
@@ -3527,7 +3470,7 @@
       "short_rank": 39
     },
     {
-      "rank": 22,
+      "rank": 21,
       "ticker": "QQQM",
       "sector_key": "Semiconductors",
       "sector_cn": "大盘与宏观ETF",
@@ -3584,7 +3527,7 @@
       "short_rank": 69
     },
     {
-      "rank": 23,
+      "rank": 22,
       "ticker": "AVGO",
       "sector_key": "Semiconductors",
       "sector_cn": "半导体与设备",
@@ -3641,7 +3584,7 @@
       "short_rank": 53
     },
     {
-      "rank": 24,
+      "rank": 23,
       "ticker": "ASML",
       "sector_key": "Semiconductors",
       "sector_cn": "半导体与设备",
@@ -3698,7 +3641,7 @@
       "short_rank": 42
     },
     {
-      "rank": 25,
+      "rank": 24,
       "ticker": "TSM",
       "sector_key": "Semiconductors",
       "sector_cn": "半导体与设备",
@@ -3755,7 +3698,7 @@
       "short_rank": 45
     },
     {
-      "rank": 26,
+      "rank": 25,
       "ticker": "SOXX",
       "sector_key": "Semiconductors",
       "sector_cn": "半导体ETF",
@@ -3812,7 +3755,7 @@
       "short_rank": 40
     },
     {
-      "rank": 27,
+      "rank": 26,
       "ticker": "WDC",
       "sector_key": "Memory",
       "sector_cn": "存储芯片",
@@ -3869,7 +3812,7 @@
       "short_rank": 52
     },
     {
-      "rank": 28,
+      "rank": 27,
       "ticker": "COIN",
       "sector_key": "Crypto_Proxy",
       "sector_cn": "加密币股代理",
@@ -3926,7 +3869,7 @@
       "short_rank": 62
     },
     {
-      "rank": 29,
+      "rank": 28,
       "ticker": "GOOGL",
       "sector_key": "Neo_Cloud",
       "sector_cn": "科技巨头与AI生态",
@@ -3983,7 +3926,7 @@
       "short_rank": 25
     },
     {
-      "rank": 30,
+      "rank": 29,
       "ticker": "STX",
       "sector_key": "Memory",
       "sector_cn": "存储芯片",
@@ -4040,7 +3983,7 @@
       "short_rank": 71
     },
     {
-      "rank": 31,
+      "rank": 30,
       "ticker": "NOW",
       "sector_key": "Enterprise_SaaS",
       "sector_cn": "企业软件与 AI SaaS",
@@ -4097,7 +4040,7 @@
       "short_rank": 5
     },
     {
-      "rank": 32,
+      "rank": 31,
       "ticker": "NOW",
       "sector_key": "Enterprise_SaaS",
       "sector_cn": "企业软件与 AI SaaS",
@@ -4154,7 +4097,7 @@
       "short_rank": 6
     },
     {
-      "rank": 33,
+      "rank": 32,
       "ticker": "ORCL",
       "sector_key": "Enterprise_SaaS",
       "sector_cn": "企业软件与 AI SaaS",
@@ -4211,7 +4154,7 @@
       "short_rank": 51
     },
     {
-      "rank": 34,
+      "rank": 33,
       "ticker": "PLTR",
       "sector_key": "Enterprise_SaaS",
       "sector_cn": "企业软件与 AI SaaS",
@@ -4265,10 +4208,10 @@
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": false,
-      "short_rank": 67
+      "short_rank": 68
     },
     {
-      "rank": 35,
+      "rank": 34,
       "ticker": "SMH",
       "sector_key": "Semiconductors",
       "sector_cn": "半导体ETF",
@@ -4325,7 +4268,7 @@
       "short_rank": 37
     },
     {
-      "rank": 36,
+      "rank": 35,
       "ticker": "COHR",
       "sector_key": "Optical_Interconnect",
       "sector_cn": "光通信与互联",
@@ -4382,15 +4325,15 @@
       "short_rank": 35
     },
     {
-      "rank": 37,
+      "rank": 36,
       "ticker": "TSLA",
       "sector_key": "Neo_Cloud",
       "sector_cn": "物理AI与太空商业",
       "sector_rating": "⭐⭐⭐☆☆",
-      "latest_price": 371.0,
-      "current_price": 371.0,
+      "latest_price": 371.27,
+      "current_price": 371.27,
       "atr_pct": 4.64,
-      "bias_ma50": -0.46,
+      "bias_ma50": -0.39,
       "bias_ma20": -5.84,
       "low_prev": 338.15,
       "rsi_14": 49.9,
@@ -4404,18 +4347,18 @@
       "predicted_win_rate_pct": 29.4,
       "calibrated_win_rate_pct": 31.7,
       "sector_pf": 1.35,
-      "target_profit_price": 392.64,
+      "target_profit_price": 392.92,
       "target_profit_pct": 5.8,
-      "stop_loss_price": 354.97,
+      "stop_loss_price": 355.23,
       "stop_loss_pct": 4.3,
       "action": "🚨 暴跌熔断·严禁左侧接刀",
       "action_tag": "action-watch",
       "model_raw_short_prob_pct": 70.2,
       "calibrated_short_win_rate_pct": 77.4,
       "short_entry_price": 358.2200012207031,
-      "short_target_profit_price": 349.36,
+      "short_target_profit_price": 349.62,
       "short_target_profit_pct": 5.8,
-      "short_stop_loss_price": 387.03,
+      "short_stop_loss_price": 387.31,
       "short_stop_loss_pct": 4.3,
       "dollar_pcr": 0.5,
       "pcr": 1.59,
@@ -4425,12 +4368,12 @@
       "iv_atm": 78.2,
       "short_action": "🩸 极高胜率·顺势做空/买Put",
       "short_action_tag": "short-action-strong",
-      "s1": 358.98,
-      "s2": 347.76,
-      "sl": 342.54,
-      "r1": 384.62,
-      "r2": 402.7,
-      "scenario_script": "【暴跌熔断风控剧本】触发暴跌熔断保护期，下方严防下探 S2 ($347.76) 极端清算底；反抽测试 R1 ($384.62) 均属诱多；防守止损位 $342.54，严禁左侧接刀",
+      "s1": 359.24,
+      "s2": 348.01,
+      "sl": 342.79,
+      "r1": 384.9,
+      "r2": 402.99,
+      "scenario_script": "【暴跌熔断风控剧本】触发暴跌熔断保护期，下方严防下探 S2 ($348.01) 极端清算底；反抽测试 R1 ($384.90) 均属诱多；防守止损位 $342.79，严禁左侧接刀",
       "track": "Track A",
       "four_h_rsi": 63.7,
       "four_h_div": "⚡ 4H 均线多头共振",
@@ -4439,7 +4382,7 @@
       "short_rank": 32
     },
     {
-      "rank": 38,
+      "rank": 37,
       "ticker": "RKLB",
       "sector_key": "Neo_Cloud",
       "sector_cn": "物理AI与太空商业",
@@ -4496,7 +4439,7 @@
       "short_rank": 64
     },
     {
-      "rank": 39,
+      "rank": 38,
       "ticker": "DELL",
       "sector_key": "Semiconductors",
       "sector_cn": "AI液冷与服务器",
@@ -4553,15 +4496,15 @@
       "short_rank": 38
     },
     {
-      "rank": 40,
+      "rank": 39,
       "ticker": "INTC",
       "sector_key": "Semiconductors",
       "sector_cn": "半导体与设备",
       "sector_rating": "⭐⭐⭐⭐☆",
-      "latest_price": 57.57,
-      "current_price": 57.57,
-      "atr_pct": 10.76,
-      "bias_ma50": -40.86,
+      "latest_price": 57.54,
+      "current_price": 57.54,
+      "atr_pct": 10.77,
+      "bias_ma50": -40.89,
       "bias_ma20": -32.25,
       "low_prev": 51.51,
       "rsi_14": 29.5,
@@ -4575,18 +4518,18 @@
       "predicted_win_rate_pct": 44.8,
       "calibrated_win_rate_pct": 30.5,
       "sector_pf": 1.55,
-      "target_profit_price": 63.01,
+      "target_profit_price": 62.98,
       "target_profit_pct": 9.5,
-      "stop_loss_price": 53.54,
+      "stop_loss_price": 53.51,
       "stop_loss_pct": 7.0,
       "action": "🚨 暴跌熔断·严禁左侧接刀",
       "action_tag": "action-rebound",
       "model_raw_short_prob_pct": 64.7,
       "calibrated_short_win_rate_pct": 63.8,
       "short_entry_price": 56.279998779296875,
-      "short_target_profit_price": 52.13,
+      "short_target_profit_price": 52.1,
       "short_target_profit_pct": 9.5,
-      "short_stop_loss_price": 61.6,
+      "short_stop_loss_price": 61.57,
       "short_stop_loss_pct": 7.0,
       "dollar_pcr": 0.79,
       "pcr": 0.59,
@@ -4596,12 +4539,12 @@
       "iv_atm": 115.7,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "s1": 54.55,
-      "s2": 51.73,
-      "sl": 50.95,
-      "r1": 61.0,
-      "r2": 65.54,
-      "scenario_script": "【暴跌熔断风控剧本】触发暴跌熔断保护期，下方严防下探 S2 ($51.73) 极端清算底；反抽测试 R1 ($61.00) 均属诱多；防守止损位 $50.95，严禁左侧接刀",
+      "s1": 54.52,
+      "s2": 51.7,
+      "sl": 50.92,
+      "r1": 60.96,
+      "r2": 65.51,
+      "scenario_script": "【暴跌熔断风控剧本】触发暴跌熔断保护期，下方严防下探 S2 ($51.70) 极端清算底；反抽测试 R1 ($60.96) 均属诱多；防守止损位 $50.92，严禁左侧接刀",
       "track": "Track B",
       "four_h_rsi": 25.8,
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
@@ -4610,7 +4553,7 @@
       "short_rank": 47
     },
     {
-      "rank": 41,
+      "rank": 40,
       "ticker": "FPS",
       "sector_key": "Energy_Power",
       "sector_cn": "数据中心能源电力",
@@ -4667,7 +4610,7 @@
       "short_rank": 34
     },
     {
-      "rank": 42,
+      "rank": 41,
       "ticker": "CRDO",
       "sector_key": "Optical_Interconnect",
       "sector_cn": "光通信与互联",
@@ -4724,7 +4667,7 @@
       "short_rank": 33
     },
     {
-      "rank": 43,
+      "rank": 42,
       "ticker": "MSTR",
       "sector_key": "Crypto_Proxy",
       "sector_cn": "加密币股代理",
@@ -4781,7 +4724,7 @@
       "short_rank": 48
     },
     {
-      "rank": 44,
+      "rank": 43,
       "ticker": "CRWV",
       "sector_key": "Neo_Cloud",
       "sector_cn": "Neo-Cloud 算力租赁",
@@ -4838,7 +4781,7 @@
       "short_rank": 43
     },
     {
-      "rank": 45,
+      "rank": 44,
       "ticker": "MARA",
       "sector_key": "Crypto_Proxy",
       "sector_cn": "加密币股代理",
@@ -4895,15 +4838,15 @@
       "short_rank": 50
     },
     {
-      "rank": 46,
+      "rank": 45,
       "ticker": "ASTS",
       "sector_key": "Neo_Cloud",
       "sector_cn": "物理AI与太空商业",
       "sector_rating": "⭐⭐⭐☆☆",
-      "latest_price": 34.15,
-      "current_price": 34.15,
-      "atr_pct": 12.64,
-      "bias_ma50": -34.0,
+      "latest_price": 34.1,
+      "current_price": 34.1,
+      "atr_pct": 12.66,
+      "bias_ma50": -34.1,
       "bias_ma20": -19.94,
       "low_prev": 28.98,
       "rsi_14": 39.9,
@@ -4917,18 +4860,18 @@
       "predicted_win_rate_pct": 43.2,
       "calibrated_win_rate_pct": 29.7,
       "sector_pf": 1.35,
-      "target_profit_price": 37.38,
+      "target_profit_price": 37.32,
       "target_profit_pct": 9.5,
-      "stop_loss_price": 31.76,
+      "stop_loss_price": 31.71,
       "stop_loss_pct": 7.0,
       "action": "🚨 暴跌熔断·严禁左侧接刀",
       "action_tag": "action-rebound",
       "model_raw_short_prob_pct": 61.6,
       "calibrated_short_win_rate_pct": 60.0,
       "short_entry_price": 32.33000183105469,
-      "short_target_profit_price": 30.92,
+      "short_target_profit_price": 30.88,
       "short_target_profit_pct": 9.5,
-      "short_stop_loss_price": 36.54,
+      "short_stop_loss_price": 36.49,
       "short_stop_loss_pct": 7.0,
       "dollar_pcr": 0.48,
       "pcr": 0.54,
@@ -4938,12 +4881,12 @@
       "iv_atm": 220.7,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "s1": 32.36,
-      "s2": 30.68,
-      "sl": 30.22,
-      "r1": 36.18,
-      "r2": 38.88,
-      "scenario_script": "【暴跌熔断风控剧本】触发暴跌熔断保护期，下方严防下探 S2 ($30.68) 极端清算底；反抽测试 R1 ($36.18) 均属诱多；防守止损位 $30.22，严禁左侧接刀",
+      "s1": 32.31,
+      "s2": 30.64,
+      "sl": 30.18,
+      "r1": 36.13,
+      "r2": 38.82,
+      "scenario_script": "【暴跌熔断风控剧本】触发暴跌熔断保护期，下方严防下探 S2 ($30.64) 极端清算底；反抽测试 R1 ($36.13) 均属诱多；防守止损位 $30.18，严禁左侧接刀",
       "track": "Track B",
       "four_h_rsi": 35.2,
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
@@ -4952,7 +4895,7 @@
       "short_rank": 57
     },
     {
-      "rank": 47,
+      "rank": 46,
       "ticker": "AAOI",
       "sector_key": "Optical_Interconnect",
       "sector_cn": "光通信与互联",
@@ -5009,15 +4952,15 @@
       "short_rank": 63
     },
     {
-      "rank": 48,
+      "rank": 47,
       "ticker": "SOXL",
       "sector_key": "Semiconductors",
       "sector_cn": "半导体3倍做多",
       "sector_rating": "⭐⭐⭐⭐☆",
-      "latest_price": 52.47,
-      "current_price": 52.47,
-      "atr_pct": 25.59,
-      "bias_ma50": -54.01,
+      "latest_price": 52.44,
+      "current_price": 52.44,
+      "atr_pct": 25.6,
+      "bias_ma50": -54.04,
       "bias_ma20": -49.09,
       "low_prev": 40.59,
       "rsi_14": 34.8,
@@ -5031,18 +4974,18 @@
       "predicted_win_rate_pct": 42.9,
       "calibrated_win_rate_pct": 29.2,
       "sector_pf": 1.55,
-      "target_profit_price": 57.43,
+      "target_profit_price": 57.4,
       "target_profit_pct": 9.5,
-      "stop_loss_price": 48.8,
+      "stop_loss_price": 48.77,
       "stop_loss_pct": 7.0,
       "action": "🚨 暴跌熔断·严禁左侧接刀",
       "action_tag": "action-rebound",
       "model_raw_short_prob_pct": 59.8,
       "calibrated_short_win_rate_pct": 59.4,
       "short_entry_price": 45.970001220703125,
-      "short_target_profit_price": 47.51,
+      "short_target_profit_price": 47.48,
       "short_target_profit_pct": 9.5,
-      "short_stop_loss_price": 56.14,
+      "short_stop_loss_price": 56.11,
       "short_stop_loss_pct": 7.0,
       "dollar_pcr": 0.77,
       "pcr": 0.85,
@@ -5052,12 +4995,12 @@
       "iv_atm": 256.5,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "s1": 49.72,
-      "s2": 47.14,
-      "sl": 46.43,
-      "r1": 55.59,
-      "r2": 59.73,
-      "scenario_script": "【暴跌熔断风控剧本】触发暴跌熔断保护期，下方严防下探 S2 ($47.14) 极端清算底；反抽测试 R1 ($55.59) 均属诱多；防守止损位 $46.43，严禁左侧接刀",
+      "s1": 49.69,
+      "s2": 47.12,
+      "sl": 46.41,
+      "r1": 55.56,
+      "r2": 59.7,
+      "scenario_script": "【暴跌熔断风控剧本】触发暴跌熔断保护期，下方严防下探 S2 ($47.12) 极端清算底；反抽测试 R1 ($55.56) 均属诱多；防守止损位 $46.41，严禁左侧接刀",
       "track": "Track B",
       "four_h_rsi": 36.6,
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
@@ -5066,7 +5009,7 @@
       "short_rank": 60
     },
     {
-      "rank": 49,
+      "rank": 48,
       "ticker": "SNDK",
       "sector_key": "Memory",
       "sector_cn": "存储芯片",
@@ -5123,7 +5066,7 @@
       "short_rank": 44
     },
     {
-      "rank": 50,
+      "rank": 49,
       "ticker": "NBIS",
       "sector_key": "Neo_Cloud",
       "sector_cn": "Neo-Cloud 算力租赁",
@@ -5180,7 +5123,7 @@
       "short_rank": 36
     },
     {
-      "rank": 51,
+      "rank": 50,
       "ticker": "SKHY",
       "sector_key": "Memory",
       "sector_cn": "存储芯片",
@@ -5237,7 +5180,7 @@
       "short_rank": 56
     },
     {
-      "rank": 52,
+      "rank": 51,
       "ticker": "APLD",
       "sector_key": "Neo_Cloud",
       "sector_cn": "Neo-Cloud 算力租赁",
@@ -5294,7 +5237,7 @@
       "short_rank": 46
     },
     {
-      "rank": 53,
+      "rank": 52,
       "ticker": "BE",
       "sector_key": "Energy_Power",
       "sector_cn": "数据中心能源电力",
@@ -5351,7 +5294,7 @@
       "short_rank": 54
     },
     {
-      "rank": 54,
+      "rank": 53,
       "ticker": "OKLO",
       "sector_key": "Energy_Power",
       "sector_cn": "数据中心能源电力",
@@ -5408,7 +5351,7 @@
       "short_rank": 61
     },
     {
-      "rank": 55,
+      "rank": 54,
       "ticker": "AXTI",
       "sector_key": "Optical_Interconnect",
       "sector_cn": "光通信与互联",
@@ -5465,7 +5408,7 @@
       "short_rank": 55
     },
     {
-      "rank": 56,
+      "rank": 55,
       "ticker": "KORU",
       "sector_key": "Memory",
       "sector_cn": "韩股存储3倍做多",
@@ -5520,6 +5463,63 @@
       "four_h_tag": "div-bull",
       "is_short_covering": false,
       "short_rank": 59
+    },
+    {
+      "rank": 56,
+      "ticker": "MU",
+      "sector_key": "Memory",
+      "sector_cn": "存储芯片",
+      "sector_rating": "⭐⭐⭐⭐⭐",
+      "latest_price": 713.23,
+      "current_price": 713.23,
+      "atr_pct": 8.2,
+      "bias_ma50": -25.51,
+      "bias_ma20": -21.5,
+      "low_prev": 650.0,
+      "rsi_14": 36.4,
+      "is_broken": true,
+      "is_etf": false,
+      "is_crash_halt": true,
+      "is_cooling_halt": false,
+      "macro_temp": "🌧️ 暴雨空仓",
+      "model_raw_prob_pct": 36.7,
+      "base_raw_prob_pct": 36.4,
+      "predicted_win_rate_pct": 36.4,
+      "calibrated_win_rate_pct": 26.9,
+      "sector_pf": 1.8,
+      "target_profit_price": 771.96,
+      "target_profit_pct": 8.2,
+      "stop_loss_price": 669.72,
+      "stop_loss_pct": 6.1,
+      "action": "🚨 暴跌熔断·严禁左侧接刀",
+      "action_tag": "action-rebound",
+      "model_raw_short_prob_pct": 63.5,
+      "calibrated_short_win_rate_pct": 65.5,
+      "short_entry_price": 690.0,
+      "short_target_profit_price": 654.5,
+      "short_target_profit_pct": 8.2,
+      "short_stop_loss_price": 756.74,
+      "short_stop_loss_pct": 6.1,
+      "dollar_pcr": 1.02,
+      "pcr": 1.27,
+      "pcr_sentiment": "🟠 机构谨慎防跌",
+      "put_wall": 600.0,
+      "call_wall": 720.0,
+      "iv_atm": 130.1,
+      "short_action": "🩸 极高胜率·顺势做空/买Put",
+      "short_action_tag": "short-action-strong",
+      "s1": 680.6,
+      "s2": 650.14,
+      "sl": 640.39,
+      "r1": 750.21,
+      "r2": 799.27,
+      "scenario_script": "【暴跌熔断风控剧本】触发暴跌熔断保护期，下方严防下探 S2 ($650.14) 极端清算底；反抽测试 R1 ($750.21) 均属诱多；防守止损位 $640.39，严禁左侧接刀",
+      "track": "Track B",
+      "four_h_rsi": 30.0,
+      "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
+      "four_h_tag": "div-bull",
+      "is_short_covering": false,
+      "short_rank": 41
     },
     {
       "rank": 57,
@@ -5698,10 +5698,10 @@
       "sector_key": "Semiconductors",
       "sector_cn": "半导体与设备",
       "sector_rating": "⭐⭐⭐⭐☆",
-      "latest_price": 174.94,
-      "current_price": 174.94,
-      "atr_pct": 4.79,
-      "bias_ma50": -20.12,
+      "latest_price": 175.35,
+      "current_price": 175.35,
+      "atr_pct": 4.78,
+      "bias_ma50": -19.93,
       "bias_ma20": -11.77,
       "low_prev": 181.46,
       "rsi_14": 27.4,
@@ -5711,22 +5711,22 @@
       "is_cooling_halt": false,
       "macro_temp": "🌧️ 暴雨空仓",
       "model_raw_prob_pct": 30.5,
-      "base_raw_prob_pct": 30.2,
-      "predicted_win_rate_pct": 30.2,
-      "calibrated_win_rate_pct": 23.3,
+      "base_raw_prob_pct": 30.3,
+      "predicted_win_rate_pct": 30.3,
+      "calibrated_win_rate_pct": 23.4,
       "sector_pf": 1.55,
-      "target_profit_price": 185.32,
+      "target_profit_price": 185.74,
       "target_profit_pct": 5.9,
-      "stop_loss_price": 167.25,
+      "stop_loss_price": 167.65,
       "stop_loss_pct": 4.4,
       "action": "🚨 暴跌熔断·严禁左侧接刀",
       "action_tag": "action-warning",
       "model_raw_short_prob_pct": 59.9,
       "calibrated_short_win_rate_pct": 62.2,
       "short_entry_price": 186.63999938964844,
-      "short_target_profit_price": 164.56,
+      "short_target_profit_price": 164.96,
       "short_target_profit_pct": 5.9,
-      "short_stop_loss_price": 182.63,
+      "short_stop_loss_price": 183.05,
       "short_stop_loss_pct": 4.4,
       "dollar_pcr": 0.99,
       "pcr": 0.71,
@@ -5736,12 +5736,12 @@
       "iv_atm": 81.5,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "s1": 169.17,
-      "s2": 163.79,
-      "sl": 161.33,
-      "r1": 181.47,
-      "r2": 190.14,
-      "scenario_script": "【暴跌熔断风控剧本】触发暴跌熔断保护期，下方严防下探 S2 ($163.79) 极端清算底；反抽测试 R1 ($181.47) 均属诱多；防守止损位 $161.33，严禁左侧接刀",
+      "s1": 169.58,
+      "s2": 164.19,
+      "sl": 161.73,
+      "r1": 181.89,
+      "r2": 190.57,
+      "scenario_script": "【暴跌熔断风控剧本】触发暴跌熔断保护期，下方严防下探 S2 ($164.19) 极端清算底；反抽测试 R1 ($181.89) 均属诱多；防守止损位 $161.73，严禁左侧接刀",
       "track": "Track B",
       "four_h_rsi": 32.5,
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
@@ -6040,8 +6040,8 @@
       "sector_key": "Energy_Power",
       "sector_cn": "大盘与宏观ETF",
       "sector_rating": "⭐⭐⭐☆☆",
-      "latest_price": 371.75,
-      "current_price": 371.75,
+      "latest_price": 371.76,
+      "current_price": 371.76,
       "atr_pct": 1.8,
       "bias_ma50": -3.28,
       "bias_ma20": -0.07,
@@ -6057,18 +6057,18 @@
       "predicted_win_rate_pct": 37.7,
       "calibrated_win_rate_pct": 38.3,
       "sector_pf": 1.28,
-      "target_profit_price": 382.9,
+      "target_profit_price": 382.91,
       "target_profit_pct": 3.0,
-      "stop_loss_price": 363.57,
+      "stop_loss_price": 363.58,
       "stop_loss_pct": 2.2,
       "action": "🛡️ 暴雨空仓·严禁左侧接刀",
       "action_tag": "action-watch",
       "model_raw_short_prob_pct": 59.7,
       "calibrated_short_win_rate_pct": 49.0,
       "short_entry_price": 372.5199890136719,
-      "short_target_profit_price": 360.6,
+      "short_target_profit_price": 360.61,
       "short_target_profit_pct": 3.0,
-      "short_stop_loss_price": 379.93,
+      "short_stop_loss_price": 379.94,
       "short_stop_loss_pct": 2.2,
       "dollar_pcr": 0.53,
       "pcr": 0.52,
@@ -6078,12 +6078,12 @@
       "iv_atm": 31.9,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "s1": 362.46,
-      "s2": 355.02,
-      "sl": 349.69,
-      "r1": 382.9,
-      "r2": 394.06,
-      "scenario_script": "【黄金坑做多剧本】回踩波段支撑 S1 ($362.46) 蓄势不破，看多头反弹测试 R1 ($382.90)；突破顺势看 R2 ($394.06)；有效跌破止损位 $349.69 离场",
+      "s1": 362.47,
+      "s2": 355.03,
+      "sl": 349.7,
+      "r1": 382.91,
+      "r2": 394.07,
+      "scenario_script": "【黄金坑做多剧本】回踩波段支撑 S1 ($362.47) 蓄势不破，看多头反弹测试 R1 ($382.91)；突破顺势看 R2 ($394.07)；有效跌破止损位 $349.70 离场",
       "track": "Track A",
       "four_h_rsi": 52.1,
       "four_h_div": "⚡ 4H 均线多头共振",
@@ -6154,10 +6154,10 @@
       "sector_key": "Crypto_Proxy",
       "sector_cn": "恐慌与反向对冲",
       "sector_rating": "⭐⭐⭐☆☆",
-      "latest_price": 58.81,
-      "current_price": 58.81,
-      "atr_pct": 14.43,
-      "bias_ma50": 33.47,
+      "latest_price": 58.89,
+      "current_price": 58.89,
+      "atr_pct": 14.41,
+      "bias_ma50": 33.65,
       "bias_ma20": 41.87,
       "low_prev": 66.32,
       "rsi_14": 53.1,
@@ -6171,18 +6171,18 @@
       "predicted_win_rate_pct": 36.7,
       "calibrated_win_rate_pct": 37.6,
       "sector_pf": 1.29,
-      "target_profit_price": 64.37,
+      "target_profit_price": 64.45,
       "target_profit_pct": 9.5,
-      "stop_loss_price": 54.69,
+      "stop_loss_price": 54.77,
       "stop_loss_pct": 7.0,
       "action": "🛡️ 暴雨空仓·严禁左侧接刀",
       "action_tag": "action-watch",
       "model_raw_short_prob_pct": 77.3,
       "calibrated_short_win_rate_pct": 47.9,
       "short_entry_price": 70.94999694824219,
-      "short_target_profit_price": 53.25,
+      "short_target_profit_price": 53.32,
       "short_target_profit_pct": 9.5,
-      "short_stop_loss_price": 62.93,
+      "short_stop_loss_price": 63.01,
       "short_stop_loss_pct": 7.0,
       "dollar_pcr": 0.51,
       "pcr": 1.02,
@@ -6192,12 +6192,12 @@
       "iv_atm": 269.9,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "s1": 55.72,
-      "s2": 52.84,
-      "sl": 52.05,
-      "r1": 62.31,
+      "s1": 55.8,
+      "s2": 52.91,
+      "sl": 52.12,
+      "r1": 62.39,
       "r2": 70.0,
-      "scenario_script": "【右侧主升剧本】依托波段支撑 S1 ($55.72) 逢低做多，上看阻力 R1 ($62.31) 与突破扩展目标 R2 ($70.00)；关键防守位 $52.05",
+      "scenario_script": "【右侧主升剧本】依托波段支撑 S1 ($55.80) 逢低做多，上看阻力 R1 ($62.39) 与突破扩展目标 R2 ($70.00)；关键防守位 $52.12",
       "track": "Track A",
       "four_h_rsi": 57.5,
       "four_h_div": "⚡ 4H 均线多头共振",
@@ -6378,65 +6378,8 @@
     }
   ],
   "by_ticker": {
-    "MU": {
-      "rank": 1,
-      "ticker": "MU",
-      "sector_key": "Memory",
-      "sector_cn": "存储芯片",
-      "sector_rating": "⭐⭐⭐⭐⭐",
-      "latest_price": 715.53,
-      "current_price": 715.53,
-      "atr_pct": 8.17,
-      "bias_ma50": -25.27,
-      "bias_ma20": -21.5,
-      "low_prev": 650.0,
-      "rsi_14": 36.4,
-      "is_broken": false,
-      "is_etf": false,
-      "is_crash_halt": false,
-      "is_cooling_halt": true,
-      "macro_temp": "🌧️ 暴雨空仓",
-      "model_raw_prob_pct": 36.7,
-      "base_raw_prob_pct": 36.4,
-      "predicted_win_rate_pct": 36.4,
-      "calibrated_win_rate_pct": 53.7,
-      "sector_pf": 1.8,
-      "target_profit_price": 752.54,
-      "target_profit_pct": 5.2,
-      "stop_loss_price": 652.4,
-      "stop_loss_pct": 8.8,
-      "action": "🔥 恐慌衰竭·博弈空头回补 (压力位不过就跑)",
-      "action_tag": "action-rebound",
-      "model_raw_short_prob_pct": 63.5,
-      "calibrated_short_win_rate_pct": 65.5,
-      "short_entry_price": 690.0,
-      "short_target_profit_price": 656.75,
-      "short_target_profit_pct": 8.2,
-      "short_stop_loss_price": 759.07,
-      "short_stop_loss_pct": 6.1,
-      "dollar_pcr": 1.02,
-      "pcr": 1.27,
-      "pcr_sentiment": "🟠 机构谨慎防跌",
-      "put_wall": 600.0,
-      "call_wall": 720.0,
-      "iv_atm": 130.1,
-      "short_action": "🩸 极高胜率·顺势做空/买Put",
-      "short_action_tag": "short-action-strong",
-      "s1": 682.87,
-      "s2": 652.4,
-      "sl": 642.61,
-      "r1": 752.54,
-      "r2": 801.63,
-      "scenario_script": "【空头回补滑头剧本】依托 S2 ($652.40) 极限插针底防守，上看第一阻力 R1 ($752.54) 空头回补反抽(不过就跑)；放量逼空看 R2 ($801.63)；击穿止损位 $642.61 严格离场防踩踏",
-      "track": "Track B",
-      "four_h_rsi": 30.0,
-      "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
-      "four_h_tag": "div-bull",
-      "is_short_covering": true,
-      "short_rank": 41
-    },
     "HPE": {
-      "rank": 2,
+      "rank": 1,
       "ticker": "HPE",
       "sector_key": "Semiconductors",
       "sector_cn": "AI液冷与服务器",
@@ -6493,7 +6436,7 @@
       "short_rank": 70
     },
     "AMAT": {
-      "rank": 3,
+      "rank": 2,
       "ticker": "AMAT",
       "sector_key": "Semiconductors",
       "sector_cn": "半导体与设备",
@@ -6547,18 +6490,18 @@
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": true,
-      "short_rank": 68
+      "short_rank": 67
     },
     "AMZN": {
-      "rank": 4,
+      "rank": 3,
       "ticker": "AMZN",
       "sector_key": "Neo_Cloud",
       "sector_cn": "科技巨头与AI生态",
       "sector_rating": "⭐⭐⭐☆☆",
-      "latest_price": 266.35,
-      "current_price": 266.35,
-      "atr_pct": 3.63,
-      "bias_ma50": 4.88,
+      "latest_price": 265.28,
+      "current_price": 265.28,
+      "atr_pct": 3.65,
+      "bias_ma50": 4.46,
       "bias_ma20": 1.97,
       "low_prev": 252.27,
       "rsi_14": 59.2,
@@ -6568,22 +6511,22 @@
       "is_cooling_halt": false,
       "macro_temp": "🌧️ 暴雨空仓",
       "model_raw_prob_pct": 36.4,
-      "base_raw_prob_pct": 41.4,
-      "predicted_win_rate_pct": 41.4,
-      "calibrated_win_rate_pct": 44.2,
+      "base_raw_prob_pct": 41.3,
+      "predicted_win_rate_pct": 41.3,
+      "calibrated_win_rate_pct": 44.1,
       "sector_pf": 1.35,
-      "target_profit_price": 279.4,
+      "target_profit_price": 278.35,
       "target_profit_pct": 4.9,
-      "stop_loss_price": 256.68,
+      "stop_loss_price": 255.6,
       "stop_loss_pct": 3.6,
       "action": "🛡️ 暴雨空仓·严禁左侧接刀",
       "action_tag": "action-watch",
       "model_raw_short_prob_pct": 52.6,
       "calibrated_short_win_rate_pct": 48.4,
       "short_entry_price": 259.29998779296875,
-      "short_target_profit_price": 253.3,
+      "short_target_profit_price": 252.21,
       "short_target_profit_pct": 4.9,
-      "short_stop_loss_price": 276.02,
+      "short_stop_loss_price": 274.96,
       "short_stop_loss_pct": 3.6,
       "dollar_pcr": 0.42,
       "pcr": 0.49,
@@ -6593,12 +6536,12 @@
       "iv_atm": 51.0,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "s1": 259.1,
-      "s2": 252.33,
-      "sl": 248.55,
-      "r1": 274.57,
-      "r2": 285.47,
-      "scenario_script": "【右侧主升剧本】依托波段支撑 S1 ($259.10) 逢低做多，上看阻力 R1 ($274.57) 与突破扩展目标 R2 ($285.47)；关键防守位 $248.55",
+      "s1": 258.02,
+      "s2": 251.24,
+      "sl": 247.47,
+      "r1": 273.51,
+      "r2": 284.43,
+      "scenario_script": "【右侧主升剧本】依托波段支撑 S1 ($258.02) 逢低做多，上看阻力 R1 ($273.51) 与突破扩展目标 R2 ($284.43)；关键防守位 $247.47",
       "track": "Track A",
       "four_h_rsi": 50.3,
       "four_h_div": "⚡ 4H 均线多头共振",
@@ -6607,7 +6550,7 @@
       "short_rank": 23
     },
     "QCOM": {
-      "rank": 5,
+      "rank": 4,
       "ticker": "QCOM",
       "sector_key": "Semiconductors",
       "sector_cn": "通信芯片与端侧AI",
@@ -6664,7 +6607,7 @@
       "short_rank": 1
     },
     "V": {
-      "rank": 6,
+      "rank": 5,
       "ticker": "V",
       "sector_key": "Energy_Power",
       "sector_cn": "价值蓝筹与医药",
@@ -6721,15 +6664,15 @@
       "short_rank": 27
     },
     "META": {
-      "rank": 7,
+      "rank": 6,
       "ticker": "META",
       "sector_key": "Neo_Cloud",
       "sector_cn": "科技巨头与AI生态",
       "sector_rating": "⭐⭐⭐☆☆",
-      "latest_price": 638.15,
-      "current_price": 638.15,
+      "latest_price": 638.35,
+      "current_price": 638.35,
       "atr_pct": 3.93,
-      "bias_ma50": -5.61,
+      "bias_ma50": -5.58,
       "bias_ma20": -7.93,
       "low_prev": 583.8,
       "rsi_14": 46.5,
@@ -6743,18 +6686,18 @@
       "predicted_win_rate_pct": 39.8,
       "calibrated_win_rate_pct": 41.3,
       "sector_pf": 1.35,
-      "target_profit_price": 672.01,
+      "target_profit_price": 672.22,
       "target_profit_pct": 5.3,
-      "stop_loss_price": 613.07,
+      "stop_loss_price": 613.26,
       "stop_loss_pct": 3.9,
       "action": "🛡️ 暴雨空仓·严禁左侧接刀",
       "action_tag": "action-watch",
       "model_raw_short_prob_pct": 50.7,
       "calibrated_short_win_rate_pct": 54.3,
       "short_entry_price": 610.1500244140625,
-      "short_target_profit_price": 604.29,
+      "short_target_profit_price": 604.48,
       "short_target_profit_pct": 5.3,
-      "short_stop_loss_price": 663.23,
+      "short_stop_loss_price": 663.44,
       "short_stop_loss_pct": 3.9,
       "dollar_pcr": 1.04,
       "pcr": 0.65,
@@ -6764,12 +6707,12 @@
       "iv_atm": 61.1,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "s1": 619.34,
+      "s1": 619.53,
       "s2": 600.0,
       "sl": 591.0,
-      "r1": 659.47,
-      "r2": 687.75,
-      "scenario_script": "【黄金坑做多剧本】回踩波段支撑 S1 ($619.34) 蓄势不破，看多头反弹测试 R1 ($659.47)；突破顺势看 R2 ($687.75)；有效跌破止损位 $591.00 离场",
+      "r1": 659.67,
+      "r2": 687.96,
+      "scenario_script": "【黄金坑做多剧本】回踩波段支撑 S1 ($619.53) 蓄势不破，看多头反弹测试 R1 ($659.67)；突破顺势看 R2 ($687.96)；有效跌破止损位 $591.00 离场",
       "track": "Track A",
       "four_h_rsi": 35.0,
       "four_h_div": "➖ 4H 均线震荡纠缠",
@@ -6778,7 +6721,7 @@
       "short_rank": 17
     },
     "AMD": {
-      "rank": 8,
+      "rank": 7,
       "ticker": "AMD",
       "sector_key": "Semiconductors",
       "sector_cn": "半导体与设备",
@@ -6835,7 +6778,7 @@
       "short_rank": 4
     },
     "KO": {
-      "rank": 9,
+      "rank": 8,
       "ticker": "KO",
       "sector_key": "Energy_Power",
       "sector_cn": "价值蓝筹与医药",
@@ -6892,7 +6835,7 @@
       "short_rank": 28
     },
     "PEP": {
-      "rank": 10,
+      "rank": 9,
       "ticker": "PEP",
       "sector_key": "Energy_Power",
       "sector_cn": "价值蓝筹与医药",
@@ -6949,7 +6892,7 @@
       "short_rank": 18
     },
     "SPCX": {
-      "rank": 11,
+      "rank": 10,
       "ticker": "SPCX",
       "sector_key": "Neo_Cloud",
       "sector_cn": "物理AI与太空商业",
@@ -7006,7 +6949,7 @@
       "short_rank": 7
     },
     "AXP": {
-      "rank": 12,
+      "rank": 11,
       "ticker": "AXP",
       "sector_key": "Energy_Power",
       "sector_cn": "价值蓝筹与医药",
@@ -7063,7 +7006,7 @@
       "short_rank": 20
     },
     "NKE": {
-      "rank": 13,
+      "rank": 12,
       "ticker": "NKE",
       "sector_key": "Energy_Power",
       "sector_cn": "价值蓝筹与医药",
@@ -7120,15 +7063,15 @@
       "short_rank": 8
     },
     "AAPL": {
-      "rank": 14,
+      "rank": 13,
       "ticker": "AAPL",
       "sector_key": "Neo_Cloud",
       "sector_cn": "科技巨头与AI生态",
       "sector_rating": "⭐⭐⭐☆☆",
-      "latest_price": 352.73,
-      "current_price": 352.73,
+      "latest_price": 352.95,
+      "current_price": 352.95,
       "atr_pct": 2.51,
-      "bias_ma50": 4.78,
+      "bias_ma50": 4.85,
       "bias_ma20": -0.3,
       "low_prev": 342.06,
       "rsi_14": 57.6,
@@ -7142,18 +7085,18 @@
       "predicted_win_rate_pct": 33.5,
       "calibrated_win_rate_pct": 36.0,
       "sector_pf": 1.35,
-      "target_profit_price": 364.68,
+      "target_profit_price": 364.91,
       "target_profit_pct": 3.4,
-      "stop_loss_price": 343.88,
+      "stop_loss_price": 344.09,
       "stop_loss_pct": 2.5,
       "action": "🛡️ 暴雨空仓·严禁左侧接刀",
       "action_tag": "action-watch",
       "model_raw_short_prob_pct": 53.5,
       "calibrated_short_win_rate_pct": 56.1,
       "short_entry_price": 342.3699951171875,
-      "short_target_profit_price": 340.78,
+      "short_target_profit_price": 340.99,
       "short_target_profit_pct": 3.4,
-      "short_stop_loss_price": 361.58,
+      "short_stop_loss_price": 361.81,
       "short_stop_loss_pct": 2.5,
       "dollar_pcr": 1.61,
       "pcr": 1.86,
@@ -7163,12 +7106,12 @@
       "iv_atm": 38.1,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "s1": 343.91,
-      "s2": 336.86,
-      "sl": 331.81,
-      "r1": 363.31,
-      "r2": 373.89,
-      "scenario_script": "【右侧主升剧本】依托波段支撑 S1 ($343.91) 逢低做多，上看阻力 R1 ($363.31) 与突破扩展目标 R2 ($373.89)；关键防守位 $331.81",
+      "s1": 344.13,
+      "s2": 337.07,
+      "sl": 332.01,
+      "r1": 363.54,
+      "r2": 374.13,
+      "scenario_script": "【右侧主升剧本】依托波段支撑 S1 ($344.13) 逢低做多，上看阻力 R1 ($363.54) 与突破扩展目标 R2 ($374.13)；关键防守位 $332.01",
       "track": "Track A",
       "four_h_rsi": 50.5,
       "four_h_div": "⚡ 4H 均线多头共振",
@@ -7177,7 +7120,7 @@
       "short_rank": 14
     },
     "VST": {
-      "rank": 15,
+      "rank": 14,
       "ticker": "VST",
       "sector_key": "Energy_Power",
       "sector_cn": "数据中心能源电力",
@@ -7234,7 +7177,7 @@
       "short_rank": 10
     },
     "LLY": {
-      "rank": 16,
+      "rank": 15,
       "ticker": "LLY",
       "sector_key": "Energy_Power",
       "sector_cn": "价值蓝筹与医药",
@@ -7291,7 +7234,7 @@
       "short_rank": 11
     },
     "CEG": {
-      "rank": 17,
+      "rank": 16,
       "ticker": "CEG",
       "sector_key": "Energy_Power",
       "sector_cn": "数据中心能源电力",
@@ -7348,7 +7291,7 @@
       "short_rank": 3
     },
     "MRNA": {
-      "rank": 18,
+      "rank": 17,
       "ticker": "MRNA",
       "sector_key": "Energy_Power",
       "sector_cn": "价值蓝筹与医药",
@@ -7405,7 +7348,7 @@
       "short_rank": 29
     },
     "MSFT": {
-      "rank": 19,
+      "rank": 18,
       "ticker": "MSFT",
       "sector_key": "Enterprise_SaaS",
       "sector_cn": "企业软件与 AI SaaS",
@@ -7462,7 +7405,7 @@
       "short_rank": 21
     },
     "MCD": {
-      "rank": 20,
+      "rank": 19,
       "ticker": "MCD",
       "sector_key": "Energy_Power",
       "sector_cn": "价值蓝筹与医药",
@@ -7519,7 +7462,7 @@
       "short_rank": 19
     },
     "CRWD": {
-      "rank": 21,
+      "rank": 20,
       "ticker": "CRWD",
       "sector_key": "Energy_Power",
       "sector_cn": "企业软件与AI安全",
@@ -7576,7 +7519,7 @@
       "short_rank": 39
     },
     "QQQM": {
-      "rank": 22,
+      "rank": 21,
       "ticker": "QQQM",
       "sector_key": "Semiconductors",
       "sector_cn": "大盘与宏观ETF",
@@ -7633,7 +7576,7 @@
       "short_rank": 69
     },
     "AVGO": {
-      "rank": 23,
+      "rank": 22,
       "ticker": "AVGO",
       "sector_key": "Semiconductors",
       "sector_cn": "半导体与设备",
@@ -7690,7 +7633,7 @@
       "short_rank": 53
     },
     "ASML": {
-      "rank": 24,
+      "rank": 23,
       "ticker": "ASML",
       "sector_key": "Semiconductors",
       "sector_cn": "半导体与设备",
@@ -7747,7 +7690,7 @@
       "short_rank": 42
     },
     "TSM": {
-      "rank": 25,
+      "rank": 24,
       "ticker": "TSM",
       "sector_key": "Semiconductors",
       "sector_cn": "半导体与设备",
@@ -7804,7 +7747,7 @@
       "short_rank": 45
     },
     "SOXX": {
-      "rank": 26,
+      "rank": 25,
       "ticker": "SOXX",
       "sector_key": "Semiconductors",
       "sector_cn": "半导体ETF",
@@ -7861,7 +7804,7 @@
       "short_rank": 40
     },
     "WDC": {
-      "rank": 27,
+      "rank": 26,
       "ticker": "WDC",
       "sector_key": "Memory",
       "sector_cn": "存储芯片",
@@ -7918,7 +7861,7 @@
       "short_rank": 52
     },
     "COIN": {
-      "rank": 28,
+      "rank": 27,
       "ticker": "COIN",
       "sector_key": "Crypto_Proxy",
       "sector_cn": "加密币股代理",
@@ -7975,7 +7918,7 @@
       "short_rank": 62
     },
     "GOOGL": {
-      "rank": 29,
+      "rank": 28,
       "ticker": "GOOGL",
       "sector_key": "Neo_Cloud",
       "sector_cn": "科技巨头与AI生态",
@@ -8032,7 +7975,7 @@
       "short_rank": 25
     },
     "STX": {
-      "rank": 30,
+      "rank": 29,
       "ticker": "STX",
       "sector_key": "Memory",
       "sector_cn": "存储芯片",
@@ -8089,7 +8032,7 @@
       "short_rank": 71
     },
     "NOW": {
-      "rank": 32,
+      "rank": 31,
       "ticker": "NOW",
       "sector_key": "Enterprise_SaaS",
       "sector_cn": "企业软件与 AI SaaS",
@@ -8146,7 +8089,7 @@
       "short_rank": 6
     },
     "ORCL": {
-      "rank": 33,
+      "rank": 32,
       "ticker": "ORCL",
       "sector_key": "Enterprise_SaaS",
       "sector_cn": "企业软件与 AI SaaS",
@@ -8203,7 +8146,7 @@
       "short_rank": 51
     },
     "PLTR": {
-      "rank": 34,
+      "rank": 33,
       "ticker": "PLTR",
       "sector_key": "Enterprise_SaaS",
       "sector_cn": "企业软件与 AI SaaS",
@@ -8257,10 +8200,10 @@
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": false,
-      "short_rank": 67
+      "short_rank": 68
     },
     "SMH": {
-      "rank": 35,
+      "rank": 34,
       "ticker": "SMH",
       "sector_key": "Semiconductors",
       "sector_cn": "半导体ETF",
@@ -8317,7 +8260,7 @@
       "short_rank": 37
     },
     "COHR": {
-      "rank": 36,
+      "rank": 35,
       "ticker": "COHR",
       "sector_key": "Optical_Interconnect",
       "sector_cn": "光通信与互联",
@@ -8374,15 +8317,15 @@
       "short_rank": 35
     },
     "TSLA": {
-      "rank": 37,
+      "rank": 36,
       "ticker": "TSLA",
       "sector_key": "Neo_Cloud",
       "sector_cn": "物理AI与太空商业",
       "sector_rating": "⭐⭐⭐☆☆",
-      "latest_price": 371.0,
-      "current_price": 371.0,
+      "latest_price": 371.27,
+      "current_price": 371.27,
       "atr_pct": 4.64,
-      "bias_ma50": -0.46,
+      "bias_ma50": -0.39,
       "bias_ma20": -5.84,
       "low_prev": 338.15,
       "rsi_14": 49.9,
@@ -8396,18 +8339,18 @@
       "predicted_win_rate_pct": 29.4,
       "calibrated_win_rate_pct": 31.7,
       "sector_pf": 1.35,
-      "target_profit_price": 392.64,
+      "target_profit_price": 392.92,
       "target_profit_pct": 5.8,
-      "stop_loss_price": 354.97,
+      "stop_loss_price": 355.23,
       "stop_loss_pct": 4.3,
       "action": "🚨 暴跌熔断·严禁左侧接刀",
       "action_tag": "action-watch",
       "model_raw_short_prob_pct": 70.2,
       "calibrated_short_win_rate_pct": 77.4,
       "short_entry_price": 358.2200012207031,
-      "short_target_profit_price": 349.36,
+      "short_target_profit_price": 349.62,
       "short_target_profit_pct": 5.8,
-      "short_stop_loss_price": 387.03,
+      "short_stop_loss_price": 387.31,
       "short_stop_loss_pct": 4.3,
       "dollar_pcr": 0.5,
       "pcr": 1.59,
@@ -8417,12 +8360,12 @@
       "iv_atm": 78.2,
       "short_action": "🩸 极高胜率·顺势做空/买Put",
       "short_action_tag": "short-action-strong",
-      "s1": 358.98,
-      "s2": 347.76,
-      "sl": 342.54,
-      "r1": 384.62,
-      "r2": 402.7,
-      "scenario_script": "【暴跌熔断风控剧本】触发暴跌熔断保护期，下方严防下探 S2 ($347.76) 极端清算底；反抽测试 R1 ($384.62) 均属诱多；防守止损位 $342.54，严禁左侧接刀",
+      "s1": 359.24,
+      "s2": 348.01,
+      "sl": 342.79,
+      "r1": 384.9,
+      "r2": 402.99,
+      "scenario_script": "【暴跌熔断风控剧本】触发暴跌熔断保护期，下方严防下探 S2 ($348.01) 极端清算底；反抽测试 R1 ($384.90) 均属诱多；防守止损位 $342.79，严禁左侧接刀",
       "track": "Track A",
       "four_h_rsi": 63.7,
       "four_h_div": "⚡ 4H 均线多头共振",
@@ -8431,7 +8374,7 @@
       "short_rank": 32
     },
     "RKLB": {
-      "rank": 38,
+      "rank": 37,
       "ticker": "RKLB",
       "sector_key": "Neo_Cloud",
       "sector_cn": "物理AI与太空商业",
@@ -8488,7 +8431,7 @@
       "short_rank": 64
     },
     "DELL": {
-      "rank": 39,
+      "rank": 38,
       "ticker": "DELL",
       "sector_key": "Semiconductors",
       "sector_cn": "AI液冷与服务器",
@@ -8545,15 +8488,15 @@
       "short_rank": 38
     },
     "INTC": {
-      "rank": 40,
+      "rank": 39,
       "ticker": "INTC",
       "sector_key": "Semiconductors",
       "sector_cn": "半导体与设备",
       "sector_rating": "⭐⭐⭐⭐☆",
-      "latest_price": 57.57,
-      "current_price": 57.57,
-      "atr_pct": 10.76,
-      "bias_ma50": -40.86,
+      "latest_price": 57.54,
+      "current_price": 57.54,
+      "atr_pct": 10.77,
+      "bias_ma50": -40.89,
       "bias_ma20": -32.25,
       "low_prev": 51.51,
       "rsi_14": 29.5,
@@ -8567,18 +8510,18 @@
       "predicted_win_rate_pct": 44.8,
       "calibrated_win_rate_pct": 30.5,
       "sector_pf": 1.55,
-      "target_profit_price": 63.01,
+      "target_profit_price": 62.98,
       "target_profit_pct": 9.5,
-      "stop_loss_price": 53.54,
+      "stop_loss_price": 53.51,
       "stop_loss_pct": 7.0,
       "action": "🚨 暴跌熔断·严禁左侧接刀",
       "action_tag": "action-rebound",
       "model_raw_short_prob_pct": 64.7,
       "calibrated_short_win_rate_pct": 63.8,
       "short_entry_price": 56.279998779296875,
-      "short_target_profit_price": 52.13,
+      "short_target_profit_price": 52.1,
       "short_target_profit_pct": 9.5,
-      "short_stop_loss_price": 61.6,
+      "short_stop_loss_price": 61.57,
       "short_stop_loss_pct": 7.0,
       "dollar_pcr": 0.79,
       "pcr": 0.59,
@@ -8588,12 +8531,12 @@
       "iv_atm": 115.7,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "s1": 54.55,
-      "s2": 51.73,
-      "sl": 50.95,
-      "r1": 61.0,
-      "r2": 65.54,
-      "scenario_script": "【暴跌熔断风控剧本】触发暴跌熔断保护期，下方严防下探 S2 ($51.73) 极端清算底；反抽测试 R1 ($61.00) 均属诱多；防守止损位 $50.95，严禁左侧接刀",
+      "s1": 54.52,
+      "s2": 51.7,
+      "sl": 50.92,
+      "r1": 60.96,
+      "r2": 65.51,
+      "scenario_script": "【暴跌熔断风控剧本】触发暴跌熔断保护期，下方严防下探 S2 ($51.70) 极端清算底；反抽测试 R1 ($60.96) 均属诱多；防守止损位 $50.92，严禁左侧接刀",
       "track": "Track B",
       "four_h_rsi": 25.8,
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
@@ -8602,7 +8545,7 @@
       "short_rank": 47
     },
     "FPS": {
-      "rank": 41,
+      "rank": 40,
       "ticker": "FPS",
       "sector_key": "Energy_Power",
       "sector_cn": "数据中心能源电力",
@@ -8659,7 +8602,7 @@
       "short_rank": 34
     },
     "CRDO": {
-      "rank": 42,
+      "rank": 41,
       "ticker": "CRDO",
       "sector_key": "Optical_Interconnect",
       "sector_cn": "光通信与互联",
@@ -8716,7 +8659,7 @@
       "short_rank": 33
     },
     "MSTR": {
-      "rank": 43,
+      "rank": 42,
       "ticker": "MSTR",
       "sector_key": "Crypto_Proxy",
       "sector_cn": "加密币股代理",
@@ -8773,7 +8716,7 @@
       "short_rank": 48
     },
     "CRWV": {
-      "rank": 44,
+      "rank": 43,
       "ticker": "CRWV",
       "sector_key": "Neo_Cloud",
       "sector_cn": "Neo-Cloud 算力租赁",
@@ -8830,7 +8773,7 @@
       "short_rank": 43
     },
     "MARA": {
-      "rank": 45,
+      "rank": 44,
       "ticker": "MARA",
       "sector_key": "Crypto_Proxy",
       "sector_cn": "加密币股代理",
@@ -8887,15 +8830,15 @@
       "short_rank": 50
     },
     "ASTS": {
-      "rank": 46,
+      "rank": 45,
       "ticker": "ASTS",
       "sector_key": "Neo_Cloud",
       "sector_cn": "物理AI与太空商业",
       "sector_rating": "⭐⭐⭐☆☆",
-      "latest_price": 34.15,
-      "current_price": 34.15,
-      "atr_pct": 12.64,
-      "bias_ma50": -34.0,
+      "latest_price": 34.1,
+      "current_price": 34.1,
+      "atr_pct": 12.66,
+      "bias_ma50": -34.1,
       "bias_ma20": -19.94,
       "low_prev": 28.98,
       "rsi_14": 39.9,
@@ -8909,18 +8852,18 @@
       "predicted_win_rate_pct": 43.2,
       "calibrated_win_rate_pct": 29.7,
       "sector_pf": 1.35,
-      "target_profit_price": 37.38,
+      "target_profit_price": 37.32,
       "target_profit_pct": 9.5,
-      "stop_loss_price": 31.76,
+      "stop_loss_price": 31.71,
       "stop_loss_pct": 7.0,
       "action": "🚨 暴跌熔断·严禁左侧接刀",
       "action_tag": "action-rebound",
       "model_raw_short_prob_pct": 61.6,
       "calibrated_short_win_rate_pct": 60.0,
       "short_entry_price": 32.33000183105469,
-      "short_target_profit_price": 30.92,
+      "short_target_profit_price": 30.88,
       "short_target_profit_pct": 9.5,
-      "short_stop_loss_price": 36.54,
+      "short_stop_loss_price": 36.49,
       "short_stop_loss_pct": 7.0,
       "dollar_pcr": 0.48,
       "pcr": 0.54,
@@ -8930,12 +8873,12 @@
       "iv_atm": 220.7,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "s1": 32.36,
-      "s2": 30.68,
-      "sl": 30.22,
-      "r1": 36.18,
-      "r2": 38.88,
-      "scenario_script": "【暴跌熔断风控剧本】触发暴跌熔断保护期，下方严防下探 S2 ($30.68) 极端清算底；反抽测试 R1 ($36.18) 均属诱多；防守止损位 $30.22，严禁左侧接刀",
+      "s1": 32.31,
+      "s2": 30.64,
+      "sl": 30.18,
+      "r1": 36.13,
+      "r2": 38.82,
+      "scenario_script": "【暴跌熔断风控剧本】触发暴跌熔断保护期，下方严防下探 S2 ($30.64) 极端清算底；反抽测试 R1 ($36.13) 均属诱多；防守止损位 $30.18，严禁左侧接刀",
       "track": "Track B",
       "four_h_rsi": 35.2,
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
@@ -8944,7 +8887,7 @@
       "short_rank": 57
     },
     "AAOI": {
-      "rank": 47,
+      "rank": 46,
       "ticker": "AAOI",
       "sector_key": "Optical_Interconnect",
       "sector_cn": "光通信与互联",
@@ -9001,15 +8944,15 @@
       "short_rank": 63
     },
     "SOXL": {
-      "rank": 48,
+      "rank": 47,
       "ticker": "SOXL",
       "sector_key": "Semiconductors",
       "sector_cn": "半导体3倍做多",
       "sector_rating": "⭐⭐⭐⭐☆",
-      "latest_price": 52.47,
-      "current_price": 52.47,
-      "atr_pct": 25.59,
-      "bias_ma50": -54.01,
+      "latest_price": 52.44,
+      "current_price": 52.44,
+      "atr_pct": 25.6,
+      "bias_ma50": -54.04,
       "bias_ma20": -49.09,
       "low_prev": 40.59,
       "rsi_14": 34.8,
@@ -9023,18 +8966,18 @@
       "predicted_win_rate_pct": 42.9,
       "calibrated_win_rate_pct": 29.2,
       "sector_pf": 1.55,
-      "target_profit_price": 57.43,
+      "target_profit_price": 57.4,
       "target_profit_pct": 9.5,
-      "stop_loss_price": 48.8,
+      "stop_loss_price": 48.77,
       "stop_loss_pct": 7.0,
       "action": "🚨 暴跌熔断·严禁左侧接刀",
       "action_tag": "action-rebound",
       "model_raw_short_prob_pct": 59.8,
       "calibrated_short_win_rate_pct": 59.4,
       "short_entry_price": 45.970001220703125,
-      "short_target_profit_price": 47.51,
+      "short_target_profit_price": 47.48,
       "short_target_profit_pct": 9.5,
-      "short_stop_loss_price": 56.14,
+      "short_stop_loss_price": 56.11,
       "short_stop_loss_pct": 7.0,
       "dollar_pcr": 0.77,
       "pcr": 0.85,
@@ -9044,12 +8987,12 @@
       "iv_atm": 256.5,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "s1": 49.72,
-      "s2": 47.14,
-      "sl": 46.43,
-      "r1": 55.59,
-      "r2": 59.73,
-      "scenario_script": "【暴跌熔断风控剧本】触发暴跌熔断保护期，下方严防下探 S2 ($47.14) 极端清算底；反抽测试 R1 ($55.59) 均属诱多；防守止损位 $46.43，严禁左侧接刀",
+      "s1": 49.69,
+      "s2": 47.12,
+      "sl": 46.41,
+      "r1": 55.56,
+      "r2": 59.7,
+      "scenario_script": "【暴跌熔断风控剧本】触发暴跌熔断保护期，下方严防下探 S2 ($47.12) 极端清算底；反抽测试 R1 ($55.56) 均属诱多；防守止损位 $46.41，严禁左侧接刀",
       "track": "Track B",
       "four_h_rsi": 36.6,
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
@@ -9058,7 +9001,7 @@
       "short_rank": 60
     },
     "SNDK": {
-      "rank": 49,
+      "rank": 48,
       "ticker": "SNDK",
       "sector_key": "Memory",
       "sector_cn": "存储芯片",
@@ -9115,7 +9058,7 @@
       "short_rank": 44
     },
     "NBIS": {
-      "rank": 50,
+      "rank": 49,
       "ticker": "NBIS",
       "sector_key": "Neo_Cloud",
       "sector_cn": "Neo-Cloud 算力租赁",
@@ -9172,7 +9115,7 @@
       "short_rank": 36
     },
     "SKHY": {
-      "rank": 51,
+      "rank": 50,
       "ticker": "SKHY",
       "sector_key": "Memory",
       "sector_cn": "存储芯片",
@@ -9229,7 +9172,7 @@
       "short_rank": 56
     },
     "APLD": {
-      "rank": 52,
+      "rank": 51,
       "ticker": "APLD",
       "sector_key": "Neo_Cloud",
       "sector_cn": "Neo-Cloud 算力租赁",
@@ -9286,7 +9229,7 @@
       "short_rank": 46
     },
     "BE": {
-      "rank": 53,
+      "rank": 52,
       "ticker": "BE",
       "sector_key": "Energy_Power",
       "sector_cn": "数据中心能源电力",
@@ -9343,7 +9286,7 @@
       "short_rank": 54
     },
     "OKLO": {
-      "rank": 54,
+      "rank": 53,
       "ticker": "OKLO",
       "sector_key": "Energy_Power",
       "sector_cn": "数据中心能源电力",
@@ -9400,7 +9343,7 @@
       "short_rank": 61
     },
     "AXTI": {
-      "rank": 55,
+      "rank": 54,
       "ticker": "AXTI",
       "sector_key": "Optical_Interconnect",
       "sector_cn": "光通信与互联",
@@ -9457,7 +9400,7 @@
       "short_rank": 55
     },
     "KORU": {
-      "rank": 56,
+      "rank": 55,
       "ticker": "KORU",
       "sector_key": "Memory",
       "sector_cn": "韩股存储3倍做多",
@@ -9512,6 +9455,63 @@
       "four_h_tag": "div-bull",
       "is_short_covering": false,
       "short_rank": 59
+    },
+    "MU": {
+      "rank": 56,
+      "ticker": "MU",
+      "sector_key": "Memory",
+      "sector_cn": "存储芯片",
+      "sector_rating": "⭐⭐⭐⭐⭐",
+      "latest_price": 713.23,
+      "current_price": 713.23,
+      "atr_pct": 8.2,
+      "bias_ma50": -25.51,
+      "bias_ma20": -21.5,
+      "low_prev": 650.0,
+      "rsi_14": 36.4,
+      "is_broken": true,
+      "is_etf": false,
+      "is_crash_halt": true,
+      "is_cooling_halt": false,
+      "macro_temp": "🌧️ 暴雨空仓",
+      "model_raw_prob_pct": 36.7,
+      "base_raw_prob_pct": 36.4,
+      "predicted_win_rate_pct": 36.4,
+      "calibrated_win_rate_pct": 26.9,
+      "sector_pf": 1.8,
+      "target_profit_price": 771.96,
+      "target_profit_pct": 8.2,
+      "stop_loss_price": 669.72,
+      "stop_loss_pct": 6.1,
+      "action": "🚨 暴跌熔断·严禁左侧接刀",
+      "action_tag": "action-rebound",
+      "model_raw_short_prob_pct": 63.5,
+      "calibrated_short_win_rate_pct": 65.5,
+      "short_entry_price": 690.0,
+      "short_target_profit_price": 654.5,
+      "short_target_profit_pct": 8.2,
+      "short_stop_loss_price": 756.74,
+      "short_stop_loss_pct": 6.1,
+      "dollar_pcr": 1.02,
+      "pcr": 1.27,
+      "pcr_sentiment": "🟠 机构谨慎防跌",
+      "put_wall": 600.0,
+      "call_wall": 720.0,
+      "iv_atm": 130.1,
+      "short_action": "🩸 极高胜率·顺势做空/买Put",
+      "short_action_tag": "short-action-strong",
+      "s1": 680.6,
+      "s2": 650.14,
+      "sl": 640.39,
+      "r1": 750.21,
+      "r2": 799.27,
+      "scenario_script": "【暴跌熔断风控剧本】触发暴跌熔断保护期，下方严防下探 S2 ($650.14) 极端清算底；反抽测试 R1 ($750.21) 均属诱多；防守止损位 $640.39，严禁左侧接刀",
+      "track": "Track B",
+      "four_h_rsi": 30.0,
+      "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
+      "four_h_tag": "div-bull",
+      "is_short_covering": false,
+      "short_rank": 41
     },
     "LITE": {
       "rank": 57,
@@ -9690,10 +9690,10 @@
       "sector_key": "Semiconductors",
       "sector_cn": "半导体与设备",
       "sector_rating": "⭐⭐⭐⭐☆",
-      "latest_price": 174.94,
-      "current_price": 174.94,
-      "atr_pct": 4.79,
-      "bias_ma50": -20.12,
+      "latest_price": 175.35,
+      "current_price": 175.35,
+      "atr_pct": 4.78,
+      "bias_ma50": -19.93,
       "bias_ma20": -11.77,
       "low_prev": 181.46,
       "rsi_14": 27.4,
@@ -9703,22 +9703,22 @@
       "is_cooling_halt": false,
       "macro_temp": "🌧️ 暴雨空仓",
       "model_raw_prob_pct": 30.5,
-      "base_raw_prob_pct": 30.2,
-      "predicted_win_rate_pct": 30.2,
-      "calibrated_win_rate_pct": 23.3,
+      "base_raw_prob_pct": 30.3,
+      "predicted_win_rate_pct": 30.3,
+      "calibrated_win_rate_pct": 23.4,
       "sector_pf": 1.55,
-      "target_profit_price": 185.32,
+      "target_profit_price": 185.74,
       "target_profit_pct": 5.9,
-      "stop_loss_price": 167.25,
+      "stop_loss_price": 167.65,
       "stop_loss_pct": 4.4,
       "action": "🚨 暴跌熔断·严禁左侧接刀",
       "action_tag": "action-warning",
       "model_raw_short_prob_pct": 59.9,
       "calibrated_short_win_rate_pct": 62.2,
       "short_entry_price": 186.63999938964844,
-      "short_target_profit_price": 164.56,
+      "short_target_profit_price": 164.96,
       "short_target_profit_pct": 5.9,
-      "short_stop_loss_price": 182.63,
+      "short_stop_loss_price": 183.05,
       "short_stop_loss_pct": 4.4,
       "dollar_pcr": 0.99,
       "pcr": 0.71,
@@ -9728,12 +9728,12 @@
       "iv_atm": 81.5,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "s1": 169.17,
-      "s2": 163.79,
-      "sl": 161.33,
-      "r1": 181.47,
-      "r2": 190.14,
-      "scenario_script": "【暴跌熔断风控剧本】触发暴跌熔断保护期，下方严防下探 S2 ($163.79) 极端清算底；反抽测试 R1 ($181.47) 均属诱多；防守止损位 $161.33，严禁左侧接刀",
+      "s1": 169.58,
+      "s2": 164.19,
+      "sl": 161.73,
+      "r1": 181.89,
+      "r2": 190.57,
+      "scenario_script": "【暴跌熔断风控剧本】触发暴跌熔断保护期，下方严防下探 S2 ($164.19) 极端清算底；反抽测试 R1 ($181.89) 均属诱多；防守止损位 $161.73，严禁左侧接刀",
       "track": "Track B",
       "four_h_rsi": 32.5,
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
@@ -10032,8 +10032,8 @@
       "sector_key": "Energy_Power",
       "sector_cn": "大盘与宏观ETF",
       "sector_rating": "⭐⭐⭐☆☆",
-      "latest_price": 371.75,
-      "current_price": 371.75,
+      "latest_price": 371.76,
+      "current_price": 371.76,
       "atr_pct": 1.8,
       "bias_ma50": -3.28,
       "bias_ma20": -0.07,
@@ -10049,18 +10049,18 @@
       "predicted_win_rate_pct": 37.7,
       "calibrated_win_rate_pct": 38.3,
       "sector_pf": 1.28,
-      "target_profit_price": 382.9,
+      "target_profit_price": 382.91,
       "target_profit_pct": 3.0,
-      "stop_loss_price": 363.57,
+      "stop_loss_price": 363.58,
       "stop_loss_pct": 2.2,
       "action": "🛡️ 暴雨空仓·严禁左侧接刀",
       "action_tag": "action-watch",
       "model_raw_short_prob_pct": 59.7,
       "calibrated_short_win_rate_pct": 49.0,
       "short_entry_price": 372.5199890136719,
-      "short_target_profit_price": 360.6,
+      "short_target_profit_price": 360.61,
       "short_target_profit_pct": 3.0,
-      "short_stop_loss_price": 379.93,
+      "short_stop_loss_price": 379.94,
       "short_stop_loss_pct": 2.2,
       "dollar_pcr": 0.53,
       "pcr": 0.52,
@@ -10070,12 +10070,12 @@
       "iv_atm": 31.9,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "s1": 362.46,
-      "s2": 355.02,
-      "sl": 349.69,
-      "r1": 382.9,
-      "r2": 394.06,
-      "scenario_script": "【黄金坑做多剧本】回踩波段支撑 S1 ($362.46) 蓄势不破，看多头反弹测试 R1 ($382.90)；突破顺势看 R2 ($394.06)；有效跌破止损位 $349.69 离场",
+      "s1": 362.47,
+      "s2": 355.03,
+      "sl": 349.7,
+      "r1": 382.91,
+      "r2": 394.07,
+      "scenario_script": "【黄金坑做多剧本】回踩波段支撑 S1 ($362.47) 蓄势不破，看多头反弹测试 R1 ($382.91)；突破顺势看 R2 ($394.07)；有效跌破止损位 $349.70 离场",
       "track": "Track A",
       "four_h_rsi": 52.1,
       "four_h_div": "⚡ 4H 均线多头共振",
@@ -10146,10 +10146,10 @@
       "sector_key": "Crypto_Proxy",
       "sector_cn": "恐慌与反向对冲",
       "sector_rating": "⭐⭐⭐☆☆",
-      "latest_price": 58.81,
-      "current_price": 58.81,
-      "atr_pct": 14.43,
-      "bias_ma50": 33.47,
+      "latest_price": 58.89,
+      "current_price": 58.89,
+      "atr_pct": 14.41,
+      "bias_ma50": 33.65,
       "bias_ma20": 41.87,
       "low_prev": 66.32,
       "rsi_14": 53.1,
@@ -10163,18 +10163,18 @@
       "predicted_win_rate_pct": 36.7,
       "calibrated_win_rate_pct": 37.6,
       "sector_pf": 1.29,
-      "target_profit_price": 64.37,
+      "target_profit_price": 64.45,
       "target_profit_pct": 9.5,
-      "stop_loss_price": 54.69,
+      "stop_loss_price": 54.77,
       "stop_loss_pct": 7.0,
       "action": "🛡️ 暴雨空仓·严禁左侧接刀",
       "action_tag": "action-watch",
       "model_raw_short_prob_pct": 77.3,
       "calibrated_short_win_rate_pct": 47.9,
       "short_entry_price": 70.94999694824219,
-      "short_target_profit_price": 53.25,
+      "short_target_profit_price": 53.32,
       "short_target_profit_pct": 9.5,
-      "short_stop_loss_price": 62.93,
+      "short_stop_loss_price": 63.01,
       "short_stop_loss_pct": 7.0,
       "dollar_pcr": 0.51,
       "pcr": 1.02,
@@ -10184,12 +10184,12 @@
       "iv_atm": 269.9,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "s1": 55.72,
-      "s2": 52.84,
-      "sl": 52.05,
-      "r1": 62.31,
+      "s1": 55.8,
+      "s2": 52.91,
+      "sl": 52.12,
+      "r1": 62.39,
       "r2": 70.0,
-      "scenario_script": "【右侧主升剧本】依托波段支撑 S1 ($55.72) 逢低做多，上看阻力 R1 ($62.31) 与突破扩展目标 R2 ($70.00)；关键防守位 $52.05",
+      "scenario_script": "【右侧主升剧本】依托波段支撑 S1 ($55.80) 逢低做多，上看阻力 R1 ($62.39) 与突破扩展目标 R2 ($70.00)；关键防守位 $52.12",
       "track": "Track A",
       "four_h_rsi": 57.5,
       "four_h_div": "⚡ 4H 均线多头共振",
@@ -10371,9 +10371,9 @@
   },
   "defensive_flight": {
     "is_alert": true,
-    "flight_score": 3.04,
+    "flight_score": 3.0,
     "def_mean_chg": 0.09,
-    "off_mean_chg": -2.96,
+    "off_mean_chg": -2.91,
     "alert_text": "🚨 防御因子起飞 · 警惕机构盘中去杠杆踩踏 (+3.0%)",
     "banner_text": "🚨 防御因子起飞 · 警惕机构盘中去杠杆踩踏",
     "badge": "badge-alert"
@@ -10382,11 +10382,11 @@
     "SOXL": {
       "ticker": "SOXL",
       "current_price": 52.47,
-      "s1": 49.72,
-      "s2": 47.14,
-      "sl": 46.43,
-      "r1": 55.59,
-      "r2": 59.73,
+      "s1": 49.69,
+      "s2": 47.12,
+      "sl": 46.41,
+      "r1": 55.56,
+      "r2": 59.7,
       "history": [
         {
           "date": "2026-10-12",
@@ -10843,183 +10843,183 @@
     },
     "SOXS": {
       "ticker": "SOXS",
-      "current_price": 58.81,
-      "s1": 55.72,
-      "s2": 52.84,
-      "sl": 52.05,
-      "r1": 62.31,
+      "current_price": 58.89,
+      "s1": 55.8,
+      "s2": 52.91,
+      "sl": 52.12,
+      "r1": 62.39,
       "r2": 70.0,
       "history": [
         {
           "date": "2026-10-12",
-          "price": 30.84
+          "price": 30.88
         },
         {
           "date": "2026-10-13",
-          "price": 30.95
+          "price": 30.99
         },
         {
           "date": "2026-10-14",
-          "price": 35.3
+          "price": 35.35
         },
         {
           "date": "2026-10-15",
-          "price": 36.41
+          "price": 36.46
         },
         {
           "date": "2026-10-16",
-          "price": 40.86
+          "price": 40.92
         },
         {
           "date": "2026-10-19",
-          "price": 38.57
+          "price": 38.62
         },
         {
           "date": "2026-10-20",
-          "price": 38.98
+          "price": 39.03
         },
         {
           "date": "2026-10-21",
-          "price": 36.8
+          "price": 36.85
         },
         {
           "date": "2026-10-22",
-          "price": 44.36
+          "price": 44.42
         },
         {
           "date": "2026-10-23",
-          "price": 43.39
+          "price": 43.45
         },
         {
           "date": "2026-10-26",
-          "price": 39.61
+          "price": 39.66
         },
         {
           "date": "2026-10-27",
-          "price": 35.29
+          "price": 35.34
         },
         {
           "date": "2026-10-28",
-          "price": 32.88
+          "price": 32.92
         },
         {
           "date": "2026-10-29",
-          "price": 34.52
+          "price": 34.57
         },
         {
           "date": "2026-10-30",
-          "price": 43.16
+          "price": 43.22
         },
         {
           "date": "2026-11-02",
-          "price": 48.11
+          "price": 48.18
         },
         {
           "date": "2026-11-03",
-          "price": 44.53
+          "price": 44.59
         },
         {
           "date": "2026-11-04",
-          "price": 48.37
+          "price": 48.44
         },
         {
           "date": "2026-11-05",
-          "price": 67.53
+          "price": 67.62
         },
         {
           "date": "2026-11-06",
-          "price": 58.81
+          "price": 58.89
         }
       ],
       "projection": [
         {
           "day": "T+1",
           "date": "2026-11-10",
-          "price": 56.66,
+          "price": 56.74,
           "pct": -3.7
         },
         {
           "day": "T+2",
           "date": "2026-11-11",
-          "price": 53.16,
+          "price": 53.23,
           "pct": -9.8
         },
         {
           "day": "T+3",
           "date": "2026-11-12",
-          "price": 50.84,
+          "price": 50.91,
           "pct": -13.6
         },
         {
           "day": "T+4",
           "date": "2026-11-13",
-          "price": 50.47,
+          "price": 50.54,
           "pct": -13.9
         },
         {
           "day": "T+5",
           "date": "2026-11-16",
-          "price": 49.64,
+          "price": 49.71,
           "pct": -15.7
         },
         {
           "day": "T+6",
           "date": "2026-11-17",
-          "price": 49.97,
+          "price": 50.04,
           "pct": -14.9
         },
         {
           "day": "T+7",
           "date": "2026-11-18",
-          "price": 49.99,
+          "price": 50.06,
           "pct": -14.7
         },
         {
           "day": "T+8",
           "date": "2026-11-19",
-          "price": 46.71,
+          "price": 46.77,
           "pct": -20.5
         },
         {
           "day": "T+9",
           "date": "2026-11-20",
-          "price": 46.05,
+          "price": 46.11,
           "pct": -21.9
         },
         {
           "day": "T+10",
           "date": "2026-11-23",
-          "price": 46.55,
+          "price": 46.61,
           "pct": -20.9
         },
         {
           "day": "T+11",
           "date": "2026-11-24",
-          "price": 45.65,
+          "price": 45.71,
           "pct": -22.6
         },
         {
           "day": "T+12",
           "date": "2026-11-25",
-          "price": 47.94,
+          "price": 48.01,
           "pct": -18.5
         },
         {
           "day": "T+13",
           "date": "2026-11-26",
-          "price": 49.64,
+          "price": 49.71,
           "pct": -15.7
         },
         {
           "day": "T+14",
           "date": "2026-11-27",
-          "price": 51.04,
+          "price": 51.11,
           "pct": -13.2
         },
         {
           "day": "T+15",
           "date": "2026-11-30",
-          "price": 51.45,
+          "price": 51.52,
           "pct": -12.7
         }
       ],
@@ -11028,42 +11028,42 @@
           "type": "bottom",
           "date": "2026-11-12",
           "day": "T+3",
-          "price": 50.84,
+          "price": 50.91,
           "desc": "🔵 周期底回踩窗 (关注空头回补企稳)"
         },
         {
           "type": "top",
           "date": "2026-11-13",
           "day": "T+4",
-          "price": 50.47,
+          "price": 50.54,
           "desc": "🔴 周期峰阻力窗 (高危变盘·压力不过就跑)"
         },
         {
           "type": "bottom",
           "date": "2026-11-16",
           "day": "T+5",
-          "price": 49.64,
+          "price": 49.71,
           "desc": "🔵 周期底回踩窗 (关注空头回补企稳)"
         },
         {
           "type": "top",
           "date": "2026-11-18",
           "day": "T+7",
-          "price": 49.99,
+          "price": 50.06,
           "desc": "🔴 周期峰阻力窗 (高危变盘·压力不过就跑)"
         },
         {
           "type": "bottom",
           "date": "2026-11-20",
           "day": "T+9",
-          "price": 46.05,
+          "price": 46.11,
           "desc": "🔵 周期底回踩窗 (关注空头回补企稳)"
         },
         {
           "type": "top",
           "date": "2026-11-23",
           "day": "T+10",
-          "price": 46.55,
+          "price": 46.61,
           "desc": "🔴 周期峰阻力窗 (高危变盘·压力不过就跑)"
         }
       ],
@@ -11767,183 +11767,183 @@
     },
     "NVDA": {
       "ticker": "NVDA",
-      "current_price": 174.94,
-      "s1": 169.17,
-      "s2": 163.79,
-      "sl": 161.33,
-      "r1": 181.47,
-      "r2": 190.14,
+      "current_price": 175.35,
+      "s1": 169.58,
+      "s2": 164.19,
+      "sl": 161.73,
+      "r1": 181.89,
+      "r2": 190.57,
       "history": [
         {
           "date": "2026-10-12",
-          "price": 212.25
+          "price": 212.75
         },
         {
           "date": "2026-10-13",
-          "price": 214.3
+          "price": 214.8
         },
         {
           "date": "2026-10-14",
-          "price": 207.49
+          "price": 207.98
         },
         {
           "date": "2026-10-15",
-          "price": 203.79
+          "price": 204.27
         },
         {
           "date": "2026-10-16",
-          "price": 200.71
+          "price": 201.18
         },
         {
           "date": "2026-10-19",
-          "price": 203.65
+          "price": 204.13
         },
         {
           "date": "2026-10-20",
-          "price": 203.07
+          "price": 203.55
         },
         {
           "date": "2026-10-21",
-          "price": 208.05
+          "price": 208.54
         },
         {
           "date": "2026-10-22",
-          "price": 198.94
+          "price": 199.41
         },
         {
           "date": "2026-10-23",
-          "price": 197.89
+          "price": 198.35
         },
         {
           "date": "2026-10-26",
-          "price": 202.55
+          "price": 203.02
         },
         {
           "date": "2026-10-27",
-          "price": 204.34
+          "price": 204.82
         },
         {
           "date": "2026-10-28",
-          "price": 201.96
+          "price": 202.43
         },
         {
           "date": "2026-10-29",
-          "price": 200.32
+          "price": 200.79
         },
         {
           "date": "2026-10-30",
-          "price": 191.87
+          "price": 192.32
         },
         {
           "date": "2026-11-02",
-          "price": 189.45
+          "price": 189.89
         },
         {
           "date": "2026-11-03",
-          "price": 193.78
+          "price": 194.23
         },
         {
           "date": "2026-11-04",
-          "price": 187.7
+          "price": 188.14
         },
         {
           "date": "2026-11-05",
-          "price": 170.35
+          "price": 170.75
         },
         {
           "date": "2026-11-06",
-          "price": 174.94
+          "price": 175.35
         }
       ],
       "projection": [
         {
           "day": "T+1",
           "date": "2026-11-10",
-          "price": 176.16,
+          "price": 176.57,
           "pct": 0.6
         },
         {
           "day": "T+2",
           "date": "2026-11-11",
-          "price": 180.54,
+          "price": 180.96,
           "pct": 3.2
         },
         {
           "day": "T+3",
           "date": "2026-11-12",
-          "price": 182.6,
+          "price": 183.03,
           "pct": 4.3
         },
         {
           "day": "T+4",
           "date": "2026-11-13",
-          "price": 182.83,
+          "price": 183.26,
           "pct": 4.4
         },
         {
           "day": "T+5",
           "date": "2026-11-16",
-          "price": 183.05,
+          "price": 183.48,
           "pct": 4.6
         },
         {
           "day": "T+6",
           "date": "2026-11-17",
-          "price": 182.96,
+          "price": 183.39,
           "pct": 4.5
         },
         {
           "day": "T+7",
           "date": "2026-11-18",
-          "price": 185.03,
+          "price": 185.46,
           "pct": 5.7
         },
         {
           "day": "T+8",
           "date": "2026-11-19",
-          "price": 186.75,
+          "price": 187.19,
           "pct": 6.7
         },
         {
           "day": "T+9",
           "date": "2026-11-20",
-          "price": 189.06,
+          "price": 189.5,
           "pct": 8.0
         },
         {
           "day": "T+10",
           "date": "2026-11-23",
-          "price": 189.08,
+          "price": 189.52,
           "pct": 8.1
         },
         {
           "day": "T+11",
           "date": "2026-11-24",
-          "price": 191.13,
+          "price": 191.58,
           "pct": 9.2
         },
         {
           "day": "T+12",
           "date": "2026-11-25",
-          "price": 190.99,
+          "price": 191.44,
           "pct": 9.1
         },
         {
           "day": "T+13",
           "date": "2026-11-26",
-          "price": 189.93,
+          "price": 190.38,
           "pct": 8.6
         },
         {
           "day": "T+14",
           "date": "2026-11-27",
-          "price": 189.8,
+          "price": 190.24,
           "pct": 8.5
         },
         {
           "day": "T+15",
           "date": "2026-11-30",
-          "price": 188.79,
+          "price": 189.23,
           "pct": 7.9
         }
       ],
@@ -11952,42 +11952,42 @@
           "type": "top",
           "date": "2026-11-12",
           "day": "T+3",
-          "price": 182.6,
+          "price": 183.03,
           "desc": "🔴 周期峰阻力窗 (高危变盘·压力不过就跑)"
         },
         {
           "type": "top",
           "date": "2026-11-16",
           "day": "T+5",
-          "price": 183.05,
+          "price": 183.48,
           "desc": "🔴 周期峰阻力窗 (高危变盘·压力不过就跑)"
         },
         {
           "type": "bottom",
           "date": "2026-11-17",
           "day": "T+6",
-          "price": 182.96,
+          "price": 183.39,
           "desc": "🔵 周期底回踩窗 (关注空头回补企稳)"
         },
         {
           "type": "top",
           "date": "2026-11-20",
           "day": "T+9",
-          "price": 189.06,
+          "price": 189.5,
           "desc": "🔴 周期峰阻力窗 (高危变盘·压力不过就跑)"
         },
         {
           "type": "bottom",
           "date": "2026-11-23",
           "day": "T+10",
-          "price": 189.08,
+          "price": 189.52,
           "desc": "🔵 周期底回踩窗 (关注空头回补企稳)"
         },
         {
           "type": "top",
           "date": "2026-11-24",
           "day": "T+11",
-          "price": 191.13,
+          "price": 191.58,
           "desc": "🔴 周期峰阻力窗 (高危变盘·压力不过就跑)"
         }
       ],
@@ -12229,183 +12229,183 @@
     },
     "MU": {
       "ticker": "MU",
-      "current_price": 715.53,
-      "s1": 682.87,
-      "s2": 652.4,
-      "sl": 642.61,
-      "r1": 752.54,
-      "r2": 801.63,
+      "current_price": 713.23,
+      "s1": 680.6,
+      "s2": 650.14,
+      "sl": 640.39,
+      "r1": 750.21,
+      "r2": 799.27,
       "history": [
         {
           "date": "2026-10-12",
-          "price": 1024.62
+          "price": 1021.33
         },
         {
           "date": "2026-10-13",
-          "price": 987.54
+          "price": 984.37
         },
         {
           "date": "2026-10-14",
-          "price": 947.31
+          "price": 944.26
         },
         {
           "date": "2026-10-15",
-          "price": 964.93
+          "price": 961.83
         },
         {
           "date": "2026-10-16",
-          "price": 910.7
+          "price": 907.77
         },
         {
           "date": "2026-10-19",
-          "price": 937.75
+          "price": 934.74
         },
         {
           "date": "2026-10-20",
-          "price": 928.59
+          "price": 925.61
         },
         {
           "date": "2026-10-21",
-          "price": 946.8
+          "price": 943.76
         },
         {
           "date": "2026-10-22",
-          "price": 887.53
+          "price": 884.68
         },
         {
           "date": "2026-10-23",
-          "price": 909.33
+          "price": 906.41
         },
         {
           "date": "2026-10-26",
-          "price": 936.49
+          "price": 933.48
         },
         {
           "date": "2026-10-27",
-          "price": 962.44
+          "price": 959.35
         },
         {
           "date": "2026-10-28",
-          "price": 1018.79
+          "price": 1015.52
         },
         {
           "date": "2026-10-29",
-          "price": 968.11
+          "price": 965.0
         },
         {
           "date": "2026-10-30",
-          "price": 916.73
+          "price": 913.78
         },
         {
           "date": "2026-11-02",
-          "price": 863.86
+          "price": 861.08
         },
         {
           "date": "2026-11-03",
-          "price": 886.1
+          "price": 883.25
         },
         {
           "date": "2026-11-04",
-          "price": 824.0
+          "price": 821.35
         },
         {
           "date": "2026-11-05",
-          "price": 680.18
+          "price": 677.99
         },
         {
           "date": "2026-11-06",
-          "price": 715.53
+          "price": 713.23
         }
       ],
       "projection": [
         {
           "day": "T+1",
           "date": "2026-11-10",
-          "price": 734.5,
+          "price": 732.14,
           "pct": 2.7
         },
         {
           "day": "T+2",
           "date": "2026-11-11",
-          "price": 751.76,
+          "price": 749.34,
           "pct": 5.1
         },
         {
           "day": "T+3",
           "date": "2026-11-12",
-          "price": 769.72,
+          "price": 767.25,
           "pct": 7.6
         },
         {
           "day": "T+4",
           "date": "2026-11-13",
-          "price": 772.27,
+          "price": 769.79,
           "pct": 8.0
         },
         {
           "day": "T+5",
           "date": "2026-11-16",
-          "price": 784.26,
+          "price": 781.74,
           "pct": 9.7
         },
         {
           "day": "T+6",
           "date": "2026-11-17",
-          "price": 787.25,
+          "price": 784.72,
           "pct": 10.1
         },
         {
           "day": "T+7",
           "date": "2026-11-18",
-          "price": 791.06,
+          "price": 788.52,
           "pct": 10.6
         },
         {
           "day": "T+8",
           "date": "2026-11-19",
-          "price": 815.73,
+          "price": 813.11,
           "pct": 14.1
         },
         {
           "day": "T+9",
           "date": "2026-11-20",
-          "price": 826.05,
+          "price": 823.39,
           "pct": 15.5
         },
         {
           "day": "T+10",
           "date": "2026-11-23",
-          "price": 824.72,
+          "price": 822.07,
           "pct": 15.3
         },
         {
           "day": "T+11",
           "date": "2026-11-24",
-          "price": 824.14,
+          "price": 821.49,
           "pct": 15.3
         },
         {
           "day": "T+12",
           "date": "2026-11-25",
-          "price": 809.1,
+          "price": 806.5,
           "pct": 13.2
         },
         {
           "day": "T+13",
           "date": "2026-11-26",
-          "price": 790.93,
+          "price": 788.39,
           "pct": 10.6
         },
         {
           "day": "T+14",
           "date": "2026-11-27",
-          "price": 780.86,
+          "price": 778.35,
           "pct": 9.2
         },
         {
           "day": "T+15",
           "date": "2026-11-30",
-          "price": 778.65,
+          "price": 776.15,
           "pct": 8.9
         }
       ],
@@ -12414,35 +12414,35 @@
           "type": "top",
           "date": "2026-11-12",
           "day": "T+3",
-          "price": 769.72,
+          "price": 767.25,
           "desc": "🔴 周期峰阻力窗 (高危变盘·压力不过就跑)"
         },
         {
           "type": "bottom",
           "date": "2026-11-13",
           "day": "T+4",
-          "price": 772.27,
+          "price": 769.79,
           "desc": "🔵 周期底回踩窗 (关注空头回补企稳)"
         },
         {
           "type": "top",
           "date": "2026-11-16",
           "day": "T+5",
-          "price": 784.26,
+          "price": 781.74,
           "desc": "🔴 周期峰阻力窗 (高危变盘·压力不过就跑)"
         },
         {
           "type": "bottom",
           "date": "2026-11-17",
           "day": "T+6",
-          "price": 787.25,
+          "price": 784.72,
           "desc": "🔵 周期底回踩窗 (关注空头回补企稳)"
         },
         {
           "type": "top",
           "date": "2026-11-20",
           "day": "T+9",
-          "price": 826.05,
+          "price": 823.39,
           "desc": "🔴 周期峰阻力窗 (高危变盘·压力不过就跑)"
         }
       ],
@@ -13112,11 +13112,11 @@
     "INTC": {
       "ticker": "INTC",
       "current_price": 57.57,
-      "s1": 54.55,
-      "s2": 51.73,
-      "sl": 50.95,
-      "r1": 61.0,
-      "r2": 65.54,
+      "s1": 54.52,
+      "s2": 51.7,
+      "sl": 50.92,
+      "r1": 60.96,
+      "r2": 65.51,
       "history": [
         {
           "date": "2026-10-12",
@@ -13966,11 +13966,11 @@
     "TSLA": {
       "ticker": "TSLA",
       "current_price": 371.0,
-      "s1": 358.98,
-      "s2": 347.76,
-      "sl": 342.54,
-      "r1": 384.62,
-      "r2": 402.7,
+      "s1": 359.24,
+      "s2": 348.01,
+      "sl": 342.79,
+      "r1": 384.9,
+      "r2": 402.99,
       "history": [
         {
           "date": "2026-10-12",
@@ -14428,11 +14428,11 @@
     "META": {
       "ticker": "META",
       "current_price": 638.15,
-      "s1": 619.34,
+      "s1": 619.53,
       "s2": 600.0,
       "sl": 591.0,
-      "r1": 659.47,
-      "r2": 687.75,
+      "r1": 659.67,
+      "r2": 687.96,
       "history": [
         {
           "date": "2026-10-12",
@@ -14659,11 +14659,11 @@
     "AAPL": {
       "ticker": "AAPL",
       "current_price": 352.8,
-      "s1": 343.91,
-      "s2": 336.86,
-      "sl": 331.81,
-      "r1": 363.31,
-      "r2": 373.89,
+      "s1": 344.13,
+      "s2": 337.07,
+      "sl": 332.01,
+      "r1": 363.54,
+      "r2": 374.13,
       "history": [
         {
           "date": "2026-10-12",
@@ -14882,183 +14882,183 @@
     },
     "AMZN": {
       "ticker": "AMZN",
-      "current_price": 266.35,
-      "s1": 259.1,
-      "s2": 252.33,
-      "sl": 248.55,
-      "r1": 274.57,
-      "r2": 285.47,
+      "current_price": 265.28,
+      "s1": 258.02,
+      "s2": 251.24,
+      "sl": 247.47,
+      "r1": 273.51,
+      "r2": 284.43,
       "history": [
         {
           "date": "2026-10-12",
-          "price": 266.59
+          "price": 265.52
         },
         {
           "date": "2026-10-13",
-          "price": 265.61
+          "price": 264.54
         },
         {
           "date": "2026-10-14",
-          "price": 260.98
+          "price": 259.93
         },
         {
           "date": "2026-10-15",
-          "price": 261.75
+          "price": 260.7
         },
         {
           "date": "2026-10-16",
-          "price": 256.79
+          "price": 255.76
         },
         {
           "date": "2026-10-19",
-          "price": 269.62
+          "price": 268.54
         },
         {
           "date": "2026-10-20",
-          "price": 269.81
+          "price": 268.73
         },
         {
           "date": "2026-10-21",
-          "price": 269.54
+          "price": 268.46
         },
         {
           "date": "2026-10-22",
-          "price": 257.2
+          "price": 256.17
         },
         {
           "date": "2026-10-23",
-          "price": 254.7
+          "price": 253.68
         },
         {
           "date": "2026-10-26",
-          "price": 255.81
+          "price": 254.78
         },
         {
           "date": "2026-10-27",
-          "price": 259.99
+          "price": 258.95
         },
         {
           "date": "2026-10-28",
-          "price": 261.57
+          "price": 260.52
         },
         {
           "date": "2026-10-29",
-          "price": 250.41
+          "price": 249.4
         },
         {
           "date": "2026-10-30",
-          "price": 246.81
+          "price": 245.82
         },
         {
           "date": "2026-11-02",
-          "price": 252.34
+          "price": 251.33
         },
         {
           "date": "2026-11-03",
-          "price": 257.51
+          "price": 256.48
         },
         {
           "date": "2026-11-04",
-          "price": 273.25
+          "price": 272.15
         },
         {
           "date": "2026-11-05",
-          "price": 267.29
+          "price": 266.22
         },
         {
           "date": "2026-11-06",
-          "price": 266.35
+          "price": 265.28
         }
       ],
       "projection": [
         {
           "day": "T+1",
           "date": "2026-11-10",
-          "price": 267.71,
+          "price": 266.63,
           "pct": 0.5
         },
         {
           "day": "T+2",
           "date": "2026-11-11",
-          "price": 269.01,
+          "price": 267.93,
           "pct": 1.0
         },
         {
           "day": "T+3",
           "date": "2026-11-12",
-          "price": 269.74,
+          "price": 268.66,
           "pct": 1.3
         },
         {
           "day": "T+4",
           "date": "2026-11-13",
-          "price": 270.21,
+          "price": 269.12,
           "pct": 1.4
         },
         {
           "day": "T+5",
           "date": "2026-11-16",
-          "price": 272.73,
+          "price": 271.63,
           "pct": 2.4
         },
         {
           "day": "T+6",
           "date": "2026-11-17",
-          "price": 274.86,
+          "price": 273.76,
           "pct": 3.2
         },
         {
           "day": "T+7",
           "date": "2026-11-18",
-          "price": 276.92,
+          "price": 275.81,
           "pct": 3.9
         },
         {
           "day": "T+8",
           "date": "2026-11-19",
-          "price": 278.78,
+          "price": 277.66,
           "pct": 4.7
         },
         {
           "day": "T+9",
           "date": "2026-11-20",
-          "price": 283.45,
+          "price": 282.31,
           "pct": 6.4
         },
         {
           "day": "T+10",
           "date": "2026-11-23",
-          "price": 283.46,
+          "price": 282.32,
           "pct": 6.4
         },
         {
           "day": "T+11",
           "date": "2026-11-24",
-          "price": 282.68,
+          "price": 281.54,
           "pct": 6.1
         },
         {
           "day": "T+12",
           "date": "2026-11-25",
-          "price": 281.19,
+          "price": 280.06,
           "pct": 5.6
         },
         {
           "day": "T+13",
           "date": "2026-11-26",
-          "price": 279.14,
+          "price": 278.02,
           "pct": 4.8
         },
         {
           "day": "T+14",
           "date": "2026-11-27",
-          "price": 281.79,
+          "price": 280.66,
           "pct": 5.8
         },
         {
           "day": "T+15",
           "date": "2026-11-30",
-          "price": 284.21,
+          "price": 283.07,
           "pct": 6.7
         }
       ],
@@ -15067,35 +15067,35 @@
           "type": "top",
           "date": "2026-11-11",
           "day": "T+2",
-          "price": 269.01,
+          "price": 267.93,
           "desc": "🔴 周期峰阻力窗 (高危变盘·压力不过就跑)"
         },
         {
           "type": "bottom",
           "date": "2026-11-13",
           "day": "T+4",
-          "price": 270.21,
+          "price": 269.12,
           "desc": "🔵 周期底回踩窗 (关注空头回补企稳)"
         },
         {
           "type": "top",
           "date": "2026-11-20",
           "day": "T+9",
-          "price": 283.45,
+          "price": 282.31,
           "desc": "🔴 周期峰阻力窗 (高危变盘·压力不过就跑)"
         },
         {
           "type": "top",
           "date": "2026-11-23",
           "day": "T+10",
-          "price": 283.46,
+          "price": 282.32,
           "desc": "🔴 周期峰阻力窗 (高危变盘·压力不过就跑)"
         },
         {
           "type": "bottom",
           "date": "2026-11-26",
           "day": "T+13",
-          "price": 279.14,
+          "price": 278.02,
           "desc": "🔵 周期底回踩窗 (关注空头回补企稳)"
         }
       ],
@@ -15108,63 +15108,6 @@
   "table4": [
     {
       "rank": 1,
-      "ticker": "MU",
-      "sector_key": "Memory",
-      "sector_cn": "存储芯片",
-      "sector_rating": "⭐⭐⭐⭐⭐",
-      "latest_price": 715.53,
-      "current_price": 715.53,
-      "atr_pct": 8.17,
-      "bias_ma50": -25.27,
-      "bias_ma20": -21.5,
-      "low_prev": 650.0,
-      "rsi_14": 36.4,
-      "is_broken": false,
-      "is_etf": false,
-      "is_crash_halt": false,
-      "is_cooling_halt": true,
-      "macro_temp": "🌧️ 暴雨空仓",
-      "model_raw_prob_pct": 36.7,
-      "base_raw_prob_pct": 36.4,
-      "predicted_win_rate_pct": 36.4,
-      "calibrated_win_rate_pct": 53.7,
-      "sector_pf": 1.8,
-      "target_profit_price": 752.54,
-      "target_profit_pct": 5.2,
-      "stop_loss_price": 652.4,
-      "stop_loss_pct": 8.8,
-      "action": "🔥 恐慌衰竭·博弈空头回补 (压力位不过就跑)",
-      "action_tag": "action-rebound",
-      "model_raw_short_prob_pct": 63.5,
-      "calibrated_short_win_rate_pct": 65.5,
-      "short_entry_price": 690.0,
-      "short_target_profit_price": 656.75,
-      "short_target_profit_pct": 8.2,
-      "short_stop_loss_price": 759.07,
-      "short_stop_loss_pct": 6.1,
-      "dollar_pcr": 1.02,
-      "pcr": 1.27,
-      "pcr_sentiment": "🟠 机构谨慎防跌",
-      "put_wall": 600.0,
-      "call_wall": 720.0,
-      "iv_atm": 130.1,
-      "short_action": "🩸 极高胜率·顺势做空/买Put",
-      "short_action_tag": "short-action-strong",
-      "s1": 682.87,
-      "s2": 652.4,
-      "sl": 642.61,
-      "r1": 752.54,
-      "r2": 801.63,
-      "scenario_script": "【空头回补滑头剧本】依托 S2 ($652.40) 极限插针底防守，上看第一阻力 R1 ($752.54) 空头回补反抽(不过就跑)；放量逼空看 R2 ($801.63)；击穿止损位 $642.61 严格离场防踩踏",
-      "track": "Track B",
-      "four_h_rsi": 30.0,
-      "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
-      "four_h_tag": "div-bull",
-      "is_short_covering": true,
-      "short_rank": 41
-    },
-    {
-      "rank": 2,
       "ticker": "HPE",
       "sector_key": "Semiconductors",
       "sector_cn": "AI液冷与服务器",
@@ -15221,7 +15164,7 @@
       "short_rank": 70
     },
     {
-      "rank": 3,
+      "rank": 2,
       "ticker": "AMAT",
       "sector_key": "Semiconductors",
       "sector_cn": "半导体与设备",
@@ -15275,18 +15218,18 @@
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": true,
-      "short_rank": 68
+      "short_rank": 67
     },
     {
-      "rank": 4,
+      "rank": 3,
       "ticker": "AMZN",
       "sector_key": "Neo_Cloud",
       "sector_cn": "科技巨头与AI生态",
       "sector_rating": "⭐⭐⭐☆☆",
-      "latest_price": 266.35,
-      "current_price": 266.35,
-      "atr_pct": 3.63,
-      "bias_ma50": 4.88,
+      "latest_price": 265.28,
+      "current_price": 265.28,
+      "atr_pct": 3.65,
+      "bias_ma50": 4.46,
       "bias_ma20": 1.97,
       "low_prev": 252.27,
       "rsi_14": 59.2,
@@ -15296,22 +15239,22 @@
       "is_cooling_halt": false,
       "macro_temp": "🌧️ 暴雨空仓",
       "model_raw_prob_pct": 36.4,
-      "base_raw_prob_pct": 41.4,
-      "predicted_win_rate_pct": 41.4,
-      "calibrated_win_rate_pct": 44.2,
+      "base_raw_prob_pct": 41.3,
+      "predicted_win_rate_pct": 41.3,
+      "calibrated_win_rate_pct": 44.1,
       "sector_pf": 1.35,
-      "target_profit_price": 279.4,
+      "target_profit_price": 278.35,
       "target_profit_pct": 4.9,
-      "stop_loss_price": 256.68,
+      "stop_loss_price": 255.6,
       "stop_loss_pct": 3.6,
       "action": "🛡️ 暴雨空仓·严禁左侧接刀",
       "action_tag": "action-watch",
       "model_raw_short_prob_pct": 52.6,
       "calibrated_short_win_rate_pct": 48.4,
       "short_entry_price": 259.29998779296875,
-      "short_target_profit_price": 253.3,
+      "short_target_profit_price": 252.21,
       "short_target_profit_pct": 4.9,
-      "short_stop_loss_price": 276.02,
+      "short_stop_loss_price": 274.96,
       "short_stop_loss_pct": 3.6,
       "dollar_pcr": 0.42,
       "pcr": 0.49,
@@ -15321,12 +15264,12 @@
       "iv_atm": 51.0,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "s1": 259.1,
-      "s2": 252.33,
-      "sl": 248.55,
-      "r1": 274.57,
-      "r2": 285.47,
-      "scenario_script": "【右侧主升剧本】依托波段支撑 S1 ($259.10) 逢低做多，上看阻力 R1 ($274.57) 与突破扩展目标 R2 ($285.47)；关键防守位 $248.55",
+      "s1": 258.02,
+      "s2": 251.24,
+      "sl": 247.47,
+      "r1": 273.51,
+      "r2": 284.43,
+      "scenario_script": "【右侧主升剧本】依托波段支撑 S1 ($258.02) 逢低做多，上看阻力 R1 ($273.51) 与突破扩展目标 R2 ($284.43)；关键防守位 $247.47",
       "track": "Track A",
       "four_h_rsi": 50.3,
       "four_h_div": "⚡ 4H 均线多头共振",
@@ -15335,7 +15278,7 @@
       "short_rank": 23
     },
     {
-      "rank": 5,
+      "rank": 4,
       "ticker": "QCOM",
       "sector_key": "Semiconductors",
       "sector_cn": "通信芯片与端侧AI",
@@ -15392,7 +15335,7 @@
       "short_rank": 1
     },
     {
-      "rank": 6,
+      "rank": 5,
       "ticker": "V",
       "sector_key": "Energy_Power",
       "sector_cn": "价值蓝筹与医药",
@@ -15449,15 +15392,15 @@
       "short_rank": 27
     },
     {
-      "rank": 7,
+      "rank": 6,
       "ticker": "META",
       "sector_key": "Neo_Cloud",
       "sector_cn": "科技巨头与AI生态",
       "sector_rating": "⭐⭐⭐☆☆",
-      "latest_price": 638.15,
-      "current_price": 638.15,
+      "latest_price": 638.35,
+      "current_price": 638.35,
       "atr_pct": 3.93,
-      "bias_ma50": -5.61,
+      "bias_ma50": -5.58,
       "bias_ma20": -7.93,
       "low_prev": 583.8,
       "rsi_14": 46.5,
@@ -15471,18 +15414,18 @@
       "predicted_win_rate_pct": 39.8,
       "calibrated_win_rate_pct": 41.3,
       "sector_pf": 1.35,
-      "target_profit_price": 672.01,
+      "target_profit_price": 672.22,
       "target_profit_pct": 5.3,
-      "stop_loss_price": 613.07,
+      "stop_loss_price": 613.26,
       "stop_loss_pct": 3.9,
       "action": "🛡️ 暴雨空仓·严禁左侧接刀",
       "action_tag": "action-watch",
       "model_raw_short_prob_pct": 50.7,
       "calibrated_short_win_rate_pct": 54.3,
       "short_entry_price": 610.1500244140625,
-      "short_target_profit_price": 604.29,
+      "short_target_profit_price": 604.48,
       "short_target_profit_pct": 5.3,
-      "short_stop_loss_price": 663.23,
+      "short_stop_loss_price": 663.44,
       "short_stop_loss_pct": 3.9,
       "dollar_pcr": 1.04,
       "pcr": 0.65,
@@ -15492,12 +15435,12 @@
       "iv_atm": 61.1,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "s1": 619.34,
+      "s1": 619.53,
       "s2": 600.0,
       "sl": 591.0,
-      "r1": 659.47,
-      "r2": 687.75,
-      "scenario_script": "【黄金坑做多剧本】回踩波段支撑 S1 ($619.34) 蓄势不破，看多头反弹测试 R1 ($659.47)；突破顺势看 R2 ($687.75)；有效跌破止损位 $591.00 离场",
+      "r1": 659.67,
+      "r2": 687.96,
+      "scenario_script": "【黄金坑做多剧本】回踩波段支撑 S1 ($619.53) 蓄势不破，看多头反弹测试 R1 ($659.67)；突破顺势看 R2 ($687.96)；有效跌破止损位 $591.00 离场",
       "track": "Track A",
       "four_h_rsi": 35.0,
       "four_h_div": "➖ 4H 均线震荡纠缠",
@@ -15506,7 +15449,7 @@
       "short_rank": 17
     },
     {
-      "rank": 8,
+      "rank": 7,
       "ticker": "AMD",
       "sector_key": "Semiconductors",
       "sector_cn": "半导体与设备",
@@ -15563,7 +15506,7 @@
       "short_rank": 4
     },
     {
-      "rank": 9,
+      "rank": 8,
       "ticker": "KO",
       "sector_key": "Energy_Power",
       "sector_cn": "价值蓝筹与医药",
@@ -15620,7 +15563,7 @@
       "short_rank": 28
     },
     {
-      "rank": 10,
+      "rank": 9,
       "ticker": "PEP",
       "sector_key": "Energy_Power",
       "sector_cn": "价值蓝筹与医药",
@@ -15675,6 +15618,63 @@
       "four_h_tag": "div-trend",
       "is_short_covering": false,
       "short_rank": 18
+    },
+    {
+      "rank": 10,
+      "ticker": "SPCX",
+      "sector_key": "Neo_Cloud",
+      "sector_cn": "物理AI与太空商业",
+      "sector_rating": "⭐⭐⭐☆☆",
+      "latest_price": 138.63,
+      "current_price": 138.63,
+      "atr_pct": 6.02,
+      "bias_ma50": -7.08,
+      "bias_ma20": -7.56,
+      "low_prev": 120.39,
+      "rsi_14": 48.4,
+      "is_broken": false,
+      "is_etf": false,
+      "is_crash_halt": false,
+      "is_cooling_halt": false,
+      "macro_temp": "🌧️ 暴雨空仓",
+      "model_raw_prob_pct": 31.4,
+      "base_raw_prob_pct": 37.1,
+      "predicted_win_rate_pct": 37.1,
+      "calibrated_win_rate_pct": 38.5,
+      "sector_pf": 1.35,
+      "target_profit_price": 148.01,
+      "target_profit_pct": 6.8,
+      "stop_loss_price": 131.68,
+      "stop_loss_pct": 5.0,
+      "action": "🛡️ 暴雨空仓·严禁左侧接刀",
+      "action_tag": "action-watch",
+      "model_raw_short_prob_pct": 64.5,
+      "calibrated_short_win_rate_pct": 62.6,
+      "short_entry_price": 134.27000427246094,
+      "short_target_profit_price": 129.25,
+      "short_target_profit_pct": 6.8,
+      "short_stop_loss_price": 145.58,
+      "short_stop_loss_pct": 5.0,
+      "dollar_pcr": 0.52,
+      "pcr": 0.96,
+      "pcr_sentiment": "🟢 资金偏多看涨",
+      "put_wall": 130.0,
+      "call_wall": 135.0,
+      "iv_atm": 93.2,
+      "short_action": "⚡ 逢高反抽沽空/买Put",
+      "short_action_tag": "short-action-rebound",
+      "s1": 133.42,
+      "s2": 128.56,
+      "sl": 126.63,
+      "r1": 144.53,
+      "r2": 152.37,
+      "scenario_script": "【战术推演剧本】下方防守支撑 S1 ($133.42)/S2 ($128.56)，上方阻力目标 R1 ($144.53)/R2 ($152.37)；跌破防守止损位 $126.63 严格离场",
+      "track": "Track A",
+      "four_h_rsi": 44.2,
+      "four_h_div": "➖ 4H 均线震荡纠缠",
+      "four_h_tag": "div-neutral",
+      "is_short_covering": false,
+      "short_rank": 7
     }
   ]
 }
