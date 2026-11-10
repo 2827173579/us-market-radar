@@ -211,8 +211,8 @@ class TradeRadarControlApp:
         btn_clear_log.pack(side="right")
 
         # 5. 底部实时运行日志监视器
-        log_frame = tk.Frame(self.root, bg="#0d1117", padx=16, pady=(4, 12))
-        log_frame.pack(fill="both", expand=True)
+        log_frame = tk.Frame(self.root, bg="#0d1117", padx=16, pady=8)
+        log_frame.pack(fill="both", expand=True, pady=(4, 12))
 
         self.log_text = scrolledtext.ScrolledText(
             log_frame,
@@ -275,7 +275,7 @@ class TradeRadarControlApp:
             try:
                 creation_flags = 0x00000008 | 0x00000200 if sys.platform == "win32" else 0
                 log_file = os.path.join(PROJECT_DIR, ".radar_daemon.log")
-                cmd = [sys.executable, "-u", "integrated_market_radar.py", "--loop-daemon", "--interval-seconds", "60", "--duration-minutes", "0"]
+                cmd = [sys.executable, "-u", "integrated_market_radar.py", "--loop-daemon", "--interval-seconds", "15", "--duration-minutes", "0"]
                 with open(log_file, "a", encoding="utf-8") as lf:
                     proc = subprocess.Popen(
                         cmd,
@@ -426,7 +426,7 @@ If Not isRunning Then
     radarDir = "{PROJECT_DIR}"
     logFile = radarDir & "\\.radar_daemon.log"
     ws.CurrentDirectory = radarDir
-    cmd = "cmd.exe /c python -u integrated_market_radar.py --loop-daemon --interval-seconds 60 --duration-minutes 0 > """ & logFile & """ 2>&1"
+    cmd = "cmd.exe /c python -u integrated_market_radar.py --loop-daemon --interval-seconds 15 --duration-minutes 0 > """ & logFile & """ 2>&1"
     ws.Run cmd, 0, False
 End If
 '''
