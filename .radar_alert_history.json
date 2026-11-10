@@ -30,8 +30,8 @@
       "last_notified_at": 1793944690.7934802
     },
     "COHR": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "STOP_LOSS",
+      "last_notified_at": 1794308483.428755
     },
     "NBIS": {
       "state": "STOP_LOSS",
@@ -110,8 +110,8 @@
       "last_notified_at": 0.0
     },
     "TSM": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1794308402.5951533
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "MU": {
       "state": "STOP_LOSS",
@@ -138,12 +138,12 @@
       "last_notified_at": 1793944690.7934802
     },
     "AMD": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1794308162.1910396
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "SPCX": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1794307998.6968126
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "VRT": {
       "state": "STOP_LOSS",
@@ -206,8 +206,8 @@
       "last_notified_at": 0.0
     },
     "QQQM": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1794308483.428755
     },
     "SOXX": {
       "state": "NORMAL",
