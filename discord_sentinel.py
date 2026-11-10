@@ -14,6 +14,8 @@ import os
 import sys
 import time
 import math
+import json
+from datetime import datetime
 from typing import Dict, Any, List, Optional, Tuple, Union
 import pandas as pd
 import numpy as np
@@ -719,8 +721,9 @@ def build_message_1_embed(market_analysis: Dict[str, Any]) -> Optional[dict]:
 
     description = "\n".join(lines)
 
+    slot_title = market_analysis.get("slot_title") or "收线与隔夜结构"
     embed = {
-        "title": "收线与隔夜结构",
+        "title": slot_title,
         "color": 3066993,  # Vivid Green #2ECC71
         "description": description,
         "footer": {
@@ -1073,17 +1076,173 @@ def run_sentinel_scan(
     return market_analysis
 
 
-def run_sentinel_cycle_safe(macro_data=None, stocks_sorted=None, weather_info=None, now_str=None):
+# -----------------------------------------------------------------------------
+# 每日 4 次精准时段定义 (开盘前10分、开盘后/盘中、尾盘后、夜盘)
+# -----------------------------------------------------------------------------
+SENTINEL_SCHEDULE_SLOTS = [
+    {
+        "id": "pre_market_10m",
+        "name": "🌅 【美股开盘前十分钟·攻防战报】",
+        "start_time": "09:20",
+        "end_time": "09:30",
+        "desc": "开盘前 10 分钟：梳理隔夜结构与 3X 多空关键防守位，准备开盘冲锋"
+    },
+    {
+        "id": "post_open_intraday",
+        "name": "⚔️ 【美股开盘后·盘中多空对决与共振巡检】",
+        "start_time": "10:30",
+        "end_time": "11:30",
+        "desc": "开盘后 1 小时：早盘多空拔河分晓，排查 3X 底部共振与芯片/防御背离"
+    },
+    {
+        "id": "post_close",
+        "name": "🏁 【美股尾盘后·全天收盘决战复盘】",
+        "start_time": "16:05",
+        "end_time": "16:30",
+        "desc": "尾盘收官后：锁定全天日线与 4H 收盘形态，核算密集区 POC 与极值榜"
+    },
+    {
+        "id": "overnight",
+        "name": "🌌 【美股夜盘·隔夜流动性与全球资产巡检】",
+        "start_time": "20:30",
+        "end_time": "21:30",
+        "desc": "夜盘开启后：监控加密货币、大宗黄金与美股夜盘跨时区流动性"
+    }
+]
+
+
+def get_current_et_datetime() -> datetime:
+    """获取当前准确的美东时间 (America/New_York)"""
+    try:
+        import zoneinfo
+        ny_tz = zoneinfo.ZoneInfo("America/New_York")
+    except Exception:
+        from datetime import timezone, timedelta
+        ny_tz = timezone(timedelta(hours=-5))
+    return datetime.now(ny_tz)
+
+
+def check_sentinel_schedule_window(now_dt: Optional[datetime] = None, force: bool = False) -> Tuple[bool, Optional[str], Optional[str]]:
+    """
+    检查当前美东时间是否匹配 4 个指定推送窗口之一，且当日该窗口尚未推送过:
+    1. 🌅 开盘前十分钟 (09:20 ~ 09:30 ET)
+    2. ⚔️ 开盘后/盘中 (10:30 ~ 11:30 ET)
+    3. 🏁 尾盘后复盘 (16:05 ~ 16:30 ET)
+    4. 🌌 美股夜盘 (20:30 ~ 21:30 ET)
+    
+    返回: (should_push, slot_id, slot_name)
+    若 force=True (如命令行 --once)，则直接允许推送。
+    """
+    if force:
+        return True, "manual_force", "⚡ 【手动即时量化巡检】"
+
+    now_et = now_dt or get_current_et_datetime()
+    weekday = now_et.weekday()  # 0=Mon, 4=Fri, 5=Sat, 6=Sun
+    hm = now_et.strftime("%H:%M")
+    date_str = now_et.strftime("%Y-%m-%d")
+
+    # 周末过滤 (周六全天休市；周日白天休市，周日 20:00 后夜盘开启除外)
+    if weekday == 5 or (weekday == 6 and hm < "20:00"):
+        return False, None, None
+
+    # 周五 20:00 之后夜盘休市
+    if weekday == 4 and hm >= "20:00":
+        return False, None, None
+
+    active_slot = None
+    for slot in SENTINEL_SCHEDULE_SLOTS:
+        if slot["start_time"] <= hm < slot["end_time"]:
+            active_slot = slot
+            break
+
+    if not active_slot:
+        return False, None, None
+
+    slot_id = active_slot["id"]
+    slot_name = active_slot["name"]
+
+    state_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), ".discord_sentinel_state.json")
+    state = {}
+    if os.path.exists(state_file):
+        try:
+            with open(state_file, "r", encoding="utf-8") as f:
+                state = json.load(f)
+        except Exception:
+            state = {}
+
+    pushed_map = state.get("last_pushed_slots", {})
+    today_pushed = pushed_map.get(date_str, [])
+
+    if slot_id in today_pushed:
+        # 当日该时段已成功推送过，严格去重避免刷屏
+        return False, slot_id, slot_name
+
+    return True, slot_id, slot_name
+
+
+def mark_sentinel_slot_pushed(slot_id: str, slot_name: str, now_dt: Optional[datetime] = None):
+    """记录成功推送的时段至 .discord_sentinel_state.json"""
+    now_et = now_dt or get_current_et_datetime()
+    date_str = now_et.strftime("%Y-%m-%d")
+    time_str = now_et.strftime("%Y-%m-%d %H:%M:%S")
+
+    state_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), ".discord_sentinel_state.json")
+    state = {}
+    if os.path.exists(state_file):
+        try:
+            with open(state_file, "r", encoding="utf-8") as f:
+                state = json.load(f)
+        except Exception:
+            state = {}
+
+    if "last_pushed_slots" not in state:
+        state["last_pushed_slots"] = {}
+    if date_str not in state["last_pushed_slots"]:
+        state["last_pushed_slots"][date_str] = []
+
+    if slot_id not in state["last_pushed_slots"][date_str]:
+        state["last_pushed_slots"][date_str].append(slot_id)
+
+    if "history" not in state:
+        state["history"] = []
+    state["history"].append({
+        "slot_id": slot_id,
+        "slot_name": slot_name,
+        "et_time": time_str
+    })
+    state["history"] = state["history"][-100:]
+
+    try:
+        with open(state_file, "w", encoding="utf-8") as f:
+            json.dump(state, f, indent=2, ensure_ascii=False)
+    except Exception as e:
+        print(f"[!] Failed to write sentinel state: {e}")
+
+
+def run_sentinel_cycle_safe(macro_data=None, stocks_sorted=None, weather_info=None, now_str=None, scheduled_only: bool = False, force: bool = False):
     """
     integrated_market_radar.py 联动的安全异步调用入口:
+    - 每日固定 4 次准时触发: 开盘前十分钟 (09:20 ET)、开盘后/盘中 (10:30 ET)、尾盘后 (16:05 ET)、夜盘 (20:30 ET)
+    - 当日每个窗口仅推一次，其余 60s 轮询周期 0 网络开销静默跳过
     - 捕获所有网络与逻辑异常，安全隔离，绝不影响主雷达循环
-    - 优先复用雷达已有行情数据，秒级极速构建并异步推送
     """
     try:
+        slot_id = "manual"
+        slot_name = "⚡ 【即时量化哨兵巡检】"
+
+        if scheduled_only and not force:
+            should_push, s_id, s_name = check_sentinel_schedule_window()
+            if not should_push:
+                return  # 未到 4 个时段或当日该时段已推送，静默返回
+            slot_id = s_id
+            slot_name = s_name
+
         webhook_url = os.environ.get("DISCORD_WEBHOOK_URL", DISCORD_WEBHOOK_URL).strip()
         if not webhook_url:
             print("[Discord Sentinel] DISCORD_WEBHOOK_URL not configured, skipping cycle.")
             return
+
+        print(f"[*] 🚀 [Discord Sentinel] 触发推送: {slot_name}...")
 
         if macro_data is not None and stocks_sorted is not None:
             items_map: Dict[str, Any] = {}
@@ -1123,6 +1282,7 @@ def run_sentinel_cycle_safe(macro_data=None, stocks_sorted=None, weather_info=No
             analysis = {
                 "timestamp": now_str or pd.Timestamp.now().strftime("%Y-%m-%d %H:%M:%S"),
                 "session": "REGULAR",
+                "slot_title": slot_name,
                 "tickers": tickers_res,
                 "factor_y": factor_y,
                 "resonance_alerts": [],
@@ -1134,6 +1294,10 @@ def run_sentinel_cycle_safe(macro_data=None, stocks_sorted=None, weather_info=No
             dispatch_discord_messages(webhook_url, payload_1, payload_2a, payload_2b)
         else:
             run_sentinel_scan(dry_run=False, push_discord=True)
+
+        if scheduled_only and slot_id and slot_id != "manual":
+            mark_sentinel_slot_pushed(slot_id, slot_name)
+            print(f"[+] ✅ [Discord Sentinel] {slot_name} 成功推送完毕并记录状态锁。")
     except Exception as e:
         print(f"[!] ⚠️ Discord Sentinel cycle isolated exception: {e}")
 
@@ -1142,18 +1306,23 @@ def main():
     import argparse
     parser = argparse.ArgumentParser(description="US Market Radar - Discord Sentinel Engine")
     parser.add_argument("--once", action="store_true", help="Execute single-pass scan and dispatch to Discord Webhook immediately")
-    parser.add_argument("--schedule", action="store_true", help="Run in continuous schedule mode aligned with US market hours")
-    parser.add_argument("--interval", type=int, default=1800, help="Loop interval in seconds when in daemon mode (default: 1800s)")
+    parser.add_argument("--schedule", action="store_true", help="Run in continuous schedule mode aligned with US market hours (4 times a day)")
+    parser.add_argument("--interval", type=int, default=30, help="Poll interval in seconds when in schedule daemon mode (default: 30s)")
     parser.add_argument("--dry-run", action="store_true", help="Build embeds and print character counts without dispatching")
+    parser.add_argument("--force", action="store_true", help="Force dispatch ignoring daily 4-times schedule window")
     args = parser.parse_args()
 
     if args.dry_run:
         run_sentinel_scan(dry_run=True, push_discord=False)
     elif args.schedule:
-        print(f"🚀 [Discord Sentinel] Starting schedule loop (interval: {args.interval}s)...")
+        print("🚀 [Discord Sentinel] 启动每日 4 次美东定时巡检守护引擎...")
+        print("   1. 🌅 开盘前十分钟: 09:20 ~ 09:30 ET")
+        print("   2. ⚔️ 开盘后 / 盘中: 10:30 ~ 11:30 ET")
+        print("   3. 🏁 尾盘后复盘:   16:05 ~ 16:30 ET")
+        print("   4. 🌌 美股夜盘巡检: 20:30 ~ 21:30 ET")
         while True:
             try:
-                run_sentinel_scan(dry_run=False, push_discord=True)
+                run_sentinel_cycle_safe(scheduled_only=True, force=args.force)
                 time.sleep(args.interval)
             except KeyboardInterrupt:
                 print("\n[Discord Sentinel] Schedule loop interrupted by user. Exiting.")
@@ -1162,7 +1331,7 @@ def main():
                 print(f"[!] ⚠️ Error in sentinel schedule cycle: {e}")
                 time.sleep(10)
     else:
-        # Default to single pass scan
+        # Default to single pass scan (--once)
         run_sentinel_scan(dry_run=False, push_discord=True)
 
 

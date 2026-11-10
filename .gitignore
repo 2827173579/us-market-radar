@@ -11,3 +11,5 @@ Thumbs.db
 .env.*
 !.env.example
 *.env
+
+.discord_sentinel_state.json

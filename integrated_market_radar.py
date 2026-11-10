@@ -2130,6 +2130,7 @@ def dispatch_discord_sentinel_async(macro_data, stocks_sorted, weather_info, now
         thread = threading.Thread(
             target=discord_sentinel.run_sentinel_cycle_safe,
             args=(macro_data, stocks_sorted, weather_info, now_str),
+            kwargs={"scheduled_only": True},
             daemon=True,
             name="DiscordSentinelDaemon"
         )
