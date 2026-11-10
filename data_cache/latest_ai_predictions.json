@@ -4,7 +4,7 @@
     "profit_factor": 1.4,
     "top_sector": "存储芯片 (⭐⭐⭐⭐⭐)",
     "top_feature": "SMH_IGV_Ratio_Bias (12.37%)",
-    "sync_time": "2026-11-10 20:39:49",
+    "sync_time": "2026-11-10 20:39:48",
     "data_mode": "Finnhub 秒级实时 (🌅 盘前交易)",
     "is_realtime": false
   },
@@ -5299,10 +5299,10 @@
       "sector_key": "Semiconductors",
       "sector_cn": "半导体3倍做多",
       "sector_rating": "⭐⭐⭐⭐☆",
-      "latest_price": 54.73,
-      "current_price": 54.73,
-      "atr_pct": 24.53,
-      "bias_ma50": -52.03,
+      "latest_price": 54.53,
+      "current_price": 54.53,
+      "atr_pct": 24.62,
+      "bias_ma50": -52.21,
       "bias_ma20": -49.09,
       "low_prev": 40.59,
       "rsi_14": 34.8,
@@ -5312,22 +5312,22 @@
       "is_cooling_halt": false,
       "macro_temp": "🌧️ 暴雨空仓",
       "model_raw_prob_pct": 43.7,
-      "base_raw_prob_pct": 43.4,
-      "predicted_win_rate_pct": 43.4,
-      "calibrated_win_rate_pct": 29.5,
+      "base_raw_prob_pct": 43.3,
+      "predicted_win_rate_pct": 43.3,
+      "calibrated_win_rate_pct": 29.4,
       "sector_pf": 1.55,
-      "target_profit_price": 59.9,
+      "target_profit_price": 59.68,
       "target_profit_pct": 9.5,
-      "stop_loss_price": 50.9,
+      "stop_loss_price": 50.71,
       "stop_loss_pct": 7.0,
       "action": "🚨 暴跌熔断·严禁左侧接刀",
       "action_tag": "action-rebound",
       "model_raw_short_prob_pct": 59.8,
       "calibrated_short_win_rate_pct": 59.4,
       "short_entry_price": 45.970001220703125,
-      "short_target_profit_price": 49.56,
+      "short_target_profit_price": 49.38,
       "short_target_profit_pct": 9.5,
-      "short_stop_loss_price": 58.56,
+      "short_stop_loss_price": 58.35,
       "short_stop_loss_pct": 7.0,
       "dollar_pcr": 0.77,
       "pcr": 0.85,
@@ -5337,12 +5337,12 @@
       "iv_atm": 256.5,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "s1": 51.86,
-      "s2": 49.18,
-      "sl": 48.44,
-      "r1": 57.99,
-      "r2": 62.31,
-      "scenario_script": "【暴跌熔断风控剧本】触发暴跌熔断保护期，下方严防下探 S2 ($49.18) 极端清算底；反抽测试 R1 ($57.99) 均属诱多；防守止损位 $48.44，严禁左侧接刀",
+      "s1": 51.67,
+      "s2": 49.0,
+      "sl": 48.27,
+      "r1": 57.77,
+      "r2": 62.08,
+      "scenario_script": "【暴跌熔断风控剧本】触发暴跌熔断保护期，下方严防下探 S2 ($49.00) 极端清算底；反抽测试 R1 ($57.77) 均属诱多；防守止损位 $48.27，严禁左侧接刀",
       "track": "Track B",
       "four_h_rsi": 36.6,
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
@@ -9291,10 +9291,10 @@
       "sector_key": "Semiconductors",
       "sector_cn": "半导体3倍做多",
       "sector_rating": "⭐⭐⭐⭐☆",
-      "latest_price": 54.73,
-      "current_price": 54.73,
-      "atr_pct": 24.53,
-      "bias_ma50": -52.03,
+      "latest_price": 54.53,
+      "current_price": 54.53,
+      "atr_pct": 24.62,
+      "bias_ma50": -52.21,
       "bias_ma20": -49.09,
       "low_prev": 40.59,
       "rsi_14": 34.8,
@@ -9304,22 +9304,22 @@
       "is_cooling_halt": false,
       "macro_temp": "🌧️ 暴雨空仓",
       "model_raw_prob_pct": 43.7,
-      "base_raw_prob_pct": 43.4,
-      "predicted_win_rate_pct": 43.4,
-      "calibrated_win_rate_pct": 29.5,
+      "base_raw_prob_pct": 43.3,
+      "predicted_win_rate_pct": 43.3,
+      "calibrated_win_rate_pct": 29.4,
       "sector_pf": 1.55,
-      "target_profit_price": 59.9,
+      "target_profit_price": 59.68,
       "target_profit_pct": 9.5,
-      "stop_loss_price": 50.9,
+      "stop_loss_price": 50.71,
       "stop_loss_pct": 7.0,
       "action": "🚨 暴跌熔断·严禁左侧接刀",
       "action_tag": "action-rebound",
       "model_raw_short_prob_pct": 59.8,
       "calibrated_short_win_rate_pct": 59.4,
       "short_entry_price": 45.970001220703125,
-      "short_target_profit_price": 49.56,
+      "short_target_profit_price": 49.38,
       "short_target_profit_pct": 9.5,
-      "short_stop_loss_price": 58.56,
+      "short_stop_loss_price": 58.35,
       "short_stop_loss_pct": 7.0,
       "dollar_pcr": 0.77,
       "pcr": 0.85,
@@ -9329,12 +9329,12 @@
       "iv_atm": 256.5,
       "short_action": "⚡ 逢高反抽沽空/买Put",
       "short_action_tag": "short-action-rebound",
-      "s1": 51.86,
-      "s2": 49.18,
-      "sl": 48.44,
-      "r1": 57.99,
-      "r2": 62.31,
-      "scenario_script": "【暴跌熔断风控剧本】触发暴跌熔断保护期，下方严防下探 S2 ($49.18) 极端清算底；反抽测试 R1 ($57.99) 均属诱多；防守止损位 $48.44，严禁左侧接刀",
+      "s1": 51.67,
+      "s2": 49.0,
+      "sl": 48.27,
+      "r1": 57.77,
+      "r2": 62.08,
+      "scenario_script": "【暴跌熔断风控剧本】触发暴跌熔断保护期，下方严防下探 S2 ($49.00) 极端清算底；反抽测试 R1 ($57.77) 均属诱多；防守止损位 $48.27，严禁左侧接刀",
       "track": "Track B",
       "four_h_rsi": 36.6,
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
@@ -10371,193 +10371,193 @@
   },
   "defensive_flight": {
     "is_alert": false,
-    "flight_score": 0.84,
+    "flight_score": 0.93,
     "def_mean_chg": -0.0,
-    "off_mean_chg": -0.84,
-    "alert_text": "🛡️ 防御因子平稳 (+0.8%) · 机构仓位均衡",
+    "off_mean_chg": -0.93,
+    "alert_text": "🛡️ 防御因子平稳 (+0.9%) · 机构仓位均衡",
     "banner_text": "",
     "badge": "badge-normal"
   },
   "time_cycle_projections": {
     "SOXL": {
       "ticker": "SOXL",
-      "current_price": 54.73,
-      "s1": 51.86,
-      "s2": 49.18,
-      "sl": 48.44,
-      "r1": 57.99,
-      "r2": 62.31,
+      "current_price": 54.53,
+      "s1": 51.67,
+      "s2": 49.0,
+      "sl": 48.27,
+      "r1": 57.77,
+      "r2": 62.08,
       "history": [
         {
           "date": "2026-10-12",
-          "price": 152.72
+          "price": 152.16
         },
         {
           "date": "2026-10-13",
-          "price": 151.59
+          "price": 151.04
         },
         {
           "date": "2026-10-14",
-          "price": 131.48
+          "price": 131.0
         },
         {
           "date": "2026-10-15",
-          "price": 127.6
+          "price": 127.13
         },
         {
           "date": "2026-10-16",
-          "price": 111.27
+          "price": 110.86
         },
         {
           "date": "2026-10-19",
-          "price": 117.24
+          "price": 116.81
         },
         {
           "date": "2026-10-20",
-          "price": 116.01
+          "price": 115.59
         },
         {
           "date": "2026-10-21",
-          "price": 122.65
+          "price": 122.2
         },
         {
           "date": "2026-10-22",
-          "price": 97.69
+          "price": 97.33
         },
         {
           "date": "2026-10-23",
-          "price": 99.33
+          "price": 98.97
         },
         {
           "date": "2026-10-26",
-          "price": 107.64
+          "price": 107.25
         },
         {
           "date": "2026-10-27",
-          "price": 120.07
+          "price": 119.63
         },
         {
           "date": "2026-10-28",
-          "price": 127.6
+          "price": 127.13
         },
         {
           "date": "2026-10-29",
-          "price": 121.71
+          "price": 121.27
         },
         {
           "date": "2026-10-30",
-          "price": 91.61
+          "price": 91.28
         },
         {
           "date": "2026-11-02",
-          "price": 81.01
+          "price": 80.71
         },
         {
           "date": "2026-11-03",
-          "price": 86.88
+          "price": 86.56
         },
         {
           "date": "2026-11-04",
-          "price": 79.22
+          "price": 78.93
         },
         {
           "date": "2026-11-05",
-          "price": 48.64
+          "price": 48.46
         },
         {
           "date": "2026-11-06",
-          "price": 54.73
+          "price": 54.53
         }
       ],
       "projection": [
         {
           "day": "T+1",
           "date": "2026-11-10",
-          "price": 56.6,
+          "price": 56.39,
           "pct": 3.7
         },
         {
           "day": "T+2",
           "date": "2026-11-11",
-          "price": 60.49,
+          "price": 60.27,
           "pct": 10.6
         },
         {
           "day": "T+3",
           "date": "2026-11-12",
-          "price": 62.98,
+          "price": 62.75,
           "pct": 15.0
         },
         {
           "day": "T+4",
           "date": "2026-11-13",
-          "price": 63.11,
+          "price": 62.88,
           "pct": 15.4
         },
         {
           "day": "T+5",
           "date": "2026-11-16",
-          "price": 64.3,
+          "price": 64.07,
           "pct": 17.5
         },
         {
           "day": "T+6",
           "date": "2026-11-17",
-          "price": 64.03,
+          "price": 63.8,
           "pct": 16.9
         },
         {
           "day": "T+7",
           "date": "2026-11-18",
-          "price": 64.43,
+          "price": 64.19,
           "pct": 17.7
         },
         {
           "day": "T+8",
           "date": "2026-11-19",
-          "price": 66.11,
+          "price": 65.87,
           "pct": 21.1
         },
         {
           "day": "T+9",
           "date": "2026-11-20",
-          "price": 67.33,
+          "price": 67.08,
           "pct": 23.0
         },
         {
           "day": "T+10",
           "date": "2026-11-23",
-          "price": 66.19,
+          "price": 65.95,
           "pct": 21.3
         },
         {
           "day": "T+11",
           "date": "2026-11-24",
-          "price": 66.97,
+          "price": 66.73,
           "pct": 22.5
         },
         {
           "day": "T+12",
           "date": "2026-11-25",
-          "price": 64.23,
+          "price": 64.0,
           "pct": 17.4
         },
         {
           "day": "T+13",
           "date": "2026-11-26",
-          "price": 62.44,
+          "price": 62.21,
           "pct": 14.3
         },
         {
           "day": "T+14",
           "date": "2026-11-27",
-          "price": 60.63,
+          "price": 60.41,
           "pct": 11.0
         },
         {
           "day": "T+15",
           "date": "2026-11-30",
-          "price": 60.09,
+          "price": 59.87,
           "pct": 9.8
         }
       ],
@@ -10566,42 +10566,42 @@
           "type": "top",
           "date": "2026-11-12",
           "day": "T+3",
-          "price": 62.98,
+          "price": 62.75,
           "desc": "🔴 周期峰阻力窗 (高危变盘·压力不过就跑)"
         },
         {
           "type": "bottom",
           "date": "2026-11-13",
           "day": "T+4",
-          "price": 63.11,
+          "price": 62.88,
           "desc": "🔵 周期底回踩窗 (关注空头回补企稳)"
         },
         {
           "type": "top",
           "date": "2026-11-16",
           "day": "T+5",
-          "price": 64.3,
+          "price": 64.07,
           "desc": "🔴 周期峰阻力窗 (高危变盘·压力不过就跑)"
         },
         {
           "type": "bottom",
           "date": "2026-11-17",
           "day": "T+6",
-          "price": 64.03,
+          "price": 63.8,
           "desc": "🔵 周期底回踩窗 (关注空头回补企稳)"
         },
         {
           "type": "top",
           "date": "2026-11-20",
           "day": "T+9",
-          "price": 67.33,
+          "price": 67.08,
           "desc": "🔴 周期峰阻力窗 (高危变盘·压力不过就跑)"
         },
         {
           "type": "bottom",
           "date": "2026-11-23",
           "day": "T+10",
-          "price": 66.19,
+          "price": 65.95,
           "desc": "🔵 周期底回踩窗 (关注空头回补企稳)"
         }
       ],
