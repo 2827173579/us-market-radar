@@ -110,8 +110,8 @@
       "last_notified_at": 0.0
     },
     "TSM": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1794302492.7997487
     },
     "MU": {
       "state": "STOP_LOSS",
@@ -142,8 +142,8 @@
       "last_notified_at": 1794302413.7881973
     },
     "SPCX": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1794302492.7997487
     },
     "VRT": {
       "state": "STOP_LOSS",
