@@ -4,7 +4,7 @@
     "profit_factor": 1.4,
     "top_sector": "存储芯片 (⭐⭐⭐⭐⭐)",
     "top_feature": "SMH_IGV_Ratio_Bias (12.37%)",
-    "sync_time": "2026-11-10 10:26:10",
+    "sync_time": "2026-11-10 10:28:09",
     "data_mode": "Finnhub 秒级实时 (🌌 美股夜盘)",
     "is_realtime": false
   },
@@ -622,10 +622,10 @@
       "latest_price": 504.31,
       "current_price": 504.31,
       "atr_pct": 10.81,
-      "bias_ma50": -33.89,
+      "bias_ma50": -34.53,
       "bias_ma20": -28.47,
       "low_prev": 461.11,
-      "rsi_14": 32.0,
+      "rsi_14": 31.0,
       "is_broken": false,
       "is_etf": false,
       "is_crash_halt": false,
@@ -736,10 +736,10 @@
       "latest_price": 59.13,
       "current_price": 59.13,
       "atr_pct": 10.74,
-      "bias_ma50": -39.26,
+      "bias_ma50": -39.67,
       "bias_ma20": -32.25,
       "low_prev": 51.51,
-      "rsi_14": 29.5,
+      "rsi_14": 29.2,
       "is_broken": false,
       "is_etf": false,
       "is_crash_halt": false,
@@ -782,7 +782,7 @@
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": true,
-      "short_rank": 53
+      "short_rank": 52
     },
     {
       "rank": 4,
@@ -850,10 +850,10 @@
       "latest_price": 348.5,
       "current_price": 348.5,
       "atr_pct": 9.79,
-      "bias_ma50": -30.62,
+      "bias_ma50": -30.97,
       "bias_ma20": -27.58,
       "low_prev": 315.0,
-      "rsi_14": 32.8,
+      "rsi_14": 32.5,
       "is_broken": false,
       "is_etf": false,
       "is_crash_halt": false,
@@ -896,7 +896,7 @@
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": true,
-      "short_rank": 46
+      "short_rank": 45
     },
     {
       "rank": 6,
@@ -953,7 +953,7 @@
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": true,
-      "short_rank": 50
+      "short_rank": 49
     },
     {
       "rank": 7,
@@ -1010,7 +1010,7 @@
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": true,
-      "short_rank": 64
+      "short_rank": 63
     },
     {
       "rank": 8,
@@ -1067,7 +1067,7 @@
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": true,
-      "short_rank": 52
+      "short_rank": 51
     },
     {
       "rank": 9,
@@ -1124,7 +1124,7 @@
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": true,
-      "short_rank": 58
+      "short_rank": 57
     },
     {
       "rank": 10,
@@ -1181,7 +1181,7 @@
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": true,
-      "short_rank": 60
+      "short_rank": 59
     }
   ],
   "top_long": [
@@ -1194,10 +1194,10 @@
       "latest_price": 504.31,
       "current_price": 504.31,
       "atr_pct": 10.81,
-      "bias_ma50": -33.89,
+      "bias_ma50": -34.53,
       "bias_ma20": -28.47,
       "low_prev": 461.11,
-      "rsi_14": 32.0,
+      "rsi_14": 31.0,
       "is_broken": false,
       "is_etf": false,
       "is_crash_halt": false,
@@ -1308,10 +1308,10 @@
       "latest_price": 59.13,
       "current_price": 59.13,
       "atr_pct": 10.74,
-      "bias_ma50": -39.26,
+      "bias_ma50": -39.67,
       "bias_ma20": -32.25,
       "low_prev": 51.51,
-      "rsi_14": 29.5,
+      "rsi_14": 29.2,
       "is_broken": false,
       "is_etf": false,
       "is_crash_halt": false,
@@ -1354,7 +1354,7 @@
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": true,
-      "short_rank": 53
+      "short_rank": 52
     },
     {
       "rank": 4,
@@ -1422,10 +1422,10 @@
       "latest_price": 348.5,
       "current_price": 348.5,
       "atr_pct": 9.79,
-      "bias_ma50": -30.62,
+      "bias_ma50": -30.97,
       "bias_ma20": -27.58,
       "low_prev": 315.0,
-      "rsi_14": 32.8,
+      "rsi_14": 32.5,
       "is_broken": false,
       "is_etf": false,
       "is_crash_halt": false,
@@ -1468,7 +1468,7 @@
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": true,
-      "short_rank": 46
+      "short_rank": 45
     },
     {
       "rank": 6,
@@ -1525,7 +1525,7 @@
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": true,
-      "short_rank": 50
+      "short_rank": 49
     },
     {
       "rank": 7,
@@ -1582,7 +1582,7 @@
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": true,
-      "short_rank": 64
+      "short_rank": 63
     },
     {
       "rank": 8,
@@ -1639,7 +1639,7 @@
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": true,
-      "short_rank": 52
+      "short_rank": 51
     },
     {
       "rank": 9,
@@ -1696,7 +1696,7 @@
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": true,
-      "short_rank": 58
+      "short_rank": 57
     },
     {
       "rank": 10,
@@ -1753,7 +1753,7 @@
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": true,
-      "short_rank": 60
+      "short_rank": 59
     }
   ],
   "top_short": [
@@ -1986,7 +1986,7 @@
       "short_rank": 4
     },
     {
-      "rank": 38,
+      "rank": 39,
       "ticker": "CEG",
       "sector_key": "Energy_Power",
       "sector_cn": "数据中心能源电力",
@@ -2051,10 +2051,10 @@
       "latest_price": 510.53,
       "current_price": 510.53,
       "atr_pct": 7.17,
-      "bias_ma50": -6.78,
+      "bias_ma50": -6.84,
       "bias_ma20": -14.84,
       "low_prev": 402.1,
-      "rsi_14": 47.7,
+      "rsi_14": 47.1,
       "is_broken": false,
       "is_etf": false,
       "is_crash_halt": false,
@@ -2338,10 +2338,10 @@
       "latest_price": 504.31,
       "current_price": 504.31,
       "atr_pct": 10.81,
-      "bias_ma50": -33.89,
+      "bias_ma50": -34.53,
       "bias_ma20": -28.47,
       "low_prev": 461.11,
-      "rsi_14": 32.0,
+      "rsi_14": 31.0,
       "is_broken": false,
       "is_etf": false,
       "is_crash_halt": false,
@@ -2452,10 +2452,10 @@
       "latest_price": 59.13,
       "current_price": 59.13,
       "atr_pct": 10.74,
-      "bias_ma50": -39.26,
+      "bias_ma50": -39.67,
       "bias_ma20": -32.25,
       "low_prev": 51.51,
-      "rsi_14": 29.5,
+      "rsi_14": 29.2,
       "is_broken": false,
       "is_etf": false,
       "is_crash_halt": false,
@@ -2498,7 +2498,7 @@
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": true,
-      "short_rank": 53
+      "short_rank": 52
     },
     {
       "rank": 4,
@@ -2566,10 +2566,10 @@
       "latest_price": 348.5,
       "current_price": 348.5,
       "atr_pct": 9.79,
-      "bias_ma50": -30.62,
+      "bias_ma50": -30.97,
       "bias_ma20": -27.58,
       "low_prev": 315.0,
-      "rsi_14": 32.8,
+      "rsi_14": 32.5,
       "is_broken": false,
       "is_etf": false,
       "is_crash_halt": false,
@@ -2612,7 +2612,7 @@
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": true,
-      "short_rank": 46
+      "short_rank": 45
     },
     {
       "rank": 6,
@@ -2669,7 +2669,7 @@
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": true,
-      "short_rank": 50
+      "short_rank": 49
     },
     {
       "rank": 7,
@@ -2726,7 +2726,7 @@
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": true,
-      "short_rank": 64
+      "short_rank": 63
     },
     {
       "rank": 8,
@@ -2783,7 +2783,7 @@
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": true,
-      "short_rank": 52
+      "short_rank": 51
     },
     {
       "rank": 9,
@@ -2840,7 +2840,7 @@
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": true,
-      "short_rank": 58
+      "short_rank": 57
     },
     {
       "rank": 10,
@@ -2897,7 +2897,7 @@
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": true,
-      "short_rank": 60
+      "short_rank": 59
     },
     {
       "rank": 11,
@@ -2908,10 +2908,10 @@
       "latest_price": 155.9,
       "current_price": 155.9,
       "atr_pct": 11.56,
-      "bias_ma50": -33.1,
+      "bias_ma50": -33.53,
       "bias_ma20": -35.0,
       "low_prev": 132.54,
-      "rsi_14": 32.1,
+      "rsi_14": 31.8,
       "is_broken": false,
       "is_etf": false,
       "is_crash_halt": false,
@@ -2954,7 +2954,7 @@
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": true,
-      "short_rank": 65
+      "short_rank": 64
     },
     {
       "rank": 12,
@@ -3011,7 +3011,7 @@
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": true,
-      "short_rank": 57
+      "short_rank": 56
     },
     {
       "rank": 13,
@@ -3068,7 +3068,7 @@
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": true,
-      "short_rank": 63
+      "short_rank": 62
     },
     {
       "rank": 14,
@@ -3182,7 +3182,7 @@
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": true,
-      "short_rank": 43
+      "short_rank": 42
     },
     {
       "rank": 16,
@@ -3307,10 +3307,10 @@
       "latest_price": 728.53,
       "current_price": 728.53,
       "atr_pct": 8.06,
-      "bias_ma50": -23.92,
+      "bias_ma50": -24.3,
       "bias_ma20": -21.5,
       "low_prev": 650.0,
-      "rsi_14": 36.4,
+      "rsi_14": 36.0,
       "is_broken": false,
       "is_etf": false,
       "is_crash_halt": false,
@@ -3353,7 +3353,7 @@
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": true,
-      "short_rank": 49
+      "short_rank": 48
     },
     {
       "rank": 19,
@@ -3581,7 +3581,7 @@
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": true,
-      "short_rank": 24
+      "short_rank": 23
     },
     {
       "rank": 23,
@@ -3591,11 +3591,11 @@
       "sector_rating": "⭐⭐⭐⭐☆",
       "latest_price": 55.86,
       "current_price": 55.86,
-      "atr_pct": 24.3,
-      "bias_ma50": -51.04,
+      "atr_pct": 25.33,
+      "bias_ma50": -51.6,
       "bias_ma20": -49.09,
       "low_prev": 40.59,
-      "rsi_14": 34.8,
+      "rsi_14": 34.4,
       "is_broken": false,
       "is_etf": true,
       "is_crash_halt": false,
@@ -3638,7 +3638,7 @@
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": true,
-      "short_rank": 62
+      "short_rank": 61
     },
     {
       "rank": 24,
@@ -3695,7 +3695,7 @@
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": true,
-      "short_rank": 61
+      "short_rank": 60
     },
     {
       "rank": 25,
@@ -3752,7 +3752,7 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 34
+      "short_rank": 33
     },
     {
       "rank": 26,
@@ -3877,10 +3877,10 @@
       "latest_price": 641.5,
       "current_price": 641.5,
       "atr_pct": 3.76,
-      "bias_ma50": -5.11,
+      "bias_ma50": -5.02,
       "bias_ma20": -7.93,
       "low_prev": 583.8,
-      "rsi_14": 46.5,
+      "rsi_14": 45.9,
       "is_broken": false,
       "is_etf": false,
       "is_crash_halt": false,
@@ -3923,7 +3923,7 @@
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 28
+      "short_rank": 27
     },
     {
       "rank": 29,
@@ -3980,7 +3980,7 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 38
+      "short_rank": 37
     },
     {
       "rank": 30,
@@ -3991,10 +3991,10 @@
       "latest_price": 510.53,
       "current_price": 510.53,
       "atr_pct": 7.17,
-      "bias_ma50": -6.78,
+      "bias_ma50": -6.84,
       "bias_ma20": -14.84,
       "low_prev": 402.1,
-      "rsi_14": 47.7,
+      "rsi_14": 47.1,
       "is_broken": false,
       "is_etf": false,
       "is_crash_halt": false,
@@ -4094,7 +4094,7 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 39
+      "short_rank": 38
     },
     {
       "rank": 32,
@@ -4151,7 +4151,7 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 29
+      "short_rank": 28
     },
     {
       "rank": 33,
@@ -4208,7 +4208,7 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 31
+      "short_rank": 30
     },
     {
       "rank": 34,
@@ -4379,7 +4379,7 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 25
+      "short_rank": 24
     },
     {
       "rank": 37,
@@ -4440,6 +4440,63 @@
     },
     {
       "rank": 38,
+      "ticker": "LLY",
+      "sector_key": "Energy_Power",
+      "sector_cn": "价值蓝筹与医药",
+      "sector_rating": "⭐⭐⭐☆☆",
+      "latest_price": 1411.12,
+      "current_price": 1411.12,
+      "atr_pct": 3.36,
+      "bias_ma50": 16.21,
+      "bias_ma20": 4.0,
+      "low_prev": 1364.73,
+      "rsi_14": 61.1,
+      "is_broken": false,
+      "is_etf": false,
+      "is_crash_halt": false,
+      "is_cooling_halt": false,
+      "macro_temp": "🌧️ 暴雨空仓",
+      "model_raw_prob_pct": 31.3,
+      "base_raw_prob_pct": 33.3,
+      "predicted_win_rate_pct": 33.3,
+      "calibrated_win_rate_pct": 34.0,
+      "sector_pf": 1.28,
+      "target_profit_price": 1475.13,
+      "target_profit_pct": 4.5,
+      "stop_loss_price": 1363.71,
+      "stop_loss_pct": 3.4,
+      "action": "🛡️ 暴雨空仓·严禁左侧接刀",
+      "action_tag": "action-watch",
+      "model_raw_short_prob_pct": 56.9,
+      "calibrated_short_win_rate_pct": 58.7,
+      "short_entry_price": 1354.0,
+      "short_target_profit_price": 1347.11,
+      "short_target_profit_pct": 4.5,
+      "short_stop_loss_price": 1458.53,
+      "short_stop_loss_pct": 3.4,
+      "dollar_pcr": 1.09,
+      "pcr": 1.82,
+      "pcr_sentiment": "🔴 资金偏空对冲",
+      "put_wall": 1360.0,
+      "call_wall": 1365.0,
+      "iv_atm": 47.3,
+      "short_action": "⚡ 逢高反抽沽空/买Put",
+      "short_action_tag": "short-action-rebound",
+      "s1": 1375.56,
+      "s2": 1342.37,
+      "sl": 1322.23,
+      "r1": 1453.45,
+      "r2": 1504.89,
+      "scenario_script": "【右侧主升剧本】依托波段支撑 S1 ($1375.56) 逢低做多，上看阻力 R1 ($1453.45) 与突破扩展目标 R2 ($1504.89)；关键防守位 $1322.23",
+      "track": "Track A",
+      "four_h_rsi": 73.8,
+      "four_h_div": "⚡ 4H 均线多头共振",
+      "four_h_tag": "div-trend",
+      "is_short_covering": false,
+      "short_rank": 20
+    },
+    {
+      "rank": 39,
       "ticker": "CEG",
       "sector_key": "Energy_Power",
       "sector_cn": "数据中心能源电力",
@@ -4496,7 +4553,7 @@
       "short_rank": 5
     },
     {
-      "rank": 39,
+      "rank": 40,
       "ticker": "MSFT",
       "sector_key": "Enterprise_SaaS",
       "sector_cn": "企业软件与 AI SaaS",
@@ -4550,64 +4607,7 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 32
-    },
-    {
-      "rank": 40,
-      "ticker": "LLY",
-      "sector_key": "Energy_Power",
-      "sector_cn": "价值蓝筹与医药",
-      "sector_rating": "⭐⭐⭐☆☆",
-      "latest_price": NaN,
-      "current_price": NaN,
-      "atr_pct": 3.36,
-      "bias_ma50": NaN,
-      "bias_ma20": 4.0,
-      "low_prev": 1364.73,
-      "rsi_14": 61.1,
-      "is_broken": true,
-      "is_etf": false,
-      "is_crash_halt": false,
-      "is_cooling_halt": false,
-      "macro_temp": "🌧️ 暴雨空仓",
-      "model_raw_prob_pct": 31.3,
-      "base_raw_prob_pct": NaN,
-      "predicted_win_rate_pct": NaN,
-      "calibrated_win_rate_pct": NaN,
-      "sector_pf": 1.28,
-      "target_profit_price": NaN,
-      "target_profit_pct": 4.5,
-      "stop_loss_price": NaN,
-      "stop_loss_pct": 3.4,
-      "action": "🚨 破位飞刀·严禁左侧抄底",
-      "action_tag": "action-watch",
-      "model_raw_short_prob_pct": 56.9,
-      "calibrated_short_win_rate_pct": 58.7,
-      "short_entry_price": 1354.0,
-      "short_target_profit_price": NaN,
-      "short_target_profit_pct": 4.5,
-      "short_stop_loss_price": NaN,
-      "short_stop_loss_pct": 3.4,
-      "dollar_pcr": 1.09,
-      "pcr": 1.82,
-      "pcr_sentiment": "🔴 资金偏空对冲",
-      "put_wall": 1360.0,
-      "call_wall": 1365.0,
-      "iv_atm": 47.3,
-      "short_action": "⚡ 逢高反抽沽空/买Put",
-      "short_action_tag": "short-action-rebound",
-      "s1": 0.0,
-      "s2": -0.01,
-      "sl": -0.02,
-      "r1": 0.02,
-      "r2": 0.03,
-      "scenario_script": "【破位飞刀剧本】均线空头排列破位，下方严防下探 S2 ($-0.01) 清算底；反抽测试 R1 ($0.02) 均属诱多；防守位 $-0.02，严禁左侧接刀",
-      "track": "Track B",
-      "four_h_rsi": 73.8,
-      "four_h_div": "⚡ 4H 均线多头共振",
-      "four_h_tag": "div-trend",
-      "is_short_covering": false,
-      "short_rank": 20
+      "short_rank": 31
     },
     {
       "rank": 41,
@@ -4615,35 +4615,35 @@
       "sector_key": "Energy_Power",
       "sector_cn": "价值蓝筹与医药",
       "sector_rating": "⭐⭐⭐☆☆",
-      "latest_price": NaN,
-      "current_price": NaN,
+      "latest_price": 280.55,
+      "current_price": 280.55,
       "atr_pct": 2.2,
-      "bias_ma50": NaN,
+      "bias_ma50": 12.81,
       "bias_ma20": 9.26,
       "low_prev": 275.06,
       "rsi_14": 73.6,
-      "is_broken": true,
+      "is_broken": false,
       "is_etf": false,
       "is_crash_halt": false,
       "is_cooling_halt": false,
       "macro_temp": "🌧️ 暴雨空仓",
       "model_raw_prob_pct": 30.4,
-      "base_raw_prob_pct": NaN,
-      "predicted_win_rate_pct": NaN,
-      "calibrated_win_rate_pct": NaN,
+      "base_raw_prob_pct": 32.1,
+      "predicted_win_rate_pct": 32.1,
+      "calibrated_win_rate_pct": 28.6,
       "sector_pf": 1.28,
-      "target_profit_price": NaN,
+      "target_profit_price": 288.97,
       "target_profit_pct": 3.0,
-      "stop_loss_price": NaN,
+      "stop_loss_price": 274.38,
       "stop_loss_pct": 2.2,
-      "action": "🚨 破位飞刀·严禁左侧抄底",
+      "action": "🛡️ 暴雨空仓·严禁左侧接刀",
       "action_tag": "action-watch",
       "model_raw_short_prob_pct": 60.2,
       "calibrated_short_win_rate_pct": 51.9,
       "short_entry_price": 276.5199890136719,
-      "short_target_profit_price": NaN,
+      "short_target_profit_price": 272.13,
       "short_target_profit_pct": 3.0,
-      "short_stop_loss_price": NaN,
+      "short_stop_loss_price": 286.72,
       "short_stop_loss_pct": 2.2,
       "dollar_pcr": 0.37,
       "pcr": 0.51,
@@ -4653,18 +4653,18 @@
       "iv_atm": 31.9,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "s1": 0.0,
-      "s2": -0.01,
-      "sl": -0.02,
-      "r1": 0.02,
-      "r2": 0.03,
-      "scenario_script": "【破位飞刀剧本】均线空头排列破位，下方严防下探 S2 ($-0.01) 清算底；反抽测试 R1 ($0.02) 均属诱多；防守位 $-0.02，严禁左侧接刀",
-      "track": "Track B",
+      "s1": 273.54,
+      "s2": 267.93,
+      "sl": 263.91,
+      "r1": 288.97,
+      "r2": 297.38,
+      "scenario_script": "【右侧主升剧本】依托波段支撑 S1 ($273.54) 逢低做多，上看阻力 R1 ($288.97) 与突破扩展目标 R2 ($297.38)；关键防守位 $263.91",
+      "track": "Track A",
       "four_h_rsi": 71.3,
       "four_h_div": "🔴 4H 顶背离滞涨 (防回踩)",
       "four_h_tag": "div-bear",
       "is_short_covering": false,
-      "short_rank": 30
+      "short_rank": 29
     },
     {
       "rank": 42,
@@ -4778,7 +4778,7 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 47
+      "short_rank": 46
     },
     {
       "rank": 44,
@@ -4835,7 +4835,7 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 44
+      "short_rank": 43
     },
     {
       "rank": 45,
@@ -4892,7 +4892,7 @@
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 51
+      "short_rank": 50
     },
     {
       "rank": 46,
@@ -4949,7 +4949,7 @@
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": false,
-      "short_rank": 48
+      "short_rank": 47
     },
     {
       "rank": 47,
@@ -5006,7 +5006,7 @@
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": false,
-      "short_rank": 36
+      "short_rank": 35
     },
     {
       "rank": 48,
@@ -5177,7 +5177,7 @@
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 56
+      "short_rank": 55
     },
     {
       "rank": 51,
@@ -5348,7 +5348,7 @@
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": false,
-      "short_rank": 45
+      "short_rank": 44
     },
     {
       "rank": 54,
@@ -5405,7 +5405,7 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 42
+      "short_rank": 41
     },
     {
       "rank": 55,
@@ -5416,10 +5416,10 @@
       "latest_price": 54.94,
       "current_price": 54.94,
       "atr_pct": 8.28,
-      "bias_ma50": -12.02,
+      "bias_ma50": -12.34,
       "bias_ma20": -3.28,
       "low_prev": 43.89,
-      "rsi_14": 51.4,
+      "rsi_14": 50.9,
       "is_broken": true,
       "is_etf": false,
       "is_crash_halt": true,
@@ -5428,7 +5428,7 @@
       "model_raw_prob_pct": 39.6,
       "base_raw_prob_pct": 38.8,
       "predicted_win_rate_pct": 38.8,
-      "calibrated_win_rate_pct": 31.8,
+      "calibrated_win_rate_pct": 31.7,
       "sector_pf": 1.35,
       "target_profit_price": 59.49,
       "target_profit_pct": 8.3,
@@ -5462,7 +5462,7 @@
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 66
+      "short_rank": 65
     },
     {
       "rank": 56,
@@ -5519,7 +5519,7 @@
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": false,
-      "short_rank": 54
+      "short_rank": 53
     },
     {
       "rank": 57,
@@ -5576,7 +5576,7 @@
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 59
+      "short_rank": 58
     },
     {
       "rank": 58,
@@ -5644,25 +5644,25 @@
       "latest_price": 202.0,
       "current_price": 202.0,
       "atr_pct": 8.4,
-      "bias_ma50": -14.35,
+      "bias_ma50": -14.89,
       "bias_ma20": -14.7,
       "low_prev": 170.8,
-      "rsi_14": 43.6,
+      "rsi_14": 43.1,
       "is_broken": true,
       "is_etf": false,
       "is_crash_halt": false,
-      "is_cooling_halt": false,
+      "is_cooling_halt": true,
       "macro_temp": "🌧️ 暴雨空仓",
       "model_raw_prob_pct": 33.9,
       "base_raw_prob_pct": 34.0,
       "predicted_win_rate_pct": 34.0,
-      "calibrated_win_rate_pct": 27.4,
+      "calibrated_win_rate_pct": 27.3,
       "sector_pf": 1.55,
       "target_profit_price": 218.91,
       "target_profit_pct": 8.4,
       "stop_loss_price": 189.48,
       "stop_loss_pct": 6.2,
-      "action": "🚨 破位飞刀·严禁左侧抄底",
+      "action": "🚨 暴跌熔断·严禁左侧接刀",
       "action_tag": "action-rebound",
       "model_raw_short_prob_pct": 57.6,
       "calibrated_short_win_rate_pct": 57.4,
@@ -5684,13 +5684,13 @@
       "sl": 179.76,
       "r1": 212.65,
       "r2": 226.77,
-      "scenario_script": "【破位飞刀剧本】均线空头排列破位，下方严防下探 S2 ($182.50) 清算底；反抽测试 R1 ($212.65) 均属诱多；防守位 $179.76，严禁左侧接刀",
+      "scenario_script": "【暴跌熔断风控剧本】触发暴跌熔断保护期，下方严防下探 S2 ($182.50) 极端清算底；反抽测试 R1 ($212.65) 均属诱多；防守止损位 $179.76，严禁左侧接刀",
       "track": "Track B",
       "four_h_rsi": 52.4,
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 21
+      "short_rank": 66
     },
     {
       "rank": 60,
@@ -5747,7 +5747,7 @@
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": false,
-      "short_rank": 55
+      "short_rank": 54
     },
     {
       "rank": 61,
@@ -5804,7 +5804,7 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 37
+      "short_rank": 36
     },
     {
       "rank": 62,
@@ -5871,11 +5871,11 @@
       "sector_rating": "⭐⭐⭐☆☆",
       "latest_price": 42.87,
       "current_price": 42.87,
-      "atr_pct": 6.09,
-      "bias_ma50": 14.5,
+      "atr_pct": 6.7,
+      "bias_ma50": 15.1,
       "bias_ma20": 21.38,
       "low_prev": 43.08,
-      "rsi_14": 56.0,
+      "rsi_14": 56.7,
       "is_broken": false,
       "is_etf": true,
       "is_crash_halt": false,
@@ -5886,19 +5886,19 @@
       "predicted_win_rate_pct": 38.8,
       "calibrated_win_rate_pct": 39.7,
       "sector_pf": 1.29,
-      "target_profit_price": 45.79,
-      "target_profit_pct": 6.8,
-      "stop_loss_price": 40.71,
-      "stop_loss_pct": 5.0,
+      "target_profit_price": 45.97,
+      "target_profit_pct": 7.2,
+      "stop_loss_price": 40.58,
+      "stop_loss_pct": 5.4,
       "action": "🛡️ 暴雨空仓·严禁左侧接刀",
       "action_tag": "action-watch",
       "model_raw_short_prob_pct": 68.0,
       "calibrated_short_win_rate_pct": 42.1,
       "short_entry_price": 47.70000076293945,
-      "short_target_profit_price": 39.95,
-      "short_target_profit_pct": 6.8,
-      "short_stop_loss_price": 45.03,
-      "short_stop_loss_pct": 5.0,
+      "short_target_profit_price": 39.77,
+      "short_target_profit_pct": 7.2,
+      "short_stop_loss_price": 45.16,
+      "short_stop_loss_pct": 5.4,
       "dollar_pcr": 0.14,
       "pcr": 0.26,
       "pcr_sentiment": "🛡️ 买Call对冲(看跌大盘)",
@@ -5907,18 +5907,18 @@
       "iv_atm": 138.3,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "s1": 41.25,
-      "s2": 39.73,
-      "sl": 39.13,
-      "r1": 44.71,
+      "s1": 41.15,
+      "s2": 39.54,
+      "sl": 38.95,
+      "r1": 44.82,
       "r2": 50.0,
-      "scenario_script": "【右侧主升剧本】依托波段支撑 S1 ($41.25) 逢低做多，上看阻力 R1 ($44.71) 与突破扩展目标 R2 ($50.00)；关键防守位 $39.13",
+      "scenario_script": "【右侧主升剧本】依托波段支撑 S1 ($41.15) 逢低做多，上看阻力 R1 ($44.82) 与突破扩展目标 R2 ($50.00)；关键防守位 $38.95",
       "track": "Track A",
       "four_h_rsi": 59.4,
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 40
+      "short_rank": 39
     },
     {
       "rank": 64,
@@ -5928,11 +5928,11 @@
       "sector_rating": "⭐⭐⭐☆☆",
       "latest_price": 42.47,
       "current_price": 42.47,
-      "atr_pct": 3.05,
-      "bias_ma50": -7.23,
+      "atr_pct": 3.1,
+      "bias_ma50": -7.27,
       "bias_ma20": -5.82,
       "low_prev": 42.66,
-      "rsi_14": 36.6,
+      "rsi_14": 36.7,
       "is_broken": false,
       "is_etf": true,
       "is_crash_halt": false,
@@ -5943,19 +5943,19 @@
       "predicted_win_rate_pct": 39.0,
       "calibrated_win_rate_pct": 38.7,
       "sector_pf": 1.29,
-      "target_profit_price": 44.22,
-      "target_profit_pct": 4.1,
-      "stop_loss_price": 41.17,
-      "stop_loss_pct": 3.0,
+      "target_profit_price": 44.24,
+      "target_profit_pct": 4.2,
+      "stop_loss_price": 41.15,
+      "stop_loss_pct": 3.1,
       "action": "🛡️ 暴雨空仓·严禁左侧接刀",
       "action_tag": "action-watch",
       "model_raw_short_prob_pct": 54.7,
       "calibrated_short_win_rate_pct": 54.4,
       "short_entry_price": 42.880001068115234,
-      "short_target_profit_price": 40.72,
-      "short_target_profit_pct": 4.1,
-      "short_stop_loss_price": 43.76,
-      "short_stop_loss_pct": 3.0,
+      "short_target_profit_price": 40.69,
+      "short_target_profit_pct": 4.2,
+      "short_stop_loss_price": 43.78,
+      "short_stop_loss_pct": 3.1,
       "dollar_pcr": 0.49,
       "pcr": 0.46,
       "pcr_sentiment": "🔥 机构极度看涨",
@@ -5968,14 +5968,14 @@
       "s2": 40.56,
       "sl": 39.95,
       "r1": 43.74,
-      "r2": 45.03,
-      "scenario_script": "【战术推演剧本】下方防守支撑 S1 ($41.41)/S2 ($40.56)，上方阻力目标 R1 ($43.74)/R2 ($45.03)；跌破防守止损位 $39.95 严格离场",
+      "r2": 45.07,
+      "scenario_script": "【战术推演剧本】下方防守支撑 S1 ($41.41)/S2 ($40.56)，上方阻力目标 R1 ($43.74)/R2 ($45.07)；跌破防守止损位 $39.95 严格离场",
       "track": "Track A",
       "four_h_rsi": 38.0,
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": false,
-      "short_rank": 27
+      "short_rank": 26
     },
     {
       "rank": 65,
@@ -5985,11 +5985,11 @@
       "sector_rating": "⭐⭐⭐☆☆",
       "latest_price": 377.85,
       "current_price": 377.85,
-      "atr_pct": 1.75,
-      "bias_ma50": -1.7,
+      "atr_pct": 1.84,
+      "bias_ma50": -1.88,
       "bias_ma20": -0.07,
       "low_prev": 373.42,
-      "rsi_14": 53.3,
+      "rsi_14": 53.2,
       "is_broken": false,
       "is_etf": true,
       "is_crash_halt": false,
@@ -6032,7 +6032,7 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 33
+      "short_rank": 32
     },
     {
       "rank": 66,
@@ -6042,11 +6042,11 @@
       "sector_rating": "⭐⭐☆☆☆",
       "latest_price": 51.1,
       "current_price": 51.1,
-      "atr_pct": 1.99,
-      "bias_ma50": -4.69,
+      "atr_pct": 2.15,
+      "bias_ma50": -4.82,
       "bias_ma20": -6.5,
       "low_prev": 48.84,
-      "rsi_14": 41.7,
+      "rsi_14": 41.1,
       "is_broken": false,
       "is_etf": true,
       "is_crash_halt": false,
@@ -6089,7 +6089,7 @@
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 23
+      "short_rank": 22
     },
     {
       "rank": 67,
@@ -6146,7 +6146,7 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 41
+      "short_rank": 40
     },
     {
       "rank": 68,
@@ -6203,7 +6203,7 @@
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 22
+      "short_rank": 21
     },
     {
       "rank": 69,
@@ -6260,7 +6260,7 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 26
+      "short_rank": 25
     },
     {
       "rank": 70,
@@ -6317,7 +6317,7 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 35
+      "short_rank": 34
     },
     {
       "rank": 71,
@@ -6387,10 +6387,10 @@
       "latest_price": 504.31,
       "current_price": 504.31,
       "atr_pct": 10.81,
-      "bias_ma50": -33.89,
+      "bias_ma50": -34.53,
       "bias_ma20": -28.47,
       "low_prev": 461.11,
-      "rsi_14": 32.0,
+      "rsi_14": 31.0,
       "is_broken": false,
       "is_etf": false,
       "is_crash_halt": false,
@@ -6501,10 +6501,10 @@
       "latest_price": 59.13,
       "current_price": 59.13,
       "atr_pct": 10.74,
-      "bias_ma50": -39.26,
+      "bias_ma50": -39.67,
       "bias_ma20": -32.25,
       "low_prev": 51.51,
-      "rsi_14": 29.5,
+      "rsi_14": 29.2,
       "is_broken": false,
       "is_etf": false,
       "is_crash_halt": false,
@@ -6547,7 +6547,7 @@
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": true,
-      "short_rank": 53
+      "short_rank": 52
     },
     "MARA": {
       "rank": 4,
@@ -6615,10 +6615,10 @@
       "latest_price": 348.5,
       "current_price": 348.5,
       "atr_pct": 9.79,
-      "bias_ma50": -30.62,
+      "bias_ma50": -30.97,
       "bias_ma20": -27.58,
       "low_prev": 315.0,
-      "rsi_14": 32.8,
+      "rsi_14": 32.5,
       "is_broken": false,
       "is_etf": false,
       "is_crash_halt": false,
@@ -6661,7 +6661,7 @@
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": true,
-      "short_rank": 46
+      "short_rank": 45
     },
     "CRWV": {
       "rank": 6,
@@ -6718,7 +6718,7 @@
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": true,
-      "short_rank": 50
+      "short_rank": 49
     },
     "AAOI": {
       "rank": 7,
@@ -6775,7 +6775,7 @@
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": true,
-      "short_rank": 64
+      "short_rank": 63
     },
     "SNDK": {
       "rank": 8,
@@ -6832,7 +6832,7 @@
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": true,
-      "short_rank": 52
+      "short_rank": 51
     },
     "AXTI": {
       "rank": 9,
@@ -6889,7 +6889,7 @@
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": true,
-      "short_rank": 58
+      "short_rank": 57
     },
     "LITE": {
       "rank": 10,
@@ -6946,7 +6946,7 @@
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": true,
-      "short_rank": 60
+      "short_rank": 59
     },
     "MRVL": {
       "rank": 11,
@@ -6957,10 +6957,10 @@
       "latest_price": 155.9,
       "current_price": 155.9,
       "atr_pct": 11.56,
-      "bias_ma50": -33.1,
+      "bias_ma50": -33.53,
       "bias_ma20": -35.0,
       "low_prev": 132.54,
-      "rsi_14": 32.1,
+      "rsi_14": 31.8,
       "is_broken": false,
       "is_etf": false,
       "is_crash_halt": false,
@@ -7003,7 +7003,7 @@
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": true,
-      "short_rank": 65
+      "short_rank": 64
     },
     "WDC": {
       "rank": 12,
@@ -7060,7 +7060,7 @@
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": true,
-      "short_rank": 57
+      "short_rank": 56
     },
     "COIN": {
       "rank": 13,
@@ -7117,7 +7117,7 @@
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": true,
-      "short_rank": 63
+      "short_rank": 62
     },
     "ASTS": {
       "rank": 14,
@@ -7231,7 +7231,7 @@
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": true,
-      "short_rank": 43
+      "short_rank": 42
     },
     "NBIS": {
       "rank": 16,
@@ -7356,10 +7356,10 @@
       "latest_price": 728.53,
       "current_price": 728.53,
       "atr_pct": 8.06,
-      "bias_ma50": -23.92,
+      "bias_ma50": -24.3,
       "bias_ma20": -21.5,
       "low_prev": 650.0,
-      "rsi_14": 36.4,
+      "rsi_14": 36.0,
       "is_broken": false,
       "is_etf": false,
       "is_crash_halt": false,
@@ -7402,7 +7402,7 @@
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": true,
-      "short_rank": 49
+      "short_rank": 48
     },
     "HPE": {
       "rank": 19,
@@ -7630,7 +7630,7 @@
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": true,
-      "short_rank": 24
+      "short_rank": 23
     },
     "SOXL": {
       "rank": 23,
@@ -7640,11 +7640,11 @@
       "sector_rating": "⭐⭐⭐⭐☆",
       "latest_price": 55.86,
       "current_price": 55.86,
-      "atr_pct": 24.3,
-      "bias_ma50": -51.04,
+      "atr_pct": 25.33,
+      "bias_ma50": -51.6,
       "bias_ma20": -49.09,
       "low_prev": 40.59,
-      "rsi_14": 34.8,
+      "rsi_14": 34.4,
       "is_broken": false,
       "is_etf": true,
       "is_crash_halt": false,
@@ -7687,7 +7687,7 @@
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": true,
-      "short_rank": 62
+      "short_rank": 61
     },
     "KORU": {
       "rank": 24,
@@ -7744,7 +7744,7 @@
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": true,
-      "short_rank": 61
+      "short_rank": 60
     },
     "AMZN": {
       "rank": 25,
@@ -7801,7 +7801,7 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 34
+      "short_rank": 33
     },
     "AVGO": {
       "rank": 26,
@@ -7926,10 +7926,10 @@
       "latest_price": 641.5,
       "current_price": 641.5,
       "atr_pct": 3.76,
-      "bias_ma50": -5.11,
+      "bias_ma50": -5.02,
       "bias_ma20": -7.93,
       "low_prev": 583.8,
-      "rsi_14": 46.5,
+      "rsi_14": 45.9,
       "is_broken": false,
       "is_etf": false,
       "is_crash_halt": false,
@@ -7972,7 +7972,7 @@
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 28
+      "short_rank": 27
     },
     "V": {
       "rank": 29,
@@ -8029,7 +8029,7 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 38
+      "short_rank": 37
     },
     "AMD": {
       "rank": 30,
@@ -8040,10 +8040,10 @@
       "latest_price": 510.53,
       "current_price": 510.53,
       "atr_pct": 7.17,
-      "bias_ma50": -6.78,
+      "bias_ma50": -6.84,
       "bias_ma20": -14.84,
       "low_prev": 402.1,
-      "rsi_14": 47.7,
+      "rsi_14": 47.1,
       "is_broken": false,
       "is_etf": false,
       "is_crash_halt": false,
@@ -8143,7 +8143,7 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 39
+      "short_rank": 38
     },
     "PEP": {
       "rank": 32,
@@ -8200,7 +8200,7 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 29
+      "short_rank": 28
     },
     "AXP": {
       "rank": 33,
@@ -8257,7 +8257,7 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 31
+      "short_rank": 30
     },
     "TSM": {
       "rank": 34,
@@ -8428,7 +8428,7 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 25
+      "short_rank": 24
     },
     "VST": {
       "rank": 37,
@@ -8487,8 +8487,65 @@
       "is_short_covering": false,
       "short_rank": 19
     },
-    "CEG": {
+    "LLY": {
       "rank": 38,
+      "ticker": "LLY",
+      "sector_key": "Energy_Power",
+      "sector_cn": "价值蓝筹与医药",
+      "sector_rating": "⭐⭐⭐☆☆",
+      "latest_price": 1411.12,
+      "current_price": 1411.12,
+      "atr_pct": 3.36,
+      "bias_ma50": 16.21,
+      "bias_ma20": 4.0,
+      "low_prev": 1364.73,
+      "rsi_14": 61.1,
+      "is_broken": false,
+      "is_etf": false,
+      "is_crash_halt": false,
+      "is_cooling_halt": false,
+      "macro_temp": "🌧️ 暴雨空仓",
+      "model_raw_prob_pct": 31.3,
+      "base_raw_prob_pct": 33.3,
+      "predicted_win_rate_pct": 33.3,
+      "calibrated_win_rate_pct": 34.0,
+      "sector_pf": 1.28,
+      "target_profit_price": 1475.13,
+      "target_profit_pct": 4.5,
+      "stop_loss_price": 1363.71,
+      "stop_loss_pct": 3.4,
+      "action": "🛡️ 暴雨空仓·严禁左侧接刀",
+      "action_tag": "action-watch",
+      "model_raw_short_prob_pct": 56.9,
+      "calibrated_short_win_rate_pct": 58.7,
+      "short_entry_price": 1354.0,
+      "short_target_profit_price": 1347.11,
+      "short_target_profit_pct": 4.5,
+      "short_stop_loss_price": 1458.53,
+      "short_stop_loss_pct": 3.4,
+      "dollar_pcr": 1.09,
+      "pcr": 1.82,
+      "pcr_sentiment": "🔴 资金偏空对冲",
+      "put_wall": 1360.0,
+      "call_wall": 1365.0,
+      "iv_atm": 47.3,
+      "short_action": "⚡ 逢高反抽沽空/买Put",
+      "short_action_tag": "short-action-rebound",
+      "s1": 1375.56,
+      "s2": 1342.37,
+      "sl": 1322.23,
+      "r1": 1453.45,
+      "r2": 1504.89,
+      "scenario_script": "【右侧主升剧本】依托波段支撑 S1 ($1375.56) 逢低做多，上看阻力 R1 ($1453.45) 与突破扩展目标 R2 ($1504.89)；关键防守位 $1322.23",
+      "track": "Track A",
+      "four_h_rsi": 73.8,
+      "four_h_div": "⚡ 4H 均线多头共振",
+      "four_h_tag": "div-trend",
+      "is_short_covering": false,
+      "short_rank": 20
+    },
+    "CEG": {
+      "rank": 39,
       "ticker": "CEG",
       "sector_key": "Energy_Power",
       "sector_cn": "数据中心能源电力",
@@ -8545,7 +8602,7 @@
       "short_rank": 5
     },
     "MSFT": {
-      "rank": 39,
+      "rank": 40,
       "ticker": "MSFT",
       "sector_key": "Enterprise_SaaS",
       "sector_cn": "企业软件与 AI SaaS",
@@ -8599,64 +8656,7 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 32
-    },
-    "LLY": {
-      "rank": 40,
-      "ticker": "LLY",
-      "sector_key": "Energy_Power",
-      "sector_cn": "价值蓝筹与医药",
-      "sector_rating": "⭐⭐⭐☆☆",
-      "latest_price": NaN,
-      "current_price": NaN,
-      "atr_pct": 3.36,
-      "bias_ma50": NaN,
-      "bias_ma20": 4.0,
-      "low_prev": 1364.73,
-      "rsi_14": 61.1,
-      "is_broken": true,
-      "is_etf": false,
-      "is_crash_halt": false,
-      "is_cooling_halt": false,
-      "macro_temp": "🌧️ 暴雨空仓",
-      "model_raw_prob_pct": 31.3,
-      "base_raw_prob_pct": NaN,
-      "predicted_win_rate_pct": NaN,
-      "calibrated_win_rate_pct": NaN,
-      "sector_pf": 1.28,
-      "target_profit_price": NaN,
-      "target_profit_pct": 4.5,
-      "stop_loss_price": NaN,
-      "stop_loss_pct": 3.4,
-      "action": "🚨 破位飞刀·严禁左侧抄底",
-      "action_tag": "action-watch",
-      "model_raw_short_prob_pct": 56.9,
-      "calibrated_short_win_rate_pct": 58.7,
-      "short_entry_price": 1354.0,
-      "short_target_profit_price": NaN,
-      "short_target_profit_pct": 4.5,
-      "short_stop_loss_price": NaN,
-      "short_stop_loss_pct": 3.4,
-      "dollar_pcr": 1.09,
-      "pcr": 1.82,
-      "pcr_sentiment": "🔴 资金偏空对冲",
-      "put_wall": 1360.0,
-      "call_wall": 1365.0,
-      "iv_atm": 47.3,
-      "short_action": "⚡ 逢高反抽沽空/买Put",
-      "short_action_tag": "short-action-rebound",
-      "s1": 0.0,
-      "s2": -0.01,
-      "sl": -0.02,
-      "r1": 0.02,
-      "r2": 0.03,
-      "scenario_script": "【破位飞刀剧本】均线空头排列破位，下方严防下探 S2 ($-0.01) 清算底；反抽测试 R1 ($0.02) 均属诱多；防守位 $-0.02，严禁左侧接刀",
-      "track": "Track B",
-      "four_h_rsi": 73.8,
-      "four_h_div": "⚡ 4H 均线多头共振",
-      "four_h_tag": "div-trend",
-      "is_short_covering": false,
-      "short_rank": 20
+      "short_rank": 31
     },
     "MCD": {
       "rank": 41,
@@ -8664,35 +8664,35 @@
       "sector_key": "Energy_Power",
       "sector_cn": "价值蓝筹与医药",
       "sector_rating": "⭐⭐⭐☆☆",
-      "latest_price": NaN,
-      "current_price": NaN,
+      "latest_price": 280.55,
+      "current_price": 280.55,
       "atr_pct": 2.2,
-      "bias_ma50": NaN,
+      "bias_ma50": 12.81,
       "bias_ma20": 9.26,
       "low_prev": 275.06,
       "rsi_14": 73.6,
-      "is_broken": true,
+      "is_broken": false,
       "is_etf": false,
       "is_crash_halt": false,
       "is_cooling_halt": false,
       "macro_temp": "🌧️ 暴雨空仓",
       "model_raw_prob_pct": 30.4,
-      "base_raw_prob_pct": NaN,
-      "predicted_win_rate_pct": NaN,
-      "calibrated_win_rate_pct": NaN,
+      "base_raw_prob_pct": 32.1,
+      "predicted_win_rate_pct": 32.1,
+      "calibrated_win_rate_pct": 28.6,
       "sector_pf": 1.28,
-      "target_profit_price": NaN,
+      "target_profit_price": 288.97,
       "target_profit_pct": 3.0,
-      "stop_loss_price": NaN,
+      "stop_loss_price": 274.38,
       "stop_loss_pct": 2.2,
-      "action": "🚨 破位飞刀·严禁左侧抄底",
+      "action": "🛡️ 暴雨空仓·严禁左侧接刀",
       "action_tag": "action-watch",
       "model_raw_short_prob_pct": 60.2,
       "calibrated_short_win_rate_pct": 51.9,
       "short_entry_price": 276.5199890136719,
-      "short_target_profit_price": NaN,
+      "short_target_profit_price": 272.13,
       "short_target_profit_pct": 3.0,
-      "short_stop_loss_price": NaN,
+      "short_stop_loss_price": 286.72,
       "short_stop_loss_pct": 2.2,
       "dollar_pcr": 0.37,
       "pcr": 0.51,
@@ -8702,18 +8702,18 @@
       "iv_atm": 31.9,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "s1": 0.0,
-      "s2": -0.01,
-      "sl": -0.02,
-      "r1": 0.02,
-      "r2": 0.03,
-      "scenario_script": "【破位飞刀剧本】均线空头排列破位，下方严防下探 S2 ($-0.01) 清算底；反抽测试 R1 ($0.02) 均属诱多；防守位 $-0.02，严禁左侧接刀",
-      "track": "Track B",
+      "s1": 273.54,
+      "s2": 267.93,
+      "sl": 263.91,
+      "r1": 288.97,
+      "r2": 297.38,
+      "scenario_script": "【右侧主升剧本】依托波段支撑 S1 ($273.54) 逢低做多，上看阻力 R1 ($288.97) 与突破扩展目标 R2 ($297.38)；关键防守位 $263.91",
+      "track": "Track A",
       "four_h_rsi": 71.3,
       "four_h_div": "🔴 4H 顶背离滞涨 (防回踩)",
       "four_h_tag": "div-bear",
       "is_short_covering": false,
-      "short_rank": 30
+      "short_rank": 29
     },
     "QQQM": {
       "rank": 42,
@@ -8827,7 +8827,7 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 47
+      "short_rank": 46
     },
     "QCOM": {
       "rank": 44,
@@ -8884,7 +8884,7 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 44
+      "short_rank": 43
     },
     "ASML": {
       "rank": 45,
@@ -8941,7 +8941,7 @@
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 51
+      "short_rank": 50
     },
     "SOXX": {
       "rank": 46,
@@ -8998,7 +8998,7 @@
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": false,
-      "short_rank": 48
+      "short_rank": 47
     },
     "GOOGL": {
       "rank": 47,
@@ -9055,7 +9055,7 @@
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": false,
-      "short_rank": 36
+      "short_rank": 35
     },
     "NOW": {
       "rank": 49,
@@ -9169,7 +9169,7 @@
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 56
+      "short_rank": 55
     },
     "MRNA": {
       "rank": 51,
@@ -9340,7 +9340,7 @@
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": false,
-      "short_rank": 45
+      "short_rank": 44
     },
     "TSLA": {
       "rank": 54,
@@ -9397,7 +9397,7 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 42
+      "short_rank": 41
     },
     "RKLB": {
       "rank": 55,
@@ -9408,10 +9408,10 @@
       "latest_price": 54.94,
       "current_price": 54.94,
       "atr_pct": 8.28,
-      "bias_ma50": -12.02,
+      "bias_ma50": -12.34,
       "bias_ma20": -3.28,
       "low_prev": 43.89,
-      "rsi_14": 51.4,
+      "rsi_14": 50.9,
       "is_broken": true,
       "is_etf": false,
       "is_crash_halt": true,
@@ -9420,7 +9420,7 @@
       "model_raw_prob_pct": 39.6,
       "base_raw_prob_pct": 38.8,
       "predicted_win_rate_pct": 38.8,
-      "calibrated_win_rate_pct": 31.8,
+      "calibrated_win_rate_pct": 31.7,
       "sector_pf": 1.35,
       "target_profit_price": 59.49,
       "target_profit_pct": 8.3,
@@ -9454,7 +9454,7 @@
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 66
+      "short_rank": 65
     },
     "MSTR": {
       "rank": 56,
@@ -9511,7 +9511,7 @@
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": false,
-      "short_rank": 54
+      "short_rank": 53
     },
     "SKHY": {
       "rank": 57,
@@ -9568,7 +9568,7 @@
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 59
+      "short_rank": 58
     },
     "OKLO": {
       "rank": 58,
@@ -9636,25 +9636,25 @@
       "latest_price": 202.0,
       "current_price": 202.0,
       "atr_pct": 8.4,
-      "bias_ma50": -14.35,
+      "bias_ma50": -14.89,
       "bias_ma20": -14.7,
       "low_prev": 170.8,
-      "rsi_14": 43.6,
+      "rsi_14": 43.1,
       "is_broken": true,
       "is_etf": false,
       "is_crash_halt": false,
-      "is_cooling_halt": false,
+      "is_cooling_halt": true,
       "macro_temp": "🌧️ 暴雨空仓",
       "model_raw_prob_pct": 33.9,
       "base_raw_prob_pct": 34.0,
       "predicted_win_rate_pct": 34.0,
-      "calibrated_win_rate_pct": 27.4,
+      "calibrated_win_rate_pct": 27.3,
       "sector_pf": 1.55,
       "target_profit_price": 218.91,
       "target_profit_pct": 8.4,
       "stop_loss_price": 189.48,
       "stop_loss_pct": 6.2,
-      "action": "🚨 破位飞刀·严禁左侧抄底",
+      "action": "🚨 暴跌熔断·严禁左侧接刀",
       "action_tag": "action-rebound",
       "model_raw_short_prob_pct": 57.6,
       "calibrated_short_win_rate_pct": 57.4,
@@ -9676,13 +9676,13 @@
       "sl": 179.76,
       "r1": 212.65,
       "r2": 226.77,
-      "scenario_script": "【破位飞刀剧本】均线空头排列破位，下方严防下探 S2 ($182.50) 清算底；反抽测试 R1 ($212.65) 均属诱多；防守位 $179.76，严禁左侧接刀",
+      "scenario_script": "【暴跌熔断风控剧本】触发暴跌熔断保护期，下方严防下探 S2 ($182.50) 极端清算底；反抽测试 R1 ($212.65) 均属诱多；防守止损位 $179.76，严禁左侧接刀",
       "track": "Track B",
       "four_h_rsi": 52.4,
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 21
+      "short_rank": 66
     },
     "NVDA": {
       "rank": 60,
@@ -9739,7 +9739,7 @@
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": false,
-      "short_rank": 55
+      "short_rank": 54
     },
     "TLT": {
       "rank": 61,
@@ -9796,7 +9796,7 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 37
+      "short_rank": 36
     },
     "IWM": {
       "rank": 62,
@@ -9863,11 +9863,11 @@
       "sector_rating": "⭐⭐⭐☆☆",
       "latest_price": 42.87,
       "current_price": 42.87,
-      "atr_pct": 6.09,
-      "bias_ma50": 14.5,
+      "atr_pct": 6.7,
+      "bias_ma50": 15.1,
       "bias_ma20": 21.38,
       "low_prev": 43.08,
-      "rsi_14": 56.0,
+      "rsi_14": 56.7,
       "is_broken": false,
       "is_etf": true,
       "is_crash_halt": false,
@@ -9878,19 +9878,19 @@
       "predicted_win_rate_pct": 38.8,
       "calibrated_win_rate_pct": 39.7,
       "sector_pf": 1.29,
-      "target_profit_price": 45.79,
-      "target_profit_pct": 6.8,
-      "stop_loss_price": 40.71,
-      "stop_loss_pct": 5.0,
+      "target_profit_price": 45.97,
+      "target_profit_pct": 7.2,
+      "stop_loss_price": 40.58,
+      "stop_loss_pct": 5.4,
       "action": "🛡️ 暴雨空仓·严禁左侧接刀",
       "action_tag": "action-watch",
       "model_raw_short_prob_pct": 68.0,
       "calibrated_short_win_rate_pct": 42.1,
       "short_entry_price": 47.70000076293945,
-      "short_target_profit_price": 39.95,
-      "short_target_profit_pct": 6.8,
-      "short_stop_loss_price": 45.03,
-      "short_stop_loss_pct": 5.0,
+      "short_target_profit_price": 39.77,
+      "short_target_profit_pct": 7.2,
+      "short_stop_loss_price": 45.16,
+      "short_stop_loss_pct": 5.4,
       "dollar_pcr": 0.14,
       "pcr": 0.26,
       "pcr_sentiment": "🛡️ 买Call对冲(看跌大盘)",
@@ -9899,18 +9899,18 @@
       "iv_atm": 138.3,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "s1": 41.25,
-      "s2": 39.73,
-      "sl": 39.13,
-      "r1": 44.71,
+      "s1": 41.15,
+      "s2": 39.54,
+      "sl": 38.95,
+      "r1": 44.82,
       "r2": 50.0,
-      "scenario_script": "【右侧主升剧本】依托波段支撑 S1 ($41.25) 逢低做多，上看阻力 R1 ($44.71) 与突破扩展目标 R2 ($50.00)；关键防守位 $39.13",
+      "scenario_script": "【右侧主升剧本】依托波段支撑 S1 ($41.15) 逢低做多，上看阻力 R1 ($44.82) 与突破扩展目标 R2 ($50.00)；关键防守位 $38.95",
       "track": "Track A",
       "four_h_rsi": 59.4,
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 40
+      "short_rank": 39
     },
     "IBIT": {
       "rank": 64,
@@ -9920,11 +9920,11 @@
       "sector_rating": "⭐⭐⭐☆☆",
       "latest_price": 42.47,
       "current_price": 42.47,
-      "atr_pct": 3.05,
-      "bias_ma50": -7.23,
+      "atr_pct": 3.1,
+      "bias_ma50": -7.27,
       "bias_ma20": -5.82,
       "low_prev": 42.66,
-      "rsi_14": 36.6,
+      "rsi_14": 36.7,
       "is_broken": false,
       "is_etf": true,
       "is_crash_halt": false,
@@ -9935,19 +9935,19 @@
       "predicted_win_rate_pct": 39.0,
       "calibrated_win_rate_pct": 38.7,
       "sector_pf": 1.29,
-      "target_profit_price": 44.22,
-      "target_profit_pct": 4.1,
-      "stop_loss_price": 41.17,
-      "stop_loss_pct": 3.0,
+      "target_profit_price": 44.24,
+      "target_profit_pct": 4.2,
+      "stop_loss_price": 41.15,
+      "stop_loss_pct": 3.1,
       "action": "🛡️ 暴雨空仓·严禁左侧接刀",
       "action_tag": "action-watch",
       "model_raw_short_prob_pct": 54.7,
       "calibrated_short_win_rate_pct": 54.4,
       "short_entry_price": 42.880001068115234,
-      "short_target_profit_price": 40.72,
-      "short_target_profit_pct": 4.1,
-      "short_stop_loss_price": 43.76,
-      "short_stop_loss_pct": 3.0,
+      "short_target_profit_price": 40.69,
+      "short_target_profit_pct": 4.2,
+      "short_stop_loss_price": 43.78,
+      "short_stop_loss_pct": 3.1,
       "dollar_pcr": 0.49,
       "pcr": 0.46,
       "pcr_sentiment": "🔥 机构极度看涨",
@@ -9960,14 +9960,14 @@
       "s2": 40.56,
       "sl": 39.95,
       "r1": 43.74,
-      "r2": 45.03,
-      "scenario_script": "【战术推演剧本】下方防守支撑 S1 ($41.41)/S2 ($40.56)，上方阻力目标 R1 ($43.74)/R2 ($45.03)；跌破防守止损位 $39.95 严格离场",
+      "r2": 45.07,
+      "scenario_script": "【战术推演剧本】下方防守支撑 S1 ($41.41)/S2 ($40.56)，上方阻力目标 R1 ($43.74)/R2 ($45.07)；跌破防守止损位 $39.95 严格离场",
       "track": "Track A",
       "four_h_rsi": 38.0,
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": false,
-      "short_rank": 27
+      "short_rank": 26
     },
     "GLD": {
       "rank": 65,
@@ -9977,11 +9977,11 @@
       "sector_rating": "⭐⭐⭐☆☆",
       "latest_price": 377.85,
       "current_price": 377.85,
-      "atr_pct": 1.75,
-      "bias_ma50": -1.7,
+      "atr_pct": 1.84,
+      "bias_ma50": -1.88,
       "bias_ma20": -0.07,
       "low_prev": 373.42,
-      "rsi_14": 53.3,
+      "rsi_14": 53.2,
       "is_broken": false,
       "is_etf": true,
       "is_crash_halt": false,
@@ -10024,7 +10024,7 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 33
+      "short_rank": 32
     },
     "QQQI": {
       "rank": 66,
@@ -10034,11 +10034,11 @@
       "sector_rating": "⭐⭐☆☆☆",
       "latest_price": 51.1,
       "current_price": 51.1,
-      "atr_pct": 1.99,
-      "bias_ma50": -4.69,
+      "atr_pct": 2.15,
+      "bias_ma50": -4.82,
       "bias_ma20": -6.5,
       "low_prev": 48.84,
-      "rsi_14": 41.7,
+      "rsi_14": 41.1,
       "is_broken": false,
       "is_etf": true,
       "is_crash_halt": false,
@@ -10081,7 +10081,7 @@
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 23
+      "short_rank": 22
     },
     "VIXY": {
       "rank": 67,
@@ -10138,7 +10138,7 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 41
+      "short_rank": 40
     },
     "IGV": {
       "rank": 68,
@@ -10195,7 +10195,7 @@
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 22
+      "short_rank": 21
     },
     "SPY": {
       "rank": 69,
@@ -10252,7 +10252,7 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 26
+      "short_rank": 25
     },
     "SOXS": {
       "rank": 70,
@@ -10309,7 +10309,7 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 35
+      "short_rank": 34
     },
     "DIA": {
       "rank": 71,
@@ -10371,10 +10371,10 @@
   },
   "defensive_flight": {
     "is_alert": false,
-    "flight_score": NaN,
-    "def_mean_chg": NaN,
+    "flight_score": 1.52,
+    "def_mean_chg": 1.57,
     "off_mean_chg": 0.04,
-    "alert_text": "🛡️ 防御因子平稳 (+nan%) · 机构仓位均衡",
+    "alert_text": "🛡️ 防御因子平稳 (+1.5%) · 机构仓位均衡",
     "banner_text": "",
     "badge": "badge-normal"
   },
@@ -11537,10 +11537,10 @@
     "SQQQ": {
       "ticker": "SQQQ",
       "current_price": 42.87,
-      "s1": 41.25,
-      "s2": 39.73,
-      "sl": 39.13,
-      "r1": 44.71,
+      "s1": 41.15,
+      "s2": 39.54,
+      "sl": 38.95,
+      "r1": 44.82,
       "r2": 50.0,
       "history": [
         {
@@ -13739,7 +13739,7 @@
       "s2": 40.56,
       "sl": 39.95,
       "r1": 43.74,
-      "r2": 45.03,
+      "r2": 45.07,
       "history": [
         {
           "date": "2026-10-12",
@@ -15115,10 +15115,10 @@
       "latest_price": 504.31,
       "current_price": 504.31,
       "atr_pct": 10.81,
-      "bias_ma50": -33.89,
+      "bias_ma50": -34.53,
       "bias_ma20": -28.47,
       "low_prev": 461.11,
-      "rsi_14": 32.0,
+      "rsi_14": 31.0,
       "is_broken": false,
       "is_etf": false,
       "is_crash_halt": false,
@@ -15229,10 +15229,10 @@
       "latest_price": 59.13,
       "current_price": 59.13,
       "atr_pct": 10.74,
-      "bias_ma50": -39.26,
+      "bias_ma50": -39.67,
       "bias_ma20": -32.25,
       "low_prev": 51.51,
-      "rsi_14": 29.5,
+      "rsi_14": 29.2,
       "is_broken": false,
       "is_etf": false,
       "is_crash_halt": false,
@@ -15275,7 +15275,7 @@
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": true,
-      "short_rank": 53
+      "short_rank": 52
     },
     {
       "rank": 4,
@@ -15343,10 +15343,10 @@
       "latest_price": 348.5,
       "current_price": 348.5,
       "atr_pct": 9.79,
-      "bias_ma50": -30.62,
+      "bias_ma50": -30.97,
       "bias_ma20": -27.58,
       "low_prev": 315.0,
-      "rsi_14": 32.8,
+      "rsi_14": 32.5,
       "is_broken": false,
       "is_etf": false,
       "is_crash_halt": false,
@@ -15389,7 +15389,7 @@
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": true,
-      "short_rank": 46
+      "short_rank": 45
     },
     {
       "rank": 6,
@@ -15446,7 +15446,7 @@
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": true,
-      "short_rank": 50
+      "short_rank": 49
     },
     {
       "rank": 7,
@@ -15503,7 +15503,7 @@
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": true,
-      "short_rank": 64
+      "short_rank": 63
     },
     {
       "rank": 8,
@@ -15560,7 +15560,7 @@
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": true,
-      "short_rank": 52
+      "short_rank": 51
     },
     {
       "rank": 9,
@@ -15617,7 +15617,7 @@
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": true,
-      "short_rank": 58
+      "short_rank": 57
     },
     {
       "rank": 10,
@@ -15674,7 +15674,7 @@
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": true,
-      "short_rank": 60
+      "short_rank": 59
     }
   ]
 }
