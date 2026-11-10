@@ -677,7 +677,7 @@ def build_message_1_embed(market_analysis: Dict[str, Any]) -> Optional[dict]:
     - 3X Leverage Core Monitor Block (👑 【置顶 3X 多空核心监控】)
     - Resonance and Divergence Alert Block
     - 1D+4H Dual-Cycle Extremes
-    - Footer: 菲欧尼之心 (Heart of Fioni) · 盘前/盘中/盘尾定时引擎
+    - Footer: 小豆泥 (Xiaodouni) · 盘前/盘中/尾盘/夜盘全周期巡检
     """
     tickers = market_analysis.get("tickers", {})
     resonance_alerts = market_analysis.get("resonance_alerts", [])
@@ -727,7 +727,7 @@ def build_message_1_embed(market_analysis: Dict[str, Any]) -> Optional[dict]:
         "color": 3066993,  # Vivid Green #2ECC71
         "description": description,
         "footer": {
-            "text": "菲欧尼之心 (Heart of Fioni) · 盘前/盘中/盘尾定时引擎"
+            "text": "小豆泥 (Xiaodouni) · 盘前/盘中/尾盘/夜盘全周期巡检"
         }
     }
     return embed
@@ -750,7 +750,7 @@ def build_discord_payloads(market_analysis: Dict[str, Any]) -> Tuple[Optional[di
     # 1. Message 1 (Strong Alert)
     embed_msg1 = build_message_1_embed(market_analysis)
     payload_1 = {
-        "username": "菲欧尼之心·量化哨兵",
+        "username": "小豆泥·量化哨兵",
         "embeds": [embed_msg1]
     } if embed_msg1 else None
 
@@ -833,11 +833,11 @@ def build_discord_payloads(market_analysis: Dict[str, Any]) -> Tuple[Optional[di
     embeds_2b = [embed_t4_1, embed_t4_2, embed_t5_1, embed_t5_2]
 
     payload_2a = {
-        "username": "菲欧尼之心·板块巡检",
+        "username": "小豆泥·板块巡检",
         "embeds": embeds_2a
     }
     payload_2b = {
-        "username": "菲欧尼之心·板块巡检",
+        "username": "小豆泥·板块巡检",
         "embeds": embeds_2b
     }
 
@@ -904,10 +904,10 @@ def dispatch_discord_messages(
     # 1. Message 1 (Strong Alert)
     if payload_1:
         if isinstance(payload_1, list):
-            p1_dict = {"username": "菲欧尼之心·量化哨兵", "embeds": payload_1}
+            p1_dict = {"username": "小豆泥·量化哨兵", "embeds": payload_1}
         elif isinstance(payload_1, dict):
             p1_dict = dict(payload_1)
-            p1_dict.setdefault("username", "菲欧尼之心·量化哨兵")
+            p1_dict.setdefault("username", "小豆泥·量化哨兵")
         else:
             p1_dict = None
 
@@ -919,10 +919,10 @@ def dispatch_discord_messages(
     # 2. Message 2 Part A (Tiers 1-3)
     if payload_2a:
         if isinstance(payload_2a, list):
-            p2a_dict = {"username": "菲欧尼之心·板块巡检", "embeds": payload_2a}
+            p2a_dict = {"username": "小豆泥·板块巡检", "embeds": payload_2a}
         elif isinstance(payload_2a, dict):
             p2a_dict = dict(payload_2a)
-            p2a_dict.setdefault("username", "菲欧尼之心·板块巡检")
+            p2a_dict.setdefault("username", "小豆泥·板块巡检")
         else:
             p2a_dict = None
 
@@ -934,10 +934,10 @@ def dispatch_discord_messages(
     # 3. Message 2 Part B (Tiers 4-5)
     if payload_2b:
         if isinstance(payload_2b, list):
-            p2b_dict = {"username": "菲欧尼之心·板块巡检", "embeds": payload_2b}
+            p2b_dict = {"username": "小豆泥·板块巡检", "embeds": payload_2b}
         elif isinstance(payload_2b, dict):
             p2b_dict = dict(payload_2b)
-            p2b_dict.setdefault("username", "菲欧尼之心·板块巡检")
+            p2b_dict.setdefault("username", "小豆泥·板块巡检")
         else:
             p2b_dict = None
 

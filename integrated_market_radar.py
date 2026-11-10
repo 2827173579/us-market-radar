@@ -1635,7 +1635,7 @@ def send_discord_claw_alert(title, markdown_content, webhook_url=None):
     }
 
     payload = {
-        "username": "美股雷达实时预警 (Claw)",
+        "username": "小豆泥·实盘预警 (Claw)",
         "embeds": [embed]
     }
 
