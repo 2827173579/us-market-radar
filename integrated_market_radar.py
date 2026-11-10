@@ -190,6 +190,9 @@ DISCORD_CLAW_WEBHOOK_URL = os.environ.get(
     "DISCORD_CLAW_WEBHOOK_URL",
     os.environ.get("DISCORD_ALERT_WEBHOOK_URL", "")
 ).strip()
+DISCORD_DEFENSIVE_FLIGHT_WEBHOOK_URL = os.environ.get(
+    "DISCORD_DEFENSIVE_FLIGHT_WEBHOOK_URL", ""
+).strip()
 
 # ------------------------------------------------------------------------------
 # 🎯 账户资金与风控配置 (V3.1 旗舰纯比例制 · 单股上限 25% · 1.5%风险平价一次性建仓)
@@ -1654,6 +1657,104 @@ def send_discord_claw_alert(title, markdown_content, webhook_url=None):
                 return False
     except Exception as e:
         print(f"  [!] 💬 Discord ClawBot预警推送异常: {e}")
+        return False
+
+
+def send_discord_defensive_flight_alert(df_alert, live_lookup=None, update_time_str=None, webhook_url=None):
+    """
+    通过专属 Webhook 向【防御因子背离百分比】频道实时推送纯粹、聚焦的防御/科技背离因子战报。
+    每次雷达刷新均精准播报，包含背离差值、防御/科技各自均值、各成分股涨跌幅细分及大白话操盘指引。
+    """
+    url = webhook_url or os.environ.get("DISCORD_DEFENSIVE_FLIGHT_WEBHOOK_URL", "").strip()
+    if not url:
+        load_env_file()
+        url = os.environ.get("DISCORD_DEFENSIVE_FLIGHT_WEBHOOK_URL", "").strip()
+    if not url:
+        return False
+
+    is_alert = bool(df_alert.get("is_alert", False))
+    score = float(df_alert.get("flight_score", 0.0))
+    def_mean = float(df_alert.get("def_mean_chg", 0.0))
+    off_mean = float(df_alert.get("off_mean_chg", 0.0))
+
+    live_lookup = live_lookup or {}
+    def_items = []
+    for s in ["KO", "PEP", "MCD", "LLY", "MRNA", "TLT", "GLD", "VIXY"]:
+        if s in live_lookup:
+            lv = live_lookup[s]
+            pct = float(lv.get("ext_pct") if lv.get("ext_price", 0) > 0 else lv.get("pct_change", lv.get("change_pct", 0.0)))
+            def_items.append(f"{s} `{pct:+.2f}%`")
+    off_items = []
+    for s in ["SMH", "SOXL", "NVDA", "QQQM"]:
+        if s in live_lookup:
+            lv = live_lookup[s]
+            pct = float(lv.get("ext_pct") if lv.get("ext_price", 0) > 0 else lv.get("pct_change", lv.get("change_pct", 0.0)))
+            off_items.append(f"{s} `{pct:+.2f}%`")
+
+    if is_alert:
+        color = 0xF85149  # 警示红
+        status_tag = f"🚨 **【防御因子起飞 · 警惕机构盘中去杠杆踩踏】**"
+        advice = "⚠️ **操盘警示**：防御避险资产超额走强，科技成长股正被机构急促抽离资金！短线多头切勿盲目抄底接飞刀，实盘注意上移保本止损，防范盘中踩踏！"
+    elif score >= 1.5:
+        color = 0xFF944D  # 警觉橙
+        status_tag = f"⚠️ **【避险情绪升温 · 防御因子走强】**"
+        advice = "👀 **盘面观察**：防御因子相对科技出现温和背离，机构资金偏向保守防御，多头进攻动能有所收敛，持仓宜设移动止盈保护。"
+    elif score <= -1.0:
+        color = 0x00E676  # 顺风绿
+        status_tag = f"🚀 **【进攻科技占优 · 市场风险偏好高昂】**"
+        advice = "🟢 **多头顺风**：进攻型科技成长股显著领跑防御资产，市场风险偏好健康，多头仓位顺势拿稳。"
+    else:
+        color = 0x58A6FF  # 平稳蓝
+        status_tag = f"🛡️ **【因子表现均衡 · 机构仓位平稳】**"
+        advice = "✅ **常规格局**：防御因子与进攻科技相对强弱处于正常均衡区间，机构未见系统性去杠杆调仓。"
+
+    def_str = " ｜ ".join(def_items) if def_items else "暂无分项明细"
+    off_str = " ｜ ".join(off_items) if off_items else "暂无分项明细"
+    now_t = update_time_str or datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+    desc = f"""### {status_tag}
+
+> ⚖️ **防御/科技超额背离 (Flight Score)**：**`{score:+.2f}%`** {("🚨" if is_alert else "")}
+> 
+> 🛡️ **防御避险篮子** (平均 `{def_mean:+.2f}%`)：
+> {def_str}
+> 
+> ⚔️ **进攻科技成长** (平均 `{off_mean:+.2f}%`)：
+> {off_str}
+
+---
+{advice}"""
+
+    embed = {
+        "title": f"🚨【机构避险】防御/科技背离因子 · 实时追踪" if is_alert else f"🛡️【机构仓位】防御/科技背离因子 · 实时追踪",
+        "description": desc,
+        "color": color,
+        "timestamp": datetime.now(timezone.utc).isoformat(),
+        "footer": {
+            "text": f"美股全周期量化雷达 · 每次刷新实时监测 | {now_t}"
+        }
+    }
+
+    payload = {
+        "username": "小豆泥·防御因子背离哨",
+        "embeds": [embed]
+    }
+
+    try:
+        req = urllib.request.Request(
+            url,
+            data=json.dumps(payload).encode("utf-8"),
+            headers={"Content-Type": "application/json", "User-Agent": "Mozilla/5.0"}
+        )
+        with urllib.request.urlopen(req, timeout=10) as resp:
+            if resp.status in (200, 204):
+                print(f"  [+] 💬 Discord 防御因子背离专属频道推送成功: {score:+.2f}% (is_alert={is_alert})")
+                return True
+            else:
+                print(f"  [!] 💬 Discord 防御因子推送返回状态码: {resp.status}")
+                return False
+    except Exception as e:
+        print(f"  [!] 💬 Discord 防御因子推送异常: {e}")
         return False
 
 
@@ -4500,6 +4601,24 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
 
     # 7.5 美股五大梯队量化哨兵与板块巡检 (Discord Webhook 富文本通道)
     dispatch_discord_sentinel_async(macro_data, stocks_sorted, weather_info, now_str)
+
+    # 7.6 专属防御因子背离百分比频道推送 (每次雷达刷新后专属播报)
+    try:
+        import threading
+        live_lookup_df = {s["ticker"]: s for s in stocks_sorted if isinstance(s, dict) and "ticker" in s}
+        live_lookup_df.update(macro_data or {})
+        df_alert_push = weather_info.get("defensive_flight") if (weather_info and isinstance(weather_info, dict)) else None
+        if not df_alert_push:
+            import ml_predictor_5y
+            df_alert_push = ml_predictor_5y.compute_defensive_flight_alert(live_lookup=live_lookup_df)
+        threading.Thread(
+            target=send_discord_defensive_flight_alert,
+            args=(df_alert_push, live_lookup_df, now_str),
+            daemon=True,
+            name="DefensiveFlightDiscordDaemon"
+        ).start()
+    except Exception as df_err:
+        print(f"  [!] 💬 防御因子背离推送启动异常: {df_err}")
 
     # 8. 更新本地同步锁时间戳
     update_last_sync_time()
