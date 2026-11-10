@@ -7,7 +7,7 @@
     },
     "PORT_INTC": {
       "state": "INTC_CRITICAL_STOP",
-      "last_notified_at": 1794275960.0700564
+      "last_notified_at": 1794283919.6100273
     },
     "AAOI": {
       "state": "STOP_LOSS",
@@ -19,7 +19,7 @@
     },
     "OKLO": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1794275960.0700564
+      "last_notified_at": 1794283919.6100273
     },
     "CRWV": {
       "state": "STOP_LOSS",
@@ -39,7 +39,7 @@
     },
     "ASTS": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1794272532.7342777
+      "last_notified_at": 1794283919.6100273
     },
     "AXTI": {
       "state": "STOP_LOSS",
@@ -99,7 +99,7 @@
     },
     "NVDA": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1794275960.0700564
+      "last_notified_at": 1794283919.6100273
     },
     "ORCL": {
       "state": "STOP_LOSS",
@@ -139,11 +139,11 @@
     },
     "AMD": {
       "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1794276133.861085
+      "last_notified_at": 1794283919.6100273
     },
     "SPCX": {
       "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1794275765.0580163
+      "last_notified_at": 1794283919.6100273
     },
     "VRT": {
       "state": "STOP_LOSS",
@@ -207,7 +207,7 @@
     },
     "QQQM": {
       "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1794278351.0171661
+      "last_notified_at": 1794283919.6100273
     },
     "SOXX": {
       "state": "NORMAL",
@@ -219,7 +219,7 @@
     },
     "PORT_SOXL": {
       "state": "SOXL_CRITICAL_STOP",
-      "last_notified_at": 1794275960.0700564
+      "last_notified_at": 1794283919.6100273
     },
     "KORU": {
       "state": "NORMAL",
@@ -235,7 +235,7 @@
     },
     "PORT_SOXS": {
       "state": "SOXS_HEDGE_EXIT",
-      "last_notified_at": 1794275960.0700564
+      "last_notified_at": 1794283919.6100273
     },
     "MARA": {
       "state": "STOP_LOSS",
@@ -255,11 +255,11 @@
     },
     "IBIT": {
       "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1794276133.861085
+      "last_notified_at": 1794283919.6100273
     },
     "QCOM": {
       "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1794278351.0171661
+      "last_notified_at": 1794283919.6100273
     }
   },
   "position_peaks": {
