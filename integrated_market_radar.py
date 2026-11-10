@@ -188,7 +188,7 @@ PUSHPLUS_TOKEN = os.environ.get("PUSHPLUS_TOKEN", "").strip()
 PUSHPLUS_CHANNEL = os.environ.get("PUSHPLUS_CHANNEL", "clawbot").strip()
 DISCORD_CLAW_WEBHOOK_URL = os.environ.get(
     "DISCORD_CLAW_WEBHOOK_URL",
-    os.environ.get("DISCORD_ALERT_WEBHOOK_URL", "https://discord.com/api/webhooks/1569534508212944997/nfaRRqzZtmlUlPFd-8hHS94Fjp2hKIM9w2gPLsnjrW8m0Ffx5_vUxGw4IibpKUNXOO1T")
+    os.environ.get("DISCORD_ALERT_WEBHOOK_URL", "")
 ).strip()
 
 # ------------------------------------------------------------------------------
