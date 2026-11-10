@@ -110,8 +110,8 @@
       "last_notified_at": 0.0
     },
     "TSM": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1794309123.3595495
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "MU": {
       "state": "STOP_LOSS",
@@ -142,8 +142,8 @@
       "last_notified_at": 1794309042.251256
     },
     "SPCX": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1794309656.562937
     },
     "VRT": {
       "state": "STOP_LOSS",
@@ -206,8 +206,8 @@
       "last_notified_at": 0.0
     },
     "QQQM": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1794309656.562937
     },
     "SOXX": {
       "state": "NORMAL",
