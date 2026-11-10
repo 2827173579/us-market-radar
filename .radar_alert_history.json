@@ -30,8 +30,8 @@
       "last_notified_at": 1793944690.7934802
     },
     "COHR": {
-      "state": "STOP_LOSS",
-      "last_notified_at": 1794315792.024552
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "NBIS": {
       "state": "STOP_LOSS",
@@ -66,8 +66,8 @@
       "last_notified_at": 1794272532.7342777
     },
     "RKLB": {
-      "state": "STOP_LOSS",
-      "last_notified_at": 1794317703.17863
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "GOOGL": {
       "state": "STOP_LOSS",
@@ -258,8 +258,8 @@
       "last_notified_at": 0.0
     },
     "QCOM": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1794321225.737986
     }
   },
   "position_peaks": {
