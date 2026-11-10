@@ -2215,6 +2215,33 @@ def generate_and_sync_notifications(macro_data, stocks_data, weather_info, now_s
     new_notifs = []
     date_tag = now_str[:10]
 
+    # 0. 🚨 防御因子起飞与机构去杠杆踩踏警报 (Defensive Flight Alert)
+    try:
+        import ml_predictor_5y
+        live_lookup = {s["ticker"]: s for s in stocks_data if isinstance(s, dict) and "ticker" in s}
+        live_lookup.update(macro_data or {})
+        df_alert = ml_predictor_5y.compute_defensive_flight_alert(live_lookup=live_lookup)
+        if weather_info and isinstance(weather_info, dict):
+            weather_info["defensive_flight"] = df_alert
+        if df_alert.get("is_alert"):
+            flight_score = df_alert.get("flight_score", 0.0)
+            new_notifs.append({
+                "id": f"DEF_FLIGHT_{date_tag}",
+                "time": now_str[5:16],
+                "category": "defensive_flight",
+                "cat_label": "🚨 防御起飞",
+                "level": "danger",
+                "ticker": "DEFENSE",
+                "name": "去杠杆风控",
+                "cat": "系统警报",
+                "price": flight_score,
+                "pct_change": flight_score,
+                "title": f"🚨 防御因子起飞 · 警惕机构盘中去杠杆踩踏 (+{flight_score:.1f}%)",
+                "desc": f"防御避险资产(KO/PEP/MCD/LLY/TLT/GLD/VIXY)超额走强 +{flight_score:.1f}%，科技成长显著弱势，机构正在盘中去杠杆避险，警惕踩踏风险！"
+            })
+    except Exception:
+        pass
+
     starred_etfs = [{"ticker": t, **m} for t, m in macro_data.items() if t in target_watchlist or m.get("shares", 0) > 0]
     all_targets = list(stocks_data) + starred_etfs
 

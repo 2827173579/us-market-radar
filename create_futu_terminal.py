@@ -36,7 +36,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
         df_alert = ml_predictor_5y.compute_defensive_flight_alert(live_lookup=live_lookup_init)
         if df_alert.get('is_alert'):
             defensive_alert_badge_html = f'<span class="tool-link" style="color: #f85149; border: 1px solid rgba(248,81,73,0.6); background: rgba(248,81,73,0.22); padding: 4px 8px; font-weight: 800; font-size: 11.5px;" title="机构避险因子异常走强，警惕盘中去杠杆踩踏">🚨 防御因子起飞 · 警惕机构盘中去杠杆踩踏</span>'
-            defensive_alert_banner_html = f'<div id="deleveragingAlertBanner" style="background: linear-gradient(90deg, rgba(239, 68, 68, 0.28), rgba(185, 28, 28, 0.18)); border-bottom: 1px solid rgba(239, 68, 68, 0.6); color: #fca5a5; padding: 7px 14px; font-weight: 800; font-size: 13px; display: flex; align-items: center; justify-content: center; gap: 10px; box-shadow: 0 2px 8px rgba(239, 68, 68, 0.2);"><span>🚨 防御因子起飞 · 警惕机构盘中去杠杆踩踏</span><span style="font-size: 11px; font-weight: 600; color: #f87171; background: rgba(0,0,0,0.3); padding: 2px 8px; border-radius: 4px;">超额背离 +{df_alert.get("flight_score", 0.0):.1f}%</span></div>'
+            defensive_alert_banner_html = f'<div id="deleveragingAlertBanner" onclick="playAlertSound(\'defensive_flight\', true)" title="点击试听/重播防御因子起飞警报音" style="background: linear-gradient(90deg, rgba(239, 68, 68, 0.28), rgba(185, 28, 28, 0.18)); border-bottom: 1px solid rgba(239, 68, 68, 0.6); color: #fca5a5; padding: 7px 14px; font-weight: 800; font-size: 13px; display: flex; align-items: center; justify-content: center; gap: 10px; box-shadow: 0 2px 8px rgba(239, 68, 68, 0.2); cursor: pointer; user-select: none;"><span>🚨 防御因子起飞 · 警惕机构盘中去杠杆踩踏</span><span style="font-size: 11px; font-weight: 600; color: #f87171; background: rgba(0,0,0,0.3); padding: 2px 8px; border-radius: 4px;">超额背离 +{df_alert.get("flight_score", 0.0):.1f}%</span><span style="font-size: 10.5px; color: #fca5a5; opacity: 0.85; margin-left: 6px;">🔊 警报响铃 (点击重播)</span></div>'
         if weather_info and isinstance(weather_info, dict):
             weather_info['defensive_flight'] = df_alert
     except Exception:
@@ -2107,6 +2107,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 </div>
                 <div style="display: flex; align-items: center; gap: 3px;">
                     <span style="color: #9ca3af; font-size: 10px;">试听:</span>
+                    <button onclick="playAlertSound('defensive_flight', true)" class="sound-test-chip" style="color: #f87171; border-color: rgba(248,113,113,0.4);" title="试听 防御因子起飞警报 (高急促空袭警报音)">🚨防御起飞</button>
                     <button onclick="playAlertSound('5m_entry', true)" class="sound-test-chip" title="试听 5m买点音效 (清脆双上扬)">🎯5m</button>
                     <button onclick="playAlertSound('portfolio', true)" class="sound-test-chip" title="试听 持仓风控音效 (紧急双频警报)">💼风控</button>
                     <button onclick="playAlertSound('golden_pit', true)" class="sound-test-chip" title="试听 黄金坑音效 (舒缓和弦)">🟢黄金坑</button>
@@ -2118,6 +2119,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             <!-- 通知分类导航条 -->
             <div class="notif-category-bar">
                 <button class="n-tab active" data-cat="all" onclick="filterNotifCategory('all')">全部 (<span id="catCount_all">0</span>)</button>
+                <button class="n-tab" data-cat="defensive_flight" onclick="filterNotifCategory('defensive_flight')" style="color: #f87171;">🚨 防御起飞 (<span id="catCount_defensive_flight">0</span>)</button>
                 <button class="n-tab" data-cat="5m_entry" onclick="filterNotifCategory('5m_entry')">🎯 5m买点 (<span id="catCount_5m_entry">0</span>)</button>
                 <button class="n-tab" data-cat="portfolio" onclick="filterNotifCategory('portfolio')">💼 持仓风控 (<span id="catCount_portfolio">0</span>)</button>
                 <button class="n-tab" data-cat="golden_pit" onclick="filterNotifCategory('golden_pit')">🟢 黄金坑 (<span id="catCount_golden_pit">0</span>)</button>
@@ -3741,6 +3743,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             // 更新各分类计数
             const counts = {{
                 all: terminalNotifications.length,
+                "defensive_flight": 0,
                 "5m_entry": 0,
                 "portfolio": 0,
                 "golden_pit": 0,
@@ -3901,6 +3904,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
         }}
 
         const SOUND_FILE_MAP = {{
+            "defensive_flight": "sounds/defensive_flight.wav",
             "5m_entry": "sounds/5m_entry.wav",
             "portfolio": "sounds/risk_alarm.wav",
             "golden_pit": "sounds/golden_pit.wav",
@@ -3968,7 +3972,13 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             if (!ctx) return;
             const now = ctx.currentTime;
 
-            if (category === "5m_entry") {{
+            if (category === "defensive_flight") {{
+                // 🚨 防御因子起飞: 极度紧迫的交替双频空袭警报音 (988Hz <-> 740Hz 快速4连发)
+                playTone(ctx, 987.77, now + 0.00, 0.10, "sawtooth", 0.45);
+                playTone(ctx, 739.99, now + 0.11, 0.10, "sawtooth", 0.45);
+                playTone(ctx, 987.77, now + 0.22, 0.10, "sawtooth", 0.48);
+                playTone(ctx, 739.99, now + 0.33, 0.16, "sawtooth", 0.50);
+            }} else if (category === "5m_entry") {{
                 // 🎯 5m买点: 两个上扬清脆音 (659Hz -> 880Hz)
                 playTone(ctx, 659.25, now, 0.10, "sine", 0.35);
                 playTone(ctx, 880.00, now + 0.11, 0.16, "triangle", 0.45);
@@ -4216,6 +4226,16 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                     savedMobileTab = localStorage.getItem("futu_mobile_tab") || "watchlist";
                 }} catch(e) {{}}
                 switchMobileTab(savedMobileTab);
+            }}
+
+            // 8. 🚨 防御因子起飞警报：每次页面刷新/载入，若检测到防御因子起飞，立即排队播报极紧迫警报提示音
+            const dfBanner = document.getElementById("deleveragingAlertBanner");
+            const isDfAlert = (typeof WEATHER_INFO !== "undefined" && WEATHER_INFO && WEATHER_INFO.defensive_flight && WEATHER_INFO.defensive_flight.is_alert) || !!dfBanner;
+            if (isDfAlert) {{
+                setTimeout(() => {{
+                    queueAlertSound("defensive_flight");
+                    showToast("🚨 【全网警报】防御因子起飞！机构盘中去杠杆踩踏风险高企！");
+                }}, 700);
             }}
 
             renderNotifList("all");
