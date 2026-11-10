@@ -4601,16 +4601,11 @@ def main():
                 if gh_token:
                     auth_url = f"https://x-access-token:{gh_token}@github.com/2827173579/us-market-radar.git"
                     subprocess.run(["git", "remote", "set-url", "origin", auth_url], check=False, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-                subprocess.run(
-                    ["git", "add", "index.html", "futu_pro_terminal.html", "predict_radar_5y.html", "data_cache/latest_ai_predictions.json", ".terminal_notifications.json", ".options_cache.json", ".radar_alert_history.json", "macro_radar.html", "stocks_radar.html"],
-                    check=False
-                )
-                subprocess.run(
-                    ["git", "commit", "-m", f"⚡ [实盘同步] 第 {round_idx} 轮极速刷新 ({now_ts})"],
-                    check=False, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL
-                )
-                subprocess.run(["git", "pull", "--rebase", "--autostash", "-X", "theirs", "origin", "main"], check=False, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-                # 🛡️ 智能等待 GitHub Pages 上一次部署完成，彻底规避 cancel-in-progress 恶性死锁
+                
+                # 🛡️ 精准守门员机制：在准备执行 git add / commit / push 之前的那一刻，
+                # 调用 GitHub API 检查是否还有 in_progress 或 queued 的 Pages workflow。
+                # 若上一轮已 completed，则 0 秒延迟立即放行推送！
+                # 若上一轮还差最后十几秒没跑完，则每 8 秒轮询等待其变为 completed (最多 75 秒超时兜底)
                 try:
                     pat_match = gh_token
                     if not pat_match:
@@ -4619,20 +4614,35 @@ def main():
                             pat_match = "ghp_" + rem_out.split("ghp_")[1].split("@")[0]
                     if pat_match:
                         check_url = "https://api.github.com/repos/2827173579/us-market-radar/actions/runs?per_page=1"
-                        req_chk = urllib.request.Request(check_url, headers={"Authorization": f"Bearer {pat_match}", "User-Agent": "TradeRadar-Sync"})
+                        req_chk = urllib.request.Request(check_url, headers={"Authorization": f"Bearer {pat_match}", "User-Agent": "TradeRadar-Gatekeeper"})
                         wait_start = time.time()
-                        while time.time() - wait_start < 180:
+                        waited_any = False
+                        while time.time() - wait_start < 75:
                             with urllib.request.urlopen(req_chk, timeout=10) as c_resp:
                                 c_data = json.loads(c_resp.read().decode("utf-8"))
                             runs = c_data.get("workflow_runs", [])
-                            if runs and runs[0].get("status") == "in_progress":
-                                print(f"[*] ⏳ 上一轮 GitHub Pages 正在部署中 (Run {runs[0].get('id')})，等待其完成以防被 cancel (已等 {int(time.time()-wait_start)}s)...")
-                                time.sleep(12)
+                            if runs and runs[0].get("status") in ["in_progress", "queued"]:
+                                waited_any = True
+                                print(f"[*] ⏳ 云端上一轮 Pages 正在部署中 (Run {runs[0].get('id')} / {runs[0].get('status')})，守门员等待其就绪以防踩踏 (已等 {int(time.time()-wait_start)}s)...")
+                                time.sleep(8)
                             else:
+                                if waited_any:
+                                    print(f"[+] 🎯 云端上一轮 Pages 部署顺利就绪 (等待 {int(time.time()-wait_start)}s)，立即放行当前推送！")
+                                else:
+                                    print(f"[+] ⚡ 云端已处于空闲就绪状态 (0 秒等待)，直接放行推送！")
                                 break
                 except Exception as wait_err:
                     pass
 
+                subprocess.run(
+                    ["git", "add", "index.html", "futu_pro_terminal.html", "predict_radar_5y.html", "data_cache/latest_ai_predictions.json", ".terminal_notifications.json", ".options_cache.json", ".radar_alert_history.json", "macro_radar.html", "stocks_radar.html", ".gitignore"],
+                    check=False
+                )
+                subprocess.run(
+                    ["git", "commit", "-m", f"⚡ [实盘同步] 第 {round_idx} 轮极速刷新 ({now_ts})"],
+                    check=False, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL
+                )
+                subprocess.run(["git", "pull", "--rebase", "--autostash", "-X", "theirs", "origin", "main"], check=False, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
                 push_res = subprocess.run(["git", "push", "origin", "HEAD:main"], check=False, capture_output=True, text=True)
                 if push_res.returncode == 0:
                     print(f"[+] ✅ 成功推送第 {round_idx} 轮数据至 GitHub Pages (PAT 触发部署成功)！")
@@ -4642,10 +4652,12 @@ def main():
                 print(f"[!] Git 同步异常: {e}")
             round_idx += 1
             cost = time.time() - c_start
-            # 为保证 GitHub Pages 构建与部署 (耗时约 75~85s) 能够 100% 部署成功且不被下一轮 commit 强行 cancel，
-            # 轮询休眠时间保底不少于 90 秒
-            sleep_time = max(180.0, float(interval_sec))
-            print(f"[*] 本轮扫描耗时 {cost:.1f}s，休眠 {sleep_time:.1f}s 进入下一轮 (确保 Pages 部署闭环)...")
+            # 🚀 流水线并行 (Pipeline Parallelism)：
+            # 严禁在 push 后长休眠！仅休眠 15 秒短呼吸，立即开始下一轮本地扫描 (耗时约 70s)。
+            # 本地计算 (15s + 70s = 85s) 与云端部署 (75~90s) 完美重叠并行，
+            # 结合推送前精准守门员机制，实现 90 秒一轮极限高频稳定更新！
+            sleep_time = 15.0
+            print(f"[*] 本轮扫描与同步耗时 {cost:.1f}s，流水线休眠 {sleep_time:.1f}s 立即启动下一轮计算...")
             time.sleep(sleep_time)
         print("\n✅ 云端守护计划周期已圆满完成。")
         sys.exit(0)

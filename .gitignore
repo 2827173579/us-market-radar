@@ -13,3 +13,15 @@ Thumbs.db
 *.env
 
 .discord_sentinel_state.json
+.radar_daemon.log
+*.log
+*.tmp
+data_cache/four_h_bars_cache.json
+video_frames/
+*.jpg
+*.jpeg
+*.png
+*.mp4
+*.webm
+*.avi
+*.mov
