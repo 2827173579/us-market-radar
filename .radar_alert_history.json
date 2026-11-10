@@ -7,7 +7,7 @@
     },
     "PORT_INTC": {
       "state": "INTC_CRITICAL_STOP",
-      "last_notified_at": 1794291180.399253
+      "last_notified_at": 1794298408.4999156
     },
     "AAOI": {
       "state": "STOP_LOSS",
@@ -19,7 +19,7 @@
     },
     "OKLO": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1794291180.399253
+      "last_notified_at": 1794298408.4999156
     },
     "CRWV": {
       "state": "STOP_LOSS",
@@ -39,7 +39,7 @@
     },
     "ASTS": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1794291180.399253
+      "last_notified_at": 1794298408.4999156
     },
     "AXTI": {
       "state": "STOP_LOSS",
@@ -99,7 +99,7 @@
     },
     "NVDA": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1794291180.399253
+      "last_notified_at": 1794298408.4999156
     },
     "ORCL": {
       "state": "STOP_LOSS",
@@ -219,7 +219,7 @@
     },
     "PORT_SOXL": {
       "state": "SOXL_CRITICAL_STOP",
-      "last_notified_at": 1794291180.399253
+      "last_notified_at": 1794298408.4999156
     },
     "KORU": {
       "state": "NORMAL",
@@ -235,7 +235,7 @@
     },
     "PORT_SOXS": {
       "state": "SOXS_HEDGE_EXIT",
-      "last_notified_at": 1794291180.399253
+      "last_notified_at": 1794298408.4999156
     },
     "MARA": {
       "state": "STOP_LOSS",
