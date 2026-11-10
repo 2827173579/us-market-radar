@@ -1,74 +1,30 @@
 {
-  "updated_at": 1793847926.3474624,
-  "base_date": "2026-11-05",
+  "updated_at": 1794322879.6290572,
+  "base_date": "2026-11-11",
   "data": {
-    "MRNA": {
-      "date": "2026-11-06",
-      "hour": "bmo"
-    },
-    "OKLO": {
-      "date": "2026-11-06",
-      "hour": "bmo"
-    },
-    "VST": {
-      "date": "2026-11-06",
-      "hour": "bmo"
-    },
-    "AAOI": {
-      "date": "2026-11-05",
-      "hour": "amc"
-    },
-    "LITE": {
-      "date": "2026-11-05",
-      "hour": "amc"
-    },
-    "COHR": {
-      "date": "2026-11-04",
-      "hour": "amc"
-    },
-    "MCD": {
-      "date": "2026-11-04",
-      "hour": "bmo"
-    },
-    "QCOM": {
-      "date": "2026-11-04",
-      "hour": "amc"
-    },
-    "CRWV": {
-      "date": "2026-11-10",
-      "hour": "amc"
-    },
-    "ASTS": {
-      "date": "2026-11-09",
-      "hour": "amc"
-    },
-    "CEG": {
-      "date": "2026-11-09",
-      "hour": "bmo"
-    },
-    "MARA": {
-      "date": "2026-11-09",
-      "hour": "amc"
-    },
-    "RKLB": {
-      "date": "2026-11-09",
-      "hour": "amc"
-    },
     "AMAT": {
       "date": "2026-11-12",
       "hour": "amc"
     },
     "FPS": {
       "date": "2026-11-12",
-      "hour": ""
+      "hour": "bmo"
     },
     "NBIS": {
       "date": "2026-11-12",
-      "hour": ""
+      "hour": "bmo"
+    },
+    "CRWV": {
+      "date": "2026-11-10",
+      "hour": "amc"
     },
     "NVDA": {
       "date": "2026-11-17",
       "hour": "amc"
+    },
+    "DELL": {
+      "date": "2026-11-24",
+      "hour": ""
     },
     "HPE": {
       "date": "2026-11-23",
@@ -78,32 +34,28 @@
       "date": "2026-11-26",
       "hour": ""
     },
-    "DELL": {
-      "date": "2026-11-24",
+    "CRDO": {
+      "date": "2026-12-02",
       "hour": ""
     },
     "CRWD": {
       "date": "2026-12-01",
       "hour": ""
     },
-    "CRDO": {
-      "date": "2026-12-02",
-      "hour": ""
-    },
     "AVGO": {
-      "date": "2026-12-09",
-      "hour": "amc"
-    },
-    "ORCL": {
-      "date": "2026-12-08",
-      "hour": ""
-    },
-    "NKE": {
-      "date": "2026-12-16",
+      "date": "2026-12-10",
       "hour": "amc"
     },
     "MU": {
       "date": "2026-12-15",
+      "hour": "amc"
+    },
+    "ORCL": {
+      "date": "2026-12-14",
+      "hour": ""
+    },
+    "NKE": {
+      "date": "2026-12-16",
       "hour": "amc"
     }
   }
