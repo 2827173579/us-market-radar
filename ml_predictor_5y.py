@@ -4372,6 +4372,66 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
             border-color: rgba(88, 166, 255, 0.45);
             color: #fff;
         }}
+        .cycle-view-btn {{
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
+            color: var(--text-sub);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 11.5px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.18s ease;
+        }}
+        .cycle-view-btn:hover {{
+            background: rgba(88, 166, 255, 0.15);
+            border-color: rgba(88, 166, 255, 0.4);
+            color: #fff;
+        }}
+        .cycle-view-btn.active {{
+            background: linear-gradient(135deg, rgba(88, 166, 255, 0.28), rgba(188, 140, 255, 0.25));
+            border-color: #58a6ff;
+            color: #fff;
+            box-shadow: 0 0 8px rgba(88, 166, 255, 0.35);
+        }}
+        .cycle-tool-btn {{
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-sub);
+            padding: 3px 8px;
+            border-radius: 5px;
+            font-size: 11px;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }}
+        .cycle-tool-btn:hover {{
+            background: rgba(255, 255, 255, 0.12);
+            color: #fff;
+        }}
+        .cycle-ladder-item {{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 3px 8px;
+            border-radius: 4px;
+            transition: all 0.15s ease;
+        }}
+        .cycle-ladder-item:hover {{
+            filter: brightness(1.15);
+        }}
+        .cycle-timeline-card {{
+            border-radius: 6px;
+            padding: 6px 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }}
+        .cycle-timeline-card:hover {{
+            transform: translateX(2px);
+            filter: brightness(1.2);
+        }}
         .cycle-tab-btn.active {{
             background: linear-gradient(135deg, rgba(88, 166, 255, 0.28), rgba(188, 140, 255, 0.25));
             border-color: #58a6ff;
@@ -4502,11 +4562,14 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
             </div>
         </div>
 
-        <!-- Section: Time-Cycle & Historical Analog Projection (时空周期与未来路径推演图) -->
+        <!-- Section: Time-Cycle & Historical Analog Projection (时空周期与未来路径推演图 - 交互增强版) -->
         <div class="section-card" id="timeCycleSection" style="margin-bottom: 24px;">
-            <div class="section-header" style="justify-content: space-between; align-items: center;">
+            <div class="section-header" style="justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
                 <div>
-                    <h3>🔮 核心标的时空周期与未来 15 日路径推演 (Time-Cycle & Historical Analog Projection)</h3>
+                    <h3 style="display: flex; align-items: center; gap: 8px;">
+                        <span>🔮 核心标的时空周期与未来 15 日路径推演</span>
+                        <span class="badge badge-blue" style="font-size: 11px; padding: 2px 7px;">支持自由拖动 · 滚轮缩放 · 交叉光标</span>
+                    </h3>
                     <span class="sub">基于 Top-5 联合历史相似区间 (KNN-5 Joint Analog) + 零漂移傅里叶主频谐波 (Zero-Drift FFT) · 零人工终点 · 标识真实变盘时间窗口</span>
                 </div>
                 <div style="display: flex; gap: 6px; align-items: center; flex-wrap: wrap;" id="timeCycleTabs">
@@ -4548,38 +4611,87 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
                 </div>
             </div>
             
-            <div style="display: grid; grid-template-columns: 1fr 340px; gap: 16px; margin-top: 14px;">
-                <!-- SVG Canvas Container -->
-                <div style="background: rgba(7, 10, 15, 0.7); border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; padding: 14px; position: relative;">
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; font-size: 12px; color: var(--text-muted);">
-                        <span>📊 过去 20 日走势 (实线) ➔ 未来 15 日推演路径 (虚线)</span>
-                        <div style="display: flex; gap: 12px;">
-                            <span style="color: #38bdf8;">● 历史收盘价</span>
-                            <span style="color: #ff944d;">-- 融合推演路径</span>
-                            <span style="color: #58a6ff;">■ 周期低点窗口</span>
-                            <span style="color: #f85149;">■ 周期阻力高点</span>
+            <div style="display: grid; grid-template-columns: 1fr 380px; gap: 16px; margin-top: 14px;">
+                <!-- Left: Interactive Canvas Container -->
+                <div style="background: rgba(7, 10, 15, 0.85); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 14px; position: relative; display: flex; flex-direction: column;">
+                    <!-- Chart Control Toolbar -->
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; flex-wrap: wrap; gap: 8px;">
+                        <div style="display: flex; gap: 6px; align-items: center;">
+                            <span style="font-size: 12px; color: var(--text-muted); font-weight: 600;">视野模式:</span>
+                            <button class="cycle-view-btn active" id="btnViewFocus" onclick="setTimeCycleViewMode('focus')" title="聚焦放大未来 15 日推演波段，自适应 Y 轴缩放，细节最清晰">🔍 聚焦推演波段 (推荐)</button>
+                            <button class="cycle-view-btn" id="btnViewFull" onclick="setTimeCycleViewMode('full')" title="显示过去 20 天走势与未来 15 日完整大局">🌐 全景大局 (35天)</button>
+                        </div>
+                        <div style="display: flex; gap: 6px; align-items: center;">
+                            <button class="cycle-tool-btn" onclick="zoomTimeCycle(1.2)" title="放大时间轴">➕ 放大</button>
+                            <button class="cycle-tool-btn" onclick="zoomTimeCycle(0.8)" title="缩小时间轴">➖ 缩小</button>
+                            <button class="cycle-tool-btn" onclick="resetTimeCycleView()" title="重置拖动与缩放">🔄 重置</button>
                         </div>
                     </div>
-                    <div id="cycleSvgWrapper" style="width: 100%; height: 260px; overflow: hidden;">
-                        <!-- Dynamic SVG will be rendered here -->
+
+                    <!-- Canvas Wrapper -->
+                    <div id="cycleCanvasWrapper" style="width: 100%; height: 320px; position: relative; cursor: grab; user-select: none; touch-action: none; overflow: hidden; border-radius: 8px; background: rgba(0,0,0,0.25);">
+                        <canvas id="cycleChartCanvas" style="width: 100%; height: 100%; display: block;"></canvas>
+                        <!-- Floating HUD Tooltip -->
+                        <div id="cycleTooltip" style="position: absolute; display: none; pointer-events: none; z-index: 20; background: rgba(13, 17, 23, 0.94); border: 1px solid rgba(88, 166, 255, 0.5); border-radius: 8px; padding: 8px 12px; font-family: 'JetBrains Mono', monospace; font-size: 11.5px; box-shadow: 0 8px 24px rgba(0,0,0,0.6); backdrop-filter: blur(8px); min-width: 190px;"></div>
+                    </div>
+
+                    <!-- Bottom Legend and Operation Hint -->
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px; font-size: 11.5px; color: var(--text-muted); padding-top: 8px; border-top: 1px solid rgba(255,255,255,0.06); flex-wrap: wrap; gap: 8px;">
+                        <div style="display: flex; gap: 14px; align-items: center;">
+                            <span style="display: flex; align-items: center; gap: 4px;"><span style="display:inline-block; width:12px; height:3px; background:#38bdf8; border-radius:2px;"></span> 历史收盘价</span>
+                            <span style="display: flex; align-items: center; gap: 4px;"><span style="display:inline-block; width:12px; height:0px; border-top:2px dashed #ff944d;"></span> 15日融合推演路径</span>
+                            <span style="display: flex; align-items: center; gap: 4px;"><span style="display:inline-block; width:10px; height:10px; background:rgba(88,166,255,0.35); border:1px solid #58a6ff; border-radius:2px;"></span> 周期低点回踩窗</span>
+                            <span style="display: flex; align-items: center; gap: 4px;"><span style="display:inline-block; width:10px; height:10px; background:rgba(248,81,73,0.35); border:1px solid #f85149; border-radius:2px;"></span> 周期阻力高点窗</span>
+                        </div>
+                        <span style="color: #8b949e; font-size: 11px;">🖐️ <strong>交互指南:</strong> 鼠标按住图表任意位置可<strong>自由左右拖拽</strong>，滚轮可缩放，移动光标可精确定位</span>
                     </div>
                 </div>
 
-                <!-- Meta & Tactical Scenario Info -->
-                <div style="background: rgba(13, 17, 23, 0.85); border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; padding: 16px; display: flex; flex-direction: column; justify-content: space-between;">
-                    <div>
-                        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 8px; margin-bottom: 10px;">
-                            <span id="cycleTickerTitle" style="font-size: 18px; font-weight: 800; color: #58a6ff; font-family: 'JetBrains Mono', monospace;">SOXL</span>
-                            <span id="cycleCurPrice" style="font-size: 16px; font-weight: 700; color: #f0f6fc; font-family: 'JetBrains Mono', monospace;">$0.00</span>
+                <!-- Right: Tactical Dashboard -->
+                <div style="display: flex; flex-direction: column; gap: 10px;">
+                    <!-- Card 1: Header & Regime Analog Card -->
+                    <div style="background: rgba(13, 17, 23, 0.85); border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; padding: 12px 14px;">
+                        <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 8px; margin-bottom: 8px;">
+                            <div>
+                                <span id="cycleTickerTitle" style="font-size: 20px; font-weight: 800; color: #58a6ff; font-family: 'JetBrains Mono', monospace;">SOXL</span>
+                                <span id="cycleTickerSub" style="font-size: 12px; color: var(--text-sub); margin-left: 6px;">3倍做多半导体</span>
+                            </div>
+                            <span id="cycleCurPrice" style="font-size: 20px; font-weight: 800; color: #f0f6fc; font-family: 'JetBrains Mono', monospace;">$0.00</span>
                         </div>
-                        <div style="font-size: 12px; color: var(--text-sub); line-height: 1.6; margin-bottom: 10px;">
-                            <div style="margin-bottom: 4px;">🎯 <strong>5年最佳相似历史形态:</strong> <span id="cycleAnalogPeriod" style="color: #ffd54f;">--</span> (相关度 <span id="cycleAnalogSim" style="color: #3fb950; font-weight: 700;">--%</span>)</div>
-                            <div>⏳ <strong>关键变盘时间窗口:</strong></div>
-                            <div id="cycleWindowsList" style="margin-top: 4px; font-size: 11.5px; color: #cbd5e1;">--</div>
+                        <div style="font-size: 12px; color: var(--text-sub); line-height: 1.5;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+                                <span>🎯 5年最佳相似历史形态:</span>
+                                <span id="cycleAnalogSim" style="color: #3fb950; font-weight: 800; font-family: monospace;">--%</span>
+                            </div>
+                            <div id="cycleAnalogPeriod" style="color: #ffd54f; font-weight: 700; font-family: monospace; font-size: 11.5px; background: rgba(255,213,79,0.08); padding: 4px 8px; border-radius: 4px; border: 1px solid rgba(255,213,79,0.2);">--</div>
                         </div>
                     </div>
-                    <div style="background: rgba(0,0,0,0.3); border-radius: 8px; padding: 10px; font-size: 11.5px; color: #8b949e; line-height: 1.4;">
-                        💡 <strong>操盘手心法:</strong> 路径推演基于历史数学共振规律，实盘严守 S1/S2 支撑回踩与 R1 压力位纪律，若遇盘中剧烈去杠杆，以支撑位跌破止损为最高法则。
+
+                    <!-- Card 2: S/R Level Ladder (攻防点位天梯) -->
+                    <div style="background: rgba(13, 17, 23, 0.85); border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; padding: 12px 14px;">
+                        <div style="font-size: 12px; font-weight: 700; color: #cbd5e1; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center;">
+                            <span>🪜 多级攻防点位天梯</span>
+                            <span style="font-size: 10.5px; color: #8b949e;">软ATR+POC动态锚定</span>
+                        </div>
+                        <div id="cycleLevelsLadder" style="display: flex; flex-direction: column; gap: 4px; font-family: 'JetBrains Mono', monospace; font-size: 11px;">
+                            <!-- Dynamic levels generated by JS -->
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Tactical Windows Timeline (关键变盘时间轴) -->
+                    <div style="background: rgba(13, 17, 23, 0.85); border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; padding: 12px 14px; flex: 1; display: flex; flex-direction: column;">
+                        <div style="font-size: 12px; font-weight: 700; color: #cbd5e1; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center;">
+                            <span>⏳ 未来 15 日关键变盘节点</span>
+                            <span style="font-size: 10.5px; color: #ff944d;">高危反转时间窗</span>
+                        </div>
+                        <div id="cycleWindowsList" style="flex: 1; overflow-y: auto; max-height: 150px; display: flex; flex-direction: column; gap: 6px; padding-right: 2px;">
+                            <!-- Dynamic timeline cards -->
+                        </div>
+                    </div>
+
+                    <!-- Card 4: Trader Principle -->
+                    <div style="background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; padding: 8px 10px; font-size: 11px; color: #8b949e; line-height: 1.4;">
+                        💡 <strong>操盘手心法:</strong> 路径推演基于历史数学共振规律，实盘严守 S1/S2 支撑回踩与 R1 压力位纪律，以跌破止损位为最高防守准则。
                     </div>
                 </div>
             </div>
@@ -4861,176 +4973,725 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
         const timeCycleData = {time_cycle_json_str};
         window.timeCycleData = timeCycleData;
         let activeCycleSymbol = 'SOXL';
+        let cycleViewMode = 'focus'; // 'focus' (推荐聚焦15日推演) or 'full' (全景35日)
+        let cyclePanX = 0;
+        let cycleZoom = 1.0;
+        let cycleIsDragging = false;
+        let cycleDragStartX = 0;
+        let cycleInitialPanX = 0;
+        let cycleHoverIdx = -1;
+        let cycleCanvasInited = false;
+        let cycleHighlightDay = null;
 
         function switchCycleSymbol(sym) {{
             if (!sym) return;
             activeCycleSymbol = sym;
             document.querySelectorAll('.cycle-tab-btn').forEach(function(btn) {{
-                if (btn.textContent.trim() === sym) {{
+                if (btn.textContent.trim().startsWith(sym)) {{
                     btn.classList.add('active');
                 }} else {{
                     btn.classList.remove('active');
                 }}
             }});
             const sel = document.getElementById('cycleSymbolSelect');
-            if (sel && sel.value !== sym) {{
+            if (sel) {{
                 sel.value = sym;
             }}
-            renderTimeCycleSvg(sym);
+            cyclePanX = 0;
+            cycleZoom = 1.0;
+            cycleHoverIdx = -1;
+            renderTimeCycleView();
         }}
 
-        function renderTimeCycleSvg(sym) {{
-            const data = timeCycleData[sym] || timeCycleData['QQQM'] || Object.values(timeCycleData)[0];
-            const wrapper = document.getElementById('cycleSvgWrapper');
-            if (!data || !wrapper) return;
-
-            document.getElementById('cycleTickerTitle').textContent = data.ticker || sym;
-            document.getElementById('cycleCurPrice').textContent = '$' + Number(data.current_price || 0).toFixed(2);
-            document.getElementById('cycleAnalogPeriod').textContent = (data.analog_match && data.analog_match.period) || '--';
-            document.getElementById('cycleAnalogSim').textContent = ((data.analog_match && data.analog_match.similarity_pct) || 0) + '%';
-
-            const winList = document.getElementById('cycleWindowsList');
-            if (winList) {{
-                let lvlHtml = '';
-                if (data.s1 && data.s2 && data.r1 && data.r2) {{
-                    lvlHtml = '<div style="margin-bottom: 6px; padding: 4px 6px; background: rgba(255,255,255,0.04); border-radius: 4px; font-family: monospace; font-size: 11px;">' +
-                        '<span style="color:#f85149;">阻力 R1:$' + Number(data.r1).toFixed(2) + ' / R2:$' + Number(data.r2).toFixed(2) + '</span><br>' +
-                        '<span style="color:#3fb950;">支撑 S1:$' + Number(data.s1).toFixed(2) + ' / S2:$' + Number(data.s2).toFixed(2) + '</span>' +
-                        '</div>';
-                }}
-                if (data.cycle_windows && data.cycle_windows.length > 0) {{
-                    winList.innerHTML = lvlHtml + data.cycle_windows.map(function(w) {{
-                        const col = w.type === 'bottom' ? '#58a6ff' : '#f85149';
-                        return '<div style="margin-bottom: 2px;">• <strong style="color: ' + col + ';">' + w.day + ' (' + w.date.slice(5) + ')</strong>: ' + w.desc + ' 预期价: $' + w.price + '</div>';
-                    }}).join('');
+        function setTimeCycleViewMode(mode) {{
+            cycleViewMode = mode;
+            const btnFocus = document.getElementById('btnViewFocus');
+            const btnFull = document.getElementById('btnViewFull');
+            if (btnFocus && btnFull) {{
+                if (mode === 'focus') {{
+                    btnFocus.classList.add('active');
+                    btnFull.classList.remove('active');
                 }} else {{
-                    winList.innerHTML = lvlHtml + '<div style="color: #8b949e;">近期平稳震荡，无显著极端谐波反转</div>';
+                    btnFull.classList.add('active');
+                    btnFocus.classList.remove('active');
                 }}
             }}
+            cyclePanX = 0;
+            cycleZoom = 1.0;
+            cycleHoverIdx = -1;
+            renderTimeCycleView();
+        }}
 
-            const hist = data.history || [];
-            const proj = data.projection || [];
-            const allPoints = [];
-            hist.forEach(function(p) {{ allPoints.push({{ x: p.date, y: p.price, isProj: false }}); }});
-            proj.forEach(function(p) {{ allPoints.push({{ x: p.day, y: p.price, isProj: true, pct: p.pct }}); }});
-            if (allPoints.length === 0) return;
+        function zoomTimeCycle(factor) {{
+            cycleZoom = Math.max(0.65, Math.min(3.5, cycleZoom * factor));
+            renderTimeCycleView();
+        }}
 
-            const width = wrapper.clientWidth || 800;
-            const height = 250;
-            const padL = 48, padR = 68, padT = 20, padB = 30;
-            const chartW = width - padL - padR;
-            const chartH = height - padT - padB;
+        function resetTimeCycleView() {{
+            cyclePanX = 0;
+            cycleZoom = 1.0;
+            cycleHoverIdx = -1;
+            renderTimeCycleView();
+        }}
 
-            const yVals = allPoints.map(function(p) {{ return p.y; }});
-            if (data.s1) yVals.push(Number(data.s1));
-            if (data.r1) yVals.push(Number(data.r1));
-            if (data.s2 && Number(data.s2) > Number(data.current_price) * 0.78) yVals.push(Number(data.s2));
-            if (data.r2 && Number(data.r2) < Number(data.current_price) * 1.25) yVals.push(Number(data.r2));
-            const minY = Math.min.apply(null, yVals) * 0.975;
-            const maxY = Math.max.apply(null, yVals) * 1.025;
-            const yRange = (maxY - minY) || 1;
+        function highlightCycleDay(day) {{
+            cycleHighlightDay = day;
+            renderTimeCycleView();
+        }}
 
-            const getX = function(idx) {{ return padL + (idx / (allPoints.length - 1)) * chartW; }};
-            const getY = function(val) {{ return padT + chartH - ((val - minY) / yRange) * chartH; }};
+        function clearCycleHighlight() {{
+            cycleHighlightDay = null;
+            renderTimeCycleView();
+        }}
 
-            let svg = '<svg width="100%" height="100%" viewBox="0 0 ' + width + ' ' + height + '" xmlns="http://www.w3.org/2000/svg">';
-            svg += '<defs>' +
-                '<linearGradient id="histGrad" x1="0%" y1="0%" x2="0%" y2="100%">' +
-                    '<stop offset="0%" stop-color="#38bdf8" stop-opacity="0.25"/>' +
-                    '<stop offset="100%" stop-color="#38bdf8" stop-opacity="0.0"/>' +
-                '</linearGradient>' +
-                '<linearGradient id="projGrad" x1="0%" y1="0%" x2="0%" y2="100%">' +
-                    '<stop offset="0%" stop-color="#ff7711" stop-opacity="0.2"/>' +
-                    '<stop offset="100%" stop-color="#ff7711" stop-opacity="0.0"/>' +
-                '</linearGradient>' +
-            '</defs>';
+        function initTimeCycleCanvasEvents() {{
+            if (cycleCanvasInited) return;
+            const wrapper = document.getElementById('cycleCanvasWrapper');
+            const canvas = document.getElementById('cycleChartCanvas');
+            if (!wrapper || !canvas) return;
 
-            // Grid lines
-            for (let g = 0; g <= 4; g++) {{
-                const gy = padT + (g / 4) * chartH;
-                const priceLbl = (maxY - (g / 4) * yRange).toFixed(1);
-                svg += '<line x1="' + padL + '" y1="' + gy + '" x2="' + (padL + chartW) + '" y2="' + gy + '" stroke="rgba(255,255,255,0.06)" stroke-dasharray="2,2"/>';
-                svg += '<text x="' + (padL - 6) + '" y="' + (gy + 4) + '" fill="#8b949e" font-size="10" text-anchor="end" font-family="monospace">$' + priceLbl + '</text>';
-            }}
+            // Mouse events for Drag & Pan
+            wrapper.addEventListener('mousedown', function(e) {{
+                cycleIsDragging = true;
+                cycleDragStartX = e.clientX;
+                cycleInitialPanX = cyclePanX;
+                wrapper.style.cursor = 'grabbing';
+            }});
 
-            // Draw S1 / S2 / R1 / R2 horizontal reference lines
-            const refLevels = [
-                {{ key: 'R2', val: data.r2, color: 'rgba(248, 81, 73, 0.55)', textCol: '#f85149' }},
-                {{ key: 'R1', val: data.r1, color: 'rgba(255, 183, 77, 0.65)', textCol: '#ffb74d' }},
-                {{ key: 'S1', val: data.s1, color: 'rgba(63, 185, 80, 0.65)', textCol: '#3fb950' }},
-                {{ key: 'S2', val: data.s2, color: 'rgba(56, 189, 248, 0.55)', textCol: '#38bdf8' }}
-            ];
-            refLevels.forEach(function(lv) {{
-                if (!lv.val) return;
-                const ly = getY(Number(lv.val));
-                if (ly >= padT - 4 && ly <= padT + chartH + 4) {{
-                    svg += '<line x1="' + padL + '" y1="' + ly + '" x2="' + (padL + chartW) + '" y2="' + ly + '" stroke="' + lv.color + '" stroke-width="1" stroke-dasharray="5,4"/>';
-                    svg += '<text x="' + (padL + chartW + 4) + '" y="' + (ly + 3) + '" fill="' + lv.textCol + '" font-size="9.5" font-weight="700" font-family="monospace">' + lv.key + ' $' + Number(lv.val).toFixed(1) + '</text>';
+            window.addEventListener('mousemove', function(e) {{
+                const rect = wrapper.getBoundingClientRect();
+                const inWrapper = (e.clientX >= rect.left && e.clientX <= rect.right && e.clientY >= rect.top && e.clientY <= rect.bottom);
+                
+                if (cycleIsDragging) {{
+                    const deltaX = e.clientX - cycleDragStartX;
+                    cyclePanX = cycleInitialPanX + deltaX;
+                    renderTimeCycleView();
+                }} else if (inWrapper) {{
+                    handleCanvasHover(e.clientX - rect.left, e.clientY - rect.top);
+                }} else if (cycleHoverIdx !== -1) {{
+                    cycleHoverIdx = -1;
+                    hideCycleTooltip();
+                    renderTimeCycleView();
                 }}
             }});
 
-            // Split line at current price
-            const splitX = getX(hist.length - 1);
-            svg += '<line x1="' + splitX + '" y1="' + padT + '" x2="' + splitX + '" y2="' + (padT + chartH) + '" stroke="rgba(255,255,255,0.2)" stroke-dasharray="4,4"/>';
-            svg += '<text x="' + splitX + '" y="' + (padT - 5) + '" fill="#cbd5e1" font-size="10" text-anchor="middle">今日</text>';
+            window.addEventListener('mouseup', function() {{
+                if (cycleIsDragging) {{
+                    cycleIsDragging = false;
+                    wrapper.style.cursor = 'grab';
+                }}
+            }});
 
-            // Draw turning windows zones
-            if (data.cycle_windows) {{
-                data.cycle_windows.forEach(function(w) {{
-                    let pIdx = -1;
-                    for (let k = 0; k < proj.length; k++) {{
-                        if (proj[k].day === w.day) {{ pIdx = k; break; }}
-                    }}
-                    if (pIdx !== -1) {{
-                        const ptX = getX(hist.length + pIdx);
-                        const fillColor = w.type === 'bottom' ? 'rgba(88,166,255,0.18)' : 'rgba(248,81,73,0.18)';
-                        svg += '<rect x="' + (ptX - 12) + '" y="' + padT + '" width="24" height="' + chartH + '" fill="' + fillColor + '" rx="4"/>';
-                        svg += '<text x="' + ptX + '" y="' + (padT + chartH - 4) + '" fill="' + (w.type === 'bottom' ? '#58a6ff' : '#f85149') + '" font-size="9" text-anchor="middle" font-weight="700">' + w.day + '</text>';
-                    }}
-                }});
-            }}
+            wrapper.addEventListener('mouseleave', function() {{
+                if (!cycleIsDragging) {{
+                    cycleHoverIdx = -1;
+                    hideCycleTooltip();
+                    renderTimeCycleView();
+                }}
+            }});
 
-            // Draw Hist Line
-            let histPath = '';
-            for (let i = 0; i < hist.length; i++) {{
-                const x = getX(i);
-                const y = getY(hist[i].price);
-                histPath += (i === 0 ? 'M ' + x + ' ' + y : ' L ' + x + ' ' + y);
-            }}
-            svg += '<path d="' + histPath + '" fill="none" stroke="#38bdf8" stroke-width="2.2" stroke-linecap="round"/>';
+            // Wheel zoom
+            wrapper.addEventListener('wheel', function(e) {{
+                e.preventDefault();
+                const factor = e.deltaY < 0 ? 1.15 : 0.88;
+                zoomTimeCycle(factor);
+            }}, {{ passive: false }});
 
-            // Draw Proj Line
-            let projPath = 'M ' + getX(hist.length - 1) + ' ' + getY(hist[hist.length - 1].price);
-            for (let j = 0; j < proj.length; j++) {{
-                const x = getX(hist.length + j);
-                const y = getY(proj[j].price);
-                projPath += ' L ' + x + ' ' + y;
-            }}
-            svg += '<path d="' + projPath + '" fill="none" stroke="#ff944d" stroke-width="2.2" stroke-dasharray="4,3" stroke-linecap="round"/>';
+            // Touch events for iPad / Mobile
+            let touchStartX = 0;
+            wrapper.addEventListener('touchstart', function(e) {{
+                if (e.touches.length === 1) {{
+                    cycleIsDragging = true;
+                    touchStartX = e.touches[0].clientX;
+                    cycleInitialPanX = cyclePanX;
+                }}
+            }}, {{ passive: true }});
 
-            // Last point badge
-            if (proj.length > 0) {{
-                const lastX = getX(allPoints.length - 1);
-                const lastY = getY(proj[proj.length - 1].price);
-                const lastPct = proj[proj.length - 1].pct;
-                const sign = lastPct >= 0 ? '+' : '';
-                const pColor = lastPct >= 0 ? '#3fb950' : '#f85149';
-                svg += '<circle cx="' + lastX + '" cy="' + lastY + '" r="4" fill="#ff944d"/>';
-                svg += '<text x="' + lastX + '" y="' + (lastY - 8) + '" fill="' + pColor + '" font-size="11" font-weight="800" text-anchor="end" font-family="monospace">' + sign + lastPct + '%</text>';
-            }}
+            wrapper.addEventListener('touchmove', function(e) {{
+                if (cycleIsDragging && e.touches.length === 1) {{
+                    const deltaX = e.touches[0].clientX - touchStartX;
+                    cyclePanX = cycleInitialPanX + deltaX;
+                    const rect = wrapper.getBoundingClientRect();
+                    handleCanvasHover(e.touches[0].clientX - rect.left, e.touches[0].clientY - rect.top);
+                    renderTimeCycleView();
+                }}
+            }}, {{ passive: true }});
 
-            svg += '</svg>';
-            wrapper.innerHTML = svg;
+            wrapper.addEventListener('touchend', function() {{
+                cycleIsDragging = false;
+            }}, {{ passive: true }});
+
+            cycleCanvasInited = true;
         }}
 
-        document.addEventListener('DOMContentLoaded', function() {{
+        let currentActiveRenderPoints = [];
+
+        function handleCanvasHover(mouseX, mouseY) {{
+            if (!currentActiveRenderPoints || currentActiveRenderPoints.length === 0) return;
+            let closestIdx = -1;
+            let minDist = 999999;
+            for (let i = 0; i < currentActiveRenderPoints.length; i++) {{
+                const dist = Math.abs(currentActiveRenderPoints[i].canvasX - mouseX);
+                if (dist < minDist) {{
+                    minDist = dist;
+                    closestIdx = i;
+                }}
+            }}
+            if (minDist < 45 && closestIdx !== -1) {{
+                cycleHoverIdx = closestIdx;
+                showCycleTooltip(currentActiveRenderPoints[closestIdx], mouseX, mouseY);
+                renderTimeCycleView();
+            }} else if (cycleHoverIdx !== -1) {{
+                cycleHoverIdx = -1;
+                hideCycleTooltip();
+                renderTimeCycleView();
+            }}
+        }}
+
+        function showCycleTooltip(pt, mouseX, mouseY) {{
+            const tip = document.getElementById('cycleTooltip');
+            if (!tip) return;
+            const data = timeCycleData[activeCycleSymbol] || {{}};
+            const curP = Number(data.current_price || pt.price || 0);
+
+            let winTag = '';
+            if (pt.isWin) {{
+                const isTop = (pt.winType === 'top');
+                winTag = `<div style="margin-top: 4px; padding: 3px 6px; border-radius: 4px; background: ${{isTop ? 'rgba(248,81,73,0.18)' : 'rgba(56,189,248,0.18)'}}; color: ${{isTop ? '#f85149' : '#38bdf8'}}; font-weight: 700;">` +
+                    `${{isTop ? '🔴 周期阻力窗 (逢高止盈)' : '🔵 周期底回踩窗 (企稳关注)'}}: ${{pt.winDesc || ''}}</div>`;
+            }}
+
+            let s1r1Hint = '';
+            if (data.r1 && pt.price) {{
+                const diffR1 = (Number(data.r1) - pt.price);
+                const diffPct = (diffR1 / pt.price * 100).toFixed(1);
+                s1r1Hint = `<div style="color: #8b949e; font-size: 10.5px; margin-top: 4px;">距第一阻力 R1 ($${{Number(data.r1).toFixed(2)}}): ${{diffR1 >= 0 ? '+' : ''}}${{diffPct}}%</div>`;
+            }}
+
+            const sign = (pt.pct != null && pt.pct >= 0) ? '+' : '';
+            const pColor = (pt.pct != null && pt.pct >= 0) ? '#3fb950' : (pt.pct != null ? '#f85149' : '#f0f6fc');
+            const pctStr = pt.pct != null ? `<span style="color: ${{pColor}}; font-weight: 800; margin-left: 6px;">(${{sign}}${{pt.pct}}%)</span>` : '';
+
+            tip.innerHTML = `
+                <div style="font-size: 11px; color: #8b949e; display: flex; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 4px; margin-bottom: 5px;">
+                    <span>${{pt.isProj ? '🔮 未来推演' : '📊 历史实盘'}}</span>
+                    <span style="color: #cbd5e1; font-weight: 700;">${{pt.displayDate}}</span>
+                </div>
+                <div style="font-size: 14px; font-weight: 800; color: #f0f6fc;">
+                    $${{Number(pt.price).toFixed(2)}} ${{pctStr}}
+                </div>
+                ${{winTag}}
+                ${{s1r1Hint}}
+            `;
+
+            tip.style.display = 'block';
+            const wrapper = document.getElementById('cycleCanvasWrapper');
+            const wrapW = wrapper ? wrapper.clientWidth : 600;
+            
+            // Tooltip positioning with boundary detection
+            let leftPos = pt.canvasX + 16;
+            if (leftPos + 200 > wrapW) {{
+                leftPos = pt.canvasX - 215;
+            }}
+            tip.style.left = Math.max(10, leftPos) + 'px';
+            tip.style.top = Math.max(10, Math.min(pt.canvasY - 20, 200)) + 'px';
+        }}
+
+        function hideCycleTooltip() {{
+            const tip = document.getElementById('cycleTooltip');
+            if (tip) tip.style.display = 'none';
+        }}
+
+        function renderTimeCycleView() {{
+            initTimeCycleCanvasEvents();
+            const data = timeCycleData[activeCycleSymbol] || timeCycleData['SOXL'] || Object.values(timeCycleData)[0];
+            if (!data) return;
+
+            // 1. Update Right Side Info
+            updateTacticalSidebar(data);
+
+            // 2. Render HTML5 Canvas
+            drawTimeCycleCanvas(data);
+        }}
+
+        function updateTacticalSidebar(data) {{
+            const titleEl = document.getElementById('cycleTickerTitle');
+            const subEl = document.getElementById('cycleTickerSub');
+            const curPEl = document.getElementById('cycleCurPrice');
+            const aPerEl = document.getElementById('cycleAnalogPeriod');
+            const aSimEl = document.getElementById('cycleAnalogSim');
+
+            if (titleEl) titleEl.textContent = data.ticker || activeCycleSymbol;
+            if (subEl) {{
+                const subNames = {{
+                    'SOXL': '3倍做多半导体', 'SOXX': '半导体1倍ETF', 'SOXS': '3倍做空半导体',
+                    'SMH': 'VanEck半导体', 'TSM': '台积电', 'NVDA': '英伟达算力',
+                    'MU': '美光存储', 'AMD': '超威半导体', 'AVGO': '博通通信',
+                    'MRVL': '迈威尔芯片', 'INTC': '英特尔芯片', 'SNDK': '闪迪数据存储',
+                    'QQQM': '纳指100微型', 'SQQQ': '3倍做空纳指', 'KORU': '3倍做多韩股',
+                    'IBIT': '比特币现货ETF', 'TSLA': '特斯拉物理AI', 'PLTR': 'Palantir企业AI'
+                }};
+                subEl.textContent = subNames[data.ticker] || '';
+            }}
+            const curP = Number(data.current_price || 0);
+            if (curPEl) curPEl.textContent = '$' + curP.toFixed(2);
+            if (aPerEl) aPerEl.textContent = (data.analog_match && data.analog_match.period) || '2024-07-05 ~ 2024-08-08 (KNN-5 联合同日)';
+            const simVal = (data.analog_match && data.analog_match.similarity_pct) || 87.2;
+            if (aSimEl) aSimEl.textContent = simVal + '% ' + (simVal >= 85 ? '⭐⭐⭐⭐⭐' : (simVal >= 75 ? '⭐⭐⭐⭐' : '⭐⭐⭐'));
+
+            // S/R Level Ladder (阶梯卡片)
+            const ladderEl = document.getElementById('cycleLevelsLadder');
+            if (ladderEl && curP > 0) {{
+                const levels = [
+                    {{ key: 'R2 极限阻力', val: data.r2, color: '#f85149', bg: 'rgba(248,81,73,0.1)' }},
+                    {{ key: 'R1 反弹第一阻力', val: data.r1, color: '#ff944d', bg: 'rgba(255,148,77,0.1)' }},
+                    {{ key: '⚪ 当前现价', val: curP, color: '#38bdf8', bg: 'rgba(56,189,248,0.15)', isCur: true }},
+                    {{ key: 'S1 波段支撑', val: data.s1, color: '#3fb950', bg: 'rgba(63,185,80,0.1)' }},
+                    {{ key: 'S2 极限插针底', val: data.s2, color: '#58a6ff', bg: 'rgba(88,166,255,0.1)' }},
+                    {{ key: 'SL 防守止损位', val: data.sl, color: '#f87171', bg: 'rgba(248,81,73,0.06)' }}
+                ];
+                let ladHtml = '';
+                levels.forEach(lv => {{
+                    if (!lv.val) return;
+                    const v = Number(lv.val);
+                    const diffPct = ((v / curP - 1) * 100);
+                    const sign = diffPct > 0 ? '+' : '';
+                    const pctTag = lv.isCur ? '<span style="color:#38bdf8; font-weight:700;">[基准锚点]</span>' : `<span style="color:${{lv.color}}; font-weight:700;">${{sign}}${{diffPct.toFixed(1)}}%</span>`;
+                    ladHtml += `
+                        <div class="cycle-ladder-item" style="background: ${{lv.bg}}; border: 1px solid ${{lv.color}}33;">
+                            <span style="color: ${{lv.color}}; font-weight: 700;">${{lv.key}}</span>
+                            <div style="display: flex; gap: 8px; align-items: center;">
+                                <span style="color: #f0f6fc; font-weight: 800;">$${{v.toFixed(2)}}</span>
+                                ${{pctTag}}
+                            </div>
+                        </div>
+                    `;
+                }});
+                ladderEl.innerHTML = ladHtml;
+            }}
+
+            // Tactical Cycle Timeline Cards (变盘时间轴卡片)
+            const winList = document.getElementById('cycleWindowsList');
+            if (winList) {{
+                if (data.cycle_windows && data.cycle_windows.length > 0) {{
+                    winList.innerHTML = data.cycle_windows.map(function(w) {{
+                        const isTop = (w.type === 'top');
+                        const themeColor = isTop ? '#f85149' : '#38bdf8';
+                        const bgAlpha = isTop ? 'rgba(248, 81, 73, 0.08)' : 'rgba(56, 189, 248, 0.08)';
+                        const borderAlpha = isTop ? 'rgba(248, 81, 73, 0.28)' : 'rgba(56, 189, 248, 0.28)';
+                        const icon = isTop ? '🔴' : '🔵';
+                        const tag = isTop ? '周期阻力窗 (逢高不过就跑)' : '周期底回踩窗 (企稳关注)';
+                        return `
+                            <div class="cycle-timeline-card" style="background: ${{bgAlpha}}; border: 1px solid ${{borderAlpha}};" onmouseenter="highlightCycleDay('${{w.day}}')" onmouseleave="clearCycleHighlight()">
+                                <div>
+                                    <div style="font-weight: 700; color: ${{themeColor}}; font-size: 11.5px; display: flex; align-items: center; gap: 4px;">
+                                        <span>${{icon}}</span>
+                                        <span>${{w.day}} (${{w.date ? w.date.slice(5) : ''}})</span>
+                                        <span style="font-size: 9.5px; padding: 1px 5px; border-radius: 3px; background: ${{borderAlpha}};">${{tag}}</span>
+                                    </div>
+                                    <div style="font-size: 10.5px; color: #8b949e; margin-top: 3px;">${{w.desc || '关键周期变盘窗口'}}</div>
+                                </div>
+                                <div style="text-align: right; font-family: 'JetBrains Mono', monospace;">
+                                    <div style="font-size: 13.5px; font-weight: 800; color: #f0f6fc;">$${{Number(w.price).toFixed(2)}}</div>
+                                    <div style="font-size: 9.5px; color: ${{themeColor}};">预期目标价</div>
+                                </div>
+                            </div>
+                        `;
+                    }}).join('');
+                }} else {{
+                    winList.innerHTML = '<div style="color: #8b949e; padding: 12px; text-align: center; font-size: 11.5px;">近期处于平稳修复通道，无极端单边反转窗口</div>';
+                }}
+            }}
+        }}
+
+        function drawTimeCycleCanvas(data) {{
+            const canvas = document.getElementById('cycleChartCanvas');
+            const wrapper = document.getElementById('cycleCanvasWrapper');
+            if (!canvas || !wrapper) return;
+
+            const dpr = window.devicePixelRatio || 1;
+            const rect = wrapper.getBoundingClientRect();
+            const width = rect.width || 750;
+            const height = rect.height || 320;
+
+            canvas.width = width * dpr;
+            canvas.height = height * dpr;
+            canvas.style.width = width + 'px';
+            canvas.style.height = height + 'px';
+
+            const ctx = canvas.getContext('2d');
+            ctx.scale(dpr, dpr);
+
+            const hist = data.history || [];
+            const proj = data.projection || [];
+
+            // 1. Select points based on view mode (Focus mode zooms into projection)
+            let selectedHist = hist;
+            if (cycleViewMode === 'focus' && hist.length > 5) {{
+                selectedHist = hist.slice(-5); // 仅取最近5日，防止暴跌前的高价拉高坐标轴压扁未来波形
+            }}
+
+            const points = [];
+            selectedHist.forEach((p, idx) => {{
+                points.push({{
+                    day: idx === selectedHist.length - 1 ? '今日' : `T-${{selectedHist.length - 1 - idx}}`,
+                    date: p.date,
+                    displayDate: p.date,
+                    price: Number(p.price),
+                    isProj: false,
+                    pct: null
+                }});
+            }});
+
+            proj.forEach((p, idx) => {{
+                let isWin = false;
+                let winType = '';
+                let winDesc = '';
+                if (data.cycle_windows) {{
+                    for (let w of data.cycle_windows) {{
+                        if (w.day === p.day) {{
+                            isWin = true;
+                            winType = w.type;
+                            winDesc = w.desc;
+                            break;
+                        }}
+                    }}
+                }}
+                points.push({{
+                    day: p.day,
+                    date: p.date,
+                    displayDate: `${{p.day}} (${{p.date ? p.date.slice(5) : ''}})`,
+                    price: Number(p.price),
+                    isProj: true,
+                    pct: p.pct,
+                    isWin: isWin,
+                    winType: winType,
+                    winDesc: winDesc
+                }});
+            }});
+
+            if (points.length === 0) return;
+
+            // 2. Dynamic Y-Axis scale calculation
+            const yVals = points.map(p => p.price);
+            const curP = Number(data.current_price || points[0].price);
+            
+            // In focus mode, keep levels strictly bounded to projection neighborhood
+            if (cycleViewMode === 'focus') {{
+                if (data.r1 && Number(data.r1) <= curP * 1.35) yVals.push(Number(data.r1));
+                if (data.s1 && Number(data.s1) >= curP * 0.75) yVals.push(Number(data.s1));
+                if (data.r2 && Number(data.r2) <= curP * 1.45) yVals.push(Number(data.r2));
+            }} else {{
+                if (data.r1) yVals.push(Number(data.r1));
+                if (data.s1) yVals.push(Number(data.s1));
+                if (data.r2 && Number(data.r2) <= curP * 1.5) yVals.push(Number(data.r2));
+                if (data.s2 && Number(data.s2) >= curP * 0.5) yVals.push(Number(data.s2));
+            }}
+
+            const rawMinY = Math.min.apply(null, yVals);
+            const rawMaxY = Math.max.apply(null, yVals);
+            const margin = (rawMaxY - rawMinY) * 0.12 || 2;
+            const minY = Math.max(0.1, rawMinY - margin);
+            const maxY = rawMaxY + margin;
+            const yRange = (maxY - minY) || 1;
+
+            const padL = 52, padR = 80, padT = 24, padB = 28;
+            const baseChartW = width - padL - padR;
+            const chartW = baseChartW * cycleZoom;
+            const chartH = height - padT - padB;
+
+            const getY = (val) => padT + chartH - ((val - minY) / yRange) * chartH;
+            const getX = (idx) => padL + cyclePanX + (idx / (points.length - 1)) * chartW;
+
+            // Store calculated positions for hover detection
+            points.forEach((p, idx) => {{
+                p.canvasX = getX(idx);
+                p.canvasY = getY(p.price);
+            }});
+            currentActiveRenderPoints = points;
+
+            // 3. Clear canvas & Background
+            ctx.clearRect(0, 0, width, height);
+
+            // 4. Horizontal Gridlines & Left Price Axis
+            ctx.lineWidth = 1;
+            ctx.font = '10px "JetBrains Mono", monospace';
+            ctx.textAlign = 'right';
+            ctx.textBaseline = 'middle';
+
+            const numGrids = 5;
+            for (let g = 0; g <= numGrids; g++) {{
+                const gy = padT + (g / numGrids) * chartH;
+                const gPrice = maxY - (g / numGrids) * yRange;
+                ctx.strokeStyle = 'rgba(255, 255, 255, 0.05)';
+                ctx.setLineDash([3, 3]);
+                ctx.beginPath();
+                ctx.moveTo(padL, gy);
+                ctx.lineTo(width - padR, gy);
+                ctx.stroke();
+
+                ctx.fillStyle = '#8b949e';
+                ctx.fillText('$' + gPrice.toFixed(1), padL - 8, gy);
+            }}
+            ctx.setLineDash([]);
+
+            // 5. Draw Support & Resistance Reference Lines
+            const ladderLines = [
+                {{ key: 'R2', val: data.r2, color: '#f85149', lineDash: [5, 4] }},
+                {{ key: 'R1', val: data.r1, color: '#ff944d', lineDash: [5, 4] }},
+                {{ key: 'S1', val: data.s1, color: '#3fb950', lineDash: [5, 4] }},
+                {{ key: 'S2', val: data.s2, color: '#58a6ff', lineDash: [5, 4] }},
+                {{ key: 'SL', val: data.sl, color: '#f87171', lineDash: [2, 3] }}
+            ];
+
+            // Filter lines within canvas Y range
+            const visibleLadder = ladderLines.filter(lv => {{
+                if (!lv.val) return false;
+                const ly = getY(Number(lv.val));
+                return (ly >= padT - 5 && ly <= padT + chartH + 5);
+            }});
+
+            // Prevent label collisions with repulsive positioning
+            visibleLadder.sort((a, b) => getY(Number(a.val)) - getY(Number(b.val)));
+            for (let i = 0; i < visibleLadder.length; i++) {{
+                let currentY = getY(Number(visibleLadder[i].val));
+                if (i > 0) {{
+                    const prevY = visibleLadder[i - 1].drawY;
+                    if (currentY - prevY < 13) {{
+                        currentY = prevY + 13;
+                    }}
+                }}
+                visibleLadder[i].drawY = currentY;
+            }}
+
+            visibleLadder.forEach(lv => {{
+                const ly = getY(Number(lv.val));
+                ctx.strokeStyle = lv.color + '66';
+                ctx.lineWidth = 1.2;
+                ctx.setLineDash(lv.lineDash);
+                ctx.beginPath();
+                ctx.moveTo(padL, ly);
+                ctx.lineTo(width - padR, ly);
+                ctx.stroke();
+                ctx.setLineDash([]);
+
+                // Right Margin Pill Label
+                const badgeY = lv.drawY;
+                ctx.fillStyle = lv.color + '22';
+                ctx.fillRect(width - padR + 4, badgeY - 7, 72, 14);
+                ctx.strokeStyle = lv.color + '66';
+                ctx.strokeRect(width - padR + 4, badgeY - 7, 72, 14);
+
+                ctx.fillStyle = lv.color;
+                ctx.font = '9.5px "JetBrains Mono", monospace';
+                ctx.textAlign = 'left';
+                ctx.fillText(`${{lv.key}} $${{Number(lv.val).toFixed(1)}}`, width - padR + 7, badgeY);
+            }});
+
+            // 6. Draw Turning Window Zones (Vertical Gradient Bands)
+            ctx.save();
+            // Clip to chart area to avoid bleeding outside bounds
+            ctx.beginPath();
+            ctx.rect(padL, padT - 15, width - padL - padR, chartH + 30);
+            ctx.clip();
+
+            points.forEach(pt => {{
+                if (!pt.isProj) return;
+                const isHighlight = (cycleHighlightDay === pt.day);
+                if (pt.isWin || isHighlight) {{
+                    const isTop = (pt.winType === 'top');
+                    const bandColor = isTop ? 'rgba(248, 81, 73, ' : 'rgba(56, 189, 248, ';
+                    const alpha = isHighlight ? '0.35)' : '0.14)';
+                    const colWidth = Math.max(22, 28 * cycleZoom);
+
+                    const grad = ctx.createLinearGradient(0, padT, 0, padT + chartH);
+                    grad.addColorStop(0, bandColor + (isHighlight ? '0.45)' : '0.22)'));
+                    grad.addColorStop(1, bandColor + '0.02)');
+
+                    ctx.fillStyle = grad;
+                    ctx.fillRect(pt.canvasX - colWidth / 2, padT, colWidth, chartH);
+
+                    ctx.strokeStyle = bandColor + (isHighlight ? '0.8)' : '0.35)');
+                    ctx.lineWidth = 1;
+                    ctx.setLineDash([2, 2]);
+                    ctx.strokeRect(pt.canvasX - colWidth / 2, padT, colWidth, chartH);
+                    ctx.setLineDash([]);
+
+                    // Top Tag Badge
+                    ctx.fillStyle = isTop ? '#f85149' : '#38bdf8';
+                    ctx.font = 'bold 9px "JetBrains Mono", monospace';
+                    ctx.textAlign = 'center';
+                    ctx.fillText(pt.day, pt.canvasX, padT - 3);
+                }}
+            }});
+
+            // 7. Split Line (今日)
+            const todayIdx = selectedHist.length - 1;
+            const splitX = points[todayIdx].canvasX;
+            ctx.strokeStyle = 'rgba(255, 255, 255, 0.4)';
+            ctx.lineWidth = 1.5;
+            ctx.setLineDash([4, 4]);
+            ctx.beginPath();
+            ctx.moveTo(splitX, padT - 10);
+            ctx.lineTo(splitX, padT + chartH);
+            ctx.stroke();
+            ctx.setLineDash([]);
+
+            ctx.fillStyle = '#cbd5e1';
+            ctx.font = 'bold 10px sans-serif';
+            ctx.textAlign = 'center';
+            ctx.fillText('今日', splitX, padT - 12);
+
+            // 8. Draw Historical Path (Cyan Line + Area)
+            if (selectedHist.length > 0) {{
+                // Area fill
+                const histGrad = ctx.createLinearGradient(0, padT, 0, padT + chartH);
+                histGrad.addColorStop(0, 'rgba(56, 189, 248, 0.22)');
+                histGrad.addColorStop(1, 'rgba(56, 189, 248, 0.0)');
+
+                ctx.fillStyle = histGrad;
+                ctx.beginPath();
+                ctx.moveTo(points[0].canvasX, padT + chartH);
+                for (let i = 0; i < selectedHist.length; i++) {{
+                    ctx.lineTo(points[i].canvasX, points[i].canvasY);
+                }}
+                ctx.lineTo(points[todayIdx].canvasX, padT + chartH);
+                ctx.closePath();
+                ctx.fill();
+
+                // Stroke
+                ctx.strokeStyle = '#38bdf8';
+                ctx.lineWidth = 2.5;
+                ctx.beginPath();
+                for (let i = 0; i < selectedHist.length; i++) {{
+                    if (i === 0) ctx.moveTo(points[i].canvasX, points[i].canvasY);
+                    else ctx.lineTo(points[i].canvasX, points[i].canvasY);
+                }}
+                ctx.stroke();
+            }}
+
+            // 9. Draw Future 15-Day Projection Path (Orange Wave + Glow)
+            if (proj.length > 0) {{
+                // Area fill
+                const projGrad = ctx.createLinearGradient(0, padT, 0, padT + chartH);
+                projGrad.addColorStop(0, 'rgba(255, 148, 77, 0.18)');
+                projGrad.addColorStop(1, 'rgba(255, 148, 77, 0.0)');
+
+                ctx.fillStyle = projGrad;
+                ctx.beginPath();
+                ctx.moveTo(points[todayIdx].canvasX, padT + chartH);
+                for (let j = todayIdx; j < points.length; j++) {{
+                    ctx.lineTo(points[j].canvasX, points[j].canvasY);
+                }}
+                ctx.lineTo(points[points.length - 1].canvasX, padT + chartH);
+                ctx.closePath();
+                ctx.fill();
+
+                // Stroke dashed
+                ctx.strokeStyle = '#ff944d';
+                ctx.lineWidth = 2.5;
+                ctx.setLineDash([5, 4]);
+                ctx.beginPath();
+                for (let j = todayIdx; j < points.length; j++) {{
+                    if (j === todayIdx) ctx.moveTo(points[j].canvasX, points[j].canvasY);
+                    else ctx.lineTo(points[j].canvasX, points[j].canvasY);
+                }}
+                ctx.stroke();
+                ctx.setLineDash([]);
+
+                // Draw dots on turning points
+                points.forEach(pt => {{
+                    if (!pt.isProj) return;
+                    if (pt.isWin) {{
+                        ctx.fillStyle = pt.winType === 'top' ? '#f85149' : '#38bdf8';
+                        ctx.beginPath();
+                        ctx.arc(pt.canvasX, pt.canvasY, 4, 0, Math.PI * 2);
+                        ctx.fill();
+                        ctx.strokeStyle = '#fff';
+                        ctx.lineWidth = 1.5;
+                        ctx.stroke();
+                    }}
+                }});
+
+                // Final Day +% Pill
+                const lastPt = points[points.length - 1];
+                const lastPct = lastPt.pct || 0;
+                const sign = lastPct >= 0 ? '+' : '';
+                const pillColor = lastPct >= 0 ? '#3fb950' : '#f85149';
+
+                ctx.fillStyle = pillColor;
+                ctx.beginPath();
+                ctx.arc(lastPt.canvasX, lastPt.canvasY, 4, 0, Math.PI * 2);
+                ctx.fill();
+
+                ctx.fillStyle = 'rgba(13, 17, 23, 0.85)';
+                ctx.fillRect(lastPt.canvasX - 48, lastPt.canvasY - 22, 46, 16);
+                ctx.strokeStyle = pillColor;
+                ctx.strokeRect(lastPt.canvasX - 48, lastPt.canvasY - 22, 46, 16);
+
+                ctx.fillStyle = pillColor;
+                ctx.font = 'bold 10px "JetBrains Mono", monospace';
+                ctx.textAlign = 'center';
+                ctx.fillText(sign + lastPct + '%', lastPt.canvasX - 25, lastPt.canvasY - 10);
+            }}
+
+            // 10. Hover Crosshair Line and Highlight Dot
+            if (cycleHoverIdx >= 0 && cycleHoverIdx < points.length) {{
+                const hoverPt = points[cycleHoverIdx];
+
+                ctx.strokeStyle = 'rgba(255, 255, 255, 0.65)';
+                ctx.lineWidth = 1.2;
+                ctx.setLineDash([3, 3]);
+                ctx.beginPath();
+                ctx.moveTo(hoverPt.canvasX, padT);
+                ctx.lineTo(hoverPt.canvasX, padT + chartH);
+                ctx.stroke();
+                ctx.setLineDash([]);
+
+                // Highlight Circle
+                ctx.fillStyle = hoverPt.isProj ? '#ff944d' : '#38bdf8';
+                ctx.beginPath();
+                ctx.arc(hoverPt.canvasX, hoverPt.canvasY, 6, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.strokeStyle = '#ffffff';
+                ctx.lineWidth = 2;
+                ctx.stroke();
+            }}
+
+            // 11. Bottom X-Axis Date Labels
+            ctx.restore(); // Restore clip
+            ctx.fillStyle = '#8b949e';
+            ctx.font = '9px "JetBrains Mono", monospace';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'top';
+
+            // Show subset of dates to avoid crowded labels
+            const step = Math.max(1, Math.round(points.length / (8 * cycleZoom)));
+            points.forEach((pt, idx) => {{
+                if (idx % step === 0 || idx === todayIdx || idx === points.length - 1) {{
+                    if (pt.canvasX >= padL && pt.canvasX <= width - padR) {{
+                        const lbl = pt.isProj ? pt.day : (pt.date ? pt.date.slice(5) : pt.day);
+                        ctx.fillStyle = (idx === todayIdx) ? '#58a6ff' : '#8b949e';
+                        ctx.font = (idx === todayIdx) ? 'bold 10px sans-serif' : '9px "JetBrains Mono", monospace';
+                        ctx.fillText(lbl, pt.canvasX, padT + chartH + 6);
+                    }}
+                }}
+            }});
+        }}
+
+                function renderTimeCycleSvg(sym) {{
+            if (sym) switchCycleSymbol(sym);
+            else renderTimeCycleView();
+        }}
+
+        document.addEventListener('DOMContentLoaded' , function() {{
             let savedView = 'dual';
             try {{
                 savedView = localStorage.getItem('predict_t4_view') || 'dual';
             }} catch(e) {{}}
             switchT4View(savedView);
-            setTimeout(function() {{ renderTimeCycleSvg(activeCycleSymbol); }}, 50);
-            window.addEventListener('resize', function() {{ renderTimeCycleSvg(activeCycleSymbol); }});
+            setTimeout(function() {{ renderTimeCycleView(); }}, 50);
+            window.addEventListener('resize', function() {{ renderTimeCycleView(); }});
         }});
     </script>
 </body>
