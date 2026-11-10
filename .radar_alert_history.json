@@ -126,8 +126,8 @@
       "last_notified_at": 1793944690.7934802
     },
     "META": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1794324011.4183612
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "LITE": {
       "state": "STOP_LOSS",
@@ -258,8 +258,8 @@
       "last_notified_at": 0.0
     },
     "QCOM": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1794324960.5312228
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     }
   },
   "position_peaks": {
