@@ -90,8 +90,8 @@
       "last_notified_at": 0.0
     },
     "AMAT": {
-      "state": "STOP_LOSS",
-      "last_notified_at": 1793944690.7934802
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "VST": {
       "state": "NORMAL",
@@ -126,8 +126,8 @@
       "last_notified_at": 1793944690.7934802
     },
     "META": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1794322700.911201
     },
     "LITE": {
       "state": "STOP_LOSS",
