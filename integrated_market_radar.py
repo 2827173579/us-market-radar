@@ -16,7 +16,7 @@ import subprocess
 import os
 import time
 import random
-from datetime import datetime
+from datetime import datetime, timezone
 import urllib.request
 import urllib.error
 from urllib.parse import urlparse, parse_qs
@@ -186,6 +186,10 @@ FINNHUB_API_KEY = os.environ.get("FINNHUB_API_KEY", "").strip()
 # PushPlus 微信推送配置与去重缓存
 PUSHPLUS_TOKEN = os.environ.get("PUSHPLUS_TOKEN", "").strip()
 PUSHPLUS_CHANNEL = os.environ.get("PUSHPLUS_CHANNEL", "clawbot").strip()
+DISCORD_CLAW_WEBHOOK_URL = os.environ.get(
+    "DISCORD_CLAW_WEBHOOK_URL",
+    os.environ.get("DISCORD_ALERT_WEBHOOK_URL", "https://discord.com/api/webhooks/1569534508212944997/nfaRRqzZtmlUlPFd-8hHS94Fjp2hKIM9w2gPLsnjrW8m0Ffx5_vUxGw4IibpKUNXOO1T")
+).strip()
 
 # ------------------------------------------------------------------------------
 # 🎯 账户资金与风控配置 (V3.1 旗舰纯比例制 · 单股上限 25% · 1.5%风险平价一次性建仓)
@@ -1595,17 +1599,80 @@ def save_alert_history(history):
     except Exception as e:
         print(f"[!] 保存预警历史异常: {e}")
 
+def send_discord_claw_alert(title, markdown_content, webhook_url=None):
+    """
+    通过 Discord Webhook 向专属 Claw 预警频道推送与微信 100% 同步的 Markdown 战报卡片
+    具备自动颜色适配、超时隔离与长文本安全收纳。
+    """
+    url = webhook_url or globals().get("DISCORD_CLAW_WEBHOOK_URL", "").strip()
+    if not url:
+        return False
+
+    # 1. 标题与状态智能着色
+    color = 0xFF944D  # 默认橙色 (预警提示)
+    if any(k in title for k in ("买点", "黄金坑", "企稳", "买入")):
+        color = 0x00E676  # 鲜亮翠绿
+    elif any(k in title for k in ("止损", "破位", "熔断", "暴跌", "极限风控")):
+        color = 0xF85149  # 警示鲜红
+    elif any(k in title for k in ("止盈", "卖出", "冲顶")):
+        color = 0xBC8CFF  # 阶梯紫色
+    elif any(k in title for k in ("对冲", "反向", "雷达")):
+        color = 0x58A6FF  # 科技天蓝
+
+    # 2. 格式化并保护 Discord 4,096 字符上限
+    desc = (markdown_content or "").strip()
+    if len(desc) > 3900:
+        desc = desc[:3850] + "\n\n... *(内容超长已由系统平滑收纳)*"
+
+    embed = {
+        "title": title,
+        "description": desc,
+        "color": color,
+        "timestamp": datetime.now(timezone.utc).isoformat(),
+        "footer": {
+            "text": "富途牛牛风格 · 美股全周期量化雷达实时预警 (Claw Mirror)"
+        }
+    }
+
+    payload = {
+        "username": "美股雷达实时预警 (Claw)",
+        "embeds": [embed]
+    }
+
+    try:
+        req = urllib.request.Request(
+            url,
+            data=json.dumps(payload).encode("utf-8"),
+            headers={"Content-Type": "application/json", "User-Agent": "Mozilla/5.0"}
+        )
+        with urllib.request.urlopen(req, timeout=10) as resp:
+            if resp.status in (200, 204):
+                print(f"  [+] 💬 Discord ClawBot预警镜像通道推送成功: {title}")
+                return True
+            else:
+                print(f"  [!] 💬 Discord ClawBot预警推送返回状态码: {resp.status}")
+                return False
+    except Exception as e:
+        print(f"  [!] 💬 Discord ClawBot预警推送异常: {e}")
+        return False
+
+
 def send_pushplus_wechat_alert(title, markdown_content, channel=None):
     """
-    通过 PushPlus API 向微信推送 Markdown 卡片消息
-    采用【双通道冗余直达体系】：
-    1. 推送至 ClawBot 微信机器人专属私聊通道 (若用户配置或默认)
-    2. 同步推送到 PushPlus 微信官方公众号服务号 (channel='wechat')
-       彻底化解微信对 ClawBot 的 24 小时未主动交互静默拦截与每 10 条消息断流限制，
-       确保无论在机器人私聊窗口还是微信公众号订阅号中，100% 秒级必达震动提醒！
+    通过 PushPlus API 向微信推送 Markdown 卡片消息，并同步镜像推送至 Discord 预警频道
+    采用【微信 + Discord 冗余直达体系】：
+    1. 推送至 ClawBot 微信机器人专属私聊通道与官方服务号
+    2. 同步推送到 Discord 预警镜像频道 (微信发什么，此频道同步发什么)
     """
+    # 0. 同步推送到 Discord 预警镜像频道 (零延迟并行镜像)
+    discord_success = False
+    try:
+        discord_success = send_discord_claw_alert(title, markdown_content)
+    except Exception as e:
+        print(f"  [!] 💬 Discord 预警镜像触发异常: {e}")
+
     if not PUSHPLUS_TOKEN or PUSHPLUS_TOKEN == "YOUR_TOKEN":
-        return False
+        return discord_success
     
     url = "https://www.pushplus.plus/send"
     target_channel = channel or globals().get("PUSHPLUS_CHANNEL", "clawbot")
