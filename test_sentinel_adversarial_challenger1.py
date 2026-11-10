@@ -616,12 +616,8 @@ class TestSentinelAdversarialScenario5FactorYRobustness(unittest.TestCase):
         self.assertIsNotNone(p1, "Payload 1 overview card is always generated")
         self.assertIsNotNone(p2a)
         self.assertIsNotNone(p2b)
-        self.assertEqual(len(p2a.get("embeds", [])), 5)
-        self.assertEqual(len(p2b.get("embeds", [])), 4)
-        self.assertIsNotNone(p2a)
-        self.assertIsNotNone(p2b)
-        self.assertEqual(len(p2a.get("embeds", [])), 5)
-        self.assertEqual(len(p2b.get("embeds", [])), 4)
+        self.assertEqual(len(p2a.get("embeds", [])), 3)
+        self.assertEqual(len(p2b.get("embeds", [])), 2)
 
         # Step 3: Divergence evaluation with extreme RSI divergence
         extreme_div_analysis = {

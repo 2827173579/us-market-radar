@@ -499,12 +499,12 @@ def evaluate_rsi_state(
     if is_breakout:
         return "🚀【突破成功·右侧走强】"
 
-    # 4. 🎯【回踩主力成本·盯紧企稳】 (次优重点，主力护盘承接区)
-    if poc > 0 and (poc <= price <= (poc * 1.018)):
+    # 4. 🎯【回踩主力成本·盯紧企稳】 (收紧门槛: 0%~0.8% 且 4H_RSI <= 48)
+    if poc > 0 and (poc <= price <= (poc * 1.008)) and rsi_4h <= 48.0:
         return "🎯【回踩主力成本·盯紧企稳】"
 
     # 5. 📈【站稳主力上方·多头顺风】 (真正的多头安全持仓)
-    if poc > 0 and price > (poc * 1.018):
+    if poc > 0 and price >= poc:
         return "📈【站稳主力上方·多头顺风】"
 
     # 6. ⚠️【跌破主力成本·水下弱势】 (筹码峰下方受压)
@@ -663,18 +663,64 @@ def evaluate_cross_asset_resonance(market_analysis: Dict[str, Any]) -> Dict[str,
 # Tier 3: Discord Embed Formatting, Dispatcher & Linkage (Implemented in M3)
 # ==============================================================================
 
+def fmt_price(val: Any, is_btc: bool = False) -> str:
+    """价格 >= $100 保留 1 位小数，< $100 保留 2 位小数；BTC 无小数"""
+    try:
+        v = float(val)
+    except (ValueError, TypeError):
+        return "$0.00"
+    if is_btc:
+        return f"${int(round(v)):,}"
+    if abs(v) >= 100.0:
+        return f"${v:.1f}"
+    else:
+        return f"${v:.2f}"
+
+
+def resolve_3x_pair_conflicts(tickers: Dict[str, Any]) -> None:
+    """
+    修复 3X 正反杠杆 ETF (SOXL/SOXS, TQQQ/SQQQ) 穿帮 Bug:
+    严格反向 ETF 绝不允许两只同时显示 📈上方顺风。
+    若同时处于各自 POC 上方，依据 4H_RSI 对比，将弱势/反向损耗方标记为回避/对冲观察。
+    """
+    pairs = [("SOXL", "SOXS"), ("TQQQ", "SQQQ")]
+    for bull, bear in pairs:
+        b_data = tickers.get(bull)
+        s_data = tickers.get(bear)
+        if not b_data or not s_data:
+            continue
+        b_st = str(b_data.get("status", "") or "")
+        s_st = str(s_data.get("status", "") or "")
+        
+        b_is_bullish = ("顺风" in b_st or "多头" in b_st or "突破" in b_st)
+        s_is_bullish = ("顺风" in s_st or "多头" in s_st or "突破" in s_st)
+        
+        if b_is_bullish and s_is_bullish:
+            b_rsi = float(b_data.get("rsi_4h", 50.0) or 50.0)
+            s_rsi = float(s_data.get("rsi_4h", 50.0) or 50.0)
+            if b_rsi >= s_rsi:
+                s_data["status"] = "⚠️【反向损耗回避·震荡偏弱】"
+                s_data["is_decay_warning"] = True
+            else:
+                b_data["status"] = "⚠️【反向损耗回避·震荡偏弱】"
+                b_data["is_decay_warning"] = True
+
+
 def is_focus_ticker(t_data: Dict[str, Any]) -> bool:
     """判定是否为重点异动标的 (触发见底、突破、回踩成本、触顶)"""
     st = str(t_data.get("status", "") or "")
-    return any(k in st for k in ("见底", "突破成功", "回踩主力成本", "触顶", "超卖"))
+    if "反向损耗" in st:
+        return False
+    return any(k in st for k in ("见底", "突破成功", "放量突破", "回踩主力成本", "触顶", "超卖"))
 
 
 def format_focus_ticker_block(ticker: str, t_data: Dict[str, Any]) -> str:
-    """重点股展开 3 行作战指南 (人话解读 + 操作参考)"""
+    """重点股严格压缩为 2 行干货格式 (彻底删除人话解读与操作参考长句)"""
     sym = t_data.get("display_name")
     if not sym:
         sym = "BTC" if ticker in ("BTC", "BTC-USD") else ticker
 
+    is_btc = (ticker in ("BTC", "BTC-USD") or sym == "BTC")
     price = float(t_data.get("price", 0.0) or 0.0)
     poc = float(t_data.get("poc", 0.0) or 0.0)
     sup = float(t_data.get("support", 0.0) or 0.0)
@@ -682,91 +728,66 @@ def format_focus_ticker_block(ticker: str, t_data: Dict[str, Any]) -> str:
     st = str(t_data.get("status", "") or "").strip()
     is_cooling = bool(t_data.get("is_cooling", False))
 
-    if ticker in ("BTC", "BTC-USD") or sym == "BTC":
-        price_str = f"${int(round(price)):,}"
-        poc_str = f"${int(round(poc)):,}"
-        sup_str = f"${int(round(sup)):,}"
-        res_str = f"${int(round(res)):,}"
-    else:
-        price_str = f"${price:.2f}"
-        poc_str = f"${poc:.2f}"
-        sup_str = f"${sup:.2f}"
-        res_str = f"${res:.2f}"
-
-    cooling_tag = " (⚠️暴跌冷却中·等企稳)" if is_cooling else ""
+    price_str = fmt_price(price, is_btc)
+    poc_str = fmt_price(poc, is_btc)
+    sup_str = fmt_price(sup, is_btc)
+    res_str = fmt_price(res, is_btc)
 
     if "见底" in st or "超卖" in st:
-        if price >= poc:
-            return (
-                f"🔥 **{sym}** 现价 **{price_str}** ｜ **【🔥双周期见底·黄金低吸区】**{cooling_tag}\n"
-                f"💬 **人话解读**：大小周期都跌透了！脚下 **{poc_str}** 就是主力资金建仓最厚的成本区，跌到这附近有强力承接。\n"
-                f"🎯 **操作参考**：下方防守看 **{sup_str}**（不破可分批低吸），上方反弹目标看 **{res_str}**。"
-            )
+        if is_cooling:
+            line1 = f"🔥 **{sym}** {price_str} ｜ **【双周期见底 · ⚠️暴跌冷却中】**"
+            line2 = f"└ 主力底:{poc_str} ｜ 止损:{sup_str} ➔ 观望等企稳"
+        elif price >= poc:
+            line1 = f"🔥 **{sym}** {price_str} ｜ **【双周期见底 · 踩稳主力底低吸】**"
+            line2 = f"└ 主力底:{poc_str} ｜ 止损:{sup_str} ➔ 目标:{res_str}"
         else:
-            return (
-                f"🔥 **{sym}** 现价 **{price_str}** ｜ **【🔥双周期见底·超跌博反弹】**{cooling_tag}\n"
-                f"💬 **人话解读**：短线严重超跌见底，有强烈反抽需求！但头顶 **{poc_str}** 是前期主力套牢成本区，反弹到那会有阻力。\n"
-                f"🎯 **操作参考**：博反弹防守底线 **{sup_str}**，上方第一止盈压力位看 **{res_str} ~ {poc_str}**。"
-            )
-
-    elif "突破成功" in st:
-        return (
-            f"🚀 **{sym}** 现价 **{price_str}** ｜ **【🚀突破成功·右侧走强】**\n"
-            f"💬 **人话解读**：已强势冲破压力位并站稳主力成本区（**{poc_str}**）之上，上方空间打开，多头动能强劲！\n"
-            f"🎯 **操作参考**：回踩 **{sup_str}**（支撑/成本）不破可顺势跟进，上方波段目标看 **{res_str}**。"
-        )
-
+            line1 = f"🔥 **{sym}** {price_str} ｜ **【双周期见底 · 水下超跌博反弹】**"
+            line2 = f"└ 套牢压:{poc_str} ｜ 止损:{sup_str} ➔ 目标:{res_str}"
+    elif "突破" in st:
+        line1 = f"🚀 **{sym}** {price_str} ｜ **【放量突破 · 右侧顺风跟进】**"
+        line2 = f"└ 突破位:{poc_str} ｜ 防守:{sup_str} ➔ 目标:{res_str}"
     elif "回踩主力成本" in st:
-        return (
-            f"🎯 **{sym}** 现价 **{price_str}** ｜ **【🎯回踩主力成本·关注企稳】**\n"
-            f"💬 **人话解读**：股价正好回踩到主力资金最密集的成本价 **{poc_str}** 附近，只要不有效跌破，极易企稳反弹。\n"
-            f"🎯 **操作参考**：贴近 **{sup_str} ~ {poc_str}** 观察企稳低吸，跌破 **{sup_str}** 止损，反弹看 **{res_str}**。"
-        )
-
+        line1 = f"🎯 **{sym}** {price_str} ｜ **【回踩主力成本 · 盯紧企稳】**"
+        line2 = f"└ 主力底:{poc_str} ｜ 跌破{sup_str}止损 ➔ 反弹看{res_str}"
     elif "触顶" in st:
-        return (
-            f"🛑 **{sym}** 现价 **{price_str}** ｜ **【🛑双周期触顶·注意止盈】**\n"
-            f"💬 **人话解读**：大小周期同时涨到极度超买区，短线随时面临获利盘回吐，切勿在山顶追高！\n"
-            f"🎯 **操作参考**：上方强压 **{res_str}** 附近建议分批止盈落袋，跌破 **{sup_str}** 支撑需离场。"
-        )
+        line1 = f"🛑 **{sym}** {price_str} ｜ **【双周期触顶 · 逢高分批止盈】**"
+        line2 = f"└ 强压位:{res_str} ｜ 跌破{sup_str}离场 (勿追高)"
+    else:
+        line1 = f"⚡ **{sym}** {price_str} ｜ **【{st}】**"
+        line2 = f"└ 主力底:{poc_str} ｜ 撑:{sup_str} ➔ 压:{res_str}"
 
-    return (
-        f"⚡ **{sym}** 现价 **{price_str}** ｜ **{st}**\n"
-        f"💬 **人话解读**：主力成本价 **{poc_str}**。\n"
-        f"🎯 **操作参考**：撑 **{sup_str}** ｜ 压 **{res_str}**。"
-    )
+    return f"{line1}\n{line2}"
 
 
 def format_regular_ticker_block(ticker: str, t_data: Dict[str, Any]) -> str:
-    """普通股压缩为 1 行清晰人话简报"""
+    """普通股严格控制单行字符数 (手机端绝不折行)"""
     sym = t_data.get("display_name")
     if not sym:
         sym = "BTC" if ticker in ("BTC", "BTC-USD") else ticker
 
+    is_btc = (ticker in ("BTC", "BTC-USD") or sym == "BTC")
     price = float(t_data.get("price", 0.0) or 0.0)
     poc = float(t_data.get("poc", 0.0) or 0.0)
     sup = float(t_data.get("support", 0.0) or 0.0)
     res = float(t_data.get("resistance", 0.0) or 0.0)
+    st = str(t_data.get("status", "") or "").strip()
 
-    if ticker in ("BTC", "BTC-USD") or sym == "BTC":
-        price_str = f"${int(round(price)):,}"
-        poc_str = f"${int(round(poc)):,}"
-        sup_str = f"${int(round(sup)):,}"
-        res_str = f"${int(round(res)):,}"
-    else:
-        price_str = f"${price:.2f}"
-        poc_str = f"${poc:.2f}"
-        sup_str = f"${sup:.2f}"
-        res_str = f"${res:.2f}"
+    price_str = fmt_price(price, is_btc)
+    poc_str = fmt_price(poc, is_btc)
+    sup_str = fmt_price(sup, is_btc)
+    res_str = fmt_price(res, is_btc)
 
-    if price >= poc:
-        return f"📈 **{sym}** {price_str} (稳居主力成本{poc_str}上方·顺风拿稳) ｜ 撑:{sup_str} / 压:{res_str}"
+    is_decay = t_data.get("is_decay_warning", False) or "反向损耗" in st
+    if is_decay:
+        return f"⚠️ **{sym}** {price_str} ｜ 成本{poc_str} 反向损耗回避 ｜ 撑{sup_str} / 压{res_str}"
+    elif price >= poc:
+        return f"📈 **{sym}** {price_str} ｜ 成本{poc_str} 上方顺风 ｜ 撑{sup_str} / 压{res_str}"
     else:
-        return f"⚠️ **{sym}** {price_str} (跌破主力成本{poc_str}·弱势观望) ｜ 撑:{sup_str} / 压:{res_str}"
+        return f"⚠️ **{sym}** {price_str} ｜ 成本{poc_str} 下方偏弱 ｜ 撑{sup_str} / 压{res_str}"
 
 
 def format_tier_embed_description(symbols: List[str], tickers: Dict[str, Any]) -> str:
-    """梯队 Embed 卡片排版: 分【🌟 本梯队重点异动（优先看）】与【📋 本梯队常规走势（简报）】"""
+    """梯队 Embed 卡片排版: 手机端极简瘦身，无异动时隐藏废话区块"""
     focus_blocks = []
     regular_blocks = []
 
@@ -779,15 +800,15 @@ def format_tier_embed_description(symbols: List[str], tickers: Dict[str, Any]) -
 
     sections = []
     if focus_blocks:
-        sections.append("【🌟 本梯队重点异动（优先看）】")
-        sections.append("\n\n".join(focus_blocks))
-    else:
-        sections.append("【🌟 本梯队重点异动】暂无极值异动，全员按常规节奏运行")
-
-    if regular_blocks:
-        if sections:
+        sections.append("🌟 **【重点异动】**")
+        sections.append("\n".join(focus_blocks))
+        if regular_blocks:
             sections.append("-------------------------")
-        sections.append("【📋 本梯队常规走势（简报）】")
+            sections.append("📋 **【常规走势】**")
+            sections.append("\n".join(regular_blocks))
+    else:
+        # 隐藏“暂无极值异动”废话，直接展示股票列表
+        sections.append("📋 **【标的走势】**")
         sections.append("\n".join(regular_blocks))
 
     return "\n".join(sections)
@@ -851,13 +872,13 @@ def build_message_1_embed(market_analysis: Dict[str, Any]) -> dict:
         p = float(td.get("price", 0.0) or 0.0)
         poc = float(td.get("poc", 0.0) or 0.0)
         is_c = bool(td.get("is_cooling", False))
-        p_fmt = f"${p:.2f}" if sym not in ("BTC", "BTC-USD") else f"${int(p):,}"
+        p_fmt = fmt_price(p, is_btc=(sym in ("BTC", "BTC-USD")))
 
         if "见底" in st or "超卖" in st:
             pos = "紧贴主力成本区" if p >= poc else "超跌博反弹"
             c_flag = "[⚠️暴跌冷却]" if is_c else ""
             bottom_items.append(f"**{sym}**({p_fmt} {pos}{c_flag})")
-        elif "突破成功" in st:
+        elif "突破" in st:
             breakout_items.append(f"**{sym}**({p_fmt} 放量突破)")
         elif "回踩主力成本" in st:
             pullback_items.append(f"**{sym}**({p_fmt} 踩线成本)")
@@ -879,7 +900,12 @@ def build_message_1_embed(market_analysis: Dict[str, Any]) -> dict:
         for ra in res_alerts:
             lines.append(f"· {ra}")
     else:
-        lines.append("· 💬 **人话结论**：当前 SOXL 与 SOXS 均处于震荡整固区，未出现极端多空底部共振，3X 杠杆建议耐心等双周期极值再出手。")
+        soxl_rsi = float(tickers.get("SOXL", {}).get("rsi_4h", 50.0) or 50.0)
+        soxs_rsi = float(tickers.get("SOXS", {}).get("rsi_4h", 50.0) or 50.0)
+        if soxl_rsi >= soxs_rsi:
+            lines.append("· 💬 **人话结论**：多头 SOXL 相对顺风，反向 SOXS 面临磨损回避；未出双周期极值前不盲目追高。")
+        else:
+            lines.append("· 💬 **人话结论**：空头 SOXS 相对顺风，做多 SOXL 提防探底；未出极端见底共振前轻仓观望。")
 
     for sym in ("SOXL", "SOXS", "TQQQ", "SQQQ"):
         td = tickers.get(sym, {})
@@ -888,7 +914,30 @@ def build_message_1_embed(market_analysis: Dict[str, Any]) -> dict:
         s = float(td.get("support", 0.0) or 0.0)
         r = float(td.get("resistance", 0.0) or 0.0)
         st = str(td.get("status", "") or "").strip()
-        lines.append(f"  - **{sym}**: 现 **${p:.2f}** ｜ 主力成本 ${poc:.2f} ｜ 撑 ${s:.2f} / 压 ${r:.2f} {st}")
+        
+        p_str = fmt_price(p)
+        poc_str = fmt_price(poc)
+        s_str = fmt_price(s)
+        r_str = fmt_price(r)
+
+        if "反向损耗" in st:
+            tag = "⚠️反向损耗回避"
+        elif "顺风" in st or "多头" in st:
+            tag = "📈上方顺风"
+        elif "水下" in st or "偏弱" in st or "弱势" in st:
+            tag = "⚠️下方偏弱"
+        elif "见底" in st:
+            tag = "🔥双周期见底"
+        elif "触顶" in st:
+            tag = "🛑双周期触顶"
+        elif "回踩" in st:
+            tag = "🎯回踩成本"
+        elif "突破" in st:
+            tag = "🚀放量突破"
+        else:
+            tag = st
+
+        lines.append(f"  - **{sym}**: 现 **{p_str}** ｜ 成本 {poc_str} ｜ 撑 {s_str} / 压 {r_str} ｜ {tag}")
     lines.append("-------------------------")
 
     # 4. 🧭 【资金高低切风向标（芯片 vs 防御股）】
@@ -922,15 +971,18 @@ def build_discord_payloads(market_analysis: Dict[str, Any]) -> Tuple[Optional[di
     """
     构建符合 Discord 原生 Markdown 富文本卡片 (严格拒绝灰色代码块):
     - 返回 (payload_1, payload_2a, payload_2b)
-    - 严格满足 6,000 字符限制 (各 <= 5,500) 与 10 embeds 限制:
+    - 手机端极简瘦身: 五大梯队各合为 1 张完整卡片 (总共 5 个 Embed，取消 1/2 和 2/2)
       * payload_1: 3秒抄作业总台 (1 embed, < 2,000 字符)
-      * payload_2a: 梯队 1~3 (5 embeds, ~3,000 字符)
-      * payload_2b: 梯队 4~5 (4 embeds, ~2,500 字符)
+      * payload_2a: 梯队 1~3 (3 embeds, ~1,800 字符)
+      * payload_2b: 梯队 4~5 (2 embeds, ~1,500 字符)
     """
     tickers = market_analysis.get("tickers", {})
     factor_y = market_analysis.get("factor_y")
     if not factor_y or not isinstance(factor_y, dict):
         factor_y = compute_factor_y(tickers)
+
+    # 仲裁 3X 杠杆 ETF 冲突
+    resolve_3x_pair_conflicts(tickers)
 
     # 1. Message 1 (3-Second Cheat Sheet)
     embed_msg1 = build_message_1_embed(market_analysis)
@@ -939,7 +991,7 @@ def build_discord_payloads(market_analysis: Dict[str, Any]) -> Tuple[Optional[di
         "embeds": [embed_msg1]
     }
 
-    # 2. Message 2 (5 Tiers Sector Inspection - 9 Paginated Embeds)
+    # 2. Message 2 (5 Tiers Sector Inspection - 5 Consolidated Embeds, No 1/2 or 2/2)
     # Tier 1 (1 embed): Gold (#F1C40F / 15844367)
     t1_syms = SENTINEL_UNIVERSE_TIERS["TIER_1_3X"]
     desc_t1 = format_tier_embed_description(t1_syms, tickers)
@@ -949,68 +1001,44 @@ def build_discord_payloads(market_analysis: Dict[str, Any]) -> Tuple[Optional[di
         "description": desc_t1
     }
 
-    # Tier 2 (2 embeds): Purple (#9B59B6 / 10181046)
+    # Tier 2 (1 embed): Purple (#9B59B6 / 10181046)
     t2_syms = SENTINEL_UNIVERSE_TIERS["TIER_2_CORE"]
-    desc_t2_1 = format_tier_embed_description(t2_syms[:6], tickers)
-    embed_t2_1 = {
-        "title": "⚡ 【第二梯队】核心高弹性与重点池 (1/2)",
+    desc_t2 = format_tier_embed_description(t2_syms, tickers)
+    embed_t2 = {
+        "title": "⚡ 【第二梯队】核心高弹性与重点池",
         "color": 10181046,
-        "description": desc_t2_1
-    }
-    desc_t2_2 = format_tier_embed_description(t2_syms[6:], tickers)
-    embed_t2_2 = {
-        "title": "⚡ 【第二梯队】核心高弹性与重点池 (2/2)",
-        "color": 10181046,
-        "description": desc_t2_2
+        "description": desc_t2
     }
 
-    # Tier 3 (2 embeds): Cyan Blue (#3498DB / 3447003)
+    # Tier 3 (1 embed): Cyan Blue (#3498DB / 3447003)
     t3_syms = SENTINEL_UNIVERSE_TIERS["TIER_3_CHIPS"]
-    desc_t3_1 = format_tier_embed_description(t3_syms[:7], tickers)
-    embed_t3_1 = {
-        "title": "🖥️ 【第三梯队】芯片半导体与存储硬件 (1/2)",
+    desc_t3 = format_tier_embed_description(t3_syms, tickers)
+    embed_t3 = {
+        "title": "🖥️ 【第三梯队】芯片半导体与存储硬件",
         "color": 3447003,
-        "description": desc_t3_1
-    }
-    desc_t3_2 = format_tier_embed_description(t3_syms[7:], tickers)
-    embed_t3_2 = {
-        "title": "🖥️ 【第三梯队】芯片半导体与存储硬件 (2/2)",
-        "color": 3447003,
-        "description": desc_t3_2
+        "description": desc_t3
     }
 
-    # Tier 4 (2 embeds): Blurple (#5865F2 / 5793266)
+    # Tier 4 (1 embed): Blurple (#5865F2 / 5793266)
     t4_syms = SENTINEL_UNIVERSE_TIERS["TIER_4_TECH"]
-    desc_t4_1 = format_tier_embed_description(t4_syms[:7], tickers)
-    embed_t4_1 = {
-        "title": "🌐 【第四梯队】科技巨头、AI云与加密 (1/2)",
+    desc_t4 = format_tier_embed_description(t4_syms, tickers)
+    embed_t4 = {
+        "title": "🌐 【第四梯队】科技巨头、AI云与加密",
         "color": 5793266,
-        "description": desc_t4_1
-    }
-    desc_t4_2 = format_tier_embed_description(t4_syms[7:], tickers)
-    embed_t4_2 = {
-        "title": "🌐 【第四梯队】科技巨头、AI云与加密 (2/2)",
-        "color": 5793266,
-        "description": desc_t4_2
+        "description": desc_t4
     }
 
-    # Tier 5 (2 embeds): Emerald (#2ECC71 / 3066993) with synthetic Y at top
+    # Tier 5 (1 embed): Emerald (#2ECC71 / 3066993) with synthetic Y at top
     t5_items = ["Y"] + SENTINEL_UNIVERSE_TIERS["TIER_5_DEFENSE"]
-    desc_t5_1 = format_tier_embed_description(t5_items[:5], tickers)
-    embed_t5_1 = {
-        "title": "🛡️ 【第五梯队】神秘因子Y与宏观防御 (1/2)",
+    desc_t5 = format_tier_embed_description(t5_items, tickers)
+    embed_t5 = {
+        "title": "🛡️ 【第五梯队】神秘因子Y与宏观防御",
         "color": 3066993,
-        "description": desc_t5_1
-    }
-    desc_t5_2 = format_tier_embed_description(t5_items[5:], tickers)
-    embed_t5_2 = {
-        "title": "🛡️ 【第五梯队】神秘因子Y与宏观防御 (2/2)",
-        "color": 3066993,
-        "description": desc_t5_2
+        "description": desc_t5
     }
 
-    embeds_2a = [embed_t1, embed_t2_1, embed_t2_2, embed_t3_1, embed_t3_2]
-    embeds_2b = [embed_t4_1, embed_t4_2, embed_t5_1, embed_t5_2]
+    embeds_2a = [embed_t1, embed_t2, embed_t3]
+    embeds_2b = [embed_t4, embed_t5]
 
     payload_2a = {
         "username": "小豆泥·板块巡检",

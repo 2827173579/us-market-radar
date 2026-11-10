@@ -566,9 +566,12 @@ class TestDiscordSentinelTier2(unittest.TestCase):
         st6 = ds.evaluate_rsi_state(rsi_4h=58.0, rsi_1d=55.0, price=112.0, poc=100.0, prev_20_high=110.0)
         self.assertEqual(st6, "🚀【突破成功·右侧走强】")
 
-        # Case 7: Pullback to POC Support (0% ~ +1.8%)
-        st7 = ds.evaluate_rsi_state(rsi_4h=52.0, rsi_1d=50.0, price=101.2, poc=100.0)
-        self.assertEqual(st7, "🎯【回踩主力成本·盯紧企稳】")
+        # Case 7: Pullback to POC Support (Tightened: <= 0.8% and 4H_RSI <= 48)
+        st7_tight = ds.evaluate_rsi_state(rsi_4h=45.0, rsi_1d=50.0, price=100.5, poc=100.0)
+        self.assertEqual(st7_tight, "🎯【回踩主力成本·盯紧企稳】")
+        # Beyond 0.8% or RSI > 48 falls back to bull tailwind
+        st7_loose = ds.evaluate_rsi_state(rsi_4h=52.0, rsi_1d=50.0, price=101.2, poc=100.0)
+        self.assertEqual(st7_loose, "📈【站稳主力上方·多头顺风】")
 
         # Case 8: Bull Tailwind (> POC * 1.018)
         st8 = ds.evaluate_rsi_state(rsi_4h=55.0, rsi_1d=52.0, price=108.0, poc=100.0)
@@ -728,26 +731,26 @@ class TestDiscordSentinelTier3(unittest.TestCase):
             p1_chars = calculate_payload_chars(payload_1)
             self.assertLessEqual(p1_chars, 2000, f"Payload 1 chars {p1_chars} exceeds 2000")
 
-        # Payload 2A (Tiers 1, 2, 3: 5 embeds)
+        # Payload 2A (Tiers 1, 2, 3: 3 embeds consolidated, no 1/2 or 2/2)
         p2a_embeds = payload_2a.get("embeds", [])
-        self.assertEqual(len(p2a_embeds), 5, f"Payload 2A should contain 5 embeds (Tier 1 + 2*Tier 2 + 2*Tier 3), got {len(p2a_embeds)}")
+        self.assertEqual(len(p2a_embeds), 3, f"Payload 2A should contain 3 embeds (Tier 1 + Tier 2 + Tier 3), got {len(p2a_embeds)}")
         self.assertLessEqual(len(p2a_embeds), 10, "Payload 2A exceeds 10 embeds limit")
         for embed in p2a_embeds:
             self.assertLessEqual(len(embed.get("description", "")), 4096, "Embed description exceeds 4096")
         p2a_chars = calculate_payload_chars(payload_2a)
         self.assertLessEqual(p2a_chars, 5500, f"Payload 2A total chars {p2a_chars} exceeds safe limit 5500 (Discord ceiling 6000)")
 
-        # Payload 2B (Tiers 4, 5: 4 embeds)
+        # Payload 2B (Tiers 4, 5: 2 embeds consolidated, no 1/2 or 2/2)
         p2b_embeds = payload_2b.get("embeds", [])
-        self.assertEqual(len(p2b_embeds), 4, f"Payload 2B should contain 4 embeds (2*Tier 4 + 2*Tier 5), got {len(p2b_embeds)}")
+        self.assertEqual(len(p2b_embeds), 2, f"Payload 2B should contain 2 embeds (Tier 4 + Tier 5), got {len(p2b_embeds)}")
         self.assertLessEqual(len(p2b_embeds), 10, "Payload 2B exceeds 10 embeds limit")
         for embed in p2b_embeds:
             self.assertLessEqual(len(embed.get("description", "")), 4096, "Embed description exceeds 4096")
         p2b_chars = calculate_payload_chars(payload_2b)
         self.assertLessEqual(p2b_chars, 5500, f"Payload 2B total chars {p2b_chars} exceeds safe limit 5500 (Discord ceiling 6000)")
 
-        # Total embeds across Part 2A and 2B must be exactly 9
-        self.assertEqual(len(p2a_embeds) + len(p2b_embeds), 9, "Message 2 total embeds across 2A and 2B must be 9")
+        # Total embeds across Part 2A and 2B must be exactly 5
+        self.assertEqual(len(p2a_embeds) + len(p2b_embeds), 5, "Message 2 total embeds across 2A and 2B must be 5")
 
 
 # ==============================================================================
