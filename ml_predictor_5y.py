@@ -129,7 +129,7 @@ SECTOR_CHINESE_MAP = {
     'Crypto_Proxy': '加密币股代理',
 }
 
-MACRO_ETFS = ['QQQM', 'SPY', 'SMH', 'IGV', 'TLT', 'VIXY', 'GLD']
+MACRO_ETFS = ['QQQ', 'SPY', 'SMH', 'IGV', 'TLT', 'VIXY', 'GLD']
 TARGET_STOCKS = list(SECTOR_MAP.keys())
 ALL_SYMBOLS = TARGET_STOCKS + MACRO_ETFS  # Exactly 35 symbols
 
@@ -153,12 +153,12 @@ STOCK_FEATURE_COLS = [
 ]
 
 CROSS_ASSET_FEATURE_COLS = [
-    'Alpha_QQQM_5d',
+    'Alpha_QQQ_5d',
     'Alpha_SMH_20d',
 ]
 
 MACRO_FEATURE_COLS = [
-    'QQQM_Bias_MA50',
+    'QQQ_Bias_MA50',
     'SMH_Bias_MA50',
     'TLT_Bias_MA50',
     'VIXY_Bias_MA20',
@@ -170,7 +170,7 @@ FEATURE_COLS = STOCK_FEATURE_COLS + CROSS_ASSET_FEATURE_COLS + MACRO_FEATURE_COL
 assert len(FEATURE_COLS) == 23, f"Expected exactly 23 features, got {len(FEATURE_COLS)}"
 
 FEATURE_RATIONALES = {
-    'QQQM_Bias_MA50': '纳指100大盘50日均线乖离，系统性科技Beta环境水温计',
+    'QQQ_Bias_MA50': '纳指100大盘50日均线乖离，系统性科技Beta环境水温计',
     'SMH_IGV_Ratio_Bias': '硬件(SMH)与软件(IGV)风格轮动比值乖离，捕捉资金在AI算力与SaaS间的风格切换',
     'ATR_Pct': '日线真实波动率占比，自适应动态调节止盈止损宽窄度与风险敞口',
     'Bias_SMA200': '200日牛熊生命线偏离度，标定长期估值偏离与大周期均值回归动量',
@@ -181,7 +181,7 @@ FEATURE_RATIONALES = {
     'EMA10_20_Spread': '双指数均线发散率，刻画主升浪初期均线多头排列爆发速度',
     'Ret_3d': '3日超短线冲刺速度，识别右侧波段启动瞬间的点火动量',
     'Bias_MA50': '中期持仓成本偏离度，衡量波段回踩50日线的支撑强度',
-    'Alpha_QQQM_5d': '相比纳指100的5日超额Alpha，筛选跑赢科技大盘的领涨龙头标的',
+    'Alpha_QQQ_5d': '相比纳指100的5日超额Alpha，筛选跑赢科技大盘的领涨龙头标的',
     'Ret_5d': '5日周线级别收益率，捕捉多头波段脉冲与右侧买入窗口',
     'Bar_Strength': '日内K线实体收盘强弱分位，量化尾盘多头护盘意愿与资金承接力',
     'RSI_Slope_3d': '3日RSI斜率加速度，探测动能指标边际突变与多头拐点',
@@ -401,7 +401,7 @@ def compute_macro_features(
     macro_map: Optional[Dict[str, pd.DataFrame]] = None
 ) -> pd.DataFrame:
     """
-    基于宏观基准 ETF (QQQM, SMH, IGV, TLT, VIXY) 计算 6 维全局气象特征与基准收益率。
+    基于宏观基准 ETF (QQQ, SMH, IGV, TLT, VIXY) 计算 6 维全局气象特征与基准收益率。
     支持直接传入 macro_map 字典或从 raw_panel 中提取。
     每个 ETF 子表独立按 Date 排序并计算指标，统一通过 pd.merge(..., on='Date', how='left') 合并，
     彻底解决切片行号索引不相交导致特征全为 NaN 并被静默填 0 的问题。
@@ -420,23 +420,23 @@ def compute_macro_features(
     else:
         raise ValueError("CRITICAL: raw_panel 和 macro_map 至少需要提供一个！")
 
-    for req_etf in ['QQQM', 'SMH', 'IGV', 'TLT', 'VIXY']:
+    for req_etf in ['QQQ', 'SMH', 'IGV', 'TLT', 'VIXY']:
         if req_etf not in etf_dfs:
             raise ValueError(f"CRITICAL: 缺失计算宏观气象必需的 ETF: {req_etf}")
 
-    qqqm = etf_dfs['QQQM'].sort_values('Date').reset_index(drop=True)
+    qqqm = etf_dfs['QQQ'].sort_values('Date').reset_index(drop=True)
     smh = etf_dfs['SMH'].sort_values('Date').reset_index(drop=True)
     igv = etf_dfs['IGV'].sort_values('Date').reset_index(drop=True)
     tlt = etf_dfs['TLT'].sort_values('Date').reset_index(drop=True)
     vixy = etf_dfs['VIXY'].sort_values('Date').reset_index(drop=True)
 
-    # 1. QQQM 特征表
+    # 1. QQQ 特征表
     qqqm_close = qqqm['Close'].astype(float)
     qqqm_ma50 = qqqm_close.rolling(50, min_periods=1).mean()
     qqqm_feat = pd.DataFrame({
         'Date': qqqm['Date'],
-        'QQQM_Bias_MA50': ((qqqm_close - qqqm_ma50) / (qqqm_ma50 + 1e-8)) * 100.0,
-        'QQQM_Ret_5d': qqqm_close.pct_change(5).fillna(0.0) * 100.0
+        'QQQ_Bias_MA50': ((qqqm_close - qqqm_ma50) / (qqqm_ma50 + 1e-8)) * 100.0,
+        'QQQ_Ret_5d': qqqm_close.pct_change(5).fillna(0.0) * 100.0
     })
 
     # 2. SMH 特征表
@@ -485,7 +485,7 @@ def compute_macro_features(
         'SMH_IGV_Ratio_Bias': ((smh_igv_ratio - ratio_ma20) / (ratio_ma20 + 1e-8)) * 100.0
     })
 
-    # 6. 以 QQQM 的所有交易日为基准按 Date 左连接全部宏观特征
+    # 6. 以 QQQ 的所有交易日为基准按 Date 左连接全部宏观特征
     macro_df = pd.DataFrame({'Date': sorted(qqqm['Date'].unique())})
     for sub_df in [qqqm_feat, smh_feat, tlt_feat, vixy_feat, smh_igv_feat]:
         macro_df = pd.merge(macro_df, sub_df, on='Date', how='left')
@@ -507,7 +507,7 @@ def build_feature_panel(
     1. 独立计算每个股票自身的 15 维技术指标；
     2. 计算宏观 ETF 的 6 维全局气象与基准收益率；
     3. 按 Date 将宏观特征左连接广播到每个个股；
-    4. 计算跨资产超额收益 Alpha_QQQM_5d, Alpha_SMH_20d；
+    4. 计算跨资产超额收益 Alpha_QQQ_5d, Alpha_SMH_20d；
     5. 纵向垂直堆叠为长表截面格式；
     6. 严格禁止宽表全局 dropna()，确保次新股 (CRWV, IBIT, CRDO) 不会截断成熟股票的 2021-2023 历史样本。
     
@@ -539,7 +539,7 @@ def build_feature_panel(
     merged = pd.merge(long_panel, macro_df, on='Date', how='left')
 
     # 计算 2 维跨资产超额收益并结合当日横截面百分位排名与连续超额幅度 (严格在同日 groupby('Date') 内计算，零未来函数)
-    raw_alpha_qqqm = (merged['Ret_5d'] - merged['QQQM_Ret_5d']).replace([np.inf, -np.inf], np.nan).fillna(0.0)
+    raw_alpha_qqqm = (merged['Ret_5d'] - merged['QQQ_Ret_5d']).replace([np.inf, -np.inf], np.nan).fillna(0.0)
     raw_alpha_smh = (merged['Ret_20d'] - merged['SMH_Ret_20d']).replace([np.inf, -np.inf], np.nan).fillna(0.0)
     merged['_raw_alpha_qqqm'] = raw_alpha_qqqm
     merged['_raw_alpha_smh'] = raw_alpha_smh
@@ -547,7 +547,7 @@ def build_feature_panel(
     cs_rank_smh = merged.groupby('Date')['_raw_alpha_smh'].rank(pct=True).fillna(0.5)
     sig_qqqm = 1.0 / (1.0 + np.exp(-np.clip(raw_alpha_qqqm, -50.0, 50.0) / 5.0))
     sig_smh = 1.0 / (1.0 + np.exp(-np.clip(raw_alpha_smh, -50.0, 50.0) / 8.0))
-    merged['Alpha_QQQM_5d'] = np.clip(0.65 * cs_rank_qqqm + 0.35 * sig_qqqm, 0.0, 1.0)
+    merged['Alpha_QQQ_5d'] = np.clip(0.65 * cs_rank_qqqm + 0.35 * sig_qqqm, 0.0, 1.0)
     merged['Alpha_SMH_20d'] = np.clip(0.65 * cs_rank_smh + 0.35 * sig_smh, 0.0, 1.0)
     merged = merged.drop(columns=['_raw_alpha_qqqm', '_raw_alpha_smh'], errors='ignore')
 
@@ -558,7 +558,7 @@ def build_feature_panel(
         merged[feat] = merged[feat].replace([np.inf, -np.inf], np.nan).fillna(0.0)
 
     # 移除辅助对齐列
-    merged = merged.drop(columns=['QQQM_Ret_5d', 'SMH_Ret_20d'], errors='ignore')
+    merged = merged.drop(columns=['QQQ_Ret_5d', 'SMH_Ret_20d'], errors='ignore')
 
     return merged
 
@@ -1303,7 +1303,7 @@ def overlay_finnhub_quotes(raw_panel: pd.DataFrame, quotes: Dict[str, Dict]) -> 
 
 
 DEFENSIVE_FLIGHT_DEF_SYMBOLS = ['KO', 'PEP', 'MCD', 'LLY', 'MRNA', 'TLT', 'GLD', 'VIXY']
-DEFENSIVE_FLIGHT_OFF_SYMBOLS = ['SMH', 'SOXL', 'NVDA', 'QQQM']
+DEFENSIVE_FLIGHT_OFF_SYMBOLS = ['SMH', 'SOXL', 'NVDA', 'QQQ']
 
 
 def compute_defensive_flight_alert(
@@ -1313,7 +1313,7 @@ def compute_defensive_flight_alert(
     """
     R1: 防御避险与去杠杆踩踏预警 (Defensive Flight Alert)
     对比防御避险资产 (KO, PEP, MCD, LLY, MRNA, TLT, GLD, VIXY)
-    与高弹性科技成长进攻资产 (SMH, SOXL, NVDA, QQQM) 的日内/日线超额表现。
+    与高弹性科技成长进攻资产 (SMH, SOXL, NVDA, QQQ) 的日内/日线超额表现。
     当防御因子超额收益分数 (flight_score) 达到或超过 +2.2% 且进攻科技处于弱势 (mean_off <= 0.0) 时，
     触发全系统机构去杠杆踩踏警报 (🚨 防御因子起飞 · 警惕机构盘中去杠杆踩踏)。
     """
@@ -1909,7 +1909,7 @@ def compute_4h_resonance_signals(
 
 
 DEFAULT_TIME_CYCLE_TICKERS: List[str] = [
-    'SOXL', 'SOXX', 'SOXS', 'SMH', 'QQQM', 'SQQQ',
+    'SOXL', 'SOXX', 'SOXS', 'SMH', 'QQQ', 'SQQQ',
     'NVDA', 'TSM', 'MU', 'AMD', 'AVGO', 'MRVL',
     'INTC', 'SNDK', 'KORU', 'IBIT', 'TSLA', 'PLTR', 'META', 'AAPL', 'AMZN'
 ]
@@ -1958,7 +1958,7 @@ def generate_time_cycle_projections(
     时空周期推演 V2.2 (100% 真实数学推演版 · 零人工终点 · 零人造正弦波):
     1. 自动合并主库 `ml_panel_5y.parquet` 与扩展库 `ml_extended_panel.parquet`；
     2. 【同日联合历史相似匹配 (KNN-5 Joint Historical Regime Analog)】：
-       在 5 年历史中检索与当前 25 日市场形态 (SMH + QQQM 联合相关度) 最相似的 Top 5 个非重叠历史时间窗口，
+       在 5 年历史中检索与当前 25 日市场形态 (SMH + QQQ 联合相关度) 最相似的 Top 5 个非重叠历史时间窗口，
        直接提取各标的在该 5 个真实历史日期之后 15 天的真实历史收益率路径 (施加 0.55x James-Stein 样本外收缩阻尼)，
        从根源上保证同板块/正反向杠杆 ETF 的方向一致性完全由真实历史行情自然涌现，绝不人为指定 R1/R2 终点；
     3. 【纯零漂移傅里叶谐波分解 (Zero-Drift EMA20-Detrended FFT)】：
@@ -1997,14 +1997,14 @@ def generate_time_cycle_projections(
 
     window_len = 25
 
-    # 若包含完整多标的面板 (SMH 与 QQQM 均存在且长度充足)，预计算全局 Top-5 联合历史相似时间窗
+    # 若包含完整多标的面板 (SMH 与 QQQ 均存在且长度充足)，预计算全局 Top-5 联合历史相似时间窗
     piv = None
     joint_top_k = []
     joint_weights = None
     try:
-        if 'Date' in combined_panel.columns and {'SMH', 'QQQM'}.issubset(set(combined_panel['Ticker'].unique())):
+        if 'Date' in combined_panel.columns and {'SMH', 'QQQ'}.issubset(set(combined_panel['Ticker'].unique())):
             piv = combined_panel.pivot(index='Date', columns='Ticker', values='Close').sort_index()
-            valid_piv = piv.dropna(subset=['SMH', 'QQQM'])
+            valid_piv = piv.dropna(subset=['SMH', 'QQQ'])
             if len(valid_piv) > window_len + forecast_days + 120:
                 piv = valid_piv
                 dates_idx = piv.index
@@ -2015,7 +2015,7 @@ def generate_time_cycle_projections(
                 if end_i > start_i + 30:
                     t_smh = piv['SMH'].values[-window_len:]
                     n_smh = (t_smh - np.mean(t_smh)) / (np.std(t_smh) + 1e-8)
-                    t_qqq = piv['QQQM'].values[-window_len:]
+                    t_qqq = piv['QQQ'].values[-window_len:]
                     n_qqq = (t_qqq - np.mean(t_qqq)) / (np.std(t_qqq) + 1e-8)
                     cur_ret5_smh = (t_smh[-1] - t_smh[-6]) / (t_smh[-6] + 1e-8)
                     cur_b1_smh = (t_smh[-1] - t_smh[-2]) / (t_smh[-2] + 1e-8)
@@ -2023,7 +2023,7 @@ def generate_time_cycle_projections(
                     raw_cands = []
                     for i in range(start_i, end_i):
                         c_smh = piv['SMH'].values[i:i + window_len]
-                        c_qqq = piv['QQQM'].values[i:i + window_len]
+                        c_qqq = piv['QQQ'].values[i:i + window_len]
                         corr_s = float(np.corrcoef(n_smh, (c_smh - np.mean(c_smh)) / (np.std(c_smh) + 1e-8))[0, 1])
                         corr_q = float(np.corrcoef(n_qqq, (c_qqq - np.mean(c_qqq)) / (np.std(c_qqq) + 1e-8))[0, 1])
                         j_corr = 0.65 * corr_s + 0.35 * corr_q
@@ -2052,7 +2052,7 @@ def generate_time_cycle_projections(
     for tk in target_tickers:
         sub = combined_panel[combined_panel['Ticker'] == tk].sort_values('Date').reset_index(drop=True)
         if sub.empty or len(sub) < 60:
-            sub = combined_panel[combined_panel['Ticker'] == 'QQQM'].sort_values('Date').reset_index(drop=True)
+            sub = combined_panel[combined_panel['Ticker'] == 'QQQ'].sort_values('Date').reset_index(drop=True)
             if sub.empty:
                 continue
 
@@ -2196,8 +2196,8 @@ def evaluate_macro_weather(
 ) -> Dict[str, Any]:
     """
     统一宏观水温气象判定引擎 (与 integrated_market_radar.py 保持 100% 规则对齐):
-    1. 暴雨空仓: QQQM_Bias_MA50 < -3.0% 且 SMH_Bias_MA50 < -3.0% (双破位共振)
-    2. 晴天做多: 纳指与半导体双双站上生命线 (QQQM >= 0.25% 且 SMH >= 0.25%) 且无 VIX 恐慌脉冲 (VIXY_Pos_60 < 0.75)
+    1. 暴雨空仓: QQQ_Bias_MA50 < -3.0% 且 SMH_Bias_MA50 < -3.0% (双破位共振)
+    2. 晴天做多: 纳指与半导体双双站上生命线 (QQQ >= 0.25% 且 SMH >= 0.25%) 且无 VIX 恐慌脉冲 (VIXY_Pos_60 < 0.75)
     3. 阴天防守: 单边偏离在 0% ~ -5% 且未双破位、或大盘/芯片分化、或 VIX 脉冲预警、或防御因子起飞
     """
     flight_info = defensive_flight or compute_defensive_flight_alert()
@@ -2249,8 +2249,8 @@ def load_options_cache(cache_path: Optional[str] = None) -> Dict[str, Dict[str, 
         os.path.join(cur_dir, "..", ".options_cache.json"),
         os.path.join(cur_dir, "us-market-radar", ".options_cache.json"),
         os.path.join(cur_dir, "data_cache", ".options_cache.json"),
-        os.path.join(r"C:\Users\User\.gemini\antigravity-ide\scratch", ".options_cache.json"),
-        os.path.join(r"C:\Users\User\.gemini\antigravity-ide\scratch\us-market-radar", ".options_cache.json")
+        os.path.join(cur_dir, "..", "us-market-radar", ".options_cache.json"),
+        os.path.join(os.path.expanduser("~"), ".options_cache.json")
     ])
     for p in search_paths:
         if os.path.exists(p):
@@ -2434,7 +2434,7 @@ def get_short_action_directive(
         return "⚠️ 严重超跌·谨防死猫跳·暂勿追空", "short-action-oversold"
     if calibrated_short_win_rate_pct >= 65.0:
         semi_etfs = {"SOXX", "SOXL", "SOXS", "SMH"}
-        tech_etfs = {"QQQM", "QQQ", "SQQQ", "SPY"}
+        tech_etfs = {"QQQ", "QQQ", "SQQQ", "SPY"}
         if is_etf and (ticker in semi_etfs or "半导体" in sector or "芯片" in sector):
             return "🛡️ 建议买入SOXS对冲", "short-action-etf"
         elif is_etf and (ticker in tech_etfs or "科技" in sector or "纳指" in sector):
@@ -2835,7 +2835,7 @@ def generate_report_tables(
         latest_df['Prob_Short_1'] = live_short_probs
 
         has_live_structure = ('Bias_MA50' in latest_df.columns)
-        pure_etf_15 = {'QQQM', 'SPY', 'DIA', 'IWM', 'SMH', 'SOXX', 'SOXL', 'KORU', 'IGV', 'TLT', 'GLD', 'QQQI', 'VIXY', 'SQQQ', 'SOXS'}
+        pure_etf_15 = {'QQQ', 'SPY', 'DIA', 'IWM', 'SMH', 'SOXX', 'SOXL', 'KORU', 'IGV', 'TLT', 'GLD', 'QQQI', 'VIXY', 'SQQQ', 'SOXS'}
         is_70_pool = (len(latest_df) > 28)
 
         calibrated_probs = []
@@ -3174,8 +3174,10 @@ def generate_report_tables(
 
             all_live_rows.append(row_item)
 
-        # 多头精选榜 Top 10 (正股优先，右侧结构完好优先)
-        top_long_stocks = [r.copy() for r in all_live_rows if not r.get('is_etf', False)][:10] or [r.copy() for r in all_live_rows[:10]]
+        # 多头精选榜 Top 10 (正股优先，严格按 calibrated_win_rate_pct 降序，与空头榜排序口径一致)
+        long_candidates = [r.copy() for r in all_live_rows if not r.get('is_etf', False)]
+        long_candidates.sort(key=lambda x: -float(x.get('calibrated_win_rate_pct') or 0.0))
+        top_long_stocks = long_candidates[:10] or [r.copy() for r in all_live_rows[:10]]
         for idx_rk, item in enumerate(top_long_stocks, 1):
             item['rank'] = idx_rk
 
@@ -3199,7 +3201,7 @@ def generate_report_tables(
     kpi_win_rate = table1_rows[1]['win_rate_pct'] if len(table1_rows) > 1 else 62.5
     kpi_profit_factor = table1_rows[1]['profit_factor'] if len(table1_rows) > 1 else 2.18
     kpi_top_sector = f"{table2_rows[0]['sector_name_cn']} ({table2_rows[0]['alpha_rating']})" if table2_rows else "存储芯片 (⭐⭐⭐⭐⭐)"
-    kpi_top_feature = f"{table3_rows[0]['feature']} ({table3_rows[0]['gain_share_pct']}%)" if table3_rows else "QQQM_Bias_MA50 (14.3%)"
+    kpi_top_feature = f"{table3_rows[0]['feature']} ({table3_rows[0]['gain_share_pct']}%)" if table3_rows else "QQQ_Bias_MA50 (14.3%)"
 
     # 生成核心标的时空周期与未来路径推演图
     time_cycle_proj = {}
@@ -3692,7 +3694,7 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
 
     # 生成 Table 4-A 做多排行榜与全域 70 标的 HTML (默认展示 Top 5，支持展开全池与按赛道/ETF筛选)
     t4_rows_html = ""
-    pure_etf_set = {'QQQM', 'SPY', 'DIA', 'IWM', 'SMH', 'SOXX', 'SOXL', 'KORU', 'IGV', 'TLT', 'GLD', 'QQQI', 'VIXY', 'SQQQ', 'SOXS', 'IBIT'}
+    pure_etf_set = {'QQQ', 'SPY', 'DIA', 'IWM', 'SMH', 'SOXX', 'SOXL', 'KORU', 'IGV', 'TLT', 'GLD', 'QQQI', 'VIXY', 'SQQQ', 'SOXS', 'IBIT'}
     etf_count = 0
     for r in all_live:
         rk = int(r['rank'])
@@ -4523,7 +4525,7 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
             </div>
             <div class="kpi-card blue">
                 <div class="kpi-label">第一核心驱动因子</div>
-                <div class="kpi-val" style="font-size: 20px; color: var(--primary-blue); font-family: 'JetBrains Mono', monospace;">{kpi.get('top_feature', 'QQQM_Bias_MA50')}</div>
+                <div class="kpi-val" style="font-size: 20px; color: var(--primary-blue); font-family: 'JetBrains Mono', monospace;">{kpi.get('top_feature', 'QQQ_Bias_MA50')}</div>
                 <div class="kpi-sub">colsample=0.65 & max_bin=63 树分裂防垄断正则化</div>
             </div>
         </div>
@@ -4540,7 +4542,7 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
             </div>
             <div class="weather-stats">
                 <div class="weather-stat-pill">
-                    <span class="lbl">QQQM MA50 乖离</span>
+                    <span class="lbl">QQQ MA50 乖离</span>
                     <span class="val" style="color: {'#3fb950' if weather.get('qqqm_bias', 0) >= 0 else '#f85149'};">{weather.get('qqqm_bias', 0.0):+.2f}%</span>
                 </div>
                 <div class="weather-stat-pill">
@@ -4555,7 +4557,7 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
                     <span class="lbl">硬件/软件轮动 (SMH/IGV)</span>
                     <span class="val" style="color: {'#58a6ff' if weather.get('smh_igv', 0) >= 0 else '#bc8cff'};">{weather.get('smh_igv', 0.0):+.2f}%</span>
                 </div>
-                <div class="weather-stat-pill" title="防御避险组 (KO/PEP/MCD/LLY/MRNA/TLT/GLD/VIXY) 相对进攻科技组 (QQQM/SMH/NVDA/SOXL) 超额走强背离度 (预警阈值 +2.2%)">
+                <div class="weather-stat-pill" title="防御避险组 (KO/PEP/MCD/LLY/MRNA/TLT/GLD/VIXY) 相对进攻科技组 (QQQ/SMH/NVDA/SOXL) 超额走强背离度 (预警阈值 +2.2%)">
                     <span class="lbl">防御/科技背离 (Flight)</span>
                     <span class="val" style="color: {'#f85149' if (flight_info and flight_info.get('is_alert')) else ('#ffd54f' if float((flight_info or {}).get('flight_score', 0.0)) >= 1.2 else '#3fb950')};">{float((flight_info or {}).get('flight_score', 0.0)):+.2f}% {'🚨' if (flight_info and flight_info.get('is_alert')) else '🛡️'}</span>
                 </div>
@@ -4580,7 +4582,7 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
                     <button class="cycle-tab-btn" onclick="switchCycleSymbol('TSM')">TSM</button>
                     <button class="cycle-tab-btn" onclick="switchCycleSymbol('NVDA')">NVDA</button>
                     <button class="cycle-tab-btn" onclick="switchCycleSymbol('MU')">MU</button>
-                    <button class="cycle-tab-btn" onclick="switchCycleSymbol('QQQM')">QQQM</button>
+                    <button class="cycle-tab-btn" onclick="switchCycleSymbol('QQQ')">QQQ</button>
                     <button class="cycle-tab-btn" onclick="switchCycleSymbol('SQQQ')">SQQQ</button>
                     <button class="cycle-tab-btn" onclick="switchCycleSymbol('KORU')">KORU</button>
                     <button class="cycle-tab-btn" onclick="switchCycleSymbol('IBIT')">IBIT (比特币)</button>
@@ -4598,7 +4600,7 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
                         <option value="MRVL">MRVL (迈威尔)</option>
                         <option value="INTC">INTC (英特尔)</option>
                         <option value="SNDK">SNDK (闪迪存储)</option>
-                        <option value="QQQM">QQQM (纳指100ETF)</option>
+                        <option value="QQQ">QQQ (纳指100ETF)</option>
                         <option value="SQQQ">SQQQ (纳指3倍做空)</option>
                         <option value="KORU">KORU (韩股3倍做多)</option>
                         <option value="IBIT">IBIT (比特币现货ETF)</option>
@@ -5228,7 +5230,7 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
                     'SMH': 'VanEck半导体', 'TSM': '台积电', 'NVDA': '英伟达算力',
                     'MU': '美光存储', 'AMD': '超威半导体', 'AVGO': '博通通信',
                     'MRVL': '迈威尔芯片', 'INTC': '英特尔芯片', 'SNDK': '闪迪数据存储',
-                    'QQQM': '纳指100微型', 'SQQQ': '3倍做空纳指', 'KORU': '3倍做多韩股',
+                    'QQQ': '纳指100微型', 'SQQQ': '3倍做空纳指', 'KORU': '3倍做多韩股',
                     'IBIT': '比特币现货ETF', 'TSLA': '特斯拉物理AI', 'PLTR': 'Palantir企业AI'
                 }};
                 subEl.textContent = subNames[data.ticker] || '';
@@ -5751,7 +5753,7 @@ EXTENDED_RADAR_SECTOR_MAP: Dict[str, Tuple[str, str]] = {
     'LLY':  ('Energy_Power', '价值蓝筹与医药'),
     'MRNA': ('Energy_Power', '价值蓝筹与医药'),
     # 宏观基准与对冲 ETF
-    'QQQM': ('Semiconductors', '大盘与宏观ETF'),
+    'QQQ': ('Semiconductors', '大盘与宏观ETF'),
     'SPY':  ('Enterprise_SaaS', '大盘与宏观ETF'),
     'DIA':  ('Enterprise_SaaS', '大盘与宏观ETF'),
     'IWM':  ('Neo_Cloud', '大盘与宏观ETF'),
@@ -5827,8 +5829,12 @@ def build_extended_live_features_df(
             continue
         sub['Sector'] = sec_key
         feat_sub = compute_stock_features(sub).sort_values('Date')
-        merged_sub = pd.merge_asof(feat_sub, macro_df.sort_values('Date'), on='Date', direction='backward')
-        merged_sub['Raw_Alpha_QQQM_5d'] = merged_sub['Ret_5d'] - merged_sub['QQQM_Ret_5d'].fillna(0.0)
+        # pandas >= 3.0 兼容修复：merge_asof 要求两侧 Date dtype 完全一致，统一规整为 datetime64[ns]
+        feat_sub['Date'] = pd.to_datetime(feat_sub['Date']).astype('datetime64[ns]')
+        macro_df_norm = macro_df.copy()
+        macro_df_norm['Date'] = pd.to_datetime(macro_df_norm['Date']).astype('datetime64[ns]')
+        merged_sub = pd.merge_asof(feat_sub, macro_df_norm.sort_values('Date'), on='Date', direction='backward')
+        merged_sub['Raw_Alpha_QQQ_5d'] = merged_sub['Ret_5d'] - merged_sub['QQQ_Ret_5d'].fillna(0.0)
         merged_sub['Raw_Alpha_SMH_20d'] = merged_sub['Ret_20d'] - merged_sub['SMH_Ret_20d'].fillna(0.0)
         last_row = merged_sub.sort_values('Date').iloc[[-1]].copy()
         last_row['Sector_CN_Override'] = sec_cn_override
@@ -5846,11 +5852,11 @@ def build_extended_live_features_df(
         full_latest['Sector_CN_Override'] = ""
         full_latest['Is_Core_28'] = True
 
-    # 在 70 只标的全截面上重算今日 Alpha_QQQM_5d 与 Alpha_SMH_20d (0.65 * cs_rank + 0.35 * sigmoid)
-    if 'Raw_Alpha_QQQM_5d' in full_latest.columns:
-        cs_q5 = full_latest['Raw_Alpha_QQQM_5d'].rank(pct=True, method='average').fillna(0.5)
-        sig_q5 = 1.0 / (1.0 + np.exp(-np.clip(full_latest['Raw_Alpha_QQQM_5d'] / 8.0, -15.0, 15.0)))
-        full_latest['Alpha_QQQM_5d'] = (0.65 * cs_q5 + 0.35 * sig_q5).fillna(0.5)
+    # 在 70 只标的全截面上重算今日 Alpha_QQQ_5d 与 Alpha_SMH_20d (0.65 * cs_rank + 0.35 * sigmoid)
+    if 'Raw_Alpha_QQQ_5d' in full_latest.columns:
+        cs_q5 = full_latest['Raw_Alpha_QQQ_5d'].rank(pct=True, method='average').fillna(0.5)
+        sig_q5 = 1.0 / (1.0 + np.exp(-np.clip(full_latest['Raw_Alpha_QQQ_5d'] / 8.0, -15.0, 15.0)))
+        full_latest['Alpha_QQQ_5d'] = (0.65 * cs_q5 + 0.35 * sig_q5).fillna(0.5)
 
     if 'Raw_Alpha_SMH_20d' in full_latest.columns:
         cs_s20 = full_latest['Raw_Alpha_SMH_20d'].rank(pct=True, method='average').fillna(0.5)
@@ -6058,7 +6064,7 @@ def main():
     print(f"[*] 🌐 全域实盘推理截面构建完成: 覆盖 {len(latest_stocks)} 只终端标的 (含 28 只核心赛道股 + {len(latest_stocks) - len(latest_core_stocks)} 只扩展个股/ETF)")
 
     # 宏观环境水温评估 (与 integrated_market_radar.py 严格统一对齐)
-    qqqm_bias = float(latest_stocks['QQQM_Bias_MA50'].mean()) if 'QQQM_Bias_MA50' in latest_stocks.columns else 0.0
+    qqqm_bias = float(latest_stocks['QQQ_Bias_MA50'].mean()) if 'QQQ_Bias_MA50' in latest_stocks.columns else 0.0
     vixy_pos = float(latest_stocks['VIXY_Pos_60'].mean()) if 'VIXY_Pos_60' in latest_stocks.columns else 0.5
     smh_bias = float(latest_stocks['SMH_Bias_MA50'].mean()) if 'SMH_Bias_MA50' in latest_stocks.columns else 0.0
     smh_igv = float(latest_stocks['SMH_IGV_Ratio_Bias'].mean()) if 'SMH_IGV_Ratio_Bias' in latest_stocks.columns else 0.0

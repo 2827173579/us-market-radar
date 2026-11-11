@@ -290,7 +290,7 @@ def load_indicators_cache(cache_file: Optional[str] = None) -> Tuple[Dict[str, p
         potential_paths = [
             os.path.join(os.path.dirname(__file__), "us-market-radar", ".backtest_5y_cache.pkl"),
             os.path.join(os.path.dirname(__file__), ".backtest_5y_cache.pkl"),
-            r"C:\Users\User\.gemini\antigravity-ide\scratch\us-market-radar\.backtest_5y_cache.pkl"
+            os.path.join(os.getcwd(), ".backtest_5y_cache.pkl")
         ]
         for p in potential_paths:
             if os.path.exists(p):

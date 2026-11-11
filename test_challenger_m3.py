@@ -26,8 +26,10 @@ if hasattr(sys.stdout, "reconfigure"):
 if hasattr(sys.stderr, "reconfigure"):
     sys.stderr.reconfigure(encoding="utf-8")
 
-SCRATCH_DIR = os.path.abspath(r"C:\Users\User\.gemini\antigravity-ide\scratch")
-RADAR_DIR = os.path.join(SCRATCH_DIR, "us-market-radar")
+# 动态定位项目根目录（兼容旧 SCRATCH_DIR/RADAR_DIR 变量名，避免任何旧电脑绝对路径）
+_HERE = os.path.dirname(os.path.abspath(__file__))
+SCRATCH_DIR = _HERE
+RADAR_DIR = _HERE
 
 for p in [SCRATCH_DIR, RADAR_DIR]:
     if p not in sys.path:
@@ -203,8 +205,8 @@ class TestFutuProTerminalDomIntegrity(unittest.TestCase):
         self.assertGreaterEqual(len(ai_data["top_short"]), 5)
         self.assertGreaterEqual(len(ai_data["top_long"]), 5)
 
-        # Check by_ticker fields for NVDA and QQQM
-        for tk in ["NVDA", "QQQM"]:
+        # Check by_ticker fields for NVDA and QQQ
+        for tk in ["NVDA", "QQQ"]:
             item = ai_data["by_ticker"].get(tk)
             self.assertIsNotNone(item, f"{tk} missing from AI_PREDICTIONS.by_ticker")
             self.assertIn("calibrated_win_rate_pct", item)
@@ -427,7 +429,7 @@ function testSelectTicker() {
         { ticker: 'SQQQ', name: '做空纳指', last: 8.5, pct_change: -3.0, cat: '反向杠杆', is_inverse_hedge: true }
     ];
     const MACRO_DATA = {
-        'QQQM': { ticker: 'QQQM', name: '纳指ETF', last: 200.0, pct_change: 0.8 }
+        'QQQ': { ticker: 'QQQ', name: '纳指ETF', last: 200.0, pct_change: 0.8 }
     };
 
     const sandbox = {

@@ -17,7 +17,7 @@ Next
 
 If Not isRunning Then
     Dim radarDir, logFile, cmd
-    radarDir = "C:\Users\User\.gemini\antigravity-ide\scratch\us-market-radar"
+    radarDir = fso.GetParentFolderName(Wscript.ScriptFullName)
     logFile = radarDir & "\.radar_daemon.log"
     ws.CurrentDirectory = radarDir
     cmd = "cmd.exe /c python -u integrated_market_radar.py --loop-daemon --interval-seconds 60 --duration-minutes 0 > """ & logFile & """ 2>&1"

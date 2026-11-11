@@ -48,7 +48,7 @@ if sys.platform == "win32":
 # ==============================================================================
 MONITORED_TARGETS = {
     "ETFS": {
-        "QQQM": {"name": "纳指100微型", "sub": "科技大盘Beta", "cat": "大盘基准"},
+        "QQQ": {"name": "纳指100ETF", "sub": "科技大盘Beta", "cat": "大盘基准"},
         "SPY":  {"name": "标普500", "sub": "美股全市场基石", "cat": "大盘基准"},
         "DIA":  {"name": "道琼斯蓝筹", "sub": "美国30大工业蓝筹基石", "cat": "大盘基准"},
         "IWM":  {"name": "罗素2000", "sub": "小盘流动性温度计", "cat": "小盘弹性"},
@@ -1277,7 +1277,7 @@ def get_short_action_directive(
         return "⚠️ 严重超跌·谨防死猫跳·暂勿追空", "short-action-oversold"
     if calibrated_short_win_rate_pct >= 65.0:
         semi_etfs = {"SOXX", "SOXL", "SOXS", "SMH"}
-        tech_etfs = {"QQQM", "QQQ", "SQQQ", "SPY"}
+        tech_etfs = {"QQQ", "SQQQ", "SPY"}
         if is_etf and (ticker in semi_etfs or "半导体" in sector or "芯片" in sector):
             return "🛡️ 建议买入SOXS对冲", "short-action-etf"
         elif is_etf and (ticker in tech_etfs or "科技" in sector or "纳指" in sector):
@@ -1685,7 +1685,7 @@ def send_discord_defensive_flight_alert(df_alert, live_lookup=None, update_time_
             pct = float(lv.get("ext_pct") if lv.get("ext_price", 0) > 0 else lv.get("pct_change", lv.get("change_pct", 0.0)))
             def_items.append(f"{s} `{pct:+.2f}%`")
     off_items = []
-    for s in ["SMH", "SOXL", "NVDA", "QQQM"]:
+    for s in ["SMH", "SOXL", "NVDA", "QQQ"]:
         if s in live_lookup:
             lv = live_lookup[s]
             pct = float(lv.get("ext_pct") if lv.get("ext_price", 0) > 0 else lv.get("pct_change", lv.get("change_pct", 0.0)))
@@ -1833,7 +1833,7 @@ def dispatch_wechat_radar_alerts(macro_data, stocks_data, weather_info, now_str)
     intc_alerts = []
     pending_target_updates = {}
 
-    # 1. 扫描个股及已加入自选盯盘或实盘持仓的 ETF (如 SOXX / SOXL / QQQM) 重大异动
+    # 1. 扫描个股及已加入自选盯盘或实盘持仓的 ETF (如 SOXX / SOXL / QQQ) 重大异动
     starred_etfs = [{"ticker": t, **m} for t, m in macro_data.items() if t in target_watchlist or m.get("shares", 0) > 0]
     for s in list(stocks_data) + starred_etfs:
         ticker = s["ticker"]
@@ -2788,7 +2788,7 @@ def evaluate_market_weather(macro_dict, history_dict=None):
     3. 晴天做多一票否决权 (Veto) 机制 (高位急跌, 破MA20, 恐慌脉冲)
     4. SMH/IGV 相对强弱动态驱动风格主线军规
     """
-    qqqm_info = macro_dict.get("QQQM", {})
+    qqqm_info = macro_dict.get("QQQ", {})
     smh_info = macro_dict.get("SMH", {})
     spy_info = macro_dict.get("SPY", {})
     vixy_info = macro_dict.get("VIXY", {})
@@ -2843,9 +2843,9 @@ def evaluate_market_weather(macro_dict, history_dict=None):
     if is_vix_panic:
         veto_reasons.append("VIXY恐慌脉冲")
     if (qqqm_ma20 > 0 and qqqm_last < qqqm_ma20) and (smh_ma20 > 0 and smh_last < smh_ma20):
-        veto_reasons.append("QQQM与SMH双破MA20")
+        veto_reasons.append("QQQ与SMH双破MA20")
     if qqqm_pct <= -1.8:
-        veto_reasons.append(f"QQQM急杀{qqqm_pct:.1f}%")
+        veto_reasons.append(f"QQQ急杀{qqqm_pct:.1f}%")
     if smh_pct <= -2.8:
         veto_reasons.append(f"SMH大跌{smh_pct:.1f}%")
 
@@ -3168,7 +3168,7 @@ def evaluate_stock_signal(
             # 兼容宏观大盘熊市主跌段过滤
             is_bear_falling_knife = False
             if macro_data:
-                qqqm_info = macro_data.get("QQQM", {})
+                qqqm_info = macro_data.get("QQQ", {})
                 qqqm_last = qqqm_info.get("last", 1.0)
                 qqqm_ma200 = qqqm_info.get("ma200", 0.0)
                 qqqm_rsi = qqqm_info.get("rsi", 50.0)
@@ -3177,7 +3177,7 @@ def evaluate_stock_signal(
             # V3.1 QQQ MA50 大盘准入门禁 (QQQ < MA50 时冻结个股新开仓，彻底规避震荡期连环止损)
             is_qqq_below_ma50 = False
             if macro_data:
-                qqq_info = macro_data.get("QQQ", macro_data.get("QQQM", {}))
+                qqq_info = macro_data.get("QQQ", macro_data.get("QQQ", {}))
                 qqq_last = qqq_info.get("last", 1.0)
                 qqq_ma50 = qqq_info.get("ma50", 0.0)
                 if qqq_ma50 > 0 and qqq_last < qqq_ma50:
@@ -3253,7 +3253,7 @@ def generate_macro_radar_html(macro_data, weather_info, history_dict, update_tim
     )
 
     # 1. 核心资产 180 日收益走势 (开启顶部图例 + 曲线末端直接标注代码与收益率)
-    palette = {"QQQM": "#00e676", "SPY": "#29b6f6", "DIA": "#4fc3f7", "SMH": "#ff9100", "IWM": "#ab47bc", "TLT": "#ffd54f", "GLD": "#ffb300"}
+    palette = {"QQQ": "#00e676", "SPY": "#29b6f6", "DIA": "#4fc3f7", "SMH": "#ff9100", "IWM": "#ab47bc", "TLT": "#ffd54f", "GLD": "#ffb300"}
     for t, color in palette.items():
         if t in history_dict and len(history_dict[t]) > 0:
             series = history_dict[t]["Close"]
@@ -3519,7 +3519,7 @@ def generate_macro_radar_html(macro_data, weather_info, history_dict, update_tim
         <div>
             <h1>🏛️ 宏观大盘司令塔 · 全局水温看板</h1>
             <div style="font-size: 12px; color: #6b7280; margin-top: 6px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
-                <span>全网 71 只标的监控 (16 只 ETF + 55 只核心个股) | 大盘基准: QQQM / SPY / DIA / IWM | 行业风向: SMH / IGV | 避险: TLT / GLD / VIXY</span>
+                <span>全网 71 只标的监控 (16 只 ETF + 55 只核心个股) | 大盘基准: QQQ / SPY / DIA / IWM | 行业风向: SMH / IGV | 避险: TLT / GLD / VIXY</span>
                 <span style="color:#60a5fa;">⏱️ 自动刷新: 每3分钟 (180s)</span>
                 <span>最近更新: {update_time_str}</span>
                 {live_badge_html}
@@ -3545,7 +3545,7 @@ def generate_macro_radar_html(macro_data, weather_info, history_dict, update_tim
         </div>
         <div class="weather-stats">
             <div class="stat-box">
-                <div class="stat-label">QQQM 偏离 MA50</div>
+                <div class="stat-label">QQQ 偏离 MA50</div>
                 <div class="stat-value" style="color: {'#00e676' if weather_info['qqqm_bias']>=0 else '#ff5252'};">{weather_info['qqqm_bias']:+.2f}%</div>
                 <div class="stat-sub">MA20: {weather_info.get('qqqm_ma20_bias', 0.0):+.1f}% | 今日: {weather_info.get('qqqm_pct', 0.0):+.2f}%</div>
             </div>
@@ -3982,7 +3982,7 @@ def display_terminal_tables(macro_data, stocks_data, weather_info, has_realtime=
             f"[bold {weather_info['color']}]{weather_info['icon']} 宏观气象模式：【{weather_info['weather']}】[/bold {weather_info['color']}]\n"
             f"[bold cyan]研判说明：[/bold cyan]{weather_info['desc']}\n"
             f"[bold yellow]作战军规：[/bold yellow]{weather_info['tactics']}\n"
-            f"[dim]大盘偏离：QQQM ({weather_info['qqqm_bias']:+.2f}%) | SMH ({weather_info['smh_bias']:+.2f}%) | VIXY (${weather_info['vixy_last']:.2f} · MA20:{weather_info.get('vixy_ma20_bias',0.0):+.1f}%) | TLT ({weather_info.get('tlt_state','中性')} / {weather_info['tlt_bias']:+.2f}%)[/dim]"
+            f"[dim]大盘偏离：QQQ ({weather_info['qqqm_bias']:+.2f}%) | SMH ({weather_info['smh_bias']:+.2f}%) | VIXY (${weather_info['vixy_last']:.2f} · MA20:{weather_info.get('vixy_ma20_bias',0.0):+.1f}%) | TLT ({weather_info.get('tlt_state','中性')} / {weather_info['tlt_bias']:+.2f}%)[/dim]"
         )
         console.print(Panel(weather_text, title=f"[bold white]🏛️ 宏观大盘司令塔 · 气象研判卡片{realtime_tag}[/bold white]", box=box.ROUNDED))
 
@@ -4157,11 +4157,11 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
 
     has_realtime = len(realtime_quotes) > 0 or len(intraday_map) > 0
 
-    # 预计算 QQQM 20日基准收益率用于计算全市场个股 RS 相对强弱度 (Alpha)
+    # 预计算 QQQ 20日基准收益率用于计算全市场个股 RS 相对强弱度 (Alpha)
     qqqm_ret_20d = 0.0
-    if "QQQM" in history_dict and len(history_dict["QQQM"]) >= 21:
-        q_last = realtime_quotes["QQQM"]["last"] if "QQQM" in realtime_quotes else float(history_dict["QQQM"]["Close"].iloc[-1])
-        q_prev20 = float(history_dict["QQQM"]["Close"].iloc[-21])
+    if "QQQ" in history_dict and len(history_dict["QQQ"]) >= 21:
+        q_last = realtime_quotes["QQQ"]["last"] if "QQQ" in realtime_quotes else float(history_dict["QQQ"]["Close"].iloc[-1])
+        q_prev20 = float(history_dict["QQQ"]["Close"].iloc[-21])
         if q_prev20 > 0:
             qqqm_ret_20d = ((q_last - q_prev20) / q_prev20) * 100.0
 

@@ -1,0 +1,38 @@
+{
+  "INTC": {
+    "name": "英特尔",
+    "cat": "芯片算力",
+    "shares": 0.0,
+    "cost": 0.0,
+    "base_val": 0.0,
+    "target": 0.0,
+    "trim1": 0.0,
+    "trim1_shares": 0.0,
+    "trim2": 0.0,
+    "note": "示例：shares=持股数, cost=成本价, base_val=防守/止损价, target=目标价"
+  },
+  "SOXL": {
+    "name": "3倍做多半导体",
+    "cat": "正向杠杆",
+    "shares": 0.0,
+    "cost": 0.0,
+    "base_val": 0.0,
+    "target": 0.0,
+    "trim1": 0.0,
+    "trim1_shares": 0.0,
+    "trim2": 0.0,
+    "note": "示例：杠杆ETF务必设置 base_val 硬止损；trim1/trim1_shares 为第一止盈价与减仓股数"
+  },
+  "QQQ": {
+    "name": "纳指100ETF",
+    "cat": "科技大盘Beta",
+    "shares": 0.0,
+    "cost": 0.0,
+    "base_val": 0.0,
+    "target": 0.0,
+    "trim1": 0.0,
+    "trim1_shares": 0.0,
+    "trim2": 0.0,
+    "note": "示例：核心底仓可只填 shares/cost/base_val；0 股表示仅观察"
+  }
+}

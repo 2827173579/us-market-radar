@@ -91,10 +91,10 @@ class SyntheticMarketDataGenerator:
     @staticmethod
     def generate_macro_etfs(dates: List[pd.Timestamp], seed: int = 100) -> Dict[str, pd.DataFrame]:
         """Generate synthetic OHLCV for all 7 macro benchmarks."""
-        macro_tickers = ['QQQM', 'SPY', 'SMH', 'IGV', 'TLT', 'VIXY', 'GLD']
+        macro_tickers = ['QQQ', 'SPY', 'SMH', 'IGV', 'TLT', 'VIXY', 'GLD']
         result = {}
         for idx, ticker in enumerate(macro_tickers):
-            base_p = 400.0 if ticker in ['SPY', 'QQQM'] else (200.0 if ticker in ['SMH', 'IGV'] else 90.0)
+            base_p = 400.0 if ticker in ['SPY', 'QQQ'] else (200.0 if ticker in ['SMH', 'IGV'] else 90.0)
             df = SyntheticMarketDataGenerator.generate_stock_ohlcv(
                 ticker=ticker,
                 dates=dates,
@@ -138,9 +138,9 @@ class OracleFeatureEngine:
         'RSI_14', 'RSI_Slope_3d', 'ATR_Pct', 'Ret_1d', 'Ret_3d', 'Ret_5d',
         'Ret_10d', 'Ret_20d', 'Vol_Ratio_20', 'Bar_Strength',
         # 2 Cross-Asset Alpha Features
-        'Alpha_QQQM_5d', 'Alpha_SMH_20d',
+        'Alpha_QQQ_5d', 'Alpha_SMH_20d',
         # 6 Macro Weather Features
-        'QQQM_Bias_MA50', 'SMH_Bias_MA50', 'TLT_Bias_MA50',
+        'QQQ_Bias_MA50', 'SMH_Bias_MA50', 'TLT_Bias_MA50',
         'VIXY_Bias_MA20', 'VIXY_Pos_60', 'SMH_IGV_Ratio_Bias'
     ]
 
@@ -218,19 +218,19 @@ class OracleFeatureEngine:
     @classmethod
     def compute_macro_features(cls, macro_map: Dict[str, pd.DataFrame]) -> pd.DataFrame:
         """Compute the 6 macro features and align by Date."""
-        qqqm = macro_map['QQQM'].sort_values('Date').reset_index(drop=True)
+        qqqm = macro_map['QQQ'].sort_values('Date').reset_index(drop=True)
         smh = macro_map['SMH'].sort_values('Date').reset_index(drop=True)
         tlt = macro_map['TLT'].sort_values('Date').reset_index(drop=True)
         vixy = macro_map['VIXY'].sort_values('Date').reset_index(drop=True)
         igv = macro_map['IGV'].sort_values('Date').reset_index(drop=True)
 
-        # 1. QQQM 特征表
+        # 1. QQQ 特征表
         qqqm_close = qqqm['Close'].astype(float)
         qqqm_ma50 = qqqm_close.rolling(50, min_periods=1).mean()
         qqqm_feat = pd.DataFrame({
             'Date': qqqm['Date'],
-            'QQQM_Bias_MA50': ((qqqm_close - qqqm_ma50) / (qqqm_ma50 + 1e-8)) * 100.0,
-            'QQQM_Ret_5d': qqqm_close.pct_change(5).fillna(0.0) * 100.0
+            'QQQ_Bias_MA50': ((qqqm_close - qqqm_ma50) / (qqqm_ma50 + 1e-8)) * 100.0,
+            'QQQ_Ret_5d': qqqm_close.pct_change(5).fillna(0.0) * 100.0
         })
 
         # 2. SMH 特征表
@@ -279,7 +279,7 @@ class OracleFeatureEngine:
             'SMH_IGV_Ratio_Bias': ((smh_igv_ratio - ratio_ma20) / (ratio_ma20 + 1e-8)) * 100.0
         })
 
-        # 6. 以 QQQM 的所有交易日为基准按 Date 左连接全部宏观特征
+        # 6. 以 QQQ 的所有交易日为基准按 Date 左连接全部宏观特征
         macro_df = pd.DataFrame({'Date': sorted(qqqm['Date'].unique())})
         for sub_df in [qqqm_feat, smh_feat, tlt_feat, vixy_feat, smh_igv_feat]:
             macro_df = pd.merge(macro_df, sub_df, on='Date', how='left')
@@ -301,7 +301,7 @@ class OracleFeatureEngine:
         Assemble the complete Long Panel DataFrame with all 23 features.
         Preserves secondary IPOs without global dropna truncation.
         """
-        macro_tickers = ['QQQM', 'SPY', 'SMH', 'IGV', 'TLT', 'VIXY', 'GLD']
+        macro_tickers = ['QQQ', 'SPY', 'SMH', 'IGV', 'TLT', 'VIXY', 'GLD']
         if macro_map is None:
             # Check if macro tickers are inside raw_panel
             contained_macros = [t for t in macro_tickers if t in raw_panel['Ticker'].unique()]
@@ -333,9 +333,9 @@ class OracleFeatureEngine:
         merged = pd.merge(long_panel, macro_features, on='Date', how='left')
 
         # Compute Cross-Asset Alphas with cross-sectional rank strictly by Date
-        merged['Alpha_QQQM_5d'] = merged['Ret_5d'] - merged['QQQM_Ret_5d']
+        merged['Alpha_QQQ_5d'] = merged['Ret_5d'] - merged['QQQ_Ret_5d']
         merged['Alpha_SMH_20d'] = merged['Ret_20d'] - merged['SMH_Ret_20d']
-        merged['Alpha_QQQM_5d'] = merged.groupby('Date')['Alpha_QQQM_5d'].rank(pct=True).fillna(0.5)
+        merged['Alpha_QQQ_5d'] = merged.groupby('Date')['Alpha_QQQ_5d'].rank(pct=True).fillna(0.5)
         merged['Alpha_SMH_20d'] = merged.groupby('Date')['Alpha_SMH_20d'].rank(pct=True).fillna(0.5)
 
         # Ensure all 23 features exist and contain zero unhandled NaN/Inf
@@ -1598,11 +1598,11 @@ class TestReportMetricsAndSectorLinkage(unittest.TestCase):
         if not mod or not hasattr(mod, 'evaluate_macro_weather'):
             self.skipTest("ml_predictor_5y.evaluate_macro_weather not available")
 
-        # 1. Double breakdown (< -3.0 on both QQQM and SMH)
+        # 1. Double breakdown (< -3.0 on both QQQ and SMH)
         w1 = mod.evaluate_macro_weather(qqqm_bias=-3.2, smh_bias=-3.1)
         self.assertEqual(w1['status'], "🌧️ 暴雨空仓")
 
-        # 2. One-sided deviation (-4.0% on QQQM, but SMH -1.0%, not double breakdown)
+        # 2. One-sided deviation (-4.0% on QQQ, but SMH -1.0%, not double breakdown)
         w2 = mod.evaluate_macro_weather(qqqm_bias=-4.0, smh_bias=-1.0)
         self.assertEqual(w2['status'], "⛅ 阴天防守")
 
@@ -1691,7 +1691,7 @@ class TestV2UpgradeDefensiveFlightAndScenarios(unittest.TestCase):
         """测试防御因子起飞超额走强评分及报警触发"""
         # Case 1: 正常科技做多行情 (高弹性跑赢防御组)
         normal_lookup = {
-            'QQQM': {'pct_change': 1.8},
+            'QQQ': {'pct_change': 1.8},
             'SMH': {'pct_change': 2.5},
             'NVDA': {'pct_change': 3.2},
             'SOXL': {'pct_change': 5.0},
@@ -1707,7 +1707,7 @@ class TestV2UpgradeDefensiveFlightAndScenarios(unittest.TestCase):
 
         # Case 2: 机构踩踏去杠杆避险行情 (防御组大涨，科技与半导体领跌)
         flight_lookup = {
-            'QQQM': {'pct_change': -1.8},
+            'QQQ': {'pct_change': -1.8},
             'SMH': {'pct_change': -3.2},
             'NVDA': {'pct_change': -4.5},
             'SOXL': {'pct_change': -7.8},
@@ -1828,7 +1828,7 @@ class TestV2UpgradeDefensiveFlightAndScenarios(unittest.TestCase):
             'MRNA': {'pct_change': 1.4},
             'TLT': {'pct_change': 1.2},
             'GLD': {'pct_change': 1.2},
-            'QQQM': {'pct_change': -1.0},
+            'QQQ': {'pct_change': -1.0},
             'SMH': {'pct_change': -1.4},
             'NVDA': {'pct_change': -1.2},
             'SOXL': {'pct_change': -1.2}
@@ -1844,7 +1844,7 @@ class TestV2UpgradeDefensiveFlightAndScenarios(unittest.TestCase):
             'PEP': {'pct_change': 3.8},
             'TLT': {'pct_change': 3.9},
             'GLD': {'pct_change': 4.0},
-            'QQQM': {'pct_change': 1.5},
+            'QQQ': {'pct_change': 1.5},
             'SMH': {'pct_change': 1.5},
             'NVDA': {'pct_change': 1.5},
             'SOXL': {'pct_change': 1.5}
@@ -1858,7 +1858,7 @@ class TestV2UpgradeDefensiveFlightAndScenarios(unittest.TestCase):
             'PEP': {'pct_change': 0.7},
             'TLT': {'pct_change': 0.9},
             'GLD': {'pct_change': 1.0},
-            'QQQM': {'pct_change': -0.4},
+            'QQQ': {'pct_change': -0.4},
             'SMH': {'pct_change': -0.5},
             'NVDA': {'pct_change': -0.6},
             'SOXL': {'pct_change': -0.9}

@@ -38,8 +38,8 @@ if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8")
 
 # Directory setup
-PROJECT_DIR = r"C:\Users\User\.gemini\antigravity-ide\scratch\us-market-radar"
-SCRATCH_DIR = r"C:\Users\User\.gemini\antigravity-ide\scratch"
+PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
+SCRATCH_DIR = os.path.dirname(PROJECT_DIR)  # 兼容旧布局：项目根目录的上一层
 if PROJECT_DIR not in sys.path:
     sys.path.insert(0, PROJECT_DIR)
 if SCRATCH_DIR not in sys.path:

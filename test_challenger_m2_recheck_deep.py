@@ -27,8 +27,10 @@ if hasattr(sys.stdout, "reconfigure"):
 if hasattr(sys.stderr, "reconfigure"):
     sys.stderr.reconfigure(encoding="utf-8")
 
-SCRATCH_DIR = os.path.abspath(r"C:\Users\User\.gemini\antigravity-ide\scratch")
-RADAR_DIR = os.path.join(SCRATCH_DIR, "us-market-radar")
+# 动态定位项目根目录（兼容旧 SCRATCH_DIR/RADAR_DIR 变量名，避免任何旧电脑绝对路径）
+_HERE = os.path.dirname(os.path.abspath(__file__))
+SCRATCH_DIR = _HERE
+RADAR_DIR = _HERE
 
 for p in [SCRATCH_DIR, RADAR_DIR]:
     if p not in sys.path:

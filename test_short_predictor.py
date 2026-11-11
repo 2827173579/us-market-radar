@@ -108,11 +108,11 @@ class SyntheticShortDataGenerator:
 
     @staticmethod
     def generate_macro_etfs(dates: List[pd.Timestamp], seed: int = 100) -> Dict[str, pd.DataFrame]:
-        """Generate synthetic OHLCV for macro benchmarks (QQQM, SMH, TLT, VIXY, SPY)."""
-        macro_tickers = ['QQQM', 'SPY', 'SMH', 'IGV', 'TLT', 'VIXY', 'GLD']
+        """Generate synthetic OHLCV for macro benchmarks (QQQ, SMH, TLT, VIXY, SPY)."""
+        macro_tickers = ['QQQ', 'SPY', 'SMH', 'IGV', 'TLT', 'VIXY', 'GLD']
         result = {}
         for idx, ticker in enumerate(macro_tickers):
-            base_p = 400.0 if ticker in ['SPY', 'QQQM'] else (200.0 if ticker in ['SMH', 'IGV'] else 90.0)
+            base_p = 400.0 if ticker in ['SPY', 'QQQ'] else (200.0 if ticker in ['SMH', 'IGV'] else 90.0)
             df = SyntheticShortDataGenerator.generate_stock_ohlcv(
                 ticker=ticker,
                 dates=dates,
@@ -288,7 +288,7 @@ class OracleShortFeatureEngine:
 
     SHORT_FEATURES = [
         'Bias_MA50', 'Bias_MA20', 'Bias_SMA200', 'EMA10_20_Spread', 'Bear_Alignment_Score',
-        'Fib_Pos_60', 'RSI_14', 'Ret_5d', 'Alpha_QQQM_5d', 'Alpha_SMH_20d',
+        'Fib_Pos_60', 'RSI_14', 'Ret_5d', 'Alpha_QQQ_5d', 'Alpha_SMH_20d',
         'VIXY_Bias_MA20', 'Vol_Ratio_20', 'Vol_Breakdown_Ratio', 'Dollar_PCR_Proxy'
     ]
 
@@ -336,13 +336,13 @@ class OracleShortFeatureEngine:
         df['Ret_5d'] = c.pct_change(5).fillna(0.0) * 100.0
 
         # 4. Alphas vs Benchmarks
-        if macro_map and 'QQQM' in macro_map:
-            qqqm_c = macro_map['QQQM'].sort_values('Date').set_index('Date')['Close']
+        if macro_map and 'QQQ' in macro_map:
+            qqqm_c = macro_map['QQQ'].sort_values('Date').set_index('Date')['Close']
             qqqm_ret5 = qqqm_c.pct_change(5).fillna(0.0) * 100.0
             merged_ret = df['Date'].map(qqqm_ret5).fillna(0.0)
-            df['Alpha_QQQM_5d'] = df['Ret_5d'] - merged_ret
+            df['Alpha_QQQ_5d'] = df['Ret_5d'] - merged_ret
         else:
-            df['Alpha_QQQM_5d'] = df['Ret_5d']
+            df['Alpha_QQQ_5d'] = df['Ret_5d']
 
         if macro_map and 'SMH' in macro_map:
             smh_c = macro_map['SMH'].sort_values('Date').set_index('Date')['Close']

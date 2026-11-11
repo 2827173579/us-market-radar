@@ -9,7 +9,7 @@ import time
 import unittest
 from unittest.mock import patch, MagicMock
 
-PROJECT_DIR = os.path.abspath(r"C:\Users\User\.gemini\antigravity-ide\scratch\us-market-radar")
+PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
 if PROJECT_DIR not in sys.path:
     sys.path.insert(0, PROJECT_DIR)
 

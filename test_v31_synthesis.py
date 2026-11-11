@@ -4,7 +4,7 @@ import pickle
 import numpy as np
 import pandas as pd
 
-PROJECT_DIR = r"C:\Users\User\.gemini\antigravity-ide\scratch\us-market-radar"
+PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, PROJECT_DIR)
 
 from backtest_5y_engine import (

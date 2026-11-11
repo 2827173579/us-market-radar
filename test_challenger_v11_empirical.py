@@ -135,7 +135,7 @@ class TestEmpiricalMacroFeatureAlignment(unittest.TestCase):
     def test_scrambled_dates_robustness(self):
         """Stress verify that scrambled dates within ETF tables yield identical sorted results."""
         dates = pd.bdate_range('2023-01-01', periods=250)
-        etfs = ['QQQM', 'SMH', 'IGV', 'TLT', 'VIXY']
+        etfs = ['QQQ', 'SMH', 'IGV', 'TLT', 'VIXY']
         macro_map_ordered = {}
         macro_map_scrambled = {}
 
@@ -164,8 +164,8 @@ class TestEmpiricalMacroFeatureAlignment(unittest.TestCase):
     def test_missing_etf_dates_and_calendar_mismatch(self):
         """Stress verify missing ETF dates (e.g. holidays, gaps) forward-fill safely without NaN."""
         dates_all = pd.bdate_range('2023-01-01', periods=200)
-        # QQQM has all dates
-        qqqm = create_synthetic_etf_df('QQQM', dates_all, seed=101)
+        # QQQ has all dates
+        qqqm = create_synthetic_etf_df('QQQ', dates_all, seed=101)
         # SMH drops days 20..35
         smh_dates = [d for i, d in enumerate(dates_all) if not (20 <= i <= 35)]
         smh = create_synthetic_etf_df('SMH', smh_dates, seed=102)
@@ -179,7 +179,7 @@ class TestEmpiricalMacroFeatureAlignment(unittest.TestCase):
         igv_dates = dates_all[10:]
         igv = create_synthetic_etf_df('IGV', igv_dates, seed=105)
 
-        macro_map = {'QQQM': qqqm, 'SMH': smh, 'TLT': tlt, 'VIXY': vixy, 'IGV': igv}
+        macro_map = {'QQQ': qqqm, 'SMH': smh, 'TLT': tlt, 'VIXY': vixy, 'IGV': igv}
         macro_df = mlp.compute_macro_features(macro_map=macro_map)
 
         self.assertEqual(len(macro_df), len(dates_all))
@@ -191,7 +191,7 @@ class TestEmpiricalMacroFeatureAlignment(unittest.TestCase):
     def test_disjoint_row_indices_in_raw_panel(self):
         """Stress verify disjoint row slices (e.g. index 1000..1099, 5000..5099) do not misalign."""
         dates = pd.bdate_range('2023-01-01', periods=150)
-        etfs = ['QQQM', 'SMH', 'IGV', 'TLT', 'VIXY']
+        etfs = ['QQQ', 'SMH', 'IGV', 'TLT', 'VIXY']
         dfs = []
         for idx, etf in enumerate(etfs):
             sub = create_synthetic_etf_df(etf, dates, seed=200 + idx)
@@ -217,7 +217,7 @@ class TestEmpiricalMacroFeatureAlignment(unittest.TestCase):
         """Verify that omitting a mandatory macro ETF explicitly raises ValueError."""
         dates = pd.bdate_range('2023-01-01', periods=50)
         macro_map = {
-            'QQQM': create_synthetic_etf_df('QQQM', dates, seed=1),
+            'QQQ': create_synthetic_etf_df('QQQ', dates, seed=1),
             'SMH': create_synthetic_etf_df('SMH', dates, seed=2),
             # Missing IGV, TLT, VIXY
         }
@@ -528,15 +528,15 @@ class TestEmpiricalMacroWeatherAlignment(unittest.TestCase):
     """Verify macro weather evaluation rules match integrated_market_radar.py exactly."""
 
     def test_macro_weather_states(self):
-        # 1. Dual breakdown: QQQM < -3.0 and SMH < -3.0 -> 🌧️ 暴雨空仓
+        # 1. Dual breakdown: QQQ < -3.0 and SMH < -3.0 -> 🌧️ 暴雨空仓
         w1 = mlp.evaluate_macro_weather(qqqm_bias=-3.5, smh_bias=-3.2, vixy_pos=0.8)
         self.assertIn("暴雨空仓", w1['status'])
 
-        # 2. Only QQQM < -3.0, but SMH > -3.0 -> ⛅ 阴天防守 (NOT 暴雨!)
+        # 2. Only QQQ < -3.0, but SMH > -3.0 -> ⛅ 阴天防守 (NOT 暴雨!)
         w2 = mlp.evaluate_macro_weather(qqqm_bias=-3.5, smh_bias=-1.0, vixy_pos=0.5)
         self.assertIn("阴天防守", w2['status'], "Single index breakdown should be 阴天防守, not 暴雨空仓!")
 
-        # 3. Only SMH < -3.0, but QQQM > -3.0 -> ⛅ 阴天防守 (NOT 暴雨!)
+        # 3. Only SMH < -3.0, but QQQ > -3.0 -> ⛅ 阴天防守 (NOT 暴雨!)
         w3 = mlp.evaluate_macro_weather(qqqm_bias=-1.0, smh_bias=-4.0, vixy_pos=0.5)
         self.assertIn("阴天防守", w3['status'], "Single index breakdown should be 阴天防守, not 暴雨空仓!")
 

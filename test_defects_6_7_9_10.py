@@ -7,8 +7,8 @@ import sys
 import json
 import unittest
 
-PROJECT_DIR = os.path.abspath(r"C:\Users\User\.gemini\antigravity-ide\scratch\us-market-radar")
-SCRATCH_DIR = os.path.abspath(r"C:\Users\User\.gemini\antigravity-ide\scratch")
+PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
+SCRATCH_DIR = PROJECT_DIR  # 兼容旧变量名：单根目录部署时两者一致
 if PROJECT_DIR not in sys.path:
     sys.path.insert(0, PROJECT_DIR)
 
@@ -53,7 +53,7 @@ class TestDefects67910(unittest.TestCase):
             }
         ]
         cls.macro_sample = {
-            "QQQM": {"ticker": "QQQM", "last": 200.0, "pct_change": 0.5, "is_pit": False},
+            "QQQ": {"ticker": "QQQ", "last": 200.0, "pct_change": 0.5, "is_pit": False},
             "SQQQ": {"ticker": "SQQQ", "last": 10.0, "pct_change": -1.5, "is_pit": True, "is_inverse_hedge": True}
         }
         cls.weather_sample = {

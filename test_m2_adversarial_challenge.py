@@ -34,7 +34,7 @@ from unittest.mock import patch, MagicMock
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8")
 
-PROJECT_DIR = os.path.abspath(r"C:\Users\User\.gemini\antigravity-ide\scratch\us-market-radar")
+PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
 if PROJECT_DIR not in sys.path:
     sys.path.insert(0, PROJECT_DIR)
 
@@ -609,7 +609,7 @@ class TestMilestone2AdversarialAiPredictionsSchemaAndRanking(unittest.TestCase):
             with open(ai_path, "w", encoding="utf-8") as f:
                 json.dump(backup_data, f, ensure_ascii=False, indent=2)
             # Restore sister cache to preserve SHA256 parity
-            sister_ai_path = os.path.abspath(os.path.join(PROJECT_DIR, "..", "data_cache", "latest_ai_predictions.json")) if "us-market-radar" in PROJECT_DIR else os.path.abspath(os.path.join(PROJECT_DIR, "us-market-radar", "data_cache", "latest_ai_predictions.json"))
+            sister_ai_path = os.path.join(PROJECT_DIR, "data_cache", "latest_ai_predictions.json")
             if os.path.exists(os.path.dirname(sister_ai_path)):
                 with open(sister_ai_path, "w", encoding="utf-8") as f:
                     json.dump(backup_data, f, ensure_ascii=False, indent=2)

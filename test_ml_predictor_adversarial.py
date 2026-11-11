@@ -88,10 +88,10 @@ class SyntheticAdversarialMarketFactory:
 
     @staticmethod
     def generate_macro_panel(dates: list, seed: int = 100) -> pd.DataFrame:
-        etfs = ['QQQM', 'SPY', 'SMH', 'IGV', 'TLT', 'VIXY', 'GLD']
+        etfs = ['QQQ', 'SPY', 'SMH', 'IGV', 'TLT', 'VIXY', 'GLD']
         frames = []
         for i, etf in enumerate(etfs):
-            base_p = 400.0 if etf in ['SPY', 'QQQM'] else (200.0 if etf in ['SMH', 'IGV'] else 90.0)
+            base_p = 400.0 if etf in ['SPY', 'QQQ'] else (200.0 if etf in ['SMH', 'IGV'] else 90.0)
             df = SyntheticAdversarialMarketFactory.generate_stock(
                 ticker=etf, dates=dates, base_price=base_p, sector='Macro', seed=seed + i * 10
             )
@@ -168,7 +168,7 @@ class TestAdversarialFutureSpikeZeroLookahead(unittest.TestCase):
                 )
 
     def test_macro_future_spike_causality(self):
-        """Inject +500% spike in QQQM, SMH, VIXY at T+1; verify bar T macro features and alpha are invariant."""
+        """Inject +500% spike in QQQ, SMH, VIXY at T+1; verify bar T macro features and alpha are invariant."""
         T_idx = 150
         T_date = self.dates[T_idx]
 

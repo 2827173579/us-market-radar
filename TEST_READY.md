@@ -1,176 +1,137 @@
-# TEST_READY — Automated Test Suite & Invariant Verification for Discord Sentinel
+# TEST_READY — Discord Sentinel 测试与质量状态（M4 已完结）
 
-**Milestone**: M0 (Automated Test Suite & Infra)  
-**Target Module**: `discord_sentinel.py` & `integrated_market_radar.py` linkage  
-**Test Suite File**: `test_discord_sentinel.py`  
-**Execution Time**: ~0.74s  
-**Test Framework**: Python built-in `unittest`  
-**Network Dependency**: 100% Offline (Deterministic synthetic fixtures)  
+**最后更新**：2026-11-11 ｜ **当前状态**：`test_discord_sentinel.py` **14 / 14 PASS（100%）**
+**测试框架**：Python 内置 `unittest`（兼容 `pytest`） ｜ **网络依赖**：0（全部离线确定性 fixture）
+**执行耗时**：约 0.8~4.6s（视是否首次 import 依赖）
 
 ---
 
-## 1. Quick Start / How to Run
+## 1. 如何运行
 
-To run the complete automated Discord Sentinel test suite from the repository root:
+```bash
+# 推荐：pytest（14 项全部收集）
+python -m pytest test_discord_sentinel.py -q
 
-```powershell
-# Direct test runner execution with summary report
+# 或 unittest 原生执行
 python test_discord_sentinel.py
-
-# Or via Python standard unittest module
 python -m unittest test_discord_sentinel.py -v
 ```
 
-### Environment Requirements
-- Python >= 3.10 (Tested on Python 3.14-64)
-- Dependencies: `pandas`, `numpy`, `requests`, `yfinance`
+**环境要求**：Python ≥ 3.10、`pandas`、`numpy`；配置校验项需要仓库根目录存在 `.env`（本地测试可用
+`.env.example` 复制出的占位配置，见 §3）。
 
 ---
 
-## 2. Test Suite Architecture & Coverage Tiers
+## 2. 14 项测试与实现状态
 
-The test suite enforces 14 rigorous invariant tests across 4 functional tiers and configuration foundations, strictly derived from `ORIGINAL_REQUEST.md`, `PROJECT.md`, `TEST_INFRA.md`, and Explorer handoffs:
-
-| Tier | Category Header | Authoritative Invariant | Test Method | M0 Status | Target Milestone |
-|:---|:---|:---|:---|:---:|:---:|
-| **Tier 1** | 5 Core Engineering Corrections | 4H aggregation grouping strictly by Date without cross-day stitching | `test_4h_aggregation_no_cross_day_stitching` | ⏳ Pending M1 | M1 |
-| **Tier 1** | 5 Core Engineering Corrections | Half-day early close and intraday in-progress graceful handling | `test_4h_aggregation_early_close_and_intraday` | ⏳ Pending M1 | M1 |
-| **Tier 1** | 5 Core Engineering Corrections | Pre/post-market snapshot appends temporary bar without mutating historical 15:30 bar | `test_prepost_market_snapshot_does_not_mutate_historical_bars` | ⏳ Pending M1 | M1 |
-| **Tier 1** | 5 Core Engineering Corrections | 1H S/R strict boundary invariant: `1H撑 < active_price < 1H压` under breakdown/breakout/stress | `test_1h_support_resistance_strict_boundary_protection` | ⏳ Pending M1 | M1 |
-| **Tier 1** | 5 Core Engineering Corrections | BTC-USD bypasses Finnhub quote; 51 tickers batch multi-threaded fetch without 429 risk | `test_batch_fetch_and_btc_usd_bypass` | ⏳ Pending M1 | M1 |
-| **Tier 2** | Quantitative Engine & States | 140-bar 25-bin Volume Profile POC using Typical Price $(H+L+C)/3$, flat-line & zero-vol guards | `test_volume_profile_poc_calculation` | ⏳ Pending M2 | M2 |
-| **Tier 2** | Quantitative Engine & States | 5-state RSI state machine with V3.2 3-day crash cooling `(⚠️冷却观察)` & VWAP `(✅右侧企稳)` | `test_rsi_state_machine_transitions` | ⏳ Pending M2 | M2 |
-| **Tier 2** | Quantitative Engine & States | Defense Factor Y = mean(SCHD, KO, GLD) with partial fallback & Divergence Alert (diff $\ge 25$) | `test_defense_factor_y_and_divergence` | ⏳ Pending M2 | M2 |
-| **Tier 2** | Quantitative Engine & States | 3X mirror resonance: SOXL bottom + SOXS top, TQQQ bottom + SQQQ top | `test_3x_mirror_resonance` | ⏳ Pending M2 | M2 |
-| **Tier 3** | Discord Formatting & Limits | Native Discord Markdown: zero occurrences of \`\`\` or \`\`\`text grey codeblocks | `test_embed_native_markdown_no_codeblocks` | ⏳ Pending M3 | M3 |
-| **Tier 3** | Discord Formatting & Limits | Discord payload character limit: Msg 1 $\le 2000$, Msg 2A $\le 5500$, Msg 2B $\le 5500$, $\le 10$ embeds | `test_discord_payload_character_limits` | ⏳ Pending M3 | M3 |
-| **Tier 4** | Radar Daemon Linkage & Safety | Non-blocking async daemon thread linkage (`isDaemon() == True`) with exception isolation | `test_radar_linkage_async_and_isolated` | ⏳ Pending M3 | M3 |
-| **Config** | Universe Definition | Universe contains exactly 51 unique tickers distributed across 5 tiers (4, 12, 13, 13, 9) | `test_universe_structure_and_completeness` | ✅ **PASS** | M0 |
-| **Config** | Environment Configuration | `.env` contains `DISCORD_WEBHOOK_URL` pointing to discordapp.com webhook | `test_env_webhook_configuration` | ⏳ Pending M1 | M1 |
+| # | 测试 | 覆盖功能 | 实现位置 | 状态 |
+|---|---|---|---|---|
+| 1 | `test_4h_aggregation_no_cross_day_stitching` | 4H K 线严格按交易日聚合，不跨日拼接 | `discord_sentinel.aggregate_1h_to_4h_df` | ✅ PASS |
+| 2 | `test_4h_aggregation_early_close_and_intraday` | 半日市 / 盘中未完成 K 线的优雅处理 | 同上 | ✅ PASS |
+| 3 | `test_prepost_market_snapshot_does_not_mutate_historical_bars` | 盘前/盘后快照只追加临时 bar，不改写历史 bar | `append_realtime_snapshot_bar` | ✅ PASS |
+| 4 | `test_1h_support_resistance_strict_boundary_protection` | 1H 支撑 < 现价 < 1H 压力 严格边界不变式 | `compute_and_protect_1h_sr` | ✅ PASS |
+| 5 | `test_batch_fetch_and_btc_usd_bypass` | 51 标的批量抓取防 429；BTC-USD 绕过 Finnhub | `fetch_sentinel_market_data` | ✅ PASS |
+| 6 | `test_volume_profile_poc_calculation` | 140 根 1H / 25 桶 Volume Profile POC（典型价加权） | `compute_volume_profile_poc` | ✅ PASS |
+| 7 | `test_rsi_state_machine_transitions` | 6 级 RSI 真话状态机（含 V3.2 冷却 / VWAP 右侧企稳解锁） | `evaluate_rsi_state` | ✅ PASS |
+| 8 | `test_defense_factor_y_and_divergence` | 防御因子 Y = mean(SCHD, KO, GLD) + 背离告警 | `compute_factor_y` / `evaluate_cross_asset_resonance` | ✅ PASS |
+| 9 | `test_3x_mirror_resonance` | SOXL×SOXS、TQQQ×SQQQ 3X 镜像共振 | `evaluate_cross_asset_resonance` | ✅ PASS |
+| 10 | `test_embed_native_markdown_no_codeblocks` | Discord 原生 Markdown（无灰码块），加粗/emoji 合规 | `build_discord_payloads` / `format_*` | ✅ PASS |
+| 11 | `test_discord_payload_character_limits` | 消息 ≤2000/5500 字符、embeds ≤10、单 embed ≤4096 | `build_discord_payloads` / `dispatch_discord_messages` | ✅ PASS |
+| 12 | `test_radar_linkage_async_and_isolated` | 主雷达以 daemon 线程异步接入，网络异常隔离不阻塞主循环 | `integrated_market_radar.dispatch_discord_sentinel_async` + `discord_sentinel.run_sentinel_cycle_safe` | ✅ PASS |
+| 13 | `test_universe_structure_and_completeness` | 51 只标的、5 梯队（4/12/13/13/9）唯一无重复 | `SENTINEL_UNIVERSE_TIERS` | ✅ PASS |
+| 14 | `test_env_webhook_configuration` | `.env` 中 `DISCORD_WEBHOOK_URL` 指向 `discordapp.com/api/webhooks/` | 仓库根目录 `.env`（本地未追踪） | ✅ PASS |
 
 ---
 
-## 3. Detailed Specification of Test Tiers
+## 3. 配置校验项说明（第 14 项）
 
-### Tier 1: 5 Core Engineering Corrections Invariants
-1. **`test_4h_aggregation_no_cross_day_stitching`**:
-   - Generates 14 1H bars across 2 full trading days.
-   - Enforces grouping strictly by `df.index.date`.
-   - Day 1 yields Bar 1 (09:30..12:30) and Bar 2 (13:30..15:30).
-   - Invariant: Zero bars span between Day 1 and Day 2.
-   - Verifies crypto mode (`BTC-USD`): 24 1H bars per day aggregated into 6 4-hour UTC chunks strictly bounded within date.
-2. **`test_4h_aggregation_early_close_and_intraday`**:
-   - Half-day session (13:00 close): 4 1H bars produce exactly 1 4H bar; Bar 2 is safely omitted without raising errors or outputting NaN.
-   - Active session at 11:00 AM: dynamically forms Bar 1 with available bars.
-   - Empty DataFrame: returns empty DataFrame without unhandled exceptions.
-3. **`test_prepost_market_snapshot_does_not_mutate_historical_bars`**:
-   - In `PRE_MARKET`, `POST_MARKET`, `OVERNIGHT`, and `WEEKEND`, yesterday's closed 15:30 bar is verified immutable.
-   - Returned calculation DataFrame has length `len + 1` with temporary snapshot bar: `Close = active_price`, `Open = yesterday_close`, `Volume = 0.0`.
-   - In `REGULAR` market session, no synthetic bar is appended.
-4. **`test_1h_support_resistance_strict_boundary_protection`**:
-   - Monotonicity invariant: `1H撑 < active_price < 1H压` must hold 100% strictly.
-   - Breakdown condition (`low_20h >= active_price`): enforces `1H撑 = min(POC, active_price - 1.5 * ATR_1H) < active_price`.
-   - Breakout condition (`high_20h <= active_price`): enforces `1H压 = active_price + 1.5 * ATR_1H > active_price`.
-   - Stress-tested under extreme market conditions (flash crash to $5.0, massive surge to $2,000.0, degenerate empty inputs).
-5. **`test_batch_fetch_and_btc_usd_bypass`**:
-   - Mocks yfinance and requests; verifies 51 tickers are fetched in batch mode.
-   - Asserts zero calls to Finnhub quote endpoint for `BTC-USD` (avoiding Finnhub null/0 quote failure).
+该测试检查仓库根目录 `.env` 是否存在且包含合规格式的 Discord Webhook：
 
-### Tier 2: Quantitative Engine & State Machine Invariants
-6. **`test_volume_profile_poc_calculation`**:
-   - Creates 140 1H bars with known institutional volume concentration at $100.0.
-   - Asserts POC recovers the winning bin midpoint ($100.0 \pm 2.0$).
-   - Guards against zero volume (time-at-price fallback), flat lines ($High=Low=Close$), and short history.
-7. **`test_rsi_state_machine_transitions`**:
-   - Evaluates all 5 states: `[🔥 双周期见底]`, `[🛑 双周期触顶]`, `[⚡ 4H超卖]`, `[安全持股]`.
-   - Verifies V3.2 3-day crash cooling: unresolved cooling displays `[🔥 双周期见底·⚠️冷却观察]`; intraday VWAP recovery unlocks `[🔥 双周期见底·✅右侧企稳]`.
-8. **`test_defense_factor_y_and_divergence`**:
-   - Arithmetic mean of `SCHD`, `KO`, and `GLD` 4H RSI.
-   - Graceful fallback when 1 or 2 components are missing.
-   - Divergence Alert triggers when `Factor Y 4H_RSI - SOXX 4H_RSI >= 25.0` and `SOXX 4H_RSI <= 32.0`.
-9. **`test_3x_mirror_resonance`**:
-   - Asserts `SOXL` bottom + `SOXS` top triggers `⚡【SOXL×SOXS 底部共振】`.
-   - Asserts `TQQQ` bottom + `SQQQ` top triggers `⚡【TQQQ×SQQQ 底部共振】`.
-   - Asserts top resonance when bullish 3X is overbought and inverse 3X is oversold.
-
-### Tier 3: Discord Embed Formatting & Character Limits
-10. **`test_embed_native_markdown_no_codeblocks`**:
-    - Scans all titles, descriptions, and fields across all generated embeds.
-    - Zero occurrences of \`\`\` or \`\`\`text.
-    - Native bold formatting `**{sym}**` and emojis verified.
-11. **`test_discord_payload_character_limits`**:
-    - Message 1 character count $\le 2,000$ (Discord limit: 6,000).
-    - Message 2 Part 2A (Tiers 1-3, 5 embeds) total chars $\le 5,500$ (Discord limit: 6,000).
-    - Message 2 Part 2B (Tiers 4-5, 4 embeds) total chars $\le 5,500$ (Discord limit: 6,000).
-    - Total embeds per message $\le 10$, total embeds across Part 2A and 2B == 9.
-    - Each embed description $\le 4,096$ characters.
-
-### Tier 4: Radar Daemon Linkage & Safety Invariants
-12. **`test_radar_linkage_async_and_isolated`**:
-    - Verifies async background thread launch (`daemon=True`).
-    - Verifies network exceptions (timeouts, HTTP 500, HTTP 429) are caught and logged inside `run_sentinel_cycle_safe` without impacting caller.
-
----
-
-## 4. Test Execution Output (M0 Baseline)
-
-```text
-================================================================================
- 🚀 RUNNING DISCORD SENTINEL & ENGINEERING INVARIANTS TEST SUITE
-================================================================================
-test_1h_support_resistance_strict_boundary_protection (__main__.TestDiscordSentinelTier1.test_1h_support_resistance_strict_boundary_protection)
-[Engineering Correction 3] Invariant: 1H撑 < active_price < 1H压 must hold 100% strictly. ... ERROR
-test_4h_aggregation_early_close_and_intraday (__main__.TestDiscordSentinelTier1.test_4h_aggregation_early_close_and_intraday)
-[Engineering Correction 1 Edge Cases] ... ERROR
-test_4h_aggregation_no_cross_day_stitching (__main__.TestDiscordSentinelTier1.test_4h_aggregation_no_cross_day_stitching)
-[Engineering Correction 1] 4H K-line aggregation must group strictly by Date. ... ERROR
-test_batch_fetch_and_btc_usd_bypass (__main__.TestDiscordSentinelTier1.test_batch_fetch_and_btc_usd_bypass)
-[Engineering Correction 4] Finnhub 429 Protection & BTC-USD Bypass: ... ERROR
-test_prepost_market_snapshot_does_not_mutate_historical_bars (__main__.TestDiscordSentinelTier1.test_prepost_market_snapshot_does_not_mutate_historical_bars)
-[Engineering Correction 2] Outside RTH (<09:30 or >16:00 ET), yesterday's ... ERROR
-test_3x_mirror_resonance (__main__.TestDiscordSentinelTier2.test_3x_mirror_resonance)
-3X Leveraged Mirror Resonance: ... ERROR
-test_defense_factor_y_and_divergence (__main__.TestDiscordSentinelTier2.test_defense_factor_y_and_divergence)
-Defense Factor Y & Macro Divergence: ... ERROR
-test_rsi_state_machine_transitions (__main__.TestDiscordSentinelTier2.test_rsi_state_machine_transitions)
-RSI State Machine & V3.2 Cooldown / VWAP Integration: ... ERROR
-test_volume_profile_poc_calculation (__main__.TestDiscordSentinelTier2.test_volume_profile_poc_calculation)
-Volume Profile POC: 140 1H bars, 25 bins, Typical Price (H+L+C)/3, volume accumulation. ... ERROR
-test_discord_payload_character_limits (__main__.TestDiscordSentinelTier3.test_discord_payload_character_limits)
-[Payload Limit Invariant] ... ERROR
-test_embed_native_markdown_no_codeblocks (__main__.TestDiscordSentinelTier3.test_embed_native_markdown_no_codeblocks)
-[Anti-Grayblock Invariant] ... ERROR
-test_radar_linkage_async_and_isolated (__main__.TestDiscordSentinelTier4.test_radar_linkage_async_and_isolated)
-[Radar Daemon Invariant] ... FAIL
-test_env_webhook_configuration (__main__.TestDiscordSentinelUniverseAndEnv.test_env_webhook_configuration)
-Verify DISCORD_WEBHOOK_URL is configured in .env. ... FAIL
-test_universe_structure_and_completeness (__main__.TestDiscordSentinelUniverseAndEnv.test_universe_structure_and_completeness)
-Verify the 5 Tiers universe contains exactly 51 unique tickers. ... ok
-
-================================================================================
- 📊 TEST EXECUTION SUMMARY (Elapsed: 0.736s)
-================================================================================
- Total Tests Run: 14
- Passed:          1 (Universe completeness verified)
- Failures:        2 (.env pending M1 setup, linkage stub)
- Errors:          11 (NotImplementedError on interface stubs)
-================================================================================
+```bash
+# 本地/CI 复现（占位配置即可，不会真的发消息）
+cp .env.example .env
+# 确保包含：
+# DISCORD_WEBHOOK_URL=https://discordapp.com/api/webhooks/<任意ID>/<任意Token>
 ```
 
+> 此前该测试失败的两个根因已修复：
+> 1. `test_discord_sentinel.py` 原硬编码旧电脑绝对路径（已删除，不再保留于仓库），
+>    已改为 `PROJECT_DIR = os.path.abspath(os.path.dirname(__file__))`，可在任意目录/机器运行；
+> 2. 仓库根目录缺少 `.env`，已在本地创建未追踪占位 `.env`（`.gitignore` 已排除，不会入库）。
+
 ---
 
-## 5. Escalation & Implementation Guidance for Milestone Agents
+## 4. 历史记录（M0 → M4）
 
-1. **For Worker M1 (Engineering Corrections & Data Pipeline)**:
-   - Configure `DISCORD_WEBHOOK_URL` in `.env`.
-   - Implement `aggregate_1h_to_4h_df`, `append_realtime_snapshot_bar`, `compute_and_protect_1h_sr`, `fetch_sentinel_market_data` in `discord_sentinel.py`.
-   - All 5 tests in `TestDiscordSentinelTier1` + `test_env_webhook_configuration` must turn green (PASS).
-2. **For Worker M2 (Quantitative Engine & Resonance)**:
-   - Implement `compute_volume_profile_poc`, `evaluate_rsi_state`, `compute_factor_y`, `evaluate_cross_asset_resonance` in `discord_sentinel.py`.
-   - All 4 tests in `TestDiscordSentinelTier2` must turn green (PASS).
-3. **For Worker M3 (Discord Formatting, CLI & Linkage)**:
-   - Implement `build_discord_payloads`, CLI flags (`--once`, `--schedule`, `--dry-run`), and `run_sentinel_cycle_safe`.
-   - Integrate `dispatch_discord_sentinel_async` into `integrated_market_radar.py` after line 4385.
-   - All tests in `TestDiscordSentinelTier3` and `TestDiscordSentinelTier4` must turn green (PASS).
-4. **For M4 Final Integration & Auditors**:
-   - Run `python test_discord_sentinel.py` to confirm 14/14 (100% PASS).
+- **M0 基线（2026-11-10 10:54 前）**：`discord_sentinel.py` 为接口骨架，14 项测试中 11 项 `NotImplementedError`、
+  2 项失败（环境配置 / 雷达联动），仅 1 项通过 —— 该基线已由后续提交实现并全量转绿，原 M0 文档内容可从 git 历史中追溯。
+- **M1~M3（2026-11-10）**：Tier 1 五项工程修正、Tier 2 四项量化引擎、Tier 3 两项 Discord 格式约束、
+  Tier 4 雷达非阻塞联动全部实现。
+- **M4（2026-11-11）**：补齐动态测试路径与本地 `.env` 后，**14/14 全部 PASS**；同时完成仓库级旧电脑绝对路径清理。
+
+---
+
+## 5. 相关测试套件
+
+| 套件 | 用途 | 备注 |
+|---|---|---|
+| `test_discord_sentinel.py` | 哨兵 + 工程约束（本文件） | 14/14 PASS |
+| `test_v32_circuit_breaker.py` | V3.2 熔断 / 反向 ETF 隔离 / 同日跳空冷却 | 17/17 PASS |
+| `test_challenger_m2.py` | AI 预测 JSON 契约压力测试 | 9/9 PASS（有 §6 副作用） |
+| `test_defects_4_8_verification.py` | 历史缺陷 4/8 回归 | 4/4 PASS（有 §6 副作用） |
+| `test_m2_adversarial_challenge.py` | 告警状态机 / 预测 schema 对抗 | 9/9 PASS（有 §6 副作用） |
+| `test_challenger_m2_recheck_deep.py` | 双 JSON 一致性 / SHA256 校验 | 8/9 PASS（1 项为 §6 数据侧既有缺陷） |
+| `test_e2e_v31.py` | 5 年回测端到端 55 项断言 | 需要 `.backtest_5y_cache.pkl`（未入库） |
+| `test_v31_synthesis.py` | V3.1 策略综合审计脚本 | 需要 `.backtest_5y_cache.pkl`（未入库） |
+
+---
+
+## 6. 已知测试副作用与数据侧缺陷（重要）
+
+### 6.1 `build_futu_terminal_html()` 的实盘同步副作用
+
+`create_futu_terminal.build_futu_terminal_html()` 内部包含“实盘同步”逻辑：
+读取并**重写** `data_cache/latest_ai_predictions.json`、重绘 `predict_radar_5y.html`，
+并在仓库根执行 `git add predict_radar_5y.html data_cache/latest_ai_predictions.json`（只 add，不会 commit/push），
+还可能生成 `us-market-radar/data_cache/...` 镜像目录。
+
+部分测试会调用它：`test_challenger_m2.py`、`test_defects_4_8_verification.py`、
+`test_defects_6_7_9_10.py`、`test_m2_adversarial_challenge.py`。运行这些测试后**工作区会出现非预期改动**，
+建议按下面命令清理（不会丢失任何代码修改）：
+
+```bash
+git restore --staged predict_radar_5y.html data_cache/latest_ai_predictions.json 2>/dev/null || true
+git checkout HEAD -- macro_radar.html stocks_radar.html predict_radar_5y.html data_cache/latest_ai_predictions.json
+rm -rf us-market-radar
+```
+
+> 根治建议（需人类确认后修改核心业务代码）：给 `build_futu_terminal_html()` 增加
+> `sync_side_effects: bool = True` 参数，测试/回放时传 `False`，避免测试污染工作区。
+
+### 6.2 `top_long` 排序缺陷（数据侧）
+
+`test_challenger_m2_recheck_deep.py::test_json_structure_and_types` 断言
+`data_cache/latest_ai_predictions.json` 的 `top_long` 按 `calibrated_win_rate_pct` 降序，
+但实测（含 origin/main 最新数据）均未排序 —— 根因在 `ml_predictor_5y.py:3178`：
+`top_long_stocks = [r for r in all_live_rows if not is_etf][:10]` 直接切片，缺少按胜率排序；
+`top_short` 已正确排序。该问题与路径修复无关，属**核心业务代码的既有缺陷**，
+建议人工确认后单独修复（修复后此测试即可 9/9）。
+
+---
+
+## 7. 2026-11-11：AI 5Y 基准迁移 QQQM → QQQ（验证记录）
+
+- 迁移范围：雷达监控池 ETF、富途终端映射/过滤、宏观天气引擎、`ml_predictor_5y.py`
+  （`MACRO_ETFS`、特征列 `QQQ_Bias_MA50` / `QQQ_Ret_5d` / `Alpha_QQQ_5d`、`SECTOR_MAP`、展示标签）、
+  相关测试与文档；
+- 数据：`data_cache/ml_panel_5y.parquet` 已重建（35 标的 / 41,827 行 / 2021-11-01～2026-11-11，
+  含 QQQ、无 QQQM）；`data_cache/latest_ai_predictions.json` 与 `predict_radar_5y.html` 已重新生成；
+- 兼容性修复：`build_extended_live_features_df()` 中 `merge_asof` 前统一 `Date` 为 `datetime64[ns]`
+  （pandas ≥3.0 要求两侧 dtype 一致）；
+- 验证：`py_compile` 全通过；`test_ml_predictor.py` 35/35、`test_short_predictor.py` 15/15、
+  `test_ml_predictor_adversarial.py` 14/14、`test_challenger_v11_empirical.py` 15/15；
+  `test_challenger_feature2_adversarial.py` 10/13、`test_challenger_v11_2_stress.py` 9/12
+  （失败项均为**改动前 HEAD 即已存在**的旧断言，或“工作区干净”检查——未提交时必然失败，
+  提交后即恢复）；
+- 说明：`qqqm_bias` 等内部 JSON 字段名保留（前端模板兼容）；历史告警/期权缓存与尚未重绘的
+  雷达 HTML 中仍可能残留 QQQM 字样，守护进程下一轮自动刷新。

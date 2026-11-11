@@ -396,13 +396,13 @@ class TestSafetyAndDaemonIntegrity(unittest.TestCase):
     def test_daemon_pid_active(self):
         """Verify integrated_market_radar.py file integrity and isolation."""
         import os
-        radar_path = r"c:\Users\User\.gemini\antigravity-ide\scratch\us-market-radar\integrated_market_radar.py"
+        radar_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "integrated_market_radar.py")
         self.assertTrue(os.path.exists(radar_path))
         self.assertGreater(os.path.getsize(radar_path), 1000)
 
     def test_integrated_market_radar_unmodified(self):
         """Verify git status of integrated_market_radar.py is clean and untouched."""
-        repo_dir = r"c:\Users\User\.gemini\antigravity-ide\scratch\us-market-radar"
+        repo_dir = os.path.dirname(os.path.abspath(__file__))
         res = subprocess.run(
             ["git", "-C", repo_dir, "status", "--porcelain", "integrated_market_radar.py"],
             capture_output=True, text=True, check=True

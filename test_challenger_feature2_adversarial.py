@@ -3,7 +3,7 @@
 """
 test_challenger_feature2_adversarial.py
 Empirical Challenger 2 Adversarial Verification Suite for Feature 2:
-- Cross-Sectional Ranking (Alpha_QQQM_5d, Alpha_SMH_20d)
+- Cross-Sectional Ranking (Alpha_QQQ_5d, Alpha_SMH_20d)
 - Table 4 Sector Calibration & Sorting
 - Walk-Forward CV Hyperparameters & Daemon Safety
 """
@@ -52,7 +52,7 @@ class DummyModel:
 def create_synthetic_raw_panel(n_days=40, symbols=None):
     """Generates synthetic OHLCV panel for symbols over n_days."""
     if symbols is None:
-        symbols = ['NVDA', 'MU', 'MSFT', 'COHR', 'CRWV', 'QQQM', 'SMH', 'IGV', 'TLT', 'VIXY']
+        symbols = ['NVDA', 'MU', 'MSFT', 'COHR', 'CRWV', 'QQQ', 'SMH', 'IGV', 'TLT', 'VIXY']
     
     dates = pd.date_range(start='2024-01-01', periods=n_days, freq='B')
     records = []
@@ -82,7 +82,7 @@ def create_synthetic_raw_panel(n_days=40, symbols=None):
 class TestFeature2CrossSectionalRank(unittest.TestCase):
     """
     Adversarial verification of Cross-Sectional Ranking for:
-    Alpha_QQQM_5d and Alpha_SMH_20d
+    Alpha_QQQ_5d and Alpha_SMH_20d
     """
 
     def test_truncation_invariance_synthetic(self):
@@ -110,12 +110,12 @@ class TestFeature2CrossSectionalRank(unittest.TestCase):
             self.assertEqual(len(full_at_cut), len(trunc_at_cut))
             self.assertTrue((full_at_cut['Ticker'] == trunc_at_cut['Ticker']).all())
 
-            # Alpha_QQQM_5d and Alpha_SMH_20d MUST match exactly
+            # Alpha_QQQ_5d and Alpha_SMH_20d MUST match exactly
             np.testing.assert_allclose(
-                trunc_at_cut['Alpha_QQQM_5d'].values,
-                full_at_cut['Alpha_QQQM_5d'].values,
+                trunc_at_cut['Alpha_QQQ_5d'].values,
+                full_at_cut['Alpha_QQQ_5d'].values,
                 rtol=1e-5, atol=1e-6,
-                err_msg=f"Truncation invariance failed for Alpha_QQQM_5d at date {cut_date}"
+                err_msg=f"Truncation invariance failed for Alpha_QQQ_5d at date {cut_date}"
             )
             np.testing.assert_allclose(
                 trunc_at_cut['Alpha_SMH_20d'].values,
@@ -154,10 +154,10 @@ class TestFeature2CrossSectionalRank(unittest.TestCase):
 
         self.assertEqual(len(full_at_t), len(trunc_at_t))
         np.testing.assert_allclose(
-            trunc_at_t['Alpha_QQQM_5d'].values,
-            full_at_t['Alpha_QQQM_5d'].values,
+            trunc_at_t['Alpha_QQQ_5d'].values,
+            full_at_t['Alpha_QQQ_5d'].values,
             rtol=1e-5, atol=1e-6,
-            err_msg=f"Real data truncation invariance failed for Alpha_QQQM_5d at {cut_date}"
+            err_msg=f"Real data truncation invariance failed for Alpha_QQQ_5d at {cut_date}"
         )
         np.testing.assert_allclose(
             trunc_at_t['Alpha_SMH_20d'].values,
@@ -169,7 +169,7 @@ class TestFeature2CrossSectionalRank(unittest.TestCase):
     def test_future_spike_insensitivity(self):
         """
         Adversarial test: A massive price spike at T+1 must NOT alter
-        date T's Alpha_QQQM_5d or Alpha_SMH_20d cross-sectional ranks.
+        date T's Alpha_QQQ_5d or Alpha_SMH_20d cross-sectional ranks.
         """
         full_raw = create_synthetic_raw_panel(n_days=30)
         dates = sorted(full_raw['Date'].unique())
@@ -181,10 +181,10 @@ class TestFeature2CrossSectionalRank(unittest.TestCase):
         base_feat = build_feature_panel(full_raw)
         base_t = base_feat[base_feat['Date'] == t_date].sort_values('Ticker').reset_index(drop=True)
 
-        # Inject extreme spike at T+1: NVDA jumps 1000%, QQQM drops 90%
+        # Inject extreme spike at T+1: NVDA jumps 1000%, QQQ drops 90%
         spiked_raw = full_raw.copy()
         mask_nvda = (spiked_raw['Date'] == t1_date) & (spiked_raw['Ticker'] == 'NVDA')
-        mask_qqqm = (spiked_raw['Date'] == t1_date) & (spiked_raw['Ticker'] == 'QQQM')
+        mask_qqqm = (spiked_raw['Date'] == t1_date) & (spiked_raw['Ticker'] == 'QQQ')
         mask_smh = (spiked_raw['Date'] == t1_date) & (spiked_raw['Ticker'] == 'SMH')
 
         spiked_raw.loc[mask_nvda, ['Open', 'High', 'Low', 'Close']] *= 10.0
@@ -196,10 +196,10 @@ class TestFeature2CrossSectionalRank(unittest.TestCase):
 
         # Date T features MUST be 100% identical
         np.testing.assert_allclose(
-            spiked_t['Alpha_QQQM_5d'].values,
-            base_t['Alpha_QQQM_5d'].values,
+            spiked_t['Alpha_QQQ_5d'].values,
+            base_t['Alpha_QQQ_5d'].values,
             rtol=1e-7, atol=1e-7,
-            err_msg="Future spike at T+1 leaked into Date T Alpha_QQQM_5d!"
+            err_msg="Future spike at T+1 leaked into Date T Alpha_QQQ_5d!"
         )
         np.testing.assert_allclose(
             spiked_t['Alpha_SMH_20d'].values,
@@ -224,10 +224,10 @@ class TestFeature2CrossSectionalRank(unittest.TestCase):
         feat = build_feature_panel(raw)
         feat_d20 = feat[feat['Date'] == d20]
 
-        self.assertFalse(feat_d20['Alpha_QQQM_5d'].isna().any())
+        self.assertFalse(feat_d20['Alpha_QQQ_5d'].isna().any())
         self.assertFalse(feat_d20['Alpha_SMH_20d'].isna().any())
-        self.assertTrue((feat_d20['Alpha_QQQM_5d'] >= 0.0).all())
-        self.assertTrue((feat_d20['Alpha_QQQM_5d'] <= 1.0).all())
+        self.assertTrue((feat_d20['Alpha_QQQ_5d'] >= 0.0).all())
+        self.assertTrue((feat_d20['Alpha_QQQ_5d'] <= 1.0).all())
 
     def test_multi_date_truncation_invariance_parquet(self):
         """
@@ -263,8 +263,8 @@ class TestFeature2CrossSectionalRank(unittest.TestCase):
 
             self.assertEqual(len(full_rows), len(cut_rows))
             np.testing.assert_allclose(
-                cut_rows['Alpha_QQQM_5d'].values,
-                full_rows['Alpha_QQQM_5d'].values,
+                cut_rows['Alpha_QQQ_5d'].values,
+                full_rows['Alpha_QQQ_5d'].values,
                 rtol=1e-5, atol=1e-6,
                 err_msg=f"Truncation invariance failed at multi-year date {cut_d}"
             )
@@ -275,18 +275,18 @@ class TestFeature2CrossSectionalRank(unittest.TestCase):
         Must produce finite non-null rank in [0, 1] without crash or NaN.
         """
         # Create dataset where only 1 target stock exists on Day 0
-        symbols = ['NVDA', 'QQQM', 'SMH', 'IGV', 'TLT', 'VIXY']
+        symbols = ['NVDA', 'QQQ', 'SMH', 'IGV', 'TLT', 'VIXY']
         raw = create_synthetic_raw_panel(n_days=25, symbols=symbols)
         feat = build_feature_panel(raw)
 
-        self.assertFalse(feat['Alpha_QQQM_5d'].isna().any())
+        self.assertFalse(feat['Alpha_QQQ_5d'].isna().any())
         self.assertFalse(feat['Alpha_SMH_20d'].isna().any())
-        self.assertFalse(np.isinf(feat['Alpha_QQQM_5d']).any())
+        self.assertFalse(np.isinf(feat['Alpha_QQQ_5d']).any())
         self.assertFalse(np.isinf(feat['Alpha_SMH_20d']).any())
 
         # Check values are bounded in [0, 1]
-        self.assertTrue((feat['Alpha_QQQM_5d'] >= 0.0).all())
-        self.assertTrue((feat['Alpha_QQQM_5d'] <= 1.0).all())
+        self.assertTrue((feat['Alpha_QQQ_5d'] >= 0.0).all())
+        self.assertTrue((feat['Alpha_QQQ_5d'] <= 1.0).all())
         self.assertTrue((feat['Alpha_SMH_20d'] >= 0.0).all())
         self.assertTrue((feat['Alpha_SMH_20d'] <= 1.0).all())
 
@@ -300,14 +300,14 @@ class TestFeature2CrossSectionalRank(unittest.TestCase):
         feat = build_feature_panel(raw)
 
         # Merge macro returns back to test raw alpha monotonicity
-        test_feat = pd.merge(feat, macro_df[['Date', 'QQQM_Ret_5d', 'SMH_Ret_20d']], on='Date', how='left')
-        test_feat['Raw_Alpha_QQQM_5d'] = test_feat['Ret_5d'] - test_feat['QQQM_Ret_5d']
+        test_feat = pd.merge(feat, macro_df[['Date', 'QQQ_Ret_5d', 'SMH_Ret_20d']], on='Date', how='left')
+        test_feat['Raw_Alpha_QQQ_5d'] = test_feat['Ret_5d'] - test_feat['QQQ_Ret_5d']
 
         # Group by Date and check that higher raw alpha has higher rank
         for dt, grp in test_feat.groupby('Date'):
             if len(grp) >= 3:
-                sorted_by_raw = grp.sort_values('Raw_Alpha_QQQM_5d')
-                ranks = sorted_by_raw['Alpha_QQQM_5d'].values
+                sorted_by_raw = grp.sort_values('Raw_Alpha_QQQ_5d')
+                ranks = sorted_by_raw['Alpha_QQQ_5d'].values
                 # Check non-decreasing ranks
                 self.assertTrue(
                     np.all(np.diff(ranks) >= -1e-8),
@@ -533,7 +533,7 @@ class TestHyperparametersAndDaemonIsolation(unittest.TestCase):
         Verify that integrated_market_radar.py remains untouched and unmodified.
         """
         import subprocess
-        repo_dir = r"C:\Users\User\.gemini\antigravity-ide\scratch\us-market-radar"
+        repo_dir = os.path.dirname(os.path.abspath(__file__))
         res = subprocess.run(
             ["git", "-C", repo_dir, "status", "--porcelain", "integrated_market_radar.py"],
             capture_output=True, text=True

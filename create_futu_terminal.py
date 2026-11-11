@@ -105,7 +105,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             is_storm = ("🌧️" in w_status) or ("暴雨" in w_status)
 
             all_preds = ai_predictions.get("all_predictions", [])
-            pure_etf_set = {"QQQM", "SPY", "DIA", "IWM", "SMH", "SOXX", "SOXL", "KORU", "IGV", "TLT", "GLD", "QQQI", "VIXY", "SQQQ", "SOXS", "IBIT"}
+            pure_etf_set = {"QQQ", "SPY", "DIA", "IWM", "SMH", "SOXX", "SOXL", "KORU", "IGV", "TLT", "GLD", "QQQI", "VIXY", "SQQQ", "SOXS", "IBIT"}
             offensive_lev_etfs = {"SOXL", "KORU"}
             if all_preds and live_lookup:
                 for item in all_preds:
@@ -2240,7 +2240,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
 
         // TradingView 交易所标的代码映射 (全量 71 只)
         const SYMBOL_MAP = {{
-            "QQQM": "NASDAQ:QQQM",
+            "QQQ": "NASDAQ:QQQ",
             "SPY": "AMEX:SPY",
             "DIA": "AMEX:DIA",
             "IWM": "AMEX:IWM",
@@ -2478,7 +2478,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 else if (filter === "take_profit" && (m.is_take_profit || (m.signal && (m.signal.includes("止盈") || m.signal.includes("超买") || m.signal.includes("冲顶"))))) match = true;
                 else if (filter === "stop" && (m.is_stop || m.is_deep_pullback || (m.signal && (m.signal.includes("破位") || m.signal.includes("跌破") || m.signal.includes("回踩"))))) match = true;
                 else if (filter === "芯片与半导体" && (t === "SMH" || t === "SOXX" || t === "SOXL" || t === "SOXS" || t === "KORU")) match = true;
-                else if (filter === "云与软件" && (t === "QQQM" || t === "IGV" || t === "SQQQ")) match = true;
+                else if (filter === "云与软件" && (t === "QQQ" || t === "IGV" || t === "SQQQ")) match = true;
                 else if (filter === "物理与安全" && (t === "IBIT")) match = true;
                 else if (filter === "数字资产" && (t === "IBIT" || m.cat === "数字资产")) match = true;
 

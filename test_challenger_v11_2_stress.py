@@ -80,7 +80,7 @@ class TestR3ReturnMetricsStress(unittest.TestCase):
             'Sector': [SECTOR_MAP[t] for t in tickers],
             'Close': [100.0] * n,
             'ATR_Pct': [2.0] * n,
-            'QQQM_Bias_MA50': [1.0] * n,
+            'QQQ_Bias_MA50': [1.0] * n,
             'SMH_Bias_MA50': [1.0] * n,
             'VIXY_Pos_60': [0.4] * n,
             'SMH_IGV_Ratio_Bias': [0.5] * n,
@@ -319,7 +319,7 @@ class TestR4Table4SectorLinkageAndBoundary(unittest.TestCase):
                 'Close': 100.0 + i * 10,
                 'ATR_Pct': 2.0,
                 'Prob_1': prob,
-                'QQQM_Bias_MA50': 1.0,
+                'QQQ_Bias_MA50': 1.0,
                 'SMH_Bias_MA50': 1.0,
                 'VIXY_Pos_60': 0.4,
                 'SMH_IGV_Ratio_Bias': 0.5
@@ -468,9 +468,9 @@ class TestR4Table4SectorLinkageAndBoundary(unittest.TestCase):
 class TestR4MacroWeatherMatrix(unittest.TestCase):
     """
     Stress test evaluate_macro_weather() across full parameter matrix:
-    - Dual breakdown: QQQM < -3.0% AND SMH < -3.0% -> 🌧️ 暴雨空仓
+    - Dual breakdown: QQQ < -3.0% AND SMH < -3.0% -> 🌧️ 暴雨空仓
     - Single side deviation: -2.9% & -3.1% -> ⛅ 阴天防守
-    - Bull base: QQQM >= 0.25% AND SMH >= 0.25% AND VIXY_Pos < 0.75 -> ☀️ 晴天做多
+    - Bull base: QQQ >= 0.25% AND SMH >= 0.25% AND VIXY_Pos < 0.75 -> ☀️ 晴天做多
     - Bull base with VIX panic: VIXY_Pos >= 0.75 -> ⛅ 阴天防守
     """
 
@@ -484,9 +484,9 @@ class TestR4MacroWeatherMatrix(unittest.TestCase):
             {"qqqm": -3.01, "smh": -3.01, "vix": 0.50, "exp_status": "🌧️ 暴雨空仓", "exp_badge": "weather-rainy"},
             # Case 4: Strict boundary at -3.00% (not strictly < -3.0) -> cloudy
             {"qqqm": -3.00, "smh": -3.00, "vix": 0.50, "exp_status": "⛅ 阴天防守", "exp_badge": "weather-cloudy"},
-            # Case 5: Asymmetric QQQM safe, SMH breakdown (-2.9% & -3.1%)
+            # Case 5: Asymmetric QQQ safe, SMH breakdown (-2.9% & -3.1%)
             {"qqqm": -2.90, "smh": -3.10, "vix": 0.50, "exp_status": "⛅ 阴天防守", "exp_badge": "weather-cloudy"},
-            # Case 6: Asymmetric QQQM breakdown, SMH safe (-3.1% & -2.9%)
+            # Case 6: Asymmetric QQQ breakdown, SMH safe (-3.1% & -2.9%)
             {"qqqm": -3.10, "smh": -2.90, "vix": 0.50, "exp_status": "⛅ 阴天防守", "exp_badge": "weather-cloudy"},
             # Case 7: Flat / neutral
             {"qqqm": 0.00, "smh": 0.00, "vix": 0.50, "exp_status": "⛅ 阴天防守", "exp_badge": "weather-cloudy"},

@@ -51,8 +51,8 @@ if hasattr(sys.stdout, "reconfigure"):
 if hasattr(sys.stderr, "reconfigure"):
     sys.stderr.reconfigure(encoding="utf-8")
 
-# Configure project paths
-PROJECT_DIR = os.path.abspath(r"C:\Users\User\.gemini\antigravity-ide\scratch\us-market-radar")
+# Configure project paths（动态解析：以测试文件所在目录为项目根，跨机器/跨目录可运行）
+PROJECT_DIR = os.path.abspath(os.path.dirname(__file__))
 if PROJECT_DIR not in sys.path:
     sys.path.insert(0, PROJECT_DIR)
 
