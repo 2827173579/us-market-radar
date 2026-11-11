@@ -114,8 +114,8 @@
       "last_notified_at": 1794408966.006846
     },
     "MU": {
-      "state": "STOP_LOSS",
-      "last_notified_at": 1793944690.7934802
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "ASML": {
       "state": "NORMAL",
@@ -126,8 +126,8 @@
       "last_notified_at": 1793944690.7934802
     },
     "META": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1794409279.9790242
     },
     "LITE": {
       "state": "STOP_LOSS",
@@ -154,8 +154,8 @@
       "last_notified_at": 0.0
     },
     "MSTR": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1794409279.9790242
     },
     "PEP": {
       "state": "NORMAL",
@@ -258,8 +258,8 @@
       "last_notified_at": 0.0
     },
     "QCOM": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1794409279.9790242
     }
   },
   "position_peaks": {
