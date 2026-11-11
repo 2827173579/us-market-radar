@@ -4,7 +4,7 @@
     "profit_factor": 1.4,
     "top_sector": "存储芯片 (⭐⭐⭐⭐⭐)",
     "top_feature": "TLT_Bias_MA50 (12.3%)",
-    "sync_time": "2026-11-11 17:58:09",
+    "sync_time": "2026-11-11 17:59:44",
     "data_mode": "Finnhub 秒级实时 (🌌 美股夜盘)",
     "is_realtime": false
   },
@@ -4178,7 +4178,7 @@
       "sector_pf": 1.28,
       "target_profit_price": 1494.63,
       "target_profit_pct": 4.5,
-      "stop_loss_price": 1382.06,
+      "stop_loss_price": 1382.05,
       "stop_loss_pct": 3.4,
       "action": "🛡️ 暴雨空仓·严禁左侧接刀",
       "action_tag": "action-watch",
@@ -4957,10 +4957,10 @@
       "sector_key": "Memory",
       "sector_cn": "韩股存储3倍做多",
       "sector_rating": "⭐⭐⭐⭐⭐",
-      "latest_price": 7.68,
-      "current_price": 7.68,
-      "atr_pct": 21.22,
-      "bias_ma50": -53.64,
+      "latest_price": 7.69,
+      "current_price": 7.69,
+      "atr_pct": 21.2,
+      "bias_ma50": -53.58,
       "bias_ma20": -31.85,
       "low_prev": 6.82,
       "rsi_14": 33.4,
@@ -4974,18 +4974,18 @@
       "predicted_win_rate_pct": 57.0,
       "calibrated_win_rate_pct": 38.8,
       "sector_pf": 1.8,
-      "target_profit_price": 8.41,
+      "target_profit_price": 8.42,
       "target_profit_pct": 9.5,
-      "stop_loss_price": 7.14,
+      "stop_loss_price": 7.15,
       "stop_loss_pct": 7.0,
       "action": "🚨 暴跌熔断·严禁左侧接刀",
       "action_tag": "action-rebound",
       "model_raw_short_prob_pct": 29.8,
       "calibrated_short_win_rate_pct": 35.2,
       "short_entry_price": 7.210000038146973,
-      "short_target_profit_price": 6.95,
+      "short_target_profit_price": 6.96,
       "short_target_profit_pct": 9.5,
-      "short_stop_loss_price": 8.22,
+      "short_stop_loss_price": 8.23,
       "short_stop_loss_pct": 7.0,
       "dollar_pcr": 1.4,
       "pcr": 1.07,
@@ -4995,12 +4995,12 @@
       "iv_atm": 207.0,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "s1": 7.28,
-      "s2": 6.9,
-      "sl": 6.8,
-      "r1": 8.14,
-      "r2": 8.96,
-      "scenario_script": "【暴跌熔断风控剧本】触发暴跌熔断保护期，下方严防下探 S2 ($6.90) 极端清算底；反抽测试 R1 ($8.14) 均属诱多；防守止损位 $6.80，严禁左侧接刀",
+      "s1": 7.29,
+      "s2": 6.91,
+      "sl": 6.81,
+      "r1": 8.15,
+      "r2": 8.97,
+      "scenario_script": "【暴跌熔断风控剧本】触发暴跌熔断保护期，下方严防下探 S2 ($6.91) 极端清算底；反抽测试 R1 ($8.15) 均属诱多；防守止损位 $6.81，严禁左侧接刀",
       "track": "Track B",
       "four_h_rsi": 41.7,
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
@@ -8170,7 +8170,7 @@
       "sector_pf": 1.28,
       "target_profit_price": 1494.63,
       "target_profit_pct": 4.5,
-      "stop_loss_price": 1382.06,
+      "stop_loss_price": 1382.05,
       "stop_loss_pct": 3.4,
       "action": "🛡️ 暴雨空仓·严禁左侧接刀",
       "action_tag": "action-watch",
@@ -8949,10 +8949,10 @@
       "sector_key": "Memory",
       "sector_cn": "韩股存储3倍做多",
       "sector_rating": "⭐⭐⭐⭐⭐",
-      "latest_price": 7.68,
-      "current_price": 7.68,
-      "atr_pct": 21.22,
-      "bias_ma50": -53.64,
+      "latest_price": 7.69,
+      "current_price": 7.69,
+      "atr_pct": 21.2,
+      "bias_ma50": -53.58,
       "bias_ma20": -31.85,
       "low_prev": 6.82,
       "rsi_14": 33.4,
@@ -8966,18 +8966,18 @@
       "predicted_win_rate_pct": 57.0,
       "calibrated_win_rate_pct": 38.8,
       "sector_pf": 1.8,
-      "target_profit_price": 8.41,
+      "target_profit_price": 8.42,
       "target_profit_pct": 9.5,
-      "stop_loss_price": 7.14,
+      "stop_loss_price": 7.15,
       "stop_loss_pct": 7.0,
       "action": "🚨 暴跌熔断·严禁左侧接刀",
       "action_tag": "action-rebound",
       "model_raw_short_prob_pct": 29.8,
       "calibrated_short_win_rate_pct": 35.2,
       "short_entry_price": 7.210000038146973,
-      "short_target_profit_price": 6.95,
+      "short_target_profit_price": 6.96,
       "short_target_profit_pct": 9.5,
-      "short_stop_loss_price": 8.22,
+      "short_stop_loss_price": 8.23,
       "short_stop_loss_pct": 7.0,
       "dollar_pcr": 1.4,
       "pcr": 1.07,
@@ -8987,12 +8987,12 @@
       "iv_atm": 207.0,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "s1": 7.28,
-      "s2": 6.9,
-      "sl": 6.8,
-      "r1": 8.14,
-      "r2": 8.96,
-      "scenario_script": "【暴跌熔断风控剧本】触发暴跌熔断保护期，下方严防下探 S2 ($6.90) 极端清算底；反抽测试 R1 ($8.14) 均属诱多；防守止损位 $6.80，严禁左侧接刀",
+      "s1": 7.29,
+      "s2": 6.91,
+      "sl": 6.81,
+      "r1": 8.15,
+      "r2": 8.97,
+      "scenario_script": "【暴跌熔断风控剧本】触发暴跌熔断保护期，下方严防下探 S2 ($6.91) 极端清算底；反抽测试 R1 ($8.15) 均属诱多；防守止损位 $6.81，严禁左侧接刀",
       "track": "Track B",
       "four_h_rsi": 41.7,
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
@@ -13194,183 +13194,183 @@
     },
     "KORU": {
       "ticker": "KORU",
-      "current_price": 7.68,
-      "s1": 7.28,
-      "s2": 6.9,
-      "sl": 6.8,
-      "r1": 8.14,
-      "r2": 8.96,
+      "current_price": 7.69,
+      "s1": 7.29,
+      "s2": 6.91,
+      "sl": 6.81,
+      "r1": 8.15,
+      "r2": 8.97,
       "history": [
         {
           "date": "2026-10-15",
-          "price": 12.79
+          "price": 12.81
         },
         {
           "date": "2026-10-16",
-          "price": 11.33
+          "price": 11.34
         },
         {
           "date": "2026-10-19",
-          "price": 12.7
-        },
-        {
-          "date": "2026-10-20",
-          "price": 12.07
-        },
-        {
-          "date": "2026-10-21",
           "price": 12.72
         },
         {
+          "date": "2026-10-20",
+          "price": 12.09
+        },
+        {
+          "date": "2026-10-21",
+          "price": 12.74
+        },
+        {
           "date": "2026-10-22",
-          "price": 10.85
+          "price": 10.86
         },
         {
           "date": "2026-10-23",
-          "price": 11.27
+          "price": 11.28
         },
         {
           "date": "2026-10-26",
-          "price": 11.61
+          "price": 11.63
         },
         {
           "date": "2026-10-27",
-          "price": 12.63
+          "price": 12.65
         },
         {
           "date": "2026-10-28",
-          "price": 14.68
+          "price": 14.7
         },
         {
           "date": "2026-10-29",
-          "price": 13.58
+          "price": 13.6
         },
         {
           "date": "2026-10-30",
-          "price": 11.32
+          "price": 11.33
         },
         {
           "date": "2026-11-02",
-          "price": 11.05
+          "price": 11.06
         },
         {
           "date": "2026-11-03",
-          "price": 11.73
+          "price": 11.75
         },
         {
           "date": "2026-11-04",
-          "price": 11.11
+          "price": 11.12
         },
         {
           "date": "2026-11-05",
-          "price": 6.95
+          "price": 6.96
         },
         {
           "date": "2026-11-06",
-          "price": 7.37
+          "price": 7.38
         },
         {
           "date": "2026-11-09",
-          "price": 8.18
+          "price": 8.19
         },
         {
           "date": "2026-11-10",
-          "price": 7.68
+          "price": 7.69
         },
         {
           "date": "2026-11-11",
-          "price": 7.68
+          "price": 7.69
         }
       ],
       "projection": [
         {
           "day": "T+1",
           "date": "2026-11-12",
-          "price": 7.71,
+          "price": 7.72,
           "pct": 0.4
         },
         {
           "day": "T+2",
           "date": "2026-11-13",
-          "price": 8.08,
+          "price": 8.09,
           "pct": 5.6
         },
         {
           "day": "T+3",
           "date": "2026-11-16",
-          "price": 8.5,
+          "price": 8.51,
           "pct": 10.6
         },
         {
           "day": "T+4",
           "date": "2026-11-17",
-          "price": 8.62,
+          "price": 8.63,
           "pct": 12.2
         },
         {
           "day": "T+5",
           "date": "2026-11-18",
-          "price": 8.83,
+          "price": 8.84,
           "pct": 15.0
         },
         {
           "day": "T+6",
           "date": "2026-11-19",
-          "price": 8.82,
+          "price": 8.83,
           "pct": 14.9
         },
         {
           "day": "T+7",
           "date": "2026-11-20",
-          "price": 8.75,
+          "price": 8.76,
           "pct": 13.8
         },
         {
           "day": "T+8",
           "date": "2026-11-23",
-          "price": 8.44,
+          "price": 8.45,
           "pct": 9.9
         },
         {
           "day": "T+9",
           "date": "2026-11-24",
-          "price": 8.12,
+          "price": 8.13,
           "pct": 5.8
         },
         {
           "day": "T+10",
           "date": "2026-11-25",
-          "price": 7.89,
+          "price": 7.9,
           "pct": 2.8
         },
         {
           "day": "T+11",
           "date": "2026-11-26",
-          "price": 7.73,
+          "price": 7.74,
           "pct": 0.6
         },
         {
           "day": "T+12",
           "date": "2026-11-27",
-          "price": 7.49,
+          "price": 7.5,
           "pct": -2.5
         },
         {
           "day": "T+13",
           "date": "2026-11-30",
-          "price": 7.58,
+          "price": 7.59,
           "pct": -1.4
         },
         {
           "day": "T+14",
           "date": "2026-12-01",
-          "price": 7.77,
+          "price": 7.78,
           "pct": 1.1
         },
         {
           "day": "T+15",
           "date": "2026-12-02",
-          "price": 8.15,
+          "price": 8.16,
           "pct": 6.2
         }
       ],
@@ -13379,7 +13379,7 @@
           "type": "top",
           "date": "2026-11-18",
           "day": "T+5",
-          "price": 8.83,
+          "price": 8.84,
           "desc": "🔴 周期峰阻力窗 (高危变盘·压力不过就跑)",
           "tag": "周期阻力窗 (逢高不过就跑)"
         },
@@ -13387,7 +13387,7 @@
           "type": "bottom",
           "date": "2026-11-27",
           "day": "T+12",
-          "price": 7.49,
+          "price": 7.5,
           "desc": "🔵 周期底回踩窗 (关注空头回补企稳)",
           "tag": "周期底回踩窗 (企稳关注)"
         }
