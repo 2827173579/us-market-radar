@@ -102,8 +102,8 @@
       "last_notified_at": 1794383116.5632806
     },
     "ORCL": {
-      "state": "STOP_LOSS",
-      "last_notified_at": 1793931134.9963472
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "CEG": {
       "state": "NORMAL",
@@ -146,8 +146,8 @@
       "last_notified_at": 0.0
     },
     "VRT": {
-      "state": "STOP_LOSS",
-      "last_notified_at": 1793944690.7934802
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "AXP": {
       "state": "NORMAL",
