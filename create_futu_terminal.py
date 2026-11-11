@@ -483,7 +483,6 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
     <meta name="apple-mobile-web-app-title" content="富途雷达">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="theme-color" content="#0b0e14">
-    <link rel="manifest" href="manifest.json">
     <title>富途牛牛风格 · 专业全周期量化看盘终端 (Pro Terminal · 70标的全量版)</title>
     <style>
         * {{
@@ -2615,6 +2614,13 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             const curFibHigh = data.fib_high || 0;
             const curDistPit = data.dist_to_pit !== undefined ? data.dist_to_pit : 0;
             const curSignal = data.signal || "";
+            const isInverseHedge = Boolean(data.is_inverse_hedge || ["SQQQ", "SOXS", "VIXY"].includes(ticker));
+            const isCrashHalt = !isInverseHedge && Boolean(data.is_crash_halt || (data.optimal_limit === 0 && data.limit_note && data.limit_note.includes("破位")));
+            const isCoolingHalt = !isInverseHedge && Boolean(data.is_cooling_halt || (data.intraday_status_text && data.intraday_status_text.includes("冷却期")));
+            let optimalLimit = data.optimal_limit !== undefined ? data.optimal_limit : curActive;
+            const fractional = data.fractional_shares || 0;
+            const stopLoss = (isCrashHalt || isCoolingHalt) ? 0 : (data.entry_stop_loss || (curFibLow > 0 ? curFibLow * 0.97 : optimalLimit * 0.96));
+            const cancelLine = Math.max(data.low_price || data.rth_low || 0, curLast * 0.985);
             const curCat = data.cat || data.sub || "";
 
             document.getElementById("pSector").innerText = curCat || "科技龙头";
@@ -3410,6 +3416,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                     selectTicker(AI_PREDICTIONS.top10[0].ticker);
                 }}
             }}
+        }}
 
         // 单个卡片折叠/展开
         function toggleCard(btn) {{
