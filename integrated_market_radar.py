@@ -1531,7 +1531,12 @@ def evaluate_intraday_entry(
     if s1_support > 0:
         dist_s1_pct = ((active_price - s1_support) / s1_support) * 100.0
         support_stabilize = bool(0.0 <= dist_s1_pct <= 3.5 and (is_5m_green or is_higher_low))
-    broken_rebound_ready = bool(is_stop and (vwap_ok or oversold_turn or support_stabilize))
+    # 品种过滤：低弹性慢股(ATR%<1.8) 与 暴雷首日(当日<=-7.5%) 不参与短线博反抽
+    atr_pct_val = (atr / active_price) * 100.0 if (atr > 0 and active_price > 0) else 0.0
+    low_elasticity = bool(0.0 < atr_pct_val < 1.8)
+    crash_day = bool(pct_change <= -7.5)
+    rebound_blocked = bool(low_elasticity or crash_day)
+    broken_rebound_ready = bool(is_stop and (not rebound_blocked) and (vwap_ok or oversold_turn or support_stabilize))
     broken_bearish = bool(is_stop and not broken_rebound_ready)
 
     intraday_entry_ready = False
@@ -1558,8 +1563,15 @@ def evaluate_intraday_entry(
             limit_note = "暂缓左侧接刀·等站上VWAP右侧确认"
             entry_stop_loss = round(s1_support, 2) if s1_support > 0 else 0.0
             stop_loss_pct = 0.0
-            intraday_status_text = "🔴 空头宣泄·严禁左侧接刀"
-            intraday_reason = f"股价跌穿黄金坑(${fib_low:.2f})且日内压制于VWAP(${vwap:.2f})下方，空头宣泄未止跌；请耐心等待日内重夺VWAP后再博右侧反抽"
+            if low_elasticity:
+                intraday_status_text = "🔴 低弹性慢股·破坑观望"
+                intraday_reason = f"14日ATR%仅{atr_pct_val:.1f}% (<1.8%)，低弹性慢股反弹空间过窄；破坑后不触发短线博反抽，统一保持观望等待日线右侧企稳确认"
+            elif crash_day:
+                intraday_status_text = "🔴 暴雷急杀·严禁左侧接刀"
+                intraday_reason = f"今日跌幅{pct_change:.1f}% (≤-7.5%)，处于单日暴雷急杀宣泄当天；即便盘中短暂触碰VWAP也不触发博反抽，必须等次日/三日宣泄期后再评估右侧企稳信号"
+            else:
+                intraday_status_text = "🔴 空头宣泄·严禁左侧接刀"
+                intraday_reason = f"股价跌穿黄金坑(${fib_low:.2f})且日内压制于VWAP(${vwap:.2f})下方，空头宣泄未止跌；请耐心等待日内重夺VWAP后再博右侧反抽"
     elif dist_to_pit < -2.0 and not is_pit:
         if cond_deep_sync:
             intraday_entry_ready = True

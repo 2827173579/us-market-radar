@@ -2908,9 +2908,9 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 themeColor = "#ff1744";
                 themeBg = "linear-gradient(135deg, rgba(255, 23, 68, 0.09), #181b22)";
                 themeBorder = "#ff1744";
-                actionType = "空头宣泄 / 严禁左侧接刀";
-                mainVerdict = "🔴 空头宣泄·严禁左侧接刀";
-                actionDirective = `【左侧禁接】股价跌穿黄金坑 ($${{curFibLow.toFixed(2)}}) 且日内压制于 VWAP ($${{(data.vwap || curLast).toFixed(2)}}) 下方，空头宣泄未止跌；请耐心等待日内重夺 VWAP 后再博右侧反抽，当前严禁左侧接刀。`;
+                actionType = "破坑观望 / 严禁左侧接刀";
+                mainVerdict = data.intraday_status_text || "🔴 空头宣泄·严禁左侧接刀";
+                actionDirective = data.intraday_reason || `【左侧禁接】股价跌穿黄金坑 ($${{curFibLow.toFixed(2)}}) 且日内压制于 VWAP ($${{(data.vwap || curLast).toFixed(2)}}) 下方，空头宣泄未止跌；请耐心等待日内重夺 VWAP 后再博右侧反抽，当前严禁左侧接刀。`;
             }} else if (isStop) {{
                 themeColor = "#ff1744";
                 mainVerdict = "🔴 放量破位杀跌 · 严禁逆势接飞刀";

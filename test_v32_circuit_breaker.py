@@ -839,6 +839,66 @@ class TestV32CircuitBreaker(unittest.TestCase):
         self.assertFalse(res_b.get("intraday_entry_ready"), "intraday_entry_ready MUST be False")
 
 
+    # --------------------------------------------------------------------------
+    # Scenario 11-13: Broken-pit rebound exclusion filters
+    # --------------------------------------------------------------------------
+    def _broken_pit_intra_info(self):
+        return {
+            "vwap": 98.0,
+            "rsi_5m": 60.0,
+            "prev_rsi_5m": 55.0,
+            "min_rsi_5m_30m": 28.0,
+            "rvol_5m": 1.2,
+            "is_5m_green": True,
+            "is_5m_higher_low": True,
+            "rth_low": 96.0,
+            "rth_high": 101.0,
+            "rth_close": 99.0,
+        }
+
+    def test_scenario_11_broken_pit_low_elasticity_no_rebound(self):
+        """低弹性慢股(ATR%<1.8%) 破坑后必须排除短线博反抽。"""
+        res = run_evaluate_intraday_entry(
+            active_price=100.0, fib_low=95.0, fib_high=110.0, ma50=105.0,
+            is_pit=False, is_stop=True, dist_to_pit=-8.0,
+            intra_info=self._broken_pit_intra_info(),
+            earnings_info={}, atr=1.0, daily_rsi=38.0, pct_change=-1.0,
+            rth_high=101.0, ema5=99.0,
+        )
+        self.assertFalse(res.get("broken_rebound_ready"), "ATR%<1.8 low-elasticity must not trigger rebound branch")
+        self.assertTrue(res.get("broken_bearish"))
+        self.assertIn("低弹性慢股", res.get("intraday_status_text", ""))
+        self.assertEqual(res.get("optimal_limit"), 0.0)
+
+    def test_scenario_12_broken_pit_crash_day_no_rebound(self):
+        """单日暴雷急杀(<=-7.5%) 当天即使触碰VWAP也不得触发博反抽。"""
+        res = run_evaluate_intraday_entry(
+            active_price=100.0, fib_low=95.0, fib_high=110.0, ma50=105.0,
+            is_pit=False, is_stop=True, dist_to_pit=-8.0,
+            intra_info=self._broken_pit_intra_info(),
+            earnings_info={}, atr=4.0, daily_rsi=30.0, pct_change=-8.2,
+            rth_high=101.0, ema5=99.0,
+        )
+        self.assertFalse(res.get("broken_rebound_ready"), "Crash-day <= -7.5% must not trigger rebound branch")
+        self.assertFalse(res.get("intraday_entry_ready"))
+        self.assertNotIn("超跌右侧博反抽", res.get("intraday_status_text", ""))
+
+    def test_scenario_13_broken_pit_high_elasticity_rebound_allowed(self):
+        """高弹性标的+右侧企稳仍允许短线博反抽，止损严格控制在-2.5%~-4.0%。"""
+        res = run_evaluate_intraday_entry(
+            active_price=100.0, fib_low=95.0, fib_high=110.0, ma50=105.0,
+            is_pit=False, is_stop=True, dist_to_pit=-8.0,
+            intra_info=self._broken_pit_intra_info(),
+            earnings_info={}, atr=4.0, daily_rsi=38.0, pct_change=-2.0,
+            rth_high=101.0, ema5=99.0,
+        )
+        self.assertTrue(res.get("broken_rebound_ready"))
+        self.assertIn("超跌右侧博反抽", res.get("intraday_status_text", ""))
+        self.assertLessEqual(res.get("stop_loss_pct"), -2.5)
+        self.assertGreaterEqual(res.get("stop_loss_pct"), -4.0)
+
+
+
 
 # ==============================================================================
 # Main Runner with Summary Reporting
