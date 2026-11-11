@@ -1,7 +1,7 @@
 [
   {
     "id": "STOP_AAOI_2026-11-11",
-    "time": "11-11 10:32",
+    "time": "11-11 10:34",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -15,7 +15,7 @@
   },
   {
     "id": "STOP_AXTI_2026-11-11",
-    "time": "11-11 10:32",
+    "time": "11-11 10:34",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -25,11 +25,11 @@
     "price": 40.25,
     "pct_change": -8.3897,
     "title": "🔴 AXTI (AXTI) 跌破波段斐波那契下沿",
-    "desc": "偏离 MA50 -36.7%，放量跌破坑底 $59.95，空头宣泄期严禁左侧接刀！"
+    "desc": "偏离 MA50 -36.4%，放量跌破坑底 $58.83，空头宣泄期严禁左侧接刀！"
   },
   {
     "id": "STOP_SNDK_2026-11-11",
-    "time": "11-11 10:32",
+    "time": "11-11 10:34",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -43,7 +43,7 @@
   },
   {
     "id": "PORT_INTC_STOP_2026-11-11",
-    "time": "11-11 10:32",
+    "time": "11-11 10:34",
     "category": "portfolio",
     "cat_label": "💼 持仓风控",
     "level": "danger",
@@ -62,7 +62,7 @@
   },
   {
     "id": "STOP_INTC_2026-11-11",
-    "time": "11-11 10:32",
+    "time": "11-11 10:34",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -72,11 +72,11 @@
     "price": 58.8,
     "pct_change": -2.0886,
     "title": "🔴 INTC (Intel) 跌破波段斐波那契下沿",
-    "desc": "偏离 MA50 -39.6%，放量跌破坑底 $80.52，空头宣泄期严禁左侧接刀！"
+    "desc": "偏离 MA50 -39.2%，放量跌破坑底 $80.52，空头宣泄期严禁左侧接刀！"
   },
   {
     "id": "STOP_ASTS_2026-11-11",
-    "time": "11-11 10:32",
+    "time": "11-11 10:34",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -90,7 +90,7 @@
   },
   {
     "id": "STOP_CRDO_2026-11-11",
-    "time": "11-11 10:32",
+    "time": "11-11 10:34",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -103,22 +103,8 @@
     "desc": "偏离 MA50 -24.4%，放量跌破坑底 $177.84，空头宣泄期严禁左侧接刀！"
   },
   {
-    "id": "STOP_STX_2026-11-11",
-    "time": "11-11 10:32",
-    "category": "stop_loss",
-    "cat_label": "🔴 破位止损",
-    "level": "danger",
-    "ticker": "STX",
-    "name": "希捷科技",
-    "cat": "数据存储",
-    "price": 509.0,
-    "pct_change": -0.893,
-    "title": "🔴 STX (希捷科技) 跌破波段斐波那契下沿",
-    "desc": "偏离 MA50 -33.3%，放量跌破坑底 $664.69，空头宣泄期严禁左侧接刀！"
-  },
-  {
     "id": "STOP_CRWV_2026-11-11",
-    "time": "11-11 10:32",
+    "time": "11-11 10:34",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -131,22 +117,22 @@
     "desc": "偏离 MA50 -29.8%，放量跌破坑底 $67.06，空头宣泄期严禁左侧接刀！"
   },
   {
-    "id": "STOP_WDC_2026-11-11",
-    "time": "11-11 10:32",
+    "id": "STOP_STX_2026-11-11",
+    "time": "11-11 10:34",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
-    "ticker": "WDC",
-    "name": "西部数据",
+    "ticker": "STX",
+    "name": "希捷科技",
     "cat": "数据存储",
-    "price": 293.2981,
-    "pct_change": -0.2002,
-    "title": "🔴 WDC (西部数据) 跌破波段斐波那契下沿",
-    "desc": "偏离 MA50 -27.3%，放量跌破坑底 $369.32，空头宣泄期严禁左侧接刀！"
+    "price": 509.0,
+    "pct_change": -0.893,
+    "title": "🔴 STX (希捷科技) 跌破波段斐波那契下沿",
+    "desc": "偏离 MA50 -32.7%，放量跌破坑底 $644.57，空头宣泄期严禁左侧接刀！"
   },
   {
     "id": "STOP_LITE_2026-11-11",
-    "time": "11-11 10:32",
+    "time": "11-11 10:34",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -160,7 +146,7 @@
   },
   {
     "id": "STOP_MRVL_2026-11-11",
-    "time": "11-11 10:32",
+    "time": "11-11 10:34",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -170,11 +156,11 @@
     "price": 157.99,
     "pct_change": -0.1358,
     "title": "🔴 MRVL (Marvell) 跌破波段斐波那契下沿",
-    "desc": "偏离 MA50 -32.2%，放量跌破坑底 $196.97，空头宣泄期严禁左侧接刀！"
+    "desc": "偏离 MA50 -31.9%，放量跌破坑底 $196.97，空头宣泄期严禁左侧接刀！"
   },
   {
     "id": "STOP_NOW_2026-11-11",
-    "time": "11-11 10:32",
+    "time": "11-11 10:34",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -188,7 +174,7 @@
   },
   {
     "id": "STOP_DELL_2026-11-11",
-    "time": "11-11 10:32",
+    "time": "11-11 10:34",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -201,8 +187,22 @@
     "desc": "偏离 MA50 -31.6%，放量跌破坑底 $421.84，空头宣泄期严禁左侧接刀！"
   },
   {
+    "id": "STOP_WDC_2026-11-11",
+    "time": "11-11 10:34",
+    "category": "stop_loss",
+    "cat_label": "🔴 破位止损",
+    "level": "danger",
+    "ticker": "WDC",
+    "name": "西部数据",
+    "cat": "数据存储",
+    "price": 293.2981,
+    "pct_change": -0.2002,
+    "title": "🔴 WDC (西部数据) 跌破波段斐波那契下沿",
+    "desc": "偏离 MA50 -26.7%，放量跌破坑底 $358.40，空头宣泄期严禁左侧接刀！"
+  },
+  {
     "id": "STOP_NBIS_2026-11-11",
-    "time": "11-11 10:32",
+    "time": "11-11 10:34",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -216,7 +216,7 @@
   },
   {
     "id": "STOP_COIN_2026-11-11",
-    "time": "11-11 10:32",
+    "time": "11-11 10:34",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -230,7 +230,7 @@
   },
   {
     "id": "STOP_MARA_2026-11-11",
-    "time": "11-11 10:32",
+    "time": "11-11 10:34",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -244,7 +244,7 @@
   },
   {
     "id": "STOP_FPS_2026-11-11",
-    "time": "11-11 10:32",
+    "time": "11-11 10:34",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -258,7 +258,7 @@
   },
   {
     "id": "STOP_APLD_2026-11-11",
-    "time": "11-11 10:32",
+    "time": "11-11 10:34",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -271,22 +271,8 @@
     "desc": "偏离 MA50 -24.9%，放量跌破坑底 $20.27，空头宣泄期严禁左侧接刀！"
   },
   {
-    "id": "STOP_NVDA_2026-11-11",
-    "time": "11-11 10:32",
-    "category": "stop_loss",
-    "cat_label": "🔴 破位止损",
-    "level": "danger",
-    "ticker": "NVDA",
-    "name": "NVIDIA",
-    "cat": "芯片算力",
-    "price": 170.4829,
-    "pct_change": -5.4738,
-    "title": "🔴 NVDA (NVIDIA) 跌破波段斐波那契下沿",
-    "desc": "偏离 MA50 -22.1%，放量跌破坑底 $198.18，空头宣泄期严禁左侧接刀！"
-  },
-  {
     "id": "STOP_OKLO_2026-11-11",
-    "time": "11-11 10:32",
+    "time": "11-11 10:34",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -299,8 +285,22 @@
     "desc": "偏离 MA50 -23.8%，放量跌破坑底 $29.10，空头宣泄期严禁左侧接刀！"
   },
   {
+    "id": "STOP_NVDA_2026-11-11",
+    "time": "11-11 10:34",
+    "category": "stop_loss",
+    "cat_label": "🔴 破位止损",
+    "level": "danger",
+    "ticker": "NVDA",
+    "name": "NVIDIA",
+    "cat": "芯片算力",
+    "price": 170.4829,
+    "pct_change": -5.4738,
+    "title": "🔴 NVDA (NVIDIA) 跌破波段斐波那契下沿",
+    "desc": "偏离 MA50 -21.8%，放量跌破坑底 $195.49，空头宣泄期严禁左侧接刀！"
+  },
+  {
     "id": "STOP_SKHY_2026-11-11",
-    "time": "11-11 10:32",
+    "time": "11-11 10:34",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -314,7 +314,7 @@
   },
   {
     "id": "STOP_HPE_2026-11-11",
-    "time": "11-11 10:32",
+    "time": "11-11 10:34",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -328,7 +328,7 @@
   },
   {
     "id": "STOP_MU_2026-11-11",
-    "time": "11-11 10:32",
+    "time": "11-11 10:34",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -338,11 +338,11 @@
     "price": 736.0013,
     "pct_change": -1.0966,
     "title": "🔴 MU (美光科技) 跌破波段斐波那契下沿",
-    "desc": "偏离 MA50 -23.1%，放量跌破坑底 $825.16，空头宣泄期严禁左侧接刀！"
+    "desc": "偏离 MA50 -22.8%，放量跌破坑底 $825.16，空头宣泄期严禁左侧接刀！"
   },
   {
     "id": "STOP_BE_2026-11-11",
-    "time": "11-11 10:32",
+    "time": "11-11 10:34",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -356,7 +356,7 @@
   },
   {
     "id": "STOP_VRT_2026-11-11",
-    "time": "11-11 10:32",
+    "time": "11-11 10:34",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -370,7 +370,7 @@
   },
   {
     "id": "STOP_ORCL_2026-11-11",
-    "time": "11-11 10:32",
+    "time": "11-11 10:34",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -380,11 +380,11 @@
     "price": 120.75,
     "pct_change": -1.511,
     "title": "🔴 ORCL (甲骨文) 跌破波段斐波那契下沿",
-    "desc": "偏离 MA50 -12.6%，放量跌破坑底 $132.46，空头宣泄期严禁左侧接刀！"
+    "desc": "偏离 MA50 -12.2%，放量跌破坑底 $132.46，空头宣泄期严禁左侧接刀！"
   },
   {
     "id": "STOP_GOOGL_2026-11-11",
-    "time": "11-11 10:32",
+    "time": "11-11 10:34",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -394,11 +394,11 @@
     "price": 289.05,
     "pct_change": -0.2672,
     "title": "🔴 GOOGL (Alphabet) 跌破波段斐波那契下沿",
-    "desc": "偏离 MA50 -12.9%，放量跌破坑底 $310.25，空头宣泄期严禁左侧接刀！"
+    "desc": "偏离 MA50 -12.6%，放量跌破坑底 $310.25，空头宣泄期严禁左侧接刀！"
   },
   {
     "id": "STOP_SOXX_2026-11-11",
-    "time": "11-11 10:32",
+    "time": "11-11 10:34",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -408,11 +408,11 @@
     "price": 148.9731,
     "pct_change": -0.1158,
     "title": "🔴 SOXX (费城半导体ETF) 跌破波段斐波那契下沿",
-    "desc": "偏离 MA50 -14.0%，放量跌破坑底 $156.75，空头宣泄期严禁左侧接刀！"
+    "desc": "偏离 MA50 -13.7%，放量跌破坑底 $156.75，空头宣泄期严禁左侧接刀！"
   },
   {
     "id": "PORT_SOXL_STOP_2026-11-11",
-    "time": "11-11 10:32",
+    "time": "11-11 10:34",
     "category": "portfolio",
     "cat_label": "💼 持仓风控",
     "level": "danger",
@@ -431,7 +431,7 @@
   },
   {
     "id": "STOP_SOXL_2026-11-11",
-    "time": "11-11 10:32",
+    "time": "11-11 10:34",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -441,11 +441,11 @@
     "price": 58.64,
     "pct_change": -0.2491,
     "title": "🔴 SOXL (3倍做多半导体) 跌破波段斐波那契下沿",
-    "desc": "偏离 MA50 -48.6%，放量跌破坑底 $89.96，空头宣泄期严禁左侧接刀！"
+    "desc": "偏离 MA50 -48.1%，放量跌破坑底 $89.96，空头宣泄期严禁左侧接刀！"
   },
   {
     "id": "STOP_KORU_2026-11-11",
-    "time": "11-11 10:32",
+    "time": "11-11 10:34",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -459,7 +459,7 @@
   },
   {
     "id": "TP_SQQQ_2026-11-11",
-    "time": "11-11 10:32",
+    "time": "11-11 10:34",
     "category": "take_profit",
     "cat_label": "🟣 冲顶减仓",
     "level": "purple",
@@ -469,11 +469,11 @@
     "price": 42.7,
     "pct_change": 1.7995,
     "title": "🟣 SQQQ (3倍做空纳指) 极度超买，触发高位减仓指令",
-    "desc": "偏离 MA50 +14.0%，RSI 57.6，进入极端冲顶兑现区，建议分批减半锁定利润！"
+    "desc": "偏离 MA50 +13.7%，RSI 57.2，进入极端冲顶兑现区，建议分批减半锁定利润！"
   },
   {
     "id": "PORT_SOXS_HEDGE_EXIT_2026-11-11",
-    "time": "11-11 10:32",
+    "time": "11-11 10:34",
     "category": "portfolio",
     "cat_label": "💼 持仓风控",
     "level": "info",
@@ -492,7 +492,7 @@
   },
   {
     "id": "TP_SOXS_2026-11-11",
-    "time": "11-11 10:32",
+    "time": "11-11 10:34",
     "category": "take_profit",
     "cat_label": "🟣 冲顶减仓",
     "level": "purple",
@@ -502,11 +502,11 @@
     "price": 52.74,
     "pct_change": 0.3808,
     "title": "🟣 SOXS (3倍做空半导体) 极度超买，触发高位减仓指令",
-    "desc": "偏离 MA50 +19.7%，RSI 53.2，进入极端冲顶兑现区，建议分批减半锁定利润！"
+    "desc": "偏离 MA50 +19.3%，RSI 53.2，进入极端冲顶兑现区，建议分批减半锁定利润！"
   },
   {
     "id": "STOP_IBIT_2026-11-11",
-    "time": "11-11 10:32",
+    "time": "11-11 10:34",
     "category": "stop_loss",
     "cat_label": "🔴 破位止损",
     "level": "danger",
@@ -520,7 +520,7 @@
   },
   {
     "id": "WEATHER_暴雨空仓_2026-11-11",
-    "time": "11-11 10:32",
+    "time": "11-11 10:34",
     "category": "macro_weather",
     "cat_label": "⛅ 宏观气象",
     "level": "info",
