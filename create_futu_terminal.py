@@ -397,7 +397,8 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 else:
                     _sync_dir = sc_dir
                 os.makedirs(_sync_dir, exist_ok=True)
-                ai_file = os.path.join(_sync_dir, "latest_ai_predictions.json")
+                ai_file = os.path.join(_sync_dir, "data_cache", "latest_ai_predictions.json")
+                os.makedirs(os.path.dirname(ai_file), exist_ok=True)
                 with open(ai_file, "w", encoding="utf-8") as wf:
                     json.dump(ai_predictions, wf, ensure_ascii=False, indent=2)
 
