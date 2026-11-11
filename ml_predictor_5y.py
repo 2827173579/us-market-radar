@@ -1671,6 +1671,11 @@ def compute_multi_level_scenario_map(
         s2 = round(s1 - min_step, 2)
     sl = round(min(s2 * 0.985, s2 - min_step), 2)
 
+    # 近端止损优先：S2 过远(>6.5%)而 S1 就在现价下方 2%~6% 时，多头防守改用 S1
+    s1_dist_pct = ((close - s1) / close) * 100.0 if close > 0 else 0.0
+    s2_dist_pct = ((close - s2) / close) * 100.0 if close > 0 else 0.0
+    near_stop_s1 = bool((s2_dist_pct > 6.5) and (2.0 <= s1_dist_pct <= 6.0))
+
     if r1 <= close:
         r1 = round(close + min_step, 2)
     if r2 <= r1:
@@ -1680,15 +1685,30 @@ def compute_multi_level_scenario_map(
     if is_halt and not is_short_covering:
         scenario = f"【暴跌熔断风控剧本】触发暴跌熔断保护期，下方严防下探 S2 (${s2:.2f}) 极端清算底；反抽测试 R1 (${r1:.2f}) 均属诱多；防守止损位 ${sl:.2f}，严禁左侧接刀"
     elif is_short_covering:
-        scenario = f"【空头回补滑头剧本】依托 S2 (${s2:.2f}) 极限插针底防守，上看第一阻力 R1 (${r1:.2f}) 空头回补反抽(不过就跑)；放量逼空看 R2 (${r2:.2f})；击穿止损位 ${sl:.2f} 严格离场防踩踏"
+        if near_stop_s1:
+            scenario = f"【空头回补剧本】依托 S1 (${s1:.2f}) 博反抽，极限插针底 S2 (${s2:.2f})；上看 R1 (${r1:.2f}) 空头回补反抽(不过就跑)；跌破 S1 严格离场"
+        else:
+            scenario = f"【空头回补滑头剧本】依托 S2 (${s2:.2f}) 极限插针底防守，上看第一阻力 R1 (${r1:.2f}) 空头回补反抽(不过就跑)；放量逼空看 R2 (${r2:.2f})；击穿止损位 ${sl:.2f} 严格离场防踩踏"
     elif is_broken:
-        scenario = f"【破位飞刀剧本】均线空头排列破位，下方严防下探 S2 (${s2:.2f}) 清算底；反抽测试 R1 (${r1:.2f}) 均属诱多；防守位 ${sl:.2f}，严禁左侧接刀"
+        if near_stop_s1:
+            scenario = f"【破位反抽剧本】依托 S1 (${s1:.2f}) 博反抽，极限插针底 S2 (${s2:.2f})；反抽压力 R1 (${r1:.2f}) 不过即走；跌破 S1 严格离场"
+        else:
+            scenario = f"【破位飞刀剧本】均线空头排列破位，下方严防下探 S2 (${s2:.2f}) 清算底；反抽测试 R1 (${r1:.2f}) 均属诱多；防守位 ${sl:.2f}，严禁左侧接刀"
     elif -6.5 <= bias_ma50 <= 4.0:
-        scenario = f"【黄金坑做多剧本】回踩波段支撑 S1 (${s1:.2f}) 蓄势不破，看多头反弹测试 R1 (${r1:.2f})；突破顺势看 R2 (${r2:.2f})；有效跌破止损位 ${sl:.2f} 离场"
+        if near_stop_s1:
+            scenario = f"【黄金坑做多剧本】依托 S1 (${s1:.2f}) 博反抽，极限插针底 S2 (${s2:.2f})；上看 R1 (${r1:.2f})；跌破 S1 离场"
+        else:
+            scenario = f"【黄金坑做多剧本】回踩波段支撑 S1 (${s1:.2f}) 蓄势不破，看多头反弹测试 R1 (${r1:.2f})；突破顺势看 R2 (${r2:.2f})；有效跌破止损位 ${sl:.2f} 离场"
     elif bias_ma50 > 4.0:
-        scenario = f"【右侧主升剧本】依托波段支撑 S1 (${s1:.2f}) 逢低做多，上看阻力 R1 (${r1:.2f}) 与突破扩展目标 R2 (${r2:.2f})；关键防守位 ${sl:.2f}"
+        if near_stop_s1:
+            scenario = f"【右侧主升剧本】依托 S1 (${s1:.2f}) 博反抽，极限插针底 S2 (${s2:.2f})；上看 R1 (${r1:.2f}) 与扩展目标 R2 (${r2:.2f})；跌破 S1 离场"
+        else:
+            scenario = f"【右侧主升剧本】依托波段支撑 S1 (${s1:.2f}) 逢低做多，上看阻力 R1 (${r1:.2f}) 与突破扩展目标 R2 (${r2:.2f})；关键防守位 ${sl:.2f}"
     else:
-        scenario = f"【战术推演剧本】下方防守支撑 S1 (${s1:.2f})/S2 (${s2:.2f})，上方阻力目标 R1 (${r1:.2f})/R2 (${r2:.2f})；跌破防守止损位 ${sl:.2f} 严格离场"
+        if near_stop_s1:
+            scenario = f"【战术推演剧本】依托 S1 (${s1:.2f}) 博反抽，极限插针底 S2 (${s2:.2f})；上方阻力 R1 (${r1:.2f})/R2 (${r2:.2f})；跌破 S1 离场"
+        else:
+            scenario = f"【战术推演剧本】下方防守支撑 S1 (${s1:.2f})/S2 (${s2:.2f})，上方阻力目标 R1 (${r1:.2f})/R2 (${r2:.2f})；跌破防守止损位 ${sl:.2f} 严格离场"
 
     return {
         's1': s1,
@@ -1696,6 +1716,8 @@ def compute_multi_level_scenario_map(
         'sl': sl,
         'r1': r1,
         'r2': r2,
+        'near_stop_s1': near_stop_s1,
+        'near_stop_price': s1 if near_stop_s1 else None,
         'scenario_script': scenario
     }
 
@@ -3145,6 +3167,14 @@ def generate_report_tables(
                 row_item['track'] = 'Track B'
             else:
                 row_item['track'] = 'Track A'
+
+            # 近端止损优先：S2 过远而 S1 就在下方 2%~6% 时，多头防守止损收紧至 S1
+            if sc_map.get('near_stop_s1') and sc_map.get('near_stop_price'):
+                near_stop_px = float(sc_map['near_stop_price'])
+                if 0 < near_stop_px < close_p:
+                    row_item['stop_loss_price'] = round(near_stop_px, 2)
+                    row_item['stop_loss_pct'] = round(((close_p - near_stop_px) / close_p) * 100.0, 1)
+                    row_item['near_stop_s1'] = True
 
             # 4H 多周期动能共振指示 (优先使用 compute_4h_resonance_signals 真实多周期背离结果)
             fh_info = four_h_signals_map.get(tk)

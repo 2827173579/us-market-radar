@@ -281,11 +281,19 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                             is_halt=is_effective_halt
                         )
                         item.update(sc_map)
+                        near_stop_px = sc_map.get('near_stop_price') if sc_map.get('near_stop_s1') else None
                         if is_short_covering:
                             item['target_profit_price'] = sc_map['r1']
-                            item['stop_loss_price'] = sc_map['s2']
                             item['target_profit_pct'] = round(((sc_map['r1'] - live_p) / live_p) * 100.0, 1)
-                            item['stop_loss_pct'] = round(((live_p - sc_map['s2']) / live_p) * 100.0, 1)
+                            if near_stop_px and 0 < float(near_stop_px) < live_p:
+                                item['stop_loss_price'] = round(float(near_stop_px), 2)
+                                item['stop_loss_pct'] = round(((live_p - float(near_stop_px)) / live_p) * 100.0, 1)
+                            else:
+                                item['stop_loss_price'] = sc_map['s2']
+                                item['stop_loss_pct'] = round(((live_p - sc_map['s2']) / live_p) * 100.0, 1)
+                        elif near_stop_px and 0 < float(near_stop_px) < live_p:
+                            item['stop_loss_price'] = round(float(near_stop_px), 2)
+                            item['stop_loss_pct'] = round(((live_p - float(near_stop_px)) / live_p) * 100.0, 1)
                     except Exception:
                         pass
 
@@ -1833,12 +1841,12 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                     <!-- 挂单参数矩阵 -->
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 6px;">
                         <div style="background: rgba(0,0,0,0.3); border-radius: 6px; padding: 6px 8px; border: 1px solid rgba(255,215,0,0.25);">
-                            <div style="font-size: 11px; color: #9ca3af;">💡 参考挂单价</div>
+                            <div id="pEntryPriceLabel" style="font-size: 11px; color: #9ca3af;">💡 参考挂单价</div>
                             <div id="pOptimalLimit" style="font-size: 22px; font-weight: 800; color: #ffd700; font-family: \'DIN Alternate\', sans-serif;">$0.00</div>
                             <div style="font-size: 10px; color: #6b7280;" id="pOptimalNote">黄金坑中下轴支撑</div>
                         </div>
                         <div style="background: rgba(0,0,0,0.3); border-radius: 6px; padding: 6px 8px; border: 1px solid rgba(255,82,82,0.35);">
-                            <div style="font-size: 11px; color: #9ca3af;">🛡️ 防守止损线</div>
+                            <div id="pEntryStopLabel" style="font-size: 11px; color: #9ca3af;">🛡️ 防守止损线</div>
                             <div id="pEntryStopLoss" style="font-size: 22px; font-weight: 800; color: #ff5252; font-family: \'DIN Alternate\', sans-serif;">$0.00</div>
                             <div style="font-size: 10px; color: #6b7280;" id="pEntryStopDist">距入场 --</div>
                         </div>
@@ -2795,6 +2803,8 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             const isPitWatch = sig.includes("坑内观察") || sig.includes("待芯片ETF");
             const isStop = data.is_stop || sig.includes("破位") || sig.includes("跌破") || sig.includes("硬止损");
             const isDeepPullback = data.is_deep_pullback || sig.includes("深度回踩");
+            const isBrokenRebound = Boolean(data.broken_rebound_ready);
+            const isBrokenBearish = Boolean(data.broken_bearish);
             const isTakeProfit = data.is_take_profit || sig.includes("冲顶") || sig.includes("止盈") || sig.includes("超买");
             const isBullTrend = sig.includes("多头");
 
@@ -2887,11 +2897,22 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 actionType = isCoolingHalt ? "暴跌冷却 / 严禁抢跑" : "暴跌熔断 / 暂停接刀";
                 mainVerdict = isCoolingHalt ? "⛔ 暴跌冷却期 (3日内曾大跌·等待日线企稳确认)" : "⛔ 暂停挂单 (暴跌宣泄期 · 防接飞刀)";
                 actionDirective = `【V3.2 熔断保护】${{data.intraday_reason || "标的触发日内暴跌熔断或处于3日暴跌冷却期内，日线尚未确认右侧企稳，严禁盲目左侧挂单抄底！"}}`;
+            }} else if (isBrokenRebound) {{
+                themeColor = "#ffa726";
+                themeBg = "linear-gradient(135deg, rgba(255, 167, 38, 0.10), rgba(0, 229, 255, 0.05), #181b22)";
+                themeBorder = "#ffa726";
+                actionType = "超跌右侧博反抽 / 短线快进快出";
+                mainVerdict = "⚡ 超跌右侧博反抽 (破坑深调·快进快出)";
+                actionDirective = `【破坑右侧反抽】日线仍处黄金坑 ($${{curFibLow.toFixed(2)}}) 下方，但日内已站稳 VWAP/支撑企稳；仅限短线博空头回补，压力位 R1 ($${{Number(data.broken_r1 || curFibHigh || 0).toFixed(2)}}) 不过即走，严禁中线死扛。`;
+            }} else if (isBrokenBearish) {{
+                themeColor = "#ff1744";
+                themeBg = "linear-gradient(135deg, rgba(255, 23, 68, 0.09), #181b22)";
+                themeBorder = "#ff1744";
+                actionType = "空头宣泄 / 严禁左侧接刀";
+                mainVerdict = "🔴 空头宣泄·严禁左侧接刀";
+                actionDirective = `【左侧禁接】股价跌穿黄金坑 ($${{curFibLow.toFixed(2)}}) 且日内压制于 VWAP ($${{(data.vwap || curLast).toFixed(2)}}) 下方，空头宣泄未止跌；请耐心等待日内重夺 VWAP 后再博右侧反抽，当前严禁左侧接刀。`;
             }} else if (isStop) {{
                 themeColor = "#ff1744";
-                themeBg = "linear-gradient(135deg, rgba(255, 23, 68, 0.08), #181b22)";
-                themeBorder = "#ff1744";
-                actionType = "破位风控 / 严禁抄底";
                 mainVerdict = "🔴 放量破位杀跌 · 严禁逆势接飞刀";
                 actionDirective = `【铁血风控指令】标的放量击穿关键斐波那契坑底防线 (跌破 ${{Math.abs(curDistPit).toFixed(1)}}%)，空头动能处于主导释放期。持仓者若跌破底线必须坚决离场止损；空仓观察者坚决管住手，切勿盲目猜底！`;
             }} else if (isDeepPullback) {{
@@ -2984,6 +3005,18 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                     intraStatusEl.style.color = "#ff5252";
                     intraStatusEl.innerText = "⛔ 暴跌冷却期 (3日内曾大跌·等待日线企稳确认)";
                     intraReasonEl.innerText = data.intraday_reason || "标的3日内曾发生单日大跌，目前处于冷却观察期，需等待日线右侧企稳确认。";
+                }} else if (isBrokenRebound) {{
+                    intraStatusEl.innerText = intraStatusText;
+                    intraReasonEl.innerText = intraReason;
+                    intraBannerEl.style.background = "linear-gradient(90deg, rgba(255, 167, 38, 0.18), rgba(0, 229, 255, 0.10))";
+                    intraBannerEl.style.borderColor = "#ffa726";
+                    intraStatusEl.style.color = "#ffd54f";
+                }} else if (isBrokenBearish) {{
+                    intraStatusEl.innerText = intraStatusText;
+                    intraReasonEl.innerText = intraReason;
+                    intraBannerEl.style.background = "rgba(255, 82, 82, 0.14)";
+                    intraBannerEl.style.borderColor = "#ff5252";
+                    intraStatusEl.style.color = "#ff5252";
                 }} else {{
                     intraStatusEl.innerText = intraStatusText;
                     intraReasonEl.innerText = intraReason;
@@ -3039,8 +3072,55 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             const noteEl = document.getElementById("pOptimalNote");
             const stopEl = document.getElementById("pEntryStopLoss");
             const stopDistEl = document.getElementById("pEntryStopDist");
+            const priceLabelEl = document.getElementById("pEntryPriceLabel");
+            const stopLabelEl = document.getElementById("pEntryStopLabel");
+            if (priceLabelEl) priceLabelEl.innerText = "💡 参考挂单价";
+            if (stopLabelEl) stopLabelEl.innerText = "🛡️ 防守止损线";
 
-            if (isInverseHedge) {{
+            if (isBrokenRebound) {{
+                if (priceLabelEl) priceLabelEl.innerText = "💡 反抽参考价";
+                if (stopLabelEl) stopLabelEl.innerText = "🛡️ 防守止损线";
+                if (optEl) {{
+                    optEl.innerText = (optimalLimit && optimalLimit > 0) ? ("$" + optimalLimit.toFixed(2)) : "--";
+                    optEl.style.color = "#ffb74d";
+                    optEl.style.fontSize = "22px";
+                }}
+                if (noteEl) {{
+                    noteEl.innerText = "回踩VWAP/日内支撑短线单";
+                    noteEl.style.color = "#ffb74d";
+                }}
+                if (stopEl) {{
+                    stopEl.innerText = stopLoss > 0 ? ("$" + stopLoss.toFixed(2)) : "--";
+                    stopEl.style.fontSize = "22px";
+                }}
+                if (stopDistEl) {{
+                    const stopDist = (optimalLimit > 0 && stopLoss > 0) ? ((stopLoss - optimalLimit) / optimalLimit * 100) : null;
+                    stopDistEl.innerText = stopDist !== null ? (`距入场 ${{stopDist.toFixed(1)}}% · 短线收紧`) : "距入场 --";
+                    stopDistEl.style.color = "#f87171";
+                }}
+            }} else if (isBrokenBearish) {{
+                if (priceLabelEl) priceLabelEl.innerText = "🚫 暂缓左侧接刀";
+                if (stopLabelEl) stopLabelEl.innerText = "🧭 下方支撑观察 S1";
+                if (optEl) {{
+                    optEl.innerText = "暂缓";
+                    optEl.style.color = "#ff5252";
+                    optEl.style.fontSize = "18px";
+                }}
+                if (noteEl) {{
+                    const _vwap = Number(data.vwap || curActive || 0);
+                    noteEl.innerText = _vwap > 0 ? (`等站上VWAP($${{_vwap.toFixed(2)}})右侧确认`) : "等站上VWAP右侧确认";
+                    noteEl.style.color = "#ff5252";
+                }}
+                const brokenS1 = Number(data.broken_s1 || 0);
+                if (stopEl) {{
+                    stopEl.innerText = brokenS1 > 0 ? ("$" + brokenS1.toFixed(2)) : "--";
+                    stopEl.style.fontSize = "20px";
+                }}
+                if (stopDistEl) {{
+                    stopDistEl.innerText = "破坑后极限支撑";
+                    stopDistEl.style.color = "#ffd700";
+                }}
+            }} else if (isInverseHedge) {{
                 if (optEl) {{
                     optEl.innerText = isTakeProfit ? "🟣 逢高分批收割" : "🛡️ 仅限短线对冲";
                     optEl.style.color = isTakeProfit ? "#d946ef" : "#38bdf8";

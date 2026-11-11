@@ -1980,8 +1980,14 @@ class TestV2UpgradeDefensiveFlightAndScenarios(unittest.TestCase):
             self.assertLess(r1, r2, f"Failed for price {cur_p}: r1 ({r1}) must be < r2 ({r2})")
 
             # 验证剧本必须包含关键防守、阻力测试与止损离场点位
+            # 近端止损优先模式(S2>6.5% 且 S1 在下方2~6%)下，剧本以 S1 作为防守位；
+            # 普通模式仍使用结构止损 sl。
             script = sc['scenario_script']
-            self.assertIn(f"${sl:.2f}", script)
+            if sc.get('near_stop_s1'):
+                self.assertIn(f"${s1:.2f}", script)
+                self.assertIn(f"${s2:.2f}", script)
+            else:
+                self.assertIn(f"${sl:.2f}", script)
             self.assertTrue((f"${s1:.2f}" in script) or (f"${s2:.2f}" in script))
             self.assertTrue((f"${r1:.2f}" in script) or (f"${r2:.2f}" in script))
 

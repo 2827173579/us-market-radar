@@ -971,21 +971,16 @@ def fetch_options_anomaly_map(focus_tickers, spot_map=None):
                         pcr_sentiment = "🟡 对冲博弈均衡"
                         pcr_color = "#ffd700"
                 else:
-                    if eff_pcr <= 0.50:
-                        pcr_sentiment = "🔥 机构极度看涨"
-                        pcr_color = "#00e676"
-                    elif eff_pcr <= 0.80:
+                    # 统一口径: PCR<0.85 偏多 / 0.85~1.15 均衡 / >1.15 偏空
+                    if eff_pcr < 0.85:
                         pcr_sentiment = "🟢 资金偏多看涨"
                         pcr_color = "#4ade80"
-                    elif eff_pcr >= 1.30:
+                    elif eff_pcr <= 1.15:
+                        pcr_sentiment = "⚪ 资金多空均衡"
+                        pcr_color = "#9ca3af"
+                    else:
                         pcr_sentiment = "🔴 资金偏空对冲"
                         pcr_color = "#ff5252"
-                    elif eff_pcr >= 1.05:
-                        pcr_sentiment = "🟠 机构谨慎防跌"
-                        pcr_color = "#ffa726"
-                    else:
-                        pcr_sentiment = "🟡 多空博弈均衡"
-                        pcr_color = "#ffd700"
 
                 # 2. 按真实方向性权利金成交额 (Directional Dollar Premium) 筛选主力大单：
                 #    - 过滤 <$0.05 末日彩票废约
@@ -1292,12 +1287,38 @@ def get_short_action_directive(
         return "👀 空头动能不足·观望", "short-action-wait"
 
 
+_AI_LEVELS_CACHE = None
+
+
+def load_ai_levels_map():
+    """读取 AI 5Y 预测快照中的 S1/R1，供破坑分级与短线止损使用（失败时静默降级）。"""
+    global _AI_LEVELS_CACHE
+    if _AI_LEVELS_CACHE is not None:
+        return _AI_LEVELS_CACHE
+    levels = {}
+    try:
+        ai_path = os.path.join(SCRATCH_DIR, "data_cache", "latest_ai_predictions.json")
+        if os.path.exists(ai_path):
+            with open(ai_path, "r", encoding="utf-8") as f:
+                ai_doc = json.load(f)
+            for tk, item in (ai_doc.get("by_ticker") or {}).items():
+                if isinstance(item, dict):
+                    levels[str(tk)] = {
+                        "s1": item.get("s1"),
+                        "r1": item.get("r1"),
+                    }
+    except Exception:
+        levels = {}
+    _AI_LEVELS_CACHE = levels
+    return levels
+
+
 def evaluate_intraday_entry(
     active_price, fib_low, fib_high, ma50, is_pit, is_stop, dist_to_pit, intra_info,
     earnings_info=None, rs_20d=0.0, atr=0.0, daily_rsi=50.0, options_info=None,
     pct_change=0.0, ext_pct=None, rth_high=None, prev_crash_3d=False,
     prev_is_right_turn=False, ema5=0.0, prev_crash_body=0.0, prev_crash_close=0.0,
-    session_code="REGULAR", ticker="", crash_3d=False
+    session_code="REGULAR", ticker="", crash_3d=False, ai_s1=None, ai_r1=None
 ):
     """
     真正的 5 分钟级日内量化建仓评估器 (V3.2 终极版)：
@@ -1493,10 +1514,52 @@ def evaluate_intraday_entry(
         or ((vwap > 0) and (vwap <= active_price <= vwap * 1.015) and (42.0 <= rsi_5m <= 62.0) and (rvol_5m >= 1.20))
     )
 
+    # 破坑深调分级：左侧真飞刀 vs 右侧超跌博反抽
+    try:
+        s1_support = float(ai_s1) if (ai_s1 is not None and float(ai_s1) > 0) else 0.0
+    except Exception:
+        s1_support = 0.0
+    try:
+        r1_resist = float(ai_r1) if (ai_r1 is not None and float(ai_r1) > 0) else 0.0
+    except Exception:
+        r1_resist = 0.0
+    if r1_resist <= 0:
+        r1_resist = fib_high if fib_high > 0 else active_price * 1.05
+    vwap_ok = bool(vwap > 0 and active_price >= vwap)
+    oversold_turn = bool((min_rsi_30m <= 30.0) and (rsi_5m >= 35.0) and is_5m_green)
+    support_stabilize = False
+    if s1_support > 0:
+        dist_s1_pct = ((active_price - s1_support) / s1_support) * 100.0
+        support_stabilize = bool(0.0 <= dist_s1_pct <= 3.5 and (is_5m_green or is_higher_low))
+    broken_rebound_ready = bool(is_stop and (vwap_ok or oversold_turn or support_stabilize))
+    broken_bearish = bool(is_stop and not broken_rebound_ready)
+
     intraday_entry_ready = False
     if is_stop:
-        intraday_status_text = "🔴 破位风控·严禁建仓"
-        intraday_reason = f"股价已放量击穿黄金坑底防线(${fib_low:.2f})，空头宣泄期严禁左侧接刀"
+        if broken_rebound_ready:
+            intraday_entry_ready = True
+            optimal_limit = round(active_price, 2)
+            limit_note = "回踩VWAP/日内支撑短线单"
+            stop_candidates = [optimal_limit * 0.965]
+            if atr > 0:
+                stop_candidates.append(optimal_limit - 1.2 * atr)
+            if s1_support > 0:
+                stop_candidates.append(s1_support * 0.99)
+            raw_short_stop = max(stop_candidates)
+            raw_short_pct = ((optimal_limit - raw_short_stop) / optimal_limit) * 100.0 if optimal_limit > 0 else 3.5
+            short_stop_pct = min(4.0, max(2.5, raw_short_pct))
+            entry_stop_loss = round(optimal_limit * (1.0 - short_stop_pct / 100.0), 2)
+            stop_loss_pct = -round(short_stop_pct, 1)
+            intraday_status_text = "⚡ 超跌右侧博反抽 (破坑深调·快进快出)"
+            intraday_reason = f"日线仍处黄金坑(${fib_low:.2f})下方，但日内已站稳VWAP(${vwap:.2f})/支撑企稳；仅限短线博空头回补反弹，压力位(R1 ${r1_resist:.2f})不过即走，严禁中线死扛"
+        else:
+            intraday_entry_ready = False
+            optimal_limit = 0.0
+            limit_note = "暂缓左侧接刀·等站上VWAP右侧确认"
+            entry_stop_loss = round(s1_support, 2) if s1_support > 0 else 0.0
+            stop_loss_pct = 0.0
+            intraday_status_text = "🔴 空头宣泄·严禁左侧接刀"
+            intraday_reason = f"股价跌穿黄金坑(${fib_low:.2f})且日内压制于VWAP(${vwap:.2f})下方，空头宣泄未止跌；请耐心等待日内重夺VWAP后再博右侧反抽"
     elif dist_to_pit < -2.0 and not is_pit:
         if cond_deep_sync:
             intraday_entry_ready = True
@@ -1578,6 +1641,10 @@ def evaluate_intraday_entry(
         "rsi_5m": round(rsi_5m, 1),
         "rvol_5m": round(rvol_5m, 2),
         "rs_20d": round(rs_20d, 2),
+        "broken_rebound_ready": broken_rebound_ready,
+        "broken_bearish": broken_bearish,
+        "broken_s1": round(s1_support, 2) if s1_support > 0 else 0.0,
+        "broken_r1": round(r1_resist, 2),
         **e_info
     }
 
@@ -4286,6 +4353,8 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
                 eval_res["is_pit"], eval_res["is_stop"], eval_res["dist_to_pit"], intra_info,
                 earnings_info=earnings_map.get(ticker), rs_20d=rs_20d, atr=atr, daily_rsi=rsi,
                 options_info=options_map.get(ticker),
+                ai_s1=(load_ai_levels_map().get(ticker) or {}).get("s1"),
+                ai_r1=(load_ai_levels_map().get(ticker) or {}).get("r1"),
                 pct_change=pct_change, ext_pct=ext_pct,
                 rth_high=rth_high, prev_crash_3d=prev_crash_3d, prev_is_right_turn=prev_is_right_turn,
                 ema5=ema5, prev_crash_body=prev_crash_body, prev_crash_close=prev_crash_close,
@@ -4472,6 +4541,8 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
                 eval_res["is_pit"], eval_res["is_stop"], eval_res["dist_to_pit"], intra_info,
                 earnings_info=earnings_map.get(ticker), rs_20d=rs_20d, atr=atr, daily_rsi=rsi,
                 options_info=options_map.get(ticker),
+                ai_s1=(load_ai_levels_map().get(ticker) or {}).get("s1"),
+                ai_r1=(load_ai_levels_map().get(ticker) or {}).get("r1"),
                 pct_change=pct_change, ext_pct=ext_pct,
                 rth_high=rth_high, prev_crash_3d=prev_crash_3d, prev_is_right_turn=prev_is_right_turn,
                 ema5=ema5, prev_crash_body=prev_crash_body, prev_crash_close=prev_crash_close,
