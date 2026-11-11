@@ -142,8 +142,8 @@
       "last_notified_at": 0.0
     },
     "SPCX": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1794405186.7563343
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "VRT": {
       "state": "NORMAL",
@@ -210,8 +210,8 @@
       "last_notified_at": 1794404691.7112274
     },
     "SOXX": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1794405390.8436081
     },
     "SOXL": {
       "state": "NORMAL",
