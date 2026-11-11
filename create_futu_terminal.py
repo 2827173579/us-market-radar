@@ -1832,15 +1832,15 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                     </div>
                     <!-- 挂单参数矩阵 -->
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 6px;">
-                        <div style="background: rgba(0,0,0,0.3); border-radius: 6px; padding: 6px 8px; border: 1px solid rgba(255,215,0,0.2);">
-                            <div style="font-size: 11px; color: #9ca3af;">💡 建议挂单买入价</div>
-                            <div id="pOptimalLimit" style="font-size: 16px; font-weight: 800; color: #ffd700; font-family: 'DIN Alternate', sans-serif;">$0.00</div>
+                        <div style="background: rgba(0,0,0,0.3); border-radius: 6px; padding: 6px 8px; border: 1px solid rgba(255,215,0,0.25);">
+                            <div style="font-size: 11px; color: #9ca3af;">💡 参考挂单价</div>
+                            <div id="pOptimalLimit" style="font-size: 22px; font-weight: 800; color: #ffd700; font-family: \'DIN Alternate\', sans-serif;">$0.00</div>
                             <div style="font-size: 10px; color: #6b7280;" id="pOptimalNote">黄金坑中下轴支撑</div>
                         </div>
-                        <div style="background: rgba(0,0,0,0.3); border-radius: 6px; padding: 6px 8px; border: 1px solid rgba(0,230,118,0.2);">
-                            <div style="font-size: 11px; color: #9ca3af;" id="pBatch1Label">📦 V3.1 建议仓位 (单股上限 25%)</div>
-                            <div id="pBatch1Shares" style="font-size: 16px; font-weight: 800; color: #00e676; font-family: \'DIN Alternate\', sans-serif;">1.5% 风险平价</div>
-                            <div style="font-size: 10px; color: #6b7280;" id="pBatch1Val">单股上限 25% · 一次性建仓</div>
+                        <div style="background: rgba(0,0,0,0.3); border-radius: 6px; padding: 6px 8px; border: 1px solid rgba(255,82,82,0.35);">
+                            <div style="font-size: 11px; color: #9ca3af;">🛡️ 防守止损线</div>
+                            <div id="pEntryStopLoss" style="font-size: 22px; font-weight: 800; color: #ff5252; font-family: \'DIN Alternate\', sans-serif;">$0.00</div>
+                            <div style="font-size: 10px; color: #6b7280;" id="pEntryStopDist">距入场 --</div>
                         </div>
                     </div>
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px; font-size: 11px; margin-bottom: 4px;">
@@ -1863,12 +1863,8 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                             <b style="color: #93c5fd;" id="pEarningsDate">--</b>
                         </div>
                     </div>
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px; font-size: 11px;">
-                        <div style="background: rgba(0,0,0,0.25); border-radius: 4px; padding: 5px 7px; border: 1px solid rgba(255,255,255,0.05);">
-                            <span style="color: #9ca3af;">防守止损线：</span>
-                            <b style="color: #ff5252;" id="pEntryStopLoss">$0.00</b>
-                        </div>
-                        <div style="background: rgba(0,0,0,0.25); border-radius: 4px; padding: 5px 7px; border: 1px solid rgba(255,255,255,0.05);">
+                    <div style="display: grid; grid-template-columns: 1fr; gap: 6px; font-size: 11px;">
+                        <div style="background: rgba(0,0,0,0.25); border-radius: 4px; padding: 5px 7px; border: 1px solid rgba(255,255,255,0.05); display: flex; justify-content: space-between; align-items: center;">
                             <span style="color: #9ca3af;">黄金坑支撑带：</span>
                             <b style="color: #93c5fd;" id="pEntryFibBand">$0 ~ $0</b>
                         </div>
@@ -3083,30 +3079,26 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
 
             const optEl = document.getElementById("pOptimalLimit");
             const noteEl = document.getElementById("pOptimalNote");
-            const b1El = document.getElementById("pBatch1Shares");
-            const b1ValEl = document.getElementById("pBatch1Val");
             const stopEl = document.getElementById("pEntryStopLoss");
+            const stopDistEl = document.getElementById("pEntryStopDist");
 
             if (isInverseHedge) {{
                 if (optEl) {{
                     optEl.innerText = isTakeProfit ? "🟣 逢高分批收割" : "🛡️ 仅限短线对冲";
                     optEl.style.color = isTakeProfit ? "#d946ef" : "#38bdf8";
-                    optEl.style.fontSize = "15px";
+                    optEl.style.fontSize = "20px";
                 }}
                 if (noteEl) {{
                     noteEl.innerText = data.limit_note || "反向衰减对冲工具·不设黄金坑埋伏单";
                     noteEl.style.color = isTakeProfit ? "#d946ef" : "#38bdf8";
                 }}
-                if (b1El) {{
-                    b1El.innerText = isTakeProfit ? "分批落袋止盈" : "对冲机动仓 (≤10%)";
-                    b1El.style.color = isTakeProfit ? "#d946ef" : "#38bdf8";
-                }}
-                if (b1ValEl) {{
-                    b1ValEl.innerText = "快进快出 · 严禁黄金坑抄底";
-                    b1ValEl.style.color = "#cbd5e1";
-                }}
                 if (stopEl) {{
-                    stopEl.innerHTML = stopLoss > 0 ? `$${{stopLoss.toFixed(2)}} <span style="font-size:10px; color:#f87171;">(${{stopLossPct >= 0 ? '+' : ''}}${{stopLossPct.toFixed(1)}}% · EMA5防线)</span>` : "跌破 EMA5 离场";
+                    stopEl.innerText = stopLoss > 0 ? ("$" + stopLoss.toFixed(2)) : "跌破 EMA5 离场";
+                    stopEl.style.fontSize = stopLoss > 0 ? "20px" : "14px";
+                }}
+                if (stopDistEl) {{
+                    stopDistEl.innerText = "EMA5 防线";
+                    stopDistEl.style.color = "#f87171";
                 }}
             }} else if (isCrashHalt) {{
                 if (optEl) {{
@@ -3118,16 +3110,13 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                     noteEl.innerText = data.limit_note || "单日/盘后剧烈跳空破位，严禁首日左侧挂单接飞刀";
                     noteEl.style.color = "#ff5252";
                 }}
-                if (b1El) {{
-                    b1El.innerText = "0.0% (冻结)";
-                    b1El.style.color = "#9ca3af";
-                }}
-                if (b1ValEl) {{
-                    b1ValEl.innerText = "已触发暴跌熔断保护";
-                    b1ValEl.style.color = "#ff5252";
-                }}
                 if (stopEl) {{
-                    stopEl.innerHTML = `<span style="color:#ff5252; font-size:12px; font-weight:bold;">⛔ 观望不设单</span>`;
+                    stopEl.innerText = "⛔ 观望不设单";
+                    stopEl.style.fontSize = "14px";
+                }}
+                if (stopDistEl) {{
+                    stopDistEl.innerText = "暂停挂单";
+                    stopDistEl.style.color = "#6b7280";
                 }}
             }} else if (isCoolingHalt) {{
                 if (optEl) {{
@@ -3139,16 +3128,13 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                     noteEl.innerText = data.limit_note || "3日内曾大跌·等待日线企稳确认";
                     noteEl.style.color = "#ff5252";
                 }}
-                if (b1El) {{
-                    b1El.innerText = "0.0% (冻结)";
-                    b1El.style.color = "#9ca3af";
-                }}
-                if (b1ValEl) {{
-                    b1ValEl.innerText = "等待日线企稳确认";
-                    b1ValEl.style.color = "#ff5252";
-                }}
                 if (stopEl) {{
-                    stopEl.innerHTML = `<span style="color:#ff5252; font-size:12px; font-weight:bold;">⛔ 观望不设单</span>`;
+                    stopEl.innerText = "⛔ 观望不设单";
+                    stopEl.style.fontSize = "14px";
+                }}
+                if (stopDistEl) {{
+                    stopDistEl.innerText = "等待日线企稳";
+                    stopDistEl.style.color = "#6b7280";
                 }}
             }} else {{
                 if (optEl) {{
@@ -3168,15 +3154,20 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                         noteEl.style.color = "#00e676";
                     }}
                 }}
-                if (b1El) {{
-                    b1El.innerText = b1Shares > 0 ? (b1Shares.toFixed(2) + " 股") : "--";
-                    b1El.style.color = "#00e676";
+                if (stopEl) {{
+                    stopEl.innerText = stopLoss > 0 ? ("$" + stopLoss.toFixed(2)) : "--";
+                    stopEl.style.fontSize = "22px";
                 }}
-                if (b1ValEl) {{
-                    b1ValEl.innerText = b1Val > 0 ? (`约 $${{b1Val.toFixed(1)}} · 1.5%风险平价`) : "1.5% 风险平价一次性建仓";
-                    b1ValEl.style.color = "#6b7280";
+                if (stopDistEl) {{
+                    const stopDist = (optimalLimit > 0 && stopLoss > 0) ? ((stopLoss - optimalLimit) / optimalLimit * 100) : null;
+                    if (stopDist !== null) {{
+                        stopDistEl.innerText = `距入场 ${{stopDist >= 0 ? '+' : ''}}${{stopDist.toFixed(1)}}%`;
+                        stopDistEl.style.color = "#f87171";
+                    }} else {{
+                        stopDistEl.innerText = "距入场 --";
+                        stopDistEl.style.color = "#6b7280";
+                    }}
                 }}
-                if (stopEl) stopEl.innerHTML = stopLoss > 0 ? `$${{stopLoss.toFixed(2)}} <span style="font-size:10px; color:#f87171;">(${{stopLossPct >= 0 ? '+' : ''}}${{stopLossPct.toFixed(1)}}%)</span>` : "--";
             }}
             const bandEl = document.getElementById("pEntryFibBand");
             if (bandEl) bandEl.innerText = isInverseHedge ? "🛡️ 反向衰减对冲(不计黄金坑)" : ((curFibLow && curFibHigh) ? (`$${{curFibLow.toFixed(2)}} ~ $${{curFibHigh.toFixed(2)}}`) : "--");

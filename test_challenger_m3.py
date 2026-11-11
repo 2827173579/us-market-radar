@@ -174,6 +174,15 @@ class TestFutuProTerminalDomIntegrity(unittest.TestCase):
         self.assertIn('#ff5252', self.html)
         self.assertIn('rgba(248, 81, 73', self.html)
 
+    def test_entry_plan_no_position_module_new_layout(self):
+        """Verify V3.1 position-size module removed and new dual-card layout present."""
+        self.assertNotIn('id="pBatch1Shares"', self.html, "V3.1 position card must be removed")
+        self.assertNotIn('V3.1 建议仓位', self.html, "V3.1 position label must be removed")
+        self.assertIn('id="pEntryStopDist"', self.html, "Stop-loss distance sub-label missing")
+        self.assertIn('💡 参考挂单价', self.html, "Reference limit-price card label missing")
+        self.assertIn('🛡️ 防守止损线', self.html, "Defensive stop-loss card label missing")
+        self.assertIn('黄金坑支撑带', self.html, "Golden-pit support band row missing")
+
     def test_tv_symbol_map_completeness(self):
         """Verify SYMBOL_MAP contains all 70 tickers with correct exchanges."""
         # Extract SYMBOL_MAP from script
