@@ -1543,20 +1543,41 @@ def evaluate_intraday_entry(
     if is_stop:
         if broken_rebound_ready:
             intraday_entry_ready = True
-            optimal_limit = round(active_price, 2)
-            limit_note = "回踩VWAP/日内支撑短线单"
+            support_anchor = max(vwap, s1_support) if s1_support > 0 else vwap
+            support_floor = min(vwap, s1_support) if s1_support > 0 else vwap
+            chase_high = bool(vwap > 0 and active_price > vwap * 1.02)
+            if chase_high:
+                optimal_limit = round(min(active_price, support_anchor * 1.008), 2)
+                limit_note = "回踩VWAP/日内支撑短线单 · 已冲高不追现价"
+            else:
+                optimal_limit = round(active_price, 2)
+                limit_note = "回踩VWAP/日内支撑短线单"
+            # 同时满足：止损压在 VWAP/S1 下方，且挂单价亏损≤4%
+            if support_floor > 0:
+                _max_entry_for_4pct = (support_floor * 0.985) / 0.96
+                if optimal_limit > _max_entry_for_4pct:
+                    optimal_limit = round(_max_entry_for_4pct, 2)
+                    limit_note = "回踩VWAP/日内支撑短线单 · 已冲高不追现价"
             stop_candidates = [optimal_limit * 0.965]
             if atr > 0:
                 stop_candidates.append(optimal_limit - 1.2 * atr)
             if s1_support > 0:
                 stop_candidates.append(s1_support * 0.99)
             raw_short_stop = max(stop_candidates)
+            if support_floor > 0:
+                raw_short_stop = min(raw_short_stop, support_floor * 0.985)
             raw_short_pct = ((optimal_limit - raw_short_stop) / optimal_limit) * 100.0 if optimal_limit > 0 else 3.5
             short_stop_pct = min(4.0, max(2.5, raw_short_pct))
             entry_stop_loss = round(optimal_limit * (1.0 - short_stop_pct / 100.0), 2)
+            if support_floor > 0 and entry_stop_loss > support_floor * 0.985:
+                entry_stop_loss = round(support_floor * 0.985, 2)
+                short_stop_pct = ((optimal_limit - entry_stop_loss) / optimal_limit) * 100.0 if optimal_limit > 0 else short_stop_pct
             stop_loss_pct = -round(short_stop_pct, 1)
             intraday_status_text = "⚡ 超跌右侧博反抽 (破坑深调·快进快出)"
             intraday_reason = f"日线仍处黄金坑(${fib_low:.2f})下方，但日内已站稳VWAP(${vwap:.2f})/支撑企稳；仅限短线博空头回补反弹，压力位(R1 ${r1_resist:.2f})不过即走，严禁中线死扛"
+            if chase_high or rsi_5m >= 68.0:
+                limit_note += " · 5m RSI/冲高提醒: 切勿追高现价"
+                intraday_reason += " ｜ 日内已冲高偏离VWAP，切勿追高现价，耐心等回踩低吸"
         else:
             intraday_entry_ready = False
             optimal_limit = 0.0
@@ -2984,11 +3005,11 @@ def evaluate_market_weather(macro_dict, history_dict=None):
 
     if is_rainstorm_env or is_bear_defense_env:
         qqq_parking_action = "🔴 清空避险"
-        qqq_parking_desc = "大盘暴风雨/破防线，Firstrade 闲置资金 100% 留存美元现金，严禁泊入 QQQ"
+        qqq_parking_desc = "大盘暴风雨/破防线，闲置资金 100% 留存美元现金，严禁泊入 QQQ"
         qqq_parking_color = "#ff5252"
     elif qqq_ma50 > 0 and qqq_last >= qqq_ma50 and not is_vix_panic:
         qqq_parking_action = "🟢 100% 满额泊入"
-        qqq_parking_desc = "大盘多头安全期，Firstrade 闲置资金建议 100% 挂 MOO 泊入 QQQ 享大盘收益，有新买点时自动变现"
+        qqq_parking_desc = "大盘多头安全期，闲置资金建议 100% 挂 MOO 泊入 QQQ 享大盘收益，有新买点时自动变现"
         qqq_parking_color = "#00e676"
     else:
         qqq_parking_action = "🟡 观望防守"
@@ -4146,48 +4167,8 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
         local_tz = timezone(timedelta(hours=9))
     now_str = datetime.now(local_tz).strftime("%Y-%m-%d %H:%M:%S")
 
-    # 0. 载入用户自主管理实盘持仓配置 (user_portfolio.json) 并无缝动态合并
-    user_portfolio = load_user_portfolio()
-    if os.path.exists(USER_PORTFOLIO_FILE):
-        # 先清空内置默认持仓股数，确保用户在弹窗中删除/清仓某只股票后能真正清零，不死灰复燃
-        for group_key in ("ETFS", "STOCKS"):
-            for tk_meta in MONITORED_TARGETS[group_key].values():
-                tk_meta["shares"] = 0.0
-                tk_meta["trim1"] = 0.0
-                tk_meta["trim1_shares"] = 0.0
-                tk_meta["trim2"] = 0.0
-    if user_portfolio:
-        for t_sym, p_info in user_portfolio.items():
-            t_sym = t_sym.upper()
-            shares = float(p_info.get("shares", 0.0))
-            cost = float(p_info.get("cost", 0.0))
-            target = float(p_info.get("target", cost if cost > 0 else 0.0))
-            stop_val = float(p_info.get("base_val", p_info.get("stop_val", 0.0)))
-            trim1 = float(p_info.get("trim1", 0.0))
-            trim1_shares = float(p_info.get("trim1_shares", 0.0))
-            trim2 = float(p_info.get("trim2", 0.0))
-
-            if t_sym in MONITORED_TARGETS["ETFS"]:
-                tgt = MONITORED_TARGETS["ETFS"][t_sym]
-            elif t_sym in MONITORED_TARGETS["STOCKS"]:
-                tgt = MONITORED_TARGETS["STOCKS"][t_sym]
-            else:
-                tgt = {
-                    "name": p_info.get("name", t_sym),
-                    "sub": p_info.get("note", "实盘持仓"),
-                    "cat": p_info.get("cat", "自选持仓"),
-                    
-                }
-                MONITORED_TARGETS["STOCKS"][t_sym] = tgt
-
-            tgt["shares"] = shares
-            tgt["cost"] = cost
-            tgt["target"] = target
-            if stop_val > 0:
-                tgt["base_val"] = stop_val
-            tgt["trim1"] = trim1
-            tgt["trim1_shares"] = trim1_shares
-            tgt["trim2"] = trim2
+    # 实盘持仓功能已移除：不再加载或合并 user_portfolio.json
+    user_portfolio = {}
 
     all_etfs = list(MONITORED_TARGETS["ETFS"].keys())
     all_stocks = list(MONITORED_TARGETS["STOCKS"].keys())
@@ -4663,7 +4644,7 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
         _build_fn = create_futu_terminal.build_futu_terminal_html
     except Exception:
         _build_fn = build_futu_terminal_html
-    futu_html = _build_fn(stocks_sorted, macro_data, weather_info, update_time_str=now_str, has_realtime=has_realtime, target_watchlist=target_watchlist, user_portfolio=user_portfolio, terminal_notifications=terminal_notifications, session_code=session_code, session_name=session_name)
+    futu_html = _build_fn(stocks_sorted, macro_data, weather_info, update_time_str=now_str, has_realtime=has_realtime, target_watchlist=target_watchlist, terminal_notifications=terminal_notifications, session_code=session_code, session_name=session_name)
     with open(FUTU_HTML_FILE, "w", encoding="utf-8") as f:
         f.write(futu_html)
     index_html_path = os.path.join(SCRATCH_DIR, "index.html")
@@ -4814,6 +4795,25 @@ def main():
                 run_radar_cycle(is_first_run=False, round_idx=round_idx)
             except Exception as e:
                 print(f"[!] ⚠️ 守护进程自动拦截异常并继续运行: {e}")
+            # 周末休市：本地刷新照常，git commit/push 降频为每30分钟一次
+            try:
+                _wk_session, _ = get_us_market_session()
+                _weekend_quiet = (_wk_session == "WEEKEND")
+            except Exception:
+                _weekend_quiet = False
+            if _weekend_quiet:
+                _last_push_ts = globals().get("_LAST_GIT_PUSH_TS", 0.0)
+                if time.time() - _last_push_ts < 1800:
+                    try:
+                        import shutil as _wk_shutil
+                        if os.path.exists("futu_pro_terminal.html"):
+                            _wk_shutil.copyfile("futu_pro_terminal.html", "index.html")
+                    except Exception:
+                        pass
+                    print("[*] 周末休市：本地看板已刷新，Git commit/push 按30分钟降频，跳过本轮推送")
+                    round_idx += 1
+                    time.sleep(15.0)
+                    continue
             # 云端同步持久化至 Git 仓库，令手机端 GitHub Pages 秒级保持最新
             try:
                 import shutil
@@ -4870,6 +4870,7 @@ def main():
                 push_res = subprocess.run(["git", "push", "origin", "HEAD:main"], check=False, capture_output=True, text=True)
                 if push_res.returncode == 0:
                     print(f"[+] ✅ 成功推送第 {round_idx} 轮数据至 GitHub Pages (PAT 触发部署成功)！")
+                    globals()["_LAST_GIT_PUSH_TS"] = time.time()
                 else:
                     print(f"[*] Git 推送反馈: {push_res.stderr.strip()[:100]}")
             except Exception as e:

@@ -6,7 +6,7 @@ Helper module to build the Futu-Style Pro Terminal (futu_pro_terminal.html)
 import json
 import time
 
-def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_str="", has_realtime=False, target_watchlist=None, user_portfolio=None, terminal_notifications=None, session_code="REGULAR", session_name="常规盘中"):
+def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_str="", has_realtime=False, target_watchlist=None, terminal_notifications=None, session_code="REGULAR", session_name="常规盘中"):
     is_overnight = (session_code == "OVERNIGHT")
     if session_code == "OVERNIGHT":
         session_badge_html = '<span class="tool-link" style="color: #c084fc; border: 1px solid rgba(192, 132, 252, 0.45); background: rgba(192, 132, 252, 0.12); padding: 4px 7px; font-weight: 700;">🌌 美股夜盘</span>'
@@ -55,18 +55,6 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
         except Exception:
             target_watchlist = []
 
-    if user_portfolio is None:
-        try:
-            import os
-            sc_dir = os.path.dirname(os.path.abspath(__file__))
-            p_file = os.path.join(sc_dir, "user_portfolio.json")
-            if os.path.exists(p_file):
-                with open(p_file, "r", encoding="utf-8") as f:
-                    user_portfolio = json.load(f)
-            else:
-                user_portfolio = {}
-        except Exception:
-            user_portfolio = {}
 
     if terminal_notifications is None:
         try:
@@ -428,7 +416,6 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
     macro_json = json.dumps(macro_data, ensure_ascii=False)
     weather_json = json.dumps(weather_info, ensure_ascii=False)
     watchlist_json = json.dumps(target_watchlist, ensure_ascii=False)
-    portfolio_json = json.dumps(user_portfolio, ensure_ascii=False)
     notifications_json = json.dumps(terminal_notifications, ensure_ascii=False)
     ai_predictions_json = json.dumps(ai_predictions, ensure_ascii=False)
 
@@ -1582,8 +1569,6 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                     <span id="soundIcon">🔊</span>
                 </button>
             </div>
-            <!-- 持仓管理 -->
-            <button onclick="openPortfolioModal()" class="tool-link" style="background: rgba(255,105,0,0.18); border: 1px solid rgba(255,105,0,0.45); color: #ff6900; font-weight: 700; cursor: pointer; padding: 4px 8px;">💼 实盘持仓</button>
             <!-- 市场时段状态标签 (动态四元划分) -->
             {session_badge_html}
             {defensive_alert_badge_html}
@@ -1652,9 +1637,6 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             <!-- 📱 手机端专属快捷操作条 (编辑持仓 / 预警通知) -->
             <div class="mobile-only" style="margin-bottom: 6px;">
                 <div style="display: flex; gap: 8px;">
-                    <button onclick="openPortfolioModal()" class="btn-primary" style="flex: 1; padding: 7px; font-size: 12px; display: flex; align-items: center; justify-content: center; gap: 4px; border-radius: 4px;">
-                        <span>⚙️ 编辑实盘持仓</span>
-                    </button>
                     <button onclick="toggleNotifDrawer()" class="btn-secondary" style="flex: 1; padding: 7px; font-size: 12px; display: flex; align-items: center; justify-content: center; gap: 4px; border-radius: 4px;">
                         <span>🔔 预警中心</span>
                     </button>
@@ -1667,7 +1649,6 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 <div class="p-filter-pill" data-filter="options" onclick="filterRightCards('options')">⚡期权</div>
                 <div class="p-filter-pill" data-filter="entry" onclick="filterRightCards('entry')">🎯挂单</div>
                 <div class="p-filter-pill" data-filter="tactical" onclick="filterRightCards('tactical')">📊战术</div>
-                <div class="p-filter-pill" data-filter="risk" onclick="filterRightCards('risk')">💼持仓</div>
             </div>
 
             <!-- 1. 当前标的基本面与分时水温 -->
@@ -1693,47 +1674,6 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                         <div class="m-item"><span class="m-lbl">成交量比</span><span class="m-val" id="pVolRatio">--</span></div>
                         <div class="m-item"><span class="m-lbl">14日 RSI</span><span class="m-val" id="pRsi">--</span></div>
                         <div class="m-item"><span class="m-lbl">14日 ATR</span><span class="m-val" id="pAtr">--</span></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 2. 实盘持仓专属风控与解套跟踪哨 -->
-            <div class="panel-box intc-card" id="intcTacticalBox" data-cat="risk">
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-                    <div class="intc-title" id="intcCardTitle" style="margin-bottom: 0;">🛡️ 实盘底仓风控与解套哨</div>
-                    <span class="card-toggle-btn" onclick="toggleCard(this)">▲</span>
-                </div>
-                <div class="panel-box-content">
-                    <div class="intc-rule-item">
-                        <span style="color: #9ca3af;">持仓成本基线</span>
-                        <span style="font-weight: 700; color: #f3f4f6;" id="intcCostBase">$95.53 (持仓 7 股)</span>
-                    </div>
-                    <div class="intc-rule-item">
-                        <span style="color: #9ca3af;">持仓总成本</span>
-                        <span style="font-weight: 700; color: #f3f4f6;" id="intcTotalCost">$668.74</span>
-                    </div>
-                    <div class="intc-rule-item">
-                        <span style="color: #9ca3af;">当前持仓市值</span>
-                        <span style="font-weight: 700; color: #f3f4f6;" id="intcCurrentVal">$630.14</span>
-                    </div>
-                    <div class="intc-rule-item">
-                        <span style="color: #60a5fa;">未实现盈亏</span>
-                        <span style="font-weight: 700; color: #ff5252;" id="intcPnlRatio">-5.77% (-$38.60)</span>
-                    </div>
-                    <div class="intc-rule-item">
-                        <span style="color: #ffd700;">🎯 第一阶段目标/反抽减压位</span>
-                        <span style="font-weight: 700; color: #ffd700;" id="intcTrim1Val">$91.80 (卖 5 股回笼 ~$459)</span>
-                    </div>
-                    <div class="intc-rule-item">
-                        <span style="color: #00e676;">🎉 解套目标价位</span>
-                        <span style="font-weight: 700; color: #00e676;" id="intcTargetVal">$95.53</span>
-                    </div>
-                    <div class="intc-rule-item">
-                        <span style="color: #ff5252;">🚨 铁血硬止损线</span>
-                        <span style="font-weight: 700; color: #ff5252;" id="intcStopVal">$88.00</span>
-                    </div>
-                    <div id="intcStatusDesc" style="font-size: 11px; margin-top: 8px; line-height: 1.45; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 6px;">
-                        🟡 紧密风控：现价处于成本与硬止损之间，紧密监测减仓线与防守线。
                     </div>
                 </div>
             </div>
@@ -1977,7 +1917,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                         {weather_info.get('tactics', '严格控制总仓位，分批防守。')}
                     </div>
                     <div style="font-size: 11px; margin-top: 6px; padding-top: 6px; border-top: 1px dashed rgba(255,255,255,0.1); line-height: 1.3;">
-                        <span style="color: #60a5fa; font-weight: 700;">🏦 Firstrade 闲置资金泊入指示：</span>
+                        <span style="color: #60a5fa; font-weight: 700;">🏦 闲置资金泊入指示：</span>
                         <span style="color: {weather_info.get('qqq_parking_color', '#ffd54f')}; font-weight: 800;">{weather_info.get('qqq_parking_action', '🟡 观望防守')}</span>
                         <div style="color: #888; font-size: 10px; margin-top: 2px;">{weather_info.get('qqq_parking_desc', '大盘处于震荡期，维持轻仓现金防守')}</div>
                     </div>
@@ -2028,55 +1968,6 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             <span>⏱️ 1分钟极速自动轮询 | 标的池: {len(stocks_data) + len(macro_data)}只 | 数据更新于: {update_time_str}</span>
         </div>
     </footer>
-
-    <!-- 💼 实盘持仓独立管理弹窗 Modal -->
-    <div class="modal-overlay" id="portfolioModalOverlay" onclick="if(event.target===this)closePortfolioModal()">
-        <div class="modal-card">
-            <div class="modal-header">
-                <div class="modal-title">
-                    <span>💼 实盘持仓管理 (Firstrade 联动)</span>
-                </div>
-                <button class="modal-close" onclick="closePortfolioModal()">✖</button>
-            </div>
-            <div class="modal-body">
-                <div style="background: rgba(255,105,0,0.08); border: 1px solid rgba(255,105,0,0.25); border-radius: 6px; padding: 8px 12px; margin-bottom: 14px; font-size: 12px; color: #cbd5e1; line-height: 1.5;">
-                    💡 <b>自主管理说明</b>：在此添加或修改持仓股数与成本，系统将保存至本地 <code style="color:#ff6900;">user_portfolio.json</code>。雷达与风控系统会自动读取并更新微信风控与看盘哨兵，<b>以后每次买卖增减仓都不用再告诉我了</b>！你也可以直接在 Windows 记事本中打开该文件编辑。
-                </div>
-                <div style="overflow-x: auto;">
-                    <table class="portfolio-table" id="portfolioTable">
-                        <thead>
-                            <tr>
-                                <th style="width: 85px;">代码</th>
-                                <th style="width: 100px;">名称</th>
-                                <th style="width: 80px;">持仓股数</th>
-                                <th style="width: 85px;">成本单价($)</th>
-                                <th style="width: 85px;">一减位($)</th>
-                                <th style="width: 75px;">一减股数</th>
-                                <th style="width: 85px;">止损价($)</th>
-                                <th style="width: 85px;">解套目标($)</th>
-                                <th style="width: 50px;">操作</th>
-                            </tr>
-                        </thead>
-                        <tbody id="portfolioTableBody">
-                            <!-- 由 JS 动态渲染持仓列表 -->
-                        </tbody>
-                    </table>
-                </div>
-                <div style="margin-top: 12px;">
-                    <button class="btn-secondary" onclick="addPortfolioRow()" style="display: inline-flex; align-items: center; gap: 4px;">
-                        <span>➕ 添加新持仓标的</span>
-                    </button>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <span style="font-size: 11px; color: #9ca3af;">*修改后点击保存立即写入本地 user_portfolio.json 生效</span>
-                <div style="display: flex; gap: 8px;">
-                    <button class="btn-secondary" onclick="closePortfolioModal()">取消</button>
-                    <button class="btn-primary" onclick="savePortfolioModal()">💾 保存修改并生效</button>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!-- 提示框 Toast -->
     <div class="toast-box" id="toastBox">✅ 持仓配置已成功保存！</div>
@@ -2141,7 +2032,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
         const MACRO_DATA = {macro_json};
         const WEATHER_INFO = {weather_json};
         const INITIAL_WATCHLIST = {watchlist_json};
-        const INITIAL_PORTFOLIO = {portfolio_json};
+        const INITIAL_PORTFOLIO = {{}};
         const INITIAL_PORTFOLIO_TS = {int(time.time() * 1000)};
         const INITIAL_NOTIFICATIONS = {notifications_json};
         const AI_PREDICTIONS = {ai_predictions_json};
@@ -2593,7 +2484,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                     <div class="s-info">
                         <div class="s-ticker">
                             ${{item.ticker}}
-                            ${{isHeld ? '<span style="background:rgba(56,189,248,0.22); color:#38bdf8; border:1px solid rgba(56,189,248,0.5); border-radius:3px; padding:0 3px; font-size:9px; margin-left:3px;" title="Firstrade实盘持仓">💼持仓</span>' : ''}}
+                            
                             ${{isStarred ? '<span style="color:#ffd700; font-size:10px; margin-left:3px;" title="已加入建仓盯盘">⭐</span>' : ''}}
                             ${{isEntryReady && isStarred ? '<span style="background:rgba(0,230,118,0.2); color:#00e676; border:1px solid rgba(0,230,118,0.5); border-radius:3px; padding:0 3px; font-size:9px; margin-left:3px;">🎯买点</span>' : ''}}
                             ${{item.is_pit ? '<span style="color:#00e676; font-size:10px; margin-left:3px;">🟢坑</span>' : ''}}
@@ -2720,83 +2611,6 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
 
             document.getElementById("pAtr").innerText = curAtr ? ("$" + curAtr.toFixed(2)) : "--";
 
-            // 2. 实盘持仓 (INTC 7股 / SOXL 12.22594股) 专属风控与自救解套哨 (支持盘前盘后夜盘实时价格穿透)
-            const intcBox = document.getElementById("intcTacticalBox");
-            if (data.shares && data.shares > 0) {{
-                intcBox.style.display = "block";
-                const curPriceVal = curActive || curLast;
-                const cost = data.cost || 95.53429;
-                const shares = data.shares || 7.0;
-                const trim1 = data.trim1 || 91.80;
-                const trim1Shares = data.trim1_shares || 5.0;
-                const trim2 = data.trim2 || 0;
-                const stopLoss = data.base_val || 88.00;
-                const targetVal = data.target || cost;
-                const totalCost = cost * shares;
-                const totalVal = curPriceVal * shares;
-                const pnlPct = ((curPriceVal - cost) / cost) * 100;
-                const pnlAmount = totalVal - totalCost;
-                const bufferStop = curPriceVal - stopLoss;
-                const bufferPct = (bufferStop / stopLoss) * 100;
-                const trim1Cash = Math.round(trim1 * trim1Shares);
-                const shareStr = Number.isInteger(shares) ? shares.toFixed(0) : shares.toFixed(5);
-                const trimShareStr = Number.isInteger(trim1Shares) ? trim1Shares.toFixed(0) : trim1Shares.toFixed(5);
-
-                const titleEl = document.getElementById("intcCardTitle");
-                if (titleEl) titleEl.innerText = `🛡️ ${{ticker}} 实盘底仓风控与解套哨`;
-                document.getElementById("intcCostBase").innerText = `$${{cost.toFixed(2)}} (持仓 ${{shareStr}} 股)`;
-                document.getElementById("intcTotalCost").innerText = `$${{totalCost.toFixed(2)}}`;
-                document.getElementById("intcCurrentVal").innerText = `$${{totalVal.toFixed(2)}}`;
-                document.getElementById("intcPnlRatio").innerText = `${{pnlPct >= 0 ? '+' : ''}}${{pnlPct.toFixed(2)}}% ($${{pnlAmount >= 0 ? '+' : ''}}${{pnlAmount.toFixed(2)}})`;
-                document.getElementById("intcPnlRatio").style.color = pnlPct >= 0 ? "#00e676" : "#ff5252";
-                const trim1El = document.getElementById("intcTrim1Val");
-                if (trim1El) trim1El.innerText = `$${{trim1.toFixed(2)}} (卖 ${{trimShareStr}} 股回笼 ~$${{trim1Cash}})`;
-                const targetEl = document.getElementById("intcTargetVal");
-                if (targetEl) targetEl.innerText = trim2 > 0 ? `$${{trim2.toFixed(2)}} (二刀) / $${{targetVal.toFixed(2)}} (全解套)` : `$${{targetVal.toFixed(2)}} (全仓解套)`;
-                document.getElementById("intcStopVal").innerText = ticker === "SOXL" ? `$${{stopLoss.toFixed(2)}} (破 $83.50 先砍半)` : `$${{stopLoss.toFixed(2)}}`;
-
-                const descEl = document.getElementById("intcStatusDesc");
-                const sessLabel = data.session_tag ? `[${{data.session_tag}}] ` : "";
-                if (curPriceVal <= stopLoss) {{
-                    descEl.innerHTML = `<span style="color:#ff1744; font-weight:bold;">🚨 ${{sessLabel}}触发硬止损：现价 $${{curPriceVal.toFixed(2)}} 已击穿 $${{stopLoss.toFixed(2)}} 警戒线，严格执行保命防守！</span>`;
-                }} else if (bufferPct <= 3.0) {{
-                    descEl.innerHTML = `<span style="color:#ffa726; font-weight:bold;">⚠️ ${{sessLabel}}紧迫预警：距 $${{stopLoss.toFixed(2)}} 止损线仅剩 $${{bufferStop.toFixed(2)}} (${{bufferPct.toFixed(1)}}%) 缓冲空间！</span>`;
-                }} else if (curPriceVal >= targetVal) {{
-                    descEl.innerHTML = `<span style="color:#00e676; font-weight:bold;">🎉 ${{sessLabel}}解套达成：现价 $${{curPriceVal.toFixed(2)}} 已触达 $${{targetVal.toFixed(2)}} 成本目标，建议分批止盈落袋！</span>`;
-                }} else if (curPriceVal >= trim1) {{
-                    const holdNote = curPriceVal >= curEma20 ? "站稳 EMA20 顺势持有" : "反抽均线压制位，依托客观指标防守";
-                    descEl.innerHTML = `<span style="color:#38bdf8; font-weight:bold;">📈 ${{sessLabel}}持仓跟踪：现价 $${{curPriceVal.toFixed(2)}} 已越过参考减仓线 ($${{trim1.toFixed(2)}})，${{holdNote}}。</span>`;
-                }} else {{
-                    const isLevEtf = ["SOXL", "KORU", "SQQQ", "SOXS"].includes(ticker);
-                    const extraTip = ticker === "INTC"
-                        ? "⚠️10/29盘后财报窗口，重点防范业绩波动风险。"
-                        : (isLevEtf ? "3倍杠杆高波动标的，严格遵循硬止损线与客观形态！" : "严格遵循底线止损纪律，动态跟踪趋势。");
-                    descEl.innerHTML = `<span style="color:#93c5fd;">💼 ${{sessLabel}}实盘风控：距止损底线缓冲 +$${{bufferStop.toFixed(2)}} (${{bufferPct.toFixed(1)}}%)。${{extraTip}}</span>`;
-                }}
-            }} else {{
-                intcBox.style.display = "none";
-            }}
-
-            // 2.5 关键建仓与风控指标前置计算 (含反向对冲工具分流、暴跌熔断与冷却期保护闸)
-            const isInverseHedge = Boolean(data.is_inverse_hedge || ["SQQQ", "SOXS", "VIXY"].includes(ticker));
-            const isCrashHalt = !isInverseHedge && Boolean(data.is_crash_halt || (data.optimal_limit === 0 && data.limit_note && data.limit_note.includes("破位")));
-            const isCoolingHalt = !isInverseHedge && Boolean(data.is_cooling_halt || (data.intraday_status_text && data.intraday_status_text.includes("冷却期")));
-            let optimalLimit = data.optimal_limit !== undefined ? data.optimal_limit : curActive;
-            if (optimalLimit === 0 && !isCrashHalt && !isCoolingHalt && curFibHigh > curFibLow) {{
-                const midAxis = curFibLow + 0.382 * (curFibHigh - curFibLow);
-                optimalLimit = Math.round(midAxis * 100) / 100;
-            }}
-            const maxAlloc = data.max_alloc || 0;
-            const totalFractional = data.fractional_shares || (curActive > 0 ? (maxAlloc / curActive) : 0);
-            const fractional = totalFractional;
-            const b1Shares = (isCrashHalt || isCoolingHalt) ? 0 : Math.round(totalFractional * 100) / 100;
-            const b1Val = (isCrashHalt || isCoolingHalt) ? 0 : Math.round(b1Shares * optimalLimit * 100) / 100;
-            const rawPitStop = curFibLow > 0 ? curFibLow * 0.97 : (optimalLimit > 0 ? optimalLimit * 0.96 : 0);
-            const fallbackStop = (optimalLimit > 0 && rawPitStop >= optimalLimit * 0.90 && rawPitStop <= optimalLimit * 0.985) ? rawPitStop : (optimalLimit * 0.96);
-            const stopLoss = (isCrashHalt || isCoolingHalt) ? 0 : (data.entry_stop_loss || Math.round(fallbackStop * 100) / 100);
-            const stopLossPct = (isCrashHalt || isCoolingHalt) ? 0 : (data.stop_loss_pct !== undefined ? data.stop_loss_pct : (optimalLimit > 0 ? ((stopLoss - optimalLimit) / optimalLimit * 100) : -4.0));
-            const cancelLine = Math.max(data.low_price || data.rth_low || 0, curLast * 0.985);
-
             // 3. 核心状态研判与四维深度成因分析
             const sig = data.signal || "";
             const isPit = data.is_pit || sig.includes("黄金坑就位");
@@ -2805,6 +2619,8 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             const isDeepPullback = data.is_deep_pullback || sig.includes("深度回踩");
             const isBrokenRebound = Boolean(data.broken_rebound_ready);
             const isBrokenBearish = Boolean(data.broken_bearish);
+            const _aiNow = (AI_PREDICTIONS && AI_PREDICTIONS.by_ticker) ? (AI_PREDICTIONS.by_ticker[ticker] || {{}}) : {{}};
+            const aiNowR1 = Number(_aiNow.r1 || 0);
             const isTakeProfit = data.is_take_profit || sig.includes("冲顶") || sig.includes("止盈") || sig.includes("超买");
             const isBullTrend = sig.includes("多头");
 
@@ -2844,6 +2660,8 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 volReason = `量比 ${{curVolRatio.toFixed(2)}}x (放量明显)，${{curBias > 8.0 ? '高位大换手赶顶，警惕主力兑现出货' : (curBias < -10.0 ? '放量大跌，空头主动性抛压加剧' : '多空激烈博弈，量能显著放大')}}`;
             }} else if (curVolRatio >= 1.1) {{
                 volReason = `量比 ${{curVolRatio.toFixed(2)}}x (成交适度活跃)，量价匹配处于合理区间`;
+            }} else if (curVolRatio < 0.8 && (data.pct_change || 0) > 0) {{
+                volReason = `量比 ${{curVolRatio.toFixed(2)}}x (缩量反抽)，抛压阶段性减轻，关注上方 R1 阻力位能否补量突破`;
             }} else if (curVolRatio <= 0.85) {{
                 volReason = `量比 ${{curVolRatio.toFixed(2)}}x (显著缩量)，${{curBias < 0 ? '缩量阴跌假摔，主力诱空洗盘特征明显，无恐慌大割肉' : '缩量休整，筹码结构锁定良好'}}`;
             }} else {{
@@ -2903,7 +2721,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 themeBorder = "#ffa726";
                 actionType = "超跌右侧博反抽 / 短线快进快出";
                 mainVerdict = "⚡ 超跌右侧博反抽 (破坑深调·快进快出)";
-                actionDirective = `【破坑右侧反抽】日线仍处黄金坑 ($${{curFibLow.toFixed(2)}}) 下方，但日内已站稳 VWAP/支撑企稳；仅限短线博空头回补，压力位 R1 ($${{Number(data.broken_r1 || curFibHigh || 0).toFixed(2)}}) 不过即走，严禁中线死扛。`;
+                actionDirective = `【破坑右侧反抽】日线仍处黄金坑 ($${{curFibLow.toFixed(2)}}) 下方，但日内已站稳 VWAP/支撑企稳；仅限短线博空头回补，压力位 R1 ($${{Number(aiNowR1 || data.broken_r1 || curFibHigh || 0).toFixed(2)}}) 不过即走，严禁中线死扛。`;
             }} else if (isBrokenBearish) {{
                 themeColor = "#ff1744";
                 themeBg = "linear-gradient(135deg, rgba(255, 23, 68, 0.09), #181b22)";
@@ -3007,7 +2825,10 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                     intraReasonEl.innerText = data.intraday_reason || "标的3日内曾发生单日大跌，目前处于冷却观察期，需等待日线右侧企稳确认。";
                 }} else if (isBrokenRebound) {{
                     intraStatusEl.innerText = intraStatusText;
-                    intraReasonEl.innerText = intraReason;
+                    const _r1Shown = Number(aiNowR1 || data.broken_r1 || 0);
+                    let _branchAReason = intraReason || "";
+                    if (_r1Shown > 0) _branchAReason = _branchAReason.replace(/压力位\(R1 \$[\d.]+\)/, `压力位(R1 $${{_r1Shown.toFixed(2)}})`);
+                    intraReasonEl.innerText = _branchAReason;
                     intraBannerEl.style.background = "linear-gradient(90deg, rgba(255, 167, 38, 0.18), rgba(0, 229, 255, 0.10))";
                     intraBannerEl.style.borderColor = "#ffa726";
                     intraStatusEl.style.color = "#ffd54f";
@@ -3086,8 +2907,9 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                     optEl.style.fontSize = "22px";
                 }}
                 if (noteEl) {{
-                    noteEl.innerText = "回踩VWAP/日内支撑短线单";
-                    noteEl.style.color = "#ffb74d";
+                    const _chaseNote = (curActive > (data.vwap || curActive) * 1.03) || Number(data.rsi_5m || 0) >= 68;
+                    noteEl.innerText = "回踩VWAP/日内支撑短线单" + (_chaseNote ? " · 日内已冲高偏离VWAP，切勿追高现价，耐心等回踩低吸" : "");
+                    noteEl.style.color = _chaseNote ? "#ffd54f" : "#ffb74d";
                 }}
                 if (stopEl) {{
                     stopEl.innerText = stopLoss > 0 ? ("$" + stopLoss.toFixed(2)) : "--";
@@ -3560,33 +3382,6 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                     selectTicker(AI_PREDICTIONS.top10[0].ticker);
                 }}
             }}
-            // 若点击 💼持仓 且当前选中标的无持仓，自动切换至第一只实盘持仓标的，避免右侧空白
-            if (cat === "risk") {{
-                const curPort = userPortfolio[currentTicker];
-                if (!curPort || !(curPort.shares > 0)) {{
-                    const firstHeld = Object.keys(userPortfolio).find(k => userPortfolio[k] && userPortfolio[k].shares > 0);
-                    if (firstHeld) {{
-                        selectTicker(firstHeld);
-                    }}
-                }}
-            }}
-            const boxes = document.querySelectorAll("#sidebarRight .panel-box");
-            boxes.forEach(box => {{
-                const bCat = box.getAttribute("data-cat");
-                if (cat === "all") {{
-                    box.classList.remove("card-hidden");
-                }} else {{
-                    if (bCat === cat || bCat === "quotes") {{
-                        box.classList.remove("card-hidden");
-                        box.classList.remove("collapsed");
-                        const toggleBtn = box.querySelector(".card-toggle-btn");
-                        if (toggleBtn) toggleBtn.innerText = "▲";
-                    }} else {{
-                        box.classList.add("card-hidden");
-                    }}
-                }}
-            }});
-        }}
 
         // 单个卡片折叠/展开
         function toggleCard(btn) {{
@@ -3615,133 +3410,6 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
         }}
 
         // 持仓独立管理弹窗交互
-        function openPortfolioModal() {{
-            const modal = document.getElementById("portfolioModalOverlay");
-            if (modal) modal.style.display = "flex";
-            renderPortfolioModalTable();
-        }}
-
-        function closePortfolioModal() {{
-            const modal = document.getElementById("portfolioModalOverlay");
-            if (modal) modal.style.display = "none";
-        }}
-
-        function renderPortfolioModalTable() {{
-            const tbody = document.getElementById("portfolioTableBody");
-            if (!tbody) return;
-            tbody.innerHTML = "";
-            
-            const tickers = Object.keys(userPortfolio);
-            if (tickers.length === 0) {{
-                tickers.push("INTC", "SOXL");
-            }}
-            
-            tickers.forEach(t => {{
-                const p = userPortfolio[t] || {{}};
-                const tr = document.createElement("tr");
-                tr.dataset.ticker = t;
-                tr.innerHTML = `
-                    <td><input class="p-input inp-ticker" value="${{t}}" style="font-weight:700; text-transform:uppercase;" /></td>
-                    <td><input class="p-input inp-name" value="${{p.name || t}}" /></td>
-                    <td><input class="p-input inp-shares" type="number" step="any" value="${{p.shares || 0}}" /></td>
-                    <td><input class="p-input inp-cost" type="number" step="any" value="${{p.cost || 0}}" /></td>
-                    <td><input class="p-input inp-trim1" type="number" step="any" value="${{p.trim1 || 0}}" /></td>
-                    <td><input class="p-input inp-trim1s" type="number" step="any" value="${{p.trim1_shares || 0}}" /></td>
-                    <td><input class="p-input inp-stop" type="number" step="any" value="${{p.base_val || p.stop_val || 0}}" /></td>
-                    <td><input class="p-input inp-target" type="number" step="any" value="${{p.target || p.cost || 0}}" /></td>
-                    <td style="text-align:center;"><button class="btn-del" onclick="removePortfolioRow(this)">删除</button></td>
-                `;
-                tbody.appendChild(tr);
-            }});
-        }}
-
-        function addPortfolioRow() {{
-            const tbody = document.getElementById("portfolioTableBody");
-            if (!tbody) return;
-            const tr = document.createElement("tr");
-            tr.innerHTML = `
-                <td><input class="p-input inp-ticker" placeholder="如NVDA" style="font-weight:700; text-transform:uppercase;" /></td>
-                <td><input class="p-input inp-name" placeholder="名称" /></td>
-                <td><input class="p-input inp-shares" type="number" step="any" value="1.0" /></td>
-                <td><input class="p-input inp-cost" type="number" step="any" value="100.0" /></td>
-                <td><input class="p-input inp-trim1" type="number" step="any" value="0.0" /></td>
-                <td><input class="p-input inp-trim1s" type="number" step="any" value="0.0" /></td>
-                <td><input class="p-input inp-stop" type="number" step="any" value="0.0" /></td>
-                <td><input class="p-input inp-target" type="number" step="any" value="0.0" /></td>
-                <td style="text-align:center;"><button class="btn-del" onclick="removePortfolioRow(this)">删除</button></td>
-            `;
-            tbody.appendChild(tr);
-        }}
-
-        function removePortfolioRow(btn) {{
-            const tr = btn.closest("tr");
-            if (tr) tr.remove();
-        }}
-
-        function savePortfolioModal() {{
-            const rows = document.querySelectorAll("#portfolioTableBody tr");
-            const newPort = {{}};
-            rows.forEach(r => {{
-                const t = r.querySelector(".inp-ticker").value.trim().toUpperCase();
-                if (!t) return;
-                const name = r.querySelector(".inp-name").value.trim() || t;
-                const shares = parseFloat(r.querySelector(".inp-shares").value) || 0.0;
-                const cost = parseFloat(r.querySelector(".inp-cost").value) || 0.0;
-                const trim1 = parseFloat(r.querySelector(".inp-trim1").value) || 0.0;
-                const trim1_s = parseFloat(r.querySelector(".inp-trim1s").value) || 0.0;
-                const stop_val = parseFloat(r.querySelector(".inp-stop").value) || 0.0;
-                const target = parseFloat(r.querySelector(".inp-target").value) || cost;
-                
-                newPort[t] = {{
-                    name: name,
-                    shares: shares,
-                    cost: cost,
-                    trim1: trim1,
-                    trim1_shares: trim1_s,
-                    base_val: stop_val,
-                    stop_val: stop_val,
-                    target: target,
-                    note: "自主管理实盘持仓"
-                }};
-            }});
-
-            userPortfolio = newPort;
-            try {{
-                localStorage.setItem("user_custom_portfolio", JSON.stringify(newPort));
-                localStorage.setItem("user_custom_portfolio_ts", Date.now().toString());
-            }} catch(e) {{}}
-
-            const isLocal = window.location.hostname === "127.0.0.1" || window.location.hostname === "localhost";
-            // 1. 同步提交至 8765 守护服务写入 user_portfolio.json
-            fetch(`${{API_BASE}}/api/portfolio`, {{
-                method: "POST",
-                headers: {{ "Content-Type": "application/json" }},
-                body: JSON.stringify(newPort)
-            }})
-            .then(r => r.json())
-            .then(res => {{
-                showToast("✅ 持仓已成功保存至量化主机 user_portfolio.json！");
-            }})
-            .catch(e => {{
-                if (isLocal) {{
-                    const rawParam = encodeURIComponent(JSON.stringify(newPort));
-                    fetch(`${{API_BASE}}/api/save_portfolio?data=${{rawParam}}`)
-                        .then(() => showToast("✅ 持仓已成功保存至量化主机 user_portfolio.json！"))
-                        .catch(() => showToast("✅ 本地持仓已更新！"));
-                }} else {{
-                    showToast("✅ 持仓已保存至当前浏览器缓存（刷新不丢失）");
-                }}
-            }});
-
-            // 2. 实时热更新前端数据源（含清理已删除持仓），无需刷新页面
-            syncPortfolioToRuntimeData(newPort);
-
-            renderWatchlist(currentFilter);
-            selectTicker(currentTicker);
-            closePortfolioModal();
-        }}
-
-        // 预警通知中心抽屉控制与交互
         function toggleNotifDrawer() {{
             const drawer = document.getElementById("notifDrawerOverlay");
             if (!drawer) return;
