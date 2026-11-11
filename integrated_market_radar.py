@@ -2236,12 +2236,9 @@ def dispatch_wechat_radar_alerts(macro_data, stocks_data, weather_info, now_str)
         md.append("")
 
     if pit_alerts:
-        md.append("### 🟢 V3.1 黄金坑买点就绪 (Firstrade 9:30 开盘委托单)")
+        md.append("### 🟢 V3.1 黄金坑买点就绪 (美股盘中/开盘委托单)")
         for a in pit_alerts:
             t_last = a['last']
-            t_frac = a.get('fractional', 0.0)
-            t_alloc_val = t_frac * t_last
-            t_alloc_pct = (t_alloc_val / TOTAL_ACCOUNT_EQUITY) * 100 if TOTAL_ACCOUNT_EQUITY > 0 else 25.0
             t_buy_limit = t_last * 1.020
             t_cancel_line = max(a.get('low_price', a.get('rth_low', t_last * 0.985)), t_last * 0.985)
             t_stop_loss = a.get('stop_loss', round(t_last * 0.932, 2))
@@ -2250,11 +2247,10 @@ def dispatch_wechat_radar_alerts(macro_data, stocks_data, weather_info, now_str)
             md.append(f"> • 现价 **`${t_last:.2f}`** ｜ 偏离度 `{a['bias']:+.1f}%` ｜ 14日RSI `{a['rsi']:.1f}`")
             md.append(f"> • 黄金坑区间：`${a['fib_low']:.2f} ~ ${a['fib_high']:.2f}` ({a['pit_status']})")
             md.append(f"> ")
-            md.append(f"> 📋 **Firstrade 9:30 开盘执行指令 (V3.1 标准)**：")
+            md.append(f"> 📋 **美股盘中/开盘执行指令 (V3.1 标准)**：")
             md.append(f"> 1️⃣ **9:30开盘买入上限价 (Limit)**：**`${t_buy_limit:.2f}`** (开盘高于此价放弃不追)")
             md.append(f"> 2️⃣ **隔夜低开作废底线**：**`${t_cancel_line:.2f}`** (开盘跌破此价撤单不买)")
-            md.append(f"> 3️⃣ **V3.1 风险平价建议仓位**：约 **`${t_alloc_val:.0f}`** (`{t_frac:.2f} 股` · 占总资金 `{t_alloc_pct:.1f}%` · 1.5%风险平价一次性建仓)")
-            md.append(f"> 4️⃣ **GTC 铁血结构止损单**：**`${t_stop_loss:.2f}`**")
+            md.append(f"> 3️⃣ **GTC 铁血结构止损单**：**`${t_stop_loss:.2f}`**")
             md.append("---")
         md.append("")
 

@@ -1951,14 +1951,6 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                         <div id="pActionDirective" style="font-size: 11px; line-height: 1.5; color: #f3f4f6; font-weight: 500; margin-bottom: 8px;">
                             --
                         </div>
-                        <!-- 碎股资金建议区域 (根据状态智能变色提示) -->
-                        <div id="pAllocationSection" style="background: rgba(255,255,255,0.04); border-radius: 6px; padding: 6px 10px; display: flex; align-items: center; justify-content: space-between; border: 1px solid rgba(255,255,255,0.05);">
-                            <div>
-                                <div style="font-size: 11px; color: #9ca3af;" id="pAllocLabel">单股仓位建议 (占总仓位上限 25%)：</div>
-                                <div style="font-size: 10px; color: #6b7280;" id="pAllocSub">1.5% 账户风险平价标准</div>
-                            </div>
-                            <div class="fractional-badge" id="pFractional" style="margin: 0; font-size: 16px; color: #00e5ff;">-- 股</div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -2823,9 +2815,6 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             let fibReason = "";
             let macroReason = "";
             let actionDirective = "";
-            let allocLabel = "单股仓位建议 (占总仓位上限 25%)：";
-            let allocSub = "1.5% 账户风险平价标准";
-            let allocVal = "上限 25.0%";
 
             // 1. 均线形态诊断
             if (curBias > 15.0) {{
@@ -2884,19 +2873,13 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 actionType = "暂停接刀 / 保持观望";
                 mainVerdict = "🟡 坑内观察 · 严禁抢跑左侧接刀";
                 actionDirective = `【受板块拖累暂缓买入】个股估值与价位虽已落入黄金坑防守带，但核心芯片 ETF (SMH) 偏离 MA50 达 ${{smhBias.toFixed(1)}}% 处于破位弱势，存在板块系统性补跌风险。必须等待半导体板块收出右侧止跌企稳阳线后再行启动碎股定投！`;
-                allocLabel = "仓位指令：";
-                allocSub = "等待板块企稳确认";
-                allocVal = "暂缓加仓";
             }} else if (isPit && !isCrashHalt && !isCoolingHalt) {{
                 themeColor = "#00e676";
                 themeBg = "linear-gradient(135deg, rgba(0, 230, 118, 0.08), #181b22)";
                 themeBorder = "#00e676";
                 actionType = "V3.1 黄金坑右侧确认";
                 mainVerdict = "🟢 V3.1 黄金坑就位 (9:30开盘执行)";
-                actionDirective = `【V3.1 开盘执行标准】标的已触发右侧止跌企稳！9:30 开盘执行指令：<br>1️⃣ 9:30开盘买入上限: $${{optimalLimit.toFixed(2)}}<br>2️⃣ 隔夜低开作废底线: $${{cancelLine.toFixed(2)}}<br>3️⃣ V3.1 风险平价仓位: 约 $${{b1Val}} (${{fractional.toFixed(2)}} 股)<br>4️⃣ GTC 铁血结构止损: $${{stopLoss.toFixed(2)}}`;
-                allocLabel = "V3.1 仓位建议 (单股上限 25%)：";
-                allocSub = "1.5% 账户风险平价一次性建仓";
-                allocVal = fractional > 0 ? (fractional.toFixed(2) + " 股") : (data.fractional_shares ? (data.fractional_shares.toFixed(2) + " 股") : "--");
+                actionDirective = `【V3.1 开盘执行标准】标的已触发右侧止跌企稳！9:30 开盘执行指令：<br>1️⃣ 9:30开盘买入上限: $${{optimalLimit.toFixed(2)}}<br>2️⃣ 隔夜低开作废底线: $${{cancelLine.toFixed(2)}}<br>3️⃣ GTC 铁血结构止损: $${{stopLoss.toFixed(2)}}`;
             }} else if (isCrashHalt || isCoolingHalt) {{
                 themeColor = "#ff5252";
                 themeBg = "linear-gradient(135deg, rgba(255, 82, 82, 0.10), #181b22)";
@@ -2904,9 +2887,6 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 actionType = isCoolingHalt ? "暴跌冷却 / 严禁抢跑" : "暴跌熔断 / 暂停接刀";
                 mainVerdict = isCoolingHalt ? "⛔ 暴跌冷却期 (3日内曾大跌·等待日线企稳确认)" : "⛔ 暂停挂单 (暴跌宣泄期 · 防接飞刀)";
                 actionDirective = `【V3.2 熔断保护】${{data.intraday_reason || "标的触发日内暴跌熔断或处于3日暴跌冷却期内，日线尚未确认右侧企稳，严禁盲目左侧挂单抄底！"}}`;
-                allocLabel = "风控冻结：";
-                allocSub = "等待日线右侧企稳确认";
-                allocVal = "0.0% (冻结)";
             }} else if (isStop) {{
                 themeColor = "#ff1744";
                 themeBg = "linear-gradient(135deg, rgba(255, 23, 68, 0.08), #181b22)";
@@ -2914,9 +2894,6 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 actionType = "破位风控 / 严禁抄底";
                 mainVerdict = "🔴 放量破位杀跌 · 严禁逆势接飞刀";
                 actionDirective = `【铁血风控指令】标的放量击穿关键斐波那契坑底防线 (跌破 ${{Math.abs(curDistPit).toFixed(1)}}%)，空头动能处于主导释放期。持仓者若跌破底线必须坚决离场止损；空仓观察者坚决管住手，切勿盲目猜底！`;
-                allocLabel = "风控红线：";
-                allocSub = "禁止任何左侧买入";
-                allocVal = "严禁接刀";
             }} else if (isDeepPullback) {{
                 themeColor = "#ff9100";
                 themeBg = "linear-gradient(135deg, rgba(255, 145, 0, 0.08), #181b22)";
@@ -2930,9 +2907,6 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 }} else {{
                     actionDirective = `【多看少动耐心观望】标的已跌破斐波那契坑底 ($${{curFibLow.toFixed(2)}})，当前日线量比 ${{curVolRatio.toFixed(2)}}x 未达恐慌放量破位阈值 (1.25x)，属弱势寻底阶段，等待 5m 站上 VWAP 且量比 ≥1.20x 共振确认。`;
                 }}
-                allocLabel = "观望策略：";
-                allocSub = "等待右侧量价共振";
-                allocVal = "持币等待";
             }} else if (isTakeProfit) {{
                 themeColor = "#d946ef";
                 themeBg = "linear-gradient(135deg, rgba(217, 70, 239, 0.08), #181b22)";
@@ -2941,15 +2915,9 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 if (sig.includes("跌破EMA20")) {{
                     mainVerdict = "🟣 跌破EMA20 · 移动止盈落袋";
                     actionDirective = `【移动止盈指引】标的现价 ($${{curActive.toFixed(2)}}) 跌破 20日均线 EMA20 ($${{curEma20.toFixed(2)}})，主升浪推进节奏受阻。已持仓者建议执行移动止盈落袋为安，保护浮盈；未建仓者切勿在此盲目抄底接下坠飞刀。`;
-                    allocLabel = "止盈指令：";
-                    allocSub = "破EMA20移动落袋";
-                    allocVal = "止盈离场";
                 }} else {{
                     mainVerdict = "🟣 冲顶减仓 · 启动分批锁定胜果";
                     actionDirective = `【获利了结指引】技术面进入统计学极度超买高潮区 (RSI ${{curRsi.toFixed(1)}}，偏离 ${{curBias.toFixed(1)}}%)。持仓者建议分批卖出 1/3 ~ 1/2 锁定丰厚利润，剩余底仓以 EMA20 ($${{curEma20.toFixed(2)}}) 作为移动保护止损！`;
-                    allocLabel = "止盈指令：";
-                    allocSub = "落袋为安锁定胜果";
-                    allocVal = "分批减半";
                 }}
             }} else if (isBullTrend) {{
                 themeColor = "#29b6f6";
@@ -2958,9 +2926,6 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 actionType = "顺势持有 / 移动保护";
                 mainVerdict = "🔵 强势多头推进 · 顺势持有待涨";
                 actionDirective = `【顺势而为让利润奔跑】主升浪趋势健康，均线呈良性多头排列。依托 EMA20 ($${{curEma20.toFixed(2)}}) 作为趋势移动生命线，只要收盘不破 EMA20 安心持股待涨，不盲目追高。`;
-                allocLabel = "持股策略：";
-                allocSub = "沿EMA20移动保护";
-                allocVal = "持股跟踪";
             }} else {{
                 themeColor = "#94a3b8";
                 themeBg = "linear-gradient(135deg, rgba(148, 163, 184, 0.08), #181b22)";
@@ -2968,9 +2933,6 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 actionType = "区间震荡 / 耐心蓄势";
                 mainVerdict = "⚪ 震荡整理蓄势 · 多看少动中性仓位";
                 actionDirective = `【箱体整理耐心中性】当前处于区间均线反复争夺阶段，未触发任何确定性波段信号。保持中性仓位，耐心等待股价回踩进入黄金坑或放量向上突破箱体。`;
-                allocLabel = "操作纪律：";
-                allocSub = "等待确定性突破";
-                allocVal = "中性观望";
             }}
 
             // 6. 统一渲染注入 DOM
@@ -2993,10 +2955,6 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             document.getElementById("pFibReason").innerText = fibReason;
             document.getElementById("pMacroReason").innerText = macroReason;
             document.getElementById("pActionDirective").innerHTML = actionDirective;
-            document.getElementById("pAllocLabel").innerText = allocLabel;
-            document.getElementById("pAllocSub").innerText = allocSub;
-            document.getElementById("pFractional").innerText = allocVal;
-            document.getElementById("pFractional").style.color = themeColor;
 
             // 7. 日内精准建仓挂单指南测算与盯盘 UI 同步
             // 5分钟量化日内买点状态横幅渲染
