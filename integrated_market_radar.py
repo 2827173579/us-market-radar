@@ -54,7 +54,7 @@ MONITORED_TARGETS = {
         "IWM":  {"name": "罗素2000", "sub": "小盘流动性温度计", "cat": "小盘弹性"},
         "SMH":  {"name": "半导体ETF", "sub": "硬科技与周期先导", "cat": "半导体"},
         "SOXX": {"name": "费城半导体ETF", "sub": "iShares核心半导体指数基准", "cat": "半导体"},
-        "SOXL": {"name": "3倍做多半导体", "sub": "费半三倍正向杠杆·实盘底仓跟踪", "cat": "正向杠杆", "cost": 108.2109, "shares": 12.22594, "trim1": 94.50, "trim1_shares": 4.22594, "trim2": 102.50, "base_val": 82.09, "target": 108.21},
+        "SOXL": {"name": "3倍做多半导体", "sub": "费半三倍正向杠杆·实盘底仓跟踪", "cat": "正向杠杆", "cost": 0.0, "shares": 0.0, "trim1": 94.50, "trim1_shares": 4.22594, "trim2": 102.50, "base_val": 82.09, "target": 0.0},
         "KORU": {"name": "3倍做多韩国", "sub": "韩国股市3倍正向杠杆·三星海力士先导", "cat": "正向杠杆"},
         "IGV":  {"name": "软件科技ETF", "sub": "SaaS与AI企业级应用", "cat": "云与软件"},
         "TLT":  {"name": "20年+美债", "sub": "长端利率与避险情绪", "cat": "利率债券"},
@@ -109,7 +109,7 @@ MONITORED_TARGETS = {
         # 7. 价值蓝筹与核心风控仓位
         "KO":    {"name": "可口可乐", "sub": "全球消费防御与抗通胀现金奶牛", "cat": "价值蓝筹", "cost": 0.0, "shares": 0.0, "base_val": 68.0},
         "AXP":   {"name": "美国运通", "sub": "高端消费信贷与抗衰退金融底座", "cat": "金融蓝筹", "cost": 0.0, "shares": 0.0, "base_val": 270.0},
-        "INTC":  {"name": "Intel", "sub": "IDM2.0转型·实盘底仓跟踪", "cat": "芯片算力", "cost": 95.53429, "shares": 7.0, "trim1": 91.80, "trim1_shares": 5.0, "base_val": 88.0, "target": 95.53},
+        "INTC":  {"name": "Intel", "sub": "IDM2.0转型·实盘底仓跟踪", "cat": "芯片算力", "cost": 0.0, "shares": 7.0, "trim1": 91.80, "trim1_shares": 5.0, "base_val": 88.0, "target": 0.0},
 
         # 8. 物理AI与自动驾驶
         "TSLA":  {"name": "特斯拉", "sub": "FSD端到端与物理AI人形机器人", "cat": "物理AI", "cost": 0.0, "shares": 0.0, "base_val": 320.0},
@@ -233,16 +233,8 @@ def save_terminal_notifications(notifs):
         print(f"[!] 保存终端通知异常: {e}")
 
 def load_user_portfolio():
-    """读取用户自定义独立实盘持仓配置 (user_portfolio.json)"""
-    try:
-        if os.path.exists(USER_PORTFOLIO_FILE):
-            with open(USER_PORTFOLIO_FILE, "r", encoding="utf-8") as f:
-                data = json.load(f)
-                if isinstance(data, dict):
-                    return data
-    except Exception as e:
-        print(f"[!] 读取用户持仓文件异常: {e}")
     return {}
+
 
 def save_user_portfolio(portfolio):
     """保存用户自定义独立实盘持仓配置 (user_portfolio.json)"""
@@ -2051,7 +2043,7 @@ def dispatch_wechat_radar_alerts(macro_data, stocks_data, weather_info, now_str)
 
         # 2. 实盘持仓专属风控底线监测 (硬止损、动态保本、水下强阻与对冲收割)
         if s.get("shares", 0) > 0:
-            cost = s.get("cost", 95.53)
+            cost = s.get("cost", 0.0)
             base_stop = s.get("base_val", 88.00)
             target = s.get("target", cost)
             shares = s.get("shares", 0.0)
@@ -2220,9 +2212,6 @@ def dispatch_wechat_radar_alerts(macro_data, stocks_data, weather_info, now_str)
         title_parts.append(f"🔴{len(stop_alerts)}只破位")
     if tp_alerts:
         title_parts.append(f"🟣{len(tp_alerts)}只止盈")
-    if intc_alerts:
-        p_tickers = "/".join([a["ticker"] for a in intc_alerts])
-        title_parts.append(f"💼持仓风控:{p_tickers}")
     if weather_changed:
         title_parts.append(f"⛅气象变动:{current_weather}")
 
@@ -2255,83 +2244,6 @@ def dispatch_wechat_radar_alerts(macro_data, stocks_data, weather_info, now_str)
             if call_put_brief:
                 logic_line += f" ｜ {call_put_brief}"
             md.append(f"> 💡 **触发逻辑**：{logic_line}")
-            md.append("---")
-        md.append("")
-
-    if intc_alerts:
-        md.append("### 💼 实盘持仓止盈与风控跟踪")
-        for a in intc_alerts:
-            t_sym = a["ticker"]
-            cost = a.get("cost", 95.53)
-            shares = a.get("shares", 7.0)
-            trim1 = a.get("trim1", 91.80)
-            trim1_s = a.get("trim1_shares", 5.0)
-            stop_val = a.get("stop_val", 88.00)
-            target = a.get("target", cost)
-            st = a["state"]
-            last_p = a['last']
-            pnl_pct = ((last_p - cost) / cost) * 100 if cost > 0 else 0.0
-
-            if st.endswith("_CRITICAL_STOP"):
-                md.append(f"> 🚨 **{t_sym} 跌破铁血硬止损 ${stop_val:.2f}！**")
-                md.append(f"> 现价 **`${last_p:.2f}`** (`{pnl_pct:+.2f}%`) ｜ 持仓 `{shares:g} 股` (成本 `${cost:.2f}`)")
-                md.append(f"> ⚠️ **纪律指令**：触发保命止损，请立即执行减仓避险！")
-            elif st.endswith("_BREAKEVEN_STOP"):
-                peak_p = a.get("peak_price", last_p)
-                max_gain = a.get("max_pnl_pct", 0.0)
-                md.append(f"> 🚨 **{t_sym} 触及动态保本止损线 (${stop_val:.2f})！**")
-                md.append(f"> 现价 **`${last_p:.2f}`** 回落跌破保本底线，历史最高曾冲至 `${peak_p:.2f}` (最高浮盈 `+{max_gain:.1f}%`)！")
-                md.append(f"> 🛡️ **纪律指令**：立即执行平仓保本，绝不让盈利单变亏损！")
-            elif st.endswith("_TIERED_LOCK_STOP"):
-                peak_p = a.get("peak_price", last_p)
-                max_gain = a.get("max_pnl_pct", 0.0)
-                be_stop = a.get("be_stop", last_p)
-                lock_pct = "+6.0%" if max_gain >= 14.0 else "+2.5%"
-                md.append(f"> 🛡️ **{t_sym} 触及阶梯锁利保护线 (${be_stop:.2f})！**")
-                md.append(f"> 现价 **`${last_p:.2f}`** 回踩触发阶梯保护，最高曾冲至 `${peak_p:.2f}` (最高浮盈 `+{max_gain:.1f}%`)！")
-                md.append(f"> 💰 **锁利纪律**：当前锁定收益至少 `{lock_pct}`，建议落袋为安，保护胜利果实！")
-            elif st.endswith("_CLIMAX_EXIT"):
-                peak_p = a.get("peak_price", last_p)
-                md.append(f"> 🎉 **{t_sym} 触发极度冲顶清仓止盈！**")
-                md.append(f"> 现价 **`${last_p:.2f}`** (浮盈 `{pnl_pct:+.1f}%`)，技术面进入极端超买赶顶高潮，主力加速拉升！")
-                md.append(f"> 🚀 **止盈纪律**：按 V3.1 规则执行全额止盈清仓，锁定超级大顶利润！")
-            elif st.endswith("_EMA10_CRAZY_EXIT"):
-                peak_p = a.get("peak_price", last_p)
-                md.append(f"> 🟣 **{t_sym} 跌破疯牛生命线 EMA10 移动止盈！**")
-                md.append(f"> 现价 **`${last_p:.2f}`** (浮盈 `{pnl_pct:+.1f}%`) 跌破 10日线，最高曾达 `${peak_p:.2f}`！")
-                md.append(f"> 🛡️ **止盈纪律**：疯牛推进动能减速，建议全额或减大半仓落袋，锁定大波段利润！")
-            elif st.endswith("_EMA20_TREND_EXIT"):
-                peak_p = a.get("peak_price", last_p)
-                md.append(f"> 🟣 **{t_sym} 跌破趋势生命线 EMA20 移动止盈！**")
-                md.append(f"> 现价 **`${last_p:.2f}`** (浮盈 `{pnl_pct:+.1f}%`) 跌破 20日线，最高曾达 `${peak_p:.2f}`！")
-                md.append(f"> 🛡️ **止盈纪律**：主升浪斜率趋缓跌破趋势线，按规则执行波段移动止盈！")
-            elif st.endswith("_NEAR_STOP"):
-                buffer = last_p - stop_val
-                buffer_pct = buffer / stop_val * 100
-                md.append(f"> ⚠️ **{t_sym} 逼近防守线预警！**")
-                md.append(f"> 现价 **`${last_p:.2f}`** ｜ 防守线 **`${stop_val:.2f}`** (仅剩缓冲 **`${buffer:.2f}`** / `{buffer_pct:.1f}%`)")
-                md.append(f"> 🛡️ **防御纪律**：准备防守，若跌破 `${stop_val:.2f}` 坚决减仓！")
-            elif st.endswith("_TRIM1_RESISTANCE"):
-                md.append(f"> 🟣 **{t_sym} 触及水下强阻压力位！**")
-                md.append(f"> 现价 **`${last_p:.2f}`** (`{pnl_pct:+.2f}%`) 逼近 MA50/黄金坑反抽强阻，建议逢高减半锁定胜局！")
-            elif st.endswith("_HEDGE_CLIMAX"):
-                md.append(f"> 🟣 **{t_sym} 对冲恐慌极值，建议左侧逢高分批收割！**")
-                md.append(f"> 现价 **`${last_p:.2f}`** (`{pnl_pct:+.2f}%`)，半导体出现极度恐慌或脉冲拉升，果断兑现对冲利润！")
-            elif st.endswith("_HEDGE_EXIT"):
-                md.append(f"> ⚪ **{t_sym} 跌破5日线(EMA5)，对冲波段结束！**")
-                md.append(f"> 现价 **`${last_p:.2f}`** 跌破 EMA5，建议全额清仓对冲盘回笼资金！")
-            elif st.endswith("_GOAL_ACHIEVED"):
-                if target > cost:
-                    md.append(f"> 🎉 **{t_sym} 达成盈利止盈目标 (${target:.2f})！**")
-                    md.append(f"> 现价 **`${last_p:.2f}`** (浮盈 `{pnl_pct:+.2f}%`)，按计划分批落袋锁定利润！")
-                else:
-                    md.append(f"> 🎉 **{t_sym} 达成成本目标 (${target:.2f})！**")
-                    md.append(f"> 现价 **`${last_p:.2f}`** 已回本，可根据盘面决定是否落袋或继续持有！")
-            elif st.endswith("_NEAR_GOAL"):
-                if target > cost:
-                    md.append(f"> 🎯 **{t_sym} 逼近盈利止盈目标**：现价 `${last_p:.2f}`，距离止盈位 `${target:.2f}` 仅剩 3%！")
-                else:
-                    md.append(f"> 🚀 **{t_sym} 逼近保本线**：现价 `${last_p:.2f}`，距离成本 `${target:.2f}` 仅剩 3%！")
             md.append("---")
         md.append("")
 
@@ -4553,7 +4465,7 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
                 "trim1_shares": meta.get("trim1_shares", 0.0),
                 "trim2": meta.get("trim2", 0.0),
                 "base_val": meta.get("base_val", 0.0),
-                "target": meta.get("target", 95.53),
+                "target": meta.get("target", 0.0),
                 "max_alloc": 0.0,
                 "last": last,
                 "change": change,
