@@ -3,6 +3,7 @@
 Verification Script for P1 Defects 4, 5, and 8 Fixes.
 """
 import os
+import tempfile
 import sys
 import json
 import time
@@ -154,13 +155,17 @@ class TestDefects4And8Verification(unittest.TestCase):
             ]
             macro_data = {}
 
+            _test_sync_dir = tempfile.mkdtemp(prefix="test_ai_sync_")
             cft.build_futu_terminal_html(
+                sync_side_effects=True,
+                sync_dir=_test_sync_dir,
                 stocks_data=stocks_data,
                 macro_data=macro_data,
                 weather_info=weather_info,
                 update_time_str="2026-11-03 10:20:00"
             )
 
+            ai_path = os.path.join(_test_sync_dir, "latest_ai_predictions.json")
             with open(ai_path, "r", encoding="utf-8") as f:
                 saved_ai = json.load(f)
 

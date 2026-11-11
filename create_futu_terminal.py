@@ -6,7 +6,7 @@ Helper module to build the Futu-Style Pro Terminal (futu_pro_terminal.html)
 import json
 import time
 
-def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_str="", has_realtime=False, target_watchlist=None, terminal_notifications=None, session_code="REGULAR", session_name="常规盘中"):
+def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_str="", has_realtime=False, target_watchlist=None, terminal_notifications=None, session_code="REGULAR", session_name="常规盘中", sync_side_effects=False, sync_dir=None):
     is_overnight = (session_code == "OVERNIGHT")
     if session_code == "OVERNIGHT":
         session_badge_html = '<span class="tool-link" style="color: #c084fc; border: 1px solid rgba(192, 132, 252, 0.45); background: rgba(192, 132, 252, 0.12); padding: 4px 7px; font-weight: 700;">🌌 美股夜盘</span>'
@@ -93,6 +93,17 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             is_storm = ("🌧️" in w_status) or ("暴雨" in w_status)
 
             all_preds = ai_predictions.get("all_predictions", [])
+            # 实盘价格兜底：优先使用 ml_panel_5y.parquet 最新真实收盘价，杜绝任何硬编码假价格
+            _panel_last_close = {}
+            try:
+                import pandas as _pd
+                _pq_path = os.path.join(sc_dir, "data_cache", "ml_panel_5y.parquet")
+                if os.path.exists(_pq_path):
+                    _pdf = _pd.read_parquet(_pq_path, columns=["Date", "Ticker", "Close"])
+                    _pdf["Date"] = _pd.to_datetime(_pdf["Date"])
+                    _panel_last_close = _pdf.sort_values("Date").groupby("Ticker")["Close"].last().to_dict()
+            except Exception:
+                _panel_last_close = {}
             pure_etf_set = {"QQQ", "SPY", "DIA", "IWM", "SMH", "SOXX", "SOXL", "KORU", "IGV", "TLT", "GLD", "QQQI", "VIXY", "SQQQ", "SOXS", "IBIT"}
             offensive_lev_etfs = {"SOXL", "KORU"}
             if all_preds and live_lookup:
@@ -109,9 +120,16 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                     is_crash_halt = bool(item.get("is_crash_halt", False))
                     is_cooling_halt = bool(item.get("is_cooling_halt", False))
 
-                    live_p = float(lv.get("active_price") or lv.get("last") or item.get("latest_price", 100.0))
+                    _live_quote_px = float(lv.get("active_price") or lv.get("last") or 0.0) if lv else 0.0
+                    if _live_quote_px <= 0:
+                        _panel_px = float(_panel_last_close.get(tk, 0.0) or 0.0)
+                        if _panel_px > 0:
+                            _live_quote_px = _panel_px
+                        else:
+                            _live_quote_px = float(item.get("latest_price") or item.get("current_price") or 0.0)
+                    live_p = float(_live_quote_px)
                     if live_p <= 0:
-                        live_p = float(item.get("latest_price", 100.0))
+                        live_p = float(item.get("latest_price") or item.get("current_price") or 100.0)
                     item["latest_price"] = round(live_p, 2)
                     item["current_price"] = round(live_p, 2)
 
@@ -371,16 +389,25 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 _def_flight_obj = (weather_info.get("defensive_flight") if isinstance(weather_info, dict) else None) or ai_predictions.get("defensive_flight", {})
                 ai_predictions["defensive_flight"] = _def_flight_obj
 
+                if sync_dir:
+                    _sync_dir = sync_dir
+                elif not sync_side_effects:
+                    import tempfile as _tf
+                    _sync_dir = _tf.mkdtemp(prefix="futu_terminal_test_")
+                else:
+                    _sync_dir = sc_dir
+                os.makedirs(_sync_dir, exist_ok=True)
+                ai_file = os.path.join(_sync_dir, "latest_ai_predictions.json")
                 with open(ai_file, "w", encoding="utf-8") as wf:
                     json.dump(ai_predictions, wf, ensure_ascii=False, indent=2)
 
                 # Maintain real-time byte-for-byte dual-path synchronization
                 try:
                     import shutil
-                    if "us-market-radar" in sc_dir:
-                        sister_ai_file = os.path.abspath(os.path.join(sc_dir, "..", "data_cache", "latest_ai_predictions.json"))
+                    if "us-market-radar" in _sync_dir:
+                        sister_ai_file = os.path.abspath(os.path.join(_sync_dir, "..", "data_cache", "latest_ai_predictions.json"))
                     else:
-                        sister_ai_file = os.path.abspath(os.path.join(sc_dir, "us-market-radar", "data_cache", "latest_ai_predictions.json"))
+                        sister_ai_file = os.path.abspath(os.path.join(_sync_dir, "us-market-radar", "data_cache", "latest_ai_predictions.json"))
                     os.makedirs(os.path.dirname(sister_ai_file), exist_ok=True)
                     shutil.copyfile(ai_file, sister_ai_file)
                 except Exception:
@@ -402,10 +429,10 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                         "time_cycle_projections": _tc_proj
                     }
                     if _tables_for_html["table1"] and _tables_for_html["table2"]:
-                        _pred_html_path = os.path.join(sc_dir, "predict_radar_5y.html")
+                        _pred_html_path = os.path.join(_sync_dir, "predict_radar_5y.html")
                         ml_predictor_5y.render_html_dashboard(_tables_for_html, output_path=_pred_html_path)
                         import subprocess
-                        subprocess.run(["git", "add", "predict_radar_5y.html", "data_cache/latest_ai_predictions.json"], cwd=sc_dir, check=False, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+                        subprocess.run(["git", "add", "predict_radar_5y.html", "data_cache/latest_ai_predictions.json"], cwd=_sync_dir, check=False, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
                 except Exception as _re:
                     print(f"[!] 同步重绘 predict_radar_5y.html 提示: {_re}")
     except Exception:
