@@ -195,12 +195,12 @@ DISCORD_DEFENSIVE_FLIGHT_WEBHOOK_URL = os.environ.get(
 ).strip()
 
 # ------------------------------------------------------------------------------
-# 🎯 账户资金与风控配置 (V3.1 旗舰纯比例制 · 单股上限 25% · 1.5%风险平价一次性建仓)
+# 🎯 账户资金与风控配置 (V3.1 旗舰纯比例制 · 单股上限 25% · 1.5%风险预算一次性建仓)
 # ------------------------------------------------------------------------------
 TOTAL_ACCOUNT_EQUITY = 10000.0      # 参考基准账户总资产 ($10,000)
 MAX_POSITION_PCT = 0.25            # 单股最大配置上限 25% (V3.1 旗舰标准)
 MAX_ALLOC_PER_STOCK = round(TOTAL_ACCOUNT_EQUITY * MAX_POSITION_PCT, 2)  # $2,500.00
-BATCH1_PCT = 1.00                  # V3.1 1.5% 账户风险平价一次性建仓到位 (100%到位，不再 3-3-4 碎步)
+BATCH1_PCT = 1.00                  # V3.1 1.5% 账户风险预算一次性建仓到位 (100%到位，不再 3-3-4 碎步)
 SCRATCH_DIR = os.path.dirname(os.path.abspath(__file__))
 MACRO_HTML_FILE = os.path.join(SCRATCH_DIR, "macro_radar.html")
 STOCKS_HTML_FILE = os.path.join(SCRATCH_DIR, "stocks_radar.html")
@@ -4007,7 +4007,7 @@ def generate_stocks_radar_html(stocks_data, history_dict, update_time_str="", ha
         <div class="card">
             <div class="card-title">💼 单股仓位配置标准 (动态比例制)</div>
             <div class="card-value" style="color: #00e5ff;">25.0% <span style="font-size: 14px; color: #888;">(1.5%风险平价)</span></div>
-            <div class="card-sub">单股上限 25% (1.5%风险平价一次性建仓)，纪律执行防追高，拒绝情绪化重仓</div>
+            <div class="card-sub">单股上限 25% (1.5%风险预算一次性建仓)，纪律执行防追高，拒绝情绪化重仓</div>
         </div>
         <div class="card" style="border-left: 4px solid #ff5252; background: linear-gradient(135deg, rgba(255, 82, 82, 0.08), #131722);">
             <div class="card-title">🔴 破位止损与风控警戒</div>
