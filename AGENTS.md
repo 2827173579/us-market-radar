@@ -147,6 +147,9 @@ python test_e2e_v31.py                         # 5 年回测端到端 55 项断�
 - **实际 pusher 是本地旧电脑的守护进程**（提交作者 `a18669358277@gmail.com`，每轮约 90~105 秒，提交信息 `⚡ [实盘同步] 第 N 轮极速刷新`）。
 - GitHub Actions 的 `US Market Radar 24-7 Engine`（workflow id `398857789`）仍为 **active**，但受 workflow 内「本地优先检测」影响：**若最近 15 分钟有非 actions 提交，schedule 触发会被跳过**（run 约 24 秒完成，conclusion=success 但主任务被 skip）。当前 active/queued run = 0。
 - `pages-build-deployment` 由每次 push 触发，负责 GitHub Pages 部署，**必须保留**。
+- **2026-11-12 迁移推送后**：旧电脑守护进程在拉取 QQQM→QQQ 迁移提交后停止推送（最后提交：第 277 轮
+  00:11）。需在旧电脑上**重启雷达守护进程**（如 `4-一键停止雷达.bat` → `3-一键后台静默启动.vbs`，
+  或重启电脑/控制中心）以加载新代码；重启后会自动恢复 24/7 实盘同步并持续推送 QQQ 看板。
 
 ### 5.2 VPS 迁移：已决定暂缓
 
@@ -166,11 +169,9 @@ python test_e2e_v31.py                         # 5 年回测端到端 55 项断�
 - `TEST_READY.md` 已更新为 **M4 完结状态**（14/14 PASS + 各套件现状 + 历史记录）。
 - 其他回归：`test_v32_circuit_breaker.py` 17/17、`test_challenger_m2.py` 9/9、`test_defects_4_8_verification.py` 4/4、
   `test_m2_adversarial_challenge.py` 9/9、`test_defects_6_7_9_10.py` 8/8 均通过。
-- **已知数据侧问题（非路径问题，待人类决策）**：`test_challenger_m2_recheck_deep.py` 的
-  `test_json_structure_and_types` 仍失败 1 项 —— 线上 `data_cache/latest_ai_predictions.json` 的
-  `top_long` 未按 `calibrated_win_rate_pct` 降序（`ml_predictor_5y.py` 第 3178 行直接切片未排序；
-  `top_short` 已正确排序）。这是**生产数据生成逻辑的既有缺陷**，与本次路径修复无关，属核心业务代码，
-  建议人工确认后单独修复。
+- **已修复（2026-11-12）**：`ml_predictor_5y.py` 的多头精选榜 `top_long` 原先直接切片未排序（第 3178 行），
+  现已按 `calibrated_win_rate_pct` 严格降序排序并重新生成预测快照/看板；
+  `test_challenger_m2_recheck_deep.py` **9/9 全部通过**。
 - **⚠️ 测试副作用**：`test_challenger_m2.py` / `test_defects_4_8_verification.py` /
   `test_defects_6_7_9_10.py` / `test_m2_adversarial_challenge.py` 会调用
   `create_futu_terminal.build_futu_terminal_html()`，该函数内含“实盘同步”副作用：
@@ -251,5 +252,6 @@ python test_e2e_v31.py                         # 5 年回测端到端 55 项断�
 - [x] 清理 17 个文件中的旧电脑绝对路径与硬编码局域网 IP。
 - [x] 新增 `README.md` / `LICENSE` / `user_portfolio.example.json` / `docs/vps_deploy/`，并归档 `AGENTS.md`。
 - [ ] 开源前脱敏 §7.2 个人信息数据文件（`user_portfolio.json`、告警历史等）。
-- [ ] 人工决策是否修复 `ml_predictor_5y.py:3178` 的 `top_long` 未排序缺陷。
+- [x] 修复 `ml_predictor_5y.py` 的 `top_long` 排序缺陷（2026-11-12，`test_challenger_m2_recheck_deep` 9/9）。
+- [ ] 重启旧电脑雷达守护进程以加载 QQQ 迁移后的新代码并恢复 24/7 推送。
 - [ ] 如重启 VPS 迁移：先停旧电脑守护 + 禁用 Actions 雷达 workflow（保留 Pages 部署）。

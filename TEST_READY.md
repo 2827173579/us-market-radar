@@ -80,7 +80,7 @@ cp .env.example .env
 | `test_challenger_m2.py` | AI 预测 JSON 契约压力测试 | 9/9 PASS（有 §6 副作用） |
 | `test_defects_4_8_verification.py` | 历史缺陷 4/8 回归 | 4/4 PASS（有 §6 副作用） |
 | `test_m2_adversarial_challenge.py` | 告警状态机 / 预测 schema 对抗 | 9/9 PASS（有 §6 副作用） |
-| `test_challenger_m2_recheck_deep.py` | 双 JSON 一致性 / SHA256 校验 | 8/9 PASS（1 项为 §6 数据侧既有缺陷） |
+| `test_challenger_m2_recheck_deep.py` | 双 JSON 一致性 / SHA256 校验 | 9/9 PASS |
 | `test_e2e_v31.py` | 5 年回测端到端 55 项断言 | 需要 `.backtest_5y_cache.pkl`（未入库） |
 | `test_v31_synthesis.py` | V3.1 策略综合审计脚本 | 需要 `.backtest_5y_cache.pkl`（未入库） |
 
@@ -108,14 +108,15 @@ rm -rf us-market-radar
 > 根治建议（需人类确认后修改核心业务代码）：给 `build_futu_terminal_html()` 增加
 > `sync_side_effects: bool = True` 参数，测试/回放时传 `False`，避免测试污染工作区。
 
-### 6.2 `top_long` 排序缺陷（数据侧）
+### 6.2 `top_long` 排序缺陷（已于 2026-11-12 修复）
 
-`test_challenger_m2_recheck_deep.py::test_json_structure_and_types` 断言
+`test_challenger_m2_recheck_deep.py::test_json_structure_and_types` 曾断言
 `data_cache/latest_ai_predictions.json` 的 `top_long` 按 `calibrated_win_rate_pct` 降序，
-但实测（含 origin/main 最新数据）均未排序 —— 根因在 `ml_predictor_5y.py:3178`：
-`top_long_stocks = [r for r in all_live_rows if not is_etf][:10]` 直接切片，缺少按胜率排序；
-`top_short` 已正确排序。该问题与路径修复无关，属**核心业务代码的既有缺陷**，
-建议人工确认后单独修复（修复后此测试即可 9/9）。
+但旧版 `ml_predictor_5y.py` 第 3178 行直接切片未排序（`top_short` 已正确排序）。
+
+**修复**：多头精选榜改为先按 `calibrated_win_rate_pct` 严格降序排序再取 Top 10，
+并重新生成 `data_cache/latest_ai_predictions.json` 与 `predict_radar_5y.html`；
+`test_challenger_m2_recheck_deep.py` 现为 **9/9 PASS**（2026-11-12 验证）。
 
 ---
 
@@ -135,3 +136,16 @@ rm -rf us-market-radar
   提交后即恢复）；
 - 说明：`qqqm_bias` 等内部 JSON 字段名保留（前端模板兼容）；历史告警/期权缓存与尚未重绘的
   雷达 HTML 中仍可能残留 QQQM 字样，守护进程下一轮自动刷新。
+
+---
+
+## 8. 2026-11-12 正式上线记录
+
+- `top_long` 排序缺陷已修复（按 `calibrated_win_rate_pct` 降序）并通过 `test_challenger_m2_recheck_deep` 9/9；
+- 雷达单轮渲染 `python integrated_market_radar.py --once` 已执行：`index.html` / `futu_pro_terminal.html` /
+  `macro_radar.html` / `stocks_radar.html` / `predict_radar_5y.html` 均为纯 QQQ 版本（QQQM=0）；
+- 运行时缓存 `.options_cache.json` / `.terminal_notifications.json` / `.radar_alert_history.json` 中的
+  旧 QQQM 记录已清理；
+- 改动已推送 `origin/main` 并通过 GitHub Pages 部署（首页/富途终端/AI 预测/宏观页面线上均为 QQQ）；
+- ⚠️ 旧电脑守护进程在拉取迁移提交后停止推送（最后为第 277 轮），需在旧电脑**重启守护进程**
+  以加载新代码并恢复 24/7 实盘同步（重启后会自动续推）。
