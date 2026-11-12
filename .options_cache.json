@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "updated_at": 1794475335.4098992,
+  "updated_at": 1794476246.1052423,
   "data": {
     "IWM": {
       "has_options": true,
@@ -1634,6 +1634,29 @@
       "exp_low": 139.34,
       "exp_high": 149.74,
       "exp_move_str": "±3.6% ($139.34~$149.74)"
+    },
+    "FLY": {
+      "has_options": true,
+      "options_exp": "2026-11-20",
+      "call_vol": 2368,
+      "put_vol": 1118,
+      "call_dollar": 195521.0,
+      "put_dollar": 22479.0,
+      "pcr": 0.47,
+      "dollar_pcr": 0.11,
+      "pcr_sentiment": "🟢 资金偏多看涨",
+      "pcr_color": "#4ade80",
+      "top_call_info": "$26 Call (334张 · $65k)",
+      "top_call_val": 65130.0,
+      "call_wall": 26.0,
+      "top_put_info": "$25 Put (127张 · $11k)",
+      "top_put_val": 11430.0,
+      "put_wall": 25.0,
+      "iv_atm": 98.9,
+      "exp_move_pct": 9.9,
+      "exp_low": 23.98,
+      "exp_high": 29.24,
+      "exp_move_str": "±9.9% ($23.98~$29.24)"
     }
   }
 }
