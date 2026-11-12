@@ -1367,12 +1367,12 @@ def compute_defensive_flight_alert(
         for s in DEFENSIVE_FLIGHT_DEF_SYMBOLS:
             if s in live_lookup:
                 lv = live_lookup[s]
-                pct = float(lv.get("ext_pct") if lv.get("ext_price", 0) > 0 else lv.get("pct_change", lv.get("change_pct", 0.0)))
+                pct = float(lv.get("effective_pct") if lv.get("effective_pct") is not None else (lv.get("ext_pct") if lv.get("ext_price", 0) > 0 else lv.get("pct_change", lv.get("change_pct", 0.0))))
                 def_chgs.append(pct)
         for s in DEFENSIVE_FLIGHT_OFF_SYMBOLS:
             if s in live_lookup:
                 lv = live_lookup[s]
-                pct = float(lv.get("ext_pct") if lv.get("ext_price", 0) > 0 else lv.get("pct_change", lv.get("change_pct", 0.0)))
+                pct = float(lv.get("effective_pct") if lv.get("effective_pct") is not None else (lv.get("ext_pct") if lv.get("ext_price", 0) > 0 else lv.get("pct_change", lv.get("change_pct", 0.0))))
                 off_chgs.append(pct)
 
     if latest_stocks_df is not None and not latest_stocks_df.empty:

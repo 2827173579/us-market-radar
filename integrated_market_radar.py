@@ -1860,6 +1860,52 @@ def send_discord_defensive_flight_alert(df_alert, live_lookup=None, update_time_
         return False
 
 
+_DEFENSIVE_FLIGHT_PUSH_STATE = os.path.join(SCRATCH_DIR, ".defensive_flight_push_state.json")
+_DEFENSIVE_FLIGHT_CORE_SYMBOLS = ["KO", "PEP", "MCD", "LLY", "MRNA", "TLT", "GLD", "VIXY", "SMH", "SOXL", "NVDA", "QQQ"]
+
+
+def _defensive_component_pct(lv):
+    try:
+        if lv.get("effective_pct") is not None:
+            return float(lv.get("effective_pct"))
+        if lv.get("ext_price", 0) > 0:
+            return float(lv.get("ext_pct", 0.0))
+        return float(lv.get("pct_change", lv.get("change_pct", 0.0)))
+    except Exception:
+        return 0.0
+
+
+def should_send_defensive_flight_alert(df_alert, live_lookup):
+    """夜盘防刷屏：Flight Score 变动 >=0.10%p 或核心标的变动 >=0.5% 才发送。"""
+    try:
+        score = float(df_alert.get("flight_score", 0.0))
+        comps = {s: _defensive_component_pct(live_lookup.get(s, {})) for s in _DEFENSIVE_FLIGHT_CORE_SYMBOLS if s in (live_lookup or {})}
+        if not os.path.exists(_DEFENSIVE_FLIGHT_PUSH_STATE):
+            return True
+        prev = json.load(open(_DEFENSIVE_FLIGHT_PUSH_STATE, encoding="utf-8"))
+        if prev.get("last_score") is None:
+            return True
+        if abs(score - float(prev.get("last_score", 0.0))) >= 0.10:
+            return True
+        prev_comps = prev.get("components", {}) or {}
+        for s, p in comps.items():
+            if abs(p - float(prev_comps.get(s, 0.0))) >= 0.50:
+                return True
+        return False
+    except Exception:
+        return True
+
+
+def record_defensive_flight_sent(df_alert, live_lookup):
+    try:
+        comps = {s: round(_defensive_component_pct(live_lookup.get(s, {})), 4) for s in _DEFENSIVE_FLIGHT_CORE_SYMBOLS if s in (live_lookup or {})}
+        state = {"last_score": round(float(df_alert.get("flight_score", 0.0)), 4), "components": comps,
+                 "sent_at": datetime.now().strftime("%Y-%m-%d %H:%M:%S")}
+        json.dump(state, open(_DEFENSIVE_FLIGHT_PUSH_STATE, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
+    except Exception:
+        pass
+
+
 def send_pushplus_wechat_alert(title, markdown_content, channel=None):
     """
     通过 PushPlus API 向微信推送 Markdown 卡片消息，并同步镜像推送至 Discord 预警频道
@@ -4201,6 +4247,13 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
                         session_tag = "夜盘"
                     else:
                         session_tag = "休市"
+            effective_pct = pct_change
+            overnight_pct = 0.0
+            if ext_price > 0 and session_code in ["PRE_MARKET", "POST_MARKET", "OVERNIGHT", "WEEKEND"]:
+                _base_pct = pct_change
+                effective_pct = ((1.0 + _base_pct / 100.0) * (1.0 + ext_pct / 100.0) - 1.0) * 100.0
+                overnight_pct = ext_pct
+                pct_change = effective_pct
 
             df = compute_indicators(history_dict[ticker])
             history_dict[ticker] = df
@@ -4312,6 +4365,8 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
                 "ext_price": ext_price,
                 "ext_change": ext_change,
                 "ext_pct": ext_pct,
+                "effective_pct": effective_pct,
+                "overnight_pct": overnight_pct,
                 "session_tag": session_tag,
                 "ma200": ma200,
                 "sma200": sma200,
@@ -4395,6 +4450,13 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
                         session_tag = "夜盘"
                     else:
                         session_tag = "休市"
+            effective_pct = pct_change
+            overnight_pct = 0.0
+            if ext_price > 0 and session_code in ["PRE_MARKET", "POST_MARKET", "OVERNIGHT", "WEEKEND"]:
+                _base_pct = pct_change
+                effective_pct = ((1.0 + _base_pct / 100.0) * (1.0 + ext_pct / 100.0) - 1.0) * 100.0
+                overnight_pct = ext_pct
+                pct_change = effective_pct
 
             df = compute_indicators(history_dict[ticker])
             history_dict[ticker] = df
@@ -4484,6 +4546,8 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
                 "ext_price": ext_price,
                 "ext_change": ext_change,
                 "ext_pct": ext_pct,
+                "effective_pct": effective_pct,
+                "overnight_pct": overnight_pct,
                 "ma50": ma50,
                 "ema20": ema20,
                 "ema10": ema10,
@@ -4592,8 +4656,12 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
         if not df_alert_push:
             import ml_predictor_5y
             df_alert_push = ml_predictor_5y.compute_defensive_flight_alert(live_lookup=live_lookup_df)
-        # 同步发送：确保 --once 进程退出前真实防御卡片已完成送达专属频道
-        send_discord_defensive_flight_alert(df_alert_push, live_lookup_df, now_str)
+        # 夜盘防刷屏：仅 Score 变动 >=0.10%p 或核心成分变动 >=0.5% 才发送
+        if should_send_defensive_flight_alert(df_alert_push, live_lookup_df):
+            if send_discord_defensive_flight_alert(df_alert_push, live_lookup_df, now_str):
+                record_defensive_flight_sent(df_alert_push, live_lookup_df)
+        else:
+            print("  [*] 防御因子无显著变化（<0.10%p 且核心标的<0.5%），跳过 Discord 推送")
     except Exception as df_err:
         print(f"  [!] 💬 防御因子背离推送启动异常: {df_err}")
 
