@@ -59,7 +59,7 @@ def get_running_radar_pids():
     """精确获取正在运行 integrated_market_radar.py 的进程 PID 列表"""
     pids = []
     try:
-        cmd = 'powershell -NoProfile -Command "Get-CimInstance Win32_Process | Where-Object { $_.CommandLine -like \'*integrated_market_radar.py*\' } | Select-Object -ExpandProperty ProcessId"'
+        cmd = 'powershell -NoProfile -Command "Get-CimInstance Win32_Process | Where-Object { $_.Name -match \'python\' -and $_.CommandLine -like \'*integrated_market_radar.py*\' } | Select-Object -ExpandProperty ProcessId"'
         res = subprocess.run(cmd, shell=True, capture_output=True, text=True, timeout=5)
         for line in res.stdout.strip().splitlines():
             line = line.strip()
@@ -303,7 +303,7 @@ class TradeRadarControlApp:
                 return
 
             try:
-                cmd = 'powershell -NoProfile -Command "Get-CimInstance Win32_Process | Where-Object { $_.CommandLine -like \'*integrated_market_radar.py*\' } | ForEach-Object { Stop-Process -Id $_.ProcessId -Force }"'
+                cmd = 'powershell -NoProfile -Command "Get-CimInstance Win32_Process | Where-Object { $_.Name -match \'python\' -and $_.CommandLine -like \'*integrated_market_radar.py*\' } | ForEach-Object { Stop-Process -Id $_.ProcessId -Force }"'
                 subprocess.run(cmd, shell=True, timeout=8)
                 time.sleep(1)
                 self.append_log("🛑 所有后台雷达进程已全部终止，端口 8765 已释放。")
