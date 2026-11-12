@@ -1821,6 +1821,13 @@ def send_discord_defensive_flight_alert(df_alert, live_lookup=None, update_time_
 
     def_str = " ｜ ".join(def_items) if def_items else "暂无分项明细"
     off_str = " ｜ ".join(off_items) if off_items else "暂无分项明细"
+    if _is_futures:
+        if is_alert:
+            status_tag = "🚨 **【夜盘·期货代理】防御因子起飞 · 期货代理显示机构去杠杆方向**"
+            advice = "⚠️ **期货代理提示**：数据来自 NQ=F(进攻) / ZB=F、GC=F(防御) 期货，不是现货篮子；阈值仍为 2.2 / 1.8。"
+        else:
+            status_tag = "🛡️ **【夜盘·期货代理】防御因子平稳 · 期货代理非现货篮子**"
+            advice = "✅ **期货代理**：NQ=F / ZB=F / GC=F 夜盘期货方向；这不是现货篮子分数，不改变白天现货计算。"
     print(f"  [+] 防御因子真实成分: 防御 {len(def_items)} 只 / 进攻 {len(off_items)} 只")
     now_t = update_time_str or datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
