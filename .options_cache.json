@@ -1,11 +1,23 @@
 {
   "schema_version": 3,
-  "updated_at": 1794518720.25755,
+  "updated_at": 1794520562.2456975,
   "data": {
     "QQQ": {
       "has_options": false
     },
     "SPY": {
+      "has_options": false
+    },
+    "DIA": {
+      "has_options": false
+    },
+    "IWM": {
+      "has_options": false
+    },
+    "SMH": {
+      "has_options": false
+    },
+    "SOXX": {
       "has_options": false
     },
     "SOXL": {
@@ -92,9 +104,6 @@
     "VST": {
       "has_options": false
     },
-    "DIA": {
-      "has_options": false
-    },
     "BE": {
       "has_options": false
     },
@@ -155,13 +164,7 @@
     "OKLO": {
       "has_options": false
     },
-    "SOXX": {
-      "has_options": false
-    },
     "FPS": {
-      "has_options": false
-    },
-    "SMH": {
       "has_options": false
     },
     "MU": {
@@ -174,9 +177,6 @@
       "has_options": false
     },
     "SNDK": {
-      "has_options": false
-    },
-    "IWM": {
       "has_options": false
     },
     "STX": {
