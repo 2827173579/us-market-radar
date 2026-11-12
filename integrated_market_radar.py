@@ -105,6 +105,7 @@ MONITORED_TARGETS = {
         "SPCX":  {"name": "SpaceX", "sub": "星链与可重复火箭先驱", "cat": "太空商业", "cost": 0.0, "shares": 0.0, "base_val": 147.0},
         "ASTS":  {"name": "AST SpaceMobile", "sub": "全球手机直连卫星宽带网络", "cat": "太空商业", "cost": 0.0, "shares": 0.0, "base_val": 26.0},
         "RKLB":  {"name": "Rocket Lab", "sub": "中小型火箭发射与卫星制造", "cat": "太空商业", "cost": 0.0, "shares": 0.0, "base_val": 19.5},
+        "FLY":   {"name": "Firefly Aerospace", "sub": "小型运载火箭与太空国防任务", "cat": "太空商业", "cost": 0.0, "shares": 0.0, "base_val": 0.0},
         
         # 7. 价值蓝筹与核心风控仓位
         "KO":    {"name": "可口可乐", "sub": "全球消费防御与抗通胀现金奶牛", "cat": "价值蓝筹", "cost": 0.0, "shares": 0.0, "base_val": 68.0},
@@ -135,7 +136,6 @@ MONITORED_TARGETS = {
         "CRWD":  {"name": "CrowdStrike", "sub": "AI驱动SecOps与零信任终端安全龙头", "cat": "AI安全", "cost": 0.0, "shares": 0.0, "base_val": 220.0},
         "MSTR":  {"name": "微策略", "sub": "比特币储备国库与全球流动性杠杆", "cat": "数字资产", "cost": 0.0, "shares": 0.0, "base_val": 130.0},
         "COIN":  {"name": "Coinbase", "sub": "北美合规加密资产交易所与链上托管核心", "cat": "数字资产", "cost": 0.0, "shares": 0.0, "base_val": 180.0},
-        "MARA":  {"name": "MARA Holdings", "sub": "北美最大比特币算力矿企与能源数字中心", "cat": "数字资产", "cost": 0.0, "shares": 0.0, "base_val": 15.0},
 
         # 13. 企业级算力云与资本载体
         "ORCL":  {"name": "甲骨文", "sub": "OCI云基础设施与企业大模型底座", "cat": "云与软件", "cost": 0.0, "shares": 0.0, "base_val": 110.0},
@@ -3717,61 +3717,6 @@ def generate_stocks_radar_html(stocks_data, history_dict, update_time_str="", ha
     if not update_time_str:
         update_time_str = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
-    # INTC 数据提取与风控参数
-    intc_info = next((s for s in stocks_data if s.get("ticker") == "INTC"), stocks_data[0] if stocks_data else {})
-    intc_last = intc_info["last"]
-    intc_cost = intc_info.get("cost", 95.0)
-    intc_shares = intc_info.get("shares", 10.0)
-    intc_stop = intc_info.get("base_val", 88.0)
-    intc_target = intc_info.get("target", 95.50)
-    intc_val = intc_last * intc_shares
-    intc_pnl = ((intc_last - intc_cost) / intc_cost) * 100 if intc_cost > 0 else 0.0
-    intc_pnl_color = "#00e676" if intc_pnl >= 0 else "#ff5252"
-    intc_pnl_sub_color = "#4ade80" if intc_pnl >= 0 else "#f87171"
-    intc_card_border = "#00e676" if intc_pnl >= 0 else "#ff5252"
-    intc_card_bg = f"linear-gradient(135deg, rgba({'0, 230, 118' if intc_pnl >= 0 else '255, 82, 82'}, 0.08), #131722)"
-
-    # 1. 绘制 INTC 专属 K 线
-    intc_div = ""
-    if "INTC" in history_dict and len(history_dict["INTC"]) >= 20:
-        intc_df = history_dict["INTC"]
-        fib_low = intc_df["Fib_Low"].iloc[-1]
-        fib_high = intc_df["Fib_High"].iloc[-1]
-
-        fig_intc = make_subplots(
-            rows=2, cols=1,
-            shared_xaxes=True,
-            vertical_spacing=0.04,
-            row_heights=[0.72, 0.28],
-            subplot_titles=(
-                f"<b>INTC 核心持仓风控与解套监测图</b> (现价: ${intc_last:.2f} | 成本基线: ${intc_cost:.2f} | 止损防线: ${intc_stop:.2f})",
-                "<b>成交量 (Volume)</b>"
-            )
-        )
-        fig_intc.add_trace(go.Candlestick(x=intc_df.index, open=intc_df["Open"], high=intc_df["High"], low=intc_df["Low"], close=intc_df["Close"], name="INTC K线", increasing_line_color="#26a69a", decreasing_line_color="#ef5350"), row=1, col=1)
-        fig_intc.add_trace(go.Scatter(x=intc_df.index, y=intc_df["MA50"], line=dict(color="#ffa726", width=1.8), name="MA50 均线"), row=1, col=1)
-
-        # 成本线与底估基线
-        fig_intc.add_hline(y=intc_cost, line_dash="dash", line_color="#00e676", line_width=2, annotation_text=f"🎯 持仓成本 ${intc_cost:.2f} ({intc_shares:g}股)", annotation_position="top right", row=1, col=1)
-        fig_intc.add_hline(y=intc_stop, line_dash="solid", line_color="#ff1744", line_width=2, annotation_text=f"🛡️ 风控止损线 ${intc_stop:.2f}", annotation_position="bottom right", row=1, col=1)
-
-        # 黄金坑防守带
-        fig_intc.add_hrect(y0=fib_low, y1=fib_high, fillcolor="rgba(33, 150, 243, 0.18)", line_width=1, line_color="rgba(33, 150, 243, 0.5)", annotation_text=f"0.5 - 0.618 斐波那契黄金坑 (${fib_low:.2f} ~ ${fib_high:.2f})", annotation_position="bottom left", row=1, col=1)
-
-        vol_colors = ["#26a69a" if c >= o else "#ef5350" for c, o in zip(intc_df["Close"], intc_df["Open"])]
-        fig_intc.add_trace(go.Bar(x=intc_df.index, y=intc_df["Volume"], marker_color=vol_colors, name="成交量"), row=2, col=1)
-
-        fig_intc.update_layout(
-            template="plotly_dark",
-            plot_bgcolor="#131722",
-            paper_bgcolor="#131722",
-            xaxis_rangeslider_visible=False,
-            height=460,
-            margin=dict(l=50, r=40, t=50, b=30),
-            hovermode="x unified"
-        )
-        intc_div = fig_intc.to_html(full_html=False, include_plotlyjs="cdn")
-
     # 2. 绘制 27 只个股“黄金坑距离 vs RSI”散点作战矩阵
     fig_matrix = go.Figure()
     for item in stocks_data:
@@ -4006,11 +3951,6 @@ def generate_stocks_radar_html(stocks_data, history_dict, update_time_str="", ha
 
     <!-- 顶部概览看板 -->
     <div class="summary-grid">
-        <div class="card card-intc" style="border-left: 4px solid {intc_card_border}; background: {intc_card_bg};">
-            <div class="card-title">🛡️ INTC 核心持仓风控哨 (成本 ${intc_cost:.2f} · {intc_shares:g}股)</div>
-            <div class="card-value" style="color: {intc_pnl_color};">${intc_last:.2f} <span style="font-size: 14px; font-weight: normal; color: {intc_pnl_sub_color};">({intc_pnl:+.2f}%)</span></div>
-            <div class="card-sub">当前持仓市值: <b>${intc_val:.2f}</b> | 风控止损线: <b>${intc_stop:.2f}</b> (距止损 ${(intc_last - intc_stop):+.2f})</div>
-        </div>
         <div class="card">
             <div class="card-title">🟢 黄金坑就位与进攻机会</div>
             <div class="card-value" style="color: #00e676;">{sum(1 for s in stocks_data if s.get('is_pit') and not s.get('is_crash_halt') and not s.get('is_cooling_halt') and not s.get('is_inverse_hedge'))} <span style="font-size: 14px; color: #888;">/ {len(stocks_data)} 只</span></div>
@@ -4026,11 +3966,6 @@ def generate_stocks_radar_html(stocks_data, history_dict, update_time_str="", ha
             <div class="card-value" style="color: #ff5252;">{sum(1 for s in stocks_data if s.get('is_stop'))} <span style="font-size: 14px; color: #888;">/ {len(stocks_data)} 只</span></div>
             <div class="card-sub">跌破坑底 3% 或 MA50 偏离 <-12%，坚决风控防守，拒绝逆势抄底</div>
         </div>
-    </div>
-
-    <!-- INTC 作战防线图 -->
-    <div class="chart-box">
-        {intc_div}
     </div>
 
     <!-- 黄金坑散点作战矩阵 -->

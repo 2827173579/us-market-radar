@@ -196,7 +196,7 @@ class TestFutuProTerminalDomIntegrity(unittest.TestCase):
         self.assertEqual(symbol_map.get("NOW"), "NYSE:NOW")
         self.assertEqual(symbol_map.get("APLD"), "NASDAQ:APLD")
         self.assertEqual(symbol_map.get("COIN"), "NASDAQ:COIN")
-        self.assertEqual(symbol_map.get("MARA"), "NASDAQ:MARA")
+        self.assertEqual(symbol_map.get("FLY"), "NASDAQ:FLY")
         self.assertEqual(symbol_map.get("SQQQ"), "NASDAQ:SQQQ")
         self.assertEqual(symbol_map.get("SOXS"), "AMEX:SOXS")
         self.assertEqual(symbol_map.get("VIXY"), "AMEX:VIXY")

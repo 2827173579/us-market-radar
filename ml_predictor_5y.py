@@ -115,7 +115,6 @@ SECTOR_MAP = {
     # 7. 加密币股代理 (Crypto Proxy)
     'MSTR': 'Crypto_Proxy',
     'COIN': 'Crypto_Proxy',
-    'MARA': 'Crypto_Proxy',
     'IBIT': 'Crypto_Proxy',
 }
 
@@ -6209,6 +6208,7 @@ EXTENDED_RADAR_SECTOR_MAP: Dict[str, Tuple[str, str]] = {
     'SPCX': ('Neo_Cloud', '物理AI与太空商业'),
     'ASTS': ('Neo_Cloud', '物理AI与太空商业'),
     'RKLB': ('Neo_Cloud', '物理AI与太空商业'),
+    'FLY': ('Neo_Cloud', '物理AI与太空商业'),
     # 价值蓝筹与医药防守
     'KO':   ('Energy_Power', '价值蓝筹与医药'),
     'PEP':  ('Energy_Power', '价值蓝筹与医药'),

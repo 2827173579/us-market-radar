@@ -72,11 +72,11 @@ class TestDefects67910(unittest.TestCase):
     # Defect 6: TradingView K-Line Mapping
     # -------------------------------------------------------------------------
     def test_defect_6_tradingview_symbol_map_completeness(self):
-        """Verify NOW, APLD, COIN, MARA mappings in SYMBOL_MAP."""
+        """Verify NOW, APLD, COIN, FLY mappings in SYMBOL_MAP."""
         self.assertIn('"NOW": "NYSE:NOW"', self.terminal_html)
         self.assertIn('"APLD": "NASDAQ:APLD"', self.terminal_html)
         self.assertIn('"COIN": "NASDAQ:COIN"', self.terminal_html)
-        self.assertIn('"MARA": "NASDAQ:MARA"', self.terminal_html)
+        self.assertIn('"FLY": "NASDAQ:FLY"', self.terminal_html)
         self.assertIn('"QCOM": "NASDAQ:QCOM"', self.terminal_html)
         self.assertIn("TradingView 交易所标的代码映射 (全量 71 只)", self.terminal_html)
 
