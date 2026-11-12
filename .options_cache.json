@@ -1,23 +1,8 @@
 {
   "schema_version": 3,
-  "updated_at": 1794489196.5393198,
+  "updated_at": 1794491053.067699,
   "data": {
     "QQQ": {
-      "has_options": false
-    },
-    "SPY": {
-      "has_options": false
-    },
-    "DIA": {
-      "has_options": false
-    },
-    "IWM": {
-      "has_options": false
-    },
-    "SMH": {
-      "has_options": false
-    },
-    "SOXX": {
       "has_options": false
     },
     "SOXL": {
@@ -35,7 +20,13 @@
     "GLD": {
       "has_options": false
     },
+    "SPY": {
+      "has_options": false
+    },
     "QQQI": {
+      "has_options": false
+    },
+    "IWM": {
       "has_options": false
     },
     "VIXY": {
@@ -50,10 +41,16 @@
     "IBIT": {
       "has_options": false
     },
+    "DIA": {
+      "has_options": false
+    },
     "NVDA": {
       "has_options": false
     },
     "TSM": {
+      "has_options": false
+    },
+    "SMH": {
       "has_options": false
     },
     "AMD": {
@@ -183,6 +180,9 @@
       "has_options": false
     },
     "CRWD": {
+      "has_options": false
+    },
+    "SOXX": {
       "has_options": false
     },
     "MSTR": {
