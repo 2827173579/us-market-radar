@@ -1349,9 +1349,98 @@ DEFENSIVE_FLIGHT_DEF_SYMBOLS = ['KO', 'PEP', 'MCD', 'LLY', 'MRNA', 'TLT', 'GLD',
 DEFENSIVE_FLIGHT_OFF_SYMBOLS = ['SMH', 'SOXL', 'NVDA', 'QQQ']
 
 
+OVERNIGHT_FUTURES_SYMBOLS = ["NQ=F", "ZB=F", "GC=F"]
+
+
+def _fetch_overnight_futures_5m(now_et=None):
+    """夜盘期货代理：NQ=F(进攻) / ZB=F、GC=F(防御)。仅接受美东20:00后的最新成交。"""
+    result = {"components": {}, "missing": []}
+    try:
+        if now_et is None:
+            try:
+                from zoneinfo import ZoneInfo
+                now_et = datetime.now(ZoneInfo("America/New_York"))
+            except Exception:
+                now_et = datetime.now(timezone(timedelta(hours=-5)))
+        elif now_et.tzinfo is None:
+            try:
+                from zoneinfo import ZoneInfo
+                now_et = now_et.replace(tzinfo=ZoneInfo("America/New_York"))
+            except Exception:
+                now_et = now_et.replace(tzinfo=timezone(timedelta(hours=-5)))
+        df = yf.download(OVERNIGHT_FUTURES_SYMBOLS, period="2d", interval="5m", prepost=True, progress=False, threads=False)
+        if df is None or df.empty:
+            result["missing"] = list(OVERNIGHT_FUTURES_SYMBOLS)
+            return result
+        close = df["Close"] if "Close" in df.columns else None
+        if close is None:
+            result["missing"] = list(OVERNIGHT_FUTURES_SYMBOLS)
+            return result
+        if now_et.hour >= 20:
+            ref_date = now_et.date()
+        elif now_et.hour < 4:
+            ref_date = (now_et - timedelta(days=1)).date()
+        else:
+            result["missing"] = list(OVERNIGHT_FUTURES_SYMBOLS)
+            return result
+        cutoff = pd.Timestamp(datetime.combine(ref_date, datetime.min.time())).replace(hour=16, minute=0, second=0, microsecond=0)
+        try:
+            cutoff = cutoff.tz_localize(now_et.tzinfo)
+        except Exception:
+            cutoff = cutoff.replace(tzinfo=now_et.tzinfo)
+        night_start = pd.Timestamp(datetime.combine(ref_date, datetime.min.time())).replace(hour=20, minute=0, second=0, microsecond=0)
+        try:
+            night_start = night_start.tz_localize(now_et.tzinfo)
+        except Exception:
+            night_start = night_start.replace(tzinfo=now_et.tzinfo)
+        for sym in OVERNIGHT_FUTURES_SYMBOLS:
+            try:
+                if isinstance(close, pd.DataFrame):
+                    if sym not in close.columns:
+                        result["missing"].append(sym); continue
+                    ser = close[sym].dropna()
+                else:
+                    ser = close.dropna()
+                if ser.empty:
+                    result["missing"].append(sym); continue
+                idx = pd.to_datetime(ser.index)
+                if idx.tz is None:
+                    idx = idx.tz_localize("America/New_York")
+                else:
+                    idx = idx.tz_convert("America/New_York")
+                ser = pd.Series(ser.values, index=idx).sort_index()
+                base_candidates = ser[ser.index <= cutoff]
+                if base_candidates.empty:
+                    result["missing"].append(sym); continue
+                night_candidates = ser[(ser.index > night_start) & (ser.index <= now_et)]
+                if night_candidates.empty:
+                    result["missing"].append(sym); continue
+                base = float(base_candidates.iloc[-1])
+                latest = float(night_candidates.iloc[-1])
+                if base <= 0:
+                    result["missing"].append(sym); continue
+                pct = (latest - base) / base * 100.0
+                result["components"][sym] = {
+                    "pct": round(pct, 2),
+                    "price": round(latest, 4),
+                    "baseline": round(base, 4),
+                    "quote_time": str(night_candidates.index[-1]),
+                    "baseline_time": str(base_candidates.index[-1]),
+                }
+            except Exception:
+                result["missing"].append(sym)
+    except Exception:
+        result["missing"] = list(OVERNIGHT_FUTURES_SYMBOLS)
+    result["missing"] = list(dict.fromkeys(result["missing"]))
+    return result
+
+
 def compute_defensive_flight_alert(
     latest_stocks_df: Optional[pd.DataFrame] = None,
-    live_lookup: Optional[Dict[str, Dict]] = None
+    live_lookup: Optional[Dict[str, Dict]] = None,
+    session_code: Optional[str] = None,
+    now_et: Optional[datetime] = None,
+    futures_fetcher=None
 ) -> Dict[str, Any]:
     """
     R1: 防御避险与去杠杆踩踏预警 (Defensive Flight Alert)
@@ -1360,6 +1449,59 @@ def compute_defensive_flight_alert(
     当防御因子超额收益分数 (flight_score) 达到或超过 +2.2% 且进攻科技处于弱势 (mean_off <= 0.0) 时，
     触发全系统机构去杠杆踩踏警报 (🚨 防御因子起飞 · 警惕机构盘中去杠杆踩踏)。
     """
+    # 夜盘仅使用 NQ/ZB/GC 期货代理，绝不沿用现货白天/盘后定格值
+    if session_code == "OVERNIGHT":
+        try:
+            raw = futures_fetcher(now_et) if futures_fetcher is not None else _fetch_overnight_futures_5m(now_et)
+            comps_raw = raw.get("components", {}) if isinstance(raw, dict) else {}
+            missing = list(raw.get("missing", []) if isinstance(raw, dict) else [])
+            comps = {}
+            for sym in OVERNIGHT_FUTURES_SYMBOLS:
+                v = comps_raw.get(sym)
+                if isinstance(v, dict):
+                    comps[sym] = dict(v)
+                    comps[sym]["pct"] = float(v.get("pct", 0.0))
+                elif v is not None:
+                    comps[sym] = {"pct": float(v)}
+            missing = list(dict.fromkeys([m for m in missing if m in OVERNIGHT_FUTURES_SYMBOLS] + [s for s in OVERNIGHT_FUTURES_SYMBOLS if s not in comps]))
+            if "NQ=F" not in comps or not any(s in comps for s in ("ZB=F", "GC=F")):
+                return {
+                    "is_alert": False, "flight_score": 0.0, "def_mean_chg": 0.0, "off_mean_chg": 0.0,
+                    "alert_text": "⚠️ 夜盘·期货代理不可用", "banner_text": "", "badge": "badge-normal",
+                    "session": "OVERNIGHT", "score_source": "futures_proxy",
+                    "components": comps, "missing": missing,
+                    "skip_reason": "夜盘期货代理缺少 " + ", ".join(missing)
+                }
+            off_mean = float(comps["NQ=F"]["pct"])
+            def_vals = [float(comps[s]["pct"]) for s in ("ZB=F", "GC=F") if s in comps]
+            def_mean = float(np.mean(def_vals))
+            score = round(def_mean - off_mean, 2)
+            is_tech_weakness = bool(off_mean <= 0.0)
+            is_alert = bool((score >= 2.2 and is_tech_weakness) or (score >= 1.8 and off_mean <= -1.0))
+            if is_alert:
+                alert_text = f"🚨 夜盘·期货代理 防御因子起飞 (+{score:.1f}%) · NQ/ZB/GC"
+                badge = "badge-alert"
+                banner_text = "🚨 夜盘·期货代理 · 警惕机构去杠杆踩踏"
+            else:
+                alert_text = f"🛡️ 夜盘·期货代理 防御因子平稳 ({score:+.1f}%) · NQ/ZB/GC"
+                badge = "badge-normal"
+                banner_text = ""
+            return {
+                "is_alert": is_alert, "flight_score": score,
+                "def_mean_chg": round(def_mean, 2), "off_mean_chg": round(off_mean, 2),
+                "alert_text": alert_text, "banner_text": banner_text, "badge": badge,
+                "session": "OVERNIGHT", "score_source": "futures_proxy",
+                "components": comps, "missing": missing, "skip_reason": ""
+            }
+        except Exception as e:
+            return {
+                "is_alert": False, "flight_score": 0.0, "def_mean_chg": 0.0, "off_mean_chg": 0.0,
+                "alert_text": "⚠️ 夜盘·期货代理不可用", "banner_text": "", "badge": "badge-normal",
+                "session": "OVERNIGHT", "score_source": "futures_proxy",
+                "components": {}, "missing": list(OVERNIGHT_FUTURES_SYMBOLS),
+                "skip_reason": f"夜盘期货代理获取失败: {e}"
+            }
+
     def_chgs = []
     off_chgs = []
 
@@ -1410,7 +1552,11 @@ def compute_defensive_flight_alert(
         'off_mean_chg': round(mean_off, 2),
         'alert_text': alert_text,
         'banner_text': banner_text if is_alert else "",
-        'badge': badge
+        'badge': badge,
+        'session': session_code or 'REGULAR',
+        'score_source': 'spot_basket',
+        'components': {},
+        'skip_reason': ''
     }
 
 

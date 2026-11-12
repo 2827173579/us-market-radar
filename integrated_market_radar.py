@@ -744,6 +744,7 @@ def fetch_intraday_5m_and_ext_data(tickers):
 
                 results[t] = {
                     "ext_price": ext_price,
+                    "ext_time": str(ny_idx[-1]),
                     "vwap": round(vwap, 2),
                     "rsi_5m": round(rsi_5m, 1),
                     "prev_rsi_5m": round(prev_rsi_5m, 1),
@@ -1779,18 +1780,27 @@ def send_discord_defensive_flight_alert(df_alert, live_lookup=None, update_time_
     off_mean = float(df_alert.get("off_mean_chg", 0.0))
 
     live_lookup = live_lookup or {}
+    _is_futures = (df_alert.get("score_source") == "futures_proxy")
     def_items = []
-    for s in ["KO", "PEP", "MCD", "LLY", "MRNA", "TLT", "GLD", "VIXY"]:
-        if s in live_lookup:
-            lv = live_lookup[s]
-            pct = float(lv.get("ext_pct") if lv.get("ext_price", 0) > 0 else lv.get("pct_change", lv.get("change_pct", 0.0)))
-            def_items.append(f"{s} `{pct:+.2f}%`")
     off_items = []
-    for s in ["SMH", "SOXL", "NVDA", "QQQ"]:
-        if s in live_lookup:
-            lv = live_lookup[s]
-            pct = float(lv.get("ext_pct") if lv.get("ext_price", 0) > 0 else lv.get("pct_change", lv.get("change_pct", 0.0)))
-            off_items.append(f"{s} `{pct:+.2f}%`")
+    if _is_futures:
+        _comps = df_alert.get("components", {}) or {}
+        for _s in ("ZB=F", "GC=F"):
+            if _s in _comps:
+                def_items.append(f"{_s} `{float(_comps[_s].get('pct', 0.0)):+.2f}%`")
+        if "NQ=F" in _comps:
+            off_items.append(f"NQ=F `{float(_comps['NQ=F'].get('pct', 0.0)):+.2f}%`")
+    else:
+        for s in ["KO", "PEP", "MCD", "LLY", "MRNA", "TLT", "GLD", "VIXY"]:
+            if s in live_lookup:
+                lv = live_lookup[s]
+                pct = float(lv.get("ext_pct") if lv.get("ext_price", 0) > 0 else lv.get("pct_change", lv.get("change_pct", 0.0)))
+                def_items.append(f"{s} `{pct:+.2f}%`")
+        for s in ["SMH", "SOXL", "NVDA", "QQQ"]:
+            if s in live_lookup:
+                lv = live_lookup[s]
+                pct = float(lv.get("ext_pct") if lv.get("ext_price", 0) > 0 else lv.get("pct_change", lv.get("change_pct", 0.0)))
+                off_items.append(f"{s} `{pct:+.2f}%`")
 
     if is_alert:
         color = 0xF85149  # 警示红
@@ -1875,14 +1885,37 @@ def _defensive_component_pct(lv):
         return 0.0
 
 
-def should_send_defensive_flight_alert(df_alert, live_lookup):
-    """夜盘防刷屏：Flight Score 变动 >=0.10%p 或核心标的变动 >=0.5% 才发送。"""
+def _load_defensive_flight_state():
     try:
-        score = float(df_alert.get("flight_score", 0.0))
-        comps = {s: _defensive_component_pct(live_lookup.get(s, {})) for s in _DEFENSIVE_FLIGHT_CORE_SYMBOLS if s in (live_lookup or {})}
         if not os.path.exists(_DEFENSIVE_FLIGHT_PUSH_STATE):
-            return True
-        prev = json.load(open(_DEFENSIVE_FLIGHT_PUSH_STATE, encoding="utf-8"))
+            return {}
+        data = json.load(open(_DEFENSIVE_FLIGHT_PUSH_STATE, encoding="utf-8"))
+        if not isinstance(data, dict):
+            return {}
+        # migrate old flat state to day bucket
+        if "last_score" in data:
+            data = {"day": data}
+        return data
+    except Exception:
+        return {}
+
+
+def _defensive_flight_current_components(df_alert, live_lookup):
+    if df_alert.get("score_source") == "futures_proxy":
+        return {s: float(v.get("pct", 0.0)) for s, v in (df_alert.get("components", {}) or {}).items()}
+    return {s: _defensive_component_pct(live_lookup.get(s, {})) for s in _DEFENSIVE_FLIGHT_CORE_SYMBOLS if s in (live_lookup or {})}
+
+
+def should_send_defensive_flight_alert(df_alert, live_lookup, session_code="REGULAR"):
+    """防刷屏：Score 变化 >=0.10%p 或核心成分变化 >=0.5%；夜盘/白天状态分离。"""
+    try:
+        if df_alert.get("skip_reason"):
+            return False
+        score = float(df_alert.get("flight_score", 0.0))
+        comps = _defensive_flight_current_components(df_alert, live_lookup)
+        key = "overnight" if session_code == "OVERNIGHT" else "day"
+        state = _load_defensive_flight_state()
+        prev = state.get(key) or {}
         if prev.get("last_score") is None:
             return True
         if abs(score - float(prev.get("last_score", 0.0))) >= 0.10:
@@ -1896,11 +1929,13 @@ def should_send_defensive_flight_alert(df_alert, live_lookup):
         return True
 
 
-def record_defensive_flight_sent(df_alert, live_lookup):
+def record_defensive_flight_sent(df_alert, live_lookup, session_code="REGULAR"):
     try:
-        comps = {s: round(_defensive_component_pct(live_lookup.get(s, {})), 4) for s in _DEFENSIVE_FLIGHT_CORE_SYMBOLS if s in (live_lookup or {})}
-        state = {"last_score": round(float(df_alert.get("flight_score", 0.0)), 4), "components": comps,
-                 "sent_at": datetime.now().strftime("%Y-%m-%d %H:%M:%S")}
+        comps = {s: round(float(p), 4) for s, p in _defensive_flight_current_components(df_alert, live_lookup).items()}
+        key = "overnight" if session_code == "OVERNIGHT" else "day"
+        state = _load_defensive_flight_state()
+        state[key] = {"last_score": round(float(df_alert.get("flight_score", 0.0)), 4), "components": comps,
+                      "session": session_code, "sent_at": datetime.now().strftime("%Y-%m-%d %H:%M:%S")}
         json.dump(state, open(_DEFENSIVE_FLIGHT_PUSH_STATE, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
     except Exception:
         pass
@@ -2369,7 +2404,7 @@ def dispatch_discord_sentinel_async(macro_data, stocks_sorted, weather_info, now
     except Exception as e:
         print(f"[!] ⚠️ Discord Sentinel async launch failed: {e}")
 
-def generate_and_sync_notifications(macro_data, stocks_data, weather_info, now_str):
+def generate_and_sync_notifications(macro_data, stocks_data, weather_info, now_str, session_code="REGULAR"):
     """
     生成与微信通知 100% 同步的结构化分类消息中心数据，并持久化到 .terminal_notifications.json
     采用【日期+类型+标的+子状态】作为唯一 ID，同日同状态原地更新最新价格，杜绝每3分钟重复堆叠与误报响铃。
@@ -2384,9 +2419,11 @@ def generate_and_sync_notifications(macro_data, stocks_data, weather_info, now_s
         import ml_predictor_5y
         live_lookup = {s["ticker"]: s for s in stocks_data if isinstance(s, dict) and "ticker" in s}
         live_lookup.update(macro_data or {})
-        df_alert = ml_predictor_5y.compute_defensive_flight_alert(live_lookup=live_lookup)
+        df_alert = ml_predictor_5y.compute_defensive_flight_alert(live_lookup=live_lookup, session_code=session_code)
         if weather_info and isinstance(weather_info, dict):
             weather_info["defensive_flight"] = df_alert
+        if df_alert.get("skip_reason"):
+            print(f"  [!] {df_alert.get('skip_reason')}；夜盘防御卡片跳过")
         if df_alert.get("is_alert"):
             flight_score = df_alert.get("flight_score", 0.0)
             new_notifs.append({
@@ -4256,6 +4293,13 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
                     overnight_pct = ext_pct
                 else:
                     effective_pct = 0.0
+            if session_code == "OVERNIGHT" and ext_price > 0 and session_tag == "夜盘":
+                try:
+                    _ext_dt = datetime.fromisoformat(str(intra_info.get("ext_time", "")))
+                    if _ext_dt.hour < 20 or (_ext_dt.hour == 20 and _ext_dt.minute == 0):
+                        session_tag = "盘后定格"
+                except Exception:
+                    pass
 
             df = compute_indicators(history_dict[ticker])
             history_dict[ticker] = df
@@ -4461,6 +4505,13 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
                     overnight_pct = ext_pct
                 else:
                     effective_pct = 0.0
+            if session_code == "OVERNIGHT" and ext_price > 0 and session_tag == "夜盘":
+                try:
+                    _ext_dt = datetime.fromisoformat(str(intra_info.get("ext_time", "")))
+                    if _ext_dt.hour < 20 or (_ext_dt.hour == 20 and _ext_dt.minute == 0):
+                        session_tag = "盘后定格"
+                except Exception:
+                    pass
 
             df = compute_indicators(history_dict[ticker])
             history_dict[ticker] = df
@@ -4627,7 +4678,7 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
     generate_stocks_radar_html(stocks_sorted, history_dict, update_time_str=now_str, has_realtime=has_realtime)
     
     target_watchlist = load_target_watchlist()
-    terminal_notifications = generate_and_sync_notifications(macro_data, stocks_sorted, weather_info, now_str)
+    terminal_notifications = generate_and_sync_notifications(macro_data, stocks_sorted, weather_info, now_str, session_code=session_code)
     try:
         import importlib, create_futu_terminal
         importlib.reload(create_futu_terminal)
@@ -4659,13 +4710,13 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
         df_alert_push = weather_info.get("defensive_flight") if (weather_info and isinstance(weather_info, dict)) else None
         if not df_alert_push:
             import ml_predictor_5y
-            df_alert_push = ml_predictor_5y.compute_defensive_flight_alert(live_lookup=live_lookup_df)
+            df_alert_push = ml_predictor_5y.compute_defensive_flight_alert(live_lookup=live_lookup_df, session_code=session_code)
         # 夜盘防刷屏：仅 Score 变动 >=0.10%p 或核心成分变动 >=0.5% 才发送
-        if should_send_defensive_flight_alert(df_alert_push, live_lookup_df):
+        if should_send_defensive_flight_alert(df_alert_push, live_lookup_df, session_code=session_code):
             if send_discord_defensive_flight_alert(df_alert_push, live_lookup_df, now_str):
-                record_defensive_flight_sent(df_alert_push, live_lookup_df)
+                record_defensive_flight_sent(df_alert_push, live_lookup_df, session_code=session_code)
         else:
-            print("  [*] 防御因子无显著变化（<0.10%p 且核心标的<0.5%），跳过 Discord 推送")
+            print("  [*] 防御因子无显著变化（<0.10%p 且核心成分<0.5%），跳过 Discord 推送")
     except Exception as df_err:
         print(f"  [!] 💬 防御因子背离推送启动异常: {df_err}")
 
