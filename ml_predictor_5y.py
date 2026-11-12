@@ -257,6 +257,40 @@ def _fetch_single_ticker(ticker: str, start_date: str = '2021-11-01', max_retrie
     return None
 
 
+def _get_latest_expected_trading_day(ref_dt: Optional[datetime] = None) -> datetime.date:
+    """
+    计算最近一个应该已经收盘的美股交易日 (周一至周五)。
+    以美东时间 (America/New_York) 为基准，美股常规交易时段于 16:00 ET 收盘：
+    - 若当前美东时间处于周一至周五且 >= 16:00 ET，则今日常规交易已收盘，最新应收盘交易日即为今日。
+    - 若当前美东时间处于周一至周五但 < 16:00 ET，则今日未收盘，最新应收盘交易日为上一交易日 (周一盘中退回上周五)。
+    - 若当前美东时间处于周六或周日，退回本周五。
+    """
+    try:
+        import zoneinfo
+        et_tz = zoneinfo.ZoneInfo("America/New_York")
+    except Exception:
+        et_tz = timezone(timedelta(hours=-5))
+
+    if ref_dt is None:
+        ref_dt = datetime.now(et_tz)
+    elif ref_dt.tzinfo is not None:
+        ref_dt = ref_dt.astimezone(et_tz)
+    else:
+        # Naive datetime: interpret as US Eastern Time
+        ref_dt = ref_dt.replace(tzinfo=et_tz)
+
+    cur_d = ref_dt.date()
+    # 周一至周五 16:00 ET 之后常规交易已收盘，最新已收盘交易日即为今日
+    if cur_d.weekday() < 5 and ref_dt.hour >= 16:
+        return cur_d
+
+    # 16:00 ET 之前或周末，退回上一交易日 (跳过周六与周日)
+    check_d = cur_d - timedelta(days=1)
+    while check_d.weekday() >= 5:  # 5=Sat, 6=Sun
+        check_d -= timedelta(days=1)
+    return check_d
+
+
 def fetch_or_load_panel_data(
     cache_file: str = 'data_cache/ml_panel_5y.parquet',
     force_refresh: bool = False,
@@ -265,6 +299,7 @@ def fetch_or_load_panel_data(
 ) -> pd.DataFrame:
     """
     加载本地 Parquet 缓存或通过 yfinance 多线程拉取 35 只标的过去的 5 年历史行情。
+    包含自动日期新鲜度校验，当缓存落后于预期最新交易日时自动触发全量刷新。
     
     返回:
         pd.DataFrame: 包含 ['Date', 'Ticker', 'Open', 'High', 'Low', 'Close', 'Volume'] 的长表原始面板。
@@ -278,9 +313,17 @@ def fetch_or_load_panel_data(
             df['Date'] = pd.to_datetime(df['Date'])
             tickers_in_cache = set(df['Ticker'].unique())
             missing_tickers = set(ALL_SYMBOLS) - tickers_in_cache
-            if not missing_tickers and len(df) > 30000:
-                print(f"[+] ✅ 缓存完整性校验通过: 共 {len(tickers_in_cache)} 只标的, {len(df)} 条交易日记录")
+
+            # 自动化日期新鲜度校验 (防止缓存停滞在历史日期断更)
+            expected_latest_date = _get_latest_expected_trading_day()
+            max_cache_date = df['Date'].max().date() if not df.empty else None
+            is_fresh = (max_cache_date is not None and max_cache_date >= expected_latest_date)
+
+            if not missing_tickers and len(df) > 30000 and is_fresh:
+                print(f"[+] ✅ 缓存完整性与新鲜度校验通过: 共 {len(tickers_in_cache)} 只标的, {len(df)} 条交易日记录 (最新: {max_cache_date})")
                 return df
+            elif not is_fresh:
+                print(f"[!] ⚠️ 本地行情缓存已过期 (最新数据: {max_cache_date}, 预期最新交易日: {expected_latest_date})，自动启动全量刷新...")
             else:
                 print(f"[!] 缓存数据缺失标的: {missing_tickers}，重新拉取全量数据...")
         except Exception as e:
@@ -1591,6 +1634,7 @@ def compute_multi_level_scenario_map(
     poc_20d: Optional[float] = None,
     ema20: Optional[float] = None,
     is_halt: bool = False,
+    knn_upper: Optional[float] = None,
 ) -> Dict[str, Any]:
     """
     R3: 多级支撑阻力点位地图与结构化实战剧本推演 (Multi-Level Scenario Map)
@@ -1660,6 +1704,8 @@ def compute_multi_level_scenario_map(
         r2_candidates.append(fib_r2)
     if call_wall is not None and close < call_wall <= 1.50 * close:
         r2_candidates.append(call_wall)
+    if knn_upper is not None and knn_upper > close:
+        r2_candidates.append(round(knn_upper * 1.015, 2))
     r2 = round(max(r2_candidates), 2)
 
     # 严格单调性不变式防御保证: SL < S2 < S1 < close < R1 < R2
@@ -1937,36 +1983,131 @@ DEFAULT_TIME_CYCLE_TICKERS: List[str] = [
 ]
 
 
-def _build_cycle_windows_from_projections(projections: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
-    cycle_windows = []
-    p_vals = np.array([float(p['price']) for p in projections], dtype=float)
-    if len(p_vals) < 3:
-        return cycle_windows
+def _build_cycle_windows_from_projections(
+    projections: List[Dict[str, Any]],
+    current_price: Optional[float] = None,
+    r1: Optional[float] = None,
+    r2: Optional[float] = None,
+    min_window_radius: int = 2,
+    min_node_interval: int = 2
+) -> List[Dict[str, Any]]:
+    """
+    基于最终合成的 15 日推演价格序列 P[1..15] 提取真实局部极值点 (Local Extrema)。
+    规则 (Issue 2 & Issue 3):
+    1. 彻底淘汰去趋势残差 det 与 FFT 相位打标，仅在真实价格合成序列上检测极值；
+    2. 局部波峰 (🔴 周期峰阻力窗)：
+       - P[t] > P[t-1] 且 P[t] >= P[t+1]
+       - 窗口半径 R >= 2：在 [t-2, t+2] 窗口内为最高价 (P[t] >= max(P[t-2..t+2]))
+       - 价格必须高于当前基准现价 (P[t] > current_price)
+    3. 局部波谷 (🔵 周期底回踩窗 / ⚠️ 高位强势休整窗)：
+       - P[t] < P[t-1] 且 P[t] <= P[t+1]
+       - 窗口半径 R >= 2：在 [t-2, t+2] 窗口内为最低价 (P[t] <= min(P[t-2..t+2]))
+       - 阻力位对齐 (Issue 3): 若波谷价格已高于 R1 (或 R2)，改标为 ⚠️ 高位强势休整窗 (已超R1/R2阻力·勿追高)
+    4. 边界保护：严格排除 T+1 与 T+15 端点 (端点无双向确认，严禁作为变盘拐点)
+    5. 相邻节点最小间隔约束 >= 2 个交易日，使用偏离度绝对值决选，彻底杜绝连续天天交替
+    """
+    if not projections or len(projections) < 3:
+        return []
 
-    # 结合绝对价格拐点与去趋势谐波极值点，确保单边修复通道中也能精准标识回踩窗与阻力窗
-    lin = np.linspace(p_vals[0], p_vals[-1], len(p_vals))
-    det = p_vals - lin
-    for k in range(1, len(p_vals) - 1):
-        is_abs_bot = (p_vals[k] < p_vals[k - 1] and p_vals[k] < p_vals[k + 1])
-        is_abs_top = (p_vals[k] > p_vals[k - 1] and p_vals[k] > p_vals[k + 1])
-        is_det_bot = (det[k] < det[k - 1] and det[k] < det[k + 1])
-        is_det_top = (det[k] > det[k - 1] and det[k] > det[k + 1])
-        if is_abs_bot or is_det_bot:
-            cycle_windows.append({
-                'type': 'bottom',
-                'date': projections[k]['date'],
-                'day': projections[k]['day'],
-                'price': projections[k]['price'],
-                'desc': '🔵 周期底回踩窗 (关注空头回补企稳)'
-            })
-        elif is_abs_top or is_det_top:
-            cycle_windows.append({
+    p_vals = np.array([float(p['price']) for p in projections], dtype=float)
+    n = len(p_vals)
+
+    # 确定当前基准现价 P_today
+    if current_price is not None and float(current_price) > 0:
+        cur_p = float(current_price)
+    else:
+        first_pct = float(projections[0].get('pct', 0.0))
+        if abs(first_pct) > 0.001 and (1.0 + first_pct / 100.0) > 0.1:
+            cur_p = float(p_vals[0] / (1.0 + first_pct / 100.0))
+        else:
+            cur_p = float(p_vals[0])
+
+    # 构造 16 点序列: p_full = [P_today, P_1, ..., P_15]
+    p_full = np.concatenate(([cur_p], p_vals))
+
+    candidates = []
+    # 遍历有效内部预测日: k in [1, n-2] (对应 projections 索引 k，即 T+(k+1))
+    # 严格排除端点 T+1 (k=0) 与 T+15 (k=n-1)
+    for k in range(1, n - 1):
+        idx_full = k + 1  # 对应 p_full 索引
+        p_curr = p_vals[k]
+
+        # 1. 基础波峰与波谷判定 (邻近 1 天条件)
+        is_peak_1d = (p_curr > p_vals[k - 1]) and (p_curr >= p_vals[k + 1])
+        is_trough_1d = (p_curr < p_vals[k - 1]) and (p_curr <= p_vals[k + 1])
+
+        # 2. 窗口半径 R >= 2 验证 (在 [idx_full - min_window_radius, idx_full + min_window_radius] 内)
+        left_idx = max(0, idx_full - min_window_radius)
+        right_idx = min(len(p_full), idx_full + min_window_radius + 1)
+        win_slice = p_full[left_idx:right_idx]
+
+        is_peak_radius = is_peak_1d and (p_curr >= np.max(win_slice))
+        is_trough_radius = is_trough_1d and (p_curr <= np.min(win_slice))
+
+        if is_peak_radius and p_curr > cur_p:
+            candidates.append({
+                'k': k,
+                'day_num': k + 1,
                 'type': 'top',
                 'date': projections[k]['date'],
                 'day': projections[k]['day'],
-                'price': projections[k]['price'],
-                'desc': '🔴 周期峰阻力窗 (高危变盘·压力不过就跑)'
+                'price': round(float(p_curr), 2),
+                'desc': '🔴 周期峰阻力窗 (高危变盘·压力不过就跑)',
+                'tag': '周期阻力窗 (逢高不过就跑)',
+                'prominence': abs(p_curr - cur_p)
             })
+        elif is_trough_radius:
+            # 结合 R1 / R2 阻力位对齐描述 (Issue 3)
+            is_above_res = False
+            if r1 is not None and float(r1) > 0 and p_curr >= float(r1):
+                is_above_res = True
+            elif r2 is not None and float(r2) > 0 and p_curr >= float(r2):
+                is_above_res = True
+
+            desc = '⚠️ 高位强势休整窗 (已超R1/R2阻力·勿追高)' if is_above_res else '🔵 周期底回踩窗 (关注空头回补企稳)'
+            w_type = 'caution' if is_above_res else 'bottom'
+            tag = '⚠️ 高位强势休整窗（已超R1/R2阻力·勿追高）' if is_above_res else '周期底回踩窗 (企稳关注)'
+
+            candidates.append({
+                'k': k,
+                'day_num': k + 1,
+                'type': w_type,
+                'date': projections[k]['date'],
+                'day': projections[k]['day'],
+                'price': round(float(p_curr), 2),
+                'desc': desc,
+                'tag': tag,
+                'prominence': abs(p_curr - cur_p)
+            })
+
+    # 3. 间隔约束过滤：两个相邻变盘节点之间至少间隔 min_node_interval (默认 2 个交易日)
+    filtered = []
+    for cand in candidates:
+        if not filtered:
+            filtered.append(cand)
+            continue
+
+        prev = filtered[-1]
+        day_diff = cand['day_num'] - prev['day_num']
+
+        if day_diff >= min_node_interval:
+            filtered.append(cand)
+        else:
+            # 距离过近 (< min_node_interval)，保留更显著 (prominence 更大) 的极值点
+            if cand['prominence'] > prev['prominence']:
+                filtered[-1] = cand
+
+    cycle_windows = []
+    for item in filtered:
+        cycle_windows.append({
+            'type': item['type'],
+            'date': item['date'],
+            'day': item['day'],
+            'price': item['price'],
+            'desc': item['desc'],
+            'tag': item.get('tag', '')
+        })
+
     return cycle_windows[:6]
 
 
@@ -2009,12 +2150,21 @@ def generate_time_cycle_projections(
     if combined_panel is None or combined_panel.empty:
         return results
 
-    now = datetime.now()
+    today_dt = datetime.now().date()
+    panel_max_date = None
+    if combined_panel is not None and not combined_panel.empty and 'Date' in combined_panel.columns:
+        try:
+            panel_max_date = pd.to_datetime(combined_panel['Date']).max().date()
+        except Exception:
+            panel_max_date = None
+
+    anchor_date = max(today_dt, panel_max_date) if panel_max_date is not None else today_dt
+
     future_dates = []
-    curr = now
+    curr = anchor_date
     while len(future_dates) < forecast_days:
         curr += timedelta(days=1)
-        if curr.weekday() < 5:
+        if curr.weekday() < 5:  # 0=Mon, 1=Tue, 2=Wed, 3=Thu, 4=Fri 严格排除周末
             future_dates.append(curr.strftime('%Y-%m-%d'))
 
     window_len = 25
@@ -2082,9 +2232,33 @@ def generate_time_cycle_projections(
         sc_info = (scenario_map_by_ticker or {}).get(tk, {})
         live_override_p = sc_info.get('latest_price') or sc_info.get('current_price')
         if live_override_p is not None and float(live_override_p) > 0:
-            closes[-1] = float(live_override_p)
+            cur_p = float(live_override_p)
+        else:
+            cur_p = float(closes[-1])
 
-        cur_p = float(closes[-1])
+        last_hist_dt = pd.to_datetime(sub['Date'].iloc[-1]).date() if 'Date' in sub.columns else anchor_date
+
+        hist_entries = []
+        for i in range(len(sub)):
+            dt_val = sub.at[i, 'Date']
+            dt_str = dt_val.strftime('%Y-%m-%d') if hasattr(dt_val, 'strftime') else str(dt_val)[:10]
+            hist_entries.append({
+                'date': dt_str,
+                'price': round(float(sub.at[i, 'Close']), 2)
+            })
+
+        # 今日锚定: 若历史最新收盘日早于 anchor_date，单独追加今日 Bar 作为锚点，绝不篡改历史已收 K 线
+        if last_hist_dt < anchor_date:
+            hist_entries.append({
+                'date': anchor_date.strftime('%Y-%m-%d'),
+                'price': round(cur_p, 2)
+            })
+            closes = np.append(closes, cur_p)
+        else:
+            if live_override_p is not None and float(live_override_p) > 0:
+                hist_entries[-1]['price'] = round(cur_p, 2)
+                closes[-1] = cur_p
+
         n = len(closes)
 
         # 1. 纯零漂移 EMA20 去趋势傅里叶谐波分解 (Zero-Drift FFT Harmonics, 仅提取 4~25 日真实短周期主频)
@@ -2174,11 +2348,7 @@ def generate_time_cycle_projections(
                 'pct': round(float((p_val - cur_p) / (cur_p + 1e-8) * 100.0), 1)
             })
 
-        hist_20 = [
-            {'date': (sub.at[i, 'Date'].strftime('%Y-%m-%d') if hasattr(sub.at[i, 'Date'], 'strftime') else str(sub.at[i, 'Date'])[:10]),
-             'price': round(float(closes[i]), 2)}
-            for i in range(max(0, n - 20), n)
-        ]
+        hist_20 = hist_entries[-20:]
 
         sc_levels = (scenario_map_by_ticker or {}).get(tk)
         if not sc_levels:
@@ -2188,6 +2358,20 @@ def generate_time_cycle_projections(
                 df_history=sub
             )
 
+        # R2 极限阻力联动校准 (Issue 3):
+        # 当 15 日推演路径最高价 max_proj_p 突破静态 R2 时，动态拔高 R2 至 max(r2, round(max_proj_p * 1.015, 2))
+        max_proj_p = float(np.max([float(p['price']) for p in projections]))
+        existing_r2 = float(sc_levels.get('r2') or (cur_p * 1.08))
+        calibrated_r2 = max(existing_r2, round(max_proj_p * 1.015, 2))
+        sc_levels['r2'] = calibrated_r2
+
+        cycle_wins = _build_cycle_windows_from_projections(
+            projections=projections,
+            current_price=cur_p,
+            r1=sc_levels.get('r1'),
+            r2=calibrated_r2
+        )
+
         results[tk] = {
             'ticker': tk,
             'current_price': round(cur_p, 2),
@@ -2195,10 +2379,10 @@ def generate_time_cycle_projections(
             's2': sc_levels.get('s2'),
             'sl': sc_levels.get('sl'),
             'r1': sc_levels.get('r1'),
-            'r2': sc_levels.get('r2'),
+            'r2': calibrated_r2,
             'history': hist_20,
             'projection': projections,
-            'cycle_windows': _build_cycle_windows_from_projections(projections),
+            'cycle_windows': cycle_wins,
             'analog_match': {
                 'period': best_period,
                 'similarity_pct': round(float(np.clip(best_corr * 100.0, 50.0, 99.0)), 1)
@@ -4652,6 +4836,7 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
                             <span style="font-size: 12px; color: var(--text-muted); font-weight: 600;">视野模式:</span>
                             <button class="cycle-view-btn active" id="btnViewFocus" onclick="setTimeCycleViewMode('focus')" title="聚焦放大未来 15 日推演波段，自适应 Y 轴缩放，细节最清晰">🔍 聚焦推演波段 (推荐)</button>
                             <button class="cycle-view-btn" id="btnViewFull" onclick="setTimeCycleViewMode('full')" title="显示过去 20 天走势与未来 15 日完整大局">🌐 全景大局 (35天)</button>
+                            <span id="cycleT15BadgeHeader" style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 4px; background: rgba(56, 189, 248, 0.12); border: 1px solid rgba(56, 189, 248, 0.35); color: #38bdf8; display: none; margin-left: 6px;"></span>
                         </div>
                         <div style="display: flex; gap: 6px; align-items: center;">
                             <button class="cycle-tool-btn" onclick="zoomTimeCycle(1.2)" title="放大时间轴">➕ 放大</button>
@@ -4673,6 +4858,7 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
                             <span style="display: flex; align-items: center; gap: 4px;"><span style="display:inline-block; width:12px; height:3px; background:#38bdf8; border-radius:2px;"></span> 历史收盘价</span>
                             <span style="display: flex; align-items: center; gap: 4px;"><span style="display:inline-block; width:12px; height:0px; border-top:2px dashed #ff944d;"></span> 15日融合推演路径</span>
                             <span style="display: flex; align-items: center; gap: 4px;"><span style="display:inline-block; width:10px; height:10px; background:rgba(88,166,255,0.35); border:1px solid #58a6ff; border-radius:2px;"></span> 周期低点回踩窗</span>
+                            <span style="display: flex; align-items: center; gap: 4px;"><span style="display:inline-block; width:10px; height:10px; background:rgba(227,179,65,0.35); border:1px solid #e3b341; border-radius:2px;"></span> 高位强势休整窗</span>
                             <span style="display: flex; align-items: center; gap: 4px;"><span style="display:inline-block; width:10px; height:10px; background:rgba(248,81,73,0.35); border:1px solid #f85149; border-radius:2px;"></span> 周期阻力高点窗</span>
                         </div>
                         <span style="color: #8b949e; font-size: 11px;">🖐️ <strong>交互指南:</strong> 鼠标按住图表任意位置可<strong>自由左右拖拽</strong>，滚轮可缩放，移动光标可精确定位</span>
@@ -5189,8 +5375,12 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
             let winTag = '';
             if (pt.isWin) {{
                 const isTop = (pt.winType === 'top');
-                winTag = `<div style="margin-top: 4px; padding: 3px 6px; border-radius: 4px; background: ${{isTop ? 'rgba(248,81,73,0.18)' : 'rgba(56,189,248,0.18)'}}; color: ${{isTop ? '#f85149' : '#38bdf8'}}; font-weight: 700;">` +
-                    `${{isTop ? '🔴 周期阻力窗 (逢高止盈)' : '🔵 周期底回踩窗 (企稳关注)'}}: ${{pt.winDesc || ''}}</div>`;
+                const isCaution = (pt.winType === 'caution') || (pt.winDesc && pt.winDesc.indexOf('高位强势休整') !== -1);
+                const tagTitle = isTop ? '🔴 周期阻力窗 (逢高止盈)' : (isCaution ? '⚠️ 高位强势休整窗 (防追高)' : '🔵 周期底回踩窗 (企稳关注)');
+                const tagColor = isTop ? '#f85149' : (isCaution ? '#e3b341' : '#38bdf8');
+                const tagBg = isTop ? 'rgba(248,81,73,0.18)' : (isCaution ? 'rgba(227,179,65,0.18)' : 'rgba(56,189,248,0.18)');
+                winTag = `<div style="margin-top: 4px; padding: 3px 6px; border-radius: 4px; background: ${{tagBg}}; color: ${{tagColor}}; font-weight: 700;">` +
+                    `${{tagTitle}}: ${{pt.winDesc || ''}}</div>`;
             }}
 
             let s1r1Hint = '';
@@ -5308,11 +5498,12 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
                 if (data.cycle_windows && data.cycle_windows.length > 0) {{
                     winList.innerHTML = data.cycle_windows.map(function(w) {{
                         const isTop = (w.type === 'top');
-                        const themeColor = isTop ? '#f85149' : '#38bdf8';
-                        const bgAlpha = isTop ? 'rgba(248, 81, 73, 0.08)' : 'rgba(56, 189, 248, 0.08)';
-                        const borderAlpha = isTop ? 'rgba(248, 81, 73, 0.28)' : 'rgba(56, 189, 248, 0.28)';
-                        const icon = isTop ? '🔴' : '🔵';
-                        const tag = isTop ? '周期阻力窗 (逢高不过就跑)' : '周期底回踩窗 (企稳关注)';
+                        const isCaution = (w.type === 'caution') || (w.desc && w.desc.indexOf('高位强势休整') !== -1);
+                        const themeColor = isCaution ? '#e3b341' : (isTop ? '#f85149' : '#38bdf8');
+                        const bgAlpha = isCaution ? 'rgba(227, 179, 65, 0.08)' : (isTop ? 'rgba(248, 81, 73, 0.08)' : 'rgba(56, 189, 248, 0.08)');
+                        const borderAlpha = isCaution ? 'rgba(227, 179, 65, 0.35)' : (isTop ? 'rgba(248, 81, 73, 0.28)' : 'rgba(56, 189, 248, 0.28)');
+                        const icon = isCaution ? '⚠️' : (isTop ? '🔴' : '🔵');
+                        const tag = w.tag || (isCaution ? '⚠️ 高位强势休整窗 (防追高)' : (isTop ? '周期阻力窗 (逢高不过就跑)' : '周期底回踩窗 (企稳关注)'));
                         return `
                             <div class="cycle-timeline-card" style="background: ${{bgAlpha}}; border: 1px solid ${{borderAlpha}};" onmouseenter="highlightCycleDay('${{w.day}}')" onmouseleave="clearCycleHighlight()">
                                 <div>
@@ -5333,6 +5524,21 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
                 }} else {{
                     winList.innerHTML = '<div style="color: #8b949e; padding: 12px; text-align: center; font-size: 11.5px;">近期处于平稳修复通道，无极端单边反转窗口</div>';
                 }}
+            }}
+
+            // Update Header T+15 Badge
+            const headerBadge = document.getElementById('cycleT15BadgeHeader');
+            if (headerBadge && data.projection && data.projection.length > 0) {{
+                const lastP = data.projection[data.projection.length - 1];
+                const sign = (lastP.pct >= 0) ? '+' : '';
+                const bColor = (lastP.pct >= 0) ? '#3fb950' : '#f85149';
+                const bBg = (lastP.pct >= 0) ? 'rgba(63, 185, 80, 0.15)' : 'rgba(248, 81, 73, 0.15)';
+                const bBorder = (lastP.pct >= 0) ? 'rgba(63, 185, 80, 0.4)' : 'rgba(248, 81, 73, 0.4)';
+                headerBadge.style.color = bColor;
+                headerBadge.style.background = bBg;
+                headerBadge.style.borderColor = bBorder;
+                headerBadge.innerHTML = `T+15 终点: <strong>${{sign}}${{lastP.pct}}%</strong> ($${{Number(lastP.price).toFixed(2)}})`;
+                headerBadge.style.display = 'inline-block';
             }}
         }}
 
@@ -5532,7 +5738,8 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
                 const isHighlight = (cycleHighlightDay === pt.day);
                 if (pt.isWin || isHighlight) {{
                     const isTop = (pt.winType === 'top');
-                    const bandColor = isTop ? 'rgba(248, 81, 73, ' : 'rgba(56, 189, 248, ';
+                    const isCaution = (pt.winType === 'caution') || (pt.winDesc && pt.winDesc.indexOf('高位强势休整') !== -1);
+                    const bandColor = isTop ? 'rgba(248, 81, 73, ' : (isCaution ? 'rgba(227, 179, 65, ' : 'rgba(56, 189, 248, ');
                     const alpha = isHighlight ? '0.35)' : '0.14)';
                     const colWidth = Math.max(22, 28 * cycleZoom);
 
@@ -5550,7 +5757,7 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
                     ctx.setLineDash([]);
 
                     // Top Tag Badge
-                    ctx.fillStyle = isTop ? '#f85149' : '#38bdf8';
+                    ctx.fillStyle = isTop ? '#f85149' : (isCaution ? '#e3b341' : '#38bdf8');
                     ctx.font = 'bold 9px "JetBrains Mono", monospace';
                     ctx.textAlign = 'center';
                     ctx.fillText(pt.day, pt.canvasX, padT - 3);
@@ -5635,7 +5842,9 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
                 points.forEach(pt => {{
                     if (!pt.isProj) return;
                     if (pt.isWin) {{
-                        ctx.fillStyle = pt.winType === 'top' ? '#f85149' : '#38bdf8';
+                        const isTop = (pt.winType === 'top');
+                        const isCaution = (pt.winType === 'caution') || (pt.winDesc && pt.winDesc.indexOf('高位强势休整') !== -1);
+                        ctx.fillStyle = isTop ? '#f85149' : (isCaution ? '#e3b341' : '#38bdf8');
                         ctx.beginPath();
                         ctx.arc(pt.canvasX, pt.canvasY, 4, 0, Math.PI * 2);
                         ctx.fill();
@@ -5645,7 +5854,7 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
                     }}
                 }});
 
-                // Final Day +% Pill
+                // Final Day +% Pill (Repositioned to prevent overlap with projected curve and right R1/R2 ladder labels)
                 const lastPt = points[points.length - 1];
                 const lastPct = lastPt.pct || 0;
                 const sign = lastPct >= 0 ? '+' : '';
@@ -5653,18 +5862,39 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
 
                 ctx.fillStyle = pillColor;
                 ctx.beginPath();
-                ctx.arc(lastPt.canvasX, lastPt.canvasY, 4, 0, Math.PI * 2);
+                ctx.arc(lastPt.canvasX, lastPt.canvasY, 4.5, 0, Math.PI * 2);
                 ctx.fill();
 
-                ctx.fillStyle = 'rgba(13, 17, 23, 0.85)';
-                ctx.fillRect(lastPt.canvasX - 48, lastPt.canvasY - 22, 46, 16);
-                ctx.strokeStyle = pillColor;
-                ctx.strokeRect(lastPt.canvasX - 48, lastPt.canvasY - 22, 46, 16);
+                const pillW = 60, pillH = 18;
+                const pillX = lastPt.canvasX - pillW - 12;
+                let pillY = lastPt.canvasY - pillH - 10;
+                if (pillY < padT + 4) pillY = lastPt.canvasY + 12; // Flip below if near the top
 
+                // Leader line
+                ctx.save();
+                ctx.strokeStyle = pillColor + '88';
+                ctx.lineWidth = 1;
+                ctx.setLineDash([2, 2]);
+                ctx.beginPath();
+                ctx.moveTo(lastPt.canvasX, lastPt.canvasY);
+                ctx.lineTo(pillX + pillW, pillY + pillH / 2);
+                ctx.stroke();
+                ctx.setLineDash([]);
+
+                // Background pill
+                ctx.fillStyle = 'rgba(13, 17, 23, 0.92)';
+                ctx.fillRect(pillX, pillY, pillW, pillH);
+                ctx.strokeStyle = pillColor;
+                ctx.lineWidth = 1.2;
+                ctx.strokeRect(pillX, pillY, pillW, pillH);
+
+                // Pill text
                 ctx.fillStyle = pillColor;
-                ctx.font = 'bold 10px "JetBrains Mono", monospace';
+                ctx.font = 'bold 9.5px "JetBrains Mono", monospace';
                 ctx.textAlign = 'center';
-                ctx.fillText(sign + lastPct + '%', lastPt.canvasX - 25, lastPt.canvasY - 10);
+                ctx.textBaseline = 'middle';
+                ctx.fillText(sign + lastPct + '%', pillX + pillW / 2, pillY + pillH / 2);
+                ctx.restore();
             }}
 
             // 10. Hover Crosshair Line and Highlight Dot
@@ -5813,15 +6043,31 @@ def build_extended_live_features_df(
     missing_syms = [tk for tk in EXTENDED_RADAR_SECTOR_MAP.keys() if tk not in existing_syms]
 
     ext_frames = []
+    expected_latest_date = _get_latest_expected_trading_day()
     if os.path.exists(full_ext_cache) and not force_refresh:
         try:
             ext_cached_df = pd.read_parquet(full_ext_cache)
+            ext_cached_df['Date'] = pd.to_datetime(ext_cached_df['Date'])
             cached_syms = set(ext_cached_df['Ticker'].unique())
             still_missing = [tk for tk in missing_syms if tk not in cached_syms]
-            ext_frames.append(ext_cached_df)
-            missing_syms = still_missing
-        except Exception:
-            pass
+            ext_max_date = ext_cached_df['Date'].max().date() if not ext_cached_df.empty else None
+            is_ext_fresh = (ext_max_date is not None and ext_max_date >= expected_latest_date)
+
+            if is_ext_fresh and not still_missing:
+                print(f"[+] ✅ 扩展标的缓存完整且新鲜: 共 {len(cached_syms)} 只标的 (最新: {ext_max_date})")
+                ext_frames.append(ext_cached_df)
+                missing_syms = []
+            elif not is_ext_fresh:
+                print(f"[!] ⚠️ 扩展标的缓存已过期 (最新: {ext_max_date}, 预期: {expected_latest_date})，启动全量刷新...")
+                missing_syms = [tk for tk in EXTENDED_RADAR_SECTOR_MAP.keys() if tk not in existing_syms]
+                ext_frames = []
+            else:
+                ext_frames.append(ext_cached_df)
+                missing_syms = still_missing
+        except Exception as e:
+            print(f"[!] 读取扩展缓存异常 ({e})，重新拉取...")
+            missing_syms = [tk for tk in EXTENDED_RADAR_SECTOR_MAP.keys() if tk not in existing_syms]
+            ext_frames = []
 
     if missing_syms:
         print(f"[*] 📥 正在通过 yfinance 补充抓取 {len(missing_syms)} 只主终端扩展标的日线数据 (0 Finnhub 消耗)...")

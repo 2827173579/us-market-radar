@@ -380,12 +380,50 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                                 for _pp in _tc_item.get("projection", []):
                                     if isinstance(_pp, dict) and _pp.get("price"):
                                         _pp["price"] = round(float(_pp["price"]) * _ratio, 2)
-                                for _cw in _tc_item.get("cycle_windows", []):
-                                    if isinstance(_cw, dict) and _cw.get("price"):
-                                        _cw["price"] = round(float(_cw["price"]) * _ratio, 2)
+                            # 1. 同步常规防御梯队点位 (s1, s2, sl, r1, r2) — 统一纯数学驱动，零个股硬编码
                             for _k_lvl in ("s1", "s2", "sl", "r1", "r2"):
                                 if _b_item.get(_k_lvl) is not None:
                                     _tc_item[_k_lvl] = _b_item[_k_lvl]
+
+                            # 2. R2 极限阻力联动校准 (Issue 3 / R3):
+                            # 当 15 日推演路径最高价 max_proj_p 突破静态 R2 时，动态拔高 R2 至 max(r2, round(max_proj_p * 1.015, 2))
+                            proj_list = _tc_item.get("projection", [])
+                            proj_prices = [float(p["price"]) for p in proj_list if isinstance(p, dict) and p.get("price") is not None]
+                            if proj_prices:
+                                max_proj_p = max(proj_prices)
+                                _tc_item["r2"] = max(float(_tc_item.get("r2") or 0.0), round(max_proj_p * 1.015, 2))
+                                if _tc_item.get("r1") is not None and float(_tc_item["r2"]) <= float(_tc_item["r1"]):
+                                    _min_step = max(0.01, round(float(_tc_item.get("current_price") or 100.0) * 0.005, 2))
+                                    _tc_item["r2"] = round(float(_tc_item["r1"]) + _min_step, 2)
+                                _b_item["r2"] = _tc_item["r2"]
+
+                            # 3. 动态重构变盘时间窗 (Re-invoke _build_cycle_windows_from_projections)
+                            try:
+                                import ml_predictor_5y
+                                _tc_item["cycle_windows"] = ml_predictor_5y._build_cycle_windows_from_projections(
+                                    projections=_tc_item.get("projection", []),
+                                    current_price=_tc_item.get("current_price"),
+                                    r1=_tc_item.get("r1"),
+                                    r2=_tc_item.get("r2")
+                                )
+                            except Exception:
+                                pass
+
+                            # 4. 双重防线兜底校验: 严禁任何高于 R1/R2 的波谷标为周期底回踩
+                            _r1 = float(_tc_item.get("r1") or 0.0)
+                            _r2 = float(_tc_item.get("r2") or 0.0)
+                            for _cw in _tc_item.get("cycle_windows", []):
+                                if isinstance(_cw, dict) and _cw.get("price"):
+                                    _cw_p = float(_cw["price"])
+                                    if _cw.get("type") in ("bottom", "caution"):
+                                        if (_r1 > 0 and _cw_p >= _r1) or (_r2 > 0 and _cw_p >= _r2):
+                                            _cw["type"] = "caution"
+                                            _cw["desc"] = "⚠️ 高位强势休整窗 (已超R1/R2阻力·勿追高)"
+                                            _cw["tag"] = "⚠️ 高位强势休整窗（已超R1/R2阻力·勿追高）"
+                                        else:
+                                            _cw["type"] = "bottom"
+                                            _cw["desc"] = "🔵 周期底回踩窗 (关注空头回补企稳)"
+                                            _cw["tag"] = "周期底回踩窗 (企稳关注)"
                 _def_flight_obj = (weather_info.get("defensive_flight") if isinstance(weather_info, dict) else None) or ai_predictions.get("defensive_flight", {})
                 ai_predictions["defensive_flight"] = _def_flight_obj
 

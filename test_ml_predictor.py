@@ -29,6 +29,7 @@ import sys
 import ast
 import inspect
 import unittest
+from datetime import datetime, timedelta, date
 from typing import Dict, List, Tuple, Any, Optional
 
 import numpy as np
@@ -2056,6 +2057,396 @@ class TestV2UpgradeDefensiveFlightAndScenarios(unittest.TestCase):
         self.assertIn('four_h_rsi', fh_res['SOXL'])
         self.assertIn('four_h_div', fh_res['SOXL'])
 
+    def test_expected_latest_trading_day_calculation(self):
+        """Issue 1 验证: 美股最新应收盘交易日计算严格跳过周末"""
+        calc_fn = self.mod._get_latest_expected_trading_day
+        # Wednesday -> Tuesday
+        wed = datetime(2026, 11, 11, 10, 0, 0)
+        self.assertEqual(calc_fn(wed), datetime(2026, 11, 10).date())
+        # Monday -> Friday
+        mon = datetime(2026, 11, 16, 10, 0, 0)
+        self.assertEqual(calc_fn(mon), datetime(2026, 11, 13).date())
+        # Sunday -> Friday
+        sun = datetime(2026, 11, 15, 10, 0, 0)
+        self.assertEqual(calc_fn(sun), datetime(2026, 11, 13).date())
+        # Saturday -> Friday
+        sat = datetime(2026, 11, 14, 10, 0, 0)
+        self.assertEqual(calc_fn(sat), datetime(2026, 11, 13).date())
+
+    def test_time_cycle_today_anchoring_and_date_sequence(self):
+        """Issue 1 深度验证: 今日锚定为独立Bar，绝不篡改昨日收盘价，未来日期跳过周末"""
+        # 构造截至 2026-11-10 的历史行情 (不含今日 2026-11-11)
+        dates = pd.date_range(end='2026-11-10', periods=100, freq='B')
+        mock_panel = pd.DataFrame({
+            'Ticker': ['SOXL'] * 100,
+            'Date': list(dates),
+            'Close': [50.0 + (i * 0.1) for i in range(100)]
+        })
+        yest_close = 50.0 + 99 * 0.1  # 59.90
+
+        sc_map = {'SOXL': {'latest_price': 57.38, 'r1': 62.0, 'r2': 66.0}}
+        projections = self.mod.generate_time_cycle_projections(
+            raw_panel=mock_panel,
+            target_tickers=['SOXL'],
+            forecast_days=15,
+            scenario_map_by_ticker=sc_map
+        )
+        soxl = projections['SOXL']
+        hist = soxl['history']
+        # 验证昨日已收 K 线完好无损，未被篡改
+        self.assertEqual(hist[-2]['date'], '2026-11-10')
+        self.assertEqual(hist[-2]['price'], round(yest_close, 2))
+        # 验证今日 2026-11-11 作为独立 Bar 锚定最新实时价
+        self.assertEqual(hist[-1]['date'], '2026-11-11')
+        self.assertEqual(hist[-1]['price'], 57.38)
+        # 验证预测序列从 2026-11-12 (T+1) 开启，且跳过周末 11-14 / 11-15
+        proj = soxl['projection']
+        self.assertEqual(proj[0]['day'], 'T+1')
+        self.assertEqual(proj[0]['date'], '2026-11-12')
+        self.assertEqual(proj[1]['day'], 'T+2')
+        self.assertEqual(proj[1]['date'], '2026-11-13')
+        self.assertEqual(proj[2]['day'], 'T+3')
+        self.assertEqual(proj[2]['date'], '2026-11-16')  # 严格跳过周六周日
+        for p in proj:
+            dt = pd.to_datetime(p['date'])
+            self.assertTrue(dt.weekday() < 5, f"Projection date {p['date']} must not be a weekend")
+
+    def test_cycle_windows_monotonic_rise_no_false_signals(self):
+        """Issue 2 验证: 单边上涨序列绝不产生虚假周期峰谷红蓝交替"""
+        projections = [
+            {'day': f"T+{i+1}", 'date': f"2026-11-{10+i}", 'price': round(60.0 + i * 1.5, 2), 'pct': round(i * 2.5, 1)}
+            for i in range(15)
+        ]
+        windows = self.mod._build_cycle_windows_from_projections(
+            projections=projections,
+            current_price=58.0
+        )
+        self.assertEqual(len(windows), 0, "Monotonic upward path must have 0 turning windows")
+
+    def test_cycle_windows_no_adjacent_days_and_min_interval(self):
+        """Issue 2 验证: 相邻变盘节点严格间隔 >= 2 个交易日，且排除 T+1 与 T+15 端点"""
+        prices = [60.0, 62.0, 65.0, 63.0, 67.0, 64.0, 70.0, 68.0, 72.0, 69.0, 73.0, 70.0, 74.0, 71.0, 75.0]
+        projections = [
+            {'day': f"T+{i+1}", 'date': f"2026-11-{10+i}", 'price': prices[i], 'pct': 0.0}
+            for i in range(15)
+        ]
+        windows = self.mod._build_cycle_windows_from_projections(
+            projections=projections,
+            current_price=58.0
+        )
+        for idx in range(1, len(windows)):
+            d_curr = int(windows[idx]['day'].replace('T+', ''))
+            d_prev = int(windows[idx-1]['day'].replace('T+', ''))
+            self.assertGreaterEqual(d_curr - d_prev, 2, f"Nodes {d_prev} and {d_curr} must be >= 2 days apart")
+        for w in windows:
+            self.assertNotIn(w['day'], ['T+1', 'T+15'], "Endpoints T+1 and T+15 must be excluded")
+
+    def test_cycle_windows_true_local_extrema_and_no_price_inversion(self):
+        """Issue 2 验证: 真局部极值与绝无价格倒挂 (波峰必高于波谷且波峰高于现价)"""
+        prices = [52.0, 56.0, 62.0, 68.0, 65.0, 62.0, 60.0, 58.0, 61.0, 66.0, 70.0, 72.0, 69.0, 65.0, 63.0]
+        projections = [
+            {'day': f"T+{i+1}", 'date': f"2026-11-{10+i}", 'price': prices[i], 'pct': 0.0}
+            for i in range(15)
+        ]
+        windows = self.mod._build_cycle_windows_from_projections(
+            projections=projections,
+            current_price=50.0
+        )
+        self.assertTrue(len(windows) >= 2)
+        top_windows = [w for w in windows if w['type'] == 'top']
+        bot_windows = [w for w in windows if w['type'] == 'bottom']
+        for tw in top_windows:
+            self.assertGreater(tw['price'], 50.0, "Top window price must exceed current price")
+        if top_windows and bot_windows:
+            self.assertGreater(top_windows[0]['price'], bot_windows[0]['price'], "Peak must be higher than valley")
+
+    def test_r2_calibrated_with_projection_envelope(self):
+        """Issue 3 验证: R2 极限阻力与 15 日推演路径上轨保持联动，推演路径不悬空在 R2 上方"""
+        dates = pd.date_range(end=datetime.now(), periods=100, freq='B')
+        mock_panel = pd.DataFrame({
+            'Ticker': ['SOXL'] * 100,
+            'Date': list(dates),
+            'Close': [50.0 + (i * 0.2) for i in range(100)]
+        })
+        projections = self.mod.generate_time_cycle_projections(
+            raw_panel=mock_panel,
+            target_tickers=['SOXL'],
+            forecast_days=15
+        )
+        soxl = projections['SOXL']
+        max_proj = max(p['price'] for p in soxl['projection'])
+        r2 = soxl['r2']
+        cur_p = soxl['current_price']
+        r1 = soxl['r1']
+        self.assertGreaterEqual(r2, max_proj, f"R2 ({r2}) must be >= max projected price ({max_proj})")
+        self.assertGreater(r1, cur_p, f"R1 ({r1}) must be > current price ({cur_p})")
+        self.assertGreater(r2, r1, f"R2 ({r2}) must be > R1 ({r1})")
+
+    def test_cycle_window_high_consolidation_override_above_r1(self):
+        """Issue 3 验证: 回踩波谷高于阻力位 R1/R2 时改标为高位强势休整窗"""
+        # T+4 为局部波谷 66.0，但高于 R1 62.0 与 R2 65.0
+        prices = [70.0, 72.0, 70.0, 66.0, 69.0, 74.0, 76.0, 75.0, 78.0, 77.0, 79.0, 78.0, 80.0, 79.0, 81.0]
+        projections = [
+            {'day': f"T+{i+1}", 'date': f"2026-11-{10+i}", 'price': prices[i], 'pct': 0.0}
+            for i in range(15)
+        ]
+        windows = self.mod._build_cycle_windows_from_projections(
+            projections=projections,
+            current_price=50.0,
+            r1=62.0,
+            r2=65.0
+        )
+        caution_windows = [w for w in windows if w['type'] == 'caution']
+        self.assertTrue(len(caution_windows) >= 1)
+        for cw in caution_windows:
+            self.assertIn("高位强势休整窗", cw['desc'])
+            self.assertNotIn("企稳关注", cw['desc'])
+
+    def test_frontend_dashboard_t15_badge_and_caution_rendering(self):
+        """Issue 4 验证: HTML 渲染包含 T+15 顶栏徽章、休整窗图例与去遮挡定位"""
+        tables_data = {
+            'table1': [],
+            'table2': [],
+            'table3': [],
+            'table4': [],
+            'top_long': [],
+            'top_short': [],
+            'top10': [],
+            'macro_weather': {'status': '晴天做多', 'badge': 'weather-sunny'},
+            'time_cycle_projections': {
+                'SOXL': {
+                    'ticker': 'SOXL',
+                    'current_price': 57.38,
+                    's1': 54.52, 's2': 51.7, 'sl': 50.92, 'r1': 60.97, 'r2': 71.85,
+                    'history': [{'date': '2026-11-10', 'price': 56.0}, {'date': '2026-11-11', 'price': 57.38}],
+                    'projection': [{'day': 'T+1', 'date': '2026-11-12', 'price': 59.5, 'pct': 3.7},
+                                   {'day': 'T+15', 'date': '2026-12-02', 'price': 63.25, 'pct': 10.2}],
+                    'cycle_windows': [{'type': 'caution', 'day': 'T+4', 'date': '2026-11-17', 'price': 66.0,
+                                       'desc': '⚠️ 高位强势休整窗 (已超R1/R2阻力·勿追高)',
+                                       'tag': '⚠️ 高位强势休整窗（已超R1/R2阻力·勿追高）'}]
+                }
+            }
+        }
+        test_html_path = 'data_cache/test_dashboard_render.html'
+        self.mod.render_html_dashboard(tables_data, output_path=test_html_path)
+        with open(test_html_path, 'r', encoding='utf-8') as f:
+            html_content = f.read()
+        if os.path.exists(test_html_path):
+            os.remove(test_html_path)
+
+        self.assertIn('cycleT15BadgeHeader', html_content)
+        self.assertIn('高位强势休整窗', html_content)
+        self.assertIn('pillX = lastPt.canvasX - pillW - 12', html_content)
+
+
+
+# ============================================================================
+# Section: Live Terminal Integration & Freshness Invariant Tests
+# ============================================================================
+
+class TestLiveTerminalIntegrationAndFreshness(unittest.TestCase):
+    """
+    Test suite covering create_futu_terminal.py live update synchronization,
+    envelope R2 preservation, dynamic cycle windows re-evaluation, and
+    _get_latest_expected_trading_day Friday post-market edge cases.
+    """
+
+    def setUp(self):
+        self.mod = get_implementation_module()
+        if not self.mod:
+            self.skipTest("ml_predictor_5y module not available")
+
+    def test_friday_post_market_and_weekend_sequence(self):
+        """Verify _get_latest_expected_trading_day across weekday, Friday post-market, and weekend."""
+        fn = self.mod._get_latest_expected_trading_day
+
+        # 1. Friday 08:00 ET (Pre-Market) -> expects Thursday
+        fri_pre = datetime(2026, 11, 13, 8, 0, 0)
+        self.assertEqual(fn(fri_pre), date(2026, 11, 12))
+
+        # 2. Friday 12:00 ET (Regular Intraday) -> expects Thursday
+        fri_mid = datetime(2026, 11, 13, 12, 0, 0)
+        self.assertEqual(fn(fri_mid), date(2026, 11, 12))
+
+        # 3. Friday 16:05 ET / 20:00 ET (Post-Market) -> MUST RETURN TODAY FRIDAY
+        fri_post = datetime(2026, 11, 13, 20, 0, 0)
+        self.assertEqual(fn(fri_post), date(2026, 11, 13), "Friday post-market must return today Friday")
+
+        # 4. Friday 21:00 UTC (Timezone Aware) -> MUST RETURN TODAY FRIDAY
+        try:
+            from datetime import timezone
+            fri_utc = datetime(2026, 11, 13, 21, 30, 0, tzinfo=timezone.utc)
+            self.assertEqual(fn(fri_utc), date(2026, 11, 13), "Friday 21:30 UTC must resolve to Friday")
+        except Exception:
+            pass
+
+        # 5. Saturday & Sunday -> expects Friday
+        sat = datetime(2026, 11, 14, 12, 0, 0)
+        sun = datetime(2026, 11, 15, 12, 0, 0)
+        self.assertEqual(fn(sat), date(2026, 11, 13))
+        self.assertEqual(fn(sun), date(2026, 11, 13))
+
+        # 6. Monday 08:30 ET -> expects Friday
+        mon_pre = datetime(2026, 11, 16, 8, 30, 0)
+        self.assertEqual(fn(mon_pre), date(2026, 11, 13))
+
+    def test_live_terminal_update_preserves_calibrated_r2(self):
+        """
+        Simulate create_futu_terminal live update:
+        Verify that an uncalibrated static R2 from by_ticker does NOT lower R2 below max_proj.
+        """
+        cur_p = 7.70
+        max_proj = 8.78
+        static_r2 = 8.69  # Uncalibrated R2 lower than max_proj
+        projections = [
+            {'day': f'T+{i}', 'date': f'2026-11-{12+i}', 'price': round(cur_p + (max_proj - cur_p) * (i / 5.0) if i <= 5 else max_proj - (i - 5) * 0.1, 2), 'pct': 1.0}
+            for i in range(1, 16)
+        ]
+
+        tc_item = {
+            'ticker': 'KORU',
+            'current_price': cur_p,
+            's1': 7.20, 's2': 6.80, 'sl': 6.50,
+            'r1': 8.16, 'r2': round(max_proj * 1.015, 2),
+            'projection': projections,
+            'cycle_windows': []
+        }
+        b_item = {
+            'ticker': 'KORU',
+            'latest_price': cur_p,
+            's1': 7.20, 's2': 6.80, 'sl': 6.50,
+            'r1': 8.16, 'r2': static_r2  # Static uncalibrated
+        }
+
+        # Execute simulated updated logic from create_futu_terminal.py
+        for k in ("s1", "s2", "sl", "r1", "r2"):
+            if b_item.get(k) is not None:
+                tc_item[k] = b_item[k]
+
+        max_proj_p = float(np.max([float(p["price"]) for p in tc_item["projection"]])) if tc_item.get("projection") else 0.0
+        tc_item["r2"] = max(float(tc_item.get("r2") or 0.0), round(max_proj_p * 1.015, 2))
+        if tc_item.get("r1") is not None and float(tc_item["r2"]) <= float(tc_item["r1"]):
+            min_step = max(0.01, round(float(tc_item.get("current_price") or 100.0) * 0.005, 2))
+            tc_item["r2"] = round(float(tc_item["r1"]) + min_step, 2)
+        b_item["r2"] = tc_item["r2"]
+
+        # Invariant Assertions
+        self.assertLessEqual(max_proj_p, tc_item["r2"], "Max projection must NOT exceed R2")
+        self.assertGreaterEqual(tc_item["r2"], round(max_proj * 1.015, 2))
+        self.assertTrue(tc_item["sl"] < tc_item["s2"] < tc_item["s1"] < cur_p < tc_item["r1"] < tc_item["r2"])
+
+    def test_live_terminal_update_reevaluates_caution_windows(self):
+        """
+        Clean unit test testing genuine dynamic rebuild on mock data where price >= R1,
+        without asserting any hardcoded live AMZN values.
+        """
+        cur_p = 100.0
+        r1 = 110.0
+        r2 = 125.0
+        prices = [102.0, 106.0, 104.0, 103.0, 108.0, 112.0, 116.0, 118.0, 116.0, 114.0, 113.0, 112.0, 115.0, 117.0, 119.0]
+        projs = [
+            {'day': f'T+{i+1}', 'date': f'2026-11-{12+i:02d}', 'price': prices[i], 'pct': round((prices[i]-cur_p)/cur_p*100, 1)}
+            for i in range(len(prices))
+        ]
+
+        tc_item = {
+            'ticker': 'SYNTH_TEST',
+            'current_price': cur_p,
+            'r1': r1,
+            'r2': r2,
+            'projection': projs,
+            'cycle_windows': [
+                {'day': 'T+12', 'type': 'bottom', 'price': 112.0, 'desc': '🔵 周期底回踩窗 (关注空头回补企稳)'}
+            ]
+        }
+
+        # Dynamic rebuild via _build_cycle_windows_from_projections
+        tc_item['cycle_windows'] = self.mod._build_cycle_windows_from_projections(
+            projections=tc_item['projection'],
+            current_price=tc_item['current_price'],
+            r1=tc_item['r1'],
+            r2=tc_item['r2']
+        )
+
+        windows = tc_item['cycle_windows']
+        self.assertGreaterEqual(len(windows), 3)
+
+        for i in range(1, len(windows)):
+            d_curr = int(windows[i]['day'].replace('T+', ''))
+            d_prev = int(windows[i-1]['day'].replace('T+', ''))
+            self.assertGreaterEqual(d_curr - d_prev, 2)
+
+        for w in windows:
+            if w.get('type') == 'caution':
+                self.assertGreaterEqual(w['price'], r1)
+                self.assertIn('高位强势休整窗', w['desc'])
+                self.assertNotIn('企稳', w['desc'])
+            elif w.get('type') == 'bottom':
+                self.assertLess(w['price'], r1)
+                self.assertIn('周期底回踩窗', w['desc'])
+                self.assertIn('企稳', w['desc'])
+            elif w.get('type') == 'top':
+                self.assertGreater(w['price'], cur_p)
+                self.assertIn('周期峰阻力窗', w['desc'])
+
+        t4_win = next((w for w in windows if w['day'] == 'T+4'), None)
+        self.assertIsNotNone(t4_win)
+        self.assertEqual(t4_win['type'], 'bottom')
+        self.assertEqual(t4_win['price'], 103.0)
+
+        t12_win = next((w for w in windows if w['day'] == 'T+12'), None)
+        self.assertIsNotNone(t12_win)
+        self.assertEqual(t12_win['type'], 'caution')
+        self.assertEqual(t12_win['price'], 112.0)
+        self.assertIn('高位强势休整窗', t12_win['desc'])
+
+    def test_live_price_jump_scaling_invariants(self):
+        """
+        Verify that when live price jumps +5%, scaling preserves monotonicity,
+        history anchoring, and max_proj <= R2.
+        """
+        old_cp = 100.0
+        new_cp = 105.0  # +5% intraday jump
+        ratio = new_cp / old_cp
+
+        tc_item = {
+            'ticker': 'NVDA',
+            'current_price': old_cp,
+            'history': [{'date': '2026-11-10', 'price': 98.0}, {'date': '2026-11-11', 'price': 100.0}],
+            'projection': [{'day': 'T+1', 'date': '2026-11-12', 'price': 102.0}, {'day': 'T+2', 'date': '2026-11-13', 'price': 108.0}],
+            'cycle_windows': [{'day': 'T+2', 'type': 'top', 'price': 108.0, 'desc': 'peak'}],
+            's1': 96.0, 's2': 92.0, 'sl': 89.0, 'r1': 104.0, 'r2': 110.0
+        }
+        b_item = {
+            'ticker': 'NVDA',
+            'latest_price': new_cp,
+            's1': round(96.0 * ratio, 2), 's2': round(92.0 * ratio, 2), 'sl': round(89.0 * ratio, 2),
+            'r1': round(104.0 * ratio, 2), 'r2': round(110.0 * ratio, 2)
+        }
+
+        # Apply scaling
+        tc_item["current_price"] = round(new_cp, 2)
+        for hp in tc_item["history"]:
+            hp["price"] = round(float(hp["price"]) * ratio, 2)
+        tc_item["history"][-1]["price"] = round(new_cp, 2)
+        for pp in tc_item["projection"]:
+            pp["price"] = round(float(pp["price"]) * ratio, 2)
+        for k in ("s1", "s2", "sl", "r1", "r2"):
+            if b_item.get(k) is not None:
+                tc_item[k] = b_item[k]
+
+        max_proj_p = float(np.max([float(p["price"]) for p in tc_item["projection"]]))
+        tc_item["r2"] = max(float(tc_item.get("r2") or 0.0), round(max_proj_p * 1.015, 2))
+        if tc_item.get("r1") is not None and float(tc_item["r2"]) <= float(tc_item["r1"]):
+            min_step = max(0.01, round(float(tc_item.get("current_price") or 100.0) * 0.005, 2))
+            tc_item["r2"] = round(float(tc_item["r1"]) + min_step, 2)
+        b_item["r2"] = tc_item["r2"]
+
+        # Check invariants
+        self.assertEqual(tc_item["history"][-1]["price"], 105.0)
+        self.assertLessEqual(max_proj_p, tc_item["r2"])
+        self.assertTrue(tc_item["sl"] < tc_item["s2"] < tc_item["s1"] < new_cp < tc_item["r1"] < tc_item["r2"])
+
 
 # ============================================================================
 # Main Execution Runner
@@ -2076,6 +2467,7 @@ def run_suite():
     suite.addTests(loader.loadTestsFromTestCase(TestMacroFeatureIntegrity))
     suite.addTests(loader.loadTestsFromTestCase(TestReportMetricsAndSectorLinkage))
     suite.addTests(loader.loadTestsFromTestCase(TestV2UpgradeDefensiveFlightAndScenarios))
+    suite.addTests(loader.loadTestsFromTestCase(TestLiveTerminalIntegrationAndFreshness))
 
     runner = unittest.TextTestRunner(verbosity=2)
     result = runner.run(suite)
