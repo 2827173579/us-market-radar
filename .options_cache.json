@@ -1,23 +1,32 @@
 {
   "schema_version": 3,
-  "updated_at": 1794487372.4512272,
+  "updated_at": 1794489196.5393198,
   "data": {
     "QQQ": {
       "has_options": false
     },
-    "SOXL": {
+    "SPY": {
       "has_options": false
     },
-    "SPY": {
+    "DIA": {
+      "has_options": false
+    },
+    "IWM": {
+      "has_options": false
+    },
+    "SMH": {
+      "has_options": false
+    },
+    "SOXX": {
+      "has_options": false
+    },
+    "SOXL": {
       "has_options": false
     },
     "KORU": {
       "has_options": false
     },
     "IGV": {
-      "has_options": false
-    },
-    "SOXX": {
       "has_options": false
     },
     "TLT": {
@@ -36,9 +45,6 @@
       "has_options": false
     },
     "SOXS": {
-      "has_options": false
-    },
-    "IWM": {
       "has_options": false
     },
     "IBIT": {
@@ -207,12 +213,6 @@
       "has_options": false
     },
     "PEP": {
-      "has_options": false
-    },
-    "SMH": {
-      "has_options": false
-    },
-    "DIA": {
       "has_options": false
     }
   }
