@@ -316,9 +316,23 @@ def fetch_sentinel_market_data(tickers: List[str], use_cache: bool = True, cache
         progress=False
     )
 
+    # 扩展时段实时价：盘前/盘后/夜盘复用 integrated_market_radar 的 Yahoo prepost 逻辑
+    ext_map = {}
+    try:
+        _et_now = get_current_et_datetime()
+        _hm = _et_now.hour * 60 + _et_now.minute
+        _is_ext = (_hm < 4 * 60) or (4 * 60 <= _hm < 9 * 60 + 30) or (16 * 60 <= _hm < 20 * 60) or (_hm >= 20 * 60)
+        if _is_ext:
+            from integrated_market_radar import fetch_intraday_5m_and_ext_data
+            ext_map = fetch_intraday_5m_and_ext_data(tickers_clean) or {}
+    except Exception as _ext_err:
+        print(f"[!] [Discord Sentinel] 扩展时段价格补抓异常: {_ext_err}")
+        ext_map = {}
+
     result = {
         "dl_1h": dl_1h,
         "dl_1d": dl_1d,
+        "ext_map": ext_map,
         "tickers": tickers_clean,
         "timestamp": now
     }
@@ -334,6 +348,80 @@ def fetch_sentinel_market_data(tickers: List[str], use_cache: bool = True, cache
 # ==============================================================================
 # Tier 2: Quantitative Engine & State Machine (Implemented in M2)
 # ==============================================================================
+
+def _sentinel_is_extended_session() -> bool:
+    try:
+        now = get_current_et_datetime()
+        hm = now.hour * 60 + now.minute
+        return (hm < 4 * 60) or (4 * 60 <= hm < 9 * 60 + 30) or (16 * 60 <= hm < 20 * 60) or (hm >= 20 * 60)
+    except Exception:
+        return False
+
+
+def _sentinel_sanitize_sr(active_price: float, support: float, resistance: float, atr: float = 0.0):
+    """硬约束: stop/support < active < resistance；旧箱体破位时用现价±ATR重算。"""
+    try:
+        active = float(active_price)
+    except Exception:
+        return 0.0, 0.0
+    if not math.isfinite(active) or active <= 0:
+        return 0.0, 0.0
+    try:
+        s = float(support)
+        r = float(resistance)
+    except Exception:
+        s = r = 0.0
+    try:
+        a = float(atr)
+        if not math.isfinite(a) or a <= 0:
+            a = max(active * 0.018, 0.01)
+    except Exception:
+        a = max(active * 0.018, 0.01)
+    a = max(a, 0.01)
+    if not math.isfinite(s) or s <= 0 or s >= active:
+        s = active - 1.5 * a
+    if not math.isfinite(r) or r <= 0 or r <= active:
+        r = active + 1.5 * a
+    if s >= active:
+        s = active - max(a, 0.01)
+    if r <= active:
+        r = active + max(a, 0.01)
+    return round(float(s), 2), round(float(r), 2)
+
+
+def _sentinel_effective_poc(active_price: float, raw_poc: float, df_1d=None, df_1h=None) -> float:
+    """POC 无效或等于现价时，回退 MA20 / VWAP20；仍无效返回 0，绝不把 poc 设为 price。"""
+    try:
+        active = float(active_price)
+        poc = float(raw_poc)
+    except Exception:
+        return 0.0
+    if not math.isfinite(active) or active <= 0:
+        return 0.0
+    if math.isfinite(poc) and poc > 0 and abs(poc - active) > max(active * 0.0005, 0.01):
+        return round(poc, 2)
+    candidates = []
+    try:
+        if df_1d is not None and not df_1d.empty and "Close" in df_1d.columns:
+            closes_d = pd.to_numeric(df_1d["Close"], errors="coerce").dropna().tail(20)
+            if len(closes_d) >= 10:
+                candidates.append(float(closes_d.mean()))
+    except Exception:
+        pass
+    try:
+        if df_1h is not None and not df_1h.empty and all(c in df_1h.columns for c in ("High", "Low", "Close", "Volume")):
+            sub = df_1h.tail(140).copy()
+            tp = (pd.to_numeric(sub["High"], errors="coerce") + pd.to_numeric(sub["Low"], errors="coerce") + pd.to_numeric(sub["Close"], errors="coerce")) / 3.0
+            vol = pd.to_numeric(sub["Volume"], errors="coerce").fillna(0.0)
+            if float(vol.sum()) > 0:
+                candidates.append(float((tp * vol).sum() / vol.sum()))
+    except Exception:
+        pass
+    for cand in candidates:
+        if math.isfinite(cand) and cand > 0 and abs(cand - active) > max(active * 0.0005, 0.01):
+            return round(cand, 2)
+    return 0.0
+
 
 def compute_series_rsi(series: pd.Series, period: int = 14) -> pd.Series:
     """
@@ -469,7 +557,7 @@ def evaluate_rsi_state(
         return "📈【站稳主力上方·多头顺风】" if price >= poc else "⚠️【跌破主力成本·水下弱势】"
 
     if math.isnan(rsi_4h) or math.isnan(rsi_1d):
-        return "📈【站稳主力上方·多头顺风】" if price >= poc else "⚠️【跌破主力成本·水下弱势】"
+        return "⚪【成本待补·仅技术观察】"
 
     # 1. 🛑【双周期触顶·分批止盈】 (高优预警)
     if rsi_4h >= 68.0 and rsi_1d >= 65.0:
@@ -500,11 +588,17 @@ def evaluate_rsi_state(
     if is_breakout:
         return "🚀【突破成功·右侧走强】"
 
+    if not math.isfinite(poc) or poc <= 0:
+        return "⚪【成本待补·仅技术观察】"
+
     # 4. 🎯【回踩主力成本·盯紧企稳】 (收紧门槛: 0%~0.8% 且 4H_RSI <= 48)
-    if poc > 0 and (poc <= price <= (poc * 1.008)) and rsi_4h <= 48.0:
+    if poc > 0 and (poc < price <= (poc * 1.008)) and rsi_4h <= 48.0:
         return "🎯【回踩主力成本·盯紧企稳】"
 
     # 5. 📈【站稳主力上方·多头顺风】 (真正的多头安全持仓)
+    # 现价与成本完全相等时不得标为“上方顺风”
+    if poc > 0 and abs(price - poc) <= max(abs(poc) * 0.0005, 0.01):
+        return "⚪【成本区观察·等待方向】"
     if poc > 0 and price >= poc:
         return "📈【站稳主力上方·多头顺风】"
 
@@ -564,13 +658,14 @@ def compute_factor_y(components_data: Dict[str, Any]) -> Dict[str, Any]:
         res["support"] = s
         res["resistance"] = r
 
-    # 状态判定
-    res["status"] = evaluate_rsi_state(
-        rsi_4h=res.get("rsi_4h", 50.0),
-        rsi_1d=res.get("rsi_1d", 50.0),
-        price=res.get("price", 0.0),
-        poc=res.get("poc", 0.0)
-    )
+    # 状态判定；空成分/无价格时保留中性默认，避免空数据污染
+    if float(res.get("price", 0.0) or 0.0) > 0:
+        res["status"] = evaluate_rsi_state(
+            rsi_4h=res.get("rsi_4h", 50.0),
+            rsi_1d=res.get("rsi_1d", 50.0),
+            price=res.get("price", 0.0),
+            poc=res.get("poc", 0.0)
+        )
 
     return res
 
@@ -781,10 +876,16 @@ def format_regular_ticker_block(ticker: str, t_data: Dict[str, Any]) -> str:
     is_decay = t_data.get("is_decay_warning", False) or "反向损耗" in st
     if is_decay:
         return f"⚠️ **{sym}** {price_str} ｜ 成本{poc_str} 反向损耗回避 ｜ 撑{sup_str} / 压{res_str}"
-    elif price >= poc:
+    # 状态标签直接复用 evaluate_rsi_state 的结果，禁止仅凭 price>=poc 判顺风
+    if poc <= 0:
+        return f"⚪ **{sym}** {price_str} ｜ 成本待补 ｜ 撑{sup_str} / 压{res_str}"
+    if any(k in st for k in ("下方", "破位", "弱势", "水下", "超买", "触顶")):
+        return f"⚠️ **{sym}** {price_str} ｜ 成本{poc_str} {st} ｜ 撑{sup_str} / 压{res_str}"
+    if "回踩主力成本" in st:
+        return f"🎯 **{sym}** {price_str} ｜ 成本{poc_str} 回踩主力成本 ｜ 撑{sup_str} / 压{res_str}"
+    if price > poc * 1.008 and ("顺风" in st or "多头" in st or "突破" in st):
         return f"📈 **{sym}** {price_str} ｜ 成本{poc_str} 上方顺风 ｜ 撑{sup_str} / 压{res_str}"
-    else:
-        return f"⚠️ **{sym}** {price_str} ｜ 成本{poc_str} 下方偏弱 ｜ 撑{sup_str} / 压{res_str}"
+    return f"⚪ **{sym}** {price_str} ｜ 成本{poc_str} 成本区观察 ｜ 撑{sup_str} / 压{res_str}"
 
 
 def format_tier_embed_description(symbols: List[str], tickers: Dict[str, Any]) -> str:
@@ -1216,9 +1317,20 @@ def run_sentinel_scan(
             continue
         if not math.isfinite(active_price) or active_price <= 0:
             continue
+        price_source = "1h"
+        # 盘前/盘后/夜盘优先使用扩展时段真实成交价
+        try:
+            _ext = (market_data.get("ext_map") or {}).get(sym, {}) if isinstance(market_data, dict) else {}
+            _ep = float(_ext.get("ext_price", 0) or 0) if isinstance(_ext, dict) else 0.0
+            if _sentinel_is_extended_session() and math.isfinite(_ep) and _ep > 0:
+                active_price = _ep
+                price_source = "extended"
+        except Exception:
+            pass
         df_4h = aggregate_1h_to_4h_df(df_1h, ticker=sym)
-        poc = compute_volume_profile_poc(df_1h)
-        sup, res, atr = compute_and_protect_1h_sr(df_1h, active_price, poc)
+        poc = _sentinel_effective_poc(active_price, compute_volume_profile_poc(df_1h), df_1d, df_1h)
+        _sup0, _res0, atr = compute_and_protect_1h_sr(df_1h, active_price, poc)
+        sup, res = _sentinel_sanitize_sr(active_price, _sup0, _res0, atr)
 
         if not df_4h.empty and len(df_4h) >= 14:
             rsi_4h_s = compute_series_rsi(df_4h["Close"], 14)
@@ -1282,7 +1394,7 @@ def run_sentinel_scan(
             "resistance": res,
             "status": status,
             "display_name": disp,
-            "price_source": "fetched",
+            "price_source": price_source,
             "is_cooling": is_cooling,
             "is_focus": is_focus_ticker({"status": status})
         }
@@ -1516,10 +1628,11 @@ def mark_sentinel_slot_pushed(slot_id: str, slot_name: str, now_dt: Optional[dat
 
 
 def _sentinel_valid_price(item):
-    """只接受快照里真实存在且 >0 的有限 last/active_price。"""
+    """只接受快照里真实存在且 >0 的有限价格；扩展时段优先 ext_price/active_price。"""
     if not isinstance(item, dict):
         return None
-    for key in ("last", "active_price"):
+    keys = ("ext_price", "active_price", "last") if _sentinel_is_extended_session() else ("active_price", "ext_price", "last")
+    for key in keys:
         try:
             v = float(item.get(key))
             if math.isfinite(v) and v > 0:
@@ -1588,9 +1701,12 @@ def run_sentinel_cycle_safe(macro_data=None, stocks_sorted=None, weather_info=No
                 if active_p is None:
                     missing_syms.append(sym)
                     continue
-                poc = float(item.get("fib_poc") or item.get("poc") or active_p)
-                s = float(item.get("support") or item.get("fib_low") or round(active_p * 0.98, 2))
-                r = float(item.get("resistance") or item.get("fib_high") or round(active_p * 1.02, 2))
+                _raw_poc = item.get("fib_poc") or item.get("poc") or item.get("ma20") or item.get("vwap_20d") or 0.0
+                poc = _sentinel_effective_poc(active_p, _raw_poc)
+                _atr = float(item.get("atr") or 0.0)
+                _s0 = float(item.get("support") or item.get("fib_low") or active_p - max(_atr, active_p * 0.018))
+                _r0 = float(item.get("resistance") or item.get("fib_high") or active_p + max(_atr, active_p * 0.018))
+                s, r = _sentinel_sanitize_sr(active_p, _s0, _r0, _atr)
                 r4 = float(item.get("rsi_4h") or item.get("rsi") or 50.0)
                 r1d = float(item.get("rsi") or 50.0)
                 st = item.get("status") or evaluate_rsi_state(r4, r1d, active_p, poc)
@@ -1683,4 +1799,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
