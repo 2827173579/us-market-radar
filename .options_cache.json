@@ -1,8 +1,23 @@
 {
   "schema_version": 3,
-  "updated_at": 1794522440.118676,
+  "updated_at": 1794524296.285738,
   "data": {
     "QQQ": {
+      "has_options": false
+    },
+    "SPY": {
+      "has_options": false
+    },
+    "DIA": {
+      "has_options": false
+    },
+    "IWM": {
+      "has_options": false
+    },
+    "SMH": {
+      "has_options": false
+    },
+    "SOXX": {
       "has_options": false
     },
     "SOXL": {
@@ -161,16 +176,10 @@
     "WDC": {
       "has_options": false
     },
-    "DIA": {
-      "has_options": false
-    },
     "SNDK": {
       "has_options": false
     },
     "STX": {
-      "has_options": false
-    },
-    "SPY": {
       "has_options": false
     },
     "CRWD": {
@@ -185,13 +194,7 @@
     "ORCL": {
       "has_options": false
     },
-    "SOXX": {
-      "has_options": false
-    },
     "CCXI": {
-      "has_options": false
-    },
-    "IWM": {
       "has_options": false
     },
     "LLY": {
@@ -210,9 +213,6 @@
       "has_options": false
     },
     "PEP": {
-      "has_options": false
-    },
-    "SMH": {
       "has_options": false
     }
   }
