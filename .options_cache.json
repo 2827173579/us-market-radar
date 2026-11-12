@@ -1,8 +1,8 @@
 {
   "schema_version": 3,
-  "updated_at": 1794507664.5862033,
+  "updated_at": 1794509482.8909287,
   "data": {
-    "QQQ": {
+    "SPY": {
       "has_options": false
     },
     "SOXL": {
@@ -15,6 +15,9 @@
       "has_options": false
     },
     "TLT": {
+      "has_options": false
+    },
+    "QQQ": {
       "has_options": false
     },
     "GLD": {
@@ -53,22 +56,13 @@
     "ASML": {
       "has_options": false
     },
-    "IWM": {
-      "has_options": false
-    },
     "AMAT": {
       "has_options": false
     },
     "MSFT": {
       "has_options": false
     },
-    "DIA": {
-      "has_options": false
-    },
     "GOOGL": {
-      "has_options": false
-    },
-    "SOXX": {
       "has_options": false
     },
     "META": {
@@ -78,9 +72,6 @@
       "has_options": false
     },
     "AMZN": {
-      "has_options": false
-    },
-    "SPY": {
       "has_options": false
     },
     "PLTR": {
@@ -122,6 +113,9 @@
     "LITE": {
       "has_options": false
     },
+    "IWM": {
+      "has_options": false
+    },
     "SPCX": {
       "has_options": false
     },
@@ -132,6 +126,12 @@
       "has_options": false
     },
     "FLY": {
+      "has_options": false
+    },
+    "SMH": {
+      "has_options": false
+    },
+    "SOXX": {
       "has_options": false
     },
     "KO": {
@@ -182,13 +182,13 @@
     "CRWD": {
       "has_options": false
     },
+    "DIA": {
+      "has_options": false
+    },
     "MSTR": {
       "has_options": false
     },
     "COIN": {
-      "has_options": false
-    },
-    "SMH": {
       "has_options": false
     },
     "ORCL": {
