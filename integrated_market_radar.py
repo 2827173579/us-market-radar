@@ -4249,11 +4249,13 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
                         session_tag = "休市"
             effective_pct = pct_change
             overnight_pct = 0.0
-            if ext_price > 0 and session_code in ["PRE_MARKET", "POST_MARKET", "OVERNIGHT", "WEEKEND"]:
-                _base_pct = pct_change
-                effective_pct = ((1.0 + _base_pct / 100.0) * (1.0 + ext_pct / 100.0) - 1.0) * 100.0
-                overnight_pct = ext_pct
-                pct_change = effective_pct
+            if session_code in ["PRE_MARKET", "POST_MARKET", "OVERNIGHT", "WEEKEND"]:
+                # 扩展时段只看“最近一次正规盘收盘后”的纯变动，绝不叠加前一日白天涨幅
+                if ext_price > 0:
+                    effective_pct = ext_pct
+                    overnight_pct = ext_pct
+                else:
+                    effective_pct = 0.0
 
             df = compute_indicators(history_dict[ticker])
             history_dict[ticker] = df
@@ -4452,11 +4454,13 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
                         session_tag = "休市"
             effective_pct = pct_change
             overnight_pct = 0.0
-            if ext_price > 0 and session_code in ["PRE_MARKET", "POST_MARKET", "OVERNIGHT", "WEEKEND"]:
-                _base_pct = pct_change
-                effective_pct = ((1.0 + _base_pct / 100.0) * (1.0 + ext_pct / 100.0) - 1.0) * 100.0
-                overnight_pct = ext_pct
-                pct_change = effective_pct
+            if session_code in ["PRE_MARKET", "POST_MARKET", "OVERNIGHT", "WEEKEND"]:
+                # 扩展时段只看“最近一次正规盘收盘后”的纯变动，绝不叠加前一日白天涨幅
+                if ext_price > 0:
+                    effective_pct = ext_pct
+                    overnight_pct = ext_pct
+                else:
+                    effective_pct = 0.0
 
             df = compute_indicators(history_dict[ticker])
             history_dict[ticker] = df
