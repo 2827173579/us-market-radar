@@ -4,7 +4,7 @@
     "profit_factor": 1.45,
     "top_sector": "存储芯片 (⭐⭐⭐⭐⭐)",
     "top_feature": "SMH_IGV_Ratio_Bias (12.58%)",
-    "sync_time": "2026-11-12 17:30:53",
+    "sync_time": "2026-11-12 17:35:09",
     "data_mode": "Finnhub 秒级实时 (🌌 美股夜盘)",
     "is_realtime": false
   },
@@ -10659,7 +10659,11 @@
     "off_mean_chg": -4.32,
     "alert_text": "🚨 防御因子起飞 · 警惕机构盘中去杠杆踩踏 (+4.7%)",
     "banner_text": "🚨 防御因子起飞 · 警惕机构盘中去杠杆踩踏",
-    "badge": "badge-alert"
+    "badge": "badge-alert",
+    "session": "REGULAR",
+    "score_source": "spot_basket",
+    "components": {},
+    "skip_reason": ""
   },
   "time_cycle_projections": {
     "SOXL": {
