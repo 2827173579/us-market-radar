@@ -15,7 +15,8 @@ import sys
 import time
 import math
 import json
-from datetime import datetime
+from datetime import datetime, timedelta
+import threading
 from typing import Dict, Any, List, Optional, Tuple, Union
 import pandas as pd
 import numpy as np
@@ -1324,8 +1325,11 @@ def run_sentinel_scan(
 
 
 # -----------------------------------------------------------------------------
-# 每日 4 次精准时段定义 (开盘前10分、开盘后/盘中、尾盘后、夜盘)
+# 每日 6 个推送窗口。失败不锁；窗口结束后 12 小时内未推送则补发一次。
 # -----------------------------------------------------------------------------
+_SENTINEL_SEND_LOCK = threading.Lock()
+SENTINEL_CATCHUP_MINUTES = 12 * 60
+
 SENTINEL_SCHEDULE_SLOTS = [
     {
         "id": "pre_market",
@@ -1383,96 +1387,127 @@ def get_current_et_datetime() -> datetime:
     return datetime.now(ny_tz)
 
 
-def check_sentinel_schedule_window(now_dt: Optional[datetime] = None, force: bool = False) -> Tuple[bool, Optional[str], Optional[str]]:
+def _hm_to_minutes(hm: str) -> int:
+    hour, minute = hm.split(":")
+    return int(hour) * 60 + int(minute)
+
+
+def _sentinel_state_path() -> str:
+    return os.path.join(os.path.dirname(os.path.abspath(__file__)), ".discord_sentinel_state.json")
+
+
+def _load_sentinel_state() -> dict:
+    path = _sentinel_state_path()
+    if not os.path.exists(path):
+        return {}
+    try:
+        with open(path, "r", encoding="utf-8") as f:
+            data = json.load(f)
+        return data if isinstance(data, dict) else {}
+    except Exception:
+        return {}
+
+
+def _slot_is_tradable(slot_dt: datetime) -> bool:
+    """周五 20:00 后、周六、周日 20:00 前不发夜盘以外的休市窗口。"""
+    weekday = slot_dt.weekday()
+    hm = slot_dt.strftime("%H:%M")
+    if weekday == 5 or (weekday == 6 and hm < "20:00"):
+        return False
+    if weekday == 4 and hm >= "20:00":
+        return False
+    return True
+
+
+def _slot_already_pushed(state: dict, date_str: str, slot_id: str) -> bool:
+    pushed = (state.get("last_pushed_slots") or {}).get(date_str, [])
+    return slot_id in pushed
+
+
+def check_sentinel_schedule_window(now_dt: Optional[datetime] = None, force: bool = False):
     """
-    检查当前美东时间是否匹配 4 个指定推送窗口之一，且当日该窗口尚未推送过:
-    1. 🌅 开盘前十分钟 (09:20 ~ 09:30 ET)
-    2. ⚔️ 开盘后/盘中 (10:30 ~ 11:30 ET)
-    3. 🏁 尾盘后复盘 (16:05 ~ 16:30 ET)
-    4. 🌌 美股夜盘 (20:30 ~ 21:30 ET)
-    
-    返回: (should_push, slot_id, slot_name)
-    若 force=True (如命令行 --once)，则直接允许推送。
+    返回 (should_push, slot_id, slot_name, slot_date)。
+    当前落在窗口内且当日未成功推送过，则推送。
+    窗口已结束但 12 小时内仍未成功推送，按从早到晚补发最近漏掉的一档。
+    只有 Discord 确认成功才允许记锁。
     """
     if force:
-        return True, "manual_force", "⚡ 【手动即时量化巡检】"
+        return True, "manual_force", "⚡ 【手动即时量化巡检】", None
 
     now_et = now_dt or get_current_et_datetime()
-    weekday = now_et.weekday()  # 0=Mon, 4=Fri, 5=Sat, 6=Sun
+    weekday = now_et.weekday()
     hm = now_et.strftime("%H:%M")
-    date_str = now_et.strftime("%Y-%m-%d")
-
-    # 周末过滤 (周六全天休市；周日白天休市，周日 20:00 后夜盘开启除外)
     if weekday == 5 or (weekday == 6 and hm < "20:00"):
-        return False, None, None
+        return False, None, None, None
 
-    # 周五 20:00 之后夜盘休市
-    if weekday == 4 and hm >= "20:00":
-        return False, None, None
+    now_min = now_et.hour * 60 + now_et.minute
+    state = _load_sentinel_state()
+    today = now_et.strftime("%Y-%m-%d")
 
-    active_slot = None
     for slot in SENTINEL_SCHEDULE_SLOTS:
-        if slot["start_time"] <= hm < slot["end_time"]:
-            active_slot = slot
-            break
+        if not (slot["start_time"] <= hm < slot["end_time"]):
+            continue
+        slot_dt = now_et.replace(
+            hour=_hm_to_minutes(slot["start_time"]) // 60,
+            minute=_hm_to_minutes(slot["start_time"]) % 60,
+            second=0, microsecond=0,
+        )
+        if not _slot_is_tradable(slot_dt):
+            return False, None, None, None
+        if _slot_already_pushed(state, today, slot["id"]):
+            return False, slot["id"], slot["name"], today
+        return True, slot["id"], slot["name"], today
 
-    if not active_slot:
-        return False, None, None
+    pending = []
+    for day_offset in (0, 1):
+        day = now_et - timedelta(days=day_offset)
+        date_str = day.strftime("%Y-%m-%d")
+        for slot in SENTINEL_SCHEDULE_SLOTS:
+            end_min = _hm_to_minutes(slot["end_time"])
+            start_min = _hm_to_minutes(slot["start_time"])
+            if day_offset == 0:
+                if end_min > now_min:
+                    continue
+                age = now_min - end_min
+            else:
+                age = now_min + 1440 - end_min
+            if age < 0 or age > SENTINEL_CATCHUP_MINUTES:
+                continue
+            slot_dt = day.replace(hour=start_min // 60, minute=start_min % 60, second=0, microsecond=0)
+            if not _slot_is_tradable(slot_dt):
+                continue
+            if _slot_already_pushed(state, date_str, slot["id"]):
+                continue
+            pending.append((age, date_str, slot))
 
-    slot_id = active_slot["id"]
-    slot_name = active_slot["name"]
-
-    state_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), ".discord_sentinel_state.json")
-    state = {}
-    if os.path.exists(state_file):
-        try:
-            with open(state_file, "r", encoding="utf-8") as f:
-                state = json.load(f)
-        except Exception:
-            state = {}
-
-    pushed_map = state.get("last_pushed_slots", {})
-    today_pushed = pushed_map.get(date_str, [])
-
-    if slot_id in today_pushed:
-        # 当日该时段已成功推送过，严格去重避免刷屏
-        return False, slot_id, slot_name
-
-    return True, slot_id, slot_name
+    if not pending:
+        return False, None, None, None
+    pending.sort(key=lambda item: -item[0])
+    _age, date_str, slot = pending[0]
+    return True, slot["id"], slot["name"] + "（补发）", date_str
 
 
-def mark_sentinel_slot_pushed(slot_id: str, slot_name: str, now_dt: Optional[datetime] = None):
-    """记录成功推送的时段至 .discord_sentinel_state.json"""
+def mark_sentinel_slot_pushed(slot_id: str, slot_name: str, now_dt: Optional[datetime] = None, date_str: Optional[str] = None):
+    """只在 Discord 返回成功之后调用。date_str 用窗口所属的美东日期，避免跨日补发记错天。"""
     now_et = now_dt or get_current_et_datetime()
-    date_str = now_et.strftime("%Y-%m-%d")
+    if not date_str:
+        date_str = now_et.strftime("%Y-%m-%d")
     time_str = now_et.strftime("%Y-%m-%d %H:%M:%S")
 
-    state_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), ".discord_sentinel_state.json")
-    state = {}
-    if os.path.exists(state_file):
-        try:
-            with open(state_file, "r", encoding="utf-8") as f:
-                state = json.load(f)
-        except Exception:
-            state = {}
-
-    if "last_pushed_slots" not in state:
-        state["last_pushed_slots"] = {}
-    if date_str not in state["last_pushed_slots"]:
-        state["last_pushed_slots"][date_str] = []
-
+    state_file = _sentinel_state_path()
+    state = _load_sentinel_state()
+    state.setdefault("last_pushed_slots", {})
+    state["last_pushed_slots"].setdefault(date_str, [])
     if slot_id not in state["last_pushed_slots"][date_str]:
         state["last_pushed_slots"][date_str].append(slot_id)
-
-    if "history" not in state:
-        state["history"] = []
+    state.setdefault("history", [])
     state["history"].append({
         "slot_id": slot_id,
         "slot_name": slot_name,
-        "et_time": time_str
+        "et_time": time_str,
+        "slot_date": date_str,
     })
     state["history"] = state["history"][-100:]
-
     try:
         with open(state_file, "w", encoding="utf-8") as f:
             json.dump(state, f, indent=2, ensure_ascii=False)
@@ -1482,29 +1517,31 @@ def mark_sentinel_slot_pushed(slot_id: str, slot_name: str, now_dt: Optional[dat
 
 def run_sentinel_cycle_safe(macro_data=None, stocks_sorted=None, weather_info=None, now_str=None, scheduled_only: bool = False, force: bool = False):
     """
-    integrated_market_radar.py 联动的安全异步调用入口:
-    - 每日固定 4 次准时触发: 开盘前十分钟 (09:20 ET)、开盘后/盘中 (10:30 ET)、尾盘后 (16:05 ET)、夜盘 (20:30 ET)
-    - 当日每个窗口仅推一次，其余 60s 轮询周期 0 网络开销静默跳过
-    - 捕获所有网络与逻辑异常，安全隔离，绝不影响主雷达循环
+    每日 6 个美东窗口各成功推送一次。
+    Discord 失败或进程当时没在跑，都不记锁；结束后 12 小时内补发，从最早漏掉的一档开始。
+    同一时刻只允许一个线程发送，避免 15 秒一轮把 webhook 打到 429 后被误锁。
     """
+    if not _SENTINEL_SEND_LOCK.acquire(blocking=False):
+        return
     try:
         slot_id = "manual"
         slot_name = "⚡ 【即时量化哨兵巡检】"
+        slot_date = None
 
         if scheduled_only and not force:
-            should_push, s_id, s_name = check_sentinel_schedule_window()
+            should_push, s_id, s_name, slot_date = check_sentinel_schedule_window()
             if not should_push:
-                return  # 未到 4 个时段或当日该时段已推送，静默返回
+                return
             slot_id = s_id
             slot_name = s_name
 
         webhook_url = os.environ.get("DISCORD_WEBHOOK_URL", DISCORD_WEBHOOK_URL).strip()
         if not webhook_url:
-            print("[Discord Sentinel] DISCORD_WEBHOOK_URL not configured, skipping cycle.")
+            print("[Discord Sentinel] DISCORD_WEBHOOK_URL not configured, 本轮不锁，下轮重试。")
             return
 
         print(f"[*] 🚀 [Discord Sentinel] 触发推送: {slot_name}...")
-
+        ok = False
         if macro_data is not None and stocks_sorted is not None:
             items_map: Dict[str, Any] = {}
             if isinstance(macro_data, dict):
@@ -1527,7 +1564,6 @@ def run_sentinel_cycle_safe(macro_data=None, stocks_sorted=None, weather_info=No
                 r1d = float(item.get("rsi") or 50.0)
                 st = item.get("status") or evaluate_rsi_state(r4, r1d, active_p, poc)
                 disp = "BTC" if sym in ("BTC", "BTC-USD") else sym
-
                 tickers_res[sym] = {
                     "price": active_p,
                     "rsi_4h": r4,
@@ -1552,15 +1588,21 @@ def run_sentinel_cycle_safe(macro_data=None, stocks_sorted=None, weather_info=No
             }
             analysis = evaluate_cross_asset_resonance(analysis)
             payload_1, payload_2a, payload_2b = build_discord_payloads(analysis)
-            dispatch_discord_messages(webhook_url, payload_1, payload_2a, payload_2b)
+            ok = bool(dispatch_discord_messages(webhook_url, payload_1, payload_2a, payload_2b))
         else:
             run_sentinel_scan(dry_run=False, push_discord=True)
+            ok = True
 
-        if scheduled_only and slot_id and slot_id != "manual":
-            mark_sentinel_slot_pushed(slot_id, slot_name)
+        if not ok:
+            print(f"[!] ⚠️ [Discord Sentinel] {slot_name} 推送失败，不写锁，下一轮重试。")
+            return
+        if scheduled_only and slot_id and slot_id not in ("manual", "manual_force"):
+            mark_sentinel_slot_pushed(slot_id, slot_name, date_str=slot_date)
             print(f"[+] ✅ [Discord Sentinel] {slot_name} 成功推送完毕并记录状态锁。")
     except Exception as e:
         print(f"[!] ⚠️ Discord Sentinel cycle isolated exception: {e}")
+    finally:
+        _SENTINEL_SEND_LOCK.release()
 
 
 def main():
