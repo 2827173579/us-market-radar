@@ -725,7 +725,7 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 46
+      "short_rank": 45
     },
     {
       "rank": 3,
@@ -3125,7 +3125,7 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 22
+      "short_rank": 21
     },
     {
       "rank": 15,
@@ -4689,18 +4689,18 @@
       "predicted_win_rate_pct": 48.0,
       "calibrated_win_rate_pct": 55.4,
       "sector_pf": 1.5,
-      "target_profit_price": 175.35,
+      "target_profit_price": 174.82,
       "target_profit_pct": 6.0,
-      "stop_loss_price": 156.81,
-      "stop_loss_pct": 5.3,
+      "stop_loss_price": 156.34,
+      "stop_loss_pct": 5.2,
       "action": "🔥 恐慌衰竭·博弈空头回补 (压力位不过就跑)",
       "action_tag": "action-rebound",
       "model_raw_short_prob_pct": 51.9,
       "calibrated_short_win_rate_pct": 50.8,
       "short_entry_price": 163.59500122070312,
-      "short_target_profit_price": 149.86,
+      "short_target_profit_price": 149.41,
       "short_target_profit_pct": 9.5,
-      "short_stop_loss_price": 177.08,
+      "short_stop_loss_price": 176.55,
       "short_stop_loss_pct": 7.0,
       "dollar_pcr": 0.1,
       "pcr": 0.22,
@@ -4710,20 +4710,20 @@
       "iv_atm": 79.8,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "s1": 156.81,
-      "s2": 148.7,
-      "sl": 146.47,
-      "r1": 175.35,
-      "r2": 188.41,
+      "s1": 156.34,
+      "s2": 148.25,
+      "sl": 146.03,
+      "r1": 174.82,
+      "r2": 187.84,
       "near_stop_s1": true,
-      "near_stop_price": 156.81,
-      "scenario_script": "【空头回补剧本】依托 S1 ($156.81) 博反抽，极限插针底 S2 ($148.70)；上看 R1 ($175.35) 空头回补反抽(不过就跑)；跌破 S1 严格离场",
+      "near_stop_price": 156.34,
+      "scenario_script": "【空头回补剧本】依托 S1 ($156.34) 博反抽，极限插针底 S2 ($148.25)；上看 R1 ($174.82) 空头回补反抽(不过就跑)；跌破 S1 严格离场",
       "track": "Track B",
       "four_h_rsi": 41.4,
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": true,
-      "short_rank": 30
+      "short_rank": 29
     },
     "WDC": {
       "rank": 27,
@@ -4731,10 +4731,10 @@
       "sector_key": "Memory",
       "sector_cn": "存储芯片",
       "sector_rating": "⭐⭐⭐⭐⭐",
-      "latest_price": 307.5,
-      "current_price": 307.5,
-      "atr_pct": 8.95,
-      "bias_ma50": -22.62,
+      "latest_price": 306.0,
+      "current_price": 306.0,
+      "atr_pct": 8.99,
+      "bias_ma50": -23.0,
       "bias_ma20": -10.23,
       "low_prev": 276.16,
       "rsi_14": 41.7,
@@ -4744,8 +4744,8 @@
       "is_cooling_halt": false,
       "macro_temp": "🌧️ 暴雨空仓",
       "model_raw_prob_pct": 47.0,
-      "base_raw_prob_pct": 46.8,
-      "predicted_win_rate_pct": 46.8,
+      "base_raw_prob_pct": 46.7,
+      "predicted_win_rate_pct": 46.7,
       "calibrated_win_rate_pct": 55.2,
       "sector_pf": 1.84,
       "target_profit_price": 588.93,
@@ -6849,7 +6849,7 @@
       "rsi_14": 47.2,
       "is_broken": true,
       "is_etf": false,
-      "is_crash_halt": false,
+      "is_crash_halt": true,
       "is_cooling_halt": false,
       "macro_temp": "🌧️ 暴雨空仓",
       "model_raw_prob_pct": 52.8,
@@ -6946,7 +6946,7 @@
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 16
+      "short_rank": 15
     },
     {
       "rank": 81,
@@ -7801,7 +7801,7 @@
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": false,
-      "short_rank": 17
+      "short_rank": 16
     },
     {
       "rank": 96,
@@ -8029,7 +8029,7 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 48
+      "short_rank": 47
     },
     {
       "rank": 100,
