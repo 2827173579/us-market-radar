@@ -4,7 +4,7 @@
     "profit_factor": 1.41,
     "top_sector": "存储芯片 (⭐⭐⭐⭐⭐)",
     "top_feature": "TLT_Bias_MA50 (12.3%)",
-    "sync_time": "2026-11-12 14:02:36",
+    "sync_time": "2026-11-12 14:04:15",
     "data_mode": "Finnhub 秒级实时 (🌌 美股夜盘)",
     "is_realtime": false
   },
@@ -1140,7 +1140,7 @@
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 33,
+      "short_rank": 32,
       "near_stop_s1": true,
       "near_stop_price": 163.76
     },
@@ -1199,7 +1199,7 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 32,
+      "short_rank": 33,
       "near_stop_s1": true,
       "near_stop_price": 119.76
     }
@@ -1732,7 +1732,7 @@
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 33,
+      "short_rank": 32,
       "near_stop_s1": true,
       "near_stop_price": 163.76
     },
@@ -1791,7 +1791,7 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 32,
+      "short_rank": 33,
       "near_stop_s1": true,
       "near_stop_price": 119.76
     }
@@ -2916,7 +2916,7 @@
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 33,
+      "short_rank": 32,
       "near_stop_s1": true,
       "near_stop_price": 163.76
     },
@@ -2975,7 +2975,7 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 32,
+      "short_rank": 33,
       "near_stop_s1": true,
       "near_stop_price": 119.76
     },
@@ -9467,7 +9467,7 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 32,
+      "short_rank": 33,
       "near_stop_s1": true,
       "near_stop_price": 119.76
     },
@@ -18372,7 +18372,7 @@
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 33,
+      "short_rank": 32,
       "near_stop_s1": true,
       "near_stop_price": 163.76
     },
@@ -18431,7 +18431,7 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 32,
+      "short_rank": 33,
       "near_stop_s1": true,
       "near_stop_price": 119.76
     }
