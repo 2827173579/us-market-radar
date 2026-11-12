@@ -1703,6 +1703,11 @@ def send_discord_claw_alert(title, markdown_content, webhook_url=None):
     url = webhook_url or globals().get("DISCORD_CLAW_WEBHOOK_URL", "").strip()
     if not url:
         return False
+    # 防御因子卡片只允许走专用频道，严禁由 Claw/主预警频道夹带发送
+    _claw_blob = (title or "") + "\n" + (markdown_content or "")
+    if any(_k in _claw_blob for _k in ("防御因子背离哨", "防御/科技超额背离", "Flight Score", "防御因子背离")):
+        print("  [!] 拦截：防御因子卡片禁止通过 Claw/主预警频道发送")
+        return False
 
     # 1. 标题与状态智能着色
     color = 0xFF944D  # 默认橙色 (预警提示)
@@ -1806,6 +1811,7 @@ def send_discord_defensive_flight_alert(df_alert, live_lookup=None, update_time_
 
     def_str = " ｜ ".join(def_items) if def_items else "暂无分项明细"
     off_str = " ｜ ".join(off_items) if off_items else "暂无分项明细"
+    print(f"  [+] 防御因子真实成分: 防御 {len(def_items)} 只 / 进攻 {len(off_items)} 只")
     now_t = update_time_str or datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
     desc = f"""### {status_tag}
@@ -4586,12 +4592,8 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
         if not df_alert_push:
             import ml_predictor_5y
             df_alert_push = ml_predictor_5y.compute_defensive_flight_alert(live_lookup=live_lookup_df)
-        threading.Thread(
-            target=send_discord_defensive_flight_alert,
-            args=(df_alert_push, live_lookup_df, now_str),
-            daemon=True,
-            name="DefensiveFlightDiscordDaemon"
-        ).start()
+        # 同步发送：确保 --once 进程退出前真实防御卡片已完成送达专属频道
+        send_discord_defensive_flight_alert(df_alert_push, live_lookup_df, now_str)
     except Exception as df_err:
         print(f"  [!] 💬 防御因子背离推送启动异常: {df_err}")
 
@@ -4782,7 +4784,14 @@ def main():
                     ["git", "commit", "-m", f"⚡ [实盘同步] 第 {round_idx} 轮极速刷新 ({now_ts})"],
                     check=False, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL
                 )
+                _head_before = subprocess.run(["git", "rev-parse", "HEAD"], check=False, capture_output=True, text=True).stdout.strip()
                 subprocess.run(["git", "pull", "--rebase", "--autostash", "-X", "theirs", "origin", "main"], check=False, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+                _head_after = subprocess.run(["git", "rev-parse", "HEAD"], check=False, capture_output=True, text=True).stdout.strip()
+                if _head_before and _head_after and _head_before != _head_after:
+                    _changed = subprocess.run(["git", "diff", "--name-only", _head_before, _head_after], check=False, capture_output=True, text=True).stdout
+                    if any(_f.endswith(".py") for _f in _changed.splitlines()):
+                        print("[*] 检测到 git pull 更新了 .py 源码，立即热重启守护进程以加载新代码与 .env ...", flush=True)
+                        os.execv(sys.executable, [sys.executable] + sys.argv)
                 push_res = subprocess.run(["git", "push", "origin", "HEAD:main"], check=False, capture_output=True, text=True)
                 if push_res.returncode == 0:
                     print(f"[+] ✅ 成功推送第 {round_idx} 轮数据至 GitHub Pages (PAT 触发部署成功)！")
