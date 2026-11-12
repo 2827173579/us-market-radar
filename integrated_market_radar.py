@@ -4622,6 +4622,35 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
 # ==============================================================================
 # 九、 主入口与智能同步锁调度引擎 (3分钟自动轮询 + 手动刷新无缝重置)
 # ==============================================================================
+
+def maybe_refresh_daily_ml_panel():
+    """美股常规收盘后，每日自动触发一次日线面板增量刷新（仅一次/交易日）。"""
+    try:
+        try:
+            from zoneinfo import ZoneInfo
+            et_now = datetime.now(ZoneInfo("America/New_York"))
+        except Exception:
+            et_now = datetime.now()
+        if et_now.weekday() >= 5 or et_now.hour < 16:
+            return
+        day_s = et_now.strftime("%Y-%m-%d")
+        state_path = os.path.join(SCRATCH_DIR, "data_cache", ".last_daily_ml_refresh")
+        last_day = ""
+        if os.path.exists(state_path):
+            try:
+                last_day = open(state_path, encoding="utf-8").read().strip()
+            except Exception:
+                last_day = ""
+        if last_day == day_s:
+            return
+        print(f"[*] 美股收盘后日线面板自动增量刷新开始 ({day_s} ET)...")
+        subprocess.run([sys.executable, "ml_predictor_5y.py", "--refresh"], cwd=SCRATCH_DIR, check=False, timeout=900)
+        with open(state_path, "w", encoding="utf-8") as sf:
+            sf.write(day_s)
+        print("[+] 日线面板增量刷新完成。")
+    except Exception as _e:
+        print(f"[!] 日线面板自动刷新异常: {_e}")
+
 def main():
     # 检查是否为本地常驻自选盯盘 API 守护子进程 (--star-server-daemon)
     if "--star-server-daemon" in sys.argv:
@@ -4710,6 +4739,7 @@ def main():
             print(f"⏱️ [{now_ts}] [第 {round_idx} 轮] 执行全市场 {interval_sec} 秒极速同步与期权扫描...")
             print("-" * 75)
             try:
+                maybe_refresh_daily_ml_panel()
                 run_radar_cycle(is_first_run=False, round_idx=round_idx)
             except Exception as e:
                 print(f"[!] ⚠️ 守护进程自动拦截异常并继续运行: {e}")

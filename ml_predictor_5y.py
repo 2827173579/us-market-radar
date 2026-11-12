@@ -2098,11 +2098,16 @@ def _build_cycle_windows_from_projections(
                 filtered[-1] = cand
 
     cycle_windows = []
+    _seen_days = set()
     for item in filtered:
+        _day_label = item.get('day')
+        if not _day_label or _day_label in _seen_days:
+            continue
+        _seen_days.add(_day_label)
         cycle_windows.append({
             'type': item['type'],
             'date': item['date'],
-            'day': item['day'],
+            'day': _day_label,
             'price': item['price'],
             'desc': item['desc'],
             'tag': item.get('tag', '')
@@ -2150,7 +2155,19 @@ def generate_time_cycle_projections(
     if combined_panel is None or combined_panel.empty:
         return results
 
-    today_dt = datetime.now().date()
+    # 统一截断到最近一个已收盘美股交易日，严禁把当日未收盘/未来日期混入历史曲线
+    try:
+        _expected_last = _get_latest_expected_trading_day()
+        combined_panel = combined_panel.copy()
+        combined_panel['Date'] = pd.to_datetime(combined_panel['Date'])
+        combined_panel = combined_panel[combined_panel['Date'].dt.date <= _expected_last]
+    except Exception:
+        pass
+
+    try:
+        today_dt = _get_latest_expected_trading_day()
+    except Exception:
+        today_dt = datetime.now().date()
     panel_max_date = None
     if combined_panel is not None and not combined_panel.empty and 'Date' in combined_panel.columns:
         try:
@@ -2334,6 +2351,32 @@ def generate_time_cycle_projections(
                         best_period = f"{s_str} ~ {e_str}"
             analog_ret = best_r
             best_corr = max(0.50, best_c)
+
+        # 每只标的独立 Top-1 历史相似区间（即使联合路径可用，也不能复用大盘同一日期）
+        _target_win_ind = closes[-window_len:] if n >= window_len else closes
+        _w_len_ind = len(_target_win_ind)
+        if _w_len_ind >= 8:
+            _norm_target_ind = (_target_win_ind - np.mean(_target_win_ind)) / (np.std(_target_win_ind) + 1e-6)
+            _search_end_ind = min(max(1, n - _w_len_ind - forecast_days - (60 if n > _w_len_ind + forecast_days + 60 else 0)), n - _w_len_ind)
+            _best_c_ind = -1.0
+            _best_period_ind = best_period
+            for _i in range(0, _search_end_ind):
+                _cand = closes[_i:_i + _w_len_ind]
+                _std = np.std(_cand)
+                if _std < 1e-4 or len(_cand) != _w_len_ind:
+                    continue
+                _corr = float(np.corrcoef(_norm_target_ind, (_cand - np.mean(_cand)) / _std)[0, 1])
+                if _corr > _best_c_ind:
+                    _best_c_ind = _corr
+                    if 'Date' in sub.columns:
+                        _ds = sub.at[_i, 'Date']
+                        _de = sub.at[min(n - 1, _i + _w_len_ind - 1), 'Date']
+                        _s_str = _ds.strftime('%Y-%m-%d') if hasattr(_ds, 'strftime') else str(_ds)[:10]
+                        _e_str = _de.strftime('%Y-%m-%d') if hasattr(_de, 'strftime') else str(_de)[:10]
+                        _best_period_ind = f"{_s_str} ~ {_e_str}"
+            if _best_c_ind > -1:
+                best_corr = max(0.50, _best_c_ind)
+                best_period = _best_period_ind
 
         # 3. 真实融合: 0.55x James-Stein 样本外历史相似路径收缩 + 0.50x 纯零漂移 FFT 谐波振荡
         comb_ret = 0.55 * analog_ret + 0.50 * harm_osc
@@ -3427,9 +3470,14 @@ def generate_report_tables(
                 p_df = pd.read_parquet(cache_p)
         if p_df is not None and not p_df.empty:
             sc_by_tk = {r['ticker']: r for r in all_live_rows} if all_live_rows else {}
+            _cycle_targets = list(dict.fromkeys(
+                list(DEFAULT_TIME_CYCLE_TICKERS)
+                + list(EXTENDED_RADAR_SECTOR_MAP.keys())
+                + [r.get('ticker') for r in all_live_rows if isinstance(r, dict) and r.get('ticker')]
+            ))
             time_cycle_proj = generate_time_cycle_projections(
                 p_df,
-                target_tickers=list(DEFAULT_TIME_CYCLE_TICKERS),
+                target_tickers=_cycle_targets,
                 forecast_days=15,
                 scenario_map_by_ticker=sc_by_tk
             )
@@ -5190,6 +5238,17 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
         // Time-Cycle Projection Interactive Renderer
         const timeCycleData = {time_cycle_json_str};
         window.timeCycleData = timeCycleData;
+        // 动态填充全部可选标的，避免固定 21 只下拉框与真实数据脱节
+        (function initCycleSymbolOptions() {{
+            const sel = document.getElementById('cycleSymbolSelect');
+            if (!sel) return;
+            const keys = Object.keys(timeCycleData || {{}});
+            if (!keys.length) return;
+            const current = sel.value || 'SOXL';
+            sel.innerHTML = '<option value="' + (keys.includes('SOXL') ? 'SOXL' : keys[0]) + '">全部标的 (' + keys.length + '只)...</option>' +
+                keys.map(function(k) {{ return '<option value="' + k + '">' + k + '</option>'; }}).join('');
+            sel.value = keys.includes(current) ? current : (keys.includes('SOXL') ? 'SOXL' : keys[0]);
+        }})();
         let activeCycleSymbol = 'SOXL';
         let cycleViewMode = 'focus'; // 'focus' (推荐聚焦15日推演) or 'full' (全景35日)
         let cyclePanX = 0;
@@ -5587,7 +5646,7 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
                 let winDesc = '';
                 if (data.cycle_windows) {{
                     for (let w of data.cycle_windows) {{
-                        if (w.day === p.day) {{
+                        if (w.day === _canonDay || w.day === p.day) {{
                             isWin = true;
                             winType = w.type;
                             winDesc = w.desc;
@@ -5595,10 +5654,11 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
                         }}
                     }}
                 }}
+                const _canonDay = 'T+' + (idx + 1);
                 points.push({{
-                    day: p.day,
+                    day: _canonDay,
                     date: p.date,
-                    displayDate: `${{p.day}} (${{p.date ? p.date.slice(5) : ''}})`,
+                    displayDate: `${{_canonDay}} (${{p.date ? p.date.slice(5) : ''}})`,
                     price: Number(p.price),
                     isProj: true,
                     pct: p.pct,
@@ -6051,7 +6111,12 @@ def build_extended_live_features_df(
             cached_syms = set(ext_cached_df['Ticker'].unique())
             still_missing = [tk for tk in missing_syms if tk not in cached_syms]
             ext_max_date = ext_cached_df['Date'].max().date() if not ext_cached_df.empty else None
-            is_ext_fresh = (ext_max_date is not None and ext_max_date >= expected_latest_date)
+            try:
+                _main_max_date = pd.to_datetime(raw_panel['Date']).max().date() if 'Date' in raw_panel.columns else expected_latest_date
+            except Exception:
+                _main_max_date = expected_latest_date
+            _need_date = max(expected_latest_date, _main_max_date)
+            is_ext_fresh = (ext_max_date is not None and ext_max_date >= _need_date)
 
             if is_ext_fresh and not still_missing:
                 print(f"[+] ✅ 扩展标的缓存完整且新鲜: 共 {len(cached_syms)} 只标的 (最新: {ext_max_date})")
