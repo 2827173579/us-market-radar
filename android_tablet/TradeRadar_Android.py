@@ -14,6 +14,7 @@ import sys
 import time
 import json
 import socket
+import subprocess
 import threading
 import urllib.request
 import urllib.parse
@@ -54,6 +55,10 @@ PUSHPLUS_TOKEN = os.environ.get("PUSHPLUS_TOKEN", "").strip()
 PUSHPLUS_CHANNEL = os.environ.get("PUSHPLUS_CHANNEL", "clawbot").strip()
 DISCORD_WEBHOOK_URL = os.environ.get("DISCORD_WEBHOOK_URL", "").strip()
 DISCORD_CLAW_WEBHOOK_URL = os.environ.get("DISCORD_CLAW_WEBHOOK_URL", "").strip()
+DISCORD_DEFENSIVE_FLIGHT_WEBHOOK_URL = os.environ.get(
+    "DISCORD_DEFENSIVE_FLIGHT_WEBHOOK_URL",
+    "https://discord.com/api/webhooks/1569771433339392013/p6W3GQlp_WPEo91XN-2VSVUDJd1RokILpcXX955JPP3IgTLnYAgJm6MFfB2A__6lUs85"
+).strip()
 PORT = 8765
 
 # ------------------------------------------------------------------------------
@@ -305,9 +310,51 @@ def run_single_scan_cycle(round_idx=1):
     else:
         append_log(f"[+] 🛡️ 自选监控池价格均在安全运行区间内，暂无破位触发。")
 
+    # 5. 自动同步发布到 GitHub Pages (若处于 Git 仓库环境)
+    sync_to_github_pages(round_idx, now_str)
+
 # ------------------------------------------------------------------------------
 # 6. 后台守护线程调度器
 # ------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+# 5.5 GitHub Pages 自动同步引擎 (可选)
+# ------------------------------------------------------------------------------
+def sync_to_github_pages(round_idx: int, now_str: str):
+    """
+    可选：如果当前目录是 Git 仓库且配置了 GitHub 远端，
+    自动将最新的轮询数据与看板推送到 GitHub Pages，
+    使手机在出门在外（4G/5G 网络）也能随时访问 GitHub Pages 看盘。
+    """
+    try:
+        chk = subprocess.run(["git", "rev-parse", "--is-inside-work-tree"], capture_output=True, text=True, check=False)
+        if chk.returncode != 0:
+            return False
+
+        # 如果存在 index.html，更新其时间戳或写入最新静态数据
+        idx_file = os.path.join(PROJECT_DIR, "index.html")
+        if not os.path.exists(idx_file):
+            with open(idx_file, "w", encoding="utf-8") as f:
+                f.write(INDEX_HTML)
+
+        subprocess.run(["git", "add", "."], check=False, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        commit_res = subprocess.run(
+            ["git", "commit", "-m", f"⚡ [小米平板实盘同步] 第 {round_idx} 轮 ({now_str})"],
+            capture_output=True, text=True, check=False
+        )
+        if commit_res.returncode == 0 or "nothing to commit" in (commit_res.stdout + commit_res.stderr).lower():
+            push_res = subprocess.run(["git", "push", "origin", "HEAD:main"], capture_output=True, text=True, check=False)
+            if push_res.returncode == 0:
+                append_log(f"[+] 🌐 [GitHub Pages] 成功同步最新数据至云端！")
+                return True
+            else:
+                err_msg = push_res.stderr.strip()[:80]
+                if err_msg:
+                    append_log(f"[*] 🌐 [GitHub Pages] 推送提示: {err_msg}")
+    except Exception as e:
+        pass
+    return False
+
 def poller_daemon_thread():
     STATE.round_idx = 1
     append_log("🚀 小米平板 60 秒极速轮询守护引擎已正式启动！")

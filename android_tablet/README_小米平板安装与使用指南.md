@@ -55,3 +55,25 @@
    - 打开平板 **「设置」** $\rightarrow$ **「应用设置」** $\rightarrow$ **「应用管理」** $\rightarrow$ 找到 **Termux**；
    - **省电策略**：选择 **「无限制」**；
    - **自启动权限**：设置为 **「允许自启动」**。
+
+
+---
+
+## 🌐 进阶选配：让小米平板自动同步到 GitHub Pages（随时随地外网看盘）
+
+如果希望小米平板**彻底取代电脑**，并且即使出门在外、手机用 4G/5G 网络也能随时打开网页看盘：
+
+1. **在 Termux 中安装 Git**：
+   ```bash
+   pkg install git -y
+   ```
+2. **在 Termux 中配置仓库推送权限**（只需执行一次）：
+   ```bash
+   git config --global user.name "2827173579"
+   git config --global user.email "a18669358277@gmail.com"
+   ```
+3. **设置远端免密推送**（使用带有 Token 的远程地址）：
+   ```bash
+   git remote set-url origin https://2827173579:<YOUR_GITHUB_TOKEN>@github.com/2827173579/us-market-radar.git
+   ```
+4. **启动后**：`TradeRadar_Android.py` 会在每轮轮询完成后，自动将最新实盘推送到 GitHub，GitHub Pages（`https://2827173579.github.io/us-market-radar/`）将秒级同步更新！
