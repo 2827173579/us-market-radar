@@ -5641,6 +5641,7 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
             }});
 
             proj.forEach((p, idx) => {{
+                const _canonDay = 'T+' + (idx + 1);
                 let isWin = false;
                 let winType = '';
                 let winDesc = '';
@@ -5654,7 +5655,6 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
                         }}
                     }}
                 }}
-                const _canonDay = 'T+' + (idx + 1);
                 points.push({{
                     day: _canonDay,
                     date: p.date,
