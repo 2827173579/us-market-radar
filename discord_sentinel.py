@@ -1207,19 +1207,18 @@ def run_sentinel_scan(
             except Exception:
                 df_1d = pd.DataFrame()
 
-        if not df_1h.empty and len(df_1h) >= 2:
-            try:
-                active_price = float(df_1h["Close"].dropna().iloc[-1])
-            except Exception:
-                active_price = 100.0
-            df_4h = aggregate_1h_to_4h_df(df_1h, ticker=sym)
-            poc = compute_volume_profile_poc(df_1h)
-            sup, res, atr = compute_and_protect_1h_sr(df_1h, active_price, poc)
-        else:
-            active_price = 100.0
-            df_4h = pd.DataFrame()
-            poc = 100.0
-            sup, res, atr = compute_and_protect_1h_sr(pd.DataFrame(), active_price, poc)
+        if df_1h.empty or len(df_1h) < 2 or "Close" not in df_1h.columns:
+            continue
+        try:
+            _close_valid = df_1h["Close"].dropna()
+            active_price = float(_close_valid.iloc[-1]) if not _close_valid.empty else float("nan")
+        except Exception:
+            continue
+        if not math.isfinite(active_price) or active_price <= 0:
+            continue
+        df_4h = aggregate_1h_to_4h_df(df_1h, ticker=sym)
+        poc = compute_volume_profile_poc(df_1h)
+        sup, res, atr = compute_and_protect_1h_sr(df_1h, active_price, poc)
 
         if not df_4h.empty and len(df_4h) >= 14:
             rsi_4h_s = compute_series_rsi(df_4h["Close"], 14)
@@ -1283,6 +1282,7 @@ def run_sentinel_scan(
             "resistance": res,
             "status": status,
             "display_name": disp,
+            "price_source": "fetched",
             "is_cooling": is_cooling,
             "is_focus": is_focus_ticker({"status": status})
         }
@@ -1515,6 +1515,33 @@ def mark_sentinel_slot_pushed(slot_id: str, slot_name: str, now_dt: Optional[dat
         print(f"[!] Failed to write sentinel state: {e}")
 
 
+def _sentinel_valid_price(item):
+    """只接受快照里真实存在且 >0 的有限 last/active_price。"""
+    if not isinstance(item, dict):
+        return None
+    for key in ("last", "active_price"):
+        try:
+            v = float(item.get(key))
+            if math.isfinite(v) and v > 0:
+                return v
+        except Exception:
+            continue
+    return None
+
+
+def _sentinel_snapshot_item(items_map, sym):
+    aliases = [sym]
+    if sym == "BTC-USD":
+        aliases.insert(0, "BTC")
+    elif sym == "BTC":
+        aliases.insert(0, "BTC-USD")
+    for key in aliases:
+        item = items_map.get(key)
+        if _sentinel_valid_price(item) is not None:
+            return item, key
+    return None, None
+
+
 def run_sentinel_cycle_safe(macro_data=None, stocks_sorted=None, weather_info=None, now_str=None, scheduled_only: bool = False, force: bool = False):
     """
     每日 6 个美东窗口各成功推送一次。
@@ -1554,9 +1581,13 @@ def run_sentinel_cycle_safe(macro_data=None, stocks_sorted=None, weather_info=No
                         items_map[s["ticker"]] = s
 
             tickers_res: Dict[str, Any] = {}
+            missing_syms = []
             for sym in ALL_SENTINEL_TICKERS:
-                item = items_map.get(sym, {})
-                active_p = float(item.get("active_price") or item.get("last") or 100.0)
+                item, matched_key = _sentinel_snapshot_item(items_map, sym)
+                active_p = _sentinel_valid_price(item)
+                if active_p is None:
+                    missing_syms.append(sym)
+                    continue
                 poc = float(item.get("fib_poc") or item.get("poc") or active_p)
                 s = float(item.get("support") or item.get("fib_low") or round(active_p * 0.98, 2))
                 r = float(item.get("resistance") or item.get("fib_high") or round(active_p * 1.02, 2))
@@ -1572,8 +1603,20 @@ def run_sentinel_cycle_safe(macro_data=None, stocks_sorted=None, weather_info=No
                     "support": s,
                     "resistance": r,
                     "status": st,
-                    "display_name": disp
+                    "display_name": disp,
+                    "price_source": "snapshot"
                 }
+
+            # 仅对快照中真正缺失的代码补抓真实 1H/1D 数据，复用 run_sentinel_scan 指标计算
+            if missing_syms:
+                try:
+                    fetched = fetch_sentinel_market_data(missing_syms)
+                    fetched_analysis = run_sentinel_scan(dry_run=True, push_discord=False, market_data=fetched)
+                    for sym in missing_syms:
+                        if sym in fetched_analysis.get("tickers", {}):
+                            tickers_res[sym] = fetched_analysis["tickers"][sym]
+                except Exception as e:
+                    print(f"[!] [Discord Sentinel] 缺失代码补抓失败: {e}")
 
             factor_y = compute_factor_y(tickers_res)
             analysis = {
