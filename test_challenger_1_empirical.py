@@ -346,7 +346,7 @@ class TestTable4DynamicTargetDiversity(unittest.TestCase):
         Feed Table 4 with 10 high-volatility stocks with different ATRs (from 4.5% to 9.5%).
         Verify that target profit percentages and stop loss percentages are all unique.
         """
-        tickers = ['CRWV', 'NBIS', 'APLD', 'AAOI', 'COHR', 'LITE', 'MRVL', 'MSTR', 'FLY', 'COIN']
+        tickers = ['CRWV', 'NBIS', 'APLD', 'AAOI', 'COHR', 'LITE', 'MRVL', 'MSTR', 'MARA', 'COIN']
         atrs = [4.5, 5.2, 5.8, 6.4, 7.1, 7.9, 8.4, 9.0, 9.5, 10.0]
         feature_cols = ['feat1', 'feat2', 'feat3', 'feat4', 'feat5']
 
