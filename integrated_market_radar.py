@@ -191,7 +191,8 @@ DISCORD_CLAW_WEBHOOK_URL = os.environ.get(
     os.environ.get("DISCORD_ALERT_WEBHOOK_URL", "")
 ).strip()
 DISCORD_DEFENSIVE_FLIGHT_WEBHOOK_URL = os.environ.get(
-    "DISCORD_DEFENSIVE_FLIGHT_WEBHOOK_URL", ""
+    "DISCORD_DEFENSIVE_FLIGHT_WEBHOOK_URL",
+    "https://discord.com/api/webhooks/1569771433339392013/p6W3GQlp_WPEo91XN-2VSVUDJd1RokILpcXX955JPP3IgTLnYAgJm6MFfB2A__6lUs85"
 ).strip()
 
 # ------------------------------------------------------------------------------
@@ -1761,8 +1762,11 @@ def send_discord_defensive_flight_alert(df_alert, live_lookup=None, update_time_
     if not url:
         load_env_file()
         url = os.environ.get("DISCORD_DEFENSIVE_FLIGHT_WEBHOOK_URL", "").strip()
-    if not url:
-        return False
+    # 频道严格校验与兜底保底：防御因子绝不串台至其他频道
+    # 必须指向【防御因子背离百分比】专属 Webhook (ID: 1569771433339392013 / Channel ID: 1569771329199022150)
+    target_def_webhook = "https://discord.com/api/webhooks/1569771433339392013/p6W3GQlp_WPEo91XN-2VSVUDJd1RokILpcXX955JPP3IgTLnYAgJm6MFfB2A__6lUs85"
+    if not url or "1569762886996197499" in url or "1569506393650634834" in url or "1569534508212944997" in url:
+        url = target_def_webhook
 
     is_alert = bool(df_alert.get("is_alert", False))
     score = float(df_alert.get("flight_score", 0.0))

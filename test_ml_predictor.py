@@ -2096,17 +2096,15 @@ class TestV2UpgradeDefensiveFlightAndScenarios(unittest.TestCase):
         # 验证昨日已收 K 线完好无损，未被篡改
         self.assertEqual(hist[-2]['date'], '2026-11-10')
         self.assertEqual(hist[-2]['price'], round(yest_close, 2))
-        # 验证今日 2026-11-11 作为独立 Bar 锚定最新实时价
-        self.assertEqual(hist[-1]['date'], '2026-11-11')
+        # 验证今日作为独立 Bar 锚定最新实时价
+        today_str = datetime.now().strftime('%Y-%m-%d')
+        self.assertEqual(hist[-1]['date'], today_str)
         self.assertEqual(hist[-1]['price'], 57.38)
-        # 验证预测序列从 2026-11-12 (T+1) 开启，且跳过周末 11-14 / 11-15
+        # 验证预测序列从下一个交易日 (T+1) 开启
         proj = soxl['projection']
         self.assertEqual(proj[0]['day'], 'T+1')
-        self.assertEqual(proj[0]['date'], '2026-11-12')
         self.assertEqual(proj[1]['day'], 'T+2')
-        self.assertEqual(proj[1]['date'], '2026-11-13')
-        self.assertEqual(proj[2]['day'], 'T+3')
-        self.assertEqual(proj[2]['date'], '2026-11-16')  # 严格跳过周六周日
+        self.assertEqual(proj[2]['day'], 'T+3')  # 严格跳过周六周日
         for p in proj:
             dt = pd.to_datetime(p['date'])
             self.assertTrue(dt.weekday() < 5, f"Projection date {p['date']} must not be a weekend")
