@@ -1,8 +1,23 @@
 {
   "schema_version": 3,
-  "updated_at": 1794526108.2642686,
+  "updated_at": 1794527913.747527,
   "data": {
     "QQQ": {
+      "has_options": false
+    },
+    "SPY": {
+      "has_options": false
+    },
+    "DIA": {
+      "has_options": false
+    },
+    "IWM": {
+      "has_options": false
+    },
+    "SMH": {
+      "has_options": false
+    },
+    "SOXX": {
       "has_options": false
     },
     "SOXL": {
@@ -173,28 +188,13 @@
     "MSTR": {
       "has_options": false
     },
-    "DIA": {
-      "has_options": false
-    },
     "COIN": {
       "has_options": false
     },
     "ORCL": {
       "has_options": false
     },
-    "IWM": {
-      "has_options": false
-    },
-    "SPY": {
-      "has_options": false
-    },
-    "SOXX": {
-      "has_options": false
-    },
     "CCXI": {
-      "has_options": false
-    },
-    "SMH": {
       "has_options": false
     },
     "LLY": {
