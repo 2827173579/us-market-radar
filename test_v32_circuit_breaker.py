@@ -133,6 +133,7 @@ def run_evaluate_intraday_entry(
     prev_crash_body: float = 0.0,
     prev_crash_close: float = 0.0,
     session_code: str = "REGULAR",
+    ticker: str = "",
 ) -> Dict[str, Any]:
     """Helper to dispatch evaluate_intraday_entry according to PROJECT.md interface contract."""
     info = intra_info.copy() if intra_info is not None else {}
@@ -169,6 +170,7 @@ def run_evaluate_intraday_entry(
             prev_crash_body=prev_crash_body,
             prev_crash_close=prev_crash_close,
             session_code=session_code,
+            ticker=ticker,
         )
     except TypeError as te:
         if "unexpected keyword argument" in str(te):
@@ -884,18 +886,53 @@ class TestV32CircuitBreaker(unittest.TestCase):
         self.assertNotIn("超跌右侧博反抽", res.get("intraday_status_text", ""))
 
     def test_scenario_13_broken_pit_high_elasticity_rebound_allowed(self):
-        """高弹性标的+右侧企稳仍允许短线博反抽，止损严格控制在-2.5%~-4.0%。"""
+        """未点名个股走薄盘口档，止损落在 -2.2%~-3.2%，且在 VWAP 下方。"""
         res = run_evaluate_intraday_entry(
             active_price=100.0, fib_low=95.0, fib_high=110.0, ma50=105.0,
             is_pit=False, is_stop=True, dist_to_pit=-8.0,
             intra_info=self._broken_pit_intra_info(),
             earnings_info={}, atr=4.0, daily_rsi=38.0, pct_change=-2.0,
-            rth_high=101.0, ema5=99.0,
+            rth_high=101.0, ema5=99.0, ticker="LITE",
         )
         self.assertTrue(res.get("broken_rebound_ready"))
         self.assertIn("超跌右侧博反抽", res.get("intraday_status_text", ""))
-        self.assertLessEqual(res.get("stop_loss_pct"), -2.5)
-        self.assertGreaterEqual(res.get("stop_loss_pct"), -4.0)
+        self.assertLessEqual(res.get("stop_loss_pct"), -2.2)
+        self.assertGreaterEqual(res.get("stop_loss_pct"), -3.2)
+        self.assertLess(res.get("entry_stop_loss"), res.get("vwap"))
+
+    def test_scenario_14_bounce_stop_bands_and_vwap_reanchor(self):
+        """五档带宽，以及现价离失效位超过上限时不上移止损、改等回踩 VWAP。"""
+        base = dict(
+            fib_low=95.0, fib_high=110.0, ma50=105.0, is_pit=False, is_stop=True,
+            dist_to_pit=-8.0, earnings_info={}, atr=4.0, daily_rsi=38.0, pct_change=-2.0,
+            rth_high=101.0, ema5=99.0,
+        )
+        near = dict(self._broken_pit_intra_info())
+        near["vwap"] = 99.2
+        bands = {
+            "QQQ": (-1.3, -0.8),
+            "SOXX": (-2.0, -1.2),
+            "SOXL": (-2.6, -1.6),
+            "NVDA": (-2.4, -1.6),
+            "LITE": (-3.2, -2.2),
+        }
+        for tk, (floor, ceil) in bands.items():
+            res = run_evaluate_intraday_entry(active_price=100.0, ticker=tk, intra_info=near, **base)
+            self.assertIn("超跌右侧博反抽", res.get("intraday_status_text", ""), tk)
+            self.assertGreaterEqual(res.get("stop_loss_pct"), floor, tk)
+            self.assertLessEqual(res.get("stop_loss_pct"), ceil, tk)
+            self.assertLess(res.get("entry_stop_loss"), near["vwap"], tk)
+
+        far_info = dict(self._broken_pit_intra_info())
+        far_info["vwap"] = 96.0
+        far_info["low_5m"] = 95.5
+        far = run_evaluate_intraday_entry(
+            active_price=100.0, ticker="SOXL", intra_info=far_info, **{k: v for k, v in base.items() if k != "intra_info"}
+        )
+        self.assertIn("偏离失效位过远", far.get("intraday_status_text", ""))
+        self.assertFalse(far.get("intraday_entry_ready"))
+        self.assertLessEqual(far.get("optimal_limit"), 96.0)
+        self.assertLess(far.get("entry_stop_loss"), 96.0)
 
 
 

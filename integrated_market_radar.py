@@ -752,6 +752,7 @@ def fetch_intraday_5m_and_ext_data(tickers):
                     "rvol_5m": round(rvol_5m, 2),
                     "is_5m_green": is_5m_green,
                     "is_5m_higher_low": is_5m_higher_low,
+                    "low_5m": round(float(l.iloc[-1]), 4) if len(l) else round(float(c.iloc[-1]), 4),
                     "rth_low": round(rth_low, 2),
                     "rth_high": round(rth_high, 2),
                     "rth_close": round(rth_close, 4),
@@ -1307,6 +1308,53 @@ def load_ai_levels_map():
     return levels
 
 
+_BOUNCE_STOP_BROAD_1X = frozenset({"QQQ", "QQQM", "SPY", "VOO", "IVV", "IWM", "DIA", "QQQI"})
+_BOUNCE_STOP_SECTOR_1X = frozenset({"SOXX", "SMH", "IGV", "XLK"})
+_BOUNCE_STOP_LEVERED = frozenset({
+    "SOXL", "SOXS", "TQQQ", "SQQQ", "KORU", "QLD", "SSO", "UPRO", "SPXU",
+    "TNA", "TZA", "TECL", "TECS", "NVDL", "NVDX", "MSTU", "MSTZ", "TSLL", "CONL",
+})
+_BOUNCE_STOP_THICK = frozenset({
+    "NVDA", "AMD", "AVGO", "TSM", "ASML", "AMAT", "MSFT", "AAPL",
+    "GOOGL", "GOOG", "META", "AMZN", "ORCL", "NOW",
+})
+
+
+def _bounce_rebound_stop_band(ticker: str):
+    """5 档博反抽止损：返回 (最小距离%, 最大距离%, 失效位下方缓冲垫%)。未点名的个股走薄盘口档。"""
+    tk = str(ticker or "").upper().strip()
+    if tk in _BOUNCE_STOP_BROAD_1X:
+        return 0.8, 1.3, 0.15
+    if tk in _BOUNCE_STOP_SECTOR_1X:
+        return 1.2, 2.0, 0.20
+    if tk in _BOUNCE_STOP_LEVERED:
+        return 1.6, 2.6, 0.15
+    if tk in _BOUNCE_STOP_THICK:
+        return 1.6, 2.4, 0.25
+    return 2.2, 3.2, 0.40
+
+
+def _stop_below_invalidation(entry: float, invalidation: float, lo: float, hi: float, pad: float):
+    """止损必须留在失效位下方。能落进 [lo, hi] 就落进去；落不进就保持在失效位下，不许上移穿过它。"""
+    entry = float(entry) if entry and entry > 0 else float(invalidation)
+    invalidation = float(invalidation)
+    pad_stop = invalidation * (1.0 - max(pad, 0.05) / 100.0)
+    if pad_stop >= invalidation:
+        pad_stop = invalidation * 0.999
+    tight = entry * (1.0 - lo / 100.0)
+    wide = entry * (1.0 - hi / 100.0)
+    stop_px = min(pad_stop, tight)
+    inside = stop_px >= wide - 1e-9
+    if not inside:
+        stop_px = pad_stop
+    if stop_px >= invalidation:
+        stop_px = invalidation * (1.0 - max(pad, 0.05) / 100.0)
+        inside = False
+    if stop_px >= entry:
+        stop_px = entry * (1.0 - lo / 100.0)
+    return stop_px, inside
+
+
 def evaluate_intraday_entry(
     active_price, fib_low, fib_high, ma50, is_pit, is_stop, dist_to_pit, intra_info,
     earnings_info=None, rs_20d=0.0, atr=0.0, daily_rsi=50.0, options_info=None,
@@ -1536,42 +1584,60 @@ def evaluate_intraday_entry(
     intraday_entry_ready = False
     if is_stop:
         if broken_rebound_ready:
-            intraday_entry_ready = True
-            support_anchor = max(vwap, s1_support) if s1_support > 0 else vwap
-            support_floor = min(vwap, s1_support) if s1_support > 0 else vwap
-            chase_high = bool(vwap > 0 and active_price > vwap * 1.02)
-            if chase_high:
-                optimal_limit = round(min(active_price, support_anchor * 1.008), 2)
-                limit_note = "回踩VWAP/日内支撑短线单 · 已冲高不追现价"
+            lo, hi, pad = _bounce_rebound_stop_band(ticker)
+            try:
+                low_5m = float(intra_info.get("low_5m") or 0.0)
+            except Exception:
+                low_5m = 0.0
+            anchors = []
+            if vwap > 0 and vwap < active_price:
+                anchors.append(float(vwap))
+            if low_5m > 0 and low_5m < active_price:
+                anchors.append(low_5m)
+            if anchors:
+                invalidation = max(anchors)
+            elif vwap > 0:
+                invalidation = float(min(vwap, active_price))
             else:
+                invalidation = active_price * (1.0 - lo / 100.0)
+            gap_pct = ((active_price - invalidation) / active_price * 100.0) if active_price > 0 else 0.0
+            too_far = bool(gap_pct > hi)
+            if too_far and vwap > 0:
+                optimal_limit = round(min(active_price, float(vwap)), 2)
+                limit_note = "偏离失效位过远·等回踩 VWAP 再介入"
+                intraday_entry_ready = False
+                intraday_status_text = "偏离失效位过远·等回踩 VWAP 再介入"
+            else:
+                if active_price > invalidation * 1.008:
+                    optimal_limit = round(min(active_price, invalidation * 1.008), 2)
+                    limit_note = "回踩VWAP/5m企稳低点短线单 · 已冲高不追现价"
+                else:
+                    optimal_limit = round(active_price, 2)
+                    limit_note = "回踩VWAP/5m企稳低点短线单"
+                intraday_entry_ready = True
+                intraday_status_text = "⚡ 超跌右侧博反抽 (破坑深调·快进快出)"
+            if optimal_limit <= 0:
                 optimal_limit = round(active_price, 2)
-                limit_note = "回踩VWAP/日内支撑短线单"
-            # 同时满足：止损压在 VWAP/S1 下方，且挂单价亏损≤4%
-            if support_floor > 0:
-                _max_entry_for_4pct = (support_floor * 0.985) / 0.96
-                if optimal_limit > _max_entry_for_4pct:
-                    optimal_limit = round(_max_entry_for_4pct, 2)
-                    limit_note = "回踩VWAP/日内支撑短线单 · 已冲高不追现价"
-            stop_candidates = [optimal_limit * 0.965]
-            if atr > 0:
-                stop_candidates.append(optimal_limit - 1.2 * atr)
-            if s1_support > 0:
-                stop_candidates.append(s1_support * 0.99)
-            raw_short_stop = max(stop_candidates)
-            if support_floor > 0:
-                raw_short_stop = min(raw_short_stop, support_floor * 0.985)
-            raw_short_pct = ((optimal_limit - raw_short_stop) / optimal_limit) * 100.0 if optimal_limit > 0 else 3.5
-            short_stop_pct = min(4.0, max(2.5, raw_short_pct))
-            entry_stop_loss = round(optimal_limit * (1.0 - short_stop_pct / 100.0), 2)
-            if support_floor > 0 and entry_stop_loss > support_floor * 0.985:
-                entry_stop_loss = round(support_floor * 0.985, 2)
-                short_stop_pct = ((optimal_limit - entry_stop_loss) / optimal_limit) * 100.0 if optimal_limit > 0 else short_stop_pct
-            stop_loss_pct = -round(short_stop_pct, 1)
-            intraday_status_text = "⚡ 超跌右侧博反抽 (破坑深调·快进快出)"
-            intraday_reason = f"日线仍处黄金坑(${fib_low:.2f})下方，但日内已站稳VWAP(${vwap:.2f})/支撑企稳；仅限短线博空头回补反弹，压力位(R1 ${r1_resist:.2f})不过即走，严禁中线死扛"
-            if chase_high or rsi_5m >= 68.0:
+            stop_px, inside_band = _stop_below_invalidation(optimal_limit, invalidation, lo, hi, pad)
+            if not inside_band:
+                if vwap > 0 and optimal_limit > float(vwap):
+                    optimal_limit = round(min(active_price, float(vwap)), 2)
+                    stop_px, inside_band = _stop_below_invalidation(optimal_limit, invalidation, lo, hi, pad)
+                intraday_entry_ready = False
+                intraday_status_text = "偏离失效位过远·等回踩 VWAP 再介入"
+                limit_note = "偏离失效位过远·等回踩 VWAP 再介入"
+            entry_stop_loss = round(stop_px, 2)
+            if entry_stop_loss >= invalidation:
+                entry_stop_loss = round(invalidation * (1.0 - max(pad, 0.05) / 100.0), 2)
+            stop_loss_pct = round((entry_stop_loss - optimal_limit) / optimal_limit * 100.0, 1) if optimal_limit > 0 else -lo
+            intraday_reason = (
+                f"日线仍处黄金坑(${fib_low:.2f})下方，失效位 VWAP/5m低点 ${invalidation:.2f}；"
+                f"止损画在失效位下方 ${entry_stop_loss:.2f}（{stop_loss_pct:.1f}%），"
+                f"压力位(R1 ${r1_resist:.2f})不过即走，严禁中线死扛"
+            )
+            if intraday_entry_ready and (active_price > invalidation * 1.008 or rsi_5m >= 68.0):
                 limit_note += " · 5m RSI/冲高提醒: 切勿追高现价"
-                intraday_reason += " ｜ 日内已冲高偏离VWAP，切勿追高现价，耐心等回踩低吸"
+                intraday_reason += " ｜ 日内已冲高偏离失效位，切勿追高现价，耐心等回踩低吸"
         else:
             intraday_entry_ready = False
             optimal_limit = 0.0
