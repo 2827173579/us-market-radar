@@ -969,8 +969,7 @@ def sync_to_github_pages(round_idx: int, now_str: str, quotes: dict = None, flig
                     pred_content
                 )
 
-                # B. 替换盘口时段
-                session_name, _ = get_market_session_state()
+                # B. 替换盘口时段。时段在本轮开头已经算好，这里直接用。
                 pred_content = re.sub(
                     r"<span>Finnhub\s*秒级实时\s*\([^)]*\)</span>",
                     f"<span>Finnhub 秒级实时 ({session_name})</span>",
