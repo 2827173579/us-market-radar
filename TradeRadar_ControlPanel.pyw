@@ -1,3 +1,4 @@
+import ctypes
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
@@ -15,6 +16,8 @@ import json
 import socket
 import threading
 import subprocess
+SILENT_WIN_FLAGS = 0x08000000 if sys.platform == "win32" else 0
+PID_FILE = os.path.join(PROJECT_DIR, ".radar_daemon.pid")
 import webbrowser
 from datetime import datetime
 import tkinter as tk
@@ -55,16 +58,52 @@ def is_radar_port_listening(port=8765):
         return False
 
 
+def is_pid_alive(pid: int) -> bool:
+    """Windows 原生 API 检查进程存活，0 开销，绝不闪现任何控制台窗口"""
+    if not pid or pid <= 0:
+        return False
+    if sys.platform != "win32":
+        try:
+            os.kill(pid, 0)
+            return True
+        except OSError:
+            return False
+    try:
+        PROCESS_QUERY_LIMITED_INFORMATION = 0x1000
+        STILL_ACTIVE = 259
+        kernel32 = ctypes.windll.kernel32
+        h_process = kernel32.OpenProcess(PROCESS_QUERY_LIMITED_INFORMATION, False, pid)
+        if not h_process:
+            return False
+        exit_code = ctypes.c_ulong()
+        success = kernel32.GetExitCodeProcess(h_process, ctypes.byref(exit_code))
+        kernel32.CloseHandle(h_process)
+        return bool(success and exit_code.value == STILL_ACTIVE)
+    except Exception:
+        return False
+
+
 def get_running_radar_processes():
-    """获取正在运行的雷达进程详细信息"""
-    all_pids = []
+    """获取正在运行的雷达进程详细信息 (优先通过 PID 缓存 + 原生 API 探测，0 弹窗)"""
     loop_pids = []
+    if os.path.exists(PID_FILE):
+        try:
+            with open(PID_FILE, "r", encoding="utf-8") as pf:
+                val = pf.read().strip()
+                if val.isdigit():
+                    cand_pid = int(val)
+                    if is_pid_alive(cand_pid):
+                        loop_pids.append(cand_pid)
+        except Exception:
+            pass
+
+    all_pids = list(loop_pids)
     try:
         cmd = [
             "powershell", "-NoProfile", "-NonInteractive", "-Command",
             "Get-CimInstance Win32_Process -Filter \"Name like 'python%'\" | ForEach-Object { \"$($_.ProcessId)|$($_.CommandLine)\" }"
         ]
-        res = subprocess.run(cmd, capture_output=True, text=True, timeout=5)
+        res = subprocess.run(cmd, capture_output=True, text=True, timeout=5, creationflags=SILENT_WIN_FLAGS)
         for line in res.stdout.strip().splitlines():
             if "integrated_market_radar.py" in line:
                 parts = line.split("|", 1)
@@ -72,8 +111,9 @@ def get_running_radar_processes():
                 cmdline = parts[1].strip() if len(parts) > 1 else ""
                 if pid_str.isdigit():
                     pid = int(pid_str)
-                    all_pids.append(pid)
-                    if "--loop-daemon" in cmdline:
+                    if pid not in all_pids:
+                        all_pids.append(pid)
+                    if "--loop-daemon" in cmdline and pid not in loop_pids:
                         loop_pids.append(pid)
     except Exception:
         pass
@@ -323,7 +363,7 @@ class TradeRadarControlApp:
 
             try:
                 cmd = ["powershell", "-NoProfile", "-NonInteractive", "-Command", "Get-CimInstance Win32_Process -Filter \"Name like 'python%'\" | Where-Object { $_.CommandLine -like '*integrated_market_radar.py*' } | ForEach-Object { Stop-Process -Id $_.ProcessId -Force }"]
-                subprocess.run(cmd, capture_output=True, timeout=8)
+                subprocess.run(cmd, capture_output=True, timeout=8, creationflags=SILENT_WIN_FLAGS)
                 time.sleep(1)
                 self.append_log("🛑 所有后台雷达进程已全部终止，端口 8765 已释放。")
             except Exception as e:
@@ -345,8 +385,7 @@ class TradeRadarControlApp:
                     stderr=subprocess.STDOUT,
                     text=True,
                     encoding="utf-8",
-                    errors="replace"
-                )
+                    errors="replace", creationflags=SILENT_WIN_FLAGS)
                 for line in proc.stdout:
                     line = line.strip()
                     if line:
@@ -394,8 +433,7 @@ class TradeRadarControlApp:
                     stderr=subprocess.STDOUT,
                     text=True,
                     encoding="utf-8",
-                    errors="replace"
-                )
+                    errors="replace", creationflags=SILENT_WIN_FLAGS)
                 for line in proc.stdout:
                     line = line.strip()
                     if line:

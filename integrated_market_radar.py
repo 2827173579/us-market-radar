@@ -13,6 +13,7 @@ Integrated Market Radar & Futu Pro Terminal - 37 标的全量量化终端与司�
 
 import sys
 import subprocess
+WIN_NO_WINDOW = 0x08000000 if sys.platform == "win32" else 0
 import os
 import time
 import random
@@ -4804,7 +4805,7 @@ def maybe_refresh_daily_ml_panel():
             [sys.executable, "ml_predictor_5y.py", "--refresh"],
             cwd=SCRATCH_DIR,
             check=False,
-            timeout=1800,
+            timeout=1800, creationflags=WIN_NO_WINDOW
         )
         if proc.returncode == 0 and _marker_day() == day_s:
             state["success_day"] = day_s
@@ -4887,8 +4888,8 @@ def main():
             # 🛡️ 云端 Actions 互斥检测：如果由 GITHUB_ACTIONS 运行，检查是否有本地开发者的最新提交 (<15分钟)
             if os.environ.get("GITHUB_ACTIONS") == "true":
                 try:
-                    subprocess.run(["git", "fetch", "origin", "main", "--quiet"], check=False)
-                    res = subprocess.run(["git", "log", "-1", "--format=%ae|%ct", "origin/main"], capture_output=True, text=True, check=False)
+                    subprocess.run(["git", "fetch", "origin", "main", "--quiet"], check=False, creationflags=WIN_NO_WINDOW)
+                    res = subprocess.run(["git", "log", "-1", "--format=%ae|%ct", "origin/main"], capture_output=True, text=True, check=False, creationflags=WIN_NO_WINDOW)
                     if res.returncode == 0 and res.stdout.strip():
                         parts = res.stdout.strip().split("|", 1)
                         if len(parts) == 2:
@@ -4937,7 +4938,7 @@ def main():
                 gh_token = os.getenv("GH_TOKEN") or os.getenv("GITHUB_TOKEN")
                 if gh_token:
                     auth_url = f"https://x-access-token:{gh_token}@github.com/2827173579/us-market-radar.git"
-                    subprocess.run(["git", "remote", "set-url", "origin", auth_url], check=False, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+                    subprocess.run(["git", "remote", "set-url", "origin", auth_url], check=False, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, creationflags=WIN_NO_WINDOW)
                 
                 # 🛡️ 精准守门员机制：在准备执行 git add / commit / push 之前的那一刻，
                 # 调用 GitHub API 检查是否还有 in_progress 或 queued 的 Pages workflow。
@@ -4946,7 +4947,7 @@ def main():
                 try:
                     pat_match = gh_token
                     if not pat_match:
-                        rem_out = subprocess.check_output(["git", "remote", "get-url", "origin"], text=True)
+                        rem_out = subprocess.check_output(["git", "remote", "get-url", "origin"], text=True, creationflags=WIN_NO_WINDOW)
                         if "ghp_" in rem_out:
                             pat_match = "ghp_" + rem_out.split("ghp_")[1].split("@")[0]
                     if pat_match:
@@ -4973,21 +4974,20 @@ def main():
 
                 subprocess.run(
                     ["git", "add", "index.html", "futu_pro_terminal.html", "predict_radar_5y.html", "data_cache/latest_ai_predictions.json", ".terminal_notifications.json", ".options_cache.json", ".radar_alert_history.json", "macro_radar.html", "stocks_radar.html", ".gitignore"],
-                    check=False
-                )
+                    check=False, creationflags=WIN_NO_WINDOW)
                 subprocess.run(
                     ["git", "commit", "-m", f"⚡ [实盘同步] 第 {round_idx} 轮极速刷新 ({now_ts})"],
-                    check=False, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL
+                    check=False, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, creationflags=WIN_NO_WINDOW
                 )
-                _head_before = subprocess.run(["git", "rev-parse", "HEAD"], check=False, capture_output=True, text=True).stdout.strip()
-                subprocess.run(["git", "pull", "--rebase", "--autostash", "-X", "theirs", "origin", "main"], check=False, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-                _head_after = subprocess.run(["git", "rev-parse", "HEAD"], check=False, capture_output=True, text=True).stdout.strip()
+                _head_before = subprocess.run(["git", "rev-parse", "HEAD"], check=False, capture_output=True, text=True, creationflags=WIN_NO_WINDOW).stdout.strip()
+                subprocess.run(["git", "pull", "--rebase", "--autostash", "-X", "theirs", "origin", "main"], check=False, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, creationflags=WIN_NO_WINDOW)
+                _head_after = subprocess.run(["git", "rev-parse", "HEAD"], check=False, capture_output=True, text=True, creationflags=WIN_NO_WINDOW).stdout.strip()
                 if _head_before and _head_after and _head_before != _head_after:
-                    _changed = subprocess.run(["git", "diff", "--name-only", _head_before, _head_after], check=False, capture_output=True, text=True).stdout
+                    _changed = subprocess.run(["git", "diff", "--name-only", _head_before, _head_after], check=False, capture_output=True, text=True, creationflags=WIN_NO_WINDOW).stdout
                     if any(_f.endswith(".py") for _f in _changed.splitlines()):
                         print("[*] 检测到 git pull 更新了 .py 源码，立即热重启守护进程以加载新代码与 .env ...", flush=True)
                         os.execv(sys.executable, [sys.executable] + sys.argv)
-                push_res = subprocess.run(["git", "push", "origin", "HEAD:main"], check=False, capture_output=True, text=True)
+                push_res = subprocess.run(["git", "push", "origin", "HEAD:main"], check=False, capture_output=True, text=True, creationflags=WIN_NO_WINDOW)
                 if push_res.returncode == 0:
                     print(f"[+] ✅ 成功推送第 {round_idx} 轮数据至 GitHub Pages (PAT 触发部署成功)！")
                     globals()["_LAST_GIT_PUSH_TS"] = time.time()
