@@ -934,6 +934,20 @@ class TestV32CircuitBreaker(unittest.TestCase):
         self.assertLessEqual(far.get("optimal_limit"), 96.0)
         self.assertLess(far.get("entry_stop_loss"), 96.0)
 
+    def test_scenario_15_card_stop_uses_band_not_68_floor(self):
+        """坑内买点卡片不再钉死 -6.8%，行业 ETF 落在 -1.2%~-2.0%。"""
+        info = self._broken_pit_intra_info()
+        info["vwap"] = 99.2
+        res = run_evaluate_intraday_entry(
+            active_price=100.0, fib_low=90.0, fib_high=110.0, ma50=105.0,
+            is_pit=True, is_stop=False, dist_to_pit=0.0,
+            intra_info=info, atr=8.0, ticker="SOXX", session_code="REGULAR",
+        )
+        self.assertGreater(res.get("optimal_limit"), 0)
+        self.assertGreaterEqual(res.get("stop_loss_pct"), -2.0)
+        self.assertLessEqual(res.get("stop_loss_pct"), -1.2)
+        self.assertNotAlmostEqual(res.get("stop_loss_pct"), -6.8, places=1)
+
 
 
 

@@ -1356,6 +1356,26 @@ def _stop_below_invalidation(entry: float, invalidation: float, lo: float, hi: f
     return stop_px, inside
 
 
+def _card_stop_under_structure(ticker, entry, vwap, low_5m):
+    """卡片上的防守止损：有失效位就画在它下面，没有就贴该档最近的一边。不再使用 -6.8% 地板。"""
+    lo, hi, pad = _bounce_rebound_stop_band(ticker)
+    entry = float(entry)
+    anchors = []
+    if vwap and float(vwap) > 0 and float(vwap) < entry:
+        anchors.append(float(vwap))
+    if low_5m and float(low_5m) > 0 and float(low_5m) < entry:
+        anchors.append(float(low_5m))
+    if anchors:
+        invalidation = max(anchors)
+        stop_px, _inside = _stop_below_invalidation(entry, invalidation, lo, hi, pad)
+    else:
+        stop_px = entry * (1.0 - lo / 100.0)
+    if stop_px >= entry:
+        stop_px = entry * (1.0 - lo / 100.0)
+    pct = round((stop_px - entry) / entry * 100.0, 1) if entry > 0 else -lo
+    return round(stop_px, 2), pct
+
+
 def evaluate_intraday_entry(
     active_price, fib_low, fib_high, ma50, is_pit, is_stop, dist_to_pit, intra_info,
     earnings_info=None, rs_20d=0.0, atr=0.0, daily_rsi=50.0, options_info=None,
@@ -1583,6 +1603,7 @@ def evaluate_intraday_entry(
     broken_bearish = bool(is_stop and not broken_rebound_ready)
 
     intraday_entry_ready = False
+    tactical_stop_set = False
     if is_stop:
         if broken_rebound_ready:
             lo, hi, pad = _bounce_rebound_stop_band(ticker)
@@ -1631,6 +1652,7 @@ def evaluate_intraday_entry(
             if entry_stop_loss >= invalidation:
                 entry_stop_loss = round(invalidation * (1.0 - max(pad, 0.05) / 100.0), 2)
             stop_loss_pct = round((entry_stop_loss - optimal_limit) / optimal_limit * 100.0, 1) if optimal_limit > 0 else -lo
+            tactical_stop_set = True
             intraday_reason = (
                 f"日线仍处黄金坑(${fib_low:.2f})下方，失效位 VWAP/5m低点 ${invalidation:.2f}；"
                 f"止损画在失效位下方 ${entry_stop_loss:.2f}（{stop_loss_pct:.1f}%），"
@@ -1704,6 +1726,13 @@ def evaluate_intraday_entry(
     else:
         intraday_status_text = f"⏳ 未进坑(距坑+{abs(dist_to_pit):.1f}%)"
         intraday_reason = f"股价位于黄金坑上方(坑顶${fib_high:.2f}，日内VWAP ${vwap:.2f})，可预先在${optimal_limit:.2f}埋伏限价单"
+
+    if optimal_limit > 0 and not tactical_stop_set:
+        try:
+            low_5m = float(intra_info.get("low_5m") or 0.0)
+        except Exception:
+            low_5m = 0.0
+        entry_stop_loss, stop_loss_pct = _card_stop_under_structure(ticker, optimal_limit, vwap, low_5m)
 
     if is_e_risk and days_to_e is not None:
         intraday_reason += f" ｜ {e_tag}，谨防财报跳空盲盒(建议减半仓位或等财报落地)"
