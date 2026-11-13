@@ -389,6 +389,15 @@ def _tablet_chart_session():
         return day.strftime("%Y-%m-%d"), True, "今日"
     return day.strftime("%Y-%m-%d"), False, "今日"
 
+def _next_weekdays(start_date: str, count: int):
+    cur = datetime.strptime(start_date, "%Y-%m-%d")
+    out = []
+    while len(out) < count:
+        cur += timedelta(days=1)
+        if cur.weekday() < 5:
+            out.append(cur.strftime("%Y-%m-%d"))
+    return out
+
 def _scale_cycle_anchor(item: dict, new_px: float, session_date: str, today_label: str, session_open: bool) -> bool:
     hist = item.get("history") or []
     if not hist:
@@ -400,8 +409,30 @@ def _scale_cycle_anchor(item: dict, new_px: float, session_date: str, today_labe
     if not new_px or new_px <= 0:
         return False
     last = hist[-1]
-    if str(last.get("date", ""))[:10] != session_date:
+    last_date = str(last.get("date", ""))[:10]
+    if last_date > session_date:
         return False
+    if last_date < session_date:
+        # 换日：上一根收盘价不动，只在后面补当前交易日。推演日期跟着往后挪。
+        hist.append({"date": session_date, "price": round(new_px, 2)})
+        item["history"] = hist[-20:]
+        item["current_price"] = round(new_px, 2)
+        proj = item.get("projection") or []
+        dates = _next_weekdays(session_date, len(proj))
+        for i, p in enumerate(proj):
+            p["day"] = f"T+{i + 1}"
+            p["date"] = dates[i]
+            pct = float(p.get("pct") or 0.0)
+            p["price"] = round(new_px * (1.0 + pct / 100.0), 2)
+        by_day = {p.get("day"): p for p in proj}
+        for w in item.get("cycle_windows") or []:
+            hit = by_day.get(w.get("day"))
+            if not hit:
+                continue
+            w["date"] = hit.get("date")
+            if hit.get("price"):
+                w["price"] = hit["price"]
+        return True
     old_px = float(last.get("price") or 0.0)
     if old_px <= 0:
         return False
@@ -942,22 +973,10 @@ def sync_to_github_pages(round_idx: int, now_str: str, quotes: dict = None, flig
                     pred_content
                 )
 
-                # C. 更新 timeCycleData 预测时钟底池现价
-                if quotes:
-                    m_tc = re.search(r"const timeCycleData = (\{.*?\});\s*
-", pred_content)
-                    if m_tc:
-                        try:
-                            tc_dict = json.loads(m_tc.group(1))
-                            for tk, q in quotes.items():
-                                if tk in tc_dict:
-                                    tc_dict[tk]["current_price"] = round(float(q.get("last", 0.0)), 2)
-                            new_tc_json = json.dumps(tc_dict, ensure_ascii=False)
-                            pred_content = pred_content[:m_tc.start(1)] + new_tc_json + pred_content[m_tc.end(1):]
-                        except Exception:
-                            pass
+                # 路径图的今日柱和换日由后面的锚点函数统一处理
 
-                    # D. 更新所有标的表格行的实时现价
+                # D. 更新所有标的表格行的实时现价
+                if quotes:
                     def replace_row_price(m):
                         prefix = m.group(1)
                         tk = m.group(2)
