@@ -2082,7 +2082,7 @@ class TestV2UpgradeDefensiveFlightAndScenarios(unittest.TestCase):
             'Close': [50.0 + (i * 0.1) for i in range(100)]
         })
         yest_close = round(50.0 + 99 * 0.1, 2)
-        sc_map = {'SOXL': {'latest_price': 57.38, 'r1': 62.0, 'r2': 66.0}}
+        sc_map = {'SOXL': {'latest_price': 57.38, 'price_kind': 'overnight', 'r1': 62.0, 'r2': 66.0}}
         as_of = datetime(2026, 11, 13, 1, 30, tzinfo=timezone(timedelta(hours=-5)))
         projections = self.mod.generate_time_cycle_projections(
             raw_panel=mock_panel,
@@ -2104,6 +2104,19 @@ class TestV2UpgradeDefensiveFlightAndScenarios(unittest.TestCase):
         for p in proj:
             dt = pd.to_datetime(p['date'])
             self.assertTrue(dt.weekday() < 5, f"Projection date {p['date']} must not be a weekend")
+
+        frozen = self.mod.generate_time_cycle_projections(
+            raw_panel=mock_panel,
+            target_tickers=['SOXL'],
+            forecast_days=15,
+            scenario_map_by_ticker={'SOXL': {'latest_price': 57.38, 'post_price': 58.1, 'r1': 62.0, 'r2': 66.0}},
+            as_of=as_of
+        )['SOXL']
+        self.assertEqual(frozen['history'][-1]['date'], '2026-11-12')
+        self.assertEqual(frozen['history'][-1]['price'], yest_close)
+        self.assertEqual(frozen['current_price'], yest_close)
+        self.assertIn('盘后定格', frozen['price_note'])
+        self.assertEqual(frozen['projection'][0]['date'], '2026-11-13')
 
         closed = self.mod.generate_time_cycle_projections(
             raw_panel=mock_panel,

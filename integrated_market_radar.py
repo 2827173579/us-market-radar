@@ -765,6 +765,57 @@ def fetch_intraday_5m_and_ext_data(tickers):
         print(f"[!] 5分钟日内与盘前盘后数据计算回退: {e}")
     return results
 
+
+def fetch_yahoo_overnight_quotes(tickers):
+    """夜盘只认 Yahoo overnightMarketPrice。没有这个字段就返回空，不许用盘后价顶上。"""
+    if not tickers:
+        return {}
+    import urllib.parse
+    opener = urllib.request.build_opener(urllib.request.HTTPCookieProcessor())
+    headers = {"User-Agent": "Mozilla/5.0"}
+    try:
+        try:
+            opener.open(urllib.request.Request("https://fc.yahoo.com", headers=headers), timeout=8).read()
+        except Exception:
+            pass
+        crumb = opener.open(
+            urllib.request.Request("https://query1.finance.yahoo.com/v1/test/getcrumb", headers=headers),
+            timeout=8,
+        ).read().decode().strip()
+        url = (
+            "https://query1.finance.yahoo.com/v7/finance/quote?symbols="
+            + ",".join(tickers)
+            + "&crumb="
+            + urllib.parse.quote(crumb)
+        )
+        raw = opener.open(urllib.request.Request(url, headers=headers), timeout=20).read()
+        rows = json.loads(raw.decode()).get("quoteResponse", {}).get("result", [])
+    except Exception as exc:
+        print(f"[!] 夜盘报价不可用，回退正规盘收盘: {exc}")
+        return {}
+    out = {}
+    for row in rows:
+        sym = row.get("symbol")
+        px = row.get("overnightMarketPrice")
+        if not sym or px is None:
+            continue
+        try:
+            px = float(px)
+        except Exception:
+            continue
+        if px <= 0:
+            continue
+        when = ""
+        stamp = row.get("overnightMarketTime")
+        if stamp:
+            try:
+                when = datetime.fromtimestamp(int(stamp), tz=timezone.utc).isoformat()
+            except Exception:
+                when = ""
+        out[sym] = {"price": px, "time": when}
+    return out
+
+
 EARNINGS_CACHE_FILE = os.path.join(SCRATCH_DIR, ".earnings_cache.json")
 OPTIONS_CACHE_FILE = os.path.join(SCRATCH_DIR, ".options_cache.json")
 
@@ -4274,6 +4325,18 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
     # 2.5 批量拉取 5 分钟级日内指标 (VWAP / 5m RSI / 5m RVOL) 与盘前盘后最新成交价
     print(f"[*] 📊 正在同步 {len(all_tickers)} 只标的【5分钟级 VWAP/RSI/量比 日内择时指标 & 盘前盘后最新报价】...")
     intraday_map = fetch_intraday_5m_and_ext_data(all_tickers)
+    if session_code == "OVERNIGHT":
+        overnight_quotes = fetch_yahoo_overnight_quotes(all_tickers)
+        if overnight_quotes:
+            print(f"[+] 夜盘真实成交 {len(overnight_quotes)} 只，其余保持正规盘收盘")
+        else:
+            print("[*] 夜盘没有 overnightMarketPrice，主价格保持正规盘收盘，盘后价只作定格标注")
+        for tk, info in overnight_quotes.items():
+            slot = intraday_map.setdefault(tk, {})
+            slot["ext_price"] = info["price"]
+            if info.get("time"):
+                slot["ext_time"] = info["time"]
+            slot["price_kind"] = "overnight"
     if intraday_map:
         print(f"[+] ✅ 成功计算 {len(intraday_map)}/{len(all_tickers)} 只标的 5 分钟分时指标与盘前盘后行情！")
 
@@ -4372,13 +4435,17 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
                     overnight_pct = ext_pct
                 else:
                     effective_pct = 0.0
-            if session_code == "OVERNIGHT" and ext_price > 0 and session_tag == "夜盘":
+            if session_code == "OVERNIGHT" and ext_price > 0 and session_tag == "夜盘" and intra_info.get("price_kind") != "overnight":
                 try:
                     _ext_dt = datetime.fromisoformat(str(intra_info.get("ext_time", "")))
                     if _ext_dt.hour < 20 or (_ext_dt.hour == 20 and _ext_dt.minute == 0):
                         session_tag = "盘后定格"
                 except Exception:
-                    pass
+                    session_tag = "盘后定格"
+            if session_tag == "盘后定格":
+                active_price = last
+                effective_pct = 0.0
+                overnight_pct = 0.0
 
             df = compute_indicators(history_dict[ticker])
             history_dict[ticker] = df
@@ -4584,13 +4651,17 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
                     overnight_pct = ext_pct
                 else:
                     effective_pct = 0.0
-            if session_code == "OVERNIGHT" and ext_price > 0 and session_tag == "夜盘":
+            if session_code == "OVERNIGHT" and ext_price > 0 and session_tag == "夜盘" and intra_info.get("price_kind") != "overnight":
                 try:
                     _ext_dt = datetime.fromisoformat(str(intra_info.get("ext_time", "")))
                     if _ext_dt.hour < 20 or (_ext_dt.hour == 20 and _ext_dt.minute == 0):
                         session_tag = "盘后定格"
                 except Exception:
-                    pass
+                    session_tag = "盘后定格"
+            if session_tag == "盘后定格":
+                active_price = last
+                effective_pct = 0.0
+                overnight_pct = 0.0
 
             df = compute_indicators(history_dict[ticker])
             history_dict[ticker] = df
@@ -4707,7 +4778,7 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
                 last = rq["last"]
                 change = rq["change"]
                 pct_change = rq["pct_change"]
-                ma50 = meta.get("base_val", last)
+                ma50 = last
                 ema20 = ma50
                 bias = ((last - ma50) / ma50) * 100 if ma50 > 0 else 0.0
                 atr = last * 0.03

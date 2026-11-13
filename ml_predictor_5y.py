@@ -2450,22 +2450,47 @@ def generate_time_cycle_projections(
                 'price': round(float(sub.at[i, 'Close']), 2)
             })
 
-        # 只有未收盘的交易日才追加现价柱。没有实时价、或已经收盘，都不造柱、不改昨收。
+        # 只有带价格种类的真实成交才允许新开一根未收盘柱。
+        # 夜盘没有 overnightMarketPrice 时，盘后定格价不能冒充今日现价。
         has_live = live_override_p is not None and float(live_override_p) > 0
-        if has_live and _session_open and last_hist_dt < anchor_date:
+        price_kind = str(sc_info.get("price_kind") or "")
+        real_live = has_live and price_kind in ("overnight", "premarket", "regular")
+        appended_live = False
+        if real_live and _session_open and last_hist_dt < anchor_date:
             hist_entries.append({
                 'date': anchor_date.strftime('%Y-%m-%d'),
                 'price': round(display_p, 2)
             })
             closes = np.append(closes, display_p)
             cur_p = display_p
-        elif has_live and _session_open and last_hist_dt == anchor_date:
+            appended_live = True
+        elif real_live and _session_open and last_hist_dt == anchor_date:
             hist_entries[-1]['price'] = round(display_p, 2)
             closes[-1] = display_p
             cur_p = display_p
+            appended_live = True
         else:
             cur_p = close_anchor
             display_p = close_anchor
+
+        if appended_live:
+            use_dates = future_dates
+            shown_label = "今日"
+        else:
+            use_dates = []
+            cursor = last_hist_dt
+            while len(use_dates) < forecast_days:
+                cursor += timedelta(days=1)
+                if cursor.weekday() < 5:
+                    use_dates.append(cursor.strftime('%Y-%m-%d'))
+            shown_label = f"最新收盘 ({last_hist_dt.strftime('%m-%d')})"
+        post_px = sc_info.get("post_price")
+        price_note = ""
+        if post_px and not appended_live:
+            try:
+                price_note = f"盘后定格 ${float(post_px):.2f}"
+            except Exception:
+                price_note = ""
 
         n = len(closes)
 
@@ -2574,7 +2599,7 @@ def generate_time_cycle_projections(
         final_prices = cur_p * (1.0 + comb_ret)
 
         projections = []
-        for d_idx, (dt_str, p_val) in enumerate(zip(future_dates, final_prices)):
+        for d_idx, (dt_str, p_val) in enumerate(zip(use_dates, final_prices)):
             projections.append({
                 'day': f"T+{d_idx + 1}",
                 'date': dt_str,
@@ -2621,8 +2646,10 @@ def generate_time_cycle_projections(
                 'period': best_period,
                 'similarity_pct': round(float(np.clip(best_corr * 100.0, 50.0, 99.0)), 1)
             },
-            'today_label': _today_label if anchor_date == _session_date else "今日",
-            'session_open': bool(_session_open),
+            'today_label': shown_label,
+            'session_open': bool(appended_live),
+            'price_note': price_note,
+            'post_price': round(float(post_px), 2) if post_px else None,
         }
 
     return results
@@ -5709,6 +5736,14 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
             }}
             const curP = Number(data.current_price || 0);
             if (curPEl) curPEl.textContent = '$' + curP.toFixed(2);
+            let noteEl = document.getElementById('cyclePriceNote');
+            if (!noteEl && curPEl && curPEl.parentElement) {{
+                noteEl = document.createElement('div');
+                noteEl.id = 'cyclePriceNote';
+                noteEl.style.cssText = 'font-size:11px;color:#93c5fd;font-weight:700;margin-top:2px;';
+                curPEl.parentElement.appendChild(noteEl);
+            }}
+            if (noteEl) noteEl.textContent = data.price_note || '';
             if (aPerEl) aPerEl.textContent = (data.analog_match && data.analog_match.period) || '2024-07-05 ~ 2024-08-08 (KNN-5 联合同日)';
             const simVal = (data.analog_match && data.analog_match.similarity_pct) || 87.2;
             if (aSimEl) aSimEl.textContent = simVal + '% ' + (simVal >= 85 ? '⭐⭐⭐⭐⭐' : (simVal >= 75 ? '⭐⭐⭐⭐' : '⭐⭐⭐'));
@@ -5719,7 +5754,7 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
                 const levels = [
                     {{ key: 'R2 极限阻力', val: data.r2, color: '#f85149', bg: 'rgba(248,81,73,0.1)' }},
                     {{ key: 'R1 反弹第一阻力', val: data.r1, color: '#ff944d', bg: 'rgba(255,148,77,0.1)' }},
-                    {{ key: '⚪ 当前现价', val: curP, color: '#38bdf8', bg: 'rgba(56,189,248,0.15)', isCur: true }},
+                    {{ key: data.price_note ? '⚪ 正规盘收盘' : '⚪ 当前现价', val: curP, color: '#38bdf8', bg: 'rgba(56,189,248,0.15)', isCur: true }},
                     {{ key: 'S1 波段支撑', val: data.s1, color: '#3fb950', bg: 'rgba(63,185,80,0.1)' }},
                     {{ key: 'S2 极限插针底', val: data.s2, color: '#58a6ff', bg: 'rgba(88,166,255,0.1)' }},
                     {{ key: 'SL 防守止损位', val: data.sl, color: '#f87171', bg: 'rgba(248,81,73,0.06)' }}
@@ -5741,6 +5776,14 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
                         </div>
                     `;
                 }});
+                if (data.price_note) {{
+                    ladHtml += `
+                        <div class="cycle-ladder-item" style="background: rgba(147,197,253,0.08); border: 1px solid rgba(147,197,253,0.28);">
+                            <span style="color: #93c5fd; font-weight: 700;">🌙 不是夜盘现价</span>
+                            <div style="color: #93c5fd; font-weight: 800;">${{data.price_note}}</div>
+                        </div>
+                    `;
+                }}
                 ladderEl.innerHTML = ladHtml;
             }}
 

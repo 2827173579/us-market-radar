@@ -451,7 +451,11 @@ def _scale_cycle_anchor(item: dict, new_px: float, session_date: str, today_labe
     return True
 
 def patch_time_cycle_live_anchor(work_dir: str, quotes: dict) -> bool:
-    """未收盘时只改「今日」那根柱的现价，不碰上一根收盘价。"""
+    """未收盘时只改「今日」那根柱的现价。夜盘没有真实夜盘价时不补柱。"""
+    session_code, _session_name = get_us_market_session()
+    if session_code == "NIGHT":
+        append_log("[*] 夜盘未拿到 overnightMarketPrice，不拿盘后定格价去画今日柱")
+        return False
     session_date, session_open, today_label = _tablet_chart_session()
     changed = False
     for pred_path in [
