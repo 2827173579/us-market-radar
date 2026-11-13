@@ -542,16 +542,24 @@ def sync_to_github_pages(round_idx: int, now_str: str, quotes: dict = None):
             auth_url = f"https://2827173579:{token}@github.com/{GITHUB_REPO}.git"
             subprocess.run(["git", "remote", "set-url", "origin", auth_url], check=False, cwd=work_dir, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
-        # 4. 执行 Git 暂存、提交与推送
+        # 4. 执行 Git 暂存、配置身份与提交
+        # 自动配置本地仓库提交者身份 (防止 Termux 新环境没有 global config 导致 commit 报 128 Author identity unknown)
+        subprocess.run(["git", "config", "user.name", "2827173579"], check=False, cwd=work_dir, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        subprocess.run(["git", "config", "user.email", "a18669358277@gmail.com"], check=False, cwd=work_dir, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+
         files_to_add = ["futu_pro_terminal.html", "index.html", "data_cache/latest_ai_predictions.json"]
         for f in files_to_add:
             if os.path.exists(os.path.join(work_dir, f)):
                 subprocess.run(["git", "add", f], check=False, cwd=work_dir, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
-        subprocess.run(
+        commit_res = subprocess.run(
             ["git", "commit", "-m", f"⚡ [小米平板实盘同步] 第 {round_idx} 轮 ({now_str})"],
             capture_output=True, text=True, check=False, cwd=work_dir
         )
+        if commit_res.returncode != 0 and "nothing to commit" not in (commit_res.stdout + commit_res.stderr).lower():
+            err_c = commit_res.stderr.strip()[:80]
+            if err_c:
+                append_log(f"[*] ⚠️ Git 提交提示: {err_c}")
         # rebase pull 以免冲突
         subprocess.run(["git", "pull", "--rebase", "--autostash", "-X", "theirs", "origin", "main"], check=False, cwd=work_dir, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
