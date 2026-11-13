@@ -805,11 +805,83 @@ def sync_to_github_pages(round_idx: int, now_str: str, quotes: dict = None, flig
             except Exception as e_html:
                 append_log(f"[*] 看板 HTML 刷新提示: {e_html}")
 
-        # 2. 写回 AI 预测页的防御因子，并同步 latest_ai_predictions.json
-        if patch_predict_radar_flight(work_dir, flight, now_str, session_name):
-            append_log(f"[+] AI预测页防御因子已写回 {float(flight['flight_score']):+.2f}%")
+        # 1.5 刷新 predict_radar_5y.html (AI 5年多赛道预测雷达)
+        predict_path = os.path.join(work_dir, "predict_radar_5y.html")
+        if os.path.exists(predict_path):
+            try:
+                with open(predict_path, "r", encoding="utf-8") as f_pred_in:
+                    pred_content = f_pred_in.read()
 
-        if quotes or (flight and not flight.get("skip_reason") and flight.get("flight_score") is not None):
+                # A. 替换数据时间戳
+                pred_content = re.sub(
+                    r"同步于[:：]\s*\d{4}-\d{2}-\d{2}\s+\d{2}:\d{2}:\d{2}",
+                    f"同步于: {now_str}",
+                    pred_content
+                )
+
+                # B. 替换盘口时段
+                session_name, _ = get_market_session_state()
+                pred_content = re.sub(
+                    r"<span>Finnhub\s*秒级实时\s*\([^)]*\)</span>",
+                    f"<span>Finnhub 秒级实时 ({session_name})</span>",
+                    pred_content
+                )
+
+                # C. 更新 timeCycleData 预测时钟底池现价
+                if quotes:
+                    m_tc = re.search(r"const timeCycleData = (\{.*?\});\s*
+", pred_content)
+                    if m_tc:
+                        try:
+                            tc_dict = json.loads(m_tc.group(1))
+                            for tk, q in quotes.items():
+                                if tk in tc_dict:
+                                    tc_dict[tk]["current_price"] = round(float(q.get("last", 0.0)), 2)
+                            new_tc_json = json.dumps(tc_dict, ensure_ascii=False)
+                            pred_content = pred_content[:m_tc.start(1)] + new_tc_json + pred_content[m_tc.end(1):]
+                        except Exception:
+                            pass
+
+                    # D. 更新所有标的表格行的实时现价
+                    def replace_row_price(m):
+                        prefix = m.group(1)
+                        tk = m.group(2)
+                        if quotes and tk in quotes:
+                            new_p = f"{float(quotes[tk]['last']):.2f}"
+                            return f"{prefix}{new_p}"
+                        return m.group(0)
+
+                    pred_content = re.sub(
+                        r'(data-ticker="([A-Za-z0-9_-]+)"[^>]*>[\s\S]*?<td style="[^"]*JetBrains Mono[^"]*">\s*\$)[0-9.]+',
+                        replace_row_price,
+                        pred_content
+                    )
+
+                with open(predict_path, "w", encoding="utf-8") as f_pred_out:
+                    f_pred_out.write(pred_content)
+
+            except Exception as e_pred:
+                append_log(f"[*] 预测页 HTML 刷新提示: {e_pred}")
+
+        # 1.6 刷新 macro_radar.html 与 stocks_radar.html 最近更新时间
+        for sub_html in ["macro_radar.html", "stocks_radar.html"]:
+            sub_path = os.path.join(work_dir, sub_html)
+            if os.path.exists(sub_path):
+                try:
+                    with open(sub_path, "r", encoding="utf-8") as f_sub:
+                        s_content = f_sub.read()
+                    s_content = re.sub(
+                        r"最近更新[:：]\s*\d{4}-\d{2}-\d{2}\s+\d{2}:\d{2}:\d{2}",
+                        f"最近更新: {now_str}",
+                        s_content
+                    )
+                    with open(sub_path, "w", encoding="utf-8") as f_sub_out:
+                        f_sub_out.write(s_content)
+                except Exception:
+                    pass
+
+        # 2. 同步更新 data_cache/latest_ai_predictions.json
+        if quotes:
             for pred_path in [
                 os.path.join(work_dir, "data_cache", "latest_ai_predictions.json"),
                 os.path.join(work_dir, "latest_ai_predictions.json")
@@ -819,21 +891,17 @@ def sync_to_github_pages(round_idx: int, now_str: str, quotes: dict = None, flig
                         with open(pred_path, "r", encoding="utf-8") as f_pred:
                             ai_dict = json.load(f_pred)
                         if isinstance(ai_dict, dict):
-                            if quotes and "by_ticker" in ai_dict:
+                            if "kpi" in ai_dict and isinstance(ai_dict["kpi"], dict):
+                                ai_dict["kpi"]["sync_time"] = now_str
+                            if "by_ticker" in ai_dict:
                                 for tk, q in quotes.items():
                                     if tk in ai_dict["by_ticker"]:
                                         ai_dict["by_ticker"][tk]["last"] = q.get("last")
                                         ai_dict["by_ticker"][tk]["pct_change"] = q.get("pct_change")
-                            if flight and not flight.get("skip_reason") and flight.get("flight_score") is not None:
-                                ai_dict["defensive_flight"] = flight
-                                mw = ai_dict.get("macro_weather")
-                                if isinstance(mw, dict):
-                                    mw["defensive_flight"] = flight
-                                kpi = ai_dict.get("kpi")
-                                if isinstance(kpi, dict):
-                                    kpi["sync_time"] = now_str
-                                    if session_name:
-                                        kpi["data_mode"] = f"Finnhub 秒级实时 ({session_name})"
+                            if "time_cycle_projections" in ai_dict and isinstance(ai_dict["time_cycle_projections"], dict):
+                                for tk, q in quotes.items():
+                                    if tk in ai_dict["time_cycle_projections"]:
+                                        ai_dict["time_cycle_projections"][tk]["current_price"] = q.get("last")
                             with open(pred_path, "w", encoding="utf-8") as f_pred_out:
                                 json.dump(ai_dict, f_pred_out, ensure_ascii=False, indent=2)
                     except Exception:
@@ -854,7 +922,14 @@ def sync_to_github_pages(round_idx: int, now_str: str, quotes: dict = None, flig
         subprocess.run(["git", "config", "user.name", "2827173579"], check=False, cwd=work_dir, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
         subprocess.run(["git", "config", "user.email", "a18669358277@gmail.com"], check=False, cwd=work_dir, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
-        files_to_add = ["futu_pro_terminal.html", "index.html", "predict_radar_5y.html", "data_cache/latest_ai_predictions.json"]
+        files_to_add = [
+            "futu_pro_terminal.html",
+            "index.html",
+            "predict_radar_5y.html",
+            "macro_radar.html",
+            "stocks_radar.html",
+            "data_cache/latest_ai_predictions.json"
+        ]
         for f in files_to_add:
             if os.path.exists(os.path.join(work_dir, f)):
                 subprocess.run(["git", "add", f], check=False, cwd=work_dir, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
