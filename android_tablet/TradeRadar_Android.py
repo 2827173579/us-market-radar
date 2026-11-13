@@ -365,6 +365,121 @@ def compute_flight_snapshot(quotes: dict, session_code: str):
         return _flight_from_futures()
     return _flight_from_spot(quotes or {}, session_code)
 
+def _tablet_chart_session():
+    """与 ml_predictor_5y._get_chart_session 同一套交易日锚点。"""
+    et = _market_et_now()
+    day = et.date()
+    wd = day.weekday()
+    hm = et.hour * 60 + et.minute
+    if wd < 5 and et.hour >= 16:
+        last_closed = day
+    else:
+        last_closed = day - timedelta(days=1)
+        while last_closed.weekday() >= 5:
+            last_closed -= timedelta(days=1)
+    if wd == 6 and hm >= 20 * 60:
+        return (day + timedelta(days=1)).strftime("%Y-%m-%d"), True, "今日"
+    if wd >= 5:
+        return last_closed.strftime("%Y-%m-%d"), False, f"最新收盘 ({last_closed.strftime('%m-%d')})"
+    if hm >= 20 * 60 and wd < 4:
+        return (day + timedelta(days=1)).strftime("%Y-%m-%d"), True, "今日"
+    if hm >= 20 * 60 and wd == 4:
+        return last_closed.strftime("%Y-%m-%d"), False, "今日"
+    if et.hour < 16:
+        return day.strftime("%Y-%m-%d"), True, "今日"
+    return day.strftime("%Y-%m-%d"), False, "今日"
+
+def _scale_cycle_anchor(item: dict, new_px: float, session_date: str, today_label: str, session_open: bool) -> bool:
+    hist = item.get("history") or []
+    if not hist:
+        return False
+    item["today_label"] = today_label
+    item["session_open"] = bool(session_open)
+    if not session_open:
+        return True
+    if not new_px or new_px <= 0:
+        return False
+    last = hist[-1]
+    if str(last.get("date", ""))[:10] != session_date:
+        return False
+    old_px = float(last.get("price") or 0.0)
+    if old_px <= 0:
+        return False
+    if abs(old_px - new_px) < 0.005:
+        item["current_price"] = round(new_px, 2)
+        return True
+    ratio = new_px / old_px
+    last["price"] = round(new_px, 2)
+    item["current_price"] = round(new_px, 2)
+    for p in item.get("projection") or []:
+        p["price"] = round(float(p.get("price") or 0.0) * ratio, 2)
+        p["pct"] = round((float(p["price"]) / new_px - 1.0) * 100.0, 1)
+    for w in item.get("cycle_windows") or []:
+        if w.get("price"):
+            w["price"] = round(float(w["price"]) * ratio, 2)
+    return True
+
+def patch_time_cycle_live_anchor(work_dir: str, quotes: dict) -> bool:
+    """未收盘时只改「今日」那根柱的现价，不碰上一根收盘价。"""
+    session_date, session_open, today_label = _tablet_chart_session()
+    changed = False
+    for pred_path in [
+        os.path.join(work_dir, "data_cache", "latest_ai_predictions.json"),
+        os.path.join(work_dir, "latest_ai_predictions.json"),
+    ]:
+        if not os.path.exists(pred_path):
+            continue
+        try:
+            with open(pred_path, "r", encoding="utf-8") as f_pred:
+                ai_dict = json.load(f_pred)
+            cycle = ai_dict.get("time_cycle_projections") or {}
+            if not isinstance(cycle, dict) or not cycle:
+                continue
+            for tk, item in cycle.items():
+                if not isinstance(item, dict):
+                    continue
+                q = (quotes or {}).get(tk) or {}
+                px = float(q.get("last") or 0.0)
+                if _scale_cycle_anchor(item, px, session_date, today_label, session_open):
+                    changed = True
+            if changed:
+                with open(pred_path, "w", encoding="utf-8") as f_pred:
+                    json.dump(ai_dict, f_pred, ensure_ascii=False, indent=2)
+        except Exception as exc:
+            append_log(f"[!] 路径图现价更新失败: {exc}")
+    html_path = os.path.join(work_dir, "predict_radar_5y.html")
+    if not os.path.exists(html_path):
+        return changed
+    try:
+        with open(html_path, "r", encoding="utf-8") as f_html:
+            html = f_html.read()
+        key = "const timeCycleData = "
+        i = html.find(key)
+        if i < 0:
+            return changed
+        j = i + len(key)
+        data, end = json.JSONDecoder().raw_decode(html[j:])
+        if not isinstance(data, dict):
+            return changed
+        touched = False
+        for tk, item in data.items():
+            if not isinstance(item, dict):
+                continue
+            q = (quotes or {}).get(tk) or {}
+            px = float(q.get("last") or 0.0)
+            if _scale_cycle_anchor(item, px, session_date, today_label, session_open):
+                touched = True
+        if touched:
+            new_blob = json.dumps(data, ensure_ascii=False)
+            html = html[:j] + new_blob + html[j + end:]
+            with open(html_path, "w", encoding="utf-8") as f_html:
+                f_html.write(html)
+            append_log(f"[+] 路径图今日锚点已更新 {session_date} {today_label}")
+            return True
+    except Exception as exc:
+        append_log(f"[!] 路径图页面更新失败: {exc}")
+    return changed
+
 def patch_predict_radar_flight(work_dir: str, flight: dict, now_str: str, session_name: str) -> bool:
     """把本轮防御因子写进 predict_radar_5y.html 的 Flight 胶囊和同步时间。"""
     if not flight or flight.get("skip_reason") or flight.get("flight_score") is None:
@@ -918,6 +1033,8 @@ def sync_to_github_pages(round_idx: int, now_str: str, quotes: dict = None, flig
                                 json.dump(ai_dict, f_pred_out, ensure_ascii=False, indent=2)
                     except Exception:
                         pass
+
+        patch_time_cycle_live_anchor(work_dir, quotes or {})
 
         # 3. 校验并配置带 PAT 的 Git Remote
         token = GITHUB_TOKEN

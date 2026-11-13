@@ -29,7 +29,7 @@ import sys
 import ast
 import inspect
 import unittest
-from datetime import datetime, timedelta, date
+from datetime import datetime, timedelta, date, timezone
 from typing import Dict, List, Tuple, Any, Optional
 
 import numpy as np
@@ -2074,40 +2074,47 @@ class TestV2UpgradeDefensiveFlightAndScenarios(unittest.TestCase):
         self.assertEqual(calc_fn(sat), datetime(2026, 11, 13).date())
 
     def test_time_cycle_today_anchoring_and_date_sequence(self):
-        """Issue 1 深度验证: 今日锚定为独立Bar，绝不篡改昨日收盘价，未来日期跳过周末"""
-        # 构造截至 2026-11-10 的历史行情 (不含今日 2026-11-11)
-        dates = pd.date_range(end='2026-11-10', periods=100, freq='B')
+        """未收盘交易日单独成柱，昨收不被实时价覆盖，T+1 跳过周末。"""
+        dates = pd.date_range(end='2026-11-12', periods=100, freq='B')
         mock_panel = pd.DataFrame({
             'Ticker': ['SOXL'] * 100,
             'Date': list(dates),
             'Close': [50.0 + (i * 0.1) for i in range(100)]
         })
-        yest_close = 50.0 + 99 * 0.1  # 59.90
-
+        yest_close = round(50.0 + 99 * 0.1, 2)
         sc_map = {'SOXL': {'latest_price': 57.38, 'r1': 62.0, 'r2': 66.0}}
+        as_of = datetime(2026, 11, 13, 1, 30, tzinfo=timezone(timedelta(hours=-5)))
         projections = self.mod.generate_time_cycle_projections(
             raw_panel=mock_panel,
             target_tickers=['SOXL'],
             forecast_days=15,
-            scenario_map_by_ticker=sc_map
+            scenario_map_by_ticker=sc_map,
+            as_of=as_of
         )
         soxl = projections['SOXL']
         hist = soxl['history']
-        # 验证昨日已收 K 线完好无损，未被篡改
-        self.assertEqual(hist[-2]['date'], '2026-11-10')
-        self.assertEqual(hist[-2]['price'], round(yest_close, 2))
-        # 验证今日作为独立 Bar 锚定最新实时价
-        today_str = self.mod._get_latest_expected_trading_day().strftime('%Y-%m-%d')
-        self.assertEqual(hist[-1]['date'], today_str)
+        self.assertEqual(hist[-2]['date'], '2026-11-12')
+        self.assertEqual(hist[-2]['price'], yest_close)
+        self.assertEqual(hist[-1]['date'], '2026-11-13')
         self.assertEqual(hist[-1]['price'], 57.38)
-        # 验证预测序列从下一个交易日 (T+1) 开启
+        self.assertEqual(soxl['today_label'], '今日')
         proj = soxl['projection']
         self.assertEqual(proj[0]['day'], 'T+1')
-        self.assertEqual(proj[1]['day'], 'T+2')
-        self.assertEqual(proj[2]['day'], 'T+3')  # 严格跳过周六周日
+        self.assertEqual(proj[0]['date'], '2026-11-16')
         for p in proj:
             dt = pd.to_datetime(p['date'])
             self.assertTrue(dt.weekday() < 5, f"Projection date {p['date']} must not be a weekend")
+
+        closed = self.mod.generate_time_cycle_projections(
+            raw_panel=mock_panel,
+            target_tickers=['SOXL'],
+            forecast_days=15,
+            scenario_map_by_ticker=sc_map,
+            as_of=datetime(2026, 11, 14, 12, 0, tzinfo=timezone(timedelta(hours=-5)))
+        )['SOXL']
+        self.assertEqual(closed['history'][-1]['date'], '2026-11-12')
+        self.assertEqual(closed['history'][-1]['price'], yest_close)
+        self.assertTrue(str(closed['today_label']).startswith('最新收盘'))
 
     def test_cycle_windows_monotonic_rise_no_false_signals(self):
         """Issue 2 验证: 单边上涨序列绝不产生虚假周期峰谷红蓝交替"""

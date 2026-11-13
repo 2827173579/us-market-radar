@@ -301,6 +301,45 @@ def _get_latest_expected_trading_day(ref_dt: Optional[datetime] = None) -> datet
     return check_d
 
 
+def _to_et(ref_dt: Optional[datetime] = None) -> datetime:
+    try:
+        import zoneinfo
+        et_tz = zoneinfo.ZoneInfo("America/New_York")
+    except Exception:
+        et_tz = timezone(timedelta(hours=-5))
+    if ref_dt is None:
+        return datetime.now(et_tz)
+    if ref_dt.tzinfo is not None:
+        return ref_dt.astimezone(et_tz)
+    return ref_dt.replace(tzinfo=et_tz)
+
+
+def _get_chart_session(ref_dt: Optional[datetime] = None):
+    """
+    图表锚点。返回 (session_date, last_closed, label, session_open)。
+    last_closed 是已收盘的正规盘交易日，价格必须用收盘价。
+    session_date 是「今日」柱所属的交易日：夜盘 20:00 ET 起算下一个工作日，
+    周五 20:00 到周日 20:00 仍停在周五。未收盘时 session_open=True，现价单独成柱。
+    """
+    et = _to_et(ref_dt)
+    day = et.date()
+    wd = day.weekday()
+    hm = et.hour * 60 + et.minute
+    last_closed = _get_latest_expected_trading_day(et)
+
+    if wd == 6 and hm >= 20 * 60:
+        return day + timedelta(days=1), last_closed, "今日", True
+    if wd >= 5:
+        return last_closed, last_closed, f"最新收盘 ({last_closed.strftime('%m-%d')})", False
+    if hm >= 20 * 60 and wd < 4:
+        return day + timedelta(days=1), last_closed, "今日", True
+    if hm >= 20 * 60 and wd == 4:
+        return last_closed, last_closed, "今日", False
+    if et.hour < 16:
+        return day, last_closed, "今日", True
+    return day, last_closed, "今日", False
+
+
 def fetch_or_load_panel_data(
     cache_file: str = 'data_cache/ml_panel_5y.parquet',
     force_refresh: bool = False,
@@ -2276,7 +2315,8 @@ def generate_time_cycle_projections(
     raw_panel: pd.DataFrame,
     target_tickers: Optional[List[str]] = None,
     forecast_days: int = 15,
-    scenario_map_by_ticker: Optional[Dict[str, Dict[str, Any]]] = None
+    scenario_map_by_ticker: Optional[Dict[str, Dict[str, Any]]] = None,
+    as_of: Optional[datetime] = None
 ) -> Dict[str, Any]:
     """
     时空周期推演 V2.2 (100% 真实数学推演版 · 零人工终点 · 零人造正弦波):
@@ -2311,27 +2351,16 @@ def generate_time_cycle_projections(
     if combined_panel is None or combined_panel.empty:
         return results
 
-    # 统一截断到最近一个已收盘美股交易日，严禁把当日未收盘/未来日期混入历史曲线
+    # 历史曲线只保留已收盘交易日，未收盘的实时价稍后单独追加，绝不覆盖昨收
     try:
-        _expected_last = _get_latest_expected_trading_day()
+        _session_date, _last_closed, _today_label, _session_open = _get_chart_session(as_of)
         combined_panel = combined_panel.copy()
         combined_panel['Date'] = pd.to_datetime(combined_panel['Date'])
-        combined_panel = combined_panel[combined_panel['Date'].dt.date <= _expected_last]
+        combined_panel = combined_panel[combined_panel['Date'].dt.date <= _last_closed]
     except Exception:
-        pass
+        _session_date, _last_closed, _today_label, _session_open = datetime.now().date(), datetime.now().date(), "今日", False
 
-    try:
-        today_dt = _get_latest_expected_trading_day()
-    except Exception:
-        today_dt = datetime.now().date()
-    panel_max_date = None
-    if combined_panel is not None and not combined_panel.empty and 'Date' in combined_panel.columns:
-        try:
-            panel_max_date = pd.to_datetime(combined_panel['Date']).max().date()
-        except Exception:
-            panel_max_date = None
-
-    anchor_date = max(today_dt, panel_max_date) if panel_max_date is not None else today_dt
+    anchor_date = _session_date
 
     future_dates = []
     curr = anchor_date
@@ -2421,16 +2450,22 @@ def generate_time_cycle_projections(
                 'price': round(float(sub.at[i, 'Close']), 2)
             })
 
-        # 今日尚未收进历史时，才追加一根现价锚点。已经收盘的 K 线保持收盘价，盘后价只进现价。
-        if last_hist_dt < anchor_date:
+        # 只有未收盘的交易日才追加现价柱。没有实时价、或已经收盘，都不造柱、不改昨收。
+        has_live = live_override_p is not None and float(live_override_p) > 0
+        if has_live and _session_open and last_hist_dt < anchor_date:
             hist_entries.append({
                 'date': anchor_date.strftime('%Y-%m-%d'),
                 'price': round(display_p, 2)
             })
             closes = np.append(closes, display_p)
             cur_p = display_p
+        elif has_live and _session_open and last_hist_dt == anchor_date:
+            hist_entries[-1]['price'] = round(display_p, 2)
+            closes[-1] = display_p
+            cur_p = display_p
         else:
             cur_p = close_anchor
+            display_p = close_anchor
 
         n = len(closes)
 
@@ -2585,7 +2620,9 @@ def generate_time_cycle_projections(
             'analog_match': {
                 'period': best_period,
                 'similarity_pct': round(float(np.clip(best_corr * 100.0, 50.0, 99.0)), 1)
-            }
+            },
+            'today_label': _today_label if anchor_date == _session_date else "今日",
+            'session_open': bool(_session_open),
         }
 
     return results
@@ -5785,9 +5822,10 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
             }}
 
             const points = [];
+            const todayLabel = (data && data.today_label) ? data.today_label : '今日';
             selectedHist.forEach((p, idx) => {{
                 points.push({{
-                    day: idx === selectedHist.length - 1 ? '今日' : `T-${{selectedHist.length - 1 - idx}}`,
+                    day: idx === selectedHist.length - 1 ? todayLabel : `T-${{selectedHist.length - 1 - idx}}`,
                     date: p.date,
                     displayDate: p.date,
                     price: Number(p.price),
@@ -5995,7 +6033,7 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
             ctx.fillStyle = '#cbd5e1';
             ctx.font = 'bold 10px sans-serif';
             ctx.textAlign = 'center';
-            ctx.fillText('今日', splitX, padT - 12);
+            ctx.fillText(todayLabel, splitX, padT - 12);
 
             // 8. Draw Historical Path (Cyan Line + Area)
             if (selectedHist.length > 0) {{
@@ -6617,14 +6655,16 @@ def main():
     export_latest_ai_predictions_json(tables_data)
 
     cycle = tables_data.get('time_cycle_projections') or {}
+    _sess, _closed, _lbl, _open = _get_chart_session()
+    expected_chart_day = _sess.strftime("%Y-%m-%d")
     cycle_behind = []
     for tk, item in cycle.items():
         hist = (item or {}).get('history') or []
         last_d = str(hist[-1].get('date'))[:10] if hist else ""
-        if last_d != expected_last.strftime("%Y-%m-%d"):
+        if last_d != expected_chart_day:
             cycle_behind.append(f"{tk}:{last_d or '无'}")
     if cycle_behind:
-        print(f"[!] 路径图今日仍不是 {expected_last}，落后 {len(cycle_behind)} 只: {', '.join(cycle_behind[:16])}")
+        print(f"[!] 路径图今日仍不是 {expected_chart_day}，落后 {len(cycle_behind)} 只: {', '.join(cycle_behind[:16])}")
         if args.refresh:
             print("[!] 看板已写出但日期不合格，不记刷新成功。")
             sys.exit(2)
