@@ -4,7 +4,7 @@
     "profit_factor": 1.31,
     "top_sector": "存储芯片 (⭐⭐⭐⭐⭐)",
     "top_feature": "SMH_IGV_Ratio_Bias (12.31%)",
-    "sync_time": "2026-11-13 11:19:44",
+    "sync_time": "2026-11-13 11:22:25",
     "data_mode": "Finnhub 秒级实时 (🌌 美股夜盘)",
     "is_realtime": false
   },
@@ -674,7 +674,7 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 33
+      "short_rank": 32
     },
     {
       "rank": 2,
@@ -733,7 +733,7 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 18
+      "short_rank": 17
     },
     {
       "rank": 3,
@@ -792,7 +792,7 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 24
+      "short_rank": 23
     },
     {
       "rank": 4,
@@ -910,7 +910,7 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 28
+      "short_rank": 27
     },
     {
       "rank": 6,
@@ -969,7 +969,7 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 44
+      "short_rank": 43
     },
     {
       "rank": 7,
@@ -1028,7 +1028,7 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 34
+      "short_rank": 33
     },
     {
       "rank": 8,
@@ -1087,7 +1087,7 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 38
+      "short_rank": 37
     },
     {
       "rank": 9,
@@ -1146,7 +1146,7 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 49
+      "short_rank": 48
     },
     {
       "rank": 10,
@@ -1205,7 +1205,7 @@
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 29
+      "short_rank": 28
     }
   ],
   "top_long": [
@@ -1266,7 +1266,7 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 33
+      "short_rank": 32
     },
     {
       "rank": 2,
@@ -1325,7 +1325,7 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 18
+      "short_rank": 17
     },
     {
       "rank": 3,
@@ -1384,7 +1384,7 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 24
+      "short_rank": 23
     },
     {
       "rank": 4,
@@ -1502,7 +1502,7 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 28
+      "short_rank": 27
     },
     {
       "rank": 6,
@@ -1561,7 +1561,7 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 44
+      "short_rank": 43
     },
     {
       "rank": 7,
@@ -1620,7 +1620,7 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 34
+      "short_rank": 33
     },
     {
       "rank": 8,
@@ -1679,7 +1679,7 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 38
+      "short_rank": 37
     },
     {
       "rank": 9,
@@ -1738,7 +1738,7 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 49
+      "short_rank": 48
     },
     {
       "rank": 10,
@@ -1797,12 +1797,12 @@
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 29
+      "short_rank": 28
     }
   ],
   "top_short": [
     {
-      "rank": 26,
+      "rank": 25,
       "ticker": "GOOGL",
       "sector_key": "Neo_Cloud",
       "sector_cn": "科技巨头与AI生态",
@@ -1920,7 +1920,7 @@
       "short_rank": 2
     },
     {
-      "rank": 24,
+      "rank": 23,
       "ticker": "TSLA",
       "sector_key": "Neo_Cloud",
       "sector_cn": "物理AI与太空商业",
@@ -2038,7 +2038,7 @@
       "short_rank": 4
     },
     {
-      "rank": 53,
+      "rank": 52,
       "ticker": "WDC",
       "sector_key": "Memory",
       "sector_cn": "存储芯片",
@@ -2156,7 +2156,7 @@
       "short_rank": 6
     },
     {
-      "rank": 30,
+      "rank": 29,
       "ticker": "ORCL",
       "sector_key": "Enterprise_SaaS",
       "sector_cn": "企业软件与 AI SaaS",
@@ -2215,7 +2215,7 @@
       "short_rank": 7
     },
     {
-      "rank": 47,
+      "rank": 46,
       "ticker": "SKHY",
       "sector_key": "Memory",
       "sector_cn": "存储芯片",
@@ -2274,7 +2274,7 @@
       "short_rank": 8
     },
     {
-      "rank": 21,
+      "rank": 20,
       "ticker": "META",
       "sector_key": "Neo_Cloud",
       "sector_cn": "科技巨头与AI生态",
@@ -2333,7 +2333,7 @@
       "short_rank": 9
     },
     {
-      "rank": 41,
+      "rank": 40,
       "ticker": "CRDO",
       "sector_key": "Optical_Interconnect",
       "sector_cn": "光通信与互联",
@@ -2450,7 +2450,7 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 33
+      "short_rank": 32
     },
     {
       "rank": 2,
@@ -2509,7 +2509,7 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 18
+      "short_rank": 17
     },
     {
       "rank": 3,
@@ -2568,7 +2568,7 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 24
+      "short_rank": 23
     },
     {
       "rank": 4,
@@ -2686,7 +2686,7 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 28
+      "short_rank": 27
     },
     {
       "rank": 6,
@@ -2745,7 +2745,7 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 44
+      "short_rank": 43
     },
     {
       "rank": 7,
@@ -2804,7 +2804,7 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 34
+      "short_rank": 33
     },
     {
       "rank": 8,
@@ -2863,7 +2863,7 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 38
+      "short_rank": 37
     },
     {
       "rank": 9,
@@ -2922,7 +2922,7 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 49
+      "short_rank": 48
     },
     {
       "rank": 10,
@@ -2981,7 +2981,7 @@
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 29
+      "short_rank": 28
     },
     {
       "rank": 11,
@@ -3040,7 +3040,7 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 48
+      "short_rank": 47
     },
     {
       "rank": 12,
@@ -3158,7 +3158,7 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 22
+      "short_rank": 21
     },
     {
       "rank": 14,
@@ -3217,7 +3217,7 @@
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": true,
-      "short_rank": 20
+      "short_rank": 19
     },
     {
       "rank": 15,
@@ -3276,7 +3276,7 @@
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": true,
-      "short_rank": 17
+      "short_rank": 16
     },
     {
       "rank": 16,
@@ -3335,69 +3335,10 @@
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": true,
-      "short_rank": 14
+      "short_rank": 13
     },
     {
       "rank": 17,
-      "ticker": "MRVL",
-      "sector_key": "Optical_Interconnect",
-      "sector_cn": "光通信与互联",
-      "sector_rating": "⭐⭐⭐⭐☆",
-      "latest_price": 168.47,
-      "current_price": 168.47,
-      "atr_pct": 10.45,
-      "bias_ma50": -27.09,
-      "bias_ma20": -17.07,
-      "low_prev": 162.5,
-      "rsi_14": 38.3,
-      "is_broken": false,
-      "is_etf": false,
-      "is_crash_halt": false,
-      "is_cooling_halt": false,
-      "macro_temp": "🌧️ 暴雨空仓",
-      "model_raw_prob_pct": 40.9,
-      "base_raw_prob_pct": 40.9,
-      "predicted_win_rate_pct": 40.9,
-      "calibrated_win_rate_pct": 54.3,
-      "sector_pf": 1.38,
-      "target_profit_price": 178.49,
-      "target_profit_pct": 5.9,
-      "stop_loss_price": 159.63,
-      "stop_loss_pct": 5.2,
-      "action": "🔥 恐慌衰竭·博弈空头回补 (压力位不过就跑)",
-      "action_tag": "action-warning",
-      "model_raw_short_prob_pct": 65.3,
-      "calibrated_short_win_rate_pct": 64.3,
-      "short_entry_price": 164.4499969482422,
-      "short_target_profit_price": 152.55,
-      "short_target_profit_pct": 9.5,
-      "short_stop_loss_price": 180.26,
-      "short_stop_loss_pct": 7.0,
-      "dollar_pcr": 1.0,
-      "pcr": 1.0,
-      "pcr_sentiment": "⛅ 中性",
-      "put_wall": 156.23,
-      "call_wall": 172.67,
-      "iv_atm": 30.0,
-      "short_action": "⚡ 逢高反抽沽空/买Put",
-      "short_action_tag": "short-action-rebound",
-      "s1": 159.63,
-      "s2": 151.37,
-      "sl": 149.1,
-      "r1": 178.49,
-      "r2": 191.79,
-      "near_stop_s1": true,
-      "near_stop_price": 159.63,
-      "scenario_script": "【空头回补剧本】依托 S1 ($159.63) 博反抽，极限插针底 S2 ($151.37)；上看 R1 ($178.49) 空头回补反抽(不过就跑)；跌破 S1 严格离场",
-      "track": "Track B",
-      "four_h_rsi": 42.9,
-      "four_h_div": "➖ 4H 均线震荡纠缠",
-      "four_h_tag": "div-neutral",
-      "is_short_covering": true,
-      "short_rank": 11
-    },
-    {
-      "rank": 18,
       "ticker": "SOXL",
       "sector_key": "Semiconductors",
       "sector_cn": "半导体3倍做多",
@@ -3453,10 +3394,10 @@
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": true,
-      "short_rank": 63
+      "short_rank": 62
     },
     {
-      "rank": 19,
+      "rank": 18,
       "ticker": "AVGO",
       "sector_key": "Semiconductors",
       "sector_cn": "半导体与设备",
@@ -3512,10 +3453,10 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 26
+      "short_rank": 25
     },
     {
-      "rank": 20,
+      "rank": 19,
       "ticker": "ASML",
       "sector_key": "Semiconductors",
       "sector_cn": "半导体与设备",
@@ -3571,10 +3512,10 @@
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 21
+      "short_rank": 20
     },
     {
-      "rank": 21,
+      "rank": 20,
       "ticker": "META",
       "sector_key": "Neo_Cloud",
       "sector_cn": "科技巨头与AI生态",
@@ -3633,7 +3574,7 @@
       "short_rank": 9
     },
     {
-      "rank": 22,
+      "rank": 21,
       "ticker": "NKE",
       "sector_key": "Energy_Power",
       "sector_cn": "价值蓝筹与医药",
@@ -3689,10 +3630,10 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 39
+      "short_rank": 38
     },
     {
-      "rank": 23,
+      "rank": 22,
       "ticker": "MSFT",
       "sector_key": "Enterprise_SaaS",
       "sector_cn": "企业软件与 AI SaaS",
@@ -3748,10 +3689,10 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 46
+      "short_rank": 45
     },
     {
-      "rank": 24,
+      "rank": 23,
       "ticker": "TSLA",
       "sector_key": "Neo_Cloud",
       "sector_cn": "物理AI与太空商业",
@@ -3810,7 +3751,7 @@
       "short_rank": 3
     },
     {
-      "rank": 25,
+      "rank": 24,
       "ticker": "CEG",
       "sector_key": "Energy_Power",
       "sector_cn": "数据中心能源电力",
@@ -3866,10 +3807,10 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 32
+      "short_rank": 31
     },
     {
-      "rank": 26,
+      "rank": 25,
       "ticker": "GOOGL",
       "sector_key": "Neo_Cloud",
       "sector_cn": "科技巨头与AI生态",
@@ -3928,7 +3869,7 @@
       "short_rank": 1
     },
     {
-      "rank": 27,
+      "rank": 26,
       "ticker": "AMZN",
       "sector_key": "Neo_Cloud",
       "sector_cn": "科技巨头与AI生态",
@@ -3984,10 +3925,10 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 31
+      "short_rank": 30
     },
     {
-      "rank": 28,
+      "rank": 27,
       "ticker": "LLY",
       "sector_key": "Energy_Power",
       "sector_cn": "价值蓝筹与医药",
@@ -4043,10 +3984,10 @@
       "four_h_div": "🔴 4H 顶背离滞涨 (防回踩)",
       "four_h_tag": "div-bear",
       "is_short_covering": false,
-      "short_rank": 50
+      "short_rank": 49
     },
     {
-      "rank": 29,
+      "rank": 28,
       "ticker": "PLTR",
       "sector_key": "Enterprise_SaaS",
       "sector_cn": "企业软件与 AI SaaS",
@@ -4102,10 +4043,10 @@
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 25
+      "short_rank": 24
     },
     {
-      "rank": 30,
+      "rank": 29,
       "ticker": "ORCL",
       "sector_key": "Enterprise_SaaS",
       "sector_cn": "企业软件与 AI SaaS",
@@ -4164,7 +4105,7 @@
       "short_rank": 7
     },
     {
-      "rank": 31,
+      "rank": 30,
       "ticker": "VRT",
       "sector_key": "Semiconductors",
       "sector_cn": "AI液冷与服务器",
@@ -4223,7 +4164,7 @@
       "short_rank": 66
     },
     {
-      "rank": 32,
+      "rank": 31,
       "ticker": "COHR",
       "sector_key": "Optical_Interconnect",
       "sector_cn": "光通信与互联",
@@ -4279,10 +4220,10 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 58
+      "short_rank": 57
     },
     {
-      "rank": 33,
+      "rank": 32,
       "ticker": "MRNA",
       "sector_key": "Energy_Power",
       "sector_cn": "价值蓝筹与医药",
@@ -4341,7 +4282,7 @@
       "short_rank": 70
     },
     {
-      "rank": 34,
+      "rank": 33,
       "ticker": "FLY",
       "sector_key": "Neo_Cloud",
       "sector_cn": "物理AI与太空商业",
@@ -4400,7 +4341,7 @@
       "short_rank": 69
     },
     {
-      "rank": 35,
+      "rank": 34,
       "ticker": "COIN",
       "sector_key": "Crypto_Proxy",
       "sector_cn": "加密币股代理",
@@ -4456,10 +4397,10 @@
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": false,
-      "short_rank": 59
+      "short_rank": 58
     },
     {
-      "rank": 36,
+      "rank": 35,
       "ticker": "NOW",
       "sector_key": "Enterprise_SaaS",
       "sector_cn": "企业软件与 AI SaaS",
@@ -4515,10 +4456,10 @@
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": false,
-      "short_rank": 30
+      "short_rank": 29
     },
     {
-      "rank": 37,
+      "rank": 36,
       "ticker": "MSTR",
       "sector_key": "Crypto_Proxy",
       "sector_cn": "加密币股代理",
@@ -4574,10 +4515,10 @@
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 55
+      "short_rank": 54
     },
     {
-      "rank": 38,
+      "rank": 37,
       "ticker": "ASTS",
       "sector_key": "Neo_Cloud",
       "sector_cn": "物理AI与太空商业",
@@ -4633,10 +4574,10 @@
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 54
+      "short_rank": 53
     },
     {
-      "rank": 39,
+      "rank": 38,
       "ticker": "NVDA",
       "sector_key": "Semiconductors",
       "sector_cn": "半导体与设备",
@@ -4695,7 +4636,7 @@
       "short_rank": 68
     },
     {
-      "rank": 40,
+      "rank": 39,
       "ticker": "HPE",
       "sector_key": "Semiconductors",
       "sector_cn": "AI液冷与服务器",
@@ -4751,10 +4692,10 @@
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 19
+      "short_rank": 18
     },
     {
-      "rank": 41,
+      "rank": 40,
       "ticker": "CRDO",
       "sector_key": "Optical_Interconnect",
       "sector_cn": "光通信与互联",
@@ -4813,7 +4754,7 @@
       "short_rank": 10
     },
     {
-      "rank": 42,
+      "rank": 41,
       "ticker": "MU",
       "sector_key": "Memory",
       "sector_cn": "存储芯片",
@@ -4869,10 +4810,10 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 15
+      "short_rank": 14
     },
     {
-      "rank": 43,
+      "rank": 42,
       "ticker": "AAOI",
       "sector_key": "Optical_Interconnect",
       "sector_cn": "光通信与互联",
@@ -4931,7 +4872,7 @@
       "short_rank": 64
     },
     {
-      "rank": 44,
+      "rank": 43,
       "ticker": "APLD",
       "sector_key": "Neo_Cloud",
       "sector_cn": "Neo-Cloud 算力租赁",
@@ -4987,10 +4928,10 @@
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 52
+      "short_rank": 51
     },
     {
-      "rank": 45,
+      "rank": 44,
       "ticker": "OKLO",
       "sector_key": "Energy_Power",
       "sector_cn": "数据中心能源电力",
@@ -5046,10 +4987,10 @@
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 56
+      "short_rank": 55
     },
     {
-      "rank": 46,
+      "rank": 45,
       "ticker": "LITE",
       "sector_key": "Optical_Interconnect",
       "sector_cn": "光通信与互联",
@@ -5108,7 +5049,7 @@
       "short_rank": 67
     },
     {
-      "rank": 47,
+      "rank": 46,
       "ticker": "SKHY",
       "sector_key": "Memory",
       "sector_cn": "存储芯片",
@@ -5167,7 +5108,7 @@
       "short_rank": 8
     },
     {
-      "rank": 48,
+      "rank": 47,
       "ticker": "AMAT",
       "sector_key": "Semiconductors",
       "sector_cn": "半导体与设备",
@@ -5223,10 +5164,10 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 13
+      "short_rank": 12
     },
     {
-      "rank": 49,
+      "rank": 48,
       "ticker": "NBIS",
       "sector_key": "Neo_Cloud",
       "sector_cn": "Neo-Cloud 算力租赁",
@@ -5282,10 +5223,10 @@
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": false,
-      "short_rank": 53
+      "short_rank": 52
     },
     {
-      "rank": 50,
+      "rank": 49,
       "ticker": "AXTI",
       "sector_key": "Optical_Interconnect",
       "sector_cn": "光通信与互联",
@@ -5344,7 +5285,7 @@
       "short_rank": 65
     },
     {
-      "rank": 51,
+      "rank": 50,
       "ticker": "BE",
       "sector_key": "Energy_Power",
       "sector_cn": "数据中心能源电力",
@@ -5400,10 +5341,10 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 57
+      "short_rank": 56
     },
     {
-      "rank": 52,
+      "rank": 51,
       "ticker": "FPS",
       "sector_key": "Energy_Power",
       "sector_cn": "数据中心能源电力",
@@ -5459,10 +5400,10 @@
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 61
+      "short_rank": 60
     },
     {
-      "rank": 53,
+      "rank": 52,
       "ticker": "WDC",
       "sector_key": "Memory",
       "sector_cn": "存储芯片",
@@ -5521,7 +5462,7 @@
       "short_rank": 5
     },
     {
-      "rank": 54,
+      "rank": 53,
       "ticker": "KORU",
       "sector_key": "Memory",
       "sector_cn": "韩股存储3倍做多",
@@ -5577,10 +5518,10 @@
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 62
+      "short_rank": 61
     },
     {
-      "rank": 55,
+      "rank": 54,
       "ticker": "SNDK",
       "sector_key": "Memory",
       "sector_cn": "存储芯片",
@@ -5636,7 +5577,66 @@
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 60
+      "short_rank": 59
+    },
+    {
+      "rank": 55,
+      "ticker": "MRVL",
+      "sector_key": "Optical_Interconnect",
+      "sector_cn": "光通信与互联",
+      "sector_rating": "⭐⭐⭐⭐☆",
+      "latest_price": 168.47,
+      "current_price": 168.47,
+      "atr_pct": 10.45,
+      "bias_ma50": -27.06,
+      "bias_ma20": -17.07,
+      "low_prev": 162.5,
+      "rsi_14": 36.5,
+      "is_broken": true,
+      "is_etf": false,
+      "is_crash_halt": true,
+      "is_cooling_halt": false,
+      "macro_temp": "🌧️ 暴雨空仓",
+      "model_raw_prob_pct": 40.9,
+      "base_raw_prob_pct": 41.2,
+      "predicted_win_rate_pct": 41.2,
+      "calibrated_win_rate_pct": 30.1,
+      "sector_pf": 1.38,
+      "target_profit_price": 184.39,
+      "target_profit_pct": 9.5,
+      "stop_loss_price": 159.63,
+      "stop_loss_pct": 5.2,
+      "action": "🚨 暴跌熔断·严禁左侧接刀",
+      "action_tag": "action-warning",
+      "model_raw_short_prob_pct": 65.3,
+      "calibrated_short_win_rate_pct": 64.3,
+      "short_entry_price": 164.4499969482422,
+      "short_target_profit_price": 152.55,
+      "short_target_profit_pct": 9.5,
+      "short_stop_loss_price": 180.26,
+      "short_stop_loss_pct": 7.0,
+      "dollar_pcr": 1.0,
+      "pcr": 1.0,
+      "pcr_sentiment": "⛅ 中性",
+      "put_wall": 156.23,
+      "call_wall": 172.67,
+      "iv_atm": 30.0,
+      "short_action": "⚡ 逢高反抽沽空/买Put",
+      "short_action_tag": "short-action-rebound",
+      "s1": 159.63,
+      "s2": 151.37,
+      "sl": 149.1,
+      "r1": 178.49,
+      "r2": 191.79,
+      "near_stop_s1": true,
+      "near_stop_price": 159.63,
+      "scenario_script": "【暴跌熔断风控剧本】触发暴跌熔断保护期，下方严防下探 S2 ($151.37) 极端清算底；反抽测试 R1 ($178.49) 均属诱多；防守止损位 $149.10，严禁左侧接刀",
+      "track": "Track B",
+      "four_h_rsi": 42.9,
+      "four_h_div": "➖ 4H 均线震荡纠缠",
+      "four_h_tag": "div-neutral",
+      "is_short_covering": false,
+      "short_rank": 63
     },
     {
       "rank": 56,
@@ -5695,7 +5695,7 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 51
+      "short_rank": 50
     },
     {
       "rank": 57,
@@ -5754,7 +5754,7 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 37
+      "short_rank": 36
     },
     {
       "rank": 58,
@@ -5813,7 +5813,7 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 41
+      "short_rank": 40
     },
     {
       "rank": 59,
@@ -5931,7 +5931,7 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 12
+      "short_rank": 11
     },
     {
       "rank": 61,
@@ -5990,7 +5990,7 @@
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 23
+      "short_rank": 22
     },
     {
       "rank": 62,
@@ -6049,7 +6049,7 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 35
+      "short_rank": 34
     },
     {
       "rank": 63,
@@ -6108,7 +6108,7 @@
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 47
+      "short_rank": 46
     },
     {
       "rank": 64,
@@ -6167,7 +6167,7 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 45
+      "short_rank": 44
     },
     {
       "rank": 65,
@@ -6226,7 +6226,7 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 40
+      "short_rank": 39
     },
     {
       "rank": 66,
@@ -6285,7 +6285,7 @@
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 42
+      "short_rank": 41
     },
     {
       "rank": 67,
@@ -6344,7 +6344,7 @@
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": false,
-      "short_rank": 16
+      "short_rank": 15
     },
     {
       "rank": 68,
@@ -6403,7 +6403,7 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 36
+      "short_rank": 35
     },
     {
       "rank": 69,
@@ -6462,7 +6462,7 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 43
+      "short_rank": 42
     },
     {
       "rank": 70,
@@ -6521,7 +6521,7 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 27
+      "short_rank": 26
     }
   ],
   "by_ticker": {
@@ -6582,7 +6582,7 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 33
+      "short_rank": 32
     },
     "TSM": {
       "rank": 2,
@@ -6641,7 +6641,7 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 18
+      "short_rank": 17
     },
     "AMD": {
       "rank": 3,
@@ -6700,7 +6700,7 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 24
+      "short_rank": 23
     },
     "RKLB": {
       "rank": 4,
@@ -6818,7 +6818,7 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 28
+      "short_rank": 27
     },
     "V": {
       "rank": 6,
@@ -6877,7 +6877,7 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 44
+      "short_rank": 43
     },
     "AXP": {
       "rank": 7,
@@ -6936,7 +6936,7 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 34
+      "short_rank": 33
     },
     "PEP": {
       "rank": 8,
@@ -6995,7 +6995,7 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 38
+      "short_rank": 37
     },
     "KO": {
       "rank": 9,
@@ -7054,7 +7054,7 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 49
+      "short_rank": 48
     },
     "CRWD": {
       "rank": 10,
@@ -7113,7 +7113,7 @@
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 29
+      "short_rank": 28
     },
     "MCD": {
       "rank": 11,
@@ -7172,7 +7172,7 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 48
+      "short_rank": 47
     },
     "SPCX": {
       "rank": 12,
@@ -7290,7 +7290,7 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 22
+      "short_rank": 21
     },
     "INTC": {
       "rank": 14,
@@ -7349,7 +7349,7 @@
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": true,
-      "short_rank": 20
+      "short_rank": 19
     },
     "DELL": {
       "rank": 15,
@@ -7408,7 +7408,7 @@
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": true,
-      "short_rank": 17
+      "short_rank": 16
     },
     "STX": {
       "rank": 16,
@@ -7467,69 +7467,10 @@
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": true,
-      "short_rank": 14
-    },
-    "MRVL": {
-      "rank": 17,
-      "ticker": "MRVL",
-      "sector_key": "Optical_Interconnect",
-      "sector_cn": "光通信与互联",
-      "sector_rating": "⭐⭐⭐⭐☆",
-      "latest_price": 168.47,
-      "current_price": 168.47,
-      "atr_pct": 10.45,
-      "bias_ma50": -27.09,
-      "bias_ma20": -17.07,
-      "low_prev": 162.5,
-      "rsi_14": 38.3,
-      "is_broken": false,
-      "is_etf": false,
-      "is_crash_halt": false,
-      "is_cooling_halt": false,
-      "macro_temp": "🌧️ 暴雨空仓",
-      "model_raw_prob_pct": 40.9,
-      "base_raw_prob_pct": 40.9,
-      "predicted_win_rate_pct": 40.9,
-      "calibrated_win_rate_pct": 54.3,
-      "sector_pf": 1.38,
-      "target_profit_price": 178.49,
-      "target_profit_pct": 5.9,
-      "stop_loss_price": 159.63,
-      "stop_loss_pct": 5.2,
-      "action": "🔥 恐慌衰竭·博弈空头回补 (压力位不过就跑)",
-      "action_tag": "action-warning",
-      "model_raw_short_prob_pct": 65.3,
-      "calibrated_short_win_rate_pct": 64.3,
-      "short_entry_price": 164.4499969482422,
-      "short_target_profit_price": 152.55,
-      "short_target_profit_pct": 9.5,
-      "short_stop_loss_price": 180.26,
-      "short_stop_loss_pct": 7.0,
-      "dollar_pcr": 1.0,
-      "pcr": 1.0,
-      "pcr_sentiment": "⛅ 中性",
-      "put_wall": 156.23,
-      "call_wall": 172.67,
-      "iv_atm": 30.0,
-      "short_action": "⚡ 逢高反抽沽空/买Put",
-      "short_action_tag": "short-action-rebound",
-      "s1": 159.63,
-      "s2": 151.37,
-      "sl": 149.1,
-      "r1": 178.49,
-      "r2": 191.79,
-      "near_stop_s1": true,
-      "near_stop_price": 159.63,
-      "scenario_script": "【空头回补剧本】依托 S1 ($159.63) 博反抽，极限插针底 S2 ($151.37)；上看 R1 ($178.49) 空头回补反抽(不过就跑)；跌破 S1 严格离场",
-      "track": "Track B",
-      "four_h_rsi": 42.9,
-      "four_h_div": "➖ 4H 均线震荡纠缠",
-      "four_h_tag": "div-neutral",
-      "is_short_covering": true,
-      "short_rank": 11
+      "short_rank": 13
     },
     "SOXL": {
-      "rank": 18,
+      "rank": 17,
       "ticker": "SOXL",
       "sector_key": "Semiconductors",
       "sector_cn": "半导体3倍做多",
@@ -7585,10 +7526,10 @@
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": true,
-      "short_rank": 63
+      "short_rank": 62
     },
     "AVGO": {
-      "rank": 19,
+      "rank": 18,
       "ticker": "AVGO",
       "sector_key": "Semiconductors",
       "sector_cn": "半导体与设备",
@@ -7644,10 +7585,10 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 26
+      "short_rank": 25
     },
     "ASML": {
-      "rank": 20,
+      "rank": 19,
       "ticker": "ASML",
       "sector_key": "Semiconductors",
       "sector_cn": "半导体与设备",
@@ -7703,10 +7644,10 @@
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 21
+      "short_rank": 20
     },
     "META": {
-      "rank": 21,
+      "rank": 20,
       "ticker": "META",
       "sector_key": "Neo_Cloud",
       "sector_cn": "科技巨头与AI生态",
@@ -7765,7 +7706,7 @@
       "short_rank": 9
     },
     "NKE": {
-      "rank": 22,
+      "rank": 21,
       "ticker": "NKE",
       "sector_key": "Energy_Power",
       "sector_cn": "价值蓝筹与医药",
@@ -7821,10 +7762,10 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 39
+      "short_rank": 38
     },
     "MSFT": {
-      "rank": 23,
+      "rank": 22,
       "ticker": "MSFT",
       "sector_key": "Enterprise_SaaS",
       "sector_cn": "企业软件与 AI SaaS",
@@ -7880,10 +7821,10 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 46
+      "short_rank": 45
     },
     "TSLA": {
-      "rank": 24,
+      "rank": 23,
       "ticker": "TSLA",
       "sector_key": "Neo_Cloud",
       "sector_cn": "物理AI与太空商业",
@@ -7942,7 +7883,7 @@
       "short_rank": 3
     },
     "CEG": {
-      "rank": 25,
+      "rank": 24,
       "ticker": "CEG",
       "sector_key": "Energy_Power",
       "sector_cn": "数据中心能源电力",
@@ -7998,10 +7939,10 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 32
+      "short_rank": 31
     },
     "GOOGL": {
-      "rank": 26,
+      "rank": 25,
       "ticker": "GOOGL",
       "sector_key": "Neo_Cloud",
       "sector_cn": "科技巨头与AI生态",
@@ -8060,7 +8001,7 @@
       "short_rank": 1
     },
     "AMZN": {
-      "rank": 27,
+      "rank": 26,
       "ticker": "AMZN",
       "sector_key": "Neo_Cloud",
       "sector_cn": "科技巨头与AI生态",
@@ -8116,10 +8057,10 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 31
+      "short_rank": 30
     },
     "LLY": {
-      "rank": 28,
+      "rank": 27,
       "ticker": "LLY",
       "sector_key": "Energy_Power",
       "sector_cn": "价值蓝筹与医药",
@@ -8175,10 +8116,10 @@
       "four_h_div": "🔴 4H 顶背离滞涨 (防回踩)",
       "four_h_tag": "div-bear",
       "is_short_covering": false,
-      "short_rank": 50
+      "short_rank": 49
     },
     "PLTR": {
-      "rank": 29,
+      "rank": 28,
       "ticker": "PLTR",
       "sector_key": "Enterprise_SaaS",
       "sector_cn": "企业软件与 AI SaaS",
@@ -8234,10 +8175,10 @@
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 25
+      "short_rank": 24
     },
     "ORCL": {
-      "rank": 30,
+      "rank": 29,
       "ticker": "ORCL",
       "sector_key": "Enterprise_SaaS",
       "sector_cn": "企业软件与 AI SaaS",
@@ -8296,7 +8237,7 @@
       "short_rank": 7
     },
     "VRT": {
-      "rank": 31,
+      "rank": 30,
       "ticker": "VRT",
       "sector_key": "Semiconductors",
       "sector_cn": "AI液冷与服务器",
@@ -8355,7 +8296,7 @@
       "short_rank": 66
     },
     "COHR": {
-      "rank": 32,
+      "rank": 31,
       "ticker": "COHR",
       "sector_key": "Optical_Interconnect",
       "sector_cn": "光通信与互联",
@@ -8411,10 +8352,10 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 58
+      "short_rank": 57
     },
     "MRNA": {
-      "rank": 33,
+      "rank": 32,
       "ticker": "MRNA",
       "sector_key": "Energy_Power",
       "sector_cn": "价值蓝筹与医药",
@@ -8473,7 +8414,7 @@
       "short_rank": 70
     },
     "FLY": {
-      "rank": 34,
+      "rank": 33,
       "ticker": "FLY",
       "sector_key": "Neo_Cloud",
       "sector_cn": "物理AI与太空商业",
@@ -8532,7 +8473,7 @@
       "short_rank": 69
     },
     "COIN": {
-      "rank": 35,
+      "rank": 34,
       "ticker": "COIN",
       "sector_key": "Crypto_Proxy",
       "sector_cn": "加密币股代理",
@@ -8588,10 +8529,10 @@
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": false,
-      "short_rank": 59
+      "short_rank": 58
     },
     "NOW": {
-      "rank": 36,
+      "rank": 35,
       "ticker": "NOW",
       "sector_key": "Enterprise_SaaS",
       "sector_cn": "企业软件与 AI SaaS",
@@ -8647,10 +8588,10 @@
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": false,
-      "short_rank": 30
+      "short_rank": 29
     },
     "MSTR": {
-      "rank": 37,
+      "rank": 36,
       "ticker": "MSTR",
       "sector_key": "Crypto_Proxy",
       "sector_cn": "加密币股代理",
@@ -8706,10 +8647,10 @@
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 55
+      "short_rank": 54
     },
     "ASTS": {
-      "rank": 38,
+      "rank": 37,
       "ticker": "ASTS",
       "sector_key": "Neo_Cloud",
       "sector_cn": "物理AI与太空商业",
@@ -8765,10 +8706,10 @@
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 54
+      "short_rank": 53
     },
     "NVDA": {
-      "rank": 39,
+      "rank": 38,
       "ticker": "NVDA",
       "sector_key": "Semiconductors",
       "sector_cn": "半导体与设备",
@@ -8827,7 +8768,7 @@
       "short_rank": 68
     },
     "HPE": {
-      "rank": 40,
+      "rank": 39,
       "ticker": "HPE",
       "sector_key": "Semiconductors",
       "sector_cn": "AI液冷与服务器",
@@ -8883,10 +8824,10 @@
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 19
+      "short_rank": 18
     },
     "CRDO": {
-      "rank": 41,
+      "rank": 40,
       "ticker": "CRDO",
       "sector_key": "Optical_Interconnect",
       "sector_cn": "光通信与互联",
@@ -8945,7 +8886,7 @@
       "short_rank": 10
     },
     "MU": {
-      "rank": 42,
+      "rank": 41,
       "ticker": "MU",
       "sector_key": "Memory",
       "sector_cn": "存储芯片",
@@ -9001,10 +8942,10 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 15
+      "short_rank": 14
     },
     "AAOI": {
-      "rank": 43,
+      "rank": 42,
       "ticker": "AAOI",
       "sector_key": "Optical_Interconnect",
       "sector_cn": "光通信与互联",
@@ -9063,7 +9004,7 @@
       "short_rank": 64
     },
     "APLD": {
-      "rank": 44,
+      "rank": 43,
       "ticker": "APLD",
       "sector_key": "Neo_Cloud",
       "sector_cn": "Neo-Cloud 算力租赁",
@@ -9119,10 +9060,10 @@
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 52
+      "short_rank": 51
     },
     "OKLO": {
-      "rank": 45,
+      "rank": 44,
       "ticker": "OKLO",
       "sector_key": "Energy_Power",
       "sector_cn": "数据中心能源电力",
@@ -9178,10 +9119,10 @@
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 56
+      "short_rank": 55
     },
     "LITE": {
-      "rank": 46,
+      "rank": 45,
       "ticker": "LITE",
       "sector_key": "Optical_Interconnect",
       "sector_cn": "光通信与互联",
@@ -9240,7 +9181,7 @@
       "short_rank": 67
     },
     "SKHY": {
-      "rank": 47,
+      "rank": 46,
       "ticker": "SKHY",
       "sector_key": "Memory",
       "sector_cn": "存储芯片",
@@ -9299,7 +9240,7 @@
       "short_rank": 8
     },
     "AMAT": {
-      "rank": 48,
+      "rank": 47,
       "ticker": "AMAT",
       "sector_key": "Semiconductors",
       "sector_cn": "半导体与设备",
@@ -9355,10 +9296,10 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 13
+      "short_rank": 12
     },
     "NBIS": {
-      "rank": 49,
+      "rank": 48,
       "ticker": "NBIS",
       "sector_key": "Neo_Cloud",
       "sector_cn": "Neo-Cloud 算力租赁",
@@ -9414,10 +9355,10 @@
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": false,
-      "short_rank": 53
+      "short_rank": 52
     },
     "AXTI": {
-      "rank": 50,
+      "rank": 49,
       "ticker": "AXTI",
       "sector_key": "Optical_Interconnect",
       "sector_cn": "光通信与互联",
@@ -9476,7 +9417,7 @@
       "short_rank": 65
     },
     "BE": {
-      "rank": 51,
+      "rank": 50,
       "ticker": "BE",
       "sector_key": "Energy_Power",
       "sector_cn": "数据中心能源电力",
@@ -9532,10 +9473,10 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 57
+      "short_rank": 56
     },
     "FPS": {
-      "rank": 52,
+      "rank": 51,
       "ticker": "FPS",
       "sector_key": "Energy_Power",
       "sector_cn": "数据中心能源电力",
@@ -9591,10 +9532,10 @@
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 61
+      "short_rank": 60
     },
     "WDC": {
-      "rank": 53,
+      "rank": 52,
       "ticker": "WDC",
       "sector_key": "Memory",
       "sector_cn": "存储芯片",
@@ -9653,7 +9594,7 @@
       "short_rank": 5
     },
     "KORU": {
-      "rank": 54,
+      "rank": 53,
       "ticker": "KORU",
       "sector_key": "Memory",
       "sector_cn": "韩股存储3倍做多",
@@ -9709,10 +9650,10 @@
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 62
+      "short_rank": 61
     },
     "SNDK": {
-      "rank": 55,
+      "rank": 54,
       "ticker": "SNDK",
       "sector_key": "Memory",
       "sector_cn": "存储芯片",
@@ -9768,7 +9709,66 @@
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 60
+      "short_rank": 59
+    },
+    "MRVL": {
+      "rank": 55,
+      "ticker": "MRVL",
+      "sector_key": "Optical_Interconnect",
+      "sector_cn": "光通信与互联",
+      "sector_rating": "⭐⭐⭐⭐☆",
+      "latest_price": 168.47,
+      "current_price": 168.47,
+      "atr_pct": 10.45,
+      "bias_ma50": -27.06,
+      "bias_ma20": -17.07,
+      "low_prev": 162.5,
+      "rsi_14": 36.5,
+      "is_broken": true,
+      "is_etf": false,
+      "is_crash_halt": true,
+      "is_cooling_halt": false,
+      "macro_temp": "🌧️ 暴雨空仓",
+      "model_raw_prob_pct": 40.9,
+      "base_raw_prob_pct": 41.2,
+      "predicted_win_rate_pct": 41.2,
+      "calibrated_win_rate_pct": 30.1,
+      "sector_pf": 1.38,
+      "target_profit_price": 184.39,
+      "target_profit_pct": 9.5,
+      "stop_loss_price": 159.63,
+      "stop_loss_pct": 5.2,
+      "action": "🚨 暴跌熔断·严禁左侧接刀",
+      "action_tag": "action-warning",
+      "model_raw_short_prob_pct": 65.3,
+      "calibrated_short_win_rate_pct": 64.3,
+      "short_entry_price": 164.4499969482422,
+      "short_target_profit_price": 152.55,
+      "short_target_profit_pct": 9.5,
+      "short_stop_loss_price": 180.26,
+      "short_stop_loss_pct": 7.0,
+      "dollar_pcr": 1.0,
+      "pcr": 1.0,
+      "pcr_sentiment": "⛅ 中性",
+      "put_wall": 156.23,
+      "call_wall": 172.67,
+      "iv_atm": 30.0,
+      "short_action": "⚡ 逢高反抽沽空/买Put",
+      "short_action_tag": "short-action-rebound",
+      "s1": 159.63,
+      "s2": 151.37,
+      "sl": 149.1,
+      "r1": 178.49,
+      "r2": 191.79,
+      "near_stop_s1": true,
+      "near_stop_price": 159.63,
+      "scenario_script": "【暴跌熔断风控剧本】触发暴跌熔断保护期，下方严防下探 S2 ($151.37) 极端清算底；反抽测试 R1 ($178.49) 均属诱多；防守止损位 $149.10，严禁左侧接刀",
+      "track": "Track B",
+      "four_h_rsi": 42.9,
+      "four_h_div": "➖ 4H 均线震荡纠缠",
+      "four_h_tag": "div-neutral",
+      "is_short_covering": false,
+      "short_rank": 63
     },
     "CRWV": {
       "rank": 56,
@@ -9827,7 +9827,7 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 51
+      "short_rank": 50
     },
     "QQQ": {
       "rank": 57,
@@ -9886,7 +9886,7 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 37
+      "short_rank": 36
     },
     "IWM": {
       "rank": 58,
@@ -9945,7 +9945,7 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 41
+      "short_rank": 40
     },
     "SOXX": {
       "rank": 59,
@@ -10063,7 +10063,7 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 12
+      "short_rank": 11
     },
     "GLD": {
       "rank": 61,
@@ -10122,7 +10122,7 @@
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 23
+      "short_rank": 22
     },
     "QQQI": {
       "rank": 62,
@@ -10181,7 +10181,7 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 35
+      "short_rank": 34
     },
     "TLT": {
       "rank": 63,
@@ -10240,7 +10240,7 @@
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 47
+      "short_rank": 46
     },
     "DIA": {
       "rank": 64,
@@ -10299,7 +10299,7 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 45
+      "short_rank": 44
     },
     "SOXS": {
       "rank": 65,
@@ -10358,7 +10358,7 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 40
+      "short_rank": 39
     },
     "IGV": {
       "rank": 66,
@@ -10417,7 +10417,7 @@
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 42
+      "short_rank": 41
     },
     "IBIT": {
       "rank": 67,
@@ -10476,7 +10476,7 @@
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": false,
-      "short_rank": 16
+      "short_rank": 15
     },
     "SQQQ": {
       "rank": 68,
@@ -10535,7 +10535,7 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 36
+      "short_rank": 35
     },
     "SPY": {
       "rank": 69,
@@ -10594,7 +10594,7 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 43
+      "short_rank": 42
     },
     "VIXY": {
       "rank": 70,
@@ -10653,23 +10653,23 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 27
+      "short_rank": 26
     }
   },
   "defensive_flight": {
     "is_alert": false,
-    "flight_score": -0.2,
+    "flight_score": -0.15,
     "def_mean_chg": 0.39,
-    "off_mean_chg": 0.59,
-    "alert_text": "🛡️ 夜盘·期货代理 防御因子平稳 (-0.2%) · NQ/ZB/GC",
+    "off_mean_chg": 0.53,
+    "alert_text": "🛡️ 夜盘·期货代理 防御因子平稳 (-0.1%) · NQ/ZB/GC",
     "banner_text": "",
     "badge": "badge-normal",
     "session": "OVERNIGHT",
     "score_source": "futures_proxy",
     "components": {
       "NQ=F": {
-        "pct": 0.59,
-        "price": 28557.0,
+        "pct": 0.53,
+        "price": 28537.75,
         "baseline": 28388.5,
         "quote_time": "2026-11-12 21:10:00-05:00",
         "baseline_time": "2026-11-12 16:00:00-05:00"
@@ -10682,8 +10682,8 @@
         "baseline_time": "2026-11-12 16:00:00-05:00"
       },
       "GC=F": {
-        "pct": 0.87,
-        "price": 3913.0,
+        "pct": 0.86,
+        "price": 3912.3999,
         "baseline": 3879.1001,
         "quote_time": "2026-11-12 21:10:00-05:00",
         "baseline_time": "2026-11-12 16:00:00-05:00"
@@ -25446,7 +25446,7 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 33
+      "short_rank": 32
     },
     {
       "rank": 2,
@@ -25505,7 +25505,7 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 18
+      "short_rank": 17
     },
     {
       "rank": 3,
@@ -25564,7 +25564,7 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 24
+      "short_rank": 23
     },
     {
       "rank": 4,
@@ -25682,7 +25682,7 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 28
+      "short_rank": 27
     },
     {
       "rank": 6,
@@ -25741,7 +25741,7 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 44
+      "short_rank": 43
     },
     {
       "rank": 7,
@@ -25800,7 +25800,7 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 34
+      "short_rank": 33
     },
     {
       "rank": 8,
@@ -25859,7 +25859,7 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 38
+      "short_rank": 37
     },
     {
       "rank": 9,
@@ -25918,7 +25918,7 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 49
+      "short_rank": 48
     },
     {
       "rank": 10,
@@ -25977,7 +25977,7 @@
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 29
+      "short_rank": 28
     }
   ]
 }
