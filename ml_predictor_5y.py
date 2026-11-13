@@ -2402,12 +2402,13 @@ def generate_time_cycle_projections(
                 continue
 
         closes = sub['Close'].values.astype(float).copy()
+        close_anchor = float(closes[-1])
         sc_info = (scenario_map_by_ticker or {}).get(tk, {})
         live_override_p = sc_info.get('latest_price') or sc_info.get('current_price')
         if live_override_p is not None and float(live_override_p) > 0:
-            cur_p = float(live_override_p)
+            display_p = float(live_override_p)
         else:
-            cur_p = float(closes[-1])
+            display_p = close_anchor
 
         last_hist_dt = pd.to_datetime(sub['Date'].iloc[-1]).date() if 'Date' in sub.columns else anchor_date
 
@@ -2420,17 +2421,16 @@ def generate_time_cycle_projections(
                 'price': round(float(sub.at[i, 'Close']), 2)
             })
 
-        # 今日锚定: 若历史最新收盘日早于 anchor_date，单独追加今日 Bar 作为锚点，绝不篡改历史已收 K 线
+        # 今日尚未收进历史时，才追加一根现价锚点。已经收盘的 K 线保持收盘价，盘后价只进现价。
         if last_hist_dt < anchor_date:
             hist_entries.append({
                 'date': anchor_date.strftime('%Y-%m-%d'),
-                'price': round(cur_p, 2)
+                'price': round(display_p, 2)
             })
-            closes = np.append(closes, cur_p)
+            closes = np.append(closes, display_p)
+            cur_p = display_p
         else:
-            if live_override_p is not None and float(live_override_p) > 0:
-                hist_entries[-1]['price'] = round(cur_p, 2)
-                closes[-1] = cur_p
+            cur_p = close_anchor
 
         n = len(closes)
 
@@ -2573,7 +2573,7 @@ def generate_time_cycle_projections(
 
         results[tk] = {
             'ticker': tk,
-            'current_price': round(cur_p, 2),
+            'current_price': round(display_p, 2),
             's1': sc_levels.get('s1'),
             's2': sc_levels.get('s2'),
             'sl': sc_levels.get('sl'),

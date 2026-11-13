@@ -368,18 +368,9 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                         _b_item = ai_predictions["by_ticker"].get(_tk_c)
                         if isinstance(_tc_item, dict) and isinstance(_b_item, dict):
                             _new_cp = float(_b_item.get("latest_price") or _b_item.get("current_price") or 0.0)
-                            _old_cp = float(_tc_item.get("current_price") or 0.0)
-                            if _new_cp > 0 and _old_cp > 0 and abs(_new_cp - _old_cp) / _old_cp > 0.001:
-                                _ratio = _new_cp / _old_cp
+                            if _new_cp > 0:
+                                # 盘中/盘后报价只写入现价。已收盘历史 K 线与 15 日推演路径保持收盘价，禁止按比例改写。
                                 _tc_item["current_price"] = round(_new_cp, 2)
-                                for _hp in _tc_item.get("history", []):
-                                    if isinstance(_hp, dict) and _hp.get("price"):
-                                        _hp["price"] = round(float(_hp["price"]) * _ratio, 2)
-                                if _tc_item.get("history"):
-                                    _tc_item["history"][-1]["price"] = round(_new_cp, 2)
-                                for _pp in _tc_item.get("projection", []):
-                                    if isinstance(_pp, dict) and _pp.get("price"):
-                                        _pp["price"] = round(float(_pp["price"]) * _ratio, 2)
                             # 1. 同步常规防御梯队点位 (s1, s2, sl, r1, r2) — 统一纯数学驱动，零个股硬编码
                             for _k_lvl in ("s1", "s2", "sl", "r1", "r2"):
                                 if _b_item.get(_k_lvl) is not None:

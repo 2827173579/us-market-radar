@@ -2400,11 +2400,11 @@ class TestLiveTerminalIntegrationAndFreshness(unittest.TestCase):
 
     def test_live_price_jump_scaling_invariants(self):
         """
-        Verify that when live price jumps +5%, scaling preserves monotonicity,
-        history anchoring, and max_proj <= R2.
+        盘后/盘中现价跳变时，只更新 current_price 和防守梯队。
+        已收盘历史 K 线与推演路径不得按比例改写。
         """
         old_cp = 100.0
-        new_cp = 105.0  # +5% intraday jump
+        new_cp = 105.0  # +5% 盘后跳变
         ratio = new_cp / old_cp
 
         tc_item = {
@@ -2422,13 +2422,10 @@ class TestLiveTerminalIntegrationAndFreshness(unittest.TestCase):
             'r1': round(104.0 * ratio, 2), 'r2': round(110.0 * ratio, 2)
         }
 
-        # Apply scaling
-        tc_item["current_price"] = round(new_cp, 2)
-        for hp in tc_item["history"]:
-            hp["price"] = round(float(hp["price"]) * ratio, 2)
-        tc_item["history"][-1]["price"] = round(new_cp, 2)
-        for pp in tc_item["projection"]:
-            pp["price"] = round(float(pp["price"]) * ratio, 2)
+        # 与 create_futu_terminal 一致：现价单独更新，历史和推演路径不动
+        _new_cp = float(b_item.get("latest_price") or 0.0)
+        if _new_cp > 0:
+            tc_item["current_price"] = round(_new_cp, 2)
         for k in ("s1", "s2", "sl", "r1", "r2"):
             if b_item.get(k) is not None:
                 tc_item[k] = b_item[k]
@@ -2440,8 +2437,11 @@ class TestLiveTerminalIntegrationAndFreshness(unittest.TestCase):
             tc_item["r2"] = round(float(tc_item["r1"]) + min_step, 2)
         b_item["r2"] = tc_item["r2"]
 
-        # Check invariants
-        self.assertEqual(tc_item["history"][-1]["price"], 105.0)
+        self.assertEqual(tc_item["current_price"], 105.0)
+        self.assertEqual(tc_item["history"][0]["price"], 98.0)
+        self.assertEqual(tc_item["history"][-1]["price"], 100.0)
+        self.assertEqual(tc_item["projection"][0]["price"], 102.0)
+        self.assertEqual(tc_item["projection"][1]["price"], 108.0)
         self.assertLessEqual(max_proj_p, tc_item["r2"])
         self.assertTrue(tc_item["sl"] < tc_item["s2"] < tc_item["s1"] < new_cp < tc_item["r1"] < tc_item["r2"])
 
