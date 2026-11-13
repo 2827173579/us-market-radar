@@ -17,7 +17,6 @@ import socket
 import threading
 import subprocess
 SILENT_WIN_FLAGS = 0x08000000 if sys.platform == "win32" else 0
-PID_FILE = os.path.join(PROJECT_DIR, ".radar_daemon.pid")
 import webbrowser
 from datetime import datetime
 import tkinter as tk
@@ -26,6 +25,7 @@ from tkinter import ttk, messagebox, scrolledtext
 # 确保脚本工作目录为当前项目目录
 PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
 os.chdir(PROJECT_DIR)
+PID_FILE = os.path.join(PROJECT_DIR, ".radar_daemon.pid")
 
 # 确保 Windows 终端编码为 UTF-8
 if hasattr(sys.stdout, "reconfigure"):
@@ -332,7 +332,7 @@ class TradeRadarControlApp:
         def _worker():
             self.append_log("正在启动后台轮询守护进程...")
             try:
-                creation_flags = 0x00000008 | 0x00000200 if sys.platform == "win32" else 0
+                creation_flags = SILENT_WIN_FLAGS
                 log_file = os.path.join(PROJECT_DIR, ".radar_daemon.log")
                 cmd = [sys.executable, "-u", "integrated_market_radar.py", "--loop-daemon", "--interval-seconds", "15", "--duration-minutes", "0"]
                 with open(log_file, "a", encoding="utf-8") as lf:
@@ -341,9 +341,13 @@ class TradeRadarControlApp:
                         cwd=PROJECT_DIR,
                         stdout=lf,
                         stderr=lf,
-                        creationflags=creation_flags,
-                        close_fds=True
+                        creationflags=creation_flags
                     )
+                try:
+                    with open(PID_FILE, "w", encoding="utf-8") as pf:
+                        pf.write(str(proc.pid))
+                except Exception:
+                    pass
                 self.append_log(f"✅ 后台轮询已启动，PID: {proc.pid}")
                 self.append_log(f"📱 局域网看盘地址: http://{get_local_lan_ip()}:8765")
             except Exception as e:
