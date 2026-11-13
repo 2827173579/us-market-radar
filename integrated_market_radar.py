@@ -16,7 +16,7 @@ import subprocess
 import os
 import time
 import random
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 import urllib.request
 import urllib.error
 from urllib.parse import urlparse, parse_qs
@@ -4689,30 +4689,64 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
 # ==============================================================================
 
 def maybe_refresh_daily_ml_panel():
-    """美股常规收盘后，每日自动触发一次日线面板增量刷新（仅一次/交易日）。"""
+    """美股 16:05 ET 之后刷新日线。只有面板真实覆盖当日收盘日才记成功，否则每 10 分钟重试。"""
     try:
         try:
             from zoneinfo import ZoneInfo
             et_now = datetime.now(ZoneInfo("America/New_York"))
         except Exception:
-            et_now = datetime.now()
-        if et_now.weekday() >= 5 or et_now.hour < 16:
+            et_now = datetime.now(timezone(timedelta(hours=-5)))
+        if et_now.weekday() >= 5:
+            return
+        if et_now.hour < 16 or (et_now.hour == 16 and et_now.minute < 5):
             return
         day_s = et_now.strftime("%Y-%m-%d")
         state_path = os.path.join(SCRATCH_DIR, "data_cache", ".last_daily_ml_refresh")
-        last_day = ""
+        marker_path = os.path.join(SCRATCH_DIR, "data_cache", ".ml_panel_max_date")
+        os.makedirs(os.path.dirname(state_path), exist_ok=True)
+
+        def _marker_day():
+            try:
+                return open(marker_path, encoding="utf-8").read().strip()
+            except Exception:
+                return ""
+
+        state = {}
         if os.path.exists(state_path):
             try:
-                last_day = open(state_path, encoding="utf-8").read().strip()
+                raw = open(state_path, encoding="utf-8").read().strip()
+                if raw.startswith("{"):
+                    state = json.loads(raw)
+                elif raw:
+                    state = {"success_day": raw}
             except Exception:
-                last_day = ""
-        if last_day == day_s:
+                state = {}
+
+        if state.get("success_day") == day_s and _marker_day() == day_s:
             return
-        print(f"[*] 美股收盘后日线面板自动增量刷新开始 ({day_s} ET)...")
-        subprocess.run([sys.executable, "ml_predictor_5y.py", "--refresh"], cwd=SCRATCH_DIR, check=False, timeout=900)
+
+        last_attempt = float(state.get("last_attempt_epoch") or 0)
+        if time.time() - last_attempt < 600:
+            return
+
+        state["last_attempt_epoch"] = time.time()
+        state.pop("success_day", None)
         with open(state_path, "w", encoding="utf-8") as sf:
-            sf.write(day_s)
-        print("[+] 日线面板增量刷新完成。")
+            json.dump(state, sf)
+        print(f"[*] 美股收盘后日线面板刷新开始 ({day_s} ET)，未拉到当日收盘日不记成功...")
+        proc = subprocess.run(
+            [sys.executable, "ml_predictor_5y.py", "--refresh"],
+            cwd=SCRATCH_DIR,
+            check=False,
+            timeout=1800,
+        )
+        if proc.returncode == 0 and _marker_day() == day_s:
+            state["success_day"] = day_s
+            with open(state_path, "w", encoding="utf-8") as sf:
+                json.dump(state, sf)
+            print(f"[+] 日线面板已覆盖 {day_s}，刷新完成。")
+        else:
+            print(f"[!] 日线仍未覆盖 {day_s}（exit={proc.returncode}，面板日期={_marker_day() or '无'}），10 分钟后重试。")
     except Exception as _e:
         print(f"[!] 日线面板自动刷新异常: {_e}")
 

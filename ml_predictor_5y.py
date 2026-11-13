@@ -214,7 +214,16 @@ def _fetch_single_ticker(ticker: str, start_date: str = '2021-11-01', max_retrie
     """通过 yfinance 拉取单只标的的历史日线数据，自动扁平化多级列名"""
     for attempt in range(max_retries):
         try:
-            df = yf.download(ticker, start=start_date, auto_adjust=True, progress=False)
+            end_exclusive = (_get_latest_expected_trading_day() + timedelta(days=1)).strftime("%Y-%m-%d")
+            # yfinance 的 end 为左闭右开，end=已收盘日 会把当天切掉。必须用已收盘日的下一天。
+            df = yf.download(
+                ticker,
+                start=start_date,
+                end=end_exclusive,
+                interval="1d",
+                auto_adjust=True,
+                progress=False,
+            )
             if df is None or len(df) == 0:
                 time.sleep(0.5)
                 continue
@@ -234,6 +243,8 @@ def _fetch_single_ticker(ticker: str, start_date: str = '2021-11-01', max_retrie
 
             # 统一为无时区规范日期
             df['Date'] = pd.to_datetime(df['Date']).dt.tz_localize(None)
+            expected_last = _get_latest_expected_trading_day()
+            df = df[df['Date'].dt.date <= expected_last]
             df['Ticker'] = ticker
 
             required_cols = ['Date', 'Ticker', 'Open', 'High', 'Low', 'Close', 'Volume']
@@ -6482,7 +6493,7 @@ def verify_pipeline_integrity(feature_panel: pd.DataFrame) -> Dict:
 
     assert not has_nan, f"Integrity Failure: 特征中包含 NaN 值:\n{nan_counts[nan_counts > 0]}"
     assert not has_inf, f"Integrity Failure: 特征中包含 Inf 无穷大值 (共 {inf_counts} 个)"
-    assert unique_tickers == 28, f"Expected 28 target stocks, got {unique_tickers}"
+    assert unique_tickers == len(TARGET_STOCKS), f"Expected {len(TARGET_STOCKS)} target stocks, got {unique_tickers}"
     assert unique_sectors == 7, f"Expected 7 sectors, got {unique_sectors}"
     assert nvda_bars >= 1200, f"NVDA 历史样本被截断 ({nvda_bars} < 1200), 说明发生了宽表全局 dropna 污染！"
     assert crwv_bars > 0, "CRWV 次新股样本丢失"
@@ -6526,6 +6537,30 @@ def main():
         print("[*] 仅校验模式，执行完毕。")
         return
 
+    latest_df = feature_panel[feature_panel['Ticker'].isin(TARGET_STOCKS)].copy()
+    latest_core_stocks = latest_df.sort_values('Date').groupby('Ticker').last().reset_index()
+    latest_stocks = build_extended_live_features_df(raw_panel, latest_core_stocks, force_refresh=args.refresh)
+    print(f"[*] 🌐 全域实盘推理截面构建完成: 覆盖 {len(latest_stocks)} 只终端标的 (含 28 只核心赛道股 + {len(latest_stocks) - len(latest_core_stocks)} 只扩展个股/ETF)")
+
+    expected_last = _get_latest_expected_trading_day()
+    wanted = list(dict.fromkeys(list(TARGET_STOCKS) + list(EXTENDED_RADAR_SECTOR_MAP.keys())))
+    have = set(latest_stocks['Ticker'].astype(str)) if 'Ticker' in latest_stocks.columns else set()
+    last_by_ticker = {}
+    if 'Date' in latest_stocks.columns and not latest_stocks.empty:
+        last_by_ticker = latest_stocks.groupby('Ticker')['Date'].max().to_dict()
+    behind = []
+    for tk in wanted:
+        if tk not in have:
+            behind.append(f"{tk}:缺失")
+            continue
+        tk_day = pd.to_datetime(last_by_ticker[tk]).date()
+        if tk_day < expected_last:
+            behind.append(f"{tk}:{tk_day}")
+    if args.refresh and behind:
+        print(f"[!] 日线未覆盖美东收盘日 {expected_last}，落后 {len(behind)} 只: {', '.join(behind[:16])}")
+        print("[!] 本次不生成看板、不记刷新成功，等待下一轮重试。")
+        sys.exit(2)
+
     print("=" * 70)
     print("🎯 Milestone M2 & M3: 三阈值打标、Walk-Forward 验证与 4 大战报看板生成")
     print("=" * 70)
@@ -6543,12 +6578,6 @@ def main():
     print(f"[*] 做空打标统计: 总样本 {n_total} 条 | 有效标签 {n_valid_s} 条 | 正样本 {n_pos_s} 笔 ({pos_rate_s:.1f}%) | 尾部实盘隔离 {n_tail} 条")
 
     oos_df, metrics, model = run_walk_forward_cv(labeled_panel)
-
-    # 提取用于实盘推理的最新截面数据 (28 只核心股 + 42 只扩展雷达标的 = 全域 70 只标的)
-    latest_df = feature_panel[feature_panel['Ticker'].isin(TARGET_STOCKS)].copy()
-    latest_core_stocks = latest_df.sort_values('Date').groupby('Ticker').last().reset_index()
-    latest_stocks = build_extended_live_features_df(raw_panel, latest_core_stocks, force_refresh=args.refresh)
-    print(f"[*] 🌐 全域实盘推理截面构建完成: 覆盖 {len(latest_stocks)} 只终端标的 (含 28 只核心赛道股 + {len(latest_stocks) - len(latest_core_stocks)} 只扩展个股/ETF)")
 
     # 宏观环境水温评估 (与 integrated_market_radar.py 严格统一对齐)
     qqqm_bias = float(latest_stocks['QQQ_Bias_MA50'].mean()) if 'QQQ_Bias_MA50' in latest_stocks.columns else 0.0
@@ -6586,6 +6615,23 @@ def main():
     html_path = _resolve_cache_path(args.html_file) if not os.path.isabs(args.html_file) else args.html_file
     render_html_dashboard(tables_data, output_path=html_path)
     export_latest_ai_predictions_json(tables_data)
+
+    cycle = tables_data.get('time_cycle_projections') or {}
+    cycle_behind = []
+    for tk, item in cycle.items():
+        hist = (item or {}).get('history') or []
+        last_d = str(hist[-1].get('date'))[:10] if hist else ""
+        if last_d != expected_last.strftime("%Y-%m-%d"):
+            cycle_behind.append(f"{tk}:{last_d or '无'}")
+    if cycle_behind:
+        print(f"[!] 路径图今日仍不是 {expected_last}，落后 {len(cycle_behind)} 只: {', '.join(cycle_behind[:16])}")
+        if args.refresh:
+            print("[!] 看板已写出但日期不合格，不记刷新成功。")
+            sys.exit(2)
+    else:
+        marker_path = _resolve_cache_path("data_cache/.ml_panel_max_date")
+        with open(marker_path, "w", encoding="utf-8") as mf:
+            mf.write(expected_last.strftime("%Y-%m-%d"))
 
     print("=" * 70)
     print("✅ Milestone M3: 4 大战报表格控制台输出与 HTML 看板生成全部完成！\n")
