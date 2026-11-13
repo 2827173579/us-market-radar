@@ -33,7 +33,18 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                     live_lookup_init[tk_name] = s
         for tk_m, m_item in (macro_data or {}).items():
             live_lookup_init[tk_m] = m_item
-        df_alert = ml_predictor_5y.compute_defensive_flight_alert(live_lookup=live_lookup_init)
+        existing_flight = weather_info.get("defensive_flight") if isinstance(weather_info, dict) else None
+        if (
+            isinstance(existing_flight, dict)
+            and existing_flight.get("session") == session_code
+            and existing_flight.get("score_source")
+        ):
+            df_alert = existing_flight
+        else:
+            df_alert = ml_predictor_5y.compute_defensive_flight_alert(
+                live_lookup=live_lookup_init,
+                session_code=session_code,
+            )
         if df_alert.get('is_alert'):
             defensive_alert_badge_html = f'<span class="tool-link" style="color: #f85149; border: 1px solid rgba(248,81,73,0.6); background: rgba(248,81,73,0.22); padding: 4px 8px; font-weight: 800; font-size: 11.5px;" title="机构避险因子异常走强，警惕盘中去杠杆踩踏">🚨 防御因子起飞 · 警惕机构盘中去杠杆踩踏</span>'
             defensive_alert_banner_html = f'<div id="deleveragingAlertBanner" onclick="playAlertSound(\'defensive_flight\', true)" title="点击试听/重播防御因子起飞警报音" style="background: linear-gradient(90deg, rgba(239, 68, 68, 0.28), rgba(185, 28, 28, 0.18)); border-bottom: 1px solid rgba(239, 68, 68, 0.6); color: #fca5a5; padding: 7px 14px; font-weight: 800; font-size: 13px; display: flex; align-items: center; justify-content: center; gap: 10px; box-shadow: 0 2px 8px rgba(239, 68, 68, 0.2); cursor: pointer; user-select: none;"><span>🚨 防御因子起飞 · 警惕机构盘中去杠杆踩踏</span><span style="font-size: 11px; font-weight: 600; color: #f87171; background: rgba(0,0,0,0.3); padding: 2px 8px; border-radius: 4px;">超额背离 +{df_alert.get("flight_score", 0.0):.1f}%</span><span style="font-size: 10.5px; color: #fca5a5; opacity: 0.85; margin-left: 6px;">🔊 警报响铃 (点击重播)</span></div>'
