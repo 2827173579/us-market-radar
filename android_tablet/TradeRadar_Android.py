@@ -18,6 +18,7 @@ import subprocess
 import threading
 import urllib.request
 import urllib.parse
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone, timedelta
 from http.server import HTTPServer, BaseHTTPRequestHandler
 
@@ -204,25 +205,112 @@ def send_discord(title: str, description: str, color: int = 0x00e676, fields: li
 # ------------------------------------------------------------------------------
 # 5. 核心轻量实盘抓取与风控比对逻辑
 # ------------------------------------------------------------------------------
-def fetch_finnhub_quote(ticker: str, api_key: str):
-    """单只标的 Finnhub 秒级穿透报价"""
-    url = f"https://finnhub.io/api/v1/quote?symbol={urllib.parse.quote(ticker)}&token={api_key}"
-    req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
-    try:
-        with urllib.request.urlopen(req, timeout=6) as resp:
-            data = json.loads(resp.read().decode("utf-8"))
-            if data and data.get("c", 0) > 0:
-                return {
-                    "last": float(data["c"]),
-                    "change": float(data.get("d", 0.0)),
-                    "pct_change": float(data.get("dp", 0.0)),
-                    "high": float(data.get("h", 0.0)),
-                    "low": float(data.get("l", 0.0)),
-                    "prev_close": float(data.get("pc", 0.0))
-                }
-    except Exception:
-        pass
-    return None
+# ------------------------------------------------------------------------------
+# 70 只全量标的池配置 (16 只宏观/行业/杠杆 ETF + 54 只 AI 与核心个股)
+# ------------------------------------------------------------------------------
+ETF_TICKERS = [
+    "QQQ", "SPY", "DIA", "IWM", "SMH", "SOXX", "SOXL", "KORU",
+    "IGV", "TLT", "GLD", "QQQI", "VIXY", "SQQQ", "SOXS", "IBIT"
+]
+
+CORE_STOCKS = [
+    "AAOI", "INTC", "NBIS", "SNDK", "ASTS", "AXTI", "COIN", "NOW", "FPS", "OKLO",
+    "MRVL", "LITE", "MSTR", "STX", "CRWV", "CRDO", "APLD", "DELL", "WDC", "NVDA",
+    "SKHY", "HPE", "AMAT", "ORCL", "GOOGL", "ASML", "BE", "PLTR", "MU", "VRT",
+    "META", "TSM", "VST", "COHR", "SPCX", "AXP", "CRWD", "MSFT", "QCOM", "NKE",
+    "CEG", "V", "RKLB", "KO", "TSLA", "AMZN", "MCD", "PEP", "AAPL", "AVGO",
+    "AMD", "LLY", "MRNA", "FLY"
+]
+
+FULL_70_POOL = list(dict.fromkeys(ETF_TICKERS + CORE_STOCKS))
+
+# ------------------------------------------------------------------------------
+# 5. 双线程平滑令牌桶频控引擎 (FinnhubRateLimiter)
+# ------------------------------------------------------------------------------
+class FinnhubRateLimiter:
+    """严控 50 次/分安全红线，两线程交替拉取，杜绝 429 超频"""
+    def __init__(self, max_per_minute=50.0, min_interval=1.05):
+        self.capacity = float(max_per_minute)
+        self.tokens = float(max_per_minute)
+        self.fill_rate = float(max_per_minute) / 60.0
+        self.last_fill_time = time.time()
+        self.last_request_time = 0.0
+        self.min_interval = min_interval
+        self.lock = threading.Lock()
+
+    def acquire(self):
+        with self.lock:
+            now = time.time()
+            elapsed = now - self.last_fill_time
+            self.tokens = min(self.capacity, self.tokens + elapsed * self.fill_rate)
+            self.last_fill_time = now
+
+            if self.tokens < 1.0:
+                needed = (1.0 - self.tokens) / self.fill_rate
+                time.sleep(needed)
+                now = time.time()
+                self.tokens = 0.0
+                self.last_fill_time = now
+            else:
+                self.tokens -= 1.0
+
+            time_since_last = now - self.last_request_time
+            if time_since_last < self.min_interval:
+                time.sleep(self.min_interval - time_since_last)
+                now = time.time()
+
+            self.last_request_time = now
+
+    def handle_429(self, attempt=0):
+        with self.lock:
+            backoff = 10.0 if attempt == 0 else 20.0
+            append_log(f"[!] ⚠️ Finnhub 触发 429 限流保护，执行指数退避休眠 {backoff:.1f} 秒...")
+            self.tokens = 0.0
+            self.last_fill_time = time.time() + backoff
+            self.last_request_time = time.time() + backoff
+        time.sleep(backoff)
+
+FINNHUB_LIMITER = FinnhubRateLimiter(max_per_minute=50.0, min_interval=1.05)
+
+def fetch_single_finnhub_quote(symbol: str, api_key: str):
+    """单标的通过 Finnhub REST API 获取秒级报价 (加 1.05s 稳态令牌桶频控与 429 保护)"""
+    url = f"https://finnhub.io/api/v1/quote?symbol={urllib.parse.quote(symbol)}&token={api_key}"
+    for attempt in range(2):
+        try:
+            FINNHUB_LIMITER.acquire()
+            req = urllib.request.Request(url, headers={"User-Agent": "TradeRadar-Android/2.0"})
+            with urllib.request.urlopen(req, timeout=8) as resp:
+                data = json.loads(resp.read().decode("utf-8"))
+                if isinstance(data, dict) and data.get("c", 0) > 0:
+                    return symbol, {
+                        "last": float(data["c"]),
+                        "change": float(data.get("d", 0.0)),
+                        "pct_change": float(data.get("dp", 0.0)),
+                        "high": float(data.get("h", 0.0)),
+                        "low": float(data.get("l", 0.0)),
+                        "prev_close": float(data.get("pc", 0.0))
+                    }
+        except urllib.error.HTTPError as e:
+            if e.code == 429:
+                if attempt == 0:
+                    FINNHUB_LIMITER.handle_429(attempt)
+                    continue
+        except Exception:
+            pass
+    return symbol, None
+
+def fetch_finnhub_quotes_batch(tickers, api_key):
+    """双线程并发抓取 (max_workers=2)，由令牌桶严格保证不超过 50 次/分红线"""
+    if not api_key or not tickers:
+        return {}
+    results = {}
+    with ThreadPoolExecutor(max_workers=2) as executor:
+        future_to_sym = {executor.submit(fetch_single_finnhub_quote, t, api_key): t for t in tickers}
+        for future in as_completed(future_to_sym):
+            sym, q = future.result()
+            if q:
+                results[sym] = q
+    return results
 
 def load_ai_predictions():
     candidates = [
@@ -272,16 +360,14 @@ def run_single_scan_cycle(round_idx=1):
     if not watchlist:
         watchlist = ["NVDA", "META", "TSM", "AMD", "MRVL", "AAOI", "AXTI", "BE", "SKHY", "LITE", "SPCX", "INTC", "MSTR", "SNDK", "QQQ", "SOXL", "SOXS", "KORU", "QCOM", "IBIT"]
 
-    # 2. 依次平稳拉取实时价格 (防 429 频控保护)
-    append_log(f"[*] 🚀 正在抓取 {len(watchlist)} 只核心自选标的 Finnhub 实时报价...")
-    fetched_quotes = {}
-    for tk in watchlist:
-        q = fetch_finnhub_quote(tk, FINNHUB_API_KEY) if FINNHUB_API_KEY else None
-        if q:
-            fetched_quotes[tk] = q
-        time.sleep(0.08) # 80ms 平滑间隔
-
-    append_log(f"[+] ✅ 实时报价抓取完成: 成功穿透 {len(fetched_quotes)}/{len(watchlist)} 只标的！")
+    # 2. 双线程令牌桶平稳并发拉取 70 只全量标的池 (16 只 ETF + 54 只个股)
+    # 结合 target_watchlist.json 优先，若无则抓取全量 70 只标的
+    scan_pool = list(dict.fromkeys(watchlist + FULL_70_POOL))
+    append_log(f"[*] 🚀 启动双线程令牌桶频控引擎 (workers=2, bucket=50/min, min_int=1.05s)...")
+    append_log(f"[*] 📊 正在平稳抓取 {len(scan_pool)} 只全量标的 (含 16 只 ETF + 54 只核心股) 实时报价...")
+    
+    fetched_quotes = fetch_finnhub_quotes_batch(scan_pool, FINNHUB_API_KEY) if FINNHUB_API_KEY else {}
+    append_log(f"[+] ✅ 实时行情穿透完成: 成功拉取 {len(fetched_quotes)}/{len(scan_pool)} 只标的！")
 
     # 3. 动态风控阈值比对
     alerts_to_send = []
@@ -376,8 +462,9 @@ def sync_to_github_pages(round_idx: int, now_str: str, quotes: dict = None):
                     futu_content
                 )
 
-                # B. 更新 STOCKS_DATA 内的实时现价与涨跌幅
+                # B. 更新 STOCKS_DATA (54 只个股) 与 MACRO_DATA (16 只宏观/行业 ETF)
                 if quotes:
+                    # 1) 更新 54 只个股
                     m = re.search(r"const STOCKS_DATA = (\[.*?\]);\s*\n", futu_content)
                     if m:
                         try:
@@ -392,6 +479,23 @@ def sync_to_github_pages(round_idx: int, now_str: str, quotes: dict = None):
                                     s["pct_change"] = round(float(q.get("pct_change", 0.0)), 4)
                             new_json = json.dumps(stocks_list, ensure_ascii=False)
                             futu_content = futu_content[:m.start(1)] + new_json + futu_content[m.end(1):]
+                        except Exception:
+                            pass
+
+                    # 2) 更新 16 只宏观/行业 ETF (MACRO_DATA)
+                    m_macro = re.search(r"const MACRO_DATA = (\{.*?\});\s*\n", futu_content)
+                    if m_macro:
+                        try:
+                            macro_dict = json.loads(m_macro.group(1))
+                            for etf_sym, etf_item in macro_dict.items():
+                                if etf_sym in quotes:
+                                    q = quotes[etf_sym]
+                                    etf_item["last"] = round(float(q.get("last", 0.0)), 2)
+                                    etf_item["active_price"] = round(float(q.get("last", 0.0)), 2)
+                                    etf_item["change"] = round(float(q.get("change", 0.0)), 2)
+                                    etf_item["pct_change"] = round(float(q.get("pct_change", 0.0)), 4)
+                            new_macro_json = json.dumps(macro_dict, ensure_ascii=False)
+                            futu_content = futu_content[:m_macro.start(1)] + new_macro_json + futu_content[m_macro.end(1):]
                         except Exception:
                             pass
 
