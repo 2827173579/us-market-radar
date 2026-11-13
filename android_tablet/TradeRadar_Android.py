@@ -860,6 +860,11 @@ def sync_to_github_pages(round_idx: int, now_str: str, quotes: dict = None, flig
                 with open(predict_path, "w", encoding="utf-8") as f_pred_out:
                     f_pred_out.write(pred_content)
 
+                # 1.55 叠加写入夜盘/盘中防御因子 (Flight 药丸)
+                if flight and not flight.get("skip_reason") and flight.get("flight_score") is not None:
+                    if patch_predict_radar_flight(work_dir, flight, now_str, session_name):
+                        append_log(f"[+] AI预测页防御因子已写回 {float(flight['flight_score']):+.2f}%")
+
             except Exception as e_pred:
                 append_log(f"[*] 预测页 HTML 刷新提示: {e_pred}")
 
@@ -881,7 +886,7 @@ def sync_to_github_pages(round_idx: int, now_str: str, quotes: dict = None, flig
                     pass
 
         # 2. 同步更新 data_cache/latest_ai_predictions.json
-        if quotes:
+        if quotes or (flight and not flight.get("skip_reason") and flight.get("flight_score") is not None):
             for pred_path in [
                 os.path.join(work_dir, "data_cache", "latest_ai_predictions.json"),
                 os.path.join(work_dir, "latest_ai_predictions.json")
@@ -893,15 +898,22 @@ def sync_to_github_pages(round_idx: int, now_str: str, quotes: dict = None, flig
                         if isinstance(ai_dict, dict):
                             if "kpi" in ai_dict and isinstance(ai_dict["kpi"], dict):
                                 ai_dict["kpi"]["sync_time"] = now_str
-                            if "by_ticker" in ai_dict:
+                                if session_name:
+                                    ai_dict["kpi"]["data_mode"] = f"Finnhub 秒级实时 ({session_name})"
+                            if quotes and "by_ticker" in ai_dict:
                                 for tk, q in quotes.items():
                                     if tk in ai_dict["by_ticker"]:
                                         ai_dict["by_ticker"][tk]["last"] = q.get("last")
                                         ai_dict["by_ticker"][tk]["pct_change"] = q.get("pct_change")
-                            if "time_cycle_projections" in ai_dict and isinstance(ai_dict["time_cycle_projections"], dict):
+                            if quotes and "time_cycle_projections" in ai_dict and isinstance(ai_dict["time_cycle_projections"], dict):
                                 for tk, q in quotes.items():
                                     if tk in ai_dict["time_cycle_projections"]:
                                         ai_dict["time_cycle_projections"][tk]["current_price"] = q.get("last")
+                            if flight and not flight.get("skip_reason") and flight.get("flight_score") is not None:
+                                ai_dict["defensive_flight"] = flight
+                                mw = ai_dict.get("macro_weather")
+                                if isinstance(mw, dict):
+                                    mw["defensive_flight"] = flight
                             with open(pred_path, "w", encoding="utf-8") as f_pred_out:
                                 json.dump(ai_dict, f_pred_out, ensure_ascii=False, indent=2)
                     except Exception:
