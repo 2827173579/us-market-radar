@@ -55,19 +55,35 @@ def is_radar_port_listening(port=8765):
         return False
 
 
-def get_running_radar_pids():
-    """精确获取正在运行 integrated_market_radar.py 的进程 PID 列表"""
-    pids = []
+def get_running_radar_processes():
+    """获取正在运行的雷达进程详细信息"""
+    all_pids = []
+    loop_pids = []
     try:
-        cmd = 'powershell -NoProfile -Command "Get-CimInstance Win32_Process | Where-Object { $_.Name -match \'python\' -and $_.CommandLine -like \'*integrated_market_radar.py*\' } | Select-Object -ExpandProperty ProcessId"'
-        res = subprocess.run(cmd, shell=True, capture_output=True, text=True, timeout=5)
+        cmd = [
+            "powershell", "-NoProfile", "-NonInteractive", "-Command",
+            "Get-CimInstance Win32_Process -Filter \"Name like 'python%'\" | ForEach-Object { \"$($_.ProcessId)|$($_.CommandLine)\" }"
+        ]
+        res = subprocess.run(cmd, capture_output=True, text=True, timeout=5)
         for line in res.stdout.strip().splitlines():
-            line = line.strip()
-            if line.isdigit():
-                pids.append(int(line))
+            if "integrated_market_radar.py" in line:
+                parts = line.split("|", 1)
+                pid_str = parts[0].strip()
+                cmdline = parts[1].strip() if len(parts) > 1 else ""
+                if pid_str.isdigit():
+                    pid = int(pid_str)
+                    all_pids.append(pid)
+                    if "--loop-daemon" in cmdline:
+                        loop_pids.append(pid)
     except Exception:
         pass
-    return pids
+    return all_pids, loop_pids
+
+
+def get_running_radar_pids():
+    """精确获取正在运行 integrated_market_radar.py 的进程 PID 列表"""
+    all_pids, _ = get_running_radar_processes()
+    return all_pids
 
 
 def is_autostart_enabled():
@@ -244,10 +260,13 @@ class TradeRadarControlApp:
         lan_ip = get_local_lan_ip()
         autostart = is_autostart_enabled()
 
-        if is_listening or pids:
+        all_pids, loop_pids = get_running_radar_processes()
+        if loop_pids:
             self.lbl_status_badge.config(text="● 守护进程运行中 (ACTIVE)", fg="#3fb950")
-            pid_str = f"PID: {', '.join(map(str, pids))}" if pids else "端口 8765 监听中"
-            self.lbl_pid_info.config(text=pid_str, fg="#3fb950")
+            self.lbl_pid_info.config(text=f"PID: {', '.join(map(str, loop_pids))}", fg="#3fb950")
+        elif is_listening or all_pids:
+            self.lbl_status_badge.config(text="● 网页看盘服务中 (STANDBY)", fg="#e3b341")
+            self.lbl_pid_info.config(text="端口 8765 监听中 (待启动轮询)", fg="#e3b341")
         else:
             self.lbl_status_badge.config(text="● 守护进程已停止 (STOPPED)", fg="#f85149")
             self.lbl_pid_info.config(text="未运行", fg="#8b949e")
@@ -265,9 +284,9 @@ class TradeRadarControlApp:
 
     def on_start_daemon(self):
         """启动后台轮询守护进程"""
-        pids = get_running_radar_pids()
-        if pids or is_radar_port_listening(8765):
-            messagebox.showinfo("提示", "后台轮询守护已经在运行中，无需重复启动！")
+        all_pids, loop_pids = get_running_radar_processes()
+        if loop_pids:
+            messagebox.showinfo("提示", f"后台轮询守护已经在运行中 (PID: {loop_pids})，无需重复启动！")
             return
 
         def _worker():
@@ -303,8 +322,8 @@ class TradeRadarControlApp:
                 return
 
             try:
-                cmd = 'powershell -NoProfile -Command "Get-CimInstance Win32_Process | Where-Object { $_.Name -match \'python\' -and $_.CommandLine -like \'*integrated_market_radar.py*\' } | ForEach-Object { Stop-Process -Id $_.ProcessId -Force }"'
-                subprocess.run(cmd, shell=True, timeout=8)
+                cmd = ["powershell", "-NoProfile", "-NonInteractive", "-Command", "Get-CimInstance Win32_Process -Filter \"Name like 'python%'\" | Where-Object { $_.CommandLine -like '*integrated_market_radar.py*' } | ForEach-Object { Stop-Process -Id $_.ProcessId -Force }"]
+                subprocess.run(cmd, capture_output=True, timeout=8)
                 time.sleep(1)
                 self.append_log("🛑 所有后台雷达进程已全部终止，端口 8765 已释放。")
             except Exception as e:

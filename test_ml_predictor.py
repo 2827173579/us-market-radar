@@ -2097,7 +2097,7 @@ class TestV2UpgradeDefensiveFlightAndScenarios(unittest.TestCase):
         self.assertEqual(hist[-2]['date'], '2026-11-10')
         self.assertEqual(hist[-2]['price'], round(yest_close, 2))
         # 验证今日作为独立 Bar 锚定最新实时价
-        today_str = datetime.now().strftime('%Y-%m-%d')
+        today_str = self.mod._get_latest_expected_trading_day().strftime('%Y-%m-%d')
         self.assertEqual(hist[-1]['date'], today_str)
         self.assertEqual(hist[-1]['price'], 57.38)
         # 验证预测序列从下一个交易日 (T+1) 开启
