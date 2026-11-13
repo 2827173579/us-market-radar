@@ -4,7 +4,7 @@
     "profit_factor": 1.33,
     "top_sector": "存储芯片 (⭐⭐⭐⭐⭐)",
     "top_feature": "SMH_IGV_Ratio_Bias (12.31%)",
-    "sync_time": "2026-11-13 16:09:56",
+    "sync_time": "2026-11-13 16:13:01",
     "data_mode": "Finnhub 秒级实时 (🌌 美股夜盘)",
     "is_realtime": false
   },
@@ -22,10 +22,10 @@
     "latest_date": "2026-11-12",
     "defensive_flight": {
       "is_alert": false,
-      "flight_score": 0.46,
-      "def_mean_chg": 0.29,
+      "flight_score": 0.43,
+      "def_mean_chg": 0.26,
       "off_mean_chg": -0.17,
-      "alert_text": "🛡️ 夜盘·期货代理 防御因子平稳 (+0.5%) · NQ/ZB/GC",
+      "alert_text": "🛡️ 夜盘·期货代理 防御因子平稳 (+0.4%) · NQ/ZB/GC",
       "banner_text": "",
       "badge": "badge-normal",
       "session": "OVERNIGHT",
@@ -33,23 +33,23 @@
       "components": {
         "NQ=F": {
           "pct": -0.17,
-          "price": 28341.25,
+          "price": 28341.5,
           "baseline": 28388.5,
-          "quote_time": "2026-11-13T02:01:09-05:00",
+          "quote_time": "2026-11-13T02:05:06-05:00",
           "baseline_time": "2026-11-12T16:00:00-05:00"
         },
         "ZB=F": {
           "pct": -0.12,
           "price": 105.625,
           "baseline": 105.75,
-          "quote_time": "2026-11-13T02:00:28-05:00",
+          "quote_time": "2026-11-13T02:05:09-05:00",
           "baseline_time": "2026-11-12T16:00:00-05:00"
         },
         "GC=F": {
-          "pct": 0.7,
-          "price": 3906.2,
+          "pct": 0.64,
+          "price": 3904.0,
           "baseline": 3879.1001,
-          "quote_time": "2026-11-13T02:01:09-05:00",
+          "quote_time": "2026-11-13T02:05:11-05:00",
           "baseline_time": "2026-11-12T16:00:00-05:00"
         }
       },
@@ -10821,10 +10821,10 @@
   },
   "defensive_flight": {
     "is_alert": false,
-    "flight_score": 0.46,
-    "def_mean_chg": 0.29,
+    "flight_score": 0.43,
+    "def_mean_chg": 0.26,
     "off_mean_chg": -0.17,
-    "alert_text": "🛡️ 夜盘·期货代理 防御因子平稳 (+0.5%) · NQ/ZB/GC",
+    "alert_text": "🛡️ 夜盘·期货代理 防御因子平稳 (+0.4%) · NQ/ZB/GC",
     "banner_text": "",
     "badge": "badge-normal",
     "session": "OVERNIGHT",
@@ -10832,23 +10832,23 @@
     "components": {
       "NQ=F": {
         "pct": -0.17,
-        "price": 28341.25,
+        "price": 28341.5,
         "baseline": 28388.5,
-        "quote_time": "2026-11-13T02:01:09-05:00",
+        "quote_time": "2026-11-13T02:05:06-05:00",
         "baseline_time": "2026-11-12T16:00:00-05:00"
       },
       "ZB=F": {
         "pct": -0.12,
         "price": 105.625,
         "baseline": 105.75,
-        "quote_time": "2026-11-13T02:00:28-05:00",
+        "quote_time": "2026-11-13T02:05:09-05:00",
         "baseline_time": "2026-11-12T16:00:00-05:00"
       },
       "GC=F": {
-        "pct": 0.7,
-        "price": 3906.2,
+        "pct": 0.64,
+        "price": 3904.0,
         "baseline": 3879.1001,
-        "quote_time": "2026-11-13T02:01:09-05:00",
+        "quote_time": "2026-11-13T02:05:11-05:00",
         "baseline_time": "2026-11-12T16:00:00-05:00"
       }
     },
