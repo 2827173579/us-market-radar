@@ -34,20 +34,24 @@ os.chdir(PROJECT_DIR)
 # 1. 环境配置与 Token 加载
 # ------------------------------------------------------------------------------
 def load_env():
-    env_file = os.path.join(PROJECT_DIR, ".env")
-    if os.path.exists(env_file):
-        try:
-            with open(env_file, "r", encoding="utf-8") as f:
-                for line in f:
-                    line = line.strip()
-                    if not line or line.startswith("#") or "=" not in line:
-                        continue
-                    k, v = line.split("=", 1)
-                    k, v = k.strip(), v.strip().strip("'\"")
-                    if k and k not in os.environ:
-                        os.environ[k] = v
-        except Exception:
-            pass
+    env_candidates = [
+        os.path.join(PROJECT_DIR, ".env"),
+        os.path.join(os.path.dirname(PROJECT_DIR), ".env"),
+    ]
+    for env_file in env_candidates:
+        if os.path.exists(env_file):
+            try:
+                with open(env_file, "r", encoding="utf-8") as f:
+                    for line in f:
+                        line = line.strip()
+                        if not line or line.startswith("#") or "=" not in line:
+                            continue
+                        k, v = line.split("=", 1)
+                        k, v = k.strip(), v.strip().strip("'\"")
+                        if k and k not in os.environ:
+                            os.environ[k] = v
+            except Exception:
+                pass
 
 load_env()
 FINNHUB_API_KEY = os.environ.get("FINNHUB_API_KEY", "").strip()
@@ -59,6 +63,8 @@ DISCORD_DEFENSIVE_FLIGHT_WEBHOOK_URL = os.environ.get(
     "DISCORD_DEFENSIVE_FLIGHT_WEBHOOK_URL",
     ""
 ).strip()
+GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN", "").strip()
+GITHUB_REPO = os.environ.get("GITHUB_REPO", "2827173579/us-market-radar").strip()
 PORT = 8765
 
 # ------------------------------------------------------------------------------
@@ -219,13 +225,19 @@ def fetch_finnhub_quote(ticker: str, api_key: str):
     return None
 
 def load_ai_predictions():
-    ai_file = os.path.join(PROJECT_DIR, "latest_ai_predictions.json")
-    if os.path.exists(ai_file):
-        try:
-            with open(ai_file, "r", encoding="utf-8") as f:
-                return json.load(f)
-        except Exception:
-            pass
+    candidates = [
+        os.path.join(PROJECT_DIR, "data_cache", "latest_ai_predictions.json"),
+        os.path.join(PROJECT_DIR, "latest_ai_predictions.json"),
+        os.path.join(os.path.dirname(PROJECT_DIR), "data_cache", "latest_ai_predictions.json"),
+        os.path.join(os.path.dirname(PROJECT_DIR), "latest_ai_predictions.json"),
+    ]
+    for ai_file in candidates:
+        if os.path.exists(ai_file):
+            try:
+                with open(ai_file, "r", encoding="utf-8") as f:
+                    return json.load(f)
+            except Exception:
+                pass
     return {}
 
 def run_single_scan_cycle(round_idx=1):
@@ -242,17 +254,23 @@ def run_single_scan_cycle(round_idx=1):
     by_ticker = ai_data.get("by_ticker", {})
     weather = ai_data.get("macro_weather", {}).get("status", "⛅ 阴天防守")
 
-    # 加载自选监控池
-    wl_file = os.path.join(PROJECT_DIR, "target_watchlist.json")
+    # 加载自选监控池 (优先加载 target_watchlist.json)
+    wl_candidates = [
+        os.path.join(PROJECT_DIR, "target_watchlist.json"),
+        os.path.join(os.path.dirname(PROJECT_DIR), "target_watchlist.json"),
+    ]
     watchlist = []
-    if os.path.exists(wl_file):
-        try:
-            with open(wl_file, "r", encoding="utf-8") as f:
-                watchlist = json.load(f)
-        except Exception:
-            pass
+    for wl_file in wl_candidates:
+        if os.path.exists(wl_file):
+            try:
+                with open(wl_file, "r", encoding="utf-8") as f:
+                    watchlist = json.load(f)
+                    if watchlist:
+                        break
+            except Exception:
+                pass
     if not watchlist:
-        watchlist = ["NVDA", "TSM", "AMD", "QCOM", "AVGO", "AAPL", "MSFT", "KORU", "SOXL", "SOXS", "QQQM", "SPY"]
+        watchlist = ["NVDA", "META", "TSM", "AMD", "MRVL", "AAOI", "AXTI", "BE", "SKHY", "LITE", "SPCX", "INTC", "MSTR", "SNDK", "QQQ", "SOXL", "SOXS", "KORU", "QCOM", "IBIT"]
 
     # 2. 依次平稳拉取实时价格 (防 429 频控保护)
     append_log(f"[*] 🚀 正在抓取 {len(watchlist)} 只核心自选标的 Finnhub 实时报价...")
@@ -311,7 +329,7 @@ def run_single_scan_cycle(round_idx=1):
         append_log(f"[+] 🛡️ 自选监控池价格均在安全运行区间内，暂无破位触发。")
 
     # 5. 自动同步发布到 GitHub Pages (若处于 Git 仓库环境)
-    sync_to_github_pages(round_idx, now_str)
+    sync_to_github_pages(round_idx, now_str, quotes=fetched_quotes)
 
 # ------------------------------------------------------------------------------
 # 6. 后台守护线程调度器
@@ -320,39 +338,127 @@ def run_single_scan_cycle(round_idx=1):
 # ------------------------------------------------------------------------------
 # 5.5 GitHub Pages 自动同步引擎 (可选)
 # ------------------------------------------------------------------------------
-def sync_to_github_pages(round_idx: int, now_str: str):
+def sync_to_github_pages(round_idx: int, now_str: str, quotes: dict = None):
     """
-    可选：如果当前目录是 Git 仓库且配置了 GitHub 远端，
-    自动将最新的轮询数据与看板推送到 GitHub Pages，
-    使手机在出门在外（4G/5G 网络）也能随时访问 GitHub Pages 看盘。
+    小米平板 GitHub Pages 全自动同步引擎：
+    1. 自动定位 Git 仓库根目录（兼容从 android_tablet 或根目录启动）
+    2. 刷新 futu_pro_terminal.html 与 index.html 的时间戳与实时报价
+    3. 同步更新 data_cache/latest_ai_predictions.json
+    4. 自动携带 GITHUB_TOKEN 配置远端并提交推送
+    5. 触发 GitHub Pages 自动部署上线
     """
     try:
-        chk = subprocess.run(["git", "rev-parse", "--is-inside-work-tree"], capture_output=True, text=True, check=False)
-        if chk.returncode != 0:
-            return False
+        work_dir = PROJECT_DIR
+        chk = subprocess.run(["git", "rev-parse", "--show-toplevel"], capture_output=True, text=True, check=False, cwd=PROJECT_DIR)
+        if chk.returncode == 0 and chk.stdout.strip():
+            work_dir = chk.stdout.strip()
+        else:
+            chk2 = subprocess.run(["git", "rev-parse", "--is-inside-work-tree"], capture_output=True, text=True, check=False, cwd=PROJECT_DIR)
+            if chk2.returncode != 0:
+                return False
 
-        # 如果存在 index.html，更新其时间戳或写入最新静态数据
-        idx_file = os.path.join(PROJECT_DIR, "index.html")
-        if not os.path.exists(idx_file):
-            with open(idx_file, "w", encoding="utf-8") as f:
-                f.write(INDEX_HTML)
+        # 1. 刷新 futu_pro_terminal.html
+        futu_path = os.path.join(work_dir, "futu_pro_terminal.html")
+        if os.path.exists(futu_path):
+            try:
+                with open(futu_path, "r", encoding="utf-8") as f_in:
+                    futu_content = f_in.read()
 
-        subprocess.run(["git", "add", "."], check=False, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-        commit_res = subprocess.run(
+                # A. 替换数据时间戳
+                futu_content = re.sub(
+                    r"数据更新于[:：]\s*\d{4}-\d{2}-\d{2}\s+\d{2}:\d{2}:\d{2}",
+                    f"数据更新于: {now_str}",
+                    futu_content
+                )
+                futu_content = re.sub(
+                    r'"sync_time":\s*"[^"]+"',
+                    f'"sync_time": "{now_str}"',
+                    futu_content
+                )
+
+                # B. 更新 STOCKS_DATA 内的实时现价与涨跌幅
+                if quotes:
+                    m = re.search(r"const STOCKS_DATA = (\[.*?\]);\s*\n", futu_content)
+                    if m:
+                        try:
+                            stocks_list = json.loads(m.group(1))
+                            for s in stocks_list:
+                                tk = s.get("ticker")
+                                if tk in quotes:
+                                    q = quotes[tk]
+                                    s["last"] = round(float(q.get("last", 0.0)), 2)
+                                    s["active_price"] = round(float(q.get("last", 0.0)), 2)
+                                    s["change"] = round(float(q.get("change", 0.0)), 2)
+                                    s["pct_change"] = round(float(q.get("pct_change", 0.0)), 4)
+                            new_json = json.dumps(stocks_list, ensure_ascii=False)
+                            futu_content = futu_content[:m.start(1)] + new_json + futu_content[m.end(1):]
+                        except Exception:
+                            pass
+
+                with open(futu_path, "w", encoding="utf-8") as f_out:
+                    f_out.write(futu_content)
+
+                # C. 同步覆盖 index.html，保证访问根目录或 futu_pro_terminal 体验完全一致
+                index_path = os.path.join(work_dir, "index.html")
+                with open(index_path, "w", encoding="utf-8") as f_idx:
+                    f_idx.write(futu_content)
+
+            except Exception as e_html:
+                append_log(f"[*] 看板 HTML 刷新提示: {e_html}")
+
+        # 2. 同步更新 data_cache/latest_ai_predictions.json
+        if quotes:
+            for pred_path in [
+                os.path.join(work_dir, "data_cache", "latest_ai_predictions.json"),
+                os.path.join(work_dir, "latest_ai_predictions.json")
+            ]:
+                if os.path.exists(pred_path):
+                    try:
+                        with open(pred_path, "r", encoding="utf-8") as f_pred:
+                            ai_dict = json.load(f_pred)
+                        if isinstance(ai_dict, dict) and "by_ticker" in ai_dict:
+                            for tk, q in quotes.items():
+                                if tk in ai_dict["by_ticker"]:
+                                    ai_dict["by_ticker"][tk]["last"] = q.get("last")
+                                    ai_dict["by_ticker"][tk]["pct_change"] = q.get("pct_change")
+                            with open(pred_path, "w", encoding="utf-8") as f_pred_out:
+                                json.dump(ai_dict, f_pred_out, ensure_ascii=False, indent=2)
+                    except Exception:
+                        pass
+
+        # 3. 校验并配置带 PAT 的 Git Remote
+        token = GITHUB_TOKEN
+        if not token:
+            rem_chk = subprocess.run(["git", "remote", "get-url", "origin"], capture_output=True, text=True, check=False, cwd=work_dir)
+            if "ghp_" in rem_chk.stdout:
+                token = "ghp_" + rem_chk.stdout.split("ghp_")[1].split("@")[0]
+        if token:
+            auth_url = f"https://2827173579:{token}@github.com/{GITHUB_REPO}.git"
+            subprocess.run(["git", "remote", "set-url", "origin", auth_url], check=False, cwd=work_dir, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+
+        # 4. 执行 Git 暂存、提交与推送
+        files_to_add = ["futu_pro_terminal.html", "index.html", "data_cache/latest_ai_predictions.json"]
+        for f in files_to_add:
+            if os.path.exists(os.path.join(work_dir, f)):
+                subprocess.run(["git", "add", f], check=False, cwd=work_dir, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+
+        subprocess.run(
             ["git", "commit", "-m", f"⚡ [小米平板实盘同步] 第 {round_idx} 轮 ({now_str})"],
-            capture_output=True, text=True, check=False
+            capture_output=True, text=True, check=False, cwd=work_dir
         )
-        if commit_res.returncode == 0 or "nothing to commit" in (commit_res.stdout + commit_res.stderr).lower():
-            push_res = subprocess.run(["git", "push", "origin", "HEAD:main"], capture_output=True, text=True, check=False)
-            if push_res.returncode == 0:
-                append_log(f"[+] 🌐 [GitHub Pages] 成功同步最新数据至云端！")
-                return True
-            else:
-                err_msg = push_res.stderr.strip()[:80]
-                if err_msg:
-                    append_log(f"[*] 🌐 [GitHub Pages] 推送提示: {err_msg}")
+        # rebase pull 以免冲突
+        subprocess.run(["git", "pull", "--rebase", "-X", "theirs", "origin", "main"], check=False, cwd=work_dir, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+
+        push_res = subprocess.run(["git", "push", "origin", "HEAD:main"], capture_output=True, text=True, check=False, cwd=work_dir)
+        if push_res.returncode == 0:
+            append_log(f"[+] 🌐 [GitHub Pages] 成功同步第 {round_idx} 轮数据至云端！页面已自动刷新")
+            return True
+        else:
+            err_msg = push_res.stderr.strip()[:100]
+            if err_msg:
+                append_log(f"[*] 🌐 [GitHub Pages] 推送反馈: {err_msg}")
     except Exception as e:
-        pass
+        append_log(f"[!] 🌐 [GitHub Pages] 同步异常: {e}")
     return False
 
 def poller_daemon_thread():
@@ -596,7 +702,24 @@ class AndroidRadarHandler(BaseHTTPRequestHandler):
         pass # 静默 HTTP 请求终端输出，保持日志干净
 
     def do_GET(self):
-        if self.path == "/" or self.path.startswith("/index"):
+        if self.path in ["/futu", "/futu_pro_terminal.html"]:
+            work_dir = PROJECT_DIR
+            chk = subprocess.run(["git", "rev-parse", "--show-toplevel"], capture_output=True, text=True, check=False, cwd=PROJECT_DIR)
+            if chk.returncode == 0 and chk.stdout.strip():
+                work_dir = chk.stdout.strip()
+            futu_p = os.path.join(work_dir, "futu_pro_terminal.html")
+            if not os.path.exists(futu_p):
+                futu_p = os.path.join(PROJECT_DIR, "futu_pro_terminal.html")
+            if os.path.exists(futu_p):
+                with open(futu_p, "rb") as f_futu:
+                    c = f_futu.read()
+                self.send_response(200)
+                self.send_header("Content-Type", "text/html; charset=utf-8")
+                self.end_headers()
+                self.wfile.write(c)
+                return
+
+        if self.path == "/" or self.path.startswith("/index") or self.path == "/control":
             self.send_response(200)
             self.send_header("Content-Type", "text/html; charset=utf-8")
             self.end_headers()
