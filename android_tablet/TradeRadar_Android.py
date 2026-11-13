@@ -112,23 +112,21 @@ def get_local_ip():
 # ------------------------------------------------------------------------------
 # 3. 美股交易时段探测器 (严格对齐美东时间与夏/冬令时)
 # ------------------------------------------------------------------------------
-def get_us_market_session():
+def _market_et_now():
     utc_now = datetime.now(timezone.utc)
-    # 美东时间通常为 UTC-4 (夏令时) 或 UTC-5 (冬令时)
-    # 3月第二个周日 ~ 11月第一个周日为夏令时 EDT (UTC-4)，其余为 EST (UTC-5)
-    year = utc_now.year
-    # 简易美东时间转换
     is_dst = (utc_now.month > 3 and utc_now.month < 11) or (utc_now.month == 3 and utc_now.day >= 8) or (utc_now.month == 11 and utc_now.day < 1)
-    et_offset = timedelta(hours=-4 if is_dst else -5)
-    et_now = utc_now + et_offset
-    
-    weekday = et_now.weekday() # 0=Mon, 4=Fri, 5=Sat, 6=Sun
+    et_tz = timezone(timedelta(hours=-4 if is_dst else -5))
+    return utc_now.astimezone(et_tz)
+
+def get_us_market_session():
+    et_now = _market_et_now()
+    weekday = et_now.weekday()  # 0=Mon, 4=Fri, 5=Sat, 6=Sun
     hm = et_now.hour * 60 + et_now.minute
 
     if weekday in (5, 6):
         return "CLOSED", "💤 週末休市"
 
-    if 0 <= hm < 240:         # 20:00 - 04:00 ET (包含前夜盘)
+    if 0 <= hm < 240:         # 00:00 - 04:00 ET
         return "NIGHT", "🌌 美股夜盘"
     elif 240 <= hm < 570:     # 04:00 - 09:30 ET
         return "PRE", "🌅 盘前交易"
@@ -231,46 +229,214 @@ FULL_70_POOL = list(dict.fromkeys(ETF_TICKERS + CORE_STOCKS))
 # 4.5 防御因子起飞 (Defensive Flight) 监控与专属 Discord 推送引擎
 # ------------------------------------------------------------------------------
 DEFENSIVE_FLIGHT_STATE_FILE = os.path.join(PROJECT_DIR, ".android_defensive_state.json")
+FLIGHT_DEF_TICKERS = ["KO", "PEP", "MCD", "LLY", "MRNA", "TLT", "GLD", "VIXY"]
+FLIGHT_OFF_TICKERS = ["SMH", "SOXL", "NVDA", "QQQ"]
+FLIGHT_FUTURES = ("NQ=F", "ZB=F", "GC=F")
 
-def evaluate_and_send_defensive_flight(quotes: dict, now_str: str, force_send: bool = False):
-    """
-    小米平板专属防御因子监控引擎：
-    1. 8只防御避险资产: KO, PEP, MCD, LLY, MRNA, TLT, GLD, VIXY
-    2. 4只核心进攻科技: SMH, SOXL, NVDA, QQQ
-    3. 背离分 Flight Score = 防御均值 - 科技均值
-    4. 变化 >=0.10%p 或个股变化 >=0.50% 时自动推送到【防御因子背离百分比】Discord 专属频道
-    """
-    if not DISCORD_DEFENSIVE_FLIGHT_WEBHOOK_URL or not quotes:
-        return False
+def _yahoo_5m_closes(symbol: str):
+    url = (
+        "https://query1.finance.yahoo.com/v8/finance/chart/"
+        + urllib.parse.quote(symbol)
+        + "?interval=5m&range=2d&includePrePost=true"
+    )
+    req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+    with urllib.request.urlopen(req, timeout=12) as resp:
+        data = json.loads(resp.read().decode("utf-8"))
+    result = (data.get("chart") or {}).get("result") or []
+    if not result:
+        return []
+    ts = result[0].get("timestamp") or []
+    closes = ((result[0].get("indicators") or {}).get("quote") or [{}])[0].get("close") or []
+    rows = []
+    for epoch, close in zip(ts, closes):
+        if close is None:
+            continue
+        rows.append((int(epoch), float(close)))
+    return rows
 
-    def_tickers = ["KO", "PEP", "MCD", "LLY", "MRNA", "TLT", "GLD", "VIXY"]
-    off_tickers = ["SMH", "SOXL", "NVDA", "QQQ"]
+def _flight_pack(score, def_mean, off_mean, session, source, components, skip_reason=""):
+    is_alert = bool((score >= 2.2 and off_mean <= 0.0) or (score >= 1.8 and off_mean <= -1.0))
+    if skip_reason:
+        alert_text = "⚠️ " + skip_reason
+        badge = "badge-normal"
+        is_alert = False
+    elif source == "futures_proxy":
+        alert_text = (
+            f"🚨 夜盘·期货代理 防御因子起飞 (+{score:.1f}%) · NQ/ZB/GC"
+            if is_alert else
+            f"🛡️ 夜盘·期货代理 防御因子平稳 ({score:+.1f}%) · NQ/ZB/GC"
+        )
+        badge = "badge-alert" if is_alert else "badge-normal"
+    else:
+        alert_text = (
+            f"🚨 防御因子起飞 · 警惕机构盘中去杠杆踩踏 (+{score:.1f}%)"
+            if is_alert else
+            f"🛡️ 防御因子平稳 ({score:+.1f}%) · 机构仓位均衡"
+        )
+        badge = "badge-alert" if is_alert else "badge-normal"
+    return {
+        "is_alert": is_alert,
+        "flight_score": None if skip_reason else round(float(score), 2),
+        "def_mean_chg": round(float(def_mean), 2),
+        "off_mean_chg": round(float(off_mean), 2),
+        "alert_text": alert_text,
+        "banner_text": "🚨 夜盘·期货代理 · 警惕机构去杠杆踩踏" if (is_alert and source == "futures_proxy") else ("" if not is_alert else "🚨 防御因子起飞 · 警惕机构盘中去杠杆踩踏"),
+        "badge": badge,
+        "session": session,
+        "score_source": source,
+        "components": components,
+        "missing": [],
+        "skip_reason": skip_reason,
+    }
 
-    def_items = []
-    off_items = []
+def _flight_from_futures():
+    et_now = _market_et_now()
+    if et_now.hour >= 20:
+        ref_date = et_now.date()
+    elif et_now.hour < 4:
+        ref_date = (et_now - timedelta(days=1)).date()
+    else:
+        return _flight_pack(0, 0, 0, "OVERNIGHT", "futures_proxy", {}, "当前不是夜盘，不取期货代理")
+    cutoff = datetime.combine(ref_date, datetime.min.time()).replace(hour=16, tzinfo=et_now.tzinfo)
+    night_start = datetime.combine(ref_date, datetime.min.time()).replace(hour=20, tzinfo=et_now.tzinfo)
+    comps = {}
+    missing = []
+    for sym in FLIGHT_FUTURES:
+        try:
+            rows = _yahoo_5m_closes(sym)
+        except Exception:
+            missing.append(sym)
+            continue
+        base = latest = None
+        base_t = latest_t = None
+        for epoch, close in rows:
+            t = datetime.fromtimestamp(epoch, timezone.utc).astimezone(et_now.tzinfo)
+            if t <= cutoff:
+                base, base_t = close, t
+            if night_start < t <= et_now:
+                latest, latest_t = close, t
+        if base is None or latest is None or base <= 0:
+            missing.append(sym)
+            continue
+        comps[sym] = {
+            "pct": round((latest - base) / base * 100.0, 2),
+            "price": round(latest, 4),
+            "baseline": round(base, 4),
+            "quote_time": latest_t.isoformat(),
+            "baseline_time": base_t.isoformat(),
+        }
+    if "NQ=F" not in comps or not any(s in comps for s in ("ZB=F", "GC=F")):
+        packed = _flight_pack(0, 0, 0, "OVERNIGHT", "futures_proxy", comps, "夜盘期货代理缺少 " + ", ".join(missing))
+        packed["missing"] = missing
+        return packed
+    off_mean = float(comps["NQ=F"]["pct"])
+    def_vals = [float(comps[s]["pct"]) for s in ("ZB=F", "GC=F") if s in comps]
+    def_mean = sum(def_vals) / len(def_vals)
+    score = def_mean - off_mean
+    packed = _flight_pack(score, def_mean, off_mean, "OVERNIGHT", "futures_proxy", comps)
+    packed["missing"] = missing
+    return packed
+
+def _flight_from_spot(quotes: dict, session_code: str):
+    if not quotes:
+        return _flight_pack(0, 0, 0, session_code, "spot_basket", {}, "现货报价为空")
+    comps = {}
     def_vals = []
     off_vals = []
-
-    for s in def_tickers:
+    for s in FLIGHT_DEF_TICKERS:
         if s in quotes:
-            p = float(quotes[s].get("pct_change", 0.0))
+            p = float(quotes[s].get("pct_change", 0.0) or 0.0)
             def_vals.append(p)
-            def_items.append(f"{s} `{p:+.2f}%`")
-
-    for s in off_tickers:
+            comps[s] = {"pct": round(p, 2)}
+    for s in FLIGHT_OFF_TICKERS:
         if s in quotes:
-            p = float(quotes[s].get("pct_change", 0.0))
+            p = float(quotes[s].get("pct_change", 0.0) or 0.0)
             off_vals.append(p)
-            off_items.append(f"{s} `{p:+.2f}%`")
-
+            comps[s] = {"pct": round(p, 2)}
     if not def_vals or not off_vals:
-        return False
-
+        return _flight_pack(0, 0, 0, session_code, "spot_basket", comps, "现货防御因子报价不足")
     def_mean = sum(def_vals) / len(def_vals)
     off_mean = sum(off_vals) / len(off_vals)
-    score = def_mean - off_mean
+    return _flight_pack(def_mean - off_mean, def_mean, off_mean, session_code, "spot_basket", comps)
 
-    # 防刷屏检查 (Score 变动 >=0.10% 或 任何成分变动 >=0.50%)
+def compute_flight_snapshot(quotes: dict, session_code: str):
+    """夜盘只用 NQ/ZB/GC。其余时段用现货 8 对 4。失败时带 skip_reason，调用方不得覆盖旧页面。"""
+    if session_code == "NIGHT":
+        return _flight_from_futures()
+    return _flight_from_spot(quotes or {}, session_code)
+
+def patch_predict_radar_flight(work_dir: str, flight: dict, now_str: str, session_name: str) -> bool:
+    """把本轮防御因子写进 predict_radar_5y.html 的 Flight 胶囊和同步时间。"""
+    if not flight or flight.get("skip_reason") or flight.get("flight_score") is None:
+        return False
+    html_path = os.path.join(work_dir, "predict_radar_5y.html")
+    if not os.path.exists(html_path):
+        return False
+    score = float(flight["flight_score"])
+    if flight.get("is_alert"):
+        color, icon = "#f85149", "🚨"
+    elif score >= 1.2:
+        color, icon = "#ffd54f", "🛡️"
+    else:
+        color, icon = "#3fb950", "🛡️"
+    shown = f"{score:+.2f}% {icon}"
+    if flight.get("score_source") == "futures_proxy":
+        title = "夜盘期货代理：防御 (ZB=F/GC=F) 减进攻 (NQ=F)。红灯：≥+2.2% 且纳指不涨，或 ≥+1.8% 且纳指≤-1.0%"
+    else:
+        title = "防御避险组 (KO/PEP/MCD/LLY/MRNA/TLT/GLD/VIXY) 相对进攻科技组 (QQQ/SMH/NVDA/SOXL) 超额走强背离度 (预警阈值 +2.2% / +1.8%)"
+    with open(html_path, "r", encoding="utf-8") as f_html:
+        html = f_html.read()
+    html2, n = re.subn(
+        r'(<div class="weather-stat-pill" title=")[^"]*(">\s*<span class="lbl">防御/科技背离 \(Flight\)</span>\s*<span class="val" style="color: )[^"]*(">)[^<]*(</span>)',
+        lambda m: m.group(1) + title + m.group(2) + color + ";" + m.group(3) + shown + m.group(4),
+        html,
+        count=1,
+    )
+    if n != 1:
+        append_log("[!] AI预测页防御因子定位失败，本轮不改该页")
+        return False
+    html2, _ = re.subn(
+        r"同步于:\s*\d{4}-\d{2}-\d{2}\s+\d{2}:\d{2}:\d{2}",
+        f"同步于: {now_str}",
+        html2,
+        count=1,
+    )
+    if session_name:
+        html2, _ = re.subn(
+            r'(<div class="live-badge">\s*<span class="pulse-dot"></span>\s*<span>)[^<]*(</span>)',
+            lambda m: m.group(1) + f"Finnhub 秒级实时 ({session_name})" + m.group(2),
+            html2,
+            count=1,
+        )
+    with open(html_path, "w", encoding="utf-8") as f_html:
+        f_html.write(html2)
+    return True
+
+def evaluate_and_send_defensive_flight(quotes: dict, now_str: str, force_send: bool = False, flight: dict = None, session_code: str = "REGULAR"):
+    """
+    小米平板专属防御因子监控引擎。
+    夜盘用期货代理，其余时段用现货 8 对 4。
+    变化 >=0.10%p 或成分变动 >=0.50% 时推送 Discord。页面回写不在这里做。
+    """
+    if flight is None:
+        flight = compute_flight_snapshot(quotes or {}, session_code)
+    if not flight or flight.get("skip_reason") or flight.get("flight_score") is None:
+        return False
+    if not DISCORD_DEFENSIVE_FLIGHT_WEBHOOK_URL:
+        return False
+
+    score = float(flight["flight_score"])
+    def_mean = float(flight.get("def_mean_chg", 0.0))
+    off_mean = float(flight.get("off_mean_chg", 0.0))
+    comps = flight.get("components") or {}
+    if flight.get("score_source") == "futures_proxy":
+        def_names, off_names = ["ZB=F", "GC=F"], ["NQ=F"]
+    else:
+        def_names, off_names = FLIGHT_DEF_TICKERS, FLIGHT_OFF_TICKERS
+    def_items = [f"{s} `{float(comps[s]['pct']):+.2f}%`" for s in def_names if s in comps]
+    off_items = [f"{s} `{float(comps[s]['pct']):+.2f}%`" for s in off_names if s in comps]
+    cur_comps = {s: float(v.get("pct", 0.0)) for s, v in comps.items() if isinstance(v, dict)}
+
     prev_state = {}
     if os.path.exists(DEFENSIVE_FLIGHT_STATE_FILE):
         try:
@@ -281,42 +447,40 @@ def evaluate_and_send_defensive_flight(quotes: dict, now_str: str, force_send: b
 
     last_score = prev_state.get("last_score")
     prev_comps = prev_state.get("components", {})
-
     should_send = force_send or (last_score is None)
     if not should_send:
         if abs(score - float(last_score)) >= 0.10:
             should_send = True
         else:
-            for s in (def_tickers + off_tickers):
-                if s in quotes:
-                    curr_p = float(quotes[s].get("pct_change", 0.0))
-                    prev_p = float(prev_comps.get(s, curr_p))
-                    if abs(curr_p - prev_p) >= 0.50:
-                        should_send = True
-                        break
+            for s, curr_p in cur_comps.items():
+                prev_p = float(prev_comps.get(s, curr_p))
+                if abs(curr_p - prev_p) >= 0.50:
+                    should_send = True
+                    break
 
     if not should_send:
         return False
 
-    # 确定状态与色阶
+    # 确定状态与色阶（推送阈值保持平板原口径，避免夜盘刷屏规则被改掉）
     is_alert = (score >= 2.5)
     if is_alert:
-        color = 0xF85149  # 警示红
+        color = 0xF85149
         status_tag = "🚨 【防御因子起飞 · 警惕机构盘中去杠杆踩踏】"
         advice = "⚠️ **操盘警示**：防御避险资产超额走强，科技成长股正被机构急促抽离资金！短线多头切勿盲目抄底接飞刀，实盘注意上移保本止损，防范盘中踩踏！"
     elif score >= 1.5:
-        color = 0xFF944D  # 警觉橙
+        color = 0xFF944D
         status_tag = "⚠️ 【避险情绪升温 · 防御因子走强】"
         advice = "👀 **盘面观察**：防御因子相对科技出现温和背离，机构资金偏向保守防御，多头进攻动能有所收敛，持仓宜设移动止盈保护。"
     elif score <= -1.0:
-        color = 0x00E676  # 顺风绿
+        color = 0x00E676
         status_tag = "🚀 【进攻科技占优 · 市场风险偏好高昂】"
         advice = "🟢 **多头顺风**：进攻型科技成长股显著领跑防御资产，市场风险偏好健康，多头仓位顺势拿稳。"
     else:
-        color = 0x58A6FF  # 平稳蓝
+        color = 0x58A6FF
         status_tag = "🛡️ 【因子表现均衡 · 机构仓位平稳】"
         advice = "✅ **常规格局**：防御因子与进攻科技相对强弱处于正常均衡区间，机构未见系统性去杠杆调仓。"
 
+    source_note = "夜盘期货代理 NQ/ZB/GC" if flight.get("score_source") == "futures_proxy" else "现货 8 对 4"
     payload = {
         "embeds": [{
             "title": status_tag,
@@ -324,8 +488,8 @@ def evaluate_and_send_defensive_flight(quotes: dict, now_str: str, force_send: b
             "color": color,
             "fields": [
                 {"name": "🎯 因子背离差值 (Flight Score)", "value": f"`{score:+.2f}%` (防御均值 `{def_mean:+.2f}%` vs 进攻均值 `{off_mean:+.2f}%`)", "inline": False},
-                {"name": f"🛡️ 防御避险资产 ({len(def_vals)}只)", "value": " ｜ ".join(def_items), "inline": False},
-                {"name": f"🚀 进攻科技资产 ({len(off_vals)}只)", "value": " ｜ ".join(off_items), "inline": False}
+                {"name": f"🛡️ 防御端 ({len(def_items)}只) · {source_note}", "value": " ｜ ".join(def_items) or "-", "inline": False},
+                {"name": f"🚀 进攻端 ({len(off_items)}只)", "value": " ｜ ".join(off_items) or "-", "inline": False}
             ],
             "footer": {"text": f"TradeRadar · 小米平板防御因子哨兵 · {now_str}"}
         }]
@@ -340,9 +504,8 @@ def evaluate_and_send_defensive_flight(quotes: dict, now_str: str, force_send: b
         with urllib.request.urlopen(req, timeout=10) as resp:
             if resp.status in (200, 204):
                 append_log(f"[+] 🛡️ [防御因子] 背离分 {score:+.2f}% 成功推送至 Discord 专属频道！")
-                cur_comps = {s: float(quotes[s].get("pct_change", 0.0)) for s in (def_tickers + off_tickers) if s in quotes}
                 with open(DEFENSIVE_FLIGHT_STATE_FILE, "w", encoding="utf-8") as f_s:
-                    json.dump({"last_score": score, "components": cur_comps, "last_sent": now_str}, f_s, ensure_ascii=False, indent=2)
+                    json.dump({"last_score": score, "components": cur_comps, "last_sent": now_str, "score_source": flight.get("score_source")}, f_s, ensure_ascii=False, indent=2)
                 return True
     except Exception as e:
         append_log(f"[!] ⚠️ Discord 防御因子推送异常: {e}")
@@ -538,11 +701,16 @@ def run_single_scan_cycle(round_idx=1):
     else:
         append_log(f"[+] 🛡️ 自选监控池价格均在安全运行区间内，暂无破位触发。")
 
-    # 4.5 防御因子实时计算与 Discord 专属频道推送
-    evaluate_and_send_defensive_flight(fetched_quotes, now_str)
+    # 4.5 防御因子实时计算与 Discord 专属频道推送（夜盘走期货，页面回写在同步阶段）
+    flight = compute_flight_snapshot(fetched_quotes, session_code)
+    if not flight or flight.get("skip_reason"):
+        append_log(f"[!] 防御因子本轮未更新: {(flight or {}).get('skip_reason') or '计算失败'}")
+    else:
+        append_log(f"[*] 防御因子 {float(flight['flight_score']):+.2f}% · {flight.get('score_source')} · 防御 {float(flight.get('def_mean_chg', 0)):+.2f}% / 进攻 {float(flight.get('off_mean_chg', 0)):+.2f}%")
+    evaluate_and_send_defensive_flight(fetched_quotes, now_str, flight=flight, session_code=session_code)
 
     # 5. 自动同步发布到 GitHub Pages (若处于 Git 仓库环境)
-    sync_to_github_pages(round_idx, now_str, quotes=fetched_quotes)
+    sync_to_github_pages(round_idx, now_str, quotes=fetched_quotes, flight=flight, session_name=session_name)
 
 # ------------------------------------------------------------------------------
 # 6. 后台守护线程调度器
@@ -551,12 +719,12 @@ def run_single_scan_cycle(round_idx=1):
 # ------------------------------------------------------------------------------
 # 5.5 GitHub Pages 自动同步引擎 (可选)
 # ------------------------------------------------------------------------------
-def sync_to_github_pages(round_idx: int, now_str: str, quotes: dict = None):
+def sync_to_github_pages(round_idx: int, now_str: str, quotes: dict = None, flight: dict = None, session_name: str = ""):
     """
     小米平板 GitHub Pages 全自动同步引擎：
     1. 自动定位 Git 仓库根目录（兼容从 android_tablet 或根目录启动）
     2. 刷新 futu_pro_terminal.html 与 index.html 的时间戳与实时报价
-    3. 同步更新 data_cache/latest_ai_predictions.json
+    3. 把本轮防御因子写回 predict_radar_5y.html，并同步 latest_ai_predictions.json
     4. 自动携带 GITHUB_TOKEN 配置远端并提交推送
     5. 触发 GitHub Pages 自动部署上线
     """
@@ -637,8 +805,11 @@ def sync_to_github_pages(round_idx: int, now_str: str, quotes: dict = None):
             except Exception as e_html:
                 append_log(f"[*] 看板 HTML 刷新提示: {e_html}")
 
-        # 2. 同步更新 data_cache/latest_ai_predictions.json
-        if quotes:
+        # 2. 写回 AI 预测页的防御因子，并同步 latest_ai_predictions.json
+        if patch_predict_radar_flight(work_dir, flight, now_str, session_name):
+            append_log(f"[+] AI预测页防御因子已写回 {float(flight['flight_score']):+.2f}%")
+
+        if quotes or (flight and not flight.get("skip_reason") and flight.get("flight_score") is not None):
             for pred_path in [
                 os.path.join(work_dir, "data_cache", "latest_ai_predictions.json"),
                 os.path.join(work_dir, "latest_ai_predictions.json")
@@ -647,11 +818,22 @@ def sync_to_github_pages(round_idx: int, now_str: str, quotes: dict = None):
                     try:
                         with open(pred_path, "r", encoding="utf-8") as f_pred:
                             ai_dict = json.load(f_pred)
-                        if isinstance(ai_dict, dict) and "by_ticker" in ai_dict:
-                            for tk, q in quotes.items():
-                                if tk in ai_dict["by_ticker"]:
-                                    ai_dict["by_ticker"][tk]["last"] = q.get("last")
-                                    ai_dict["by_ticker"][tk]["pct_change"] = q.get("pct_change")
+                        if isinstance(ai_dict, dict):
+                            if quotes and "by_ticker" in ai_dict:
+                                for tk, q in quotes.items():
+                                    if tk in ai_dict["by_ticker"]:
+                                        ai_dict["by_ticker"][tk]["last"] = q.get("last")
+                                        ai_dict["by_ticker"][tk]["pct_change"] = q.get("pct_change")
+                            if flight and not flight.get("skip_reason") and flight.get("flight_score") is not None:
+                                ai_dict["defensive_flight"] = flight
+                                mw = ai_dict.get("macro_weather")
+                                if isinstance(mw, dict):
+                                    mw["defensive_flight"] = flight
+                                kpi = ai_dict.get("kpi")
+                                if isinstance(kpi, dict):
+                                    kpi["sync_time"] = now_str
+                                    if session_name:
+                                        kpi["data_mode"] = f"Finnhub 秒级实时 ({session_name})"
                             with open(pred_path, "w", encoding="utf-8") as f_pred_out:
                                 json.dump(ai_dict, f_pred_out, ensure_ascii=False, indent=2)
                     except Exception:
@@ -672,7 +854,7 @@ def sync_to_github_pages(round_idx: int, now_str: str, quotes: dict = None):
         subprocess.run(["git", "config", "user.name", "2827173579"], check=False, cwd=work_dir, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
         subprocess.run(["git", "config", "user.email", "a18669358277@gmail.com"], check=False, cwd=work_dir, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
-        files_to_add = ["futu_pro_terminal.html", "index.html", "data_cache/latest_ai_predictions.json"]
+        files_to_add = ["futu_pro_terminal.html", "index.html", "predict_radar_5y.html", "data_cache/latest_ai_predictions.json"]
         for f in files_to_add:
             if os.path.exists(os.path.join(work_dir, f)):
                 subprocess.run(["git", "add", f], check=False, cwd=work_dir, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
