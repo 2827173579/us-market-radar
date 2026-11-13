@@ -4,7 +4,7 @@
     "profit_factor": 1.33,
     "top_sector": "存储芯片 (⭐⭐⭐⭐⭐)",
     "top_feature": "SMH_IGV_Ratio_Bias (12.31%)",
-    "sync_time": "2026-11-13 16:32:52",
+    "sync_time": "2026-11-13 16:39:42",
     "data_mode": "Finnhub 秒级实时 (🌌 美股夜盘)",
     "is_realtime": false
   },
@@ -22,9 +22,9 @@
     "latest_date": "2026-11-12",
     "defensive_flight": {
       "is_alert": false,
-      "flight_score": 0.38,
-      "def_mean_chg": 0.22,
-      "off_mean_chg": -0.16,
+      "flight_score": 0.35,
+      "def_mean_chg": 0.21,
+      "off_mean_chg": -0.14,
       "alert_text": "🛡️ 夜盘·期货代理 防御因子平稳 (+0.4%) · NQ/ZB/GC",
       "banner_text": "",
       "badge": "badge-normal",
@@ -32,24 +32,24 @@
       "score_source": "futures_proxy",
       "components": {
         "NQ=F": {
-          "pct": -0.16,
-          "price": 28343.5,
+          "pct": -0.14,
+          "price": 28347.75,
           "baseline": 28388.5,
-          "quote_time": "2026-11-13T02:24:30-05:00",
+          "quote_time": "2026-11-13T02:31:19-05:00",
           "baseline_time": "2026-11-12T16:00:00-05:00"
         },
         "ZB=F": {
-          "pct": -0.06,
-          "price": 105.6875,
+          "pct": -0.09,
+          "price": 105.6562,
           "baseline": 105.75,
-          "quote_time": "2026-11-13T02:23:55-05:00",
+          "quote_time": "2026-11-13T02:31:23-05:00",
           "baseline_time": "2026-11-12T16:00:00-05:00"
         },
         "GC=F": {
-          "pct": 0.5,
-          "price": 3898.5,
+          "pct": 0.51,
+          "price": 3898.7,
           "baseline": 3879.1001,
-          "quote_time": "2026-11-13T02:24:31-05:00",
+          "quote_time": "2026-11-13T02:31:17-05:00",
           "baseline_time": "2026-11-12T16:00:00-05:00"
         }
       },
@@ -10821,9 +10821,9 @@
   },
   "defensive_flight": {
     "is_alert": false,
-    "flight_score": 0.38,
-    "def_mean_chg": 0.22,
-    "off_mean_chg": -0.16,
+    "flight_score": 0.35,
+    "def_mean_chg": 0.21,
+    "off_mean_chg": -0.14,
     "alert_text": "🛡️ 夜盘·期货代理 防御因子平稳 (+0.4%) · NQ/ZB/GC",
     "banner_text": "",
     "badge": "badge-normal",
@@ -10831,24 +10831,24 @@
     "score_source": "futures_proxy",
     "components": {
       "NQ=F": {
-        "pct": -0.16,
-        "price": 28343.5,
+        "pct": -0.14,
+        "price": 28347.75,
         "baseline": 28388.5,
-        "quote_time": "2026-11-13T02:24:30-05:00",
+        "quote_time": "2026-11-13T02:31:19-05:00",
         "baseline_time": "2026-11-12T16:00:00-05:00"
       },
       "ZB=F": {
-        "pct": -0.06,
-        "price": 105.6875,
+        "pct": -0.09,
+        "price": 105.6562,
         "baseline": 105.75,
-        "quote_time": "2026-11-13T02:23:55-05:00",
+        "quote_time": "2026-11-13T02:31:23-05:00",
         "baseline_time": "2026-11-12T16:00:00-05:00"
       },
       "GC=F": {
-        "pct": 0.5,
-        "price": 3898.5,
+        "pct": 0.51,
+        "price": 3898.7,
         "baseline": 3879.1001,
-        "quote_time": "2026-11-13T02:24:31-05:00",
+        "quote_time": "2026-11-13T02:31:17-05:00",
         "baseline_time": "2026-11-12T16:00:00-05:00"
       }
     },
