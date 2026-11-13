@@ -226,6 +226,128 @@ CORE_STOCKS = [
 
 FULL_70_POOL = list(dict.fromkeys(ETF_TICKERS + CORE_STOCKS))
 
+
+# ------------------------------------------------------------------------------
+# 4.5 防御因子起飞 (Defensive Flight) 监控与专属 Discord 推送引擎
+# ------------------------------------------------------------------------------
+DEFENSIVE_FLIGHT_STATE_FILE = os.path.join(PROJECT_DIR, ".android_defensive_state.json")
+
+def evaluate_and_send_defensive_flight(quotes: dict, now_str: str, force_send: bool = False):
+    """
+    小米平板专属防御因子监控引擎：
+    1. 8只防御避险资产: KO, PEP, MCD, LLY, MRNA, TLT, GLD, VIXY
+    2. 4只核心进攻科技: SMH, SOXL, NVDA, QQQ
+    3. 背离分 Flight Score = 防御均值 - 科技均值
+    4. 变化 >=0.10%p 或个股变化 >=0.50% 时自动推送到【防御因子背离百分比】Discord 专属频道
+    """
+    if not DISCORD_DEFENSIVE_FLIGHT_WEBHOOK_URL or not quotes:
+        return False
+
+    def_tickers = ["KO", "PEP", "MCD", "LLY", "MRNA", "TLT", "GLD", "VIXY"]
+    off_tickers = ["SMH", "SOXL", "NVDA", "QQQ"]
+
+    def_items = []
+    off_items = []
+    def_vals = []
+    off_vals = []
+
+    for s in def_tickers:
+        if s in quotes:
+            p = float(quotes[s].get("pct_change", 0.0))
+            def_vals.append(p)
+            def_items.append(f"{s} `{p:+.2f}%`")
+
+    for s in off_tickers:
+        if s in quotes:
+            p = float(quotes[s].get("pct_change", 0.0))
+            off_vals.append(p)
+            off_items.append(f"{s} `{p:+.2f}%`")
+
+    if not def_vals or not off_vals:
+        return False
+
+    def_mean = sum(def_vals) / len(def_vals)
+    off_mean = sum(off_vals) / len(off_vals)
+    score = def_mean - off_mean
+
+    # 防刷屏检查 (Score 变动 >=0.10% 或 任何成分变动 >=0.50%)
+    prev_state = {}
+    if os.path.exists(DEFENSIVE_FLIGHT_STATE_FILE):
+        try:
+            with open(DEFENSIVE_FLIGHT_STATE_FILE, "r", encoding="utf-8") as f:
+                prev_state = json.load(f)
+        except Exception:
+            pass
+
+    last_score = prev_state.get("last_score")
+    prev_comps = prev_state.get("components", {})
+
+    should_send = force_send or (last_score is None)
+    if not should_send:
+        if abs(score - float(last_score)) >= 0.10:
+            should_send = True
+        else:
+            for s in (def_tickers + off_tickers):
+                if s in quotes:
+                    curr_p = float(quotes[s].get("pct_change", 0.0))
+                    prev_p = float(prev_comps.get(s, curr_p))
+                    if abs(curr_p - prev_p) >= 0.50:
+                        should_send = True
+                        break
+
+    if not should_send:
+        return False
+
+    # 确定状态与色阶
+    is_alert = (score >= 2.5)
+    if is_alert:
+        color = 0xF85149  # 警示红
+        status_tag = "🚨 【防御因子起飞 · 警惕机构盘中去杠杆踩踏】"
+        advice = "⚠️ **操盘警示**：防御避险资产超额走强，科技成长股正被机构急促抽离资金！短线多头切勿盲目抄底接飞刀，实盘注意上移保本止损，防范盘中踩踏！"
+    elif score >= 1.5:
+        color = 0xFF944D  # 警觉橙
+        status_tag = "⚠️ 【避险情绪升温 · 防御因子走强】"
+        advice = "👀 **盘面观察**：防御因子相对科技出现温和背离，机构资金偏向保守防御，多头进攻动能有所收敛，持仓宜设移动止盈保护。"
+    elif score <= -1.0:
+        color = 0x00E676  # 顺风绿
+        status_tag = "🚀 【进攻科技占优 · 市场风险偏好高昂】"
+        advice = "🟢 **多头顺风**：进攻型科技成长股显著领跑防御资产，市场风险偏好健康，多头仓位顺势拿稳。"
+    else:
+        color = 0x58A6FF  # 平稳蓝
+        status_tag = "🛡️ 【因子表现均衡 · 机构仓位平稳】"
+        advice = "✅ **常规格局**：防御因子与进攻科技相对强弱处于正常均衡区间，机构未见系统性去杠杆调仓。"
+
+    payload = {
+        "embeds": [{
+            "title": status_tag,
+            "description": advice,
+            "color": color,
+            "fields": [
+                {"name": "🎯 因子背离差值 (Flight Score)", "value": f"`{score:+.2f}%` (防御均值 `{def_mean:+.2f}%` vs 进攻均值 `{off_mean:+.2f}%`)", "inline": False},
+                {"name": f"🛡️ 防御避险资产 ({len(def_vals)}只)", "value": " ｜ ".join(def_items), "inline": False},
+                {"name": f"🚀 进攻科技资产 ({len(off_vals)}只)", "value": " ｜ ".join(off_items), "inline": False}
+            ],
+            "footer": {"text": f"TradeRadar · 小米平板防御因子哨兵 · {now_str}"}
+        }]
+    }
+
+    try:
+        req = urllib.request.Request(
+            DISCORD_DEFENSIVE_FLIGHT_WEBHOOK_URL,
+            data=json.dumps(payload).encode("utf-8"),
+            headers={"Content-Type": "application/json", "User-Agent": "TradeRadar-Android/2.0"}
+        )
+        with urllib.request.urlopen(req, timeout=10) as resp:
+            if resp.status in (200, 204):
+                append_log(f"[+] 🛡️ [防御因子] 背离分 {score:+.2f}% 成功推送至 Discord 专属频道！")
+                cur_comps = {s: float(quotes[s].get("pct_change", 0.0)) for s in (def_tickers + off_tickers) if s in quotes}
+                with open(DEFENSIVE_FLIGHT_STATE_FILE, "w", encoding="utf-8") as f_s:
+                    json.dump({"last_score": score, "components": cur_comps, "last_sent": now_str}, f_s, ensure_ascii=False, indent=2)
+                return True
+    except Exception as e:
+        append_log(f"[!] ⚠️ Discord 防御因子推送异常: {e}")
+    return False
+
 # ------------------------------------------------------------------------------
 # 5. 双线程平滑令牌桶频控引擎 (FinnhubRateLimiter)
 # ------------------------------------------------------------------------------
@@ -415,6 +537,9 @@ def run_single_scan_cycle(round_idx=1):
             send_discord(title, al['desc'], color=0xda3633 if "止损" in al['title'] else 0x8957e5)
     else:
         append_log(f"[+] 🛡️ 自选监控池价格均在安全运行区间内，暂无破位触发。")
+
+    # 4.5 防御因子实时计算与 Discord 专属频道推送
+    evaluate_and_send_defensive_flight(fetched_quotes, now_str)
 
     # 5. 自动同步发布到 GitHub Pages (若处于 Git 仓库环境)
     sync_to_github_pages(round_idx, now_str, quotes=fetched_quotes)
