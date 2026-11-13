@@ -8765,7 +8765,9 @@
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": false,
-      "short_rank": 67
+      "short_rank": 67,
+      "last": 148.5,
+      "pct_change": 1.02
     },
     "HPE": {
       "rank": 39,
@@ -9886,7 +9888,9 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 24
+      "short_rank": 24,
+      "last": 692.0,
+      "pct_change": 0.51
     },
     "IWM": {
       "rank": 58,
