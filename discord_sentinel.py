@@ -55,13 +55,26 @@ def load_env_file(env_path: Optional[str] = None) -> None:
 load_env_file()
 DISCORD_WEBHOOK_URL = os.environ.get("DISCORD_WEBHOOK_URL", "").strip()
 
-# Universe Definition: 51 unique tickers across 5 tiers
+# 与主雷达 70 只对齐。另保留哨兵策略自己要用的 TQQQ、BTC-USD、SCHD（因子 Y）。
+# MARA 已从主池删除，这里不再巡检。
 SENTINEL_UNIVERSE_TIERS: Dict[str, List[str]] = {
-    "TIER_1_3X": ["SOXL", "SOXS", "TQQQ", "SQQQ"],
-    "TIER_2_CORE": ["SPY", "MRVL", "LITE", "BE", "PLTR", "MSFT", "NOW", "COHR", "CRDO", "NBIS", "APLD", "MRNA"],
-    "TIER_3_CHIPS": ["SOXX", "SMH", "NVDA", "AVGO", "TSM", "ASML", "AMD", "ARM", "INTC", "MU", "STX", "WDC", "SNDK"],
-    "TIER_4_TECH": ["QQQ", "BTC-USD", "MSTR", "COIN", "AAPL", "GOOG", "AMZN", "META", "TSLA", "ORCL", "DELL", "CRWV", "ALAB"],
-    "TIER_5_DEFENSE": ["SCHD", "KO", "GLD", "GDX", "VST", "CEG", "NLR", "TLT", "VIXY"],
+    "TIER_1_3X": ["SOXL", "SOXS", "TQQQ", "SQQQ", "KORU"],
+    "TIER_2_CORE": [
+        "SPY", "MRVL", "LITE", "BE", "PLTR", "MSFT", "NOW", "COHR", "CRDO", "NBIS", "APLD", "MRNA",
+        "AAOI", "AXTI", "ASTS", "RKLB", "FLY", "SPCX",
+    ],
+    "TIER_3_CHIPS": [
+        "SOXX", "SMH", "NVDA", "AVGO", "TSM", "ASML", "AMD", "INTC", "MU", "STX", "WDC", "SNDK",
+        "QCOM", "AMAT", "SKHY",
+    ],
+    "TIER_4_TECH": [
+        "QQQ", "BTC-USD", "MSTR", "COIN", "AAPL", "GOOGL", "AMZN", "META", "TSLA", "ORCL", "DELL", "CRWV",
+        "IBIT", "VRT", "HPE", "CRWD", "CCXI",
+    ],
+    "TIER_5_DEFENSE": [
+        "SCHD", "KO", "GLD", "VST", "CEG", "TLT", "VIXY",
+        "DIA", "IWM", "IGV", "QQQI", "MCD", "PEP", "LLY", "NKE", "AXP", "OKLO", "FPS",
+    ],
 }
 
 ALL_SENTINEL_TICKERS: List[str] = [

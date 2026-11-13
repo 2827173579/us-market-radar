@@ -17,10 +17,13 @@
 云端自动同步** 全流程，适合个人研究、复盘与自动化盯盘：
 
 - **70 只标的实时轮询**：16 只 ETF + 54 只核心科技/蓝筹/高波动个股，支持 Finnhub 实时报价与 yfinance 兜底；
+- **美股夜盘 24h 期货代理**：夜盘不用白天现货充数，防御背离改由 `NQ=F` / `ZB=F` / `GC=F` 实时折算；
+- **破坑分级**：空头宣泄禁接刀，和超跌右侧博反抽分开，不会把飞刀当成买点；
+- **五档差异化止损**：止损画在 VWAP 或 5 分钟企稳低点下面，宽基、行业 ETF、杠杆、厚盘口、薄盘口各用各的距离；偏离失效位过远就等回踩 VWAP，止损跟着新挂单价往下算，不会倒挂；
 - **富途风格专业终端**：TradingView 暗色图表、分时至月 K 无缝切换、五维状态持久记忆、机构期权攻防墙；
 - **AI 5 年波段预测雷达**：LightGBM 机器学习三阈值打标、赛道归因、样本外校准胜率、Top 10 行动建议；
 - **黄金坑 / 风控看板**：斐波那契回撤低吸防守带、V3.2 暴跌熔断与防接飞刀军规、动态仓位计算；
-- **微信 + Discord 双通道**：PushPlus 微信卡片实时推送，Discord 小豆泥量化哨兵（51 标的五梯队巡检）；
+- **微信 + Discord 双通道**：PushPlus 微信卡片实时推送，Discord 小豆泥量化哨兵（五梯队巡检，覆盖主雷达 70 只；另保留 TQQQ / BTC-USD / SCHD）；
 - **云端全自动**：GitHub Actions 24/7 轮询 + 自动 commit/push + GitHub Pages 部署，手机随时看盘；
 - **PWA 移动端**：iPhone/Android 可「添加到主屏幕」，获得接近原生 App 的全屏体验。
 
@@ -53,7 +56,7 @@
 | 看板 | 文件 | 说明 |
 |---|---|---|
 | 宏观大盘司令塔 | `macro_radar.html` | 16 只宏观/避险/对冲 ETF 水温、市场天气晴雨表 |
-| 核心个股碎股雷达 | `stocks_radar.html` | 黄金坑斐波那契低吸带、INTC 持仓风控哨、碎股仓位计算 |
+| 核心个股碎股雷达 | `stocks_radar.html` | 黄金坑斐波那契低吸带、碎股仓位计算 |
 | 5 年回测战报 | `backtest_report_5y.html` | 2021-2026 全周期双轨制策略收益曲线与审计 |
 
 ---
@@ -198,7 +201,7 @@ python integrated_market_radar.py --once
 ```
 us-market-radar/
 ├── integrated_market_radar.py   # 主守护进程：抓取→计算→生成 HTML→告警→自动 git 同步
-├── discord_sentinel.py          # Discord 小豆泥量化哨兵（51 标的五梯队 / 6 级状态机）
+├── discord_sentinel.py          # Discord 小豆泥量化哨兵（五梯队，覆盖主雷达 70 只）
 ├── ml_predictor_5y.py           # AI 预测与特征工程（LightGBM 可选依赖）
 ├── create_futu_terminal.py      # 富途风格终端 HTML 生成器
 ├── index.html                   # 富途终端（GitHub Pages 根路径）

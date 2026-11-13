@@ -111,7 +111,7 @@ MONITORED_TARGETS = {
         # 7. 价值蓝筹与核心风控仓位
         "KO":    {"name": "可口可乐", "sub": "全球消费防御与抗通胀现金奶牛", "cat": "价值蓝筹", "cost": 0.0, "shares": 0.0, "base_val": 68.0},
         "AXP":   {"name": "美国运通", "sub": "高端消费信贷与抗衰退金融底座", "cat": "金融蓝筹", "cost": 0.0, "shares": 0.0, "base_val": 270.0},
-        "INTC":  {"name": "Intel", "sub": "IDM2.0转型·实盘底仓跟踪", "cat": "芯片算力", "cost": 0.0, "shares": 7.0, "trim1": 91.80, "trim1_shares": 5.0, "base_val": 88.0, "target": 0.0},
+        "INTC":  {"name": "Intel", "sub": "IDM2.0转型", "cat": "芯片算力", "cost": 0.0, "shares": 0.0, "base_val": 0.0},
 
         # 8. 物理AI与自动驾驶
         "TSLA":  {"name": "特斯拉", "sub": "FSD端到端与物理AI人形机器人", "cat": "物理AI", "cost": 0.0, "shares": 0.0, "base_val": 320.0},
@@ -1309,7 +1309,10 @@ def load_ai_levels_map():
     return levels
 
 
-_BOUNCE_STOP_BROAD_1X = frozenset({"QQQ", "QQQM", "SPY", "VOO", "IVV", "IWM", "DIA", "QQQI"})
+_BOUNCE_STOP_BROAD_1X = frozenset({
+    "QQQ", "QQQM", "SPY", "VOO", "IVV", "IWM", "DIA", "QQQI",
+    "TLT", "GLD", "KO", "PEP", "MCD", "SCHD", "V", "AXP",
+})
 _BOUNCE_STOP_SECTOR_1X = frozenset({"SOXX", "SMH", "IGV", "XLK"})
 _BOUNCE_STOP_LEVERED = frozenset({
     "SOXL", "SOXS", "TQQQ", "SQQQ", "KORU", "QLD", "SSO", "UPRO", "SPXU",
@@ -1374,6 +1377,34 @@ def _card_stop_under_structure(ticker, entry, vwap, low_5m):
         stop_px = entry * (1.0 - lo / 100.0)
     pct = round((stop_px - entry) / entry * 100.0, 1) if entry > 0 else -lo
     return round(stop_px, 2), pct
+
+
+def _stop_from_reanchored_limit(ticker, limit, vwap, low_5m):
+    """挂单价被拉回 VWAP 之后，止损只相对这个新挂单价往下算，不许停在挂单价上面。"""
+    lo, hi, pad = _bounce_rebound_stop_band(ticker)
+    limit = float(limit)
+    under = []
+    for raw in (vwap, low_5m):
+        try:
+            px = float(raw or 0.0)
+        except Exception:
+            px = 0.0
+        if 0.0 < px < limit:
+            under.append(px)
+    if under:
+        stop_px, _inside = _stop_below_invalidation(limit, max(under), lo, hi, pad)
+    else:
+        stop_px = limit * (1.0 - lo / 100.0)
+    if stop_px >= limit:
+        stop_px = limit * (1.0 - lo / 100.0)
+    stop_px = round(float(stop_px), 2)
+    if stop_px >= limit:
+        stop_px = round(limit * (1.0 - lo / 100.0) - 0.01, 2)
+    pct = round((stop_px - limit) / limit * 100.0, 1) if limit > 0 else -lo
+    if pct >= 0:
+        pct = round(-lo, 1)
+        stop_px = round(limit * (1.0 + pct / 100.0), 2)
+    return stop_px, pct
 
 
 def evaluate_intraday_entry(
@@ -1652,6 +1683,10 @@ def evaluate_intraday_entry(
             if entry_stop_loss >= invalidation:
                 entry_stop_loss = round(invalidation * (1.0 - max(pad, 0.05) / 100.0), 2)
             stop_loss_pct = round((entry_stop_loss - optimal_limit) / optimal_limit * 100.0, 1) if optimal_limit > 0 else -lo
+            if "偏离失效位过远" in intraday_status_text and optimal_limit > 0:
+                entry_stop_loss, stop_loss_pct = _stop_from_reanchored_limit(
+                    ticker, optimal_limit, vwap, low_5m
+                )
             tactical_stop_set = True
             intraday_reason = (
                 f"日线仍处黄金坑(${fib_low:.2f})下方，失效位 VWAP/5m低点 ${invalidation:.2f}；"
@@ -2843,6 +2878,8 @@ def generate_and_sync_notifications(macro_data, stocks_data, weather_info, now_s
         seen_keys.add(key)
     for n in existing_notifs:
         key = (n.get("category"), n.get("ticker"))
+        if n.get("category") == "portfolio":
+            continue
         if key not in seen_keys:
             # 过滤掉早于今天的旧分钟格式残留重复项
             combined.append(n)

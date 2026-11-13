@@ -809,22 +809,27 @@ class TestDiscordSentinelUniverseAndEnv(unittest.TestCase):
     """
 
     def test_universe_structure_and_completeness(self):
-        """Verify the 5 Tiers universe contains exactly 51 unique tickers."""
+        """Verify the 5 tiers cover the radar book, with no MARA and no duplicate tickers."""
         t1 = ds.SENTINEL_UNIVERSE_TIERS["TIER_1_3X"]
         t2 = ds.SENTINEL_UNIVERSE_TIERS["TIER_2_CORE"]
         t3 = ds.SENTINEL_UNIVERSE_TIERS["TIER_3_CHIPS"]
         t4 = ds.SENTINEL_UNIVERSE_TIERS["TIER_4_TECH"]
         t5 = ds.SENTINEL_UNIVERSE_TIERS["TIER_5_DEFENSE"]
 
-        self.assertEqual(len(t1), 4, "Tier 1 must contain 4 tickers")
-        self.assertEqual(len(t2), 12, "Tier 2 must contain 12 tickers")
-        self.assertEqual(len(t3), 13, "Tier 3 must contain 13 tickers")
-        self.assertEqual(len(t4), 13, "Tier 4 must contain 13 tickers")
-        self.assertEqual(len(t5), 9, "Tier 5 must contain 9 tickers")
+        self.assertEqual(len(t1), 5)
+        self.assertEqual(len(t2), 18)
+        self.assertEqual(len(t3), 15)
+        self.assertEqual(len(t4), 17)
+        self.assertEqual(len(t5), 18)
 
         all_tickers = t1 + t2 + t3 + t4 + t5
-        self.assertEqual(len(all_tickers), 51, "Total tickers must equal 51")
-        self.assertEqual(len(set(all_tickers)), 51, "All 51 tickers must be strictly unique (no duplicates)")
+        self.assertEqual(len(all_tickers), 73)
+        self.assertEqual(len(set(all_tickers)), 73)
+        self.assertNotIn("MARA", all_tickers)
+        self.assertNotIn("GOOG", all_tickers)
+        self.assertIn("GOOGL", all_tickers)
+        self.assertIn("FLY", all_tickers)
+        self.assertIn("KORU", all_tickers)
 
     def test_env_webhook_configuration(self):
         """Verify DISCORD_WEBHOOK_URL is configured in .env."""

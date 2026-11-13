@@ -911,6 +911,7 @@ class TestV32CircuitBreaker(unittest.TestCase):
         near["vwap"] = 99.2
         bands = {
             "QQQ": (-1.3, -0.8),
+            "TLT": (-1.3, -0.8),
             "SOXX": (-2.0, -1.2),
             "SOXL": (-2.6, -1.6),
             "NVDA": (-2.4, -1.6),
@@ -932,7 +933,21 @@ class TestV32CircuitBreaker(unittest.TestCase):
         self.assertIn("偏离失效位过远", far.get("intraday_status_text", ""))
         self.assertFalse(far.get("intraday_entry_ready"))
         self.assertLessEqual(far.get("optimal_limit"), 96.0)
-        self.assertLess(far.get("entry_stop_loss"), 96.0)
+        self.assertLess(far.get("entry_stop_loss"), far.get("optimal_limit"))
+        self.assertLess(far.get("stop_loss_pct"), 0)
+        rel = round((far["entry_stop_loss"] - far["optimal_limit"]) / far["optimal_limit"] * 100.0, 1)
+        self.assertEqual(far.get("stop_loss_pct"), rel)
+
+        upside_down = dict(self._broken_pit_intra_info())
+        upside_down["vwap"] = 94.0
+        upside_down["low_5m"] = 97.0
+        hung = run_evaluate_intraday_entry(
+            active_price=100.0, ticker="GLD", intra_info=upside_down, **{k: v for k, v in base.items() if k != "intra_info"}
+        )
+        self.assertIn("偏离失效位过远", hung.get("intraday_status_text", ""))
+        self.assertLess(hung.get("entry_stop_loss"), hung.get("optimal_limit"))
+        self.assertGreaterEqual(hung.get("stop_loss_pct"), -1.3)
+        self.assertLessEqual(hung.get("stop_loss_pct"), -0.8)
 
     def test_scenario_15_card_stop_uses_band_not_68_floor(self):
         """坑内买点卡片不再钉死 -6.8%，行业 ETF 落在 -1.2%~-2.0%。"""
