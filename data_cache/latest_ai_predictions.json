@@ -4,7 +4,7 @@
     "profit_factor": 1.31,
     "top_sector": "存储芯片 (⭐⭐⭐⭐⭐)",
     "top_feature": "SMH_IGV_Ratio_Bias (12.31%)",
-    "sync_time": "2026-11-13 11:01:25",
+    "sync_time": "2026-11-13 11:03:10",
     "data_mode": "Finnhub 秒级实时 (🌌 美股夜盘)",
     "is_realtime": false
   },
@@ -10658,8 +10658,8 @@
   },
   "defensive_flight": {
     "is_alert": false,
-    "flight_score": -0.18,
-    "def_mean_chg": 0.44,
+    "flight_score": -0.2,
+    "def_mean_chg": 0.42,
     "off_mean_chg": 0.62,
     "alert_text": "🛡️ 夜盘·期货代理 防御因子平稳 (-0.2%) · NQ/ZB/GC",
     "banner_text": "",
@@ -10669,7 +10669,7 @@
     "components": {
       "NQ=F": {
         "pct": 0.62,
-        "price": 28564.5,
+        "price": 28564.25,
         "baseline": 28388.5,
         "quote_time": "2026-11-12 20:50:00-05:00",
         "baseline_time": "2026-11-12 16:00:00-05:00"
@@ -10682,8 +10682,8 @@
         "baseline_time": "2026-11-12 16:00:00-05:00"
       },
       "GC=F": {
-        "pct": 0.94,
-        "price": 3915.6001,
+        "pct": 0.89,
+        "price": 3913.5,
         "baseline": 3879.1001,
         "quote_time": "2026-11-12 20:50:00-05:00",
         "baseline_time": "2026-11-12 16:00:00-05:00"
