@@ -1558,12 +1558,20 @@ def compute_defensive_flight_alert(
         for s in DEFENSIVE_FLIGHT_DEF_SYMBOLS:
             if s in live_lookup:
                 lv = live_lookup[s]
-                pct = float(lv.get("effective_pct") if lv.get("effective_pct") is not None else (lv.get("ext_pct") if lv.get("ext_price", 0) > 0 else lv.get("pct_change", lv.get("change_pct", 0.0))))
+                # 非正规盘只允许纯扩展变动；盘前无成交记 0，严禁回退到昨日 regular_pct
+                if session_code in ("PRE_MARKET", "POST_MARKET", "PRE", "POST"):
+                    pct = float(lv.get("effective_pct") if lv.get("effective_pct") is not None else (lv.get("ext_pct", 0.0) if float(lv.get("ext_price", 0) or 0) > 0 else 0.0))
+                else:
+                    pct = float(lv.get("effective_pct") if lv.get("effective_pct") is not None else lv.get("pct_change", lv.get("change_pct", 0.0)))
                 def_chgs.append(pct)
         for s in DEFENSIVE_FLIGHT_OFF_SYMBOLS:
             if s in live_lookup:
                 lv = live_lookup[s]
-                pct = float(lv.get("effective_pct") if lv.get("effective_pct") is not None else (lv.get("ext_pct") if lv.get("ext_price", 0) > 0 else lv.get("pct_change", lv.get("change_pct", 0.0))))
+                # 非正规盘只允许纯扩展变动；盘前无成交记 0，严禁回退到昨日 regular_pct
+                if session_code in ("PRE_MARKET", "POST_MARKET", "PRE", "POST"):
+                    pct = float(lv.get("effective_pct") if lv.get("effective_pct") is not None else (lv.get("ext_pct", 0.0) if float(lv.get("ext_price", 0) or 0) > 0 else 0.0))
+                else:
+                    pct = float(lv.get("effective_pct") if lv.get("effective_pct") is not None else lv.get("pct_change", lv.get("change_pct", 0.0)))
                 off_chgs.append(pct)
 
     if latest_stocks_df is not None and not latest_stocks_df.empty:
@@ -2454,7 +2462,9 @@ def generate_time_cycle_projections(
         # 夜盘没有 overnightMarketPrice 时，盘后定格价不能冒充今日现价。
         has_live = live_override_p is not None and float(live_override_p) > 0
         price_kind = str(sc_info.get("price_kind") or "")
-        real_live = has_live and price_kind in ("overnight", "premarket", "regular")
+        _live_date = str(sc_info.get("live_date") or sc_info.get("quote_date") or sc_info.get("ext_time") or "")[:10]
+        _today_str = anchor_date.strftime("%Y-%m-%d")
+        real_live = bool(has_live and price_kind in ("overnight", "premarket", "regular") and (not _live_date or _live_date == _today_str))
         appended_live = False
         if real_live and _session_open and last_hist_dt < anchor_date:
             hist_entries.append({
@@ -6226,9 +6236,15 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
 
             // Show subset of dates to avoid crowded labels
             const step = Math.max(1, Math.round(points.length / (8 * cycleZoom)));
+            ctx._lastAxisLabelX = -Infinity;
             points.forEach((pt, idx) => {{
                 if (idx % step === 0 || idx === todayIdx || idx === points.length - 1) {{
                     if (pt.canvasX >= padL && pt.canvasX <= width - padR) {{
+                        // 相邻日期标签最小像素间距，避免 11-12 / 11-13 手机端重叠
+                        if (idx !== todayIdx && ctx._lastAxisLabelX !== undefined && (pt.canvasX - ctx._lastAxisLabelX) < 32) {{
+                            return;
+                        }}
+                        ctx._lastAxisLabelX = pt.canvasX;
                         const lbl = pt.isProj ? pt.day : (pt.date ? pt.date.slice(5) : pt.day);
                         ctx.fillStyle = (idx === todayIdx) ? '#58a6ff' : '#8b949e';
                         ctx.font = (idx === todayIdx) ? 'bold 10px sans-serif' : '9px "JetBrains Mono", monospace';

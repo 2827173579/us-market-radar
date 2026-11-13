@@ -691,10 +691,31 @@ def fetch_intraday_5m_and_ext_data(tickers):
                 l = df["Low"][t].reindex(c.index).fillna(c)
                 v = df["Volume"][t].reindex(c.index).fillna(0)
 
-                ext_price = float(c.iloc[-1])
+                # 先按美东当前时段选取真实扩展 bar；盘前绝不复用昨晚盘后/昨日收盘 bar
                 ny_idx = c.index.tz_convert(ny_tz)
                 ny_hr = ny_idx.hour + ny_idx.minute / 60.0
                 last_date = ny_idx[-1].date()
+                _now_et = datetime.now(ny_tz)
+                _today = _now_et.date()
+                _d = _now_et.hour * 60 + _now_et.minute
+                _ext_mask = None
+                _price_kind = "regular"
+                if 4 * 60 <= _d < 9 * 60 + 30:
+                    _ext_mask = (ny_idx.date == _today) & (ny_hr >= 4.0) & (ny_hr < 9.5)
+                    _price_kind = "premarket"
+                elif 16 * 60 <= _d < 20 * 60:
+                    _ext_mask = (ny_idx.date == _today) & (ny_hr >= 16.0) & (ny_hr < 20.0)
+                    _price_kind = "postmarket"
+                elif _d >= 20 * 60 or _d < 4 * 60:
+                    _ext_mask = (ny_idx.date == _today) & (ny_hr >= 20.0) if _d >= 20 * 60 else (ny_idx.date == _today) & (ny_hr < 4.0)
+                    _price_kind = "overnight"
+                ext_price = 0.0
+                ext_time = ""
+                if _ext_mask is not None and bool(np.any(_ext_mask)):
+                    _ext_c = c[_ext_mask]
+                    ext_price = float(_ext_c.iloc[-1])
+                    ext_time = str(_ext_c.index[-1])
+                # 正股收盘 bar 仍按今日 RTH 计算
 
                 # 过滤出最新交易日正股常规时段 (09:30 ~ 16:00 EDT) 用于纯净 VWAP 与日高低点计算
                 rth_mask = (ny_idx.date == last_date) & (ny_hr >= 9.5) & (ny_hr < 16.0)
@@ -745,7 +766,8 @@ def fetch_intraday_5m_and_ext_data(tickers):
 
                 results[t] = {
                     "ext_price": ext_price,
-                    "ext_time": str(ny_idx[-1]),
+                    "ext_time": ext_time,
+                    "price_kind": _price_kind,
                     "vwap": round(vwap, 2),
                     "rsi_5m": round(rsi_5m, 1),
                     "prev_rsi_5m": round(prev_rsi_5m, 1),
@@ -3530,6 +3552,95 @@ def evaluate_stock_signal(
 # ==============================================================================
 # 五、 页面 1：宏观大盘司令塔 (macro_radar.html · 10 只 ETF)
 # ==============================================================================
+def ui_display_price(item):
+    """扩展时段优先显示真实盘前/盘后价，否则回退正规盘 last。"""
+    try:
+        if float(item.get("ext_price", 0) or 0) > 0 and float(item.get("active_price", 0) or 0) > 0:
+            return float(item["active_price"])
+        return float(item.get("last", 0) or 0)
+    except Exception:
+        return 0.0
+
+
+def ui_display_pct(item):
+    try:
+        if float(item.get("ext_price", 0) or 0) > 0 and item.get("effective_pct") is not None:
+            return float(item["effective_pct"])
+        return float(item.get("pct_change", 0) or 0)
+    except Exception:
+        return 0.0
+
+
+def patch_predict_time_cycle_anchor(macro_data, stocks_data, session_code):
+    """仅用今日真实扩展价更新路径图 11-13 锚点；无真实今日价则删除伪造今日柱，保持 11-12 收盘。"""
+    try:
+        from datetime import datetime as _dt
+        import zoneinfo, json as _json
+        try:
+            ny = zoneinfo.ZoneInfo("America/New_York")
+        except Exception:
+            return False
+        today = _dt.now(ny).date().isoformat()
+        live = {}
+        _pairs = []
+        if isinstance(macro_data, dict):
+            _pairs.extend([(str(k), v) for k, v in macro_data.items() if isinstance(v, dict)])
+        if isinstance(stocks_data, (list, tuple)):
+            _pairs.extend([(str(v.get("ticker")), v) for v in stocks_data if isinstance(v, dict) and v.get("ticker")])
+        for tk, item in _pairs:
+            try:
+                ep = float(item.get("ext_price", 0) or 0)
+                ap = float(item.get("active_price", 0) or 0)
+            except Exception:
+                continue
+            if tk and ep > 0 and ap > 0:
+                live[tk] = ap
+        path = os.path.join(SCRATCH_DIR, "predict_radar_5y.html")
+        if not os.path.exists(path):
+            return False
+        s = open(path, encoding="utf-8").read()
+        key = "const timeCycleData = "
+        i = s.find(key)
+        if i < 0:
+            return False
+        j = i + len(key)
+        data, end = _json.JSONDecoder().raw_decode(s[j:])
+        if not isinstance(data, dict):
+            return False
+        changed = False
+        for tk, item in data.items():
+            if not isinstance(item, dict):
+                continue
+            hist = item.get("history") or []
+            if not hist:
+                continue
+            prev_px = float(hist[-1].get("price", 0) or 0)
+            # 删除已存在的伪造今日柱（价格等于上一交易日收盘）
+            if str(hist[-1].get("date", ""))[:10] == today and tk not in live:
+                hist.pop()
+                item["history"] = hist[-20:]
+                item["current_price"] = prev_px
+                item["today_label"] = "最新收盘 (" + str(hist[-1].get("date", ""))[5:10] + ")" if hist else ""
+                changed = True
+                continue
+            if tk not in live:
+                continue
+            px = round(float(live[tk]), 2)
+            if str(hist[-1].get("date", ""))[:10] == today:
+                hist[-1]["price"] = px
+            else:
+                hist.append({"date": today, "price": px})
+                item["history"] = hist[-20:]
+            item["current_price"] = px
+            item["today_label"] = "今日"
+            changed = True
+        if changed:
+            open(path, "w", encoding="utf-8").write(s[:j] + _json.dumps(data, ensure_ascii=False) + s[j+end:])
+    except Exception as e:
+        print(f"[!] 路径图今日锚点修补失败: {e}")
+    return False
+
+
 def generate_macro_radar_html(macro_data, weather_info, history_dict, update_time_str="", has_realtime=False):
     """生成包含 12 只核心 ETF 的宏观大盘司令塔看板"""
     if not update_time_str:
@@ -3652,13 +3763,13 @@ def generate_macro_radar_html(macro_data, weather_info, history_dict, update_tim
         bias_style = "color: #00e676;" if info["bias"] >= 0 else "color: #ff5252;"
         rsi_style = "color: #ff5252; font-weight:bold;" if info["rsi"] < 30 else ("color: #00e676;" if info["rsi"] > 70 else "color: #e0e0e0;")
         status_badge = f"<span class='badge' style='background:{info['badge_color']};'>{info['status']}</span>"
-        pct_color = "#00e676" if info.get("pct_change", 0) >= 0 else "#ff5252"
+        pct_color = "#00e676" if ui_display_pct(info) >= 0 else "#ff5252"
         rows_html += f"""
         <tr>
             <td style="font-weight: bold; color: #ffd54f;">{ticker}</td>
             <td>{info['name']}</td>
             <td><span class="category-tag">{info['cat']}</span></td>
-            <td><b>${info['last']:.2f}</b> <span style="font-size: 11px; color: {pct_color};">({info.get('pct_change', 0):+.2f}%)</span></td>
+            <td><b>${ui_display_price(info):.2f}</b> <span style="font-size: 11px; color: {pct_color};">({ui_display_pct(info):+.2f}%)</span></td>
             <td>${info['ma50']:.2f}</td>
             <td style="{bias_style} font-weight: bold;">{info['bias']:+.2f}%</td>
             <td>${info['atr']:.2f}</td>
@@ -3930,11 +4041,11 @@ def generate_stocks_radar_html(stocks_data, history_dict, update_time_str="", ha
             y=[y_val],
             mode="markers+text",
             name=t,
-            text=[f"<b>{t}</b> (${item['last']:.2f})"],
+            text=[f"<b>{t}</b> (${ui_display_price(item):.2f})"],
             textposition="top center",
             marker=dict(size=[size_val], color=color, opacity=0.85, line=dict(color="#ffffff", width=1.5)),
             hoverinfo="text",
-            hovertext=f"<b>{t} ({item['name']})</b><br>赛道: {item['cat']}<br>现价: ${item['last']:.2f} ({item.get('pct_change',0):+.2f}%)<br>距黄金坑: {x_val:+.2f}%<br>RSI(14): {y_val:.1f}<br>14日ATR: ${item['atr']:.2f}<br>碎股数: {item['fractional_shares']:.2f}股<br>信号: {item['signal']}"
+            hovertext=f"<b>{t} ({item['name']})</b><br>赛道: {item['cat']}<br>现价: ${ui_display_price(item):.2f} ({ui_display_pct(item):+.2f}%)<br>距黄金坑: {x_val:+.2f}%<br>RSI(14): {y_val:.1f}<br>14日ATR: ${item['atr']:.2f}<br>碎股数: {item['fractional_shares']:.2f}股<br>信号: {item['signal']}"
         ))
 
     fig_matrix.add_vline(x=0, line_dash="dash", line_color="#00e676", annotation_text="黄金坑临界带 (X=0%)", annotation_position="top left")
@@ -3980,14 +4091,14 @@ def generate_stocks_radar_html(stocks_data, history_dict, update_time_str="", ha
             <td style="font-weight: bold; color: #ffd54f;">{r['ticker']}</td>
             <td>{r['name']}</td>
             <td><span class="category-tag">{r['cat']}</span></td>
-            <td><b>${r['last']:.2f}</b> <span style="font-size: 11px; color: {pct_color};">({r.get('pct_change', 0):+.2f}%)</span></td>
+            <td><b>${ui_display_price(r):.2f}</b> <span style="font-size: 11px; color: {pct_color};">({ui_display_pct(r):+.2f}%)</span></td>
             <td>${r['ma50']:.2f}</td>
             <td style="{bias_style} font-weight: bold;">{r['bias']:+.2f}%</td>
             <td>${r['atr']:.2f}</td>
             <td>{r['rsi']:.1f}</td>
             <td style="font-size: 12px; color: #64b5f6;">${r['fib_low']:.2f} ~ ${r['fib_high']:.2f}</td>
             <td style="{dist_style}">{r['pit_status']}</td>
-            <td style="color: #00e5ff; font-weight: bold;">{r['fractional_shares']:.2f} 股 <span style="font-size:10px; color:#888;">({min(25.0, (r['fractional_shares'] * r['last'] / TOTAL_ACCOUNT_EQUITY) * 100):.1f}%)</span></td>
+            <td style="color: #00e5ff; font-weight: bold;">{r['fractional_shares']:.2f} 股 <span style="font-size:10px; color:#888;">({min(25.0, (r['fractional_shares'] * ui_display_price(r) / TOTAL_ACCOUNT_EQUITY) * 100):.1f}%)</span></td>
             <td>{sig_badge}</td>
         </tr>
         """
@@ -4845,6 +4956,7 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
     except Exception:
         pass
     print(f"✅ 富途牛牛专业全周期看盘终端已生成: {FUTU_HTML_FILE}")
+    patch_predict_time_cycle_anchor(macro_data, stocks_sorted, session_code)
 
     # 7. 智能去重微信预警推送 (PushPlus 微信 Markdown 卡片通道)
     dispatch_wechat_radar_alerts(macro_data, stocks_sorted, weather_info, now_str)

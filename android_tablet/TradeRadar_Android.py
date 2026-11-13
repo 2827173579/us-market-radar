@@ -474,7 +474,14 @@ def patch_time_cycle_live_anchor(work_dir: str, quotes: dict) -> bool:
                 if not isinstance(item, dict):
                     continue
                 q = (quotes or {}).get(tk) or {}
-                px = float(q.get("last") or 0.0)
+                if session_code in ("PRE", "PRE_MARKET"):
+                    # 盘前只有今日真实 yfinance premarket 报价才允许画今日锚点
+                    if q.get("price_kind") == "premarket" and str(q.get("ext_time", ""))[:10] == session_date:
+                        px = float(q.get("ext_price") or 0.0)
+                    else:
+                        px = 0.0
+                else:
+                    px = float(q.get("last") or 0.0)
                 if _scale_cycle_anchor(item, px, session_date, today_label, session_open):
                     changed = True
             if changed:
@@ -749,6 +756,46 @@ def fetch_finnhub_quotes_batch(tickers, api_key):
                 results[sym] = q
     return results
 
+def fetch_yahoo_premarket_quotes(tickers):
+    """盘前用 Yahoo 5m prepost=True 取今日 04:00 ET 后最新真实成交价。"""
+    out = {}
+    try:
+        import yfinance as yf
+        if not tickers:
+            return out
+        df = yf.download(list(tickers), period="2d", interval="5m", prepost=True, progress=False, threads=True)
+        if df is None or df.empty or "Close" not in df:
+            return out
+        now_et = _market_et_now()
+        if not (4 <= now_et.hour < 10):
+            return out
+        today = now_et.date()
+        for tk in tickers:
+            try:
+                if tk not in df["Close"]:
+                    continue
+                c = df["Close"][tk].dropna()
+                if c.empty:
+                    continue
+                idx = c.index.tz_convert(now_et.tzinfo)
+                mask = (idx.date == today) & (idx.hour * 60 + idx.minute >= 4 * 60) & (idx.hour * 60 + idx.minute < 9 * 60 + 30)
+                if not mask.any():
+                    continue
+                pre = c[mask]
+                ext_price = float(pre.iloc[-1])
+                ext_time = str(pre.index[-1])
+                # 昨日正规盘收盘作为纯盘前涨跌幅基准
+                reg_mask = (idx.date < today) & (idx.hour * 60 + idx.minute >= 9 * 60 + 30) & (idx.hour * 60 + idx.minute < 16 * 60)
+                reg_close = float(c[reg_mask].iloc[-1]) if reg_mask.any() else 0.0
+                ext_pct = ((ext_price - reg_close) / reg_close * 100.0) if reg_close > 0 else 0.0
+                out[tk] = {"ext_price": ext_price, "ext_time": ext_time, "ext_pct": ext_pct, "price_kind": "premarket", "regular_close": reg_close}
+            except Exception:
+                continue
+    except Exception as exc:
+        append_log(f"[!] 盘前 Yahoo 5m 抓取失败: {exc}")
+    return out
+
+
 def load_ai_predictions():
     candidates = [
         os.path.join(PROJECT_DIR, "data_cache", "latest_ai_predictions.json"),
@@ -804,6 +851,14 @@ def run_single_scan_cycle(round_idx=1):
     append_log(f"[*] 📊 正在平稳抓取 {len(scan_pool)} 只全量标的 (含 16 只 ETF + 54 只核心股) 实时报价...")
     
     fetched_quotes = fetch_finnhub_quotes_batch(scan_pool, FINNHUB_API_KEY) if FINNHUB_API_KEY else {}
+    if session_code in ("PRE", "PRE_MARKET"):
+        _pre_quotes = fetch_yahoo_premarket_quotes(scan_pool)
+        for _tk, _e in _pre_quotes.items():
+            _q = fetched_quotes.setdefault(_tk, {})
+            _q.update(_e)
+            _q["last"] = _e["ext_price"]
+            _q["pct_change"] = _e["ext_pct"]
+        append_log(f"[+] 盘前 Yahoo 真实扩展价已覆盖 {len(_pre_quotes)} 只标的")
     append_log(f"[+] ✅ 实时行情穿透完成: 成功拉取 {len(fetched_quotes)}/{len(scan_pool)} 只标的！")
 
     # 3. 动态风控阈值比对
