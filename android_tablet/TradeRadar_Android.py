@@ -117,7 +117,7 @@ LOG_LOCK = threading.Lock()
 ALERT_HISTORY_FILE = os.path.join(PROJECT_DIR, ".android_alert_history.json")
 
 def append_log(msg: str):
-    ts = datetime.now().strftime("%H:%M:%S")
+    ts = _market_et_now().strftime("%H:%M:%S")
     entry = f"[{ts}] {msg}"
     with LOG_LOCK:
         LOG_BUFFER.append(entry)
@@ -893,7 +893,7 @@ def maybe_push_quant_strategy(quotes, weather, now_str):
 
 
 def run_single_scan_cycle(round_idx=1):
-    now_str = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    now_str = _market_et_now().strftime("%Y-%m-%d %H:%M:%S")
     session_code, session_name = get_us_market_session()
     STATE.session_name = session_name
     STATE.last_sync_time = now_str
@@ -1655,7 +1655,7 @@ class AndroidRadarHandler(BaseHTTPRequestHandler):
 
         elif self.path == "/api/test_alert":
             append_log("🟣 用户在平板端触发: 发送预警镜像测试...")
-            now_s = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            now_s = _market_et_now().strftime("%Y-%m-%d %H:%M:%S")
             title = "【美股量化雷达】📢 小米平板双通道预警测试成功"
             content = f"### 🚀 小米平板测试卡片成功投递！\\n- **测试时间**: {now_s}\\n- **通信链路**: 微信 ClawBot + 微信公众号 + Discord Webhook\\n- **设备节点**: 小米平板极速哨兵 (Android Termux)"
             send_pushplus(title, content)
@@ -1667,7 +1667,7 @@ class AndroidRadarHandler(BaseHTTPRequestHandler):
 
         elif self.path == "/api/send_sentinel":
             append_log("🟠 用户在平板端触发: 立即发送量化哨兵...")
-            now_s = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            now_s = _market_et_now().strftime("%Y-%m-%d %H:%M:%S")
             session_code, session_name = get_us_market_session()
             ai_data = load_ai_predictions()
             weather = ai_data.get("macro_weather", {}).get("status", "⛅ 阴天防守")

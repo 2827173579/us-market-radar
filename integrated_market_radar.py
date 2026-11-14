@@ -624,6 +624,15 @@ def fetch_finnhub_quotes_batch(tickers, api_key):
         print(f"[!] Finnhub 实时数据未返回，将启用全量 yfinance 底模兜底。\n")
     return results
 
+def now_et_str(fmt="%Y-%m-%d %H:%M:%S"):
+    """统一使用美东时间显示/日志/推送。"""
+    try:
+        from zoneinfo import ZoneInfo
+        return datetime.now(ZoneInfo("America/New_York")).strftime(fmt)
+    except Exception:
+        return datetime.now(timezone(timedelta(hours=-5))).strftime(fmt)
+
+
 def get_us_market_session():
     """
     判断当前美东时间 (America/New_York) 交易时段 (精准对齐美股 24/5 夜盘日历):
@@ -2039,7 +2048,7 @@ def send_discord_defensive_flight_alert(df_alert, live_lookup=None, update_time_
             status_tag = "🛡️ **【夜盘·期货代理】防御因子平稳 · 期货代理非现货篮子**"
             advice = "✅ **期货代理**：NQ=F / ZB=F / GC=F 夜盘期货方向；这不是现货篮子分数，不改变白天现货计算。"
     print(f"  [+] 防御因子真实成分: 防御 {len(def_items)} 只 / 进攻 {len(off_items)} 只")
-    now_t = update_time_str or datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    now_t = update_time_str or now_et_str("%Y-%m-%d %H:%M:%S")
 
     desc = f"""### {status_tag}
 
@@ -2152,7 +2161,7 @@ def record_defensive_flight_sent(df_alert, live_lookup, session_code="REGULAR"):
         key = "overnight" if session_code == "OVERNIGHT" else "day"
         state = _load_defensive_flight_state()
         state[key] = {"last_score": round(float(df_alert.get("flight_score", 0.0)), 4), "components": comps,
-                      "session": session_code, "sent_at": datetime.now().strftime("%Y-%m-%d %H:%M:%S")}
+                      "session": session_code, "sent_at": now_et_str("%Y-%m-%d %H:%M:%S")}
         json.dump(state, open(_DEFENSIVE_FLIGHT_PUSH_STATE, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
     except Exception:
         pass
@@ -3646,7 +3655,7 @@ def patch_predict_time_cycle_anchor(macro_data, stocks_data, session_code):
 def generate_macro_radar_html(macro_data, weather_info, history_dict, update_time_str="", has_realtime=False):
     """生成包含 12 只核心 ETF 的宏观大盘司令塔看板"""
     if not update_time_str:
-        update_time_str = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        update_time_str = now_et_str("%Y-%m-%d %H:%M:%S")
 
     fig = make_subplots(
         rows=2, cols=2,
@@ -4016,7 +4025,7 @@ def generate_macro_radar_html(macro_data, weather_info, history_dict, update_tim
 def generate_stocks_radar_html(stocks_data, history_dict, update_time_str="", has_realtime=False):
     """生成包含 27 只核心科技个股的碎股雷达与黄金坑矩阵"""
     if not update_time_str:
-        update_time_str = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        update_time_str = now_et_str("%Y-%m-%d %H:%M:%S")
 
     # 2. 绘制 27 只个股“黄金坑距离 vs RSI”散点作战矩阵
     fig_matrix = go.Figure()
@@ -4413,7 +4422,7 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
     except Exception:
         from datetime import timezone, timedelta
         local_tz = timezone(timedelta(hours=9))
-    now_str = datetime.now(local_tz).strftime("%Y-%m-%d %H:%M:%S")
+    now_str = now_et_str("%Y-%m-%d %H:%M:%S")
 
     # 实盘持仓功能已移除：不再加载或合并 user_portfolio.json
     user_portfolio = {}
@@ -5212,7 +5221,7 @@ def main():
         round_idx = 1
         while (duration_min <= 0) or (time.time() < end_time):
             c_start = time.time()
-            now_ts = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            now_ts = now_et_str("%Y-%m-%d %H:%M:%S")
 
             # 🛡️ 云端 Actions 互斥检测：如果由 GITHUB_ACTIONS 运行，检查是否有本地开发者的最新提交 (<15分钟)
             if os.environ.get("GITHUB_ACTIONS") == "true":
@@ -5357,7 +5366,7 @@ def main():
     last_sync = get_last_sync_time()
     elapsed = time.time() - last_sync
     if elapsed >= SYNC_INTERVAL or last_sync == 0.0:
-        start_ts = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        start_ts = now_et_str("%Y-%m-%d %H:%M:%S")
         print(f"\n" + "-" * 75)
         print(f"⏱️ [{start_ts}] 正在执行第 {round_count} 轮全市场数据同步与指标扫描...")
         print("-" * 75)
@@ -5375,14 +5384,14 @@ def main():
             elapsed = time.time() - last_sync
 
             if elapsed >= SYNC_INTERVAL:
-                start_ts = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                start_ts = now_et_str("%Y-%m-%d %H:%M:%S")
                 print(f"\n" + "-" * 75)
                 print(f"⏱️ [{start_ts}] 达到 180 秒调度周期，正在执行第 {round_count} 轮数据同步...")
                 print("-" * 75)
 
                 run_radar_cycle(is_first_run=False, round_idx=round_count)
 
-                end_ts = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                end_ts = now_et_str("%Y-%m-%d %H:%M:%S")
                 print(f"\n[{end_ts}] ✅ 第 {round_count} 轮数据更新完成！")
                 print(f"⏳ 守护引擎进入 180 秒 (3分钟) 休眠倒计时...")
 
