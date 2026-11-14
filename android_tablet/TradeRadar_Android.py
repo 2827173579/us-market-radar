@@ -106,6 +106,7 @@ reload_alert_webhook()
 GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN", "").strip()
 GITHUB_REPO = os.environ.get("GITHUB_REPO", "2827173579/us-market-radar").strip()
 PORT = 8765
+FULL_ENGINE_CHILD = None
 
 # ------------------------------------------------------------------------------
 # 2. 内存日志与全局运行状态管理器
@@ -403,7 +404,7 @@ def _flight_from_spot(quotes: dict, session_code: str):
 
 def compute_flight_snapshot(quotes: dict, session_code: str):
     """夜盘只用 NQ/ZB/GC。其余时段用现货 8 对 4。失败时带 skip_reason，调用方不得覆盖旧页面。"""
-    if session_code == "NIGHT":
+    if session_code == ("NIGHT", "CLOSED"):
         return _flight_from_futures()
     return _flight_from_spot(quotes or {}, session_code)
 
@@ -1274,7 +1275,60 @@ def sync_to_github_pages(round_idx: int, now_str: str, quotes: dict = None, flig
         append_log(f"[!] 🌐 [GitHub Pages] 同步异常: {e}")
     return False
 
+def full_engine_available():
+    try:
+        parent = os.path.dirname(PROJECT_DIR)
+        if not os.path.exists(os.path.join(parent, "integrated_market_radar.py")):
+            return False
+        import pandas  # noqa: F401
+        import yfinance  # noqa: F401
+        return True
+    except Exception:
+        return False
+
+
+def start_full_engine():
+    """启动与电脑一致的完整 integrated 引擎；Android 保留控制 UI/8765。"""
+    global FULL_ENGINE_CHILD
+    if FULL_ENGINE_CHILD is not None and FULL_ENGINE_CHILD.poll() is None:
+        return True
+    if not full_engine_available():
+        append_log("[*] light mode: pandas/yfinance unavailable")
+        return False
+    try:
+        parent = os.path.dirname(PROJECT_DIR)
+        log_path = os.path.join(parent, ".android_full_engine.log")
+        log_f = open(log_path, "ab", buffering=0)
+        cmd = [sys.executable, "-u", os.path.join(parent, "integrated_market_radar.py"), "--android", "--no-browser", "--loop-daemon", "--interval-seconds", "60", "--duration-minutes", "0"]
+        FULL_ENGINE_CHILD = subprocess.Popen(cmd, cwd=parent, stdout=log_f, stderr=subprocess.STDOUT, close_fds=True)
+        STATE.is_running = True
+        append_log(f"[+] full engine PID {FULL_ENGINE_CHILD.pid} started")
+        return True
+    except Exception as e:
+        append_log(f"[!] full engine start failed, fallback: {e}")
+        return False
+
+
+def stop_full_engine():
+    global FULL_ENGINE_CHILD
+    if FULL_ENGINE_CHILD is not None:
+        try:
+            if FULL_ENGINE_CHILD.poll() is None:
+                FULL_ENGINE_CHILD.terminate()
+                try:
+                    FULL_ENGINE_CHILD.wait(timeout=8)
+                except Exception:
+                    FULL_ENGINE_CHILD.kill()
+        except Exception:
+            pass
+        FULL_ENGINE_CHILD = None
+    STATE.is_running = False
+
+
 def poller_daemon_thread():
+    if FULL_ENGINE_CHILD is not None and FULL_ENGINE_CHILD.poll() is None:
+        append_log("full engine already running")
+        return
     STATE.round_idx = 1
     append_log("🚀 小米平板 60 秒极速轮询守护引擎已正式启动！")
     while not STATE.stop_event.is_set():
@@ -1564,6 +1618,10 @@ class AndroidRadarHandler(BaseHTTPRequestHandler):
 
     def do_POST(self):
         if self.path == "/api/start":
+            if FULL_ENGINE_CHILD is not None and FULL_ENGINE_CHILD.poll() is None:
+                STATE.is_running = True
+                self.send_response(200); self.send_header("Content-Type", "application/json"); self.end_headers(); self.wfile.write(json.dumps({"ok": True}).encode("utf-8"))
+                return
             if not STATE.is_running:
                 STATE.stop_event.clear()
                 STATE.is_running = True
@@ -1577,6 +1635,7 @@ class AndroidRadarHandler(BaseHTTPRequestHandler):
             self.wfile.write(json.dumps({"ok": True}).encode("utf-8"))
 
         elif self.path == "/api/stop":
+            stop_full_engine()
             if STATE.is_running:
                 append_log("🔴 用户在平板端触发: 停止所有后台进程...")
                 STATE.stop_event.set()
@@ -1650,6 +1709,7 @@ def main():
         server.serve_forever()
     except KeyboardInterrupt:
         append_log("[!] 收到退出信号，服务正在退出...")
+        stop_full_engine()
         if STATE.is_running:
             STATE.stop_event.set()
         server.server_close()

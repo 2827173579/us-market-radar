@@ -76,6 +76,63 @@ try:
     )
 except ImportError:
     lgb = None
+    # Termux 轻量环境：无 LightGBM/sklearn 时用 numpy 实现最小可用分类器与指标
+    def roc_auc_score(y, p):
+        y = np.asarray(y, dtype=float); p = np.asarray(p, dtype=float)
+        pos = p[y == 1]; neg = p[y != 1]
+        if len(pos) == 0 or len(neg) == 0:
+            return 0.5
+        return float(((pos[:, None] > neg[None, :]).sum() + 0.5 * (pos[:, None] == neg[None, :]).sum()) / (len(pos) * len(neg)))
+    def accuracy_score(y, p):
+        y = np.asarray(y); p = np.asarray(p); return float((y == p).mean()) if len(y) else 0.0
+    def precision_score(y, p, zero_division=0):
+        y = np.asarray(y); p = np.asarray(p); tp = ((y == 1) & (p == 1)).sum(); fp = ((y != 1) & (p == 1)).sum(); return float(tp / (tp + fp)) if tp + fp else 0.0
+    def recall_score(y, p, zero_division=0):
+        y = np.asarray(y); p = np.asarray(p); tp = ((y == 1) & (p == 1)).sum(); fn = ((y == 1) & (p != 1)).sum(); return float(tp / (tp + fn)) if tp + fn else 0.0
+    def brier_score_loss(y, p):
+        y = np.asarray(y, dtype=float); p = np.asarray(p, dtype=float); return float(((p - y) ** 2).mean()) if len(y) else 0.25
+
+
+class _NumpyFallbackClassifier:
+    """纯 numpy 逻辑回归，满足 LGBMClassifier 的最小接口；保证 --refresh 不因缺库退出。"""
+    def __init__(self, **kwargs):
+        self.feature_importances_ = None
+        self.booster_ = self
+        self.classes_ = np.array([0, 1])
+        self._mu = None
+        self._sd = None
+        self._w = np.zeros(1)
+        self._b = 0.0
+
+    def fit(self, X, y):
+        X = np.asarray(X, dtype=float); y = np.asarray(y, dtype=float)
+        self._mu = np.nanmean(X, axis=0); self._sd = np.nanstd(X, axis=0); self._sd[self._sd < 1e-9] = 1.0
+        Z = np.nan_to_num((X - self._mu) / self._sd, nan=0.0, posinf=0.0, neginf=0.0)
+        Z = np.column_stack([np.ones(len(Z)), Z])
+        w = np.zeros(Z.shape[1]); w[0] = np.log((y.mean() + 1e-6) / (1 - y.mean() + 1e-6))
+        for _ in range(120):
+            z = np.clip(Z @ w, -30, 30); p = 1.0 / (1.0 + np.exp(-z))
+            grad = Z.T @ (p - y) / max(len(y), 1) + 1e-4 * w
+            w -= 0.5 * grad
+        self._w = w[1:]; self._b = float(w[0])
+        self.feature_importances_ = np.abs(self._w)
+        self.booster_ = self
+        return self
+
+    def predict_proba(self, X):
+        X = np.asarray(X, dtype=float)
+        Z = np.nan_to_num((X - self._mu) / self._sd, nan=0.0, posinf=0.0, neginf=0.0)
+        p = 1.0 / (1.0 + np.exp(-np.clip(Z @ self._w + self._b, -30, 30)))
+        return np.column_stack([1.0 - p, p])
+
+    def predict(self, X):
+        return (self.predict_proba(X)[:, 1] >= 0.5).astype(int)
+
+
+def _make_classifier(lgb_params=None):
+    if lgb is not None:
+        return lgb.LGBMClassifier(**(lgb_params or {}))
+    return _NumpyFallbackClassifier(**(lgb_params or {}))
 
 # ==============================================================================
 # 1. 标的池与赛道定义 (35-Symbol Universe & Sector Mapping)
@@ -994,7 +1051,7 @@ def train_live_models(
     live_clf_long = None
     if len(live_train_long) >= 20 and live_train_long['Label'].nunique() >= 2:
         t_live_start = time.time()
-        live_clf_long = lgb.LGBMClassifier(**lgb_params)
+        live_clf_long = _make_classifier(lgb_params)
         live_clf_long.fit(live_train_long[feature_cols], live_train_long['Label'].astype(int))
         t_live_elapsed = time.time() - t_live_start
         live_min_d = live_train_long['Date'].min().strftime('%Y-%m-%d')
@@ -1006,7 +1063,7 @@ def train_live_models(
     live_clf_short = None
     if len(live_train_short) >= 20 and live_train_short['Label_Short'].nunique() >= 2:
         t_live_start = time.time()
-        live_clf_short = lgb.LGBMClassifier(**lgb_params)
+        live_clf_short = _make_classifier(lgb_params)
         live_clf_short.fit(live_train_short[feature_cols], live_train_short['Label_Short'].astype(int))
         t_live_elapsed = time.time() - t_live_start
         live_min_ds = live_train_short['Date'].min().strftime('%Y-%m-%d')
@@ -1100,13 +1157,13 @@ def run_walk_forward_cv(
         y_test = test_clean['Label'].astype(int)
 
         t_start = time.time()
-        clf = lgb.LGBMClassifier(**lgb_params)
+        clf = _make_classifier(lgb_params)
         clf.fit(X_train, y_train)
         probs = clf.predict_proba(X_test)[:, 1]
         preds = (probs >= 0.5).astype(int)
 
         # --- 做空模型训练 ---
-        clf_short = lgb.LGBMClassifier(**lgb_params)
+        clf_short = _make_classifier(lgb_params)
         if len(train_clean_short) >= 10 and train_clean_short['Label_Short'].nunique() >= 2:
             clf_short.fit(train_clean_short[FEATURE_COLS], train_clean_short['Label_Short'].astype(int))
             probs_short = clf_short.predict_proba(X_test)[:, 1]

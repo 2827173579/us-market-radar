@@ -15,6 +15,8 @@ import sys
 import subprocess
 WIN_NO_WINDOW = 0x08000000 if sys.platform == "win32" else 0
 import os
+ANDROID_MODE = ("--android" in sys.argv) or bool(os.environ.get("TERMUX_VERSION"))
+NO_BROWSER = ("--no-browser" in sys.argv) or ANDROID_MODE
 import time
 import random
 from datetime import datetime, timezone, timedelta
@@ -4997,10 +4999,11 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
         print(f"  -> 🏛️ 宏观大盘司令塔: {macro_path}")
         print("  -> 提示: 网页内置 <meta http-equiv='refresh' content='180'> 自刷新机制，后续轮次仅静默覆盖文件，无需重复弹窗！")
         print("=" * 80 + "\n")
-        try:
-            webbrowser.open(f"file://{futu_path}")
-        except Exception as e:
-            print(f"[!] 自动唤起浏览器提示: {e}")
+        if not NO_BROWSER:
+            try:
+                webbrowser.open(f"file://{futu_path}")
+            except Exception as e:
+                print(f"[!] browser open failed: {e}")
     else:
         print(f"[*] [第 {round_idx} 轮] 三份看板与富途终端 HTML 已覆盖写入更新完毕 (已重置 180s 同步锁)。")
 
@@ -5125,6 +5128,24 @@ def maybe_refresh_daily_ml_panel():
         print(f"[!] 收盘日线自动补刷异常: {_e}")
 
 
+def _other_device_is_active():
+    """Skip a round if origin/main has a <50s live commit from the other device."""
+    try:
+        subprocess.run(["git", "fetch", "origin", "main", "--quiet"], check=False, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, creationflags=WIN_NO_WINDOW)
+        res = subprocess.run(["git", "log", "-1", "--format=%ct|%s", "origin/main"], capture_output=True, text=True, check=False, creationflags=WIN_NO_WINDOW)
+        raw = (res.stdout or "").strip()
+        if "|" not in raw:
+            return False
+        ts_s, subject = raw.split("|", 1)
+        if time.time() - float(ts_s) >= 50:
+            return False
+        android_submit = "小米平板实盘同步" in subject
+        pc_submit = ("实盘同步" in subject) and not android_submit
+        return (pc_submit and ANDROID_MODE) or (android_submit and not ANDROID_MODE)
+    except Exception:
+        return False
+
+
 def main():
     # 检查是否为本地常驻自选盯盘 API 守护子进程 (--star-server-daemon)
     if "--star-server-daemon" in sys.argv:
@@ -5213,6 +5234,11 @@ def main():
             print(f"⏱️ [{now_ts}] [第 {round_idx} 轮] 执行全市场 {interval_sec} 秒极速同步与期权扫描...")
             print("-" * 75)
             try:
+                if _other_device_is_active():
+                    print("[*] another device submitted live data within 50s; skip this round")
+                    round_idx += 1
+                    time.sleep(15)
+                    continue
                 maybe_refresh_daily_ml_panel()
                 run_radar_cycle(is_first_run=False, round_idx=round_idx)
             except Exception as e:
@@ -5284,7 +5310,7 @@ def main():
                     ["git", "add", "index.html", "futu_pro_terminal.html", "predict_radar_5y.html", "data_cache/latest_ai_predictions.json", ".terminal_notifications.json", ".options_cache.json", ".radar_alert_history.json", "macro_radar.html", "stocks_radar.html", ".gitignore"],
                     check=False, creationflags=WIN_NO_WINDOW)
                 subprocess.run(
-                    ["git", "commit", "-m", f"⚡ [实盘同步] 第 {round_idx} 轮极速刷新 ({now_ts})"],
+                    ["git", "commit", "-m", f"⚡ [{'小米平板实盘同步' if ANDROID_MODE else '实盘同步'}] 第 {round_idx} 轮极速刷新 ({now_ts})"],
                     check=False, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, creationflags=WIN_NO_WINDOW
                 )
                 _head_before = subprocess.run(["git", "rev-parse", "HEAD"], check=False, capture_output=True, text=True, creationflags=WIN_NO_WINDOW).stdout.strip()
