@@ -66,6 +66,43 @@ DISCORD_DEFENSIVE_FLIGHT_WEBHOOK_URL = os.environ.get(
     "DISCORD_DEFENSIVE_FLIGHT_WEBHOOK_URL",
     ""
 ).strip()
+DISCORD_ALERT_WEBHOOK_URL = ""
+
+
+def _read_env_key(path, key):
+    try:
+        if not path or not os.path.exists(path):
+            return ""
+        with open(path, "r", encoding="utf-8") as f:
+            for line in f:
+                line = line.strip()
+                if not line or line.startswith("#") or "=" not in line:
+                    continue
+                k, v = line.split("=", 1)
+                if k.strip() == key:
+                    return v.strip().strip("'\"").strip()
+    except Exception:
+        pass
+    return ""
+
+
+def reload_alert_webhook():
+    """每次读取根目录最新 .env 的买点频道 webhook，禁止回退哨兵频道/旧变量。"""
+    global DISCORD_ALERT_WEBHOOK_URL
+    root_env = os.path.join(os.path.dirname(PROJECT_DIR), ".env")
+    local_env = os.path.join(PROJECT_DIR, ".env")
+    val = ""
+    for path in (root_env, local_env):
+        val = _read_env_key(path, "DISCORD_CLAW_WEBHOOK_URL") or _read_env_key(path, "DISCORD_ALERT_WEBHOOK_URL")
+        if val:
+            break
+    if not (val.startswith("https://discord.com/api/webhooks/") or val.startswith("https://discordapp.com/api/webhooks/")):
+        val = ""
+    DISCORD_ALERT_WEBHOOK_URL = val
+    return val
+
+
+reload_alert_webhook()
 GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN", "").strip()
 GITHUB_REPO = os.environ.get("GITHUB_REPO", "2827173579/us-market-radar").strip()
 PORT = 8765
@@ -96,6 +133,7 @@ class PollerState:
         self.last_sync_time = "未同步"
         self.session_name = "检测中"
         self.pid = os.getpid()
+        self.stop_alert_seen = set()
 
 STATE = PollerState()
 
@@ -144,7 +182,9 @@ def send_pushplus(title: str, markdown_content: str):
     if not PUSHPLUS_TOKEN or PUSHPLUS_TOKEN == "YOUR_TOKEN":
         return False
     url = "https://www.pushplus.plus/send"
-    channels = [PUSHPLUS_CHANNEL, "wechat"] if PUSHPLUS_CHANNEL != "wechat" else ["wechat"]
+    if not PUSHPLUS_CHANNEL or PUSHPLUS_CHANNEL.strip().lower() == "wechat":
+        return False
+    channels = [PUSHPLUS_CHANNEL.strip()]
     success = False
     for ch in channels:
         payload = {
@@ -173,15 +213,17 @@ def send_pushplus(title: str, markdown_content: str):
     return success
 
 def send_discord(title: str, description: str, color: int = 0x00e676, fields: list = None):
-    targets = [u for u in [DISCORD_WEBHOOK_URL, DISCORD_CLAW_WEBHOOK_URL] if u]
+    alert_wh = reload_alert_webhook()
+    targets = [alert_wh] if alert_wh else []
     if not targets:
+        append_log("  [!] alert webhook not configured, skip Discord")
         return False
     embed = {
         "title": title,
         "description": description,
         "color": color,
         "timestamp": datetime.now(timezone.utc).isoformat(),
-        "footer": {"text": "⚡ TradeRadar Android Sentinel · 小米平板轻量哨兵"}
+        "footer": {"text": "⚡ TradeRadar Android 买点警报 · 小米平板轻量哨兵"}
     }
     if fields:
         embed["fields"] = fields
@@ -196,7 +238,7 @@ def send_discord(title: str, description: str, color: int = 0x00e676, fields: li
             )
             with urllib.request.urlopen(req, timeout=10) as resp:
                 if resp.status in (200, 204):
-                    append_log(f"  [+] 🎮 Discord Webhook 镜像推送成功！")
+                    append_log(f"  [+] 🎮 Discord 买点频道推送成功！")
                     success = True
         except Exception as e:
             append_log(f"  [!] 🎮 Discord 推送异常: {e}")
@@ -888,23 +930,51 @@ def run_single_scan_cycle(round_idx=1):
                 "desc": f"**{tk}** 当前价 **${curr_p:.2f}** ({change_pct:+.2f}%) 成功触及目标止盈位 **${tp_price:.2f}**！建议分批锁定利润。"
             })
 
-    # 4. 触发预警推送
-    if alerts_to_send:
-        append_log(f"[!] 🚨 扫描发现 {len(alerts_to_send)} 项重要价格异动！正在推送双通道...")
-        for al in alerts_to_send:
-            title = f"【美股量化预警】{al['title']} · {al['ticker']}"
-            md = [
-                f"### {al['title']}: {al['ticker']}",
-                f"- **最新现价**: `${fetched_quotes[al['ticker']]['last']:.2f}` ({fetched_quotes[al['ticker']]['pct_change']:+.2f}%)",
-                f"- **时段状态**: {session_name}",
-                f"- **大盘气象**: {weather}",
-                f"- **详细说明**: {al['desc']}",
-                f"- **推送节点**: 小米平板极速哨兵 · {now_str}"
-            ]
-            send_pushplus(title, "\n".join(md))
-            send_discord(title, al['desc'], color=0xda3633 if "止损" in al['title'] else 0x8957e5)
-    else:
-        append_log(f"[+] 🛡️ 自选监控池价格均在安全运行区间内，暂无破位触发。")
+    # 4. Alerts: dedupe stop-loss; batch >3 broken tickers into one summary
+    stop_alerts = [a for a in alerts_to_send if a.get("type") == "STOP_LOSS"]
+    tp_alerts = [a for a in alerts_to_send if a.get("type") != "STOP_LOSS"]
+    new_stop = [a for a in stop_alerts if a.get("ticker") not in STATE.stop_alert_seen]
+    if new_stop:
+        if len(new_stop) > 3:
+            desc_lines = []
+            for al in new_stop:
+                q = fetched_quotes.get(al["ticker"], {})
+                sl = float((by_ticker.get(al["ticker"], {}) or {}).get("stop_loss_price", 0.0) or 0.0)
+                desc_lines.append(f"- **{al['ticker']}** ${float(q.get('last',0.0)):.2f} ({float(q.get('pct_change',0.0)):+.2f}%) · 止损线 ${sl:.2f}")
+            desc = f"**同时有 {len(new_stop)} 只标的跌破防守止损线**\n" + "\n".join(desc_lines) + f"\n\nSession: {session_name} | Weather: {weather} | {now_str}"
+            append_log(f"[!] {len(new_stop)} 只破位，合并发送 1 张止损汇总卡")
+            send_discord(f"🔴 防守止损汇总 · {len(new_stop)}只", desc, color=0xda3633)
+            send_pushplus(f"【美股量化预警】🔴 防守止损汇总 · {len(new_stop)}只", desc)
+            for al in new_stop:
+                STATE.stop_alert_seen.add(al.get("ticker"))
+        else:
+            for al in new_stop:
+                title = f"【美股量化预警】{al['title']} · {al['ticker']}"
+                md = [
+                    f"### {al['title']}: {al['ticker']}",
+                    f"- **最新现价**: `${fetched_quotes[al['ticker']]['last']:.2f}` ({fetched_quotes[al['ticker']]['pct_change']:+.2f}%)",
+                    f"- **时段状态**: {session_name}",
+                    f"- **大盘气象**: {weather}",
+                    f"- **详细说明**: {al['desc']}",
+                    f"- **推送节点**: 小米平板极速哨兵 · {now_str}"
+                ]
+                send_pushplus(title, "\n".join(md))
+                send_discord(title, al['desc'], color=0xda3633)
+                STATE.stop_alert_seen.add(al.get("ticker"))
+    for al in tp_alerts:
+        title = f"【美股量化预警】{al['title']} · {al['ticker']}"
+        md = [
+            f"### {al['title']}: {al['ticker']}",
+            f"- **最新现价**: `${fetched_quotes[al['ticker']]['last']:.2f}` ({fetched_quotes[al['ticker']]['pct_change']:+.2f}%)",
+            f"- **时段状态**: {session_name}",
+            f"- **大盘气象**: {weather}",
+            f"- **详细说明**: {al['desc']}",
+            f"- **推送节点**: 小米平板极速哨兵 · {now_str}"
+        ]
+        send_pushplus(title, "\n".join(md))
+        send_discord(title, al['desc'], color=0x8957e5)
+    if not alerts_to_send:
+        append_log("[+] no alerts")
 
     # 4.5 防御因子实时计算与 Discord 专属频道推送（夜盘走期货，页面回写在同步阶段）
     flight = compute_flight_snapshot(fetched_quotes, session_code)
