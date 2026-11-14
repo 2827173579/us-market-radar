@@ -22,7 +22,7 @@
     "ticker": "NBIS",
     "name": "Nebius",
     "cat": "算力租赁",
-    "price": 113.23,
+    "price": 113.2,
     "pct_change": -9.919155936545547,
     "title": "🔴 NBIS (Nebius) 跌破波段斐波那契下沿",
     "desc": "偏离 MA50 -41.8%，放量跌破坑底 $164.81，空头宣泄期严禁左侧接刀！"
@@ -78,7 +78,7 @@
     "ticker": "INTC",
     "name": "Intel",
     "cat": "芯片算力",
-    "price": 58.81,
+    "price": 58.8056,
     "pct_change": -2.516341333871214,
     "title": "🔴 INTC (Intel) 跌破波段斐波那契下沿",
     "desc": "偏离 MA50 -38.1%，放量跌破坑底 $80.52，空头宣泄期严禁左侧接刀！"
@@ -112,20 +112,6 @@
     "desc": "偏离 MA50 -33.1%，放量跌破坑底 $196.97，空头宣泄期严禁左侧接刀！"
   },
   {
-    "id": "STOP_CRDO_2026-11-14",
-    "time": "11-14 09:15",
-    "category": "stop_loss",
-    "cat_label": "🔴 破位止损",
-    "level": "danger",
-    "ticker": "CRDO",
-    "name": "Credo",
-    "cat": "高速互联",
-    "price": 129.0,
-    "pct_change": -5.936630567695503,
-    "title": "🔴 CRDO (Credo) 跌破波段斐波那契下沿",
-    "desc": "偏离 MA50 -25.1%，放量跌破坑底 $161.88，空头宣泄期严禁左侧接刀！"
-  },
-  {
     "id": "STOP_CRWV_2026-11-14",
     "time": "11-14 09:15",
     "category": "stop_loss",
@@ -134,7 +120,7 @@
     "ticker": "CRWV",
     "name": "CoreWeave",
     "cat": "算力租赁",
-    "price": 51.85,
+    "price": 51.81,
     "pct_change": -6.13073763171995,
     "title": "🔴 CRWV (CoreWeave) 跌破波段斐波那契下沿",
     "desc": "偏离 MA50 -28.6%，放量跌破坑底 $65.03，空头宣泄期严禁左侧接刀！"
@@ -148,10 +134,24 @@
     "ticker": "APLD",
     "name": "Applied Digital",
     "cat": "算力租赁",
-    "price": 15.5555,
+    "price": 15.55,
     "pct_change": -5.781713579939059,
     "title": "🔴 APLD (Applied Digital) 跌破波段斐波那契下沿",
     "desc": "偏离 MA50 -29.6%，放量跌破坑底 $19.42，空头宣泄期严禁左侧接刀！"
+  },
+  {
+    "id": "STOP_CRDO_2026-11-14",
+    "time": "11-14 09:15",
+    "category": "stop_loss",
+    "cat_label": "🔴 破位止损",
+    "level": "danger",
+    "ticker": "CRDO",
+    "name": "Credo",
+    "cat": "高速互联",
+    "price": 129.8,
+    "pct_change": -5.936630567695503,
+    "title": "🔴 CRDO (Credo) 跌破波段斐波那契下沿",
+    "desc": "偏离 MA50 -24.7%，放量跌破坑底 $161.88，空头宣泄期严禁左侧接刀！"
   },
   {
     "id": "STOP_FPS_2026-11-14",
@@ -302,7 +302,7 @@
     "ticker": "NVDA",
     "name": "NVIDIA",
     "cat": "芯片算力",
-    "price": 161.2526,
+    "price": 161.2648,
     "pct_change": -2.009745645841849,
     "title": "🔴 NVDA (NVIDIA) 跌破波段斐波那契下沿",
     "desc": "偏离 MA50 -24.9%，放量跌破坑底 $184.93，空头宣泄期严禁左侧接刀！"
@@ -372,7 +372,7 @@
     "ticker": "GOOGL",
     "name": "Alphabet",
     "cat": "生态平台",
-    "price": 294.31,
+    "price": 294.3,
     "pct_change": -0.9809250330155841,
     "title": "🔴 GOOGL (Alphabet) 跌破波段斐波那契下沿",
     "desc": "偏离 MA50 -10.3%，放量跌破坑底 $310.25，空头宣泄期严禁左侧接刀！"
@@ -414,7 +414,7 @@
     "ticker": "SOXL",
     "name": "3倍做多半导体",
     "cat": "正向杠杆",
-    "price": 56.21,
+    "price": 56.2193,
     "pct_change": -11.002593039495885,
     "title": "🔴 SOXL (3倍做多半导体) 跌破波段斐波那契下沿",
     "desc": "偏离 MA50 -49.1%，放量跌破坑底 $89.96，空头宣泄期严禁左侧接刀！"
@@ -428,10 +428,10 @@
     "ticker": "KORU",
     "name": "3倍做多韩国",
     "cat": "正向杠杆",
-    "price": 7.47,
+    "price": 7.48,
     "pct_change": -5.418719992877978,
     "title": "🔴 KORU (3倍做多韩国) 跌破波段斐波那契下沿",
-    "desc": "偏离 MA50 -52.9%，放量跌破坑底 $13.68，空头宣泄期严禁左侧接刀！"
+    "desc": "偏离 MA50 -52.8%，放量跌破坑底 $13.68，空头宣泄期严禁左侧接刀！"
   },
   {
     "id": "TP_SOXS_2026-11-14",
@@ -442,7 +442,7 @@
     "ticker": "SOXS",
     "name": "3倍做空半导体",
     "cat": "反向对冲",
-    "price": 52.5662,
+    "price": 52.6001,
     "pct_change": 11.067360943775435,
     "title": "🟣 SOXS (3倍做空半导体) 极度超买，触发高位减仓指令",
     "desc": "偏离 MA50 +19.6%，RSI 50.6，进入极端冲顶兑现区，建议分批减半锁定利润！"
