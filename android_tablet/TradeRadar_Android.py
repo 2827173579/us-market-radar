@@ -854,6 +854,43 @@ def load_ai_predictions():
                 pass
     return {}
 
+def maybe_push_quant_strategy(quotes, weather, now_str):
+    """复用电脑版 discord_sentinel 的四时段调度；只开平板也能发四次日策略卡。"""
+    try:
+        parent = os.path.dirname(PROJECT_DIR)
+        if parent not in sys.path:
+            sys.path.insert(0, parent)
+        import discord_sentinel
+        macro_data = {}
+        stocks_sorted = []
+        for tk, q in (quotes or {}).items():
+            try:
+                px = float(q.get("last", 0) or 0)
+            except Exception:
+                continue
+            if px <= 0:
+                continue
+            item = {"ticker": tk, "last": px, "active_price": px, "pct_change": float(q.get("pct_change", 0) or 0)}
+            stocks_sorted.append(item)
+            macro_data[tk] = item
+
+        def _run():
+            try:
+                discord_sentinel.run_sentinel_cycle_safe(
+                    macro_data=macro_data,
+                    stocks_sorted=stocks_sorted,
+                    weather_info={"status": weather} if weather else {},
+                    now_str=now_str,
+                    scheduled_only=True,
+                )
+            except Exception as e:
+                append_log(f"[!] 四次日策略哨兵异常: {e}")
+
+        threading.Thread(target=_run, daemon=True, name="AndroidSentinel").start()
+    except Exception as e:
+        append_log(f"[!] 四次日策略哨兵不可用（需 pandas/yfinance/discord_sentinel.py）: {e}")
+
+
 def run_single_scan_cycle(round_idx=1):
     now_str = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     session_code, session_name = get_us_market_session()
@@ -986,6 +1023,7 @@ def run_single_scan_cycle(round_idx=1):
 
     # 5. 自动同步发布到 GitHub Pages (若处于 Git 仓库环境)
     sync_to_github_pages(round_idx, now_str, quotes=fetched_quotes, flight=flight, session_name=session_name)
+    maybe_push_quant_strategy(fetched_quotes, weather, now_str)
 
 # ------------------------------------------------------------------------------
 # 6. 后台守护线程调度器

@@ -583,6 +583,8 @@ def evaluate_rsi_state(
 
     is_bottom = (rsi_4h <= 32.0 and rsi_1d <= 40.0) or (poc_close and rsi_4h <= 35.0)
     if is_bottom:
+        if poc <= 0:
+            return "🔥【双周期超卖见底·右侧企稳低吸】"
         if is_cooling:
             if price_gt_vwap or prev_is_right_turn:
                 return "🔥【双周期见底·✅右侧企稳】"
@@ -843,7 +845,10 @@ def format_focus_ticker_block(ticker: str, t_data: Dict[str, Any]) -> str:
     res_str = fmt_price(res, is_btc)
 
     if "见底" in st or "超卖" in st:
-        if is_cooling:
+        if poc <= 0:
+            line1 = f"🔥 **{sym}** {price_str} ｜ **【双周期超卖见底 · 右侧企稳低吸】**"
+            line2 = f"└ 支撑位:{sup_str} ｜ 压力:{res_str}"
+        elif is_cooling:
             line1 = f"🔥 **{sym}** {price_str} ｜ **【双周期见底 · ⚠️暴跌冷却中】**"
             line2 = f"└ 主力底:{poc_str} ｜ 止损:{sup_str} ➔ 观望等企稳"
         elif price >= poc:
@@ -990,7 +995,7 @@ def build_message_1_embed(market_analysis: Dict[str, Any]) -> dict:
         p_fmt = fmt_price(p, is_btc=(sym in ("BTC", "BTC-USD")))
 
         if "见底" in st or "超卖" in st:
-            pos = "紧贴主力成本区" if p >= poc else "超跌博反弹"
+            pos = "右侧企稳低吸" if poc <= 0 else ("紧贴主力成本区" if p >= poc else "超跌博反弹")
             c_flag = "[⚠️暴跌冷却]" if is_c else ""
             bottom_items.append(f"**{sym}**({p_fmt} {pos}{c_flag})")
         elif "突破" in st:
@@ -1716,6 +1721,10 @@ def run_sentinel_cycle_safe(macro_data=None, stocks_sorted=None, weather_info=No
                     continue
                 _raw_poc = item.get("fib_poc") or item.get("poc") or item.get("ma20") or item.get("vwap_20d") or 0.0
                 poc = _sentinel_effective_poc(active_p, _raw_poc)
+                # 快照若无 POC/MA20，必须补抓 1H 数据，不能用 0 输出“成本待补”
+                if poc <= 0:
+                    missing_syms.append(sym)
+                    continue
                 _atr = float(item.get("atr") or 0.0)
                 _s0 = float(item.get("support") or item.get("fib_low") or active_p - max(_atr, active_p * 0.018))
                 _r0 = float(item.get("resistance") or item.get("fib_high") or active_p + max(_atr, active_p * 0.018))
