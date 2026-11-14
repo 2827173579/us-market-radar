@@ -4,8 +4,8 @@
     "profit_factor": 1.34,
     "top_sector": "存储芯片 (⭐⭐⭐⭐⭐)",
     "top_feature": "SMH_IGV_Ratio_Bias (12.18%)",
-    "sync_time": "2026-11-14 14:51:40",
-    "data_mode": "Finnhub 秒级实时 (☕ 周末休市)",
+    "sync_time": "2026-11-14 05:59:57",
+    "data_mode": "Finnhub 秒级实时 (💤 週末休市)",
     "is_realtime": false
   },
   "macro_weather": {
@@ -22,15 +22,53 @@
     "latest_date": "2026-11-13",
     "defensive_flight": {
       "is_alert": true,
-      "flight_score": 4.74,
-      "def_mean_chg": 0.44,
+      "flight_score": 4.72,
+      "def_mean_chg": 0.42,
       "off_mean_chg": -4.3,
       "alert_text": "🚨 防御因子起飞 · 警惕机构盘中去杠杆踩踏 (+4.7%)",
       "banner_text": "🚨 防御因子起飞 · 警惕机构盘中去杠杆踩踏",
       "badge": "badge-alert",
-      "session": "REGULAR",
+      "session": "CLOSED",
       "score_source": "spot_basket",
-      "components": {},
+      "components": {
+        "KO": {
+          "pct": 1.86
+        },
+        "PEP": {
+          "pct": 2.24
+        },
+        "MCD": {
+          "pct": -0.61
+        },
+        "LLY": {
+          "pct": 1.14
+        },
+        "MRNA": {
+          "pct": -3.45
+        },
+        "TLT": {
+          "pct": -0.43
+        },
+        "GLD": {
+          "pct": 0.16
+        },
+        "VIXY": {
+          "pct": 2.46
+        },
+        "SMH": {
+          "pct": -2.99
+        },
+        "SOXL": {
+          "pct": -11.0
+        },
+        "NVDA": {
+          "pct": -2.01
+        },
+        "QQQ": {
+          "pct": -1.2
+        }
+      },
+      "missing": [],
       "skip_reason": ""
     }
   },
@@ -6582,7 +6620,9 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 31
+      "short_rank": 31,
+      "last": 172.47,
+      "pct_change": -2.6363
     },
     "TSM": {
       "rank": 2,
@@ -6641,7 +6681,9 @@
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 17
+      "short_rank": 17,
+      "last": 398.73,
+      "pct_change": -1.6671
     },
     "ASML": {
       "rank": 3,
@@ -6700,7 +6742,9 @@
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 7
+      "short_rank": 7,
+      "last": 1495.16,
+      "pct_change": -0.1309
     },
     "AVGO": {
       "rank": 4,
@@ -6759,7 +6803,9 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 25
+      "short_rank": 25,
+      "last": 347.01,
+      "pct_change": -4.7618
     },
     "CRWD": {
       "rank": 5,
@@ -6818,7 +6864,9 @@
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 26
+      "short_rank": 26,
+      "last": 226.61,
+      "pct_change": -1.4182
     },
     "SPCX": {
       "rank": 6,
@@ -6877,7 +6925,9 @@
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 2
+      "short_rank": 2,
+      "last": 139.11,
+      "pct_change": -0.5931
     },
     "NKE": {
       "rank": 7,
@@ -6936,7 +6986,9 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 18
+      "short_rank": 18,
+      "last": 37.99,
+      "pct_change": 0.6091
     },
     "GOOGL": {
       "rank": 8,
@@ -6995,7 +7047,9 @@
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": false,
-      "short_rank": 23
+      "short_rank": 23,
+      "last": 295.77,
+      "pct_change": -0.9809
     },
     "VST": {
       "rank": 9,
@@ -7054,7 +7108,9 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 13
+      "short_rank": 13,
+      "last": 133.01,
+      "pct_change": -1.1152
     },
     "ORCL": {
       "rank": 10,
@@ -7113,7 +7169,9 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 19
+      "short_rank": 19,
+      "last": 125.35,
+      "pct_change": -1.3846
     },
     "AAPL": {
       "rank": 11,
@@ -7172,7 +7230,9 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 20
+      "short_rank": 20,
+      "last": 356.27,
+      "pct_change": 0.3917
     },
     "TSLA": {
       "rank": 12,
@@ -7231,7 +7291,9 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 14
+      "short_rank": 14,
+      "last": 390.22,
+      "pct_change": -1.8191
     },
     "PLTR": {
       "rank": 13,
@@ -7290,7 +7352,9 @@
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 27
+      "short_rank": 27,
+      "last": 167.99,
+      "pct_change": -2.0923
     },
     "CEG": {
       "rank": 14,
@@ -7349,7 +7413,9 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 29
+      "short_rank": 29,
+      "last": 280.2,
+      "pct_change": -0.779
     },
     "META": {
       "rank": 15,
@@ -7408,7 +7474,9 @@
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 10
+      "short_rank": 10,
+      "last": 641.69,
+      "pct_change": 2.8992
     },
     "AXP": {
       "rank": 16,
@@ -7467,7 +7535,9 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 11
+      "short_rank": 11,
+      "last": 320.6,
+      "pct_change": 0.7986
     },
     "AMZN": {
       "rank": 17,
@@ -7526,7 +7596,9 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 24
+      "short_rank": 24,
+      "last": 266.66,
+      "pct_change": -0.2917
     },
     "MCD": {
       "rank": 18,
@@ -7585,7 +7657,9 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 33
+      "short_rank": 33,
+      "last": 271.97,
+      "pct_change": -0.6067
     },
     "V": {
       "rank": 19,
@@ -7644,7 +7718,9 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 36
+      "short_rank": 36,
+      "last": 425.76,
+      "pct_change": 1.2967
     },
     "MSFT": {
       "rank": 20,
@@ -7703,7 +7779,9 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 34
+      "short_rank": 34,
+      "last": 523.88,
+      "pct_change": 0.1683
     },
     "PEP": {
       "rank": 21,
@@ -7762,7 +7840,9 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 32
+      "short_rank": 32,
+      "last": 145.44,
+      "pct_change": 2.2353
     },
     "KO": {
       "rank": 22,
@@ -7821,7 +7901,9 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 35
+      "short_rank": 35,
+      "last": 99.25,
+      "pct_change": 1.8576
     },
     "FLY": {
       "rank": 23,
@@ -7880,7 +7962,9 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 38
+      "short_rank": 38,
+      "last": 25.21,
+      "pct_change": -0.3951
     },
     "LLY": {
       "rank": 24,
@@ -7939,7 +8023,9 @@
       "four_h_div": "🔴 4H 顶背离滞涨 (防回踩)",
       "four_h_tag": "div-bear",
       "is_short_covering": false,
-      "short_rank": 40
+      "short_rank": 40,
+      "last": 1443.5,
+      "pct_change": 1.1364
     },
     "NVDA": {
       "rank": 25,
@@ -7998,7 +8084,9 @@
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": true,
-      "short_rank": 70
+      "short_rank": 70,
+      "last": 162.85,
+      "pct_change": -2.0097
     },
     "FPS": {
       "rank": 26,
@@ -8057,7 +8145,9 @@
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": true,
-      "short_rank": 60
+      "short_rank": 60,
+      "last": 22.12,
+      "pct_change": -0.1354
     },
     "COIN": {
       "rank": 27,
@@ -8116,7 +8206,9 @@
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": true,
-      "short_rank": 52
+      "short_rank": 52,
+      "last": 127.645,
+      "pct_change": -2.315
     },
     "OKLO": {
       "rank": 28,
@@ -8175,7 +8267,9 @@
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": true,
-      "short_rank": 48
+      "short_rank": 48,
+      "last": 23.92,
+      "pct_change": -2.1677
     },
     "MSTR": {
       "rank": 29,
@@ -8234,7 +8328,9 @@
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": true,
-      "short_rank": 43
+      "short_rank": 43,
+      "last": 111.62,
+      "pct_change": -2.4386
     },
     "NOW": {
       "rank": 30,
@@ -8293,7 +8389,9 @@
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": true,
-      "short_rank": 16
+      "short_rank": 16,
+      "last": 102.25,
+      "pct_change": 1.5796
     },
     "AMD": {
       "rank": 31,
@@ -8352,7 +8450,9 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 69
+      "short_rank": 69,
+      "last": 534.06,
+      "pct_change": -8.7545
     },
     "RKLB": {
       "rank": 32,
@@ -8411,7 +8511,9 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 47
+      "short_rank": 47,
+      "last": 61.53,
+      "pct_change": -3.9644
     },
     "MRNA": {
       "rank": 33,
@@ -8470,7 +8572,9 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 66
+      "short_rank": 66,
+      "last": 223.37,
+      "pct_change": -3.4493
     },
     "IBIT": {
       "rank": 34,
@@ -8529,7 +8633,9 @@
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": false,
-      "short_rank": 42
+      "short_rank": 42,
+      "last": 38.94,
+      "pct_change": -3.5183
     },
     "ASTS": {
       "rank": 35,
@@ -8588,7 +8694,9 @@
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": false,
-      "short_rank": 50
+      "short_rank": 50,
+      "last": 32.6,
+      "pct_change": -5.5072
     },
     "INTC": {
       "rank": 36,
@@ -8647,7 +8755,9 @@
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": false,
-      "short_rank": 67
+      "short_rank": 67,
+      "last": 59.66,
+      "pct_change": -2.5163
     },
     "AAOI": {
       "rank": 37,
@@ -8706,7 +8816,9 @@
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 68
+      "short_rank": 68,
+      "last": 49.89,
+      "pct_change": -5.6008
     },
     "STX": {
       "rank": 38,
@@ -8765,7 +8877,9 @@
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 57
+      "short_rank": 57,
+      "last": 528.29,
+      "pct_change": -3.0909
     },
     "APLD": {
       "rank": 39,
@@ -8824,7 +8938,9 @@
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 44
+      "short_rank": 44,
+      "last": 15.97,
+      "pct_change": -5.7817
     },
     "CRDO": {
       "rank": 40,
@@ -8883,7 +8999,9 @@
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 62
+      "short_rank": 62,
+      "last": 131.51,
+      "pct_change": -5.9366
     },
     "LITE": {
       "rank": 41,
@@ -8942,7 +9060,9 @@
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 63
+      "short_rank": 63,
+      "last": 596.62,
+      "pct_change": -4.4873
     },
     "VRT": {
       "rank": 42,
@@ -9001,7 +9121,9 @@
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 22
+      "short_rank": 22,
+      "last": 202.07,
+      "pct_change": -3.611
     },
     "WDC": {
       "rank": 43,
@@ -9060,7 +9182,9 @@
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 61
+      "short_rank": 61,
+      "last": 295.65,
+      "pct_change": -4.9998
     },
     "SKHY": {
       "rank": 44,
@@ -9119,7 +9243,9 @@
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 49
+      "short_rank": 49,
+      "last": 131.79,
+      "pct_change": -4.2989
     },
     "HPE": {
       "rank": 45,
@@ -9178,7 +9304,9 @@
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": false,
-      "short_rank": 58
+      "short_rank": 58,
+      "last": 48.29,
+      "pct_change": -3.7281
     },
     "AMAT": {
       "rank": 46,
@@ -9237,7 +9365,9 @@
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 53
+      "short_rank": 53,
+      "last": 370.5,
+      "pct_change": -2.7431
     },
     "BE": {
       "rank": 47,
@@ -9296,7 +9426,9 @@
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 51
+      "short_rank": 51,
+      "last": 191.99,
+      "pct_change": -4.9225
     },
     "COHR": {
       "rank": 48,
@@ -9355,7 +9487,9 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 54
+      "short_rank": 54,
+      "last": 218.15,
+      "pct_change": -6.0022
     },
     "MU": {
       "rank": 49,
@@ -9414,7 +9548,9 @@
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 6
+      "short_rank": 6,
+      "last": 778.31,
+      "pct_change": -2.5212
     },
     "MRVL": {
       "rank": 50,
@@ -9473,7 +9609,9 @@
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 56
+      "short_rank": 56,
+      "last": 156.76,
+      "pct_change": -4.6762
     },
     "SNDK": {
       "rank": 51,
@@ -9532,7 +9670,9 @@
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": false,
-      "short_rank": 64
+      "short_rank": 64,
+      "last": 885.01,
+      "pct_change": -5.5949
     },
     "CRWV": {
       "rank": 52,
@@ -9591,7 +9731,9 @@
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 41
+      "short_rank": 41,
+      "last": 53.13,
+      "pct_change": -6.1307
     },
     "AXTI": {
       "rank": 53,
@@ -9650,7 +9792,9 @@
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 45
+      "short_rank": 45,
+      "last": 41.84,
+      "pct_change": -3.9045
     },
     "DELL": {
       "rank": 54,
@@ -9709,7 +9853,9 @@
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": false,
-      "short_rank": 59
+      "short_rank": 59,
+      "last": 344.53,
+      "pct_change": -7.1773
     },
     "NBIS": {
       "rank": 55,
@@ -9768,7 +9914,9 @@
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": false,
-      "short_rank": 46
+      "short_rank": 46,
+      "last": 115.88,
+      "pct_change": -9.9192
     },
     "SOXL": {
       "rank": 56,
@@ -9827,7 +9975,9 @@
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": false,
-      "short_rank": 55
+      "short_rank": 55,
+      "last": 58.32,
+      "pct_change": -11.0026
     },
     "KORU": {
       "rank": 57,
@@ -9886,7 +10036,9 @@
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": false,
-      "short_rank": 65
+      "short_rank": 65,
+      "last": 7.68,
+      "pct_change": -5.4187
     },
     "QQQ": {
       "rank": 58,
@@ -9945,7 +10097,9 @@
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 1
+      "short_rank": 1,
+      "last": 679.89,
+      "pct_change": -1.2032
     },
     "SMH": {
       "rank": 59,
@@ -10004,7 +10158,9 @@
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 8
+      "short_rank": 8,
+      "last": 486.75,
+      "pct_change": -2.9857
     },
     "SOXX": {
       "rank": 60,
@@ -10063,7 +10219,9 @@
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": false,
-      "short_rank": 4
+      "short_rank": 4,
+      "last": 149.3,
+      "pct_change": -3.6712
     },
     "IWM": {
       "rank": 61,
@@ -10122,7 +10280,9 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 5
+      "short_rank": 5,
+      "last": 277.54,
+      "pct_change": -0.3232
     },
     "GLD": {
       "rank": 62,
@@ -10181,7 +10341,9 @@
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 3
+      "short_rank": 3,
+      "last": 355.45,
+      "pct_change": 0.1578
     },
     "TLT": {
       "rank": 63,
@@ -10240,7 +10402,9 @@
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 12
+      "short_rank": 12,
+      "last": 79.38,
+      "pct_change": -0.4265
     },
     "IGV": {
       "rank": 64,
@@ -10299,7 +10463,9 @@
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 37
+      "short_rank": 37,
+      "last": 101.19,
+      "pct_change": -0.2563
     },
     "QQQI": {
       "rank": 65,
@@ -10358,7 +10524,9 @@
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 9
+      "short_rank": 9,
+      "last": 51.13,
+      "pct_change": -0.9876
     },
     "SPY": {
       "rank": 66,
@@ -10417,7 +10585,9 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 28
+      "short_rank": 28,
+      "last": 754.37,
+      "pct_change": -0.3632
     },
     "VIXY": {
       "rank": 67,
@@ -10476,7 +10646,9 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 21
+      "short_rank": 21,
+      "last": 17.94,
+      "pct_change": 2.4557
     },
     "SOXS": {
       "rank": 68,
@@ -10535,7 +10707,9 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 39
+      "short_rank": 39,
+      "last": 50.78,
+      "pct_change": 11.0674
     },
     "DIA": {
       "rank": 69,
@@ -10594,7 +10768,9 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 30
+      "short_rank": 30,
+      "last": 523.15,
+      "pct_change": 0.1302
     },
     "SQQQ": {
       "rank": 70,
@@ -10653,20 +10829,60 @@
       "four_h_div": "⚡ 4H 均线多头共振",
       "four_h_tag": "div-trend",
       "is_short_covering": false,
-      "short_rank": 15
+      "short_rank": 15,
+      "last": 42.46,
+      "pct_change": 3.7381
     }
   },
   "defensive_flight": {
-    "is_alert": false,
-    "flight_score": 0.0,
-    "def_mean_chg": 0.0,
-    "off_mean_chg": 0.0,
-    "alert_text": "🛡️ 防御因子平稳 (+0.0%) · 机构仓位均衡",
-    "banner_text": "",
-    "badge": "badge-normal",
-    "session": "WEEKEND",
+    "is_alert": true,
+    "flight_score": 4.72,
+    "def_mean_chg": 0.42,
+    "off_mean_chg": -4.3,
+    "alert_text": "🚨 防御因子起飞 · 警惕机构盘中去杠杆踩踏 (+4.7%)",
+    "banner_text": "🚨 防御因子起飞 · 警惕机构盘中去杠杆踩踏",
+    "badge": "badge-alert",
+    "session": "CLOSED",
     "score_source": "spot_basket",
-    "components": {},
+    "components": {
+      "KO": {
+        "pct": 1.86
+      },
+      "PEP": {
+        "pct": 2.24
+      },
+      "MCD": {
+        "pct": -0.61
+      },
+      "LLY": {
+        "pct": 1.14
+      },
+      "MRNA": {
+        "pct": -3.45
+      },
+      "TLT": {
+        "pct": -0.43
+      },
+      "GLD": {
+        "pct": 0.16
+      },
+      "VIXY": {
+        "pct": 2.46
+      },
+      "SMH": {
+        "pct": -2.99
+      },
+      "SOXL": {
+        "pct": -11.0
+      },
+      "NVDA": {
+        "pct": -2.01
+      },
+      "QQQ": {
+        "pct": -1.2
+      }
+    },
+    "missing": [],
     "skip_reason": ""
   },
   "time_cycle_projections": {
@@ -23274,7 +23490,7 @@
     },
     "COIN": {
       "ticker": "COIN",
-      "current_price": 127.64,
+      "current_price": 127.645,
       "s1": 122.15,
       "s2": 117.02,
       "sl": 115.26,
