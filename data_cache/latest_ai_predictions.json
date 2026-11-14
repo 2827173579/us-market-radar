@@ -4,7 +4,7 @@
     "profit_factor": 1.34,
     "top_sector": "存储芯片 (⭐⭐⭐⭐⭐)",
     "top_feature": "SMH_IGV_Ratio_Bias (12.18%)",
-    "sync_time": "2026-11-14 14:45:19",
+    "sync_time": "2026-11-14 14:51:40",
     "data_mode": "Finnhub 秒级实时 (☕ 周末休市)",
     "is_realtime": false
   },
@@ -4515,7 +4515,7 @@
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": false,
-      "short_rank": 68
+      "short_rank": 67
     },
     {
       "rank": 37,
@@ -4574,7 +4574,7 @@
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 67
+      "short_rank": 68
     },
     {
       "rank": 38,
@@ -5046,7 +5046,7 @@
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": false,
-      "short_rank": 59
+      "short_rank": 58
     },
     {
       "rank": 46,
@@ -5577,7 +5577,7 @@
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": false,
-      "short_rank": 58
+      "short_rank": 59
     },
     {
       "rank": 55,
@@ -8647,7 +8647,7 @@
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": false,
-      "short_rank": 68
+      "short_rank": 67
     },
     "AAOI": {
       "rank": 37,
@@ -8706,7 +8706,7 @@
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 67
+      "short_rank": 68
     },
     "STX": {
       "rank": 38,
@@ -9178,7 +9178,7 @@
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": false,
-      "short_rank": 59
+      "short_rank": 58
     },
     "AMAT": {
       "rank": 46,
@@ -9709,7 +9709,7 @@
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": false,
-      "short_rank": 58
+      "short_rank": 59
     },
     "NBIS": {
       "rank": 55,

@@ -1705,6 +1705,7 @@ def main():
     append_log("=" * 60)
 
     server = HTTPServer(("0.0.0.0", PORT), AndroidRadarHandler)
+    start_full_engine()
     try:
         server.serve_forever()
     except KeyboardInterrupt:
