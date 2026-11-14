@@ -5008,67 +5008,122 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
 # 九、 主入口与智能同步锁调度引擎 (3分钟自动轮询 + 手动刷新无缝重置)
 # ==============================================================================
 
-def maybe_refresh_daily_ml_panel():
-    """美股 16:05 ET 之后刷新日线。只有面板真实覆盖当日收盘日才记成功，否则每 10 分钟重试。"""
+def _latest_closed_us_day_et():
+    """返回最近一个已经收盘的美股交易日（周末/节假日自动回退）。"""
     try:
+        import ml_predictor_5y
+        return ml_predictor_5y._get_latest_expected_trading_day()
+    except Exception:
         try:
             from zoneinfo import ZoneInfo
-            et_now = datetime.now(ZoneInfo("America/New_York"))
+            et = datetime.now(ZoneInfo("America/New_York"))
         except Exception:
-            et_now = datetime.now(timezone(timedelta(hours=-5)))
-        if et_now.weekday() >= 5:
-            return
-        if et_now.hour < 16 or (et_now.hour == 16 and et_now.minute < 5):
-            return
-        day_s = et_now.strftime("%Y-%m-%d")
+            et = datetime.now(timezone(timedelta(hours=-5)))
+        d = et.date()
+        hm = et.hour * 60 + et.minute
+        if d.weekday() < 5 and hm >= 16 * 60 + 5:
+            return d
+        d = d - timedelta(days=1)
+        while d.weekday() >= 5:
+            d -= timedelta(days=1)
+        return d
+
+
+def _prediction_last_history_day():
+    try:
+        p = os.path.join(SCRATCH_DIR, "data_cache", "latest_ai_predictions.json")
+        with open(p, encoding="utf-8") as f:
+            d = json.load(f)
+        cyc = d.get("time_cycle_projections") or {}
+        days = []
+        for item in cyc.values():
+            hist = (item or {}).get("history") or []
+            if hist:
+                days.append(str(hist[-1].get("date", ""))[:10])
+        return max(days) if days else ""
+    except Exception:
+        return ""
+
+
+def _page_last_history_day():
+    try:
+        p = os.path.join(SCRATCH_DIR, "predict_radar_5y.html")
+        s = open(p, encoding="utf-8", errors="replace").read()
+        key = "const timeCycleData = "
+        i = s.find(key)
+        if i < 0:
+            return ""
+        d, _ = json.JSONDecoder().raw_decode(s[i + len(key):])
+        days = []
+        for item in (d or {}).values():
+            hist = (item or {}).get("history") or []
+            if hist:
+                days.append(str(hist[-1].get("date", ""))[:10])
+        return max(days) if days else ""
+    except Exception:
+        return ""
+
+
+def maybe_refresh_daily_ml_panel():
+    """任何时间开机都补齐最近已收盘交易日；周末也检查 AI/页面最后历史日期。"""
+    try:
+        expected = _latest_closed_us_day_et()
+        exp_s = expected.strftime("%Y-%m-%d")
         state_path = os.path.join(SCRATCH_DIR, "data_cache", ".last_daily_ml_refresh")
         marker_path = os.path.join(SCRATCH_DIR, "data_cache", ".ml_panel_max_date")
         os.makedirs(os.path.dirname(state_path), exist_ok=True)
 
-        def _marker_day():
-            try:
-                return open(marker_path, encoding="utf-8").read().strip()
-            except Exception:
-                return ""
+        marker = ""
+        try:
+            marker = open(marker_path, encoding="utf-8").read().strip()[:10]
+        except Exception:
+            pass
+        pred_day = _prediction_last_history_day()
+        page_day = _page_last_history_day()
+        # 只要面板、AI 或页面任一落后于最近收盘日，就必须补刷
+        if (marker and marker >= exp_s) and (pred_day and pred_day >= exp_s) and (page_day and page_day >= exp_s):
+            return
 
         state = {}
         if os.path.exists(state_path):
             try:
                 raw = open(state_path, encoding="utf-8").read().strip()
-                if raw.startswith("{"):
-                    state = json.loads(raw)
-                elif raw:
-                    state = {"success_day": raw}
+                state = json.loads(raw) if raw.startswith("{") else ({"success_day": raw} if raw else {})
             except Exception:
                 state = {}
-
-        if state.get("success_day") == day_s and _marker_day() == day_s:
-            return
-
         last_attempt = float(state.get("last_attempt_epoch") or 0)
         if time.time() - last_attempt < 600:
             return
-
         state["last_attempt_epoch"] = time.time()
         state.pop("success_day", None)
         with open(state_path, "w", encoding="utf-8") as sf:
             json.dump(state, sf)
-        print(f"[*] 美股收盘后日线面板刷新开始 ({day_s} ET)，未拉到当日收盘日不记成功...")
+
+        print(f"[*] 收盘日线补刷触发：期望 {exp_s} / AI {pred_day or '无'} / 页面 {page_day or '无'} / marker {marker or '无'}")
         proc = subprocess.run(
             [sys.executable, "ml_predictor_5y.py", "--refresh"],
             cwd=SCRATCH_DIR,
             check=False,
-            timeout=1800, creationflags=WIN_NO_WINDOW
+            timeout=1800,
+            creationflags=WIN_NO_WINDOW
         )
-        if proc.returncode == 0 and _marker_day() == day_s:
-            state["success_day"] = day_s
+        marker2 = ""
+        try:
+            marker2 = open(marker_path, encoding="utf-8").read().strip()[:10]
+        except Exception:
+            pass
+        pred2 = _prediction_last_history_day()
+        page2 = _page_last_history_day()
+        if proc.returncode == 0 and (marker2 >= exp_s or pred2 >= exp_s or page2 >= exp_s):
+            state["success_day"] = exp_s
             with open(state_path, "w", encoding="utf-8") as sf:
                 json.dump(state, sf)
-            print(f"[+] 日线面板已覆盖 {day_s}，刷新完成。")
+            print(f"[+] 收盘日线已补齐 {exp_s}（AI {pred2} / 页面 {page2}）")
         else:
-            print(f"[!] 日线仍未覆盖 {day_s}（exit={proc.returncode}，面板日期={_marker_day() or '无'}），10 分钟后重试。")
+            print(f"[!] 收盘日线补刷未完成 {exp_s}（exit={proc.returncode}, AI={pred2}, 页面={page2}），10分钟后重试")
     except Exception as _e:
-        print(f"[!] 日线面板自动刷新异常: {_e}")
+        print(f"[!] 收盘日线自动补刷异常: {_e}")
+
 
 def main():
     # 检查是否为本地常驻自选盯盘 API 守护子进程 (--star-server-daemon)
