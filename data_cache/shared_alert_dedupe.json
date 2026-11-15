@@ -1,6 +1,11 @@
 {
-  "dedupe": {},
-  "device": "",
-  "last_heartbeat_ts": 0,
-  "updated_at": ""
+  "dedupe": {
+    "2026-11-14:QCOM:STOP_LOSS": {
+      "device": "PC",
+      "ts": 1794708749.0009763
+    }
+  },
+  "device": "PC",
+  "last_heartbeat_ts": 1794708675.3886669,
+  "updated_at": "2026-11-15T02:12:29.001426+00:00"
 }
