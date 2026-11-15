@@ -189,14 +189,21 @@ FINNHUB_API_KEY = os.environ.get("FINNHUB_API_KEY", "").strip()
 # PushPlus 微信推送配置与去重缓存
 PUSHPLUS_TOKEN = os.environ.get("PUSHPLUS_TOKEN", "").strip()
 PUSHPLUS_CHANNEL = os.environ.get("PUSHPLUS_CHANNEL", "clawbot").strip()
-DISCORD_CLAW_WEBHOOK_URL = os.environ.get(
-    "DISCORD_CLAW_WEBHOOK_URL",
-    os.environ.get("DISCORD_ALERT_WEBHOOK_URL", "")
-).strip()
+DISCORD_CLAW_WEBHOOK_URL = os.environ.get("DISCORD_CLAW_WEBHOOK_URL", "").strip()
 DISCORD_DEFENSIVE_FLIGHT_WEBHOOK_URL = os.environ.get(
     "DISCORD_DEFENSIVE_FLIGHT_WEBHOOK_URL",
     ""
 ).strip()
+
+
+def get_claw_webhook_url():
+    """买点/止损唯一来源：DISCORD_CLAW_WEBHOOK_URL，缺失返回空。"""
+    return os.environ.get("DISCORD_CLAW_WEBHOOK_URL", "").strip()
+
+
+def get_defensive_webhook_url():
+    """防御因子唯一来源：DISCORD_DEFENSIVE_FLIGHT_WEBHOOK_URL，缺失返回空。"""
+    return os.environ.get("DISCORD_DEFENSIVE_FLIGHT_WEBHOOK_URL", "").strip()
 
 # ------------------------------------------------------------------------------
 # 🎯 账户资金与风控配置 (V3.1 旗舰纯比例制 · 单股上限 25% · 1.5%风险预算一次性建仓)
@@ -1916,7 +1923,7 @@ def send_discord_claw_alert(title, markdown_content, webhook_url=None):
     通过 Discord Webhook 向专属 Claw 预警频道推送与微信 100% 同步的 Markdown 战报卡片
     具备自动颜色适配、超时隔离与长文本安全收纳。
     """
-    url = webhook_url or globals().get("DISCORD_CLAW_WEBHOOK_URL", "").strip()
+    url = webhook_url or get_claw_webhook_url()
     if not url:
         return False
     # 防御因子卡片只允许走专用频道，严禁由 Claw/主预警频道夹带发送
@@ -1979,10 +1986,10 @@ def send_discord_defensive_flight_alert(df_alert, live_lookup=None, update_time_
     通过专属 Webhook 向【防御因子背离百分比】频道实时推送纯粹、聚焦的防御/科技背离因子战报。
     每次雷达刷新均精准播报，包含背离差值、防御/科技各自均值、各成分股涨跌幅细分及大白话操盘指引。
     """
-    url = webhook_url or os.environ.get("DISCORD_DEFENSIVE_FLIGHT_WEBHOOK_URL", "").strip()
+    url = webhook_url or get_defensive_webhook_url()
     if not url:
         load_env_file()
-        url = os.environ.get("DISCORD_DEFENSIVE_FLIGHT_WEBHOOK_URL", "").strip()
+        url = get_defensive_webhook_url()
     # 防御因子绝不串到买点/量化喵/镜像频道。地址只从环境变量读，仓库里不留 webhook。
     wrong_channel = any(ch in url for ch in (
         "1569762886996197499",

@@ -93,7 +93,7 @@ def reload_alert_webhook():
     local_env = os.path.join(PROJECT_DIR, ".env")
     val = ""
     for path in (root_env, local_env):
-        val = _read_env_key(path, "DISCORD_CLAW_WEBHOOK_URL") or _read_env_key(path, "DISCORD_ALERT_WEBHOOK_URL")
+        val = _read_env_key(path, "DISCORD_CLAW_WEBHOOK_URL")
         if val:
             break
     if not (val.startswith("https://discord.com/api/webhooks/") or val.startswith("https://discordapp.com/api/webhooks/")):

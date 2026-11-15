@@ -54,6 +54,12 @@ def load_env_file(env_path: Optional[str] = None) -> None:
 
 load_env_file()
 DISCORD_WEBHOOK_URL = os.environ.get("DISCORD_WEBHOOK_URL", "").strip()
+DISCORD_SENTINEL_WEBHOOK_URL = os.environ.get("DISCORD_SENTINEL_WEBHOOK_URL", "").strip()
+
+
+def get_sentinel_webhook_url():
+    """每日四次策略唯一来源：SENTINEL 优先，旧主变量次之；绝不借用 Claw/防御频道。"""
+    return os.environ.get("DISCORD_SENTINEL_WEBHOOK_URL", "").strip() or os.environ.get("DISCORD_WEBHOOK_URL", DISCORD_WEBHOOK_URL).strip()
 
 # 与主雷达 70 只对齐。另保留哨兵策略自己要用的 TQQQ、BTC-USD、SCHD（因子 Y）。
 # MARA 已从主池删除，这里不再巡检。
@@ -1289,7 +1295,7 @@ def run_sentinel_scan(
     5. 若 push_discord 且非 dry_run，分发至 Discord Webhook 频道
     6. 返回 market_analysis 汇总字典
     """
-    webhook_url = os.environ.get("DISCORD_WEBHOOK_URL", DISCORD_WEBHOOK_URL).strip()
+    webhook_url = get_sentinel_webhook_url()
 
     if market_data is None:
         try:
@@ -1693,7 +1699,7 @@ def run_sentinel_cycle_safe(macro_data=None, stocks_sorted=None, weather_info=No
             slot_id = s_id
             slot_name = s_name
 
-        webhook_url = os.environ.get("DISCORD_WEBHOOK_URL", DISCORD_WEBHOOK_URL).strip()
+        webhook_url = get_sentinel_webhook_url()
         if not webhook_url:
             print("[Discord Sentinel] DISCORD_WEBHOOK_URL not configured, 本轮不锁，下轮重试。")
             return
