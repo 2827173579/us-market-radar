@@ -26,6 +26,12 @@ from urllib.parse import urlparse, parse_qs
 from http.server import HTTPServer, BaseHTTPRequestHandler
 import threading
 import json
+try:
+    import shared_alert_state
+    _SHARED_ALERTS = True
+except Exception:
+    shared_alert_state = None
+    _SHARED_ALERTS = False
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import webbrowser
 import numpy as np
@@ -1918,6 +1924,16 @@ def save_alert_history(history):
     except Exception as e:
         print(f"[!] 保存预警历史异常: {e}")
 
+def _shared_dedupe_key(title):
+    if not _SHARED_ALERTS:
+        return ""
+    return shared_alert_state.make_key(shared_alert_state.et_day(), title)
+
+
+def _shared_device_tag():
+    return "ANDROID" if ANDROID_MODE else "PC"
+
+
 def send_discord_claw_alert(title, markdown_content, webhook_url=None):
     """
     通过 Discord Webhook 向专属 Claw 预警频道推送与微信 100% 同步的 Markdown 战报卡片
@@ -1930,6 +1946,11 @@ def send_discord_claw_alert(title, markdown_content, webhook_url=None):
     _claw_blob = (title or "") + "\n" + (markdown_content or "")
     if any(_k in _claw_blob for _k in ("防御因子背离哨", "防御/科技超额背离", "Flight Score", "防御因子背离")):
         print("  [!] 拦截：防御因子卡片禁止通过 Claw/主预警频道发送")
+        return False
+
+    _dedupe_key = "" if webhook_url else _shared_dedupe_key(title)
+    if _dedupe_key and shared_alert_state.is_sent(_dedupe_key):
+        print(f"  [*] 跨设备去重跳过重复告警: {_dedupe_key}")
         return False
 
     # 1. 标题与状态智能着色
@@ -1972,6 +1993,8 @@ def send_discord_claw_alert(title, markdown_content, webhook_url=None):
         with urllib.request.urlopen(req, timeout=10) as resp:
             if resp.status in (200, 204):
                 print(f"  [+] 💬 Discord ClawBot预警镜像通道推送成功: {title}")
+                if _dedupe_key:
+                    shared_alert_state.mark(_dedupe_key, _shared_device_tag())
                 return True
             else:
                 print(f"  [!] 💬 Discord ClawBot预警推送返回状态码: {resp.status}")
@@ -1999,6 +2022,11 @@ def send_discord_defensive_flight_alert(df_alert, live_lookup=None, update_time_
     if not url or wrong_channel:
         print("[!] 防御因子频道未配置 DISCORD_DEFENSIVE_FLIGHT_WEBHOOK_URL，本轮跳过，避免串台。")
         return False
+    _def_key = "" if webhook_url else f"{shared_alert_state.et_day()}:DEFENSIVE_FLIGHT" if _SHARED_ALERTS else ""
+    if _def_key and shared_alert_state.is_sent(_def_key):
+        print("  [*] 跨设备去重跳过重复防御因子告警")
+        return False
+
 
     is_alert = bool(df_alert.get("is_alert", False))
     score = float(df_alert.get("flight_score", 0.0))
@@ -2094,6 +2122,8 @@ def send_discord_defensive_flight_alert(df_alert, live_lookup=None, update_time_
         with urllib.request.urlopen(req, timeout=10) as resp:
             if resp.status in (200, 204):
                 print(f"  [+] 💬 Discord 防御因子背离专属频道推送成功: {score:+.2f}% (is_alert={is_alert})")
+                if _def_key:
+                    shared_alert_state.mark(_def_key, _shared_device_tag())
                 return True
             else:
                 print(f"  [!] 💬 Discord 防御因子推送返回状态码: {resp.status}")
@@ -5250,6 +5280,15 @@ def main():
             print(f"⏱️ [{now_ts}] [第 {round_idx} 轮] 执行全市场 {interval_sec} 秒极速同步与期权扫描...")
             print("-" * 75)
             try:
+                if _SHARED_ALERTS:
+                    if ANDROID_MODE:
+                        shared_alert_state.pull_shared(SCRATCH_DIR)
+                        if shared_alert_state.should_standby("ANDROID"):
+                            print("[Standby] PC 主机在线值班中，本轮仅同步看板并待命")
+                            round_idx += 1
+                            time.sleep(15)
+                            continue
+                    shared_alert_state.heartbeat(_shared_device_tag())
                 if _other_device_is_active():
                     print("[*] another device submitted live data within 50s; skip this round")
                     round_idx += 1
@@ -5323,7 +5362,7 @@ def main():
                     pass
 
                 subprocess.run(
-                    ["git", "add", "index.html", "futu_pro_terminal.html", "predict_radar_5y.html", "data_cache/latest_ai_predictions.json", ".terminal_notifications.json", ".options_cache.json", ".radar_alert_history.json", "macro_radar.html", "stocks_radar.html", ".gitignore"],
+                    ["git", "add", "index.html", "futu_pro_terminal.html", "predict_radar_5y.html", "data_cache/latest_ai_predictions.json", "data_cache/shared_alert_dedupe.json", ".terminal_notifications.json", ".options_cache.json", ".radar_alert_history.json", "macro_radar.html", "stocks_radar.html", ".gitignore"],
                     check=False, creationflags=WIN_NO_WINDOW)
                 subprocess.run(
                     ["git", "commit", "-m", f"⚡ [{'小米平板实盘同步' if ANDROID_MODE else '实盘同步'}] 第 {round_idx} 轮极速刷新 ({now_ts})"],
@@ -5370,9 +5409,15 @@ def main():
     round_count = 1
 
     # 首次启动：先检查距离上一次刷新是否已满 60 秒，或直接执行第一轮
+    _initial_standby = False
+    if ANDROID_MODE and _SHARED_ALERTS:
+        shared_alert_state.pull_shared(SCRATCH_DIR)
+        _initial_standby = shared_alert_state.should_standby("ANDROID")
     last_sync = get_last_sync_time()
     elapsed = time.time() - last_sync
-    if elapsed >= SYNC_INTERVAL or last_sync == 0.0:
+    if _initial_standby:
+        print("[Standby] PC 主机在线，完整引擎首轮仅待命")
+    elif elapsed >= SYNC_INTERVAL or last_sync == 0.0:
         start_ts = now_et_str("%Y-%m-%d %H:%M:%S")
         print(f"\n" + "-" * 75)
         print(f"⏱️ [{start_ts}] 正在执行第 {round_count} 轮全市场数据同步与指标扫描...")

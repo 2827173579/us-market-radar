@@ -53,6 +53,10 @@ def load_env_file(env_path: Optional[str] = None) -> None:
             pass
 
 load_env_file()
+try:
+    import shared_alert_state
+except Exception:
+    shared_alert_state = None
 DISCORD_WEBHOOK_URL = os.environ.get("DISCORD_WEBHOOK_URL", "").strip()
 DISCORD_SENTINEL_WEBHOOK_URL = os.environ.get("DISCORD_SENTINEL_WEBHOOK_URL", "").strip()
 
@@ -1703,6 +1707,10 @@ def run_sentinel_cycle_safe(macro_data=None, stocks_sorted=None, weather_info=No
         if not webhook_url:
             print("[Discord Sentinel] DISCORD_WEBHOOK_URL not configured, 本轮不锁，下轮重试。")
             return
+        _shared_key = f"{shared_alert_state.et_day()}:{slot_id}" if shared_alert_state else ""
+        if _shared_key and shared_alert_state.is_sent(_shared_key):
+            print(f"[Discord Sentinel] 跨设备去重：{slot_id} 已由另一设备发送，本轮跳过")
+            return
 
         print(f"[*] 🚀 [Discord Sentinel] 触发推送: {slot_name}...")
         ok = False
@@ -1786,6 +1794,8 @@ def run_sentinel_cycle_safe(macro_data=None, stocks_sorted=None, weather_info=No
         if scheduled_only and slot_id and slot_id not in ("manual", "manual_force"):
             mark_sentinel_slot_pushed(slot_id, slot_name, date_str=slot_date)
             print(f"[+] ✅ [Discord Sentinel] {slot_name} 成功推送完毕并记录状态锁。")
+        if _shared_key and shared_alert_state:
+            shared_alert_state.mark(_shared_key, "ANDROID" if ("--android" in sys.argv or os.environ.get("TERMUX_VERSION")) else "PC")
     except Exception as e:
         print(f"[!] ⚠️ Discord Sentinel cycle isolated exception: {e}")
     finally:

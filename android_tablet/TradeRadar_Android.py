@@ -893,6 +893,13 @@ def maybe_push_quant_strategy(quotes, weather, now_str):
 
 
 ALERT_STATE_FILE = os.path.join(PROJECT_DIR, ".android_alert_state.json")
+try:
+    _PARENT = os.path.dirname(PROJECT_DIR)
+    if _PARENT not in sys.path:
+        sys.path.insert(0, _PARENT)
+    import shared_alert_state
+except Exception:
+    shared_alert_state = None
 MUTE_SESSIONS = ("CLOSED", "WEEKEND", "NIGHT")
 
 
@@ -971,6 +978,12 @@ def _save_alert_state(d):
 
 
 def _alert_seen(day, ticker, signal):
+    if shared_alert_state is not None:
+        try:
+            if shared_alert_state.is_sent(f"{day}:{ticker}:{signal}"):
+                return True
+        except Exception:
+            pass
     d = _load_alert_state()
     return bool(d.get(day, {}).get(f"{ticker}:{signal}"))
 
@@ -979,6 +992,11 @@ def _alert_mark(day, ticker, signal, now_str):
     d = _load_alert_state()
     d.setdefault(day, {})[f"{ticker}:{signal}"] = now_str
     _save_alert_state(d)
+    if shared_alert_state is not None:
+        try:
+            shared_alert_state.mark(f"{day}:{ticker}:{signal}", "ANDROID")
+        except Exception:
+            pass
 
 
 def _ema(vals, span):
@@ -1087,6 +1105,11 @@ def run_single_scan_cycle(round_idx=1):
     if full_engine_running():
         append_log("[*] full engine 正在运行，轻量告警/扫描整轮停用")
         return
+    if shared_alert_state is not None:
+        shared_alert_state.pull_shared(os.path.dirname(PROJECT_DIR))
+        if shared_alert_state.should_standby("ANDROID"):
+            append_log("[Standby] PC 主机在线值班中，本轮仅同步看板并待命")
+            return
 
     append_log(f"⏱️ [{now_str}] [第 {round_idx} 轮] 执行 60 秒轻量市场扫描...")
     append_log(f"[*] 🕒 当前美东市场时段状态: 【{session_name}】")
@@ -1201,6 +1224,11 @@ def run_single_scan_cycle(round_idx=1):
     evaluate_and_send_defensive_flight(fetched_quotes, now_str, flight=flight, session_code=session_code)
 
     # 5. 自动同步发布到 GitHub Pages (若处于 Git 仓库环境)
+    if shared_alert_state is not None:
+        try:
+            shared_alert_state.heartbeat("ANDROID")
+        except Exception:
+            pass
     sync_to_github_pages(round_idx, now_str, quotes=fetched_quotes, flight=flight, session_name=session_name)
     maybe_push_quant_strategy(fetched_quotes, weather, now_str)
 
@@ -1421,7 +1449,8 @@ def sync_to_github_pages(round_idx: int, now_str: str, quotes: dict = None, flig
             "predict_radar_5y.html",
             "macro_radar.html",
             "stocks_radar.html",
-            "data_cache/latest_ai_predictions.json"
+            "data_cache/latest_ai_predictions.json",
+            "data_cache/shared_alert_dedupe.json"
         ]
         for f in files_to_add:
             if os.path.exists(os.path.join(work_dir, f)):
