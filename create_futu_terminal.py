@@ -2412,7 +2412,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 else if (filter === "能源电力" && (s.cat === "能源电力" || s.cat === "核能电力")) match = true;
                 else if (filter === "太空商业" && s.cat === "太空商业") match = true;
                 else if (filter === "物理与安全" && (s.cat === "物理AI" || s.cat === "AI安全" || s.cat === "价值蓝筹" || s.cat === "金融蓝筹" || s.cat === "专属风控")) match = true;
-                else if (filter === "数字资产" && (s.cat === "数字资产" || t === "MSTR" || t === "BTC-USD")) match = true;
+                else if (filter === "数字资产" && (s.cat === "数字资产" || s.ticker === "MSTR" || s.ticker === "BTC-USD")) match = true;
                 else if (filter === "生物医药" && (s.cat === "生物医药" || s.cat === "医药健康")) match = true;
                 else if (filter === "价值消费" && (s.cat === "价值蓝筹" || s.cat === "可选消费" || s.cat === "金融科技" || s.cat === "金融蓝筹")) match = true;
                 else if (s.cat === filter) match = true;
