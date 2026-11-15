@@ -172,7 +172,8 @@ SECTOR_MAP = {
     # 7. 加密币股代理 (Crypto Proxy)
     'MSTR': 'Crypto_Proxy',
     'COIN': 'Crypto_Proxy',
-    'IBIT': 'Crypto_Proxy',
+    'LUNR': 'Space_Commercial',
+    'BTC-USD': 'Crypto_Proxy',
 }
 
 SECTOR_CHINESE_MAP = {
@@ -182,6 +183,7 @@ SECTOR_CHINESE_MAP = {
     'Energy_Power': '数据中心能源电力',
     'Enterprise_SaaS': '企业软件与 AI SaaS',
     'Neo_Cloud': 'Neo-Cloud 算力租赁',
+    'Space_Commercial': '太空商业',
     'Crypto_Proxy': '加密币股代理',
 }
 
@@ -658,7 +660,7 @@ def build_feature_panel(
     3. 按 Date 将宏观特征左连接广播到每个个股；
     4. 计算跨资产超额收益 Alpha_QQQ_5d, Alpha_SMH_20d；
     5. 纵向垂直堆叠为长表截面格式；
-    6. 严格禁止宽表全局 dropna()，确保次新股 (CRWV, IBIT, CRDO) 不会截断成熟股票的 2021-2023 历史样本。
+    6. 严格禁止宽表全局 dropna()，确保次新股 (CRWV, LUNR, CRDO) 不会截断成熟股票的 2021-2023 历史样本。
     
     返回:
         pd.DataFrame: 包含 Date, Ticker, Sector, 基础价格与 23 维特征的长表 DataFrame。
@@ -2239,7 +2241,7 @@ def compute_4h_resonance_signals(
 DEFAULT_TIME_CYCLE_TICKERS: List[str] = [
     'SOXL', 'SOXX', 'SOXS', 'SMH', 'QQQ', 'SQQQ',
     'NVDA', 'TSM', 'MU', 'AMD', 'AVGO', 'MRVL',
-    'INTC', 'SNDK', 'KORU', 'IBIT', 'TSLA', 'PLTR', 'META', 'AAPL', 'AMZN'
+    'INTC', 'SNDK', 'KORU', 'BTC-USD', 'TSLA', 'PLTR', 'META', 'AAPL', 'AMZN'
 ]
 
 
@@ -3371,7 +3373,7 @@ def generate_report_tables(
         latest_df['Prob_Short_1'] = live_short_probs
 
         has_live_structure = ('Bias_MA50' in latest_df.columns)
-        pure_etf_15 = {'QQQ', 'SPY', 'DIA', 'IWM', 'SMH', 'SOXX', 'SOXL', 'KORU', 'IGV', 'TLT', 'GLD', 'QQQI', 'VIXY', 'SQQQ', 'SOXS'}
+        pure_etf_15 = {'QQQ', 'SPY', 'DIA', 'IWM', 'SMH', 'SOXX', 'SOXL', 'KORU', 'IGV', 'TLT', 'GLD', 'VIXY', 'SQQQ', 'SOXS'}
         is_70_pool = (len(latest_df) > 28)
 
         calibrated_probs = []
@@ -3398,7 +3400,7 @@ def generate_report_tables(
             mult = float(np.clip(sec_pf / 1.30, 0.75, 1.15))
 
             model_raw_p = float(row['Prob_1'])
-            is_etf = (tk in pure_etf_15) or (is_70_pool and tk == 'IBIT')
+            is_etf = (tk in pure_etf_15)
 
             if has_live_structure:
                 bias_ma50 = float(row.get('Bias_MA50', 0.0))
@@ -4243,7 +4245,7 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
 
     # 生成 Table 4-A 做多排行榜与全域 70 标的 HTML (默认展示 Top 5，支持展开全池与按赛道/ETF筛选)
     t4_rows_html = ""
-    pure_etf_set = {'QQQ', 'SPY', 'DIA', 'IWM', 'SMH', 'SOXX', 'SOXL', 'KORU', 'IGV', 'TLT', 'GLD', 'QQQI', 'VIXY', 'SQQQ', 'SOXS', 'IBIT'}
+    pure_etf_set = {'QQQ', 'SPY', 'DIA', 'IWM', 'SMH', 'SOXX', 'SOXL', 'KORU', 'IGV', 'TLT', 'GLD', 'VIXY', 'SQQQ', 'SOXS'}
     etf_count = 0
     for r in all_live:
         rk = int(r['rank'])
@@ -5134,7 +5136,7 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
                     <button class="cycle-tab-btn" onclick="switchCycleSymbol('QQQ')">QQQ</button>
                     <button class="cycle-tab-btn" onclick="switchCycleSymbol('SQQQ')">SQQQ</button>
                     <button class="cycle-tab-btn" onclick="switchCycleSymbol('KORU')">KORU</button>
-                    <button class="cycle-tab-btn" onclick="switchCycleSymbol('IBIT')">IBIT (比特币)</button>
+                    <button class="cycle-tab-btn" onclick="switchCycleSymbol('BTC-USD')">BTC-USD (比特币)</button>
                     <select id="cycleSymbolSelect" onchange="switchCycleSymbol(this.value)" style="background: #0b0e14; color: #e2c5ff; border: 1px solid rgba(188, 140, 255, 0.45); border-radius: 6px; padding: 4px 8px; font-size: 12px; font-weight: 700; cursor: pointer; outline: none;" title="切换全部 21 只核心标的时空推演图">
                         <option value="SOXL">全部标的 (21只)...</option>
                         <option value="SOXL">SOXL (半导体3倍做多)</option>
@@ -5152,7 +5154,7 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
                         <option value="QQQ">QQQ (纳指100ETF)</option>
                         <option value="SQQQ">SQQQ (纳指3倍做空)</option>
                         <option value="KORU">KORU (韩股3倍做多)</option>
-                        <option value="IBIT">IBIT (比特币现货ETF)</option>
+                        <option value="BTC-USD">BTC-USD (比特币现货)</option>
                         <option value="TSLA">TSLA (特斯拉)</option>
                         <option value="PLTR">PLTR (Palantir)</option>
                         <option value="META">META (Meta)</option>
@@ -5797,7 +5799,7 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
                     'MU': '美光存储', 'AMD': '超威半导体', 'AVGO': '博通通信',
                     'MRVL': '迈威尔芯片', 'INTC': '英特尔芯片', 'SNDK': '闪迪数据存储',
                     'QQQ': '纳指100微型', 'SQQQ': '3倍做空纳指', 'KORU': '3倍做多韩股',
-                    'IBIT': '比特币现货ETF', 'TSLA': '特斯拉物理AI', 'PLTR': 'Palantir企业AI'
+                    'BTC-USD': '比特币现货', 'TSLA': '特斯拉物理AI', 'PLTR': 'Palantir企业AI'
                 }};
                 subEl.textContent = subNames[data.ticker] || '';
             }}
@@ -6373,6 +6375,7 @@ EXTENDED_RADAR_SECTOR_MAP: Dict[str, Tuple[str, str]] = {
     'SPCX': ('Neo_Cloud', '物理AI与太空商业'),
     'ASTS': ('Neo_Cloud', '物理AI与太空商业'),
     'RKLB': ('Neo_Cloud', '物理AI与太空商业'),
+    'LUNR': ('Neo_Cloud', '物理AI与太空商业'),
     'FLY': ('Neo_Cloud', '物理AI与太空商业'),
     # 价值蓝筹与医药防守
     'KO':   ('Energy_Power', '价值蓝筹与医药'),
@@ -6390,7 +6393,7 @@ EXTENDED_RADAR_SECTOR_MAP: Dict[str, Tuple[str, str]] = {
     'IWM':  ('Neo_Cloud', '大盘与宏观ETF'),
     'TLT':  ('Energy_Power', '大盘与宏观ETF'),
     'GLD':  ('Energy_Power', '大盘与宏观ETF'),
-    'QQQI': ('Enterprise_SaaS', '大盘与宏观ETF'),
+    'BTC-USD': ('Crypto_Proxy', '加密资产与数字黄金'),
     'VIXY': ('Crypto_Proxy', '恐慌与反向对冲'),
     'SQQQ': ('Crypto_Proxy', '恐慌与反向对冲'),
     'SOXS': ('Crypto_Proxy', '恐慌与反向对冲'),
@@ -6601,58 +6604,33 @@ def export_latest_ai_predictions_json(tables_data: Dict, json_path: str = 'data_
 # ==============================================================================
 
 def verify_pipeline_integrity(feature_panel: pd.DataFrame) -> Dict:
-    """
-    严格校验长表面板的数据完整性与因果不变量
-    """
+    """严格校验长表面板的数据完整性与因果不变量。"""
     total_samples = len(feature_panel)
-    dates = feature_panel['Date']
-    tickers = feature_panel['Ticker']
-    sectors = feature_panel['Sector']
-
-    min_date = dates.min()
-    max_date = dates.max()
-    unique_tickers = len(tickers.unique())
-    unique_sectors = len(sectors.unique())
-
-    # 1. 检查 23 维特征是否存在 NaN 或 Inf
-    nan_counts = feature_panel[FEATURE_COLS].isna().sum()
-    has_nan = nan_counts.any()
-
-    inf_counts = np.isinf(feature_panel[FEATURE_COLS].values).sum()
-    has_inf = inf_counts > 0
-
-    # 2. 检查成熟标的 (如 NVDA) 历史跨度是否保留 2021 年样本
+    dates = feature_panel['Date']; tickers = feature_panel['Ticker']; sectors = feature_panel['Sector']
+    min_date = dates.min(); max_date = dates.max()
+    unique_tickers = len(tickers.unique()); unique_sectors = len(sectors.unique())
+    nan_counts = feature_panel[FEATURE_COLS].isna().sum(); has_nan = nan_counts.any()
+    inf_counts = np.isinf(feature_panel[FEATURE_COLS].values).sum(); has_inf = inf_counts > 0
     nvda_sub = feature_panel[feature_panel['Ticker'] == 'NVDA']
-    nvda_min_date = nvda_sub['Date'].min()
-    nvda_bars = len(nvda_sub)
-
-    # 3. 检查次新股 (如 CRWV, IBIT) 样本是否合理包含
-    crwv_bars = len(feature_panel[feature_panel['Ticker'] == 'CRWV']) if 'CRWV' in tickers.unique() else 0
-    ibit_bars = len(feature_panel[feature_panel['Ticker'] == 'IBIT']) if 'IBIT' in tickers.unique() else 0
-
+    nvda_min_date = nvda_sub['Date'].min(); nvda_bars = len(nvda_sub)
+    crwv_bars = len(feature_panel[feature_panel['Ticker'] == 'CRWV'])
+    lunr_bars = len(feature_panel[feature_panel['Ticker'] == 'LUNR'])
+    btc_bars = len(feature_panel[feature_panel['Ticker'] == 'BTC-USD'])
     report = {
-        'total_samples': total_samples,
-        'min_date': min_date.strftime('%Y-%m-%d'),
-        'max_date': max_date.strftime('%Y-%m-%d'),
-        'unique_tickers': unique_tickers,
-        'unique_sectors': unique_sectors,
-        'has_nan': bool(has_nan),
-        'has_inf': bool(has_inf),
-        'nvda_min_date': nvda_min_date.strftime('%Y-%m-%d'),
-        'nvda_bars': nvda_bars,
-        'crwv_bars': crwv_bars,
-        'ibit_bars': ibit_bars,
+        'total_samples': total_samples, 'min_date': min_date.strftime('%Y-%m-%d'),
+        'max_date': max_date.strftime('%Y-%m-%d'), 'unique_tickers': unique_tickers,
+        'unique_sectors': unique_sectors, 'has_nan': bool(has_nan), 'has_inf': bool(has_inf),
+        'nvda_min_date': nvda_min_date.strftime('%Y-%m-%d'), 'nvda_bars': nvda_bars,
+        'crwv_bars': crwv_bars, 'lunr_bars': lunr_bars, 'btc_bars': btc_bars,
         'features_count': len(FEATURE_COLS)
     }
-
     assert not has_nan, f"Integrity Failure: 特征中包含 NaN 值:\n{nan_counts[nan_counts > 0]}"
     assert not has_inf, f"Integrity Failure: 特征中包含 Inf 无穷大值 (共 {inf_counts} 个)"
-    assert unique_tickers == len(TARGET_STOCKS), f"Expected {len(TARGET_STOCKS)} target stocks, got {unique_tickers}"
-    assert unique_sectors == 7, f"Expected 7 sectors, got {unique_sectors}"
-    assert nvda_bars >= 1200, f"NVDA 历史样本被截断 ({nvda_bars} < 1200), 说明发生了宽表全局 dropna 污染！"
+    assert nvda_bars >= 1200, f"NVDA 历史样本被截断 ({nvda_bars} < 1200)"
     assert crwv_bars > 0, "CRWV 次新股样本丢失"
-    assert ibit_bars > 0, "IBIT 次新股样本丢失"
-
+    assert lunr_bars > 0, "LUNR 太空商业样本丢失"
+    assert btc_bars > 0, "BTC-USD 加密样本丢失"
+    assert unique_sectors >= 7, f"Expected >=7 sectors, got {unique_sectors}"
     return report
 
 

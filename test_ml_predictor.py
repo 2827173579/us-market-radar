@@ -13,7 +13,7 @@ Authoritative References:
 Structural Invariant Test Coverage:
 1. Feature Causality & No Lookahead (shift(-k) AST scan, subseries truncation invariance max|diff| < 10^-7)
 2. Purge & Embargo Isolation (min 5 trading days gap, no train label leakage into test window)
-3. Subsample & Secondary IPO Preservation (CRWV/IBIT/CRDO do not truncate mature stock history, no global dropna)
+3. Subsample & Secondary IPO Preservation (CRWV/LUNR/CRDO do not truncate mature stock history, no global dropna)
 4. Extreme Market Resilience (zero volume, zero price range, -50% overnight gap down, zero unhandled NaN/Inf, valid probabilities [0, 1])
 5. Triple Barrier Resolution Logic (NEXT_OPEN entry, dynamic ATR barriers, Upper hit -> 1, Lower hit -> 0, Timeout -> 0, Same-day collision -> 0)
 6. Tail Isolation for Live Inference (latest 5 trading days excluded from train/test, reserved for live pool)
@@ -862,7 +862,7 @@ class TestPurgeEmbargoIsolation(unittest.TestCase):
 class TestSubsampleAndIPOPreservation(unittest.TestCase):
     """
     Invariant 3: Subsample & Secondary IPO Preservation
-    - Validates secondary IPOs (CRWV, IBIT, CRDO) do NOT truncate 2021-2023 history of mature stocks.
+    - Validates secondary IPOs (CRWV, LUNR, CRDO) do NOT truncate 2021-2023 history of mature stocks.
     - Asserts global dropna() is never invoked across panel columns.
     """
 

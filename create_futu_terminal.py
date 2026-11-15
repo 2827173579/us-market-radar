@@ -115,7 +115,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                     _panel_last_close = _pdf.sort_values("Date").groupby("Ticker")["Close"].last().to_dict()
             except Exception:
                 _panel_last_close = {}
-            pure_etf_set = {"QQQ", "SPY", "DIA", "IWM", "SMH", "SOXX", "SOXL", "KORU", "IGV", "TLT", "GLD", "QQQI", "VIXY", "SQQQ", "SOXS", "IBIT"}
+            pure_etf_set = {"QQQ", "SPY", "DIA", "IWM", "SMH", "SOXX", "SOXL", "KORU", "IGV", "TLT", "GLD", "VIXY", "SQQQ", "SOXS"}
             offensive_lev_etfs = {"SOXL", "KORU"}
             if all_preds and live_lookup:
                 for item in all_preds:
@@ -2205,7 +2205,6 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             "IGV": "AMEX:IGV",
             "TLT": "NASDAQ:TLT",
             "GLD": "AMEX:GLD",
-            "QQQI": "NASDAQ:QQQI",
             "VIXY": "AMEX:VIXY",
             "SQQQ": "NASDAQ:SQQQ",
             "SOXS": "AMEX:SOXS",
@@ -2237,6 +2236,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             "SPCX": "NASDAQ:SPCX",
             "ASTS": "NASDAQ:ASTS",
             "RKLB": "NASDAQ:RKLB",
+            "LUNR": "NASDAQ:LUNR",
             "FLY": "NASDAQ:FLY",
             "KO": "NYSE:KO",
             "AXP": "NYSE:AXP",
@@ -2251,6 +2251,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             "FPS": "NYSE:FPS",
             "CRWD": "NASDAQ:CRWD",
             "MSTR": "NASDAQ:MSTR",
+            "BTC-USD": "COINBASE:BTCUSD",
             "COIN": "NASDAQ:COIN",
             "WDC": "NASDAQ:WDC",
             "SNDK": "NASDAQ:SNDK",
@@ -2264,7 +2265,6 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             "NKE": "NYSE:NKE",
             "V": "NYSE:V",
             "PEP": "NASDAQ:PEP",
-            "IBIT": "NASDAQ:IBIT"
         }};
 
         let currentTicker = "INTC";
@@ -2412,7 +2412,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 else if (filter === "能源电力" && (s.cat === "能源电力" || s.cat === "核能电力")) match = true;
                 else if (filter === "太空商业" && s.cat === "太空商业") match = true;
                 else if (filter === "物理与安全" && (s.cat === "物理AI" || s.cat === "AI安全" || s.cat === "价值蓝筹" || s.cat === "金融蓝筹" || s.cat === "专属风控")) match = true;
-                else if (filter === "数字资产" && (s.cat === "数字资产" || t === "MSTR" || t === "IBIT")) match = true;
+                else if (filter === "数字资产" && (s.cat === "数字资产" || t === "MSTR" || t === "BTC-USD")) match = true;
                 else if (filter === "生物医药" && (s.cat === "生物医药" || s.cat === "医药健康")) match = true;
                 else if (filter === "价值消费" && (s.cat === "价值蓝筹" || s.cat === "可选消费" || s.cat === "金融科技" || s.cat === "金融蓝筹")) match = true;
                 else if (s.cat === filter) match = true;
@@ -2433,8 +2433,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 else if (filter === "stop" && (m.is_stop || m.is_deep_pullback || (m.signal && (m.signal.includes("破位") || m.signal.includes("跌破") || m.signal.includes("回踩"))))) match = true;
                 else if (filter === "芯片与半导体" && (t === "SMH" || t === "SOXX" || t === "SOXL" || t === "SOXS" || t === "KORU")) match = true;
                 else if (filter === "云与软件" && (t === "QQQ" || t === "IGV" || t === "SQQQ")) match = true;
-                else if (filter === "物理与安全" && (t === "IBIT")) match = true;
-                else if (filter === "数字资产" && (t === "IBIT" || m.cat === "数字资产")) match = true;
+                else if (filter === "数字资产" && (t === "BTC-USD" || m.cat === "数字资产")) match = true;
 
                 if (match) {{
                     items.push({{

@@ -68,11 +68,9 @@ MONITORED_TARGETS = {
         "IGV":  {"name": "软件科技ETF", "sub": "SaaS与AI企业级应用", "cat": "云与软件"},
         "TLT":  {"name": "20年+美债", "sub": "长端利率与避险情绪", "cat": "利率债券"},
         "GLD":  {"name": "黄金现货ETF", "sub": "抗通胀与终极地缘避险", "cat": "大宗商品"},
-        "QQQI": {"name": "纳指高收益增强", "sub": "备兑看涨防守金流", "cat": "防守现金流"},
         "VIXY": {"name": "短期恐慌指数", "sub": "尾部黑天鹅对冲工具", "cat": "黑天鹅对冲"},
         "SQQQ": {"name": "3倍做空纳指", "sub": "纳指100三倍反向对冲", "cat": "反向对冲"},
         "SOXS": {"name": "3倍做空半导体", "sub": "费半半导体三倍反向对冲", "cat": "反向对冲"},
-        "IBIT": {"name": "比特币现货ETF", "sub": "贝莱德现货ETF·数字黄金与机构杠杆", "cat": "数字资产"}
     },
     "STOCKS": {
         # 1. 底层算力与半导体设备
@@ -115,6 +113,7 @@ MONITORED_TARGETS = {
         "ASTS":  {"name": "AST SpaceMobile", "sub": "全球手机直连卫星宽带网络", "cat": "太空商业", "cost": 0.0, "shares": 0.0, "base_val": 26.0},
         "RKLB":  {"name": "Rocket Lab", "sub": "中小型火箭发射与卫星制造", "cat": "太空商业", "cost": 0.0, "shares": 0.0, "base_val": 19.5},
         "FLY":   {"name": "Firefly Aerospace", "sub": "小型运载火箭与太空国防任务", "cat": "太空商业", "cost": 0.0, "shares": 0.0, "base_val": 0.0},
+        "LUNR":  {"name": "Intuitive Machines", "sub": "月球着陆器与深空通信基建", "cat": "太空商业", "cost": 0.0, "shares": 0.0, "base_val": 0.0},
         
         # 7. 价值蓝筹与核心风控仓位
         "KO":    {"name": "可口可乐", "sub": "全球消费防御与抗通胀现金奶牛", "cat": "价值蓝筹", "cost": 0.0, "shares": 0.0, "base_val": 68.0},
@@ -144,6 +143,7 @@ MONITORED_TARGETS = {
         # 12. 零信任网络安全与全球流动性杠杆
         "CRWD":  {"name": "CrowdStrike", "sub": "AI驱动SecOps与零信任终端安全龙头", "cat": "AI安全", "cost": 0.0, "shares": 0.0, "base_val": 220.0},
         "MSTR":  {"name": "微策略", "sub": "比特币储备国库与全球流动性杠杆", "cat": "数字资产", "cost": 0.0, "shares": 0.0, "base_val": 130.0},
+        "BTC-USD": {"name": "比特币现货", "sub": "全球数字黄金与加密风向标", "cat": "数字资产", "cost": 0.0, "shares": 0.0, "base_val": 0.0},
         "COIN":  {"name": "Coinbase", "sub": "北美合规加密资产交易所与链上托管核心", "cat": "数字资产", "cost": 0.0, "shares": 0.0, "base_val": 180.0},
 
         # 13. 企业级算力云与资本载体
@@ -619,6 +619,30 @@ def fetch_single_finnhub_quote(symbol, api_key):
             pass
     return symbol, None
 
+def fetch_yahoo_crypto_quote(symbol="BTC-USD"):
+    """BTC-USD 绕过 Finnhub，直接用 Yahoo 5m/1d 数据。"""
+    try:
+        tk = yf.Ticker(symbol)
+        h = tk.history(period="2d", interval="5m", prepost=True)
+        if h is None or h.empty:
+            return {}
+        closes = h["Close"].dropna()
+        if closes.empty:
+            return {}
+        last = float(closes.iloc[-1])
+        prev = float(tk.fast_info.get("previous_close") or 0) if hasattr(tk, "fast_info") else 0.0
+        if prev <= 0:
+            daily = tk.history(period="5d", interval="1d")
+            dc = daily["Close"].dropna()
+            prev = float(dc.iloc[-2]) if len(dc) >= 2 else last
+        change = last - prev
+        return {"last": last, "change": change, "pct_change": (change / prev * 100.0) if prev > 0 else 0.0,
+                "high": float(h["High"].max()), "low": float(h["Low"].min()), "prev_close": prev, "source": "yahoo"}
+    except Exception as e:
+        print(f"[!] BTC-USD Yahoo quote failed: {e}")
+        return {}
+
+
 def fetch_finnhub_quotes_batch(tickers, api_key):
     """限额并发抓取 (max_workers=2)，由 FinnhubRateLimiter 严控在 50 次/分安全红线内"""
     if not api_key:
@@ -971,7 +995,7 @@ def fetch_options_anomaly_map(focus_tickers, spot_map=None):
     except Exception:
         pass
 
-    needed = [t for t in focus_tickers if t not in cached_map]
+    needed = [t for t in focus_tickers if t != "BTC-USD" and t not in cached_map]
     if needed:
         print(f"[*] ⚡ 正在同步 {len(needed)} 只标的【机构期权主力资金流、PCR & 预期波动区间】(免额度·6线程并发)...")
         try:
@@ -1407,7 +1431,7 @@ def load_ai_levels_map():
 
 
 _BOUNCE_STOP_BROAD_1X = frozenset({
-    "QQQ", "QQQM", "SPY", "VOO", "IVV", "IWM", "DIA", "QQQI",
+    "QQQ", "QQQM", "SPY", "VOO", "IVV", "IWM", "DIA",
     "TLT", "GLD", "KO", "PEP", "MCD", "SCHD", "V", "AXP",
 })
 _BOUNCE_STOP_SECTOR_1X = frozenset({"SOXX", "SMH", "IGV", "XLK"})
@@ -4478,8 +4502,12 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
     # 2. 并发秒级拉取 Finnhub 实时报价 (max_workers=2, 稳态间隔防 429)
     # 免费额度 60次/分。全标的 70 只 (16 ETF + 54 股票)，优先保障 16 只宏观行业 ETF + 44 只核心科技股；10 只低波防守股走 Yahoo 5m RTH 实时穿透
     DEFENSIVE_11_TICKERS = {"KO", "PEP", "MCD", "AXP", "V", "CCXI", "LLY", "MRNA", "NKE", "HPE", "FPS"}
-    finnhub_tickers = [tk for tk in all_tickers if tk not in DEFENSIVE_11_TICKERS or (user_portfolio and tk in user_portfolio)][:60]
+    finnhub_tickers = [tk for tk in all_tickers if tk != "BTC-USD" and (tk not in DEFENSIVE_11_TICKERS or (user_portfolio and tk in user_portfolio))][:60]
     realtime_quotes = fetch_finnhub_quotes_batch(finnhub_tickers, FINNHUB_API_KEY) if FINNHUB_API_KEY else {}
+    if "BTC-USD" in all_tickers:
+        _btc_q = fetch_yahoo_crypto_quote("BTC-USD")
+        if _btc_q:
+            realtime_quotes["BTC-USD"] = _btc_q
 
     # 2.5 批量拉取 5 分钟级日内指标 (VWAP / 5m RSI / 5m RVOL) 与盘前盘后最新成交价
     print(f"[*] 📊 正在同步 {len(all_tickers)} 只标的【5分钟级 VWAP/RSI/量比 日内择时指标 & 盘前盘后最新报价】...")

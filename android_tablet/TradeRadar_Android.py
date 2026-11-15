@@ -253,7 +253,7 @@ def send_discord(title: str, description: str, color: int = 0x00e676, fields: li
 # ------------------------------------------------------------------------------
 ETF_TICKERS = [
     "QQQ", "SPY", "DIA", "IWM", "SMH", "SOXX", "SOXL", "KORU",
-    "IGV", "TLT", "GLD", "QQQI", "VIXY", "SQQQ", "SOXS", "IBIT"
+    "IGV", "TLT", "GLD", "VIXY", "SQQQ", "SOXS"
 ]
 
 CORE_STOCKS = [
@@ -262,7 +262,7 @@ CORE_STOCKS = [
     "SKHY", "HPE", "AMAT", "ORCL", "GOOGL", "ASML", "BE", "PLTR", "MU", "VRT",
     "META", "TSM", "VST", "COHR", "SPCX", "AXP", "CRWD", "MSFT", "QCOM", "NKE",
     "CEG", "V", "RKLB", "KO", "TSLA", "AMZN", "MCD", "PEP", "AAPL", "AVGO",
-    "AMD", "LLY", "MRNA", "FLY"
+    "AMD", "LLY", "MRNA", "FLY", "BTC-USD", "LUNR"
 ]
 
 FULL_70_POOL = list(dict.fromkeys(ETF_TICKERS + CORE_STOCKS))
@@ -296,6 +296,40 @@ def _yahoo_5m_closes(symbol: str):
             continue
         rows.append((int(epoch), float(close)))
     return rows
+
+def _fetch_yahoo_btc_quote(symbol="BTC-USD"):
+    try:
+        url = "https://query1.finance.yahoo.com/v8/finance/chart/" + urllib.parse.quote(symbol) + "?interval=5m&range=1d&includePrePost=true"
+        req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+        with urllib.request.urlopen(req, timeout=12) as resp:
+            data = json.loads(resp.read().decode("utf-8"))
+        res = (data.get("chart") or {}).get("result") or []
+        if not res:
+            return {}
+        q = ((res[0].get("indicators") or {}).get("quote") or [{}])[0]
+        closes = [x for x in (q.get("close") or []) if x is not None]
+        highs = [x for x in (q.get("high") or []) if x is not None]
+        lows = [x for x in (q.get("low") or []) if x is not None]
+        if not closes:
+            return {}
+        last = float(closes[-1])
+        prev = float(closes[0]) if closes else last
+        # previous daily close
+        url2 = "https://query1.finance.yahoo.com/v8/finance/chart/" + urllib.parse.quote(symbol) + "?interval=1d&range=5d"
+        with urllib.request.urlopen(urllib.request.Request(url2, headers={"User-Agent": "Mozilla/5.0"}), timeout=12) as resp2:
+            d2 = json.loads(resp2.read().decode("utf-8"))
+        r2 = (d2.get("chart") or {}).get("result") or []
+        if r2:
+            c2 = [x for x in ((((r2[0].get("indicators") or {}).get("quote") or [{}])[0]).get("close") or []) if x is not None]
+            if len(c2) >= 2:
+                prev = float(c2[-2])
+        change = last - prev
+        return {"last": last, "change": change, "pct_change": (change/prev*100.0) if prev > 0 else 0.0,
+                "high": max(highs) if highs else last, "low": min(lows) if lows else last, "prev_close": prev, "source": "yahoo"}
+    except Exception as e:
+        append_log(f"[!] BTC-USD Yahoo quote failed: {e}")
+        return {}
+
 
 def _flight_pack(score, def_mean, off_mean, session, source, components, skip_reason=""):
     is_alert = bool((score >= 2.2 and off_mean <= 0.0) or (score >= 1.8 and off_mean <= -1.0))
@@ -917,7 +951,7 @@ def _load_watchlist():
                     return [str(x).upper() for x in v]
         except Exception:
             pass
-    return ["NVDA", "META", "TSM", "AMD", "MRVL", "AAOI", "AXTI", "BE", "SKHY", "LITE", "SPCX", "INTC", "MSTR", "SNDK", "QQQ", "SOXL", "SOXS", "KORU", "QCOM", "IBIT"]
+    return ["NVDA", "META", "TSM", "AMD", "MRVL", "AAOI", "AXTI", "BE", "SKHY", "LITE", "SPCX", "INTC", "MSTR", "SNDK", "QQQ", "SOXL", "SOXS", "KORU", "QCOM", "BTC-USD", "LUNR"]
 
 
 def _load_push_universe():
@@ -1135,7 +1169,7 @@ def run_single_scan_cycle(round_idx=1):
             except Exception:
                 pass
     if not watchlist:
-        watchlist = ["NVDA", "META", "TSM", "AMD", "MRVL", "AAOI", "AXTI", "BE", "SKHY", "LITE", "SPCX", "INTC", "MSTR", "SNDK", "QQQ", "SOXL", "SOXS", "KORU", "QCOM", "IBIT"]
+        watchlist = ["NVDA", "META", "TSM", "AMD", "MRVL", "AAOI", "AXTI", "BE", "SKHY", "LITE", "SPCX", "INTC", "MSTR", "SNDK", "QQQ", "SOXL", "SOXS", "KORU", "QCOM", "BTC-USD", "LUNR"]
     alerts_muted = session_code in MUTE_SESSIONS
 
     # 2. 双线程令牌桶平稳并发拉取 70 只全量标的池 (16 只 ETF + 54 只个股)
@@ -1144,7 +1178,11 @@ def run_single_scan_cycle(round_idx=1):
     append_log(f"[*] 🚀 启动双线程令牌桶频控引擎 (workers=2, bucket=50/min, min_int=1.05s)...")
     append_log(f"[*] 📊 正在平稳抓取 {len(scan_pool)} 只全量标的 (含 16 只 ETF + 54 只核心股) 实时报价...")
     
-    fetched_quotes = fetch_finnhub_quotes_batch(scan_pool, FINNHUB_API_KEY) if FINNHUB_API_KEY else {}
+    fetched_quotes = fetch_finnhub_quotes_batch([x for x in scan_pool if x != "BTC-USD"], FINNHUB_API_KEY) if FINNHUB_API_KEY else {}
+    if "BTC-USD" in scan_pool:
+        _bq = _fetch_yahoo_btc_quote("BTC-USD")
+        if _bq:
+            fetched_quotes["BTC-USD"] = _bq
     if session_code in ("PRE", "PRE_MARKET"):
         _pre_quotes = fetch_yahoo_premarket_quotes(scan_pool)
         for _tk, _e in _pre_quotes.items():

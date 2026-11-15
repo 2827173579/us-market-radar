@@ -71,7 +71,7 @@ SENTINEL_UNIVERSE_TIERS: Dict[str, List[str]] = {
     "TIER_1_3X": ["SOXL", "SOXS", "TQQQ", "SQQQ", "KORU"],
     "TIER_2_CORE": [
         "SPY", "MRVL", "LITE", "BE", "PLTR", "MSFT", "NOW", "COHR", "CRDO", "NBIS", "APLD", "MRNA",
-        "AAOI", "AXTI", "ASTS", "RKLB", "FLY", "SPCX",
+        "AAOI", "AXTI", "ASTS", "RKLB", "FLY", "LUNR", "SPCX",
     ],
     "TIER_3_CHIPS": [
         "SOXX", "SMH", "NVDA", "AVGO", "TSM", "ASML", "AMD", "INTC", "MU", "STX", "WDC", "SNDK",
@@ -79,11 +79,11 @@ SENTINEL_UNIVERSE_TIERS: Dict[str, List[str]] = {
     ],
     "TIER_4_TECH": [
         "QQQ", "BTC-USD", "MSTR", "COIN", "AAPL", "GOOGL", "AMZN", "META", "TSLA", "ORCL", "DELL", "CRWV",
-        "IBIT", "VRT", "HPE", "CRWD", "CCXI",
+        "VRT", "HPE", "CRWD", "CCXI",
     ],
     "TIER_5_DEFENSE": [
         "SCHD", "KO", "GLD", "VST", "CEG", "TLT", "VIXY",
-        "DIA", "IWM", "IGV", "QQQI", "MCD", "PEP", "LLY", "NKE", "AXP", "OKLO", "FPS",
+        "DIA", "IWM", "IGV", "MCD", "PEP", "LLY", "NKE", "AXP", "OKLO", "FPS",
     ],
 }
 
