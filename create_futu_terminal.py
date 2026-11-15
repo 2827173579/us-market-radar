@@ -2258,7 +2258,6 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             "SKHY": "NASDAQ:SKHY",
             "STX": "NASDAQ:STX",
             "ORCL": "NYSE:ORCL",
-            "CCXI": "NASDAQ:CCXI",
             "LLY": "NYSE:LLY",
             "MRNA": "NASDAQ:MRNA",
             "MCD": "NYSE:MCD",

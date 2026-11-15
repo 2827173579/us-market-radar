@@ -79,7 +79,7 @@ SENTINEL_UNIVERSE_TIERS: Dict[str, List[str]] = {
     ],
     "TIER_4_TECH": [
         "QQQ", "BTC-USD", "MSTR", "COIN", "AAPL", "GOOGL", "AMZN", "META", "TSLA", "ORCL", "DELL", "CRWV",
-        "VRT", "HPE", "CRWD", "CCXI",
+        "VRT", "HPE", "CRWD",
     ],
     "TIER_5_DEFENSE": [
         "SCHD", "KO", "GLD", "VST", "CEG", "TLT", "VIXY",

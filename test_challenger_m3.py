@@ -183,14 +183,14 @@ class TestFutuProTerminalDomIntegrity(unittest.TestCase):
         self.assertIn('黄金坑支撑带', self.html, "Golden-pit support band row missing")
 
     def test_tv_symbol_map_completeness(self):
-        """Verify SYMBOL_MAP contains all 71 tickers with correct exchanges."""
+        """Verify SYMBOL_MAP contains all 70 tickers with correct exchanges."""
         # Extract SYMBOL_MAP from script
         map_match = re.search(r'const SYMBOL_MAP\s*=\s*(\{.*?\});', self.html, re.DOTALL)
         self.assertIsNotNone(map_match, "SYMBOL_MAP JavaScript object not found")
         map_json_str = map_match.group(1)
         # Parse map object
         symbol_map = json.loads(re.sub(r',\s*}', '}', map_json_str))
-        self.assertEqual(len(symbol_map), 71, f"SYMBOL_MAP should contain 71 tickers, got {len(symbol_map)}")
+        self.assertEqual(len(symbol_map), 70, f"SYMBOL_MAP should contain 71 tickers, got {len(symbol_map)}")
 
         # Verify key additions from Defect 6 and Short ETFs
         self.assertEqual(symbol_map.get("NOW"), "NYSE:NOW")

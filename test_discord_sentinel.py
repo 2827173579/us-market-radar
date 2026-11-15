@@ -819,12 +819,12 @@ class TestDiscordSentinelUniverseAndEnv(unittest.TestCase):
         self.assertEqual(len(t1), 5)
         self.assertEqual(len(t2), 19)
         self.assertEqual(len(t3), 15)
-        self.assertEqual(len(t4), 16)
+        self.assertEqual(len(t4), 15)
         self.assertEqual(len(t5), 17)
 
         all_tickers = t1 + t2 + t3 + t4 + t5
-        self.assertEqual(len(all_tickers), 72)
-        self.assertEqual(len(set(all_tickers)), 72)
+        self.assertEqual(len(all_tickers), 71)
+        self.assertEqual(len(set(all_tickers)), 71)
         self.assertNotIn("MARA", all_tickers)
         self.assertNotIn("GOOG", all_tickers)
         self.assertIn("GOOGL", all_tickers)

@@ -148,7 +148,6 @@ MONITORED_TARGETS = {
 
         # 13. 企业级算力云与资本载体
         "ORCL":  {"name": "甲骨文", "sub": "OCI云基础设施与企业大模型底座", "cat": "云与软件", "cost": 0.0, "shares": 0.0, "base_val": 110.0},
-        "CCXI":  {"name": "Churchill XI", "sub": "科技并购与成长资本载体", "cat": "资本运作", "cost": 0.0, "shares": 0.0, "base_val": 10.0},
 
         # 14. 医药健康、消费龙头与全球支付网络
         "LLY":   {"name": "礼来", "sub": "全球GLP-1减肥药与制药万亿新贵", "cat": "生物医药", "cost": 0.0, "shares": 0.0, "base_val": 780.0},
@@ -3862,7 +3861,7 @@ def generate_macro_radar_html(macro_data, weather_info, history_dict, update_tim
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="refresh" content="180">
-    <title>宏观大盘司令塔 · 全局水温看板 (16只核心ETF · 全网71只标的)</title>
+    <title>宏观大盘司令塔 · 全局水温看板 ({len(MONITORED_TARGETS["ETFS"])}只核心ETF · 全网{len(MONITORED_TARGETS["ETFS"]) + len(MONITORED_TARGETS["STOCKS"])}只标的)</title>
     <style>
         body {{
             background-color: #0b0e14;
@@ -3997,7 +3996,7 @@ def generate_macro_radar_html(macro_data, weather_info, history_dict, update_tim
         <div>
             <h1>🏛️ 宏观大盘司令塔 · 全局水温看板</h1>
             <div style="font-size: 12px; color: #6b7280; margin-top: 6px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
-                <span>全网 71 只标的监控 (16 只 ETF + 55 只核心个股) | 大盘基准: QQQ / SPY / DIA / IWM | 行业风向: SMH / IGV | 避险: TLT / GLD / VIXY</span>
+                <span>全网 {len(MONITORED_TARGETS["ETFS"]) + len(MONITORED_TARGETS["STOCKS"])} 只标的监控 ({len(MONITORED_TARGETS["ETFS"])} 只 ETF + {len(MONITORED_TARGETS["STOCKS"])} 只核心个股) | 大盘基准: QQQ / SPY / DIA / IWM | 行业风向: SMH / IGV | 避险: TLT / GLD / VIXY</span>
                 <span style="color:#60a5fa;">⏱️ 自动刷新: 每3分钟 (180s)</span>
                 <span>最近更新: {update_time_str}</span>
                 {live_badge_html}
@@ -4117,7 +4116,7 @@ def generate_stocks_radar_html(stocks_data, history_dict, update_time_str="", ha
             textposition="top center",
             marker=dict(size=[size_val], color=color, opacity=0.85, line=dict(color="#ffffff", width=1.5)),
             hoverinfo="text",
-            hovertext=f"<b>{t} ({item['name']})</b><br>赛道: {item['cat']}<br>现价: ${ui_display_price(item):.2f} ({ui_display_pct(item):+.2f}%)<br>距黄金坑: {x_val:+.2f}%<br>RSI(14): {y_val:.1f}<br>14日ATR: ${item['atr']:.2f}<br>碎股数: {item['fractional_shares']:.2f}股<br>信号: {item['signal']}"
+            hovertext=f"<b>{t} ({item['name']})</b><br>赛道: {item['cat']}<br>现价: ${ui_display_price(item):.2f} ({ui_display_pct(item):+.2f}%)<br>距黄金坑: {x_val:+.2f}%<br>RSI(14): {y_val:.1f}<br>14日ATR: ${item['atr']:.2f}<br>信号: {item['signal']}"
         ))
 
     fig_matrix.add_vline(x=0, line_dash="dash", line_color="#00e676", annotation_text="黄金坑临界带 (X=0%)", annotation_position="top left")
@@ -4139,11 +4138,26 @@ def generate_stocks_radar_html(stocks_data, history_dict, update_time_str="", ha
     matrix_div = fig_matrix.to_html(full_html=False, include_plotlyjs="cdn")
 
     # 构建个股表格
+    def _position_display(r):
+        last = max(float(r.get("last", 0.0) or 0.0), 0.01)
+        atr_pct = (float(r.get("atr", 0.0) or 0.0) / last) * 100.0
+        sig = str(r.get("signal", "") or "")
+        if r.get("is_stop") or any(k in sig for k in ("破位", "暴跌", "熔断", "止损")):
+            return "0%", "严禁接刀", "#ff5252"
+        if r.get("is_pit") or any(k in sig for k in ("黄金坑", "日内买点", "右侧反转", "极度超卖", "分批低吸")):
+            pct = 25 if atr_pct <= 2.5 else 22 if atr_pct <= 4.0 else 19 if atr_pct <= 6.0 else 15
+            return f"{pct}%", "分批低吸", "#00e676"
+        if r.get("is_momentum") or any(k in sig for k in ("多头推进", "坑上", "量能异动", "顺势", "等回踩")):
+            pct = 15 if atr_pct <= 2.5 else 13 if atr_pct <= 4.0 else 11 if atr_pct <= 6.0 else 10
+            return f"{pct}%", "顺势/等回踩", "#64b5f6"
+        return "0%", "观望等待", "#90a4ae"
+
     rows_html = ""
     for r in stocks_data:
         bias_style = "color: #00e676;" if r["bias"] >= 0 else "color: #ff5252;"
         dist_style = "color: #00e676; font-weight:bold;" if r["dist_to_pit"] <= 0 else "color: #90caf9;"
         pct_color = "#00e676" if r.get("pct_change", 0) >= 0 else "#ff5252"
+        pos_pct, pos_note, pos_color = _position_display(r)
         
         if "🔴" in r["signal"]:
             sig_badge = f"<span class='badge' style='background:#b71c1c;'>{r['signal']}</span>"
@@ -4170,7 +4184,7 @@ def generate_stocks_radar_html(stocks_data, history_dict, update_time_str="", ha
             <td>{r['rsi']:.1f}</td>
             <td style="font-size: 12px; color: #64b5f6;">${r['fib_low']:.2f} ~ ${r['fib_high']:.2f}</td>
             <td style="{dist_style}">{r['pit_status']}</td>
-            <td style="color: #00e5ff; font-weight: bold;">{r['fractional_shares']:.2f} 股 <span style="font-size:10px; color:#888;">({min(25.0, (r['fractional_shares'] * ui_display_price(r) / TOTAL_ACCOUNT_EQUITY) * 100):.1f}%)</span></td>
+            <td style="color: {pos_color}; font-weight: bold;">{pos_pct}<div style="font-size:10px; color:#90a4ae;">{pos_note}</div></td>
             <td>{sig_badge}</td>
         </tr>
         """
@@ -4188,7 +4202,7 @@ def generate_stocks_radar_html(stocks_data, history_dict, update_time_str="", ha
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="refresh" content="180">
-    <title>核心个股碎股雷达 · 黄金坑作战与进攻看板 ({len(stocks_data)}只标的 · 全网71只标的)</title>
+    <title>核心个股碎股雷达 · 黄金坑作战与进攻看板 ({len(stocks_data)}只标的 · 全网{len(MONITORED_TARGETS["ETFS"]) + len(MONITORED_TARGETS["STOCKS"])}只标的)</title>
     <style>
         body {{
             background-color: #0b0e14;
@@ -4304,7 +4318,7 @@ def generate_stocks_radar_html(stocks_data, history_dict, update_time_str="", ha
 <body>
     <div class="header">
         <div>
-            <h1>🎯 核心个股碎股雷达 · {len(stocks_data)}只标的实战看板 (全网 71 只标的 · 16 ETF + 55 个股)</h1>
+            <h1>🎯 核心个股碎股雷达 · {len(stocks_data)}只标的实战看板 (全网 {len(MONITORED_TARGETS["ETFS"]) + len(MONITORED_TARGETS["STOCKS"])} 只标的 · {len(MONITORED_TARGETS["ETFS"])} ETF + {len(MONITORED_TARGETS["STOCKS"])} 个股)</h1>
             <div style="font-size: 12px; color: #6b7280; margin-top: 6px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
                 <span>覆盖赛道: 芯片算力 / 商业AI / 新算力云 / AI能源核电 / 液冷服务器 / 光通信 / 太空商业 / 存储闪存 / 物理AI安全 / 经典蓝筹</span>
                 <span style="color:#60a5fa;">⏱️ 自动刷新: 每3分钟 (180s)</span>
@@ -4360,7 +4374,7 @@ def generate_stocks_radar_html(stocks_data, history_dict, update_time_str="", ha
                     <th>14日 RSI</th>
                     <th>黄金坑区间 (0.5~0.618)</th>
                     <th>距黄金坑位置</th>
-                    <th>建议建仓仓位 (单股25%上限)</th>
+                    <th>建议建仓仓位 (纯百分比)</th>
                     <th>作战行动信号</th>
                 </tr>
             </thead>
@@ -4501,7 +4515,7 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
 
     # 2. 并发秒级拉取 Finnhub 实时报价 (max_workers=2, 稳态间隔防 429)
     # 免费额度 60次/分。全标的 70 只 (16 ETF + 54 股票)，优先保障 16 只宏观行业 ETF + 44 只核心科技股；10 只低波防守股走 Yahoo 5m RTH 实时穿透
-    DEFENSIVE_11_TICKERS = {"KO", "PEP", "MCD", "AXP", "V", "CCXI", "LLY", "MRNA", "NKE", "HPE", "FPS"}
+    DEFENSIVE_11_TICKERS = {"KO", "PEP", "MCD", "AXP", "V", "LLY", "MRNA", "NKE", "HPE", "FPS"}
     finnhub_tickers = [tk for tk in all_tickers if tk != "BTC-USD" and (tk not in DEFENSIVE_11_TICKERS or (user_portfolio and tk in user_portfolio))][:60]
     realtime_quotes = fetch_finnhub_quotes_batch(finnhub_tickers, FINNHUB_API_KEY) if FINNHUB_API_KEY else {}
     if "BTC-USD" in all_tickers:

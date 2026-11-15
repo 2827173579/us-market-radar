@@ -275,7 +275,7 @@ class TestDefenseTickerRoutingAndRateLimiter(unittest.TestCase):
     """Validate Defense Ticker Routing to yfinance and Finnhub Rate Limiter non-increment"""
 
     def setUp(self):
-        self.expected_defense_10 = {"KO", "PEP", "MCD", "AXP", "V", "CCXI", "LLY", "MRNA", "NKE", "HPE"}
+        self.expected_defense_10 = {"KO", "PEP", "MCD", "AXP", "V", "LLY", "MRNA", "NKE", "HPE"}
 
     def test_defense_10_tickers_membership(self):
         """Verify DEFENSIVE_10_TICKERS contains exactly the 10 defined defense tickers"""
