@@ -5141,7 +5141,7 @@ def _other_device_is_active():
     """Skip a round if origin/main has a <50s live commit from the other device."""
     try:
         subprocess.run(["git", "fetch", "origin", "main", "--quiet"], check=False, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, creationflags=WIN_NO_WINDOW)
-        res = subprocess.run(["git", "log", "-1", "--format=%ct|%s", "origin/main"], capture_output=True, text=True, check=False, creationflags=WIN_NO_WINDOW)
+        res = subprocess.run(["git", "log", "-1", "--format=%ct|%s", "origin/main"], capture_output=True, text=True, encoding="utf-8", errors="replace", check=False, creationflags=WIN_NO_WINDOW)
         raw = (res.stdout or "").strip()
         if "|" not in raw:
             return False
@@ -5227,7 +5227,7 @@ def main():
             if os.environ.get("GITHUB_ACTIONS") == "true":
                 try:
                     subprocess.run(["git", "fetch", "origin", "main", "--quiet"], check=False, creationflags=WIN_NO_WINDOW)
-                    res = subprocess.run(["git", "log", "-1", "--format=%ae|%ct", "origin/main"], capture_output=True, text=True, check=False, creationflags=WIN_NO_WINDOW)
+                    res = subprocess.run(["git", "log", "-1", "--format=%ae|%ct", "origin/main"], capture_output=True, text=True, encoding="utf-8", errors="replace", check=False, creationflags=WIN_NO_WINDOW)
                     if res.returncode == 0 and res.stdout.strip():
                         parts = res.stdout.strip().split("|", 1)
                         if len(parts) == 2:
@@ -5322,15 +5322,15 @@ def main():
                     ["git", "commit", "-m", f"⚡ [{'小米平板实盘同步' if ANDROID_MODE else '实盘同步'}] 第 {round_idx} 轮极速刷新 ({now_ts})"],
                     check=False, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, creationflags=WIN_NO_WINDOW
                 )
-                _head_before = subprocess.run(["git", "rev-parse", "HEAD"], check=False, capture_output=True, text=True, creationflags=WIN_NO_WINDOW).stdout.strip()
+                _head_before = subprocess.run(["git", "rev-parse", "HEAD"], check=False, capture_output=True, text=True, encoding="utf-8", errors="replace", creationflags=WIN_NO_WINDOW).stdout.strip()
                 subprocess.run(["git", "pull", "--rebase", "--autostash", "-X", "theirs", "origin", "main"], check=False, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, creationflags=WIN_NO_WINDOW)
-                _head_after = subprocess.run(["git", "rev-parse", "HEAD"], check=False, capture_output=True, text=True, creationflags=WIN_NO_WINDOW).stdout.strip()
+                _head_after = subprocess.run(["git", "rev-parse", "HEAD"], check=False, capture_output=True, text=True, encoding="utf-8", errors="replace", creationflags=WIN_NO_WINDOW).stdout.strip()
                 if _head_before and _head_after and _head_before != _head_after:
-                    _changed = subprocess.run(["git", "diff", "--name-only", _head_before, _head_after], check=False, capture_output=True, text=True, creationflags=WIN_NO_WINDOW).stdout
+                    _changed = subprocess.run(["git", "diff", "--name-only", _head_before, _head_after], check=False, capture_output=True, text=True, encoding="utf-8", errors="replace", creationflags=WIN_NO_WINDOW).stdout
                     if any(_f.endswith(".py") for _f in _changed.splitlines()):
                         print("[*] 检测到 git pull 更新了 .py 源码，立即热重启守护进程以加载新代码与 .env ...", flush=True)
                         os.execv(sys.executable, [sys.executable] + sys.argv)
-                push_res = subprocess.run(["git", "push", "origin", "HEAD:main"], check=False, capture_output=True, text=True, creationflags=WIN_NO_WINDOW)
+                push_res = subprocess.run(["git", "push", "origin", "HEAD:main"], check=False, capture_output=True, text=True, encoding="utf-8", errors="replace", creationflags=WIN_NO_WINDOW)
                 if push_res.returncode == 0:
                     print(f"[+] ✅ 成功推送第 {round_idx} 轮数据至 GitHub Pages (PAT 触发部署成功)！")
                     globals()["_LAST_GIT_PUSH_TS"] = time.time()

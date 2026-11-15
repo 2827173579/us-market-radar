@@ -892,11 +892,201 @@ def maybe_push_quant_strategy(quotes, weather, now_str):
         append_log(f"[!] 四次日策略哨兵不可用（需 pandas/yfinance/discord_sentinel.py）: {e}")
 
 
+ALERT_STATE_FILE = os.path.join(PROJECT_DIR, ".android_alert_state.json")
+MUTE_SESSIONS = ("CLOSED", "WEEKEND", "NIGHT")
+
+
+def full_engine_running():
+    return FULL_ENGINE_CHILD is not None and FULL_ENGINE_CHILD.poll() is None
+
+
+def _load_watchlist():
+    cands = [os.path.join(PROJECT_DIR, "target_watchlist.json"), os.path.join(os.path.dirname(PROJECT_DIR), "target_watchlist.json")]
+    for pth in cands:
+        try:
+            if os.path.exists(pth):
+                v = json.load(open(pth, encoding="utf-8"))
+                if isinstance(v, list) and v:
+                    return [str(x).upper() for x in v]
+        except Exception:
+            pass
+    return ["NVDA", "META", "TSM", "AMD", "MRVL", "AAOI", "AXTI", "BE", "SKHY", "LITE", "SPCX", "INTC", "MSTR", "SNDK", "QQQ", "SOXL", "SOXS", "KORU", "QCOM", "IBIT"]
+
+
+def _load_push_universe():
+    """只允许自选池 + user_portfolio 中 shares>0 的标的进入单股推送。"""
+    symbols = set(_load_watchlist())
+    for pth in (os.path.join(PROJECT_DIR, "user_portfolio.json"), os.path.join(os.path.dirname(PROJECT_DIR), "user_portfolio.json")):
+        try:
+            if not os.path.exists(pth):
+                continue
+            d = json.load(open(pth, encoding="utf-8"))
+            items = []
+            if isinstance(d, dict):
+                for k, v in d.items():
+                    if isinstance(v, dict):
+                        items.append((k, v))
+                    elif isinstance(v, (int, float)) and float(v) > 0:
+                        items.append((k, {"shares": v}))
+                for key in ("positions", "holdings", "portfolio"):
+                    arr = d.get(key)
+                    if isinstance(arr, list):
+                        items.extend([(x.get("ticker") or x.get("symbol"), x) for x in arr if isinstance(x, dict)])
+            elif isinstance(d, list):
+                items = [(x.get("ticker") or x.get("symbol"), x) for x in d if isinstance(x, dict)]
+            for sym, v in items:
+                if not sym:
+                    continue
+                try:
+                    if float(v.get("shares", 0) or 0) > 0:
+                        symbols.add(str(sym).upper())
+                except Exception:
+                    pass
+        except Exception:
+            pass
+    return symbols
+
+
+def _alert_day():
+    return _market_et_now().strftime("%Y-%m-%d")
+
+
+def _load_alert_state():
+    try:
+        d = json.load(open(ALERT_STATE_FILE, encoding="utf-8"))
+        return d if isinstance(d, dict) else {}
+    except Exception:
+        return {}
+
+
+def _save_alert_state(d):
+    try:
+        d = {k: v for k, v in d.items() if isinstance(v, dict) and k >= _market_et_now().strftime("%Y-%m-%d")}
+        tmp = ALERT_STATE_FILE + ".tmp"
+        with open(tmp, "w", encoding="utf-8") as f:
+            json.dump(d, f, ensure_ascii=False, indent=2)
+        os.replace(tmp, ALERT_STATE_FILE)
+    except Exception as e:
+        append_log(f"[!] alert state save failed: {e}")
+
+
+def _alert_seen(day, ticker, signal):
+    d = _load_alert_state()
+    return bool(d.get(day, {}).get(f"{ticker}:{signal}"))
+
+
+def _alert_mark(day, ticker, signal, now_str):
+    d = _load_alert_state()
+    d.setdefault(day, {})[f"{ticker}:{signal}"] = now_str
+    _save_alert_state(d)
+
+
+def _ema(vals, span):
+    if not vals:
+        return []
+    a = 2.0 / (span + 1.0)
+    out = [float(vals[0])]
+    for v in vals[1:]:
+        out.append(a * float(v) + (1 - a) * out[-1])
+    return out
+
+
+def _rsi(vals, period=14):
+    if len(vals) < period + 1:
+        return 50.0
+    gains = [max(vals[i] - vals[i-1], 0.0) for i in range(1, len(vals))]
+    losses = [max(vals[i-1] - vals[i], 0.0) for i in range(1, len(vals))]
+    ag = sum(gains[:period]) / period; al = sum(losses[:period]) / period
+    for i in range(period, len(gains)):
+        ag = (ag * (period - 1) + gains[i]) / period
+        al = (al * (period - 1) + losses[i]) / period
+    if al <= 1e-12:
+        return 100.0
+    return 100.0 - 100.0 / (1.0 + ag / al)
+
+
+def _fetch_yahoo_5m_bars(ticker):
+    try:
+        import requests
+        url = "https://query1.finance.yahoo.com/v8/finance/chart/" + urllib.parse.quote(ticker) + "?interval=5m&range=5d&includePrePost=true"
+        r = requests.get(url, headers={"User-Agent": "Mozilla/5.0"}, timeout=10)
+        data = r.json()
+        res = (data.get("chart") or {}).get("result") or []
+        if not res:
+            return []
+        q = ((res[0].get("indicators") or {}).get("quote") or [{}])[0]
+        ts = res[0].get("timestamp") or []
+        closes = q.get("close") or []; highs = q.get("high") or []; lows = q.get("low") or []; vols = q.get("volume") or []
+        out = []
+        for i, ep in enumerate(ts):
+            if i >= len(closes) or closes[i] is None or highs[i] is None or lows[i] is None:
+                continue
+            out.append({"t": int(ep), "c": float(closes[i]), "h": float(highs[i]), "l": float(lows[i]), "v": float(vols[i] or 0) if i < len(vols) else 0.0})
+        return out
+    except Exception as e:
+        append_log(f"[!] 5m Yahoo {ticker} failed: {e}")
+        return []
+
+
+def scan_5m_buy_points(universe, by_ticker, session_name):
+    """纯 Python fallback：只扫描自选池+持仓；full engine 在跑时不会被调用。"""
+    alerts = []
+    bars_map = {}
+    with ThreadPoolExecutor(max_workers=8) as ex:
+        futs = {ex.submit(_fetch_yahoo_5m_bars, tk): tk for tk in sorted(universe)}
+        for fut in as_completed(futs):
+            tk = futs[fut]
+            try:
+                bars_map[tk] = fut.result()
+            except Exception:
+                bars_map[tk] = []
+    for tk in sorted(universe):
+        bars = bars_map.get(tk, [])
+        # 只使用美东当日 5m bars 计算当日 VWAP/量比
+        try:
+            _et = _market_et_now()
+            _today = _et.date()
+            bars = [b for b in bars if datetime.fromtimestamp(b["t"], timezone.utc).astimezone(_et.tzinfo).date() == _today]
+        except Exception:
+            pass
+        if len(bars) < 30:
+            continue
+        closes = [b["c"] for b in bars]; highs = [b["h"] for b in bars]; lows = [b["l"] for b in bars]; vols = [b["v"] for b in bars]
+        ema9 = _ema(closes, 9); ema21 = _ema(closes, 21)
+        price = closes[-1]
+        vwap = sum(((highs[i] + lows[i] + closes[i]) / 3.0) * vols[i] for i in range(len(bars))) / max(sum(vols), 1e-9)
+        rvol = (sum(vols[-3:]) / 3.0) / max(sum(vols[-13:-3]) / 10.0, 1e-9) if len(vols) >= 13 else 1.0
+        rsi5 = _rsi(closes)
+        ai = by_ticker.get(tk, {}) or {}
+        try:
+            support = float(ai.get("stop_loss_price") or ai.get("support") or min(lows[-12:]))
+            target = float(ai.get("target_profit_price") or ai.get("resistance") or price * 1.04)
+        except Exception:
+            support, target = min(lows[-12:]), price * 1.04
+        near = support > 0 and (support * 0.94 <= price <= support * 1.035)
+        cross_vwap = price > vwap and closes[-2] <= vwap
+        cross_ema = ema9[-1] > ema21[-1] and ema9[-2] <= ema21[-2]
+        if not (near and rvol >= 1.15 and (cross_vwap or cross_ema) and 40 <= rsi5 <= 72):
+            continue
+        reason = "放量站上VWAP" if cross_vwap else "EMA9金叉EMA21"
+        stop = min(support * 0.99, price * 0.985)
+        desc = (f"**{tk} 5m买点触发**\n"
+                f"- 现价: ${price:.2f} | 5m RSI: {rsi5:.1f} | 量比: {rvol:.2f}x\n"
+                f"- 参考挂单价: ${price:.2f} | 防守止损: ${stop:.2f}\n"
+                f"- R1目标: ${target:.2f} | 触发原因: {reason}\n"
+                f"- 时段: {session_name}")
+        alerts.append({"ticker": tk, "signal": "5M_ENTRY", "title": f"🎯 5m买点触发 · {tk}", "desc": desc})
+    return alerts
+
+
 def run_single_scan_cycle(round_idx=1):
     now_str = _market_et_now().strftime("%Y-%m-%d %H:%M:%S")
     session_code, session_name = get_us_market_session()
     STATE.session_name = session_name
     STATE.last_sync_time = now_str
+    if full_engine_running():
+        append_log("[*] full engine 正在运行，轻量告警/扫描整轮停用")
+        return
 
     append_log(f"⏱️ [{now_str}] [第 {round_idx} 轮] 执行 60 秒轻量市场扫描...")
     append_log(f"[*] 🕒 当前美东市场时段状态: 【{session_name}】")
@@ -923,6 +1113,7 @@ def run_single_scan_cycle(round_idx=1):
                 pass
     if not watchlist:
         watchlist = ["NVDA", "META", "TSM", "AMD", "MRVL", "AAOI", "AXTI", "BE", "SKHY", "LITE", "SPCX", "INTC", "MSTR", "SNDK", "QQQ", "SOXL", "SOXS", "KORU", "QCOM", "IBIT"]
+    alerts_muted = session_code in MUTE_SESSIONS
 
     # 2. 双线程令牌桶平稳并发拉取 70 只全量标的池 (16 只 ETF + 54 只个股)
     # 结合 target_watchlist.json 优先，若无则抓取全量 70 只标的
@@ -941,7 +1132,6 @@ def run_single_scan_cycle(round_idx=1):
         append_log(f"[+] 盘前 Yahoo 真实扩展价已覆盖 {len(_pre_quotes)} 只标的")
     append_log(f"[+] ✅ 实时行情穿透完成: 成功拉取 {len(fetched_quotes)}/{len(scan_pool)} 只标的！")
 
-    # 3. 动态风控阈值比对
     alerts_to_send = []
     for tk, q in fetched_quotes.items():
         curr_p = q["last"]
@@ -949,71 +1139,59 @@ def run_single_scan_cycle(round_idx=1):
         ai_item = by_ticker.get(tk, {})
         sl_price = ai_item.get("stop_loss_price", 0.0)
         tp_price = ai_item.get("target_profit_price", 0.0)
-        action = ai_item.get("action", "")
-
-        # 止损跌破检测
         if sl_price > 0 and curr_p <= sl_price:
-            alerts_to_send.append({
-                "ticker": tk,
-                "type": "STOP_LOSS",
-                "title": f"🔴 触发防守止损线",
-                "desc": f"**{tk}** 当前价 **${curr_p:.2f}** ({change_pct:+.2f}%) 跌破预设止损线 **${sl_price:.2f}**！建议严格规避下行风险。"
-            })
-        # 止盈触达检测
+            alerts_to_send.append({"ticker": tk, "type": "STOP_LOSS", "title": "🔴 触发防守止损线", "desc": f"**{tk}** 当前价 **${curr_p:.2f}** ({change_pct:+.2f}%) 跌破预设止损线 **${sl_price:.2f}**"})
         elif tp_price > 0 and curr_p >= tp_price:
-            alerts_to_send.append({
-                "ticker": tk,
-                "type": "TAKE_PROFIT",
-                "title": f"🟣 触达第一止盈线",
-                "desc": f"**{tk}** 当前价 **${curr_p:.2f}** ({change_pct:+.2f}%) 成功触及目标止盈位 **${tp_price:.2f}**！建议分批锁定利润。"
-            })
+            alerts_to_send.append({"ticker": tk, "type": "TAKE_PROFIT", "title": "🟣 触达第一止盈线", "desc": f"**{tk}** 当前价 **${curr_p:.2f}** ({change_pct:+.2f}%) 触及目标止盈位 **${tp_price:.2f}**"})
 
-    # 4. Alerts: dedupe stop-loss; batch >3 broken tickers into one summary
-    stop_alerts = [a for a in alerts_to_send if a.get("type") == "STOP_LOSS"]
-    tp_alerts = [a for a in alerts_to_send if a.get("type") != "STOP_LOSS"]
-    new_stop = [a for a in stop_alerts if a.get("ticker") not in STATE.stop_alert_seen]
-    if new_stop:
-        if len(new_stop) > 3:
-            desc_lines = []
-            for al in new_stop:
-                q = fetched_quotes.get(al["ticker"], {})
-                sl = float((by_ticker.get(al["ticker"], {}) or {}).get("stop_loss_price", 0.0) or 0.0)
-                desc_lines.append(f"- **{al['ticker']}** ${float(q.get('last',0.0)):.2f} ({float(q.get('pct_change',0.0)):+.2f}%) · 止损线 ${sl:.2f}")
-            desc = f"**同时有 {len(new_stop)} 只标的跌破防守止损线**\n" + "\n".join(desc_lines) + f"\n\nSession: {session_name} | Weather: {weather} | {now_str}"
-            append_log(f"[!] {len(new_stop)} 只破位，合并发送 1 张止损汇总卡")
-            send_discord(f"🔴 防守止损汇总 · {len(new_stop)}只", desc, color=0xda3633)
-            send_pushplus(f"【美股量化预警】🔴 防守止损汇总 · {len(new_stop)}只", desc)
-            for al in new_stop:
-                STATE.stop_alert_seen.add(al.get("ticker"))
-        else:
-            for al in new_stop:
-                title = f"【美股量化预警】{al['title']} · {al['ticker']}"
-                md = [
-                    f"### {al['title']}: {al['ticker']}",
-                    f"- **最新现价**: `${fetched_quotes[al['ticker']]['last']:.2f}` ({fetched_quotes[al['ticker']]['pct_change']:+.2f}%)",
-                    f"- **时段状态**: {session_name}",
-                    f"- **大盘气象**: {weather}",
-                    f"- **详细说明**: {al['desc']}",
-                    f"- **推送节点**: 小米平板极速哨兵 · {now_str}"
-                ]
-                send_pushplus(title, "\n".join(md))
-                send_discord(title, al['desc'], color=0xda3633)
-                STATE.stop_alert_seen.add(al.get("ticker"))
-    for al in tp_alerts:
-        title = f"【美股量化预警】{al['title']} · {al['ticker']}"
-        md = [
-            f"### {al['title']}: {al['ticker']}",
-            f"- **最新现价**: `${fetched_quotes[al['ticker']]['last']:.2f}` ({fetched_quotes[al['ticker']]['pct_change']:+.2f}%)",
-            f"- **时段状态**: {session_name}",
-            f"- **大盘气象**: {weather}",
-            f"- **详细说明**: {al['desc']}",
-            f"- **推送节点**: 小米平板极速哨兵 · {now_str}"
-        ]
-        send_pushplus(title, "\n".join(md))
-        send_discord(title, al['desc'], color=0x8957e5)
-    if not alerts_to_send:
-        append_log("[+] no alerts")
-
+    # 3. 单股告警只盯自选池/真实持仓；休市/夜盘完全静音
+    if alerts_muted:
+        append_log(f"[*] {session_name}：单股止盈/止损/5m买点已静音")
+        new_stop = []
+        tp_alerts = []
+    else:
+        new_stop = []
+        tp_alerts = []
+        for al in alerts_to_send:
+            if al.get("type") == "STOP_LOSS" and not _alert_seen(_alert_day(), al["ticker"], "STOP_LOSS"):
+                new_stop.append(al)
+            elif al.get("type") == "TAKE_PROFIT" and not _alert_seen(_alert_day(), al["ticker"], "TAKE_PROFIT"):
+                tp_alerts.append(al)
+        if new_stop:
+            if len(new_stop) > 3:
+                desc_lines = []
+                for al in new_stop:
+                    q = fetched_quotes.get(al["ticker"], {})
+                    sl = float((by_ticker.get(al["ticker"], {}) or {}).get("stop_loss_price", 0.0) or 0.0)
+                    desc_lines.append(f"- **{al['ticker']}** ${float(q.get('last',0.0)):.2f} ({float(q.get('pct_change',0.0)):+.2f}%) · 止损线 ${sl:.2f}")
+                desc = f"**同时有 {len(new_stop)} 只标的跌破防守止损线**\n" + "\n".join(desc_lines) + f"\n\n时段：{session_name} · {now_str}"
+                sent = send_discord(f"🔴 防守止损汇总 · {len(new_stop)}只", desc, color=0xda3633)
+                send_pushplus(f"【美股量化预警】🔴 防守止损汇总 · {len(new_stop)}只", desc)
+                if sent:
+                    for al in new_stop:
+                        _alert_mark(_alert_day(), al["ticker"], "STOP_LOSS", now_str)
+            else:
+                for al in new_stop:
+                    title = f"【美股量化预警】{al['title']} · {al['ticker']}"
+                    md = [f"### {al['title']}: {al['ticker']}", f"- 最新现价: `${fetched_quotes[al['ticker']]['last']:.2f}` ({fetched_quotes[al['ticker']]['pct_change']:+.2f}%)", f"- 时段状态: {session_name}", f"- 详细说明: {al['desc']}", f"- 推送节点: 小米平板极速哨兵 · {now_str}"]
+                    sent = send_discord(title, "\n".join(md), color=0xda3633)
+                    if sent:
+                        _alert_mark(_alert_day(), al["ticker"], "STOP_LOSS", now_str)
+        for al in tp_alerts:
+            title = f"【美股量化预警】{al['title']} · {al['ticker']}"
+            md = [f"### {al['title']}: {al['ticker']}", f"- 最新现价: `${fetched_quotes[al['ticker']]['last']:.2f}` ({fetched_quotes[al['ticker']]['pct_change']:+.2f}%)", f"- 时段状态: {session_name}", f"- 详细说明: {al['desc']}", f"- 推送节点: 小米平板极速哨兵 · {now_str}"]
+            sent = send_discord(title, "\n".join(md), color=0x8957e5)
+            if sent:
+                _alert_mark(_alert_day(), al["ticker"], "TAKE_PROFIT", now_str)
+        all_scan = set(fetched_quotes.keys()) | set(by_ticker.keys())
+        for al in scan_5m_buy_points(all_scan, by_ticker, session_name):
+            if _alert_seen(_alert_day(), al["ticker"], "5M_ENTRY"):
+                continue
+            sent = send_discord(al["title"], al["desc"], color=0x00e676)
+            if sent:
+                _alert_mark(_alert_day(), al["ticker"], "5M_ENTRY", now_str)
+    if not alerts_to_send and not alerts_muted:
+        append_log("[+] 自选池/持仓无新的止盈止损信号")
     # 4.5 防御因子实时计算与 Discord 专属频道推送（夜盘走期货，页面回写在同步阶段）
     flight = compute_flight_snapshot(fetched_quotes, session_code)
     if not flight or flight.get("skip_reason"):
@@ -1044,11 +1222,11 @@ def sync_to_github_pages(round_idx: int, now_str: str, quotes: dict = None, flig
     """
     try:
         work_dir = PROJECT_DIR
-        chk = subprocess.run(["git", "rev-parse", "--show-toplevel"], capture_output=True, text=True, check=False, cwd=PROJECT_DIR)
+        chk = subprocess.run(["git", "rev-parse", "--show-toplevel"], capture_output=True, text=True, encoding="utf-8", errors="replace", check=False, cwd=PROJECT_DIR)
         if chk.returncode == 0 and chk.stdout.strip():
             work_dir = chk.stdout.strip()
         else:
-            chk2 = subprocess.run(["git", "rev-parse", "--is-inside-work-tree"], capture_output=True, text=True, check=False, cwd=PROJECT_DIR)
+            chk2 = subprocess.run(["git", "rev-parse", "--is-inside-work-tree"], capture_output=True, text=True, encoding="utf-8", errors="replace", check=False, cwd=PROJECT_DIR)
             if chk2.returncode != 0:
                 return False
 
@@ -1225,7 +1403,7 @@ def sync_to_github_pages(round_idx: int, now_str: str, quotes: dict = None, flig
         # 3. 校验并配置带 PAT 的 Git Remote
         token = GITHUB_TOKEN
         if not token:
-            rem_chk = subprocess.run(["git", "remote", "get-url", "origin"], capture_output=True, text=True, check=False, cwd=work_dir)
+            rem_chk = subprocess.run(["git", "remote", "get-url", "origin"], capture_output=True, text=True, encoding="utf-8", errors="replace", check=False, cwd=work_dir)
             if "ghp_" in rem_chk.stdout:
                 token = "ghp_" + rem_chk.stdout.split("ghp_")[1].split("@")[0]
         if token:
@@ -1251,7 +1429,7 @@ def sync_to_github_pages(round_idx: int, now_str: str, quotes: dict = None, flig
 
         commit_res = subprocess.run(
             ["git", "commit", "-m", f"⚡ [小米平板实盘同步] 第 {round_idx} 轮 ({now_str})"],
-            capture_output=True, text=True, check=False, cwd=work_dir
+            capture_output=True, text=True, encoding="utf-8", errors="replace", check=False, cwd=work_dir
         )
         if commit_res.returncode != 0 and "nothing to commit" not in (commit_res.stdout + commit_res.stderr).lower():
             err_c = commit_res.stderr.strip()[:80]
@@ -1260,10 +1438,10 @@ def sync_to_github_pages(round_idx: int, now_str: str, quotes: dict = None, flig
         # rebase pull 以免冲突
         subprocess.run(["git", "pull", "--rebase", "--autostash", "-X", "theirs", "origin", "main"], check=False, cwd=work_dir, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
-        push_res = subprocess.run(["git", "push", "origin", "HEAD:main"], capture_output=True, text=True, check=False, cwd=work_dir)
+        push_res = subprocess.run(["git", "push", "origin", "HEAD:main"], capture_output=True, text=True, encoding="utf-8", errors="replace", check=False, cwd=work_dir)
         if push_res.returncode != 0:
             subprocess.run(["git", "pull", "--rebase", "--autostash", "-X", "theirs", "origin", "main"], check=False, cwd=work_dir, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-            push_res = subprocess.run(["git", "push", "origin", "HEAD:main"], capture_output=True, text=True, check=False, cwd=work_dir)
+            push_res = subprocess.run(["git", "push", "origin", "HEAD:main"], capture_output=True, text=True, encoding="utf-8", errors="replace", check=False, cwd=work_dir)
         if push_res.returncode == 0:
             append_log(f"[+] 🌐 [GitHub Pages] 成功同步第 {round_idx} 轮数据至云端！页面已自动刷新")
             return True
@@ -1571,7 +1749,7 @@ class AndroidRadarHandler(BaseHTTPRequestHandler):
     def do_GET(self):
         if self.path in ["/futu", "/futu_pro_terminal.html"]:
             work_dir = PROJECT_DIR
-            chk = subprocess.run(["git", "rev-parse", "--show-toplevel"], capture_output=True, text=True, check=False, cwd=PROJECT_DIR)
+            chk = subprocess.run(["git", "rev-parse", "--show-toplevel"], capture_output=True, text=True, encoding="utf-8", errors="replace", check=False, cwd=PROJECT_DIR)
             if chk.returncode == 0 and chk.stdout.strip():
                 work_dir = chk.stdout.strip()
             futu_p = os.path.join(work_dir, "futu_pro_terminal.html")
