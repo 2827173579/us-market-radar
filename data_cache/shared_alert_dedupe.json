@@ -171,9 +171,13 @@
     "2026-11-16:DEFENSIVE_FLIGHT:+5.7": {
       "device": "PC",
       "ts": 1794831210.130076
+    },
+    "2026-11-16:SPCX/META/LUNR:5M_ENTRY": {
+      "device": "PC",
+      "ts": 1794831393.8950555
     }
   },
   "device": "PC",
-  "last_heartbeat_ts": 1794831229.7413511,
-  "updated_at": "2026-11-16T12:13:49.741766+00:00"
+  "last_heartbeat_ts": 1794831321.87425,
+  "updated_at": "2026-11-16T12:16:33.895359+00:00"
 }
