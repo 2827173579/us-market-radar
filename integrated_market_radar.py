@@ -3860,6 +3860,7 @@ def generate_macro_radar_html(macro_data, weather_info, history_dict, update_tim
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="refresh" content="180">
     <title>宏观大盘司令塔 · 全局水温看板 ({len(MONITORED_TARGETS["ETFS"])}只核心ETF · 全网{len(MONITORED_TARGETS["ETFS"]) + len(MONITORED_TARGETS["STOCKS"])}只标的)</title>
     <style>
@@ -3874,11 +3875,18 @@ def generate_macro_radar_html(macro_data, weather_info, history_dict, update_tim
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             padding-bottom: 16px;
             margin-bottom: 24px;
         }}
         .header h1 {{ margin: 0; font-size: 24px; color: #f3f4f6; }}
+        .header-links {{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }}
         .header-links a {{
             color: #60a5fa;
             text-decoration: none;
@@ -3889,6 +3897,7 @@ def generate_macro_radar_html(macro_data, weather_info, history_dict, update_tim
             font-size: 14px;
             font-weight: 500;
             transition: all 0.2s;
+            white-space: nowrap;
         }}
         .header-links a:hover {{ background: rgba(96, 165, 250, 0.25); }}
         
@@ -3989,6 +3998,16 @@ def generate_macro_radar_html(macro_data, weather_info, history_dict, update_tim
             font-weight: 600;
             color: #fff;
         }}
+        @media (max-width: 768px) {{
+            body {{ padding: 12px; }}
+            .header {{ flex-direction: column; align-items: flex-start; gap: 10px; }}
+            .header h1 {{ font-size: 19px; }}
+            .header-links {{ width: 100%; display: grid !important; grid-template-columns: repeat(2, 1fr); gap: 6px; }}
+            .header-links a {{ text-align: center; padding: 7px 8px; font-size: 12.5px; }}
+            .weather-card {{ flex-direction: column; align-items: flex-start; gap: 16px; padding: 16px; }}
+            .weather-stats {{ width: 100%; display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }}
+            .stat-box {{ min-width: 0; }}
+        }}
     </style>
 </head>
 <body>
@@ -4002,11 +4021,11 @@ def generate_macro_radar_html(macro_data, weather_info, history_dict, update_tim
                 {live_badge_html}
             </div>
         </div>
-        <div class="header-links" style="display: flex; gap: 8px;">
-            <a href="futu_pro_terminal.html" target="_blank" style="background: rgba(255,105,0,0.15); border: 1px solid rgba(255,105,0,0.4); color: #ff6900;">🐮 富途全周期看盘</a>
-            <a href="predict_radar_5y.html" target="_blank" style="background: rgba(188,140,255,0.16); border: 1px solid rgba(188,140,255,0.45); color: #d8b4fe; font-weight: 700;">⚡ AI 5年预测雷达</a>
-            <a href="stocks_radar.html" target="_blank">🎯 核心个股雷达</a>
-            <a href="backtest_report_5y.html" target="_blank" style="background: rgba(59,130,246,0.15); border: 1px solid rgba(59,130,246,0.4); color: #60a5fa; font-weight: 700;">🛡️ 5Y回测</a>
+        <div class="header-links">
+            <a href="futu_pro_terminal.html" style="background: rgba(255,105,0,0.18); border: 1px solid rgba(255,105,0,0.5); color: #ff6900; font-weight: 800;">🐮 看盘主终端</a>
+            <a href="predict_radar_5y.html" style="background: rgba(188,140,255,0.16); border: 1px solid rgba(188,140,255,0.45); color: #d8b4fe; font-weight: 700;">⚡ AI 5年预测雷达</a>
+            <a href="stocks_radar.html">🎯 核心个股雷达</a>
+            <a href="backtest_report_5y.html" style="background: rgba(59,130,246,0.15); border: 1px solid rgba(59,130,246,0.4); color: #60a5fa; font-weight: 700;">🛡️ 5Y回测</a>
         </div>
     </div>
 
@@ -4201,6 +4220,7 @@ def generate_stocks_radar_html(stocks_data, history_dict, update_time_str="", ha
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="refresh" content="180">
     <title>核心个股碎股雷达 · 黄金坑作战与进攻看板 ({len(stocks_data)}只标的 · 全网{len(MONITORED_TARGETS["ETFS"]) + len(MONITORED_TARGETS["STOCKS"])}只标的)</title>
     <style>
@@ -4215,11 +4235,18 @@ def generate_stocks_radar_html(stocks_data, history_dict, update_time_str="", ha
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             padding-bottom: 16px;
             margin-bottom: 24px;
         }}
         .header h1 {{ margin: 0; font-size: 24px; color: #f3f4f6; }}
+        .header-links {{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }}
         .header-links a {{
             color: #60a5fa;
             text-decoration: none;
@@ -4230,6 +4257,7 @@ def generate_stocks_radar_html(stocks_data, history_dict, update_time_str="", ha
             font-size: 14px;
             font-weight: 500;
             transition: all 0.2s;
+            white-space: nowrap;
         }}
         .header-links a:hover {{ background: rgba(96, 165, 250, 0.25); }}
 
@@ -4313,6 +4341,13 @@ def generate_stocks_radar_html(stocks_data, history_dict, update_time_str="", ha
             color: #fff;
             display: inline-block;
         }}
+        @media (max-width: 768px) {{
+            body {{ padding: 12px; }}
+            .header {{ flex-direction: column; align-items: flex-start; gap: 10px; }}
+            .header h1 {{ font-size: 19px; }}
+            .header-links {{ width: 100%; display: grid !important; grid-template-columns: repeat(2, 1fr); gap: 6px; }}
+            .header-links a {{ text-align: center; padding: 7px 8px; font-size: 12.5px; }}
+        }}
     </style>
 </head>
 <body>
@@ -4326,11 +4361,11 @@ def generate_stocks_radar_html(stocks_data, history_dict, update_time_str="", ha
                 {live_badge_html}
             </div>
         </div>
-        <div class="header-links" style="display: flex; gap: 8px;">
-            <a href="futu_pro_terminal.html" target="_blank" style="background: rgba(255,105,0,0.15); border: 1px solid rgba(255,105,0,0.4); color: #ff6900;">🐮 富途全周期看盘</a>
-            <a href="predict_radar_5y.html" target="_blank" style="background: rgba(188,140,255,0.16); border: 1px solid rgba(188,140,255,0.45); color: #d8b4fe; font-weight: 700;">⚡ AI 5年预测雷达</a>
-            <a href="macro_radar.html" target="_blank">🏛️ 宏观司令塔</a>
-            <a href="backtest_report_5y.html" target="_blank" style="background: rgba(59,130,246,0.15); border: 1px solid rgba(59,130,246,0.4); color: #60a5fa; font-weight: 700;">🛡️ 5Y回测</a>
+        <div class="header-links">
+            <a href="futu_pro_terminal.html" style="background: rgba(255,105,0,0.18); border: 1px solid rgba(255,105,0,0.5); color: #ff6900; font-weight: 800;">🐮 看盘主终端</a>
+            <a href="predict_radar_5y.html" style="background: rgba(188,140,255,0.16); border: 1px solid rgba(188,140,255,0.45); color: #d8b4fe; font-weight: 700;">⚡ AI 5年预测雷达</a>
+            <a href="macro_radar.html">🏛️ 宏观司令塔</a>
+            <a href="backtest_report_5y.html" style="background: rgba(59,130,246,0.15); border: 1px solid rgba(59,130,246,0.4); color: #60a5fa; font-weight: 700;">🛡️ 5Y回测</a>
         </div>
     </div>
 

@@ -5017,6 +5017,9 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
 
         @media (max-width: 768px) {{
             body {{ padding: 12px; }}
+            .suite-nav {{ padding: 10px 12px; }}
+            .suite-nav-links {{ width: 100%; display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px; }}
+            .suite-link {{ justify-content: center; text-align: center; padding: 6px 8px; font-size: 12px; }}
             .header-title h1 {{ font-size: 20px; }}
             .weather-banner {{ padding: 14px; }}
             .section-card {{ padding: 14px; }}
@@ -5028,7 +5031,7 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
         <!-- Cross-Radar Unified Suite Navigation -->
         <nav class="suite-nav">
             <div class="suite-nav-links">
-                <a href="futu_pro_terminal.html" class="suite-link">🐮 富途全周期看盘终端</a>
+                <a href="futu_pro_terminal.html" class="suite-link" style="background: rgba(255,105,0,0.18); border-color: rgba(255,105,0,0.5); color: #ff6900; font-weight: 800;">🐮 看盘主终端</a>
                 <a href="stocks_radar.html" class="suite-link">🎯 核心个股实战雷达</a>
                 <a href="macro_radar.html" class="suite-link">🏛️ 宏观全天候司令塔</a>
                 <a href="backtest_report_5y.html" class="suite-link">🛡️ 5年历史回测对账</a>

@@ -222,6 +222,20 @@ class TestFutuProTerminalDomIntegrity(unittest.TestCase):
             self.assertIn("short_target_profit_price", item)
             self.assertIn("short_stop_loss_price", item)
 
+    def test_notif_drag_scroll_and_mobile_quick_nav(self):
+        """Verify Bug 1 (notif & watchlist drag/wheel/arrows) and Bug 2 (Mobile Quick Nav) in futu_pro_terminal.html."""
+        self.assertIn('id="notifCategoryBar"', self.html)
+        self.assertIn('id="notifScrollLeftBtn"', self.html)
+        self.assertIn('id="notifScrollRightBtn"', self.html)
+        self.assertIn('enableHorizontalDragScroll', self.html)
+        self.assertIn('scrollNotifCategory', self.html)
+        self.assertIn('id="mobileQuickNav"', self.html)
+        self.assertIn('id="navLinkAiPredict"', self.html)
+        self.assertIn('id="navLinkStocksRadar"', self.html)
+        self.assertIn('id="navLinkMacroRadar"', self.html)
+        self.assertIn('id="navLinkBacktest5y"', self.html)
+        self.assertNotIn('.header-right .tool-link:not(#btnNotifCenter):not(#btnSoundToggle)', self.html)
+
 
 class TestClientSideJsExecutionAndFuzzing(unittest.TestCase):
     """Execute real JavaScript in Node.js to fuzz switchT4View, selectTicker, and localStorage."""

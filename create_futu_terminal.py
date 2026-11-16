@@ -821,6 +821,13 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             overflow-x: auto;
             scrollbar-width: thin;
             scrollbar-color: rgba(255,255,255,0.2) transparent;
+            cursor: grab;
+            user-select: none;
+            -webkit-user-select: none;
+        }}
+        .watchlist-categories.is-dragging,
+        .watchlist-categories.is-dragging .w-tab {{
+            cursor: grabbing !important;
         }}
         .watchlist-categories::-webkit-scrollbar {{
             height: 3px;
@@ -833,10 +840,12 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             padding: 9px 12px;
             font-size: 12px;
             color: #9ca3af;
-            cursor: pointer;
+            cursor: grab;
             transition: all 0.15s;
             white-space: nowrap;
             flex-shrink: 0;
+            user-select: none;
+            -webkit-user-select: none;
         }}
         .w-tab:hover {{ color: #f3f4f6; }}
         .w-tab.active {{
@@ -1254,8 +1263,8 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             animation: drawerSlideIn 0.2s cubic-bezier(0.16, 1, 0.3, 1);
         }}
         @keyframes drawerSlideIn {{
-            from {{ transform: translateX(100%); }}
-            to {{ transform: translateX(0); }}
+            from {{ opacity: 0.95; }}
+            to {{ opacity: 1; }}
         }}
         .notif-drawer-header {{
             padding: 12px 16px;
@@ -1265,14 +1274,55 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             justify-content: space-between;
             align-items: center;
         }}
-        .notif-category-bar {{
+        .notif-category-wrap {{
             display: flex;
+            align-items: center;
             background: #1a1d24;
             border-bottom: 1px solid #23272e;
-            padding: 6px 8px;
+            padding: 0 4px;
+            gap: 2px;
+        }}
+        .notif-scroll-btn {{
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.14);
+            color: #cbd5e1;
+            width: 22px;
+            height: 24px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 800;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            user-select: none;
+            transition: all 0.15s;
+            padding: 0;
+            line-height: 1;
+        }}
+        .notif-scroll-btn:hover {{
+            background: #ff6900;
+            color: #fff;
+            border-color: #ff6900;
+        }}
+        .notif-category-bar {{
+            flex: 1;
+            min-width: 0;
+            display: flex;
+            align-items: center;
+            background: #1a1d24;
+            padding: 6px 4px;
             gap: 4px;
             overflow-x: auto;
             scrollbar-width: none;
+            cursor: grab;
+            user-select: none;
+            -webkit-user-select: none;
+        }}
+        .notif-category-bar.is-dragging,
+        .notif-category-bar.is-dragging .n-tab {{
+            cursor: grabbing !important;
         }}
         .notif-category-bar::-webkit-scrollbar {{ display: none; }}
         .n-tab {{
@@ -1283,8 +1333,11 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             background: transparent;
             border: 1px solid transparent;
             border-radius: 4px;
-            cursor: pointer;
+            cursor: grab;
             white-space: nowrap;
+            flex-shrink: 0;
+            user-select: none;
+            -webkit-user-select: none;
             transition: all 0.15s;
         }}
         .n-tab:hover {{
@@ -1373,6 +1426,12 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
         }}
 
         /* 📱 手机端自适应 (<= 768px) 与 PWA 专属体验 */
+        .mobile-quick-nav {{
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            flex-shrink: 0;
+        }}
         .mobile-bottom-nav {{
             display: none;
         }}
@@ -1388,9 +1447,16 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 overflow: hidden;
             }}
             .futu-header {{
-                height: 46px;
-                padding: 0 8px;
+                height: auto !important;
+                min-height: 78px;
+                padding: 6px 8px 5px 8px;
                 gap: 4px;
+                flex-wrap: wrap;
+            }}
+            .header-left {{
+                order: 1;
+                flex: 1;
+                min-width: 0;
             }}
             .futu-logo span {{
                 display: none !important;
@@ -1425,11 +1491,37 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             .period-bar {{
                 display: none !important;
             }}
-            .header-right .tool-link:not(#btnNotifCenter):not(#btnSoundToggle) {{
-                display: none !important;
+            .header-right {{
+                display: contents !important;
             }}
+            .header-alert-controls {{
+                order: 2;
+                flex-shrink: 0;
+            }}
+            .header-right > .tool-link,
             .header-right .live-tag {{
                 display: none !important;
+            }}
+            .mobile-quick-nav {{
+                order: 3;
+                width: 100% !important;
+                flex: 0 0 100% !important;
+                display: grid !important;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 5px;
+                padding-top: 5px;
+                margin-top: 2px;
+                border-top: 1px solid #23272e;
+            }}
+            .mobile-quick-nav .tool-link {{
+                display: flex !important;
+                align-items: center;
+                justify-content: center;
+                padding: 4px 2px !important;
+                font-size: 11.5px !important;
+                font-weight: 700 !important;
+                text-align: center;
+                border-radius: 4px;
             }}
             #btnNotifCenter {{
                 padding: 3px 6px !important;
@@ -1445,8 +1537,8 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             /* 核心布局切换：单屏占据 */
             .futu-main {{
                 flex-direction: column !important;
-                height: calc(100vh - 46px - 54px) !important;
-                height: calc(100dvh - 46px - 54px) !important;
+                height: calc(100vh - 80px - 54px) !important;
+                height: calc(100dvh - 80px - 54px) !important;
             }}
             .sidebar-toggle-btn {{
                 display: none !important;
@@ -1627,7 +1719,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
 
         <div class="header-right">
             <!-- 预警中心 & 声音切换 -->
-            <div style="display: flex; align-items: center; gap: 4px;">
+            <div class="header-alert-controls" style="display: flex; align-items: center; gap: 4px;">
                 <button id="btnNotifCenter" onclick="toggleNotifDrawer()" class="tool-link" style="background: rgba(239, 68, 68, 0.16); border: 1px solid rgba(239, 68, 68, 0.45); color: #f87171; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 5px; padding: 4px 8px;">
                     <span>🔔 预警中心</span>
                     <span id="notifBadge" style="background: #ef4444; color: #fff; font-size: 10px; padding: 1px 6px; border-radius: 10px; font-weight: 800;">0</span>
@@ -1639,11 +1731,13 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             <!-- 市场时段状态标签 (动态四元划分) -->
             {session_badge_html}
             {defensive_alert_badge_html}
-            <!-- 外部看板精简按钮 -->
-            <a href="predict_radar_5y.html" target="_blank" class="tool-link" style="background: linear-gradient(135deg, rgba(188, 140, 255, 0.22), rgba(88, 166, 255, 0.18)); border: 1px solid rgba(188, 140, 255, 0.55); color: #e2c5ff; font-weight: 800; padding: 4px 8px; box-shadow: 0 0 8px rgba(188, 140, 255, 0.2);" title="打开 AI 美股 5 年多赛道波段预测全景战报">⚡ AI预测</a>
-            <a href="stocks_radar.html" target="_blank" class="tool-link" style="padding: 4px 7px;">🎯 个股雷达</a>
-            <a href="macro_radar.html" target="_blank" class="tool-link" style="padding: 4px 7px;">🏛️ 司令塔</a>
-            <a href="backtest_report_5y.html" target="_blank" class="tool-link" style="padding: 4px 7px;">🛡️ 5Y回测</a>
+            <!-- 跨页导航栏 (Desktop 顶栏右侧 / Mobile 顶部状态栏正下方固定展示) -->
+            <nav class="mobile-quick-nav" id="mobileQuickNav" aria-label="手机端跨页导航栏">
+                <a href="predict_radar_5y.html" class="tool-link m-quick-link" id="navLinkAiPredict" style="background: linear-gradient(135deg, rgba(188, 140, 255, 0.22), rgba(88, 166, 255, 0.18)); border: 1px solid rgba(188, 140, 255, 0.55); color: #e2c5ff; font-weight: 800; padding: 4px 8px; box-shadow: 0 0 8px rgba(188, 140, 255, 0.2);" title="打开 AI 美股 5 年多赛道波段预测全景战报">⚡ AI预测</a>
+                <a href="stocks_radar.html" class="tool-link m-quick-link" id="navLinkStocksRadar" style="padding: 4px 7px;">🎯 个股雷达</a>
+                <a href="macro_radar.html" class="tool-link m-quick-link" id="navLinkMacroRadar" style="padding: 4px 7px;">🏛️ 司令塔</a>
+                <a href="backtest_report_5y.html" class="tool-link m-quick-link" id="navLinkBacktest5y" style="padding: 4px 7px;">📈 5Y回测</a>
+            </nav>
         </div>
     </header>
     {defensive_alert_banner_html}
@@ -1655,7 +1749,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
 
         <!-- 左侧：自选股列表 -->
         <aside class="sidebar-left" id="sidebarLeft">
-            <div class="watchlist-categories">
+            <div class="watchlist-categories" id="watchlistCategories">
                 <div class="w-tab active" data-filter="all">全部 ({len(stocks_data) + len(macro_data)})</div>
                 <div class="w-tab" data-filter="ai_top" style="color: #d8b4fe; font-weight: 800; background: rgba(188, 140, 255, 0.14); border: 1px solid rgba(188, 140, 255, 0.35);">⚡ AI高胜率 ({len(stocks_data) + len(macro_data)})</div>
                 <div class="w-tab" data-filter="ai_short" style="color: #ff5252; font-weight: 800; background: rgba(248, 81, 73, 0.14); border: 1px solid rgba(248, 81, 73, 0.35);">🩸 AI做空榜 (Top 5)</div>
@@ -2070,16 +2164,20 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                     <button onclick="playAlertSound('macro_weather', true)" class="sound-test-chip" title="试听 气象音效 (柔和马林巴)">⛅气象</button>
                 </div>
             </div>
-            <!-- 通知分类导航条 -->
-            <div class="notif-category-bar">
-                <button class="n-tab active" data-cat="all" onclick="filterNotifCategory('all')">全部 (<span id="catCount_all">0</span>)</button>
-                <button class="n-tab" data-cat="defensive_flight" onclick="filterNotifCategory('defensive_flight')" style="color: #f87171;">🚨 防御起飞 (<span id="catCount_defensive_flight">0</span>)</button>
-                <button class="n-tab" data-cat="5m_entry" onclick="filterNotifCategory('5m_entry')">🎯 5m买点 (<span id="catCount_5m_entry">0</span>)</button>
-                <button class="n-tab" data-cat="portfolio" onclick="filterNotifCategory('portfolio')">💼 持仓风控 (<span id="catCount_portfolio">0</span>)</button>
-                <button class="n-tab" data-cat="golden_pit" onclick="filterNotifCategory('golden_pit')">🟢 黄金坑 (<span id="catCount_golden_pit">0</span>)</button>
-                <button class="n-tab" data-cat="stop_loss" onclick="filterNotifCategory('stop_loss')">🔴 破位预警 (<span id="catCount_stop_loss">0</span>)</button>
-                <button class="n-tab" data-cat="take_profit" onclick="filterNotifCategory('take_profit')">🟣 止盈冲高 (<span id="catCount_take_profit">0</span>)</button>
-                <button class="n-tab" data-cat="macro_weather" onclick="filterNotifCategory('macro_weather')">⛅ 市场气象 (<span id="catCount_macro_weather">0</span>)</button>
+            <!-- 通知分类导航条 (支持左键按住拖拽 / 滚轮横向滚动 / 左右微调箭头) -->
+            <div class="notif-category-wrap">
+                <button type="button" class="notif-scroll-btn notif-scroll-prev" id="notifScrollLeftBtn" onclick="scrollNotifCategory(-150)" title="向左滚动分类">&lt;</button>
+                <div class="notif-category-bar" id="notifCategoryBar">
+                    <button class="n-tab active" data-cat="all" onclick="filterNotifCategory('all')">全部 (<span id="catCount_all">0</span>)</button>
+                    <button class="n-tab" data-cat="defensive_flight" onclick="filterNotifCategory('defensive_flight')" style="color: #f87171;">🚨 防御起飞 (<span id="catCount_defensive_flight">0</span>)</button>
+                    <button class="n-tab" data-cat="5m_entry" onclick="filterNotifCategory('5m_entry')">🎯 5m买点 (<span id="catCount_5m_entry">0</span>)</button>
+                    <button class="n-tab" data-cat="portfolio" onclick="filterNotifCategory('portfolio')">🛡️ 持仓风控 (<span id="catCount_portfolio">0</span>)</button>
+                    <button class="n-tab" data-cat="golden_pit" onclick="filterNotifCategory('golden_pit')">🟢 黄金坑 (<span id="catCount_golden_pit">0</span>)</button>
+                    <button class="n-tab" data-cat="stop_loss" onclick="filterNotifCategory('stop_loss')">🔴 破位预警 (<span id="catCount_stop_loss">0</span>)</button>
+                    <button class="n-tab" data-cat="take_profit" onclick="filterNotifCategory('take_profit')">🟣 止盈冲高 (<span id="catCount_take_profit">0</span>)</button>
+                    <button class="n-tab" data-cat="macro_weather" onclick="filterNotifCategory('macro_weather')">⛅ 市场气象 (<span id="catCount_macro_weather">0</span>)</button>
+                </div>
+                <button type="button" class="notif-scroll-btn notif-scroll-next" id="notifScrollRightBtn" onclick="scrollNotifCategory(150)" title="向右滚动分类">&gt;</button>
             </div>
             <!-- 通知列表容器 -->
             <div class="notif-drawer-body" id="notifListContainer">
@@ -3902,8 +4000,113 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 .catch(() => {{}});
         }}
 
+        // 横向分类栏微调按钮与鼠标拖拽/滚轮横向滚动引擎
+        function scrollNotifCategory(delta) {{
+            const bar = document.getElementById("notifCategoryBar") || document.querySelector(".notif-category-bar");
+            if (!bar) return;
+            try {{
+                bar.scrollBy({{ left: delta, behavior: "smooth" }});
+            }} catch(e) {{
+                bar.scrollLeft += delta;
+            }}
+        }}
+
+        function enableHorizontalDragScroll(el) {{
+            if (!el || el.dataset.dragScrollBound === "1") return;
+            el.dataset.dragScrollBound = "1";
+            el.style.cursor = "grab";
+            el.style.userSelect = "none";
+
+            let isDown = false;
+            let startX = 0;
+            let startScrollLeft = 0;
+            let hasDragged = false;
+            let suppressNextClick = false;
+
+            const getEventX = (ev) => {{
+                if (typeof ev.clientX === "number" && (ev.clientX !== 0 || !ev.pageX)) return ev.clientX;
+                if (typeof ev.pageX === "number") return ev.pageX;
+                return ev.screenX || 0;
+            }};
+
+            const onMouseDown = (e) => {{
+                if (e.button !== undefined && e.button !== 0) return;
+                if (el.id === "notifCategoryBar") {{
+                    const ov = document.getElementById("notifDrawerOverlay");
+                    if (ov && window.getComputedStyle(ov).display === "none") {{
+                        ov.style.display = "flex";
+                    }}
+                }}
+                isDown = true;
+                hasDragged = false;
+                startX = getEventX(e);
+                startScrollLeft = el.scrollLeft;
+                el.classList.add("is-dragging");
+                el.style.cursor = "grabbing";
+                el.style.scrollBehavior = "auto";
+            }};
+
+            const onMouseMove = (e) => {{
+                if (!isDown) return;
+                const x = getEventX(e);
+                const walk = x - startX;
+                if (Math.abs(walk) > 5) {{
+                    hasDragged = true;
+                }}
+                if (hasDragged && e.cancelable) {{
+                    e.preventDefault();
+                }}
+                el.scrollLeft = startScrollLeft - walk;
+            }};
+
+            const endDrag = () => {{
+                if (!isDown) return;
+                isDown = false;
+                el.classList.remove("is-dragging");
+                el.style.cursor = "grab";
+                if (hasDragged) {{
+                    suppressNextClick = true;
+                    setTimeout(() => {{ suppressNextClick = false; }}, 120);
+                }}
+                hasDragged = false;
+            }};
+
+            el.addEventListener("mousedown", onMouseDown);
+            el.addEventListener("mousemove", onMouseMove);
+            el.addEventListener("mouseup", endDrag);
+            el.addEventListener("mouseleave", endDrag);
+            window.addEventListener("mousemove", onMouseMove);
+            window.addEventListener("mouseup", endDrag);
+
+            // 捕获阶段拦截拖动 >5px 后的子标签 click 误触发
+            el.addEventListener("click", (e) => {{
+                if (suppressNextClick) {{
+                    e.preventDefault();
+                    e.stopPropagation();
+                    e.stopImmediatePropagation();
+                    suppressNextClick = false;
+                }}
+            }}, true);
+
+            // 鼠标滚轮横向滚动 (拦截垂直滚动并累加 deltaY 到 scrollLeft)
+            el.addEventListener("wheel", (e) => {{
+                if (e.deltaY !== 0 || e.deltaX !== 0) {{
+                    if (e.cancelable) e.preventDefault();
+                    el.scrollLeft += (e.deltaY !== 0 ? e.deltaY : e.deltaX);
+                }}
+            }}, {{ passive: false }});
+        }}
+
+        function initAllHorizontalScrollBars() {{
+            document.querySelectorAll(".notif-category-bar, .watchlist-categories, .mobile-period-bar").forEach(bar => {{
+                enableHorizontalDragScroll(bar);
+            }});
+        }}
+        initAllHorizontalScrollBars();
+
         // 页面启动执行
         window.addEventListener("DOMContentLoaded", function() {{
+            initAllHorizontalScrollBars();
             // 1. 还原左侧分类过滤 Tab
             let savedFilter = "all";
             try {{
