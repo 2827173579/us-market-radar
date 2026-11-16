@@ -5333,8 +5333,9 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
                 <a href="backtest_report_5y.html" class="suite-link">🛡️ 5年历史回测对账</a>
                 <a href="predict_radar_5y.html" class="suite-link active">⚡ AI 5年多赛道预测引擎</a>
             </div>
-            <div class="suite-meta">
+            <div class="suite-meta" style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
                 <span>💡 点击表中任意股票代码可直接唤起富途多周期 K 线看盘</span>
+                <span style="font-size: 11px; color: #fbbf24; background: rgba(245, 158, 11, 0.12); border: 1px solid rgba(245, 158, 11, 0.35); padding: 2px 9px; border-radius: 999px; font-weight: 600;">⚠️ 数据与推演仅供参考·不构成投资建议</span>
             </div>
         </nav>
 
@@ -5360,22 +5361,22 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
         <div class="kpi-grid">
             <div class="kpi-card green">
                 <div class="kpi-label">高置信正收益胜率 (>=60% 阈值)</div>
-                <div class="kpi-val" style="color: var(--neon-green);">{kpi.get('high_conviction_win_rate', 62.5):.1f}%</div>
+                <div class="kpi-val" style="color: var(--neon-green);">{f"{kpi.get('high_conviction_win_rate'):.1f}%" if kpi.get('high_conviction_win_rate') is not None else "--"}</div>
                 <div class="kpi-sub">2024-2026 样本外实测 · 含止盈触轨与 5 日正收益交割</div>
             </div>
             <div class="kpi-card gold">
                 <div class="kpi-label">高置信期望盈亏比 (Profit Factor)</div>
-                <div class="kpi-val" style="color: var(--warning-gold);">{kpi.get('profit_factor', 2.18):.2f}</div>
+                <div class="kpi-val" style="color: var(--warning-gold);">{f"{kpi.get('profit_factor'):.2f}" if kpi.get('profit_factor') is not None else "--"}</div>
                 <div class="kpi-sub">分段软压缩 ATR 动态止盈止损轨 · 真实交割收益口径</div>
             </div>
             <div class="kpi-card purple">
                 <div class="kpi-label">领航 Alpha 赛道</div>
-                <div class="kpi-val" style="font-size: 20px; color: var(--cyber-purple);">{kpi.get('top_sector', '存储芯片')}</div>
+                <div class="kpi-val" style="font-size: 20px; color: var(--cyber-purple);">{kpi.get('top_sector') or '--'}</div>
                 <div class="kpi-sub">综合样本外 PF 与平均实现收益评定 · 赋能表 4 先验校准</div>
             </div>
             <div class="kpi-card blue">
                 <div class="kpi-label">第一核心驱动因子</div>
-                <div class="kpi-val" style="font-size: 20px; color: var(--primary-blue); font-family: 'JetBrains Mono', monospace;">{kpi.get('top_feature', 'QQQ_Bias_MA50')}</div>
+                <div class="kpi-val" style="font-size: 20px; color: var(--primary-blue); font-family: 'JetBrains Mono', monospace;">{kpi.get('top_feature') or '--'}</div>
                 <div class="kpi-sub">colsample=0.65 & max_bin=63 树分裂防垄断正则化</div>
             </div>
         </div>
@@ -5512,10 +5513,10 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
                     <div style="background: rgba(13, 17, 23, 0.85); border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; padding: 12px 14px;">
                         <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 8px; margin-bottom: 8px;">
                             <div>
-                                <span id="cycleTickerTitle" style="font-size: 20px; font-weight: 800; color: #58a6ff; font-family: 'JetBrains Mono', monospace;">SOXL</span>
-                                <span id="cycleTickerSub" style="font-size: 12px; color: var(--text-sub); margin-left: 6px;">3倍做多半导体</span>
+                                <span id="cycleTickerTitle" style="font-size: 20px; font-weight: 800; color: #58a6ff; font-family: 'JetBrains Mono', monospace;">--</span>
+                                <span id="cycleTickerSub" style="font-size: 12px; color: var(--text-sub); margin-left: 6px;">加载中...</span>
                             </div>
-                            <span id="cycleCurPrice" style="font-size: 20px; font-weight: 800; color: #f0f6fc; font-family: 'JetBrains Mono', monospace;">$0.00</span>
+                            <span id="cycleCurPrice" style="font-size: 20px; font-weight: 800; color: #f0f6fc; font-family: 'JetBrains Mono', monospace;">--</span>
                         </div>
                         <div style="font-size: 12px; color: var(--text-sub); line-height: 1.5;">
                             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
@@ -5561,7 +5562,7 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
             <button class="t4-seg-btn active" data-view="dual" onclick="switchT4View('dual')">⚔️ 多空双向大榜 (Dual Top 5)</button>
             <button class="t4-seg-btn" data-view="long" onclick="switchT4View('long')">🔥 做多高胜率 Top 5 (Long Pool)</button>
             <button class="t4-seg-btn" data-view="short" onclick="switchT4View('short')">🩸 做空高胜率 Top 5 (Short Pool)</button>
-            <button class="t4-seg-btn" data-view="all" onclick="switchT4View('all')">🌐 全域 70 标的全景截面</button>
+            <button class="t4-seg-btn" data-view="all" onclick="switchT4View('all')">🌐 全域 {len(all_live)} 标的全景截面</button>
         </div>
 
         <div id="t4-view-container">
@@ -5574,7 +5575,7 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
                     </div>
                     <div class="t4-controls-right" id="t4-long-controls">
                         <input type="text" id="t4-search" class="search-input" placeholder="🔍 搜索代码 (如 NVDA)..." oninput="applyT4Filters()">
-                        <button id="t4-mode-btn" class="mode-btn" onclick="toggleT4PoolMode()">🌐 展开全域 70 标的全景</button>
+                        <button id="t4-mode-btn" class="mode-btn" onclick="toggleT4PoolMode()">🌐 展开全域 {len(all_live)} 标的全景</button>
                     </div>
                 </div>
 
@@ -5711,6 +5712,9 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
 
         <!-- Footer -->
         <footer class="footer">
+            <div class="site-disclaimer-banner" id="siteDisclaimerBanner" style="margin: 0 auto 14px; max-width: 1120px; background: rgba(245, 158, 11, 0.08); border: 1px solid rgba(245, 158, 11, 0.32); border-radius: 10px; padding: 10px 16px; color: #fde68a; font-size: 12px; line-height: 1.6;">
+                ⚠️ <strong style="color: #fbbf24;">免责声明</strong>：本看板所有行情数据、量化指标与 AI 历史统计推演均为程序客观计算结果，仅作个人学习研究与看盘辅助参考，<strong style="color: #fbbf24;">不构成任何投资或买卖建议</strong>。美股及杠杆产品波动剧烈，请独立决策并严控风险。
+            </div>
             <p>架构规范: 微软 Qlib 滚动时序长表截面 [Date, Ticker, Sector] | 模型: LightGBM 正则化分类器 (max_depth=5, num_leaves=23, colsample=0.65, max_bin=63)</p>
             <p>时序验证: 2024~2026 Expanding Walk-Forward + 5 日 Purge 隔离 | 实盘推理: Full-Sample Refit (截至 T-5 已结算样本) + 赛道 PF 先验校准</p>
             <p style="margin-top: 8px; color: #484f58;">us-market-radar AI Multi-Sector 5Y Predictor Engine V1.3 · Institutional Quantitative Suite</p>
@@ -5746,7 +5750,7 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
                 if (cardShort) cardShort.style.display = '';
                 showFullPool = false;
                 if (title) title.textContent = '🔥 表 4-A: 最新交易日 AI 预测做多胜率排行榜 Top 5 (Bullish Conviction)';
-                if (modeBtn) modeBtn.textContent = '🌐 展开全域 70 标的全景';
+                if (modeBtn) modeBtn.textContent = '🌐 展开全域 {len(all_live)} 标的全景';
                 document.querySelectorAll('.t4-all-short-sub').forEach(el => el.style.display = 'none');
                 applyT4Filters(5);
             }} else if (view === 'long') {{
@@ -5754,7 +5758,7 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
                 if (cardShort) cardShort.style.display = 'none';
                 showFullPool = false;
                 if (title) title.textContent = '🔥 表 4-A: 最新交易日 AI 预测做多高胜率 Top 5 (Long Pool)';
-                if (modeBtn) modeBtn.textContent = '🌐 展开全域 70 标的全景';
+                if (modeBtn) modeBtn.textContent = '🌐 展开全域 {len(all_live)} 标的全景';
                 document.querySelectorAll('.t4-all-short-sub').forEach(el => el.style.display = 'none');
                 applyT4Filters(5);
             }} else if (view === 'short') {{
@@ -5764,10 +5768,10 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
                 if (cardLong) cardLong.style.display = '';
                 if (cardShort) cardShort.style.display = 'none';
                 showFullPool = true;
-                if (title) title.textContent = '🌐 表 4: 全域 70 标的全景截面 (全量 AI 实时推理 · 多空双向指标)';
+                if (title) title.textContent = '🌐 表 4: 全域 {len(all_live)} 标的全景截面 (全量 AI 实时推理 · 多空双向指标)';
                 if (modeBtn) modeBtn.textContent = '🏆 仅看 Top 5 精选榜';
                 document.querySelectorAll('.t4-all-short-sub').forEach(el => el.style.display = 'block');
-                applyT4Filters(70);
+                applyT4Filters({len(all_live)});
             }}
         }}
 
@@ -5794,13 +5798,13 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
                     p.classList.remove('active');
                 }}
             }});
-            applyT4Filters(showFullPool ? 70 : 5);
+            applyT4Filters(showFullPool ? {len(all_live)} : 5);
         }}
 
         function applyT4Filters(limit) {{
             const query = (document.getElementById('t4-search').value || '').trim().toUpperCase();
             const rows = document.querySelectorAll('#t4-tbody .t4-stock-row');
-            let maxCount = limit || (showFullPool ? 70 : 5);
+            let maxCount = limit || (showFullPool ? {len(all_live)} : 5);
             let visibleCount = 0;
 
             rows.forEach(row => {{
@@ -6108,7 +6112,7 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
                 subEl.textContent = subNames[data.ticker] || '';
             }}
             const curP = Number(data.current_price || 0);
-            if (curPEl) curPEl.textContent = '$' + curP.toFixed(2);
+            if (curPEl) curPEl.textContent = curP > 0 ? ('$' + curP.toFixed(2)) : '--';
             let noteEl = document.getElementById('cyclePriceNote');
             if (!noteEl && curPEl && curPEl.parentElement) {{
                 noteEl = document.createElement('div');
@@ -6117,9 +6121,9 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
                 curPEl.parentElement.appendChild(noteEl);
             }}
             if (noteEl) noteEl.textContent = data.price_note || '';
-            if (aPerEl) aPerEl.textContent = (data.analog_match && data.analog_match.period) || '2024-07-05 ~ 2024-08-08 (KNN-5 联合同日)';
-            const simVal = (data.analog_match && data.analog_match.similarity_pct) || 87.2;
-            if (aSimEl) aSimEl.textContent = simVal + '% ' + (simVal >= 85 ? '⭐⭐⭐⭐⭐' : (simVal >= 75 ? '⭐⭐⭐⭐' : '⭐⭐⭐'));
+            if (aPerEl) aPerEl.textContent = (data.analog_match && data.analog_match.period) || '--';
+            const simVal = (data.analog_match && data.analog_match.similarity_pct) != null ? Number(data.analog_match.similarity_pct) : null;
+            if (aSimEl) aSimEl.textContent = simVal !== null ? (simVal + '% ' + (simVal >= 85 ? '⭐⭐⭐⭐⭐' : (simVal >= 75 ? '⭐⭐⭐⭐' : '⭐⭐⭐'))) : '--';
 
             // S/R Level Ladder (阶梯卡片)
             const ladderEl = document.getElementById('cycleLevelsLadder');

@@ -4178,6 +4178,7 @@ def generate_macro_radar_html(macro_data, weather_info, history_dict, update_tim
                 <span style="color:#60a5fa;">⏱️ 自动刷新: 每3分钟 (180s)</span>
                 <span>最近更新: {update_time_str}</span>
                 {live_badge_html}
+                <span style="color:#fbbf24; background:rgba(245,158,11,0.12); border:1px solid rgba(245,158,11,0.32); padding:2px 8px; border-radius:4px; font-weight:600;">⚠️ 数据仅供参考·不构成投资建议</span>
             </div>
         </div>
         <div class="header-links">
@@ -4234,7 +4235,7 @@ def generate_macro_radar_html(macro_data, weather_info, history_dict, update_tim
 
     <!-- 宏观水温监控表 -->
     <div class="table-card">
-        <h3 style="margin-top: 0; margin-bottom: 16px; font-size: 16px; color: #e2e8f0;">📊 宏观资产数字化水温总表 (10 只 ETF · 实时行情)</h3>
+        <h3 style="margin-top: 0; margin-bottom: 16px; font-size: 16px; color: #e2e8f0;">📊 宏观资产数字化水温总表 ({len(macro_data)} 只 ETF · 实时行情)</h3>
         <table>
             <thead>
                 <tr>
@@ -4255,6 +4256,9 @@ def generate_macro_radar_html(macro_data, weather_info, history_dict, update_tim
             </tbody>
         </table>
     </div>
+    <footer id="siteDisclaimerBanner" style="margin: 24px 0 8px; padding: 12px 18px; background: rgba(245, 158, 11, 0.08); border: 1px solid rgba(245, 158, 11, 0.32); border-radius: 10px; color: #fde68a; font-size: 12px; line-height: 1.6; text-align: center;">
+        ⚠️ <strong style="color: #fbbf24;">免责声明</strong>：本看板所有行情数据、量化指标与 AI 历史统计推演均为程序客观计算结果，仅作个人学习研究与看盘辅助参考，<strong style="color: #fbbf24;">不构成任何投资或买卖建议</strong>。美股及杠杆产品波动剧烈，请独立决策并严控风险。
+    </footer>
 </body>
 </html>
 """
@@ -4523,6 +4527,7 @@ def generate_stocks_radar_html(stocks_data, history_dict, update_time_str="", ha
                 <span style="color:#60a5fa;">⏱️ 自动刷新: 每3分钟 (180s)</span>
                 <span>最近更新: {update_time_str}</span>
                 {live_badge_html}
+                <span style="color:#fbbf24; background:rgba(245,158,11,0.12); border:1px solid rgba(245,158,11,0.32); padding:2px 8px; border-radius:4px; font-weight:600;">⚠️ 数据仅供参考·不构成投资建议</span>
             </div>
         </div>
         <div class="header-links">
@@ -4582,6 +4587,9 @@ def generate_stocks_radar_html(stocks_data, history_dict, update_time_str="", ha
             </tbody>
         </table>
     </div>
+    <footer id="siteDisclaimerBanner" style="margin: 24px 0 8px; padding: 12px 18px; background: rgba(245, 158, 11, 0.08); border: 1px solid rgba(245, 158, 11, 0.32); border-radius: 10px; color: #fde68a; font-size: 12px; line-height: 1.6; text-align: center;">
+        ⚠️ <strong style="color: #fbbf24;">免责声明</strong>：本看板所有行情数据、量化指标与 AI 历史统计推演均为程序客观计算结果，仅作个人学习研究与看盘辅助参考，<strong style="color: #fbbf24;">不构成任何投资或买卖建议</strong>。美股及杠杆产品波动剧烈，请独立决策并严控风险。
+    </footer>
 </body>
 </html>
 """
@@ -5220,7 +5228,7 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
                     "cost": meta.get("cost", 0.0),
                     "shares": meta.get("shares", 0.0),
                     "base_val": meta.get("base_val", 0.0),
-                    "target": meta.get("target", 95.50),
+                    "target": meta.get("target", 0.0),
                     "max_alloc": 0.0,
                     "last": last,
                     "change": change,
