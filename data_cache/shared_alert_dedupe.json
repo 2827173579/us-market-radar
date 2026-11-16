@@ -138,7 +138,7 @@
     },
     "2026-11-16:QCOM/META:5M_ENTRY": {
       "device": "PC",
-      "ts": 1794825589.9611857
+      "ts": 1794832707.4316068
     },
     "2026-11-16:DEFENSIVE_FLIGHT:+4.7": {
       "device": "PC",
@@ -175,9 +175,21 @@
     "2026-11-16:SPCX/META/LUNR:5M_ENTRY": {
       "device": "PC",
       "ts": 1794831393.8950555
+    },
+    "2026-11-16:DEFENSIVE_FLIGHT:+6.6": {
+      "device": "PC",
+      "ts": 1794832190.7901156
+    },
+    "2026-11-16:DEFENSIVE_FLIGHT:+6.4": {
+      "device": "PC",
+      "ts": 1794832406.2288072
+    },
+    "2026-11-16:DEFENSIVE_FLIGHT:+6.1": {
+      "device": "PC",
+      "ts": 1794832712.5972712
     }
   },
   "device": "PC",
-  "last_heartbeat_ts": 1794831414.9520133,
-  "updated_at": "2026-11-16T12:16:54.952386+00:00"
+  "last_heartbeat_ts": 1794832632.0750613,
+  "updated_at": "2026-11-16T12:38:32.597616+00:00"
 }
