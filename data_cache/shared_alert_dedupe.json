@@ -67,9 +67,13 @@
     "2026-11-16:NBIS/NVDA:STOP_LOSS": {
       "device": "PC",
       "ts": 1794816664.116889
+    },
+    "2026-11-16:DEFENSIVE_FLIGHT:+2.7": {
+      "device": "PC",
+      "ts": 1794819674.3097656
     }
   },
   "device": "PC",
-  "last_heartbeat_ts": 1794819507.9428532,
-  "updated_at": "2026-11-16T08:58:27.943276+00:00"
+  "last_heartbeat_ts": 1794819601.3997006,
+  "updated_at": "2026-11-16T09:01:14.310224+00:00"
 }
