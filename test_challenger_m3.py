@@ -130,6 +130,43 @@ class TestTable4HtmlDomIntegrity(unittest.TestCase):
         self.assertIn("DOMContentLoaded", self.html)
         self.assertIn("switchT4View(savedView)", self.html)
 
+    def test_btc_7x24_natural_calendar_and_live_sync_alignment(self):
+        """Verify BTC-USD 7x24 natural calendar mode and 70-ticker live price/today node/projection anchor parity."""
+        from datetime import datetime as _dt
+        key = "const timeCycleData = "
+        idx = self.html.find(key)
+        self.assertGreaterEqual(idx, 0, "timeCycleData not found in predict_radar_5y.html")
+        tc_data, _ = json.JSONDecoder().raw_decode(self.html[idx + len(key):])
+        self.assertEqual(len(tc_data), 70, f"Expected 70 tickers in timeCycleData, got {len(tc_data)}")
+
+        btc = tc_data.get("BTC-USD")
+        self.assertIsNotNone(btc, "BTC-USD missing in timeCycleData")
+        hist = btc.get("history", [])
+        proj = btc.get("projection", [])
+        hist_dates = [_dt.strptime(h["date"], "%Y-%m-%d").date() for h in hist]
+        proj_dates = [_dt.strptime(p["date"], "%Y-%m-%d").date() for p in proj]
+
+        # 1. BTC-USD history must contain weekend dates and have 1-day consecutive tail steps
+        self.assertTrue(any(d.weekday() >= 5 for d in hist_dates), "BTC-USD history must include Sat/Sun bars")
+        for i in range(len(hist_dates) - 5, len(hist_dates)):
+            self.assertEqual((hist_dates[i] - hist_dates[i - 1]).days, 1, f"BTC-USD history date gap at {hist_dates[i]}")
+
+        # 2. BTC-USD T+1..T+15 must be consecutive natural calendar days (including Sat/Sun)
+        self.assertEqual((proj_dates[0] - hist_dates[-1]).days, 1, "BTC-USD T+1 must be 1 natural day after today node")
+        for i in range(1, len(proj_dates)):
+            self.assertEqual((proj_dates[i] - proj_dates[i - 1]).days, 1, f"BTC-USD projection date gap at T+{i+1}")
+        self.assertTrue(any(d.weekday() >= 5 for d in proj_dates), "BTC-USD T+1..T+15 must include Sat/Sun")
+
+        # 3. All 70 tickers must have current_price == history[-1].price == projection anchor
+        for tk, item in tc_data.items():
+            cp = round(float(item["current_price"]), 2)
+            hp = round(float(item["history"][-1]["price"]), 2)
+            self.assertEqual(cp, hp, f"{tk}: current_price ({cp}) != history[-1].price ({hp})")
+            for p in item["projection"]:
+                if p.get("wave_ret") is not None:
+                    exp_p = round(cp * (1.0 + float(p["wave_ret"])), 2)
+                    self.assertAlmostEqual(float(p["price"]), exp_p, delta=0.02, msg=f"{tk} {p['day']} anchor mismatch")
+
 
 class TestFutuProTerminalDomIntegrity(unittest.TestCase):
     """Rigorous DOM element and structure verification for futu_pro_terminal.html."""

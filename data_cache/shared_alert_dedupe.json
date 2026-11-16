@@ -7,9 +7,13 @@
     "2026-11-15:QCOM:STOP_LOSS": {
       "device": "PC",
       "ts": 1794720278.8420012
+    },
+    "2026-11-15:DEFENSIVE_FLIGHT": {
+      "device": "PC",
+      "ts": 1794791867.2436066
     }
   },
   "device": "PC",
-  "last_heartbeat_ts": 1794743566.1066399,
-  "updated_at": "2026-11-15T11:52:46.106913+00:00"
+  "last_heartbeat_ts": 1794789055.3872116,
+  "updated_at": "2026-11-16T01:17:47.243997+00:00"
 }

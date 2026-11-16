@@ -380,8 +380,49 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                         if isinstance(_tc_item, dict) and isinstance(_b_item, dict):
                             _new_cp = float(_b_item.get("latest_price") or _b_item.get("current_price") or 0.0)
                             if _new_cp > 0:
-                                # 盘中/盘后报价只写入现价。已收盘历史 K 线与 15 日推演路径保持收盘价，禁止按比例改写。
-                                _tc_item["current_price"] = round(_new_cp, 2)
+                                _cp_round = round(_new_cp, 2)
+                                _hist_list = _tc_item.get("history") or []
+                                _old_anchor = float(
+                                    _tc_item.get("anchor_price")
+                                    or (_hist_list[-1].get("price") if _hist_list else 0.0)
+                                    or _tc_item.get("current_price")
+                                    or _cp_round
+                                )
+                                _tc_item["current_price"] = _cp_round
+                                _tc_item["anchor_price"] = _cp_round
+                                _tc_item["price_note"] = ""
+                                if _hist_list:
+                                    if _tk_c == "BTC-USD":
+                                        from datetime import datetime as _dt_utc, timezone as _tz_utc, timedelta as _td_utc
+                                        _btc_today_s = _dt_utc.now(_tz_utc.utc).date().strftime("%Y-%m-%d")
+                                        if str(_hist_list[-1].get("date", ""))[:10] < _btc_today_s:
+                                            _hist_list.append({"date": _btc_today_s, "price": _cp_round})
+                                            _tc_item["history"] = _hist_list[-20:]
+                                        else:
+                                            _hist_list[-1]["price"] = _cp_round
+                                        _tc_item["today_label"] = "今日"
+                                    else:
+                                        _hist_list[-1]["price"] = _cp_round
+                                # 保持 15 日涨跌幅波形比例不变，仅按最新现价实时对齐锚定推演起点
+                                _proj_items = _tc_item.get("projection") or []
+                                for _d_i, _p_obj in enumerate(_proj_items):
+                                    if not isinstance(_p_obj, dict):
+                                        continue
+                                    if _p_obj.get("wave_ret") is not None:
+                                        _w_ret = float(_p_obj["wave_ret"])
+                                    elif _old_anchor > 0 and _p_obj.get("price") is not None:
+                                        _w_ret = (float(_p_obj["price"]) - _old_anchor) / _old_anchor
+                                        _p_obj["wave_ret"] = round(_w_ret, 6)
+                                    else:
+                                        _w_ret = float(_p_obj.get("pct", 0.0)) / 100.0
+                                        _p_obj["wave_ret"] = round(_w_ret, 6)
+                                    _new_p_val = round(_cp_round * (1.0 + _w_ret), 2)
+                                    _p_obj["price"] = _new_p_val
+                                    _p_obj["pct"] = round(((_new_p_val - _cp_round) / (_cp_round + 1e-8)) * 100.0, 1)
+                                    if _tk_c == "BTC-USD" and _hist_list:
+                                        from datetime import datetime as _dt_utc2, timedelta as _td_utc2
+                                        _base_d = _dt_utc2.strptime(str(_tc_item["history"][-1]["date"])[:10], "%Y-%m-%d").date()
+                                        _p_obj["date"] = (_base_d + _td_utc2(days=_d_i + 1)).strftime("%Y-%m-%d")
                             # 1. 同步常规防御梯队点位 (s1, s2, sl, r1, r2) — 统一纯数学驱动，零个股硬编码
                             for _k_lvl in ("s1", "s2", "sl", "r1", "r2"):
                                 if _b_item.get(_k_lvl) is not None:

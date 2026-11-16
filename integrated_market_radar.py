@@ -3642,16 +3642,20 @@ def ui_display_pct(item):
         return 0.0
 
 
-def patch_predict_time_cycle_anchor(macro_data, stocks_data, session_code):
-    """仅用今日真实扩展价更新路径图 11-13 锚点；无真实今日价则删除伪造今日柱，保持 11-12 收盘。"""
+def sync_live_prices_to_predict_html(macro_data=None, stocks_data=None, session_code=""):
+    """
+    轻量级每分钟实时价格同步引擎 (<0.2s，无需重跑 LightGBM)：
+    直接读取 data_cache/latest_ai_predictions.json 与 predict_radar_5y.html，
+    将全部 70 只标的的右上角最新报价 (current_price)、timeCycleData 历史序列最后一根“今日节点”价格，
+    以及未来 15 日推演路径的起点按最新现价实时对齐更新（保持原有 15 日涨跌幅波形比例不变，仅锚定最新现价）。
+    同时保证 BTC-USD 未来 T+1~T+15 按 7x24 连续自然日历（含周六、周日）递增。
+    """
+    t0 = time.perf_counter()
     try:
-        from datetime import datetime as _dt
-        import zoneinfo, json as _json
-        try:
-            ny = zoneinfo.ZoneInfo("America/New_York")
-        except Exception:
-            return False
-        today = _dt.now(ny).date().isoformat()
+        import json as _json
+        import ml_predictor_5y
+        btc_utc_today = datetime.now(timezone.utc).date().strftime("%Y-%m-%d")
+
         live = {}
         _pairs = []
         if isinstance(macro_data, dict):
@@ -3659,57 +3663,157 @@ def patch_predict_time_cycle_anchor(macro_data, stocks_data, session_code):
         if isinstance(stocks_data, (list, tuple)):
             _pairs.extend([(str(v.get("ticker")), v) for v in stocks_data if isinstance(v, dict) and v.get("ticker")])
         for tk, item in _pairs:
-            try:
-                ep = float(item.get("ext_price", 0) or 0)
-                ap = float(item.get("active_price", 0) or 0)
-            except Exception:
-                continue
-            if tk and ep > 0 and ap > 0:
-                live[tk] = ap
-        path = os.path.join(SCRATCH_DIR, "predict_radar_5y.html")
-        if not os.path.exists(path):
+            px_val = ui_display_price(item)
+            if tk and px_val > 0:
+                live[tk] = round(float(px_val), 2)
+
+        json_path = os.path.join(SCRATCH_DIR, "data_cache", "latest_ai_predictions.json")
+        html_path = os.path.join(SCRATCH_DIR, "predict_radar_5y.html")
+        if not os.path.exists(html_path):
             return False
-        s = open(path, encoding="utf-8").read()
+
+        ai_payload = None
+        if os.path.exists(json_path):
+            try:
+                with open(json_path, "r", encoding="utf-8") as jf:
+                    ai_payload = _json.load(jf)
+            except Exception:
+                ai_payload = None
+
+        s = open(html_path, "r", encoding="utf-8").read()
         key = "const timeCycleData = "
         i = s.find(key)
         if i < 0:
             return False
         j = i + len(key)
-        data, end = _json.JSONDecoder().raw_decode(s[j:])
-        if not isinstance(data, dict):
+        html_tc_data, end = _json.JSONDecoder().raw_decode(s[j:])
+        if not isinstance(html_tc_data, dict):
             return False
-        changed = False
-        for tk, item in data.items():
-            if not isinstance(item, dict):
-                continue
-            hist = item.get("history") or []
-            if not hist:
-                continue
-            prev_px = float(hist[-1].get("price", 0) or 0)
-            # 删除已存在的伪造今日柱（价格等于上一交易日收盘）
-            if str(hist[-1].get("date", ""))[:10] == today and tk not in live:
-                hist.pop()
-                item["history"] = hist[-20:]
-                item["current_price"] = prev_px
-                item["today_label"] = "最新收盘 (" + str(hist[-1].get("date", ""))[5:10] + ")" if hist else ""
-                changed = True
-                continue
-            if tk not in live:
-                continue
-            px = round(float(live[tk]), 2)
-            if str(hist[-1].get("date", ""))[:10] == today:
-                hist[-1]["price"] = px
-            else:
-                hist.append({"date": today, "price": px})
-                item["history"] = hist[-20:]
-            item["current_price"] = px
-            item["today_label"] = "今日"
-            changed = True
-        if changed:
-            open(path, "w", encoding="utf-8").write(s[:j] + _json.dumps(data, ensure_ascii=False) + s[j+end:])
+
+        def _align_tc_dict(tc_dict, by_tk_map=None):
+            for tk, item in tc_dict.items():
+                if not isinstance(item, dict):
+                    continue
+                hist = item.get("history") or []
+                old_anchor = float(
+                    item.get("anchor_price")
+                    or (hist[-1].get("price") if hist else 0.0)
+                    or item.get("current_price")
+                    or 0.0
+                )
+                px = float(live.get(tk) or item.get("current_price") or old_anchor or 0.0)
+                if px <= 0:
+                    continue
+                px = round(px, 2)
+                if old_anchor <= 0:
+                    old_anchor = px
+
+                item["current_price"] = px
+                item["anchor_price"] = px
+                item["price_note"] = ""
+
+                if hist:
+                    if tk == "BTC-USD":
+                        if str(hist[-1].get("date", ""))[:10] < btc_utc_today:
+                            hist.append({"date": btc_utc_today, "price": px})
+                            item["history"] = hist[-20:]
+                        else:
+                            hist[-1]["price"] = px
+                        item["today_label"] = "今日"
+                    else:
+                        hist[-1]["price"] = px
+
+                projs = item.get("projection") or []
+                for d_i, p_obj in enumerate(projs):
+                    if not isinstance(p_obj, dict):
+                        continue
+                    if p_obj.get("wave_ret") is not None:
+                        w_ret = float(p_obj["wave_ret"])
+                    elif old_anchor > 0 and p_obj.get("price") is not None:
+                        w_ret = (float(p_obj["price"]) - old_anchor) / old_anchor
+                        p_obj["wave_ret"] = round(w_ret, 6)
+                    else:
+                        w_ret = float(p_obj.get("pct", 0.0)) / 100.0
+                        p_obj["wave_ret"] = round(w_ret, 6)
+                    new_p = round(px * (1.0 + w_ret), 2)
+                    p_obj["price"] = new_p
+                    p_obj["pct"] = round(((new_p - px) / (px + 1e-8)) * 100.0, 1)
+                    if tk == "BTC-USD" and item.get("history"):
+                        base_d = datetime.strptime(str(item["history"][-1]["date"])[:10], "%Y-%m-%d").date()
+                        p_obj["date"] = (base_d + timedelta(days=d_i + 1)).strftime("%Y-%m-%d")
+
+                if by_tk_map and isinstance(by_tk_map.get(tk), dict):
+                    b_item = by_tk_map[tk]
+                    b_item["latest_price"] = px
+                    b_item["current_price"] = px
+                    for k_lvl in ("s1", "s2", "sl", "r1", "r2"):
+                        if b_item.get(k_lvl) is not None:
+                            item[k_lvl] = b_item[k_lvl]
+
+                proj_prices = [float(p["price"]) for p in projs if isinstance(p, dict) and p.get("price") is not None]
+                if proj_prices:
+                    max_proj_p = max(proj_prices)
+                    item["r2"] = max(float(item.get("r2") or 0.0), round(max_proj_p * 1.015, 2))
+                    if item.get("r1") is not None and float(item["r2"]) <= float(item["r1"]):
+                        min_step = max(0.01, round(px * 0.005, 2))
+                        item["r2"] = round(float(item["r1"]) + min_step, 2)
+                    if by_tk_map and isinstance(by_tk_map.get(tk), dict):
+                        by_tk_map[tk]["r2"] = item["r2"]
+
+                try:
+                    item["cycle_windows"] = ml_predictor_5y._build_cycle_windows_from_projections(
+                        projections=projs,
+                        current_price=px,
+                        r1=item.get("r1"),
+                        r2=item.get("r2")
+                    )
+                except Exception:
+                    pass
+
+                r1_v = float(item.get("r1") or 0.0)
+                r2_v = float(item.get("r2") or 0.0)
+                for cw in item.get("cycle_windows", []):
+                    if isinstance(cw, dict) and cw.get("price"):
+                        cw_p = float(cw["price"])
+                        if cw.get("type") in ("bottom", "caution"):
+                            if (r1_v > 0 and cw_p >= r1_v) or (r2_v > 0 and cw_p >= r2_v):
+                                cw["type"] = "caution"
+                                cw["desc"] = "⚠️ 高位强势休整窗 (已超R1/R2阻力·勿追高)"
+                                cw["tag"] = "⚠️ 高位强势休整窗（已超R1/R2阻力·勿追高）"
+                            else:
+                                cw["type"] = "bottom"
+                                cw["desc"] = "🔵 周期底回踩窗 (关注空头回补企稳)"
+                                cw["tag"] = "周期底回踩窗 (企稳关注)"
+
+        by_tk = (ai_payload.get("by_ticker") if isinstance(ai_payload, dict) else None) or {}
+        _align_tc_dict(html_tc_data, by_tk)
+
+        if isinstance(ai_payload, dict):
+            ai_payload["time_cycle_projections"] = html_tc_data
+            for list_key in ("all_predictions", "table4", "top10", "top_long", "top_short"):
+                arr = ai_payload.get(list_key)
+                if isinstance(arr, list):
+                    for row in arr:
+                        if isinstance(row, dict) and row.get("ticker") in live:
+                            row["latest_price"] = live[row["ticker"]]
+                            row["current_price"] = live[row["ticker"]]
+                            if row["ticker"] in html_tc_data and html_tc_data[row["ticker"]].get("r2"):
+                                row["r2"] = html_tc_data[row["ticker"]]["r2"]
+            with open(json_path, "w", encoding="utf-8") as jf:
+                _json.dump(ai_payload, jf, ensure_ascii=False, indent=2)
+
+        with open(html_path, "w", encoding="utf-8") as hf:
+            hf.write(s[:j] + _json.dumps(html_tc_data, ensure_ascii=False) + s[j + end:])
+
+        elapsed_ms = (time.perf_counter() - t0) * 1000.0
+        print(f"⚡ [轻量实时同步] 已对齐 70 标的 predict_radar_5y.html 现价/今日节点/15日推演起点 (耗时 {elapsed_ms:.1f}ms)")
+        return True
     except Exception as e:
-        print(f"[!] 路径图今日锚点修补失败: {e}")
+        print(f"[!] 路径图轻量实时同步失败: {e}")
     return False
+
+
+patch_predict_time_cycle_anchor = sync_live_prices_to_predict_html
 
 
 def generate_macro_radar_html(macro_data, weather_info, history_dict, update_time_str="", has_realtime=False):
@@ -5081,7 +5185,7 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
     except Exception:
         pass
     print(f"✅ 富途牛牛专业全周期看盘终端已生成: {FUTU_HTML_FILE}")
-    patch_predict_time_cycle_anchor(macro_data, stocks_sorted, session_code)
+    sync_live_prices_to_predict_html(macro_data, stocks_sorted, session_code)
 
     # 7. 智能去重微信预警推送 (PushPlus 微信 Markdown 卡片通道)
     dispatch_wechat_radar_alerts(macro_data, stocks_sorted, weather_info, now_str)
@@ -5190,13 +5294,36 @@ def _page_last_history_day():
         return ""
 
 
+def _btc_history_status():
+    """检查 BTC-USD 在 predict_radar_5y.html 中是否已包含周末自然日及最新 UTC 日线。"""
+    try:
+        p = os.path.join(SCRATCH_DIR, "predict_radar_5y.html")
+        s = open(p, encoding="utf-8", errors="replace").read()
+        key = "const timeCycleData = "
+        i = s.find(key)
+        if i < 0:
+            return "", False
+        d, _ = json.JSONDecoder().raw_decode(s[i + len(key):])
+        btc = (d or {}).get("BTC-USD") or {}
+        hist = btc.get("history") or []
+        if not hist:
+            return "", False
+        dates = [str(h.get("date", ""))[:10] for h in hist if h.get("date")]
+        has_wknd = any(datetime.strptime(dt_s, "%Y-%m-%d").weekday() >= 5 for dt_s in dates if len(dt_s) == 10)
+        return (dates[-1] if dates else ""), has_wknd
+    except Exception:
+        return "", False
+
+
 def maybe_refresh_daily_ml_panel():
-    """任何时间开机都补齐最近已收盘交易日；周末也检查 AI/页面最后历史日期。"""
+    """每当美股收盘 (16:05 ET) 或 BTC-USD 跨越 UTC 00:00 产生新的自然日 K 线时，自动执行 ml_predictor_5y.py --refresh。"""
     try:
         expected = _latest_closed_us_day_et()
         exp_s = expected.strftime("%Y-%m-%d")
+        exp_btc_utc = datetime.now(timezone.utc).date().strftime("%Y-%m-%d")
         state_path = os.path.join(SCRATCH_DIR, "data_cache", ".last_daily_ml_refresh")
         marker_path = os.path.join(SCRATCH_DIR, "data_cache", ".ml_panel_max_date")
+        btc_marker_path = os.path.join(SCRATCH_DIR, "data_cache", ".ml_btc_utc_date")
         os.makedirs(os.path.dirname(state_path), exist_ok=True)
 
         marker = ""
@@ -5204,10 +5331,18 @@ def maybe_refresh_daily_ml_panel():
             marker = open(marker_path, encoding="utf-8").read().strip()[:10]
         except Exception:
             pass
+        btc_marker = ""
+        try:
+            btc_marker = open(btc_marker_path, encoding="utf-8").read().strip()[:10]
+        except Exception:
+            pass
         pred_day = _prediction_last_history_day()
         page_day = _page_last_history_day()
-        # 只要面板、AI 或页面任一落后于最近收盘日，就必须补刷
-        if (marker and marker >= exp_s) and (pred_day and pred_day >= exp_s) and (page_day and page_day >= exp_s):
+        btc_last_day, btc_has_wknd = _btc_history_status()
+        # 只要美股收盘日线落后，或 BTC-USD 跨越 UTC 00:00 产生新自然日 K 线 / 缺少周末日线，就触发全量重算
+        us_ok = bool((marker and marker >= exp_s) and (pred_day and pred_day >= exp_s) and (page_day and page_day >= exp_s))
+        btc_ok = bool((btc_marker and btc_marker >= exp_btc_utc) and (btc_last_day and btc_last_day >= exp_btc_utc) and btc_has_wknd)
+        if us_ok and btc_ok:
             return
 
         state = {}
@@ -5225,7 +5360,7 @@ def maybe_refresh_daily_ml_panel():
         with open(state_path, "w", encoding="utf-8") as sf:
             json.dump(state, sf)
 
-        print(f"[*] 收盘日线补刷触发：期望 {exp_s} / AI {pred_day or '无'} / 页面 {page_day or '无'} / marker {marker or '无'}")
+        print(f"[*] 收盘/UTC日切全量重算触发：美股期望 {exp_s} (marker={marker or '无'}) | BTC UTC期望 {exp_btc_utc} (btc_marker={btc_marker or '无'}, wknd={btc_has_wknd})")
         proc = subprocess.run(
             [sys.executable, "ml_predictor_5y.py", "--refresh"],
             cwd=SCRATCH_DIR,
@@ -5242,9 +5377,10 @@ def maybe_refresh_daily_ml_panel():
         page2 = _page_last_history_day()
         if proc.returncode == 0 and (marker2 >= exp_s or pred2 >= exp_s or page2 >= exp_s):
             state["success_day"] = exp_s
+            state["btc_success_utc_day"] = exp_btc_utc
             with open(state_path, "w", encoding="utf-8") as sf:
                 json.dump(state, sf)
-            print(f"[+] 收盘日线已补齐 {exp_s}（AI {pred2} / 页面 {page2}）")
+            print(f"[+] 收盘/UTC日切全量重算已完成：美股 {exp_s} / BTC UTC {exp_btc_utc}（AI {pred2} / 页面 {page2}）")
         else:
             print(f"[!] 收盘日线补刷未完成 {exp_s}（exit={proc.returncode}, AI={pred2}, 页面={page2}），10分钟后重试")
     except Exception as _e:

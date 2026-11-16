@@ -269,11 +269,42 @@ def _resolve_cache_path(cache_file: str) -> str:
     return cache_path
 
 
+def _get_latest_expected_btc_day(ref_dt: Optional[datetime] = None) -> datetime.date:
+    """
+    BTC-USD 7×24 小时自然日连续模式 (以 UTC 00:00 日切为准)：
+    返回当前最新的自然日日期（包含周六、周日）。
+    """
+    if ref_dt is None:
+        return datetime.now(timezone.utc).date()
+    if ref_dt.tzinfo is not None:
+        return ref_dt.astimezone(timezone.utc).date()
+    return _to_et(ref_dt).astimezone(timezone.utc).date()
+
+
+def _fetch_btc_live_price() -> Optional[float]:
+    """轻量获取 BTC-USD 最新 5m 实时报价（Yahoo 免费接口，绕过 Finnhub）。"""
+    try:
+        h5 = yf.Ticker("BTC-USD").history(period="5d", interval="5m", prepost=True)
+        if h5 is not None and not h5.empty and "Close" in h5.columns:
+            c_s = h5["Close"].dropna()
+            if len(c_s) > 0 and float(c_s.iloc[-1]) > 0:
+                return round(float(c_s.iloc[-1]), 2)
+    except Exception:
+        pass
+    return None
+
+
 def _fetch_single_ticker(ticker: str, start_date: str = '2021-11-01', max_retries: int = 3) -> Optional[pd.DataFrame]:
-    """通过 yfinance 拉取单只标的的历史日线数据，自动扁平化多级列名"""
+    """通过 yfinance 拉取单只标的的历史日线数据，自动扁平化多级列名（BTC-USD 启用 7x24 自然日连续模式）"""
+    is_btc = (ticker == 'BTC-USD')
     for attempt in range(max_retries):
         try:
-            end_exclusive = (_get_latest_expected_trading_day() + timedelta(days=1)).strftime("%Y-%m-%d")
+            if is_btc:
+                expected_last = _get_latest_expected_btc_day()
+                end_exclusive = (expected_last + timedelta(days=2)).strftime("%Y-%m-%d")
+            else:
+                expected_last = _get_latest_expected_trading_day()
+                end_exclusive = (expected_last + timedelta(days=1)).strftime("%Y-%m-%d")
             # yfinance 的 end 为左闭右开，end=已收盘日 会把当天切掉。必须用已收盘日的下一天。
             df = yf.download(
                 ticker,
@@ -301,8 +332,7 @@ def _fetch_single_ticker(ticker: str, start_date: str = '2021-11-01', max_retrie
                 continue
 
             # 统一为无时区规范日期
-            df['Date'] = pd.to_datetime(df['Date']).dt.tz_localize(None)
-            expected_last = _get_latest_expected_trading_day()
+            df['Date'] = pd.to_datetime(df['Date']).dt.tz_localize(None).dt.normalize()
             df = df[df['Date'].dt.date <= expected_last]
             df['Ticker'] = ticker
 
@@ -315,7 +345,42 @@ def _fetch_single_ticker(ticker: str, start_date: str = '2021-11-01', max_retrie
             df = df[required_cols].copy()
             df = df.dropna(subset=['Open', 'High', 'Low', 'Close', 'Volume'])
             df = df[(df['Open'] > 0) & (df['Close'] > 0) & (df['High'] > 0) & (df['Low'] > 0)]
-            df = df.sort_values('Date').reset_index(drop=True)
+
+            # BTC-USD 7x24 自然日补齐：防止 UTC 00:00 日切后 Yahoo 1d 接口短暂漏掉昨日自然日 K 线，并同步最新 5m 实时价
+            if is_btc:
+                try:
+                    h1 = yf.Ticker("BTC-USD").history(period="7d", interval="1h")
+                    if h1 is not None and not h1.empty:
+                        if isinstance(h1.columns, pd.MultiIndex):
+                            h1.columns = h1.columns.get_level_values(0)
+                        h1_d = h1.resample("1D").agg({
+                            "Open": "first",
+                            "High": "max",
+                            "Low": "min",
+                            "Close": "last",
+                            "Volume": "sum"
+                        }).dropna(subset=["Open", "High", "Low", "Close"]).reset_index()
+                        if "Datetime" in h1_d.columns and "Date" not in h1_d.columns:
+                            h1_d = h1_d.rename(columns={"Datetime": "Date"})
+                        h1_d["Date"] = pd.to_datetime(h1_d["Date"]).dt.tz_localize(None).dt.normalize()
+                        h1_d = h1_d[h1_d["Date"].dt.date <= expected_last]
+                        h1_d["Ticker"] = "BTC-USD"
+                        h1_d = h1_d[required_cols].copy()
+                        existing_dates = set(df["Date"].dt.date)
+                        missing_rows = h1_d[~h1_d["Date"].dt.date.isin(existing_dates)]
+                        if not missing_rows.empty:
+                            df = pd.concat([df, missing_rows], ignore_index=True)
+                    live_btc_px = _fetch_btc_live_price()
+                    if live_btc_px and live_btc_px > 0 and not df.empty:
+                        df = df.sort_values("Date").reset_index(drop=True)
+                        last_idx = df.index[-1]
+                        df.at[last_idx, "Close"] = float(live_btc_px)
+                        df.at[last_idx, "High"] = max(float(df.at[last_idx, "High"]), float(live_btc_px))
+                        df.at[last_idx, "Low"] = min(float(df.at[last_idx, "Low"]), float(live_btc_px))
+                except Exception:
+                    pass
+
+            df = df.sort_values('Date').drop_duplicates(subset=['Date'], keep='last').reset_index(drop=True)
 
             if len(df) >= 20:
                 return df
@@ -422,12 +487,25 @@ def fetch_or_load_panel_data(
             tickers_in_cache = set(df['Ticker'].unique())
             missing_tickers = set(ALL_SYMBOLS) - tickers_in_cache
 
-            # 自动化日期新鲜度校验 (防止缓存停滞在历史日期断更)
+            # 自动化日期新鲜度校验 (防止缓存停滞在历史日期断更；同时确保 BTC-USD 包含周末自然日 K 线)
             expected_latest_date = _get_latest_expected_trading_day()
             max_cache_date = df['Date'].max().date() if not df.empty else None
             is_fresh = (max_cache_date is not None and max_cache_date >= expected_latest_date)
 
             if not missing_tickers and len(df) > 30000 and is_fresh:
+                btc_sub = df[df['Ticker'] == 'BTC-USD']
+                btc_dates = pd.to_datetime(btc_sub['Date']).dt.date.tolist() if not btc_sub.empty else []
+                has_btc_weekends = any(d.weekday() >= 5 for d in btc_dates)
+                expected_btc_date = _get_latest_expected_btc_day()
+                btc_fresh = (bool(btc_dates) and max(btc_dates) >= expected_btc_date and has_btc_weekends)
+                if not btc_fresh:
+                    print("[*] 🔄 检测到 BTC-USD 需补齐 7x24 周末自然日 K 线与最新 UTC 日线，单独增量更新 BTC-USD...")
+                    btc_new = _fetch_single_ticker('BTC-USD', start_date=start_date)
+                    if btc_new is not None and not btc_new.empty:
+                        df = pd.concat([df[df['Ticker'] != 'BTC-USD'], btc_new], ignore_index=True)
+                        df = df.sort_values(['Date', 'Ticker']).reset_index(drop=True)
+                        df.to_parquet(full_cache_path, engine='pyarrow', index=False)
+                        max_cache_date = df['Date'].max().date()
                 print(f"[+] ✅ 缓存完整性与新鲜度校验通过: 共 {len(tickers_in_cache)} 只标的, {len(df)} 条交易日记录 (最新: {max_cache_date})")
                 return df
             elif not is_fresh:
@@ -636,8 +714,12 @@ def compute_macro_features(
         'SMH_IGV_Ratio_Bias': ((smh_igv_ratio - ratio_ma20) / (ratio_ma20 + 1e-8)) * 100.0
     })
 
-    # 6. 以 QQQ 的所有交易日为基准按 Date 左连接全部宏观特征
-    macro_df = pd.DataFrame({'Date': sorted(qqqm['Date'].unique())})
+    # 6. 以 QQQ 交易日与全量面板自然日 (含 BTC-USD 周六/周日) 的并集为基准按 Date 左连接全部宏观特征，并用 ffill 前向填充周末宏观状态
+    if raw_panel is not None and 'Date' in raw_panel.columns and not raw_panel.empty:
+        all_macro_dates = sorted(set(pd.to_datetime(qqqm['Date']).unique()).union(set(pd.to_datetime(raw_panel['Date']).unique())))
+    else:
+        all_macro_dates = sorted(qqqm['Date'].unique())
+    macro_df = pd.DataFrame({'Date': all_macro_dates})
     for sub_df in [qqqm_feat, smh_feat, tlt_feat, vixy_feat, smh_igv_feat]:
         macro_df = pd.merge(macro_df, sub_df, on='Date', how='left')
 
@@ -2418,14 +2500,20 @@ def generate_time_cycle_projections(
     if combined_panel is None or combined_panel.empty:
         return results
 
-    # 历史曲线只保留已收盘交易日，未收盘的实时价稍后单独追加，绝不覆盖昨收
+    # 历史曲线：美股/ETF 只保留已收盘交易日（未收盘实时价稍后单独追加）；BTC-USD 保留全部 7x24 自然日（含周六、周日）
     try:
         _session_date, _last_closed, _today_label, _session_open = _get_chart_session(as_of)
+        _btc_latest_day = _get_latest_expected_btc_day(as_of)
         combined_panel = combined_panel.copy()
         combined_panel['Date'] = pd.to_datetime(combined_panel['Date'])
-        combined_panel = combined_panel[combined_panel['Date'].dt.date <= _last_closed]
+        _is_btc_mask = (combined_panel['Ticker'] == 'BTC-USD')
+        combined_panel = combined_panel[
+            (_is_btc_mask & (combined_panel['Date'].dt.date <= _btc_latest_day))
+            | ((~_is_btc_mask) & (combined_panel['Date'].dt.date <= _last_closed))
+        ]
     except Exception:
         _session_date, _last_closed, _today_label, _session_open = datetime.now().date(), datetime.now().date(), "今日", False
+        _btc_latest_day = datetime.now(timezone.utc).date()
 
     anchor_date = _session_date
 
@@ -2501,6 +2589,8 @@ def generate_time_cycle_projections(
         close_anchor = float(closes[-1])
         sc_info = (scenario_map_by_ticker or {}).get(tk, {})
         live_override_p = sc_info.get('latest_price') or sc_info.get('current_price')
+        if tk == 'BTC-USD' and (live_override_p is None or float(live_override_p) <= 0) and as_of is None:
+            live_override_p = _fetch_btc_live_price()
         if live_override_p is not None and float(live_override_p) > 0:
             display_p = float(live_override_p)
         else:
@@ -2517,49 +2607,72 @@ def generate_time_cycle_projections(
                 'price': round(float(sub.at[i, 'Close']), 2)
             })
 
-        # 只有带价格种类的真实成交才允许新开一根未收盘柱。
-        # 夜盘没有 overnightMarketPrice 时，盘后定格价不能冒充今日现价。
-        has_live = live_override_p is not None and float(live_override_p) > 0
-        price_kind = str(sc_info.get("price_kind") or "")
-        _live_date = str(sc_info.get("live_date") or sc_info.get("quote_date") or sc_info.get("ext_time") or "")[:10]
-        _today_str = anchor_date.strftime("%Y-%m-%d")
-        real_live = bool(has_live and price_kind in ("overnight", "premarket", "regular") and (not _live_date or _live_date == _today_str))
-        appended_live = False
-        if real_live and _session_open and last_hist_dt < anchor_date:
-            hist_entries.append({
-                'date': anchor_date.strftime('%Y-%m-%d'),
-                'price': round(display_p, 2)
-            })
-            closes = np.append(closes, display_p)
-            cur_p = display_p
+        if tk == 'BTC-USD':
+            # BTC-USD 7x24 小时自然日连续模式：最后一根今日节点与推演起点实时锚定最新现价，未来 T+1~T+15 按连续自然日递增（不跳过周末）
+            if last_hist_dt < _btc_latest_day:
+                hist_entries.append({
+                    'date': _btc_latest_day.strftime('%Y-%m-%d'),
+                    'price': round(display_p, 2)
+                })
+                closes = np.append(closes, display_p)
+            else:
+                hist_entries[-1]['price'] = round(display_p, 2)
+                closes[-1] = display_p
+            cur_p = round(display_p, 2)
+            display_p = cur_p
             appended_live = True
-        elif real_live and _session_open and last_hist_dt == anchor_date:
-            hist_entries[-1]['price'] = round(display_p, 2)
-            closes[-1] = display_p
-            cur_p = display_p
-            appended_live = True
-        else:
-            cur_p = close_anchor
-            display_p = close_anchor
-
-        if appended_live:
-            use_dates = future_dates
             shown_label = "今日"
+            btc_base_dt = pd.to_datetime(hist_entries[-1]['date']).date()
+            use_dates = [
+                (btc_base_dt + timedelta(days=d_i)).strftime('%Y-%m-%d')
+                for d_i in range(1, forecast_days + 1)
+            ]
+            post_px = None
+            price_note = ""
         else:
-            use_dates = []
-            cursor = last_hist_dt
-            while len(use_dates) < forecast_days:
-                cursor += timedelta(days=1)
-                if cursor.weekday() < 5:
-                    use_dates.append(cursor.strftime('%Y-%m-%d'))
-            shown_label = f"最新收盘 ({last_hist_dt.strftime('%m-%d')})"
-        post_px = sc_info.get("post_price")
-        price_note = ""
-        if post_px and not appended_live:
-            try:
-                price_note = f"盘后定格 ${float(post_px):.2f}"
-            except Exception:
-                price_note = ""
+            # 只有带价格种类的真实成交才允许新开一根未收盘柱。
+            # 夜盘没有 overnightMarketPrice 时，盘后定格价不能冒充今日现价。
+            has_live = live_override_p is not None and float(live_override_p) > 0
+            price_kind = str(sc_info.get("price_kind") or "")
+            _live_date = str(sc_info.get("live_date") or sc_info.get("quote_date") or sc_info.get("ext_time") or "")[:10]
+            _today_str = anchor_date.strftime("%Y-%m-%d")
+            real_live = bool(has_live and price_kind in ("overnight", "premarket", "regular") and (not _live_date or _live_date == _today_str))
+            appended_live = False
+            if real_live and _session_open and last_hist_dt < anchor_date:
+                hist_entries.append({
+                    'date': anchor_date.strftime('%Y-%m-%d'),
+                    'price': round(display_p, 2)
+                })
+                closes = np.append(closes, display_p)
+                cur_p = display_p
+                appended_live = True
+            elif real_live and _session_open and last_hist_dt == anchor_date:
+                hist_entries[-1]['price'] = round(display_p, 2)
+                closes[-1] = display_p
+                cur_p = display_p
+                appended_live = True
+            else:
+                cur_p = close_anchor
+                display_p = close_anchor
+
+            if appended_live:
+                use_dates = future_dates
+                shown_label = "今日"
+            else:
+                use_dates = []
+                cursor = last_hist_dt
+                while len(use_dates) < forecast_days:
+                    cursor += timedelta(days=1)
+                    if cursor.weekday() < 5:
+                        use_dates.append(cursor.strftime('%Y-%m-%d'))
+                shown_label = f"最新收盘 ({last_hist_dt.strftime('%m-%d')})"
+            post_px = sc_info.get("post_price")
+            price_note = ""
+            if post_px and not appended_live:
+                try:
+                    price_note = f"盘后定格 ${float(post_px):.2f}"
+                except Exception:
+                    price_note = ""
 
         n = len(closes)
 
@@ -2593,7 +2706,7 @@ def generate_time_cycle_projections(
         best_period = "2024-07-05 ~ 2024-08-08"
         best_corr = 0.85
 
-        if piv is not None and joint_top_k and joint_weights is not None and tk in piv.columns:
+        if tk != 'BTC-USD' and piv is not None and joint_top_k and joint_weights is not None and tk in piv.columns:
             col_vals = piv[tk].values
             acc_ret = np.zeros(forecast_days, dtype=float)
             acc_w = 0.0
@@ -2673,7 +2786,8 @@ def generate_time_cycle_projections(
                 'day': f"T+{d_idx + 1}",
                 'date': dt_str,
                 'price': round(float(p_val), 2),
-                'pct': round(float((p_val - cur_p) / (cur_p + 1e-8) * 100.0), 1)
+                'pct': round(float((p_val - cur_p) / (cur_p + 1e-8) * 100.0), 1),
+                'wave_ret': round(float(comb_ret[d_idx]), 6)
             })
 
         hist_20 = hist_entries[-20:]
@@ -2703,6 +2817,7 @@ def generate_time_cycle_projections(
         results[tk] = {
             'ticker': tk,
             'current_price': round(display_p, 2),
+            'anchor_price': round(cur_p, 2),
             's1': sc_levels.get('s1'),
             's2': sc_levels.get('s2'),
             'sl': sc_levels.get('sl'),
@@ -6505,6 +6620,7 @@ def build_extended_live_features_df(
         core_copy['Sector_CN_Override'] = ""
         core_copy['Is_Core_28'] = True
         full_latest = pd.concat([core_copy, extra_df], ignore_index=True)
+        full_latest = full_latest.drop_duplicates(subset=['Ticker'], keep='first').reset_index(drop=True)
     else:
         full_latest = core_latest_stocks.copy()
         full_latest['Sector_CN_Override'] = ""
@@ -6753,15 +6869,20 @@ def main():
 
     cycle = tables_data.get('time_cycle_projections') or {}
     _sess, _closed, _lbl, _open = _get_chart_session()
-    expected_chart_day = _sess.strftime("%Y-%m-%d")
+    expected_chart_day = _closed.strftime("%Y-%m-%d")
+    expected_btc_day = _get_latest_expected_btc_day().strftime("%Y-%m-%d")
     cycle_behind = []
     for tk, item in cycle.items():
         hist = (item or {}).get('history') or []
         last_d = str(hist[-1].get('date'))[:10] if hist else ""
-        if last_d != expected_chart_day:
-            cycle_behind.append(f"{tk}:{last_d or '无'}")
+        if tk == 'BTC-USD':
+            if last_d < expected_btc_day:
+                cycle_behind.append(f"{tk}:{last_d or '无'}")
+        else:
+            if last_d < expected_chart_day:
+                cycle_behind.append(f"{tk}:{last_d or '无'}")
     if cycle_behind:
-        print(f"[!] 路径图今日仍不是 {expected_chart_day}，落后 {len(cycle_behind)} 只: {', '.join(cycle_behind[:16])}")
+        print(f"[!] 路径图今日仍不是 {expected_chart_day} (BTC: {expected_btc_day})，落后 {len(cycle_behind)} 只: {', '.join(cycle_behind[:16])}")
         if args.refresh:
             print("[!] 看板已写出但日期不合格，不记刷新成功。")
             sys.exit(2)
@@ -6769,6 +6890,9 @@ def main():
         marker_path = _resolve_cache_path("data_cache/.ml_panel_max_date")
         with open(marker_path, "w", encoding="utf-8") as mf:
             mf.write(expected_last.strftime("%Y-%m-%d"))
+        btc_marker_path = _resolve_cache_path("data_cache/.ml_btc_utc_date")
+        with open(btc_marker_path, "w", encoding="utf-8") as bmf:
+            bmf.write(expected_btc_day)
 
     print("=" * 70)
     print("✅ Milestone M3: 4 大战报表格控制台输出与 HTML 看板生成全部完成！\n")
