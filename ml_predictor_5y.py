@@ -1758,6 +1758,143 @@ def compute_defensive_flight_alert(
     }
 
 
+TRADITIONAL_BREADTH_SYMBOLS = ['JPM', 'XOM', 'WMT', 'CAT', 'KO', 'LLY', 'DIA']
+TECH_BREADTH_SYMBOLS = ['QQQ', 'SMH', 'NVDA']
+
+
+def compute_cross_industry_breadth_alert(
+    latest_stocks_df: Optional[pd.DataFrame] = None,
+    live_lookup: Optional[Dict[str, Dict]] = None,
+    history_dict: Optional[Dict[str, pd.DataFrame]] = None,
+    session_code: Optional[str] = None,
+) -> Dict[str, Any]:
+    """
+    跨行业市场广度与普跌预警：
+    对比传统防御/工业周期代表阵营 (JPM, XOM, WMT, CAT, KO, LLY, DIA)
+    与进攻科技核心阵营 (QQQ, SMH, NVDA) 的当日涨跌广度，识别：
+    1. 🚨 全市场系统性普跌预警：科技下跌且 >= 75% 传统代表股下跌 & 传统均跌幅 < -0.8%
+    2. 🔄 科技结构性轮动（传统板块抗跌）：科技下跌但传统龙头多数稳健/翻红
+    3. 🛡️ 跨行业广度均衡
+    """
+    def _extract_pct(sym: str) -> Optional[float]:
+        if live_lookup and sym in live_lookup and isinstance(live_lookup[sym], dict):
+            lv = live_lookup[sym]
+            try:
+                if session_code in ("PRE_MARKET", "POST_MARKET", "OVERNIGHT", "PRE", "POST", "NIGHT"):
+                    if lv.get("effective_pct") is not None:
+                        return float(lv["effective_pct"])
+                    if float(lv.get("ext_price", 0) or 0) > 0:
+                        return float(lv.get("ext_pct", 0.0) or 0.0)
+                if lv.get("effective_pct") is not None and float(lv.get("ext_price", 0) or 0) > 0:
+                    return float(lv["effective_pct"])
+                for k in ("pct_change", "change_pct", "Ret_1d"):
+                    if lv.get(k) is not None:
+                        return float(lv[k])
+            except Exception:
+                pass
+        if latest_stocks_df is not None and not latest_stocks_df.empty and 'Ticker' in latest_stocks_df.columns:
+            try:
+                sub = latest_stocks_df[latest_stocks_df['Ticker'] == sym]
+                if not sub.empty and 'Ret_1d' in sub.columns:
+                    val = float(sub['Ret_1d'].iloc[-1])
+                    if not np.isnan(val):
+                        return val
+            except Exception:
+                pass
+        if history_dict and sym in history_dict:
+            try:
+                df_h = history_dict[sym]
+                if df_h is not None and len(df_h) >= 2 and 'Close' in df_h.columns:
+                    c_now = float(df_h['Close'].iloc[-1])
+                    c_prev = float(df_h['Close'].iloc[-2])
+                    if c_prev > 0:
+                        return ((c_now - c_prev) / c_prev) * 100.0
+            except Exception:
+                pass
+        return None
+
+    trad_map: Dict[str, float] = {}
+    for sym in TRADITIONAL_BREADTH_SYMBOLS:
+        v = _extract_pct(sym)
+        if v is not None:
+            trad_map[sym] = round(v, 2)
+
+    tech_map: Dict[str, float] = {}
+    for sym in TECH_BREADTH_SYMBOLS:
+        v = _extract_pct(sym)
+        if v is not None:
+            tech_map[sym] = round(v, 2)
+
+    trad_vals = list(trad_map.values())
+    tech_vals = list(tech_map.values())
+    trad_total = len(trad_vals)
+    tech_total = len(tech_vals)
+    trad_mean = round(float(np.mean(trad_vals)), 2) if trad_vals else 0.0
+    tech_mean = round(float(np.mean(tech_vals)), 2) if tech_vals else 0.0
+    trad_down_cnt = sum(1 for x in trad_vals if x < 0.0)
+    trad_up_cnt = sum(1 for x in trad_vals if x > 0.0)
+    trad_steady_cnt = sum(1 for x in trad_vals if x >= -0.15)
+    trad_down_ratio = (trad_down_cnt / trad_total) if trad_total > 0 else 0.0
+
+    tech_is_down = bool(
+        tech_total > 0 and (
+            tech_mean <= -0.20 or (sum(1 for x in tech_vals if x < 0.0) >= max(2, (tech_total + 1) // 2) and tech_mean < 0.0)
+        )
+    )
+    is_systemic_selloff = bool(
+        trad_total >= 4 and tech_is_down and trad_down_ratio >= 0.75 and trad_mean < -0.8
+    )
+    is_structural_rotation = bool(
+        trad_total > 0 and not is_systemic_selloff and tech_is_down and (
+            trad_steady_cnt >= (trad_total + 1) // 2 or trad_mean >= 0.0
+        )
+    )
+
+    if is_systemic_selloff:
+        regime = "SYSTEMIC_SELLOFF"
+        status_tag = "🚨 全市场系统性普跌预警"
+        short_badge = f"🚨 系统性普跌 ({trad_down_cnt}/{trad_total} 跌 {trad_mean:+.2f}%)"
+        banner_text = (
+            f"🚨 全市场系统性普跌预警 · 传统龙头 {trad_down_cnt}/{trad_total} 同步下跌 (均跌 {trad_mean:+.2f}%) 与科技阵营 ({tech_mean:+.2f}%) 泥沙俱下，"
+            f"常规支撑位 (S1/S2) 极易失效，严禁盲目抄底接飞刀！"
+        )
+        color = "#ff5252"
+    elif is_structural_rotation:
+        regime = "STRUCTURAL_ROTATION"
+        status_tag = "🔄 科技结构性轮动（传统板块抗跌）"
+        short_badge = f"🔄 结构性轮动 (传统 {trad_mean:+.2f}%)"
+        banner_text = (
+            f"🔄 科技结构性轮动（传统板块抗跌） · 科技均值 {tech_mean:+.2f}% 承压，"
+            f"传统龙头均值 {trad_mean:+.2f}% ({trad_steady_cnt}/{trad_total} 稳健/翻红)，资金呈现高低切换而非全面撤离"
+        )
+        color = "#38bdf8"
+    else:
+        regime = "NORMAL"
+        status_tag = f"🛡️ 跨行业广度均衡 (传统 {trad_mean:+.2f}% vs 科技 {tech_mean:+.2f}%)"
+        short_badge = f"🛡️ 广度均衡 (传统 {trad_mean:+.2f}%)"
+        banner_text = ""
+        color = "#4ade80" if trad_mean >= 0 and tech_mean >= 0 else "#9ca3af"
+
+    return {
+        "regime": regime,
+        "is_systemic_selloff": is_systemic_selloff,
+        "is_structural_rotation": is_structural_rotation,
+        "status_tag": status_tag,
+        "short_badge": short_badge,
+        "banner_text": banner_text,
+        "color": color,
+        "trad_mean_chg": trad_mean,
+        "tech_mean_chg": tech_mean,
+        "trad_down_cnt": trad_down_cnt,
+        "trad_up_cnt": trad_up_cnt,
+        "trad_steady_cnt": trad_steady_cnt,
+        "trad_total": trad_total,
+        "trad_down_ratio": round(trad_down_ratio, 4),
+        "trad_components": trad_map,
+        "tech_components": tech_map,
+    }
+
+
 
 def compute_track_b_empirical_win_rate(
     bias_ma50: float,
@@ -2580,10 +2717,11 @@ def generate_time_cycle_projections(
 
     for tk in target_tickers:
         sub = combined_panel[combined_panel['Ticker'] == tk].sort_values('Date').reset_index(drop=True)
-        if sub.empty or len(sub) < 60:
-            sub = combined_panel[combined_panel['Ticker'] == 'QQQ'].sort_values('Date').reset_index(drop=True)
-            if sub.empty:
-                continue
+        if sub.empty:
+            continue
+        if len(sub) < 5:
+            # 次新标的刚上市不足5根日线时跳过或保留已有短线而不强行套用无关指数价格
+            continue
 
         closes = sub['Close'].values.astype(float).copy()
         close_anchor = float(closes[-1])
@@ -2845,15 +2983,18 @@ def evaluate_macro_weather(
     vixy_pos: float = 0.5,
     smh_igv: float = 0.0,
     latest_date: str = "",
-    defensive_flight: Optional[Dict[str, Any]] = None
+    defensive_flight: Optional[Dict[str, Any]] = None,
+    cross_industry_breadth: Optional[Dict[str, Any]] = None
 ) -> Dict[str, Any]:
     """
     统一宏观水温气象判定引擎 (与 integrated_market_radar.py 保持 100% 规则对齐):
     1. 暴雨空仓: QQQ_Bias_MA50 < -3.0% 且 SMH_Bias_MA50 < -3.0% (双破位共振)
     2. 晴天做多: 纳指与半导体双双站上生命线 (QQQ >= 0.25% 且 SMH >= 0.25%) 且无 VIX 恐慌脉冲 (VIXY_Pos_60 < 0.75)
     3. 阴天防守: 单边偏离在 0% ~ -5% 且未双破位、或大盘/芯片分化、或 VIX 脉冲预警、或防御因子起飞
+    4. 跨行业广度联动: 识别 🔄 科技结构性轮动（传统板块抗跌）与 🚨 全市场系统性普跌预警
     """
     flight_info = defensive_flight or compute_defensive_flight_alert()
+    breadth_info = cross_industry_breadth or compute_cross_industry_breadth_alert()
     is_vix_panic = bool(vixy_pos >= 0.75)
     is_bull_base = bool(qqqm_bias >= 0.25 and smh_bias >= 0.25)
 
@@ -2875,6 +3016,11 @@ def evaluate_macro_weather(
         m_desc = "大盘与核心芯片主线出现分化或均线争夺 · 审慎试仓 · 严格防守底线"
         m_badge = "weather-cloudy"
 
+    if breadth_info.get("is_systemic_selloff"):
+        m_desc += " ｜ 🚨 全市场系统性普跌预警（传统与科技泥沙俱下·常规支撑S1/S2易失效·切勿盲目抄底）"
+    elif breadth_info.get("is_structural_rotation"):
+        m_desc += " ｜ 🔄 科技结构性轮动（传统板块抗跌）"
+
     return {
         'status': m_status,
         'desc': m_desc,
@@ -2887,7 +3033,8 @@ def evaluate_macro_weather(
         'smh_bias_ma50': round(smh_bias, 2),
         'smh_igv': round(smh_igv, 2),
         'latest_date': latest_date,
-        'defensive_flight': flight_info
+        'defensive_flight': flight_info,
+        'cross_industry_breadth': breadth_info,
     }
 
 
@@ -4158,6 +4305,40 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
         </div>
         """
 
+    breadth_info = tables_data.get('cross_industry_breadth') or weather.get('cross_industry_breadth', {})
+    breadth_banner_html = ""
+    if breadth_info and breadth_info.get('is_systemic_selloff'):
+        b_down = int(breadth_info.get('trad_down_cnt', 0))
+        b_tot = int(breadth_info.get('trad_total', 0))
+        b_trad = float(breadth_info.get('trad_mean_chg', 0.0))
+        b_tech = float(breadth_info.get('tech_mean_chg', 0.0))
+        breadth_banner_html = f"""
+        <!-- 🚨 Systemic Broad Selloff Alert Banner -->
+        <div id="systemicSelloffAlertBanner" style="background: linear-gradient(90deg, rgba(220, 38, 38, 0.34), rgba(153, 27, 27, 0.22)); border: 1px solid rgba(248, 113, 113, 0.78); border-radius: 10px; padding: 12px 18px; margin-bottom: 18px; display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; box-shadow: 0 0 18px rgba(239, 68, 68, 0.28);">
+            <div style="display: flex; align-items: center; gap: 12px;">
+                <span style="font-size: 24px;">🚨</span>
+                <div>
+                    <div style="font-size: 15px; font-weight: 800; color: #fecaca; letter-spacing: 0.3px;">🚨 全市场系统性普跌预警 · 常规支撑位 (S1/S2) 易失效，切勿盲目抄底！</div>
+                    <div style="font-size: 12px; color: #fca5a5; margin-top: 2px;">传统防御代表 (JPM/XOM/WMT/CAT/KO/LLY/DIA) {b_down}/{b_tot} 下跌 (均跌 {b_trad:+.2f}%) 与科技阵营 ({b_tech:+.2f}%) 同步下杀，泥沙俱下行情严防接飞刀</div>
+                </div>
+            </div>
+            <div style="font-size: 12px; font-weight: 700; color: #fecaca; background: rgba(127, 29, 29, 0.55); border: 1px solid rgba(248, 113, 113, 0.5); padding: 4px 10px; border-radius: 6px;">
+                传统 {b_trad:+.2f}% · 科技 {b_tech:+.2f}%
+            </div>
+        </div>
+        """
+    elif breadth_info and breadth_info.get('is_structural_rotation'):
+        b_steady = int(breadth_info.get('trad_steady_cnt', 0))
+        b_tot = int(breadth_info.get('trad_total', 0))
+        b_trad = float(breadth_info.get('trad_mean_chg', 0.0))
+        b_tech = float(breadth_info.get('tech_mean_chg', 0.0))
+        breadth_banner_html = f"""
+        <!-- 🔄 Structural Sector Rotation Banner -->
+        <div id="structuralRotationBanner" style="background: linear-gradient(90deg, rgba(56, 189, 248, 0.16), rgba(30, 58, 138, 0.14)); border: 1px solid rgba(56, 189, 248, 0.45); border-radius: 10px; padding: 10px 16px; margin-bottom: 16px; display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap;">
+            <div style="font-size: 13px; font-weight: 800; color: #7dd3fc;">🔄 科技结构性轮动（传统板块抗跌） · <span style="font-weight: 500; color: #bae6fd;">传统龙头 {b_steady}/{b_tot} 稳健/翻红 (均值 {b_trad:+.2f}%)，科技回调 ({b_tech:+.2f}%) 属资金高低切换而非系统性崩盘</span></div>
+        </div>
+        """
+
     weather_status_str = weather.get('status', '☀️ 晴天做多')
     if '🌧️' in weather_status_str or '暴雨' in weather_status_str:
         weather_accent = '#f85149'
@@ -5200,6 +5381,7 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
         </div>
 
         {flight_banner_html}
+        {breadth_banner_html}
         <!-- Macro Weather Card -->
         <div class="weather-banner">
             <div class="weather-left">
@@ -5229,6 +5411,10 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
                 <div class="weather-stat-pill" title="防御避险组 (KO/PEP/MCD/LLY/MRNA/TLT/GLD/VIXY) 相对进攻科技组 (QQQ/SMH/NVDA/SOXL) 超额走强背离度 (预警阈值 +2.2%)">
                     <span class="lbl">防御/科技背离 (Flight)</span>
                     <span class="val" style="color: {'#f85149' if (flight_info and flight_info.get('is_alert')) else ('#ffd54f' if float((flight_info or {}).get('flight_score', 0.0)) >= 1.2 else '#3fb950')};">{float((flight_info or {}).get('flight_score', 0.0)):+.2f}% {'🚨' if (flight_info and flight_info.get('is_alert')) else '🛡️'}</span>
+                </div>
+                <div class="weather-stat-pill" title="传统行业龙头 (JPM/XOM/WMT/CAT/KO/LLY/DIA) vs 科技 (QQQ/SMH/NVDA) 跨行业市场广度">
+                    <span class="lbl">跨行业广度 (传统vs科技)</span>
+                    <span class="val" id="predictBreadthVal" style="font-size: 13px; color: {breadth_info.get('color', '#9ca3af')};">{breadth_info.get('short_badge', '🛡️ 广度均衡')}</span>
                 </div>
             </div>
         </div>
@@ -6495,7 +6681,8 @@ EXTENDED_RADAR_SECTOR_MAP: Dict[str, Tuple[str, str]] = {
     'RKLB': ('Neo_Cloud', '物理AI与太空商业'),
     'LUNR': ('Neo_Cloud', '物理AI与太空商业'),
     'FLY': ('Neo_Cloud', '物理AI与太空商业'),
-    # 价值蓝筹与医药防守
+    'NASA': ('Neo_Cloud', '物理AI与太空商业'),
+    # 价值蓝筹、四大传统行业龙头与医药防守
     'KO':   ('Energy_Power', '价值蓝筹与医药'),
     'PEP':  ('Energy_Power', '价值蓝筹与医药'),
     'MCD':  ('Energy_Power', '价值蓝筹与医药'),
@@ -6504,6 +6691,10 @@ EXTENDED_RADAR_SECTOR_MAP: Dict[str, Tuple[str, str]] = {
     'V':    ('Energy_Power', '价值蓝筹与医药'),
     'LLY':  ('Energy_Power', '价值蓝筹与医药'),
     'MRNA': ('Energy_Power', '价值蓝筹与医药'),
+    'JPM':  ('Energy_Power', '传统行业龙头'),
+    'XOM':  ('Energy_Power', '传统行业龙头'),
+    'WMT':  ('Energy_Power', '传统行业龙头'),
+    'CAT':  ('Energy_Power', '传统行业龙头'),
     # 宏观基准与对冲 ETF
     'QQQ': ('Semiconductors', '大盘与宏观ETF'),
     'SPY':  ('Enterprise_SaaS', '大盘与宏观ETF'),
@@ -6689,6 +6880,7 @@ def export_latest_ai_predictions_json(tables_data: Dict, json_path: str = 'data_
         'all_predictions': all_preds,
         'by_ticker': by_ticker,
         'defensive_flight': tables_data.get('defensive_flight') or mw.get('defensive_flight', {}),
+        'cross_industry_breadth': tables_data.get('cross_industry_breadth') or mw.get('cross_industry_breadth', {}),
         'time_cycle_projections': tables_data.get('time_cycle_projections', {})
     }
     with open(full_json_path, 'w', encoding='utf-8') as f:
@@ -6800,12 +6992,16 @@ def main():
     if 'Date' in latest_stocks.columns and not latest_stocks.empty:
         last_by_ticker = latest_stocks.groupby('Ticker')['Date'].max().to_dict()
     behind = []
+    optional_ext = {'NASA', 'SPCX', 'FLY', 'LUNR'}
     for tk in wanted:
         if tk not in have:
+            if tk in optional_ext:
+                print(f"[*] 提示: 次新/扩展标的 {tk} 暂无完整日线，已平滑跳过不中断主流程")
+                continue
             behind.append(f"{tk}:缺失")
             continue
         tk_day = pd.to_datetime(last_by_ticker[tk]).date()
-        if tk_day < expected_last:
+        if tk_day < expected_last and tk not in optional_ext:
             behind.append(f"{tk}:{tk_day}")
     if args.refresh and behind:
         print(f"[!] 日线未覆盖美东收盘日 {expected_last}，落后 {len(behind)} 只: {', '.join(behind[:16])}")
@@ -6838,13 +7034,15 @@ def main():
     latest_date_str = latest_stocks['Date'].max().strftime('%Y-%m-%d') if 'Date' in latest_stocks.columns else ""
 
     def_flight = compute_defensive_flight_alert(latest_stocks_df=latest_stocks)
+    cross_breadth = compute_cross_industry_breadth_alert(latest_stocks_df=latest_stocks)
     macro_weather = evaluate_macro_weather(
         qqqm_bias=qqqm_bias,
         smh_bias=smh_bias,
         vixy_pos=vixy_pos,
         smh_igv=smh_igv,
         latest_date=latest_date_str,
-        defensive_flight=def_flight
+        defensive_flight=def_flight,
+        cross_industry_breadth=cross_breadth
     )
 
     # 生成 4 大核心数据表
@@ -6858,6 +7056,7 @@ def main():
         raw_panel=raw_panel
     )
     tables_data['defensive_flight'] = def_flight
+    tables_data['cross_industry_breadth'] = cross_breadth
 
     # 控制台格式化打印 4 大核心表格
     print_terminal_tables(tables_data)

@@ -53,6 +53,44 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
     except Exception:
         pass
 
+    breadth_alert_badge_html = ""
+    breadth_alert_banner_html = ""
+    breadth_info = {}
+    try:
+        import ml_predictor_5y
+        live_lookup_b = {}
+        for s in (stocks_data or []):
+            if isinstance(s, dict):
+                tk_name = s.get("ticker") or s.get("symbol")
+                if tk_name:
+                    live_lookup_b[tk_name] = s
+        for tk_m, m_item in (macro_data or {}).items():
+            live_lookup_b[tk_m] = m_item
+        existing_b = weather_info.get("cross_industry_breadth") if isinstance(weather_info, dict) else None
+        if isinstance(existing_b, dict) and existing_b.get("regime"):
+            breadth_info = existing_b
+        else:
+            breadth_info = ml_predictor_5y.compute_cross_industry_breadth_alert(
+                live_lookup=live_lookup_b,
+                session_code=session_code,
+            )
+            if weather_info and isinstance(weather_info, dict):
+                weather_info["cross_industry_breadth"] = breadth_info
+        if breadth_info.get("is_systemic_selloff"):
+            b_down = int(breadth_info.get("trad_down_cnt", 0))
+            b_tot = int(breadth_info.get("trad_total", 0))
+            b_trad = float(breadth_info.get("trad_mean_chg", 0.0))
+            b_tech = float(breadth_info.get("tech_mean_chg", 0.0))
+            breadth_alert_badge_html = f'<span class="tool-link" id="breadthStatusBadge" style="color: #fca5a5; border: 1px solid rgba(248,113,113,0.65); background: rgba(220,38,38,0.25); padding: 4px 8px; font-weight: 800; font-size: 11.5px;" title="传统龙头与科技同步大面积下跌">🚨 全市场系统性普跌预警</span>'
+            breadth_alert_banner_html = f'<div id="systemicSelloffBanner" style="background: linear-gradient(90deg, rgba(220, 38, 38, 0.34), rgba(153, 27, 27, 0.22)); border-bottom: 1px solid rgba(248, 113, 113, 0.65); color: #fecaca; padding: 7px 14px; font-weight: 800; font-size: 12.5px; display: flex; align-items: center; justify-content: center; gap: 10px; flex-wrap: wrap;"><span>🚨 全市场系统性普跌预警 · 传统与科技泥沙俱下（常规支撑 S1/S2 易失效，切勿盲目抄底）</span><span style="font-size: 11px; font-weight: 700; color: #fca5a5; background: rgba(0,0,0,0.35); padding: 2px 8px; border-radius: 4px;">传统 {b_down}/{b_tot} 跌 {b_trad:+.2f}% · 科技 {b_tech:+.2f}%</span></div>'
+        elif breadth_info.get("is_structural_rotation"):
+            b_steady = int(breadth_info.get("trad_steady_cnt", 0))
+            b_tot = int(breadth_info.get("trad_total", 0))
+            b_trad = float(breadth_info.get("trad_mean_chg", 0.0))
+            breadth_alert_badge_html = f'<span class="tool-link" id="breadthStatusBadge" style="color: #38bdf8; border: 1px solid rgba(56,189,248,0.5); background: rgba(56,189,248,0.14); padding: 4px 8px; font-weight: 800; font-size: 11.5px;" title="科技回调但传统龙头多数稳健/翻红">🔄 科技结构性轮动（传统板块抗跌 {b_steady}/{b_tot} · {b_trad:+.2f}%）</span>'
+    except Exception:
+        breadth_info = {}
+
     if target_watchlist is None:
         try:
             import os
@@ -469,6 +507,10 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                                             _cw["tag"] = "周期底回踩窗 (企稳关注)"
                 _def_flight_obj = (weather_info.get("defensive_flight") if isinstance(weather_info, dict) else None) or ai_predictions.get("defensive_flight", {})
                 ai_predictions["defensive_flight"] = _def_flight_obj
+                _breadth_obj = (weather_info.get("cross_industry_breadth") if isinstance(weather_info, dict) else None) or breadth_info or ai_predictions.get("cross_industry_breadth", {})
+                ai_predictions["cross_industry_breadth"] = _breadth_obj
+                if isinstance(ai_predictions.get("macro_weather"), dict):
+                    ai_predictions["macro_weather"]["cross_industry_breadth"] = _breadth_obj
 
                 if sync_dir:
                     _sync_dir = sync_dir
@@ -501,6 +543,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                         "kpi": ai_predictions.get("kpi", {}),
                         "macro_weather": ai_predictions.get("macro_weather", {}),
                         "defensive_flight": _def_flight_obj,
+                        "cross_industry_breadth": _breadth_obj,
                         "table1": ai_predictions.get("table1", []),
                         "table2": ai_predictions.get("sectors", ai_predictions.get("table2", [])),
                         "table3": ai_predictions.get("table3", []),
@@ -1772,6 +1815,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             <!-- 市场时段状态标签 (动态四元划分) -->
             {session_badge_html}
             {defensive_alert_badge_html}
+            {breadth_alert_badge_html}
             <!-- 跨页导航栏 (Desktop 顶栏右侧 / Mobile 顶部状态栏正下方固定展示) -->
             <nav class="mobile-quick-nav" id="mobileQuickNav" aria-label="手机端跨页导航栏">
                 <a href="predict_radar_5y.html" class="tool-link m-quick-link" id="navLinkAiPredict" style="background: linear-gradient(135deg, rgba(188, 140, 255, 0.22), rgba(88, 166, 255, 0.18)); border: 1px solid rgba(188, 140, 255, 0.55); color: #e2c5ff; font-weight: 800; padding: 4px 8px; box-shadow: 0 0 8px rgba(188, 140, 255, 0.2);" title="打开 AI 美股 5 年多赛道波段预测全景战报">⚡ AI预测</a>
@@ -1782,6 +1826,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
         </div>
     </header>
     {defensive_alert_banner_html}
+    {breadth_alert_banner_html}
 
     <!-- 主体区域 -->
     <main class="futu-main m-view-watchlist" id="futuMain" style="position: relative;">
@@ -1810,7 +1855,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 <div class="w-tab" data-filter="物理与安全">物理AI与安全</div>
                 <div class="w-tab" data-filter="数字资产" style="color: #f59e0b; font-weight: 700;">🪙 数字资产 (BTC)</div>
                 <div class="w-tab" data-filter="生物医药">生物医药</div>
-                <div class="w-tab" data-filter="价值消费">价值消费</div>
+                <div class="w-tab" data-filter="价值消费">价值与传统龙头</div>
             </div>
             <div class="watchlist-container" id="watchlistContainer">
                 <!-- 由 JavaScript 动态渲染自选股条目 -->
@@ -2119,6 +2164,10 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                         {weather_info.get('tactics', '严格控制总仓位，分批防守。')}
                     </div>
                     <div style="font-size: 11px; margin-top: 6px; padding-top: 6px; border-top: 1px dashed rgba(255,255,255,0.1); line-height: 1.3;">
+                        <span style="color: #60a5fa; font-weight: 700;">🌐 跨行业广度：</span>
+                        <span id="pBreadthStatus" style="color: {breadth_info.get('color', '#9ca3af')}; font-weight: 800;">{breadth_info.get('status_tag', '🛡️ 跨行业广度均衡')}</span>
+                    </div>
+                    <div style="font-size: 11px; margin-top: 6px; padding-top: 6px; border-top: 1px dashed rgba(255,255,255,0.1); line-height: 1.3;">
                         <span style="color: #60a5fa; font-weight: 700;">🏦 闲置资金泊入指示：</span>
                         <span style="color: {weather_info.get('qqq_parking_color', '#ffd54f')}; font-weight: 800;">{weather_info.get('qqq_parking_action', '🟡 观望防守')}</span>
                         <div style="color: #888; font-size: 10px; margin-top: 2px;">{weather_info.get('qqq_parking_desc', '大盘处于震荡期，维持轻仓现金防守')}</div>
@@ -2377,6 +2426,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             "RKLB": "NASDAQ:RKLB",
             "LUNR": "NASDAQ:LUNR",
             "FLY": "NASDAQ:FLY",
+            "NASA": "AMEX:NASA",
             "KO": "NYSE:KO",
             "AXP": "NYSE:AXP",
             "INTC": "NASDAQ:INTC",
@@ -2403,6 +2453,10 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             "NKE": "NYSE:NKE",
             "V": "NYSE:V",
             "PEP": "NASDAQ:PEP",
+            "JPM": "NYSE:JPM",
+            "XOM": "NYSE:XOM",
+            "WMT": "NYSE:WMT",
+            "CAT": "NYSE:CAT",
         }};
 
         let currentTicker = "INTC";
@@ -2547,12 +2601,12 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 else if (filter === "云与软件" && (s.cat === "云与软件" || s.cat === "生态平台" || s.cat === "社交AI" || s.cat === "终端硬件" || s.cat === "云与电商" || s.cat === "企业AI" || s.cat === "算力租赁")) match = true;
                 else if (filter === "液冷服务器" && (s.cat === "液冷散热" || s.cat === "服务器ODM")) match = true;
                 else if (filter === "光通信" && (s.cat === "光通信" || s.cat === "高速互联")) match = true;
-                else if (filter === "能源电力" && (s.cat === "能源电力" || s.cat === "核能电力")) match = true;
+                else if (filter === "能源电力" && (s.cat === "能源电力" || s.cat === "核能电力" || s.cat === "传统能源")) match = true;
                 else if (filter === "太空商业" && s.cat === "太空商业") match = true;
                 else if (filter === "物理与安全" && (s.cat === "物理AI" || s.cat === "AI安全" || s.cat === "价值蓝筹" || s.cat === "金融蓝筹" || s.cat === "专属风控")) match = true;
                 else if (filter === "数字资产" && (s.cat === "数字资产" || s.ticker === "MSTR" || s.ticker === "BTC-USD")) match = true;
                 else if (filter === "生物医药" && (s.cat === "生物医药" || s.cat === "医药健康")) match = true;
-                else if (filter === "价值消费" && (s.cat === "价值蓝筹" || s.cat === "可选消费" || s.cat === "金融科技" || s.cat === "金融蓝筹")) match = true;
+                else if (filter === "价值消费" && (s.cat === "价值蓝筹" || s.cat === "可选消费" || s.cat === "金融科技" || s.cat === "金融蓝筹" || s.cat === "传统金融" || s.cat === "传统能源" || s.cat === "传统消费" || s.cat === "传统工业")) match = true;
                 else if (s.cat === filter) match = true;
 
                 if (match) {{

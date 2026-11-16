@@ -137,7 +137,7 @@ class TestTable4HtmlDomIntegrity(unittest.TestCase):
         idx = self.html.find(key)
         self.assertGreaterEqual(idx, 0, "timeCycleData not found in predict_radar_5y.html")
         tc_data, _ = json.JSONDecoder().raw_decode(self.html[idx + len(key):])
-        self.assertEqual(len(tc_data), 70, f"Expected 70 tickers in timeCycleData, got {len(tc_data)}")
+        self.assertEqual(len(tc_data), 75, f"Expected 75 tickers in timeCycleData, got {len(tc_data)}")
 
         btc = tc_data.get("BTC-USD")
         self.assertIsNotNone(btc, "BTC-USD missing in timeCycleData")
@@ -227,9 +227,9 @@ class TestFutuProTerminalDomIntegrity(unittest.TestCase):
         map_json_str = map_match.group(1)
         # Parse map object
         symbol_map = json.loads(re.sub(r',\s*}', '}', map_json_str))
-        self.assertEqual(len(symbol_map), 70, f"SYMBOL_MAP should contain 71 tickers, got {len(symbol_map)}")
+        self.assertEqual(len(symbol_map), 75, f"SYMBOL_MAP should contain 75 tickers, got {len(symbol_map)}")
 
-        # Verify key additions from Defect 6 and Short ETFs
+        # Verify key additions from Defect 6, Short ETFs, and 5 new traditional/space symbols
         self.assertEqual(symbol_map.get("NOW"), "NYSE:NOW")
         self.assertEqual(symbol_map.get("APLD"), "NASDAQ:APLD")
         self.assertEqual(symbol_map.get("COIN"), "NASDAQ:COIN")
@@ -237,6 +237,51 @@ class TestFutuProTerminalDomIntegrity(unittest.TestCase):
         self.assertEqual(symbol_map.get("SQQQ"), "NASDAQ:SQQQ")
         self.assertEqual(symbol_map.get("SOXS"), "AMEX:SOXS")
         self.assertEqual(symbol_map.get("VIXY"), "AMEX:VIXY")
+        self.assertEqual(symbol_map.get("JPM"), "NYSE:JPM")
+        self.assertEqual(symbol_map.get("XOM"), "NYSE:XOM")
+        self.assertEqual(symbol_map.get("WMT"), "NYSE:WMT")
+        self.assertEqual(symbol_map.get("CAT"), "NYSE:CAT")
+        self.assertIn(symbol_map.get("NASA"), ("AMEX:NASA", "NASDAQ:NASA"))
+
+    def test_cross_industry_breadth_and_systemic_selloff_detection(self):
+        """Verify compute_cross_industry_breadth_alert differentiates tech rotation vs systemic broad selloff."""
+        import ml_predictor_5y
+        # 1. Tech drops while traditional bellwethers stay green/flat -> STRUCTURAL_ROTATION
+        rot_live = {
+            "QQQ": {"pct_change": -1.4},
+            "SMH": {"pct_change": -2.3},
+            "NVDA": {"pct_change": -2.8},
+            "JPM": {"pct_change": 0.9},
+            "XOM": {"pct_change": 1.1},
+            "WMT": {"pct_change": 0.4},
+            "CAT": {"pct_change": 0.3},
+            "KO": {"pct_change": 0.2},
+            "LLY": {"pct_change": -0.1},
+            "DIA": {"pct_change": 0.3},
+        }
+        res_rot = ml_predictor_5y.compute_cross_industry_breadth_alert(live_lookup=rot_live)
+        self.assertEqual(res_rot["regime"], "STRUCTURAL_ROTATION")
+        self.assertIn("🔄 科技结构性轮动（传统板块抗跌）", res_rot["status_tag"])
+
+        # 2. Tech AND >= 75% traditional drop with mean < -0.8% -> SYSTEMIC_SELLOFF
+        sell_live = {
+            "QQQ": {"pct_change": -1.9},
+            "SMH": {"pct_change": -2.6},
+            "NVDA": {"pct_change": -3.1},
+            "JPM": {"pct_change": -1.4},
+            "XOM": {"pct_change": -1.2},
+            "WMT": {"pct_change": -0.9},
+            "CAT": {"pct_change": -1.8},
+            "KO": {"pct_change": -0.7},
+            "LLY": {"pct_change": -1.1},
+            "DIA": {"pct_change": 0.1},  # 6/7 = 85.7% down, mean ~ -1.00%
+        }
+        res_sell = ml_predictor_5y.compute_cross_industry_breadth_alert(live_lookup=sell_live)
+        self.assertEqual(res_sell["regime"], "SYSTEMIC_SELLOFF")
+        self.assertTrue(res_sell["is_systemic_selloff"])
+        self.assertIn("🚨 全市场系统性普跌预警", res_sell["status_tag"])
+        self.assertGreaterEqual(res_sell["trad_down_ratio"], 0.75)
+        self.assertLess(res_sell["trad_mean_chg"], -0.8)
 
     def test_ai_predictions_data_contract_injection(self):
         """Verify AI_PREDICTIONS injected into HTML client script contains both long and short pools."""

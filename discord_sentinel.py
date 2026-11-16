@@ -65,13 +65,13 @@ def get_sentinel_webhook_url():
     """每日四次策略唯一来源：SENTINEL 优先，旧主变量次之；绝不借用 Claw/防御频道。"""
     return os.environ.get("DISCORD_SENTINEL_WEBHOOK_URL", "").strip() or os.environ.get("DISCORD_WEBHOOK_URL", DISCORD_WEBHOOK_URL).strip()
 
-# 与主雷达 70 只对齐。另保留哨兵策略自己要用的 TQQQ、BTC-USD、SCHD（因子 Y）。
+# 与主雷达 75 只对齐。另保留哨兵策略自己要用的 TQQQ、BTC-USD、SCHD（因子 Y）。
 # MARA 已从主池删除，这里不再巡检。
 SENTINEL_UNIVERSE_TIERS: Dict[str, List[str]] = {
     "TIER_1_3X": ["SOXL", "SOXS", "TQQQ", "SQQQ", "KORU"],
     "TIER_2_CORE": [
         "SPY", "MRVL", "LITE", "BE", "PLTR", "MSFT", "NOW", "COHR", "CRDO", "NBIS", "APLD", "MRNA",
-        "AAOI", "AXTI", "ASTS", "RKLB", "FLY", "LUNR", "SPCX",
+        "AAOI", "AXTI", "ASTS", "RKLB", "FLY", "LUNR", "NASA", "SPCX",
     ],
     "TIER_3_CHIPS": [
         "SOXX", "SMH", "NVDA", "AVGO", "TSM", "ASML", "AMD", "INTC", "MU", "STX", "WDC", "SNDK",
@@ -84,6 +84,7 @@ SENTINEL_UNIVERSE_TIERS: Dict[str, List[str]] = {
     "TIER_5_DEFENSE": [
         "SCHD", "KO", "GLD", "VST", "CEG", "TLT", "VIXY",
         "DIA", "IWM", "IGV", "MCD", "PEP", "LLY", "NKE", "AXP", "OKLO", "FPS",
+        "JPM", "XOM", "WMT", "CAT",
     ],
 }
 

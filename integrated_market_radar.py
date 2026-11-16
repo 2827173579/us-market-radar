@@ -114,6 +114,7 @@ MONITORED_TARGETS = {
         "RKLB":  {"name": "Rocket Lab", "sub": "中小型火箭发射与卫星制造", "cat": "太空商业", "cost": 0.0, "shares": 0.0, "base_val": 19.5},
         "FLY":   {"name": "Firefly Aerospace", "sub": "小型运载火箭与太空国防任务", "cat": "太空商业", "cost": 0.0, "shares": 0.0, "base_val": 0.0},
         "LUNR":  {"name": "Intuitive Machines", "sub": "月球着陆器与深空通信基建", "cat": "太空商业", "cost": 0.0, "shares": 0.0, "base_val": 0.0},
+        "NASA":  {"name": "NASA太空主题ETF", "sub": "商业航天与深空探测主题ETF", "cat": "太空商业", "cost": 0.0, "shares": 0.0, "base_val": 0.0},
         
         # 7. 价值蓝筹与核心风控仓位
         "KO":    {"name": "可口可乐", "sub": "全球消费防御与抗通胀现金奶牛", "cat": "价值蓝筹", "cost": 0.0, "shares": 0.0, "base_val": 68.0},
@@ -155,7 +156,13 @@ MONITORED_TARGETS = {
         "MCD":   {"name": "麦当劳", "sub": "全球快餐连锁与抗周期现金流巨无霸", "cat": "价值蓝筹", "cost": 0.0, "shares": 0.0, "base_val": 280.0},
         "NKE":   {"name": "耐克", "sub": "全球运动鞋服总龙头·去库存与品牌复苏", "cat": "可选消费", "cost": 0.0, "shares": 0.0, "base_val": 70.0},
         "V":     {"name": "Visa", "sub": "全球卡组织支付网络垄断寡头", "cat": "金融科技", "cost": 0.0, "shares": 0.0, "base_val": 290.0},
-        "PEP":   {"name": "百事可乐", "sub": "食品饮料防守抗通胀消费龙头", "cat": "价值蓝筹", "cost": 0.0, "shares": 0.0, "base_val": 160.0}
+        "PEP":   {"name": "百事可乐", "sub": "食品饮料防守抗通胀消费龙头", "cat": "价值蓝筹", "cost": 0.0, "shares": 0.0, "base_val": 160.0},
+
+        # 15. 四大传统行业宏观风向标 (金融 / 能源 / 零售消费 / 工业机械)
+        "JPM":   {"name": "摩根大通", "sub": "美国最大商业银行与投行风向标", "cat": "传统金融", "cost": 0.0, "shares": 0.0, "base_val": 0.0},
+        "XOM":   {"name": "埃克森美孚", "sub": "全球传统油气与能源巨头", "cat": "传统能源", "cost": 0.0, "shares": 0.0, "base_val": 0.0},
+        "WMT":   {"name": "沃尔玛", "sub": "全美必选消费与零售防御基石", "cat": "传统消费", "cost": 0.0, "shares": 0.0, "base_val": 0.0},
+        "CAT":   {"name": "卡特彼勒", "sub": "全球重型机械与工业周期龙头", "cat": "传统工业", "cost": 0.0, "shares": 0.0, "base_val": 0.0}
     }
 }
 
@@ -2359,19 +2366,20 @@ def dispatch_wechat_radar_alerts(macro_data, stocks_data, weather_info, now_str)
         batch1_val = round(batch1_shares * optimal_limit, 2)
 
         is_watched = ticker in target_watchlist
-        is_pit = s.get("is_pit", False)
+        is_obs_only = ticker in {"JPM", "XOM", "WMT", "CAT", "NASA"}
+        is_pit = s.get("is_pit", False) and (not is_obs_only)
         is_stop = s.get("is_stop", False)
         is_etf = ticker in macro_data
 
-        # 当前核心技术状态 (自选盯盘+5m买点共振、黄金坑、技术止损、冲顶止盈；持仓股一视同仁，绝不被清零覆盖)
+        # 当前核心技术状态 (自选盯盘+5m买点共振、黄金坑、技术止损、冲顶止盈；低波观察池不触发高弹性买点弹窗)
         current_state = "NORMAL"
-        if is_stop and not is_etf:
+        if is_stop and not is_etf and not is_obs_only:
             current_state = "STOP_LOSS"
-        elif is_watched and intraday_ready and not is_stop:
+        elif is_watched and intraday_ready and not is_stop and not is_obs_only:
             current_state = "WATCHLIST_ENTRY_READY"
         elif is_pit and not is_etf and not s.get("is_crash_halt") and not s.get("is_cooling_halt"):
             current_state = "GOLDEN_PIT"
-        elif s.get("is_take_profit") and not is_etf:
+        elif s.get("is_take_profit") and not is_etf and not is_obs_only:
             current_state = "TAKE_PROFIT"
 
         # 1. 客观技术面报警判定 (自选建仓就位享受 2 小时冷却，其它状态 4 小时冷却)
@@ -2763,14 +2771,15 @@ def generate_and_sync_notifications(macro_data, stocks_data, weather_info, now_s
         active_price = s.get("active_price", last)
         pct_change = s.get("pct_change", 0.0)
         is_watched = ticker in target_watchlist
+        is_obs_only = ticker in {"JPM", "XOM", "WMT", "CAT", "NASA"}
         intraday_ready = s.get("intraday_entry_ready", False)
-        is_pit = s.get("is_pit", False)
-        is_stop = s.get("is_stop", False)
-        is_tp = s.get("is_take_profit", False)
+        is_pit = s.get("is_pit", False) and (not is_obs_only)
+        is_stop = s.get("is_stop", False) and (not is_obs_only)
+        is_tp = s.get("is_take_profit", False) and (not is_obs_only)
         shares = s.get("shares", 0.0)
 
-        # 1. 🎯 5m 买点通知 (与微信 WATCHLIST_ENTRY_READY 同步)
-        if is_watched and intraday_ready and not is_stop:
+        # 1. 🎯 5m 买点通知 (与微信 WATCHLIST_ENTRY_READY 同步，低波传统/行业基准观察池不弹窗)
+        if is_watched and intraday_ready and not is_stop and not is_obs_only:
             new_notifs.append({
                 "id": f"5M_{ticker}_{date_tag}",
                 "time": now_str[5:16],
@@ -3067,7 +3076,7 @@ def fetch_all_market_data(tickers, period="1y", retries=2):
         for t in tickers:
             try:
                 sub = raw_data[t].dropna() if hasattr(raw_data.columns, "levels") else raw_data.dropna()
-                if len(sub) >= 20:
+                if len(sub) >= 1:
                     data_dict[t] = sub
             except Exception:
                 pass
@@ -3080,7 +3089,7 @@ def fetch_all_market_data(tickers, period="1y", retries=2):
             for attempt in range(1, retries + 1):
                 try:
                     df = yf.Ticker(t).history(period=period, interval="1d")
-                    if df is not None and len(df) >= 20:
+                    if df is not None and len(df) >= 1:
                         data_dict[t] = df
                         break
                 except Exception:
@@ -3191,13 +3200,14 @@ def compute_indicators(df):
 # ==============================================================================
 # 四、 宏观气象与个股碎股信号判定
 # ==============================================================================
-def evaluate_market_weather(macro_dict, history_dict=None):
+def evaluate_market_weather(macro_dict, history_dict=None, stocks_lookup=None):
     """
-    根据四大量化模型评定宏观气象与作战军规 (V3 深度升级版)：
+    根据五大量化模型评定宏观气象与作战军规 (V3 深度升级版)：
     1. VIXY 三因子复合脉冲模型 (单日涨跌幅, MA20偏离度, 60日分位)
     2. TLT 美债双向利率状态机 (估值顺风, 利率杀估值, 衰退避险, 中性震荡)
     3. 晴天做多一票否决权 (Veto) 机制 (高位急跌, 破MA20, 恐慌脉冲)
     4. SMH/IGV 相对强弱动态驱动风格主线军规
+    5. 跨行业市场广度与普跌预警 (传统龙头 JPM/XOM/WMT/CAT/KO/LLY/DIA vs 科技 QQQ/SMH/NVDA)
     """
     qqqm_info = macro_dict.get("QQQ", {})
     smh_info = macro_dict.get("SMH", {})
@@ -3310,6 +3320,27 @@ def evaluate_market_weather(macro_dict, history_dict=None):
 
     tactics = base_tactics + style_suffix
 
+    # 4.5 跨行业市场广度与普跌预警 (传统龙头 vs 进攻科技)
+    breadth_info = {}
+    try:
+        import ml_predictor_5y
+        merged_live = dict(macro_dict or {})
+        if isinstance(stocks_lookup, dict):
+            merged_live.update(stocks_lookup)
+        breadth_info = ml_predictor_5y.compute_cross_industry_breadth_alert(
+            live_lookup=merged_live,
+            history_dict=history_dict,
+        )
+    except Exception:
+        breadth_info = {}
+
+    if breadth_info.get("is_systemic_selloff"):
+        desc += " ｜ 🚨 全市场系统性普跌预警（常规支撑S1/S2易失效·切勿盲目抄底）"
+        tactics += " ｜ 🚨 全市场系统性普跌预警：传统龙头与科技同步下杀，常规支撑(S1/S2)极易失效，严禁盲目抄底接飞刀！"
+    elif breadth_info.get("is_structural_rotation"):
+        desc += " ｜ 🔄 科技结构性轮动（传统板块抗跌）"
+        tactics += " ｜ 🔄 科技结构性轮动（传统板块抗跌）：资金向金融/能源/消费/工业切换，耐心等科技放量止跌"
+
     # 5. V3.1 旗舰轨道 2：Firstrade 零佣金 QQQ 闲置资金智能泊入与避险指示器
     qqq_info = macro_dict.get("QQQ", qqqm_info)
     qqq_last = qqq_info.get("last", qqqm_last)
@@ -3356,7 +3387,8 @@ def evaluate_market_weather(macro_dict, history_dict=None):
         "tlt_bias": tlt_bias,
         "tlt_state": tlt_state,
         "tlt_color": tlt_color,
-        "tlt_desc": tlt_desc
+        "tlt_desc": tlt_desc,
+        "cross_industry_breadth": breadth_info,
     }
 
 def evaluate_stock_signal(
@@ -3594,7 +3626,7 @@ def evaluate_stock_signal(
                 if qqq_ma50 > 0 and qqq_last < qqq_ma50:
                     is_qqq_below_ma50 = True
 
-            REMOVED_TICKERS = {'KO', 'PEP', 'MCD', 'NKE', 'V', 'INTC', 'WDC', 'HPE', 'MRNA'}
+            REMOVED_TICKERS = {'KO', 'PEP', 'MCD', 'NKE', 'V', 'INTC', 'WDC', 'HPE', 'MRNA', 'JPM', 'XOM', 'WMT', 'CAT', 'NASA'}
             if cond_golden_pit_v2 or cond_climax_reversal:
                 if ticker in REMOVED_TICKERS:
                     signals.append("🟡 坑内观察(低波慢牛不作开仓)")
@@ -3829,7 +3861,7 @@ def sync_live_prices_to_predict_html(macro_data=None, stocks_data=None, session_
             hf.write(s[:j] + _json.dumps(html_tc_data, ensure_ascii=False) + s[j + end:])
 
         elapsed_ms = (time.perf_counter() - t0) * 1000.0
-        print(f"⚡ [轻量实时同步] 已对齐 70 标的 predict_radar_5y.html 现价/今日节点/15日推演起点 (耗时 {elapsed_ms:.1f}ms)")
+        print(f"⚡ [轻量实时同步] 已对齐 {len(html_tc_data)} 标的 predict_radar_5y.html 现价/今日节点/15日推演起点 (耗时 {elapsed_ms:.1f}ms)")
         return True
     except Exception as e:
         print(f"[!] 路径图轻量实时同步失败: {e}")
@@ -4186,6 +4218,11 @@ def generate_macro_radar_html(macro_data, weather_info, history_dict, update_tim
                 <div class="stat-label">美债利率定性</div>
                 <div class="stat-value" style="color: {weather_info.get('tlt_color', '#9ca3af')}; font-size: 15px;">{weather_info.get('tlt_state', '⚪ 中性震荡')}</div>
                 <div class="stat-sub">TLT偏离: {weather_info['tlt_bias']:+.2f}%</div>
+            </div>
+            <div class="stat-box" style="border-color: {(weather_info.get('cross_industry_breadth') or {}).get('color', '#9ca3af')}55;">
+                <div class="stat-label">跨行业市场广度</div>
+                <div class="stat-value" style="color: {(weather_info.get('cross_industry_breadth') or {}).get('color', '#9ca3af')}; font-size: 14px;">{(weather_info.get('cross_industry_breadth') or {}).get('short_badge', '🛡️ 广度均衡')}</div>
+                <div class="stat-sub">传统 {(weather_info.get('cross_industry_breadth') or {}).get('trad_mean_chg', 0.0):+.2f}% vs 科技 {(weather_info.get('cross_industry_breadth') or {}).get('tech_mean_chg', 0.0):+.2f}%</div>
             </div>
         </div>
     </div>
@@ -4676,8 +4713,8 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
     print(f"[*] 🕒 当前美东市场时段状态: 【{session_name}】")
 
     # 2. 并发秒级拉取 Finnhub 实时报价 (max_workers=2, 稳态间隔防 429)
-    # 免费额度 60次/分。全标的 70 只 (16 ETF + 54 股票)，优先保障 16 只宏观行业 ETF + 44 只核心科技股；10 只低波防守股走 Yahoo 5m RTH 实时穿透
-    DEFENSIVE_11_TICKERS = {"KO", "PEP", "MCD", "AXP", "V", "LLY", "MRNA", "NKE", "HPE", "FPS"}
+    # 免费额度 60次/分。全标的 75 只 (14 ETF + 61 股票)，优先保障 14 只宏观行业 ETF + 45 只核心科技股；15 只低波防守/新传统基准股走 Yahoo 5m + V7 实时穿透
+    DEFENSIVE_11_TICKERS = {"KO", "PEP", "MCD", "AXP", "V", "LLY", "MRNA", "NKE", "HPE", "FPS", "JPM", "XOM", "WMT", "CAT", "NASA"}
     finnhub_tickers = [tk for tk in all_tickers if tk != "BTC-USD" and (tk not in DEFENSIVE_11_TICKERS or (user_portfolio and tk in user_portfolio))][:60]
     realtime_quotes = fetch_finnhub_quotes_batch(finnhub_tickers, FINNHUB_API_KEY) if FINNHUB_API_KEY else {}
     if "BTC-USD" in all_tickers:
@@ -5135,22 +5172,46 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
                 **options_map.get(ticker, {})
             })
         else:
-            # yfinance 历史不足时，若有 Finnhub 实时数据则优雅生成安全底模，确保标的不丢失
-            if ticker in realtime_quotes:
-                rq = realtime_quotes[ticker]
-                last = rq["last"]
-                change = rq["change"]
-                pct_change = rq["pct_change"]
-                ma50 = last
+            # yfinance 历史不足 20 日或次新上市/暂时返回空数据时，优雅生成安全底模确保不中断不丢失
+            df_short = history_dict.get(ticker)
+            intra_fb = intraday_map.get(ticker, {})
+            rq = realtime_quotes.get(ticker, {})
+            last = 0.0
+            change = 0.0
+            pct_change = 0.0
+            is_realtime = False
+            if rq and rq.get("last", 0) > 0:
+                last = float(rq["last"])
+                change = float(rq.get("change", 0.0) or 0.0)
+                pct_change = float(rq.get("pct_change", 0.0) or 0.0)
+                is_realtime = True
+            elif df_short is not None and not df_short.empty:
+                last = float(df_short["Close"].iloc[-1])
+                if len(df_short) >= 2:
+                    prev_c = float(df_short["Close"].iloc[-2])
+                    change = last - prev_c
+                    pct_change = (change / prev_c) * 100.0 if prev_c > 0 else 0.0
+                is_realtime = bool(intra_fb.get("rth_close", 0) > 0)
+            elif intra_fb.get("ext_price", 0) > 0:
+                last = float(intra_fb["ext_price"])
+                is_realtime = True
+            elif intra_fb.get("rth_close", 0) > 0:
+                last = float(intra_fb["rth_close"])
+                is_realtime = True
+
+            if last > 0:
+                ext_price = float(intra_fb.get("ext_price", 0.0) or 0.0)
+                ext_pct = ((ext_price - last) / last * 100.0) if (ext_price > 0 and last > 0 and abs(ext_price - last) >= 0.005) else 0.0
+                active_price = ext_price if ext_price > 0 else last
+                ma50 = float(df_short["Close"].mean()) if (df_short is not None and not df_short.empty) else last
                 ema20 = ma50
-                bias = ((last - ma50) / ma50) * 100 if ma50 > 0 else 0.0
+                bias = ((active_price - ma50) / ma50) * 100 if ma50 > 0 else 0.0
                 atr = last * 0.03
                 rsi = 50.0
                 vol_ratio = 1.0
-                fib_low = last * 0.92
-                fib_high = last * 0.98
-                is_realtime = True
-                eval_res = evaluate_stock_signal(ticker, last, ma50, bias, rsi, vol_ratio, fib_low, fib_high, meta, atr=atr, weather_info=weather_info, macro_data=macro_data, ema20=ema20, high_bias_recently=False)
+                fib_low = float(df_short["Low"].min()) if (df_short is not None and not df_short.empty) else last * 0.92
+                fib_high = float(df_short["High"].max()) if (df_short is not None and not df_short.empty) else last * 0.98
+                eval_res = evaluate_stock_signal(ticker, active_price, ma50, bias, rsi, vol_ratio, fib_low, fib_high, meta, atr=atr, weather_info=weather_info, macro_data=macro_data, ema20=ema20, high_bias_recently=False)
                 stocks_list.append({
                     "ticker": ticker,
                     "name": meta["name"],
@@ -5164,6 +5225,10 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
                     "last": last,
                     "change": change,
                     "pct_change": pct_change,
+                    "active_price": active_price,
+                    "ext_price": ext_price,
+                    "ext_pct": ext_pct,
+                    "effective_pct": ext_pct if ext_price > 0 else (0.0 if session_code in ["PRE_MARKET", "POST_MARKET", "OVERNIGHT", "WEEKEND"] else pct_change),
                     "ma50": ma50,
                     "ema20": ema20,
                     "bias": bias,
@@ -5178,6 +5243,10 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
 
     # 按距离黄金坑升序排序
     stocks_sorted = sorted(stocks_list, key=lambda x: x["dist_to_pit"])
+
+    # 使用全量个股 + 宏观 ETF 重新完整核算跨行业市场广度与普跌预警
+    stocks_lookup = {s["ticker"]: s for s in stocks_sorted if isinstance(s, dict) and s.get("ticker")}
+    weather_info = evaluate_market_weather(macro_data, history_dict=history_dict, stocks_lookup=stocks_lookup)
 
     # 5. 终端打印规整 Rich 表格
     display_terminal_tables(macro_data, stocks_sorted, weather_info, has_realtime=has_realtime)
