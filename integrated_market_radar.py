@@ -756,6 +756,9 @@ def fetch_intraday_5m_and_ext_data(tickers):
                 elif _d >= 20 * 60 or _d < 4 * 60:
                     _ext_mask = (ny_idx.date == _today) & (ny_hr >= 20.0) if _d >= 20 * 60 else (ny_idx.date == _today) & (ny_hr < 4.0)
                     _price_kind = "overnight"
+                    if not bool(np.any(_ext_mask)):
+                        _ext_mask = (ny_idx.date == last_date) & (ny_hr >= 16.0) & (ny_hr < 20.0)
+                        _price_kind = "postmarket"
                 ext_price = 0.0
                 ext_time = ""
                 if _ext_mask is not None and bool(np.any(_ext_mask)):
@@ -836,32 +839,42 @@ def fetch_intraday_5m_and_ext_data(tickers):
 
 
 def fetch_yahoo_overnight_quotes(tickers):
-    """夜盘只认 Yahoo overnightMarketPrice。没有这个字段就返回空，不许用盘后价顶上。"""
+    """夜盘只认 Yahoo overnightMarketPrice (需显式携带 overnightPrice=true 参数)。没有这个字段就返回空，不许用盘后价顶上。"""
     if not tickers:
         return {}
-    import urllib.parse
-    opener = urllib.request.build_opener(urllib.request.HTTPCookieProcessor())
-    headers = {"User-Agent": "Mozilla/5.0"}
+    rows = []
     try:
-        try:
-            opener.open(urllib.request.Request("https://fc.yahoo.com", headers=headers), timeout=8).read()
-        except Exception:
-            pass
-        crumb = opener.open(
-            urllib.request.Request("https://query1.finance.yahoo.com/v1/test/getcrumb", headers=headers),
-            timeout=8,
-        ).read().decode().strip()
-        url = (
-            "https://query1.finance.yahoo.com/v7/finance/quote?symbols="
-            + ",".join(tickers)
-            + "&crumb="
-            + urllib.parse.quote(crumb)
+        d = yf.data.YfData()
+        resp = d.get(
+            "https://query1.finance.yahoo.com/v7/finance/quote",
+            params={"symbols": ",".join(tickers), "overnightPrice": "true"},
+            timeout=15,
         )
-        raw = opener.open(urllib.request.Request(url, headers=headers), timeout=20).read()
-        rows = json.loads(raw.decode()).get("quoteResponse", {}).get("result", [])
-    except Exception as exc:
-        print(f"[!] 夜盘报价不可用，回退正规盘收盘: {exc}")
-        return {}
+        rows = resp.json().get("quoteResponse", {}).get("result", [])
+    except Exception:
+        import urllib.parse
+        opener = urllib.request.build_opener(urllib.request.HTTPCookieProcessor())
+        headers = {"User-Agent": "Mozilla/5.0"}
+        try:
+            try:
+                opener.open(urllib.request.Request("https://fc.yahoo.com", headers=headers), timeout=8).read()
+            except Exception:
+                pass
+            crumb = opener.open(
+                urllib.request.Request("https://query1.finance.yahoo.com/v1/test/getcrumb", headers=headers),
+                timeout=8,
+            ).read().decode().strip()
+            url = (
+                "https://query1.finance.yahoo.com/v7/finance/quote?symbols="
+                + ",".join(tickers)
+                + "&overnightPrice=true&crumb="
+                + urllib.parse.quote(crumb)
+            )
+            raw = opener.open(urllib.request.Request(url, headers=headers), timeout=20).read()
+            rows = json.loads(raw.decode()).get("quoteResponse", {}).get("result", [])
+        except Exception as exc:
+            print(f"[!] 夜盘报价不可用，回退正规盘收盘: {exc}")
+            return {}
     out = {}
     for row in rows:
         sym = row.get("symbol")
