@@ -2045,16 +2045,17 @@ def send_discord_defensive_flight_alert(df_alert, live_lookup=None, update_time_
     if not url or wrong_channel:
         print("[!] 防御因子频道未配置 DISCORD_DEFENSIVE_FLIGHT_WEBHOOK_URL，本轮跳过，避免串台。")
         return False
-    _def_key = "" if webhook_url else f"{shared_alert_state.et_day()}:DEFENSIVE_FLIGHT" if _SHARED_ALERTS else ""
-    if _def_key and shared_alert_state.is_sent(_def_key):
-        print("  [*] 跨设备去重跳过重复防御因子告警")
-        return False
-
 
     is_alert = bool(df_alert.get("is_alert", False))
     score = float(df_alert.get("flight_score", 0.0))
     def_mean = float(df_alert.get("def_mean_chg", 0.0))
     off_mean = float(df_alert.get("off_mean_chg", 0.0))
+
+    _score_bucket = f"{round(score, 1):+.1f}"
+    _def_key = "" if webhook_url else f"{shared_alert_state.et_day()}:DEFENSIVE_FLIGHT:{_score_bucket}" if _SHARED_ALERTS else ""
+    if _def_key and shared_alert_state.is_sent(_def_key):
+        print(f"  [*] 跨设备去重跳过重复防御因子告警 ({_def_key})")
+        return False
 
     live_lookup = live_lookup or {}
     _is_futures = (df_alert.get("score_source") == "futures_proxy")
@@ -2278,8 +2279,10 @@ def send_pushplus_wechat_alert(title, markdown_content, channel=None):
                     print(f"  [!] 📱 微信[{ch}]推送返回错误: {data.get('msg')} (数据: {data.get('data')})")
         except Exception as e:
             print(f"  [!] 📱 微信[{ch}]推送网络异常: {e}")
-            
-    return any_success
+
+    _dedupe_key = _shared_dedupe_key(title)
+    _already_sent_discord = bool(_dedupe_key and _SHARED_ALERTS and shared_alert_state.is_sent(_dedupe_key))
+    return bool(any_success or discord_success or _already_sent_discord)
 
 def dispatch_wechat_radar_alerts(macro_data, stocks_data, weather_info, now_str):
     """
