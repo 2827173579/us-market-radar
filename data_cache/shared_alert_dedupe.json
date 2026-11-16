@@ -251,9 +251,17 @@
     "2026-11-16:DEFENSIVE_FLIGHT:+7.5": {
       "device": "PC",
       "ts": 1794841721.3216722
+    },
+    "2026-11-16:META/QCOM:5M_ENTRY": {
+      "device": "PC",
+      "ts": 1794842000.076703
+    },
+    "2026-11-16:DEFENSIVE_FLIGHT:+6.8": {
+      "device": "PC",
+      "ts": 1794842002.7408805
     }
   },
   "device": "PC",
-  "last_heartbeat_ts": 1794841833.5864463,
-  "updated_at": "2026-11-16T15:10:33.586888+00:00"
+  "last_heartbeat_ts": 1794841926.6207397,
+  "updated_at": "2026-11-16T15:13:22.741312+00:00"
 }
