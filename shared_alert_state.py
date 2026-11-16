@@ -52,27 +52,38 @@ def et_day():
 
 
 def make_key(day, title, ticker=None):
-    """Normalize a Discord alert title to ET-day + ticker + signal."""
+    """Normalize a Discord alert title to ET-day + tickers + signals."""
     title = str(title or "")
     if not ticker:
-        m = re.search(r"\b([A-Z]{1,6})\b", title)
-        ticker = m.group(1) if m else ""
+        tickers = re.findall(r"\b([A-Z]{1,6}(?:-[A-Z]{2,4})?)\b", title)
+        ticker = "/".join(dict.fromkeys(tickers)) if tickers else ""
+    sigs = []
+    if "买点" in title:
+        sigs.append("5M_ENTRY")
+    if "黄金坑" in title:
+        sigs.append("GOLDEN_PIT")
+    if "止损" in title or "破位" in title:
+        sigs.append("STOP_LOSS")
     if "止盈" in title:
-        sig = "TAKE_PROFIT"
-    elif "止损" in title or "破位" in title:
-        sig = "STOP_LOSS"
-    elif "买点" in title:
-        sig = "5M_ENTRY"
-    elif "防御" in title or "Flight" in title:
-        sig = "DEFENSIVE"
-    else:
-        sig = re.sub(r"\s+", "_", title)[:80]
+        sigs.append("TAKE_PROFIT")
+    if "防御" in title or "Flight" in title:
+        sigs.append("DEFENSIVE")
+    sig = "+".join(sigs) if sigs else re.sub(r"\s+", "_", title)[:80]
     return f"{day}:{ticker}:{sig}" if ticker else f"{day}:{sig}"
 
 
-def is_sent(key):
+def is_sent(key, max_age=None):
     d = load()
-    return bool(str(key or "") in d.get("dedupe", {}))
+    entry = d.get("dedupe", {}).get(str(key or ""))
+    if not entry:
+        return False
+    if max_age is not None and isinstance(entry, dict):
+        try:
+            if (_now() - float(entry.get("ts") or 0)) >= float(max_age):
+                return False
+        except Exception:
+            pass
+    return True
 
 
 def mark(key, device=""):
@@ -80,9 +91,8 @@ def mark(key, device=""):
         return False
     d = load()
     d.setdefault("dedupe", {})
-    if key not in d["dedupe"]:
-        d["dedupe"][key] = {"device": device or "", "ts": _now()}
-        _save(d)
+    d["dedupe"][key] = {"device": device or "", "ts": _now()}
+    _save(d)
     return True
 
 

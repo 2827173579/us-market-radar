@@ -1947,10 +1947,17 @@ def save_alert_history(history):
     except Exception as e:
         print(f"[!] 保存预警历史异常: {e}")
 
-def _shared_dedupe_key(title):
+def _shared_dedupe_key(title, markdown_content=""):
     if not _SHARED_ALERTS:
         return ""
-    return shared_alert_state.make_key(shared_alert_state.et_day(), title)
+    import re
+    tickers = re.findall(r"\b([A-Z]{1,6}(?:-[A-Z]{2,4})?)\b", str(title or ""))
+    if markdown_content:
+        for m in re.findall(r"(?:🚀|🚨|💰|🛡️)\s*\*\*([A-Z]{1,6}(?:-[A-Z]{2,4})?)\b", str(markdown_content)):
+            if m not in tickers:
+                tickers.append(m)
+    ticker_str = "/".join(dict.fromkeys(tickers)) if tickers else None
+    return shared_alert_state.make_key(shared_alert_state.et_day(), title, ticker=ticker_str)
 
 
 def _shared_device_tag():
@@ -1971,8 +1978,8 @@ def send_discord_claw_alert(title, markdown_content, webhook_url=None):
         print("  [!] 拦截：防御因子卡片禁止通过 Claw/主预警频道发送")
         return False
 
-    _dedupe_key = "" if webhook_url else _shared_dedupe_key(title)
-    if _dedupe_key and shared_alert_state.is_sent(_dedupe_key):
+    _dedupe_key = "" if webhook_url else _shared_dedupe_key(title, markdown_content)
+    if _dedupe_key and shared_alert_state.is_sent(_dedupe_key, max_age=600):
         print(f"  [*] 跨设备去重跳过重复告警: {_dedupe_key}")
         return False
 
@@ -2280,8 +2287,8 @@ def send_pushplus_wechat_alert(title, markdown_content, channel=None):
         except Exception as e:
             print(f"  [!] 📱 微信[{ch}]推送网络异常: {e}")
 
-    _dedupe_key = _shared_dedupe_key(title)
-    _already_sent_discord = bool(_dedupe_key and _SHARED_ALERTS and shared_alert_state.is_sent(_dedupe_key))
+    _dedupe_key = _shared_dedupe_key(title, markdown_content)
+    _already_sent_discord = bool(_dedupe_key and _SHARED_ALERTS and shared_alert_state.is_sent(_dedupe_key, max_age=600))
     return bool(any_success or discord_success or _already_sent_discord)
 
 def dispatch_wechat_radar_alerts(macro_data, stocks_data, weather_info, now_str):
