@@ -34,8 +34,8 @@
       "last_notified_at": 0.0
     },
     "QCOM": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1794839983.8111765
     },
     "LUNR": {
       "state": "NORMAL",
@@ -46,8 +46,8 @@
       "last_notified_at": 0.0
     },
     "TSM": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1794839413.0088394
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     }
   },
   "position_peaks": {
