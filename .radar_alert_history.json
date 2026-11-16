@@ -7,11 +7,11 @@
     },
     "NBIS": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1794536861.4310253
+      "last_notified_at": 1794794845.7082345
     },
     "NVDA": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1794536861.4310253
+      "last_notified_at": 1794794845.7082345
     },
     "META": {
       "state": "NORMAL",
@@ -32,6 +32,10 @@
     "SOXX": {
       "state": "NORMAL",
       "last_notified_at": 0.0
+    },
+    "QCOM": {
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1794794845.7082345
     }
   },
   "position_peaks": {
