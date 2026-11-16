@@ -38,12 +38,12 @@
       "last_notified_at": 1794832706.9553952
     },
     "LUNR": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1794832805.6206722
-    },
-    "SPCX": {
       "state": "NORMAL",
       "last_notified_at": 0.0
+    },
+    "SPCX": {
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1794832993.8889399
     }
   },
   "position_peaks": {
