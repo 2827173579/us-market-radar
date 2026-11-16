@@ -1,7 +1,7 @@
 # 🐮 美股量化雷达 · US Market Radar
 
-> 单用户美股全周期量化看盘 / 告警 / AI 预测体系：70 只核心标的实时轮询、富途风格专业终端、
-> 5 年 AI 多赛道波段预测、微信 + Discord 双通道预警、GitHub Pages 在线看板与云端 24/7 自动轮询。
+> 单用户美股全周期量化看盘 / 告警 / AI 预测体系：**70 只核心标的（14 ETF + 56 个股/加密资产）** 实时轮询、富途风格专业终端、
+> **5 年 AI 多赛道波段预测与 15 日时空周期推演**、微信 + Discord 双通道预警、**PC（主）+ 安卓平板（备）双活热备去重**、GitHub Pages 在线看板与 24/7 自动同步。
 
 [![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
@@ -11,53 +11,64 @@
 
 ---
 
-## ✨ 项目简介
+## 🌐 在线实盘看板直达（GitHub Pages 实时同步）
 
-本项目是一套完整的「美股量化雷达」工具链，覆盖 **行情抓取 → 指标计算 → 静态看板渲染 → 告警推送 →
-云端自动同步** 全流程，适合个人研究、复盘与自动化盯盘：
-
-- **70 只标的实时轮询**：16 只 ETF + 54 只核心科技/蓝筹/高波动个股，支持 Finnhub 实时报价与 yfinance 兜底；
-- **美股夜盘 24h 期货代理**：夜盘不用白天现货充数，防御背离改由 `NQ=F` / `ZB=F` / `GC=F` 实时折算；
-- **破坑分级**：空头宣泄禁接刀，和超跌右侧博反抽分开，不会把飞刀当成买点；
-- **五档差异化止损**：止损画在 VWAP 或 5 分钟企稳低点下面，宽基、行业 ETF、杠杆、厚盘口、薄盘口各用各的距离；偏离失效位过远就等回踩 VWAP，止损跟着新挂单价往下算，不会倒挂；
-- **富途风格专业终端**：TradingView 暗色图表、分时至月 K 无缝切换、五维状态持久记忆、机构期权攻防墙；
-- **AI 5 年波段预测雷达**：LightGBM 机器学习三阈值打标、赛道归因、样本外校准胜率、Top 10 行动建议；
-- **黄金坑 / 风控看板**：斐波那契回撤低吸防守带、V3.2 暴跌熔断与防接飞刀军规、动态仓位计算；
-- **微信 + Discord 双通道**：PushPlus 微信卡片实时推送，Discord 小豆泥量化哨兵（五梯队巡检，覆盖主雷达 70 只；另保留 TQQQ / BTC-USD / SCHD）；
-- **云端全自动**：GitHub Actions 24/7 轮询 + 自动 commit/push + GitHub Pages 部署，手机随时看盘；
-- **PWA 移动端**：iPhone/Android 可「添加到主屏幕」，获得接近原生 App 的全屏体验。
+| 看板名称 | 在线直达链接 | 本地文件 | 核心定位与功能亮点 |
+|---|---|---|---|
+| **🐮 富途专业看盘主终端** | **[点击打开主终端](https://2827173579.github.io/us-market-radar/)** | `futu_pro_terminal.html` / `index.html` | 70 标的 TradingView 暗色全周期 K 线、5m 量价买点、期权异动攻防墙、实盘预警抽屉、手机端快捷跨页导航 |
+| **⚡ AI 5 年多赛道预测雷达** | **[点击打开 AI 预测](https://2827173579.github.io/us-market-radar/predict_radar_5y.html)** | `predict_radar_5y.html` | LightGBM 多空双向校准胜率、V2.2 15 日时空周期推演（KNN-5 历史相似 + 零漂移 FFT 谐波）、`<0.1s` 实时价格锚定 |
+| **🎯 核心个股实战雷达** | **[点击打开个股雷达](https://2827173579.github.io/us-market-radar/stocks_radar.html)** | `stocks_radar.html` | 56 只核心标的黄金坑斐波那契防守带、**纯百分比动态风险平价仓位**、V3.2 暴跌熔断防接刀矩阵 |
+| **🏛️ 宏观大盘司令塔** | **[点击打开宏观司令塔](https://2827173579.github.io/us-market-radar/macro_radar.html)** | `macro_radar.html` | 14 只宏观/行业/避险/反向对冲 ETF 水温、市场气象晴雨表、防御因子背离实时监控 |
+| **📈 5 年历史回测对账战报** | **[点击打开 5Y 回测](https://2827173579.github.io/us-market-radar/backtest_report_5y.html)** | `backtest_report_5y.html` | 2021–2026（1,194 交易日）双轨制策略净值曲线、1.5 bps 滑点校准与机构复式记账平账审计 |
 
 ---
 
-## 📊 双看板说明
+## ✨ 项目简介与核心特性
 
-### 1️⃣ 富途专业全周期看盘终端
+本项目是一套完整的「美股量化雷达」工具链，覆盖 **行情抓取 → 指标计算 → 静态看板渲染 → 告警推送 → 跨端去重与云端自动同步** 全流程，适合个人研究、复盘与自动化盯盘：
 
-- 入口：`futu_pro_terminal.html`（根路径 `index.html`）
+- **70 只标的实时轮询**：**14 只宏观/行业/对冲 ETF + 56 只核心科技/蓝筹/数字资产标的**，支持 Finnhub 秒级实时报价与 yfinance 免费接口双擎联动；
+- **🪙 数字资产（BTC）专区 & 7×24 小时自然日连续模式**：
+  - 左侧分类栏内置「🪙 数字资产 (BTC)」专属 Tab（覆盖 `BTC-USD`、`MSTR`、`COIN`）；
+  - `BTC-USD` 100% 走 Yahoo 免费接口绕过 Finnhub 频控，TradingView 自动映射 `COINBASE:BTCUSD`；
+  - 在 `predict_radar_5y.html` 中为 `BTC-USD` 独立启用 **7×24 小时自然日连续模式**（保留周六、周日完整自然日 K 线，未来 `T+1 ~ T+15` 推演横轴按连续自然日递增，不跳过周末；其余 69 只美股/ETF 严格遵循美股交易日历）；
+- **⚡ AI 5 年波段预测雷达 & 盘中毫秒级实时同步**：
+  - LightGBM 机器学习双向三阈值打标（做多 Top 10 + 做空 Top 10）、7 大赛道先验校准胜率、4H 共振与 S1/S2/R1/R2 筹码点位；
+  - **V2.2 15 日时空周期推演**：结合 KNN-5 历史相似形态匹配与零漂移 EMA20 去趋势傅里叶谐波（FFT）分解，自动标定未来 15 日周期阻力窗与回踩窗；
+  - **盘中每分钟轻量实时同步（`sync_live_prices_to_predict_html`）**：每轮行情刷新后以 `<0.1s` 极速对齐全部 70 只标的的右上角最新现价、图上“今日节点”与 15 日推演起点（保持 15 日涨跌幅波形比例不变），并在美股 16:05 ET 收盘或 `BTC-USD` UTC 00:00 日切时自动触发全量重算；
+- **美股夜盘 24h 期货代理**：夜盘不用白天现货充数，防御背离改由 `NQ=F` / `ZB=F` / `GC=F` 实时折算；
+- **破坑分级与五档差异化止损**：空头宣泄禁接刀与超跌右侧博反抽严格分离；止损画在 VWAP 或 5 分钟企稳低点下方，宽基、行业 ETF、杠杆、厚盘口、薄盘口各用各的距离；偏离失效位过远自动提示等回踩 VWAP，杜绝止损倒挂；
+- **黄金坑 / 纯百分比风控看板**：60 日斐波那契回撤低吸防守带、V3.2 暴跌熔断与防接飞刀军规、`stocks_radar.html` 纯百分比动态风险平价仓位（`15%~25%` 分批低吸 / `10%~15%` 顺势等回踩 / `0%` 严禁接刀）；
+- **微信 + Discord 双通道 & PC/平板双活热备去重**：
+  - PushPlus 微信卡片实时推送 + Discord 小豆泥量化哨兵（五大梯队巡检，严格覆盖主雷达全量 70 只标的）；
+  - **PC（主）+ 安卓平板 Termux（备）360 秒心跳避让（`shared_alert_state.py`）**：PC 在线值班时平板自动 Standby 静默待命；PC 休眠/离线超 6 分钟后平板自动无缝接管实盘告警；跨端共享纯文本去重账本 `data_cache/shared_alert_dedupe.json`（零重复推送、零 Webhook/密钥入库）；
+- **全平台丝滑交互（Desktop & Mobile PWA）**：
+  - 桌面端实盘预警通知中心与左侧赛道分类栏支持 **鼠标左键按住拖拽（Click & Drag）+ 滚轮横向滚动 + `< >` 微调箭头** 三合一交互；
+  - 手机端（`<= 768px`）顶部固定展示紧凑 4 宫格跨页导航栏（`⚡ AI预测` / `🎯 个股雷达` / `🏛️ 司令塔` / `📈 5Y回测`）及底部 5 栏 App 级导航，各子看板顶部一键返回 `🐮 看盘主终端`；iPhone/Android 可「添加到主屏幕」获得原生级 PWA 体验。
+
+---
+
+## 📊 核心看板详解
+
+### 1️⃣ 富途专业全周期看盘终端（`futu_pro_terminal.html` / `index.html`）
+
 - 在线访问：[https://2827173579.github.io/us-market-radar/](https://2827173579.github.io/us-market-radar/)
 - 核心能力：
   - 70 只标的 TradingView 暗色 K 线，分时 / 5 分钟 / 15 分钟 / 60 分钟 / 日 / 周 / 月 K 无缝切换；
-  - 五维状态（标的选择 / 周期 / 副图指标 / 分组 / 视图）持久记忆；
-  - 机构期权异动大单墙（Call/Put 成交量、金额、PCR）；
-  - 自选 ⭐ 标记、持仓成本与止盈/止损价位管理、日内买点提示（5m VWAP / RSI / 量比共振）；
-  - PWA 支持（见下方「手机端」章节）。
+  - 五维状态（标的选择 / 周期 / 副图指标 / 分组 / 视图）本地 `localStorage` 持久记忆；
+  - 左侧赛道与信号分类（含 `⚡ AI高胜率`、`🩸 AI做空榜`、`🟢 黄金坑`、`🪙 数字资产 (BTC)` 等），支持鼠标拖拽与滚轮横向滑动；
+  - 机构期权异动大单墙（Call/Put 成交量、权利金金额、PCR、ATM 隐含波动率预期波动带）；
+  - 右上角「🔔 实盘预警通知中心」抽屉（含 7 类音效试听、分类拖拽筛选、点击卡片一键联动主图）；
+  - 手机端顶部跨页快捷导航栏 + 底部 5 栏切换（行情 / K线 / 决策 / 期权 / 持仓）。
 
-### 2️⃣ AI 美股 5 年多赛道波段预测雷达
+### 2️⃣ AI 美股 5 年多赛道波段预测雷达（`predict_radar_5y.html`）
 
-- 入口：`predict_radar_5y.html`
 - 在线访问：[https://2827173579.github.io/us-market-radar/predict_radar_5y.html](https://2827173579.github.io/us-market-radar/predict_radar_5y.html)
 - 核心能力：
-  - LightGBM 三阈值打标（止盈 / 持有 / 止损概率）+ 23 维量价/宏观特征；
-  - 赛道归因、样本外校准胜率与盈亏比、Top 10 多空行动建议；
+  - LightGBM 双向三阈值打标（做多止盈/止损 + 做空下杀/反抽）+ 23 维量价与宏观截面特征；
+  - 70 标的 15 日时空周期推演交互式 Canvas 图表（支持聚焦 15 日 / 全景 35 日切换、鼠标拖拽平移与滚轮缩放）；
+  - `BTC-USD` 专属 7×24 自然日连续推演模式 + 全量 70 标的每分钟现价/今日节点/推演起点实时同步；
   - 5 年历史仿真、摩擦滑点校准与穿透式账务审计（见 `backtest_report_5y.html`）。
-
-### 其他看板
-
-| 看板 | 文件 | 说明 |
-|---|---|---|
-| 宏观大盘司令塔 | `macro_radar.html` | 16 只宏观/避险/对冲 ETF 水温、市场天气晴雨表 |
-| 核心个股碎股雷达 | `stocks_radar.html` | 黄金坑斐波那契低吸带、碎股仓位计算 |
-| 5 年回测战报 | `backtest_report_5y.html` | 2021-2026 全周期双轨制策略收益曲线与审计 |
 
 ---
 
@@ -66,8 +77,8 @@
 ### 环境要求
 
 - **Python ≥ 3.10**（推荐 3.11 / 3.12 / 3.13）
-- 无需数据库 / Node.js（前端为单文件静态 HTML）
-- 依赖：`pip install -r requirements.txt`（可选 `pyarrow` 用于 parquet 缓存读写）
+- 无需数据库（前端为单文件零依赖静态 HTML，内置响应式与 Canvas 渲染）
+- 依赖：`pip install -r requirements.txt`（含 `pyarrow` 用于 Parquet 5 年行情面板高速读写）
 
 ### 三步启动
 
@@ -82,11 +93,17 @@ python -m venv .venv
 pip install -r requirements.txt
 cp .env.example .env        # 按需填入 Finnhub / PushPlus / Discord / GH_TOKEN
 
-# 3) 单次全量扫描并生成看板
+# 3) 单次全量扫描并生成四大 HTML 看板
 python integrated_market_radar.py --once
 ```
 
-启动后打开本地看盘地址：`http://127.0.0.1:8765`（`--once` 会拉起常驻看盘 API）。
+常驻极速轮询模式（每 60 秒自动抓取、同步 HTML 并推送 GitHub Pages）：
+
+```bash
+python -u integrated_market_radar.py --loop-daemon --interval-seconds 60 --duration-minutes 0
+```
+
+启动后本地看盘地址：`http://127.0.0.1:8765`。
 
 ### Windows 一键脚本（推荐新手）
 
@@ -102,31 +119,31 @@ python integrated_market_radar.py --once
 
 1. **iPhone / iPad（Safari）**：打开本地/在线看板 → 点击「分享」→ 选择「**添加到主屏幕**」→ 添加；
 2. **Android（Chrome / Edge）**：打开看板 → 右上角菜单 → 「**安装应用**」或「添加到主屏幕」；
-3. 独立窗口全屏运行，附带底部 5 栏导航（自选 / 图表 / 战术 / 期权 / 持仓）。
+3. 独立窗口全屏运行，顶部配备跨页导航栏（`AI预测 / 个股雷达 / 司令塔 / 5Y回测`），底部配备 5 栏导航（`行情 / K线 / 决策 / 期权 / 持仓`）。
 
 ---
 
 ## 🔑 环境变量（`.env`）
 
-`.env` 与 `integrated_market_radar.py` 同目录，已被 `.gitignore` 排除，**请勿提交真实 Key**。
+`.env` 与 `integrated_market_radar.py` 同目录，已被 `.gitignore` 严格排除，**请勿提交真实 Key 或 Webhook**。
 完整模板见 [`.env.example`](.env.example)。
 
 | 变量 | 必需性 | 说明 |
 |---|---|---|
-| `FINNHUB_API_KEY` | 强烈建议 | Finnhub 实时报价（免费注册即可） |
+| `FINNHUB_API_KEY` | 强烈建议 | Finnhub 实时报价（免费注册即可；`BTC-USD` 自动走 Yahoo 免费接口不占额度） |
 | `PUSHPLUS_TOKEN` | 可选 | PushPlus 微信推送；不填则跳过微信 |
 | `PUSHPLUS_CHANNEL` | 可选 | PushPlus 渠道（默认 `clawbot`） |
 | `DISCORD_WEBHOOK_URL` | 可选 | Discord 哨兵主频道 |
 | `DISCORD_CLAW_WEBHOOK_URL` | 可选 | 微信告警镜像频道（兼容 `DISCORD_ALERT_WEBHOOK_URL`） |
 | `DISCORD_DEFENSIVE_FLIGHT_WEBHOOK_URL` | 可选 | 防御因子背离专属频道 |
-| `GH_TOKEN` | 云端/VPS 自动同步必需 | 有本仓库 `contents:write` 权限的 GitHub PAT |
+| `GH_TOKEN` | 云端/本地自动同步必需 | 有本仓库 `contents:write` 权限的 GitHub PAT |
 
 ---
 
 ## ☁️ Fork 后开启 GitHub Pages 与 Actions 24/7 自动轮询
 
-> 目标：让 Fork 出来的仓库也能像上游一样 **云端 24/5 自动抓取 → 自动 commit/push → GitHub Pages 自动更新**，
-> 本地电脑完全不开机也能在手机上看最新看板。
+> 目标：让 Fork 出来的仓库也能像上游一样 **云端自动抓取 → 自动 commit/push → GitHub Pages 自动更新**，
+> 本地电脑不开机也能在手机上看最新看板。
 
 ### Step 1 · Fork 仓库
 
@@ -149,24 +166,20 @@ python integrated_market_radar.py --once
 |---|---|---|
 | `FINNHUB_API_KEY` | ✅ | Finnhub 免费 API Key |
 | `PUSHPLUS_TOKEN` | 可选 | 微信推送 Token |
-| `GH_TOKEN` | 可选（推荐） | 有本仓库 contents:write 权限的 PAT；用于让 push 触发 Pages 重新部署（GitHub 内置 `GITHUB_TOKEN` 的 push 通常不会触发新的 workflow） |
+| `GH_TOKEN` | 可选（推荐） | 有本仓库 `contents:write` 权限的 PAT；用于让 push 触发 Pages 重新部署 |
 | `DISCORD_WEBHOOK_URL` 等 | 可选 | Discord 推送频道 |
-
-> 如启用 `GH_TOKEN`，请把 `.github/workflows/market_radar.yml` 主步骤的 env 中
-> `GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}` 改为 `GH_TOKEN: ${{ secrets.GH_TOKEN }}`（或两者并存，代码优先读取 `GH_TOKEN`）。
 
 ### Step 4 · 启用并手动触发一次
 
 1. 进入 **Actions** 标签，若提示 workflow 被禁用，点击 **I understand my workflows, go ahead and enable them**；
 2. 左侧选择 **US Market Radar 24-7 Engine** → **Run workflow**；
 3. `duration_minutes` 建议填 `10`、`interval_seconds` 填 `120`，点击运行，确认第一轮成功 push；
-4. 之后按 workflow 内置的 6 个 cron 时段自动运行（每次常驻 240 分钟，60~120 秒一轮）。
+4. 之后按 workflow 内置的 cron 时段自动运行。
 
-### Step 5 · 注意事项
+### Step 5 · 多端协同与避让机制
 
-- **不要同时运行本地守护进程与云端 workflow**：workflow 内置了「15 分钟本地优先避让」（若 15 分钟内有非 actions 提交则 schedule 跳过），但仍建议同一时间只保留一个写入源；
-- 若日后迁移到自建 VPS：请参考 [docs/vps_deploy/README.md](docs/vps_deploy/README.md)，并**先停本地守护进程、禁用云端雷达 workflow**（保留 `pages-build-deployment`）；
-- Actions 免费额度有限（私有仓库计费；公开仓库免费），请按需调整运行时长与轮询间隔。
+- **PC（主）+ 安卓平板 Termux（备）自动避让**：通过 `shared_alert_state.py` 维护 360 秒 PC 心跳锁，PC 在线时安卓端（`--android`）自动进入 Standby 仅同步看板不发重复告警；PC 离线超 360 秒后安卓端自动接管告警推送；
+- **云端 Actions 互斥检测**：workflow 内置「15 分钟本地优先避让」（若 15 分钟内有本地客户端提交则云端自动退出），避免云端与本地同时写入冲突。
 
 ---
 
@@ -176,7 +189,7 @@ python integrated_market_radar.py --once
 
 #### 轨道一：Track 1 (Pure Stock Dynamic Risk-Managed / 纯个股动态风控轨)
 
-- 54 只高 Alpha 科技个股与赛道龙头，1.5% 账户风险平价动态头寸，最多同时持仓 4 只；
+- 56 只高 Alpha 科技个股与赛道龙头，1.5% 账户风险平价动态头寸（单股上限 25%），最多同时持仓 4 只；
 - EMA10/EMA20 移动止盈 + -6.8% 结构性硬止损；历史捕获 ASML +30%、AMD +37%、AVGO +22% 等大波段。
 
 #### 轨道二：Track 2 (Flagship QQQ Base Enhancement / QQQ 核心底仓增强旗舰轨)
@@ -184,7 +197,7 @@ python integrated_market_radar.py --once
 - QQQ 作为流动性停泊底座：QQQ > SMA200 时空闲现金全额停泊 QQQ；破位则清仓避险；
 - 卫星个股黄金坑触发时自动卖出等额 QQQ 释放流动性，获利了结后回流底仓。
 
-**回测口径**：2021-2026 共 1,194 个交易日，初始本金 $100,000，Firstrade 零佣金 + **1.5 bps** 流动性滑点校准。
+**回测口径**：2021-2026 共 1,194 个交易日，初始本金 \$100,000，Firstrade 零佣金 + **1.5 bps** 流动性滑点校准。
 双轨制 5 年回测对比、资金盈亏比（Dollar PF）与最大回撤详见 `backtest_report_5y.html`。
 
 #### V3.2 暴跌熔断与防接飞刀军规
@@ -200,48 +213,56 @@ python integrated_market_radar.py --once
 
 ```
 us-market-radar/
-├── integrated_market_radar.py   # 主守护进程：抓取→计算→生成 HTML→告警→自动 git 同步
-├── discord_sentinel.py          # Discord 小豆泥量化哨兵（五梯队，覆盖主雷达 70 只）
-├── ml_predictor_5y.py           # AI 预测与特征工程（LightGBM 可选依赖）
-├── create_futu_terminal.py      # 富途风格终端 HTML 生成器
-├── index.html                   # 富途终端（GitHub Pages 根路径）
-├── macro_radar.html             # 宏观 ETF 水温看板
-├── stocks_radar.html            # 个股黄金坑 / 风控看板
-├── predict_radar_5y.html        # AI 5 年预测看板
-├── backtest_report_5y.html      # 5 年回测战报
-├── data_cache/                  # 预测快照与 5 年面板 parquet
-├── sounds/                      # 告警音效
-├── docs/vps_deploy/             # VPS 部署备用脚本（当前未启用）
-├── 1~5 号 bat / vbs             # Windows 一键脚本
-├── test_*.py                    # 测试与对抗性验证套件
-├── .env.example                 # 环境变量模板（唯一入库的环境配置）
-├── user_portfolio.example.json  # 持仓配置模板（复制为 user_portfolio.json 使用）
-└── AGENTS.md                    # 面向 AI 编程工具的项目导航与协作规范
+├── integrated_market_radar.py   # 主守护进程：抓取→计算→生成 HTML→轻量同步预测现价→告警→自动 git 同步
+├── ml_predictor_5y.py           # AI 5年多赛道预测、V2.2 15日时空周期推演与 BTC-USD 7x24 自然日引擎
+├── create_futu_terminal.py      # 富途风格全周期看盘终端 HTML 生成器
+├── discord_sentinel.py          # Discord 小豆泥量化哨兵（五大梯队，严格对齐主雷达 70 只标的）
+├── shared_alert_state.py        # PC(主)/安卓平板(备) 360s 心跳避让与跨设备纯文本告警去重账本
+├── index.html                   # 富途看盘主终端（GitHub Pages 根路径）
+├── futu_pro_terminal.html       # 富途看盘主终端
+├── predict_radar_5y.html        # AI 5 年预测与 15 日时空周期推演看板
+├── stocks_radar.html            # 核心个股黄金坑与纯百分比仓位雷达
+├── macro_radar.html             # 宏观大盘司令塔（14 只 ETF 水温看板）
+├── backtest_report_5y.html      # 5 年历史回测对账战报
+├── data_cache/                  # AI 预测快照 JSON、跨端去重账本与 5 年面板 Parquet 缓存
+├── sounds/                      # 7 类实盘量化预警音效
+├── docs/vps_deploy/             # VPS / Termux 部署辅助脚本与说明
+├── 1~5 号 bat / vbs             # Windows 一键环境配置、控制面板与静默自启脚本
+├── test_*.py                    # 单元测试与法医级对抗性验证套件（100+ 项断言测试）
+├── .env.example                 # 环境变量安全模板（唯一入库的环境配置说明）
+├── user_portfolio.example.json  # 持仓配置模板（本地复制为 user_portfolio.json 使用）
+└── AGENTS.md                    # 面向 AI 编程工具的项目架构与协作规范
 ```
 
 ---
 
-## 🧪 测试
+## 🧪 自动化测试套件
 
 ```bash
-# Discord 哨兵 + 工程约束测试（14 项，当前 14/14 PASS）
-python -m pytest test_discord_sentinel.py -q
+# 1) 前端 DOM 完整性、拖拽交互、手机跨页导航与 BTC-USD 7x24 自然日推演测试
+python -m unittest test_challenger_m3.py
 
-# V3.2 熔断场景
-python test_v32_circuit_breaker.py
+# 2) 时空周期推演 21 核心标的法医级对抗审计
+python -m unittest test_adversarial_challenger_r2.py
 
-# 5 年回测端到端（需要本地 .backtest_5y_cache.pkl 缓存）
-python test_e2e_v31.py
+# 3) Discord 哨兵、跨端去重与零密钥泄露门禁测试
+python -m unittest test_discord_sentinel.py
+
+# 4) V3.2 暴跌熔断与防接飞刀测试
+python -m unittest test_v32_circuit_breaker.py
+
+# 5) 5 年 AI 预测管道、因果特征与三阈值打标全量测试
+python -m unittest test_ml_predictor.py
 ```
 
 ---
 
 ## 🔒 安全与隐私
 
-- `.env` 永不入库；`.env.example` 仅含占位符；
-- 个人持仓请写入本地 `user_portfolio.json`（参考 `user_portfolio.example.json`），开源/分享前请自行脱敏；
-- 运行日志、临时缓存、`.radar_daemon.log` 等均已加入 `.gitignore`；
-- 若 Key 曾泄露：立即到对应平台吊销并轮换，必要时使用 `git filter-repo` 清理历史。
+- `.env` 永不入库；`.env.example` 仅含安全占位符，全仓 tracked 文件真实 Webhook 数量严格为 **0**；
+- 跨端去重账本 `data_cache/shared_alert_dedupe.json` 仅存储纯文本去重键（`ET日期:代码:信号类型`），绝不写入任何 Token 或 URL；
+- 个人持仓请写入本地 `user_portfolio.json`（参考 `user_portfolio.example.json`），已被 `.gitignore` 自动排除；
+- 运行日志、临时缓存、`.radar_daemon.log` 等均已加入 `.gitignore`。
 
 ### 持仓配置模板（`user_portfolio.example.json`）
 
@@ -257,8 +278,7 @@ python test_e2e_v31.py
 | `trim2` | 第二止盈价 |
 | `note` / `name` / `cat` | 看板显示用备注 / 名称 / 赛道分类 |
 
-> ⚠️ 不要在 JSON 顶层添加 `_comment` 之类非股票代码的键：程序会把它们当成标的处理。说明信息请写在
-> 每个标的的 `note` 字段中（如上例），或直接参考本 README。
+> ⚠️ 不要在 JSON 顶层添加 `_comment` 之类非股票代码的键：程序会把它们当成标的处理。说明信息请写在每个标的的 `note` 字段中。
 
 ---
 
