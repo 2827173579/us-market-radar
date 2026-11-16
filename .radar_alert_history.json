@@ -7,15 +7,15 @@
     },
     "NBIS": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1794823871.7472582
+      "last_notified_at": 1794831116.2963314
     },
     "NVDA": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1794823871.7472582
+      "last_notified_at": 1794831116.2963314
     },
     "META": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1794831116.2963314
     },
     "MRNA": {
       "state": "NORMAL",
@@ -42,8 +42,8 @@
       "last_notified_at": 0.0
     },
     "SPCX": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1794830729.8390894
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     }
   },
   "position_peaks": {

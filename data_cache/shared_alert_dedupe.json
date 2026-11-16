@@ -163,9 +163,13 @@
     "2026-11-16:DEFENSIVE_FLIGHT:+5.6": {
       "device": "PC",
       "ts": 1794830731.7970347
+    },
+    "2026-11-16:META/NBIS/NVDA:5M_ENTRY+STOP_LOSS": {
+      "device": "PC",
+      "ts": 1794831116.7161229
     }
   },
   "device": "PC",
-  "last_heartbeat_ts": 1794830949.854815,
-  "updated_at": "2026-11-16T12:09:09.855246+00:00"
+  "last_heartbeat_ts": 1794831043.1714242,
+  "updated_at": "2026-11-16T12:11:56.716559+00:00"
 }
