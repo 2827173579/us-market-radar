@@ -1031,122 +1031,6 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
         .panel-box.collapsed .panel-box-content {{
             display: none !important;
         }}
-        .ui-density-bar {{
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 6px;
-            background: #14171e;
-            border: 1px solid #262b36;
-            border-radius: 6px;
-            padding: 4px 6px;
-            margin-bottom: 4px;
-        }}
-        .ui-density-toggle-btn {{
-            display: inline-flex;
-            align-items: center;
-            gap: 4px;
-            background: #1c212b;
-            border: 1px solid #303646;
-            border-radius: 5px;
-            padding: 3px 7px;
-            color: #9ca3af;
-            font-size: 11px;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.15s ease;
-        }}
-        .ui-density-toggle-btn:hover {{
-            border-color: #60a5fa;
-            color: #e5e7eb;
-        }}
-        .ui-density-toggle-btn .ud-opt {{
-            padding: 1px 5px;
-            border-radius: 3px;
-            color: #9ca3af;
-            transition: all 0.15s ease;
-        }}
-        .ui-density-toggle-btn .ud-sep {{
-            color: #4b5563;
-            font-weight: 400;
-        }}
-        .ui-density-toggle-btn .ud-opt.active {{
-            background: rgba(56, 189, 248, 0.16);
-            color: #7dd3fc;
-            border: 1px solid rgba(56, 189, 248, 0.35);
-        }}
-        .pro-expand-pill {{
-            background: rgba(148, 163, 184, 0.10);
-            border: 1px solid rgba(148, 163, 184, 0.25);
-            color: #cbd5e1;
-            border-radius: 4px;
-            padding: 3px 8px;
-            font-size: 11px;
-            font-weight: 600;
-            cursor: pointer;
-            white-space: nowrap;
-            transition: all 0.15s ease;
-        }}
-        .pro-expand-pill:hover {{
-            background: rgba(56, 189, 248, 0.14);
-            border-color: rgba(56, 189, 248, 0.35);
-            color: #e2e8f0;
-        }}
-        .minimal-expand-footer {{
-            display: none;
-            margin-top: 2px;
-            margin-bottom: 4px;
-        }}
-        .minimal-expand-link {{
-            width: 100%;
-            background: rgba(30, 41, 59, 0.55);
-            border: 1px dashed rgba(148, 163, 184, 0.32);
-            color: #94a3b8;
-            border-radius: 6px;
-            padding: 7px 10px;
-            font-size: 11px;
-            font-weight: 600;
-            cursor: pointer;
-            text-align: center;
-            transition: all 0.15s ease;
-        }}
-        .minimal-expand-link:hover {{
-            background: rgba(56, 189, 248, 0.10);
-            border-color: rgba(56, 189, 248, 0.4);
-            color: #e2e8f0;
-        }}
-        /* 极简视图降噪规则 (默认折叠次要详情与高饱和干扰色块) */
-        body.minimal-mode:not(.pro-details-expanded) .pro-detail-only {{
-            display: none !important;
-        }}
-        body.minimal-mode .minimal-expand-footer {{
-            display: block;
-        }}
-        body:not(.minimal-mode) #btnExpandProDetails {{
-            display: none !important;
-        }}
-        /* 极简模式下收敛次要徽章的高饱和跳脱色块 */
-        body.minimal-mode .wl-badge-minor,
-        body.minimal-mode #pSector,
-        body.minimal-mode #pSignalTag,
-        body.minimal-mode #pAiRankBadge,
-        body.minimal-mode #pStarStatusBadge,
-        body.minimal-mode #pPcrSentimentBadge,
-        body.minimal-mode #pActionTypeBadge {{
-            background: rgba(148, 163, 184, 0.10) !important;
-            border-color: rgba(148, 163, 184, 0.22) !important;
-            color: #94a3b8 !important;
-            box-shadow: none !important;
-        }}
-        body.minimal-mode .wl-noise-tag,
-        body.minimal-mode .s-cat-suffix {{
-            opacity: 0.72;
-        }}
-        body.minimal-mode .watchlist-categories .w-tab:not(.active) {{
-            background: transparent !important;
-            border-color: rgba(148, 163, 184, 0.16) !important;
-            color: #9ca3af !important;
-        }}
         .top-disclaimer-pill {{
             font-size: 10.5px;
             color: #cbd5e1;
@@ -1792,9 +1676,6 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 min-height: 0 !important;
                 height: auto !important;
             }}
-            .futu-main.m-view-options #optionsAnomalyBox.pro-detail-only {{
-                display: block !important;
-            }}
             .sidebar-toggle-btn {{
                 display: none !important;
             }}
@@ -1918,7 +1799,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
         }}
     </style>
 </head>
-<body class="minimal-mode">
+<body>
 
     <!-- 顶部状态栏与全周期切换栏 -->
     <header class="futu-header">
@@ -2061,17 +1942,6 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                     </button>
                 </div>
             </div>
-            <!-- 视图密度一键切换栏 (极简视图 / 专业全量视图) -->
-            <div class="ui-density-bar" id="uiDensityBar">
-                <button id="uiDensityToggleBtn" type="button" class="ui-density-toggle-btn is-minimal" onclick="toggleUiDensityMode()" title="在极简视图（清爽核心）与专业视图（全量量化）间一键切换">
-                    <span class="ud-opt ud-opt-min active">✨ 极简视图</span>
-                    <span class="ud-sep">/</span>
-                    <span class="ud-opt ud-opt-pro">🔧 专业视图</span>
-                </button>
-                <button id="btnExpandProDetails" type="button" class="pro-expand-pill" onclick="toggleProDetailsPeek()">
-                    🔍 展开专业详情
-                </button>
-            </div>
             <!-- 视图过滤切换栏 (解决拥挤，支持一键筛选卡片) -->
             <div class="panel-filter-bar">
                 <div class="p-filter-pill active" data-filter="all" onclick="filterRightCards('all')">全景</div>
@@ -2096,8 +1966,8 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                         <span id="pSignalText">⏳ 数据加载中...</span>
                         <span id="pSignalTag" style="font-size: 11px; padding: 2px 7px; border-radius: 4px; background: rgba(255,255,255,0.12); font-weight: 600;">--</span>
                     </div>
-                    <!-- 六维量化矩阵 (极简视图默认折叠进专业详情) -->
-                    <div class="metrics-grid pro-detail-only">
+                    <!-- 六维量化矩阵 -->
+                    <div class="metrics-grid">
                         <div class="m-item"><span class="m-lbl">50日均线</span><span class="m-val" id="pMa50">--</span></div>
                         <div class="m-item"><span class="m-lbl">MA50偏离</span><span class="m-val" id="pBias">--</span></div>
                         <div class="m-item"><span class="m-lbl">EMA20趋势</span><span class="m-val" id="pEma20" style="color: #93c5fd;">--</span></div>
@@ -2128,8 +1998,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                         <span id="pAiSectorStar" style="font-size: 11px; color: #ffd54f; font-weight: 700;">--</span>
                     </div>
 
-                    <!-- 2. Dual Comparison Tug-of-War Probability Module (专业详情折叠) -->
-                    <div class="pro-detail-only">
+                    <!-- 2. Dual Comparison Tug-of-War Probability Module -->
                     <div style="background: rgba(0,0,0,0.35); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 8px 10px; margin-bottom: 8px;">
                         <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 4px;">
                             <div>
@@ -2189,7 +2058,6 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                         </div>
                         <div id="pAiScenarioScript" style="font-size: 10.5px; color: #cbd5e1; line-height: 1.35; border-left: 2px solid #58a6ff; padding-left: 6px;">--</div>
                     </div>
-                    </div>
                 </div>
             </div>
 
@@ -2208,14 +2076,14 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                     <!-- 5分钟高频量化建仓实时监测状态 -->
                     <div id="pIntradayBanner" style="background: rgba(0, 230, 118, 0.12); border: 1px solid rgba(0, 230, 118, 0.35); border-radius: 5px; padding: 6px 9px; margin-bottom: 8px;">
                         <div id="pIntradayStatusText" style="font-size: 12px; font-weight: 800; color: #00e676; margin-bottom: 3px;">⏳ 加载中...</div>
-                        <div id="pIntradayReason" class="pro-detail-only" style="font-size: 11px; color: #d1d5db; line-height: 1.35;">正在同步实时量化挂单参数...</div>
+                        <div id="pIntradayReason" style="font-size: 11px; color: #d1d5db; line-height: 1.35;">正在同步实时量化挂单参数...</div>
                     </div>
                     <!-- 挂单参数矩阵 -->
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 6px;">
                         <div style="background: rgba(0,0,0,0.3); border-radius: 6px; padding: 6px 8px; border: 1px solid rgba(255,215,0,0.25);">
                             <div id="pEntryPriceLabel" style="font-size: 11px; color: #9ca3af;">💡 参考挂单价</div>
                             <div id="pOptimalLimit" style="font-size: 22px; font-weight: 800; color: #ffd700; font-family: \'DIN Alternate\', sans-serif;">--</div>
-                            <div class="pro-detail-only" style="font-size: 10px; color: #6b7280;" id="pOptimalNote">--</div>
+                            <div style="font-size: 10px; color: #6b7280;" id="pOptimalNote">--</div>
                         </div>
                         <div style="background: rgba(0,0,0,0.3); border-radius: 6px; padding: 6px 8px; border: 1px solid rgba(255,82,82,0.35);">
                             <div id="pEntryStopLabel" style="font-size: 11px; color: #9ca3af;">🛡️ 防守止损线</div>
@@ -2223,7 +2091,6 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                             <div style="font-size: 10px; color: #6b7280;" id="pEntryStopDist">距入场 --</div>
                         </div>
                     </div>
-                    <div class="pro-detail-only">
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px; font-size: 11px; margin-bottom: 4px;">
                         <div style="background: rgba(0,0,0,0.25); border-radius: 4px; padding: 5px 7px; border: 1px solid rgba(255,255,255,0.05);">
                             <span style="color: #9ca3af;">日内 VWAP 均价：</span>
@@ -2250,12 +2117,11 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                             <b style="color: #93c5fd;" id="pEntryFibBand">--</b>
                         </div>
                     </div>
-                    </div>
                 </div>
             </div>
 
             <!-- 2.8 ⚡ 机构期权多空异动雷达 (PCR、主力权利金大单與 ATM 预期波动带) -->
-            <div class="panel-box pro-detail-only" id="optionsAnomalyBox" data-cat="options" style="background: linear-gradient(135deg, rgba(168, 85, 247, 0.06), #181b22); border-left: 4px solid #a855f7; border-radius: 6px; padding: 10px 12px; margin-bottom: 8px;">
+            <div class="panel-box" id="optionsAnomalyBox" data-cat="options" style="background: linear-gradient(135deg, rgba(168, 85, 247, 0.06), #181b22); border-left: 4px solid #a855f7; border-radius: 6px; padding: 10px 12px; margin-bottom: 8px;">
                 <div class="box-title" style="margin-bottom: 8px;">
                     <span style="color: #c084fc; font-weight: 800; display: flex; align-items: center; gap: 6px;">
                         <span>⚡ 机构期权多空异动雷达</span>
@@ -2301,7 +2167,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             </div>
 
             <!-- 3. 量化战术研判与深度决策卡片 (多维成因诊断 + 操盘军规) -->
-            <div class="panel-box tactical-decision-card pro-detail-only" id="tacticalDecisionBox" data-cat="tactical" style="padding: 10px 12px; margin-bottom: 8px;">
+            <div class="panel-box tactical-decision-card" id="tacticalDecisionBox" data-cat="tactical" style="padding: 10px 12px; margin-bottom: 8px;">
                 <div class="box-title" style="margin-bottom: 8px;">
                     <span style="color: #00e5ff;">🎯 量化战术研判与深度成因</span>
                     <div style="display: flex; align-items: center; gap: 6px;">
@@ -2354,17 +2220,12 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                         <span style="color: #60a5fa; font-weight: 700;">🌐 跨行业广度：</span>
                         <span id="pBreadthStatus" style="color: {breadth_info.get('color', '#9ca3af')}; font-weight: 800;">{breadth_info.get('status_tag', '🛡️ 跨行业广度均衡')}</span>
                     </div>
-                    <div class="pro-detail-only" style="font-size: 11px; margin-top: 6px; padding-top: 6px; border-top: 1px dashed rgba(255,255,255,0.1); line-height: 1.3;">
+                    <div style="font-size: 11px; margin-top: 6px; padding-top: 6px; border-top: 1px dashed rgba(255,255,255,0.1); line-height: 1.3;">
                         <span style="color: #60a5fa; font-weight: 700;">🏦 闲置资金泊入指示：</span>
                         <span style="color: {weather_info.get('qqq_parking_color', '#ffd54f')}; font-weight: 800;">{weather_info.get('qqq_parking_action', '🟡 观望防守')}</span>
                         <div style="color: #888; font-size: 10px; margin-top: 2px;">{weather_info.get('qqq_parking_desc', '大盘处于震荡期，维持轻仓现金防守')}</div>
                     </div>
                 </div>
-            </div>
-            <div class="minimal-expand-footer" id="minimalExpandFooter">
-                <button type="button" class="minimal-expand-link" id="btnExpandProFooter" onclick="toggleProDetailsPeek()">
-                    🔍 展开专业详情（6维指标 / AI推演剧本 / 期权异动 / 战术成因）
-                </button>
             </div>
         </aside>
     </main>
@@ -2940,17 +2801,17 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                         <div class="s-ticker">
                             ${{item.ticker}}
                             
-                            ${{isStarred ? '<span class="wl-badge-minor" style="color:#ffd700; font-size:10px; margin-left:3px;" title="已加入建仓盯盘">⭐</span>' : ''}}
+                            ${{isStarred ? '<span style="color:#ffd700; font-size:10px; margin-left:3px;" title="已加入建仓盯盘">⭐</span>' : ''}}
                             ${{isEntryReady && isStarred ? '<span style="background:rgba(0,230,118,0.2); color:#00e676; border:1px solid rgba(0,230,118,0.5); border-radius:3px; padding:0 3px; font-size:9px; margin-left:3px;">🎯买点</span>' : ''}}
-                            ${{item.is_pit ? '<span class="wl-badge-minor" style="color:#00e676; font-size:10px; margin-left:3px;">🟢坑</span>' : ''}}
-                            ${{isAlphaLeader ? '<span class="wl-badge-minor wl-noise-tag" style="color:#ffd700; font-size:9px; margin-left:2px;" title="20日相对大盘超额抗跌王">👑抗跌</span>' : ''}}
-                            ${{isEarnRisk ? `<span class="wl-badge-minor wl-noise-tag" style="color:#ffa726; font-size:9px; margin-left:2px;" title="${{item.earnings_tag}}">⚠️财报</span>` : ''}}
-                            ${{isTakeProfit ? '<span class="wl-badge-minor" style="color:#d946ef; font-size:10px; margin-left:3px;">🟣盈</span>' : ''}}
-                            ${{isStop ? '<span class="wl-badge-minor" style="color:#ff5252; font-size:10px; margin-left:3px;">🔴破</span>' : ''}}
-                            ${{isPullback ? '<span class="wl-badge-minor" style="color:#ff9100; font-size:10px; margin-left:3px;">🟠回</span>' : ''}}
-                            ${{(AI_PREDICTIONS && AI_PREDICTIONS.by_ticker && AI_PREDICTIONS.by_ticker[item.ticker]) ? (filter === "ai_short" ? `<span class="wl-badge-minor" style="background:rgba(248,81,73,0.18); color:#f85149; border:1px solid rgba(248,81,73,0.38); border-radius:3px; padding:0 3px; font-size:9px; margin-left:3px;" title="AI 5年做空胜率 (#${{AI_PREDICTIONS.by_ticker[item.ticker].short_rank || '--'}})">🩸空 ${{((AI_PREDICTIONS.by_ticker[item.ticker].calibrated_short_win_rate_pct || 50.0)).toFixed(0)}}%</span>` : `<span class="wl-badge-minor" style="background:rgba(188,140,255,0.18); color:${{AI_PREDICTIONS.by_ticker[item.ticker].calibrated_win_rate_pct >= 58 ? '#4ade80' : '#d8b4fe'}}; border:1px solid rgba(188,140,255,0.38); border-radius:3px; padding:0 3px; font-size:9px; margin-left:3px;" title="AI 5年多赛道预测校准胜率 (#${{AI_PREDICTIONS.by_ticker[item.ticker].rank}})">⚡AI ${{AI_PREDICTIONS.by_ticker[item.ticker].calibrated_win_rate_pct.toFixed(0)}}%</span>`) : ''}}
+                            ${{item.is_pit ? '<span style="color:#00e676; font-size:10px; margin-left:3px;">🟢坑</span>' : ''}}
+                            ${{isAlphaLeader ? '<span style="color:#ffd700; font-size:9px; margin-left:2px;" title="20日相对大盘超额抗跌王">👑抗跌</span>' : ''}}
+                            ${{isEarnRisk ? `<span style="color:#ffa726; font-size:9px; margin-left:2px;" title="${{item.earnings_tag}}">⚠️财报</span>` : ''}}
+                            ${{isTakeProfit ? '<span style="color:#d946ef; font-size:10px; margin-left:3px;">🟣盈</span>' : ''}}
+                            ${{isStop ? '<span style="color:#ff5252; font-size:10px; margin-left:3px;">🔴破</span>' : ''}}
+                            ${{isPullback ? '<span style="color:#ff9100; font-size:10px; margin-left:3px;">🟠回</span>' : ''}}
+                            ${{(AI_PREDICTIONS && AI_PREDICTIONS.by_ticker && AI_PREDICTIONS.by_ticker[item.ticker]) ? (filter === "ai_short" ? `<span style="background:rgba(248,81,73,0.18); color:#f85149; border:1px solid rgba(248,81,73,0.38); border-radius:3px; padding:0 3px; font-size:9px; margin-left:3px;" title="AI 5年做空胜率 (#${{AI_PREDICTIONS.by_ticker[item.ticker].short_rank || '--'}})">🩸空 ${{((AI_PREDICTIONS.by_ticker[item.ticker].calibrated_short_win_rate_pct || 50.0)).toFixed(0)}}%</span>` : `<span style="background:rgba(188,140,255,0.18); color:${{AI_PREDICTIONS.by_ticker[item.ticker].calibrated_win_rate_pct >= 58 ? '#4ade80' : '#d8b4fe'}}; border:1px solid rgba(188,140,255,0.38); border-radius:3px; padding:0 3px; font-size:9px; margin-left:3px;" title="AI 5年多赛道预测校准胜率 (#${{AI_PREDICTIONS.by_ticker[item.ticker].rank}})">⚡AI ${{AI_PREDICTIONS.by_ticker[item.ticker].calibrated_win_rate_pct.toFixed(0)}}%</span>`) : ''}}
                         </div>
-                        <div class="s-name">${{item.name}}<span class="s-cat-suffix">${{item.cat ? ' · ' + item.cat : ''}}</span></div>
+                        <div class="s-name">${{item.name}} · ${{item.cat || ''}}</div>
                     </div>
                     <div class="s-quotes">
                         <div class="s-price">${{item.last && item.last > 0 ? ('$' + item.last.toFixed(2)) : '--'}}</div>
@@ -3830,62 +3691,6 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             }}
         }}
 
-        // 极简视图 / 专业全量视图一键切换引擎
-        let currentUiDensityMode = "minimal";
-        let isProDetailsExpanded = false;
-
-        function applyUiDensityMode(mode, persist = true) {{
-            currentUiDensityMode = (mode === "pro") ? "pro" : "minimal";
-            const isMinimal = currentUiDensityMode === "minimal";
-            document.body.classList.toggle("minimal-mode", isMinimal);
-            if (!isMinimal) {{
-                isProDetailsExpanded = false;
-                document.body.classList.remove("pro-details-expanded");
-            }}
-            const btn = document.getElementById("uiDensityToggleBtn");
-            if (btn) {{
-                btn.classList.toggle("is-minimal", isMinimal);
-                btn.classList.toggle("is-pro", !isMinimal);
-                const minOpt = btn.querySelector(".ud-opt-min");
-                const proOpt = btn.querySelector(".ud-opt-pro");
-                if (minOpt) minOpt.classList.toggle("active", isMinimal);
-                if (proOpt) proOpt.classList.toggle("active", !isMinimal);
-            }}
-            updateProDetailsExpandButtons();
-            if (persist) {{
-                try {{
-                    localStorage.setItem("futu_ui_mode", currentUiDensityMode);
-                }} catch(e) {{}}
-            }}
-        }}
-
-        function toggleUiDensityMode() {{
-            applyUiDensityMode(currentUiDensityMode === "minimal" ? "pro" : "minimal", true);
-        }}
-
-        function updateProDetailsExpandButtons() {{
-            const expTop = document.getElementById("btnExpandProDetails");
-            const expFoot = document.getElementById("btnExpandProFooter");
-            if (expTop) {{
-                expTop.innerText = isProDetailsExpanded ? "🔼 收起专业详情" : "🔍 展开专业详情";
-            }}
-            if (expFoot) {{
-                expFoot.innerText = isProDetailsExpanded
-                    ? "🔼 收起专业详情（返回极简核心视图）"
-                    : "🔍 展开专业详情（6维指标 / AI推演剧本 / 期权异动 / 战术成因）";
-            }}
-        }}
-
-        function setProDetailsExpanded(expanded) {{
-            isProDetailsExpanded = Boolean(expanded);
-            document.body.classList.toggle("pro-details-expanded", isProDetailsExpanded);
-            updateProDetailsExpandButtons();
-        }}
-
-        function toggleProDetailsPeek() {{
-            setProDetailsExpanded(!isProDetailsExpanded);
-        }}
-
         // 右侧面板卡片分类筛选 (解决拥挤，一键精简)
         function filterRightCards(cat) {{
             try {{
@@ -3894,22 +3699,6 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             document.querySelectorAll(".p-filter-pill").forEach(p => {{
                 p.classList.toggle("active", p.getAttribute("data-filter") === cat);
             }});
-            // 若极简模式下主动点选深度标签，自动展开专业详情并滚动到目标卡片
-            if (currentUiDensityMode === "minimal" && (cat === "ai" || cat === "options" || cat === "tactical")) {{
-                setProDetailsExpanded(true);
-            }}
-            const targetMap = {{
-                ai: "aiPredictionBox",
-                options: "optionsAnomalyBox",
-                entry: "entryPlanBox",
-                tactical: "tacticalDecisionBox"
-            }};
-            if (targetMap[cat]) {{
-                const targetEl = document.getElementById(targetMap[cat]);
-                if (targetEl && typeof targetEl.scrollIntoView === "function") {{
-                    setTimeout(() => targetEl.scrollIntoView({{ behavior: "smooth", block: "nearest" }}), 40);
-                }}
-            }}
             // 若点击 🧠AI预测 且当前选中标的不在 AI 28 股池中，自动切换至 AI 榜首标的
             if (cat === "ai" && AI_PREDICTIONS && AI_PREDICTIONS.by_ticker) {{
                 if (!AI_PREDICTIONS.by_ticker[currentTicker] && AI_PREDICTIONS.top10 && AI_PREDICTIONS.top10.length > 0) {{
@@ -4547,14 +4336,6 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
 
             // 5. 选中标的 (fromUserClick=false，不破坏移动端当前视图)
             selectTicker(initTicker, false);
-
-            // 5.5 还原 UI 视图密度模式 (默认开启极简视图)
-            try {{
-                const savedUiMode = localStorage.getItem("futu_ui_mode") || "minimal";
-                applyUiDensityMode(savedUiMode, false);
-            }} catch(e) {{
-                applyUiDensityMode("minimal", false);
-            }}
 
             // 6. 还原右侧功能面板 Tab
             try {{
