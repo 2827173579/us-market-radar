@@ -1,9 +1,22 @@
 {
-  "updated_at_ts": 1794934668.279,
-  "updated_at_et": "11-17 11:57 ET",
-  "updated_at_kst": "01:57 KST",
+  "updated_at_ts": 1794934765.382,
+  "updated_at_et": "11-17 11:59 ET",
+  "updated_at_kst": "01:59 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261118005713981800",
+      "title": "英伟达(NVDA.O)跌幅扩大至2%，此前一度收窄至1%。",
+      "summary": "英伟达(NVDA.O)跌幅扩大至2%，此前一度收窄至1%。",
+      "keywords": [
+        "英伟达"
+      ],
+      "pub_ts": 1794934633.0,
+      "time_et": "11-17 11:57 ET",
+      "time_bj": "00:57 BJ",
+      "time_kst": "01:57 KST",
+      "time_display": "11:57 ET / 00:57 BJ"
+    },
     {
       "id": "20261118005202887800",
       "title": "市场消息：英伟达(NVDA.O)董事会截至周二尚未考虑黄仁勋回归事宜。",
@@ -332,20 +345,6 @@
       "time_bj": "20:31 BJ",
       "time_kst": "21:31 KST",
       "time_display": "07:31 ET / 20:31 BJ"
-    },
-    {
-      "id": "20261117203043470800",
-      "title": "美国总统特朗普：泰国将取消对美国药品的非关税壁垒。",
-      "summary": "美国总统特朗普：泰国将取消对美国药品的非关税壁垒。",
-      "keywords": [
-        "关税",
-        "特朗普"
-      ],
-      "pub_ts": 1794918643.0,
-      "time_et": "11-17 07:30 ET",
-      "time_bj": "20:30 BJ",
-      "time_kst": "21:30 KST",
-      "time_display": "07:30 ET / 20:30 BJ"
     }
   ],
   "ticker_news": {
@@ -3281,7 +3280,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (11:52 ET / 00:52 BJ) [英伟达]：市场消息：英伟达(NVDA.O)董事会截至周二尚未考虑黄仁勋回归事宜。",
+    "detail": "⚡ 最新核心快讯 (11:57 ET / 00:57 BJ) [英伟达]：英伟达(NVDA.O)跌幅扩大至2%，此前一度收窄至1%。",
     "event_name": "",
     "minutes_left": 0
   }
