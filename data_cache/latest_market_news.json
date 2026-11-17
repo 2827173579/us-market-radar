@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1794929397.919,
-  "updated_at_et": "11-17 10:29 ET",
-  "updated_at_kst": "00:29 KST",
+  "updated_at_ts": 1794929501.824,
+  "updated_at_et": "11-17 10:31 ET",
+  "updated_at_kst": "00:31 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -3162,6 +3162,13 @@
     ],
     "GLW": [
       {
+        "title": "Lumentum, Corning, and other optical-related stocks jump on Chinese import restrictions",
+        "url": "https://finance.yahoo.com/markets/stocks/article/optical-related-stocks-surge-on-import-restrictions-of-chinese-data-center-equipment-150444937.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 10:04 ET",
+        "pub_ts": 1794927884.0
+      },
+      {
         "title": "Zacks.com featured highlights include NVIDIA, J.M. Smucker, Taiwan Semiconductor, Corning, Lockheed and Cardinal Health",
         "url": "https://finance.yahoo.com/markets/stocks/articles/zacks-com-featured-highlights-nvidia-070800949.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3188,13 +3195,6 @@
         "source": "Yahoo Finance",
         "time": "11-13 05:15 ET",
         "pub_ts": 1794564900.0
-      },
-      {
-        "title": "What Are Corning Investors Betting On?",
-        "url": "https://www.trefis.com/stock/glw/articles/624667/what-are-corning-investors-betting-on/2026-11-12?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-12 12:59 ET",
-        "pub_ts": 1794506380.0
       }
     ]
   },
@@ -3274,8 +3274,8 @@
     "WMT": 1794929006.7865353,
     "V": 1794929006.7865353,
     "CAT": 1794929006.7865353,
-    "FN": 1794927899.1594765,
-    "GLW": 1794927899.1594765
+    "FN": 1794929501.8237734,
+    "GLW": 1794929501.8237734
   },
   "calendar_banner": {
     "level": "idle_with_flash",
