@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1794930496.046,
-  "updated_at_et": "11-17 10:48 ET",
-  "updated_at_kst": "00:48 KST",
+  "updated_at_ts": 1794930597.668,
+  "updated_at_et": "11-17 10:49 ET",
+  "updated_at_kst": "00:49 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2829,11 +2829,18 @@
     ],
     "NKE": [
       {
-        "title": "Nike shares rise 4% as company outlines five-year turnaround plan and 2031 targets",
+        "title": "Nike shares rise as company outlines five-year turnaround plan and 2031 targets",
         "url": "https://finance.yahoo.com/markets/stocks/articles/nike-shares-rise-4-company-143741857.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-17 09:37 ET",
         "pub_ts": 1794926261.0
+      },
+      {
+        "title": "NIKE, Inc. Announces Full Stride Ahead Strategy and 2031 Financial Framework at Investor Day",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/nike-inc-announces-full-stride-140000447.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 09:00 ET",
+        "pub_ts": 1794924000.0
       },
       {
         "title": "Nike's Stock Is Down Big This Year. Here's When I'd Buy",
@@ -2855,13 +2862,6 @@
         "source": "Yahoo Finance",
         "time": "11-16 15:25 ET",
         "pub_ts": 1794860700.0
-      },
-      {
-        "title": "Nike Stock Faces a Major Test as CEO Prepares $2.5 Billion Turnaround Pitch",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/nike-stock-faces-major-test-174241493.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-16 12:42 ET",
-        "pub_ts": 1794850961.0
       }
     ],
     "MCD": [
@@ -2977,6 +2977,13 @@
     ],
     "JPM": [
       {
+        "title": "JPMorgan CFO Jeremy Barnum to step down as Jamie Dimon's succession plans take shape",
+        "url": "https://finance.yahoo.com/markets/article/jpmorgan-cfo-jeremy-barnum-to-step-down-as-jamie-dimons-succession-plans-take-shape-153110270.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 10:31 ET",
+        "pub_ts": 1794929470.0
+      },
+      {
         "title": "JPMorgan Names Bregje de Best Next CFO – Jeremy Barnum Steps Down After Six Years",
         "url": "https://stocktwits.com/news-articles/markets/equity/jp-morgan-names-bregje-de-best-next-cfo-jeremy-barnum-steps-down/cNbaxuoR9Wr?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3003,13 +3010,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 08:29 ET",
         "pub_ts": 1794922142.0
-      },
-      {
-        "title": "Pattern Group (PTRN) Stock Fair Value Edges Higher After Split Analyst Revisions",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/pattern-group-ptrn-stock-fair-131107010.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 08:11 ET",
-        "pub_ts": 1794921067.0
       }
     ],
     "WMT": [
@@ -3072,18 +3072,18 @@
         "pub_ts": 1794920131.0
       },
       {
+        "title": "Visa, Mastercard face possible trial",
+        "url": "https://www.paymentsdive.com/news/visa-mastercard-face-possible-trial/874834/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 07:40 ET",
+        "pub_ts": 1794919229.0
+      },
+      {
         "title": "Coda and Visa partner to deliver seamless and trusted gaming commerce across Southeast Asia",
         "url": "https://finance.yahoo.com/technology/articles/coda-visa-partner-deliver-seamless-120200371.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-17 07:02 ET",
         "pub_ts": 1794916920.0
-      },
-      {
-        "title": "US Judge defers ruling on $38bn Visa, Mastercard swipe fee settlement",
-        "url": "https://www.electronicpaymentsinternational.com/news/us-judge-defers-ruling-on-38bn-visa-mastercard-swipe-fee-settlement/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 06:55 ET",
-        "pub_ts": 1794916500.0
       }
     ],
     "CAT": [
@@ -3091,8 +3091,8 @@
         "title": "Michael Burry Still Bearish On Nvidia, AI Trade, Buys These Software Names",
         "url": "https://finance.yahoo.com/m/fb87e84e-214e-3d35-8a3a-327f3a77f0ca/michael-burry-still-bearish.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-17 09:26 ET",
-        "pub_ts": 1794925608.0
+        "time": "11-17 10:29 ET",
+        "pub_ts": 1794929390.0
       },
       {
         "title": "Michael Burry Just Closed the Last of His Caterpillar Puts. The Stock Is Down 46% From Its June High",
@@ -3265,15 +3265,15 @@
     "ORCL": 1794930496.0459595,
     "COIN": 1794930496.0459595,
     "LLY": 1794930496.0459595,
-    "MRNA": 1794929006.7865353,
-    "NKE": 1794929006.7865353,
-    "MCD": 1794929006.7865353,
-    "PEP": 1794929006.7865353,
-    "XOM": 1794929006.7865353,
-    "JPM": 1794929006.7865353,
-    "WMT": 1794929006.7865353,
-    "V": 1794929006.7865353,
-    "CAT": 1794929006.7865353,
+    "MRNA": 1794930597.6676707,
+    "NKE": 1794930597.6676707,
+    "MCD": 1794930597.6676707,
+    "PEP": 1794930597.6676707,
+    "XOM": 1794930597.6676707,
+    "JPM": 1794930597.6676707,
+    "WMT": 1794930597.6676707,
+    "V": 1794930597.6676707,
+    "CAT": 1794930597.6676707,
     "FN": 1794929501.8237734,
     "GLW": 1794929501.8237734
   },
