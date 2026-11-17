@@ -1,9 +1,22 @@
 {
-  "updated_at_ts": 1794907895.876,
-  "updated_at_et": "11-17 04:31 ET",
-  "updated_at_kst": "18:31 KST",
+  "updated_at_ts": 1794907996.086,
+  "updated_at_et": "11-17 04:33 ET",
+  "updated_at_kst": "18:33 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261117173134577800",
+      "title": "伊拉克石油部长：用于出口的原油已通过伊拉克-土耳其输油管道恢复输送。",
+      "summary": "伊拉克石油部长：用于出口的原油已通过伊拉克-土耳其输油管道恢复输送。",
+      "keywords": [
+        "原油"
+      ],
+      "pub_ts": 1794907894.0,
+      "time_et": "11-17 04:31 ET",
+      "time_bj": "17:31 BJ",
+      "time_kst": "18:31 KST",
+      "time_display": "04:31 ET / 17:31 BJ"
+    },
     {
       "id": "20261117171820680800",
       "title": "日本牵头组建“亚洲版IEA”，中东产油国也有望入局",
@@ -1013,6 +1026,13 @@
     ],
     "AVGO": [
       {
+        "title": "Trump’s Tighter Chip Rules Sink AMD and Broadcom, Not Just Nvidia",
+        "url": "https://www.tikr.com/blog/trumps-tighter-chip-rules-sink-amd-and-broadcom-not-just-nvidia?ref=yahoofinance&tlnk=yf-261117-w7qg8gw5&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-16 23:28 ET",
+        "pub_ts": 1794889713.0
+      },
+      {
         "title": "AMD, MU, SKHY, AVGO: Chip Stocks Ease Overnight After Selloff On New US Chip Restrictions Targeting China",
         "url": "https://stocktwits.com/news-articles/markets/equity/amd-mu-skhy-avgo-chip-stocks-ease-overnight-after-selloff-on-new-us-chip-restrictions-targeting-china/cNba10cR9gA?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1039,13 +1059,6 @@
         "source": "Yahoo Finance",
         "time": "11-16 19:22 ET",
         "pub_ts": 1794874922.0
-      },
-      {
-        "title": "Broadcom Is “the Best Play” on Nvidia’s CEO Exit, One Investor Argues. The Reason Is China",
-        "url": "https://www.tikr.com/blog/broadcom-is-the-best-play-on-nvidias-ceo-exit-one-investor-argues-the-reason-is-china?ref=yahoofinance&tlnk=yf-261116-w5j2pv86&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-16 18:12 ET",
-        "pub_ts": 1794870779.0
       }
     ],
     "AMAT": [
@@ -3102,22 +3115,22 @@
     "SOXS": 1794907895.876303,
     "NVDA": 1794907895.876303,
     "AMD": 1794907895.876303,
-    "ASML": 1794906414.0196164,
-    "QCOM": 1794906414.0196164,
-    "AVGO": 1794906414.0196164,
-    "AMAT": 1794906414.0196164,
-    "META": 1794906414.0196164,
-    "GOOGL": 1794906414.0196164,
-    "MSFT": 1794906414.0196164,
-    "AAPL": 1794906414.0196164,
-    "PLTR": 1794906414.0196164,
-    "NOW": 1794906414.0196164,
-    "AMZN": 1794906414.0196164,
-    "CRWV": 1794906414.0196164,
-    "NBIS": 1794906414.0196164,
-    "APLD": 1794906414.0196164,
-    "VST": 1794906414.0196164,
-    "BE": 1794906414.0196164,
+    "ASML": 1794907996.0858915,
+    "QCOM": 1794907996.0858915,
+    "AVGO": 1794907996.0858915,
+    "AMAT": 1794907996.0858915,
+    "META": 1794907996.0858915,
+    "GOOGL": 1794907996.0858915,
+    "MSFT": 1794907996.0858915,
+    "AAPL": 1794907996.0858915,
+    "PLTR": 1794907996.0858915,
+    "NOW": 1794907996.0858915,
+    "AMZN": 1794907996.0858915,
+    "CRWV": 1794907996.0858915,
+    "NBIS": 1794907996.0858915,
+    "APLD": 1794907996.0858915,
+    "VST": 1794907996.0858915,
+    "BE": 1794907996.0858915,
     "CRDO": 1794906527.087245,
     "COHR": 1794906527.087245,
     "MRVL": 1794906527.087245,
@@ -3164,7 +3177,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (04:18 ET / 17:18 BJ) [中东]：面对中东局势带来的供应链风险，日本希望整合亚洲国家的石油储备资源，并利用本国闲置储油能力，为区域能源合作提供基础设施支持，并推动消费国与产油国加强合作。",
+    "detail": "⚡ 最新核心快讯 (04:31 ET / 17:31 BJ) [原油]：伊拉克石油部长：用于出口的原油已通过伊拉克-土耳其输油管道恢复输送。",
     "event_name": "",
     "minutes_left": 0
   }
