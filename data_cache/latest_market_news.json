@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1794957528.006,
-  "updated_at_et": "11-17 18:18 ET",
-  "updated_at_kst": "08:18 KST",
+  "updated_at_ts": 1794957623.406,
+  "updated_at_et": "11-17 18:20 ET",
+  "updated_at_kst": "08:20 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1135,13 +1135,6 @@
         "pub_ts": 1794942290.0
       },
       {
-        "title": "Meta Platforms is Cheap at 18.78X P/E: Buy, Sell or Hold the Stock?",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/meta-platforms-cheap-18-78x-170700349.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 12:07 ET",
-        "pub_ts": 1794935220.0
-      },
-      {
         "title": "Nvidia Bet Big on AI Stocks. Now They’re Getting Hit.",
         "url": "https://finance.yahoo.com/m/302815a2-c453-3ac5-ad56-a00d836f551f/nvidia-bet-big-on-ai-stocks..html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1154,15 +1147,36 @@
         "source": "Yahoo Finance",
         "time": "11-17 17:33 ET",
         "pub_ts": 1794954780.0
+      },
+      {
+        "title": "Risks Loom Over Nvidia’s Fast-Growing Data Center Segment",
+        "url": "https://finance.yahoo.com/m/83f1cc3d-b0e5-3317-8b68-71f036f8d0d0/risks-loom-over-nvidia%E2%80%99s.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 16:55 ET",
+        "pub_ts": 1794952539.0
       }
     ],
     "GOOGL": [
+      {
+        "title": "Amazon and Google Could Own $400 Billion of Anthropic Stock",
+        "url": "https://finance.yahoo.com/m/c079c6dc-3303-33b1-9922-5e6afaa91e87/amazon-and-google-could-own.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 17:27 ET",
+        "pub_ts": 1794954420.0
+      },
       {
         "title": "Can this AI help 'democratize' access to extensive wealth planning?",
         "url": "https://finance.yahoo.com/video/can-this-ai-help-democratize-access-to-extensive-wealth-planning-221525580.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-17 17:15 ET",
         "pub_ts": 1794953725.0
+      },
+      {
+        "title": "Risks Loom Over Nvidia’s Fast-Growing Data Center Segment",
+        "url": "https://finance.yahoo.com/m/83f1cc3d-b0e5-3317-8b68-71f036f8d0d0/risks-loom-over-nvidia%E2%80%99s.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 16:55 ET",
+        "pub_ts": 1794952539.0
       },
       {
         "title": "Alphabet vs. Amazon: Which Is the Better AI Cloud Stock to Own for the Next 5 Years?",
@@ -1177,20 +1191,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 16:17 ET",
         "pub_ts": 1794950244.0
-      },
-      {
-        "title": "Ibotta Appoints Kamelia Aryafar to Board of Directors",
-        "url": "https://finance.yahoo.com/technology/ai/articles/ibotta-appoints-kamelia-aryafar-board-211500645.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 16:15 ET",
-        "pub_ts": 1794950100.0
-      },
-      {
-        "title": "Berkshire Hathaway Slashes This Top 5 Stock; Nvidia Boosts SpaceX",
-        "url": "https://finance.yahoo.com/m/481d5163-b671-396e-a2dc-5c0e57fb9c0b/berkshire-hathaway-slashes.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 16:11 ET",
-        "pub_ts": 1794949906.0
       }
     ],
     "MSFT": [
@@ -1216,18 +1216,18 @@
         "pub_ts": 1794947673.0
       },
       {
+        "title": "A Third Outage Strikes, This Time at Chase, Big Banks. The Stocks Are Falling.",
+        "url": "https://finance.yahoo.com/m/8966c28b-5797-3a88-8c32-01d28a7b29a1/a-third-outage-strikes%2C-this.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 17:23 ET",
+        "pub_ts": 1794954180.0
+      },
+      {
         "title": "Microsoft’s “Next Leg” Is Charging 500 Million Office Users More, Says RBC Analyst",
         "url": "https://www.tikr.com/blog/microsofts-next-leg-is-charging-500-million-office-users-more-says-rbc-analyst?ref=yahoofinance&tlnk=yf-261117-3jj9g8fp&.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-17 15:26 ET",
         "pub_ts": 1794947163.0
-      },
-      {
-        "title": "BNY and Microsoft complete first AI agent-negotiated Treasury trade",
-        "url": "https://finance.yahoo.com/technology/ai/articles/bny-microsoft-complete-first-ai-201911277.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 15:19 ET",
-        "pub_ts": 1794946751.0
       }
     ],
     "AAPL": [
@@ -1343,11 +1343,11 @@
     ],
     "AMZN": [
       {
-        "title": "There's 'no difference' between buying Anthropic's IPO and Amazon's IPO: Kevin O'Leary",
-        "url": "https://finance.yahoo.com/markets/stocks/article/theres-no-difference-between-buying-anthropics-ipo-and-amazons-ipo-kevin-oleary-190707549.html?.tsrc=rss",
+        "title": "Amazon and Google Could Own $400 Billion of Anthropic Stock",
+        "url": "https://finance.yahoo.com/m/c079c6dc-3303-33b1-9922-5e6afaa91e87/amazon-and-google-could-own.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-17 14:07 ET",
-        "pub_ts": 1794942427.0
+        "time": "11-17 17:27 ET",
+        "pub_ts": 1794954420.0
       },
       {
         "title": "Alphabet vs. Amazon: Which Is the Better AI Cloud Stock to Own for the Next 5 Years?",
@@ -1387,6 +1387,13 @@
         "pub_ts": 1794952919.0
       },
       {
+        "title": "CoreWeave Ignited The Rally – Is It A Hot Stock Again?",
+        "url": "https://247wallst.com/videos/coreweave-ignited-the-rally-is-it-a-hot-stock-again/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 17:48 ET",
+        "pub_ts": 1794955685.0
+      },
+      {
         "title": "CoreWeave Stock Is Down 70% From Its High. Could a Huge Rebound Come in 2027?",
         "url": "https://www.fool.com/investing/2026/11/17/coreweave-stock-is-down-70-from-its-high-could-a-huge-rebound-come-in-2027/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1406,13 +1413,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 14:38 ET",
         "pub_ts": 1794944322.0
-      },
-      {
-        "title": "Update: Market Chatter: Amazon, Google, Meta Lobbying Fails to Stop Trump From Pursuing China Data Center Curbs",
-        "url": "https://finance.yahoo.com/technology/articles/market-chatter-amazon-google-meta-172106872.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 12:21 ET",
-        "pub_ts": 1794936066.0
       }
     ],
     "NBIS": [
@@ -1713,6 +1713,13 @@
     ],
     "AAOI": [
       {
+        "title": "AAOI Stock Tumbles After-Hours On Fresh $550M At-The-Market Equity Offering",
+        "url": "https://stocktwits.com/news-articles/markets/equity/aaoi-stock-tumbles-after-hours-on-fresh-550-m-at-the-market-equity-offering/cNbO96OR9hg?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 18:08 ET",
+        "pub_ts": 1794956917.0
+      },
+      {
         "title": "Applied Optoelectronics falls 8% on $550 million stock offering plan",
         "url": "https://finance.yahoo.com/markets/stocks/articles/applied-optoelectronics-falls-8-550-220235084.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1739,13 +1746,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 08:01 ET",
         "pub_ts": 1794920492.0
-      },
-      {
-        "title": "Applied Optoelectronics (AAOI) Stock Could Still Be Undervalued On Its Huge Five Year Run",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/applied-optoelectronics-aaoi-stock-could-021729244.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-11 21:17 ET",
-        "pub_ts": 1794449849.0
       }
     ],
     "SPCX": [
@@ -3209,31 +3209,31 @@
     "VIXY": 1794957229.280603,
     "SOXS": 1794957424.8459928,
     "NVDA": 1794957424.8459928,
-    "AMD": 1794956029.642319,
-    "ASML": 1794956029.642319,
+    "AMD": 1794957623.4058466,
+    "ASML": 1794957623.4058466,
     "QCOM": 1794957424.8459928,
     "AVGO": 1794957424.8459928,
     "AMAT": 1794957424.8459928,
-    "META": 1794956029.642319,
-    "GOOGL": 1794956029.642319,
-    "MSFT": 1794956029.642319,
+    "META": 1794957623.4058466,
+    "GOOGL": 1794957623.4058466,
+    "MSFT": 1794957623.4058466,
     "AAPL": 1794957424.8459928,
     "PLTR": 1794957424.8459928,
     "NOW": 1794957424.8459928,
-    "AMZN": 1794956029.642319,
-    "CRWV": 1794956029.642319,
-    "NBIS": 1794956029.642319,
-    "APLD": 1794956029.642319,
-    "VST": 1794956029.642319,
-    "BE": 1794956029.642319,
-    "CRDO": 1794956029.642319,
-    "COHR": 1794956029.642319,
-    "MRVL": 1794956029.642319,
+    "AMZN": 1794957623.4058466,
+    "CRWV": 1794957623.4058466,
+    "NBIS": 1794957623.4058466,
+    "APLD": 1794957623.4058466,
+    "VST": 1794957623.4058466,
+    "BE": 1794957623.4058466,
+    "CRDO": 1794957623.4058466,
+    "COHR": 1794957623.4058466,
+    "MRVL": 1794957623.4058466,
     "LITE": 1794956140.6146584,
-    "AAOI": 1794956029.642319,
+    "AAOI": 1794957623.4058466,
     "SPCX": 1794956140.6146584,
     "ASTS": 1794956338.5679069,
-    "AXTI": 1794956029.642319,
+    "AXTI": 1794957623.4058466,
     "NASA": 1794956338.5679069,
     "LUNR": 1794956140.6146584,
     "TSLA": 1794956338.5679069,
