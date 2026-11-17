@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1794907800.597,
-  "updated_at_et": "11-17 04:30 ET",
-  "updated_at_kst": "18:30 KST",
+  "updated_at_ts": 1794907895.876,
+  "updated_at_et": "11-17 04:31 ET",
+  "updated_at_kst": "18:31 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -865,6 +865,27 @@
     ],
     "NVDA": [
       {
+        "title": "Stock market today: Dow and S&P 500 futures slip, Nasdaq futures rise in countdown to Nvidia earnings",
+        "url": "https://finance.yahoo.com/markets/live/stock-market-today-tuesday-november-17-dow-sp-500-nasdaq-nvidia-earnings-091546152.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 04:15 ET",
+        "pub_ts": 1794906946.0
+      },
+      {
+        "title": "Jensen Huang's Departure as Nvidia CEO Could Have Enormous Consequences for Where the Crypto Market Heads Next.",
+        "url": "https://www.fool.com/investing/2026/11/17/nvidia-ceo-resignation-could-have-enormous-consequences-for-crypto/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 04:20 ET",
+        "pub_ts": 1794907202.0
+      },
+      {
+        "title": "Nvidia Needs to Reassure Investors About the Post-Huang Era",
+        "url": "https://finance.yahoo.com/m/cf0b0b55-c20e-3e57-8011-21ed66a5756e/nvidia-needs-to-reassure.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 03:50 ET",
+        "pub_ts": 1794905428.0
+      },
+      {
         "title": "Nvidia to reveal first earnings since spy scandal",
         "url": "https://finance.yahoo.com/technology/ai/articles/nvidia-earnings-test-ai-boom-014359078.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -877,27 +898,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 03:36 ET",
         "pub_ts": 1794904590.0
-      },
-      {
-        "title": "Nvidia to halt chip sales to data centers renting over half to China - report",
-        "url": "https://finance.yahoo.com/technology/ai/articles/nvidia-halt-chip-sales-data-081754255.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 03:17 ET",
-        "pub_ts": 1794903474.0
-      },
-      {
-        "title": "Anthropic’s IPO Puts AI Demand In Focus — Analyst Spots China Clue In Nvidia’s 66% Share Of SemiAnalysis’ Forecast Cut",
-        "url": "https://stocktwits.com/news-articles/markets/equity/anthropic-ipo-ai-demand-analyst-china-clue-nvidia-share-semianalysis-forecast-cut/cNba8cqR9W4?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 03:12 ET",
-        "pub_ts": 1794903177.0
-      },
-      {
-        "title": "This Is What It Would Take for Me to Buy Nvidia Stock",
-        "url": "https://www.fool.com/investing/2026/11/17/this-is-what-it-would-take-for-me-to-buy-nvidia-stock/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 03:05 ET",
-        "pub_ts": 1794902702.0
       }
     ],
     "AMD": [
@@ -907,6 +907,13 @@
         "source": "Yahoo Finance",
         "time": "11-17 02:11 ET",
         "pub_ts": 1794899506.0
+      },
+      {
+        "title": "Trump’s Tighter Chip Rules Sink AMD and Broadcom, Not Just Nvidia",
+        "url": "https://www.tikr.com/blog/trumps-tighter-chip-rules-sink-amd-and-broadcom-not-just-nvidia?ref=yahoofinance&tlnk=yf-261117-w7qg8gw5&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-16 23:28 ET",
+        "pub_ts": 1794889713.0
       },
       {
         "title": "AMD, MU, SKHY, AVGO: Chip Stocks Ease Overnight After Selloff On New US Chip Restrictions Targeting China",
@@ -928,13 +935,6 @@
         "source": "Yahoo Finance",
         "time": "11-16 22:14 ET",
         "pub_ts": 1794885286.0
-      },
-      {
-        "title": "1 Number Reveals Which Is the Better Buy Between Nvidia and AMD",
-        "url": "https://www.fool.com/investing/2026/11/16/1-number-reveals-which-is-the-better-buy-between-nvidia-and-amd/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-16 21:22 ET",
-        "pub_ts": 1794882122.0
       }
     ],
     "ASML": [
@@ -3085,23 +3085,23 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1794906311.3038502,
-    "SOXL": 1794906311.3038502,
-    "SPY": 1794906311.3038502,
-    "DIA": 1794906311.3038502,
-    "SOXX": 1794906311.3038502,
-    "QQQ": 1794906311.3038502,
-    "SMH": 1794906311.3038502,
-    "IWM": 1794906311.3038502,
-    "IGV": 1794906311.3038502,
-    "TLT": 1794906311.3038502,
-    "GLD": 1794906311.3038502,
-    "SQQQ": 1794906311.3038502,
-    "TSM": 1794906311.3038502,
-    "VIXY": 1794906311.3038502,
-    "SOXS": 1794906311.3038502,
-    "NVDA": 1794906311.3038502,
-    "AMD": 1794906311.3038502,
+    "KORU": 1794907895.876303,
+    "SOXL": 1794907895.876303,
+    "SPY": 1794907895.876303,
+    "DIA": 1794907895.876303,
+    "SOXX": 1794907895.876303,
+    "QQQ": 1794907895.876303,
+    "SMH": 1794907895.876303,
+    "IWM": 1794907895.876303,
+    "IGV": 1794907895.876303,
+    "TLT": 1794907895.876303,
+    "GLD": 1794907895.876303,
+    "SQQQ": 1794907895.876303,
+    "TSM": 1794907895.876303,
+    "VIXY": 1794907895.876303,
+    "SOXS": 1794907895.876303,
+    "NVDA": 1794907895.876303,
+    "AMD": 1794907895.876303,
     "ASML": 1794906414.0196164,
     "QCOM": 1794906414.0196164,
     "AVGO": 1794906414.0196164,
