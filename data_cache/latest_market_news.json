@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1794941069.064,
-  "updated_at_et": "11-17 13:44 ET",
-  "updated_at_kst": "03:44 KST",
+  "updated_at_ts": 1794941164.814,
+  "updated_at_et": "11-17 13:46 ET",
+  "updated_at_kst": "03:46 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2384,6 +2384,20 @@
     ],
     "MU": [
       {
+        "title": "Why Micron Stock Keeps On Going Down",
+        "url": "https://www.fool.com/investing/2026/11/17/why-micron-stock-keeps-on-going-down/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 13:27 ET",
+        "pub_ts": 1794940041.0
+      },
+      {
+        "title": "A $7.2 Billion Fund Dumps These 3 Stocks",
+        "url": "https://www.tikr.com/blog/a-7-2-billion-fund-dumps-these-3-stocks?ref=yahoofinance&tlnk=yf-261117-536g3rmv&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 13:05 ET",
+        "pub_ts": 1794938753.0
+      },
+      {
         "title": "Micron, SanDisk and SK Hynix Face New Warning From Wall Street",
         "url": "https://finance.yahoo.com/markets/stocks/articles/micron-sandisk-sk-hynix-face-174959688.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2403,20 +2417,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 12:45 ET",
         "pub_ts": 1794937549.0
-      },
-      {
-        "title": "Sam Altman Just Delivered a Warning to Investors Betting on Endless AI Growth",
-        "url": "https://247wallst.com/investing/2026/11/17/sam-altman-just-delivered-a-warning-to-investors-betting-on-endless-ai-growth/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 11:59 ET",
-        "pub_ts": 1794934761.0
-      },
-      {
-        "title": "Micron Drops Again. What Hedge Funds Are Doing With the Stock.",
-        "url": "https://finance.yahoo.com/m/8de18bcc-f636-3e12-8e8b-a141738198d9/micron-drops-again.-what.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 11:14 ET",
-        "pub_ts": 1794932040.0
       }
     ],
     "SKHY": [
@@ -3087,6 +3087,13 @@
     ],
     "CAT": [
       {
+        "title": "What Is Caterpillar (CAT) Signaling With Standard Collision Safety On New Machines?",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/caterpillar-cat-signaling-standard-collision-180924661.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 13:09 ET",
+        "pub_ts": 1794938964.0
+      },
+      {
         "title": "Michael Burry Still Bearish On Nvidia, AI Trade, Buys These Software Names",
         "url": "https://finance.yahoo.com/m/fb87e84e-214e-3d35-8a3a-327f3a77f0ca/michael-burry-still-bearish.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3113,13 +3120,6 @@
         "source": "Yahoo Finance",
         "time": "11-16 18:05 ET",
         "pub_ts": 1794870351.0
-      },
-      {
-        "title": "Michael Burry Cashed In Caterpillar Puts After a Nearly 4x Gain Even as CAT Stock Fell 10% in Its Worst Week in 18 Months. Is Caterpillar Still Overvalued, or Did Burry Just Lock In the Easy Money?",
-        "url": "https://www.fool.com/investing/2026/11/16/michael-burry-cashed-in-caterpillar-puts-after-a-nearly-4x-gain-even-as-cat-stock-fell-10-in-its-worst-week-in-18-months-is-caterpillar-still-overvalued-or-did-burry-just-lock-in-the-easy-money/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-16 16:25 ET",
-        "pub_ts": 1794864302.0
       }
     ],
     "FN": [
@@ -3253,7 +3253,7 @@
     "OKLO": 1794940669.9106374,
     "CEG": 1794940968.1355534,
     "FPS": 1794940669.9106374,
-    "MU": 1794939585.9036617,
+    "MU": 1794941164.8143036,
     "SKHY": 1794940771.2043774,
     "WDC": 1794940968.1355534,
     "STX": 1794939741.1921878,
@@ -3263,16 +3263,16 @@
     "CRWD": 1794940771.2043774,
     "ORCL": 1794940771.2043774,
     "COIN": 1794940771.2043774,
-    "LLY": 1794939585.9036617,
+    "LLY": 1794941164.8143036,
     "MRNA": 1794940968.1355534,
     "NKE": 1794939741.1921878,
     "MCD": 1794940968.1355534,
     "PEP": 1794939884.0690694,
     "XOM": 1794939884.0690694,
-    "JPM": 1794939585.9036617,
-    "WMT": 1794939585.9036617,
+    "JPM": 1794941164.8143036,
+    "WMT": 1794941164.8143036,
     "V": 1794940968.1355534,
-    "CAT": 1794939585.9036617,
+    "CAT": 1794941164.8143036,
     "FN": 1794940569.9607227,
     "GLW": 1794940453.352386
   },
