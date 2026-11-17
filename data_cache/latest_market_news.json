@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1794903301.885,
-  "updated_at_et": "11-17 03:15 ET",
-  "updated_at_kst": "17:15 KST",
+  "updated_at_ts": 1794903448.869,
+  "updated_at_et": "11-17 03:17 ET",
+  "updated_at_kst": "17:17 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -30,6 +30,19 @@
       "time_bj": "16:08 BJ",
       "time_kst": "17:08 KST",
       "time_display": "03:08 ET / 16:08 BJ"
+    },
+    {
+      "id": "20261117160520703800",
+      "title": "据每日经济新闻：三星电子与苹果接近达成长期DRAM供应协议。",
+      "summary": "据每日经济新闻：三星电子与苹果接近达成长期DRAM供应协议。",
+      "keywords": [
+        "苹果"
+      ],
+      "pub_ts": 1794902720.0,
+      "time_et": "11-17 03:05 ET",
+      "time_bj": "16:05 BJ",
+      "time_kst": "17:05 KST",
+      "time_display": "03:05 ET / 16:05 BJ"
     },
     {
       "id": "20261117155421881800",
@@ -1644,6 +1657,13 @@
     ],
     "ASTS": [
       {
+        "title": "Why Catching SpaceX Is Getting Harder: Analyst Calls AST’s 2-Year Rocket Plan ‘Totally Unrealistic’, Rocket Lab Is Still Building One",
+        "url": "https://stocktwits.com/news-articles/markets/equity/why-catching-spacex-harder-analyst-ast-2-year-rocket-plan-totally-unrealistic-rocketlab-still-building/cNbanf9R9W5?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 02:45 ET",
+        "pub_ts": 1794901533.0
+      },
+      {
         "title": "What Is AST SpaceMobile (ASTS) Building With Its $1 Billion Japan Venture?",
         "url": "https://finance.yahoo.com/markets/stocks/articles/ast-spacemobile-asts-building-1-031119939.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1670,13 +1690,6 @@
         "source": "Yahoo Finance",
         "time": "11-16 13:17 ET",
         "pub_ts": 1794853022.0
-      },
-      {
-        "title": "AST SpaceMobile Drops 7% as Tech Selloff Hits Space Stocks; Rocket Lab Falls 4%, SpaceX Dips Despite Historic Starship Catch",
-        "url": "https://247wallst.com/investing/2026/11/16/ast-spacemobile-drops-7-as-tech-selloff-hits-space-stocks-rocket-lab-falls-4-spacex-dips-despite-historic-starship-catch/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-16 12:02 ET",
-        "pub_ts": 1794848564.0
       }
     ],
     "AXTI": [
@@ -1792,6 +1805,13 @@
     ],
     "TSLA": [
       {
+        "title": "Elon Musk Just Killed the Cybertruck to Build Cybercabs. Here’s What It Means for Tesla Stock -- and Rivian’s.",
+        "url": "https://www.fool.com/investing/2026/11/17/elon-musk-just-killed-the-cybertruck-to-build-cybercabs-heres-what-it-means-for-tesla-stock-and-rivians/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 02:50 ET",
+        "pub_ts": 1794901802.0
+      },
+      {
         "title": "Stephen King Tells Elon Musk ‘You Sound Like Trump’ After Billionaire Warns Democrats Will ‘Execute Their Plan to End Democracy in America’",
         "url": "https://finance.yahoo.com/media-advertising/articles/stephen-king-tells-elon-musk-033006336.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1818,13 +1838,6 @@
         "source": "Yahoo Finance",
         "time": "11-16 19:09 ET",
         "pub_ts": 1794874168.0
-      },
-      {
-        "title": "Your $300,000 in XLY Holds $125,585 in Amazon and Tesla Alone",
-        "url": "https://247wallst.com/investing/etf/2026/11/16/your-300000-in-xly-holds-125585-in-amazon-and-tesla-alone/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-16 18:03 ET",
-        "pub_ts": 1794870199.0
       }
     ],
     "AXP": [
@@ -1866,6 +1879,13 @@
     ],
     "RKLB": [
       {
+        "title": "Why Catching SpaceX Is Getting Harder: Analyst Calls AST’s 2-Year Rocket Plan ‘Totally Unrealistic’, Rocket Lab Is Still Building One",
+        "url": "https://stocktwits.com/news-articles/markets/equity/why-catching-spacex-harder-analyst-ast-2-year-rocket-plan-totally-unrealistic-rocketlab-still-building/cNbanf9R9W5?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 02:45 ET",
+        "pub_ts": 1794901533.0
+      },
+      {
         "title": "Rocket Lab Hit 100 Launches Faster Than Any Other Commercially Developed Rocket. I'd Buy a Small Stake.",
         "url": "https://www.fool.com/investing/2026/11/16/rocket-lab-hit-100-launches-faster-than-any-other-commercially-developed-rocket-i-d-buy-a-small-stake/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1892,13 +1912,6 @@
         "source": "Yahoo Finance",
         "time": "11-16 12:02 ET",
         "pub_ts": 1794848564.0
-      },
-      {
-        "title": "AST SpaceMobile Sinks 8% as ULA’s Vulcan Rocket Failure Rattles Space Stocks",
-        "url": "https://www.tikr.com/blog/ast-spacemobile-sinks-8-as-ulas-vulcan-rocket-failure-rattles-space-stocks?ref=yahoofinance&tlnk=yf-261116-qqj5x5r6&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-16 11:15 ET",
-        "pub_ts": 1794845745.0
       }
     ],
     "KO": [
@@ -1991,6 +2004,13 @@
         "pub_ts": 1794854721.0
       },
       {
+        "title": "IREN Stock Rises Overnight As Intel Reveals Stake, Anthropic IPO Buzz Catches On",
+        "url": "https://stocktwits.com/news-articles/markets/equity/iren-stock-rises-overnight-as-intel-reveals-stake-anthropic-ipo-buzz-catches-on/cNbaFxaR9W3?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 03:06 ET",
+        "pub_ts": 1794902770.0
+      },
+      {
         "title": "SPCX Stock Dethrones Intel As Nvidia’s Biggest Holding — Druckenmiller Buys In And Tepper Ups His Stake Over 1,600%",
         "url": "https://stocktwits.com/news-articles/markets/equity/spcx-stock-dethrones-intel-nvidia-biggest-holding-druckenmiller-buys-in-tepper-ups-stake/cNba0UWR9gq?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2003,13 +2023,6 @@
         "source": "Yahoo Finance",
         "time": "11-16 21:31 ET",
         "pub_ts": 1794882669.0
-      },
-      {
-        "title": "INTW 2X Intel ETF Tumbles 13% as Intel Drops Amid Shareholder Lawsuit and AI Chip Selloff; Taiwan Semiconductor Falls 5%",
-        "url": "https://247wallst.com/investing/2026/11/16/intw-2x-intel-etf-tumbles-13-as-intel-drops-amid-shareholder-lawsuit-and-ai-chip-selloff-taiwan-semiconductor-falls-5/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-16 15:03 ET",
-        "pub_ts": 1794859392.0
       }
     ],
     "VRT": [
@@ -3009,22 +3022,22 @@
     "APLD": 1794903301.8849843,
     "VST": 1794903301.8849843,
     "BE": 1794903301.8849843,
-    "CRDO": 1794901889.993402,
-    "COHR": 1794901889.993402,
-    "MRVL": 1794901889.993402,
-    "LITE": 1794901889.993402,
-    "AAOI": 1794901889.993402,
-    "SPCX": 1794901889.993402,
-    "ASTS": 1794901889.993402,
-    "AXTI": 1794901889.993402,
-    "NASA": 1794901889.993402,
-    "LUNR": 1794901889.993402,
-    "TSLA": 1794901889.993402,
-    "AXP": 1794901889.993402,
-    "RKLB": 1794901889.993402,
-    "KO": 1794901889.993402,
-    "FLY": 1794901889.993402,
-    "INTC": 1794901889.993402,
+    "CRDO": 1794903448.8687615,
+    "COHR": 1794903448.8687615,
+    "MRVL": 1794903448.8687615,
+    "LITE": 1794903448.8687615,
+    "AAOI": 1794903448.8687615,
+    "SPCX": 1794903448.8687615,
+    "ASTS": 1794903448.8687615,
+    "AXTI": 1794903448.8687615,
+    "NASA": 1794903448.8687615,
+    "LUNR": 1794903448.8687615,
+    "TSLA": 1794903448.8687615,
+    "AXP": 1794903448.8687615,
+    "RKLB": 1794903448.8687615,
+    "KO": 1794903448.8687615,
+    "FLY": 1794903448.8687615,
+    "INTC": 1794903448.8687615,
     "VRT": 1794902081.0293021,
     "HPE": 1794902081.0293021,
     "DELL": 1794902081.0293021,
