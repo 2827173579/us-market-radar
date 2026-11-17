@@ -14,8 +14,8 @@
       "last_notified_at": 1794920952.4833956
     },
     "META": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1794925556.75987
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "MRNA": {
       "state": "NORMAL",
@@ -34,8 +34,8 @@
       "last_notified_at": 0.0
     },
     "QCOM": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1794925759.5921087
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "LUNR": {
       "state": "NORMAL",
@@ -58,8 +58,8 @@
       "last_notified_at": 0.0
     },
     "MCD": {
-      "state": "TAKE_PROFIT",
-      "last_notified_at": 1794920952.4833956
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     }
   },
   "position_peaks": {

@@ -831,9 +831,13 @@
     "2026-11-17:META/LLY:5M_ENTRY+TAKE_PROFIT": {
       "device": "PC",
       "ts": 1794925557.554578
+    },
+    "2026-11-17:DEFENSIVE_FLIGHT:+0.0": {
+      "device": "PC",
+      "ts": 1794925873.5640376
     }
   },
   "device": "PC",
-  "last_heartbeat_ts": 1794925681.1459072,
-  "updated_at": "2026-11-17T14:29:20.900855+00:00"
+  "last_heartbeat_ts": 1794925782.232507,
+  "updated_at": "2026-11-17T14:31:13.564482+00:00"
 }
