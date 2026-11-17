@@ -1,9 +1,22 @@
 {
-  "updated_at_ts": 1794954778.889,
-  "updated_at_et": "11-17 17:32 ET",
-  "updated_at_kst": "07:32 KST",
+  "updated_at_ts": 1794954879.965,
+  "updated_at_et": "11-17 17:34 ET",
+  "updated_at_kst": "07:34 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261118063309401800",
+      "title": "英伟达董事会主席哈维·琼斯：我们希望尽快任命正式首席执行官，但不会为了赶时间而仓促决定，…",
+      "summary": "英伟达董事会主席哈维·琼斯：我们希望尽快任命正式首席执行官，但不会为了赶时间而仓促决定，必须先找到最合适的人选。",
+      "keywords": [
+        "英伟达"
+      ],
+      "pub_ts": 1794954789.0,
+      "time_et": "11-17 17:33 ET",
+      "time_bj": "06:33 BJ",
+      "time_kst": "07:33 KST",
+      "time_display": "17:33 ET / 06:33 BJ"
+    },
     {
       "id": "20261118063131094800",
       "title": "英伟达临时CEO克雷斯：供需状况让我们有信心上调全年销售增长预期。",
@@ -320,19 +333,6 @@
       "time_bj": "03:50 BJ",
       "time_kst": "04:50 KST",
       "time_display": "14:50 ET / 03:50 BJ"
-    },
-    {
-      "id": "20261118032807927800",
-      "title": "美联储威廉姆斯：我认为当前形势无需采取激进的政策行动。",
-      "summary": "美联储威廉姆斯：我认为当前形势无需采取激进的政策行动。",
-      "keywords": [
-        "美联储"
-      ],
-      "pub_ts": 1794943687.0,
-      "time_et": "11-17 14:28 ET",
-      "time_bj": "03:28 BJ",
-      "time_kst": "04:28 KST",
-      "time_display": "14:28 ET / 03:28 BJ"
     }
   ],
   "ticker_news": {
@@ -2410,6 +2410,20 @@
     ],
     "SKHY": [
       {
+        "title": "What Is SK hynix (NasdaqGS:SKHY) Really Aiming For With Its $1 Billion Chip Push?",
+        "url": "https://finance.yahoo.com/technology/articles/sk-hynix-nasdaqgs-skhy-really-220914267.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 17:09 ET",
+        "pub_ts": 1794953354.0
+      },
+      {
+        "title": "Is SK Hynix the Better Artificial Intelligence (AI) Memory Stock Compared With Micron?",
+        "url": "https://www.fool.com/investing/2026/11/17/is-sk-hynix-the-better-artificial-intelligence-ai-memory-stock-compared-with-micron/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 17:05 ET",
+        "pub_ts": 1794953103.0
+      },
+      {
         "title": "SK hynix Stocks Fall 1.96% as DRAM Price-Fixing Suit Advances and Kospi Drops",
         "url": "https://finance.yahoo.com/markets/stocks/articles/sk-hynix-stocks-fall-1-190411984.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2429,20 +2443,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 12:49 ET",
         "pub_ts": 1794937799.0
-      },
-      {
-        "title": "Sandisk's Earnings Face a New Risk in a Key Chip Market",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/sandisks-earnings-face-risk-key-174905915.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 12:49 ET",
-        "pub_ts": 1794937745.0
-      },
-      {
-        "title": "SanDisk and Micron Fall 4% as GF Securities Cuts NAND Price Forecast and Warns of a Glut; SK Hynix Dips",
-        "url": "https://247wallst.com/investing/2026/11/17/sandisk-and-micron-fall-4-as-gf-securities-cuts-nand-price-forecast-and-warns-of-a-glut-sk-hynix-dips/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 11:06 ET",
-        "pub_ts": 1794931600.0
       }
     ],
     "WDC": [
@@ -2632,13 +2632,6 @@
     ],
     "CRWD": [
       {
-        "title": "‘We’re Still Slightly Bigger’: Palo Alto CEO Jabs CrowdStrike. Here’s How to Play PANW and CRWD Stock Before Earnings.",
-        "url": "https://www.barchart.com/story/news/8878736/were-still-slightly-bigger-palo-alto-ceo-jabs-crowdstrike-heres-how-to-play-panw-and-crwd-stock-before-earnings?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 10:40 ET",
-        "pub_ts": 1794930014.0
-      },
-      {
         "title": "CrowdStrike Holdings (CRWD) Stock Moves -1.50%: What You Should Know",
         "url": "https://finance.yahoo.com/markets/stocks/articles/crowdstrike-holdings-crwd-stock-moves-214502779.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2665,6 +2658,13 @@
         "source": "Yahoo Finance",
         "time": "11-14 00:43 ET",
         "pub_ts": 1794634996.0
+      },
+      {
+        "title": "Why CrowdStrike (CRWD), a Jim Cramer Holding, Wants Fiddler AI",
+        "url": "https://finance.yahoo.com/technology/ai/articles/why-crowdstrike-crwd-jim-cramer-203814353.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-13 15:38 ET",
+        "pub_ts": 1794602294.0
       }
     ],
     "ORCL": [
@@ -3243,15 +3243,15 @@
     "CEG": 1794953475.3327162,
     "FPS": 1794954778.8893943,
     "MU": 1794953675.1255982,
-    "SKHY": 1794953376.4104662,
+    "SKHY": 1794954879.96504,
     "WDC": 1794953475.3327162,
     "STX": 1794953775.1432061,
-    "MSTR": 1794953376.4104662,
-    "SNDK": 1794953376.4104662,
+    "MSTR": 1794954879.96504,
+    "SNDK": 1794954879.96504,
     "BTC-USD": 1794953775.1432061,
-    "CRWD": 1794953376.4104662,
-    "ORCL": 1794953376.4104662,
-    "COIN": 1794953376.4104662,
+    "CRWD": 1794954879.96504,
+    "ORCL": 1794954879.96504,
+    "COIN": 1794954879.96504,
     "LLY": 1794953675.1255982,
     "MRNA": 1794953475.3327162,
     "NKE": 1794953775.1432061,
@@ -3268,7 +3268,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (17:31 ET / 06:31 BJ) [英伟达]：英伟达临时CEO克雷斯：供需状况让我们有信心上调全年销售增长预期。",
+    "detail": "⚡ 最新核心快讯 (17:33 ET / 06:33 BJ) [英伟达]：英伟达董事会主席哈维·琼斯：我们希望尽快任命正式首席执行官，但不会为了赶时间而仓促决定，必须先找到最合适的人选。",
     "event_name": "",
     "minutes_left": 0
   }
