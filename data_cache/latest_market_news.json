@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1794958717.036,
-  "updated_at_et": "11-17 18:38 ET",
-  "updated_at_kst": "08:38 KST",
+  "updated_at_ts": 1794958812.912,
+  "updated_at_et": "11-17 18:40 ET",
+  "updated_at_kst": "08:40 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2897,6 +2897,13 @@
     ],
     "PEP": [
       {
+        "title": "How PepsiCo Is Targeting GLP-1 Users",
+        "url": "https://finance.yahoo.com/video/pepsico-targeting-glp-1-users-231300521.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 18:13 ET",
+        "pub_ts": 1794957180.0
+      },
+      {
         "title": "KFC drops Pepsi in the U.S., but not everywhere",
         "url": "https://www.thestreet.com/restaurants/kfc-pepsi-partnership-us-international?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2923,13 +2930,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 12:52 ET",
         "pub_ts": 1794937922.0
-      },
-      {
-        "title": "Can PepsiCo's Asia Pacific Foods Business Maintain Volume Growth?",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/pepsicos-asia-pacific-foods-business-150300569.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 10:03 ET",
-        "pub_ts": 1794927780.0
       }
     ],
     "XOM": [
@@ -3193,20 +3193,20 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1794957229.280603,
-    "SOXL": 1794957229.280603,
-    "SPY": 1794957229.280603,
-    "DIA": 1794957229.280603,
-    "SOXX": 1794957229.280603,
-    "QQQ": 1794957229.280603,
-    "SMH": 1794957229.280603,
-    "IWM": 1794957229.280603,
+    "KORU": 1794958812.9119732,
+    "SOXL": 1794958812.9119732,
+    "SPY": 1794958812.9119732,
+    "DIA": 1794958812.9119732,
+    "SOXX": 1794958812.9119732,
+    "QQQ": 1794958812.9119732,
+    "SMH": 1794958812.9119732,
+    "IWM": 1794958812.9119732,
     "IGV": 1794957424.8459928,
-    "TLT": 1794957229.280603,
-    "GLD": 1794957229.280603,
+    "TLT": 1794958812.9119732,
+    "GLD": 1794958812.9119732,
     "SQQQ": 1794957424.8459928,
-    "TSM": 1794957229.280603,
-    "VIXY": 1794957229.280603,
+    "TSM": 1794958812.9119732,
+    "VIXY": 1794958812.9119732,
     "SOXS": 1794957424.8459928,
     "NVDA": 1794957424.8459928,
     "AMD": 1794957623.4058466,
@@ -3262,8 +3262,8 @@
     "MRNA": 1794958131.272248,
     "NKE": 1794958426.7952378,
     "MCD": 1794958131.272248,
-    "PEP": 1794957229.280603,
-    "XOM": 1794957229.280603,
+    "PEP": 1794958812.9119732,
+    "XOM": 1794958812.9119732,
     "JPM": 1794958328.0724094,
     "WMT": 1794958328.0724094,
     "V": 1794958131.272248,
