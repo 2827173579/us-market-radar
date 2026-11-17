@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1794942938.993,
-  "updated_at_et": "11-17 14:15 ET",
-  "updated_at_kst": "04:15 KST",
+  "updated_at_ts": 1794943035.862,
+  "updated_at_et": "11-17 14:17 ET",
+  "updated_at_kst": "04:17 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -414,11 +414,11 @@
         "pub_ts": 1793712957.0
       },
       {
-        "title": "Eric Balchunas Says Dip Buyers Keep Piling Into an Nvidia Fund Down 47% in a Month",
-        "url": "https://247wallst.com/investing/etf/2026/11/13/eric-balchunas-says-dip-buyers-keep-piling-into-an-nvidia-fund-down-47-in-a-month/?.tsrc=rss",
+        "title": "Nvidia Has Fallen 18% Since the Jensen Huang Scandal Broke and the Biggest Chip ETF Barely Moved. Here’s What Tonight’s Report Does to SMH, SOXX, SOXL and NVDL",
+        "url": "https://247wallst.com/investing/2026/11/17/nvidia-has-fallen-18-since-the-jensen-huang-scandal-broke-and-the-biggest-chip-etf-barely-moved-heres-what-tonights-report-does-to-smh-soxx-soxl-and-nvdl/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-13 11:52 ET",
-        "pub_ts": 1794588767.0
+        "time": "11-17 13:47 ET",
+        "pub_ts": 1794941220.0
       }
     ],
     "SPY": [
@@ -497,6 +497,13 @@
     ],
     "SOXX": [
       {
+        "title": "Nvidia Has Fallen 18% Since the Jensen Huang Scandal Broke and the Biggest Chip ETF Barely Moved. Here’s What Tonight’s Report Does to SMH, SOXX, SOXL and NVDL",
+        "url": "https://247wallst.com/investing/2026/11/17/nvidia-has-fallen-18-since-the-jensen-huang-scandal-broke-and-the-biggest-chip-etf-barely-moved-heres-what-tonights-report-does-to-smh-soxx-soxl-and-nvdl/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 13:47 ET",
+        "pub_ts": 1794941220.0
+      },
+      {
         "title": "Chip Stocks Are Having Their Worst Two Months Since 2008",
         "url": "https://247wallst.com/investing/2026/11/17/chip-stocks-are-having-their-worst-two-months-since-2008/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -523,13 +530,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 06:02 ET",
         "pub_ts": 1794913369.0
-      },
-      {
-        "title": "ETFs Are Net Sellers of Astera Labs (ALAB) on Friday",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-net-sellers-astera-labs-110229756.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 06:02 ET",
-        "pub_ts": 1794913349.0
       }
     ],
     "QQQ": [
@@ -3199,19 +3199,19 @@
   },
   "ticker_news_ts": {
     "KORU": 1794941562.5659704,
-    "SOXL": 1794941463.2646892,
-    "SPY": 1794941463.2646892,
+    "SOXL": 1794943035.862014,
+    "SPY": 1794943035.862014,
     "DIA": 1794941562.5659704,
-    "SOXX": 1794941463.2646892,
+    "SOXX": 1794943035.862014,
     "QQQ": 1794941562.5659704,
-    "SMH": 1794941463.2646892,
-    "IWM": 1794941463.2646892,
+    "SMH": 1794943035.862014,
+    "IWM": 1794943035.862014,
     "IGV": 1794941756.8003943,
     "TLT": 1794941562.5659704,
-    "GLD": 1794941463.2646892,
+    "GLD": 1794943035.862014,
     "SQQQ": 1794941855.0201414,
     "TSM": 1794941562.5659704,
-    "VIXY": 1794941463.2646892,
+    "VIXY": 1794943035.862014,
     "SOXS": 1794941756.8003943,
     "NVDA": 1794941756.8003943,
     "AMD": 1794941953.9419465,
@@ -3267,8 +3267,8 @@
     "MRNA": 1794942545.5346937,
     "NKE": 1794942841.1369593,
     "MCD": 1794942545.5346937,
-    "PEP": 1794941463.2646892,
-    "XOM": 1794941463.2646892,
+    "PEP": 1794943035.862014,
+    "XOM": 1794943035.862014,
     "JPM": 1794942743.1148033,
     "WMT": 1794942743.1148033,
     "V": 1794942545.5346937,
