@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1794941756.8,
-  "updated_at_et": "11-17 13:55 ET",
-  "updated_at_kst": "03:55 KST",
+  "updated_at_ts": 1794941855.02,
+  "updated_at_et": "11-17 13:57 ET",
+  "updated_at_kst": "03:57 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1311,6 +1311,13 @@
     ],
     "NOW": [
       {
+        "title": "Why ServiceNow Stock Is Moving On Software Outages And Cyber Risk",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/why-servicenow-stock-moving-software-181013301.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 13:10 ET",
+        "pub_ts": 1794939013.0
+      },
+      {
         "title": "ServiceNow Sees AI Usage Surge as It Raises Annual Contract Value Target to $1.7 Billion",
         "url": "https://www.marketbeat.com/instant-alerts/event-servicenow-sees-ai-usage-surge-as-it-raises-annual-contract-value-target-to-17-billion-2026-11-17/?utm_source=yahoofinance&utm_medium=yahoofinance&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1337,13 +1344,6 @@
         "source": "Yahoo Finance",
         "time": "11-16 16:38 ET",
         "pub_ts": 1794865080.0
-      },
-      {
-        "title": "ServiceNow vs. Palantir Technologies: Comparing Steady Sales Scale Against Rapid Revenue Acceleration",
-        "url": "https://www.fool.com/coverage/charts/2026/11/16/servicenow-vs-palantir-technologies-comparing-steady-sales-scale-against-rapid-revenue-acceleration/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-16 14:32 ET",
-        "pub_ts": 1794857524.0
       }
     ],
     "AMZN": [
@@ -3209,7 +3209,7 @@
     "IGV": 1794941756.8003943,
     "TLT": 1794941562.5659704,
     "GLD": 1794941463.2646892,
-    "SQQQ": 1794940334.740389,
+    "SQQQ": 1794941855.0201414,
     "TSM": 1794941562.5659704,
     "VIXY": 1794941463.2646892,
     "SOXS": 1794941756.8003943,
@@ -3217,14 +3217,14 @@
     "AMD": 1794940453.352386,
     "ASML": 1794940453.352386,
     "QCOM": 1794941756.8003943,
-    "AVGO": 1794940334.740389,
-    "AMAT": 1794940334.740389,
+    "AVGO": 1794941855.0201414,
+    "AMAT": 1794941855.0201414,
     "META": 1794940453.352386,
     "GOOGL": 1794940453.352386,
     "MSFT": 1794940453.352386,
     "AAPL": 1794941756.8003943,
-    "PLTR": 1794940334.740389,
-    "NOW": 1794940334.740389,
+    "PLTR": 1794941855.0201414,
+    "NOW": 1794941855.0201414,
     "AMZN": 1794940453.352386,
     "CRWV": 1794940453.352386,
     "NBIS": 1794940453.352386,
