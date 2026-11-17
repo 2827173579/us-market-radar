@@ -435,9 +435,13 @@
     "2026-11-17:DEFENSIVE_FLIGHT:-0.0": {
       "device": "PC",
       "ts": 1794891676.906232
+    },
+    "2026-11-17:NVDA/FLY:STOP_LOSS+TAKE_PROFIT": {
+      "device": "PC",
+      "ts": 1794891865.9719405
     }
   },
   "device": "PC",
-  "last_heartbeat_ts": 1794891696.6513486,
-  "updated_at": "2026-11-17T05:01:36.651753+00:00"
+  "last_heartbeat_ts": 1794891790.8343546,
+  "updated_at": "2026-11-17T05:04:25.972327+00:00"
 }
