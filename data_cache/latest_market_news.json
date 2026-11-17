@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1794959207.996,
-  "updated_at_et": "11-17 18:46 ET",
-  "updated_at_kst": "08:46 KST",
+  "updated_at_ts": 1794959308.146,
+  "updated_at_et": "11-17 18:48 ET",
+  "updated_at_kst": "08:48 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1757,6 +1757,13 @@
         "pub_ts": 1794943202.0
       },
       {
+        "title": "Nvidia just sent a powerful signal to SpaceX stock investors",
+        "url": "https://www.thestreet.com/investing/stocks/nvidia-spacex-stake-q3-13f?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 18:33 ET",
+        "pub_ts": 1794958380.0
+      },
+      {
         "title": "SpaceX Stock Adds $54 Billion Amid Viral AI in Space Discussions",
         "url": "https://beincrypto.com/spacex-stock-adds-54-billion-ai-space/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1764,25 +1771,18 @@
         "pub_ts": 1794956543.0
       },
       {
+        "title": "America Entering a ‘Mind-Blowing’ Beginning: Cathie Wood Hails SpaceX Starship ‘Chopsticks’ Catch",
+        "url": "https://finance.yahoo.com/technology/articles/america-entering-mind-blowing-beginning-223005246.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 17:30 ET",
+        "pub_ts": 1794954605.0
+      },
+      {
         "title": "SpaceX, Rivals Win $985 Million In Launch Awards. Cathie Wood, David Tepper Shift Space Holdings.",
         "url": "https://finance.yahoo.com/m/0f8296b1-cd8f-3b1e-b4d0-f94bc09e49cc/spacex%2C-rivals-win-%24985.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-17 16:29 ET",
         "pub_ts": 1794950970.0
-      },
-      {
-        "title": "Billionaire David Tepper Grew His SpaceX Stake 17-Fold While Dumping AMD and Broadcom",
-        "url": "https://247wallst.com/investing/2026/11/17/billionaire-david-tepper-grew-his-spacex-stake-17-fold-while-dumping-amd-and-broadcom/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 16:10 ET",
-        "pub_ts": 1794949851.0
-      },
-      {
-        "title": "SpaceX Stock (SPCX) Could Crush Wall Street’s Estimates. Here’s Why",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/spacex-stock-spcx-could-crush-210700242.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 16:07 ET",
-        "pub_ts": 1794949620.0
       }
     ],
     "ASTS": [
@@ -3229,18 +3229,18 @@
     "CRDO": 1794959207.9958642,
     "COHR": 1794959207.9958642,
     "MRVL": 1794959207.9958642,
-    "LITE": 1794957724.451848,
+    "LITE": 1794959308.145522,
     "AAOI": 1794959207.9958642,
-    "SPCX": 1794957724.451848,
+    "SPCX": 1794959308.145522,
     "ASTS": 1794957923.008233,
     "AXTI": 1794959207.9958642,
     "NASA": 1794957923.008233,
-    "LUNR": 1794957724.451848,
+    "LUNR": 1794959308.145522,
     "TSLA": 1794957923.008233,
     "AXP": 1794957923.008233,
     "RKLB": 1794957923.008233,
-    "KO": 1794957724.451848,
-    "FLY": 1794957724.451848,
+    "KO": 1794959308.145522,
+    "FLY": 1794959308.145522,
     "INTC": 1794957825.0004654,
     "VRT": 1794957923.008233,
     "HPE": 1794957923.008233,
@@ -3269,7 +3269,7 @@
     "V": 1794958131.272248,
     "CAT": 1794958328.0724094,
     "FN": 1794957825.0004654,
-    "GLW": 1794957724.451848
+    "GLW": 1794959308.145522
   },
   "calendar_banner": {
     "level": "idle_with_flash",
