@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1794898245.455,
-  "updated_at_et": "11-17 01:50 ET",
-  "updated_at_kst": "15:50 KST",
+  "updated_at_ts": 1794898341.232,
+  "updated_at_et": "11-17 01:52 ET",
+  "updated_at_kst": "15:52 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -635,10 +635,17 @@
     "NVDA": [
       {
         "title": "ASUS Ramps Up NVIDIA Vera Rubin NVL72 Shipments in Q4 Amid Strong Demand, Showcasing AI Factory Reference Architecture at SC26",
-        "url": "https://finance.yahoo.com/technology/ai/articles/asus-ramps-nvidia-vera-rubin-060800264.html?.tsrc=rss",
+        "url": "https://finance.yahoo.com/technology/ai/articles/asus-ramps-nvidia-vera-rubin-062100096.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-17 01:08 ET",
-        "pub_ts": 1794895680.0
+        "time": "11-17 01:21 ET",
+        "pub_ts": 1794896460.0
+      },
+      {
+        "title": "Stock Market: Will S&P 500 Open Up or Down Today?",
+        "url": "https://www.benzinga.com/markets/prediction-markets/26/11/63330216/stock-market-will-sp-500-open-up-or-down-today-79?utm_source=yahooFinance&utm_campaign=partner_feed&utm_medium=referral&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 01:14 ET",
+        "pub_ts": 1794896080.0
       },
       {
         "title": "Watch these Chinese chip stocks as U.S. tightens access to Nvidia hardware",
@@ -660,13 +667,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 00:16 ET",
         "pub_ts": 1794892610.0
-      },
-      {
-        "title": "Nvidia faces alarming revenue questions before earnings",
-        "url": "https://www.thestreet.com/investing/nvidia-faces-alarming-revenue-questions-before-earnings?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 00:03 ET",
-        "pub_ts": 1794891780.0
       }
     ],
     "AMD": [
@@ -2854,22 +2854,22 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1794896757.5423043,
-    "SOXL": 1794896757.5423043,
-    "SPY": 1794896757.5423043,
-    "DIA": 1794896757.5423043,
-    "SOXX": 1794896757.5423043,
-    "QQQ": 1794896757.5423043,
-    "SMH": 1794896757.5423043,
-    "IWM": 1794896757.5423043,
-    "IGV": 1794896757.5423043,
-    "TLT": 1794896757.5423043,
-    "GLD": 1794896757.5423043,
-    "SQQQ": 1794896757.5423043,
-    "TSM": 1794896757.5423043,
-    "VIXY": 1794896757.5423043,
-    "SOXS": 1794896757.5423043,
-    "NVDA": 1794896757.5423043,
+    "KORU": 1794898341.2324243,
+    "SOXL": 1794898341.2324243,
+    "SPY": 1794898341.2324243,
+    "DIA": 1794898341.2324243,
+    "SOXX": 1794898341.2324243,
+    "QQQ": 1794898341.2324243,
+    "SMH": 1794898341.2324243,
+    "IWM": 1794898341.2324243,
+    "IGV": 1794898341.2324243,
+    "TLT": 1794898341.2324243,
+    "GLD": 1794898341.2324243,
+    "SQQQ": 1794898341.2324243,
+    "TSM": 1794898341.2324243,
+    "VIXY": 1794898341.2324243,
+    "SOXS": 1794898341.2324243,
+    "NVDA": 1794898341.2324243,
     "AMD": 1794896861.2873626,
     "ASML": 1794896861.2873626,
     "QCOM": 1794896861.2873626,
