@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1794903448.869,
-  "updated_at_et": "11-17 03:17 ET",
-  "updated_at_kst": "17:17 KST",
+  "updated_at_ts": 1794903590.198,
+  "updated_at_et": "11-17 03:19 ET",
+  "updated_at_kst": "17:19 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2256,6 +2256,13 @@
         "pub_ts": 1794898178.0
       },
       {
+        "title": "Zacks Investment Ideas feature highlights: Nvidia, CoreWeave, Nebius, Micron and Sandisk",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/zacks-investment-ideas-feature-highlights-064900844.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 01:49 ET",
+        "pub_ts": 1794898140.0
+      },
+      {
         "title": "AMD, MU, SKHY, AVGO: Chip Stocks Ease Overnight After Selloff On New US Chip Restrictions Targeting China",
         "url": "https://stocktwits.com/news-articles/markets/equity/amd-mu-skhy-avgo-chip-stocks-ease-overnight-after-selloff-on-new-us-chip-restrictions-targeting-china/cNba10cR9gA?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2275,16 +2282,16 @@
         "source": "Yahoo Finance",
         "time": "11-16 18:01 ET",
         "pub_ts": 1794870062.0
-      },
-      {
-        "title": "Direxion and Anthony Pompliano's Silvia Join Forces to Help Investors Rethink Income",
-        "url": "https://finance.yahoo.com/markets/options/articles/direxion-anthony-pomplianos-silvia-join-210300213.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-16 16:03 ET",
-        "pub_ts": 1794862980.0
       }
     ],
     "SKHY": [
+      {
+        "title": "Update: Market Chatter: SK Hynix Plans $1 Billion Investment in South Korean Chip Supply Chain",
+        "url": "https://finance.yahoo.com/technology/articles/market-chatter-sk-hynix-plans-081701348.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 03:17 ET",
+        "pub_ts": 1794903421.0
+      },
       {
         "title": "AMD, MU, SKHY, AVGO: Chip Stocks Ease Overnight After Selloff On New US Chip Restrictions Targeting China",
         "url": "https://stocktwits.com/news-articles/markets/equity/amd-mu-skhy-avgo-chip-stocks-ease-overnight-after-selloff-on-new-us-chip-restrictions-targeting-china/cNba10cR9gA?.tsrc=rss",
@@ -2312,13 +2319,6 @@
         "source": "Yahoo Finance",
         "time": "11-16 14:13 ET",
         "pub_ts": 1794856408.0
-      },
-      {
-        "title": "SK Hynix Is Down 16% in a Month. What Will It Take to Get SKHY Stock Back to $150?",
-        "url": "https://247wallst.com/investing/2026/11/16/sk-hynix-is-down-16-in-a-month-what-will-it-take-to-get-skhy-stock-back-to-150/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-16 14:03 ET",
-        "pub_ts": 1794855801.0
       }
     ],
     "WDC": [
@@ -2434,6 +2434,13 @@
     ],
     "SNDK": [
       {
+        "title": "Zacks Investment Ideas feature highlights: Nvidia, CoreWeave, Nebius, Micron and Sandisk",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/zacks-investment-ideas-feature-highlights-064900844.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 01:49 ET",
+        "pub_ts": 1794898140.0
+      },
+      {
         "title": "Why Is Sandisk (SNDK) Stock Sliding After A Shock AI Leadership Exit?",
         "url": "https://finance.yahoo.com/markets/stocks/articles/why-sandisk-sndk-stock-sliding-020722050.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2460,13 +2467,6 @@
         "source": "Yahoo Finance",
         "time": "11-16 14:58 ET",
         "pub_ts": 1794859081.0
-      },
-      {
-        "title": "Sandisk Is Splitting Its Stock 8-for-1. Here’s the Number I’d Check Before Buying.",
-        "url": "https://www.fool.com/investing/2026/11/16/sandisk-is-splitting-its-stock-8-for-1-heres-the-number-id-check-before-buying/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-16 13:05 ET",
-        "pub_ts": 1794852302.0
       }
     ],
     "BTC-USD": [
@@ -3038,22 +3038,22 @@
     "KO": 1794903448.8687615,
     "FLY": 1794903448.8687615,
     "INTC": 1794903448.8687615,
-    "VRT": 1794902081.0293021,
-    "HPE": 1794902081.0293021,
-    "DELL": 1794902081.0293021,
-    "OKLO": 1794902081.0293021,
-    "CEG": 1794902081.0293021,
-    "FPS": 1794902081.0293021,
-    "MU": 1794902081.0293021,
-    "SKHY": 1794902081.0293021,
-    "WDC": 1794902081.0293021,
-    "STX": 1794902081.0293021,
-    "MSTR": 1794902081.0293021,
-    "SNDK": 1794902081.0293021,
-    "BTC-USD": 1794902081.0293021,
-    "CRWD": 1794902081.0293021,
-    "ORCL": 1794902081.0293021,
-    "COIN": 1794902081.0293021,
+    "VRT": 1794903590.1984384,
+    "HPE": 1794903590.1984384,
+    "DELL": 1794903590.1984384,
+    "OKLO": 1794903590.1984384,
+    "CEG": 1794903590.1984384,
+    "FPS": 1794903590.1984384,
+    "MU": 1794903590.1984384,
+    "SKHY": 1794903590.1984384,
+    "WDC": 1794903590.1984384,
+    "STX": 1794903590.1984384,
+    "MSTR": 1794903590.1984384,
+    "SNDK": 1794903590.1984384,
+    "BTC-USD": 1794903590.1984384,
+    "CRWD": 1794903590.1984384,
+    "ORCL": 1794903590.1984384,
+    "COIN": 1794903590.1984384,
     "LLY": 1794902285.1296449,
     "MRNA": 1794902285.1296449,
     "NKE": 1794902285.1296449,
