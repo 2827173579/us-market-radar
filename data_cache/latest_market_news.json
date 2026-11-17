@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1794946488.385,
-  "updated_at_et": "11-17 15:14 ET",
-  "updated_at_kst": "05:14 KST",
+  "updated_at_ts": 1794946586.001,
+  "updated_at_et": "11-17 15:16 ET",
+  "updated_at_kst": "05:16 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1088,6 +1088,13 @@
     ],
     "AMAT": [
       {
+        "title": "A $2.7 Billion Fund Dumps These 3 Stocks",
+        "url": "https://www.tikr.com/blog/a-2-7-billion-fund-dumps-these-3-stocks?ref=yahoofinance&tlnk=yf-261117-4c7w55ww&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 15:00 ET",
+        "pub_ts": 1794945626.0
+      },
+      {
         "title": "Brad Gerstner Dumps These 3 Stocks",
         "url": "https://www.tikr.com/blog/brad-gerstner-dumps-these-3-stocks?ref=yahoofinance&tlnk=yf-261117-79fc3fv5&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1114,13 +1121,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 08:30 ET",
         "pub_ts": 1794922203.0
-      },
-      {
-        "title": "What Applied Materials Holders Saw Early",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/applied-materials-holders-saw-early-010701905.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-16 20:07 ET",
-        "pub_ts": 1794877621.0
       }
     ],
     "META": [
@@ -3208,7 +3208,7 @@
     "IGV": 1794946488.3846395,
     "TLT": 1794946293.325201,
     "GLD": 1794946194.2192426,
-    "SQQQ": 1794945013.475414,
+    "SQQQ": 1794946586.000602,
     "TSM": 1794946293.325201,
     "VIXY": 1794946194.2192426,
     "SOXS": 1794946488.3846395,
@@ -3216,14 +3216,14 @@
     "AMD": 1794945111.8475516,
     "ASML": 1794945111.8475516,
     "QCOM": 1794946488.3846395,
-    "AVGO": 1794945013.475414,
-    "AMAT": 1794945013.475414,
+    "AVGO": 1794946586.000602,
+    "AMAT": 1794946586.000602,
     "META": 1794945111.8475516,
     "GOOGL": 1794945111.8475516,
     "MSFT": 1794945111.8475516,
     "AAPL": 1794946488.3846395,
-    "PLTR": 1794945013.475414,
-    "NOW": 1794945013.475414,
+    "PLTR": 1794946586.000602,
+    "NOW": 1794946586.000602,
     "AMZN": 1794945111.8475516,
     "CRWV": 1794945111.8475516,
     "NBIS": 1794945111.8475516,
