@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1794899828.471,
-  "updated_at_et": "11-17 02:17 ET",
-  "updated_at_kst": "16:17 KST",
+  "updated_at_ts": 1794899925.577,
+  "updated_at_et": "11-17 02:18 ET",
+  "updated_at_kst": "16:18 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -660,6 +660,20 @@
     ],
     "NVDA": [
       {
+        "title": "Asian stocks sink as scandal-hit Nvidia's earnings loom",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/asian-stocks-sink-scandal-hit-023848163.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 02:14 ET",
+        "pub_ts": 1794899656.0
+      },
+      {
+        "title": "Breaking Down the US Move to Curb Remote Access to Chips",
+        "url": "https://finance.yahoo.com/video/breaking-down-us-move-curb-064058022.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 01:40 ET",
+        "pub_ts": 1794897658.0
+      },
+      {
         "title": "ASUS Ramps Up NVIDIA Vera Rubin NVL72 Shipments in Q4 Amid Strong Demand, Showcasing AI Factory Reference Architecture at SC26",
         "url": "https://finance.yahoo.com/technology/ai/articles/asus-ramps-nvidia-vera-rubin-062100096.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -674,25 +688,11 @@
         "pub_ts": 1794896080.0
       },
       {
-        "title": "Watch these Chinese chip stocks as U.S. tightens access to Nvidia hardware",
-        "url": "https://finance.yahoo.com/technology/ai/articles/watch-chinese-chip-stocks-u-060032967.html?.tsrc=rss",
+        "title": "Nvidia Director Reportedly Warns of ‘Irreplaceable Talent’ Loss: Board Urged to Bring Back Jensen Huang as NVDA Stock Slips",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/nvidia-director-reportedly-warns-irreplaceable-060446835.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-17 01:00 ET",
-        "pub_ts": 1794895232.0
-      },
-      {
-        "title": "U.S. Commerce Dept, DOJ say they investigated Nvidia partner Megaspeed in 2024",
-        "url": "https://finance.yahoo.com/technology/ai/articles/u-commerce-dept-doj-investigated-051834040.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 00:18 ET",
-        "pub_ts": 1794892714.0
-      },
-      {
-        "title": "Tech elite lament Jensen Huang's fall, celebrate his AI leadership",
-        "url": "https://finance.yahoo.com/technology/ai/articles/tech-elite-lament-jensen-huangs-051650955.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 00:16 ET",
-        "pub_ts": 1794892610.0
+        "time": "11-17 01:04 ET",
+        "pub_ts": 1794895486.0
       }
     ],
     "AMD": [
@@ -2880,22 +2880,22 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1794898341.2324243,
-    "SOXL": 1794898341.2324243,
-    "SPY": 1794898341.2324243,
-    "DIA": 1794898341.2324243,
-    "SOXX": 1794898341.2324243,
-    "QQQ": 1794898341.2324243,
-    "SMH": 1794898341.2324243,
-    "IWM": 1794898341.2324243,
-    "IGV": 1794898341.2324243,
-    "TLT": 1794898341.2324243,
-    "GLD": 1794898341.2324243,
-    "SQQQ": 1794898341.2324243,
-    "TSM": 1794898341.2324243,
-    "VIXY": 1794898341.2324243,
-    "SOXS": 1794898341.2324243,
-    "NVDA": 1794898341.2324243,
+    "KORU": 1794899925.577313,
+    "SOXL": 1794899925.577313,
+    "SPY": 1794899925.577313,
+    "DIA": 1794899925.577313,
+    "SOXX": 1794899925.577313,
+    "QQQ": 1794899925.577313,
+    "SMH": 1794899925.577313,
+    "IWM": 1794899925.577313,
+    "IGV": 1794899925.577313,
+    "TLT": 1794899925.577313,
+    "GLD": 1794899925.577313,
+    "SQQQ": 1794899925.577313,
+    "TSM": 1794899925.577313,
+    "VIXY": 1794899925.577313,
+    "SOXS": 1794899925.577313,
+    "NVDA": 1794899925.577313,
     "AMD": 1794898442.580177,
     "ASML": 1794898442.580177,
     "QCOM": 1794898442.580177,
