@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1794942645.583,
-  "updated_at_et": "11-17 14:10 ET",
-  "updated_at_kst": "04:10 KST",
+  "updated_at_ts": 1794942743.115,
+  "updated_at_et": "11-17 14:12 ET",
+  "updated_at_kst": "04:12 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2976,11 +2976,25 @@
     ],
     "JPM": [
       {
+        "title": "Software bug freezes Chase: Is it the time for bitcoin?",
+        "url": "https://finance.yahoo.com/video/software-bug-freezes-chase-time-180000372.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 13:00 ET",
+        "pub_ts": 1794938400.0
+      },
+      {
         "title": "JPMorgan CFO Jeremy Barnum to step down as Jamie Dimon's succession plans take shape",
         "url": "https://finance.yahoo.com/markets/article/jpmorgan-cfo-jeremy-barnum-to-step-down-as-jamie-dimons-succession-plans-take-shape-153110270.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-17 10:31 ET",
         "pub_ts": 1794929470.0
+      },
+      {
+        "title": "JPMorgan’s CFO plans exit, company names internal successor",
+        "url": "https://www.americanbanker.com/news/jpmorgan-s-cfo-plans-exit-company-names-internal-successor?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 14:04 ET",
+        "pub_ts": 1794942294.0
       },
       {
         "title": "Bank Stocks Slip After Outages Disrupt US Customers",
@@ -2995,20 +3009,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 12:53 ET",
         "pub_ts": 1794938004.0
-      },
-      {
-        "title": "JPMorgan Still Sees Moderna Overvalued Despite Raising Its Target",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/jpmorgan-still-sees-moderna-overvalued-174522489.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 12:45 ET",
-        "pub_ts": 1794937522.0
-      },
-      {
-        "title": "Banking disruption resolved after thousands report access issues",
-        "url": "https://www.bankingdive.com/news/jpmorgan-chase-banking-service-disruption-app-website-bofa-wells-capital-one-zelle/874922/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 12:06 ET",
-        "pub_ts": 1794935166.0
       }
     ],
     "WMT": [
@@ -3253,7 +3253,7 @@
     "OKLO": 1794942249.8815272,
     "CEG": 1794942545.5346937,
     "FPS": 1794942249.8815272,
-    "MU": 1794941164.8143036,
+    "MU": 1794942743.1148033,
     "SKHY": 1794942350.2522223,
     "WDC": 1794942545.5346937,
     "STX": 1794941270.0724359,
@@ -3263,16 +3263,16 @@
     "CRWD": 1794942350.2522223,
     "ORCL": 1794942350.2522223,
     "COIN": 1794942350.2522223,
-    "LLY": 1794941164.8143036,
+    "LLY": 1794942743.1148033,
     "MRNA": 1794942545.5346937,
     "NKE": 1794941270.0724359,
     "MCD": 1794942545.5346937,
     "PEP": 1794941463.2646892,
     "XOM": 1794941463.2646892,
-    "JPM": 1794941164.8143036,
-    "WMT": 1794941164.8143036,
+    "JPM": 1794942743.1148033,
+    "WMT": 1794942743.1148033,
     "V": 1794942545.5346937,
-    "CAT": 1794941164.8143036,
+    "CAT": 1794942743.1148033,
     "FN": 1794942152.6078157,
     "GLW": 1794941953.9419465
   },
