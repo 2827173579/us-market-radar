@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1794917209.524,
-  "updated_at_et": "11-17 07:06 ET",
-  "updated_at_kst": "21:06 KST",
+  "updated_at_ts": 1794917305.272,
+  "updated_at_et": "11-17 07:08 ET",
+  "updated_at_kst": "21:08 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -898,42 +898,49 @@
     ],
     "NVDA": [
       {
-        "title": "Why Is Intel Stock Falling 3.1% in Pre-Market Trading?",
-        "url": "https://investorshub.advfn.com/market-news/article/40190/why-is-intel-stock-falling-3-1-in-pre-market-trading?.tsrc=rss",
+        "title": "Nvidia Under Pressure Over China Chip Sales. Here's How The AI Giant Is Fighting Back.",
+        "url": "https://www.ibtimes.com/nvidia-board-committee-china-export-controls-3809850?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-17 06:29 ET",
-        "pub_ts": 1794914968.0
+        "time": "11-17 07:05 ET",
+        "pub_ts": 1794917103.0
       },
       {
-        "title": "Nvidia Board Reportedly Rules Out Jensen Huang Return Despite Growing Support Campaign",
-        "url": "https://investorshub.advfn.com/market-news/article/40184/nvidia-board-reportedly-rules-out-jensen-huang-return-despite-growing-support-campaign?.tsrc=rss",
+        "title": "Rockwell Automation Expands Edge Computing Options for Industrial AI with NVIDIA GPUs",
+        "url": "https://finance.yahoo.com/technology/ai/articles/rockwell-automation-expands-edge-computing-120000700.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-17 06:24 ET",
-        "pub_ts": 1794914697.0
+        "time": "11-17 07:00 ET",
+        "pub_ts": 1794916800.0
       },
       {
-        "title": "Would a Jensen Huang Comeback Send Nvidia's Stock Back Up to $200?",
-        "url": "https://www.fool.com/investing/2026/11/17/would-a-jensen-huang-comeback-send-nvidia-s-stock-back-up-to-usd200/?.tsrc=rss",
+        "title": "Nvidia establishes committee to oversee national security after abrupt departure of CEO Jensen Huang",
+        "url": "https://finance.yahoo.com/technology/articles/nvidia-establishes-committee-oversee-national-115834618.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-17 06:20 ET",
-        "pub_ts": 1794914402.0
+        "time": "11-17 06:58 ET",
+        "pub_ts": 1794916714.0
       },
       {
-        "title": "Nvidia Reportedly Plans to Restrict Chip Sales to Data Centres Serving Chinese Customers",
-        "url": "https://investorshub.advfn.com/market-news/article/40178/nvidia-reportedly-plans-to-restrict-chip-sales-to-data-centres-serving-chinese-customers?.tsrc=rss",
+        "title": "Nvidia’s first post-Huang earnings loom large. Here’s what it could mean for AI.",
+        "url": "https://finance.yahoo.com/technology/ai/articles/nvidia-first-post-huang-earnings-114440135.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-17 06:19 ET",
-        "pub_ts": 1794914348.0
+        "time": "11-17 06:44 ET",
+        "pub_ts": 1794915880.0
       },
       {
-        "title": "Billionaire David Tepper Dumps AMD and Broadcom, Loads Up on Oracle and Nvidia",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/billionaire-david-tepper-dumps-amd-111611867.html?.tsrc=rss",
+        "title": "The Stock Market Is Doing Something for Just the 3rd Time in Nearly 30 Years, and History Is Clear Where the S&P 500 Is Headed",
+        "url": "https://www.fool.com/investing/2026/11/17/the-stock-market-is-doing-something-for-just-the-3rd-time-in-nearly-30-years-and-history-is-clear-where-the-s-and-p-500-is-headed/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-17 06:16 ET",
-        "pub_ts": 1794914171.0
+        "time": "11-17 06:35 ET",
+        "pub_ts": 1794915302.0
       }
     ],
     "AMD": [
+      {
+        "title": "Billionaire David Tepper Dumps AMD Stock, Makes $172 Million Bet on Oracle",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/billionaire-david-tepper-dumps-amd-115625542.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 06:56 ET",
+        "pub_ts": 1794916585.0
+      },
       {
         "title": "Billionaire David Tepper Dumps AMD and Broadcom, Loads Up on Oracle and Nvidia",
         "url": "https://finance.yahoo.com/markets/stocks/articles/billionaire-david-tepper-dumps-amd-111611867.html?.tsrc=rss",
@@ -961,13 +968,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 05:24 ET",
         "pub_ts": 1794911054.0
-      },
-      {
-        "title": "3 Growth Stocks To Watch With Earnings Growth Over 18%",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/3-growth-stocks-watch-earnings-071146596.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 02:11 ET",
-        "pub_ts": 1794899506.0
       }
     ],
     "ASML": [
@@ -3118,23 +3118,23 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1794915742.1946645,
-    "SOXL": 1794915742.1946645,
-    "SPY": 1794915742.1946645,
-    "DIA": 1794915742.1946645,
-    "SOXX": 1794915742.1946645,
-    "QQQ": 1794915742.1946645,
-    "SMH": 1794915742.1946645,
-    "IWM": 1794915742.1946645,
-    "IGV": 1794915742.1946645,
-    "TLT": 1794915742.1946645,
-    "GLD": 1794915742.1946645,
-    "SQQQ": 1794915742.1946645,
-    "TSM": 1794915742.1946645,
-    "VIXY": 1794915742.1946645,
-    "SOXS": 1794915742.1946645,
-    "NVDA": 1794915742.1946645,
-    "AMD": 1794915742.1946645,
+    "KORU": 1794917305.2715929,
+    "SOXL": 1794917305.2715929,
+    "SPY": 1794917305.2715929,
+    "DIA": 1794917305.2715929,
+    "SOXX": 1794917305.2715929,
+    "QQQ": 1794917305.2715929,
+    "SMH": 1794917305.2715929,
+    "IWM": 1794917305.2715929,
+    "IGV": 1794917305.2715929,
+    "TLT": 1794917305.2715929,
+    "GLD": 1794917305.2715929,
+    "SQQQ": 1794917305.2715929,
+    "TSM": 1794917305.2715929,
+    "VIXY": 1794917305.2715929,
+    "SOXS": 1794917305.2715929,
+    "NVDA": 1794917305.2715929,
+    "AMD": 1794917305.2715929,
     "ASML": 1794915844.166676,
     "QCOM": 1794915844.166676,
     "AVGO": 1794915844.166676,
