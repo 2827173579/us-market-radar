@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1794914574.184,
-  "updated_at_et": "11-17 06:22 ET",
-  "updated_at_kst": "20:22 KST",
+  "updated_at_ts": 1794914678.127,
+  "updated_at_et": "11-17 06:24 ET",
+  "updated_at_kst": "20:24 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2757,6 +2757,13 @@
         "pub_ts": 1794848730.0
       },
       {
+        "title": "Lilly agrees to acquire Calytrix Bio for $1.5bn",
+        "url": "https://www.hospitalmanagement.net/news/lilly-to-acquire-calytrix-bio-1-5bn/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 05:52 ET",
+        "pub_ts": 1794912744.0
+      },
+      {
         "title": "SLS Stock Jumps After-Hours: Retail Eyes Lilly’s Cancer Deal for Valuation Clues — 2 Big Investors Grab Shares",
         "url": "https://stocktwits.com/news-articles/markets/equity/sls-stock-retail-lilly-cancer-deal-valuation-clues-2-big-investors-grab-shares/cNbagyYR9gZ?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2776,16 +2783,16 @@
         "source": "Yahoo Finance",
         "time": "11-16 16:00 ET",
         "pub_ts": 1794862800.0
-      },
-      {
-        "title": "Sector Update: Healthcare Stocks Decline Late Afternoon",
-        "url": "https://finance.yahoo.com/healthcare/articles/sector-healthcare-stocks-decline-afternoon-205311075.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-16 15:53 ET",
-        "pub_ts": 1794862391.0
       }
     ],
     "MRNA": [
+      {
+        "title": "At $215, Moderna Stock Already Prices In A Comeback",
+        "url": "https://www.trefis.com/stock/mrna/articles/625594/at-215-moderna-stock-already-prices-in-a-comeback/2026-11-17?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 05:38 ET",
+        "pub_ts": 1794911936.0
+      },
       {
         "title": "Is Moderna's Cancer Vaccine a Game Changer for the Stock?",
         "url": "https://www.fool.com/investing/2026/11/16/is-moderna-s-cancer-vaccine-a-game-changer-for-the-stock/?.tsrc=rss",
@@ -2813,13 +2820,6 @@
         "source": "Yahoo Finance",
         "time": "11-16 08:00 ET",
         "pub_ts": 1794834000.0
-      },
-      {
-        "title": "Flagship's Afeyan Sees UK Bet Creating Next Moderna",
-        "url": "https://finance.yahoo.com/video/flagships-afeyan-sees-uk-bet-113516829.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-16 06:35 ET",
-        "pub_ts": 1794828916.0
       }
     ],
     "NKE": [
@@ -2935,11 +2935,11 @@
     ],
     "XOM": [
       {
-        "title": "Nvidia board needs 'some heavyweights,' ex-Medtronic CEO Bill George says",
-        "url": "https://finance.yahoo.com/technology/article/nvidia-board-needs-some-heavyweights-ex-medtronic-ceo-bill-george-says-191935557.html?.tsrc=rss",
+        "title": "ExxonMobil begins oil production at Uaru in Guyana’s Stabroek block",
+        "url": "https://www.offshore-technology.com/news/exxonmobil-oil-production-uaru-stabroek-block/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-16 14:19 ET",
-        "pub_ts": 1794856775.0
+        "time": "11-17 05:46 ET",
+        "pub_ts": 1794912396.0
       },
       {
         "title": "ExxonMobil's Uaru Startup Lifts Guyana Oil Capacity to 1.1 Million Bpd",
@@ -2956,18 +2956,18 @@
         "pub_ts": 1794871226.0
       },
       {
+        "title": "Nvidia board needs 'some heavyweights,' ex-Medtronic CEO Bill George says",
+        "url": "https://finance.yahoo.com/technology/article/nvidia-board-needs-some-heavyweights-ex-medtronic-ceo-bill-george-says-191935557.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-16 14:19 ET",
+        "pub_ts": 1794856775.0
+      },
+      {
         "title": "Can ExxonMobil's Longtail Project Unlock Guyana's Growth Potential?",
         "url": "https://finance.yahoo.com/energy/articles/exxonmobils-longtail-project-unlock-guyanas-161700877.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-16 11:17 ET",
         "pub_ts": 1794845820.0
-      },
-      {
-        "title": "ExxonMobil starts production at Uaru, raising Guyana’s installed capacity to 1.1 million barrels per day",
-        "url": "https://finance.yahoo.com/energy/articles/exxonmobil-starts-production-uaru-raising-151900873.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-16 10:19 ET",
-        "pub_ts": 1794842340.0
       }
     ],
     "JPM": [
@@ -3009,6 +3009,20 @@
     ],
     "WMT": [
       {
+        "title": "ETFs Bought $242.6 Million of Walmart (WMT) on Nov. 13",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-bought-242-6-million-110118012.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 06:01 ET",
+        "pub_ts": 1794913278.0
+      },
+      {
+        "title": "Risky Nvidia Is Cheaper Than 'Safe' Walmart",
+        "url": "https://www.trefis.com/stock/nvda/articles/625607/risky-nvidia-is-cheaper-than-safe-walmart/2026-11-17?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 05:38 ET",
+        "pub_ts": 1794911935.0
+      },
+      {
         "title": "Zacks Investment Ideas feature highlights: Target and Walmart",
         "url": "https://finance.yahoo.com/markets/stocks/articles/zacks-investment-ideas-feature-highlights-065600463.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3028,20 +3042,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 00:07 ET",
         "pub_ts": 1794892020.0
-      },
-      {
-        "title": "What happens after Walmart leaves town is worse than expected",
-        "url": "https://www.thestreet.com/retail/what-happens-to-the-stores-next-door-after-walmart-leaves-town-sales-and-traffic-plunge-20?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-16 21:47 ET",
-        "pub_ts": 1794883620.0
-      },
-      {
-        "title": "Kroger has a new plan to lower prices",
-        "url": "https://www.thestreet.com/retail/kroger-has-a-new-plan-to-lower-prices?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-16 19:00 ET",
-        "pub_ts": 1794873600.0
       }
     ],
     "V": [
@@ -3185,16 +3185,16 @@
     "CRWD": 1794914574.1835074,
     "ORCL": 1794914574.1835074,
     "COIN": 1794914574.1835074,
-    "LLY": 1794913102.1882393,
-    "MRNA": 1794913102.1882393,
-    "NKE": 1794913102.1882393,
-    "MCD": 1794913102.1882393,
-    "PEP": 1794913102.1882393,
-    "XOM": 1794913102.1882393,
-    "JPM": 1794913102.1882393,
-    "WMT": 1794913102.1882393,
-    "V": 1794913102.1882393,
-    "CAT": 1794913102.1882393
+    "LLY": 1794914678.1271346,
+    "MRNA": 1794914678.1271346,
+    "NKE": 1794914678.1271346,
+    "MCD": 1794914678.1271346,
+    "PEP": 1794914678.1271346,
+    "XOM": 1794914678.1271346,
+    "JPM": 1794914678.1271346,
+    "WMT": 1794914678.1271346,
+    "V": 1794914678.1271346,
+    "CAT": 1794914678.1271346
   },
   "calendar_banner": {
     "level": "idle_with_flash",
