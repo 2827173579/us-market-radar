@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1794904712.507,
-  "updated_at_et": "11-17 03:38 ET",
-  "updated_at_kst": "17:38 KST",
+  "updated_at_ts": 1794904814.676,
+  "updated_at_et": "11-17 03:40 ET",
+  "updated_at_kst": "17:40 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1085,6 +1085,13 @@
     ],
     "GOOGL": [
       {
+        "title": "Jensen’s Exit Is “Great for Anthropic,” Says Dylan Patel. Alphabet and Amazon Should See the Benefit Immediately",
+        "url": "https://www.tikr.com/blog/jensens-exit-is-great-for-anthropic-says-dylan-patel-alphabet-and-amazon-should-see-the-benefit-immediately?ref=yahoofinance&tlnk=yf-261117-jjmcf257&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 02:50 ET",
+        "pub_ts": 1794901813.0
+      },
+      {
         "title": "Elon Musk says Larry Page’s ‘Five Nines’ AI prediction is right, despite their decade-long feud",
         "url": "https://www.thestreet.com/investing/elon-musk-larry-page-five-nines-ai-data-center-compute-prediction?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1111,13 +1118,6 @@
         "source": "Yahoo Finance",
         "time": "11-16 18:41 ET",
         "pub_ts": 1794872479.0
-      },
-      {
-        "title": "Broadcom Is “the Best Play” on Nvidia’s CEO Exit, One Investor Argues. The Reason Is China",
-        "url": "https://www.tikr.com/blog/broadcom-is-the-best-play-on-nvidias-ceo-exit-one-investor-argues-the-reason-is-china?ref=yahoofinance&tlnk=yf-261116-w5j2pv86&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-16 18:12 ET",
-        "pub_ts": 1794870779.0
       }
     ],
     "MSFT": [
@@ -1277,6 +1277,20 @@
         "pub_ts": 1794867245.0
       },
       {
+        "title": "Amazon Lost 40 Leo Satellites as Launch Stays “Extremely Constrained.” That Widens SpaceX’s Lead",
+        "url": "https://www.tikr.com/blog/amazon-lost-40-leo-satellites-as-launch-stays-extremely-constrained-that-widens-spacexs-lead?ref=yahoofinance&tlnk=yf-261117-4rv86xjg&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 02:50 ET",
+        "pub_ts": 1794901816.0
+      },
+      {
+        "title": "Jensen’s Exit Is “Great for Anthropic,” Says Dylan Patel. Alphabet and Amazon Should See the Benefit Immediately",
+        "url": "https://www.tikr.com/blog/jensens-exit-is-great-for-anthropic-says-dylan-patel-alphabet-and-amazon-should-see-the-benefit-immediately?ref=yahoofinance&tlnk=yf-261117-jjmcf257&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 02:50 ET",
+        "pub_ts": 1794901813.0
+      },
+      {
         "title": "Why Catching SpaceX Is Getting Harder: Analyst Calls AST’s 2-Year Rocket Plan ‘Totally Unrealistic’, Rocket Lab Is Still Building One",
         "url": "https://stocktwits.com/news-articles/markets/equity/why-catching-spacex-harder-analyst-ast-2-year-rocket-plan-totally-unrealistic-rocketlab-still-building/cNbanf9R9W5?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1289,20 +1303,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 01:33 ET",
         "pub_ts": 1794897213.0
-      },
-      {
-        "title": "Boeing (BA) ULA Rocket Failure Halts Deployment Of 40 Broadband Satellites",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/boeing-ba-ula-rocket-failure-001959401.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-16 19:19 ET",
-        "pub_ts": 1794874799.0
-      },
-      {
-        "title": "/C O R R E C T I O N - Unifor/",
-        "url": "https://finance.yahoo.com/news/u-p-d-t-e-021400633.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-16 19:10 ET",
-        "pub_ts": 1794874200.0
       }
     ],
     "CRWV": [
@@ -1351,6 +1351,13 @@
         "pub_ts": 1794839093.0
       },
       {
+        "title": "Nebius Group (NBIS) Anchors A New AI Inference Scorecard",
+        "url": "https://finance.yahoo.com/technology/ai/articles/nebius-group-nbis-anchors-ai-081223390.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 03:12 ET",
+        "pub_ts": 1794903143.0
+      },
+      {
         "title": "Down 38% with 571% sales growth: Is Nebius 27% undervalued?",
         "url": "https://finance.yahoo.com/technology/ai/articles/down-38-571-sales-growth-075657195.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1370,13 +1377,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 00:33 ET",
         "pub_ts": 1794893592.0
-      },
-      {
-        "title": "Nebius Plans to Spend More Than $3 for Every $1 of Revenue Next Year. The Stock Has Lost 31% in Three Days",
-        "url": "https://247wallst.com/investing/2026/11/16/nebius-plans-to-spend-more-than-3-for-every-1-of-revenue-next-year-the-stock-has-lost-31-in-three-days/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-16 19:40 ET",
-        "pub_ts": 1794876044.0
       }
     ],
     "APLD": [
@@ -3063,22 +3063,22 @@
     "SOXS": 1794904712.507079,
     "NVDA": 1794904712.507079,
     "AMD": 1794904712.507079,
-    "ASML": 1794903301.8849843,
-    "QCOM": 1794903301.8849843,
-    "AVGO": 1794903301.8849843,
-    "AMAT": 1794903301.8849843,
-    "META": 1794903301.8849843,
-    "GOOGL": 1794903301.8849843,
-    "MSFT": 1794903301.8849843,
-    "AAPL": 1794903301.8849843,
-    "PLTR": 1794903301.8849843,
-    "NOW": 1794903301.8849843,
-    "AMZN": 1794903301.8849843,
-    "CRWV": 1794903301.8849843,
-    "NBIS": 1794903301.8849843,
-    "APLD": 1794903301.8849843,
-    "VST": 1794903301.8849843,
-    "BE": 1794903301.8849843,
+    "ASML": 1794904814.6761677,
+    "QCOM": 1794904814.6761677,
+    "AVGO": 1794904814.6761677,
+    "AMAT": 1794904814.6761677,
+    "META": 1794904814.6761677,
+    "GOOGL": 1794904814.6761677,
+    "MSFT": 1794904814.6761677,
+    "AAPL": 1794904814.6761677,
+    "PLTR": 1794904814.6761677,
+    "NOW": 1794904814.6761677,
+    "AMZN": 1794904814.6761677,
+    "CRWV": 1794904814.6761677,
+    "NBIS": 1794904814.6761677,
+    "APLD": 1794904814.6761677,
+    "VST": 1794904814.6761677,
+    "BE": 1794904814.6761677,
     "CRDO": 1794903448.8687615,
     "COHR": 1794903448.8687615,
     "MRVL": 1794903448.8687615,
