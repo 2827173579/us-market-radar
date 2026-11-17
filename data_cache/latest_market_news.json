@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1794943035.862,
-  "updated_at_et": "11-17 14:17 ET",
-  "updated_at_kst": "04:17 KST",
+  "updated_at_ts": 1794943142.707,
+  "updated_at_et": "11-17 14:19 ET",
+  "updated_at_kst": "04:19 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -793,6 +793,13 @@
     ],
     "TSM": [
       {
+        "title": "TSMC Stocks Fall 4.26% as New US Rule Tightens Checks on Chip Foundries",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/tsmc-stocks-fall-4-26-190103464.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 14:01 ET",
+        "pub_ts": 1794942063.0
+      },
+      {
         "title": "Taiwan Semiconductor Manufacturing Company Limited (TSM) Pulled Back Amid Broader AI Buildout Correction",
         "url": "https://finance.yahoo.com/markets/stocks/articles/taiwan-semiconductor-manufacturing-company-limited-154649598.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -819,13 +826,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 08:01 ET",
         "pub_ts": 1794920460.0
-      },
-      {
-        "title": "BTQ Technologies Provides Q3 2026 Corporate Update Highlighting Commercial Execution and Key Milestones Across Silicon, Blockchain and Quantum-Accelerated Networks",
-        "url": "https://finance.yahoo.com/technology/ai/articles/btq-technologies-provides-q3-2026-123000730.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 07:30 ET",
-        "pub_ts": 1794918600.0
       }
     ],
     "VIXY": [
@@ -3198,19 +3198,19 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1794941562.5659704,
+    "KORU": 1794943142.7068312,
     "SOXL": 1794943035.862014,
     "SPY": 1794943035.862014,
-    "DIA": 1794941562.5659704,
+    "DIA": 1794943142.7068312,
     "SOXX": 1794943035.862014,
-    "QQQ": 1794941562.5659704,
+    "QQQ": 1794943142.7068312,
     "SMH": 1794943035.862014,
     "IWM": 1794943035.862014,
     "IGV": 1794941756.8003943,
-    "TLT": 1794941562.5659704,
+    "TLT": 1794943142.7068312,
     "GLD": 1794943035.862014,
     "SQQQ": 1794941855.0201414,
-    "TSM": 1794941562.5659704,
+    "TSM": 1794943142.7068312,
     "VIXY": 1794943035.862014,
     "SOXS": 1794941756.8003943,
     "NVDA": 1794941756.8003943,
