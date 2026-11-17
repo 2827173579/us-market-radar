@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1794955932.613,
-  "updated_at_et": "11-17 17:52 ET",
-  "updated_at_kst": "07:52 KST",
+  "updated_at_ts": 1794956029.642,
+  "updated_at_et": "11-17 17:53 ET",
+  "updated_at_kst": "07:53 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1150,14 +1150,21 @@
         "pub_ts": 1794946500.0
       },
       {
-        "title": "Nvidia's Complex Orbit",
-        "url": "https://finance.yahoo.com/m/f7117fc6-dd76-3db7-8200-9919f2f435e8/nvidia%27s-complex-orbit.html?.tsrc=rss",
+        "title": "Bill Ackman’s $14 billion bet beyond the Magnificent 7",
+        "url": "https://www.thestreet.com/investing/bill-ackman-sells-microsoft-buys-netflix-13f?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-17 16:15 ET",
-        "pub_ts": 1794950105.0
+        "time": "11-17 17:33 ET",
+        "pub_ts": 1794954780.0
       }
     ],
     "GOOGL": [
+      {
+        "title": "Can this AI help 'democratize' access to extensive wealth planning?",
+        "url": "https://finance.yahoo.com/video/can-this-ai-help-democratize-access-to-extensive-wealth-planning-221525580.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 17:15 ET",
+        "pub_ts": 1794953725.0
+      },
       {
         "title": "Alphabet vs. Amazon: Which Is the Better AI Cloud Stock to Own for the Next 5 Years?",
         "url": "https://www.fool.com/investing/2026/11/17/alphabet-amazon-better-ai-cloud-stock-5-years/?.tsrc=rss",
@@ -1185,16 +1192,16 @@
         "source": "Yahoo Finance",
         "time": "11-17 16:11 ET",
         "pub_ts": 1794949906.0
-      },
-      {
-        "title": "Anthropic’s IPO Price Isn’t So Outlandish. Here’s the Case for the Stock.",
-        "url": "https://finance.yahoo.com/m/b191fb08-44aa-3b9a-8661-c6bbc45c3098/anthropic%E2%80%99s-ipo-price-isn%E2%80%99t.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 16:06 ET",
-        "pub_ts": 1794949560.0
       }
     ],
     "MSFT": [
+      {
+        "title": "AI industry still needs to be 'extremely careful,' Microsoft exec says",
+        "url": "https://finance.yahoo.com/video/ai-industry-still-needs-extremely-223000085.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 17:30 ET",
+        "pub_ts": 1794954600.0
+      },
       {
         "title": "Microsoft AI chief says compute isn't a bottleneck — for now",
         "url": "https://finance.yahoo.com/video/microsoft-ai-chief-says-compute-isnt-a-bottleneck--for-now-213157737.html?.tsrc=rss",
@@ -1222,13 +1229,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 15:19 ET",
         "pub_ts": 1794946751.0
-      },
-      {
-        "title": "Zenity Expands AI Agent Security Coverage Across the Microsoft Ecosystem",
-        "url": "https://finance.yahoo.com/technology/ai/articles/zenity-expands-ai-agent-security-193500080.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 14:35 ET",
-        "pub_ts": 1794944100.0
       }
     ],
     "AAPL": [
@@ -1566,6 +1566,13 @@
     ],
     "CRDO": [
       {
+        "title": "Credo, Marvell settle intellectual property battle over data center cable tech",
+        "url": "https://finance.yahoo.com/technology/articles/credo-marvell-settle-intellectual-property-223628271.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 17:36 ET",
+        "pub_ts": 1794954988.0
+      },
+      {
         "title": "Wall Street Is Watching Nvidia. This AI Stock Deserves Attention Too",
         "url": "https://247wallst.com/investing/2026/11/17/wall-street-is-watching-nvidia-this-ai-stock-deserves-attention-too/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1592,13 +1599,6 @@
         "source": "Yahoo Finance",
         "time": "11-16 06:42 ET",
         "pub_ts": 1794829331.0
-      },
-      {
-        "title": "Is Credo Technology a Better AI Networking Buy Than Broadcom?",
-        "url": "https://www.fool.com/investing/2026/11/15/is-credo-technology-a-better-ai-networking-buy-than-broadcom/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-15 08:57 ET",
-        "pub_ts": 1794751021.0
       }
     ],
     "COHR": [
@@ -1640,6 +1640,20 @@
     ],
     "MRVL": [
       {
+        "title": "Credo, Marvell settle intellectual property battle over data center cable tech",
+        "url": "https://finance.yahoo.com/technology/articles/credo-marvell-settle-intellectual-property-223628271.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 17:36 ET",
+        "pub_ts": 1794954988.0
+      },
+      {
+        "title": "Marvell Technology (MRVL) Gains As Market Dips: What You Should Know",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/marvell-technology-mrvl-gains-market-214503542.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 16:45 ET",
+        "pub_ts": 1794951903.0
+      },
+      {
         "title": "Credo Reaches Settlement in Patent Dispute",
         "url": "https://finance.yahoo.com/technology/articles/credo-reaches-settlement-patent-dispute-210500796.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1659,20 +1673,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 10:33 ET",
         "pub_ts": 1794929637.0
-      },
-      {
-        "title": "MRVL vs. AVGO: Which AI Semiconductor Stock Has an Edge Right Now?",
-        "url": "https://finance.yahoo.com/technology/ai/articles/mrvl-vs-avgo-ai-semiconductor-140700576.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 09:07 ET",
-        "pub_ts": 1794924420.0
-      },
-      {
-        "title": "AurCore Previews 64-Port 800G Switch at SC26, Extending Open Networking for High-Performance Data Centers",
-        "url": "https://finance.yahoo.com/technology/articles/aurcore-previews-64-port-800g-140000621.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 09:00 ET",
-        "pub_ts": 1794924000.0
       }
     ],
     "LITE": [
@@ -3210,31 +3210,31 @@
     "VIXY": 1794955727.4344776,
     "SOXS": 1794955830.0117996,
     "NVDA": 1794955830.0117996,
-    "AMD": 1794954475.8809996,
-    "ASML": 1794954475.8809996,
+    "AMD": 1794956029.642319,
+    "ASML": 1794956029.642319,
     "QCOM": 1794955830.0117996,
     "AVGO": 1794955830.0117996,
     "AMAT": 1794955830.0117996,
-    "META": 1794954475.8809996,
-    "GOOGL": 1794954475.8809996,
-    "MSFT": 1794954475.8809996,
+    "META": 1794956029.642319,
+    "GOOGL": 1794956029.642319,
+    "MSFT": 1794956029.642319,
     "AAPL": 1794955830.0117996,
     "PLTR": 1794955830.0117996,
     "NOW": 1794955830.0117996,
-    "AMZN": 1794954475.8809996,
-    "CRWV": 1794954475.8809996,
-    "NBIS": 1794954475.8809996,
-    "APLD": 1794954475.8809996,
-    "VST": 1794954475.8809996,
-    "BE": 1794954475.8809996,
-    "CRDO": 1794954475.8809996,
-    "COHR": 1794954475.8809996,
-    "MRVL": 1794954475.8809996,
+    "AMZN": 1794956029.642319,
+    "CRWV": 1794956029.642319,
+    "NBIS": 1794956029.642319,
+    "APLD": 1794956029.642319,
+    "VST": 1794956029.642319,
+    "BE": 1794956029.642319,
+    "CRDO": 1794956029.642319,
+    "COHR": 1794956029.642319,
+    "MRVL": 1794956029.642319,
     "LITE": 1794954578.6436217,
-    "AAOI": 1794954475.8809996,
+    "AAOI": 1794956029.642319,
     "SPCX": 1794954578.6436217,
     "ASTS": 1794954778.8893943,
-    "AXTI": 1794954475.8809996,
+    "AXTI": 1794956029.642319,
     "NASA": 1794954778.8893943,
     "LUNR": 1794954578.6436217,
     "TSLA": 1794954778.8893943,
