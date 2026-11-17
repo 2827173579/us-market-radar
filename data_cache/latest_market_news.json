@@ -1,9 +1,22 @@
 {
-  "updated_at_ts": 1794950613.885,
-  "updated_at_et": "11-17 16:23 ET",
-  "updated_at_kst": "06:23 KST",
+  "updated_at_ts": 1794950713.592,
+  "updated_at_et": "11-17 16:25 ET",
+  "updated_at_kst": "06:25 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261118052254227800",
+      "title": "英伟达(NVDA.O)2027财年Q3毛利率74.8%。",
+      "summary": "英伟达(NVDA.O)2027财年Q3毛利率74.8%。",
+      "keywords": [
+        "英伟达"
+      ],
+      "pub_ts": 1794950574.0,
+      "time_et": "11-17 16:22 ET",
+      "time_bj": "05:22 BJ",
+      "time_kst": "06:22 KST",
+      "time_display": "16:22 ET / 05:22 BJ"
+    },
     {
       "id": "20261118052225613800",
       "title": "英伟达(NVDA.O)财报公布后，盘后短线拉升，一度涨超2%。",
@@ -326,20 +339,6 @@
       "time_bj": "23:09 BJ",
       "time_kst": "00:09 KST",
       "time_display": "10:09 ET / 23:09 BJ"
-    },
-    {
-      "id": "20261117224329670800",
-      "title": "特朗普罢免美联储理事库克再遇阻，律师拒绝现有听证安排",
-      "summary": "美联储理事库克的律师表示，白宫尚未解决程序公正性问题，库克没有义务参加听证会。双方围绕调查程序的分歧，令特朗普的罢免行动再添变数。点击查看...",
-      "keywords": [
-        "美联储",
-        "特朗普"
-      ],
-      "pub_ts": 1794926609.0,
-      "time_et": "11-17 09:43 ET",
-      "time_bj": "22:43 BJ",
-      "time_kst": "23:43 KST",
-      "time_display": "09:43 ET / 22:43 BJ"
     }
   ],
   "ticker_news": {
@@ -2491,6 +2490,13 @@
     ],
     "STX": [
       {
+        "title": "Seagate to Participate in Upcoming Investor Events",
+        "url": "https://finance.yahoo.com/technology/articles/seagate-participate-upcoming-investor-events-210500597.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 16:05 ET",
+        "pub_ts": 1794949500.0
+      },
+      {
         "title": "Seagate Stocks Fall 1.6% as Druckenmiller Filing Shows Stake Nearly Tripled Before Slide",
         "url": "https://finance.yahoo.com/markets/stocks/articles/seagate-stocks-fall-1-6-182534915.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2517,13 +2523,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 06:29 ET",
         "pub_ts": 1794914986.0
-      },
-      {
-        "title": "3 AI Hardware Leaders Are Raising Dividends, But Which Offers More Income?",
-        "url": "https://www.dividendstocks.com/articles/3-ai-hardware-leaders-are-raising-dividends-but-which-offers-more-income/?utm_source=yahoofinance&utm_medium=yahoofinance&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-16 10:20 ET",
-        "pub_ts": 1794842400.0
       }
     ],
     "MSTR": [
@@ -2602,6 +2601,20 @@
     ],
     "BTC-USD": [
       {
+        "title": "Why Bitcoin-backed lending needs higher standards now",
+        "url": "https://www.thestreet.com/crypto/innovation/why-bitcoin-backed-lending-needs-higher-standards-now?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 16:11 ET",
+        "pub_ts": 1794949873.0
+      },
+      {
+        "title": "Sector Update: Financial Stocks Fall Late Afternoon",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/sector-financial-stocks-fall-afternoon-210152707.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 16:01 ET",
+        "pub_ts": 1794949312.0
+      },
+      {
         "title": "Bitcoin Investors Are Capitulating—That’s Historically Been a Bottom Signal",
         "url": "https://decrypt.co/383466/bitcoin-investors-capitulating-historical-bottom-signal?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2621,20 +2634,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 14:04 ET",
         "pub_ts": 1794942288.0
-      },
-      {
-        "title": "Bitcoin’s 5-Year Outlook: Is It Worth Buying After This Crash?",
-        "url": "https://247wallst.com/investing/cryptocurrency/2026/11/17/bitcoins-5-year-outlook-is-it-worth-buying-after-this-crash/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 13:51 ET",
-        "pub_ts": 1794941513.0
-      },
-      {
-        "title": "CleanSpark Sank 26% in Two Days After the Texas Election. Is It Time to Sell, or Load Up?",
-        "url": "https://www.tikr.com/blog/cleanspark-sank-26-in-two-days-after-the-texas-election-is-it-time-to-sell-or-load-up?ref=yahoofinance&tlnk=yf-261117-m7r78h82&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 13:50 ET",
-        "pub_ts": 1794941425.0
       }
     ],
     "CRWD": [
@@ -3252,16 +3251,16 @@
     "MU": 1794950613.8851926,
     "SKHY": 1794950214.184178,
     "WDC": 1794950410.895967,
-    "STX": 1794949158.7688837,
+    "STX": 1794950713.5915697,
     "MSTR": 1794950214.184178,
     "SNDK": 1794950214.184178,
-    "BTC-USD": 1794949158.7688837,
+    "BTC-USD": 1794950713.5915697,
     "CRWD": 1794950214.184178,
     "ORCL": 1794950214.184178,
     "COIN": 1794950214.184178,
     "LLY": 1794950613.8851926,
     "MRNA": 1794950410.895967,
-    "NKE": 1794949158.7688837,
+    "NKE": 1794950713.5915697,
     "MCD": 1794950410.895967,
     "PEP": 1794949418.4082391,
     "XOM": 1794949418.4082391,
@@ -3275,7 +3274,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (16:22 ET / 05:22 BJ) [英伟达]：英伟达(NVDA.O)财报公布后，盘后短线拉升，一度涨超2%。",
+    "detail": "⚡ 最新核心快讯 (16:22 ET / 05:22 BJ) [英伟达]：英伟达(NVDA.O)2027财年Q3毛利率74.8%。",
     "event_name": "",
     "minutes_left": 0
   }
