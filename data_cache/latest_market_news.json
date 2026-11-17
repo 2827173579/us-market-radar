@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1794926864.724,
-  "updated_at_et": "11-17 09:47 ET",
-  "updated_at_kst": "23:47 KST",
+  "updated_at_ts": 1794926961.174,
+  "updated_at_et": "11-17 09:49 ET",
+  "updated_at_kst": "23:49 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -790,6 +790,13 @@
     ],
     "TSM": [
       {
+        "title": "Applied Materials vs. Taiwan Semiconductor Manufacturing: Which Tech Stock Is a Better Buy for 2027?",
+        "url": "https://www.fool.com/coverage/better-buy/2026/11/17/applied-materials-vs-taiwan-semiconductor-manufacturing-which-tech-stock-is-a-better-buy-for-2027/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 09:23 ET",
+        "pub_ts": 1794925382.0
+      },
+      {
         "title": "TSM Plans $500M Investment in Anthropic IPO: Will the Pivot Pay Off?",
         "url": "https://finance.yahoo.com/technology/ai/articles/tsm-plans-500m-investment-anthropic-130100066.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -816,13 +823,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 02:08 ET",
         "pub_ts": 1794899280.0
-      },
-      {
-        "title": "Taiwan Semiconductor Manufacturing (NYSE:TSM) Hit A Revenue High, Is The Stock Fully Valued?",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/taiwan-semiconductor-manufacturing-nyse-tsm-030943458.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-16 22:09 ET",
-        "pub_ts": 1794884983.0
       }
     ],
     "VIXY": [
@@ -901,39 +901,39 @@
     ],
     "NVDA": [
       {
-        "title": "Nvidia board forms new export control committee",
-        "url": "https://finance.yahoo.com/video/nvidia-board-forms-new-export-control-committee-140235995.html?.tsrc=rss",
+        "title": "It's not just AI — the dollar 'wrecking ball' is leveling gold and bitcoin as the debasement trade unravels",
+        "url": "https://finance.yahoo.com/markets/article/its-not-just-ai--the-dollar-wrecking-ball-is-leveling-gold-and-bitcoin-as-the-debasement-trade-unravels-143626482.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-17 09:02 ET",
-        "pub_ts": 1794924155.0
+        "time": "11-17 09:36 ET",
+        "pub_ts": 1794926186.0
       },
       {
-        "title": "Exchange-Traded Funds, Equity Futures Mixed Pre-Bell Tuesday as Investors Await Nvidia Earnings",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/exchange-traded-funds-equity-futures-141622060.html?.tsrc=rss",
+        "title": "Nvidia Earnings: Will Results, Guidance Calm Investors Amid Turmoil? (Live Coverage)",
+        "url": "https://finance.yahoo.com/m/ef40b1a2-2bff-390f-b0d5-c281b4d503ef/nvidia-earnings%3A-will.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-17 09:16 ET",
-        "pub_ts": 1794924982.0
+        "time": "11-17 09:39 ET",
+        "pub_ts": 1794926371.0
       },
       {
-        "title": "GM Just Switched Stock Exchanges. Here’s Why That Matters for Investors",
-        "url": "https://www.fool.com/investing/2026/11/17/gm-just-switched-stock-exchanges-here-s-why-that-matters-for-investors/?.tsrc=rss",
+        "title": "Cathie Wood’s ARK Invest Sells $85 Million of Nvidia, Adds Block, Circle and Coinbase",
+        "url": "https://www.cryptoprowl.com/releases/cathie-woods-ark-invest-sells-85-million-of-nvidia-adds-block-circle-and-coinbase-7950?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-17 09:07 ET",
-        "pub_ts": 1794924422.0
+        "time": "11-17 09:38 ET",
+        "pub_ts": 1794926280.0
       },
       {
-        "title": "TSX futures edge lower ahead of Nvidia earnings poised to test AI trade",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/tsx-futures-edge-lower-ahead-140609784.html?.tsrc=rss",
+        "title": "Blockmate orders first NVIDIA B200 node as customer demand emerges",
+        "url": "https://www.proactiveinvestors.com/companies/news/1101935/blockmate-orders-first-nvidia-b200-node-as-customer-demand-emerges-1101935.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-17 09:06 ET",
-        "pub_ts": 1794924369.0
+        "time": "11-17 09:35 ET",
+        "pub_ts": 1794926100.0
       },
       {
-        "title": "Penguin Solutions Expands ComputeAI Portfolio with NVIDIA Vera Rubin NVL72 Rack-Scale Systems",
-        "url": "https://finance.yahoo.com/technology/ai/articles/penguin-solutions-expands-computeai-portfolio-140500646.html?.tsrc=rss",
+        "title": "Anthropic Plans $26 Billion Concurrent Private Placement Following IPO; Alphabet's Google, Nvidia, AMD to Take Part",
+        "url": "https://finance.yahoo.com/technology/ai/articles/anthropic-plans-26-billion-concurrent-143354928.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-17 09:05 ET",
-        "pub_ts": 1794924300.0
+        "time": "11-17 09:33 ET",
+        "pub_ts": 1794926034.0
       }
     ],
     "AMD": [
@@ -3195,22 +3195,22 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1794925447.8942034,
-    "SOXL": 1794925447.8942034,
-    "SPY": 1794925447.8942034,
-    "DIA": 1794925447.8942034,
-    "SOXX": 1794925447.8942034,
-    "QQQ": 1794925447.8942034,
-    "SMH": 1794925447.8942034,
-    "IWM": 1794925447.8942034,
-    "IGV": 1794925447.8942034,
-    "TLT": 1794925447.8942034,
-    "GLD": 1794925447.8942034,
-    "SQQQ": 1794925447.8942034,
-    "TSM": 1794925447.8942034,
-    "VIXY": 1794925447.8942034,
-    "SOXS": 1794925447.8942034,
-    "NVDA": 1794925447.8942034,
+    "KORU": 1794926961.173867,
+    "SOXL": 1794926961.173867,
+    "SPY": 1794926961.173867,
+    "DIA": 1794926961.173867,
+    "SOXX": 1794926961.173867,
+    "QQQ": 1794926961.173867,
+    "SMH": 1794926961.173867,
+    "IWM": 1794926961.173867,
+    "IGV": 1794926961.173867,
+    "TLT": 1794926961.173867,
+    "GLD": 1794926961.173867,
+    "SQQQ": 1794926961.173867,
+    "TSM": 1794926961.173867,
+    "VIXY": 1794926961.173867,
+    "SOXS": 1794926961.173867,
+    "NVDA": 1794926961.173867,
     "AMD": 1794925549.3651383,
     "ASML": 1794925549.3651383,
     "QCOM": 1794925549.3651383,
