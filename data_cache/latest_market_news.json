@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1794954578.644,
-  "updated_at_et": "11-17 17:29 ET",
-  "updated_at_kst": "07:29 KST",
+  "updated_at_ts": 1794954679.881,
+  "updated_at_et": "11-17 17:31 ET",
+  "updated_at_kst": "07:31 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2121,6 +2121,13 @@
         "pub_ts": 1794952621.0
       },
       {
+        "title": "Intel shareholders sue CEO, CFO after stock rout",
+        "url": "https://www.cfodive.com/news/intel-shareholders-sue-ceo-cfo-stock-drop-ai-cpu/874979/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 16:01 ET",
+        "pub_ts": 1794949300.0
+      },
+      {
         "title": "ASUS Showcases Full-Stack AI Infrastructure at SC26, Featuring Intel and AMD Platforms",
         "url": "https://finance.yahoo.com/technology/ai/articles/asus-showcases-full-stack-ai-204300656.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2140,13 +2147,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 14:06 ET",
         "pub_ts": 1794942370.0
-      },
-      {
-        "title": "Intel Stock Is Falling After Parting Blow From Jensen Huang",
-        "url": "https://finance.yahoo.com/m/88a77f9e-b266-31cb-8d20-56c4fec6786d/intel-stock-is-falling-after.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 13:07 ET",
-        "pub_ts": 1794938820.0
       }
     ],
     "VRT": [
@@ -3235,7 +3235,7 @@
     "RKLB": 1794953274.6844869,
     "KO": 1794954578.6436217,
     "FLY": 1794954578.6436217,
-    "INTC": 1794953174.434445,
+    "INTC": 1794954679.8806307,
     "VRT": 1794953274.6844869,
     "HPE": 1794953274.6844869,
     "DELL": 1794953274.6844869,
@@ -3262,7 +3262,7 @@
     "WMT": 1794953675.1255982,
     "V": 1794953475.3327162,
     "CAT": 1794953675.1255982,
-    "FN": 1794953174.434445,
+    "FN": 1794954679.8806307,
     "GLW": 1794954578.6436217
   },
   "calendar_banner": {
