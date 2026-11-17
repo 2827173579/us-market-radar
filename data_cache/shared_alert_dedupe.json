@@ -787,9 +787,17 @@
     "2026-11-17:DEFENSIVE_FLIGHT:-3.1": {
       "device": "PC",
       "ts": 1794919095.857056
+    },
+    "JIN10_FLASH:20261117210145634800": {
+      "device": "PC",
+      "ts": 1794920854.5383825
+    },
+    "2026-11-17:NVDA/MCD:STOP_LOSS+TAKE_PROFIT": {
+      "device": "PC",
+      "ts": 1794920953.1433983
     }
   },
   "device": "PC",
-  "last_heartbeat_ts": 1794920766.5838668,
-  "updated_at": "2026-11-17T13:06:06.584101+00:00"
+  "last_heartbeat_ts": 1794920871.3825629,
+  "updated_at": "2026-11-17T13:09:13.143690+00:00"
 }
