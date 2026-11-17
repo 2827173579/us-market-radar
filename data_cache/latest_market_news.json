@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1794948167.881,
-  "updated_at_et": "11-17 15:42 ET",
-  "updated_at_kst": "05:42 KST",
+  "updated_at_ts": 1794948265.668,
+  "updated_at_et": "11-17 15:44 ET",
+  "updated_at_kst": "05:44 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1125,6 +1125,13 @@
     ],
     "META": [
       {
+        "title": "Meta Platforms, Inc. (META): Strong Advertising Growth Supports Its Long-Term Investment Case",
+        "url": "https://finance.yahoo.com/technology/articles/meta-platforms-inc-meta-strong-202131281.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 15:21 ET",
+        "pub_ts": 1794946891.0
+      },
+      {
         "title": "Aptos lifts its APT burn rate to 2.2 million tokens a year",
         "url": "https://www.thestreet.com/crypto/innovation/aptos-lifts-its-apt-burn-rate-to-2-2-million-tokens-a-year?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1137,13 +1144,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 12:07 ET",
         "pub_ts": 1794935220.0
-      },
-      {
-        "title": "Glenview Makes Two Very Different Moves on CVS and Meta",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/glenview-makes-two-very-different-155905907.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 10:59 ET",
-        "pub_ts": 1794931145.0
       },
       {
         "title": "Compute Desk raises $45M led by Lightspeed to build infrastructure for hedging compute",
@@ -1161,6 +1161,20 @@
       }
     ],
     "GOOGL": [
+      {
+        "title": "Ken Fisher Portfolio Review: 5 Highest-Conviction Technology Stocks for Long-Term Growth",
+        "url": "https://finance.yahoo.com/technology/articles/ken-fisher-portfolio-review-5-202007199.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 15:20 ET",
+        "pub_ts": 1794946807.0
+      },
+      {
+        "title": "Prediction: SpaceX Stock Could Go Parabolic After Anthropic's IPO. Here's Why.",
+        "url": "https://www.fool.com/investing/2026/11/17/prediction-spacex-stock-could-go-parabolic-after-anthropic-s-ipo-here-s-why/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 15:20 ET",
+        "pub_ts": 1794946802.0
+      },
       {
         "title": "This Critical Energy Bill Is A Key Priority For The Lame Duck GOP Congress",
         "url": "https://finance.yahoo.com/m/a711fc7e-a753-3657-a0e8-ef2d4e4aa2f5/this-critical-energy-bill-is.html?.tsrc=rss",
@@ -1181,29 +1195,29 @@
         "source": "Yahoo Finance",
         "time": "11-17 14:10 ET",
         "pub_ts": 1794942646.0
-      },
-      {
-        "title": "The 5 Best Stocks in George Soros’s Portfolio",
-        "url": "https://www.tikr.com/blog/the-5-best-stocks-in-george-soross-portfolio?ref=yahoofinance&tlnk=yf-261117-8999fh2f&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 14:10 ET",
-        "pub_ts": 1794942612.0
-      },
-      {
-        "title": "Adobe (ADBE) Turns Creative Cloud And Firefly Into AI Studios With New Partnerships",
-        "url": "https://finance.yahoo.com/technology/ai/articles/adobe-adbe-turns-creative-cloud-191007810.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 14:10 ET",
-        "pub_ts": 1794942607.0
       }
     ],
     "MSFT": [
+      {
+        "title": "Microsoft's AI pitch at Ignite: Cheaper models as business 'token spend is going through the roof'",
+        "url": "https://finance.yahoo.com/markets/article/microsoft-ignite-focuses-on-ai-models-for-specific-tasks-lowering-costs-for-enterprise-203433266.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 15:34 ET",
+        "pub_ts": 1794947673.0
+      },
       {
         "title": "Is AI to blame for basic IT gaps in Big Tech, airlines, and more?",
         "url": "https://finance.yahoo.com/video/is-ai-to-blame-for-basic-it-gaps-in-big-tech-airlines-and-more-184504929.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-17 13:45 ET",
         "pub_ts": 1794941104.0
+      },
+      {
+        "title": "BNY and Microsoft complete first AI agent-negotiated Treasury trade",
+        "url": "https://finance.yahoo.com/technology/ai/articles/bny-microsoft-complete-first-ai-201911277.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 15:19 ET",
+        "pub_ts": 1794946751.0
       },
       {
         "title": "Zenity Expands AI Agent Security Coverage Across the Microsoft Ecosystem",
@@ -1218,20 +1232,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 14:31 ET",
         "pub_ts": 1794943860.0
-      },
-      {
-        "title": "Microsoft Stocks Move Lower Before Ignite as Anthropic Discloses $47.2 Billion Compute Floor",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/microsoft-stocks-move-lower-ignite-182943462.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 13:29 ET",
-        "pub_ts": 1794940183.0
-      },
-      {
-        "title": "Microsoft and organizations across industries launch AI Transparency Initiative to strengthen enterprise trust in AI models and agents",
-        "url": "https://finance.yahoo.com/technology/ai/articles/microsoft-organizations-across-industries-launch-181500607.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 13:15 ET",
-        "pub_ts": 1794939300.0
       }
     ],
     "AAPL": [
@@ -1428,6 +1428,13 @@
         "pub_ts": 1794920400.0
       },
       {
+        "title": "Nebius Group Heads These 3 AI Stocks To Watch",
+        "url": "https://finance.yahoo.com/technology/ai/articles/nebius-group-heads-3-ai-201140311.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 15:11 ET",
+        "pub_ts": 1794946300.0
+      },
+      {
         "title": "3 Insider Backed Growth Stocks With At Least 40% Earnings Growth",
         "url": "https://finance.yahoo.com/markets/stocks/articles/3-insider-backed-growth-stocks-181023052.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1447,13 +1454,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 06:15 ET",
         "pub_ts": 1794914130.0
-      },
-      {
-        "title": "Situational Awareness reports 3.4% Nebius stake, down from 5.6% in May filing",
-        "url": "https://blockspace.media/insight/situational-awareness-nebius-stake-declines/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 05:19 ET",
-        "pub_ts": 1794910747.0
       }
     ],
     "APLD": [
@@ -1761,6 +1761,13 @@
         "pub_ts": 1794943202.0
       },
       {
+        "title": "Prediction: SpaceX Stock Could Go Parabolic After Anthropic's IPO. Here's Why.",
+        "url": "https://www.fool.com/investing/2026/11/17/prediction-spacex-stock-could-go-parabolic-after-anthropic-s-ipo-here-s-why/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 15:20 ET",
+        "pub_ts": 1794946802.0
+      },
+      {
         "title": "Nvidia Sold a Quarter of Its Intel Shares and More Than Half Its Nokia Stake. SpaceX Is Now Its Biggest Investment",
         "url": "https://247wallst.com/investing/2026/11/17/nvidia-sold-a-quarter-of-its-intel-shares-and-more-than-half-its-nokia-stake-spacex-is-now-its-biggest-investment/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1780,13 +1787,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 13:49 ET",
         "pub_ts": 1794941364.0
-      },
-      {
-        "title": "SPCX Stock In Focus: SpaceX To Reportedly Launch $4B Bond Sale This Week",
-        "url": "https://stocktwits.com/news-articles/markets/equity/spcx-stock-in-focus-spacex-to-reportedly-launch-4-b-bond-sale-this-week/cNbOcypR9hI?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 13:07 ET",
-        "pub_ts": 1794938824.0
       }
     ],
     "ASTS": [
@@ -3167,6 +3167,13 @@
         "pub_ts": 1794927884.0
       },
       {
+        "title": "Corning (GLW) In Focus As Reported US Curbs Hit Chinese Data Center Gear",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/corning-glw-focus-reported-us-200923359.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 15:09 ET",
+        "pub_ts": 1794946163.0
+      },
+      {
         "title": "Zacks.com featured highlights include NVIDIA, J.M. Smucker, Taiwan Semiconductor, Corning, Lockheed and Cardinal Health",
         "url": "https://finance.yahoo.com/markets/stocks/articles/zacks-com-featured-highlights-nvidia-070800949.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3186,13 +3193,6 @@
         "source": "Yahoo Finance",
         "time": "11-16 09:10 ET",
         "pub_ts": 1794838200.0
-      },
-      {
-        "title": "Here's How Much You Can Expect $10,000 in Corning (GLW) Stock to Pay You in Dividends Next Year",
-        "url": "https://www.fool.com/investing/2026/11/13/heres-how-much-you-can-expect-10000-in-corning-glw/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-13 05:15 ET",
-        "pub_ts": 1794564900.0
       }
     ]
   },
@@ -3213,38 +3213,38 @@
     "VIXY": 1794947774.340662,
     "SOXS": 1794948070.1104274,
     "NVDA": 1794948070.1104274,
-    "AMD": 1794946684.7100964,
-    "ASML": 1794946684.7100964,
+    "AMD": 1794948265.66836,
+    "ASML": 1794948265.66836,
     "QCOM": 1794948070.1104274,
     "AVGO": 1794948167.8811972,
     "AMAT": 1794948167.8811972,
-    "META": 1794946684.7100964,
-    "GOOGL": 1794946684.7100964,
-    "MSFT": 1794946684.7100964,
+    "META": 1794948265.66836,
+    "GOOGL": 1794948265.66836,
+    "MSFT": 1794948265.66836,
     "AAPL": 1794948070.1104274,
     "PLTR": 1794948167.8811972,
     "NOW": 1794948167.8811972,
-    "AMZN": 1794946684.7100964,
-    "CRWV": 1794946684.7100964,
-    "NBIS": 1794946684.7100964,
-    "APLD": 1794946684.7100964,
-    "VST": 1794946684.7100964,
-    "BE": 1794946684.7100964,
-    "CRDO": 1794946684.7100964,
-    "COHR": 1794946684.7100964,
-    "MRVL": 1794946684.7100964,
-    "LITE": 1794946684.7100964,
-    "AAOI": 1794946684.7100964,
-    "SPCX": 1794946684.7100964,
+    "AMZN": 1794948265.66836,
+    "CRWV": 1794948265.66836,
+    "NBIS": 1794948265.66836,
+    "APLD": 1794948265.66836,
+    "VST": 1794948265.66836,
+    "BE": 1794948265.66836,
+    "CRDO": 1794948265.66836,
+    "COHR": 1794948265.66836,
+    "MRVL": 1794948265.66836,
+    "LITE": 1794948265.66836,
+    "AAOI": 1794948265.66836,
+    "SPCX": 1794948265.66836,
     "ASTS": 1794946994.5135324,
-    "AXTI": 1794946684.7100964,
+    "AXTI": 1794948265.66836,
     "NASA": 1794946994.5135324,
-    "LUNR": 1794946684.7100964,
+    "LUNR": 1794948265.66836,
     "TSLA": 1794946994.5135324,
     "AXP": 1794946994.5135324,
     "RKLB": 1794946994.5135324,
-    "KO": 1794946684.7100964,
-    "FLY": 1794946684.7100964,
+    "KO": 1794948265.66836,
+    "FLY": 1794948265.66836,
     "INTC": 1794946896.512581,
     "VRT": 1794946994.5135324,
     "HPE": 1794946994.5135324,
@@ -3273,7 +3273,7 @@
     "V": 1794947288.8075278,
     "CAT": 1794947482.668002,
     "FN": 1794946896.512581,
-    "GLW": 1794946684.7100964
+    "GLW": 1794948265.66836
   },
   "calendar_banner": {
     "level": "idle_with_flash",
