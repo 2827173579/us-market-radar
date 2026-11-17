@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1794945900.106,
-  "updated_at_et": "11-17 15:05 ET",
-  "updated_at_kst": "05:05 KST",
+  "updated_at_ts": 1794945999.567,
+  "updated_at_et": "11-17 15:06 ET",
+  "updated_at_kst": "05:06 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2605,6 +2605,13 @@
     ],
     "BTC-USD": [
       {
+        "title": "Hackers target 178 major websites with crypto-stealing code",
+        "url": "https://finance.yahoo.com/video/hackers-target-178-major-websites-200000857.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 15:00 ET",
+        "pub_ts": 1794945600.0
+      },
+      {
         "title": "Robinhood Sinks 6% for a Second Day, Circle Down 5%, Affirm Down 5% as Fintech Stocks Slide",
         "url": "https://www.tikr.com/blog/robinhood-sinks-6-for-a-second-day-circle-down-5-affirm-down-5-as-fintech-stocks-slide?ref=yahoofinance&tlnk=yf-261117-96w843h5&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2631,13 +2638,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 13:38 ET",
         "pub_ts": 1794940732.0
-      },
-      {
-        "title": "Bitcoin Falls Below $70,000. Here's Where It Could Finish the Year",
-        "url": "https://www.fool.com/investing/2026/11/17/bitcoin-falls-below-70-000-here-s-where-it-could-finish-the-year/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 13:31 ET",
-        "pub_ts": 1794940262.0
       }
     ],
     "CRWD": [
@@ -3255,16 +3255,16 @@
     "MU": 1794945900.1059532,
     "SKHY": 1794945509.6820283,
     "WDC": 1794945704.272877,
-    "STX": 1794944420.9891608,
+    "STX": 1794945999.5671377,
     "MSTR": 1794945509.6820283,
     "SNDK": 1794945509.6820283,
-    "BTC-USD": 1794944420.9891608,
+    "BTC-USD": 1794945999.5671377,
     "CRWD": 1794945509.6820283,
     "ORCL": 1794945509.6820283,
     "COIN": 1794945509.6820283,
     "LLY": 1794945900.1059532,
     "MRNA": 1794945704.272877,
-    "NKE": 1794944420.9891608,
+    "NKE": 1794945999.5671377,
     "MCD": 1794945704.272877,
     "PEP": 1794944614.6689618,
     "XOM": 1794944614.6689618,
