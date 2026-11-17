@@ -1,9 +1,26 @@
 {
-  "updated_at_ts": 1794922332.882,
-  "updated_at_et": "11-17 08:32 ET",
-  "updated_at_kst": "22:32 KST",
+  "updated_at_ts": 1794922432.363,
+  "updated_at_et": "11-17 08:33 ET",
+  "updated_at_kst": "22:33 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261117213251090800",
+      "title": "整理：每日美股市场要闻速递（11月17日）",
+      "summary": "重要新闻 1. 美联储穆萨勒姆：美联储或需在春季前多次加息，要尽快行动。 个股新闻 1. 腾讯音乐(TME.N)2026年Q3营收89.41亿元，上年同期84.63亿元。 2. 壳牌(SHEL.N)马来西亚Rosmari-Marjoram开发项目首次产出天然气。 3. 市场消息：英伟达(NVDA.O)董事会成立国家安全与出口管制监督委员会。 4. 京东(JD.O)2026年Q3营收3096亿元，上年同期2990.59亿元，同比增长3.5%。 5. 据华尔街日报：谷歌(GOOG.O)与地热初创公司Quaise Energy签署电力协议。 6. 华特迪士尼(DIS.N)2026财年Q4营收259.5亿美元，上年同期224.64亿美元。 7. Anthropic：已获准在纳斯达克全球精选市场上市A类普通股，股票代码为“ANT”。 8. 法拉第未来(FFIE.O)第三季度营业利润为负1950万美元，第三季度净亏损980万美元。 9. 微博(WB.O)2026年Q3营收4.10亿美元，上年同期4.42亿美元，三季度净收入同比下降7%。 10. 英伟达(NVDA.O)披露三季度持有SpaceX(SPCX.O)1.305亿股股份，较此前增加770万股。 11. 伯克希尔哈撒韦第三季度减持美国银行(BAC.N)2750万股，未对苹果(AAPL.O)持仓作出调整。 12. 据英国金融时报：雪佛龙(CVX.N)接近以约50亿美元收购黑石集团(BX.N)支持的美国墨西哥湾石油生产商。 13. 老虎全球管理基金增持英伟达(NVDA.O)与英特尔(INTC.O)，减持Alphabet(GOOG.O)、亚马逊(AMZN.O)与Meta Platforms(META.O)。 14. 美国副国务卿赫尔伯格：美国无意将爱立信、阿斯麦、三星或SK海力士(SKHY.O)等供应商列为打击目标，也无意将它们排除在美国供应链之外。",
+      "keywords": [
+        "美联储",
+        "加息",
+        "英伟达",
+        "苹果",
+        "纳斯达克"
+      ],
+      "pub_ts": 1794922371.0,
+      "time_et": "11-17 08:32 ET",
+      "time_bj": "21:32 BJ",
+      "time_kst": "22:32 KST",
+      "time_display": "08:32 ET / 21:32 BJ"
+    },
     {
       "id": "20261117212309937800",
       "title": "布伦特原油日内涨幅达2.00%，现报93.70美元/桶；WTI原油短线上扬0.4美元，报…",
@@ -323,19 +340,6 @@
       "time_bj": "17:31 BJ",
       "time_kst": "18:31 KST",
       "time_display": "04:31 ET / 17:31 BJ"
-    },
-    {
-      "id": "20261117171820680800",
-      "title": "日本牵头组建“亚洲版IEA”，中东产油国也有望入局",
-      "summary": "面对中东局势带来的供应链风险，日本希望整合亚洲国家的石油储备资源，并利用本国闲置储油能力，为区域能源合作提供基础设施支持，并推动消费国与产油国加强合作。",
-      "keywords": [
-        "中东"
-      ],
-      "pub_ts": 1794907100.0,
-      "time_et": "11-17 04:18 ET",
-      "time_bj": "17:18 BJ",
-      "time_kst": "18:18 KST",
-      "time_display": "04:18 ET / 17:18 BJ"
     }
   ],
   "ticker_news": {
@@ -443,11 +447,11 @@
         "pub_ts": 1794913240.0
       },
       {
-        "title": "Palantir (PLTR) Sees $117.4 Million in Net ETF Buying on Nov. 13",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/palantir-pltr-sees-117-4-110149586.html?.tsrc=rss",
+        "title": "Cathie Wood and Jim Cramer Agree on These 10 Stocks: Latest 13F",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/cathie-wood-jim-cramer-agree-132819758.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-17 06:01 ET",
-        "pub_ts": 1794913309.0
+        "time": "11-17 08:28 ET",
+        "pub_ts": 1794922099.0
       }
     ],
     "DIA": [
@@ -526,6 +530,13 @@
     ],
     "QQQ": [
       {
+        "title": "Forget QQQ: The Company Behind It Runs the Same Index for $30 Less a Year on a $100K Balance",
+        "url": "https://247wallst.com/investing/etf/2026/11/17/forget-qqq-the-company-behind-it-runs-the-same-index-for-30-less-a-year-on-a-100k-balance-2/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 08:13 ET",
+        "pub_ts": 1794921219.0
+      },
+      {
         "title": "The Nasdaq-100 Is Headed for Its Worst November Since 2008",
         "url": "https://247wallst.com/investing/2026/11/17/the-nasdaq-100-is-headed-for-its-worst-november-since-2008/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -552,13 +563,6 @@
         "source": "Yahoo Finance",
         "time": "11-16 13:19 ET",
         "pub_ts": 1794853155.0
-      },
-      {
-        "title": "Palantir (PLTR) Sees $117.4 Million in Net ETF Buying on Nov. 13",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/palantir-pltr-sees-117-4-110149586.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 06:01 ET",
-        "pub_ts": 1794913309.0
       }
     ],
     "SMH": [
@@ -792,6 +796,13 @@
         "pub_ts": 1794910080.0
       },
       {
+        "title": "TSMC Is Up 23% in 2026 With Demand “Far Above” Supply: Take Profits, or Buy More?",
+        "url": "https://www.tikr.com/blog/tsmc-is-up-23-in-2026-with-demand-far-above-supply-take-profits-or-buy-more?ref=yahoofinance&tlnk=yf-261117-hrj2cw8r&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 02:57 ET",
+        "pub_ts": 1794902255.0
+      },
+      {
         "title": "Zacks.com featured highlights include NVIDIA, J.M. Smucker, Taiwan Semiconductor, Corning, Lockheed and Cardinal Health",
         "url": "https://finance.yahoo.com/markets/stocks/articles/zacks-com-featured-highlights-nvidia-070800949.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -811,13 +822,6 @@
         "source": "Yahoo Finance",
         "time": "11-16 19:41 ET",
         "pub_ts": 1794876070.0
-      },
-      {
-        "title": "Top Analyst Reports for Taiwan Semiconductor, Johnson & Johnson and Palantir",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/top-analyst-reports-taiwan-semiconductor-205900812.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-16 15:59 ET",
-        "pub_ts": 1794862740.0
       }
     ],
     "VIXY": [
@@ -910,25 +914,25 @@
         "pub_ts": 1794920330.0
       },
       {
-        "title": "Bank of America doubles down on Nvidia ahead of earnings",
-        "url": "https://www.thestreet.com/investing/stocks/bank-of-america-maintains-nvidia-buy-rating-ahead-of-q3-earnings?.tsrc=rss",
+        "title": "Nvidia Earnings Prediction Market Preview: What Will Colette Kress Say About Jensen Huang’s Exit?",
+        "url": "https://www.benzinga.com/markets/prediction-markets/26/11/63337722/nvidia-earnings-preview?utm_source=yahooFinance&utm_campaign=partner_feed&utm_medium=referral&.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-17 08:03 ET",
-        "pub_ts": 1794920580.0
+        "time": "11-17 08:24 ET",
+        "pub_ts": 1794921851.0
       },
       {
-        "title": "Forget Nvidia Stock at $160 per Share. Buy This Semiconductor ETF Instead.",
-        "url": "https://www.fool.com/investing/2026/11/17/forget-nvidia-stock-at-160-per-share-buy-this-semiconductor-etf-instead/?.tsrc=rss",
+        "title": "Stock Market Today: Dow Slides Ahead Of Retail Sales; Nvidia Rises With Earnings Report On Tap (Live Coverage)",
+        "url": "https://finance.yahoo.com/m/0c9330f2-68c3-38ef-9244-7dbdfd0853b7/stock-market-today%3A-dow.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-17 07:58 ET",
-        "pub_ts": 1794920282.0
+        "time": "11-17 08:10 ET",
+        "pub_ts": 1794921012.0
       },
       {
-        "title": "Equity Futures Mixed Pre-Bell Ahead of Nvidia Earnings",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/equity-futures-mixed-pre-bell-125715825.html?.tsrc=rss",
+        "title": "Sam Altman Says It’s “Hard to Imagine the AI Revolution Without Jensen”",
+        "url": "https://247wallst.com/investing/2026/11/17/sam-altman-says-its-hard-to-imagine-the-ai-revolution-without-jensen/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-17 07:57 ET",
-        "pub_ts": 1794920235.0
+        "time": "11-17 08:07 ET",
+        "pub_ts": 1794920849.0
       }
     ],
     "AMD": [
@@ -3190,22 +3194,22 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1794920841.8416297,
-    "SOXL": 1794920841.8416297,
-    "SPY": 1794920841.8416297,
-    "DIA": 1794920841.8416297,
-    "SOXX": 1794920841.8416297,
-    "QQQ": 1794920841.8416297,
-    "SMH": 1794920841.8416297,
-    "IWM": 1794920841.8416297,
-    "IGV": 1794920841.8416297,
-    "TLT": 1794920841.8416297,
-    "GLD": 1794920841.8416297,
-    "SQQQ": 1794920841.8416297,
-    "TSM": 1794920841.8416297,
-    "VIXY": 1794920841.8416297,
-    "SOXS": 1794920841.8416297,
-    "NVDA": 1794920841.8416297,
+    "KORU": 1794922432.3626409,
+    "SOXL": 1794922432.3626409,
+    "SPY": 1794922432.3626409,
+    "DIA": 1794922432.3626409,
+    "SOXX": 1794922432.3626409,
+    "QQQ": 1794922432.3626409,
+    "SMH": 1794922432.3626409,
+    "IWM": 1794922432.3626409,
+    "IGV": 1794922432.3626409,
+    "TLT": 1794922432.3626409,
+    "GLD": 1794922432.3626409,
+    "SQQQ": 1794922432.3626409,
+    "TSM": 1794922432.3626409,
+    "VIXY": 1794922432.3626409,
+    "SOXS": 1794922432.3626409,
+    "NVDA": 1794922432.3626409,
     "AMD": 1794920944.0347805,
     "ASML": 1794920944.0347805,
     "QCOM": 1794920944.0347805,
@@ -3271,7 +3275,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (08:23 ET / 21:23 BJ) [原油]：布伦特原油日内涨幅达2.00%，现报93.70美元/桶；WTI原油短线上扬0.4美元，报86.67美元/桶。",
+    "detail": "⚡ 最新核心快讯 (08:32 ET / 21:32 BJ) [美联储] [加息] [英伟达]：重要新闻 1. 美联储穆萨勒姆：美联储或需在春季前多次加息，要尽快行动。 个股新闻 1. 腾讯音乐(TME.N)2026年Q3营收89.41亿元，上年同期84.63亿元。 2. 壳牌(SHE",
     "event_name": "",
     "minutes_left": 0
   }
