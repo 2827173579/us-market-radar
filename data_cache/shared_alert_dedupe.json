@@ -827,9 +827,13 @@
     "2026-11-17:pre_market": {
       "device": "PC",
       "ts": 1794925279.8468254
+    },
+    "2026-11-17:META/LLY:5M_ENTRY+TAKE_PROFIT": {
+      "device": "PC",
+      "ts": 1794925557.554578
     }
   },
   "device": "PC",
-  "last_heartbeat_ts": 1794925373.897195,
-  "updated_at": "2026-11-17T14:22:53.897651+00:00"
+  "last_heartbeat_ts": 1794925475.284821,
+  "updated_at": "2026-11-17T14:25:57.555110+00:00"
 }
