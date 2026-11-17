@@ -1,9 +1,22 @@
 {
-  "updated_at_ts": 1794954174.449,
-  "updated_at_et": "11-17 17:22 ET",
-  "updated_at_kst": "07:22 KST",
+  "updated_at_ts": 1794954278.329,
+  "updated_at_et": "11-17 17:24 ET",
+  "updated_at_kst": "07:24 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261118062311717800",
+      "title": "英伟达临时CEO克雷斯：仍有望于明年推出Vera Rubin Ultra，并于2028年…",
+      "summary": "英伟达临时CEO克雷斯：仍有望于明年推出Vera Rubin Ultra，并于2028年推出Feynman。",
+      "keywords": [
+        "英伟达"
+      ],
+      "pub_ts": 1794954191.0,
+      "time_et": "11-17 17:23 ET",
+      "time_bj": "06:23 BJ",
+      "time_kst": "07:23 KST",
+      "time_display": "17:23 ET / 06:23 BJ"
+    },
     {
       "id": "20261118061820121800",
       "title": "英伟达临时CEO克雷斯：英伟达各代GPU租赁价格全面上涨。",
@@ -320,19 +333,6 @@
       "time_bj": "00:57 BJ",
       "time_kst": "01:57 KST",
       "time_display": "11:57 ET / 00:57 BJ"
-    },
-    {
-      "id": "20261118005202887800",
-      "title": "市场消息：英伟达(NVDA.O)董事会截至周二尚未考虑黄仁勋回归事宜。",
-      "summary": "市场消息：英伟达(NVDA.O)董事会截至周二尚未考虑黄仁勋回归事宜。",
-      "keywords": [
-        "英伟达"
-      ],
-      "pub_ts": 1794934322.0,
-      "time_et": "11-17 11:52 ET",
-      "time_bj": "00:52 BJ",
-      "time_kst": "01:52 KST",
-      "time_display": "11:52 ET / 00:52 BJ"
     }
   ],
   "ticker_news": {
@@ -893,39 +893,39 @@
     ],
     "NVDA": [
       {
-        "title": "Nvidia’s Q3 earnings show its advantage as the bank of the AI boom",
-        "url": "https://finance.yahoo.com/video/nvidias-q3-earnings-show-its-advantage-as-the-bank-of-the-ai-boom-215423703.html?.tsrc=rss",
+        "title": "Nvidia earnings: Why Jensen turmoil won't have a near-term impact on the numbers",
+        "url": "https://finance.yahoo.com/video/nvidia-earnings-why-jensen-turmoil-wont-have-a-near-term-impact-on-the-numbers-220936057.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-17 16:51 ET",
-        "pub_ts": 1794952260.0
+        "time": "11-17 17:09 ET",
+        "pub_ts": 1794953376.0
       },
       {
-        "title": "Why a Jensen Huang comeback could become a major battle in Washington",
-        "url": "https://finance.yahoo.com/video/why-a-jensen-huang-comeback-could-become-a-major-battle-in-washington-214402053.html?.tsrc=rss",
+        "title": "AMD, Broadcom, and TSMC stocks rise on Nvidia earnings beat",
+        "url": "https://finance.yahoo.com/markets/stocks/article/amd-broadcom-tsmc-stocks-rise-on-nvidia-earnings-coreweave-nebius-shares-also-rally-220159436.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-17 16:44 ET",
-        "pub_ts": 1794951842.0
+        "time": "11-17 17:01 ET",
+        "pub_ts": 1794952919.0
       },
       {
-        "title": "What to make of Jensen Huang's apology letter",
-        "url": "https://finance.yahoo.com/video/what-to-make-of-jensen-huangs-apology-letter-213601392.html?.tsrc=rss",
+        "title": "Dow Jones Futures: Nvidia Beats Views, Says This On Jensen Huang; Target, Anthropic IPO Ahead",
+        "url": "https://finance.yahoo.com/m/3b22ed8c-00c3-32f8-89f5-91bc21ccb366/dow-jones-futures%3A-nvidia.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-17 16:36 ET",
-        "pub_ts": 1794951361.0
+        "time": "11-17 17:18 ET",
+        "pub_ts": 1794953939.0
       },
       {
-        "title": "Eltek Ltd. Q3 2026 Earnings Call Summary",
-        "url": "https://app.moby.co/home/research/tools/earningsCalendar/earnings-eltek-ltd-q3-2026-earnings-call-summary?utm_source=yahoo_finance&utm_medium=rss&.tsrc=rss",
+        "title": "Nvidia sees strong growth in first earnings report without Huang",
+        "url": "https://www.cbsnews.com/news/nvidia-earnings-jensen-huang-colette-kress/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-17 16:42 ET",
-        "pub_ts": 1794951724.0
+        "time": "11-17 17:18 ET",
+        "pub_ts": 1794953921.0
       },
       {
-        "title": "Jensen Huang’s Last Quarter Beats Estimates: Can Nvidia Stock Recover Without Him?",
-        "url": "https://beincrypto.com/nvidia-earnings-first-report-jensen-huang-exit/?.tsrc=rss",
+        "title": "Nvidia Shares Rise After Earnings Beat in First Report Since Jensen Huang's Exit",
+        "url": "https://decrypt.co/383505/nvidia-shares-rise-earnings-beat-first-report-jensen-huang-exit?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-17 16:41 ET",
-        "pub_ts": 1794951686.0
+        "time": "11-17 17:18 ET",
+        "pub_ts": 1794953898.0
       }
     ],
     "AMD": [
@@ -1041,6 +1041,13 @@
     ],
     "AVGO": [
       {
+        "title": "AMD, Broadcom, and TSMC stocks rise on Nvidia earnings beat",
+        "url": "https://finance.yahoo.com/markets/stocks/article/amd-broadcom-tsmc-stocks-rise-on-nvidia-earnings-coreweave-nebius-shares-also-rally-220159436.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 17:01 ET",
+        "pub_ts": 1794952919.0
+      },
+      {
         "title": "Billionaire David Tepper Grew His SpaceX Stake 17-Fold While Dumping AMD and Broadcom",
         "url": "https://247wallst.com/investing/2026/11/17/billionaire-david-tepper-grew-his-spacex-stake-17-fold-while-dumping-amd-and-broadcom/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1067,13 +1074,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 12:45 ET",
         "pub_ts": 1794937508.0
-      },
-      {
-        "title": "Not Nvidia. Not Broadcom. This Is the AI Chip Stock I’d Buy Before the Year Ends.",
-        "url": "https://www.fool.com/investing/2026/11/17/not-nvidia-not-broadcom-this-is-the-ai-chip-stock-id-buy-before-the-year-ends/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 12:20 ET",
-        "pub_ts": 1794936002.0
       }
     ],
     "AMAT": [
@@ -1233,6 +1233,13 @@
         "pub_ts": 1794944064.0
       },
       {
+        "title": "Apple Pay outage blocks instant crypto purchases",
+        "url": "https://www.thestreet.com/crypto/markets/apple-pay-outage-blocks-instant-crypto-purchases?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 16:54 ET",
+        "pub_ts": 1794952487.0
+      },
+      {
         "title": "Apple down live: iPhones stop working properly as iCloud taken down by ‘internal update’",
         "url": "https://www.independent.co.uk/tech/apple-down-not-working-pay-icloud-music-app-store-iphone-status-b3086668.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1247,18 +1254,11 @@
         "pub_ts": 1794943902.0
       },
       {
-        "title": "Apple moves towards rare long-term Samsung memory deal as AI boom tightens supply",
-        "url": "https://www.proactiveinvestors.com/companies/news/1101941/apple-moves-towards-rare-long-term-samsung-memory-deal-as-ai-boom-tightens-supply-1101941.html?.tsrc=rss",
+        "title": "How Investors May Respond To MP Materials Stock Q3 Earnings Beat",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/investors-may-respond-mp-materials-190925409.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-17 11:00 ET",
-        "pub_ts": 1794931200.0
-      },
-      {
-        "title": "George Soros and 21 Other Big Funds Sold Apple Last Quarter, While 13 Bought. Who’s Right?",
-        "url": "https://www.tikr.com/blog/george-soros-and-21-other-big-funds-sold-apple-last-quarter-while-13-bought-whos-right?ref=yahoofinance&tlnk=yf-261117-m2jx4cr6&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 10:40 ET",
-        "pub_ts": 1794930002.0
+        "time": "11-17 14:09 ET",
+        "pub_ts": 1794942565.0
       }
     ],
     "PLTR": [
@@ -3195,25 +3195,25 @@
     "QQQ": 1794954072.6862776,
     "SMH": 1794954072.6862776,
     "IWM": 1794954072.6862776,
-    "IGV": 1794952766.7312286,
+    "IGV": 1794954278.3292077,
     "TLT": 1794954072.6862776,
     "GLD": 1794954072.6862776,
-    "SQQQ": 1794952766.7312286,
+    "SQQQ": 1794954278.3292077,
     "TSM": 1794954072.6862776,
     "VIXY": 1794954072.6862776,
-    "SOXS": 1794952766.7312286,
-    "NVDA": 1794952766.7312286,
+    "SOXS": 1794954278.3292077,
+    "NVDA": 1794954278.3292077,
     "AMD": 1794952968.962556,
     "ASML": 1794952968.962556,
-    "QCOM": 1794952766.7312286,
-    "AVGO": 1794952766.7312286,
-    "AMAT": 1794952766.7312286,
+    "QCOM": 1794954278.3292077,
+    "AVGO": 1794954278.3292077,
+    "AMAT": 1794954278.3292077,
     "META": 1794952968.962556,
     "GOOGL": 1794952968.962556,
     "MSFT": 1794952968.962556,
-    "AAPL": 1794952766.7312286,
-    "PLTR": 1794952766.7312286,
-    "NOW": 1794952766.7312286,
+    "AAPL": 1794954278.3292077,
+    "PLTR": 1794954278.3292077,
+    "NOW": 1794954278.3292077,
     "AMZN": 1794952968.962556,
     "CRWV": 1794952968.962556,
     "NBIS": 1794952968.962556,
@@ -3268,7 +3268,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (17:18 ET / 06:18 BJ) [英伟达]：英伟达临时CEO克雷斯：英伟达各代GPU租赁价格全面上涨。",
+    "detail": "⚡ 最新核心快讯 (17:23 ET / 06:23 BJ) [英伟达]：英伟达临时CEO克雷斯：仍有望于明年推出Vera Rubin Ultra，并于2028年推出Feynman。",
     "event_name": "",
     "minutes_left": 0
   }
