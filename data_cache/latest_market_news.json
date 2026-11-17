@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1794934069.571,
-  "updated_at_et": "11-17 11:47 ET",
-  "updated_at_kst": "01:47 KST",
+  "updated_at_ts": 1794934166.831,
+  "updated_at_et": "11-17 11:49 ET",
+  "updated_at_kst": "01:49 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1942,6 +1942,13 @@
     ],
     "TSLA": [
       {
+        "title": "What far cheaper AI compute in space could mean for Elon Musk",
+        "url": "https://finance.yahoo.com/video/what-far-cheaper-ai-compute-in-space-could-mean-for-elon-musk-162707073.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 11:27 ET",
+        "pub_ts": 1794932827.0
+      },
+      {
         "title": "Tesla's $3.3B Cybercab Push in Germany: Will It Pay Off?",
         "url": "https://finance.yahoo.com/technology/articles/teslas-3-3b-cybercab-push-150300873.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1968,13 +1975,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 09:13 ET",
         "pub_ts": 1794924820.0
-      },
-      {
-        "title": "Elon Musk Says Tesla’s $299 Cybercab Fee Is “Too High”",
-        "url": "https://247wallst.com/investing/2026/11/17/elon-musk-says-teslas-299-cybercab-fee-is-too-high/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 08:21 ET",
-        "pub_ts": 1794921681.0
       }
     ],
     "AXP": [
@@ -2127,6 +2127,13 @@
     ],
     "INTC": [
       {
+        "title": "Nvidia, Intel, Salesforce, SpaceX, Anthropic, Sandisk, Home Depot, and More That Explain Today’s Market",
+        "url": "https://finance.yahoo.com/m/5d4c8ff4-57bc-3350-b217-681441a4f8b3/nvidia%2C-intel%2C-salesforce%2C.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 11:29 ET",
+        "pub_ts": 1794932940.0
+      },
+      {
         "title": "SoftBank Had 64% of Its U.S. Stock Portfolio in Intel. It Has Since Halved",
         "url": "https://247wallst.com/investing/2026/11/17/softbank-had-64-of-its-u-s-stock-portfolio-in-intel-it-has-since-halved/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2148,18 +2155,11 @@
         "pub_ts": 1794927474.0
       },
       {
-        "title": "Why Did Intel Stock Lose 7%?",
-        "url": "https://www.trefis.com/stock/intc/articles/625805/why-did-intel-stock-fall-7/2026-11-17?.tsrc=rss",
+        "title": "Intel Stock Is Falling After Parting Blow From Jensen Huang",
+        "url": "https://finance.yahoo.com/m/88a77f9e-b266-31cb-8d20-56c4fec6786d/intel-stock-is-falling-after.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-17 09:40 ET",
-        "pub_ts": 1794926449.0
-      },
-      {
-        "title": "Intel’s Turnaround Could Have 3 Major Catalysts in 2027",
-        "url": "https://247wallst.com/investing/2026/11/17/intels-turnaround-could-have-3-major-catalysts-in-2027/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 09:33 ET",
-        "pub_ts": 1794926017.0
+        "time": "11-17 09:51 ET",
+        "pub_ts": 1794927060.0
       }
     ],
     "VRT": [
@@ -3239,21 +3239,21 @@
     "LITE": 1794933763.9232676,
     "AAOI": 1794933763.9232676,
     "SPCX": 1794933763.9232676,
-    "ASTS": 1794932637.9801197,
+    "ASTS": 1794934166.8313074,
     "AXTI": 1794933763.9232676,
-    "NASA": 1794932637.9801197,
-    "LUNR": 1794932637.9801197,
-    "TSLA": 1794932637.9801197,
-    "AXP": 1794932637.9801197,
-    "RKLB": 1794932637.9801197,
-    "KO": 1794932637.9801197,
-    "FLY": 1794932637.9801197,
-    "INTC": 1794932637.9801197,
-    "VRT": 1794932637.9801197,
-    "HPE": 1794932637.9801197,
-    "DELL": 1794932637.9801197,
-    "OKLO": 1794932637.9801197,
-    "CEG": 1794932637.9801197,
+    "NASA": 1794934166.8313074,
+    "LUNR": 1794934166.8313074,
+    "TSLA": 1794934166.8313074,
+    "AXP": 1794934166.8313074,
+    "RKLB": 1794934166.8313074,
+    "KO": 1794934166.8313074,
+    "FLY": 1794934166.8313074,
+    "INTC": 1794934166.8313074,
+    "VRT": 1794934166.8313074,
+    "HPE": 1794934166.8313074,
+    "DELL": 1794934166.8313074,
+    "OKLO": 1794934166.8313074,
+    "CEG": 1794934166.8313074,
     "FPS": 1794932637.9801197,
     "MU": 1794932637.9801197,
     "SKHY": 1794932637.9801197,
@@ -3275,8 +3275,8 @@
     "WMT": 1794932637.9801197,
     "V": 1794932637.9801197,
     "CAT": 1794932637.9801197,
-    "FN": 1794932637.9801197,
-    "GLW": 1794932637.9801197
+    "FN": 1794934166.8313074,
+    "GLW": 1794934166.8313074
   },
   "calendar_banner": {
     "level": "idle_with_flash",
