@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1794943640.008,
-  "updated_at_et": "11-17 14:27 ET",
-  "updated_at_kst": "04:27 KST",
+  "updated_at_ts": 1794943736.868,
+  "updated_at_et": "11-17 14:28 ET",
+  "updated_at_kst": "04:28 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2125,6 +2125,20 @@
     ],
     "INTC": [
       {
+        "title": "Why Intel Stock Just Dropped",
+        "url": "https://www.fool.com/investing/2026/11/17/why-intel-stock-just-dropped/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 14:08 ET",
+        "pub_ts": 1794942500.0
+      },
+      {
+        "title": "Nvidia Sold a Quarter of Its Intel Shares and More Than Half Its Nokia Stake. SpaceX Is Now Its Biggest Investment",
+        "url": "https://247wallst.com/investing/2026/11/17/nvidia-sold-a-quarter-of-its-intel-shares-and-more-than-half-its-nokia-stake-spacex-is-now-its-biggest-investment/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 14:06 ET",
+        "pub_ts": 1794942370.0
+      },
+      {
         "title": "Intel Stock Is Falling After Parting Blow From Jensen Huang",
         "url": "https://finance.yahoo.com/m/88a77f9e-b266-31cb-8d20-56c4fec6786d/intel-stock-is-falling-after.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2144,20 +2158,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 12:47 ET",
         "pub_ts": 1794937620.0
-      },
-      {
-        "title": "Nvidia Dumps 25% of Its Intel Stake as SpaceX Becomes Its Biggest Investment",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/nvidia-dumps-25-intel-stake-174458095.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 12:44 ET",
-        "pub_ts": 1794937498.0
-      },
-      {
-        "title": "Marvell and Intel Are Both Down at Least 50% From Their 2026 Highs. Only 1 Is a Stock I’d Buy.",
-        "url": "https://www.fool.com/investing/2026/11/17/marvell-and-intel-are-both-down-at-least-50-from-their-2026-highs-only-1-is-a-stock-id-buy/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 12:05 ET",
-        "pub_ts": 1794935101.0
       }
     ],
     "VRT": [
@@ -3246,7 +3246,7 @@
     "RKLB": 1794942249.8815272,
     "KO": 1794943538.1409268,
     "FLY": 1794943538.1409268,
-    "INTC": 1794942152.6078157,
+    "INTC": 1794943736.8679686,
     "VRT": 1794942249.8815272,
     "HPE": 1794942249.8815272,
     "DELL": 1794942249.8815272,
@@ -3273,7 +3273,7 @@
     "WMT": 1794942743.1148033,
     "V": 1794942545.5346937,
     "CAT": 1794942743.1148033,
-    "FN": 1794942152.6078157,
+    "FN": 1794943736.8679686,
     "GLW": 1794943538.1409268
   },
   "calendar_banner": {
