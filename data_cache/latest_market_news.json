@@ -1,9 +1,23 @@
 {
-  "updated_at_ts": 1794945013.475,
-  "updated_at_et": "11-17 14:50 ET",
-  "updated_at_kst": "04:50 KST",
+  "updated_at_ts": 1794945111.848,
+  "updated_at_et": "11-17 14:51 ET",
+  "updated_at_kst": "04:51 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261118035001671800",
+      "title": "【美联储威廉姆斯：通胀仍顽固高企 但无需采取激进政策行动】 11月18日讯，纽约联储主席…",
+      "summary": "【美联储威廉姆斯：通胀仍顽固高企 但无需采取激进政策行动】 11月18日讯，纽约联储主席威廉姆斯表示，随着美国经济走强、通胀走势恶化，美联储仍有更多工作要做，但他认为当前形势尚不需要采取激进的政策行动。威廉姆斯称，通胀仍然“顽固地处于高位”，并已看到关税和能源冲击向更广泛通胀数据传导的迹象。与此同时，他指出，目前金融环境仍对经济增长相当有利，金融市场运行也保持良好。",
+      "keywords": [
+        "美联储",
+        "关税"
+      ],
+      "pub_ts": 1794945001.0,
+      "time_et": "11-17 14:50 ET",
+      "time_bj": "03:50 BJ",
+      "time_kst": "04:50 KST",
+      "time_display": "14:50 ET / 03:50 BJ"
+    },
     {
       "id": "20261118032807927800",
       "title": "美联储威廉姆斯：我认为当前形势无需采取激进的政策行动。",
@@ -330,20 +344,6 @@
       "time_bj": "20:32 BJ",
       "time_kst": "21:32 KST",
       "time_display": "07:32 ET / 20:32 BJ"
-    },
-    {
-      "id": "20261117203149353800",
-      "title": "美国总统特朗普：泰国将取消对美国汽车的非关税壁垒。",
-      "summary": "美国总统特朗普：泰国将取消对美国汽车的非关税壁垒。",
-      "keywords": [
-        "关税",
-        "特朗普"
-      ],
-      "pub_ts": 1794918709.0,
-      "time_et": "11-17 07:31 ET",
-      "time_bj": "20:31 BJ",
-      "time_kst": "21:31 KST",
-      "time_display": "07:31 ET / 20:31 BJ"
     }
   ],
   "ticker_news": {
@@ -941,6 +941,20 @@
     ],
     "AMD": [
       {
+        "title": "Prediction: These Will Be Nvidia’s and AMD’s Stock Prices by the End of 2027 (Hint: Only 1 Is a Buy).",
+        "url": "https://www.fool.com/investing/2026/11/17/prediction-these-will-be-nvidia-s-and-amd-s-stock-prices-by-the-end-of-2027-hint-only-1-is-a-buy/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 14:46 ET",
+        "pub_ts": 1794944762.0
+      },
+      {
+        "title": "AMD Stocks Decrease 1.62% as New US Rule Requires Licenses for Five Chip Hubs",
+        "url": "https://finance.yahoo.com/technology/articles/amd-stocks-decrease-1-62-190241595.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 14:02 ET",
+        "pub_ts": 1794942161.0
+      },
+      {
         "title": "Is AMD Stock a Buy Amid the Uncertainty Around Nvidia?",
         "url": "https://www.fool.com/investing/2026/11/17/is-amd-stock-a-buy-amid-the-uncertainty-around-nvidia/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -960,20 +974,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 12:57 ET",
         "pub_ts": 1794938266.0
-      },
-      {
-        "title": "Rival Chipmakers Reportedly Chip Away At Nvidia Customers Since Jensen Huang’s Exit",
-        "url": "https://stocktwits.com/news-articles/markets/equity/rival-chipmakers-reportedly-chip-away-at-nvidia-customers-since-jensen-huang-s-exit/cNbORCNR9hE?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 12:31 ET",
-        "pub_ts": 1794936693.0
-      },
-      {
-        "title": "Stanley Druckenmiller Dumped AMD and Alphabet. His Next 3 AI Bets May Surprise Investors",
-        "url": "https://247wallst.com/investing/2026/11/17/stanley-druckenmiller-dumped-amd-and-alphabet-his-next-3-ai-bets-may-surprise-investors/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 12:07 ET",
-        "pub_ts": 1794935221.0
       }
     ],
     "ASML": [
@@ -1163,42 +1163,49 @@
     ],
     "GOOGL": [
       {
-        "title": "Caterpillar Sees a Bright 2027 as Compact Equipment and Rental Expansion Gains Ground",
-        "url": "https://www.marketbeat.com/instant-alerts/event-caterpillar-sees-a-bright-2027-as-compact-equipment-and-rental-expansion-gains-ground-2026-11-17/?utm_source=yahoofinance&utm_medium=yahoofinance&.tsrc=rss",
+        "title": "This Critical Energy Bill Is A Key Priority For The Lame Duck GOP Congress",
+        "url": "https://finance.yahoo.com/m/a711fc7e-a753-3657-a0e8-ef2d4e4aa2f5/this-critical-energy-bill-is.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-17 14:13 ET",
-        "pub_ts": 1794942781.0
+        "time": "11-17 14:29 ET",
+        "pub_ts": 1794943783.0
       },
       {
-        "title": "A $2.4 Billion Fund Dumps These 3 Stocks",
-        "url": "https://www.tikr.com/blog/a-2-4-billion-fund-dumps-these-3-stocks-2?ref=yahoofinance&tlnk=yf-261117-fmjpv9fq&.tsrc=rss",
+        "title": "Alphabet, Amazon, and Nvidia All Have a Stake in Anthropic. Here’s the One I’d Buy If I Could Only Pick 1.",
+        "url": "https://www.fool.com/investing/2026/11/17/alphabet-amazon-and-nvidia-all-have-a-stake-in-anthropic-here-s-the-1-i-d-buy-if-i-could-only-pick-1/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-17 14:05 ET",
-        "pub_ts": 1794942352.0
+        "time": "11-17 14:27 ET",
+        "pub_ts": 1794943622.0
       },
       {
-        "title": "Alphabet Stocks Move Lower as Anthropic IPO Filing Shows $121.3 Billion Google Commitment",
-        "url": "https://finance.yahoo.com/technology/ai/articles/alphabet-stocks-move-lower-anthropic-190134552.html?.tsrc=rss",
+        "title": "An $11 Billion Fund Dumps These 2 Stocks",
+        "url": "https://www.tikr.com/blog/an-11-billion-fund-dumps-these-2-stocks?ref=yahoofinance&tlnk=yf-261117-7xqp882j&.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-17 14:01 ET",
-        "pub_ts": 1794942094.0
+        "time": "11-17 14:10 ET",
+        "pub_ts": 1794942646.0
       },
       {
-        "title": "Anthropic IPO may pose a disturbing problem for retirement accounts",
-        "url": "https://www.thestreet.com/investing/stocks/anthropic-ipo-may-pose-concentration-bubble-risk-for-retirement-accounts?.tsrc=rss",
+        "title": "The 5 Best Stocks in George Soros’s Portfolio",
+        "url": "https://www.tikr.com/blog/the-5-best-stocks-in-george-soross-portfolio?ref=yahoofinance&tlnk=yf-261117-8999fh2f&.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-17 13:57 ET",
-        "pub_ts": 1794941830.0
+        "time": "11-17 14:10 ET",
+        "pub_ts": 1794942612.0
       },
       {
-        "title": "RHISE AI Brings Europe into the Personal AI Race with Lucie",
-        "url": "https://finance.yahoo.com/technology/ai/articles/rhise-ai-brings-europe-personal-185400437.html?.tsrc=rss",
+        "title": "Adobe (ADBE) Turns Creative Cloud And Firefly Into AI Studios With New Partnerships",
+        "url": "https://finance.yahoo.com/technology/ai/articles/adobe-adbe-turns-creative-cloud-191007810.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-17 13:54 ET",
-        "pub_ts": 1794941640.0
+        "time": "11-17 14:10 ET",
+        "pub_ts": 1794942607.0
       }
     ],
     "MSFT": [
+      {
+        "title": "Why Apple is down in a week of outages from Microsoft to Chase",
+        "url": "https://finance.yahoo.com/markets/article/why-apple-is-down-in-a-week-of-outages-from-microsoft-to-chase-193424335.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 14:34 ET",
+        "pub_ts": 1794944064.0
+      },
       {
         "title": "Is AI to blame for basic IT gaps in Big Tech, airlines, and more?",
         "url": "https://finance.yahoo.com/video/is-ai-to-blame-for-basic-it-gaps-in-big-tech-airlines-and-more-184504929.html?.tsrc=rss",
@@ -1207,32 +1214,25 @@
         "pub_ts": 1794941104.0
       },
       {
+        "title": "Zenity Expands AI Agent Security Coverage Across the Microsoft Ecosystem",
+        "url": "https://finance.yahoo.com/technology/ai/articles/zenity-expands-ai-agent-security-193500080.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 14:35 ET",
+        "pub_ts": 1794944100.0
+      },
+      {
+        "title": "Atlan and Microsoft Collaborate to Extend OneLake Governance Across the Data Estate",
+        "url": "https://finance.yahoo.com/technology/ai/articles/atlan-microsoft-collaborate-extend-onelake-193100830.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 14:31 ET",
+        "pub_ts": 1794943860.0
+      },
+      {
         "title": "Microsoft Stocks Move Lower Before Ignite as Anthropic Discloses $47.2 Billion Compute Floor",
         "url": "https://finance.yahoo.com/markets/stocks/articles/microsoft-stocks-move-lower-ignite-182943462.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-17 13:29 ET",
         "pub_ts": 1794940183.0
-      },
-      {
-        "title": "Microsoft and organizations across industries launch AI Transparency Initiative to strengthen enterprise trust in AI models and agents",
-        "url": "https://finance.yahoo.com/technology/ai/articles/microsoft-organizations-across-industries-launch-181500607.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 13:15 ET",
-        "pub_ts": 1794939300.0
-      },
-      {
-        "title": "Microsoft aims to challenge OpenAI, Anthropic with cheaper, specialized AI models",
-        "url": "https://www.axios.com/2026/11/17/microsoft-ai-models-openai-anthropic-ignite#utm_source=yahoo_finance&utm_medium=partner&utm_campaign=subs-partner-yahoo-finance-AI?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 13:10 ET",
-        "pub_ts": 1794939007.0
-      },
-      {
-        "title": "CloudFit Software Wins Microsoft Global Defense & Intelligence Partner of the Year for Second Consecutive Year",
-        "url": "https://finance.yahoo.com/technology/articles/cloudfit-software-wins-microsoft-global-180000634.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 13:00 ET",
-        "pub_ts": 1794938400.0
       }
     ],
     "AAPL": [
@@ -1355,6 +1355,13 @@
         "pub_ts": 1794942427.0
       },
       {
+        "title": "Alphabet, Amazon, and Nvidia All Have a Stake in Anthropic. Here’s the One I’d Buy If I Could Only Pick 1.",
+        "url": "https://www.fool.com/investing/2026/11/17/alphabet-amazon-and-nvidia-all-have-a-stake-in-anthropic-here-s-the-1-i-d-buy-if-i-could-only-pick-1/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 14:27 ET",
+        "pub_ts": 1794943622.0
+      },
+      {
         "title": "Amazon’s Andy Jassy Plans To Stay Invested In Anthropic For ‘A Long Time’",
         "url": "https://stocktwits.com/news-articles/markets/equity/amazon-s-andy-jassy-plans-to-stay-invested-in-anthropic-for-a-long-time/cNbO5FVR9ha?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1362,25 +1369,18 @@
         "pub_ts": 1794942674.0
       },
       {
+        "title": "Amazon Stocks Edge Higher as Anthropic IPO Reveals $110 Billion Compute Pledge",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/amazon-stocks-edge-higher-anthropic-190217398.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 14:02 ET",
+        "pub_ts": 1794942137.0
+      },
+      {
         "title": "How Amazon and Google Could Own $400 Billion of Anthropic Stock",
         "url": "https://finance.yahoo.com/m/c079c6dc-3303-33b1-9922-5e6afaa91e87/how-amazon-and-google-could.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-17 12:26 ET",
         "pub_ts": 1794936360.0
-      },
-      {
-        "title": "Update: Market Chatter: Amazon, Google, Meta Lobbying Fails to Stop Trump From Pursuing China Data Center Curbs",
-        "url": "https://finance.yahoo.com/technology/articles/market-chatter-amazon-google-meta-172106872.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 12:21 ET",
-        "pub_ts": 1794936066.0
-      },
-      {
-        "title": "Qualcomm vs. SK Hynix: Stable Revenue vs. Rapid Acceleration",
-        "url": "https://www.fool.com/coverage/charts/2026/11/17/qualcomm-vs-sk-hynix-stable-revenue-vs-rapid-acceleration/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 13:20 ET",
-        "pub_ts": 1794939602.0
       }
     ],
     "CRWV": [
@@ -1399,11 +1399,11 @@
         "pub_ts": 1794926452.0
       },
       {
-        "title": "CoreWeave Answered the Biggest Question About AI Stocks. Now Nvidia Has to Confirm It.",
-        "url": "https://www.fool.com/investing/2026/11/17/coreweave-answered-the-biggest-question-about-ai-stocks-now-nvidia-has-to-confirm-it/?.tsrc=rss",
+        "title": "The 5 Best Stocks in Cathie Wood’s Portfolio",
+        "url": "https://www.tikr.com/blog/the-5-best-stocks-in-cathie-woods-portfolio?ref=yahoofinance&tlnk=yf-261117-6rppm4x6&.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-17 06:03 ET",
-        "pub_ts": 1794913381.0
+        "time": "11-17 14:38 ET",
+        "pub_ts": 1794944322.0
       },
       {
         "title": "Update: Market Chatter: Amazon, Google, Meta Lobbying Fails to Stop Trump From Pursuing China Data Center Curbs",
@@ -1423,7 +1423,7 @@
     "NBIS": [
       {
         "title": "Why Jensen Huang's absence from Nvidia is 'horrible' for neoclouds",
-        "url": "https://finance.yahoo.com/video/why-jensen-huangs-absence-nvidia-130000738.html?.tsrc=rss",
+        "url": "https://finance.yahoo.com/video/why-jensen-huangs-absence-from-nvidia-is-horrible-for-neoclouds-194629811.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-17 08:00 ET",
         "pub_ts": 1794920400.0
@@ -1496,6 +1496,20 @@
     ],
     "VST": [
       {
+        "title": "Vistra Is Down 41% From Its High. History Suggests This Is What Happens Next.",
+        "url": "https://www.fool.com/investing/2026/11/17/vistra-is-down-41-from-its-high-history-suggests-this-is-what-happens-next/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 14:22 ET",
+        "pub_ts": 1794943322.0
+      },
+      {
+        "title": "Vistra Keeps Sliding: Why BMO Sees 51% Upside",
+        "url": "https://www.tikr.com/blog/vistra-keeps-sliding-why-bmo-sees-51-upside?ref=yahoofinance&tlnk=yf-261117-83795p3j&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 10:20 ET",
+        "pub_ts": 1794928841.0
+      },
+      {
         "title": "Vistra Stock's $21 Billion Debt: Should Holders Worry?",
         "url": "https://www.trefis.com/stock/vst/articles/625559/vistra-stocks-21-billion-debt-should-holders-worry/2026-11-17?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1515,20 +1529,6 @@
         "source": "Yahoo Finance",
         "time": "11-15 00:11 ET",
         "pub_ts": 1794719473.0
-      },
-      {
-        "title": "Vistra (VST) Posts $269 Million Long Lived Asset Impairment In Third Quarter",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/vistra-vst-posts-269-million-041927917.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-14 23:19 ET",
-        "pub_ts": 1794716367.0
-      },
-      {
-        "title": "Vistra Has Disappointed for a Year: Why Siebert Williams Shank Still Sees 50% Upside",
-        "url": "https://www.tikr.com/blog/vistra-has-disappointed-for-a-year-why-siebert-williams-shank-still-sees-50-upside?ref=yahoofinance&tlnk=yf-261114-w9h2796g&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-14 05:46 ET",
-        "pub_ts": 1794653192.0
       }
     ],
     "BE": [
@@ -1607,6 +1607,13 @@
     ],
     "COHR": [
       {
+        "title": "A $4.2 Billion Fund Dumps These 3 Stocks",
+        "url": "https://www.tikr.com/blog/a-4-2-billion-fund-dumps-these-3-stocks?ref=yahoofinance&tlnk=yf-261117-26mfhqm3&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 14:11 ET",
+        "pub_ts": 1794942677.0
+      },
+      {
         "title": "All You Need to Know About Coherent (COHR) Rating Upgrade to Strong Buy",
         "url": "https://finance.yahoo.com/markets/stocks/articles/know-coherent-cohr-rating-upgrade-160003607.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1633,13 +1640,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 08:50 ET",
         "pub_ts": 1794923440.0
-      },
-      {
-        "title": "Coherent and Lumentum Shares Rise as US Advances Restrictions on Chinese Data Centre Equipment",
-        "url": "https://investorshub.advfn.com/market-news/article/40206/coherent-and-lumentum-shares-rise-as-us-advances-restrictions-on-chinese-data-centre-equipment?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 08:39 ET",
-        "pub_ts": 1794922798.0
       }
     ],
     "MRVL": [
@@ -1776,18 +1776,18 @@
         "pub_ts": 1794941580.0
       },
       {
+        "title": "Why Anthropic is obsessed with existential risk",
+        "url": "https://www.cnn.com/2026/11/17/business/anthropic-existential-risk-obsession-ipo?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 13:49 ET",
+        "pub_ts": 1794941364.0
+      },
+      {
         "title": "SPCX Stock In Focus: SpaceX To Reportedly Launch $4B Bond Sale This Week",
         "url": "https://stocktwits.com/news-articles/markets/equity/spcx-stock-in-focus-spacex-to-reportedly-launch-4-b-bond-sale-this-week/cNbOcypR9hI?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-17 13:07 ET",
         "pub_ts": 1794938824.0
-      },
-      {
-        "title": "SpaceX Extends Its Rocket Lead. Blue Origin Isn’t Catching Up.",
-        "url": "https://finance.yahoo.com/m/3fd926ea-0963-3217-b956-269321016c5d/spacex-extends-its-rocket.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 13:07 ET",
-        "pub_ts": 1794938820.0
       }
     ],
     "ASTS": [
@@ -3214,38 +3214,38 @@
     "VIXY": 1794944614.6689618,
     "SOXS": 1794944908.9179218,
     "NVDA": 1794944908.9179218,
-    "AMD": 1794943538.1409268,
-    "ASML": 1794943538.1409268,
+    "AMD": 1794945111.8475516,
+    "ASML": 1794945111.8475516,
     "QCOM": 1794944908.9179218,
     "AVGO": 1794945013.475414,
     "AMAT": 1794945013.475414,
-    "META": 1794943538.1409268,
-    "GOOGL": 1794943538.1409268,
-    "MSFT": 1794943538.1409268,
+    "META": 1794945111.8475516,
+    "GOOGL": 1794945111.8475516,
+    "MSFT": 1794945111.8475516,
     "AAPL": 1794944908.9179218,
     "PLTR": 1794945013.475414,
     "NOW": 1794945013.475414,
-    "AMZN": 1794943538.1409268,
-    "CRWV": 1794943538.1409268,
-    "NBIS": 1794943538.1409268,
-    "APLD": 1794943538.1409268,
-    "VST": 1794943538.1409268,
-    "BE": 1794943538.1409268,
-    "CRDO": 1794943538.1409268,
-    "COHR": 1794943538.1409268,
-    "MRVL": 1794943538.1409268,
-    "LITE": 1794943538.1409268,
-    "AAOI": 1794943538.1409268,
-    "SPCX": 1794943538.1409268,
+    "AMZN": 1794945111.8475516,
+    "CRWV": 1794945111.8475516,
+    "NBIS": 1794945111.8475516,
+    "APLD": 1794945111.8475516,
+    "VST": 1794945111.8475516,
+    "BE": 1794945111.8475516,
+    "CRDO": 1794945111.8475516,
+    "COHR": 1794945111.8475516,
+    "MRVL": 1794945111.8475516,
+    "LITE": 1794945111.8475516,
+    "AAOI": 1794945111.8475516,
+    "SPCX": 1794945111.8475516,
     "ASTS": 1794943834.2145326,
-    "AXTI": 1794943538.1409268,
+    "AXTI": 1794945111.8475516,
     "NASA": 1794943834.2145326,
-    "LUNR": 1794943538.1409268,
+    "LUNR": 1794945111.8475516,
     "TSLA": 1794943834.2145326,
     "AXP": 1794943834.2145326,
     "RKLB": 1794943834.2145326,
-    "KO": 1794943538.1409268,
-    "FLY": 1794943538.1409268,
+    "KO": 1794945111.8475516,
+    "FLY": 1794945111.8475516,
     "INTC": 1794943736.8679686,
     "VRT": 1794943834.2145326,
     "HPE": 1794943834.2145326,
@@ -3274,12 +3274,12 @@
     "V": 1794944129.2948773,
     "CAT": 1794944323.579317,
     "FN": 1794943736.8679686,
-    "GLW": 1794943538.1409268
+    "GLW": 1794945111.8475516
   },
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (14:28 ET / 03:28 BJ) [美联储]：美联储威廉姆斯：我认为当前形势无需采取激进的政策行动。",
+    "detail": "⚡ 最新核心快讯 (14:50 ET / 03:50 BJ) [美联储] [关税]：【美联储威廉姆斯：通胀仍顽固高企 但无需采取激进政策行动】 11月18日讯，纽约联储主席威廉姆斯表示，随着美国经济走强、通胀走势恶化，美联储仍有更多工作要做，但他认为当前形势尚不需要采取激进",
     "event_name": "",
     "minutes_left": 0
   }
