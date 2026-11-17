@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1794896659.953,
-  "updated_at_et": "11-17 01:24 ET",
-  "updated_at_kst": "15:24 KST",
+  "updated_at_ts": 1794896757.542,
+  "updated_at_et": "11-17 01:25 ET",
+  "updated_at_kst": "15:25 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -619,6 +619,20 @@
     ],
     "NVDA": [
       {
+        "title": "ASUS Ramps Up NVIDIA Vera Rubin NVL72 Shipments in Q4 Amid Strong Demand, Showcasing AI Factory Reference Architecture at SC26",
+        "url": "https://finance.yahoo.com/technology/ai/articles/asus-ramps-nvidia-vera-rubin-060800264.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 01:08 ET",
+        "pub_ts": 1794895680.0
+      },
+      {
+        "title": "Watch these Chinese chip stocks as U.S. tightens access to Nvidia hardware",
+        "url": "https://finance.yahoo.com/technology/ai/articles/watch-chinese-chip-stocks-u-060032967.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 01:00 ET",
+        "pub_ts": 1794895232.0
+      },
+      {
         "title": "U.S. Commerce Dept, DOJ say they investigated Nvidia partner Megaspeed in 2024",
         "url": "https://finance.yahoo.com/technology/ai/articles/u-commerce-dept-doj-investigated-051834040.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -638,20 +652,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 00:03 ET",
         "pub_ts": 1794891780.0
-      },
-      {
-        "title": "Nvidia set for first earnings call since Jensen Huang's resignation",
-        "url": "https://www.usatoday.com/story/money/2026/11/17/nvidia-earnings-call-how-to-watch/92819260007/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 00:02 ET",
-        "pub_ts": 1794891754.0
-      },
-      {
-        "title": "US to close AI chip loophole after Nvidia scandal",
-        "url": "https://finance.yahoo.com/technology/ai/articles/nvidia-earnings-test-ai-boom-014359078.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-16 23:56 ET",
-        "pub_ts": 1794891386.0
       }
     ],
     "AMD": [
@@ -2839,22 +2839,22 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1794895176.365674,
-    "SOXL": 1794895176.365674,
-    "SPY": 1794895176.365674,
-    "DIA": 1794895176.365674,
-    "SOXX": 1794895176.365674,
-    "QQQ": 1794895176.365674,
-    "SMH": 1794895176.365674,
-    "IWM": 1794895176.365674,
-    "IGV": 1794895176.365674,
-    "TLT": 1794895176.365674,
-    "GLD": 1794895176.365674,
-    "SQQQ": 1794895176.365674,
-    "TSM": 1794895176.365674,
-    "VIXY": 1794895176.365674,
-    "SOXS": 1794895176.365674,
-    "NVDA": 1794895176.365674,
+    "KORU": 1794896757.5423043,
+    "SOXL": 1794896757.5423043,
+    "SPY": 1794896757.5423043,
+    "DIA": 1794896757.5423043,
+    "SOXX": 1794896757.5423043,
+    "QQQ": 1794896757.5423043,
+    "SMH": 1794896757.5423043,
+    "IWM": 1794896757.5423043,
+    "IGV": 1794896757.5423043,
+    "TLT": 1794896757.5423043,
+    "GLD": 1794896757.5423043,
+    "SQQQ": 1794896757.5423043,
+    "TSM": 1794896757.5423043,
+    "VIXY": 1794896757.5423043,
+    "SOXS": 1794896757.5423043,
+    "NVDA": 1794896757.5423043,
     "AMD": 1794895176.365674,
     "ASML": 1794895176.365674,
     "QCOM": 1794895176.365674,
