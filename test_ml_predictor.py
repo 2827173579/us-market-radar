@@ -2465,6 +2465,85 @@ class TestLiveTerminalIntegrationAndFreshness(unittest.TestCase):
         self.assertLessEqual(max_proj_p, tc_item["r2"])
         self.assertTrue(tc_item["sl"] < tc_item["s2"] < tc_item["s1"] < new_cp < tc_item["r1"] < tc_item["r2"])
 
+    def test_align_time_cycle_preserves_prev_close_appends_today_and_scales(self):
+        """验证盘前/盘中/盘后保留昨日真实收盘节点、追加今日ET实时柱、更新动态标签并等比例重算推演路径"""
+        import copy
+        et_tz = timezone(timedelta(hours=-5))
+        base_tc = {
+            "SOXL": {
+                "ticker": "SOXL",
+                "current_price": 48.76,
+                "anchor_price": 48.76,
+                "today_label": "最新收盘 (11-16)",
+                "s1": 46.0,
+                "s2": 43.0,
+                "sl": 41.0,
+                "r1": 52.0,
+                "r2": 56.0,
+                "history": [
+                    {"date": "2026-11-12", "price": 65.53},
+                    {"date": "2026-11-13", "price": 58.32},
+                    {"date": "2026-11-16", "price": 48.76},
+                ],
+                "projection": [
+                    {"day": "T+1", "date": "2026-11-17", "price": 49.25, "pct": 1.0},
+                    {"day": "T+2", "date": "2026-11-18", "price": 51.20, "pct": 5.0},
+                    {"day": "T+3", "date": "2026-11-19", "price": 53.64, "pct": 10.0},
+                    {"day": "T+4", "date": "2026-11-20", "price": 50.71, "pct": 4.0},
+                    {"day": "T+5", "date": "2026-11-23", "price": 47.78, "pct": -2.0},
+                    {"day": "T+6", "date": "2026-11-24", "price": 49.74, "pct": 2.0},
+                ],
+                "cycle_windows": [],
+            }
+        }
+        # 1. Pre-market tick on 2026-11-17 07:30 ET
+        tc_pre = copy.deepcopy(base_tc)
+        self.mod.align_time_cycle_projections_with_live(
+            tc_pre, {"SOXL": 44.45}, session_code="PRE_MARKET",
+            as_of=datetime(2026, 11, 17, 7, 30, tzinfo=et_tz),
+        )
+        soxl_pre = tc_pre["SOXL"]
+        self.assertEqual(soxl_pre["today_label"], "盘前实时 (11-17)")
+        self.assertEqual([h["date"] for h in soxl_pre["history"]], ["2026-11-12", "2026-11-13", "2026-11-16", "2026-11-17"])
+        self.assertEqual(soxl_pre["history"][-2]["price"], 48.76)
+        self.assertEqual(soxl_pre["history"][-1]["price"], 44.45)
+        self.assertEqual(soxl_pre["projection"][0]["date"], "2026-11-18")
+        # Check proportional scaling: 53.64 * (44.45 / 48.76) ≈ 48.90
+        self.assertAlmostEqual(soxl_pre["projection"][2]["price"], round(44.45 * (53.64 / 48.76), 2), delta=0.05)
+
+        # 2. Regular tick on 2026-11-17 11:00 ET updates 11-17 in place without duplicating
+        self.mod.align_time_cycle_projections_with_live(
+            tc_pre, {"SOXL": 45.10}, session_code="REGULAR",
+            as_of=datetime(2026, 11, 17, 11, 0, tzinfo=et_tz),
+        )
+        self.assertEqual(soxl_pre["today_label"], "盘中实时 (11-17)")
+        self.assertEqual(len(soxl_pre["history"]), 4)
+        self.assertEqual(soxl_pre["history"][-2]["price"], 48.76)
+        self.assertEqual(soxl_pre["history"][-1], {"date": "2026-11-17", "price": 45.10})
+        self.assertGreater(len(soxl_pre["cycle_windows"]), 0)
+        for cw in soxl_pre["cycle_windows"]:
+            matched_p = next(p["price"] for p in soxl_pre["projection"] if p["day"] == cw["day"])
+            self.assertEqual(cw["price"], matched_p)
+
+        # 3. Post-market tick on 2026-11-17 16:30 ET sets 最新收盘 (11-17)
+        self.mod.align_time_cycle_projections_with_live(
+            tc_pre, {"SOXL": 45.25}, session_code="POST_MARKET",
+            as_of=datetime(2026, 11, 17, 16, 30, tzinfo=et_tz),
+        )
+        self.assertEqual(soxl_pre["today_label"], "最新收盘 (11-17)")
+        self.assertEqual(soxl_pre["history"][-1], {"date": "2026-11-17", "price": 45.25})
+
+    def test_predict_banner_hash_open_flash_and_no_broken_emoji(self):
+        """验证 predict_radar banner 跳转 futu_pro_terminal.html#open_flash 与无损坏阶梯emoji"""
+        import jin10_news_sentinel
+        banner = jin10_news_sentinel.render_macro_calendar_banner_html({}, variant="predict")
+        self.assertIn("futu_pro_terminal.html#open_flash", banner)
+        with open("ml_predictor_5y.py", encoding="utf-8") as _f:
+            src_ml = _f.read()
+        self.assertNotIn("🪜", src_ml)
+        self.assertNotIn("\ufffd", src_ml)
+        self.assertIn("🎯 多级攻防点位天梯", src_ml)
+
 
 # ============================================================================
 # Main Execution Runner

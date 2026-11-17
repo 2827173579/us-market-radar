@@ -458,10 +458,14 @@ def _get_chart_session(ref_dt: Optional[datetime] = None):
     if hm >= 20 * 60 and wd < 4:
         return day + timedelta(days=1), last_closed, "今日", True
     if hm >= 20 * 60 and wd == 4:
-        return last_closed, last_closed, "今日", False
-    if et.hour < 16:
+        return last_closed, last_closed, f"最新收盘 ({last_closed.strftime('%m-%d')})", False
+    if hm < 4 * 60:
         return day, last_closed, "今日", True
-    return day, last_closed, "今日", False
+    if hm < 9 * 60 + 30:
+        return day, last_closed, f"盘前实时 ({day.strftime('%m-%d')})", True
+    if hm < 16 * 60:
+        return day, last_closed, f"盘中实时 ({day.strftime('%m-%d')})", True
+    return day, last_closed, f"最新收盘 ({day.strftime('%m-%d')})", False
 
 
 def fetch_or_load_panel_data(
@@ -2597,6 +2601,218 @@ def _build_cycle_windows_from_projections(
     return cycle_windows[:6]
 
 
+def align_time_cycle_projections_with_live(
+    tc_dict: Dict[str, Any],
+    live_prices: Optional[Dict[str, float]] = None,
+    by_ticker: Optional[Dict[str, Dict[str, Any]]] = None,
+    session_code: str = "",
+    as_of: Optional[datetime] = None,
+) -> None:
+    """
+    统一实时价格对齐引擎（供 futu 终端构建与 predict_radar_5y 每分钟热同步共用）：
+    1. 严格保留上一交易日历史真实收盘节点，绝不把今日盘前/盘中/盘后现价覆写到昨日节点上；
+    2. 美东 04:00 ET 之后（PRE_MARKET / REGULAR / POST_MARKET）若获取到现价且末尾仍是上一交易日，
+       在 history 末尾新增美东今日节点并保留最近 20 条，同步动态更新 today_label 与未来 T+1~T+15 日期；
+    3. 按 scale_ratio / wave_ret 等比例重锚定 15 日推演路径、R2 阻力联动及周期变盘节点目标价。
+    """
+    if not isinstance(tc_dict, dict):
+        return
+
+    live_map = live_prices or {}
+    et_now = _to_et(as_of)
+    sess_day, last_closed, _, _ = _get_chart_session(et_now)
+    btc_today_s = _get_latest_expected_btc_day(et_now).strftime("%Y-%m-%d")
+
+    sc = str(session_code or "").upper().strip()
+    if not sc:
+        wd_n = et_now.weekday()
+        hm_n = et_now.hour * 60 + et_now.minute
+        if wd_n >= 5 or (wd_n == 4 and hm_n >= 20 * 60):
+            sc = "WEEKEND"
+        elif hm_n >= 20 * 60 or hm_n < 4 * 60:
+            sc = "OVERNIGHT"
+        elif hm_n < 9 * 60 + 30:
+            sc = "PRE_MARKET"
+        elif hm_n < 16 * 60:
+            sc = "REGULAR"
+        else:
+            sc = "POST_MARKET"
+
+    if sc == "PRE_MARKET":
+        eq_day = et_now.date() if et_now.weekday() < 5 else sess_day
+        eq_label = f"盘前实时 ({eq_day.strftime('%m-%d')})"
+        can_append_eq = True
+        eq_session_open = True
+    elif sc == "REGULAR":
+        eq_day = et_now.date() if et_now.weekday() < 5 else sess_day
+        eq_label = f"盘中实时 ({eq_day.strftime('%m-%d')})"
+        can_append_eq = True
+        eq_session_open = True
+    elif sc == "POST_MARKET":
+        eq_day = et_now.date() if et_now.weekday() < 5 else sess_day
+        eq_label = f"最新收盘 ({eq_day.strftime('%m-%d')})"
+        can_append_eq = True
+        eq_session_open = False
+    elif sc == "OVERNIGHT":
+        eq_day = sess_day
+        eq_label = "今日"
+        can_append_eq = False
+        eq_session_open = True
+    else:
+        eq_day = last_closed
+        eq_label = f"最新收盘 ({last_closed.strftime('%m-%d')})"
+        can_append_eq = False
+        eq_session_open = False
+
+    eq_day_s = eq_day.strftime("%Y-%m-%d")
+
+    for tk, item in tc_dict.items():
+        if not isinstance(item, dict):
+            continue
+        hist = item.get("history")
+        if not isinstance(hist, list):
+            hist = []
+
+        old_anchor = float(
+            item.get("anchor_price")
+            or (hist[-1].get("price") if hist else 0.0)
+            or item.get("current_price")
+            or 0.0
+        )
+        raw_live = live_map.get(tk)
+        has_real_live = raw_live is not None and float(raw_live) > 0
+        px = float(raw_live if has_real_live else (item.get("current_price") or old_anchor or 0.0))
+        if px <= 0:
+            continue
+        px = round(px, 2)
+
+        if tk == "BTC-USD":
+            if hist:
+                if str(hist[-1].get("date", ""))[:10] < btc_today_s:
+                    hist.append({"date": btc_today_s, "price": px})
+                    item["history"] = hist[-20:]
+                else:
+                    hist[-1]["price"] = px
+            else:
+                item["history"] = [{"date": btc_today_s, "price": px}]
+            item["today_label"] = "今日"
+            item["session_open"] = True
+            item["price_note"] = ""
+        else:
+            if hist:
+                last_hist_s = str(hist[-1].get("date", ""))[:10]
+                if can_append_eq and has_real_live:
+                    if last_hist_s < eq_day_s:
+                        hist.append({"date": eq_day_s, "price": px})
+                        item["history"] = hist[-20:]
+                    elif last_hist_s == eq_day_s:
+                        hist[-1]["price"] = px
+                    item["today_label"] = eq_label
+                    item["session_open"] = eq_session_open
+                    item["price_note"] = ""
+                else:
+                    if last_hist_s == eq_day_s and has_real_live:
+                        hist[-1]["price"] = px
+                        item["today_label"] = eq_label
+                        item["session_open"] = eq_session_open
+                        item["price_note"] = ""
+                    elif sc == "WEEKEND" and last_hist_s:
+                        try:
+                            _ld = datetime.strptime(last_hist_s, "%Y-%m-%d").date()
+                            item["today_label"] = f"最新收盘 ({_ld.strftime('%m-%d')})"
+                        except Exception:
+                            pass
+                        item["session_open"] = False
+            elif can_append_eq and has_real_live:
+                item["history"] = [{"date": eq_day_s, "price": px}]
+                item["today_label"] = eq_label
+                item["session_open"] = eq_session_open
+                item["price_note"] = ""
+
+        item["current_price"] = px
+        item["anchor_price"] = px
+
+        projs = item.get("projection") or []
+        hist_cur = item.get("history") or []
+        base_d = eq_day
+        if hist_cur and hist_cur[-1].get("date"):
+            try:
+                base_d = datetime.strptime(str(hist_cur[-1]["date"])[:10], "%Y-%m-%d").date()
+            except Exception:
+                base_d = eq_day
+
+        scale_ratio = (px / old_anchor) if old_anchor > 0 else 1.0
+        cursor_d = base_d
+        for d_i, p_obj in enumerate(projs):
+            if not isinstance(p_obj, dict):
+                continue
+            if p_obj.get("wave_ret") is not None:
+                w_ret = float(p_obj["wave_ret"])
+                new_p = round(px * (1.0 + w_ret), 2)
+            elif old_anchor > 0 and p_obj.get("price") is not None:
+                old_p = float(p_obj["price"])
+                w_ret = (old_p - old_anchor) / old_anchor
+                p_obj["wave_ret"] = round(w_ret, 6)
+                new_p = round(old_p * scale_ratio, 2)
+            else:
+                w_ret = float(p_obj.get("pct", 0.0)) / 100.0
+                p_obj["wave_ret"] = round(w_ret, 6)
+                new_p = round(px * (1.0 + w_ret), 2)
+
+            p_obj["price"] = new_p
+            p_obj["pct"] = round(((new_p - px) / (px + 1e-8)) * 100.0, 1)
+            if tk == "BTC-USD":
+                p_obj["date"] = (base_d + timedelta(days=d_i + 1)).strftime("%Y-%m-%d")
+            else:
+                cursor_d += timedelta(days=1)
+                while cursor_d.weekday() >= 5:
+                    cursor_d += timedelta(days=1)
+                p_obj["date"] = cursor_d.strftime("%Y-%m-%d")
+
+        if by_ticker and isinstance(by_ticker.get(tk), dict):
+            b_item = by_ticker[tk]
+            b_item["latest_price"] = px
+            b_item["current_price"] = px
+            for k_lvl in ("s1", "s2", "sl", "r1", "r2"):
+                if b_item.get(k_lvl) is not None:
+                    item[k_lvl] = b_item[k_lvl]
+
+        proj_prices = [float(p["price"]) for p in projs if isinstance(p, dict) and p.get("price") is not None]
+        if proj_prices:
+            max_proj_p = max(proj_prices)
+            item["r2"] = max(float(item.get("r2") or 0.0), round(max_proj_p * 1.015, 2))
+            if item.get("r1") is not None and float(item["r2"]) <= float(item["r1"]):
+                min_step = max(0.01, round(px * 0.005, 2))
+                item["r2"] = round(float(item["r1"]) + min_step, 2)
+            if by_ticker and isinstance(by_ticker.get(tk), dict):
+                by_ticker[tk]["r2"] = item["r2"]
+
+        try:
+            item["cycle_windows"] = _build_cycle_windows_from_projections(
+                projections=projs,
+                current_price=px,
+                r1=item.get("r1"),
+                r2=item.get("r2"),
+            )
+        except Exception:
+            pass
+
+        r1_v = float(item.get("r1") or 0.0)
+        r2_v = float(item.get("r2") or 0.0)
+        for cw in item.get("cycle_windows", []):
+            if isinstance(cw, dict) and cw.get("price"):
+                cw_p = float(cw["price"])
+                if cw.get("type") in ("bottom", "caution"):
+                    if (r1_v > 0 and cw_p >= r1_v) or (r2_v > 0 and cw_p >= r2_v):
+                        cw["type"] = "caution"
+                        cw["desc"] = "⚠️ 高位强势休整窗 (已超R1/R2阻力·勿追高)"
+                        cw["tag"] = "⚠️ 高位强势休整窗（已超R1/R2阻力·勿追高）"
+                    else:
+                        cw["type"] = "bottom"
+                        cw["desc"] = "🔵 周期底回踩窗 (关注空头回补企稳)"
+                        cw["tag"] = "周期底回踩窗 (企稳关注)"
+
+
 def generate_time_cycle_projections(
     raw_panel: pd.DataFrame,
     target_tickers: Optional[List[str]] = None,
@@ -2639,8 +2855,11 @@ def generate_time_cycle_projections(
 
     # 历史曲线：美股/ETF 只保留已收盘交易日（未收盘实时价稍后单独追加）；BTC-USD 保留全部 7x24 自然日（含周六、周日）
     try:
-        _session_date, _last_closed, _today_label, _session_open = _get_chart_session(as_of)
-        _btc_latest_day = _get_latest_expected_btc_day(as_of)
+        _et_now = _to_et(as_of)
+        _et_hm = _et_now.hour * 60 + _et_now.minute
+        _et_wd = _et_now.weekday()
+        _session_date, _last_closed, _today_label, _session_open = _get_chart_session(_et_now)
+        _btc_latest_day = _get_latest_expected_btc_day(_et_now)
         combined_panel = combined_panel.copy()
         combined_panel['Date'] = pd.to_datetime(combined_panel['Date'])
         _is_btc_mask = (combined_panel['Ticker'] == 'BTC-USD')
@@ -2649,6 +2868,7 @@ def generate_time_cycle_projections(
             | ((~_is_btc_mask) & (combined_panel['Date'].dt.date <= _last_closed))
         ]
     except Exception:
+        _et_hm, _et_wd = 12 * 60, 0
         _session_date, _last_closed, _today_label, _session_open = datetime.now().date(), datetime.now().date(), "今日", False
         _btc_latest_day = datetime.now(timezone.utc).date()
 
@@ -2774,9 +2994,12 @@ def generate_time_cycle_projections(
             price_kind = str(sc_info.get("price_kind") or "")
             _live_date = str(sc_info.get("live_date") or sc_info.get("quote_date") or sc_info.get("ext_time") or "")[:10]
             _today_str = anchor_date.strftime("%Y-%m-%d")
-            real_live = bool(has_live and price_kind in ("overnight", "premarket", "regular") and (not _live_date or _live_date == _today_str))
+            _daytime_eq_session = (_et_wd < 5 and 4 * 60 <= _et_hm < 20 * 60)
+            _allowed_kinds = ("overnight", "premarket", "regular", "postmarket") if _daytime_eq_session else ("overnight", "premarket", "regular")
+            _can_update_today = _session_open or _daytime_eq_session
+            real_live = bool(has_live and price_kind in _allowed_kinds and (not _live_date or _live_date == _today_str))
             appended_live = False
-            if real_live and _session_open and last_hist_dt < anchor_date:
+            if real_live and _can_update_today and last_hist_dt < anchor_date:
                 hist_entries.append({
                     'date': anchor_date.strftime('%Y-%m-%d'),
                     'price': round(display_p, 2)
@@ -2784,7 +3007,7 @@ def generate_time_cycle_projections(
                 closes = np.append(closes, display_p)
                 cur_p = display_p
                 appended_live = True
-            elif real_live and _session_open and last_hist_dt == anchor_date:
+            elif real_live and _can_update_today and last_hist_dt == anchor_date:
                 hist_entries[-1]['price'] = round(display_p, 2)
                 closes[-1] = display_p
                 cur_p = display_p
@@ -2795,7 +3018,7 @@ def generate_time_cycle_projections(
 
             if appended_live:
                 use_dates = future_dates
-                shown_label = "今日"
+                shown_label = _today_label
             else:
                 use_dates = []
                 cursor = last_hist_dt
@@ -5552,7 +5775,7 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
                     <!-- Card 2: S/R Level Ladder (攻防点位天梯) -->
                     <div style="background: rgba(13, 17, 23, 0.85); border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; padding: 12px 14px;">
                         <div style="font-size: 12px; font-weight: 700; color: #cbd5e1; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center;">
-                            <span>🪜 多级攻防点位天梯</span>
+                            <span>🎯 多级攻防点位天梯</span>
                             <span style="font-size: 10.5px; color: #8b949e;">软ATR+POC动态锚定</span>
                         </div>
                         <div id="cycleLevelsLadder" style="display: flex; flex-direction: column; gap: 4px; font-family: 'JetBrains Mono', monospace; font-size: 11px;">
@@ -6198,6 +6421,16 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
                         const borderAlpha = isCaution ? 'rgba(227, 179, 65, 0.35)' : (isTop ? 'rgba(248, 81, 73, 0.28)' : 'rgba(56, 189, 248, 0.28)');
                         const icon = isCaution ? '⚠️' : (isTop ? '🔴' : '🔵');
                         const tag = w.tag || (isCaution ? '⚠️ 高位强势休整窗 (防追高)' : (isTop ? '周期阻力窗 (逢高不过就跑)' : '周期底回踩窗 (企稳关注)'));
+                        const curPx = Number(data.current_price || 0);
+                        const tgtPx = Number(w.price || 0);
+                        const diffPct = (curPx > 0 && tgtPx > 0) ? (((tgtPx - curPx) / curPx) * 100) : null;
+                        const diffStr = (diffPct !== null) ? `${{diffPct >= 0 ? '+' : ''}}${{diffPct.toFixed(1)}}%` : '--';
+                        const actionNote = isCaution
+                            ? '已超上方 R1/R2 阻力带 · 防追高回落'
+                            : (isTop
+                                ? '触及上方 R1/R2 阻力带注意止盈'
+                                : ((diffPct !== null && diffPct > 0) ? '冲高后回踩波段谷底 · 关注承接企稳' : '回踩波段谷底支撑 · 关注企稳低吸'));
+                        const subText = `距现价 ${{diffStr}} · ${{actionNote}}`;
                         return `
                             <div class="cycle-timeline-card" style="background: ${{bgAlpha}}; border: 1px solid ${{borderAlpha}};" onmouseenter="highlightCycleDay('${{w.day}}')" onmouseleave="clearCycleHighlight()">
                                 <div>
@@ -6206,7 +6439,7 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
                                         <span>${{w.day}} (${{w.date ? w.date.slice(5) : ''}})</span>
                                         <span style="font-size: 9.5px; padding: 1px 5px; border-radius: 3px; background: ${{borderAlpha}};">${{tag}}</span>
                                     </div>
-                                    <div style="font-size: 10.5px; color: #8b949e; margin-top: 3px;">${{w.desc || '关键周期变盘窗口'}}</div>
+                                    <div style="font-size: 10.5px; color: #8b949e; margin-top: 3px;">${{subText}}</div>
                                 </div>
                                 <div style="text-align: right; font-family: 'JetBrains Mono', monospace;">
                                     <div style="font-size: 13.5px; font-weight: 800; color: #f0f6fc;">$${{Number(w.price).toFixed(2)}}</div>

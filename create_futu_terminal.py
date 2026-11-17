@@ -413,98 +413,19 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
 
                 _tc_proj = ai_predictions.get("time_cycle_projections", {})
                 if isinstance(_tc_proj, dict) and ai_predictions.get("by_ticker"):
-                    for _tk_c, _tc_item in _tc_proj.items():
-                        _b_item = ai_predictions["by_ticker"].get(_tk_c)
-                        if isinstance(_tc_item, dict) and isinstance(_b_item, dict):
-                            _new_cp = float(_b_item.get("latest_price") or _b_item.get("current_price") or 0.0)
-                            if _new_cp > 0:
-                                _cp_round = round(_new_cp, 2)
-                                _hist_list = _tc_item.get("history") or []
-                                _old_anchor = float(
-                                    _tc_item.get("anchor_price")
-                                    or (_hist_list[-1].get("price") if _hist_list else 0.0)
-                                    or _tc_item.get("current_price")
-                                    or _cp_round
-                                )
-                                _tc_item["current_price"] = _cp_round
-                                _tc_item["anchor_price"] = _cp_round
-                                _tc_item["price_note"] = ""
-                                if _hist_list:
-                                    if _tk_c == "BTC-USD":
-                                        from datetime import datetime as _dt_utc, timezone as _tz_utc, timedelta as _td_utc
-                                        _btc_today_s = _dt_utc.now(_tz_utc.utc).date().strftime("%Y-%m-%d")
-                                        if str(_hist_list[-1].get("date", ""))[:10] < _btc_today_s:
-                                            _hist_list.append({"date": _btc_today_s, "price": _cp_round})
-                                            _tc_item["history"] = _hist_list[-20:]
-                                        else:
-                                            _hist_list[-1]["price"] = _cp_round
-                                        _tc_item["today_label"] = "今日"
-                                    else:
-                                        _hist_list[-1]["price"] = _cp_round
-                                # 保持 15 日涨跌幅波形比例不变，仅按最新现价实时对齐锚定推演起点
-                                _proj_items = _tc_item.get("projection") or []
-                                for _d_i, _p_obj in enumerate(_proj_items):
-                                    if not isinstance(_p_obj, dict):
-                                        continue
-                                    if _p_obj.get("wave_ret") is not None:
-                                        _w_ret = float(_p_obj["wave_ret"])
-                                    elif _old_anchor > 0 and _p_obj.get("price") is not None:
-                                        _w_ret = (float(_p_obj["price"]) - _old_anchor) / _old_anchor
-                                        _p_obj["wave_ret"] = round(_w_ret, 6)
-                                    else:
-                                        _w_ret = float(_p_obj.get("pct", 0.0)) / 100.0
-                                        _p_obj["wave_ret"] = round(_w_ret, 6)
-                                    _new_p_val = round(_cp_round * (1.0 + _w_ret), 2)
-                                    _p_obj["price"] = _new_p_val
-                                    _p_obj["pct"] = round(((_new_p_val - _cp_round) / (_cp_round + 1e-8)) * 100.0, 1)
-                                    if _tk_c == "BTC-USD" and _hist_list:
-                                        from datetime import datetime as _dt_utc2, timedelta as _td_utc2
-                                        _base_d = _dt_utc2.strptime(str(_tc_item["history"][-1]["date"])[:10], "%Y-%m-%d").date()
-                                        _p_obj["date"] = (_base_d + _td_utc2(days=_d_i + 1)).strftime("%Y-%m-%d")
-                            # 1. 同步常规防御梯队点位 (s1, s2, sl, r1, r2) — 统一纯数学驱动，零个股硬编码
-                            for _k_lvl in ("s1", "s2", "sl", "r1", "r2"):
-                                if _b_item.get(_k_lvl) is not None:
-                                    _tc_item[_k_lvl] = _b_item[_k_lvl]
-
-                            # 2. R2 极限阻力联动校准 (Issue 3 / R3):
-                            # 当 15 日推演路径最高价 max_proj_p 突破静态 R2 时，动态拔高 R2 至 max(r2, round(max_proj_p * 1.015, 2))
-                            proj_list = _tc_item.get("projection", [])
-                            proj_prices = [float(p["price"]) for p in proj_list if isinstance(p, dict) and p.get("price") is not None]
-                            if proj_prices:
-                                max_proj_p = max(proj_prices)
-                                _tc_item["r2"] = max(float(_tc_item.get("r2") or 0.0), round(max_proj_p * 1.015, 2))
-                                if _tc_item.get("r1") is not None and float(_tc_item["r2"]) <= float(_tc_item["r1"]):
-                                    _min_step = max(0.01, round(float(_tc_item.get("current_price") or 100.0) * 0.005, 2))
-                                    _tc_item["r2"] = round(float(_tc_item["r1"]) + _min_step, 2)
-                                _b_item["r2"] = _tc_item["r2"]
-
-                            # 3. 动态重构变盘时间窗 (Re-invoke _build_cycle_windows_from_projections)
-                            try:
-                                import ml_predictor_5y
-                                _tc_item["cycle_windows"] = ml_predictor_5y._build_cycle_windows_from_projections(
-                                    projections=_tc_item.get("projection", []),
-                                    current_price=_tc_item.get("current_price"),
-                                    r1=_tc_item.get("r1"),
-                                    r2=_tc_item.get("r2")
-                                )
-                            except Exception:
-                                pass
-
-                            # 4. 双重防线兜底校验: 严禁任何高于 R1/R2 的波谷标为周期底回踩
-                            _r1 = float(_tc_item.get("r1") or 0.0)
-                            _r2 = float(_tc_item.get("r2") or 0.0)
-                            for _cw in _tc_item.get("cycle_windows", []):
-                                if isinstance(_cw, dict) and _cw.get("price"):
-                                    _cw_p = float(_cw["price"])
-                                    if _cw.get("type") in ("bottom", "caution"):
-                                        if (_r1 > 0 and _cw_p >= _r1) or (_r2 > 0 and _cw_p >= _r2):
-                                            _cw["type"] = "caution"
-                                            _cw["desc"] = "⚠️ 高位强势休整窗 (已超R1/R2阻力·勿追高)"
-                                            _cw["tag"] = "⚠️ 高位强势休整窗（已超R1/R2阻力·勿追高）"
-                                        else:
-                                            _cw["type"] = "bottom"
-                                            _cw["desc"] = "🔵 周期底回踩窗 (关注空头回补企稳)"
-                                            _cw["tag"] = "周期底回踩窗 (企稳关注)"
+                    import ml_predictor_5y as _ml_tc
+                    _tc_live_prices = {}
+                    for _tk_c, _b_item in ai_predictions["by_ticker"].items():
+                        if isinstance(_b_item, dict):
+                            _cp_v = float(_b_item.get("latest_price") or _b_item.get("current_price") or 0.0)
+                            if _cp_v > 0:
+                                _tc_live_prices[_tk_c] = round(_cp_v, 2)
+                    _ml_tc.align_time_cycle_projections_with_live(
+                        tc_dict=_tc_proj,
+                        live_prices=_tc_live_prices,
+                        by_ticker=ai_predictions["by_ticker"],
+                        session_code=session_code,
+                    )
                 _def_flight_obj = (weather_info.get("defensive_flight") if isinstance(weather_info, dict) else None) or ai_predictions.get("defensive_flight", {})
                 ai_predictions["defensive_flight"] = _def_flight_obj
                 _breadth_obj = (weather_info.get("cross_industry_breadth") if isinstance(weather_info, dict) else None) or breadth_info or ai_predictions.get("cross_industry_breadth", {})
@@ -4612,6 +4533,14 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
 
             renderNotifList("all");
             updateSoundUI();
+            if (window.location.hash === "#open_flash") {{
+                openMacroFlashDrawer();
+            }}
+            window.addEventListener("hashchange", () => {{
+                if (window.location.hash === "#open_flash") {{
+                    openMacroFlashDrawer();
+                }}
+            }});
             setInterval(pollLatestNotifications, 20000);
         }});
     </script>

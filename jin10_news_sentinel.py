@@ -1419,7 +1419,10 @@ def render_macro_calendar_banner_html(
             f"justify-content: space-between; gap: 10px; flex-wrap: wrap;"
         )
         flash_btn = (
-            '<a href="futu_pro_terminal.html" style="font-size: 11.5px; color: #7dd3fc; '
+            '<a href="futu_pro_terminal.html#open_flash" '
+            'onclick="if(document.getElementById(\'notifDrawer\')||document.getElementById(\'notifDrawerOverlay\'))'
+            '{event.preventDefault();if(typeof openMacroFlashDrawer===\'function\')openMacroFlashDrawer();}" '
+            'style="font-size: 11.5px; color: #7dd3fc; '
             'background: rgba(56,189,248,0.14); border: 1px solid rgba(56,189,248,0.35); '
             'padding: 3px 10px; border-radius: 6px; text-decoration: none; font-weight: 700; white-space: nowrap;">'
             '⚡ 查看实时快讯 ↗</a>'

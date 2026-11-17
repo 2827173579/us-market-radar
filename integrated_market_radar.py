@@ -3723,7 +3723,6 @@ def sync_live_prices_to_predict_html(macro_data=None, stocks_data=None, session_
     try:
         import json as _json
         import ml_predictor_5y
-        btc_utc_today = datetime.now(timezone.utc).date().strftime("%Y-%m-%d")
 
         live = {}
         _pairs = []
@@ -3759,103 +3758,13 @@ def sync_live_prices_to_predict_html(macro_data=None, stocks_data=None, session_
         if not isinstance(html_tc_data, dict):
             return False
 
-        def _align_tc_dict(tc_dict, by_tk_map=None):
-            for tk, item in tc_dict.items():
-                if not isinstance(item, dict):
-                    continue
-                hist = item.get("history") or []
-                old_anchor = float(
-                    item.get("anchor_price")
-                    or (hist[-1].get("price") if hist else 0.0)
-                    or item.get("current_price")
-                    or 0.0
-                )
-                px = float(live.get(tk) or item.get("current_price") or old_anchor or 0.0)
-                if px <= 0:
-                    continue
-                px = round(px, 2)
-                if old_anchor <= 0:
-                    old_anchor = px
-
-                item["current_price"] = px
-                item["anchor_price"] = px
-                item["price_note"] = ""
-
-                if hist:
-                    if tk == "BTC-USD":
-                        if str(hist[-1].get("date", ""))[:10] < btc_utc_today:
-                            hist.append({"date": btc_utc_today, "price": px})
-                            item["history"] = hist[-20:]
-                        else:
-                            hist[-1]["price"] = px
-                        item["today_label"] = "今日"
-                    else:
-                        hist[-1]["price"] = px
-
-                projs = item.get("projection") or []
-                for d_i, p_obj in enumerate(projs):
-                    if not isinstance(p_obj, dict):
-                        continue
-                    if p_obj.get("wave_ret") is not None:
-                        w_ret = float(p_obj["wave_ret"])
-                    elif old_anchor > 0 and p_obj.get("price") is not None:
-                        w_ret = (float(p_obj["price"]) - old_anchor) / old_anchor
-                        p_obj["wave_ret"] = round(w_ret, 6)
-                    else:
-                        w_ret = float(p_obj.get("pct", 0.0)) / 100.0
-                        p_obj["wave_ret"] = round(w_ret, 6)
-                    new_p = round(px * (1.0 + w_ret), 2)
-                    p_obj["price"] = new_p
-                    p_obj["pct"] = round(((new_p - px) / (px + 1e-8)) * 100.0, 1)
-                    if tk == "BTC-USD" and item.get("history"):
-                        base_d = datetime.strptime(str(item["history"][-1]["date"])[:10], "%Y-%m-%d").date()
-                        p_obj["date"] = (base_d + timedelta(days=d_i + 1)).strftime("%Y-%m-%d")
-
-                if by_tk_map and isinstance(by_tk_map.get(tk), dict):
-                    b_item = by_tk_map[tk]
-                    b_item["latest_price"] = px
-                    b_item["current_price"] = px
-                    for k_lvl in ("s1", "s2", "sl", "r1", "r2"):
-                        if b_item.get(k_lvl) is not None:
-                            item[k_lvl] = b_item[k_lvl]
-
-                proj_prices = [float(p["price"]) for p in projs if isinstance(p, dict) and p.get("price") is not None]
-                if proj_prices:
-                    max_proj_p = max(proj_prices)
-                    item["r2"] = max(float(item.get("r2") or 0.0), round(max_proj_p * 1.015, 2))
-                    if item.get("r1") is not None and float(item["r2"]) <= float(item["r1"]):
-                        min_step = max(0.01, round(px * 0.005, 2))
-                        item["r2"] = round(float(item["r1"]) + min_step, 2)
-                    if by_tk_map and isinstance(by_tk_map.get(tk), dict):
-                        by_tk_map[tk]["r2"] = item["r2"]
-
-                try:
-                    item["cycle_windows"] = ml_predictor_5y._build_cycle_windows_from_projections(
-                        projections=projs,
-                        current_price=px,
-                        r1=item.get("r1"),
-                        r2=item.get("r2")
-                    )
-                except Exception:
-                    pass
-
-                r1_v = float(item.get("r1") or 0.0)
-                r2_v = float(item.get("r2") or 0.0)
-                for cw in item.get("cycle_windows", []):
-                    if isinstance(cw, dict) and cw.get("price"):
-                        cw_p = float(cw["price"])
-                        if cw.get("type") in ("bottom", "caution"):
-                            if (r1_v > 0 and cw_p >= r1_v) or (r2_v > 0 and cw_p >= r2_v):
-                                cw["type"] = "caution"
-                                cw["desc"] = "⚠️ 高位强势休整窗 (已超R1/R2阻力·勿追高)"
-                                cw["tag"] = "⚠️ 高位强势休整窗（已超R1/R2阻力·勿追高）"
-                            else:
-                                cw["type"] = "bottom"
-                                cw["desc"] = "🔵 周期底回踩窗 (关注空头回补企稳)"
-                                cw["tag"] = "周期底回踩窗 (企稳关注)"
-
         by_tk = (ai_payload.get("by_ticker") if isinstance(ai_payload, dict) else None) or {}
-        _align_tc_dict(html_tc_data, by_tk)
+        ml_predictor_5y.align_time_cycle_projections_with_live(
+            tc_dict=html_tc_data,
+            live_prices=live,
+            by_ticker=by_tk,
+            session_code=session_code,
+        )
 
         if isinstance(ai_payload, dict):
             ai_payload["time_cycle_projections"] = html_tc_data
