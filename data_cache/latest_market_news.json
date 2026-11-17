@@ -1,9 +1,22 @@
 {
-  "updated_at_ts": 1794948563.512,
-  "updated_at_et": "11-17 15:49 ET",
-  "updated_at_kst": "05:49 KST",
+  "updated_at_ts": 1794948663.532,
+  "updated_at_et": "11-17 15:51 ET",
+  "updated_at_kst": "05:51 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261118045000001800",
+      "title": "英伟达将在美股盘后公布Q3财报。",
+      "summary": "英伟达将在美股盘后公布Q3财报。",
+      "keywords": [
+        "英伟达"
+      ],
+      "pub_ts": 1794948600.0,
+      "time_et": "11-17 15:50 ET",
+      "time_bj": "04:50 BJ",
+      "time_kst": "05:50 KST",
+      "time_display": "15:50 ET / 04:50 BJ"
+    },
     {
       "id": "20261118040140465800",
       "title": "道指扩大跌幅至2%，标普500指数跌1.59%，纳指跌1.46%。",
@@ -330,19 +343,6 @@
       "time_bj": "21:01 BJ",
       "time_kst": "22:01 KST",
       "time_display": "08:01 ET / 21:01 BJ"
-    },
-    {
-      "id": "20261117205444653800",
-      "title": "伊朗否认“脏弹”袭击计划：虚假指控，毫无根据",
-      "summary": "伊朗外交部否认有关在华盛顿策划“脏弹”袭击的报道，称指控“毫无根据”。特朗普表示美方正严肃对待相关威胁，但白宫称目前没有可信的美国本土安全威胁。点击查看…",
-      "keywords": [
-        "特朗普"
-      ],
-      "pub_ts": 1794920084.0,
-      "time_et": "11-17 07:54 ET",
-      "time_bj": "20:54 BJ",
-      "time_kst": "21:54 KST",
-      "time_display": "07:54 ET / 20:54 BJ"
     }
   ],
   "ticker_news": {
@@ -2679,6 +2679,13 @@
     ],
     "ORCL": [
       {
+        "title": "The Fed’s first close look at the AI buildout finds $3 trillion of AI commitments that aren’t on big tech’s balance sheet as debt",
+        "url": "https://finance.yahoo.com/technology/ai/articles/fed-first-close-look-ai-180000354.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 13:00 ET",
+        "pub_ts": 1794938400.0
+      },
+      {
         "title": "Oracle’s 40% 6 Month Slide Continues: This Analyst Maintains His Buy Rating, Predicting 230% Returns",
         "url": "https://247wallst.com/investing/2026/11/17/oracles-40-6-month-slide-continues-this-analyst-maintains-his-buy-rating-predicting-230-returns/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2705,13 +2712,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 10:29 ET",
         "pub_ts": 1794929390.0
-      },
-      {
-        "title": "Michael Burry Closed His Oracle Puts, but Oracle Is Still Down 38% This Year. What Will It Take to Get ORCL Stock Back to $200?",
-        "url": "https://247wallst.com/investing/2026/11/17/michael-burry-closed-his-oracle-puts-but-oracle-is-still-down-38-this-year-what-will-it-take-to-get-orcl-stock-back-to-200/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 09:57 ET",
-        "pub_ts": 1794927453.0
       }
     ],
     "COIN": [
@@ -3253,15 +3253,15 @@
     "CEG": 1794947288.8075278,
     "FPS": 1794948563.5120773,
     "MU": 1794947482.668002,
-    "SKHY": 1794947093.3135328,
+    "SKHY": 1794948663.5317283,
     "WDC": 1794947288.8075278,
     "STX": 1794947579.541647,
-    "MSTR": 1794947093.3135328,
-    "SNDK": 1794947093.3135328,
+    "MSTR": 1794948663.5317283,
+    "SNDK": 1794948663.5317283,
     "BTC-USD": 1794947579.541647,
-    "CRWD": 1794947093.3135328,
-    "ORCL": 1794947093.3135328,
-    "COIN": 1794947093.3135328,
+    "CRWD": 1794948663.5317283,
+    "ORCL": 1794948663.5317283,
+    "COIN": 1794948663.5317283,
     "LLY": 1794947482.668002,
     "MRNA": 1794947288.8075278,
     "NKE": 1794947579.541647,
@@ -3278,7 +3278,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (15:01 ET / 04:01 BJ) [标普]：道指扩大跌幅至2%，标普500指数跌1.59%，纳指跌1.46%。",
+    "detail": "⚡ 最新核心快讯 (15:50 ET / 04:50 BJ) [英伟达]：英伟达将在美股盘后公布Q3财报。",
     "event_name": "",
     "minutes_left": 0
   }
