@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1794946896.513,
-  "updated_at_et": "11-17 15:21 ET",
-  "updated_at_kst": "05:21 KST",
+  "updated_at_ts": 1794946994.514,
+  "updated_at_et": "11-17 15:23 ET",
+  "updated_at_kst": "05:23 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2226,14 +2226,21 @@
         "pub_ts": 1794855600.0
       },
       {
-        "title": "Dell and HPE Stocks Are Getting Hammered. Why the Selloff May Be Overdone.",
-        "url": "https://finance.yahoo.com/m/31309464-130b-37a1-ba20-3e329bfb4bea/dell-and-hpe-stocks-are.html?.tsrc=rss",
+        "title": "Update: Market Chatter: FAA Halts Juniper Router Installations After Flight Outage",
+        "url": "https://finance.yahoo.com/technology/articles/market-chatter-faa-halts-juniper-194828126.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-16 10:56 ET",
-        "pub_ts": 1794844560.0
+        "time": "11-17 14:48 ET",
+        "pub_ts": 1794944908.0
       }
     ],
     "DELL": [
+      {
+        "title": "Could Your Dell Shares Be Worth $906 Or $114?",
+        "url": "https://www.trefis.com/stock/dell/articles/625591/could-your-dell-shares-be-worth-906-or-114/2026-11-17?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 14:58 ET",
+        "pub_ts": 1794945489.0
+      },
       {
         "title": "GF Securities Revamps Dell Target Ahead of Earnings",
         "url": "https://finance.yahoo.com/markets/stocks/articles/gf-securities-revamps-dell-target-191736044.html?.tsrc=rss",
@@ -2261,13 +2268,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 12:49 ET",
         "pub_ts": 1794937780.0
-      },
-      {
-        "title": "Michael Dell Says 90% of Kids Haven't Claimed Their $250 Investment Accounts — Jim Cramer Steps In to Help Reach Families",
-        "url": "https://finance.yahoo.com/small-business/articles/michael-dell-says-90-kids-173006554.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 12:30 ET",
-        "pub_ts": 1794936606.0
       }
     ],
     "OKLO": [
@@ -3236,22 +3236,22 @@
     "LITE": 1794946684.7100964,
     "AAOI": 1794946684.7100964,
     "SPCX": 1794946684.7100964,
-    "ASTS": 1794945408.9618373,
+    "ASTS": 1794946994.5135324,
     "AXTI": 1794946684.7100964,
-    "NASA": 1794945408.9618373,
+    "NASA": 1794946994.5135324,
     "LUNR": 1794946684.7100964,
-    "TSLA": 1794945408.9618373,
-    "AXP": 1794945408.9618373,
-    "RKLB": 1794945408.9618373,
+    "TSLA": 1794946994.5135324,
+    "AXP": 1794946994.5135324,
+    "RKLB": 1794946994.5135324,
     "KO": 1794946684.7100964,
     "FLY": 1794946684.7100964,
     "INTC": 1794946896.512581,
-    "VRT": 1794945408.9618373,
-    "HPE": 1794945408.9618373,
-    "DELL": 1794945408.9618373,
-    "OKLO": 1794945408.9618373,
+    "VRT": 1794946994.5135324,
+    "HPE": 1794946994.5135324,
+    "DELL": 1794946994.5135324,
+    "OKLO": 1794946994.5135324,
     "CEG": 1794945704.272877,
-    "FPS": 1794945408.9618373,
+    "FPS": 1794946994.5135324,
     "MU": 1794945900.1059532,
     "SKHY": 1794945509.6820283,
     "WDC": 1794945704.272877,
