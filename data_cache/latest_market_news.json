@@ -1,9 +1,22 @@
 {
-  "updated_at_ts": 1794943736.868,
-  "updated_at_et": "11-17 14:28 ET",
-  "updated_at_kst": "04:28 KST",
+  "updated_at_ts": 1794943834.215,
+  "updated_at_et": "11-17 14:30 ET",
+  "updated_at_kst": "04:30 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261118032807927800",
+      "title": "美联储威廉姆斯：我认为当前形势无需采取激进的政策行动。",
+      "summary": "美联储威廉姆斯：我认为当前形势无需采取激进的政策行动。",
+      "keywords": [
+        "美联储"
+      ],
+      "pub_ts": 1794943687.0,
+      "time_et": "11-17 14:28 ET",
+      "time_bj": "03:28 BJ",
+      "time_kst": "04:28 KST",
+      "time_display": "14:28 ET / 03:28 BJ"
+    },
     {
       "id": "20261118010947992800",
       "title": "据英国金融时报：英伟达(NVDA.O)通过其新加坡子公司在2025年实现1,040亿美元…",
@@ -327,19 +340,6 @@
         "特朗普"
       ],
       "pub_ts": 1794918709.0,
-      "time_et": "11-17 07:31 ET",
-      "time_bj": "20:31 BJ",
-      "time_kst": "21:31 KST",
-      "time_display": "07:31 ET / 20:31 BJ"
-    },
-    {
-      "id": "20261117203137106800",
-      "title": "美联储穆萨莱姆：劳动力市场稳定且平衡，接近充分就业。",
-      "summary": "美联储穆萨莱姆：劳动力市场稳定且平衡，接近充分就业。",
-      "keywords": [
-        "美联储"
-      ],
-      "pub_ts": 1794918697.0,
       "time_et": "11-17 07:31 ET",
       "time_bj": "20:31 BJ",
       "time_kst": "21:31 KST",
@@ -2236,6 +2236,13 @@
     ],
     "DELL": [
       {
+        "title": "GF Securities Revamps Dell Target Ahead of Earnings",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/gf-securities-revamps-dell-target-191736044.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 14:17 ET",
+        "pub_ts": 1794943056.0
+      },
+      {
         "title": "What Needs To Be True To Buy Dell Stock?",
         "url": "https://www.trefis.com/stock/dell/articles/625654/what-needs-to-be-true-to-buy-dell-stock/2026-11-17?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2262,13 +2269,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 12:30 ET",
         "pub_ts": 1794936606.0
-      },
-      {
-        "title": "What Triggered Dell Stock's 7% Drop?",
-        "url": "https://www.trefis.com/stock/dell/articles/625803/why-did-dell-stock-fall-7/2026-11-17?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 09:40 ET",
-        "pub_ts": 1794926449.0
       }
     ],
     "OKLO": [
@@ -3237,22 +3237,22 @@
     "LITE": 1794943538.1409268,
     "AAOI": 1794943538.1409268,
     "SPCX": 1794943538.1409268,
-    "ASTS": 1794942249.8815272,
+    "ASTS": 1794943834.2145326,
     "AXTI": 1794943538.1409268,
-    "NASA": 1794942249.8815272,
+    "NASA": 1794943834.2145326,
     "LUNR": 1794943538.1409268,
-    "TSLA": 1794942249.8815272,
-    "AXP": 1794942249.8815272,
-    "RKLB": 1794942249.8815272,
+    "TSLA": 1794943834.2145326,
+    "AXP": 1794943834.2145326,
+    "RKLB": 1794943834.2145326,
     "KO": 1794943538.1409268,
     "FLY": 1794943538.1409268,
     "INTC": 1794943736.8679686,
-    "VRT": 1794942249.8815272,
-    "HPE": 1794942249.8815272,
-    "DELL": 1794942249.8815272,
-    "OKLO": 1794942249.8815272,
+    "VRT": 1794943834.2145326,
+    "HPE": 1794943834.2145326,
+    "DELL": 1794943834.2145326,
+    "OKLO": 1794943834.2145326,
     "CEG": 1794942545.5346937,
-    "FPS": 1794942249.8815272,
+    "FPS": 1794943834.2145326,
     "MU": 1794942743.1148033,
     "SKHY": 1794942350.2522223,
     "WDC": 1794942545.5346937,
@@ -3279,7 +3279,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (12:09 ET / 01:09 BJ) [英伟达]：据英国金融时报：英伟达(NVDA.O)通过其新加坡子公司在2025年实现1,040亿美元营收，过去12个月增长72%。",
+    "detail": "⚡ 最新核心快讯 (14:28 ET / 03:28 BJ) [美联储]：美联储威廉姆斯：我认为当前形势无需采取激进的政策行动。",
     "event_name": "",
     "minutes_left": 0
   }
