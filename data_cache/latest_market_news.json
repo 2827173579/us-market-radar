@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1794949918.669,
-  "updated_at_et": "11-17 16:11 ET",
-  "updated_at_kst": "06:11 KST",
+  "updated_at_ts": 1794950015.178,
+  "updated_at_et": "11-17 16:13 ET",
+  "updated_at_kst": "06:13 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2126,6 +2126,13 @@
     ],
     "INTC": [
       {
+        "title": "ASUS Showcases Full-Stack AI Infrastructure at SC26, Featuring Intel and AMD Platforms",
+        "url": "https://finance.yahoo.com/technology/ai/articles/asus-showcases-full-stack-ai-204300656.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 15:43 ET",
+        "pub_ts": 1794948180.0
+      },
+      {
         "title": "Why Intel Stock Just Dropped",
         "url": "https://www.fool.com/investing/2026/11/17/why-intel-stock-just-dropped/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2152,13 +2159,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 12:55 ET",
         "pub_ts": 1794938139.0
-      },
-      {
-        "title": "Intel stock collapses; shareholders say they were misled",
-        "url": "https://www.thestreet.com/investing/intel-pension-fund-lawsuit-stock-collapse?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 12:47 ET",
-        "pub_ts": 1794937620.0
       }
     ],
     "VRT": [
@@ -3247,7 +3247,7 @@
     "RKLB": 1794948563.5120773,
     "KO": 1794949814.6658013,
     "FLY": 1794949814.6658013,
-    "INTC": 1794948465.6362486,
+    "INTC": 1794950015.1779373,
     "VRT": 1794948563.5120773,
     "HPE": 1794948563.5120773,
     "DELL": 1794948563.5120773,
@@ -3274,7 +3274,7 @@
     "WMT": 1794949061.206364,
     "V": 1794948865.1112828,
     "CAT": 1794949061.206364,
-    "FN": 1794948465.6362486,
+    "FN": 1794950015.1779373,
     "GLW": 1794949814.6658013
   },
   "calendar_banner": {
