@@ -1,9 +1,22 @@
 {
-  "updated_at_ts": 1794953675.126,
-  "updated_at_et": "11-17 17:14 ET",
-  "updated_at_kst": "07:14 KST",
+  "updated_at_ts": 1794953775.143,
+  "updated_at_et": "11-17 17:16 ET",
+  "updated_at_kst": "07:16 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261118061433883800",
+      "title": "英伟达临时CEO克雷斯：Hopper GPU已按多年期协议续约，价格最高达原价两倍；B3…",
+      "summary": "英伟达临时CEO克雷斯：Hopper GPU已按多年期协议续约，价格最高达原价两倍；B300价格自推出以来上涨逾60%。",
+      "keywords": [
+        "英伟达"
+      ],
+      "pub_ts": 1794953673.0,
+      "time_et": "11-17 17:14 ET",
+      "time_bj": "06:14 BJ",
+      "time_kst": "07:14 KST",
+      "time_display": "17:14 ET / 06:14 BJ"
+    },
     {
       "id": "20261118060826643800",
       "title": "英伟达临时CEO克雷斯：云行业积压订单现已达2.5万亿美元，而三个月前仅为2万亿美元。",
@@ -320,19 +333,6 @@
       "time_bj": "00:17 BJ",
       "time_kst": "01:17 KST",
       "time_display": "11:17 ET / 00:17 BJ"
-    },
-    {
-      "id": "20261118001209293800",
-      "title": "英伟达(NVDA.O)日内跌幅收窄至不足1%。",
-      "summary": "英伟达(NVDA.O)日内跌幅收窄至不足1%。",
-      "keywords": [
-        "英伟达"
-      ],
-      "pub_ts": 1794931929.0,
-      "time_et": "11-17 11:12 ET",
-      "time_bj": "00:12 BJ",
-      "time_kst": "01:12 KST",
-      "time_display": "11:12 ET / 00:12 BJ"
     }
   ],
   "ticker_news": {
@@ -2595,6 +2595,13 @@
     ],
     "BTC-USD": [
       {
+        "title": "Traders Exploiting Pricing Gaps In Pre-IPO Contracts",
+        "url": "https://finance.yahoo.com/video/traders-exploiting-pricing-gaps-pre-214103867.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 16:41 ET",
+        "pub_ts": 1794951663.0
+      },
+      {
         "title": "Billionaire Chamath issues blunt warning to Bitcoin investors over AI",
         "url": "https://www.thestreet.com/crypto/markets/billionaire-chamath-issues-blunt-warning-to-bitcoin-investors-over-ai?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2621,13 +2628,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 16:15 ET",
         "pub_ts": 1794950148.0
-      },
-      {
-        "title": "Why Bitcoin-backed lending needs higher standards now",
-        "url": "https://www.thestreet.com/crypto/innovation/why-bitcoin-backed-lending-needs-higher-standards-now?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 16:11 ET",
-        "pub_ts": 1794949873.0
       }
     ],
     "CRWD": [
@@ -3245,16 +3245,16 @@
     "MU": 1794953675.1255982,
     "SKHY": 1794953376.4104662,
     "WDC": 1794953475.3327162,
-    "STX": 1794952269.4595087,
+    "STX": 1794953775.1432061,
     "MSTR": 1794953376.4104662,
     "SNDK": 1794953376.4104662,
-    "BTC-USD": 1794952269.4595087,
+    "BTC-USD": 1794953775.1432061,
     "CRWD": 1794953376.4104662,
     "ORCL": 1794953376.4104662,
     "COIN": 1794953376.4104662,
     "LLY": 1794953675.1255982,
     "MRNA": 1794953475.3327162,
-    "NKE": 1794952269.4595087,
+    "NKE": 1794953775.1432061,
     "MCD": 1794953475.3327162,
     "PEP": 1794952568.370748,
     "XOM": 1794952568.370748,
@@ -3268,7 +3268,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (17:08 ET / 06:08 BJ) [英伟达]：英伟达临时CEO克雷斯：云行业积压订单现已达2.5万亿美元，而三个月前仅为2万亿美元。",
+    "detail": "⚡ 最新核心快讯 (17:14 ET / 06:14 BJ) [英伟达]：英伟达临时CEO克雷斯：Hopper GPU已按多年期协议续约，价格最高达原价两倍；B300价格自推出以来上涨逾60%。",
     "event_name": "",
     "minutes_left": 0
   }
