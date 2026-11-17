@@ -136,7 +136,7 @@ python -u integrated_market_radar.py --loop-daemon --interval-seconds 60 --durat
 | `DISCORD_WEBHOOK_URL` | 可选 | Discord 哨兵主频道 |
 | `DISCORD_CLAW_WEBHOOK_URL` | 可选 | 微信告警镜像频道（兼容 `DISCORD_ALERT_WEBHOOK_URL`） |
 | `DISCORD_DEFENSIVE_FLIGHT_WEBHOOK_URL` | 可选 | 防御因子背离专属频道 |
-| `GH_TOKEN` | 云端/本地自动同步必需 | 有本仓库 `contents:write` 权限的 GitHub PAT |
+| `GH_TOKEN` | 本地自动 push 需要；Actions 上用于刷新 Pages | 有**当前仓库** `contents:write` 的 PAT。Actions 没配这个 secret 时，仍会用默认 `GITHUB_TOKEN` 把看板 push 到本仓库 `main`，但「Deploy from a branch」不会因此重新构建 Pages |
 
 ---
 
@@ -166,7 +166,7 @@ python -u integrated_market_radar.py --loop-daemon --interval-seconds 60 --durat
 |---|---|---|
 | `FINNHUB_API_KEY` | ✅ | Finnhub 免费 API Key |
 | `PUSHPLUS_TOKEN` | 可选 | 微信推送 Token |
-| `GH_TOKEN` | 可选（推荐） | 有本仓库 `contents:write` 权限的 PAT；用于让 push 触发 Pages 重新部署 |
+| `GH_TOKEN` | 刷新 Pages 需要 | 有**本 fork** `contents:write` 的 PAT（不要用上游仓库的 token）。不设时云端仍会把看板 push 到本仓库 `main`，但分支 Pages 不会跟着重建 |
 | `DISCORD_WEBHOOK_URL` 等 | 可选 | Discord 推送频道 |
 
 ### Step 4 · 启用并手动触发一次
@@ -179,7 +179,7 @@ python -u integrated_market_radar.py --loop-daemon --interval-seconds 60 --durat
 ### Step 5 · 多端协同与避让机制
 
 - **PC（主）+ 安卓平板 Termux（备）自动避让**：通过 `shared_alert_state.py` 维护 360 秒 PC 心跳锁，PC 在线时安卓端（`--android`）自动进入 Standby 仅同步看板不发重复告警；PC 离线超 360 秒后安卓端自动接管告警推送；
-- **云端 Actions 互斥检测**：workflow 内置「15 分钟本地优先避让」（若 15 分钟内有本地客户端提交则云端自动退出），避免云端与本地同时写入冲突。
+- **云端 Actions 互斥**：只有**本仓库**最近 15 分钟内出现非 Actions 提交时，定时任务才会避让。Fork 时继承的上游提交，以及之后从上游同步下来的同一批 commit，不会被当成「本地客户端正在跑」。云端只 `commit` / `pull` / `push` 当前仓库（`github.repository`），不会把 `origin` 改到上游，也不会在 Actions 里 rebase 上游。
 
 ---
 
