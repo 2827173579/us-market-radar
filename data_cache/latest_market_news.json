@@ -1,9 +1,22 @@
 {
-  "updated_at_ts": 1794954378.41,
-  "updated_at_et": "11-17 17:26 ET",
-  "updated_at_kst": "07:26 KST",
+  "updated_at_ts": 1794954475.881,
+  "updated_at_et": "11-17 17:27 ET",
+  "updated_at_kst": "07:27 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261118062620836800",
+      "title": "英伟达临时CEO克雷斯：预计第四季度将是毛利率的低点，随后在2028财年回升至72%至7…",
+      "summary": "英伟达临时CEO克雷斯：预计第四季度将是毛利率的低点，随后在2028财年回升至72%至73%区间。",
+      "keywords": [
+        "英伟达"
+      ],
+      "pub_ts": 1794954380.0,
+      "time_et": "11-17 17:26 ET",
+      "time_bj": "06:26 BJ",
+      "time_kst": "07:26 KST",
+      "time_display": "17:26 ET / 06:26 BJ"
+    },
     {
       "id": "20261118062311717800",
       "title": "英伟达临时CEO克雷斯：仍有望于明年推出Vera Rubin Ultra，并于2028年…",
@@ -320,19 +333,6 @@
       "time_bj": "01:09 BJ",
       "time_kst": "02:09 KST",
       "time_display": "12:09 ET / 01:09 BJ"
-    },
-    {
-      "id": "20261118005713981800",
-      "title": "英伟达(NVDA.O)跌幅扩大至2%，此前一度收窄至1%。",
-      "summary": "英伟达(NVDA.O)跌幅扩大至2%，此前一度收窄至1%。",
-      "keywords": [
-        "英伟达"
-      ],
-      "pub_ts": 1794934633.0,
-      "time_et": "11-17 11:57 ET",
-      "time_bj": "00:57 BJ",
-      "time_kst": "01:57 KST",
-      "time_display": "11:57 ET / 00:57 BJ"
     }
   ],
   "ticker_news": {
@@ -930,7 +930,7 @@
     ],
     "AMD": [
       {
-        "title": "AMD, Broadcom, and TSMC stocks rise on Nvidia earnings beat",
+        "title": "AMD, Broadcom, CoreWeave stocks rise on Nvidia earnings beat",
         "url": "https://finance.yahoo.com/markets/stocks/article/amd-broadcom-tsmc-stocks-rise-on-nvidia-earnings-coreweave-nebius-shares-also-rally-220159436.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-17 17:01 ET",
@@ -1374,25 +1374,18 @@
     ],
     "CRWV": [
       {
+        "title": "AMD, Broadcom, CoreWeave stocks rise on Nvidia earnings beat",
+        "url": "https://finance.yahoo.com/markets/stocks/article/amd-broadcom-tsmc-stocks-rise-on-nvidia-earnings-coreweave-nebius-shares-also-rally-220159436.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 17:01 ET",
+        "pub_ts": 1794952919.0
+      },
+      {
         "title": "CoreWeave Stock Is Down 70% From Its High. Could a Huge Rebound Come in 2027?",
         "url": "https://www.fool.com/investing/2026/11/17/coreweave-stock-is-down-70-from-its-high-could-a-huge-rebound-come-in-2027/?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-17 15:37 ET",
         "pub_ts": 1794947822.0
-      },
-      {
-        "title": "David Tepper and 33 Other Funds Bought Software Stocks. CoreWeave Is Down 43% Since. Time to Buy?",
-        "url": "https://www.tikr.com/blog/david-tepper-and-33-other-funds-bought-software-stocks-coreweave-is-down-43-since-time-to-buy?ref=yahoofinance&tlnk=yf-261117-r3fmq2wq&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 09:48 ET",
-        "pub_ts": 1794926899.0
-      },
-      {
-        "title": "What Would Higher Interest Rates Do To CoreWeave Stock?",
-        "url": "https://www.trefis.com/stock/crwv/articles/625748/what-would-higher-interest-rates-do-to-coreweave-stock/2026-11-17?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 09:40 ET",
-        "pub_ts": 1794926452.0
       },
       {
         "title": "Nvidia's Complex Orbit",
@@ -1407,6 +1400,13 @@
         "source": "Yahoo Finance",
         "time": "11-17 14:38 ET",
         "pub_ts": 1794944322.0
+      },
+      {
+        "title": "Update: Market Chatter: Amazon, Google, Meta Lobbying Fails to Stop Trump From Pursuing China Data Center Curbs",
+        "url": "https://finance.yahoo.com/technology/articles/market-chatter-amazon-google-meta-172106872.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 12:21 ET",
+        "pub_ts": 1794936066.0
       }
     ],
     "NBIS": [
@@ -1707,6 +1707,13 @@
     ],
     "AAOI": [
       {
+        "title": "Applied Optoelectronics falls 8% on $550 million stock offering plan",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/applied-optoelectronics-falls-8-550-220235084.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 17:02 ET",
+        "pub_ts": 1794952955.0
+      },
+      {
         "title": "Coherent Rises 3% as Trump Presses Ahead With Chinese Optics Ban Despite Big Tech Lobbying",
         "url": "https://www.tikr.com/blog/coherent-rises-3-as-trump-presses-ahead-with-chinese-optics-ban-despite-big-tech-lobbying?ref=yahoofinance&tlnk=yf-261117-jmvfcr2f&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1733,13 +1740,6 @@
         "source": "Yahoo Finance",
         "time": "11-11 21:17 ET",
         "pub_ts": 1794449849.0
-      },
-      {
-        "title": "Applied Optoelectronics (AAOI) Just Soared 15.6% — This Company May Hold The Reason",
-        "url": "https://finance.yahoo.com/technology/ai/articles/applied-optoelectronics-aaoi-just-soared-233640320.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-11 18:36 ET",
-        "pub_ts": 1794440200.0
       }
     ],
     "SPCX": [
@@ -3203,31 +3203,31 @@
     "VIXY": 1794954072.6862776,
     "SOXS": 1794954278.3292077,
     "NVDA": 1794954278.3292077,
-    "AMD": 1794952968.962556,
-    "ASML": 1794952968.962556,
+    "AMD": 1794954475.8809996,
+    "ASML": 1794954475.8809996,
     "QCOM": 1794954278.3292077,
     "AVGO": 1794954278.3292077,
     "AMAT": 1794954278.3292077,
-    "META": 1794952968.962556,
-    "GOOGL": 1794952968.962556,
-    "MSFT": 1794952968.962556,
+    "META": 1794954475.8809996,
+    "GOOGL": 1794954475.8809996,
+    "MSFT": 1794954475.8809996,
     "AAPL": 1794954278.3292077,
     "PLTR": 1794954278.3292077,
     "NOW": 1794954278.3292077,
-    "AMZN": 1794952968.962556,
-    "CRWV": 1794952968.962556,
-    "NBIS": 1794952968.962556,
-    "APLD": 1794952968.962556,
-    "VST": 1794952968.962556,
-    "BE": 1794952968.962556,
-    "CRDO": 1794952968.962556,
-    "COHR": 1794952968.962556,
-    "MRVL": 1794952968.962556,
+    "AMZN": 1794954475.8809996,
+    "CRWV": 1794954475.8809996,
+    "NBIS": 1794954475.8809996,
+    "APLD": 1794954475.8809996,
+    "VST": 1794954475.8809996,
+    "BE": 1794954475.8809996,
+    "CRDO": 1794954475.8809996,
+    "COHR": 1794954475.8809996,
+    "MRVL": 1794954475.8809996,
     "LITE": 1794953074.598907,
-    "AAOI": 1794952968.962556,
+    "AAOI": 1794954475.8809996,
     "SPCX": 1794953074.598907,
     "ASTS": 1794953274.6844869,
-    "AXTI": 1794952968.962556,
+    "AXTI": 1794954475.8809996,
     "NASA": 1794953274.6844869,
     "LUNR": 1794953074.598907,
     "TSLA": 1794953274.6844869,
@@ -3268,7 +3268,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (17:23 ET / 06:23 BJ) [英伟达]：英伟达临时CEO克雷斯：仍有望于明年推出Vera Rubin Ultra，并于2028年推出Feynman。",
+    "detail": "⚡ 最新核心快讯 (17:26 ET / 06:26 BJ) [英伟达]：英伟达临时CEO克雷斯：预计第四季度将是毛利率的低点，随后在2028财年回升至72%至73%区间。",
     "event_name": "",
     "minutes_left": 0
   }
