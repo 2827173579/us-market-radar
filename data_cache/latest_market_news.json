@@ -1,9 +1,22 @@
 {
-  "updated_at_ts": 1794953174.434,
-  "updated_at_et": "11-17 17:06 ET",
-  "updated_at_kst": "07:06 KST",
+  "updated_at_ts": 1794953274.684,
+  "updated_at_et": "11-17 17:07 ET",
+  "updated_at_kst": "07:07 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261118060606720800",
+      "title": "英伟达董事会主席哈维·琼斯：今天的电话会议将不会就黄仁勋辞职的相关情况以及正在进行的调查…",
+      "summary": "英伟达董事会主席哈维·琼斯：今天的电话会议将不会就黄仁勋辞职的相关情况以及正在进行的调查作出说明或接受提问。",
+      "keywords": [
+        "英伟达"
+      ],
+      "pub_ts": 1794953166.0,
+      "time_et": "11-17 17:06 ET",
+      "time_bj": "06:06 BJ",
+      "time_kst": "07:06 KST",
+      "time_display": "17:06 ET / 06:06 BJ"
+    },
     {
       "id": "20261118060519621800",
       "title": "英伟达董事会主席哈维·琼斯：公司不打算恢复黄仁勋的首席执行官职务。",
@@ -323,19 +336,6 @@
       "time_bj": "23:57 BJ",
       "time_kst": "00:57 KST",
       "time_display": "10:57 ET / 23:57 BJ"
-    },
-    {
-      "id": "20261117235253703800",
-      "title": "美股跌幅扩大，纳指下跌2%，道指跌1.66%，标普500指数跌1.65%。",
-      "summary": "美股跌幅扩大，纳指下跌2%，道指跌1.66%，标普500指数跌1.65%。",
-      "keywords": [
-        "标普"
-      ],
-      "pub_ts": 1794930773.0,
-      "time_et": "11-17 10:52 ET",
-      "time_bj": "23:52 BJ",
-      "time_kst": "00:52 KST",
-      "time_display": "10:52 ET / 23:52 BJ"
     }
   ],
   "ticker_news": {
@@ -1939,6 +1939,13 @@
         "pub_ts": 1794932827.0
       },
       {
+        "title": "Fund Manager Lists Three Reasons He Still Won’t Buy Tesla Stock",
+        "url": "https://stocktwits.com/news-articles/markets/equity/fund-manager-lists-three-reasons-he-still-won-t-buy-tesla-stock/cNbOJB3R9hQ?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 17:03 ET",
+        "pub_ts": 1794953029.0
+      },
+      {
         "title": "Tesla (TSLA) Is Spending €3 Billion To Expand Berlin Cybercab Production",
         "url": "https://finance.yahoo.com/markets/stocks/articles/tesla-tsla-spending-3-billion-201132630.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1958,13 +1965,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 13:49 ET",
         "pub_ts": 1794941340.0
-      },
-      {
-        "title": "Tesla Stocks Decrease 0.51% Even as Texas Robotaxi Authorizations Jump 21% in 18 Days",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/tesla-stocks-decrease-0-51-182744286.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 13:27 ET",
-        "pub_ts": 1794940064.0
       }
     ],
     "AXP": [
@@ -2154,6 +2154,13 @@
     ],
     "VRT": [
       {
+        "title": "Caterpillar vs. Vertiv: Which Industrials Stock Is a Better Buy for 2027?",
+        "url": "https://www.fool.com/coverage/better-buy/2026/11/17/caterpillar-vs-vertiv-which-industrials-stock-is-a-better-buy-for-2027/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 16:50 ET",
+        "pub_ts": 1794952202.0
+      },
+      {
         "title": "/U P D A T E/ - Vertiv Holdings Co/",
         "url": "https://finance.yahoo.com/technology/ai/articles/u-p-d-t-e-185300638.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2180,13 +2187,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 10:12 ET",
         "pub_ts": 1794928341.0
-      },
-      {
-        "title": "What Moved Vertiv Stock Nearly 7% Lower?",
-        "url": "https://www.trefis.com/stock/vrt/articles/625807/why-did-vertiv-stock-fall-nearly-7/2026-11-17?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 09:40 ET",
-        "pub_ts": 1794926449.0
       }
     ],
     "HPE": [
@@ -3229,22 +3229,22 @@
     "LITE": 1794953074.598907,
     "AAOI": 1794952968.962556,
     "SPCX": 1794953074.598907,
-    "ASTS": 1794951676.5365345,
+    "ASTS": 1794953274.6844869,
     "AXTI": 1794952968.962556,
-    "NASA": 1794951676.5365345,
+    "NASA": 1794953274.6844869,
     "LUNR": 1794953074.598907,
-    "TSLA": 1794951676.5365345,
-    "AXP": 1794951676.5365345,
-    "RKLB": 1794951676.5365345,
+    "TSLA": 1794953274.6844869,
+    "AXP": 1794953274.6844869,
+    "RKLB": 1794953274.6844869,
     "KO": 1794953074.598907,
     "FLY": 1794953074.598907,
     "INTC": 1794953174.434445,
-    "VRT": 1794951676.5365345,
-    "HPE": 1794951676.5365345,
-    "DELL": 1794951676.5365345,
-    "OKLO": 1794951676.5365345,
+    "VRT": 1794953274.6844869,
+    "HPE": 1794953274.6844869,
+    "DELL": 1794953274.6844869,
+    "OKLO": 1794953274.6844869,
     "CEG": 1794951973.328932,
-    "FPS": 1794951676.5365345,
+    "FPS": 1794953274.6844869,
     "MU": 1794952170.9822257,
     "SKHY": 1794951776.888089,
     "WDC": 1794951973.328932,
@@ -3271,7 +3271,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (17:05 ET / 06:05 BJ) [英伟达]：英伟达董事会主席哈维·琼斯：公司不打算恢复黄仁勋的首席执行官职务。",
+    "detail": "⚡ 最新核心快讯 (17:06 ET / 06:06 BJ) [英伟达]：英伟达董事会主席哈维·琼斯：今天的电话会议将不会就黄仁勋辞职的相关情况以及正在进行的调查作出说明或接受提问。",
     "event_name": "",
     "minutes_left": 0
   }
