@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1794904615.444,
-  "updated_at_et": "11-17 03:36 ET",
-  "updated_at_kst": "17:36 KST",
+  "updated_at_ts": 1794904712.507,
+  "updated_at_et": "11-17 03:38 ET",
+  "updated_at_kst": "17:38 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -715,6 +715,13 @@
     ],
     "TSM": [
       {
+        "title": "Zacks.com featured highlights include NVIDIA, J.M. Smucker, Taiwan Semiconductor, Corning, Lockheed and Cardinal Health",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/zacks-com-featured-highlights-nvidia-070800949.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 02:08 ET",
+        "pub_ts": 1794899280.0
+      },
+      {
         "title": "Taiwan Semiconductor Manufacturing (NYSE:TSM) Hit A Revenue High, Is The Stock Fully Valued?",
         "url": "https://finance.yahoo.com/markets/stocks/articles/taiwan-semiconductor-manufacturing-nyse-tsm-030943458.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -741,13 +748,6 @@
         "source": "Yahoo Finance",
         "time": "11-16 15:30 ET",
         "pub_ts": 1794861009.0
-      },
-      {
-        "title": "INTW 2X Intel ETF Tumbles 13% as Intel Drops Amid Shareholder Lawsuit and AI Chip Selloff; Taiwan Semiconductor Falls 5%",
-        "url": "https://247wallst.com/investing/2026/11/16/intw-2x-intel-etf-tumbles-13-as-intel-drops-amid-shareholder-lawsuit-and-ai-chip-selloff-taiwan-semiconductor-falls-5/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-16 15:03 ET",
-        "pub_ts": 1794859392.0
       }
     ],
     "VIXY": [
@@ -826,6 +826,27 @@
     ],
     "NVDA": [
       {
+        "title": "Nvidia to halt chip sales to data centers renting over half to China - report",
+        "url": "https://finance.yahoo.com/technology/ai/articles/nvidia-halt-chip-sales-data-081754255.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 03:17 ET",
+        "pub_ts": 1794903474.0
+      },
+      {
+        "title": "Anthropic’s IPO Puts AI Demand In Focus — Analyst Spots China Clue In Nvidia’s 66% Share Of SemiAnalysis’ Forecast Cut",
+        "url": "https://stocktwits.com/news-articles/markets/equity/anthropic-ipo-ai-demand-analyst-china-clue-nvidia-share-semianalysis-forecast-cut/cNba8cqR9W4?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 03:12 ET",
+        "pub_ts": 1794903177.0
+      },
+      {
+        "title": "This Is What It Would Take for Me to Buy Nvidia Stock",
+        "url": "https://www.fool.com/investing/2026/11/17/this-is-what-it-would-take-for-me-to-buy-nvidia-stock/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 03:05 ET",
+        "pub_ts": 1794902702.0
+      },
+      {
         "title": "Buying Nvidia ahead of earnings? Is the 20x P/E chip giant a bargain?",
         "url": "https://finance.yahoo.com/markets/stocks/articles/buying-nvidia-ahead-earnings-20x-075735529.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -838,27 +859,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 02:57 ET",
         "pub_ts": 1794902234.0
-      },
-      {
-        "title": "Down 38% with 571% sales growth: Is Nebius 27% undervalued?",
-        "url": "https://finance.yahoo.com/technology/ai/articles/down-38-571-sales-growth-075657195.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 02:56 ET",
-        "pub_ts": 1794902217.0
-      },
-      {
-        "title": "Ahead Of Nvidia’s Earnings, US Confirms Megaspeed On ‘No-Sell’ List — But Doesn't Mention Jensen Huang",
-        "url": "https://stocktwits.com/news-articles/markets/equity/ahead-of-nvidia-s-earnings-us-confirms-megaspeed-on-no-sell-list-but-doesn-t-mention-jensen-huang/cNbanliR9Wd?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 02:54 ET",
-        "pub_ts": 1794902051.0
-      },
-      {
-        "title": "Evercore just slashed its NVDA price target 60% — from $465 to $186 — after Huang quit. Are analysts still bullish?",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/evercore-just-slashed-nvda-price-072819592.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 02:28 ET",
-        "pub_ts": 1794900499.0
       }
     ],
     "AMD": [
@@ -3046,23 +3046,23 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1794903148.6530337,
-    "SOXL": 1794903148.6530337,
-    "SPY": 1794903148.6530337,
-    "DIA": 1794903148.6530337,
-    "SOXX": 1794903148.6530337,
-    "QQQ": 1794903148.6530337,
-    "SMH": 1794903148.6530337,
-    "IWM": 1794903148.6530337,
-    "IGV": 1794903148.6530337,
-    "TLT": 1794903148.6530337,
-    "GLD": 1794903148.6530337,
-    "SQQQ": 1794903148.6530337,
-    "TSM": 1794903148.6530337,
-    "VIXY": 1794903148.6530337,
-    "SOXS": 1794903148.6530337,
-    "NVDA": 1794903148.6530337,
-    "AMD": 1794903148.6530337,
+    "KORU": 1794904712.507079,
+    "SOXL": 1794904712.507079,
+    "SPY": 1794904712.507079,
+    "DIA": 1794904712.507079,
+    "SOXX": 1794904712.507079,
+    "QQQ": 1794904712.507079,
+    "SMH": 1794904712.507079,
+    "IWM": 1794904712.507079,
+    "IGV": 1794904712.507079,
+    "TLT": 1794904712.507079,
+    "GLD": 1794904712.507079,
+    "SQQQ": 1794904712.507079,
+    "TSM": 1794904712.507079,
+    "VIXY": 1794904712.507079,
+    "SOXS": 1794904712.507079,
+    "NVDA": 1794904712.507079,
+    "AMD": 1794904712.507079,
     "ASML": 1794903301.8849843,
     "QCOM": 1794903301.8849843,
     "AVGO": 1794903301.8849843,
