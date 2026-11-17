@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1794924260.805,
-  "updated_at_et": "11-17 09:04 ET",
-  "updated_at_kst": "23:04 KST",
+  "updated_at_ts": 1794924369.462,
+  "updated_at_et": "11-17 09:06 ET",
+  "updated_at_kst": "23:06 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2972,6 +2972,20 @@
     ],
     "JPM": [
       {
+        "title": "JPMorgan names Bregje de Best CFO as Jeremy Barnum moves to vice chairman",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/jpmorgan-names-bregje-best-cfo-134717882.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 08:47 ET",
+        "pub_ts": 1794923237.0
+      },
+      {
+        "title": "Bank of America vs. JPMorgan Chase: Which Financial Stock Is a Better Buy for 2027?",
+        "url": "https://www.fool.com/coverage/better-buy/2026/11/17/bank-of-america-vs-jpmorgan-chase-which-financial-stock-is-a-better-buy-for-2027/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 08:29 ET",
+        "pub_ts": 1794922142.0
+      },
+      {
         "title": "Pattern Group (PTRN) Stock Fair Value Edges Higher After Split Analyst Revisions",
         "url": "https://finance.yahoo.com/markets/stocks/articles/pattern-group-ptrn-stock-fair-131107010.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2991,20 +3005,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 07:51 ET",
         "pub_ts": 1794919898.0
-      },
-      {
-        "title": "The Overlooked JPMorgan ETF That Owns Nearly 300 of the Market’s Strongest Stocks for 0.12%",
-        "url": "https://247wallst.com/investing/etf/2026/11/17/the-overlooked-jpmorgan-etf-that-owns-nearly-300-of-the-markets-strongest-stocks-for-0-12/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 07:37 ET",
-        "pub_ts": 1794919071.0
-      },
-      {
-        "title": "JPMorgan’s Grace Peters Sees AI Handling 40% Of US Tasks By 2040, Calls Recent Volatility A Buying Opportunity",
-        "url": "https://stocktwits.com/news-articles/markets/equity/jp-morgan-s-grace-peters-sees-ai-handling-40-of-us-tasks-by-2040-calls-recent-volatility-a-buying-opportunity/cNbauNOR9WK?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 07:17 ET",
-        "pub_ts": 1794917837.0
       }
     ],
     "WMT": [
@@ -3046,6 +3046,13 @@
     ],
     "V": [
       {
+        "title": "Visa and American Express Both Raised Their Dividends 16% This Year, but Only 1 of the Stocks Is Up in 2026",
+        "url": "https://www.fool.com/investing/2026/11/17/visa-and-american-express-both-raised-their-dividends-16-this-year-but-only-1-of-the-stocks-is-up-in-2026/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 08:50 ET",
+        "pub_ts": 1794923402.0
+      },
+      {
         "title": "Visa Ranked Most Trusted Among 24 Brands in Canada to Handle Agentic Transactions, New Research Finds",
         "url": "https://finance.yahoo.com/technology/ai/articles/visa-ranked-most-trusted-among-130000411.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3072,13 +3079,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 06:55 ET",
         "pub_ts": 1794916500.0
-      },
-      {
-        "title": "UQPAY Deploys Visa Payment Passkey, Advancing the Next Generation of Agentic Payment Experience",
-        "url": "https://finance.yahoo.com/technology/ai/articles/uqpay-deploys-visa-payment-passkey-032700656.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-16 22:27 ET",
-        "pub_ts": 1794886020.0
       }
     ],
     "CAT": [
@@ -3260,15 +3260,15 @@
     "ORCL": 1794924260.8051798,
     "COIN": 1794924260.8051798,
     "LLY": 1794924260.8051798,
-    "MRNA": 1794922850.4608986,
-    "NKE": 1794922850.4608986,
-    "MCD": 1794922850.4608986,
-    "PEP": 1794922850.4608986,
-    "XOM": 1794922850.4608986,
-    "JPM": 1794922850.4608986,
-    "WMT": 1794922850.4608986,
-    "V": 1794922850.4608986,
-    "CAT": 1794922850.4608986,
+    "MRNA": 1794924369.462093,
+    "NKE": 1794924369.462093,
+    "MCD": 1794924369.462093,
+    "PEP": 1794924369.462093,
+    "XOM": 1794924369.462093,
+    "JPM": 1794924369.462093,
+    "WMT": 1794924369.462093,
+    "V": 1794924369.462093,
+    "CAT": 1794924369.462093,
     "FN": 1794923347.2944643,
     "GLW": 1794923347.2944643
   },
