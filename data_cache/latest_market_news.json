@@ -1,9 +1,22 @@
 {
-  "updated_at_ts": 1794955473.074,
-  "updated_at_et": "11-17 17:44 ET",
-  "updated_at_kst": "07:44 KST",
+  "updated_at_ts": 1794955571.772,
+  "updated_at_et": "11-17 17:46 ET",
+  "updated_at_kst": "07:46 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261118064441416800",
+      "title": "英伟达电话会议期间，英伟达(NVDA.O)盘后再度拉升，涨幅扩大至4%；美国新云股走高，…",
+      "summary": "英伟达电话会议期间，英伟达(NVDA.O)盘后再度拉升，涨幅扩大至4%；美国新云股走高，Nebius涨近10%，Coreweave(CRWV.O)涨近7%。",
+      "keywords": [
+        "英伟达"
+      ],
+      "pub_ts": 1794955481.0,
+      "time_et": "11-17 17:44 ET",
+      "time_bj": "06:44 BJ",
+      "time_kst": "07:44 KST",
+      "time_display": "17:44 ET / 06:44 BJ"
+    },
     {
       "id": "20261118064101442800",
       "title": "整理：昨日今晨重要新闻汇总（11月18日）",
@@ -324,19 +337,6 @@
       "time_bj": "04:01 BJ",
       "time_kst": "05:01 KST",
       "time_display": "15:01 ET / 04:01 BJ"
-    },
-    {
-      "id": "20261118035602174800",
-      "title": "浑水研究：做空英伟达(NVDA.O)。",
-      "summary": "浑水研究：做空英伟达(NVDA.O)。",
-      "keywords": [
-        "英伟达"
-      ],
-      "pub_ts": 1794945362.0,
-      "time_et": "11-17 14:56 ET",
-      "time_bj": "03:56 BJ",
-      "time_kst": "04:56 KST",
-      "time_display": "14:56 ET / 03:56 BJ"
     }
   ],
   "ticker_news": {
@@ -3272,7 +3272,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (17:41 ET / 06:41 BJ) [美联储] [加息] [关税]：国内新闻 1. 神舟二十四号计划近日择机实施发射。 2. 外交部回应相关国家免签政策将于今年年底到期。 3. 商务部新闻发言人就中加经贸磋商成果答记者问。 4. 习近平分别会见加拿大、墨西哥",
+    "detail": "⚡ 最新核心快讯 (17:44 ET / 06:44 BJ) [英伟达]：英伟达电话会议期间，英伟达(NVDA.O)盘后再度拉升，涨幅扩大至4%；美国新云股走高，Nebius涨近10%，Coreweave(CRWV.O)涨近7%。",
     "event_name": "",
     "minutes_left": 0
   }
