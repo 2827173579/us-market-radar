@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1794923839.283,
-  "updated_at_et": "11-17 08:57 ET",
-  "updated_at_kst": "22:57 KST",
+  "updated_at_ts": 1794923935.483,
+  "updated_at_et": "11-17 08:58 ET",
+  "updated_at_kst": "22:58 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -900,18 +900,11 @@
     ],
     "NVDA": [
       {
-        "title": "Why Jensen Huang's absence from Nvidia is 'horrible' for neoclouds",
-        "url": "https://finance.yahoo.com/video/why-jensen-huangs-absence-nvidia-130000738.html?.tsrc=rss",
+        "title": "Amazon (AMZN) Is Building Its Own Answer to NVIDIA. Here’s How It’s Going",
+        "url": "https://finance.yahoo.com/technology/ai/articles/amazon-amzn-building-own-answer-134443216.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-17 08:00 ET",
-        "pub_ts": 1794920400.0
-      },
-      {
-        "title": "Nvidia earnings will show if the Bank of Nvidia is still open: Chart of the Day",
-        "url": "https://finance.yahoo.com/markets/article/nvidia-earnings-will-show-if-the-bank-of-nvidia-is-still-open-chart-of-the-day-125850442.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 07:58 ET",
-        "pub_ts": 1794920330.0
+        "time": "11-17 08:44 ET",
+        "pub_ts": 1794923083.0
       },
       {
         "title": "Nvidia Earnings Prediction Market Preview: What Will Colette Kress Say About Jensen Huang’s Exit?",
@@ -919,6 +912,13 @@
         "source": "Yahoo Finance",
         "time": "11-17 08:24 ET",
         "pub_ts": 1794921851.0
+      },
+      {
+        "title": "Could Nvidia Be Berkshire's Next Big Tech Purchase?",
+        "url": "https://www.fool.com/investing/2026/11/17/could-nvidia-be-berkshire-s-next-big-tech-purchase/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 08:20 ET",
+        "pub_ts": 1794921602.0
       },
       {
         "title": "Stock Market Today: Dow Slides Ahead Of Retail Sales; Nvidia Rises With Earnings Report On Tap (Live Coverage)",
@@ -3194,22 +3194,22 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1794922432.3626409,
-    "SOXL": 1794922432.3626409,
-    "SPY": 1794922432.3626409,
-    "DIA": 1794922432.3626409,
-    "SOXX": 1794922432.3626409,
-    "QQQ": 1794922432.3626409,
-    "SMH": 1794922432.3626409,
-    "IWM": 1794922432.3626409,
-    "IGV": 1794922432.3626409,
-    "TLT": 1794922432.3626409,
-    "GLD": 1794922432.3626409,
-    "SQQQ": 1794922432.3626409,
-    "TSM": 1794922432.3626409,
-    "VIXY": 1794922432.3626409,
-    "SOXS": 1794922432.3626409,
-    "NVDA": 1794922432.3626409,
+    "KORU": 1794923935.4831665,
+    "SOXL": 1794923935.4831665,
+    "SPY": 1794923935.4831665,
+    "DIA": 1794923935.4831665,
+    "SOXX": 1794923935.4831665,
+    "QQQ": 1794923935.4831665,
+    "SMH": 1794923935.4831665,
+    "IWM": 1794923935.4831665,
+    "IGV": 1794923935.4831665,
+    "TLT": 1794923935.4831665,
+    "GLD": 1794923935.4831665,
+    "SQQQ": 1794923935.4831665,
+    "TSM": 1794923935.4831665,
+    "VIXY": 1794923935.4831665,
+    "SOXS": 1794923935.4831665,
+    "NVDA": 1794923935.4831665,
     "AMD": 1794922535.040106,
     "ASML": 1794922535.040106,
     "QCOM": 1794922535.040106,
