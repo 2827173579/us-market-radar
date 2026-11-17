@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1794943834.215,
-  "updated_at_et": "11-17 14:30 ET",
-  "updated_at_kst": "04:30 KST",
+  "updated_at_ts": 1794943933.48,
+  "updated_at_et": "11-17 14:32 ET",
+  "updated_at_kst": "04:32 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2421,6 +2421,13 @@
     ],
     "SKHY": [
       {
+        "title": "SK hynix Stocks Fall 1.96% as DRAM Price-Fixing Suit Advances and Kospi Drops",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/sk-hynix-stocks-fall-1-190411984.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 14:04 ET",
+        "pub_ts": 1794942251.0
+      },
+      {
         "title": "Qualcomm vs. SK Hynix: Stable Revenue vs. Rapid Acceleration",
         "url": "https://www.fool.com/coverage/charts/2026/11/17/qualcomm-vs-sk-hynix-stable-revenue-vs-rapid-acceleration/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2447,13 +2454,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 11:06 ET",
         "pub_ts": 1794931600.0
-      },
-      {
-        "title": "Update: Market Chatter: SK Hynix Plans $1 Billion Investment in South Korean Chip Supply Chain",
-        "url": "https://finance.yahoo.com/technology/articles/market-chatter-sk-hynix-plans-081701348.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 03:17 ET",
-        "pub_ts": 1794903421.0
       }
     ],
     "WDC": [
@@ -3254,15 +3254,15 @@
     "CEG": 1794942545.5346937,
     "FPS": 1794943834.2145326,
     "MU": 1794942743.1148033,
-    "SKHY": 1794942350.2522223,
+    "SKHY": 1794943933.4803638,
     "WDC": 1794942545.5346937,
     "STX": 1794942841.1369593,
-    "MSTR": 1794942350.2522223,
-    "SNDK": 1794942350.2522223,
+    "MSTR": 1794943933.4803638,
+    "SNDK": 1794943933.4803638,
     "BTC-USD": 1794942841.1369593,
-    "CRWD": 1794942350.2522223,
-    "ORCL": 1794942350.2522223,
-    "COIN": 1794942350.2522223,
+    "CRWD": 1794943933.4803638,
+    "ORCL": 1794943933.4803638,
+    "COIN": 1794943933.4803638,
     "LLY": 1794942743.1148033,
     "MRNA": 1794942545.5346937,
     "NKE": 1794942841.1369593,
