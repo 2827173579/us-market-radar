@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1794947677.995,
-  "updated_at_et": "11-17 15:34 ET",
-  "updated_at_kst": "05:34 KST",
+  "updated_at_ts": 1794947774.341,
+  "updated_at_et": "11-17 15:36 ET",
+  "updated_at_kst": "05:36 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -598,11 +598,11 @@
         "pub_ts": 1794706442.0
       },
       {
-        "title": "ADBE Stock Alert: Michael Burry Is Buying Adobe Stock",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/adbe-stock-alert-michael-burry-163615491.html?.tsrc=rss",
+        "title": "Jensen Huang Offered to Come Back and Nvidia Gained $90 Billion in 10 Minutes. Here’s What the Stock Did the Last Four Times a Board Took the Boss Back",
+        "url": "https://247wallst.com/investing/2026/11/17/jensen-huang-offered-to-come-back-and-nvidia-gained-90-billion-in-10-minutes-heres-what-the-stock-did-the-last-four-times-a-board-took-the-boss-back/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-17 11:36 ET",
-        "pub_ts": 1794933375.0
+        "time": "11-17 15:21 ET",
+        "pub_ts": 1794946860.0
       }
     ],
     "IWM": [
@@ -2938,6 +2938,13 @@
     ],
     "XOM": [
       {
+        "title": "The Bet Behind ExxonMobil's Rally",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/bet-behind-exxonmobils-rally-201029387.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 15:10 ET",
+        "pub_ts": 1794946229.0
+      },
+      {
         "title": "ExxonMobil makes a bold $3 billion move to clean up its balance sheet",
         "url": "https://www.thestreet.com/investing/stocks/xom-exxonmobil-launches-3-billion-cash-tender-offers-for-four-bond-series?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2964,13 +2971,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 07:45 ET",
         "pub_ts": 1794919533.0
-      },
-      {
-        "title": "ExxonMobil begins oil production at Uaru in Guyana’s Stabroek block",
-        "url": "https://www.offshore-technology.com/news/exxonmobil-oil-production-uaru-stabroek-block/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 05:46 ET",
-        "pub_ts": 1794912396.0
       }
     ],
     "JPM": [
@@ -3198,19 +3198,19 @@
   },
   "ticker_news_ts": {
     "KORU": 1794946293.325201,
-    "SOXL": 1794946194.2192426,
-    "SPY": 1794946194.2192426,
+    "SOXL": 1794947774.340662,
+    "SPY": 1794947774.340662,
     "DIA": 1794946293.325201,
-    "SOXX": 1794946194.2192426,
+    "SOXX": 1794947774.340662,
     "QQQ": 1794946293.325201,
-    "SMH": 1794946194.2192426,
-    "IWM": 1794946194.2192426,
+    "SMH": 1794947774.340662,
+    "IWM": 1794947774.340662,
     "IGV": 1794946488.3846395,
     "TLT": 1794946293.325201,
-    "GLD": 1794946194.2192426,
+    "GLD": 1794947774.340662,
     "SQQQ": 1794946586.000602,
     "TSM": 1794946293.325201,
-    "VIXY": 1794946194.2192426,
+    "VIXY": 1794947774.340662,
     "SOXS": 1794946488.3846395,
     "NVDA": 1794946488.3846395,
     "AMD": 1794946684.7100964,
@@ -3266,8 +3266,8 @@
     "MRNA": 1794947288.8075278,
     "NKE": 1794947579.541647,
     "MCD": 1794947288.8075278,
-    "PEP": 1794946194.2192426,
-    "XOM": 1794946194.2192426,
+    "PEP": 1794947774.340662,
+    "XOM": 1794947774.340662,
     "JPM": 1794947482.668002,
     "WMT": 1794947482.668002,
     "V": 1794947288.8075278,
