@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1794939884.069,
-  "updated_at_et": "11-17 13:24 ET",
-  "updated_at_kst": "03:24 KST",
+  "updated_at_ts": 1794940032.69,
+  "updated_at_et": "11-17 13:27 ET",
+  "updated_at_kst": "03:27 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -534,6 +534,13 @@
     ],
     "QQQ": [
       {
+        "title": "Exchange-Traded Funds Fall as US Equities Drop After Midday",
+        "url": "https://finance.yahoo.com/markets/articles/exchange-traded-funds-fall-us-181122717.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 13:11 ET",
+        "pub_ts": 1794939082.0
+      },
+      {
         "title": "Exchange-Traded Funds, Equity Futures Mixed Pre-Bell Tuesday as Investors Await Nvidia Earnings",
         "url": "https://finance.yahoo.com/markets/stocks/articles/exchange-traded-funds-equity-futures-141622060.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -560,13 +567,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 06:01 ET",
         "pub_ts": 1794913312.0
-      },
-      {
-        "title": "ETFs Are Buying Apple (AAPL) on Friday",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-buying-apple-aapl-friday-110040448.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 06:00 ET",
-        "pub_ts": 1794913240.0
       }
     ],
     "SMH": [
@@ -3198,19 +3198,19 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1794938242.9009693,
+    "KORU": 1794940032.6895502,
     "SOXL": 1794939884.0690694,
     "SPY": 1794939884.0690694,
-    "DIA": 1794938242.9009693,
+    "DIA": 1794940032.6895502,
     "SOXX": 1794939884.0690694,
-    "QQQ": 1794938242.9009693,
+    "QQQ": 1794940032.6895502,
     "SMH": 1794939884.0690694,
     "IWM": 1794939884.0690694,
     "IGV": 1794938242.9009693,
-    "TLT": 1794938242.9009693,
+    "TLT": 1794940032.6895502,
     "GLD": 1794939884.0690694,
     "SQQQ": 1794938530.632802,
-    "TSM": 1794938242.9009693,
+    "TSM": 1794940032.6895502,
     "VIXY": 1794939884.0690694,
     "SOXS": 1794938242.9009693,
     "NVDA": 1794938242.9009693,
