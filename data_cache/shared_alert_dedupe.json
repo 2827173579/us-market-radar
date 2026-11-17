@@ -795,9 +795,13 @@
     "2026-11-17:NVDA/MCD:STOP_LOSS+TAKE_PROFIT": {
       "device": "PC",
       "ts": 1794920953.1433983
+    },
+    "2026-11-17:DEFENSIVE_FLIGHT:-2.2": {
+      "device": "PC",
+      "ts": 1794921636.187544
     }
   },
   "device": "PC",
-  "last_heartbeat_ts": 1794921461.3501158,
-  "updated_at": "2026-11-17T13:17:41.350558+00:00"
+  "last_heartbeat_ts": 1794921559.0092428,
+  "updated_at": "2026-11-17T13:20:36.187996+00:00"
 }
