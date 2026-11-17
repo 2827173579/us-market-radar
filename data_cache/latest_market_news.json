@@ -1,9 +1,22 @@
 {
-  "updated_at_ts": 1794908096.459,
-  "updated_at_et": "11-17 04:34 ET",
-  "updated_at_kst": "18:34 KST",
+  "updated_at_ts": 1794908206.078,
+  "updated_at_et": "11-17 04:36 ET",
+  "updated_at_kst": "18:36 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261117173507703800",
+      "title": "市场消息：载有美国总统特朗普的飞机抵达马尼拉。",
+      "summary": "市场消息：载有美国总统特朗普的飞机抵达马尼拉。",
+      "keywords": [
+        "特朗普"
+      ],
+      "pub_ts": 1794908107.0,
+      "time_et": "11-17 04:35 ET",
+      "time_bj": "17:35 BJ",
+      "time_kst": "18:35 KST",
+      "time_display": "04:35 ET / 17:35 BJ"
+    },
     {
       "id": "20261117173134577800",
       "title": "伊拉克石油部长：用于出口的原油已通过伊拉克-土耳其输油管道恢复输送。",
@@ -3177,7 +3190,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (04:31 ET / 17:31 BJ) [原油]：伊拉克石油部长：用于出口的原油已通过伊拉克-土耳其输油管道恢复输送。",
+    "detail": "⚡ 最新核心快讯 (04:35 ET / 17:35 BJ) [特朗普]：市场消息：载有美国总统特朗普的飞机抵达马尼拉。",
     "event_name": "",
     "minutes_left": 0
   }
