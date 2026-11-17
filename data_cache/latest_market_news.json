@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1794901409.883,
-  "updated_at_et": "11-17 02:43 ET",
-  "updated_at_kst": "16:43 KST",
+  "updated_at_ts": 1794901534.258,
+  "updated_at_et": "11-17 02:45 ET",
+  "updated_at_kst": "16:45 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -715,6 +715,13 @@
     ],
     "NVDA": [
       {
+        "title": "Evercore just slashed its NVDA price target 60% — from $465 to $186 — after Huang quit. Are analysts still bullish?",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/evercore-just-slashed-nvda-price-072819592.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 02:28 ET",
+        "pub_ts": 1794900499.0
+      },
+      {
         "title": "Asian stocks sink as scandal-hit Nvidia's earnings loom",
         "url": "https://finance.yahoo.com/markets/stocks/articles/asian-stocks-sink-scandal-hit-023848163.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -729,28 +736,28 @@
         "pub_ts": 1794897658.0
       },
       {
+        "title": "Lies, spies and sex are just one part of the Nvidia story. The real stakes are much bigger",
+        "url": "https://www.cnn.com/2026/11/16/tech/nvidia-sex-spies-serious-problems?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 01:38 ET",
+        "pub_ts": 1794897526.0
+      },
+      {
         "title": "ASUS Ramps Up NVIDIA Vera Rubin NVL72 Shipments in Q4 Amid Strong Demand, Showcasing AI Factory Reference Architecture at SC26",
         "url": "https://finance.yahoo.com/technology/ai/articles/asus-ramps-nvidia-vera-rubin-062100096.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-17 01:21 ET",
         "pub_ts": 1794896460.0
-      },
-      {
-        "title": "Stock Market: Will S&P 500 Open Up or Down Today?",
-        "url": "https://www.benzinga.com/markets/prediction-markets/26/11/63330216/stock-market-will-sp-500-open-up-or-down-today-79?utm_source=yahooFinance&utm_campaign=partner_feed&utm_medium=referral&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 01:14 ET",
-        "pub_ts": 1794896080.0
-      },
-      {
-        "title": "Nvidia Director Reportedly Warns of ‘Irreplaceable Talent’ Loss: Board Urged to Bring Back Jensen Huang as NVDA Stock Slips",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/nvidia-director-reportedly-warns-irreplaceable-060446835.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 01:04 ET",
-        "pub_ts": 1794895486.0
       }
     ],
     "AMD": [
+      {
+        "title": "3 Growth Stocks To Watch With Earnings Growth Over 18%",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/3-growth-stocks-watch-earnings-071146596.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 02:11 ET",
+        "pub_ts": 1794899506.0
+      },
       {
         "title": "AMD, MU, SKHY, AVGO: Chip Stocks Ease Overnight After Selloff On New US Chip Restrictions Targeting China",
         "url": "https://stocktwits.com/news-articles/markets/equity/amd-mu-skhy-avgo-chip-stocks-ease-overnight-after-selloff-on-new-us-chip-restrictions-targeting-china/cNba10cR9gA?.tsrc=rss",
@@ -778,13 +785,6 @@
         "source": "Yahoo Finance",
         "time": "11-16 21:22 ET",
         "pub_ts": 1794882122.0
-      },
-      {
-        "title": "AMD’s Nvidia Rally Fades: Michael Burry Calls AMD ‘Too Expensive As Eternal Alternative’",
-        "url": "https://stocktwits.com/news-articles/markets/equity/amd-s-nvidia-rally-fades-michael-burry-calls-amd-too-expensive-as-eternal-alternative/cNbah8GR9gn?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-16 21:20 ET",
-        "pub_ts": 1794882002.0
       }
     ],
     "ASML": [
@@ -2935,23 +2935,23 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1794899925.577313,
-    "SOXL": 1794899925.577313,
-    "SPY": 1794899925.577313,
-    "DIA": 1794899925.577313,
-    "SOXX": 1794899925.577313,
-    "QQQ": 1794899925.577313,
-    "SMH": 1794899925.577313,
-    "IWM": 1794899925.577313,
-    "IGV": 1794899925.577313,
-    "TLT": 1794899925.577313,
-    "GLD": 1794899925.577313,
-    "SQQQ": 1794899925.577313,
-    "TSM": 1794899925.577313,
-    "VIXY": 1794899925.577313,
-    "SOXS": 1794899925.577313,
-    "NVDA": 1794899925.577313,
-    "AMD": 1794900026.6731925,
+    "KORU": 1794901534.2582638,
+    "SOXL": 1794901534.2582638,
+    "SPY": 1794901534.2582638,
+    "DIA": 1794901534.2582638,
+    "SOXX": 1794901534.2582638,
+    "QQQ": 1794901534.2582638,
+    "SMH": 1794901534.2582638,
+    "IWM": 1794901534.2582638,
+    "IGV": 1794901534.2582638,
+    "TLT": 1794901534.2582638,
+    "GLD": 1794901534.2582638,
+    "SQQQ": 1794901534.2582638,
+    "TSM": 1794901534.2582638,
+    "VIXY": 1794901534.2582638,
+    "SOXS": 1794901534.2582638,
+    "NVDA": 1794901534.2582638,
+    "AMD": 1794901534.2582638,
     "ASML": 1794900026.6731925,
     "QCOM": 1794900026.6731925,
     "AVGO": 1794900026.6731925,
