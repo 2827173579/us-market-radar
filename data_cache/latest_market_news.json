@@ -1,9 +1,22 @@
 {
-  "updated_at_ts": 1794923935.483,
-  "updated_at_et": "11-17 08:58 ET",
-  "updated_at_kst": "22:58 KST",
+  "updated_at_ts": 1794924045.169,
+  "updated_at_et": "11-17 09:00 ET",
+  "updated_at_kst": "23:00 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261117220000001800",
+      "title": "美联储理事沃勒将于十分钟后发表讲话，美国10月工业产出月率将于十五分钟后公布。",
+      "summary": "美联储理事沃勒将于十分钟后发表讲话，美国10月工业产出月率将于十五分钟后公布。",
+      "keywords": [
+        "美联储"
+      ],
+      "pub_ts": 1794924000.0,
+      "time_et": "11-17 09:00 ET",
+      "time_bj": "22:00 BJ",
+      "time_kst": "23:00 KST",
+      "time_display": "09:00 ET / 22:00 BJ"
+    },
     {
       "id": "20261117213523930800",
       "title": "美联储理事丽莎·库克拒绝参加白宫12月14日的听证会。",
@@ -327,19 +340,6 @@
       "time_bj": "18:00 BJ",
       "time_kst": "19:00 KST",
       "time_display": "05:00 ET / 18:00 BJ"
-    },
-    {
-      "id": "20261117173507703800",
-      "title": "市场消息：载有美国总统特朗普的飞机抵达马尼拉。",
-      "summary": "市场消息：载有美国总统特朗普的飞机抵达马尼拉。",
-      "keywords": [
-        "特朗普"
-      ],
-      "pub_ts": 1794908107.0,
-      "time_et": "11-17 04:35 ET",
-      "time_bj": "17:35 BJ",
-      "time_kst": "18:35 KST",
-      "time_display": "04:35 ET / 17:35 BJ"
     }
   ],
   "ticker_news": {
@@ -1159,6 +1159,13 @@
     ],
     "GOOGL": [
       {
+        "title": "BitTitan Expands MigrationWiz with SharePoint Sites Migration and Simplified Collaboration Licensing",
+        "url": "https://finance.yahoo.com/technology/articles/bittitan-expands-migrationwiz-sharepoint-sites-134200792.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 08:42 ET",
+        "pub_ts": 1794922920.0
+      },
+      {
         "title": "Could Nvidia Be Berkshire's Next Big Tech Purchase?",
         "url": "https://www.fool.com/investing/2026/11/17/could-nvidia-be-berkshire-s-next-big-tech-purchase/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1185,16 +1192,23 @@
         "source": "Yahoo Finance",
         "time": "11-17 07:39 ET",
         "pub_ts": 1794919193.0
-      },
-      {
-        "title": "Cloud AI Today - Healthcare AI Spending Surges Transforming Drug Development",
-        "url": "https://finance.yahoo.com/healthcare/articles/cloud-ai-today-healthcare-ai-123737496.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 07:37 ET",
-        "pub_ts": 1794919057.0
       }
     ],
     "MSFT": [
+      {
+        "title": "Microsoft (MSFT) is One of Our Top Picks That Evolved Successfully After Its Founder Transition",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/microsoft-msft-one-top-picks-134716523.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 08:47 ET",
+        "pub_ts": 1794923236.0
+      },
+      {
+        "title": "BitTitan Expands MigrationWiz with SharePoint Sites Migration and Simplified Collaboration Licensing",
+        "url": "https://finance.yahoo.com/technology/articles/bittitan-expands-migrationwiz-sharepoint-sites-134200792.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 08:42 ET",
+        "pub_ts": 1794922920.0
+      },
       {
         "title": "Microsoft Is Making Voluntary Exit Offers to Engineers for the First Time",
         "url": "https://247wallst.com/investing/2026/11/17/microsoft-is-making-voluntary-exit-offers-to-engineers-for-the-first-time/?.tsrc=rss",
@@ -1215,20 +1229,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 07:00 ET",
         "pub_ts": 1794916807.0
-      },
-      {
-        "title": "Is Meta's AI Spending The Easiest To Cut?",
-        "url": "https://www.trefis.com/stock/meta/articles/625609/is-meta-s-ai-spending-the-easiest-to-cut/2026-11-17?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 06:29 ET",
-        "pub_ts": 1794914988.0
-      },
-      {
-        "title": "iShares Core Dividend Growth (DGRO) Buys $4.2 Million More Apple on Nov. 13",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/ishares-core-dividend-growth-dgro-110451386.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 06:04 ET",
-        "pub_ts": 1794913491.0
       }
     ],
     "AAPL": [
@@ -1344,6 +1344,27 @@
     ],
     "AMZN": [
       {
+        "title": "Amazon (AMZN) Is Building Its Own Answer to NVIDIA. Here’s How It’s Going",
+        "url": "https://finance.yahoo.com/technology/ai/articles/amazon-amzn-building-own-answer-134443216.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 08:44 ET",
+        "pub_ts": 1794923083.0
+      },
+      {
+        "title": "Evercore ISI reshuffles Top Picks After Q3 Results, Swaps No. 3 Large-Cap Long",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/evercore-isi-reshuffles-top-picks-133055273.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 08:30 ET",
+        "pub_ts": 1794922255.0
+      },
+      {
+        "title": "Amazon to invest $7bn in Indian renewable energy projects by 2030",
+        "url": "https://www.power-technology.com/news/amazon-7bn-indian-renewable-projects-2030/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 08:29 ET",
+        "pub_ts": 1794922158.0
+      },
+      {
         "title": "Market Chatter: Amazon, Google, Meta Lobbying Fails to Stop Trump From Pursuing China Data Center Curbs",
         "url": "https://finance.yahoo.com/technology/articles/market-chatter-amazon-google-meta-123953028.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1356,27 +1377,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 06:05 ET",
         "pub_ts": 1794913514.0
-      },
-      {
-        "title": "What iShares S&P 500 Value ETF (IVE) Sold: Apple Leads on Nov. 13",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/ishares-p-500-value-etf-110506472.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 06:05 ET",
-        "pub_ts": 1794913506.0
-      },
-      {
-        "title": "JPMorgan Global Select Equity ETF (JGLO) Sells $32.1 Million of Amazon on Nov. 13",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/jpmorgan-global-select-equity-etf-110421859.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 06:04 ET",
-        "pub_ts": 1794913461.0
-      },
-      {
-        "title": "Cathie Wood and Jim Cramer Agree on These 5 Stocks",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/cathie-wood-jim-cramer-agree-132403111.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 08:24 ET",
-        "pub_ts": 1794921843.0
       }
     ],
     "CRWV": [
@@ -3210,22 +3210,22 @@
     "VIXY": 1794923935.4831665,
     "SOXS": 1794923935.4831665,
     "NVDA": 1794923935.4831665,
-    "AMD": 1794922535.040106,
-    "ASML": 1794922535.040106,
-    "QCOM": 1794922535.040106,
-    "AVGO": 1794922535.040106,
-    "AMAT": 1794922535.040106,
-    "META": 1794922535.040106,
-    "GOOGL": 1794922535.040106,
-    "MSFT": 1794922535.040106,
-    "AAPL": 1794922535.040106,
-    "PLTR": 1794922535.040106,
-    "NOW": 1794922535.040106,
-    "AMZN": 1794922535.040106,
-    "CRWV": 1794922535.040106,
-    "NBIS": 1794922535.040106,
-    "APLD": 1794922535.040106,
-    "VST": 1794922535.040106,
+    "AMD": 1794924045.1692429,
+    "ASML": 1794924045.1692429,
+    "QCOM": 1794924045.1692429,
+    "AVGO": 1794924045.1692429,
+    "AMAT": 1794924045.1692429,
+    "META": 1794924045.1692429,
+    "GOOGL": 1794924045.1692429,
+    "MSFT": 1794924045.1692429,
+    "AAPL": 1794924045.1692429,
+    "PLTR": 1794924045.1692429,
+    "NOW": 1794924045.1692429,
+    "AMZN": 1794924045.1692429,
+    "CRWV": 1794924045.1692429,
+    "NBIS": 1794924045.1692429,
+    "APLD": 1794924045.1692429,
+    "VST": 1794924045.1692429,
     "BE": 1794922641.6623302,
     "CRDO": 1794922641.6623302,
     "COHR": 1794922641.6623302,
@@ -3275,7 +3275,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (08:35 ET / 21:35 BJ) [美联储]：美联储理事丽莎·库克拒绝参加白宫12月14日的听证会。",
+    "detail": "⚡ 最新核心快讯 (09:00 ET / 22:00 BJ) [美联储]：美联储理事沃勒将于十分钟后发表讲话，美国10月工业产出月率将于十五分钟后公布。",
     "event_name": "",
     "minutes_left": 0
   }
