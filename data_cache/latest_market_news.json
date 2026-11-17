@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1794925351.264,
-  "updated_at_et": "11-17 09:22 ET",
-  "updated_at_kst": "23:22 KST",
+  "updated_at_ts": 1794925447.894,
+  "updated_at_et": "11-17 09:24 ET",
+  "updated_at_kst": "23:24 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -426,6 +426,13 @@
         "pub_ts": 1794919071.0
       },
       {
+        "title": "Exchange-Traded Funds, Equity Futures Mixed Pre-Bell Tuesday as Investors Await Nvidia Earnings",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/exchange-traded-funds-equity-futures-141622060.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 09:16 ET",
+        "pub_ts": 1794924982.0
+      },
+      {
         "title": "ETFs Are Buying Chevron (CVX) on Friday",
         "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-buying-chevron-cvx-friday-110158202.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -438,13 +445,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 06:01 ET",
         "pub_ts": 1794913312.0
-      },
-      {
-        "title": "ETFs Are Buying Apple (AAPL) on Friday",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-buying-apple-aapl-friday-110040448.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 06:00 ET",
-        "pub_ts": 1794913240.0
       },
       {
         "title": "Cathie Wood and Jim Cramer Agree on These 10 Stocks: Latest 13F",
@@ -493,6 +493,13 @@
     ],
     "SOXX": [
       {
+        "title": "Chip Stocks Are Having Their Worst Two Months Since 2008",
+        "url": "https://247wallst.com/investing/2026/11/17/chip-stocks-are-having-their-worst-two-months-since-2008/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 09:04 ET",
+        "pub_ts": 1794924296.0
+      },
+      {
         "title": "iShares PHLX SOX Semiconductor (SOXX) Sells AMD and Broadcom on Nov. 12",
         "url": "https://finance.yahoo.com/markets/stocks/articles/ishares-phlx-sox-semiconductor-soxx-110406412.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -519,16 +526,16 @@
         "source": "Yahoo Finance",
         "time": "11-17 06:02 ET",
         "pub_ts": 1794913349.0
-      },
-      {
-        "title": "ETFs Are Net Sellers of Credo Technology (CRDO) on Nov. 13",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-net-sellers-credo-technology-110223229.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 06:02 ET",
-        "pub_ts": 1794913343.0
       }
     ],
     "QQQ": [
+      {
+        "title": "Exchange-Traded Funds, Equity Futures Mixed Pre-Bell Tuesday as Investors Await Nvidia Earnings",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/exchange-traded-funds-equity-futures-141622060.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 09:16 ET",
+        "pub_ts": 1794924982.0
+      },
       {
         "title": "Forget QQQ: The Company Behind It Runs the Same Index for $30 Less a Year on a $100K Balance",
         "url": "https://247wallst.com/investing/etf/2026/11/17/forget-qqq-the-company-behind-it-runs-the-same-index-for-30-less-a-year-on-a-100k-balance-2/?.tsrc=rss",
@@ -556,13 +563,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 06:00 ET",
         "pub_ts": 1794913240.0
-      },
-      {
-        "title": "Exchange-Traded Funds Lower as US Equities Drop After Midday",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/exchange-traded-funds-lower-us-181915979.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-16 13:19 ET",
-        "pub_ts": 1794853155.0
       }
     ],
     "SMH": [
@@ -789,6 +789,13 @@
     ],
     "TSM": [
       {
+        "title": "TSM Plans $500M Investment in Anthropic IPO: Will the Pivot Pay Off?",
+        "url": "https://finance.yahoo.com/technology/ai/articles/tsm-plans-500m-investment-anthropic-130100066.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 08:01 ET",
+        "pub_ts": 1794920460.0
+      },
+      {
         "title": "The Zacks Analyst Blog Highlights Taiwan, Johnson & Johnson, Palantir, Title and Altigen",
         "url": "https://finance.yahoo.com/markets/stocks/articles/zacks-analyst-blog-highlights-taiwan-100800704.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -815,13 +822,6 @@
         "source": "Yahoo Finance",
         "time": "11-16 22:09 ET",
         "pub_ts": 1794884983.0
-      },
-      {
-        "title": "Taiwan Semiconductor Booked a Record NT$587 Billion Month. The Stock Has Lost Nearly 10% in Three Days Anyway",
-        "url": "https://247wallst.com/investing/2026/11/16/taiwan-semiconductor-booked-a-record-nt587-billion-month-the-stock-has-lost-nearly-10-in-three-days-anyway/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-16 19:41 ET",
-        "pub_ts": 1794876070.0
       }
     ],
     "VIXY": [
@@ -900,39 +900,39 @@
     ],
     "NVDA": [
       {
-        "title": "Amazon (AMZN) Is Building Its Own Answer to NVIDIA. Here’s How It’s Going",
-        "url": "https://finance.yahoo.com/technology/ai/articles/amazon-amzn-building-own-answer-134443216.html?.tsrc=rss",
+        "title": "Nvidia board forms new export control committee",
+        "url": "https://finance.yahoo.com/video/nvidia-board-forms-new-export-control-committee-140235995.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-17 08:44 ET",
-        "pub_ts": 1794923083.0
+        "time": "11-17 09:02 ET",
+        "pub_ts": 1794924155.0
       },
       {
-        "title": "Nvidia Earnings Prediction Market Preview: What Will Colette Kress Say About Jensen Huang’s Exit?",
-        "url": "https://www.benzinga.com/markets/prediction-markets/26/11/63337722/nvidia-earnings-preview?utm_source=yahooFinance&utm_campaign=partner_feed&utm_medium=referral&.tsrc=rss",
+        "title": "Exchange-Traded Funds, Equity Futures Mixed Pre-Bell Tuesday as Investors Await Nvidia Earnings",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/exchange-traded-funds-equity-futures-141622060.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-17 08:24 ET",
-        "pub_ts": 1794921851.0
+        "time": "11-17 09:16 ET",
+        "pub_ts": 1794924982.0
       },
       {
-        "title": "Could Nvidia Be Berkshire's Next Big Tech Purchase?",
-        "url": "https://www.fool.com/investing/2026/11/17/could-nvidia-be-berkshire-s-next-big-tech-purchase/?.tsrc=rss",
+        "title": "GM Just Switched Stock Exchanges. Here’s Why That Matters for Investors",
+        "url": "https://www.fool.com/investing/2026/11/17/gm-just-switched-stock-exchanges-here-s-why-that-matters-for-investors/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-17 08:20 ET",
-        "pub_ts": 1794921602.0
+        "time": "11-17 09:07 ET",
+        "pub_ts": 1794924422.0
       },
       {
-        "title": "Stock Market Today: Dow Slides Ahead Of Retail Sales; Nvidia Rises With Earnings Report On Tap (Live Coverage)",
-        "url": "https://finance.yahoo.com/m/0c9330f2-68c3-38ef-9244-7dbdfd0853b7/stock-market-today%3A-dow.html?.tsrc=rss",
+        "title": "TSX futures edge lower ahead of Nvidia earnings poised to test AI trade",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/tsx-futures-edge-lower-ahead-140609784.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-17 08:10 ET",
-        "pub_ts": 1794921012.0
+        "time": "11-17 09:06 ET",
+        "pub_ts": 1794924369.0
       },
       {
-        "title": "Sam Altman Says It’s “Hard to Imagine the AI Revolution Without Jensen”",
-        "url": "https://247wallst.com/investing/2026/11/17/sam-altman-says-its-hard-to-imagine-the-ai-revolution-without-jensen/?.tsrc=rss",
+        "title": "Penguin Solutions Expands ComputeAI Portfolio with NVIDIA Vera Rubin NVL72 Rack-Scale Systems",
+        "url": "https://finance.yahoo.com/technology/ai/articles/penguin-solutions-expands-computeai-portfolio-140500646.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-17 08:07 ET",
-        "pub_ts": 1794920849.0
+        "time": "11-17 09:05 ET",
+        "pub_ts": 1794924300.0
       }
     ],
     "AMD": [
@@ -3194,22 +3194,22 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1794923935.4831665,
-    "SOXL": 1794923935.4831665,
-    "SPY": 1794923935.4831665,
-    "DIA": 1794923935.4831665,
-    "SOXX": 1794923935.4831665,
-    "QQQ": 1794923935.4831665,
-    "SMH": 1794923935.4831665,
-    "IWM": 1794923935.4831665,
-    "IGV": 1794923935.4831665,
-    "TLT": 1794923935.4831665,
-    "GLD": 1794923935.4831665,
-    "SQQQ": 1794923935.4831665,
-    "TSM": 1794923935.4831665,
-    "VIXY": 1794923935.4831665,
-    "SOXS": 1794923935.4831665,
-    "NVDA": 1794923935.4831665,
+    "KORU": 1794925447.8942034,
+    "SOXL": 1794925447.8942034,
+    "SPY": 1794925447.8942034,
+    "DIA": 1794925447.8942034,
+    "SOXX": 1794925447.8942034,
+    "QQQ": 1794925447.8942034,
+    "SMH": 1794925447.8942034,
+    "IWM": 1794925447.8942034,
+    "IGV": 1794925447.8942034,
+    "TLT": 1794925447.8942034,
+    "GLD": 1794925447.8942034,
+    "SQQQ": 1794925447.8942034,
+    "TSM": 1794925447.8942034,
+    "VIXY": 1794925447.8942034,
+    "SOXS": 1794925447.8942034,
+    "NVDA": 1794925447.8942034,
     "AMD": 1794924045.1692429,
     "ASML": 1794924045.1692429,
     "QCOM": 1794924045.1692429,
