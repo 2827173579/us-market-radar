@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1794956738.351,
-  "updated_at_et": "11-17 18:05 ET",
-  "updated_at_kst": "08:05 KST",
+  "updated_at_ts": 1794956835.946,
+  "updated_at_et": "11-17 18:07 ET",
+  "updated_at_kst": "08:07 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2603,6 +2603,13 @@
     ],
     "BTC-USD": [
       {
+        "title": "Stock Market Today, Nov. 17: Stocks Slide on AI Chip and Tech Pressures, Salesforce Plummets 9%",
+        "url": "https://www.fool.com/coverage/stock-market-today/2026/11/17/stock-market-today-nov-17-stocks-slide-on-ai-chip-and-tech-pressures-salesforce-plummets-9/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 17:43 ET",
+        "pub_ts": 1794955436.0
+      },
+      {
         "title": "Jeff Bezos’ Former Hedge Fund Is Buying Bitcoin Again",
         "url": "https://beincrypto.com/de-shaw-bitcoin-etf-strategy-strive/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2629,13 +2636,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 16:29 ET",
         "pub_ts": 1794950961.0
-      },
-      {
-        "title": "Could Bitcoin’s Market Value Reach $3 Trillion by 2030?",
-        "url": "https://247wallst.com/investing/cryptocurrency/2026/11/17/could-bitcoins-market-value-reach-3-trillion-by-2030/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 16:28 ET",
-        "pub_ts": 1794950919.0
       }
     ],
     "CRWD": [
@@ -2825,6 +2825,13 @@
     ],
     "NKE": [
       {
+        "title": "Nike Is Down 78% From Its High. Here's What That Does to the Yield.",
+        "url": "https://www.fool.com/investing/2026/11/17/nike-is-down-78-from-its-high-heres-what-that-does/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 17:50 ET",
+        "pub_ts": 1794955800.0
+      },
+      {
         "title": "Stock Market Today, Nov. 17: Nike Shares Fall 6.3% After Investor Day Turnaround Plan Draws Scrutiny",
         "url": "https://www.fool.com/coverage/stock-market-today/2026/11/17/stock-market-today-nov-17-nike-shares-fall-63-after-investor-day-turnaround-plan-draws-scrutiny/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2839,25 +2846,18 @@
         "pub_ts": 1794952160.0
       },
       {
+        "title": "Nike (NKE) Falls More Steeply Than Broader Market: What Investors Need to Know",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/nike-nke-falls-more-steeply-214504162.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 16:45 ET",
+        "pub_ts": 1794951904.0
+      },
+      {
         "title": "Nike Sinks 7% as Investor Day Warns Fiscal 2028 Will Be a “Challenging Year Financially”",
         "url": "https://www.tikr.com/blog/nike-sinks-7-as-investor-day-warns-fiscal-2028-will-be-a-challenging-year-financially?ref=yahoofinance&tlnk=yf-261117-36795rwc&.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-17 15:42 ET",
         "pub_ts": 1794948144.0
-      },
-      {
-        "title": "Nike Stock Just Plunged Despite the Company's New Turnaround Plan. Here's What Spooked Investors",
-        "url": "https://www.fool.com/investing/2026/11/17/nike-stock-just-plunged-despite-the-company-s-new-turnaround-plan-then-plunged-here-s-what-spooked-investors/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 15:15 ET",
-        "pub_ts": 1794946509.0
-      },
-      {
-        "title": "Nike Wants to ‘Make More Epic S–t’ and Sees Outdoor as One of Its ‘Most Significant Untapped Opportunities’",
-        "url": "https://wwd.com/footwear-news/shoe-industry-news/nike-outdoor-footwear-opportunity-running-investor-day-2026-1239421405/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 14:34 ET",
-        "pub_ts": 1794944048.0
       }
     ],
     "MCD": [
@@ -3253,16 +3253,16 @@
     "MU": 1794956738.3511193,
     "SKHY": 1794956440.4629593,
     "WDC": 1794956540.5045264,
-    "STX": 1794955275.3724253,
+    "STX": 1794956835.946143,
     "MSTR": 1794956440.4629593,
     "SNDK": 1794956440.4629593,
-    "BTC-USD": 1794955275.3724253,
+    "BTC-USD": 1794956835.946143,
     "CRWD": 1794956440.4629593,
     "ORCL": 1794956440.4629593,
     "COIN": 1794956440.4629593,
     "LLY": 1794956738.3511193,
     "MRNA": 1794956540.5045264,
-    "NKE": 1794955275.3724253,
+    "NKE": 1794956835.946143,
     "MCD": 1794956540.5045264,
     "PEP": 1794955727.4344776,
     "XOM": 1794955727.4344776,
