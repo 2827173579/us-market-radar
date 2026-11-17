@@ -1,9 +1,22 @@
 {
-  "updated_at_ts": 1794957623.406,
-  "updated_at_et": "11-17 18:20 ET",
-  "updated_at_kst": "08:20 KST",
+  "updated_at_ts": 1794957724.452,
+  "updated_at_et": "11-17 18:22 ET",
+  "updated_at_kst": "08:22 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261118072105922800",
+      "title": "黄仁勋首度回应离职风波：若董事会认为合适，愿重返英伟达",
+      "summary": "辞去英伟达CEO职务后，黄仁勋首次公开发声，承认个人行为给董事会带来麻烦，承诺配合调查。他表示，如果董事会认为符合公司及股东利益，自己愿重返CEO职位。点击查看",
+      "keywords": [
+        "英伟达"
+      ],
+      "pub_ts": 1794957665.0,
+      "time_et": "11-17 18:21 ET",
+      "time_bj": "07:21 BJ",
+      "time_kst": "08:21 KST",
+      "time_display": "18:21 ET / 07:21 BJ"
+    },
     {
       "id": "20261118070949860800",
       "title": "英伟达(NVDA.O)盘后延续涨势，涨幅扩大至5%。",
@@ -322,19 +335,6 @@
         "英伟达"
       ],
       "pub_ts": 1794950438.0,
-      "time_et": "11-17 16:20 ET",
-      "time_bj": "05:20 BJ",
-      "time_kst": "06:20 KST",
-      "time_display": "16:20 ET / 05:20 BJ"
-    },
-    {
-      "id": "20261118052000000800",
-      "title": "美国至11月13日当周API原油库存将于十分钟后公布。",
-      "summary": "美国至11月13日当周API原油库存将于十分钟后公布。",
-      "keywords": [
-        "原油"
-      ],
-      "pub_ts": 1794950400.0,
       "time_et": "11-17 16:20 ET",
       "time_bj": "05:20 BJ",
       "time_kst": "06:20 KST",
@@ -1757,6 +1757,13 @@
         "pub_ts": 1794943202.0
       },
       {
+        "title": "SpaceX Stock Adds $54 Billion Amid Viral AI in Space Discussions",
+        "url": "https://beincrypto.com/spacex-stock-adds-54-billion-ai-space/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 18:02 ET",
+        "pub_ts": 1794956543.0
+      },
+      {
         "title": "SpaceX, Rivals Win $985 Million In Launch Awards. Cathie Wood, David Tepper Shift Space Holdings.",
         "url": "https://finance.yahoo.com/m/0f8296b1-cd8f-3b1e-b4d0-f94bc09e49cc/spacex%2C-rivals-win-%24985.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1776,13 +1783,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 16:07 ET",
         "pub_ts": 1794949620.0
-      },
-      {
-        "title": "SpaceX “Off Balance Sheet” Debt for AI Chips Hits the Market This Week. Here’s Where Things Get Interesting",
-        "url": "https://www.tikr.com/blog/spacex-off-balance-sheet-debt-for-ai-chips-hits-the-market-this-week-heres-where-things-get-interesting?ref=yahoofinance&tlnk=yf-261117-gxghfqfw&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 15:35 ET",
-        "pub_ts": 1794947743.0
       }
     ],
     "ASTS": [
@@ -3229,18 +3229,18 @@
     "CRDO": 1794957623.4058466,
     "COHR": 1794957623.4058466,
     "MRVL": 1794957623.4058466,
-    "LITE": 1794956140.6146584,
+    "LITE": 1794957724.451848,
     "AAOI": 1794957623.4058466,
-    "SPCX": 1794956140.6146584,
+    "SPCX": 1794957724.451848,
     "ASTS": 1794956338.5679069,
     "AXTI": 1794957623.4058466,
     "NASA": 1794956338.5679069,
-    "LUNR": 1794956140.6146584,
+    "LUNR": 1794957724.451848,
     "TSLA": 1794956338.5679069,
     "AXP": 1794956338.5679069,
     "RKLB": 1794956338.5679069,
-    "KO": 1794956140.6146584,
-    "FLY": 1794956140.6146584,
+    "KO": 1794957724.451848,
+    "FLY": 1794957724.451848,
     "INTC": 1794956240.1620586,
     "VRT": 1794956338.5679069,
     "HPE": 1794956338.5679069,
@@ -3269,12 +3269,12 @@
     "V": 1794956540.5045264,
     "CAT": 1794956738.3511193,
     "FN": 1794956240.1620586,
-    "GLW": 1794956140.6146584
+    "GLW": 1794957724.451848
   },
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (18:09 ET / 07:09 BJ) [英伟达]：英伟达(NVDA.O)盘后延续涨势，涨幅扩大至5%。",
+    "detail": "⚡ 最新核心快讯 (18:21 ET / 07:21 BJ) [英伟达]：辞去英伟达CEO职务后，黄仁勋首次公开发声，承认个人行为给董事会带来麻烦，承诺配合调查。他表示，如果董事会认为符合公司及股东利益，自己愿重返CEO职位。点击查看",
     "event_name": "",
     "minutes_left": 0
   }
