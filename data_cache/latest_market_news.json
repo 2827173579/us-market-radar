@@ -1,9 +1,22 @@
 {
-  "updated_at_ts": 1794916142.781,
-  "updated_at_et": "11-17 06:49 ET",
-  "updated_at_kst": "20:49 KST",
+  "updated_at_ts": 1794916250.054,
+  "updated_at_et": "11-17 06:50 ET",
+  "updated_at_kst": "20:50 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261117194834369800",
+      "title": "DeepTalk：美联储正在制造二战后第二大衰退？顶级经济学家警告美股恐暴跌40%！",
+      "summary": "美联储嘴上不说，但数字不会骗人。要把通胀从4%打到2%，美国必须经历二战以来第二大衰退，而73%的散户仓位，还满满当当押在股市里。点击查看…",
+      "keywords": [
+        "美联储"
+      ],
+      "pub_ts": 1794916114.0,
+      "time_et": "11-17 06:48 ET",
+      "time_bj": "19:48 BJ",
+      "time_kst": "20:48 KST",
+      "time_display": "06:48 ET / 19:48 BJ"
+    },
     {
       "id": "20261117194148744800",
       "title": "英伟达(NVDA.O)股价在盘前交易中扭转跌势，最新涨幅接近1%。",
@@ -325,20 +338,6 @@
       "time_bj": "15:26 BJ",
       "time_kst": "16:26 KST",
       "time_display": "02:26 ET / 15:26 BJ"
-    },
-    {
-      "id": "20261117152504061800",
-      "title": "【外交部：中方在美国输华芯片的问题上的立场是一贯的】 11月17日讯，外交部发言人郭嘉昆…",
-      "summary": "【外交部：中方在美国输华芯片的问题上的立场是一贯的】 11月17日讯，外交部发言人郭嘉昆主持例行记者会，据报道，美国政府正在调查新加坡公司超速国际（Megaspeed）涉嫌向中国公司非法转运英伟达的芯片。请问中方对此有何评论？郭嘉昆表示，刚才我已经回答了相关的问题。同时我要强调，中方在美国输华芯片的问题上的立场也是一贯的。",
-      "keywords": [
-        "芯片",
-        "英伟达"
-      ],
-      "pub_ts": 1794900304.0,
-      "time_et": "11-17 02:25 ET",
-      "time_bj": "15:25 BJ",
-      "time_kst": "16:25 KST",
-      "time_display": "02:25 ET / 15:25 BJ"
     }
   ],
   "ticker_news": {
@@ -2904,6 +2903,13 @@
         "pub_ts": 1794866400.0
       },
       {
+        "title": "PEP Stock Slides As Bernstein Downgrades PepsiCo, Warns Of Earnings Shortfall",
+        "url": "https://stocktwits.com/news-articles/markets/equity/pep-stock-downgraded-by-bernstein-as-analyst-sees-earnings-misses-warns-of-multiple-compression/cNbatoiR9W0?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 06:43 ET",
+        "pub_ts": 1794915827.0
+      },
+      {
         "title": "Pepsi Is Quietly Testing a Dirty Soda Startup. Here’s What They’re Learning Gen Z Is Really Thirsty For.",
         "url": "https://www.entrepreneur.com/business-news/pepsi-is-quietly-testing-a-dirty-soda-startup?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2923,13 +2929,6 @@
         "source": "Yahoo Finance",
         "time": "11-16 10:54 ET",
         "pub_ts": 1794844440.0
-      },
-      {
-        "title": "Coca-Cola Has Crushed PepsiCo in 2026, but Retirement Investors Face a Different Dividend Decision",
-        "url": "https://247wallst.com/investing/2026/11/16/coca-cola-has-crushed-pepsico-in-2026-but-retirement-investors-face-a-different-dividend-decision/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-16 10:47 ET",
-        "pub_ts": 1794844053.0
       }
     ],
     "XOM": [
@@ -2971,6 +2970,13 @@
     ],
     "JPM": [
       {
+        "title": "Is JPMorgan Diversified Return U.S. Mid Cap Equity ETF (JPME) a Strong ETF Right Now?",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/jpmorgan-diversified-return-u-mid-102002474.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 05:20 ET",
+        "pub_ts": 1794910802.0
+      },
+      {
         "title": "Figure Technology Solutions (FIGR) Lands $750 Million Credit Facility Through 2029",
         "url": "https://finance.yahoo.com/markets/stocks/articles/figure-technology-solutions-figr-lands-091806067.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2997,13 +3003,6 @@
         "source": "Yahoo Finance",
         "time": "11-16 23:36 ET",
         "pub_ts": 1794890194.0
-      },
-      {
-        "title": "Dow, S&P 500, Nasdaq Futures Mixed Ahead Of Much-Anticipated Nvidia Earnings, Anthropic IPO: SLS, BABA, JPM, OMER In Focus",
-        "url": "https://stocktwits.com/news-articles/markets/equity/dow-s-and-p-500-nasdaq-futures-mixed-ahead-of-much-anticipated-nvidia-earnings-anthropic-ipo-sls-baba-jpm-omer-in-focus/cNba1SfR9gr?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-16 23:06 ET",
-        "pub_ts": 1794888382.0
       }
     ],
     "WMT": [
@@ -3184,21 +3183,21 @@
     "CRWD": 1794916142.78093,
     "ORCL": 1794916142.78093,
     "COIN": 1794916142.78093,
-    "LLY": 1794914678.1271346,
-    "MRNA": 1794914678.1271346,
-    "NKE": 1794914678.1271346,
-    "MCD": 1794914678.1271346,
-    "PEP": 1794914678.1271346,
-    "XOM": 1794914678.1271346,
-    "JPM": 1794914678.1271346,
-    "WMT": 1794914678.1271346,
-    "V": 1794914678.1271346,
-    "CAT": 1794914678.1271346
+    "LLY": 1794916250.0541277,
+    "MRNA": 1794916250.0541277,
+    "NKE": 1794916250.0541277,
+    "MCD": 1794916250.0541277,
+    "PEP": 1794916250.0541277,
+    "XOM": 1794916250.0541277,
+    "JPM": 1794916250.0541277,
+    "WMT": 1794916250.0541277,
+    "V": 1794916250.0541277,
+    "CAT": 1794916250.0541277
   },
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (06:41 ET / 19:41 BJ) [英伟达]：英伟达(NVDA.O)股价在盘前交易中扭转跌势，最新涨幅接近1%。",
+    "detail": "⚡ 最新核心快讯 (06:48 ET / 19:48 BJ) [美联储]：美联储嘴上不说，但数字不会骗人。要把通胀从4%打到2%，美国必须经历二战以来第二大衰退，而73%的散户仓位，还满满当当押在股市里。点击查看…",
     "event_name": "",
     "minutes_left": 0
   }
