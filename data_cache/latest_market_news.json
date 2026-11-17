@@ -1,9 +1,35 @@
 {
-  "updated_at_ts": 1794953274.684,
-  "updated_at_et": "11-17 17:07 ET",
-  "updated_at_kst": "07:07 KST",
+  "updated_at_ts": 1794953376.41,
+  "updated_at_et": "11-17 17:09 ET",
+  "updated_at_kst": "07:09 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261118060826643800",
+      "title": "英伟达临时CEO克雷斯：云行业积压订单现已达2.5万亿美元，而三个月前仅为2万亿美元。",
+      "summary": "英伟达临时CEO克雷斯：云行业积压订单现已达2.5万亿美元，而三个月前仅为2万亿美元。",
+      "keywords": [
+        "英伟达"
+      ],
+      "pub_ts": 1794953306.0,
+      "time_et": "11-17 17:08 ET",
+      "time_bj": "06:08 BJ",
+      "time_kst": "07:08 KST",
+      "time_display": "17:08 ET / 06:08 BJ"
+    },
+    {
+      "id": "20261118060741428800",
+      "title": "英伟达临时CEO克雷斯：目前预计2028财年营收将同比增长约75%。",
+      "summary": "英伟达临时CEO克雷斯：目前预计2028财年营收将同比增长约75%。",
+      "keywords": [
+        "英伟达"
+      ],
+      "pub_ts": 1794953261.0,
+      "time_et": "11-17 17:07 ET",
+      "time_bj": "06:07 BJ",
+      "time_kst": "07:07 KST",
+      "time_display": "17:07 ET / 06:07 BJ"
+    },
     {
       "id": "20261118060606720800",
       "title": "英伟达董事会主席哈维·琼斯：今天的电话会议将不会就黄仁勋辞职的相关情况以及正在进行的调查…",
@@ -307,35 +333,6 @@
       "time_bj": "00:12 BJ",
       "time_kst": "01:12 KST",
       "time_display": "11:12 ET / 00:12 BJ"
-    },
-    {
-      "id": "20261118000000000800",
-      "title": "【今日重点关注的财经数据与事件：2026年11月18日 周三】 ① 待定 亚太经合组织领…",
-      "summary": "【今日重点关注的财经数据与事件：2026年11月18日 周三】 ① 待定 亚太经合组织领导人非正式会议在深圳举行 ② 待定 黄仁勋出席美国国会听证会 ③ 03:25 美联储威廉姆斯参加一场炉边谈话 ④ 05:00 英伟达在美股盘后公布Q3财报 ⑤ 05:30 美国至11月13日当周API原油库存 ⑥ 15:00 英国10月CPI月率 ⑦ 15:00 英国10月零售物价指数月率 ⑧ 15:30 英国央行行长贝利发表讲话 ⑨ 18:00 欧元区10月CPI年率终值 ⑩ 18:00 欧元区10月CPI月率终值 ⑪ 20:00 腾讯控股举行Q3财报电话会 ⑫ 21:30 美国10月新屋开工总数年化 ⑬ 21:30 美国10月营建许可总数 ⑭ 22:25 欧洲央行行长拉加德发表讲话 ⑮ 23:00 美国10月成屋签约销售指数月率 ⑯ 23:00 英国央行行长贝利发表讲话 ⑰ 23:30 美国至11月13日当周EIA原油库存 ⑱ 23:30 美国至11月13日当周EIA库欣原油库存 ⑲ 23:30 美国至11月13日当周EIA战略石油储备库存 ⑳ 次日01:00 英伟达临时CEO召开全体员工会议 ㉑ 次日02:00 新西兰联储主席布雷曼发表讲话 ㉒ 次日02:35 美联储理事巴尔发表讲话 ㉓ 次日03:00 美联储公布货币政策会议纪要 ㉔ 次日03:30 美联储威廉姆斯发表讲话 ㉕ 次日05:15 美联储卡什卡利发表讲话",
-      "keywords": [
-        "美联储",
-        "CPI",
-        "英伟达",
-        "原油"
-      ],
-      "pub_ts": 1794931200.0,
-      "time_et": "11-17 11:00 ET",
-      "time_bj": "00:00 BJ",
-      "time_kst": "01:00 KST",
-      "time_display": "11:00 ET / 00:00 BJ"
-    },
-    {
-      "id": "20261117235745453800",
-      "title": "据华尔街日报：黄仁勋称外界给予的支持让他深受触动，若董事会允许，他愿意重返英伟达(NVD…",
-      "summary": "据华尔街日报：黄仁勋称外界给予的支持让他深受触动，若董事会允许，他愿意重返英伟达(NVDA.O)首席执行官一职。",
-      "keywords": [
-        "英伟达"
-      ],
-      "pub_ts": 1794931065.0,
-      "time_et": "11-17 10:57 ET",
-      "time_bj": "23:57 BJ",
-      "time_kst": "00:57 KST",
-      "time_display": "10:57 ET / 23:57 BJ"
     }
   ],
   "ticker_news": {
@@ -2561,6 +2558,13 @@
     ],
     "SNDK": [
       {
+        "title": "‘How Could You Not?’ Says Investor About Sandisk Stock",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/could-not-says-investor-sandisk-215607193.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 16:56 ET",
+        "pub_ts": 1794952567.0
+      },
+      {
         "title": "Sandisk Stocks Fall 5.43% as Druckenmiller Exit Surfaces Before 8-for-1 Split",
         "url": "https://finance.yahoo.com/markets/stocks/articles/sandisk-stocks-fall-5-43-180327218.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2587,13 +2591,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 12:49 ET",
         "pub_ts": 1794937745.0
-      },
-      {
-        "title": "Nvidia, Intel, Salesforce, SpaceX, Anthropic, Sandisk, Home Depot, and More That Explain Today’s Market",
-        "url": "https://finance.yahoo.com/m/5d4c8ff4-57bc-3350-b217-681441a4f8b3/nvidia%2C-intel%2C-salesforce%2C.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 11:29 ET",
-        "pub_ts": 1794932940.0
       }
     ],
     "BTC-USD": [
@@ -2635,6 +2632,13 @@
     ],
     "CRWD": [
       {
+        "title": "‘We’re Still Slightly Bigger’: Palo Alto CEO Jabs CrowdStrike. Here’s How to Play PANW and CRWD Stock Before Earnings.",
+        "url": "https://www.barchart.com/story/news/8878736/were-still-slightly-bigger-palo-alto-ceo-jabs-crowdstrike-heres-how-to-play-panw-and-crwd-stock-before-earnings?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 10:40 ET",
+        "pub_ts": 1794930014.0
+      },
+      {
         "title": "CrowdStrike Holdings (CRWD) Stock Moves -1.50%: What You Should Know",
         "url": "https://finance.yahoo.com/markets/stocks/articles/crowdstrike-holdings-crwd-stock-moves-214502779.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2661,13 +2665,6 @@
         "source": "Yahoo Finance",
         "time": "11-14 00:43 ET",
         "pub_ts": 1794634996.0
-      },
-      {
-        "title": "Why CrowdStrike (CRWD), a Jim Cramer Holding, Wants Fiddler AI",
-        "url": "https://finance.yahoo.com/technology/ai/articles/why-crowdstrike-crwd-jim-cramer-203814353.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-13 15:38 ET",
-        "pub_ts": 1794602294.0
       }
     ],
     "ORCL": [
@@ -3246,15 +3243,15 @@
     "CEG": 1794951973.328932,
     "FPS": 1794953274.6844869,
     "MU": 1794952170.9822257,
-    "SKHY": 1794951776.888089,
+    "SKHY": 1794953376.4104662,
     "WDC": 1794951973.328932,
     "STX": 1794952269.4595087,
-    "MSTR": 1794951776.888089,
-    "SNDK": 1794951776.888089,
+    "MSTR": 1794953376.4104662,
+    "SNDK": 1794953376.4104662,
     "BTC-USD": 1794952269.4595087,
-    "CRWD": 1794951776.888089,
-    "ORCL": 1794951776.888089,
-    "COIN": 1794951776.888089,
+    "CRWD": 1794953376.4104662,
+    "ORCL": 1794953376.4104662,
+    "COIN": 1794953376.4104662,
     "LLY": 1794952170.9822257,
     "MRNA": 1794951973.328932,
     "NKE": 1794952269.4595087,
@@ -3271,7 +3268,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (17:06 ET / 06:06 BJ) [英伟达]：英伟达董事会主席哈维·琼斯：今天的电话会议将不会就黄仁勋辞职的相关情况以及正在进行的调查作出说明或接受提问。",
+    "detail": "⚡ 最新核心快讯 (17:08 ET / 06:08 BJ) [英伟达]：英伟达临时CEO克雷斯：云行业积压订单现已达2.5万亿美元，而三个月前仅为2万亿美元。",
     "event_name": "",
     "minutes_left": 0
   }
