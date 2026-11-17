@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1794933460.679,
-  "updated_at_et": "11-17 11:37 ET",
-  "updated_at_kst": "01:37 KST",
+  "updated_at_ts": 1794933558.433,
+  "updated_at_et": "11-17 11:39 ET",
+  "updated_at_kst": "01:39 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -647,6 +647,13 @@
     ],
     "IGV": [
       {
+        "title": "Boom Goes the Stock Market",
+        "url": "https://finance.yahoo.com/m/a874bb50-570d-3775-bc4f-8ae36f44bacd/boom-goes-the-stock-market.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 10:59 ET",
+        "pub_ts": 1794931169.0
+      },
+      {
         "title": "iShares Expanded Tech-Software (IGV) Buys $22.9 Million More Microsoft on Nov. 9",
         "url": "https://finance.yahoo.com/markets/stocks/articles/ishares-expanded-tech-software-igv-110406148.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -673,13 +680,6 @@
         "source": "Yahoo Finance",
         "time": "10-29 05:20 ET",
         "pub_ts": 1793265602.0
-      },
-      {
-        "title": "Software Sentiment Soars on AI Trade Worries",
-        "url": "https://finance.yahoo.com/m/534bc820-9dc5-3c8f-84d6-faf1da2ef7ad/software-sentiment-soars-on.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "10-23 13:38 ET",
-        "pub_ts": 1792777128.0
       }
     ],
     "TLT": [
@@ -906,39 +906,39 @@
     ],
     "NVDA": [
       {
-        "title": "AMD Expects Its CPU Revenue to Double in 2027. Is NVIDIA’s Turmoil AMD’s Opening?",
-        "url": "https://247wallst.com/investing/2026/11/17/amd-expects-its-cpu-revenue-to-double-in-2027-is-nvidias-turmoil-amds-opening/?.tsrc=rss",
+        "title": "Former Nvidia CEO Jensen Huang says he'd be 'honored' to return to the company",
+        "url": "https://finance.yahoo.com/technology/article/former-nvidia-ceo-jensen-huang-says-hed-be-honored-to-return-to-the-company-163107005.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-17 11:04 ET",
-        "pub_ts": 1794931481.0
+        "time": "11-17 11:31 ET",
+        "pub_ts": 1794933067.0
       },
       {
-        "title": "Nvidia Falls 3% Ahead Of Earnings: Will Results Calm Investors Amid Turmoil? (Live Coverage)",
-        "url": "https://finance.yahoo.com/m/ef40b1a2-2bff-390f-b0d5-c281b4d503ef/nvidia-falls-3%25-ahead-of.html?.tsrc=rss",
+        "title": "Nvidia, Intel, Salesforce, SpaceX, Anthropic, Sandisk, Home Depot, and More That Explain Today’s Market",
+        "url": "https://finance.yahoo.com/m/5d4c8ff4-57bc-3350-b217-681441a4f8b3/nvidia%2C-intel%2C-salesforce%2C.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-17 11:01 ET",
-        "pub_ts": 1794931276.0
+        "time": "11-17 11:29 ET",
+        "pub_ts": 1794932940.0
       },
       {
-        "title": "Dave Ramsey Heard From a Caller Who Forgot She Owned $18 Million of One Tech Stock",
-        "url": "https://247wallst.com/personal-finance/2026/11/17/dave-ramsey-heard-from-a-caller-who-forgot-she-owned-18-million-of-one-tech-stock/?.tsrc=rss",
+        "title": "Jensen Huang Says He Would Be ‘Honored’ To Return To Nvidia If Board Decides It Is In Shareholders’ Interest",
+        "url": "https://stocktwits.com/news-articles/markets/equity/jensen-huang-says-he-would-be-honored-to-return-to-nvidia/cNbOGTrR9WC?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-17 10:58 ET",
-        "pub_ts": 1794931136.0
+        "time": "11-17 11:19 ET",
+        "pub_ts": 1794932361.0
       },
       {
-        "title": "Nvidia forms export control panel amid concerns over China sales",
-        "url": "https://www.cbsnews.com/news/nvidia-export-control-committee-china-chips/?.tsrc=rss",
+        "title": "Is Broadcom (AVGO) Undervalued After Strong AI Revenue Growth And ETF Buying?",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/broadcom-avgo-undervalued-strong-ai-161426046.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-17 10:56 ET",
-        "pub_ts": 1794930965.0
+        "time": "11-17 11:14 ET",
+        "pub_ts": 1794932066.0
       },
       {
-        "title": "Nvidia to reveal first earnings since spy scandal",
-        "url": "https://finance.yahoo.com/technology/ai/articles/nvidia-earnings-test-ai-boom-014359078.html?.tsrc=rss",
+        "title": "Jensen Huang Breaks His Silence: ‘I Would Be Honored’ to Return as Nvidia CEO If the Board Asks",
+        "url": "https://247wallst.com/investing/2026/11/17/jensen-huang-breaks-his-silence-i-would-be-honored-to-return-as-nvidia-ceo-if-the-board-asks/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-17 10:53 ET",
-        "pub_ts": 1794930788.0
+        "time": "11-17 11:10 ET",
+        "pub_ts": 1794931815.0
       }
     ],
     "AMD": [
@@ -3200,22 +3200,22 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1794932031.894463,
-    "SOXL": 1794932031.894463,
-    "SPY": 1794932031.894463,
-    "DIA": 1794932031.894463,
-    "SOXX": 1794932031.894463,
-    "QQQ": 1794932031.894463,
-    "SMH": 1794932031.894463,
-    "IWM": 1794932031.894463,
-    "IGV": 1794932031.894463,
-    "TLT": 1794932031.894463,
-    "GLD": 1794932031.894463,
-    "SQQQ": 1794932031.894463,
-    "TSM": 1794932031.894463,
-    "VIXY": 1794932031.894463,
-    "SOXS": 1794932031.894463,
-    "NVDA": 1794932031.894463,
+    "KORU": 1794933558.4329443,
+    "SOXL": 1794933558.4329443,
+    "SPY": 1794933558.4329443,
+    "DIA": 1794933558.4329443,
+    "SOXX": 1794933558.4329443,
+    "QQQ": 1794933558.4329443,
+    "SMH": 1794933558.4329443,
+    "IWM": 1794933558.4329443,
+    "IGV": 1794933558.4329443,
+    "TLT": 1794933558.4329443,
+    "GLD": 1794933558.4329443,
+    "SQQQ": 1794933558.4329443,
+    "TSM": 1794933558.4329443,
+    "VIXY": 1794933558.4329443,
+    "SOXS": 1794933558.4329443,
+    "NVDA": 1794933558.4329443,
     "AMD": 1794932031.894463,
     "ASML": 1794932031.894463,
     "QCOM": 1794932031.894463,
