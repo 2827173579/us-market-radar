@@ -1,9 +1,22 @@
 {
-  "updated_at_ts": 1794924145.86,
-  "updated_at_et": "11-17 09:02 ET",
-  "updated_at_kst": "23:02 KST",
+  "updated_at_ts": 1794924260.805,
+  "updated_at_et": "11-17 09:04 ET",
+  "updated_at_kst": "23:04 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261117220306396800",
+      "title": "WTI原油突破87美元/桶，日内涨2.21%；布伦特原油站上94美元/桶，日内涨2.34…",
+      "summary": "WTI原油突破87美元/桶，日内涨2.21%；布伦特原油站上94美元/桶，日内涨2.34%。",
+      "keywords": [
+        "原油"
+      ],
+      "pub_ts": 1794924186.0,
+      "time_et": "11-17 09:03 ET",
+      "time_bj": "22:03 BJ",
+      "time_kst": "23:03 KST",
+      "time_display": "09:03 ET / 22:03 BJ"
+    },
     {
       "id": "20261117220000001800",
       "title": "美联储理事沃勒将于十分钟后发表讲话，美国10月工业产出月率将于十五分钟后公布。",
@@ -327,19 +340,6 @@
       "time_bj": "18:16 BJ",
       "time_kst": "19:16 KST",
       "time_display": "05:16 ET / 18:16 BJ"
-    },
-    {
-      "id": "20261117180044898800",
-      "title": "市场消息：英伟达(NVDA.O)董事会成立国家安全与出口管制监督委员会。",
-      "summary": "市场消息：英伟达(NVDA.O)董事会成立国家安全与出口管制监督委员会。",
-      "keywords": [
-        "英伟达"
-      ],
-      "pub_ts": 1794909644.0,
-      "time_et": "11-17 05:00 ET",
-      "time_bj": "18:00 BJ",
-      "time_kst": "19:00 KST",
-      "time_display": "05:00 ET / 18:00 BJ"
     }
   ],
   "ticker_news": {
@@ -2158,6 +2158,20 @@
     ],
     "VRT": [
       {
+        "title": "Eaton vs. Vertiv: Which Industrials Stock Is a Better Buy for 2027?",
+        "url": "https://www.fool.com/coverage/better-buy/2026/11/17/eaton-vs-vertiv-which-industrials-stock-is-a-better-buy-for-2027/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 08:48 ET",
+        "pub_ts": 1794923281.0
+      },
+      {
+        "title": "Vertiv Advances 800 VDC Power Architectures to Support Growing AI Data Center Demands",
+        "url": "https://finance.yahoo.com/technology/ai/articles/vertiv-advances-800-vdc-power-133000245.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 08:30 ET",
+        "pub_ts": 1794922200.0
+      },
+      {
         "title": "Vertiv (VRT) is an Incredible Growth Stock: 3 Reasons Why",
         "url": "https://finance.yahoo.com/markets/stocks/articles/vertiv-vrt-incredible-growth-stock-164502782.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2177,20 +2191,6 @@
         "source": "Yahoo Finance",
         "time": "11-16 08:30 ET",
         "pub_ts": 1794835804.0
-      },
-      {
-        "title": "Vertiv ATLAS Proves AI Infrastructure Ahead of Silicon",
-        "url": "https://finance.yahoo.com/technology/ai/articles/vertiv-atlas-proves-ai-infrastructure-133000323.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-16 08:30 ET",
-        "pub_ts": 1794835800.0
-      },
-      {
-        "title": "Vertiv Holdings Co. (VRT) is Attracting Investor Attention: Here is What You Should Know",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/vertiv-holdings-co-vrt-attracting-130004327.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-16 08:00 ET",
-        "pub_ts": 1794834004.0
       }
     ],
     "HPE": [
@@ -2269,6 +2269,13 @@
     ],
     "OKLO": [
       {
+        "title": "Will OKLO's $3.1B Liquidity Cushion Advance Its Nuclear Plans?",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/oklos-3-1b-liquidity-cushion-122900957.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 07:29 ET",
+        "pub_ts": 1794918540.0
+      },
+      {
         "title": "Meta’s Prepayment Is Buying Oklo’s Nuclear Fuel for Up to Five Reactors",
         "url": "https://www.tikr.com/blog/metas-prepayment-is-buying-oklos-nuclear-fuel-for-up-to-five-reactors?ref=yahoofinance&tlnk=yf-261116-2vpq4v59&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2295,13 +2302,6 @@
         "source": "Yahoo Finance",
         "time": "11-13 22:12 ET",
         "pub_ts": 1794625955.0
-      },
-      {
-        "title": "Oklo Advances Groves-1 Reactor Into Research and Testing Phase",
-        "url": "https://finance.yahoo.com/energy/articles/oklo-advances-groves-1-reactor-151800308.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-12 10:18 ET",
-        "pub_ts": 1794496680.0
       }
     ],
     "CEG": [
@@ -2387,6 +2387,13 @@
         "pub_ts": 1794921900.0
       },
       {
+        "title": "Ramon.Space Raises $124 Million Series B, Leading the Next Era of Computing in Orbit",
+        "url": "https://finance.yahoo.com/technology/ai/articles/ramon-space-raises-124-million-130000686.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 08:00 ET",
+        "pub_ts": 1794920400.0
+      },
+      {
         "title": "David Tepper Sold Every Broadcom Share Last Quarter and Bought More Micron and Nvidia. Broadcom Has Held Up Better Since",
         "url": "https://247wallst.com/investing/2026/11/17/david-tepper-sold-every-broadcom-share-last-quarter-and-bought-more-micron-and-nvidia-broadcom-has-held-up-better-since/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2401,18 +2408,11 @@
         "pub_ts": 1794912122.0
       },
       {
-        "title": "“What Would It Take” for Investors to Finally Admit that Micron Is Poised to Win for the Long Term?",
-        "url": "https://www.tikr.com/blog/what-would-it-take-for-investors-to-finally-admit-that-micron-is-poised-to-win-for-the-long-term?ref=yahoofinance&tlnk=yf-261117-rprf3fh3&.tsrc=rss",
+        "title": "There are 8 Reasons I’m Buying SanDisk Now at This Deep Discount",
+        "url": "https://247wallst.com/investing/2026/11/17/there-are-8-reasons-im-buying-sandisk-now-at-this-deep-discount/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-17 01:49 ET",
-        "pub_ts": 1794898178.0
-      },
-      {
-        "title": "Zacks Investment Ideas feature highlights: Nvidia, CoreWeave, Nebius, Micron and Sandisk",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/zacks-investment-ideas-feature-highlights-064900844.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 01:49 ET",
-        "pub_ts": 1794898140.0
+        "time": "11-17 08:45 ET",
+        "pub_ts": 1794923134.0
       }
     ],
     "SKHY": [
@@ -2491,6 +2491,13 @@
     ],
     "STX": [
       {
+        "title": "Seagate vs. Micron: Which AI Data Storage Stock is a Smarter Bet?",
+        "url": "https://finance.yahoo.com/technology/ai/articles/seagate-vs-micron-ai-data-125800107.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 07:58 ET",
+        "pub_ts": 1794920280.0
+      },
+      {
         "title": "Stanley Druckenmiller Nearly Tripled His Seagate Stake, Bought Western Digital and Sold All of His SanDisk. All Three Stocks Have Fallen Since",
         "url": "https://247wallst.com/investing/2026/11/17/stanley-druckenmiller-nearly-tripled-his-seagate-stake-bought-western-digital-and-sold-all-of-his-sandisk-all-three-stocks-have-fallen-since/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2517,13 +2524,6 @@
         "source": "Yahoo Finance",
         "time": "11-12 07:15 ET",
         "pub_ts": 1794485704.0
-      },
-      {
-        "title": "Seagate Technology Holdings (STX) Gains Fresh Backing As AI Storage Demand Tests Its Valuation",
-        "url": "https://finance.yahoo.com/technology/ai/articles/seagate-technology-holdings-stx-gains-011222679.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-11 20:12 ET",
-        "pub_ts": 1794445942.0
       }
     ],
     "MSTR": [
@@ -2565,6 +2565,13 @@
     ],
     "SNDK": [
       {
+        "title": "There are 8 Reasons I’m Buying SanDisk Now at This Deep Discount",
+        "url": "https://247wallst.com/investing/2026/11/17/there-are-8-reasons-im-buying-sandisk-now-at-this-deep-discount/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 08:45 ET",
+        "pub_ts": 1794923134.0
+      },
+      {
         "title": "Stanley Druckenmiller Nearly Tripled His Seagate Stake, Bought Western Digital and Sold All of His SanDisk. All Three Stocks Have Fallen Since",
         "url": "https://247wallst.com/investing/2026/11/17/stanley-druckenmiller-nearly-tripled-his-seagate-stake-bought-western-digital-and-sold-all-of-his-sandisk-all-three-stocks-have-fallen-since/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2591,16 +2598,16 @@
         "source": "Yahoo Finance",
         "time": "11-17 05:38 ET",
         "pub_ts": 1794911936.0
-      },
-      {
-        "title": "Zacks Investment Ideas feature highlights: Nvidia, CoreWeave, Nebius, Micron and Sandisk",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/zacks-investment-ideas-feature-highlights-064900844.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 01:49 ET",
-        "pub_ts": 1794898140.0
       }
     ],
     "BTC-USD": [
+      {
+        "title": "Hackers Plant ‘Crypto-Stealing Code’ On Websites Worldwide",
+        "url": "https://www.cryptoprowl.com/releases/hackers-plant-crypto-stealing-code-on-websites-worldwide-7942?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 08:53 ET",
+        "pub_ts": 1794923580.0
+      },
       {
         "title": "What You Actually Own When You Buy Strategy (MSTR) Stock",
         "url": "https://247wallst.com/investing/2026/11/17/what-you-actually-own-when-you-buy-strategy-mstr-stock/?.tsrc=rss",
@@ -2628,13 +2635,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 07:30 ET",
         "pub_ts": 1794918600.0
-      },
-      {
-        "title": "Dogecoin ETFs Haven’t Taken In a Dollar Since October. So Who Is Buying?",
-        "url": "https://beincrypto.com/dogecoin-etfs-stall-whales-keep-buying/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 07:26 ET",
-        "pub_ts": 1794918361.0
       }
     ],
     "CRWD": [
@@ -2750,13 +2750,6 @@
     ],
     "LLY": [
       {
-        "title": "Eli Lilly is trouncing Nvidia — and the weight-loss drug trade is beating AI again",
-        "url": "https://finance.yahoo.com/markets/article/eli-lilly-is-trouncing-nvidia--and-the-weight-loss-drug-trade-is-beating-ai-again-170530198.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-16 12:05 ET",
-        "pub_ts": 1794848730.0
-      },
-      {
         "title": "Lilly agrees to acquire Calytrix Bio for $1.5bn",
         "url": "https://www.hospitalmanagement.net/news/lilly-to-acquire-calytrix-bio-1-5bn/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2776,6 +2769,13 @@
         "source": "Yahoo Finance",
         "time": "11-16 19:23 ET",
         "pub_ts": 1794874980.0
+      },
+      {
+        "title": "Eli Lilly is trouncing Nvidia — and the weight-loss drug trade is beating AI again",
+        "url": "https://finance.yahoo.com/markets/article/eli-lilly-is-trouncing-nvidia--and-the-weight-loss-drug-trade-is-beating-ai-again-170530198.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-16 12:05 ET",
+        "pub_ts": 1794848730.0
       },
       {
         "title": "Stipple Bio Announces Multi-Target Multi-Modality Oncology Research Collaboration with Lilly",
@@ -3243,23 +3243,23 @@
     "KO": 1794924145.8596127,
     "FLY": 1794924145.8596127,
     "INTC": 1794924145.8596127,
-    "VRT": 1794922744.650535,
-    "HPE": 1794922744.650535,
-    "DELL": 1794922744.650535,
-    "OKLO": 1794922744.650535,
-    "CEG": 1794922744.650535,
-    "FPS": 1794922744.650535,
-    "MU": 1794922744.650535,
-    "SKHY": 1794922744.650535,
-    "WDC": 1794922744.650535,
-    "STX": 1794922744.650535,
-    "MSTR": 1794922744.650535,
-    "SNDK": 1794922744.650535,
-    "BTC-USD": 1794922744.650535,
-    "CRWD": 1794922744.650535,
-    "ORCL": 1794922744.650535,
-    "COIN": 1794922744.650535,
-    "LLY": 1794922744.650535,
+    "VRT": 1794924260.8051798,
+    "HPE": 1794924260.8051798,
+    "DELL": 1794924260.8051798,
+    "OKLO": 1794924260.8051798,
+    "CEG": 1794924260.8051798,
+    "FPS": 1794924260.8051798,
+    "MU": 1794924260.8051798,
+    "SKHY": 1794924260.8051798,
+    "WDC": 1794924260.8051798,
+    "STX": 1794924260.8051798,
+    "MSTR": 1794924260.8051798,
+    "SNDK": 1794924260.8051798,
+    "BTC-USD": 1794924260.8051798,
+    "CRWD": 1794924260.8051798,
+    "ORCL": 1794924260.8051798,
+    "COIN": 1794924260.8051798,
+    "LLY": 1794924260.8051798,
     "MRNA": 1794922850.4608986,
     "NKE": 1794922850.4608986,
     "MCD": 1794922850.4608986,
@@ -3275,7 +3275,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (09:00 ET / 22:00 BJ) [美联储]：美联储理事沃勒将于十分钟后发表讲话，美国10月工业产出月率将于十五分钟后公布。",
+    "detail": "⚡ 最新核心快讯 (09:03 ET / 22:03 BJ) [原油]：WTI原油突破87美元/桶，日内涨2.21%；布伦特原油站上94美元/桶，日内涨2.34%。",
     "event_name": "",
     "minutes_left": 0
   }
