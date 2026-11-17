@@ -1,9 +1,24 @@
 {
-  "updated_at_ts": 1794949256.784,
-  "updated_at_et": "11-17 16:00 ET",
-  "updated_at_kst": "06:00 KST",
+  "updated_at_ts": 1794949418.408,
+  "updated_at_et": "11-17 16:03 ET",
+  "updated_at_kst": "06:03 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261118050124728800",
+      "title": "【美股收盘：三大股指集体收跌】 11月18日讯，美股周二收盘，道指初步收跌1.64%，标…",
+      "summary": "【美股收盘：三大股指集体收跌】 11月18日讯，美股周二收盘，道指初步收跌1.64%，标普500指数跌1.02%，纳指跌0.74%。Salesforce(CRM.N)跌9.4%，联合健康(UNH.N)跌5.4%，超微电脑(SMCI.O)跌3.5%，英伟达(NVDA.O)跌0.44%；SpaceX(SPCX.O)涨3.16%。纳斯达克中国金龙指数收跌1.89%，京东(JD.O)跌7.66%，阿里巴巴(BABA.N)跌4.38%，百度(BIDU.O)跌3.77%。",
+      "keywords": [
+        "英伟达",
+        "纳斯达克",
+        "标普"
+      ],
+      "pub_ts": 1794949284.0,
+      "time_et": "11-17 16:01 ET",
+      "time_bj": "05:01 BJ",
+      "time_kst": "06:01 KST",
+      "time_display": "16:01 ET / 05:01 BJ"
+    },
     {
       "id": "20261118045816757800",
       "title": "据华尔街日报：消息人士称，美国证券交易委员会正在调查英伟达(NVDA.O)，其中包括该公…",
@@ -330,19 +345,6 @@
       "time_bj": "21:32 BJ",
       "time_kst": "22:32 KST",
       "time_display": "08:32 ET / 21:32 BJ"
-    },
-    {
-      "id": "20261117212309937800",
-      "title": "布伦特原油日内涨幅达2.00%，现报93.70美元/桶；WTI原油短线上扬0.4美元，报…",
-      "summary": "布伦特原油日内涨幅达2.00%，现报93.70美元/桶；WTI原油短线上扬0.4美元，报86.67美元/桶。",
-      "keywords": [
-        "原油"
-      ],
-      "pub_ts": 1794921789.0,
-      "time_et": "11-17 08:23 ET",
-      "time_bj": "21:23 BJ",
-      "time_kst": "22:23 KST",
-      "time_display": "08:23 ET / 21:23 BJ"
     }
   ],
   "ticker_news": {
@@ -695,6 +697,13 @@
         "pub_ts": 1793897284.0
       },
       {
+        "title": "The Government Spends About $5.5 Billion a Day More Than It Takes In. The Debt Has Doubled in 10 Years. Jaime Dimon This the Situation Could Get Much Worse.",
+        "url": "https://247wallst.com/investing/2026/11/17/the-government-spends-about-5-5-billion-a-day-more-than-it-takes-in-the-debt-has-doubled-in-10-years-jaime-dimon-this-the-situation-could-get-much-worse-2/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 15:36 ET",
+        "pub_ts": 1794947772.0
+      },
+      {
         "title": "Bessent Tells the Fed Not to Hike “Too Much”",
         "url": "https://247wallst.com/investing/2026/11/14/bessent-tells-the-fed-not-to-hike-too-much/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -707,13 +716,6 @@
         "source": "Yahoo Finance",
         "time": "11-13 12:13 ET",
         "pub_ts": 1794590038.0
-      },
-      {
-        "title": "The U.S. Just Ran Its Biggest October Deficit Ever: $404 Billion",
-        "url": "https://247wallst.com/investing/2026/11/13/the-u-s-just-ran-its-biggest-october-deficit-ever-404-billion/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-13 10:03 ET",
-        "pub_ts": 1794582235.0
       }
     ],
     "GLD": [
@@ -2901,6 +2903,13 @@
     ],
     "PEP": [
       {
+        "title": "PepsiCo Expanding DRIPS with Proprietary Syrup Lineup and Concentrated Bases",
+        "url": "https://www.qsrmagazine.com/news/pepsico-expanding-drips-with-proprietary-syrup-lineup-and-concentrated-bases/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 15:23 ET",
+        "pub_ts": 1794947028.0
+      },
+      {
         "title": "PepsiCo (PEP) Renewed Its Global Beverage Partnership Across International Markets",
         "url": "https://finance.yahoo.com/markets/stocks/articles/pepsico-pep-renewed-global-beverage-191535063.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2927,13 +2936,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 09:34 ET",
         "pub_ts": 1794926095.0
-      },
-      {
-        "title": "Could PepsiCo Be The Value Stock For Your Portfolio?",
-        "url": "https://www.trefis.com/stock/pep/articles/625645/could-pepsico-be-the-value-stock-for-your-portfolio/2026-11-17?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 09:13 ET",
-        "pub_ts": 1794924821.0
       }
     ],
     "XOM": [
@@ -3197,20 +3199,20 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1794947874.2936907,
-    "SOXL": 1794947774.340662,
-    "SPY": 1794947774.340662,
-    "DIA": 1794947874.2936907,
-    "SOXX": 1794947774.340662,
-    "QQQ": 1794947874.2936907,
-    "SMH": 1794947774.340662,
-    "IWM": 1794947774.340662,
+    "KORU": 1794949418.4082391,
+    "SOXL": 1794949418.4082391,
+    "SPY": 1794949418.4082391,
+    "DIA": 1794949418.4082391,
+    "SOXX": 1794949418.4082391,
+    "QQQ": 1794949418.4082391,
+    "SMH": 1794949418.4082391,
+    "IWM": 1794949418.4082391,
     "IGV": 1794948070.1104274,
-    "TLT": 1794947874.2936907,
-    "GLD": 1794947774.340662,
+    "TLT": 1794949418.4082391,
+    "GLD": 1794949418.4082391,
     "SQQQ": 1794948167.8811972,
-    "TSM": 1794947874.2936907,
-    "VIXY": 1794947774.340662,
+    "TSM": 1794949418.4082391,
+    "VIXY": 1794949418.4082391,
     "SOXS": 1794948070.1104274,
     "NVDA": 1794948070.1104274,
     "AMD": 1794948265.66836,
@@ -3266,8 +3268,8 @@
     "MRNA": 1794948865.1112828,
     "NKE": 1794949158.7688837,
     "MCD": 1794948865.1112828,
-    "PEP": 1794947774.340662,
-    "XOM": 1794947774.340662,
+    "PEP": 1794949418.4082391,
+    "XOM": 1794949418.4082391,
     "JPM": 1794949061.206364,
     "WMT": 1794949061.206364,
     "V": 1794948865.1112828,
@@ -3278,7 +3280,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (15:58 ET / 04:58 BJ) [英伟达]：据华尔街日报：消息人士称，美国证券交易委员会正在调查英伟达(NVDA.O)，其中包括该公司信息披露是否误导投资者。",
+    "detail": "⚡ 最新核心快讯 (16:01 ET / 05:01 BJ) [英伟达] [纳斯达克] [标普]：【美股收盘：三大股指集体收跌】 11月18日讯，美股周二收盘，道指初步收跌1.64%，标普500指数跌1.02%，纳指跌0.74%。Salesforce(CRM.N)跌9.4%，联合健康(U",
     "event_name": "",
     "minutes_left": 0
   }
