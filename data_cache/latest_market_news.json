@@ -1,9 +1,22 @@
 {
-  "updated_at_ts": 1794956240.162,
-  "updated_at_et": "11-17 17:57 ET",
-  "updated_at_kst": "07:57 KST",
+  "updated_at_ts": 1794956338.568,
+  "updated_at_et": "11-17 17:58 ET",
+  "updated_at_kst": "07:58 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261118065623116800",
+      "title": "英伟达业绩再爆表！下季度营收指引上调至1300亿美元，董事会明确拒绝黄仁勋复职",
+      "summary": "英伟达第三财季营收同比增长103%至1158亿美元，预计下季度营收达到1300亿美元，并将下一财年增长预期上调至75%。但董事会明确无意让黄仁勋复职。点击查看",
+      "keywords": [
+        "英伟达"
+      ],
+      "pub_ts": 1794956183.0,
+      "time_et": "11-17 17:56 ET",
+      "time_bj": "06:56 BJ",
+      "time_kst": "07:56 KST",
+      "time_display": "17:56 ET / 06:56 BJ"
+    },
     {
       "id": "20261118065000000800",
       "title": "【今日重点关注的财经数据与事件：2026年11月18日 周三】 ① 待定 亚太经合组织领…",
@@ -327,19 +340,6 @@
       "time_bj": "04:58 BJ",
       "time_kst": "05:58 KST",
       "time_display": "15:58 ET / 04:58 BJ"
-    },
-    {
-      "id": "20261118045000001800",
-      "title": "英伟达将在美股盘后公布Q3财报。",
-      "summary": "英伟达将在美股盘后公布Q3财报。",
-      "keywords": [
-        "英伟达"
-      ],
-      "pub_ts": 1794948600.0,
-      "time_et": "11-17 15:50 ET",
-      "time_bj": "04:50 BJ",
-      "time_kst": "05:50 KST",
-      "time_display": "15:50 ET / 04:50 BJ"
     }
   ],
   "ticker_news": {
@@ -1943,6 +1943,13 @@
         "pub_ts": 1794932827.0
       },
       {
+        "title": "NIO vs. Tesla: Which EV Stock Is a Better Buy for 2027?",
+        "url": "https://www.fool.com/coverage/better-buy/2026/11/17/nio-vs-tesla-which-ev-stock-is-a-better-buy-for-2027/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 17:39 ET",
+        "pub_ts": 1794955142.0
+      },
+      {
         "title": "Fund Manager Lists Three Reasons He Still Won’t Buy Tesla Stock",
         "url": "https://stocktwits.com/news-articles/markets/equity/fund-manager-lists-three-reasons-he-still-won-t-buy-tesla-stock/cNbOJB3R9hQ?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1962,13 +1969,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 13:57 ET",
         "pub_ts": 1794941823.0
-      },
-      {
-        "title": "Exchange Traded Concepts to Close and Liquidate The xETFs TSLA Daily Income ETF (NYSE: TYYY)",
-        "url": "https://finance.yahoo.com/markets/options/articles/exchange-traded-concepts-close-liquidate-184900140.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 13:49 ET",
-        "pub_ts": 1794941340.0
       }
     ],
     "AXP": [
@@ -3233,22 +3233,22 @@
     "LITE": 1794956140.6146584,
     "AAOI": 1794956029.642319,
     "SPCX": 1794956140.6146584,
-    "ASTS": 1794954778.8893943,
+    "ASTS": 1794956338.5679069,
     "AXTI": 1794956029.642319,
-    "NASA": 1794954778.8893943,
+    "NASA": 1794956338.5679069,
     "LUNR": 1794956140.6146584,
-    "TSLA": 1794954778.8893943,
-    "AXP": 1794954778.8893943,
-    "RKLB": 1794954778.8893943,
+    "TSLA": 1794956338.5679069,
+    "AXP": 1794956338.5679069,
+    "RKLB": 1794956338.5679069,
     "KO": 1794956140.6146584,
     "FLY": 1794956140.6146584,
     "INTC": 1794956240.1620586,
-    "VRT": 1794954778.8893943,
-    "HPE": 1794954778.8893943,
-    "DELL": 1794954778.8893943,
-    "OKLO": 1794954778.8893943,
+    "VRT": 1794956338.5679069,
+    "HPE": 1794956338.5679069,
+    "DELL": 1794956338.5679069,
+    "OKLO": 1794956338.5679069,
     "CEG": 1794954979.0191731,
-    "FPS": 1794954778.8893943,
+    "FPS": 1794956338.5679069,
     "MU": 1794955176.4245434,
     "SKHY": 1794954879.96504,
     "WDC": 1794954979.0191731,
@@ -3275,7 +3275,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (17:50 ET / 06:50 BJ) [美联储] [CPI] [英伟达]：【今日重点关注的财经数据与事件：2026年11月18日 周三】 ① 待定 亚太经合组织领导人非正式会议在深圳举行 ② 15:00 英国10月CPI月率 ③ 15:00 英国10月零售物价指数",
+    "detail": "⚡ 最新核心快讯 (17:56 ET / 06:56 BJ) [英伟达]：英伟达第三财季营收同比增长103%至1158亿美元，预计下季度营收达到1300亿美元，并将下一财年增长预期上调至75%。但董事会明确无意让黄仁勋复职。点击查看",
     "event_name": "",
     "minutes_left": 0
   }
