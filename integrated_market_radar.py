@@ -22,6 +22,7 @@ import random
 from datetime import datetime, timezone, timedelta
 import urllib.request
 import urllib.error
+import radar_cloud_sync
 from urllib.parse import urlparse, parse_qs
 from http.server import HTTPServer, BaseHTTPRequestHandler
 import threading
@@ -5573,21 +5574,19 @@ def main():
             c_start = time.time()
             now_ts = now_et_str("%Y-%m-%d %H:%M:%S")
 
-            # 🛡️ 云端 Actions 互斥检测：如果由 GITHUB_ACTIONS 运行，检查是否有本地开发者的最新提交 (<15分钟)
+            # 🛡️ 云端 Actions 互斥：只避让「本仓库」15 分钟内的非 Actions 提交。
+            # fork 继承的上游提交、以及从上游同步过来的同一 SHA，不算本地客户端。
+            # 检测前先把 origin 固定到 GITHUB_REPOSITORY，避免 fetch 到写死的上游。
             if os.environ.get("GITHUB_ACTIONS") == "true":
                 try:
-                    subprocess.run(["git", "fetch", "origin", "main", "--quiet"], check=False, creationflags=WIN_NO_WINDOW)
-                    res = subprocess.run(["git", "log", "-1", "--format=%ae|%ct", "origin/main"], capture_output=True, text=True, encoding="utf-8", errors="replace", check=False, creationflags=WIN_NO_WINDOW)
-                    if res.returncode == 0 and res.stdout.strip():
-                        parts = res.stdout.strip().split("|", 1)
-                        if len(parts) == 2:
-                            author_email, c_time_str = parts
-                            diff_sec = time.time() - float(c_time_str)
-                            if author_email != "actions@github.com" and diff_sec < 900:
-                                print(f"[!] 🛡️ 检测到本地客户端活跃提交 ({author_email}, {int(diff_sec)}s 前)，云端 Actions 优雅退出！")
-                                sys.exit(0)
-                except Exception:
-                    pass
+                    hit = radar_cloud_sync.actions_local_client_hit()
+                    if hit:
+                        print(f"[!] 🛡️ 检测到本仓库本地客户端活跃提交 ({hit['email']}, {hit['age_sec']}s 前)，云端 Actions 优雅退出！")
+                        sys.exit(0)
+                except SystemExit:
+                    raise
+                except Exception as _yield_exc:
+                    print("[!] 本地客户端检测异常，继续运行: " + radar_cloud_sync.redact_secrets(str(_yield_exc))[:200])
 
             print(f"\n" + "-" * 75)
             print(f"⏱️ [{now_ts}] [第 {round_idx} 轮] 执行全市场 {interval_sec} 秒极速同步与期权扫描...")
@@ -5630,73 +5629,70 @@ def main():
                     round_idx += 1
                     time.sleep(15.0)
                     continue
-            # 云端同步持久化至 Git 仓库，令手机端 GitHub Pages 秒级保持最新
+            # 云端同步持久化至当前仓库，令本仓库 GitHub Pages 保持最新。
+            # Actions 只 pull/push GITHUB_REPOSITORY，不把 origin 改到上游，也不从上游 rebase。
             try:
                 import shutil
                 if os.path.exists("futu_pro_terminal.html"):
                     shutil.copyfile("futu_pro_terminal.html", "index.html")
-                
-                # 配置带 PAT 的远程地址，确保触发 GitHub Pages 自动部署，规避 GITHUB_TOKEN 的防递归拦截
-                gh_token = os.getenv("GH_TOKEN") or os.getenv("GITHUB_TOKEN")
-                if gh_token:
-                    auth_url = f"https://x-access-token:{gh_token}@github.com/2827173579/us-market-radar.git"
-                    subprocess.run(["git", "remote", "set-url", "origin", auth_url], check=False, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, creationflags=WIN_NO_WINDOW)
-                
-                # 🛡️ 精准守门员机制：在准备执行 git add / commit / push 之前的那一刻，
-                # 调用 GitHub API 检查是否还有 in_progress 或 queued 的 Pages workflow。
-                # 若上一轮已 completed，则 0 秒延迟立即放行推送！
-                # 若上一轮还差最后十几秒没跑完，则每 8 秒轮询等待其变为 completed (最多 75 秒超时兜底)
-                try:
-                    pat_match = gh_token
-                    if not pat_match:
-                        rem_out = subprocess.check_output(["git", "remote", "get-url", "origin"], text=True, creationflags=WIN_NO_WINDOW)
-                        if "ghp_" in rem_out:
-                            pat_match = "ghp_" + rem_out.split("ghp_")[1].split("@")[0]
-                    if pat_match:
-                        check_url = "https://api.github.com/repos/2827173579/us-market-radar/actions/runs?per_page=1"
-                        req_chk = urllib.request.Request(check_url, headers={"Authorization": f"Bearer {pat_match}", "User-Agent": "TradeRadar-Gatekeeper"})
-                        wait_start = time.time()
-                        waited_any = False
-                        while time.time() - wait_start < 240:
-                            with urllib.request.urlopen(req_chk, timeout=10) as c_resp:
-                                c_data = json.loads(c_resp.read().decode("utf-8"))
-                            runs = c_data.get("workflow_runs", [])
-                            if runs and runs[0].get("status") in ["in_progress", "queued"]:
-                                waited_any = True
-                                print(f"[*] ⏳ 云端上一轮 Pages 正在部署中 (Run {runs[0].get('id')} / {runs[0].get('status')})，守门员等待其就绪以防踩踏 (已等 {int(time.time()-wait_start)}s)...")
-                                time.sleep(8)
-                            else:
-                                if waited_any:
-                                    print(f"[+] 🎯 云端上一轮 Pages 部署顺利就绪 (等待 {int(time.time()-wait_start)}s)，立即放行当前推送！")
-                                else:
-                                    print(f"[+] ⚡ 云端已处于空闲就绪状态 (0 秒等待)，直接放行推送！")
-                                break
-                except Exception as wait_err:
-                    pass
 
-                subprocess.run(
-                    ["git", "add", "index.html", "futu_pro_terminal.html", "predict_radar_5y.html", "data_cache/latest_ai_predictions.json", "data_cache/shared_alert_dedupe.json", ".terminal_notifications.json", ".options_cache.json", ".radar_alert_history.json", "macro_radar.html", "stocks_radar.html", ".gitignore"],
-                    check=False, creationflags=WIN_NO_WINDOW)
-                subprocess.run(
-                    ["git", "commit", "-m", f"⚡ [{'小米平板实盘同步' if ANDROID_MODE else '实盘同步'}] 第 {round_idx} 轮极速刷新 ({now_ts})"],
-                    check=False, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, creationflags=WIN_NO_WINDOW
-                )
-                _head_before = subprocess.run(["git", "rev-parse", "HEAD"], check=False, capture_output=True, text=True, encoding="utf-8", errors="replace", creationflags=WIN_NO_WINDOW).stdout.strip()
-                subprocess.run(["git", "pull", "--rebase", "--autostash", "-X", "theirs", "origin", "main"], check=False, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, creationflags=WIN_NO_WINDOW)
-                _head_after = subprocess.run(["git", "rev-parse", "HEAD"], check=False, capture_output=True, text=True, encoding="utf-8", errors="replace", creationflags=WIN_NO_WINDOW).stdout.strip()
-                if _head_before and _head_after and _head_before != _head_after:
-                    _changed = subprocess.run(["git", "diff", "--name-only", _head_before, _head_after], check=False, capture_output=True, text=True, encoding="utf-8", errors="replace", creationflags=WIN_NO_WINDOW).stdout
-                    if any(_f.endswith(".py") for _f in _changed.splitlines()):
-                        print("[*] 检测到 git pull 更新了 .py 源码，立即热重启守护进程以加载新代码与 .env ...", flush=True)
-                        os.execv(sys.executable, [sys.executable] + sys.argv)
-                push_res = subprocess.run(["git", "push", "origin", "HEAD:main"], check=False, capture_output=True, text=True, encoding="utf-8", errors="replace", creationflags=WIN_NO_WINDOW)
-                if push_res.returncode == 0:
-                    print(f"[+] ✅ 成功推送第 {round_idx} 轮数据至 GitHub Pages (PAT 触发部署成功)！")
-                    globals()["_LAST_GIT_PUSH_TS"] = time.time()
+                _actions_run = os.environ.get("GITHUB_ACTIONS") == "true"
+                _can_sync = radar_cloud_sync.ensure_sync_origin()
+                if _actions_run and not _can_sync:
+                    print("[!] 云端 origin 无法确认指向当前仓库，已拒绝 pull/push，避免写到上游")
                 else:
-                    print(f"[*] Git 推送反馈: {push_res.stderr.strip()[:100]}")
+                    # 只等待本仓库的 pages-build-deployment，不等待雷达自己的 in_progress run。
+                    try:
+                        radar_cloud_sync.wait_for_pages_idle()
+                    except Exception as _wait_err:
+                        print("[!] Pages 守门员异常，直接放行推送: " + radar_cloud_sync.redact_secrets(str(_wait_err))[:160])
+
+                    subprocess.run(
+                        ["git", "add", "index.html", "futu_pro_terminal.html", "predict_radar_5y.html", "data_cache/latest_ai_predictions.json", "data_cache/shared_alert_dedupe.json", ".terminal_notifications.json", ".options_cache.json", ".radar_alert_history.json", "macro_radar.html", "stocks_radar.html", ".gitignore"],
+                        check=False, creationflags=WIN_NO_WINDOW)
+                    subprocess.run(
+                        ["git", "commit", "-m", f"⚡ [{'小米平板实盘同步' if ANDROID_MODE else '实盘同步'}] 第 {round_idx} 轮极速刷新 ({now_ts})"],
+                        check=False, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, creationflags=WIN_NO_WINDOW
+                    )
+                    _head_before = subprocess.run(["git", "rev-parse", "HEAD"], check=False, capture_output=True, text=True, encoding="utf-8", errors="replace", creationflags=WIN_NO_WINDOW).stdout.strip()
+                    _py_changed = False
+                    if _can_sync:
+                        _pull_res = radar_cloud_sync.pull_rebase_origin_main()
+                        if _pull_res.returncode != 0:
+                            _pull_err = radar_cloud_sync.redact_secrets(((_pull_res.stderr or "") + (_pull_res.stdout or "")).strip())
+                            if _pull_err:
+                                print(f"[!] git pull --rebase 未成功，仍尝试推送当前仓库: {_pull_err[:160]}")
+                    _head_after = subprocess.run(["git", "rev-parse", "HEAD"], check=False, capture_output=True, text=True, encoding="utf-8", errors="replace", creationflags=WIN_NO_WINDOW).stdout.strip()
+                    if _head_before and _head_after and _head_before != _head_after:
+                        _changed = subprocess.run(["git", "diff", "--name-only", _head_before, _head_after], check=False, capture_output=True, text=True, encoding="utf-8", errors="replace", creationflags=WIN_NO_WINDOW).stdout
+                        _py_changed = any(_f.endswith(".py") for _f in _changed.splitlines())
+                    push_res = subprocess.run(["git", "push", "origin", "HEAD:main"], check=False, capture_output=True, text=True, encoding="utf-8", errors="replace", creationflags=WIN_NO_WINDOW)
+                    if push_res.returncode == 0:
+                        _repo_label = (os.environ.get("GITHUB_REPOSITORY") or radar_cloud_sync.read_origin_slug() or "当前仓库")
+                        print(f"[+] ✅ 成功推送第 {round_idx} 轮到 {_repo_label}")
+                        if _actions_run:
+                            _pages = radar_cloud_sync.maybe_request_branch_pages_build()
+                            if _pages.get("detail") == "artifact":
+                                print("[+] Pages 源是 GitHub Actions，本轮推送后由 workflow 的 deploy-pages 发布（GITHUB_TOKEN，无需 PAT）")
+                            elif _pages.get("detail") == "throttled":
+                                print("[*] 距上次 Pages 构建请求很近，本轮不重复请求")
+                            elif _pages.get("ok"):
+                                print(f"[+] 已请求当前仓库 Pages 构建（GITHUB_TOKEN / pages:write，无需 PAT），状态 {_pages.get('status')} {_pages.get('detail') or ''}".rstrip())
+                            else:
+                                _pages_detail = radar_cloud_sync.redact_secrets(str(_pages.get("detail") or ""))
+                                print(f"[!] Pages 构建请求未成功 status={_pages.get('status')} {_pages_detail[:160]}")
+                        globals()["_LAST_GIT_PUSH_TS"] = time.time()
+                        if _py_changed:
+                            print("[*] 检测到 git pull 更新了 .py 源码，推送完成后热重启以加载新代码 ...", flush=True)
+                            os.execv(sys.executable, [sys.executable] + sys.argv)
+                    else:
+                        _push_err = radar_cloud_sync.redact_secrets(((push_res.stderr or "") + (push_res.stdout or "")).strip())
+                        print(f"[*] Git 推送反馈: {_push_err[:200]}")
+                        if _py_changed and not _actions_run:
+                            print("[*] 检测到 git pull 更新了 .py 源码，热重启以加载新代码 ...", flush=True)
+                            os.execv(sys.executable, [sys.executable] + sys.argv)
             except Exception as e:
-                print(f"[!] Git 同步异常: {e}")
+                print("[!] Git 同步异常: " + radar_cloud_sync.redact_secrets(str(e))[:300])
             round_idx += 1
             cost = time.time() - c_start
             # 🚀 流水线并行 (Pipeline Parallelism)：
