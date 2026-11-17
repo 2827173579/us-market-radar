@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1794952866.839,
-  "updated_at_et": "11-17 17:01 ET",
-  "updated_at_kst": "07:01 KST",
+  "updated_at_ts": 1794952968.963,
+  "updated_at_et": "11-17 17:02 ET",
+  "updated_at_kst": "07:02 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -932,6 +932,13 @@
     ],
     "AMD": [
       {
+        "title": "AMD, Broadcom, and TSMC stocks rise on Nvidia earnings beat",
+        "url": "https://finance.yahoo.com/markets/stocks/article/amd-broadcom-tsmc-stocks-rise-on-nvidia-earnings-coreweave-nebius-shares-also-rally-220159436.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 17:01 ET",
+        "pub_ts": 1794952919.0
+      },
+      {
         "title": "Billionaire David Tepper Grew His SpaceX Stake 17-Fold While Dumping AMD and Broadcom",
         "url": "https://247wallst.com/investing/2026/11/17/billionaire-david-tepper-grew-his-spacex-stake-17-fold-while-dumping-amd-and-broadcom/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -958,13 +965,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 14:02 ET",
         "pub_ts": 1794942161.0
-      },
-      {
-        "title": "Is AMD Stock a Buy Amid the Uncertainty Around Nvidia?",
-        "url": "https://www.fool.com/investing/2026/11/17/is-amd-stock-a-buy-amid-the-uncertainty-around-nvidia/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 13:56 ET",
-        "pub_ts": 1794941762.0
       }
     ],
     "ASML": [
@@ -1138,18 +1138,18 @@
         "pub_ts": 1794935220.0
       },
       {
-        "title": "Compute Desk raises $45M led by Lightspeed to build infrastructure for hedging compute",
-        "url": "https://finance.yahoo.com/markets/options/articles/compute-desk-raises-45m-led-160500633.html?.tsrc=rss",
+        "title": "Nvidia Bet Big on AI Stocks. Now They’re Getting Hit.",
+        "url": "https://finance.yahoo.com/m/302815a2-c453-3ac5-ad56-a00d836f551f/nvidia-bet-big-on-ai-stocks..html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-17 11:05 ET",
-        "pub_ts": 1794931500.0
+        "time": "11-17 15:15 ET",
+        "pub_ts": 1794946500.0
       },
       {
-        "title": "This Critical Energy Bill Is A Key Priority For The Lame Duck GOP Congress",
-        "url": "https://finance.yahoo.com/m/a711fc7e-a753-3657-a0e8-ef2d4e4aa2f5/this-critical-energy-bill-is.html?.tsrc=rss",
+        "title": "Nvidia's Complex Orbit",
+        "url": "https://finance.yahoo.com/m/f7117fc6-dd76-3db7-8200-9919f2f435e8/nvidia%27s-complex-orbit.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-17 14:29 ET",
-        "pub_ts": 1794943783.0
+        "time": "11-17 16:15 ET",
+        "pub_ts": 1794950105.0
       }
     ],
     "GOOGL": [
@@ -1205,13 +1205,6 @@
         "pub_ts": 1794947673.0
       },
       {
-        "title": "Is AI to blame for basic IT gaps in Big Tech, airlines, and more?",
-        "url": "https://finance.yahoo.com/video/is-ai-to-blame-for-basic-it-gaps-in-big-tech-airlines-and-more-184504929.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 13:45 ET",
-        "pub_ts": 1794941104.0
-      },
-      {
         "title": "Microsoft’s “Next Leg” Is Charging 500 Million Office Users More, Says RBC Analyst",
         "url": "https://www.tikr.com/blog/microsofts-next-leg-is-charging-500-million-office-users-more-says-rbc-analyst?ref=yahoofinance&tlnk=yf-261117-3jj9g8fp&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1224,6 +1217,13 @@
         "source": "Yahoo Finance",
         "time": "11-17 15:19 ET",
         "pub_ts": 1794946751.0
+      },
+      {
+        "title": "Zenity Expands AI Agent Security Coverage Across the Microsoft Ecosystem",
+        "url": "https://finance.yahoo.com/technology/ai/articles/zenity-expands-ai-agent-security-193500080.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 14:35 ET",
+        "pub_ts": 1794944100.0
       }
     ],
     "AAPL": [
@@ -1397,11 +1397,11 @@
         "pub_ts": 1794926452.0
       },
       {
-        "title": "CoreWeave CEO Michael Intrator Just Canceled His 10b5-1 Trading Plan. What That Means for CRWV Stock.",
-        "url": "https://www.barchart.com/story/news/8875839/coreweave-ceo-michael-intrator-just-canceled-his-10b5-1-trading-plan-what-that-means-for-crwv-stock?.tsrc=rss",
+        "title": "Nvidia's Complex Orbit",
+        "url": "https://finance.yahoo.com/m/f7117fc6-dd76-3db7-8200-9919f2f435e8/nvidia%27s-complex-orbit.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-17 09:00 ET",
-        "pub_ts": 1794924003.0
+        "time": "11-17 16:15 ET",
+        "pub_ts": 1794950105.0
       },
       {
         "title": "The 5 Best Stocks in Cathie Wood’s Portfolio",
@@ -3205,31 +3205,31 @@
     "VIXY": 1794952568.370748,
     "SOXS": 1794952766.7312286,
     "NVDA": 1794952766.7312286,
-    "AMD": 1794951367.891977,
-    "ASML": 1794951367.891977,
+    "AMD": 1794952968.962556,
+    "ASML": 1794952968.962556,
     "QCOM": 1794952766.7312286,
     "AVGO": 1794952766.7312286,
     "AMAT": 1794952766.7312286,
-    "META": 1794951367.891977,
-    "GOOGL": 1794951367.891977,
-    "MSFT": 1794951367.891977,
+    "META": 1794952968.962556,
+    "GOOGL": 1794952968.962556,
+    "MSFT": 1794952968.962556,
     "AAPL": 1794952766.7312286,
     "PLTR": 1794952766.7312286,
     "NOW": 1794952766.7312286,
-    "AMZN": 1794951367.891977,
-    "CRWV": 1794951367.891977,
-    "NBIS": 1794951367.891977,
-    "APLD": 1794951367.891977,
-    "VST": 1794951367.891977,
-    "BE": 1794951367.891977,
-    "CRDO": 1794951367.891977,
-    "COHR": 1794951367.891977,
-    "MRVL": 1794951367.891977,
+    "AMZN": 1794952968.962556,
+    "CRWV": 1794952968.962556,
+    "NBIS": 1794952968.962556,
+    "APLD": 1794952968.962556,
+    "VST": 1794952968.962556,
+    "BE": 1794952968.962556,
+    "CRDO": 1794952968.962556,
+    "COHR": 1794952968.962556,
+    "MRVL": 1794952968.962556,
     "LITE": 1794951367.891977,
-    "AAOI": 1794951367.891977,
+    "AAOI": 1794952968.962556,
     "SPCX": 1794951367.891977,
     "ASTS": 1794951676.5365345,
-    "AXTI": 1794951367.891977,
+    "AXTI": 1794952968.962556,
     "NASA": 1794951676.5365345,
     "LUNR": 1794951367.891977,
     "TSLA": 1794951676.5365345,
