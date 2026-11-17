@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1794910941.58,
-  "updated_at_et": "11-17 05:22 ET",
-  "updated_at_kst": "19:22 KST",
+  "updated_at_ts": 1794911040.798,
+  "updated_at_et": "11-17 05:24 ET",
+  "updated_at_kst": "19:24 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -902,11 +902,25 @@
     ],
     "NVDA": [
       {
+        "title": "Jensen Huang looks to have accepted his fate with Nvidia: He cleaned up his X profile",
+        "url": "https://finance.yahoo.com/markets/stocks/article/jensen-huang-looks-to-have-accepted-his-fate-with-nvidia-he-cleaned-up-his-x-profile-101253477.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 05:12 ET",
+        "pub_ts": 1794910373.0
+      },
+      {
         "title": "Stock market today: Dow, S&P 500 futures slip, and Nasdaq futures slip in countdown to Nvidia earnings",
         "url": "https://finance.yahoo.com/markets/live/stock-market-today-tuesday-november-17-dow-sp-500-nasdaq-nvidia-earnings-091546152.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-17 04:15 ET",
         "pub_ts": 1794906946.0
+      },
+      {
+        "title": "NVIDIA Board of Directors Establishes National Security and Export Control Oversight Committee",
+        "url": "https://finance.yahoo.com/technology/articles/nvidia-board-directors-establishes-national-100000145.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 05:00 ET",
+        "pub_ts": 1794909600.0
       },
       {
         "title": "Nvidia Board Not Considering Jensen Huang's Return: Report",
@@ -921,20 +935,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 04:37 ET",
         "pub_ts": 1794908248.0
-      },
-      {
-        "title": "Nvidia Stock Fell Below $170. Here’s Why It Could Be a Screaming Buy.",
-        "url": "https://www.fool.com/investing/2026/11/17/nvidia-stock-fell-below-170-heres-why-it-could-be-a-screaming-buy/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 04:37 ET",
-        "pub_ts": 1794908222.0
-      },
-      {
-        "title": "Head of China's Baidu warns of AI 'bubble' ahead of APEC talks",
-        "url": "https://finance.yahoo.com/technology/ai/articles/head-chinas-baidu-warns-ai-093346870.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 04:33 ET",
-        "pub_ts": 1794908026.0
       }
     ],
     "AMD": [
@@ -3122,23 +3122,23 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1794909472.6889517,
-    "SOXL": 1794909472.6889517,
-    "SPY": 1794909472.6889517,
-    "DIA": 1794909472.6889517,
-    "SOXX": 1794909472.6889517,
-    "QQQ": 1794909472.6889517,
-    "SMH": 1794909472.6889517,
-    "IWM": 1794909472.6889517,
-    "IGV": 1794909472.6889517,
-    "TLT": 1794909472.6889517,
-    "GLD": 1794909472.6889517,
-    "SQQQ": 1794909472.6889517,
-    "TSM": 1794909472.6889517,
-    "VIXY": 1794909472.6889517,
-    "SOXS": 1794909472.6889517,
-    "NVDA": 1794909472.6889517,
-    "AMD": 1794909472.6889517,
+    "KORU": 1794911040.79796,
+    "SOXL": 1794911040.79796,
+    "SPY": 1794911040.79796,
+    "DIA": 1794911040.79796,
+    "SOXX": 1794911040.79796,
+    "QQQ": 1794911040.79796,
+    "SMH": 1794911040.79796,
+    "IWM": 1794911040.79796,
+    "IGV": 1794911040.79796,
+    "TLT": 1794911040.79796,
+    "GLD": 1794911040.79796,
+    "SQQQ": 1794911040.79796,
+    "TSM": 1794911040.79796,
+    "VIXY": 1794911040.79796,
+    "SOXS": 1794911040.79796,
+    "NVDA": 1794911040.79796,
+    "AMD": 1794911040.79796,
     "ASML": 1794909576.3306248,
     "QCOM": 1794909576.3306248,
     "AVGO": 1794909576.3306248,
