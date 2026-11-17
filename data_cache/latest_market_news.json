@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1794903707.21,
-  "updated_at_et": "11-17 03:21 ET",
-  "updated_at_kst": "17:21 KST",
+  "updated_at_ts": 1794903824.86,
+  "updated_at_et": "11-17 03:23 ET",
+  "updated_at_kst": "17:23 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2859,6 +2859,13 @@
     ],
     "JPM": [
       {
+        "title": "VF Corporation Participates in a Fireside Chat at J.P. Morgan’s 8th Annual Global Luxury & Brands Conference",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/vf-corporation-participates-fireside-chat-080000048.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 03:00 ET",
+        "pub_ts": 1794902400.0
+      },
+      {
         "title": "JPMorgan Chase (JPM) Launches After Hours Token Transfers And Backs $500 Million Financing",
         "url": "https://finance.yahoo.com/markets/crypto/articles/jpmorgan-chase-jpm-launches-hours-051401307.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2885,16 +2892,16 @@
         "source": "Yahoo Finance",
         "time": "11-16 21:16 ET",
         "pub_ts": 1794881804.0
-      },
-      {
-        "title": "What to Know About the Banking Service Outages Impacting Thousands of Customers",
-        "url": "https://time.com/article/2026/11/16/bank-outage-down-jpmorgan-chase-technical-issue/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-16 18:11 ET",
-        "pub_ts": 1794870675.0
       }
     ],
     "WMT": [
+      {
+        "title": "Zacks Investment Ideas feature highlights: Target and Walmart",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/zacks-investment-ideas-feature-highlights-065600463.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 01:56 ET",
+        "pub_ts": 1794898560.0
+      },
       {
         "title": "Walmart Reports Earnings on Nov. 19 2026. Here's What Investors Should Be Watching.",
         "url": "https://www.fool.com/investing/2026/11/17/walmart-reports-earnings-on-nov-19-2026-heres-what-investors-should-be-watching/?.tsrc=rss",
@@ -2922,13 +2929,6 @@
         "source": "Yahoo Finance",
         "time": "11-16 19:00 ET",
         "pub_ts": 1794873600.0
-      },
-      {
-        "title": "Earnings to watch: NVIDIA, Walmart, Home Depot and more report this week",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/earnings-watch-nvidia-walmart-home-205309775.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-16 15:53 ET",
-        "pub_ts": 1794862389.0
       }
     ],
     "V": [
@@ -3072,16 +3072,16 @@
     "CRWD": 1794903590.1984384,
     "ORCL": 1794903590.1984384,
     "COIN": 1794903590.1984384,
-    "LLY": 1794902285.1296449,
-    "MRNA": 1794902285.1296449,
-    "NKE": 1794902285.1296449,
-    "MCD": 1794902285.1296449,
-    "PEP": 1794902285.1296449,
-    "XOM": 1794902285.1296449,
-    "JPM": 1794902285.1296449,
-    "WMT": 1794902285.1296449,
-    "V": 1794902285.1296449,
-    "CAT": 1794902285.1296449
+    "LLY": 1794903824.860414,
+    "MRNA": 1794903824.860414,
+    "NKE": 1794903824.860414,
+    "MCD": 1794903824.860414,
+    "PEP": 1794903824.860414,
+    "XOM": 1794903824.860414,
+    "JPM": 1794903824.860414,
+    "WMT": 1794903824.860414,
+    "V": 1794903824.860414,
+    "CAT": 1794903824.860414
   },
   "calendar_banner": {
     "level": "idle_with_flash",
