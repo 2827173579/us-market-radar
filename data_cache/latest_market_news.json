@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1794908301.803,
-  "updated_at_et": "11-17 04:38 ET",
-  "updated_at_kst": "18:38 KST",
+  "updated_at_ts": 1794908401.741,
+  "updated_at_et": "11-17 04:40 ET",
+  "updated_at_kst": "18:40 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2963,6 +2963,13 @@
     ],
     "JPM": [
       {
+        "title": "Figure Technology Solutions (FIGR) Lands $750 Million Credit Facility Through 2029",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/figure-technology-solutions-figr-lands-091806067.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 04:18 ET",
+        "pub_ts": 1794907086.0
+      },
+      {
         "title": "VF Corporation Participates in a Fireside Chat at J.P. Morgan’s 8th Annual Global Luxury & Brands Conference",
         "url": "https://finance.yahoo.com/markets/stocks/articles/vf-corporation-participates-fireside-chat-080000048.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2989,13 +2996,6 @@
         "source": "Yahoo Finance",
         "time": "11-16 23:06 ET",
         "pub_ts": 1794888382.0
-      },
-      {
-        "title": "Why Are US Banks Reporting Outages? JPMorgan Rules Out Cyberattack, Blames Software Bug",
-        "url": "https://stocktwits.com/news-articles/markets/equity/why-are-us-banks-jpmorgan-wells-fargo-down-software-bug/cNbahm7R9gV?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-16 21:16 ET",
-        "pub_ts": 1794881804.0
       }
     ],
     "WMT": [
@@ -3176,16 +3176,16 @@
     "CRWD": 1794908301.8032334,
     "ORCL": 1794908301.8032334,
     "COIN": 1794908301.8032334,
-    "LLY": 1794906830.6009405,
-    "MRNA": 1794906830.6009405,
-    "NKE": 1794906830.6009405,
-    "MCD": 1794906830.6009405,
-    "PEP": 1794906830.6009405,
-    "XOM": 1794906830.6009405,
-    "JPM": 1794906830.6009405,
-    "WMT": 1794906830.6009405,
-    "V": 1794906830.6009405,
-    "CAT": 1794906830.6009405
+    "LLY": 1794908401.7409315,
+    "MRNA": 1794908401.7409315,
+    "NKE": 1794908401.7409315,
+    "MCD": 1794908401.7409315,
+    "PEP": 1794908401.7409315,
+    "XOM": 1794908401.7409315,
+    "JPM": 1794908401.7409315,
+    "WMT": 1794908401.7409315,
+    "V": 1794908401.7409315,
+    "CAT": 1794908401.7409315
   },
   "calendar_banner": {
     "level": "idle_with_flash",
