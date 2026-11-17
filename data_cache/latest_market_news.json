@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1794944614.669,
-  "updated_at_et": "11-17 14:43 ET",
-  "updated_at_kst": "04:43 KST",
+  "updated_at_ts": 1794944713.827,
+  "updated_at_et": "11-17 14:45 ET",
+  "updated_at_kst": "04:45 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -793,6 +793,13 @@
     ],
     "TSM": [
       {
+        "title": "The 5 Best Stocks in George Soros’s Portfolio",
+        "url": "https://www.tikr.com/blog/the-5-best-stocks-in-george-soross-portfolio?ref=yahoofinance&tlnk=yf-261117-8999fh2f&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 14:10 ET",
+        "pub_ts": 1794942612.0
+      },
+      {
         "title": "TSMC Stocks Fall 4.26% as New US Rule Tightens Checks on Chip Foundries",
         "url": "https://finance.yahoo.com/markets/stocks/articles/tsmc-stocks-fall-4-26-190103464.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -819,13 +826,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 09:23 ET",
         "pub_ts": 1794925382.0
-      },
-      {
-        "title": "TSM Plans $500M Investment in Anthropic IPO: Will the Pivot Pay Off?",
-        "url": "https://finance.yahoo.com/technology/ai/articles/tsm-plans-500m-investment-anthropic-130100066.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 08:01 ET",
-        "pub_ts": 1794920460.0
       }
     ],
     "VIXY": [
@@ -3198,19 +3198,19 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1794943142.7068312,
+    "KORU": 1794944713.8267899,
     "SOXL": 1794944614.6689618,
     "SPY": 1794944614.6689618,
-    "DIA": 1794943142.7068312,
+    "DIA": 1794944713.8267899,
     "SOXX": 1794944614.6689618,
-    "QQQ": 1794943142.7068312,
+    "QQQ": 1794944713.8267899,
     "SMH": 1794944614.6689618,
     "IWM": 1794944614.6689618,
     "IGV": 1794943342.7742274,
-    "TLT": 1794943142.7068312,
+    "TLT": 1794944713.8267899,
     "GLD": 1794944614.6689618,
     "SQQQ": 1794943439.7933366,
-    "TSM": 1794943142.7068312,
+    "TSM": 1794944713.8267899,
     "VIXY": 1794944614.6689618,
     "SOXS": 1794943342.7742274,
     "NVDA": 1794943342.7742274,
