@@ -1,9 +1,22 @@
 {
-  "updated_at_ts": 1794920352.52,
-  "updated_at_et": "11-17 07:59 ET",
-  "updated_at_kst": "21:59 KST",
+  "updated_at_ts": 1794920841.842,
+  "updated_at_et": "11-17 08:07 ET",
+  "updated_at_kst": "22:07 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261117210145634800",
+      "title": "美国总统特朗普：各公司正在建设超过22座导弹工厂。",
+      "summary": "美国总统特朗普：各公司正在建设超过22座导弹工厂。",
+      "keywords": [
+        "特朗普"
+      ],
+      "pub_ts": 1794920505.0,
+      "time_et": "11-17 08:01 ET",
+      "time_bj": "21:01 BJ",
+      "time_kst": "22:01 KST",
+      "time_display": "08:01 ET / 21:01 BJ"
+    },
     {
       "id": "20261117205444653800",
       "title": "伊朗否认“脏弹”袭击计划：虚假指控，毫无根据",
@@ -323,19 +336,6 @@
       "time_bj": "17:06 BJ",
       "time_kst": "18:06 KST",
       "time_display": "04:06 ET / 17:06 BJ"
-    },
-    {
-      "id": "20261117164511969800",
-      "title": "流动性抛售正在退潮？黄金多头重新布局4000美元上方",
-      "summary": "油价回落缓解部分通胀与再加息压力，黄金多头开始重新尝试向上布局；4000美元及更高执行价看涨期权明显增仓，其中4XXX处单日新增超过800手",
-      "keywords": [
-        "加息"
-      ],
-      "pub_ts": 1794905111.0,
-      "time_et": "11-17 03:45 ET",
-      "time_bj": "16:45 BJ",
-      "time_kst": "17:45 KST",
-      "time_display": "03:45 ET / 16:45 BJ"
     }
   ],
   "ticker_news": {
@@ -415,6 +415,13 @@
     ],
     "SPY": [
       {
+        "title": "The Overlooked JPMorgan ETF That Owns Nearly 300 of the Market’s Strongest Stocks for 0.12%",
+        "url": "https://247wallst.com/investing/etf/2026/11/17/the-overlooked-jpmorgan-etf-that-owns-nearly-300-of-the-markets-strongest-stocks-for-0-12/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 07:37 ET",
+        "pub_ts": 1794919071.0
+      },
+      {
         "title": "ETFs Are Buying Chevron (CVX) on Friday",
         "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-buying-chevron-cvx-friday-110158202.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -434,13 +441,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 06:00 ET",
         "pub_ts": 1794913240.0
-      },
-      {
-        "title": "NVIDIA After Jensen: What's Next for the AI Trade?",
-        "url": "https://finance.yahoo.com/technology/ai/articles/nvidia-jensen-whats-next-ai-213900593.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-16 16:39 ET",
-        "pub_ts": 1794865140.0
       },
       {
         "title": "Palantir (PLTR) Sees $117.4 Million in Net ETF Buying on Nov. 13",
@@ -526,6 +526,13 @@
     ],
     "QQQ": [
       {
+        "title": "The Nasdaq-100 Is Headed for Its Worst November Since 2008",
+        "url": "https://247wallst.com/investing/2026/11/17/the-nasdaq-100-is-headed-for-its-worst-november-since-2008/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 07:48 ET",
+        "pub_ts": 1794919706.0
+      },
+      {
         "title": "ETFs Bought $111.9 Million of Cisco (CSCO) on Nov. 13",
         "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-bought-111-9-million-110152347.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -545,13 +552,6 @@
         "source": "Yahoo Finance",
         "time": "11-16 13:19 ET",
         "pub_ts": 1794853155.0
-      },
-      {
-        "title": "Exchange-Traded Funds, Equity Futures Lower Pre-Bell Monday Amid Weakness in AI-Linked Stocks",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/exchange-traded-funds-equity-futures-141346501.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-16 09:13 ET",
-        "pub_ts": 1794838426.0
       },
       {
         "title": "Palantir (PLTR) Sees $117.4 Million in Net ETF Buying on Nov. 13",
@@ -896,39 +896,39 @@
     ],
     "NVDA": [
       {
-        "title": "Nvidia Under Pressure Over China Chip Sales. Here's How The AI Giant Is Fighting Back.",
-        "url": "https://www.ibtimes.com/nvidia-board-committee-china-export-controls-3809850?.tsrc=rss",
+        "title": "Why Jensen Huang's absence from Nvidia is 'horrible' for neoclouds",
+        "url": "https://finance.yahoo.com/video/why-jensen-huangs-absence-nvidia-130000738.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-17 07:05 ET",
-        "pub_ts": 1794917103.0
+        "time": "11-17 08:00 ET",
+        "pub_ts": 1794920400.0
       },
       {
-        "title": "Rockwell Automation Expands Edge Computing Options for Industrial AI with NVIDIA GPUs",
-        "url": "https://finance.yahoo.com/technology/ai/articles/rockwell-automation-expands-edge-computing-120000700.html?.tsrc=rss",
+        "title": "Nvidia earnings will show if the Bank of Nvidia is still open: Chart of the Day",
+        "url": "https://finance.yahoo.com/markets/article/nvidia-earnings-will-show-if-the-bank-of-nvidia-is-still-open-chart-of-the-day-125850442.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-17 07:00 ET",
-        "pub_ts": 1794916800.0
+        "time": "11-17 07:58 ET",
+        "pub_ts": 1794920330.0
       },
       {
-        "title": "Nvidia establishes committee to oversee national security after abrupt departure of CEO Jensen Huang",
-        "url": "https://finance.yahoo.com/technology/articles/nvidia-establishes-committee-oversee-national-115834618.html?.tsrc=rss",
+        "title": "Bank of America doubles down on Nvidia ahead of earnings",
+        "url": "https://www.thestreet.com/investing/stocks/bank-of-america-maintains-nvidia-buy-rating-ahead-of-q3-earnings?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-17 06:58 ET",
-        "pub_ts": 1794916714.0
+        "time": "11-17 08:03 ET",
+        "pub_ts": 1794920580.0
       },
       {
-        "title": "Stocks slide ahead of Nvidia's post-scandal earnings report",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/asian-stocks-sink-scandal-hit-023848163.html?.tsrc=rss",
+        "title": "Forget Nvidia Stock at $160 per Share. Buy This Semiconductor ETF Instead.",
+        "url": "https://www.fool.com/investing/2026/11/17/forget-nvidia-stock-at-160-per-share-buy-this-semiconductor-etf-instead/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-17 06:57 ET",
-        "pub_ts": 1794916675.0
+        "time": "11-17 07:58 ET",
+        "pub_ts": 1794920282.0
       },
       {
-        "title": "Nvidia's $800 Billion Wipeout Raises a Bigger Question for Investors",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/nvidias-800-billion-wipeout-raises-115710325.html?.tsrc=rss",
+        "title": "Equity Futures Mixed Pre-Bell Ahead of Nvidia Earnings",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/equity-futures-mixed-pre-bell-125715825.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-17 06:57 ET",
-        "pub_ts": 1794916630.0
+        "time": "11-17 07:57 ET",
+        "pub_ts": 1794920235.0
       }
     ],
     "AMD": [
@@ -3190,22 +3190,22 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1794918887.7929852,
-    "SOXL": 1794918887.7929852,
-    "SPY": 1794918887.7929852,
-    "DIA": 1794918887.7929852,
-    "SOXX": 1794918887.7929852,
-    "QQQ": 1794918887.7929852,
-    "SMH": 1794918887.7929852,
-    "IWM": 1794918887.7929852,
-    "IGV": 1794918887.7929852,
-    "TLT": 1794918887.7929852,
-    "GLD": 1794918887.7929852,
-    "SQQQ": 1794918887.7929852,
-    "TSM": 1794918887.7929852,
-    "VIXY": 1794918887.7929852,
-    "SOXS": 1794918887.7929852,
-    "NVDA": 1794918887.7929852,
+    "KORU": 1794920841.8416297,
+    "SOXL": 1794920841.8416297,
+    "SPY": 1794920841.8416297,
+    "DIA": 1794920841.8416297,
+    "SOXX": 1794920841.8416297,
+    "QQQ": 1794920841.8416297,
+    "SMH": 1794920841.8416297,
+    "IWM": 1794920841.8416297,
+    "IGV": 1794920841.8416297,
+    "TLT": 1794920841.8416297,
+    "GLD": 1794920841.8416297,
+    "SQQQ": 1794920841.8416297,
+    "TSM": 1794920841.8416297,
+    "VIXY": 1794920841.8416297,
+    "SOXS": 1794920841.8416297,
+    "NVDA": 1794920841.8416297,
     "AMD": 1794918887.7929852,
     "ASML": 1794918988.4602096,
     "QCOM": 1794918988.4602096,
@@ -3271,7 +3271,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (07:54 ET / 20:54 BJ) [特朗普]：伊朗外交部否认有关在华盛顿策划“脏弹”袭击的报道，称指控“毫无根据”。特朗普表示美方正严肃对待相关威胁，但白宫称目前没有可信的美国本土安全威胁。点击查看…",
+    "detail": "⚡ 最新核心快讯 (08:01 ET / 21:01 BJ) [特朗普]：美国总统特朗普：各公司正在建设超过22座导弹工厂。",
     "event_name": "",
     "minutes_left": 0
   }
