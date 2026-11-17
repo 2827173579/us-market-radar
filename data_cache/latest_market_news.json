@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1794953973.777,
-  "updated_at_et": "11-17 17:19 ET",
-  "updated_at_kst": "07:19 KST",
+  "updated_at_ts": 1794954072.686,
+  "updated_at_et": "11-17 17:21 ET",
+  "updated_at_kst": "07:21 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -782,6 +782,13 @@
     ],
     "TSM": [
       {
+        "title": "AMD, Broadcom, and TSMC stocks rise on Nvidia earnings beat",
+        "url": "https://finance.yahoo.com/markets/stocks/article/amd-broadcom-tsmc-stocks-rise-on-nvidia-earnings-coreweave-nebius-shares-also-rally-220159436.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 17:01 ET",
+        "pub_ts": 1794952919.0
+      },
+      {
         "title": "Surging AI Demand and Advanced Chipmaking Strengthens Taiwan Semiconductor Manufacturing Company Limited (TSM) Growth Outlook",
         "url": "https://finance.yahoo.com/technology/ai/articles/surging-ai-demand-advanced-chipmaking-202155834.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -808,13 +815,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 10:46 ET",
         "pub_ts": 1794930409.0
-      },
-      {
-        "title": "TSMC Fell 7.7% in Two Days. Joseph Carlson Thinks Its Business Is More Durable Than Nvidia’s",
-        "url": "https://www.benzinga.com/markets/prediction-markets/26/11/63343723/tsmc-joseph-carlson?utm_source=yahooFinance&utm_campaign=partner_feed&utm_medium=referral&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 10:02 ET",
-        "pub_ts": 1794927745.0
       }
     ],
     "VIXY": [
@@ -2891,6 +2891,13 @@
     ],
     "PEP": [
       {
+        "title": "KFC drops Pepsi in the U.S., but not everywhere",
+        "url": "https://www.thestreet.com/restaurants/kfc-pepsi-partnership-us-international?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 17:03 ET",
+        "pub_ts": 1794952980.0
+      },
+      {
         "title": "PepsiCo Expanding DRIPS with Proprietary Syrup Lineup and Concentrated Bases",
         "url": "https://www.qsrmagazine.com/news/pepsico-expanding-drips-with-proprietary-syrup-lineup-and-concentrated-bases/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2917,13 +2924,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 10:03 ET",
         "pub_ts": 1794927780.0
-      },
-      {
-        "title": "Cisco upgraded, PepsiCo downgraded: Wall Street's top analyst calls",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/cisco-upgraded-doximity-downgraded-wall-134558910.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 09:34 ET",
-        "pub_ts": 1794926095.0
       }
     ],
     "XOM": [
@@ -3187,20 +3187,20 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1794952568.370748,
-    "SOXL": 1794952568.370748,
-    "SPY": 1794952568.370748,
-    "DIA": 1794952568.370748,
-    "SOXX": 1794952568.370748,
-    "QQQ": 1794952568.370748,
-    "SMH": 1794952568.370748,
-    "IWM": 1794952568.370748,
+    "KORU": 1794954072.6862776,
+    "SOXL": 1794954072.6862776,
+    "SPY": 1794954072.6862776,
+    "DIA": 1794954072.6862776,
+    "SOXX": 1794954072.6862776,
+    "QQQ": 1794954072.6862776,
+    "SMH": 1794954072.6862776,
+    "IWM": 1794954072.6862776,
     "IGV": 1794952766.7312286,
-    "TLT": 1794952568.370748,
-    "GLD": 1794952568.370748,
+    "TLT": 1794954072.6862776,
+    "GLD": 1794954072.6862776,
     "SQQQ": 1794952766.7312286,
-    "TSM": 1794952568.370748,
-    "VIXY": 1794952568.370748,
+    "TSM": 1794954072.6862776,
+    "VIXY": 1794954072.6862776,
     "SOXS": 1794952766.7312286,
     "NVDA": 1794952766.7312286,
     "AMD": 1794952968.962556,
@@ -3256,8 +3256,8 @@
     "MRNA": 1794953475.3327162,
     "NKE": 1794953775.1432061,
     "MCD": 1794953475.3327162,
-    "PEP": 1794952568.370748,
-    "XOM": 1794952568.370748,
+    "PEP": 1794954072.6862776,
+    "XOM": 1794954072.6862776,
     "JPM": 1794953675.1255982,
     "WMT": 1794953675.1255982,
     "V": 1794953475.3327162,
