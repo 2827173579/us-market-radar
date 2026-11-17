@@ -1,9 +1,23 @@
 {
-  "updated_at_ts": 1794901889.993,
-  "updated_at_et": "11-17 02:51 ET",
-  "updated_at_kst": "16:51 KST",
+  "updated_at_ts": 1794902081.029,
+  "updated_at_et": "11-17 02:54 ET",
+  "updated_at_kst": "16:54 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261117155421881800",
+      "title": "核谈僵局难挡原油下探，黄金在紧缩共识压制下恐进一步下破3800｜市场赔率数据表",
+      "summary": "原油下探押注升温，核谈僵局却保留反抽风险；黄金在加息共识下跌破3800的风险依旧很高，反弹势头扩大仍需更多机构买盘持续接力。",
+      "keywords": [
+        "加息",
+        "原油"
+      ],
+      "pub_ts": 1794902061.0,
+      "time_et": "11-17 02:54 ET",
+      "time_bj": "15:54 BJ",
+      "time_kst": "16:54 KST",
+      "time_display": "02:54 ET / 15:54 BJ"
+    },
     {
       "id": "20261117152838905800",
       "title": "国际金遭遇“双杀” 能源市场恐面临进一步抛售 | Live分析更新中",
@@ -2438,18 +2452,18 @@
         "pub_ts": 1794899090.0
       },
       {
+        "title": "Gary Gensler’s AI Bubble Timeline Puts Bitcoin’s 2028 Halving in the Blast Zone",
+        "url": "https://beincrypto.com/gary-gensler-ai-bubble-burst-bitcoin-halving/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 02:04 ET",
+        "pub_ts": 1794899088.0
+      },
+      {
         "title": "Cathie Wood's ARK Sells Solana And Ethereum Staking Funds, Buys Three Crypto Stocks Amid Bitcoin Slide",
         "url": "https://stocktwits.com/news-articles/markets/equity/cathie-wood-solana-ethereum-staking-three-crypto-stocks-bitcoin-slide/cNbakNNR9gH?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-17 00:25 ET",
         "pub_ts": 1794893143.0
-      },
-      {
-        "title": "Big Banks Piled Into Bitcoin ETFs Weeks Before $2.35 Billion Fled the Funds",
-        "url": "https://beincrypto.com/wells-fargo-bitcoin-etf-q3-filings/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-16 23:59 ET",
-        "pub_ts": 1794891563.0
       }
     ],
     "CRWD": [
@@ -2984,22 +2998,22 @@
     "KO": 1794901889.993402,
     "FLY": 1794901889.993402,
     "INTC": 1794901889.993402,
-    "VRT": 1794900229.2614684,
-    "HPE": 1794900229.2614684,
-    "DELL": 1794900229.2614684,
-    "OKLO": 1794900229.2614684,
-    "CEG": 1794900229.2614684,
-    "FPS": 1794900229.2614684,
-    "MU": 1794900229.2614684,
-    "SKHY": 1794900229.2614684,
-    "WDC": 1794900229.2614684,
-    "STX": 1794900229.2614684,
-    "MSTR": 1794900229.2614684,
-    "SNDK": 1794900333.2786262,
-    "BTC-USD": 1794900229.2614684,
-    "CRWD": 1794900229.2614684,
-    "ORCL": 1794900333.2786262,
-    "COIN": 1794900229.2614684,
+    "VRT": 1794902081.0293021,
+    "HPE": 1794902081.0293021,
+    "DELL": 1794902081.0293021,
+    "OKLO": 1794902081.0293021,
+    "CEG": 1794902081.0293021,
+    "FPS": 1794902081.0293021,
+    "MU": 1794902081.0293021,
+    "SKHY": 1794902081.0293021,
+    "WDC": 1794902081.0293021,
+    "STX": 1794902081.0293021,
+    "MSTR": 1794902081.0293021,
+    "SNDK": 1794902081.0293021,
+    "BTC-USD": 1794902081.0293021,
+    "CRWD": 1794902081.0293021,
+    "ORCL": 1794902081.0293021,
+    "COIN": 1794902081.0293021,
     "LLY": 1794900333.2786262,
     "MRNA": 1794900333.2786262,
     "NKE": 1794900333.2786262,
@@ -3014,7 +3028,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (02:28 ET / 15:28 BJ) [美联储] [加息]：国际现货黄金长期价值仍获肯定，仓位日益偏空或为回补式反弹埋下伏笔；美联储连续加息不可避免？科技股抛售潮最终也将伤及美元......",
+    "detail": "⚡ 最新核心快讯 (02:54 ET / 15:54 BJ) [加息] [原油]：原油下探押注升温，核谈僵局却保留反抽风险；黄金在加息共识下跌破3800的风险依旧很高，反弹势头扩大仍需更多机构买盘持续接力。",
     "event_name": "",
     "minutes_left": 0
   }
