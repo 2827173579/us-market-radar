@@ -1,9 +1,22 @@
 {
-  "updated_at_ts": 1794930597.668,
-  "updated_at_et": "11-17 10:49 ET",
-  "updated_at_kst": "00:49 KST",
+  "updated_at_ts": 1794930700.182,
+  "updated_at_et": "11-17 10:51 ET",
+  "updated_at_kst": "00:51 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261117235011228800",
+      "title": "标普500指数触及四个月低点，最新下跌1.5%。",
+      "summary": "标普500指数触及四个月低点，最新下跌1.5%。",
+      "keywords": [
+        "标普"
+      ],
+      "pub_ts": 1794930611.0,
+      "time_et": "11-17 10:50 ET",
+      "time_bj": "23:50 BJ",
+      "time_kst": "00:50 KST",
+      "time_display": "10:50 ET / 23:50 BJ"
+    },
     {
       "id": "20261117234154699800",
       "title": "英伟达(NVDA.O)逆转盘初涨势，最新跌超3%。",
@@ -332,19 +345,6 @@
       "time_bj": "19:29 BJ",
       "time_kst": "20:29 KST",
       "time_display": "06:29 ET / 19:29 BJ"
-    },
-    {
-      "id": "20261117191124005800",
-      "title": "国际金遭遇“双杀” 能源市场恐面临进一步抛售 | Live分析更新中",
-      "summary": "通胀与加息双重夹击，黄金的弱反弹只是一场诱多？地缘降温带动通胀预期重定价，欧元的技术反弹窗口会否出现？",
-      "keywords": [
-        "加息"
-      ],
-      "pub_ts": 1794913884.0,
-      "time_et": "11-17 06:11 ET",
-      "time_bj": "19:11 BJ",
-      "time_kst": "20:11 KST",
-      "time_display": "06:11 ET / 19:11 BJ"
     }
   ],
   "ticker_news": {
@@ -3280,7 +3280,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (10:41 ET / 23:41 BJ) [英伟达]：英伟达(NVDA.O)逆转盘初涨势，最新跌超3%。",
+    "detail": "⚡ 最新核心快讯 (10:50 ET / 23:50 BJ) [标普]：标普500指数触及四个月低点，最新下跌1.5%。",
     "event_name": "",
     "minutes_left": 0
   }
