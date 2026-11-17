@@ -42,12 +42,12 @@
       "last_notified_at": 0.0
     },
     "SPCX": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1794950019.4054782
-    },
-    "TSM": {
       "state": "NORMAL",
       "last_notified_at": 0.0
+    },
+    "TSM": {
+      "state": "STOP_LOSS",
+      "last_notified_at": 1794950218.785959
     },
     "FLY": {
       "state": "NORMAL",
