@@ -1,9 +1,23 @@
 {
-  "updated_at_ts": 1794900026.673,
-  "updated_at_et": "11-17 02:20 ET",
-  "updated_at_kst": "16:20 KST",
+  "updated_at_ts": 1794900127.929,
+  "updated_at_et": "11-17 02:22 ET",
+  "updated_at_kst": "16:22 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261117151959269800",
+      "title": "【外交部批美国经济胁迫】 11月17日讯，11月17日，外交部发言人郭嘉昆主持例行记者会…",
+      "summary": "【外交部批美国经济胁迫】 11月17日讯，11月17日，外交部发言人郭嘉昆主持例行记者会。据报道，11月16日，美国商务部发布了限制远程获取先进半导体临时最终规则，以新加坡、泰国、马来西亚、印尼和巴西存在非法对华转移芯片高风险为由，要求向相关国家企业出口先进芯片时，申请美国出口许可证，从而防止受限制国家和企业获取美国敏感技术。中方对此有何评论？郭嘉昆表示，美方不断泛化国家安全概念，滥用出口管制措施，甚至横加干涉中国同其他国家开展正常贸易与科技合作，无理打压中国高新技术产业发展，这是典型的经济胁迫和“长臂管辖”，背离双方达成的共识，损害中国企业正当权益，扰乱全球产供链稳定。中方将采取必要措施，坚决维护自身正当权益。",
+      "keywords": [
+        "芯片",
+        "半导体"
+      ],
+      "pub_ts": 1794899999.0,
+      "time_et": "11-17 02:19 ET",
+      "time_bj": "15:19 BJ",
+      "time_kst": "16:19 KST",
+      "time_display": "02:19 ET / 15:19 BJ"
+    },
     {
       "id": "20261117150055105800",
       "title": "午盘收盘，国内期货主力合约跌多涨少，燃料油跌超6%，SC原油下跌6%，低硫燃料油（LU）…",
@@ -1511,6 +1525,20 @@
     ],
     "SPCX": [
       {
+        "title": "Anthropic IPO Puts SpaceX In Spotlight — Why Cathie Wood’s ARK Thinks The AI Lab Could Pay Musk ‘Obscene’ Prices For Compute",
+        "url": "https://stocktwits.com/news-articles/markets/equity/anthropic-ipo-spacex-cathie-wood-ark-musk-obscene-prices-compute/cNbaVj4R9Wc?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 02:14 ET",
+        "pub_ts": 1794899667.0
+      },
+      {
+        "title": "“Striking” Parallels Between Anthropic and SpaceX IPOs as Crypto Slides Again",
+        "url": "https://www.tikr.com/blog/striking-parallels-between-anthropic-and-spacex-ipos-as-crypto-slides-again?ref=yahoofinance&tlnk=yf-261117-f5ggp59c&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 02:08 ET",
+        "pub_ts": 1794899317.0
+      },
+      {
         "title": "SPCX Stock Dethrones Intel As Nvidia’s Biggest Holding — Druckenmiller Buys In And Tepper Ups His Stake Over 1,600%",
         "url": "https://stocktwits.com/news-articles/markets/equity/spcx-stock-dethrones-intel-nvidia-biggest-holding-druckenmiller-buys-in-tepper-ups-stake/cNba0UWR9gq?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1530,20 +1558,6 @@
         "source": "Yahoo Finance",
         "time": "11-16 21:49 ET",
         "pub_ts": 1794883752.0
-      },
-      {
-        "title": "SpaceX Just Brought a Starship Back From Orbit and Caught It. Here's the Part of the Business That Gains the Most.",
-        "url": "https://www.fool.com/investing/2026/11/16/spacex-just-brought-a-starship-back-from-orbit-and-caught-it-here-s-the-part-of-the-business-that-gains-the-most/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-16 20:13 ET",
-        "pub_ts": 1794877982.0
-      },
-      {
-        "title": "David Tepper’s Appaloosa Goes Big on SpaceX, While Slashing Alphabet Stake",
-        "url": "https://finance.yahoo.com/m/f487537a-09c4-3b0f-beb6-14e5629c10ed/david-tepper%E2%80%99s-appaloosa-goes.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-16 18:09 ET",
-        "pub_ts": 1794870540.0
       }
     ],
     "ASTS": [
@@ -1733,6 +1747,13 @@
     ],
     "AXP": [
       {
+        "title": "Not Amazon, Not American Express: This Credit Card Has The Best Rewards For 2026",
+        "url": "https://www.moneydigest.com/2313485/chase-freedom-unlimited-not-amazon-american-express-credit-card-best-rewards-2026/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-16 18:30 ET",
+        "pub_ts": 1794871800.0
+      },
+      {
         "title": "How Investors May Respond To Amex Stock After ChatGPT Wallet Launch",
         "url": "https://finance.yahoo.com/markets/stocks/articles/investors-may-respond-amex-stock-191118904.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1759,13 +1780,6 @@
         "source": "Yahoo Finance",
         "time": "11-14 16:51 ET",
         "pub_ts": 1794693062.0
-      },
-      {
-        "title": "American Express vs. Mastercard: Which Financial Stock Is a Better Buy for 2027?",
-        "url": "https://www.fool.com/coverage/better-buy/2026/11/14/american-express-vs-mastercard-which-financial-stock-is-a-better-buy-for-2027/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-14 15:32 ET",
-        "pub_ts": 1794688321.0
       }
     ],
     "RKLB": [
@@ -2912,23 +2926,23 @@
     "NBIS": 1794900026.6731925,
     "APLD": 1794900026.6731925,
     "VST": 1794900026.6731925,
-    "BE": 1794898543.1193907,
-    "CRDO": 1794898543.1193907,
-    "COHR": 1794898543.1193907,
-    "MRVL": 1794898543.1193907,
-    "LITE": 1794898543.1193907,
-    "AAOI": 1794898543.1193907,
-    "SPCX": 1794898543.1193907,
-    "ASTS": 1794898543.1193907,
-    "AXTI": 1794898543.1193907,
-    "NASA": 1794898543.1193907,
-    "LUNR": 1794898543.1193907,
+    "BE": 1794900127.9287317,
+    "CRDO": 1794900127.9287317,
+    "COHR": 1794900127.9287317,
+    "MRVL": 1794900127.9287317,
+    "LITE": 1794900127.9287317,
+    "AAOI": 1794900127.9287317,
+    "SPCX": 1794900127.9287317,
+    "ASTS": 1794900127.9287317,
+    "AXTI": 1794900127.9287317,
+    "NASA": 1794900127.9287317,
+    "LUNR": 1794900127.9287317,
     "TSLA": 1794898645.244183,
-    "AXP": 1794898543.1193907,
-    "RKLB": 1794898543.1193907,
-    "KO": 1794898543.1193907,
-    "FLY": 1794898543.1193907,
-    "INTC": 1794898543.1193907,
+    "AXP": 1794900127.9287317,
+    "RKLB": 1794900127.9287317,
+    "KO": 1794900127.9287317,
+    "FLY": 1794900127.9287317,
+    "INTC": 1794900127.9287317,
     "VRT": 1794898645.244183,
     "HPE": 1794898645.244183,
     "DELL": 1794898645.244183,
@@ -2959,7 +2973,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (02:00 ET / 15:00 BJ) [原油]：午盘收盘，国内期货主力合约跌多涨少，燃料油跌超6%，SC原油下跌6%，低硫燃料油（LU）、沥青跌超5%，纯苯跌超4%，塑料、聚丙烯月均、丙烯跌近4%。涨幅方面，碳酸锂涨超5%，鸡蛋涨近1%。",
+    "detail": "⚡ 最新核心快讯 (02:19 ET / 15:19 BJ) [芯片] [半导体]：【外交部批美国经济胁迫】 11月17日讯，11月17日，外交部发言人郭嘉昆主持例行记者会。据报道，11月16日，美国商务部发布了限制远程获取先进半导体临时最终规则，以新加坡、泰国、马来西亚、",
     "event_name": "",
     "minutes_left": 0
   }
