@@ -1,9 +1,23 @@
 {
-  "updated_at_ts": 1794918791.861,
-  "updated_at_et": "11-17 07:33 ET",
-  "updated_at_kst": "21:33 KST",
+  "updated_at_ts": 1794918887.793,
+  "updated_at_et": "11-17 07:34 ET",
+  "updated_at_kst": "21:34 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261117203417118800",
+      "title": "【美联储穆萨勒姆：美联储或需在春季前多次加息 要尽快行动】 11月17日讯，美国圣路易斯…",
+      "summary": "【美联储穆萨勒姆：美联储或需在春季前多次加息 要尽快行动】 11月17日讯，美国圣路易斯联储主席穆萨勒姆周二表示，美联储可能需要多次加息以遏制高通胀，且应尽快采取行动，防止问题进一步恶化。穆萨勒姆指出：“为及时实现物价稳定，经济在2027年春季之前可能需要多次加息。”他认为，当前的政策利率比实现美联储2%通胀目标所需的水平低了整整一个百分点。如果美联储不采取行动，通胀很可能会持续处于高位。穆萨勒姆认为：“未来，通胀风险倾向于持续高于目标水平。”他指出，当前的政策并未对经济增长构成显著制约，“在通胀预期保持稳定的情况下尽早采取行动，更有可能在不损害劳动力市场或经济增长的前提下实现目标。”",
+      "keywords": [
+        "美联储",
+        "加息"
+      ],
+      "pub_ts": 1794918857.0,
+      "time_et": "11-17 07:34 ET",
+      "time_bj": "20:34 BJ",
+      "time_kst": "21:34 KST",
+      "time_display": "07:34 ET / 20:34 BJ"
+    },
     {
       "id": "20261117203239563800",
       "title": "美联储穆萨莱姆：实际政策利率需要上升约1个百分点。",
@@ -322,19 +336,6 @@
       "time_bj": "16:32 BJ",
       "time_kst": "17:32 KST",
       "time_display": "03:32 ET / 16:32 BJ"
-    },
-    {
-      "id": "20261117162844388800",
-      "title": "1. 沃什谈美联储已开始模拟AI对经济的三种影响情景：①生产率提升、企业与劳动者共享增长…",
-      "summary": "1. 沃什谈美联储已开始模拟AI对经济的三种影响情景：①生产率提升、企业与劳动者共享增长红利；②大量岗位流失抵消增长；③AI表现不及预期、投资回报和股市估值双双回落。 2. 央行上海总部：截至10月末境外机构持有银行间市场债券3.23万亿元。 3. Pimco：数据中心建设放缓或推动AI债券利差收窄。 4. 荷兰国际与法兴寻售最多8亿美元数据中心债务，涉及甲骨文项目。 5. Anthropic与SpaceX两笔AI融资据报拟进入144A债市，合计约1030亿美元。 6. 星展银行投资总监办公室：增配债券对冲基金，预计人民币渐进升值。 7. 贵州、湖南披露新一批地方债安排，11月23日拟合计招标约677亿元。 8. 农业银行完成300亿元TLAC非资本债发行，两档票息为1.67%和1.78%。 9. 重庆银行完成50亿元小微专项金融债发行，资金优先支持养老相关行业。 10. 一汽解放：证监会同意公司发行面值总额不超过10亿元债券注册申请。 11. 2026年中央国库现金管理商业银行定期存款（二十三期）招投标，本期操作量1000亿元。",
-      "keywords": [
-        "美联储"
-      ],
-      "pub_ts": 1794904124.0,
-      "time_et": "11-17 03:28 ET",
-      "time_bj": "16:28 BJ",
-      "time_kst": "17:28 KST",
-      "time_display": "03:28 ET / 16:28 BJ"
     }
   ],
   "ticker_news": {
@@ -916,21 +917,28 @@
         "pub_ts": 1794916714.0
       },
       {
-        "title": "Nvidia’s first post-Huang earnings loom large. Here’s what it could mean for AI.",
-        "url": "https://finance.yahoo.com/technology/ai/articles/nvidia-first-post-huang-earnings-114440135.html?.tsrc=rss",
+        "title": "Stocks slide ahead of Nvidia's post-scandal earnings report",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/asian-stocks-sink-scandal-hit-023848163.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-17 06:44 ET",
-        "pub_ts": 1794915880.0
+        "time": "11-17 06:57 ET",
+        "pub_ts": 1794916675.0
       },
       {
-        "title": "The Stock Market Is Doing Something for Just the 3rd Time in Nearly 30 Years, and History Is Clear Where the S&P 500 Is Headed",
-        "url": "https://www.fool.com/investing/2026/11/17/the-stock-market-is-doing-something-for-just-the-3rd-time-in-nearly-30-years-and-history-is-clear-where-the-s-and-p-500-is-headed/?.tsrc=rss",
+        "title": "Nvidia's $800 Billion Wipeout Raises a Bigger Question for Investors",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/nvidias-800-billion-wipeout-raises-115710325.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-17 06:35 ET",
-        "pub_ts": 1794915302.0
+        "time": "11-17 06:57 ET",
+        "pub_ts": 1794916630.0
       }
     ],
     "AMD": [
+      {
+        "title": "Q.ANT Unveils NPU Gen 2+: Photonic Fourier Transforms Power Large Language Model",
+        "url": "https://finance.yahoo.com/technology/ai/articles/q-ant-unveils-npu-gen-123000832.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 07:30 ET",
+        "pub_ts": 1794918600.0
+      },
       {
         "title": "Billionaire David Tepper Dumps AMD Stock, Makes $172 Million Bet on Oracle",
         "url": "https://finance.yahoo.com/markets/stocks/articles/billionaire-david-tepper-dumps-amd-115625542.html?.tsrc=rss",
@@ -958,13 +966,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 06:00 ET",
         "pub_ts": 1794913200.0
-      },
-      {
-        "title": "US Stock Futures Edge Lower After Tech Sell-Off — NVDA Earnings, AMD, SPCX, DIS In Focus",
-        "url": "https://stocktwits.com/news-articles/markets/equity/us-stock-futures-edge-lower-after-tech-sell-off-nvda-earnings-amd-spcx-dis-in-focus/cNbaAmCR9Wf?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 05:24 ET",
-        "pub_ts": 1794911054.0
       }
     ],
     "ASML": [
@@ -3115,23 +3116,23 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1794917305.2715929,
-    "SOXL": 1794917305.2715929,
-    "SPY": 1794917305.2715929,
-    "DIA": 1794917305.2715929,
-    "SOXX": 1794917305.2715929,
-    "QQQ": 1794917305.2715929,
-    "SMH": 1794917305.2715929,
-    "IWM": 1794917305.2715929,
-    "IGV": 1794917305.2715929,
-    "TLT": 1794917305.2715929,
-    "GLD": 1794917305.2715929,
-    "SQQQ": 1794917305.2715929,
-    "TSM": 1794917305.2715929,
-    "VIXY": 1794917305.2715929,
-    "SOXS": 1794917305.2715929,
-    "NVDA": 1794917305.2715929,
-    "AMD": 1794917305.2715929,
+    "KORU": 1794918887.7929852,
+    "SOXL": 1794918887.7929852,
+    "SPY": 1794918887.7929852,
+    "DIA": 1794918887.7929852,
+    "SOXX": 1794918887.7929852,
+    "QQQ": 1794918887.7929852,
+    "SMH": 1794918887.7929852,
+    "IWM": 1794918887.7929852,
+    "IGV": 1794918887.7929852,
+    "TLT": 1794918887.7929852,
+    "GLD": 1794918887.7929852,
+    "SQQQ": 1794918887.7929852,
+    "TSM": 1794918887.7929852,
+    "VIXY": 1794918887.7929852,
+    "SOXS": 1794918887.7929852,
+    "NVDA": 1794918887.7929852,
+    "AMD": 1794918887.7929852,
     "ASML": 1794917410.6773639,
     "QCOM": 1794917410.6773639,
     "AVGO": 1794917410.6773639,
@@ -3194,7 +3195,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (07:32 ET / 20:32 BJ) [美联储]：美联储穆萨莱姆：实际政策利率需要上升约1个百分点。",
+    "detail": "⚡ 最新核心快讯 (07:34 ET / 20:34 BJ) [美联储] [加息]：【美联储穆萨勒姆：美联储或需在春季前多次加息 要尽快行动】 11月17日讯，美国圣路易斯联储主席穆萨勒姆周二表示，美联储可能需要多次加息以遏制高通胀，且应尽快采取行动，防止问题进一步恶化。穆",
     "event_name": "",
     "minutes_left": 0
   }
