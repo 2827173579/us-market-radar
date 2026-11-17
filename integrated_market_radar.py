@@ -5669,15 +5669,18 @@ def main():
                     push_res = subprocess.run(["git", "push", "origin", "HEAD:main"], check=False, capture_output=True, text=True, encoding="utf-8", errors="replace", creationflags=WIN_NO_WINDOW)
                     if push_res.returncode == 0:
                         _repo_label = (os.environ.get("GITHUB_REPOSITORY") or radar_cloud_sync.read_origin_slug() or "当前仓库")
-                        if _actions_run and not (os.environ.get("GH_TOKEN") or "").strip():
-                            if not globals().get("_WARNED_PAGES_TOKEN"):
-                                print(f"[+] ✅ 已推送第 {round_idx} 轮到 {_repo_label} 的 main。")
-                                print("[!] Deploy from a branch 的 Pages 不会被默认 GITHUB_TOKEN 的 push 触发。请在本仓库 Actions secrets 添加 GH_TOKEN（仅本仓库 contents:write 的 PAT）后，Pages 才会跟着刷新。")
-                                globals()["_WARNED_PAGES_TOKEN"] = True
+                        print(f"[+] ✅ 成功推送第 {round_idx} 轮到 {_repo_label}")
+                        if _actions_run:
+                            _pages = radar_cloud_sync.maybe_request_branch_pages_build()
+                            if _pages.get("detail") == "artifact":
+                                print("[+] Pages 源是 GitHub Actions，本轮推送后由 workflow 的 deploy-pages 发布（GITHUB_TOKEN，无需 PAT）")
+                            elif _pages.get("detail") == "throttled":
+                                print("[*] 距上次 Pages 构建请求很近，本轮不重复请求")
+                            elif _pages.get("ok"):
+                                print(f"[+] 已请求当前仓库 Pages 构建（GITHUB_TOKEN / pages:write，无需 PAT），状态 {_pages.get('status')} {_pages.get('detail') or ''}".rstrip())
                             else:
-                                print(f"[+] ✅ 成功推送第 {round_idx} 轮到 {_repo_label} 的 main")
-                        else:
-                            print(f"[+] ✅ 成功推送第 {round_idx} 轮到 {_repo_label}")
+                                _pages_detail = radar_cloud_sync.redact_secrets(str(_pages.get("detail") or ""))
+                                print(f"[!] Pages 构建请求未成功 status={_pages.get('status')} {_pages_detail[:160]}")
                         globals()["_LAST_GIT_PUSH_TS"] = time.time()
                         if _py_changed:
                             print("[*] 检测到 git pull 更新了 .py 源码，推送完成后热重启以加载新代码 ...", flush=True)

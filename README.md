@@ -166,7 +166,7 @@ python -u integrated_market_radar.py --loop-daemon --interval-seconds 60 --durat
 |---|---|---|
 | `FINNHUB_API_KEY` | ✅ | Finnhub 免费 API Key |
 | `PUSHPLUS_TOKEN` | 可选 | 微信推送 Token |
-| `GH_TOKEN` | 刷新 Pages 需要 | 有**本 fork** `contents:write` 的 PAT（不要用上游仓库的 token）。不设时云端仍会把看板 push 到本仓库 `main`，但分支 Pages 不会跟着重建 |
+| `GH_TOKEN` | 不需要 | Actions 使用自带的 `GITHUB_TOKEN` 推送本仓库，并调用官方 Pages 接口发布。不要再配 PAT。本地电脑自己跑守护进程时才需要 |
 | `DISCORD_WEBHOOK_URL` 等 | 可选 | Discord 推送频道 |
 
 ### Step 4 · 启用并手动触发一次
@@ -180,6 +180,7 @@ python -u integrated_market_radar.py --loop-daemon --interval-seconds 60 --durat
 
 - **PC（主）+ 安卓平板 Termux（备）自动避让**：通过 `shared_alert_state.py` 维护 360 秒 PC 心跳锁，PC 在线时安卓端（`--android`）自动进入 Standby 仅同步看板不发重复告警；PC 离线超 360 秒后安卓端自动接管告警推送；
 - **云端 Actions 互斥**：只有**本仓库**最近 15 分钟内出现非 Actions 提交时，定时任务才会避让。Fork 时继承的上游提交，以及之后从上游同步下来的同一批 commit，不会被当成「本地客户端正在跑」。云端只 `commit` / `pull` / `push` 当前仓库（`github.repository`），不会把 `origin` 改到上游，也不会在 Actions 里 rebase 上游。
+- **Pages**：维持「Deploy from a branch」时，每一轮成功 push 之后用 `GITHUB_TOKEN` 调用官方 `POST /repos/{当前仓库}/pages/builds`，不需要 PAT。若以后把 Source 改成 GitHub Actions，同一次 workflow 会改用 `actions/upload-pages-artifact` 和 `actions/deploy-pages`。定时任务走的是同一条发布路径，不是只发一次。
 
 ---
 

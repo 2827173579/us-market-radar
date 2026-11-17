@@ -218,9 +218,11 @@ class WorkflowSourceTests(unittest.TestCase):
             text = handle.read()
         with open(os.path.join(root, "requirements.txt"), encoding="utf-8") as handle:
             requirements = handle.read()
-        self.assertIn("secrets.GH_TOKEN || secrets.GITHUB_TOKEN", text)
+        self.assertIn("secrets.GITHUB_TOKEN", text)
+        self.assertNotIn("secrets.GH_TOKEN", text)
+        self.assertIn("pages: write", text)
         self.assertIn("radar_cloud_sync.py --check-local-client", text)
-        self.assertIn("pyarrow", requirements)
+        self.assertNotIn("pyarrow", requirements)
 
 
 class GitOriginRewriteTests(unittest.TestCase):
@@ -255,6 +257,72 @@ class GitOriginRewriteTests(unittest.TestCase):
         self.assertEqual(sync.origin_url_repo_slug(url), FORK)
         self.assertNotEqual(sync.origin_url_repo_slug(url), UPSTREAM)
         self.assertFalse(sync.origin_url_has_userinfo(url), "stored origin still has userinfo")
+
+
+class PagesPublishTests(unittest.TestCase):
+    def test_legacy_fork_uses_this_repo_pages_build_api(self):
+        plan = sync.pages_publish_plan(True, FORK, True, "legacy")
+        self.assertEqual(plan["method"], "branch-build")
+        self.assertEqual(plan["repo"], FORK)
+        self.assertEqual(plan["url"], f"https://api.github.com/repos/{FORK}/pages/builds")
+        self.assertNotIn(UPSTREAM, plan["url"])
+
+    def test_upstream_is_not_substituted_for_a_fork(self):
+        plan = sync.pages_publish_plan(True, FORK, True, "unknown")
+        self.assertEqual(plan["repo"], FORK)
+        self.assertNotEqual(plan["repo"], UPSTREAM)
+
+    def test_workflow_source_uses_artifact_deploy_not_a_pat_url(self):
+        plan = sync.pages_publish_plan(True, FORK, True, "workflow")
+        self.assertEqual(plan["method"], "artifact")
+        self.assertEqual(plan["url"], "")
+
+    def test_refuses_without_actions_or_token(self):
+        self.assertEqual(sync.pages_publish_plan(False, FORK, True, "legacy")["method"], "none")
+        self.assertEqual(sync.pages_publish_plan(True, FORK, False, "legacy")["method"], "none")
+        self.assertEqual(sync.pages_publish_plan(True, "", True, "legacy")["method"], "none")
+
+    def test_build_request_posts_to_this_repo_and_hides_the_token(self):
+        seen = {}
+
+        class _Resp:
+            status = 201
+
+            def read(self, _n=None):
+                return b'{"status":"queued"}'
+
+            def __enter__(self):
+                return self
+
+            def __exit__(self, *args):
+                return False
+
+        def opener(req, timeout=10):
+            seen["url"] = req.full_url
+            seen["method"] = req.get_method()
+            seen["auth_present"] = bool(req.get_header("Authorization"))
+            return _Resp()
+
+        result = sync.request_branch_pages_build(FORK, "local-test-token", opener=opener)
+        self.assertTrue(result["ok"])
+        self.assertEqual(result["status"], 201)
+        self.assertEqual(seen["url"], f"https://api.github.com/repos/{FORK}/pages/builds")
+        self.assertEqual(seen["method"], "POST")
+        self.assertTrue(seen["auth_present"])
+        self.assertNotIn("local-test-token", str(result))
+        self.assertNotIn(UPSTREAM, seen["url"])
+
+    def test_inherited_commit_still_does_not_block_a_fork_deploy(self):
+        hit = sync.select_local_client_commit(
+            [("a18669358277@gmail.com", NOW - 528, SHA_INHERITED)],
+            NOW,
+            "fork",
+            UPSTREAM,
+            lambda parent, sha: sha == SHA_INHERITED,
+        )
+        plan = sync.pages_publish_plan(True, FORK, True, "legacy")
+        self.assertIsNone(hit)
+        self.assertEqual(plan["method"], "branch-build")
 
 
 class CheckCliTests(unittest.TestCase):

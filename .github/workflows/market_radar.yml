@@ -34,6 +34,9 @@ concurrency:
 permissions:
   contents: write
   actions: read
+  # Official Pages publish with the workflow's own GITHUB_TOKEN. No PAT.
+  pages: write
+  id-token: write
 
 jobs:
   radar-scan:
@@ -44,10 +47,7 @@ jobs:
         with:
           fetch-depth: 10
           persist-credentials: true
-          # Optional PAT. Branch Pages does not rebuild pushes made with the
-          # default GITHUB_TOKEN. When secrets.GH_TOKEN is unset this falls
-          # back to GITHUB_TOKEN and still pushes to THIS repository.
-          token: ${{ secrets.GH_TOKEN || secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: 设置 Python 3.10 环境
         uses: actions/setup-python@v5
@@ -68,15 +68,29 @@ jobs:
           RADAR_REPO_IS_FORK: ${{ github.event.repository.fork }}
         run: python radar_cloud_sync.py --check-local-client
 
+      - name: 读取当前仓库 Pages 发布方式
+        id: pages_mode
+        if: steps.check_local.outputs.skip_run != 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          bt=$(gh api "repos/${{ github.repository }}/pages" --jq '.build_type' || echo unknown)
+          case "$bt" in
+            legacy|workflow) ;;
+            *) bt=unknown ;;
+          esac
+          echo "build_type=$bt" >> "$GITHUB_OUTPUT"
+          echo "Pages build_type=$bt （legacy=从分支部署，workflow=GitHub Actions 产物部署）"
+
       - name: 🚀 执行全市场 65 只标的极速扫描与微信告警
         if: steps.check_local.outputs.skip_run != 'true'
         env:
           FINNHUB_API_KEY: ${{ secrets.FINNHUB_API_KEY }}
           PUSHPLUS_TOKEN: ${{ secrets.PUSHPLUS_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
           RADAR_FORK_PARENT: ${{ github.event.repository.parent.full_name }}
           RADAR_REPO_IS_FORK: ${{ github.event.repository.fork }}
+          RADAR_PAGES_BUILD_TYPE: ${{ steps.pages_mode.outputs.build_type }}
         run: |
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Actions"
@@ -89,3 +103,32 @@ jobs:
             INTERVAL="120"
           fi
           python integrated_market_radar.py --loop-daemon --duration-minutes $DURATION --interval-seconds $INTERVAL
+
+      # GitHub Actions source: publish the HTML this run just wrote.
+      # Deploy from a branch keeps working via POST /pages/builds inside the
+      # daemon, so this step is skipped unless the source is already workflow.
+      - name: 组装 Pages 静态站点
+        id: pages_site
+        if: steps.check_local.outputs.skip_run != 'true' && steps.pages_mode.outputs.build_type == 'workflow'
+        run: |
+          mkdir -p _pages_site
+          copied=0
+          for f in index.html futu_pro_terminal.html macro_radar.html stocks_radar.html predict_radar_5y.html backtest_report_5y.html .nojekyll; do
+            if [ -f "$f" ]; then
+              cp "$f" _pages_site/
+              copied=$((copied + 1))
+            fi
+          done
+          echo "copied=$copied" >> "$GITHUB_OUTPUT"
+          test "$copied" -gt 0
+
+      - name: 上传 Pages artifact
+        if: steps.check_local.outputs.skip_run != 'true' && steps.pages_mode.outputs.build_type == 'workflow'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _pages_site
+
+      - name: 部署 Pages artifact
+        id: deployment
+        if: steps.check_local.outputs.skip_run != 'true' && steps.pages_mode.outputs.build_type == 'workflow'
+        uses: actions/deploy-pages@v4

@@ -206,6 +206,105 @@ def parent_context_from_env(env, repo_lookup):
     return "repo", ""
 
 
+# How often a cloud run may ask Pages to rebuild the default branch.
+# Each radar round is already slower than this; the cap avoids a 4-hour
+# job enqueueing a build on every 15-second retry.
+PAGES_BUILD_MIN_INTERVAL_SEC = 90
+_LAST_PAGES_BUILD_TS = {"value": 0.0}
+
+
+def reset_pages_build_throttle():
+    _LAST_PAGES_BUILD_TS["value"] = 0.0
+
+
+def pages_publish_plan(actions, github_repository, token_present, build_type):
+    """Choose the official Pages publish path for this repository.
+
+    ``legacy`` (Deploy from a branch) uses POST /repos/{repo}/pages/builds.
+    That call uses the workflow GITHUB_TOKEN with pages:write and does not
+    need a PAT. ``workflow`` (GitHub Actions source) is published by
+    actions/upload-pages-artifact and actions/deploy-pages in the workflow.
+    Neither path may target an upstream owner.
+    """
+    repo = (github_repository or "").strip()
+    repo_ok = bool(actions and valid_repo_slug(repo) and token_present)
+    kind = (build_type or "").strip().lower()
+    if not repo_ok:
+        return {"method": "none", "repo": repo if valid_repo_slug(repo) else "", "url": ""}
+    if kind == "workflow":
+        return {"method": "artifact", "repo": repo, "url": ""}
+    return {
+        "method": "branch-build",
+        "repo": repo,
+        "url": f"https://api.github.com/repos/{repo}/pages/builds",
+    }
+
+
+def should_request_pages_build(last_epoch, now, min_interval=PAGES_BUILD_MIN_INTERVAL_SEC, force=False):
+    if force or not last_epoch:
+        return True
+    try:
+        return (float(now) - float(last_epoch)) >= float(min_interval)
+    except (TypeError, ValueError):
+        return True
+
+
+def request_branch_pages_build(repo, token, opener=None):
+    """POST the official Pages build API. The token is never returned or logged."""
+    plan = pages_publish_plan(True, repo, bool(token), "legacy")
+    if plan["method"] != "branch-build" or not plan["url"]:
+        return {"ok": False, "status": 0, "detail": "refused"}
+    headers = {
+        "Accept": "application/vnd.github+json",
+        "User-Agent": "us-market-radar-pages",
+        "X-GitHub-Api-Version": "2026-03-10",
+        "Authorization": "Bearer " + token,
+        "Content-Type": "application/json",
+    }
+    req = urllib.request.Request(plan["url"], data=b"{}", headers=headers, method="POST")
+    open_fn = opener or urllib.request.urlopen
+    try:
+        with open_fn(req, timeout=20) as resp:
+            raw = resp.read(1500)
+            status = int(getattr(resp, "status", 201) or 201)
+    except urllib.error.HTTPError as exc:
+        raw = exc.read(800)
+        status = int(getattr(exc, "code", 0) or 0)
+        detail = redact_secrets(raw.decode("utf-8", errors="replace"))
+        return {"ok": False, "status": status, "detail": detail[:180]}
+    except Exception as exc:
+        return {"ok": False, "status": 0, "detail": redact_secrets(str(exc))[:180]}
+    detail = ""
+    try:
+        payload = json.loads(raw.decode("utf-8", errors="replace") or "{}")
+        if isinstance(payload, dict):
+            detail = str(payload.get("status") or "")
+    except Exception:
+        detail = ""
+    return {"ok": status in (200, 201, 202, 204), "status": status, "detail": detail[:80]}
+
+
+def maybe_request_branch_pages_build(now=None, force=False, opener=None):
+    """Request a Pages rebuild of THIS repo after a cloud push. No PAT."""
+    if os.environ.get("GITHUB_ACTIONS") != "true":
+        return {"ok": False, "status": 0, "detail": "not-actions"}
+    build_type = (os.environ.get("RADAR_PAGES_BUILD_TYPE") or "legacy").strip().lower()
+    repo = (os.environ.get("GITHUB_REPOSITORY") or "").strip()
+    token = (os.environ.get("GITHUB_TOKEN") or "").strip()
+    plan = pages_publish_plan(True, repo, bool(token), build_type)
+    if plan["method"] == "artifact":
+        return {"ok": True, "status": 0, "detail": "artifact"}
+    if plan["method"] != "branch-build":
+        return {"ok": False, "status": 0, "detail": "refused"}
+    current = time.time() if now is None else float(now)
+    if not should_request_pages_build(_LAST_PAGES_BUILD_TS["value"], current, force=force):
+        return {"ok": True, "status": 0, "detail": "throttled"}
+    result = request_branch_pages_build(repo, token, opener=opener)
+    if result.get("ok") or result.get("status") in (409, 422, 429):
+        _LAST_PAGES_BUILD_TS["value"] = current
+    return result
+
+
 def pages_gate_decision(runs, current_run_id):
     """``wait`` only when the newest Pages deploy (not this run) is still active."""
     current = str(current_run_id or "")
