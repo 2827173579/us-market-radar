@@ -1,9 +1,22 @@
 {
-  "updated_at_ts": 1794909576.331,
-  "updated_at_et": "11-17 04:59 ET",
-  "updated_at_kst": "18:59 KST",
+  "updated_at_ts": 1794909675.516,
+  "updated_at_et": "11-17 05:01 ET",
+  "updated_at_kst": "19:01 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261117180044898800",
+      "title": "市场消息：英伟达(NVDA.O)董事会成立国家安全与出口管制监督委员会。",
+      "summary": "市场消息：英伟达(NVDA.O)董事会成立国家安全与出口管制监督委员会。",
+      "keywords": [
+        "英伟达"
+      ],
+      "pub_ts": 1794909644.0,
+      "time_et": "11-17 05:00 ET",
+      "time_bj": "18:00 BJ",
+      "time_kst": "19:00 KST",
+      "time_display": "05:00 ET / 18:00 BJ"
+    },
     {
       "id": "20261117173507703800",
       "title": "市场消息：载有美国总统特朗普的飞机抵达马尼拉。",
@@ -1927,6 +1940,13 @@
     ],
     "TSLA": [
       {
+        "title": "Elon Musk Plans $10.1 Billion “Project Crystal Sun” Tesla Factory Near Houston. Says the Math on Solar Power Is “Obvious and Trivial”",
+        "url": "https://247wallst.com/investing/2026/11/17/elon-musk-plans-10-1-billion-project-crystal-sun-tesla-factory-near-houston-says-the-math-on-solar-power-is-obvious-and-trivial/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 04:27 ET",
+        "pub_ts": 1794907649.0
+      },
+      {
         "title": "Elon Musk Just Killed the Cybertruck to Build Cybercabs. Here’s What It Means for Tesla Stock -- and Rivian’s.",
         "url": "https://www.fool.com/investing/2026/11/17/elon-musk-just-killed-the-cybertruck-to-build-cybercabs-heres-what-it-means-for-tesla-stock-and-rivians/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1953,13 +1973,6 @@
         "source": "Yahoo Finance",
         "time": "11-16 20:00 ET",
         "pub_ts": 1794877213.0
-      },
-      {
-        "title": "S&P 500, Dow, Nasdaq End Lower As Investors Hold Back Ahead Of Nvidia Earnings, Anthropic IPO This Week — NVDA, TSLA, ANT In Focus",
-        "url": "https://stocktwits.com/news-articles/markets/equity/s-and-p-500-dow-nasdaq-end-lower-as-investors-hold-back-ahead-of-nvidia-earnings-anthropic-ipo/cNbaf4PR9gk?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-16 19:09 ET",
-        "pub_ts": 1794874168.0
       }
     ],
     "AXP": [
@@ -2029,11 +2042,11 @@
         "pub_ts": 1794859802.0
       },
       {
-        "title": "AST SpaceMobile Sinks 8% as ULA’s Vulcan Rocket Failure Rattles Space Stocks",
-        "url": "https://www.tikr.com/blog/ast-spacemobile-sinks-8-as-ulas-vulcan-rocket-failure-rattles-space-stocks?ref=yahoofinance&tlnk=yf-261116-qqj5x5r6&.tsrc=rss",
+        "title": "AST SpaceMobile Drops 7% as Tech Selloff Hits Space Stocks; Rocket Lab Falls 4%, SpaceX Dips Despite Historic Starship Catch",
+        "url": "https://247wallst.com/investing/2026/11/16/ast-spacemobile-drops-7-as-tech-selloff-hits-space-stocks-rocket-lab-falls-4-spacex-dips-despite-historic-starship-catch/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-16 11:15 ET",
-        "pub_ts": 1794845745.0
+        "time": "11-16 12:02 ET",
+        "pub_ts": 1794848564.0
       }
     ],
     "KO": [
@@ -3144,22 +3157,22 @@
     "APLD": 1794909576.3306248,
     "VST": 1794909576.3306248,
     "BE": 1794909576.3306248,
-    "CRDO": 1794908096.4585552,
-    "COHR": 1794908096.4585552,
-    "MRVL": 1794908096.4585552,
-    "LITE": 1794908096.4585552,
-    "AAOI": 1794908096.4585552,
-    "SPCX": 1794908096.4585552,
-    "ASTS": 1794908096.4585552,
-    "AXTI": 1794908096.4585552,
-    "NASA": 1794908096.4585552,
-    "LUNR": 1794908096.4585552,
-    "TSLA": 1794908096.4585552,
-    "AXP": 1794908096.4585552,
-    "RKLB": 1794908096.4585552,
-    "KO": 1794908096.4585552,
-    "FLY": 1794908096.4585552,
-    "INTC": 1794908096.4585552,
+    "CRDO": 1794909675.5159504,
+    "COHR": 1794909675.5159504,
+    "MRVL": 1794909675.5159504,
+    "LITE": 1794909675.5159504,
+    "AAOI": 1794909675.5159504,
+    "SPCX": 1794909675.5159504,
+    "ASTS": 1794909675.5159504,
+    "AXTI": 1794909675.5159504,
+    "NASA": 1794909675.5159504,
+    "LUNR": 1794909675.5159504,
+    "TSLA": 1794909675.5159504,
+    "AXP": 1794909675.5159504,
+    "RKLB": 1794909675.5159504,
+    "KO": 1794909675.5159504,
+    "FLY": 1794909675.5159504,
+    "INTC": 1794909675.5159504,
     "VRT": 1794908301.8032334,
     "HPE": 1794908301.8032334,
     "DELL": 1794908301.8032334,
@@ -3190,7 +3203,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (04:35 ET / 17:35 BJ) [特朗普]：市场消息：载有美国总统特朗普的飞机抵达马尼拉。",
+    "detail": "⚡ 最新核心快讯 (05:00 ET / 18:00 BJ) [英伟达]：市场消息：英伟达(NVDA.O)董事会成立国家安全与出口管制监督委员会。",
     "event_name": "",
     "minutes_left": 0
   }
