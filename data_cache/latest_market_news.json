@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1794928395.123,
-  "updated_at_et": "11-17 10:13 ET",
-  "updated_at_kst": "00:13 KST",
+  "updated_at_ts": 1794928498.992,
+  "updated_at_et": "11-17 10:14 ET",
+  "updated_at_kst": "00:14 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -794,6 +794,13 @@
     ],
     "TSM": [
       {
+        "title": "TSMC Fell 7.7% in Two Days. Joseph Carlson Thinks Its Business Is More Durable Than Nvidia’s",
+        "url": "https://www.benzinga.com/markets/prediction-markets/26/11/63343723/tsmc-joseph-carlson?utm_source=yahooFinance&utm_campaign=partner_feed&utm_medium=referral&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 10:02 ET",
+        "pub_ts": 1794927745.0
+      },
+      {
         "title": "Applied Materials vs. Taiwan Semiconductor Manufacturing: Which Tech Stock Is a Better Buy for 2027?",
         "url": "https://www.fool.com/coverage/better-buy/2026/11/17/applied-materials-vs-taiwan-semiconductor-manufacturing-which-tech-stock-is-a-better-buy-for-2027/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -820,13 +827,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 02:57 ET",
         "pub_ts": 1794902255.0
-      },
-      {
-        "title": "Zacks.com featured highlights include NVIDIA, J.M. Smucker, Taiwan Semiconductor, Corning, Lockheed and Cardinal Health",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/zacks-com-featured-highlights-nvidia-070800949.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 02:08 ET",
-        "pub_ts": 1794899280.0
       }
     ],
     "VIXY": [
@@ -905,39 +905,39 @@
     ],
     "NVDA": [
       {
-        "title": "It's not just AI — the dollar 'wrecking ball' is leveling gold and bitcoin as the debasement trade unravels",
-        "url": "https://finance.yahoo.com/markets/article/its-not-just-ai--the-dollar-wrecking-ball-is-leveling-gold-and-bitcoin-as-the-debasement-trade-unravels-143626482.html?.tsrc=rss",
+        "title": "Trump-Xi meeting looms as US tightens AI chip restrictions on China",
+        "url": "https://finance.yahoo.com/video/trump-xi-meeting-looms-as-us-tightens-ai-chip-restrictions-on-china-150937903.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-17 09:36 ET",
-        "pub_ts": 1794926186.0
+        "time": "11-17 10:09 ET",
+        "pub_ts": 1794928177.0
       },
       {
-        "title": "Nvidia Earnings: Will Results, Guidance Calm Investors Amid Turmoil? (Live Coverage)",
-        "url": "https://finance.yahoo.com/m/ef40b1a2-2bff-390f-b0d5-c281b4d503ef/nvidia-earnings%3A-will.html?.tsrc=rss",
+        "title": "Stocks slip ahead of Nvidia earnings, Home Depot shares slide: AlphaCheck",
+        "url": "https://finance.yahoo.com/markets/article/copy-copy-tech-rises-coreweave-results-reignite-ai-trade-alphacheck-145755423.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-17 09:39 ET",
-        "pub_ts": 1794926371.0
+        "time": "11-17 09:57 ET",
+        "pub_ts": 1794927475.0
       },
       {
-        "title": "Cathie Wood’s ARK Invest Sells $85 Million of Nvidia, Adds Block, Circle and Coinbase",
-        "url": "https://www.cryptoprowl.com/releases/cathie-woods-ark-invest-sells-85-million-of-nvidia-adds-block-circle-and-coinbase-7950?.tsrc=rss",
+        "title": "TSMC Fell 7.7% in Two Days. Joseph Carlson Thinks Its Business Is More Durable Than Nvidia’s",
+        "url": "https://www.benzinga.com/markets/prediction-markets/26/11/63343723/tsmc-joseph-carlson?utm_source=yahooFinance&utm_campaign=partner_feed&utm_medium=referral&.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-17 09:38 ET",
-        "pub_ts": 1794926280.0
+        "time": "11-17 10:02 ET",
+        "pub_ts": 1794927745.0
       },
       {
-        "title": "Blockmate orders first NVIDIA B200 node as customer demand emerges",
-        "url": "https://www.proactiveinvestors.com/companies/news/1101935/blockmate-orders-first-nvidia-b200-node-as-customer-demand-emerges-1101935.html?.tsrc=rss",
+        "title": "Stocks slide ahead of Nvidia's post-scandal earnings report",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/asian-stocks-sink-scandal-hit-023848163.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-17 09:35 ET",
-        "pub_ts": 1794926100.0
+        "time": "11-17 10:02 ET",
+        "pub_ts": 1794927738.0
       },
       {
-        "title": "Anthropic Plans $26 Billion Concurrent Private Placement Following IPO; Alphabet's Google, Nvidia, AMD to Take Part",
-        "url": "https://finance.yahoo.com/technology/ai/articles/anthropic-plans-26-billion-concurrent-143354928.html?.tsrc=rss",
+        "title": "Luxor, Architect, and Hyperbolic Execute First OTC Option Trade on GPU Rental Prices",
+        "url": "https://finance.yahoo.com/markets/options/articles/luxor-architect-hyperbolic-execute-first-150000823.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-17 09:33 ET",
-        "pub_ts": 1794926034.0
+        "time": "11-17 10:00 ET",
+        "pub_ts": 1794927600.0
       }
     ],
     "AMD": [
@@ -3199,22 +3199,22 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1794926961.173867,
-    "SOXL": 1794926961.173867,
-    "SPY": 1794926961.173867,
-    "DIA": 1794926961.173867,
-    "SOXX": 1794926961.173867,
-    "QQQ": 1794926961.173867,
-    "SMH": 1794926961.173867,
-    "IWM": 1794926961.173867,
-    "IGV": 1794926961.173867,
-    "TLT": 1794926961.173867,
-    "GLD": 1794926961.173867,
-    "SQQQ": 1794926961.173867,
-    "TSM": 1794926961.173867,
-    "VIXY": 1794926961.173867,
-    "SOXS": 1794926961.173867,
-    "NVDA": 1794926961.173867,
+    "KORU": 1794928498.9919357,
+    "SOXL": 1794928498.9919357,
+    "SPY": 1794928498.9919357,
+    "DIA": 1794928498.9919357,
+    "SOXX": 1794928498.9919357,
+    "QQQ": 1794928498.9919357,
+    "SMH": 1794928498.9919357,
+    "IWM": 1794928498.9919357,
+    "IGV": 1794928498.9919357,
+    "TLT": 1794928498.9919357,
+    "GLD": 1794928498.9919357,
+    "SQQQ": 1794928498.9919357,
+    "TSM": 1794928498.9919357,
+    "VIXY": 1794928498.9919357,
+    "SOXS": 1794928498.9919357,
+    "NVDA": 1794928498.9919357,
     "AMD": 1794927063.3923516,
     "ASML": 1794927063.3923516,
     "QCOM": 1794927063.3923516,
