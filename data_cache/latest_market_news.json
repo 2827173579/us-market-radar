@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1794945802.937,
-  "updated_at_et": "11-17 15:03 ET",
-  "updated_at_kst": "05:03 KST",
+  "updated_at_ts": 1794945900.106,
+  "updated_at_et": "11-17 15:05 ET",
+  "updated_at_kst": "05:05 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2390,6 +2390,13 @@
         "pub_ts": 1794940041.0
       },
       {
+        "title": "Micron Drops Again. What Hedge Funds Are Doing With the Stock.",
+        "url": "https://finance.yahoo.com/m/8de18bcc-f636-3e12-8e8b-a141738198d9/micron-drops-again.-what.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 13:12 ET",
+        "pub_ts": 1794939120.0
+      },
+      {
         "title": "A $7.2 Billion Fund Dumps These 3 Stocks",
         "url": "https://www.tikr.com/blog/a-7-2-billion-fund-dumps-these-3-stocks?ref=yahoofinance&tlnk=yf-261117-536g3rmv&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2409,13 +2416,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 12:49 ET",
         "pub_ts": 1794937745.0
-      },
-      {
-        "title": "Micron is Deeply Affected By The Loss of Jensen Huang’s Risk Appetite",
-        "url": "https://247wallst.com/investing/2026/11/17/micron-is-deeply-affected-by-the-loss-of-jensen-huangs-risk-appetite/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 12:45 ET",
-        "pub_ts": 1794937549.0
       }
     ],
     "SKHY": [
@@ -2760,8 +2760,8 @@
         "pub_ts": 1794942704.0
       },
       {
-        "title": "Eli Lilly Caught in Vendor Hack as Extortion Group Threatens to Leak Data on 1.2 Million Patients",
-        "url": "https://finance.yahoo.com/m/d3fa3df8-06d3-3d41-89a2-23c1584f133a/eli-lilly-caught-in-vendor.html?.tsrc=rss",
+        "title": "Third-Party Vendor Linked to Eli Lilly Is Hit by Data Breach",
+        "url": "https://finance.yahoo.com/m/d3fa3df8-06d3-3d41-89a2-23c1584f133a/third-party-vendor-linked-to.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-17 12:30 ET",
         "pub_ts": 1794936600.0
@@ -2976,7 +2976,7 @@
     "JPM": [
       {
         "title": "Software bug freezes Chase: Is it the time for bitcoin?",
-        "url": "https://finance.yahoo.com/video/software-bug-freezes-chase-time-180000372.html?.tsrc=rss",
+        "url": "https://finance.yahoo.com/video/software-bug-freezes-chase-is-it-the-time-for-bitcoin-194810842.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-17 13:00 ET",
         "pub_ts": 1794938400.0
@@ -2987,6 +2987,13 @@
         "source": "Yahoo Finance",
         "time": "11-17 10:31 ET",
         "pub_ts": 1794929470.0
+      },
+      {
+        "title": "As tech crashes mount, how can banks respond?",
+        "url": "https://www.americanbanker.com/news/as-tech-crashes-mount-how-can-banks-respond?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 14:41 ET",
+        "pub_ts": 1794944486.0
       },
       {
         "title": "JPMorgan’s CFO plans exit, company names internal successor",
@@ -3001,13 +3008,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 12:56 ET",
         "pub_ts": 1794938172.0
-      },
-      {
-        "title": "JPMorgan Taps de Best to Succeed CFO Jeremy Barnum",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/jpmorgan-taps-best-succeed-cfo-175324417.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 12:53 ET",
-        "pub_ts": 1794938004.0
       }
     ],
     "WMT": [
@@ -3252,7 +3252,7 @@
     "OKLO": 1794945408.9618373,
     "CEG": 1794945704.272877,
     "FPS": 1794945408.9618373,
-    "MU": 1794944323.579317,
+    "MU": 1794945900.1059532,
     "SKHY": 1794945509.6820283,
     "WDC": 1794945704.272877,
     "STX": 1794944420.9891608,
@@ -3262,16 +3262,16 @@
     "CRWD": 1794945509.6820283,
     "ORCL": 1794945509.6820283,
     "COIN": 1794945509.6820283,
-    "LLY": 1794944323.579317,
+    "LLY": 1794945900.1059532,
     "MRNA": 1794945704.272877,
     "NKE": 1794944420.9891608,
     "MCD": 1794945704.272877,
     "PEP": 1794944614.6689618,
     "XOM": 1794944614.6689618,
-    "JPM": 1794944323.579317,
-    "WMT": 1794944323.579317,
+    "JPM": 1794945900.1059532,
+    "WMT": 1794945900.1059532,
     "V": 1794945704.272877,
-    "CAT": 1794944323.579317,
+    "CAT": 1794945900.1059532,
     "FN": 1794945311.5445604,
     "GLW": 1794945111.8475516
   },
