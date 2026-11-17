@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1794935056.397,
-  "updated_at_et": "11-17 12:04 ET",
-  "updated_at_kst": "02:04 KST",
+  "updated_at_ts": 1794935154.577,
+  "updated_at_et": "11-17 12:05 ET",
+  "updated_at_kst": "02:05 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -593,18 +593,18 @@
         "pub_ts": 1794706442.0
       },
       {
+        "title": "ADBE Stock Alert: Michael Burry Is Buying Adobe Stock",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/adbe-stock-alert-michael-burry-163615491.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 11:36 ET",
+        "pub_ts": 1794933375.0
+      },
+      {
         "title": "Nvidia, AI Angst Dim Wall Street Pre-Bell; Asia, Europe Off",
         "url": "https://finance.yahoo.com/markets/stocks/articles/nvidia-ai-angst-dim-wall-111348366.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-17 06:13 ET",
         "pub_ts": 1794914028.0
-      },
-      {
-        "title": "Why AMD Stock Was Sliding Today",
-        "url": "https://www.fool.com/investing/2026/11/16/why-amd-stock-was-sliding-today/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-16 11:51 ET",
-        "pub_ts": 1794847908.0
       }
     ],
     "IWM": [
@@ -905,39 +905,39 @@
     ],
     "NVDA": [
       {
-        "title": "Former Nvidia CEO Jensen Huang says he'd be 'honored' to return to the company",
-        "url": "https://finance.yahoo.com/technology/article/former-nvidia-ceo-jensen-huang-says-hed-be-honored-to-return-to-the-company-163107005.html?.tsrc=rss",
+        "title": "Colette Kress is exactly who Nvidia needs — not Jensen Huang: Kevin O'Leary explains",
+        "url": "https://finance.yahoo.com/video/colette-kress-exactly-nvidia-needs-170000607.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-17 11:31 ET",
-        "pub_ts": 1794933067.0
+        "time": "11-17 12:00 ET",
+        "pub_ts": 1794934800.0
       },
       {
-        "title": "Nvidia, Intel, Salesforce, SpaceX, Anthropic, Sandisk, Home Depot, and More That Explain Today’s Market",
-        "url": "https://finance.yahoo.com/m/5d4c8ff4-57bc-3350-b217-681441a4f8b3/nvidia%2C-intel%2C-salesforce%2C.html?.tsrc=rss",
+        "title": "Argentum AI Signs $630M Data Center Collaboration With Kyndryl to Deploy NVIDIA GPUs",
+        "url": "https://finance.yahoo.com/technology/ai/articles/argentum-ai-signs-630m-data-170000352.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-17 11:29 ET",
-        "pub_ts": 1794932940.0
+        "time": "11-17 12:00 ET",
+        "pub_ts": 1794934800.0
       },
       {
-        "title": "Jensen Huang Says He Would Be ‘Honored’ To Return To Nvidia If Board Decides It Is In Shareholders’ Interest",
-        "url": "https://stocktwits.com/news-articles/markets/equity/jensen-huang-says-he-would-be-honored-to-return-to-nvidia/cNbOGTrR9WC?.tsrc=rss",
+        "title": "Former Nvidia boss Jensen Huang speaks out about return for first time in wake of scandal that rocked AI industry",
+        "url": "https://www.independent.co.uk/tech/nvidia-jensen-huang-return-ai-artificial-intelligence-b3086611.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-17 11:19 ET",
-        "pub_ts": 1794932361.0
+        "time": "11-17 11:57 ET",
+        "pub_ts": 1794934646.0
       },
       {
-        "title": "Is Broadcom (AVGO) Undervalued After Strong AI Revenue Growth And ETF Buying?",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/broadcom-avgo-undervalued-strong-ai-161426046.html?.tsrc=rss",
+        "title": "Jensen Huang Says ‘I Did Not Live Up to the Standards Expected,’ Would Return as Nvidia CEO if Asked: WSJ",
+        "url": "https://www.benzinga.com/markets/prediction-markets/26/11/63354833/jensen-huang-nvidia-return?utm_source=yahooFinance&utm_campaign=partner_feed&utm_medium=referral&.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-17 11:14 ET",
-        "pub_ts": 1794932066.0
+        "time": "11-17 11:55 ET",
+        "pub_ts": 1794934506.0
       },
       {
-        "title": "Jensen Huang Breaks His Silence: ‘I Would Be Honored’ to Return as Nvidia CEO If the Board Asks",
-        "url": "https://247wallst.com/investing/2026/11/17/jensen-huang-breaks-his-silence-i-would-be-honored-to-return-as-nvidia-ceo-if-the-board-asks/?.tsrc=rss",
+        "title": "Jensen Huang says he \"would be honored\" to return as Nvidia CEO",
+        "url": "https://www.cbsnews.com/news/jensen-huang-nvidia-ceo-return-statement/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-17 11:10 ET",
-        "pub_ts": 1794931815.0
+        "time": "11-17 11:54 ET",
+        "pub_ts": 1794934462.0
       }
     ],
     "AMD": [
@@ -3199,22 +3199,22 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1794933558.4329443,
-    "SOXL": 1794933558.4329443,
-    "SPY": 1794933558.4329443,
-    "DIA": 1794933558.4329443,
-    "SOXX": 1794933558.4329443,
-    "QQQ": 1794933558.4329443,
-    "SMH": 1794933558.4329443,
-    "IWM": 1794933558.4329443,
-    "IGV": 1794933558.4329443,
-    "TLT": 1794933558.4329443,
-    "GLD": 1794933558.4329443,
-    "SQQQ": 1794933558.4329443,
-    "TSM": 1794933558.4329443,
-    "VIXY": 1794933558.4329443,
-    "SOXS": 1794933558.4329443,
-    "NVDA": 1794933558.4329443,
+    "KORU": 1794935154.577124,
+    "SOXL": 1794935154.577124,
+    "SPY": 1794935154.577124,
+    "DIA": 1794935154.577124,
+    "SOXX": 1794935154.577124,
+    "QQQ": 1794935154.577124,
+    "SMH": 1794935154.577124,
+    "IWM": 1794935154.577124,
+    "IGV": 1794935154.577124,
+    "TLT": 1794935154.577124,
+    "GLD": 1794935154.577124,
+    "SQQQ": 1794935154.577124,
+    "TSM": 1794935154.577124,
+    "VIXY": 1794935154.577124,
+    "SOXS": 1794935154.577124,
+    "NVDA": 1794935154.577124,
     "AMD": 1794933661.2430818,
     "ASML": 1794933661.2430818,
     "QCOM": 1794933661.2430818,
