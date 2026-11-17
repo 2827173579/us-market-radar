@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1794940669.911,
-  "updated_at_et": "11-17 13:37 ET",
-  "updated_at_kst": "03:37 KST",
+  "updated_at_ts": 1794940771.204,
+  "updated_at_et": "11-17 13:39 ET",
+  "updated_at_kst": "03:39 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2421,6 +2421,13 @@
     ],
     "SKHY": [
       {
+        "title": "Qualcomm vs. SK Hynix: Stable Revenue vs. Rapid Acceleration",
+        "url": "https://www.fool.com/coverage/charts/2026/11/17/qualcomm-vs-sk-hynix-stable-revenue-vs-rapid-acceleration/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 13:20 ET",
+        "pub_ts": 1794939602.0
+      },
+      {
         "title": "Micron, SanDisk and SK Hynix Face New Warning From Wall Street",
         "url": "https://finance.yahoo.com/markets/stocks/articles/micron-sandisk-sk-hynix-face-174959688.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2447,13 +2454,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 03:17 ET",
         "pub_ts": 1794903421.0
-      },
-      {
-        "title": "AMD, MU, SKHY, AVGO: Chip Stocks Ease Overnight After Selloff On New US Chip Restrictions Targeting China",
-        "url": "https://stocktwits.com/news-articles/markets/equity/amd-mu-skhy-avgo-chip-stocks-ease-overnight-after-selloff-on-new-us-chip-restrictions-targeting-china/cNba10cR9gA?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-16 23:04 ET",
-        "pub_ts": 1794888260.0
       }
     ],
     "WDC": [
@@ -3254,15 +3254,15 @@
     "CEG": 1794939443.5457082,
     "FPS": 1794940669.9106374,
     "MU": 1794939585.9036617,
-    "SKHY": 1794939253.7722135,
+    "SKHY": 1794940771.2043774,
     "WDC": 1794939443.5457082,
     "STX": 1794939741.1921878,
-    "MSTR": 1794939253.7722135,
-    "SNDK": 1794939253.7722135,
+    "MSTR": 1794940771.2043774,
+    "SNDK": 1794940771.2043774,
     "BTC-USD": 1794939741.1921878,
-    "CRWD": 1794939253.7722135,
-    "ORCL": 1794939253.7722135,
-    "COIN": 1794939253.7722135,
+    "CRWD": 1794940771.2043774,
+    "ORCL": 1794940771.2043774,
+    "COIN": 1794940771.2043774,
     "LLY": 1794939585.9036617,
     "MRNA": 1794939443.5457082,
     "NKE": 1794939741.1921878,
