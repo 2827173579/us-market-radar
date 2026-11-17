@@ -1,9 +1,23 @@
 {
-  "updated_at_ts": 1794917410.677,
-  "updated_at_et": "11-17 07:10 ET",
-  "updated_at_kst": "21:10 KST",
+  "updated_at_ts": 1794917510.407,
+  "updated_at_et": "11-17 07:11 ET",
+  "updated_at_kst": "21:11 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261117200956354800",
+      "title": "前纽约联储主席：美联储的“无痛降通胀”策略存在根本缺陷",
+      "summary": "前纽约联储主席警告，美联储试图在不损害就业的情况下压低通胀，可能难以奏效。尽管沃什强调坚持2%目标，但实际加息力度仍然有限，通胀预期也未完全稳定。点击查看…",
+      "keywords": [
+        "美联储",
+        "加息"
+      ],
+      "pub_ts": 1794917396.0,
+      "time_et": "11-17 07:09 ET",
+      "time_bj": "20:09 BJ",
+      "time_kst": "21:09 KST",
+      "time_display": "07:09 ET / 20:09 BJ"
+    },
     {
       "id": "20261117194834369800",
       "title": "DeepTalk：美联储正在制造二战后第二大衰退？顶级经济学家警告美股恐暴跌40%！",
@@ -325,19 +339,6 @@
       "time_bj": "15:28 BJ",
       "time_kst": "16:28 KST",
       "time_display": "02:28 ET / 15:28 BJ"
-    },
-    {
-      "id": "20261117152605728800",
-      "title": "重要新闻 1. 我国北斗终端设备应用数量近4200万。 2. 深圳APEC领导人非正式会…",
-      "summary": "重要新闻 1. 我国北斗终端设备应用数量近4200万。 2. 深圳APEC领导人非正式会议成果文件磋商工作已启动。 3. 商务部等9部门：加强废旧动力电池回收处理，推动新能源汽车“车电一体报废”回收拆解。 4. 财政部：中加双方同意探索扩大双边贸易和投资中的本币使用，鼓励双向投资。 个股新闻 1. 主力资金流向数据显示，有研新材主力资金净流入15.25亿元居首位，寒武纪、中芯国际、华胜天成、华虹宏力获主力资金净流入居前；长鑫科技主力资金净流出19.54亿元居首位，中际旭创、澜起科技、兆易创新、蓝色光标主力资金净流出居前。 2. 兆易创新：定制化存储相关业务在端侧AI等领域取得突破。 3. 360回应市场部负责人被带走：内审发现其涉嫌经济问题。 4. 国家药监局：北京同仁堂等17家药企27批次药品不符合规定。 5. 宁德时代曾毓群：将电动化应用从陆地拓展至海洋和天空，赋能亚太地区发展。 6. 中广天择：AI算料业务已成为公司新的增长曲线，AI漫剧业务也陆续有产品上线。 7. 慧谷新材：直供美的格力海尔无利益冲突，布局面板、航天、电池多赛道涂层材料。 8. 天亿马：全国首个昇腾950DT词元出海算力集群正式启用。 9. 中稀有色：对明年稀土市场行情持相对乐观态度。 10. 他山科技：与英伟达合作的可穿戴数采设备发布，采用公司触觉传感器。",
-      "keywords": [
-        "英伟达"
-      ],
-      "pub_ts": 1794900365.0,
-      "time_et": "11-17 02:26 ET",
-      "time_bj": "15:26 BJ",
-      "time_kst": "16:26 KST",
-      "time_display": "02:26 ET / 15:26 BJ"
     }
   ],
   "ticker_news": {
@@ -1749,6 +1750,13 @@
     ],
     "SPCX": [
       {
+        "title": "SpaceX just caught a spaceship out of the sky",
+        "url": "https://finance.yahoo.com/video/spacex-just-caught-spaceship-sky-120000437.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 07:00 ET",
+        "pub_ts": 1794916800.0
+      },
+      {
         "title": "Here's What $1,000 in Each of These 3 Space Stocks Could Be Worth by 2030",
         "url": "https://www.fool.com/investing/2026/11/17/here-s-what-usd1-000-in-each-of-these-3-space-stocks-could-be-worth-by-2030/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1775,13 +1783,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 05:26 ET",
         "pub_ts": 1794911211.0
-      },
-      {
-        "title": "US Stock Futures Edge Lower After Tech Sell-Off — NVDA Earnings, AMD, SPCX, DIS In Focus",
-        "url": "https://stocktwits.com/news-articles/markets/equity/us-stock-futures-edge-lower-after-tech-sell-off-nvda-earnings-amd-spcx-dis-in-focus/cNbaAmCR9Wf?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 05:24 ET",
-        "pub_ts": 1794911054.0
       }
     ],
     "ASTS": [
@@ -2008,6 +2009,13 @@
     ],
     "RKLB": [
       {
+        "title": "Rocket Lab Says Adjusted EBITDA Turns Positive Within 6 Months of Neutron’s First Flight. Here’s the Date That Implies.",
+        "url": "https://www.fool.com/investing/2026/11/17/rocket-lab-says-adjusted-ebitda-turns-positive-within-6-months-of-neutrons-first-flight-heres-the-date-that-implies/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 06:52 ET",
+        "pub_ts": 1794916321.0
+      },
+      {
         "title": "A 100 Reason to Buy Rocket Lab Stock Right Now",
         "url": "https://finance.yahoo.com/markets/stocks/articles/100-reason-buy-rocket-lab-110959083.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2034,13 +2042,6 @@
         "source": "Yahoo Finance",
         "time": "11-16 16:22 ET",
         "pub_ts": 1794864124.0
-      },
-      {
-        "title": "Down 60% From Its 52-Week High, Is Rocket Lab Stock a Bargain Buy?",
-        "url": "https://www.fool.com/investing/2026/11/16/down-60-from-its-52-week-high-is-rocket-lab-stock-a-bargain-buy/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-16 15:10 ET",
-        "pub_ts": 1794859802.0
       }
     ],
     "KO": [
@@ -3151,22 +3152,22 @@
     "APLD": 1794917410.6773639,
     "VST": 1794917410.6773639,
     "BE": 1794917410.6773639,
-    "CRDO": 1794915946.8729692,
-    "COHR": 1794915946.8729692,
-    "MRVL": 1794915946.8729692,
-    "LITE": 1794915946.8729692,
-    "AAOI": 1794915946.8729692,
-    "SPCX": 1794915946.8729692,
-    "ASTS": 1794915946.8729692,
-    "AXTI": 1794915946.8729692,
-    "NASA": 1794915946.8729692,
-    "LUNR": 1794915946.8729692,
-    "TSLA": 1794915946.8729692,
-    "AXP": 1794915946.8729692,
-    "RKLB": 1794915946.8729692,
-    "KO": 1794915946.8729692,
-    "FLY": 1794915946.8729692,
-    "INTC": 1794915946.8729692,
+    "CRDO": 1794917510.4067354,
+    "COHR": 1794917510.4067354,
+    "MRVL": 1794917510.4067354,
+    "LITE": 1794917510.4067354,
+    "AAOI": 1794917510.4067354,
+    "SPCX": 1794917510.4067354,
+    "ASTS": 1794917510.4067354,
+    "AXTI": 1794917510.4067354,
+    "NASA": 1794917510.4067354,
+    "LUNR": 1794917510.4067354,
+    "TSLA": 1794917510.4067354,
+    "AXP": 1794917510.4067354,
+    "RKLB": 1794917510.4067354,
+    "KO": 1794917510.4067354,
+    "FLY": 1794917510.4067354,
+    "INTC": 1794917510.4067354,
     "VRT": 1794916142.78093,
     "HPE": 1794916142.78093,
     "DELL": 1794916142.78093,
@@ -3197,7 +3198,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (06:48 ET / 19:48 BJ) [美联储]：美联储嘴上不说，但数字不会骗人。要把通胀从4%打到2%，美国必须经历二战以来第二大衰退，而73%的散户仓位，还满满当当押在股市里。点击查看…",
+    "detail": "⚡ 最新核心快讯 (07:09 ET / 20:09 BJ) [美联储] [加息]：前纽约联储主席警告，美联储试图在不损害就业的情况下压低通胀，可能难以奏效。尽管沃什强调坚持2%目标，但实际加息力度仍然有限，通胀预期也未完全稳定。点击查看…",
     "event_name": "",
     "minutes_left": 0
   }
