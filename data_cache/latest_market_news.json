@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1794914071.297,
-  "updated_at_et": "11-17 06:14 ET",
-  "updated_at_kst": "20:14 KST",
+  "updated_at_ts": 1794914169.778,
+  "updated_at_et": "11-17 06:16 ET",
+  "updated_at_kst": "20:16 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -419,11 +419,25 @@
     ],
     "SPY": [
       {
-        "title": "SPDR S&P 500 ETF (SPY) Sells Apple and Nvidia on Thursday",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/spdr-p-500-etf-spy-110358769.html?.tsrc=rss",
+        "title": "ETFs Are Buying Chevron (CVX) on Friday",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-buying-chevron-cvx-friday-110158202.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-16 06:03 ET",
-        "pub_ts": 1794827038.0
+        "time": "11-17 06:01 ET",
+        "pub_ts": 1794913318.0
+      },
+      {
+        "title": "ETFs Bought $111.9 Million of Cisco (CSCO) on Nov. 13",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-bought-111-9-million-110152347.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 06:01 ET",
+        "pub_ts": 1794913312.0
+      },
+      {
+        "title": "ETFs Are Buying Apple (AAPL) on Friday",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-buying-apple-aapl-friday-110040448.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 06:00 ET",
+        "pub_ts": 1794913240.0
       },
       {
         "title": "NVIDIA After Jensen: What's Next for the AI Trade?",
@@ -433,25 +447,11 @@
         "pub_ts": 1794865140.0
       },
       {
-        "title": "Exchange-Traded Funds, Equity Futures Lower Pre-Bell Monday Amid Weakness in AI-Linked Stocks",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/exchange-traded-funds-equity-futures-141346501.html?.tsrc=rss",
+        "title": "Palantir (PLTR) Sees $117.4 Million in Net ETF Buying on Nov. 13",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/palantir-pltr-sees-117-4-110149586.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-16 09:13 ET",
-        "pub_ts": 1794838426.0
-      },
-      {
-        "title": "ETFs Are Net Sellers of Deere (DE) on Nov. 12",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-net-sellers-deere-nov-110339768.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-16 06:03 ET",
-        "pub_ts": 1794827019.0
-      },
-      {
-        "title": "ETFs Are Net Sellers of Analog Devices (ADI) on Thursday",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-net-sellers-analog-devices-110319947.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-16 06:03 ET",
-        "pub_ts": 1794826999.0
+        "time": "11-17 06:01 ET",
+        "pub_ts": 1794913309.0
       }
     ],
     "DIA": [
@@ -507,28 +507,42 @@
         "pub_ts": 1794826999.0
       },
       {
-        "title": "Dow Could Fall for Fifth Friday in a Row",
-        "url": "https://finance.yahoo.com/m/024d1fc1-38a6-3f64-90d2-d3c428199ea0/dow-could-fall-for-fifth.html?.tsrc=rss",
+        "title": "ETFs Are Net Sellers of Intel (INTC) on Friday",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-net-sellers-intel-intc-110249574.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-13 11:52 ET",
-        "pub_ts": 1794588727.0
+        "time": "11-17 06:02 ET",
+        "pub_ts": 1794913369.0
       },
       {
-        "title": "What iShares PHLX SOX Semiconductor (SOXX) Bought: AMD Leads on Nov. 11",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/ishares-phlx-sox-semiconductor-soxx-110308818.html?.tsrc=rss",
+        "title": "ETFs Are Net Sellers of Astera Labs (ALAB) on Friday",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-net-sellers-astera-labs-110229756.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-13 06:03 ET",
-        "pub_ts": 1794567788.0
+        "time": "11-17 06:02 ET",
+        "pub_ts": 1794913349.0
       },
       {
-        "title": "ETFs Bought $137.7 Million of Micron (MU) on Wednesday",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-bought-137-7-million-110118765.html?.tsrc=rss",
+        "title": "ETFs Are Net Sellers of Credo Technology (CRDO) on Nov. 13",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-net-sellers-credo-technology-110223229.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-13 06:01 ET",
-        "pub_ts": 1794567678.0
+        "time": "11-17 06:02 ET",
+        "pub_ts": 1794913343.0
       }
     ],
     "QQQ": [
+      {
+        "title": "ETFs Bought $111.9 Million of Cisco (CSCO) on Nov. 13",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-bought-111-9-million-110152347.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 06:01 ET",
+        "pub_ts": 1794913312.0
+      },
+      {
+        "title": "ETFs Are Buying Apple (AAPL) on Friday",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-buying-apple-aapl-friday-110040448.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 06:00 ET",
+        "pub_ts": 1794913240.0
+      },
       {
         "title": "Exchange-Traded Funds Lower as US Equities Drop After Midday",
         "url": "https://finance.yahoo.com/markets/stocks/articles/exchange-traded-funds-lower-us-181915979.html?.tsrc=rss",
@@ -549,20 +563,6 @@
         "source": "Yahoo Finance",
         "time": "11-16 06:04 ET",
         "pub_ts": 1794827042.0
-      },
-      {
-        "title": "64 ETFs Add to Micron (MU) Holdings on Nov. 12",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/64-etfs-add-micron-mu-110146232.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-16 06:01 ET",
-        "pub_ts": 1794826906.0
-      },
-      {
-        "title": "ETFs Bought $39.6 Million of Meta (META) on Thursday",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-bought-39-6-million-110139571.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-16 06:01 ET",
-        "pub_ts": 1794826899.0
       }
     ],
     "SMH": [
@@ -789,6 +789,13 @@
     ],
     "TSM": [
       {
+        "title": "The Zacks Analyst Blog Highlights Taiwan, Johnson & Johnson, Palantir, Title and Altigen",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/zacks-analyst-blog-highlights-taiwan-100800704.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 05:08 ET",
+        "pub_ts": 1794910080.0
+      },
+      {
         "title": "Zacks.com featured highlights include NVIDIA, J.M. Smucker, Taiwan Semiconductor, Corning, Lockheed and Cardinal Health",
         "url": "https://finance.yahoo.com/markets/stocks/articles/zacks-com-featured-highlights-nvidia-070800949.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -815,13 +822,6 @@
         "source": "Yahoo Finance",
         "time": "11-16 15:59 ET",
         "pub_ts": 1794862740.0
-      },
-      {
-        "title": "TSMC Slumps Nearly 6% as Jensen Huang’s Exit and AI Debt Fears Rattle Investors Ahead of Nvidia Earnings",
-        "url": "https://www.benzinga.com/markets/prediction-markets/26/11/63319299/tsmc-nvidia-financing?utm_source=yahooFinance&utm_campaign=partner_feed&utm_medium=referral&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-16 15:30 ET",
-        "pub_ts": 1794861009.0
       }
     ],
     "VIXY": [
@@ -900,42 +900,56 @@
     ],
     "NVDA": [
       {
-        "title": "Jensen Huang looks to have accepted his fate with Nvidia: He cleaned up his X profile",
-        "url": "https://finance.yahoo.com/markets/stocks/article/jensen-huang-looks-to-have-accepted-his-fate-with-nvidia-he-cleaned-up-his-x-profile-101253477.html?.tsrc=rss",
+        "title": "Nvidia is being pulled in opposite directions by 2 powerful forces",
+        "url": "https://finance.yahoo.com/technology/article/nvidia-is-being-pulled-in-opposite-directions-by-2-powerful-forces-110000361.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-17 05:12 ET",
-        "pub_ts": 1794910373.0
+        "time": "11-17 06:00 ET",
+        "pub_ts": 1794913200.0
       },
       {
-        "title": "AI and spies: a timeline of the Nvidia scandal",
-        "url": "https://finance.yahoo.com/technology/ai/articles/ai-spies-timeline-nvidia-scandal-103223278.html?.tsrc=rss",
+        "title": "Nvidia board rejects calls for Jensen Huang return",
+        "url": "https://www.independent.co.uk/tech/nvidia-board-jensen-huang-return-b3086287.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-17 05:32 ET",
-        "pub_ts": 1794911543.0
+        "time": "11-17 06:05 ET",
+        "pub_ts": 1794913525.0
       },
       {
-        "title": "The Stock Market Is Primed for an Explosive Week. Nvidia and the Federal Reserve May Decide What Comes Next.",
-        "url": "https://www.fool.com/investing/2026/11/17/stock-market-primed-for-explosive-week-nvidia-federal-reserve/?.tsrc=rss",
+        "title": "Nvidia (NVDA) Sends Stark Warning to Customers Over Chinese Access to Its AI Chips",
+        "url": "https://finance.yahoo.com/technology/ai/articles/nvidia-nvda-sends-stark-warning-110456299.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-17 05:32 ET",
-        "pub_ts": 1794911522.0
+        "time": "11-17 06:04 ET",
+        "pub_ts": 1794913496.0
       },
       {
-        "title": "What to watch in Nvidia’s first earnings report since Huang’s resignation",
-        "url": "https://www.euronews.com/2026/11/17/what-to-watch-in-nvidias-first-earnings-since-huang-resigned?.tsrc=rss",
+        "title": "State Street SPDR Portfolio S&P 500 (SPYM) Adds Apple and Nvidia on Nov. 13",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/state-street-spdr-portfolio-p-110349995.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-17 05:31 ET",
-        "pub_ts": 1794911460.0
+        "time": "11-17 06:03 ET",
+        "pub_ts": 1794913429.0
       },
       {
-        "title": "Intel falls premarket as Nvidia cuts stake, SpaceX becomes top holding",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/intel-falls-premarket-nvidia-cuts-102651060.html?.tsrc=rss",
+        "title": "CoreWeave Answered the Biggest Question About AI Stocks. Now Nvidia Has to Confirm It.",
+        "url": "https://www.fool.com/investing/2026/11/17/coreweave-answered-the-biggest-question-about-ai-stocks-now-nvidia-has-to-confirm-it/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-17 05:26 ET",
-        "pub_ts": 1794911211.0
+        "time": "11-17 06:03 ET",
+        "pub_ts": 1794913381.0
       }
     ],
     "AMD": [
+      {
+        "title": "JPMorgan Global Select Equity ETF (JGLO) Sells $32.1 Million of Amazon on Nov. 13",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/jpmorgan-global-select-equity-etf-110421859.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 06:04 ET",
+        "pub_ts": 1794913461.0
+      },
+      {
+        "title": "MangoBoost Launches BoostX™ DPS, a Production-Qualified FPGA-based DPU Accelerating Custom Datapath Innovation",
+        "url": "https://finance.yahoo.com/technology/articles/mangoboost-launches-boostx-dps-production-110000431.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 06:00 ET",
+        "pub_ts": 1794913200.0
+      },
       {
         "title": "US Stock Futures Edge Lower After Tech Sell-Off — NVDA Earnings, AMD, SPCX, DIS In Focus",
         "url": "https://stocktwits.com/news-articles/markets/equity/us-stock-futures-edge-lower-after-tech-sell-off-nvda-earnings-amd-spcx-dis-in-focus/cNbaAmCR9Wf?.tsrc=rss",
@@ -956,20 +970,6 @@
         "source": "Yahoo Finance",
         "time": "11-16 23:28 ET",
         "pub_ts": 1794889713.0
-      },
-      {
-        "title": "AMD, MU, SKHY, AVGO: Chip Stocks Ease Overnight After Selloff On New US Chip Restrictions Targeting China",
-        "url": "https://stocktwits.com/news-articles/markets/equity/amd-mu-skhy-avgo-chip-stocks-ease-overnight-after-selloff-on-new-us-chip-restrictions-targeting-china/cNba10cR9gA?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-16 23:04 ET",
-        "pub_ts": 1794888260.0
-      },
-      {
-        "title": "Dow Jones Futures: AMD, Nvidia, Micron Lead AI Trade Lower With Nvidia Earnings On Deck",
-        "url": "https://finance.yahoo.com/m/d0a3411e-5f2b-302d-801a-a42b1d7ca5ea/dow-jones-futures%3A-amd%2C.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-16 22:20 ET",
-        "pub_ts": 1794885617.0
       }
     ],
     "ASML": [
@@ -3120,23 +3120,23 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1794912608.0894773,
-    "SOXL": 1794912608.0894773,
-    "SPY": 1794912608.0894773,
-    "DIA": 1794912608.0894773,
-    "SOXX": 1794912608.0894773,
-    "QQQ": 1794912608.0894773,
-    "SMH": 1794912608.0894773,
-    "IWM": 1794912608.0894773,
-    "IGV": 1794912608.0894773,
-    "TLT": 1794912608.0894773,
-    "GLD": 1794912608.0894773,
-    "SQQQ": 1794912608.0894773,
-    "TSM": 1794912608.0894773,
-    "VIXY": 1794912608.0894773,
-    "SOXS": 1794912608.0894773,
-    "NVDA": 1794912608.0894773,
-    "AMD": 1794912608.0894773,
+    "KORU": 1794914169.7778149,
+    "SOXL": 1794914169.7778149,
+    "SPY": 1794914169.7778149,
+    "DIA": 1794914169.7778149,
+    "SOXX": 1794914169.7778149,
+    "QQQ": 1794914169.7778149,
+    "SMH": 1794914169.7778149,
+    "IWM": 1794914169.7778149,
+    "IGV": 1794914169.7778149,
+    "TLT": 1794914169.7778149,
+    "GLD": 1794914169.7778149,
+    "SQQQ": 1794914169.7778149,
+    "TSM": 1794914169.7778149,
+    "VIXY": 1794914169.7778149,
+    "SOXS": 1794914169.7778149,
+    "NVDA": 1794914169.7778149,
+    "AMD": 1794914169.7778149,
     "ASML": 1794912708.5529013,
     "QCOM": 1794912708.5529013,
     "AVGO": 1794912708.5529013,
