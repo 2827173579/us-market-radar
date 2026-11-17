@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1794939741.192,
-  "updated_at_et": "11-17 13:22 ET",
-  "updated_at_kst": "03:22 KST",
+  "updated_at_ts": 1794939884.069,
+  "updated_at_et": "11-17 13:24 ET",
+  "updated_at_kst": "03:24 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -451,11 +451,11 @@
         "pub_ts": 1794913312.0
       },
       {
-        "title": "Cathie Wood and Jim Cramer Agree on These 10 Stocks: Latest 13F",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/cathie-wood-jim-cramer-agree-132819758.html?.tsrc=rss",
+        "title": "Bill Ackman Cut His Microsoft Stake. Your S&P 500 Fund Can’t.",
+        "url": "https://247wallst.com/investing/etf/2026/11/17/bill-ackman-cut-his-microsoft-stake-your-sp-500-fund-cant/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-17 08:28 ET",
-        "pub_ts": 1794922099.0
+        "time": "11-17 13:02 ET",
+        "pub_ts": 1794938540.0
       }
     ],
     "DIA": [
@@ -2909,6 +2909,13 @@
         "pub_ts": 1794866400.0
       },
       {
+        "title": "Monster Beverage vs. PepsiCo: Steady Growth vs. Seasonal Revenue",
+        "url": "https://www.fool.com/coverage/charts/2026/11/17/monster-beverage-vs-pepsico-steady-growth-vs-seasonal-revenue/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 12:52 ET",
+        "pub_ts": 1794937922.0
+      },
+      {
         "title": "Can PepsiCo's Asia Pacific Foods Business Maintain Volume Growth?",
         "url": "https://finance.yahoo.com/markets/stocks/articles/pepsicos-asia-pacific-foods-business-150300569.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2928,16 +2935,16 @@
         "source": "Yahoo Finance",
         "time": "11-17 09:13 ET",
         "pub_ts": 1794924821.0
-      },
-      {
-        "title": "Why Is PepsiCo Stock Falling 1.8% Following Bernstein Analyst Downgrade?",
-        "url": "https://investorshub.advfn.com/market-news/article/40204/why-is-pepsico-stock-falling-1-8-following-bernstein-analyst-downgrade?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 08:37 ET",
-        "pub_ts": 1794922673.0
       }
     ],
     "XOM": [
+      {
+        "title": "ExxonMobil makes a bold $3 billion move to clean up its balance sheet",
+        "url": "https://www.thestreet.com/investing/stocks/xom-exxonmobil-launches-3-billion-cash-tender-offers-for-four-bond-series?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 13:17 ET",
+        "pub_ts": 1794939420.0
+      },
       {
         "title": "4 High-Yield Energy Stocks That Pay Roth IRA Investors Tax-Free Income",
         "url": "https://247wallst.com/investing/2026/11/17/4-high-yield-energy-stocks-that-pay-roth-ira-investors-tax-free-income/?.tsrc=rss",
@@ -2965,13 +2972,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 05:46 ET",
         "pub_ts": 1794912396.0
-      },
-      {
-        "title": "ExxonMobil's Uaru Startup Lifts Guyana Oil Capacity to 1.1 Million Bpd",
-        "url": "https://finance.yahoo.com/energy/articles/exxonmobils-uaru-startup-lifts-guyana-064000242.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 01:40 ET",
-        "pub_ts": 1794897600.0
       }
     ],
     "JPM": [
@@ -3199,19 +3199,19 @@
   },
   "ticker_news_ts": {
     "KORU": 1794938242.9009693,
-    "SOXL": 1794938242.9009693,
-    "SPY": 1794938242.9009693,
+    "SOXL": 1794939884.0690694,
+    "SPY": 1794939884.0690694,
     "DIA": 1794938242.9009693,
-    "SOXX": 1794938242.9009693,
+    "SOXX": 1794939884.0690694,
     "QQQ": 1794938242.9009693,
-    "SMH": 1794938242.9009693,
-    "IWM": 1794938242.9009693,
+    "SMH": 1794939884.0690694,
+    "IWM": 1794939884.0690694,
     "IGV": 1794938242.9009693,
     "TLT": 1794938242.9009693,
-    "GLD": 1794938242.9009693,
+    "GLD": 1794939884.0690694,
     "SQQQ": 1794938530.632802,
     "TSM": 1794938242.9009693,
-    "VIXY": 1794938242.9009693,
+    "VIXY": 1794939884.0690694,
     "SOXS": 1794938242.9009693,
     "NVDA": 1794938242.9009693,
     "AMD": 1794938530.632802,
@@ -3267,8 +3267,8 @@
     "MRNA": 1794939443.5457082,
     "NKE": 1794939741.1921878,
     "MCD": 1794939443.5457082,
-    "PEP": 1794937447.8924122,
-    "XOM": 1794937557.270838,
+    "PEP": 1794939884.0690694,
+    "XOM": 1794939884.0690694,
     "JPM": 1794939585.9036617,
     "WMT": 1794939585.9036617,
     "V": 1794939443.5457082,
