@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1794922641.662,
-  "updated_at_et": "11-17 08:37 ET",
-  "updated_at_kst": "22:37 KST",
+  "updated_at_ts": 1794922744.651,
+  "updated_at_et": "11-17 08:39 ET",
+  "updated_at_kst": "22:39 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2232,6 +2232,13 @@
     ],
     "DELL": [
       {
+        "title": "What Comes Next For Dell Technologies After A 164% Gain",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/comes-next-dell-technologies-164-131006412.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 08:10 ET",
+        "pub_ts": 1794921006.0
+      },
+      {
         "title": "Dell Technologies (DELL) Declines More Than Market: Some Information for Investors",
         "url": "https://finance.yahoo.com/markets/stocks/articles/dell-technologies-dell-declines-more-214503361.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2258,13 +2265,6 @@
         "source": "Yahoo Finance",
         "time": "11-16 11:27 ET",
         "pub_ts": 1794846462.0
-      },
-      {
-        "title": "Dell and HPE Stocks Are Getting Hammered. Why the Selloff May Be Overdone.",
-        "url": "https://finance.yahoo.com/m/31309464-130b-37a1-ba20-3e329bfb4bea/dell-and-hpe-stocks-are.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-16 10:56 ET",
-        "pub_ts": 1794844560.0
       }
     ],
     "OKLO": [
@@ -2380,6 +2380,13 @@
     ],
     "MU": [
       {
+        "title": "Prediction: This Memory Stock Will Be 2027's Best-Performing AI Stock",
+        "url": "https://www.fool.com/investing/2026/11/17/prediction-this-memory-stock-will-be-2027s-best-pe/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 08:25 ET",
+        "pub_ts": 1794921900.0
+      },
+      {
         "title": "David Tepper Sold Every Broadcom Share Last Quarter and Bought More Micron and Nvidia. Broadcom Has Held Up Better Since",
         "url": "https://247wallst.com/investing/2026/11/17/david-tepper-sold-every-broadcom-share-last-quarter-and-bought-more-micron-and-nvidia-broadcom-has-held-up-better-since/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2406,13 +2413,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 01:49 ET",
         "pub_ts": 1794898140.0
-      },
-      {
-        "title": "AMD, MU, SKHY, AVGO: Chip Stocks Ease Overnight After Selloff On New US Chip Restrictions Targeting China",
-        "url": "https://stocktwits.com/news-articles/markets/equity/amd-mu-skhy-avgo-chip-stocks-ease-overnight-after-selloff-on-new-us-chip-restrictions-targeting-china/cNba10cR9gA?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-16 23:04 ET",
-        "pub_ts": 1794888260.0
       }
     ],
     "SKHY": [
@@ -2602,6 +2602,20 @@
     ],
     "BTC-USD": [
       {
+        "title": "What You Actually Own When You Buy Strategy (MSTR) Stock",
+        "url": "https://247wallst.com/investing/2026/11/17/what-you-actually-own-when-you-buy-strategy-mstr-stock/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 08:22 ET",
+        "pub_ts": 1794921756.0
+      },
+      {
+        "title": "Stock Market Today: Dow Slides Ahead Of Retail Sales; Nvidia Rises With Earnings Report On Tap (Live Coverage)",
+        "url": "https://finance.yahoo.com/m/0c9330f2-68c3-38ef-9244-7dbdfd0853b7/stock-market-today%3A-dow.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 08:10 ET",
+        "pub_ts": 1794921012.0
+      },
+      {
         "title": "A Familiar Setup for Crypto? November 2026 Is Starting to Look a Lot Like November 2022.",
         "url": "https://www.fool.com/investing/2026/11/17/a-familiar-setup-for-crypto-november-2026-is-starting-to-look-a-lot-like-november-2022/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2621,20 +2635,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 07:26 ET",
         "pub_ts": 1794918361.0
-      },
-      {
-        "title": "Crypto Sell-Off: Is Bitcoin a Buy After Plunging Below $70,000 Last Friday?",
-        "url": "https://www.fool.com/investing/2026/11/17/crypto-sell-off-bitcoin-buy-plunging-below-usd70-000-friday/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 06:25 ET",
-        "pub_ts": 1794914702.0
-      },
-      {
-        "title": "Jensen Huang's Departure as Nvidia CEO Could Have Enormous Consequences for Where the Crypto Market Heads Next.",
-        "url": "https://www.fool.com/investing/2026/11/17/nvidia-ceo-resignation-could-have-enormous-consequences-for-crypto/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 04:20 ET",
-        "pub_ts": 1794907202.0
       }
     ],
     "CRWD": [
@@ -3243,23 +3243,23 @@
     "KO": 1794922641.6623302,
     "FLY": 1794922641.6623302,
     "INTC": 1794922641.6623302,
-    "VRT": 1794921047.3276017,
-    "HPE": 1794921047.3276017,
-    "DELL": 1794921047.3276017,
-    "OKLO": 1794921047.3276017,
-    "CEG": 1794921047.3276017,
-    "FPS": 1794921047.3276017,
-    "MU": 1794921047.3276017,
-    "SKHY": 1794921047.3276017,
-    "WDC": 1794921047.3276017,
-    "STX": 1794921047.3276017,
-    "MSTR": 1794921047.3276017,
-    "SNDK": 1794921047.3276017,
-    "BTC-USD": 1794921047.3276017,
-    "CRWD": 1794921047.3276017,
-    "ORCL": 1794921047.3276017,
-    "COIN": 1794921047.3276017,
-    "LLY": 1794921150.8725865,
+    "VRT": 1794922744.650535,
+    "HPE": 1794922744.650535,
+    "DELL": 1794922744.650535,
+    "OKLO": 1794922744.650535,
+    "CEG": 1794922744.650535,
+    "FPS": 1794922744.650535,
+    "MU": 1794922744.650535,
+    "SKHY": 1794922744.650535,
+    "WDC": 1794922744.650535,
+    "STX": 1794922744.650535,
+    "MSTR": 1794922744.650535,
+    "SNDK": 1794922744.650535,
+    "BTC-USD": 1794922744.650535,
+    "CRWD": 1794922744.650535,
+    "ORCL": 1794922744.650535,
+    "COIN": 1794922744.650535,
+    "LLY": 1794922744.650535,
     "MRNA": 1794921150.8725865,
     "NKE": 1794921150.8725865,
     "MCD": 1794921150.8725865,
