@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1794906211.936,
-  "updated_at_et": "11-17 04:03 ET",
-  "updated_at_kst": "18:03 KST",
+  "updated_at_ts": 1794906311.304,
+  "updated_at_et": "11-17 04:05 ET",
+  "updated_at_kst": "18:05 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -839,6 +839,20 @@
     ],
     "NVDA": [
       {
+        "title": "Nvidia to reveal first earnings since spy scandal",
+        "url": "https://finance.yahoo.com/technology/ai/articles/nvidia-earnings-test-ai-boom-014359078.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 03:43 ET",
+        "pub_ts": 1794905030.0
+      },
+      {
+        "title": "Asian stocks sink as scandal-hit Nvidia's earnings loom",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/asian-stocks-sink-scandal-hit-023848163.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 03:36 ET",
+        "pub_ts": 1794904590.0
+      },
+      {
         "title": "Nvidia to halt chip sales to data centers renting over half to China - report",
         "url": "https://finance.yahoo.com/technology/ai/articles/nvidia-halt-chip-sales-data-081754255.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -858,20 +872,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 03:05 ET",
         "pub_ts": 1794902702.0
-      },
-      {
-        "title": "Buying Nvidia ahead of earnings? Is the 20x P/E chip giant a bargain?",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/buying-nvidia-ahead-earnings-20x-075735529.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 02:57 ET",
-        "pub_ts": 1794902255.0
-      },
-      {
-        "title": "Safe haven or bubble? Walmart and Costco now trade at 45x–53x P/E",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/safe-haven-bubble-walmart-costco-075714238.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 02:57 ET",
-        "pub_ts": 1794902234.0
       }
     ],
     "AMD": [
@@ -3059,23 +3059,23 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1794904712.507079,
-    "SOXL": 1794904712.507079,
-    "SPY": 1794904712.507079,
-    "DIA": 1794904712.507079,
-    "SOXX": 1794904712.507079,
-    "QQQ": 1794904712.507079,
-    "SMH": 1794904712.507079,
-    "IWM": 1794904712.507079,
-    "IGV": 1794904712.507079,
-    "TLT": 1794904712.507079,
-    "GLD": 1794904712.507079,
-    "SQQQ": 1794904712.507079,
-    "TSM": 1794904712.507079,
-    "VIXY": 1794904712.507079,
-    "SOXS": 1794904712.507079,
-    "NVDA": 1794904712.507079,
-    "AMD": 1794904712.507079,
+    "KORU": 1794906311.3038502,
+    "SOXL": 1794906311.3038502,
+    "SPY": 1794906311.3038502,
+    "DIA": 1794906311.3038502,
+    "SOXX": 1794906311.3038502,
+    "QQQ": 1794906311.3038502,
+    "SMH": 1794906311.3038502,
+    "IWM": 1794906311.3038502,
+    "IGV": 1794906311.3038502,
+    "TLT": 1794906311.3038502,
+    "GLD": 1794906311.3038502,
+    "SQQQ": 1794906311.3038502,
+    "TSM": 1794906311.3038502,
+    "VIXY": 1794906311.3038502,
+    "SOXS": 1794906311.3038502,
+    "NVDA": 1794906311.3038502,
+    "AMD": 1794906311.3038502,
     "ASML": 1794904814.6761677,
     "QCOM": 1794904814.6761677,
     "AVGO": 1794904814.6761677,
