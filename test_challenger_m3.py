@@ -137,7 +137,9 @@ class TestTable4HtmlDomIntegrity(unittest.TestCase):
         idx = self.html.find(key)
         self.assertGreaterEqual(idx, 0, "timeCycleData not found in predict_radar_5y.html")
         tc_data, _ = json.JSONDecoder().raw_decode(self.html[idx + len(key):])
-        self.assertEqual(len(tc_data), 75, f"Expected 75 tickers in timeCycleData, got {len(tc_data)}")
+        self.assertEqual(len(tc_data), 77, f"Expected 77 tickers in timeCycleData, got {len(tc_data)}")
+        self.assertIn("FN", tc_data)
+        self.assertIn("GLW", tc_data)
 
         btc = tc_data.get("BTC-USD")
         self.assertIsNotNone(btc, "BTC-USD missing in timeCycleData")
@@ -227,9 +229,11 @@ class TestFutuProTerminalDomIntegrity(unittest.TestCase):
         map_json_str = map_match.group(1)
         # Parse map object
         symbol_map = json.loads(re.sub(r',\s*}', '}', map_json_str))
-        self.assertEqual(len(symbol_map), 75, f"SYMBOL_MAP should contain 75 tickers, got {len(symbol_map)}")
+        self.assertEqual(len(symbol_map), 77, f"SYMBOL_MAP should contain 77 tickers, got {len(symbol_map)}")
 
-        # Verify key additions from Defect 6, Short ETFs, and 5 new traditional/space symbols
+        # Verify key additions from Defect 6, Short ETFs, optical additions, and 5 new traditional/space symbols
+        self.assertEqual(symbol_map.get("FN"), "NYSE:FN")
+        self.assertEqual(symbol_map.get("GLW"), "NYSE:GLW")
         self.assertEqual(symbol_map.get("NOW"), "NYSE:NOW")
         self.assertEqual(symbol_map.get("APLD"), "NASDAQ:APLD")
         self.assertEqual(symbol_map.get("COIN"), "NASDAQ:COIN")

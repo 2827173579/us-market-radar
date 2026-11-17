@@ -249,7 +249,7 @@ def send_discord(title: str, description: str, color: int = 0x00e676, fields: li
 # 5. 核心轻量实盘抓取与风控比对逻辑
 # ------------------------------------------------------------------------------
 # ------------------------------------------------------------------------------
-# 75 只全量标的池配置 (14 只宏观/行业/杠杆 ETF + 61 只 AI 与核心个股)
+# 77 只全量标的池配置 (14 只宏观/行业/杠杆 ETF + 63 只 AI 与核心个股)
 # ------------------------------------------------------------------------------
 ETF_TICKERS = [
     "QQQ", "SPY", "DIA", "IWM", "SMH", "SOXX", "SOXL", "KORU",
@@ -258,7 +258,7 @@ ETF_TICKERS = [
 
 CORE_STOCKS = [
     "AAOI", "INTC", "NBIS", "SNDK", "ASTS", "AXTI", "COIN", "NOW", "FPS", "OKLO",
-    "MRVL", "LITE", "MSTR", "STX", "CRWV", "CRDO", "APLD", "DELL", "WDC", "NVDA",
+    "MRVL", "LITE", "FN", "GLW", "MSTR", "STX", "CRWV", "CRDO", "APLD", "DELL", "WDC", "NVDA",
     "SKHY", "HPE", "AMAT", "ORCL", "GOOGL", "ASML", "BE", "PLTR", "MU", "VRT",
     "META", "TSM", "VST", "COHR", "SPCX", "AXP", "CRWD", "MSFT", "QCOM", "NKE",
     "CEG", "V", "RKLB", "KO", "TSLA", "AMZN", "MCD", "PEP", "AAPL", "AVGO",
@@ -1185,12 +1185,12 @@ def run_single_scan_cycle(round_idx=1):
         watchlist = ["NVDA", "META", "TSM", "AMD", "MRVL", "AAOI", "AXTI", "BE", "SKHY", "LITE", "SPCX", "INTC", "MSTR", "SNDK", "QQQ", "SOXL", "SOXS", "KORU", "QCOM", "BTC-USD", "LUNR"]
     alerts_muted = session_code in MUTE_SESSIONS
 
-    # 2. 双线程令牌桶平稳并发拉取 75 只全量标的池 (14 只 ETF + 61 只个股)
-    # 结合 target_watchlist.json 优先，若无则抓取全量 75 只标的 (低波观察基准不占 Finnhub 名额)
+    # 2. 双线程令牌桶平稳并发拉取 77 只全量标的池 (14 只 ETF + 63 只个股)
+    # 结合 target_watchlist.json 优先，若无则抓取全量 77 只标的 (低波观察基准不占 Finnhub 名额)
     REMOVED_OBS_TICKERS = {"JPM", "XOM", "WMT", "CAT", "NASA"}
     scan_pool = list(dict.fromkeys(watchlist + FULL_70_POOL))
     append_log(f"[*] 🚀 启动双线程令牌桶频控引擎 (workers=2, bucket=50/min, min_int=1.05s)...")
-    append_log(f"[*] 📊 正在平稳抓取 {len(scan_pool)} 只全量标的 (含 14 只 ETF + 61 只核心股) 实时报价...")
+    append_log(f"[*] 📊 正在平稳抓取 {len(scan_pool)} 只全量标的 (含 14 只 ETF + 63 只核心股) 实时报价...")
     
     finnhub_pool = [x for x in scan_pool if x != "BTC-USD" and x not in REMOVED_OBS_TICKERS][:60]
     fetched_quotes = fetch_finnhub_quotes_batch(finnhub_pool, FINNHUB_API_KEY) if FINNHUB_API_KEY else {}

@@ -6673,7 +6673,7 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
 
 
 
-# 全域 70 标的扩展映射表 (覆盖主看盘终端全部 54 只个股 + 16 只 ETF，映射到 7 大核心赛道先验以复用 OOS 校准乘数)
+# 全域 77 标的扩展映射表 (覆盖主看盘终端全部核心与扩展个股/ETF，映射到 7 大核心赛道先验以复用 OOS 校准乘数)
 EXTENDED_RADAR_SECTOR_MAP: Dict[str, Tuple[str, str]] = {
     # 半导体与算力硬件 / 液冷服务器
     'QCOM': ('Semiconductors', '通信芯片与端侧AI'),
@@ -6690,6 +6690,8 @@ EXTENDED_RADAR_SECTOR_MAP: Dict[str, Tuple[str, str]] = {
     'SNDK': ('Memory', '存储芯片'),
     # 光通信
     'AXTI': ('Optical_Interconnect', '光通信与互联'),
+    'FN':   ('Optical_Interconnect', '光通信与互联'),
+    'GLW':  ('Optical_Interconnect', '光通信与互联'),
     # 能源与核电
     'OKLO': ('Energy_Power', '数据中心能源电力'),
     'FPS':  ('Energy_Power', '数据中心能源电力'),

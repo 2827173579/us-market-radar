@@ -1,9 +1,22 @@
 {
-  "updated_at_ts": 1794919880.737,
-  "updated_at_et": "11-17 07:51 ET",
-  "updated_at_kst": "21:51 KST",
+  "updated_at_ts": 1794920352.52,
+  "updated_at_et": "11-17 07:59 ET",
+  "updated_at_kst": "21:59 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261117205444653800",
+      "title": "伊朗否认“脏弹”袭击计划：虚假指控，毫无根据",
+      "summary": "伊朗外交部否认有关在华盛顿策划“脏弹”袭击的报道，称指控“毫无根据”。特朗普表示美方正严肃对待相关威胁，但白宫称目前没有可信的美国本土安全威胁。点击查看…",
+      "keywords": [
+        "特朗普"
+      ],
+      "pub_ts": 1794920084.0,
+      "time_et": "11-17 07:54 ET",
+      "time_bj": "20:54 BJ",
+      "time_kst": "21:54 KST",
+      "time_display": "07:54 ET / 20:54 BJ"
+    },
     {
       "id": "20261117203417118800",
       "title": "【美联储穆萨勒姆：美联储或需在春季前多次加息 要尽快行动】 11月17日讯，美国圣路易斯…",
@@ -323,19 +336,6 @@
       "time_bj": "16:45 BJ",
       "time_kst": "17:45 KST",
       "time_display": "03:45 ET / 16:45 BJ"
-    },
-    {
-      "id": "20261117163217920800",
-      "title": "万斯否认与特朗普存在分歧，明年将决定是否参加2028年大选",
-      "summary": "美国副总统万斯表示，将在2027年决定是否参28年总统选举。他承认伊朗战争带来政治代价，但否认与特朗普存在政策分歧。此前有报道称，他正考虑放弃竞选。点击查看…",
-      "keywords": [
-        "特朗普"
-      ],
-      "pub_ts": 1794904337.0,
-      "time_et": "11-17 03:32 ET",
-      "time_bj": "16:32 BJ",
-      "time_kst": "17:32 KST",
-      "time_display": "03:32 ET / 16:32 BJ"
     }
   ],
   "ticker_news": {
@@ -3113,6 +3113,80 @@
         "time": "11-16 10:27 ET",
         "pub_ts": 1794842863.0
       }
+    ],
+    "FN": [
+      {
+        "title": "The Zacks Analyst Blog Highlights Arista Networks, Fabrinet, Analog Devices, Advanced Micro Devices and NVIDIA",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/zacks-analyst-blog-highlights-arista-062800269.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-11 01:28 ET",
+        "pub_ts": 1794378480.0
+      },
+      {
+        "title": "Fabrinet Dropped 33% in a Month Despite a Record Quarter. Time to Sell, or Load Up?",
+        "url": "https://www.tikr.com/blog/fabrinet-dropped-33-in-a-month-despite-a-record-quarter-time-to-sell-or-load-up?ref=yahoofinance&tlnk=yf-261109-w6f5mxvr&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-09 14:34 ET",
+        "pub_ts": 1794252886.0
+      },
+      {
+        "title": "Fabrinet (FN) Stock Jumps As Q1 Earnings Fuel Margin Questions",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/fabrinet-fn-stock-jumps-q1-071823704.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-04 02:18 ET",
+        "pub_ts": 1793776703.0
+      },
+      {
+        "title": "Record Results May Change The Case For Investing In Fabrinet Stock",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/record-results-may-change-case-061930708.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-04 01:19 ET",
+        "pub_ts": 1793773170.0
+      },
+      {
+        "title": "Fabrinet Lost 32% in a Month. Barclays Sees 58% Upside From Here",
+        "url": "https://www.tikr.com/blog/fabrinet-lost-32-in-a-month-barclays-sees-58-upside-from-here?ref=yahoofinance&tlnk=yf-261103-x97mmqvx&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-03 15:57 ET",
+        "pub_ts": 1793739466.0
+      }
+    ],
+    "GLW": [
+      {
+        "title": "Zacks.com featured highlights include NVIDIA, J.M. Smucker, Taiwan Semiconductor, Corning, Lockheed and Cardinal Health",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/zacks-com-featured-highlights-nvidia-070800949.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 02:08 ET",
+        "pub_ts": 1794899280.0
+      },
+      {
+        "title": "Can GLW Benefit From Rising Demand for Advanced Automotive Materials?",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/glw-benefit-rising-demand-advanced-150200160.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-16 10:02 ET",
+        "pub_ts": 1794841320.0
+      },
+      {
+        "title": "GLW vs. ANET: Which AI Stock is the Smarter Investment Option Now?",
+        "url": "https://finance.yahoo.com/technology/ai/articles/glw-vs-anet-ai-stock-141000076.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-16 09:10 ET",
+        "pub_ts": 1794838200.0
+      },
+      {
+        "title": "Here's How Much You Can Expect $10,000 in Corning (GLW) Stock to Pay You in Dividends Next Year",
+        "url": "https://www.fool.com/investing/2026/11/13/heres-how-much-you-can-expect-10000-in-corning-glw/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-13 05:15 ET",
+        "pub_ts": 1794564900.0
+      },
+      {
+        "title": "What Are Corning Investors Betting On?",
+        "url": "https://www.trefis.com/stock/glw/articles/624667/what-are-corning-investors-betting-on/2026-11-12?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-12 12:59 ET",
+        "pub_ts": 1794506380.0
+      }
     ]
   },
   "ticker_news_ts": {
@@ -3190,12 +3264,14 @@
     "JPM": 1794919387.7975376,
     "WMT": 1794919387.7975376,
     "V": 1794919387.7975376,
-    "CAT": 1794919387.7975376
+    "CAT": 1794919387.7975376,
+    "FN": 1794920264.6079395,
+    "GLW": 1794920264.6079395
   },
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (07:34 ET / 20:34 BJ) [美联储] [加息]：【美联储穆萨勒姆：美联储或需在春季前多次加息 要尽快行动】 11月17日讯，美国圣路易斯联储主席穆萨勒姆周二表示，美联储可能需要多次加息以遏制高通胀，且应尽快采取行动，防止问题进一步恶化。穆",
+    "detail": "⚡ 最新核心快讯 (07:54 ET / 20:54 BJ) [特朗普]：伊朗外交部否认有关在华盛顿策划“脏弹”袭击的报道，称指控“毫无根据”。特朗普表示美方正严肃对待相关威胁，但白宫称目前没有可信的美国本土安全威胁。点击查看…",
     "event_name": "",
     "minutes_left": 0
   }

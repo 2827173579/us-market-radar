@@ -107,6 +107,8 @@ MONITORED_TARGETS = {
         "AAOI":  {"name": "AOI", "sub": "北美数据中心高弹性光模块", "cat": "光通信", "cost": 0.0, "shares": 0.0, "base_val": 22.0},
         "AXTI":  {"name": "AXTI", "sub": "磷化铟/砷化镓光通信半导体衬底", "cat": "光通信", "cost": 0.0, "shares": 0.0, "base_val": 45.0},
         "LITE":  {"name": "Lumentum", "sub": "光纤通信器件与超快激光技术", "cat": "光通信", "cost": 0.0, "shares": 0.0, "base_val": 75.0},
+        "FN":    {"name": "Fabrinet", "sub": "800G/1.6T光模块精密光学封装纯代工龙头", "cat": "光通信", "cost": 0.0, "shares": 0.0, "base_val": 0.0},
+        "GLW":   {"name": "康宁", "sub": "AI数据中心高密度光纤光缆与光连接器巨头", "cat": "光通信", "cost": 0.0, "shares": 0.0, "base_val": 0.0},
         
         # 6. 太空商业与低轨卫星
         "SPCX":  {"name": "SpaceX", "sub": "星链与可重复火箭先驱", "cat": "太空商业", "cost": 0.0, "shares": 0.0, "base_val": 147.0},
@@ -4746,8 +4748,8 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
     print(f"[*] 🕒 当前美东市场时段状态: 【{session_name}】")
 
     # 2. 并发秒级拉取 Finnhub 实时报价 (max_workers=2, 稳态间隔防 429)
-    # 免费额度 60次/分。全标的 75 只 (14 ETF + 61 股票)，优先保障 14 只宏观行业 ETF + 45 只核心科技股；15 只低波防守/新传统基准股走 Yahoo 5m + V7 实时穿透
-    DEFENSIVE_11_TICKERS = {"KO", "PEP", "MCD", "AXP", "V", "LLY", "MRNA", "NKE", "HPE", "FPS", "JPM", "XOM", "WMT", "CAT", "NASA"}
+    # 免费额度 60次/分。全标的 77 只 (14 ETF + 63 股票)，优先保障 14 只宏观行业 ETF + 46 只核心高弹性科技股（含 FN）；其余 16 只低波防守/光纤蓝筹走 Yahoo 5m + V7 实时穿透
+    DEFENSIVE_11_TICKERS = {"KO", "PEP", "MCD", "AXP", "V", "LLY", "MRNA", "NKE", "HPE", "FPS", "JPM", "XOM", "WMT", "CAT", "NASA", "GLW"}
     finnhub_tickers = [tk for tk in all_tickers if tk != "BTC-USD" and (tk not in DEFENSIVE_11_TICKERS or (user_portfolio and tk in user_portfolio))][:60]
     realtime_quotes = fetch_finnhub_quotes_batch(finnhub_tickers, FINNHUB_API_KEY) if FINNHUB_API_KEY else {}
     if "BTC-USD" in all_tickers:

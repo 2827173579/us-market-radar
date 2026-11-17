@@ -817,17 +817,19 @@ class TestDiscordSentinelUniverseAndEnv(unittest.TestCase):
         t5 = ds.SENTINEL_UNIVERSE_TIERS["TIER_5_DEFENSE"]
 
         self.assertEqual(len(t1), 5)
-        self.assertEqual(len(t2), 20)
+        self.assertEqual(len(t2), 22)
         self.assertEqual(len(t3), 15)
         self.assertEqual(len(t4), 15)
         self.assertEqual(len(t5), 21)
 
         all_tickers = t1 + t2 + t3 + t4 + t5
-        self.assertEqual(len(all_tickers), 76)
-        self.assertEqual(len(set(all_tickers)), 76)
+        self.assertEqual(len(all_tickers), 78)
+        self.assertEqual(len(set(all_tickers)), 78)
         self.assertNotIn("MARA", all_tickers)
         self.assertNotIn("GOOG", all_tickers)
         self.assertIn("GOOGL", all_tickers)
+        self.assertIn("FN", all_tickers)
+        self.assertIn("GLW", all_tickers)
         self.assertIn("FLY", all_tickers)
         self.assertIn("LUNR", all_tickers)
         self.assertIn("NASA", all_tickers)
