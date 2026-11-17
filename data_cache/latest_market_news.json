@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1794942743.115,
-  "updated_at_et": "11-17 14:12 ET",
-  "updated_at_kst": "04:12 KST",
+  "updated_at_ts": 1794942841.137,
+  "updated_at_et": "11-17 14:14 ET",
+  "updated_at_kst": "04:14 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2606,6 +2606,13 @@
     ],
     "BTC-USD": [
       {
+        "title": "Bitcoin’s 5-Year Outlook: Is It Worth Buying After This Crash?",
+        "url": "https://247wallst.com/investing/cryptocurrency/2026/11/17/bitcoins-5-year-outlook-is-it-worth-buying-after-this-crash/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 13:51 ET",
+        "pub_ts": 1794941513.0
+      },
+      {
         "title": "Sector Update: Financial Stocks Decline Tuesday Afternoon",
         "url": "https://finance.yahoo.com/markets/stocks/articles/sector-financial-stocks-decline-tuesday-183852033.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2627,18 +2634,11 @@
         "pub_ts": 1794926186.0
       },
       {
-        "title": "Software bug freezes Chase: Is it the time for bitcoin?",
-        "url": "https://finance.yahoo.com/video/software-bug-freezes-chase-time-180000372.html?.tsrc=rss",
+        "title": "Wall Street Investors Slowly Get Back to Bitcoin After a $1.9 Billion Exit",
+        "url": "https://beincrypto.com/wall-street-bitcoin-etfs-inflows-return/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-17 13:00 ET",
-        "pub_ts": 1794938400.0
-      },
-      {
-        "title": "Strategy Is Down 28% in a Month. Can MSTR Stock Hit Cantor Fitzgerald’s $208 Target by 2030?",
-        "url": "https://247wallst.com/investing/2026/11/17/strategy-is-down-28-in-a-month-can-mstr-stock-hit-cantor-fitzgeralds-208-target-by-2030/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 12:56 ET",
-        "pub_ts": 1794938187.0
+        "time": "11-17 13:07 ET",
+        "pub_ts": 1794938860.0
       }
     ],
     "CRWD": [
@@ -3256,16 +3256,16 @@
     "MU": 1794942743.1148033,
     "SKHY": 1794942350.2522223,
     "WDC": 1794942545.5346937,
-    "STX": 1794941270.0724359,
+    "STX": 1794942841.1369593,
     "MSTR": 1794942350.2522223,
     "SNDK": 1794942350.2522223,
-    "BTC-USD": 1794941270.0724359,
+    "BTC-USD": 1794942841.1369593,
     "CRWD": 1794942350.2522223,
     "ORCL": 1794942350.2522223,
     "COIN": 1794942350.2522223,
     "LLY": 1794942743.1148033,
     "MRNA": 1794942545.5346937,
-    "NKE": 1794941270.0724359,
+    "NKE": 1794942841.1369593,
     "MCD": 1794942545.5346937,
     "PEP": 1794941463.2646892,
     "XOM": 1794941463.2646892,
