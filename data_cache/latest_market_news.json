@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1794909472.689,
-  "updated_at_et": "11-17 04:57 ET",
-  "updated_at_kst": "18:57 KST",
+  "updated_at_ts": 1794909576.331,
+  "updated_at_et": "11-17 04:59 ET",
+  "updated_at_kst": "18:59 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1157,6 +1157,13 @@
         "pub_ts": 1794901813.0
       },
       {
+        "title": "Inside the $900bn data centre bet behind Anthropic’s IPO",
+        "url": "https://finance.yahoo.com/technology/ai/articles/inside-900bn-data-centre-bet-050008778.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 00:00 ET",
+        "pub_ts": 1794891608.0
+      },
+      {
         "title": "Elon Musk says Larry Page’s ‘Five Nines’ AI prediction is right, despite their decade-long feud",
         "url": "https://www.thestreet.com/investing/elon-musk-larry-page-five-nines-ai-data-center-compute-prediction?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1176,16 +1183,16 @@
         "source": "Yahoo Finance",
         "time": "11-16 19:07 ET",
         "pub_ts": 1794874024.0
-      },
-      {
-        "title": "Christian Muche of POSSIBLE Makes Room for Marketing’s Ever-Growing Guest List",
-        "url": "https://www.beet.tv/2026/11/christian-muche-of-possible-makes-room-for-marketings-ever-growing-guest-list.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-16 18:41 ET",
-        "pub_ts": 1794872479.0
       }
     ],
     "MSFT": [
+      {
+        "title": "3 Undervalued Stocks Trading Up To 47% Below Fair Value",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/3-undervalued-stocks-trading-47-091833258.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 04:18 ET",
+        "pub_ts": 1794907113.0
+      },
       {
         "title": "Is Cerebras Stock Still a Buy After Its Microsoft Deal?",
         "url": "https://www.fool.com/investing/2026/11/17/is-cerebras-stock-still-a-buy-after-its-microsoft-deal/?.tsrc=rss",
@@ -1213,13 +1220,6 @@
         "source": "Yahoo Finance",
         "time": "11-16 18:19 ET",
         "pub_ts": 1794871169.0
-      },
-      {
-        "title": "Armada Named a Priority Team Leader in the American SI Exports Program",
-        "url": "https://finance.yahoo.com/technology/articles/armada-named-priority-team-leader-230900257.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-16 18:09 ET",
-        "pub_ts": 1794870540.0
       }
     ],
     "AAPL": [
@@ -1261,6 +1261,13 @@
     ],
     "PLTR": [
       {
+        "title": "Palantir Just Reported Another Blowout Quarter, and the Stock Sank. Here’s Why.",
+        "url": "https://www.fool.com/investing/2026/11/17/palantir-just-reported-another-blowout-quarter-and-the-stock-sank-heres-why/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 04:30 ET",
+        "pub_ts": 1794907802.0
+      },
+      {
         "title": "Top Analyst Reports for Taiwan Semiconductor, Johnson & Johnson and Palantir",
         "url": "https://finance.yahoo.com/markets/stocks/articles/top-analyst-reports-taiwan-semiconductor-205900812.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1287,13 +1294,6 @@
         "source": "Yahoo Finance",
         "time": "11-16 14:32 ET",
         "pub_ts": 1794857524.0
-      },
-      {
-        "title": "Cathie Wood Adds Nvidia Stock Before Earnings While Selling Palantir",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/cathie-wood-adds-nvidia-stock-174317884.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-16 12:43 ET",
-        "pub_ts": 1794850997.0
       }
     ],
     "NOW": [
@@ -1342,6 +1342,13 @@
         "pub_ts": 1794867245.0
       },
       {
+        "title": "Amazon opens first Caribbean delivery station in Puerto Rico",
+        "url": "https://www.retail-insight-network.com/news/amazon-first-caribbean-delivery-station-puerto-rico/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 04:26 ET",
+        "pub_ts": 1794907608.0
+      },
+      {
         "title": "Amazon Lost 40 Leo Satellites as Launch Stays “Extremely Constrained.” That Widens SpaceX’s Lead",
         "url": "https://www.tikr.com/blog/amazon-lost-40-leo-satellites-as-launch-stays-extremely-constrained-that-widens-spacexs-lead?ref=yahoofinance&tlnk=yf-261117-4rv86xjg&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1361,13 +1368,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 02:45 ET",
         "pub_ts": 1794901533.0
-      },
-      {
-        "title": "Amazon Sold $5 Billion of Data Centers at a “7% Cap Rate.” That’s a Big Problem for Digital Realty and Equinix",
-        "url": "https://www.tikr.com/blog/amazon-sold-5-billion-of-data-centers-at-a-7-cap-rate-thats-a-big-problem-for-digital-realty-and-equinix?ref=yahoofinance&tlnk=yf-261117-4vwrqjqw&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 01:33 ET",
-        "pub_ts": 1794897213.0
       }
     ],
     "CRWV": [
@@ -3128,22 +3128,22 @@
     "SOXS": 1794909472.6889517,
     "NVDA": 1794909472.6889517,
     "AMD": 1794909472.6889517,
-    "ASML": 1794907996.0858915,
-    "QCOM": 1794907996.0858915,
-    "AVGO": 1794907996.0858915,
-    "AMAT": 1794907996.0858915,
-    "META": 1794907996.0858915,
-    "GOOGL": 1794907996.0858915,
-    "MSFT": 1794907996.0858915,
-    "AAPL": 1794907996.0858915,
-    "PLTR": 1794907996.0858915,
-    "NOW": 1794907996.0858915,
-    "AMZN": 1794907996.0858915,
-    "CRWV": 1794907996.0858915,
-    "NBIS": 1794907996.0858915,
-    "APLD": 1794907996.0858915,
-    "VST": 1794907996.0858915,
-    "BE": 1794907996.0858915,
+    "ASML": 1794909576.3306248,
+    "QCOM": 1794909576.3306248,
+    "AVGO": 1794909576.3306248,
+    "AMAT": 1794909576.3306248,
+    "META": 1794909576.3306248,
+    "GOOGL": 1794909576.3306248,
+    "MSFT": 1794909576.3306248,
+    "AAPL": 1794909576.3306248,
+    "PLTR": 1794909576.3306248,
+    "NOW": 1794909576.3306248,
+    "AMZN": 1794909576.3306248,
+    "CRWV": 1794909576.3306248,
+    "NBIS": 1794909576.3306248,
+    "APLD": 1794909576.3306248,
+    "VST": 1794909576.3306248,
+    "BE": 1794909576.3306248,
     "CRDO": 1794908096.4585552,
     "COHR": 1794908096.4585552,
     "MRVL": 1794908096.4585552,
