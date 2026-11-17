@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1794898645.244,
-  "updated_at_et": "11-17 01:57 ET",
-  "updated_at_kst": "15:57 KST",
+  "updated_at_ts": 1794898745.98,
+  "updated_at_et": "11-17 01:59 ET",
+  "updated_at_kst": "15:59 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2676,6 +2676,13 @@
         "pub_ts": 1794856775.0
       },
       {
+        "title": "ExxonMobil's Uaru Startup Lifts Guyana Oil Capacity to 1.1 Million Bpd",
+        "url": "https://finance.yahoo.com/energy/articles/exxonmobils-uaru-startup-lifts-guyana-064000242.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 01:40 ET",
+        "pub_ts": 1794897600.0
+      },
+      {
         "title": "What ExxonMobil Stock's Guyana Expansion Means For Shareholders",
         "url": "https://finance.yahoo.com/energy/articles/exxonmobil-stocks-guyana-expansion-means-232026527.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2695,13 +2702,6 @@
         "source": "Yahoo Finance",
         "time": "11-16 10:19 ET",
         "pub_ts": 1794842340.0
-      },
-      {
-        "title": "ExxonMobil: Cash tender offers to purchase certain outstanding notes",
-        "url": "https://finance.yahoo.com/energy/articles/exxonmobil-cash-tender-offers-purchase-140000142.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-16 09:00 ET",
-        "pub_ts": 1794837600.0
       }
     ],
     "JPM": [
@@ -2917,18 +2917,18 @@
     "SNDK": 1794898645.244183,
     "BTC-USD": 1794898645.244183,
     "CRWD": 1794898645.244183,
-    "ORCL": 1794897170.246955,
+    "ORCL": 1794898745.980343,
     "COIN": 1794898645.244183,
-    "LLY": 1794897170.246955,
-    "MRNA": 1794897170.246955,
-    "NKE": 1794897170.246955,
-    "MCD": 1794897170.246955,
-    "PEP": 1794897170.246955,
-    "XOM": 1794897170.246955,
-    "JPM": 1794897170.246955,
-    "WMT": 1794897170.246955,
-    "V": 1794897170.246955,
-    "CAT": 1794897170.246955
+    "LLY": 1794898745.980343,
+    "MRNA": 1794898745.980343,
+    "NKE": 1794898745.980343,
+    "MCD": 1794898745.980343,
+    "PEP": 1794898745.980343,
+    "XOM": 1794898745.980343,
+    "JPM": 1794898745.980343,
+    "WMT": 1794898745.980343,
+    "V": 1794898745.980343,
+    "CAT": 1794898745.980343
   },
   "calendar_banner": {
     "level": "idle_with_flash",
