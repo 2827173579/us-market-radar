@@ -1,9 +1,23 @@
 {
-  "updated_at_ts": 1794925863.033,
-  "updated_at_et": "11-17 09:31 ET",
-  "updated_at_kst": "23:31 KST",
+  "updated_at_ts": 1794925968.411,
+  "updated_at_et": "11-17 09:32 ET",
+  "updated_at_kst": "23:32 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261117223140118800",
+      "title": "美股开盘，道指跌0.71%，标普500指数跌0.24%，纳指平开。京东(JD.O)开跌6…",
+      "summary": "美股开盘，道指跌0.71%，标普500指数跌0.24%，纳指平开。京东(JD.O)开跌6.23%，此前公布三季度财报，三季度营收3096亿元，同比增长3.5%；微博(WB.O)跌3.33%，公司三季度净收入同比下降7%；英伟达(NVDA.O)开涨0.72%，公司将于盘后公布第三财季业绩。",
+      "keywords": [
+        "英伟达",
+        "标普"
+      ],
+      "pub_ts": 1794925900.0,
+      "time_et": "11-17 09:31 ET",
+      "time_bj": "22:31 BJ",
+      "time_kst": "23:31 KST",
+      "time_display": "09:31 ET / 22:31 BJ"
+    },
     {
       "id": "20261117220306396800",
       "title": "WTI原油突破87美元/桶，日内涨2.21%；布伦特原油站上94美元/桶，日内涨2.34…",
@@ -327,19 +341,6 @@
       "time_bj": "18:35 BJ",
       "time_kst": "19:35 KST",
       "time_display": "05:35 ET / 18:35 BJ"
-    },
-    {
-      "id": "20261117181602737800",
-      "title": "黄仁勋离职后首份财报盘后公布！临时CEO首次迎战华尔街",
-      "summary": "英伟达最新财报将在周二美股盘后揭晓。临时CEO首秀，华尔街紧盯三大疑问！估值遭遇罕见崩塌后，强劲财报还能让华尔街重新买单吗？点击查看...",
-      "keywords": [
-        "英伟达"
-      ],
-      "pub_ts": 1794910562.0,
-      "time_et": "11-17 05:16 ET",
-      "time_bj": "18:16 BJ",
-      "time_kst": "19:16 KST",
-      "time_display": "05:16 ET / 18:16 BJ"
     }
   ],
   "ticker_news": {
@@ -2905,6 +2906,13 @@
         "pub_ts": 1794866400.0
       },
       {
+        "title": "Why Is PepsiCo Stock Falling 1.8% Following Bernstein Analyst Downgrade?",
+        "url": "https://investorshub.advfn.com/market-news/article/40204/why-is-pepsico-stock-falling-1-8-following-bernstein-analyst-downgrade?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 08:37 ET",
+        "pub_ts": 1794922673.0
+      },
+      {
         "title": "PureCycle Participates in PepsiCo Sustainability Innovation Hub 2026",
         "url": "https://finance.yahoo.com/technology/articles/purecycle-participates-pepsico-sustainability-innovation-133000551.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2924,13 +2932,6 @@
         "source": "Yahoo Finance",
         "time": "11-16 14:30 ET",
         "pub_ts": 1794857400.0
-      },
-      {
-        "title": "PepsiCo Has Raised Its Dividend 54 Straight Years. Here's What $10,000 Invested Pays Annually.",
-        "url": "https://www.fool.com/investing/2026/11/16/pepsico-has-raised-its-dividend-54-straight-years-heres-what-10000-invested-pays-annually/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-16 11:03 ET",
-        "pub_ts": 1794844982.0
       }
     ],
     "XOM": [
@@ -2972,6 +2973,13 @@
     ],
     "JPM": [
       {
+        "title": "JPMorgan Names Bregje de Best Next CFO – Jeremy Barnum Steps Down After Six Years",
+        "url": "https://stocktwits.com/news-articles/markets/equity/jp-morgan-names-bregje-de-best-next-cfo-jeremy-barnum-steps-down/cNbaxuoR9Wr?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 09:18 ET",
+        "pub_ts": 1794925108.0
+      },
+      {
         "title": "JPMorgan names Bregje de Best CFO as Jeremy Barnum moves to vice chairman",
         "url": "https://finance.yahoo.com/markets/stocks/articles/jpmorgan-names-bregje-best-cfo-134717882.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2998,16 +3006,16 @@
         "source": "Yahoo Finance",
         "time": "11-17 08:08 ET",
         "pub_ts": 1794920889.0
-      },
-      {
-        "title": "JPM upgrades UAE on conflict resilience, Türkiye on recovery; cuts Greece",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/jpm-upgrades-uae-conflict-resilience-125138844.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 07:51 ET",
-        "pub_ts": 1794919898.0
       }
     ],
     "WMT": [
+      {
+        "title": "The Waltons Won a Tax Court Case in 2000 That Lets a Family Pass a Stock’s Growth to Heirs While Reporting a Taxable Gift of Nearly $0. The Trust It Approved Is Still Legal",
+        "url": "https://247wallst.com/personal-finance/2026/11/17/the-waltons-won-a-tax-court-case-in-2000-that-lets-a-family-pass-a-stocks-growth-to-heirs-while-reporting-a-taxable-gift-of-nearly-0-the-trust-it-approved-is-still-legal/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 09:22 ET",
+        "pub_ts": 1794925325.0
+      },
       {
         "title": "Wells Fargo Raises Its Walmart Target to $135. Is It Still Too Low?",
         "url": "https://www.tikr.com/blog/wells-fargo-raises-its-walmart-target-to-135-is-it-still-too-low?ref=yahoofinance&tlnk=yf-261117-7x82hrxq&.tsrc=rss",
@@ -3023,25 +3031,18 @@
         "pub_ts": 1794913278.0
       },
       {
+        "title": "Is Walmart Stock Increasing Your Market Risk?",
+        "url": "https://www.trefis.com/stock/wmt/articles/625547/is-walmart-stock-increasing-your-market-risk-2/2026-11-17?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 05:38 ET",
+        "pub_ts": 1794911939.0
+      },
+      {
         "title": "Risky Nvidia Is Cheaper Than 'Safe' Walmart",
         "url": "https://www.trefis.com/stock/nvda/articles/625607/risky-nvidia-is-cheaper-than-safe-walmart/2026-11-17?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-17 05:38 ET",
         "pub_ts": 1794911935.0
-      },
-      {
-        "title": "Zacks Investment Ideas feature highlights: Target and Walmart",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/zacks-investment-ideas-feature-highlights-065600463.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 01:56 ET",
-        "pub_ts": 1794898560.0
-      },
-      {
-        "title": "Walmart Reports Earnings on Nov. 19 2026. Here's What Investors Should Be Watching.",
-        "url": "https://www.fool.com/investing/2026/11/17/walmart-reports-earnings-on-nov-19-2026-heres-what-investors-should-be-watching/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 01:16 ET",
-        "pub_ts": 1794896218.0
       }
     ],
     "V": [
@@ -3083,6 +3084,13 @@
     ],
     "CAT": [
       {
+        "title": "Michael Burry Still Bearish On Nvidia, AI Trade, Buys These Software Names",
+        "url": "https://finance.yahoo.com/m/fb87e84e-214e-3d35-8a3a-327f3a77f0ca/michael-burry-still-bearish.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 09:26 ET",
+        "pub_ts": 1794925608.0
+      },
+      {
         "title": "Michael Burry Just Closed the Last of His Caterpillar Puts. The Stock Is Down 46% From Its June High",
         "url": "https://247wallst.com/investing/2026/11/17/michael-burry-just-closed-the-last-of-his-caterpillar-puts-the-stock-is-down-46-from-its-june-high/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3109,13 +3117,6 @@
         "source": "Yahoo Finance",
         "time": "11-16 12:12 ET",
         "pub_ts": 1794849127.0
-      },
-      {
-        "title": "Caterpillar Gets Swept Up in a $4.2 Trillion Market Rout",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/caterpillar-gets-swept-4-2-153751172.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-16 10:37 ET",
-        "pub_ts": 1794843471.0
       }
     ],
     "FN": [
@@ -3260,22 +3261,22 @@
     "ORCL": 1794925863.0333042,
     "COIN": 1794925863.0333042,
     "LLY": 1794925863.0333042,
-    "MRNA": 1794924369.462093,
-    "NKE": 1794924369.462093,
-    "MCD": 1794924369.462093,
-    "PEP": 1794924369.462093,
-    "XOM": 1794924369.462093,
-    "JPM": 1794924369.462093,
-    "WMT": 1794924369.462093,
-    "V": 1794924369.462093,
-    "CAT": 1794924369.462093,
+    "MRNA": 1794925968.4110813,
+    "NKE": 1794925968.4110813,
+    "MCD": 1794925968.4110813,
+    "PEP": 1794925968.4110813,
+    "XOM": 1794925968.4110813,
+    "JPM": 1794925968.4110813,
+    "WMT": 1794925968.4110813,
+    "V": 1794925968.4110813,
+    "CAT": 1794925968.4110813,
     "FN": 1794924857.9781091,
     "GLW": 1794924857.9781091
   },
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (09:03 ET / 22:03 BJ) [原油]：WTI原油突破87美元/桶，日内涨2.21%；布伦特原油站上94美元/桶，日内涨2.34%。",
+    "detail": "⚡ 最新核心快讯 (09:31 ET / 22:31 BJ) [英伟达] [标普]：美股开盘，道指跌0.71%，标普500指数跌0.24%，纳指平开。京东(JD.O)开跌6.23%，此前公布三季度财报，三季度营收3096亿元，同比增长3.5%；微博(WB.O)跌3.33%，",
     "event_name": "",
     "minutes_left": 0
   }
