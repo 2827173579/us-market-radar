@@ -356,6 +356,207 @@ class TestJin10NewsSentinel(unittest.TestCase):
             imr.dispatch_jin10_sentinel_async()
             self.assertEqual(m_async.call_count, 1)
 
+    def test_10_flash_auto_sanitization(self):
+        """验证网页快讯脱敏清洗可彻底剥离金十来源前缀与水印并保留客观摘要。"""
+        samples = [
+            "金十数据11月17日讯，美联储主席鲍威尔称将密切关注后续通胀。",
+            "【金十数据】据金十快讯报道：英伟达发布新款数据中心芯片（金十图示）点击查看更多",
+            "<b>金十快讯</b><br/>据金十VIP消息，美国关税政策引发半导体供应链波动 https://www.jin10.com/flash/123",
+        ]
+        for s in samples:
+            cleaned = jn.sanitize_flash_text(s)
+            self.assertTrue(len(cleaned) > 8)
+            self.assertNotIn("金十", cleaned)
+            self.assertNotIn("jin10.com", cleaned.lower())
+            self.assertNotIn("点击查看", cleaned)
+            self.assertNotIn("<b>", cleaned)
+
+        self.assertIn("美联储主席鲍威尔", jn.sanitize_flash_text(samples[0]))
+        self.assertIn("英伟达发布新款数据中心芯片", jn.sanitize_flash_text(samples[1]))
+        self.assertIn("半导体供应链波动", jn.sanitize_flash_text(samples[2]))
+
+    def test_11_macro_calendar_view_and_interpretations(self):
+        """验证宏观日历状态机（upcoming/countdown_15m/released）、时区与多空定性解读。"""
+        t_in_12m = (self.now_et + timedelta(minutes=12)).astimezone(self.tz_bj).strftime("%Y-%m-%d %H:%M:%S")
+        t_in_40m = (self.now_et + timedelta(minutes=40)).astimezone(self.tz_bj).strftime("%Y-%m-%d %H:%M:%S")
+        t_past_5m = (self.now_et - timedelta(minutes=5)).astimezone(self.tz_bj).strftime("%Y-%m-%d %H:%M:%S")
+
+        events = [
+            jn._normalize_calendar_row({
+                "id": "cal_12m", "country": "美国", "name": "核心CPI年率", "time_period": "10月",
+                "star": 5, "pub_time": t_in_12m, "previous": "3.3", "consensus": "3.2", "actual": "", "unit": "%",
+            }, "jin10_rili"),
+            jn._normalize_calendar_row({
+                "id": "cal_40m", "country": "美国", "name": "PPI年率", "time_period": "10月",
+                "star": 4, "pub_time": t_in_40m, "previous": "2.4", "consensus": "2.5", "actual": "", "unit": "%",
+            }, "jin10_rili"),
+            jn._normalize_calendar_row({
+                "id": "cal_rel", "country": "美国", "name": "PCE物价指数年率", "time_period": "9月",
+                "star": 5, "pub_time": t_past_5m, "previous": "2.3", "consensus": "2.4", "actual": "2.1", "unit": "%",
+            }, "jin10_rili"),
+        ]
+        view = jn.build_macro_calendar_view(events, now_ts=self.now_ts)
+        by_name = {v["name"]: v for v in view}
+
+        self.assertEqual(by_name["美国10月核心CPI年率"]["status"], "countdown_15m")
+        self.assertEqual(by_name["美国10月核心CPI年率"]["minutes_left"], 12)
+        self.assertIn("ET", by_name["美国10月核心CPI年率"]["pub_time_et"])
+        self.assertIn("KST", by_name["美国10月核心CPI年率"]["pub_time_kst"])
+
+        self.assertEqual(by_name["美国10月PPI年率"]["status"], "upcoming")
+        self.assertEqual(by_name["美国9月PCE物价指数年率"]["status"], "released")
+        self.assertIn("偏鸽", by_name["美国9月PCE物价指数年率"]["impact_note"])
+
+        banner_warn = jn.build_calendar_banner_summary(view, [])
+        self.assertEqual(banner_warn["level"], "countdown_15m")
+        self.assertIn("宏观防插针预警", banner_warn["headline"])
+        self.assertIn("12 分钟", banner_warn["headline"])
+
+        banner_idle = jn.build_calendar_banner_summary([], [{
+            "summary": "美联储释放温和政策立场", "keywords": ["美联储"], "time_display": "08:18 ET / 21:18 BJ"
+        }])
+        self.assertEqual(banner_idle["level"], "idle_with_flash")
+        self.assertIn("今日暂无美股五星级经济数据大考", banner_idle["headline"])
+
+    def test_12_ticker_news_rss_finnhub_cache_and_fallback(self):
+        """验证 Yahoo RSS -> Finnhub 回退、25分钟缓存、以及网络异常回退旧 JSON。"""
+        rss_xml = """<?xml version="1.0" encoding="UTF-8"?>
+        <rss version="2.0"><channel>
+            <item>
+                <title>NVIDIA Unveils Next-Gen AI Rack Architecture</title>
+                <link>https://finance.yahoo.com/news/nvidia-next-gen-123.html</link>
+                <pubDate>Tue, 17 Nov 2026 13:00:00 +0000</pubDate>
+                <source>Yahoo Finance</source>
+            </item>
+        </channel></rss>"""
+
+        def fake_news_get(url, params=None, headers=None, timeout=None):
+            self.assertEqual(timeout, 3)
+            m = MagicMock()
+            if "feeds.finance.yahoo.com" in url and "s=NVDA" in url:
+                m.status_code = 200
+                m.text = rss_xml
+            elif "finnhub.io" in url and params and params.get("symbol") == "AMD":
+                m.status_code = 200
+                m.json.return_value = [{
+                    "headline": "AMD Expands Data Center GPU Roadmap",
+                    "url": "https://example.com/amd-roadmap",
+                    "source": "Reuters",
+                    "datetime": int(self.now_ts),
+                }]
+            elif "flash-api" in url:
+                m.status_code = 200
+                m.json.return_value = {
+                    "data": [{
+                        "id": "web_flash_1",
+                        "type": 0,
+                        "important": 1,
+                        "time": self.now_bj_str,
+                        "data": {"content": "金十数据11月17日讯：美联储关注芯片行业资本开支与通胀平衡。"},
+                    }]
+                }
+            else:
+                m.status_code = 200
+                m.text = "<rss><channel></channel></rss>"
+                m.json.return_value = []
+            return m
+
+        cache_path = os.path.join(self.tmpdir.name, "latest_market_news.json")
+        with patch("jin10_news_sentinel.requests.get", side_effect=fake_news_get):
+            payload = jn.build_latest_market_news_cache(
+                tickers=["NVDA", "AMD"],
+                cache_path=cache_path,
+                now_ts=self.now_ts,
+                timeout=3,
+                refresh_all=True,
+                finnhub_api_key="dummy_key",
+            )
+
+        self.assertTrue(os.path.exists(cache_path))
+        self.assertEqual(len(payload["macro_flashes"]), 1)
+        self.assertNotIn("金十", payload["macro_flashes"][0]["summary"])
+        self.assertEqual(payload["ticker_news"]["NVDA"][0]["title"], "NVIDIA Unveils Next-Gen AI Rack Architecture")
+        self.assertEqual(payload["ticker_news"]["AMD"][0]["title"], "AMD Expands Data Center GPU Roadmap")
+
+        # 模拟全网超时断连 -> 验证平滑回退上一轮本地 JSON 中的历史快讯与个股新闻
+        with patch("jin10_news_sentinel.requests.get", side_effect=requests.exceptions.Timeout("offline")):
+            fallback_payload = jn.build_latest_market_news_cache(
+                tickers=["NVDA", "AMD"],
+                cache_path=cache_path,
+                now_ts=self.now_ts + 60,
+                timeout=3,
+                refresh_all=True,
+                finnhub_api_key="dummy_key",
+            )
+        self.assertEqual(len(fallback_payload["macro_flashes"]), 1)
+        self.assertEqual(fallback_payload["ticker_news"]["NVDA"][0]["title"], "NVIDIA Unveils Next-Gen AI Rack Architecture")
+
+    def test_13_terminal_and_predict_banner_rendering(self):
+        """验证终端与 5 年预测页面均正确渲染脱敏后的宏观横幅、实时快讯标签与个股新闻卡片。"""
+        import create_futu_terminal as cft
+        cache_dir = os.path.join(self.tmpdir.name, "data_cache")
+        os.makedirs(cache_dir, exist_ok=True)
+        sample_news = {
+            "updated_at_ts": self.now_ts,
+            "macro_calendar": [{
+                "event_id": "c1", "name": "美国10月核心CPI年率", "country": "美国", "star": 5,
+                "pub_time_ts": self.now_ts + 600, "pub_time_et": "11-17 08:30 ET",
+                "pub_time_kst": "22:30 KST", "previous": "3.3%", "forecast": "3.2%",
+                "actual": "待公布", "status": "countdown_15m", "minutes_left": 10,
+                "impact_note": "待公布",
+            }],
+            "macro_flashes": [{
+                "id": "san_1", "title": "半导体关税动态", "summary": "美联储关注关税对半导体供应链影响。",
+                "keywords": ["美联储", "关税", "半导体"], "time_display": "08:15 ET / 21:15 BJ", "pub_ts": self.now_ts,
+            }],
+            "ticker_news": {
+                "NVDA": [{
+                    "title": "NVDA Quarterly AI Demand Hits Record",
+                    "url": "https://finance.yahoo.com/news/nvda-record.html",
+                    "source": "Yahoo Finance",
+                    "time": "11-17 08:00 ET",
+                }]
+            },
+        }
+        sample_news["calendar_banner"] = jn.build_calendar_banner_summary(
+            sample_news["macro_calendar"], sample_news["macro_flashes"]
+        )
+        with open(os.path.join(cache_dir, "latest_market_news.json"), "w", encoding="utf-8") as wf:
+            json.dump(sample_news, wf, ensure_ascii=False)
+
+        mock_stock = {
+            "ticker": "NVDA", "name": "英伟达", "sub": "AI算力绝对霸主", "cat": "半导体",
+            "last": 140.0, "change": 2.0, "pct_change": 1.45, "active_price": 140.0,
+            "ext_price": 0.0, "ext_pct": 0.0, "effective_pct": 1.45,
+            "ma50": 132.0, "ema20": 135.0, "bias": 6.0, "atr": 4.2, "rsi": 56.0, "vol_ratio": 1.2,
+            "fib_low": 128.0, "fib_high": 144.0, "is_realtime": True,
+            "signal": "🔵 强势多头推进", "session_tag": "盘中", "earnings_tag": "📅 财报倒计时 5天",
+            "is_earnings_risk": True, "rs_20d": 4.5, "intraday_entry_ready": False,
+        }
+        html = cft.build_futu_terminal_html(
+            stocks_data=[mock_stock],
+            macro_data={},
+            weather_info={"weather": "☀️ 晴朗多头", "tactics": "顺势持有"},
+            update_time_str="2026-11-17 08:18:00",
+            has_realtime=True,
+            target_watchlist=["NVDA"],
+            terminal_notifications=[],
+            sync_side_effects=False,
+            sync_dir=self.tmpdir.name,
+        )
+        self.assertIn('id="macroCalendarBanner"', html)
+        self.assertIn("宏观防插针预警", html)
+        self.assertIn('data-cat="macro_flash"', html)
+        self.assertIn("⚡ 实时快讯", html)
+        self.assertIn('id="tickerNewsBox"', html)
+        self.assertIn("NVDA Quarterly AI Demand Hits Record", html)
+        self.assertNotIn("金十数据", html)
+
+        predict_banner = jn.render_macro_calendar_banner_html(sample_news, variant="predict")
+        self.assertIn("<!-- MACRO_CALENDAR_BANNER_START -->", predict_banner)
+        self.assertIn('id="macroCalendarBanner"', predict_banner)
+        self.assertIn("宏观防插针预警", predict_banner)
+
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)

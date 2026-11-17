@@ -4271,6 +4271,27 @@ def print_terminal_tables(tables_data: Dict) -> None:
 
 def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5y.html') -> None:
     time_cycle_json_str = json.dumps(tables_data.get('time_cycle_projections', {}))
+    macro_calendar_banner_html = ""
+    try:
+        import os as _os_mn
+        import jin10_news_sentinel as _jn_news
+        _mnews = tables_data.get("market_news")
+        if not isinstance(_mnews, dict):
+            _out_dir = _os_mn.path.dirname(_os_mn.path.abspath(output_path)) if output_path else _os_mn.path.dirname(_os_mn.path.abspath(__file__))
+            _mcache = _os_mn.path.join(_out_dir, "data_cache", "latest_market_news.json")
+            if not _os_mn.path.exists(_mcache):
+                _mcache = _os_mn.path.join(_os_mn.path.dirname(_os_mn.path.abspath(__file__)), "data_cache", "latest_market_news.json")
+            _mnews = _jn_news.load_latest_market_news_cache(_mcache)
+        macro_calendar_banner_html = _jn_news.render_macro_calendar_banner_html(_mnews, variant="predict")
+    except Exception:
+        macro_calendar_banner_html = (
+            '<!-- MACRO_CALENDAR_BANNER_START -->\n'
+            '<div id="macroCalendarBanner" data-level="idle" style="background: rgba(15,23,42,0.92); '
+            'border: 1px solid rgba(56,189,248,0.28); border-radius: 10px; padding: 10px 16px; '
+            'margin-bottom: 14px; font-size: 12.5px; color: #7dd3fc;">'
+            '📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考</div>\n'
+            '<!-- MACRO_CALENDAR_BANNER_END -->'
+        )
     """
     Milestone M3 & V1.3 UI Pro: 渲染暗黑买方风格 HTML 可视化看板 (Obsidian Institutional Suite)
     支持跨看板顶部导航、Top 10 / 全池 28 股一键切换、7 大赛道交互筛选、双层胜率进度条与富途看盘联动跳转。
@@ -5383,6 +5404,7 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
 
         {flight_banner_html}
         {breadth_banner_html}
+        {macro_calendar_banner_html}
         <!-- Macro Weather Card -->
         <div class="weather-banner">
             <div class="weather-left">

@@ -3869,8 +3869,21 @@ def sync_live_prices_to_predict_html(macro_data=None, stocks_data=None, session_
             with open(json_path, "w", encoding="utf-8") as jf:
                 _json.dump(ai_payload, jf, ensure_ascii=False, indent=2)
 
+        html_out = s[:j] + _json.dumps(html_tc_data, ensure_ascii=False) + s[j + end:]
+        try:
+            import jin10_news_sentinel as _jn_sync
+            _b_start = "<!-- MACRO_CALENDAR_BANNER_START -->"
+            _b_end = "<!-- MACRO_CALENDAR_BANNER_END -->"
+            _i1 = html_out.find(_b_start)
+            _i2 = html_out.find(_b_end, _i1) if _i1 >= 0 else -1
+            if _i1 >= 0 and _i2 > _i1:
+                _mnews_sync = _jn_sync.load_latest_market_news_cache(os.path.join(SCRATCH_DIR, "data_cache", "latest_market_news.json"))
+                _new_banner = _jn_sync.render_macro_calendar_banner_html(_mnews_sync, variant="predict")
+                html_out = html_out[:_i1] + _new_banner + html_out[_i2 + len(_b_end):]
+        except Exception:
+            pass
         with open(html_path, "w", encoding="utf-8") as hf:
-            hf.write(s[:j] + _json.dumps(html_tc_data, ensure_ascii=False) + s[j + end:])
+            hf.write(html_out)
 
         elapsed_ms = (time.perf_counter() - t0) * 1000.0
         print(f"⚡ [轻量实时同步] 已对齐 {len(html_tc_data)} 标的 predict_radar_5y.html 现价/今日节点/15日推演起点 (耗时 {elapsed_ms:.1f}ms)")
@@ -5276,6 +5289,21 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
         print("[!] ⚠️ 警告: 本轮抓取标的数异常为空 (疑似网络瞬时断连)，保留上一轮有效看板数据，跳过覆盖写入以防页面白屏。")
         return
 
+    # 7.0 聚合脱敏新闻面、宏观日历防插针状态与个股资讯缓存 (data_cache/latest_market_news.json, 严格timeout=3s且异常静默降级)
+    try:
+        import jin10_news_sentinel as _jn_agg
+        _all_monitored_tickers = list(MONITORED_TARGETS.get("ETFS", {}).keys()) + list(MONITORED_TARGETS.get("STOCKS", {}).keys())
+        _jn_agg.build_latest_market_news_cache(
+            tickers=_all_monitored_tickers,
+            cache_path=os.path.join(SCRATCH_DIR, "data_cache", "latest_market_news.json"),
+            timeout=3,
+            max_wall_seconds=6.0,
+            refresh_all=("--once" in sys.argv),
+            finnhub_api_key=FINNHUB_API_KEY,
+        )
+    except Exception as _mn_err:
+        print(f"  [!] 📰 消息面缓存聚合静默降级: {_mn_err}")
+
     generate_macro_radar_html(macro_data, weather_info, history_dict, update_time_str=now_str, has_realtime=has_realtime)
     generate_stocks_radar_html(stocks_sorted, history_dict, update_time_str=now_str, has_realtime=has_realtime)
     
@@ -5690,7 +5718,7 @@ def main():
                     pass
 
                 subprocess.run(
-                    ["git", "add", "index.html", "futu_pro_terminal.html", "predict_radar_5y.html", "data_cache/latest_ai_predictions.json", "data_cache/shared_alert_dedupe.json", ".terminal_notifications.json", ".options_cache.json", ".radar_alert_history.json", "macro_radar.html", "stocks_radar.html", ".gitignore"],
+                    ["git", "add", "index.html", "futu_pro_terminal.html", "predict_radar_5y.html", "data_cache/latest_ai_predictions.json", "data_cache/latest_market_news.json", "data_cache/shared_alert_dedupe.json", ".terminal_notifications.json", ".options_cache.json", ".radar_alert_history.json", "macro_radar.html", "stocks_radar.html", ".gitignore"],
                     check=False, creationflags=WIN_NO_WINDOW)
                 subprocess.run(
                     ["git", "commit", "-m", f"⚡ [{'小米平板实盘同步' if ANDROID_MODE else '实盘同步'}] 第 {round_idx} 轮极速刷新 ({now_ts})"],

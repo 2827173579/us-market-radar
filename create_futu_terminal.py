@@ -563,6 +563,27 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
     except Exception:
         ai_predictions = {}
 
+    market_news = {}
+    macro_calendar_banner_html = ""
+    try:
+        import os as _os_mn
+        import jin10_news_sentinel as _jn_news
+        _news_base = sync_dir or _os_mn.path.dirname(_os_mn.path.abspath(__file__))
+        _news_cache_p = _os_mn.path.join(_news_base, "data_cache", "latest_market_news.json")
+        if not _os_mn.path.exists(_news_cache_p):
+            _news_cache_p = _os_mn.path.join(_os_mn.path.dirname(_os_mn.path.abspath(__file__)), "data_cache", "latest_market_news.json")
+        market_news = _jn_news.load_latest_market_news_cache(_news_cache_p)
+        macro_calendar_banner_html = _jn_news.render_macro_calendar_banner_html(market_news, variant="terminal")
+    except Exception:
+        market_news = {"macro_calendar": [], "macro_flashes": [], "ticker_news": {}, "calendar_banner": {}}
+        macro_calendar_banner_html = (
+            '<!-- MACRO_CALENDAR_BANNER_START -->\n'
+            '<div id="macroCalendarBanner" data-level="idle" style="background: rgba(15,23,42,0.92); '
+            'border-bottom: 1px solid rgba(56,189,248,0.28); padding: 5px 14px; font-size: 12px; color: #7dd3fc;">'
+            '📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考</div>\n'
+            '<!-- MACRO_CALENDAR_BANNER_END -->'
+        )
+
     # 将标的数据转为 JSON 供前端动态渲染
     stocks_json = json.dumps(stocks_data, ensure_ascii=False)
     macro_json = json.dumps(macro_data, ensure_ascii=False)
@@ -570,6 +591,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
     watchlist_json = json.dumps(target_watchlist, ensure_ascii=False)
     notifications_json = json.dumps(terminal_notifications, ensure_ascii=False)
     ai_predictions_json = json.dumps(ai_predictions, ensure_ascii=False)
+    market_news_json = json.dumps(market_news, ensure_ascii=False)
 
     html = f"""<!DOCTYPE html>
 <html lang="zh-CN">
@@ -1499,6 +1521,47 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
         .notif-card.level-warning {{ border-left: 4px solid #ffa726; }}
         .notif-card.level-purple {{ border-left: 4px solid #d946ef; }}
         .notif-card.level-info {{ border-left: 4px solid #38bdf8; }}
+        .flash-kw-pill {{
+            display: inline-block;
+            font-size: 10px;
+            padding: 1px 5px;
+            border-radius: 3px;
+            background: rgba(56, 189, 248, 0.16);
+            color: #38bdf8;
+            border: 1px solid rgba(56, 189, 248, 0.28);
+            font-weight: 700;
+            margin-right: 4px;
+        }}
+        .t-news-item {{
+            display: block;
+            text-decoration: none;
+            background: rgba(0, 0, 0, 0.25);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 5px;
+            padding: 6px 8px;
+            transition: all 0.15s ease;
+        }}
+        .t-news-item:hover {{
+            background: rgba(56, 189, 248, 0.08);
+            border-color: rgba(56, 189, 248, 0.38);
+        }}
+        .t-news-title {{
+            color: #e2e8f0;
+            font-weight: 600;
+            line-height: 1.4;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }}
+        .t-news-meta {{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 3px;
+            font-size: 10px;
+            color: #94a3b8;
+        }}
         .notif-drawer-footer {{
             padding: 10px 14px;
             background: #14161b;
@@ -1667,6 +1730,17 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             }}
             #btnNotifCenter::before {{
                 content: "🔔";
+            }}
+            #macroCalendarBanner {{
+                padding: 4px 10px !important;
+                font-size: 11px !important;
+                gap: 6px !important;
+            }}
+            #macroCalDetail {{
+                display: -webkit-box;
+                -webkit-line-clamp: 1;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
             }}
 
             /* 核心布局切换：单屏占据 */
@@ -1880,6 +1954,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
     </header>
     {defensive_alert_banner_html}
     {breadth_alert_banner_html}
+    {macro_calendar_banner_html}
 
     <!-- 主体区域 -->
     <main class="futu-main m-view-watchlist" id="futuMain" style="position: relative;">
@@ -2203,6 +2278,25 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 </div>
             </div>
 
+            <!-- 3.5 📰 个股消息面 & 财报排雷 -->
+            <div class="panel-box" id="tickerNewsBox" data-cat="news" style="background: linear-gradient(135deg, rgba(56, 189, 248, 0.06), #181b22); border-left: 4px solid #38bdf8; border-radius: 6px; padding: 10px 12px; margin-bottom: 8px;">
+                <div class="box-title" style="margin-bottom: 8px;">
+                    <span style="color: #7dd3fc; font-weight: 800;">📰 个股消息面 &amp; 财报排雷</span>
+                    <div style="display: flex; align-items: center; gap: 6px;">
+                        <span id="pNewsTickerBadge" style="font-size: 10.5px; padding: 1px 6px; border-radius: 4px; background: rgba(56,189,248,0.16); color: #7dd3fc; font-weight: 700;">--</span>
+                        <span class="card-toggle-btn" onclick="toggleCard(this)">▲</span>
+                    </div>
+                </div>
+                <div class="panel-box-content">
+                    <div id="pNewsEarningsStatus" style="font-size: 11px; padding: 5px 8px; border-radius: 4px; margin-bottom: 7px; background: rgba(0,0,0,0.28); border: 1px solid rgba(255,255,255,0.06); color: #9ca3af; font-weight: 600;">
+                        🟢 近期无财报雷区
+                    </div>
+                    <div id="pTickerNewsList" style="display: flex; flex-direction: column; gap: 6px; font-size: 11.5px;">
+                        <div style="color: #6b7280; padding: 6px 0;">⏳ 正在加载关联资讯...</div>
+                    </div>
+                </div>
+            </div>
+
             <!-- 4. 宏观气象迷你卡 -->
             <div class="panel-box weather-mini" data-cat="macro" style="padding: 10px 12px;">
                 <div class="box-title" style="margin-bottom: 6px;">
@@ -2317,6 +2411,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 <button type="button" class="notif-scroll-btn notif-scroll-prev" id="notifScrollLeftBtn" onclick="scrollNotifCategory(-150)" title="向左滚动分类">&lt;</button>
                 <div class="notif-category-bar" id="notifCategoryBar">
                     <button class="n-tab active" data-cat="all" onclick="filterNotifCategory('all')">全部 (<span id="catCount_all">0</span>)</button>
+                    <button class="n-tab" data-cat="macro_flash" onclick="filterNotifCategory('macro_flash')" style="color: #38bdf8;">⚡ 实时快讯 (<span id="catCount_macro_flash">0</span>)</button>
                     <button class="n-tab" data-cat="defensive_flight" onclick="filterNotifCategory('defensive_flight')" style="color: #f87171;">🚨 防御起飞 (<span id="catCount_defensive_flight">0</span>)</button>
                     <button class="n-tab" data-cat="5m_entry" onclick="filterNotifCategory('5m_entry')">🎯 5m买点 (<span id="catCount_5m_entry">0</span>)</button>
                     <button class="n-tab" data-cat="portfolio" onclick="filterNotifCategory('portfolio')">🛡️ 持仓风控 (<span id="catCount_portfolio">0</span>)</button>
@@ -2349,12 +2444,132 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
         const INITIAL_PORTFOLIO_TS = {int(time.time() * 1000)};
         const INITIAL_NOTIFICATIONS = {notifications_json};
         const AI_PREDICTIONS = {ai_predictions_json};
+        const INITIAL_MARKET_NEWS = {market_news_json};
 
         let currentFilter = "all";
         let targetWatchlist = Array.isArray(INITIAL_WATCHLIST) ? [...INITIAL_WATCHLIST] : [];
         let userPortfolio = (typeof INITIAL_PORTFOLIO === 'object' && INITIAL_PORTFOLIO !== null) ? {{...INITIAL_PORTFOLIO}} : {{}};
-        let terminalNotifications = Array.isArray(INITIAL_NOTIFICATIONS) ? [...INITIAL_NOTIFICATIONS] : [];
+        let rawTradingNotifications = Array.isArray(INITIAL_NOTIFICATIONS) ? [...INITIAL_NOTIFICATIONS] : [];
+        let latestMarketNews = (typeof INITIAL_MARKET_NEWS === 'object' && INITIAL_MARKET_NEWS !== null) ? INITIAL_MARKET_NEWS : {{ macro_calendar: [], macro_flashes: [], ticker_news: {{}} }};
         let currentNotifCat = "all";
+
+        function escapeNewsHtml(str) {{
+            if (str === null || str === undefined) return "";
+            return String(str)
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#39;");
+        }}
+
+        function buildMacroFlashNotifs(newsObj) {{
+            const flashes = (newsObj && Array.isArray(newsObj.macro_flashes)) ? newsObj.macro_flashes : [];
+            return flashes.map(f => ({{
+                id: "flash_" + String(f.id || ""),
+                category: "macro_flash",
+                level: "info",
+                title: f.title || "⚡ 宏观行业快讯",
+                desc: f.summary || "",
+                time: f.time_display || f.time_et || f.time_bj || "",
+                keywords: Array.isArray(f.keywords) ? f.keywords : [],
+                is_flash: true,
+                _safeText: true
+            }}));
+        }}
+
+        function mergeNotificationsWithFlashes(tradingList, newsObj) {{
+            const tArr = Array.isArray(tradingList) ? tradingList : [];
+            const fArr = buildMacroFlashNotifs(newsObj);
+            return [...tArr, ...fArr];
+        }}
+
+        let terminalNotifications = mergeNotificationsWithFlashes(rawTradingNotifications, latestMarketNews);
+
+        function openMacroFlashDrawer() {{
+            const drawer = document.getElementById("notifDrawerOverlay");
+            if (drawer && drawer.style.display !== "flex") {{
+                drawer.style.display = "flex";
+            }}
+            filterNotifCategory("macro_flash");
+        }}
+
+        function refreshMacroBannerDOM(newsObj) {{
+            if (!newsObj || !newsObj.calendar_banner) return;
+            const hlEl = document.getElementById("macroCalHeadline");
+            const dtEl = document.getElementById("macroCalDetail");
+            const bnEl = document.getElementById("macroCalendarBanner");
+            if (hlEl && newsObj.calendar_banner.headline) hlEl.innerText = newsObj.calendar_banner.headline;
+            if (dtEl && newsObj.calendar_banner.detail !== undefined) dtEl.innerText = newsObj.calendar_banner.detail;
+            if (bnEl && newsObj.calendar_banner.level) bnEl.setAttribute("data-level", newsObj.calendar_banner.level);
+        }}
+
+        function renderTickerNewsBox(ticker, dataObj) {{
+            const badgeEl = document.getElementById("pNewsTickerBadge");
+            const earnEl = document.getElementById("pNewsEarningsStatus");
+            const listEl = document.getElementById("pTickerNewsList");
+            if (badgeEl) badgeEl.innerText = ticker || "--";
+
+            const isEtf = !!(typeof MACRO_DATA !== "undefined" && MACRO_DATA && MACRO_DATA[ticker]) || (dataObj && dataObj.cat === "ETF基准");
+            if (earnEl) {{
+                if (dataObj && dataObj.earnings_tag) {{
+                    earnEl.innerText = dataObj.is_earnings_risk
+                        ? `🚨 高危财报排雷：${{dataObj.earnings_tag}}（防财报跳空插针）`
+                        : `📅 财报倒计时：${{dataObj.earnings_tag}}`;
+                    earnEl.style.color = dataObj.is_earnings_risk ? "#ff5252" : "#ffa726";
+                    earnEl.style.borderColor = dataObj.is_earnings_risk ? "rgba(255,82,82,0.4)" : "rgba(255,167,38,0.35)";
+                    earnEl.style.background = dataObj.is_earnings_risk ? "rgba(255,82,82,0.12)" : "rgba(255,167,38,0.10)";
+                }} else {{
+                    earnEl.innerText = isEtf ? "📊 宏观/行业指数 ETF（无单一财报日风险）" : "🟢 近期无财报雷区";
+                    earnEl.style.color = isEtf ? "#7dd3fc" : "#4ade80";
+                    earnEl.style.borderColor = "rgba(255,255,255,0.06)";
+                    earnEl.style.background = "rgba(0,0,0,0.28)";
+                }}
+            }}
+
+            if (!listEl) return;
+            const tNewsMap = (latestMarketNews && latestMarketNews.ticker_news) ? latestMarketNews.ticker_news : {{}};
+            const items = Array.isArray(tNewsMap[ticker]) ? tNewsMap[ticker] : [];
+            if (items.length > 0) {{
+                listEl.innerHTML = items.slice(0, 5).map(item => {{
+                    const safeUrl = (item.url && /^https?:/i.test(String(item.url).trim())) ? escapeNewsHtml(String(item.url).trim()) : "#";
+                    const safeTitle = escapeNewsHtml(item.title || "最新资讯");
+                    const safeSrc = escapeNewsHtml(item.source || "Market News");
+                    const safeTime = escapeNewsHtml(item.time || "--");
+                    return `
+                        <a class="t-news-item" href="${{safeUrl}}" target="_blank" rel="noopener noreferrer">
+                            <div class="t-news-title">${{safeTitle}} ↗</div>
+                            <div class="t-news-meta">
+                                <span>📰 ${{safeSrc}}</span>
+                                <span style="font-family: monospace;">${{safeTime}}</span>
+                            </div>
+                        </a>
+                    `;
+                }}).join("");
+                return;
+            }}
+
+            const flashes = (latestMarketNews && Array.isArray(latestMarketNews.macro_flashes)) ? latestMarketNews.macro_flashes.slice(0, 3) : [];
+            if (flashes.length > 0) {{
+                const fallbackHdr = `<div style="font-size: 10.5px; color: #38bdf8; margin-bottom: 2px;">⚡ ETF/暂无个股直连新闻 · 自动切换最近宏观快讯</div>`;
+                const flashCards = flashes.map(f => {{
+                    const kws = (Array.isArray(f.keywords) ? f.keywords.slice(0, 3) : []).map(k => `<span class="flash-kw-pill">[${{escapeNewsHtml(k)}}]</span>`).join("");
+                    return `
+                        <div class="t-news-item" onclick="openMacroFlashDrawer()" style="cursor: pointer;">
+                            <div style="margin-bottom: 3px;">${{kws}}</div>
+                            <div class="t-news-title">${{escapeNewsHtml(f.summary || f.title || "")}}</div>
+                            <div class="t-news-meta">
+                                <span>⚡ 宏观快讯</span>
+                                <span style="font-family: monospace;">${{escapeNewsHtml(f.time_display || "--")}}</span>
+                            </div>
+                        </div>
+                    `;
+                }}).join("");
+                listEl.innerHTML = fallbackHdr + flashCards;
+            }} else {{
+                listEl.innerHTML = `<div style="color: #6b7280; padding: 6px 0;">暂无 ${{escapeNewsHtml(ticker)}} 近期新闻与宏观快讯</div>`;
+            }}
+        }}
         try {{
             localStorage.setItem("targetWatchlist", JSON.stringify(targetWatchlist));
         }} catch(e) {{}}
@@ -3549,6 +3764,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 }}
             }}
 
+            renderTickerNewsBox(ticker, data);
             updateStarUI();
 
             // 更新左侧高亮状态 (精确匹配 dataset.ticker，杜绝 BE/MU/KO 误匹配)
@@ -3764,6 +3980,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             // 更新各分类计数
             const counts = {{
                 all: terminalNotifications.length,
+                "macro_flash": 0,
                 "defensive_flight": 0,
                 "5m_entry": 0,
                 "portfolio": 0,
@@ -3819,18 +4036,24 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 else if (n.level === "purple") levelClass = "level-purple";
 
                 const clickAction = n.ticker ? `onclick="jumpToTicker('${{n.ticker}}')"` : "";
+                const kwBadgesHtml = (Array.isArray(n.keywords) && n.keywords.length > 0)
+                    ? `<div style="display: flex; flex-wrap: wrap; gap: 4px; margin-top: 2px;">` + n.keywords.slice(0, 4).map(k => `<span class="flash-kw-pill">[${{escapeNewsHtml(k)}}]</span>`).join("") + `</div>`
+                    : "";
+                const cardTitle = n._safeText ? escapeNewsHtml(n.title || "") : (n.title || "");
+                const cardDesc = n._safeText ? escapeNewsHtml(n.desc || "") : (n.desc || "");
 
                 html += `
                     <div class="notif-card ${{levelClass}}" ${{clickAction}}>
-                        <div style="display: flex; justify-content: space-between; align-items: center;">
-                            <div style="display: flex; align-items: center; gap: 6px;">
-                                <span style="font-weight: 800; font-size: 13px; color: #f3f4f6;">${{n.title || ""}}</span>
+                        <div style="display: flex; justify-content: space-between; align-items: center; gap: 6px;">
+                            <div style="display: flex; align-items: center; gap: 6px; min-width: 0;">
+                                <span style="font-weight: 800; font-size: 13px; color: #f3f4f6;">${{cardTitle}}</span>
                                 ${{n.ticker ? `<span style="font-size: 10px; background: rgba(255,105,0,0.15); color: #ff6900; padding: 1px 5px; border-radius: 3px; font-weight: 700;">${{n.ticker}}</span>` : ""}}
                             </div>
-                            <span style="font-size: 10px; color: #6b7280; font-family: monospace;">${{n.time || ""}}</span>
+                            <span style="font-size: 10px; color: #6b7280; font-family: monospace; white-space: nowrap;">${{escapeNewsHtml(n.time || "")}}</span>
                         </div>
+                        ${{kwBadgesHtml}}
                         <div style="font-size: 12px; color: #cbd5e1; line-height: 1.45;">
-                            ${{n.desc || ""}}
+                            ${{cardDesc}}
                         </div>
                     </div>
                 `;
@@ -4091,8 +4314,8 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             const initialFresh = [];
             terminalNotifications.forEach(n => {{
                 if (n && n.id && !knownNotifIds.has(n.id)) {{
-                    initialFresh.push(n);
                     knownNotifIds.add(n.id);
+                    if (n.category !== "macro_flash") initialFresh.push(n);
                 }}
             }});
             if (initialFresh.length > 0) {{
@@ -4109,15 +4332,17 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
 
         function handleIncomingNotifications(newNotifs) {{
             if (!Array.isArray(newNotifs)) return;
+            rawTradingNotifications = newNotifs;
+            const merged = mergeNotificationsWithFlashes(rawTradingNotifications, latestMarketNews);
             let freshItems = [];
-            newNotifs.forEach(n => {{
+            merged.forEach(n => {{
                 if (n && n.id && !knownNotifIds.has(n.id)) {{
-                    freshItems.push(n);
                     knownNotifIds.add(n.id);
+                    if (n.category !== "macro_flash") freshItems.push(n);
                 }}
             }});
 
-            terminalNotifications = newNotifs;
+            terminalNotifications = merged;
             renderNotifList(currentNotifCat);
 
             // 🎯 用户指令：每推送一个新消息都给提示音！多个消息按先后顺序挨个排队提示
@@ -4132,7 +4357,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             }}
         }}
 
-        // 智能轮询：本地环境调 API，GitHub Pages 静态环境无缝读 .terminal_notifications.json
+        // 智能轮询：本地环境调 API，GitHub Pages 静态环境无缝读 .terminal_notifications.json 与 latest_market_news.json
         function pollLatestNotifications() {{
             const isLocal = window.location.hostname === "127.0.0.1" || window.location.hostname === "localhost";
             const notifUrl = isLocal 
@@ -4151,6 +4376,25 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                     }}
                 }})
                 .catch(() => {{}});
+
+            if (window.location.protocol.startsWith("http")) {{
+                fetch(`data_cache/latest_market_news.json?_t=${{Date.now()}}`)
+                    .then(r => {{
+                        if (!r.ok) throw new Error("HTTP " + r.status);
+                        return r.json();
+                    }})
+                    .then(newsObj => {{
+                        if (newsObj && typeof newsObj === "object") {{
+                            latestMarketNews = newsObj;
+                            terminalNotifications = mergeNotificationsWithFlashes(rawTradingNotifications, latestMarketNews);
+                            terminalNotifications.forEach(n => {{ if (n && n.id) knownNotifIds.add(n.id); }});
+                            refreshMacroBannerDOM(latestMarketNews);
+                            renderNotifList(currentNotifCat);
+                            renderTickerNewsBox(currentTicker, MACRO_DATA[currentTicker] || STOCKS_DATA.find(x => x.ticker === currentTicker));
+                        }}
+                    }})
+                    .catch(() => {{}});
+            }}
         }}
 
         // 横向分类栏微调按钮与鼠标拖拽/滚轮横向滚动引擎
