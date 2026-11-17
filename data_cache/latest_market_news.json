@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1794940453.352,
-  "updated_at_et": "11-17 13:34 ET",
-  "updated_at_kst": "03:34 KST",
+  "updated_at_ts": 1794940569.961,
+  "updated_at_et": "11-17 13:36 ET",
+  "updated_at_kst": "03:36 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2125,6 +2125,13 @@
     ],
     "INTC": [
       {
+        "title": "Intel Stock Is Falling After Parting Blow From Jensen Huang",
+        "url": "https://finance.yahoo.com/m/88a77f9e-b266-31cb-8d20-56c4fec6786d/intel-stock-is-falling-after.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 13:07 ET",
+        "pub_ts": 1794938820.0
+      },
+      {
         "title": "Intel Stock Slips as Nvidia Sells a Quarter of Its Stake",
         "url": "https://finance.yahoo.com/markets/stocks/articles/intel-stock-slips-nvidia-sells-175539227.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2151,13 +2158,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 12:05 ET",
         "pub_ts": 1794935101.0
-      },
-      {
-        "title": "Nvidia, Intel, Salesforce, SpaceX, Anthropic, Sandisk, Home Depot, and More That Explain Today’s Market",
-        "url": "https://finance.yahoo.com/m/5d4c8ff4-57bc-3350-b217-681441a4f8b3/nvidia%2C-intel%2C-salesforce%2C.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 11:29 ET",
-        "pub_ts": 1794932940.0
       }
     ],
     "VRT": [
@@ -3246,7 +3246,7 @@
     "RKLB": 1794939101.8714552,
     "KO": 1794940453.352386,
     "FLY": 1794940453.352386,
-    "INTC": 1794938952.7786355,
+    "INTC": 1794940569.9607227,
     "VRT": 1794939101.8714552,
     "HPE": 1794939101.8714552,
     "DELL": 1794939101.8714552,
@@ -3273,7 +3273,7 @@
     "WMT": 1794939585.9036617,
     "V": 1794939443.5457082,
     "CAT": 1794939585.9036617,
-    "FN": 1794938952.7786355,
+    "FN": 1794940569.9607227,
     "GLW": 1794940453.352386
   },
   "calendar_banner": {
