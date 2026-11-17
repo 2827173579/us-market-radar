@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1794947774.341,
-  "updated_at_et": "11-17 15:36 ET",
-  "updated_at_kst": "05:36 KST",
+  "updated_at_ts": 1794947874.294,
+  "updated_at_et": "11-17 15:37 ET",
+  "updated_at_kst": "05:37 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -792,6 +792,13 @@
     ],
     "TSM": [
       {
+        "title": "Surging AI Demand and Advanced Chipmaking Strengthens Taiwan Semiconductor Manufacturing Company Limited (TSM) Growth Outlook",
+        "url": "https://finance.yahoo.com/technology/ai/articles/surging-ai-demand-advanced-chipmaking-202155834.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 15:21 ET",
+        "pub_ts": 1794946915.0
+      },
+      {
         "title": "The 5 Best Stocks in George Soros’s Portfolio",
         "url": "https://www.tikr.com/blog/the-5-best-stocks-in-george-soross-portfolio?ref=yahoofinance&tlnk=yf-261117-8999fh2f&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -818,13 +825,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 10:02 ET",
         "pub_ts": 1794927745.0
-      },
-      {
-        "title": "Applied Materials vs. Taiwan Semiconductor Manufacturing: Which Tech Stock Is a Better Buy for 2027?",
-        "url": "https://www.fool.com/coverage/better-buy/2026/11/17/applied-materials-vs-taiwan-semiconductor-manufacturing-which-tech-stock-is-a-better-buy-for-2027/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 09:23 ET",
-        "pub_ts": 1794925382.0
       }
     ],
     "VIXY": [
@@ -3197,19 +3197,19 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1794946293.325201,
+    "KORU": 1794947874.2936907,
     "SOXL": 1794947774.340662,
     "SPY": 1794947774.340662,
-    "DIA": 1794946293.325201,
+    "DIA": 1794947874.2936907,
     "SOXX": 1794947774.340662,
-    "QQQ": 1794946293.325201,
+    "QQQ": 1794947874.2936907,
     "SMH": 1794947774.340662,
     "IWM": 1794947774.340662,
     "IGV": 1794946488.3846395,
-    "TLT": 1794946293.325201,
+    "TLT": 1794947874.2936907,
     "GLD": 1794947774.340662,
     "SQQQ": 1794946586.000602,
-    "TSM": 1794946293.325201,
+    "TSM": 1794947874.2936907,
     "VIXY": 1794947774.340662,
     "SOXS": 1794946488.3846395,
     "NVDA": 1794946488.3846395,
