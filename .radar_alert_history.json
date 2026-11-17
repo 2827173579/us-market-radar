@@ -60,6 +60,10 @@
     "MCD": {
       "state": "NORMAL",
       "last_notified_at": 0.0
+    },
+    "V": {
+      "state": "TAKE_PROFIT",
+      "last_notified_at": 1794957037.6326337
     }
   },
   "position_peaks": {
