@@ -7,11 +7,11 @@
     },
     "NBIS": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1794838362.5802836
+      "last_notified_at": 1794877325.2745395
     },
     "NVDA": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1794838362.5802836
+      "last_notified_at": 1794877325.2745395
     },
     "META": {
       "state": "WATCHLIST_ENTRY_READY",
@@ -50,8 +50,8 @@
       "last_notified_at": 0.0
     },
     "FLY": {
-      "state": "TAKE_PROFIT",
-      "last_notified_at": 1794876944.9927113
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     }
   },
   "position_peaks": {
