@@ -2721,6 +2721,18 @@ def dispatch_discord_sentinel_async(macro_data, stocks_sorted, weather_info, now
     except Exception as e:
         print(f"[!] ⚠️ Discord Sentinel async launch failed: {e}")
 
+
+def dispatch_jin10_sentinel_async():
+    """
+    异步、非阻塞触发金十数据红字宏观快讯与美国重磅经济日历哨兵。
+    严格隔离在独立守护线程中，强制 3 秒超时降级，绝不写入公开 HTML 且绝不阻塞主雷达。
+    """
+    try:
+        import jin10_news_sentinel
+        jin10_news_sentinel.run_jin10_sentinel_async()
+    except Exception as e:
+        print(f"[!] ⚠️ Jin10 News Sentinel async launch failed: {e}")
+
 def generate_and_sync_notifications(macro_data, stocks_data, weather_info, now_str, session_code="REGULAR"):
     """
     生成与微信通知 100% 同步的结构化分类消息中心数据，并持久化到 .terminal_notifications.json
@@ -5292,6 +5304,9 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
 
     # 7.5 美股五大梯队量化哨兵与板块巡检 (Discord Webhook 富文本通道)
     dispatch_discord_sentinel_async(macro_data, stocks_sorted, weather_info, now_str)
+
+    # 7.55 金十数据宏观红字快讯与重磅财经日历哨兵 (独立守护线程 · 3s超时熔断)
+    dispatch_jin10_sentinel_async()
 
     # 7.6 专属防御因子背离百分比频道推送 (每次雷达刷新后专属播报)
     try:

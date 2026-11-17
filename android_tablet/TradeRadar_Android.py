@@ -927,6 +927,18 @@ def maybe_push_quant_strategy(quotes, weather, now_str):
         append_log(f"[!] 四次日策略哨兵不可用（需 pandas/yfinance/discord_sentinel.py）: {e}")
 
 
+def maybe_push_jin10_news():
+    """复用电脑版 jin10_news_sentinel；备机接管期间由 shared_alert_state 去重接力推送。"""
+    try:
+        parent = os.path.dirname(PROJECT_DIR)
+        if parent not in sys.path:
+            sys.path.insert(0, parent)
+        import jin10_news_sentinel
+        jin10_news_sentinel.run_jin10_sentinel_async()
+    except Exception:
+        pass
+
+
 ALERT_STATE_FILE = os.path.join(PROJECT_DIR, ".android_alert_state.json")
 try:
     _PARENT = os.path.dirname(PROJECT_DIR)
@@ -1274,6 +1286,7 @@ def run_single_scan_cycle(round_idx=1):
             pass
     sync_to_github_pages(round_idx, now_str, quotes=fetched_quotes, flight=flight, session_name=session_name)
     maybe_push_quant_strategy(fetched_quotes, weather, now_str)
+    maybe_push_jin10_news()
 
 # ------------------------------------------------------------------------------
 # 6. 后台守护线程调度器
