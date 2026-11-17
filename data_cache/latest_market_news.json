@@ -1,13 +1,26 @@
 {
-  "updated_at_ts": 1794951266.055,
-  "updated_at_et": "11-17 16:34 ET",
-  "updated_at_kst": "06:34 KST",
+  "updated_at_ts": 1794951367.892,
+  "updated_at_et": "11-17 16:36 ET",
+  "updated_at_kst": "06:36 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
+      "id": "20261118053455624800",
+      "title": "美国至11月13日当周API原油库存 527.8万桶，预期-50万桶，前值896.8万桶…",
+      "summary": "美国至11月13日当周API原油库存 527.8万桶，预期-50万桶，前值896.8万桶。",
+      "keywords": [
+        "原油"
+      ],
+      "pub_ts": 1794951295.0,
+      "time_et": "11-17 16:34 ET",
+      "time_bj": "05:34 BJ",
+      "time_kst": "06:34 KST",
+      "time_display": "16:34 ET / 05:34 BJ"
+    },
+    {
       "id": "20261118053046854800",
-      "title": "【英伟达营收展望高于预期，黄仁勋离职后首份财报缓解市场担忧】 11月18日讯，英伟达(N…",
-      "summary": "【英伟达营收展望高于预期，黄仁勋离职后首份财报缓解市场担忧】 11月18日讯，英伟达(NVDA.O)周二美股盘后公布财报，第四财季的营收展望高于华尔街预期，在长期领导人黄仁勋辞职使这家芯片制造商陷入危机后，这给投资者带来了一些宽慰。财报显示，英伟达2027财年Q3营收1158亿美元，高于市场预期的1091亿美元，去年同期为570亿美元；Q3净利润653亿美元，高于市场预期的604.06亿美元，去年同期为319.1亿美元。英伟达预计第四财季营收为1300亿美元，上下浮动3%，高于分析师平均预期的1252.5亿美元。英伟达股价盘后涨超2%，但截至周二收盘，该股今年累计下跌约17%。随着黄仁勋离职，投资者正试图寻找有关英伟达未来走向的线索，包括公司向云服务提供商、供应商和人工智能初创企业投入的数十亿美元资金将如何处置，以及最终由谁执掌这家全球市值最高的芯片制造商。",
+      "title": "【英伟达Q4营收展望高于预期，黄仁勋离职后首份财报缓解市场担忧】 11月18日讯，英伟达…",
+      "summary": "【英伟达Q4营收展望高于预期，黄仁勋离职后首份财报缓解市场担忧】 11月18日讯，英伟达(NVDA.O)周二美股盘后公布财报，第四财季的营收展望高于华尔街预期，在长期领导人黄仁勋辞职使这家芯片制造商陷入危机后，这给投资者带来了一些宽慰。财报显示，英伟达2027财年Q3营收1158亿美元，高于市场预期的1091亿美元，去年同期为570亿美元；Q3净利润653亿美元，高于市场预期的604.06亿美元，去年同期为319.1亿美元。英伟达预计第四财季营收为1300亿美元，上下浮动3%，高于分析师平均预期的1252.5亿美元。英伟达股价盘后涨超2%，但截至周二收盘，该股今年累计下跌约17%。随着黄仁勋离职，投资者正试图寻找有关英伟达未来走向的线索，包括公司向云服务提供商、供应商和人工智能初创企业投入的数十亿美元资金将如何处置，以及最终由谁执掌这家全球市值最高的芯片制造商。",
       "keywords": [
         "芯片",
         "英伟达"
@@ -322,19 +335,6 @@
       "time_bj": "23:50 BJ",
       "time_kst": "00:50 KST",
       "time_display": "10:50 ET / 23:50 BJ"
-    },
-    {
-      "id": "20261117234154699800",
-      "title": "英伟达(NVDA.O)逆转盘初涨势，最新跌超3%。",
-      "summary": "英伟达(NVDA.O)逆转盘初涨势，最新跌超3%。",
-      "keywords": [
-        "英伟达"
-      ],
-      "pub_ts": 1794930114.0,
-      "time_et": "11-17 10:41 ET",
-      "time_bj": "23:41 BJ",
-      "time_kst": "00:41 KST",
-      "time_display": "10:41 ET / 23:41 BJ"
     }
   ],
   "ticker_news": {
@@ -932,6 +932,13 @@
     ],
     "AMD": [
       {
+        "title": "Billionaire David Tepper Grew His SpaceX Stake 17-Fold While Dumping AMD and Broadcom",
+        "url": "https://247wallst.com/investing/2026/11/17/billionaire-david-tepper-grew-his-spacex-stake-17-fold-while-dumping-amd-and-broadcom/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 16:10 ET",
+        "pub_ts": 1794949851.0
+      },
+      {
         "title": "ASUS Showcases Full-Stack AI Infrastructure at SC26, Featuring Intel and AMD Platforms",
         "url": "https://finance.yahoo.com/technology/ai/articles/asus-showcases-full-stack-ai-204300656.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -958,13 +965,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 13:56 ET",
         "pub_ts": 1794941762.0
-      },
-      {
-        "title": "A $7.2 Billion Fund Dumps These 3 Stocks",
-        "url": "https://www.tikr.com/blog/a-7-2-billion-fund-dumps-these-3-stocks?ref=yahoofinance&tlnk=yf-261117-536g3rmv&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 13:05 ET",
-        "pub_ts": 1794938753.0
       }
     ],
     "ASML": [
@@ -1154,42 +1154,49 @@
     ],
     "GOOGL": [
       {
-        "title": "Worried About Nvidia? 3 Artificial Intelligence (AI) Stocks That May Be Safer Buys Right Now",
-        "url": "https://www.fool.com/investing/2026/11/17/worried-about-nvidia-3-artificial-intelligence-ai-stocks-that-may-be-safer-buys-right-now/?.tsrc=rss",
+        "title": "Alphabet vs. Amazon: Which Is the Better AI Cloud Stock to Own for the Next 5 Years?",
+        "url": "https://www.fool.com/investing/2026/11/17/alphabet-amazon-better-ai-cloud-stock-5-years/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-17 15:50 ET",
-        "pub_ts": 1794948602.0
+        "time": "11-17 16:20 ET",
+        "pub_ts": 1794950400.0
+      },
+      {
+        "title": "3 Undervalued AI Stocks For November 2026",
+        "url": "https://finance.yahoo.com/technology/ai/articles/3-undervalued-ai-stocks-november-211724115.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 16:17 ET",
+        "pub_ts": 1794950244.0
+      },
+      {
+        "title": "Ibotta Appoints Kamelia Aryafar to Board of Directors",
+        "url": "https://finance.yahoo.com/technology/ai/articles/ibotta-appoints-kamelia-aryafar-board-211500645.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 16:15 ET",
+        "pub_ts": 1794950100.0
       },
       {
         "title": "Berkshire Hathaway Slashes This Top 5 Stock; Nvidia Boosts SpaceX",
         "url": "https://finance.yahoo.com/m/481d5163-b671-396e-a2dc-5c0e57fb9c0b/berkshire-hathaway-slashes.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-17 15:49 ET",
-        "pub_ts": 1794948585.0
+        "time": "11-17 16:11 ET",
+        "pub_ts": 1794949906.0
       },
       {
-        "title": "Ken Fisher Portfolio Review: 5 Highest-Conviction Technology Stocks for Long-Term Growth",
-        "url": "https://finance.yahoo.com/technology/articles/ken-fisher-portfolio-review-5-202007199.html?.tsrc=rss",
+        "title": "Anthropic’s IPO Price Isn’t So Outlandish. Here’s the Case for the Stock.",
+        "url": "https://finance.yahoo.com/m/b191fb08-44aa-3b9a-8661-c6bbc45c3098/anthropic%E2%80%99s-ipo-price-isn%E2%80%99t.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-17 15:20 ET",
-        "pub_ts": 1794946807.0
-      },
-      {
-        "title": "Prediction: SpaceX Stock Could Go Parabolic After Anthropic's IPO. Here's Why.",
-        "url": "https://www.fool.com/investing/2026/11/17/prediction-spacex-stock-could-go-parabolic-after-anthropic-s-ipo-here-s-why/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 15:20 ET",
-        "pub_ts": 1794946802.0
-      },
-      {
-        "title": "This Critical Energy Bill Is A Key Priority For The Lame Duck GOP Congress",
-        "url": "https://finance.yahoo.com/m/a711fc7e-a753-3657-a0e8-ef2d4e4aa2f5/this-critical-energy-bill-is.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 14:29 ET",
-        "pub_ts": 1794943783.0
+        "time": "11-17 16:06 ET",
+        "pub_ts": 1794949560.0
       }
     ],
     "MSFT": [
+      {
+        "title": "Microsoft AI chief says compute isn't a bottleneck — for now",
+        "url": "https://finance.yahoo.com/video/microsoft-ai-chief-says-compute-isnt-a-bottleneck--for-now-213157737.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 16:31 ET",
+        "pub_ts": 1794951117.0
+      },
       {
         "title": "Microsoft's AI pitch at Ignite: Cheaper models as business 'token spend is going through the roof'",
         "url": "https://finance.yahoo.com/markets/article/microsoft-ignite-focuses-on-ai-models-for-specific-tasks-lowering-costs-for-enterprise-203433266.html?.tsrc=rss",
@@ -1217,13 +1224,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 15:19 ET",
         "pub_ts": 1794946751.0
-      },
-      {
-        "title": "Zenity Expands AI Agent Security Coverage Across the Microsoft Ecosystem",
-        "url": "https://finance.yahoo.com/technology/ai/articles/zenity-expands-ai-agent-security-193500080.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 14:35 ET",
-        "pub_ts": 1794944100.0
       }
     ],
     "AAPL": [
@@ -1346,6 +1346,20 @@
         "pub_ts": 1794942427.0
       },
       {
+        "title": "Alphabet vs. Amazon: Which Is the Better AI Cloud Stock to Own for the Next 5 Years?",
+        "url": "https://www.fool.com/investing/2026/11/17/alphabet-amazon-better-ai-cloud-stock-5-years/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 16:20 ET",
+        "pub_ts": 1794950400.0
+      },
+      {
+        "title": "TEAMSTERS RALLY FOR 200 E-BIKE DRIVERS TERMINATED BY AMAZON IN NEW YORK",
+        "url": "https://finance.yahoo.com/economy/policy/articles/teamsters-rally-200-e-bike-211100092.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 16:11 ET",
+        "pub_ts": 1794949860.0
+      },
+      {
         "title": "Steve Eisman Says the Biggest AI Risk Is Local Governments Slowing Data Center Construction",
         "url": "https://247wallst.com/investing/2026/11/17/steve-eisman-says-the-biggest-ai-risk-is-local-governments-slowing-data-center-construction/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1358,20 +1372,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 14:27 ET",
         "pub_ts": 1794943622.0
-      },
-      {
-        "title": "Amazon’s Andy Jassy Plans To Stay Invested In Anthropic For ‘A Long Time’",
-        "url": "https://stocktwits.com/news-articles/markets/equity/amazon-s-andy-jassy-plans-to-stay-invested-in-anthropic-for-a-long-time/cNbO5FVR9ha?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 14:11 ET",
-        "pub_ts": 1794942674.0
-      },
-      {
-        "title": "Amazon Stocks Edge Higher as Anthropic IPO Reveals $110 Billion Compute Pledge",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/amazon-stocks-edge-higher-anthropic-190217398.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 14:02 ET",
-        "pub_ts": 1794942137.0
       }
     ],
     "CRWV": [
@@ -1635,6 +1635,13 @@
     ],
     "MRVL": [
       {
+        "title": "Credo Reaches Settlement in Patent Dispute",
+        "url": "https://finance.yahoo.com/technology/articles/credo-reaches-settlement-patent-dispute-210500796.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 16:05 ET",
+        "pub_ts": 1794949500.0
+      },
+      {
         "title": "Marvell and Intel Are Both Down at Least 50% From Their 2026 Highs. Only 1 Is a Stock I’d Buy.",
         "url": "https://www.fool.com/investing/2026/11/17/marvell-and-intel-are-both-down-at-least-50-from-their-2026-highs-only-1-is-a-stock-id-buy/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1661,13 +1668,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 09:00 ET",
         "pub_ts": 1794924000.0
-      },
-      {
-        "title": "A $7.2 Billion Fund Dumps These 3 Stocks",
-        "url": "https://www.tikr.com/blog/a-7-2-billion-fund-dumps-these-3-stocks?ref=yahoofinance&tlnk=yf-261117-536g3rmv&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 13:05 ET",
-        "pub_ts": 1794938753.0
       }
     ],
     "LITE": [
@@ -1753,6 +1753,20 @@
         "pub_ts": 1794943202.0
       },
       {
+        "title": "Billionaire David Tepper Grew His SpaceX Stake 17-Fold While Dumping AMD and Broadcom",
+        "url": "https://247wallst.com/investing/2026/11/17/billionaire-david-tepper-grew-his-spacex-stake-17-fold-while-dumping-amd-and-broadcom/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 16:10 ET",
+        "pub_ts": 1794949851.0
+      },
+      {
+        "title": "SpaceX Stock (SPCX) Could Crush Wall Street’s Estimates. Here’s Why",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/spacex-stock-spcx-could-crush-210700242.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 16:07 ET",
+        "pub_ts": 1794949620.0
+      },
+      {
         "title": "SpaceX “Off Balance Sheet” Debt for AI Chips Hits the Market This Week. Here’s Where Things Get Interesting",
         "url": "https://www.tikr.com/blog/spacex-off-balance-sheet-debt-for-ai-chips-hits-the-market-this-week-heres-where-things-get-interesting?ref=yahoofinance&tlnk=yf-261117-gxghfqfw&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1765,20 +1779,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 15:20 ET",
         "pub_ts": 1794946802.0
-      },
-      {
-        "title": "Nvidia Sold a Quarter of Its Intel Shares and More Than Half Its Nokia Stake. SpaceX Is Now Its Biggest Investment",
-        "url": "https://247wallst.com/investing/2026/11/17/nvidia-sold-a-quarter-of-its-intel-shares-and-more-than-half-its-nokia-stake-spacex-is-now-its-biggest-investment/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 14:06 ET",
-        "pub_ts": 1794942370.0
-      },
-      {
-        "title": "Prediction: These 2 Stocks Will Be Worth More Than SpaceX 5 Years From Now",
-        "url": "https://www.fool.com/investing/2026/11/17/prediction-2-stocks-that-will-be-worth-more-than-s/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 13:53 ET",
-        "pub_ts": 1794941580.0
       }
     ],
     "ASTS": [
@@ -3205,38 +3205,38 @@
     "VIXY": 1794951009.2564282,
     "SOXS": 1794951266.0550528,
     "NVDA": 1794951266.0550528,
-    "AMD": 1794949814.6658013,
-    "ASML": 1794949814.6658013,
+    "AMD": 1794951367.891977,
+    "ASML": 1794951367.891977,
     "QCOM": 1794951266.0550528,
     "AVGO": 1794951266.0550528,
     "AMAT": 1794951266.0550528,
-    "META": 1794949814.6658013,
-    "GOOGL": 1794949814.6658013,
-    "MSFT": 1794949814.6658013,
+    "META": 1794951367.891977,
+    "GOOGL": 1794951367.891977,
+    "MSFT": 1794951367.891977,
     "AAPL": 1794951266.0550528,
     "PLTR": 1794951266.0550528,
     "NOW": 1794951266.0550528,
-    "AMZN": 1794949814.6658013,
-    "CRWV": 1794949814.6658013,
-    "NBIS": 1794949814.6658013,
-    "APLD": 1794949814.6658013,
-    "VST": 1794949814.6658013,
-    "BE": 1794949814.6658013,
-    "CRDO": 1794949814.6658013,
-    "COHR": 1794949814.6658013,
-    "MRVL": 1794949814.6658013,
-    "LITE": 1794949814.6658013,
-    "AAOI": 1794949814.6658013,
-    "SPCX": 1794949814.6658013,
+    "AMZN": 1794951367.891977,
+    "CRWV": 1794951367.891977,
+    "NBIS": 1794951367.891977,
+    "APLD": 1794951367.891977,
+    "VST": 1794951367.891977,
+    "BE": 1794951367.891977,
+    "CRDO": 1794951367.891977,
+    "COHR": 1794951367.891977,
+    "MRVL": 1794951367.891977,
+    "LITE": 1794951367.891977,
+    "AAOI": 1794951367.891977,
+    "SPCX": 1794951367.891977,
     "ASTS": 1794950113.9298422,
-    "AXTI": 1794949814.6658013,
+    "AXTI": 1794951367.891977,
     "NASA": 1794950113.9298422,
-    "LUNR": 1794949814.6658013,
+    "LUNR": 1794951367.891977,
     "TSLA": 1794950113.9298422,
     "AXP": 1794950113.9298422,
     "RKLB": 1794950113.9298422,
-    "KO": 1794949814.6658013,
-    "FLY": 1794949814.6658013,
+    "KO": 1794951367.891977,
+    "FLY": 1794951367.891977,
     "INTC": 1794950015.1779373,
     "VRT": 1794950113.9298422,
     "HPE": 1794950113.9298422,
@@ -3265,12 +3265,12 @@
     "V": 1794950410.895967,
     "CAT": 1794950613.8851926,
     "FN": 1794950015.1779373,
-    "GLW": 1794949814.6658013
+    "GLW": 1794951367.891977
   },
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (16:30 ET / 05:30 BJ) [芯片] [英伟达]：【英伟达营收展望高于预期，黄仁勋离职后首份财报缓解市场担忧】 11月18日讯，英伟达(NVDA.O)周二美股盘后公布财报，第四财季的营收展望高于华尔街预期，在长期领导人黄仁勋辞职使这家芯片制",
+    "detail": "⚡ 最新核心快讯 (16:34 ET / 05:34 BJ) [原油]：美国至11月13日当周API原油库存 527.8万桶，预期-50万桶，前值896.8万桶。",
     "event_name": "",
     "minutes_left": 0
   }
