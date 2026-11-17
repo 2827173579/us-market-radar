@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1794941164.814,
-  "updated_at_et": "11-17 13:46 ET",
-  "updated_at_kst": "03:46 KST",
+  "updated_at_ts": 1794941270.072,
+  "updated_at_et": "11-17 13:47 ET",
+  "updated_at_kst": "03:47 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2495,6 +2495,13 @@
     ],
     "STX": [
       {
+        "title": "Seagate Stocks Fall 1.6% as Druckenmiller Filing Shows Stake Nearly Tripled Before Slide",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/seagate-stocks-fall-1-6-182534915.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 13:25 ET",
+        "pub_ts": 1794939934.0
+      },
+      {
         "title": "Seagate vs. Micron: Which AI Data Storage Stock is a Smarter Bet?",
         "url": "https://finance.yahoo.com/technology/ai/articles/seagate-vs-micron-ai-data-125800107.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2521,13 +2528,6 @@
         "source": "Yahoo Finance",
         "time": "11-16 10:20 ET",
         "pub_ts": 1794842400.0
-      },
-      {
-        "title": "The Risk Morgan Stanley Watches at Seagate (STX)",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/risk-morgan-stanley-watches-seagate-213331568.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-13 16:33 ET",
-        "pub_ts": 1794605611.0
       }
     ],
     "MSTR": [
@@ -2606,6 +2606,27 @@
     ],
     "BTC-USD": [
       {
+        "title": "Sector Update: Financial Stocks Decline Tuesday Afternoon",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/sector-financial-stocks-decline-tuesday-183852033.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 13:38 ET",
+        "pub_ts": 1794940732.0
+      },
+      {
+        "title": "Bitcoin Falls Below $70,000. Here's Where It Could Finish the Year",
+        "url": "https://www.fool.com/investing/2026/11/17/bitcoin-falls-below-70-000-here-s-where-it-could-finish-the-year/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 13:31 ET",
+        "pub_ts": 1794940262.0
+      },
+      {
+        "title": "Stocks are sliding again, and it's not just AI — the dollar wrecking ball has already leveled the debasement trade",
+        "url": "https://finance.yahoo.com/markets/article/stocks-are-sliding-again-and-its-not-just-ai--the-dollar-wrecking-ball-has-already-leveled-the-debasement-trade-182133990.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 09:36 ET",
+        "pub_ts": 1794926186.0
+      },
+      {
         "title": "Software bug freezes Chase: Is it the time for bitcoin?",
         "url": "https://finance.yahoo.com/video/software-bug-freezes-chase-time-180000372.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2618,27 +2639,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 12:56 ET",
         "pub_ts": 1794938187.0
-      },
-      {
-        "title": "Vivek Ramaswamy's Strive jumps 33 places on the Roundtable 100",
-        "url": "https://www.thestreet.com/crypto/markets/vivek-ramaswamys-strive-jumps-33-places-on-the-roundtable-100?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 12:52 ET",
-        "pub_ts": 1794937944.0
-      },
-      {
-        "title": "Binance hackers move $63 million in stolen ether after two weeks of silence",
-        "url": "https://www.thestreet.com/crypto/markets/binance-hackers-suddenly-move-about-34000-ethereum?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 12:43 ET",
-        "pub_ts": 1794937386.0
-      },
-      {
-        "title": "Grayscale Says To Buy-The-Dip In Bitcoin",
-        "url": "https://www.cryptoprowl.com/releases/grayscale-says-to-buy-the-dip-in-bitcoin-7953?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 12:42 ET",
-        "pub_ts": 1794937320.0
       }
     ],
     "CRWD": [
@@ -2828,6 +2828,13 @@
     ],
     "NKE": [
       {
+        "title": "Nike Bets Its Comeback on Performance Sports",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/nike-bets-comeback-performance-sports-182315312.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 13:23 ET",
+        "pub_ts": 1794939795.0
+      },
+      {
         "title": "Nike’s 2031 targets offer credible recovery path, says Jefferies",
         "url": "https://www.proactiveinvestors.com/companies/news/1101950/nike-s-2031-targets-offer-credible-recovery-path-says-jefferies-1101950.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2854,13 +2861,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 12:36 ET",
         "pub_ts": 1794936960.0
-      },
-      {
-        "title": "NIKE (NKE) Unveils Tuned Air, Nike Mind And Nike Free Across Sports",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/nike-nke-unveils-tuned-air-171348793.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 12:13 ET",
-        "pub_ts": 1794935628.0
       }
     ],
     "MCD": [
@@ -3256,16 +3256,16 @@
     "MU": 1794941164.8143036,
     "SKHY": 1794940771.2043774,
     "WDC": 1794940968.1355534,
-    "STX": 1794939741.1921878,
+    "STX": 1794941270.0724359,
     "MSTR": 1794940771.2043774,
     "SNDK": 1794940771.2043774,
-    "BTC-USD": 1794939741.1921878,
+    "BTC-USD": 1794941270.0724359,
     "CRWD": 1794940771.2043774,
     "ORCL": 1794940771.2043774,
     "COIN": 1794940771.2043774,
     "LLY": 1794941164.8143036,
     "MRNA": 1794940968.1355534,
-    "NKE": 1794939741.1921878,
+    "NKE": 1794941270.0724359,
     "MCD": 1794940968.1355534,
     "PEP": 1794939884.0690694,
     "XOM": 1794939884.0690694,
