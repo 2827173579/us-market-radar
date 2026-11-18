@@ -1419,9 +1419,13 @@
     "2026-11-18:DEFENSIVE_FLIGHT:-0.9": {
       "device": "ANDROID",
       "ts": 1794979531.7763822
+    },
+    "2026-11-18:QCOM:5M_ENTRY": {
+      "device": "ANDROID",
+      "ts": 1794979791.6790726
     }
   },
   "device": "ANDROID",
-  "last_heartbeat_ts": 1794979380.486696,
-  "updated_at": "2026-11-18T05:25:31.779747+00:00"
+  "last_heartbeat_ts": 1794979562.0146234,
+  "updated_at": "2026-11-18T05:29:51.682756+00:00"
 }
