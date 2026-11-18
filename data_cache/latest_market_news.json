@@ -1,9 +1,24 @@
 {
-  "updated_at_ts": 1795035758.396,
-  "updated_at_et": "11-18 16:02 ET",
-  "updated_at_kst": "06:02 KST",
+  "updated_at_ts": 1795035869.627,
+  "updated_at_et": "11-18 16:04 ET",
+  "updated_at_kst": "06:04 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261119050247044800",
+      "title": "【美股收盘：三大股指涨跌不一 英伟达跌近3%】 11月19日讯，美股周三收盘，道指初步收…",
+      "summary": "【美股收盘：三大股指涨跌不一 英伟达跌近3%】 11月19日讯，美股周三收盘，道指初步收跌1.1%，标普500指数跌0.23%，纳指涨0.42%。英伟达(NVDA.O)跌2.8%，AMD(AMD.O)涨超5%，闪迪(SNDK.O)跌2.6%。纳斯达克中国金龙指数跌1.35%，爱奇艺(IQ.O)大跌16%，哔哩哔哩(BILI.O)跌超4%。",
+      "keywords": [
+        "英伟达",
+        "纳斯达克",
+        "标普"
+      ],
+      "pub_ts": 1795035767.0,
+      "time_et": "11-18 16:02 ET",
+      "time_bj": "05:02 BJ",
+      "time_kst": "06:02 KST",
+      "time_display": "16:02 ET / 05:02 BJ"
+    },
     {
       "id": "20261119041609409800",
       "title": "英伟达(NVDA.O)董事长：黄仁勋不会回归。",
@@ -329,19 +344,6 @@
       "time_bj": "21:27 BJ",
       "time_kst": "22:27 KST",
       "time_display": "08:27 ET / 21:27 BJ"
-    },
-    {
-      "id": "20261118211333862800",
-      "title": "美联储盯了十年的通胀指标，突然失灵了？里士满联储发现关键变化",
-      "summary": "如果美国超级核心通胀依然偏高，美联储是否必须继续保持警惕？里士满联储经济学家提出了一个不同的判断：当前服务价格上涨可能更多受到非劳动力成本推动。",
-      "keywords": [
-        "美联储"
-      ],
-      "pub_ts": 1795007613.0,
-      "time_et": "11-18 08:13 ET",
-      "time_bj": "21:13 BJ",
-      "time_kst": "22:13 KST",
-      "time_display": "08:13 ET / 21:13 BJ"
     }
   ],
   "ticker_news": {
@@ -1161,6 +1163,13 @@
     ],
     "GOOGL": [
       {
+        "title": "Here’s What a $1,000 Investment in Alphabet Stock Could Be Worth by 2035",
+        "url": "https://www.fool.com/investing/2026/11/18/here-s-what-a-usd1-000-investment-in-alphabet-stock-could-be-worth-by-2035/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 15:50 ET",
+        "pub_ts": 1795035002.0
+      },
+      {
         "title": "Alphabet is Buying Around $10 Billion More Anthropic Shares on Day 1. Should You Follow?",
         "url": "https://www.fool.com/investing/2026/11/18/alphabet-is-buying-around-usd10-billion-more-anthropic-shares-on-day-1-should-you-follow/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1187,13 +1196,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 13:43 ET",
         "pub_ts": 1795027413.0
-      },
-      {
-        "title": "Who Really Pays For Nvidia's $1.2 Trillion?",
-        "url": "https://www.trefis.com/stock/nvda/articles/626049/who-really-pays-for-nvidia-s-1-2-trillion/2026-11-18?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 13:43 ET",
-        "pub_ts": 1795027391.0
       }
     ],
     "MSFT": [
@@ -1279,6 +1281,13 @@
         "pub_ts": 1795025772.0
       },
       {
+        "title": "Alex Karp put Palantir’s early sales team in the Mandarin Oriental instead of a Motel 6—at 10x the price",
+        "url": "https://finance.yahoo.com/small-business/articles/alex-karp-put-palantir-early-173050319.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 12:30 ET",
+        "pub_ts": 1795023050.0
+      },
+      {
         "title": "Here’s Why Palantir Cracked the Best Blue Chip Stocks to Buy and Hold for Three Years List",
         "url": "https://finance.yahoo.com/markets/stocks/articles/why-palantir-cracked-best-blue-153553108.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1298,13 +1307,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 09:42 ET",
         "pub_ts": 1795012922.0
-      },
-      {
-        "title": "Peter Thiel makes new $161 million ETF bet, dethroning Amazon stock",
-        "url": "https://www.thestreet.com/investing/stocks/peter-thiel-161-million-dollar-ishares-semiconductor-etf?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 23:33 ET",
-        "pub_ts": 1794976380.0
       }
     ],
     "NOW": [
@@ -1383,6 +1385,13 @@
     ],
     "CRWV": [
       {
+        "title": "CoreWeave Stock Forecast: Can Nvidia’s AI Boom Drive More Gains?",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/coreweave-stock-forecast-nvidia-ai-204347762.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 15:43 ET",
+        "pub_ts": 1795034627.0
+      },
+      {
         "title": "IREN, CoreWeave and Nebius Stock Prices Have Plunged More Than 60%. Here's What It Means for AI Investors",
         "url": "https://www.fool.com/investing/2026/11/18/iren-coreweave-and-nebius-stock-prices-have-plunged-more-than-60-here-s-what-it-means-for-ai-investors/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1409,13 +1418,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 12:09 ET",
         "pub_ts": 1795021749.0
-      },
-      {
-        "title": "CoreWeave’s Next $10 Billion Revenue Opportunity Could Change Its Valuation",
-        "url": "https://247wallst.com/investing/2026/11/18/coreweaves-next-10-billion-revenue-opportunity-could-change-its-valuation/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 11:33 ET",
-        "pub_ts": 1795019617.0
       }
     ],
     "NBIS": [
@@ -1531,11 +1533,11 @@
     ],
     "BE": [
       {
-        "title": "Exclusive: AI Data Centers Face Years Waiting for Grid Power. Bloom Says They Don’t Have to Wait",
+        "title": "EXCLUSIVE: AI Data Centers Face Years Waiting for Grid Power. Bloom Says They Don’t Have to Wait",
         "url": "https://www.benzinga.com/markets/prediction-markets/26/11/63408856/exclusive-ai-data-centers-face-years-waiting-for-grid-power-bloom-says-they-dont-have-to-wait?utm_source=yahooFinance&utm_campaign=partner_feed&utm_medium=referral&.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-18 14:50 ET",
-        "pub_ts": 1795031426.0
+        "pub_ts": 1795031420.0
       },
       {
         "title": "Is Bloom Energy Stock At $173 Still Worth Owning?",
@@ -3196,8 +3198,8 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795034330.3565893,
-    "SOXL": 1795034330.3565893,
+    "KORU": 1795035869.6273456,
+    "SOXL": 1795035869.6273456,
     "SPY": 1795035599.2865412,
     "DIA": 1795035599.2865412,
     "SOXX": 1795035599.2865412,
@@ -3217,21 +3219,21 @@
     "QCOM": 1795035758.3959088,
     "AVGO": 1795035758.3959088,
     "AMAT": 1795035758.3959088,
-    "META": 1795034330.3565893,
-    "GOOGL": 1795034330.3565893,
+    "META": 1795035869.6273456,
+    "GOOGL": 1795035869.6273456,
     "MSFT": 1795035758.3959088,
-    "AAPL": 1795034330.3565893,
-    "PLTR": 1795034330.3565893,
-    "NOW": 1795034330.3565893,
-    "AMZN": 1795034330.3565893,
-    "CRWV": 1795034330.3565893,
-    "NBIS": 1795034330.3565893,
-    "APLD": 1795034330.3565893,
-    "VST": 1795034330.3565893,
-    "BE": 1795034330.3565893,
-    "CRDO": 1795034330.3565893,
-    "COHR": 1795034330.3565893,
-    "MRVL": 1795034330.3565893,
+    "AAPL": 1795035869.6273456,
+    "PLTR": 1795035869.6273456,
+    "NOW": 1795035869.6273456,
+    "AMZN": 1795035869.6273456,
+    "CRWV": 1795035869.6273456,
+    "NBIS": 1795035869.6273456,
+    "APLD": 1795035869.6273456,
+    "VST": 1795035869.6273456,
+    "BE": 1795035869.6273456,
+    "CRDO": 1795035869.6273456,
+    "COHR": 1795035869.6273456,
+    "MRVL": 1795035869.6273456,
     "LITE": 1795034432.6876988,
     "AAOI": 1795035599.2865412,
     "SPCX": 1795034432.6876988,
@@ -3259,25 +3261,25 @@
     "SNDK": 1795035758.3959088,
     "BTC-USD": 1795035758.3959088,
     "CRWD": 1795035758.3959088,
-    "ORCL": 1795034330.3565893,
+    "ORCL": 1795035869.6273456,
     "COIN": 1795035758.3959088,
-    "LLY": 1795034228.219766,
-    "MRNA": 1795034228.219766,
+    "LLY": 1795035869.6273456,
+    "MRNA": 1795035869.6273456,
     "NKE": 1795034432.6876988,
     "MCD": 1795034532.9258034,
     "PEP": 1795034432.6876988,
-    "XOM": 1795034228.219766,
+    "XOM": 1795035869.6273456,
     "JPM": 1795034432.6876988,
     "WMT": 1795034432.6876988,
-    "V": 1795034228.219766,
-    "CAT": 1795034330.3565893,
+    "V": 1795035869.6273456,
+    "CAT": 1795035869.6273456,
     "FN": 1795034432.6876988,
     "GLW": 1795034432.6876988
   },
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (15:16 ET / 04:16 BJ) [英伟达]：英伟达(NVDA.O)董事长：黄仁勋不会回归。",
+    "detail": "⚡ 最新核心快讯 (16:02 ET / 05:02 BJ) [英伟达] [纳斯达克] [标普]：【美股收盘：三大股指涨跌不一 英伟达跌近3%】 11月19日讯，美股周三收盘，道指初步收跌1.1%，标普500指数跌0.23%，纳指涨0.42%。英伟达(NVDA.O)跌2.8%，AMD(A",
     "event_name": "",
     "minutes_left": 0
   }
