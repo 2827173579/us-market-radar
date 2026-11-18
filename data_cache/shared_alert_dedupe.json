@@ -1499,9 +1499,13 @@
     "JIN10_FLASH:20261118153927600800": {
       "device": "ANDROID",
       "ts": 1794987804.390224
+    },
+    "2026-11-18:DEFENSIVE_FLIGHT:-1.4": {
+      "device": "ANDROID",
+      "ts": 1794988194.311789
     }
   },
   "device": "ANDROID",
-  "last_heartbeat_ts": 1794987832.8591902,
-  "updated_at": "2026-11-18T07:43:52.862984+00:00"
+  "last_heartbeat_ts": 1794988028.6756666,
+  "updated_at": "2026-11-18T07:49:54.315119+00:00"
 }

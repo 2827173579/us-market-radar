@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1794987983.216,
-  "updated_at_et": "11-18 02:46 ET",
-  "updated_at_kst": "16:46 KST",
+  "updated_at_ts": 1794988171.557,
+  "updated_at_et": "11-18 02:49 ET",
+  "updated_at_kst": "16:49 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -909,6 +909,27 @@
     ],
     "NVDA": [
       {
+        "title": "Down 36% in a month at 48x P/E: Is Marvell a dip or a trap?",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/down-36-month-48x-p-072339117.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 02:23 ET",
+        "pub_ts": 1794986619.0
+      },
+      {
+        "title": "Stocks drop as booming Nvidia results drowned by spy scandal",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/stocks-drop-booming-nvidia-results-024500677.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 02:14 ET",
+        "pub_ts": 1794986043.0
+      },
+      {
+        "title": "Nvidia Spending Pushes AI Data Center Infrastructure Stocks Into Focus",
+        "url": "https://finance.yahoo.com/technology/ai/articles/nvidia-spending-pushes-ai-data-070745601.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 02:07 ET",
+        "pub_ts": 1794985665.0
+      },
+      {
         "title": "Samsung Electro-Mechanics shares jump on expanded Nvidia supply deal",
         "url": "https://finance.yahoo.com/markets/stocks/articles/samsung-electro-mechanics-shares-jump-065747188.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -921,27 +942,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 01:37 ET",
         "pub_ts": 1794983833.0
-      },
-      {
-        "title": "Can Anthropic’s IPO Burn NVDA Stock Bears? Jim Cramer Thinks So — Jeff Bezos Weighs In On Jensen Huang’s Successor",
-        "url": "https://stocktwits.com/news-articles/markets/equity/can-anthropic-ipo-burn-nvda-bears-jim-cramer-jeff-bezos-weighs-jensen-huang-successor/cNbXs4oR9hv?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 01:19 ET",
-        "pub_ts": 1794982748.0
-      },
-      {
-        "title": "BABA Nosedive Continues: Report Says Nvidia Introduced Suspected Chinese Spy To Alibaba, Helping Secure Major Client",
-        "url": "https://stocktwits.com/news-articles/markets/equity/baba-nosedive-continues-report-says-nvidia-introduced-suspected-chinese-spy-to-alibaba-helping-secure-major-client/cNbXAKiR9hH?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 00:53 ET",
-        "pub_ts": 1794981201.0
-      },
-      {
-        "title": "Colette Kress Just Delivered Excellent News for Nvidia Investors",
-        "url": "https://www.fool.com/investing/2026/11/18/colette-kress-just-delivered-excellent-news-for-nvidia-investors/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 00:50 ET",
-        "pub_ts": 1794981002.0
       }
     ],
     "AMD": [
@@ -2611,6 +2611,20 @@
     ],
     "BTC-USD": [
       {
+        "title": "Strategy Spends Far More On STRC Buybacks Than Bitcoin, Peter Schiff Asks Whether Saylor Will Sell BTC To Fund Them",
+        "url": "https://stocktwits.com/news-articles/markets/equity/strategy-spends-far-more-on-strc-buybacks-than-bitcoin-peter-schiff-asks-saylor-sell-btc/cNbXMUuR9hU?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 02:24 ET",
+        "pub_ts": 1794986697.0
+      },
+      {
+        "title": "Bitcoin muted below $65k as rate, tech jitters persist; Fed minutes awaited",
+        "url": "https://finance.yahoo.com/markets/crypto/articles/bitcoin-muted-below-65k-rate-071634482.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 02:16 ET",
+        "pub_ts": 1794986194.0
+      },
+      {
         "title": "Peter Schiff Has a New Candidate for the Next Financial Crisis. It’s Not Bitcoin",
         "url": "https://beincrypto.com/peter-schiff-ai-subprime-financial-crisis/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2630,20 +2644,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 23:16 ET",
         "pub_ts": 1794975391.0
-      },
-      {
-        "title": "Bitcoin's RSI Drops To 24: VanEck's Matthew Sigel Spots A Bullish Signal In Its 12-Month Track Record",
-        "url": "https://stocktwits.com/news-articles/markets/cryptocurrency/bitcoin-s-rsi-drops-to-24-van-eck-s-matthew-sigel-spots-a-bullish-signal-in-its-12-month-track-record/cNbXoneR9h8?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 23:05 ET",
-        "pub_ts": 1794974751.0
-      },
-      {
-        "title": "Coinbase Exec Says AI IPOs Pulling Money From Bitcoin Is ‘A Reasonable Argument’ As Anthropic Debut Nears",
-        "url": "https://stocktwits.com/news-articles/markets/cryptocurrency/coinbase-exec-says-ai-ip-os-pulling-money-from-bitcoin-is-a-reasonable-argument-as-anthropic-debut-nears/cNbXV7cR9hl?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 21:36 ET",
-        "pub_ts": 1794969376.0
       }
     ],
     "CRWD": [
@@ -3218,7 +3218,7 @@
     "TSM": 1794987983.2164648,
     "VIXY": 1794987778.0470092,
     "SOXS": 1794987983.2164648,
-    "NVDA": 1794985796.5676951,
+    "NVDA": 1794988171.557042,
     "AMD": 1794985796.5676951,
     "ASML": 1794985973.5567422,
     "QCOM": 1794985973.5567422,
@@ -3264,7 +3264,7 @@
     "STX": 1794987983.2164648,
     "MSTR": 1794987091.2880123,
     "SNDK": 1794986826.6779554,
-    "BTC-USD": 1794985545.4600408,
+    "BTC-USD": 1794988171.557042,
     "CRWD": 1794987091.2880123,
     "ORCL": 1794987496.947285,
     "COIN": 1794987293.558019,
@@ -3272,7 +3272,7 @@
     "MRNA": 1794987496.947285,
     "NKE": 1794987983.2164648,
     "MCD": 1794987496.947285,
-    "PEP": 1794985545.4600408,
+    "PEP": 1794988171.557042,
     "XOM": 1794986155.1797864,
     "JPM": 1794987496.947285,
     "WMT": 1794987778.0470092,
