@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1794960665.059,
-  "updated_at_et": "11-17 19:11 ET",
-  "updated_at_kst": "09:11 KST",
+  "updated_at_ts": 1794960762.829,
+  "updated_at_et": "11-17 19:12 ET",
+  "updated_at_kst": "09:12 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1198,6 +1198,13 @@
     ],
     "MSFT": [
       {
+        "title": "Nvidia with a positive Q3 despite SEC probing Nvidia amid Huang Scandal",
+        "url": "https://finance.yahoo.com/video/nvidia-with-a-positive-q3-despite-sec-probing-nvidia-amid-huang-scandal-223224298.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 17:32 ET",
+        "pub_ts": 1794954744.0
+      },
+      {
         "title": "AI industry still needs to be 'extremely careful,' Microsoft exec says",
         "url": "https://finance.yahoo.com/video/ai-industry-still-needs-extremely-223000085.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1224,13 +1231,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 18:15 ET",
         "pub_ts": 1794957300.0
-      },
-      {
-        "title": "A Third Outage Strikes, This Time at Chase, Big Banks. The Stocks Are Falling.",
-        "url": "https://finance.yahoo.com/m/8966c28b-5797-3a88-8c32-01d28a7b29a1/a-third-outage-strikes%2C-this.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 17:23 ET",
-        "pub_ts": 1794954180.0
       }
     ],
     "AAPL": [
@@ -1404,18 +1404,18 @@
         "pub_ts": 1794947822.0
       },
       {
+        "title": "Nvidia earnings special coverage: \"The street wants to believe in Nvidia after Jensen\"",
+        "url": "https://finance.yahoo.com/video/nvidia-earnings-special-coverage-the-street-wants-to-believe-in-nvidia-after-jensen-233044562.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 18:30 ET",
+        "pub_ts": 1794958244.0
+      },
+      {
         "title": "Nvidia's Complex Orbit",
         "url": "https://finance.yahoo.com/m/f7117fc6-dd76-3db7-8200-9919f2f435e8/nvidia%27s-complex-orbit.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-17 16:15 ET",
         "pub_ts": 1794950105.0
-      },
-      {
-        "title": "The 5 Best Stocks in Cathie Wood’s Portfolio",
-        "url": "https://www.tikr.com/blog/the-5-best-stocks-in-cathie-woods-portfolio?ref=yahoofinance&tlnk=yf-261117-6rppm4x6&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 14:38 ET",
-        "pub_ts": 1794944322.0
       }
     ],
     "NBIS": [
@@ -3212,31 +3212,31 @@
     "VIXY": 1794960368.9083443,
     "SOXS": 1794960565.4228802,
     "NVDA": 1794960565.4228802,
-    "AMD": 1794959207.9958642,
-    "ASML": 1794959207.9958642,
+    "AMD": 1794960762.8291109,
+    "ASML": 1794960762.8291109,
     "QCOM": 1794960565.4228802,
     "AVGO": 1794960565.4228802,
     "AMAT": 1794960565.4228802,
-    "META": 1794959207.9958642,
-    "GOOGL": 1794959207.9958642,
-    "MSFT": 1794959207.9958642,
+    "META": 1794960762.8291109,
+    "GOOGL": 1794960762.8291109,
+    "MSFT": 1794960762.8291109,
     "AAPL": 1794960565.4228802,
     "PLTR": 1794960565.4228802,
     "NOW": 1794960565.4228802,
-    "AMZN": 1794959207.9958642,
-    "CRWV": 1794959207.9958642,
-    "NBIS": 1794959207.9958642,
-    "APLD": 1794959207.9958642,
-    "VST": 1794959207.9958642,
-    "BE": 1794959207.9958642,
-    "CRDO": 1794959207.9958642,
-    "COHR": 1794959207.9958642,
-    "MRVL": 1794959207.9958642,
+    "AMZN": 1794960762.8291109,
+    "CRWV": 1794960762.8291109,
+    "NBIS": 1794960762.8291109,
+    "APLD": 1794960762.8291109,
+    "VST": 1794960762.8291109,
+    "BE": 1794960762.8291109,
+    "CRDO": 1794960762.8291109,
+    "COHR": 1794960762.8291109,
+    "MRVL": 1794960762.8291109,
     "LITE": 1794959308.145522,
-    "AAOI": 1794959207.9958642,
+    "AAOI": 1794960762.8291109,
     "SPCX": 1794959308.145522,
     "ASTS": 1794959505.059496,
-    "AXTI": 1794959207.9958642,
+    "AXTI": 1794960762.8291109,
     "NASA": 1794959505.059496,
     "LUNR": 1794959308.145522,
     "TSLA": 1794959505.059496,
