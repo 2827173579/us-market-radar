@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1794996817.456,
-  "updated_at_et": "11-18 05:13 ET",
-  "updated_at_kst": "19:13 KST",
+  "updated_at_ts": 1794996917.61,
+  "updated_at_et": "11-18 05:15 ET",
+  "updated_at_kst": "19:15 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1571,6 +1571,13 @@
     ],
     "SPCX": [
       {
+        "title": "Should You Really Buy Anthropic Stock At the IPO? History Has a Clear Answer for Investors.",
+        "url": "https://www.fool.com/investing/2026/11/18/should-you-buy-anthropic-stock-ipo-history-clear-answer/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 04:59 ET",
+        "pub_ts": 1794995942.0
+      },
+      {
         "title": "Bitcoin Could Rebound After Anthropic IPO, Just Like It Did After SpaceX Listing, Says Michaël van de Poppe",
         "url": "https://stocktwits.com/news-articles/markets/cryptocurrency/bitcoin-could-rebound-after-anthropic-ipo-just-like-it-did-after-space-x-listing-says-michael-van-de-poppe/cNbXvFKR9LT?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1597,13 +1604,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 22:30 ET",
         "pub_ts": 1794972605.0
-      },
-      {
-        "title": "SpaceX CFO Sees No ‘Magic Wand’ For Anthropic’s Data Center Plans — And GTA 6 Is Stealing Some Of Its IPO Thunder",
-        "url": "https://stocktwits.com/news-articles/markets/equity/spacex-no-magic-wand-anthropic-data-center-plans-gta-6-stealing-ipo-thunder/cNbXFXiR9hn?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 22:18 ET",
-        "pub_ts": 1794971903.0
       }
     ],
     "ASTS": [
@@ -3052,7 +3052,7 @@
     "MRVL": 1794996601.375194,
     "LITE": 1794996696.8592582,
     "AAOI": 1794996395.1313431,
-    "SPCX": 1794995348.47437,
+    "SPCX": 1794996858.8878021,
     "ASTS": 1794995599.3123813,
     "AXTI": 1794996696.8592582,
     "NASA": 1794996245.9648032,
@@ -3089,8 +3089,8 @@
     "WMT": 1794996497.28717,
     "V": 1794996395.1313431,
     "CAT": 1794996395.1313431,
-    "FN": 1794995348.47437,
-    "GLW": 1794995348.47437
+    "FN": 1794996858.8878021,
+    "GLW": 1794996858.8878021
   },
   "calendar_banner": {
     "level": "idle_with_flash",
