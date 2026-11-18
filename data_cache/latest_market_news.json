@@ -1,9 +1,23 @@
 {
-  "updated_at_ts": 1794973400.962,
-  "updated_at_et": "11-17 22:43 ET",
-  "updated_at_kst": "12:43 KST",
+  "updated_at_ts": 1794973666.032,
+  "updated_at_et": "11-17 22:47 ET",
+  "updated_at_kst": "12:47 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261118114333355800",
+      "title": "英伟达大戏里，普通投资者怎么“下注”？",
+      "summary": "英伟达市值已占标普500指数总市值的5.9%，广泛进入美国人的退休储蓄和证券账户。黄仁勋离职引发公司治理疑虑后，普通投资者开始重新评估持仓......",
+      "keywords": [
+        "英伟达",
+        "标普"
+      ],
+      "pub_ts": 1794973413.0,
+      "time_et": "11-17 22:43 ET",
+      "time_bj": "11:43 BJ",
+      "time_kst": "12:43 KST",
+      "time_display": "22:43 ET / 11:43 BJ"
+    },
     {
       "id": "20261118113842181800",
       "title": "金价苦等转机，联储纪要能否撬动空头？",
@@ -331,19 +345,6 @@
       "time_bj": "06:50 BJ",
       "time_kst": "07:50 KST",
       "time_display": "17:50 ET / 06:50 BJ"
-    },
-    {
-      "id": "20261118064441416800",
-      "title": "英伟达电话会议期间，英伟达(NVDA.O)盘后再度拉升，涨幅扩大至4%；美国新云股走高，…",
-      "summary": "英伟达电话会议期间，英伟达(NVDA.O)盘后再度拉升，涨幅扩大至4%；美国新云股走高，Nebius涨近10%，Coreweave(CRWV.O)涨近7%。",
-      "keywords": [
-        "英伟达"
-      ],
-      "pub_ts": 1794955481.0,
-      "time_et": "11-17 17:44 ET",
-      "time_bj": "06:44 BJ",
-      "time_kst": "07:44 KST",
-      "time_display": "17:44 ET / 06:44 BJ"
     }
   ],
   "ticker_news": {
@@ -1947,6 +1948,13 @@
         "pub_ts": 1794932827.0
       },
       {
+        "title": "“Of Course,” Musk Says When Told Tesla’s $1.6 Trillion Already Prices In Moderate Cybercab Success.",
+        "url": "https://www.tikr.com/blog/of-course-musk-says-when-told-teslas-1-6-trillion-already-prices-in-moderate-cybercab-success?ref=yahoofinance&tlnk=yf-261117-g8r23qw9&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 22:18 ET",
+        "pub_ts": 1794971937.0
+      },
+      {
         "title": "SpaceX (SPCX) Merger Talks Advance As $74 Billion AI Campus Plan Takes Shape",
         "url": "https://finance.yahoo.com/technology/ai/articles/spacex-spcx-merger-talks-advance-011143094.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1966,13 +1974,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 18:23 ET",
         "pub_ts": 1794957791.0
-      },
-      {
-        "title": "NIO vs. Tesla: Which EV Stock Is a Better Buy for 2027?",
-        "url": "https://www.fool.com/coverage/better-buy/2026/11/17/nio-vs-tesla-which-ev-stock-is-a-better-buy-for-2027/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 17:39 ET",
-        "pub_ts": 1794955142.0
       }
     ],
     "AXP": [
@@ -2199,6 +2200,13 @@
     ],
     "HPE": [
       {
+        "title": "What Does Hewlett Packard Enterprise (HPE) Gaining A Top 14 AI Supercomputer Mean?",
+        "url": "https://finance.yahoo.com/technology/ai/articles/does-hewlett-packard-enterprise-hpe-030945349.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 22:09 ET",
+        "pub_ts": 1794971385.0
+      },
+      {
         "title": "Super Micro Falls 4%, Dell and Hewlett Packard Enterprise Slide 2%: Do New U.S. Export Curbs Deepen Super Micro’s China Problem?",
         "url": "https://247wallst.com/investing/2026/11/17/super-micro-falls-4-dell-and-hewlett-packard-enterprise-slide-2-do-new-u-s-export-curbs-deepen-super-micros-china-problem/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2215,13 +2223,6 @@
       {
         "title": "AMD-Powered Lux Supercomputer Opens to Scientific Users at Oak Ridge, Becoming First AI Factory for DOE’s Genesis Mission",
         "url": "https://finance.yahoo.com/technology/ai/articles/amd-powered-lux-supercomputer-opens-190000361.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-16 14:00 ET",
-        "pub_ts": 1794855600.0
-      },
-      {
-        "title": "HPE-Built \"Lux\" AI Cluster Debuts at No. 14 on the TOP500",
-        "url": "https://finance.yahoo.com/technology/ai/articles/hpe-built-lux-ai-cluster-190000263.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-16 14:00 ET",
         "pub_ts": 1794855600.0
@@ -3237,22 +3238,22 @@
     "LITE": 1794973400.9620824,
     "AAOI": 1794973225.463607,
     "SPCX": 1794973400.9620824,
-    "ASTS": 1794971947.8859909,
+    "ASTS": 1794973666.0319169,
     "AXTI": 1794973225.463607,
-    "NASA": 1794971947.8859909,
+    "NASA": 1794973666.0319169,
     "LUNR": 1794973400.9620824,
-    "TSLA": 1794971947.8859909,
-    "AXP": 1794971947.8859909,
-    "RKLB": 1794971947.8859909,
+    "TSLA": 1794973666.0319169,
+    "AXP": 1794973666.0319169,
+    "RKLB": 1794973666.0319169,
     "KO": 1794973400.9620824,
     "FLY": 1794973400.9620824,
     "INTC": 1794973400.9620824,
-    "VRT": 1794971947.8859909,
-    "HPE": 1794971947.8859909,
-    "DELL": 1794971947.8859909,
-    "OKLO": 1794971947.8859909,
+    "VRT": 1794973666.0319169,
+    "HPE": 1794973666.0319169,
+    "DELL": 1794973666.0319169,
+    "OKLO": 1794973666.0319169,
     "CEG": 1794972245.619972,
-    "FPS": 1794971947.8859909,
+    "FPS": 1794973666.0319169,
     "MU": 1794972245.619972,
     "SKHY": 1794972245.619972,
     "WDC": 1794972245.619972,
@@ -3279,7 +3280,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (22:38 ET / 11:38 BJ) [美联储]：美联储还没公布会议纪要，金价就已跌破3800；目前多空几股力量拧在一起，接下来哪边先松手？而今晚这份纪要，又能否让金价的下一步更清楚？",
+    "detail": "⚡ 最新核心快讯 (22:43 ET / 11:43 BJ) [英伟达] [标普]：英伟达市值已占标普500指数总市值的5.9%，广泛进入美国人的退休储蓄和证券账户。黄仁勋离职引发公司治理疑虑后，普通投资者开始重新评估持仓......",
     "event_name": "",
     "minutes_left": 0
   }
