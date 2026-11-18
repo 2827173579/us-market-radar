@@ -1,9 +1,23 @@
 {
-  "updated_at_ts": 1794993838.198,
-  "updated_at_et": "11-18 04:23 ET",
-  "updated_at_kst": "18:23 KST",
+  "updated_at_ts": 1794994060.898,
+  "updated_at_et": "11-18 04:27 ET",
+  "updated_at_kst": "18:27 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261118172730597800",
+      "title": "国际金跌超2%再创一年多新低，多头还有反攻的希望吗？",
+      "summary": "美联储加息预期推高黄金持有成本，央行买盘也未能完全抵消抛售压力。但机构认为，AI融资需求可能在2027年前后见顶，债券收益率回落或为金价创造反弹空间。点击查看",
+      "keywords": [
+        "美联储",
+        "加息"
+      ],
+      "pub_ts": 1794994050.0,
+      "time_et": "11-18 04:27 ET",
+      "time_bj": "17:27 BJ",
+      "time_kst": "18:27 KST",
+      "time_display": "04:27 ET / 17:27 BJ"
+    },
     {
       "id": "20261118171454880800",
       "title": "海湾供给修复削弱紧缺支撑，航运威胁仍牵动油价反转风险｜原油头条",
@@ -335,19 +349,6 @@
       "time_bj": "12:11 BJ",
       "time_kst": "13:11 KST",
       "time_display": "23:11 ET / 12:11 BJ"
-    },
-    {
-      "id": "20261118120239924800",
-      "title": "日本央行行长植田和男重申加息立场，并警告干预风险",
-      "summary": "日本央行行长植田和男表示，当前金融条件仍较宽松，应根据经济和通胀变化继续加息。他同时警告，若紧急购债被视为替政府融资，反而可能加剧长期利率波动。点击查看…",
-      "keywords": [
-        "加息"
-      ],
-      "pub_ts": 1794974559.0,
-      "time_et": "11-17 23:02 ET",
-      "time_bj": "12:02 BJ",
-      "time_kst": "13:02 KST",
-      "time_display": "23:02 ET / 12:02 BJ"
     }
   ],
   "ticker_news": {
@@ -952,6 +953,13 @@
         "pub_ts": 1794952919.0
       },
       {
+        "title": "Top Growth Stocks To Watch In November 2026",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/top-growth-stocks-watch-november-081401343.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 03:14 ET",
+        "pub_ts": 1794989641.0
+      },
+      {
         "title": "‘The Noise Will Work Itself Out in Time’: AMD CEO Lisa Su Says Nvidia a ‘Phenomenal Company’ After Jensen Huang Exits",
         "url": "https://finance.yahoo.com/markets/stocks/articles/noise-itself-time-amd-ceo-053912304.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -971,13 +979,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 20:09 ET",
         "pub_ts": 1794964190.0
-      },
-      {
-        "title": "Nvidia earnings spark after-hours rally in chipmakers, neocloud stocks",
-        "url": "https://finance.yahoo.com/technology/articles/nvidia-earnings-spark-hours-rally-010526744.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 20:05 ET",
-        "pub_ts": 1794963926.0
       }
     ],
     "ASML": [
@@ -1232,11 +1233,11 @@
         "pub_ts": 1794947673.0
       },
       {
-        "title": "3 Undervalued Stocks With Cash Flow Value Gaps Over 35%",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/3-undervalued-stocks-cash-flow-051544633.html?.tsrc=rss",
+        "title": "Market Chatter: Korea Regulator Cites Customer Complaints, Orders Apple, Google, Alibaba, OpenAI to Designate Legal Representatives by January",
+        "url": "https://finance.yahoo.com/technology/articles/market-chatter-korea-regulator-cites-085052188.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-18 00:15 ET",
-        "pub_ts": 1794978944.0
+        "time": "11-18 03:50 ET",
+        "pub_ts": 1794991852.0
       }
     ],
     "AAPL": [
@@ -3218,14 +3219,14 @@
     "VIXY": 1794993409.2506,
     "SOXS": 1794993658.1687129,
     "NVDA": 1794993838.1980608,
-    "AMD": 1794989945.322309,
-    "ASML": 1794989945.322309,
-    "QCOM": 1794989945.322309,
-    "AVGO": 1794989945.322309,
+    "AMD": 1794994060.8976185,
+    "ASML": 1794994060.8976185,
+    "QCOM": 1794994060.8976185,
+    "AVGO": 1794994060.8976185,
     "AMAT": 1794989945.322309,
     "META": 1794989945.322309,
     "GOOGL": 1794989945.322309,
-    "MSFT": 1794989945.322309,
+    "MSFT": 1794994060.8976185,
     "AAPL": 1794989945.322309,
     "PLTR": 1794990169.0144334,
     "NOW": 1794990169.0144334,
@@ -3283,7 +3284,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (04:14 ET / 17:14 BJ) [原油]：EIA将2026年四季度从短缺69万桶/日改为过剩146万桶/日，库存由去转累；2027年布伦特看至77美元，绕行断供风险或放大波动。",
+    "detail": "⚡ 最新核心快讯 (04:27 ET / 17:27 BJ) [美联储] [加息]：美联储加息预期推高黄金持有成本，央行买盘也未能完全抵消抛售压力。但机构认为，AI融资需求可能在2027年前后见顶，债券收益率回落或为金价创造反弹空间。点击查看",
     "event_name": "",
     "minutes_left": 0
   }
