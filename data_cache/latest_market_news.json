@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1794988354.715,
-  "updated_at_et": "11-18 02:52 ET",
-  "updated_at_kst": "16:52 KST",
+  "updated_at_ts": 1794988491.514,
+  "updated_at_et": "11-18 02:54 ET",
+  "updated_at_kst": "16:54 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1649,6 +1649,13 @@
     ],
     "MRVL": [
       {
+        "title": "Down 36% in a month at 48x P/E: Is Marvell a dip or a trap?",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/down-36-month-48x-p-072339117.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 02:23 ET",
+        "pub_ts": 1794986619.0
+      },
+      {
         "title": "Nvidia Signals AI Financing Flywheel Will Continue, But ‘Disciplined’: Analyst Calls Neoclouds Its ‘Biggest Sustained Bet’ As NBIS, IREN, MRVL Rally",
         "url": "https://stocktwits.com/news-articles/markets/equity/nvidia-signals-ai-financing-flywheel-will-continue-but-disciplined-analyst-calls-neoclouds-its-biggest-sustained-bet-as-nbis-iren-mrvl-rally/cNbXVSvR9hZ?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1675,13 +1682,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 16:05 ET",
         "pub_ts": 1794949500.0
-      },
-      {
-        "title": "Marvell Just Made a Massive Move Against Broadcom. How to Play MRVL Stock Now.",
-        "url": "https://www.barchart.com/story/news/8882625/marvell-just-made-a-massive-move-against-broadcom-how-to-play-mrvl-stock-now?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 14:35 ET",
-        "pub_ts": 1794944127.0
       }
     ],
     "LITE": [
@@ -2241,6 +2241,13 @@
     ],
     "DELL": [
       {
+        "title": "Dell Has Tumbled Since September: Why Bernstein Still Sees 103% Upside",
+        "url": "https://www.tikr.com/blog/dell-has-tumbled-since-september-why-bernstein-still-sees-103-upside?ref=yahoofinance&tlnk=yf-261118-vffj424f&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 20:05 ET",
+        "pub_ts": 1794963954.0
+      },
+      {
         "title": "What Is Dell Technologies (DELL) Really Building With Its Latest AI Factory Push?",
         "url": "https://finance.yahoo.com/technology/ai/articles/dell-technologies-dell-really-building-201218571.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2267,13 +2274,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 14:13 ET",
         "pub_ts": 1794942828.0
-      },
-      {
-        "title": "What Needs To Be True To Buy Dell Stock?",
-        "url": "https://www.trefis.com/stock/dell/articles/625654/what-needs-to-be-true-to-buy-dell-stock/2026-11-17?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 13:30 ET",
-        "pub_ts": 1794940216.0
       }
     ],
     "OKLO": [
@@ -2491,11 +2491,11 @@
         "pub_ts": 1794838389.0
       },
       {
-        "title": "SanDisk and Micron Fall 4% as GF Securities Cuts NAND Price Forecast and Warns of a Glut; SK Hynix Dips",
-        "url": "https://247wallst.com/investing/2026/11/17/sandisk-and-micron-fall-4-as-gf-securities-cuts-nand-price-forecast-and-warns-of-a-glut-sk-hynix-dips/?.tsrc=rss",
+        "title": "Seagate plunged 22% in a month: Value play or cyclical trap?",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/seagate-plunged-22-month-value-072359166.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-17 11:06 ET",
-        "pub_ts": 1794931600.0
+        "time": "11-18 02:23 ET",
+        "pub_ts": 1794986639.0
       }
     ],
     "STX": [
@@ -3237,30 +3237,30 @@
     "VST": 1794988354.714574,
     "BE": 1794988354.714574,
     "CRDO": 1794988354.714574,
-    "COHR": 1794985973.5567422,
-    "MRVL": 1794986155.1797864,
-    "LITE": 1794986155.1797864,
+    "COHR": 1794988491.5140448,
+    "MRVL": 1794988491.5140448,
+    "LITE": 1794988491.5140448,
     "AAOI": 1794988354.714574,
-    "SPCX": 1794986426.68115,
-    "ASTS": 1794986426.68115,
-    "AXTI": 1794986155.1797864,
-    "NASA": 1794986426.68115,
-    "LUNR": 1794986426.68115,
-    "TSLA": 1794986626.6299999,
-    "AXP": 1794986626.6299999,
-    "RKLB": 1794986426.68115,
+    "SPCX": 1794988491.5140448,
+    "ASTS": 1794988491.5140448,
+    "AXTI": 1794988491.5140448,
+    "NASA": 1794988491.5140448,
+    "LUNR": 1794988491.5140448,
+    "TSLA": 1794988491.5140448,
+    "AXP": 1794988491.5140448,
+    "RKLB": 1794988491.5140448,
     "KO": 1794988354.714574,
-    "FLY": 1794986426.68115,
-    "INTC": 1794986626.6299999,
-    "VRT": 1794986626.6299999,
-    "HPE": 1794986626.6299999,
-    "DELL": 1794986626.6299999,
-    "OKLO": 1794986826.6779554,
-    "CEG": 1794986155.1797864,
-    "FPS": 1794986826.6779554,
-    "MU": 1794986826.6779554,
-    "SKHY": 1794986826.6779554,
-    "WDC": 1794986826.6779554,
+    "FLY": 1794988491.5140448,
+    "INTC": 1794988491.5140448,
+    "VRT": 1794988491.5140448,
+    "HPE": 1794988491.5140448,
+    "DELL": 1794988491.5140448,
+    "OKLO": 1794988491.5140448,
+    "CEG": 1794988491.5140448,
+    "FPS": 1794988491.5140448,
+    "MU": 1794988491.5140448,
+    "SKHY": 1794988491.5140448,
+    "WDC": 1794988491.5140448,
     "STX": 1794987983.2164648,
     "MSTR": 1794987091.2880123,
     "SNDK": 1794986826.6779554,
@@ -3273,13 +3273,13 @@
     "NKE": 1794987983.2164648,
     "MCD": 1794987496.947285,
     "PEP": 1794988171.557042,
-    "XOM": 1794986155.1797864,
+    "XOM": 1794988491.5140448,
     "JPM": 1794987496.947285,
     "WMT": 1794987778.0470092,
     "V": 1794988354.714574,
     "CAT": 1794988354.714574,
-    "FN": 1794986155.1797864,
-    "GLW": 1794986155.1797864
+    "FN": 1794988491.5140448,
+    "GLW": 1794988491.5140448
   },
   "calendar_banner": {
     "level": "idle_with_flash",
