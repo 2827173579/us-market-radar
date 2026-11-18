@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1794975949.688,
-  "updated_at_et": "11-17 23:25 ET",
-  "updated_at_kst": "13:25 KST",
+  "updated_at_ts": 1794976120.552,
+  "updated_at_et": "11-17 23:28 ET",
+  "updated_at_kst": "13:28 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2606,6 +2606,20 @@
     ],
     "BTC-USD": [
       {
+        "title": "Nvidia’s earnings call names two former crypto miners",
+        "url": "https://www.thestreet.com/crypto/investing/nvidias-earnings-call-names-two-former-crypto-miners?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 23:16 ET",
+        "pub_ts": 1794975391.0
+      },
+      {
+        "title": "Bitcoin's RSI Drops To 24: VanEck's Matthew Sigel Spots A Bullish Signal In Its 12-Month Track Record",
+        "url": "https://stocktwits.com/news-articles/markets/cryptocurrency/bitcoin-s-rsi-drops-to-24-van-eck-s-matthew-sigel-spots-a-bullish-signal-in-its-12-month-track-record/cNbXoneR9h8?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 23:05 ET",
+        "pub_ts": 1794974751.0
+      },
+      {
         "title": "Coinbase Exec Says AI IPOs Pulling Money From Bitcoin Is ‘A Reasonable Argument’ As Anthropic Debut Nears",
         "url": "https://stocktwits.com/news-articles/markets/cryptocurrency/coinbase-exec-says-ai-ip-os-pulling-money-from-bitcoin-is-a-reasonable-argument-as-anthropic-debut-nears/cNbXV7cR9hl?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2625,20 +2639,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 19:55 ET",
         "pub_ts": 1794963358.0
-      },
-      {
-        "title": "Billionaire Paul Tudor Jones doubles stake in BlackRock's Bitcoin ETF",
-        "url": "https://www.thestreet.com/crypto/investing/billionaire-paul-tudor-jones-doubles-stake-in-blackrocks-bitcoin-etf?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 19:24 ET",
-        "pub_ts": 1794961490.0
-      },
-      {
-        "title": "Crypto Market Today, Nov. 17: A Warning Sign Not Seen Since 2022 Is Flashing Across Cryptocurrency Markets",
-        "url": "https://www.fool.com/coverage/stock-market-today/2026/11/17/crypto-market-today-nov-17-a-warning-sign-not-seen-since-2022-is-flashing-across-cryptocurrency-markets/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 18:05 ET",
-        "pub_ts": 1794956702.0
       }
     ],
     "CRWD": [
@@ -3198,20 +3198,20 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1794974484.3502448,
-    "SOXL": 1794974484.3502448,
-    "SPY": 1794974484.3502448,
-    "DIA": 1794974484.3502448,
-    "SOXX": 1794974484.3502448,
-    "QQQ": 1794974484.3502448,
-    "SMH": 1794974484.3502448,
-    "IWM": 1794974484.3502448,
+    "KORU": 1794976120.5516794,
+    "SOXL": 1794976120.5516794,
+    "SPY": 1794976120.5516794,
+    "DIA": 1794976120.5516794,
+    "SOXX": 1794976120.5516794,
+    "QQQ": 1794976120.5516794,
+    "SMH": 1794976120.5516794,
+    "IWM": 1794976120.5516794,
     "IGV": 1794974674.8655033,
-    "TLT": 1794974484.3502448,
-    "GLD": 1794974484.3502448,
+    "TLT": 1794976120.5516794,
+    "GLD": 1794976120.5516794,
     "SQQQ": 1794974674.8655033,
-    "TSM": 1794974484.3502448,
-    "VIXY": 1794974484.3502448,
+    "TSM": 1794976120.5516794,
+    "VIXY": 1794976120.5516794,
     "SOXS": 1794974674.8655033,
     "NVDA": 1794974674.8655033,
     "AMD": 1794974906.7464097,
@@ -3256,19 +3256,19 @@
     "MU": 1794975325.0173743,
     "SKHY": 1794975325.0173743,
     "WDC": 1794975325.0173743,
-    "STX": 1794974484.3502448,
+    "STX": 1794976120.5516794,
     "MSTR": 1794975517.0902193,
     "SNDK": 1794975325.0173743,
-    "BTC-USD": 1794974484.3502448,
+    "BTC-USD": 1794976120.5516794,
     "CRWD": 1794975517.0902193,
     "ORCL": 1794975517.0902193,
     "COIN": 1794975517.0902193,
     "LLY": 1794975517.0902193,
     "MRNA": 1794975517.0902193,
-    "NKE": 1794974484.3502448,
+    "NKE": 1794976120.5516794,
     "MCD": 1794975517.0902193,
-    "PEP": 1794974484.3502448,
-    "XOM": 1794974484.3502448,
+    "PEP": 1794976120.5516794,
+    "XOM": 1794976120.5516794,
     "JPM": 1794975517.0902193,
     "WMT": 1794975517.0902193,
     "V": 1794975781.7596238,
