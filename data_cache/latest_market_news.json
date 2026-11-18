@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1794968378.232,
-  "updated_at_et": "11-17 21:19 ET",
-  "updated_at_kst": "11:19 KST",
+  "updated_at_ts": 1794968508.551,
+  "updated_at_et": "11-17 21:21 ET",
+  "updated_at_kst": "11:21 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -906,11 +906,18 @@
     ],
     "NVDA": [
       {
-        "title": "Dow Jones Futures: Techs Rise As Nvidia Beats, Says This On Jensen Huang; Target, Anthropic IPO Ahead",
+        "title": "Dow Jones Futures: Techs Rise After Nvidia Beats, Says This On Jensen Huang; Target, Anthropic IPO Ahead",
         "url": "https://finance.yahoo.com/m/3b22ed8c-00c3-32f8-89f5-91bc21ccb366/dow-jones-futures%3A-techs-rise.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-17 20:48 ET",
-        "pub_ts": 1794966501.0
+        "time": "11-17 21:14 ET",
+        "pub_ts": 1794968059.0
+      },
+      {
+        "title": "Nvidia’s startup stakes ballooned to $65B, but Huang’s exit puts future deals in doubt",
+        "url": "https://finance.yahoo.com/technology/ai/articles/nvidia-startup-stakes-ballooned-65b-014421727.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 20:44 ET",
+        "pub_ts": 1794966261.0
       },
       {
         "title": "Could IBM (IBM) Reshape Scientific Computing With Its New Quantum Classical Platform?",
@@ -932,13 +939,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 20:11 ET",
         "pub_ts": 1794964265.0
-      },
-      {
-        "title": "Nvidia earnings spark after-hours rally in chipmakers, neocloud stocks",
-        "url": "https://finance.yahoo.com/technology/articles/nvidia-earnings-spark-hours-rally-010526744.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 20:05 ET",
-        "pub_ts": 1794963926.0
       }
     ],
     "AMD": [
@@ -3208,25 +3208,25 @@
     "QQQ": 1794968177.3538496,
     "SMH": 1794968177.3538496,
     "IWM": 1794968177.3538496,
-    "IGV": 1794966895.7102518,
+    "IGV": 1794968508.550623,
     "TLT": 1794968177.3538496,
     "GLD": 1794968177.3538496,
-    "SQQQ": 1794966895.7102518,
+    "SQQQ": 1794968508.550623,
     "TSM": 1794968177.3538496,
     "VIXY": 1794968177.3538496,
-    "SOXS": 1794966895.7102518,
-    "NVDA": 1794966895.7102518,
+    "SOXS": 1794968508.550623,
+    "NVDA": 1794968508.550623,
     "AMD": 1794967099.272301,
     "ASML": 1794967099.272301,
-    "QCOM": 1794966895.7102518,
-    "AVGO": 1794966895.7102518,
-    "AMAT": 1794966895.7102518,
+    "QCOM": 1794968508.550623,
+    "AVGO": 1794968508.550623,
+    "AMAT": 1794968508.550623,
     "META": 1794967099.272301,
     "GOOGL": 1794967099.272301,
     "MSFT": 1794967099.272301,
-    "AAPL": 1794966895.7102518,
-    "PLTR": 1794966895.7102518,
-    "NOW": 1794966895.7102518,
+    "AAPL": 1794968508.550623,
+    "PLTR": 1794968508.550623,
+    "NOW": 1794968508.550623,
     "AMZN": 1794967099.272301,
     "CRWV": 1794967099.272301,
     "NBIS": 1794967099.272301,
