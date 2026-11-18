@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795021742.645,
-  "updated_at_et": "11-18 12:09 ET",
-  "updated_at_kst": "02:09 KST",
+  "updated_at_ts": 1795021842.723,
+  "updated_at_et": "11-18 12:10 ET",
+  "updated_at_kst": "02:10 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1753,6 +1753,20 @@
     ],
     "SPCX": [
       {
+        "title": "Crypto markets are pricing Anthropic's IPO 25% higher than the Street",
+        "url": "https://finance.yahoo.com/video/crypto-markets-pricing-anthropics-ipo-170000964.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 12:00 ET",
+        "pub_ts": 1795021200.0
+      },
+      {
+        "title": "1 Major Lesson Anthropic Investors Can Learn From SpaceX’s IPO",
+        "url": "https://www.fool.com/investing/2026/11/18/major-lesson-anthropic-investors-learn-from-spacex-ipo/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 11:51 ET",
+        "pub_ts": 1795020711.0
+      },
+      {
         "title": "SpaceX Will Need Substantial Cell Tower Infrastructure To Build Mobile Network, Citi Says — Firm Sees Nearly 94% Upside In SPCX Stock",
         "url": "https://stocktwits.com/news-articles/markets/equity/spacex-will-need-substantial-cell-tower-infrastructure-to-build-mobile-network-citi-says/cNbgIcHR9Lv?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1772,20 +1786,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 10:48 ET",
         "pub_ts": 1795016929.0
-      },
-      {
-        "title": "Verizon and AT&T customers will soon get a major network upgrade",
-        "url": "https://www.thestreet.com/retail/verizon-att-ast-spacemobile-satellite-coverage?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 10:07 ET",
-        "pub_ts": 1795014420.0
-      },
-      {
-        "title": "Exclusive: Yorkville CEO Says SpaceX Won’t Dominate Launch Forever as New Space ETF Debuts",
-        "url": "https://www.benzinga.com/markets/prediction-markets/26/11/63387506/spacex-launch-competition?utm_source=yahooFinance&utm_campaign=partner_feed&utm_medium=referral&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 09:53 ET",
-        "pub_ts": 1795013611.0
       }
     ],
     "ASTS": [
@@ -2826,6 +2826,13 @@
     ],
     "NKE": [
       {
+        "title": "Nike Moves on Investor Day; Lowe's Reports Earnings | Stock Movers",
+        "url": "https://finance.yahoo.com/video/nike-moves-investor-day-lowes-162353192.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 11:23 ET",
+        "pub_ts": 1795019033.0
+      },
+      {
         "title": "Nike Promises $12 Billion in Dividends as Its Stock Hits $35",
         "url": "https://247wallst.com/investing/2026/11/18/nike-promises-12-billion-in-dividends-as-its-stock-hits-35/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2852,13 +2859,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 07:26 ET",
         "pub_ts": 1795004769.0
-      },
-      {
-        "title": "Why Did Nike Stock Move?",
-        "url": "https://www.trefis.com/stock/nke/articles/626286/why-did-nike-stock-move/2026-11-18?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 07:21 ET",
-        "pub_ts": 1795004483.0
       }
     ],
     "MCD": [
@@ -3232,18 +3232,18 @@
     "CRDO": 1795021742.6445155,
     "COHR": 1795021742.6445155,
     "MRVL": 1795021742.6445155,
-    "LITE": 1795020260.8692842,
+    "LITE": 1795021842.7227197,
     "AAOI": 1795021439.6621916,
-    "SPCX": 1795020260.8692842,
-    "ASTS": 1795020260.8692842,
-    "AXTI": 1795020260.8692842,
+    "SPCX": 1795021842.7227197,
+    "ASTS": 1795021842.7227197,
+    "AXTI": 1795021842.7227197,
     "NASA": 1795021439.6621916,
     "LUNR": 1795021439.6621916,
     "TSLA": 1795021439.6621916,
     "AXP": 1795021439.6621916,
-    "RKLB": 1795020260.8692842,
+    "RKLB": 1795021842.7227197,
     "KO": 1795021439.6621916,
-    "FLY": 1795020260.8692842,
+    "FLY": 1795021842.7227197,
     "INTC": 1795021439.6621916,
     "VRT": 1795021439.6621916,
     "HPE": 1795021541.7157006,
@@ -3263,16 +3263,16 @@
     "COIN": 1795021639.8469002,
     "LLY": 1795021639.8469002,
     "MRNA": 1795021639.8469002,
-    "NKE": 1795020260.8692842,
-    "MCD": 1795020260.8692842,
-    "PEP": 1795020260.8692842,
+    "NKE": 1795021842.7227197,
+    "MCD": 1795021842.7227197,
+    "PEP": 1795021842.7227197,
     "XOM": 1795021639.8469002,
-    "JPM": 1795020260.8692842,
-    "WMT": 1795020260.8692842,
+    "JPM": 1795021842.7227197,
+    "WMT": 1795021842.7227197,
     "V": 1795021639.8469002,
     "CAT": 1795021639.8469002,
-    "FN": 1795020260.8692842,
-    "GLW": 1795020260.8692842
+    "FN": 1795021842.7227197,
+    "GLW": 1795021842.7227197
   },
   "calendar_banner": {
     "level": "idle_with_flash",
