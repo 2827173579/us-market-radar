@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1794973225.464,
-  "updated_at_et": "11-17 22:40 ET",
-  "updated_at_kst": "12:40 KST",
+  "updated_at_ts": 1794973400.962,
+  "updated_at_et": "11-17 22:43 ET",
+  "updated_at_kst": "12:43 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1762,6 +1762,20 @@
         "pub_ts": 1794943202.0
       },
       {
+        "title": "SpaceX CFO Sees No ‘Magic Wand’ For Anthropic’s Data Center Plans — And GTA 6 Is Stealing Some Of Its IPO Thunder",
+        "url": "https://stocktwits.com/news-articles/markets/equity/spacex-no-magic-wand-anthropic-data-center-plans-gta-6-stealing-ipo-thunder/cNbXFXiR9hn?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 22:18 ET",
+        "pub_ts": 1794971903.0
+      },
+      {
+        "title": "A Rocket Failure Just Cost Amazon 40 Internet Satellites. It's Good News for SpaceX, but I'd Still Want a Lower Stock Price.",
+        "url": "https://www.fool.com/investing/2026/11/17/a-rocket-failure-just-cost-amazon-40-internet-satellites-it-s-good-news-for-spacex-but-i-d-still-want-a-lower-stock-price/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 22:06 ET",
+        "pub_ts": 1794971162.0
+      },
+      {
         "title": "SpaceX (SPCX) Merger Talks Advance As $74 Billion AI Campus Plan Takes Shape",
         "url": "https://finance.yahoo.com/technology/ai/articles/spacex-spcx-merger-talks-advance-011143094.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1774,20 +1788,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 19:13 ET",
         "pub_ts": 1794960789.0
-      },
-      {
-        "title": "Nvidia just sent a powerful signal to SpaceX stock investors",
-        "url": "https://www.thestreet.com/investing/stocks/nvidia-spacex-stake-q3-13f?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 18:33 ET",
-        "pub_ts": 1794958380.0
-      },
-      {
-        "title": "SpaceX Stock Adds $54 Billion Amid Viral AI in Space Discussions",
-        "url": "https://beincrypto.com/spacex-stock-adds-54-billion-ai-space/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 18:02 ET",
-        "pub_ts": 1794956543.0
       }
     ],
     "ASTS": [
@@ -3234,19 +3234,19 @@
     "CRDO": 1794973225.463607,
     "COHR": 1794973225.463607,
     "MRVL": 1794973225.463607,
-    "LITE": 1794971847.1426907,
+    "LITE": 1794973400.9620824,
     "AAOI": 1794973225.463607,
-    "SPCX": 1794971847.1426907,
+    "SPCX": 1794973400.9620824,
     "ASTS": 1794971947.8859909,
     "AXTI": 1794973225.463607,
     "NASA": 1794971947.8859909,
-    "LUNR": 1794971847.1426907,
+    "LUNR": 1794973400.9620824,
     "TSLA": 1794971947.8859909,
     "AXP": 1794971947.8859909,
     "RKLB": 1794971947.8859909,
-    "KO": 1794971847.1426907,
-    "FLY": 1794971847.1426907,
-    "INTC": 1794971847.1426907,
+    "KO": 1794973400.9620824,
+    "FLY": 1794973400.9620824,
+    "INTC": 1794973400.9620824,
     "VRT": 1794971947.8859909,
     "HPE": 1794971947.8859909,
     "DELL": 1794971947.8859909,
@@ -3273,8 +3273,8 @@
     "WMT": 1794972245.619972,
     "V": 1794972245.619972,
     "CAT": 1794972245.619972,
-    "FN": 1794971847.1426907,
-    "GLW": 1794971847.1426907
+    "FN": 1794973400.9620824,
+    "GLW": 1794973400.9620824
   },
   "calendar_banner": {
     "level": "idle_with_flash",
