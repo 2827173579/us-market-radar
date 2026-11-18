@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795018163.59,
-  "updated_at_et": "11-18 11:09 ET",
-  "updated_at_kst": "01:09 KST",
+  "updated_at_ts": 1795018261.417,
+  "updated_at_et": "11-18 11:11 ET",
+  "updated_at_kst": "01:11 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1938,6 +1938,13 @@
     ],
     "TSLA": [
       {
+        "title": "Coinbase Says AI Defenses Blocked $4.7M in Elon Musk Deepfake Crypto Scam",
+        "url": "https://www.cryptoprowl.com/releases/coinbase-says-ai-defenses-blocked-47m-in-elon-musk-deepfake-crypto-scam-7964?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 10:53 ET",
+        "pub_ts": 1795017180.0
+      },
+      {
         "title": "Should You Buy the Worst-Performing Magnificent Seven Stock of 2026 Before 2027?",
         "url": "https://www.fool.com/investing/2026/11/18/should-you-buy-the-worst-performing-magnificent-seven-stock-of-2026-before-2027/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1964,16 +1971,16 @@
         "source": "Yahoo Finance",
         "time": "11-18 07:58 ET",
         "pub_ts": 1795006680.0
-      },
-      {
-        "title": "3 Founder Led Stocks With Revenue Growth Up To 20%",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/3-founder-led-stocks-revenue-121133226.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 07:11 ET",
-        "pub_ts": 1795003893.0
       }
     ],
     "AXP": [
+      {
+        "title": "Solaris Resources Appoints Mark Flaherty to Board as Warintza Copper Project Advances",
+        "url": "https://investorshub.advfn.com/market-news/article/40320/solaris-resources-appoints-mark-flaherty-to-board-as-warintza-copper-project-advances?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 10:38 ET",
+        "pub_ts": 1795016281.0
+      },
       {
         "title": "ETFs Are Net Sellers of American Express (AXP) on Monday",
         "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-net-sellers-american-express-110338144.html?.tsrc=rss",
@@ -2001,13 +2008,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 11:16 ET",
         "pub_ts": 1794932194.0
-      },
-      {
-        "title": "Visa and American Express Both Raised Their Dividends 16% This Year, but Only 1 of the Stocks Is Up in 2026",
-        "url": "https://www.fool.com/investing/2026/11/17/visa-and-american-express-both-raised-their-dividends-16-this-year-but-only-1-of-the-stocks-is-up-in-2026/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 08:50 ET",
-        "pub_ts": 1794923402.0
       }
     ],
     "RKLB": [
@@ -2049,6 +2049,13 @@
     ],
     "KO": [
       {
+        "title": "Owala and Coca-Cola team up for new Amazon-exclusive release",
+        "url": "https://www.thestreet.com/retail/owala-coca-cola-new-amazon-exclusive-collaboration?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 11:07 ET",
+        "pub_ts": 1795018020.0
+      },
+      {
         "title": "Coca-Cola vs. Monster Beverage: Which Consumer Goods Stock Is a Better Buy for 2027?",
         "url": "https://www.fool.com/coverage/better-buy/2026/11/18/coca-cola-vs-monster-beverage-which-consumer-goods-stock-is-a-better-buy-for-2027/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2075,13 +2082,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 06:02 ET",
         "pub_ts": 1794999742.0
-      },
-      {
-        "title": "TD Cowen names its best stock pick for 2027",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/td-cowen-names-best-stock-060515655.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 01:05 ET",
-        "pub_ts": 1794981915.0
       }
     ],
     "FLY": [
@@ -2123,6 +2123,13 @@
     ],
     "INTC": [
       {
+        "title": "Westfield London Taps Dislo As Social Media Agency",
+        "url": "https://www.mediapost.com/publications/article/419430/westfield-london-taps-dislo-as-social-media-agency.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 11:00 ET",
+        "pub_ts": 1795017600.0
+      },
+      {
         "title": "Wi-Fi Chipsets - Global Strategic Business Report 2026: Capitalize on the $26.4 Billion 2032 Shift as Broadcom, Qualcomm, MediaTek, Intel, and Realtek Accelerate Wi-Fi 6/6E Adoption",
         "url": "https://finance.yahoo.com/technology/articles/wi-fi-chipsets-global-strategic-151500470.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2149,13 +2156,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 08:28 ET",
         "pub_ts": 1795008481.0
-      },
-      {
-        "title": "Why Is Intel Stock Rising Today?",
-        "url": "https://investorshub.advfn.com/market-news/article/40275/why-is-intel-stock-rising-today?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 07:15 ET",
-        "pub_ts": 1795004151.0
       }
     ],
     "VRT": [
@@ -3198,16 +3198,16 @@
   "ticker_news_ts": {
     "KORU": 1795016941.8166568,
     "SOXL": 1795017042.7518451,
-    "SPY": 1795016741.79195,
-    "DIA": 1795016741.79195,
-    "SOXX": 1795016741.79195,
-    "QQQ": 1795016741.79195,
-    "SMH": 1795016741.79195,
-    "IWM": 1795016741.79195,
-    "IGV": 1795016741.79195,
+    "SPY": 1795018261.4168148,
+    "DIA": 1795018261.4168148,
+    "SOXX": 1795018261.4168148,
+    "QQQ": 1795018261.4168148,
+    "SMH": 1795018261.4168148,
+    "IWM": 1795018261.4168148,
+    "IGV": 1795018261.4168148,
     "TLT": 1795016941.8166568,
     "GLD": 1795016941.8166568,
-    "SQQQ": 1795016741.79195,
+    "SQQQ": 1795018261.4168148,
     "TSM": 1795016941.8166568,
     "VIXY": 1795016941.8166568,
     "SOXS": 1795016941.8166568,
@@ -3233,24 +3233,24 @@
     "COHR": 1795017042.7518451,
     "MRVL": 1795017042.7518451,
     "LITE": 1795017042.7518451,
-    "AAOI": 1795016741.79195,
+    "AAOI": 1795018261.4168148,
     "SPCX": 1795017042.7518451,
     "ASTS": 1795017042.7518451,
     "AXTI": 1795017042.7518451,
-    "NASA": 1795016741.79195,
-    "LUNR": 1795016741.79195,
-    "TSLA": 1795016741.79195,
-    "AXP": 1795016741.79195,
+    "NASA": 1795018261.4168148,
+    "LUNR": 1795018261.4168148,
+    "TSLA": 1795018261.4168148,
+    "AXP": 1795018261.4168148,
     "RKLB": 1795017124.2008765,
-    "KO": 1795016741.79195,
+    "KO": 1795018261.4168148,
     "FLY": 1795017124.2008765,
-    "INTC": 1795016741.79195,
-    "VRT": 1795016741.79195,
+    "INTC": 1795018261.4168148,
+    "VRT": 1795018261.4168148,
     "HPE": 1795016741.79195,
-    "DELL": 1795016741.79195,
+    "DELL": 1795018261.4168148,
     "OKLO": 1795016741.79195,
-    "CEG": 1795016741.79195,
-    "FPS": 1795016741.79195,
+    "CEG": 1795018261.4168148,
+    "FPS": 1795018261.4168148,
     "MU": 1795016741.79195,
     "SKHY": 1795016741.79195,
     "WDC": 1795016741.79195,
