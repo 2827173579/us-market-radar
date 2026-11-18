@@ -1,9 +1,22 @@
 {
-  "updated_at_ts": 1795032957.085,
-  "updated_at_et": "11-18 15:15 ET",
-  "updated_at_kst": "05:15 KST",
+  "updated_at_ts": 1795033054.785,
+  "updated_at_et": "11-18 15:17 ET",
+  "updated_at_kst": "05:17 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261119041609409800",
+      "title": "英伟达(NVDA.O)董事长：黄仁勋不会回归。",
+      "summary": "英伟达(NVDA.O)董事长：黄仁勋不会回归。",
+      "keywords": [
+        "英伟达"
+      ],
+      "pub_ts": 1795032969.0,
+      "time_et": "11-18 15:16 ET",
+      "time_bj": "04:16 BJ",
+      "time_kst": "05:16 KST",
+      "time_display": "15:16 ET / 04:16 BJ"
+    },
     {
       "id": "20261119030756198800",
       "title": "【美联储会议纪要：少数官员认为后续可能需加息50个基点】 11月19日讯，美联储10月会…",
@@ -329,19 +342,6 @@
       "time_bj": "21:13 BJ",
       "time_kst": "22:13 KST",
       "time_display": "08:13 ET / 21:13 BJ"
-    },
-    {
-      "id": "20261118205742259800",
-      "title": "据美国财经媒体Semafor：SpaceX(SPCX.O)正筹备一笔由阿波罗全球管理公司…",
-      "summary": "据美国财经媒体Semafor：SpaceX(SPCX.O)正筹备一笔由阿波罗全球管理公司安排的400亿美元融资交易，旨在为人工智能芯片项目提供资金，同时避免将债务直接计入其资产负债表。",
-      "keywords": [
-        "芯片"
-      ],
-      "pub_ts": 1795006662.0,
-      "time_et": "11-18 07:57 ET",
-      "time_bj": "20:57 BJ",
-      "time_kst": "21:57 KST",
-      "time_display": "07:57 ET / 20:57 BJ"
     }
   ],
   "ticker_news": {
@@ -3277,7 +3277,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (14:07 ET / 03:07 BJ) [美联储] [加息]：【美联储会议纪要：少数官员认为后续可能需加息50个基点】 11月19日讯，美联储10月会议纪要显示，尽管当时同意暂时维持利率不变，官员越来越担心，可能需要加大遏制通胀的力度。会议纪要称，“几",
+    "detail": "⚡ 最新核心快讯 (15:16 ET / 04:16 BJ) [英伟达]：英伟达(NVDA.O)董事长：黄仁勋不会回归。",
     "event_name": "",
     "minutes_left": 0
   }
