@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1794974321.668,
-  "updated_at_et": "11-17 22:58 ET",
-  "updated_at_kst": "12:58 KST",
+  "updated_at_ts": 1794974484.35,
+  "updated_at_et": "11-17 23:01 ET",
+  "updated_at_kst": "13:01 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2827,6 +2827,13 @@
     ],
     "NKE": [
       {
+        "title": "Nasdaq Futures Lead Wall Street Rebound After Nvidia’s Blowout Forecast, Anthropic IPO Looms: SLS, NKE, MU In Focus",
+        "url": "https://stocktwits.com/news-articles/markets/equity/nasdaq-futures-lead-wall-street-rebound-after-nvidia-s-blowout-forecast-anthropic-ipo-looms-sls-nke-mu-in-focus/cNbX828R9hF?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 22:46 ET",
+        "pub_ts": 1794973587.0
+      },
+      {
         "title": "NKE Stock Heads For Worst Week Since June: Analysts Flag Risks In Nike’s $5B Growth Plan— Retail Questions CEO Elliott Hill’s Leadership",
         "url": "https://stocktwits.com/news-articles/markets/equity/nke-stock-nike-investors-day-growth-plan-ceo-elliott-hill-analysts-flag-risks/cNbXZP0R9h1?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2853,13 +2860,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 17:19 ET",
         "pub_ts": 1794953949.0
-      },
-      {
-        "title": "Nike CFO Says It Will Take Two Years for Jordan Brand to Return to Growth",
-        "url": "https://wwd.com/footwear-news/shoe-industry-news/jordan-brand-recovery-explained-nike-investor-day-1239421897/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 16:49 ET",
-        "pub_ts": 1794952160.0
       }
     ],
     "MCD": [
@@ -3197,20 +3197,20 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1794972968.0072224,
-    "SOXL": 1794972968.0072224,
-    "SPY": 1794972968.0072224,
-    "DIA": 1794972968.0072224,
-    "SOXX": 1794972968.0072224,
-    "QQQ": 1794972968.0072224,
-    "SMH": 1794972968.0072224,
-    "IWM": 1794972968.0072224,
+    "KORU": 1794974484.3502448,
+    "SOXL": 1794974484.3502448,
+    "SPY": 1794974484.3502448,
+    "DIA": 1794974484.3502448,
+    "SOXX": 1794974484.3502448,
+    "QQQ": 1794974484.3502448,
+    "SMH": 1794974484.3502448,
+    "IWM": 1794974484.3502448,
     "IGV": 1794973101.8668368,
-    "TLT": 1794972968.0072224,
-    "GLD": 1794972968.0072224,
+    "TLT": 1794974484.3502448,
+    "GLD": 1794974484.3502448,
     "SQQQ": 1794973101.8668368,
-    "TSM": 1794972968.0072224,
-    "VIXY": 1794972968.0072224,
+    "TSM": 1794974484.3502448,
+    "VIXY": 1794974484.3502448,
     "SOXS": 1794973101.8668368,
     "NVDA": 1794973101.8668368,
     "AMD": 1794973225.463607,
@@ -3255,19 +3255,19 @@
     "MU": 1794973786.3001828,
     "SKHY": 1794973786.3001828,
     "WDC": 1794973786.3001828,
-    "STX": 1794972968.0072224,
+    "STX": 1794974484.3502448,
     "MSTR": 1794973786.3001828,
     "SNDK": 1794973786.3001828,
-    "BTC-USD": 1794972968.0072224,
+    "BTC-USD": 1794974484.3502448,
     "CRWD": 1794973786.3001828,
     "ORCL": 1794973786.3001828,
     "COIN": 1794973786.3001828,
     "LLY": 1794973786.3001828,
     "MRNA": 1794973786.3001828,
-    "NKE": 1794972968.0072224,
+    "NKE": 1794974484.3502448,
     "MCD": 1794973786.3001828,
-    "PEP": 1794972968.0072224,
-    "XOM": 1794972968.0072224,
+    "PEP": 1794974484.3502448,
+    "XOM": 1794974484.3502448,
     "JPM": 1794973786.3001828,
     "WMT": 1794973786.3001828,
     "V": 1794973786.3001828,
