@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1794984142.423,
-  "updated_at_et": "11-18 01:42 ET",
-  "updated_at_kst": "15:42 KST",
+  "updated_at_ts": 1794984394.007,
+  "updated_at_et": "11-18 01:46 ET",
+  "updated_at_kst": "15:46 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1383,11 +1383,11 @@
         "pub_ts": 1794961175.0
       },
       {
-        "title": "Amazon and Google Could Own $400 Billion of Anthropic Stock",
-        "url": "https://finance.yahoo.com/m/c079c6dc-3303-33b1-9922-5e6afaa91e87/amazon-and-google-could-own.html?.tsrc=rss",
+        "title": "Amazon Is Building a Massive Shopping Data Repository to Compete With AI Agents. Shareholders Should Welcome the Move.",
+        "url": "https://www.barchart.com/story/news/8886969/amazon-is-building-a-massive-shopping-data-repository-to-compete-with-ai-agents-shareholders-should-welcome-the-move?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-17 17:27 ET",
-        "pub_ts": 1794954420.0
+        "time": "11-17 18:57 ET",
+        "pub_ts": 1794959825.0
       }
     ],
     "CRWV": [
@@ -1614,6 +1614,13 @@
     ],
     "COHR": [
       {
+        "title": "Bernstein Is Holding Its $350 Coherent Target With the Stock 52% Off Its High",
+        "url": "https://www.tikr.com/blog/bernstein-is-holding-its-350-coherent-target-with-the-stock-52-off-its-high?ref=yahoofinance&tlnk=yf-261118-vmmph2r4&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 00:25 ET",
+        "pub_ts": 1794979515.0
+      },
+      {
         "title": "A $4.2 Billion Fund Dumps These 3 Stocks",
         "url": "https://www.tikr.com/blog/a-4-2-billion-fund-dumps-these-3-stocks?ref=yahoofinance&tlnk=yf-261117-26mfhqm3&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1640,13 +1647,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 09:17 ET",
         "pub_ts": 1794925071.0
-      },
-      {
-        "title": "Coherent Is Up 46% in a Year but More Than Halved Since June. Time to Buy?",
-        "url": "https://www.tikr.com/blog/coherent-is-up-46-in-a-year-but-more-than-halved-since-june-time-to-buy?ref=yahoofinance&tlnk=yf-261117-fh9mpjmc&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 08:50 ET",
-        "pub_ts": 1794923440.0
       }
     ],
     "MRVL": [
@@ -2058,6 +2058,13 @@
     ],
     "KO": [
       {
+        "title": "TD Cowen names its best stock pick for 2027",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/td-cowen-names-best-stock-060515655.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 01:05 ET",
+        "pub_ts": 1794981915.0
+      },
+      {
         "title": "Coca-Cola (KO) Named a 2027 Best Idea by TD Cowen",
         "url": "https://finance.yahoo.com/markets/stocks/articles/coca-cola-ko-named-2027-232431419.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2084,13 +2091,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 10:41 ET",
         "pub_ts": 1794930060.0
-      },
-      {
-        "title": "Charlie Bilello Calls Leveraged Single-Stock ETFs ‘One of the Worst Financial Innovations’",
-        "url": "https://247wallst.com/investing/2026/11/17/charlie-bilello-calls-leveraged-single-stock-etfs-one-of-the-worst-financial-innovations/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 09:47 ET",
-        "pub_ts": 1794926877.0
       }
     ],
     "FLY": [
@@ -3057,15 +3057,15 @@
     ],
     "V": [
       {
-        "title": "Visa Expands Agentic Ready to Help Scale Trusted AI Commerce Globally",
-        "url": "https://finance.yahoo.com/technology/ai/articles/visa-expands-agentic-ready-help-043000271.html?.tsrc=rss",
+        "title": "Visa Launches Threat Intelligence Platform to Strengthen Cyber and Fraud Defense",
+        "url": "https://finance.yahoo.com/technology/articles/visa-launches-threat-intelligence-platform-043000852.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-17 23:30 ET",
         "pub_ts": 1794976200.0
       },
       {
-        "title": "Visa Launches Threat Intelligence Platform to Strengthen Cyber and Fraud Defense",
-        "url": "https://finance.yahoo.com/technology/articles/visa-launches-threat-intelligence-platform-043000852.html?.tsrc=rss",
+        "title": "Visa Expands Agentic Ready to Help Scale Trusted AI Commerce Globally",
+        "url": "https://finance.yahoo.com/technology/ai/articles/visa-expands-agentic-ready-help-043000271.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-17 23:30 ET",
         "pub_ts": 1794976200.0
@@ -3213,7 +3213,7 @@
     "QQQ": 1794983083.048515,
     "SMH": 1794983083.048515,
     "IWM": 1794982806.7388487,
-    "IGV": 1794976356.3158119,
+    "IGV": 1794984394.0072286,
     "TLT": 1794983283.1415756,
     "GLD": 1794983480.519229,
     "SQQQ": 1794983755.2552238,
@@ -3222,27 +3222,27 @@
     "SOXS": 1794983480.519229,
     "NVDA": 1794984142.4233959,
     "AMD": 1794984142.4233959,
-    "ASML": 1794980454.6903067,
-    "QCOM": 1794980454.6903067,
-    "AVGO": 1794980158.2530713,
-    "AMAT": 1794980454.6903067,
-    "META": 1794980647.8820424,
-    "GOOGL": 1794980454.6903067,
-    "MSFT": 1794980454.6903067,
-    "AAPL": 1794980454.6903067,
-    "PLTR": 1794980647.8820424,
-    "NOW": 1794980647.8820424,
-    "AMZN": 1794980647.8820424,
-    "CRWV": 1794980843.0465379,
-    "NBIS": 1794980647.8820424,
-    "APLD": 1794980843.0465379,
-    "VST": 1794980843.0465379,
-    "BE": 1794980843.0465379,
-    "CRDO": 1794981105.9866924,
-    "COHR": 1794981105.9866924,
+    "ASML": 1794984394.0072286,
+    "QCOM": 1794984394.0072286,
+    "AVGO": 1794984394.0072286,
+    "AMAT": 1794984394.0072286,
+    "META": 1794984394.0072286,
+    "GOOGL": 1794984394.0072286,
+    "MSFT": 1794984394.0072286,
+    "AAPL": 1794984394.0072286,
+    "PLTR": 1794984394.0072286,
+    "NOW": 1794984394.0072286,
+    "AMZN": 1794984394.0072286,
+    "CRWV": 1794984394.0072286,
+    "NBIS": 1794984394.0072286,
+    "APLD": 1794984394.0072286,
+    "VST": 1794984394.0072286,
+    "BE": 1794984394.0072286,
+    "CRDO": 1794984394.0072286,
+    "COHR": 1794984394.0072286,
     "MRVL": 1794981105.9866924,
     "LITE": 1794981105.9866924,
-    "AAOI": 1794976772.9844363,
+    "AAOI": 1794984394.0072286,
     "SPCX": 1794981296.6841574,
     "ASTS": 1794981296.6841574,
     "AXTI": 1794981296.6841574,
@@ -3251,14 +3251,14 @@
     "TSLA": 1794981730.0786111,
     "AXP": 1794981478.9170148,
     "RKLB": 1794981730.0786111,
-    "KO": 1794978597.1123667,
+    "KO": 1794984394.0072286,
     "FLY": 1794981478.9170148,
     "INTC": 1794981478.9170148,
     "VRT": 1794981939.4759803,
     "HPE": 1794981939.4759803,
     "DELL": 1794981939.4759803,
     "OKLO": 1794981939.4759803,
-    "CEG": 1794979515.5543866,
+    "CEG": 1794984394.0072286,
     "FPS": 1794982132.4689527,
     "MU": 1794982132.4689527,
     "SKHY": 1794982132.4689527,
@@ -3275,11 +3275,11 @@
     "NKE": 1794983480.519229,
     "MCD": 1794982619.093038,
     "PEP": 1794983951.610345,
-    "XOM": 1794980158.2530713,
+    "XOM": 1794984394.0072286,
     "JPM": 1794982619.093038,
     "WMT": 1794982806.7388487,
-    "V": 1794977329.9080346,
-    "CAT": 1794977329.9080346,
+    "V": 1794984394.0072286,
+    "CAT": 1794984394.0072286,
     "FN": 1794981296.6841574,
     "GLW": 1794981105.9866924
   },
