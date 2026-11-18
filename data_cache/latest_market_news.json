@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1794969916.017,
-  "updated_at_et": "11-17 21:45 ET",
-  "updated_at_kst": "11:45 KST",
+  "updated_at_ts": 1794970017.653,
+  "updated_at_et": "11-17 21:46 ET",
+  "updated_at_kst": "11:46 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -906,11 +906,18 @@
     ],
     "NVDA": [
       {
-        "title": "Dow Jones Futures: Techs Rise After Nvidia Beats, Says This On Jensen Huang; Target, Anthropic IPO Ahead",
-        "url": "https://finance.yahoo.com/m/3b22ed8c-00c3-32f8-89f5-91bc21ccb366/dow-jones-futures%3A-techs-rise.html?.tsrc=rss",
+        "title": "Dow Jones Futures Rise After Nvidia Beats, Says This On Jensen Huang; Target, Anthropic IPO Ahead",
+        "url": "https://finance.yahoo.com/m/3b22ed8c-00c3-32f8-89f5-91bc21ccb366/dow-jones-futures-rise-after.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-17 21:14 ET",
-        "pub_ts": 1794968059.0
+        "time": "11-17 21:36 ET",
+        "pub_ts": 1794969395.0
+      },
+      {
+        "title": "Will GPU Edge Launch Change Rockwell Automation's (ROK) Narrative",
+        "url": "https://finance.yahoo.com/technology/ai/articles/gpu-edge-launch-change-rockwell-021124213.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 21:11 ET",
+        "pub_ts": 1794967884.0
       },
       {
         "title": "Nvidia’s startup stakes ballooned to $65B, but Huang’s exit puts future deals in doubt",
@@ -932,13 +939,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 20:12 ET",
         "pub_ts": 1794964375.0
-      },
-      {
-        "title": "3 AI Data Center Stocks Retail Investors Are Watching After Nvidia News",
-        "url": "https://finance.yahoo.com/technology/ai/articles/3-ai-data-center-stocks-011105971.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 20:11 ET",
-        "pub_ts": 1794964265.0
       }
     ],
     "AMD": [
@@ -1260,18 +1260,18 @@
         "pub_ts": 1794949170.0
       },
       {
+        "title": "Dear Apple Stock Fans, Mark Your Calendars for June 2027",
+        "url": "https://www.barchart.com/story/news/8883195/dear-apple-stock-fans-mark-your-calendars-for-june-2027?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 15:17 ET",
+        "pub_ts": 1794946633.0
+      },
+      {
         "title": "Apple's $1,299 iPhone has a problem updates can't fix",
         "url": "https://www.thestreet.com/technology/apple-iphone-18-pro-max-connectivity-problem-updates-cant-fix?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-17 14:31 ET",
         "pub_ts": 1794943902.0
-      },
-      {
-        "title": "Nvidia with a positive Q3 despite SEC probing Nvidia amid Huang Scandal",
-        "url": "https://finance.yahoo.com/video/nvidia-with-a-positive-q3-despite-sec-probing-nvidia-amid-huang-scandal-223224298.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 17:32 ET",
-        "pub_ts": 1794954744.0
       }
     ],
     "PLTR": [
@@ -3208,25 +3208,25 @@
     "QQQ": 1794969811.6217437,
     "SMH": 1794969811.6217437,
     "IWM": 1794969811.6217437,
-    "IGV": 1794968508.550623,
+    "IGV": 1794970017.6530728,
     "TLT": 1794969811.6217437,
     "GLD": 1794969811.6217437,
-    "SQQQ": 1794968508.550623,
+    "SQQQ": 1794970017.6530728,
     "TSM": 1794969811.6217437,
     "VIXY": 1794969811.6217437,
-    "SOXS": 1794968508.550623,
-    "NVDA": 1794968508.550623,
+    "SOXS": 1794970017.6530728,
+    "NVDA": 1794970017.6530728,
     "AMD": 1794968610.2341285,
     "ASML": 1794968610.2341285,
-    "QCOM": 1794968508.550623,
-    "AVGO": 1794968508.550623,
-    "AMAT": 1794968508.550623,
+    "QCOM": 1794970017.6530728,
+    "AVGO": 1794970017.6530728,
+    "AMAT": 1794970017.6530728,
     "META": 1794968610.2341285,
     "GOOGL": 1794968610.2341285,
     "MSFT": 1794968610.2341285,
-    "AAPL": 1794968508.550623,
-    "PLTR": 1794968508.550623,
-    "NOW": 1794968508.550623,
+    "AAPL": 1794970017.6530728,
+    "PLTR": 1794970017.6530728,
+    "NOW": 1794970017.6530728,
     "AMZN": 1794968610.2341285,
     "CRWV": 1794968610.2341285,
     "NBIS": 1794968610.2341285,
