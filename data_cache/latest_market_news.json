@@ -1,28 +1,8 @@
 {
-  "updated_at_ts": 1795043200.594,
-  "updated_at_et": "11-18 18:06 ET",
-  "updated_at_kst": "08:06 KST",
-  "macro_calendar": [
-    {
-      "event_id": "ff_FOMC Meeting Minutes_2026-11-18T14:00:00-05:00",
-      "name": "美国FOMC Meeting Minutes",
-      "country": "USD",
-      "star": 5,
-      "pub_time_ts": 1795028400.0,
-      "pub_time_et": "11-18 14:00 ET",
-      "pub_time_bj": "03:00 BJ",
-      "pub_time_kst": "04:00 KST",
-      "previous": "待公布",
-      "forecast": "待公布",
-      "actual": "待公布",
-      "unit": "",
-      "status": "upcoming",
-      "minutes_left": 0,
-      "impact_tone": "pending",
-      "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
-      "source": "forexfactory"
-    }
-  ],
+  "updated_at_ts": 1795043306.404,
+  "updated_at_et": "11-18 18:08 ET",
+  "updated_at_kst": "08:08 KST",
+  "macro_calendar": [],
   "macro_flashes": [
     {
       "id": "20261119070017689800",
@@ -3296,10 +3276,10 @@
     "GLW": 1795042260.9808226
   },
   "calendar_banner": {
-    "level": "upcoming",
-    "headline": "📅 今日美股重磅预告【美国FOMC Meeting Minutes】· 距公布约 0 分钟（11-18 14:00 ET / 04:00 KST）",
-    "detail": "前值 待公布 ｜ 预期 待公布 ｜ 临近公布前15分钟将自动触发防插针预警",
-    "event_name": "美国FOMC Meeting Minutes",
+    "level": "idle_with_flash",
+    "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
+    "detail": "⚡ 最新核心快讯 (18:00 ET / 07:00 BJ) [美联储] [加息]：美联储内部“鹰声缭绕”！沃勒再提12月或加息50个基点；伊朗与阿曼讨论地区安全框架，沙特料胡塞战事将延至明年……昨日今晨，全球都发生了哪些大事？",
+    "event_name": "",
     "minutes_left": 0
   }
 }
