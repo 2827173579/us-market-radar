@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795029483.373,
-  "updated_at_et": "11-18 14:18 ET",
-  "updated_at_kst": "04:18 KST",
+  "updated_at_ts": 1795029586.698,
+  "updated_at_et": "11-18 14:19 ET",
+  "updated_at_kst": "04:19 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1160,6 +1160,20 @@
     ],
     "GOOGL": [
       {
+        "title": "Why Do Nvidia's Customers Owe It $81 Billion?",
+        "url": "https://www.trefis.com/stock/nvda/articles/626053/why-do-nvidia-s-customers-owe-it-81-billion/2026-11-18?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 13:43 ET",
+        "pub_ts": 1795027413.0
+      },
+      {
+        "title": "Who Really Pays For Nvidia's $1.2 Trillion?",
+        "url": "https://www.trefis.com/stock/nvda/articles/626049/who-really-pays-for-nvidia-s-1-2-trillion/2026-11-18?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 13:43 ET",
+        "pub_ts": 1795027391.0
+      },
+      {
         "title": "Dan Ives sends a strong signal ahead of the Anthropic IPO",
         "url": "https://www.thestreet.com/investing/stocks/dan-ives-sends-a-strong-signal-ahead-of-the-anthropic-ipo?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1179,20 +1193,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 12:49 ET",
         "pub_ts": 1795024140.0
-      },
-      {
-        "title": "Digital Infrastructure World 2027 Announces First 85 Speakers as Registrants Represent 80GW of AI Buying Capacity",
-        "url": "https://finance.yahoo.com/technology/ai/articles/digital-infrastructure-world-2027-announces-173500655.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 12:35 ET",
-        "pub_ts": 1795023300.0
-      },
-      {
-        "title": "Nvidia Stock At $155: Cheaper Than Its 2018 Low?",
-        "url": "https://www.trefis.com/stock/nvda/articles/626058/nvidia-stock-at-155-cheaper-than-its-2018-low/2026-11-18?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 12:34 ET",
-        "pub_ts": 1795023245.0
       }
     ],
     "MSFT": [
@@ -1345,6 +1345,13 @@
     ],
     "AMZN": [
       {
+        "title": "Amazon Stocks Rise 0.89% Premarket After UBS Trims Target to $340 but Keeps Buy",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/amazon-stocks-rise-0-89-183829798.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 13:38 ET",
+        "pub_ts": 1795027109.0
+      },
+      {
         "title": "TikTok Shop takes on Amazon and Walmart with new strategy",
         "url": "https://www.thestreet.com/retail/tiktok-shop-membership-amazon-walmart?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1371,13 +1378,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 12:30 ET",
         "pub_ts": 1795023002.0
-      },
-      {
-        "title": "Walmart Or Amazon: Which Is The Tech Stock Now?",
-        "url": "https://www.trefis.com/stock/wmt/articles/626060/walmart-or-amazon-which-is-the-tech-stock-now/2026-11-18?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 12:08 ET",
-        "pub_ts": 1795021720.0
       }
     ],
     "CRWV": [
@@ -1419,6 +1419,13 @@
     ],
     "NBIS": [
       {
+        "title": "Nebius Stocks Rise 3.71% Premarket as Nvidia's $130 Billion Guide Lifts Neoclouds",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/nebius-stocks-rise-3-71-190530911.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 14:05 ET",
+        "pub_ts": 1795028730.0
+      },
+      {
         "title": "CoreWeave Falls 5% Despite NVIDIA Sticking to Its Financing Commitments; Nebius Dips, Oracle Holds Steady",
         "url": "https://247wallst.com/investing/2026/11/18/coreweave-falls-5-despite-nvidia-sticking-to-its-financing-commitments-nebius-dips-oracle-holds-steady/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1445,13 +1452,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 00:25 ET",
         "pub_ts": 1794979526.0
-      },
-      {
-        "title": "Nvidia Signals AI Financing Flywheel Will Continue, But ‘Disciplined’: Analyst Calls Neoclouds Its ‘Biggest Sustained Bet’ As NBIS, IREN, MRVL Rally",
-        "url": "https://stocktwits.com/news-articles/markets/equity/nvidia-signals-ai-financing-flywheel-will-continue-but-disciplined-analyst-calls-neoclouds-its-biggest-sustained-bet-as-nbis-iren-mrvl-rally/cNbXVSvR9hZ?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 21:47 ET",
-        "pub_ts": 1794970039.0
       }
     ],
     "APLD": [
@@ -1567,6 +1567,13 @@
     ],
     "CRDO": [
       {
+        "title": "Credo Stocks Rise 3.15% Premarket After Settling AEC Patent Fight With Marvell",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/credo-stocks-rise-3-15-190450598.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 14:04 ET",
+        "pub_ts": 1795028690.0
+      },
+      {
         "title": "Astera Labs and Credo Each Trade About 60% Below Their Highs. Only One Still Needs a $1.46 Billion Second Half",
         "url": "https://www.tikr.com/blog/astera-labs-and-credo-each-trade-about-60-below-their-highs-only-one-still-needs-a-1-46-billion-second-half?ref=yahoofinance&tlnk=yf-261118-2jfmh78p&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1593,16 +1600,16 @@
         "source": "Yahoo Finance",
         "time": "11-17 06:02 ET",
         "pub_ts": 1794913343.0
-      },
-      {
-        "title": "Can Credo Stock Double From Here?",
-        "url": "https://www.trefis.com/stock/crdo/articles/625294/can-credo-stock-double-from-here/2026-11-16?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-16 09:41 ET",
-        "pub_ts": 1794840074.0
       }
     ],
     "COHR": [
+      {
+        "title": "Coherent Ranks #33 on TIME's America's Top Manufacturers 2027 List",
+        "url": "https://finance.yahoo.com/technology/articles/coherent-ranks-33-times-americas-191500464.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 14:15 ET",
+        "pub_ts": 1795029300.0
+      },
       {
         "title": "AAOI Rides on AI-Led Optical Demand: Can It Beat Fabrinet and Coherent?",
         "url": "https://finance.yahoo.com/technology/ai/articles/aaoi-rides-ai-led-optical-164700563.html?.tsrc=rss",
@@ -1630,16 +1637,16 @@
         "source": "Yahoo Finance",
         "time": "11-18 09:08 ET",
         "pub_ts": 1795010931.0
-      },
-      {
-        "title": "Why Should Coherent Stock Holders Watch This One Number?",
-        "url": "https://www.trefis.com/stock/cohr/articles/626212/why-should-coherent-stock-holders-watch-this-one-number/2026-11-18?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 08:25 ET",
-        "pub_ts": 1795008317.0
       }
     ],
     "MRVL": [
+      {
+        "title": "Credo Stocks Rise 3.15% Premarket After Settling AEC Patent Fight With Marvell",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/credo-stocks-rise-3-15-190450598.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 14:04 ET",
+        "pub_ts": 1795028690.0
+      },
       {
         "title": "What Marvell’s (MRVL) Lumentum Deal Adds to Its Anthropic Growth Story",
         "url": "https://finance.yahoo.com/markets/stocks/articles/marvell-mrvl-lumentum-deal-adds-152652550.html?.tsrc=rss",
@@ -1667,13 +1674,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 02:23 ET",
         "pub_ts": 1794986619.0
-      },
-      {
-        "title": "Jensen Huang Called Marvell the “Next Trillion-Dollar Company.” It’s Still Up 75% in 2026. Time to Buy?",
-        "url": "https://www.tikr.com/blog/jensen-huang-called-marvell-the-next-trillion-dollar-company-its-still-up-75-in-2026-time-to-buy?ref=yahoofinance&tlnk=yf-261118-pw7x3rvv&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 23:53 ET",
-        "pub_ts": 1794977638.0
       }
     ],
     "LITE": [
@@ -2677,6 +2677,13 @@
     ],
     "ORCL": [
       {
+        "title": "Sector Update: Healthcare Stocks Decline in Afternoon Trading",
+        "url": "https://finance.yahoo.com/healthcare/articles/sector-healthcare-stocks-decline-afternoon-184357969.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 13:43 ET",
+        "pub_ts": 1795027437.0
+      },
+      {
         "title": "Digital Infrastructure World 2027 Announces First 85 Speakers as Registrants Represent 80GW of AI Buying Capacity",
         "url": "https://finance.yahoo.com/technology/ai/articles/digital-infrastructure-world-2027-announces-173500655.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2703,13 +2710,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 11:52 ET",
         "pub_ts": 1795020746.0
-      },
-      {
-        "title": "Snowflake's AI Push Fuels Revenue Growth: Can It Beat DELL & ORCL?",
-        "url": "https://finance.yahoo.com/technology/ai/articles/snowflakes-ai-push-fuels-revenue-164500994.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 11:45 ET",
-        "pub_ts": 1795020300.0
       }
     ],
     "COIN": [
@@ -3195,8 +3195,8 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795027998.0045347,
-    "SOXL": 1795027998.0045347,
+    "KORU": 1795029586.6983805,
+    "SOXL": 1795029586.6983805,
     "SPY": 1795029278.686986,
     "DIA": 1795029278.686986,
     "SOXX": 1795029278.686986,
@@ -3216,21 +3216,21 @@
     "QCOM": 1795029483.3725042,
     "AVGO": 1795029483.3725042,
     "AMAT": 1795029483.3725042,
-    "META": 1795027998.0045347,
-    "GOOGL": 1795027998.0045347,
+    "META": 1795029586.6983805,
+    "GOOGL": 1795029586.6983805,
     "MSFT": 1795029483.3725042,
-    "AAPL": 1795027998.0045347,
-    "PLTR": 1795027998.0045347,
-    "NOW": 1795027998.0045347,
-    "AMZN": 1795027998.0045347,
-    "CRWV": 1795027998.0045347,
-    "NBIS": 1795027998.0045347,
-    "APLD": 1795027998.0045347,
-    "VST": 1795027998.0045347,
-    "BE": 1795027998.0045347,
-    "CRDO": 1795027998.0045347,
-    "COHR": 1795027998.0045347,
-    "MRVL": 1795027998.0045347,
+    "AAPL": 1795029586.6983805,
+    "PLTR": 1795029586.6983805,
+    "NOW": 1795029586.6983805,
+    "AMZN": 1795029586.6983805,
+    "CRWV": 1795029586.6983805,
+    "NBIS": 1795029586.6983805,
+    "APLD": 1795029586.6983805,
+    "VST": 1795029586.6983805,
+    "BE": 1795029586.6983805,
+    "CRDO": 1795029586.6983805,
+    "COHR": 1795029586.6983805,
+    "MRVL": 1795029586.6983805,
     "LITE": 1795028099.4074252,
     "AAOI": 1795029278.686986,
     "SPCX": 1795028099.4074252,
@@ -3258,7 +3258,7 @@
     "SNDK": 1795029385.055802,
     "BTC-USD": 1795029483.3725042,
     "CRWD": 1795029483.3725042,
-    "ORCL": 1795027998.0045347,
+    "ORCL": 1795029586.6983805,
     "COIN": 1795029483.3725042,
     "LLY": 1795029483.3725042,
     "MRNA": 1795029483.3725042,
@@ -3269,7 +3269,7 @@
     "JPM": 1795028099.4074252,
     "WMT": 1795028099.4074252,
     "V": 1795029483.3725042,
-    "CAT": 1795027998.0045347,
+    "CAT": 1795029586.6983805,
     "FN": 1795028099.4074252,
     "GLW": 1795028099.4074252
   },
