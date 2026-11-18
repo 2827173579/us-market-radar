@@ -1507,9 +1507,13 @@
     "2026-11-18:DEFENSIVE_FLIGHT:-1.5": {
       "device": "ANDROID",
       "ts": 1794988501.1213863
+    },
+    "2026-11-18:DEFENSIVE_FLIGHT:-1.6": {
+      "device": "ANDROID",
+      "ts": 1794988771.3829546
     }
   },
   "device": "ANDROID",
-  "last_heartbeat_ts": 1794988526.9285953,
-  "updated_at": "2026-11-18T07:55:26.929676+00:00"
+  "last_heartbeat_ts": 1794988658.475152,
+  "updated_at": "2026-11-18T07:59:31.386123+00:00"
 }
