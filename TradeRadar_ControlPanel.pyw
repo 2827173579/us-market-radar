@@ -145,7 +145,11 @@ class TradeRadarControlApp:
         # 构建 UI
         self.build_ui()
 
-        # 启动状态刷新定时器 (每 2.5 秒探测一次后台进程)
+        # 启动状态刷新定时器 (异步后台探测，绝不阻塞 UI 主线程)
+        self._probe_in_flight = False
+        self._cached_lan_ip = None
+        self._last_cim_probe_ts = 0.0
+        self._cached_cim_pids = ([], [])
         self.refresh_status_loop()
 
     def setup_styles(self):
@@ -285,22 +289,71 @@ class TradeRadarControlApp:
 
         self.append_log("⚡ 控制中心已就绪，当前项目路径: " + PROJECT_DIR)
 
-    def append_log(self, msg):
+    def _append_log_ui(self, msg):
         timestamp = datetime.now().strftime("%H:%M:%S")
         self.log_text.insert("end", f"[{timestamp}] {msg}\n")
         self.log_text.see("end")
 
+    def append_log(self, msg):
+        if threading.current_thread() is threading.main_thread():
+            self._append_log_ui(msg)
+        else:
+            try:
+                self.root.after(0, lambda m=msg: self._append_log_ui(m))
+            except Exception:
+                pass
+
     def clear_logs(self):
         self.log_text.delete("1.0", "end")
 
-    def refresh_status(self):
-        """定期刷新后台进程探测结果与状态展示"""
+    def _collect_status_snapshot(self, force_cim=False):
+        """在后台线程收集进程、端口与网络状态，严禁阻塞 Tkinter 主线程。"""
         is_listening = is_radar_port_listening(8765)
-        pids = get_running_radar_pids()
-        lan_ip = get_local_lan_ip()
         autostart = is_autostart_enabled()
 
-        all_pids, loop_pids = get_running_radar_processes()
+        if self._cached_lan_ip is None:
+            self._cached_lan_ip = get_local_lan_ip()
+        lan_ip = self._cached_lan_ip
+
+        # 优先零开销读取 PID 文件 + Windows OpenProcess，降低 PowerShell WMI 轮询频率
+        pid_alive = None
+        if os.path.exists(PID_FILE):
+            try:
+                with open(PID_FILE, "r", encoding="utf-8") as pf:
+                    val = pf.read().strip()
+                if val.isdigit() and is_pid_alive(int(val)):
+                    pid_alive = int(val)
+            except Exception:
+                pid_alive = None
+
+        now = time.time()
+        if force_cim or pid_alive is None or (now - self._last_cim_probe_ts >= 15.0):
+            all_pids, loop_pids = get_running_radar_processes()
+            self._cached_cim_pids = (all_pids, loop_pids)
+            self._last_cim_probe_ts = now
+        else:
+            all_pids, loop_pids = self._cached_cim_pids
+            if pid_alive not in loop_pids:
+                loop_pids = [pid_alive] + [p for p in loop_pids if p != pid_alive]
+            if pid_alive not in all_pids:
+                all_pids = [pid_alive] + [p for p in all_pids if p != pid_alive]
+
+        return {
+            "is_listening": is_listening,
+            "all_pids": all_pids,
+            "loop_pids": loop_pids,
+            "lan_ip": lan_ip,
+            "autostart": autostart,
+        }
+
+    def _apply_status_snapshot(self, snap):
+        """仅在 UI 主线程刷新标签文本，耗时 <1ms。"""
+        is_listening = snap["is_listening"]
+        all_pids = snap["all_pids"]
+        loop_pids = snap["loop_pids"]
+        lan_ip = snap["lan_ip"]
+        autostart = snap["autostart"]
+
         if loop_pids:
             self.lbl_status_badge.config(text="● 守护进程运行中 (ACTIVE)", fg="#3fb950")
             self.lbl_pid_info.config(text=f"PID: {', '.join(map(str, loop_pids))}", fg="#3fb950")
@@ -318,18 +371,34 @@ class TradeRadarControlApp:
         )
         self.btn_autostart.config(text="❌ 取消开机自启" if autostart else "🚀 设置开机自启")
 
+    def refresh_status(self, force_cim=False):
+        """异步触发状态检测；保证任何情况下都不卡死桌面窗口。"""
+        if self._probe_in_flight:
+            return
+        self._probe_in_flight = True
+
+        def _probe():
+            try:
+                snap = self._collect_status_snapshot(force_cim=force_cim)
+                self.root.after(0, lambda s=snap: self._apply_status_snapshot(s))
+            except Exception:
+                pass
+            finally:
+                self._probe_in_flight = False
+
+        threading.Thread(target=_probe, daemon=True).start()
+
     def refresh_status_loop(self):
         self.refresh_status()
-        self.root.after(2500, self.refresh_status_loop)
+        self.root.after(4000, self.refresh_status_loop)
 
     def on_start_daemon(self):
         """启动后台轮询守护进程"""
-        all_pids, loop_pids = get_running_radar_processes()
-        if loop_pids:
-            messagebox.showinfo("提示", f"后台轮询守护已经在运行中 (PID: {loop_pids})，无需重复启动！")
-            return
-
         def _worker():
+            _, loop_pids = get_running_radar_processes()
+            if loop_pids:
+                self.root.after(0, lambda lp=loop_pids: messagebox.showinfo("提示", f"后台轮询守护已经在运行中 (PID: {lp})，无需重复启动！"))
+                return
             self.append_log("正在启动后台轮询守护进程...")
             try:
                 creation_flags = SILENT_WIN_FLAGS
@@ -348,11 +417,12 @@ class TradeRadarControlApp:
                         pf.write(str(proc.pid))
                 except Exception:
                     pass
+                self._last_cim_probe_ts = 0.0
                 self.append_log(f"✅ 后台轮询已启动，PID: {proc.pid}")
-                self.append_log(f"📱 局域网看盘地址: http://{get_local_lan_ip()}:8765")
+                self.append_log(f"📱 局域网看盘地址: http://{self._cached_lan_ip or get_local_lan_ip()}:8765")
             except Exception as e:
                 self.append_log(f"❌ 启动失败: {e}")
-            self.refresh_status()
+            self.root.after(0, lambda: self.refresh_status(force_cim=True))
 
         threading.Thread(target=_worker, daemon=True).start()
 
@@ -369,10 +439,12 @@ class TradeRadarControlApp:
                 cmd = ["powershell", "-NoProfile", "-NonInteractive", "-Command", "Get-CimInstance Win32_Process -Filter \"Name like 'python%'\" | Where-Object { $_.CommandLine -like '*integrated_market_radar.py*' } | ForEach-Object { Stop-Process -Id $_.ProcessId -Force }"]
                 subprocess.run(cmd, capture_output=True, timeout=8, creationflags=SILENT_WIN_FLAGS)
                 time.sleep(1)
+                self._last_cim_probe_ts = 0.0
+                self._cached_cim_pids = ([], [])
                 self.append_log("🛑 所有后台雷达进程已全部终止，端口 8765 已释放。")
             except Exception as e:
                 self.append_log(f"❌ 终止异常: {e}")
-            self.refresh_status()
+            self.root.after(0, lambda: self.refresh_status(force_cim=True))
 
         threading.Thread(target=_worker, daemon=True).start()
 
@@ -526,10 +598,10 @@ End If
 
                 self.append_log(f"🎉 迁移全量包打包成功！已保存至桌面:")
                 self.append_log(f"   👉 {zip_path}")
-                messagebox.showinfo(
+                self.root.after(0, lambda zp=zip_filename: messagebox.showinfo(
                     "打包成功",
-                    f"新电脑全量迁移压缩包已生成在您的桌面！\n\n文件: {zip_filename}\n\n您只需将此压缩包拷入U盘或发至新电脑解压，按照里面的《新电脑无缝迁移指南》即可一键开跑！"
-                )
+                    f"新电脑全量迁移压缩包已生成在您的桌面！\n\n文件: {zp}\n\n您只需将此压缩包拷入U盘或发至新电脑解压，按照里面的《新电脑无缝迁移指南》即可一键开跑！"
+                ))
             except Exception as e:
                 self.append_log(f"❌ 打包失败: {e}")
 
