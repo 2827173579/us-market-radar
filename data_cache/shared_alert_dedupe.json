@@ -1455,9 +1455,17 @@
     "JIN10_FLASH:20261118141241115800": {
       "device": "ANDROID",
       "ts": 1794982443.5526536
+    },
+    "2026-11-18:SPCX:5M_ENTRY": {
+      "device": "ANDROID",
+      "ts": 1794984159.7314904
+    },
+    "2026-11-18:DEFENSIVE_FLIGHT:-1.1": {
+      "device": "ANDROID",
+      "ts": 1794984161.462284
     }
   },
   "device": "ANDROID",
-  "last_heartbeat_ts": 1794983804.5462768,
-  "updated_at": "2026-11-18T06:36:44.549517+00:00"
+  "last_heartbeat_ts": 1794983999.9059303,
+  "updated_at": "2026-11-18T06:42:41.465579+00:00"
 }
