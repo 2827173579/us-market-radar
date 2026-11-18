@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1794983283.142,
-  "updated_at_et": "11-18 01:28 ET",
-  "updated_at_kst": "15:28 KST",
+  "updated_at_ts": 1794983480.519,
+  "updated_at_et": "11-18 01:31 ET",
+  "updated_at_kst": "15:31 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2835,6 +2835,13 @@
     ],
     "NKE": [
       {
+        "title": "Nike’s China weakness: What does it mean for local rivals?",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/nike-china-weakness-does-mean-053437555.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 00:34 ET",
+        "pub_ts": 1794980077.0
+      },
+      {
         "title": "Nasdaq Futures Lead Wall Street Rebound After Nvidia’s Blowout Forecast, Anthropic IPO Looms: SLS, NKE, MU In Focus",
         "url": "https://stocktwits.com/news-articles/markets/equity/nasdaq-futures-lead-wall-street-rebound-after-nvidia-s-blowout-forecast-anthropic-ipo-looms-sls-nke-mu-in-focus/cNbX828R9hF?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2861,13 +2868,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 17:50 ET",
         "pub_ts": 1794955800.0
-      },
-      {
-        "title": "Stock Market Today, Nov. 17: Nike Shares Fall 6.3% After Investor Day Turnaround Plan Draws Scrutiny",
-        "url": "https://www.fool.com/coverage/stock-market-today/2026/11/17/stock-market-today-nov-17-nike-shares-fall-63-after-investor-day-turnaround-plan-draws-scrutiny/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 17:19 ET",
-        "pub_ts": 1794953949.0
       }
     ],
     "MCD": [
@@ -3215,11 +3215,11 @@
     "IWM": 1794982806.7388487,
     "IGV": 1794976356.3158119,
     "TLT": 1794983283.1415756,
-    "GLD": 1794979971.7541025,
+    "GLD": 1794983480.519229,
     "SQQQ": 1794979971.7541025,
     "TSM": 1794979971.7541025,
     "VIXY": 1794983283.1415756,
-    "SOXS": 1794979971.7541025,
+    "SOXS": 1794983480.519229,
     "NVDA": 1794980158.2530713,
     "AMD": 1794980158.2530713,
     "ASML": 1794980454.6903067,
@@ -3272,7 +3272,7 @@
     "COIN": 1794982423.7443273,
     "LLY": 1794982619.093038,
     "MRNA": 1794982619.093038,
-    "NKE": 1794979773.8311749,
+    "NKE": 1794983480.519229,
     "MCD": 1794982619.093038,
     "PEP": 1794979971.7541025,
     "XOM": 1794980158.2530713,
