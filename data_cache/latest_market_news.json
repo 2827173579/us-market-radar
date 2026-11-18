@@ -1,9 +1,22 @@
 {
-  "updated_at_ts": 1794994060.898,
-  "updated_at_et": "11-18 04:27 ET",
-  "updated_at_kst": "18:27 KST",
+  "updated_at_ts": 1794994314.984,
+  "updated_at_et": "11-18 04:31 ET",
+  "updated_at_kst": "18:31 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261118172752854800",
+      "title": "克里姆林宫：俄罗斯总统普京与美国总统特朗普将进行对话。",
+      "summary": "克里姆林宫：俄罗斯总统普京与美国总统特朗普将进行对话。",
+      "keywords": [
+        "特朗普"
+      ],
+      "pub_ts": 1794994072.0,
+      "time_et": "11-18 04:27 ET",
+      "time_bj": "17:27 BJ",
+      "time_kst": "18:27 KST",
+      "time_display": "04:27 ET / 17:27 BJ"
+    },
     {
       "id": "20261118172730597800",
       "title": "国际金跌超2%再创一年多新低，多头还有反攻的希望吗？",
@@ -334,21 +347,6 @@
       "time_bj": "13:17 BJ",
       "time_kst": "14:17 KST",
       "time_display": "00:17 ET / 13:17 BJ"
-    },
-    {
-      "id": "20261118121122989800",
-      "title": "1. 浑水做空英伟达，质疑前高管与超微电脑前员工存在关联。 2. 英伟达2027财年第三…",
-      "summary": "1. 浑水做空英伟达，质疑前高管与超微电脑前员工存在关联。 2. 英伟达2027财年第三季度营收同比翻倍至1158亿美元，调整后每股收益2.68美元，双双超预期，四季度营收指引中值1300亿美元高于预期，董事会主席哈维·琼斯在财报电话会上表示，公司无意让黄仁勋重任CEO。 3. 微软高管：英伟达风波或促使客户寻求AI芯片替代方案。 4. 报道：美国证交会正在调查英伟达是否存在误导投资者的信息披露行为。 5. OpenAI推出新一代模型系列，包括旗舰级模型GPT-6.2 Astra以及面向日常与高性价比任务的GPT-6.2 Sol。 6. 据悉Anthropic IPO定价将处于指引区间上限或以上。 7. 研究：Anthropic等先进AI模型频繁将平民误判为军事目标。 8. Anthropic获老股东加码 红杉、Lightspeed等拟向其IPO再投数十亿美元。 9. SpaceX 400亿美元AI芯片债务融资部分份额最快本周发售。 10. 阿波罗全球管理CEO称保险资金将支撑规模高达8万亿美元的AI建设热潮。 11. 优必选周剑：未来20至30年人形机器人若大规模承担柔性岗位，全球工业模式或生变。 12. Alphabet支持的Isomorphic Labs获50亿美元C轮，推进首批候选药物。 13. 机器人公司Genesis AI完成5亿美元A轮，投后估值35亿美元。",
-      "keywords": [
-        "芯片",
-        "英伟达",
-        "微软"
-      ],
-      "pub_ts": 1794975082.0,
-      "time_et": "11-17 23:11 ET",
-      "time_bj": "12:11 BJ",
-      "time_kst": "13:11 KST",
-      "time_display": "23:11 ET / 12:11 BJ"
     }
   ],
   "ticker_news": {
@@ -1168,6 +1166,20 @@
     ],
     "GOOGL": [
       {
+        "title": "Market Chatter: Korea Regulator Cites Customer Complaints, Orders Apple, Google, Alibaba, OpenAI to Designate Legal Representatives by January",
+        "url": "https://finance.yahoo.com/technology/articles/market-chatter-korea-regulator-cites-085052188.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 03:50 ET",
+        "pub_ts": 1794991852.0
+      },
+      {
+        "title": "Alphabet Stock Is Down 25% From Its High. History Suggests a $5,000 Investment Now Will Be Worth This Much by 2028.",
+        "url": "https://www.fool.com/investing/2026/11/18/alphabet-stock-is-down-25-from-its-high-history-suggests-a-usd5-000-investment-now-will-be-worth-this-much-by-2028/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 03:45 ET",
+        "pub_ts": 1794991502.0
+      },
+      {
         "title": "Woodway Assurance finds European Commission anonymization measures need to be updated to ensure Google search data has low privacy risk",
         "url": "https://finance.yahoo.com/technology/ai/articles/woodway-assurance-finds-european-commission-070000525.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1187,20 +1199,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 22:13 ET",
         "pub_ts": 1794971605.0
-      },
-      {
-        "title": "Nvidia Bought Into Anthropic Near $350 Billion. Gerstner Sees It Pricing at $1.4, $1.5 Trillion",
-        "url": "https://www.tikr.com/blog/nvidia-bought-into-anthropic-near-350-billion-gerstner-sees-it-pricing-at-1-4-1-5-trillion?ref=yahoofinance&tlnk=yf-261118-8vqx9r76&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 20:14 ET",
-        "pub_ts": 1794964484.0
-      },
-      {
-        "title": "Jim Cramer Warns the Anthropic IPO Windfall Is Going to the Super Rich. Here’s the Backlash He Sees Coming",
-        "url": "https://247wallst.com/investing/2026/11/17/jim-cramer-warns-the-anthropic-ipo-windfall-is-going-to-the-super-rich-heres-the-backlash-he-sees-coming/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 19:07 ET",
-        "pub_ts": 1794960452.0
       }
     ],
     "MSFT": [
@@ -1242,6 +1240,20 @@
     ],
     "AAPL": [
       {
+        "title": "Samsung Electronics (KOSE:A005930) Nears Rare Multi Year DRAM Supply Deal",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/samsung-electronics-kose-a005930-nears-091338091.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 04:13 ET",
+        "pub_ts": 1794993218.0
+      },
+      {
+        "title": "Market Chatter: Korea Regulator Cites Customer Complaints, Orders Apple, Google, Alibaba, OpenAI to Designate Legal Representatives by January",
+        "url": "https://finance.yahoo.com/technology/articles/market-chatter-korea-regulator-cites-085052188.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 03:50 ET",
+        "pub_ts": 1794991852.0
+      },
+      {
         "title": "A Retiree With $400,000 in His 401(k) Tries to Move Money Before Stocks Fall Further. Apple’s Widespread Outage Raises the Stakes of a Missed Trade",
         "url": "https://247wallst.com/personal-finance/2026/11/17/a-retiree-with-400000-in-his-401k-tries-to-move-money-before-stocks-fall-further-apples-widespread-outage-raises-the-stakes-of-a-missed-trade/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1254,20 +1266,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 16:54 ET",
         "pub_ts": 1794952487.0
-      },
-      {
-        "title": "Apple down live: iPhones stop working properly as iCloud taken down by ‘internal update’",
-        "url": "https://www.independent.co.uk/tech/apple-down-not-working-pay-icloud-music-app-store-iphone-status-b3086668.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 15:59 ET",
-        "pub_ts": 1794949170.0
-      },
-      {
-        "title": "Dear Apple Stock Fans, Mark Your Calendars for June 2027",
-        "url": "https://www.barchart.com/story/news/8883195/dear-apple-stock-fans-mark-your-calendars-for-june-2027?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 15:17 ET",
-        "pub_ts": 1794946633.0
       },
       {
         "title": "Broadcom vs. Micron Technology: Which Tech Stock Is the Better Buy for 2027?",
@@ -3223,11 +3221,11 @@
     "ASML": 1794994060.8976185,
     "QCOM": 1794994060.8976185,
     "AVGO": 1794994060.8976185,
-    "AMAT": 1794989945.322309,
-    "META": 1794989945.322309,
-    "GOOGL": 1794989945.322309,
+    "AMAT": 1794994314.9843023,
+    "META": 1794994314.9843023,
+    "GOOGL": 1794994314.9843023,
     "MSFT": 1794994060.8976185,
-    "AAPL": 1794989945.322309,
+    "AAPL": 1794994314.9843023,
     "PLTR": 1794990169.0144334,
     "NOW": 1794990169.0144334,
     "AMZN": 1794990169.0144334,
@@ -3284,7 +3282,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (04:27 ET / 17:27 BJ) [美联储] [加息]：美联储加息预期推高黄金持有成本，央行买盘也未能完全抵消抛售压力。但机构认为，AI融资需求可能在2027年前后见顶，债券收益率回落或为金价创造反弹空间。点击查看",
+    "detail": "⚡ 最新核心快讯 (04:27 ET / 17:27 BJ) [特朗普]：克里姆林宫：俄罗斯总统普京与美国总统特朗普将进行对话。",
     "event_name": "",
     "minutes_left": 0
   }
