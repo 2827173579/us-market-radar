@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1794986626.63,
-  "updated_at_et": "11-18 02:23 ET",
-  "updated_at_kst": "16:23 KST",
+  "updated_at_ts": 1794986826.678,
+  "updated_at_et": "11-18 02:27 ET",
+  "updated_at_kst": "16:27 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2425,6 +2425,13 @@
     ],
     "SKHY": [
       {
+        "title": "Asian markets are mixed as AI stocks recover after Wall Street losses",
+        "url": "https://finance.yahoo.com/markets/world-indices/articles/asian-markets-mostly-decline-wall-034546063.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 22:45 ET",
+        "pub_ts": 1794973546.0
+      },
+      {
         "title": "Micron Technology (MU) Keeps DRAM Price Fixing Lawsuit Alive After Judge Rejection",
         "url": "https://finance.yahoo.com/markets/stocks/articles/micron-technology-mu-keeps-dram-001843894.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2451,13 +2458,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 14:04 ET",
         "pub_ts": 1794942251.0
-      },
-      {
-        "title": "Qualcomm vs. SK Hynix: Stable Revenue vs. Rapid Acceleration",
-        "url": "https://www.fool.com/coverage/charts/2026/11/17/qualcomm-vs-sk-hynix-stable-revenue-vs-rapid-acceleration/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 13:20 ET",
-        "pub_ts": 1794939602.0
       }
     ],
     "WDC": [
@@ -3254,15 +3254,15 @@
     "VRT": 1794986626.6299999,
     "HPE": 1794986626.6299999,
     "DELL": 1794986626.6299999,
-    "OKLO": 1794984532.4362926,
+    "OKLO": 1794986826.6779554,
     "CEG": 1794986155.1797864,
-    "FPS": 1794984532.4362926,
-    "MU": 1794984532.4362926,
-    "SKHY": 1794984532.4362926,
-    "WDC": 1794984532.4362926,
+    "FPS": 1794986826.6779554,
+    "MU": 1794986826.6779554,
+    "SKHY": 1794986826.6779554,
+    "WDC": 1794986826.6779554,
     "STX": 1794985360.959407,
     "MSTR": 1794984532.4362926,
-    "SNDK": 1794984532.4362926,
+    "SNDK": 1794986826.6779554,
     "BTC-USD": 1794985545.4600408,
     "CRWD": 1794984532.4362926,
     "ORCL": 1794984724.667803,
