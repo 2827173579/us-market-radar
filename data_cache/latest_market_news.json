@@ -1,9 +1,23 @@
 {
-  "updated_at_ts": 1795038809.224,
-  "updated_at_et": "11-18 16:53 ET",
-  "updated_at_kst": "06:53 KST",
+  "updated_at_ts": 1795038908.892,
+  "updated_at_et": "11-18 16:55 ET",
+  "updated_at_kst": "06:55 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261119055448869800",
+      "title": "【美联储会议纪要：官员支持加息的理由有哪些？】 11月19日讯，美联储在10月维持利率不…",
+      "summary": "【美联储会议纪要：官员支持加息的理由有哪些？】 11月19日讯，美联储在10月维持利率不变，两名票委投下反对票，希望加息25个基点。10月会议纪要显示，一些与会者倾向于在10月会议上将利率目标区间上调25个基点。他们强调，通胀仍处于过高水平，且几乎没有迹象表明通胀正在回落。他们认为，当前货币政策立场的限制性还不够强。少数与会者警告称，进一步推迟加息可能导致高通胀根深蒂固，或者迫使美联储日后采取幅度更大、对经济扰动更强的紧缩措施。少数与会者指出，未来几周能够获得的新增数据有限，地缘政治不确定性短期内不太可能得到实质性缓解，或者下一份通胀报告的数据可能不利。少数支持上调目标利率区间的与会者表示，如果能够明确让市场参与者认识到，未来进一步收紧货币政策的可能性较大，他们也可以接受本次会议维持利率不变。",
+      "keywords": [
+        "美联储",
+        "加息"
+      ],
+      "pub_ts": 1795038888.0,
+      "time_et": "11-18 16:54 ET",
+      "time_bj": "05:54 BJ",
+      "time_kst": "06:54 KST",
+      "time_display": "16:54 ET / 05:54 BJ"
+    },
     {
       "id": "20261119051536088800",
       "title": "【中日英在9月均减持美债】 11月19日讯，美国财政部数据显示，9月，美国前三大海外美债…",
@@ -327,22 +341,6 @@
       "time_bj": "22:31 BJ",
       "time_kst": "23:31 KST",
       "time_display": "09:31 ET / 22:31 BJ"
-    },
-    {
-      "id": "20261118213335597800",
-      "title": "整理：每日美股市场要闻速递（11月18日）",
-      "summary": "重要新闻 1. 美联储理事沃勒：美联储在加息方面需要更加积极。若不释放1月加息的信号，应在12月加息50个基点。 2. 据路透社：两名西方官员援引与沙特方面的谈话称，沙特阿拉伯预计与胡塞武装的战争将持续到2027年。 个股新闻 1. 富国银行、StoneX等投行上调迪士尼(DIS.N)目标价。 2. 据Business Insider：Salesforce(CRM.N)按员工岗位设定每月AI令牌预算。 3. 在业绩与指引均超预期的情况下，英伟达(NVDA.O)遭多家投行下调目标价。 4. 据悉通用汽车(GM.N)正在物色外部首席执行官人选，同时也在评估内部候选人。 5. 英伟达(NVDA.O)2027财年Q3营收1158亿美元，净利润653亿美元，均高于市场预期。 6. 做空机构浑水研究披露做空英伟达(NVDA.O)，质疑前高管与超微电脑前员工存在关联。 7. 市场消息：甲骨文(ORCL.N)生命科学AI智能体将为临床试验提供AI辅助的运营智能与协同管理能力。 8. 微软(MSFT.O)： 与埃森哲、Adobe、毕马威、万事达、沃尔沃汽车等企业合作，共同推动制定AI系统开放标准。 9. Salesforce(CRM.N)与微软宣布推出Copilotforce，将Salesforce的客户信息及销售工作流程整合至微软Copilot。",
-      "keywords": [
-        "美联储",
-        "加息",
-        "英伟达",
-        "微软"
-      ],
-      "pub_ts": 1795008815.0,
-      "time_et": "11-18 08:33 ET",
-      "time_bj": "21:33 BJ",
-      "time_kst": "22:33 KST",
-      "time_display": "08:33 ET / 21:33 BJ"
     }
   ],
   "ticker_news": {
@@ -903,39 +901,39 @@
     ],
     "NVDA": [
       {
-        "title": "Nvidia interim CEO Colette Kress has taken over one of the most consequential companies on the planet; those who know her say she's up to the task",
-        "url": "https://finance.yahoo.com/technology/article/nvidia-interim-ceo-colette-kress-has-taken-over-one-of-the-most-consequential-companies-on-the-planet-those-who-know-her-say-shes-up-to-the-task-210312776.html?.tsrc=rss",
+        "title": "Palmer Luckey thinks China is ‘thrilled to have Jensen out,’ so he wants the ousted Nvidia CEO reinstated",
+        "url": "https://finance.yahoo.com/technology/articles/palmer-luckey-thinks-china-thrilled-213121175.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-18 15:26 ET",
-        "pub_ts": 1795033579.0
+        "time": "11-18 16:31 ET",
+        "pub_ts": 1795037481.0
       },
       {
-        "title": "How major US stock indexes fared Wednesday 11/18/2026",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/major-us-stock-indexes-fared-212009825.html?.tsrc=rss",
+        "title": "Nvidia, Take-Two, Palo Alto, Applied Optoelectronics, TJX, and More Stocks That Explain Today’s Market",
+        "url": "https://finance.yahoo.com/m/415e4137-8850-333d-b848-d21e98bc6659/nvidia%2C-take-two%2C-palo-alto%2C.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-18 16:20 ET",
-        "pub_ts": 1795036809.0
+        "time": "11-18 16:31 ET",
+        "pub_ts": 1795037460.0
       },
       {
-        "title": "Nvidia Just Demolished Earnings, but the Stock Is Still Plunging. The Reason Is Obvious.",
-        "url": "https://www.fool.com/investing/2026/11/18/nvidia-just-demolished-earnings-but-the-stock-is-still-plunging-the-reason-is-obvious/?.tsrc=rss",
+        "title": "Nvidia's Board Chairman Says Jensen Huang Isn't Coming Back, but He May Have a Poker Move for the Ages Hiding up His Sleeve",
+        "url": "https://www.fool.com/investing/2026/11/18/nvidia-s-board-says-jensen-huang-isn-t-coming-back-but-he-may-have-a-poker-move-for-the-ages-hiding-up-his-sleeve/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-18 16:07 ET",
-        "pub_ts": 1795036035.0
+        "time": "11-18 16:28 ET",
+        "pub_ts": 1795037304.0
       },
       {
-        "title": "Apple Stock Polishes Breakout As Nvidia-Led AI Boom Gets Wake-Up Call",
-        "url": "https://finance.yahoo.com/m/681ca0c6-76b1-321b-bdd4-bb83acc818fb/apple-stock-polishes-breakout.html?.tsrc=rss",
+        "title": "Stocks slide despite bumper Nvidia profits, Anthropic IPO",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/stocks-drop-booming-nvidia-results-024500677.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-18 16:04 ET",
-        "pub_ts": 1795035850.0
+        "time": "11-18 16:25 ET",
+        "pub_ts": 1795037142.0
       },
       {
-        "title": "‘Nvidia’s turmoil has me spooked’: Should I sell my stocks and buy real estate — or ride out the storm?",
-        "url": "https://www.marketwatch.com/story/nvidia-spooked-me-should-i-sell-my-stocks-or-ride-out-the-market-turmoil-560583c6?.tsrc=rss",
+        "title": "Nvidia Delivers Reassuring Results, Outlook. But Wall Street Split.",
+        "url": "https://finance.yahoo.com/m/7d839da5-898d-3b89-b6a4-ed8b84753cb0/nvidia-delivers-reassuring.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-18 16:00 ET",
-        "pub_ts": 1795035600.0
+        "time": "11-18 16:23 ET",
+        "pub_ts": 1795037033.0
       }
     ],
     "AMD": [
@@ -1199,6 +1197,20 @@
     ],
     "MSFT": [
       {
+        "title": "Want to Play Defense With Your Stock Portfolio? Here Are Pros’ Picks.",
+        "url": "https://finance.yahoo.com/m/38cd716d-6613-3fb9-ab86-538527b7d22b/want-to-play-defense-with.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 16:14 ET",
+        "pub_ts": 1795036440.0
+      },
+      {
+        "title": "Microsoft expands Azure arsenal at Ignite",
+        "url": "https://www.ciodive.com/news/microsoft-expands-azure-arsenal-ignite/875125/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 16:04 ET",
+        "pub_ts": 1795035843.0
+      },
+      {
         "title": "Microsoft Stock (MSFT) Forecast – Mizuho Stays Bullish on Strong Revenue Growth Prospects",
         "url": "https://finance.yahoo.com/markets/stocks/articles/microsoft-stock-msft-forecast-mizuho-210000261.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1218,20 +1230,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 15:11 ET",
         "pub_ts": 1795032683.0
-      },
-      {
-        "title": "Elastic Makes High-Accuracy, Cost-Efficient Jina AI Models Available on Microsoft Foundry",
-        "url": "https://finance.yahoo.com/technology/ai/articles/elastic-makes-high-accuracy-cost-193100251.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 14:31 ET",
-        "pub_ts": 1795030260.0
-      },
-      {
-        "title": "AI Risks Lift Cyber Stocks as Software Looks to Shrug Off Slump",
-        "url": "https://finance.yahoo.com/m/646ac265-aef5-3b36-8971-189ef1f7c636/ai-risks-lift-cyber-stocks-as.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 14:25 ET",
-        "pub_ts": 1795029900.0
       }
     ],
     "AAPL": [
@@ -2249,13 +2247,6 @@
         "pub_ts": 1795024812.0
       },
       {
-        "title": "Nvidia, Take-Two, Palo Alto, Applied Optoelectronics, TJX, and More Stocks That Explain Today’s Market",
-        "url": "https://finance.yahoo.com/m/415e4137-8850-333d-b848-d21e98bc6659/nvidia%2C-take-two%2C-palo-alto%2C.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 12:57 ET",
-        "pub_ts": 1795024620.0
-      },
-      {
         "title": "A $2.9 Billion Fund Dumps These 3 Stocks",
         "url": "https://www.tikr.com/blog/a-2-9-billion-fund-dumps-these-3-stocks?ref=yahoofinance&tlnk=yf-261118-78xvfqgj&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2268,6 +2259,13 @@
         "source": "Yahoo Finance",
         "time": "11-18 11:45 ET",
         "pub_ts": 1795020302.0
+      },
+      {
+        "title": "Snowflake's AI Push Fuels Revenue Growth: Can It Beat DELL & ORCL?",
+        "url": "https://finance.yahoo.com/technology/ai/articles/snowflakes-ai-push-fuels-revenue-164500994.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 11:45 ET",
+        "pub_ts": 1795020300.0
       }
     ],
     "OKLO": [
@@ -2605,6 +2603,27 @@
     ],
     "BTC-USD": [
       {
+        "title": "3 Reasons to Buy Bitcoin Before 2027 and 2 Reasons to Wait",
+        "url": "https://247wallst.com/investing/cryptocurrency/2026/11/18/3-reasons-to-buy-bitcoin-before-2027-and-2-reasons-to-wait/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 16:43 ET",
+        "pub_ts": 1795038186.0
+      },
+      {
+        "title": "Riot Platforms Soars 7% as Activist Starboard Pitches Its Upside at Investor Conference",
+        "url": "https://www.tikr.com/blog/riot-platforms-soars-7-as-activist-starboard-pitches-its-upside-at-investor-conference?ref=yahoofinance&tlnk=yf-261118-vqgm8v9w&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 16:42 ET",
+        "pub_ts": 1795038177.0
+      },
+      {
+        "title": "Goldman Sachs pushes billions into one asset and halves another",
+        "url": "https://www.thestreet.com/crypto/investing/goldman-sachs-pushes-billions-into-one-asset-and-halves-another?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 16:35 ET",
+        "pub_ts": 1795037757.0
+      },
+      {
         "title": "Bullish Stock Jumps On Earnings, Revenue Gains. Board Approves $300 Mil Buyback Plan.",
         "url": "https://finance.yahoo.com/m/a8f9b5cc-c5df-3f52-8d97-8ec408de7963/bullish-stock-jumps-on.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2617,27 +2636,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 15:56 ET",
         "pub_ts": 1795035389.0
-      },
-      {
-        "title": "Bitcoin bottom in? Analyst spots key $63K support",
-        "url": "https://www.thestreet.com/crypto/markets/bitcoin-bottom-in-analyst-spots-key-63k-support?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 15:40 ET",
-        "pub_ts": 1795034400.0
-      },
-      {
-        "title": "What Will 3,000 XRP Be Worth in 5 Years?",
-        "url": "https://247wallst.com/investing/cryptocurrency/2026/11/18/what-will-3000-xrp-be-worth-in-5-years/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 15:33 ET",
-        "pub_ts": 1795034022.0
-      },
-      {
-        "title": "What a half-point rate hike from the Fed could mean for crypto",
-        "url": "https://finance.yahoo.com/video/half-point-rate-hike-fed-193000144.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 14:30 ET",
-        "pub_ts": 1795030200.0
       }
     ],
     "CRWD": [
@@ -3206,21 +3204,21 @@
     "SMH": 1795038707.4078712,
     "IWM": 1795038707.4078712,
     "IGV": 1795038707.4078712,
-    "TLT": 1795037337.2028086,
-    "GLD": 1795037337.2028086,
+    "TLT": 1795038908.8918805,
+    "GLD": 1795038908.8918805,
     "SQQQ": 1795038707.4078712,
-    "TSM": 1795037337.2028086,
-    "VIXY": 1795037337.2028086,
-    "SOXS": 1795037337.2028086,
-    "NVDA": 1795037337.2028086,
-    "AMD": 1795037337.2028086,
-    "ASML": 1795037337.2028086,
-    "QCOM": 1795037337.2028086,
-    "AVGO": 1795037337.2028086,
-    "AMAT": 1795037337.2028086,
+    "TSM": 1795038908.8918805,
+    "VIXY": 1795038908.8918805,
+    "SOXS": 1795038908.8918805,
+    "NVDA": 1795038908.8918805,
+    "AMD": 1795038908.8918805,
+    "ASML": 1795038908.8918805,
+    "QCOM": 1795038908.8918805,
+    "AVGO": 1795038908.8918805,
+    "AMAT": 1795038908.8918805,
     "META": 1795037439.9556856,
     "GOOGL": 1795037439.9556856,
-    "MSFT": 1795037337.2028086,
+    "MSFT": 1795038908.8918805,
     "AAPL": 1795037439.9556856,
     "PLTR": 1795037439.9556856,
     "NOW": 1795037439.9556856,
@@ -3247,19 +3245,19 @@
     "FLY": 1795037542.2496846,
     "INTC": 1795038707.4078712,
     "VRT": 1795038707.4078712,
-    "HPE": 1795037337.2028086,
-    "DELL": 1795037337.2028086,
-    "OKLO": 1795037337.2028086,
+    "HPE": 1795038908.8918805,
+    "DELL": 1795038908.8918805,
+    "OKLO": 1795038908.8918805,
     "CEG": 1795038707.4078712,
     "FPS": 1795038707.4078712,
-    "MU": 1795037337.2028086,
-    "SKHY": 1795037337.2028086,
-    "WDC": 1795037337.2028086,
-    "STX": 1795037337.2028086,
-    "MSTR": 1795037337.2028086,
-    "SNDK": 1795037337.2028086,
-    "BTC-USD": 1795037337.2028086,
-    "CRWD": 1795037337.2028086,
+    "MU": 1795038908.8918805,
+    "SKHY": 1795038908.8918805,
+    "WDC": 1795038908.8918805,
+    "STX": 1795038908.8918805,
+    "MSTR": 1795038908.8918805,
+    "SNDK": 1795038908.8918805,
+    "BTC-USD": 1795038908.8918805,
+    "CRWD": 1795038908.8918805,
     "ORCL": 1795037439.9556856,
     "COIN": 1795037439.9556856,
     "LLY": 1795037439.9556856,
@@ -3278,7 +3276,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (16:15 ET / 05:15 BJ) [美债]：【中日英在9月均减持美债】 11月19日讯，美国财政部数据显示，9月，美国前三大海外美债持有国均减持美债。9月中国持有的美国国债降至5639亿美元，较8月减少268亿美元；日本持有的美债降至",
+    "detail": "⚡ 最新核心快讯 (16:54 ET / 05:54 BJ) [美联储] [加息]：【美联储会议纪要：官员支持加息的理由有哪些？】 11月19日讯，美联储在10月维持利率不变，两名票委投下反对票，希望加息25个基点。10月会议纪要显示，一些与会者倾向于在10月会议上将利率目",
     "event_name": "",
     "minutes_left": 0
   }
