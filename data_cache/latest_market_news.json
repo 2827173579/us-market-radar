@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1794972471.258,
-  "updated_at_et": "11-17 22:27 ET",
-  "updated_at_kst": "12:27 KST",
+  "updated_at_ts": 1794972968.007,
+  "updated_at_et": "11-17 22:36 ET",
+  "updated_at_kst": "12:36 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -805,6 +805,13 @@
         "pub_ts": 1794952919.0
       },
       {
+        "title": "Taiwan Semiconductor Manufacturing (NYSE:TSM) Shares Tumble As Customer Shock Clouds AI Outlook",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/taiwan-semiconductor-manufacturing-nyse-tsm-031120579.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 22:11 ET",
+        "pub_ts": 1794971480.0
+      },
+      {
         "title": "Surging AI Demand and Advanced Chipmaking Strengthens Taiwan Semiconductor Manufacturing Company Limited (TSM) Growth Outlook",
         "url": "https://finance.yahoo.com/technology/ai/articles/surging-ai-demand-advanced-chipmaking-202155834.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -824,13 +831,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 14:01 ET",
         "pub_ts": 1794942063.0
-      },
-      {
-        "title": "Taiwan Semiconductor Manufacturing Company Limited (TSM) Pulled Back Amid Broader AI Buildout Correction",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/taiwan-semiconductor-manufacturing-company-limited-154649598.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 10:46 ET",
-        "pub_ts": 1794930409.0
       }
     ],
     "VIXY": [
@@ -3203,20 +3203,20 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1794971334.9484258,
-    "SOXL": 1794971334.9484258,
-    "SPY": 1794971334.9484258,
-    "DIA": 1794971334.9484258,
-    "SOXX": 1794971334.9484258,
-    "QQQ": 1794971334.9484258,
-    "SMH": 1794971334.9484258,
-    "IWM": 1794971334.9484258,
+    "KORU": 1794972968.0072224,
+    "SOXL": 1794972968.0072224,
+    "SPY": 1794972968.0072224,
+    "DIA": 1794972968.0072224,
+    "SOXX": 1794972968.0072224,
+    "QQQ": 1794972968.0072224,
+    "SMH": 1794972968.0072224,
+    "IWM": 1794972968.0072224,
     "IGV": 1794971537.60623,
-    "TLT": 1794971334.9484258,
-    "GLD": 1794971334.9484258,
+    "TLT": 1794972968.0072224,
+    "GLD": 1794972968.0072224,
     "SQQQ": 1794971537.60623,
-    "TSM": 1794971334.9484258,
-    "VIXY": 1794971334.9484258,
+    "TSM": 1794972968.0072224,
+    "VIXY": 1794972968.0072224,
     "SOXS": 1794971537.60623,
     "NVDA": 1794971537.60623,
     "AMD": 1794971638.3281689,
@@ -3261,19 +3261,19 @@
     "MU": 1794972245.619972,
     "SKHY": 1794972245.619972,
     "WDC": 1794972245.619972,
-    "STX": 1794971038.0752394,
+    "STX": 1794972968.0072224,
     "MSTR": 1794972245.619972,
     "SNDK": 1794972245.619972,
-    "BTC-USD": 1794971038.0752394,
+    "BTC-USD": 1794972968.0072224,
     "CRWD": 1794972245.619972,
     "ORCL": 1794972245.619972,
     "COIN": 1794972245.619972,
     "LLY": 1794972245.619972,
     "MRNA": 1794972245.619972,
-    "NKE": 1794971038.0752394,
+    "NKE": 1794972968.0072224,
     "MCD": 1794972245.619972,
-    "PEP": 1794971334.9484258,
-    "XOM": 1794971334.9484258,
+    "PEP": 1794972968.0072224,
+    "XOM": 1794972968.0072224,
     "JPM": 1794972245.619972,
     "WMT": 1794972245.619972,
     "V": 1794972245.619972,
