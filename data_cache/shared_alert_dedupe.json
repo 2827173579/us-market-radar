@@ -1458,7 +1458,7 @@
     },
     "2026-11-18:SPCX:5M_ENTRY": {
       "device": "ANDROID",
-      "ts": 1794987311.1890962
+      "ts": 1794992800.4677112
     },
     "2026-11-18:DEFENSIVE_FLIGHT:-1.1": {
       "device": "ANDROID",
@@ -1543,9 +1543,13 @@
     "JIN10_FLASH:20261118170131969800": {
       "device": "ANDROID",
       "ts": 1794992608.2128286
+    },
+    "2026-11-18:DEFENSIVE_FLIGHT:-4.7": {
+      "device": "ANDROID",
+      "ts": 1794992803.0244927
     }
   },
   "device": "ANDROID",
-  "last_heartbeat_ts": 1794992445.9111502,
-  "updated_at": "2026-11-18T09:03:28.215042+00:00"
+  "last_heartbeat_ts": 1794992638.9998548,
+  "updated_at": "2026-11-18T09:06:43.038275+00:00"
 }

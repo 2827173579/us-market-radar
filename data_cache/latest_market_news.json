@@ -1,9 +1,35 @@
 {
-  "updated_at_ts": 1794992590.349,
-  "updated_at_et": "11-18 04:03 ET",
-  "updated_at_kst": "18:03 KST",
+  "updated_at_ts": 1794992782.886,
+  "updated_at_et": "11-18 04:06 ET",
+  "updated_at_kst": "18:06 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261118170547473800",
+      "title": "美国芯片制造商股价盘前上涨，AMD(AMD.O)涨3.2%，英特尔(INTC.O)涨2.…",
+      "summary": "美国芯片制造商股价盘前上涨，AMD(AMD.O)涨3.2%，英特尔(INTC.O)涨2.4%，博通(AVGO.O)涨2.3%，迈威尔科技(MRVL.O)涨4.4%，高通(QCOM.O)上涨1.6%，德州仪器(TXN.O)上涨1.4%，应用材料(AMAT.O)上涨2.8%。",
+      "keywords": [
+        "芯片"
+      ],
+      "pub_ts": 1794992747.0,
+      "time_et": "11-18 04:05 ET",
+      "time_bj": "17:05 BJ",
+      "time_kst": "18:05 KST",
+      "time_display": "04:05 ET / 17:05 BJ"
+    },
+    {
+      "id": "20261118170546850800",
+      "title": "习近平迎接美国总统特朗普。",
+      "summary": "习近平迎接美国总统特朗普。",
+      "keywords": [
+        "特朗普"
+      ],
+      "pub_ts": 1794992746.0,
+      "time_et": "11-18 04:05 ET",
+      "time_bj": "17:05 BJ",
+      "time_kst": "18:05 KST",
+      "time_display": "04:05 ET / 17:05 BJ"
+    },
     {
       "id": "20261118170131969800",
       "title": "英伟达(NVDA.O)股价盘前上涨3%，此前该公司预计第四季度营收高于预期。",
@@ -323,33 +349,6 @@
       "time_bj": "11:48 BJ",
       "time_kst": "12:48 KST",
       "time_display": "22:48 ET / 11:48 BJ"
-    },
-    {
-      "id": "20261118114333355800",
-      "title": "英伟达大戏里，普通投资者怎么“下注”？",
-      "summary": "英伟达市值已占标普500指数总市值的5.9%，广泛进入美国人的退休储蓄和证券账户。黄仁勋离职引发公司治理疑虑后，普通投资者开始重新评估持仓......",
-      "keywords": [
-        "英伟达",
-        "标普"
-      ],
-      "pub_ts": 1794973413.0,
-      "time_et": "11-17 22:43 ET",
-      "time_bj": "11:43 BJ",
-      "time_kst": "12:43 KST",
-      "time_display": "22:43 ET / 11:43 BJ"
-    },
-    {
-      "id": "20261118113842181800",
-      "title": "金价苦等转机，联储纪要能否撬动空头？",
-      "summary": "美联储还没公布会议纪要，金价就已跌破3800；目前多空几股力量拧在一起，接下来哪边先松手？而今晚这份纪要，又能否让金价的下一步更清楚？",
-      "keywords": [
-        "美联储"
-      ],
-      "pub_ts": 1794973122.0,
-      "time_et": "11-17 22:38 ET",
-      "time_bj": "11:38 BJ",
-      "time_kst": "12:38 KST",
-      "time_display": "22:38 ET / 11:38 BJ"
     }
   ],
   "ticker_news": {
@@ -2545,6 +2544,13 @@
         "pub_ts": 1794986697.0
       },
       {
+        "title": "MARA Sinks 13% in a Week as Bitcoin Falls Below $70,000. Its AI Leases Could “Move Into Next Year”",
+        "url": "https://www.tikr.com/blog/mara-sinks-13-in-a-week-as-bitcoin-falls-below-70000-its-ai-leases-could-move-into-next-year?ref=yahoofinance&tlnk=yf-261118-934jmqg2&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 21:52 ET",
+        "pub_ts": 1794970364.0
+      },
+      {
         "title": "Strategy Sinks 6% as Bitcoin Slides; Saylor Says Cash Covers “3.4 Years of Interest and Dividends”",
         "url": "https://www.tikr.com/blog/strategy-sinks-6-as-bitcoin-slides-saylor-says-cash-covers-3-4-years-of-interest-and-dividends?ref=yahoofinancedividend&tlnk=yf-261117-7r4g8j63&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2564,13 +2570,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 11:19 ET",
         "pub_ts": 1794932352.0
-      },
-      {
-        "title": "American Express Company (AXP): Resilient Affluent Spending and Durable Competitive Moat Drive Thesis",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/american-express-company-axp-resilient-161634925.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 11:16 ET",
-        "pub_ts": 1794932194.0
       }
     ],
     "SNDK": [
@@ -2723,6 +2722,20 @@
     ],
     "COIN": [
       {
+        "title": "New Yorkers can now borrow cash without credit checks",
+        "url": "https://www.thestreet.com/crypto/markets/new-yorkers-can-now-borrow-cash-without-credit-checks?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 03:52 ET",
+        "pub_ts": 1794991920.0
+      },
+      {
+        "title": "OKX-ICE Tokenized Stocks Lean on 6 Crypto Firms: Will Wall Street Ever Follow?",
+        "url": "https://beincrypto.com/will-wall-street-follow-tokenized-stocks/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 03:00 ET",
+        "pub_ts": 1794988800.0
+      },
+      {
         "title": "Coinbase Exec Says AI IPOs Pulling Money From Bitcoin Is ‘A Reasonable Argument’ As Anthropic Debut Nears",
         "url": "https://stocktwits.com/news-articles/markets/cryptocurrency/coinbase-exec-says-ai-ip-os-pulling-money-from-bitcoin-is-a-reasonable-argument-as-anthropic-debut-nears/cNbXV7cR9hl?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2742,20 +2755,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 09:40 ET",
         "pub_ts": 1794926448.0
-      },
-      {
-        "title": "Coinbase Stocks Fall 7.54% as Bitcoin Slides Toward $64,000 and Trading Volumes Shrink",
-        "url": "https://finance.yahoo.com/markets/crypto/articles/coinbase-stocks-fall-7-54-185946617.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-16 13:59 ET",
-        "pub_ts": 1794855586.0
-      },
-      {
-        "title": "Robinhood Stocks Fall 5.4% as Crypto Rout Pressures a Shrinking Revenue Line",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/robinhood-stocks-fall-5-4-175615099.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-16 12:56 ET",
-        "pub_ts": 1794851775.0
       }
     ],
     "LLY": [
@@ -3208,10 +3207,10 @@
     "SOXL": 1794989335.4529295,
     "SPY": 1794992590.3494825,
     "DIA": 1794992590.3494825,
-    "SOXX": 1794988901.776313,
+    "SOXX": 1794992782.8861766,
     "QQQ": 1794991923.0294845,
-    "SMH": 1794988901.776313,
-    "IWM": 1794988901.776313,
+    "SMH": 1794992782.8861766,
+    "IWM": 1794992782.8861766,
     "IGV": 1794991524.1756225,
     "TLT": 1794989335.4529295,
     "GLD": 1794989335.4529295,
@@ -3263,12 +3262,12 @@
     "SKHY": 1794992398.35616,
     "WDC": 1794992398.35616,
     "STX": 1794989519.2393887,
-    "MSTR": 1794988626.416982,
+    "MSTR": 1794992782.8861766,
     "SNDK": 1794992590.3494825,
     "BTC-USD": 1794989782.3582315,
     "CRWD": 1794992590.3494825,
     "ORCL": 1794989156.8834565,
-    "COIN": 1794988901.776313,
+    "COIN": 1794992782.8861766,
     "LLY": 1794988901.776313,
     "MRNA": 1794989156.8834565,
     "NKE": 1794989519.2393887,
@@ -3285,7 +3284,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (04:01 ET / 17:01 BJ) [英伟达]：英伟达(NVDA.O)股价盘前上涨3%，此前该公司预计第四季度营收高于预期。",
+    "detail": "⚡ 最新核心快讯 (04:05 ET / 17:05 BJ) [芯片]：美国芯片制造商股价盘前上涨，AMD(AMD.O)涨3.2%，英特尔(INTC.O)涨2.4%，博通(AVGO.O)涨2.3%，迈威尔科技(MRVL.O)涨4.4%，高通(QCOM.O)上涨1",
     "event_name": "",
     "minutes_left": 0
   }
