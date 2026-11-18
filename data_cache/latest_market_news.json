@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1794960762.829,
-  "updated_at_et": "11-17 19:12 ET",
-  "updated_at_kst": "09:12 KST",
+  "updated_at_ts": 1794960864.012,
+  "updated_at_et": "11-17 19:14 ET",
+  "updated_at_kst": "09:14 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2049,6 +2049,13 @@
     ],
     "KO": [
       {
+        "title": "Coca-Cola (KO) Named a 2027 Best Idea by TD Cowen",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/coca-cola-ko-named-2027-232431419.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 18:24 ET",
+        "pub_ts": 1794957871.0
+      },
+      {
         "title": "Coca-Cola Stock (KO) May Struggle to Repeat Its Strong 2026 Performance",
         "url": "https://finance.yahoo.com/markets/stocks/articles/coca-cola-stock-ko-may-213800936.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2075,13 +2082,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 09:47 ET",
         "pub_ts": 1794926877.0
-      },
-      {
-        "title": "TD Cowen names Coca-Cola its top pick for 2027, lifts target to Street-high",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/td-cowen-names-coca-cola-142230407.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 09:22 ET",
-        "pub_ts": 1794925350.0
       }
     ],
     "FLY": [
@@ -3232,18 +3232,18 @@
     "CRDO": 1794960762.8291109,
     "COHR": 1794960762.8291109,
     "MRVL": 1794960762.8291109,
-    "LITE": 1794959308.145522,
+    "LITE": 1794960864.0118904,
     "AAOI": 1794960762.8291109,
-    "SPCX": 1794959308.145522,
+    "SPCX": 1794960864.0118904,
     "ASTS": 1794959505.059496,
     "AXTI": 1794960762.8291109,
     "NASA": 1794959505.059496,
-    "LUNR": 1794959308.145522,
+    "LUNR": 1794960864.0118904,
     "TSLA": 1794959505.059496,
     "AXP": 1794959505.059496,
     "RKLB": 1794959505.059496,
-    "KO": 1794959308.145522,
-    "FLY": 1794959308.145522,
+    "KO": 1794960864.0118904,
+    "FLY": 1794960864.0118904,
     "INTC": 1794959407.0966814,
     "VRT": 1794959505.059496,
     "HPE": 1794959505.059496,
@@ -3272,7 +3272,7 @@
     "V": 1794959704.8912401,
     "CAT": 1794959905.4900916,
     "FN": 1794959407.0966814,
-    "GLW": 1794959308.145522
+    "GLW": 1794960864.0118904
   },
   "calendar_banner": {
     "level": "idle_with_flash",
