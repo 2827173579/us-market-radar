@@ -42,8 +42,8 @@
       "last_notified_at": 0.0
     },
     "SPCX": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1795044483.8014235
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "TSM": {
       "state": "NORMAL",
@@ -62,8 +62,8 @@
       "last_notified_at": 0.0
     },
     "V": {
-      "state": "TAKE_PROFIT",
-      "last_notified_at": 1795039505.4701192
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     }
   },
   "position_peaks": {
