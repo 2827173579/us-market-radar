@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1794985360.959,
-  "updated_at_et": "11-18 02:02 ET",
-  "updated_at_kst": "16:02 KST",
+  "updated_at_ts": 1794985545.46,
+  "updated_at_et": "11-18 02:05 ET",
+  "updated_at_kst": "16:05 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2611,6 +2611,13 @@
     ],
     "BTC-USD": [
       {
+        "title": "Peter Schiff Has a New Candidate for the Next Financial Crisis. It’s Not Bitcoin",
+        "url": "https://beincrypto.com/peter-schiff-ai-subprime-financial-crisis/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 01:10 ET",
+        "pub_ts": 1794982221.0
+      },
+      {
         "title": "Mark Yusko Warns AI Valuations Are Coming 'Out Of Thin Air’ As Bitcoin Gets Caught In 'A Bad Liquidation Cycle'",
         "url": "https://stocktwits.com/news-articles/markets/cryptocurrency/mark-yusko-warns-ai-valuations-thin-air-bitcoin-gets-caught-in-a-bad-liquidation-cycle/cNbXAWrR9hu?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2637,13 +2644,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 21:36 ET",
         "pub_ts": 1794969376.0
-      },
-      {
-        "title": "Strive (ASST) Faces A Valuation Test After Q3 Earnings And Bitcoin Buying",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/strive-asst-faces-valuation-test-021543822.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 21:15 ET",
-        "pub_ts": 1794968143.0
       }
     ],
     "CRWD": [
@@ -3264,7 +3264,7 @@
     "STX": 1794985360.959407,
     "MSTR": 1794984532.4362926,
     "SNDK": 1794984532.4362926,
-    "BTC-USD": 1794983951.610345,
+    "BTC-USD": 1794985545.4600408,
     "CRWD": 1794984532.4362926,
     "ORCL": 1794984724.667803,
     "COIN": 1794984724.667803,
@@ -3272,7 +3272,7 @@
     "MRNA": 1794984724.667803,
     "NKE": 1794985181.0028594,
     "MCD": 1794984724.667803,
-    "PEP": 1794983951.610345,
+    "PEP": 1794985545.4600408,
     "XOM": 1794984394.0072286,
     "JPM": 1794984724.667803,
     "WMT": 1794984724.667803,
