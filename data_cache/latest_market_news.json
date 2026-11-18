@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1794980158.253,
-  "updated_at_et": "11-18 00:35 ET",
-  "updated_at_kst": "14:35 KST",
+  "updated_at_ts": 1794980454.69,
+  "updated_at_et": "11-18 00:40 ET",
+  "updated_at_kst": "14:40 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1166,6 +1166,20 @@
     ],
     "GOOGL": [
       {
+        "title": "3 Undervalued Stocks With Cash Flow Value Gaps Over 35%",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/3-undervalued-stocks-cash-flow-051544633.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 00:15 ET",
+        "pub_ts": 1794978944.0
+      },
+      {
+        "title": "Here Are the Current Berkshire Hathaway Stock Holdings",
+        "url": "https://www.kiplinger.com/investing/stocks/warren-buffett-stocks-berkshire-hathaway-portfolio?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 22:13 ET",
+        "pub_ts": 1794971605.0
+      },
+      {
         "title": "Jim Cramer Warns the Anthropic IPO Windfall Is Going to the Super Rich. Here’s the Backlash He Sees Coming",
         "url": "https://247wallst.com/investing/2026/11/17/jim-cramer-warns-the-anthropic-ipo-windfall-is-going-to-the-super-rich-heres-the-backlash-he-sees-coming/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1185,20 +1199,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 17:15 ET",
         "pub_ts": 1794953725.0
-      },
-      {
-        "title": "Risks Loom Over Nvidia’s Fast-Growing Data Center Segment",
-        "url": "https://finance.yahoo.com/m/83f1cc3d-b0e5-3317-8b68-71f036f8d0d0/risks-loom-over-nvidia%E2%80%99s.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 16:55 ET",
-        "pub_ts": 1794952539.0
-      },
-      {
-        "title": "Alphabet vs. Amazon: Which Is the Better AI Cloud Stock to Own for the Next 5 Years?",
-        "url": "https://www.fool.com/investing/2026/11/17/alphabet-amazon-better-ai-cloud-stock-5-years/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 16:20 ET",
-        "pub_ts": 1794950400.0
       }
     ],
     "MSFT": [
@@ -1231,11 +1231,11 @@
         "pub_ts": 1794947673.0
       },
       {
-        "title": "Microsoft Stock Hits Seven-Week Low: Is a Bigger Drop Coming?",
-        "url": "https://beincrypto.com/microsoft-stock-two-month-low-outages/?.tsrc=rss",
+        "title": "3 Undervalued Stocks With Cash Flow Value Gaps Over 35%",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/3-undervalued-stocks-cash-flow-051544633.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-17 21:26 ET",
-        "pub_ts": 1794968803.0
+        "time": "11-18 00:15 ET",
+        "pub_ts": 1794978944.0
       }
     ],
     "AAPL": [
@@ -3218,14 +3218,14 @@
     "SOXS": 1794979971.7541025,
     "NVDA": 1794980158.2530713,
     "AMD": 1794980158.2530713,
-    "ASML": 1794978078.178225,
-    "QCOM": 1794978078.178225,
+    "ASML": 1794980454.6903067,
+    "QCOM": 1794980454.6903067,
     "AVGO": 1794980158.2530713,
-    "AMAT": 1794978078.178225,
+    "AMAT": 1794980454.6903067,
     "META": 1794978078.178225,
-    "GOOGL": 1794978078.178225,
-    "MSFT": 1794978078.178225,
-    "AAPL": 1794978078.178225,
+    "GOOGL": 1794980454.6903067,
+    "MSFT": 1794980454.6903067,
+    "AAPL": 1794980454.6903067,
     "PLTR": 1794978078.178225,
     "NOW": 1794978078.178225,
     "AMZN": 1794978078.178225,
