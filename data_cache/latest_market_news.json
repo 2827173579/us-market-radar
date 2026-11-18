@@ -1,9 +1,35 @@
 {
-  "updated_at_ts": 1794991322.301,
-  "updated_at_et": "11-18 03:42 ET",
-  "updated_at_kst": "17:42 KST",
+  "updated_at_ts": 1794991524.176,
+  "updated_at_et": "11-18 03:45 ET",
+  "updated_at_kst": "17:45 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261118164432032800",
+      "title": "WTI原油日内下跌2.00美元，现报83.73美元/桶，跌幅2.33%；布伦特原油向下触…",
+      "summary": "WTI原油日内下跌2.00美元，现报83.73美元/桶，跌幅2.33%；布伦特原油向下触及91美元/桶，日内跌2.18%。",
+      "keywords": [
+        "原油"
+      ],
+      "pub_ts": 1794991472.0,
+      "time_et": "11-18 03:44 ET",
+      "time_bj": "16:44 BJ",
+      "time_kst": "17:44 KST",
+      "time_display": "03:44 ET / 16:44 BJ"
+    },
+    {
+      "id": "20261118164243941800",
+      "title": "【美国总统特朗普抵达深圳】 11月18日讯，美国总统特朗普18日抵达深圳，将出席亚太经合…",
+      "summary": "【美国总统特朗普抵达深圳】 11月18日讯，美国总统特朗普18日抵达深圳，将出席亚太经合组织第三十三次领导人非正式会议。",
+      "keywords": [
+        "特朗普"
+      ],
+      "pub_ts": 1794991363.0,
+      "time_et": "11-18 03:42 ET",
+      "time_bj": "16:42 BJ",
+      "time_kst": "17:42 KST",
+      "time_display": "03:42 ET / 16:42 BJ"
+    },
     {
       "id": "20261118163919515800",
       "title": "美联储紧缩预期抑制全球风险情绪，黄金看跌格局在重返...难改 | 每日市场观察11.18",
@@ -324,35 +350,6 @@
       "time_bj": "11:18 BJ",
       "time_kst": "12:18 KST",
       "time_display": "22:18 ET / 11:18 BJ"
-    },
-    {
-      "id": "20261118111834768800",
-      "title": "1. 英伟达高管：芯片从出厂至系统出货周期可由五周缩至两周，正围绕CPO技术构建新的供应…",
-      "summary": "1. 英伟达高管：芯片从出厂至系统出货周期可由五周缩至两周，正围绕CPO技术构建新的供应链。 2. 英伟达供应承诺升至3900亿美元，增量主要来自多年期内存采购。 3. 芯片设计业者：已接获台积电等晶圆厂调价通知，涨幅从10%至逾20%不等。 4. 三星电子Q3存储器价格较去年上涨270%。 5. 三星电子确认HBM5采用全新D0A架构：存储单元和周边电路将分离。 6. 三星与苹果据报接近敲定DRAM长约，拟约定最低供货量。 7. 三星据报为Meta自研AI芯片开发定制HBM4E，基底裸片拟用2纳米制程。 8. 郭明錤称谷歌有望趁乱获利 英伟达动荡将为TPU带来长期买家。 9. 长鑫科技：四季度DRAM产品供给紧缺格局将继续延续。 10. 铠侠旗下建兴推出工业级QLC SSD，采用第八代BiCS闪存。 11. 群联发布Pascari Space太空SSD，首个商业轨道节点拟搭载488TB。 12. 群联在SC26展示PCIe 6.0、计算存储与混合介质三项技术。",
-      "keywords": [
-        "芯片",
-        "英伟达",
-        "台积电",
-        "苹果"
-      ],
-      "pub_ts": 1794971914.0,
-      "time_et": "11-17 22:18 ET",
-      "time_bj": "11:18 BJ",
-      "time_kst": "12:18 KST",
-      "time_display": "22:18 ET / 11:18 BJ"
-    },
-    {
-      "id": "20261118110004424800",
-      "title": "高盛预测标普500指数2027年再涨17%！目标8700点，AI投资放缓将考验美股牛市",
-      "summary": "高盛为2027年美股勾勒不同走势：基准情景下标普500升至8700点，乐观情景下有望冲击9400点，但若企业盈利和估值同时承压，也可能回落至5600点。点击查看",
-      "keywords": [
-        "标普"
-      ],
-      "pub_ts": 1794970804.0,
-      "time_et": "11-17 22:00 ET",
-      "time_bj": "11:00 BJ",
-      "time_kst": "12:00 KST",
-      "time_display": "22:00 ET / 11:00 BJ"
     }
   ],
   "ticker_news": {
@@ -654,39 +651,39 @@
     ],
     "IGV": [
       {
+        "title": "Nvidia's Earnings And Guidance Soothe Investor Worries",
+        "url": "https://finnhub.io/api/news?id=4dfad7d0479837911b1a951bf592ac0a256534233bf9bcc07bf7d5b280ff8575",
+        "source": "SeekingAlpha",
+        "time": "11-17 17:55 ET",
+        "pub_ts": 1794956100.0
+      },
+      {
+        "title": "Salesforce leads Wall Street software sell-off as investors brace for Anthropic IPO",
+        "url": "https://finnhub.io/api/news?id=b91b27984b54e31308d6eeffd43cf38a5993ef5e06d9b58f509d55b68d0893c2",
+        "source": "Yahoo",
+        "time": "11-17 12:35 ET",
+        "pub_ts": 1794936900.0
+      },
+      {
         "title": "Boom Goes the Stock Market",
-        "url": "https://finance.yahoo.com/m/a874bb50-570d-3775-bc4f-8ae36f44bacd/boom-goes-the-stock-market.html?.tsrc=rss",
-        "source": "Yahoo Finance",
+        "url": "https://finnhub.io/api/news?id=bbda005084143ad5ded04592691d6173353ec73b563fa663fbf249756c1c0916",
+        "source": "Yahoo",
         "time": "11-17 10:59 ET",
         "pub_ts": 1794931169.0
       },
       {
-        "title": "iShares Expanded Tech-Software (IGV) Buys $22.9 Million More Microsoft on Nov. 9",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/ishares-expanded-tech-software-igv-110406148.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-11 06:04 ET",
-        "pub_ts": 1794395046.0
+        "title": "Nvidia Tugs Market Lower Again",
+        "url": "https://finnhub.io/api/news?id=093cb69184d7350a292a4c540b8925cb71a52d9acca3bfed009051c25fcfd269",
+        "source": "SeekingAlpha",
+        "time": "11-16 18:55 ET",
+        "pub_ts": 1794873300.0
       },
       {
-        "title": "iShares Expanded Tech-Software (IGV) Sells $36 Million of Palo Alto on Oct. 30",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/ishares-expanded-tech-software-igv-110432685.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-03 06:04 ET",
-        "pub_ts": 1793703872.0
-      },
-      {
-        "title": "What iShares Tech-Software ETF (IGV) Sold: Palantir Leads on Oct. 29",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/ishares-tech-software-etf-igv-110508154.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-02 06:05 ET",
-        "pub_ts": 1793617508.0
-      },
-      {
-        "title": "Should You Invest in the iShares Expanded Tech-Software Sector ETF (IGV)?",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/invest-ishares-expanded-tech-software-092002986.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "10-29 05:20 ET",
-        "pub_ts": 1793265602.0
+        "title": "Forget Nvidia—Wall Street Sees S&P 500 at 8,900, Putting These ETFs in Play",
+        "url": "https://finnhub.io/api/news?id=0895897bda3fed27a09bd4ee2ec552710ade02fa3b7adb90380d4202cf5e2cc3",
+        "source": "Benzinga",
+        "time": "11-16 07:49 ET",
+        "pub_ts": 1794833353.0
       }
     ],
     "TLT": [
@@ -3215,7 +3212,7 @@
     "QQQ": 1794988354.714574,
     "SMH": 1794988901.776313,
     "IWM": 1794988901.776313,
-    "IGV": 1794988354.714574,
+    "IGV": 1794991524.1756225,
     "TLT": 1794989335.4529295,
     "GLD": 1794989335.4529295,
     "SQQQ": 1794988354.714574,
@@ -3282,13 +3279,13 @@
     "WMT": 1794989335.4529295,
     "V": 1794988354.714574,
     "CAT": 1794988354.714574,
-    "FN": 1794988491.5140448,
-    "GLW": 1794988491.5140448
+    "FN": 1794991524.1756225,
+    "GLW": 1794991524.1756225
   },
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (03:39 ET / 16:39 BJ) [美联储] [英伟达]：英伟达强劲的营收指引给科技股带来喘息机会，但市场对美联储的紧缩预期仍在压制风险资产修复空间；黄金日跌幅已超过2%，整体看跌格局在重返38XX前不变...",
+    "detail": "⚡ 最新核心快讯 (03:44 ET / 16:44 BJ) [原油]：WTI原油日内下跌2.00美元，现报83.73美元/桶，跌幅2.33%；布伦特原油向下触及91美元/桶，日内跌2.18%。",
     "event_name": "",
     "minutes_left": 0
   }
