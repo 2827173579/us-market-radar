@@ -1,9 +1,23 @@
 {
-  "updated_at_ts": 1795026913.026,
-  "updated_at_et": "11-18 13:35 ET",
-  "updated_at_kst": "03:35 KST",
+  "updated_at_ts": 1795027010.291,
+  "updated_at_et": "11-18 13:36 ET",
+  "updated_at_kst": "03:36 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261119023515766800",
+      "title": "美联储理事巴尔：如果经济表现符合预期，支持进一步加息。",
+      "summary": "美联储理事巴尔：如果经济表现符合预期，支持进一步加息。",
+      "keywords": [
+        "美联储",
+        "加息"
+      ],
+      "pub_ts": 1795026915.0,
+      "time_et": "11-18 13:35 ET",
+      "time_bj": "02:35 BJ",
+      "time_kst": "03:35 KST",
+      "time_display": "13:35 ET / 02:35 BJ"
+    },
     {
       "id": "20261119022500001800",
       "title": "美联储理事巴尔将于十分钟后发表讲话。",
@@ -327,20 +341,6 @@
       "time_bj": "20:42 BJ",
       "time_kst": "21:42 KST",
       "time_display": "07:42 ET / 20:42 BJ"
-    },
-    {
-      "id": "20261118204144002800",
-      "title": "美联储理事沃勒：若不释放1月加息的信号，应在12月加息50个基点。",
-      "summary": "美联储理事沃勒：若不释放1月加息的信号，应在12月加息50个基点。",
-      "keywords": [
-        "美联储",
-        "加息"
-      ],
-      "pub_ts": 1795005704.0,
-      "time_et": "11-18 07:41 ET",
-      "time_bj": "20:41 BJ",
-      "time_kst": "21:41 KST",
-      "time_display": "07:41 ET / 20:41 BJ"
     }
   ],
   "ticker_news": {
@@ -3276,7 +3276,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (13:25 ET / 02:25 BJ) [美联储]：美联储理事巴尔将于十分钟后发表讲话。",
+    "detail": "⚡ 最新核心快讯 (13:35 ET / 02:35 BJ) [美联储] [加息]：美联储理事巴尔：如果经济表现符合预期，支持进一步加息。",
     "event_name": "",
     "minutes_left": 0
   }
