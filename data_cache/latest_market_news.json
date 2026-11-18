@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1794983755.255,
-  "updated_at_et": "11-18 01:35 ET",
-  "updated_at_kst": "15:35 KST",
+  "updated_at_ts": 1794983951.61,
+  "updated_at_et": "11-18 01:39 ET",
+  "updated_at_kst": "15:39 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2613,6 +2613,13 @@
     ],
     "BTC-USD": [
       {
+        "title": "Mark Yusko Warns AI Valuations Are Coming 'Out Of Thin Air’ As Bitcoin Gets Caught In 'A Bad Liquidation Cycle'",
+        "url": "https://stocktwits.com/news-articles/markets/cryptocurrency/mark-yusko-warns-ai-valuations-thin-air-bitcoin-gets-caught-in-a-bad-liquidation-cycle/cNbXAWrR9hu?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 00:50 ET",
+        "pub_ts": 1794981031.0
+      },
+      {
         "title": "Nvidia’s earnings call names two former crypto miners",
         "url": "https://www.thestreet.com/crypto/investing/nvidias-earnings-call-names-two-former-crypto-miners?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2639,13 +2646,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 21:15 ET",
         "pub_ts": 1794968143.0
-      },
-      {
-        "title": "AI-linked tokens tumble as doubts emerge over tech boom",
-        "url": "https://www.thestreet.com/crypto/markets/ai-linked-tokens-tumble-as-doubts-emerge-over-tech-boom?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 19:55 ET",
-        "pub_ts": 1794963358.0
       }
     ],
     "CRWD": [
@@ -3266,7 +3266,7 @@
     "STX": 1794983755.2552238,
     "MSTR": 1794982423.7443273,
     "SNDK": 1794982132.4689527,
-    "BTC-USD": 1794979971.7541025,
+    "BTC-USD": 1794983951.610345,
     "CRWD": 1794982423.7443273,
     "ORCL": 1794982619.093038,
     "COIN": 1794982423.7443273,
@@ -3274,7 +3274,7 @@
     "MRNA": 1794982619.093038,
     "NKE": 1794983480.519229,
     "MCD": 1794982619.093038,
-    "PEP": 1794979971.7541025,
+    "PEP": 1794983951.610345,
     "XOM": 1794980158.2530713,
     "JPM": 1794982619.093038,
     "WMT": 1794982806.7388487,
