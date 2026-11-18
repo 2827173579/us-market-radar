@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1794972968.007,
-  "updated_at_et": "11-17 22:36 ET",
-  "updated_at_kst": "12:36 KST",
+  "updated_at_ts": 1794973101.867,
+  "updated_at_et": "11-17 22:38 ET",
+  "updated_at_kst": "12:38 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -909,11 +909,32 @@
     ],
     "NVDA": [
       {
-        "title": "Dow Jones Futures Waver After Nvidia Beats, Says This On Jensen Huang; Target, Anthropic IPO Ahead",
-        "url": "https://finance.yahoo.com/m/3b22ed8c-00c3-32f8-89f5-91bc21ccb366/dow-jones-futures-waver-after.html?.tsrc=rss",
+        "title": "Asia tech shares turn mixed after Nvidia beat as China chip curbs cloud optimism",
+        "url": "https://finance.yahoo.com/technology/articles/asia-tech-shares-turn-mixed-032547363.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-17 21:54 ET",
-        "pub_ts": 1794970477.0
+        "time": "11-17 22:25 ET",
+        "pub_ts": 1794972347.0
+      },
+      {
+        "title": "Dow Jones Futures: Techs Rise After Nvidia Beats, Says This On Jensen Huang; Target, Anthropic IPO Ahead",
+        "url": "https://finance.yahoo.com/m/3b22ed8c-00c3-32f8-89f5-91bc21ccb366/dow-jones-futures%3A-techs-rise.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 22:24 ET",
+        "pub_ts": 1794972273.0
+      },
+      {
+        "title": "Nvidia’s former sales chief had ties to customers in chip scandal- The Information",
+        "url": "https://finance.yahoo.com/technology/articles/nvidia-former-sales-chief-had-031425596.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 22:14 ET",
+        "pub_ts": 1794971665.0
+      },
+      {
+        "title": "Nvidia Stock And 3 AI Semiconductor Picks For The Next Chip Demand Wave",
+        "url": "https://finance.yahoo.com/technology/ai/articles/nvidia-stock-3-ai-semiconductor-031423325.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 22:14 ET",
+        "pub_ts": 1794971663.0
       },
       {
         "title": "Nvidia Signals AI Financing Flywheel Will Continue, But ‘Disciplined’: Analyst Calls Neoclouds Its ‘Biggest Sustained Bet’ As NBIS, IREN, MRVL Rally",
@@ -921,27 +942,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 21:47 ET",
         "pub_ts": 1794970039.0
-      },
-      {
-        "title": "Stocks drop as booming Nvidia results drowned by spy scandal",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/stocks-drop-booming-nvidia-results-024500677.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 21:45 ET",
-        "pub_ts": 1794969900.0
-      },
-      {
-        "title": "Will GPU Edge Launch Change Rockwell Automation's (ROK) Narrative",
-        "url": "https://finance.yahoo.com/technology/ai/articles/gpu-edge-launch-change-rockwell-021124213.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 21:11 ET",
-        "pub_ts": 1794967884.0
-      },
-      {
-        "title": "Jeff Bezos Warns Outsider CEO Replacing Jensen Huang Faces ‘Vanishingly Small Chance of Succeeding’ at Nvidia: ‘Too Complicated’",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/jeff-bezos-warns-outsider-ceo-020318354.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 21:03 ET",
-        "pub_ts": 1794967398.0
       }
     ],
     "AMD": [
@@ -3211,25 +3211,25 @@
     "QQQ": 1794972968.0072224,
     "SMH": 1794972968.0072224,
     "IWM": 1794972968.0072224,
-    "IGV": 1794971537.60623,
+    "IGV": 1794973101.8668368,
     "TLT": 1794972968.0072224,
     "GLD": 1794972968.0072224,
-    "SQQQ": 1794971537.60623,
+    "SQQQ": 1794973101.8668368,
     "TSM": 1794972968.0072224,
     "VIXY": 1794972968.0072224,
-    "SOXS": 1794971537.60623,
-    "NVDA": 1794971537.60623,
+    "SOXS": 1794973101.8668368,
+    "NVDA": 1794973101.8668368,
     "AMD": 1794971638.3281689,
     "ASML": 1794971638.3281689,
-    "QCOM": 1794971537.60623,
-    "AVGO": 1794971537.60623,
-    "AMAT": 1794971537.60623,
+    "QCOM": 1794973101.8668368,
+    "AVGO": 1794973101.8668368,
+    "AMAT": 1794973101.8668368,
     "META": 1794971638.3281689,
     "GOOGL": 1794971638.3281689,
     "MSFT": 1794971638.3281689,
-    "AAPL": 1794971537.60623,
-    "PLTR": 1794971537.60623,
-    "NOW": 1794971537.60623,
+    "AAPL": 1794973101.8668368,
+    "PLTR": 1794973101.8668368,
+    "NOW": 1794973101.8668368,
     "AMZN": 1794971638.3281689,
     "CRWV": 1794971638.3281689,
     "NBIS": 1794971638.3281689,
