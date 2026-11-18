@@ -1,28 +1,8 @@
 {
-  "updated_at_ts": 1795040088.559,
-  "updated_at_et": "11-18 17:14 ET",
-  "updated_at_kst": "07:14 KST",
-  "macro_calendar": [
-    {
-      "event_id": "ff_FOMC Meeting Minutes_2026-11-18T14:00:00-05:00",
-      "name": "美国FOMC Meeting Minutes",
-      "country": "USD",
-      "star": 5,
-      "pub_time_ts": 1795028400.0,
-      "pub_time_et": "11-18 14:00 ET",
-      "pub_time_bj": "03:00 BJ",
-      "pub_time_kst": "04:00 KST",
-      "previous": "待公布",
-      "forecast": "待公布",
-      "actual": "待公布",
-      "unit": "",
-      "status": "upcoming",
-      "minutes_left": 0,
-      "impact_tone": "pending",
-      "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
-      "source": "forexfactory"
-    }
-  ],
+  "updated_at_ts": 1795040188.289,
+  "updated_at_et": "11-18 17:16 ET",
+  "updated_at_kst": "07:16 KST",
+  "macro_calendar": [],
   "macro_flashes": [
     {
       "id": "20261119061210600800",
@@ -3293,10 +3273,10 @@
     "GLW": 1795039112.7172832
   },
   "calendar_banner": {
-    "level": "upcoming",
-    "headline": "📅 今日美股重磅预告【美国FOMC Meeting Minutes】· 距公布约 0 分钟（11-18 14:00 ET / 04:00 KST）",
-    "detail": "前值 待公布 ｜ 预期 待公布 ｜ 临近公布前15分钟将自动触发防插针预警",
-    "event_name": "美国FOMC Meeting Minutes",
+    "level": "idle_with_flash",
+    "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
+    "detail": "⚡ 最新核心快讯 (17:12 ET / 06:12 BJ) [英伟达]：穆迪：将英伟达(NVDA.O)前景展望由正面调整为稳定，并确认其Aa1高级无担保评级。",
+    "event_name": "",
     "minutes_left": 0
   }
 }
