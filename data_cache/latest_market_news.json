@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1794978347.112,
-  "updated_at_et": "11-18 00:05 ET",
-  "updated_at_kst": "14:05 KST",
+  "updated_at_ts": 1794978597.112,
+  "updated_at_et": "11-18 00:09 ET",
+  "updated_at_kst": "14:09 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1755,6 +1755,13 @@
     ],
     "SPCX": [
       {
+        "title": "Elon Musk Says SpaceX’s Recovered Starship Could Fly Again After Weeks of Refurbishment",
+        "url": "https://finance.yahoo.com/technology/articles/elon-musk-says-spacex-recovered-033005179.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 22:30 ET",
+        "pub_ts": 1794972605.0
+      },
+      {
         "title": "SpaceX CFO Sees No ‘Magic Wand’ For Anthropic’s Data Center Plans — And GTA 6 Is Stealing Some Of Its IPO Thunder",
         "url": "https://stocktwits.com/news-articles/markets/equity/spacex-no-magic-wand-anthropic-data-center-plans-gta-6-stealing-ipo-thunder/cNbXFXiR9hn?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1781,16 +1788,23 @@
         "source": "Yahoo Finance",
         "time": "11-17 19:13 ET",
         "pub_ts": 1794960789.0
-      },
-      {
-        "title": "Nvidia just sent a powerful signal to SpaceX stock investors",
-        "url": "https://www.thestreet.com/investing/stocks/nvidia-spacex-stake-q3-13f?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 18:33 ET",
-        "pub_ts": 1794958380.0
       }
     ],
     "ASTS": [
+      {
+        "title": "Firefly: 3 Key Takeaways for Long-Term Investors",
+        "url": "https://www.fool.com/earnings/takeaways/2026/11/17/firefly-3-key-takeaways-for-long-term-investors/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 23:39 ET",
+        "pub_ts": 1794976768.0
+      },
+      {
+        "title": "Why Did ASTS, NFLX, RCAT Stocks Plunge To 52-Week Lows Today?",
+        "url": "https://stocktwits.com/news-articles/markets/equity/why-did-asts-nflx-rcat-stocks-plunge-to-52-week-lows-today/cNbXYhRR9hr?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 23:35 ET",
+        "pub_ts": 1794976516.0
+      },
       {
         "title": "Why Catching SpaceX Is Getting Harder: Analyst Calls AST’s 2-Year Rocket Plan ‘Totally Unrealistic’, Rocket Lab Is Still Building One",
         "url": "https://stocktwits.com/news-articles/markets/equity/why-catching-spacex-harder-analyst-ast-2-year-rocket-plan-totally-unrealistic-rocketlab-still-building/cNbanf9R9W5?.tsrc=rss",
@@ -1811,20 +1825,6 @@
         "source": "Yahoo Finance",
         "time": "11-16 21:03 ET",
         "pub_ts": 1794881029.0
-      },
-      {
-        "title": "Rocket Lab Sinks 7%, AST SpaceMobile Down 12% as Tech Selloff and Vulcan Failure Hit Space Stocks",
-        "url": "https://www.tikr.com/blog/rocket-lab-sinks-7-ast-spacemobile-down-12-as-tech-selloff-and-vulcan-failure-hit-space-stocks?ref=yahoofinance&tlnk=yf-261116-xj5m8wmh&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-16 16:22 ET",
-        "pub_ts": 1794864124.0
-      },
-      {
-        "title": "AST SpaceMobile: Is the Stock a No-Brainer Buy at $30?",
-        "url": "https://www.fool.com/investing/2026/11/16/ast-spacemobile-is-the-stock-a-no-brainer-buy-at-30/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-16 13:17 ET",
-        "pub_ts": 1794853022.0
       }
     ],
     "AXTI": [
@@ -3236,17 +3236,17 @@
     "MRVL": 1794978347.1117775,
     "LITE": 1794978347.1117775,
     "AAOI": 1794976772.9844363,
-    "SPCX": 1794976772.9844363,
-    "ASTS": 1794977026.852725,
-    "AXTI": 1794976542.9960315,
+    "SPCX": 1794978597.1123667,
+    "ASTS": 1794978597.1123667,
+    "AXTI": 1794978597.1123667,
     "NASA": 1794977026.852725,
-    "LUNR": 1794976772.9844363,
-    "TSLA": 1794977026.852725,
-    "AXP": 1794977026.852725,
+    "LUNR": 1794978597.1123667,
+    "TSLA": 1794978597.1123667,
+    "AXP": 1794978597.1123667,
     "RKLB": 1794977026.852725,
-    "KO": 1794976772.9844363,
-    "FLY": 1794976772.9844363,
-    "INTC": 1794976772.9844363,
+    "KO": 1794978597.1123667,
+    "FLY": 1794978597.1123667,
+    "INTC": 1794978597.1123667,
     "VRT": 1794977026.852725,
     "HPE": 1794977026.852725,
     "DELL": 1794977026.852725,
@@ -3273,7 +3273,7 @@
     "WMT": 1794977192.5845542,
     "V": 1794977329.9080346,
     "CAT": 1794977329.9080346,
-    "FN": 1794976772.9844363,
+    "FN": 1794978597.1123667,
     "GLW": 1794978347.1117775
   },
   "calendar_banner": {
