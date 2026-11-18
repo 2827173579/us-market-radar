@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795021639.847,
-  "updated_at_et": "11-18 12:07 ET",
-  "updated_at_kst": "02:07 KST",
+  "updated_at_ts": 1795021742.645,
+  "updated_at_et": "11-18 12:09 ET",
+  "updated_at_kst": "02:09 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1161,11 +1161,18 @@
     ],
     "GOOGL": [
       {
-        "title": "Oracle Stock Plunges 41% YTD Despite Cloud Strength: Hold or Fold?",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/oracle-stock-plunges-41-ytd-143500551.html?.tsrc=rss",
+        "title": "Google Cloud Grew 103%. Azure Grew 48%. AWS Grew 39%. Only 1 of These Stocks Is a Buy Right Now.",
+        "url": "https://www.fool.com/investing/2026/11/18/google-cloud-grew-103-azure-grew-48-aws-grew-39-only-1-of-these-stocks-is-a-buy-right-now/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-18 09:35 ET",
-        "pub_ts": 1795012500.0
+        "time": "11-18 11:43 ET",
+        "pub_ts": 1795020182.0
+      },
+      {
+        "title": "170 Years of Market History Just Flashed a 97% Bubble Warning — the Last Time It Was This High Was 2007",
+        "url": "https://247wallst.com/investing/2026/11/18/170-years-of-market-history-just-flashed-a-97-bubble-warning-the-last-time-it-was-this-high-was-2007/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 11:42 ET",
+        "pub_ts": 1795020147.0
       },
       {
         "title": "Big Tech Will Be “Six of the Top Ten Issuers” of Corporate Bonds, Apollo CEO Predicts. Stocks Now Have Competition",
@@ -1184,13 +1191,6 @@
       {
         "title": "There's a 'real risk' for Nvidia if they pick the wrong CEO candidate",
         "url": "https://finance.yahoo.com/video/theres-real-risk-nvidia-pick-160000497.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 11:00 ET",
-        "pub_ts": 1795017600.0
-      },
-      {
-        "title": "PSA: Immediately Patch NGINX Web Servers Due to Critical Vulnerability Allowing Unauthenticated User RCE",
-        "url": "https://finance.yahoo.com/technology/ai/articles/psa-immediately-patch-nginx-servers-160000691.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-18 11:00 ET",
         "pub_ts": 1795017600.0
@@ -1353,6 +1353,13 @@
         "pub_ts": 1795015687.0
       },
       {
+        "title": "Andy Jassy Says Nvidia “Will Be Very Strong” for Years, Even as Amazon’s Own Chips Grow Triple Digits",
+        "url": "https://www.tikr.com/blog/andy-jassy-says-nvidia-will-be-very-strong-for-years-even-as-amazons-own-chips-grow-triple-digits?ref=yahoofinance&tlnk=yf-261118-m8hxm693&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 11:54 ET",
+        "pub_ts": 1795020888.0
+      },
+      {
         "title": "Owala and Coca-Cola team up for new Amazon-exclusive release",
         "url": "https://www.thestreet.com/retail/owala-coca-cola-new-amazon-exclusive-collaboration?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1372,13 +1379,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 11:03 ET",
         "pub_ts": 1795017800.0
-      },
-      {
-        "title": "The 5 Best Stocks in Bill Ackman’s Portfolio",
-        "url": "https://www.tikr.com/blog/the-5-best-stocks-in-bill-ackmans-portfolio?ref=yahoofinance&tlnk=yf-261118-qmxg56h7&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 10:40 ET",
-        "pub_ts": 1795016441.0
       }
     ],
     "CRWV": [
@@ -1388,6 +1388,13 @@
         "source": "Yahoo Finance",
         "time": "11-18 11:33 ET",
         "pub_ts": 1795019617.0
+      },
+      {
+        "title": "Can CoreWeave's $133B Backlog Sustain Its Next Growth Phase?",
+        "url": "https://finance.yahoo.com/technology/ai/articles/coreweaves-133b-backlog-sustain-next-153500430.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 10:35 ET",
+        "pub_ts": 1795016100.0
       },
       {
         "title": "CoreWeave Falls 5% Despite NVIDIA Sticking to Its Financing Commitments; Nebius Dips, Oracle Holds Steady",
@@ -1409,13 +1416,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 08:10 ET",
         "pub_ts": 1795007403.0
-      },
-      {
-        "title": "Why Is CoreWeave Stock Rising Today?",
-        "url": "https://investorshub.advfn.com/market-news/article/40285/why-is-coreweave-stock-rising-today?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 07:21 ET",
-        "pub_ts": 1795004498.0
       }
     ],
     "NBIS": [
@@ -2678,6 +2678,13 @@
     ],
     "ORCL": [
       {
+        "title": "Oracle’s Credit Default Swaps Hit Record Wides After Nvidia’s Beat. Veteran Trader Calls It “the Weak Link”",
+        "url": "https://www.tikr.com/blog/oracles-credit-default-swaps-hit-record-wides-after-nvidias-beat-veteran-trader-calls-it-the-weak-link?ref=yahoofinance&tlnk=yf-261118-h6mc737h&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 11:52 ET",
+        "pub_ts": 1795020746.0
+      },
+      {
         "title": "Cloud Computing Market to Reach USD 5,946.84 Billion by 2035 as AI Workloads Drive Record Growth and Backlogs at AWS, Microsoft, Google and Oracle",
         "url": "https://finance.yahoo.com/technology/articles/cloud-computing-market-reach-usd-153000371.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2704,13 +2711,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 10:05 ET",
         "pub_ts": 1795014300.0
-      },
-      {
-        "title": "Global Asset Tracking Artificial Intelligence (AI) Market Report 2026 | Capture 18.9% CAGR as Verizon, Cisco, Oracle, and Zebra Scale IoT, Edge AI, and Digital Twins to 2030",
-        "url": "https://finance.yahoo.com/technology/ai/articles/global-asset-tracking-artificial-intelligence-150400124.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 10:04 ET",
-        "pub_ts": 1795014240.0
       }
     ],
     "COIN": [
@@ -3197,7 +3197,7 @@
   },
   "ticker_news_ts": {
     "KORU": 1795021639.8469002,
-    "SOXL": 1795020160.1172316,
+    "SOXL": 1795021742.6445155,
     "SPY": 1795021439.6621916,
     "DIA": 1795021439.6621916,
     "SOXX": 1795021439.6621916,
@@ -3217,21 +3217,21 @@
     "QCOM": 1795021639.8469002,
     "AVGO": 1795021639.8469002,
     "AMAT": 1795021639.8469002,
-    "META": 1795020160.1172316,
-    "GOOGL": 1795020160.1172316,
+    "META": 1795021742.6445155,
+    "GOOGL": 1795021742.6445155,
     "MSFT": 1795021639.8469002,
-    "AAPL": 1795020160.1172316,
-    "PLTR": 1795020160.1172316,
-    "NOW": 1795020160.1172316,
-    "AMZN": 1795020160.1172316,
-    "CRWV": 1795020160.1172316,
-    "NBIS": 1795020160.1172316,
-    "APLD": 1795020160.1172316,
-    "VST": 1795020160.1172316,
-    "BE": 1795020160.1172316,
-    "CRDO": 1795020160.1172316,
-    "COHR": 1795020160.1172316,
-    "MRVL": 1795020160.1172316,
+    "AAPL": 1795021742.6445155,
+    "PLTR": 1795021742.6445155,
+    "NOW": 1795021742.6445155,
+    "AMZN": 1795021742.6445155,
+    "CRWV": 1795021742.6445155,
+    "NBIS": 1795021742.6445155,
+    "APLD": 1795021742.6445155,
+    "VST": 1795021742.6445155,
+    "BE": 1795021742.6445155,
+    "CRDO": 1795021742.6445155,
+    "COHR": 1795021742.6445155,
+    "MRVL": 1795021742.6445155,
     "LITE": 1795020260.8692842,
     "AAOI": 1795021439.6621916,
     "SPCX": 1795020260.8692842,
@@ -3259,7 +3259,7 @@
     "SNDK": 1795021541.7157006,
     "BTC-USD": 1795021639.8469002,
     "CRWD": 1795021639.8469002,
-    "ORCL": 1795020160.1172316,
+    "ORCL": 1795021742.6445155,
     "COIN": 1795021639.8469002,
     "LLY": 1795021639.8469002,
     "MRNA": 1795021639.8469002,
