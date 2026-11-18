@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1794992137.495,
-  "updated_at_et": "11-18 03:55 ET",
-  "updated_at_kst": "17:55 KST",
+  "updated_at_ts": 1794992398.356,
+  "updated_at_et": "11-18 03:59 ET",
+  "updated_at_kst": "17:59 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2427,11 +2427,18 @@
     ],
     "SKHY": [
       {
-        "title": "Asian markets are mixed as AI stocks recover after Wall Street losses",
+        "title": "World markets are mixed as AI stocks recover after Wall Street losses",
         "url": "https://finance.yahoo.com/markets/world-indices/articles/asian-markets-mostly-decline-wall-034546063.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-17 22:45 ET",
         "pub_ts": 1794973546.0
+      },
+      {
+        "title": "SK hynix Just Hit a New 52-Week Low, Down 38% From Its September High. Still “Ridiculously Cheap”?",
+        "url": "https://www.tikr.com/blog/sk-hynix-just-hit-a-new-52-week-low-down-38-from-its-september-high-still-ridiculously-cheap?ref=yahoofinance&tlnk=yf-261118-jh3pvjw5&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 21:46 ET",
+        "pub_ts": 1794970012.0
       },
       {
         "title": "Micron Technology (MU) Keeps DRAM Price Fixing Lawsuit Alive After Judge Rejection",
@@ -2453,13 +2460,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 17:05 ET",
         "pub_ts": 1794953103.0
-      },
-      {
-        "title": "SK hynix Stocks Fall 1.96% as DRAM Price-Fixing Suit Advances and Kospi Drops",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/sk-hynix-stocks-fall-1-190411984.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 14:04 ET",
-        "pub_ts": 1794942251.0
       }
     ],
     "WDC": [
@@ -3258,10 +3258,10 @@
     "DELL": 1794992137.4954746,
     "OKLO": 1794992137.4954746,
     "CEG": 1794988491.5140448,
-    "FPS": 1794988491.5140448,
-    "MU": 1794988491.5140448,
-    "SKHY": 1794988491.5140448,
-    "WDC": 1794988491.5140448,
+    "FPS": 1794992398.35616,
+    "MU": 1794992398.35616,
+    "SKHY": 1794992398.35616,
+    "WDC": 1794992398.35616,
     "STX": 1794989519.2393887,
     "MSTR": 1794988626.416982,
     "SNDK": 1794988626.416982,
