@@ -996,6 +996,32 @@ def fetch_earnings_calendar_map(tickers, api_key):
             result[t] = {"earnings_date": "", "days_to_earnings": None, "earnings_tag": "", "is_earnings_risk": False}
     return result
 
+def filter_directional_options_band(df_opt, opt_type, spot):
+    """过滤深度实值 (Deep ITM) 内在价值污染，统一 dollar_pcr 与主力墙筛选口径 (Call >= 0.975*spot, Put <= 1.025*spot)。"""
+    if df_opt is None or df_opt.empty or not spot or float(spot) <= 0:
+        return df_opt
+    sp = float(spot)
+    if opt_type == "Call":
+        return df_opt[(df_opt["strike"] >= sp * 0.975) & (df_opt["strike"] <= sp * 1.40)]
+    return df_opt[(df_opt["strike"] >= sp * 0.65) & (df_opt["strike"] <= sp * 1.025)]
+
+
+def compute_directional_dollar_pcr(calls, puts, spot, fallback_pcr=1.0):
+    """基于收紧后的平/虚值方向性合约带计算真实资金沽购比 (dollar_pcr)。"""
+    if calls is not None and not calls.empty:
+        dir_calls = filter_directional_options_band(calls, "Call", spot) if (spot and spot > 0) else calls
+        c_dollar = float(dir_calls["dollar_val"].sum()) if (dir_calls is not None and not dir_calls.empty) else float(calls["dollar_val"].sum())
+    else:
+        c_dollar = 0.0
+    if puts is not None and not puts.empty:
+        dir_puts = filter_directional_options_band(puts, "Put", spot) if (spot and spot > 0) else puts
+        p_dollar = float(dir_puts["dollar_val"].sum()) if (dir_puts is not None and not dir_puts.empty) else float(puts["dollar_val"].sum())
+    else:
+        p_dollar = 0.0
+    dollar_pcr = round(p_dollar / c_dollar, 2) if c_dollar > 0 else fallback_pcr
+    return dollar_pcr, c_dollar, p_dollar
+
+
 def fetch_options_anomaly_map(focus_tickers, spot_map=None):
     """
     获取全量标的机构期权多空异动、资金加权 PCR 与 ATM 预期波动幅度 (30分钟本地缓存，零消耗 Finnhub API 额度)：
@@ -1011,7 +1037,7 @@ def fetch_options_anomaly_map(focus_tickers, spot_map=None):
         if os.path.exists(OPTIONS_CACHE_FILE):
             with open(OPTIONS_CACHE_FILE, "r", encoding="utf-8") as f:
                 c_data = json.load(f)
-                if c_data.get("schema_version") == 3 and (now_ts - c_data.get("updated_at", 0) < 1800):
+                if c_data.get("schema_version") == 4 and (now_ts - c_data.get("updated_at", 0) < 1800):
                     cached_map = c_data.get("data", {})
     except Exception:
         pass
@@ -1081,20 +1107,11 @@ def fetch_options_anomaly_map(focus_tickers, spot_map=None):
 
                 c_vol = float(calls["volume"].sum()) if not calls.empty else 0.0
                 p_vol = float(puts["volume"].sum()) if not puts.empty else 0.0
-                if spot > 0:
-                    dir_calls = calls[(calls["strike"] >= spot * 0.92) & (calls["strike"] <= spot * 1.40)] if not calls.empty else calls
-                    dir_puts = puts[(puts["strike"] >= spot * 0.65) & (puts["strike"] <= spot * 1.08)] if not puts.empty else puts
-                    c_dollar = float(dir_calls["dollar_val"].sum()) if not dir_calls.empty else float(calls["dollar_val"].sum())
-                    p_dollar = float(dir_puts["dollar_val"].sum()) if not dir_puts.empty else float(puts["dollar_val"].sum())
-                else:
-                    c_dollar = float(calls["dollar_val"].sum()) if not calls.empty else 0.0
-                    p_dollar = float(puts["dollar_val"].sum()) if not puts.empty else 0.0
-
                 if c_vol <= 0 and p_vol <= 0:
                     return t, {"has_options": False}
 
                 pcr = round(p_vol / c_vol, 2) if c_vol > 0 else 1.0
-                dollar_pcr = round(p_dollar / c_dollar, 2) if c_dollar > 0 else pcr
+                dollar_pcr, c_dollar, p_dollar = compute_directional_dollar_pcr(calls, puts, spot, fallback_pcr=pcr)
                 eff_pcr = round(0.45 * pcr + 0.55 * dollar_pcr, 2)
 
                 is_inverse_etf = t in ["SQQQ", "SOXS", "VIXY"]
@@ -1122,7 +1139,7 @@ def fetch_options_anomaly_map(focus_tickers, spot_map=None):
 
                 # 2. 按真实方向性权利金成交额 (Directional Dollar Premium) 筛选主力大单：
                 #    - 过滤 <$0.05 末日彩票废约
-                #    - 过滤深度实值 (Deep ITM) 机构换仓合成头寸，Call 聚焦平值与上方阻力墙 (>=0.96*spot)，Put 聚焦平值与下方支撑墙 (<=1.04*spot)
+                #    - 过滤深度实值 (Deep ITM) 机构换仓合成头寸，与 dollar_pcr 严格同口径 (Call >= 0.975*spot, Put <= 1.025*spot)
                 def _pick_top_flow(df_opt, opt_type):
                     if df_opt.empty:
                         return "--", 0.0, 0.0
@@ -1135,11 +1152,8 @@ def fetch_options_anomaly_map(focus_tickers, spot_map=None):
                     if not non_penny.empty:
                         sub = non_penny.copy()
                     if spot > 0:
-                        if opt_type == "Call":
-                            otm_band = sub[(sub["strike"] >= spot * 0.96) & (sub["strike"] <= spot * 1.38)]
-                        else:
-                            otm_band = sub[(sub["strike"] >= spot * 0.68) & (sub["strike"] <= spot * 1.04)]
-                        if not otm_band.empty:
+                        otm_band = filter_directional_options_band(sub, opt_type, spot)
+                        if otm_band is not None and not otm_band.empty:
                             sub = otm_band.copy()
                         else:
                             near_spot = sub[(sub["strike"] >= spot * 0.70) & (sub["strike"] <= spot * 1.40)]
@@ -1230,7 +1244,7 @@ def fetch_options_anomaly_map(focus_tickers, spot_map=None):
 
         try:
             with open(OPTIONS_CACHE_FILE, "w", encoding="utf-8") as f:
-                json.dump({"schema_version": 3, "updated_at": now_ts, "data": cached_map}, f, ensure_ascii=False, indent=2)
+                json.dump({"schema_version": 4, "updated_at": now_ts, "data": cached_map}, f, ensure_ascii=False, indent=2)
             valid_opt_cnt = sum(1 for v in cached_map.values() if v.get("has_options"))
             print(f"[+] ⚡ 机构期权异动同步完成: 成功解析并缓存 {valid_opt_cnt}/{len(cached_map)} 只标的期权主力资金流。")
         except Exception as e:
@@ -1916,12 +1930,22 @@ def evaluate_intraday_entry(
 
     o_info = options_info or {}
     if o_info.get("has_options"):
-        o_sent = o_info.get("pcr_sentiment", "")
+        o_sent = str(o_info.get("pcr_sentiment", "") or "")
         o_call = o_info.get("top_call_info", "")
         o_put = o_info.get("top_put_info", "")
         if intraday_entry_ready:
-            if o_info.get("pcr", 1.0) <= 0.80 or o_info.get("dollar_pcr", 1.0) <= 0.80:
+            o_vol_pcr = float(o_info.get("pcr", 1.0) or 1.0)
+            o_dlr_pcr = float(o_info.get("dollar_pcr", 1.0) or 1.0)
+            is_bear_sent = ("偏空" in o_sent) or ("看跌" in o_sent)
+            vol_bull = o_vol_pcr <= 0.80
+            dlr_bear = o_dlr_pcr >= 1.15
+            dlr_bull = o_dlr_pcr <= 0.85
+            if (not is_bear_sent) and vol_bull and (not dlr_bear):
                 intraday_reason += f" ｜ ⚡期权多头共振({o_sent}, 主力Call {o_call})"
+            elif (not is_bear_sent) and dlr_bull and o_vol_pcr <= 1.15:
+                intraday_reason += f" ｜ ⚡期权多头共振({o_sent}, 主力Call {o_call})"
+            elif (is_bear_sent or dlr_bear) and vol_bull:
+                intraday_reason += f" ｜ ⚖️期权多空分歧({o_sent}, 主力Call {o_call} / 防守Put {o_put})"
             else:
                 intraday_reason += f" ｜ ⚡期权对冲提醒({o_sent}, 防守Put {o_put})"
 

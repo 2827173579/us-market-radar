@@ -166,6 +166,10 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                     if tk in live_lookup:
                         item["is_crash_halt"] = bool(lv.get("is_crash_halt", False))
                         item["is_cooling_halt"] = bool(lv.get("is_cooling_halt", False))
+                        if lv.get("has_options"):
+                            for _opt_k in ("has_options", "pcr", "dollar_pcr", "pcr_sentiment", "pcr_color", "top_call_info", "top_put_info", "call_wall", "put_wall"):
+                                if lv.get(_opt_k) is not None:
+                                    item[_opt_k] = lv[_opt_k]
                     is_crash_halt = bool(item.get("is_crash_halt", False))
                     is_cooling_halt = bool(item.get("is_cooling_halt", False))
 

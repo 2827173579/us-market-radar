@@ -963,6 +963,65 @@ class TestV32CircuitBreaker(unittest.TestCase):
         self.assertLessEqual(res.get("stop_loss_pct"), -1.2)
         self.assertNotAlmostEqual(res.get("stop_loss_pct"), -6.8, places=1)
 
+    def test_scenario_16_options_dollar_pcr_excludes_deep_itm_and_no_conflict_resonance(self):
+        """验证收紧 Put<=1.025*spot & Call>=0.975*spot 剔除深实值污染，且期权偏空绝不触发多头共振"""
+        spot = 352.48
+        calls = pd.DataFrame([
+            {"strike": 330.0, "volume": 1000.0, "eff_price": 23.0, "dollar_val": 2300000.0},  # deep ITM Call (<0.975*spot=343.67)
+            {"strike": 355.0, "volume": 1500.0, "eff_price": 2.50, "dollar_val": 375000.0},
+            {"strike": 360.0, "volume": 7940.0, "eff_price": 1.25, "dollar_val": 992500.0},
+        ])
+        puts = pd.DataFrame([
+            {"strike": 380.0, "volume": 3257.0, "eff_price": 27.21, "dollar_val": 8862297.0},  # deep ITM Put (>1.025*spot=361.29)
+            {"strike": 355.0, "volume": 1291.0, "eff_price": 4.92, "dollar_val": 635172.0},
+            {"strike": 343.0, "volume": 3089.0, "eff_price": 0.85, "dollar_val": 262565.0},
+        ])
+        dpcr, c_dlr, p_dlr = imr.compute_directional_dollar_pcr(calls, puts, spot)
+        self.assertLess(c_dlr, 2000000.0, "Deep ITM Call <0.975*spot must be excluded")
+        self.assertLess(p_dlr, 1500000.0, "Deep ITM Put >1.025*spot must be excluded")
+        self.assertAlmostEqual(dpcr, round((635172.0 + 262565.0) / (375000.0 + 992500.0), 2), places=2)
+        self.assertLess(dpcr, 0.85)
+
+        info = self._broken_pit_intra_info()
+        info["vwap"] = 99.2
+        base_kw = dict(
+            active_price=100.0, fib_low=110.0, fib_high=120.0, ma50=105.0,
+            is_pit=False, is_stop=False, dist_to_pit=0.0,
+            intra_info=info, atr=8.0, ticker="GLD", session_code="REGULAR",
+        )
+        # Bearish sentiment + low vol PCR -> must emit ⚖️期权多空分歧 and NEVER ⚡期权多头共振
+        res_div = run_evaluate_intraday_entry(
+            options_info={
+                "has_options": True, "pcr": 0.68, "dollar_pcr": 4.08,
+                "pcr_sentiment": "🔴 资金偏空对冲", "top_call_info": "$360 Call", "top_put_info": "$355 Put",
+            },
+            **base_kw,
+        )
+        self.assertTrue(res_div["intraday_entry_ready"])
+        self.assertNotIn("期权多头共振", res_div["intraday_reason"])
+        self.assertIn("⚖️期权多空分歧", res_div["intraday_reason"])
+
+        # Balanced sentiment + high dollar_pcr conflict -> also ⚖️期权多空分歧
+        res_bal_conf = run_evaluate_intraday_entry(
+            options_info={
+                "has_options": True, "pcr": 0.70, "dollar_pcr": 1.40,
+                "pcr_sentiment": "⚪ 资金多空均衡", "top_call_info": "$360 Call", "top_put_info": "$355 Put",
+            },
+            **base_kw,
+        )
+        self.assertNotIn("期权多头共振", res_bal_conf["intraday_reason"])
+        self.assertIn("⚖️期权多空分歧", res_bal_conf["intraday_reason"])
+
+        # Aligned bullish sentiment -> ⚡期权多头共振
+        res_bull = run_evaluate_intraday_entry(
+            options_info={
+                "has_options": True, "pcr": 0.68, "dollar_pcr": 0.74,
+                "pcr_sentiment": "🟢 资金偏多看涨", "top_call_info": "$360 Call", "top_put_info": "$355 Put",
+            },
+            **base_kw,
+        )
+        self.assertIn("⚡期权多头共振", res_bull["intraday_reason"])
+
 
 
 
