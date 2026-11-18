@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1794978078.178,
-  "updated_at_et": "11-18 00:01 ET",
-  "updated_at_kst": "14:01 KST",
+  "updated_at_ts": 1794978347.112,
+  "updated_at_et": "11-18 00:05 ET",
+  "updated_at_kst": "14:05 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1422,13 +1422,6 @@
     ],
     "NBIS": [
       {
-        "title": "Why Jensen Huang's absence from Nvidia is 'horrible' for neoclouds",
-        "url": "https://finance.yahoo.com/video/why-jensen-huangs-absence-from-nvidia-is-horrible-for-neoclouds-194629811.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 08:00 ET",
-        "pub_ts": 1794920400.0
-      },
-      {
         "title": "Nvidia Signals AI Financing Flywheel Will Continue, But ‘Disciplined’: Analyst Calls Neoclouds Its ‘Biggest Sustained Bet’ As NBIS, IREN, MRVL Rally",
         "url": "https://stocktwits.com/news-articles/markets/equity/nvidia-signals-ai-financing-flywheel-will-continue-but-disciplined-analyst-calls-neoclouds-its-biggest-sustained-bet-as-nbis-iren-mrvl-rally/cNbXVSvR9hZ?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1455,6 +1448,13 @@
         "source": "Yahoo Finance",
         "time": "11-17 12:50 ET",
         "pub_ts": 1794937858.0
+      },
+      {
+        "title": "Why Jensen Huang's absence from Nvidia is 'horrible' for neoclouds",
+        "url": "https://finance.yahoo.com/video/why-jensen-huangs-absence-from-nvidia-is-horrible-for-neoclouds-194629811.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 08:00 ET",
+        "pub_ts": 1794920400.0
       }
     ],
     "APLD": [
@@ -3226,15 +3226,15 @@
     "PLTR": 1794978078.178225,
     "NOW": 1794978078.178225,
     "AMZN": 1794978078.178225,
-    "CRWV": 1794976542.9960315,
-    "NBIS": 1794976542.9960315,
-    "APLD": 1794976542.9960315,
-    "VST": 1794976542.9960315,
-    "BE": 1794976542.9960315,
-    "CRDO": 1794976542.9960315,
-    "COHR": 1794976542.9960315,
-    "MRVL": 1794976542.9960315,
-    "LITE": 1794976542.9960315,
+    "CRWV": 1794978347.1117775,
+    "NBIS": 1794978347.1117775,
+    "APLD": 1794978347.1117775,
+    "VST": 1794978347.1117775,
+    "BE": 1794978347.1117775,
+    "CRDO": 1794978347.1117775,
+    "COHR": 1794978347.1117775,
+    "MRVL": 1794978347.1117775,
+    "LITE": 1794978347.1117775,
     "AAOI": 1794976772.9844363,
     "SPCX": 1794976772.9844363,
     "ASTS": 1794977026.852725,
@@ -3274,7 +3274,7 @@
     "V": 1794977329.9080346,
     "CAT": 1794977329.9080346,
     "FN": 1794976772.9844363,
-    "GLW": 1794976772.9844363
+    "GLW": 1794978347.1117775
   },
   "calendar_banner": {
     "level": "idle_with_flash",
