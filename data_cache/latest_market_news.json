@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795037240.245,
-  "updated_at_et": "11-18 16:27 ET",
-  "updated_at_kst": "06:27 KST",
+  "updated_at_ts": 1795037337.203,
+  "updated_at_et": "11-18 16:28 ET",
+  "updated_at_kst": "06:28 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -792,6 +792,13 @@
     ],
     "TSM": [
       {
+        "title": "Taiwan Semiconductor Stock (TSM) Looks Too Cheap for Its Growth Outlook",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/taiwan-semiconductor-stock-tsm-looks-210800765.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 16:08 ET",
+        "pub_ts": 1795036080.0
+      },
+      {
         "title": "Nvidia, Micron and TSMC Face a Massive Wave of Bearish Bets",
         "url": "https://finance.yahoo.com/markets/options/articles/nvidia-micron-tsmc-face-massive-191112704.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -818,13 +825,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 10:32 ET",
         "pub_ts": 1795015939.0
-      },
-      {
-        "title": "25 Big Funds Bought Taiwan Semiconductor Last Quarter. It’s Down 21% Since. Time to Buy?",
-        "url": "https://www.tikr.com/blog/25-big-funds-bought-taiwan-semiconductor-last-quarter-its-down-21-since-time-to-buy?ref=yahoofinance&tlnk=yf-261118-mcwqjc2h&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 10:29 ET",
-        "pub_ts": 1795015785.0
       }
     ],
     "VIXY": [
@@ -903,39 +903,39 @@
     ],
     "NVDA": [
       {
-        "title": "Nvidia's interim CEO Colette Kress has taken over one of the most consequential companies on the planet; those who know her say she's up to the task",
-        "url": "https://finance.yahoo.com/technology/article/nvidias-interim-ceo-colette-kress-has-taken-over-one-of-the-most-consequential-companies-on-the-planet-those-who-know-her-say-shes-up-to-the-task-202619183.html?.tsrc=rss",
+        "title": "Nvidia interim CEO Colette Kress has taken over one of the most consequential companies on the planet; those who know her say she's up to the task",
+        "url": "https://finance.yahoo.com/technology/article/nvidia-interim-ceo-colette-kress-has-taken-over-one-of-the-most-consequential-companies-on-the-planet-those-who-know-her-say-shes-up-to-the-task-210312776.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-18 15:26 ET",
         "pub_ts": 1795033579.0
       },
       {
-        "title": "Update: US Equity Indexes Mixed as Nvidia Undermines Risk Sentiment, Fed Minutes Favor Policy Tightening",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/us-equity-indexes-mixed-nvidia-205207511.html?.tsrc=rss",
+        "title": "How major US stock indexes fared Wednesday 11/18/2026",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/major-us-stock-indexes-fared-212009825.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-18 15:52 ET",
-        "pub_ts": 1795035127.0
+        "time": "11-18 16:20 ET",
+        "pub_ts": 1795036809.0
       },
       {
-        "title": "CoreWeave Stock Forecast: Can Nvidia’s AI Boom Drive More Gains?",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/coreweave-stock-forecast-nvidia-ai-204347762.html?.tsrc=rss",
+        "title": "Nvidia Just Demolished Earnings, but the Stock Is Still Plunging. The Reason Is Obvious.",
+        "url": "https://www.fool.com/investing/2026/11/18/nvidia-just-demolished-earnings-but-the-stock-is-still-plunging-the-reason-is-obvious/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-18 15:43 ET",
-        "pub_ts": 1795034627.0
+        "time": "11-18 16:07 ET",
+        "pub_ts": 1795036035.0
       },
       {
-        "title": "Sector Update: Tech Stocks Retreat Late Afternoon",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/sector-tech-stocks-retreat-afternoon-204316548.html?.tsrc=rss",
+        "title": "Apple Stock Polishes Breakout As Nvidia-Led AI Boom Gets Wake-Up Call",
+        "url": "https://finance.yahoo.com/m/681ca0c6-76b1-321b-bdd4-bb83acc818fb/apple-stock-polishes-breakout.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-18 15:43 ET",
-        "pub_ts": 1795034596.0
+        "time": "11-18 16:04 ET",
+        "pub_ts": 1795035850.0
       },
       {
-        "title": "SpaceX Is Now Nvidia's Biggest Stock Holding, Ahead of Intel. Here's What That Says About SpaceX.",
-        "url": "https://www.fool.com/investing/2026/11/18/spacex-is-now-nvidia-s-biggest-stock-holding-ahead-of-intel-here-s-what-that-says-about-spacex/?.tsrc=rss",
+        "title": "‘Nvidia’s turmoil has me spooked’: Should I sell my stocks and buy real estate — or ride out the storm?",
+        "url": "https://www.marketwatch.com/story/nvidia-spooked-me-should-i-sell-my-stocks-or-ride-out-the-market-turmoil-560583c6?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-18 15:17 ET",
-        "pub_ts": 1795033022.0
+        "time": "11-18 16:00 ET",
+        "pub_ts": 1795035600.0
       }
     ],
     "AMD": [
@@ -1014,6 +1014,13 @@
     ],
     "QCOM": [
       {
+        "title": "Tech layoffs flare up in San Diego with hundreds of layoffs at chipmaker",
+        "url": "https://finance.yahoo.com/technology/articles/tech-layoffs-flare-san-diego-204523059.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 15:45 ET",
+        "pub_ts": 1795034723.0
+      },
+      {
         "title": "Tech giant worth $170B axes hundreds of California jobs as CEO demands ‘the right people’ in ruthless cull",
         "url": "https://nypost.com/2026/11/18/tech/chipmaker-qualcomm-announces-517-layoffs-in-california/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1040,13 +1047,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 11:46 ET",
         "pub_ts": 1795020368.0
-      },
-      {
-        "title": "Wi-Fi Chipsets - Global Strategic Business Report 2026: Capitalize on the $26.4 Billion 2032 Shift as Broadcom, Qualcomm, MediaTek, Intel, and Realtek Accelerate Wi-Fi 6/6E Adoption",
-        "url": "https://finance.yahoo.com/technology/articles/wi-fi-chipsets-global-strategic-151500470.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 10:15 ET",
-        "pub_ts": 1795014900.0
       }
     ],
     "AVGO": [
@@ -1199,6 +1199,13 @@
     ],
     "MSFT": [
       {
+        "title": "Microsoft Stock (MSFT) Forecast – Mizuho Stays Bullish on Strong Revenue Growth Prospects",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/microsoft-stock-msft-forecast-mizuho-210000261.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 16:00 ET",
+        "pub_ts": 1795035600.0
+      },
+      {
         "title": "Sector Update: Tech Stocks Retreat Late Afternoon",
         "url": "https://finance.yahoo.com/markets/stocks/articles/sector-tech-stocks-retreat-afternoon-204316548.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1225,13 +1232,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 14:25 ET",
         "pub_ts": 1795029900.0
-      },
-      {
-        "title": "Factory Expands Collaboration with Microsoft to Bring Autonomous Software Engineering to Enterprises",
-        "url": "https://finance.yahoo.com/technology/ai/articles/factory-expands-collaboration-microsoft-bring-190400724.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 14:04 ET",
-        "pub_ts": 1795028640.0
       }
     ],
     "AAPL": [
@@ -2219,21 +2219,28 @@
         "pub_ts": 1794999600.0
       },
       {
+        "title": "HPE Names Jennifer Nason to Board of Directors",
+        "url": "https://finance.yahoo.com/technology/articles/hpe-names-jennifer-nason-board-210500621.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 16:05 ET",
+        "pub_ts": 1795035900.0
+      },
+      {
         "title": "What Has The Market Missed In Hewlett Packard Enterprise Stock's Drop?",
         "url": "https://www.trefis.com/stock/hpe/articles/626230/what-has-the-market-missed-in-hewlett-packard-enterprise-stocks-drop/2026-11-18?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-18 13:16 ET",
         "pub_ts": 1795025818.0
-      },
-      {
-        "title": "Citi Bank Slashes Dell And HPE Price Targets Ahead Of Earnings",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/citi-bank-slashes-dell-hpe-180012702.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 13:00 ET",
-        "pub_ts": 1795024812.0
       }
     ],
     "DELL": [
+      {
+        "title": "Dell Technologies to Present at Investor Conferences in December",
+        "url": "https://finance.yahoo.com/technology/articles/dell-technologies-present-investor-conferences-210500436.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 16:05 ET",
+        "pub_ts": 1795035900.0
+      },
       {
         "title": "Citi Bank Slashes Dell And HPE Price Targets Ahead Of Earnings",
         "url": "https://finance.yahoo.com/markets/stocks/articles/citi-bank-slashes-dell-hpe-180012702.html?.tsrc=rss",
@@ -2261,13 +2268,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 11:45 ET",
         "pub_ts": 1795020302.0
-      },
-      {
-        "title": "Snowflake's AI Push Fuels Revenue Growth: Can It Beat DELL & ORCL?",
-        "url": "https://finance.yahoo.com/technology/ai/articles/snowflakes-ai-push-fuels-revenue-164500994.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 11:45 ET",
-        "pub_ts": 1795020300.0
       }
     ],
     "OKLO": [
@@ -2383,6 +2383,13 @@
     ],
     "MU": [
       {
+        "title": "How Much Upside Is Left In Micron Stock?",
+        "url": "https://www.trefis.com/stock/mu/articles/626211/how-much-upside-is-left-in-micron-stock-2/2026-11-18?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 16:07 ET",
+        "pub_ts": 1795036062.0
+      },
+      {
         "title": "Is Micron Undervalued?",
         "url": "https://www.fool.com/investing/2026/11/18/is-micron-undervalued/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2409,13 +2416,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 14:14 ET",
         "pub_ts": 1795029240.0
-      },
-      {
-        "title": "Nvidia, Micron and TSMC Face a Massive Wave of Bearish Bets",
-        "url": "https://finance.yahoo.com/markets/options/articles/nvidia-micron-tsmc-face-massive-191112704.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 14:11 ET",
-        "pub_ts": 1795029072.0
       }
     ],
     "SKHY": [
@@ -2605,6 +2605,20 @@
     ],
     "BTC-USD": [
       {
+        "title": "Bullish Stock Jumps On Earnings, Revenue Gains. Board Approves $300 Mil Buyback Plan.",
+        "url": "https://finance.yahoo.com/m/a8f9b5cc-c5df-3f52-8d97-8ec408de7963/bullish-stock-jumps-on.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 16:14 ET",
+        "pub_ts": 1795036491.0
+      },
+      {
+        "title": "Sector Update: Financial Stocks Decline Late Afternoon",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/sector-financial-stocks-decline-afternoon-205629308.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 15:56 ET",
+        "pub_ts": 1795035389.0
+      },
+      {
         "title": "Bitcoin bottom in? Analyst spots key $63K support",
         "url": "https://www.thestreet.com/crypto/markets/bitcoin-bottom-in-analyst-spots-key-63k-support?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2624,20 +2638,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 14:30 ET",
         "pub_ts": 1795030200.0
-      },
-      {
-        "title": "Bitcoin Tanks Ahead of Anthropic’s IPO. Should We Really Blame AI?",
-        "url": "https://decrypt.co/383551/bitcoin-tanks-ahead-anthropics-ipo-should-we-really-blame-ai?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 14:16 ET",
-        "pub_ts": 1795029362.0
-      },
-      {
-        "title": "MARA Adds Debt for AI Power Push After Selling $2.2 Billion of Bitcoin to Cut Loans",
-        "url": "https://www.cryptoprowl.com/releases/mara-adds-debt-for-ai-power-push-after-selling-22-billion-of-bitcoin-to-cut-loans-7969?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 14:10 ET",
-        "pub_ts": 1795029000.0
       }
     ],
     "CRWD": [
@@ -3206,21 +3206,21 @@
     "SMH": 1795037139.2507496,
     "IWM": 1795037139.2507496,
     "IGV": 1795037139.2507496,
-    "TLT": 1795035758.3959088,
-    "GLD": 1795035758.3959088,
+    "TLT": 1795037337.2028086,
+    "GLD": 1795037337.2028086,
     "SQQQ": 1795037139.2507496,
-    "TSM": 1795035758.3959088,
-    "VIXY": 1795035758.3959088,
-    "SOXS": 1795035758.3959088,
-    "NVDA": 1795035758.3959088,
-    "AMD": 1795035758.3959088,
-    "ASML": 1795035758.3959088,
-    "QCOM": 1795035758.3959088,
-    "AVGO": 1795035758.3959088,
-    "AMAT": 1795035758.3959088,
+    "TSM": 1795037337.2028086,
+    "VIXY": 1795037337.2028086,
+    "SOXS": 1795037337.2028086,
+    "NVDA": 1795037337.2028086,
+    "AMD": 1795037337.2028086,
+    "ASML": 1795037337.2028086,
+    "QCOM": 1795037337.2028086,
+    "AVGO": 1795037337.2028086,
+    "AMAT": 1795037337.2028086,
     "META": 1795035869.6273456,
     "GOOGL": 1795035869.6273456,
-    "MSFT": 1795035758.3959088,
+    "MSFT": 1795037337.2028086,
     "AAPL": 1795035869.6273456,
     "PLTR": 1795035869.6273456,
     "NOW": 1795035869.6273456,
@@ -3247,19 +3247,19 @@
     "FLY": 1795035971.7489824,
     "INTC": 1795037139.2507496,
     "VRT": 1795037139.2507496,
-    "HPE": 1795035758.3959088,
-    "DELL": 1795035758.3959088,
-    "OKLO": 1795035758.3959088,
+    "HPE": 1795037337.2028086,
+    "DELL": 1795037337.2028086,
+    "OKLO": 1795037337.2028086,
     "CEG": 1795037139.2507496,
     "FPS": 1795037139.2507496,
-    "MU": 1795035758.3959088,
-    "SKHY": 1795035758.3959088,
-    "WDC": 1795035758.3959088,
-    "STX": 1795035758.3959088,
-    "MSTR": 1795035758.3959088,
-    "SNDK": 1795035758.3959088,
-    "BTC-USD": 1795035758.3959088,
-    "CRWD": 1795035758.3959088,
+    "MU": 1795037337.2028086,
+    "SKHY": 1795037337.2028086,
+    "WDC": 1795037337.2028086,
+    "STX": 1795037337.2028086,
+    "MSTR": 1795037337.2028086,
+    "SNDK": 1795037337.2028086,
+    "BTC-USD": 1795037337.2028086,
+    "CRWD": 1795037337.2028086,
     "ORCL": 1795035869.6273456,
     "COIN": 1795035758.3959088,
     "LLY": 1795035869.6273456,
