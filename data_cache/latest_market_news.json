@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1794962654.851,
-  "updated_at_et": "11-17 19:44 ET",
-  "updated_at_kst": "09:44 KST",
+  "updated_at_ts": 1794962754.346,
+  "updated_at_et": "11-17 19:45 ET",
+  "updated_at_kst": "09:45 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2419,6 +2419,13 @@
     ],
     "SKHY": [
       {
+        "title": "Micron Technology (MU) Keeps DRAM Price Fixing Lawsuit Alive After Judge Rejection",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/micron-technology-mu-keeps-dram-001843894.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 19:18 ET",
+        "pub_ts": 1794961123.0
+      },
+      {
         "title": "What Is SK hynix (NasdaqGS:SKHY) Really Aiming For With Its $1 Billion Chip Push?",
         "url": "https://finance.yahoo.com/technology/articles/sk-hynix-nasdaqgs-skhy-really-220914267.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2445,13 +2452,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 13:20 ET",
         "pub_ts": 1794939602.0
-      },
-      {
-        "title": "Micron, SanDisk and SK Hynix Face New Warning From Wall Street",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/micron-sandisk-sk-hynix-face-174959688.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 12:49 ET",
-        "pub_ts": 1794937799.0
       }
     ],
     "WDC": [
@@ -2641,6 +2641,13 @@
     ],
     "CRWD": [
       {
+        "title": "CrowdStrike Holdings (CRWD) Lands Frost Radar Honor As New AI Agent Risks Rise",
+        "url": "https://finance.yahoo.com/technology/ai/articles/crowdstrike-holdings-crwd-lands-frost-001752933.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 19:17 ET",
+        "pub_ts": 1794961072.0
+      },
+      {
         "title": "Cantor Fitzgerald Raises Its CrowdStrike Target to $275. Is It Still Too Low?",
         "url": "https://www.tikr.com/blog/cantor-fitzgerald-raises-its-crowdstrike-target-to-275-is-it-still-too-low?ref=yahoofinance&tlnk=yf-261117-rvwf378m&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2667,13 +2674,6 @@
         "source": "Yahoo Finance",
         "time": "11-16 11:27 ET",
         "pub_ts": 1794846420.0
-      },
-      {
-        "title": "Jim Cramer: Anthropic’s “Next $100 Billion in Revenue” Might Be Cybersecurity. CrowdStrike Should Worry",
-        "url": "https://www.tikr.com/blog/jim-cramer-anthropics-next-100-billion-in-revenue-might-be-cybersecurity-crowdstrike-should-worry?ref=yahoofinance&tlnk=yf-261116-p9ccm24m&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-15 21:22 ET",
-        "pub_ts": 1794795771.0
       }
     ],
     "ORCL": [
@@ -3252,15 +3252,15 @@
     "CEG": 1794961262.5625894,
     "FPS": 1794962654.8510745,
     "MU": 1794961461.1133852,
-    "SKHY": 1794961160.1838555,
+    "SKHY": 1794962754.3459277,
     "WDC": 1794961262.5625894,
     "STX": 1794961558.4707723,
-    "MSTR": 1794961160.1838555,
-    "SNDK": 1794961160.1838555,
+    "MSTR": 1794962754.3459277,
+    "SNDK": 1794962754.3459277,
     "BTC-USD": 1794961558.4707723,
-    "CRWD": 1794961160.1838555,
-    "ORCL": 1794961160.1838555,
-    "COIN": 1794961160.1838555,
+    "CRWD": 1794962754.3459277,
+    "ORCL": 1794962754.3459277,
+    "COIN": 1794962754.3459277,
     "LLY": 1794961461.1133852,
     "MRNA": 1794961262.5625894,
     "NKE": 1794961558.4707723,
