@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795027890.952,
-  "updated_at_et": "11-18 13:51 ET",
-  "updated_at_kst": "03:51 KST",
+  "updated_at_ts": 1795027998.005,
+  "updated_at_et": "11-18 13:53 ET",
+  "updated_at_kst": "03:53 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1160,6 +1160,13 @@
     ],
     "GOOGL": [
       {
+        "title": "Dan Ives sends a strong signal ahead of the Anthropic IPO",
+        "url": "https://www.thestreet.com/investing/stocks/dan-ives-sends-a-strong-signal-ahead-of-the-anthropic-ipo?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 13:33 ET",
+        "pub_ts": 1795026780.0
+      },
+      {
         "title": "Anthropic Valuation Is 8.5 Times Next Year’s Sales: Multiples More Like Microsoft, Alphabet Than Palantir, New Street Analyst Says",
         "url": "https://stocktwits.com/news-articles/markets/equity/anthropic-valuation-is-8-5-times-next-year-s-sales-multiples-more-like-microsoft-alphabet-than-palantir-new-street-analyst-says/cNbg9fWR9LC?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1186,13 +1193,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 12:34 ET",
         "pub_ts": 1795023245.0
-      },
-      {
-        "title": "Yoodli Ranks No. 9 on the 2026 Technology Fast 500™ List of North America's Fastest-Growing Technology Companies",
-        "url": "https://finance.yahoo.com/technology/articles/yoodli-ranks-no-9-2026-173300978.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 12:33 ET",
-        "pub_ts": 1795023180.0
       }
     ],
     "MSFT": [
@@ -1493,6 +1493,13 @@
     ],
     "VST": [
       {
+        "title": "A $6.9 Billion Fund Dumps These 3 Stocks",
+        "url": "https://www.tikr.com/blog/a-6-9-billion-fund-dumps-these-3-stocks?ref=yahoofinance&tlnk=yf-261118-xcfh59pr&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 13:17 ET",
+        "pub_ts": 1795025877.0
+      },
+      {
         "title": "Constellation CEO: Google and Amazon Deals Equal “a New Large-Scale Nuclear Plant” at $7.3 Billion",
         "url": "https://www.tikr.com/blog/constellation-ceo-google-and-amazon-deals-equal-a-new-large-scale-nuclear-plant-at-7-3-billion?ref=yahoofinance&tlnk=yf-261118-455pgf6h&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1519,13 +1526,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 15:50 ET",
         "pub_ts": 1794948602.0
-      },
-      {
-        "title": "Vistra Is Down 41% From Its High. History Suggests This Is What Happens Next.",
-        "url": "https://www.fool.com/investing/2026/11/17/vistra-is-down-41-from-its-high-history-suggests-this-is-what-happens-next/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 14:22 ET",
-        "pub_ts": 1794943322.0
       }
     ],
     "BE": [
@@ -1567,6 +1567,13 @@
     ],
     "CRDO": [
       {
+        "title": "Astera Labs and Credo Each Trade About 60% Below Their Highs. Only One Still Needs a $1.46 Billion Second Half",
+        "url": "https://www.tikr.com/blog/astera-labs-and-credo-each-trade-about-60-below-their-highs-only-one-still-needs-a-1-46-billion-second-half?ref=yahoofinance&tlnk=yf-261118-2jfmh78p&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 11:33 ET",
+        "pub_ts": 1795019587.0
+      },
+      {
         "title": "Credo, Marvell settle intellectual property battle over data center cable tech",
         "url": "https://finance.yahoo.com/technology/articles/credo-marvell-settle-intellectual-property-223628271.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1593,13 +1600,6 @@
         "source": "Yahoo Finance",
         "time": "11-16 09:41 ET",
         "pub_ts": 1794840074.0
-      },
-      {
-        "title": "Why Did Credo Technology Stock Fall?",
-        "url": "https://www.trefis.com/stock/crdo/articles/625288/why-did-credo-technology-stock-fall/2026-11-16?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-16 06:42 ET",
-        "pub_ts": 1794829331.0
       }
     ],
     "COHR": [
@@ -3195,8 +3195,8 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795026411.6110256,
-    "SOXL": 1795026411.6110256,
+    "KORU": 1795027998.0045347,
+    "SOXL": 1795027998.0045347,
     "SPY": 1795027690.3275805,
     "DIA": 1795027690.3275805,
     "SOXX": 1795027690.3275805,
@@ -3216,21 +3216,21 @@
     "QCOM": 1795027890.9523823,
     "AVGO": 1795027890.9523823,
     "AMAT": 1795027890.9523823,
-    "META": 1795026411.6110256,
-    "GOOGL": 1795026411.6110256,
+    "META": 1795027998.0045347,
+    "GOOGL": 1795027998.0045347,
     "MSFT": 1795027890.9523823,
-    "AAPL": 1795026411.6110256,
-    "PLTR": 1795026411.6110256,
-    "NOW": 1795026411.6110256,
-    "AMZN": 1795026411.6110256,
-    "CRWV": 1795026411.6110256,
-    "NBIS": 1795026411.6110256,
-    "APLD": 1795026411.6110256,
-    "VST": 1795026411.6110256,
-    "BE": 1795026411.6110256,
-    "CRDO": 1795026411.6110256,
-    "COHR": 1795026411.6110256,
-    "MRVL": 1795026411.6110256,
+    "AAPL": 1795027998.0045347,
+    "PLTR": 1795027998.0045347,
+    "NOW": 1795027998.0045347,
+    "AMZN": 1795027998.0045347,
+    "CRWV": 1795027998.0045347,
+    "NBIS": 1795027998.0045347,
+    "APLD": 1795027998.0045347,
+    "VST": 1795027998.0045347,
+    "BE": 1795027998.0045347,
+    "CRDO": 1795027998.0045347,
+    "COHR": 1795027998.0045347,
+    "MRVL": 1795027998.0045347,
     "LITE": 1795026519.6815133,
     "AAOI": 1795027690.3275805,
     "SPCX": 1795026519.6815133,
@@ -3258,7 +3258,7 @@
     "SNDK": 1795027792.3830314,
     "BTC-USD": 1795027890.9523823,
     "CRWD": 1795027890.9523823,
-    "ORCL": 1795026411.6110256,
+    "ORCL": 1795027998.0045347,
     "COIN": 1795027890.9523823,
     "LLY": 1795027890.9523823,
     "MRNA": 1795027890.9523823,
@@ -3269,7 +3269,7 @@
     "JPM": 1795026519.6815133,
     "WMT": 1795026519.6815133,
     "V": 1795027890.9523823,
-    "CAT": 1795026411.6110256,
+    "CAT": 1795027998.0045347,
     "FN": 1795026519.6815133,
     "GLW": 1795026519.6815133
   },
