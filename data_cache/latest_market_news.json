@@ -1,9 +1,22 @@
 {
-  "updated_at_ts": 1795027792.383,
-  "updated_at_et": "11-18 13:49 ET",
-  "updated_at_kst": "03:49 KST",
+  "updated_at_ts": 1795027890.952,
+  "updated_at_et": "11-18 13:51 ET",
+  "updated_at_kst": "03:51 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261119025000000800",
+      "title": "美联储将于十分钟后公布货币政策会议纪要。",
+      "summary": "美联储将于十分钟后公布货币政策会议纪要。",
+      "keywords": [
+        "美联储"
+      ],
+      "pub_ts": 1795027800.0,
+      "time_et": "11-18 13:50 ET",
+      "time_bj": "02:50 BJ",
+      "time_kst": "03:50 KST",
+      "time_display": "13:50 ET / 02:50 BJ"
+    },
     {
       "id": "20261119023625287800",
       "title": "市场消息：Arm(ARM.O)CEO哈斯曾与英伟达(NVDA.O)的猎头公司接洽。",
@@ -328,19 +341,6 @@
       "time_bj": "20:45 BJ",
       "time_kst": "21:45 KST",
       "time_display": "07:45 ET / 20:45 BJ"
-    },
-    {
-      "id": "20261118204303311800",
-      "title": "美联储理事沃勒：美联储将需要动用其他手段来释放对通胀采取更激进应对措施的信号。",
-      "summary": "美联储理事沃勒：美联储将需要动用其他手段来释放对通胀采取更激进应对措施的信号。",
-      "keywords": [
-        "美联储"
-      ],
-      "pub_ts": 1795005783.0,
-      "time_et": "11-18 07:43 ET",
-      "time_bj": "20:43 BJ",
-      "time_kst": "21:43 KST",
-      "time_display": "07:43 ET / 20:43 BJ"
     }
   ],
   "ticker_news": {
@@ -730,6 +730,13 @@
         "pub_ts": 1793906567.0
       },
       {
+        "title": "Gold Just Crashed 32% From Its Record in 10 Months, Shattering the Safe Haven Retirees Leaned On. Warren Buffett Spent Decades Warning About Exactly This, and His Reason Wasn’t the Price",
+        "url": "https://247wallst.com/personal-finance/2026/11/18/gold-just-crashed-32-from-its-record-in-10-months-shattering-the-safe-haven-retirees-leaned-on-warren-buffett-spent-decades-warning-about-exactly-this-and-his-reason-wasnt-the-price/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 13:44 ET",
+        "pub_ts": 1795027474.0
+      },
+      {
         "title": "GLD, SLV Sink To Near 14-Month Lows – But This Commodities Expert Sees A ‘Relative Bright Spot’",
         "url": "https://stocktwits.com/news-articles/markets/equity/gld-slv-sink-to-near-14-month-lows-gold-silver-prices/cNbXzasR9LJ?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -742,13 +749,6 @@
         "source": "Yahoo Finance",
         "time": "11-14 14:43 ET",
         "pub_ts": 1794685380.0
-      },
-      {
-        "title": "What $10,000 in Silver on Jan. 1 Is Worth Today",
-        "url": "https://www.fool.com/investing/2026/11/12/what-10000-in-silver-on-jan-1-is-worth-today/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-12 11:35 ET",
-        "pub_ts": 1794501300.0
       }
     ],
     "SQQQ": [
@@ -901,42 +901,49 @@
     ],
     "NVDA": [
       {
-        "title": "Why Nvidia is still the central bank of AI without Jensen Huang",
-        "url": "https://finance.yahoo.com/video/why-nvidia-is-still-the-central-bank-of-ai-without-jensen-huang-175054695.html?.tsrc=rss",
+        "title": "Nvidia's Risk-Reward Remains Attractive Despite Regulatory Investigations, Morgan Stanley Says",
+        "url": "https://finance.yahoo.com/technology/articles/nvidia-apos-risk-reward-remains-183740666.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-18 12:50 ET",
-        "pub_ts": 1795024254.0
+        "time": "11-18 13:37 ET",
+        "pub_ts": 1795027060.0
       },
       {
-        "title": "Nvidia earnings beat lifts Bitcoin mining stocks",
-        "url": "https://www.thestreet.com/crypto/artificial-intelligence/nvidia-earnings-beat-lifts-bitcoin-mining-stocks?.tsrc=rss",
+        "title": "Nvidia says leadership crisis won’t derail AI capacity work",
+        "url": "https://www.americanbanker.com/payments/news/nvidia-says-leadership-crisis-won-t-derail-ai-capacity-work?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-18 13:16 ET",
-        "pub_ts": 1795025772.0
+        "time": "11-18 13:34 ET",
+        "pub_ts": 1795026870.0
       },
       {
-        "title": "Equity Markets Mostly Fall Intraday Amid Nvidia Sell-Off",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/equity-markets-mostly-fall-intraday-181513307.html?.tsrc=rss",
+        "title": "Mullin Says He Didn’t Know About Nvidia Affair ‘Until It Broke’",
+        "url": "https://finance.yahoo.com/video/mullin-says-didn-t-know-183400070.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-18 13:15 ET",
-        "pub_ts": 1795025713.0
+        "time": "11-18 13:34 ET",
+        "pub_ts": 1795026840.0
       },
       {
-        "title": "Nscale investigates ties to blacklisted tech companies",
-        "url": "https://uk.finance.yahoo.com/news/nscale-investigates-ties-blacklisted-tech-180940263.html?.tsrc=rss",
+        "title": "Jensen Huang's Downfall Shows the Dangers of Investing in Companies like SpaceX and Anthropic",
+        "url": "https://www.fool.com/investing/2026/11/18/jensen-huang-downfall-dangers-investing-companies-spacex-anthropic/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-18 13:09 ET",
-        "pub_ts": 1795025380.0
+        "time": "11-18 13:25 ET",
+        "pub_ts": 1795026354.0
       },
       {
-        "title": "Why Take-Two Stock's Winning the Game Today",
-        "url": "https://www.fool.com/investing/2026/11/18/why-take-two-stock-s-winning-the-game-today/?.tsrc=rss",
+        "title": "If You'd Invested $1,000 in an S&P 500 ETF Ahead of the Dot-Com Bubble, Here's What You'd Have Today",
+        "url": "https://www.fool.com/investing/2026/11/18/if-invest-sp-500-etf-ahead-dot-com-bubble-how-much/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-18 13:08 ET",
-        "pub_ts": 1795025321.0
+        "time": "11-18 13:20 ET",
+        "pub_ts": 1795026000.0
       }
     ],
     "AMD": [
+      {
+        "title": "Supermicro Unveils Major AI Technology Breakthrough With AMD Chips",
+        "url": "https://finance.yahoo.com/technology/ai/articles/supermicro-unveils-major-ai-technology-183252634.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 13:32 ET",
+        "pub_ts": 1795026772.0
+      },
       {
         "title": "Broadcom Already Eclipsed AMD as The 2nd Biggest Chip Maker, But The Market Won’t Recognize That Truth Until 2027",
         "url": "https://247wallst.com/investing/2026/11/18/broadcom-already-eclipsed-amd-as-the-2nd-biggest-chip-maker-but-the-market-wont-recognize-that-truth-until-2027/?.tsrc=rss",
@@ -964,13 +971,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 11:08 ET",
         "pub_ts": 1795018091.0
-      },
-      {
-        "title": "A $7.9 Billion Fund Dumps These 3 Stocks",
-        "url": "https://www.tikr.com/blog/a-7-9-billion-fund-dumps-these-3-stocks?ref=yahoofinance&tlnk=yf-261118-g94wp9rm&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 10:47 ET",
-        "pub_ts": 1795016840.0
       }
     ],
     "ASML": [
@@ -1012,6 +1012,13 @@
     ],
     "QCOM": [
       {
+        "title": "Baird cuts Qualcomm estimates over potential loss of ByteDance chip business",
+        "url": "https://www.proactiveinvestors.com/companies/news/1102042/baird-cuts-qualcomm-estimates-over-potential-loss-of-bytedance-chip-business-1102042.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 13:28 ET",
+        "pub_ts": 1795026480.0
+      },
+      {
         "title": "A $2.6 Billion Fund Dumps These 3 Stocks",
         "url": "https://www.tikr.com/blog/a-2-6-billion-fund-dumps-these-3-stocks?ref=yahoofinance&tlnk=yf-261118-5w53rh4v&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1038,16 +1045,16 @@
         "source": "Yahoo Finance",
         "time": "11-18 09:30 ET",
         "pub_ts": 1795012200.0
-      },
-      {
-        "title": "Why Qualcomm teamed with F1’s new star in race for sports marketing ROI",
-        "url": "https://www.marketingdive.com/news/why-qualcomm-teamed-with-f1s-new-star-in-race-for-sports-marketing-roi/874895/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 15:00 ET",
-        "pub_ts": 1794945600.0
       }
     ],
     "AVGO": [
+      {
+        "title": "Broadcom's Cash Holds Up Better Than Nvidia's",
+        "url": "https://www.trefis.com/stock/avgo/articles/626108/broadcom-s-cash-holds-up-better-than-nvidia-s/2026-11-18?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 13:05 ET",
+        "pub_ts": 1795025121.0
+      },
       {
         "title": "Broadcom Already Eclipsed AMD as The 2nd Biggest Chip Maker, But The Market Won’t Recognize That Truth Until 2027",
         "url": "https://247wallst.com/investing/2026/11/18/broadcom-already-eclipsed-amd-as-the-2nd-biggest-chip-maker-but-the-market-wont-recognize-that-truth-until-2027/?.tsrc=rss",
@@ -1075,13 +1082,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 10:47 ET",
         "pub_ts": 1795016869.0
-      },
-      {
-        "title": "How Broadcom’s (AVGO) Anthropic Equipment Leases Link AI Growth to Financing",
-        "url": "https://finance.yahoo.com/technology/ai/articles/broadcom-avgo-anthropic-equipment-leases-152302941.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 10:23 ET",
-        "pub_ts": 1795015382.0
       }
     ],
     "AMAT": [
@@ -1197,6 +1197,20 @@
     ],
     "MSFT": [
       {
+        "title": "Microsoft's Next AI Revenue Test Goes Beyond Copilot",
+        "url": "https://finance.yahoo.com/technology/ai/articles/microsofts-next-ai-revenue-test-182245754.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 13:22 ET",
+        "pub_ts": 1795026165.0
+      },
+      {
+        "title": "Microsoft, Intel Deepen Azure Partnership Amid Increasing AI, Cloud Demand",
+        "url": "https://stocktwits.com/news-articles/markets/equity/microsoft-intel-deepen-azure-partnership-amid-increasing-ai-cloud-demand/cNbg90QR9L6?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 13:21 ET",
+        "pub_ts": 1795026065.0
+      },
+      {
         "title": "Anthropic Valuation Is 8.5 Times Next Year’s Sales: Multiples More Like Microsoft, Alphabet Than Palantir, New Street Analyst Says",
         "url": "https://stocktwits.com/news-articles/markets/equity/anthropic-valuation-is-8-5-times-next-year-s-sales-multiples-more-like-microsoft-alphabet-than-palantir-new-street-analyst-says/cNbg9fWR9LC?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1216,20 +1230,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 12:26 ET",
         "pub_ts": 1795022760.0
-      },
-      {
-        "title": "Splashtop Joins Microsoft Virus Initiative, Strengthening Protection for Microsoft Environments",
-        "url": "https://finance.yahoo.com/technology/articles/splashtop-joins-microsoft-virus-initiative-170000563.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 12:00 ET",
-        "pub_ts": 1795021200.0
-      },
-      {
-        "title": "Microsoft and Intel Deepen Collaboration to Deliver Differentiated Azure Infrastructure",
-        "url": "https://finance.yahoo.com/technology/ai/articles/microsoft-intel-deepen-collaboration-deliver-164700932.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 11:47 ET",
-        "pub_ts": 1795020420.0
       }
     ],
     "AAPL": [
@@ -3204,21 +3204,21 @@
     "SMH": 1795027690.3275805,
     "IWM": 1795027690.3275805,
     "IGV": 1795027690.3275805,
-    "TLT": 1795026309.2852783,
-    "GLD": 1795026309.2852783,
+    "TLT": 1795027890.9523823,
+    "GLD": 1795027890.9523823,
     "SQQQ": 1795027690.3275805,
-    "TSM": 1795026309.2852783,
-    "VIXY": 1795026309.2852783,
-    "SOXS": 1795026309.2852783,
-    "NVDA": 1795026309.2852783,
-    "AMD": 1795026309.2852783,
-    "ASML": 1795026309.2852783,
-    "QCOM": 1795026309.2852783,
-    "AVGO": 1795026309.2852783,
-    "AMAT": 1795026309.2852783,
+    "TSM": 1795027890.9523823,
+    "VIXY": 1795027890.9523823,
+    "SOXS": 1795027890.9523823,
+    "NVDA": 1795027890.9523823,
+    "AMD": 1795027890.9523823,
+    "ASML": 1795027890.9523823,
+    "QCOM": 1795027890.9523823,
+    "AVGO": 1795027890.9523823,
+    "AMAT": 1795027890.9523823,
     "META": 1795026411.6110256,
     "GOOGL": 1795026411.6110256,
-    "MSFT": 1795026309.2852783,
+    "MSFT": 1795027890.9523823,
     "AAPL": 1795026411.6110256,
     "PLTR": 1795026411.6110256,
     "NOW": 1795026411.6110256,
@@ -3253,22 +3253,22 @@
     "MU": 1795027792.3830314,
     "SKHY": 1795027792.3830314,
     "WDC": 1795027792.3830314,
-    "STX": 1795026309.2852783,
-    "MSTR": 1795026309.2852783,
+    "STX": 1795027890.9523823,
+    "MSTR": 1795027890.9523823,
     "SNDK": 1795027792.3830314,
-    "BTC-USD": 1795026309.2852783,
-    "CRWD": 1795026309.2852783,
+    "BTC-USD": 1795027890.9523823,
+    "CRWD": 1795027890.9523823,
     "ORCL": 1795026411.6110256,
-    "COIN": 1795026309.2852783,
-    "LLY": 1795026309.2852783,
-    "MRNA": 1795026309.2852783,
+    "COIN": 1795027890.9523823,
+    "LLY": 1795027890.9523823,
+    "MRNA": 1795027890.9523823,
     "NKE": 1795026519.6815133,
     "MCD": 1795026519.6815133,
     "PEP": 1795026519.6815133,
-    "XOM": 1795026309.2852783,
+    "XOM": 1795027890.9523823,
     "JPM": 1795026519.6815133,
     "WMT": 1795026519.6815133,
-    "V": 1795026309.2852783,
+    "V": 1795027890.9523823,
     "CAT": 1795026411.6110256,
     "FN": 1795026519.6815133,
     "GLW": 1795026519.6815133
@@ -3276,7 +3276,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (13:36 ET / 02:36 BJ) [英伟达]：市场消息：Arm(ARM.O)CEO哈斯曾与英伟达(NVDA.O)的猎头公司接洽。",
+    "detail": "⚡ 最新核心快讯 (13:50 ET / 02:50 BJ) [美联储]：美联储将于十分钟后公布货币政策会议纪要。",
     "event_name": "",
     "minutes_left": 0
   }
