@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795026011.997,
-  "updated_at_et": "11-18 13:20 ET",
-  "updated_at_kst": "03:20 KST",
+  "updated_at_ts": 1795026108.495,
+  "updated_at_et": "11-18 13:21 ET",
+  "updated_at_kst": "03:21 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -532,6 +532,13 @@
     ],
     "QQQ": [
       {
+        "title": "Exchange-Traded Funds, US Equities Mixed After Midday",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/exchange-traded-funds-us-equities-181634829.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 13:16 ET",
+        "pub_ts": 1795025794.0
+      },
+      {
         "title": "Exchange-Traded Funds Higher, Equity Futures Mixed Pre-Bell Wednesday Amid Nvidia Earnings, Upcoming Fed Meeting Minutes",
         "url": "https://finance.yahoo.com/markets/stocks/articles/exchange-traded-funds-higher-equity-140832688.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -558,13 +565,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 13:11 ET",
         "pub_ts": 1794939082.0
-      },
-      {
-        "title": "Exchange-Traded Funds, Equity Futures Mixed Pre-Bell Tuesday as Investors Await Nvidia Earnings",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/exchange-traded-funds-equity-futures-141622060.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 09:16 ET",
-        "pub_ts": 1794924982.0
       }
     ],
     "SMH": [
@@ -1938,6 +1938,13 @@
     ],
     "TSLA": [
       {
+        "title": "Egan-Jones Examines What the Tesla Roadster Demo Signals for Automakers",
+        "url": "https://finance.yahoo.com/technology/articles/egan-jones-examines-tesla-roadster-180000836.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 13:00 ET",
+        "pub_ts": 1795024800.0
+      },
+      {
         "title": "Tesla Stock Is Still a High-Stakes Bet on the Future. Here’s My Price Target",
         "url": "https://247wallst.com/investing/2026/11/18/tesla-stock-is-still-a-high-stakes-bet-on-the-future-heres-my-price-target/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1964,13 +1971,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 11:21 ET",
         "pub_ts": 1795018864.0
-      },
-      {
-        "title": "Humanoids Summit Returns to Silicon Valley, Bringing Together Tesla Optimus and Global Leaders in Physical AI",
-        "url": "https://finance.yahoo.com/technology/ai/articles/humanoids-summit-returns-silicon-valley-160000468.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 11:00 ET",
-        "pub_ts": 1795017600.0
       }
     ],
     "AXP": [
@@ -1980,6 +1980,13 @@
         "source": "Yahoo Finance",
         "time": "11-18 12:40 ET",
         "pub_ts": 1795023602.0
+      },
+      {
+        "title": "Visa vs. American Express: Which Stock Has More Growth Potential?",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/visa-vs-american-express-stock-165900779.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 11:59 ET",
+        "pub_ts": 1795021140.0
       },
       {
         "title": "Solaris Resources Appoints Mark Flaherty to Board as Warintza Copper Project Advances",
@@ -2001,13 +2008,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 14:40 ET",
         "pub_ts": 1794944432.0
-      },
-      {
-        "title": "AXP Expands Its Lounge Network: Can Premium Benefits Pay Off?",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/axp-expands-lounge-network-premium-162200683.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 11:22 ET",
-        "pub_ts": 1794932520.0
       }
     ],
     "RKLB": [
@@ -2049,6 +2049,13 @@
     ],
     "KO": [
       {
+        "title": "If You Invest $5,000 in Coca Cola Today, Here’s What It Could Be Worth by 2030",
+        "url": "https://247wallst.com/investing/2026/11/18/if-you-invest-5000-in-coca-cola-today-heres-what-it-could-be-worth-by-2030/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 13:03 ET",
+        "pub_ts": 1795024987.0
+      },
+      {
         "title": "How Analyst Backing Will Impact Coca Cola (KO) Stock",
         "url": "https://finance.yahoo.com/markets/stocks/articles/analyst-backing-impact-coca-cola-171323903.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2075,13 +2082,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 10:05 ET",
         "pub_ts": 1795014302.0
-      },
-      {
-        "title": "What Does Warren Buffett’s 90/10 Rule Say to a 74-Year-Old With $1 Million of Coca-Cola at a Record?",
-        "url": "https://247wallst.com/investing/2026/11/16/what-does-warren-buffetts-90-10-rule-say-to-a-74-year-old-with-1-million-of-coca-cola-at-a-record/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 08:27 ET",
-        "pub_ts": 1795008461.0
       }
     ],
     "FLY": [
@@ -3198,16 +3198,16 @@
   "ticker_news_ts": {
     "KORU": 1795024902.691325,
     "SOXL": 1795024902.691325,
-    "SPY": 1795024592.7241044,
-    "DIA": 1795024592.7241044,
-    "SOXX": 1795024592.7241044,
-    "QQQ": 1795024592.7241044,
-    "SMH": 1795024592.7241044,
-    "IWM": 1795024592.7241044,
-    "IGV": 1795024592.7241044,
+    "SPY": 1795026108.494866,
+    "DIA": 1795026108.494866,
+    "SOXX": 1795026108.494866,
+    "QQQ": 1795026108.494866,
+    "SMH": 1795026108.494866,
+    "IWM": 1795026108.494866,
+    "IGV": 1795026108.494866,
     "TLT": 1795024800.4550612,
     "GLD": 1795024800.4550612,
-    "SQQQ": 1795024592.7241044,
+    "SQQQ": 1795026108.494866,
     "TSM": 1795024800.4550612,
     "VIXY": 1795024800.4550612,
     "SOXS": 1795024800.4550612,
@@ -3233,24 +3233,24 @@
     "COHR": 1795024902.691325,
     "MRVL": 1795024902.691325,
     "LITE": 1795025003.897844,
-    "AAOI": 1795024592.7241044,
+    "AAOI": 1795026108.494866,
     "SPCX": 1795025003.897844,
     "ASTS": 1795025003.897844,
     "AXTI": 1795025003.897844,
-    "NASA": 1795024592.7241044,
-    "LUNR": 1795024592.7241044,
-    "TSLA": 1795024592.7241044,
-    "AXP": 1795024592.7241044,
+    "NASA": 1795026108.494866,
+    "LUNR": 1795026108.494866,
+    "TSLA": 1795026108.494866,
+    "AXP": 1795026108.494866,
     "RKLB": 1795025003.897844,
-    "KO": 1795024592.7241044,
+    "KO": 1795026108.494866,
     "FLY": 1795025003.897844,
-    "INTC": 1795024592.7241044,
-    "VRT": 1795024592.7241044,
+    "INTC": 1795026108.494866,
+    "VRT": 1795026108.494866,
     "HPE": 1795024700.8465908,
     "DELL": 1795024700.8465908,
     "OKLO": 1795024700.8465908,
-    "CEG": 1795024592.7241044,
-    "FPS": 1795024592.7241044,
+    "CEG": 1795026108.494866,
+    "FPS": 1795026108.494866,
     "MU": 1795024700.8465908,
     "SKHY": 1795024700.8465908,
     "WDC": 1795024700.8465908,
