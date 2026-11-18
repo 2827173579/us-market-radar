@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795029385.056,
-  "updated_at_et": "11-18 14:16 ET",
-  "updated_at_kst": "04:16 KST",
+  "updated_at_ts": 1795029483.373,
+  "updated_at_et": "11-18 14:18 ET",
+  "updated_at_kst": "04:18 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -730,13 +730,6 @@
         "pub_ts": 1793906567.0
       },
       {
-        "title": "Gold Just Crashed 32% From Its Record in 10 Months, Shattering the Safe Haven Retirees Leaned On. Warren Buffett Spent Decades Warning About Exactly This, and His Reason Wasn’t the Price",
-        "url": "https://247wallst.com/personal-finance/2026/11/18/gold-just-crashed-32-from-its-record-in-10-months-shattering-the-safe-haven-retirees-leaned-on-warren-buffett-spent-decades-warning-about-exactly-this-and-his-reason-wasnt-the-price/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 13:44 ET",
-        "pub_ts": 1795027474.0
-      },
-      {
         "title": "GLD, SLV Sink To Near 14-Month Lows – But This Commodities Expert Sees A ‘Relative Bright Spot’",
         "url": "https://stocktwits.com/news-articles/markets/equity/gld-slv-sink-to-near-14-month-lows-gold-silver-prices/cNbXzasR9LJ?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -749,6 +742,13 @@
         "source": "Yahoo Finance",
         "time": "11-14 14:43 ET",
         "pub_ts": 1794685380.0
+      },
+      {
+        "title": "What $10,000 in Silver on Jan. 1 Is Worth Today",
+        "url": "https://www.fool.com/investing/2026/11/12/what-10000-in-silver-on-jan-1-is-worth-today/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-12 11:35 ET",
+        "pub_ts": 1794501300.0
       }
     ],
     "SQQQ": [
@@ -901,42 +901,56 @@
     ],
     "NVDA": [
       {
-        "title": "Nvidia's Risk-Reward Remains Attractive Despite Regulatory Investigations, Morgan Stanley Says",
-        "url": "https://finance.yahoo.com/technology/articles/nvidia-apos-risk-reward-remains-183740666.html?.tsrc=rss",
+        "title": "Why every investors should consider ETFs for their portfolios",
+        "url": "https://finance.yahoo.com/video/why-every-investors-should-consider-etfs-for-their-portfolios-185100145.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-18 13:37 ET",
-        "pub_ts": 1795027060.0
+        "time": "11-18 13:51 ET",
+        "pub_ts": 1795027860.0
       },
       {
-        "title": "Nvidia says leadership crisis won’t derail AI capacity work",
-        "url": "https://www.americanbanker.com/payments/news/nvidia-says-leadership-crisis-won-t-derail-ai-capacity-work?.tsrc=rss",
+        "title": "Nvidia's $130 Billion Forecast Sparks Fresh AI Stock Rally",
+        "url": "https://finance.yahoo.com/technology/ai/articles/nvidias-130-billion-forecast-sparks-190535668.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-18 13:34 ET",
-        "pub_ts": 1795026870.0
+        "time": "11-18 14:05 ET",
+        "pub_ts": 1795028735.0
       },
       {
-        "title": "Mullin Says He Didn’t Know About Nvidia Affair ‘Until It Broke’",
-        "url": "https://finance.yahoo.com/video/mullin-says-didn-t-know-183400070.html?.tsrc=rss",
+        "title": "Nebius Stocks Rise 3.71% Premarket as Nvidia's $130 Billion Guide Lifts Neoclouds",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/nebius-stocks-rise-3-71-190530911.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-18 13:34 ET",
-        "pub_ts": 1795026840.0
+        "time": "11-18 14:05 ET",
+        "pub_ts": 1795028730.0
       },
       {
-        "title": "Jensen Huang's Downfall Shows the Dangers of Investing in Companies like SpaceX and Anthropic",
-        "url": "https://www.fool.com/investing/2026/11/18/jensen-huang-downfall-dangers-investing-companies-spacex-anthropic/?.tsrc=rss",
+        "title": "Could Nvidia’s Leadership Change Turn Three Fed Rate Hikes Into a Policy Mistake?",
+        "url": "https://unchainedcrypto.com/could-nvidias-leadership-change-turn-three-fed-rate-hikes-into-a-policy-mistake/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-18 13:25 ET",
-        "pub_ts": 1795026354.0
+        "time": "11-18 14:00 ET",
+        "pub_ts": 1795028411.0
       },
       {
-        "title": "If You'd Invested $1,000 in an S&P 500 ETF Ahead of the Dot-Com Bubble, Here's What You'd Have Today",
-        "url": "https://www.fool.com/investing/2026/11/18/if-invest-sp-500-etf-ahead-dot-com-bubble-how-much/?.tsrc=rss",
+        "title": "Update: US Equity Indexes Mixed as Nvidia Hits Risk Sentiment While Investors Await Fed Minutes, Anthropic's IPO Pricing",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/us-equity-indexes-mixed-nvidia-185933786.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-18 13:20 ET",
-        "pub_ts": 1795026000.0
+        "time": "11-18 13:59 ET",
+        "pub_ts": 1795028373.0
       }
     ],
     "AMD": [
+      {
+        "title": "Supermicro Has an AI Bottleneck and Is Turning to AMD",
+        "url": "https://finance.yahoo.com/technology/ai/articles/supermicro-ai-bottleneck-turning-amd-190459248.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 14:04 ET",
+        "pub_ts": 1795028699.0
+      },
+      {
+        "title": "AMD Stocks Rise 1.95% Premarket After Closing Taalas Deal for AI Inference Chips",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/amd-stocks-rise-1-95-185019008.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 13:50 ET",
+        "pub_ts": 1795027819.0
+      },
       {
         "title": "Supermicro Unveils Major AI Technology Breakthrough With AMD Chips",
         "url": "https://finance.yahoo.com/technology/ai/articles/supermicro-unveils-major-ai-technology-183252634.html?.tsrc=rss",
@@ -957,20 +971,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 12:39 ET",
         "pub_ts": 1795023552.0
-      },
-      {
-        "title": "Nvidia’s CEO Calls Customer Shifts “Just Not True.” Broadcom and AMD’s Frontier Deal Share Says Otherwise",
-        "url": "https://www.tikr.com/blog/nvidias-ceo-calls-customer-shifts-just-not-true-broadcom-and-amds-frontier-deal-share-says-otherwise?ref=yahoofinance&tlnk=yf-261118-mm4558vf&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 12:23 ET",
-        "pub_ts": 1795022610.0
-      },
-      {
-        "title": "AMD Stock Climbs After Nvidia's Blowout Results",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/amd-stock-climbs-nvidias-blowout-160811584.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 11:08 ET",
-        "pub_ts": 1795018091.0
       }
     ],
     "ASML": [
@@ -1197,6 +1197,27 @@
     ],
     "MSFT": [
       {
+        "title": "Factory Expands Collaboration with Microsoft to Bring Autonomous Software Engineering to Enterprises",
+        "url": "https://finance.yahoo.com/technology/ai/articles/factory-expands-collaboration-microsoft-bring-190400724.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 14:04 ET",
+        "pub_ts": 1795028640.0
+      },
+      {
+        "title": "Temporal Cloud Enters Public Preview on Microsoft Azure",
+        "url": "https://finance.yahoo.com/technology/ai/articles/temporal-cloud-enters-public-preview-190000118.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 14:00 ET",
+        "pub_ts": 1795028400.0
+      },
+      {
+        "title": "Microsoft Stocks Fall 2.27% on Day Ignite Unveils Maia 300 and Copilot Workspaces",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/microsoft-stocks-fall-2-27-185525264.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 13:55 ET",
+        "pub_ts": 1795028125.0
+      },
+      {
         "title": "Microsoft's Next AI Revenue Test Goes Beyond Copilot",
         "url": "https://finance.yahoo.com/technology/ai/articles/microsofts-next-ai-revenue-test-182245754.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1209,27 +1230,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 13:21 ET",
         "pub_ts": 1795026065.0
-      },
-      {
-        "title": "Anthropic Valuation Is 8.5 Times Next Year’s Sales: Multiples More Like Microsoft, Alphabet Than Palantir, New Street Analyst Says",
-        "url": "https://stocktwits.com/news-articles/markets/equity/anthropic-valuation-is-8-5-times-next-year-s-sales-multiples-more-like-microsoft-alphabet-than-palantir-new-street-analyst-says/cNbg9fWR9LC?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 13:16 ET",
-        "pub_ts": 1795025772.0
-      },
-      {
-        "title": "How to find AI winners beyond Nvidia & the Mag-7",
-        "url": "https://www.thestreet.com/investing/how-to-find-ai-winners-beyond-nvidia-the-mag-7?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 12:49 ET",
-        "pub_ts": 1795024140.0
-      },
-      {
-        "title": "RiverMeadow Announces Support for Azure Local RackScale",
-        "url": "https://finance.yahoo.com/technology/articles/rivermeadow-announces-support-azure-local-172600621.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 12:26 ET",
-        "pub_ts": 1795022760.0
       }
     ],
     "AAPL": [
@@ -2603,6 +2603,27 @@
     ],
     "BTC-USD": [
       {
+        "title": "Stock Market Today: Dow Drops As Nvidia Probe Deepens; Fed Minutes Loom (Live Coverage)",
+        "url": "https://finance.yahoo.com/m/3b6d51d3-7bfb-3b08-a92e-3b70e9f0655b/stock-market-today%3A-dow-drops.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 14:01 ET",
+        "pub_ts": 1795028519.0
+      },
+      {
+        "title": "Sector Update: Financial Stocks Lower in Afternoon Trading",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/sector-financial-stocks-lower-afternoon-190117890.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 14:01 ET",
+        "pub_ts": 1795028477.0
+      },
+      {
+        "title": "Bitcoin Miners Are Selling Their Stacks to Fund the AI Boom",
+        "url": "https://decrypt.co/383568/bitcoin-miners-selling-fund-ai-boom?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 13:46 ET",
+        "pub_ts": 1795027563.0
+      },
+      {
         "title": "Coinbase expands crypto-backed loans to New York, now reaching all 50 states",
         "url": "https://finance.yahoo.com/video/coinbase-expands-crypto-backed-loans-to-new-york-now-reaching-all-50-states-181657119.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2615,27 +2636,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 13:16 ET",
         "pub_ts": 1795025772.0
-      },
-      {
-        "title": "Sandisk Leads Tech Stocks in Earnings Surprises Ahead of 8-for-1 Split",
-        "url": "https://finance.yahoo.com/technology/ai/articles/sandisk-leads-tech-stocks-earnings-174815801.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 12:48 ET",
-        "pub_ts": 1795024095.0
-      },
-      {
-        "title": "XRP Price Prediction 2028: Every Major Forecast Compared",
-        "url": "https://247wallst.com/investing/cryptocurrency/2026/11/18/xrp-price-prediction-2028-every-major-forecast-compared/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 12:46 ET",
-        "pub_ts": 1795024006.0
-      },
-      {
-        "title": "Strategy Falls 3% as Chart Analyst Warns of 76% Drop to $23: “The Pattern Is Intact”",
-        "url": "https://www.tikr.com/blog/strategy-falls-3-as-chart-analyst-warns-of-76-drop-to-23-the-pattern-is-intact?ref=yahoofinance&tlnk=yf-261118-qmq83fmp&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 12:30 ET",
-        "pub_ts": 1795023025.0
       }
     ],
     "CRWD": [
@@ -3204,21 +3204,21 @@
     "SMH": 1795029278.686986,
     "IWM": 1795029278.686986,
     "IGV": 1795029278.686986,
-    "TLT": 1795027890.9523823,
-    "GLD": 1795027890.9523823,
+    "TLT": 1795029483.3725042,
+    "GLD": 1795029483.3725042,
     "SQQQ": 1795029278.686986,
-    "TSM": 1795027890.9523823,
-    "VIXY": 1795027890.9523823,
-    "SOXS": 1795027890.9523823,
-    "NVDA": 1795027890.9523823,
-    "AMD": 1795027890.9523823,
-    "ASML": 1795027890.9523823,
-    "QCOM": 1795027890.9523823,
-    "AVGO": 1795027890.9523823,
-    "AMAT": 1795027890.9523823,
+    "TSM": 1795029483.3725042,
+    "VIXY": 1795029483.3725042,
+    "SOXS": 1795029483.3725042,
+    "NVDA": 1795029483.3725042,
+    "AMD": 1795029483.3725042,
+    "ASML": 1795029483.3725042,
+    "QCOM": 1795029483.3725042,
+    "AVGO": 1795029483.3725042,
+    "AMAT": 1795029483.3725042,
     "META": 1795027998.0045347,
     "GOOGL": 1795027998.0045347,
-    "MSFT": 1795027890.9523823,
+    "MSFT": 1795029483.3725042,
     "AAPL": 1795027998.0045347,
     "PLTR": 1795027998.0045347,
     "NOW": 1795027998.0045347,
@@ -3253,22 +3253,22 @@
     "MU": 1795029385.055802,
     "SKHY": 1795029385.055802,
     "WDC": 1795029385.055802,
-    "STX": 1795027890.9523823,
-    "MSTR": 1795027890.9523823,
+    "STX": 1795029483.3725042,
+    "MSTR": 1795029483.3725042,
     "SNDK": 1795029385.055802,
-    "BTC-USD": 1795027890.9523823,
-    "CRWD": 1795027890.9523823,
+    "BTC-USD": 1795029483.3725042,
+    "CRWD": 1795029483.3725042,
     "ORCL": 1795027998.0045347,
-    "COIN": 1795027890.9523823,
-    "LLY": 1795027890.9523823,
-    "MRNA": 1795027890.9523823,
+    "COIN": 1795029483.3725042,
+    "LLY": 1795029483.3725042,
+    "MRNA": 1795029483.3725042,
     "NKE": 1795028099.4074252,
     "MCD": 1795028202.0127032,
     "PEP": 1795028099.4074252,
-    "XOM": 1795027890.9523823,
+    "XOM": 1795029483.3725042,
     "JPM": 1795028099.4074252,
     "WMT": 1795028099.4074252,
-    "V": 1795027890.9523823,
+    "V": 1795029483.3725042,
     "CAT": 1795027998.0045347,
     "FN": 1795028099.4074252,
     "GLW": 1795028099.4074252
