@@ -1,9 +1,24 @@
 {
-  "updated_at_ts": 1794974906.746,
-  "updated_at_et": "11-17 23:08 ET",
-  "updated_at_kst": "13:08 KST",
+  "updated_at_ts": 1794975159.328,
+  "updated_at_et": "11-17 23:12 ET",
+  "updated_at_kst": "13:12 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261118121122989800",
+      "title": "1. 浑水做空英伟达，质疑前高管与超微电脑前员工存在关联。 2. 英伟达2027财年第三…",
+      "summary": "1. 浑水做空英伟达，质疑前高管与超微电脑前员工存在关联。 2. 英伟达2027财年第三季度营收同比翻倍至1158亿美元，调整后每股收益2.68美元，双双超预期，四季度营收指引中值1300亿美元高于预期，董事会主席哈维·琼斯在财报电话会上表示，公司无意让黄仁勋重任CEO。 3. 微软高管：英伟达风波或促使客户寻求AI芯片替代方案。 4. 报道：美国证交会正在调查英伟达是否存在误导投资者的信息披露行为。 5. OpenAI推出新一代模型系列，包括旗舰级模型GPT-6.2 Astra以及面向日常与高性价比任务的GPT-6.2 Sol。 6. 据悉Anthropic IPO定价将处于指引区间上限或以上。 7. 研究：Anthropic等先进AI模型频繁将平民误判为军事目标。 8. Anthropic获老股东加码 红杉、Lightspeed等拟向其IPO再投数十亿美元。 9. SpaceX 400亿美元AI芯片债务融资部分份额最快本周发售。 10. 阿波罗全球管理CEO称保险资金将支撑规模高达8万亿美元的AI建设热潮。 11. 优必选周剑：未来20至30年人形机器人若大规模承担柔性岗位，全球工业模式或生变。 12. Alphabet支持的Isomorphic Labs获50亿美元C轮，推进首批候选药物。 13. 机器人公司Genesis AI完成5亿美元A轮，投后估值35亿美元。",
+      "keywords": [
+        "芯片",
+        "英伟达",
+        "微软"
+      ],
+      "pub_ts": 1794975082.0,
+      "time_et": "11-17 23:11 ET",
+      "time_bj": "12:11 BJ",
+      "time_kst": "13:11 KST",
+      "time_display": "23:11 ET / 12:11 BJ"
+    },
     {
       "id": "20261118120239924800",
       "title": "日本央行行长植田和男重申加息立场，并警告干预风险",
@@ -329,20 +344,6 @@
       "time_bj": "07:09 BJ",
       "time_kst": "08:09 KST",
       "time_display": "18:09 ET / 07:09 BJ"
-    },
-    {
-      "id": "20261118070105674800",
-      "title": "全球财经早餐 | 2026年11月18日",
-      "summary": "美联储“三把手”称无需采取激进政策行动；伊朗驳斥脏弹传闻，卡塔尔称仍在调解美伊矛盾；英伟达营收翻倍，董事会拒绝黄仁勋复职……昨日今晨，全球都发生了哪些大事？",
-      "keywords": [
-        "美联储",
-        "英伟达"
-      ],
-      "pub_ts": 1794956465.0,
-      "time_et": "11-17 18:01 ET",
-      "time_bj": "07:01 BJ",
-      "time_kst": "08:01 KST",
-      "time_display": "18:01 ET / 07:01 BJ"
     }
   ],
   "ticker_news": {
@@ -1754,13 +1755,6 @@
     ],
     "SPCX": [
       {
-        "title": "SpaceX is leasing $47 billion of Nvidia chips like a car — and lenders hold the title",
-        "url": "https://finance.yahoo.com/markets/article/spacex-is-leasing-47-billion-of-nvidia-chips-like-a-car--and-lenders-hold-the-title-192002200.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 14:20 ET",
-        "pub_ts": 1794943202.0
-      },
-      {
         "title": "SpaceX CFO Sees No ‘Magic Wand’ For Anthropic’s Data Center Plans — And GTA 6 Is Stealing Some Of Its IPO Thunder",
         "url": "https://stocktwits.com/news-articles/markets/equity/spacex-no-magic-wand-anthropic-data-center-plans-gta-6-stealing-ipo-thunder/cNbXFXiR9hn?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1787,6 +1781,13 @@
         "source": "Yahoo Finance",
         "time": "11-17 19:13 ET",
         "pub_ts": 1794960789.0
+      },
+      {
+        "title": "Nvidia just sent a powerful signal to SpaceX stock investors",
+        "url": "https://www.thestreet.com/investing/stocks/nvidia-spacex-stake-q3-13f?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 18:33 ET",
+        "pub_ts": 1794958380.0
       }
     ],
     "ASTS": [
@@ -3234,18 +3235,18 @@
     "COHR": 1794974906.7464097,
     "MRVL": 1794974906.7464097,
     "LITE": 1794974906.7464097,
-    "AAOI": 1794973225.463607,
-    "SPCX": 1794973400.9620824,
+    "AAOI": 1794975159.3275476,
+    "SPCX": 1794975159.3275476,
     "ASTS": 1794973666.0319169,
     "AXTI": 1794974906.7464097,
     "NASA": 1794973666.0319169,
-    "LUNR": 1794973400.9620824,
+    "LUNR": 1794975159.3275476,
     "TSLA": 1794973666.0319169,
     "AXP": 1794973666.0319169,
     "RKLB": 1794973666.0319169,
-    "KO": 1794973400.9620824,
-    "FLY": 1794973400.9620824,
-    "INTC": 1794973400.9620824,
+    "KO": 1794975159.3275476,
+    "FLY": 1794975159.3275476,
+    "INTC": 1794975159.3275476,
     "VRT": 1794973666.0319169,
     "HPE": 1794973666.0319169,
     "DELL": 1794973666.0319169,
@@ -3272,13 +3273,13 @@
     "WMT": 1794973786.3001828,
     "V": 1794973786.3001828,
     "CAT": 1794973786.3001828,
-    "FN": 1794973400.9620824,
-    "GLW": 1794973400.9620824
+    "FN": 1794975159.3275476,
+    "GLW": 1794975159.3275476
   },
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (23:02 ET / 12:02 BJ) [加息]：日本央行行长植田和男表示，当前金融条件仍较宽松，应根据经济和通胀变化继续加息。他同时警告，若紧急购债被视为替政府融资，反而可能加剧长期利率波动。点击查看…",
+    "detail": "⚡ 最新核心快讯 (23:11 ET / 12:11 BJ) [芯片] [英伟达] [微软]：1. 浑水做空英伟达，质疑前高管与超微电脑前员工存在关联。 2. 英伟达2027财年第三季度营收同比翻倍至1158亿美元，调整后每股收益2.68美元，双双超预期，四季度营收指引中值1300亿",
     "event_name": "",
     "minutes_left": 0
   }
