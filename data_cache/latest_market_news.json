@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1794996092.413,
-  "updated_at_et": "11-18 05:01 ET",
-  "updated_at_kst": "19:01 KST",
+  "updated_at_ts": 1794996248.841,
+  "updated_at_et": "11-18 05:04 ET",
+  "updated_at_kst": "19:04 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2792,13 +2792,6 @@
     ],
     "JPM": [
       {
-        "title": "Software bug freezes Chase: Is it the time for bitcoin?",
-        "url": "https://finance.yahoo.com/video/software-bug-freezes-chase-is-it-the-time-for-bitcoin-194810842.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 13:00 ET",
-        "pub_ts": 1794938400.0
-      },
-      {
         "title": "Iron Mountain Sees Billion-Dollar Growth in Data Centers and IT Asset Services",
         "url": "https://www.marketbeat.com/instant-alerts/event-iron-mountain-sees-billion-dollar-growth-in-data-centers-and-it-asset-services-2026-11-17/?utm_source=yahoofinance&utm_medium=yahoofinance&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2818,6 +2811,13 @@
         "source": "Yahoo Finance",
         "time": "11-17 14:04 ET",
         "pub_ts": 1794942294.0
+      },
+      {
+        "title": "Software bug freezes Chase: Is it the time for bitcoin?",
+        "url": "https://finance.yahoo.com/video/software-bug-freezes-chase-is-it-the-time-for-bitcoin-194810842.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 13:00 ET",
+        "pub_ts": 1794938400.0
       },
       {
         "title": "Bank Stocks Slip After Outages Disrupt US Customers",
@@ -3085,10 +3085,10 @@
     "MCD": 1794996092.413339,
     "PEP": 1794995800.3643253,
     "XOM": 1794995800.3643253,
-    "JPM": 1794972245.619972,
-    "WMT": 1794972245.619972,
+    "JPM": 1794996248.8412821,
+    "WMT": 1794996248.8412821,
     "V": 1794996092.413339,
-    "CAT": 1794972245.619972,
+    "CAT": 1794996248.8412821,
     "FN": 1794995990.5259328,
     "GLW": 1794995990.5259328
   },
