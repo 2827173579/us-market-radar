@@ -1403,9 +1403,17 @@
     "2026-11-18:post_close": {
       "device": "ANDROID",
       "ts": 1794978756.702877
+    },
+    "2026-11-18:overnight": {
+      "device": "ANDROID",
+      "ts": 1794978965.6438203
+    },
+    "2026-11-18:DEFENSIVE_FLIGHT:-1.8": {
+      "device": "ANDROID",
+      "ts": 1794979147.2583857
     }
   },
   "device": "ANDROID",
-  "last_heartbeat_ts": 1794978642.0434568,
-  "updated_at": "2026-11-18T05:12:36.705190+00:00"
+  "last_heartbeat_ts": 1794978893.0743506,
+  "updated_at": "2026-11-18T05:19:07.261903+00:00"
 }
