@@ -1427,9 +1427,13 @@
     "2026-11-18:SPCX/LLY:5M_ENTRY+TAKE_PROFIT": {
       "device": "ANDROID",
       "ts": 1794980473.0764081
+    },
+    "JIN10_FLASH:20261118134000000800": {
+      "device": "ANDROID",
+      "ts": 1794980478.3035326
     }
   },
   "device": "ANDROID",
-  "last_heartbeat_ts": 1794980208.6259248,
-  "updated_at": "2026-11-18T05:41:13.079931+00:00"
+  "last_heartbeat_ts": 1794980507.0845468,
+  "updated_at": "2026-11-18T05:41:47.087049+00:00"
 }
