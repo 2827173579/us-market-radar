@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795009038.05,
-  "updated_at_et": "11-18 08:37 ET",
-  "updated_at_kst": "22:37 KST",
+  "updated_at_ts": 1795009132.355,
+  "updated_at_et": "11-18 08:38 ET",
+  "updated_at_kst": "22:38 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2043,6 +2043,13 @@
     ],
     "KO": [
       {
+        "title": "What Does Warren Buffett’s 90/10 Rule Say to a 74-Year-Old With $1 Million of Coca-Cola at a Record?",
+        "url": "https://247wallst.com/investing/2026/11/16/what-does-warren-buffetts-90-10-rule-say-to-a-74-year-old-with-1-million-of-coca-cola-at-a-record/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 08:27 ET",
+        "pub_ts": 1795008461.0
+      },
+      {
         "title": "ETFs Are Net Sellers of Coca-Cola (KO) on Nov. 16",
         "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-net-sellers-coca-cola-110222816.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2069,13 +2076,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 16:38 ET",
         "pub_ts": 1794951480.0
-      },
-      {
-        "title": "Does Coca-Cola Stock Fit Your Portfolio Risk?",
-        "url": "https://www.trefis.com/stock/ko/articles/625551/does-coca-cola-stock-fit-your-portfolio-risk/2026-11-17?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 14:01 ET",
-        "pub_ts": 1794942109.0
       }
     ],
     "FLY": [
@@ -2117,6 +2117,13 @@
     ],
     "INTC": [
       {
+        "title": "Intel vs. Taiwan Semiconductor Manufacturing: Which Tech Stock Is a Better Buy for 2027?",
+        "url": "https://www.fool.com/coverage/better-buy/2026/11/18/intel-vs-taiwan-semiconductor-manufacturing-which-tech-stock-is-a-better-buy-for-2027/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 08:28 ET",
+        "pub_ts": 1795008481.0
+      },
+      {
         "title": "Why Is Intel Stock Rising Today?",
         "url": "https://investorshub.advfn.com/market-news/article/40275/why-is-intel-stock-rising-today?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2143,13 +2150,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 03:43 ET",
         "pub_ts": 1794991402.0
-      },
-      {
-        "title": "Intel Stock Has Given Back About 60% Since June. Is It a Buy Now?",
-        "url": "https://www.fool.com/investing/2026/11/17/intel-stock-has-given-back-about-60-since-june-is-it-a-buy-now/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 16:57 ET",
-        "pub_ts": 1794952621.0
       }
     ],
     "VRT": [
@@ -2450,6 +2450,13 @@
     ],
     "WDC": [
       {
+        "title": "WDC Stock Falls 20% in a Month: Is the Dip a Buying Opportunity Now?",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/wdc-stock-falls-20-month-120800389.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 07:08 ET",
+        "pub_ts": 1795003680.0
+      },
+      {
         "title": "Western Digital (WDC) Just Replaced Its Loan With A $1.5 Billion Credit Line",
         "url": "https://finance.yahoo.com/markets/stocks/articles/western-digital-wdc-just-replaced-141106157.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2476,13 +2483,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 02:23 ET",
         "pub_ts": 1794986639.0
-      },
-      {
-        "title": "SanDisk and Micron Fall 4% as GF Securities Cuts NAND Price Forecast and Warns of a Glut; SK Hynix Dips",
-        "url": "https://247wallst.com/investing/2026/11/17/sandisk-and-micron-fall-4-as-gf-securities-cuts-nand-price-forecast-and-warns-of-a-glut-sk-hynix-dips/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 11:06 ET",
-        "pub_ts": 1794931600.0
       }
     ],
     "STX": [
@@ -3192,16 +3192,16 @@
   "ticker_news_ts": {
     "KORU": 1795007874.7028031,
     "SOXL": 1795007903.7867467,
-    "SPY": 1795007587.9805536,
-    "DIA": 1795007587.9805536,
-    "SOXX": 1795007587.9805536,
-    "QQQ": 1795007587.9805536,
-    "SMH": 1795007587.9805536,
-    "IWM": 1795007587.9805536,
-    "IGV": 1795007587.9805536,
+    "SPY": 1795009132.354869,
+    "DIA": 1795009132.354869,
+    "SOXX": 1795009132.354869,
+    "QQQ": 1795009132.354869,
+    "SMH": 1795009132.354869,
+    "IWM": 1795009132.354869,
+    "IGV": 1795009132.354869,
     "TLT": 1795007874.7028031,
     "GLD": 1795007874.7028031,
-    "SQQQ": 1795007587.9805536,
+    "SQQQ": 1795009132.354869,
     "TSM": 1795007874.7028031,
     "VIXY": 1795007874.7028031,
     "SOXS": 1795007874.7028031,
@@ -3227,30 +3227,30 @@
     "COHR": 1795007903.7867467,
     "MRVL": 1795007903.7867467,
     "LITE": 1795007903.7867467,
-    "AAOI": 1795007587.9805536,
+    "AAOI": 1795009132.354869,
     "SPCX": 1795007903.7867467,
     "ASTS": 1795007903.7867467,
     "AXTI": 1795007903.7867467,
-    "NASA": 1795007587.9805536,
-    "LUNR": 1795007587.9805536,
-    "TSLA": 1795007587.9805536,
-    "AXP": 1795007587.9805536,
+    "NASA": 1795009132.354869,
+    "LUNR": 1795009132.354869,
+    "TSLA": 1795009132.354869,
+    "AXP": 1795009132.354869,
     "RKLB": 1795007939.776522,
-    "KO": 1795007587.9805536,
+    "KO": 1795009132.354869,
     "FLY": 1795007939.776522,
-    "INTC": 1795007587.9805536,
-    "VRT": 1795007587.9805536,
-    "HPE": 1795007587.9805536,
-    "DELL": 1795007587.9805536,
-    "OKLO": 1795007587.9805536,
-    "CEG": 1795007587.9805536,
-    "FPS": 1795007587.9805536,
-    "MU": 1795007587.9805536,
-    "SKHY": 1795007587.9805536,
-    "WDC": 1795007587.9805536,
+    "INTC": 1795009132.354869,
+    "VRT": 1795009132.354869,
+    "HPE": 1795009132.354869,
+    "DELL": 1795009132.354869,
+    "OKLO": 1795009132.354869,
+    "CEG": 1795009132.354869,
+    "FPS": 1795009132.354869,
+    "MU": 1795009132.354869,
+    "SKHY": 1795009132.354869,
+    "WDC": 1795009132.354869,
     "STX": 1795007874.7028031,
     "MSTR": 1795007874.7028031,
-    "SNDK": 1795007587.9805536,
+    "SNDK": 1795009132.354869,
     "BTC-USD": 1795007874.7028031,
     "CRWD": 1795007874.7028031,
     "ORCL": 1795007874.7028031,
