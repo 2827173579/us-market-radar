@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1794965183.37,
-  "updated_at_et": "11-17 20:26 ET",
-  "updated_at_kst": "10:26 KST",
+  "updated_at_ts": 1794965314.896,
+  "updated_at_et": "11-17 20:28 ET",
+  "updated_at_kst": "10:28 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -904,18 +904,32 @@
     ],
     "NVDA": [
       {
-        "title": "Nvidia's Q3 numbers were pretty good. Its earnings call optics were another story.",
-        "url": "https://finance.yahoo.com/video/nvidias-q3-numbers-were-pretty-good-its-earnings-call-optics-were-another-story-234451647.html?.tsrc=rss",
+        "title": "NVIDIA Q3 Earnings Call Highlights",
+        "url": "https://www.marketbeat.com/instant-alerts/transcript-nvidia-q3-earnings-call-highlights-2026-11-17/?utm_source=yahoofinance&utm_medium=yahoofinance&.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-17 18:44 ET",
-        "pub_ts": 1794959091.0
+        "time": "11-17 20:12 ET",
+        "pub_ts": 1794964375.0
       },
       {
         "title": "Dow Jones Futures Rise, Techs Jump As Nvidia Beats, Says This On Jensen Huang; Target, Anthropic IPO Ahead",
         "url": "https://finance.yahoo.com/m/3b22ed8c-00c3-32f8-89f5-91bc21ccb366/dow-jones-futures-rise%2C-techs.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-17 19:55 ET",
-        "pub_ts": 1794963337.0
+        "time": "11-17 20:11 ET",
+        "pub_ts": 1794964261.0
+      },
+      {
+        "title": "Nvidia earnings spark after-hours rally in chipmakers, neocloud stocks",
+        "url": "https://finance.yahoo.com/technology/articles/nvidia-earnings-spark-hours-rally-010526744.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 20:05 ET",
+        "pub_ts": 1794963926.0
+      },
+      {
+        "title": "Nvidia Has a $118 Billion Promise Tucked Inside Its Blowout Quarter. Here's What It Means for the Stock",
+        "url": "https://www.fool.com/investing/2026/11/17/nvidia-has-a-usd118-billion-promise-tucked-inside-its-blowout-quarter-here-s-what-it-means-for-the-stock/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 20:00 ET",
+        "pub_ts": 1794963602.0
       },
       {
         "title": "Review & Preview: Bad Time for a Selloff",
@@ -923,20 +937,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 19:55 ET",
         "pub_ts": 1794963300.0
-      },
-      {
-        "title": "Nvidia Tops Forecasts In First Report Without Jensen Huang, But Gets Choosier About Backing Data Centers",
-        "url": "https://www.bisnow.com/news/national/data-center-capital-markets/nvidia-tops-forecasts-in-first-report-without-jensen-huang-but-gets-choosier-about-backing-data-centers?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 19:53 ET",
-        "pub_ts": 1794963204.0
-      },
-      {
-        "title": "The Nasdaq-100 Is Down More Than 10% From Its High, but the Broad Market Is Down Far Less. Here's How Gaps Like This Have Ended Since 1986.",
-        "url": "https://www.fool.com/investing/2026/11/17/the-nasdaq-100-is-down-more-than-10-from-its-high-but-the-broad-market-is-down-far-less-here-s-how-gaps-like-this-have-ended-since-1986/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 19:43 ET",
-        "pub_ts": 1794962582.0
       }
     ],
     "AMD": [
@@ -3206,25 +3206,25 @@
     "QQQ": 1794965081.6614838,
     "SMH": 1794965081.6614838,
     "IWM": 1794965081.6614838,
-    "IGV": 1794963743.9434044,
+    "IGV": 1794965314.896314,
     "TLT": 1794965081.6614838,
     "GLD": 1794965081.6614838,
-    "SQQQ": 1794963743.9434044,
+    "SQQQ": 1794965314.896314,
     "TSM": 1794965081.6614838,
     "VIXY": 1794965081.6614838,
-    "SOXS": 1794963743.9434044,
-    "NVDA": 1794963743.9434044,
+    "SOXS": 1794965314.896314,
+    "NVDA": 1794965314.896314,
     "AMD": 1794963945.1700087,
     "ASML": 1794963945.1700087,
-    "QCOM": 1794963743.9434044,
-    "AVGO": 1794963743.9434044,
-    "AMAT": 1794963743.9434044,
+    "QCOM": 1794965314.896314,
+    "AVGO": 1794965314.896314,
+    "AMAT": 1794965314.896314,
     "META": 1794963945.1700087,
     "GOOGL": 1794963945.1700087,
     "MSFT": 1794963945.1700087,
-    "AAPL": 1794963743.9434044,
-    "PLTR": 1794963743.9434044,
-    "NOW": 1794963743.9434044,
+    "AAPL": 1794965314.896314,
+    "PLTR": 1794965314.896314,
+    "NOW": 1794965314.896314,
     "AMZN": 1794963945.1700087,
     "CRWV": 1794963945.1700087,
     "NBIS": 1794963945.1700087,
