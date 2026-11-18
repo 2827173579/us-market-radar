@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795034128.819,
-  "updated_at_et": "11-18 15:35 ET",
-  "updated_at_kst": "05:35 KST",
+  "updated_at_ts": 1795034228.22,
+  "updated_at_et": "11-18 15:37 ET",
+  "updated_at_kst": "05:37 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -902,11 +902,25 @@
     ],
     "NVDA": [
       {
+        "title": "Nvidia's interim CEO Colette Kress has taken over one of the most consequential companies on the planet; those who know her say she's up to the task",
+        "url": "https://finance.yahoo.com/technology/article/nvidias-interim-ceo-colette-kress-has-taken-over-one-of-the-most-consequential-companies-on-the-planet-those-who-know-her-say-shes-up-to-the-task-202619183.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 15:26 ET",
+        "pub_ts": 1795033579.0
+      },
+      {
         "title": "'Sending a message': Nvidia signals more cautious stance on China after Huang's departure",
         "url": "https://finance.yahoo.com/technology/article/sending-a-message-nvidia-signals-more-cautious-stance-on-china-after-huangs-departure-194945165.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-18 14:49 ET",
         "pub_ts": 1795031385.0
+      },
+      {
+        "title": "SpaceX Is Now Nvidia's Biggest Stock Holding, Ahead of Intel. Here's What That Says About SpaceX.",
+        "url": "https://www.fool.com/investing/2026/11/18/spacex-is-now-nvidia-s-biggest-stock-holding-ahead-of-intel-here-s-what-that-says-about-spacex/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 15:17 ET",
+        "pub_ts": 1795033022.0
       },
       {
         "title": "NVIDIA Is Near Its 52-Week Low. Will NVDA Stock Hit $100 or $200 First?",
@@ -921,23 +935,16 @@
         "source": "Yahoo Finance",
         "time": "11-18 15:00 ET",
         "pub_ts": 1795032007.0
-      },
-      {
-        "title": "U.S. Stocks Mostly Lower After Nvidia Earnings Fail to Soothe Nerves",
-        "url": "https://www.wsj.com/finance/commodities-futures/stock-futures-rally-as-nvidia-earnings-calm-ai-trade-fears-96f51546?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 14:59 ET",
-        "pub_ts": 1795031940.0
-      },
-      {
-        "title": "Nvidia's $332 Billion AI Cloud Bet Has a Second Act",
-        "url": "https://finance.yahoo.com/technology/ai/articles/nvidias-332-billion-ai-cloud-195434158.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 14:54 ET",
-        "pub_ts": 1795031674.0
       }
     ],
     "AMD": [
+      {
+        "title": "Super Micro Computer (SMCI) Ships PCIe Gen 6 Servers, Is It 57% Below Fair Value?",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/super-micro-computer-smci-ships-201020693.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 15:10 ET",
+        "pub_ts": 1795032620.0
+      },
       {
         "title": "Supermicro Has an AI Bottleneck and Is Turning to AMD",
         "url": "https://finance.yahoo.com/technology/ai/articles/supermicro-ai-bottleneck-turning-amd-190459248.html?.tsrc=rss",
@@ -965,13 +972,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 12:45 ET",
         "pub_ts": 1795023918.0
-      },
-      {
-        "title": "Is Nvidia's Margin Lead Over AMD Shrinking?",
-        "url": "https://www.trefis.com/stock/nvda/articles/626120/is-nvidia-s-margin-lead-over-amd-shrinking/2026-11-18?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 12:39 ET",
-        "pub_ts": 1795023552.0
       }
     ],
     "ASML": [
@@ -1013,6 +1013,13 @@
     ],
     "QCOM": [
       {
+        "title": "Could Qualcomm Actually Climb 85%? Or Is Baird Totally Wrong?",
+        "url": "https://www.tikr.com/blog/could-qualcomm-actually-climb-85-or-is-baird-totally-wrong?ref=yahoofinance&tlnk=yf-261118-fj25pvqf&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 14:50 ET",
+        "pub_ts": 1795031425.0
+      },
+      {
         "title": "Baird cuts Qualcomm estimates over potential loss of ByteDance chip business",
         "url": "https://www.proactiveinvestors.com/companies/news/1102042/baird-cuts-qualcomm-estimates-over-potential-loss-of-bytedance-chip-business-1102042.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1039,13 +1046,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 09:58 ET",
         "pub_ts": 1795013938.0
-      },
-      {
-        "title": "Can Qualcomm's Deal With Cirrascale Boost its AI Growth Prospects?",
-        "url": "https://finance.yahoo.com/technology/ai/articles/qualcomms-deal-cirrascale-boost-ai-143000776.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 09:30 ET",
-        "pub_ts": 1795012200.0
       }
     ],
     "AVGO": [
@@ -1198,6 +1198,13 @@
     ],
     "MSFT": [
       {
+        "title": "Microsoft Copilot’s cost advantage claim: plausible but unproven",
+        "url": "https://finance.yahoo.com/technology/ai/articles/microsoft-copilot-cost-advantage-claim-201123346.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 15:11 ET",
+        "pub_ts": 1795032683.0
+      },
+      {
         "title": "Elastic Makes High-Accuracy, Cost-Efficient Jina AI Models Available on Microsoft Foundry",
         "url": "https://finance.yahoo.com/technology/ai/articles/elastic-makes-high-accuracy-cost-193100251.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1224,13 +1231,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 14:00 ET",
         "pub_ts": 1795028400.0
-      },
-      {
-        "title": "Microsoft Stocks Fall 2.27% on Day Ignite Unveils Maia 300 and Copilot Workspaces",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/microsoft-stocks-fall-2-27-185525264.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 13:55 ET",
-        "pub_ts": 1795028125.0
       }
     ],
     "AAPL": [
@@ -2632,11 +2632,11 @@
         "pub_ts": 1795028770.0
       },
       {
-        "title": "Stock Market Today: Dow Drops As Nvidia Probe Deepens; Fed Minutes Loom (Live Coverage)",
-        "url": "https://finance.yahoo.com/m/3b6d51d3-7bfb-3b08-a92e-3b70e9f0655b/stock-market-today%3A-dow-drops.html?.tsrc=rss",
+        "title": "Sector Update: Financial Stocks Lower in Afternoon Trading",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/sector-financial-stocks-lower-afternoon-190117890.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-18 14:01 ET",
-        "pub_ts": 1795028519.0
+        "pub_ts": 1795028477.0
       }
     ],
     "CRWD": [
@@ -2715,6 +2715,13 @@
     ],
     "COIN": [
       {
+        "title": "Coinbase AI blocks $4.7 million deepfake Elon Musk crypto scam",
+        "url": "https://finance.yahoo.com/video/coinbase-ai-blocks-4-7-203000913.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 15:30 ET",
+        "pub_ts": 1795033800.0
+      },
+      {
         "title": "Coinbase expands crypto-backed loans to New York, now reaching all 50 states",
         "url": "https://finance.yahoo.com/video/coinbase-expands-crypto-backed-loans-to-new-york-now-reaching-all-50-states-181657119.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2741,13 +2748,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 10:53 ET",
         "pub_ts": 1795017180.0
-      },
-      {
-        "title": "Coinbase Global Expands Crypto Loans",
-        "url": "https://www.cryptoprowl.com/releases/coinbase-global-expands-crypto-loans-7956?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 09:17 ET",
-        "pub_ts": 1795011420.0
       }
     ],
     "LLY": [
@@ -3205,21 +3205,21 @@
     "SMH": 1795034026.8911757,
     "IWM": 1795034026.8911757,
     "IGV": 1795034026.8911757,
-    "TLT": 1795032643.720815,
-    "GLD": 1795032643.720815,
+    "TLT": 1795034228.219766,
+    "GLD": 1795034228.219766,
     "SQQQ": 1795034026.8911757,
-    "TSM": 1795032643.720815,
-    "VIXY": 1795032643.720815,
-    "SOXS": 1795032643.720815,
-    "NVDA": 1795032643.720815,
-    "AMD": 1795032643.720815,
-    "ASML": 1795032643.720815,
-    "QCOM": 1795032643.720815,
-    "AVGO": 1795032643.720815,
-    "AMAT": 1795032643.720815,
+    "TSM": 1795034228.219766,
+    "VIXY": 1795034228.219766,
+    "SOXS": 1795034228.219766,
+    "NVDA": 1795034228.219766,
+    "AMD": 1795034228.219766,
+    "ASML": 1795034228.219766,
+    "QCOM": 1795034228.219766,
+    "AVGO": 1795034228.219766,
+    "AMAT": 1795034228.219766,
     "META": 1795032745.6879692,
     "GOOGL": 1795032745.6879692,
-    "MSFT": 1795032643.720815,
+    "MSFT": 1795034228.219766,
     "AAPL": 1795032745.6879692,
     "PLTR": 1795032745.6879692,
     "NOW": 1795032745.6879692,
@@ -3254,22 +3254,22 @@
     "MU": 1795034128.81937,
     "SKHY": 1795034128.81937,
     "WDC": 1795034128.81937,
-    "STX": 1795032643.720815,
-    "MSTR": 1795032643.720815,
+    "STX": 1795034228.219766,
+    "MSTR": 1795034228.219766,
     "SNDK": 1795034128.81937,
-    "BTC-USD": 1795032643.720815,
-    "CRWD": 1795032643.720815,
+    "BTC-USD": 1795034228.219766,
+    "CRWD": 1795034228.219766,
     "ORCL": 1795032745.6879692,
-    "COIN": 1795032643.720815,
-    "LLY": 1795032643.720815,
-    "MRNA": 1795032643.720815,
+    "COIN": 1795034228.219766,
+    "LLY": 1795034228.219766,
+    "MRNA": 1795034228.219766,
     "NKE": 1795032852.5726488,
     "MCD": 1795032957.0851765,
     "PEP": 1795032852.5726488,
-    "XOM": 1795032643.720815,
+    "XOM": 1795034228.219766,
     "JPM": 1795032852.5726488,
     "WMT": 1795032852.5726488,
-    "V": 1795032643.720815,
+    "V": 1795034228.219766,
     "CAT": 1795032745.6879692,
     "FN": 1795032852.5726488,
     "GLW": 1795032852.5726488
