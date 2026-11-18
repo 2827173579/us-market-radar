@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795009379.203,
-  "updated_at_et": "11-18 08:42 ET",
-  "updated_at_kst": "22:42 KST",
+  "updated_at_ts": 1795009423.847,
+  "updated_at_et": "11-18 08:43 ET",
+  "updated_at_kst": "22:43 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1162,32 +1162,32 @@
         "pub_ts": 1795003200.0
       },
       {
+        "title": "Bill Gurley says giving away AI is Google's 'No. 1' move against Anthropic",
+        "url": "https://finance.yahoo.com/markets/article/bill-gurley-says-giving-away-ai-is-googles-no-1-move-against-anthropic-133314859.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 08:33 ET",
+        "pub_ts": 1795008794.0
+      },
+      {
+        "title": "Broadcom Stock Has Another Growth Driver. Here’s Where I See It Going in 2027",
+        "url": "https://247wallst.com/investing/2026/11/18/broadcom-stock-has-another-growth-driver-heres-where-i-see-it-going-in-2027/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 08:17 ET",
+        "pub_ts": 1795007872.0
+      },
+      {
+        "title": "Alphabet (GOOGL) Spinout Raised $5 Billion For AI Drug Discovery",
+        "url": "https://finance.yahoo.com/technology/ai/articles/alphabet-googl-spinout-raised-5-131110047.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 08:11 ET",
+        "pub_ts": 1795007470.0
+      },
+      {
         "title": "Why Huang's Exit May Not Sink Nvidia Stock",
         "url": "https://www.trefis.com/stock/nvda/articles/626098/why-huang-s-exit-may-not-sink-nvidia-stock/2026-11-18?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-18 07:38 ET",
         "pub_ts": 1795005486.0
-      },
-      {
-        "title": "CME vs. Upstart: Which Financial Stock Is a Better Buy for 2027?",
-        "url": "https://www.fool.com/coverage/better-buy/2026/11/18/cme-vs-upstart-which-financial-stock-is-a-better-buy-for-2027/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 07:31 ET",
-        "pub_ts": 1795005062.0
-      },
-      {
-        "title": "Apple Is the Only Magnificent Seven Stock Near a Record",
-        "url": "https://247wallst.com/investing/2026/11/18/apple-is-the-only-magnificent-seven-stock-near-a-record/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 07:22 ET",
-        "pub_ts": 1795004540.0
-      },
-      {
-        "title": "Broadcom Plummeted 20% Over 6 Months: This Respected Tech and Hardware Research Firm is Confident 110% Returns Materialize",
-        "url": "https://247wallst.com/investing/2026/11/18/broadcom-plummeted-20-over-6-months-this-respected-tech-and-hardware-research-firm-is-confident-110-returns-materialize/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 07:15 ET",
-        "pub_ts": 1795004135.0
       }
     ],
     "MSFT": [
@@ -1340,6 +1340,13 @@
     ],
     "AMZN": [
       {
+        "title": "GUTSI Engages PLTFRM for Online Supplement Rollout",
+        "url": "https://finance.yahoo.com/small-business/articles/gutsi-engages-pltfrm-online-supplement-133000534.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 08:30 ET",
+        "pub_ts": 1795008600.0
+      },
+      {
         "title": "GB News launches British-only rival to Amazon",
         "url": "https://uk.finance.yahoo.com/news/gb-news-launches-british-only-130711257.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1366,13 +1373,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 07:05 ET",
         "pub_ts": 1795003502.0
-      },
-      {
-        "title": "Jim Cramer Told Nvidia’s Interim CEO “the Cheapest Stock in the World Is Yours”",
-        "url": "https://247wallst.com/investing/2026/11/18/jim-cramer-told-nvidias-interim-ceo-the-cheapest-stock-in-the-world-is-yours/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 07:02 ET",
-        "pub_ts": 1795003342.0
       }
     ],
     "CRWV": [
@@ -2968,6 +2968,13 @@
     ],
     "JPM": [
       {
+        "title": "JPMorgan Names New CFO: Is Jamie Dimon's Succession Plan Taking Shape?",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/jpmorgan-names-cfo-jamie-dimons-122600076.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 07:26 ET",
+        "pub_ts": 1795004760.0
+      },
+      {
         "title": "Major US banks hit by disruptions as Chase resolves software bug",
         "url": "https://www.retailbankerinternational.com/news/major-us-banks-disruptions/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2994,13 +3001,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 14:04 ET",
         "pub_ts": 1794942294.0
-      },
-      {
-        "title": "Software bug freezes Chase: Is it the time for bitcoin?",
-        "url": "https://finance.yahoo.com/video/software-bug-freezes-chase-is-it-the-time-for-bitcoin-194810842.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 13:00 ET",
-        "pub_ts": 1794938400.0
       }
     ],
     "WMT": [
@@ -3191,7 +3191,7 @@
   },
   "ticker_news_ts": {
     "KORU": 1795009379.2029018,
-    "SOXL": 1795007903.7867467,
+    "SOXL": 1795009423.8471022,
     "SPY": 1795009132.354869,
     "DIA": 1795009132.354869,
     "SOXX": 1795009132.354869,
@@ -3211,26 +3211,26 @@
     "QCOM": 1795009379.2029018,
     "AVGO": 1795009379.2029018,
     "AMAT": 1795009379.2029018,
-    "META": 1795007903.7867467,
-    "GOOGL": 1795007903.7867467,
+    "META": 1795009423.8471022,
+    "GOOGL": 1795009423.8471022,
     "MSFT": 1795009379.2029018,
-    "AAPL": 1795007903.7867467,
-    "PLTR": 1795007903.7867467,
-    "NOW": 1795007903.7867467,
-    "AMZN": 1795007903.7867467,
-    "CRWV": 1795007903.7867467,
-    "NBIS": 1795007903.7867467,
-    "APLD": 1795007903.7867467,
-    "VST": 1795007903.7867467,
-    "BE": 1795007903.7867467,
-    "CRDO": 1795007903.7867467,
-    "COHR": 1795007903.7867467,
-    "MRVL": 1795007903.7867467,
-    "LITE": 1795007903.7867467,
+    "AAPL": 1795009423.8471022,
+    "PLTR": 1795009423.8471022,
+    "NOW": 1795009423.8471022,
+    "AMZN": 1795009423.8471022,
+    "CRWV": 1795009423.8471022,
+    "NBIS": 1795009423.8471022,
+    "APLD": 1795009423.8471022,
+    "VST": 1795009423.8471022,
+    "BE": 1795009423.8471022,
+    "CRDO": 1795009423.8471022,
+    "COHR": 1795009423.8471022,
+    "MRVL": 1795009423.8471022,
+    "LITE": 1795009423.8471022,
     "AAOI": 1795009132.354869,
-    "SPCX": 1795007903.7867467,
-    "ASTS": 1795007903.7867467,
-    "AXTI": 1795007903.7867467,
+    "SPCX": 1795009423.8471022,
+    "ASTS": 1795009423.8471022,
+    "AXTI": 1795009423.8471022,
     "NASA": 1795009132.354869,
     "LUNR": 1795009132.354869,
     "TSLA": 1795009132.354869,
@@ -3257,16 +3257,16 @@
     "COIN": 1795009379.2029018,
     "LLY": 1795009379.2029018,
     "MRNA": 1795009379.2029018,
-    "NKE": 1795007903.7867467,
-    "MCD": 1795007903.7867467,
-    "PEP": 1795007903.7867467,
+    "NKE": 1795009423.8471022,
+    "MCD": 1795009423.8471022,
+    "PEP": 1795009423.8471022,
     "XOM": 1795009379.2029018,
-    "JPM": 1795007903.7867467,
+    "JPM": 1795009423.8471022,
     "WMT": 1795007939.776522,
     "V": 1795009379.2029018,
     "CAT": 1795009379.2029018,
-    "FN": 1795007903.7867467,
-    "GLW": 1795007903.7867467
+    "FN": 1795009423.8471022,
+    "GLW": 1795009423.8471022
   },
   "calendar_banner": {
     "level": "idle_with_flash",
