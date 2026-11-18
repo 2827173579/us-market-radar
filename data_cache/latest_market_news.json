@@ -1,9 +1,35 @@
 {
-  "updated_at_ts": 1794995990.526,
-  "updated_at_et": "11-18 04:59 ET",
-  "updated_at_kst": "18:59 KST",
+  "updated_at_ts": 1794996092.413,
+  "updated_at_et": "11-18 05:01 ET",
+  "updated_at_kst": "19:01 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261118180003509800",
+      "title": "欧元区10月CPI月率终值 0.5%，预期0.4%，前值0.40%。",
+      "summary": "欧元区10月CPI月率终值 0.5%，预期0.4%，前值0.40%。",
+      "keywords": [
+        "CPI"
+      ],
+      "pub_ts": 1794996003.0,
+      "time_et": "11-18 05:00 ET",
+      "time_bj": "18:00 BJ",
+      "time_kst": "19:00 KST",
+      "time_display": "05:00 ET / 18:00 BJ"
+    },
+    {
+      "id": "20261118180003506800",
+      "title": "欧元区10月CPI年率终值 4%，预期4.00%，前值4.00%。",
+      "summary": "欧元区10月CPI年率终值 4%，预期4.00%，前值4.00%。",
+      "keywords": [
+        "CPI"
+      ],
+      "pub_ts": 1794996003.0,
+      "time_et": "11-18 05:00 ET",
+      "time_bj": "18:00 BJ",
+      "time_kst": "19:00 KST",
+      "time_display": "05:00 ET / 18:00 BJ"
+    },
     {
       "id": "20261118175318786800",
       "title": "【习近平迎接美国总统特朗普】 11月18日讯，11月18日下午，国家主席习近平在深圳宝安…",
@@ -16,19 +42,6 @@
       "time_bj": "17:53 BJ",
       "time_kst": "18:53 KST",
       "time_display": "04:53 ET / 17:53 BJ"
-    },
-    {
-      "id": "20261118175000001800",
-      "title": "欧元区10月CPI年率及月率终值将于十分钟后公布。",
-      "summary": "欧元区10月CPI年率及月率终值将于十分钟后公布。",
-      "keywords": [
-        "CPI"
-      ],
-      "pub_ts": 1794995400.0,
-      "time_et": "11-18 04:50 ET",
-      "time_bj": "17:50 BJ",
-      "time_kst": "18:50 KST",
-      "time_display": "04:50 ET / 17:50 BJ"
     },
     {
       "id": "20261118111836895800",
@@ -1743,6 +1756,13 @@
     ],
     "TSLA": [
       {
+        "title": "Tesla Is Now Taking Cybercab Orders. Here's Where I Think the Stock Will Be in 2030.",
+        "url": "https://www.fool.com/investing/2026/11/18/tesla-is-now-taking-cybercab-orders-here-s-where-i-think-the-stock-will-be-in-2030/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 04:03 ET",
+        "pub_ts": 1794992582.0
+      },
+      {
         "title": "Tesla-SpaceX Merger Is 'Almost Inconceivable' to Avoid, Says Elon Musk Biographer — 'You'll Know More' on Dec. 3",
         "url": "https://finance.yahoo.com/technology/articles/tesla-spacex-merger-almost-inconceivable-043006339.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1769,13 +1789,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 19:09 ET",
         "pub_ts": 1794960546.0
-      },
-      {
-        "title": "3 Founder Led Stocks With Revenue Growth Up To 20%",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/3-founder-led-stocks-revenue-232311677.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 18:23 ET",
-        "pub_ts": 1794957791.0
       }
     ],
     "AXP": [
@@ -2023,11 +2036,11 @@
         "pub_ts": 1794858226.0
       },
       {
-        "title": "AMD-Powered Lux Supercomputer Opens to Scientific Users at Oak Ridge, Becoming First AI Factory for DOE’s Genesis Mission",
-        "url": "https://finance.yahoo.com/technology/ai/articles/amd-powered-lux-supercomputer-opens-190000361.html?.tsrc=rss",
+        "title": "3 US Infrastructure Stocks Linked To Air Traffic Network Upgrades",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/3-us-infrastructure-stocks-linked-091316837.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-16 14:00 ET",
-        "pub_ts": 1794855600.0
+        "time": "11-18 04:13 ET",
+        "pub_ts": 1794993196.0
       },
       {
         "title": "Update: Market Chatter: FAA Halts Juniper Router Installations After Flight Outage",
@@ -2187,6 +2200,13 @@
     ],
     "MU": [
       {
+        "title": "Prediction: This Will Be Micron’s Stock Price in 3 Years",
+        "url": "https://www.fool.com/investing/2026/11/18/prediction-this-will-be-micron-s-stock-price-in-3-years/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 04:35 ET",
+        "pub_ts": 1794994502.0
+      },
+      {
         "title": "Nasdaq Futures Lead Wall Street Rebound After Nvidia’s Blowout Forecast, Anthropic IPO Looms: SLS, NKE, MU In Focus",
         "url": "https://stocktwits.com/news-articles/markets/equity/nasdaq-futures-lead-wall-street-rebound-after-nvidia-s-blowout-forecast-anthropic-ipo-looms-sls-nke-mu-in-focus/cNbX828R9hF?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2213,22 +2233,15 @@
         "source": "Yahoo Finance",
         "time": "11-17 17:05 ET",
         "pub_ts": 1794953103.0
-      },
-      {
-        "title": "Micron Stock Is Down 41%, but the $35 Billion Buyback Could Change the Game. Here's How.",
-        "url": "https://www.barchart.com/story/news/8884280/micron-stock-is-down-41-but-the-35-billion-buyback-could-change-the-game-here-s-how?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 16:20 ET",
-        "pub_ts": 1794950441.0
       }
     ],
     "SKHY": [
       {
-        "title": "World markets are mixed as AI stocks recover after Wall Street losses",
-        "url": "https://finance.yahoo.com/markets/world-indices/articles/asian-markets-mostly-decline-wall-034546063.html?.tsrc=rss",
+        "title": "SK Hynix (KOSE:A000660) Stock Price Trails Q3 Earnings Strength",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/sk-hynix-kose-a000660-stock-091215925.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-17 22:45 ET",
-        "pub_ts": 1794973546.0
+        "time": "11-18 04:12 ET",
+        "pub_ts": 1794993135.0
       },
       {
         "title": "SK hynix Just Hit a New 52-Week Low, Down 38% From Its September High. Still “Ridiculously Cheap”?",
@@ -2520,6 +2533,13 @@
     ],
     "COIN": [
       {
+        "title": "Crypto Stocks Rebound As Nvidia’s Earnings Beat Lifts Risk Appetite — Why COIN, CRCL, NXXT Are Moving Today",
+        "url": "https://stocktwits.com/news-articles/markets/equity/crypto-stocks-rebound-as-nvidia-s-earnings-beat-lifts-risk-appetite-why-coin-crcl-nxxt-are-moving-today/cNbXxwVR9LE?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 04:53 ET",
+        "pub_ts": 1794995602.0
+      },
+      {
         "title": "New Yorkers can now borrow cash without credit checks",
         "url": "https://www.thestreet.com/crypto/markets/new-yorkers-can-now-borrow-cash-without-credit-checks?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2546,13 +2566,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 17:43 ET",
         "pub_ts": 1794955436.0
-      },
-      {
-        "title": "What Sent Coinbase Stock Down 6%?",
-        "url": "https://www.trefis.com/stock/coin/articles/625810/why-did-coinbase-stock-fall-6-on-monday/2026-11-17?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 09:40 ET",
-        "pub_ts": 1794926448.0
       }
     ],
     "LLY": [
@@ -2853,6 +2866,13 @@
     ],
     "V": [
       {
+        "title": "Lianlian DigiTech and Visa Advance Trusted B2B Agentic Commerce for Small and Medium-Sized Businesses",
+        "url": "https://finance.yahoo.com/small-business/articles/lianlian-digitech-visa-advance-trusted-093500388.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 04:35 ET",
+        "pub_ts": 1794994500.0
+      },
+      {
         "title": "Visa Expands Agentic Ready to Help Scale Trusted AI Commerce Globally",
         "url": "https://finance.yahoo.com/technology/ai/articles/visa-expands-agentic-ready-help-043000271.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2876,13 +2896,6 @@
       {
         "title": "Visa and Ant International's Alipay+ Advance Cross-Border Wallet Interoperability across Asia Pacific",
         "url": "https://finance.yahoo.com/markets/currencies/articles/visa-ant-internationals-alipay-advance-043000179.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 23:30 ET",
-        "pub_ts": 1794976200.0
-      },
-      {
-        "title": "Visa Brings the Future of Commerce to Life at Singapore FinTech Festival 2026",
-        "url": "https://finance.yahoo.com/technology/articles/visa-brings-future-commerce-life-043000563.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-17 23:30 ET",
         "pub_ts": 1794976200.0
@@ -3040,41 +3053,41 @@
     "LITE": 1794995990.5259328,
     "AAOI": 1794995990.5259328,
     "SPCX": 1794995990.5259328,
-    "ASTS": 1794971947.8859909,
+    "ASTS": 1794996092.413339,
     "AXTI": 1794995990.5259328,
-    "NASA": 1794971947.8859909,
+    "NASA": 1794996092.413339,
     "LUNR": 1794995990.5259328,
-    "TSLA": 1794971947.8859909,
-    "AXP": 1794971947.8859909,
-    "RKLB": 1794971947.8859909,
-    "KO": 1794971847.1426907,
+    "TSLA": 1794996092.413339,
+    "AXP": 1794996092.413339,
+    "RKLB": 1794996092.413339,
+    "KO": 1794996092.413339,
     "FLY": 1794995990.5259328,
-    "INTC": 1794971847.1426907,
-    "VRT": 1794971947.8859909,
-    "HPE": 1794971947.8859909,
-    "DELL": 1794971947.8859909,
-    "OKLO": 1794971947.8859909,
-    "CEG": 1794972245.619972,
-    "FPS": 1794971947.8859909,
-    "MU": 1794972245.619972,
-    "SKHY": 1794972245.619972,
-    "WDC": 1794972245.619972,
+    "INTC": 1794996092.413339,
+    "VRT": 1794996092.413339,
+    "HPE": 1794996092.413339,
+    "DELL": 1794996092.413339,
+    "OKLO": 1794996092.413339,
+    "CEG": 1794996092.413339,
+    "FPS": 1794996092.413339,
+    "MU": 1794996092.413339,
+    "SKHY": 1794996092.413339,
+    "WDC": 1794996092.413339,
     "STX": 1794995800.3643253,
-    "MSTR": 1794972245.619972,
-    "SNDK": 1794972245.619972,
+    "MSTR": 1794996092.413339,
+    "SNDK": 1794996092.413339,
     "BTC-USD": 1794995800.3643253,
-    "CRWD": 1794972245.619972,
-    "ORCL": 1794972245.619972,
-    "COIN": 1794972245.619972,
-    "LLY": 1794972245.619972,
-    "MRNA": 1794972245.619972,
+    "CRWD": 1794996092.413339,
+    "ORCL": 1794996092.413339,
+    "COIN": 1794996092.413339,
+    "LLY": 1794996092.413339,
+    "MRNA": 1794996092.413339,
     "NKE": 1794995800.3643253,
-    "MCD": 1794972245.619972,
+    "MCD": 1794996092.413339,
     "PEP": 1794995800.3643253,
     "XOM": 1794995800.3643253,
     "JPM": 1794972245.619972,
     "WMT": 1794972245.619972,
-    "V": 1794972245.619972,
+    "V": 1794996092.413339,
     "CAT": 1794972245.619972,
     "FN": 1794995990.5259328,
     "GLW": 1794995990.5259328
@@ -3082,7 +3095,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (04:53 ET / 17:53 BJ) [特朗普]：【习近平迎接美国总统特朗普】 11月18日讯，11月18日下午，国家主席习近平在深圳宝安国际机场迎接来华出席亚太经合组织领导人非正式会议的美国总统特朗普。习近平表示，今年9月我访美时，特朗普",
+    "detail": "⚡ 最新核心快讯 (05:00 ET / 18:00 BJ) [CPI]：欧元区10月CPI月率终值 0.5%，预期0.4%，前值0.40%。",
     "event_name": "",
     "minutes_left": 0
   }
