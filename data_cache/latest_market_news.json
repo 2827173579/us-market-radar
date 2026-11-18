@@ -1,9 +1,23 @@
 {
-  "updated_at_ts": 1795005653.487,
-  "updated_at_et": "11-18 07:40 ET",
-  "updated_at_kst": "21:40 KST",
+  "updated_at_ts": 1795005689.04,
+  "updated_at_et": "11-18 07:41 ET",
+  "updated_at_kst": "21:41 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261118204033920800",
+      "title": "美联储理事沃勒：美联储在加息方面需要更加积极。",
+      "summary": "美联储理事沃勒：美联储在加息方面需要更加积极。",
+      "keywords": [
+        "美联储",
+        "加息"
+      ],
+      "pub_ts": 1795005633.0,
+      "time_et": "11-18 07:40 ET",
+      "time_bj": "20:40 BJ",
+      "time_kst": "21:40 KST",
+      "time_display": "07:40 ET / 20:40 BJ"
+    },
     {
       "id": "20261118203844466800",
       "title": "腾讯控股(00700.HK)：受芯片限制影响，训练下一代模型将需要更长时间。",
@@ -3147,7 +3161,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (07:38 ET / 20:38 BJ) [芯片]：腾讯控股(00700.HK)：受芯片限制影响，训练下一代模型将需要更长时间。",
+    "detail": "⚡ 最新核心快讯 (07:40 ET / 20:40 BJ) [美联储] [加息]：美联储理事沃勒：美联储在加息方面需要更加积极。",
     "event_name": "",
     "minutes_left": 0
   }
