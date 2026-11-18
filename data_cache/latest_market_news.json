@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795027591.848,
-  "updated_at_et": "11-18 13:46 ET",
-  "updated_at_kst": "03:46 KST",
+  "updated_at_ts": 1795027690.328,
+  "updated_at_et": "11-18 13:48 ET",
+  "updated_at_kst": "03:48 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2048,6 +2048,13 @@
     ],
     "KO": [
       {
+        "title": "Coca-Cola Stocks Move Lower Even as TD Cowen Names It Top 2027 Pick",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/coca-cola-stocks-move-lower-183115675.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 13:31 ET",
+        "pub_ts": 1795026675.0
+      },
+      {
         "title": "If You Invest $5,000 in Coca Cola Today, Here’s What It Could Be Worth by 2030",
         "url": "https://247wallst.com/investing/2026/11/18/if-you-invest-5000-in-coca-cola-today-heres-what-it-could-be-worth-by-2030/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2074,13 +2081,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 11:07 ET",
         "pub_ts": 1795018020.0
-      },
-      {
-        "title": "Coca-Cola vs. Monster Beverage: Which Consumer Goods Stock Is a Better Buy for 2027?",
-        "url": "https://www.fool.com/coverage/better-buy/2026/11/18/coca-cola-vs-monster-beverage-which-consumer-goods-stock-is-a-better-buy-for-2027/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 10:05 ET",
-        "pub_ts": 1795014302.0
       }
     ],
     "FLY": [
@@ -2122,6 +2122,13 @@
     ],
     "INTC": [
       {
+        "title": "Microsoft, Intel Deepen Azure Partnership Amid Increasing AI, Cloud Demand",
+        "url": "https://stocktwits.com/news-articles/markets/equity/microsoft-intel-deepen-azure-partnership-amid-increasing-ai-cloud-demand/cNbg90QR9L6?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 13:21 ET",
+        "pub_ts": 1795026065.0
+      },
+      {
         "title": "Microsoft and Intel Deepen Collaboration to Deliver Differentiated Azure Infrastructure",
         "url": "https://finance.yahoo.com/technology/ai/articles/microsoft-intel-deepen-collaboration-deliver-164700932.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2148,13 +2155,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 11:01 ET",
         "pub_ts": 1795017664.0
-      },
-      {
-        "title": "Westfield London Taps Dislo As Social Media Agency",
-        "url": "https://www.mediapost.com/publications/article/419430/westfield-london-taps-dislo-as-social-media-agency.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 11:00 ET",
-        "pub_ts": 1795017600.0
       }
     ],
     "VRT": [
@@ -3197,16 +3197,16 @@
   "ticker_news_ts": {
     "KORU": 1795026411.6110256,
     "SOXL": 1795026411.6110256,
-    "SPY": 1795026108.494866,
-    "DIA": 1795026108.494866,
-    "SOXX": 1795026108.494866,
-    "QQQ": 1795026108.494866,
-    "SMH": 1795026108.494866,
-    "IWM": 1795026108.494866,
-    "IGV": 1795026108.494866,
+    "SPY": 1795027690.3275805,
+    "DIA": 1795027690.3275805,
+    "SOXX": 1795027690.3275805,
+    "QQQ": 1795027690.3275805,
+    "SMH": 1795027690.3275805,
+    "IWM": 1795027690.3275805,
+    "IGV": 1795027690.3275805,
     "TLT": 1795026309.2852783,
     "GLD": 1795026309.2852783,
-    "SQQQ": 1795026108.494866,
+    "SQQQ": 1795027690.3275805,
     "TSM": 1795026309.2852783,
     "VIXY": 1795026309.2852783,
     "SOXS": 1795026309.2852783,
@@ -3232,24 +3232,24 @@
     "COHR": 1795026411.6110256,
     "MRVL": 1795026411.6110256,
     "LITE": 1795026519.6815133,
-    "AAOI": 1795026108.494866,
+    "AAOI": 1795027690.3275805,
     "SPCX": 1795026519.6815133,
     "ASTS": 1795026519.6815133,
     "AXTI": 1795026519.6815133,
-    "NASA": 1795026108.494866,
-    "LUNR": 1795026108.494866,
-    "TSLA": 1795026108.494866,
-    "AXP": 1795026108.494866,
+    "NASA": 1795027690.3275805,
+    "LUNR": 1795027690.3275805,
+    "TSLA": 1795027690.3275805,
+    "AXP": 1795027690.3275805,
     "RKLB": 1795026519.6815133,
-    "KO": 1795026108.494866,
+    "KO": 1795027690.3275805,
     "FLY": 1795026519.6815133,
-    "INTC": 1795026108.494866,
-    "VRT": 1795026108.494866,
+    "INTC": 1795027690.3275805,
+    "VRT": 1795027690.3275805,
     "HPE": 1795026211.0402453,
     "DELL": 1795026211.0402453,
     "OKLO": 1795026211.0402453,
-    "CEG": 1795026108.494866,
-    "FPS": 1795026108.494866,
+    "CEG": 1795027690.3275805,
+    "FPS": 1795027690.3275805,
     "MU": 1795026211.0402453,
     "SKHY": 1795026211.0402453,
     "WDC": 1795026211.0402453,
