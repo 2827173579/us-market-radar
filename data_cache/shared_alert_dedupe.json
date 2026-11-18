@@ -1495,9 +1495,13 @@
     "2026-11-18:LLY:TAKE_PROFIT": {
       "device": "ANDROID",
       "ts": 1794987801.6059926
+    },
+    "JIN10_FLASH:20261118153927600800": {
+      "device": "ANDROID",
+      "ts": 1794987804.390224
     }
   },
   "device": "ANDROID",
-  "last_heartbeat_ts": 1794987547.9761963,
-  "updated_at": "2026-11-18T07:43:21.609443+00:00"
+  "last_heartbeat_ts": 1794987832.8591902,
+  "updated_at": "2026-11-18T07:43:52.862984+00:00"
 }

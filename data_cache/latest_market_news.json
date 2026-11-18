@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1794987778.047,
-  "updated_at_et": "11-18 02:42 ET",
-  "updated_at_kst": "16:42 KST",
+  "updated_at_ts": 1794987983.216,
+  "updated_at_et": "11-18 02:46 ET",
+  "updated_at_kst": "16:46 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2500,6 +2500,13 @@
     ],
     "STX": [
       {
+        "title": "Seagate plunged 22% in a month: Value play or cyclical trap?",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/seagate-plunged-22-month-value-072359166.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 02:23 ET",
+        "pub_ts": 1794986639.0
+      },
+      {
         "title": "Seagate to Participate in Upcoming Investor Events",
         "url": "https://finance.yahoo.com/technology/articles/seagate-participate-upcoming-investor-events-210500597.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2526,13 +2533,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 07:50 ET",
         "pub_ts": 1794919844.0
-      },
-      {
-        "title": "What Was Seagate Telling You Before Its Stock Ran?",
-        "url": "https://www.trefis.com/stock/stx/articles/625553/what-was-seagate-telling-you-before-its-stock-ran-2/2026-11-17?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 06:29 ET",
-        "pub_ts": 1794914986.0
       }
     ],
     "MSTR": [
@@ -3215,9 +3215,9 @@
     "TLT": 1794987778.0470092,
     "GLD": 1794987778.0470092,
     "SQQQ": 1794985360.959407,
-    "TSM": 1794985360.959407,
+    "TSM": 1794987983.2164648,
     "VIXY": 1794987778.0470092,
-    "SOXS": 1794985181.0028594,
+    "SOXS": 1794987983.2164648,
     "NVDA": 1794985796.5676951,
     "AMD": 1794985796.5676951,
     "ASML": 1794985973.5567422,
@@ -3261,7 +3261,7 @@
     "MU": 1794986826.6779554,
     "SKHY": 1794986826.6779554,
     "WDC": 1794986826.6779554,
-    "STX": 1794985360.959407,
+    "STX": 1794987983.2164648,
     "MSTR": 1794987091.2880123,
     "SNDK": 1794986826.6779554,
     "BTC-USD": 1794985545.4600408,
@@ -3270,7 +3270,7 @@
     "COIN": 1794987293.558019,
     "LLY": 1794987293.558019,
     "MRNA": 1794987496.947285,
-    "NKE": 1794985181.0028594,
+    "NKE": 1794987983.2164648,
     "MCD": 1794987496.947285,
     "PEP": 1794985545.4600408,
     "XOM": 1794986155.1797864,
