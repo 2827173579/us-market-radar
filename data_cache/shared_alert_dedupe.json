@@ -1451,9 +1451,13 @@
     "2026-11-18:NVDA:STOP_LOSS": {
       "device": "ANDROID",
       "ts": 1794982152.0928588
+    },
+    "JIN10_FLASH:20261118141241115800": {
+      "device": "ANDROID",
+      "ts": 1794982443.5526536
     }
   },
   "device": "ANDROID",
-  "last_heartbeat_ts": 1794982183.002672,
-  "updated_at": "2026-11-18T06:09:43.006157+00:00"
+  "last_heartbeat_ts": 1794982471.7878358,
+  "updated_at": "2026-11-18T06:14:31.788966+00:00"
 }
