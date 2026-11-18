@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795012109.181,
-  "updated_at_et": "11-18 09:28 ET",
-  "updated_at_kst": "23:28 KST",
+  "updated_at_ts": 1795012147.022,
+  "updated_at_et": "11-18 09:29 ET",
+  "updated_at_kst": "23:29 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -429,13 +429,6 @@
         "pub_ts": 1794999844.0
       },
       {
-        "title": "ETF Activity: SPY Leads With $6.72 Billion Inflow on Nov. 16",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/etf-activity-spy-leads-6-110009616.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 06:00 ET",
-        "pub_ts": 1794999609.0
-      },
-      {
         "title": "Apple Is the Only Magnificent Seven Stock Near a Record",
         "url": "https://247wallst.com/investing/2026/11/18/apple-is-the-only-magnificent-seven-stock-near-a-record/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -448,6 +441,13 @@
         "source": "Yahoo Finance",
         "time": "11-18 06:02 ET",
         "pub_ts": 1794999734.0
+      },
+      {
+        "title": "27 ETFs Add to TransDigm (TDG) Holdings on Nov. 16",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/27-etfs-add-transdigm-tdg-110208087.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 06:02 ET",
+        "pub_ts": 1794999728.0
       }
     ],
     "DIA": [
@@ -526,6 +526,13 @@
     ],
     "QQQ": [
       {
+        "title": "Exchange-Traded Funds Higher, Equity Futures Mixed Pre-Bell Wednesday Amid Nvidia Earnings, Upcoming Fed Meeting Minutes",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/exchange-traded-funds-higher-equity-140832688.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 09:08 ET",
+        "pub_ts": 1795010912.0
+      },
+      {
         "title": "Invesco QQQ (QQQ) Buys $23.2 Million More Apple on Nov. 16",
         "url": "https://finance.yahoo.com/markets/stocks/articles/invesco-qqq-qqq-buys-23-110504179.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -552,13 +559,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 09:16 ET",
         "pub_ts": 1794924982.0
-      },
-      {
-        "title": "Forget QQQ: The Company Behind It Runs the Same Index for $30 Less a Year on a $100K Balance",
-        "url": "https://247wallst.com/investing/etf/2026/11/17/forget-qqq-the-company-behind-it-runs-the-same-index-for-30-less-a-year-on-a-100k-balance-2/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 08:13 ET",
-        "pub_ts": 1794921219.0
       }
     ],
     "SMH": [
@@ -1710,6 +1710,13 @@
     ],
     "AAOI": [
       {
+        "title": "Applied Optoelectronics Sinks 9% on $550 Million Stock Sale Plan; Coherent and Lumentum Rise 4%",
+        "url": "https://247wallst.com/investing/2026/11/18/applied-optoelectronics-sinks-9-on-550-million-stock-sale-plan-coherent-and-lumentum-rise-4/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 09:08 ET",
+        "pub_ts": 1795010931.0
+      },
+      {
         "title": "How Far Could Applied Optoelectronics Stock Fall?",
         "url": "https://www.trefis.com/stock/aaoi/articles/626131/how-far-could-applied-optoelectronics-stock-fall/2026-11-18?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1736,13 +1743,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 09:52 ET",
         "pub_ts": 1794927148.0
-      },
-      {
-        "title": "Coherent Jumps 8%, Applied Optoelectronics Climbs 7% as U.S. Pushes Ahead With Curbs on Chinese Optical Gear; Lumentum Gains 4%",
-        "url": "https://247wallst.com/investing/2026/11/17/coherent-jumps-8-applied-optoelectronics-climbs-7-as-u-s-pushes-ahead-with-curbs-on-chinese-optical-gear-lumentum-gains-4/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 09:17 ET",
-        "pub_ts": 1794925071.0
       }
     ],
     "SPCX": [
@@ -1932,6 +1932,20 @@
     ],
     "TSLA": [
       {
+        "title": "Bad News For Tesla, As Waymo Gets Pulled Off The Road",
+        "url": "https://247wallst.com/investing/2026/11/18/bad-news-for-tesla-as-waymo-gets-pulled-off-the-road/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 09:00 ET",
+        "pub_ts": 1795010402.0
+      },
+      {
+        "title": "IONNA and Automaker Partners Prove Network Scale with Multiple Cross-Country Road Trips",
+        "url": "https://finance.yahoo.com/energy/articles/ionna-automaker-partners-prove-network-140000879.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 09:00 ET",
+        "pub_ts": 1795010400.0
+      },
+      {
         "title": "3 Founder Led Stocks With Revenue Growth Up To 20%",
         "url": "https://finance.yahoo.com/markets/stocks/articles/3-founder-led-stocks-revenue-121133226.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1951,20 +1965,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 06:06 ET",
         "pub_ts": 1794999972.0
-      },
-      {
-        "title": "ETFs Bought $241.7 Million of Tesla (TSLA) on Nov. 16",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-bought-241-7-million-110114315.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 06:01 ET",
-        "pub_ts": 1794999674.0
-      },
-      {
-        "title": "Tesla Is Now Taking Cybercab Orders. Here's Where I Think the Stock Will Be in 2030.",
-        "url": "https://www.fool.com/investing/2026/11/18/tesla-is-now-taking-cybercab-orders-here-s-where-i-think-the-stock-will-be-in-2030/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 04:03 ET",
-        "pub_ts": 1794992582.0
       }
     ],
     "AXP": [
@@ -2050,6 +2050,13 @@
         "pub_ts": 1795008461.0
       },
       {
+        "title": "CocaCola Company (The) (KO) is Attracting Investor Attention: Here is What You Should Know",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/cocacola-company-ko-attracting-investor-130004528.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 08:00 ET",
+        "pub_ts": 1795006804.0
+      },
+      {
         "title": "ETFs Are Net Sellers of Coca-Cola (KO) on Nov. 16",
         "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-net-sellers-coca-cola-110222816.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2069,13 +2076,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 18:24 ET",
         "pub_ts": 1794957871.0
-      },
-      {
-        "title": "Coca-Cola Stock (KO) May Struggle to Repeat Its Strong 2026 Performance",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/coca-cola-stock-ko-may-213800936.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 16:38 ET",
-        "pub_ts": 1794951480.0
       }
     ],
     "FLY": [
@@ -2154,6 +2154,13 @@
     ],
     "VRT": [
       {
+        "title": "What Could Slow Vertiv Stock's Growth?",
+        "url": "https://www.trefis.com/stock/vrt/articles/626182/what-could-slow-vertiv-stocks-growth/2026-11-18?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 09:09 ET",
+        "pub_ts": 1795010946.0
+      },
+      {
         "title": "Corning vs. Vertiv: Which Technology Stock Is a Better Buy for 2027?",
         "url": "https://www.fool.com/coverage/better-buy/2026/11/18/corning-vs-vertiv-which-technology-stock-is-a-better-buy-for-2027/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2180,13 +2187,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 13:53 ET",
         "pub_ts": 1794941580.0
-      },
-      {
-        "title": "Why Vertiv’s Big AI Data Center Power Breakthrough Couldn’t Save the Stock Today",
-        "url": "https://finance.yahoo.com/m/b9206c18-f920-3cdf-97b1-0cd719a44a4d/why-vertiv%E2%80%99s-big-ai-data.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 13:08 ET",
-        "pub_ts": 1794938880.0
       }
     ],
     "HPE": [
@@ -2212,21 +2212,28 @@
         "pub_ts": 1794999600.0
       },
       {
+        "title": "Gear Up for Hewlett Packard Enterprise (HPE) Q4 Earnings: Wall Street Estimates for Key Metrics",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/gear-hewlett-packard-enterprise-hpe-131505904.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 08:15 ET",
+        "pub_ts": 1795007705.0
+      },
+      {
         "title": "Why Is Hewlett Packard Enterprise Stock Rising Today?",
         "url": "https://investorshub.advfn.com/market-news/article/40283/why-is-hewlett-packard-enterprise-stock-rising-today?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-18 07:20 ET",
         "pub_ts": 1795004424.0
-      },
-      {
-        "title": "What Does Hewlett Packard Enterprise (HPE) Gaining A Top 14 AI Supercomputer Mean?",
-        "url": "https://finance.yahoo.com/technology/ai/articles/does-hewlett-packard-enterprise-hpe-030945349.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 22:09 ET",
-        "pub_ts": 1794971385.0
       }
     ],
     "DELL": [
+      {
+        "title": "Investors Heavily Search Dell Technologies Inc. (DELL): Here is What You Need to Know",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/investors-heavily-search-dell-technologies-130005908.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 08:00 ET",
+        "pub_ts": 1795006805.0
+      },
       {
         "title": "Why Is Dell Technologies Stock Surging Today?",
         "url": "https://investorshub.advfn.com/market-news/article/40279/why-is-dell-technologies-stock-surging-today?.tsrc=rss",
@@ -2254,13 +2261,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 15:12 ET",
         "pub_ts": 1794946338.0
-      },
-      {
-        "title": "Could Your Dell Shares Be Worth $906 Or $114?",
-        "url": "https://www.trefis.com/stock/dell/articles/625591/could-your-dell-shares-be-worth-906-or-114/2026-11-17?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 14:58 ET",
-        "pub_ts": 1794945489.0
       }
     ],
     "OKLO": [
@@ -3192,16 +3192,16 @@
   "ticker_news_ts": {
     "KORU": 1795010882.1948304,
     "SOXL": 1795010954.9863222,
-    "SPY": 1795010634.0804076,
-    "DIA": 1795010634.0804076,
-    "SOXX": 1795010634.0804076,
-    "QQQ": 1795010634.0804076,
-    "SMH": 1795010634.0804076,
-    "IWM": 1795010634.0804076,
-    "IGV": 1795010634.0804076,
+    "SPY": 1795012147.0224094,
+    "DIA": 1795012147.0224094,
+    "SOXX": 1795012147.0224094,
+    "QQQ": 1795012147.0224094,
+    "SMH": 1795012147.0224094,
+    "IWM": 1795012147.0224094,
+    "IGV": 1795012147.0224094,
     "TLT": 1795010882.1948304,
     "GLD": 1795010882.1948304,
-    "SQQQ": 1795010634.0804076,
+    "SQQQ": 1795012147.0224094,
     "TSM": 1795010882.1948304,
     "VIXY": 1795010882.1948304,
     "SOXS": 1795010882.1948304,
@@ -3227,30 +3227,30 @@
     "COHR": 1795010954.9863222,
     "MRVL": 1795010954.9863222,
     "LITE": 1795010954.9863222,
-    "AAOI": 1795010634.0804076,
+    "AAOI": 1795012147.0224094,
     "SPCX": 1795010954.9863222,
     "ASTS": 1795010954.9863222,
     "AXTI": 1795010954.9863222,
-    "NASA": 1795010634.0804076,
-    "LUNR": 1795010634.0804076,
-    "TSLA": 1795010634.0804076,
-    "AXP": 1795010634.0804076,
+    "NASA": 1795012147.0224094,
+    "LUNR": 1795012147.0224094,
+    "TSLA": 1795012147.0224094,
+    "AXP": 1795012147.0224094,
     "RKLB": 1795011008.273444,
-    "KO": 1795010634.0804076,
+    "KO": 1795012147.0224094,
     "FLY": 1795011008.273444,
-    "INTC": 1795010634.0804076,
-    "VRT": 1795010634.0804076,
-    "HPE": 1795010634.0804076,
-    "DELL": 1795010634.0804076,
-    "OKLO": 1795010634.0804076,
-    "CEG": 1795010634.0804076,
-    "FPS": 1795010634.0804076,
-    "MU": 1795010634.0804076,
-    "SKHY": 1795010634.0804076,
-    "WDC": 1795010634.0804076,
+    "INTC": 1795012147.0224094,
+    "VRT": 1795012147.0224094,
+    "HPE": 1795012147.0224094,
+    "DELL": 1795012147.0224094,
+    "OKLO": 1795012147.0224094,
+    "CEG": 1795012147.0224094,
+    "FPS": 1795012147.0224094,
+    "MU": 1795012147.0224094,
+    "SKHY": 1795012147.0224094,
+    "WDC": 1795012147.0224094,
     "STX": 1795010882.1948304,
     "MSTR": 1795010882.1948304,
-    "SNDK": 1795010634.0804076,
+    "SNDK": 1795012147.0224094,
     "BTC-USD": 1795010882.1948304,
     "CRWD": 1795010882.1948304,
     "ORCL": 1795010882.1948304,
