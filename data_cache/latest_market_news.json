@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795037337.203,
-  "updated_at_et": "11-18 16:28 ET",
-  "updated_at_kst": "06:28 KST",
+  "updated_at_ts": 1795037439.956,
+  "updated_at_et": "11-18 16:30 ET",
+  "updated_at_kst": "06:30 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1162,6 +1162,13 @@
     ],
     "GOOGL": [
       {
+        "title": "Taiwan Semiconductor Stock (TSM) Looks Too Cheap for Its Growth Outlook",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/taiwan-semiconductor-stock-tsm-looks-210800765.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 16:08 ET",
+        "pub_ts": 1795036080.0
+      },
+      {
         "title": "Here’s What a $1,000 Investment in Alphabet Stock Could Be Worth by 2035",
         "url": "https://www.fool.com/investing/2026/11/18/here-s-what-a-usd1-000-investment-in-alphabet-stock-could-be-worth-by-2035/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1188,13 +1195,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 15:07 ET",
         "pub_ts": 1795032421.0
-      },
-      {
-        "title": "Why Do Nvidia's Customers Owe It $81 Billion?",
-        "url": "https://www.trefis.com/stock/nvda/articles/626053/why-do-nvidia-s-customers-owe-it-81-billion/2026-11-18?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 13:43 ET",
-        "pub_ts": 1795027413.0
       }
     ],
     "MSFT": [
@@ -1246,8 +1246,8 @@
         "title": "Apple Stock Polishes Breakout As Nvidia-Led AI Boom Gets Wake-Up Call",
         "url": "https://finance.yahoo.com/m/681ca0c6-76b1-321b-bdd4-bb83acc818fb/apple-stock-polishes-breakout.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-18 11:07 ET",
-        "pub_ts": 1795018033.0
+        "time": "11-18 16:04 ET",
+        "pub_ts": 1795035850.0
       },
       {
         "title": "Why does the internet keep breaking? It’s not the end of the world – it might be something scarier",
@@ -1272,6 +1272,13 @@
       }
     ],
     "PLTR": [
+      {
+        "title": "Edison Scientific Hires Former Palantir Healthcare Leader Lewis Woolfson as Head of Forward Deployed Engineering",
+        "url": "https://finance.yahoo.com/healthcare/articles/edison-scientific-hires-former-palantir-210000234.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 16:00 ET",
+        "pub_ts": 1795035600.0
+      },
       {
         "title": "Anthropic Valuation Is 8.5 Times Next Year’s Sales: Multiples More Like Microsoft, Alphabet Than Palantir, New Street Analyst Says",
         "url": "https://stocktwits.com/news-articles/markets/equity/anthropic-valuation-is-8-5-times-next-year-s-sales-multiples-more-like-microsoft-alphabet-than-palantir-new-street-analyst-says/cNbg9fWR9LC?.tsrc=rss",
@@ -1299,13 +1306,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 10:11 ET",
         "pub_ts": 1795014693.0
-      },
-      {
-        "title": "Is Palantir Overvalued, or Is It Still a Buy at This Price?",
-        "url": "https://www.fool.com/investing/2026/11/18/is-palantir-overvalued-or-is-it-still-a-buy-at-this-price/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 09:42 ET",
-        "pub_ts": 1795012922.0
       }
     ],
     "NOW": [
@@ -1442,18 +1442,18 @@
         "pub_ts": 1795028730.0
       },
       {
+        "title": "Nvidia Shrinks Neocloud Backing to $32 Billion as CoreWeave and Nebius Rallies Fade Fast",
+        "url": "https://www.barchart.com/story/news/8898797/nvidia-shrinks-neocloud-backing-to-32-billion-as-coreweave-and-nebius-rallies-fade-fast?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 10:13 ET",
+        "pub_ts": 1795014826.0
+      },
+      {
         "title": "CoreWeave Falls 5% Despite NVIDIA Sticking to Its Financing Commitments; Nebius Dips, Oracle Holds Steady",
         "url": "https://247wallst.com/investing/2026/11/18/coreweave-falls-5-despite-nvidia-sticking-to-its-financing-commitments-nebius-dips-oracle-holds-steady/?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-18 10:02 ET",
         "pub_ts": 1795014139.0
-      },
-      {
-        "title": "Why Is Nebius Stock Surging Today?",
-        "url": "https://investorshub.advfn.com/market-news/article/40287/why-is-nebius-stock-surging-today?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 07:22 ET",
-        "pub_ts": 1795004556.0
       }
     ],
     "APLD": [
@@ -3197,8 +3197,8 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795035869.6273456,
-    "SOXL": 1795035869.6273456,
+    "KORU": 1795037439.9556856,
+    "SOXL": 1795037439.9556856,
     "SPY": 1795037139.2507496,
     "DIA": 1795037139.2507496,
     "SOXX": 1795037139.2507496,
@@ -3218,21 +3218,21 @@
     "QCOM": 1795037337.2028086,
     "AVGO": 1795037337.2028086,
     "AMAT": 1795037337.2028086,
-    "META": 1795035869.6273456,
-    "GOOGL": 1795035869.6273456,
+    "META": 1795037439.9556856,
+    "GOOGL": 1795037439.9556856,
     "MSFT": 1795037337.2028086,
-    "AAPL": 1795035869.6273456,
-    "PLTR": 1795035869.6273456,
-    "NOW": 1795035869.6273456,
-    "AMZN": 1795035869.6273456,
-    "CRWV": 1795035869.6273456,
-    "NBIS": 1795035869.6273456,
-    "APLD": 1795035869.6273456,
-    "VST": 1795035869.6273456,
-    "BE": 1795035869.6273456,
-    "CRDO": 1795035869.6273456,
-    "COHR": 1795035869.6273456,
-    "MRVL": 1795035869.6273456,
+    "AAPL": 1795037439.9556856,
+    "PLTR": 1795037439.9556856,
+    "NOW": 1795037439.9556856,
+    "AMZN": 1795037439.9556856,
+    "CRWV": 1795037439.9556856,
+    "NBIS": 1795037439.9556856,
+    "APLD": 1795037439.9556856,
+    "VST": 1795037439.9556856,
+    "BE": 1795037439.9556856,
+    "CRDO": 1795037439.9556856,
+    "COHR": 1795037439.9556856,
+    "MRVL": 1795037439.9556856,
     "LITE": 1795035971.7489824,
     "AAOI": 1795037139.2507496,
     "SPCX": 1795035971.7489824,
@@ -3260,18 +3260,18 @@
     "SNDK": 1795037337.2028086,
     "BTC-USD": 1795037337.2028086,
     "CRWD": 1795037337.2028086,
-    "ORCL": 1795035869.6273456,
-    "COIN": 1795035758.3959088,
-    "LLY": 1795035869.6273456,
-    "MRNA": 1795035869.6273456,
+    "ORCL": 1795037439.9556856,
+    "COIN": 1795037439.9556856,
+    "LLY": 1795037439.9556856,
+    "MRNA": 1795037439.9556856,
     "NKE": 1795035971.7489824,
     "MCD": 1795036072.0899749,
     "PEP": 1795035971.7489824,
-    "XOM": 1795035869.6273456,
+    "XOM": 1795037439.9556856,
     "JPM": 1795035971.7489824,
     "WMT": 1795035971.7489824,
-    "V": 1795035869.6273456,
-    "CAT": 1795035869.6273456,
+    "V": 1795037439.9556856,
+    "CAT": 1795037439.9556856,
     "FN": 1795035971.7489824,
     "GLW": 1795035971.7489824
   },
