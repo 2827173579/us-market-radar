@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795039011.078,
-  "updated_at_et": "11-18 16:56 ET",
-  "updated_at_kst": "06:56 KST",
+  "updated_at_ts": 1795039112.717,
+  "updated_at_et": "11-18 16:58 ET",
+  "updated_at_kst": "06:58 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1752,6 +1752,13 @@
     ],
     "SPCX": [
       {
+        "title": "Will Apollo's $40 billion for SpaceX to rent GPUs pay off?",
+        "url": "https://finance.yahoo.com/video/will-apollos-40-billion-for-spacex-to-rent-gpus-pay-off-214146452.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 16:41 ET",
+        "pub_ts": 1795038106.0
+      },
+      {
         "title": "Skydance's David Ellison calls Elon Musk 'the greatest entrepreneur of our time'",
         "url": "https://finance.yahoo.com/media-advertising/article/skydances-david-ellison-calls-elon-musk-the-greatest-entrepreneur-of-our-time-205405607.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1764,13 +1771,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 14:16 ET",
         "pub_ts": 1795029369.0
-      },
-      {
-        "title": "Crypto markets are pricing Anthropic's IPO 25% higher than the Street",
-        "url": "https://finance.yahoo.com/video/crypto-markets-are-pricing-anthropics-ipo-25-higher-than-the-street-175601626.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 12:00 ET",
-        "pub_ts": 1795021200.0
       },
       {
         "title": "Elon Musk Says Earth’s Data Centers Are “Peanuts” Next to SpaceX’s Orbital Plans. Here’s the Math to Run Before Believing Him",
@@ -1788,6 +1788,13 @@
       }
     ],
     "ASTS": [
+      {
+        "title": "AST SpaceMobile Sinks 8% as New Offering Filing Revives Dilution Fears",
+        "url": "https://www.tikr.com/blog/ast-spacemobile-sinks-8-as-new-offering-filing-revives-dilution-fears?ref=yahoofinance&tlnk=yf-261118-w92886xc&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 16:42 ET",
+        "pub_ts": 1795038137.0
+      },
       {
         "title": "AST SpaceMobile Just Touched a 52-Week Low. Will ASTS Stock Hit $20 or $40 First?",
         "url": "https://247wallst.com/investing/2026/11/18/ast-spacemobile-just-touched-a-52-week-low-will-asts-stock-hit-20-or-40-first/?.tsrc=rss",
@@ -1815,13 +1822,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 09:54 ET",
         "pub_ts": 1795013653.0
-      },
-      {
-        "title": "AST SpaceMobile Stock: My Price Target Depends on One Important Milestone",
-        "url": "https://247wallst.com/investing/2026/11/18/ast-spacemobile-stock-my-price-target-depends-on-one-important-milestone/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 09:04 ET",
-        "pub_ts": 1795010647.0
       }
     ],
     "AXTI": [
@@ -3010,6 +3010,13 @@
     ],
     "WMT": [
       {
+        "title": "Walmart Earnings Could Add to Its Winning Streak",
+        "url": "https://finance.yahoo.com/m/e1b03594-d419-34dc-b0da-f74ff752b7cc/walmart-earnings-could-add-to.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 16:15 ET",
+        "pub_ts": 1795036500.0
+      },
+      {
         "title": "Pricey Walmart Stock Falls More Often, Not Harder",
         "url": "https://www.trefis.com/stock/wmt/articles/626114/pricey-walmart-stock-falls-more-often-not-harder/2026-11-18?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3036,13 +3043,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 14:14 ET",
         "pub_ts": 1795029257.0
-      },
-      {
-        "title": "Should You Buy Walmart Stock Before Nov. 19? History Has a Clear Answer.",
-        "url": "https://www.fool.com/investing/2026/11/18/should-you-buy-walmart-stock-before-nov-19-history-has-a-clear-answer/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 14:11 ET",
-        "pub_ts": 1795029104.0
       }
     ],
     "V": [
@@ -3231,18 +3231,18 @@
     "CRDO": 1795039011.07775,
     "COHR": 1795039011.07775,
     "MRVL": 1795039011.07775,
-    "LITE": 1795037542.2496846,
+    "LITE": 1795039112.7172832,
     "AAOI": 1795038707.4078712,
-    "SPCX": 1795037542.2496846,
-    "ASTS": 1795037542.2496846,
-    "AXTI": 1795037542.2496846,
+    "SPCX": 1795039112.7172832,
+    "ASTS": 1795039112.7172832,
+    "AXTI": 1795039112.7172832,
     "NASA": 1795038707.4078712,
     "LUNR": 1795038707.4078712,
     "TSLA": 1795038707.4078712,
     "AXP": 1795038707.4078712,
-    "RKLB": 1795037542.2496846,
+    "RKLB": 1795039112.7172832,
     "KO": 1795038707.4078712,
-    "FLY": 1795037542.2496846,
+    "FLY": 1795039112.7172832,
     "INTC": 1795038707.4078712,
     "VRT": 1795038707.4078712,
     "HPE": 1795038908.8918805,
@@ -3262,16 +3262,16 @@
     "COIN": 1795039011.07775,
     "LLY": 1795039011.07775,
     "MRNA": 1795039011.07775,
-    "NKE": 1795037542.2496846,
+    "NKE": 1795039112.7172832,
     "MCD": 1795037642.160624,
-    "PEP": 1795037542.2496846,
+    "PEP": 1795039112.7172832,
     "XOM": 1795039011.07775,
-    "JPM": 1795037542.2496846,
-    "WMT": 1795037542.2496846,
+    "JPM": 1795039112.7172832,
+    "WMT": 1795039112.7172832,
     "V": 1795039011.07775,
     "CAT": 1795039011.07775,
-    "FN": 1795037542.2496846,
-    "GLW": 1795037542.2496846
+    "FN": 1795039112.7172832,
+    "GLW": 1795039112.7172832
   },
   "calendar_banner": {
     "level": "idle_with_flash",
