@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795045273.415,
-  "updated_at_et": "11-18 18:41 ET",
-  "updated_at_kst": "08:41 KST",
+  "updated_at_ts": 1795045375.145,
+  "updated_at_et": "11-18 18:42 ET",
+  "updated_at_kst": "08:42 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1761,18 +1761,11 @@
         "pub_ts": 1795038106.0
       },
       {
-        "title": "Skydance's David Ellison calls Elon Musk 'the greatest entrepreneur of our time'",
-        "url": "https://finance.yahoo.com/media-advertising/article/skydances-david-ellison-calls-elon-musk-the-greatest-entrepreneur-of-our-time-205405607.html?.tsrc=rss",
+        "title": "Texas Starts Approving Data Centers Again—Including For SpaceX",
+        "url": "https://finance.yahoo.com/m/87272e15-3c49-3960-b51b-ec8fd897bfc7/texas-starts-approving-data.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-18 15:54 ET",
-        "pub_ts": 1795035245.0
-      },
-      {
-        "title": "Why potential Anthropic investors might want to consider a 'wait-and-see' approach",
-        "url": "https://finance.yahoo.com/video/why-potential-anthropic-investors-might-want-to-consider-a-wait-and-see-approach-191609461.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 14:16 ET",
-        "pub_ts": 1795029369.0
+        "time": "11-18 17:38 ET",
+        "pub_ts": 1795041480.0
       },
       {
         "title": "Elon Musk says Sean Duffy declined free Starlinks for the FAA because they weren't needed: 'As it turns out, they were'",
@@ -1780,6 +1773,13 @@
         "source": "Yahoo Finance",
         "time": "11-18 17:30 ET",
         "pub_ts": 1795041000.0
+      },
+      {
+        "title": "SpaceX or Anthropic: Who Gets IPO Bragging Rights?",
+        "url": "https://finance.yahoo.com/m/ae8253e6-5fd8-39b0-8830-6163e87a49d2/spacex-or-anthropic%3A-who-gets.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 17:21 ET",
+        "pub_ts": 1795040473.0
       },
       {
         "title": "Dan Sundheim’s Fund Still Has More Than Half of Its $32 Billion Stock Portfolio in One Stock",
@@ -3233,18 +3233,18 @@
     "CRDO": 1795045273.4150965,
     "COHR": 1795045273.4150965,
     "MRVL": 1795045273.4150965,
-    "LITE": 1795043803.0387235,
+    "LITE": 1795045375.1451535,
     "AAOI": 1795044966.618772,
-    "SPCX": 1795043803.0387235,
-    "ASTS": 1795043803.0387235,
-    "AXTI": 1795043803.0387235,
+    "SPCX": 1795045375.1451535,
+    "ASTS": 1795045375.1451535,
+    "AXTI": 1795045375.1451535,
     "NASA": 1795044966.618772,
     "LUNR": 1795044966.618772,
     "TSLA": 1795044966.618772,
     "AXP": 1795044966.618772,
-    "RKLB": 1795043803.0387235,
+    "RKLB": 1795045375.1451535,
     "KO": 1795044966.618772,
-    "FLY": 1795043803.0387235,
+    "FLY": 1795045375.1451535,
     "INTC": 1795044966.618772,
     "VRT": 1795044966.618772,
     "HPE": 1795045171.7347817,
@@ -3264,16 +3264,16 @@
     "COIN": 1795045273.4150965,
     "LLY": 1795045273.4150965,
     "MRNA": 1795045273.4150965,
-    "NKE": 1795043803.0387235,
+    "NKE": 1795045375.1451535,
     "MCD": 1795043998.7112253,
-    "PEP": 1795043803.0387235,
+    "PEP": 1795045375.1451535,
     "XOM": 1795045273.4150965,
-    "JPM": 1795043803.0387235,
-    "WMT": 1795043803.0387235,
+    "JPM": 1795045375.1451535,
+    "WMT": 1795045375.1451535,
     "V": 1795045273.4150965,
     "CAT": 1795045273.4150965,
-    "FN": 1795043803.0387235,
-    "GLW": 1795043803.0387235
+    "FN": 1795045375.1451535,
+    "GLW": 1795045375.1451535
   },
   "calendar_banner": {
     "level": "idle_with_flash",
