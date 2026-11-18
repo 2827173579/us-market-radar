@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1794963046.779,
-  "updated_at_et": "11-17 19:50 ET",
-  "updated_at_kst": "09:50 KST",
+  "updated_at_ts": 1794963144.599,
+  "updated_at_et": "11-17 19:52 ET",
+  "updated_at_kst": "09:52 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2604,6 +2604,13 @@
     ],
     "BTC-USD": [
       {
+        "title": "Billionaire Paul Tudor Jones doubles stake in BlackRock's Bitcoin ETF",
+        "url": "https://www.thestreet.com/crypto/investing/billionaire-paul-tudor-jones-doubles-stake-in-blackrocks-bitcoin-etf?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 19:24 ET",
+        "pub_ts": 1794961490.0
+      },
+      {
         "title": "Crypto Market Today, Nov. 17: A Warning Sign Not Seen Since 2022 Is Flashing Across Cryptocurrency Markets",
         "url": "https://www.fool.com/coverage/stock-market-today/2026/11/17/crypto-market-today-nov-17-a-warning-sign-not-seen-since-2022-is-flashing-across-cryptocurrency-markets/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2630,13 +2637,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 16:41 ET",
         "pub_ts": 1794951663.0
-      },
-      {
-        "title": "Billionaire Chamath issues blunt warning to Bitcoin investors over AI",
-        "url": "https://www.thestreet.com/crypto/markets/billionaire-chamath-issues-blunt-warning-to-bitcoin-investors-over-ai?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 16:37 ET",
-        "pub_ts": 1794951424.0
       }
     ],
     "CRWD": [
@@ -3254,16 +3254,16 @@
     "MU": 1794963046.7791739,
     "SKHY": 1794962754.3459277,
     "WDC": 1794962853.3433425,
-    "STX": 1794961558.4707723,
+    "STX": 1794963144.5985165,
     "MSTR": 1794962754.3459277,
     "SNDK": 1794962754.3459277,
-    "BTC-USD": 1794961558.4707723,
+    "BTC-USD": 1794963144.5985165,
     "CRWD": 1794962754.3459277,
     "ORCL": 1794962754.3459277,
     "COIN": 1794962754.3459277,
     "LLY": 1794963046.7791739,
     "MRNA": 1794962853.3433425,
-    "NKE": 1794961558.4707723,
+    "NKE": 1794963144.5985165,
     "MCD": 1794962853.3433425,
     "PEP": 1794961952.7821531,
     "XOM": 1794961952.7821531,
