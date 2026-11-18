@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1794966798.248,
-  "updated_at_et": "11-17 20:53 ET",
-  "updated_at_kst": "10:53 KST",
+  "updated_at_ts": 1794966895.71,
+  "updated_at_et": "11-17 20:54 ET",
+  "updated_at_kst": "10:54 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -904,6 +904,20 @@
     ],
     "NVDA": [
       {
+        "title": "Dow Jones Futures: Techs Rise As Nvidia Beats, Says This On Jensen Huang; Target, Anthropic IPO Ahead",
+        "url": "https://finance.yahoo.com/m/3b22ed8c-00c3-32f8-89f5-91bc21ccb366/dow-jones-futures%3A-techs-rise.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 20:48 ET",
+        "pub_ts": 1794966501.0
+      },
+      {
+        "title": "Could IBM (IBM) Reshape Scientific Computing With Its New Quantum Classical Platform?",
+        "url": "https://finance.yahoo.com/technology/ai/articles/could-ibm-ibm-reshape-scientific-011708713.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 20:17 ET",
+        "pub_ts": 1794964628.0
+      },
+      {
         "title": "NVIDIA Q3 Earnings Call Highlights",
         "url": "https://www.marketbeat.com/instant-alerts/transcript-nvidia-q3-earnings-call-highlights-2026-11-17/?utm_source=yahoofinance&utm_medium=yahoofinance&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -911,11 +925,11 @@
         "pub_ts": 1794964375.0
       },
       {
-        "title": "Dow Jones Futures Rise, Techs Jump As Nvidia Beats, Says This On Jensen Huang; Target, Anthropic IPO Ahead",
-        "url": "https://finance.yahoo.com/m/3b22ed8c-00c3-32f8-89f5-91bc21ccb366/dow-jones-futures-rise%2C-techs.html?.tsrc=rss",
+        "title": "3 AI Data Center Stocks Retail Investors Are Watching After Nvidia News",
+        "url": "https://finance.yahoo.com/technology/ai/articles/3-ai-data-center-stocks-011105971.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-17 20:11 ET",
-        "pub_ts": 1794964261.0
+        "pub_ts": 1794964265.0
       },
       {
         "title": "Nvidia earnings spark after-hours rally in chipmakers, neocloud stocks",
@@ -923,20 +937,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 20:05 ET",
         "pub_ts": 1794963926.0
-      },
-      {
-        "title": "Nvidia Has a $118 Billion Promise Tucked Inside Its Blowout Quarter. Here's What It Means for the Stock",
-        "url": "https://www.fool.com/investing/2026/11/17/nvidia-has-a-usd118-billion-promise-tucked-inside-its-blowout-quarter-here-s-what-it-means-for-the-stock/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 20:00 ET",
-        "pub_ts": 1794963602.0
-      },
-      {
-        "title": "Review & Preview: Bad Time for a Selloff",
-        "url": "https://finance.yahoo.com/m/09235625-48aa-3cd5-9f49-db1550a67866/review-%26-preview%3A-bad-time.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 19:55 ET",
-        "pub_ts": 1794963300.0
       }
     ],
     "AMD": [
@@ -3206,25 +3206,25 @@
     "QQQ": 1794966596.0291564,
     "SMH": 1794966596.0291564,
     "IWM": 1794966596.0291564,
-    "IGV": 1794965314.896314,
+    "IGV": 1794966895.7102518,
     "TLT": 1794966596.0291564,
     "GLD": 1794966596.0291564,
-    "SQQQ": 1794965314.896314,
+    "SQQQ": 1794966895.7102518,
     "TSM": 1794966596.0291564,
     "VIXY": 1794966596.0291564,
-    "SOXS": 1794965314.896314,
-    "NVDA": 1794965314.896314,
+    "SOXS": 1794966895.7102518,
+    "NVDA": 1794966895.7102518,
     "AMD": 1794965526.7132676,
     "ASML": 1794965526.7132676,
-    "QCOM": 1794965314.896314,
-    "AVGO": 1794965314.896314,
-    "AMAT": 1794965314.896314,
+    "QCOM": 1794966895.7102518,
+    "AVGO": 1794966895.7102518,
+    "AMAT": 1794966895.7102518,
     "META": 1794965526.7132676,
     "GOOGL": 1794965526.7132676,
     "MSFT": 1794965526.7132676,
-    "AAPL": 1794965314.896314,
-    "PLTR": 1794965314.896314,
-    "NOW": 1794965314.896314,
+    "AAPL": 1794966895.7102518,
+    "PLTR": 1794966895.7102518,
+    "NOW": 1794966895.7102518,
     "AMZN": 1794965526.7132676,
     "CRWV": 1794965526.7132676,
     "NBIS": 1794965526.7132676,
