@@ -1,9 +1,23 @@
 {
-  "updated_at_ts": 1794973666.032,
-  "updated_at_et": "11-17 22:47 ET",
-  "updated_at_kst": "12:47 KST",
+  "updated_at_ts": 1794973786.3,
+  "updated_at_et": "11-17 22:49 ET",
+  "updated_at_kst": "12:49 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261118114823904800",
+      "title": "增长开始放缓，就业却还没松，美联储加息逻辑尚未被打破",
+      "summary": "10月实际零售销售转为负增长、工业产出意外收缩，显示高利率正逐步侵蚀增长动能；但核心消费与招聘市场仍具韧性，市场暂时难以据此下调跨年加息预期",
+      "keywords": [
+        "美联储",
+        "加息"
+      ],
+      "pub_ts": 1794973703.0,
+      "time_et": "11-17 22:48 ET",
+      "time_bj": "11:48 BJ",
+      "time_kst": "12:48 KST",
+      "time_display": "22:48 ET / 11:48 BJ"
+    },
     {
       "id": "20261118114333355800",
       "title": "英伟达大戏里，普通投资者怎么“下注”？",
@@ -329,22 +343,6 @@
       "time_bj": "06:56 BJ",
       "time_kst": "07:56 KST",
       "time_display": "17:56 ET / 06:56 BJ"
-    },
-    {
-      "id": "20261118065000000800",
-      "title": "【今日重点关注的财经数据与事件：2026年11月18日 周三】 ① 待定 亚太经合组织领…",
-      "summary": "【今日重点关注的财经数据与事件：2026年11月18日 周三】 ① 待定 亚太经合组织领导人非正式会议在深圳举行 ② 15:00 英国10月CPI月率 ③ 15:00 英国10月零售物价指数月率 ④ 15:30 英国央行行长贝利发表讲话 ⑤ 18:00 欧元区10月CPI年率终值 ⑥ 18:00 欧元区10月CPI月率终值 ⑦ 20:00 腾讯控股举行Q3财报电话会 ⑧ 21:30 美国10月新屋开工总数年化 ⑨ 21:30 美国10月营建许可总数 ⑩ 22:25 欧洲央行行长拉加德发表讲话 ⑪ 23:00 美国10月成屋签约销售指数月率 ⑫ 23:00 英国央行行长贝利发表讲话 ⑬ 23:30 美国至11月13日当周EIA原油库存 ⑭ 23:30 美国至11月13日当周EIA库欣原油库存 ⑮ 23:30 美国至11月13日当周EIA战略石油储备库存 ⑯ 次日01:00 英伟达临时CEO召开全体员工会议 ⑰ 次日02:00 新西兰联储主席布雷曼发表讲话 ⑱ 次日02:35 美联储理事巴尔发表讲话 ⑲ 次日03:00 美联储公布货币政策会议纪要 ⑳ 次日03:30 美联储威廉姆斯发表讲话 ㉑ 次日05:15 美联储卡什卡利发表讲话",
-      "keywords": [
-        "美联储",
-        "CPI",
-        "英伟达",
-        "原油"
-      ],
-      "pub_ts": 1794955800.0,
-      "time_et": "11-17 17:50 ET",
-      "time_bj": "06:50 BJ",
-      "time_kst": "07:50 KST",
-      "time_display": "17:50 ET / 06:50 BJ"
     }
   ],
   "ticker_news": {
@@ -2385,6 +2383,20 @@
     ],
     "MU": [
       {
+        "title": "Nasdaq Futures Lead Wall Street Rebound After Nvidia’s Blowout Forecast, Anthropic IPO Looms: SLS, NKE, MU In Focus",
+        "url": "https://stocktwits.com/news-articles/markets/equity/nasdaq-futures-lead-wall-street-rebound-after-nvidia-s-blowout-forecast-anthropic-ipo-looms-sls-nke-mu-in-focus/cNbX828R9hF?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 22:46 ET",
+        "pub_ts": 1794973587.0
+      },
+      {
+        "title": "Broadcom vs. Micron Technology: Which Tech Stock Is the Better Buy for 2027?",
+        "url": "https://www.fool.com/coverage/better-buy/2026/11/17/broadcom-vs-micron-technology-which-tech-stock-is-the-better-buy-for-2027/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 22:30 ET",
+        "pub_ts": 1794972602.0
+      },
+      {
         "title": "Micron Technology (MU) Keeps DRAM Price Fixing Lawsuit Alive After Judge Rejection",
         "url": "https://finance.yahoo.com/markets/stocks/articles/micron-technology-mu-keeps-dram-001843894.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2399,25 +2411,11 @@
         "pub_ts": 1794953103.0
       },
       {
-        "title": "Why Is Micron Down? GF Securities Warns a “NAND Glut” Could Hit in 2027",
-        "url": "https://www.tikr.com/blog/why-is-micron-down-gf-securities-warns-a-nand-glut-could-hit-in-2027?ref=yahoofinance&tlnk=yf-261117-7qfq4x2g&.tsrc=rss",
+        "title": "Micron Stock Is Down 41%, but the $35 Billion Buyback Could Change the Game. Here's How.",
+        "url": "https://www.barchart.com/story/news/8884280/micron-stock-is-down-41-but-the-35-billion-buyback-could-change-the-game-here-s-how?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-17 15:30 ET",
-        "pub_ts": 1794947421.0
-      },
-      {
-        "title": "Why Micron Stock Keeps On Going Down",
-        "url": "https://www.fool.com/investing/2026/11/17/why-micron-stock-keeps-on-going-down/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 13:27 ET",
-        "pub_ts": 1794940041.0
-      },
-      {
-        "title": "Micron Drops Again. What Hedge Funds Are Doing With the Stock.",
-        "url": "https://finance.yahoo.com/m/8de18bcc-f636-3e12-8e8b-a141738198d9/micron-drops-again.-what.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 13:12 ET",
-        "pub_ts": 1794939120.0
+        "time": "11-17 16:20 ET",
+        "pub_ts": 1794950441.0
       }
     ],
     "SKHY": [
@@ -3252,35 +3250,35 @@
     "HPE": 1794973666.0319169,
     "DELL": 1794973666.0319169,
     "OKLO": 1794973666.0319169,
-    "CEG": 1794972245.619972,
+    "CEG": 1794973786.3001828,
     "FPS": 1794973666.0319169,
-    "MU": 1794972245.619972,
-    "SKHY": 1794972245.619972,
-    "WDC": 1794972245.619972,
+    "MU": 1794973786.3001828,
+    "SKHY": 1794973786.3001828,
+    "WDC": 1794973786.3001828,
     "STX": 1794972968.0072224,
-    "MSTR": 1794972245.619972,
-    "SNDK": 1794972245.619972,
+    "MSTR": 1794973786.3001828,
+    "SNDK": 1794973786.3001828,
     "BTC-USD": 1794972968.0072224,
-    "CRWD": 1794972245.619972,
-    "ORCL": 1794972245.619972,
-    "COIN": 1794972245.619972,
-    "LLY": 1794972245.619972,
-    "MRNA": 1794972245.619972,
+    "CRWD": 1794973786.3001828,
+    "ORCL": 1794973786.3001828,
+    "COIN": 1794973786.3001828,
+    "LLY": 1794973786.3001828,
+    "MRNA": 1794973786.3001828,
     "NKE": 1794972968.0072224,
-    "MCD": 1794972245.619972,
+    "MCD": 1794973786.3001828,
     "PEP": 1794972968.0072224,
     "XOM": 1794972968.0072224,
-    "JPM": 1794972245.619972,
-    "WMT": 1794972245.619972,
-    "V": 1794972245.619972,
-    "CAT": 1794972245.619972,
+    "JPM": 1794973786.3001828,
+    "WMT": 1794973786.3001828,
+    "V": 1794973786.3001828,
+    "CAT": 1794973786.3001828,
     "FN": 1794973400.9620824,
     "GLW": 1794973400.9620824
   },
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (22:43 ET / 11:43 BJ) [英伟达] [标普]：英伟达市值已占标普500指数总市值的5.9%，广泛进入美国人的退休储蓄和证券账户。黄仁勋离职引发公司治理疑虑后，普通投资者开始重新评估持仓......",
+    "detail": "⚡ 最新核心快讯 (22:48 ET / 11:48 BJ) [美联储] [加息]：10月实际零售销售转为负增长、工业产出意外收缩，显示高利率正逐步侵蚀增长动能；但核心消费与招聘市场仍具韧性，市场暂时难以据此下调跨年加息预期",
     "event_name": "",
     "minutes_left": 0
   }
