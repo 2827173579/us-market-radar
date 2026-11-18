@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1794967099.272,
-  "updated_at_et": "11-17 20:58 ET",
-  "updated_at_kst": "10:58 KST",
+  "updated_at_ts": 1794967234.842,
+  "updated_at_et": "11-17 21:00 ET",
+  "updated_at_kst": "11:00 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1688,6 +1688,13 @@
         "pub_ts": 1794927884.0
       },
       {
+        "title": "Marvell Just Made a Massive Move Against Broadcom. How to Play MRVL Stock Now.",
+        "url": "https://www.barchart.com/story/news/8882625/marvell-just-made-a-massive-move-against-broadcom-how-to-play-mrvl-stock-now?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 14:35 ET",
+        "pub_ts": 1794944127.0
+      },
+      {
         "title": "Coherent Rises 3% as Trump Presses Ahead With Chinese Optics Ban Despite Big Tech Lobbying",
         "url": "https://www.tikr.com/blog/coherent-rises-3-as-trump-presses-ahead-with-chinese-optics-ban-despite-big-tech-lobbying?ref=yahoofinance&tlnk=yf-261117-jmvfcr2f&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1707,13 +1714,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 08:39 ET",
         "pub_ts": 1794922798.0
-      },
-      {
-        "title": "Coherent, Lumentum jump as US presses ahead with China equipment curbs",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/coherent-lumentum-jump-us-presses-130132183.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 08:01 ET",
-        "pub_ts": 1794920492.0
       }
     ],
     "AAOI": [
@@ -3234,19 +3234,19 @@
     "CRDO": 1794967099.272301,
     "COHR": 1794967099.272301,
     "MRVL": 1794967099.272301,
-    "LITE": 1794965629.4904222,
+    "LITE": 1794967234.841966,
     "AAOI": 1794967099.272301,
-    "SPCX": 1794965629.4904222,
+    "SPCX": 1794967234.841966,
     "ASTS": 1794965832.3522909,
     "AXTI": 1794967099.272301,
     "NASA": 1794965832.3522909,
-    "LUNR": 1794965629.4904222,
+    "LUNR": 1794967234.841966,
     "TSLA": 1794965832.3522909,
     "AXP": 1794965832.3522909,
     "RKLB": 1794965832.3522909,
-    "KO": 1794965629.4904222,
-    "FLY": 1794965629.4904222,
-    "INTC": 1794965732.700614,
+    "KO": 1794967234.841966,
+    "FLY": 1794967234.841966,
+    "INTC": 1794967234.841966,
     "VRT": 1794965832.3522909,
     "HPE": 1794965832.3522909,
     "DELL": 1794965832.3522909,
@@ -3273,8 +3273,8 @@
     "WMT": 1794966068.4690678,
     "V": 1794965967.242771,
     "CAT": 1794966068.4690678,
-    "FN": 1794965732.700614,
-    "GLW": 1794965629.4904222
+    "FN": 1794967234.841966,
+    "GLW": 1794967234.841966
   },
   "calendar_banner": {
     "level": "idle_with_flash",
