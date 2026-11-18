@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795023324.981,
-  "updated_at_et": "11-18 12:35 ET",
-  "updated_at_kst": "02:35 KST",
+  "updated_at_ts": 1795023426.232,
+  "updated_at_et": "11-18 12:37 ET",
+  "updated_at_kst": "02:37 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2974,6 +2974,13 @@
     ],
     "JPM": [
       {
+        "title": "JPMorgan Reveals Cause of Banking Outage That Disrupted U.S. Customers",
+        "url": "https://finance.yahoo.com/technology/articles/jpmorgan-reveals-cause-banking-outage-170511772.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 12:05 ET",
+        "pub_ts": 1795021511.0
+      },
+      {
         "title": "Wells Fargo reportedly taps JPMorgan executive Allison Beer as next COO",
         "url": "https://finance.yahoo.com/news/wells-fargo-reportedly-taps-jpmorgan-162014773.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3000,13 +3007,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 08:53 ET",
         "pub_ts": 1795009996.0
-      },
-      {
-        "title": "JPMorgan Names New CFO: Is Jamie Dimon's Succession Plan Taking Shape?",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/jpmorgan-names-cfo-jamie-dimons-122600076.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 07:26 ET",
-        "pub_ts": 1795004760.0
       }
     ],
     "WMT": [
@@ -3016,6 +3016,13 @@
         "source": "Yahoo Finance",
         "time": "11-18 10:00 ET",
         "pub_ts": 1795014000.0
+      },
+      {
+        "title": "Walmart Or Amazon: Which Is The Tech Stock Now?",
+        "url": "https://www.trefis.com/stock/wmt/articles/626060/walmart-or-amazon-which-is-the-tech-stock-now/2026-11-18?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 12:08 ET",
+        "pub_ts": 1795021720.0
       },
       {
         "title": "Dow Jones Discount Retail Giant Walmart Poised To Hit Buy Point With Earnings Due",
@@ -3037,13 +3044,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 10:12 ET",
         "pub_ts": 1795014739.0
-      },
-      {
-        "title": "6 Big Funds Sold Walmart Last Quarter. Should You Follow Them Before Earnings?",
-        "url": "https://www.tikr.com/blog/walmart-stock-funds-selling-before-earnings?ref=yahoofinance&tlnk=yf-261118-mp8cx49x&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 09:13 ET",
-        "pub_ts": 1795011198.0
       }
     ],
     "V": [
@@ -3232,18 +3232,18 @@
     "CRDO": 1795023324.9805725,
     "COHR": 1795023324.9805725,
     "MRVL": 1795023324.9805725,
-    "LITE": 1795021842.7227197,
+    "LITE": 1795023426.232256,
     "AAOI": 1795023020.6148462,
-    "SPCX": 1795021842.7227197,
-    "ASTS": 1795021842.7227197,
-    "AXTI": 1795021842.7227197,
+    "SPCX": 1795023426.232256,
+    "ASTS": 1795023426.232256,
+    "AXTI": 1795023426.232256,
     "NASA": 1795023020.6148462,
     "LUNR": 1795023020.6148462,
     "TSLA": 1795023020.6148462,
     "AXP": 1795023020.6148462,
-    "RKLB": 1795021842.7227197,
+    "RKLB": 1795023426.232256,
     "KO": 1795023020.6148462,
-    "FLY": 1795021842.7227197,
+    "FLY": 1795023426.232256,
     "INTC": 1795023020.6148462,
     "VRT": 1795023020.6148462,
     "HPE": 1795023122.8140287,
@@ -3263,16 +3263,16 @@
     "COIN": 1795023221.5243008,
     "LLY": 1795023221.5243008,
     "MRNA": 1795023221.5243008,
-    "NKE": 1795021842.7227197,
-    "MCD": 1795021842.7227197,
-    "PEP": 1795021842.7227197,
+    "NKE": 1795023426.232256,
+    "MCD": 1795023426.232256,
+    "PEP": 1795023426.232256,
     "XOM": 1795023221.5243008,
-    "JPM": 1795021842.7227197,
-    "WMT": 1795021842.7227197,
+    "JPM": 1795023426.232256,
+    "WMT": 1795023426.232256,
     "V": 1795023221.5243008,
     "CAT": 1795023221.5243008,
-    "FN": 1795021842.7227197,
-    "GLW": 1795021842.7227197
+    "FN": 1795023426.232256,
+    "GLW": 1795023426.232256
   },
   "calendar_banner": {
     "level": "idle_with_flash",
