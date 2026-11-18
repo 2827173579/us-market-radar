@@ -272,7 +272,7 @@ class TestJin10NewsSentinel(unittest.TestCase):
             self.assertTrue(all(t == 3 for t in seen_timeouts))
 
     def test_07_webhook_priority_fallback_and_zero_hardcoded_secrets(self):
-        """验证 DISCORD_JIN10_WEBHOOK_URL 优先及 DISCORD_CLAW_WEBHOOK_URL 自动回退，全仓零硬编码。"""
+        """验证金十哨兵严格绑定 DISCORD_JIN10_WEBHOOK_URL，未配置时绝不回退至 DISCORD_CLAW_WEBHOOK_URL，且全仓零硬编码。"""
         with patch.dict(
             os.environ,
             {
@@ -284,7 +284,9 @@ class TestJin10NewsSentinel(unittest.TestCase):
             self.assertEqual(jn.get_jin10_webhook_url(), "https://example.invalid/jin10")
 
         with patch.dict(os.environ, {"DISCORD_CLAW_WEBHOOK_URL": "https://example.invalid/claw"}, clear=True):
-            self.assertEqual(jn.get_jin10_webhook_url(), "https://example.invalid/claw")
+            self.assertEqual(jn.get_jin10_webhook_url(), "")
+            summary = jn.run_jin10_sentinel_safe(state_path=self.state_path, now_ts=self.now_ts)
+            self.assertEqual(summary, {"flashes_sent": 0, "countdowns_sent": 0, "actuals_sent": 0})
 
         with patch.dict(os.environ, {}, clear=True):
             self.assertEqual(jn.get_jin10_webhook_url(), "")

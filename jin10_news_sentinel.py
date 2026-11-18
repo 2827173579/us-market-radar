@@ -118,11 +118,8 @@ load_env_file()
 
 
 def get_jin10_webhook_url() -> str:
-    """优先读取 DISCORD_JIN10_WEBHOOK_URL，未配置时回退至 DISCORD_CLAW_WEBHOOK_URL。"""
-    return (
-        os.environ.get("DISCORD_JIN10_WEBHOOK_URL", "").strip()
-        or os.environ.get("DISCORD_CLAW_WEBHOOK_URL", "").strip()
-    )
+    """金十快讯与财经日历唯一来源：DISCORD_JIN10_WEBHOOK_URL；未配置时返回空，严禁回退串台至买点预警频道。"""
+    return os.environ.get("DISCORD_JIN10_WEBHOOK_URL", "").strip()
 
 
 def _get_tz(tz_name: str, fallback_hours: int):
@@ -1471,6 +1468,7 @@ def run_jin10_sentinel_safe(
     try:
         webhook_url = get_jin10_webhook_url()
         if not webhook_url and not dry_run:
+            print("[!] 未配置 DISCORD_JIN10_WEBHOOK_URL，本轮跳过金十推送，严禁串台至买点频道。")
             return summary
 
         cur_ts = now_ts if now_ts is not None else time.time()
