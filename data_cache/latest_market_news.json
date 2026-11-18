@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1794976120.552,
-  "updated_at_et": "11-17 23:28 ET",
-  "updated_at_kst": "13:28 KST",
+  "updated_at_ts": 1794976356.316,
+  "updated_at_et": "11-17 23:32 ET",
+  "updated_at_kst": "13:32 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -904,11 +904,25 @@
     ],
     "NVDA": [
       {
+        "title": "Nvidia’s earnings call names two former crypto miners",
+        "url": "https://www.thestreet.com/crypto/investing/nvidias-earnings-call-names-two-former-crypto-miners?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 23:16 ET",
+        "pub_ts": 1794975391.0
+      },
+      {
+        "title": "Nvidia’s Delayed 10-Q Draws Michael Burry’s Attention – Even As Report Says Some Board Members Want Jensen Huang Back",
+        "url": "https://stocktwits.com/news-articles/markets/equity/nvidia-s-delayed-10-q-draws-michael-burry-s-attention-even-as-report-says-some-board-members-want-jensen-huang-back/cNbXoFaR9ho?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 23:06 ET",
+        "pub_ts": 1794974778.0
+      },
+      {
         "title": "Dow Jones Futures: Techs Rise After Nvidia Beats, Says This On Jensen Huang; Target, Anthropic IPO Ahead",
         "url": "https://finance.yahoo.com/m/3b22ed8c-00c3-32f8-89f5-91bc21ccb366/dow-jones-futures%3A-techs-rise.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-17 22:55 ET",
-        "pub_ts": 1794974136.0
+        "time": "11-17 23:05 ET",
+        "pub_ts": 1794974712.0
       },
       {
         "title": "Nasdaq Futures Lead Wall Street Rebound After Nvidia’s Blowout Forecast, Anthropic IPO Looms: SLS, NKE, MU In Focus",
@@ -923,20 +937,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 22:45 ET",
         "pub_ts": 1794973548.0
-      },
-      {
-        "title": "Jensen Huang agrees to testify before Senate, Politico reports",
-        "url": "https://finance.yahoo.com/technology/ai/articles/jensen-huang-agrees-testify-senate-034305878.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 22:43 ET",
-        "pub_ts": 1794973385.0
-      },
-      {
-        "title": "Nvidia China access restrictions: these stocks are most exposed",
-        "url": "https://finance.yahoo.com/technology/ai/articles/nvidia-china-access-restrictions-stocks-033856534.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 22:38 ET",
-        "pub_ts": 1794973136.0
       }
     ],
     "AMD": [
@@ -3206,25 +3206,25 @@
     "QQQ": 1794976120.5516794,
     "SMH": 1794976120.5516794,
     "IWM": 1794976120.5516794,
-    "IGV": 1794974674.8655033,
+    "IGV": 1794976356.3158119,
     "TLT": 1794976120.5516794,
     "GLD": 1794976120.5516794,
-    "SQQQ": 1794974674.8655033,
+    "SQQQ": 1794976356.3158119,
     "TSM": 1794976120.5516794,
     "VIXY": 1794976120.5516794,
-    "SOXS": 1794974674.8655033,
-    "NVDA": 1794974674.8655033,
+    "SOXS": 1794976356.3158119,
+    "NVDA": 1794976356.3158119,
     "AMD": 1794974906.7464097,
     "ASML": 1794974906.7464097,
-    "QCOM": 1794974674.8655033,
-    "AVGO": 1794974674.8655033,
-    "AMAT": 1794974674.8655033,
+    "QCOM": 1794976356.3158119,
+    "AVGO": 1794976356.3158119,
+    "AMAT": 1794976356.3158119,
     "META": 1794974906.7464097,
     "GOOGL": 1794974906.7464097,
     "MSFT": 1794974906.7464097,
-    "AAPL": 1794974674.8655033,
-    "PLTR": 1794974674.8655033,
-    "NOW": 1794974674.8655033,
+    "AAPL": 1794976356.3158119,
+    "PLTR": 1794976356.3158119,
+    "NOW": 1794976356.3158119,
     "AMZN": 1794974906.7464097,
     "CRWV": 1794974906.7464097,
     "NBIS": 1794974906.7464097,
