@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795035599.287,
-  "updated_at_et": "11-18 15:59 ET",
-  "updated_at_kst": "05:59 KST",
+  "updated_at_ts": 1795035758.396,
+  "updated_at_et": "11-18 16:02 ET",
+  "updated_at_kst": "06:02 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -909,11 +909,25 @@
         "pub_ts": 1795033579.0
       },
       {
-        "title": "'Sending a message': Nvidia signals more cautious stance on China after Huang's departure",
-        "url": "https://finance.yahoo.com/technology/article/sending-a-message-nvidia-signals-more-cautious-stance-on-china-after-huangs-departure-194945165.html?.tsrc=rss",
+        "title": "Update: US Equity Indexes Mixed as Nvidia Undermines Risk Sentiment, Fed Minutes Favor Policy Tightening",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/us-equity-indexes-mixed-nvidia-205207511.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-18 14:49 ET",
-        "pub_ts": 1795031385.0
+        "time": "11-18 15:52 ET",
+        "pub_ts": 1795035127.0
+      },
+      {
+        "title": "CoreWeave Stock Forecast: Can Nvidia’s AI Boom Drive More Gains?",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/coreweave-stock-forecast-nvidia-ai-204347762.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 15:43 ET",
+        "pub_ts": 1795034627.0
+      },
+      {
+        "title": "Sector Update: Tech Stocks Retreat Late Afternoon",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/sector-tech-stocks-retreat-afternoon-204316548.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 15:43 ET",
+        "pub_ts": 1795034596.0
       },
       {
         "title": "SpaceX Is Now Nvidia's Biggest Stock Holding, Ahead of Intel. Here's What That Says About SpaceX.",
@@ -921,20 +935,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 15:17 ET",
         "pub_ts": 1795033022.0
-      },
-      {
-        "title": "NVIDIA Is Near Its 52-Week Low. Will NVDA Stock Hit $100 or $200 First?",
-        "url": "https://247wallst.com/investing/2026/11/18/nvidia-is-near-its-52-week-low-will-nvda-stock-hit-100-or-200-first/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 15:03 ET",
-        "pub_ts": 1795032189.0
-      },
-      {
-        "title": "Bessent Wants an Outside CEO. Brad Gerstner Says Nvidia Should Wait on Jensen Huang",
-        "url": "https://www.benzinga.com/markets/prediction-markets/26/11/63409363/nvidia-ceo-search?utm_source=yahooFinance&utm_campaign=partner_feed&utm_medium=referral&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 15:00 ET",
-        "pub_ts": 1795032007.0
       }
     ],
     "AMD": [
@@ -1013,6 +1013,13 @@
     ],
     "QCOM": [
       {
+        "title": "Tech giant worth $170B axes hundreds of California jobs as CEO demands ‘the right people’ in ruthless cull",
+        "url": "https://nypost.com/2026/11/18/tech/chipmaker-qualcomm-announces-517-layoffs-in-california/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 15:38 ET",
+        "pub_ts": 1795034289.0
+      },
+      {
         "title": "Could Qualcomm Actually Climb 85%? Or Is Baird Totally Wrong?",
         "url": "https://www.tikr.com/blog/could-qualcomm-actually-climb-85-or-is-baird-totally-wrong?ref=yahoofinance&tlnk=yf-261118-fj25pvqf&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1039,13 +1046,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 10:15 ET",
         "pub_ts": 1795014900.0
-      },
-      {
-        "title": "How Much Could You Lose Holding Qualcomm Stock?",
-        "url": "https://www.trefis.com/stock/qcom/articles/626130/how-much-could-you-lose-holding-qualcomm-stock/2026-11-18?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 09:58 ET",
-        "pub_ts": 1795013938.0
       }
     ],
     "AVGO": [
@@ -1198,6 +1198,13 @@
     ],
     "MSFT": [
       {
+        "title": "Sector Update: Tech Stocks Retreat Late Afternoon",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/sector-tech-stocks-retreat-afternoon-204316548.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 15:43 ET",
+        "pub_ts": 1795034596.0
+      },
+      {
         "title": "Microsoft Copilot’s cost advantage claim: plausible but unproven",
         "url": "https://finance.yahoo.com/technology/ai/articles/microsoft-copilot-cost-advantage-claim-201123346.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1224,13 +1231,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 14:04 ET",
         "pub_ts": 1795028640.0
-      },
-      {
-        "title": "Temporal Cloud Enters Public Preview on Microsoft Azure",
-        "url": "https://finance.yahoo.com/technology/ai/articles/temporal-cloud-enters-public-preview-190000118.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 14:00 ET",
-        "pub_ts": 1795028400.0
       }
     ],
     "AAPL": [
@@ -2382,6 +2382,13 @@
     ],
     "MU": [
       {
+        "title": "Is Micron Undervalued?",
+        "url": "https://www.fool.com/investing/2026/11/18/is-micron-undervalued/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 15:41 ET",
+        "pub_ts": 1795034462.0
+      },
+      {
         "title": "Micron Stocks Rise 1.7% as Nvidia's Supply Commitments Jump to $390 Billion",
         "url": "https://finance.yahoo.com/markets/stocks/articles/micron-stocks-rise-1-7-194453345.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2408,13 +2415,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 14:11 ET",
         "pub_ts": 1795029072.0
-      },
-      {
-        "title": "Why Micron's Cheap P/E Has Often Meant A Peak",
-        "url": "https://www.trefis.com/stock/mu/articles/626109/why-micron-s-cheap-p-e-has-often-meant-a-peak/2026-11-18?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 12:54 ET",
-        "pub_ts": 1795024487.0
       }
     ],
     "SKHY": [
@@ -2604,6 +2604,20 @@
     ],
     "BTC-USD": [
       {
+        "title": "Bitcoin bottom in? Analyst spots key $63K support",
+        "url": "https://www.thestreet.com/crypto/markets/bitcoin-bottom-in-analyst-spots-key-63k-support?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 15:40 ET",
+        "pub_ts": 1795034400.0
+      },
+      {
+        "title": "What Will 3,000 XRP Be Worth in 5 Years?",
+        "url": "https://247wallst.com/investing/cryptocurrency/2026/11/18/what-will-3000-xrp-be-worth-in-5-years/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 15:33 ET",
+        "pub_ts": 1795034022.0
+      },
+      {
         "title": "What a half-point rate hike from the Fed could mean for crypto",
         "url": "https://finance.yahoo.com/video/half-point-rate-hike-fed-193000144.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2623,20 +2637,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 14:10 ET",
         "pub_ts": 1795029000.0
-      },
-      {
-        "title": "What $100 a Month in Bitcoin Since 2020 Is Worth After This Crash",
-        "url": "https://247wallst.com/investing/cryptocurrency/2026/11/18/what-100-a-month-in-bitcoin-since-2020-is-worth-after-this-crash/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 14:06 ET",
-        "pub_ts": 1795028770.0
-      },
-      {
-        "title": "Sector Update: Financial Stocks Lower in Afternoon Trading",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/sector-financial-stocks-lower-afternoon-190117890.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 14:01 ET",
-        "pub_ts": 1795028477.0
       }
     ],
     "CRWD": [
@@ -3205,21 +3205,21 @@
     "SMH": 1795035599.2865412,
     "IWM": 1795035599.2865412,
     "IGV": 1795035599.2865412,
-    "TLT": 1795034228.219766,
-    "GLD": 1795034228.219766,
+    "TLT": 1795035758.3959088,
+    "GLD": 1795035758.3959088,
     "SQQQ": 1795035599.2865412,
-    "TSM": 1795034228.219766,
-    "VIXY": 1795034228.219766,
-    "SOXS": 1795034228.219766,
-    "NVDA": 1795034228.219766,
-    "AMD": 1795034228.219766,
-    "ASML": 1795034228.219766,
-    "QCOM": 1795034228.219766,
-    "AVGO": 1795034228.219766,
-    "AMAT": 1795034228.219766,
+    "TSM": 1795035758.3959088,
+    "VIXY": 1795035758.3959088,
+    "SOXS": 1795035758.3959088,
+    "NVDA": 1795035758.3959088,
+    "AMD": 1795035758.3959088,
+    "ASML": 1795035758.3959088,
+    "QCOM": 1795035758.3959088,
+    "AVGO": 1795035758.3959088,
+    "AMAT": 1795035758.3959088,
     "META": 1795034330.3565893,
     "GOOGL": 1795034330.3565893,
-    "MSFT": 1795034228.219766,
+    "MSFT": 1795035758.3959088,
     "AAPL": 1795034330.3565893,
     "PLTR": 1795034330.3565893,
     "NOW": 1795034330.3565893,
@@ -3246,21 +3246,21 @@
     "FLY": 1795034432.6876988,
     "INTC": 1795035599.2865412,
     "VRT": 1795035599.2865412,
-    "HPE": 1795034128.81937,
-    "DELL": 1795034128.81937,
-    "OKLO": 1795034128.81937,
+    "HPE": 1795035758.3959088,
+    "DELL": 1795035758.3959088,
+    "OKLO": 1795035758.3959088,
     "CEG": 1795035599.2865412,
     "FPS": 1795035599.2865412,
-    "MU": 1795034128.81937,
-    "SKHY": 1795034128.81937,
-    "WDC": 1795034128.81937,
-    "STX": 1795034228.219766,
-    "MSTR": 1795034228.219766,
-    "SNDK": 1795034128.81937,
-    "BTC-USD": 1795034228.219766,
-    "CRWD": 1795034228.219766,
+    "MU": 1795035758.3959088,
+    "SKHY": 1795035758.3959088,
+    "WDC": 1795035758.3959088,
+    "STX": 1795035758.3959088,
+    "MSTR": 1795035758.3959088,
+    "SNDK": 1795035758.3959088,
+    "BTC-USD": 1795035758.3959088,
+    "CRWD": 1795035758.3959088,
     "ORCL": 1795034330.3565893,
-    "COIN": 1795034228.219766,
+    "COIN": 1795035758.3959088,
     "LLY": 1795034228.219766,
     "MRNA": 1795034228.219766,
     "NKE": 1795034432.6876988,
