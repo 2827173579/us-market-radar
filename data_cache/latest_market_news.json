@@ -1,9 +1,22 @@
 {
-  "updated_at_ts": 1795026309.285,
-  "updated_at_et": "11-18 13:25 ET",
-  "updated_at_kst": "03:25 KST",
+  "updated_at_ts": 1795026411.611,
+  "updated_at_et": "11-18 13:26 ET",
+  "updated_at_kst": "03:26 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261119022500001800",
+      "title": "美联储理事巴尔将于十分钟后发表讲话。",
+      "summary": "美联储理事巴尔将于十分钟后发表讲话。",
+      "keywords": [
+        "美联储"
+      ],
+      "pub_ts": 1795026300.0,
+      "time_et": "11-18 13:25 ET",
+      "time_bj": "02:25 BJ",
+      "time_kst": "03:25 KST",
+      "time_display": "13:25 ET / 02:25 BJ"
+    },
     {
       "id": "20261119005205958800",
       "title": "WTI原油期货失守82美元/桶，日内跌幅3.14%。",
@@ -328,20 +341,6 @@
       "time_bj": "20:41 BJ",
       "time_kst": "21:41 KST",
       "time_display": "07:41 ET / 20:41 BJ"
-    },
-    {
-      "id": "20261118204033920800",
-      "title": "美联储理事沃勒：美联储在加息方面需要更加积极。",
-      "summary": "美联储理事沃勒：美联储在加息方面需要更加积极。",
-      "keywords": [
-        "美联储",
-        "加息"
-      ],
-      "pub_ts": 1795005633.0,
-      "time_et": "11-18 07:40 ET",
-      "time_bj": "20:40 BJ",
-      "time_kst": "21:40 KST",
-      "time_display": "07:40 ET / 20:40 BJ"
     }
   ],
   "ticker_news": {
@@ -1161,6 +1160,13 @@
     ],
     "GOOGL": [
       {
+        "title": "Anthropic Valuation Is 8.5 Times Next Year’s Sales: Multiples More Like Microsoft, Alphabet Than Palantir, New Street Analyst Says",
+        "url": "https://stocktwits.com/news-articles/markets/equity/anthropic-valuation-is-8-5-times-next-year-s-sales-multiples-more-like-microsoft-alphabet-than-palantir-new-street-analyst-says/cNbg9fWR9LC?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 13:16 ET",
+        "pub_ts": 1795025772.0
+      },
+      {
         "title": "How to find AI winners beyond Nvidia & the Mag-7",
         "url": "https://www.thestreet.com/investing/how-to-find-ai-winners-beyond-nvidia-the-mag-7?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1187,13 +1193,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 12:33 ET",
         "pub_ts": 1795023180.0
-      },
-      {
-        "title": "Amazon and Alphabet Will Own Over 28% of Anthropic After Its IPO. Here’s What That Means for Their Stocks.",
-        "url": "https://www.fool.com/investing/2026/11/18/amazon-and-alphabet-will-own-28-percent-of-anthropic-after-ipo/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 12:30 ET",
-        "pub_ts": 1795023002.0
       }
     ],
     "MSFT": [
@@ -1272,6 +1271,13 @@
     ],
     "PLTR": [
       {
+        "title": "Anthropic Valuation Is 8.5 Times Next Year’s Sales: Multiples More Like Microsoft, Alphabet Than Palantir, New Street Analyst Says",
+        "url": "https://stocktwits.com/news-articles/markets/equity/anthropic-valuation-is-8-5-times-next-year-s-sales-multiples-more-like-microsoft-alphabet-than-palantir-new-street-analyst-says/cNbg9fWR9LC?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 13:16 ET",
+        "pub_ts": 1795025772.0
+      },
+      {
         "title": "Here’s Why Palantir Cracked the Best Blue Chip Stocks to Buy and Hold for Three Years List",
         "url": "https://finance.yahoo.com/markets/stocks/articles/why-palantir-cracked-best-blue-153553108.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1298,13 +1304,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 23:33 ET",
         "pub_ts": 1794976380.0
-      },
-      {
-        "title": "Phillip Securities Raises Its Palantir Target to $248. Is It Still Too Low?",
-        "url": "https://www.tikr.com/blog/phillip-securities-raises-its-palantir-target-to-248-is-it-still-too-low?ref=yahoofinance&tlnk=yf-261117-ghxq9r36&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 17:59 ET",
-        "pub_ts": 1794956378.0
       }
     ],
     "NOW": [
@@ -1346,6 +1345,27 @@
     ],
     "AMZN": [
       {
+        "title": "TikTok Shop takes on Amazon and Walmart with new strategy",
+        "url": "https://www.thestreet.com/retail/tiktok-shop-membership-amazon-walmart?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 13:07 ET",
+        "pub_ts": 1795025220.0
+      },
+      {
+        "title": "Should You Buy Amazon Stock Before the Holiday Season?",
+        "url": "https://www.fool.com/investing/2026/11/18/should-you-buy-amazon-stock-before-the-holiday-season/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 13:05 ET",
+        "pub_ts": 1795025102.0
+      },
+      {
+        "title": "Amazon to accelerate logistics expansion in 2027, says Bank of America",
+        "url": "https://www.proactiveinvestors.com/companies/news/1102038/amazon-to-accelerate-logistics-expansion-in-2027-says-bank-of-america-1102038.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 12:55 ET",
+        "pub_ts": 1795024500.0
+      },
+      {
         "title": "Amazon and Alphabet Will Own Over 28% of Anthropic After Its IPO. Here’s What That Means for Their Stocks.",
         "url": "https://www.fool.com/investing/2026/11/18/amazon-and-alphabet-will-own-28-percent-of-anthropic-after-ipo/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1358,27 +1378,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 12:08 ET",
         "pub_ts": 1795021720.0
-      },
-      {
-        "title": "Andy Jassy Says Nvidia “Will Be Very Strong” for Years, Even as Amazon’s Own Chips Grow Triple Digits",
-        "url": "https://www.tikr.com/blog/andy-jassy-says-nvidia-will-be-very-strong-for-years-even-as-amazons-own-chips-grow-triple-digits?ref=yahoofinance&tlnk=yf-261118-m8hxm693&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 11:54 ET",
-        "pub_ts": 1795020888.0
-      },
-      {
-        "title": "Andy Jassy Will Spend “Meaningfully More” Than $220 Billion Next Year. AWS’s $25 Billion AI Business Must Pay",
-        "url": "https://www.tikr.com/blog/andy-jassy-will-spend-meaningfully-more-than-220-billion-next-year-awss-25-billion-ai-business-must-pay?ref=yahoofinance&tlnk=yf-261118-c8v2mjh9&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 11:53 ET",
-        "pub_ts": 1795020839.0
-      },
-      {
-        "title": "Warning for Amazon Investors: Anthropic Needs “Revenues of $1 Trillion” at $2 Trillion Valuation, per Aswath Damodaran",
-        "url": "https://www.tikr.com/blog/warning-for-amazon-investors-anthropic-needs-revenues-of-1-trillion-at-2-trillion-valuation-per-aswath-damodaran?ref=yahoofinance&tlnk=yf-261118-gxg77gcw&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 11:26 ET",
-        "pub_ts": 1795019208.0
       }
     ],
     "CRWV": [
@@ -1531,6 +1530,13 @@
     ],
     "BE": [
       {
+        "title": "Is Bloom Energy Stock At $173 Still Worth Owning?",
+        "url": "https://www.trefis.com/stock/be/articles/626059/is-bloom-energy-stock-at-173-still-worth-owning/2026-11-18?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 12:54 ET",
+        "pub_ts": 1795024487.0
+      },
+      {
         "title": "Bloom Energy Cratered 37% in 6 Months: Three Wall Street Firms Each Agree That 100% Gains Are Coming",
         "url": "https://247wallst.com/investing/2026/11/18/bloom-energy-cratered-37-in-6-months-three-wall-street-firms-each-agree-that-100-gains-are-coming/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1557,13 +1563,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 14:03 ET",
         "pub_ts": 1794942234.0
-      },
-      {
-        "title": "How Low Could Bloom Energy Stock Go From Here?",
-        "url": "https://www.trefis.com/stock/be/articles/625624/how-low-could-bloom-energy-stock-go-from-here/2026-11-17?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 09:13 ET",
-        "pub_ts": 1794924820.0
       }
     ],
     "CRDO": [
@@ -3085,6 +3084,13 @@
     ],
     "CAT": [
       {
+        "title": "Caterpillar undervalued as construction growth prospects strengthen, says Bank of America",
+        "url": "https://www.proactiveinvestors.com/companies/news/1102039/caterpillar-undervalued-as-construction-growth-prospects-strengthen-says-bank-of-america-1102039.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 13:05 ET",
+        "pub_ts": 1795025100.0
+      },
+      {
         "title": "The 5 Best Stocks in Bill Gates’s Portfolio",
         "url": "https://www.tikr.com/blog/the-5-best-stocks-in-bill-gatess-portfolio?ref=yahoofinance&tlnk=yf-261118-rgh9h85p&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3111,13 +3117,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 16:50 ET",
         "pub_ts": 1794952202.0
-      },
-      {
-        "title": "Caterpillar Sees a Bright 2027 as Compact Equipment and Rental Expansion Gains Ground",
-        "url": "https://www.marketbeat.com/instant-alerts/event-caterpillar-sees-a-bright-2027-as-compact-equipment-and-rental-expansion-gains-ground-2026-11-17/?utm_source=yahoofinance&utm_medium=yahoofinance&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 14:13 ET",
-        "pub_ts": 1794942781.0
       }
     ],
     "FN": [
@@ -3196,8 +3195,8 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795024902.691325,
-    "SOXL": 1795024902.691325,
+    "KORU": 1795026411.6110256,
+    "SOXL": 1795026411.6110256,
     "SPY": 1795026108.494866,
     "DIA": 1795026108.494866,
     "SOXX": 1795026108.494866,
@@ -3217,21 +3216,21 @@
     "QCOM": 1795026309.2852783,
     "AVGO": 1795026309.2852783,
     "AMAT": 1795026309.2852783,
-    "META": 1795024902.691325,
-    "GOOGL": 1795024902.691325,
+    "META": 1795026411.6110256,
+    "GOOGL": 1795026411.6110256,
     "MSFT": 1795026309.2852783,
-    "AAPL": 1795024902.691325,
-    "PLTR": 1795024902.691325,
-    "NOW": 1795024902.691325,
-    "AMZN": 1795024902.691325,
-    "CRWV": 1795024902.691325,
-    "NBIS": 1795024902.691325,
-    "APLD": 1795024902.691325,
-    "VST": 1795024902.691325,
-    "BE": 1795024902.691325,
-    "CRDO": 1795024902.691325,
-    "COHR": 1795024902.691325,
-    "MRVL": 1795024902.691325,
+    "AAPL": 1795026411.6110256,
+    "PLTR": 1795026411.6110256,
+    "NOW": 1795026411.6110256,
+    "AMZN": 1795026411.6110256,
+    "CRWV": 1795026411.6110256,
+    "NBIS": 1795026411.6110256,
+    "APLD": 1795026411.6110256,
+    "VST": 1795026411.6110256,
+    "BE": 1795026411.6110256,
+    "CRDO": 1795026411.6110256,
+    "COHR": 1795026411.6110256,
+    "MRVL": 1795026411.6110256,
     "LITE": 1795025003.897844,
     "AAOI": 1795026108.494866,
     "SPCX": 1795025003.897844,
@@ -3259,7 +3258,7 @@
     "SNDK": 1795026211.0402453,
     "BTC-USD": 1795026309.2852783,
     "CRWD": 1795026309.2852783,
-    "ORCL": 1795024902.691325,
+    "ORCL": 1795026411.6110256,
     "COIN": 1795026309.2852783,
     "LLY": 1795026309.2852783,
     "MRNA": 1795026309.2852783,
@@ -3270,14 +3269,14 @@
     "JPM": 1795025003.897844,
     "WMT": 1795025003.897844,
     "V": 1795026309.2852783,
-    "CAT": 1795024902.691325,
+    "CAT": 1795026411.6110256,
     "FN": 1795025003.897844,
     "GLW": 1795025003.897844
   },
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (11:52 ET / 00:52 BJ) [原油]：WTI原油期货失守82美元/桶，日内跌幅3.14%。",
+    "detail": "⚡ 最新核心快讯 (13:25 ET / 02:25 BJ) [美联储]：美联储理事巴尔将于十分钟后发表讲话。",
     "event_name": "",
     "minutes_left": 0
   }
