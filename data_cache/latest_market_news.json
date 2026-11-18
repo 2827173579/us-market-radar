@@ -1,9 +1,22 @@
 {
-  "updated_at_ts": 1794974484.35,
-  "updated_at_et": "11-17 23:01 ET",
-  "updated_at_kst": "13:01 KST",
+  "updated_at_ts": 1794974674.866,
+  "updated_at_et": "11-17 23:04 ET",
+  "updated_at_kst": "13:04 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261118120239924800",
+      "title": "日本央行行长植田和男重申加息立场，并警告干预风险",
+      "summary": "日本央行行长植田和男表示，当前金融条件仍较宽松，应根据经济和通胀变化继续加息。他同时警告，若紧急购债被视为替政府融资，反而可能加剧长期利率波动。点击查看…",
+      "keywords": [
+        "加息"
+      ],
+      "pub_ts": 1794974559.0,
+      "time_et": "11-17 23:02 ET",
+      "time_bj": "12:02 BJ",
+      "time_kst": "13:02 KST",
+      "time_display": "23:02 ET / 12:02 BJ"
+    },
     {
       "id": "20261118114823904800",
       "title": "增长开始放缓，就业却还没松，美联储加息逻辑尚未被打破",
@@ -330,19 +343,6 @@
       "time_bj": "07:01 BJ",
       "time_kst": "08:01 KST",
       "time_display": "18:01 ET / 07:01 BJ"
-    },
-    {
-      "id": "20261118065623116800",
-      "title": "英伟达业绩再爆表！下季度营收指引上调至1300亿美元，董事会明确拒绝黄仁勋复职",
-      "summary": "英伟达第三财季营收同比增长103%至1158亿美元，预计下季度营收达到1300亿美元，并将下一财年增长预期上调至75%。但董事会明确无意让黄仁勋复职。点击查看",
-      "keywords": [
-        "英伟达"
-      ],
-      "pub_ts": 1794956183.0,
-      "time_et": "11-17 17:56 ET",
-      "time_bj": "06:56 BJ",
-      "time_kst": "07:56 KST",
-      "time_display": "17:56 ET / 06:56 BJ"
     }
   ],
   "ticker_news": {
@@ -903,39 +903,39 @@
     ],
     "NVDA": [
       {
-        "title": "Asia tech shares turn mixed after Nvidia beat as China chip curbs cloud optimism",
-        "url": "https://finance.yahoo.com/technology/articles/asia-tech-shares-turn-mixed-032547363.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 22:25 ET",
-        "pub_ts": 1794972347.0
-      },
-      {
         "title": "Dow Jones Futures: Techs Rise After Nvidia Beats, Says This On Jensen Huang; Target, Anthropic IPO Ahead",
         "url": "https://finance.yahoo.com/m/3b22ed8c-00c3-32f8-89f5-91bc21ccb366/dow-jones-futures%3A-techs-rise.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-17 22:24 ET",
-        "pub_ts": 1794972273.0
+        "time": "11-17 22:55 ET",
+        "pub_ts": 1794974136.0
       },
       {
-        "title": "Nvidia’s former sales chief had ties to customers in chip scandal- The Information",
-        "url": "https://finance.yahoo.com/technology/articles/nvidia-former-sales-chief-had-031425596.html?.tsrc=rss",
+        "title": "Nasdaq Futures Lead Wall Street Rebound After Nvidia’s Blowout Forecast, Anthropic IPO Looms: SLS, NKE, MU In Focus",
+        "url": "https://stocktwits.com/news-articles/markets/equity/nasdaq-futures-lead-wall-street-rebound-after-nvidia-s-blowout-forecast-anthropic-ipo-looms-sls-nke-mu-in-focus/cNbX828R9hF?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-17 22:14 ET",
-        "pub_ts": 1794971665.0
+        "time": "11-17 22:46 ET",
+        "pub_ts": 1794973587.0
       },
       {
-        "title": "Nvidia Stock And 3 AI Semiconductor Picks For The Next Chip Demand Wave",
-        "url": "https://finance.yahoo.com/technology/ai/articles/nvidia-stock-3-ai-semiconductor-031423325.html?.tsrc=rss",
+        "title": "Jensen Told Cloud Executives He “Could Just Give All This Capacity to Elon.” Bad News for CoreWeave",
+        "url": "https://www.tikr.com/blog/jensen-told-cloud-executives-he-could-just-give-all-this-capacity-to-elon-bad-news-for-coreweave?ref=yahoofinance&tlnk=yf-261117-gw4w2m4c&.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-17 22:14 ET",
-        "pub_ts": 1794971663.0
+        "time": "11-17 22:45 ET",
+        "pub_ts": 1794973548.0
       },
       {
-        "title": "Nvidia Signals AI Financing Flywheel Will Continue, But ‘Disciplined’: Analyst Calls Neoclouds Its ‘Biggest Sustained Bet’ As NBIS, IREN, MRVL Rally",
-        "url": "https://stocktwits.com/news-articles/markets/equity/nvidia-signals-ai-financing-flywheel-will-continue-but-disciplined-analyst-calls-neoclouds-its-biggest-sustained-bet-as-nbis-iren-mrvl-rally/cNbXVSvR9hZ?.tsrc=rss",
+        "title": "Jensen Huang agrees to testify before Senate, Politico reports",
+        "url": "https://finance.yahoo.com/technology/ai/articles/jensen-huang-agrees-testify-senate-034305878.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-17 21:47 ET",
-        "pub_ts": 1794970039.0
+        "time": "11-17 22:43 ET",
+        "pub_ts": 1794973385.0
+      },
+      {
+        "title": "Nvidia China access restrictions: these stocks are most exposed",
+        "url": "https://finance.yahoo.com/technology/ai/articles/nvidia-china-access-restrictions-stocks-033856534.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 22:38 ET",
+        "pub_ts": 1794973136.0
       }
     ],
     "AMD": [
@@ -1058,6 +1058,13 @@
         "pub_ts": 1794952919.0
       },
       {
+        "title": "Broadcom vs. Micron Technology: Which Tech Stock Is the Better Buy for 2027?",
+        "url": "https://www.fool.com/coverage/better-buy/2026/11/17/broadcom-vs-micron-technology-which-tech-stock-is-the-better-buy-for-2027/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 22:30 ET",
+        "pub_ts": 1794972602.0
+      },
+      {
         "title": "TD Cowen Cut Its Broadcom Target to $425. It Still Sees 24% Upside",
         "url": "https://www.tikr.com/blog/td-cowen-cut-its-broadcom-target-to-425-it-still-sees-24-upside?ref=yahoofinance&tlnk=yf-261117-7jhqfrh2&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1077,13 +1084,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 15:21 ET",
         "pub_ts": 1794946901.0
-      },
-      {
-        "title": "Prediction: These 2 Stocks Will Be Worth More Than SpaceX 5 Years From Now",
-        "url": "https://www.fool.com/investing/2026/11/17/prediction-2-stocks-that-will-be-worth-more-than-s/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 13:53 ET",
-        "pub_ts": 1794941580.0
       }
     ],
     "AMAT": [
@@ -1236,13 +1236,6 @@
     ],
     "AAPL": [
       {
-        "title": "Apple outage today: iCloud and App Store down after a week of big outages",
-        "url": "https://finance.yahoo.com/markets/article/why-apple-is-down-in-a-week-of-outages-from-microsoft-to-chase-193424335.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 14:34 ET",
-        "pub_ts": 1794944064.0
-      },
-      {
         "title": "A Retiree With $400,000 in His 401(k) Tries to Move Money Before Stocks Fall Further. Apple’s Widespread Outage Raises the Stakes of a Missed Trade",
         "url": "https://247wallst.com/personal-finance/2026/11/17/a-retiree-with-400000-in-his-401k-tries-to-move-money-before-stocks-fall-further-apples-widespread-outage-raises-the-stakes-of-a-missed-trade/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1269,6 +1262,13 @@
         "source": "Yahoo Finance",
         "time": "11-17 15:17 ET",
         "pub_ts": 1794946633.0
+      },
+      {
+        "title": "Broadcom vs. Micron Technology: Which Tech Stock Is the Better Buy for 2027?",
+        "url": "https://www.fool.com/coverage/better-buy/2026/11/17/broadcom-vs-micron-technology-which-tech-stock-is-the-better-buy-for-2027/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 22:30 ET",
+        "pub_ts": 1794972602.0
       }
     ],
     "PLTR": [
@@ -3205,25 +3205,25 @@
     "QQQ": 1794974484.3502448,
     "SMH": 1794974484.3502448,
     "IWM": 1794974484.3502448,
-    "IGV": 1794973101.8668368,
+    "IGV": 1794974674.8655033,
     "TLT": 1794974484.3502448,
     "GLD": 1794974484.3502448,
-    "SQQQ": 1794973101.8668368,
+    "SQQQ": 1794974674.8655033,
     "TSM": 1794974484.3502448,
     "VIXY": 1794974484.3502448,
-    "SOXS": 1794973101.8668368,
-    "NVDA": 1794973101.8668368,
+    "SOXS": 1794974674.8655033,
+    "NVDA": 1794974674.8655033,
     "AMD": 1794973225.463607,
     "ASML": 1794973225.463607,
-    "QCOM": 1794973101.8668368,
-    "AVGO": 1794973101.8668368,
-    "AMAT": 1794973101.8668368,
+    "QCOM": 1794974674.8655033,
+    "AVGO": 1794974674.8655033,
+    "AMAT": 1794974674.8655033,
     "META": 1794973225.463607,
     "GOOGL": 1794973225.463607,
     "MSFT": 1794973225.463607,
-    "AAPL": 1794973101.8668368,
-    "PLTR": 1794973101.8668368,
-    "NOW": 1794973101.8668368,
+    "AAPL": 1794974674.8655033,
+    "PLTR": 1794974674.8655033,
+    "NOW": 1794974674.8655033,
     "AMZN": 1794973225.463607,
     "CRWV": 1794973225.463607,
     "NBIS": 1794973225.463607,
@@ -3278,7 +3278,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (22:48 ET / 11:48 BJ) [美联储] [加息]：10月实际零售销售转为负增长、工业产出意外收缩，显示高利率正逐步侵蚀增长动能；但核心消费与招聘市场仍具韧性，市场暂时难以据此下调跨年加息预期",
+    "detail": "⚡ 最新核心快讯 (23:02 ET / 12:02 BJ) [加息]：日本央行行长植田和男表示，当前金融条件仍较宽松，应根据经济和通胀变化继续加息。他同时警告，若紧急购债被视为替政府融资，反而可能加剧长期利率波动。点击查看…",
     "event_name": "",
     "minutes_left": 0
   }
