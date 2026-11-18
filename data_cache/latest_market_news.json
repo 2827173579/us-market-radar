@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795021343.845,
-  "updated_at_et": "11-18 12:02 ET",
-  "updated_at_kst": "02:02 KST",
+  "updated_at_ts": 1795021439.662,
+  "updated_at_et": "11-18 12:03 ET",
+  "updated_at_kst": "02:03 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1938,6 +1938,13 @@
     ],
     "TSLA": [
       {
+        "title": "Roamly Announces Insurance for Tesla Cybercab",
+        "url": "https://finance.yahoo.com/healthcare/articles/roamly-announces-insurance-tesla-cybercab-163600608.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 11:36 ET",
+        "pub_ts": 1795019760.0
+      },
+      {
         "title": "Tesla Energy's New Product A 'Meaningful Positive' For The Company, But Not The Stock",
         "url": "https://finance.yahoo.com/m/1f2e08ec-f9ae-3e3d-ab51-5074687fa636/tesla-energy%27s-new-product-a.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1964,13 +1971,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 10:25 ET",
         "pub_ts": 1795015502.0
-      },
-      {
-        "title": "Waymo’s Speed Bump Is Bad News for Tesla",
-        "url": "https://finance.yahoo.com/m/0af187b5-21b7-3e7a-9a40-e7e22bcf537c/waymo%E2%80%99s-speed-bump-is-bad.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 09:56 ET",
-        "pub_ts": 1795013760.0
       }
     ],
     "AXP": [
@@ -2049,6 +2049,13 @@
     ],
     "KO": [
       {
+        "title": "TD Cowen Raises Its Coca-Cola Target to $112. Is It Still Too Low?",
+        "url": "https://www.tikr.com/blog/td-cowen-raises-its-coca-cola-target-to-112-is-it-still-too-low?ref=yahoofinance&tlnk=yf-261118-x28g92cq&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 11:28 ET",
+        "pub_ts": 1795019286.0
+      },
+      {
         "title": "Owala and Coca-Cola team up for new Amazon-exclusive release",
         "url": "https://www.thestreet.com/retail/owala-coca-cola-new-amazon-exclusive-collaboration?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2075,13 +2082,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 08:00 ET",
         "pub_ts": 1795006804.0
-      },
-      {
-        "title": "ETFs Are Net Sellers of Coca-Cola (KO) on Nov. 16",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-net-sellers-coca-cola-110222816.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 06:02 ET",
-        "pub_ts": 1794999742.0
       }
     ],
     "FLY": [
@@ -2123,6 +2123,13 @@
     ],
     "INTC": [
       {
+        "title": "Microsoft and Intel Deepen Collaboration to Deliver Differentiated Azure Infrastructure",
+        "url": "https://finance.yahoo.com/technology/ai/articles/microsoft-intel-deepen-collaboration-deliver-164700932.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 11:47 ET",
+        "pub_ts": 1795020420.0
+      },
+      {
         "title": "Intel's Turnaround Takes Another Turn With Reported Job Cuts",
         "url": "https://finance.yahoo.com/markets/stocks/articles/intels-turnaround-takes-another-turn-161213485.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2149,13 +2156,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 11:00 ET",
         "pub_ts": 1795017600.0
-      },
-      {
-        "title": "Wi-Fi Chipsets - Global Strategic Business Report 2026: Capitalize on the $26.4 Billion 2032 Shift as Broadcom, Qualcomm, MediaTek, Intel, and Realtek Accelerate Wi-Fi 6/6E Adoption",
-        "url": "https://finance.yahoo.com/technology/articles/wi-fi-chipsets-global-strategic-151500470.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 10:15 ET",
-        "pub_ts": 1795014900.0
       }
     ],
     "VRT": [
@@ -3198,16 +3198,16 @@
   "ticker_news_ts": {
     "KORU": 1795020057.3473432,
     "SOXL": 1795020160.1172316,
-    "SPY": 1795019855.9737024,
-    "DIA": 1795019855.9737024,
-    "SOXX": 1795019855.9737024,
-    "QQQ": 1795019855.9737024,
-    "SMH": 1795019855.9737024,
-    "IWM": 1795019855.9737024,
-    "IGV": 1795019855.9737024,
+    "SPY": 1795021439.6621916,
+    "DIA": 1795021439.6621916,
+    "SOXX": 1795021439.6621916,
+    "QQQ": 1795021439.6621916,
+    "SMH": 1795021439.6621916,
+    "IWM": 1795021439.6621916,
+    "IGV": 1795021439.6621916,
     "TLT": 1795020057.3473432,
     "GLD": 1795020057.3473432,
-    "SQQQ": 1795019855.9737024,
+    "SQQQ": 1795021439.6621916,
     "TSM": 1795020057.3473432,
     "VIXY": 1795020057.3473432,
     "SOXS": 1795020057.3473432,
@@ -3233,24 +3233,24 @@
     "COHR": 1795020160.1172316,
     "MRVL": 1795020160.1172316,
     "LITE": 1795020260.8692842,
-    "AAOI": 1795019855.9737024,
+    "AAOI": 1795021439.6621916,
     "SPCX": 1795020260.8692842,
     "ASTS": 1795020260.8692842,
     "AXTI": 1795020260.8692842,
-    "NASA": 1795019855.9737024,
-    "LUNR": 1795019855.9737024,
-    "TSLA": 1795019855.9737024,
-    "AXP": 1795019855.9737024,
+    "NASA": 1795021439.6621916,
+    "LUNR": 1795021439.6621916,
+    "TSLA": 1795021439.6621916,
+    "AXP": 1795021439.6621916,
     "RKLB": 1795020260.8692842,
-    "KO": 1795019855.9737024,
+    "KO": 1795021439.6621916,
     "FLY": 1795020260.8692842,
-    "INTC": 1795019855.9737024,
-    "VRT": 1795019855.9737024,
+    "INTC": 1795021439.6621916,
+    "VRT": 1795021439.6621916,
     "HPE": 1795019958.6806808,
     "DELL": 1795019958.6806808,
     "OKLO": 1795019958.6806808,
-    "CEG": 1795019855.9737024,
-    "FPS": 1795019855.9737024,
+    "CEG": 1795021439.6621916,
+    "FPS": 1795021439.6621916,
     "MU": 1795019958.6806808,
     "SKHY": 1795019958.6806808,
     "WDC": 1795019958.6806808,
