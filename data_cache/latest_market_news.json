@@ -1,5 +1,5 @@
 {
-  "updated_at_ts": 1795015159.273,
+  "updated_at_ts": 1795015198.908,
   "updated_at_et": "11-18 10:19 ET",
   "updated_at_kst": "00:19 KST",
   "macro_calendar": [],
@@ -2048,6 +2048,13 @@
     ],
     "KO": [
       {
+        "title": "Coca-Cola vs. Monster Beverage: Which Consumer Goods Stock Is a Better Buy for 2027?",
+        "url": "https://www.fool.com/coverage/better-buy/2026/11/18/coca-cola-vs-monster-beverage-which-consumer-goods-stock-is-a-better-buy-for-2027/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 10:05 ET",
+        "pub_ts": 1795014302.0
+      },
+      {
         "title": "What Does Warren Buffett’s 90/10 Rule Say to a 74-Year-Old With $1 Million of Coca-Cola at a Record?",
         "url": "https://247wallst.com/investing/2026/11/16/what-does-warren-buffetts-90-10-rule-say-to-a-74-year-old-with-1-million-of-coca-cola-at-a-record/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2074,13 +2081,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 01:05 ET",
         "pub_ts": 1794981915.0
-      },
-      {
-        "title": "Coca-Cola (KO) Named a 2027 Best Idea by TD Cowen",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/coca-cola-ko-named-2027-232431419.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 18:24 ET",
-        "pub_ts": 1794957871.0
       }
     ],
     "FLY": [
@@ -2217,18 +2217,18 @@
         "pub_ts": 1794999600.0
       },
       {
+        "title": "Global Router Market Report 2026: Size, Share, Trends, and Forecast to 2030 | Capitalize on 5G, Wi-Fi 6 and AI as Cisco, Huawei, HPE and Nokia Drive Market to $42.93B",
+        "url": "https://finance.yahoo.com/technology/articles/global-router-market-report-2026-150300358.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 10:03 ET",
+        "pub_ts": 1795014180.0
+      },
+      {
         "title": "Buy These 5 Undervalued Stocks With Attractive Price-to-Book Ratios",
         "url": "https://finance.yahoo.com/markets/stocks/articles/buy-5-undervalued-stocks-attractive-132900839.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-18 08:29 ET",
         "pub_ts": 1795008540.0
-      },
-      {
-        "title": "Gear Up for Hewlett Packard Enterprise (HPE) Q4 Earnings: Wall Street Estimates for Key Metrics",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/gear-hewlett-packard-enterprise-hpe-131505904.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 08:15 ET",
-        "pub_ts": 1795007705.0
       }
     ],
     "DELL": [
@@ -2238,6 +2238,13 @@
         "source": "Yahoo Finance",
         "time": "11-18 09:18 ET",
         "pub_ts": 1795011480.0
+      },
+      {
+        "title": "Dell Technologies (DELL) May Find a Bottom Soon, Here's Why You Should Buy the Stock Now",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/dell-technologies-dell-may-bottom-135503194.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 08:55 ET",
+        "pub_ts": 1795010103.0
       },
       {
         "title": "Is Dell Technologies (DELL) a Buy as Wall Street Analysts Look Optimistic?",
@@ -2259,13 +2266,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 07:17 ET",
         "pub_ts": 1795004270.0
-      },
-      {
-        "title": "Dell Has Tumbled Since September: Why Bernstein Still Sees 103% Upside",
-        "url": "https://www.tikr.com/blog/dell-has-tumbled-since-september-why-bernstein-still-sees-103-upside?ref=yahoofinance&tlnk=yf-261118-vffj424f&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 20:05 ET",
-        "pub_ts": 1794963954.0
       }
     ],
     "OKLO": [
@@ -3197,16 +3197,16 @@
   "ticker_news_ts": {
     "KORU": 1795013914.6052787,
     "SOXL": 1795013995.9566576,
-    "SPY": 1795013680.5373304,
-    "DIA": 1795013680.5373304,
-    "SOXX": 1795013680.5373304,
-    "QQQ": 1795013680.5373304,
-    "SMH": 1795013680.5373304,
-    "IWM": 1795013680.5373304,
-    "IGV": 1795013680.5373304,
+    "SPY": 1795015198.9078414,
+    "DIA": 1795015198.9078414,
+    "SOXX": 1795015198.9078414,
+    "QQQ": 1795015198.9078414,
+    "SMH": 1795015198.9078414,
+    "IWM": 1795015198.9078414,
+    "IGV": 1795015198.9078414,
     "TLT": 1795013914.6052787,
     "GLD": 1795013914.6052787,
-    "SQQQ": 1795013680.5373304,
+    "SQQQ": 1795015198.9078414,
     "TSM": 1795013914.6052787,
     "VIXY": 1795013914.6052787,
     "SOXS": 1795013914.6052787,
@@ -3232,30 +3232,30 @@
     "COHR": 1795013995.9566576,
     "MRVL": 1795013995.9566576,
     "LITE": 1795013995.9566576,
-    "AAOI": 1795013680.5373304,
+    "AAOI": 1795015198.9078414,
     "SPCX": 1795013995.9566576,
     "ASTS": 1795013995.9566576,
     "AXTI": 1795013995.9566576,
-    "NASA": 1795013680.5373304,
-    "LUNR": 1795013680.5373304,
-    "TSLA": 1795013680.5373304,
-    "AXP": 1795013680.5373304,
+    "NASA": 1795015198.9078414,
+    "LUNR": 1795015198.9078414,
+    "TSLA": 1795015198.9078414,
+    "AXP": 1795015198.9078414,
     "RKLB": 1795014064.035744,
-    "KO": 1795013680.5373304,
+    "KO": 1795015198.9078414,
     "FLY": 1795014064.035744,
-    "INTC": 1795013680.5373304,
-    "VRT": 1795013680.5373304,
-    "HPE": 1795013680.5373304,
-    "DELL": 1795013680.5373304,
-    "OKLO": 1795013680.5373304,
-    "CEG": 1795013680.5373304,
-    "FPS": 1795013680.5373304,
-    "MU": 1795013680.5373304,
-    "SKHY": 1795013680.5373304,
-    "WDC": 1795013680.5373304,
+    "INTC": 1795015198.9078414,
+    "VRT": 1795015198.9078414,
+    "HPE": 1795015198.9078414,
+    "DELL": 1795015198.9078414,
+    "OKLO": 1795015198.9078414,
+    "CEG": 1795015198.9078414,
+    "FPS": 1795015198.9078414,
+    "MU": 1795015198.9078414,
+    "SKHY": 1795015198.9078414,
+    "WDC": 1795015198.9078414,
     "STX": 1795013914.6052787,
     "MSTR": 1795013914.6052787,
-    "SNDK": 1795013680.5373304,
+    "SNDK": 1795015198.9078414,
     "BTC-USD": 1795013914.6052787,
     "CRWD": 1795013914.6052787,
     "ORCL": 1795013914.6052787,
