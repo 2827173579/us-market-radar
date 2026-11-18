@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795033922.865,
-  "updated_at_et": "11-18 15:32 ET",
-  "updated_at_kst": "05:32 KST",
+  "updated_at_ts": 1795034026.891,
+  "updated_at_et": "11-18 15:33 ET",
+  "updated_at_kst": "05:33 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -495,6 +495,13 @@
     ],
     "SOXX": [
       {
+        "title": "Which Funds With Semiconductor Exposure Best Capture The China AI Chip Curbs?",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/funds-semiconductor-exposure-best-capture-200931859.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 15:09 ET",
+        "pub_ts": 1795032571.0
+      },
+      {
         "title": "Peter Thiel Sold Every Utility Stock He Owned and Bet $161 Million on One Chip ETF. It's Down $37 Million Since",
         "url": "https://247wallst.com/investing/2026/11/18/peter-thiel-sold-every-utility-stock-he-owned-and-bet-161-million-on-one-chip-etf-its-down-37-million-since/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -521,13 +528,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 09:04 ET",
         "pub_ts": 1794924296.0
-      },
-      {
-        "title": "ETFs Are Net Sellers of Analog Devices (ADI) on Nov. 16",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-net-sellers-analog-devices-110310828.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 06:03 ET",
-        "pub_ts": 1794999790.0
       }
     ],
     "QQQ": [
@@ -569,6 +569,13 @@
     ],
     "SMH": [
       {
+        "title": "Which Funds With Semiconductor Exposure Best Capture The China AI Chip Curbs?",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/funds-semiconductor-exposure-best-capture-200931859.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 15:09 ET",
+        "pub_ts": 1795032571.0
+      },
+      {
         "title": "Nvidia Q3 Results Underpin Wall Street Pre-Bell; Asia Mixed, Europe Up",
         "url": "https://finance.yahoo.com/markets/stocks/articles/nvidia-q3-results-underpin-wall-112023816.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -595,13 +602,6 @@
         "source": "Yahoo Finance",
         "time": "11-16 16:06 ET",
         "pub_ts": 1794863170.0
-      },
-      {
-        "title": "Jensen Huang Offered to Come Back and Nvidia Gained $90 Billion in 10 Minutes. Here’s What the Stock Did the Last Four Times a Board Took the Boss Back",
-        "url": "https://247wallst.com/investing/2026/11/17/jensen-huang-offered-to-come-back-and-nvidia-gained-90-billion-in-10-minutes-heres-what-the-stock-did-the-last-four-times-a-board-took-the-boss-back/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 15:21 ET",
-        "pub_ts": 1794946860.0
       }
     ],
     "IWM": [
@@ -2123,6 +2123,13 @@
     ],
     "INTC": [
       {
+        "title": "SpaceX Is Now Nvidia's Biggest Stock Holding, Ahead of Intel. Here's What That Says About SpaceX.",
+        "url": "https://www.fool.com/investing/2026/11/18/spacex-is-now-nvidia-s-biggest-stock-holding-ahead-of-intel-here-s-what-that-says-about-spacex/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 15:17 ET",
+        "pub_ts": 1795033022.0
+      },
+      {
         "title": "Microsoft, Intel Deepen Azure Partnership Amid Increasing AI, Cloud Demand",
         "url": "https://stocktwits.com/news-articles/markets/equity/microsoft-intel-deepen-azure-partnership-amid-increasing-ai-cloud-demand/cNbg90QR9L6?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2149,13 +2156,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 11:11 ET",
         "pub_ts": 1795018290.0
-      },
-      {
-        "title": "Intel Stock Has a Bunch of New Problems -- Nvidia Just Added Another",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/intel-stock-bunch-problems-nvidia-160104911.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 11:01 ET",
-        "pub_ts": 1795017664.0
       }
     ],
     "VRT": [
@@ -3198,16 +3198,16 @@
   "ticker_news_ts": {
     "KORU": 1795032745.6879692,
     "SOXL": 1795032745.6879692,
-    "SPY": 1795032440.195355,
-    "DIA": 1795032440.195355,
-    "SOXX": 1795032440.195355,
-    "QQQ": 1795032440.195355,
-    "SMH": 1795032440.195355,
-    "IWM": 1795032440.195355,
-    "IGV": 1795032440.195355,
+    "SPY": 1795034026.8911757,
+    "DIA": 1795034026.8911757,
+    "SOXX": 1795034026.8911757,
+    "QQQ": 1795034026.8911757,
+    "SMH": 1795034026.8911757,
+    "IWM": 1795034026.8911757,
+    "IGV": 1795034026.8911757,
     "TLT": 1795032643.720815,
     "GLD": 1795032643.720815,
-    "SQQQ": 1795032440.195355,
+    "SQQQ": 1795034026.8911757,
     "TSM": 1795032643.720815,
     "VIXY": 1795032643.720815,
     "SOXS": 1795032643.720815,
@@ -3233,24 +3233,24 @@
     "COHR": 1795032745.6879692,
     "MRVL": 1795032745.6879692,
     "LITE": 1795032852.5726488,
-    "AAOI": 1795032440.195355,
+    "AAOI": 1795034026.8911757,
     "SPCX": 1795032852.5726488,
     "ASTS": 1795032852.5726488,
     "AXTI": 1795032852.5726488,
-    "NASA": 1795032440.195355,
-    "LUNR": 1795032440.195355,
-    "TSLA": 1795032440.195355,
-    "AXP": 1795032440.195355,
+    "NASA": 1795034026.8911757,
+    "LUNR": 1795034026.8911757,
+    "TSLA": 1795034026.8911757,
+    "AXP": 1795034026.8911757,
     "RKLB": 1795032852.5726488,
-    "KO": 1795032440.195355,
+    "KO": 1795034026.8911757,
     "FLY": 1795032852.5726488,
-    "INTC": 1795032440.195355,
-    "VRT": 1795032440.195355,
+    "INTC": 1795034026.8911757,
+    "VRT": 1795034026.8911757,
     "HPE": 1795032542.2038507,
     "DELL": 1795032542.2038507,
     "OKLO": 1795032542.2038507,
-    "CEG": 1795032440.195355,
-    "FPS": 1795032440.195355,
+    "CEG": 1795034026.8911757,
+    "FPS": 1795034026.8911757,
     "MU": 1795032542.2038507,
     "SKHY": 1795032542.2038507,
     "WDC": 1795032542.2038507,
