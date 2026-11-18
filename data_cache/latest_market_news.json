@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795030965.249,
-  "updated_at_et": "11-18 14:42 ET",
-  "updated_at_kst": "04:42 KST",
+  "updated_at_ts": 1795031062.988,
+  "updated_at_et": "11-18 14:44 ET",
+  "updated_at_kst": "04:44 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -798,6 +798,13 @@
         "pub_ts": 1794952919.0
       },
       {
+        "title": "Nvidia, Micron and TSMC Face a Massive Wave of Bearish Bets",
+        "url": "https://finance.yahoo.com/markets/options/articles/nvidia-micron-tsmc-face-massive-191112704.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 14:11 ET",
+        "pub_ts": 1795029072.0
+      },
+      {
         "title": "A $2.8 Billion Fund Dumps These 3 Stocks",
         "url": "https://www.tikr.com/blog/a-2-8-billion-fund-dumps-these-3-stocks-2?ref=yahoofinance&tlnk=yf-261118-xfp5v642&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -817,13 +824,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 10:29 ET",
         "pub_ts": 1795015785.0
-      },
-      {
-        "title": "Broadcom Has a $27 Billion Advantage Over Taiwan Semiconductor as Your Portfolio’s AI Anchor",
-        "url": "https://247wallst.com/investing/2026/11/18/broadcom-has-a-27-billion-advantage-over-taiwan-semiconductor-as-your-portfolios-ai-anchor/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 08:45 ET",
-        "pub_ts": 1795009505.0
       }
     ],
     "VIXY": [
@@ -902,11 +902,25 @@
     ],
     "NVDA": [
       {
+        "title": "Jensen Huang and Howard Lutnick will appear publicly before a powerful Senate panel",
+        "url": "https://finance.yahoo.com/markets/article/jensen-huang-and-howard-lutnick-will-appear-publicly-before-a-powerful-senate-panel-192842634.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 14:28 ET",
+        "pub_ts": 1795030122.0
+      },
+      {
         "title": "Why every investors should consider ETFs for their portfolios",
         "url": "https://finance.yahoo.com/video/why-every-investors-should-consider-etfs-for-their-portfolios-185100145.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-18 13:51 ET",
         "pub_ts": 1795027860.0
+      },
+      {
+        "title": "Nvidia, Micron and TSMC Face a Massive Wave of Bearish Bets",
+        "url": "https://finance.yahoo.com/markets/options/articles/nvidia-micron-tsmc-face-massive-191112704.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 14:11 ET",
+        "pub_ts": 1795029072.0
       },
       {
         "title": "Nvidia's $130 Billion Forecast Sparks Fresh AI Stock Rally",
@@ -921,20 +935,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 14:05 ET",
         "pub_ts": 1795028730.0
-      },
-      {
-        "title": "Could Nvidia’s Leadership Change Turn Three Fed Rate Hikes Into a Policy Mistake?",
-        "url": "https://unchainedcrypto.com/could-nvidias-leadership-change-turn-three-fed-rate-hikes-into-a-policy-mistake/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 14:00 ET",
-        "pub_ts": 1795028411.0
-      },
-      {
-        "title": "Update: US Equity Indexes Mixed as Nvidia Hits Risk Sentiment While Investors Await Fed Minutes, Anthropic's IPO Pricing",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/us-equity-indexes-mixed-nvidia-185933786.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 13:59 ET",
-        "pub_ts": 1795028373.0
       }
     ],
     "AMD": [
@@ -1078,11 +1078,11 @@
         "pub_ts": 1795022610.0
       },
       {
-        "title": "Nvidia Vs. Broadcom: Which AI Stock Could Be The Better Investment Through 2028?",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/nvidia-vs-broadcom-ai-stock-154749701.html?.tsrc=rss",
+        "title": "European Central Bank sees ‘historical parallels with the dotcom and subprime bubbles’ because of AI’s ‘rapid shift’ into debt finance",
+        "url": "https://finance.yahoo.com/economy/policy/articles/european-central-bank-sees-historical-155025812.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-18 10:47 ET",
-        "pub_ts": 1795016869.0
+        "time": "11-18 10:50 ET",
+        "pub_ts": 1795017025.0
       }
     ],
     "AMAT": [
@@ -1198,6 +1198,13 @@
     ],
     "MSFT": [
       {
+        "title": "Elastic Makes High-Accuracy, Cost-Efficient Jina AI Models Available on Microsoft Foundry",
+        "url": "https://finance.yahoo.com/technology/ai/articles/elastic-makes-high-accuracy-cost-193100251.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 14:31 ET",
+        "pub_ts": 1795030260.0
+      },
+      {
         "title": "Factory Expands Collaboration with Microsoft to Bring Autonomous Software Engineering to Enterprises",
         "url": "https://finance.yahoo.com/technology/ai/articles/factory-expands-collaboration-microsoft-bring-190400724.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1224,13 +1231,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 13:22 ET",
         "pub_ts": 1795026165.0
-      },
-      {
-        "title": "Microsoft, Intel Deepen Azure Partnership Amid Increasing AI, Cloud Demand",
-        "url": "https://stocktwits.com/news-articles/markets/equity/microsoft-intel-deepen-azure-partnership-amid-increasing-ai-cloud-demand/cNbg90QR9L6?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 13:21 ET",
-        "pub_ts": 1795026065.0
       }
     ],
     "AAPL": [
@@ -2604,39 +2604,39 @@
     ],
     "BTC-USD": [
       {
+        "title": "What a half-point rate hike from the Fed could mean for crypto",
+        "url": "https://finance.yahoo.com/video/half-point-rate-hike-fed-193000144.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 14:30 ET",
+        "pub_ts": 1795030200.0
+      },
+      {
+        "title": "Bitcoin Tanks Ahead of Anthropic’s IPO. Should We Really Blame AI?",
+        "url": "https://decrypt.co/383551/bitcoin-tanks-ahead-anthropics-ipo-should-we-really-blame-ai?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 14:16 ET",
+        "pub_ts": 1795029362.0
+      },
+      {
+        "title": "MARA Adds Debt for AI Power Push After Selling $2.2 Billion of Bitcoin to Cut Loans",
+        "url": "https://www.cryptoprowl.com/releases/mara-adds-debt-for-ai-power-push-after-selling-22-billion-of-bitcoin-to-cut-loans-7969?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 14:10 ET",
+        "pub_ts": 1795029000.0
+      },
+      {
+        "title": "What $100 a Month in Bitcoin Since 2020 Is Worth After This Crash",
+        "url": "https://247wallst.com/investing/cryptocurrency/2026/11/18/what-100-a-month-in-bitcoin-since-2020-is-worth-after-this-crash/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 14:06 ET",
+        "pub_ts": 1795028770.0
+      },
+      {
         "title": "Stock Market Today: Dow Drops As Nvidia Probe Deepens; Fed Minutes Loom (Live Coverage)",
         "url": "https://finance.yahoo.com/m/3b6d51d3-7bfb-3b08-a92e-3b70e9f0655b/stock-market-today%3A-dow-drops.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-18 14:01 ET",
         "pub_ts": 1795028519.0
-      },
-      {
-        "title": "Sector Update: Financial Stocks Lower in Afternoon Trading",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/sector-financial-stocks-lower-afternoon-190117890.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 14:01 ET",
-        "pub_ts": 1795028477.0
-      },
-      {
-        "title": "Bitcoin Miners Are Selling Their Stacks to Fund the AI Boom",
-        "url": "https://decrypt.co/383568/bitcoin-miners-selling-fund-ai-boom?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 13:46 ET",
-        "pub_ts": 1795027563.0
-      },
-      {
-        "title": "Coinbase expands crypto-backed loans to New York, now reaching all 50 states",
-        "url": "https://finance.yahoo.com/video/coinbase-expands-crypto-backed-loans-to-new-york-now-reaching-all-50-states-181657119.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 13:16 ET",
-        "pub_ts": 1795025817.0
-      },
-      {
-        "title": "Nvidia earnings beat lifts Bitcoin mining stocks",
-        "url": "https://www.thestreet.com/crypto/artificial-intelligence/nvidia-earnings-beat-lifts-bitcoin-mining-stocks?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 13:16 ET",
-        "pub_ts": 1795025772.0
       }
     ],
     "CRWD": [
@@ -2729,6 +2729,13 @@
         "pub_ts": 1795021200.0
       },
       {
+        "title": "Elon Musk deepfake nearly costs coinbase users $4.7 million",
+        "url": "https://www.thestreet.com/crypto/markets/elon-musk-deepfake-nearly-costs-coinbase-users-4-7-million?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 14:26 ET",
+        "pub_ts": 1795030008.0
+      },
+      {
         "title": "Coinbase Says AI Defenses Blocked $4.7M in Elon Musk Deepfake Crypto Scam",
         "url": "https://www.cryptoprowl.com/releases/coinbase-says-ai-defenses-blocked-47m-in-elon-musk-deepfake-crypto-scam-7964?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2741,13 +2748,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 09:17 ET",
         "pub_ts": 1795011420.0
-      },
-      {
-        "title": "Should You Buy Coinbase Stock Now Or Wait?",
-        "url": "https://www.trefis.com/stock/coin/articles/626249/should-you-buy-coinbase-stock-now-or-wait/2026-11-18?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 08:11 ET",
-        "pub_ts": 1795007514.0
       }
     ],
     "LLY": [
@@ -3205,21 +3205,21 @@
     "SMH": 1795030864.184032,
     "IWM": 1795030864.184032,
     "IGV": 1795030864.184032,
-    "TLT": 1795029483.3725042,
-    "GLD": 1795029483.3725042,
+    "TLT": 1795031062.9878476,
+    "GLD": 1795031062.9878476,
     "SQQQ": 1795030864.184032,
-    "TSM": 1795029483.3725042,
-    "VIXY": 1795029483.3725042,
-    "SOXS": 1795029483.3725042,
-    "NVDA": 1795029483.3725042,
-    "AMD": 1795029483.3725042,
-    "ASML": 1795029483.3725042,
-    "QCOM": 1795029483.3725042,
-    "AVGO": 1795029483.3725042,
-    "AMAT": 1795029483.3725042,
+    "TSM": 1795031062.9878476,
+    "VIXY": 1795031062.9878476,
+    "SOXS": 1795031062.9878476,
+    "NVDA": 1795031062.9878476,
+    "AMD": 1795031062.9878476,
+    "ASML": 1795031062.9878476,
+    "QCOM": 1795031062.9878476,
+    "AVGO": 1795031062.9878476,
+    "AMAT": 1795031062.9878476,
     "META": 1795029586.6983805,
     "GOOGL": 1795029586.6983805,
-    "MSFT": 1795029483.3725042,
+    "MSFT": 1795031062.9878476,
     "AAPL": 1795029586.6983805,
     "PLTR": 1795029586.6983805,
     "NOW": 1795029586.6983805,
@@ -3254,22 +3254,22 @@
     "MU": 1795030965.2491543,
     "SKHY": 1795030965.2491543,
     "WDC": 1795030965.2491543,
-    "STX": 1795029483.3725042,
-    "MSTR": 1795029483.3725042,
+    "STX": 1795031062.9878476,
+    "MSTR": 1795031062.9878476,
     "SNDK": 1795030965.2491543,
-    "BTC-USD": 1795029483.3725042,
-    "CRWD": 1795029483.3725042,
+    "BTC-USD": 1795031062.9878476,
+    "CRWD": 1795031062.9878476,
     "ORCL": 1795029586.6983805,
-    "COIN": 1795029483.3725042,
-    "LLY": 1795029483.3725042,
-    "MRNA": 1795029483.3725042,
+    "COIN": 1795031062.9878476,
+    "LLY": 1795031062.9878476,
+    "MRNA": 1795031062.9878476,
     "NKE": 1795029688.47132,
     "MCD": 1795029788.2317443,
     "PEP": 1795029688.47132,
-    "XOM": 1795029483.3725042,
+    "XOM": 1795031062.9878476,
     "JPM": 1795029688.47132,
     "WMT": 1795029688.47132,
-    "V": 1795029483.3725042,
+    "V": 1795031062.9878476,
     "CAT": 1795029586.6983805,
     "FN": 1795029688.47132,
     "GLW": 1795029688.47132
