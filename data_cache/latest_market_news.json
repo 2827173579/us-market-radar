@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795007543.912,
-  "updated_at_et": "11-18 08:12 ET",
-  "updated_at_kst": "22:12 KST",
+  "updated_at_ts": 1795007587.981,
+  "updated_at_et": "11-18 08:13 ET",
+  "updated_at_kst": "22:13 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2161,6 +2161,13 @@
     ],
     "HPE": [
       {
+        "title": "HPE CEO’s advice to employees: Major in your job, minor in AI",
+        "url": "https://finance.yahoo.com/video/hpe-ceo-advice-employees-major-130000018.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 08:00 ET",
+        "pub_ts": 1795006800.0
+      },
+      {
         "title": "Inside the HPE cooling lab solving AI's power problem",
         "url": "https://finance.yahoo.com/video/inside-hpe-cooling-lab-solving-120000871.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2187,13 +2194,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 22:09 ET",
         "pub_ts": 1794971385.0
-      },
-      {
-        "title": "Super Micro Falls 4%, Dell and Hewlett Packard Enterprise Slide 2%: Do New U.S. Export Curbs Deepen Super Micro’s China Problem?",
-        "url": "https://247wallst.com/investing/2026/11/17/super-micro-falls-4-dell-and-hewlett-packard-enterprise-slide-2-do-new-u-s-export-curbs-deepen-super-micros-china-problem/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 13:02 ET",
-        "pub_ts": 1794938553.0
       }
     ],
     "DELL": [
@@ -2360,6 +2360,13 @@
         "pub_ts": 1795004091.0
       },
       {
+        "title": "3 Catalysts That Will Boost Micron Stock Beyond Strong AI Earnings",
+        "url": "https://finance.yahoo.com/m/dfd72c7d-a0e5-3183-be07-91983664b076/3-catalysts-that-will-boost.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 07:14 ET",
+        "pub_ts": 1795004040.0
+      },
+      {
         "title": "Not Micron. Not Broadcom. This Artificial Intelligence (AI) Stock Will Skyrocket in December After the Latest Sell-Off",
         "url": "https://www.fool.com/investing/2026/11/18/not-micron-not-broadcom-this-artificial-intelligence-ai-stock-will-skyrocket-in-december-after-the-latest-sell-off/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2372,13 +2379,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 04:35 ET",
         "pub_ts": 1794994502.0
-      },
-      {
-        "title": "Nasdaq Futures Lead Wall Street Rebound After Nvidia’s Blowout Forecast, Anthropic IPO Looms: SLS, NKE, MU In Focus",
-        "url": "https://stocktwits.com/news-articles/markets/equity/nasdaq-futures-lead-wall-street-rebound-after-nvidia-s-blowout-forecast-anthropic-ipo-looms-sls-nke-mu-in-focus/cNbX828R9hF?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 22:46 ET",
-        "pub_ts": 1794973587.0
       }
     ],
     "SKHY": [
@@ -3162,16 +3162,16 @@
   "ticker_news_ts": {
     "KORU": 1795006359.0818942,
     "SOXL": 1795006359.0818942,
-    "SPY": 1795006058.4867246,
-    "DIA": 1795006058.4867246,
-    "SOXX": 1795006058.4867246,
-    "QQQ": 1795006058.4867246,
-    "SMH": 1795006058.4867246,
-    "IWM": 1795006058.4867246,
-    "IGV": 1795006058.4867246,
+    "SPY": 1795007587.9805536,
+    "DIA": 1795007587.9805536,
+    "SOXX": 1795007587.9805536,
+    "QQQ": 1795007587.9805536,
+    "SMH": 1795007587.9805536,
+    "IWM": 1795007587.9805536,
+    "IGV": 1795007587.9805536,
     "TLT": 1795006359.0818942,
     "GLD": 1795006359.0818942,
-    "SQQQ": 1795006058.4867246,
+    "SQQQ": 1795007587.9805536,
     "TSM": 1795006359.0818942,
     "VIXY": 1795006359.0818942,
     "SOXS": 1795006359.0818942,
@@ -3197,30 +3197,30 @@
     "COHR": 1795006387.16739,
     "MRVL": 1795006387.16739,
     "LITE": 1795006387.16739,
-    "AAOI": 1795006058.4867246,
+    "AAOI": 1795007587.9805536,
     "SPCX": 1795006387.16739,
     "ASTS": 1795006387.16739,
     "AXTI": 1795006387.16739,
-    "NASA": 1795006058.4867246,
-    "LUNR": 1795006058.4867246,
-    "TSLA": 1795006058.4867246,
-    "AXP": 1795006058.4867246,
+    "NASA": 1795007587.9805536,
+    "LUNR": 1795007587.9805536,
+    "TSLA": 1795007587.9805536,
+    "AXP": 1795007587.9805536,
     "RKLB": 1795006434.3929029,
-    "KO": 1795006058.4867246,
+    "KO": 1795007587.9805536,
     "FLY": 1795006434.3929029,
-    "INTC": 1795006058.4867246,
-    "VRT": 1795006058.4867246,
-    "HPE": 1795006058.4867246,
-    "DELL": 1795006058.4867246,
-    "OKLO": 1795006058.4867246,
-    "CEG": 1795006058.4867246,
-    "FPS": 1795006058.4867246,
-    "MU": 1795006058.4867246,
-    "SKHY": 1795006058.4867246,
-    "WDC": 1795006058.4867246,
+    "INTC": 1795007587.9805536,
+    "VRT": 1795007587.9805536,
+    "HPE": 1795007587.9805536,
+    "DELL": 1795007587.9805536,
+    "OKLO": 1795007587.9805536,
+    "CEG": 1795007587.9805536,
+    "FPS": 1795007587.9805536,
+    "MU": 1795007587.9805536,
+    "SKHY": 1795007587.9805536,
+    "WDC": 1795007587.9805536,
     "STX": 1795006359.0818942,
     "MSTR": 1795006359.0818942,
-    "SNDK": 1795006058.4867246,
+    "SNDK": 1795007587.9805536,
     "BTC-USD": 1795006359.0818942,
     "CRWD": 1795006359.0818942,
     "ORCL": 1795006359.0818942,
