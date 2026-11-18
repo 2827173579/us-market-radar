@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1794996395.131,
-  "updated_at_et": "11-18 05:06 ET",
-  "updated_at_kst": "19:06 KST",
+  "updated_at_ts": 1794996497.287,
+  "updated_at_et": "11-18 05:08 ET",
+  "updated_at_kst": "19:08 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -727,6 +727,13 @@
         "pub_ts": 1794992773.0
       },
       {
+        "title": "Crypto Stocks Rebound As Nvidia’s Earnings Beat Lifts Risk Appetite — Why COIN, CRCL, NXXT Are Moving Today",
+        "url": "https://stocktwits.com/news-articles/markets/equity/crypto-stocks-rebound-as-nvidia-s-earnings-beat-lifts-risk-appetite-why-coin-crcl-nxxt-are-moving-today/cNbXxwVR9LE?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 04:53 ET",
+        "pub_ts": 1794995602.0
+      },
+      {
         "title": "Why CoreWeave May Be the Biggest Loser From Jensen Huang's Resignation",
         "url": "https://www.fool.com/investing/2026/11/18/why-coreweave-biggest-loser-jensen-huang-nvidia-resignation/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -734,25 +741,18 @@
         "pub_ts": 1794995101.0
       },
       {
+        "title": "Nvidia raises guidance; Anthropic IPO in focus - what’s moving markets",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/nvidia-raises-guidance-anthropic-ipo-093739087.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 04:37 ET",
+        "pub_ts": 1794994659.0
+      },
+      {
         "title": "Stock Market Sell-Off: 3 Consumer Stocks I'd Buy With $1,000 Before the End of November",
         "url": "https://www.fool.com/investing/2026/11/18/stock-market-sell-off-3-consumer-stocks-id-buy-with-1000-before-the-end-of-november/?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-18 04:22 ET",
         "pub_ts": 1794993722.0
-      },
-      {
-        "title": "Nvidia's Troubles: 1 Crucial Lesson for Investors",
-        "url": "https://www.fool.com/investing/2026/11/18/nvidia-troubles-1-crucial-lesson-for-investors/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 04:15 ET",
-        "pub_ts": 1794993302.0
-      },
-      {
-        "title": "Market Chatter: Nvidia Co-Founder Jensen Huang Retains Right to Nominate Two Directors",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/market-chatter-nvidia-co-founder-091102982.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 04:11 ET",
-        "pub_ts": 1794993062.0
       }
     ],
     "AMD": [
@@ -1037,18 +1037,18 @@
         "pub_ts": 1794951117.0
       },
       {
-        "title": "Microsoft's AI pitch at Ignite: Cheaper models as business 'token spend is going through the roof'",
-        "url": "https://finance.yahoo.com/markets/article/microsoft-ignite-focuses-on-ai-models-for-specific-tasks-lowering-costs-for-enterprise-203433266.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 15:34 ET",
-        "pub_ts": 1794947673.0
-      },
-      {
         "title": "Market Chatter: Korea Regulator Cites Customer Complaints, Orders Apple, Google, Alibaba, OpenAI to Designate Legal Representatives by January",
         "url": "https://finance.yahoo.com/technology/articles/market-chatter-korea-regulator-cites-085052188.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-18 03:50 ET",
         "pub_ts": 1794991852.0
+      },
+      {
+        "title": "3 Undervalued Stocks With Cash Flow Value Gaps Over 35%",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/3-undervalued-stocks-cash-flow-051544633.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 00:15 ET",
+        "pub_ts": 1794978944.0
       }
     ],
     "AAPL": [
@@ -2496,6 +2496,20 @@
     ],
     "ORCL": [
       {
+        "title": "Oracle Just Dropped 10% in a Month. Executed Perfectly, It’s “a Multiple of Where It Is Today,” per Gil Luria",
+        "url": "https://www.tikr.com/blog/oracle-just-dropped-10-in-a-month-executed-perfectly-its-a-multiple-of-where-it-is-today-per-gil-luria?ref=yahoofinance&tlnk=yf-261118-35j9ph6m&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 04:38 ET",
+        "pub_ts": 1794994727.0
+      },
+      {
+        "title": "Oracle Is 54% Below Its June High. Wall Street Still Sees $236",
+        "url": "https://www.tikr.com/blog/oracle-is-54-below-its-june-high-wall-street-still-sees-236?ref=yahoofinance&tlnk=yf-261118-3pm2r85x&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 04:38 ET",
+        "pub_ts": 1794994726.0
+      },
+      {
         "title": "The Fed’s first close look at the AI buildout finds $3 trillion of AI commitments that aren’t on big tech’s balance sheet as debt",
         "url": "https://finance.yahoo.com/technology/ai/articles/fed-first-close-look-ai-180000354.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2515,20 +2529,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 12:05 ET",
         "pub_ts": 1794935114.0
-      },
-      {
-        "title": "ADBE Stock Alert: Michael Burry Is Buying Adobe Stock",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/adbe-stock-alert-michael-burry-163615491.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 11:36 ET",
-        "pub_ts": 1794933375.0
-      },
-      {
-        "title": "Michael Burry Still Bearish On Nvidia, AI Trade, Buys These Software Names",
-        "url": "https://finance.yahoo.com/m/fb87e84e-214e-3d35-8a3a-327f3a77f0ca/michael-burry-still-bearish.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 10:29 ET",
-        "pub_ts": 1794929390.0
       }
     ],
     "COIN": [
@@ -3014,8 +3014,8 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1794993218.8098907,
-    "SOXL": 1794993218.8098907,
+    "KORU": 1794996497.28717,
+    "SOXL": 1794996497.28717,
     "SPY": 1794996395.1313431,
     "DIA": 1794996395.1313431,
     "SOXX": 1794996395.1313431,
@@ -3023,21 +3023,21 @@
     "SMH": 1794996395.1313431,
     "IWM": 1794996395.1313431,
     "IGV": 1794996395.1313431,
-    "TLT": 1794993409.2506,
-    "GLD": 1794993409.2506,
+    "TLT": 1794996497.28717,
+    "GLD": 1794996497.28717,
     "SQQQ": 1794995982.1758816,
-    "TSM": 1794993658.1687129,
-    "VIXY": 1794993409.2506,
-    "SOXS": 1794993658.1687129,
-    "NVDA": 1794993838.1980608,
-    "AMD": 1794994060.8976185,
-    "ASML": 1794994060.8976185,
-    "QCOM": 1794994060.8976185,
-    "AVGO": 1794994060.8976185,
-    "AMAT": 1794994314.9843023,
+    "TSM": 1794996497.28717,
+    "VIXY": 1794996497.28717,
+    "SOXS": 1794996497.28717,
+    "NVDA": 1794996497.28717,
+    "AMD": 1794996497.28717,
+    "ASML": 1794996497.28717,
+    "QCOM": 1794996497.28717,
+    "AVGO": 1794996497.28717,
+    "AMAT": 1794996497.28717,
     "META": 1794994314.9843023,
     "GOOGL": 1794994314.9843023,
-    "MSFT": 1794994060.8976185,
+    "MSFT": 1794996497.28717,
     "AAPL": 1794994314.9843023,
     "PLTR": 1794994510.3373837,
     "NOW": 1794994510.3373837,
@@ -3072,21 +3072,21 @@
     "MU": 1794996395.1313431,
     "SKHY": 1794996395.1313431,
     "WDC": 1794996395.1313431,
-    "STX": 1794993658.1687129,
+    "STX": 1794996497.28717,
     "MSTR": 1794996395.1313431,
     "SNDK": 1794996395.1313431,
-    "BTC-USD": 1794993838.1980608,
+    "BTC-USD": 1794996497.28717,
     "CRWD": 1794996395.1313431,
-    "ORCL": 1794993041.176518,
-    "COIN": 1794992782.8861766,
-    "LLY": 1794993041.176518,
-    "MRNA": 1794993041.176518,
-    "NKE": 1794993658.1687129,
-    "MCD": 1794993218.8098907,
-    "PEP": 1794993838.1980608,
+    "ORCL": 1794996497.28717,
+    "COIN": 1794996497.28717,
+    "LLY": 1794996497.28717,
+    "MRNA": 1794996497.28717,
+    "NKE": 1794996497.28717,
+    "MCD": 1794996497.28717,
+    "PEP": 1794996497.28717,
     "XOM": 1794996395.1313431,
-    "JPM": 1794993218.8098907,
-    "WMT": 1794993409.2506,
+    "JPM": 1794996497.28717,
+    "WMT": 1794996497.28717,
     "V": 1794996395.1313431,
     "CAT": 1794996395.1313431,
     "FN": 1794995348.47437,
