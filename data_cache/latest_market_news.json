@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795045171.735,
-  "updated_at_et": "11-18 18:39 ET",
-  "updated_at_kst": "08:39 KST",
+  "updated_at_ts": 1795045273.415,
+  "updated_at_et": "11-18 18:41 ET",
+  "updated_at_kst": "08:41 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1162,6 +1162,13 @@
     ],
     "GOOGL": [
       {
+        "title": "Satya Nadella predicts AI agents will reshuffle the economics of the web",
+        "url": "https://finance.yahoo.com/technology/ai/articles/satya-nadella-predicts-ai-agents-225811295.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 17:58 ET",
+        "pub_ts": 1795042691.0
+      },
+      {
         "title": "Dan Ives’ Top 10 AI Revolution Stock Picks: Inside The IVES ETF",
         "url": "https://finance.yahoo.com/technology/ai/articles/dan-ives-top-10-ai-223943794.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1176,25 +1183,18 @@
         "pub_ts": 1795040192.0
       },
       {
+        "title": "Anthropic Prices IPO at $83 a Share",
+        "url": "https://finance.yahoo.com/m/73934389-7de3-3893-b9af-2b11996e8414/anthropic-prices-ipo-at-%2483-a.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 16:47 ET",
+        "pub_ts": 1795038432.0
+      },
+      {
         "title": "Why Anthropic says cybersecurity is one of its 'most important' opportunities",
         "url": "https://finance.yahoo.com/video/why-anthropic-says-cybersecurity-is-one-of-its-most-important-opportunities-214231043.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-18 16:42 ET",
         "pub_ts": 1795038151.0
-      },
-      {
-        "title": "Will Apollo's $40 billion for SpaceX to rent GPUs pay off?",
-        "url": "https://finance.yahoo.com/video/will-apollos-40-billion-for-spacex-to-rent-gpus-pay-off-214146452.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 16:41 ET",
-        "pub_ts": 1795038106.0
-      },
-      {
-        "title": "AI agent swarms could turn major outages into identity risks: Anthropic investor",
-        "url": "https://finance.yahoo.com/video/ai-agent-swarms-could-turn-major-outages-into-identity-risks-anthropic-investor-213612726.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 16:36 ET",
-        "pub_ts": 1795037772.0
       }
     ],
     "MSFT": [
@@ -1532,6 +1532,13 @@
     ],
     "BE": [
       {
+        "title": "TIME Names Bloom Energy Among America’s Top Manufacturers of 2027",
+        "url": "https://finance.yahoo.com/energy/articles/time-names-bloom-energy-among-231300693.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 18:13 ET",
+        "pub_ts": 1795043580.0
+      },
+      {
         "title": "EXCLUSIVE: AI Data Centers Face Years Waiting for Grid Power. Bloom Says They Don’t Have to Wait",
         "url": "https://www.benzinga.com/markets/prediction-markets/26/11/63408856/exclusive-ai-data-centers-face-years-waiting-for-grid-power-bloom-says-they-dont-have-to-wait?utm_source=yahooFinance&utm_campaign=partner_feed&utm_medium=referral&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1558,13 +1565,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 07:25 ET",
         "pub_ts": 1795004700.0
-      },
-      {
-        "title": "“A Standard for AI Onsite Power”: Bloom Energy Is Up 100% in 2026. Is It Too Late to Buy?",
-        "url": "https://www.tikr.com/blog/a-standard-for-ai-onsite-power-bloom-energy-is-up-100-in-2026-is-it-too-late-to-buy?ref=yahoofinance&tlnk=yf-261118-c9g4fxr7&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 23:59 ET",
-        "pub_ts": 1794977943.0
       }
     ],
     "CRDO": [
@@ -3086,6 +3086,13 @@
     ],
     "CAT": [
       {
+        "title": "Morgan Stanley sees Caterpillar rental gains, stays cautious",
+        "url": "https://www.thestreet.com/investing/stocks/morgan-stanley-sees-caterpillar-rental-gains-stays-cautious?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 18:17 ET",
+        "pub_ts": 1795043820.0
+      },
+      {
         "title": "Top Stock Reports for Merck, Caterpillar & Union Pacific",
         "url": "https://finance.yahoo.com/markets/stocks/articles/top-stock-reports-merck-caterpillar-202700360.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3112,13 +3119,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 08:05 ET",
         "pub_ts": 1795007115.0
-      },
-      {
-        "title": "Spdr Dow Jones (DIA) Sells Goldman Sachs and Caterpillar on Nov. 16",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/spdr-dow-jones-dia-sells-110421013.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 06:04 ET",
-        "pub_ts": 1794999861.0
       }
     ],
     "FN": [
@@ -3197,8 +3197,8 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795043701.6237967,
-    "SOXL": 1795043701.6237967,
+    "KORU": 1795045273.4150965,
+    "SOXL": 1795045273.4150965,
     "SPY": 1795044966.618772,
     "DIA": 1795044966.618772,
     "SOXX": 1795044966.618772,
@@ -3218,21 +3218,21 @@
     "QCOM": 1795045171.7347817,
     "AVGO": 1795045171.7347817,
     "AMAT": 1795045171.7347817,
-    "META": 1795043701.6237967,
-    "GOOGL": 1795043701.6237967,
+    "META": 1795045273.4150965,
+    "GOOGL": 1795045273.4150965,
     "MSFT": 1795045171.7347817,
-    "AAPL": 1795043701.6237967,
-    "PLTR": 1795043701.6237967,
-    "NOW": 1795043701.6237967,
-    "AMZN": 1795043701.6237967,
-    "CRWV": 1795043701.6237967,
-    "NBIS": 1795043701.6237967,
-    "APLD": 1795043701.6237967,
-    "VST": 1795043701.6237967,
-    "BE": 1795043701.6237967,
-    "CRDO": 1795043701.6237967,
-    "COHR": 1795043701.6237967,
-    "MRVL": 1795043701.6237967,
+    "AAPL": 1795045273.4150965,
+    "PLTR": 1795045273.4150965,
+    "NOW": 1795045273.4150965,
+    "AMZN": 1795045273.4150965,
+    "CRWV": 1795045273.4150965,
+    "NBIS": 1795045273.4150965,
+    "APLD": 1795045273.4150965,
+    "VST": 1795045273.4150965,
+    "BE": 1795045273.4150965,
+    "CRDO": 1795045273.4150965,
+    "COHR": 1795045273.4150965,
+    "MRVL": 1795045273.4150965,
     "LITE": 1795043803.0387235,
     "AAOI": 1795044966.618772,
     "SPCX": 1795043803.0387235,
@@ -3260,18 +3260,18 @@
     "SNDK": 1795045171.7347817,
     "BTC-USD": 1795045171.7347817,
     "CRWD": 1795045171.7347817,
-    "ORCL": 1795043701.6237967,
-    "COIN": 1795043701.6237967,
-    "LLY": 1795043701.6237967,
-    "MRNA": 1795043701.6237967,
+    "ORCL": 1795045273.4150965,
+    "COIN": 1795045273.4150965,
+    "LLY": 1795045273.4150965,
+    "MRNA": 1795045273.4150965,
     "NKE": 1795043803.0387235,
     "MCD": 1795043998.7112253,
     "PEP": 1795043803.0387235,
-    "XOM": 1795043701.6237967,
+    "XOM": 1795045273.4150965,
     "JPM": 1795043803.0387235,
     "WMT": 1795043803.0387235,
-    "V": 1795043701.6237967,
-    "CAT": 1795043701.6237967,
+    "V": 1795045273.4150965,
+    "CAT": 1795045273.4150965,
     "FN": 1795043803.0387235,
     "GLW": 1795043803.0387235
   },
