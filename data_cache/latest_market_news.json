@@ -1,8 +1,28 @@
 {
-  "updated_at_ts": 1795012041.281,
+  "updated_at_ts": 1795012069.169,
   "updated_at_et": "11-18 09:27 ET",
   "updated_at_kst": "23:27 KST",
-  "macro_calendar": [],
+  "macro_calendar": [
+    {
+      "event_id": "ff_FOMC Meeting Minutes_2026-11-18T14:00:00-05:00",
+      "name": "美国FOMC Meeting Minutes",
+      "country": "USD",
+      "star": 5,
+      "pub_time_ts": 1795028400.0,
+      "pub_time_et": "11-18 14:00 ET",
+      "pub_time_bj": "03:00 BJ",
+      "pub_time_kst": "04:00 KST",
+      "previous": "待公布",
+      "forecast": "待公布",
+      "actual": "待公布",
+      "unit": "",
+      "status": "upcoming",
+      "minutes_left": 273,
+      "impact_tone": "pending",
+      "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
+      "source": "forexfactory"
+    }
+  ],
   "macro_flashes": [
     {
       "id": "20261118213335597800",
@@ -3269,10 +3289,10 @@
     "GLW": 1795010954.9863222
   },
   "calendar_banner": {
-    "level": "idle_with_flash",
-    "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (08:33 ET / 21:33 BJ) [美联储] [加息] [英伟达]：重要新闻 1. 美联储理事沃勒：美联储在加息方面需要更加积极。若不释放1月加息的信号，应在12月加息50个基点。 2. 据路透社：两名西方官员援引与沙特方面的谈话称，沙特阿拉伯预计与胡塞武装",
-    "event_name": "",
-    "minutes_left": 0
+    "level": "upcoming",
+    "headline": "📅 今日美股重磅预告【美国FOMC Meeting Minutes】· 距公布约 273 分钟（11-18 14:00 ET / 04:00 KST）",
+    "detail": "前值 待公布 ｜ 预期 待公布 ｜ 临近公布前15分钟将自动触发防插针预警",
+    "event_name": "美国FOMC Meeting Minutes",
+    "minutes_left": 273
   }
 }
