@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795045068.697,
-  "updated_at_et": "11-18 18:37 ET",
-  "updated_at_kst": "08:37 KST",
+  "updated_at_ts": 1795045171.735,
+  "updated_at_et": "11-18 18:39 ET",
+  "updated_at_kst": "08:39 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -903,11 +903,18 @@
     ],
     "NVDA": [
       {
-        "title": "The data center bottlenecks that Mavria aims to solve",
-        "url": "https://finance.yahoo.com/video/the-data-center-bottlenecks-that-mavria-aims-to-solve-221600157.html?.tsrc=rss",
+        "title": "Nvidia (NVDA) Stock Drops Despite Q3 Results Showing Huge AI Earnings",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/nvidia-nvda-stock-drops-despite-232131314.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-18 17:16 ET",
-        "pub_ts": 1795040160.0
+        "time": "11-18 18:21 ET",
+        "pub_ts": 1795044091.0
+      },
+      {
+        "title": "Moody’s cuts Nvidia credit outlook to stable after CEO Jensen Huang exits",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/moody-cuts-nvidia-credit-outlook-231405579.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 18:14 ET",
+        "pub_ts": 1795043645.0
       },
       {
         "title": "Two Retirees Each Hold $500,000 in a 401(k) Index Fund as Nvidia’s CFO Takes the Wheel. One Has About $28,950 Riding on a Single Stock. The Other Has About $1,000",
@@ -929,13 +936,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 17:44 ET",
         "pub_ts": 1795041844.0
-      },
-      {
-        "title": "Hot demand lifts Anthropic IPO price to $83 a share: US media",
-        "url": "https://finance.yahoo.com/technology/ai/articles/anthropic-set-price-ipo-key-030309911.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 17:43 ET",
-        "pub_ts": 1795041830.0
       }
     ],
     "AMD": [
@@ -1072,18 +1072,18 @@
         "pub_ts": 1795023300.0
       },
       {
-        "title": "Nvidia’s CEO Calls Customer Shifts “Just Not True.” Broadcom and AMD’s Frontier Deal Share Says Otherwise",
-        "url": "https://www.tikr.com/blog/nvidias-ceo-calls-customer-shifts-just-not-true-broadcom-and-amds-frontier-deal-share-says-otherwise?ref=yahoofinance&tlnk=yf-261118-mm4558vf&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 12:23 ET",
-        "pub_ts": 1795022610.0
-      },
-      {
         "title": "The $1 Trillion Spending Question Hanging Over Anthropic’s IPO",
         "url": "https://finance.yahoo.com/m/cfcce45f-4a68-3ff6-8052-435a6b38ed55/the-%241-trillion-spending.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-18 13:37 ET",
         "pub_ts": 1795027020.0
+      },
+      {
+        "title": "Baird cuts Qualcomm estimates over potential loss of ByteDance chip business",
+        "url": "https://www.proactiveinvestors.com/companies/news/1102042/baird-cuts-qualcomm-estimates-over-potential-loss-of-bytedance-chip-business-1102042.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 13:28 ET",
+        "pub_ts": 1795026480.0
       }
     ],
     "AMAT": [
@@ -1199,6 +1199,13 @@
     ],
     "MSFT": [
       {
+        "title": "Satya Nadella predicts AI agents will reshuffle the economics of the web",
+        "url": "https://finance.yahoo.com/technology/ai/articles/satya-nadella-predicts-ai-agents-225811295.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 17:58 ET",
+        "pub_ts": 1795042691.0
+      },
+      {
         "title": "Billionaire Bill Ackman Sold 2 Million Shares of Microsoft Stock. But Here's Why He Says He's Still Bullish",
         "url": "https://www.fool.com/investing/2026/11/18/billionaire-bill-ackman-sold-2-million-shares-of-microsoft-stock-but-here-s-why-he-says-he-s-still-bullish/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1225,13 +1232,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 16:04 ET",
         "pub_ts": 1795035843.0
-      },
-      {
-        "title": "Microsoft Stock (MSFT) Forecast – Mizuho Stays Bullish on Strong Revenue Growth Prospects",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/microsoft-stock-msft-forecast-mizuho-210000261.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 16:00 ET",
-        "pub_ts": 1795035600.0
       }
     ],
     "AAPL": [
@@ -3206,21 +3206,21 @@
     "SMH": 1795044966.618772,
     "IWM": 1795044966.618772,
     "IGV": 1795044966.618772,
-    "TLT": 1795043599.8458781,
-    "GLD": 1795043599.8458781,
+    "TLT": 1795045171.7347817,
+    "GLD": 1795045171.7347817,
     "SQQQ": 1795044966.618772,
-    "TSM": 1795043599.8458781,
-    "VIXY": 1795043599.8458781,
-    "SOXS": 1795043599.8458781,
-    "NVDA": 1795043599.8458781,
-    "AMD": 1795043599.8458781,
-    "ASML": 1795043599.8458781,
-    "QCOM": 1795043599.8458781,
-    "AVGO": 1795043599.8458781,
-    "AMAT": 1795043599.8458781,
+    "TSM": 1795045171.7347817,
+    "VIXY": 1795045171.7347817,
+    "SOXS": 1795045171.7347817,
+    "NVDA": 1795045171.7347817,
+    "AMD": 1795045171.7347817,
+    "ASML": 1795045171.7347817,
+    "QCOM": 1795045171.7347817,
+    "AVGO": 1795045171.7347817,
+    "AMAT": 1795045171.7347817,
     "META": 1795043701.6237967,
     "GOOGL": 1795043701.6237967,
-    "MSFT": 1795043599.8458781,
+    "MSFT": 1795045171.7347817,
     "AAPL": 1795043701.6237967,
     "PLTR": 1795043701.6237967,
     "NOW": 1795043701.6237967,
@@ -3247,19 +3247,19 @@
     "FLY": 1795043803.0387235,
     "INTC": 1795044966.618772,
     "VRT": 1795044966.618772,
-    "HPE": 1795043599.8458781,
-    "DELL": 1795043599.8458781,
-    "OKLO": 1795043599.8458781,
+    "HPE": 1795045171.7347817,
+    "DELL": 1795045171.7347817,
+    "OKLO": 1795045171.7347817,
     "CEG": 1795044966.618772,
     "FPS": 1795044966.618772,
-    "MU": 1795043599.8458781,
-    "SKHY": 1795043599.8458781,
-    "WDC": 1795043599.8458781,
-    "STX": 1795043599.8458781,
-    "MSTR": 1795043599.8458781,
-    "SNDK": 1795043599.8458781,
-    "BTC-USD": 1795043599.8458781,
-    "CRWD": 1795043599.8458781,
+    "MU": 1795045171.7347817,
+    "SKHY": 1795045171.7347817,
+    "WDC": 1795045171.7347817,
+    "STX": 1795045171.7347817,
+    "MSTR": 1795045171.7347817,
+    "SNDK": 1795045171.7347817,
+    "BTC-USD": 1795045171.7347817,
+    "CRWD": 1795045171.7347817,
     "ORCL": 1795043701.6237967,
     "COIN": 1795043701.6237967,
     "LLY": 1795043701.6237967,
