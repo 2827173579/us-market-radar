@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795024592.724,
-  "updated_at_et": "11-18 12:56 ET",
-  "updated_at_kst": "02:56 KST",
+  "updated_at_ts": 1795024700.847,
+  "updated_at_et": "11-18 12:58 ET",
+  "updated_at_kst": "02:58 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2197,15 +2197,15 @@
     ],
     "HPE": [
       {
-        "title": "HPE CEO’s advice to employees: Major in your job, minor in AI",
-        "url": "https://finance.yahoo.com/video/hpe-ceo-advice-employees-major-130000018.html?.tsrc=rss",
+        "title": "HPE CEO's advice to employees: Major in your job, minor in AI",
+        "url": "https://finance.yahoo.com/video/hpe-ceos-advice-to-employees-major-in-your-job-minor-in-ai-175529247.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-18 08:00 ET",
         "pub_ts": 1795006800.0
       },
       {
         "title": "Inside the HPE cooling lab solving AI's power problem",
-        "url": "https://finance.yahoo.com/video/inside-hpe-cooling-lab-solving-120000871.html?.tsrc=rss",
+        "url": "https://finance.yahoo.com/video/inside-the-hpe-cooling-lab-solving-ais-power-problem-175535946.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-18 07:00 ET",
         "pub_ts": 1795003200.0
@@ -2234,6 +2234,20 @@
     ],
     "DELL": [
       {
+        "title": "3 Reasons Why Growth Investors Shouldn't Overlook Dell Technologies (DELL)",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/3-reasons-why-growth-investors-164502931.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 11:45 ET",
+        "pub_ts": 1795020302.0
+      },
+      {
+        "title": "Snowflake's AI Push Fuels Revenue Growth: Can It Beat DELL & ORCL?",
+        "url": "https://finance.yahoo.com/technology/ai/articles/snowflakes-ai-push-fuels-revenue-164500994.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 11:45 ET",
+        "pub_ts": 1795020300.0
+      },
+      {
         "title": "Dell Technologies (DELL) Could Be 46% Undervalued Following AI Factory Updates",
         "url": "https://finance.yahoo.com/markets/stocks/articles/dell-technologies-dell-could-46-161212529.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2253,20 +2267,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 08:55 ET",
         "pub_ts": 1795010103.0
-      },
-      {
-        "title": "Is Dell Technologies (DELL) a Buy as Wall Street Analysts Look Optimistic?",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/dell-technologies-dell-buy-wall-133004452.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 08:30 ET",
-        "pub_ts": 1795008604.0
-      },
-      {
-        "title": "Investors Heavily Search Dell Technologies Inc. (DELL): Here is What You Need to Know",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/investors-heavily-search-dell-technologies-130005908.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 08:00 ET",
-        "pub_ts": 1795006805.0
       }
     ],
     "OKLO": [
@@ -2419,6 +2419,13 @@
     ],
     "SKHY": [
       {
+        "title": "Nvidia’s Supply Commitments Hit $390 Billion, Mostly Memory. SK Hynix Is the Real Winner",
+        "url": "https://www.tikr.com/blog/nvidias-supply-commitments-hit-390-billion-mostly-memory-sk-hynix-is-the-real-winner?ref=yahoofinance&tlnk=yf-261118-8qxfgxwp&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 12:29 ET",
+        "pub_ts": 1795022999.0
+      },
+      {
         "title": "Why Is SK Hynix Stock Rising Today?",
         "url": "https://investorshub.advfn.com/market-news/article/40271/why-is-sk-hynix-stock-rising-today?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2445,13 +2452,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 19:18 ET",
         "pub_ts": 1794961123.0
-      },
-      {
-        "title": "What Is SK hynix (NasdaqGS:SKHY) Really Aiming For With Its $1 Billion Chip Push?",
-        "url": "https://finance.yahoo.com/technology/articles/sk-hynix-nasdaqgs-skhy-really-220914267.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 17:09 ET",
-        "pub_ts": 1794953354.0
       }
     ],
     "WDC": [
@@ -3246,17 +3246,17 @@
     "FLY": 1795023426.232256,
     "INTC": 1795024592.7241044,
     "VRT": 1795024592.7241044,
-    "HPE": 1795023122.8140287,
-    "DELL": 1795023122.8140287,
-    "OKLO": 1795023122.8140287,
+    "HPE": 1795024700.8465908,
+    "DELL": 1795024700.8465908,
+    "OKLO": 1795024700.8465908,
     "CEG": 1795024592.7241044,
     "FPS": 1795024592.7241044,
-    "MU": 1795023122.8140287,
-    "SKHY": 1795023122.8140287,
-    "WDC": 1795023122.8140287,
+    "MU": 1795024700.8465908,
+    "SKHY": 1795024700.8465908,
+    "WDC": 1795024700.8465908,
     "STX": 1795023221.5243008,
     "MSTR": 1795023221.5243008,
-    "SNDK": 1795023122.8140287,
+    "SNDK": 1795024700.8465908,
     "BTC-USD": 1795023221.5243008,
     "CRWD": 1795023221.5243008,
     "ORCL": 1795023324.9805725,
