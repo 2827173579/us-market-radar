@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795035502.414,
-  "updated_at_et": "11-18 15:58 ET",
-  "updated_at_kst": "05:58 KST",
+  "updated_at_ts": 1795035599.287,
+  "updated_at_et": "11-18 15:59 ET",
+  "updated_at_kst": "05:59 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1938,6 +1938,13 @@
     ],
     "TSLA": [
       {
+        "title": "Skydance's David Ellison calls Elon Musk 'the greatest entrepreneur of our time'",
+        "url": "https://finance.yahoo.com/media-advertising/article/skydances-david-ellison-calls-elon-musk-the-greatest-entrepreneur-of-our-time-205405607.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 15:54 ET",
+        "pub_ts": 1795035245.0
+      },
+      {
         "title": "Egan-Jones Examines What the Tesla Roadster Demo Signals for Automakers",
         "url": "https://finance.yahoo.com/technology/articles/egan-jones-examines-tesla-roadster-180000836.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1952,25 +1959,18 @@
         "pub_ts": 1795023208.0
       },
       {
+        "title": "Waymo Ordered Off California Freeways for an “Imminent Hazard to Public Safety.” Tesla Has More at Stake",
+        "url": "https://www.tikr.com/blog/waymo-ordered-off-california-freeways-for-an-imminent-hazard-to-public-safety-tesla-has-more-at-stake?ref=yahoofinance&tlnk=yf-261118-2v3m6mxf&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 11:55 ET",
+        "pub_ts": 1795020935.0
+      },
+      {
         "title": "Roamly Announces Insurance for Tesla Cybercab",
         "url": "https://finance.yahoo.com/healthcare/articles/roamly-announces-insurance-tesla-cybercab-163600608.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-18 11:36 ET",
         "pub_ts": 1795019760.0
-      },
-      {
-        "title": "'Coming Soon': Elon Musk Hints Tesla Owners Could Put Their Model Ys to Work as Robotaxis Without Driving",
-        "url": "https://finance.yahoo.com/technology/articles/coming-soon-elon-musk-hints-163007575.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 11:30 ET",
-        "pub_ts": 1795019407.0
-      },
-      {
-        "title": "Tesla Energy's New Product A 'Meaningful Positive' For The Company, But Not The Stock",
-        "url": "https://finance.yahoo.com/m/1f2e08ec-f9ae-3e3d-ab51-5074687fa636/tesla-energy%27s-new-product-a.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 11:21 ET",
-        "pub_ts": 1795018864.0
       }
     ],
     "AXP": [
@@ -2160,6 +2160,13 @@
     ],
     "VRT": [
       {
+        "title": "Top-Ranked AI Stock to Buy Now on the Dip for 100% Upside: VRT",
+        "url": "https://finance.yahoo.com/technology/ai/articles/top-ranked-ai-stock-buy-194200011.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 14:42 ET",
+        "pub_ts": 1795030920.0
+      },
+      {
         "title": "Boeing, GE Aerospace Lead Trump's $17B-Plus Asia Deals With $12B Aircraft Sale — Vertiv, Panasonic Also In Focus",
         "url": "https://stocktwits.com/news-articles/markets/equity/boeing-ge-aerospace-lead-trump-s-17-b-plus-asia-deals-with-12-b-aircraft-sale-vertiv-panasonic-also-in-focus/cNbgJ3TR9LU?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2186,13 +2193,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 08:40 ET",
         "pub_ts": 1795009201.0
-      },
-      {
-        "title": "Honeywell International vs. Vertiv: Which Industrials Stock Is a Better Buy for 2027?",
-        "url": "https://www.fool.com/coverage/better-buy/2026/11/17/honeywell-international-vs-vertiv-which-industrials-stock-is-a-better-buy-for-2027/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 00:19 ET",
-        "pub_ts": 1794979142.0
       }
     ],
     "HPE": [
@@ -3198,16 +3198,16 @@
   "ticker_news_ts": {
     "KORU": 1795034330.3565893,
     "SOXL": 1795034330.3565893,
-    "SPY": 1795034026.8911757,
-    "DIA": 1795034026.8911757,
-    "SOXX": 1795034026.8911757,
-    "QQQ": 1795034026.8911757,
-    "SMH": 1795034026.8911757,
-    "IWM": 1795034026.8911757,
-    "IGV": 1795034026.8911757,
+    "SPY": 1795035599.2865412,
+    "DIA": 1795035599.2865412,
+    "SOXX": 1795035599.2865412,
+    "QQQ": 1795035599.2865412,
+    "SMH": 1795035599.2865412,
+    "IWM": 1795035599.2865412,
+    "IGV": 1795035599.2865412,
     "TLT": 1795034228.219766,
     "GLD": 1795034228.219766,
-    "SQQQ": 1795034026.8911757,
+    "SQQQ": 1795035599.2865412,
     "TSM": 1795034228.219766,
     "VIXY": 1795034228.219766,
     "SOXS": 1795034228.219766,
@@ -3233,24 +3233,24 @@
     "COHR": 1795034330.3565893,
     "MRVL": 1795034330.3565893,
     "LITE": 1795034432.6876988,
-    "AAOI": 1795034026.8911757,
+    "AAOI": 1795035599.2865412,
     "SPCX": 1795034432.6876988,
     "ASTS": 1795034432.6876988,
     "AXTI": 1795034432.6876988,
-    "NASA": 1795034026.8911757,
-    "LUNR": 1795034026.8911757,
-    "TSLA": 1795034026.8911757,
-    "AXP": 1795034026.8911757,
+    "NASA": 1795035599.2865412,
+    "LUNR": 1795035599.2865412,
+    "TSLA": 1795035599.2865412,
+    "AXP": 1795035599.2865412,
     "RKLB": 1795034432.6876988,
-    "KO": 1795034026.8911757,
+    "KO": 1795035599.2865412,
     "FLY": 1795034432.6876988,
-    "INTC": 1795034026.8911757,
-    "VRT": 1795034026.8911757,
+    "INTC": 1795035599.2865412,
+    "VRT": 1795035599.2865412,
     "HPE": 1795034128.81937,
     "DELL": 1795034128.81937,
     "OKLO": 1795034128.81937,
-    "CEG": 1795034026.8911757,
-    "FPS": 1795034026.8911757,
+    "CEG": 1795035599.2865412,
+    "FPS": 1795035599.2865412,
     "MU": 1795034128.81937,
     "SKHY": 1795034128.81937,
     "WDC": 1795034128.81937,
