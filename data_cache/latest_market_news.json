@@ -1,9 +1,23 @@
 {
-  "updated_at_ts": 1794987496.947,
-  "updated_at_et": "11-18 02:38 ET",
-  "updated_at_kst": "16:38 KST",
+  "updated_at_ts": 1794987778.047,
+  "updated_at_et": "11-18 02:42 ET",
+  "updated_at_kst": "16:42 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261118153927600800",
+      "title": "英国利率期货显示，英国CPI数据公布后，英国央行12月加息概率为80%，较此前的90%有…",
+      "summary": "英国利率期货显示，英国CPI数据公布后，英国央行12月加息概率为80%，较此前的90%有所下降。",
+      "keywords": [
+        "加息",
+        "CPI"
+      ],
+      "pub_ts": 1794987567.0,
+      "time_et": "11-18 02:39 ET",
+      "time_bj": "15:39 BJ",
+      "time_kst": "16:39 KST",
+      "time_display": "02:39 ET / 15:39 BJ"
+    },
     {
       "id": "20261118152054413800",
       "title": "【英伟达临时CEO称将不再向中国出货H200芯片，外交部：中方已多次阐明在美国输华芯片问…",
@@ -335,19 +349,6 @@
       "time_bj": "10:13 BJ",
       "time_kst": "11:13 KST",
       "time_display": "21:13 ET / 10:13 BJ"
-    },
-    {
-      "id": "20261118093255563800",
-      "title": "谁先“眨眼”谁就输？美伊打响时间与经济耐力战",
-      "summary": "美伊战争持续近九个月，双方都试图通过拖延迫使对手让步。特朗普押注经济封锁，伊朗则等待美国政治压力加剧，但僵持局面可能增加新一轮军事冲突的风险。点击查看…",
-      "keywords": [
-        "特朗普"
-      ],
-      "pub_ts": 1794965575.0,
-      "time_et": "11-17 20:32 ET",
-      "time_bj": "09:32 BJ",
-      "time_kst": "10:32 KST",
-      "time_display": "20:32 ET / 09:32 BJ"
     }
   ],
   "ticker_news": {
@@ -3017,6 +3018,13 @@
     ],
     "WMT": [
       {
+        "title": "Goldman trades at 13x P/E—so why did these AI models pass on it?",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/goldman-trades-13x-p-e-072349007.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 02:23 ET",
+        "pub_ts": 1794986629.0
+      },
+      {
         "title": "Target gives shoppers something Walmart and Kroger can't",
         "url": "https://www.thestreet.com/retail/target-gives-shoppers-something-walmart-and-kroger-cant?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3043,13 +3051,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 14:26 ET",
         "pub_ts": 1794943577.0
-      },
-      {
-        "title": "Here’s How Much Traders Expect Walmart Stock to Move After Earnings Thursday",
-        "url": "https://www.investopedia.com/how-much-traders-expect-walmart-stock-to-move-after-earnings-thursday-wmt-12258306?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 14:18 ET",
-        "pub_ts": 1794943129.0
       }
     ],
     "V": [
@@ -3202,8 +3203,8 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1794984930.6843765,
-    "SOXL": 1794984930.6843765,
+    "KORU": 1794987778.0470092,
+    "SOXL": 1794987778.0470092,
     "SPY": 1794987091.2880123,
     "DIA": 1794987091.2880123,
     "SOXX": 1794987293.558019,
@@ -3211,11 +3212,11 @@
     "SMH": 1794987293.558019,
     "IWM": 1794987293.558019,
     "IGV": 1794985973.5567422,
-    "TLT": 1794984930.6843765,
-    "GLD": 1794985181.0028594,
+    "TLT": 1794987778.0470092,
+    "GLD": 1794987778.0470092,
     "SQQQ": 1794985360.959407,
     "TSM": 1794985360.959407,
-    "VIXY": 1794984930.6843765,
+    "VIXY": 1794987778.0470092,
     "SOXS": 1794985181.0028594,
     "NVDA": 1794985796.5676951,
     "AMD": 1794985796.5676951,
@@ -3274,7 +3275,7 @@
     "PEP": 1794985545.4600408,
     "XOM": 1794986155.1797864,
     "JPM": 1794987496.947285,
-    "WMT": 1794984724.667803,
+    "WMT": 1794987778.0470092,
     "V": 1794984394.0072286,
     "CAT": 1794984394.0072286,
     "FN": 1794986155.1797864,
@@ -3283,7 +3284,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (02:20 ET / 15:20 BJ) [芯片] [英伟达]：【英伟达临时CEO称将不再向中国出货H200芯片，外交部：中方已多次阐明在美国输华芯片问题上的原则立场】 11月18日讯，外交部发言人郭嘉昆主持例行记者会。据报道，英伟达的临时CEO称，将不",
+    "detail": "⚡ 最新核心快讯 (02:39 ET / 15:39 BJ) [加息] [CPI]：英国利率期货显示，英国CPI数据公布后，英国央行12月加息概率为80%，较此前的90%有所下降。",
     "event_name": "",
     "minutes_left": 0
   }

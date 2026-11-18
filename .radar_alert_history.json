@@ -34,16 +34,16 @@
       "last_notified_at": 0.0
     },
     "QCOM": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1794987513.7162268
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "LUNR": {
       "state": "NORMAL",
       "last_notified_at": 0.0
     },
     "SPCX": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1794987310.5005357
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "TSM": {
       "state": "NORMAL",
@@ -55,7 +55,7 @@
     },
     "LLY": {
       "state": "TAKE_PROFIT",
-      "last_notified_at": 1794980472.326271
+      "last_notified_at": 1794987800.8206358
     },
     "MCD": {
       "state": "NORMAL",
