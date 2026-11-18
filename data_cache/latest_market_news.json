@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1794971440.543,
-  "updated_at_et": "11-17 22:10 ET",
-  "updated_at_kst": "12:10 KST",
+  "updated_at_ts": 1794971537.606,
+  "updated_at_et": "11-17 22:12 ET",
+  "updated_at_kst": "12:12 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -906,11 +906,25 @@
     ],
     "NVDA": [
       {
-        "title": "Dow Jones Futures Rise After Nvidia Beats, Says This On Jensen Huang; Target, Anthropic IPO Ahead",
-        "url": "https://finance.yahoo.com/m/3b22ed8c-00c3-32f8-89f5-91bc21ccb366/dow-jones-futures-rise-after.html?.tsrc=rss",
+        "title": "Dow Jones Futures Waver After Nvidia Beats, Says This On Jensen Huang; Target, Anthropic IPO Ahead",
+        "url": "https://finance.yahoo.com/m/3b22ed8c-00c3-32f8-89f5-91bc21ccb366/dow-jones-futures-waver-after.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-17 21:36 ET",
-        "pub_ts": 1794969395.0
+        "time": "11-17 21:54 ET",
+        "pub_ts": 1794970477.0
+      },
+      {
+        "title": "Nvidia Signals AI Financing Flywheel Will Continue, But ‘Disciplined’: Analyst Calls Neoclouds Its ‘Biggest Sustained Bet’ As NBIS, IREN, MRVL Rally",
+        "url": "https://stocktwits.com/news-articles/markets/equity/nvidia-signals-ai-financing-flywheel-will-continue-but-disciplined-analyst-calls-neoclouds-its-biggest-sustained-bet-as-nbis-iren-mrvl-rally/cNbXVSvR9hZ?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 21:47 ET",
+        "pub_ts": 1794970039.0
+      },
+      {
+        "title": "Stocks drop as booming Nvidia results drowned by spy scandal",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/stocks-drop-booming-nvidia-results-024500677.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 21:45 ET",
+        "pub_ts": 1794969900.0
       },
       {
         "title": "Will GPU Edge Launch Change Rockwell Automation's (ROK) Narrative",
@@ -920,25 +934,11 @@
         "pub_ts": 1794967884.0
       },
       {
-        "title": "Nvidia’s startup stakes ballooned to $65B, but Huang’s exit puts future deals in doubt",
-        "url": "https://finance.yahoo.com/technology/ai/articles/nvidia-startup-stakes-ballooned-65b-014421727.html?.tsrc=rss",
+        "title": "Jeff Bezos Warns Outsider CEO Replacing Jensen Huang Faces ‘Vanishingly Small Chance of Succeeding’ at Nvidia: ‘Too Complicated’",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/jeff-bezos-warns-outsider-ceo-020318354.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-17 20:44 ET",
-        "pub_ts": 1794966261.0
-      },
-      {
-        "title": "Could IBM (IBM) Reshape Scientific Computing With Its New Quantum Classical Platform?",
-        "url": "https://finance.yahoo.com/technology/ai/articles/could-ibm-ibm-reshape-scientific-011708713.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 20:17 ET",
-        "pub_ts": 1794964628.0
-      },
-      {
-        "title": "NVIDIA Q3 Earnings Call Highlights",
-        "url": "https://www.marketbeat.com/instant-alerts/transcript-nvidia-q3-earnings-call-highlights-2026-11-17/?utm_source=yahoofinance&utm_medium=yahoofinance&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 20:12 ET",
-        "pub_ts": 1794964375.0
+        "time": "11-17 21:03 ET",
+        "pub_ts": 1794967398.0
       }
     ],
     "AMD": [
@@ -1246,6 +1246,13 @@
         "pub_ts": 1794944064.0
       },
       {
+        "title": "A Retiree With $400,000 in His 401(k) Tries to Move Money Before Stocks Fall Further. Apple’s Widespread Outage Raises the Stakes of a Missed Trade",
+        "url": "https://247wallst.com/personal-finance/2026/11/17/a-retiree-with-400000-in-his-401k-tries-to-move-money-before-stocks-fall-further-apples-widespread-outage-raises-the-stakes-of-a-missed-trade/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-17 22:04 ET",
+        "pub_ts": 1794971069.0
+      },
+      {
         "title": "Apple Pay outage blocks instant crypto purchases",
         "url": "https://www.thestreet.com/crypto/markets/apple-pay-outage-blocks-instant-crypto-purchases?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1265,13 +1272,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 15:17 ET",
         "pub_ts": 1794946633.0
-      },
-      {
-        "title": "Apple's $1,299 iPhone has a problem updates can't fix",
-        "url": "https://www.thestreet.com/technology/apple-iphone-18-pro-max-connectivity-problem-updates-cant-fix?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 14:31 ET",
-        "pub_ts": 1794943902.0
       }
     ],
     "PLTR": [
@@ -3208,25 +3208,25 @@
     "QQQ": 1794971334.9484258,
     "SMH": 1794971334.9484258,
     "IWM": 1794971334.9484258,
-    "IGV": 1794970017.6530728,
+    "IGV": 1794971537.60623,
     "TLT": 1794971334.9484258,
     "GLD": 1794971334.9484258,
-    "SQQQ": 1794970017.6530728,
+    "SQQQ": 1794971537.60623,
     "TSM": 1794971334.9484258,
     "VIXY": 1794971334.9484258,
-    "SOXS": 1794970017.6530728,
-    "NVDA": 1794970017.6530728,
+    "SOXS": 1794971537.60623,
+    "NVDA": 1794971537.60623,
     "AMD": 1794970121.8131752,
     "ASML": 1794970121.8131752,
-    "QCOM": 1794970017.6530728,
-    "AVGO": 1794970017.6530728,
-    "AMAT": 1794970017.6530728,
+    "QCOM": 1794971537.60623,
+    "AVGO": 1794971537.60623,
+    "AMAT": 1794971537.60623,
     "META": 1794970121.8131752,
     "GOOGL": 1794970121.8131752,
     "MSFT": 1794970121.8131752,
-    "AAPL": 1794970017.6530728,
-    "PLTR": 1794970017.6530728,
-    "NOW": 1794970017.6530728,
+    "AAPL": 1794971537.60623,
+    "PLTR": 1794971537.60623,
+    "NOW": 1794971537.60623,
     "AMZN": 1794970121.8131752,
     "CRWV": 1794970121.8131752,
     "NBIS": 1794970121.8131752,
