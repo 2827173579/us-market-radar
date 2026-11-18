@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1794979971.754,
-  "updated_at_et": "11-18 00:32 ET",
-  "updated_at_kst": "14:32 KST",
+  "updated_at_ts": 1794980158.253,
+  "updated_at_et": "11-18 00:35 ET",
+  "updated_at_kst": "14:35 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -910,8 +910,29 @@
         "title": "Dow Jones Futures: Techs Rise After Nvidia Beats, Says This On Jensen Huang; Target, Anthropic IPO Ahead",
         "url": "https://finance.yahoo.com/m/3b22ed8c-00c3-32f8-89f5-91bc21ccb366/dow-jones-futures%3A-techs-rise.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-17 23:47 ET",
-        "pub_ts": 1794977270.0
+        "time": "11-18 00:24 ET",
+        "pub_ts": 1794979485.0
+      },
+      {
+        "title": "Michael Burry Passed On Nvidia Calls Before Earnings — Here’s What Caught His Eye At Alibaba, Netflix And JD",
+        "url": "https://stocktwits.com/news-articles/markets/equity/michael-burry-nvidia-calls-earnings-what-caught-his-eye-alibaba-netflix-jd/cNbXq1gR9hs?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 00:15 ET",
+        "pub_ts": 1794978935.0
+      },
+      {
+        "title": "Asia stocks mixed as Nvidia optimism offsets Wall Street rout, Fed mins in focus",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/asia-stocks-mixed-nvidia-optimism-050505174.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 00:05 ET",
+        "pub_ts": 1794978305.0
+      },
+      {
+        "title": "Nvidia's $335 billion earnings gamble has a hidden risk",
+        "url": "https://www.thestreet.com/investing/nvidia-335-billion-gamble-after-earnings-report?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 00:03 ET",
+        "pub_ts": 1794978180.0
       },
       {
         "title": "Kevin O’Leary Says Nvidia Needs Leader Who Can Manage ‘International Pressure’ as Crypto Punters Raise Odds of NVDA Stock Hitting $180 By Month-End",
@@ -919,27 +940,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 23:40 ET",
         "pub_ts": 1794976840.0
-      },
-      {
-        "title": "BE Stock Rises Overnight After Nvidia Earnings: Insiders Report $1.3M In Share Sales, Retail Sees $200 Ahead",
-        "url": "https://stocktwits.com/news-articles/markets/equity/be-stock-rises-overnight-after-nvidia-earnings-insiders-report-1-3-m-in-share-sales-retail-sees-200-ahead/cNbXYTxR9hY?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 23:22 ET",
-        "pub_ts": 1794975726.0
-      },
-      {
-        "title": "Nvidia’s earnings call names two former crypto miners",
-        "url": "https://www.thestreet.com/crypto/investing/nvidias-earnings-call-names-two-former-crypto-miners?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 23:16 ET",
-        "pub_ts": 1794975391.0
-      },
-      {
-        "title": "Nvidia’s Delayed 10-Q Draws Michael Burry’s Attention – Even As Report Says Some Board Members Want Jensen Huang Back",
-        "url": "https://stocktwits.com/news-articles/markets/equity/nvidia-s-delayed-10-q-draws-michael-burry-s-attention-even-as-report-says-some-board-members-want-jensen-huang-back/cNbXoFaR9ho?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 23:06 ET",
-        "pub_ts": 1794974778.0
       }
     ],
     "AMD": [
@@ -3216,11 +3216,11 @@
     "TSM": 1794979971.7541025,
     "VIXY": 1794979773.8311749,
     "SOXS": 1794979971.7541025,
-    "NVDA": 1794978078.178225,
-    "AMD": 1794978078.178225,
+    "NVDA": 1794980158.2530713,
+    "AMD": 1794980158.2530713,
     "ASML": 1794978078.178225,
     "QCOM": 1794978078.178225,
-    "AVGO": 1794978078.178225,
+    "AVGO": 1794980158.2530713,
     "AMAT": 1794978078.178225,
     "META": 1794978078.178225,
     "GOOGL": 1794978078.178225,
@@ -3271,7 +3271,7 @@
     "NKE": 1794979773.8311749,
     "MCD": 1794979333.1268315,
     "PEP": 1794979971.7541025,
-    "XOM": 1794977886.5045002,
+    "XOM": 1794980158.2530713,
     "JPM": 1794979333.1268315,
     "WMT": 1794979333.1268315,
     "V": 1794977329.9080346,
