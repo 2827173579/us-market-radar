@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795031062.988,
-  "updated_at_et": "11-18 14:44 ET",
-  "updated_at_kst": "04:44 KST",
+  "updated_at_ts": 1795031164.641,
+  "updated_at_et": "11-18 14:46 ET",
+  "updated_at_kst": "04:46 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1383,6 +1383,13 @@
     ],
     "CRWV": [
       {
+        "title": "CoreWeave and Nebius: 2 AI Neocloud Stocks Due for a Rebound",
+        "url": "https://www.fool.com/investing/2026/11/18/coreweave-and-nebius-2-ai-neocloud-stocks-due-for-a-rebound/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 14:35 ET",
+        "pub_ts": 1795030502.0
+      },
+      {
         "title": "Nvidia’s Interim CEO: Old Hopper GPUs Recontracted at “Up to Twice Their Original Price.” Good News for CoreWeave",
         "url": "https://www.tikr.com/blog/nvidias-interim-ceo-old-hopper-gpus-recontracted-at-up-to-twice-their-original-price-good-news-for-coreweave?ref=yahoofinance&tlnk=yf-261118-f62qqjpr&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1409,16 +1416,16 @@
         "source": "Yahoo Finance",
         "time": "11-18 10:35 ET",
         "pub_ts": 1795016100.0
-      },
-      {
-        "title": "CoreWeave Falls 5% Despite NVIDIA Sticking to Its Financing Commitments; Nebius Dips, Oracle Holds Steady",
-        "url": "https://247wallst.com/investing/2026/11/18/coreweave-falls-5-despite-nvidia-sticking-to-its-financing-commitments-nebius-dips-oracle-holds-steady/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 10:02 ET",
-        "pub_ts": 1795014139.0
       }
     ],
     "NBIS": [
+      {
+        "title": "CoreWeave and Nebius: 2 AI Neocloud Stocks Due for a Rebound",
+        "url": "https://www.fool.com/investing/2026/11/18/coreweave-and-nebius-2-ai-neocloud-stocks-due-for-a-rebound/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 14:35 ET",
+        "pub_ts": 1795030502.0
+      },
       {
         "title": "Nebius Stocks Rise 3.71% Premarket as Nvidia's $130 Billion Guide Lifts Neoclouds",
         "url": "https://finance.yahoo.com/markets/stocks/articles/nebius-stocks-rise-3-71-190530911.html?.tsrc=rss",
@@ -1446,13 +1453,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 05:50 ET",
         "pub_ts": 1794999002.0
-      },
-      {
-        "title": "Nebius Just Dropped 16% in a Day. Is It Time to Sell, or Load Up?",
-        "url": "https://www.tikr.com/blog/nebius-just-dropped-16-in-a-day-is-it-time-to-sell-or-load-up?ref=yahoofinance&tlnk=yf-261118-p77wgjcg&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 00:25 ET",
-        "pub_ts": 1794979526.0
       }
     ],
     "APLD": [
@@ -3196,8 +3196,8 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795029586.6983805,
-    "SOXL": 1795029586.6983805,
+    "KORU": 1795031164.6412055,
+    "SOXL": 1795031164.6412055,
     "SPY": 1795030864.184032,
     "DIA": 1795030864.184032,
     "SOXX": 1795030864.184032,
@@ -3217,21 +3217,21 @@
     "QCOM": 1795031062.9878476,
     "AVGO": 1795031062.9878476,
     "AMAT": 1795031062.9878476,
-    "META": 1795029586.6983805,
-    "GOOGL": 1795029586.6983805,
+    "META": 1795031164.6412055,
+    "GOOGL": 1795031164.6412055,
     "MSFT": 1795031062.9878476,
-    "AAPL": 1795029586.6983805,
-    "PLTR": 1795029586.6983805,
-    "NOW": 1795029586.6983805,
-    "AMZN": 1795029586.6983805,
-    "CRWV": 1795029586.6983805,
-    "NBIS": 1795029586.6983805,
-    "APLD": 1795029586.6983805,
-    "VST": 1795029586.6983805,
-    "BE": 1795029586.6983805,
-    "CRDO": 1795029586.6983805,
-    "COHR": 1795029586.6983805,
-    "MRVL": 1795029586.6983805,
+    "AAPL": 1795031164.6412055,
+    "PLTR": 1795031164.6412055,
+    "NOW": 1795031164.6412055,
+    "AMZN": 1795031164.6412055,
+    "CRWV": 1795031164.6412055,
+    "NBIS": 1795031164.6412055,
+    "APLD": 1795031164.6412055,
+    "VST": 1795031164.6412055,
+    "BE": 1795031164.6412055,
+    "CRDO": 1795031164.6412055,
+    "COHR": 1795031164.6412055,
+    "MRVL": 1795031164.6412055,
     "LITE": 1795029688.47132,
     "AAOI": 1795030864.184032,
     "SPCX": 1795029688.47132,
@@ -3259,7 +3259,7 @@
     "SNDK": 1795030965.2491543,
     "BTC-USD": 1795031062.9878476,
     "CRWD": 1795031062.9878476,
-    "ORCL": 1795029586.6983805,
+    "ORCL": 1795031164.6412055,
     "COIN": 1795031062.9878476,
     "LLY": 1795031062.9878476,
     "MRNA": 1795031062.9878476,
@@ -3270,7 +3270,7 @@
     "JPM": 1795029688.47132,
     "WMT": 1795029688.47132,
     "V": 1795031062.9878476,
-    "CAT": 1795029586.6983805,
+    "CAT": 1795031164.6412055,
     "FN": 1795029688.47132,
     "GLW": 1795029688.47132
   },
