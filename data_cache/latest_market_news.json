@@ -1,8 +1,28 @@
 {
-  "updated_at_ts": 1795040483.118,
-  "updated_at_et": "11-18 17:21 ET",
-  "updated_at_kst": "07:21 KST",
-  "macro_calendar": [],
+  "updated_at_ts": 1795040585.165,
+  "updated_at_et": "11-18 17:23 ET",
+  "updated_at_kst": "07:23 KST",
+  "macro_calendar": [
+    {
+      "event_id": "ff_FOMC Meeting Minutes_2026-11-18T14:00:00-05:00",
+      "name": "美国FOMC Meeting Minutes",
+      "country": "USD",
+      "star": 5,
+      "pub_time_ts": 1795028400.0,
+      "pub_time_et": "11-18 14:00 ET",
+      "pub_time_bj": "03:00 BJ",
+      "pub_time_kst": "04:00 KST",
+      "previous": "待公布",
+      "forecast": "待公布",
+      "actual": "待公布",
+      "unit": "",
+      "status": "upcoming",
+      "minutes_left": 0,
+      "impact_tone": "pending",
+      "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
+      "source": "forexfactory"
+    }
+  ],
   "macro_flashes": [
     {
       "id": "20261119061210600800",
@@ -1270,6 +1290,13 @@
     ],
     "PLTR": [
       {
+        "title": "Where Will Palantir Stock Be in 1 Year?",
+        "url": "https://www.fool.com/investing/2026/11/18/where-will-palantir-stock-be-in-1-year/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 16:59 ET",
+        "pub_ts": 1795039142.0
+      },
+      {
         "title": "Edison Scientific Hires Former Palantir Healthcare Leader Lewis Woolfson as Head of Forward Deployed Engineering",
         "url": "https://finance.yahoo.com/healthcare/articles/edison-scientific-hires-former-palantir-210000234.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1296,13 +1323,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 10:35 ET",
         "pub_ts": 1795016153.0
-      },
-      {
-        "title": "Palantir Technologies (PLTR) Lands Changshin Deal, Is The Valuation Still Too Pricey?",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/palantir-technologies-pltr-lands-changshin-151133451.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 10:11 ET",
-        "pub_ts": 1795014693.0
       }
     ],
     "NOW": [
@@ -1381,6 +1401,13 @@
     ],
     "CRWV": [
       {
+        "title": "Stock Market Today, Nov. 18: CoreWeave Slides as Nvidia's Blowout Earnings Fail to Ease Debt Concerns",
+        "url": "https://www.fool.com/coverage/stock-market-today/2026/11/18/stock-market-today-nov-18-coreweave-slides-as-nvidia-s-blowout-earnings-fail-to-ease-debt-concerns/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 17:05 ET",
+        "pub_ts": 1795039502.0
+      },
+      {
         "title": "Forget CoreWeave: Applied Digital Is the Real Loser as “The Bank of Nvidia” Pulls Back",
         "url": "https://www.tikr.com/blog/forget-coreweave-applied-digital-is-the-real-loser-as-the-bank-of-nvidia-pulls-back?ref=yahoofinance&tlnk=yf-261118-36f5785r&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1407,13 +1434,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 14:35 ET",
         "pub_ts": 1795030502.0
-      },
-      {
-        "title": "Nvidia’s Interim CEO: Old Hopper GPUs Recontracted at “Up to Twice Their Original Price.” Good News for CoreWeave",
-        "url": "https://www.tikr.com/blog/nvidias-interim-ceo-old-hopper-gpus-recontracted-at-up-to-twice-their-original-price-good-news-for-coreweave?ref=yahoofinance&tlnk=yf-261118-f62qqjpr&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 12:19 ET",
-        "pub_ts": 1795022378.0
       }
     ],
     "NBIS": [
@@ -1640,6 +1660,13 @@
     ],
     "MRVL": [
       {
+        "title": "Marvel Biosciences Announces Grant of Deferred Share Units",
+        "url": "https://finance.yahoo.com/healthcare/articles/marvel-biosciences-announces-grant-deferred-220200624.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 17:02 ET",
+        "pub_ts": 1795039320.0
+      },
+      {
         "title": "Marvell And Intel Halved: How Long Until They Recover?",
         "url": "https://www.trefis.com/stock/mrvl/articles/626099/marvell-and-intel-halved-how-long-until-they-recover/2026-11-18?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1666,13 +1693,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 14:04 ET",
         "pub_ts": 1795028690.0
-      },
-      {
-        "title": "What Marvell’s (MRVL) Lumentum Deal Adds to Its Anthropic Growth Story",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/marvell-mrvl-lumentum-deal-adds-152652550.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 10:26 ET",
-        "pub_ts": 1795015612.0
       }
     ],
     "LITE": [
@@ -3194,8 +3214,8 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795039011.07775,
-    "SOXL": 1795039011.07775,
+    "KORU": 1795040585.1653192,
+    "SOXL": 1795040585.1653192,
     "SPY": 1795040285.6838377,
     "DIA": 1795040285.6838377,
     "SOXX": 1795040285.6838377,
@@ -3215,21 +3235,21 @@
     "QCOM": 1795040483.1178052,
     "AVGO": 1795040483.1178052,
     "AMAT": 1795040483.1178052,
-    "META": 1795039011.07775,
-    "GOOGL": 1795039011.07775,
+    "META": 1795040585.1653192,
+    "GOOGL": 1795040585.1653192,
     "MSFT": 1795040483.1178052,
-    "AAPL": 1795039011.07775,
-    "PLTR": 1795039011.07775,
-    "NOW": 1795039011.07775,
-    "AMZN": 1795039011.07775,
-    "CRWV": 1795039011.07775,
-    "NBIS": 1795039011.07775,
-    "APLD": 1795039011.07775,
-    "VST": 1795039011.07775,
-    "BE": 1795039011.07775,
-    "CRDO": 1795039011.07775,
-    "COHR": 1795039011.07775,
-    "MRVL": 1795039011.07775,
+    "AAPL": 1795040585.1653192,
+    "PLTR": 1795040585.1653192,
+    "NOW": 1795040585.1653192,
+    "AMZN": 1795040585.1653192,
+    "CRWV": 1795040585.1653192,
+    "NBIS": 1795040585.1653192,
+    "APLD": 1795040585.1653192,
+    "VST": 1795040585.1653192,
+    "BE": 1795040585.1653192,
+    "CRDO": 1795040585.1653192,
+    "COHR": 1795040585.1653192,
+    "MRVL": 1795040585.1653192,
     "LITE": 1795039112.7172832,
     "AAOI": 1795040285.6838377,
     "SPCX": 1795039112.7172832,
@@ -3257,26 +3277,26 @@
     "SNDK": 1795040483.1178052,
     "BTC-USD": 1795040483.1178052,
     "CRWD": 1795040483.1178052,
-    "ORCL": 1795039011.07775,
-    "COIN": 1795039011.07775,
-    "LLY": 1795039011.07775,
-    "MRNA": 1795039011.07775,
+    "ORCL": 1795040585.1653192,
+    "COIN": 1795040585.1653192,
+    "LLY": 1795040585.1653192,
+    "MRNA": 1795040585.1653192,
     "NKE": 1795039112.7172832,
     "MCD": 1795039213.065964,
     "PEP": 1795039112.7172832,
-    "XOM": 1795039011.07775,
+    "XOM": 1795040585.1653192,
     "JPM": 1795039112.7172832,
     "WMT": 1795039112.7172832,
-    "V": 1795039011.07775,
-    "CAT": 1795039011.07775,
+    "V": 1795040585.1653192,
+    "CAT": 1795040585.1653192,
     "FN": 1795039112.7172832,
     "GLW": 1795039112.7172832
   },
   "calendar_banner": {
-    "level": "idle_with_flash",
-    "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (17:12 ET / 06:12 BJ) [英伟达]：穆迪：将英伟达(NVDA.O)前景展望由正面调整为稳定，并确认其Aa1高级无担保评级。",
-    "event_name": "",
+    "level": "upcoming",
+    "headline": "📅 今日美股重磅预告【美国FOMC Meeting Minutes】· 距公布约 0 分钟（11-18 14:00 ET / 04:00 KST）",
+    "detail": "前值 待公布 ｜ 预期 待公布 ｜ 临近公布前15分钟将自动触发防插针预警",
+    "event_name": "美国FOMC Meeting Minutes",
     "minutes_left": 0
   }
 }
