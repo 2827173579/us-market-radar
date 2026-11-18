@@ -4,7 +4,7 @@
     "profit_factor": 1.27,
     "top_sector": "存储芯片 (⭐⭐⭐⭐⭐)",
     "top_feature": "SMH_IGV_Ratio_Bias (12.07%)",
-    "sync_time": "2026-11-17 20:01:09",
+    "sync_time": "2026-11-17 20:02:53",
     "data_mode": "Finnhub 秒级实时 (🌌 美股夜盘)",
     "is_realtime": false
   },
@@ -4185,13 +4185,13 @@
       "sector_key": "Crypto_Proxy",
       "sector_cn": "加密币股代理",
       "sector_rating": "⭐⭐☆☆☆",
-      "latest_price": 64615.87,
-      "current_price": 64615.87,
-      "atr_pct": 3.77,
-      "bias_ma50": -18.19,
+      "latest_price": 64587.99,
+      "current_price": 64587.99,
+      "atr_pct": 3.78,
+      "bias_ma50": -18.23,
       "bias_ma20": -10.83,
       "low_prev": 63278.41,
-      "rsi_14": 23.8,
+      "rsi_14": 23.7,
       "is_broken": false,
       "is_etf": false,
       "is_crash_halt": false,
@@ -4202,18 +4202,18 @@
       "predicted_win_rate_pct": 51.8,
       "calibrated_win_rate_pct": 58.4,
       "sector_pf": 1.06,
-      "target_profit_price": 66686.49,
+      "target_profit_price": 66663.2,
       "target_profit_pct": 3.2,
-      "stop_loss_price": 61083.64,
+      "stop_loss_price": 61047.92,
       "stop_loss_pct": 5.5,
       "action": "🔥 恐慌衰竭·博弈空头回补 (压力位不过就跑)",
       "action_tag": "action-rebound",
       "model_raw_short_prob_pct": 38.9,
       "calibrated_short_win_rate_pct": 43.4,
       "short_entry_price": 64866.04,
-      "short_target_profit_price": 61327.25,
+      "short_target_profit_price": 61292.06,
       "short_target_profit_pct": 5.1,
-      "short_stop_loss_price": 67051.89,
+      "short_stop_loss_price": 67029.41,
       "short_stop_loss_pct": 3.8,
       "dollar_pcr": 1.0,
       "pcr": 1.0,
@@ -4223,14 +4223,14 @@
       "iv_atm": 30.0,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "s1": 62788.86,
-      "s2": 61083.64,
-      "sl": 60167.39,
-      "r1": 66686.49,
-      "r2": 69433.34,
+      "s1": 62756.92,
+      "s2": 61047.92,
+      "sl": 60132.2,
+      "r1": 66663.2,
+      "r2": 69416.15,
       "near_stop_s1": false,
       "near_stop_price": null,
-      "scenario_script": "【空头回补滑头剧本】依托 S2 ($61083.64) 极限插针底防守，上看第一阻力 R1 ($66686.49) 空头回补反抽(不过就跑)；放量逼空看 R2 ($69433.34)；击穿止损位 $60167.39 严格离场防踩踏",
+      "scenario_script": "【空头回补滑头剧本】依托 S2 ($61047.92) 极限插针底防守，上看第一阻力 R1 ($66663.20) 空头回补反抽(不过就跑)；放量逼空看 R2 ($69416.15)；击穿止损位 $60132.20 严格离场防踩踏",
       "track": "Track B",
       "four_h_rsi": 25.1,
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
@@ -4472,7 +4472,7 @@
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": true,
-      "short_rank": 66
+      "short_rank": 65
     },
     {
       "rank": 35,
@@ -4531,7 +4531,7 @@
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": true,
-      "short_rank": 69
+      "short_rank": 68
     },
     {
       "rank": 36,
@@ -5239,7 +5239,7 @@
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 65
+      "short_rank": 66
     },
     {
       "rank": 48,
@@ -5888,7 +5888,7 @@
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 68
+      "short_rank": 69
     },
     {
       "rank": 59,
@@ -8730,13 +8730,13 @@
       "sector_key": "Crypto_Proxy",
       "sector_cn": "加密币股代理",
       "sector_rating": "⭐⭐☆☆☆",
-      "latest_price": 64615.87,
-      "current_price": 64615.87,
-      "atr_pct": 3.77,
-      "bias_ma50": -18.19,
+      "latest_price": 64587.99,
+      "current_price": 64587.99,
+      "atr_pct": 3.78,
+      "bias_ma50": -18.23,
       "bias_ma20": -10.83,
       "low_prev": 63278.41,
-      "rsi_14": 23.8,
+      "rsi_14": 23.7,
       "is_broken": false,
       "is_etf": false,
       "is_crash_halt": false,
@@ -8747,18 +8747,18 @@
       "predicted_win_rate_pct": 51.8,
       "calibrated_win_rate_pct": 58.4,
       "sector_pf": 1.06,
-      "target_profit_price": 66686.49,
+      "target_profit_price": 66663.2,
       "target_profit_pct": 3.2,
-      "stop_loss_price": 61083.64,
+      "stop_loss_price": 61047.92,
       "stop_loss_pct": 5.5,
       "action": "🔥 恐慌衰竭·博弈空头回补 (压力位不过就跑)",
       "action_tag": "action-rebound",
       "model_raw_short_prob_pct": 38.9,
       "calibrated_short_win_rate_pct": 43.4,
       "short_entry_price": 64866.04,
-      "short_target_profit_price": 61327.25,
+      "short_target_profit_price": 61292.06,
       "short_target_profit_pct": 5.1,
-      "short_stop_loss_price": 67051.89,
+      "short_stop_loss_price": 67029.41,
       "short_stop_loss_pct": 3.8,
       "dollar_pcr": 1.0,
       "pcr": 1.0,
@@ -8768,14 +8768,14 @@
       "iv_atm": 30.0,
       "short_action": "👀 空头动能不足·观望",
       "short_action_tag": "short-action-wait",
-      "s1": 62788.86,
-      "s2": 61083.64,
-      "sl": 60167.39,
-      "r1": 66686.49,
-      "r2": 69433.34,
+      "s1": 62756.92,
+      "s2": 61047.92,
+      "sl": 60132.2,
+      "r1": 66663.2,
+      "r2": 69416.15,
       "near_stop_s1": false,
       "near_stop_price": null,
-      "scenario_script": "【空头回补滑头剧本】依托 S2 ($61083.64) 极限插针底防守，上看第一阻力 R1 ($66686.49) 空头回补反抽(不过就跑)；放量逼空看 R2 ($69433.34)；击穿止损位 $60167.39 严格离场防踩踏",
+      "scenario_script": "【空头回补滑头剧本】依托 S2 ($61047.92) 极限插针底防守，上看第一阻力 R1 ($66663.20) 空头回补反抽(不过就跑)；放量逼空看 R2 ($69416.15)；击穿止损位 $60132.20 严格离场防踩踏",
       "track": "Track B",
       "four_h_rsi": 25.1,
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
@@ -9017,7 +9017,7 @@
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": true,
-      "short_rank": 66
+      "short_rank": 65
     },
     "MU": {
       "rank": 35,
@@ -9076,7 +9076,7 @@
       "four_h_div": "🟢 4H 底背离拐点 (见底信号)",
       "four_h_tag": "div-bull",
       "is_short_covering": true,
-      "short_rank": 69
+      "short_rank": 68
     },
     "SOXL": {
       "rank": 36,
@@ -9784,7 +9784,7 @@
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 65
+      "short_rank": 66
     },
     "CAT": {
       "rank": 48,
@@ -10433,7 +10433,7 @@
       "four_h_div": "➖ 4H 均线震荡纠缠",
       "four_h_tag": "div-neutral",
       "is_short_covering": false,
-      "short_rank": 68
+      "short_rank": 69
     },
     "AXTI": {
       "rank": 59,
@@ -15087,13 +15087,13 @@
     },
     "BTC-USD": {
       "ticker": "BTC-USD",
-      "current_price": 64615.87,
-      "anchor_price": 64615.87,
-      "s1": 62788.86,
-      "s2": 61083.64,
-      "sl": 60167.39,
-      "r1": 66686.49,
-      "r2": 69433.34,
+      "current_price": 64587.99,
+      "anchor_price": 64587.99,
+      "s1": 62756.92,
+      "s2": 61047.92,
+      "sl": 60132.2,
+      "r1": 66663.2,
+      "r2": 69416.15,
       "history": [
         {
           "date": "2026-10-30",
@@ -15173,112 +15173,112 @@
         },
         {
           "date": "2026-11-18",
-          "price": 64615.87
+          "price": 64587.99
         }
       ],
       "projection": [
         {
           "day": "T+1",
           "date": "2026-11-19",
-          "price": 64532.19,
+          "price": 64504.35,
           "pct": -0.1,
           "wave_ret": -0.001295
         },
         {
           "day": "T+2",
           "date": "2026-11-20",
-          "price": 64075.94,
+          "price": 64048.29,
           "pct": -0.8,
           "wave_ret": -0.008356
         },
         {
           "day": "T+3",
           "date": "2026-11-21",
-          "price": 64237.22,
+          "price": 64209.5,
           "pct": -0.6,
           "wave_ret": -0.00586
         },
         {
           "day": "T+4",
           "date": "2026-11-22",
-          "price": 65557.97,
+          "price": 65529.68,
           "pct": 1.5,
           "wave_ret": 0.01458
         },
         {
           "day": "T+5",
           "date": "2026-11-23",
-          "price": 65521.98,
+          "price": 65493.71,
           "pct": 1.4,
           "wave_ret": 0.014023
         },
         {
           "day": "T+6",
           "date": "2026-11-24",
-          "price": 65837.5,
+          "price": 65809.09,
           "pct": 1.9,
           "wave_ret": 0.018906
         },
         {
           "day": "T+7",
           "date": "2026-11-25",
-          "price": 66269.91,
+          "price": 66241.31,
           "pct": 2.6,
           "wave_ret": 0.025598
         },
         {
           "day": "T+8",
           "date": "2026-11-26",
-          "price": 66249.49,
+          "price": 66220.9,
           "pct": 2.5,
           "wave_ret": 0.025282
         },
         {
           "day": "T+9",
           "date": "2026-11-27",
-          "price": 65533.03,
+          "price": 65504.75,
           "pct": 1.4,
           "wave_ret": 0.014194
         },
         {
           "day": "T+10",
           "date": "2026-11-28",
-          "price": 64622.07,
+          "price": 64594.19,
           "pct": 0.0,
           "wave_ret": 9.6e-05
         },
         {
           "day": "T+11",
           "date": "2026-11-29",
-          "price": 63651.28,
+          "price": 63623.82,
           "pct": -1.5,
           "wave_ret": -0.014928
         },
         {
           "day": "T+12",
           "date": "2026-11-30",
-          "price": 64048.93,
+          "price": 64021.29,
           "pct": -0.9,
           "wave_ret": -0.008774
         },
         {
           "day": "T+13",
           "date": "2026-12-01",
-          "price": 64615.35,
+          "price": 64587.47,
           "pct": -0.0,
           "wave_ret": -8e-06
         },
         {
           "day": "T+14",
           "date": "2026-12-02",
-          "price": 64319.93,
+          "price": 64292.18,
           "pct": -0.5,
           "wave_ret": -0.00458
         },
         {
           "day": "T+15",
           "date": "2026-12-03",
-          "price": 65016.29,
+          "price": 64988.24,
           "pct": 0.6,
           "wave_ret": 0.006197
         }
@@ -15288,7 +15288,7 @@
           "type": "bottom",
           "date": "2026-11-20",
           "day": "T+2",
-          "price": 64075.94,
+          "price": 64048.29,
           "desc": "🔵 周期底回踩窗 (关注空头回补企稳)",
           "tag": "周期底回踩窗 (企稳关注)"
         },
@@ -15296,7 +15296,7 @@
           "type": "top",
           "date": "2026-11-25",
           "day": "T+7",
-          "price": 66269.91,
+          "price": 66241.31,
           "desc": "🔴 周期峰阻力窗 (高危变盘·压力不过就跑)",
           "tag": "周期阻力窗 (逢高不过就跑)"
         },
@@ -15304,7 +15304,7 @@
           "type": "bottom",
           "date": "2026-11-29",
           "day": "T+11",
-          "price": 63651.28,
+          "price": 63623.82,
           "desc": "🔵 周期底回踩窗 (关注空头回补企稳)",
           "tag": "周期底回踩窗 (企稳关注)"
         }
