@@ -1,9 +1,22 @@
 {
-  "updated_at_ts": 1795061848.736,
-  "updated_at_et": "11-18 23:17 ET",
-  "updated_at_kst": "13:17 KST",
+  "updated_at_ts": 1795061952.448,
+  "updated_at_et": "11-18 23:19 ET",
+  "updated_at_kst": "13:19 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261119121712691800",
+      "title": "【OpenAI进军手机领域 富士康旗下富智康集团获组装订单】 11月19日讯，从供应链获…",
+      "summary": "【OpenAI进军手机领域 富士康旗下富智康集团获组装订单】 11月19日讯，从供应链获悉，富士康旗下富智康集团(02038.HK)已获得OpenAI手机项目订单，将参与相关产品的整机组装。富士康同时是苹果iPhone的主要组装商。若OpenAI手机最终面市，其将进入手机终端市场，并可能围绕AI交互体验，与现有手机品牌展开更直接的竞争。相关产品方案、订单规模及量产安排，仍有待进一步获悉。",
+      "keywords": [
+        "苹果"
+      ],
+      "pub_ts": 1795061832.0,
+      "time_et": "11-18 23:17 ET",
+      "time_bj": "12:17 BJ",
+      "time_kst": "13:17 KST",
+      "time_display": "23:17 ET / 12:17 BJ"
+    },
     {
       "id": "20261119121147971800",
       "title": "【习近平将会见美国总统特朗普】 11月19日讯，11月19日，国家主席习近平将在深圳会见…",
@@ -329,19 +342,6 @@
       "time_bj": "08:06 BJ",
       "time_kst": "09:06 KST",
       "time_display": "19:06 ET / 08:06 BJ"
-    },
-    {
-      "id": "20261119073613068800",
-      "title": "英伟达称黄仁勋离职后“一切照常”，华尔街却不买账！股价连续第五天下跌",
-      "summary": "黄仁勋离职后的首场财报电话会议上，英伟达临时CEO克雷斯反复强调公司运营“一切照常”。尽管财报和业绩指引全面超预期，股价却连续第五个交易日下跌。点击查看...",
-      "keywords": [
-        "英伟达"
-      ],
-      "pub_ts": 1795044973.0,
-      "time_et": "11-18 18:36 ET",
-      "time_bj": "07:36 BJ",
-      "time_kst": "08:36 KST",
-      "time_display": "18:36 ET / 07:36 BJ"
     }
   ],
   "ticker_news": {
@@ -902,6 +902,20 @@
     ],
     "NVDA": [
       {
+        "title": "Anthropic, Nvidia And The Next AI Trade: Michael Burry Explains What Could Break The Bull Case",
+        "url": "https://stocktwits.com/news-articles/markets/equity/anthropic-nvidia-next-ai-trade-michael-burry-what-could-break-bull-case/cNbLwugR9ig?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 23:07 ET",
+        "pub_ts": 1795061265.0
+      },
+      {
+        "title": "Peter Thiel’s $85 Million Nvidia Exit Was a Bet the Stock Had Run Far Enough. After Nvidia’s Beat, It Closed Below Every Price He Could Have Sold At",
+        "url": "https://247wallst.com/investing/2026/11/18/peter-thiels-85-million-nvidia-exit-was-a-bet-the-stock-had-run-far-enough-after-nvidias-beat-it-closed-below-every-price-he-could-have-sold-at/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 22:51 ET",
+        "pub_ts": 1795060269.0
+      },
+      {
         "title": "Dan Ives Says Nvidia’s AI Dominance Can Survive Without Jensen Huang: ‘Two, Three Years Ahead’ Of Rivals",
         "url": "https://stocktwits.com/news-articles/markets/equity/dan-ives-nvidia-central-nervous-system-us-economy-jensen-huang-bullish-nvda-stock/cNbLvTwR9iX?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -921,20 +935,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 21:13 ET",
         "pub_ts": 1795054398.0
-      },
-      {
-        "title": "‘Nothing Wrong With NVDA Or AI Trade’: Kenny Polcari Says Fed’s Inflation Concerns Are The Bigger Market Risk",
-        "url": "https://stocktwits.com/news-articles/markets/equity/nothing-wrong-with-nvda-or-ai-trade-kenny-polcari-says-fed-s-inflation-concerns-are-the-bigger-market-risk/cNbLtYVR9ia?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 21:10 ET",
-        "pub_ts": 1795054244.0
-      },
-      {
-        "title": "Trump Hails ‘Great’ Ties With Xi, Downplays Nvidia Spy Scandal",
-        "url": "https://finance.yahoo.com/economy/policy/articles/trump-hails-great-ties-xi-014442789.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 20:44 ET",
-        "pub_ts": 1795052682.0
       }
     ],
     "AMD": [
@@ -2204,13 +2204,6 @@
         "pub_ts": 1795006800.0
       },
       {
-        "title": "Inside the HPE cooling lab solving AI's power problem",
-        "url": "https://finance.yahoo.com/video/inside-the-hpe-cooling-lab-solving-ais-power-problem-175535946.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 07:00 ET",
-        "pub_ts": 1795003200.0
-      },
-      {
         "title": "HPE Names Jennifer Nason to Board of Directors",
         "url": "https://finance.yahoo.com/technology/articles/hpe-names-jennifer-nason-board-210500621.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2230,6 +2223,13 @@
         "source": "Yahoo Finance",
         "time": "11-18 13:00 ET",
         "pub_ts": 1795024812.0
+      },
+      {
+        "title": "Global Router Market Report 2026: Size, Share, Trends, and Forecast to 2030 | Capitalize on 5G, Wi-Fi 6 and AI as Cisco, Huawei, HPE and Nokia Drive Market to $42.93B",
+        "url": "https://finance.yahoo.com/technology/articles/global-router-market-report-2026-150300358.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 10:03 ET",
+        "pub_ts": 1795014180.0
       }
     ],
     "DELL": [
@@ -2604,6 +2604,13 @@
     ],
     "BTC-USD": [
       {
+        "title": "Bitcoin support levels: key floors to watch as price tests $62,100",
+        "url": "https://finance.yahoo.com/markets/crypto/articles/bitcoin-support-levels-key-floors-040957234.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 23:09 ET",
+        "pub_ts": 1795061397.0
+      },
+      {
         "title": "MSTR Stock Recovers Overnight After Dip – But Analyst Downgrades Strategy To 'Sell' As Bitcoin Premium Faces Pressure",
         "url": "https://stocktwits.com/news-articles/markets/equity/mstr-stock-recovers-overnight-after-dip-but-analyst-downgrades-strategy-to-sell-as-bitcoin-premium-faces-pressure/cNbLHHJR9if?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2630,13 +2637,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 19:02 ET",
         "pub_ts": 1795046520.0
-      },
-      {
-        "title": "Analyst warns Anthropic IPO is pulling money out of Bitcoin",
-        "url": "https://www.thestreet.com/crypto/markets/analyst-warns-anthropic-ipo-is-pulling-money-out-of-bitcoin?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 17:45 ET",
-        "pub_ts": 1795041957.0
       }
     ],
     "CRWD": [
@@ -3205,21 +3205,21 @@
     "SMH": 1795061848.7357953,
     "IWM": 1795061848.7357953,
     "IGV": 1795061848.7357953,
-    "TLT": 1795060430.5459146,
-    "GLD": 1795060430.5459146,
+    "TLT": 1795061952.4480853,
+    "GLD": 1795061952.4480853,
     "SQQQ": 1795061848.7357953,
-    "TSM": 1795060430.5459146,
-    "VIXY": 1795060430.5459146,
-    "SOXS": 1795060430.5459146,
-    "NVDA": 1795060430.5459146,
-    "AMD": 1795060430.5459146,
-    "ASML": 1795060430.5459146,
-    "QCOM": 1795060430.5459146,
-    "AVGO": 1795060430.5459146,
-    "AMAT": 1795060430.5459146,
+    "TSM": 1795061952.4480853,
+    "VIXY": 1795061952.4480853,
+    "SOXS": 1795061952.4480853,
+    "NVDA": 1795061952.4480853,
+    "AMD": 1795061952.4480853,
+    "ASML": 1795061952.4480853,
+    "QCOM": 1795061952.4480853,
+    "AVGO": 1795061952.4480853,
+    "AMAT": 1795061952.4480853,
     "META": 1795060534.8423936,
     "GOOGL": 1795060534.8423936,
-    "MSFT": 1795060430.5459146,
+    "MSFT": 1795061952.4480853,
     "AAPL": 1795060534.8423936,
     "PLTR": 1795060534.8423936,
     "NOW": 1795060534.8423936,
@@ -3246,18 +3246,18 @@
     "FLY": 1795060642.5064247,
     "INTC": 1795061848.7357953,
     "VRT": 1795061848.7357953,
-    "HPE": 1795060430.5459146,
-    "DELL": 1795060430.5459146,
-    "OKLO": 1795060430.5459146,
+    "HPE": 1795061952.4480853,
+    "DELL": 1795061952.4480853,
+    "OKLO": 1795061952.4480853,
     "CEG": 1795061848.7357953,
     "FPS": 1795061848.7357953,
-    "MU": 1795060430.5459146,
-    "SKHY": 1795060430.5459146,
-    "WDC": 1795060430.5459146,
-    "STX": 1795060430.5459146,
-    "MSTR": 1795060430.5459146,
-    "SNDK": 1795060430.5459146,
-    "BTC-USD": 1795060430.5459146,
+    "MU": 1795061952.4480853,
+    "SKHY": 1795061952.4480853,
+    "WDC": 1795061952.4480853,
+    "STX": 1795061952.4480853,
+    "MSTR": 1795061952.4480853,
+    "SNDK": 1795061952.4480853,
+    "BTC-USD": 1795061952.4480853,
     "CRWD": 1795060534.8423936,
     "ORCL": 1795060534.8423936,
     "COIN": 1795060642.5064247,
@@ -3277,7 +3277,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (23:11 ET / 12:11 BJ) [特朗普]：【习近平将会见美国总统特朗普】 11月19日讯，11月19日，国家主席习近平将在深圳会见来华出席亚太经合组织第三十三次领导人非正式会议的美国总统特朗普。",
+    "detail": "⚡ 最新核心快讯 (23:17 ET / 12:17 BJ) [苹果]：【OpenAI进军手机领域 富士康旗下富智康集团获组装订单】 11月19日讯，从供应链获悉，富士康旗下富智康集团(02038.HK)已获得OpenAI手机项目订单，将参与相关产品的整机组装。",
     "event_name": "",
     "minutes_left": 0
   }
