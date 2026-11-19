@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795127194.922,
-  "updated_at_et": "11-19 17:26 ET",
-  "updated_at_kst": "07:26 KST",
+  "updated_at_ts": 1795127299.158,
+  "updated_at_et": "11-19 17:28 ET",
+  "updated_at_kst": "07:28 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2120,6 +2120,13 @@
     ],
     "INTC": [
       {
+        "title": "Nvidia vs. Intel: One AI Stock Is Worth the Drama, the Other Isn’t Worth the Wait, Says Investor",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/nvidia-vs-intel-one-ai-222036270.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 17:20 ET",
+        "pub_ts": 1795126836.0
+      },
+      {
         "title": "This Is Incredible News for AMD Stock Investors (Hint: It’s Bad News for Intel)",
         "url": "https://www.fool.com/investing/2026/11/19/this-is-incredible-news-for-amd-stock-investors-hint-it-s-bad-news-for-intel/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2146,13 +2153,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 14:08 ET",
         "pub_ts": 1795115318.0
-      },
-      {
-        "title": "Nvidia, Intel, Micron and Dell Stocks Jump as Anthropic Massive IPO Sparks Rally",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/nvidia-intel-micron-dell-stocks-185029536.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 13:50 ET",
-        "pub_ts": 1795114229.0
       }
     ],
     "VRT": [
@@ -2268,6 +2268,13 @@
     ],
     "OKLO": [
       {
+        "title": "Oklo (OKLO) Wins DOE Clearance On A Narrative That Still Points To Higher Fair Value",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/oklo-oklo-wins-doe-clearance-220914556.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 17:09 ET",
+        "pub_ts": 1795126154.0
+      },
+      {
         "title": "Could $1,000 in Oklo Stock Set You Up for Life by 2035?",
         "url": "https://www.fool.com/investing/2026/11/19/could-in-oklo-stock-set-you-up-for-life-by-2035/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2294,13 +2301,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 07:29 ET",
         "pub_ts": 1794918540.0
-      },
-      {
-        "title": "Meta’s Prepayment Is Buying Oklo’s Nuclear Fuel for Up to Five Reactors",
-        "url": "https://www.tikr.com/blog/metas-prepayment-is-buying-oklos-nuclear-fuel-for-up-to-five-reactors?ref=yahoofinance&tlnk=yf-261116-2vpq4v59&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-16 12:24 ET",
-        "pub_ts": 1794849844.0
       }
     ],
     "CEG": [
@@ -2527,6 +2527,13 @@
     ],
     "MSTR": [
       {
+        "title": "Analyst sounds alarm over New York pension fund’s major investment",
+        "url": "https://www.thestreet.com/crypto/markets/analyst-sounds-alarm-over-new-york-pension-funds-major-investment?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 17:15 ET",
+        "pub_ts": 1795126500.0
+      },
+      {
         "title": "GraniteShares Announces Change in ETF Lineup",
         "url": "https://finance.yahoo.com/markets/options/articles/graniteshares-announces-change-etf-lineup-213500431.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2553,13 +2560,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 15:22 ET",
         "pub_ts": 1795119742.0
-      },
-      {
-        "title": "Strategy Just Got Dropped From MSCI’s Indexes. Can It Keep Buying Bitcoin?",
-        "url": "https://www.fool.com/investing/2026/11/19/strategy-just-got-dropped-from-msci-s-indexes-can-it-keep-buying-bitcoin/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 12:32 ET",
-        "pub_ts": 1795109522.0
       }
     ],
     "SNDK": [
@@ -2601,6 +2601,20 @@
     ],
     "BTC-USD": [
       {
+        "title": "$100 a Month in XRP or Bitcoin: Which Could Be Worth More in 5 Years?",
+        "url": "https://247wallst.com/investing/cryptocurrency/2026/11/19/100-a-month-in-xrp-or-bitcoin-which-could-be-worth-more-in-5-years/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 17:21 ET",
+        "pub_ts": 1795126904.0
+      },
+      {
+        "title": "Analyst sounds alarm over New York pension fund’s major investment",
+        "url": "https://www.thestreet.com/crypto/markets/analyst-sounds-alarm-over-new-york-pension-funds-major-investment?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 17:15 ET",
+        "pub_ts": 1795126500.0
+      },
+      {
         "title": "The Crypto Bear Market Could Be Back. Here’s What I’m Doing About It.",
         "url": "https://www.fool.com/investing/2026/11/19/the-crypto-bear-market-could-be-back-here-s-what-i-m-doing-about-it/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2620,20 +2634,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 16:03 ET",
         "pub_ts": 1795122205.0
-      },
-      {
-        "title": "Sector Update: Financial Stocks Fall in Late Afternoon Trading",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/sector-financial-stocks-fall-afternoon-210231677.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 16:02 ET",
-        "pub_ts": 1795122151.0
-      },
-      {
-        "title": "Brian Armstrong on bitcoin’s bottom, AI trading agents and Coinbase’s next act",
-        "url": "http://videos.coindesk.com/previews/bAKzCFKJ?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 16:02 ET",
-        "pub_ts": 1795122136.0
       }
     ],
     "CRWD": [
@@ -3263,7 +3263,7 @@
     "META": 1795127091.2981257,
     "GOOGL": 1795127091.2981257,
     "MSFT": 1795127091.2981257,
-    "AAPL": 1795125707.7207236,
+    "AAPL": 1795127299.1578565,
     "PLTR": 1795125813.9380093,
     "NOW": 1795125813.9380093,
     "AMZN": 1795125813.9380093,
@@ -3276,31 +3276,31 @@
     "COHR": 1795125813.9380093,
     "MRVL": 1795125813.9380093,
     "LITE": 1795125813.9380093,
-    "AAOI": 1795125707.7207236,
+    "AAOI": 1795127299.1578565,
     "SPCX": 1795125813.9380093,
     "ASTS": 1795125813.9380093,
     "AXTI": 1795125813.9380093,
-    "NASA": 1795125707.7207236,
-    "LUNR": 1795125707.7207236,
-    "TSLA": 1795125707.7207236,
-    "AXP": 1795125707.7207236,
+    "NASA": 1795127299.1578565,
+    "LUNR": 1795127299.1578565,
+    "TSLA": 1795127299.1578565,
+    "AXP": 1795127299.1578565,
     "RKLB": 1795125813.9380093,
-    "KO": 1795125707.7207236,
+    "KO": 1795127299.1578565,
     "FLY": 1795125813.9380093,
-    "INTC": 1795125707.7207236,
-    "VRT": 1795125707.7207236,
-    "HPE": 1795125707.7207236,
-    "DELL": 1795125707.7207236,
-    "OKLO": 1795125707.7207236,
-    "CEG": 1795125707.7207236,
-    "FPS": 1795125707.7207236,
-    "MU": 1795125707.7207236,
-    "SKHY": 1795125707.7207236,
-    "WDC": 1795125707.7207236,
-    "STX": 1795125707.7207236,
-    "MSTR": 1795125707.7207236,
-    "SNDK": 1795125707.7207236,
-    "BTC-USD": 1795125707.7207236,
+    "INTC": 1795127299.1578565,
+    "VRT": 1795127299.1578565,
+    "HPE": 1795127299.1578565,
+    "DELL": 1795127299.1578565,
+    "OKLO": 1795127299.1578565,
+    "CEG": 1795127299.1578565,
+    "FPS": 1795127299.1578565,
+    "MU": 1795127299.1578565,
+    "SKHY": 1795127299.1578565,
+    "WDC": 1795127299.1578565,
+    "STX": 1795127299.1578565,
+    "MSTR": 1795127299.1578565,
+    "SNDK": 1795127299.1578565,
+    "BTC-USD": 1795127299.1578565,
     "CRWD": 1795125813.9380093,
     "ORCL": 1795125916.1424463,
     "COIN": 1795125916.1424463,
