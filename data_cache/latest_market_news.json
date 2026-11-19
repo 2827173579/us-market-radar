@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795083439.872,
-  "updated_at_et": "11-19 05:17 ET",
-  "updated_at_kst": "19:17 KST",
+  "updated_at_ts": 1795083543.845,
+  "updated_at_et": "11-19 05:19 ET",
+  "updated_at_kst": "19:19 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2716,13 +2716,6 @@
         "pub_ts": 1795033800.0
       },
       {
-        "title": "Coinbase expands crypto-backed loans to New York, now reaching all 50 states",
-        "url": "https://finance.yahoo.com/video/coinbase-expands-crypto-backed-loans-to-new-york-now-reaching-all-50-states-181657119.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 13:16 ET",
-        "pub_ts": 1795025817.0
-      },
-      {
         "title": "What is Pearl's FP8 Upgrade?",
         "url": "https://www.bankless.com/read/what-is-pearl-s-fp8-upgrade?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2735,6 +2728,13 @@
         "source": "Yahoo Finance",
         "time": "11-18 14:26 ET",
         "pub_ts": 1795030008.0
+      },
+      {
+        "title": "Coinbase expands crypto-backed loans to New York, now reaching all 50 states",
+        "url": "https://finance.yahoo.com/video/coinbase-expands-crypto-backed-loans-to-new-york-now-reaching-all-50-states-181657119.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 13:16 ET",
+        "pub_ts": 1795025817.0
       },
       {
         "title": "Anthropic trades crypto ahead of IPO launch, and Coinbase borrow covers all 50 states",
@@ -3226,18 +3226,18 @@
     "CRDO": 1795083439.8722353,
     "COHR": 1795083439.8722353,
     "MRVL": 1795083439.8722353,
-    "LITE": 1795082035.9382339,
+    "LITE": 1795083543.8447096,
     "AAOI": 1795083232.5562022,
-    "SPCX": 1795082035.9382339,
-    "ASTS": 1795082035.9382339,
-    "AXTI": 1795082035.9382339,
+    "SPCX": 1795083543.8447096,
+    "ASTS": 1795083543.8447096,
+    "AXTI": 1795083543.8447096,
     "NASA": 1795083232.5562022,
     "LUNR": 1795083232.5562022,
     "TSLA": 1795083232.5562022,
     "AXP": 1795083232.5562022,
-    "RKLB": 1795082035.9382339,
+    "RKLB": 1795083543.8447096,
     "KO": 1795083232.5562022,
-    "FLY": 1795082035.9382339,
+    "FLY": 1795083543.8447096,
     "INTC": 1795083232.5562022,
     "VRT": 1795083232.5562022,
     "HPE": 1795083335.0304499,
@@ -3254,19 +3254,19 @@
     "BTC-USD": 1795083335.0304499,
     "CRWD": 1795083439.8722353,
     "ORCL": 1795083439.8722353,
-    "COIN": 1795082035.9382339,
+    "COIN": 1795083543.8447096,
     "LLY": 1795083439.8722353,
-    "MRNA": 1795082035.9382339,
-    "NKE": 1795082035.9382339,
+    "MRNA": 1795083543.8447096,
+    "NKE": 1795083543.8447096,
     "MCD": 1795082137.9140892,
-    "PEP": 1795082035.9382339,
+    "PEP": 1795083543.8447096,
     "XOM": 1795083439.8722353,
-    "JPM": 1795082035.9382339,
-    "WMT": 1795082035.9382339,
+    "JPM": 1795083543.8447096,
+    "WMT": 1795083543.8447096,
     "V": 1795083439.8722353,
     "CAT": 1795083439.8722353,
-    "FN": 1795082035.9382339,
-    "GLW": 1795082035.9382339
+    "FN": 1795083543.8447096,
+    "GLW": 1795083543.8447096
   },
   "calendar_banner": {
     "level": "idle_with_flash",
