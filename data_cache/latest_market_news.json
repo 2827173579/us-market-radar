@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795046702.921,
-  "updated_at_et": "11-18 19:05 ET",
-  "updated_at_kst": "09:05 KST",
+  "updated_at_ts": 1795046806.531,
+  "updated_at_et": "11-18 19:06 ET",
+  "updated_at_kst": "09:06 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1125,6 +1125,13 @@
     ],
     "META": [
       {
+        "title": "Meta’s $225 Billion AI Spending Forecast Comes With a Cash-Flow Question",
+        "url": "https://finance.yahoo.com/technology/ai/articles/meta-225-billion-ai-spending-234645050.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 18:46 ET",
+        "pub_ts": 1795045605.0
+      },
+      {
         "title": "Meta Pauses Zuckerberg Share Plan During Investor Legal Fight",
         "url": "https://finance.yahoo.com/markets/stocks/articles/meta-pauses-zuckerberg-share-plan-204515945.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1151,50 +1158,43 @@
         "source": "Yahoo Finance",
         "time": "11-18 11:26 ET",
         "pub_ts": 1795019219.0
-      },
-      {
-        "title": "Dan Loeb Is Betting Big on Meta",
-        "url": "https://www.tikr.com/blog/dan-loeb-is-betting-big-on-meta?ref=yahoofinance&tlnk=yf-261118-fj4pw8g8&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 10:59 ET",
-        "pub_ts": 1795017571.0
       }
     ],
     "GOOGL": [
+      {
+        "title": "Is Alphabet Stock a Buy Right Now?",
+        "url": "https://www.fool.com/investing/2026/11/18/is-alphabet-stock-a-buy-right-now/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 18:57 ET",
+        "pub_ts": 1795046222.0
+      },
+      {
+        "title": "Alphabet vs. Apple: Which Warren Buffett Stock Is the Better Buy?",
+        "url": "https://www.fool.com/investing/2026/11/18/alphabet-vs-apple-which-warren-buffett-stock-is-the-better-buy/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 18:45 ET",
+        "pub_ts": 1795045502.0
+      },
+      {
+        "title": "Morgan Stanley Says These 4 Companies Will Spend $1.6 Trillion on AI Infrastructure in 2027",
+        "url": "https://finance.yahoo.com/technology/ai/articles/morgan-stanley-says-4-companies-234321356.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 18:41 ET",
+        "pub_ts": 1795045306.0
+      },
+      {
+        "title": "Thinking About Buying Anthropic’s IPO on Nov. 19? Here’s an AI Stock I’d Consider First (Hint: It’s Not Nvidia or Broadcom).",
+        "url": "https://www.fool.com/investing/2026/11/18/thinking-about-buying-anthropic-s-ipo-on-nov-19-here-s-an-ai-stock-i-d-consider-first-hint-it-s-not-nvidia-or-broadcom/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 18:35 ET",
+        "pub_ts": 1795044902.0
+      },
       {
         "title": "Satya Nadella predicts AI agents will reshuffle the economics of the web",
         "url": "https://finance.yahoo.com/technology/ai/articles/satya-nadella-predicts-ai-agents-225811295.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-18 17:58 ET",
         "pub_ts": 1795042691.0
-      },
-      {
-        "title": "Dan Ives’ Top 10 AI Revolution Stock Picks: Inside The IVES ETF",
-        "url": "https://finance.yahoo.com/technology/ai/articles/dan-ives-top-10-ai-223943794.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 17:39 ET",
-        "pub_ts": 1795041583.0
-      },
-      {
-        "title": "Anthropic prices IPO at $83 in historic $1 trillion offering",
-        "url": "https://www.axios.com/2026/11/18/anthropic-ipo-1-trillion#utm_source=yahoo_finance&utm_medium=partner&utm_campaign=subs-partner-yahoo-finance-AI?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 17:16 ET",
-        "pub_ts": 1795040192.0
-      },
-      {
-        "title": "Anthropic Prices IPO at $83 a Share",
-        "url": "https://finance.yahoo.com/m/73934389-7de3-3893-b9af-2b11996e8414/anthropic-prices-ipo-at-%2483-a.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 16:47 ET",
-        "pub_ts": 1795038432.0
-      },
-      {
-        "title": "Why Anthropic says cybersecurity is one of its 'most important' opportunities",
-        "url": "https://finance.yahoo.com/video/why-anthropic-says-cybersecurity-is-one-of-its-most-important-opportunities-214231043.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 16:42 ET",
-        "pub_ts": 1795038151.0
       }
     ],
     "MSFT": [
@@ -1236,11 +1236,11 @@
     ],
     "AAPL": [
       {
-        "title": "Major tech outages raise new cybersecurity concerns",
-        "url": "https://finance.yahoo.com/video/major-tech-outages-raise-new-cybersecurity-concerns-144024816.html?.tsrc=rss",
+        "title": "Alphabet vs. Apple: Which Warren Buffett Stock Is the Better Buy?",
+        "url": "https://www.fool.com/investing/2026/11/18/alphabet-vs-apple-which-warren-buffett-stock-is-the-better-buy/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-18 09:40 ET",
-        "pub_ts": 1795012824.0
+        "time": "11-18 18:45 ET",
+        "pub_ts": 1795045502.0
       },
       {
         "title": "Apple Stock Polishes Breakout As Nvidia-Led AI Boom Gets Wake-Up Call",
@@ -1347,6 +1347,27 @@
     ],
     "AMZN": [
       {
+        "title": "Brookie Beauty LLC Announces TreStyler Launch and International Media Expansion",
+        "url": "https://finance.yahoo.com/media-advertising/articles/brookie-beauty-llc-announces-trestyler-234900589.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 18:49 ET",
+        "pub_ts": 1795045740.0
+      },
+      {
+        "title": "Blackstone Digital Infrastructure: 3 Key Takeaways for Long-Term Investors",
+        "url": "https://www.fool.com/earnings/takeaways/2026/11/18/blackstone-digital-infrastructure-3-key-takeaways-for-long-term-investors/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 18:46 ET",
+        "pub_ts": 1795045615.0
+      },
+      {
+        "title": "Ken Griffin Dumps SpaceX, Amazon; Buys ARKK and Bets Big on Marvell",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/ken-griffin-dumps-spacex-amazon-223005217.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 17:30 ET",
+        "pub_ts": 1795041005.0
+      },
+      {
         "title": "Amazon Widens Its Fuel Surcharge to Bulk Inventory Services",
         "url": "https://wwd.com/sourcing-journal/logistics/amazon-widens-fuel-logistics-surcharge-bulk-inventory-services-1239425935/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1359,30 +1380,16 @@
         "source": "Yahoo Finance",
         "time": "11-18 16:23 ET",
         "pub_ts": 1795036982.0
-      },
-      {
-        "title": "Data Center Backlash Hits Amazon Hardest in Ohio",
-        "url": "https://finance.yahoo.com/technology/ai/articles/data-center-backlash-hits-amazon-195116574.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 14:51 ET",
-        "pub_ts": 1795031476.0
-      },
-      {
-        "title": "Amazon Stocks Rise 0.89% Premarket After UBS Trims Target to $340 but Keeps Buy",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/amazon-stocks-rise-0-89-183829798.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 13:38 ET",
-        "pub_ts": 1795027109.0
-      },
-      {
-        "title": "TikTok Shop takes on Amazon and Walmart with new strategy",
-        "url": "https://www.thestreet.com/retail/tiktok-shop-membership-amazon-walmart?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 13:07 ET",
-        "pub_ts": 1795025220.0
       }
     ],
     "CRWV": [
+      {
+        "title": "CoreWeave Changes Its Funding Strategy After Morgan Stanley’s $46 Billion Spending Forecast",
+        "url": "https://finance.yahoo.com/technology/ai/articles/coreweave-changes-funding-strategy-morgan-234844537.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 18:48 ET",
+        "pub_ts": 1795045724.0
+      },
       {
         "title": "The 5 Best Stocks in Nvidia’s Portfolio",
         "url": "https://www.tikr.com/blog/the-5-best-stocks-in-nvidias-portfolio?ref=yahoofinance&tlnk=yf-261118-w3gg2hcj&.tsrc=rss",
@@ -1410,16 +1417,16 @@
         "source": "Yahoo Finance",
         "time": "11-18 15:43 ET",
         "pub_ts": 1795034627.0
-      },
-      {
-        "title": "IREN, CoreWeave and Nebius Stock Prices Have Plunged More Than 60%. Here's What It Means for AI Investors",
-        "url": "https://www.fool.com/investing/2026/11/18/iren-coreweave-and-nebius-stock-prices-have-plunged-more-than-60-here-s-what-it-means-for-ai-investors/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 15:25 ET",
-        "pub_ts": 1795033547.0
       }
     ],
     "NBIS": [
+      {
+        "title": "Morgan Stanley Projects $37 Billion in Nebius Capex. The Company Has Bigger Plans",
+        "url": "https://finance.yahoo.com/technology/ai/articles/morgan-stanley-projects-37-billion-234934544.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 18:49 ET",
+        "pub_ts": 1795045774.0
+      },
       {
         "title": "IREN, CoreWeave and Nebius Stock Prices Have Plunged More Than 60%. Here's What It Means for AI Investors",
         "url": "https://www.fool.com/investing/2026/11/18/iren-coreweave-and-nebius-stock-prices-have-plunged-more-than-60-here-s-what-it-means-for-ai-investors/?.tsrc=rss",
@@ -1447,13 +1454,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 10:13 ET",
         "pub_ts": 1795014826.0
-      },
-      {
-        "title": "CoreWeave Falls 5% Despite NVIDIA Sticking to Its Financing Commitments; Nebius Dips, Oracle Holds Steady",
-        "url": "https://247wallst.com/investing/2026/11/18/coreweave-falls-5-despite-nvidia-sticking-to-its-financing-commitments-nebius-dips-oracle-holds-steady/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 10:02 ET",
-        "pub_ts": 1795014139.0
       }
     ],
     "APLD": [
@@ -1643,6 +1643,13 @@
     ],
     "MRVL": [
       {
+        "title": "Ken Griffin Dumps SpaceX, Amazon; Buys ARKK and Bets Big on Marvell",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/ken-griffin-dumps-spacex-amazon-223005217.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 17:30 ET",
+        "pub_ts": 1795041005.0
+      },
+      {
         "title": "Marvel Biosciences Announces Grant of Deferred Share Units",
         "url": "https://finance.yahoo.com/healthcare/articles/marvel-biosciences-announces-grant-deferred-220200624.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1669,13 +1676,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 14:52 ET",
         "pub_ts": 1795031543.0
-      },
-      {
-        "title": "Credo Stocks Rise 3.15% Premarket After Settling AEC Patent Fight With Marvell",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/credo-stocks-rise-3-15-190450598.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 14:04 ET",
-        "pub_ts": 1795028690.0
       }
     ],
     "LITE": [
@@ -2679,6 +2679,13 @@
     ],
     "ORCL": [
       {
+        "title": "Why Oracle Features in Morgan Stanley’s $1.6 Trillion AI Infrastructure Spending Forecast?",
+        "url": "https://finance.yahoo.com/technology/ai/articles/why-oracle-features-morgan-stanley-234741005.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 18:47 ET",
+        "pub_ts": 1795045661.0
+      },
+      {
         "title": "Sector Update: Healthcare Stocks Decline in Afternoon Trading",
         "url": "https://finance.yahoo.com/healthcare/articles/sector-healthcare-stocks-decline-afternoon-184357969.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2705,13 +2712,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 12:13 ET",
         "pub_ts": 1795022029.0
-      },
-      {
-        "title": "Oracle’s Credit Default Swaps Hit Record Wides After Nvidia’s Beat. Veteran Trader Calls It “the Weak Link”",
-        "url": "https://www.tikr.com/blog/oracles-credit-default-swaps-hit-record-wides-after-nvidias-beat-veteran-trader-calls-it-the-weak-link?ref=yahoofinance&tlnk=yf-261118-h6mc737h&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 11:52 ET",
-        "pub_ts": 1795020746.0
       }
     ],
     "COIN": [
@@ -3049,6 +3049,13 @@
     ],
     "V": [
       {
+        "title": "Visa Unveils Next Generation of Subscription Management Solutions with Visa Recurrent",
+        "url": "https://finance.yahoo.com/technology/articles/visa-unveils-next-generation-subscription-000000653.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 19:00 ET",
+        "pub_ts": 1795046400.0
+      },
+      {
         "title": "An $11 Billion Fund Dumps These 3 Stocks",
         "url": "https://www.tikr.com/blog/an-11-billion-fund-dumps-these-3-stocks?ref=yahoofinance&tlnk=yf-261118-8v454q7c&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3075,13 +3082,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 10:42 ET",
         "pub_ts": 1795016520.0
-      },
-      {
-        "title": "MEXC Shuts Down Crypto Card Three Months After Launch",
-        "url": "https://www.cryptoprowl.com/releases/mexc-shuts-down-crypto-card-three-months-after-launch-7961?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 10:18 ET",
-        "pub_ts": 1795015080.0
       }
     ],
     "CAT": [
@@ -3197,8 +3197,8 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795045273.4150965,
-    "SOXL": 1795045273.4150965,
+    "KORU": 1795046806.53124,
+    "SOXL": 1795046806.53124,
     "SPY": 1795046601.5898106,
     "DIA": 1795046601.5898106,
     "SOXX": 1795046601.5898106,
@@ -3218,21 +3218,21 @@
     "QCOM": 1795046702.921265,
     "AVGO": 1795046702.921265,
     "AMAT": 1795046702.921265,
-    "META": 1795045273.4150965,
-    "GOOGL": 1795045273.4150965,
+    "META": 1795046806.53124,
+    "GOOGL": 1795046806.53124,
     "MSFT": 1795046702.921265,
-    "AAPL": 1795045273.4150965,
-    "PLTR": 1795045273.4150965,
-    "NOW": 1795045273.4150965,
-    "AMZN": 1795045273.4150965,
-    "CRWV": 1795045273.4150965,
-    "NBIS": 1795045273.4150965,
-    "APLD": 1795045273.4150965,
-    "VST": 1795045273.4150965,
-    "BE": 1795045273.4150965,
-    "CRDO": 1795045273.4150965,
-    "COHR": 1795045273.4150965,
-    "MRVL": 1795045273.4150965,
+    "AAPL": 1795046806.53124,
+    "PLTR": 1795046806.53124,
+    "NOW": 1795046806.53124,
+    "AMZN": 1795046806.53124,
+    "CRWV": 1795046806.53124,
+    "NBIS": 1795046806.53124,
+    "APLD": 1795046806.53124,
+    "VST": 1795046806.53124,
+    "BE": 1795046806.53124,
+    "CRDO": 1795046806.53124,
+    "COHR": 1795046806.53124,
+    "MRVL": 1795046806.53124,
     "LITE": 1795045375.1451535,
     "AAOI": 1795046601.5898106,
     "SPCX": 1795045375.1451535,
@@ -3260,18 +3260,18 @@
     "SNDK": 1795046702.921265,
     "BTC-USD": 1795046702.921265,
     "CRWD": 1795046702.921265,
-    "ORCL": 1795045273.4150965,
-    "COIN": 1795045273.4150965,
-    "LLY": 1795045273.4150965,
-    "MRNA": 1795045273.4150965,
+    "ORCL": 1795046806.53124,
+    "COIN": 1795046806.53124,
+    "LLY": 1795046806.53124,
+    "MRNA": 1795046806.53124,
     "NKE": 1795045375.1451535,
     "MCD": 1795045574.0085166,
     "PEP": 1795045375.1451535,
-    "XOM": 1795045273.4150965,
+    "XOM": 1795046806.53124,
     "JPM": 1795045375.1451535,
     "WMT": 1795045375.1451535,
-    "V": 1795045273.4150965,
-    "CAT": 1795045273.4150965,
+    "V": 1795046806.53124,
+    "CAT": 1795046806.53124,
     "FN": 1795045375.1451535,
     "GLW": 1795045375.1451535
   },
