@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795054494.345,
-  "updated_at_et": "11-18 21:14 ET",
-  "updated_at_kst": "11:14 KST",
+  "updated_at_ts": 1795054599.312,
+  "updated_at_et": "11-18 21:16 ET",
+  "updated_at_kst": "11:16 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1772,25 +1772,25 @@
         "pub_ts": 1795047212.0
       },
       {
+        "title": "Tesla And SpaceX ‘Better Together’? Musk Leans Yes — But Says Performance Must Drive His TSLA Pay",
+        "url": "https://stocktwits.com/news-articles/markets/equity/tesla-spacex-better-together-musk-performance-tsla-pay/cNbLsa5R9iJ?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 20:56 ET",
+        "pub_ts": 1795053379.0
+      },
+      {
+        "title": "Anthropic Prices IPO at $83 a Share, Raising $81.3 Billion in Largest Listing on Record",
+        "url": "https://www.cryptoprowl.com/releases/anthropic-prices-ipo-at-83-a-share-raising-813-billion-in-largest-listing-on-record-7975?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 20:40 ET",
+        "pub_ts": 1795052400.0
+      },
+      {
         "title": "Anthropic’s Wall Street debut marks a new chapter for AI",
         "url": "https://www.cnn.com/2026/11/18/investing/anthropic-ipo-wall-street-ai?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-18 19:52 ET",
         "pub_ts": 1795049577.0
-      },
-      {
-        "title": "Anthropic Prices at $83 a Share in Record-Sized Offering",
-        "url": "https://finance.yahoo.com/video/anthropic-prices-83-share-record-004919149.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 19:49 ET",
-        "pub_ts": 1795049359.0
-      },
-      {
-        "title": "Anthropic prices IPO at $83 a share, valuing it at about $1.5 trillion",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/anthropic-weighs-ipo-pricing-80-212530616.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 19:44 ET",
-        "pub_ts": 1795049091.0
       }
     ],
     "ASTS": [
@@ -2979,6 +2979,13 @@
     ],
     "JPM": [
       {
+        "title": "JPMorgan taps 20-year company veteran Bregje de Best as its next CFO",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/jpmorgan-taps-20-company-veteran-232910777.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 18:29 ET",
+        "pub_ts": 1795044550.0
+      },
+      {
         "title": "Popular carmaker taps JPMorgan for agent payments",
         "url": "https://www.thestreet.com/crypto/innovation/popular-carmaker-taps-jpmorgan-for-agent-payments?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3005,13 +3012,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 12:05 ET",
         "pub_ts": 1795021511.0
-      },
-      {
-        "title": "Wells Fargo reportedly taps JPMorgan executive Allison Beer as next COO",
-        "url": "https://finance.yahoo.com/news/wells-fargo-reportedly-taps-jpmorgan-162014773.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 11:20 ET",
-        "pub_ts": 1795018814.0
       }
     ],
     "WMT": [
@@ -3237,18 +3237,18 @@
     "CRDO": 1795054494.3448682,
     "COHR": 1795054494.3448682,
     "MRVL": 1795054494.3448682,
-    "LITE": 1795053088.5348716,
+    "LITE": 1795054599.3121686,
     "AAOI": 1795054278.999073,
-    "SPCX": 1795053088.5348716,
-    "ASTS": 1795053088.5348716,
-    "AXTI": 1795053088.5348716,
+    "SPCX": 1795054599.3121686,
+    "ASTS": 1795054599.3121686,
+    "AXTI": 1795054599.3121686,
     "NASA": 1795054278.999073,
     "LUNR": 1795054278.999073,
     "TSLA": 1795054278.999073,
     "AXP": 1795054278.999073,
-    "RKLB": 1795053088.5348716,
+    "RKLB": 1795054599.3121686,
     "KO": 1795054278.999073,
-    "FLY": 1795053088.5348716,
+    "FLY": 1795054599.3121686,
     "INTC": 1795054278.999073,
     "VRT": 1795054278.999073,
     "HPE": 1795054388.903495,
@@ -3268,16 +3268,16 @@
     "COIN": 1795054494.3448682,
     "LLY": 1795054494.3448682,
     "MRNA": 1795054494.3448682,
-    "NKE": 1795053088.5348716,
+    "NKE": 1795054599.3121686,
     "MCD": 1795053289.953286,
-    "PEP": 1795053088.5348716,
+    "PEP": 1795054599.3121686,
     "XOM": 1795054494.3448682,
-    "JPM": 1795053088.5348716,
-    "WMT": 1795053088.5348716,
+    "JPM": 1795054599.3121686,
+    "WMT": 1795054599.3121686,
     "V": 1795054494.3448682,
     "CAT": 1795054494.3448682,
-    "FN": 1795053088.5348716,
-    "GLW": 1795053088.5348716
+    "FN": 1795054599.3121686,
+    "GLW": 1795054599.3121686
   },
   "calendar_banner": {
     "level": "idle_with_flash",
