@@ -108,6 +108,10 @@
     "AMD": {
       "state": "NORMAL",
       "last_notified_at": 0.0
+    },
+    "CRWD": {
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1795107934.9745624
     }
   },
   "position_peaks": {
