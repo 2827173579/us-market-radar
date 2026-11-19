@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795068128.813,
-  "updated_at_et": "11-19 01:02 ET",
-  "updated_at_kst": "15:02 KST",
+  "updated_at_ts": 1795068233.681,
+  "updated_at_et": "11-19 01:03 ET",
+  "updated_at_kst": "15:03 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1754,6 +1754,20 @@
     ],
     "SPCX": [
       {
+        "title": "Why Anthropic Could Be a $5 Trillion Company By 2030",
+        "url": "https://www.fool.com/investing/2026/11/19/why-anthropic-could-be-a-usd5-trillion-by-2030/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 00:39 ET",
+        "pub_ts": 1795066770.0
+      },
+      {
+        "title": "Anthropic to begin trading after record-breaking market debut tops SpaceX record",
+        "url": "https://finance.yahoo.com/technology/ai/articles/anthropic-set-price-ipo-key-030309911.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 00:35 ET",
+        "pub_ts": 1795066555.0
+      },
+      {
         "title": "Elon Musk Names 2 Anthropic Favorites Ahead Of Its IPO — Flags A Risk To 10-GW Opportunity For SpaceX",
         "url": "https://stocktwits.com/news-articles/markets/equity/elon-musk-2-anthropic-favorites-ipo-flags-risk-10-gw-opportunity-spacex/cNbLUlbR9i0?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1773,20 +1787,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 20:15 ET",
         "pub_ts": 1795050938.0
-      },
-      {
-        "title": "Anthropic to begin trading after record-breaking market debut tops SpaceX record",
-        "url": "https://finance.yahoo.com/technology/ai/articles/anthropic-set-price-ipo-key-030309911.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 00:35 ET",
-        "pub_ts": 1795066555.0
-      },
-      {
-        "title": "Anthropic prices IPO at $83 a share, valuing it at about $1.5 trillion",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/anthropic-weighs-ipo-pricing-80-212530616.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 22:51 ET",
-        "pub_ts": 1795060292.0
       }
     ],
     "ASTS": [
@@ -2975,6 +2975,13 @@
     ],
     "JPM": [
       {
+        "title": "JPMorgan Chase faces fresh scrutiny after banking disruption",
+        "url": "https://www.thestreet.com/technology/jpmorgan-chase-outage-zelle-payment-delays?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 00:37 ET",
+        "pub_ts": 1795066620.0
+      },
+      {
         "title": "iQIYI (IQ) Stock Sees Fair Value Cut After Analysts Lower Targets",
         "url": "https://finance.yahoo.com/markets/stocks/articles/iqiyi-iq-stock-sees-fair-043337461.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3001,13 +3008,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 17:21 ET",
         "pub_ts": 1795040485.0
-      },
-      {
-        "title": "JPMorgan Chase & Co. (JPM) Sees a More Significant Dip Than Broader Market: Some Facts to Know",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/jpmorgan-chase-co-jpm-sees-214502926.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 16:45 ET",
-        "pub_ts": 1795038302.0
       }
     ],
     "WMT": [
@@ -3233,18 +3233,18 @@
     "CRDO": 1795068128.8128936,
     "COHR": 1795068128.8128936,
     "MRVL": 1795068128.8128936,
-    "LITE": 1795066708.2788792,
+    "LITE": 1795068233.6809683,
     "AAOI": 1795067918.8445094,
-    "SPCX": 1795066708.2788792,
-    "ASTS": 1795066708.2788792,
-    "AXTI": 1795066708.2788792,
+    "SPCX": 1795068233.6809683,
+    "ASTS": 1795068233.6809683,
+    "AXTI": 1795068233.6809683,
     "NASA": 1795067918.8445094,
     "LUNR": 1795067918.8445094,
     "TSLA": 1795067918.8445094,
     "AXP": 1795067918.8445094,
-    "RKLB": 1795066708.2788792,
+    "RKLB": 1795068233.6809683,
     "KO": 1795067918.8445094,
-    "FLY": 1795066708.2788792,
+    "FLY": 1795068233.6809683,
     "INTC": 1795067918.8445094,
     "VRT": 1795067918.8445094,
     "HPE": 1795068025.2433224,
@@ -3261,19 +3261,19 @@
     "BTC-USD": 1795068025.2433224,
     "CRWD": 1795068128.8128936,
     "ORCL": 1795068128.8128936,
-    "COIN": 1795066708.2788792,
+    "COIN": 1795068233.6809683,
     "LLY": 1795068128.8128936,
-    "MRNA": 1795066708.2788792,
-    "NKE": 1795066708.2788792,
+    "MRNA": 1795068233.6809683,
+    "NKE": 1795068233.6809683,
     "MCD": 1795066909.202977,
-    "PEP": 1795066708.2788792,
+    "PEP": 1795068233.6809683,
     "XOM": 1795068128.8128936,
-    "JPM": 1795066708.2788792,
-    "WMT": 1795066708.2788792,
+    "JPM": 1795068233.6809683,
+    "WMT": 1795068233.6809683,
     "V": 1795068128.8128936,
     "CAT": 1795068128.8128936,
-    "FN": 1795066708.2788792,
-    "GLW": 1795066708.2788792
+    "FN": 1795068233.6809683,
+    "GLW": 1795068233.6809683
   },
   "calendar_banner": {
     "level": "idle_with_flash",
