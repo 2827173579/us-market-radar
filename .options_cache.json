@@ -1,32 +1,26 @@
 {
   "schema_version": 3,
-  "updated_at": 1795060954.1423547,
+  "updated_at": 1795062821.4440775,
   "data": {
-    "SPY": {
+    "SOXX": {
       "has_options": false
     },
     "IWM": {
       "has_options": false
     },
-    "DIA": {
-      "has_options": false
-    },
-    "SOXX": {
-      "has_options": false
-    },
     "QQQ": {
+      "has_options": false
+    },
+    "DIA": {
       "has_options": false
     },
     "SMH": {
       "has_options": false
     },
-    "VIXY": {
+    "SPY": {
       "has_options": false
     },
     "KORU": {
-      "has_options": false
-    },
-    "IGV": {
       "has_options": false
     },
     "SOXL": {
@@ -35,19 +29,16 @@
     "TLT": {
       "has_options": false
     },
+    "IGV": {
+      "has_options": false
+    },
+    "VIXY": {
+      "has_options": false
+    },
     "GLD": {
       "has_options": false
     },
-    "AVGO": {
-      "has_options": false
-    },
-    "NVDA": {
-      "has_options": false
-    },
     "AMD": {
-      "has_options": false
-    },
-    "SOXS": {
       "has_options": false
     },
     "SQQQ": {
@@ -56,7 +47,10 @@
     "TSM": {
       "has_options": false
     },
-    "META": {
+    "AVGO": {
+      "has_options": false
+    },
+    "SOXS": {
       "has_options": false
     },
     "QCOM": {
@@ -65,43 +59,34 @@
     "ASML": {
       "has_options": false
     },
-    "MSFT": {
+    "AMAT": {
       "has_options": false
     },
     "GOOGL": {
       "has_options": false
     },
-    "AMAT": {
+    "NVDA": {
       "has_options": false
     },
-    "PLTR": {
+    "MSFT": {
       "has_options": false
     },
-    "NBIS": {
-      "has_options": false
-    },
-    "AAPL": {
-      "has_options": false
-    },
-    "CRWV": {
-      "has_options": false
-    },
-    "NOW": {
+    "META": {
       "has_options": false
     },
     "AMZN": {
       "has_options": false
     },
-    "BE": {
+    "NOW": {
       "has_options": false
     },
-    "COHR": {
+    "CRWV": {
       "has_options": false
     },
-    "CRDO": {
+    "PLTR": {
       "has_options": false
     },
-    "MRVL": {
+    "AAPL": {
       "has_options": false
     },
     "APLD": {
@@ -110,25 +95,40 @@
     "VST": {
       "has_options": false
     },
-    "LITE": {
+    "CRDO": {
       "has_options": false
     },
-    "AAOI": {
+    "NBIS": {
+      "has_options": false
+    },
+    "BE": {
+      "has_options": false
+    },
+    "COHR": {
       "has_options": false
     },
     "AXTI": {
       "has_options": false
     },
-    "RKLB": {
+    "LITE": {
+      "has_options": false
+    },
+    "MRVL": {
       "has_options": false
     },
     "SPCX": {
       "has_options": false
     },
+    "AAOI": {
+      "has_options": false
+    },
     "ASTS": {
       "has_options": false
     },
-    "NASA": {
+    "FLY": {
+      "has_options": false
+    },
+    "RKLB": {
       "has_options": false
     },
     "LUNR": {
@@ -137,7 +137,10 @@
     "KO": {
       "has_options": false
     },
-    "FLY": {
+    "NASA": {
+      "has_options": false
+    },
+    "TSLA": {
       "has_options": false
     },
     "AXP": {
@@ -146,22 +149,19 @@
     "INTC": {
       "has_options": false
     },
-    "CEG": {
-      "has_options": false
-    },
-    "TSLA": {
+    "VRT": {
       "has_options": false
     },
     "HPE": {
       "has_options": false
     },
-    "OKLO": {
-      "has_options": false
-    },
     "DELL": {
       "has_options": false
     },
-    "VRT": {
+    "CEG": {
+      "has_options": false
+    },
+    "OKLO": {
       "has_options": false
     },
     "FPS": {
@@ -176,46 +176,46 @@
     "WDC": {
       "has_options": false
     },
-    "STX": {
-      "has_options": false
-    },
     "SNDK": {
       "has_options": false
     },
-    "CRWD": {
-      "has_options": false
-    },
-    "LLY": {
-      "has_options": false
-    },
-    "ORCL": {
-      "has_options": false
-    },
-    "MRNA": {
-      "has_options": false
-    },
-    "MSTR": {
+    "STX": {
       "has_options": false
     },
     "COIN": {
       "has_options": false
     },
-    "V": {
+    "CRWD": {
       "has_options": false
     },
-    "MCD": {
+    "ORCL": {
+      "has_options": false
+    },
+    "MSTR": {
+      "has_options": false
+    },
+    "LLY": {
+      "has_options": false
+    },
+    "MRNA": {
       "has_options": false
     },
     "NKE": {
       "has_options": false
     },
-    "PEP": {
+    "MCD": {
       "has_options": false
     },
     "XOM": {
       "has_options": false
     },
     "JPM": {
+      "has_options": false
+    },
+    "PEP": {
+      "has_options": false
+    },
+    "V": {
       "has_options": false
     },
     "CAT": {
