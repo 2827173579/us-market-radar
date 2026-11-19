@@ -2755,9 +2755,13 @@
     "2026-11-19:TSLA/CRWD:5M_ENTRY": {
       "device": "PC",
       "ts": 1795126411.4293008
+    },
+    "2026-11-19:TSLA/KO:5M_ENTRY+TAKE_PROFIT": {
+      "device": "PC",
+      "ts": 1795127100.4976323
     }
   },
   "device": "PC",
-  "last_heartbeat_ts": 1795126917.0148365,
-  "updated_at": "2026-11-19T22:21:57.015206+00:00"
+  "last_heartbeat_ts": 1795127017.0696764,
+  "updated_at": "2026-11-19T22:25:00.498092+00:00"
 }
