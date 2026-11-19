@@ -2431,9 +2431,13 @@
     "2026-11-19:MRNA/KO:5M_ENTRY+TAKE_PROFIT": {
       "device": "PC",
       "ts": 1795105387.0080667
+    },
+    "2026-11-19:CEG/AXP:5M_ENTRY": {
+      "device": "PC",
+      "ts": 1795106192.0307388
     }
   },
   "device": "PC",
-  "last_heartbeat_ts": 1795106015.5189767,
-  "updated_at": "2026-11-19T16:33:35.519438+00:00"
+  "last_heartbeat_ts": 1795106112.5870929,
+  "updated_at": "2026-11-19T16:36:32.031168+00:00"
 }
