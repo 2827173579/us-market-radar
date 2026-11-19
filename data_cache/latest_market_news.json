@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795089842.832,
-  "updated_at_et": "11-19 07:04 ET",
-  "updated_at_kst": "21:04 KST",
+  "updated_at_ts": 1795089947.284,
+  "updated_at_et": "11-19 07:05 ET",
+  "updated_at_kst": "21:05 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2598,6 +2598,13 @@
     ],
     "BTC-USD": [
       {
+        "title": "This \"Unstoppable\" Cryptocurrency Is Ready to Deliver Massive Gains in 2027",
+        "url": "https://www.fool.com/investing/2026/11/19/this-unstoppable-cryptocurrency-is-ready-to-deliver-massive-gains-in-2027/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 06:32 ET",
+        "pub_ts": 1795087922.0
+      },
+      {
         "title": "Bitcoin, Ether Bounce from Lows After Hawkish Fed Minutes",
         "url": "https://finance.yahoo.com/m/a9afa1d8-135c-3cd8-a917-2a8ff5c2b6a8/bitcoin%2C-ether-bounce-from.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2624,13 +2631,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 06:01 ET",
         "pub_ts": 1795086109.0
-      },
-      {
-        "title": "Institutions Holding ETH, SOL or HYPE Can Now Borrow Up to Five Years at a $4 Billion Lender",
-        "url": "https://unchainedcrypto.com/institutions-holding-eth-sol-or-hype-can-now-borrow-up-to-five-years-at-a-4-billion-lender/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 06:00 ET",
-        "pub_ts": 1795086000.0
       }
     ],
     "CRWD": [
@@ -3293,11 +3293,11 @@
     "FPS": 1795089842.8323462,
     "MU": 1795089842.8323462,
     "SKHY": 1795089842.8323462,
-    "WDC": 1795088203.222589,
+    "WDC": 1795089947.2839582,
     "STX": 1795089842.8323462,
     "MSTR": 1795089842.8323462,
     "SNDK": 1795089842.8323462,
-    "BTC-USD": 1795088203.222589,
+    "BTC-USD": 1795089947.2839582,
     "CRWD": 1795088486.820918,
     "ORCL": 1795088486.820918,
     "COIN": 1795088486.820918,
@@ -3313,8 +3313,8 @@
     "CAT": 1795088486.820918,
     "FN": 1795088486.820918,
     "GLW": 1795088486.820918,
-    "ANT": 1795088203.222589,
-    "XAUUSD": 1795088203.222589
+    "ANT": 1795089947.2839582,
+    "XAUUSD": 1795089947.2839582
   },
   "calendar_banner": {
     "level": "idle_with_flash",
