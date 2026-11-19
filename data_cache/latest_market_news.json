@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795094651.409,
-  "updated_at_et": "11-19 08:24 ET",
-  "updated_at_kst": "22:24 KST",
+  "updated_at_ts": 1795094755.918,
+  "updated_at_et": "11-19 08:25 ET",
+  "updated_at_kst": "22:25 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -3007,11 +3007,18 @@
     ],
     "WMT": [
       {
+        "title": "Stock Market Today: Dow Rises As Walmart Falls On Earnings; Anthropic IPO To Debut (Live Coverage)",
+        "url": "https://finance.yahoo.com/m/81d1d9ec-afbb-3e6f-882b-7e094a9a305e/stock-market-today%3A-dow-rises.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 08:08 ET",
+        "pub_ts": 1795093687.0
+      },
+      {
         "title": "Dow Jones Futures Rise, Nasdaq Jumps: Anthropic To Debut After Record IPO; Palo Alto, Everpure Rally, Walmart Falls",
         "url": "https://finance.yahoo.com/m/107e5a2c-4fba-3df3-b2fd-5d1160e65516/dow-jones-futures-rise%2C.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-19 07:47 ET",
-        "pub_ts": 1795092424.0
+        "time": "11-19 08:07 ET",
+        "pub_ts": 1795093664.0
       },
       {
         "title": "Walmart beats third quarter expectations, raises guidance",
@@ -3021,25 +3028,18 @@
         "pub_ts": 1795092072.0
       },
       {
+        "title": "Walmart Stock Falls as Forecast Leaves Wall Street Asking for More",
+        "url": "https://finance.yahoo.com/m/e1b03594-d419-34dc-b0da-f74ff752b7cc/walmart-stock-falls-as.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 07:39 ET",
+        "pub_ts": 1795091940.0
+      },
+      {
         "title": "Walmart: Fiscal Q3 Earnings Snapshot",
         "url": "https://finance.yahoo.com/markets/stocks/articles/walmart-fiscal-q3-earnings-snapshot-120626110.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-19 07:06 ET",
         "pub_ts": 1795089986.0
-      },
-      {
-        "title": "Walmart raises its outlook for the year for the 3rd time after a solid quarter",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/walmart-raises-outlook-3rd-time-120322526.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 07:03 ET",
-        "pub_ts": 1795089802.0
-      },
-      {
-        "title": "Walmart reports revenue growth of 5.2%, up 4.5% in constant currency (cc)",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/walmart-reports-revenue-growth-5-120000596.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 07:00 ET",
-        "pub_ts": 1795089600.0
       }
     ],
     "V": [
@@ -3285,7 +3285,7 @@
     "AXP": 1795094444.2668922,
     "RKLB": 1795094651.4090517,
     "KO": 1795094444.2668922,
-    "FLY": 1795093239.0954247,
+    "FLY": 1795094755.9181206,
     "INTC": 1795094444.2668922,
     "VRT": 1795094444.2668922,
     "HPE": 1795094444.2668922,
@@ -3301,18 +3301,18 @@
     "SNDK": 1795094549.5212789,
     "BTC-USD": 1795094549.5212789,
     "CRWD": 1795094651.4090517,
-    "ORCL": 1795093239.0954247,
+    "ORCL": 1795094755.9181206,
     "COIN": 1795094651.4090517,
-    "LLY": 1795093239.0954247,
-    "MRNA": 1795093239.0954247,
-    "NKE": 1795093239.0954247,
-    "MCD": 1795093239.0954247,
-    "PEP": 1795093239.0954247,
-    "XOM": 1795093239.0954247,
-    "JPM": 1795093239.0954247,
-    "WMT": 1795093239.0954247,
-    "V": 1795093239.0954247,
-    "CAT": 1795093239.0954247,
+    "LLY": 1795094755.9181206,
+    "MRNA": 1795094755.9181206,
+    "NKE": 1795094755.9181206,
+    "MCD": 1795094755.9181206,
+    "PEP": 1795094755.9181206,
+    "XOM": 1795094755.9181206,
+    "JPM": 1795094755.9181206,
+    "WMT": 1795094755.9181206,
+    "V": 1795094755.9181206,
+    "CAT": 1795094755.9181206,
     "FN": 1795094651.4090517,
     "GLW": 1795094651.4090517,
     "ANT": 1795094549.5212789,
