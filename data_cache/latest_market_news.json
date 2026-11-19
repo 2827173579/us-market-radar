@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795094444.267,
-  "updated_at_et": "11-19 08:20 ET",
-  "updated_at_kst": "22:20 KST",
+  "updated_at_ts": 1795094549.521,
+  "updated_at_et": "11-19 08:22 ET",
+  "updated_at_kst": "22:22 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2563,6 +2563,13 @@
     ],
     "SNDK": [
       {
+        "title": "Sandisk Sinks 21% in a Week as Nvidia’s CEO Exit Hits Memory Stocks. Time to Buy?",
+        "url": "https://www.tikr.com/blog/sandisk-sinks-21-in-a-week-as-nvidias-ceo-exit-hits-memory-stocks-time-to-buy?ref=yahoofinance&tlnk=yf-261119-pc2cmr8q&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 05:52 ET",
+        "pub_ts": 1795085547.0
+      },
+      {
         "title": "Wall Street's Next Blockbuster Stock Split Arrives Later Today -- and This Industry Titan Has Skyrocketed Nearly 2,400% in Less Than 2 Years",
         "url": "https://www.fool.com/investing/2026/11/19/wall-street-next-blockbuster-stock-split-arrives-today-skyrocketed-nearly-2400-in-less-than-2-years/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2589,16 +2596,30 @@
         "source": "Yahoo Finance",
         "time": "11-18 14:21 ET",
         "pub_ts": 1795029662.0
-      },
-      {
-        "title": "Sandisk Leads Tech Stocks in Earnings Surprises Ahead of 8-for-1 Split",
-        "url": "https://finance.yahoo.com/technology/ai/articles/sandisk-leads-tech-stocks-earnings-174815801.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 12:48 ET",
-        "pub_ts": 1795024095.0
       }
     ],
     "BTC-USD": [
+      {
+        "title": "Stock Market Today: Dow Rises As Walmart Falls On Earnings; Anthropic IPO To Debut (Live Coverage)",
+        "url": "https://finance.yahoo.com/m/81d1d9ec-afbb-3e6f-882b-7e094a9a305e/stock-market-today%3A-dow-rises.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 08:08 ET",
+        "pub_ts": 1795093687.0
+      },
+      {
+        "title": "Wall Street Bought Bitcoin Near $80,000. Now $2.9 Billion In ETF Outflows Is Testing The Market.",
+        "url": "https://www.ibtimes.com/bitcoin-etf-outflows-institutional-demand-weakens-3809949?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 07:57 ET",
+        "pub_ts": 1795093024.0
+      },
+      {
+        "title": "Bitcoin Open Interest Drops 20% as Ethereum and Solana Slide Further",
+        "url": "https://www.ccn.com/news/crypto/bitcoin-ethereum-solana-open-interest-drop/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 07:47 ET",
+        "pub_ts": 1795092435.0
+      },
       {
         "title": "Anthropic's Stock Market Debut Lifts Wall Street Futures Premarket Thursday",
         "url": "https://finance.yahoo.com/news/anthropic-apos-stock-market-debut-120733310.html?.tsrc=rss",
@@ -2612,27 +2633,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 06:32 ET",
         "pub_ts": 1795087922.0
-      },
-      {
-        "title": "Bitcoin, Ether Bounce from Lows After Hawkish Fed Minutes",
-        "url": "https://finance.yahoo.com/m/a9afa1d8-135c-3cd8-a917-2a8ff5c2b6a8/bitcoin%2C-ether-bounce-from.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 06:21 ET",
-        "pub_ts": 1795087273.0
-      },
-      {
-        "title": "Not Bitcoin. Not Ethereum. This Could Be the Best Cryptocurrency to Hold During the Next 5 Years.",
-        "url": "https://www.fool.com/investing/2026/11/19/not-bitcoin-not-ethereum-this-could-be-the-best-cryptocurrency-to-hold-over-the-next-5-years/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 06:20 ET",
-        "pub_ts": 1795087202.0
-      },
-      {
-        "title": "Strategist Eyes $170K Bitcoin as Peter Brandt Warns the Peak May Be In",
-        "url": "https://www.ccn.com/news/crypto/strategist-eyes-170k-bitcoin-as-peter-brandt-warns-the-peak-may-be-in/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 06:17 ET",
-        "pub_ts": 1795087035.0
       }
     ],
     "CRWD": [
@@ -3295,11 +3295,11 @@
     "FPS": 1795094444.2668922,
     "MU": 1795094444.2668922,
     "SKHY": 1795094444.2668922,
-    "WDC": 1795093029.8465977,
-    "STX": 1795092926.1584692,
-    "MSTR": 1795092926.1584692,
-    "SNDK": 1795092926.1584692,
-    "BTC-USD": 1795093029.8465977,
+    "WDC": 1795094549.5212789,
+    "STX": 1795094549.5212789,
+    "MSTR": 1795094549.5212789,
+    "SNDK": 1795094549.5212789,
+    "BTC-USD": 1795094549.5212789,
     "CRWD": 1795093135.0936346,
     "ORCL": 1795093239.0954247,
     "COIN": 1795093135.0936346,
@@ -3315,8 +3315,8 @@
     "CAT": 1795093239.0954247,
     "FN": 1795093135.0936346,
     "GLW": 1795093135.0936346,
-    "ANT": 1795093029.8465977,
-    "XAUUSD": 1795093029.8465977
+    "ANT": 1795094549.5212789,
+    "XAUUSD": 1795094549.5212789
   },
   "calendar_banner": {
     "level": "idle_with_flash",
