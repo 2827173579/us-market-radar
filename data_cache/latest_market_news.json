@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795109763.878,
-  "updated_at_et": "11-19 12:36 ET",
-  "updated_at_kst": "02:36 KST",
+  "updated_at_ts": 1795109862.179,
+  "updated_at_et": "11-19 12:37 ET",
+  "updated_at_kst": "02:37 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -439,18 +439,18 @@
         "pub_ts": 1795086254.0
       },
       {
+        "title": "If You Have $1,000 to Invest Right Now, Here's the 1 ETF I'd Buy Without a Second Thought",
+        "url": "https://www.fool.com/investing/2026/11/19/if-you-have-1000-to-invest-right-now-heres-the-1-etf-id-buy-without-a-second-thought/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 12:13 ET",
+        "pub_ts": 1795108382.0
+      },
+      {
         "title": "Exchange-Traded Funds, Equity Futures Higher Pre-Bell Thursday Ahead of Anthropic Stock Market Debut",
         "url": "https://finance.yahoo.com/markets/stocks/articles/exchange-traded-funds-equity-futures-141450756.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-19 09:14 ET",
         "pub_ts": 1795097690.0
-      },
-      {
-        "title": "Five Straight Losses, One Divergence: Where the Major Indexes Stand Now",
-        "url": "https://finance.yahoo.com/markets/world-indices/articles/five-straight-losses-one-divergence-130000760.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 08:00 ET",
-        "pub_ts": 1795093200.0
       }
     ],
     "DIA": [
@@ -788,6 +788,27 @@
     ],
     "TSM": [
       {
+        "title": "TSMC Stocks Rise 3.11% as Foundry Takes $500 Million Slice of Anthropic IPO Placement",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/tsmc-stocks-rise-3-11-172326201.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 12:23 ET",
+        "pub_ts": 1795109006.0
+      },
+      {
+        "title": "Anthropic shares jump 34% in Nasdaq debut after record IPO",
+        "url": "https://www.proactiveinvestors.com/companies/news/1102135/anthropic-shares-jump-34-in-nasdaq-debut-after-record-ipo-1102135.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 12:07 ET",
+        "pub_ts": 1795108020.0
+      },
+      {
+        "title": "Qualcomm vs. Taiwan Semiconductor: Diverging Revenue Trends for Major Chipmakers",
+        "url": "https://www.fool.com/coverage/charts/2026/11/19/qualcomm-vs-taiwan-semiconductor-diverging-revenue-trends-for-major-chipmakers/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 12:03 ET",
+        "pub_ts": 1795107782.0
+      },
+      {
         "title": "Here’s What Weighed on Taiwan Semiconductor Manufacturing Company Limited (TSM) in Q3",
         "url": "https://finance.yahoo.com/markets/stocks/articles/weighed-taiwan-semiconductor-manufacturing-company-163513705.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -800,30 +821,16 @@
         "source": "Yahoo Finance",
         "time": "11-19 11:26 ET",
         "pub_ts": 1795105595.0
-      },
-      {
-        "title": "TSMC and Samsung halt some chip shipments to China as US tightens export curbs",
-        "url": "https://www.proactiveinvestors.com/companies/news/1102130/tsmc-and-samsung-halt-some-chip-shipments-to-china-as-us-tightens-export-curbs-1102130.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 11:13 ET",
-        "pub_ts": 1795104780.0
-      },
-      {
-        "title": "Chip giants suspend shipments to China in threat to Xi’s AI ambitions",
-        "url": "https://www.telegraph.co.uk/business/2026/11/19/chip-giants-suspend-shipments-to-china-threat-xi-ai/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 09:23 ET",
-        "pub_ts": 1795098186.0
-      },
-      {
-        "title": "Market Chatter: TSMC Tightening Restrictions on Chinese Chip Designers in Response to New US Rules",
-        "url": "https://finance.yahoo.com/technology/articles/market-chatter-tsmc-tightening-restrictions-133517456.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 08:35 ET",
-        "pub_ts": 1795095317.0
       }
     ],
     "VIXY": [
+      {
+        "title": "Wall Street’s Fear Gauge Went From 16.61 to 28.18 in a Single Day in November. Why It Keeps Snapping Back",
+        "url": "https://247wallst.com/investing/2026/11/19/wall-streets-fear-gauge-went-from-16-61-to-28-18-in-a-single-day-in-november-why-it-keeps-snapping-back/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 12:06 ET",
+        "pub_ts": 1795107962.0
+      },
       {
         "title": "Market Turmoil Deepens: ETFs to Consider to Navigate the Volatility",
         "url": "https://finance.yahoo.com/markets/stocks/articles/market-turmoil-deepens-etfs-consider-161300749.html?.tsrc=rss",
@@ -851,13 +858,6 @@
         "source": "Yahoo Finance",
         "time": "07-17 11:34 ET",
         "pub_ts": 1784302440.0
-      },
-      {
-        "title": "The VIX Futures Curve Signal That Could Cut SVOL’s Yield in Half",
-        "url": "https://247wallst.com/investing/etf/2026/07/17/the-vix-futures-curve-signal-that-could-cut-svols-yield-in-half/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "07-17 07:10 ET",
-        "pub_ts": 1784286644.0
       }
     ],
     "SOXS": [
@@ -899,48 +899,48 @@
     ],
     "NVDA": [
       {
-        "title": "Prediction: SpaceX Will Be the Largest Company in the World by 2040",
-        "url": "https://www.fool.com/investing/2026/11/19/prediction-spacex-will-be-the-largest-company-in-the-world-by-2040/?.tsrc=rss",
+        "title": "Being Bearish on Anthropic: $1 Trillion Compute Bill and Nvidia turmoil",
+        "url": "https://finance.yahoo.com/video/being-bearish-on-anthropic-1-trillion-compute-bill-and-nvidia-turmoil-172453054.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-19 11:58 ET",
-        "pub_ts": 1795107482.0
+        "time": "11-19 12:24 ET",
+        "pub_ts": 1795109093.0
       },
       {
-        "title": "Nvidia Stock Could Soar 90% After Jensen Huang's Exit, According to One Wall Street Firm. Is It Time to Buy?",
-        "url": "https://www.fool.com/investing/2026/11/19/nvidia-stock-could-soar-90-after-jensen-huang-s-exit-according-to-one-wall-street-firm-is-it-time-to-buy/?.tsrc=rss",
+        "title": "Nvidia reportedly approaches Arm CEO Rene Haas in search for Jensen Huang successor",
+        "url": "https://www.proactiveinvestors.com/companies/news/1102138/nvidia-reportedly-approaches-arm-ceo-rene-haas-in-search-for-jensen-huang-successor-1102138.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-19 11:57 ET",
-        "pub_ts": 1795107472.0
+        "time": "11-19 12:28 ET",
+        "pub_ts": 1795109280.0
       },
       {
-        "title": "Chip Stocks Rise On Anthropic IPO, AI Prospects",
-        "url": "https://finance.yahoo.com/m/cc197e22-85d3-3a44-97b9-12111805ce48/chip-stocks-rise-on-anthropic.html?.tsrc=rss",
+        "title": "Chip Stocks Waver On Anthropic IPO, AI Prospects",
+        "url": "https://finance.yahoo.com/m/cc197e22-85d3-3a44-97b9-12111805ce48/chip-stocks-waver-on.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-19 11:56 ET",
-        "pub_ts": 1795107418.0
+        "time": "11-19 12:26 ET",
+        "pub_ts": 1795109204.0
       },
       {
-        "title": "A $3.3 Billion Fund Dumps These 3 Stocks",
-        "url": "https://www.tikr.com/blog/a-3-3-billion-fund-dumps-these-3-stocks?ref=yahoofinance&tlnk=yf-261119-x2j5hfx9&.tsrc=rss",
+        "title": "Anthropic Stock Is Now Trading. Should You Buy ANT Today?",
+        "url": "https://www.fool.com/investing/2026/11/19/anthropic-stock-is-now-trading-should-you-buy-ant-today/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-19 11:51 ET",
-        "pub_ts": 1795107117.0
+        "time": "11-19 12:22 ET",
+        "pub_ts": 1795108922.0
       },
       {
-        "title": "Elon Musk Calls Jensen Huang “Michael Jordan at His Peak.” Did Nvidia Make a $4 Trillion Mistake?",
-        "url": "https://247wallst.com/investing/2026/11/19/elon-musk-calls-jensen-huang-michael-jordan-at-his-peak-did-nvidia-make-a-4-trillion-mistake/?.tsrc=rss",
+        "title": "AI Backlog Might Change The Case For Investing In Dell Technologies (DELL)",
+        "url": "https://finance.yahoo.com/technology/ai/articles/ai-backlog-might-change-case-171345062.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-19 11:49 ET",
-        "pub_ts": 1795106983.0
+        "time": "11-19 12:13 ET",
+        "pub_ts": 1795108425.0
       }
     ],
     "AMD": [
       {
-        "title": "Nvidia, Broadcom, Micron stocks erase gains as Anthropic goes public",
-        "url": "https://finance.yahoo.com/markets/article/nvidia-broadcom-micron-stocks-decline-as-anthropic-goes-public-170845481.html?.tsrc=rss",
+        "title": "AMD stock drops after Hunterbrook Media raises export control concerns",
+        "url": "https://finance.yahoo.com/technology/article/amd-stock-drops-after-hunterbrook-media-raises-export-control-concerns-171508145.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-19 08:44 ET",
-        "pub_ts": 1795095848.0
+        "time": "11-19 12:15 ET",
+        "pub_ts": 1795108508.0
       },
       {
         "title": "Blacklisted Chinese server maker kept getting AMD firmware updates: Hunterbrook",
@@ -950,25 +950,25 @@
         "pub_ts": 1795105687.0
       },
       {
-        "title": "Chip Stocks Rise On Anthropic IPO, AI Prospects",
-        "url": "https://finance.yahoo.com/m/cc197e22-85d3-3a44-97b9-12111805ce48/chip-stocks-rise-on-anthropic.html?.tsrc=rss",
+        "title": "Chip Stocks Waver On Anthropic IPO, AI Prospects",
+        "url": "https://finance.yahoo.com/m/cc197e22-85d3-3a44-97b9-12111805ce48/chip-stocks-waver-on.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-19 11:56 ET",
-        "pub_ts": 1795107418.0
+        "time": "11-19 12:26 ET",
+        "pub_ts": 1795109204.0
       },
       {
-        "title": "AMD Stock Price Crashes 11% After a New Scandal Involving China",
-        "url": "https://beincrypto.com/amd-stock-crash-hunterbrook-china-firmware-report/?.tsrc=rss",
+        "title": "AMD Stocks Rise 3.77% as Anthropic Deal Points to $20 Billion-Plus of Helios Spending",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/amd-stocks-rise-3-77-172606832.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-19 11:10 ET",
-        "pub_ts": 1795104610.0
+        "time": "11-19 12:26 ET",
+        "pub_ts": 1795109166.0
       },
       {
-        "title": "Lisa Su Cashed Out $35 Million as AMD Trades 19% Below Its High",
-        "url": "https://247wallst.com/investing/2026/11/19/lisa-su-cashed-out-35-million-as-amd-trades-19-below-its-high/?.tsrc=rss",
+        "title": "AMD shares slide over 9% after short seller raises concerns over China exposure",
+        "url": "https://www.proactiveinvestors.com/companies/news/1102136/amd-shares-slide-over-9-after-short-seller-raises-concerns-over-china-exposure-1102136.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-19 11:07 ET",
-        "pub_ts": 1795104453.0
+        "time": "11-19 12:16 ET",
+        "pub_ts": 1795108560.0
       }
     ],
     "ASML": [
@@ -1010,6 +1010,13 @@
     ],
     "QCOM": [
       {
+        "title": "Qualcomm vs. Taiwan Semiconductor: Diverging Revenue Trends for Major Chipmakers",
+        "url": "https://www.fool.com/coverage/charts/2026/11/19/qualcomm-vs-taiwan-semiconductor-diverging-revenue-trends-for-major-chipmakers/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 12:03 ET",
+        "pub_ts": 1795107782.0
+      },
+      {
         "title": "Google’s Parent Now Holds a $548 Million Qualcomm Stake That Wasn’t in Its June Filing",
         "url": "https://247wallst.com/investing/2026/11/19/googles-parent-now-holds-a-548-million-qualcomm-stake-that-wasnt-in-its-june-filing/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1036,13 +1043,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 08:17 ET",
         "pub_ts": 1795094233.0
-      },
-      {
-        "title": "Qualcomm (QCOM) Stock May Be Below Fair Value After AI Revenue Targets",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/qualcomm-qcom-stock-may-below-081010117.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 03:10 ET",
-        "pub_ts": 1795075810.0
       }
     ],
     "AVGO": [
@@ -1121,6 +1121,13 @@
     ],
     "META": [
       {
+        "title": "Meta rethinks climate goal as AI emissions soar 45%",
+        "url": "https://www.axios.com/2026/11/19/meta-ai-emissions-rise#utm_source=yahoo_finance&utm_medium=partner&utm_campaign=subs-partner-yahoo-finance-AI?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 12:00 ET",
+        "pub_ts": 1795107648.0
+      },
+      {
         "title": "Inside George Soros’s Portfolio: Every Move He Made in the Third Quarter",
         "url": "https://www.tikr.com/blog/inside-george-soross-portfolio-every-move-he-made-in-the-third-quarter?ref=yahoofinance&tlnk=yf-261119-w8jw4prf&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1147,53 +1154,53 @@
         "source": "Yahoo Finance",
         "time": "11-19 11:20 ET",
         "pub_ts": 1795105218.0
-      },
-      {
-        "title": "Shareholder Lawsuits Stall Meta's Class C Share Plan",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/shareholder-lawsuits-stall-metas-class-140657147.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 09:06 ET",
-        "pub_ts": 1795097217.0
       }
     ],
     "GOOGL": [
       {
-        "title": "Prediction: SpaceX Will Be the Largest Company in the World by 2040",
-        "url": "https://www.fool.com/investing/2026/11/19/prediction-spacex-will-be-the-largest-company-in-the-world-by-2040/?.tsrc=rss",
+        "title": "Broadcom Stocks Rise 4.21% as Chip Supplier Joins Anthropic's $26 Billion Placement",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/broadcom-stocks-rise-4-21-173026533.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-19 11:58 ET",
-        "pub_ts": 1795107482.0
+        "time": "11-19 12:30 ET",
+        "pub_ts": 1795109426.0
       },
       {
-        "title": "2 Huge Beneficiaries of Anthropic's IPO",
-        "url": "https://www.fool.com/investing/2026/11/19/2-huge-beneficiaries-of-anthropic-s-ipo/?.tsrc=rss",
+        "title": "TSMC Stocks Rise 3.11% as Foundry Takes $500 Million Slice of Anthropic IPO Placement",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/tsmc-stocks-rise-3-11-172326201.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-19 11:57 ET",
-        "pub_ts": 1795107422.0
+        "time": "11-19 12:23 ET",
+        "pub_ts": 1795109006.0
       },
       {
-        "title": "Google’s Parent Now Holds a $548 Million Qualcomm Stake That Wasn’t in Its June Filing",
-        "url": "https://247wallst.com/investing/2026/11/19/googles-parent-now-holds-a-548-million-qualcomm-stake-that-wasnt-in-its-june-filing/?.tsrc=rss",
+        "title": "Do Nvidia, Alphabet, Meta Drops Hurt Your Index Fund?",
+        "url": "https://www.trefis.com/stock/nvda/articles/626700/do-nvidia-alphabet-meta-drops-hurt-your-index-fund/2026-11-19?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-19 11:52 ET",
-        "pub_ts": 1795107155.0
+        "time": "11-19 12:10 ET",
+        "pub_ts": 1795108208.0
       },
       {
-        "title": "Anthropic Stock Jumps 38% In Nasdaq Debut After Record $107.3B IPO",
-        "url": "https://stocktwits.com/news-articles/markets/equity/anthropic-stock-jumps-38-in-nasdaq-debut-after-record-107-3-b-ipo/cNbihePR900?.tsrc=rss",
+        "title": "Anthropic shares jump 34% in Nasdaq debut after record IPO",
+        "url": "https://www.proactiveinvestors.com/companies/news/1102135/anthropic-shares-jump-34-in-nasdaq-debut-after-record-ipo-1102135.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-19 11:52 ET",
-        "pub_ts": 1795107144.0
+        "time": "11-19 12:07 ET",
+        "pub_ts": 1795108020.0
       },
       {
-        "title": "Prediction: Anthropic Faces a “SpaceX-Like 20 to 30 Percent Decline,” per Paul Kedrosky. That’s a Risk for Amazon",
-        "url": "https://www.tikr.com/blog/prediction-anthropic-faces-a-spacex-like-20-to-30-percent-decline-per-paul-kedrosky-thats-a-risk-for-amazon?ref=yahoofinance&tlnk=yf-261119-95jcr4cp&.tsrc=rss",
+        "title": "Why Is Oracle Spending $1.61 For Every Cash Dollar?",
+        "url": "https://www.trefis.com/stock/orcl/articles/626550/why-is-oracle-spending-1-61-for-every-cash-dollar/2026-11-19?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-19 11:51 ET",
-        "pub_ts": 1795107066.0
+        "time": "11-19 12:01 ET",
+        "pub_ts": 1795107718.0
       }
     ],
     "MSFT": [
+      {
+        "title": "The outages keep coming. Some Americans are preparing for a collapse.",
+        "url": "https://washingtonpost.com/technology/2026/11/19/wave-outages-has-americans-preparing-doomsday/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 12:22 ET",
+        "pub_ts": 1795108944.0
+      },
       {
         "title": "Accelerating Azure Growth and Copilot Adoption Fuel Microsoft Corp.’s (MSFT) AI Momentum",
         "url": "https://finance.yahoo.com/technology/ai/articles/accelerating-azure-growth-copilot-adoption-165958924.html?.tsrc=rss",
@@ -1221,13 +1228,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 11:10 ET",
         "pub_ts": 1795104655.0
-      },
-      {
-        "title": "Why Anthropic Won't Be the Next Apple or Amazon",
-        "url": "https://finance.yahoo.com/m/fa461112-7f08-30de-8c36-e3ef910184cf/why-anthropic-won%27t-be-the.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 10:58 ET",
-        "pub_ts": 1795103894.0
       }
     ],
     "AAPL": [
@@ -3239,30 +3239,30 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795108333.9561973,
-    "SOXL": 1795108333.9561973,
-    "SPY": 1795108333.9561973,
-    "DIA": 1795108333.9561973,
-    "SOXX": 1795108333.9561973,
-    "QQQ": 1795108333.9561973,
-    "SMH": 1795108333.9561973,
-    "IWM": 1795108333.9561973,
-    "IGV": 1795108333.9561973,
-    "TLT": 1795108333.9561973,
-    "GLD": 1795108333.9561973,
-    "SQQQ": 1795108333.9561973,
-    "TSM": 1795108333.9561973,
-    "VIXY": 1795108333.9561973,
-    "SOXS": 1795108333.9561973,
-    "NVDA": 1795108333.9561973,
-    "AMD": 1795108333.9561973,
-    "ASML": 1795108333.9561973,
-    "QCOM": 1795108333.9561973,
+    "KORU": 1795109862.1793842,
+    "SOXL": 1795109862.1793842,
+    "SPY": 1795109862.1793842,
+    "DIA": 1795109862.1793842,
+    "SOXX": 1795109862.1793842,
+    "QQQ": 1795109862.1793842,
+    "SMH": 1795109862.1793842,
+    "IWM": 1795109862.1793842,
+    "IGV": 1795109862.1793842,
+    "TLT": 1795109862.1793842,
+    "GLD": 1795109862.1793842,
+    "SQQQ": 1795109862.1793842,
+    "TSM": 1795109862.1793842,
+    "VIXY": 1795109862.1793842,
+    "SOXS": 1795109862.1793842,
+    "NVDA": 1795109862.1793842,
+    "AMD": 1795109862.1793842,
+    "ASML": 1795109862.1793842,
+    "QCOM": 1795109862.1793842,
     "AVGO": 1795108440.137595,
-    "AMAT": 1795108333.9561973,
-    "META": 1795108333.9561973,
-    "GOOGL": 1795108333.9561973,
-    "MSFT": 1795108333.9561973,
+    "AMAT": 1795109862.1793842,
+    "META": 1795109862.1793842,
+    "GOOGL": 1795109862.1793842,
+    "MSFT": 1795109862.1793842,
     "AAPL": 1795108440.137595,
     "PLTR": 1795108544.7411363,
     "NOW": 1795108544.7411363,
