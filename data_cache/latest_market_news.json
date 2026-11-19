@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795048581.989,
-  "updated_at_et": "11-18 19:36 ET",
-  "updated_at_kst": "09:36 KST",
+  "updated_at_ts": 1795048679.642,
+  "updated_at_et": "11-18 19:37 ET",
+  "updated_at_kst": "09:37 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2865,6 +2865,13 @@
     ],
     "MCD": [
       {
+        "title": "McDonald's testing cheaper menu prices",
+        "url": "https://www.thestreet.com/restaurants/mcdonalds-tests-cheaper-menu-prices?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 19:17 ET",
+        "pub_ts": 1795047420.0
+      },
+      {
         "title": "McDonald’s vs Yum Brands: value and income versus growth and momentum",
         "url": "https://finance.yahoo.com/markets/stocks/articles/mcdonald-vs-yum-brands-value-160230770.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2891,13 +2898,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 16:45 ET",
         "pub_ts": 1794951902.0
-      },
-      {
-        "title": "McDonald's 'Home Alone Meal' offers holiday socks, menu items",
-        "url": "https://finance.yahoo.com/video/mcdonalds-home-alone-meal-offers-182041087.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 13:20 ET",
-        "pub_ts": 1794939641.0
       }
     ],
     "PEP": [
@@ -3266,7 +3266,7 @@
     "LLY": 1795048380.6618123,
     "MRNA": 1795048380.6618123,
     "NKE": 1795048482.5853624,
-    "MCD": 1795047111.8024893,
+    "MCD": 1795048679.6424193,
     "PEP": 1795048482.5853624,
     "XOM": 1795048380.6618123,
     "JPM": 1795048482.5853624,
