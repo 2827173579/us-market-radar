@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795117749.518,
-  "updated_at_et": "11-19 14:49 ET",
-  "updated_at_kst": "04:49 KST",
+  "updated_at_ts": 1795117851.945,
+  "updated_at_et": "11-19 14:50 ET",
+  "updated_at_kst": "04:50 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1232,6 +1232,13 @@
     ],
     "AAPL": [
       {
+        "title": "Apple (AAPL) Faces UK Backdoor Admission And French Obsolescence Trial",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/apple-aapl-faces-uk-backdoor-191555370.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 14:15 ET",
+        "pub_ts": 1795115755.0
+      },
+      {
         "title": "Roundtable 100 analysts lift Apple on record R&D spend",
         "url": "https://www.thestreet.com/crypto/markets/roundtable-100-analysts-lift-apple-on-record-r-d-spend?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1258,13 +1265,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 13:05 ET",
         "pub_ts": 1795111553.0
-      },
-      {
-        "title": "Apple’s Longest-Serving Director Just Cashed Out $32 Million",
-        "url": "https://247wallst.com/investing/2026/11/19/apples-longest-serving-director-just-cashed-out-32-million/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 12:03 ET",
-        "pub_ts": 1795107834.0
       }
     ],
     "PLTR": [
@@ -2046,6 +2046,13 @@
     ],
     "KO": [
       {
+        "title": "Meet Wall Street’s Safe Passive Income Dividend Stocks: 4 Companies That Keep Paying Through Downturns",
+        "url": "https://247wallst.com/investing/2026/11/19/meet-wall-streets-safepassive-income-dividend-stocks-4-companies-that-keep-paying-through-downturns/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 14:21 ET",
+        "pub_ts": 1795116075.0
+      },
+      {
         "title": "Return your empties. Reject the closure of local bottle depots",
         "url": "https://finance.yahoo.com/small-business/articles/return-empties-reject-closure-local-171300783.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2072,13 +2079,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 04:25 ET",
         "pub_ts": 1795080302.0
-      },
-      {
-        "title": "Coca-Cola Stocks Move Lower Even as TD Cowen Names It Top 2027 Pick",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/coca-cola-stocks-move-lower-183115675.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 13:31 ET",
-        "pub_ts": 1795026675.0
       }
     ],
     "FLY": [
@@ -2120,6 +2120,20 @@
     ],
     "INTC": [
       {
+        "title": "What's Happening To Intel's Factory Cash?",
+        "url": "https://www.trefis.com/stock/intc/articles/626665/what-s-happening-to-intel-s-factory-cash/2026-11-19?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 14:14 ET",
+        "pub_ts": 1795115647.0
+      },
+      {
+        "title": "Intel (INTC) Stock Could Be 33% Undervalued On Chip Breakthrough News",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/intel-intc-stock-could-33-190844780.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 14:08 ET",
+        "pub_ts": 1795115324.0
+      },
+      {
         "title": "Analysts Are Bullish on This Blue Chip Stock: Should You Buy?",
         "url": "https://finance.yahoo.com/markets/stocks/articles/analysts-bullish-blue-chip-stock-190838054.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2139,20 +2153,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 12:24 ET",
         "pub_ts": 1795109045.0
-      },
-      {
-        "title": "Why Intel Stock Is Gaining Today",
-        "url": "https://www.fool.com/investing/2026/11/19/why-intel-stock-is-gaining-today/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 11:59 ET",
-        "pub_ts": 1795107541.0
-      },
-      {
-        "title": "Intel’s CEO Says It “Just Signed the First Customer” for 18A",
-        "url": "https://247wallst.com/investing/2026/11/19/intels-ceo-says-it-just-signed-the-first-customer-for-18a/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 11:43 ET",
-        "pub_ts": 1795106610.0
       }
     ],
     "VRT": [
@@ -3263,7 +3263,7 @@
     "META": 1795117749.5175169,
     "GOOGL": 1795117749.5175169,
     "MSFT": 1795117749.5175169,
-    "AAPL": 1795116267.6057112,
+    "AAPL": 1795117851.9454,
     "PLTR": 1795116371.3329806,
     "NOW": 1795116371.3329806,
     "AMZN": 1795116371.3329806,
@@ -3276,31 +3276,31 @@
     "COHR": 1795116371.3329806,
     "MRVL": 1795116371.3329806,
     "LITE": 1795116371.3329806,
-    "AAOI": 1795116267.6057112,
+    "AAOI": 1795117851.9454,
     "SPCX": 1795116371.3329806,
     "ASTS": 1795116371.3329806,
     "AXTI": 1795116371.3329806,
-    "NASA": 1795116267.6057112,
-    "LUNR": 1795116267.6057112,
-    "TSLA": 1795116267.6057112,
-    "AXP": 1795116267.6057112,
+    "NASA": 1795117851.9454,
+    "LUNR": 1795117851.9454,
+    "TSLA": 1795117851.9454,
+    "AXP": 1795117851.9454,
     "RKLB": 1795116371.3329806,
-    "KO": 1795116267.6057112,
+    "KO": 1795117851.9454,
     "FLY": 1795116371.3329806,
-    "INTC": 1795116267.6057112,
-    "VRT": 1795116267.6057112,
-    "HPE": 1795116267.6057112,
-    "DELL": 1795116267.6057112,
-    "OKLO": 1795116267.6057112,
-    "CEG": 1795116267.6057112,
-    "FPS": 1795116267.6057112,
-    "MU": 1795116267.6057112,
-    "SKHY": 1795116267.6057112,
-    "WDC": 1795116267.6057112,
-    "STX": 1795116267.6057112,
-    "MSTR": 1795116267.6057112,
-    "SNDK": 1795116267.6057112,
-    "BTC-USD": 1795116267.6057112,
+    "INTC": 1795117851.9454,
+    "VRT": 1795117851.9454,
+    "HPE": 1795117851.9454,
+    "DELL": 1795117851.9454,
+    "OKLO": 1795117851.9454,
+    "CEG": 1795117851.9454,
+    "FPS": 1795117851.9454,
+    "MU": 1795117851.9454,
+    "SKHY": 1795117851.9454,
+    "WDC": 1795117851.9454,
+    "STX": 1795117851.9454,
+    "MSTR": 1795117851.9454,
+    "SNDK": 1795117851.9454,
+    "BTC-USD": 1795117851.9454,
     "CRWD": 1795116371.3329806,
     "ORCL": 1795116475.2280586,
     "COIN": 1795116475.2280586,
