@@ -1,9 +1,22 @@
 {
-  "updated_at_ts": 1795099805.383,
-  "updated_at_et": "11-19 09:50 ET",
-  "updated_at_kst": "23:50 KST",
+  "updated_at_ts": 1795099905.315,
+  "updated_at_et": "11-19 09:51 ET",
+  "updated_at_kst": "23:51 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261119225017968800",
+      "title": "Anthropic在纳斯达克上市首日开盘价预计为99.60美元，发行价为每股83美元。",
+      "summary": "Anthropic在纳斯达克上市首日开盘价预计为99.60美元，发行价为每股83美元。",
+      "keywords": [
+        "纳斯达克"
+      ],
+      "pub_ts": 1795099817.0,
+      "time_et": "11-19 09:50 ET",
+      "time_bj": "22:50 BJ",
+      "time_kst": "23:50 KST",
+      "time_display": "09:50 ET / 22:50 BJ"
+    },
     {
       "id": "20261119223416302800",
       "title": "投资于Anthropic的公司的股票在该公司上市前上涨，亚马逊(AMZN.O)1.9%，…",
@@ -323,20 +336,6 @@
       "time_bj": "17:08 BJ",
       "time_kst": "18:08 KST",
       "time_display": "04:08 ET / 17:08 BJ"
-    },
-    {
-      "id": "20261119170646573800",
-      "title": "投资于Anthropic的公司的股票在该公司上市前于盘前上涨，亚马逊(AMZN.O)涨2…",
-      "summary": "投资于Anthropic的公司的股票在该公司上市前于盘前上涨，亚马逊(AMZN.O)涨2%，Alphabet(GOOG.O)涨2.9%，英伟达(NVDA.O)涨1.7%，AMD(AMD.O)涨3.4%，博通(AVGO.O)涨2.8%，Salesforce(CRM.N)上涨1.8%，Zoom(ZM.O)上涨2.9%，美光科技(MU.O)上涨4.2%，微软(MSFT.O)上涨1.6%。",
-      "keywords": [
-        "英伟达",
-        "微软"
-      ],
-      "pub_ts": 1795079206.0,
-      "time_et": "11-19 04:06 ET",
-      "time_bj": "17:06 BJ",
-      "time_kst": "18:06 KST",
-      "time_display": "04:06 ET / 17:06 BJ"
     }
   ],
   "ticker_news": {
@@ -3320,7 +3319,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (09:34 ET / 22:34 BJ) [英伟达] [微软]：投资于Anthropic的公司的股票在该公司上市前上涨，亚马逊(AMZN.O)1.9%，Alphabet(GOOG.O)涨4.2%，英伟达(NVDA.O)涨2%，AMD(AMD.O)涨2.2",
+    "detail": "⚡ 最新核心快讯 (09:50 ET / 22:50 BJ) [纳斯达克]：Anthropic在纳斯达克上市首日开盘价预计为99.60美元，发行价为每股83美元。",
     "event_name": "",
     "minutes_left": 0
   }

@@ -18,8 +18,8 @@
       "last_notified_at": 0.0
     },
     "MRNA": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1795099908.2946308
     },
     "CRWV": {
       "state": "STOP_LOSS",
@@ -74,8 +74,8 @@
       "last_notified_at": 0.0
     },
     "AXP": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1795099808.6375232
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "SPY": {
       "state": "NORMAL",
