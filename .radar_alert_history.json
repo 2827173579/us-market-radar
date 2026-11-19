@@ -70,12 +70,12 @@
       "last_notified_at": 1795105386.4323876
     },
     "VST": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1795109067.6757653
-    },
-    "AXP": {
       "state": "NORMAL",
       "last_notified_at": 0.0
+    },
+    "AXP": {
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1795109167.3683584
     },
     "SPY": {
       "state": "NORMAL",
