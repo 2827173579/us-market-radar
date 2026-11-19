@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795123811.553,
-  "updated_at_et": "11-19 16:30 ET",
-  "updated_at_kst": "06:30 KST",
+  "updated_at_ts": 1795123909.147,
+  "updated_at_et": "11-19 16:31 ET",
+  "updated_at_kst": "06:31 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -900,42 +900,56 @@
     ],
     "NVDA": [
       {
-        "title": "Nvidia Up 8.9% After a Strong Anthropic IPO? That’s What Tilt’s New Investing Tool Modeled",
-        "url": "https://www.benzinga.com/markets/prediction-markets/26/11/63457684/anthropic-ipo-nvidia?utm_source=yahooFinance&utm_campaign=partner_feed&utm_medium=referral&.tsrc=rss",
+        "title": "Anthropic soars in Wall Street as broader market tumbles",
+        "url": "https://finance.yahoo.com/technology/ai/articles/anthropic-set-price-ipo-key-030309911.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-19 15:44 ET",
-        "pub_ts": 1795121046.0
+        "time": "11-19 16:28 ET",
+        "pub_ts": 1795123708.0
       },
       {
-        "title": "The unfolding Jensen Huang scandal: a timeline",
-        "url": "https://finance.yahoo.com/technology/ai/articles/nvidia-ceo-jensen-huang-affair-170419585.html?.tsrc=rss",
+        "title": "Chip Stocks Waver On Anthropic IPO, AI Prospects, AMD Short",
+        "url": "https://finance.yahoo.com/m/cc197e22-85d3-3a44-97b9-12111805ce48/chip-stocks-waver-on.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-19 15:18 ET",
-        "pub_ts": 1795119529.0
+        "time": "11-19 16:18 ET",
+        "pub_ts": 1795123139.0
       },
       {
-        "title": "First Nvidia, Now AMD: A Short Seller Just Put Its China Business Under the Microscope",
-        "url": "https://www.fool.com/investing/2026/11/19/first-nvidia-now-amd-a-short-seller-just-put-its-china-business-under-the-microscope/?.tsrc=rss",
+        "title": "Nvidia, AMD, Micron Sink as Anthropic Closes 17% Above IPO Price",
+        "url": "https://decrypt.co/383669/nvidia-amd-micron-ai-stocks-sink-anthropic-ipo-price?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-19 15:15 ET",
-        "pub_ts": 1795119302.0
+        "time": "11-19 16:12 ET",
+        "pub_ts": 1795122726.0
       },
       {
-        "title": "Looks Like AMD Also Has A China Problem",
-        "url": "https://app.moby.co/home/news/news-looks-like-amd-also-has-a-china-problem?utm_source=yahoo_finance&utm_medium=rss&.tsrc=rss",
+        "title": "Apple Stock Polishes Breakout As Nvidia-Led AI Boom Gets Wake-Up Call",
+        "url": "https://finance.yahoo.com/m/681ca0c6-76b1-321b-bdd4-bb83acc818fb/apple-stock-polishes-breakout.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-19 15:12 ET",
-        "pub_ts": 1795119174.0
+        "time": "11-19 16:00 ET",
+        "pub_ts": 1795122020.0
       },
       {
-        "title": "Palantir Technologies (PLTR) Gets A Fresh AI Signal From A Key Platform Partner",
-        "url": "https://finance.yahoo.com/technology/ai/articles/palantir-technologies-pltr-gets-fresh-200954508.html?.tsrc=rss",
+        "title": "Market Storylines: Chip Giant Earnings Beat, AI IPO's + Equity Selloff",
+        "url": "https://finance.yahoo.com/video/market-storylines-chip-giant-earnings-205016561.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-19 15:09 ET",
-        "pub_ts": 1795118994.0
+        "time": "11-19 15:50 ET",
+        "pub_ts": 1795121416.0
       }
     ],
     "AMD": [
+      {
+        "title": "AMD Shares Tumble 7% After Short Seller Questions China Ties. Chipmaker Denies Allegations.",
+        "url": "https://www.ibtimes.com/amd-shares-fall-hunterbrook-china-export-risks-3809979?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 16:18 ET",
+        "pub_ts": 1795123126.0
+      },
+      {
+        "title": "Nvidia, AMD, Micron Sink as Anthropic Closes 17% Above IPO Price",
+        "url": "https://decrypt.co/383669/nvidia-amd-micron-ai-stocks-sink-anthropic-ipo-price?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 16:12 ET",
+        "pub_ts": 1795122726.0
+      },
       {
         "title": "This Is Incredible News for AMD Stock Investors (Hint: It’s Bad News for Intel)",
         "url": "https://www.fool.com/investing/2026/11/19/this-is-incredible-news-for-amd-stock-investors-hint-it-s-bad-news-for-intel/?.tsrc=rss",
@@ -956,20 +970,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 15:15 ET",
         "pub_ts": 1795119302.0
-      },
-      {
-        "title": "Looks Like AMD Also Has A China Problem",
-        "url": "https://app.moby.co/home/news/news-looks-like-amd-also-has-a-china-problem?utm_source=yahoo_finance&utm_medium=rss&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 15:12 ET",
-        "pub_ts": 1795119174.0
-      },
-      {
-        "title": "AMD Stock Drops After Short Report Says It Isn’t an Nvidia Replacement",
-        "url": "https://finance.yahoo.com/m/e2a6c3e8-8178-3df2-aef3-4d956c9037fe/amd-stock-drops-after-short.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 15:02 ET",
-        "pub_ts": 1795118520.0
       }
     ],
     "ASML": [
@@ -1039,11 +1039,11 @@
         "pub_ts": 1795107155.0
       },
       {
-        "title": "Global Wired Interface Market Report 2026: Size, Share, Trends, and Forecast to 2030 | Capitalize on High-Speed, Fiber Optic Demand with Intel, Broadcom, Qualcomm, and Infineon",
-        "url": "https://finance.yahoo.com/technology/articles/global-wired-interface-market-report-143600909.html?.tsrc=rss",
+        "title": "Why It’s Time to Buy the Pullback in Qualcomm Stock",
+        "url": "https://www.barchart.com/story/news/8918191/why-its-time-to-buy-the-pullback-in-qualcomm-stock?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-19 09:36 ET",
-        "pub_ts": 1795098960.0
+        "time": "11-19 10:00 ET",
+        "pub_ts": 1795100404.0
       }
     ],
     "AVGO": [
@@ -1159,6 +1159,27 @@
     ],
     "GOOGL": [
       {
+        "title": "Anthropic has a 17-fold revenue growth hurdle to tackle: A closer look",
+        "url": "https://finance.yahoo.com/video/anthropic-has-a-17-fold-revenue-growth-hurdle-to-tackle-a-closer-look-211340437.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 16:13 ET",
+        "pub_ts": 1795122820.0
+      },
+      {
+        "title": "3 British Lithium Stocks To Watch With Revenue Under $1 Million",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/3-british-lithium-stocks-watch-211154824.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 16:11 ET",
+        "pub_ts": 1795122714.0
+      },
+      {
+        "title": "Stanley Druckenmiller dumps entire $120M Alphabet stake to buy gold mining stock",
+        "url": "https://www.thestreet.com/investing/stocks/nem-newmont-corporation-stanley-druckenmiller-dumps-entire-120-million-alphabet-stake-opens-43-9-million-newmont-position?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 16:03 ET",
+        "pub_ts": 1795122180.0
+      },
+      {
         "title": "3 Dirt Cheap Artificial Intelligence (AI) Stocks to Load Up on Before 2027",
         "url": "https://www.fool.com/investing/2026/11/19/3-dirt-cheap-artificial-intelligence-ai-stocks-to-load-up-on-before-2027/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1171,27 +1192,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 14:25 ET",
         "pub_ts": 1795116357.0
-      },
-      {
-        "title": "Missed the Anthropic IPO? These 3 Stocks Give You Immediate Exposure.",
-        "url": "https://www.fool.com/investing/2026/11/19/missed-the-anthropic-ipo-these-3-stocks-give-you-immediate-exposure/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 14:17 ET",
-        "pub_ts": 1795115822.0
-      },
-      {
-        "title": "Nvidia will not be the leader 5 years from now: Tiernan Ray",
-        "url": "https://finance.yahoo.com/video/nvidia-will-not-be-the-leader-5-years-from-now-tiernan-ray-185954396.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 13:59 ET",
-        "pub_ts": 1795114794.0
-      },
-      {
-        "title": "Why AI competition from China won't be a risk US tech companies",
-        "url": "https://finance.yahoo.com/video/why-ai-competition-from-china-wont-be-a-risk-us-tech-companies-184851467.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 13:48 ET",
-        "pub_ts": 1795114131.0
       }
     ],
     "MSFT": [
@@ -3240,30 +3240,30 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795122313.3504488,
-    "SOXL": 1795122313.3504488,
-    "SPY": 1795122313.3504488,
-    "DIA": 1795122313.3504488,
-    "SOXX": 1795122313.3504488,
-    "QQQ": 1795122313.3504488,
-    "SMH": 1795122313.3504488,
-    "IWM": 1795122313.3504488,
-    "IGV": 1795122313.3504488,
-    "TLT": 1795122313.3504488,
-    "GLD": 1795122313.3504488,
-    "SQQQ": 1795122313.3504488,
-    "TSM": 1795122313.3504488,
-    "VIXY": 1795122313.3504488,
-    "SOXS": 1795122313.3504488,
-    "NVDA": 1795122313.3504488,
-    "AMD": 1795122313.3504488,
+    "KORU": 1795123909.1467626,
+    "SOXL": 1795123909.1467626,
+    "SPY": 1795123909.1467626,
+    "DIA": 1795123909.1467626,
+    "SOXX": 1795123909.1467626,
+    "QQQ": 1795123909.1467626,
+    "SMH": 1795123909.1467626,
+    "IWM": 1795123909.1467626,
+    "IGV": 1795123909.1467626,
+    "TLT": 1795123909.1467626,
+    "GLD": 1795123909.1467626,
+    "SQQQ": 1795123909.1467626,
+    "TSM": 1795123909.1467626,
+    "VIXY": 1795123909.1467626,
+    "SOXS": 1795123909.1467626,
+    "NVDA": 1795123909.1467626,
+    "AMD": 1795123909.1467626,
     "ASML": 1795122417.1831968,
-    "QCOM": 1795122313.3504488,
-    "AVGO": 1795122313.3504488,
-    "AMAT": 1795122313.3504488,
-    "META": 1795122313.3504488,
-    "GOOGL": 1795122313.3504488,
-    "MSFT": 1795122313.3504488,
+    "QCOM": 1795123909.1467626,
+    "AVGO": 1795123909.1467626,
+    "AMAT": 1795123909.1467626,
+    "META": 1795123909.1467626,
+    "GOOGL": 1795123909.1467626,
+    "MSFT": 1795123909.1467626,
     "AAPL": 1795122515.3115776,
     "PLTR": 1795122618.3068957,
     "NOW": 1795122618.3068957,
