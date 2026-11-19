@@ -2367,9 +2367,13 @@
     "2026-11-19:CEG/SPCX/MRNA:5M_ENTRY": {
       "device": "PC",
       "ts": 1795101939.419258
+    },
+    "2026-11-19:DEFENSIVE_FLIGHT:-3.4": {
+      "device": "PC",
+      "ts": 1795102346.507013
     }
   },
   "device": "PC",
-  "last_heartbeat_ts": 1795102157.3292086,
-  "updated_at": "2026-11-19T15:30:41.493427+00:00"
+  "last_heartbeat_ts": 1795102261.5087867,
+  "updated_at": "2026-11-19T15:32:26.507536+00:00"
 }
