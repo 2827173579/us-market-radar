@@ -1,9 +1,25 @@
 {
-  "updated_at_ts": 1795094238.171,
-  "updated_at_et": "11-19 08:17 ET",
-  "updated_at_kst": "22:17 KST",
+  "updated_at_ts": 1795094340.819,
+  "updated_at_et": "11-19 08:19 ET",
+  "updated_at_kst": "22:19 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261119211742172800",
+      "title": "整理：每日美股市场要闻速递（11月19日）",
+      "summary": "重要新闻 1. 纳斯达克：Anthropic的IPO将于北京时间22:50开始报价。 2. 习近平：中美应当加强沟通和协调，防范人工智能安全风险，确保人工智能始终处于人类控制之下。 个股新闻 1. 网易(NTES.O)第三季度营收279亿元。 2. 英特尔(INTC.O)18A芯片制造工艺签下首家外部客户。 3. SpaceX(SPCX.O)：目前计划“龙”飞船发射时间不早于11月20日。 4. 马斯克：特斯拉(TSLA.O)将生产无方向盘的自动驾驶款Model Y。 5. 据英国金融时报：英伟达(NVDA.O)将把加薪和新股权奖励提前至12月。 6. 马斯克：Optimus人形机器人有望在12至18个月内完成多步骤复杂操作。 7. 亚马逊(AMZN.O)CEO：AI算力需求极为强劲，明年将显著增加资本开支。 8. 阿里巴巴(BABA.N)营收超预期，2027财年Q2营收2715亿元，同比增长10%。 9. 沃尔玛(WMT.N)2027财年Q3营收1888.4亿美元，公司上调年度销售和利润预期。 10. Meta Platforms(META.O)拟在印度招聘新任政策主管，旨在修复与印度政府的受损关系。 11. 微软(MSFT.O)CEO：上周Outlook故障是一场“完美风暴”，修补漏洞对旧系统带来不稳定性。 12. 拼多多(PDD.O)Q3营收1083亿元，上年同期1082.8亿元；Q3净利润295亿元，上年同期293.3亿元。 13. 蓝色起源：蓝色起源与谷歌(GOOG.O)已就“太阳捕手”（Project Suncatcher）项目签署发射服务协议。",
+      "keywords": [
+        "芯片",
+        "英伟达",
+        "微软",
+        "纳斯达克"
+      ],
+      "pub_ts": 1795094262.0,
+      "time_et": "11-19 08:17 ET",
+      "time_bj": "21:17 BJ",
+      "time_kst": "22:17 KST",
+      "time_display": "08:17 ET / 21:17 BJ"
+    },
     {
       "id": "20261119210040923800",
       "title": "最高50亿！存储芯片龙头加码回购获通过，部分注销减资 | 盘后公告精选",
@@ -322,19 +338,6 @@
       "time_bj": "16:25 BJ",
       "time_kst": "17:25 KST",
       "time_display": "03:25 ET / 16:25 BJ"
-    },
-    {
-      "id": "20261119162115224800",
-      "title": "英伟达5000亿AI融资计划至今无资金落地，华尔街为何开始退缩？",
-      "summary": "英伟达与多家华尔街机构签署的协议主要是谅解备忘录，并未要求参与方必须筹集资金。曾被包装成AI投资周期重要支柱的融资计划，实际约束力远低于市场想象。点击查看...",
-      "keywords": [
-        "英伟达"
-      ],
-      "pub_ts": 1795076475.0,
-      "time_et": "11-19 03:21 ET",
-      "time_bj": "16:21 BJ",
-      "time_kst": "17:21 KST",
-      "time_display": "03:21 ET / 16:21 BJ"
     }
   ],
   "ticker_news": {
@@ -414,6 +417,13 @@
     ],
     "SPY": [
       {
+        "title": "Wall Street Subdued So Far in Q4: What Lies Ahead?",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/wall-street-subdued-far-q4-120000528.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 07:00 ET",
+        "pub_ts": 1795089600.0
+      },
+      {
         "title": "SPDR S&P 500 ETF (SPY) Adds Apple and Nvidia on Nov. 17",
         "url": "https://finance.yahoo.com/markets/stocks/articles/spdr-p-500-etf-spy-110414065.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -440,13 +450,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 06:02 ET",
         "pub_ts": 1795086121.0
-      },
-      {
-        "title": "41 ETFs Add to UnitedHealth (UNH) Holdings on Nov. 17",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/41-etfs-add-unitedhealth-unh-110155115.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 06:01 ET",
-        "pub_ts": 1795086115.0
       }
     ],
     "DIA": [
@@ -895,39 +898,39 @@
     ],
     "NVDA": [
       {
-        "title": "Stalemates over semiconductors and rare earth minerals appear little changed as Trump heads home from China",
-        "url": "https://finance.yahoo.com/markets/article/stalemates-over-semiconductors-and-rare-earth-minerals-appear-little-changed-as-trump-heads-home-from-china-121555352.html?.tsrc=rss",
+        "title": "Broadcom, Nvidia, and Micron Could Be Setting Up for a Massive AI Rally Before Year End",
+        "url": "https://247wallst.com/investing/2026/11/19/broadcom-nvidia-and-micron-could-be-setting-up-for-a-massive-ai-rally-before-year-end/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-19 07:15 ET",
-        "pub_ts": 1795090555.0
+        "time": "11-19 08:04 ET",
+        "pub_ts": 1795093467.0
       },
       {
-        "title": "Prediction: A Stock Market Crash Is Coming. Here's What Investors Should Do Based on Warren Buffett's Proven Advice.",
-        "url": "https://www.fool.com/investing/2026/11/19/prediction-stock-market-crash-coming-investors-warren-buffetts-proven-advice/?.tsrc=rss",
+        "title": "Pasqal Makes Its Quantum Processors Native to Slurm with NVIDIA Expansion to Support Hierarchical Resources",
+        "url": "https://finance.yahoo.com/technology/ai/articles/pasqal-makes-quantum-processors-native-130000531.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-19 07:36 ET",
-        "pub_ts": 1795091762.0
+        "time": "11-19 08:00 ET",
+        "pub_ts": 1795093200.0
       },
       {
-        "title": "President Trump Just Delivered Good News for Nvidia Stock Investors",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/president-trump-just-delivered-good-122719225.html?.tsrc=rss",
+        "title": "Almost Every Fed Official Discussed the Risk of an AI Bust, Minutes Show",
+        "url": "https://247wallst.com/investing/2026/11/19/almost-every-fed-official-discussed-the-risk-of-an-ai-bust-minutes-show/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-19 07:27 ET",
-        "pub_ts": 1795091239.0
+        "time": "11-19 07:57 ET",
+        "pub_ts": 1795093069.0
       },
       {
-        "title": "Not Nvidia. Not Broadcom. If I Could Buy and Hold Only 1 AI Chip Stock Through 2030, It Would Be This One",
-        "url": "https://www.fool.com/investing/2026/11/19/not-nvidia-not-broadcom-if-buy-hold-1-ai-chip-stock-2030-this-one/?.tsrc=rss",
+        "title": "Semiconductor Sell-Off: These Artificial Intelligence (AI) Chip Stocks Are Screaming Buys Before They Go Parabolic",
+        "url": "https://www.fool.com/investing/2026/11/19/semiconductor-sell-off-these-artificial-intelligence-ai-chip-stocks-are-screaming-buys-before-they-go-parabolic/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-19 07:22 ET",
-        "pub_ts": 1795090921.0
+        "time": "11-19 07:55 ET",
+        "pub_ts": 1795092902.0
       },
       {
-        "title": "Nvidia faces 2028 growth concerns as UBS cuts price target to US$220",
-        "url": "https://www.proactiveinvestors.com/companies/news/1102097/nvidia-faces-2028-growth-concerns-as-ubs-cuts-price-target-to-us-220-1102097.html?.tsrc=rss",
+        "title": "Nvidia Beat Again. Why Is The Stock Still Down?",
+        "url": "https://www.trefis.com/stock/nvda/articles/626521/nvidia-beat-again-why-is-the-stock-still-down/2026-11-19?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-19 07:15 ET",
-        "pub_ts": 1795090500.0
+        "time": "11-19 07:45 ET",
+        "pub_ts": 1795092348.0
       }
     ],
     "AMD": [
@@ -1043,6 +1046,13 @@
     ],
     "AVGO": [
       {
+        "title": "Broadcom, Nvidia, and Micron Could Be Setting Up for a Massive AI Rally Before Year End",
+        "url": "https://247wallst.com/investing/2026/11/19/broadcom-nvidia-and-micron-could-be-setting-up-for-a-massive-ai-rally-before-year-end/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 08:04 ET",
+        "pub_ts": 1795093467.0
+      },
+      {
         "title": "Is Broadcom “a Momentum Stock Wearing a Value Costume”? Its December 9 Report Will Tell",
         "url": "https://www.tikr.com/blog/is-broadcom-a-momentum-stock-wearing-a-value-costume-its-december-9-report-will-tell?ref=yahoofinance&tlnk=yf-261119-37x7qjg4&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1069,13 +1079,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 02:25 ET",
         "pub_ts": 1795073153.0
-      },
-      {
-        "title": "Thinking About Buying Anthropic’s IPO on Nov. 19? Here’s an AI Stock I’d Consider First (Hint: It’s Not Nvidia or Broadcom).",
-        "url": "https://www.fool.com/investing/2026/11/18/thinking-about-buying-anthropic-s-ipo-on-nov-19-here-s-an-ai-stock-i-d-consider-first-hint-it-s-not-nvidia-or-broadcom/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 18:35 ET",
-        "pub_ts": 1795044902.0
       }
     ],
     "AMAT": [
@@ -3235,27 +3238,27 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795092822.9516308,
-    "SOXL": 1795092822.9516308,
-    "SPY": 1795092822.9516308,
-    "DIA": 1795092822.9516308,
-    "SOXX": 1795092822.9516308,
-    "QQQ": 1795092822.9516308,
-    "SMH": 1795092822.9516308,
-    "IWM": 1795092822.9516308,
-    "IGV": 1795092822.9516308,
-    "TLT": 1795092822.9516308,
-    "GLD": 1795092822.9516308,
-    "SQQQ": 1795092822.9516308,
-    "TSM": 1795092822.9516308,
-    "VIXY": 1795092822.9516308,
-    "SOXS": 1795092822.9516308,
-    "NVDA": 1795092822.9516308,
-    "AMD": 1795092822.9516308,
+    "KORU": 1795094340.8194132,
+    "SOXL": 1795094340.8194132,
+    "SPY": 1795094340.8194132,
+    "DIA": 1795094340.8194132,
+    "SOXX": 1795094340.8194132,
+    "QQQ": 1795094340.8194132,
+    "SMH": 1795094340.8194132,
+    "IWM": 1795094340.8194132,
+    "IGV": 1795094340.8194132,
+    "TLT": 1795094340.8194132,
+    "GLD": 1795094340.8194132,
+    "SQQQ": 1795094340.8194132,
+    "TSM": 1795094340.8194132,
+    "VIXY": 1795094340.8194132,
+    "SOXS": 1795094340.8194132,
+    "NVDA": 1795094340.8194132,
+    "AMD": 1795094340.8194132,
     "ASML": 1795092926.1584692,
     "QCOM": 1795092926.1584692,
-    "AVGO": 1795092822.9516308,
-    "AMAT": 1795092822.9516308,
+    "AVGO": 1795094340.8194132,
+    "AMAT": 1795094340.8194132,
     "META": 1795092926.1584692,
     "GOOGL": 1795092926.1584692,
     "MSFT": 1795092926.1584692,
@@ -3318,7 +3321,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (08:00 ET / 21:00 BJ) [芯片]：存储芯片巨头最高50亿回购方案通过！AI芯片企业称订单充沛，共建国产供应链；这一药企三靶点减重新药获批临床……今日盘后有哪些值得关注的公告？",
+    "detail": "⚡ 最新核心快讯 (08:17 ET / 21:17 BJ) [芯片] [英伟达] [微软]：重要新闻 1. 纳斯达克：Anthropic的IPO将于北京时间22:50开始报价。 2. 习近平：中美应当加强沟通和协调，防范人工智能安全风险，确保人工智能始终处于人类控制之下。 个股新闻",
     "event_name": "",
     "minutes_left": 0
   }
