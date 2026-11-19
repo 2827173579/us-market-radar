@@ -368,7 +368,7 @@ def fetch_xauusd_spot_quote(timeout: float = 6.0) -> Dict[str, Any]:
                     ask = p.get("ask")
                     if bid is not None and ask is not None and float(bid) > 0 and float(ask) > 0:
                         mid = round((float(bid) + float(ask)) / 2.0, 2)
-                        return {
+                        res = {
                             "last": mid,
                             "change": 0.0,
                             "pct_change": 0.0,
@@ -378,6 +378,10 @@ def fetch_xauusd_spot_quote(timeout: float = 6.0) -> Dict[str, Any]:
                             "has_pct": False,
                             "source": "swissquote",
                         }
+                        _bf = _backfill_xauusd_change_from_gcf(mid)
+                        if _bf:
+                            res.update(_bf)
+                        return res
     except Exception:
         pass
 
@@ -389,7 +393,7 @@ def fetch_xauusd_spot_quote(timeout: float = 6.0) -> Dict[str, Any]:
         px = ga_data.get("price") if isinstance(ga_data, dict) else None
         if px is not None and float(px) > 0:
             spot = round(float(px), 2)
-            return {
+            res = {
                 "last": spot,
                 "change": 0.0,
                 "pct_change": 0.0,
@@ -399,10 +403,70 @@ def fetch_xauusd_spot_quote(timeout: float = 6.0) -> Dict[str, Any]:
                 "has_pct": False,
                 "source": "gold-api",
             }
+            _bf = _backfill_xauusd_change_from_gcf(spot)
+            if _bf:
+                res.update(_bf)
+            return res
     except Exception:
         pass
 
     return {}
+
+
+def _backfill_xauusd_change_from_gcf(spot: float) -> Dict[str, Any]:
+    """当 Swissquote / Gold-API 降级仅返回现价时，使用现货价差校准后的 GC=F 昨收反算真实涨跌与涨跌幅，杜绝 0.00% 归零。"""
+    try:
+        spot = float(spot)
+        if spot <= 0:
+            return {}
+        tk_gc = yf.Ticker("GC=F")
+        d1 = tk_gc.history(period="5d", interval="1d")
+        if d1 is None or d1.empty or "Close" not in d1.columns:
+            return {}
+        c1 = d1["Close"].dropna()
+        if c1.empty:
+            return {}
+
+        try:
+            ny_today = _to_et(None).date()
+        except Exception:
+            ny_today = datetime.now().date()
+        last_dt = c1.index[-1].date() if hasattr(c1.index[-1], "date") else pd.to_datetime(c1.index[-1]).date()
+
+        gc_5m = 0.0
+        try:
+            d5 = tk_gc.history(period="2d", interval="5m", prepost=True)
+            if d5 is not None and not d5.empty and "Close" in d5.columns:
+                c5 = d5["Close"].dropna()
+                if not c5.empty and float(c5.iloc[-1]) > 0:
+                    gc_5m = float(c5.iloc[-1])
+        except Exception:
+            gc_5m = 0.0
+
+        if last_dt >= ny_today and len(c1) >= 2:
+            gc_prev = float(c1.iloc[-2])
+            gc_now = gc_5m if gc_5m > 0 else float(c1.iloc[-1])
+        else:
+            gc_prev = float(c1.iloc[-1])
+            gc_now = gc_5m if gc_5m > 0 else gc_prev
+
+        if gc_prev <= 0 or gc_now <= 0:
+            return {}
+        ratio = spot / gc_now
+        if not (0.8 <= ratio <= 1.2):
+            return {}
+        cal_prev = gc_prev * ratio
+        if cal_prev <= 0:
+            return {}
+        chg = round(spot - cal_prev, 2)
+        pct = round(((spot - cal_prev) / cal_prev) * 100.0, 2)
+        return {
+            "change": chg,
+            "pct_change": pct,
+            "prev_close": round(cal_prev, 2),
+        }
+    except Exception:
+        return {}
 
 
 def _fetch_xauusd_live_price() -> Optional[float]:
@@ -2241,6 +2305,16 @@ def compute_volume_profile_poc(
         return None
 
 
+_TIER1_LOW_VOL_DEFENSE_TICKERS = frozenset({'XAUUSD', 'GLD', 'TLT'})
+
+
+def _tier1_stop_mult(ticker: str, eff_atr: float) -> float:
+    """第一档低波黄金/美债止损步幅 (0.8% ~ 1.3%)，其余标的按常规波段口径 (max(2.2%, eff_atr))。"""
+    if str(ticker or '').upper().strip() in _TIER1_LOW_VOL_DEFENSE_TICKERS:
+        return float(np.clip(0.50 * eff_atr, 0.008, 0.013))
+    return max(0.022, 1.00 * eff_atr)
+
+
 def compute_multi_level_scenario_map(
     ticker: str,
     close_price: Optional[float] = None,
@@ -2293,25 +2367,33 @@ def compute_multi_level_scenario_map(
     else:
         rng60 = max(high_60d - low_60d, close * 0.06)
 
+    is_tier1_low_vol = str(ticker or '').upper().strip() in _TIER1_LOW_VOL_DEFENSE_TICKERS
+    t1_stop_mult = _tier1_stop_mult(ticker, eff_atr)
+
     # S2 (极限插针支撑): 60日低点 / 0.618 支撑 / Put wall / 动态 ATR
     fib_s2 = high_60d - 0.618 * rng60
-    s2_candidates = [close * (1.0 - max(0.045, 1.45 * eff_atr))]
-    if 0.50 * close <= low_60d < close:
-        s2_candidates.append(low_60d)
-    if 0.50 * close <= fib_s2 < close:
-        s2_candidates.append(fib_s2)
+    s2_floor = max(0.022, 1.00 * eff_atr) if is_tier1_low_vol else max(0.045, 1.45 * eff_atr)
+    s2_candidates = [close * (1.0 - s2_floor)]
+    if not is_tier1_low_vol or df_history is not None:
+        if 0.50 * close <= low_60d < close:
+            s2_candidates.append(low_60d)
+        if 0.50 * close <= fib_s2 < close:
+            s2_candidates.append(fib_s2)
     if put_wall is not None and 0.88 * close <= put_wall < close:
         s2_candidates.append(put_wall)
     s2 = round(min(s2_candidates), 2)
 
-    # S1 (波段支撑): 20日 POC 下沿 / 0.382~0.50 回撤 / 动态 ATR
-    fib_s1 = high_60d - 0.382 * rng60
-    s1_candidates = [close * (1.0 - max(0.025, 0.75 * eff_atr))]
-    if poc_20d is not None and 0.65 * close <= (poc_20d * 0.99) < close:
-        s1_candidates.append(poc_20d * 0.99)
-    if 0.65 * close <= fib_s1 < close:
-        s1_candidates.append(fib_s1)
-    s1 = round(float(np.median(s1_candidates)), 2)
+    # S1 (波段支撑): 第一档低波黄金/美债锚定 0.8%~1.3% 窄幅防守；其余用 20日 POC 下沿 / 0.382 / 动态 ATR
+    if is_tier1_low_vol:
+        s1 = round(close * (1.0 - t1_stop_mult), 2)
+    else:
+        fib_s1 = high_60d - 0.382 * rng60
+        s1_candidates = [close * (1.0 - max(0.025, 0.75 * eff_atr))]
+        if poc_20d is not None and 0.65 * close <= (poc_20d * 0.99) < close:
+            s1_candidates.append(poc_20d * 0.99)
+        if 0.65 * close <= fib_s1 < close:
+            s1_candidates.append(fib_s1)
+        s1 = round(float(np.median(s1_candidates)), 2)
 
     # R1 (第一止盈/反弹阻力): 20日 POC / EMA20 / 动态 ATR
     r1_candidates = [close * (1.0 + max(0.030, 0.85 * eff_atr))]
@@ -2341,12 +2423,12 @@ def compute_multi_level_scenario_map(
         s1 = round(close - min_step, 2)
     if s2 >= s1:
         s2 = round(s1 - min_step, 2)
-    sl = round(min(s2 * 0.985, s2 - min_step), 2)
+    sl = round(min(s2 * (0.992 if is_tier1_low_vol else 0.985), s2 - min_step), 2)
 
-    # 近端止损优先：S2 过远(>6.5%)而 S1 就在现价下方 2%~6% 时，多头防守改用 S1
+    # 近端止损优先：S2 过远(>6.5%)而 S1 就在现价下方 2%~6% 时，多头防守改用 S1；第一档低波标的 (XAUUSD/GLD/TLT) 统一走 S1 窄幅防守口径 (-0.8%~-1.3%)
     s1_dist_pct = ((close - s1) / close) * 100.0 if close > 0 else 0.0
     s2_dist_pct = ((close - s2) / close) * 100.0 if close > 0 else 0.0
-    near_stop_s1 = bool((s2_dist_pct > 6.5) and (2.0 <= s1_dist_pct <= 6.0))
+    near_stop_s1 = bool(is_tier1_low_vol or ((s2_dist_pct > 6.5) and (2.0 <= s1_dist_pct <= 6.0)))
 
     if r1 <= close:
         r1 = round(close + min_step, 2)
@@ -2354,31 +2436,35 @@ def compute_multi_level_scenario_map(
         r2 = round(r1 + min_step, 2)
 
     # 生成盘前盘中结构化实战剧本 (包含防守点位、目标阻力与失效止损，严禁与 action 产生逻辑冲突)
+    t1_tag = f"·窄幅 {s1_dist_pct:.1f}% 防守" if is_tier1_low_vol else ""
     if is_halt and not is_short_covering:
-        scenario = f"【暴跌熔断风控剧本】触发暴跌熔断保护期，下方严防下探 S2 (${s2:.2f}) 极端清算底；反抽测试 R1 (${r1:.2f}) 均属诱多；防守止损位 ${sl:.2f}，严禁左侧接刀"
+        if is_tier1_low_vol:
+            scenario = f"【暴跌熔断风控剧本】触发熔断保护期，窄幅防守位看 S1 (${s1:.2f}{t1_tag})，极限插针 S2 (${s2:.2f})；反抽测试 R1 (${r1:.2f}) 暂勿重仓；严禁左侧接刀"
+        else:
+            scenario = f"【暴跌熔断风控剧本】触发暴跌熔断保护期，下方严防下探 S2 (${s2:.2f}) 极端清算底；反抽测试 R1 (${r1:.2f}) 均属诱多；防守止损位 ${sl:.2f}，严禁左侧接刀"
     elif is_short_covering:
         if near_stop_s1:
-            scenario = f"【空头回补剧本】依托 S1 (${s1:.2f}) 博反抽，极限插针底 S2 (${s2:.2f})；上看 R1 (${r1:.2f}) 空头回补反抽(不过就跑)；跌破 S1 严格离场"
+            scenario = f"【空头回补剧本】依托 S1 (${s1:.2f}{t1_tag}) 博反抽，极限插针底 S2 (${s2:.2f})；上看 R1 (${r1:.2f}) 空头回补反抽(不过就跑)；跌破 S1 严格离场"
         else:
             scenario = f"【空头回补滑头剧本】依托 S2 (${s2:.2f}) 极限插针底防守，上看第一阻力 R1 (${r1:.2f}) 空头回补反抽(不过就跑)；放量逼空看 R2 (${r2:.2f})；击穿止损位 ${sl:.2f} 严格离场防踩踏"
     elif is_broken:
         if near_stop_s1:
-            scenario = f"【破位反抽剧本】依托 S1 (${s1:.2f}) 博反抽，极限插针底 S2 (${s2:.2f})；反抽压力 R1 (${r1:.2f}) 不过即走；跌破 S1 严格离场"
+            scenario = f"【破位反抽剧本】窄幅防守关注 S1 (${s1:.2f}{t1_tag})，极限插针底 S2 (${s2:.2f})；反抽压力 R1 (${r1:.2f}) 不过即走；跌破 S1 严格离场"
         else:
             scenario = f"【破位飞刀剧本】均线空头排列破位，下方严防下探 S2 (${s2:.2f}) 清算底；反抽测试 R1 (${r1:.2f}) 均属诱多；防守位 ${sl:.2f}，严禁左侧接刀"
     elif -6.5 <= bias_ma50 <= 4.0:
         if near_stop_s1:
-            scenario = f"【黄金坑做多剧本】依托 S1 (${s1:.2f}) 博反抽，极限插针底 S2 (${s2:.2f})；上看 R1 (${r1:.2f})；跌破 S1 离场"
+            scenario = f"【黄金坑做多剧本】依托 S1 (${s1:.2f}{t1_tag}) 博反抽，极限插针底 S2 (${s2:.2f})；上看 R1 (${r1:.2f})；跌破 S1 离场"
         else:
             scenario = f"【黄金坑做多剧本】回踩波段支撑 S1 (${s1:.2f}) 蓄势不破，看多头反弹测试 R1 (${r1:.2f})；突破顺势看 R2 (${r2:.2f})；有效跌破止损位 ${sl:.2f} 离场"
     elif bias_ma50 > 4.0:
         if near_stop_s1:
-            scenario = f"【右侧主升剧本】依托 S1 (${s1:.2f}) 博反抽，极限插针底 S2 (${s2:.2f})；上看 R1 (${r1:.2f}) 与扩展目标 R2 (${r2:.2f})；跌破 S1 离场"
+            scenario = f"【右侧主升剧本】依托 S1 (${s1:.2f}{t1_tag}) 博反抽，极限插针底 S2 (${s2:.2f})；上看 R1 (${r1:.2f}) 与扩展目标 R2 (${r2:.2f})；跌破 S1 离场"
         else:
             scenario = f"【右侧主升剧本】依托波段支撑 S1 (${s1:.2f}) 逢低做多，上看阻力 R1 (${r1:.2f}) 与突破扩展目标 R2 (${r2:.2f})；关键防守位 ${sl:.2f}"
     else:
         if near_stop_s1:
-            scenario = f"【战术推演剧本】依托 S1 (${s1:.2f}) 博反抽，极限插针底 S2 (${s2:.2f})；上方阻力 R1 (${r1:.2f})/R2 (${r2:.2f})；跌破 S1 离场"
+            scenario = f"【战术推演剧本】依托 S1 (${s1:.2f}{t1_tag}) 防守，极限插针底 S2 (${s2:.2f})；上方阻力 R1 (${r1:.2f})/R2 (${r2:.2f})；跌破 S1 离场"
         else:
             scenario = f"【战术推演剧本】下方防守支撑 S1 (${s1:.2f})/S2 (${s2:.2f})，上方阻力目标 R1 (${r1:.2f})/R2 (${r2:.2f})；跌破防守止损位 ${sl:.2f} 严格离场"
 
@@ -4193,7 +4279,7 @@ def generate_report_tables(
             atr_pct = float(row.get('ATR_Pct', 2.0))
             eff_atr = compute_effective_atr(atr_pct)
             upper_mult = max(0.030, 1.35 * eff_atr)
-            lower_mult = max(0.022, 1.00 * eff_atr)
+            lower_mult = _tier1_stop_mult(tk, eff_atr)
 
             target_p = round(close_p * (1.0 + upper_mult), 2)
             stop_p = round(close_p * (1.0 - lower_mult), 2)
@@ -4242,9 +4328,10 @@ def generate_report_tables(
             # ---------------------------------------------------------
             raw_short_p = float(row.get('Prob_Short_1', 0.45))
             opt_info = options_cache_data.get(tk, {})
+            has_options_flag = bool(opt_info.get('has_options')) and (tk not in ('XAUUSD', 'BTC-USD'))
             dollar_pcr_val = float(opt_info.get('dollar_pcr', 1.0)) if opt_info.get('dollar_pcr') is not None else 1.0
             pcr_val = float(opt_info.get('pcr', 1.0)) if opt_info.get('pcr') is not None else 1.0
-            pcr_sentiment_val = str(opt_info.get('pcr_sentiment', '⛅ 中性'))
+            pcr_sentiment_val = str(opt_info.get('pcr_sentiment', '⛅ 中性')) if has_options_flag else '无美股期权'
             put_wall_val = float(opt_info.get('put_wall', 0.0)) if opt_info.get('put_wall') is not None else round(close_p * 0.95, 2)
             call_wall_val = float(opt_info.get('call_wall', 0.0)) if opt_info.get('call_wall') is not None else round(close_p * 1.05, 2)
             iv_atm_val = float(opt_info.get('iv_atm', 0.0)) if opt_info.get('iv_atm') is not None else 30.0
@@ -4325,6 +4412,7 @@ def generate_report_tables(
                 'dollar_pcr': round(dollar_pcr_val, 2),
                 'pcr': round(pcr_val, 2),
                 'pcr_sentiment': pcr_sentiment_val,
+                'has_options': has_options_flag,
                 'put_wall': put_wall_val,
                 'call_wall': call_wall_val,
                 'iv_atm': iv_atm_val,
@@ -4917,8 +5005,10 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
         s_sl_pct = float(r.get('short_stop_loss_pct', 3.0))
         
         d_pcr = float(r.get('dollar_pcr', 1.0))
-        pcr_sent = str(r.get('pcr_sentiment', '⛅ 中性'))
-        pcr_badge_style = "badge-red" if d_pcr >= 1.30 or "做空" in pcr_sent or "Put" in pcr_sent else ("badge-gold" if d_pcr >= 1.0 else "badge-blue")
+        has_opt_r = bool(r.get('has_options', r.get('ticker') not in ('XAUUSD', 'BTC-USD')))
+        pcr_sent = str(r.get('pcr_sentiment', '⛅ 中性')) if has_opt_r else '无美股期权'
+        pcr_badge_style = "badge-blue" if not has_opt_r else ("badge-red" if d_pcr >= 1.30 or "做空" in pcr_sent or "Put" in pcr_sent else ("badge-gold" if d_pcr >= 1.0 else "badge-blue"))
+        pcr_display_text = f"PCR {d_pcr:.2f} · {pcr_sent}" if has_opt_r else "🪙 无美股期权"
         
         s_act = str(r.get('short_action', '👀 空头动能不足·观望'))
         if "🚨" in s_act or "熔断" in s_act or "破位" in s_act or "🩸" in s_act:
@@ -4967,7 +5057,7 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
                 ${s_sl:.2f} <span class="pct-pill pct-down">+{s_sl_pct:.1f}%</span>
             </td>
             <td style="text-align: center;">
-                <span class="badge {pcr_badge_style}" style="font-size: 11px; padding: 3px 8px;">PCR {d_pcr:.2f} · {pcr_sent}</span>
+                <span class="badge {pcr_badge_style}" style="font-size: 11px; padding: 3px 8px;">{pcr_display_text}</span>
             </td>
             <td style="text-align: center;">
                 <span class="badge {s_act_badge}" style="font-size: 12px; padding: 4px 10px;">{s_act}</span>
@@ -5020,6 +5110,8 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
         s_sl = float(r.get('short_stop_loss_price', r['latest_price'] * 1.03))
         s_sl_pct = float(r.get('short_stop_loss_pct', 3.0))
         d_pcr = float(r.get('dollar_pcr', 1.0))
+        has_opt_t4 = bool(r.get('has_options', r.get('ticker') not in ('XAUUSD', 'BTC-USD')))
+        t4_pcr_sub = f"PCR {d_pcr:.2f}" if has_opt_t4 else "无美股期权"
         s_act = str(r.get('short_action', '👀 观望'))
         short_rk = int(r.get('short_rank', 999))
 
@@ -5074,7 +5166,7 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
             </td>
             <td style="text-align: center;">
                 <span class="badge badge-gold">{r['macro_temp']}</span>
-                <span class="t4-all-short-sub" style="display: none; font-size: 10px; color: #8b949e; margin-top: 2px;">PCR {d_pcr:.2f}</span>
+                <span class="t4-all-short-sub" style="display: none; font-size: 10px; color: #8b949e; margin-top: 2px;">{t4_pcr_sub}</span>
             </td>
             <td style="text-align: center;">
                 <span class="badge {act_badge}" style="font-size: 12px; padding: 4px 10px;">{r['action']}</span>

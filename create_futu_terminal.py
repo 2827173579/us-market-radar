@@ -192,7 +192,10 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                     raw_atr = max(0.012, atr_pct / 100.0)
                     eff_atr = (0.040 + 0.50 * (min(raw_atr, 0.100) - 0.040)) if raw_atr > 0.040 else raw_atr
                     u_mult = max(0.030, 1.35 * eff_atr)
-                    l_mult = max(0.022, 1.00 * eff_atr)
+                    if tk.upper() in ("XAUUSD", "GLD", "TLT"):
+                        l_mult = float(np.clip(0.50 * eff_atr, 0.008, 0.013))
+                    else:
+                        l_mult = max(0.022, 1.00 * eff_atr)
                     item["target_profit_price"] = round(live_p * (1.0 + u_mult), 2)
                     item["stop_loss_price"] = round(live_p * (1.0 - l_mult), 2)
                     item["target_profit_pct"] = round(u_mult * 100.0, 1)
@@ -1963,9 +1966,9 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 </div>
                 <div class="panel-box-content">
                     <!-- 核心状态徽章大胶囊 -->
-                    <div id="pSignalBanner" style="padding: 7px 10px; border-radius: 6px; font-weight: 700; font-size: 13px; margin-bottom: 8px; display: flex; align-items: center; justify-content: space-between; background: rgba(0,230,118,0.15); color: #00e676; border: 1px solid rgba(0,230,118,0.3); transition: all 0.25s;">
-                        <span id="pSignalText">⏳ 数据加载中...</span>
-                        <span id="pSignalTag" style="font-size: 11px; padding: 2px 7px; border-radius: 4px; background: rgba(255,255,255,0.12); font-weight: 600;">--</span>
+                    <div id="pSignalBanner" style="padding: 7px 10px; border-radius: 6px; font-weight: 700; font-size: 13px; margin-bottom: 8px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 4px 8px; background: rgba(0,230,118,0.15); color: #00e676; border: 1px solid rgba(0,230,118,0.3); transition: all 0.25s;">
+                        <span id="pSignalText" style="white-space: nowrap;">⏳ 数据加载中...</span>
+                        <span id="pSignalTag" style="font-size: 11px; padding: 2px 7px; border-radius: 4px; background: rgba(255,255,255,0.12); font-weight: 600; white-space: nowrap; flex-shrink: 0;">--</span>
                     </div>
                     <!-- 六维量化矩阵 -->
                     <div class="metrics-grid">
@@ -1994,9 +1997,9 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 </div>
                 <div class="panel-box-content" id="pAiCardBody">
                     <!-- 1. Dominant Decision Banner -->
-                    <div id="pAiActionBanner" style="background: rgba(188, 140, 255, 0.12); border: 1px solid rgba(188, 140, 255, 0.35); border-radius: 5px; padding: 6px 9px; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center;">
-                        <span id="pAiActionText" style="font-size: 12px; font-weight: 800; color: #e2c5ff;">--</span>
-                        <span id="pAiSectorStar" style="font-size: 11px; color: #ffd54f; font-weight: 700;">--</span>
+                    <div id="pAiActionBanner" style="background: rgba(188, 140, 255, 0.12); border: 1px solid rgba(188, 140, 255, 0.35); border-radius: 5px; padding: 5px 8px; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 4px 8px;">
+                        <span id="pAiActionText" style="font-size: 12px; font-weight: 800; color: #e2c5ff; white-space: nowrap; flex-shrink: 0;">--</span>
+                        <span id="pAiSectorStar" style="font-size: 11px; color: #ffd54f; font-weight: 700; white-space: nowrap; flex-shrink: 0;">--</span>
                     </div>
 
                     <!-- 2. Dual Comparison Tug-of-War Probability Module -->
@@ -2437,6 +2440,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             if (badgeEl) badgeEl.innerText = ticker || "--";
 
             const isEtf = !!(typeof MACRO_DATA !== "undefined" && MACRO_DATA && MACRO_DATA[ticker]) || (dataObj && dataObj.cat === "ETF基准");
+            const isMacroSpot = ["XAUUSD", "BTC-USD"].includes(ticker) || (dataObj && dataObj.cat === "大宗商品");
             if (earnEl) {{
                 if (dataObj && dataObj.earnings_tag) {{
                     earnEl.innerText = dataObj.is_earnings_risk
@@ -2446,8 +2450,8 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                     earnEl.style.borderColor = dataObj.is_earnings_risk ? "rgba(255,82,82,0.4)" : "rgba(255,167,38,0.35)";
                     earnEl.style.background = dataObj.is_earnings_risk ? "rgba(255,82,82,0.12)" : "rgba(255,167,38,0.10)";
                 }} else {{
-                    earnEl.innerText = isEtf ? "📊 宏观/行业指数 ETF（无单一财报日风险）" : "🟢 近期无财报雷区";
-                    earnEl.style.color = isEtf ? "#7dd3fc" : "#4ade80";
+                    earnEl.innerText = isMacroSpot ? "🏛️ 关注宏观 / 美联储 FOMC & CPI 日历（无公司财报）" : (isEtf ? "📊 宏观/行业指数 ETF（无单一财报日风险）" : "🟢 近期无财报雷区");
+                    earnEl.style.color = (isEtf || isMacroSpot) ? "#7dd3fc" : "#4ade80";
                     earnEl.style.borderColor = "rgba(255,255,255,0.06)";
                     earnEl.style.background = "rgba(0,0,0,0.28)";
                 }}
@@ -3365,6 +3369,9 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 if (data.earnings_tag) {{
                     earnEl.innerText = data.earnings_tag;
                     earnEl.style.color = data.is_earnings_risk ? "#ff5252" : "#ffa726";
+                }} else if (["XAUUSD", "BTC-USD"].includes(ticker) || curCat === "大宗商品") {{
+                    earnEl.innerText = "🏛️ 宏观/FOMC日历";
+                    earnEl.style.color = "#93c5fd";
                 }} else {{
                     earnEl.innerText = "🟢 近期无财报";
                     earnEl.style.color = "#9ca3af";
@@ -3600,7 +3607,10 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                     }}
                     const pcrEl = document.getElementById("pAiPcrSentiment");
                     if (pcrEl) {{
-                        if (aiItem.dollar_pcr !== undefined) {{
+                        const noEquityOpts = ["XAUUSD", "BTC-USD"].includes(ticker) || (aiItem.has_options === false) || (data && data.has_options === false);
+                        if (noEquityOpts) {{
+                            pcrEl.innerText = "🪙 无美股期权";
+                        }} else if (aiItem.dollar_pcr !== undefined) {{
                             pcrEl.innerText = `PCR: ${{aiItem.dollar_pcr.toFixed(2)}} ${{aiItem.pcr_sentiment || ''}}`;
                         }} else {{
                             pcrEl.innerText = aiItem.pcr_sentiment || "期权PCR: 正常";

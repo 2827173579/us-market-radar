@@ -1100,6 +1100,117 @@ class TestV32CircuitBreaker(unittest.TestCase):
         )
         self.assertEqual(out_live["ANT"]["current_price"], 112.50)
 
+    def test_xauusd_tier1_stop_band_and_scenario_alignment(self):
+        """XAUUSD uses Tier-1 (-0.8% ~ -1.3%) stop band matching GLD/TLT across intraday card & scenario map."""
+        import ml_predictor_5y
+        import integrated_market_radar as imr
+
+        self.assertEqual(imr._bounce_rebound_stop_band("XAUUSD"), (0.8, 1.3, 0.15))
+        self.assertEqual(imr._bounce_rebound_stop_band("XAUUSD"), imr._bounce_rebound_stop_band("GLD"))
+
+        res = imr.evaluate_intraday_entry(
+            active_price=3730.0,
+            fib_low=3850.0,
+            fib_high=3950.0,
+            ma50=3900.0,
+            is_pit=False,
+            is_stop=True,
+            dist_to_pit=-3.1,
+            intra_info={"vwap": 3710.0, "low_5m": 3705.0, "rsi_5m": 45.0, "prev_rsi_5m": 40.0, "min_rsi_5m_30m": 29.0, "rvol_5m": 1.2, "is_5m_green": True, "is_5m_higher_low": True},
+            atr=80.0,
+            ticker="XAUUSD",
+            session_code="REGULAR",
+            ai_s1=3680.0,
+            ai_r1=3830.0,
+            ai_cal_win_rate=52.0,
+        )
+        self.assertTrue(-1.3 <= res["stop_loss_pct"] <= -0.8, f"Expected Tier-1 stop band, got {res['stop_loss_pct']}%")
+
+        sc = ml_predictor_5y.compute_multi_level_scenario_map("XAUUSD", close_price=3721.17, atr_pct=2.4)
+        self.assertLess(sc["sl"], sc["s2"])
+        self.assertLess(sc["s2"], sc["s1"])
+        self.assertLess(sc["s1"], 3721.17)
+        s1_pct = (3721.17 - sc["s1"]) / 3721.17 * 100.0
+        self.assertTrue(0.8 <= s1_pct <= 1.35, f"Expected S1 in Tier-1 0.8~1.3%, got {s1_pct:.2f}%")
+        self.assertTrue(sc["near_stop_s1"])
+        self.assertIn(f"${sc['s1']:.2f}", sc["scenario_script"])
+
+    def test_xauusd_downgrade_change_backfill_from_gcf(self):
+        """When TradingView fails and Swissquote/Gold-API has no pct, compute real change from calibrated GC=F prev close."""
+        import json as _json
+        import unittest.mock as _mock
+        import pandas as _pd
+        import ml_predictor_5y
+
+        class _FakeResp:
+            def __init__(self, payload):
+                self._b = _json.dumps(payload).encode("utf-8")
+            def read(self):
+                return self._b
+            def __enter__(self):
+                return self
+            def __exit__(self, *args):
+                return False
+
+        def _fake_urlopen(req, timeout=6):
+            url = req.full_url if hasattr(req, "full_url") else str(req)
+            if "scanner.tradingview.com" in url:
+                raise TimeoutError("tv down")
+            if "swissquote.com" in url:
+                raise TimeoutError("sq down")
+            if "gold-api.com" in url:
+                return _FakeResp({"price": 3727.50})
+            raise AssertionError(url)
+
+        d1_df = _pd.DataFrame(
+            {"Close": [3742.00, 3732.00]},
+            index=_pd.DatetimeIndex([_pd.Timestamp("2026-11-18"), _pd.Timestamp("2026-11-19")]),
+        )
+        h5_df = _pd.DataFrame(
+            {"Close": [3732.00]},
+            index=_pd.DatetimeIndex([_pd.Timestamp("2026-11-19 06:50:00")]),
+        )
+
+        class _FakeTicker:
+            def history(self, period="5d", interval="1d", **kw):
+                return h5_df if interval == "5m" else d1_df
+
+        with _mock.patch("urllib.request.urlopen", side_effect=_fake_urlopen), \
+             _mock.patch("ml_predictor_5y.yf.Ticker", return_value=_FakeTicker()):
+            q = ml_predictor_5y.fetch_xauusd_spot_quote()
+
+        self.assertEqual(q.get("source"), "gold-api")
+        self.assertNotEqual(q.get("pct_change"), 0.0)
+        cal_prev = 3742.00 * (3727.50 / 3732.00)
+        self.assertAlmostEqual(q.get("pct_change"), round((3727.50 - cal_prev) / cal_prev * 100.0, 2), places=2)
+
+    def test_ai_weak_winrate_under_vwap_blocks_left_side_rebound(self):
+        """AI calibrated win rate < 50% and price < VWAP must wait for VWAP reclaim rather than triggering 超跌右侧博反抽."""
+        common_kw = dict(
+            fib_low=4072.32,
+            fib_high=4200.0,
+            ma50=4050.0,
+            is_pit=False,
+            is_stop=True,
+            dist_to_pit=-8.6,
+            intra_info={"vwap": 3744.58, "low_5m": 3715.0, "rsi_5m": 38.0, "prev_rsi_5m": 32.0, "min_rsi_5m_30m": 28.0, "rvol_5m": 1.1, "is_5m_green": True, "is_5m_higher_low": True},
+            atr=80.0,
+            ticker="XAUUSD",
+            session_code="PRE_MARKET",
+            ai_s1=3676.0,
+            ai_r1=3832.0,
+            ai_cal_win_rate=46.7,
+        )
+        blocked = imr.evaluate_intraday_entry(active_price=3721.17, **common_kw)
+        self.assertFalse(blocked["broken_rebound_ready"])
+        self.assertFalse(blocked["intraday_entry_ready"])
+        self.assertIn("未站稳 VWAP", blocked["intraday_status_text"])
+        self.assertNotIn("超跌右侧博反抽", blocked["intraday_status_text"])
+
+        reclaimed = imr.evaluate_intraday_entry(active_price=3746.00, **common_kw)
+        self.assertTrue(reclaimed["broken_rebound_ready"])
+        self.assertIn("超跌右侧博反抽", reclaimed["intraday_status_text"])
+
 
 
 
