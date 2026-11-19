@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795058919.284,
-  "updated_at_et": "11-18 22:28 ET",
-  "updated_at_kst": "12:28 KST",
+  "updated_at_ts": 1795059023.454,
+  "updated_at_et": "11-18 22:30 ET",
+  "updated_at_kst": "12:30 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1173,6 +1173,13 @@
         "pub_ts": 1795045860.0
       },
       {
+        "title": "Amazon and Google face a 10-year AI supply chain problem",
+        "url": "https://www.thestreet.com/technology/amazon-and-google-face-a-10-year-ai-supply-chain-problem?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 22:03 ET",
+        "pub_ts": 1795057380.0
+      },
+      {
         "title": "Smart Glasses Launch Could Change The Case For Warby Parker Stock",
         "url": "https://finance.yahoo.com/markets/stocks/articles/smart-glasses-launch-could-change-022225929.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1192,13 +1199,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 19:00 ET",
         "pub_ts": 1795046400.0
-      },
-      {
-        "title": "Is Alphabet Stock a Buy Right Now?",
-        "url": "https://www.fool.com/investing/2026/11/18/is-alphabet-stock-a-buy-right-now/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 18:57 ET",
-        "pub_ts": 1795046222.0
       }
     ],
     "MSFT": [
@@ -1351,6 +1351,13 @@
     ],
     "AMZN": [
       {
+        "title": "Amazon and Google face a 10-year AI supply chain problem",
+        "url": "https://www.thestreet.com/technology/amazon-and-google-face-a-10-year-ai-supply-chain-problem?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 22:03 ET",
+        "pub_ts": 1795057380.0
+      },
+      {
         "title": "Amazon’s $18 Billion Anthropic Bet Is Worth $159 Billion at the IPO Price. Here’s What That Is Per Amazon Share",
         "url": "https://247wallst.com/investing/2026/11/18/amazons-18-billion-anthropic-bet-is-worth-159-billion-at-the-ipo-price-heres-what-that-is-per-amazon-share/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1377,16 +1384,16 @@
         "source": "Yahoo Finance",
         "time": "11-18 18:46 ET",
         "pub_ts": 1795045615.0
-      },
-      {
-        "title": "Ken Griffin Dumps SpaceX, Amazon; Buys ARKK and Bets Big on Marvell",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/ken-griffin-dumps-spacex-amazon-223005217.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 17:30 ET",
-        "pub_ts": 1795041005.0
       }
     ],
     "CRWV": [
+      {
+        "title": "CoreWeave co-founder buys $30 mln of company bonds amid insider stock sales",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/coreweave-co-founder-buys-30-030651964.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 22:06 ET",
+        "pub_ts": 1795057611.0
+      },
       {
         "title": "CoreWeave Changes Its Funding Strategy After Morgan Stanley’s $46 Billion Spending Forecast",
         "url": "https://finance.yahoo.com/technology/ai/articles/coreweave-changes-funding-strategy-morgan-234844537.html?.tsrc=rss",
@@ -1414,13 +1421,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 16:40 ET",
         "pub_ts": 1795038054.0
-      },
-      {
-        "title": "CoreWeave Stock Forecast: Can Nvidia’s AI Boom Drive More Gains?",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/coreweave-stock-forecast-nvidia-ai-204347762.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 15:43 ET",
-        "pub_ts": 1795034627.0
       }
     ],
     "NBIS": [
@@ -3201,8 +3201,8 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795057514.9066253,
-    "SOXL": 1795057514.9066253,
+    "KORU": 1795059023.4536905,
+    "SOXL": 1795059023.4536905,
     "SPY": 1795058815.3645773,
     "DIA": 1795058815.3645773,
     "SOXX": 1795058815.3645773,
@@ -3222,21 +3222,21 @@
     "QCOM": 1795058919.2840157,
     "AVGO": 1795058919.2840157,
     "AMAT": 1795058919.2840157,
-    "META": 1795057514.9066253,
-    "GOOGL": 1795057514.9066253,
+    "META": 1795059023.4536905,
+    "GOOGL": 1795059023.4536905,
     "MSFT": 1795058919.2840157,
-    "AAPL": 1795057514.9066253,
-    "PLTR": 1795057514.9066253,
-    "NOW": 1795057514.9066253,
-    "AMZN": 1795057514.9066253,
-    "CRWV": 1795057514.9066253,
-    "NBIS": 1795057514.9066253,
-    "APLD": 1795057514.9066253,
-    "VST": 1795057514.9066253,
-    "BE": 1795057514.9066253,
-    "CRDO": 1795057514.9066253,
-    "COHR": 1795057514.9066253,
-    "MRVL": 1795057514.9066253,
+    "AAPL": 1795059023.4536905,
+    "PLTR": 1795059023.4536905,
+    "NOW": 1795059023.4536905,
+    "AMZN": 1795059023.4536905,
+    "CRWV": 1795059023.4536905,
+    "NBIS": 1795059023.4536905,
+    "APLD": 1795059023.4536905,
+    "VST": 1795059023.4536905,
+    "BE": 1795059023.4536905,
+    "CRDO": 1795059023.4536905,
+    "COHR": 1795059023.4536905,
+    "MRVL": 1795059023.4536905,
     "LITE": 1795057618.8290255,
     "AAOI": 1795058815.3645773,
     "SPCX": 1795057618.8290255,
@@ -3263,19 +3263,19 @@
     "MSTR": 1795058919.2840157,
     "SNDK": 1795058919.2840157,
     "BTC-USD": 1795058919.2840157,
-    "CRWD": 1795057514.9066253,
-    "ORCL": 1795057514.9066253,
+    "CRWD": 1795059023.4536905,
+    "ORCL": 1795059023.4536905,
     "COIN": 1795057618.8290255,
-    "LLY": 1795057514.9066253,
+    "LLY": 1795059023.4536905,
     "MRNA": 1795057618.8290255,
     "NKE": 1795057618.8290255,
     "MCD": 1795057821.3133857,
     "PEP": 1795057618.8290255,
-    "XOM": 1795057514.9066253,
+    "XOM": 1795059023.4536905,
     "JPM": 1795057618.8290255,
     "WMT": 1795057618.8290255,
-    "V": 1795057514.9066253,
-    "CAT": 1795057514.9066253,
+    "V": 1795059023.4536905,
+    "CAT": 1795059023.4536905,
     "FN": 1795057618.8290255,
     "GLW": 1795057618.8290255
   },
