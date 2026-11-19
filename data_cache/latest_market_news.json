@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795051468.937,
-  "updated_at_et": "11-18 20:24 ET",
-  "updated_at_kst": "10:24 KST",
+  "updated_at_ts": 1795051573.415,
+  "updated_at_et": "11-18 20:26 ET",
+  "updated_at_kst": "10:26 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1759,6 +1759,13 @@
     ],
     "SPCX": [
       {
+        "title": "Hot demand lifts Anthropic IPO price to $83 a share, breaks SpaceX's record raise",
+        "url": "https://finance.yahoo.com/technology/ai/articles/anthropic-set-price-ipo-key-030309911.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 20:02 ET",
+        "pub_ts": 1795050125.0
+      },
+      {
         "title": "Anthropic Officially Prices Its IPO At $83 A Share In $81.3B Debut, Shattering IPO Records",
         "url": "https://stocktwits.com/news-articles/markets/equity/anthropic-officially-prices-its-ipo-at-83-a-share-in-81-3-b-debut-shattering-ipo-records/cNbLpmoR9iI?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1773,25 +1780,18 @@
         "pub_ts": 1795041480.0
       },
       {
-        "title": "Ken Griffin Dumps SpaceX, Amazon; Buys ARKK and Bets Big on Marvell",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/ken-griffin-dumps-spacex-amazon-223005217.html?.tsrc=rss",
+        "title": "Anthropic Prices at $83 a Share in Record-Sized Offering",
+        "url": "https://finance.yahoo.com/video/anthropic-prices-83-share-record-004919149.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-18 17:30 ET",
-        "pub_ts": 1795041005.0
+        "time": "11-18 19:49 ET",
+        "pub_ts": 1795049359.0
       },
       {
-        "title": "Elon Musk says Sean Duffy declined free Starlinks for the FAA because they weren't needed: 'As it turns out, they were'",
-        "url": "https://finance.yahoo.com/technology/articles/elon-musk-says-sean-duffy-223000214.html?.tsrc=rss",
+        "title": "Anthropic to Sell 155 Million Extra Shares",
+        "url": "https://finance.yahoo.com/m/944f4d3b-b602-368a-8f9f-637d34b92d66/anthropic-to-sell-155-million.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-18 17:30 ET",
-        "pub_ts": 1795041000.0
-      },
-      {
-        "title": "SpaceX or Anthropic: Who Gets IPO Bragging Rights?",
-        "url": "https://finance.yahoo.com/m/ae8253e6-5fd8-39b0-8830-6163e87a49d2/spacex-or-anthropic%3A-who-gets.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 17:21 ET",
-        "pub_ts": 1795040473.0
+        "time": "11-18 19:11 ET",
+        "pub_ts": 1795047095.0
       }
     ],
     "ASTS": [
@@ -3165,6 +3165,13 @@
     ],
     "GLW": [
       {
+        "title": "Corning CEO on working with Steve Jobs to make screens for the first iPhone",
+        "url": "https://finance.yahoo.com/video/corning-ceo-working-steve-jobs-010013740.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 20:00 ET",
+        "pub_ts": 1795050013.0
+      },
+      {
         "title": "Corning vs. Vertiv: Which Technology Stock Is a Better Buy for 2027?",
         "url": "https://www.fool.com/coverage/better-buy/2026/11/18/corning-vs-vertiv-which-technology-stock-is-a-better-buy-for-2027/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3191,13 +3198,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 10:04 ET",
         "pub_ts": 1794927884.0
-      },
-      {
-        "title": "Zacks.com featured highlights include NVIDIA, J.M. Smucker, Taiwan Semiconductor, Corning, Lockheed and Cardinal Health",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/zacks-com-featured-highlights-nvidia-070800949.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 02:08 ET",
-        "pub_ts": 1794899280.0
       }
     ]
   },
@@ -3238,18 +3238,18 @@
     "CRDO": 1795051468.9369986,
     "COHR": 1795051468.9369986,
     "MRVL": 1795051468.9369986,
-    "LITE": 1795050066.5839627,
+    "LITE": 1795051573.4154196,
     "AAOI": 1795051261.5374064,
-    "SPCX": 1795050066.5839627,
-    "ASTS": 1795050066.5839627,
-    "AXTI": 1795050066.5839627,
+    "SPCX": 1795051573.4154196,
+    "ASTS": 1795051573.4154196,
+    "AXTI": 1795051573.4154196,
     "NASA": 1795051261.5374064,
     "LUNR": 1795051261.5374064,
     "TSLA": 1795051261.5374064,
     "AXP": 1795051261.5374064,
-    "RKLB": 1795050066.5839627,
+    "RKLB": 1795051573.4154196,
     "KO": 1795051261.5374064,
-    "FLY": 1795050066.5839627,
+    "FLY": 1795051573.4154196,
     "INTC": 1795051261.5374064,
     "VRT": 1795051261.5374064,
     "HPE": 1795051364.969836,
@@ -3269,16 +3269,16 @@
     "COIN": 1795051468.9369986,
     "LLY": 1795051468.9369986,
     "MRNA": 1795051468.9369986,
-    "NKE": 1795050066.5839627,
+    "NKE": 1795051573.4154196,
     "MCD": 1795050268.38909,
-    "PEP": 1795050066.5839627,
+    "PEP": 1795051573.4154196,
     "XOM": 1795051468.9369986,
-    "JPM": 1795050066.5839627,
-    "WMT": 1795050066.5839627,
+    "JPM": 1795051573.4154196,
+    "WMT": 1795051573.4154196,
     "V": 1795051468.9369986,
     "CAT": 1795051468.9369986,
-    "FN": 1795050066.5839627,
-    "GLW": 1795050066.5839627
+    "FN": 1795051573.4154196,
+    "GLW": 1795051573.4154196
   },
   "calendar_banner": {
     "level": "idle_with_flash",
