@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795130169.644,
-  "updated_at_et": "11-19 18:16 ET",
-  "updated_at_kst": "08:16 KST",
+  "updated_at_ts": 1795130267.663,
+  "updated_at_et": "11-19 18:17 ET",
+  "updated_at_kst": "08:17 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -439,13 +439,6 @@
         "pub_ts": 1795089600.0
       },
       {
-        "title": "SPDR S&P 500 ETF (SPY) Adds Apple and Nvidia on Nov. 17",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/spdr-p-500-etf-spy-110414065.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 06:04 ET",
-        "pub_ts": 1795086254.0
-      },
-      {
         "title": "If You Have $1,000 to Invest Right Now, Here's the 1 ETF I'd Buy Without a Second Thought",
         "url": "https://www.fool.com/investing/2026/11/19/if-you-have-1000-to-invest-right-now-heres-the-1-etf-id-buy-without-a-second-thought/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -458,6 +451,13 @@
         "source": "Yahoo Finance",
         "time": "11-19 09:14 ET",
         "pub_ts": 1795097690.0
+      },
+      {
+        "title": "Five Straight Losses, One Divergence: Where the Major Indexes Stand Now",
+        "url": "https://finance.yahoo.com/markets/world-indices/articles/five-straight-losses-one-divergence-130000760.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 08:00 ET",
+        "pub_ts": 1795093200.0
       }
     ],
     "DIA": [
@@ -906,6 +906,13 @@
     ],
     "NVDA": [
       {
+        "title": "Grand Theft Auto VI outplays Nvidia and SpaceX",
+        "url": "https://www.thestreet.com/crypto/markets/grand-theft-auto-vi-outplays-nvidia-and-spacex?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 18:00 ET",
+        "pub_ts": 1795129200.0
+      },
+      {
         "title": "Nvidia vs. Intel: One AI Stock Is Worth the Drama, the Other Isn’t Worth the Wait, Says Investor",
         "url": "https://finance.yahoo.com/markets/stocks/articles/nvidia-vs-intel-one-ai-222036270.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -932,22 +939,15 @@
         "source": "Yahoo Finance",
         "time": "11-19 17:12 ET",
         "pub_ts": 1795126343.0
-      },
-      {
-        "title": "Valvoline Inc. Q4 2026 Earnings Call Summary",
-        "url": "https://app.moby.co/home/research/tools/earningsCalendar/earnings-valvoline-inc-q4-2026-earnings-call-summary?utm_source=yahoo_finance&utm_medium=rss&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 17:10 ET",
-        "pub_ts": 1795126247.0
       }
     ],
     "AMD": [
       {
-        "title": "Dow Jones Futures Fall After Ugly Market Reversal To New Lows; Anthropic IPO Debuts, AMD Dives",
-        "url": "https://finance.yahoo.com/m/9e02231d-41cd-31ac-b37f-993325b8a4ca/dow-jones-futures-fall-after.html?.tsrc=rss",
+        "title": "Dow Jones Futures: Ugly Market Reversal To New Lows As Anthropic IPO Debuts, AMD Dives",
+        "url": "https://finance.yahoo.com/m/9e02231d-41cd-31ac-b37f-993325b8a4ca/dow-jones-futures%3A-ugly.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-19 17:19 ET",
-        "pub_ts": 1795126793.0
+        "time": "11-19 18:09 ET",
+        "pub_ts": 1795129797.0
       },
       {
         "title": "Anthropic, AMD, Alphabet, Palo Alto, Take-Two, Walmart, and More Stocks That Explain Today’s Market",
@@ -1061,6 +1061,20 @@
         "pub_ts": 1795114131.0
       },
       {
+        "title": "This Beaten-Down Semiconductor Stock Could Soar in 2027",
+        "url": "https://www.fool.com/investing/2026/11/19/this-beaten-down-semiconductor-stock-could-soar-in-2027/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 17:45 ET",
+        "pub_ts": 1795128302.0
+      },
+      {
+        "title": "Why Broadcom Inc. (AVGO) Dipped More Than Broader Market Today",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/why-broadcom-inc-avgo-dipped-214502356.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 16:45 ET",
+        "pub_ts": 1795124702.0
+      },
+      {
         "title": "Why Broadcom Stock Took a Wild Ride on Thursday",
         "url": "https://www.fool.com/investing/2026/11/19/why-broadcom-stock-took-a-wild-ride-on-thursday/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1073,20 +1087,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 12:30 ET",
         "pub_ts": 1795109426.0
-      },
-      {
-        "title": "Anthropic Now Earns $1.72 “For Every Dollar of Compute,” Says Aaron Levie. Great News for Amazon and Alphabet",
-        "url": "https://www.tikr.com/blog/anthropic-now-earns-1-72-for-every-dollar-of-compute-says-aaron-levie-great-news-for-amazon-and-alphabet?ref=yahoofinance&tlnk=yf-261119-q9jf5fhh&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 12:31 ET",
-        "pub_ts": 1795109510.0
-      },
-      {
-        "title": "Chip stocks rally as Anthropic’s record IPO lifts AI investment sentiment",
-        "url": "https://www.proactiveinvestors.com/companies/news/1102133/chip-stocks-rally-as-anthropic-s-record-ipo-lifts-ai-investment-sentiment-1102133.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 11:25 ET",
-        "pub_ts": 1795105500.0
       }
     ],
     "AMAT": [
@@ -1165,6 +1165,13 @@
     ],
     "GOOGL": [
       {
+        "title": "Stock Market Today, Nov. 19: Stock Market Today, Nov. 19: Alphabet Shares Fall as Anthropic Nasdaq Debut Puts Fresh Value on Google's Stake",
+        "url": "https://www.fool.com/coverage/stock-market-today/2026/11/19/stock-market-today-nov-19-stock-market-today-nov-19-alphabet-shares-fall-as-anthropic-nasdaq-debut-puts-fresh-value-on-google-s-stake/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 18:05 ET",
+        "pub_ts": 1795129502.0
+      },
+      {
         "title": "Morgan Stanley’s Vintage Values 2027: 5 Stocks Analysts See Climbing Further",
         "url": "https://finance.yahoo.com/markets/stocks/articles/morgan-stanley-vintage-values-2027-223235273.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1191,13 +1198,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 16:56 ET",
         "pub_ts": 1795125360.0
-      },
-      {
-        "title": "Anthropic, AMD, Alphabet, Palo Alto, Take-Two, Walmart, and More Stocks That Explain Today’s Market",
-        "url": "https://finance.yahoo.com/m/65710a12-1ba7-3685-a3c3-30d9e0878af7/anthropic%2C-amd%2C-alphabet%2C.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 16:47 ET",
-        "pub_ts": 1795124820.0
       }
     ],
     "MSFT": [
@@ -3246,30 +3246,30 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795128675.128019,
-    "SOXL": 1795128675.128019,
-    "SPY": 1795128675.128019,
-    "DIA": 1795128675.128019,
-    "SOXX": 1795128675.128019,
-    "QQQ": 1795128675.128019,
-    "SMH": 1795128675.128019,
-    "IWM": 1795128675.128019,
-    "IGV": 1795128675.128019,
-    "TLT": 1795128675.128019,
-    "GLD": 1795128675.128019,
-    "SQQQ": 1795128675.128019,
-    "TSM": 1795128675.128019,
-    "VIXY": 1795128675.128019,
-    "SOXS": 1795128675.128019,
-    "NVDA": 1795128675.128019,
-    "AMD": 1795128675.128019,
+    "KORU": 1795130267.6631703,
+    "SOXL": 1795130267.6631703,
+    "SPY": 1795130267.6631703,
+    "DIA": 1795130267.6631703,
+    "SOXX": 1795130267.6631703,
+    "QQQ": 1795130267.6631703,
+    "SMH": 1795130267.6631703,
+    "IWM": 1795130267.6631703,
+    "IGV": 1795130267.6631703,
+    "TLT": 1795130267.6631703,
+    "GLD": 1795130267.6631703,
+    "SQQQ": 1795130267.6631703,
+    "TSM": 1795130267.6631703,
+    "VIXY": 1795130267.6631703,
+    "SOXS": 1795130267.6631703,
+    "NVDA": 1795130267.6631703,
+    "AMD": 1795130267.6631703,
     "ASML": 1795128783.4135551,
-    "QCOM": 1795128675.128019,
-    "AVGO": 1795128675.128019,
-    "AMAT": 1795128675.128019,
+    "QCOM": 1795130267.6631703,
+    "AVGO": 1795130267.6631703,
+    "AMAT": 1795130267.6631703,
     "META": 1795128783.4135551,
-    "GOOGL": 1795128675.128019,
-    "MSFT": 1795128675.128019,
+    "GOOGL": 1795130267.6631703,
+    "MSFT": 1795130267.6631703,
     "AAPL": 1795128881.9743986,
     "PLTR": 1795128984.964657,
     "NOW": 1795128984.964657,
