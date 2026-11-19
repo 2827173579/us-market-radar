@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795076988.605,
-  "updated_at_et": "11-19 03:29 ET",
-  "updated_at_kst": "17:29 KST",
+  "updated_at_ts": 1795077087.684,
+  "updated_at_et": "11-19 03:31 ET",
+  "updated_at_kst": "17:31 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1936,39 +1936,39 @@
     ],
     "TSLA": [
       {
+        "title": "Skydance's David Ellison calls Elon Musk 'the greatest entrepreneur of our time'",
+        "url": "https://finance.yahoo.com/media-advertising/article/skydances-david-ellison-calls-elon-musk-the-greatest-entrepreneur-of-our-time-205405607.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 15:54 ET",
+        "pub_ts": 1795035245.0
+      },
+      {
+        "title": "Tesla to continue increasing China production, state media reports",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/tesla-continue-increasing-china-production-074413868.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 02:44 ET",
+        "pub_ts": 1795074253.0
+      },
+      {
+        "title": "Elon Musk Doubles Down On Autonomy: Tesla Plans Wheel-Less, Pedal-Less Model Y To Sit Alongside Two-Seat Cybercab",
+        "url": "https://finance.yahoo.com/technology/articles/elon-musk-doubles-down-autonomy-053905404.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 00:39 ET",
+        "pub_ts": 1795066745.0
+      },
+      {
         "title": "EXCLUSIVE: Tesla Still Rules Leveraged ETFs, but Anthropic IPO and Micron’s Rise Signal What’s Next",
-        "url": "https://finnhub.io/api/news?id=e42b748455cf499f7fded2d21cf0903fbce35746b9a844311cc28284652c0b63",
-        "source": "Yahoo",
+        "url": "https://finance.yahoo.com/technology/ai/articles/exclusive-tesla-still-rules-leveraged-033004009.html?.tsrc=rss",
+        "source": "Yahoo Finance",
         "time": "11-18 22:30 ET",
         "pub_ts": 1795059004.0
       },
       {
         "title": "Tesla And SpaceX ‘Better Together’? Musk Leans Yes — But Says Performance Must Drive His TSLA Pay",
-        "url": "https://finnhub.io/api/news?id=fc1d03b0a7664c65560ce164bc79d219b36fa39c5e6273b49dc7bb41f2cc82ea",
-        "source": "Yahoo",
+        "url": "https://stocktwits.com/news-articles/markets/equity/tesla-spacex-better-together-musk-performance-tsla-pay/cNbLsa5R9iJ?.tsrc=rss",
+        "source": "Yahoo Finance",
         "time": "11-18 20:56 ET",
         "pub_ts": 1795053379.0
-      },
-      {
-        "title": "Elon Musk Says Nvidia Made a ‘Mistake’ by Parting Ways With Jensen Huang: Calls Ex-CEO ‘Michael Jordan Perhaps at His Peak Level’",
-        "url": "https://finnhub.io/api/news?id=e0cf6b002e45a6d483cbd515818b6bc2e12537247cae97741941463744848d70",
-        "source": "Yahoo",
-        "time": "11-18 20:42 ET",
-        "pub_ts": 1795052533.0
-      },
-      {
-        "title": "Elon Musk Says Nvidia Ousting Jensen Huang Is Like Kicking Michael Jordan Off A Winning Team",
-        "url": "https://finnhub.io/api/news?id=41c715e527fec87fc167f0c89c4bdf437d8a8b887baa6b2e709a8618d778747f",
-        "source": "Yahoo",
-        "time": "11-18 19:23 ET",
-        "pub_ts": 1795047812.0
-      },
-      {
-        "title": "Tesla Wins Manitoba Court Order On EV Rebate Ban As Canadian PM Carney Notes Brand’s Fading Cachet",
-        "url": "https://finnhub.io/api/news?id=383e599c9b0d854c1ed1704c48cffcf54e368a1a1c6be04aad49ed4a1a541546",
-        "source": "Yahoo",
-        "time": "11-18 19:05 ET",
-        "pub_ts": 1795046759.0
       }
     ],
     "AXP": [
@@ -3196,16 +3196,16 @@
   "ticker_news_ts": {
     "KORU": 1795075767.6702306,
     "SOXL": 1795075767.6702306,
-    "SPY": 1795075557.602324,
-    "DIA": 1795075557.602324,
-    "SOXX": 1795075557.602324,
-    "QQQ": 1795075557.602324,
-    "SMH": 1795075557.602324,
-    "IWM": 1795075557.602324,
-    "IGV": 1795075557.602324,
+    "SPY": 1795077087.683888,
+    "DIA": 1795077087.683888,
+    "SOXX": 1795077087.683888,
+    "QQQ": 1795077087.683888,
+    "SMH": 1795077087.683888,
+    "IWM": 1795077087.683888,
+    "IGV": 1795077087.683888,
     "TLT": 1795075662.1854572,
     "GLD": 1795075662.1854572,
-    "SQQQ": 1795075557.602324,
+    "SQQQ": 1795077087.683888,
     "TSM": 1795075662.1854572,
     "VIXY": 1795075662.1854572,
     "SOXS": 1795075662.1854572,
@@ -3231,24 +3231,24 @@
     "COHR": 1795075767.6702306,
     "MRVL": 1795075767.6702306,
     "LITE": 1795075873.037857,
-    "AAOI": 1795075557.602324,
+    "AAOI": 1795077087.683888,
     "SPCX": 1795075873.037857,
     "ASTS": 1795075873.037857,
     "AXTI": 1795075873.037857,
-    "NASA": 1795075557.602324,
-    "LUNR": 1795075557.602324,
-    "TSLA": 1795075557.602324,
-    "AXP": 1795075557.602324,
+    "NASA": 1795077087.683888,
+    "LUNR": 1795077087.683888,
+    "TSLA": 1795077087.683888,
+    "AXP": 1795077087.683888,
     "RKLB": 1795075873.037857,
-    "KO": 1795075557.602324,
+    "KO": 1795077087.683888,
     "FLY": 1795075873.037857,
-    "INTC": 1795075557.602324,
-    "VRT": 1795075557.602324,
+    "INTC": 1795077087.683888,
+    "VRT": 1795077087.683888,
     "HPE": 1795075662.1854572,
     "DELL": 1795075662.1854572,
     "OKLO": 1795075662.1854572,
-    "CEG": 1795075557.602324,
-    "FPS": 1795075557.602324,
+    "CEG": 1795077087.683888,
+    "FPS": 1795077087.683888,
     "MU": 1795075662.1854572,
     "SKHY": 1795075662.1854572,
     "WDC": 1795075662.1854572,
