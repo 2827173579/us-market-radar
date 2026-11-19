@@ -62,8 +62,8 @@
       "last_notified_at": 0.0
     },
     "V": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1795131468.306707
     },
     "KO": {
       "state": "TAKE_PROFIT",
@@ -114,8 +114,8 @@
       "last_notified_at": 0.0
     },
     "TSLA": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1795131370.188055
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     }
   },
   "position_peaks": {
