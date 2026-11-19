@@ -1,9 +1,22 @@
 {
-  "updated_at_ts": 1795066600.321,
-  "updated_at_et": "11-19 00:36 ET",
-  "updated_at_kst": "14:36 KST",
+  "updated_at_ts": 1795066708.279,
+  "updated_at_et": "11-19 00:38 ET",
+  "updated_at_kst": "14:38 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261119133525994800",
+      "title": "台湾加权指数11月19日（周四）收盘下跌1768.02点，跌幅4.4%，报38426.8…",
+      "summary": "台湾加权指数11月19日（周四）收盘下跌1768.02点，跌幅4.4%，报38426.89点。台积电下跌3.45%。",
+      "keywords": [
+        "台积电"
+      ],
+      "pub_ts": 1795066525.0,
+      "time_et": "11-19 00:35 ET",
+      "time_bj": "13:35 BJ",
+      "time_kst": "14:35 KST",
+      "time_display": "00:35 ET / 13:35 BJ"
+    },
     {
       "id": "20261119133031621800",
       "title": "【习近平会见美国总统特朗普】 11月19日讯，11月19日中午，国家主席习近平在深圳会见…",
@@ -331,19 +344,6 @@
       "time_bj": "09:40 BJ",
       "time_kst": "10:40 KST",
       "time_display": "20:40 ET / 09:40 BJ"
-    },
-    {
-      "id": "20261119093700424800",
-      "title": "全球美债持仓一个月减少755亿美元！全球资金撤离美债，韩国却创纪录买入115亿美元",
-      "summary": "外国投资者9月持有的美债规模减少755亿美元，创年3月来最大单月降幅，海外持仓降至一年低点。但韩国投资者逆势净买入115亿美元，创1977年来最高纪录。点击查看",
-      "keywords": [
-        "美债"
-      ],
-      "pub_ts": 1795052220.0,
-      "time_et": "11-18 20:37 ET",
-      "time_bj": "09:37 BJ",
-      "time_kst": "10:37 KST",
-      "time_display": "20:37 ET / 09:37 BJ"
     }
   ],
   "ticker_news": {
@@ -1755,6 +1755,13 @@
     ],
     "SPCX": [
       {
+        "title": "Elon Musk Names 2 Anthropic Favorites Ahead Of Its IPO — Flags A Risk To 10-GW Opportunity For SpaceX",
+        "url": "https://stocktwits.com/news-articles/markets/equity/elon-musk-2-anthropic-favorites-ipo-flags-risk-10-gw-opportunity-spacex/cNbLUlbR9i0?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 00:12 ET",
+        "pub_ts": 1795065121.0
+      },
+      {
         "title": "SpaceX’s December Lock-Up Frees Another 17% of Its Shares. Here’s What October’s Unlock Did to the Stock.",
         "url": "https://www.fool.com/investing/2026/11/18/spacex-s-december-lock-up-frees-another-17-of-its-shares-here-s-what-october-s-unlock-did-to-the-stock/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1769,11 +1776,11 @@
         "pub_ts": 1795050938.0
       },
       {
-        "title": "Hot demand lifts Anthropic IPO price to $83 a share, breaks SpaceX's record raise",
+        "title": "Anthropic to begin trading after record-breaking market debut tops SpaceX record",
         "url": "https://finance.yahoo.com/technology/ai/articles/anthropic-set-price-ipo-key-030309911.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-18 20:02 ET",
-        "pub_ts": 1795050125.0
+        "time": "11-19 00:35 ET",
+        "pub_ts": 1795066555.0
       },
       {
         "title": "Anthropic prices IPO at $83 a share, valuing it at about $1.5 trillion",
@@ -1781,13 +1788,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 22:51 ET",
         "pub_ts": 1795060292.0
-      },
-      {
-        "title": "Jim Cramer just sent a strong warning about the Anthropic IPO",
-        "url": "https://www.thestreet.com/investing/stocks/jim-cramer-just-sent-a-strong-warning-about-the-anthropic-ipo?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 21:37 ET",
-        "pub_ts": 1795055820.0
       }
     ],
     "ASTS": [
@@ -3234,18 +3234,18 @@
     "CRDO": 1795066600.3207214,
     "COHR": 1795066600.3207214,
     "MRVL": 1795066600.3207214,
-    "LITE": 1795065187.866984,
+    "LITE": 1795066708.2788792,
     "AAOI": 1795066391.2612627,
-    "SPCX": 1795065187.866984,
-    "ASTS": 1795065187.866984,
-    "AXTI": 1795065187.866984,
+    "SPCX": 1795066708.2788792,
+    "ASTS": 1795066708.2788792,
+    "AXTI": 1795066708.2788792,
     "NASA": 1795066391.2612627,
     "LUNR": 1795066391.2612627,
     "TSLA": 1795066391.2612627,
     "AXP": 1795066391.2612627,
-    "RKLB": 1795065187.866984,
+    "RKLB": 1795066708.2788792,
     "KO": 1795066391.2612627,
-    "FLY": 1795065187.866984,
+    "FLY": 1795066708.2788792,
     "INTC": 1795066391.2612627,
     "VRT": 1795066391.2612627,
     "HPE": 1795066495.6996412,
@@ -3262,24 +3262,24 @@
     "BTC-USD": 1795066495.6996412,
     "CRWD": 1795066600.3207214,
     "ORCL": 1795066600.3207214,
-    "COIN": 1795065187.866984,
+    "COIN": 1795066708.2788792,
     "LLY": 1795066600.3207214,
-    "MRNA": 1795065187.866984,
-    "NKE": 1795065187.866984,
+    "MRNA": 1795066708.2788792,
+    "NKE": 1795066708.2788792,
     "MCD": 1795065395.409166,
-    "PEP": 1795065187.866984,
+    "PEP": 1795066708.2788792,
     "XOM": 1795066600.3207214,
-    "JPM": 1795065187.866984,
-    "WMT": 1795065187.866984,
+    "JPM": 1795066708.2788792,
+    "WMT": 1795066708.2788792,
     "V": 1795066600.3207214,
     "CAT": 1795066600.3207214,
-    "FN": 1795065187.866984,
-    "GLW": 1795065187.866984
+    "FN": 1795066708.2788792,
+    "GLW": 1795066708.2788792
   },
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (00:30 ET / 13:30 BJ) [特朗普]：【习近平会见美国总统特朗普】 11月19日讯，11月19日中午，国家主席习近平在深圳会见来华出席亚太经合组织领导人非正式会议的美国总统特朗普。",
+    "detail": "⚡ 最新核心快讯 (00:35 ET / 13:35 BJ) [台积电]：台湾加权指数11月19日（周四）收盘下跌1768.02点，跌幅4.4%，报38426.89点。台积电下跌3.45%。",
     "event_name": "",
     "minutes_left": 0
   }
