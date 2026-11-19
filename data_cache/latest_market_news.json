@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795078611.293,
-  "updated_at_et": "11-19 03:56 ET",
-  "updated_at_kst": "17:56 KST",
+  "updated_at_ts": 1795078717.196,
+  "updated_at_et": "11-19 03:58 ET",
+  "updated_at_kst": "17:58 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -894,6 +894,13 @@
     ],
     "NVDA": [
       {
+        "title": "NVDA, INTC Stocks Ease Post 5-Day Rout: After Meeting Xi Jinping, Trump Says Nvidia Blackwell Chips Could Reach China Within 2-3 Years",
+        "url": "https://stocktwits.com/news-articles/markets/equity/nvda-intc-stocks-ease-post-5-day-rout-after-meeting-xi-jinping-trump-says-nvidia-blackwell-chips-could-reach-china-within-2-3-years/cNbiTxFR9io?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 03:33 ET",
+        "pub_ts": 1795077236.0
+      },
+      {
         "title": "Tech firms rise after record Anthropic IPO but Nvidia casts shadow",
         "url": "https://finance.yahoo.com/markets/world-indices/articles/asian-stocks-drop-anthropics-record-025108034.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -920,13 +927,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 02:12 ET",
         "pub_ts": 1795072355.0
-      },
-      {
-        "title": "Taiwan stocks plunge 4.6% as AI rout deepens; chip and PCB shares hit limit-down",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/taiwan-stocks-plunge-4-6-070831391.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 02:08 ET",
-        "pub_ts": 1795072111.0
       }
     ],
     "AMD": [
@@ -1197,6 +1197,13 @@
         "pub_ts": 1795042681.0
       },
       {
+        "title": "John Moolenaar Calls Out Microsoft for ‘Playing Both Sides’ of US-China AI Race",
+        "url": "https://finance.yahoo.com/technology/ai/articles/john-moolenaar-calls-microsoft-playing-073740994.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 02:37 ET",
+        "pub_ts": 1795073860.0
+      },
+      {
         "title": "What NICE (TASE:NICE)'s Microsoft AI Tie Up Means For Shareholders",
         "url": "https://finance.yahoo.com/markets/stocks/articles/nice-tase-nice-microsoft-ai-021948606.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1216,13 +1223,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 18:17 ET",
         "pub_ts": 1795043848.0
-      },
-      {
-        "title": "Satya Nadella predicts AI agents will reshuffle the economics of the web",
-        "url": "https://finance.yahoo.com/technology/ai/articles/satya-nadella-predicts-ai-agents-225811295.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 17:58 ET",
-        "pub_ts": 1795042691.0
       }
     ],
     "AAPL": [
@@ -3197,21 +3197,21 @@
     "SMH": 1795078611.2929635,
     "IWM": 1795078611.2929635,
     "IGV": 1795078611.2929635,
-    "TLT": 1795077193.8145483,
-    "GLD": 1795077193.8145483,
+    "TLT": 1795078717.1958115,
+    "GLD": 1795078717.1958115,
     "SQQQ": 1795078611.2929635,
-    "TSM": 1795077193.8145483,
-    "VIXY": 1795077193.8145483,
-    "SOXS": 1795077193.8145483,
-    "NVDA": 1795077193.8145483,
-    "AMD": 1795077193.8145483,
-    "ASML": 1795077193.8145483,
-    "QCOM": 1795077193.8145483,
-    "AVGO": 1795077193.8145483,
-    "AMAT": 1795077193.8145483,
+    "TSM": 1795078717.1958115,
+    "VIXY": 1795078717.1958115,
+    "SOXS": 1795078717.1958115,
+    "NVDA": 1795078717.1958115,
+    "AMD": 1795078717.1958115,
+    "ASML": 1795078717.1958115,
+    "QCOM": 1795078717.1958115,
+    "AVGO": 1795078717.1958115,
+    "AMAT": 1795078717.1958115,
     "META": 1795077298.531253,
     "GOOGL": 1795077298.531253,
-    "MSFT": 1795077193.8145483,
+    "MSFT": 1795078717.1958115,
     "AAPL": 1795077298.531253,
     "PLTR": 1795077298.531253,
     "NOW": 1795077298.531253,
@@ -3238,18 +3238,18 @@
     "FLY": 1795077403.9599595,
     "INTC": 1795078611.2929635,
     "VRT": 1795078611.2929635,
-    "HPE": 1795077193.8145483,
-    "DELL": 1795077193.8145483,
-    "OKLO": 1795077193.8145483,
+    "HPE": 1795078717.1958115,
+    "DELL": 1795078717.1958115,
+    "OKLO": 1795078717.1958115,
     "CEG": 1795078611.2929635,
     "FPS": 1795078611.2929635,
-    "MU": 1795077193.8145483,
-    "SKHY": 1795077193.8145483,
-    "WDC": 1795077193.8145483,
-    "STX": 1795077193.8145483,
-    "MSTR": 1795077193.8145483,
-    "SNDK": 1795077193.8145483,
-    "BTC-USD": 1795077193.8145483,
+    "MU": 1795078717.1958115,
+    "SKHY": 1795078717.1958115,
+    "WDC": 1795078717.1958115,
+    "STX": 1795078717.1958115,
+    "MSTR": 1795078717.1958115,
+    "SNDK": 1795078717.1958115,
+    "BTC-USD": 1795078717.1958115,
     "CRWD": 1795077298.531253,
     "ORCL": 1795077298.531253,
     "COIN": 1795077403.9599595,
