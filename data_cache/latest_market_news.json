@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795069650.268,
-  "updated_at_et": "11-19 01:27 ET",
-  "updated_at_kst": "15:27 KST",
+  "updated_at_ts": 1795069754.617,
+  "updated_at_et": "11-19 01:29 ET",
+  "updated_at_kst": "15:29 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1790,6 +1790,13 @@
     ],
     "ASTS": [
       {
+        "title": "ASTS Stock Jumps Overnight Despite New Shares For Engines And Spectrum — Bulls Cheer ULA’s Amazon Launch Clue",
+        "url": "https://stocktwits.com/news-articles/markets/equity/asts-new-shares-engines-spectrum-bulls-ula-amazon-launch-clue/cNbLyqER9iS?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 00:57 ET",
+        "pub_ts": 1795067856.0
+      },
+      {
         "title": "AST SpaceMobile Sinks 8% as New Offering Filing Revives Dilution Fears",
         "url": "https://www.tikr.com/blog/ast-spacemobile-sinks-8-as-new-offering-filing-revives-dilution-fears?ref=yahoofinance&tlnk=yf-261118-w92886xc&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1816,13 +1823,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 10:14 ET",
         "pub_ts": 1795014875.0
-      },
-      {
-        "title": "Down More Than 60% in 2026, Here Is How You Should Play the Nasty Selloff in AST SpaceMobile Stock",
-        "url": "https://www.barchart.com/story/news/8898215/down-more-than-60-in-2026-here-is-how-you-should-play-the-nasty-selloff-in-ast-spacemobile-stock?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 09:54 ET",
-        "pub_ts": 1795013653.0
       }
     ],
     "AXTI": [
@@ -2789,6 +2789,13 @@
     ],
     "MRNA": [
       {
+        "title": "Moderna's Cancer Vaccine Worked -- and the Stock Plunged Anyway. Here's What Investors Are Missing.",
+        "url": "https://www.fool.com/investing/2026/11/19/modernas-cancer-vaccine-worked-and-the-stock-plung/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 01:20 ET",
+        "pub_ts": 1795069200.0
+      },
+      {
         "title": "Global Medical Countermeasures Market 2026: Size, Trends, and Forecast to 2030 | Capitalize on AI, Stockpiling, and Rapid Diagnostics with Pfizer, Moderna, Sanofi, and Emergent",
         "url": "https://finance.yahoo.com/healthcare/articles/global-medical-countermeasures-market-2026-143600285.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2815,13 +2822,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 21:41 ET",
         "pub_ts": 1794969690.0
-      },
-      {
-        "title": "JPMorgan Still Sees Moderna Overvalued Despite Raising Its Target",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/jpmorgan-still-sees-moderna-overvalued-174522489.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 12:45 ET",
-        "pub_ts": 1794937522.0
       }
     ],
     "NKE": [
@@ -3232,18 +3232,18 @@
     "CRDO": 1795069650.2680252,
     "COHR": 1795069650.2680252,
     "MRVL": 1795069650.2680252,
-    "LITE": 1795068233.6809683,
+    "LITE": 1795069754.6174214,
     "AAOI": 1795069441.5597954,
-    "SPCX": 1795068233.6809683,
-    "ASTS": 1795068233.6809683,
-    "AXTI": 1795068233.6809683,
+    "SPCX": 1795069754.6174214,
+    "ASTS": 1795069754.6174214,
+    "AXTI": 1795069754.6174214,
     "NASA": 1795069441.5597954,
     "LUNR": 1795069441.5597954,
     "TSLA": 1795069441.5597954,
     "AXP": 1795069441.5597954,
-    "RKLB": 1795068233.6809683,
+    "RKLB": 1795069754.6174214,
     "KO": 1795069441.5597954,
-    "FLY": 1795068233.6809683,
+    "FLY": 1795069754.6174214,
     "INTC": 1795069441.5597954,
     "VRT": 1795069441.5597954,
     "HPE": 1795069545.1914303,
@@ -3260,19 +3260,19 @@
     "BTC-USD": 1795069545.1914303,
     "CRWD": 1795069650.2680252,
     "ORCL": 1795069650.2680252,
-    "COIN": 1795068233.6809683,
+    "COIN": 1795069754.6174214,
     "LLY": 1795069650.2680252,
-    "MRNA": 1795068233.6809683,
-    "NKE": 1795068233.6809683,
+    "MRNA": 1795069754.6174214,
+    "NKE": 1795069754.6174214,
     "MCD": 1795068434.8493218,
-    "PEP": 1795068233.6809683,
+    "PEP": 1795069754.6174214,
     "XOM": 1795069650.2680252,
-    "JPM": 1795068233.6809683,
-    "WMT": 1795068233.6809683,
+    "JPM": 1795069754.6174214,
+    "WMT": 1795069754.6174214,
     "V": 1795069650.2680252,
     "CAT": 1795069650.2680252,
-    "FN": 1795068233.6809683,
-    "GLW": 1795068233.6809683
+    "FN": 1795069754.6174214,
+    "GLW": 1795069754.6174214
   },
   "calendar_banner": {
     "level": "idle_with_flash",
