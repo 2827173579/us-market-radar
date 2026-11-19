@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795084855.337,
-  "updated_at_et": "11-19 05:40 ET",
-  "updated_at_kst": "19:40 KST",
+  "updated_at_ts": 1795084959.232,
+  "updated_at_et": "11-19 05:42 ET",
+  "updated_at_kst": "19:42 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1118,6 +1118,13 @@
     ],
     "META": [
       {
+        "title": "Market Chatter: Meta Platforms Suspends Plan to Issue Non-Voting Shares",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/market-chatter-meta-platforms-suspends-103305579.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 05:33 ET",
+        "pub_ts": 1795084385.0
+      },
+      {
         "title": "Meta’s $225 Billion AI Spending Forecast Comes With a Cash-Flow Question",
         "url": "https://finance.yahoo.com/technology/ai/articles/meta-225-billion-ai-spending-234645050.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1144,13 +1151,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 12:47 ET",
         "pub_ts": 1795024023.0
-      },
-      {
-        "title": "Anthropic’s Cash Pile Tops Amazon And Nvidia Combined After Record IPO – Meet The New ETF Tracking ANT-Linked Companies",
-        "url": "https://stocktwits.com/news-articles/markets/equity/anthropic-s-cash-pile-tops-amazon-and-nvidia-combined-after-record-ipo-meet-the-new-etf-tracking-ant-linked-companies/cNbLyKgR9i1?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 00:47 ET",
-        "pub_ts": 1795067277.0
       }
     ],
     "GOOGL": [
@@ -1160,6 +1160,13 @@
         "source": "Yahoo Finance",
         "time": "11-18 18:51 ET",
         "pub_ts": 1795045860.0
+      },
+      {
+        "title": "AlumiFuel Power And 2 More Hydrogen Fuel Cell Stocks To Watch",
+        "url": "https://finance.yahoo.com/energy/articles/alumifuel-power-2-more-hydrogen-101627261.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 05:16 ET",
+        "pub_ts": 1795083387.0
       },
       {
         "title": "2 Words From Nvidia’s Colette Kress That Should Reassure Investors",
@@ -1176,18 +1183,11 @@
         "pub_ts": 1795079100.0
       },
       {
-        "title": "Alphabet (GOOGL) Stock Could Be 47% Undervalued As AI Spending Fears Bite",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/alphabet-googl-stock-could-47-032722505.html?.tsrc=rss",
+        "title": "Nvidia Guides 75% Growth. Gil Luria: “Maybe We Grow 25% to 50%.” Here’s What 10x Earnings Prices In",
+        "url": "https://www.tikr.com/blog/nvidia-guides-75-growth-gil-luria-maybe-we-grow-25-to-50-heres-what-10x-earnings-prices-in?ref=yahoofinance&tlnk=yf-261119-v73p6jp2&.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-18 22:27 ET",
-        "pub_ts": 1795058842.0
-      },
-      {
-        "title": "Amazon and Google face a 10-year AI supply chain problem",
-        "url": "https://www.thestreet.com/technology/amazon-and-google-face-a-10-year-ai-supply-chain-problem?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 22:03 ET",
-        "pub_ts": 1795057380.0
+        "time": "11-19 02:33 ET",
+        "pub_ts": 1795073617.0
       }
     ],
     "MSFT": [
@@ -1347,6 +1347,13 @@
         "pub_ts": 1795079368.0
       },
       {
+        "title": "EA cofounder once compared interview questions with Amazon’s Andy Jassy—Jassy’s was so ruthless that no instant answer ends the interview",
+        "url": "https://finance.yahoo.com/small-business/articles/ea-cofounder-once-compared-interview-080200120.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 03:02 ET",
+        "pub_ts": 1795075320.0
+      },
+      {
         "title": "ASTS Stock Jumps Overnight Despite New Shares For Engines And Spectrum — Bulls Cheer ULA’s Amazon Launch Clue",
         "url": "https://stocktwits.com/news-articles/markets/equity/asts-new-shares-engines-spectrum-bulls-ula-amazon-launch-clue/cNbLyqER9iS?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1366,13 +1373,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 22:03 ET",
         "pub_ts": 1795057380.0
-      },
-      {
-        "title": "Amazon’s $18 Billion Anthropic Bet Is Worth $159 Billion at the IPO Price. Here’s What That Is Per Amazon Share",
-        "url": "https://247wallst.com/investing/2026/11/18/amazons-18-billion-anthropic-bet-is-worth-159-billion-at-the-ipo-price-heres-what-that-is-per-amazon-share/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 21:17 ET",
-        "pub_ts": 1795054631.0
       }
     ],
     "CRWV": [
@@ -1599,6 +1599,13 @@
     ],
     "COHR": [
       {
+        "title": "Coherent And 2 AI Infrastructure Stocks To Own",
+        "url": "https://finance.yahoo.com/technology/ai/articles/coherent-2-ai-infrastructure-stocks-101352462.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 05:13 ET",
+        "pub_ts": 1795083232.0
+      },
+      {
         "title": "Coherent Ranks #33 on TIME's America's Top Manufacturers 2027 List",
         "url": "https://finance.yahoo.com/technology/articles/coherent-ranks-33-times-americas-191500464.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1625,13 +1632,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 11:10 ET",
         "pub_ts": 1795018224.0
-      },
-      {
-        "title": "Applied Optoelectronics Sinks 9% on $550 Million Stock Sale Plan; Coherent and Lumentum Rise 4%",
-        "url": "https://247wallst.com/investing/2026/11/18/applied-optoelectronics-sinks-9-on-550-million-stock-sale-plan-coherent-and-lumentum-rise-4/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 09:08 ET",
-        "pub_ts": 1795010931.0
       }
     ],
     "MRVL": [
@@ -3190,8 +3190,8 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795083439.8722353,
-    "SOXL": 1795083439.8722353,
+    "KORU": 1795084959.2321987,
+    "SOXL": 1795084959.2321987,
     "SPY": 1795084751.3905969,
     "DIA": 1795084751.3905969,
     "SOXX": 1795084751.3905969,
@@ -3211,21 +3211,21 @@
     "QCOM": 1795084855.3372793,
     "AVGO": 1795084855.3372793,
     "AMAT": 1795084855.3372793,
-    "META": 1795083439.8722353,
-    "GOOGL": 1795083439.8722353,
+    "META": 1795084959.2321987,
+    "GOOGL": 1795084959.2321987,
     "MSFT": 1795084855.3372793,
-    "AAPL": 1795083439.8722353,
-    "PLTR": 1795083439.8722353,
-    "NOW": 1795083439.8722353,
-    "AMZN": 1795083439.8722353,
-    "CRWV": 1795083439.8722353,
-    "NBIS": 1795083439.8722353,
-    "APLD": 1795083439.8722353,
-    "VST": 1795083439.8722353,
-    "BE": 1795083439.8722353,
-    "CRDO": 1795083439.8722353,
-    "COHR": 1795083439.8722353,
-    "MRVL": 1795083439.8722353,
+    "AAPL": 1795084959.2321987,
+    "PLTR": 1795084959.2321987,
+    "NOW": 1795084959.2321987,
+    "AMZN": 1795084959.2321987,
+    "CRWV": 1795084959.2321987,
+    "NBIS": 1795084959.2321987,
+    "APLD": 1795084959.2321987,
+    "VST": 1795084959.2321987,
+    "BE": 1795084959.2321987,
+    "CRDO": 1795084959.2321987,
+    "COHR": 1795084959.2321987,
+    "MRVL": 1795084959.2321987,
     "LITE": 1795083543.8447096,
     "AAOI": 1795084751.3905969,
     "SPCX": 1795083543.8447096,
@@ -3252,19 +3252,19 @@
     "MSTR": 1795084855.3372793,
     "SNDK": 1795084855.3372793,
     "BTC-USD": 1795084855.3372793,
-    "CRWD": 1795083439.8722353,
-    "ORCL": 1795083439.8722353,
+    "CRWD": 1795084959.2321987,
+    "ORCL": 1795084959.2321987,
     "COIN": 1795083543.8447096,
-    "LLY": 1795083439.8722353,
+    "LLY": 1795084959.2321987,
     "MRNA": 1795083543.8447096,
     "NKE": 1795083543.8447096,
     "MCD": 1795083651.555448,
     "PEP": 1795083543.8447096,
-    "XOM": 1795083439.8722353,
+    "XOM": 1795084959.2321987,
     "JPM": 1795083543.8447096,
     "WMT": 1795083543.8447096,
-    "V": 1795083439.8722353,
-    "CAT": 1795083439.8722353,
+    "V": 1795084959.2321987,
+    "CAT": 1795084959.2321987,
     "FN": 1795083543.8447096,
     "GLW": 1795083543.8447096
   },
