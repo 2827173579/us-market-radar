@@ -2427,9 +2427,13 @@
     "2026-11-19:DEFENSIVE_FLIGHT:-2.4": {
       "device": "PC",
       "ts": 1795104871.017909
+    },
+    "2026-11-19:MRNA/KO:5M_ENTRY+TAKE_PROFIT": {
+      "device": "PC",
+      "ts": 1795105387.0080667
     }
   },
   "device": "PC",
-  "last_heartbeat_ts": 1795105192.8132906,
-  "updated_at": "2026-11-19T16:21:17.482921+00:00"
+  "last_heartbeat_ts": 1795105301.9313982,
+  "updated_at": "2026-11-19T16:23:07.008547+00:00"
 }
