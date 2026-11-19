@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795081932.619,
-  "updated_at_et": "11-19 04:52 ET",
-  "updated_at_kst": "18:52 KST",
+  "updated_at_ts": 1795082035.938,
+  "updated_at_et": "11-19 04:53 ET",
+  "updated_at_kst": "18:53 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2783,6 +2783,20 @@
     ],
     "MRNA": [
       {
+        "title": "While Moderna sank 17%, this generic drugmaker quietly jumped 64%",
+        "url": "https://finance.yahoo.com/healthcare/articles/while-moderna-sank-17-generic-092725720.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 04:27 ET",
+        "pub_ts": 1795080445.0
+      },
+      {
+        "title": "Moderna (MRNA) Dropped, So What Is Behind The Latest Attention?",
+        "url": "https://finance.yahoo.com/healthcare/articles/moderna-mrna-dropped-behind-latest-091120954.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 04:11 ET",
+        "pub_ts": 1795079480.0
+      },
+      {
         "title": "Moderna's Cancer Vaccine Worked -- and the Stock Plunged Anyway. Here's What Investors Are Missing.",
         "url": "https://www.fool.com/investing/2026/11/19/modernas-cancer-vaccine-worked-and-the-stock-plung/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2802,20 +2816,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 08:13 ET",
         "pub_ts": 1795007583.0
-      },
-      {
-        "title": "Invesco S&P 500 Equal Weight (RSP) Buys $0.7 Million More PTC on Nov. 16",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/invesco-p-500-equal-weight-110524501.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 06:05 ET",
-        "pub_ts": 1794999924.0
-      },
-      {
-        "title": "SLS Joins MRNA And ANL In Biotech’s Top 3 This Year — Here’s How A Late-2025 Bet Could Grow 10x From Here",
-        "url": "https://stocktwits.com/news-articles/markets/equity/sls-mrna-anl-biotech-top-3-this-year-how-late-2025-bet-grow-10x/cNbXVXXR9hm?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 21:41 ET",
-        "pub_ts": 1794969690.0
       }
     ],
     "NKE": [
@@ -3226,18 +3226,18 @@
     "CRDO": 1795081932.618976,
     "COHR": 1795081932.618976,
     "MRVL": 1795081932.618976,
-    "LITE": 1795080437.1411054,
+    "LITE": 1795082035.9382339,
     "AAOI": 1795081718.750267,
-    "SPCX": 1795080437.1411054,
-    "ASTS": 1795080437.1411054,
-    "AXTI": 1795080437.1411054,
+    "SPCX": 1795082035.9382339,
+    "ASTS": 1795082035.9382339,
+    "AXTI": 1795082035.9382339,
     "NASA": 1795081718.750267,
     "LUNR": 1795081718.750267,
     "TSLA": 1795081718.750267,
     "AXP": 1795081718.750267,
-    "RKLB": 1795080437.1411054,
+    "RKLB": 1795082035.9382339,
     "KO": 1795081718.750267,
-    "FLY": 1795080437.1411054,
+    "FLY": 1795082035.9382339,
     "INTC": 1795081718.750267,
     "VRT": 1795081718.750267,
     "HPE": 1795081828.7453477,
@@ -3254,19 +3254,19 @@
     "BTC-USD": 1795081828.7453477,
     "CRWD": 1795081932.618976,
     "ORCL": 1795081932.618976,
-    "COIN": 1795080437.1411054,
+    "COIN": 1795082035.9382339,
     "LLY": 1795081932.618976,
-    "MRNA": 1795080437.1411054,
-    "NKE": 1795080437.1411054,
+    "MRNA": 1795082035.9382339,
+    "NKE": 1795082035.9382339,
     "MCD": 1795080636.8597994,
-    "PEP": 1795080437.1411054,
+    "PEP": 1795082035.9382339,
     "XOM": 1795081932.618976,
-    "JPM": 1795080437.1411054,
-    "WMT": 1795080437.1411054,
+    "JPM": 1795082035.9382339,
+    "WMT": 1795082035.9382339,
     "V": 1795081932.618976,
     "CAT": 1795081932.618976,
-    "FN": 1795080437.1411054,
-    "GLW": 1795080437.1411054
+    "FN": 1795082035.9382339,
+    "GLW": 1795082035.9382339
   },
   "calendar_banner": {
     "level": "idle_with_flash",
