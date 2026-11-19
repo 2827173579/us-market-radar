@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795117651.997,
-  "updated_at_et": "11-19 14:47 ET",
-  "updated_at_kst": "04:47 KST",
+  "updated_at_ts": 1795117749.518,
+  "updated_at_et": "11-19 14:49 ET",
+  "updated_at_kst": "04:49 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -913,6 +913,13 @@
         "pub_ts": 1795114131.0
       },
       {
+        "title": "Trump Discloses Up to $380,000 in Nvidia Buys, Calls Huang’s Exit ‘Such a Tragedy’",
+        "url": "https://www.benzinga.com/markets/prediction-markets/26/11/63452585/trump-nvidia-stock?utm_source=yahooFinance&utm_campaign=partner_feed&utm_medium=referral&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 14:22 ET",
+        "pub_ts": 1795116128.0
+      },
+      {
         "title": "Trump's New Filing Reveals Nvidia, SpaceX And Tesla Purchases. White House Says He Didn't Direct Trades.",
         "url": "https://www.ibtimes.com/trump-financial-disclosure-nvidia-spacex-tesla-purchases-3809977?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -925,13 +932,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 14:03 ET",
         "pub_ts": 1795114980.0
-      },
-      {
-        "title": "Nvidia, Intel, Micron and Dell Stocks Jump as Anthropic Massive IPO Sparks Rally",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/nvidia-intel-micron-dell-stocks-185029536.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 13:50 ET",
-        "pub_ts": 1795114229.0
       }
     ],
     "AMD": [
@@ -1158,6 +1158,27 @@
     ],
     "GOOGL": [
       {
+        "title": "3 Dirt Cheap Artificial Intelligence (AI) Stocks to Load Up on Before 2027",
+        "url": "https://www.fool.com/investing/2026/11/19/3-dirt-cheap-artificial-intelligence-ai-stocks-to-load-up-on-before-2027/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 14:34 ET",
+        "pub_ts": 1795116842.0
+      },
+      {
+        "title": "Anthropic Soars 16% in Record $107 Billion IPO Debut: “A Really Big Coming-of-Age Story”",
+        "url": "https://www.tikr.com/blog/anthropic-soars-16-in-record-107-billion-ipo-debut-a-really-big-coming-of-age-story?ref=yahoofinance&tlnk=yf-261119-xp2j9j3v&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 14:25 ET",
+        "pub_ts": 1795116357.0
+      },
+      {
+        "title": "Missed the Anthropic IPO? These 3 Stocks Give You Immediate Exposure.",
+        "url": "https://www.fool.com/investing/2026/11/19/missed-the-anthropic-ipo-these-3-stocks-give-you-immediate-exposure/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 14:17 ET",
+        "pub_ts": 1795115822.0
+      },
+      {
         "title": "Nvidia will not be the leader 5 years from now: Tiernan Ray",
         "url": "https://finance.yahoo.com/video/nvidia-will-not-be-the-leader-5-years-from-now-tiernan-ray-185954396.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1170,27 +1191,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 13:48 ET",
         "pub_ts": 1795114131.0
-      },
-      {
-        "title": "Google's AI Space Test Moves Beyond a Single Satellite",
-        "url": "https://finance.yahoo.com/technology/ai/articles/googles-ai-space-test-moves-184228982.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 13:42 ET",
-        "pub_ts": 1795113748.0
-      },
-      {
-        "title": "As Anthropic Goes Public, Open Source AI Is Closing In Says Google Pioneer",
-        "url": "https://www.coinage.media/2026/as-anthropic-goes-public-open-source-ai-is-closing-in-says-google-pioneer?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 13:28 ET",
-        "pub_ts": 1795112880.0
-      },
-      {
-        "title": "Why Alphabet's Cheap P/E May Mislead Investors",
-        "url": "https://www.trefis.com/stock/googl/articles/626644/why-alphabet-s-cheap-p-e-may-mislead-investors/2026-11-19?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 13:24 ET",
-        "pub_ts": 1795112670.0
       }
     ],
     "MSFT": [
@@ -3239,30 +3239,30 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795116161.9020038,
-    "SOXL": 1795116161.9020038,
-    "SPY": 1795116161.9020038,
-    "DIA": 1795116161.9020038,
-    "SOXX": 1795116161.9020038,
-    "QQQ": 1795116161.9020038,
-    "SMH": 1795116161.9020038,
-    "IWM": 1795116161.9020038,
-    "IGV": 1795116161.9020038,
-    "TLT": 1795116161.9020038,
-    "GLD": 1795116161.9020038,
-    "SQQQ": 1795116161.9020038,
-    "TSM": 1795116161.9020038,
-    "VIXY": 1795116161.9020038,
-    "SOXS": 1795116161.9020038,
-    "NVDA": 1795116161.9020038,
-    "AMD": 1795116161.9020038,
-    "ASML": 1795116161.9020038,
-    "QCOM": 1795116161.9020038,
-    "AVGO": 1795116161.9020038,
-    "AMAT": 1795116161.9020038,
-    "META": 1795116161.9020038,
-    "GOOGL": 1795116161.9020038,
-    "MSFT": 1795116161.9020038,
+    "KORU": 1795117749.5175169,
+    "SOXL": 1795117749.5175169,
+    "SPY": 1795117749.5175169,
+    "DIA": 1795117749.5175169,
+    "SOXX": 1795117749.5175169,
+    "QQQ": 1795117749.5175169,
+    "SMH": 1795117749.5175169,
+    "IWM": 1795117749.5175169,
+    "IGV": 1795117749.5175169,
+    "TLT": 1795117749.5175169,
+    "GLD": 1795117749.5175169,
+    "SQQQ": 1795117749.5175169,
+    "TSM": 1795117749.5175169,
+    "VIXY": 1795117749.5175169,
+    "SOXS": 1795117749.5175169,
+    "NVDA": 1795117749.5175169,
+    "AMD": 1795117749.5175169,
+    "ASML": 1795117749.5175169,
+    "QCOM": 1795117749.5175169,
+    "AVGO": 1795117749.5175169,
+    "AMAT": 1795117749.5175169,
+    "META": 1795117749.5175169,
+    "GOOGL": 1795117749.5175169,
+    "MSFT": 1795117749.5175169,
     "AAPL": 1795116267.6057112,
     "PLTR": 1795116371.3329806,
     "NOW": 1795116371.3329806,
