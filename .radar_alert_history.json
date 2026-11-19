@@ -104,6 +104,10 @@
     "COHR": {
       "state": "WATCHLIST_ENTRY_READY",
       "last_notified_at": 1795101739.2745357
+    },
+    "AMD": {
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1795101839.093958
     }
   },
   "position_peaks": {
