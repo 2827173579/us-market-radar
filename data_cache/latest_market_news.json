@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795078509.207,
-  "updated_at_et": "11-19 03:55 ET",
-  "updated_at_kst": "17:55 KST",
+  "updated_at_ts": 1795078611.293,
+  "updated_at_et": "11-19 03:56 ET",
+  "updated_at_kst": "17:56 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1944,6 +1944,13 @@
         "pub_ts": 1795074253.0
       },
       {
+        "title": "David Ellison Calls Elon Musk’s $1 Billion Investment ‘an Honor and a Privilege,’ Open to Future Starlink Collaboration",
+        "url": "https://finance.yahoo.com/media-advertising/articles/david-ellison-calls-elon-musk-073251041.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 02:32 ET",
+        "pub_ts": 1795073571.0
+      },
+      {
         "title": "Elon Musk Doubles Down On Autonomy: Tesla Plans Wheel-Less, Pedal-Less Model Y To Sit Alongside Two-Seat Cybercab",
         "url": "https://finance.yahoo.com/technology/articles/elon-musk-doubles-down-autonomy-053905404.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1956,13 +1963,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 22:30 ET",
         "pub_ts": 1795059004.0
-      },
-      {
-        "title": "Tesla And SpaceX ‘Better Together’? Musk Leans Yes — But Says Performance Must Drive His TSLA Pay",
-        "url": "https://stocktwits.com/news-articles/markets/equity/tesla-spacex-better-together-musk-performance-tsla-pay/cNbLsa5R9iJ?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 20:56 ET",
-        "pub_ts": 1795053379.0
       }
     ],
     "AXP": [
@@ -2115,6 +2115,13 @@
     ],
     "INTC": [
       {
+        "title": "NVDA, INTC Stocks Ease Post 5-Day Rout: After Meeting Xi Jinping, Trump Says Nvidia Blackwell Chips Could Reach China Within 2-3 Years",
+        "url": "https://stocktwits.com/news-articles/markets/equity/nvda-intc-stocks-ease-post-5-day-rout-after-meeting-xi-jinping-trump-says-nvidia-blackwell-chips-could-reach-china-within-2-3-years/cNbiTxFR9io?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 03:33 ET",
+        "pub_ts": 1795077236.0
+      },
+      {
         "title": "Marvell And Intel Halved: How Long Until They Recover?",
         "url": "https://www.trefis.com/stock/mrvl/articles/626099/marvell-and-intel-halved-how-long-until-they-recover/2026-11-18?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2141,13 +2148,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 15:17 ET",
         "pub_ts": 1795033022.0
-      },
-      {
-        "title": "Microsoft, Intel Deepen Azure Partnership Amid Increasing AI, Cloud Demand",
-        "url": "https://stocktwits.com/news-articles/markets/equity/microsoft-intel-deepen-azure-partnership-amid-increasing-ai-cloud-demand/cNbg90QR9L6?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 13:21 ET",
-        "pub_ts": 1795026065.0
       }
     ],
     "VRT": [
@@ -3190,16 +3190,16 @@
   "ticker_news_ts": {
     "KORU": 1795077298.531253,
     "SOXL": 1795077298.531253,
-    "SPY": 1795077087.683888,
-    "DIA": 1795077087.683888,
-    "SOXX": 1795077087.683888,
-    "QQQ": 1795077087.683888,
-    "SMH": 1795077087.683888,
-    "IWM": 1795077087.683888,
-    "IGV": 1795077087.683888,
+    "SPY": 1795078611.2929635,
+    "DIA": 1795078611.2929635,
+    "SOXX": 1795078611.2929635,
+    "QQQ": 1795078611.2929635,
+    "SMH": 1795078611.2929635,
+    "IWM": 1795078611.2929635,
+    "IGV": 1795078611.2929635,
     "TLT": 1795077193.8145483,
     "GLD": 1795077193.8145483,
-    "SQQQ": 1795077087.683888,
+    "SQQQ": 1795078611.2929635,
     "TSM": 1795077193.8145483,
     "VIXY": 1795077193.8145483,
     "SOXS": 1795077193.8145483,
@@ -3225,24 +3225,24 @@
     "COHR": 1795077298.531253,
     "MRVL": 1795077298.531253,
     "LITE": 1795077403.9599595,
-    "AAOI": 1795077087.683888,
+    "AAOI": 1795078611.2929635,
     "SPCX": 1795077403.9599595,
     "ASTS": 1795077403.9599595,
     "AXTI": 1795077403.9599595,
-    "NASA": 1795077087.683888,
-    "LUNR": 1795077087.683888,
-    "TSLA": 1795077087.683888,
-    "AXP": 1795077087.683888,
+    "NASA": 1795078611.2929635,
+    "LUNR": 1795078611.2929635,
+    "TSLA": 1795078611.2929635,
+    "AXP": 1795078611.2929635,
     "RKLB": 1795077403.9599595,
-    "KO": 1795077087.683888,
+    "KO": 1795078611.2929635,
     "FLY": 1795077403.9599595,
-    "INTC": 1795077087.683888,
-    "VRT": 1795077087.683888,
+    "INTC": 1795078611.2929635,
+    "VRT": 1795078611.2929635,
     "HPE": 1795077193.8145483,
     "DELL": 1795077193.8145483,
     "OKLO": 1795077193.8145483,
-    "CEG": 1795077087.683888,
-    "FPS": 1795077087.683888,
+    "CEG": 1795078611.2929635,
+    "FPS": 1795078611.2929635,
     "MU": 1795077193.8145483,
     "SKHY": 1795077193.8145483,
     "WDC": 1795077193.8145483,
