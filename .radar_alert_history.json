@@ -26,24 +26,24 @@
       "last_notified_at": 1794532572.3751588
     },
     "QQQ": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1795097650.056346
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "SOXX": {
       "state": "NORMAL",
       "last_notified_at": 0.0
     },
     "QCOM": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1795097756.1985195
     },
     "LUNR": {
       "state": "NORMAL",
       "last_notified_at": 0.0
     },
     "SPCX": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1795097756.1985195
     },
     "TSM": {
       "state": "STOP_LOSS",
