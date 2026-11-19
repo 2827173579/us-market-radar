@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795057307.207,
-  "updated_at_et": "11-18 22:01 ET",
-  "updated_at_kst": "12:01 KST",
+  "updated_at_ts": 1795057410.864,
+  "updated_at_et": "11-18 22:03 ET",
+  "updated_at_kst": "12:03 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -906,6 +906,13 @@
     ],
     "NVDA": [
       {
+        "title": "Asian stocks drop as Anthropic's record IPO fails to reassure",
+        "url": "https://finance.yahoo.com/markets/world-indices/articles/asian-stocks-drop-anthropics-record-025108034.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 21:51 ET",
+        "pub_ts": 1795056668.0
+      },
+      {
         "title": "CEO Scandals Typically Cost About 1%. Here’s Why It’s Different for Nvidia",
         "url": "https://www.tikr.com/blog/ceo-scandals-typically-cost-about-1-heres-why-its-different-for-nvidia?ref=yahoofinance&tlnk=yf-261118-hwcfj8vh&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -927,18 +934,11 @@
         "pub_ts": 1795052682.0
       },
       {
-        "title": "Trump Suggests US Can Sell Blackwell Chips to China in Future",
-        "url": "https://finance.yahoo.com/technology/ai/articles/trump-suggests-us-sell-blackwell-013901504.html?.tsrc=rss",
+        "title": "Elon Musk Says Nvidia Made a ‘Mistake’ by Parting Ways With Jensen Huang: Calls Ex-CEO ‘Michael Jordan Perhaps at His Peak Level’",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/elon-musk-says-nvidia-made-014213735.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-18 20:39 ET",
-        "pub_ts": 1795052341.0
-      },
-      {
-        "title": "Nvidia Moves Up Raises and Stock Grants After Jensen Huang Exit",
-        "url": "https://beincrypto.com/nvidia-pay-raises-jensen-huang-exit/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 20:11 ET",
-        "pub_ts": 1795050695.0
+        "time": "11-18 20:42 ET",
+        "pub_ts": 1795052533.0
       }
     ],
     "AMD": [
@@ -1075,18 +1075,18 @@
         "pub_ts": 1795023918.0
       },
       {
-        "title": "Digital Infrastructure World 2027 Announces First 85 Speakers as Registrants Represent 80GW of AI Buying Capacity",
-        "url": "https://finance.yahoo.com/technology/ai/articles/digital-infrastructure-world-2027-announces-173500655.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 12:35 ET",
-        "pub_ts": 1795023300.0
-      },
-      {
         "title": "The $1 Trillion Spending Question Hanging Over Anthropic’s IPO",
         "url": "https://finance.yahoo.com/m/cfcce45f-4a68-3ff6-8052-435a6b38ed55/the-%241-trillion-spending.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-18 13:37 ET",
         "pub_ts": 1795027020.0
+      },
+      {
+        "title": "Baird cuts Qualcomm estimates over potential loss of ByteDance chip business",
+        "url": "https://www.proactiveinvestors.com/companies/news/1102042/baird-cuts-qualcomm-estimates-over-potential-loss-of-bytedance-chip-business-1102042.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 13:28 ET",
+        "pub_ts": 1795026480.0
       }
     ],
     "AMAT": [
@@ -1202,6 +1202,13 @@
     ],
     "MSFT": [
       {
+        "title": "What NICE (TASE:NICE)'s Microsoft AI Tie Up Means For Shareholders",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/nice-tase-nice-microsoft-ai-021948606.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 21:19 ET",
+        "pub_ts": 1795054788.0
+      },
+      {
         "title": "Microsoft CEO Satya Nadella explains why he asked 60K employees to quit",
         "url": "https://finance.yahoo.com/technology/ai/articles/microsoft-ceo-satya-nadella-explains-004256847.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1228,13 +1235,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 17:42 ET",
         "pub_ts": 1795041751.0
-      },
-      {
-        "title": "Arrow Electronics (ARW) Launches ArrowSphere Cloud Portal, Is The 16% Undervaluation Case Convincing?",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/arrow-electronics-arw-launches-arrowsphere-221407018.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 17:14 ET",
-        "pub_ts": 1795040047.0
       }
     ],
     "AAPL": [
@@ -2215,13 +2215,6 @@
         "pub_ts": 1795003200.0
       },
       {
-        "title": "HPE CEO Antonio Neri is building the machines behind the AI boom",
-        "url": "https://finance.yahoo.com/video/hpe-ceo-antonio-neri-building-110000376.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 06:00 ET",
-        "pub_ts": 1794999600.0
-      },
-      {
         "title": "HPE Names Jennifer Nason to Board of Directors",
         "url": "https://finance.yahoo.com/technology/articles/hpe-names-jennifer-nason-board-210500621.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2234,6 +2227,13 @@
         "source": "Yahoo Finance",
         "time": "11-18 13:16 ET",
         "pub_ts": 1795025818.0
+      },
+      {
+        "title": "Citi Bank Slashes Dell And HPE Price Targets Ahead Of Earnings",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/citi-bank-slashes-dell-hpe-180012702.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 13:00 ET",
+        "pub_ts": 1795024812.0
       }
     ],
     "DELL": [
@@ -3209,21 +3209,21 @@
     "SMH": 1795057307.20731,
     "IWM": 1795057307.20731,
     "IGV": 1795057307.20731,
-    "TLT": 1795055891.4745886,
-    "GLD": 1795055891.4745886,
+    "TLT": 1795057410.8638735,
+    "GLD": 1795057410.8638735,
     "SQQQ": 1795057307.20731,
-    "TSM": 1795055891.4745886,
-    "VIXY": 1795055891.4745886,
-    "SOXS": 1795055891.4745886,
-    "NVDA": 1795055891.4745886,
-    "AMD": 1795055891.4745886,
-    "ASML": 1795055891.4745886,
-    "QCOM": 1795055891.4745886,
-    "AVGO": 1795055891.4745886,
-    "AMAT": 1795055891.4745886,
+    "TSM": 1795057410.8638735,
+    "VIXY": 1795057410.8638735,
+    "SOXS": 1795057410.8638735,
+    "NVDA": 1795057410.8638735,
+    "AMD": 1795057410.8638735,
+    "ASML": 1795057410.8638735,
+    "QCOM": 1795057410.8638735,
+    "AVGO": 1795057410.8638735,
+    "AMAT": 1795057410.8638735,
     "META": 1795055996.0495317,
     "GOOGL": 1795055996.0495317,
-    "MSFT": 1795055891.4745886,
+    "MSFT": 1795057410.8638735,
     "AAPL": 1795055996.0495317,
     "PLTR": 1795055996.0495317,
     "NOW": 1795055996.0495317,
@@ -3250,18 +3250,18 @@
     "FLY": 1795056101.0051446,
     "INTC": 1795057307.20731,
     "VRT": 1795057307.20731,
-    "HPE": 1795055891.4745886,
-    "DELL": 1795055891.4745886,
-    "OKLO": 1795055891.4745886,
+    "HPE": 1795057410.8638735,
+    "DELL": 1795057410.8638735,
+    "OKLO": 1795057410.8638735,
     "CEG": 1795057307.20731,
     "FPS": 1795057307.20731,
-    "MU": 1795055891.4745886,
-    "SKHY": 1795055891.4745886,
-    "WDC": 1795055891.4745886,
-    "STX": 1795055891.4745886,
-    "MSTR": 1795055891.4745886,
-    "SNDK": 1795055891.4745886,
-    "BTC-USD": 1795055891.4745886,
+    "MU": 1795057410.8638735,
+    "SKHY": 1795057410.8638735,
+    "WDC": 1795057410.8638735,
+    "STX": 1795057410.8638735,
+    "MSTR": 1795057410.8638735,
+    "SNDK": 1795057410.8638735,
+    "BTC-USD": 1795057410.8638735,
     "CRWD": 1795055996.0495317,
     "ORCL": 1795055996.0495317,
     "COIN": 1795056101.0051446,
