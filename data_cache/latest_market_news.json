@@ -1,9 +1,22 @@
 {
-  "updated_at_ts": 1795097364.988,
-  "updated_at_et": "11-19 09:09 ET",
-  "updated_at_kst": "23:09 KST",
+  "updated_at_ts": 1795097640.664,
+  "updated_at_et": "11-19 09:14 ET",
+  "updated_at_kst": "23:14 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261119221248690800",
+      "title": "WTI原油向上触及85美元/桶，日内涨2.23%；布伦特原油日内涨幅达2.00%，现报9…",
+      "summary": "WTI原油向上触及85美元/桶，日内涨2.23%；布伦特原油日内涨幅达2.00%，现报93.23美元/桶。",
+      "keywords": [
+        "原油"
+      ],
+      "pub_ts": 1795097568.0,
+      "time_et": "11-19 09:12 ET",
+      "time_bj": "22:12 BJ",
+      "time_kst": "23:12 KST",
+      "time_display": "09:12 ET / 22:12 BJ"
+    },
     {
       "id": "20261119214527204800",
       "title": "白宫下令评估多套军事方案及伊朗报复选项，特朗普称明年1月1日后“拭目以待”",
@@ -322,22 +335,6 @@
       "time_bj": "16:33 BJ",
       "time_kst": "17:33 KST",
       "time_display": "03:33 ET / 16:33 BJ"
-    },
-    {
-      "id": "20261119162613703800",
-      "title": "1. 美联储会议纪要：几乎所有官员都预计将进一步加息；少数官员认为后续可能需加息50个基…",
-      "summary": "1. 美联储会议纪要：几乎所有官员都预计将进一步加息；少数官员认为后续可能需加息50个基点。 2. 美国或在明年2月或3月触及41.1万亿美元的债务上限。 3. 美债三大海外债主9月悉数减持：日本五连降、中国持仓降至逾18年低位。 4. 韩国投资者9月净买入115亿美元美债，创有记录以来新高。 5. 穆迪将英伟达信用评级展望由正面调整为稳定，确认其优先无抵押债务评级为AA1，并称未来12至18个月内不太可能上调英伟达评级。 6. 10年期TIPS拍卖在即，摩根大通警告：美债或需更高收益率溢价才能吸引买家。 7. 据悉欧洲央行下周将讨论提高最低准备金率至2%。 8. 高盛上调2027年AI项目融资预期逾八成至5450亿美元，并提示融资成本走高。 9. 资管机构警告：AI举债热潮凸显融资审核标准恶化。 10. 财达证券张明：力争未来五年为雄安新区提供规模化、可持续的债券融资支持。 11. 香港按揭证券公司完成225亿港元多币种基准债券定价。 12. 年内银行二永债发行规模突破2万亿元，已发行109只。",
-      "keywords": [
-        "美联储",
-        "加息",
-        "英伟达",
-        "美债"
-      ],
-      "pub_ts": 1795076773.0,
-      "time_et": "11-19 03:26 ET",
-      "time_bj": "16:26 BJ",
-      "time_kst": "17:26 KST",
-      "time_display": "03:26 ET / 16:26 BJ"
     }
   ],
   "ticker_news": {
@@ -431,6 +428,13 @@
         "pub_ts": 1795086254.0
       },
       {
+        "title": "Five Straight Losses, One Divergence: Where the Major Indexes Stand Now",
+        "url": "https://finance.yahoo.com/markets/world-indices/articles/five-straight-losses-one-divergence-130000760.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 08:00 ET",
+        "pub_ts": 1795093200.0
+      },
+      {
         "title": "ETFs Are Buying Bank of America (BAC) on Tuesday",
         "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-buying-bank-america-bac-110214667.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -443,13 +447,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 06:02 ET",
         "pub_ts": 1795086131.0
-      },
-      {
-        "title": "ETFs Are Buying ExxonMobil (XOM) on Nov. 17",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-buying-exxonmobil-xom-nov-110201088.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 06:02 ET",
-        "pub_ts": 1795086121.0
       }
     ],
     "DIA": [
@@ -528,6 +525,13 @@
     ],
     "QQQ": [
       {
+        "title": "Five Straight Losses, One Divergence: Where the Major Indexes Stand Now",
+        "url": "https://finance.yahoo.com/markets/world-indices/articles/five-straight-losses-one-divergence-130000760.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 08:00 ET",
+        "pub_ts": 1795093200.0
+      },
+      {
         "title": "Invesco QQQ (QQQ) Sells Apple and Microsoft on Nov. 17",
         "url": "https://finance.yahoo.com/markets/stocks/articles/invesco-qqq-qqq-sells-apple-110410162.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -554,13 +558,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 18:09 ET",
         "pub_ts": 1795043391.0
-      },
-      {
-        "title": "Invesco QQQ Is 14% Below Its October Record. Here's Where I Think It Will Be in 2030.",
-        "url": "https://www.fool.com/investing/2026/11/18/invesco-qqq-is-14-below-its-october-record-here-s-where-i-think-it-will-be-in-2030/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 17:43 ET",
-        "pub_ts": 1795041781.0
       }
     ],
     "SMH": [
@@ -616,6 +613,13 @@
         "pub_ts": 1793906903.0
       },
       {
+        "title": "Five Straight Losses, One Divergence: Where the Major Indexes Stand Now",
+        "url": "https://finance.yahoo.com/markets/world-indices/articles/five-straight-losses-one-divergence-130000760.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 08:00 ET",
+        "pub_ts": 1795093200.0
+      },
+      {
         "title": "iShares Russell 2000 (IWM) Buys $1.4 Million More Glaukos on Tuesday",
         "url": "https://finance.yahoo.com/markets/stocks/articles/ishares-russell-2000-iwm-buys-110457366.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -628,13 +632,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 06:05 ET",
         "pub_ts": 1794999900.0
-      },
-      {
-        "title": "Stock Market Today: Nasdaq-100 Sinks 1% as Nvidia Faces Its First Earnings Without Jensen Huang",
-        "url": "https://247wallst.com/investing/2026/11/16/stock-market-today-nasdaq-100-sinks-1-as-nvidia-faces-its-first-earnings-without-jensen-huang/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-16 09:58 ET",
-        "pub_ts": 1794841090.0
       }
     ],
     "IGV": [
@@ -898,42 +895,49 @@
     ],
     "NVDA": [
       {
+        "title": "Nvidia interim CEO says 'we've got this' amid leadership transition",
+        "url": "https://finance.yahoo.com/video/nvidia-interim-ceo-says-weve-got-this-amid-leadership-transition-140536009.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 09:05 ET",
+        "pub_ts": 1795097136.0
+      },
+      {
+        "title": "Nvidia, AMD, Micron stocks lead chip sector higher amid Anthropic IPO optimism",
+        "url": "https://finance.yahoo.com/markets/article/copy-nvidia-stock-slips-as-investors-digest-ceo-exit-rest-of-chip-sector-falls-134408467.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 08:44 ET",
+        "pub_ts": 1795095848.0
+      },
+      {
+        "title": "Chip Stocks Split From Their Bellwether as Leadership Questions Linger",
+        "url": "https://finance.yahoo.com/news/chip-stocks-split-bellwether-leadership-135800328.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 08:58 ET",
+        "pub_ts": 1795096680.0
+      },
+      {
+        "title": "InstaLILY Launches Lily for Sales on Microsoft Dynamics 365, Where Sellers and AI Agents Work Together in Shared Rooms",
+        "url": "https://finance.yahoo.com/technology/ai/articles/instalily-launches-lily-sales-microsoft-135000771.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 08:50 ET",
+        "pub_ts": 1795096200.0
+      },
+      {
         "title": "This Dividend ETF Could Double Your Money Over the Next 6 Years",
         "url": "https://www.fool.com/investing/2026/11/19/this-dividend-etf-could-double-your-money-over-the-next-6-years/?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-19 08:20 ET",
         "pub_ts": 1795094402.0
-      },
-      {
-        "title": "Nvidia Slides After Blowout Earnings As Investigations Line Up; Is Nvidia Stock A Sell Now?",
-        "url": "https://finance.yahoo.com/m/d32ee509-88e1-36bb-8282-cdd0896feece/nvidia-slides-after-blowout.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 08:15 ET",
-        "pub_ts": 1795094121.0
-      },
-      {
-        "title": "Jim Cramer Says Investors “Would Rather Just Get Some Anthropic” Than Nvidia",
-        "url": "https://247wallst.com/investing/2026/11/19/jim-cramer-says-investors-would-rather-just-get-some-anthropic-than-nvidia/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 08:13 ET",
-        "pub_ts": 1795094032.0
-      },
-      {
-        "title": "Broadcom, Nvidia, and Micron Could Be Setting Up for a Massive AI Rally Before Year End",
-        "url": "https://247wallst.com/investing/2026/11/19/broadcom-nvidia-and-micron-could-be-setting-up-for-a-massive-ai-rally-before-year-end/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 08:04 ET",
-        "pub_ts": 1795093467.0
-      },
-      {
-        "title": "Pasqal Makes Its Quantum Processors Native to Slurm with NVIDIA Expansion to Support Hierarchical Resources",
-        "url": "https://finance.yahoo.com/technology/ai/articles/pasqal-makes-quantum-processors-native-130000531.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 08:00 ET",
-        "pub_ts": 1795093200.0
       }
     ],
     "AMD": [
+      {
+        "title": "Nvidia, AMD, Micron stocks lead chip sector higher amid Anthropic IPO optimism",
+        "url": "https://finance.yahoo.com/markets/article/copy-nvidia-stock-slips-as-investors-digest-ceo-exit-rest-of-chip-sector-falls-134408467.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 08:44 ET",
+        "pub_ts": 1795095848.0
+      },
       {
         "title": "Why AMD's AI Progress Could Make Sense Through ETFs",
         "url": "https://finance.yahoo.com/markets/stocks/articles/why-amds-ai-progress-could-131034011.html?.tsrc=rss",
@@ -961,13 +965,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 07:14 ET",
         "pub_ts": 1795090479.0
-      },
-      {
-        "title": "NexusIgnite Plans Sovereign AI Cloud in Jordan, Starting With Its Universities",
-        "url": "https://finance.yahoo.com/technology/ai/articles/nexusignite-plans-sovereign-ai-cloud-120000648.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 07:00 ET",
-        "pub_ts": 1795089600.0
       }
     ],
     "ASML": [
@@ -1067,11 +1064,11 @@
         "pub_ts": 1795086290.0
       },
       {
-        "title": "ETFs Bought $82.9 Million of Broadcom (AVGO) on Nov. 17",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-bought-82-9-million-110119740.html?.tsrc=rss",
+        "title": "Nvidia, AMD, Micron stocks lead chip sector higher amid Anthropic IPO optimism",
+        "url": "https://finance.yahoo.com/markets/article/copy-nvidia-stock-slips-as-investors-digest-ceo-exit-rest-of-chip-sector-falls-134408467.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-19 06:01 ET",
-        "pub_ts": 1795086079.0
+        "time": "11-19 08:44 ET",
+        "pub_ts": 1795095848.0
       },
       {
         "title": "Anthropic IPO Highlights Something Weird About the AI Industry",
@@ -1120,6 +1117,13 @@
     ],
     "META": [
       {
+        "title": "Shareholder Lawsuits Stall Meta's Class C Share Plan",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/shareholder-lawsuits-stall-metas-class-140657147.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 09:06 ET",
+        "pub_ts": 1795097217.0
+      },
+      {
         "title": "Market Chatter: Meta Platforms Suspends Plan to Issue Non-Voting Shares",
         "url": "https://finance.yahoo.com/markets/stocks/articles/market-chatter-meta-platforms-suspends-103305579.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1146,22 +1150,36 @@
         "source": "Yahoo Finance",
         "time": "11-19 00:47 ET",
         "pub_ts": 1795067277.0
-      },
-      {
-        "title": "Amazon and Google face a 10-year AI supply chain problem",
-        "url": "https://www.thestreet.com/technology/amazon-and-google-face-a-10-year-ai-supply-chain-problem?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 22:03 ET",
-        "pub_ts": 1795057380.0
       }
     ],
     "GOOGL": [
       {
-        "title": "Everything you need to know about the Anthropic IPO",
-        "url": "https://finance.yahoo.com/video/everything-know-anthropic-ipo-120000799.html?.tsrc=rss",
+        "title": "Q&A: An AI Lab Prices Above Its Range and Debuts on Nasdaq Today",
+        "url": "https://finance.yahoo.com/news/q-ai-lab-prices-above-140500577.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-19 07:00 ET",
-        "pub_ts": 1795089600.0
+        "time": "11-19 09:05 ET",
+        "pub_ts": 1795097100.0
+      },
+      {
+        "title": "From AI Models to Factory Floors: U.S.-Korea Industrial AI at Stanford",
+        "url": "https://finance.yahoo.com/technology/ai/articles/ai-models-factory-floors-u-135700330.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 08:57 ET",
+        "pub_ts": 1795096620.0
+      },
+      {
+        "title": "Anthropic set to start trading after completing largest-ever IPO",
+        "url": "https://www.cbsnews.com/news/anthropic-ipo-nasdaq-debut-claude-ai/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 08:55 ET",
+        "pub_ts": 1795096519.0
+      },
+      {
+        "title": "Google's New Gemini 4 Neon Joins Gemini 4 Argon at the Top of the DualEntry Accounting AI",
+        "url": "https://finance.yahoo.com/technology/ai/articles/googles-gemini-4-neon-joins-134300003.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 08:43 ET",
+        "pub_ts": 1795095780.0
       },
       {
         "title": "What If Google Slows Its $160 Billion AI Spend?",
@@ -1169,30 +1187,30 @@
         "source": "Yahoo Finance",
         "time": "11-19 08:16 ET",
         "pub_ts": 1795094206.0
-      },
-      {
-        "title": "Google Data Center Demand Is Reviving Interest In Geothermal Stocks",
-        "url": "https://finance.yahoo.com/energy/articles/google-data-center-demand-reviving-131147867.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 08:11 ET",
-        "pub_ts": 1795093907.0
-      },
-      {
-        "title": "Anthropic gets bullish starts from Citizens, Melius ahead of stock market debut",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/anthropic-gets-bullish-starts-citizens-130654259.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 08:06 ET",
-        "pub_ts": 1795093614.0
-      },
-      {
-        "title": "Morning Minute: Google’s Newest AI Model Tops Benchmarks Ahead of Anthropic IPO",
-        "url": "https://decrypt.co/383609/morning-minute-googles-newest-ai-model-tops-benchmarks-ahead-of-anthropic-ipo?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 08:05 ET",
-        "pub_ts": 1795093528.0
       }
     ],
     "MSFT": [
+      {
+        "title": "MongoDB Atlas for Government Achieves FedRAMP® Class D (High) Certification, Adds Support for Microsoft Azure Government",
+        "url": "https://finance.yahoo.com/technology/ai/articles/mongodb-atlas-government-achieves-fedramp-140000390.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 09:00 ET",
+        "pub_ts": 1795096800.0
+      },
+      {
+        "title": "InstaLILY Launches Lily for Sales on Microsoft Dynamics 365, Where Sellers and AI Agents Work Together in Shared Rooms",
+        "url": "https://finance.yahoo.com/technology/ai/articles/instalily-launches-lily-sales-microsoft-135000771.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 08:50 ET",
+        "pub_ts": 1795096200.0
+      },
+      {
+        "title": "Why Microsoft’s Stickier Revenue Gives It the Edge Over Apple Heading Into 2027",
+        "url": "https://247wallst.com/investing/2026/11/19/why-microsofts-stickier-revenue-gives-it-the-edge-over-apple-heading-into-2027/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 08:45 ET",
+        "pub_ts": 1795095938.0
+      },
       {
         "title": "Profound brings your AI Marketer into Microsoft Teams and Microsoft 365",
         "url": "https://finance.yahoo.com/technology/ai/articles/profound-brings-ai-marketer-microsoft-133000589.html?.tsrc=rss",
@@ -1206,27 +1224,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 08:22 ET",
         "pub_ts": 1795094520.0
-      },
-      {
-        "title": "Microsoft’s CEO Says He’s “Extremely Sorry” for the Outlook Outage",
-        "url": "https://247wallst.com/investing/2026/11/19/microsofts-ceo-says-hes-extremely-sorry-for-the-outlook-outage/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 07:38 ET",
-        "pub_ts": 1795091935.0
-      },
-      {
-        "title": "Why Did Rubrik Stock Jump?",
-        "url": "https://www.trefis.com/stock/rbrk/articles/626903/why-did-rubrik-stock-jump/2026-11-19?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 07:37 ET",
-        "pub_ts": 1795091839.0
-      },
-      {
-        "title": "Microsoft's Reported $500 Million AI Deal Sparks Warning From Congress",
-        "url": "https://finance.yahoo.com/technology/ai/articles/microsofts-reported-500-million-ai-122659711.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 07:26 ET",
-        "pub_ts": 1795091219.0
       }
     ],
     "AAPL": [
@@ -3238,30 +3235,30 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795095870.4066617,
-    "SOXL": 1795095870.4066617,
-    "SPY": 1795095870.4066617,
-    "DIA": 1795095870.4066617,
-    "SOXX": 1795095870.4066617,
-    "QQQ": 1795095870.4066617,
-    "SMH": 1795095870.4066617,
-    "IWM": 1795095870.4066617,
-    "IGV": 1795095870.4066617,
-    "TLT": 1795095870.4066617,
-    "GLD": 1795095870.4066617,
-    "SQQQ": 1795095870.4066617,
-    "TSM": 1795095870.4066617,
-    "VIXY": 1795095870.4066617,
-    "SOXS": 1795095870.4066617,
-    "NVDA": 1795095870.4066617,
-    "AMD": 1795095870.4066617,
-    "ASML": 1795095974.1023552,
-    "QCOM": 1795095974.1023552,
-    "AVGO": 1795095870.4066617,
-    "AMAT": 1795095870.4066617,
-    "META": 1795095974.1023552,
-    "GOOGL": 1795095974.1023552,
-    "MSFT": 1795095974.1023552,
+    "KORU": 1795097640.6642365,
+    "SOXL": 1795097640.6642365,
+    "SPY": 1795097640.6642365,
+    "DIA": 1795097640.6642365,
+    "SOXX": 1795097640.6642365,
+    "QQQ": 1795097640.6642365,
+    "SMH": 1795097640.6642365,
+    "IWM": 1795097640.6642365,
+    "IGV": 1795097640.6642365,
+    "TLT": 1795097640.6642365,
+    "GLD": 1795097640.6642365,
+    "SQQQ": 1795097640.6642365,
+    "TSM": 1795097640.6642365,
+    "VIXY": 1795097640.6642365,
+    "SOXS": 1795097640.6642365,
+    "NVDA": 1795097640.6642365,
+    "AMD": 1795097640.6642365,
+    "ASML": 1795097640.6642365,
+    "QCOM": 1795097640.6642365,
+    "AVGO": 1795097640.6642365,
+    "AMAT": 1795097640.6642365,
+    "META": 1795097640.6642365,
+    "GOOGL": 1795097640.6642365,
+    "MSFT": 1795097640.6642365,
     "AAPL": 1795096181.0754411,
     "PLTR": 1795096181.0754411,
     "NOW": 1795096181.0754411,
@@ -3321,7 +3318,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (08:45 ET / 21:45 BJ) [特朗普]：特朗普据悉仍在考虑美以联手空袭伊朗，白宫下令五角大楼、情报部门推演方案，重点评估能否避免伊朗打击海湾油气设施。点击查看...",
+    "detail": "⚡ 最新核心快讯 (09:12 ET / 22:12 BJ) [原油]：WTI原油向上触及85美元/桶，日内涨2.23%；布伦特原油日内涨幅达2.00%，现报93.23美元/桶。",
     "event_name": "",
     "minutes_left": 0
   }

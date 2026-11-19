@@ -2187,9 +2187,13 @@
     "2026-11-19:QCOM/VST/AXP/MRNA/SPY/DIA:5M_ENTRY": {
       "device": "PC",
       "ts": 1795097369.2446332
+    },
+    "2026-11-19:META/QQQ:5M_ENTRY": {
+      "device": "PC",
+      "ts": 1795097650.6756
     }
   },
   "device": "PC",
-  "last_heartbeat_ts": 1795097018.3630145,
-  "updated_at": "2026-11-19T14:09:29.245044+00:00"
+  "last_heartbeat_ts": 1795097555.4166436,
+  "updated_at": "2026-11-19T14:14:10.676037+00:00"
 }
