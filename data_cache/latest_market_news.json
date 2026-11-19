@@ -1,8 +1,28 @@
 {
-  "updated_at_ts": 1795049564.883,
-  "updated_at_et": "11-18 19:52 ET",
-  "updated_at_kst": "09:52 KST",
-  "macro_calendar": [],
+  "updated_at_ts": 1795049661.907,
+  "updated_at_et": "11-18 19:54 ET",
+  "updated_at_kst": "09:54 KST",
+  "macro_calendar": [
+    {
+      "event_id": "ff_FOMC Meeting Minutes_2026-11-18T14:00:00-05:00",
+      "name": "美国FOMC Meeting Minutes",
+      "country": "USD",
+      "star": 5,
+      "pub_time_ts": 1795028400.0,
+      "pub_time_et": "11-18 14:00 ET",
+      "pub_time_bj": "03:00 BJ",
+      "pub_time_kst": "04:00 KST",
+      "previous": "待公布",
+      "forecast": "待公布",
+      "actual": "待公布",
+      "unit": "",
+      "status": "upcoming",
+      "minutes_left": 0,
+      "impact_tone": "pending",
+      "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
+      "source": "forexfactory"
+    }
+  ],
   "macro_flashes": [
     {
       "id": "20261119082932305800",
@@ -3277,10 +3297,10 @@
     "GLW": 1795048482.5853624
   },
   "calendar_banner": {
-    "level": "idle_with_flash",
-    "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (19:29 ET / 08:29 BJ) [特朗普]：特朗普领导的“和平委员会”警告，加沙停火协议正面临崩溃风险，以色列撤军、哈马斯解除武装及国际维和部队部署持续受阻，战后重建和人道主义危机进一步恶化。点击查看…",
-    "event_name": "",
+    "level": "upcoming",
+    "headline": "📅 今日美股重磅预告【美国FOMC Meeting Minutes】· 距公布约 0 分钟（11-18 14:00 ET / 04:00 KST）",
+    "detail": "前值 待公布 ｜ 预期 待公布 ｜ 临近公布前15分钟将自动触发防插针预警",
+    "event_name": "美国FOMC Meeting Minutes",
     "minutes_left": 0
   }
 }
