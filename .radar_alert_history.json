@@ -18,8 +18,8 @@
       "last_notified_at": 0.0
     },
     "MRNA": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1795100202.1832373
     },
     "CRWV": {
       "state": "STOP_LOSS",
@@ -42,8 +42,8 @@
       "last_notified_at": 0.0
     },
     "SPCX": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1795100202.1832373
     },
     "TSM": {
       "state": "STOP_LOSS",
@@ -96,6 +96,10 @@
     "CEG": {
       "state": "NORMAL",
       "last_notified_at": 0.0
+    },
+    "TLT": {
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1795100202.1832373
     }
   },
   "position_peaks": {
