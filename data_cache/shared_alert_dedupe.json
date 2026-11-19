@@ -2639,9 +2639,17 @@
     "2026-11-19:DEFENSIVE_FLIGHT:+4.3": {
       "device": "PC",
       "ts": 1795118765.053498
+    },
+    "2026-11-19:QCOM/CRWD:5M_ENTRY": {
+      "device": "PC",
+      "ts": 1795118960.0784414
+    },
+    "2026-11-19:DEFENSIVE_FLIGHT:+4.1": {
+      "device": "PC",
+      "ts": 1795118961.4359727
     }
   },
   "device": "PC",
-  "last_heartbeat_ts": 1795118784.912291,
-  "updated_at": "2026-11-19T20:06:24.912747+00:00"
+  "last_heartbeat_ts": 1795118881.676605,
+  "updated_at": "2026-11-19T20:09:21.436403+00:00"
 }
