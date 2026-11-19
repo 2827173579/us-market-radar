@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795086372.156,
-  "updated_at_et": "11-19 06:06 ET",
-  "updated_at_kst": "20:06 KST",
+  "updated_at_ts": 1795086477.867,
+  "updated_at_et": "11-19 06:07 ET",
+  "updated_at_kst": "20:07 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1162,6 +1162,13 @@
         "pub_ts": 1795045860.0
       },
       {
+        "title": "Why Tristan Thompson backed Anthropic early and is still bullish",
+        "url": "https://finance.yahoo.com/video/why-tristan-thompson-backed-anthropic-110000852.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 06:00 ET",
+        "pub_ts": 1795086000.0
+      },
+      {
         "title": "AlumiFuel Power And 2 More Hydrogen Fuel Cell Stocks To Watch",
         "url": "https://finance.yahoo.com/energy/articles/alumifuel-power-2-more-hydrogen-101627261.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1181,13 +1188,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 04:05 ET",
         "pub_ts": 1795079100.0
-      },
-      {
-        "title": "Nvidia Guides 75% Growth. Gil Luria: “Maybe We Grow 25% to 50%.” Here’s What 10x Earnings Prices In",
-        "url": "https://www.tikr.com/blog/nvidia-guides-75-growth-gil-luria-maybe-we-grow-25-to-50-heres-what-10x-earnings-prices-in?ref=yahoofinance&tlnk=yf-261119-v73p6jp2&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 02:33 ET",
-        "pub_ts": 1795073617.0
       }
     ],
     "MSFT": [
@@ -1347,7 +1347,7 @@
         "pub_ts": 1795079368.0
       },
       {
-        "title": "EA cofounder once compared interview questions with Amazon’s Andy Jassy—Jassy’s was so ruthless that no instant answer ends the interview",
+        "title": "$55 billion EA cofounder compared interview questions with Amazon CEO Andy Jassy—and if you can’t answer Jassy’s on the spot, he ends the interview",
         "url": "https://finance.yahoo.com/small-business/articles/ea-cofounder-once-compared-interview-080200120.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-19 03:02 ET",
@@ -3190,8 +3190,8 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795084959.2321987,
-    "SOXL": 1795084959.2321987,
+    "KORU": 1795086477.8665984,
+    "SOXL": 1795086477.8665984,
     "SPY": 1795086269.087699,
     "DIA": 1795086269.087699,
     "SOXX": 1795086269.087699,
@@ -3211,21 +3211,21 @@
     "QCOM": 1795086372.1564384,
     "AVGO": 1795086372.1564384,
     "AMAT": 1795086372.1564384,
-    "META": 1795084959.2321987,
-    "GOOGL": 1795084959.2321987,
+    "META": 1795086477.8665984,
+    "GOOGL": 1795086477.8665984,
     "MSFT": 1795086372.1564384,
-    "AAPL": 1795084959.2321987,
-    "PLTR": 1795084959.2321987,
-    "NOW": 1795084959.2321987,
-    "AMZN": 1795084959.2321987,
-    "CRWV": 1795084959.2321987,
-    "NBIS": 1795084959.2321987,
-    "APLD": 1795084959.2321987,
-    "VST": 1795084959.2321987,
-    "BE": 1795084959.2321987,
-    "CRDO": 1795084959.2321987,
-    "COHR": 1795084959.2321987,
-    "MRVL": 1795084959.2321987,
+    "AAPL": 1795086477.8665984,
+    "PLTR": 1795086477.8665984,
+    "NOW": 1795086477.8665984,
+    "AMZN": 1795086477.8665984,
+    "CRWV": 1795086477.8665984,
+    "NBIS": 1795086477.8665984,
+    "APLD": 1795086477.8665984,
+    "VST": 1795086477.8665984,
+    "BE": 1795086477.8665984,
+    "CRDO": 1795086477.8665984,
+    "COHR": 1795086477.8665984,
+    "MRVL": 1795086477.8665984,
     "LITE": 1795085063.126482,
     "AAOI": 1795086269.087699,
     "SPCX": 1795085063.126482,
@@ -3252,19 +3252,19 @@
     "MSTR": 1795086372.1564384,
     "SNDK": 1795086372.1564384,
     "BTC-USD": 1795086372.1564384,
-    "CRWD": 1795084959.2321987,
-    "ORCL": 1795084959.2321987,
+    "CRWD": 1795086477.8665984,
+    "ORCL": 1795086477.8665984,
     "COIN": 1795085063.126482,
-    "LLY": 1795084959.2321987,
+    "LLY": 1795086477.8665984,
     "MRNA": 1795085063.126482,
     "NKE": 1795085063.126482,
     "MCD": 1795085164.2565415,
     "PEP": 1795085063.126482,
-    "XOM": 1795084959.2321987,
+    "XOM": 1795086477.8665984,
     "JPM": 1795085063.126482,
     "WMT": 1795085063.126482,
-    "V": 1795084959.2321987,
-    "CAT": 1795084959.2321987,
+    "V": 1795086477.8665984,
+    "CAT": 1795086477.8665984,
     "FN": 1795085063.126482,
     "GLW": 1795085063.126482
   },
