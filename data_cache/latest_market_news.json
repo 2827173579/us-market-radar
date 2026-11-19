@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795106687.78,
-  "updated_at_et": "11-19 11:44 ET",
-  "updated_at_kst": "01:44 KST",
+  "updated_at_ts": 1795106795.262,
+  "updated_at_et": "11-19 11:46 ET",
+  "updated_at_kst": "01:46 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -513,18 +513,18 @@
         "pub_ts": 1795032571.0
       },
       {
-        "title": "Peter Thiel Sold Every Utility Stock He Owned and Bet $161 Million on One Chip ETF. It's Down $37 Million Since",
-        "url": "https://247wallst.com/investing/2026/11/18/peter-thiel-sold-every-utility-stock-he-owned-and-bet-161-million-on-one-chip-etf-its-down-37-million-since/?.tsrc=rss",
+        "title": "Inside Peter Thiel’s Portfolio: Every Move He Made in the Third Quarter",
+        "url": "https://www.tikr.com/blog/inside-peter-thiels-portfolio-every-move-he-made-in-the-third-quarter?ref=yahoofinance&tlnk=yf-261119-g54qj9h4&.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-18 06:12 ET",
-        "pub_ts": 1795000362.0
+        "time": "11-19 11:37 ET",
+        "pub_ts": 1795106267.0
       },
       {
-        "title": "What iShares PHLX SOX Semi Index Fund (SOXX) Sold: AMD Leads on Nov. 16",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/ishares-phlx-sox-semi-index-110432199.html?.tsrc=rss",
+        "title": "Chip Stocks Split From Their Bellwether as Leadership Questions Linger",
+        "url": "https://finance.yahoo.com/news/chip-stocks-split-bellwether-leadership-135800328.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-18 06:04 ET",
-        "pub_ts": 1794999872.0
+        "time": "11-19 08:58 ET",
+        "pub_ts": 1795096680.0
       }
     ],
     "QQQ": [
@@ -788,6 +788,20 @@
     ],
     "TSM": [
       {
+        "title": "Here’s What Weighed on Taiwan Semiconductor Manufacturing Company Limited (TSM) in Q3",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/weighed-taiwan-semiconductor-manufacturing-company-163513705.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 11:35 ET",
+        "pub_ts": 1795106113.0
+      },
+      {
+        "title": "A $78 Billion Hedge Fund Just Bought These 3 Stocks",
+        "url": "https://www.tikr.com/blog/a-78-billion-hedge-fund-just-bought-these-3-stocks?ref=yahoofinance&tlnk=yf-261119-pw7p2rcc&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 11:26 ET",
+        "pub_ts": 1795105595.0
+      },
+      {
         "title": "TSMC and Samsung halt some chip shipments to China as US tightens export curbs",
         "url": "https://www.proactiveinvestors.com/companies/news/1102130/tsmc-and-samsung-halt-some-chip-shipments-to-china-as-us-tightens-export-curbs-1102130.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -807,20 +821,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 08:35 ET",
         "pub_ts": 1795095317.0
-      },
-      {
-        "title": "TSMC, Samsung Reportedly Suspend Some Chip Deliveries To Chinese Customers Amid New US Export Rules",
-        "url": "https://stocktwits.com/news-articles/markets/equity/tsmc-samsung-reportedly-suspend-some-chip-deliveries-to-chinese-customers-amid-new-us-export-rules/cNbi7d3R9i6?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 07:26 ET",
-        "pub_ts": 1795091193.0
-      },
-      {
-        "title": "Early Winners Start to Emerge",
-        "url": "https://finance.yahoo.com/m/de5a1727-22c0-384e-a14f-8ef5a06d02be/early-winners-start-to-emerge.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 06:33 ET",
-        "pub_ts": 1795088004.0
       }
     ],
     "VIXY": [
@@ -906,41 +906,55 @@
         "pub_ts": 1795104261.0
       },
       {
+        "title": "U.S. is closing China’s Nvidia loophole, and Beijing isn’t happy",
+        "url": "https://www.thestreet.com/crypto/artificial-intelligence/u-s-is-closing-chinas-nvidia-loophole-and-beijing-isnt-happy?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 11:31 ET",
+        "pub_ts": 1795105895.0
+      },
+      {
+        "title": "The Stock Market Is Flashing a Warning Sign for Only the 6th Time in 156 Years, and History Is Clear What Direction Stocks Could Go Next",
+        "url": "https://www.fool.com/investing/2026/11/19/the-stock-market-is-flashing-a-warning-sign-for-only-the-6th-time-in-156-years-and-history-is-clear-what-direction-stocks-could-go-next/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 11:20 ET",
+        "pub_ts": 1795105202.0
+      },
+      {
+        "title": "Bill Ackman says Nvidia's board is failing you — and not just because it fired Jensen Huang after one Zoom call, at most",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/bill-ackman-says-nvidias-board-162000364.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 11:20 ET",
+        "pub_ts": 1795105200.0
+      },
+      {
         "title": "RiverPark Advisors: NVIDIA Corp. (NVDA) Remains Central to AI Infrastructure Build-Out",
         "url": "https://finance.yahoo.com/technology/ai/articles/riverpark-advisors-nvidia-corp-nvda-161618149.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-19 11:16 ET",
         "pub_ts": 1795104978.0
-      },
-      {
-        "title": "One Magnificent Seven Stock Could Outperform Nvidia Over the Next 5 Years",
-        "url": "https://247wallst.com/investing/2026/11/19/one-magnificent-seven-stock-could-outperform-nvidia-over-the-next-5-years/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 11:03 ET",
-        "pub_ts": 1795104190.0
-      },
-      {
-        "title": "A $16 Billion Hedge Fund Just Bought These 3 Stocks",
-        "url": "https://www.tikr.com/blog/a-16-billion-hedge-fund-just-bought-these-3-stocks?ref=yahoofinance&tlnk=yf-261119-9r6r7pfg&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 10:52 ET",
-        "pub_ts": 1795103574.0
-      },
-      {
-        "title": "AI giant Anthropic shares set to trade after record-breaking IPO",
-        "url": "https://finance.yahoo.com/technology/ai/articles/anthropic-set-price-ipo-key-030309911.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 10:48 ET",
-        "pub_ts": 1795103305.0
       }
     ],
     "AMD": [
+      {
+        "title": "Blacklisted Chinese server maker kept getting AMD firmware updates: Hunterbrook",
+        "url": "https://finance.yahoo.com/video/blacklisted-chinese-server-maker-kept-getting-amd-firmware-updates-hunterbrook-162807931.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 11:28 ET",
+        "pub_ts": 1795105687.0
+      },
       {
         "title": "Nvidia, Broadcom, Micron stocks rise leading up to Anthropic's first trade",
         "url": "https://finance.yahoo.com/markets/article/nvidia-amd-micron-pare-gains-leading-up-to-anthropics-first-trade-155941221.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-19 08:44 ET",
         "pub_ts": 1795095848.0
+      },
+      {
+        "title": "AMD Stock Price Crashes 11% After a New Scandal Involving China",
+        "url": "https://beincrypto.com/amd-stock-crash-hunterbrook-china-firmware-report/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 11:10 ET",
+        "pub_ts": 1795104610.0
       },
       {
         "title": "Lisa Su Cashed Out $35 Million as AMD Trades 19% Below Its High",
@@ -955,20 +969,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 11:06 ET",
         "pub_ts": 1795104419.0
-      },
-      {
-        "title": "Intel Climbs 7% on First 18A Customer, NVIDIA Gains 4% as Trump Floats Blackwell Sales to China and Dan Ives Hails Anthropic IPO; AMD Rises 3%",
-        "url": "https://247wallst.com/investing/2026/11/19/intel-climbs-7-on-first-18a-customer-nvidia-gains-4-as-trump-floats-blackwell-sales-to-china-and-dan-ives-hails-anthropic-ipo-amd-rises-3/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 09:56 ET",
-        "pub_ts": 1795100191.0
-      },
-      {
-        "title": "The Zacks Analyst Blog Highlights NVIDIA, Cisco Systems and AMD",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/zacks-analyst-blog-highlights-nvidia-141700649.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 09:17 ET",
-        "pub_ts": 1795097820.0
       }
     ],
     "ASML": [
@@ -1121,48 +1121,69 @@
     ],
     "META": [
       {
+        "title": "Inside George Soros’s Portfolio: Every Move He Made in the Third Quarter",
+        "url": "https://www.tikr.com/blog/inside-george-soross-portfolio-every-move-he-made-in-the-third-quarter?ref=yahoofinance&tlnk=yf-261119-w8jw4prf&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 11:32 ET",
+        "pub_ts": 1795105943.0
+      },
+      {
+        "title": "Shop Pay Inclusion in Meta’s Muse AI Agent Reinforces AI Growth Thesis for Shopify (SHOP)",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/shop-pay-inclusion-meta-muse-163040178.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 11:30 ET",
+        "pub_ts": 1795105840.0
+      },
+      {
+        "title": "A $22 Billion Hedge Fund Just Bought These 3 Stocks",
+        "url": "https://www.tikr.com/blog/a-22-billion-hedge-fund-just-bought-these-3-stocks?ref=yahoofinance&tlnk=yf-261119-h7j237mf&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 11:30 ET",
+        "pub_ts": 1795105825.0
+      },
+      {
+        "title": "Navigating Meta Platforms’ (META) Journey from July Dip to New 52-Week High",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/navigating-meta-platforms-meta-journey-162018276.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 11:20 ET",
+        "pub_ts": 1795105218.0
+      },
+      {
         "title": "Shareholder Lawsuits Stall Meta's Class C Share Plan",
         "url": "https://finance.yahoo.com/markets/stocks/articles/shareholder-lawsuits-stall-metas-class-140657147.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-19 09:06 ET",
         "pub_ts": 1795097217.0
-      },
-      {
-        "title": "Market Chatter: Meta Platforms Suspends Plan to Issue Non-Voting Shares",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/market-chatter-meta-platforms-suspends-103305579.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 05:33 ET",
-        "pub_ts": 1795084385.0
-      },
-      {
-        "title": "A $16 Billion Hedge Fund Just Bought These 3 Stocks",
-        "url": "https://www.tikr.com/blog/a-16-billion-hedge-fund-just-bought-these-3-stocks?ref=yahoofinance&tlnk=yf-261119-9r6r7pfg&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 10:52 ET",
-        "pub_ts": 1795103574.0
-      },
-      {
-        "title": "Apple Stock Polishes Breakout As Nvidia-Led AI Boom Gets Wake-Up Call",
-        "url": "https://finance.yahoo.com/m/681ca0c6-76b1-321b-bdd4-bb83acc818fb/apple-stock-polishes-breakout.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 10:29 ET",
-        "pub_ts": 1795102163.0
-      },
-      {
-        "title": "Stemtech Corporation Partners with Fitness Icon Tony Little to Launch Stemtech Biosciences Digital Campaign",
-        "url": "https://finance.yahoo.com/healthcare/articles/stemtech-corporation-partners-fitness-icon-133000055.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 08:30 ET",
-        "pub_ts": 1795095000.0
       }
     ],
     "GOOGL": [
       {
-        "title": "Can Amazon's Ad Revenue Growth Continue to Underpin the Stock's Value?",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/amazons-ad-revenue-growth-continue-144700801.html?.tsrc=rss",
+        "title": "Chip stocks rally as Anthropic’s record IPO lifts AI investment sentiment",
+        "url": "https://www.proactiveinvestors.com/companies/news/1102133/chip-stocks-rally-as-anthropic-s-record-ipo-lifts-ai-investment-sentiment-1102133.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-19 09:47 ET",
-        "pub_ts": 1795099620.0
+        "time": "11-19 11:25 ET",
+        "pub_ts": 1795105500.0
+      },
+      {
+        "title": "A $2.5 Billion Fund Dumps These 3 Stocks",
+        "url": "https://www.tikr.com/blog/a-2-5-billion-fund-dumps-these-3-stocks?ref=yahoofinance&tlnk=yf-261119-w7273xp7&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 11:15 ET",
+        "pub_ts": 1795104957.0
+      },
+      {
+        "title": "A $7.4 Billion Fund Dumps These 3 Stocks",
+        "url": "https://www.tikr.com/blog/a-7-4-billion-fund-dumps-these-3-stocks-2?ref=yahoofinance&tlnk=yf-261119-77qj9rv6&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 11:10 ET",
+        "pub_ts": 1795104655.0
+      },
+      {
+        "title": "Riot Platforms Is the Real Winner of Anthropic’s IPO: Its Tenant on $37 Billion of Leases",
+        "url": "https://www.tikr.com/blog/riot-platforms-is-the-real-winner-of-anthropics-ipo-its-tenant-on-37-billion-of-leases?ref=yahoofinance&tlnk=yf-261119-pmf46gxg&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 11:08 ET",
+        "pub_ts": 1795104533.0
       },
       {
         "title": "Alphabet (GOOG) Slips as 2026 Capex Outlook Rises",
@@ -1170,64 +1191,43 @@
         "source": "Yahoo Finance",
         "time": "11-19 11:07 ET",
         "pub_ts": 1795104461.0
-      },
-      {
-        "title": "One Magnificent Seven Stock Could Outperform Nvidia Over the Next 5 Years",
-        "url": "https://247wallst.com/investing/2026/11/19/one-magnificent-seven-stock-could-outperform-nvidia-over-the-next-5-years/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 11:03 ET",
-        "pub_ts": 1795104190.0
-      },
-      {
-        "title": "The timeline for AI to take over white-collar jobs is shrinking",
-        "url": "https://finance.yahoo.com/video/the-timeline-for-ai-to-take-over-white-collar-jobs-is-shrinking-155933492.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 10:59 ET",
-        "pub_ts": 1795103973.0
-      },
-      {
-        "title": "Why NBA star Tristan Thompson became an early Anthropic investor",
-        "url": "https://finance.yahoo.com/video/why-nba-star-tristan-thompson-became-an-early-anthropic-investor-155909145.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 10:59 ET",
-        "pub_ts": 1795103949.0
       }
     ],
     "MSFT": [
+      {
+        "title": "Bill Ackman Says His Microsoft “Sale” Was Really a Swap Into Options",
+        "url": "https://247wallst.com/investing/2026/11/19/bill-ackman-says-his-microsoft-sale-was-really-a-swap-into-options/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 11:27 ET",
+        "pub_ts": 1795105622.0
+      },
+      {
+        "title": "What Makes Microsoft Corporation (MSFT) a Strong Long-Term Bet?",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/makes-microsoft-corporation-msft-strong-162631490.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 11:26 ET",
+        "pub_ts": 1795105591.0
+      },
+      {
+        "title": "A $7.4 Billion Fund Dumps These 3 Stocks",
+        "url": "https://www.tikr.com/blog/a-7-4-billion-fund-dumps-these-3-stocks-2?ref=yahoofinance&tlnk=yf-261119-77qj9rv6&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 11:10 ET",
+        "pub_ts": 1795104655.0
+      },
+      {
+        "title": "Why Anthropic Won't Be the Next Apple or Amazon",
+        "url": "https://finance.yahoo.com/m/fa461112-7f08-30de-8c36-e3ef910184cf/why-anthropic-won%27t-be-the.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 10:58 ET",
+        "pub_ts": 1795103894.0
+      },
       {
         "title": "North Star Carbon Removal Project Selected by Government of Canada for Landmark Carbon Removal Procurement Program",
         "url": "https://finance.yahoo.com/energy/articles/north-star-carbon-removal-project-150400266.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-19 10:34 ET",
         "pub_ts": 1795102440.0
-      },
-      {
-        "title": "Microsoft (MSFT) Secures New AI Chip Supply Deal For Azure Growth",
-        "url": "https://finance.yahoo.com/technology/ai/articles/microsoft-msft-secures-ai-chip-151529450.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 10:15 ET",
-        "pub_ts": 1795101329.0
-      },
-      {
-        "title": "IT Asset Management (ITAM) Software - Global Strategic Business Report 2026: Capitalize on the $3.5 Billion Market by 2032 with ServiceNow, IBM, Microsoft, Oracle, and BMC Software",
-        "url": "https://finance.yahoo.com/technology/articles/asset-management-itam-software-global-151500668.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 10:15 ET",
-        "pub_ts": 1795101300.0
-      },
-      {
-        "title": "The outages keep coming. Some Americans are preparing for a collapse.",
-        "url": "https://washingtonpost.com/technology/2026/11/19/wave-outages-has-americans-preparing-doomsday/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 10:12 ET",
-        "pub_ts": 1795101151.0
-      },
-      {
-        "title": "Connected Health Devices - Global Strategic Business Report 2026: Capitalize on 21.3% CAGR and $11.6B Revenue Opportunity by 2032 with Apple, Medtronic, Microsoft, Roche and Epic Systems",
-        "url": "https://finance.yahoo.com/healthcare/articles/connected-health-devices-global-strategic-151000586.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 10:10 ET",
-        "pub_ts": 1795101000.0
       }
     ],
     "AAPL": [
@@ -3239,30 +3239,30 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795105267.8636804,
-    "SOXL": 1795105267.8636804,
-    "SPY": 1795105267.8636804,
-    "DIA": 1795105267.8636804,
-    "SOXX": 1795105267.8636804,
-    "QQQ": 1795105267.8636804,
-    "SMH": 1795105267.8636804,
-    "IWM": 1795105267.8636804,
-    "IGV": 1795105267.8636804,
-    "TLT": 1795105267.8636804,
-    "GLD": 1795105267.8636804,
-    "SQQQ": 1795105267.8636804,
-    "TSM": 1795105267.8636804,
-    "VIXY": 1795105267.8636804,
-    "SOXS": 1795105267.8636804,
-    "NVDA": 1795105267.8636804,
-    "AMD": 1795105267.8636804,
-    "ASML": 1795105267.8636804,
-    "QCOM": 1795105267.8636804,
+    "KORU": 1795106795.2624927,
+    "SOXL": 1795106795.2624927,
+    "SPY": 1795106795.2624927,
+    "DIA": 1795106795.2624927,
+    "SOXX": 1795106795.2624927,
+    "QQQ": 1795106795.2624927,
+    "SMH": 1795106795.2624927,
+    "IWM": 1795106795.2624927,
+    "IGV": 1795106795.2624927,
+    "TLT": 1795106795.2624927,
+    "GLD": 1795106795.2624927,
+    "SQQQ": 1795106795.2624927,
+    "TSM": 1795106795.2624927,
+    "VIXY": 1795106795.2624927,
+    "SOXS": 1795106795.2624927,
+    "NVDA": 1795106795.2624927,
+    "AMD": 1795106795.2624927,
+    "ASML": 1795106795.2624927,
+    "QCOM": 1795106795.2624927,
     "AVGO": 1795105376.8189156,
-    "AMAT": 1795105267.8636804,
-    "META": 1795105267.8636804,
-    "GOOGL": 1795105267.8636804,
-    "MSFT": 1795105267.8636804,
+    "AMAT": 1795106795.2624927,
+    "META": 1795106795.2624927,
+    "GOOGL": 1795106795.2624927,
+    "MSFT": 1795106795.2624927,
     "AAPL": 1795105376.8189156,
     "PLTR": 1795105484.5042932,
     "NOW": 1795105484.5042932,
