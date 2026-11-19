@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795095771.239,
-  "updated_at_et": "11-19 08:42 ET",
-  "updated_at_kst": "22:42 KST",
+  "updated_at_ts": 1795095870.407,
+  "updated_at_et": "11-19 08:44 ET",
+  "updated_at_kst": "22:44 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -787,6 +787,13 @@
     ],
     "TSM": [
       {
+        "title": "Market Chatter: TSMC Tightening Restrictions on Chinese Chip Designers in Response to New US Rules",
+        "url": "https://finance.yahoo.com/technology/articles/market-chatter-tsmc-tightening-restrictions-133517456.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 08:35 ET",
+        "pub_ts": 1795095317.0
+      },
+      {
         "title": "TSMC, Samsung Reportedly Suspend Some Chip Deliveries To Chinese Customers Amid New US Export Rules",
         "url": "https://stocktwits.com/news-articles/markets/equity/tsmc-samsung-reportedly-suspend-some-chip-deliveries-to-chinese-customers-amid-new-us-export-rules/cNbi7d3R9i6?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -813,13 +820,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 17:54 ET",
         "pub_ts": 1795042487.0
-      },
-      {
-        "title": "Taiwan Semiconductor Stock (TSM) Looks Too Cheap for Its Growth Outlook",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/taiwan-semiconductor-stock-tsm-looks-210800765.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 16:08 ET",
-        "pub_ts": 1795036080.0
       }
     ],
     "VIXY": [
@@ -898,6 +898,27 @@
     ],
     "NVDA": [
       {
+        "title": "This Dividend ETF Could Double Your Money Over the Next 6 Years",
+        "url": "https://www.fool.com/investing/2026/11/19/this-dividend-etf-could-double-your-money-over-the-next-6-years/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 08:20 ET",
+        "pub_ts": 1795094402.0
+      },
+      {
+        "title": "Nvidia Slides After Blowout Earnings As Investigations Line Up; Is Nvidia Stock A Sell Now?",
+        "url": "https://finance.yahoo.com/m/d32ee509-88e1-36bb-8282-cdd0896feece/nvidia-slides-after-blowout.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 08:15 ET",
+        "pub_ts": 1795094121.0
+      },
+      {
+        "title": "Jim Cramer Says Investors “Would Rather Just Get Some Anthropic” Than Nvidia",
+        "url": "https://247wallst.com/investing/2026/11/19/jim-cramer-says-investors-would-rather-just-get-some-anthropic-than-nvidia/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 08:13 ET",
+        "pub_ts": 1795094032.0
+      },
+      {
         "title": "Broadcom, Nvidia, and Micron Could Be Setting Up for a Massive AI Rally Before Year End",
         "url": "https://247wallst.com/investing/2026/11/19/broadcom-nvidia-and-micron-could-be-setting-up-for-a-massive-ai-rally-before-year-end/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -910,30 +931,16 @@
         "source": "Yahoo Finance",
         "time": "11-19 08:00 ET",
         "pub_ts": 1795093200.0
-      },
-      {
-        "title": "Almost Every Fed Official Discussed the Risk of an AI Bust, Minutes Show",
-        "url": "https://247wallst.com/investing/2026/11/19/almost-every-fed-official-discussed-the-risk-of-an-ai-bust-minutes-show/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 07:57 ET",
-        "pub_ts": 1795093069.0
-      },
-      {
-        "title": "Semiconductor Sell-Off: These Artificial Intelligence (AI) Chip Stocks Are Screaming Buys Before They Go Parabolic",
-        "url": "https://www.fool.com/investing/2026/11/19/semiconductor-sell-off-these-artificial-intelligence-ai-chip-stocks-are-screaming-buys-before-they-go-parabolic/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 07:55 ET",
-        "pub_ts": 1795092902.0
-      },
-      {
-        "title": "Nvidia Beat Again. Why Is The Stock Still Down?",
-        "url": "https://www.trefis.com/stock/nvda/articles/626521/nvidia-beat-again-why-is-the-stock-still-down/2026-11-19?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 07:45 ET",
-        "pub_ts": 1795092348.0
       }
     ],
     "AMD": [
+      {
+        "title": "Why AMD's AI Progress Could Make Sense Through ETFs",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/why-amds-ai-progress-could-131034011.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 08:10 ET",
+        "pub_ts": 1795093834.0
+      },
       {
         "title": "OpenAI Says Its AI Improved AMD’s Best Chip Design by Up to 14%",
         "url": "https://247wallst.com/investing/2026/11/19/openai-says-its-ai-improved-amds-best-chip-design-by-up-to-14/?.tsrc=rss",
@@ -961,13 +968,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 07:00 ET",
         "pub_ts": 1795089600.0
-      },
-      {
-        "title": "What Proshares Trust (TQQQ) Bought: Apple Leads on Nov. 17",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/proshares-trust-tqqq-bought-apple-110512618.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 06:05 ET",
-        "pub_ts": 1795086312.0
       }
     ],
     "ASML": [
@@ -1074,11 +1074,11 @@
         "pub_ts": 1795086079.0
       },
       {
-        "title": "Broadcom “Foolishly Guaranteed” Anthropic’s TPU Deals, Says Ed Zitron. Its IPO Could Prove Him Wrong",
-        "url": "https://www.tikr.com/blog/broadcom-foolishly-guaranteed-anthropics-tpu-deals-says-ed-zitron-its-ipo-could-prove-him-wrong?ref=yahoofinance&tlnk=yf-261119-vxp44g3p&.tsrc=rss",
+        "title": "Anthropic IPO Highlights Something Weird About the AI Industry",
+        "url": "https://finance.yahoo.com/m/18c2a875-b878-32e5-9d7a-0e0671a5aa17/anthropic-ipo-highlights.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-19 02:25 ET",
-        "pub_ts": 1795073153.0
+        "time": "11-19 07:59 ET",
+        "pub_ts": 1795093171.0
       }
     ],
     "AMAT": [
@@ -3238,27 +3238,27 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795094340.8194132,
-    "SOXL": 1795094340.8194132,
-    "SPY": 1795094340.8194132,
-    "DIA": 1795094340.8194132,
-    "SOXX": 1795094340.8194132,
-    "QQQ": 1795094340.8194132,
-    "SMH": 1795094340.8194132,
-    "IWM": 1795094340.8194132,
-    "IGV": 1795094340.8194132,
-    "TLT": 1795094340.8194132,
-    "GLD": 1795094340.8194132,
-    "SQQQ": 1795094340.8194132,
-    "TSM": 1795094340.8194132,
-    "VIXY": 1795094340.8194132,
-    "SOXS": 1795094340.8194132,
-    "NVDA": 1795094340.8194132,
-    "AMD": 1795094340.8194132,
+    "KORU": 1795095870.4066617,
+    "SOXL": 1795095870.4066617,
+    "SPY": 1795095870.4066617,
+    "DIA": 1795095870.4066617,
+    "SOXX": 1795095870.4066617,
+    "QQQ": 1795095870.4066617,
+    "SMH": 1795095870.4066617,
+    "IWM": 1795095870.4066617,
+    "IGV": 1795095870.4066617,
+    "TLT": 1795095870.4066617,
+    "GLD": 1795095870.4066617,
+    "SQQQ": 1795095870.4066617,
+    "TSM": 1795095870.4066617,
+    "VIXY": 1795095870.4066617,
+    "SOXS": 1795095870.4066617,
+    "NVDA": 1795095870.4066617,
+    "AMD": 1795095870.4066617,
     "ASML": 1795094444.2668922,
     "QCOM": 1795094444.2668922,
-    "AVGO": 1795094340.8194132,
-    "AMAT": 1795094340.8194132,
+    "AVGO": 1795095870.4066617,
+    "AMAT": 1795095870.4066617,
     "META": 1795094444.2668922,
     "GOOGL": 1795094444.2668922,
     "MSFT": 1795094444.2668922,
