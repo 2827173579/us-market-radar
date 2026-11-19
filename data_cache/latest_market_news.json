@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795051364.97,
-  "updated_at_et": "11-18 20:22 ET",
-  "updated_at_kst": "10:22 KST",
+  "updated_at_ts": 1795051468.937,
+  "updated_at_et": "11-18 20:24 ET",
+  "updated_at_kst": "10:24 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1241,6 +1241,13 @@
     ],
     "AAPL": [
       {
+        "title": "Corning CEO on working with Steve Jobs to make screens for the first iPhone",
+        "url": "https://finance.yahoo.com/video/corning-ceo-working-steve-jobs-010013740.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 20:00 ET",
+        "pub_ts": 1795050013.0
+      },
+      {
         "title": "Alphabet vs. Apple: Which Warren Buffett Stock Is the Better Buy?",
         "url": "https://www.fool.com/investing/2026/11/18/alphabet-vs-apple-which-warren-buffett-stock-is-the-better-buy/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1267,13 +1274,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 10:51 ET",
         "pub_ts": 1795017098.0
-      },
-      {
-        "title": "AAPL Stock Alert: Samsung Could Win a Bigger Apple Memory Deal",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/aapl-stock-alert-samsung-could-151202539.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 10:12 ET",
-        "pub_ts": 1795014722.0
       }
     ],
     "PLTR": [
@@ -1352,6 +1352,13 @@
     ],
     "AMZN": [
       {
+        "title": "3 Investments to Give a Child This Holiday Season and Leave Alone Until 2040",
+        "url": "https://www.fool.com/investing/2026/11/18/3-investments-to-give-a-child-this-holiday-season-and-leave-alone-until-2040/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 19:58 ET",
+        "pub_ts": 1795049882.0
+      },
+      {
         "title": "Brookie Beauty LLC Announces TreStyler Launch and International Media Expansion",
         "url": "https://finance.yahoo.com/media-advertising/articles/brookie-beauty-llc-announces-trestyler-234900589.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1378,13 +1385,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 17:10 ET",
         "pub_ts": 1795039819.0
-      },
-      {
-        "title": "Amazon and Google Have a Stake",
-        "url": "https://finance.yahoo.com/m/d531fa3b-8542-340b-825c-bb4b95cd1a7b/amazon-and-google-have-a-stake.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 16:23 ET",
-        "pub_ts": 1795036982.0
       }
     ],
     "CRWV": [
@@ -3202,8 +3202,8 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795049964.40086,
-    "SOXL": 1795049964.40086,
+    "KORU": 1795051468.9369986,
+    "SOXL": 1795051468.9369986,
     "SPY": 1795051261.5374064,
     "DIA": 1795051261.5374064,
     "SOXX": 1795051261.5374064,
@@ -3223,21 +3223,21 @@
     "QCOM": 1795051364.969836,
     "AVGO": 1795051364.969836,
     "AMAT": 1795051364.969836,
-    "META": 1795049964.40086,
-    "GOOGL": 1795049964.40086,
+    "META": 1795051468.9369986,
+    "GOOGL": 1795051468.9369986,
     "MSFT": 1795051364.969836,
-    "AAPL": 1795049964.40086,
-    "PLTR": 1795049964.40086,
-    "NOW": 1795049964.40086,
-    "AMZN": 1795049964.40086,
-    "CRWV": 1795049964.40086,
-    "NBIS": 1795049964.40086,
-    "APLD": 1795049964.40086,
-    "VST": 1795049964.40086,
-    "BE": 1795049964.40086,
-    "CRDO": 1795049964.40086,
-    "COHR": 1795049964.40086,
-    "MRVL": 1795049964.40086,
+    "AAPL": 1795051468.9369986,
+    "PLTR": 1795051468.9369986,
+    "NOW": 1795051468.9369986,
+    "AMZN": 1795051468.9369986,
+    "CRWV": 1795051468.9369986,
+    "NBIS": 1795051468.9369986,
+    "APLD": 1795051468.9369986,
+    "VST": 1795051468.9369986,
+    "BE": 1795051468.9369986,
+    "CRDO": 1795051468.9369986,
+    "COHR": 1795051468.9369986,
+    "MRVL": 1795051468.9369986,
     "LITE": 1795050066.5839627,
     "AAOI": 1795051261.5374064,
     "SPCX": 1795050066.5839627,
@@ -3265,18 +3265,18 @@
     "SNDK": 1795051364.969836,
     "BTC-USD": 1795051364.969836,
     "CRWD": 1795051364.969836,
-    "ORCL": 1795049964.40086,
-    "COIN": 1795049964.40086,
-    "LLY": 1795049964.40086,
-    "MRNA": 1795049964.40086,
+    "ORCL": 1795051468.9369986,
+    "COIN": 1795051468.9369986,
+    "LLY": 1795051468.9369986,
+    "MRNA": 1795051468.9369986,
     "NKE": 1795050066.5839627,
     "MCD": 1795050268.38909,
     "PEP": 1795050066.5839627,
-    "XOM": 1795049964.40086,
+    "XOM": 1795051468.9369986,
     "JPM": 1795050066.5839627,
     "WMT": 1795050066.5839627,
-    "V": 1795049964.40086,
-    "CAT": 1795049964.40086,
+    "V": 1795051468.9369986,
+    "CAT": 1795051468.9369986,
     "FN": 1795050066.5839627,
     "GLW": 1795050066.5839627
   },
