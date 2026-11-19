@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795060430.546,
-  "updated_at_et": "11-18 22:53 ET",
-  "updated_at_kst": "12:53 KST",
+  "updated_at_ts": 1795060534.842,
+  "updated_at_et": "11-18 22:55 ET",
+  "updated_at_kst": "12:55 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1168,6 +1168,13 @@
         "pub_ts": 1795045860.0
       },
       {
+        "title": "Alphabet (GOOGL) Stock Could Be 47% Undervalued As AI Spending Fears Bite",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/alphabet-googl-stock-could-47-032722505.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 22:27 ET",
+        "pub_ts": 1795058842.0
+      },
+      {
         "title": "Amazon and Google face a 10-year AI supply chain problem",
         "url": "https://www.thestreet.com/technology/amazon-and-google-face-a-10-year-ai-supply-chain-problem?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1187,13 +1194,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 19:08 ET",
         "pub_ts": 1795046917.0
-      },
-      {
-        "title": "Google Signs Landmark Superhot Geothermal Deal",
-        "url": "https://finance.yahoo.com/energy/articles/google-signs-landmark-superhot-geothermal-000000944.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 19:00 ET",
-        "pub_ts": 1795046400.0
       }
     ],
     "MSFT": [
@@ -1383,6 +1383,13 @@
     ],
     "CRWV": [
       {
+        "title": "Why Is CRWV Stock Rising Overnight?",
+        "url": "https://stocktwits.com/news-articles/markets/equity/why-is-crwv-stock-rising-overnight/cNbLvT9R9iQ?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 22:39 ET",
+        "pub_ts": 1795059559.0
+      },
+      {
         "title": "CoreWeave co-founder buys $30 mln of company bonds amid insider stock sales",
         "url": "https://finance.yahoo.com/markets/stocks/articles/coreweave-co-founder-buys-30-030651964.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1409,13 +1416,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 17:05 ET",
         "pub_ts": 1795039502.0
-      },
-      {
-        "title": "Forget CoreWeave: Applied Digital Is the Real Loser as “The Bank of Nvidia” Pulls Back",
-        "url": "https://www.tikr.com/blog/forget-coreweave-applied-digital-is-the-real-loser-as-the-bank-of-nvidia-pulls-back?ref=yahoofinance&tlnk=yf-261118-36f5785r&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 16:40 ET",
-        "pub_ts": 1795038054.0
       }
     ],
     "NBIS": [
@@ -2641,6 +2641,13 @@
     ],
     "CRWD": [
       {
+        "title": "CrowdStrike (CRWD) is Getting Investor Attention — Here’s Why",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/crowdstrike-crwd-getting-investor-attention-033346621.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 22:33 ET",
+        "pub_ts": 1795059226.0
+      },
+      {
         "title": "29 Big Funds Bought CrowdStrike Last Quarter, While 7 Sold. Who’s Right?",
         "url": "https://www.tikr.com/blog/29-big-funds-bought-crowdstrike-last-quarter-while-7-sold-whos-right?ref=yahoofinance&tlnk=yf-261118-8vc3h46w&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2667,13 +2674,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 17:55 ET",
         "pub_ts": 1794956111.0
-      },
-      {
-        "title": "‘We’re Still Slightly Bigger’: Palo Alto CEO Jabs CrowdStrike. Here’s How to Play PANW and CRWD Stock Before Earnings.",
-        "url": "https://www.barchart.com/story/news/8878736/were-still-slightly-bigger-palo-alto-ceo-jabs-crowdstrike-heres-how-to-play-panw-and-crwd-stock-before-earnings?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 10:40 ET",
-        "pub_ts": 1794930014.0
       }
     ],
     "ORCL": [
@@ -3196,8 +3196,8 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795059023.4536905,
-    "SOXL": 1795059023.4536905,
+    "KORU": 1795060534.8423936,
+    "SOXL": 1795060534.8423936,
     "SPY": 1795060327.430883,
     "DIA": 1795060327.430883,
     "SOXX": 1795060327.430883,
@@ -3217,21 +3217,21 @@
     "QCOM": 1795060430.5459146,
     "AVGO": 1795060430.5459146,
     "AMAT": 1795060430.5459146,
-    "META": 1795059023.4536905,
-    "GOOGL": 1795059023.4536905,
+    "META": 1795060534.8423936,
+    "GOOGL": 1795060534.8423936,
     "MSFT": 1795060430.5459146,
-    "AAPL": 1795059023.4536905,
-    "PLTR": 1795059023.4536905,
-    "NOW": 1795059023.4536905,
-    "AMZN": 1795059023.4536905,
-    "CRWV": 1795059023.4536905,
-    "NBIS": 1795059023.4536905,
-    "APLD": 1795059023.4536905,
-    "VST": 1795059023.4536905,
-    "BE": 1795059023.4536905,
-    "CRDO": 1795059023.4536905,
-    "COHR": 1795059023.4536905,
-    "MRVL": 1795059023.4536905,
+    "AAPL": 1795060534.8423936,
+    "PLTR": 1795060534.8423936,
+    "NOW": 1795060534.8423936,
+    "AMZN": 1795060534.8423936,
+    "CRWV": 1795060534.8423936,
+    "NBIS": 1795060534.8423936,
+    "APLD": 1795060534.8423936,
+    "VST": 1795060534.8423936,
+    "BE": 1795060534.8423936,
+    "CRDO": 1795060534.8423936,
+    "COHR": 1795060534.8423936,
+    "MRVL": 1795060534.8423936,
     "LITE": 1795059128.0430653,
     "AAOI": 1795060327.430883,
     "SPCX": 1795059128.0430653,
@@ -3258,19 +3258,19 @@
     "MSTR": 1795060430.5459146,
     "SNDK": 1795060430.5459146,
     "BTC-USD": 1795060430.5459146,
-    "CRWD": 1795059023.4536905,
-    "ORCL": 1795059023.4536905,
+    "CRWD": 1795060534.8423936,
+    "ORCL": 1795060534.8423936,
     "COIN": 1795059128.0430653,
-    "LLY": 1795059023.4536905,
+    "LLY": 1795060534.8423936,
     "MRNA": 1795059128.0430653,
     "NKE": 1795059128.0430653,
     "MCD": 1795059330.7391658,
     "PEP": 1795059128.0430653,
-    "XOM": 1795059023.4536905,
+    "XOM": 1795060534.8423936,
     "JPM": 1795059128.0430653,
     "WMT": 1795059128.0430653,
-    "V": 1795059023.4536905,
-    "CAT": 1795059023.4536905,
+    "V": 1795060534.8423936,
+    "CAT": 1795060534.8423936,
     "FN": 1795059128.0430653,
     "GLW": 1795059128.0430653
   },
