@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795114454.77,
-  "updated_at_et": "11-19 13:54 ET",
-  "updated_at_kst": "03:54 KST",
+  "updated_at_ts": 1795114552.822,
+  "updated_at_et": "11-19 13:55 ET",
+  "updated_at_kst": "03:55 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -529,6 +529,13 @@
     ],
     "QQQ": [
       {
+        "title": "Amazon Beat QQQ, But The Ride Was Much Harder",
+        "url": "https://www.trefis.com/stock/amzn/articles/626704/amazon-beat-qqq-but-the-ride-was-much-harder/2026-11-19?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 13:23 ET",
+        "pub_ts": 1795112601.0
+      },
+      {
         "title": "Exchange-Traded Funds Lower as US Equities Fall After Midday",
         "url": "https://finance.yahoo.com/markets/stocks/articles/exchange-traded-funds-lower-us-181733888.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -555,13 +562,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 09:14 ET",
         "pub_ts": 1795097690.0
-      },
-      {
-        "title": "Five Straight Losses, One Divergence: Where the Major Indexes Stand Now",
-        "url": "https://finance.yahoo.com/markets/world-indices/articles/five-straight-losses-one-divergence-130000760.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 08:00 ET",
-        "pub_ts": 1795093200.0
       }
     ],
     "SMH": [
@@ -684,6 +684,13 @@
         "pub_ts": 1794438901.0
       },
       {
+        "title": "Bond ETFs Haven’t Been This Rewarding in Years, So Why Is Wall Street Dumping Them?",
+        "url": "https://247wallst.com/investing/etf/2026/11/19/bond-etfs-havent-been-this-rewarding-in-years-so-why-is-wall-street-dumping-them/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 13:41 ET",
+        "pub_ts": 1795113709.0
+      },
+      {
         "title": "A Monthly Check at 3 Levels of Risk: VTEB, TLT and EMB, Ranked",
         "url": "https://247wallst.com/investing/etf/2026/11/19/a-monthly-check-at-3-levels-of-risk-vteb-tlt-and-emb-ranked/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -703,13 +710,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 06:34 ET",
         "pub_ts": 1795088092.0
-      },
-      {
-        "title": "Treasuries rally for a third day as stocks slip and oil falls",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/treasuries-rally-third-day-stocks-164750332.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 11:47 ET",
-        "pub_ts": 1795020470.0
       }
     ],
     "GLD": [
@@ -899,6 +899,27 @@
     ],
     "NVDA": [
       {
+        "title": "Why AI competition from China won't be a risk US tech companies",
+        "url": "https://finance.yahoo.com/video/why-ai-competition-from-china-wont-be-a-risk-us-tech-companies-184851467.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 13:48 ET",
+        "pub_ts": 1795114131.0
+      },
+      {
+        "title": "Anthropic soars in Wall Street debut despite AI jitters",
+        "url": "https://finance.yahoo.com/technology/ai/articles/anthropic-set-price-ipo-key-030309911.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 13:27 ET",
+        "pub_ts": 1795112833.0
+      },
+      {
+        "title": "$1 Million In Nvidia Five Years Ago: What Is It Worth Now?",
+        "url": "https://www.trefis.com/stock/nvda/articles/626572/1-million-in-nvidia-five-years-ago-what-is-it-worth-now/2026-11-19?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 13:23 ET",
+        "pub_ts": 1795112600.0
+      },
+      {
         "title": "Nvidia Stock Can’t Shake Post-Huang Hangover. Anthropic Debut Also Not Providing a Boost.",
         "url": "https://finance.yahoo.com/m/2aecd526-25f4-3d74-b631-29512899d802/nvidia-stock-can%E2%80%99t-shake.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -906,55 +927,34 @@
         "pub_ts": 1795112340.0
       },
       {
-        "title": "NVIDIA Doubled Its Revenue in Its First Quarter Without Huang. Here’s Our Price Target.",
-        "url": "https://247wallst.com/investing/2026/11/19/nvidia-doubled-its-revenue-in-its-first-quarter-without-huang-heres-our-price-target/?.tsrc=rss",
+        "title": "Is Anthropic Really Worth More Than $1 Trillion?",
+        "url": "https://www.fool.com/investing/2026/11/19/is-anthropic-really-worth-more-than-usd1-trillion/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-19 13:04 ET",
-        "pub_ts": 1795111440.0
-      },
-      {
-        "title": "Michael Burry Zeroes In on One AI Giant's $500 Billion Push",
-        "url": "https://finance.yahoo.com/technology/ai/articles/michael-burry-zeroes-one-ai-180319461.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 13:03 ET",
-        "pub_ts": 1795111399.0
-      },
-      {
-        "title": "Nvidia Holders' Real Risk Sits With Its Neocloud Buyers",
-        "url": "https://www.trefis.com/stock/crwv/articles/626699/nvidia-holders-real-risk-sits-with-its-neocloud-buyers/2026-11-19?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 13:00 ET",
-        "pub_ts": 1795111219.0
-      },
-      {
-        "title": "Evogene Ltd. Q3 2026 Earnings Call Summary",
-        "url": "https://app.moby.co/home/research/tools/earningsCalendar/earnings-evogene-ltd-q3-2026-earnings-call-summary?utm_source=yahoo_finance&utm_medium=rss&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 12:53 ET",
-        "pub_ts": 1795110809.0
+        "time": "11-19 13:30 ET",
+        "pub_ts": 1795113000.0
       }
     ],
     "AMD": [
       {
-        "title": "AMD stock drops after Hunterbrook Media raises export control concerns",
-        "url": "https://finance.yahoo.com/technology/article/amd-stock-drops-after-hunterbrook-media-raises-export-control-concerns-171508145.html?.tsrc=rss",
+        "title": "AMD Faces Its Own China Questions After Hunterbrook Report",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/amd-faces-own-china-questions-183546783.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-19 12:15 ET",
-        "pub_ts": 1795108508.0
+        "time": "11-19 13:35 ET",
+        "pub_ts": 1795113346.0
       },
       {
-        "title": "Blacklisted Chinese server maker kept getting AMD firmware updates: Hunterbrook",
-        "url": "https://finance.yahoo.com/video/blacklisted-chinese-server-maker-kept-getting-amd-firmware-updates-hunterbrook-162807931.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 11:28 ET",
-        "pub_ts": 1795105687.0
-      },
-      {
-        "title": "What Helmerich & Payne (HP) Said on Its Q4 Earnings Call",
-        "url": "https://www.marketbeat.com/instant-alerts/transcript-what-helmerich-payne-hp-said-on-its-q4-earnings-call-2026-11-19/?utm_source=yahoofinance&utm_medium=yahoofinance&.tsrc=rss",
+        "title": "Should One Overlooked Number Scare You About AMD Stock?",
+        "url": "https://www.trefis.com/stock/amd/articles/626808/should-one-overlooked-number-scare-you-about-amd-stock/2026-11-19?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-19 13:15 ET",
-        "pub_ts": 1795112149.0
+        "pub_ts": 1795112109.0
+      },
+      {
+        "title": "AMD (AMD) Stock Could Be 12% Undervalued After AI Chip Progress News",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/amd-amd-stock-could-12-181249976.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 13:12 ET",
+        "pub_ts": 1795111969.0
       },
       {
         "title": "AMD shares slide after short-seller warns China ties could invite US scrutiny",
@@ -1010,6 +1010,13 @@
     ],
     "QCOM": [
       {
+        "title": "Qualcomm lays off 100s amid global restructuring, raises $4 billion",
+        "url": "https://www.thestreet.com/employment/qualcomm-lays-off-100s-amid-global-restructuring-raises-4-billion?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 13:33 ET",
+        "pub_ts": 1795113180.0
+      },
+      {
         "title": "Qualcomm vs. Taiwan Semiconductor: Diverging Revenue Trends for Major Chipmakers",
         "url": "https://www.fool.com/coverage/charts/2026/11/19/qualcomm-vs-taiwan-semiconductor-diverging-revenue-trends-for-major-chipmakers/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1036,13 +1043,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 09:31 ET",
         "pub_ts": 1795098660.0
-      },
-      {
-        "title": "3 Tech Dividend Stocks to Buy in December as AI Spending Accelerates",
-        "url": "https://247wallst.com/investing/2026/11/19/3-tech-dividend-stocks-to-buy-in-december-as-ai-spending-accelerates/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 08:17 ET",
-        "pub_ts": 1795094233.0
       }
     ],
     "AVGO": [
@@ -1121,6 +1121,13 @@
     ],
     "META": [
       {
+        "title": "Meta Stock Down 21%: Too Much AI Spending?",
+        "url": "https://www.trefis.com/stock/meta/articles/626523/meta-stock-down-21-too-much-ai-spending/2026-11-19?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 13:10 ET",
+        "pub_ts": 1795111815.0
+      },
+      {
         "title": "Meta’s Advertising Business Could Drive Another Major Earnings Surprise",
         "url": "https://247wallst.com/investing/2026/11/19/metas-advertising-business-could-drive-another-major-earnings-surprise/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1147,59 +1154,66 @@
         "source": "Yahoo Finance",
         "time": "11-19 12:00 ET",
         "pub_ts": 1795107648.0
-      },
-      {
-        "title": "Inside George Soros’s Portfolio: Every Move He Made in the Third Quarter",
-        "url": "https://www.tikr.com/blog/inside-george-soross-portfolio-every-move-he-made-in-the-third-quarter?ref=yahoofinance&tlnk=yf-261119-w8jw4prf&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 11:32 ET",
-        "pub_ts": 1795105943.0
       }
     ],
     "GOOGL": [
       {
-        "title": "Anthropic Debuted at a $1.5 Trillion Valuation. Here’s What It Would Have to Be Worth to Match Tech’s Greatest Runs",
-        "url": "https://247wallst.com/investing/2026/11/19/anthropic-debuted-at-a-1-5-trillion-valuation-heres-what-it-would-have-to-be-worth-to-match-techs-greatest-runs/?.tsrc=rss",
+        "title": "Why AI competition from China won't be a risk US tech companies",
+        "url": "https://finance.yahoo.com/video/why-ai-competition-from-china-wont-be-a-risk-us-tech-companies-184851467.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-19 13:12 ET",
-        "pub_ts": 1795111930.0
+        "time": "11-19 13:48 ET",
+        "pub_ts": 1795114131.0
       },
       {
-        "title": "Anthropic Jumps 17% in Record Nasdaq Debut but Fades From $111.50 Open; Alphabet Ticks Up, Amazon Dips",
-        "url": "https://247wallst.com/investing/2026/11/19/anthropic-jumps-17-in-record-nasdaq-debut-but-fades-from-111-50-open-alphabet-ticks-up-amazon-dips/?.tsrc=rss",
+        "title": "As Anthropic Goes Public, Open Source AI Is Closing In Says Google Pioneer",
+        "url": "https://www.coinage.media/2026/as-anthropic-goes-public-open-source-ai-is-closing-in-says-google-pioneer?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-19 13:07 ET",
-        "pub_ts": 1795111654.0
+        "time": "11-19 13:28 ET",
+        "pub_ts": 1795112880.0
       },
       {
-        "title": "Top 5 Stocks to Buy According to Billionaire Ken Fisher",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/top-5-stocks-buy-according-180354127.html?.tsrc=rss",
+        "title": "Why Alphabet's Cheap P/E May Mislead Investors",
+        "url": "https://www.trefis.com/stock/googl/articles/626644/why-alphabet-s-cheap-p-e-may-mislead-investors/2026-11-19?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-19 13:03 ET",
-        "pub_ts": 1795111434.0
+        "time": "11-19 13:24 ET",
+        "pub_ts": 1795112670.0
       },
       {
-        "title": "Are You Overpaying For Alphabet Stock Versus Its Tech Rivals?",
-        "url": "https://www.trefis.com/stock/googl/articles/626730/are-you-overpaying-for-alphabet-stock-versus-its-tech-rivals/2026-11-19?.tsrc=rss",
+        "title": "Amazon Beat QQQ, But The Ride Was Much Harder",
+        "url": "https://www.trefis.com/stock/amzn/articles/626704/amazon-beat-qqq-but-the-ride-was-much-harder/2026-11-19?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-19 13:02 ET",
-        "pub_ts": 1795111351.0
+        "time": "11-19 13:23 ET",
+        "pub_ts": 1795112601.0
       },
       {
-        "title": "Nvidia Holders' Real Risk Sits With Its Neocloud Buyers",
-        "url": "https://www.trefis.com/stock/crwv/articles/626699/nvidia-holders-real-risk-sits-with-its-neocloud-buyers/2026-11-19?.tsrc=rss",
+        "title": "Can Google Borrow Another $100 Billion?",
+        "url": "https://www.trefis.com/stock/googl/articles/626551/can-google-borrow-another-100-billion/2026-11-19?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-19 13:00 ET",
-        "pub_ts": 1795111219.0
+        "time": "11-19 13:23 ET",
+        "pub_ts": 1795112601.0
       }
     ],
     "MSFT": [
+      {
+        "title": "Microsoft well positioned to weather AI slowdown, says Jefferies after Ignite meetings",
+        "url": "https://www.proactiveinvestors.com/companies/news/1102143/microsoft-well-positioned-to-weather-ai-slowdown-says-jefferies-after-ignite-meetings-1102143.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 13:30 ET",
+        "pub_ts": 1795113000.0
+      },
       {
         "title": "Microsoft's Satya Nadella Says Selling AI Capacity to Just One or Two Customers ‘Is Not a Business’",
         "url": "https://www.benzinga.com/markets/prediction-markets/26/11/63448471/microsoft-ai-capacity?utm_source=yahooFinance&utm_campaign=partner_feed&utm_medium=referral&.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-19 13:18 ET",
         "pub_ts": 1795112281.0
+      },
+      {
+        "title": "Microsoft CEO Sounds Alarm on AI Software Risks After Major Outlook Outage",
+        "url": "https://finance.yahoo.com/technology/ai/articles/microsoft-ceo-sounds-alarm-ai-180718483.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 13:07 ET",
+        "pub_ts": 1795111638.0
       },
       {
         "title": "The link between ‘patchmegeddon’ and recent tech outages",
@@ -1214,20 +1228,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 12:46 ET",
         "pub_ts": 1795110396.0
-      },
-      {
-        "title": "Microsoft Stocks Rise 3.16% as Anthropic Commits $47.2 Billion Minimum to Azure",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/microsoft-stocks-rise-3-16-173014797.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 12:30 ET",
-        "pub_ts": 1795109414.0
-      },
-      {
-        "title": "A $13 Billion Hedge Fund Just Bought These 3 Stocks",
-        "url": "https://www.tikr.com/blog/a-13-billion-hedge-fund-just-bought-these-3-stocks?ref=yahoofinance&tlnk=yf-261119-jvwhvxxf&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 12:26 ET",
-        "pub_ts": 1795109216.0
       }
     ],
     "AAPL": [
@@ -3239,30 +3239,30 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795112959.3044598,
-    "SOXL": 1795112959.3044598,
-    "SPY": 1795112959.3044598,
-    "DIA": 1795112959.3044598,
-    "SOXX": 1795112959.3044598,
-    "QQQ": 1795112959.3044598,
-    "SMH": 1795112959.3044598,
-    "IWM": 1795112959.3044598,
-    "IGV": 1795112959.3044598,
-    "TLT": 1795112959.3044598,
-    "GLD": 1795112959.3044598,
-    "SQQQ": 1795112959.3044598,
-    "TSM": 1795112959.3044598,
-    "VIXY": 1795112959.3044598,
-    "SOXS": 1795112959.3044598,
-    "NVDA": 1795112959.3044598,
-    "AMD": 1795112959.3044598,
-    "ASML": 1795112959.3044598,
-    "QCOM": 1795112959.3044598,
+    "KORU": 1795114552.8217278,
+    "SOXL": 1795114552.8217278,
+    "SPY": 1795114552.8217278,
+    "DIA": 1795114552.8217278,
+    "SOXX": 1795114552.8217278,
+    "QQQ": 1795114552.8217278,
+    "SMH": 1795114552.8217278,
+    "IWM": 1795114552.8217278,
+    "IGV": 1795114552.8217278,
+    "TLT": 1795114552.8217278,
+    "GLD": 1795114552.8217278,
+    "SQQQ": 1795114552.8217278,
+    "TSM": 1795114552.8217278,
+    "VIXY": 1795114552.8217278,
+    "SOXS": 1795114552.8217278,
+    "NVDA": 1795114552.8217278,
+    "AMD": 1795114552.8217278,
+    "ASML": 1795114552.8217278,
+    "QCOM": 1795114552.8217278,
     "AVGO": 1795113062.2600775,
-    "AMAT": 1795112959.3044598,
-    "META": 1795112959.3044598,
-    "GOOGL": 1795112959.3044598,
-    "MSFT": 1795112959.3044598,
+    "AMAT": 1795114552.8217278,
+    "META": 1795114552.8217278,
+    "GOOGL": 1795114552.8217278,
+    "MSFT": 1795114552.8217278,
     "AAPL": 1795113062.2600775,
     "PLTR": 1795113262.3524177,
     "NOW": 1795113262.3524177,
