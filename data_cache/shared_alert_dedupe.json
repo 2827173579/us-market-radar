@@ -1663,9 +1663,13 @@
     "2026-11-18:DEFENSIVE_FLIGHT:-1.9": {
       "device": "PC",
       "ts": 1795045870.1612124
+    },
+    "2026-11-18:SPCX/LLY:5M_ENTRY+TAKE_PROFIT": {
+      "device": "PC",
+      "ts": 1795046711.9635878
     }
   },
   "device": "PC",
-  "last_heartbeat_ts": 1795046471.2476575,
-  "updated_at": "2026-11-19T00:01:11.248059+00:00"
+  "last_heartbeat_ts": 1795046629.5719538,
+  "updated_at": "2026-11-19T00:05:11.963980+00:00"
 }

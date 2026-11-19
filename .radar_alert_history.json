@@ -42,8 +42,8 @@
       "last_notified_at": 0.0
     },
     "SPCX": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1795046711.3251274
     },
     "TSM": {
       "state": "NORMAL",
@@ -55,7 +55,7 @@
     },
     "LLY": {
       "state": "TAKE_PROFIT",
-      "last_notified_at": 1795039505.4701192
+      "last_notified_at": 1795046711.3251274
     },
     "MCD": {
       "state": "NORMAL",
