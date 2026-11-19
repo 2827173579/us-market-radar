@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795055891.475,
-  "updated_at_et": "11-18 21:38 ET",
-  "updated_at_kst": "11:38 KST",
+  "updated_at_ts": 1795055996.05,
+  "updated_at_et": "11-18 21:39 ET",
+  "updated_at_kst": "11:39 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1174,6 +1174,13 @@
         "pub_ts": 1795045860.0
       },
       {
+        "title": "Smart Glasses Launch Could Change The Case For Warby Parker Stock",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/smart-glasses-launch-could-change-022225929.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 21:22 ET",
+        "pub_ts": 1795054945.0
+      },
+      {
         "title": "Anthropic's $81.3B haul makes it the largest tech IPO ever",
         "url": "https://pitchbook.com/news/articles/anthropics-81-3b-haul-makes-it-the-second-largest-tech-ipo-ever?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1193,13 +1200,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 18:57 ET",
         "pub_ts": 1795046222.0
-      },
-      {
-        "title": "Alphabet vs. Apple: Which Warren Buffett Stock Is the Better Buy?",
-        "url": "https://www.fool.com/investing/2026/11/18/alphabet-vs-apple-which-warren-buffett-stock-is-the-better-buy/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 18:45 ET",
-        "pub_ts": 1795045502.0
       }
     ],
     "MSFT": [
@@ -1315,6 +1315,13 @@
     ],
     "NOW": [
       {
+        "title": "‘The Software Bears Are Dead Wrong,’ Says Marc Benioff. Why ServiceNow Stock Looks Like the Better Buy Than Salesforce.",
+        "url": "https://www.barchart.com/story/news/8903761/the-software-bears-are-dead-wrong-says-marc-benioff-why-servicenow-stock-looks-like-the-better-buy-than-salesforce?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 15:23 ET",
+        "pub_ts": 1795033419.0
+      },
+      {
         "title": "ServiceNow Stocks Fall 6.51% Despite 21% Subscription Growth as Software Selloff Deepens",
         "url": "https://finance.yahoo.com/markets/stocks/articles/servicenow-stocks-fall-6-51-172029178.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1341,16 +1348,16 @@
         "source": "Yahoo Finance",
         "time": "11-18 08:00 ET",
         "pub_ts": 1795006803.0
-      },
-      {
-        "title": "What Is Driving ServiceNow Stock?",
-        "url": "https://www.trefis.com/stock/now/articles/626283/what-is-driving-servicenow-stock/2026-11-18?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 07:58 ET",
-        "pub_ts": 1795006718.0
       }
     ],
     "AMZN": [
+      {
+        "title": "Amazon’s $18 Billion Anthropic Bet Is Worth $159 Billion at the IPO Price. Here’s What That Is Per Amazon Share",
+        "url": "https://247wallst.com/investing/2026/11/18/amazons-18-billion-anthropic-bet-is-worth-159-billion-at-the-ipo-price-heres-what-that-is-per-amazon-share/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 21:17 ET",
+        "pub_ts": 1795054631.0
+      },
       {
         "title": "3 Investments to Give a Child This Holiday Season and Leave Alone Until 2040",
         "url": "https://www.fool.com/investing/2026/11/18/3-investments-to-give-a-child-this-holiday-season-and-leave-alone-until-2040/?.tsrc=rss",
@@ -1378,13 +1385,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 17:30 ET",
         "pub_ts": 1795041005.0
-      },
-      {
-        "title": "Amazon Widens Its Fuel Surcharge to Bulk Inventory Services",
-        "url": "https://wwd.com/sourcing-journal/logistics/amazon-widens-fuel-logistics-surcharge-bulk-inventory-services-1239425935/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 17:10 ET",
-        "pub_ts": 1795039819.0
       }
     ],
     "CRWV": [
@@ -1500,6 +1500,13 @@
     ],
     "VST": [
       {
+        "title": "Vistra (VST) Could Be 23% Undervalued After Fresh Guidance And Earnings",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/vistra-vst-could-23-undervalued-021130252.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 21:11 ET",
+        "pub_ts": 1795054290.0
+      },
+      {
         "title": "A $6.9 Billion Fund Dumps These 3 Stocks",
         "url": "https://www.tikr.com/blog/a-6-9-billion-fund-dumps-these-3-stocks?ref=yahoofinance&tlnk=yf-261118-xcfh59pr&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1526,13 +1533,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 18:25 ET",
         "pub_ts": 1794957900.0
-      },
-      {
-        "title": "NextEra Energy vs. Vistra: Which Utilities Stock Is a Better Buy for 2027?",
-        "url": "https://www.fool.com/coverage/better-buy/2026/11/17/nextera-energy-vs-vistra-which-utilities-stock-is-a-better-buy-for-2027/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 15:50 ET",
-        "pub_ts": 1794948602.0
       }
     ],
     "BE": [
@@ -3202,8 +3202,8 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795054494.3448682,
-    "SOXL": 1795054494.3448682,
+    "KORU": 1795055996.0495317,
+    "SOXL": 1795055996.0495317,
     "SPY": 1795055787.0019376,
     "DIA": 1795055787.0019376,
     "SOXX": 1795055787.0019376,
@@ -3223,21 +3223,21 @@
     "QCOM": 1795055891.4745886,
     "AVGO": 1795055891.4745886,
     "AMAT": 1795055891.4745886,
-    "META": 1795054494.3448682,
-    "GOOGL": 1795054494.3448682,
+    "META": 1795055996.0495317,
+    "GOOGL": 1795055996.0495317,
     "MSFT": 1795055891.4745886,
-    "AAPL": 1795054494.3448682,
-    "PLTR": 1795054494.3448682,
-    "NOW": 1795054494.3448682,
-    "AMZN": 1795054494.3448682,
-    "CRWV": 1795054494.3448682,
-    "NBIS": 1795054494.3448682,
-    "APLD": 1795054494.3448682,
-    "VST": 1795054494.3448682,
-    "BE": 1795054494.3448682,
-    "CRDO": 1795054494.3448682,
-    "COHR": 1795054494.3448682,
-    "MRVL": 1795054494.3448682,
+    "AAPL": 1795055996.0495317,
+    "PLTR": 1795055996.0495317,
+    "NOW": 1795055996.0495317,
+    "AMZN": 1795055996.0495317,
+    "CRWV": 1795055996.0495317,
+    "NBIS": 1795055996.0495317,
+    "APLD": 1795055996.0495317,
+    "VST": 1795055996.0495317,
+    "BE": 1795055996.0495317,
+    "CRDO": 1795055996.0495317,
+    "COHR": 1795055996.0495317,
+    "MRVL": 1795055996.0495317,
     "LITE": 1795054599.3121686,
     "AAOI": 1795055787.0019376,
     "SPCX": 1795054599.3121686,
@@ -3264,19 +3264,19 @@
     "MSTR": 1795055891.4745886,
     "SNDK": 1795055891.4745886,
     "BTC-USD": 1795055891.4745886,
-    "CRWD": 1795054388.903495,
-    "ORCL": 1795054494.3448682,
+    "CRWD": 1795055996.0495317,
+    "ORCL": 1795055996.0495317,
     "COIN": 1795054494.3448682,
-    "LLY": 1795054494.3448682,
+    "LLY": 1795055996.0495317,
     "MRNA": 1795054494.3448682,
     "NKE": 1795054599.3121686,
     "MCD": 1795054800.8018997,
     "PEP": 1795054599.3121686,
-    "XOM": 1795054494.3448682,
+    "XOM": 1795055996.0495317,
     "JPM": 1795054599.3121686,
     "WMT": 1795054599.3121686,
-    "V": 1795054494.3448682,
-    "CAT": 1795054494.3448682,
+    "V": 1795055996.0495317,
+    "CAT": 1795055996.0495317,
     "FN": 1795054599.3121686,
     "GLW": 1795054599.3121686
   },
