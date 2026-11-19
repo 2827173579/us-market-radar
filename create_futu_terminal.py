@@ -1907,6 +1907,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 <div class="w-tab" data-filter="太空商业">太空商业</div>
                 <div class="w-tab" data-filter="物理与安全">物理AI与安全</div>
                 <div class="w-tab" data-filter="数字资产" style="color: #f59e0b; font-weight: 700;">🪙 数字资产 (BTC)</div>
+                <div class="w-tab" data-filter="大宗商品" style="color: #fbbf24; font-weight: 700;">🥇 黄金现货</div>
                 <div class="w-tab" data-filter="生物医药">生物医药</div>
                 <div class="w-tab" data-filter="价值消费">价值与传统龙头</div>
             </div>
@@ -2578,7 +2579,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             }})
             .catch(e => {{}});
 
-        // TradingView 交易所标的代码映射 (全量 77 只)
+        // TradingView 交易所标的代码映射 (全量 79 只)
         const SYMBOL_MAP = {{
             "QQQ": "NASDAQ:QQQ",
             "SPY": "AMEX:SPY",
@@ -2657,6 +2658,8 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             "XOM": "NYSE:XOM",
             "WMT": "NYSE:WMT",
             "CAT": "NYSE:CAT",
+            "XAUUSD": "OANDA:XAUUSD",
+            "ANT": "NASDAQ:ANT",
         }};
 
         let currentTicker = "INTC";
@@ -2805,6 +2808,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 else if (filter === "太空商业" && s.cat === "太空商业") match = true;
                 else if (filter === "物理与安全" && (s.cat === "物理AI" || s.cat === "AI安全" || s.cat === "价值蓝筹" || s.cat === "金融蓝筹" || s.cat === "专属风控")) match = true;
                 else if (filter === "数字资产" && (s.cat === "数字资产" || s.ticker === "MSTR" || s.ticker === "BTC-USD")) match = true;
+                else if (filter === "大宗商品" && (s.cat === "大宗商品" || s.ticker === "XAUUSD" || s.ticker === "GLD")) match = true;
                 else if (filter === "生物医药" && (s.cat === "生物医药" || s.cat === "医药健康")) match = true;
                 else if (filter === "价值消费" && (s.cat === "价值蓝筹" || s.cat === "可选消费" || s.cat === "金融科技" || s.cat === "金融蓝筹" || s.cat === "传统金融" || s.cat === "传统能源" || s.cat === "传统消费" || s.cat === "传统工业")) match = true;
                 else if (s.cat === filter) match = true;
@@ -2826,6 +2830,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 else if (filter === "芯片与半导体" && (t === "SMH" || t === "SOXX" || t === "SOXL" || t === "SOXS" || t === "KORU")) match = true;
                 else if (filter === "云与软件" && (t === "QQQ" || t === "IGV" || t === "SQQQ")) match = true;
                 else if (filter === "数字资产" && (t === "BTC-USD" || m.cat === "数字资产")) match = true;
+                else if (filter === "大宗商品" && (t === "GLD" || m.cat === "大宗商品")) match = true;
 
                 if (match) {{
                     items.push({{
@@ -2951,6 +2956,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                             ${{isTakeProfit ? '<span style="color:#d946ef; font-size:10px; margin-left:3px;">🟣盈</span>' : ''}}
                             ${{isStop ? '<span style="color:#ff5252; font-size:10px; margin-left:3px;">🔴破</span>' : ''}}
                             ${{isPullback ? '<span style="color:#ff9100; font-size:10px; margin-left:3px;">🟠回</span>' : ''}}
+                            ${{(item.is_ipo_pending || (item.signal && item.signal.includes("IPO"))) ? '<span style="background:rgba(56,189,248,0.18); color:#38bdf8; border:1px solid rgba(56,189,248,0.4); border-radius:3px; padding:0 3px; font-size:9px; margin-left:3px;">🆕IPO</span>' : ''}}
                             ${{(AI_PREDICTIONS && AI_PREDICTIONS.by_ticker && AI_PREDICTIONS.by_ticker[item.ticker]) ? (filter === "ai_short" ? `<span style="background:rgba(248,81,73,0.18); color:#f85149; border:1px solid rgba(248,81,73,0.38); border-radius:3px; padding:0 3px; font-size:9px; margin-left:3px;" title="AI 5年做空胜率 (#${{AI_PREDICTIONS.by_ticker[item.ticker].short_rank || '--'}})">🩸空 ${{((AI_PREDICTIONS.by_ticker[item.ticker].calibrated_short_win_rate_pct || 50.0)).toFixed(0)}}%</span>` : `<span style="background:rgba(188,140,255,0.18); color:${{AI_PREDICTIONS.by_ticker[item.ticker].calibrated_win_rate_pct >= 58 ? '#4ade80' : '#d8b4fe'}}; border:1px solid rgba(188,140,255,0.38); border-radius:3px; padding:0 3px; font-size:9px; margin-left:3px;" title="AI 5年多赛道预测校准胜率 (#${{AI_PREDICTIONS.by_ticker[item.ticker].rank}})">⚡AI ${{AI_PREDICTIONS.by_ticker[item.ticker].calibrated_win_rate_pct.toFixed(0)}}%</span>`) : ''}}
                         </div>
                         <div class="s-name">${{item.name}} · ${{item.cat || ''}}</div>
@@ -3230,6 +3236,13 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 actionType = "顺势持有 / 移动保护";
                 mainVerdict = "🔵 强势多头推进 · 顺势持有待涨";
                 actionDirective = `【顺势而为让利润奔跑】主升浪趋势健康，均线呈良性多头排列。依托 EMA20 ($${{curEma20.toFixed(2)}}) 作为趋势移动生命线，只要收盘不破 EMA20 安心持股待涨，不盲目追高。`;
+            }} else if (data.is_ipo_pending || sig.includes("IPO")) {{
+                themeColor = "#38bdf8";
+                themeBg = "linear-gradient(135deg, rgba(56, 189, 248, 0.10), #181b22)";
+                themeBorder = "#38bdf8";
+                actionType = "新股上市观察";
+                mainVerdict = data.is_ipo_pending ? `🆕 IPO 首日待开盘 · 发行基准价 $${{Number(data.ipo_price || curLast || 83).toFixed(2)}}` : `🆕 IPO 新股价格发现期 · 现价 $${{curLast.toFixed(2)}}`;
+                actionDirective = `【IPO 首日风险提示】标的刚上市尚无 5 日历史日线与斐波那契支撑底模，当前重点观察开盘竞价换手与日内 VWAP 承接，满 5 个交易日后自动激活多周期量化模型。`;
             }} else {{
                 themeColor = "#94a3b8";
                 themeBg = "linear-gradient(135deg, rgba(148, 163, 184, 0.08), #181b22)";
@@ -3310,6 +3323,10 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                         intraBannerEl.style.background = "rgba(0, 230, 118, 0.16)";
                         intraBannerEl.style.borderColor = "#00e676";
                         intraStatusEl.style.color = "#00e676";
+                    }} else if (intraStatusText.includes("IPO")) {{
+                        intraBannerEl.style.background = "rgba(56, 189, 248, 0.12)";
+                        intraBannerEl.style.borderColor = "rgba(56, 189, 248, 0.42)";
+                        intraStatusEl.style.color = "#38bdf8";
                     }} else if (intraStatusText.includes("严禁") || intraStatusText.includes("超买") || intraStatusText.includes("跌破") || intraStatusText.includes("冷却期")) {{
                         intraBannerEl.style.background = "rgba(255, 82, 82, 0.14)";
                         intraBannerEl.style.borderColor = "rgba(255, 82, 82, 0.45)";

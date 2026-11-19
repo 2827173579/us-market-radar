@@ -294,9 +294,129 @@ def _fetch_btc_live_price() -> Optional[float]:
     return None
 
 
-def _fetch_single_ticker(ticker: str, start_date: str = '2021-11-01', max_retries: int = 3) -> Optional[pd.DataFrame]:
-    """通过 yfinance 拉取单只标的的历史日线数据，自动扁平化多级列名（BTC-USD 启用 7x24 自然日连续模式）"""
+def fetch_xauusd_spot_quote(timeout: float = 6.0) -> Dict[str, Any]:
+    """
+    免费多源伦敦金现货 (XAUUSD) 实时报价瀑布流（0 Finnhub 额度消耗）：
+    1. TradingView CFD Scanner (OANDA:XAUUSD / FX_IDC:XAUUSD)
+    2. Swissquote 瑞讯银行公开 BBO 报价流 (XAU/USD midpoint)
+    3. Gold-API Spot XAU 免费端点
+    """
+    import json as _json
+    import urllib.request as _urllib_req
+
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+        "Accept": "application/json",
+    }
+
+    # 1. TradingView CFD Scanner (首选：含实时现价、今日涨跌与日内高低点)
+    try:
+        payload = _json.dumps({
+            "symbols": {"tickers": ["OANDA:XAUUSD", "FX_IDC:XAUUSD"]},
+            "columns": ["name", "close", "change", "change_abs", "open", "high", "low"],
+        }).encode("utf-8")
+        req = _urllib_req.Request(
+            "https://scanner.tradingview.com/cfd/scan",
+            data=payload,
+            headers={**headers, "Content-Type": "application/json"},
+            method="POST",
+        )
+        with _urllib_req.urlopen(req, timeout=timeout) as resp:
+            tv_data = _json.loads(resp.read().decode("utf-8"))
+        rows = sorted(
+            tv_data.get("data") or [],
+            key=lambda r: 0 if str(r.get("s", "")).startswith("OANDA:") else 1,
+        )
+        for row in rows:
+            vals = row.get("d") or []
+            if len(vals) >= 4 and vals[1] is not None and float(vals[1]) > 0:
+                last = float(vals[1])
+                pct_chg = float(vals[2] or 0.0)
+                if vals[3] is not None:
+                    chg = float(vals[3])
+                elif pct_chg != 0.0:
+                    chg = last - (last / (1.0 + pct_chg / 100.0))
+                else:
+                    chg = 0.0
+                hi = float(vals[5]) if (len(vals) > 5 and vals[5] is not None and float(vals[5]) > 0) else last
+                lo = float(vals[6]) if (len(vals) > 6 and vals[6] is not None and float(vals[6]) > 0) else last
+                return {
+                    "last": round(last, 2),
+                    "change": round(chg, 2),
+                    "pct_change": round(pct_chg, 2),
+                    "high": round(max(hi, last), 2),
+                    "low": round(min(lo, last), 2),
+                    "prev_close": round(last - chg, 2),
+                    "has_pct": True,
+                    "source": f"tv:{row.get('s', 'XAUUSD')}",
+                }
+    except Exception:
+        pass
+
+    # 2. Swissquote 瑞讯银行 BBO 实时买卖盘中间价
+    try:
+        req = _urllib_req.Request(
+            "https://forex-data-feed.swissquote.com/public-quotes/bboquotes/instrument/XAU/USD",
+            headers=headers,
+        )
+        with _urllib_req.urlopen(req, timeout=timeout) as resp:
+            sq_data = _json.loads(resp.read().decode("utf-8"))
+        if isinstance(sq_data, list):
+            for entry in sq_data:
+                for p in (entry.get("spreadProfilePrices") or []):
+                    bid = p.get("bid")
+                    ask = p.get("ask")
+                    if bid is not None and ask is not None and float(bid) > 0 and float(ask) > 0:
+                        mid = round((float(bid) + float(ask)) / 2.0, 2)
+                        return {
+                            "last": mid,
+                            "change": 0.0,
+                            "pct_change": 0.0,
+                            "high": mid,
+                            "low": mid,
+                            "prev_close": 0.0,
+                            "has_pct": False,
+                            "source": "swissquote",
+                        }
+    except Exception:
+        pass
+
+    # 3. Gold-API 免费现货端点
+    try:
+        req = _urllib_req.Request("https://api.gold-api.com/price/XAU", headers=headers)
+        with _urllib_req.urlopen(req, timeout=timeout) as resp:
+            ga_data = _json.loads(resp.read().decode("utf-8"))
+        px = ga_data.get("price") if isinstance(ga_data, dict) else None
+        if px is not None and float(px) > 0:
+            spot = round(float(px), 2)
+            return {
+                "last": spot,
+                "change": 0.0,
+                "pct_change": 0.0,
+                "high": spot,
+                "low": spot,
+                "prev_close": 0.0,
+                "has_pct": False,
+                "source": "gold-api",
+            }
+    except Exception:
+        pass
+
+    return {}
+
+
+def _fetch_xauusd_live_price() -> Optional[float]:
+    """轻量获取 XAUUSD 最新现货报价。"""
+    q = fetch_xauusd_spot_quote()
+    last = q.get("last") if isinstance(q, dict) else None
+    return round(float(last), 2) if last and float(last) > 0 else None
+
+
+def _fetch_single_ticker(ticker: str, start_date: str = '2021-11-01', max_retries: int = 3, min_bars: int = 20) -> Optional[pd.DataFrame]:
+    """通过 yfinance 拉取单只标的的历史日线数据，自动扁平化多级列名（BTC-USD 启用 7x24 自然日连续模式，XAUUSD 使用 GC=F 期货历史底座并对齐现货汇率）"""
     is_btc = (ticker == 'BTC-USD')
+    is_xau = (ticker == 'XAUUSD')
+    dl_symbol = 'GC=F' if is_xau else ticker
     for attempt in range(max_retries):
         try:
             if is_btc:
@@ -307,7 +427,7 @@ def _fetch_single_ticker(ticker: str, start_date: str = '2021-11-01', max_retrie
                 end_exclusive = (expected_last + timedelta(days=1)).strftime("%Y-%m-%d")
             # yfinance 的 end 为左闭右开，end=已收盘日 会把当天切掉。必须用已收盘日的下一天。
             df = yf.download(
-                ticker,
+                dl_symbol,
                 start=start_date,
                 end=end_exclusive,
                 interval="1d",
@@ -382,7 +502,28 @@ def _fetch_single_ticker(ticker: str, start_date: str = '2021-11-01', max_retrie
 
             df = df.sort_values('Date').drop_duplicates(subset=['Date'], keep='last').reset_index(drop=True)
 
-            if len(df) >= 20:
+            if is_xau and not df.empty:
+                try:
+                    spot_px = _fetch_xauusd_live_price()
+                    if spot_px and spot_px > 0:
+                        gc_live = 0.0
+                        try:
+                            _g5 = yf.Ticker("GC=F").history(period="2d", interval="5m", prepost=True)
+                            if _g5 is not None and not _g5.empty and "Close" in _g5.columns:
+                                _g5c = _g5["Close"].dropna()
+                                if len(_g5c) > 0:
+                                    gc_live = float(_g5c.iloc[-1])
+                        except Exception:
+                            gc_live = 0.0
+                        ref_c = gc_live if gc_live > 0 else float(df['Close'].iloc[-1])
+                        ratio = (spot_px / ref_c) if ref_c > 0 else 1.0
+                        if 0.8 <= ratio <= 1.2:
+                            for col in ('Open', 'High', 'Low', 'Close'):
+                                df[col] = (df[col].astype(float) * ratio).round(2)
+                except Exception:
+                    pass
+
+            if len(df) >= min_bars:
                 return df
         except Exception as e:
             if attempt == max_retries - 1:
@@ -2935,20 +3076,71 @@ def generate_time_cycle_projections(
         joint_top_k = []
         joint_weights = None
 
+    _ipo_default_prices = {'ANT': 83.0}
     for tk in target_tickers:
         sub = combined_panel[combined_panel['Ticker'] == tk].sort_values('Date').reset_index(drop=True)
-        if sub.empty:
-            continue
-        if len(sub) < 5:
-            # 次新标的刚上市不足5根日线时跳过或保留已有短线而不强行套用无关指数价格
+        sc_info = (scenario_map_by_ticker or {}).get(tk, {})
+        if sub.empty or len(sub) < 5:
+            # 次新/IPO 标的不足 5 根日线时：若存在实盘报价或发行基准价（如 ANT $83.00）或已有短线，生成平滑占位路径防前端断档；无任何价格则跳过
+            live_fb = sc_info.get('latest_price') or sc_info.get('current_price') or _ipo_default_prices.get(tk)
+            if (live_fb is None or float(live_fb) <= 0) and not sub.empty:
+                live_fb = float(sub['Close'].iloc[-1])
+            if live_fb is None or float(live_fb) <= 0:
+                continue
+            cp = round(float(live_fb), 2)
+            _base_hist_d = _last_closed
+            if not sub.empty and 'Date' in sub.columns:
+                hist_entries_short = [
+                    {
+                        'date': (sub.at[i, 'Date'].strftime('%Y-%m-%d') if hasattr(sub.at[i, 'Date'], 'strftime') else str(sub.at[i, 'Date'])[:10]),
+                        'price': round(float(sub.at[i, 'Close']), 2),
+                    }
+                    for i in range(len(sub))
+                ]
+                _last_sub_d = pd.to_datetime(sub['Date'].iloc[-1]).date()
+                if _last_sub_d >= _last_closed:
+                    _base_hist_d = _last_sub_d
+            else:
+                hist_entries_short = [{'date': _last_closed.strftime('%Y-%m-%d'), 'price': cp}]
+            _short_dates = []
+            _cur_s = _base_hist_d
+            while len(_short_dates) < forecast_days:
+                _cur_s += timedelta(days=1)
+                if _cur_s.weekday() < 5:
+                    _short_dates.append(_cur_s.strftime('%Y-%m-%d'))
+            results[tk] = {
+                'ticker': tk,
+                'current_price': cp,
+                'anchor_price': cp,
+                's1': round(cp * 0.94, 2),
+                's2': round(cp * 0.88, 2),
+                'sl': round(cp * 0.85, 2),
+                'r1': round(cp * 1.06, 2),
+                'r2': round(cp * 1.12, 2),
+                'history': hist_entries_short[-20:],
+                'projection': [
+                    {'day': f'T+{d_i + 1}', 'date': dt_s, 'price': cp, 'pct': 0.0, 'wave_ret': 0.0}
+                    for d_i, dt_s in enumerate(_short_dates)
+                ],
+                'cycle_windows': [],
+                'analog_match': {
+                    'period': '🆕 IPO 新股上市期 (待积累5日K线)',
+                    'similarity_pct': 0.0,
+                },
+                'today_label': f'IPO 基准 (${cp:.2f})' if sub.empty else _today_label,
+                'session_open': bool(_session_open),
+                'price_note': '' if not sub.empty else f'IPO 发行价参考 ${cp:.2f}',
+                'post_price': None,
+            }
             continue
 
         closes = sub['Close'].values.astype(float).copy()
         close_anchor = float(closes[-1])
-        sc_info = (scenario_map_by_ticker or {}).get(tk, {})
         live_override_p = sc_info.get('latest_price') or sc_info.get('current_price')
         if tk == 'BTC-USD' and (live_override_p is None or float(live_override_p) <= 0) and as_of is None:
             live_override_p = _fetch_btc_live_price()
+        elif tk == 'XAUUSD' and (live_override_p is None or float(live_override_p) <= 0) and as_of is None:
+            live_override_p = _fetch_xauusd_live_price()
         if live_override_p is not None and float(live_override_p) > 0:
             display_p = float(live_override_p)
         else:
@@ -5687,8 +5879,9 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
                     <button class="cycle-tab-btn" onclick="switchCycleSymbol('SQQQ')">SQQQ</button>
                     <button class="cycle-tab-btn" onclick="switchCycleSymbol('KORU')">KORU</button>
                     <button class="cycle-tab-btn" onclick="switchCycleSymbol('BTC-USD')">BTC-USD (比特币)</button>
-                    <select id="cycleSymbolSelect" onchange="switchCycleSymbol(this.value)" style="background: #0b0e14; color: #e2c5ff; border: 1px solid rgba(188, 140, 255, 0.45); border-radius: 6px; padding: 4px 8px; font-size: 12px; font-weight: 700; cursor: pointer; outline: none;" title="切换全部 21 只核心标的时空推演图">
-                        <option value="SOXL">全部标的 (21只)...</option>
+                    <button class="cycle-tab-btn" onclick="switchCycleSymbol('XAUUSD')">XAUUSD (伦敦金)</button>
+                    <select id="cycleSymbolSelect" onchange="switchCycleSymbol(this.value)" style="background: #0b0e14; color: #e2c5ff; border: 1px solid rgba(188, 140, 255, 0.45); border-radius: 6px; padding: 4px 8px; font-size: 12px; font-weight: 700; cursor: pointer; outline: none;" title="切换核心标的时空推演图">
+                        <option value="SOXL">全部核心标的...</option>
                         <option value="SOXL">SOXL (半导体3倍做多)</option>
                         <option value="SOXX">SOXX (半导体1倍ETF)</option>
                         <option value="SOXS">SOXS (半导体3倍做空)</option>
@@ -5705,6 +5898,8 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
                         <option value="SQQQ">SQQQ (纳指3倍做空)</option>
                         <option value="KORU">KORU (韩股3倍做多)</option>
                         <option value="BTC-USD">BTC-USD (比特币现货)</option>
+                        <option value="XAUUSD">XAUUSD (伦敦金现货)</option>
+                        <option value="ANT">ANT (Anthropic IPO)</option>
                         <option value="TSLA">TSLA (特斯拉)</option>
                         <option value="PLTR">PLTR (Palantir)</option>
                         <option value="META">META (Meta)</option>
@@ -6352,7 +6547,8 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
                     'MU': '美光存储', 'AMD': '超威半导体', 'AVGO': '博通通信',
                     'MRVL': '迈威尔芯片', 'INTC': '英特尔芯片', 'SNDK': '闪迪数据存储',
                     'QQQ': '纳指100微型', 'SQQQ': '3倍做空纳指', 'KORU': '3倍做多韩股',
-                    'BTC-USD': '比特币现货', 'TSLA': '特斯拉物理AI', 'PLTR': 'Palantir企业AI'
+                    'BTC-USD': '比特币现货', 'XAUUSD': '伦敦金现货', 'ANT': 'Anthropic (IPO)',
+                    'TSLA': '特斯拉物理AI', 'PLTR': 'Palantir企业AI'
                 }};
                 subEl.textContent = subNames[data.ticker] || '';
             }}
@@ -6964,6 +7160,8 @@ EXTENDED_RADAR_SECTOR_MAP: Dict[str, Tuple[str, str]] = {
     'TLT':  ('Energy_Power', '大盘与宏观ETF'),
     'GLD':  ('Energy_Power', '大盘与宏观ETF'),
     'BTC-USD': ('Crypto_Proxy', '加密资产与数字黄金'),
+    'XAUUSD': ('Energy_Power', '贵金属与大宗商品'),
+    'ANT': ('Neo_Cloud', '基础大模型与AI生态'),
     'VIXY': ('Crypto_Proxy', '恐慌与反向对冲'),
     'SQQQ': ('Crypto_Proxy', '恐慌与反向对冲'),
     'SOXS': ('Crypto_Proxy', '恐慌与反向对冲'),
@@ -6987,16 +7185,28 @@ def build_extended_live_features_df(
     missing_syms = [tk for tk in EXTENDED_RADAR_SECTOR_MAP.keys() if tk not in existing_syms]
 
     ext_frames = []
+    prior_ext_df = None
+    prior_syms = set()
     expected_latest_date = _get_latest_expected_trading_day()
-    if os.path.exists(full_ext_cache) and not force_refresh:
+    if os.path.exists(full_ext_cache):
         try:
-            ext_cached_df = pd.read_parquet(full_ext_cache)
-            ext_cached_df['Date'] = pd.to_datetime(ext_cached_df['Date'])
-            cached_syms = set(ext_cached_df['Ticker'].unique())
+            prior_ext_df = pd.read_parquet(full_ext_cache)
+            if not prior_ext_df.empty and 'Date' in prior_ext_df.columns:
+                prior_ext_df['Date'] = pd.to_datetime(prior_ext_df['Date'])
+                prior_syms = set(prior_ext_df['Ticker'].astype(str).unique())
+        except Exception:
+            prior_ext_df = None
+            prior_syms = set()
+
+    if prior_ext_df is not None and not force_refresh:
+        try:
+            ext_cached_df = prior_ext_df
+            cached_syms = prior_syms
             still_missing = [tk for tk in missing_syms if tk not in cached_syms]
             ext_max_date = ext_cached_df['Date'].max().date() if not ext_cached_df.empty else None
             try:
-                _main_max_date = pd.to_datetime(raw_panel['Date']).max().date() if 'Date' in raw_panel.columns else expected_latest_date
+                _eq_panel = raw_panel[raw_panel['Ticker'] != 'BTC-USD'] if 'Ticker' in raw_panel.columns else raw_panel
+                _main_max_date = pd.to_datetime(_eq_panel['Date']).max().date() if ('Date' in _eq_panel.columns and not _eq_panel.empty) else expected_latest_date
             except Exception:
                 _main_max_date = expected_latest_date
             _need_date = max(expected_latest_date, _main_max_date)
@@ -7009,7 +7219,7 @@ def build_extended_live_features_df(
             elif not is_ext_fresh:
                 print(f"[!] ⚠️ 扩展标的缓存已过期 (最新: {ext_max_date}, 预期: {expected_latest_date})，启动全量刷新...")
                 missing_syms = [tk for tk in EXTENDED_RADAR_SECTOR_MAP.keys() if tk not in existing_syms]
-                ext_frames = []
+                ext_frames = [ext_cached_df] if not ext_cached_df.empty else []
             else:
                 ext_frames.append(ext_cached_df)
                 missing_syms = still_missing
@@ -7017,12 +7227,14 @@ def build_extended_live_features_df(
             print(f"[!] 读取扩展缓存异常 ({e})，重新拉取...")
             missing_syms = [tk for tk in EXTENDED_RADAR_SECTOR_MAP.keys() if tk not in existing_syms]
             ext_frames = []
+    elif force_refresh and prior_ext_df is not None and not prior_ext_df.empty:
+        ext_frames = [prior_ext_df]
 
     if missing_syms:
         print(f"[*] 📥 正在通过 yfinance 补充抓取 {len(missing_syms)} 只主终端扩展标的日线数据 (0 Finnhub 消耗)...")
         newly_fetched = []
         for tk in missing_syms:
-            df_tk = _fetch_single_ticker(tk, start_date="2023-01-01")
+            df_tk = _fetch_single_ticker(tk, start_date="2023-01-01", min_bars=(1 if tk in prior_syms else 20))
             if df_tk is not None and not df_tk.empty:
                 sec_key = EXTENDED_RADAR_SECTOR_MAP[tk][0]
                 df_tk['Ticker'] = tk
@@ -7253,7 +7465,7 @@ def main():
     if 'Date' in latest_stocks.columns and not latest_stocks.empty:
         last_by_ticker = latest_stocks.groupby('Ticker')['Date'].max().to_dict()
     behind = []
-    optional_ext = {'NASA', 'SPCX', 'FLY', 'LUNR'}
+    optional_ext = {'NASA', 'SPCX', 'FLY', 'LUNR', 'ANT', 'XAUUSD'}
     for tk in wanted:
         if tk not in have:
             if tk in optional_ext:

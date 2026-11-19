@@ -1,6 +1,6 @@
 {
   "schema_version": 4,
-  "updated_at": 1795087281.1828456,
+  "updated_at": 1795088200.479534,
   "data": {
     "IWM": {
       "has_options": true,
@@ -1749,6 +1749,9 @@
       "exp_low": 537.8,
       "exp_high": 606.46,
       "exp_move_str": "±6.0% ($537.80~$606.46)"
+    },
+    "ANT": {
+      "has_options": false
     }
   }
 }

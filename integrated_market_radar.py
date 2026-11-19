@@ -164,7 +164,10 @@ MONITORED_TARGETS = {
         "JPM":   {"name": "摩根大通", "sub": "美国最大商业银行与投行风向标", "cat": "传统金融", "cost": 0.0, "shares": 0.0, "base_val": 0.0},
         "XOM":   {"name": "埃克森美孚", "sub": "全球传统油气与能源巨头", "cat": "传统能源", "cost": 0.0, "shares": 0.0, "base_val": 0.0},
         "WMT":   {"name": "沃尔玛", "sub": "全美必选消费与零售防御基石", "cat": "传统消费", "cost": 0.0, "shares": 0.0, "base_val": 0.0},
-        "CAT":   {"name": "卡特彼勒", "sub": "全球重型机械与工业周期龙头", "cat": "传统工业", "cost": 0.0, "shares": 0.0, "base_val": 0.0}
+        "CAT":   {"name": "卡特彼勒", "sub": "全球重型机械与工业周期龙头", "cat": "传统工业", "cost": 0.0, "shares": 0.0, "base_val": 0.0},
+        # 16. 现货贵金属与 AI 前沿新股
+        "XAUUSD": {"name": "伦敦金现货", "sub": "国际现货黄金/美元 (24h Spot · 免费数据源)", "cat": "大宗商品", "cost": 0.0, "shares": 0.0, "base_val": 0.0},
+        "ANT":    {"name": "Anthropic (IPO)", "sub": "Claude 大模型巨头 · 11/19 Nasdaq 上市 ($83)", "cat": "云与软件", "cost": 0.0, "shares": 0.0, "base_val": 83.0, "ipo_price": 83.0}
     }
 }
 
@@ -651,6 +654,123 @@ def fetch_yahoo_crypto_quote(symbol="BTC-USD"):
         return {}
 
 
+def fetch_xauusd_spot_quote(timeout=6):
+    """伦敦金现货 (XAUUSD) 免费实时报价瀑布流 (0 Finnhub 消耗，复用 ml_predictor_5y 统一多源实现)。"""
+    try:
+        import ml_predictor_5y as _mlp
+        return _mlp.fetch_xauusd_spot_quote(timeout=timeout)
+    except Exception as e:
+        print(f"[!] XAUUSD spot quote failed: {e}")
+        return {}
+
+
+def fetch_tradingview_equity_quote(symbol, exchange="NASDAQ", timeout=6):
+    """
+    免费美股 / 首日 IPO 实时报价回退源 (TradingView America Scanner -> Yahoo 1m)：
+    当 Finnhub 暂未收录次新 IPO 报价或盘前返回 0 时启用。
+    """
+    try:
+        payload = json.dumps({
+            "symbols": {"tickers": [f"{exchange}:{symbol}"]},
+            "columns": ["name", "close", "premarket_close", "postmarket_close", "change", "change_abs", "high", "low", "open"],
+        }).encode("utf-8")
+        req = urllib.request.Request(
+            "https://scanner.tradingview.com/america/scan",
+            data=payload,
+            headers={
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+                "Accept": "application/json",
+                "Content-Type": "application/json",
+            },
+            method="POST",
+        )
+        with urllib.request.urlopen(req, timeout=timeout) as resp:
+            data = json.loads(resp.read().decode("utf-8"))
+        for row in (data.get("data") or []):
+            vals = row.get("d") or []
+            if len(vals) >= 4:
+                pre_c = float(vals[2] or 0.0) if vals[2] is not None else 0.0
+                reg_c = float(vals[1] or 0.0) if vals[1] is not None else 0.0
+                post_c = float(vals[3] or 0.0) if vals[3] is not None else 0.0
+                last = pre_c if (get_us_market_session()[0] == "PRE_MARKET" and pre_c > 0) else (reg_c or pre_c or post_c)
+                if last > 0:
+                    pct_chg = float(vals[4] or 0.0) if (len(vals) > 4 and vals[4] is not None) else 0.0
+                    chg = float(vals[5] or 0.0) if (len(vals) > 5 and vals[5] is not None) else 0.0
+                    hi = float(vals[6] or last) if (len(vals) > 6 and vals[6] is not None) else last
+                    lo = float(vals[7] or last) if (len(vals) > 7 and vals[7] is not None) else last
+                    return {
+                        "last": round(last, 2),
+                        "change": round(chg, 2),
+                        "pct_change": round(pct_chg, 2),
+                        "high": round(hi, 2),
+                        "low": round(lo, 2),
+                        "prev_close": round(last - chg, 2),
+                        "source": "tradingview",
+                    }
+    except Exception:
+        pass
+    try:
+        h1 = yf.Ticker(symbol).history(period="1d", interval="1m", prepost=True)
+        if h1 is not None and not h1.empty and "Close" in h1.columns:
+            cs = h1["Close"].dropna()
+            if len(cs) > 0 and float(cs.iloc[-1]) > 0:
+                last = float(cs.iloc[-1])
+                return {
+                    "last": round(last, 2),
+                    "change": 0.0,
+                    "pct_change": 0.0,
+                    "high": round(float(h1["High"].max()), 2),
+                    "low": round(float(h1["Low"].min()), 2),
+                    "prev_close": 0.0,
+                    "source": "yahoo_1m",
+                }
+    except Exception:
+        pass
+    return {}
+
+
+def _apply_xauusd_spot_basis(history_dict, intraday_map, realtime_quotes):
+    """
+    将 GC=F 代理的历史日线与 5m 指标按现价价差比例 (xau_spot / gc_ref) 校准为纯伦敦金现货美元计价，
+    并在缺失涨跌幅时（如 Swissquote/Gold-API 回退）自动由前收估算。
+    """
+    xau_rq = realtime_quotes.get("XAUUSD") if isinstance(realtime_quotes, dict) else None
+    if not xau_rq or float(xau_rq.get("last", 0) or 0) <= 0:
+        return
+    xau_spot = float(xau_rq["last"])
+    intra = intraday_map.get("XAUUSD") if isinstance(intraday_map, dict) else None
+    df_hist = history_dict.get("XAUUSD") if isinstance(history_dict, dict) else None
+
+    gc_ref = 0.0
+    if isinstance(intra, dict):
+        gc_ref = float(intra.get("ext_price") or intra.get("rth_close") or 0.0)
+    if gc_ref <= 0 and df_hist is not None and not df_hist.empty:
+        gc_ref = float(df_hist["Close"].iloc[-1])
+
+    if gc_ref > 0:
+        ratio = xau_spot / gc_ref
+        if 0.8 <= ratio <= 1.2:
+            if df_hist is not None and not df_hist.empty:
+                for col in ("Open", "High", "Low", "Close"):
+                    if col in df_hist.columns:
+                        df_hist[col] = (df_hist[col].astype(float) * ratio).round(2)
+            if isinstance(intra, dict):
+                for key in ("vwap", "rth_close", "rth_high", "rth_low", "last_5m_low", "prev_5m_low"):
+                    val = intra.get(key)
+                    if val is not None and float(val) > 0:
+                        intra[key] = round(float(val) * ratio, 2)
+                intra["rth_close"] = round(xau_spot, 2)
+                intra["ext_price"] = 0.0
+
+    if not xau_rq.get("has_pct") and df_hist is not None and len(df_hist) >= 2:
+        prev_c = float(df_hist["Close"].iloc[-2])
+        if prev_c > 0:
+            chg = xau_spot - prev_c
+            xau_rq["change"] = round(chg, 2)
+            xau_rq["pct_change"] = round((chg / prev_c) * 100.0, 2)
+            xau_rq["prev_close"] = round(prev_c, 2)
+
+
 def fetch_finnhub_quotes_batch(tickers, api_key):
     """限额并发抓取 (max_workers=2)，由 FinnhubRateLimiter 严控在 50 次/分安全红线内"""
     if not api_key:
@@ -731,21 +851,36 @@ def fetch_intraday_5m_and_ext_data(tickers):
             from datetime import timezone, timedelta
             ny_tz = timezone(timedelta(hours=-4))
 
-        df = yf.download(tickers, period="2d", interval="5m", prepost=True, progress=False)
+        _proxy_map = {"XAUUSD": "GC=F"}
+        _dl_tickers = list(dict.fromkeys([_proxy_map.get(t, t) for t in tickers]))
+        df = yf.download(_dl_tickers, period="2d", interval="5m", prepost=True, progress=False)
         if df is None or df.empty or "Close" not in df:
             return results
 
+        _is_multi = isinstance(df.columns, pd.MultiIndex)
         for t in tickers:
             try:
-                if t not in df["Close"]:
-                    continue
-                c = df["Close"][t].dropna()
-                if len(c) < 5:
-                    continue
-                o = df["Open"][t].reindex(c.index).fillna(c)
-                h = df["High"][t].reindex(c.index).fillna(c)
-                l = df["Low"][t].reindex(c.index).fillna(c)
-                v = df["Volume"][t].reindex(c.index).fillna(0)
+                src_t = _proxy_map.get(t, t)
+                if _is_multi:
+                    if src_t not in df["Close"]:
+                        continue
+                    c = df["Close"][src_t].dropna()
+                    if len(c) < 5:
+                        continue
+                    o = df["Open"][src_t].reindex(c.index).fillna(c)
+                    h = df["High"][src_t].reindex(c.index).fillna(c)
+                    l = df["Low"][src_t].reindex(c.index).fillna(c)
+                    v = df["Volume"][src_t].reindex(c.index).fillna(0)
+                else:
+                    if len(_dl_tickers) != 1 or src_t != _dl_tickers[0]:
+                        continue
+                    c = df["Close"].dropna()
+                    if len(c) < 5:
+                        continue
+                    o = df["Open"].reindex(c.index).fillna(c)
+                    h = df["High"].reindex(c.index).fillna(c)
+                    l = df["Low"].reindex(c.index).fillna(c)
+                    v = df["Volume"].reindex(c.index).fillna(0)
 
                 # 先按美东当前时段选取真实扩展 bar；盘前绝不复用昨晚盘后/昨日收盘 bar
                 ny_idx = c.index.tz_convert(ny_tz)
@@ -849,6 +984,7 @@ def fetch_intraday_5m_and_ext_data(tickers):
 
 def fetch_yahoo_overnight_quotes(tickers):
     """夜盘只认 Yahoo overnightMarketPrice (需显式携带 overnightPrice=true 参数)。没有这个字段就返回空，不许用盘后价顶上。"""
+    tickers = [t for t in (tickers or []) if t not in ("BTC-USD", "XAUUSD")]
     if not tickers:
         return {}
     rows = []
@@ -1042,7 +1178,7 @@ def fetch_options_anomaly_map(focus_tickers, spot_map=None):
     except Exception:
         pass
 
-    needed = [t for t in focus_tickers if t != "BTC-USD" and t not in cached_map]
+    needed = [t for t in focus_tickers if t not in ("BTC-USD", "XAUUSD") and t not in cached_map]
     if needed:
         print(f"[*] ⚡ 正在同步 {len(needed)} 只标的【机构期权主力资金流、PCR & 预期波动区间】(免额度·6线程并发)...")
         try:
@@ -3106,14 +3242,17 @@ def generate_and_sync_notifications(macro_data, stocks_data, weather_info, now_s
 # 三、 历史 K 线获取与量化指标计算引擎
 # ==============================================================================
 def fetch_all_market_data(tickers, period="1y", retries=2):
-    """并发批量抓取 1 年(约252交易日)历史日 K 线，支撑 MA200 牛熊线与 60日波段计算"""
+    """并发批量抓取 1 年(约252交易日)历史日 K 线，支撑 MA200 牛熊线与 60日波段计算（XAUUSD 自动映射 GC=F 代理并稍后按现价校准）"""
     print(f"[*] 启动多线程底模引擎，抓取 {len(tickers)} 只标的历史形态 ({period})...")
     data_dict = {}
+    proxy_map = {"XAUUSD": "GC=F"}
+    dl_tickers = list(dict.fromkeys([proxy_map.get(t, t) for t in tickers]))
     try:
-        raw_data = yf.download(tickers, period=period, group_by="ticker", threads=True, progress=False)
+        raw_data = yf.download(dl_tickers, period=period, group_by="ticker", threads=True, progress=False)
         for t in tickers:
             try:
-                sub = raw_data[t].dropna() if hasattr(raw_data.columns, "levels") else raw_data.dropna()
+                dl_sym = proxy_map.get(t, t)
+                sub = raw_data[dl_sym].dropna().copy() if hasattr(raw_data.columns, "levels") else raw_data.dropna().copy()
                 if len(sub) >= 1:
                     data_dict[t] = sub
             except Exception:
@@ -3124,11 +3263,12 @@ def fetch_all_market_data(tickers, period="1y", retries=2):
     missing = [t for t in tickers if t not in data_dict or data_dict[t].empty]
     if missing:
         for t in missing:
+            dl_sym = proxy_map.get(t, t)
             for attempt in range(1, retries + 1):
                 try:
-                    df = yf.Ticker(t).history(period=period, interval="1d")
+                    df = yf.Ticker(dl_sym).history(period=period, interval="1d")
                     if df is not None and len(df) >= 1:
-                        data_dict[t] = df
+                        data_dict[t] = df.copy()
                         break
                 except Exception:
                     time.sleep(0.5)
@@ -4681,14 +4821,22 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
     print(f"[*] 🕒 当前美东市场时段状态: 【{session_name}】")
 
     # 2. 并发秒级拉取 Finnhub 实时报价 (max_workers=2, 稳态间隔防 429)
-    # 免费额度 60次/分。全标的 77 只 (14 ETF + 63 股票)，优先保障 14 只宏观行业 ETF + 46 只核心高弹性科技股（含 FN）；其余 16 只低波防守/光纤蓝筹走 Yahoo 5m + V7 实时穿透
-    DEFENSIVE_11_TICKERS = {"KO", "PEP", "MCD", "AXP", "V", "LLY", "MRNA", "NKE", "HPE", "FPS", "JPM", "XOM", "WMT", "CAT", "NASA", "GLW"}
-    finnhub_tickers = [tk for tk in all_tickers if tk != "BTC-USD" and (tk not in DEFENSIVE_11_TICKERS or (user_portfolio and tk in user_portfolio))][:60]
+    # 免费额度 60次/分。全标的 79 只 (14 ETF + 65 股票)，BTC-USD 与 XAUUSD 走免费直连，DIA 等 17 只低波蓝筹/宽基走 Yahoo 5m + V7 实时穿透，留足 60 个 Finnhub 名额保障 ANT 等重点高弹性标的
+    DEFENSIVE_11_TICKERS = {"DIA", "KO", "PEP", "MCD", "AXP", "V", "LLY", "MRNA", "NKE", "HPE", "FPS", "JPM", "XOM", "WMT", "CAT", "NASA", "GLW"}
+    finnhub_tickers = [tk for tk in all_tickers if tk not in ("BTC-USD", "XAUUSD") and (tk not in DEFENSIVE_11_TICKERS or (user_portfolio and tk in user_portfolio))][:60]
     realtime_quotes = fetch_finnhub_quotes_batch(finnhub_tickers, FINNHUB_API_KEY) if FINNHUB_API_KEY else {}
     if "BTC-USD" in all_tickers:
         _btc_q = fetch_yahoo_crypto_quote("BTC-USD")
         if _btc_q:
             realtime_quotes["BTC-USD"] = _btc_q
+    if "XAUUSD" in all_tickers:
+        _xau_q = fetch_xauusd_spot_quote()
+        if _xau_q and _xau_q.get("last", 0) > 0:
+            realtime_quotes["XAUUSD"] = _xau_q
+    if "ANT" in all_tickers and ("ANT" not in realtime_quotes or float(realtime_quotes["ANT"].get("last", 0) or 0) <= 0):
+        _ant_q = fetch_tradingview_equity_quote("ANT", exchange="NASDAQ")
+        if _ant_q and _ant_q.get("last", 0) > 0:
+            realtime_quotes["ANT"] = _ant_q
 
     # 2.5 批量拉取 5 分钟级日内指标 (VWAP / 5m RSI / 5m RVOL) 与盘前盘后最新成交价
     print(f"[*] 📊 正在同步 {len(all_tickers)} 只标的【5分钟级 VWAP/RSI/量比 日内择时指标 & 盘前盘后最新报价】...")
@@ -4705,6 +4853,7 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
             if info.get("time"):
                 slot["ext_time"] = info["time"]
             slot["price_kind"] = "overnight"
+    _apply_xauusd_spot_basis(history_dict, intraday_map, realtime_quotes)
     if intraday_map:
         print(f"[+] ✅ 成功计算 {len(intraday_map)}/{len(all_tickers)} 只标的 5 分钟分时指标与盘前盘后行情！")
 
@@ -4796,8 +4945,8 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
                         session_tag = "休市"
             effective_pct = pct_change
             overnight_pct = 0.0
-            if session_code in ["PRE_MARKET", "POST_MARKET", "OVERNIGHT", "WEEKEND"]:
-                # 扩展时段只看“最近一次正规盘收盘后”的纯变动，绝不叠加前一日白天涨幅
+            if ticker != "XAUUSD" and session_code in ["PRE_MARKET", "POST_MARKET", "OVERNIGHT", "WEEKEND"]:
+                # 扩展时段只看“最近一次正规盘收盘后”的纯变动，绝不叠加前一日白天涨幅（24h XAUUSD 现货除外）
                 if ext_price > 0:
                     effective_pct = ext_pct
                     overnight_pct = ext_pct
@@ -5012,8 +5161,8 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
                         session_tag = "休市"
             effective_pct = pct_change
             overnight_pct = 0.0
-            if session_code in ["PRE_MARKET", "POST_MARKET", "OVERNIGHT", "WEEKEND"]:
-                # 扩展时段只看“最近一次正规盘收盘后”的纯变动，绝不叠加前一日白天涨幅
+            if ticker != "XAUUSD" and session_code in ["PRE_MARKET", "POST_MARKET", "OVERNIGHT", "WEEKEND"]:
+                # 扩展时段只看“最近一次正规盘收盘后”的纯变动，绝不叠加前一日白天涨幅（24h XAUUSD 现货除外）
                 if ext_price > 0:
                     effective_pct = ext_pct
                     overnight_pct = ext_pct
@@ -5140,14 +5289,16 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
                 **options_map.get(ticker, {})
             })
         else:
-            # yfinance 历史不足 20 日或次新上市/暂时返回空数据时，优雅生成安全底模确保不中断不丢失
+            # yfinance 历史不足 20 日或次新上市/首日 IPO 暂未开盘时，优雅生成安全底模确保不中断不丢失
             df_short = history_dict.get(ticker)
             intra_fb = intraday_map.get(ticker, {})
             rq = realtime_quotes.get(ticker, {})
+            ipo_price = float(meta.get("ipo_price", 0.0) or 0.0)
             last = 0.0
             change = 0.0
             pct_change = 0.0
             is_realtime = False
+            is_ipo_pending = False
             if rq and rq.get("last", 0) > 0:
                 last = float(rq["last"])
                 change = float(rq.get("change", 0.0) or 0.0)
@@ -5166,6 +5317,13 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
             elif intra_fb.get("rth_close", 0) > 0:
                 last = float(intra_fb["rth_close"])
                 is_realtime = True
+            elif ipo_price > 0:
+                last = ipo_price
+                is_ipo_pending = True
+
+            if last > 0 and ipo_price > 0 and (df_short is None or len(df_short) < 2) and not is_ipo_pending and change == 0.0 and pct_change == 0.0:
+                change = round(last - ipo_price, 2)
+                pct_change = round((change / ipo_price) * 100.0, 2)
 
             if last > 0:
                 ext_price = float(intra_fb.get("ext_price", 0.0) or 0.0)
@@ -5180,6 +5338,27 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
                 fib_low = float(df_short["Low"].min()) if (df_short is not None and not df_short.empty) else last * 0.92
                 fib_high = float(df_short["High"].max()) if (df_short is not None and not df_short.empty) else last * 0.98
                 eval_res = evaluate_stock_signal(ticker, active_price, ma50, bias, rsi, vol_ratio, fib_low, fib_high, meta, atr=atr, weather_info=weather_info, macro_data=macro_data, ema20=ema20, high_bias_recently=False)
+                is_ipo_stage = is_ipo_pending or (ipo_price > 0 and (df_short is None or len(df_short) < 5))
+                if is_ipo_stage:
+                    eval_res.update({
+                        "signal": f"🆕 IPO待开盘 (${ipo_price:.2f})" if is_ipo_pending else f"🆕 IPO首日观察 (${ipo_price:.2f})",
+                        "pit_status": "🆕 IPO发行期 · 待积累K线",
+                        "is_pit": False,
+                        "is_stop": False,
+                        "is_take_profit": False,
+                        "is_deep_pullback": False,
+                        "is_crash_halt": False,
+                        "is_cooling_halt": False,
+                        "dist_to_pit": 999.0,
+                        "optimal_limit": round(ipo_price, 2),
+                        "limit_note": f"IPO 发行参考价 ${ipo_price:.2f}（前5日仅实时盯盘）",
+                        "intraday_entry_ready": False,
+                        "intraday_status_text": "🆕 IPO价格发现期 (待积累5m/日线)",
+                        "intraday_reason": f"新股 IPO 发行参考价 ${ipo_price:.2f}。上市前 5 个交易日缺历史均线与斐波那契支撑，雷达实时追踪成交报价，暂不触发量化买点或破位警报。",
+                        "entry_stop_loss": 0.0,
+                        "is_ipo_pending": is_ipo_pending,
+                        "ipo_price": ipo_price,
+                    })
                 stocks_list.append({
                     "ticker": ticker,
                     "name": meta["name"],
@@ -5196,7 +5375,7 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
                     "active_price": active_price,
                     "ext_price": ext_price,
                     "ext_pct": ext_pct,
-                    "effective_pct": ext_pct if ext_price > 0 else (0.0 if session_code in ["PRE_MARKET", "POST_MARKET", "OVERNIGHT", "WEEKEND"] else pct_change),
+                    "effective_pct": ext_pct if ext_price > 0 else (0.0 if (not is_ipo_stage and session_code in ["PRE_MARKET", "POST_MARKET", "OVERNIGHT", "WEEKEND"]) else pct_change),
                     "ma50": ma50,
                     "ema20": ema20,
                     "bias": bias,
@@ -5206,7 +5385,10 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
                     "fib_low": fib_low,
                     "fib_high": fib_high,
                     "is_realtime": is_realtime,
-                    **eval_res
+                    "is_ipo_pending": is_ipo_pending,
+                    "ipo_price": ipo_price,
+                    **eval_res,
+                    **options_map.get(ticker, {})
                 })
 
     # 按距离黄金坑升序排序

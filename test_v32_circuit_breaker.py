@@ -1022,6 +1022,84 @@ class TestV32CircuitBreaker(unittest.TestCase):
         )
         self.assertIn("⚡期权多头共振", res_bull["intraday_reason"])
 
+    def test_xauusd_spot_waterfall_and_basis_scaling(self):
+        """Verify XAUUSD TradingView -> Swissquote waterfall and GC=F spot basis normalization."""
+        import io as _io
+        import json as _json
+        import unittest.mock as _mock
+        import pandas as _pd
+        import ml_predictor_5y
+        import integrated_market_radar as imr
+
+        class _FakeResp:
+            def __init__(self, payload):
+                self._b = _json.dumps(payload).encode("utf-8")
+            def read(self):
+                return self._b
+            def __enter__(self):
+                return self
+            def __exit__(self, *args):
+                return False
+
+        # 1. TradingView fails, Swissquote succeeds cleanly
+        def _fake_urlopen(req, timeout=6):
+            url = req.full_url if hasattr(req, "full_url") else str(req)
+            if "scanner.tradingview.com" in url:
+                raise TimeoutError("tv timeout")
+            if "swissquote.com" in url:
+                return _FakeResp([{"spreadProfilePrices": [{"bid": 3727.10, "ask": 3727.90}]}])
+            raise AssertionError(f"Unexpected fallback call to {url}")
+
+        with _mock.patch("urllib.request.urlopen", side_effect=_fake_urlopen):
+            q = ml_predictor_5y.fetch_xauusd_spot_quote()
+        self.assertEqual(q.get("source"), "swissquote")
+        self.assertAlmostEqual(q.get("last"), 3727.50, places=2)
+
+        # 2. _apply_xauusd_spot_basis aligns GC=F 1d/5m prices to spot dollars and computes pct vs prev close
+        hist_df = _pd.DataFrame({
+            "Open": [3720.0, 3728.0],
+            "High": [3735.0, 3762.0],
+            "Low": [3715.0, 3697.0],
+            "Close": [3728.0, 3732.0],
+            "Volume": [1000, 1200],
+        })
+        h_dict = {"XAUUSD": hist_df}
+        intra_m = {"XAUUSD": {"rth_close": 3732.0, "vwap": 3735.0, "ext_price": 3732.0}}
+        rt_q = {"XAUUSD": dict(q)}
+        imr._apply_xauusd_spot_basis(h_dict, intra_m, rt_q)
+        self.assertAlmostEqual(float(h_dict["XAUUSD"]["Close"].iloc[-1]), 3727.50, delta=0.05)
+        self.assertAlmostEqual(intra_m["XAUUSD"]["rth_close"], 3727.50, places=2)
+        self.assertEqual(intra_m["XAUUSD"]["ext_price"], 0.0)
+        self.assertAlmostEqual(rt_q["XAUUSD"]["pct_change"], round((3727.50 - 3723.50) / 3723.50 * 100.0, 2), delta=0.05)
+
+        # Keep GLD untouched in MONITORED_TARGETS
+        self.assertIn("GLD", imr.MONITORED_TARGETS["ETFS"])
+        self.assertIn("XAUUSD", imr.MONITORED_TARGETS["STOCKS"])
+        self.assertIn("ANT", imr.MONITORED_TARGETS["STOCKS"])
+
+    def test_ant_ipo_day0_time_cycle_placeholder(self):
+        """Verify ANT Day-0 IPO (<5 bars) emits valid timeCycleData placeholder anchored to $83 or live quote."""
+        import pandas as _pd
+        from datetime import datetime as _dt
+        import ml_predictor_5y
+        base_panel = _pd.DataFrame({
+            "Date": [_pd.Timestamp("2026-11-18")],
+            "Ticker": ["QQQ"],
+            "Close": [500.0],
+        })
+        out_default = ml_predictor_5y.generate_time_cycle_projections(
+            base_panel, target_tickers=["ANT"], forecast_days=15, as_of=_dt(2026, 11, 19, 8, 30)
+        )
+        self.assertIn("ANT", out_default)
+        self.assertEqual(out_default["ANT"]["current_price"], 83.0)
+        self.assertEqual(len(out_default["ANT"]["projection"]), 15)
+        out_live = ml_predictor_5y.generate_time_cycle_projections(
+            base_panel, target_tickers=["ANT"], forecast_days=15,
+            scenario_map_by_ticker={"ANT": {"latest_price": 112.50}},
+            as_of=_dt(2026, 11, 19, 10, 30),
+        )
+        self.assertEqual(out_live["ANT"]["current_price"], 112.50)
+
 
 
 
