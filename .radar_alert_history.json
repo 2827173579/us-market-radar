@@ -11,7 +11,7 @@
     },
     "NVDA": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1794995810.1942265
+      "last_notified_at": 1795050172.4137037
     },
     "META": {
       "state": "NORMAL",
@@ -46,24 +46,24 @@
       "last_notified_at": 0.0
     },
     "TSM": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "STOP_LOSS",
+      "last_notified_at": 1795050172.4137037
     },
     "FLY": {
       "state": "NORMAL",
       "last_notified_at": 0.0
     },
     "LLY": {
-      "state": "TAKE_PROFIT",
-      "last_notified_at": 1795046711.3251274
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "MCD": {
       "state": "NORMAL",
       "last_notified_at": 0.0
     },
     "V": {
-      "state": "TAKE_PROFIT",
-      "last_notified_at": 1795050073.0476675
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     }
   },
   "position_peaks": {
