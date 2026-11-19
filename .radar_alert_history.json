@@ -14,12 +14,12 @@
       "last_notified_at": 1795050172.4137037
     },
     "META": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1795097650.056346
-    },
-    "MRNA": {
       "state": "NORMAL",
       "last_notified_at": 0.0
+    },
+    "MRNA": {
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1795097862.3660421
     },
     "CRWV": {
       "state": "STOP_LOSS",
@@ -34,8 +34,8 @@
       "last_notified_at": 0.0
     },
     "QCOM": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1795097756.1985195
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "LUNR": {
       "state": "NORMAL",
@@ -84,6 +84,10 @@
     "DIA": {
       "state": "WATCHLIST_ENTRY_READY",
       "last_notified_at": 1795097368.5048783
+    },
+    "IWM": {
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1795097862.3660421
     }
   },
   "position_peaks": {
