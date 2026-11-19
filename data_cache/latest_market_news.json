@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795055787.002,
-  "updated_at_et": "11-18 21:36 ET",
-  "updated_at_kst": "11:36 KST",
+  "updated_at_ts": 1795055891.475,
+  "updated_at_et": "11-18 21:38 ET",
+  "updated_at_kst": "11:38 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -908,6 +908,20 @@
     ],
     "NVDA": [
       {
+        "title": "CEO Scandals Typically Cost About 1%. Here’s Why It’s Different for Nvidia",
+        "url": "https://www.tikr.com/blog/ceo-scandals-typically-cost-about-1-heres-why-its-different-for-nvidia?ref=yahoofinance&tlnk=yf-261118-hwcfj8vh&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 21:13 ET",
+        "pub_ts": 1795054398.0
+      },
+      {
+        "title": "‘Nothing Wrong With NVDA Or AI Trade’: Kenny Polcari Says Fed’s Inflation Concerns Are The Bigger Market Risk",
+        "url": "https://stocktwits.com/news-articles/markets/equity/nothing-wrong-with-nvda-or-ai-trade-kenny-polcari-says-fed-s-inflation-concerns-are-the-bigger-market-risk/cNbLtYVR9ia?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 21:10 ET",
+        "pub_ts": 1795054244.0
+      },
+      {
         "title": "Trump Hails ‘Great’ Ties With Xi, Downplays Nvidia Spy Scandal",
         "url": "https://finance.yahoo.com/economy/policy/articles/trump-hails-great-ties-xi-014442789.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -922,25 +936,11 @@
         "pub_ts": 1795052341.0
       },
       {
-        "title": "Hot demand lifts Anthropic IPO price to $83 a share, breaks SpaceX's record raise",
-        "url": "https://finance.yahoo.com/technology/ai/articles/anthropic-set-price-ipo-key-030309911.html?.tsrc=rss",
+        "title": "Nvidia Moves Up Raises and Stock Grants After Jensen Huang Exit",
+        "url": "https://beincrypto.com/nvidia-pay-raises-jensen-huang-exit/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-18 20:02 ET",
-        "pub_ts": 1795050125.0
-      },
-      {
-        "title": "Why Nvidia and ASML still fit an underweight tech strategy",
-        "url": "https://www.thestreet.com/investing/why-nvidia-and-asml-still-fit-an-underweight-tech-strategy?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 19:44 ET",
-        "pub_ts": 1795049094.0
-      },
-      {
-        "title": "Dow Jones Futures Rise; Anthropic IPO Prices High, Palo Alto And Everpure Rally On Earnings",
-        "url": "https://finance.yahoo.com/m/107e5a2c-4fba-3df3-b2fd-5d1160e65516/dow-jones-futures-rise%3B.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 21:08 ET",
-        "pub_ts": 1795054097.0
+        "time": "11-18 20:11 ET",
+        "pub_ts": 1795050695.0
       }
     ],
     "AMD": [
@@ -1093,6 +1093,13 @@
     ],
     "AMAT": [
       {
+        "title": "Earnings Beat Might Change The Case For Investing In Applied Materials Stock (AMAT)",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/earnings-beat-might-change-case-021246126.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 21:12 ET",
+        "pub_ts": 1795054366.0
+      },
+      {
         "title": "Bernstein Spots 4 Ways to Play the $279 Billion Chip Tool Boom",
         "url": "https://finance.yahoo.com/technology/articles/bernstein-spots-4-ways-play-173014503.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1119,13 +1126,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 08:55 ET",
         "pub_ts": 1795010103.0
-      },
-      {
-        "title": "Got $500? Buy This Top Artificial Intelligence (AI) Chip Stock Following the Latest Sell-Off",
-        "url": "https://www.fool.com/investing/2026/11/18/got-usd500-buy-this-top-artificial-intelligence-ai-chip-stock-following-the-latest-sell-off/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 06:56 ET",
-        "pub_ts": 1795002962.0
       }
     ],
     "META": [
@@ -2610,11 +2610,25 @@
     ],
     "BTC-USD": [
       {
+        "title": "Bitcoin Dominance Is Falling, But the Money Isn't Going to Altcoins",
+        "url": "https://beincrypto.com/bitcoin-dominance-falls-usdt-dominance-altcoins/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 20:45 ET",
+        "pub_ts": 1795052700.0
+      },
+      {
         "title": "AI Lease Deals Could Recast The Case For Riot Platforms Stock",
         "url": "https://finance.yahoo.com/markets/stocks/articles/ai-lease-deals-could-recast-002128228.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-18 19:21 ET",
         "pub_ts": 1795047688.0
+      },
+      {
+        "title": "What Is Bitcoin's Power Law and Why Are Analysts Concerned About $62K Support?",
+        "url": "https://beincrypto.com/bitcoins-power-law-analysts-62k-support/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 19:02 ET",
+        "pub_ts": 1795046520.0
       },
       {
         "title": "Analyst warns Anthropic IPO is pulling money out of Bitcoin",
@@ -2629,20 +2643,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 17:45 ET",
         "pub_ts": 1795041902.0
-      },
-      {
-        "title": "Anchorage, Kalshi bet on crypto collateral for trading",
-        "url": "https://www.americanbanker.com/news/anchorage-kalshi-bet-on-crypto-collateral-for-trading?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 17:09 ET",
-        "pub_ts": 1795039795.0
-      },
-      {
-        "title": "3 Reasons to Buy Bitcoin Before 2027 and 2 Reasons to Wait",
-        "url": "https://247wallst.com/investing/cryptocurrency/2026/11/18/3-reasons-to-buy-bitcoin-before-2027-and-2-reasons-to-wait/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 16:43 ET",
-        "pub_ts": 1795038186.0
       }
     ],
     "CRWD": [
@@ -3211,21 +3211,21 @@
     "SMH": 1795055787.0019376,
     "IWM": 1795055787.0019376,
     "IGV": 1795055787.0019376,
-    "TLT": 1795054388.903495,
-    "GLD": 1795054388.903495,
+    "TLT": 1795055891.4745886,
+    "GLD": 1795055891.4745886,
     "SQQQ": 1795055787.0019376,
-    "TSM": 1795054388.903495,
-    "VIXY": 1795054388.903495,
-    "SOXS": 1795054388.903495,
-    "NVDA": 1795054388.903495,
-    "AMD": 1795054388.903495,
-    "ASML": 1795054388.903495,
-    "QCOM": 1795054388.903495,
-    "AVGO": 1795054388.903495,
-    "AMAT": 1795054388.903495,
+    "TSM": 1795055891.4745886,
+    "VIXY": 1795055891.4745886,
+    "SOXS": 1795055891.4745886,
+    "NVDA": 1795055891.4745886,
+    "AMD": 1795055891.4745886,
+    "ASML": 1795055891.4745886,
+    "QCOM": 1795055891.4745886,
+    "AVGO": 1795055891.4745886,
+    "AMAT": 1795055891.4745886,
     "META": 1795054494.3448682,
     "GOOGL": 1795054494.3448682,
-    "MSFT": 1795054388.903495,
+    "MSFT": 1795055891.4745886,
     "AAPL": 1795054494.3448682,
     "PLTR": 1795054494.3448682,
     "NOW": 1795054494.3448682,
@@ -3252,18 +3252,18 @@
     "FLY": 1795054599.3121686,
     "INTC": 1795055787.0019376,
     "VRT": 1795055787.0019376,
-    "HPE": 1795054388.903495,
-    "DELL": 1795054388.903495,
-    "OKLO": 1795054388.903495,
+    "HPE": 1795055891.4745886,
+    "DELL": 1795055891.4745886,
+    "OKLO": 1795055891.4745886,
     "CEG": 1795055787.0019376,
     "FPS": 1795055787.0019376,
-    "MU": 1795054388.903495,
-    "SKHY": 1795054388.903495,
-    "WDC": 1795054388.903495,
-    "STX": 1795054388.903495,
-    "MSTR": 1795054388.903495,
-    "SNDK": 1795054388.903495,
-    "BTC-USD": 1795054388.903495,
+    "MU": 1795055891.4745886,
+    "SKHY": 1795055891.4745886,
+    "WDC": 1795055891.4745886,
+    "STX": 1795055891.4745886,
+    "MSTR": 1795055891.4745886,
+    "SNDK": 1795055891.4745886,
+    "BTC-USD": 1795055891.4745886,
     "CRWD": 1795054388.903495,
     "ORCL": 1795054494.3448682,
     "COIN": 1795054494.3448682,
