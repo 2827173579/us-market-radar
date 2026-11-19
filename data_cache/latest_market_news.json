@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795132159.469,
-  "updated_at_et": "11-19 18:49 ET",
-  "updated_at_kst": "08:49 KST",
+  "updated_at_ts": 1795132262.14,
+  "updated_at_et": "11-19 18:51 ET",
+  "updated_at_kst": "08:51 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -3199,6 +3199,13 @@
     ],
     "ANT": [
       {
+        "title": "Micron: A 40% Drop With A $150B Backlog (Rating Upgrade)",
+        "url": "https://finnhub.io/api/news?id=29f42de74d1fa95e02ebd228be71062ea86ea8ced340e867dddfd2bff526b911",
+        "source": "SeekingAlpha",
+        "time": "11-19 13:19 ET",
+        "pub_ts": 1795112360.0
+      },
+      {
         "title": "Comfort Systems: Cheaper With Greater EPS Growth (Upgrade)",
         "url": "https://finnhub.io/api/news?id=074e6df1055c4ec2db5eb15dd9e5496f978f92fba7924f43916e1990f5b185b0",
         "source": "SeekingAlpha",
@@ -3225,13 +3232,6 @@
         "source": "SeekingAlpha",
         "time": "11-19 08:42 ET",
         "pub_ts": 1795095772.0
-      },
-      {
-        "title": "Has Nvidia Peaked? TheTechTalk Podcast Episode 3",
-        "url": "https://finnhub.io/api/news?id=b46d6cec60156bd251481b1e5d378f6250d6ae1d454537554eead7ce34ac2038",
-        "source": "SeekingAlpha",
-        "time": "11-19 08:31 ET",
-        "pub_ts": 1795095111.0
       }
     ],
     "XAUUSD": [
@@ -3308,22 +3308,22 @@
     "SNDK": 1795132056.898251,
     "BTC-USD": 1795132056.898251,
     "CRWD": 1795132159.4686317,
-    "ORCL": 1795130676.0651953,
-    "COIN": 1795130676.0651953,
-    "LLY": 1795130676.0651953,
-    "MRNA": 1795130676.0651953,
-    "NKE": 1795130676.0651953,
-    "MCD": 1795130676.0651953,
-    "PEP": 1795130676.0651953,
-    "XOM": 1795130676.0651953,
-    "JPM": 1795130676.0651953,
-    "WMT": 1795130676.0651953,
-    "V": 1795130676.0651953,
-    "CAT": 1795130676.0651953,
+    "ORCL": 1795132262.139766,
+    "COIN": 1795132262.139766,
+    "LLY": 1795132262.139766,
+    "MRNA": 1795132262.139766,
+    "NKE": 1795132262.139766,
+    "MCD": 1795132262.139766,
+    "PEP": 1795132262.139766,
+    "XOM": 1795132262.139766,
+    "JPM": 1795132262.139766,
+    "WMT": 1795132262.139766,
+    "V": 1795132262.139766,
+    "CAT": 1795132262.139766,
     "FN": 1795132159.4686317,
     "GLW": 1795132159.4686317,
-    "ANT": 1795130676.0651953,
-    "XAUUSD": 1795130676.0651953
+    "ANT": 1795132262.139766,
+    "XAUUSD": 1795132262.139766
   },
   "calendar_banner": {
     "level": "idle_with_flash",
