@@ -1233,6 +1233,39 @@ class TestV32CircuitBreaker(unittest.TestCase):
         self.assertGreaterEqual(len(out["SNDK"]), 200, f"Expected SNDK backfilled >=200 bars from parquet, got {len(out['SNDK'])}")
         self.assertAlmostEqual(float(out["SNDK"]["Close"].iloc[-1]), 776.22, places=2)
 
+    def test_all_stocks_emit_5m_entry_without_starred_watchlist(self):
+        """Even when target_watchlist is empty, any stock/ETF with intraday_entry_ready=True emits 5m_entry notification."""
+        import unittest.mock as _mock
+        import integrated_market_radar as imr
+
+        sample_stocks = [
+            {
+                "ticker": "XAUUSD",
+                "name": "伦敦金现货",
+                "cat": "大宗商品",
+                "last": 3730.0,
+                "active_price": 3730.0,
+                "pct_change": 0.25,
+                "intraday_entry_ready": True,
+                "is_stop": False,
+                "is_pit": True,
+                "is_take_profit": False,
+                "optimal_limit": 3728.0,
+                "entry_stop_loss": 3690.0,
+            }
+        ]
+        with _mock.patch("integrated_market_radar.load_target_watchlist", return_value=[]), \
+             _mock.patch("integrated_market_radar.load_terminal_notifications", return_value=[]), \
+             _mock.patch("integrated_market_radar.save_terminal_notifications"):
+            notifs = imr.generate_and_sync_notifications(
+                macro_data={"SPY": {"name": "标普500", "cat": "宽基", "last": 580.0, "pct_change": 0.1}},
+                stocks_data=sample_stocks,
+                weather_info={"weather": "阴天防守", "desc": "test", "tactics": "test"},
+                now_str="2026-11-19 09:35:00",
+            )
+        five_m = [n for n in notifs if n.get("category") == "5m_entry" and n.get("ticker") == "XAUUSD"]
+        self.assertEqual(len(five_m), 1, f"Expected XAUUSD 5m_entry notification without star, got {notifs}")
+
 
 
 

@@ -2544,9 +2544,9 @@ def dispatch_wechat_radar_alerts(macro_data, stocks_data, weather_info, now_str)
     intc_alerts = []
     pending_target_updates = {}
 
-    # 1. 扫描个股及已加入自选盯盘或实盘持仓的 ETF (如 SOXX / SOXL / QQQ) 重大异动
-    starred_etfs = [{"ticker": t, **m} for t, m in macro_data.items() if t in target_watchlist or m.get("shares", 0) > 0]
-    for s in list(stocks_data) + starred_etfs:
+    # 1. 扫描全池个股及宏观/行业 ETF 重大异动 (全池均开放 5m 日内买点推送，不再限制自选盯盘)
+    all_etfs_list = [{"ticker": t, **m} for t, m in macro_data.items()]
+    for s in list(stocks_data) + all_etfs_list:
         ticker = s["ticker"]
         name = s["name"]
         cat = s["cat"]
@@ -2583,11 +2583,11 @@ def dispatch_wechat_radar_alerts(macro_data, stocks_data, weather_info, now_str)
         is_stop = s.get("is_stop", False)
         is_etf = ticker in macro_data
 
-        # 当前核心技术状态 (自选盯盘+5m买点共振、黄金坑、技术止损、冲顶止盈；低波观察池不触发高弹性买点弹窗)
+        # 当前核心技术状态 (全池 5m 买点共振、黄金坑、技术止损、冲顶止盈；低波观察池不触发高弹性买点弹窗)
         current_state = "NORMAL"
         if is_stop and not is_etf and not is_obs_only:
             current_state = "STOP_LOSS"
-        elif is_watched and intraday_ready and not is_stop and not is_obs_only:
+        elif intraday_ready and not is_stop and not is_obs_only:
             current_state = "WATCHLIST_ENTRY_READY"
         elif is_pit and not is_etf and not s.get("is_crash_halt") and not s.get("is_cooling_halt"):
             current_state = "GOLDEN_PIT"
@@ -2844,7 +2844,7 @@ def dispatch_wechat_radar_alerts(macro_data, stocks_data, weather_info, now_str)
     ]
 
     if watchlist_entry_alerts:
-        md.append("### 🎯 ⭐自选盯盘 · 5m买点触发")
+        md.append("### 🎯 5m日内量化买点触发")
         for a in watchlist_entry_alerts:
             ext_str = f" 🌙{a['session_tag']}:`${a['ext_price']:.2f}`" if a.get("session_tag") and a.get("ext_price") else ""
             e_str = f" ｜ 📅{a['earnings_tag']}" if a.get("earnings_tag") else ""
@@ -2984,8 +2984,8 @@ def generate_and_sync_notifications(macro_data, stocks_data, weather_info, now_s
     except Exception:
         pass
 
-    starred_etfs = [{"ticker": t, **m} for t, m in macro_data.items() if t in target_watchlist or m.get("shares", 0) > 0]
-    all_targets = list(stocks_data) + starred_etfs
+    all_etfs_list = [{"ticker": t, **m} for t, m in macro_data.items()]
+    all_targets = list(stocks_data) + all_etfs_list
 
     for s in all_targets:
         ticker = s["ticker"]
@@ -2994,7 +2994,6 @@ def generate_and_sync_notifications(macro_data, stocks_data, weather_info, now_s
         last = s["last"]
         active_price = s.get("active_price", last)
         pct_change = s.get("pct_change", 0.0)
-        is_watched = ticker in target_watchlist
         is_obs_only = ticker in {"JPM", "XOM", "WMT", "CAT", "NASA"}
         intraday_ready = s.get("intraday_entry_ready", False)
         is_pit = s.get("is_pit", False) and (not is_obs_only)
@@ -3002,8 +3001,8 @@ def generate_and_sync_notifications(macro_data, stocks_data, weather_info, now_s
         is_tp = s.get("is_take_profit", False) and (not is_obs_only)
         shares = s.get("shares", 0.0)
 
-        # 1. 🎯 5m 买点通知 (与微信 WATCHLIST_ENTRY_READY 同步，低波传统/行业基准观察池不弹窗)
-        if is_watched and intraday_ready and not is_stop and not is_obs_only:
+        # 1. 🎯 5m 买点通知 (全池开放推送，与 Discord WATCHLIST_ENTRY_READY 同步，低波传统/行业基准观察池不弹窗)
+        if intraday_ready and not is_stop and not is_obs_only:
             new_notifs.append({
                 "id": f"5M_{ticker}_{date_tag}",
                 "time": now_str[5:16],

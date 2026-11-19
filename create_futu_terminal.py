@@ -1816,9 +1816,6 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 <span class="cur-change" id="curChange" style="color: #9ca3af; background: rgba(148,163,184,0.12);">--</span>
                 <span id="curExtBadge" style="display: none; font-size: 11px; font-weight: 700; padding: 2px 7px; border-radius: 4px; background: rgba(147, 197, 253, 0.12); color: #93c5fd; border: 1px solid rgba(147, 197, 253, 0.28); margin-left: 4px;">🌙 盘后 --</span>
                 <span id="curEarningsBadge" style="display: none; font-size: 11px; font-weight: 700; padding: 2px 7px; border-radius: 4px; background: rgba(255, 167, 38, 0.15); color: #ffa726; border: 1px solid rgba(255, 167, 38, 0.35); margin-left: 4px;">📅 财报 --</span>
-                <button id="starBtn" onclick="toggleCurrentStar()" title="加入/取消日内建仓盯盘" style="background: rgba(255,215,0,0.15); border: 1px solid rgba(255,215,0,0.35); color: #ffd700; border-radius: 4px; padding: 2px 8px; font-size: 11px; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 4px; transition: all 0.2s; margin-left: 8px;">
-                    <span id="starIcon">⭐</span> <span id="starBtnText">盯盘中</span>
-                </button>
             </div>
         </div>
 
@@ -1895,7 +1892,6 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 <div class="w-tab active" data-filter="all">全部 ({len(stocks_data) + len(macro_data)})</div>
                 <div class="w-tab" data-filter="ai_top" style="color: #d8b4fe; font-weight: 800; background: rgba(188, 140, 255, 0.14); border: 1px solid rgba(188, 140, 255, 0.35);">⚡ AI高胜率 ({len(stocks_data) + len(macro_data)})</div>
                 <div class="w-tab" data-filter="ai_short" style="color: #ff5252; font-weight: 800; background: rgba(248, 81, 73, 0.14); border: 1px solid rgba(248, 81, 73, 0.35);">🩸 AI做空榜 (Top 5)</div>
-                <div class="w-tab" data-filter="starred" style="color: #ffd700; font-weight: 700; background: rgba(255, 215, 0, 0.08);">⭐ 建仓盯盘 (<span id="starredCount">0</span>)</div>
                 <div class="w-tab" data-filter="pit" style="color: #00e676; font-weight: 700; background: rgba(0, 230, 118, 0.08);">🟢 黄金坑</div>
                 <div class="w-tab" data-filter="take_profit" style="color: #d946ef; font-weight: 700; background: rgba(217, 70, 239, 0.08);">🟣 止盈减仓</div>
                 <div class="w-tab" data-filter="stop" style="color: #ff5252; font-weight: 700; background: rgba(255, 82, 82, 0.08);">🔴 破位/回踩</div>
@@ -2072,7 +2068,6 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                         <span>🎯 日内精准建仓挂单指南</span>
                     </span>
                     <div style="display: flex; align-items: center; gap: 6px;">
-                        <span id="pStarStatusBadge" style="font-size: 11px; padding: 2px 7px; border-radius: 4px; background: rgba(255,215,0,0.15); color: #ffd700; font-weight: 700;">--</span>
                         <span class="card-toggle-btn" onclick="toggleCard(this)">▲</span>
                     </div>
                 </div>
@@ -2507,21 +2502,6 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
         // 动态计算本地/局域网 API 服务地址，支持手机端 Wi-Fi 直连与电脑端 file:// 无缝自适应
         const API_BASE = window.location.protocol.startsWith("http") ? window.location.origin : "http://127.0.0.1:8765";
 
-        // 启动时主动向 8765 服务同步最新自选盯盘列表、用户持仓与预警通知
-        fetch(`${{API_BASE}}/api/watchlist`)
-            .then(r => r.json())
-            .then(res => {{
-                if (res && Array.isArray(res.watchlist)) {{
-                    targetWatchlist = res.watchlist;
-                    try {{
-                        localStorage.setItem("targetWatchlist", JSON.stringify(targetWatchlist));
-                    }} catch(e) {{}}
-                    updateStarUI();
-                    renderWatchlist(currentFilter);
-                }}
-            }})
-            .catch(e => {{}});
-
         function syncPortfolioToRuntimeData(port) {{
             if (!port || typeof port !== "object") return;
             // 1. 先清零所有标的的旧持仓股数，确保删除的持仓彻底移除
@@ -2711,77 +2691,9 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             }}
         }}
 
-        // 盯盘状态 UI 刷新函数
-        function updateStarUI() {{
-            const isStarred = targetWatchlist.includes(currentTicker);
-            const starBtn = document.getElementById("starBtn");
-            const starIcon = document.getElementById("starIcon");
-            const starText = document.getElementById("starBtnText");
-            const pStarBadge = document.getElementById("pStarStatusBadge");
-            const countEl = document.getElementById("starredCount");
-            if (countEl) countEl.innerText = targetWatchlist.length;
-            
-            if (starBtn) {{
-                if (isStarred) {{
-                    starBtn.style.background = "rgba(255,215,0,0.22)";
-                    starBtn.style.borderColor = "#ffd700";
-                    starBtn.style.color = "#ffd700";
-                    if (starIcon) starIcon.innerText = "⭐";
-                    if (starText) starText.innerText = "已设盯盘";
-                }} else {{
-                    starBtn.style.background = "rgba(255,255,255,0.06)";
-                    starBtn.style.borderColor = "rgba(255,255,255,0.18)";
-                    starBtn.style.color = "#9ca3af";
-                    if (starIcon) starIcon.innerText = "☆";
-                    if (starText) starText.innerText = "设为盯盘";
-                }}
-            }}
-
-            if (pStarBadge) {{
-                if (isStarred) {{
-                    pStarBadge.innerText = "⭐ 已加入日内盯盘";
-                    pStarBadge.style.background = "rgba(255,215,0,0.18)";
-                    pStarBadge.style.color = "#ffd700";
-                    pStarBadge.style.border = "1px solid rgba(255,215,0,0.3)";
-                }} else {{
-                    pStarBadge.innerText = "☆ 未加入盯盘 (点击上方⭐添加)";
-                    pStarBadge.style.background = "rgba(255,255,255,0.06)";
-                    pStarBadge.style.color = "#9ca3af";
-                    pStarBadge.style.border = "1px solid rgba(255,255,255,0.1)";
-                }}
-            }}
-        }}
-
-        // 切换当前选中股票的盯盘标记
-        function toggleCurrentStar() {{
-            const idx = targetWatchlist.indexOf(currentTicker);
-            if (idx >= 0) {{
-                targetWatchlist.splice(idx, 1);
-            }} else {{
-                targetWatchlist.push(currentTicker);
-            }}
-            try {{
-                localStorage.setItem("targetWatchlist", JSON.stringify(targetWatchlist));
-            }} catch(e) {{}}
-
-            // 异步无阻塞同步到本地后台守护 API (端口 8765)
-            fetch(`${{API_BASE}}/api/toggle_star?ticker=${{currentTicker}}`)
-                .then(r => r.json())
-                .then(res => {{
-                    if (res && Array.isArray(res.watchlist)) {{
-                        targetWatchlist = res.watchlist;
-                        try {{
-                            localStorage.setItem("targetWatchlist", JSON.stringify(targetWatchlist));
-                        }} catch(e) {{}}
-                        updateStarUI();
-                        renderWatchlist(currentFilter);
-                    }}
-                }})
-                .catch(e => {{}});
-
-            updateStarUI();
-            renderWatchlist(currentFilter);
-        }}
+        // 盯盘状态 UI 刷新函数 (已移除手动星标盯盘限制，全池默认开启 5m 买点监测)
+        function updateStarUI() {{}}
+        function toggleCurrentStar() {{}}
 
         // 渲染左侧自选股列表
         function renderWatchlist(filter = currentFilter) {{
@@ -2952,8 +2864,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                         <div class="s-ticker">
                             ${{item.ticker}}
                             
-                            ${{isStarred ? '<span style="color:#ffd700; font-size:10px; margin-left:3px;" title="已加入建仓盯盘">⭐</span>' : ''}}
-                            ${{isEntryReady && isStarred ? '<span style="background:rgba(0,230,118,0.2); color:#00e676; border:1px solid rgba(0,230,118,0.5); border-radius:3px; padding:0 3px; font-size:9px; margin-left:3px;">🎯买点</span>' : ''}}
+                            ${{isEntryReady ? '<span style="background:rgba(0,230,118,0.2); color:#00e676; border:1px solid rgba(0,230,118,0.5); border-radius:3px; padding:0 3px; font-size:9px; margin-left:3px;">🎯买点</span>' : ''}}
                             ${{item.is_pit ? '<span style="color:#00e676; font-size:10px; margin-left:3px;">🟢坑</span>' : ''}}
                             ${{isAlphaLeader ? '<span style="color:#ffd700; font-size:9px; margin-left:2px;" title="20日相对大盘超额抗跌王">👑抗跌</span>' : ''}}
                             ${{isEarnRisk ? `<span style="color:#ffa726; font-size:9px; margin-left:2px;" title="${{item.earnings_tag}}">⚠️财报</span>` : ''}}
@@ -4462,6 +4373,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             let savedFilter = "all";
             try {{
                 savedFilter = localStorage.getItem("futu_watchlist_filter") || "all";
+                if (savedFilter === "starred") savedFilter = "all";
             }} catch(e) {{}}
             document.querySelectorAll(".w-tab").forEach(t => {{
                 t.classList.toggle("active", t.getAttribute("data-filter") === savedFilter);
