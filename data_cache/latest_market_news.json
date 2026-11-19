@@ -1,9 +1,24 @@
 {
-  "updated_at_ts": 1795122214.798,
-  "updated_at_et": "11-19 16:03 ET",
-  "updated_at_kst": "06:03 KST",
+  "updated_at_ts": 1795122313.35,
+  "updated_at_et": "11-19 16:05 ET",
+  "updated_at_kst": "06:05 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261120050259320800",
+      "title": "【美股收盘：三大股指跌超2% Anthropic首日收涨17%】 11月13日讯，美股周…",
+      "summary": "【美股收盘：三大股指跌超2% Anthropic首日收涨17%】 11月13日讯，美股周四收盘，道指初步收跌2.19%或1100点，标普500指数跌2.02%，纳指跌2.25%。英伟达(NVDA.O)跌3.3%，Anthropic(ANT.O)上市首日收涨17%，拼多多(PDD.O)涨11%，AMD(AMD.O)跌7.7%。纳斯达克中国金龙指数收跌1.86%，百度(BIDU.O)跌4%，网易(NTES.O)大跌11%。",
+      "keywords": [
+        "英伟达",
+        "纳斯达克",
+        "标普"
+      ],
+      "pub_ts": 1795122179.0,
+      "time_et": "11-19 16:02 ET",
+      "time_bj": "05:02 BJ",
+      "time_kst": "06:02 KST",
+      "time_display": "16:02 ET / 05:02 BJ"
+    },
     {
       "id": "20261120045538495800",
       "title": "【美联储古尔斯比：高通胀下所有选项均在考虑范围内 不排除大幅加息】 11月20日讯，芝加…",
@@ -326,19 +341,6 @@
       "time_bj": "19:55 BJ",
       "time_kst": "20:55 KST",
       "time_display": "06:55 ET / 19:55 BJ"
-    },
-    {
-      "id": "20261119194822855800",
-      "title": "欧洲央行酝酿收紧银行流动性，12月或迎年内第三次加息",
-      "summary": "受能源涨价影响，欧元区通胀飙至目标两倍。欧洲央行高官近期密集释放鹰派信号，该央行更酝酿上调准备金率收紧流动性。点击查看…",
-      "keywords": [
-        "加息"
-      ],
-      "pub_ts": 1795088902.0,
-      "time_et": "11-19 06:48 ET",
-      "time_bj": "19:48 BJ",
-      "time_kst": "20:48 KST",
-      "time_display": "06:48 ET / 19:48 BJ"
     }
   ],
   "ticker_news": {
@@ -899,6 +901,20 @@
     ],
     "NVDA": [
       {
+        "title": "Nvidia Up 8.9% After a Strong Anthropic IPO? That’s What Tilt’s New Investing Tool Modeled",
+        "url": "https://www.benzinga.com/markets/prediction-markets/26/11/63457684/anthropic-ipo-nvidia?utm_source=yahooFinance&utm_campaign=partner_feed&utm_medium=referral&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 15:44 ET",
+        "pub_ts": 1795121046.0
+      },
+      {
+        "title": "The unfolding Jensen Huang scandal: a timeline",
+        "url": "https://finance.yahoo.com/technology/ai/articles/nvidia-ceo-jensen-huang-affair-170419585.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 15:18 ET",
+        "pub_ts": 1795119529.0
+      },
+      {
         "title": "First Nvidia, Now AMD: A Short Seller Just Put Its China Business Under the Microscope",
         "url": "https://www.fool.com/investing/2026/11/19/first-nvidia-now-amd-a-short-seller-just-put-its-china-business-under-the-microscope/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -918,23 +934,23 @@
         "source": "Yahoo Finance",
         "time": "11-19 15:09 ET",
         "pub_ts": 1795118994.0
-      },
-      {
-        "title": "AMD Stock Drops After Short Report Says It Isn’t an Nvidia Replacement",
-        "url": "https://finance.yahoo.com/m/e2a6c3e8-8178-3df2-aef3-4d956c9037fe/amd-stock-drops-after-short.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 15:02 ET",
-        "pub_ts": 1795118520.0
-      },
-      {
-        "title": "Cathie Wood Says Nvidia’s Interim CEO Is “Not a Tech Expert.” Kevin O’Leary Disagrees. Who’s Right?",
-        "url": "https://www.tikr.com/blog/cathie-wood-says-nvidias-interim-ceo-is-not-a-tech-expert-kevin-oleary-disagrees-whos-right?ref=yahoofinance&tlnk=yf-261119-m83jmp3h&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 14:58 ET",
-        "pub_ts": 1795118329.0
       }
     ],
     "AMD": [
+      {
+        "title": "This Is Incredible News for AMD Stock Investors (Hint: It’s Bad News for Intel)",
+        "url": "https://www.fool.com/investing/2026/11/19/this-is-incredible-news-for-amd-stock-investors-hint-it-s-bad-news-for-intel/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 15:56 ET",
+        "pub_ts": 1795121762.0
+      },
+      {
+        "title": "Sector Update: Tech Stocks Decline Late Afternoon",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/sector-tech-stocks-decline-afternoon-204938610.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 15:49 ET",
+        "pub_ts": 1795121378.0
+      },
       {
         "title": "First Nvidia, Now AMD: A Short Seller Just Put Its China Business Under the Microscope",
         "url": "https://www.fool.com/investing/2026/11/19/first-nvidia-now-amd-a-short-seller-just-put-its-china-business-under-the-microscope/?.tsrc=rss",
@@ -955,20 +971,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 15:02 ET",
         "pub_ts": 1795118520.0
-      },
-      {
-        "title": "AMD Is Still Up 125% This Year. Did Today Just Mark the Top for AMD Stock?",
-        "url": "https://247wallst.com/investing/2026/11/19/amd-is-still-up-125-this-year-did-today-just-mark-the-top-for-amd-stock/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 14:02 ET",
-        "pub_ts": 1795114948.0
-      },
-      {
-        "title": "AMD Has a New Problem to Solve in Asia",
-        "url": "https://finance.yahoo.com/technology/ai/articles/amd-problem-solve-asia-184139858.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 13:41 ET",
-        "pub_ts": 1795113699.0
       }
     ],
     "ASML": [
@@ -1010,6 +1012,13 @@
     ],
     "QCOM": [
       {
+        "title": "Inside Brad Gerstner’s Portfolio: Every Move He Made in the Third Quarter",
+        "url": "https://www.tikr.com/blog/inside-brad-gerstners-portfolio-every-move-he-made-in-the-third-quarter?ref=yahoofinance&tlnk=yf-261119-8874cxx4&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 15:05 ET",
+        "pub_ts": 1795118722.0
+      },
+      {
         "title": "Qualcomm lays off 100s amid global restructuring, raises $4 billion",
         "url": "https://www.thestreet.com/employment/qualcomm-lays-off-100s-amid-global-restructuring-raises-4-billion?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1036,13 +1045,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 09:36 ET",
         "pub_ts": 1795098960.0
-      },
-      {
-        "title": "Global Personal Computer Cards and Modems Market Report 2026-2030 | Capitalize on 5G, Wi-Fi 7 and Edge IoT as Samsung, Qualcomm, ZTE and Quectel Drive a $9.26 Billion Market by 2030",
-        "url": "https://finance.yahoo.com/technology/articles/global-personal-computer-cards-modems-143100800.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 09:31 ET",
-        "pub_ts": 1795098660.0
       }
     ],
     "AVGO": [
@@ -1075,11 +1077,11 @@
         "pub_ts": 1795103440.0
       },
       {
-        "title": "Broadcom’s $13.67B Quarterly FCF Beats Marvell’s Scaling Story, Plain and Simple",
-        "url": "https://247wallst.com/investing/2026/11/19/broadcoms-13-67b-quarterly-fcf-beats-marvells-scaling-story-plain-and-simple/?.tsrc=rss",
+        "title": "Anthropic Now Earns $1.72 “For Every Dollar of Compute,” Says Aaron Levie. Great News for Amazon and Alphabet",
+        "url": "https://www.tikr.com/blog/anthropic-now-earns-1-72-for-every-dollar-of-compute-says-aaron-levie-great-news-for-amazon-and-alphabet?ref=yahoofinance&tlnk=yf-261119-q9jf5fhh&.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-19 10:45 ET",
-        "pub_ts": 1795103136.0
+        "time": "11-19 12:31 ET",
+        "pub_ts": 1795109510.0
       }
     ],
     "AMAT": [
@@ -1128,6 +1130,13 @@
         "pub_ts": 1795119880.0
       },
       {
+        "title": "Inside Brad Gerstner’s Portfolio: Every Move He Made in the Third Quarter",
+        "url": "https://www.tikr.com/blog/inside-brad-gerstners-portfolio-every-move-he-made-in-the-third-quarter?ref=yahoofinance&tlnk=yf-261119-8874cxx4&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 15:05 ET",
+        "pub_ts": 1795118722.0
+      },
+      {
         "title": "Meta's New AI Agent Raises Serious Privacy Questions for Investors",
         "url": "https://finance.yahoo.com/technology/ai/articles/metas-ai-agent-raises-serious-184522659.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1147,13 +1156,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 13:10 ET",
         "pub_ts": 1795111815.0
-      },
-      {
-        "title": "Meta’s Advertising Business Could Drive Another Major Earnings Surprise",
-        "url": "https://247wallst.com/investing/2026/11/19/metas-advertising-business-could-drive-another-major-earnings-surprise/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 12:33 ET",
-        "pub_ts": 1795109628.0
       }
     ],
     "GOOGL": [
@@ -3239,30 +3241,30 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795120756.8098876,
-    "SOXL": 1795120756.8098876,
-    "SPY": 1795120756.8098876,
-    "DIA": 1795120756.8098876,
-    "SOXX": 1795120756.8098876,
-    "QQQ": 1795120756.8098876,
-    "SMH": 1795120756.8098876,
-    "IWM": 1795120756.8098876,
-    "IGV": 1795120756.8098876,
-    "TLT": 1795120756.8098876,
-    "GLD": 1795120756.8098876,
-    "SQQQ": 1795120756.8098876,
-    "TSM": 1795120756.8098876,
-    "VIXY": 1795120756.8098876,
-    "SOXS": 1795120756.8098876,
-    "NVDA": 1795120756.8098876,
-    "AMD": 1795120756.8098876,
+    "KORU": 1795122313.3504488,
+    "SOXL": 1795122313.3504488,
+    "SPY": 1795122313.3504488,
+    "DIA": 1795122313.3504488,
+    "SOXX": 1795122313.3504488,
+    "QQQ": 1795122313.3504488,
+    "SMH": 1795122313.3504488,
+    "IWM": 1795122313.3504488,
+    "IGV": 1795122313.3504488,
+    "TLT": 1795122313.3504488,
+    "GLD": 1795122313.3504488,
+    "SQQQ": 1795122313.3504488,
+    "TSM": 1795122313.3504488,
+    "VIXY": 1795122313.3504488,
+    "SOXS": 1795122313.3504488,
+    "NVDA": 1795122313.3504488,
+    "AMD": 1795122313.3504488,
     "ASML": 1795120756.8098876,
-    "QCOM": 1795120756.8098876,
-    "AVGO": 1795120756.8098876,
-    "AMAT": 1795120756.8098876,
-    "META": 1795120756.8098876,
-    "GOOGL": 1795120756.8098876,
-    "MSFT": 1795120756.8098876,
+    "QCOM": 1795122313.3504488,
+    "AVGO": 1795122313.3504488,
+    "AMAT": 1795122313.3504488,
+    "META": 1795122313.3504488,
+    "GOOGL": 1795122313.3504488,
+    "MSFT": 1795122313.3504488,
     "AAPL": 1795120960.403659,
     "PLTR": 1795121064.2586796,
     "NOW": 1795121064.2586796,
@@ -3322,7 +3324,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (15:55 ET / 04:55 BJ) [美联储] [加息]：【美联储古尔斯比：高通胀下所有选项均在考虑范围内 不排除大幅加息】 11月20日讯，芝加哥联储主席古尔斯比当地时间周四表示，面对连续数月高于预期的通胀数据，美联储下月议息会议将保留所有政策选",
+    "detail": "⚡ 最新核心快讯 (16:02 ET / 05:02 BJ) [英伟达] [纳斯达克] [标普]：【美股收盘：三大股指跌超2% Anthropic首日收涨17%】 11月13日讯，美股周四收盘，道指初步收跌2.19%或1100点，标普500指数跌2.02%，纳指跌2.25%。英伟达(NV",
     "event_name": "",
     "minutes_left": 0
   }
