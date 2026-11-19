@@ -74,8 +74,8 @@
       "last_notified_at": 0.0
     },
     "AXP": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1795125307.1414077
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "SPY": {
       "state": "NORMAL",
@@ -114,8 +114,8 @@
       "last_notified_at": 1795125111.0310383
     },
     "TSLA": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1795125514.769585
     }
   },
   "position_peaks": {
