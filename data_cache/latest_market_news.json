@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795113164.884,
-  "updated_at_et": "11-19 13:32 ET",
-  "updated_at_kst": "03:32 KST",
+  "updated_at_ts": 1795113262.352,
+  "updated_at_et": "11-19 13:34 ET",
+  "updated_at_kst": "03:34 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1343,6 +1343,20 @@
     ],
     "AMZN": [
       {
+        "title": "Amazon Faces Pressure Over 5,000 Delivery Jobs as New York Weighs Labor Bill",
+        "url": "https://finance.yahoo.com/small-business/articles/amazon-faces-pressure-over-5-182438562.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 13:24 ET",
+        "pub_ts": 1795112678.0
+      },
+      {
+        "title": "Anthropic Jumps 17% in Record Nasdaq Debut but Fades From $111.50 Open; Alphabet Ticks Up, Amazon Dips",
+        "url": "https://247wallst.com/investing/2026/11/19/anthropic-jumps-17-in-record-nasdaq-debut-but-fades-from-111-50-open-alphabet-ticks-up-amazon-dips/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 13:07 ET",
+        "pub_ts": 1795111654.0
+      },
+      {
         "title": "IBD Stock Of The Day: Amazon Chases Entry As Anthropic IPO Swings AI Sentiment",
         "url": "https://finance.yahoo.com/m/ffef95a7-3317-39a7-af61-44c06f2b7bb5/ibd-stock-of-the-day%3A-amazon.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1362,20 +1376,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 12:31 ET",
         "pub_ts": 1795109510.0
-      },
-      {
-        "title": "Amazon sets 2030 goal to cut carbon intensity of its electricity consumption",
-        "url": "https://www.esgdive.com/news/amazon-sets-2030-goal-to-cut-carbon-intensity-of-its-electricity-consumption/875208/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 12:25 ET",
-        "pub_ts": 1795109128.0
-      },
-      {
-        "title": "A $467 Billion Fund Just Bought These 3 Stocks",
-        "url": "https://www.tikr.com/blog/a-467-billion-fund-just-bought-these-3-stocks?ref=yahoofinance&tlnk=yf-261119-7rh85jc4&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 12:23 ET",
-        "pub_ts": 1795109036.0
       }
     ],
     "CRWV": [
@@ -1528,6 +1528,13 @@
     ],
     "BE": [
       {
+        "title": "Anthropic, AMD, Alphabet, Palo Alto, Take-Two, Walmart, and More Stocks That Explain Today’s Market",
+        "url": "https://finance.yahoo.com/m/65710a12-1ba7-3685-a3c3-30d9e0878af7/anthropic%2C-amd%2C-alphabet%2C.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 12:30 ET",
+        "pub_ts": 1795109400.0
+      },
+      {
         "title": "AI Winner Bloom Energy Has 35% Room To Run After Doubling: Analyst",
         "url": "https://finance.yahoo.com/m/e6810641-54d9-3e3f-9d08-c1caa9133bba/ai-winner-bloom-energy-has.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1554,13 +1561,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 09:34 ET",
         "pub_ts": 1795098863.0
-      },
-      {
-        "title": "Should You Buy Bloom Energy With $500 Right Now?",
-        "url": "https://www.fool.com/investing/2026/11/19/should-you-buy-bloom-energy-with-500-right-now/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 08:50 ET",
-        "pub_ts": 1795096203.0
       }
     ],
     "CRDO": [
@@ -1764,18 +1764,18 @@
         "pub_ts": 1795109434.0
       },
       {
-        "title": "SpaceX Offers a Clue to What Anthropic’s IPO Could Mean for QQQ Holders",
-        "url": "https://247wallst.com/investing/etf/2026/11/19/spacex-offers-a-clue-to-what-anthropics-ipo-could-mean-for-qqq-holders/?.tsrc=rss",
+        "title": "Don't Forget OpenAI and ChatGPT",
+        "url": "https://finance.yahoo.com/m/feb16f02-5314-3d0e-a64a-465c332729a7/don%27t-forget-openai-and.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-19 12:27 ET",
-        "pub_ts": 1795109227.0
+        "time": "11-19 13:15 ET",
+        "pub_ts": 1795112155.0
       },
       {
-        "title": "Elon Musk Moves Step Closer to Creating Phone Service After Verizon and T-Mobile Shut Out",
-        "url": "https://firstformoney.com/elon-musk-moves-step-closer-to-creating-phone-service-after-verizon-and-t-mobile-shut-out/?.tsrc=rss",
+        "title": "Should investors go for it or wait on Anthropic's IPO?",
+        "url": "https://finance.yahoo.com/video/should-investors-go-for-it-or-wait-on-anthropics-ipo-181321785.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-19 12:24 ET",
-        "pub_ts": 1795109069.0
+        "time": "11-19 13:13 ET",
+        "pub_ts": 1795112001.0
       },
       {
         "title": "Stellar Anthropic debut fails to ignite stocks",
@@ -3264,29 +3264,29 @@
     "GOOGL": 1795112959.3044598,
     "MSFT": 1795112959.3044598,
     "AAPL": 1795113062.2600775,
-    "PLTR": 1795111667.9272265,
-    "NOW": 1795111667.9272265,
-    "AMZN": 1795111667.9272265,
-    "CRWV": 1795111667.9272265,
-    "NBIS": 1795111667.9272265,
-    "APLD": 1795111667.9272265,
-    "VST": 1795111667.9272265,
-    "BE": 1795111667.9272265,
-    "CRDO": 1795111667.9272265,
-    "COHR": 1795111667.9272265,
-    "MRVL": 1795111667.9272265,
-    "LITE": 1795111667.9272265,
+    "PLTR": 1795113262.3524177,
+    "NOW": 1795113262.3524177,
+    "AMZN": 1795113262.3524177,
+    "CRWV": 1795113262.3524177,
+    "NBIS": 1795113262.3524177,
+    "APLD": 1795113262.3524177,
+    "VST": 1795113262.3524177,
+    "BE": 1795113262.3524177,
+    "CRDO": 1795113262.3524177,
+    "COHR": 1795113262.3524177,
+    "MRVL": 1795113262.3524177,
+    "LITE": 1795113262.3524177,
     "AAOI": 1795113062.2600775,
-    "SPCX": 1795111667.9272265,
-    "ASTS": 1795111667.9272265,
-    "AXTI": 1795111667.9272265,
+    "SPCX": 1795113262.3524177,
+    "ASTS": 1795113262.3524177,
+    "AXTI": 1795113262.3524177,
     "NASA": 1795113062.2600775,
     "LUNR": 1795113062.2600775,
     "TSLA": 1795113062.2600775,
     "AXP": 1795113062.2600775,
-    "RKLB": 1795111667.9272265,
+    "RKLB": 1795113262.3524177,
     "KO": 1795113062.2600775,
-    "FLY": 1795111667.9272265,
+    "FLY": 1795113262.3524177,
     "INTC": 1795113062.2600775,
     "VRT": 1795113062.2600775,
     "HPE": 1795113062.2600775,
@@ -3301,7 +3301,7 @@
     "MSTR": 1795113062.2600775,
     "SNDK": 1795113062.2600775,
     "BTC-USD": 1795113062.2600775,
-    "CRWD": 1795111667.9272265,
+    "CRWD": 1795113262.3524177,
     "ORCL": 1795111769.810684,
     "COIN": 1795111769.810684,
     "LLY": 1795111769.810684,
@@ -3314,8 +3314,8 @@
     "WMT": 1795111769.810684,
     "V": 1795111769.810684,
     "CAT": 1795111769.810684,
-    "FN": 1795111667.9272265,
-    "GLW": 1795111667.9272265,
+    "FN": 1795113262.3524177,
+    "GLW": 1795113262.3524177,
     "ANT": 1795111769.810684,
     "XAUUSD": 1795111871.8919175
   },
