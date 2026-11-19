@@ -1801,7 +1801,8 @@ def evaluate_intraday_entry(
     # 基础暴跌判定
     is_base_crash = (pct_change <= crash_thresh)
     # 盘前盘后 +3% 强势反转死锁解除 (V3.2 R1.4)
-    if safe_ext >= 3.0 and (pct_change + safe_ext) > -2.5:
+    is_ext_reversal = bool(safe_ext >= 3.0 and (pct_change + safe_ext) > -2.5)
+    if is_ext_reversal:
         is_base_crash = False
 
     # 冲高跳水断头铡刀防接刀 (V3.2 R1.2)
@@ -1813,7 +1814,7 @@ def evaluate_intraday_entry(
         is_flush_crash or
         (ext_pct is not None and ext_pct <= -4.5) or
         ((pct_change + safe_ext) <= -5.5) or
-        (fib_low > 0 and active_price < fib_low * 0.92 and (pct_change <= -2.5 or (ext_pct is not None and ext_pct <= -2.5)))
+        (fib_low > 0 and active_price < fib_low * 0.92 and ((pct_change <= -2.5 and not is_ext_reversal) or (ext_pct is not None and ext_pct <= -2.5)))
     )
 
     if is_crash_halt:
@@ -3329,6 +3330,44 @@ def fetch_all_market_data(tickers, period="1y", retries=2):
                 data_dict[t].index = data_dict[t].index.tz_localize(None)
         except Exception:
             pass
+
+    # 本地 5Y / 扩展日线缓存兜底：当 Yahoo 1y 接口对老股临时抽风截断（如 SNDK 仅返回 2 根日线 < 20 根）时，自动从本地 parquet 底模补齐完整历史并合并最新日线
+    short_or_missing = [t for t in tickers if t not in data_dict or len(data_dict[t]) < 20]
+    if short_or_missing:
+        pq_frames = []
+        for pq_name in ("ml_extended_panel.parquet", "ml_panel_5y.parquet"):
+            pq_path = os.path.join(SCRATCH_DIR, "data_cache", pq_name)
+            if os.path.exists(pq_path):
+                try:
+                    _pq = pd.read_parquet(pq_path)
+                    if not _pq.empty and "Ticker" in _pq.columns:
+                        _sub = _pq[_pq["Ticker"].isin(short_or_missing)]
+                        if not _sub.empty:
+                            pq_frames.append(_sub)
+                except Exception:
+                    pass
+        if pq_frames:
+            pq_all = pd.concat(pq_frames, ignore_index=True)
+            req_cols = ["Open", "High", "Low", "Close", "Volume"]
+            for t in short_or_missing:
+                try:
+                    t_rows = pq_all[pq_all["Ticker"] == t]
+                    if t_rows.empty or not set(req_cols).issubset(t_rows.columns):
+                        continue
+                    sub_pq = t_rows.sort_values("Date").tail(260)[["Date"] + req_cols].copy()
+                    sub_pq["Date"] = pd.to_datetime(sub_pq["Date"]).dt.tz_localize(None).dt.normalize()
+                    sub_pq = sub_pq.set_index("Date")
+                    if t in data_dict and not data_dict[t].empty and set(req_cols).issubset(data_dict[t].columns):
+                        cur_df = data_dict[t][req_cols].copy()
+                        cur_df.index = pd.to_datetime(cur_df.index).tz_localize(None).normalize()
+                        merged_df = pd.concat([sub_pq, cur_df])
+                    else:
+                        merged_df = sub_pq
+                    merged_df = merged_df[~merged_df.index.duplicated(keep="last")].sort_index()
+                    if len(merged_df) > len(data_dict.get(t, [])):
+                        data_dict[t] = merged_df
+                except Exception:
+                    pass
 
     print(f"[+] 历史形态抓取完成，成功获取 {len(data_dict)}/{len(tickers)} 只标的数据。\n")
     return data_dict
@@ -5377,8 +5416,16 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
                 pct_change = round((change / ipo_price) * 100.0, 2)
 
             if last > 0:
-                ext_price = float(intra_fb.get("ext_price", 0.0) or 0.0)
-                ext_pct = ((ext_price - last) / last * 100.0) if (ext_price > 0 and last > 0 and abs(ext_price - last) >= 0.005) else 0.0
+                raw_ep = float(intra_fb.get("ext_price", 0.0) or 0.0)
+                ext_price = 0.0
+                ext_change = 0.0
+                ext_pct = 0.0
+                session_tag = ""
+                if session_code in ["PRE_MARKET", "POST_MARKET", "OVERNIGHT", "WEEKEND"] and raw_ep > 0 and abs(raw_ep - last) >= 0.005:
+                    ext_price = raw_ep
+                    ext_change = raw_ep - last
+                    ext_pct = (ext_change / last) * 100.0
+                    session_tag = "盘前" if session_code == "PRE_MARKET" else ("盘后" if session_code == "POST_MARKET" else ("夜盘" if session_code == "OVERNIGHT" else "休市"))
                 active_price = ext_price if ext_price > 0 else last
                 ma50 = float(df_short["Close"].mean()) if (df_short is not None and not df_short.empty) else last
                 ema20 = ma50
@@ -5425,7 +5472,9 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
                     "pct_change": pct_change,
                     "active_price": active_price,
                     "ext_price": ext_price,
+                    "ext_change": ext_change,
                     "ext_pct": ext_pct,
+                    "session_tag": session_tag,
                     "effective_pct": ext_pct if ext_price > 0 else (0.0 if (not is_ipo_stage and session_code in ["PRE_MARKET", "POST_MARKET", "OVERNIGHT", "WEEKEND"]) else pct_change),
                     "ma50": ma50,
                     "ema20": ema20,

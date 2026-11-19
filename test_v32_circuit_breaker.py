@@ -1211,6 +1211,28 @@ class TestV32CircuitBreaker(unittest.TestCase):
         self.assertTrue(reclaimed["broken_rebound_ready"])
         self.assertIn("超跌右侧博反抽", reclaimed["intraday_status_text"])
 
+    def test_truncated_yfinance_daily_backfills_from_local_parquet(self):
+        """When Yahoo 1y daily returns <20 bars for an existing stock like SNDK, backfill from local parquet."""
+        import unittest.mock as _mock
+        import pandas as _pd
+        import integrated_market_radar as imr
+
+        short_yf = _pd.DataFrame(
+            {
+                "Open": [809.83, 805.87],
+                "High": [821.46, 813.18],
+                "Low": [749.39, 753.83],
+                "Close": [797.24, 776.22],
+                "Volume": [15739553, 12602833],
+            },
+            index=_pd.DatetimeIndex([_pd.Timestamp("2026-11-17"), _pd.Timestamp("2026-11-18")]),
+        )
+        with _mock.patch("integrated_market_radar.yf.download", return_value=short_yf):
+            out = imr.fetch_all_market_data(["SNDK"], period="1y", retries=1)
+        self.assertIn("SNDK", out)
+        self.assertGreaterEqual(len(out["SNDK"]), 200, f"Expected SNDK backfilled >=200 bars from parquet, got {len(out['SNDK'])}")
+        self.assertAlmostEqual(float(out["SNDK"]["Close"].iloc[-1]), 776.22, places=2)
+
 
 
 
