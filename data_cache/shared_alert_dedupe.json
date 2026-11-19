@@ -2219,9 +2219,17 @@
     "2026-11-19:QCOM/SPCX/IGV:5M_ENTRY": {
       "device": "PC",
       "ts": 1795098564.2315805
+    },
+    "2026-11-19:MRNA/V:5M_ENTRY+TAKE_PROFIT": {
+      "device": "PC",
+      "ts": 1795098667.1606693
+    },
+    "2026-11-19:DEFENSIVE_FLIGHT:+0.0": {
+      "device": "PC",
+      "ts": 1795098674.215477
     }
   },
   "device": "PC",
-  "last_heartbeat_ts": 1795098484.1151042,
-  "updated_at": "2026-11-19T14:29:24.231809+00:00"
+  "last_heartbeat_ts": 1795098590.5790195,
+  "updated_at": "2026-11-19T14:31:14.215899+00:00"
 }
