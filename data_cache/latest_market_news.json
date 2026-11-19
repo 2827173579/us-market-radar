@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795119152.834,
-  "updated_at_et": "11-19 15:12 ET",
-  "updated_at_kst": "05:12 KST",
+  "updated_at_ts": 1795119250.211,
+  "updated_at_et": "11-19 15:14 ET",
+  "updated_at_kst": "05:14 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -788,6 +788,13 @@
     ],
     "TSM": [
       {
+        "title": "Billionaire Stanley Druckenmiller Cut TSMC 94% in One Quarter, Leaving Just $14.9 Million",
+        "url": "https://247wallst.com/investing/2026/11/19/billionaire-stanley-druckenmiller-cut-tsmc-94-in-one-quarter-leaving-just-14-9-million/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 14:46 ET",
+        "pub_ts": 1795117611.0
+      },
+      {
         "title": "TSMC and Samsung's China Chip Pause Has Stakes Beyond AI",
         "url": "https://finance.yahoo.com/technology/articles/tsmc-samsungs-china-chip-pause-185414287.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -814,13 +821,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 12:23 ET",
         "pub_ts": 1795109006.0
-      },
-      {
-        "title": "Anthropic shares jump 34% in Nasdaq debut after record IPO",
-        "url": "https://www.proactiveinvestors.com/companies/news/1102135/anthropic-shares-jump-34-in-nasdaq-debut-after-record-ipo-1102135.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 12:07 ET",
-        "pub_ts": 1795108020.0
       }
     ],
     "VIXY": [
@@ -899,18 +899,18 @@
     ],
     "NVDA": [
       {
-        "title": "Nvidia will not be the leader 5 years from now: Tiernan Ray",
-        "url": "https://finance.yahoo.com/video/nvidia-will-not-be-the-leader-5-years-from-now-tiernan-ray-185954396.html?.tsrc=rss",
+        "title": "Short Seller Raises Questions About Nvidia's Former Top Sales Executive. $2.5 Billion China Chip Case In Focus.",
+        "url": "https://www.ibtimes.com/former-nvidia-sales-chief-china-ai-server-scheme-3809981?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-19 13:59 ET",
-        "pub_ts": 1795114794.0
+        "time": "11-19 14:49 ET",
+        "pub_ts": 1795117757.0
       },
       {
-        "title": "Why AI competition from China won't be a risk US tech companies",
-        "url": "https://finance.yahoo.com/video/why-ai-competition-from-china-wont-be-a-risk-us-tech-companies-184851467.html?.tsrc=rss",
+        "title": "‘SpaceX Has Gone All In With Nvidia’: Nvidia’s Biggest Customer Is Also Its Biggest Stock Holding at $19.7B",
+        "url": "https://247wallst.com/personal-finance/2026/11/19/spacex-has-gone-all-in-with-nvidia-nvidias-biggest-customer-is-also-its-biggest-stock-holding-at-19-7b/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-19 13:48 ET",
-        "pub_ts": 1795114131.0
+        "time": "11-19 14:42 ET",
+        "pub_ts": 1795117337.0
       },
       {
         "title": "Trump Discloses Up to $380,000 in Nvidia Buys, Calls Huang’s Exit ‘Such a Tragedy’",
@@ -1054,6 +1054,13 @@
         "pub_ts": 1795114131.0
       },
       {
+        "title": "Why Broadcom Stock Took a Wild Ride on Thursday",
+        "url": "https://www.fool.com/investing/2026/11/19/why-broadcom-stock-took-a-wild-ride-on-thursday/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 15:01 ET",
+        "pub_ts": 1795118483.0
+      },
+      {
         "title": "Broadcom Stocks Rise 4.21% as Chip Supplier Joins Anthropic's $26 Billion Placement",
         "url": "https://finance.yahoo.com/markets/stocks/articles/broadcom-stocks-rise-4-21-173026533.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1073,13 +1080,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 10:45 ET",
         "pub_ts": 1795103136.0
-      },
-      {
-        "title": "Not AMD. Not Intel. This Is the Chip Stock Wall Street Is Underestimating",
-        "url": "https://www.fool.com/investing/2026/11/19/not-amd-not-intel-this-is-the-chip-stock-wall-street-is-underestimating/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 10:35 ET",
-        "pub_ts": 1795102502.0
       }
     ],
     "AMAT": [
@@ -1216,7 +1216,7 @@
         "pub_ts": 1795111638.0
       },
       {
-        "title": "The link between ‘patchmegeddon’ and recent tech outages",
+        "title": "The link between ‘patchmageddon’ and recent tech outages",
         "url": "https://www.americanbanker.com/news/the-link-between-patchmegeddon-and-recent-tech-outages?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-19 13:02 ET",
@@ -3239,30 +3239,30 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795117749.5175169,
-    "SOXL": 1795117749.5175169,
-    "SPY": 1795117749.5175169,
-    "DIA": 1795117749.5175169,
-    "SOXX": 1795117749.5175169,
-    "QQQ": 1795117749.5175169,
-    "SMH": 1795117749.5175169,
-    "IWM": 1795117749.5175169,
-    "IGV": 1795117749.5175169,
-    "TLT": 1795117749.5175169,
-    "GLD": 1795117749.5175169,
-    "SQQQ": 1795117749.5175169,
-    "TSM": 1795117749.5175169,
-    "VIXY": 1795117749.5175169,
-    "SOXS": 1795117749.5175169,
-    "NVDA": 1795117749.5175169,
-    "AMD": 1795117749.5175169,
-    "ASML": 1795117749.5175169,
-    "QCOM": 1795117749.5175169,
-    "AVGO": 1795117749.5175169,
-    "AMAT": 1795117749.5175169,
-    "META": 1795117749.5175169,
-    "GOOGL": 1795117749.5175169,
-    "MSFT": 1795117749.5175169,
+    "KORU": 1795119250.2109556,
+    "SOXL": 1795119250.2109556,
+    "SPY": 1795119250.2109556,
+    "DIA": 1795119250.2109556,
+    "SOXX": 1795119250.2109556,
+    "QQQ": 1795119250.2109556,
+    "SMH": 1795119250.2109556,
+    "IWM": 1795119250.2109556,
+    "IGV": 1795119250.2109556,
+    "TLT": 1795119250.2109556,
+    "GLD": 1795119250.2109556,
+    "SQQQ": 1795119250.2109556,
+    "TSM": 1795119250.2109556,
+    "VIXY": 1795119250.2109556,
+    "SOXS": 1795119250.2109556,
+    "NVDA": 1795119250.2109556,
+    "AMD": 1795119250.2109556,
+    "ASML": 1795119250.2109556,
+    "QCOM": 1795119250.2109556,
+    "AVGO": 1795119250.2109556,
+    "AMAT": 1795119250.2109556,
+    "META": 1795119250.2109556,
+    "GOOGL": 1795119250.2109556,
+    "MSFT": 1795119250.2109556,
     "AAPL": 1795117851.9454,
     "PLTR": 1795117965.1579363,
     "NOW": 1795117965.1579363,
