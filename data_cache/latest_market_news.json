@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795072714.534,
-  "updated_at_et": "11-19 02:18 ET",
-  "updated_at_kst": "16:18 KST",
+  "updated_at_ts": 1795072821.986,
+  "updated_at_et": "11-19 02:20 ET",
+  "updated_at_kst": "16:20 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1751,6 +1751,13 @@
     ],
     "SPCX": [
       {
+        "title": "Planet Labs Teams Up With Stoke Space -- Just In Case SpaceX Really Retires the Falcon 9",
+        "url": "https://www.fool.com/investing/2026/11/19/planet-labs-teams-up-with-stoke-space-just-in-case-spacex-really-retires-the-falcon-9/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 01:50 ET",
+        "pub_ts": 1795071001.0
+      },
+      {
         "title": "Why Anthropic Could Be a $5 Trillion Company By 2030",
         "url": "https://www.fool.com/investing/2026/11/19/why-anthropic-could-be-a-usd5-trillion-by-2030/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1777,13 +1784,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 21:55 ET",
         "pub_ts": 1795056902.0
-      },
-      {
-        "title": "Anthropic set to begin trading after pricing its stock at $83 per share in biggest IPO on record",
-        "url": "https://finance.yahoo.com/technology/ai/articles/anthropic-set-begin-trading-pricing-011538935.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 20:15 ET",
-        "pub_ts": 1795050938.0
       }
     ],
     "ASTS": [
@@ -2010,6 +2010,13 @@
     ],
     "RKLB": [
       {
+        "title": "RKLB Stock Rises Overnight: Jim Cramer Likes SpaceX But Calls Rocket Lab ‘Too Cheap’ — Electron Tops Falcon 9 In 100 Launches",
+        "url": "https://stocktwits.com/news-articles/markets/equity/rklb-stock-jim-cramer-likes-spacex-rocketlab-cheap-electron-falcon-9-100-launches/cNbiGliR9iN?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 02:04 ET",
+        "pub_ts": 1795071887.0
+      },
+      {
         "title": "How To Structure Rocket Lab and Planet Labs as a Space Play Flywheel in a $40 Billion Addressable Market",
         "url": "https://247wallst.com/investing/2026/11/18/how-to-structure-rocket-lab-and-planet-labs-as-a-space-play-flywheel-in-a-40-billion-addressable-market/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2036,13 +2043,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 05:14 ET",
         "pub_ts": 1794996865.0
-      },
-      {
-        "title": "Rocket Lab's Stock Price Keeps Falling While Its Revenue and Backlog Keep Growing. Which Trend Should Investors Trust?",
-        "url": "https://www.fool.com/investing/2026/11/17/rocket-labs-stock-price-keeps-falling-while-its-revenue-and-backlog-keep-growing-which-trend-should-investors-trust/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 11:50 ET",
-        "pub_ts": 1794934202.0
       }
     ],
     "KO": [
@@ -3230,18 +3230,18 @@
     "CRDO": 1795072714.534017,
     "COHR": 1795072714.534017,
     "MRVL": 1795072714.534017,
-    "LITE": 1795071275.9024105,
+    "LITE": 1795072821.9862318,
     "AAOI": 1795072497.655394,
-    "SPCX": 1795071275.9024105,
-    "ASTS": 1795071275.9024105,
-    "AXTI": 1795071275.9024105,
+    "SPCX": 1795072821.9862318,
+    "ASTS": 1795072821.9862318,
+    "AXTI": 1795072821.9862318,
     "NASA": 1795072497.655394,
     "LUNR": 1795072497.655394,
     "TSLA": 1795072497.655394,
     "AXP": 1795072497.655394,
-    "RKLB": 1795071275.9024105,
+    "RKLB": 1795072821.9862318,
     "KO": 1795072497.655394,
-    "FLY": 1795071275.9024105,
+    "FLY": 1795072821.9862318,
     "INTC": 1795072497.655394,
     "VRT": 1795072497.655394,
     "HPE": 1795072608.3367634,
@@ -3258,19 +3258,19 @@
     "BTC-USD": 1795072608.3367634,
     "CRWD": 1795072714.534017,
     "ORCL": 1795072714.534017,
-    "COIN": 1795071275.9024105,
+    "COIN": 1795072821.9862318,
     "LLY": 1795072714.534017,
-    "MRNA": 1795071275.9024105,
-    "NKE": 1795071275.9024105,
+    "MRNA": 1795072821.9862318,
+    "NKE": 1795072821.9862318,
     "MCD": 1795071479.5434425,
-    "PEP": 1795071275.9024105,
+    "PEP": 1795072821.9862318,
     "XOM": 1795072714.534017,
-    "JPM": 1795071275.9024105,
-    "WMT": 1795071275.9024105,
+    "JPM": 1795072821.9862318,
+    "WMT": 1795072821.9862318,
     "V": 1795072714.534017,
     "CAT": 1795072714.534017,
-    "FN": 1795071275.9024105,
-    "GLW": 1795071275.9024105
+    "FN": 1795072821.9862318,
+    "GLW": 1795072821.9862318
   },
   "calendar_banner": {
     "level": "idle_with_flash",
