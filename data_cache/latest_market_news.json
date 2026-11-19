@@ -1,9 +1,22 @@
 {
-  "updated_at_ts": 1795131173.765,
-  "updated_at_et": "11-19 18:32 ET",
-  "updated_at_kst": "08:32 KST",
+  "updated_at_ts": 1795131271.051,
+  "updated_at_et": "11-19 18:34 ET",
+  "updated_at_kst": "08:34 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261120073234456800",
+      "title": "日本10月整体CPI创2025年11月以来最快涨幅，10月核心CPI创2025年12月以…",
+      "summary": "日本10月整体CPI创2025年11月以来最快涨幅，10月核心CPI创2025年12月以来最快涨幅。",
+      "keywords": [
+        "CPI"
+      ],
+      "pub_ts": 1795131154.0,
+      "time_et": "11-19 18:32 ET",
+      "time_bj": "07:32 BJ",
+      "time_kst": "08:32 KST",
+      "time_display": "18:32 ET / 07:32 BJ"
+    },
     {
       "id": "20261120073004846800",
       "title": "日本10月核心CPI年率 2.2%，预期2.30%，前值2.10%。",
@@ -332,19 +345,6 @@
       "time_bj": "23:13 BJ",
       "time_kst": "00:13 KST",
       "time_display": "10:13 ET / 23:13 BJ"
-    },
-    {
-      "id": "20261119225150504800",
-      "title": "市场消息：SpaceX(SPCX.O)拟于周四发行至少320亿美元AI芯片债务。",
-      "summary": "市场消息：SpaceX(SPCX.O)拟于周四发行至少320亿美元AI芯片债务。",
-      "keywords": [
-        "芯片"
-      ],
-      "pub_ts": 1795099910.0,
-      "time_et": "11-19 09:51 ET",
-      "time_bj": "22:51 BJ",
-      "time_kst": "23:51 KST",
-      "time_display": "09:51 ET / 22:51 BJ"
     }
   ],
   "ticker_news": {
@@ -3328,7 +3328,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (18:30 ET / 07:30 BJ) [CPI]：日本10月核心CPI年率 2.2%，预期2.30%，前值2.10%。",
+    "detail": "⚡ 最新核心快讯 (18:32 ET / 07:32 BJ) [CPI]：日本10月整体CPI创2025年11月以来最快涨幅，10月核心CPI创2025年12月以来最快涨幅。",
     "event_name": "",
     "minutes_left": 0
   }
