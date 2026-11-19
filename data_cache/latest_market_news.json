@@ -1,9 +1,22 @@
 {
-  "updated_at_ts": 1795095870.407,
-  "updated_at_et": "11-19 08:44 ET",
-  "updated_at_kst": "22:44 KST",
+  "updated_at_ts": 1795095974.102,
+  "updated_at_et": "11-19 08:46 ET",
+  "updated_at_kst": "22:46 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261119214527204800",
+      "title": "白宫下令评估多套军事方案及伊朗报复选项，特朗普称明年1月1日后“拭目以待”",
+      "summary": "特朗普据悉仍在考虑美以联手空袭伊朗，白宫下令五角大楼、情报部门推演方案，重点评估能否避免伊朗打击海湾油气设施。点击查看...",
+      "keywords": [
+        "特朗普"
+      ],
+      "pub_ts": 1795095927.0,
+      "time_et": "11-19 08:45 ET",
+      "time_bj": "21:45 BJ",
+      "time_kst": "22:45 KST",
+      "time_display": "08:45 ET / 21:45 BJ"
+    },
     {
       "id": "20261119211742172800",
       "title": "整理：每日美股市场要闻速递（11月19日）",
@@ -325,19 +338,6 @@
       "time_bj": "16:26 BJ",
       "time_kst": "17:26 KST",
       "time_display": "03:26 ET / 16:26 BJ"
-    },
-    {
-      "id": "20261119162553956800",
-      "title": "【习近平主持中俄美元首会晤】 11月19日讯，11月19日下午，国家主席习近平在深圳同俄…",
-      "summary": "【习近平主持中俄美元首会晤】 11月19日讯，11月19日下午，国家主席习近平在深圳同俄罗斯总统普京、美国总统特朗普举行中俄美元首会晤。",
-      "keywords": [
-        "特朗普"
-      ],
-      "pub_ts": 1795076753.0,
-      "time_et": "11-19 03:25 ET",
-      "time_bj": "16:25 BJ",
-      "time_kst": "17:25 KST",
-      "time_display": "03:25 ET / 16:25 BJ"
     }
   ],
   "ticker_news": {
@@ -1009,6 +1009,13 @@
     ],
     "QCOM": [
       {
+        "title": "3 Tech Dividend Stocks to Buy in December as AI Spending Accelerates",
+        "url": "https://247wallst.com/investing/2026/11/19/3-tech-dividend-stocks-to-buy-in-december-as-ai-spending-accelerates/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 08:17 ET",
+        "pub_ts": 1795094233.0
+      },
+      {
         "title": "Qualcomm (QCOM) Stock May Be Below Fair Value After AI Revenue Targets",
         "url": "https://finance.yahoo.com/markets/stocks/articles/qualcomm-qcom-stock-may-below-081010117.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1035,13 +1042,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 14:50 ET",
         "pub_ts": 1795031425.0
-      },
-      {
-        "title": "Baird cuts Qualcomm estimates over potential loss of ByteDance chip business",
-        "url": "https://www.proactiveinvestors.com/companies/news/1102042/baird-cuts-qualcomm-estimates-over-potential-loss-of-bytedance-chip-business-1102042.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 13:28 ET",
-        "pub_ts": 1795026480.0
       }
     ],
     "AVGO": [
@@ -1134,6 +1134,13 @@
         "pub_ts": 1795045605.0
       },
       {
+        "title": "Stemtech Corporation Partners with Fitness Icon Tony Little to Launch Stemtech Biosciences Digital Campaign",
+        "url": "https://finance.yahoo.com/healthcare/articles/stemtech-corporation-partners-fitness-icon-133000055.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 08:30 ET",
+        "pub_ts": 1795095000.0
+      },
+      {
         "title": "Anthropic’s Cash Pile Tops Amazon And Nvidia Combined After Record IPO – Meet The New ETF Tracking ANT-Linked Companies",
         "url": "https://stocktwits.com/news-articles/markets/equity/anthropic-s-cash-pile-tops-amazon-and-nvidia-combined-after-record-ipo-meet-the-new-etf-tracking-ant-linked-companies/cNbLyKgR9i1?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1146,13 +1153,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 22:03 ET",
         "pub_ts": 1795057380.0
-      },
-      {
-        "title": "Anthropic Will Be the U.S. Market's First Pure-Play AI Lab",
-        "url": "https://finance.yahoo.com/m/e4f24587-3cc7-3aa8-a026-81369bf78d2d/anthropic-will-be-the-u.s..html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 18:23 ET",
-        "pub_ts": 1795044238.0
       }
     ],
     "GOOGL": [
@@ -1162,6 +1162,20 @@
         "source": "Yahoo Finance",
         "time": "11-19 07:00 ET",
         "pub_ts": 1795089600.0
+      },
+      {
+        "title": "What If Google Slows Its $160 Billion AI Spend?",
+        "url": "https://www.trefis.com/stock/googl/articles/626549/what-if-google-slows-its-160-billion-ai-spend/2026-11-19?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 08:16 ET",
+        "pub_ts": 1795094206.0
+      },
+      {
+        "title": "Google Data Center Demand Is Reviving Interest In Geothermal Stocks",
+        "url": "https://finance.yahoo.com/energy/articles/google-data-center-demand-reviving-131147867.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 08:11 ET",
+        "pub_ts": 1795093907.0
       },
       {
         "title": "Anthropic gets bullish starts from Citizens, Melius ahead of stock market debut",
@@ -1176,29 +1190,22 @@
         "source": "Yahoo Finance",
         "time": "11-19 08:05 ET",
         "pub_ts": 1795093528.0
-      },
-      {
-        "title": "Buy, Sell, Or Hold Anthropic Stock At $100?",
-        "url": "https://www.trefis.com/stock/ant/articles/626658/buy-sell-or-hold-anthropic-stock-at-100/2026-11-19?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 08:02 ET",
-        "pub_ts": 1795093366.0
-      },
-      {
-        "title": "How Risky Is Adobe Stock After Its Long Slide?",
-        "url": "https://www.trefis.com/stock/adbe/articles/626947/how-risky-is-adobe-stock-after-its-long-slide/2026-11-19?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 07:54 ET",
-        "pub_ts": 1795092850.0
       }
     ],
     "MSFT": [
       {
-        "title": "GTA VI: Why the 13-year wait could be worth $8 billion",
-        "url": "https://finance.yahoo.com/video/gta-vi-why-13-wait-120000877.html?.tsrc=rss",
+        "title": "Profound brings your AI Marketer into Microsoft Teams and Microsoft 365",
+        "url": "https://finance.yahoo.com/technology/ai/articles/profound-brings-ai-marketer-microsoft-133000589.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-19 07:00 ET",
-        "pub_ts": 1795089600.0
+        "time": "11-19 08:30 ET",
+        "pub_ts": 1795095000.0
+      },
+      {
+        "title": "Hexaware Renews Microsoft Azure Expert Managed Service Provider-Specialization for the Fourth Year",
+        "url": "https://finance.yahoo.com/technology/ai/articles/hexaware-renews-microsoft-azure-expert-132200540.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 08:22 ET",
+        "pub_ts": 1795094520.0
       },
       {
         "title": "Microsoft’s CEO Says He’s “Extremely Sorry” for the Outlook Outage",
@@ -1220,13 +1227,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 07:26 ET",
         "pub_ts": 1795091219.0
-      },
-      {
-        "title": "Microsoft (MSFT) Stock May Look Reasonable As AI Commitments Draw Scrutiny",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/microsoft-msft-stock-may-look-121347165.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 07:13 ET",
-        "pub_ts": 1795090427.0
       }
     ],
     "AAPL": [
@@ -2045,6 +2045,13 @@
     ],
     "KO": [
       {
+        "title": "Coca-Cola Stock Could Lose Its Fizz. Its Valuation Is the Highest in 25 Years.",
+        "url": "https://finance.yahoo.com/m/f60661fd-58b7-33fd-8bad-c6fe5bbc0376/coca-cola-stock-could-lose.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 08:01 ET",
+        "pub_ts": 1795093260.0
+      },
+      {
         "title": "Warren Buffett Paid $1.3 Billion for Coca-Cola. Here's What It Now Pays Berkshire Hathaway in Yearly Dividends.",
         "url": "https://www.fool.com/investing/2026/11/19/warren-buffett-paid-usd1-3-billion-coca-cola-pays-berkshire-hathaway-dividends/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2071,13 +2078,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 12:13 ET",
         "pub_ts": 1795022003.0
-      },
-      {
-        "title": "TD Cowen Raises Its Coca-Cola Target to $112. Is It Still Too Low?",
-        "url": "https://www.tikr.com/blog/td-cowen-raises-its-coca-cola-target-to-112-is-it-still-too-low?ref=yahoofinance&tlnk=yf-261118-x28g92cq&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 11:28 ET",
-        "pub_ts": 1795019286.0
       }
     ],
     "FLY": [
@@ -2378,6 +2378,13 @@
     ],
     "MU": [
       {
+        "title": "Nvidia, AMD, Micron stocks lead chip sector higher amid Anthropic IPO optimism",
+        "url": "https://finance.yahoo.com/markets/article/copy-nvidia-stock-slips-as-investors-digest-ceo-exit-rest-of-chip-sector-falls-134408467.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 08:44 ET",
+        "pub_ts": 1795095848.0
+      },
+      {
         "title": "Broadcom, Nvidia, and Micron Could Be Setting Up for a Massive AI Rally Before Year End",
         "url": "https://247wallst.com/investing/2026/11/19/broadcom-nvidia-and-micron-could-be-setting-up-for-a-massive-ai-rally-before-year-end/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2404,13 +2411,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 07:21 ET",
         "pub_ts": 1795090912.0
-      },
-      {
-        "title": "Global chip stocks rally as Anthropic’s record IPO boosts confidence in AI trade",
-        "url": "https://finance.yahoo.com/technology/ai/articles/global-chip-stocks-rally-anthropic-112707609.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 06:27 ET",
-        "pub_ts": 1795087627.0
       }
     ],
     "SKHY": [
@@ -3255,13 +3255,13 @@
     "SOXS": 1795095870.4066617,
     "NVDA": 1795095870.4066617,
     "AMD": 1795095870.4066617,
-    "ASML": 1795094444.2668922,
-    "QCOM": 1795094444.2668922,
+    "ASML": 1795095974.1023552,
+    "QCOM": 1795095974.1023552,
     "AVGO": 1795095870.4066617,
     "AMAT": 1795095870.4066617,
-    "META": 1795094444.2668922,
-    "GOOGL": 1795094444.2668922,
-    "MSFT": 1795094444.2668922,
+    "META": 1795095974.1023552,
+    "GOOGL": 1795095974.1023552,
+    "MSFT": 1795095974.1023552,
     "AAPL": 1795094651.4090517,
     "PLTR": 1795094651.4090517,
     "NOW": 1795094651.4090517,
@@ -3275,26 +3275,26 @@
     "COHR": 1795094651.4090517,
     "MRVL": 1795094651.4090517,
     "LITE": 1795094651.4090517,
-    "AAOI": 1795094444.2668922,
+    "AAOI": 1795095974.1023552,
     "SPCX": 1795094651.4090517,
     "ASTS": 1795094651.4090517,
     "AXTI": 1795094651.4090517,
-    "NASA": 1795094444.2668922,
-    "LUNR": 1795094444.2668922,
-    "TSLA": 1795094444.2668922,
-    "AXP": 1795094444.2668922,
+    "NASA": 1795095974.1023552,
+    "LUNR": 1795095974.1023552,
+    "TSLA": 1795095974.1023552,
+    "AXP": 1795095974.1023552,
     "RKLB": 1795094651.4090517,
-    "KO": 1795094444.2668922,
+    "KO": 1795095974.1023552,
     "FLY": 1795094755.9181206,
-    "INTC": 1795094444.2668922,
-    "VRT": 1795094444.2668922,
-    "HPE": 1795094444.2668922,
-    "DELL": 1795094444.2668922,
-    "OKLO": 1795094444.2668922,
-    "CEG": 1795094444.2668922,
-    "FPS": 1795094444.2668922,
-    "MU": 1795094444.2668922,
-    "SKHY": 1795094444.2668922,
+    "INTC": 1795095974.1023552,
+    "VRT": 1795095974.1023552,
+    "HPE": 1795095974.1023552,
+    "DELL": 1795095974.1023552,
+    "OKLO": 1795095974.1023552,
+    "CEG": 1795095974.1023552,
+    "FPS": 1795095974.1023552,
+    "MU": 1795095974.1023552,
+    "SKHY": 1795095974.1023552,
     "WDC": 1795094549.5212789,
     "STX": 1795094549.5212789,
     "MSTR": 1795094549.5212789,
@@ -3321,7 +3321,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (08:17 ET / 21:17 BJ) [芯片] [英伟达] [微软]：重要新闻 1. 纳斯达克：Anthropic的IPO将于北京时间22:50开始报价。 2. 习近平：中美应当加强沟通和协调，防范人工智能安全风险，确保人工智能始终处于人类控制之下。 个股新闻",
+    "detail": "⚡ 最新核心快讯 (08:45 ET / 21:45 BJ) [特朗普]：特朗普据悉仍在考虑美以联手空袭伊朗，白宫下令五角大楼、情报部门推演方案，重点评估能否避免伊朗打击海湾油气设施。点击查看...",
     "event_name": "",
     "minutes_left": 0
   }
