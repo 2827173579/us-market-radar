@@ -1,9 +1,22 @@
 {
-  "updated_at_ts": 1795124325.815,
-  "updated_at_et": "11-19 16:38 ET",
-  "updated_at_kst": "06:38 KST",
+  "updated_at_ts": 1795124427.011,
+  "updated_at_et": "11-19 16:40 ET",
+  "updated_at_kst": "06:40 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261120053908471800",
+      "title": "Anthropic(ANT.O)美股盘后跌4%，AMD(AMD.O)跌近2%，英伟达(N…",
+      "summary": "Anthropic(ANT.O)美股盘后跌4%，AMD(AMD.O)跌近2%，英伟达(NVDA.O)跌近1%。",
+      "keywords": [
+        "英伟达"
+      ],
+      "pub_ts": 1795124348.0,
+      "time_et": "11-19 16:39 ET",
+      "time_bj": "05:39 BJ",
+      "time_kst": "06:39 KST",
+      "time_display": "16:39 ET / 05:39 BJ"
+    },
     {
       "id": "20261120052100948800",
       "title": "【特朗普表示不会在新年前“仓促”决定对伊朗行动】美国总统特朗普19日表示，在新年到来之前…",
@@ -327,19 +340,6 @@
       "time_bj": "20:14 BJ",
       "time_kst": "21:14 KST",
       "time_display": "07:14 ET / 20:14 BJ"
-    },
-    {
-      "id": "20261119195513374800",
-      "title": "霍尔木兹的油轮损失，可能是原油空头的噩梦｜原油头条",
-      "summary": "布伦特本月跌去21%，库存与需求数据双双转弱，但霍尔木兹的油轮风险仍未出清，原油空头最该防的，不是基本面，是一次被证实的损失。",
-      "keywords": [
-        "原油"
-      ],
-      "pub_ts": 1795089313.0,
-      "time_et": "11-19 06:55 ET",
-      "time_bj": "19:55 BJ",
-      "time_kst": "20:55 KST",
-      "time_display": "06:55 ET / 19:55 BJ"
     }
   ],
   "ticker_news": {
@@ -3323,7 +3323,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (16:21 ET / 05:21 BJ) [特朗普]：【特朗普表示不会在新年前“仓促”决定对伊朗行动】美国总统特朗普19日表示，在新年到来之前，他不会就伊朗问题的下一步行动“仓促”作出决定。特朗普当天接受采访时说，他不会就伊朗问题“仓促”作出任",
+    "detail": "⚡ 最新核心快讯 (16:39 ET / 05:39 BJ) [英伟达]：Anthropic(ANT.O)美股盘后跌4%，AMD(AMD.O)跌近2%，英伟达(NVDA.O)跌近1%。",
     "event_name": "",
     "minutes_left": 0
   }
