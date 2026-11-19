@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795116051.918,
-  "updated_at_et": "11-19 14:20 ET",
-  "updated_at_kst": "04:20 KST",
+  "updated_at_ts": 1795116161.902,
+  "updated_at_et": "11-19 14:22 ET",
+  "updated_at_kst": "04:22 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -788,6 +788,13 @@
     ],
     "TSM": [
       {
+        "title": "TSMC and Samsung's China Chip Pause Has Stakes Beyond AI",
+        "url": "https://finance.yahoo.com/technology/articles/tsmc-samsungs-china-chip-pause-185414287.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 13:54 ET",
+        "pub_ts": 1795114454.0
+      },
+      {
         "title": "Ken Fisher’s Quiet Bet on TSMC (TSM): Owning the AI Boom Without Picking a Winner",
         "url": "https://finance.yahoo.com/markets/stocks/articles/ken-fisher-quiet-bet-tsmc-181236877.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -814,13 +821,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 12:07 ET",
         "pub_ts": 1795108020.0
-      },
-      {
-        "title": "Qualcomm vs. Taiwan Semiconductor: Diverging Revenue Trends for Major Chipmakers",
-        "url": "https://www.fool.com/coverage/charts/2026/11/19/qualcomm-vs-taiwan-semiconductor-diverging-revenue-trends-for-major-chipmakers/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 12:03 ET",
-        "pub_ts": 1795107782.0
       }
     ],
     "VIXY": [
@@ -899,6 +899,13 @@
     ],
     "NVDA": [
       {
+        "title": "Nvidia will not be the leader 5 years from now: Tiernan Ray",
+        "url": "https://finance.yahoo.com/video/nvidia-will-not-be-the-leader-5-years-from-now-tiernan-ray-185954396.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 13:59 ET",
+        "pub_ts": 1795114794.0
+      },
+      {
         "title": "Why AI competition from China won't be a risk US tech companies",
         "url": "https://finance.yahoo.com/video/why-ai-competition-from-china-wont-be-a-risk-us-tech-companies-184851467.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -906,35 +913,42 @@
         "pub_ts": 1795114131.0
       },
       {
-        "title": "Anthropic soars in Wall Street debut despite AI jitters",
-        "url": "https://finance.yahoo.com/technology/ai/articles/anthropic-set-price-ipo-key-030309911.html?.tsrc=rss",
+        "title": "Trump's New Filing Reveals Nvidia, SpaceX And Tesla Purchases. White House Says He Didn't Direct Trades.",
+        "url": "https://www.ibtimes.com/trump-financial-disclosure-nvidia-spacex-tesla-purchases-3809977?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-19 13:27 ET",
-        "pub_ts": 1795112833.0
+        "time": "11-19 14:03 ET",
+        "pub_ts": 1795115037.0
       },
       {
-        "title": "$1 Million In Nvidia Five Years Ago: What Is It Worth Now?",
-        "url": "https://www.trefis.com/stock/nvda/articles/626572/1-million-in-nvidia-five-years-ago-what-is-it-worth-now/2026-11-19?.tsrc=rss",
+        "title": "Morgan Stanley tweaks Nvidia price target after blowout earnings",
+        "url": "https://www.thestreet.com/investing/stocks/morgan-stanley-nvidia-price-target-cut?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-19 13:23 ET",
-        "pub_ts": 1795112600.0
+        "time": "11-19 14:03 ET",
+        "pub_ts": 1795114980.0
       },
       {
-        "title": "Nvidia Stock Can’t Shake Post-Huang Hangover. Anthropic Debut Also Not Providing a Boost.",
-        "url": "https://finance.yahoo.com/m/2aecd526-25f4-3d74-b631-29512899d802/nvidia-stock-can%E2%80%99t-shake.html?.tsrc=rss",
+        "title": "Nvidia, Intel, Micron and Dell Stocks Jump as Anthropic Massive IPO Sparks Rally",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/nvidia-intel-micron-dell-stocks-185029536.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-19 13:19 ET",
-        "pub_ts": 1795112340.0
-      },
-      {
-        "title": "Is Anthropic Really Worth More Than $1 Trillion?",
-        "url": "https://www.fool.com/investing/2026/11/19/is-anthropic-really-worth-more-than-usd1-trillion/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 13:30 ET",
-        "pub_ts": 1795113000.0
+        "time": "11-19 13:50 ET",
+        "pub_ts": 1795114229.0
       }
     ],
     "AMD": [
+      {
+        "title": "AMD Is Still Up 125% This Year. Did Today Just Mark the Top for AMD Stock?",
+        "url": "https://247wallst.com/investing/2026/11/19/amd-is-still-up-125-this-year-did-today-just-mark-the-top-for-amd-stock/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 14:02 ET",
+        "pub_ts": 1795114948.0
+      },
+      {
+        "title": "AMD Has a New Problem to Solve in Asia",
+        "url": "https://finance.yahoo.com/technology/ai/articles/amd-problem-solve-asia-184139858.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 13:41 ET",
+        "pub_ts": 1795113699.0
+      },
       {
         "title": "AMD Faces Its Own China Questions After Hunterbrook Report",
         "url": "https://finance.yahoo.com/markets/stocks/articles/amd-faces-own-china-questions-183546783.html?.tsrc=rss",
@@ -955,20 +969,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 13:12 ET",
         "pub_ts": 1795111969.0
-      },
-      {
-        "title": "AMD shares slide after short-seller warns China ties could invite US scrutiny",
-        "url": "https://nypost.com/2026/11/19/business/amd-shares-slide-after-short-seller-warns-china-ties-could-invite-us-scrutiny/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 12:49 ET",
-        "pub_ts": 1795110587.0
-      },
-      {
-        "title": "AMD Is Actually Cheap With Projected Earnings Now Costing Less Than 50 Cents on The Dollar",
-        "url": "https://247wallst.com/investing/2026/11/19/amd-is-actually-cheap-with-projected-earnings-now-costing-less-than-50-cents-on-the-dollar/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 12:45 ET",
-        "pub_ts": 1795110322.0
       }
     ],
     "ASML": [
@@ -1121,6 +1121,20 @@
     ],
     "META": [
       {
+        "title": "Meta's New AI Agent Raises Serious Privacy Questions for Investors",
+        "url": "https://finance.yahoo.com/technology/ai/articles/metas-ai-agent-raises-serious-184522659.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 13:45 ET",
+        "pub_ts": 1795113922.0
+      },
+      {
+        "title": "Daniel Loeb's Meta Stock Bet Stands Out as Tiger Global Trims",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/daniel-loebs-meta-stock-bet-184245777.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 13:42 ET",
+        "pub_ts": 1795113765.0
+      },
+      {
         "title": "Meta Stock Down 21%: Too Much AI Spending?",
         "url": "https://www.trefis.com/stock/meta/articles/626523/meta-stock-down-21-too-much-ai-spending/2026-11-19?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1140,29 +1154,29 @@
         "source": "Yahoo Finance",
         "time": "11-19 12:26 ET",
         "pub_ts": 1795109216.0
-      },
-      {
-        "title": "A $93 Billion Hedge Fund Just Bought These 3 Stocks",
-        "url": "https://www.tikr.com/blog/a-93-billion-hedge-fund-just-bought-these-3-stocks?ref=yahoofinance&tlnk=yf-261119-6p4hrv8g&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 12:26 ET",
-        "pub_ts": 1795109182.0
-      },
-      {
-        "title": "Meta rethinks climate goal as AI emissions soar 45%",
-        "url": "https://www.axios.com/2026/11/19/meta-ai-emissions-rise#utm_source=yahoo_finance&utm_medium=partner&utm_campaign=subs-partner-yahoo-finance-AI?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 12:00 ET",
-        "pub_ts": 1795107648.0
       }
     ],
     "GOOGL": [
+      {
+        "title": "Nvidia will not be the leader 5 years from now: Tiernan Ray",
+        "url": "https://finance.yahoo.com/video/nvidia-will-not-be-the-leader-5-years-from-now-tiernan-ray-185954396.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 13:59 ET",
+        "pub_ts": 1795114794.0
+      },
       {
         "title": "Why AI competition from China won't be a risk US tech companies",
         "url": "https://finance.yahoo.com/video/why-ai-competition-from-china-wont-be-a-risk-us-tech-companies-184851467.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-19 13:48 ET",
         "pub_ts": 1795114131.0
+      },
+      {
+        "title": "Google's AI Space Test Moves Beyond a Single Satellite",
+        "url": "https://finance.yahoo.com/technology/ai/articles/googles-ai-space-test-moves-184228982.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 13:42 ET",
+        "pub_ts": 1795113748.0
       },
       {
         "title": "As Anthropic Goes Public, Open Source AI Is Closing In Says Google Pioneer",
@@ -1177,20 +1191,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 13:24 ET",
         "pub_ts": 1795112670.0
-      },
-      {
-        "title": "Amazon Beat QQQ, But The Ride Was Much Harder",
-        "url": "https://www.trefis.com/stock/amzn/articles/626704/amazon-beat-qqq-but-the-ride-was-much-harder/2026-11-19?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 13:23 ET",
-        "pub_ts": 1795112601.0
-      },
-      {
-        "title": "Can Google Borrow Another $100 Billion?",
-        "url": "https://www.trefis.com/stock/googl/articles/626551/can-google-borrow-another-100-billion/2026-11-19?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 13:23 ET",
-        "pub_ts": 1795112601.0
       }
     ],
     "MSFT": [
@@ -1223,11 +1223,11 @@
         "pub_ts": 1795111369.0
       },
       {
-        "title": "Bill Ackman's Microsoft Bet Has More at Stake Than It Seems",
-        "url": "https://finance.yahoo.com/markets/options/articles/bill-ackmans-microsoft-bet-more-174636674.html?.tsrc=rss",
+        "title": "JPMorgan Chase Reveals Data Breach Involving Third-Party Vendors",
+        "url": "https://finance.yahoo.com/technology/articles/jpmorgan-chase-reveals-data-breach-184543857.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-19 12:46 ET",
-        "pub_ts": 1795110396.0
+        "time": "11-19 13:45 ET",
+        "pub_ts": 1795113943.0
       }
     ],
     "AAPL": [
@@ -3239,30 +3239,30 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795114552.8217278,
-    "SOXL": 1795114552.8217278,
-    "SPY": 1795114552.8217278,
-    "DIA": 1795114552.8217278,
-    "SOXX": 1795114552.8217278,
-    "QQQ": 1795114552.8217278,
-    "SMH": 1795114552.8217278,
-    "IWM": 1795114552.8217278,
-    "IGV": 1795114552.8217278,
-    "TLT": 1795114552.8217278,
-    "GLD": 1795114552.8217278,
-    "SQQQ": 1795114552.8217278,
-    "TSM": 1795114552.8217278,
-    "VIXY": 1795114552.8217278,
-    "SOXS": 1795114552.8217278,
-    "NVDA": 1795114552.8217278,
-    "AMD": 1795114552.8217278,
-    "ASML": 1795114552.8217278,
-    "QCOM": 1795114552.8217278,
-    "AVGO": 1795114657.1127105,
-    "AMAT": 1795114552.8217278,
-    "META": 1795114552.8217278,
-    "GOOGL": 1795114552.8217278,
-    "MSFT": 1795114552.8217278,
+    "KORU": 1795116161.9020038,
+    "SOXL": 1795116161.9020038,
+    "SPY": 1795116161.9020038,
+    "DIA": 1795116161.9020038,
+    "SOXX": 1795116161.9020038,
+    "QQQ": 1795116161.9020038,
+    "SMH": 1795116161.9020038,
+    "IWM": 1795116161.9020038,
+    "IGV": 1795116161.9020038,
+    "TLT": 1795116161.9020038,
+    "GLD": 1795116161.9020038,
+    "SQQQ": 1795116161.9020038,
+    "TSM": 1795116161.9020038,
+    "VIXY": 1795116161.9020038,
+    "SOXS": 1795116161.9020038,
+    "NVDA": 1795116161.9020038,
+    "AMD": 1795116161.9020038,
+    "ASML": 1795116161.9020038,
+    "QCOM": 1795116161.9020038,
+    "AVGO": 1795116161.9020038,
+    "AMAT": 1795116161.9020038,
+    "META": 1795116161.9020038,
+    "GOOGL": 1795116161.9020038,
+    "MSFT": 1795116161.9020038,
     "AAPL": 1795114657.1127105,
     "PLTR": 1795114856.9390645,
     "NOW": 1795114856.9390645,
