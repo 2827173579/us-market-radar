@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795128881.974,
-  "updated_at_et": "11-19 17:54 ET",
-  "updated_at_kst": "07:54 KST",
+  "updated_at_ts": 1795128984.965,
+  "updated_at_et": "11-19 17:56 ET",
+  "updated_at_kst": "07:56 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1349,7 +1349,7 @@
     "AMZN": [
       {
         "title": "Siteimprove.ai Accessibility Agent Now Available for AI Agents Through Agentic Commerce on AWS Marketplace",
-        "url": "https://finance.yahoo.com/technology/ai/articles/siteimprove-ai-accessibility-agent-now-220600704.html?.tsrc=rss",
+        "url": "https://finance.yahoo.com/news/siteimprove-ai-accessibility-agent-now-220600790.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-19 17:06 ET",
         "pub_ts": 1795125960.0
@@ -1385,6 +1385,13 @@
     ],
     "CRWV": [
       {
+        "title": "Is Tech in a Bear Market? 20 Tech Stocks Fall Up to 76% From Highs",
+        "url": "https://beincrypto.com/tech-stocks-bear-market-record-highs/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 17:40 ET",
+        "pub_ts": 1795128039.0
+      },
+      {
         "title": "CoreWeave Just Dropped 25% in a Month. Will CRWV Stock Hit $40 or $50 First?",
         "url": "https://247wallst.com/investing/2026/11/19/coreweave-just-dropped-25-in-a-month-will-crwv-stock-hit-40-or-50-first/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1411,16 +1418,16 @@
         "source": "Yahoo Finance",
         "time": "11-19 13:23 ET",
         "pub_ts": 1795112601.0
-      },
-      {
-        "title": "CoreWeave Rises 2% Ahead of Anthropic Debut as Co-Founder Who’s “Never Been More Confident” Buys Its Bonds",
-        "url": "https://www.tikr.com/blog/coreweave-rises-2-ahead-of-anthropic-debut-as-co-founder-whos-never-been-more-confident-buys-its-bonds?ref=yahoofinance&tlnk=yf-261119-cpr2rgj9&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 10:52 ET",
-        "pub_ts": 1795103567.0
       }
     ],
     "NBIS": [
+      {
+        "title": "Is Tech in a Bear Market? 20 Tech Stocks Fall Up to 76% From Highs",
+        "url": "https://beincrypto.com/tech-stocks-bear-market-record-highs/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 17:40 ET",
+        "pub_ts": 1795128039.0
+      },
       {
         "title": "Nebius Group (NBIS) Cuts 2026 Outlook So Is The Selloff A Buying Opportunity",
         "url": "https://finance.yahoo.com/markets/stocks/articles/nebius-group-nbis-cuts-2026-200959052.html?.tsrc=rss",
@@ -1448,13 +1455,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 10:45 ET",
         "pub_ts": 1795103125.0
-      },
-      {
-        "title": "CoreWeave, Nebius and IREN Stocks Rise Ahead of Anthropic Debut",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/coreweave-nebius-iren-stocks-rise-110732326.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 06:07 ET",
-        "pub_ts": 1795086452.0
       }
     ],
     "APLD": [
@@ -1762,6 +1762,13 @@
         "pub_ts": 1795123430.0
       },
       {
+        "title": "SpaceX Stock Price Forecast: How Much Upside Do Analysts See as Anthropic Goes Public?",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/spacex-stock-price-forecast-much-223706612.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 17:37 ET",
+        "pub_ts": 1795127826.0
+      },
+      {
         "title": "SpaceX Wins Permit For $24 Bil Texas Data Center Project, Tax Break Rejected",
         "url": "https://finance.yahoo.com/m/670d3efa-d012-3f2d-bdb5-0b01f3ad2656/spacex-wins-permit-for-%2424.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1781,13 +1788,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 16:28 ET",
         "pub_ts": 1795123698.0
-      },
-      {
-        "title": "Stellar Anthropic debut fails to ignite broader stock rally",
-        "url": "https://finance.yahoo.com/markets/world-indices/articles/asian-stocks-drop-anthropics-record-025108034.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 16:15 ET",
-        "pub_ts": 1795122950.0
       }
     ],
     "ASTS": [
@@ -3269,29 +3269,29 @@
     "GOOGL": 1795128675.128019,
     "MSFT": 1795128675.128019,
     "AAPL": 1795128881.9743986,
-    "PLTR": 1795127400.76897,
-    "NOW": 1795127400.76897,
-    "AMZN": 1795127400.76897,
-    "CRWV": 1795127400.76897,
-    "NBIS": 1795127400.76897,
-    "APLD": 1795127400.76897,
-    "VST": 1795127400.76897,
-    "BE": 1795127400.76897,
-    "CRDO": 1795127400.76897,
-    "COHR": 1795127400.76897,
-    "MRVL": 1795127400.76897,
-    "LITE": 1795127400.76897,
+    "PLTR": 1795128984.964657,
+    "NOW": 1795128984.964657,
+    "AMZN": 1795128984.964657,
+    "CRWV": 1795128984.964657,
+    "NBIS": 1795128984.964657,
+    "APLD": 1795128984.964657,
+    "VST": 1795128984.964657,
+    "BE": 1795128984.964657,
+    "CRDO": 1795128984.964657,
+    "COHR": 1795128984.964657,
+    "MRVL": 1795128984.964657,
+    "LITE": 1795128984.964657,
     "AAOI": 1795128881.9743986,
-    "SPCX": 1795127400.76897,
-    "ASTS": 1795127400.76897,
-    "AXTI": 1795127400.76897,
+    "SPCX": 1795128984.964657,
+    "ASTS": 1795128984.964657,
+    "AXTI": 1795128984.964657,
     "NASA": 1795128881.9743986,
     "LUNR": 1795128881.9743986,
     "TSLA": 1795128881.9743986,
     "AXP": 1795128881.9743986,
-    "RKLB": 1795127400.76897,
+    "RKLB": 1795128984.964657,
     "KO": 1795128881.9743986,
-    "FLY": 1795127400.76897,
+    "FLY": 1795128984.964657,
     "INTC": 1795128881.9743986,
     "VRT": 1795128881.9743986,
     "HPE": 1795128881.9743986,
@@ -3306,7 +3306,7 @@
     "MSTR": 1795128881.9743986,
     "SNDK": 1795128881.9743986,
     "BTC-USD": 1795128881.9743986,
-    "CRWD": 1795127400.76897,
+    "CRWD": 1795128984.964657,
     "ORCL": 1795127503.189108,
     "COIN": 1795127503.189108,
     "LLY": 1795127503.189108,
@@ -3319,8 +3319,8 @@
     "WMT": 1795127503.189108,
     "V": 1795127503.189108,
     "CAT": 1795127503.189108,
-    "FN": 1795127400.76897,
-    "GLW": 1795127400.76897,
+    "FN": 1795128984.964657,
+    "GLW": 1795128984.964657,
     "ANT": 1795127503.189108,
     "XAUUSD": 1795127503.189108
   },
