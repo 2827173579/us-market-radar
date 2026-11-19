@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795091203.411,
-  "updated_at_et": "11-19 07:26 ET",
-  "updated_at_kst": "21:26 KST",
+  "updated_at_ts": 1795091306.999,
+  "updated_at_et": "11-19 07:28 ET",
+  "updated_at_kst": "21:28 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -562,6 +562,13 @@
     ],
     "SMH": [
       {
+        "title": "Dividend Stocks Or AI Stocks: Which Fits Now?",
+        "url": "https://www.trefis.com/stock/smh/articles/626520/dividend-stocks-or-ai-stocks-which-fits-now/2026-11-19?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 06:47 ET",
+        "pub_ts": 1795088836.0
+      },
+      {
         "title": "Which Funds With Semiconductor Exposure Best Capture The China AI Chip Curbs?",
         "url": "https://finance.yahoo.com/markets/stocks/articles/funds-semiconductor-exposure-best-capture-200931859.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -588,13 +595,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 12:21 ET",
         "pub_ts": 1794936105.0
-      },
-      {
-        "title": "Best semiconductor ETFs: SMH leads on cost, liquidity and momentum",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/best-semiconductor-etfs-smh-leads-210610694.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-16 16:06 ET",
-        "pub_ts": 1794863170.0
       }
     ],
     "IWM": [
@@ -784,6 +784,13 @@
     ],
     "TSM": [
       {
+        "title": "TSMC Stock Falls 5% on China Chip Pause: What Is at Risk?",
+        "url": "https://beincrypto.com/tsmc-stock-real-casualty-new-us-chip-rule/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 06:27 ET",
+        "pub_ts": 1795087641.0
+      },
+      {
         "title": "ETFs Are Net Sellers of Taiwan Semiconductor (TSM) on Nov. 17",
         "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-net-sellers-taiwan-semiconductor-110227646.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -810,13 +817,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 14:11 ET",
         "pub_ts": 1795029072.0
-      },
-      {
-        "title": "NVIDIA's Leadership Woes: Buy TSMC & ASML Despite Supply-Chain Risks?",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/nvidias-leadership-woes-buy-tsmc-190000738.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 14:00 ET",
-        "pub_ts": 1795028400.0
       }
     ],
     "VIXY": [
@@ -895,42 +895,63 @@
     ],
     "NVDA": [
       {
-        "title": "Tech stocks rise as Anthropic to start trading after record IPO",
-        "url": "https://finance.yahoo.com/markets/world-indices/articles/asian-stocks-drop-anthropics-record-025108034.html?.tsrc=rss",
+        "title": "Stalemates over semiconductors and rare earth minerals appear little changed as Trump heads home from China",
+        "url": "https://finance.yahoo.com/markets/article/stalemates-over-semiconductors-and-rare-earth-minerals-appear-little-changed-as-trump-heads-home-from-china-121555352.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-19 06:19 ET",
-        "pub_ts": 1795087172.0
+        "time": "11-19 07:15 ET",
+        "pub_ts": 1795090555.0
       },
       {
-        "title": "‘Nvidia’s turmoil has me spooked’: Should I sell my stocks and buy real estate — or ride out the storm?",
-        "url": "https://www.marketwatch.com/story/nvidia-spooked-me-should-i-sell-my-stocks-or-ride-out-the-market-turmoil-560583c6?.tsrc=rss",
+        "title": "Dan Ives Says Anthropic IPO Is ‘A Big Win For The Tech Sector’ After ‘A White Knuckle Time With Nvidia’",
+        "url": "https://stocktwits.com/news-articles/markets/equity/dan-ives-says-anthropic-ipo-big-win-for-the-tech-sector-after-a-white-knuckle-time-with-nvidia/cNbielNR9iz?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-19 06:15 ET",
-        "pub_ts": 1795086900.0
+        "time": "11-19 07:04 ET",
+        "pub_ts": 1795089869.0
       },
       {
-        "title": "Your Nvidia Weight Sets How Much A Fall Hurts",
-        "url": "https://www.trefis.com/stock/nvda/articles/626647/your-nvidia-weight-sets-how-much-a-fall-hurts/2026-11-19?.tsrc=rss",
+        "title": "Moody’s Says Jensen Huang’s Exit Is “Credit Negative” for Nvidia",
+        "url": "https://247wallst.com/investing/2026/11/19/moodys-says-jensen-huangs-exit-is-credit-negative-for-nvidia/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-19 06:13 ET",
-        "pub_ts": 1795086785.0
+        "time": "11-19 07:02 ET",
+        "pub_ts": 1795089749.0
       },
       {
-        "title": "Michael Burry Sounds Alarm on Nvidia's $500 Billion Wall Street Financing Plan",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/michael-burry-sounds-alarm-nvidias-111036378.html?.tsrc=rss",
+        "title": "Dow Jones Futures Rise, Techs Jump 2%: Anthropic To Debut After Record IPO; Palo Alto, Everpure Rally, Walmart Beats",
+        "url": "https://finance.yahoo.com/m/107e5a2c-4fba-3df3-b2fd-5d1160e65516/dow-jones-futures-rise%2C-techs.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-19 06:10 ET",
-        "pub_ts": 1795086636.0
+        "time": "11-19 07:23 ET",
+        "pub_ts": 1795091007.0
       },
       {
-        "title": "Elon Musk Says Nvidia May Struggle to Replace Jensen Huang as CEO",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/elon-musk-says-nvidia-may-111014337.html?.tsrc=rss",
+        "title": "TJX Beat Its Own Sales Forecast With 4% Comparable Growth, but Management Is Bracing for a Slower Holiday Quarter.",
+        "url": "https://www.fool.com/investing/2026/11/19/tjx-beat-its-own-sales-forecast-with-4-comparable-growth-but-management-is-bracing-for-a-slower-holiday-quarter/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-19 06:10 ET",
-        "pub_ts": 1795086614.0
+        "time": "11-19 07:16 ET",
+        "pub_ts": 1795090608.0
       }
     ],
     "AMD": [
+      {
+        "title": "OpenAI Says Its AI Improved AMD’s Best Chip Design by Up to 14%",
+        "url": "https://247wallst.com/investing/2026/11/19/openai-says-its-ai-improved-amds-best-chip-design-by-up-to-14/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 07:22 ET",
+        "pub_ts": 1795090944.0
+      },
+      {
+        "title": "Why Did David Tepper Exit AMD and Open a $172M Oracle Position? Here’s What May Have Driven the Shift",
+        "url": "https://247wallst.com/investing/2026/11/19/why-did-david-tepper-exit-amd-and-open-a-172m-oracle-position-heres-what-may-have-driven-the-shift/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 07:15 ET",
+        "pub_ts": 1795090508.0
+      },
+      {
+        "title": "NexusIgnite Plans Sovereign AI Cloud in Jordan, Starting With Its Universities",
+        "url": "https://finance.yahoo.com/technology/ai/articles/nexusignite-plans-sovereign-ai-cloud-120000648.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 07:00 ET",
+        "pub_ts": 1795089600.0
+      },
       {
         "title": "What Proshares Trust (TQQQ) Bought: Apple Leads on Nov. 17",
         "url": "https://finance.yahoo.com/markets/stocks/articles/proshares-trust-tqqq-bought-apple-110512618.html?.tsrc=rss",
@@ -944,27 +965,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 06:04 ET",
         "pub_ts": 1795086290.0
-      },
-      {
-        "title": "Direxion Daily Tech Bull 3X (TECL) Sells $56.5 Million of Apple on Nov. 17",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/direxion-daily-tech-bull-3x-110441100.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 06:04 ET",
-        "pub_ts": 1795086281.0
-      },
-      {
-        "title": "Invesco QQQ (QQQ) Sells Apple and Microsoft on Nov. 17",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/invesco-qqq-qqq-sells-apple-110410162.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 06:04 ET",
-        "pub_ts": 1795086250.0
-      },
-      {
-        "title": "ETFs Are Net Sellers of Advanced Micro Devices (AMD) on Nov. 17",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-net-sellers-advanced-micro-110328940.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 06:03 ET",
-        "pub_ts": 1795086208.0
       }
     ],
     "ASML": [
@@ -1080,6 +1080,13 @@
     ],
     "AMAT": [
       {
+        "title": "Applied Materials’ 2027 EPS Estimate Rose to $19.29 After Its Record Quarter. Its Average Price Target Fell to $562",
+        "url": "https://www.tikr.com/blog/applied-materials-2027-eps-estimate-rose-to-19-29-after-its-record-quarter-its-average-price-target-fell-to-562?ref=yahoofinance&tlnk=yf-261119-wrcmqmjc&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 07:06 ET",
+        "pub_ts": 1795089976.0
+      },
+      {
         "title": "ETFs Are Net Sellers of Applied Materials (AMAT) on Nov. 17",
         "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-net-sellers-applied-materials-110334228.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1106,13 +1113,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 10:35 ET",
         "pub_ts": 1795016145.0
-      },
-      {
-        "title": "Applied Materials vs. Marvell Technology: Which Tech Stock Is a Better Buy for 2027?",
-        "url": "https://www.fool.com/coverage/better-buy/2026/11/18/applied-materials-vs-marvell-technology-which-tech-stock-is-a-better-buy-for-2027/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 08:58 ET",
-        "pub_ts": 1795010282.0
       }
     ],
     "META": [
@@ -3235,27 +3235,27 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795089735.626415,
-    "SOXL": 1795089735.626415,
-    "SPY": 1795089735.626415,
-    "DIA": 1795089735.626415,
-    "SOXX": 1795089735.626415,
-    "QQQ": 1795089735.626415,
-    "SMH": 1795089735.626415,
-    "IWM": 1795089735.626415,
-    "IGV": 1795089735.626415,
-    "TLT": 1795089735.626415,
-    "GLD": 1795089735.626415,
-    "SQQQ": 1795089735.626415,
-    "TSM": 1795089735.626415,
-    "VIXY": 1795089735.626415,
-    "SOXS": 1795089735.626415,
-    "NVDA": 1795089735.626415,
-    "AMD": 1795089735.626415,
+    "KORU": 1795091306.9985394,
+    "SOXL": 1795091306.9985394,
+    "SPY": 1795091306.9985394,
+    "DIA": 1795091306.9985394,
+    "SOXX": 1795091306.9985394,
+    "QQQ": 1795091306.9985394,
+    "SMH": 1795091306.9985394,
+    "IWM": 1795091306.9985394,
+    "IGV": 1795091306.9985394,
+    "TLT": 1795091306.9985394,
+    "GLD": 1795091306.9985394,
+    "SQQQ": 1795091306.9985394,
+    "TSM": 1795091306.9985394,
+    "VIXY": 1795091306.9985394,
+    "SOXS": 1795091306.9985394,
+    "NVDA": 1795091306.9985394,
+    "AMD": 1795091306.9985394,
     "ASML": 1795089842.8323462,
     "QCOM": 1795089842.8323462,
-    "AVGO": 1795089735.626415,
-    "AMAT": 1795089735.626415,
+    "AVGO": 1795091306.9985394,
+    "AMAT": 1795091306.9985394,
     "META": 1795089842.8323462,
     "GOOGL": 1795089842.8323462,
     "MSFT": 1795089842.8323462,
