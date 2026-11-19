@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795051261.537,
-  "updated_at_et": "11-18 20:21 ET",
-  "updated_at_kst": "10:21 KST",
+  "updated_at_ts": 1795051364.97,
+  "updated_at_et": "11-18 20:22 ET",
+  "updated_at_kst": "10:22 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -908,6 +908,13 @@
     ],
     "NVDA": [
       {
+        "title": "Hot demand lifts Anthropic IPO price to $83 a share, breaks SpaceX's record raise",
+        "url": "https://finance.yahoo.com/technology/ai/articles/anthropic-set-price-ipo-key-030309911.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 20:02 ET",
+        "pub_ts": 1795050125.0
+      },
+      {
         "title": "Why Nvidia and ASML still fit an underweight tech strategy",
         "url": "https://www.thestreet.com/investing/why-nvidia-and-asml-still-fit-an-underweight-tech-strategy?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -934,13 +941,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 19:23 ET",
         "pub_ts": 1795047812.0
-      },
-      {
-        "title": "What Explains Natera Stock's Nearly 10% Drop?",
-        "url": "https://www.trefis.com/stock/ntra/articles/625786/what-explains-natera-stocks-nearly-10-drop/2026-11-18?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 18:48 ET",
-        "pub_ts": 1795045718.0
       }
     ],
     "AMD": [
@@ -2402,6 +2402,13 @@
         "pub_ts": 1795039095.0
       },
       {
+        "title": "Stock-Split Watch: Is Micron Next?",
+        "url": "https://www.fool.com/investing/2026/11/18/stock-split-watch-is-micron-next/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 20:03 ET",
+        "pub_ts": 1795050182.0
+      },
+      {
         "title": "The 5 Best Stocks in David Tepper’s Portfolio",
         "url": "https://www.tikr.com/blog/the-5-best-stocks-in-david-teppers-portfolio?ref=yahoofinance&tlnk=yf-261118-45xgr3mq&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2414,13 +2421,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 16:07 ET",
         "pub_ts": 1795036062.0
-      },
-      {
-        "title": "Is Micron Undervalued?",
-        "url": "https://www.fool.com/investing/2026/11/18/is-micron-undervalued/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 15:41 ET",
-        "pub_ts": 1795034462.0
       }
     ],
     "SKHY": [
@@ -3211,21 +3211,21 @@
     "SMH": 1795051261.5374064,
     "IWM": 1795051261.5374064,
     "IGV": 1795051261.5374064,
-    "TLT": 1795049862.096676,
-    "GLD": 1795049862.096676,
+    "TLT": 1795051364.969836,
+    "GLD": 1795051364.969836,
     "SQQQ": 1795051261.5374064,
-    "TSM": 1795049862.096676,
-    "VIXY": 1795049862.096676,
-    "SOXS": 1795049862.096676,
-    "NVDA": 1795049862.096676,
-    "AMD": 1795049862.096676,
-    "ASML": 1795049862.096676,
-    "QCOM": 1795049862.096676,
-    "AVGO": 1795049862.096676,
-    "AMAT": 1795049862.096676,
+    "TSM": 1795051364.969836,
+    "VIXY": 1795051364.969836,
+    "SOXS": 1795051364.969836,
+    "NVDA": 1795051364.969836,
+    "AMD": 1795051364.969836,
+    "ASML": 1795051364.969836,
+    "QCOM": 1795051364.969836,
+    "AVGO": 1795051364.969836,
+    "AMAT": 1795051364.969836,
     "META": 1795049964.40086,
     "GOOGL": 1795049964.40086,
-    "MSFT": 1795049862.096676,
+    "MSFT": 1795051364.969836,
     "AAPL": 1795049964.40086,
     "PLTR": 1795049964.40086,
     "NOW": 1795049964.40086,
@@ -3252,19 +3252,19 @@
     "FLY": 1795050066.5839627,
     "INTC": 1795051261.5374064,
     "VRT": 1795051261.5374064,
-    "HPE": 1795049862.096676,
-    "DELL": 1795049862.096676,
-    "OKLO": 1795049862.096676,
+    "HPE": 1795051364.969836,
+    "DELL": 1795051364.969836,
+    "OKLO": 1795051364.969836,
     "CEG": 1795051261.5374064,
     "FPS": 1795051261.5374064,
-    "MU": 1795049862.096676,
-    "SKHY": 1795049862.096676,
-    "WDC": 1795049862.096676,
-    "STX": 1795049862.096676,
-    "MSTR": 1795049862.096676,
-    "SNDK": 1795049862.096676,
-    "BTC-USD": 1795049862.096676,
-    "CRWD": 1795049862.096676,
+    "MU": 1795051364.969836,
+    "SKHY": 1795051364.969836,
+    "WDC": 1795051364.969836,
+    "STX": 1795051364.969836,
+    "MSTR": 1795051364.969836,
+    "SNDK": 1795051364.969836,
+    "BTC-USD": 1795051364.969836,
+    "CRWD": 1795051364.969836,
     "ORCL": 1795049964.40086,
     "COIN": 1795049964.40086,
     "LLY": 1795049964.40086,
