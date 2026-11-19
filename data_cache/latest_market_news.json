@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795054278.999,
-  "updated_at_et": "11-18 21:11 ET",
-  "updated_at_kst": "11:11 KST",
+  "updated_at_ts": 1795054388.903,
+  "updated_at_et": "11-18 21:13 ET",
+  "updated_at_kst": "11:13 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -907,6 +907,20 @@
     ],
     "NVDA": [
       {
+        "title": "Trump Hails ‘Great’ Ties With Xi, Downplays Nvidia Spy Scandal",
+        "url": "https://finance.yahoo.com/economy/policy/articles/trump-hails-great-ties-xi-014442789.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 20:44 ET",
+        "pub_ts": 1795052682.0
+      },
+      {
+        "title": "Trump Suggests US Can Sell Blackwell Chips to China in Future",
+        "url": "https://finance.yahoo.com/technology/ai/articles/trump-suggests-us-sell-blackwell-013901504.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 20:39 ET",
+        "pub_ts": 1795052341.0
+      },
+      {
         "title": "Hot demand lifts Anthropic IPO price to $83 a share, breaks SpaceX's record raise",
         "url": "https://finance.yahoo.com/technology/ai/articles/anthropic-set-price-ipo-key-030309911.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -921,28 +935,21 @@
         "pub_ts": 1795049094.0
       },
       {
-        "title": "‘Nvidia’s turmoil has me spooked’: Should I sell my stocks and buy real estate — or ride out the storm?",
-        "url": "https://www.marketwatch.com/story/nvidia-spooked-me-should-i-sell-my-stocks-or-ride-out-the-market-turmoil-560583c6?.tsrc=rss",
+        "title": "Dow Jones Futures Rise; Anthropic IPO Prices High, Palo Alto And Everpure Rally On Earnings",
+        "url": "https://finance.yahoo.com/m/107e5a2c-4fba-3df3-b2fd-5d1160e65516/dow-jones-futures-rise%3B.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-18 19:30 ET",
-        "pub_ts": 1795048200.0
-      },
-      {
-        "title": "After Nvidia’s Earnings, Here’s My Prediction for the Stock Price by the End of the Year",
-        "url": "https://www.fool.com/investing/2026/11/18/after-nvidia-s-earnings-here-s-my-prediction-for-the-stock-price-by-the-end-of-the-year/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 19:25 ET",
-        "pub_ts": 1795047902.0
-      },
-      {
-        "title": "Elon Musk Says Nvidia Ousting Jensen Huang Is Like Kicking Michael Jordan Off A Winning Team",
-        "url": "https://stocktwits.com/news-articles/markets/equity/elon-musk-says-nvidia-ousting-jensen-huang-is-like-kicking-michael-jordan-off-a-winning-team/cNbLpuMR9ie?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 19:23 ET",
-        "pub_ts": 1795047812.0
+        "time": "11-18 21:08 ET",
+        "pub_ts": 1795054097.0
       }
     ],
     "AMD": [
+      {
+        "title": "Why Is AMD Stock Rising Overnight?",
+        "url": "https://stocktwits.com/news-articles/markets/equity/why-is-amd-stock-rising-overnight/cNbLtmJR9iB?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 21:05 ET",
+        "pub_ts": 1795053925.0
+      },
       {
         "title": "Super Micro Computer (SMCI) Ships PCIe Gen 6 Servers, Is It 57% Below Fair Value?",
         "url": "https://finance.yahoo.com/markets/stocks/articles/super-micro-computer-smci-ships-201020693.html?.tsrc=rss",
@@ -970,13 +977,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 17:16 ET",
         "pub_ts": 1795040160.0
-      },
-      {
-        "title": "Stock Market Today, Nov. 18: Nvidia Slips on Strong Results as Succession and China Business Risks Weigh",
-        "url": "https://www.fool.com/coverage/stock-market-today/2026/11/18/stock-market-today-nov-18-nvidia-slips-on-strong-results-as-succession-and-china-business-risks-weigh/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 17:11 ET",
-        "pub_ts": 1795039895.0
       }
     ],
     "ASML": [
@@ -3210,21 +3210,21 @@
     "SMH": 1795054278.999073,
     "IWM": 1795054278.999073,
     "IGV": 1795054278.999073,
-    "TLT": 1795052880.0547264,
-    "GLD": 1795052880.0547264,
+    "TLT": 1795054388.903495,
+    "GLD": 1795054388.903495,
     "SQQQ": 1795054278.999073,
-    "TSM": 1795052880.0547264,
-    "VIXY": 1795052880.0547264,
-    "SOXS": 1795052880.0547264,
-    "NVDA": 1795052880.0547264,
-    "AMD": 1795052880.0547264,
-    "ASML": 1795052880.0547264,
-    "QCOM": 1795052880.0547264,
-    "AVGO": 1795052880.0547264,
-    "AMAT": 1795052880.0547264,
+    "TSM": 1795054388.903495,
+    "VIXY": 1795054388.903495,
+    "SOXS": 1795054388.903495,
+    "NVDA": 1795054388.903495,
+    "AMD": 1795054388.903495,
+    "ASML": 1795054388.903495,
+    "QCOM": 1795054388.903495,
+    "AVGO": 1795054388.903495,
+    "AMAT": 1795054388.903495,
     "META": 1795052983.6429741,
     "GOOGL": 1795052983.6429741,
-    "MSFT": 1795052880.0547264,
+    "MSFT": 1795054388.903495,
     "AAPL": 1795052983.6429741,
     "PLTR": 1795052983.6429741,
     "NOW": 1795052983.6429741,
@@ -3251,19 +3251,19 @@
     "FLY": 1795053088.5348716,
     "INTC": 1795054278.999073,
     "VRT": 1795054278.999073,
-    "HPE": 1795052880.0547264,
-    "DELL": 1795052880.0547264,
-    "OKLO": 1795052880.0547264,
+    "HPE": 1795054388.903495,
+    "DELL": 1795054388.903495,
+    "OKLO": 1795054388.903495,
     "CEG": 1795054278.999073,
     "FPS": 1795054278.999073,
-    "MU": 1795052880.0547264,
-    "SKHY": 1795052880.0547264,
-    "WDC": 1795052880.0547264,
-    "STX": 1795052880.0547264,
-    "MSTR": 1795052880.0547264,
-    "SNDK": 1795052880.0547264,
-    "BTC-USD": 1795052880.0547264,
-    "CRWD": 1795052880.0547264,
+    "MU": 1795054388.903495,
+    "SKHY": 1795054388.903495,
+    "WDC": 1795054388.903495,
+    "STX": 1795054388.903495,
+    "MSTR": 1795054388.903495,
+    "SNDK": 1795054388.903495,
+    "BTC-USD": 1795054388.903495,
+    "CRWD": 1795054388.903495,
     "ORCL": 1795052983.6429741,
     "COIN": 1795052983.6429741,
     "LLY": 1795052983.6429741,
