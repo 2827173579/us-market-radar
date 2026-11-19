@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795063352.225,
-  "updated_at_et": "11-18 23:42 ET",
-  "updated_at_kst": "13:42 KST",
+  "updated_at_ts": 1795063462.361,
+  "updated_at_et": "11-18 23:44 ET",
+  "updated_at_kst": "13:44 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -911,6 +911,13 @@
         "pub_ts": 1795061265.0
       },
       {
+        "title": "4 Things the Headlines Missed in Nvidia's First Post-Jensen Earnings Report",
+        "url": "https://www.fool.com/investing/2026/11/18/4-things-the-headlines-missed-in-nvidia-s-first-post-jensen-earnings-report/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 23:07 ET",
+        "pub_ts": 1795061222.0
+      },
+      {
         "title": "Peter Thiel’s $85 Million Nvidia Exit Was a Bet the Stock Had Run Far Enough. After Nvidia’s Beat, It Closed Below Every Price He Could Have Sold At",
         "url": "https://247wallst.com/investing/2026/11/18/peter-thiels-85-million-nvidia-exit-was-a-bet-the-stock-had-run-far-enough-after-nvidias-beat-it-closed-below-every-price-he-could-have-sold-at/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -930,16 +937,16 @@
         "source": "Yahoo Finance",
         "time": "11-18 21:51 ET",
         "pub_ts": 1795056668.0
-      },
-      {
-        "title": "CEO Scandals Typically Cost About 1%. Here’s Why It’s Different for Nvidia",
-        "url": "https://www.tikr.com/blog/ceo-scandals-typically-cost-about-1-heres-why-its-different-for-nvidia?ref=yahoofinance&tlnk=yf-261118-hwcfj8vh&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 21:13 ET",
-        "pub_ts": 1795054398.0
       }
     ],
     "AMD": [
+      {
+        "title": "Lisa Su Sells 70,000 Shares for $35.5 Million as AMD Stock Pops 147% in 2026: Her Direct Holdings Fall 2.32%",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/lisa-su-sells-70-000-031823131.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 22:18 ET",
+        "pub_ts": 1795058303.0
+      },
       {
         "title": "Why Is AMD Stock Rising Overnight?",
         "url": "https://stocktwits.com/news-articles/markets/equity/why-is-amd-stock-rising-overnight/cNbLtmJR9iB?.tsrc=rss",
@@ -967,13 +974,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 18:24 ET",
         "pub_ts": 1795044274.0
-      },
-      {
-        "title": "The data center bottlenecks that Mavria aims to solve",
-        "url": "https://finance.yahoo.com/video/the-data-center-bottlenecks-that-mavria-aims-to-solve-221600157.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 17:16 ET",
-        "pub_ts": 1795040160.0
       }
     ],
     "ASML": [
@@ -2405,18 +2405,18 @@
         "pub_ts": 1795039095.0
       },
       {
+        "title": "EXCLUSIVE: Tesla Still Rules Leveraged ETFs, but Anthropic IPO and Micron’s Rise Signal What’s Next",
+        "url": "https://finance.yahoo.com/technology/ai/articles/exclusive-tesla-still-rules-leveraged-033004009.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 22:30 ET",
+        "pub_ts": 1795059004.0
+      },
+      {
         "title": "Stock-Split Watch: Is Micron Next?",
         "url": "https://www.fool.com/investing/2026/11/18/stock-split-watch-is-micron-next/?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-18 20:03 ET",
         "pub_ts": 1795050182.0
-      },
-      {
-        "title": "The 5 Best Stocks in David Tepper’s Portfolio",
-        "url": "https://www.tikr.com/blog/the-5-best-stocks-in-david-teppers-portfolio?ref=yahoofinance&tlnk=yf-261118-45xgr3mq&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 16:53 ET",
-        "pub_ts": 1795038835.0
       }
     ],
     "SKHY": [
@@ -3207,21 +3207,21 @@
     "SMH": 1795063352.224836,
     "IWM": 1795063352.224836,
     "IGV": 1795063352.224836,
-    "TLT": 1795061952.4480853,
-    "GLD": 1795061952.4480853,
+    "TLT": 1795063462.3609269,
+    "GLD": 1795063462.3609269,
     "SQQQ": 1795063352.224836,
-    "TSM": 1795061952.4480853,
-    "VIXY": 1795061952.4480853,
-    "SOXS": 1795061952.4480853,
-    "NVDA": 1795061952.4480853,
-    "AMD": 1795061952.4480853,
-    "ASML": 1795061952.4480853,
-    "QCOM": 1795061952.4480853,
-    "AVGO": 1795061952.4480853,
-    "AMAT": 1795061952.4480853,
+    "TSM": 1795063462.3609269,
+    "VIXY": 1795063462.3609269,
+    "SOXS": 1795063462.3609269,
+    "NVDA": 1795063462.3609269,
+    "AMD": 1795063462.3609269,
+    "ASML": 1795063462.3609269,
+    "QCOM": 1795063462.3609269,
+    "AVGO": 1795063462.3609269,
+    "AMAT": 1795063462.3609269,
     "META": 1795062056.3443623,
     "GOOGL": 1795062056.3443623,
-    "MSFT": 1795061952.4480853,
+    "MSFT": 1795063462.3609269,
     "AAPL": 1795062056.3443623,
     "PLTR": 1795062056.3443623,
     "NOW": 1795062056.3443623,
@@ -3248,18 +3248,18 @@
     "FLY": 1795062160.1011484,
     "INTC": 1795063352.224836,
     "VRT": 1795063352.224836,
-    "HPE": 1795061952.4480853,
-    "DELL": 1795061952.4480853,
-    "OKLO": 1795061952.4480853,
+    "HPE": 1795063462.3609269,
+    "DELL": 1795063462.3609269,
+    "OKLO": 1795063462.3609269,
     "CEG": 1795063352.224836,
     "FPS": 1795063352.224836,
-    "MU": 1795061952.4480853,
-    "SKHY": 1795061952.4480853,
-    "WDC": 1795061952.4480853,
-    "STX": 1795061952.4480853,
-    "MSTR": 1795061952.4480853,
-    "SNDK": 1795061952.4480853,
-    "BTC-USD": 1795061952.4480853,
+    "MU": 1795063462.3609269,
+    "SKHY": 1795063462.3609269,
+    "WDC": 1795063462.3609269,
+    "STX": 1795063462.3609269,
+    "MSTR": 1795063462.3609269,
+    "SNDK": 1795063462.3609269,
+    "BTC-USD": 1795063462.3609269,
     "CRWD": 1795062056.3443623,
     "ORCL": 1795062056.3443623,
     "COIN": 1795062160.1011484,
