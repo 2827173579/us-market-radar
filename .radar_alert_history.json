@@ -18,8 +18,8 @@
       "last_notified_at": 0.0
     },
     "MRNA": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1795101938.619486
     },
     "CRWV": {
       "state": "STOP_LOSS",
@@ -42,8 +42,8 @@
       "last_notified_at": 0.0
     },
     "SPCX": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1795101938.619486
     },
     "TSM": {
       "state": "STOP_LOSS",
@@ -94,20 +94,20 @@
       "last_notified_at": 0.0
     },
     "CEG": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1795101938.619486
     },
     "TLT": {
       "state": "NORMAL",
       "last_notified_at": 0.0
     },
     "COHR": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1795101739.2745357
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "AMD": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1795101839.093958
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     }
   },
   "position_peaks": {
