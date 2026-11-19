@@ -70,8 +70,8 @@
       "last_notified_at": 1795090906.5259597
     },
     "VST": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1795097965.813433
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "AXP": {
       "state": "WATCHLIST_ENTRY_READY",
@@ -86,8 +86,8 @@
       "last_notified_at": 1795097368.5048783
     },
     "IWM": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1795097862.3660421
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     }
   },
   "position_peaks": {
