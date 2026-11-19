@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795130573.734,
-  "updated_at_et": "11-19 18:22 ET",
-  "updated_at_kst": "08:22 KST",
+  "updated_at_ts": 1795130676.065,
+  "updated_at_et": "11-19 18:24 ET",
+  "updated_at_kst": "08:24 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -3199,6 +3199,20 @@
     ],
     "ANT": [
       {
+        "title": "Comfort Systems: Cheaper With Greater EPS Growth (Upgrade)",
+        "url": "https://finnhub.io/api/news?id=074e6df1055c4ec2db5eb15dd9e5496f978f92fba7924f43916e1990f5b185b0",
+        "source": "SeekingAlpha",
+        "time": "11-19 13:02 ET",
+        "pub_ts": 1795111342.0
+      },
+      {
+        "title": "Beyond The Anthropic IPO: Top AI Stocks For The Next Phase Of The Secular Bull",
+        "url": "https://finnhub.io/api/news?id=29f4434c58add3d23c83aa97ede49011cc5261f2a12a227e92df70f466aba9cb",
+        "source": "SeekingAlpha",
+        "time": "11-19 12:51 ET",
+        "pub_ts": 1795110704.0
+      },
+      {
         "title": "Anthropic IPO And SpaceX Made Me Rethink The Small-Cap Premium",
         "url": "https://finnhub.io/api/news?id=bc25b8d0c6c7138c51138771ab97a86e4791bd617a950e7d2912e321dfdc8ebb",
         "source": "SeekingAlpha",
@@ -3218,20 +3232,6 @@
         "source": "SeekingAlpha",
         "time": "11-19 08:31 ET",
         "pub_ts": 1795095111.0
-      },
-      {
-        "title": "3 All Too Early Market Predictions For 2027",
-        "url": "https://finnhub.io/api/news?id=3cd1e366a4543ea3aa1cb040a8ab223208c8615c3123afb48c1aa53e39a24d18",
-        "source": "SeekingAlpha",
-        "time": "11-19 08:04 ET",
-        "pub_ts": 1795093467.0
-      },
-      {
-        "title": "Don't Buy The Anthropic IPO: Buy These 3 Stocks Instead",
-        "url": "https://finnhub.io/api/news?id=4d51f4603a1fd5f69af938631af2ffda501a30ce2c3c148811069ba4edba3fee",
-        "source": "SeekingAlpha",
-        "time": "11-19 05:39 ET",
-        "pub_ts": 1795084764.0
       }
     ],
     "XAUUSD": [
@@ -3308,22 +3308,22 @@
     "SNDK": 1795130468.7374196,
     "BTC-USD": 1795130468.7374196,
     "CRWD": 1795130573.7341866,
-    "ORCL": 1795129088.2340121,
-    "COIN": 1795129088.2340121,
-    "LLY": 1795129088.2340121,
-    "MRNA": 1795129088.2340121,
-    "NKE": 1795129088.2340121,
-    "MCD": 1795129088.2340121,
-    "PEP": 1795129088.2340121,
-    "XOM": 1795129088.2340121,
-    "JPM": 1795129088.2340121,
-    "WMT": 1795129088.2340121,
-    "V": 1795129088.2340121,
-    "CAT": 1795129088.2340121,
+    "ORCL": 1795130676.0651953,
+    "COIN": 1795130676.0651953,
+    "LLY": 1795130676.0651953,
+    "MRNA": 1795130676.0651953,
+    "NKE": 1795130676.0651953,
+    "MCD": 1795130676.0651953,
+    "PEP": 1795130676.0651953,
+    "XOM": 1795130676.0651953,
+    "JPM": 1795130676.0651953,
+    "WMT": 1795130676.0651953,
+    "V": 1795130676.0651953,
+    "CAT": 1795130676.0651953,
     "FN": 1795130573.7341866,
     "GLW": 1795130573.7341866,
-    "ANT": 1795129088.2340121,
-    "XAUUSD": 1795129088.2340121
+    "ANT": 1795130676.0651953,
+    "XAUUSD": 1795130676.0651953
   },
   "calendar_banner": {
     "level": "idle_with_flash",
