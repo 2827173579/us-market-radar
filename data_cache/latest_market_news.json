@@ -1,9 +1,23 @@
 {
-  "updated_at_ts": 1795053192.113,
-  "updated_at_et": "11-18 20:53 ET",
-  "updated_at_kst": "10:53 KST",
+  "updated_at_ts": 1795053289.953,
+  "updated_at_et": "11-18 20:54 ET",
+  "updated_at_kst": "10:54 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261119095250778800",
+      "title": "【期货热点追踪】美联储会议纪要偏鹰释放连续加息信号，12月加息50个基点呼声再起！贵金属…",
+      "summary": "【期货热点追踪】美联储会议纪要偏鹰释放连续加息信号，12月加息50个基点呼声再起！贵金属期货价格大幅下跌，机构称趋势性反弹条件尚不具备，核心观察窗口落在12月议息会议前后，企稳信号何时出现？",
+      "keywords": [
+        "美联储",
+        "加息"
+      ],
+      "pub_ts": 1795053170.0,
+      "time_et": "11-18 20:52 ET",
+      "time_bj": "09:52 BJ",
+      "time_kst": "10:52 KST",
+      "time_display": "20:52 ET / 09:52 BJ"
+    },
     {
       "id": "20261119095102636800",
       "title": "“特普会”前夕，欧洲多国齐聚柏林挺乌，聚焦停火后安全保障",
@@ -333,20 +347,6 @@
       "time_bj": "04:16 BJ",
       "time_kst": "05:16 KST",
       "time_display": "15:16 ET / 04:16 BJ"
-    },
-    {
-      "id": "20261119030756198800",
-      "title": "【美联储会议纪要：少数官员认为后续可能需加息50个基点】 11月19日讯，美联储10月会…",
-      "summary": "【美联储会议纪要：少数官员认为后续可能需加息50个基点】 11月19日讯，美联储10月会议纪要显示，尽管当时同意暂时维持利率不变，官员越来越担心，可能需要加大遏制通胀的力度。会议纪要称，“几乎所有”政策制定者都认为，如果经济走势符合预期，美联储仍需进一步加息。少数官员则表示，通胀可能表现得更为顽固，迫使美联储采取比目前预期“更加紧缩的政策立场”。其中“少数”官员进一步提出，如果后续通胀数据表现不佳，美联储下次会议可能不得不加息50个基点。近期公布的通胀数据已达到这一触发条件，显示物价涨幅高于预期。在支持10月将政策利率维持在3.75%至4.00%区间的官员中，“少数人……表示，他们认为这一决定是艰难作出的决定”，并且也主张美联储应明确表示，维持利率目标区间不变“并不意味着”美联储削弱了实现2%通胀目标的决心。",
-      "keywords": [
-        "美联储",
-        "加息"
-      ],
-      "pub_ts": 1795028876.0,
-      "time_et": "11-18 14:07 ET",
-      "time_bj": "03:07 BJ",
-      "time_kst": "04:07 KST",
-      "time_display": "14:07 ET / 03:07 BJ"
     }
   ],
   "ticker_news": {
@@ -2868,6 +2868,13 @@
     ],
     "MCD": [
       {
+        "title": "Dividend Stocks for 2027: Kimberly-Clark vs. McDonald's",
+        "url": "https://www.fool.com/coverage/better-buy/2026/11/18/dividend-stocks-for-2027-kimberly-clark-vs-mcdonald-s/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 20:20 ET",
+        "pub_ts": 1795051202.0
+      },
+      {
         "title": "McDonald's testing cheaper menu prices",
         "url": "https://www.thestreet.com/restaurants/mcdonalds-tests-cheaper-menu-prices?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2894,13 +2901,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 18:21 ET",
         "pub_ts": 1794957680.0
-      },
-      {
-        "title": "Warren Buffett Buys: 3 Forever Stocks the Billionaire Investor Has Invested In",
-        "url": "https://www.fool.com/investing/2026/11/17/warren-buffett-buys-3-forever-stocks-the-billionaire-investor-has-invested-in/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 16:45 ET",
-        "pub_ts": 1794951902.0
       }
     ],
     "PEP": [
@@ -3269,7 +3269,7 @@
     "LLY": 1795052983.6429741,
     "MRNA": 1795052983.6429741,
     "NKE": 1795053088.5348716,
-    "MCD": 1795051773.8645701,
+    "MCD": 1795053289.953286,
     "PEP": 1795053088.5348716,
     "XOM": 1795052983.6429741,
     "JPM": 1795053088.5348716,
@@ -3282,7 +3282,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (20:51 ET / 09:51 BJ) [特朗普]：特朗普即将与普京会面之际，德法英等国领导人也将在柏林举行会议，重申对乌克兰的支持。特朗普声称不会在没有乌克兰的情况下与俄罗斯达成协议。点击查看…",
+    "detail": "⚡ 最新核心快讯 (20:52 ET / 09:52 BJ) [美联储] [加息]：【期货热点追踪】美联储会议纪要偏鹰释放连续加息信号，12月加息50个基点呼声再起！贵金属期货价格大幅下跌，机构称趋势性反弹条件尚不具备，核心观察窗口落在12月议息会议前后，企稳信号何时出现？",
     "event_name": "",
     "minutes_left": 0
   }
