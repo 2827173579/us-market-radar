@@ -74,8 +74,8 @@
       "last_notified_at": 0.0
     },
     "AXP": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1795114261.790411
     },
     "SPY": {
       "state": "NORMAL",
@@ -110,8 +110,8 @@
       "last_notified_at": 0.0
     },
     "CRWD": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1795114261.790411
     }
   },
   "position_peaks": {
