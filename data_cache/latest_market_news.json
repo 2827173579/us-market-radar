@@ -1,9 +1,23 @@
 {
-  "updated_at_ts": 1795060534.842,
-  "updated_at_et": "11-18 22:55 ET",
-  "updated_at_kst": "12:55 KST",
+  "updated_at_ts": 1795060642.506,
+  "updated_at_et": "11-18 22:57 ET",
+  "updated_at_kst": "12:57 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261119115537344800",
+      "title": "美联储会议纪要释放更鹰派信号，讨论已转向12月加息幅度究竟有多大",
+      "summary": "会议纪要显示，支持进一步收紧的官员人数可能明显多于最终反对票所反映的规模，部分与会者甚至已讨论在通胀不利时采取更大幅度加息，而连续加息也越来越成为基准风险。",
+      "keywords": [
+        "美联储",
+        "加息"
+      ],
+      "pub_ts": 1795060537.0,
+      "time_et": "11-18 22:55 ET",
+      "time_bj": "11:55 BJ",
+      "time_kst": "12:55 KST",
+      "time_display": "22:55 ET / 11:55 BJ"
+    },
     {
       "id": "20261119113323009800",
       "title": "美国“三大库存”仍处低位，累库假象被EIA调整因子明显放大",
@@ -328,20 +342,6 @@
       "time_bj": "07:00 BJ",
       "time_kst": "08:00 KST",
       "time_display": "18:00 ET / 07:00 BJ"
-    },
-    {
-      "id": "20261119065557051800",
-      "title": "美联储鹰派共识升温！几乎全员支持继续加息，两人主张12月超25个基点",
-      "summary": "美联储10月会议纪要显示，几乎所有与会官员都认为，未来几个月可能仍需进一步加息。两名官员提出，如果后续通胀数据表现不佳，12月加息幅度或超25个基点。点击查看",
-      "keywords": [
-        "美联储",
-        "加息"
-      ],
-      "pub_ts": 1795042557.0,
-      "time_et": "11-18 17:55 ET",
-      "time_bj": "06:55 BJ",
-      "time_kst": "07:55 KST",
-      "time_display": "17:55 ET / 06:55 BJ"
     }
   ],
   "ticker_news": {
@@ -2974,6 +2974,13 @@
     ],
     "JPM": [
       {
+        "title": "Fed Chair Kevin Warsh Vowed to Hit the Fed's 2% Inflation Target After October's Rate Hold, Even as JPMorgan Warns Democratic Control of the Senate Could Make Him a One-Term Chair. Here's Why That Political Risk Matters for Markets.",
+        "url": "https://www.fool.com/investing/2026/11/18/fed-chair-kevin-warsh-vowed-no-ifs-ands-or-buts-about-hitting-the-2-inflation-target-after-octobers-rate-hold-even-as-jpmorgan-warns-democratic-control-of-the-senate-could-make-him-a-one-term-chair-heres-why-that-political-risk-matters-for-markets/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 22:35 ET",
+        "pub_ts": 1795059302.0
+      },
+      {
         "title": "JPMorgan taps 20-year company veteran Bregje de Best as its next CFO",
         "url": "https://finance.yahoo.com/markets/stocks/articles/jpmorgan-taps-20-company-veteran-232910777.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3000,13 +3007,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 14:43 ET",
         "pub_ts": 1795030990.0
-      },
-      {
-        "title": "JPMorgan Reveals Cause of Banking Outage That Disrupted U.S. Customers",
-        "url": "https://finance.yahoo.com/technology/articles/jpmorgan-reveals-cause-banking-outage-170511772.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 12:05 ET",
-        "pub_ts": 1795021511.0
       }
     ],
     "WMT": [
@@ -3232,18 +3232,18 @@
     "CRDO": 1795060534.8423936,
     "COHR": 1795060534.8423936,
     "MRVL": 1795060534.8423936,
-    "LITE": 1795059128.0430653,
+    "LITE": 1795060642.5064247,
     "AAOI": 1795060327.430883,
-    "SPCX": 1795059128.0430653,
-    "ASTS": 1795059128.0430653,
-    "AXTI": 1795059128.0430653,
+    "SPCX": 1795060642.5064247,
+    "ASTS": 1795060642.5064247,
+    "AXTI": 1795060642.5064247,
     "NASA": 1795060327.430883,
     "LUNR": 1795060327.430883,
     "TSLA": 1795060327.430883,
     "AXP": 1795060327.430883,
-    "RKLB": 1795059128.0430653,
+    "RKLB": 1795060642.5064247,
     "KO": 1795060327.430883,
-    "FLY": 1795059128.0430653,
+    "FLY": 1795060642.5064247,
     "INTC": 1795060327.430883,
     "VRT": 1795060327.430883,
     "HPE": 1795060430.5459146,
@@ -3260,24 +3260,24 @@
     "BTC-USD": 1795060430.5459146,
     "CRWD": 1795060534.8423936,
     "ORCL": 1795060534.8423936,
-    "COIN": 1795059128.0430653,
+    "COIN": 1795060642.5064247,
     "LLY": 1795060534.8423936,
-    "MRNA": 1795059128.0430653,
-    "NKE": 1795059128.0430653,
+    "MRNA": 1795060642.5064247,
+    "NKE": 1795060642.5064247,
     "MCD": 1795059330.7391658,
-    "PEP": 1795059128.0430653,
+    "PEP": 1795060642.5064247,
     "XOM": 1795060534.8423936,
-    "JPM": 1795059128.0430653,
-    "WMT": 1795059128.0430653,
+    "JPM": 1795060642.5064247,
+    "WMT": 1795060642.5064247,
     "V": 1795060534.8423936,
     "CAT": 1795060534.8423936,
-    "FN": 1795059128.0430653,
-    "GLW": 1795059128.0430653
+    "FN": 1795060642.5064247,
+    "GLW": 1795060642.5064247
   },
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (22:33 ET / 11:33 BJ) [原油]：美国原油、汽油和馏分油三项库存合计仍明显低于去年同期及5年均值，本周商业原油虽录得约340万桶累库，但受SPR释放与EIA调整因子大幅转正影响明显",
+    "detail": "⚡ 最新核心快讯 (22:55 ET / 11:55 BJ) [美联储] [加息]：会议纪要显示，支持进一步收紧的官员人数可能明显多于最终反对票所反映的规模，部分与会者甚至已讨论在通胀不利时采取更大幅度加息，而连续加息也越来越成为基准风险。",
     "event_name": "",
     "minutes_left": 0
   }
