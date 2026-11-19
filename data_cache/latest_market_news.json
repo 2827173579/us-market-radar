@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795049862.097,
-  "updated_at_et": "11-18 19:57 ET",
-  "updated_at_kst": "09:57 KST",
+  "updated_at_ts": 1795049964.401,
+  "updated_at_et": "11-18 19:59 ET",
+  "updated_at_kst": "09:59 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1163,11 +1163,25 @@
     ],
     "GOOGL": [
       {
+        "title": "Q3 Earnings Strong, Q4 Estimates Slip: What the Latest Revisions Mean for 2027",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/q3-earnings-strong-q4-estimates-235100192.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 18:51 ET",
+        "pub_ts": 1795045860.0
+      },
+      {
         "title": "Anthropic's $81.3B haul makes it the largest tech IPO ever",
         "url": "https://pitchbook.com/news/articles/anthropics-81-3b-haul-makes-it-the-second-largest-tech-ipo-ever?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-18 19:08 ET",
         "pub_ts": 1795046917.0
+      },
+      {
+        "title": "Google Signs Landmark Superhot Geothermal Deal",
+        "url": "https://finance.yahoo.com/energy/articles/google-signs-landmark-superhot-geothermal-000000944.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 19:00 ET",
+        "pub_ts": 1795046400.0
       },
       {
         "title": "Is Alphabet Stock a Buy Right Now?",
@@ -1182,20 +1196,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 18:45 ET",
         "pub_ts": 1795045502.0
-      },
-      {
-        "title": "Morgan Stanley Says These 4 Companies Will Spend $1.6 Trillion on AI Infrastructure in 2027",
-        "url": "https://finance.yahoo.com/technology/ai/articles/morgan-stanley-says-4-companies-234321356.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 18:41 ET",
-        "pub_ts": 1795045306.0
-      },
-      {
-        "title": "Thinking About Buying Anthropic’s IPO on Nov. 19? Here’s an AI Stock I’d Consider First (Hint: It’s Not Nvidia or Broadcom).",
-        "url": "https://www.fool.com/investing/2026/11/18/thinking-about-buying-anthropic-s-ipo-on-nov-19-here-s-an-ai-stock-i-d-consider-first-hint-it-s-not-nvidia-or-broadcom/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 18:35 ET",
-        "pub_ts": 1795044902.0
       }
     ],
     "MSFT": [
@@ -1422,6 +1422,13 @@
     ],
     "NBIS": [
       {
+        "title": "Will Lower 2026 Guidance Change Nebius Group (NBIS) Stock Narrative",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/lower-2026-guidance-change-nebius-001517526.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 19:15 ET",
+        "pub_ts": 1795047317.0
+      },
+      {
         "title": "Morgan Stanley Projects $37 Billion in Nebius Capex. The Company Has Bigger Plans",
         "url": "https://finance.yahoo.com/technology/ai/articles/morgan-stanley-projects-37-billion-234934544.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1448,13 +1455,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 14:05 ET",
         "pub_ts": 1795028730.0
-      },
-      {
-        "title": "Nvidia Shrinks Neocloud Backing to $32 Billion as CoreWeave and Nebius Rallies Fade Fast",
-        "url": "https://www.barchart.com/story/news/8898797/nvidia-shrinks-neocloud-backing-to-32-billion-as-coreweave-and-nebius-rallies-fade-fast?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 10:13 ET",
-        "pub_ts": 1795014826.0
       }
     ],
     "APLD": [
@@ -3198,8 +3198,8 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795048380.6618123,
-    "SOXL": 1795048380.6618123,
+    "KORU": 1795049964.40086,
+    "SOXL": 1795049964.40086,
     "SPY": 1795049761.1429408,
     "DIA": 1795049761.1429408,
     "SOXX": 1795049761.1429408,
@@ -3219,21 +3219,21 @@
     "QCOM": 1795049862.096676,
     "AVGO": 1795049862.096676,
     "AMAT": 1795049862.096676,
-    "META": 1795048380.6618123,
-    "GOOGL": 1795048380.6618123,
+    "META": 1795049964.40086,
+    "GOOGL": 1795049964.40086,
     "MSFT": 1795049862.096676,
-    "AAPL": 1795048380.6618123,
-    "PLTR": 1795048380.6618123,
-    "NOW": 1795048380.6618123,
-    "AMZN": 1795048380.6618123,
-    "CRWV": 1795048380.6618123,
-    "NBIS": 1795048380.6618123,
-    "APLD": 1795048380.6618123,
-    "VST": 1795048380.6618123,
-    "BE": 1795048380.6618123,
-    "CRDO": 1795048380.6618123,
-    "COHR": 1795048380.6618123,
-    "MRVL": 1795048380.6618123,
+    "AAPL": 1795049964.40086,
+    "PLTR": 1795049964.40086,
+    "NOW": 1795049964.40086,
+    "AMZN": 1795049964.40086,
+    "CRWV": 1795049964.40086,
+    "NBIS": 1795049964.40086,
+    "APLD": 1795049964.40086,
+    "VST": 1795049964.40086,
+    "BE": 1795049964.40086,
+    "CRDO": 1795049964.40086,
+    "COHR": 1795049964.40086,
+    "MRVL": 1795049964.40086,
     "LITE": 1795048482.5853624,
     "AAOI": 1795049761.1429408,
     "SPCX": 1795048482.5853624,
@@ -3261,18 +3261,18 @@
     "SNDK": 1795049862.096676,
     "BTC-USD": 1795049862.096676,
     "CRWD": 1795049862.096676,
-    "ORCL": 1795048380.6618123,
-    "COIN": 1795048380.6618123,
-    "LLY": 1795048380.6618123,
-    "MRNA": 1795048380.6618123,
+    "ORCL": 1795049964.40086,
+    "COIN": 1795049964.40086,
+    "LLY": 1795049964.40086,
+    "MRNA": 1795049964.40086,
     "NKE": 1795048482.5853624,
     "MCD": 1795048679.6424193,
     "PEP": 1795048482.5853624,
-    "XOM": 1795048380.6618123,
+    "XOM": 1795049964.40086,
     "JPM": 1795048482.5853624,
     "WMT": 1795048482.5853624,
-    "V": 1795048380.6618123,
-    "CAT": 1795048380.6618123,
+    "V": 1795049964.40086,
+    "CAT": 1795049964.40086,
     "FN": 1795048482.5853624,
     "GLW": 1795048482.5853624
   },
