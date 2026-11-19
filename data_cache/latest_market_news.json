@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795080229.609,
-  "updated_at_et": "11-19 04:23 ET",
-  "updated_at_kst": "18:23 KST",
+  "updated_at_ts": 1795080334.332,
+  "updated_at_et": "11-19 04:25 ET",
+  "updated_at_kst": "18:25 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1161,6 +1161,20 @@
         "pub_ts": 1795045860.0
       },
       {
+        "title": "2 Words From Nvidia’s Colette Kress That Should Reassure Investors",
+        "url": "https://www.fool.com/investing/2026/11/19/2-words-from-nvidia-s-colette-kress-that-should-reassure-investors/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 04:15 ET",
+        "pub_ts": 1795079702.0
+      },
+      {
+        "title": "Democrats Just Won Congress. Here's Why Alphabet Could Be a Surprise Winner.",
+        "url": "https://www.fool.com/investing/2026/11/19/democrats-just-won-congress-heres-why-alphabet-cou/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 04:05 ET",
+        "pub_ts": 1795079100.0
+      },
+      {
         "title": "Alphabet (GOOGL) Stock Could Be 47% Undervalued As AI Spending Fears Bite",
         "url": "https://finance.yahoo.com/markets/stocks/articles/alphabet-googl-stock-could-47-032722505.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1173,20 +1187,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 22:03 ET",
         "pub_ts": 1795057380.0
-      },
-      {
-        "title": "Smart Glasses Launch Could Change The Case For Warby Parker Stock",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/smart-glasses-launch-could-change-022225929.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 21:22 ET",
-        "pub_ts": 1795054945.0
-      },
-      {
-        "title": "Anthropic's $81.3B haul makes it the largest tech IPO ever",
-        "url": "https://pitchbook.com/news/articles/anthropics-81-3b-haul-makes-it-the-second-largest-tech-ipo-ever?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 19:08 ET",
-        "pub_ts": 1795046917.0
       }
     ],
     "MSFT": [
@@ -1339,6 +1339,13 @@
     ],
     "AMZN": [
       {
+        "title": "Amazon (AMZN) Stock Trades Below Fair Value As Its 82% Run Continues",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/amazon-amzn-stock-trades-below-090928160.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 04:09 ET",
+        "pub_ts": 1795079368.0
+      },
+      {
         "title": "ASTS Stock Jumps Overnight Despite New Shares For Engines And Spectrum — Bulls Cheer ULA’s Amazon Launch Clue",
         "url": "https://stocktwits.com/news-articles/markets/equity/asts-new-shares-engines-spectrum-bulls-ula-amazon-launch-clue/cNbLyqER9iS?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1365,16 +1372,16 @@
         "source": "Yahoo Finance",
         "time": "11-18 21:17 ET",
         "pub_ts": 1795054631.0
-      },
-      {
-        "title": "3 Investments to Give a Child This Holiday Season and Leave Alone Until 2040",
-        "url": "https://www.fool.com/investing/2026/11/18/3-investments-to-give-a-child-this-holiday-season-and-leave-alone-until-2040/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 19:58 ET",
-        "pub_ts": 1795049882.0
       }
     ],
     "CRWV": [
+      {
+        "title": "Has CoreWeave (CRWV) Fallen Far Enough After Its 40% Slide?",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/coreweave-crwv-fallen-far-enough-090852966.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 04:08 ET",
+        "pub_ts": 1795079332.0
+      },
       {
         "title": "Why Is CRWV Stock Rising Overnight?",
         "url": "https://stocktwits.com/news-articles/markets/equity/why-is-crwv-stock-rising-overnight/cNbLvT9R9iQ?.tsrc=rss",
@@ -1402,13 +1409,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 17:23 ET",
         "pub_ts": 1795040595.0
-      },
-      {
-        "title": "Stock Market Today, Nov. 18: CoreWeave Slides as Nvidia's Blowout Earnings Fail to Ease Debt Concerns",
-        "url": "https://www.fool.com/coverage/stock-market-today/2026/11/18/stock-market-today-nov-18-coreweave-slides-as-nvidia-s-blowout-earnings-fail-to-ease-debt-concerns/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 17:05 ET",
-        "pub_ts": 1795039502.0
       }
     ],
     "NBIS": [
@@ -3189,8 +3189,8 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795078821.7839425,
-    "SOXL": 1795078821.7839425,
+    "KORU": 1795080334.3317864,
+    "SOXL": 1795080334.3317864,
     "SPY": 1795080126.8690407,
     "DIA": 1795080126.8690407,
     "SOXX": 1795080126.8690407,
@@ -3210,21 +3210,21 @@
     "QCOM": 1795080229.6086938,
     "AVGO": 1795080229.6086938,
     "AMAT": 1795080229.6086938,
-    "META": 1795078821.7839425,
-    "GOOGL": 1795078821.7839425,
+    "META": 1795080334.3317864,
+    "GOOGL": 1795080334.3317864,
     "MSFT": 1795080229.6086938,
-    "AAPL": 1795078821.7839425,
-    "PLTR": 1795078821.7839425,
-    "NOW": 1795078821.7839425,
-    "AMZN": 1795078821.7839425,
-    "CRWV": 1795078821.7839425,
-    "NBIS": 1795078821.7839425,
-    "APLD": 1795078821.7839425,
-    "VST": 1795078821.7839425,
-    "BE": 1795078821.7839425,
-    "CRDO": 1795078821.7839425,
-    "COHR": 1795078821.7839425,
-    "MRVL": 1795078821.7839425,
+    "AAPL": 1795080334.3317864,
+    "PLTR": 1795080334.3317864,
+    "NOW": 1795080334.3317864,
+    "AMZN": 1795080334.3317864,
+    "CRWV": 1795080334.3317864,
+    "NBIS": 1795080334.3317864,
+    "APLD": 1795080334.3317864,
+    "VST": 1795080334.3317864,
+    "BE": 1795080334.3317864,
+    "CRDO": 1795080334.3317864,
+    "COHR": 1795080334.3317864,
+    "MRVL": 1795080334.3317864,
     "LITE": 1795078927.9679441,
     "AAOI": 1795080126.8690407,
     "SPCX": 1795078927.9679441,
@@ -3251,19 +3251,19 @@
     "MSTR": 1795080229.6086938,
     "SNDK": 1795080229.6086938,
     "BTC-USD": 1795080229.6086938,
-    "CRWD": 1795078821.7839425,
-    "ORCL": 1795078821.7839425,
+    "CRWD": 1795080334.3317864,
+    "ORCL": 1795080334.3317864,
     "COIN": 1795078927.9679441,
-    "LLY": 1795078821.7839425,
+    "LLY": 1795080334.3317864,
     "MRNA": 1795078927.9679441,
     "NKE": 1795078927.9679441,
     "MCD": 1795079129.1883736,
     "PEP": 1795078927.9679441,
-    "XOM": 1795078821.7839425,
+    "XOM": 1795080334.3317864,
     "JPM": 1795078927.9679441,
     "WMT": 1795078927.9679441,
-    "V": 1795078821.7839425,
-    "CAT": 1795078821.7839425,
+    "V": 1795080334.3317864,
+    "CAT": 1795080334.3317864,
     "FN": 1795078927.9679441,
     "GLW": 1795078927.9679441
   },
