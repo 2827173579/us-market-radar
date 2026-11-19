@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795057514.907,
-  "updated_at_et": "11-18 22:05 ET",
-  "updated_at_kst": "12:05 KST",
+  "updated_at_ts": 1795057618.829,
+  "updated_at_et": "11-18 22:06 ET",
+  "updated_at_kst": "12:06 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1757,6 +1757,13 @@
     ],
     "SPCX": [
       {
+        "title": "SpaceX’s December Lock-Up Frees Another 17% of Its Shares. Here’s What October’s Unlock Did to the Stock.",
+        "url": "https://www.fool.com/investing/2026/11/18/spacex-s-december-lock-up-frees-another-17-of-its-shares-here-s-what-october-s-unlock-did-to-the-stock/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 21:55 ET",
+        "pub_ts": 1795056902.0
+      },
+      {
         "title": "Hot demand lifts Anthropic IPO price to $83 a share, breaks SpaceX's record raise",
         "url": "https://finance.yahoo.com/technology/ai/articles/anthropic-set-price-ipo-key-030309911.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1771,25 +1778,18 @@
         "pub_ts": 1795047212.0
       },
       {
+        "title": "Jim Cramer just sent a strong warning about the Anthropic IPO",
+        "url": "https://www.thestreet.com/investing/stocks/jim-cramer-just-sent-a-strong-warning-about-the-anthropic-ipo?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 21:37 ET",
+        "pub_ts": 1795055820.0
+      },
+      {
         "title": "Tesla And SpaceX ‘Better Together’? Musk Leans Yes — But Says Performance Must Drive His TSLA Pay",
         "url": "https://stocktwits.com/news-articles/markets/equity/tesla-spacex-better-together-musk-performance-tsla-pay/cNbLsa5R9iJ?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-18 20:56 ET",
         "pub_ts": 1795053379.0
-      },
-      {
-        "title": "Anthropic Prices IPO at $83 a Share, Raising $81.3 Billion in Largest Listing on Record",
-        "url": "https://www.cryptoprowl.com/releases/anthropic-prices-ipo-at-83-a-share-raising-813-billion-in-largest-listing-on-record-7975?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 20:40 ET",
-        "pub_ts": 1795052400.0
-      },
-      {
-        "title": "Anthropic’s $83 IPO price puts it on track for a record-breaking debut on Wall Street. Here’s what it means",
-        "url": "https://www.cnn.com/2026/11/18/investing/anthropic-ipo-price-stock?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 20:32 ET",
-        "pub_ts": 1795051964.0
       }
     ],
     "ASTS": [
@@ -3236,18 +3236,18 @@
     "CRDO": 1795057514.9066253,
     "COHR": 1795057514.9066253,
     "MRVL": 1795057514.9066253,
-    "LITE": 1795056101.0051446,
+    "LITE": 1795057618.8290255,
     "AAOI": 1795057307.20731,
-    "SPCX": 1795056101.0051446,
-    "ASTS": 1795056101.0051446,
-    "AXTI": 1795056101.0051446,
+    "SPCX": 1795057618.8290255,
+    "ASTS": 1795057618.8290255,
+    "AXTI": 1795057618.8290255,
     "NASA": 1795057307.20731,
     "LUNR": 1795057307.20731,
     "TSLA": 1795057307.20731,
     "AXP": 1795057307.20731,
-    "RKLB": 1795056101.0051446,
+    "RKLB": 1795057618.8290255,
     "KO": 1795057307.20731,
-    "FLY": 1795056101.0051446,
+    "FLY": 1795057618.8290255,
     "INTC": 1795057307.20731,
     "VRT": 1795057307.20731,
     "HPE": 1795057410.8638735,
@@ -3264,19 +3264,19 @@
     "BTC-USD": 1795057410.8638735,
     "CRWD": 1795057514.9066253,
     "ORCL": 1795057514.9066253,
-    "COIN": 1795056101.0051446,
+    "COIN": 1795057618.8290255,
     "LLY": 1795057514.9066253,
-    "MRNA": 1795056101.0051446,
-    "NKE": 1795056101.0051446,
+    "MRNA": 1795057618.8290255,
+    "NKE": 1795057618.8290255,
     "MCD": 1795056311.5109959,
-    "PEP": 1795056101.0051446,
+    "PEP": 1795057618.8290255,
     "XOM": 1795057514.9066253,
-    "JPM": 1795056101.0051446,
-    "WMT": 1795056101.0051446,
+    "JPM": 1795057618.8290255,
+    "WMT": 1795057618.8290255,
     "V": 1795057514.9066253,
     "CAT": 1795057514.9066253,
-    "FN": 1795056101.0051446,
-    "GLW": 1795056101.0051446
+    "FN": 1795057618.8290255,
+    "GLW": 1795057618.8290255
   },
   "calendar_banner": {
     "level": "idle_with_flash",
