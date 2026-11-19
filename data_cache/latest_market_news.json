@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795103853.182,
-  "updated_at_et": "11-19 10:57 ET",
-  "updated_at_kst": "00:57 KST",
+  "updated_at_ts": 1795103957.864,
+  "updated_at_et": "11-19 10:59 ET",
+  "updated_at_kst": "00:59 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1342,11 +1342,25 @@
     ],
     "AMZN": [
       {
+        "title": "Amazon warns New York labor bill could hike order costs",
+        "url": "https://finance.yahoo.com/economy/policy/articles/amazon-warns-york-labor-bill-154951850.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 10:49 ET",
+        "pub_ts": 1795103391.0
+      },
+      {
         "title": "Musk: SpaceX Has a “Monopoly” in Space. That’s Bad News for Amazon’s Leo. But Also Bad for SpaceX",
         "url": "https://www.tikr.com/blog/musk-spacex-has-a-monopoly-in-space-thats-bad-news-for-amazons-leo-but-also-bad-for-spacex?ref=yahoofinance&tlnk=yf-261119-53r8796f&.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-19 09:50 ET",
         "pub_ts": 1795099842.0
+      },
+      {
+        "title": "Can Amazon's Ad Revenue Growth Continue to Underpin the Stock's Value?",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/amazons-ad-revenue-growth-continue-144700801.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 09:47 ET",
+        "pub_ts": 1795099620.0
       },
       {
         "title": "The Zacks Analyst Blog Highlights Oracle, Microsoft, Amazon and Alphabet",
@@ -1361,23 +1375,16 @@
         "source": "Yahoo Finance",
         "time": "11-19 09:54 ET",
         "pub_ts": 1795100079.0
-      },
-      {
-        "title": "Anthropic’s IPO Drew Nearly $500 Billion in Orders for $81 Billion of Stock",
-        "url": "https://247wallst.com/investing/2026/11/19/anthropics-ipo-drew-nearly-500-billion-in-orders-for-81-billion-of-stock/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 09:13 ET",
-        "pub_ts": 1795097603.0
-      },
-      {
-        "title": "What Could Derail Take-Two Stock?",
-        "url": "https://www.trefis.com/stock/ttwo/articles/626761/what-could-derail-take-two-stock/2026-11-19?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 10:17 ET",
-        "pub_ts": 1795101464.0
       }
     ],
     "CRWV": [
+      {
+        "title": "Opinion: Trump May Have Finally Killed the AI Trade",
+        "url": "https://www.tikr.com/blog/opinion-trump-may-have-finally-killed-the-ai-trade?ref=yahoofinance&tlnk=yf-261119-xjm2c5jx&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 10:23 ET",
+        "pub_ts": 1795101818.0
+      },
       {
         "title": "History of CoreWeave: Company timeline, facts & milestones",
         "url": "https://www.thestreet.com/investing/stocks/history-of-coreweave-company-timeline-facts-milestones?.tsrc=rss",
@@ -1405,16 +1412,16 @@
         "source": "Yahoo Finance",
         "time": "11-19 08:00 ET",
         "pub_ts": 1795093200.0
-      },
-      {
-        "title": "CoreWeave, Nebius and IREN Stocks Rise Ahead of Anthropic Debut",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/coreweave-nebius-iren-stocks-rise-110732326.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 06:07 ET",
-        "pub_ts": 1795086452.0
       }
     ],
     "NBIS": [
+      {
+        "title": "Why Wall Street Is Wrong: Buy Nebius as Customers Prepay Over 100% of Its CapEx",
+        "url": "https://247wallst.com/investing/2026/11/19/why-wall-street-is-wrong-buy-nebius-as-customers-prepay-over-100-of-its-capex/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 10:45 ET",
+        "pub_ts": 1795103125.0
+      },
       {
         "title": "CoreWeave, Nebius and IREN Stocks Rise Ahead of Anthropic Debut",
         "url": "https://finance.yahoo.com/markets/stocks/articles/coreweave-nebius-iren-stocks-rise-110732326.html?.tsrc=rss",
@@ -1442,13 +1449,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 18:49 ET",
         "pub_ts": 1795045774.0
-      },
-      {
-        "title": "IREN, CoreWeave and Nebius Stock Prices Have Plunged More Than 60%. Here's What It Means for AI Investors",
-        "url": "https://www.fool.com/investing/2026/11/18/iren-coreweave-and-nebius-stock-prices-have-plunged-more-than-60-here-s-what-it-means-for-ai-investors/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 15:25 ET",
-        "pub_ts": 1795033547.0
       }
     ],
     "APLD": [
@@ -1601,6 +1601,13 @@
     ],
     "COHR": [
       {
+        "title": "Coherent shares rise after board approves $2 billion buyback program",
+        "url": "https://www.proactiveinvestors.com/companies/news/1102129/coherent-shares-rise-after-board-approves-2-billion-buyback-program-1102129.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 10:46 ET",
+        "pub_ts": 1795103160.0
+      },
+      {
         "title": "Seagate Soars 6%, Coherent Up 8% as AI Stocks Rebound on Anthropic IPO Day",
         "url": "https://www.tikr.com/blog/seagate-soars-6-coherent-up-8-as-ai-stocks-rebound-on-anthropic-ipo-day?ref=yahoofinance&tlnk=yf-261119-ppm522hc&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1627,16 +1634,23 @@
         "source": "Yahoo Finance",
         "time": "11-19 05:13 ET",
         "pub_ts": 1795083232.0
-      },
-      {
-        "title": "Coherent Ranks #33 on TIME's America's Top Manufacturers 2027 List",
-        "url": "https://finance.yahoo.com/technology/articles/coherent-ranks-33-times-americas-191500464.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 14:15 ET",
-        "pub_ts": 1795029300.0
       }
     ],
     "MRVL": [
+      {
+        "title": "Broadcom’s $13.67B Quarterly FCF Beats Marvell’s Scaling Story, Plain and Simple",
+        "url": "https://247wallst.com/investing/2026/11/19/broadcoms-13-67b-quarterly-fcf-beats-marvells-scaling-story-plain-and-simple/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 10:45 ET",
+        "pub_ts": 1795103136.0
+      },
+      {
+        "title": "Can MRVL's Custom Silicon Business Drive Its Next Growth Phase?",
+        "url": "https://finance.yahoo.com/technology/ai/articles/mrvls-custom-silicon-business-drive-145200965.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 09:52 ET",
+        "pub_ts": 1795099920.0
+      },
       {
         "title": "Credo Sinks 8% in a Week, Marvell 8%, as Bessent Calls for a Nvidia “Dramatic Shakeup.” Time to Buy?",
         "url": "https://www.tikr.com/blog/credo-stock-drop-nvidia-turmoil-marvell-patent-settlement-buy?ref=yahoofinance&tlnk=yf-261119-7f4x9qjq&.tsrc=rss",
@@ -1657,23 +1671,16 @@
         "source": "Yahoo Finance",
         "time": "11-18 17:30 ET",
         "pub_ts": 1795041005.0
-      },
-      {
-        "title": "Marvel Biosciences Announces Grant of Deferred Share Units",
-        "url": "https://finance.yahoo.com/healthcare/articles/marvel-biosciences-announces-grant-deferred-220200624.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 17:02 ET",
-        "pub_ts": 1795039320.0
-      },
-      {
-        "title": "Marvell And Intel Halved: How Long Until They Recover?",
-        "url": "https://www.trefis.com/stock/mrvl/articles/626099/marvell-and-intel-halved-how-long-until-they-recover/2026-11-18?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 16:29 ET",
-        "pub_ts": 1795037340.0
       }
     ],
     "LITE": [
+      {
+        "title": "Ken Fisher and 14 Other Big Funds Sold Lumentum Last Quarter, While 18 Bought. Who’s Right?",
+        "url": "https://www.tikr.com/blog/ken-fisher-and-14-other-big-funds-sold-lumentum-last-quarter-while-18-bought-whos-right?ref=yahoofinance&tlnk=yf-261119-x67757vq&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 10:43 ET",
+        "pub_ts": 1795102999.0
+      },
       {
         "title": "Applied Optoelectronics Rallies 5% Despite $550 Million Share Sale Plan; Coherent Jumps 8%, Lumentum Climbs 4%",
         "url": "https://247wallst.com/investing/2026/11/19/applied-optoelectronics-rallies-5-despite-550-million-share-sale-plan-coherent-jumps-8-lumentum-climbs-4/?.tsrc=rss",
@@ -1701,13 +1708,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 15:03 ET",
         "pub_ts": 1795032235.0
-      },
-      {
-        "title": "The Deal Behind Needham’s Call on Lumentum (LITE)",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/deal-behind-needham-call-lumentum-161129119.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 11:11 ET",
-        "pub_ts": 1795018289.0
       }
     ],
     "AAOI": [
@@ -1756,11 +1756,11 @@
         "pub_ts": 1795099773.0
       },
       {
-        "title": "Why Anthropic investors don't want too much of a stock pop on day 1",
-        "url": "https://finance.yahoo.com/video/why-anthropic-investors-dont-want-too-much-of-a-stock-pop-on-day-1-143311802.html?.tsrc=rss",
+        "title": "Elon Musk Says Tesla and SpaceX Would “Probably” Be Better Together",
+        "url": "https://247wallst.com/investing/2026/11/19/elon-musk-says-tesla-and-spacex-would-probably-be-better-together/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-19 09:33 ET",
-        "pub_ts": 1795098791.0
+        "time": "11-19 10:32 ET",
+        "pub_ts": 1795102355.0
       },
       {
         "title": "Musk: SpaceX Has a “Monopoly” in Space. That’s Bad News for Amazon’s Leo. But Also Bad for SpaceX",
@@ -1777,11 +1777,11 @@
         "pub_ts": 1795099500.0
       },
       {
-        "title": "SpaceX Wins Permit For $24 Bil Texas Data Center Project, Tax Break Rejected",
-        "url": "https://finance.yahoo.com/m/670d3efa-d012-3f2d-bdb5-0b01f3ad2656/spacex-wins-permit-for-%2424.html?.tsrc=rss",
+        "title": "174-year-old American bank’s Bitcoin exposure nears Tesla and SpaceX",
+        "url": "https://www.thestreet.com/crypto/business/174-year-old-american-banks-bitcoin-exposure-nears-tesla-and-spacex?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-19 09:40 ET",
-        "pub_ts": 1795099240.0
+        "time": "11-19 10:30 ET",
+        "pub_ts": 1795102200.0
       }
     ],
     "ASTS": [
@@ -3263,29 +3263,29 @@
     "GOOGL": 1795103747.0607052,
     "MSFT": 1795103747.0607052,
     "AAPL": 1795103853.181998,
-    "PLTR": 1795102440.9044087,
-    "NOW": 1795102440.9044087,
-    "AMZN": 1795102440.9044087,
-    "CRWV": 1795102440.9044087,
-    "NBIS": 1795102440.9044087,
-    "APLD": 1795102440.9044087,
-    "VST": 1795102440.9044087,
-    "BE": 1795102440.9044087,
-    "CRDO": 1795102440.9044087,
-    "COHR": 1795102440.9044087,
-    "MRVL": 1795102440.9044087,
-    "LITE": 1795102440.9044087,
+    "PLTR": 1795103957.8637924,
+    "NOW": 1795103957.8637924,
+    "AMZN": 1795103957.8637924,
+    "CRWV": 1795103957.8637924,
+    "NBIS": 1795103957.8637924,
+    "APLD": 1795103957.8637924,
+    "VST": 1795103957.8637924,
+    "BE": 1795103957.8637924,
+    "CRDO": 1795103957.8637924,
+    "COHR": 1795103957.8637924,
+    "MRVL": 1795103957.8637924,
+    "LITE": 1795103957.8637924,
     "AAOI": 1795103853.181998,
-    "SPCX": 1795102440.9044087,
-    "ASTS": 1795102440.9044087,
-    "AXTI": 1795102440.9044087,
+    "SPCX": 1795103957.8637924,
+    "ASTS": 1795103957.8637924,
+    "AXTI": 1795103957.8637924,
     "NASA": 1795103853.181998,
     "LUNR": 1795103853.181998,
     "TSLA": 1795103853.181998,
     "AXP": 1795103853.181998,
-    "RKLB": 1795102440.9044087,
+    "RKLB": 1795103957.8637924,
     "KO": 1795103853.181998,
-    "FLY": 1795102440.9044087,
+    "FLY": 1795103957.8637924,
     "INTC": 1795103853.181998,
     "VRT": 1795103853.181998,
     "HPE": 1795103853.181998,
@@ -3300,7 +3300,7 @@
     "MSTR": 1795103853.181998,
     "SNDK": 1795103853.181998,
     "BTC-USD": 1795103853.181998,
-    "CRWD": 1795102440.9044087,
+    "CRWD": 1795103957.8637924,
     "ORCL": 1795102548.0092988,
     "COIN": 1795102548.0092988,
     "LLY": 1795102548.0092988,
@@ -3313,8 +3313,8 @@
     "WMT": 1795102548.0092988,
     "V": 1795102548.0092988,
     "CAT": 1795102548.0092988,
-    "FN": 1795102440.9044087,
-    "GLW": 1795102440.9044087,
+    "FN": 1795103957.8637924,
+    "GLW": 1795103957.8637924,
     "ANT": 1795102548.0092988,
     "XAUUSD": 1795102548.0092988
   },
