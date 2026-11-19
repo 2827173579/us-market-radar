@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795124222.582,
-  "updated_at_et": "11-19 16:37 ET",
-  "updated_at_kst": "06:37 KST",
+  "updated_at_ts": 1795124325.815,
+  "updated_at_et": "11-19 16:38 ET",
+  "updated_at_kst": "06:38 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2993,18 +2993,18 @@
         "pub_ts": 1795120153.0
       },
       {
+        "title": "Top Analyst Reports for Berkshire Hathaway, JPMorgan & Procter & Gamble",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/top-analyst-reports-berkshire-hathaway-202300112.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 15:23 ET",
+        "pub_ts": 1795119780.0
+      },
+      {
         "title": "Hackers Leak Visa, Mastercard and JPMorgan Customer Data",
         "url": "https://decrypt.co/383663/hackers-leak-visa-mastercard-jpmorgan-data?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-19 15:15 ET",
         "pub_ts": 1795119332.0
-      },
-      {
-        "title": "JPMorgan Chase Reveals Data Breach Involving Third-Party Vendors",
-        "url": "https://finance.yahoo.com/technology/articles/jpmorgan-chase-reveals-data-breach-184543857.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 13:45 ET",
-        "pub_ts": 1795113943.0
       }
     ],
     "WMT": [
@@ -3053,6 +3053,13 @@
         "pub_ts": 1795114994.0
       },
       {
+        "title": "CORRECTING and REPLACING Visa Expands Agentic Ready to Help Scale Trusted AI Commerce Globally",
+        "url": "https://finance.yahoo.com/technology/ai/articles/visa-expands-agentic-ready-help-043000271.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 16:11 ET",
+        "pub_ts": 1795122660.0
+      },
+      {
         "title": "Hackers Leak Visa, Mastercard and JPMorgan Customer Data",
         "url": "https://decrypt.co/383663/hackers-leak-visa-mastercard-jpmorgan-data?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3072,13 +3079,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 13:28 ET",
         "pub_ts": 1795112902.0
-      },
-      {
-        "title": "93% of Audited Merchant Accounts Missed Visa CEDP Discounts, Verisave and Canyon Payments Analysis Finds",
-        "url": "https://finance.yahoo.com/small-business/articles/93-audited-merchant-accounts-missed-174500193.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 12:45 ET",
-        "pub_ts": 1795110300.0
       }
     ],
     "CAT": [
@@ -3303,22 +3303,22 @@
     "SNDK": 1795124114.1111884,
     "BTC-USD": 1795124114.1111884,
     "CRWD": 1795124222.5824542,
-    "ORCL": 1795122819.5745845,
-    "COIN": 1795122819.5745845,
-    "LLY": 1795122819.5745845,
-    "MRNA": 1795122819.5745845,
-    "NKE": 1795122819.5745845,
-    "MCD": 1795122819.5745845,
-    "PEP": 1795122819.5745845,
-    "XOM": 1795122819.5745845,
-    "JPM": 1795122819.5745845,
-    "WMT": 1795122819.5745845,
-    "V": 1795122819.5745845,
-    "CAT": 1795122819.5745845,
+    "ORCL": 1795124325.8152735,
+    "COIN": 1795124325.8152735,
+    "LLY": 1795124325.8152735,
+    "MRNA": 1795124325.8152735,
+    "NKE": 1795124325.8152735,
+    "MCD": 1795124325.8152735,
+    "PEP": 1795124325.8152735,
+    "XOM": 1795124325.8152735,
+    "JPM": 1795124325.8152735,
+    "WMT": 1795124325.8152735,
+    "V": 1795124325.8152735,
+    "CAT": 1795124325.8152735,
     "FN": 1795124222.5824542,
     "GLW": 1795124222.5824542,
-    "ANT": 1795122819.5745845,
-    "XAUUSD": 1795122819.5745845
+    "ANT": 1795124325.8152735,
+    "XAUUSD": 1795124325.8152735
   },
   "calendar_banner": {
     "level": "idle_with_flash",
