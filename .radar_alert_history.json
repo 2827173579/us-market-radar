@@ -54,16 +54,16 @@
       "last_notified_at": 0.0
     },
     "LLY": {
-      "state": "TAKE_PROFIT",
-      "last_notified_at": 1795093941.2760177
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "MCD": {
       "state": "NORMAL",
       "last_notified_at": 0.0
     },
     "V": {
-      "state": "TAKE_PROFIT",
-      "last_notified_at": 1795098666.6494226
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "KO": {
       "state": "TAKE_PROFIT",
@@ -74,8 +74,8 @@
       "last_notified_at": 0.0
     },
     "AXP": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1795097368.5048783
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "SPY": {
       "state": "NORMAL",
@@ -90,8 +90,8 @@
       "last_notified_at": 0.0
     },
     "IGV": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1795098773.8942106
     }
   },
   "position_peaks": {
