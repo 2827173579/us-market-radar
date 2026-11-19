@@ -1,9 +1,22 @@
 {
-  "updated_at_ts": 1795046806.531,
-  "updated_at_et": "11-18 19:06 ET",
-  "updated_at_kst": "09:06 KST",
+  "updated_at_ts": 1795046909.114,
+  "updated_at_et": "11-18 19:08 ET",
+  "updated_at_kst": "09:08 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261119080621292800",
+      "title": "特朗普考虑再度大规模空袭伊朗！内塔尼亚胡据报力推4至7天行动，美军已集结重兵",
+      "summary": "据纽约时报，特朗普正权衡对伊朗发动新一轮大规模打击。以色列据报力推为期4至7天的空袭，但美国情报部门对伊朗威胁的判断仍与以方存在分歧。点击查看...",
+      "keywords": [
+        "特朗普"
+      ],
+      "pub_ts": 1795046781.0,
+      "time_et": "11-18 19:06 ET",
+      "time_bj": "08:06 BJ",
+      "time_kst": "09:06 KST",
+      "time_display": "19:06 ET / 08:06 BJ"
+    },
     {
       "id": "20261119073613068800",
       "title": "英伟达称黄仁勋离职后“一切照常”，华尔街却不买账！股价连续第五天下跌",
@@ -330,19 +343,6 @@
       "time_bj": "23:32 BJ",
       "time_kst": "00:32 KST",
       "time_display": "10:32 ET / 23:32 BJ"
-    },
-    {
-      "id": "20261118233056495800",
-      "title": "1. EIA报告：11月13日当周美国原油出口增加103.3万桶/日至448.8万桶/日…",
-      "summary": "1. EIA报告：11月13日当周美国原油出口增加103.3万桶/日至448.8万桶/日。 2. EIA报告：11月13日当周美国国内原油产量增加1.9万桶至1403.2万桶/日。 3. EIA报告：除却战略储备的商业原油库存增加338.0万桶至4.18亿桶，增幅0.82%。 4. EIA报告：美国原油产品四周平均供应量为2057.6万桶/日，较去年同期减少0.31%。 5. EIA报告：11月13日当周美国战略石油储备（SPR）库存减少317.4万桶至2.764亿桶，降幅1.14%。 6. EIA报告：11月13日当周美国除却战略储备的商业原油进口557.6万桶/日，较前一周减少112.2万桶/日。",
-      "keywords": [
-        "原油"
-      ],
-      "pub_ts": 1795015856.0,
-      "time_et": "11-18 10:30 ET",
-      "time_bj": "23:30 BJ",
-      "time_kst": "00:30 KST",
-      "time_display": "10:30 ET / 23:30 BJ"
     }
   ],
   "ticker_news": {
@@ -1768,6 +1768,13 @@
         "pub_ts": 1795041480.0
       },
       {
+        "title": "Ken Griffin Dumps SpaceX, Amazon; Buys ARKK and Bets Big on Marvell",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/ken-griffin-dumps-spacex-amazon-223005217.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 17:30 ET",
+        "pub_ts": 1795041005.0
+      },
+      {
         "title": "Elon Musk says Sean Duffy declined free Starlinks for the FAA because they weren't needed: 'As it turns out, they were'",
         "url": "https://finance.yahoo.com/technology/articles/elon-musk-says-sean-duffy-223000214.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1780,13 +1787,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 17:21 ET",
         "pub_ts": 1795040473.0
-      },
-      {
-        "title": "Dan Sundheim’s Fund Still Has More Than Half of Its $32 Billion Stock Portfolio in One Stock",
-        "url": "https://247wallst.com/investing/2026/11/18/dan-sundheims-fund-still-has-more-than-half-of-its-32-billion-stock-portfolio-in-one-stock/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 17:18 ET",
-        "pub_ts": 1795040317.0
       }
     ],
     "ASTS": [
@@ -3233,18 +3233,18 @@
     "CRDO": 1795046806.53124,
     "COHR": 1795046806.53124,
     "MRVL": 1795046806.53124,
-    "LITE": 1795045375.1451535,
+    "LITE": 1795046909.1137657,
     "AAOI": 1795046601.5898106,
-    "SPCX": 1795045375.1451535,
-    "ASTS": 1795045375.1451535,
-    "AXTI": 1795045375.1451535,
+    "SPCX": 1795046909.1137657,
+    "ASTS": 1795046909.1137657,
+    "AXTI": 1795046909.1137657,
     "NASA": 1795046601.5898106,
     "LUNR": 1795046601.5898106,
     "TSLA": 1795046601.5898106,
     "AXP": 1795046601.5898106,
-    "RKLB": 1795045375.1451535,
+    "RKLB": 1795046909.1137657,
     "KO": 1795046601.5898106,
-    "FLY": 1795045375.1451535,
+    "FLY": 1795046909.1137657,
     "INTC": 1795046601.5898106,
     "VRT": 1795046601.5898106,
     "HPE": 1795046702.921265,
@@ -3264,21 +3264,21 @@
     "COIN": 1795046806.53124,
     "LLY": 1795046806.53124,
     "MRNA": 1795046806.53124,
-    "NKE": 1795045375.1451535,
+    "NKE": 1795046909.1137657,
     "MCD": 1795045574.0085166,
-    "PEP": 1795045375.1451535,
+    "PEP": 1795046909.1137657,
     "XOM": 1795046806.53124,
-    "JPM": 1795045375.1451535,
-    "WMT": 1795045375.1451535,
+    "JPM": 1795046909.1137657,
+    "WMT": 1795046909.1137657,
     "V": 1795046806.53124,
     "CAT": 1795046806.53124,
-    "FN": 1795045375.1451535,
-    "GLW": 1795045375.1451535
+    "FN": 1795046909.1137657,
+    "GLW": 1795046909.1137657
   },
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (18:36 ET / 07:36 BJ) [英伟达]：黄仁勋离职后的首场财报电话会议上，英伟达临时CEO克雷斯反复强调公司运营“一切照常”。尽管财报和业绩指引全面超预期，股价却连续第五个交易日下跌。点击查看...",
+    "detail": "⚡ 最新核心快讯 (19:06 ET / 08:06 BJ) [特朗普]：据纽约时报，特朗普正权衡对伊朗发动新一轮大规模打击。以色列据报力推为期4至7天的空袭，但美国情报部门对伊朗威胁的判断仍与以方存在分歧。点击查看...",
     "event_name": "",
     "minutes_left": 0
   }
