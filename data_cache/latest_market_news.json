@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795068025.243,
-  "updated_at_et": "11-19 01:00 ET",
-  "updated_at_kst": "15:00 KST",
+  "updated_at_ts": 1795068128.813,
+  "updated_at_et": "11-19 01:02 ET",
+  "updated_at_kst": "15:02 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1153,11 +1153,11 @@
         "pub_ts": 1795024023.0
       },
       {
-        "title": "How to Play META Stock as Meta Platforms Tests a New Prediction Markets App",
-        "url": "https://www.barchart.com/story/news/8900135/how-to-play-meta-stock-as-meta-platforms-tests-a-new-prediction-markets-app?.tsrc=rss",
+        "title": "Anthropic’s Cash Pile Tops Amazon And Nvidia Combined After Record IPO – Meet The New ETF Tracking ANT-Linked Companies",
+        "url": "https://stocktwits.com/news-articles/markets/equity/anthropic-s-cash-pile-tops-amazon-and-nvidia-combined-after-record-ipo-meet-the-new-etf-tracking-ant-linked-companies/cNbLyKgR9i1?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-18 11:26 ET",
-        "pub_ts": 1795019219.0
+        "time": "11-19 00:47 ET",
+        "pub_ts": 1795067277.0
       }
     ],
     "GOOGL": [
@@ -1347,6 +1347,13 @@
     ],
     "AMZN": [
       {
+        "title": "Anthropic’s Cash Pile Tops Amazon And Nvidia Combined After Record IPO – Meet The New ETF Tracking ANT-Linked Companies",
+        "url": "https://stocktwits.com/news-articles/markets/equity/anthropic-s-cash-pile-tops-amazon-and-nvidia-combined-after-record-ipo-meet-the-new-etf-tracking-ant-linked-companies/cNbLyKgR9i1?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 00:47 ET",
+        "pub_ts": 1795067277.0
+      },
+      {
         "title": "Amazon and Google face a 10-year AI supply chain problem",
         "url": "https://www.thestreet.com/technology/amazon-and-google-face-a-10-year-ai-supply-chain-problem?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1373,13 +1380,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 18:49 ET",
         "pub_ts": 1795045740.0
-      },
-      {
-        "title": "Blackstone Digital Infrastructure: 3 Key Takeaways for Long-Term Investors",
-        "url": "https://www.fool.com/earnings/takeaways/2026/11/18/blackstone-digital-infrastructure-3-key-takeaways-for-long-term-investors/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 18:46 ET",
-        "pub_ts": 1795045615.0
       }
     ],
     "CRWV": [
@@ -3197,8 +3197,8 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795066600.3207214,
-    "SOXL": 1795066600.3207214,
+    "KORU": 1795068128.8128936,
+    "SOXL": 1795068128.8128936,
     "SPY": 1795067918.8445094,
     "DIA": 1795067918.8445094,
     "SOXX": 1795067918.8445094,
@@ -3218,21 +3218,21 @@
     "QCOM": 1795068025.2433224,
     "AVGO": 1795068025.2433224,
     "AMAT": 1795068025.2433224,
-    "META": 1795066600.3207214,
-    "GOOGL": 1795066600.3207214,
+    "META": 1795068128.8128936,
+    "GOOGL": 1795068128.8128936,
     "MSFT": 1795068025.2433224,
-    "AAPL": 1795066600.3207214,
-    "PLTR": 1795066600.3207214,
-    "NOW": 1795066600.3207214,
-    "AMZN": 1795066600.3207214,
-    "CRWV": 1795066600.3207214,
-    "NBIS": 1795066600.3207214,
-    "APLD": 1795066600.3207214,
-    "VST": 1795066600.3207214,
-    "BE": 1795066600.3207214,
-    "CRDO": 1795066600.3207214,
-    "COHR": 1795066600.3207214,
-    "MRVL": 1795066600.3207214,
+    "AAPL": 1795068128.8128936,
+    "PLTR": 1795068128.8128936,
+    "NOW": 1795068128.8128936,
+    "AMZN": 1795068128.8128936,
+    "CRWV": 1795068128.8128936,
+    "NBIS": 1795068128.8128936,
+    "APLD": 1795068128.8128936,
+    "VST": 1795068128.8128936,
+    "BE": 1795068128.8128936,
+    "CRDO": 1795068128.8128936,
+    "COHR": 1795068128.8128936,
+    "MRVL": 1795068128.8128936,
     "LITE": 1795066708.2788792,
     "AAOI": 1795067918.8445094,
     "SPCX": 1795066708.2788792,
@@ -3259,19 +3259,19 @@
     "MSTR": 1795068025.2433224,
     "SNDK": 1795068025.2433224,
     "BTC-USD": 1795068025.2433224,
-    "CRWD": 1795066600.3207214,
-    "ORCL": 1795066600.3207214,
+    "CRWD": 1795068128.8128936,
+    "ORCL": 1795068128.8128936,
     "COIN": 1795066708.2788792,
-    "LLY": 1795066600.3207214,
+    "LLY": 1795068128.8128936,
     "MRNA": 1795066708.2788792,
     "NKE": 1795066708.2788792,
     "MCD": 1795066909.202977,
     "PEP": 1795066708.2788792,
-    "XOM": 1795066600.3207214,
+    "XOM": 1795068128.8128936,
     "JPM": 1795066708.2788792,
     "WMT": 1795066708.2788792,
-    "V": 1795066600.3207214,
-    "CAT": 1795066600.3207214,
+    "V": 1795068128.8128936,
+    "CAT": 1795068128.8128936,
     "FN": 1795066708.2788792,
     "GLW": 1795066708.2788792
   },
