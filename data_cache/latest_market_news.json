@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795077087.684,
-  "updated_at_et": "11-19 03:31 ET",
-  "updated_at_kst": "17:31 KST",
+  "updated_at_ts": 1795077193.815,
+  "updated_at_et": "11-19 03:33 ET",
+  "updated_at_kst": "17:33 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -900,6 +900,13 @@
     ],
     "NVDA": [
       {
+        "title": "Tech firms rise after record Anthropic IPO but Nvidia casts shadow",
+        "url": "https://finance.yahoo.com/markets/world-indices/articles/asian-stocks-drop-anthropics-record-025108034.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 03:21 ET",
+        "pub_ts": 1795076479.0
+      },
+      {
         "title": "If a Stock Market Crash Is Coming, History Says This 1 Investing Move Has Never Once Failed",
         "url": "https://www.fool.com/investing/2026/11/19/if-a-stock-market-crash-is-coming-history-says-this-1-investing-move-has-never-once-failed/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -912,13 +919,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 02:38 ET",
         "pub_ts": 1795073882.0
-      },
-      {
-        "title": "Tech firms rise after record Anthropic IPO but Nvidia casts shadow",
-        "url": "https://finance.yahoo.com/markets/world-indices/articles/asian-stocks-drop-anthropics-record-025108034.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 02:16 ET",
-        "pub_ts": 1795072581.0
       },
       {
         "title": "Does AI Workflow Launch Change The Bull Case For Box (BOX)?",
@@ -1011,6 +1011,13 @@
     ],
     "QCOM": [
       {
+        "title": "Qualcomm (QCOM) Stock May Be Below Fair Value After AI Revenue Targets",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/qualcomm-qcom-stock-may-below-081010117.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 03:10 ET",
+        "pub_ts": 1795075810.0
+      },
+      {
         "title": "Tech layoffs flare up in San Diego with hundreds of layoffs at chipmaker",
         "url": "https://finance.yahoo.com/technology/articles/tech-layoffs-flare-san-diego-204523059.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1037,13 +1044,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 13:28 ET",
         "pub_ts": 1795026480.0
-      },
-      {
-        "title": "A $2.6 Billion Fund Dumps These 3 Stocks",
-        "url": "https://www.tikr.com/blog/a-2-6-billion-fund-dumps-these-3-stocks?ref=yahoofinance&tlnk=yf-261118-5w53rh4v&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 11:46 ET",
-        "pub_ts": 1795020368.0
       }
     ],
     "AVGO": [
@@ -3203,21 +3203,21 @@
     "SMH": 1795077087.683888,
     "IWM": 1795077087.683888,
     "IGV": 1795077087.683888,
-    "TLT": 1795075662.1854572,
-    "GLD": 1795075662.1854572,
+    "TLT": 1795077193.8145483,
+    "GLD": 1795077193.8145483,
     "SQQQ": 1795077087.683888,
-    "TSM": 1795075662.1854572,
-    "VIXY": 1795075662.1854572,
-    "SOXS": 1795075662.1854572,
-    "NVDA": 1795075662.1854572,
-    "AMD": 1795075662.1854572,
-    "ASML": 1795075662.1854572,
-    "QCOM": 1795075662.1854572,
-    "AVGO": 1795075662.1854572,
-    "AMAT": 1795075662.1854572,
+    "TSM": 1795077193.8145483,
+    "VIXY": 1795077193.8145483,
+    "SOXS": 1795077193.8145483,
+    "NVDA": 1795077193.8145483,
+    "AMD": 1795077193.8145483,
+    "ASML": 1795077193.8145483,
+    "QCOM": 1795077193.8145483,
+    "AVGO": 1795077193.8145483,
+    "AMAT": 1795077193.8145483,
     "META": 1795075767.6702306,
     "GOOGL": 1795075767.6702306,
-    "MSFT": 1795075662.1854572,
+    "MSFT": 1795077193.8145483,
     "AAPL": 1795075767.6702306,
     "PLTR": 1795075767.6702306,
     "NOW": 1795075767.6702306,
@@ -3244,18 +3244,18 @@
     "FLY": 1795075873.037857,
     "INTC": 1795077087.683888,
     "VRT": 1795077087.683888,
-    "HPE": 1795075662.1854572,
-    "DELL": 1795075662.1854572,
-    "OKLO": 1795075662.1854572,
+    "HPE": 1795077193.8145483,
+    "DELL": 1795077193.8145483,
+    "OKLO": 1795077193.8145483,
     "CEG": 1795077087.683888,
     "FPS": 1795077087.683888,
-    "MU": 1795075662.1854572,
-    "SKHY": 1795075662.1854572,
-    "WDC": 1795075662.1854572,
-    "STX": 1795075662.1854572,
-    "MSTR": 1795075662.1854572,
-    "SNDK": 1795075662.1854572,
-    "BTC-USD": 1795075662.1854572,
+    "MU": 1795077193.8145483,
+    "SKHY": 1795077193.8145483,
+    "WDC": 1795077193.8145483,
+    "STX": 1795077193.8145483,
+    "MSTR": 1795077193.8145483,
+    "SNDK": 1795077193.8145483,
+    "BTC-USD": 1795077193.8145483,
     "CRWD": 1795075767.6702306,
     "ORCL": 1795075767.6702306,
     "COIN": 1795075873.037857,
