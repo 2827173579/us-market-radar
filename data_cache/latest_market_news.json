@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795197218.771,
-  "updated_at_et": "11-20 12:53 ET",
-  "updated_at_kst": "02:53 KST",
+  "updated_at_ts": 1795197322.869,
+  "updated_at_et": "11-20 12:55 ET",
+  "updated_at_kst": "02:55 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1383,6 +1383,13 @@
     ],
     "CRWV": [
       {
+        "title": "CoreWeave Briefly Trades Below $40 IPO Price Amid Financing Worries",
+        "url": "https://beincrypto.com/coreweave-stock-below-ipo-price/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 12:31 ET",
+        "pub_ts": 1795195879.0
+      },
+      {
         "title": "Should You Buy CoreWeave Stock Now Or Wait?",
         "url": "https://www.trefis.com/stock/crwv/articles/627294/should-you-buy-coreweave-stock-now-or-wait/2026-11-20?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1409,13 +1416,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 09:41 ET",
         "pub_ts": 1795185660.0
-      },
-      {
-        "title": "Cipher Digital Sinks 5%, CoreWeave Down 7% as Anthropic’s Debut Fails to Stop AI Selloff",
-        "url": "https://www.tikr.com/blog/cipher-digital-sinks-5-coreweave-down-7-as-anthropics-debut-fails-to-stop-ai-selloff?ref=yahoofinance&tlnk=yf-261120-46j662p9&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 09:39 ET",
-        "pub_ts": 1795185589.0
       }
     ],
     "NBIS": [
@@ -2123,6 +2123,20 @@
     ],
     "INTC": [
       {
+        "title": "Intel Corporation (INTC) Faces a High-Stakes Turnaround as Server Demand Improves: Can the Stock Recover?",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/intel-corporation-intc-faces-high-172212578.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 12:22 ET",
+        "pub_ts": 1795195332.0
+      },
+      {
+        "title": "Intel Wins Microsoft AI Chip Business as Foundry Turnaround Faces New Test",
+        "url": "https://finance.yahoo.com/technology/articles/intel-wins-microsoft-ai-chip-171706213.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 12:17 ET",
+        "pub_ts": 1795195026.0
+      },
+      {
         "title": "Meta and Microsoft Aren't Cutting Server CPU Orders -- Why AMD and Intel Could Benefit",
         "url": "https://finance.yahoo.com/technology/articles/meta-microsoft-arent-cutting-server-165207063.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2142,20 +2156,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 09:52 ET",
         "pub_ts": 1795186340.0
-      },
-      {
-        "title": "SpaceX Just Passed Intel as Nvidia’s Largest Holding After It Sold a Quarter of Its Intel Stake",
-        "url": "https://247wallst.com/investing/2026/11/20/spacex-just-passed-intel-as-nvidias-largest-holding-after-it-sold-a-quarter-of-its-intel-stake/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 09:50 ET",
-        "pub_ts": 1795186201.0
-      },
-      {
-        "title": "Did Microsoft Azure Deal Just Shift Intel's (INTC) Investment Narrative?",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/did-microsoft-azure-deal-just-131148027.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 08:11 ET",
-        "pub_ts": 1795180308.0
       }
     ],
     "VRT": [
@@ -2382,6 +2382,27 @@
     ],
     "MU": [
       {
+        "title": "Micron Stock Plunges 13% as Barron’s Calls Memory Stocks ‘Agonizingly Cheap’; Western Digital, SanDisk and Seagate Sink in AI Chip Selloff",
+        "url": "https://247wallst.com/investing/2026/11/20/micron-stock-plunges-13-as-barrons-calls-memory-stocks-agonizingly-cheap-western-digital-sandisk-and-seagate-sink-in-ai-chip-selloff/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 12:41 ET",
+        "pub_ts": 1795196464.0
+      },
+      {
+        "title": "Prediction: This Is What Will Happen to Micron’s Stock Price in December",
+        "url": "https://www.fool.com/investing/2026/11/20/prediction-this-is-what-will-happen-to-micron-s-stock-price-in-december/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 12:38 ET",
+        "pub_ts": 1795196282.0
+      },
+      {
+        "title": "Micron Stocks Fall 2.10% After 7.8% Anthropic Rally Reverses",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/micron-stocks-fall-2-10-172406317.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 12:24 ET",
+        "pub_ts": 1795195446.0
+      },
+      {
         "title": "Stock Market Midday, Nov. 20: Nasdaq Plunges Nearly 3% as AMD and Micron Lead a Brutal Semiconductor Sell-Off",
         "url": "https://www.fool.com/coverage/stock-market-today/2026/11/20/stock-market-midday-nov-20-nasdaq-plunges-nearly-3-as-amd-and-micron-lead-a-brutal-semiconductor-sell-off/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2394,27 +2415,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 11:54 ET",
         "pub_ts": 1795193642.0
-      },
-      {
-        "title": "A $19 Billion Fund Just Bought These 3 Stocks",
-        "url": "https://www.tikr.com/blog/a-19-billion-fund-just-bought-these-3-stocks?ref=yahoofinance&tlnk=yf-261120-8mr35qm6&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 11:45 ET",
-        "pub_ts": 1795193126.0
-      },
-      {
-        "title": "MU, SNDK, Other Chipmakers Plunge Amid AI Trade Weakness — UBS Says Risk-Reward In Equities Has Become ‘More Balanced’",
-        "url": "https://stocktwits.com/news-articles/markets/equity/mu-sndk-other-chipmakers-plunge-amid-ai-trade-weakness-ubs-says-risk-reward-in-equities-has-become-more-balanced/cNbSZa1R91c?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 11:11 ET",
-        "pub_ts": 1795191114.0
-      },
-      {
-        "title": "Anthropic, Nvidia, AMD, Micron, Sandisk, Bloom Energy, and More Stocks That Explain Today’s Market",
-        "url": "https://finance.yahoo.com/m/801603d1-8318-3eb0-99a6-10147f0d5ed5/anthropic%2C-nvidia%2C-amd%2C.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 10:59 ET",
-        "pub_ts": 1795190340.0
       }
     ],
     "SKHY": [
@@ -2456,6 +2456,13 @@
     ],
     "WDC": [
       {
+        "title": "Micron Stock Plunges 13% as Barron’s Calls Memory Stocks ‘Agonizingly Cheap’; Western Digital, SanDisk and Seagate Sink in AI Chip Selloff",
+        "url": "https://247wallst.com/investing/2026/11/20/micron-stock-plunges-13-as-barrons-calls-memory-stocks-agonizingly-cheap-western-digital-sandisk-and-seagate-sink-in-ai-chip-selloff/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 12:41 ET",
+        "pub_ts": 1795196464.0
+      },
+      {
         "title": "Competitive Pressure and Multiple Compression Weighed on Western Digital Corporation (WDC) in Q3",
         "url": "https://finance.yahoo.com/markets/stocks/articles/competitive-pressure-multiple-compression-weighed-165515187.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2482,13 +2489,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 13:37 ET",
         "pub_ts": 1795113431.0
-      },
-      {
-        "title": "Seagate and Western Digital Climb 4% Despite Tech Profit-Taking After Anthropic’s IPO Debut; SanDisk Edges Higher",
-        "url": "https://247wallst.com/investing/2026/11/19/seagate-and-western-digital-climb-4-despite-tech-profit-taking-after-anthropics-ipo-debut-sandisk-edges-higher/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 13:26 ET",
-        "pub_ts": 1795112797.0
       }
     ],
     "STX": [
@@ -2574,6 +2574,20 @@
         "pub_ts": 1795184441.0
       },
       {
+        "title": "Micron Stock Plunges 13% as Barron’s Calls Memory Stocks ‘Agonizingly Cheap’; Western Digital, SanDisk and Seagate Sink in AI Chip Selloff",
+        "url": "https://247wallst.com/investing/2026/11/20/micron-stock-plunges-13-as-barrons-calls-memory-stocks-agonizingly-cheap-western-digital-sandisk-and-seagate-sink-in-ai-chip-selloff/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 12:41 ET",
+        "pub_ts": 1795196464.0
+      },
+      {
+        "title": "SanDisk Stock Has Pulled Back. Here’s Where Shares Could Be Headed Next",
+        "url": "https://247wallst.com/investing/2026/11/20/sandisk-stock-has-pulled-back-heres-where-shares-could-be-headed-next/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 12:39 ET",
+        "pub_ts": 1795196355.0
+      },
+      {
         "title": "SanDisk slides over 14% as bearish NAND pricing outlook hits chip stocks",
         "url": "https://www.proactiveinvestors.com/companies/news/1102203/sandisk-slides-over-14-as-bearish-nand-pricing-outlook-hits-chip-stocks-1102203.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2586,20 +2600,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 11:34 ET",
         "pub_ts": 1795192440.0
-      },
-      {
-        "title": "MU, SNDK, Other Chipmakers Plunge Amid AI Trade Weakness — UBS Says Risk-Reward In Equities Has Become ‘More Balanced’",
-        "url": "https://stocktwits.com/news-articles/markets/equity/mu-sndk-other-chipmakers-plunge-amid-ai-trade-weakness-ubs-says-risk-reward-in-equities-has-become-more-balanced/cNbSZa1R91c?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 11:11 ET",
-        "pub_ts": 1795191114.0
-      },
-      {
-        "title": "Anthropic, Nvidia, AMD, Micron, Sandisk, Bloom Energy, and More Stocks That Explain Today’s Market",
-        "url": "https://finance.yahoo.com/m/801603d1-8318-3eb0-99a6-10147f0d5ed5/anthropic%2C-nvidia%2C-amd%2C.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 10:59 ET",
-        "pub_ts": 1795190340.0
       }
     ],
     "BTC-USD": [
@@ -3259,18 +3259,18 @@
     "SOXS": 1795197218.771414,
     "NVDA": 1795197218.771414,
     "AMD": 1795197218.771414,
-    "ASML": 1795195805.9154437,
-    "QCOM": 1795195805.9154437,
+    "ASML": 1795197322.8692732,
+    "QCOM": 1795197322.8692732,
     "AVGO": 1795197218.771414,
     "AMAT": 1795197218.771414,
     "META": 1795197218.771414,
     "GOOGL": 1795197218.771414,
     "MSFT": 1795197218.771414,
-    "AAPL": 1795195805.9154437,
-    "PLTR": 1795195805.9154437,
-    "NOW": 1795195805.9154437,
-    "AMZN": 1795195805.9154437,
-    "CRWV": 1795195805.9154437,
+    "AAPL": 1795197322.8692732,
+    "PLTR": 1795197322.8692732,
+    "NOW": 1795197322.8692732,
+    "AMZN": 1795197322.8692732,
+    "CRWV": 1795197322.8692732,
     "NBIS": 1795196717.4654138,
     "APLD": 1795196717.4654138,
     "VST": 1795196717.4654138,
@@ -3279,30 +3279,30 @@
     "COHR": 1795196717.4654138,
     "MRVL": 1795196717.4654138,
     "LITE": 1795196717.4654138,
-    "AAOI": 1795195805.9154437,
+    "AAOI": 1795197322.8692732,
     "SPCX": 1795196717.4654138,
     "ASTS": 1795196717.4654138,
     "AXTI": 1795196717.4654138,
-    "NASA": 1795195805.9154437,
-    "LUNR": 1795195805.9154437,
-    "TSLA": 1795195805.9154437,
-    "AXP": 1795195805.9154437,
+    "NASA": 1795197322.8692732,
+    "LUNR": 1795197322.8692732,
+    "TSLA": 1795197322.8692732,
+    "AXP": 1795197322.8692732,
     "RKLB": 1795196717.4654138,
-    "KO": 1795195805.9154437,
+    "KO": 1795197322.8692732,
     "FLY": 1795196717.4654138,
-    "INTC": 1795195805.9154437,
-    "VRT": 1795195805.9154437,
-    "HPE": 1795195805.9154437,
-    "DELL": 1795195805.9154437,
-    "OKLO": 1795195805.9154437,
+    "INTC": 1795197322.8692732,
+    "VRT": 1795197322.8692732,
+    "HPE": 1795197322.8692732,
+    "DELL": 1795197322.8692732,
+    "OKLO": 1795197322.8692732,
     "CEG": 1795195914.2025309,
-    "FPS": 1795195805.9154437,
-    "MU": 1795195805.9154437,
-    "SKHY": 1795195805.9154437,
-    "WDC": 1795195805.9154437,
+    "FPS": 1795197322.8692732,
+    "MU": 1795197322.8692732,
+    "SKHY": 1795197322.8692732,
+    "WDC": 1795197322.8692732,
     "STX": 1795195914.2025309,
     "MSTR": 1795195914.2025309,
-    "SNDK": 1795195805.9154437,
+    "SNDK": 1795197322.8692732,
     "BTC-USD": 1795196318.8344502,
     "CRWD": 1795196717.4654138,
     "ORCL": 1795196717.4654138,
