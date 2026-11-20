@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795183882.894,
-  "updated_at_et": "11-20 09:11 ET",
-  "updated_at_kst": "23:11 KST",
+  "updated_at_ts": 1795183986.941,
+  "updated_at_et": "11-20 09:13 ET",
+  "updated_at_kst": "23:13 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2605,8 +2605,22 @@
         "title": "Stock Market Today: Tech Futures Sell Off As Anthropic Plunges 10% After IPO (Live Coverage)",
         "url": "https://finance.yahoo.com/m/4b546235-124e-3fa4-b951-41a067ff7bf2/stock-market-today%3A-tech.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-20 08:25 ET",
-        "pub_ts": 1795181141.0
+        "time": "11-20 09:05 ET",
+        "pub_ts": 1795183556.0
+      },
+      {
+        "title": "Exchange-Traded Funds, Equity Futures Fall Pre-Bell Friday Amid Continued AI Stock Selloff",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/exchange-traded-funds-equity-futures-140012643.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 09:00 ET",
+        "pub_ts": 1795183212.0
+      },
+      {
+        "title": "Circle Stock At $52: What Would It Take To Get To $90?",
+        "url": "https://www.trefis.com/stock/crcl/articles/626496/circle-stock-at-52-what-would-it-take-to-get-to-90/2026-11-20?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 08:33 ET",
+        "pub_ts": 1795181598.0
       },
       {
         "title": "Institutional Holdings in US Spot Bitcoin ETPs Hit Record $29.8 Billion in Q3",
@@ -2621,20 +2635,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 07:15 ET",
         "pub_ts": 1795176918.0
-      },
-      {
-        "title": "Peter Brandt Points to a 75% Bitcoin Correction Pattern. Will the Crash Deepen?",
-        "url": "https://beincrypto.com/peter-brandt-bitcoin-75-percent-correction/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 07:06 ET",
-        "pub_ts": 1795176414.0
-      },
-      {
-        "title": "Robinhood Markets vs. PayPal: Which Financial Stock Is a Better Buy for 2027?",
-        "url": "https://www.fool.com/coverage/better-buy/2026/11/20/robinhood-markets-vs-paypal-which-financial-stock-is-a-better-buy-for-2027/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 07:01 ET",
-        "pub_ts": 1795176061.0
       }
     ],
     "CRWD": [
@@ -2949,6 +2949,13 @@
         "pub_ts": 1795172534.0
       },
       {
+        "title": "ExxonMobil Sinks 11% in a Month as Oil Slides. Darren Woods Says Its Earnings Power Comes From “Lasting Improvements”",
+        "url": "https://www.tikr.com/blog/exxonmobil-sinks-11-in-a-month-as-oil-slides-darren-woods-says-its-earnings-power-comes-from-lasting-improvements?ref=yahoofinance&tlnk=yf-261120-mpqj7wp5&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 04:08 ET",
+        "pub_ts": 1795165719.0
+      },
+      {
         "title": "Guyana Oil Boom Rekindles Frontier Drilling Appetite",
         "url": "https://finance.yahoo.com/energy/articles/guyana-oil-boom-rekindles-frontier-000000725.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2961,13 +2968,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 16:16 ET",
         "pub_ts": 1795122972.0
-      },
-      {
-        "title": "Trump Cheers the “Biggest Drop in Gasoline in 18 Years.” Not Good for Exxon and Chevron",
-        "url": "https://www.tikr.com/blog/trump-cheers-the-biggest-drop-in-gasoline-in-18-years-not-good-for-exxon-and-chevron?ref=yahoofinance&tlnk=yf-261119-mpr266r3&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 14:58 ET",
-        "pub_ts": 1795118297.0
       }
     ],
     "JPM": [
@@ -3194,6 +3194,27 @@
     ],
     "ANT": [
       {
+        "title": "Stock Market Today: Dow Jones, S&P 500, Nasdaq 100 Futures Fall as Trump Weighs Iran Decision— INTU, ROST, KEYS in Focus (UPDATED)",
+        "url": "https://finnhub.io/api/news?id=a8dc2d34353c17c3b45edc3fd373a813b1d1ccec9bcb6c233055d4ffce06289b",
+        "source": "Benzinga",
+        "time": "11-20 04:36 ET",
+        "pub_ts": 1795167391.0
+      },
+      {
+        "title": "Ross Stores, Intuit, Anthropic And Other Big Stocks Moving Lower In Friday’s Pre-Market Session",
+        "url": "https://finnhub.io/api/news?id=53495c45ed24cd3b0c4e75e22ab035a6e4843a10cb87bfcd036b3b42c24b30b0",
+        "source": "Benzinga",
+        "time": "11-20 04:03 ET",
+        "pub_ts": 1795165387.0
+      },
+      {
+        "title": "Anthropic, Disney, Alphabet and an Industrial Stock on CNBC’s ‘Final Trades’",
+        "url": "https://finnhub.io/api/news?id=2161bd5b38d1196dceb34be89c37a0f19421cfbcc8ed25ae891d8c28c44297a9",
+        "source": "Benzinga",
+        "time": "11-20 03:58 ET",
+        "pub_ts": 1795165081.0
+      },
+      {
         "title": "Broadcom: A Better Bet Than A Month Ago",
         "url": "https://finnhub.io/api/news?id=0e52610306baca9ac702f3c3092c38612307d9da1f72132489b8daa947b1b40d",
         "source": "SeekingAlpha",
@@ -3201,32 +3222,11 @@
         "pub_ts": 1795162575.0
       },
       {
-        "title": "Anthropic's IPO Funds The Chip Boom, While Falling AI Prices Strain Its Compute Commitments",
-        "url": "https://finnhub.io/api/news?id=578ee91b7f23425f2e60c619c132d374d3cb561266fe5852e73a0af997e80f74",
-        "source": "SeekingAlpha",
-        "time": "11-20 01:20 ET",
-        "pub_ts": 1795155600.0
-      },
-      {
-        "title": "Wall Street Breakfast Podcast: Market Sheds Anthropic's Market Cap In Crowdout",
-        "url": "https://finnhub.io/api/news?id=c642f80f287b39036dd265fb3559e20ad20a473f4f43600ee056085b3cf656df",
-        "source": "SeekingAlpha",
-        "time": "11-20 01:04 ET",
-        "pub_ts": 1795154640.0
-      },
-      {
-        "title": "Invesco QQQ Monthly Review",
-        "url": "https://finnhub.io/api/news?id=160c38cf1180315966a4a7333f08a04eb7c1ef94af1882a472148aa616ab8c51",
-        "source": "SeekingAlpha",
-        "time": "11-19 23:20 ET",
-        "pub_ts": 1795148400.0
-      },
-      {
-        "title": "Market Brief: Anthropic After The IPO: Valuation, Float And Price",
-        "url": "https://finnhub.io/api/news?id=b182baa72606de3107ab998652afde6b42cdc89a9e0c45457f3bc0b0d82ef00a",
-        "source": "SeekingAlpha",
-        "time": "11-19 20:10 ET",
-        "pub_ts": 1795137000.0
+        "title": "Nvidia Stock Hits New 52-Week Low: Buy the Dip or Stay Away?",
+        "url": "https://finnhub.io/api/news?id=51f28346ff44d102946998db2521c94c8471f3d7aac2bcbf3b0a6ee09b257062",
+        "source": "Benzinga",
+        "time": "11-20 02:18 ET",
+        "pub_ts": 1795159090.0
       }
     ],
     "XAUUSD": [
@@ -3301,7 +3301,7 @@
     "STX": 1795183463.697611,
     "MSTR": 1795183573.3113065,
     "SNDK": 1795183463.697611,
-    "BTC-USD": 1795182404.928296,
+    "BTC-USD": 1795183986.9407337,
     "CRWD": 1795182824.5733588,
     "ORCL": 1795182824.5733588,
     "COIN": 1795182824.5733588,
@@ -3310,15 +3310,15 @@
     "NKE": 1795182933.446789,
     "MCD": 1795182824.5733588,
     "PEP": 1795182824.5733588,
-    "XOM": 1795182404.928296,
-    "JPM": 1795182404.928296,
-    "WMT": 1795182404.928296,
+    "XOM": 1795183986.9407337,
+    "JPM": 1795183986.9407337,
+    "WMT": 1795183986.9407337,
     "V": 1795182824.5733588,
-    "CAT": 1795182404.928296,
+    "CAT": 1795183986.9407337,
     "FN": 1795182824.5733588,
     "GLW": 1795182824.5733588,
-    "ANT": 1795182404.928296,
-    "XAUUSD": 1795182404.928296
+    "ANT": 1795183986.9407337,
+    "XAUUSD": 1795183986.9407337
   },
   "calendar_banner": {
     "level": "idle_with_flash",
