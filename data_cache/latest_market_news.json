@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795192032.119,
-  "updated_at_et": "11-20 11:27 ET",
-  "updated_at_kst": "01:27 KST",
+  "updated_at_ts": 1795192132.507,
+  "updated_at_et": "11-20 11:28 ET",
+  "updated_at_kst": "01:28 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1456,6 +1456,13 @@
     ],
     "APLD": [
       {
+        "title": "Applied Digital and Core Scientific Sink 12% as AI Infrastructure Sell-Off Deepens; TeraWulf Tumbles 10%",
+        "url": "https://247wallst.com/investing/2026/11/20/applied-digital-and-core-scientific-sink-12-as-ai-infrastructure-sell-off-deepens-terawulf-tumbles-10/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 10:56 ET",
+        "pub_ts": 1795190217.0
+      },
+      {
         "title": "Applied Digital Fell Nearly 71%: Trim Or Add?",
         "url": "https://www.trefis.com/stock/apld/articles/627217/applied-digital-fell-nearly-71-trim-or-add/2026-11-20?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1482,13 +1489,6 @@
         "source": "Yahoo Finance",
         "time": "11-17 11:12 ET",
         "pub_ts": 1794931966.0
-      },
-      {
-        "title": "Is Applied Digital Spending Too Much?",
-        "url": "https://www.trefis.com/stock/apld/articles/625763/is-applied-digital-spending-too-much/2026-11-17?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 09:40 ET",
-        "pub_ts": 1794926450.0
       }
     ],
     "VST": [
@@ -1752,6 +1752,20 @@
     ],
     "SPCX": [
       {
+        "title": "Why SpaceX Stock Dropped After the Anthropic IPO",
+        "url": "https://www.fool.com/investing/2026/11/20/why-spacex-stock-dropped-after-the-anthropic-ipo/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 11:17 ET",
+        "pub_ts": 1795191443.0
+      },
+      {
+        "title": "Apollo and Goldman Sachs Announce Pricing of $44 Billion SpaceX GPU Financing",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/apollo-goldman-sachs-announce-pricing-160200875.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 11:02 ET",
+        "pub_ts": 1795190520.0
+      },
+      {
         "title": "SpaceX Sells $32 Bil Of Debt For AI Chips. But Yields, Orbital Deployment Raise Concerns.",
         "url": "https://finance.yahoo.com/m/55ee9a46-96c2-3843-82df-818e8f6dc10d/spacex-sells-%2432-bil-of-debt.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1771,20 +1785,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 10:08 ET",
         "pub_ts": 1795187337.0
-      },
-      {
-        "title": "SpaceX’s Cursor weighs shift away from Chinese AI models, CNBC reports",
-        "url": "https://finance.yahoo.com/technology/ai/articles/spacex-cursor-weighs-shift-away-145919289.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 09:59 ET",
-        "pub_ts": 1795186759.0
-      },
-      {
-        "title": "SpaceX Falls 5%, Breaks Below IPO Price as Lenders Reportedly Balk at Musk’s Orbital AI Chip Plans; Rocket Lab Drops 3%, AST SpaceMobile Dips",
-        "url": "https://247wallst.com/investing/2026/11/20/spacex-falls-5-breaks-below-ipo-price-as-lenders-reportedly-balk-at-musks-orbital-ai-chip-plans-rocket-lab-drops-3-ast-spacemobile-dips/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 09:52 ET",
-        "pub_ts": 1795186355.0
       }
     ],
     "ASTS": [
@@ -3270,25 +3270,25 @@
     "NOW": 1795191224.799243,
     "AMZN": 1795191224.799243,
     "CRWV": 1795191224.799243,
-    "NBIS": 1795190597.456359,
-    "APLD": 1795190597.456359,
-    "VST": 1795190597.456359,
-    "BE": 1795190597.456359,
-    "CRDO": 1795190597.456359,
-    "COHR": 1795190597.456359,
-    "MRVL": 1795190597.456359,
-    "LITE": 1795190597.456359,
+    "NBIS": 1795192132.5067763,
+    "APLD": 1795192132.5067763,
+    "VST": 1795192132.5067763,
+    "BE": 1795192132.5067763,
+    "CRDO": 1795192132.5067763,
+    "COHR": 1795192132.5067763,
+    "MRVL": 1795192132.5067763,
+    "LITE": 1795192132.5067763,
     "AAOI": 1795191224.799243,
-    "SPCX": 1795190597.456359,
-    "ASTS": 1795190597.456359,
-    "AXTI": 1795190597.456359,
+    "SPCX": 1795192132.5067763,
+    "ASTS": 1795192132.5067763,
+    "AXTI": 1795192132.5067763,
     "NASA": 1795191224.799243,
     "LUNR": 1795191224.799243,
     "TSLA": 1795191224.799243,
     "AXP": 1795191224.799243,
-    "RKLB": 1795190597.456359,
+    "RKLB": 1795192132.5067763,
     "KO": 1795191224.799243,
-    "FLY": 1795190597.456359,
+    "FLY": 1795192132.5067763,
     "INTC": 1795191224.799243,
     "VRT": 1795191224.799243,
     "HPE": 1795191224.799243,
@@ -3303,21 +3303,21 @@
     "MSTR": 1795191332.384844,
     "SNDK": 1795191224.799243,
     "BTC-USD": 1795191731.8193755,
-    "CRWD": 1795190597.456359,
-    "ORCL": 1795190597.456359,
-    "COIN": 1795190597.456359,
+    "CRWD": 1795192132.5067763,
+    "ORCL": 1795192132.5067763,
+    "COIN": 1795192132.5067763,
     "LLY": 1795190708.6217868,
     "MRNA": 1795190708.6217868,
     "NKE": 1795190708.6217868,
-    "MCD": 1795190597.456359,
-    "PEP": 1795190597.456359,
+    "MCD": 1795192132.5067763,
+    "PEP": 1795192132.5067763,
     "XOM": 1795191731.8193755,
     "JPM": 1795191731.8193755,
     "WMT": 1795191731.8193755,
-    "V": 1795190597.456359,
+    "V": 1795192132.5067763,
     "CAT": 1795191731.8193755,
-    "FN": 1795190597.456359,
-    "GLW": 1795190597.456359,
+    "FN": 1795192132.5067763,
+    "GLW": 1795192132.5067763,
     "ANT": 1795191731.8193755,
     "XAUUSD": 1795191731.8193755
   },
