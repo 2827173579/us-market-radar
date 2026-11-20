@@ -1,9 +1,23 @@
 {
-  "updated_at_ts": 1795171375.616,
-  "updated_at_et": "11-20 05:42 ET",
-  "updated_at_kst": "19:42 KST",
+  "updated_at_ts": 1795171491.355,
+  "updated_at_et": "11-20 05:44 ET",
+  "updated_at_kst": "19:44 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261120184238543800",
+      "title": "整理：特朗普过去24小时都忙了什么？（2026-11-20）",
+      "summary": "1. 敦促尽快通过新农业法案 ——特朗普：将在国会剩余会期内通过一项新的《农业法案》。现在是时候再次采取行动了，而且要快。 2. 将于周五在白宫举行记者会 ——特朗普：将于周五中午12时（北京时间21日01:00）在白宫举行新闻发布会。此次行程成果重大，并将讨论与泰国、菲律宾等国达成的贸易协议。 3. 9月买入至高58万美元英伟达及SpaceX股票 ——特朗普最新财务披露文件显示，其于9月买入至高26.5万美元的英伟达股票，同时卖出价值最高1.5万美元的该股股票，并买入至高31.5万美元的SpaceX股票。 4. 称赞交通部长和国土安全部长 ——特朗普：对交通部长达菲和国土安全部长穆林两人都很满意。他们都是非常优秀的人，我认为他们的工作做得非常出色。 5. 欲打消欧洲疑虑 称普京想要结束战争 ——据美媒，特朗普在乘坐“空军一号”返回美国途中，电话连线了在柏林举行的一场会议。特朗普说：“普京想要结束战争，他希望达成协议，他已经厌倦了这一切。”",
+      "keywords": [
+        "英伟达",
+        "特朗普"
+      ],
+      "pub_ts": 1795171358.0,
+      "time_et": "11-20 05:42 ET",
+      "time_bj": "18:42 BJ",
+      "time_kst": "19:42 KST",
+      "time_display": "05:42 ET / 18:42 BJ"
+    },
     {
       "id": "20261120182402562800",
       "title": "市场削减欧洲央行加息押注，倾向于认为到2027年底前仅加息两次。",
@@ -329,22 +343,6 @@
       "time_bj": "12:17 BJ",
       "time_kst": "13:17 KST",
       "time_display": "23:17 ET / 12:17 BJ"
-    },
-    {
-      "id": "20261120120422122800",
-      "title": "1. 据悉苹果正开发自主AI智能体，与OpenAI、Anthropic和Meta等正面竞…",
-      "summary": "1. 据悉苹果正开发自主AI智能体，与OpenAI、Anthropic和Meta等正面竞争，预计最早于2027年底推出。 2. 英国《金融时报》称，SpaceX算力融资方正寻求在债务契约中添加限制条款，禁止埃隆·马斯克将作为抵押品的英伟达GPU发射至太空。 3. 美联储古尔斯比：AI投资热潮可能令美国经济过热，进一步推高通胀，迫使美联储采取措施应对。 4. 马斯克：Optimus人形机器人有望在12至18个月内完成多步骤复杂操作。 5. 英伟达拟以逾5亿美元收购扩散式AI初创公司Inception。 6. 黄仁勋慈善基金会计划斥资3.5亿美元向CoreWeave租用算力。 7. 阿里CEO吴泳铭：未来绝大部分模型都会完全依赖于国产芯片做训练。 8. DeepSeek千亿融资落地，注册资本增至1991.8707万元。 9. 我国新增34家领航级智能工厂，人工智能场景应用比例超70%。 10. 吴泳铭：建设超过20GW规模全球数据中心的目标可能下调。 11. 快手：后续资本开支及AI相关投入对现金流的压力将逐步减轻。 12. 沃尔玛：AI购物智能体Sparky第三财季在美国的使用量同比翻了一倍多，使用者的购物篮规模扩大40%。",
-      "keywords": [
-        "美联储",
-        "芯片",
-        "英伟达",
-        "苹果"
-      ],
-      "pub_ts": 1795147462.0,
-      "time_et": "11-19 23:04 ET",
-      "time_bj": "12:04 BJ",
-      "time_kst": "13:04 KST",
-      "time_display": "23:04 ET / 12:04 BJ"
     }
   ],
   "ticker_news": {
@@ -1423,7 +1421,7 @@
     ],
     "NBIS": [
       {
-        "title": "CRWV, IREN, NBIS Stocks Extend Neocloud Selloff As Anthropic IPO Rally Fades - Michael Burry Takes A Victory Lap",
+        "title": "CRWV, IREN, NBIS Stocks Extend Neocloud Selloff As Anthropic IPO Rally Fades – Michael Burry Takes A Victory Lap",
         "url": "https://stocktwits.com/news-articles/markets/equity/crwv-iren-nbis-stocks-extend-neocloud-selloff-as-anthropic-ipo-rally-fades-michael-burry-takes-a-victory-lap/cNbSEj6R9KJ?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-20 01:21 ET",
@@ -1460,6 +1458,13 @@
     ],
     "APLD": [
       {
+        "title": "Could Applied Digital Actually Climb 265%? Or Is B. Riley Totally Wrong?",
+        "url": "https://www.tikr.com/blog/could-applied-digital-actually-climb-265-or-is-b-riley-totally-wrong?ref=yahoofinance&tlnk=yf-261120-242qmwqj&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 04:43 ET",
+        "pub_ts": 1795167799.0
+      },
+      {
         "title": "Forget CoreWeave: Applied Digital Is the Real Loser as “The Bank of Nvidia” Pulls Back",
         "url": "https://www.tikr.com/blog/forget-coreweave-applied-digital-is-the-real-loser-as-the-bank-of-nvidia-pulls-back?ref=yahoofinance&tlnk=yf-261118-36f5785r&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1486,13 +1491,6 @@
         "source": "Yahoo Finance",
         "time": "11-16 10:55 ET",
         "pub_ts": 1794844506.0
-      },
-      {
-        "title": "Applied Digital (APLD) Uses Augmented Reality At Polaris Forge 1",
-        "url": "https://finance.yahoo.com/technology/ai/articles/applied-digital-apld-uses-augmented-210651825.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-14 16:06 ET",
-        "pub_ts": 1794690411.0
       }
     ],
     "VST": [
@@ -1534,6 +1532,13 @@
     ],
     "BE": [
       {
+        "title": "Wall Street Wrap: ASTS, BE, MDB Stocks Win Bullish Calls As PEP, USAR, SMMT Face Downgrades",
+        "url": "https://stocktwits.com/news-articles/markets/equity/wall-street-wrap-asts-be-mdb-stocks-win-bullish-calls-as-pep-usar-smmt-face-downgrades/cNbSfrjR9KN?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 05:14 ET",
+        "pub_ts": 1795169690.0
+      },
+      {
         "title": "Bloom Energy (BE), Why Is It Back In The Spotlight?",
         "url": "https://finance.yahoo.com/markets/stocks/articles/bloom-energy-why-back-spotlight-070959853.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1560,13 +1565,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 11:08 ET",
         "pub_ts": 1795104530.0
-      },
-      {
-        "title": "Bloom Energy Surpasses Its Industry in a Year: How to Play the Stock?",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/bloom-energy-surpasses-industry-play-153700334.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 10:37 ET",
-        "pub_ts": 1795102620.0
       }
     ],
     "CRDO": [
@@ -1793,6 +1791,13 @@
     ],
     "ASTS": [
       {
+        "title": "Wall Street Wrap: ASTS, BE, MDB Stocks Win Bullish Calls As PEP, USAR, SMMT Face Downgrades",
+        "url": "https://stocktwits.com/news-articles/markets/equity/wall-street-wrap-asts-be-mdb-stocks-win-bullish-calls-as-pep-usar-smmt-face-downgrades/cNbSfrjR9KN?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 05:14 ET",
+        "pub_ts": 1795169690.0
+      },
+      {
         "title": "SpaceX Holds Its Orbit As Space Stocks Fall Back To Earth — Inside A Rough Week For FLY, ASTS, RKLB And RDW",
         "url": "https://stocktwits.com/news-articles/markets/equity/spacex-holds-orbit-space-stocks-fall-back-earth-rough-week-fly-asts-rklb-rdw/cNbS4SbR9KQ?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1819,13 +1824,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 11:16 ET",
         "pub_ts": 1795104973.0
-      },
-      {
-        "title": "ASTS Stock Gets A Breather After Relentless Sell-Off: B. Riley Says Launch Delays, Funding Risks Are Already Priced In",
-        "url": "https://stocktwits.com/news-articles/markets/equity/asts-stock-gains-after-relentless-sell-off-briley-says-launch-delays-funding-risks-are-already-priced-in/cNbiOz8R90a?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 09:50 ET",
-        "pub_ts": 1795099847.0
       }
     ],
     "AXTI": [
@@ -2903,6 +2901,13 @@
     ],
     "PEP": [
       {
+        "title": "Wall Street Wrap: ASTS, BE, MDB Stocks Win Bullish Calls As PEP, USAR, SMMT Face Downgrades",
+        "url": "https://stocktwits.com/news-articles/markets/equity/wall-street-wrap-asts-be-mdb-stocks-win-bullish-calls-as-pep-usar-smmt-face-downgrades/cNbSfrjR9KN?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 05:14 ET",
+        "pub_ts": 1795169690.0
+      },
+      {
         "title": "PepsiCo stands out in consumer staples as sector breaks three-year downtrend",
         "url": "https://finance.yahoo.com/markets/stocks/articles/pepsico-stands-consumer-staples-sector-210057677.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2929,13 +2934,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 10:05 ET",
         "pub_ts": 1795100734.0
-      },
-      {
-        "title": "How KFC Partnership Loss Will Impact PepsiCo (PEP) Investors",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/kfc-partnership-loss-impact-pepsico-131423243.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 08:14 ET",
-        "pub_ts": 1795094063.0
       }
     ],
     "XOM": [
@@ -3274,25 +3272,25 @@
     "NOW": 1795170586.8861907,
     "AMZN": 1795170586.8861907,
     "CRWV": 1795170586.8861907,
-    "NBIS": 1795169884.4844477,
-    "APLD": 1795169884.4844477,
-    "VST": 1795169884.4844477,
-    "BE": 1795169884.4844477,
-    "CRDO": 1795169884.4844477,
-    "COHR": 1795169884.4844477,
-    "MRVL": 1795169884.4844477,
-    "LITE": 1795169884.4844477,
+    "NBIS": 1795171491.354798,
+    "APLD": 1795171491.354798,
+    "VST": 1795171491.354798,
+    "BE": 1795171491.354798,
+    "CRDO": 1795171491.354798,
+    "COHR": 1795171491.354798,
+    "MRVL": 1795171491.354798,
+    "LITE": 1795171491.354798,
     "AAOI": 1795170586.8861907,
-    "SPCX": 1795169884.4844477,
-    "ASTS": 1795169884.4844477,
-    "AXTI": 1795169884.4844477,
+    "SPCX": 1795171491.354798,
+    "ASTS": 1795171491.354798,
+    "AXTI": 1795171491.354798,
     "NASA": 1795170586.8861907,
     "LUNR": 1795170586.8861907,
     "TSLA": 1795170586.8861907,
     "AXP": 1795170586.8861907,
-    "RKLB": 1795169884.4844477,
+    "RKLB": 1795171491.354798,
     "KO": 1795170586.8861907,
-    "FLY": 1795169884.4844477,
+    "FLY": 1795171491.354798,
     "INTC": 1795170586.8861907,
     "VRT": 1795170586.8861907,
     "HPE": 1795170586.8861907,
@@ -3307,28 +3305,28 @@
     "MSTR": 1795170586.8861907,
     "SNDK": 1795170586.8861907,
     "BTC-USD": 1795170586.8861907,
-    "CRWD": 1795169884.4844477,
-    "ORCL": 1795169884.4844477,
-    "COIN": 1795169884.4844477,
-    "LLY": 1795169884.4844477,
-    "MRNA": 1795169884.4844477,
-    "NKE": 1795169884.4844477,
-    "MCD": 1795169884.4844477,
-    "PEP": 1795169884.4844477,
+    "CRWD": 1795171491.354798,
+    "ORCL": 1795171491.354798,
+    "COIN": 1795171491.354798,
+    "LLY": 1795171491.354798,
+    "MRNA": 1795171491.354798,
+    "NKE": 1795171491.354798,
+    "MCD": 1795171491.354798,
+    "PEP": 1795171491.354798,
     "XOM": 1795170711.8375206,
     "JPM": 1795170711.8375206,
     "WMT": 1795170711.8375206,
-    "V": 1795169884.4844477,
+    "V": 1795171491.354798,
     "CAT": 1795170711.8375206,
-    "FN": 1795169884.4844477,
-    "GLW": 1795169884.4844477,
+    "FN": 1795171491.354798,
+    "GLW": 1795171491.354798,
     "ANT": 1795170711.8375206,
     "XAUUSD": 1795170711.8375206
   },
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (05:24 ET / 18:24 BJ) [加息]：市场削减欧洲央行加息押注，倾向于认为到2027年底前仅加息两次。",
+    "detail": "⚡ 最新核心快讯 (05:42 ET / 18:42 BJ) [英伟达] [特朗普]：1. 敦促尽快通过新农业法案 ——特朗普：将在国会剩余会期内通过一项新的《农业法案》。现在是时候再次采取行动了，而且要快。 2. 将于周五在白宫举行记者会 ——特朗普：将于周五中午12时（北",
     "event_name": "",
     "minutes_left": 0
   }
