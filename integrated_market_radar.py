@@ -614,16 +614,16 @@ def fetch_single_finnhub_quote(symbol, api_key):
                         "prev_close": float(data.get("pc", 0) or 0),
                         "timestamp": data.get("t", 0)
                     }
+            return symbol, None
         except urllib.error.HTTPError as e:
+            if e.code == 429 and attempt == 0:
+                FINNHUB_LIMITER.handle_429(attempt)
+                continue
             if e.code == 429:
-                if attempt == 0:
-                    FINNHUB_LIMITER.handle_429(attempt)
-                    continue
                 print(f"[!] [Finnhub 频控预警] {symbol} 触发 429 限流保护，该标的将自动使用 yfinance 底模数据。")
-            else:
-                pass
+            return symbol, None
         except Exception:
-            pass
+            return symbol, None
     return symbol, None
 
 def fetch_yahoo_crypto_quote(symbol="BTC-USD"):
@@ -4717,26 +4717,28 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
     all_stocks = list(MONITORED_TARGETS["STOCKS"].keys())
     all_tickers = all_etfs + all_stocks
 
-    # 1. 抓取 1 年(约252交易日)历史日 K 线底模
-    history_dict = fetch_all_market_data(all_tickers, period="1y")
-
-    # 1.5 判断当前美东交易时段 (常规盘中 / 盘前 / 盘后 / 夜盘)
+    # 1. 日线底模、5 分钟线与 Finnhub 报价互相独立，重叠执行。
+    # Finnhub 仍走 1.05s 令牌桶（约 60 只 * 1.05s），不提高免费额度，避免 429。
+    # 财报日历共用同一令牌桶，放在报价之后，避免两路抢间隔把报价拖长。
     session_code, session_name = get_us_market_session()
     print(f"[*] 🕒 当前美东市场时段状态: 【{session_name}】")
-
-    # 2. 并发秒级拉取 Finnhub 实时报价 (max_workers=2, 稳态间隔防 429)
-    # 免费额度 60次/分。全标的 75 只 (14 ETF + 61 股票)，优先保障 14 只宏观行业 ETF + 45 只核心科技股；15 只低波防守/新传统基准股走 Yahoo 5m + V7 实时穿透
     DEFENSIVE_11_TICKERS = {"KO", "PEP", "MCD", "AXP", "V", "LLY", "MRNA", "NKE", "HPE", "FPS", "JPM", "XOM", "WMT", "CAT", "NASA"}
     finnhub_tickers = [tk for tk in all_tickers if tk != "BTC-USD" and (tk not in DEFENSIVE_11_TICKERS or (user_portfolio and tk in user_portfolio))][:60]
-    realtime_quotes = fetch_finnhub_quotes_batch(finnhub_tickers, FINNHUB_API_KEY) if FINNHUB_API_KEY else {}
-    if "BTC-USD" in all_tickers:
-        _btc_q = fetch_yahoo_crypto_quote("BTC-USD")
-        if _btc_q:
-            realtime_quotes["BTC-USD"] = _btc_q
-
-    # 2.5 批量拉取 5 分钟级日内指标 (VWAP / 5m RSI / 5m RVOL) 与盘前盘后最新成交价
-    print(f"[*] 📊 正在同步 {len(all_tickers)} 只标的【5分钟级 VWAP/RSI/量比 日内择时指标 & 盘前盘后最新报价】...")
-    intraday_map = fetch_intraday_5m_and_ext_data(all_tickers)
+    print(f"[*] 📊 并行同步 {len(all_tickers)} 只标的日线底模、5分钟线与 Finnhub 报价...")
+    t_fetch = time.perf_counter()
+    with ThreadPoolExecutor(max_workers=4) as pool:
+        hist_fut = pool.submit(fetch_all_market_data, all_tickers, "1y")
+        intra_fut = pool.submit(fetch_intraday_5m_and_ext_data, all_tickers)
+        quote_fut = pool.submit(fetch_finnhub_quotes_batch, finnhub_tickers, FINNHUB_API_KEY) if FINNHUB_API_KEY else None
+        btc_fut = pool.submit(fetch_yahoo_crypto_quote, "BTC-USD") if "BTC-USD" in all_tickers else None
+        history_dict = hist_fut.result()
+        intraday_map = intra_fut.result()
+        realtime_quotes = quote_fut.result() if quote_fut is not None else {}
+        if btc_fut is not None:
+            _btc_q = btc_fut.result()
+            if _btc_q:
+                realtime_quotes["BTC-USD"] = _btc_q
+    print(f"[*] ⏱ 行情并行段 {time.perf_counter() - t_fetch:.1f}s")
     if session_code == "OVERNIGHT":
         overnight_quotes = fetch_yahoo_overnight_quotes(all_tickers)
         if overnight_quotes:
@@ -5600,6 +5602,7 @@ def main():
     if "--loop-daemon" in sys.argv:
         duration_min = 180
         interval_sec = 60
+        max_rounds = 0
         for i, arg in enumerate(sys.argv):
             if arg == "--duration-minutes" and i + 1 < len(sys.argv):
                 try:
@@ -5611,13 +5614,27 @@ def main():
                     interval_sec = max(30, int(sys.argv[i + 1]))
                 except Exception:
                     pass
-        if duration_min <= 0:
+            elif arg == "--max-rounds" and i + 1 < len(sys.argv):
+                try:
+                    max_rounds = max(1, int(sys.argv[i + 1]))
+                except Exception:
+                    pass
+        if max_rounds:
+            print(f"\n🚀 单次发布模式：完成 {max_rounds} 轮扫描并推送后退出")
+        elif duration_min <= 0:
             print(f"\n🚀 启动全天候无上限极速长轮询守护引擎 (每 {interval_sec} 秒轮询一次 · 24/7 永久驻留)")
         else:
             print(f"\n🚀 启动云端 {interval_sec} 秒极速长轮询守护引擎 (计划持续运行 {duration_min} 分钟)")
         start_time = time.time()
         end_time = start_time + duration_min * 60
         round_idx = 1
+
+        def _hit_round_cap():
+            if max_rounds and round_idx > max_rounds:
+                print(f"[*] 已完成 {max_rounds} 轮，跳过后续休眠并退出，以便发布 Pages。")
+                return True
+            return False
+
         while (duration_min <= 0) or (time.time() < end_time):
             c_start = time.time()
             now_ts = now_et_str("%Y-%m-%d %H:%M:%S")
@@ -5646,12 +5663,16 @@ def main():
                         if shared_alert_state.should_standby("ANDROID"):
                             print("[Standby] PC 主机在线值班中，本轮仅同步看板并待命")
                             round_idx += 1
+                            if _hit_round_cap():
+                                break
                             time.sleep(15)
                             continue
                     shared_alert_state.heartbeat(_shared_device_tag())
                 if _other_device_is_active():
                     print("[*] another device submitted live data within 50s; skip this round")
                     round_idx += 1
+                    if _hit_round_cap():
+                        break
                     time.sleep(15)
                     continue
                 run_radar_cycle(is_first_run=False, round_idx=round_idx)
@@ -5674,6 +5695,8 @@ def main():
                         pass
                     print("[*] 周末休市：本地看板已刷新，Git commit/push 按30分钟降频，跳过本轮推送")
                     round_idx += 1
+                    if _hit_round_cap():
+                        break
                     time.sleep(15.0)
                     continue
             # 云端同步持久化至当前仓库，令本仓库 GitHub Pages 保持最新。
@@ -5750,6 +5773,9 @@ def main():
                 print("[!] Git 同步异常: " + radar_cloud_sync.redact_secrets(str(e))[:300])
             round_idx += 1
             cost = time.time() - c_start
+            if _hit_round_cap():
+                print(f"[*] 本轮扫描与同步耗时 {cost:.1f}s")
+                break
             # 🚀 流水线并行 (Pipeline Parallelism)：
             # 严禁在 push 后长休眠！仅休眠 15 秒短呼吸，立即开始下一轮本地扫描 (耗时约 70s)。
             # 本地计算 (15s + 70s = 85s) 与云端部署 (75~90s) 完美重叠并行，

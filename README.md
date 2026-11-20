@@ -173,7 +173,7 @@ python -u integrated_market_radar.py --loop-daemon --interval-seconds 60 --durat
 
 1. 进入 **Actions** 标签，若提示 workflow 被禁用，点击 **I understand my workflows, go ahead and enable them**；
 2. 左侧选择 **US Market Radar 24-7 Engine** → **Run workflow**；
-3. `duration_minutes` 建议填 `10`、`interval_seconds` 填 `120`，点击运行，确认第一轮成功 push；
+3. `duration_minutes` 默认 `0`：只跑一轮并发布 Pages。需要像定时任务那样长驻时再改成 `240`（`interval_seconds` 仅在持续运行时生效），确认第一轮成功 push；
 4. 之后按 workflow 内置的 cron 时段自动运行。
 
 ### Step 5 · 多端协同与避让机制

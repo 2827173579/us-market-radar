@@ -224,6 +224,17 @@ class WorkflowSourceTests(unittest.TestCase):
         self.assertIn("radar_cloud_sync.py --check-local-client", text)
         self.assertIn("pip install -r requirements.txt", text)
         self.assertIn("pyarrow", requirements)
+        self.assertIn("lightgbm", requirements)
+        self.assertIn("scikit-learn", requirements)
+        self.assertIn("default: '0'", text)
+        self.assertIn("--max-rounds 1", text)
+        self.assertIn('DURATION="240"', text)
+        self.assertIn("cron: '0 0 * * 1-5'", text)
+        self.assertIn("actions/deploy-pages@v4", text)
+        with open(os.path.join(root, "integrated_market_radar.py"), encoding="utf-8") as handle:
+            radar = handle.read()
+        self.assertIn('"--max-rounds"', radar)
+        self.assertIn("duration_min <= 0", radar)
 
 
 class GitOriginRewriteTests(unittest.TestCase):
