@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795187419.384,
-  "updated_at_et": "11-20 10:10 ET",
-  "updated_at_kst": "00:10 KST",
+  "updated_at_ts": 1795187521.849,
+  "updated_at_et": "11-20 10:12 ET",
+  "updated_at_kst": "00:12 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1424,6 +1424,13 @@
         "pub_ts": 1795184230.0
       },
       {
+        "title": "The Zacks Analyst Blog Highlights Nebius, CoreWeave, Microsoft and Amazon",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/zacks-analyst-blog-highlights-nebius-134500953.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 08:45 ET",
+        "pub_ts": 1795182300.0
+      },
+      {
         "title": "“The Open Checkbook Is Over.” Nebius, Backed by $2 Billion From Nvidia, Stands to Gain",
         "url": "https://www.tikr.com/blog/the-open-checkbook-is-over-nebius-backed-by-2-billion-from-nvidia-stands-to-gain?ref=yahoofinance&tlnk=yf-261120-x7v3x99j&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1443,13 +1450,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 21:19 ET",
         "pub_ts": 1795141162.0
-      },
-      {
-        "title": "Is Tech in a Bear Market? 20 Tech Stocks Fall Up to 76% From Highs",
-        "url": "https://beincrypto.com/tech-stocks-bear-market-record-highs/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 17:40 ET",
-        "pub_ts": 1795128039.0
       }
     ],
     "APLD": [
@@ -1528,6 +1528,13 @@
     ],
     "BE": [
       {
+        "title": "Bloom Energy Is Down 50% From Its High. Should You Buy the Dip?",
+        "url": "https://www.fool.com/investing/2026/11/20/bloom-energy-down-50-from-high-should-you-buy/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 09:35 ET",
+        "pub_ts": 1795185300.0
+      },
+      {
         "title": "Zacks Investment Ideas feature highlights: Anthropic, SpaceX, Amazon, Vertiv and Bloom Energy",
         "url": "https://finance.yahoo.com/markets/stocks/articles/zacks-investment-ideas-feature-highlights-131200144.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1554,16 +1561,16 @@
         "source": "Yahoo Finance",
         "time": "11-20 06:22 ET",
         "pub_ts": 1795173773.0
-      },
-      {
-        "title": "Wall Street Wrap: ASTS, BE, MDB Stocks Win Bullish Calls As PEP, USAR, SMMT Face Downgrades",
-        "url": "https://stocktwits.com/news-articles/markets/equity/wall-street-wrap-asts-be-mdb-stocks-win-bullish-calls-as-pep-usar-smmt-face-downgrades/cNbSfrjR9KN?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 05:14 ET",
-        "pub_ts": 1795169690.0
       }
     ],
     "CRDO": [
+      {
+        "title": "Credo Sinks 6%, Marvell Down 5% as Cramer Says Nvidia Woes Are “Overwhelming the Good News”",
+        "url": "https://www.tikr.com/blog/credo-sinks-6-marvell-down-5-as-cramer-says-nvidia-woes-are-overwhelming-the-good-news?ref=yahoofinance&tlnk=yf-261120-qv55x6wh&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 09:39 ET",
+        "pub_ts": 1795185544.0
+      },
       {
         "title": "Marvell Technology (MRVL) Settles AI Networking Patent Dispute And Clears A Key Risk",
         "url": "https://finance.yahoo.com/technology/ai/articles/marvell-technology-mrvl-settles-ai-220953345.html?.tsrc=rss",
@@ -1591,16 +1598,23 @@
         "source": "Yahoo Finance",
         "time": "11-18 14:52 ET",
         "pub_ts": 1795031543.0
-      },
-      {
-        "title": "Credo Stocks Rise 3.15% Premarket After Settling AEC Patent Fight With Marvell",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/credo-stocks-rise-3-15-190450598.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 14:04 ET",
-        "pub_ts": 1795028690.0
       }
     ],
     "COHR": [
+      {
+        "title": "Applied Optoelectronics Sinks 7% as Optics Stocks Reverse Thursday’s Rally; Coherent Declines 4%, Lumentum Slides 5%",
+        "url": "https://247wallst.com/investing/2026/11/20/applied-optoelectronics-sinks-10-as-optics-stocks-reverse-thursdays-rally-coherent-tumbles-8-lumentum-slides-7/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 09:54 ET",
+        "pub_ts": 1795186486.0
+      },
+      {
+        "title": "Wall Street Analysts Think Coherent (COHR) Could Surge 70.08%: Read This Before Placing a Bet",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/wall-street-analysts-think-coherent-135504738.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 08:55 ET",
+        "pub_ts": 1795182904.0
+      },
       {
         "title": "Coherent Stocks Jump 10.78% After $2 Billion Buyback Authorization",
         "url": "https://finance.yahoo.com/markets/stocks/articles/coherent-stocks-jump-10-78-183843830.html?.tsrc=rss",
@@ -1621,36 +1635,29 @@
         "source": "Yahoo Finance",
         "time": "11-19 10:46 ET",
         "pub_ts": 1795103160.0
-      },
-      {
-        "title": "Seagate Soars 6%, Coherent Up 8% as AI Stocks Rebound on Anthropic IPO Day",
-        "url": "https://www.tikr.com/blog/seagate-soars-6-coherent-up-8-as-ai-stocks-rebound-on-anthropic-ipo-day?ref=yahoofinance&tlnk=yf-261119-ppm522hc&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 09:33 ET",
-        "pub_ts": 1795098829.0
-      },
-      {
-        "title": "Applied Optoelectronics Rallies 5% Despite $550 Million Share Sale Plan; Coherent Jumps 8%, Lumentum Climbs 4%",
-        "url": "https://247wallst.com/investing/2026/11/19/applied-optoelectronics-rallies-5-despite-550-million-share-sale-plan-coherent-jumps-8-lumentum-climbs-4/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 09:13 ET",
-        "pub_ts": 1795097636.0
       }
     ],
     "MRVL": [
+      {
+        "title": "Credo Sinks 6%, Marvell Down 5% as Cramer Says Nvidia Woes Are “Overwhelming the Good News”",
+        "url": "https://www.tikr.com/blog/credo-sinks-6-marvell-down-5-as-cramer-says-nvidia-woes-are-overwhelming-the-good-news?ref=yahoofinance&tlnk=yf-261120-qv55x6wh&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 09:39 ET",
+        "pub_ts": 1795185544.0
+      },
+      {
+        "title": "Anthropic, Nvidia, AMD, Intuit, Bloom Energy, and More Stocks That Explain Today’s Market",
+        "url": "https://finance.yahoo.com/m/801603d1-8318-3eb0-99a6-10147f0d5ed5/anthropic%2C-nvidia%2C-amd%2C.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 08:53 ET",
+        "pub_ts": 1795182780.0
+      },
       {
         "title": "Marvell Technology And 2 Top AI Stocks To Watch",
         "url": "https://finance.yahoo.com/technology/ai/articles/marvell-technology-2-top-ai-130941530.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-20 08:09 ET",
         "pub_ts": 1795180181.0
-      },
-      {
-        "title": "Anthropic, AMD, Intel, Marvell, Intuit, and More Stocks That Explain Today’s Market",
-        "url": "https://finance.yahoo.com/m/801603d1-8318-3eb0-99a6-10147f0d5ed5/anthropic%2C-amd%2C-intel%2C.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 07:02 ET",
-        "pub_ts": 1795176120.0
       },
       {
         "title": "AI sell-off: These sectors held firm as tech slumped in Oct, Nov",
@@ -1665,13 +1672,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 17:09 ET",
         "pub_ts": 1795126193.0
-      },
-      {
-        "title": "Lumentum’s sales surged 137%—so why is its stock crashing?",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/lumentum-sales-surged-137-why-202833709.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 15:28 ET",
-        "pub_ts": 1795120113.0
       }
     ],
     "LITE": [
@@ -1757,32 +1757,32 @@
         "pub_ts": 1795182862.0
       },
       {
+        "title": "SpaceX’s Cursor weighs shift away from Chinese AI models, CNBC reports",
+        "url": "https://finance.yahoo.com/technology/ai/articles/spacex-cursor-weighs-shift-away-145919289.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 09:59 ET",
+        "pub_ts": 1795186759.0
+      },
+      {
+        "title": "SpaceX Falls 5%, Breaks Below IPO Price as Lenders Reportedly Balk at Musk’s Orbital AI Chip Plans; Rocket Lab Drops 3%, AST SpaceMobile Dips",
+        "url": "https://247wallst.com/investing/2026/11/20/spacex-falls-5-breaks-below-ipo-price-as-lenders-reportedly-balk-at-musks-orbital-ai-chip-plans-rocket-lab-drops-3-ast-spacemobile-dips/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 09:52 ET",
+        "pub_ts": 1795186355.0
+      },
+      {
+        "title": "SpaceX Just Passed Intel as Nvidia’s Largest Holding After It Sold a Quarter of Its Intel Stake",
+        "url": "https://247wallst.com/investing/2026/11/20/spacex-just-passed-intel-as-nvidias-largest-holding-after-it-sold-a-quarter-of-its-intel-stake/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 09:50 ET",
+        "pub_ts": 1795186201.0
+      },
+      {
         "title": "SpaceX Sells $32 Bil Of Debt For AI Chips. But Yields, Orbital Deployment Raise Concerns.",
         "url": "https://finance.yahoo.com/m/55ee9a46-96c2-3843-82df-818e8f6dc10d/spacex-sells-%2432-bil-of-debt.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-20 09:31 ET",
         "pub_ts": 1795185094.0
-      },
-      {
-        "title": "SpaceX Lenders Reportedly Do Not Want Musk’s $40B AI Chips To Be Launched Into Orbit – SPCX Stock Falls Below IPO Price Pre-Market",
-        "url": "https://stocktwits.com/news-articles/markets/equity/spacex-lenders-dont-want-musk-40b-ai-chips-in-space-ft-report-spcx-stock-falls-below-ipo-price/cNbSSIeR9KU?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 09:15 ET",
-        "pub_ts": 1795184145.0
-      },
-      {
-        "title": "Filings Show Trump Sold MCD and HD and Bought SpaceX Stock Instead",
-        "url": "https://247wallst.com/investing/2026/11/20/filings-show-trump-sold-mcd-and-hd-and-bought-spacex-stock-instead/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 09:13 ET",
-        "pub_ts": 1795184034.0
-      },
-      {
-        "title": "Zacks Investment Ideas feature highlights: Anthropic, SpaceX, Amazon, Vertiv and Bloom Energy",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/zacks-investment-ideas-feature-highlights-131200144.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 08:12 ET",
-        "pub_ts": 1795180320.0
       }
     ],
     "ASTS": [
@@ -2675,6 +2675,27 @@
     ],
     "ORCL": [
       {
+        "title": "Global Multimodal Invoice Reconciliation Platform Market Report 2026: Forecast to 2030 | Capitalize on 13.9% CAGR as Oracle, HighRadius, Coupa, and Basware Scale AI Automation",
+        "url": "https://finance.yahoo.com/technology/ai/articles/global-multimodal-invoice-reconciliation-platform-145200615.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 09:52 ET",
+        "pub_ts": 1795186320.0
+      },
+      {
+        "title": "Artificial Intelligence (AI) in Warehousing Market Global Report 2026 | Capitalize on 25.3% CAGR as Oracle, Dematic, Symbotic, AutoStore, and GreyOrange Accelerate Automation",
+        "url": "https://finance.yahoo.com/technology/ai/articles/artificial-intelligence-ai-warehousing-market-145000022.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 09:50 ET",
+        "pub_ts": 1795186200.0
+      },
+      {
+        "title": "Global Data Protection and Replication Solutions Market Report 2026 | Capitalize on $18.5B by 2030 as Microsoft, Dell, IBM, Veeam, and Rubrik Drive Ransomware-Resilient Backups",
+        "url": "https://finance.yahoo.com/technology/articles/global-data-protection-replication-solutions-144900894.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 09:49 ET",
+        "pub_ts": 1795186140.0
+      },
+      {
         "title": "Nebius Drops 7% as Michael Burry Takes a Victory Lap on Neocloud Rout; IREN Falls 5%, Oracle Slides 4%",
         "url": "https://247wallst.com/investing/2026/11/20/nebius-drops-7-as-michael-burry-takes-a-victory-lap-on-neocloud-rout-iren-falls-5-oracle-slides-4/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2687,27 +2708,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 04:07 ET",
         "pub_ts": 1795165622.0
-      },
-      {
-        "title": "Oracle (ORCL) Stock May Be 39% Undervalued As Nashville Buildout Starts",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/oracle-orcl-stock-may-39-002103750.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 19:21 ET",
-        "pub_ts": 1795134063.0
-      },
-      {
-        "title": "The Biggest Fear Around Oracle Could Soon End. Wall Street Sees ORCL Stock Surging 100% From Here.",
-        "url": "https://www.barchart.com/story/news/8925367/the-biggest-fear-around-oracle-could-soon-end-wall-street-sees-orcl-stock-surging-100-from-here?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 16:28 ET",
-        "pub_ts": 1795123686.0
-      },
-      {
-        "title": "Why Is Oracle Spending $1.61 For Every Cash Dollar?",
-        "url": "https://www.trefis.com/stock/orcl/articles/626550/why-is-oracle-spending-1-61-for-every-cash-dollar/2026-11-19?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 12:01 ET",
-        "pub_ts": 1795107718.0
       }
     ],
     "COIN": [
@@ -3268,25 +3268,25 @@
     "NOW": 1795186578.3877583,
     "AMZN": 1795186578.3877583,
     "CRWV": 1795186578.3877583,
-    "NBIS": 1795185969.109867,
-    "APLD": 1795185969.109867,
-    "VST": 1795185969.109867,
-    "BE": 1795185969.109867,
-    "CRDO": 1795185969.109867,
-    "COHR": 1795185969.109867,
-    "MRVL": 1795185969.109867,
-    "LITE": 1795185969.109867,
+    "NBIS": 1795187521.8490705,
+    "APLD": 1795187521.8490705,
+    "VST": 1795187521.8490705,
+    "BE": 1795187521.8490705,
+    "CRDO": 1795187521.8490705,
+    "COHR": 1795187521.8490705,
+    "MRVL": 1795187521.8490705,
+    "LITE": 1795187521.8490705,
     "AAOI": 1795186578.3877583,
-    "SPCX": 1795185969.109867,
-    "ASTS": 1795185969.109867,
-    "AXTI": 1795185969.109867,
+    "SPCX": 1795187521.8490705,
+    "ASTS": 1795187521.8490705,
+    "AXTI": 1795187521.8490705,
     "NASA": 1795186578.3877583,
     "LUNR": 1795186578.3877583,
     "TSLA": 1795186578.3877583,
     "AXP": 1795186578.3877583,
-    "RKLB": 1795185969.109867,
+    "RKLB": 1795187521.8490705,
     "KO": 1795186578.3877583,
-    "FLY": 1795185969.109867,
+    "FLY": 1795187521.8490705,
     "INTC": 1795186578.3877583,
     "VRT": 1795186578.3877583,
     "HPE": 1795186578.3877583,
@@ -3301,21 +3301,21 @@
     "MSTR": 1795186686.4304717,
     "SNDK": 1795186578.3877583,
     "BTC-USD": 1795187103.0149376,
-    "CRWD": 1795185969.109867,
-    "ORCL": 1795185969.109867,
-    "COIN": 1795185969.109867,
+    "CRWD": 1795187521.8490705,
+    "ORCL": 1795187521.8490705,
+    "COIN": 1795187521.8490705,
     "LLY": 1795186078.535073,
     "MRNA": 1795186078.535073,
     "NKE": 1795186078.535073,
-    "MCD": 1795185969.109867,
-    "PEP": 1795185969.109867,
+    "MCD": 1795187521.8490705,
+    "PEP": 1795187521.8490705,
     "XOM": 1795187103.0149376,
     "JPM": 1795187103.0149376,
     "WMT": 1795187103.0149376,
-    "V": 1795185969.109867,
+    "V": 1795187521.8490705,
     "CAT": 1795187103.0149376,
-    "FN": 1795185969.109867,
-    "GLW": 1795185969.109867,
+    "FN": 1795187521.8490705,
+    "GLW": 1795187521.8490705,
     "ANT": 1795187103.0149376,
     "XAUUSD": 1795187103.0149376
   },
