@@ -3283,9 +3283,13 @@
     "2026-11-20:DEFENSIVE_FLIGHT:+6.6": {
       "device": "PC",
       "ts": 1795186085.0586555
+    },
+    "2026-11-20:INTRADAY_CORRIDOR:SPY:ABOVE_P75": {
+      "device": "PC",
+      "ts": 1795186183.2376888
     }
   },
   "device": "PC",
-  "last_heartbeat_ts": 1795186002.9381814,
-  "updated_at": "2026-11-20T14:48:05.059131+00:00"
+  "last_heartbeat_ts": 1795186104.7441602,
+  "updated_at": "2026-11-20T14:49:43.238162+00:00"
 }
