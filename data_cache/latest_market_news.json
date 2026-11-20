@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795209883.6,
-  "updated_at_et": "11-20 16:24 ET",
-  "updated_at_kst": "06:24 KST",
+  "updated_at_ts": 1795209983.781,
+  "updated_at_et": "11-20 16:26 ET",
+  "updated_at_kst": "06:26 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2603,6 +2603,20 @@
     ],
     "BTC-USD": [
       {
+        "title": "$1,000 in Anthropic or Bitcoin: Which Could Be Worth More by 2030?",
+        "url": "https://247wallst.com/investing/cryptocurrency/2026/11/20/1000-in-anthropic-or-bitcoin-which-could-be-worth-more-by-2030/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 16:12 ET",
+        "pub_ts": 1795209120.0
+      },
+      {
+        "title": "Sector Update: Financial Stocks Decline Late Afternoon",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/sector-financial-stocks-decline-afternoon-210945260.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 16:09 ET",
+        "pub_ts": 1795208985.0
+      },
+      {
         "title": "What XRP Did After SpaceX’s IPO and What It Could Do After Anthropic’s",
         "url": "https://247wallst.com/investing/cryptocurrency/2026/11/20/what-xrp-did-after-spacexs-ipo-and-what-it-could-do-after-anthropics/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2622,20 +2636,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 15:30 ET",
         "pub_ts": 1795206600.0
-      },
-      {
-        "title": "Quietly, the IRS Gave Crypto Investors Until December 31, 2026 to Rewrite Their Tax Basis. Most Have No Idea.",
-        "url": "https://247wallst.com/personal-finance/2026/11/20/quietly-the-irs-gave-crypto-investors-until-december-31-2026-to-rewrite-their-tax-basis-most-have-no-idea-2/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 15:14 ET",
-        "pub_ts": 1795205640.0
-      },
-      {
-        "title": "Bitcoin Breaks Below $60,000. BlackRock's ETF Suffers Record $541 Million Withdrawal.",
-        "url": "https://www.ibtimes.com/bitcoin-below-60000-blackrock-etf-record-outflows-3810035?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 15:04 ET",
-        "pub_ts": 1795205098.0
       }
     ],
     "CRWD": [
@@ -2973,6 +2973,13 @@
     ],
     "JPM": [
       {
+        "title": "JPMorgan Chase Financial Company LLC Declares Quarterly Coupon on Alerian MLP Index ETN",
+        "url": "https://finance.yahoo.com/markets/options/articles/jpmorgan-chase-financial-company-llc-210500283.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 16:05 ET",
+        "pub_ts": 1795208700.0
+      },
+      {
         "title": "Exclusive Research: JPMorgan’s AI strategy puts governance to the test",
         "url": "https://www.americanbanker.com/news/exclusive-research-jpmorgan-s-ai-strategy-puts-governance-to-the-test?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2999,23 +3006,9 @@
         "source": "Yahoo Finance",
         "time": "11-20 12:55 ET",
         "pub_ts": 1795197329.0
-      },
-      {
-        "title": "JPMorgan Sees US IPO Proceeds Near $290B In 2026, Says Investor Demand Is Growing Faster Than Supply",
-        "url": "https://stocktwits.com/news-articles/markets/equity/jp-morgan-sees-us-ipo-proceeds-near-290-b-in-2026-says-investor-demand-is-growing-faster-than-supply/cNbSnA0R914?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 12:44 ET",
-        "pub_ts": 1795196660.0
       }
     ],
     "WMT": [
-      {
-        "title": "Stock Market Today: Nasdaq Tanks 5%; These AI Data Center Names Slammed (Live Coverage)",
-        "url": "https://finance.yahoo.com/m/4b546235-124e-3fa4-b951-41a067ff7bf2/stock-market-today%3A-nasdaq.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 15:34 ET",
-        "pub_ts": 1795206876.0
-      },
       {
         "title": "Walmart’s sub-30-minute delivery volume surges in Q3",
         "url": "https://www.supplychaindive.com/news/walmarts-sub-30-minute-delivery-volume-surges-in-q3/875339/?.tsrc=rss",
@@ -3043,6 +3036,13 @@
         "source": "Yahoo Finance",
         "time": "11-20 13:07 ET",
         "pub_ts": 1795198067.0
+      },
+      {
+        "title": "Walmart's value proposition supports further market share gains, says Bank of America",
+        "url": "https://www.proactiveinvestors.com/companies/news/1102207/walmart-s-value-proposition-supports-further-market-share-gains-says-bank-of-america-1102207.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 13:00 ET",
+        "pub_ts": 1795197600.0
       }
     ],
     "V": [
@@ -3302,7 +3302,7 @@
     "STX": 1795209583.1797385,
     "MSTR": 1795209583.1797385,
     "SNDK": 1795209476.2753294,
-    "BTC-USD": 1795208461.50222,
+    "BTC-USD": 1795209983.781202,
     "CRWD": 1795208942.2653537,
     "ORCL": 1795208942.2653537,
     "COIN": 1795208942.2653537,
@@ -3311,15 +3311,15 @@
     "NKE": 1795209053.5595644,
     "MCD": 1795208942.2653537,
     "PEP": 1795208942.2653537,
-    "XOM": 1795208461.50222,
-    "JPM": 1795208461.50222,
-    "WMT": 1795208461.50222,
+    "XOM": 1795209983.781202,
+    "JPM": 1795209983.781202,
+    "WMT": 1795209983.781202,
     "V": 1795208942.2653537,
-    "CAT": 1795208461.50222,
+    "CAT": 1795209983.781202,
     "FN": 1795208942.2653537,
     "GLW": 1795208942.2653537,
-    "ANT": 1795208461.50222,
-    "XAUUSD": 1795208461.50222
+    "ANT": 1795209983.781202,
+    "XAUUSD": 1795209983.781202
   },
   "calendar_banner": {
     "level": "idle_with_flash",
