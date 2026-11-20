@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795204704.338,
-  "updated_at_et": "11-20 14:58 ET",
-  "updated_at_kst": "04:58 KST",
+  "updated_at_ts": 1795204805.157,
+  "updated_at_et": "11-20 15:00 ET",
+  "updated_at_kst": "05:00 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -900,6 +900,20 @@
     ],
     "NVDA": [
       {
+        "title": "Nvidia stock extends $2.5 trillion rout as SEC probe reportedly investigates its accounting",
+        "url": "https://finance.yahoo.com/markets/article/nvidia-stock-extends-25-trillion-rout-as-sec-probe-reportedly-investigates-its-accounting-194945274.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 14:42 ET",
+        "pub_ts": 1795203774.0
+      },
+      {
+        "title": "Trump on Jensen Huang: 'We're a country of second chances'",
+        "url": "https://finance.yahoo.com/video/trump-on-jensen-huang-were-a-country-of-second-chances-193647938.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 14:36 ET",
+        "pub_ts": 1795203407.0
+      },
+      {
         "title": "Is today's market showing warning signs of a 2000 bubble?",
         "url": "https://finance.yahoo.com/video/is-todays-market-showing-warning-signs-of-a-2000-bubble-185443509.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -907,32 +921,18 @@
         "pub_ts": 1795200883.0
       },
       {
+        "title": "Trump Bought At Least $5 Million Of This Dividend ETF Before AI Sell-Off",
+        "url": "https://247wallst.com/investing/etf/2026/11/20/trump-bought-at-least-5-million-of-this-dividend-etf-before-ai-sell-off/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 14:33 ET",
+        "pub_ts": 1795203235.0
+      },
+      {
         "title": "Is Nvidia's $81 Billion Receivables Pile A Risk?",
         "url": "https://www.trefis.com/stock/nvda/articles/627205/is-nvidia-s-81-billion-receivables-pile-a-risk/2026-11-20?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-20 14:06 ET",
         "pub_ts": 1795201576.0
-      },
-      {
-        "title": "SemiAnalysis Just Slashed Its AI Compute Forecast by $608 Billion",
-        "url": "https://247wallst.com/videos/semianalysis-just-slashed-its-ai-compute-forecast-by-608-billion/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 13:49 ET",
-        "pub_ts": 1795200586.0
-      },
-      {
-        "title": "Dan Ives Just Delivered Great News for AI Stocks. Here’s the Part That Matters.",
-        "url": "https://www.fool.com/investing/2026/11/20/dan-ives-just-delivered-great-news-for-ai-stocks-here-s-the-part-that-matters/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 13:39 ET",
-        "pub_ts": 1795199942.0
-      },
-      {
-        "title": "Sector Update: Tech Stocks Drop Friday Afternoon",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/sector-tech-stocks-drop-friday-183703547.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 13:37 ET",
-        "pub_ts": 1795199823.0
       }
     ],
     "AMD": [
@@ -3240,30 +3240,30 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795203282.6037898,
-    "SOXL": 1795203282.6037898,
-    "SPY": 1795203282.6037898,
-    "DIA": 1795203282.6037898,
-    "SOXX": 1795203282.6037898,
-    "QQQ": 1795203282.6037898,
-    "SMH": 1795203282.6037898,
-    "IWM": 1795203282.6037898,
-    "IGV": 1795203282.6037898,
-    "TLT": 1795203282.6037898,
-    "GLD": 1795203282.6037898,
-    "SQQQ": 1795203282.6037898,
-    "TSM": 1795203282.6037898,
-    "VIXY": 1795203282.6037898,
-    "SOXS": 1795203282.6037898,
-    "NVDA": 1795203282.6037898,
-    "AMD": 1795203282.6037898,
+    "KORU": 1795204805.1568487,
+    "SOXL": 1795204805.1568487,
+    "SPY": 1795204805.1568487,
+    "DIA": 1795204805.1568487,
+    "SOXX": 1795204805.1568487,
+    "QQQ": 1795204805.1568487,
+    "SMH": 1795204805.1568487,
+    "IWM": 1795204805.1568487,
+    "IGV": 1795204805.1568487,
+    "TLT": 1795204805.1568487,
+    "GLD": 1795204805.1568487,
+    "SQQQ": 1795204805.1568487,
+    "TSM": 1795204805.1568487,
+    "VIXY": 1795204805.1568487,
+    "SOXS": 1795204805.1568487,
+    "NVDA": 1795204805.1568487,
+    "AMD": 1795204805.1568487,
     "ASML": 1795203388.5106013,
     "QCOM": 1795203388.5106013,
-    "AVGO": 1795203282.6037898,
-    "AMAT": 1795203282.6037898,
-    "META": 1795203282.6037898,
-    "GOOGL": 1795203282.6037898,
-    "MSFT": 1795203282.6037898,
+    "AVGO": 1795204805.1568487,
+    "AMAT": 1795204805.1568487,
+    "META": 1795204805.1568487,
+    "GOOGL": 1795204805.1568487,
+    "MSFT": 1795204805.1568487,
     "AAPL": 1795203388.5106013,
     "PLTR": 1795203388.5106013,
     "NOW": 1795203388.5106013,
