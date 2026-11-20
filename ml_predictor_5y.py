@@ -7470,7 +7470,7 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
                         <span class="lbl">体制门禁 · MA20宽度</span>
                         <span class="val" style="font-size: 13px; color: {_regime_color};">{_regime_cn} ({_breadth_pct:.1f}%)</span>
                     </div>
-                    <div class="weather-stat-pill" title="全局真 VIX 恐慌中枢：^VIX / ^VIX3M 期限比值 + ^VVIX 领先指标 + 10Y美债">
+                    <div class="weather-stat-pill" title="全局真 VIX 恐慌中枢：^VIX / ^VIX3M 期限比值 + ^VVIX 领先指标 + 10Y美债（比值回落至 0.97 以下、恐慌自 10 日高点回撤 ≥5% 且当日 VIX 未反扑（≤+3%）时开启右侧抄底窗）">
                         <span class="lbl">真 VIX / VIX3M (比值)</span>
                         <span class="val" style="font-size: 13px; color: {_vr_ratio_color};">{_vr_main_str}</span>
                         <span style="font-size: 10.5px; color: var(--text-muted);">{_vr_sub_str}</span>

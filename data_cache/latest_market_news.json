@@ -1,9 +1,23 @@
 {
-  "updated_at_ts": 1795177214.33,
-  "updated_at_et": "11-20 07:20 ET",
-  "updated_at_kst": "21:20 KST",
+  "updated_at_ts": 1795177725.921,
+  "updated_at_et": "11-20 07:28 ET",
+  "updated_at_kst": "21:28 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261120202218662800",
+      "title": "美联储12月激进加息50基点？美国经济恐难承受！",
+      "summary": "美联储理事沃勒提议12月加息50个基点以打破高通胀预期，但市场仍押注常规步伐。在美股回调、楼市遇冷与购买力下滑之际，激进紧缩的代价正引发争议。点击查看…",
+      "keywords": [
+        "美联储",
+        "加息"
+      ],
+      "pub_ts": 1795177338.0,
+      "time_et": "11-20 07:22 ET",
+      "time_bj": "20:22 BJ",
+      "time_kst": "21:22 KST",
+      "time_display": "07:22 ET / 20:22 BJ"
+    },
     {
       "id": "20261120201417036800",
       "title": "【消息人士：美以考虑短期内对伊朗发动新一轮袭击】 11月20日讯，据CBS新闻报道，知情…",
@@ -331,19 +345,6 @@
       "time_bj": "13:40 BJ",
       "time_kst": "14:40 KST",
       "time_display": "00:40 ET / 13:40 BJ"
-    },
-    {
-      "id": "20261120131823332800",
-      "title": "台湾加权指数跌近7%，创2025年4月以来最大百分比跌幅，台积电跌5.7%，鸿海跌5.4…",
-      "summary": "台湾加权指数跌近7%，创2025年4月以来最大百分比跌幅，台积电跌5.7%，鸿海跌5.44%，联发科跌9.81%。",
-      "keywords": [
-        "台积电"
-      ],
-      "pub_ts": 1795151903.0,
-      "time_et": "11-20 00:18 ET",
-      "time_bj": "13:18 BJ",
-      "time_kst": "14:18 KST",
-      "time_display": "00:18 ET / 13:18 BJ"
     }
   ],
   "ticker_news": {
@@ -2606,39 +2607,39 @@
     ],
     "BTC-USD": [
       {
+        "title": "Strategy Tumbles 37% in a Month: This Wall Street Pro Predicts 400% Gains on Its Bitcoin Exposure",
+        "url": "https://247wallst.com/investing/2026/11/20/strategy-tumbles-37-in-a-month-this-wall-street-pro-predicts-400-gains-on-its-bitcoin-exposure/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 07:15 ET",
+        "pub_ts": 1795176918.0
+      },
+      {
+        "title": "Peter Brandt Points to a 75% Bitcoin Correction Pattern. Will the Crash Deepen?",
+        "url": "https://beincrypto.com/peter-brandt-bitcoin-75-percent-correction/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 07:06 ET",
+        "pub_ts": 1795176414.0
+      },
+      {
+        "title": "Robinhood Markets vs. PayPal: Which Financial Stock Is a Better Buy for 2027?",
+        "url": "https://www.fool.com/coverage/better-buy/2026/11/20/robinhood-markets-vs-paypal-which-financial-stock-is-a-better-buy-for-2027/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 07:01 ET",
+        "pub_ts": 1795176061.0
+      },
+      {
+        "title": "Bitcoin ETFs Shed $582M in a Day as BTC Drops Below $62K",
+        "url": "https://decrypt.co/383685/bitcoin-etfs-shed-582m-in-a-day-as-btc-drops-below-62k?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 06:50 ET",
+        "pub_ts": 1795175451.0
+      },
+      {
         "title": "Perpetual Futures Are Surging in Popularity, But They Are Also Facing Mounting Controversy. Here's What Crypto Investors Need to Know.",
         "url": "https://www.fool.com/investing/2026/11/20/perpetual-futures-are-surging-in-popularity-but-they-are-also-facing-mounting-controversy-heres-what-crypto-investors-need-to-know/?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-20 06:10 ET",
         "pub_ts": 1795173001.0
-      },
-      {
-        "title": "Robinhood Markets vs. SoFi Technologies: Which Financial Stock Is a Better Buy for 2027?",
-        "url": "https://www.fool.com/coverage/better-buy/2026/11/20/robinhood-markets-vs-sofi-technologies-which-financial-stock-is-a-better-buy-for-2027/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 06:08 ET",
-        "pub_ts": 1795172881.0
-      },
-      {
-        "title": "Should You Forget Nvidia? 2 Artificial Intelligence (AI) Stocks With More Room to 10x",
-        "url": "https://www.fool.com/investing/2026/11/20/should-you-forget-nvidia-2-artificial-intelligence-ai-stocks-with-more-room-to-10x/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 05:35 ET",
-        "pub_ts": 1795170902.0
-      },
-      {
-        "title": "Gemini Will Stop Holding Coins for VanEck’s HODL, ETHV and VSOL in February",
-        "url": "https://unchainedcrypto.com/gemini-will-stop-holding-coins-for-vanecks-hodl-ethv-and-vsol-in-february/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 05:15 ET",
-        "pub_ts": 1795169748.0
-      },
-      {
-        "title": "Bitcoin ETF Sellers Show No Mercy: BlackRock Leads $582M Bitcoin ETF Exodus as BTC Hits New Lows",
-        "url": "https://99bitcoins.com/news/bitcoin-btc/btc-usd-etf-outflows-ibit-record/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 05:12 ET",
-        "pub_ts": 1795169531.0
       }
     ],
     "CRWD": [
@@ -2976,6 +2977,13 @@
     ],
     "JPM": [
       {
+        "title": "Scout24 shares fall 6% as J.P. Morgan flags AI threat to property portals",
+        "url": "https://finance.yahoo.com/real-estate/articles/scout24-shares-fall-6-j-120418371.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 07:04 ET",
+        "pub_ts": 1795176258.0
+      },
+      {
         "title": "ETFs Are Net Sellers of JPMorgan Chase (JPM) on Nov. 18",
         "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-net-sellers-jpmorgan-chase-110300552.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3002,16 +3010,16 @@
         "source": "Yahoo Finance",
         "time": "11-19 15:32 ET",
         "pub_ts": 1795120339.0
-      },
-      {
-        "title": "Why JPMorgan’s 13x P/E isn’t the bargain it looks like",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/why-jpmorgan-13x-p-e-202913875.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 15:29 ET",
-        "pub_ts": 1795120153.0
       }
     ],
     "WMT": [
+      {
+        "title": "Walmart CEO says he's working to keep prices low as diesel costs soar. Here's what's to blame for rising food prices",
+        "url": "https://finance.yahoo.com/economy/articles/walmart-ceo-says-hes-working-120000672.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 07:00 ET",
+        "pub_ts": 1795176000.0
+      },
       {
         "title": "State Street Consumer Staples SPDR (XLP) Adds Walmart and Costco on Nov. 18",
         "url": "https://finance.yahoo.com/markets/stocks/articles/state-street-consumer-staples-spdr-110512500.html?.tsrc=rss",
@@ -3039,13 +3047,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 18:04 ET",
         "pub_ts": 1795129468.0
-      },
-      {
-        "title": "Consumers stock doomsday pantries as tech outages cause jitters",
-        "url": "https://www.cbsnews.com/news/doomsday-prepping-scenarios-walmart-costco-technology-outages/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 17:39 ET",
-        "pub_ts": 1795127981.0
       }
     ],
     "V": [
@@ -3305,7 +3306,7 @@
     "STX": 1795177214.329588,
     "MSTR": 1795177214.329588,
     "SNDK": 1795177214.329588,
-    "BTC-USD": 1795175817.3817728,
+    "BTC-USD": 1795177725.9212663,
     "CRWD": 1795176506.8672552,
     "ORCL": 1795176506.8672552,
     "COIN": 1795176506.8672552,
@@ -3314,20 +3315,20 @@
     "NKE": 1795176506.8672552,
     "MCD": 1795176506.8672552,
     "PEP": 1795176506.8672552,
-    "XOM": 1795175817.3817728,
-    "JPM": 1795175817.3817728,
-    "WMT": 1795175817.3817728,
+    "XOM": 1795177725.9212663,
+    "JPM": 1795177725.9212663,
+    "WMT": 1795177725.9212663,
     "V": 1795176506.8672552,
-    "CAT": 1795175817.3817728,
+    "CAT": 1795177725.9212663,
     "FN": 1795176506.8672552,
     "GLW": 1795176506.8672552,
-    "ANT": 1795175817.3817728,
-    "XAUUSD": 1795175817.3817728
+    "ANT": 1795177725.9212663,
+    "XAUUSD": 1795177725.9212663
   },
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (07:14 ET / 20:14 BJ) [特朗普]：【消息人士：美以考虑短期内对伊朗发动新一轮袭击】 11月20日讯，据CBS新闻报道，知情人士透露，以色列和美国正考虑在短期内对伊朗发动新一轮打击。内塔尼亚胡政府对伊朗重建弹道导弹制造能力的速",
+    "detail": "⚡ 最新核心快讯 (07:22 ET / 20:22 BJ) [美联储] [加息]：美联储理事沃勒提议12月加息50个基点以打破高通胀预期，但市场仍押注常规步伐。在美股回调、楼市遇冷与购买力下滑之际，激进紧缩的代价正引发争议。点击查看…",
     "event_name": "",
     "minutes_left": 0
   }

@@ -388,6 +388,61 @@ class TestVixRegimeEngine(unittest.TestCase):
         self.assertIn("🛡️ 建议买入反向ETF对冲", spy_row_m.group(0))
         self.assertNotIn("SQQQ", spy_row_m.group(0))
 
+    def test_08_strategy_a_purified_bottom_signal_c_star_and_rebound_breaker(self):
+        # 1) 剔除低 VIX 假阳性：仅 vvix_10d_peak=120 (>=112) 但 vix_10d_peak=21 (<26)、ratio_peak=0.90 (<1.00) -> 严禁触发
+        vix_low = _make_series([19.5, 21.0, 20.0, 18.5, 17.8])
+        vix3m_low = _make_series([22.0, 23.333, 22.5, 21.5, 21.0])  # ratio_peak = 0.90, current = 0.848
+        vvix_high = _make_series([110.0, 120.0, 115.0, 106.0, 102.0])  # vvix peak 120, dd 15%
+        snap_false_pos = vre.compute_vix_regime_from_series(vix_low, vix3m_low, vvix_high, None)
+        self.assertAlmostEqual(snap_false_pos["vix_10d_peak"], 21.0, places=2)
+        self.assertAlmostEqual(snap_false_pos["vvix_10d_peak"], 120.0, places=2)
+        self.assertFalse(
+            snap_false_pos["vix_bottom_signal"],
+            "Low VIX peak (21.0) with high VVIX (120.0) must NOT trigger vix_bottom_signal",
+        )
+        self.assertNotEqual(snap_false_pos["vix_state"], "WASHOUT_BOTTOM_WINDOW")
+
+        # 2) 模拟 2026-11-16 状态粘滞盲区：10日峰值 28.18，前一日 19.30，当日 ^VIX=22.91 (+18.7% > +3%)、ratio=0.995 (>=0.97)
+        vix_1116 = _make_series([28.18, 25.64, 19.92, 17.49, 19.30, 22.91])
+        vix3m_1116 = _make_series([25.55, 24.60, 20.86, 19.24, 20.62, round(22.91 / 0.995, 4)])
+        vvix_1116 = _make_series([134.99, 121.94, 98.43, 90.47, 101.53, 114.23])
+        snap_1116 = vre.compute_vix_regime_from_series(vix_1116, vix3m_1116, vvix_1116, None)
+        self.assertAlmostEqual(snap_1116["vix_10d_peak"], 28.18, places=2)
+        self.assertGreater(snap_1116["vix_drawdown_from_peak_pct"], 15.0)
+        self.assertGreater(snap_1116["vix_pct"], 18.0)
+        self.assertFalse(
+            snap_1116["vix_bottom_signal"],
+            "2026-11-16 secondary VIX spike (+18.7%, ratio=0.995) must be tripped to False",
+        )
+
+        # 2b) 单独验证两道子熔断锁：
+        # (i) VIX 当日下跌但 ratio = 0.975 (>= 0.97) -> 拦截
+        vix_r0975 = _make_series([28.0, 26.0, 24.0])
+        vix3m_r0975 = _make_series([26.5, 26.0, round(24.0 / 0.975, 4)])
+        snap_r0975 = vre.compute_vix_regime_from_series(vix_r0975, vix3m_r0975, None, None)
+        self.assertFalse(snap_r0975["vix_bottom_signal"])
+        # (ii) ratio = 0.93 (< 0.97) 且较10日峰值回撤 >10%，但当日 VIX 反弹 +4.5% (> +3.0%) -> 拦截
+        vix_spike = _make_series([30.0, 22.0, 23.0])  # +4.55% today
+        vix3m_spike = _make_series([28.0, 24.0, round(23.0 / 0.93, 4)])
+        snap_spike = vre.compute_vix_regime_from_series(vix_spike, vix3m_spike, None, None)
+        self.assertGreater(snap_spike["vix_pct"], 3.0)
+        self.assertFalse(snap_spike["vix_bottom_signal"])
+
+        # 3) 真实恐慌后回撤 6.0% (>=5% 但 <8%)、ratio=0.95 (<0.97)、当日 VIX 微跌或涨幅 <= +3% -> 准确触发 True
+        # 峰值 28.0 -> 前日 26.5 -> 当日 26.32 (距峰值 28.0 回撤 exactly 6.0%, 当日 -0.68% <= +3%)
+        vix_6pct = _make_series([24.0, 28.0, 26.5, 26.32])
+        vix3m_6pct = _make_series([24.5, 26.8, 26.8, round(26.32 / 0.95, 4)])
+        snap_6pct = vre.compute_vix_regime_from_series(vix_6pct, vix3m_6pct, None, None)
+        self.assertAlmostEqual(snap_6pct["vix_drawdown_from_peak_pct"], 6.0, places=1)
+        self.assertAlmostEqual(snap_6pct["vix_term_ratio"], 0.95, places=2)
+        self.assertTrue(
+            snap_6pct["vix_bottom_signal"],
+            "6% drawdown (>=5%) with ratio 0.95 (<0.97) and VIX change <= +3% after true panic must trigger True",
+        )
+        self.assertEqual(snap_6pct["vix_state"], "WASHOUT_BOTTOM_WINDOW")
+        self.assertIn("0.97", snap_6pct["advice_cn"])
+        self.assertIn("≥5%", snap_6pct["advice_cn"])
+
 
 if __name__ == "__main__":
     unittest.main()

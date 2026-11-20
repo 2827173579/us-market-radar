@@ -306,24 +306,34 @@ def compute_vix_regime_from_series(
         or (vix_spot_f >= 30.0)
     )
 
-    # 状态 B：恐慌出清 · 右侧抄底观察窗 (需同时满足曾极端恐慌 + 见顶确认回落且当前已非硬刹车)
+    # 状态 B：恐慌出清 · 右侧抄底观察窗 (组 C* 提纯版 + 二次恐慌抬头熔断锁)
+    # 1) 剔除低 VIX 时纯 VVIX>=112 假阳，要求近 10 日真出现过 VIX>=26.0 或 期限比>=1.00 倒挂
     had_extreme_panic_10d = bool(
         (vix_10d_peak_f >= 26.0)
-        or (vix_term_ratio_10d_peak_f is not None and vix_term_ratio_10d_peak_f >= 1.03)
-        or (vvix_10d_peak_f is not None and vvix_10d_peak_f >= 112.0)
+        or (vix_term_ratio_10d_peak_f is not None and vix_term_ratio_10d_peak_f >= 1.00)
     )
+    # 2) 二次抬头熔断锁：期限比必须回落至 0.97 以下（脱离 0.995 濒临倒挂区），且当日 VIX 涨幅 <= +3.0%
     ratio_cooled = bool(
         (vix_term_ratio_f is not None and vix_term_ratio_10d_peak_f is not None)
+        and (vix_term_ratio_f < 0.97)
         and (
-            (vix_term_ratio_f < 1.00 and vix_term_ratio_f < vix_term_ratio_10d_peak_f)
+            (vix_term_ratio_f < vix_term_ratio_10d_peak_f)
             or ((vix_term_ratio_10d_peak_f - vix_term_ratio_f) >= 0.06)
         )
     )
+    # 3) 回撤确认门槛优化为 >= 5.0%
     vol_cooled = bool(
-        (vix_dd_pct >= 8.0)
-        or (vvix_dd_pct is not None and vvix_dd_pct >= 8.0 and vix_is_down_today)
+        (vix_dd_pct >= 5.0)
+        or (vvix_dd_pct is not None and vvix_dd_pct >= 5.0 and vix_is_down_today)
     )
-    vix_bottom_signal = bool((not vix_hard_brake) and had_extreme_panic_10d and ratio_cooled and vol_cooled)
+    no_vix_rebound_spike = bool(vix_pct is None or float(vix_pct) <= 3.0)
+    vix_bottom_signal = bool(
+        (not vix_hard_brake)
+        and had_extreme_panic_10d
+        and ratio_cooled
+        and vol_cooled
+        and no_vix_rebound_spike
+    )
 
     vix_disp = f"{vix_spot_f:.1f}"
     ratio_disp = f"{vix_term_ratio_f:.2f}" if vix_term_ratio_f is not None else None
@@ -340,7 +350,7 @@ def compute_vix_regime_from_series(
         summary_cn = "机构恐慌倒挂踩踏期，严禁左侧接飞刀"
         advice_cn = (
             "倒挂说明机构仍在抢买近期保护，大盘体制强制锁死 BEAR_DEFENSE、多头胜率封顶 48%；"
-            "待比值回落跌破 1.00 且恐慌回撤 ≥8% 时自动开启右侧抄底窗口。"
+            "比值回落至 0.97 以下、恐慌自 10 日高点回撤 ≥5% 且当日 VIX 未反扑（≤+3%）时开启右侧抄底窗。"
         )
     elif vix_bottom_signal:
         vix_state = "WASHOUT_BOTTOM_WINDOW"
@@ -348,23 +358,29 @@ def compute_vix_regime_from_series(
         pill_text = f"🟢 VIX {vix_disp} · 恐慌出清抄底窗"
         summary_cn = f"恐慌确认见顶回落（高点 {vix_10d_peak_f:.1f} 回撤 {vix_dd_pct:.1f}%），右侧优质标的抄底窗已开启"
         advice_cn = (
-            f"近10日极端恐慌已回落 {vix_dd_pct:.1f}% 且期限结构恢复升水"
-            f"（ratio={vix_term_ratio_f:.2f}），对非暴跌熔断且站稳日内 VWAP 的优质标的放宽多头胜率上限至 58%。"
+            f"近10日极端恐慌已回落 {vix_dd_pct:.1f}%（≥5%）、比值回落至 0.97 以下"
+            f"（ratio={vix_term_ratio_f:.2f}）且当日 VIX 未反扑（≤+3%），对非暴跌熔断且站稳日内 VWAP 的优质标的放宽多头胜率上限至 58%。"
             if vix_term_ratio_f is not None
-            else "近10日极端恐慌已回落且情绪修复，可右侧精选站稳日内 VWAP 的优质龙头。"
+            else "比值回落至 0.97 以下、恐慌自 10 日高点回撤 ≥5% 且当日 VIX 未反扑（≤+3%）时开启右侧抄底窗。"
         )
     elif (vix_term_ratio_f is not None and vix_term_ratio_f >= 0.92) or (vix_spot_f >= 20.0):
         vix_state = "ELEVATED_CAUTION"
         pill_level = "warn"
         pill_text = f"🟡 VIX {vix_disp} · 避险升温({ratio_disp})" if ratio_disp else f"🟡 VIX {vix_disp} · 避险升温"
         summary_cn = "波动率抬升或期限收窄，避险升温"
-        advice_cn = "避险情绪升温但期限尚未倒挂，控制单笔仓位、优选站稳均线与日内 VWAP 的龙头标的。"
+        advice_cn = (
+            "避险情绪升温但期限尚未倒挂，控制单笔仓位、优选站稳均线与日内 VWAP 的龙头标的；"
+            "比值回落至 0.97 以下、恐慌自 10 日高点回撤 ≥5% 且当日 VIX 未反扑（≤+3%）时开启右侧抄底窗。"
+        )
     else:
         vix_state = "CALM_CONTANGO"
         pill_level = "calm"
         pill_text = f"⚪ VIX {vix_disp} · 平稳({ratio_disp})" if ratio_disp else f"⚪ VIX {vix_disp} · 平稳"
         summary_cn = "期限结构正常升水，恐慌水平平稳"
-        advice_cn = "远期波动率高于近期（Contango），机构对冲需求温和，按常规趋势与黄金坑纪律执行。"
+        advice_cn = (
+            "远期波动率高于近期（Contango），机构对冲需求温和，按常规趋势与黄金坑纪律执行；"
+            "比值回落至 0.97 以下、恐慌自 10 日高点回撤 ≥5% 且当日 VIX 未反扑（≤+3%）时开启右侧抄底窗。"
+        )
 
     degraded = len(available_symbols) < len(VIX_SYMBOLS)
     return {
@@ -514,7 +530,7 @@ def render_vix_pill_widget_parts(
     peak_str = _fmt_val(vr.get("vix_10d_peak"), 2)
     dd_str = _fmt_val(vr.get("vix_drawdown_from_peak_pct"), 1, "%")
     summary_str = _html.escape(str(vr.get("summary_cn") or "波动率监测中"))
-    advice_str = _html.escape(str(vr.get("advice_cn") or "关注期限结构比值与恐慌回撤信号。"))
+    advice_str = _html.escape(str(vr.get("advice_cn") or "比值回落至 0.97 以下、恐慌自 10 日高点回撤 ≥5% 且当日 VIX 未反扑（≤+3%）时开启右侧抄底窗。"))
     term_cn = _html.escape(str(vr.get("term_structure_cn") or "--"))
 
     ratio_badge_cls = "vix-m-danger" if (ratio_v is not None and float(ratio_v) >= 1.0) else (

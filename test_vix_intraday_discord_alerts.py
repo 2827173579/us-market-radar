@@ -455,6 +455,106 @@ class TestVixIntradayDiscordAlerts(unittest.TestCase):
         self.assertEqual(len(captured), 0)
         self.assertEqual(mock_req_post.call_count, 0)
 
+    # 8. 策略 B：⚡ VIX 盘中真退潮 · 右侧博反抽（倒挂期绝对禁多 + 5道硬门禁 + 同日去重）
+    def test_strategy_b_vix_intraday_rebound_gates_and_dedupe(self):
+        captured, fake_open = self._capture_urlopen()
+        macro_ok = {
+            "VIXY": {"active_price": 34.10, "vwap": 35.20, "is_5m_green": False},  # VIXY < VWAP
+            "SPY": {"active_price": 748.50, "vwap": 746.00, "is_5m_green": True},
+            "QQQ": {"active_price": 672.30, "vwap": 670.10, "is_5m_green": True},
+            "SOXL": {"active_price": 52.40, "vwap": 51.10, "is_5m_green": True},
+        }
+        dt_1000 = datetime(2026, 11, 20, 10, 0, tzinfo=ET_TZ)
+        dt_0940 = datetime(2026, 11, 20, 9, 40, tzinfo=ET_TZ)
+        dt_1505 = datetime(2026, 11, 20, 15, 5, tzinfo=ET_TZ)
+
+        # (a) 倒挂期（ratio=1.05）即使 VIX 大跌、VIXY < VWAP 且 SOXL > VWAP，也必须严格拦截
+        vr_backwardation = {
+            "vix_spot": 25.6,
+            "vix_pct": -9.2,
+            "vix_10d_peak": 28.2,
+            "vix_term_ratio": 1.05,
+            "vix_term_ratio_10d_peak": 1.10,
+            "vix_state": "BACKWARDATION_BRAKE",
+            "vix_hard_brake": True,
+        }
+        # (b) 虽解除倒挂（ratio=0.95），但当日 VIX 跌幅不足 -5%（例如 -3.2% 盘中假回落） -> 严格拦截
+        vr_weak_drop = {
+            "vix_spot": 23.8,
+            "vix_pct": -3.2,
+            "vix_10d_peak": 28.2,
+            "vix_term_ratio": 0.95,
+            "vix_term_ratio_10d_peak": 1.10,
+            "vix_state": "ELEVATED_CAUTION",
+            "vix_hard_brake": False,
+        }
+        # (c) 5 道门禁全满足：ratio=0.955 < 1.00，10d峰值 28.18 >= 24，当日 VIX 暴跌 -13.8% <= -5%
+        vr_true_ebbing = {
+            "vix_spot": 19.92,
+            "vix_pct": -13.80,
+            "vix_10d_peak": 28.18,
+            "vix_term_ratio": 0.955,
+            "vix_term_ratio_10d_peak": 1.103,
+            "vix_state": "WASHOUT_BOTTOM_WINDOW",
+            "vix_hard_brake": False,
+        }
+
+        with patch("urllib.request.urlopen", side_effect=fake_open):
+            r_back = imr.dispatch_vix_intraday_rebound_alerts(
+                vr_backwardation, macro_data=macro_ok, now_et=dt_1000, session_code="REGULAR"
+            )
+            r_weak = imr.dispatch_vix_intraday_rebound_alerts(
+                vr_weak_drop, macro_data=macro_ok, now_et=dt_1000, session_code="REGULAR"
+            )
+            r_early = imr.dispatch_vix_intraday_rebound_alerts(
+                vr_true_ebbing, macro_data=macro_ok, now_et=dt_0940, session_code="REGULAR"
+            )
+            r_late = imr.dispatch_vix_intraday_rebound_alerts(
+                vr_true_ebbing, macro_data=macro_ok, now_et=dt_1505, session_code="REGULAR"
+            )
+            # VIXY 未跌破 VWAP 时也必须拦截
+            macro_vixy_high = dict(macro_ok, VIXY={"active_price": 35.80, "vwap": 35.20, "is_5m_green": True})
+            r_vixy_hi = imr.dispatch_vix_intraday_rebound_alerts(
+                vr_true_ebbing, macro_data=macro_vixy_high, now_et=dt_1000, session_code="REGULAR"
+            )
+
+            self.assertEqual(len(captured), 0, "任何一道门禁未过都绝不允许触发推送")
+            self.assertIn("BACKWARDATION", r_back["blocked_reason"])
+            self.assertEqual(r_weak["blocked_reason"], "VIX_NOT_COLLAPSING_5PCT")
+            self.assertEqual(r_early["blocked_reason"], "OUTSIDE_0945_1500_ET")
+            self.assertEqual(r_late["blocked_reason"], "OUTSIDE_0945_1500_ET")
+            self.assertEqual(r_vixy_hi["blocked_reason"], "VIXY_NOT_BELOW_VWAP")
+
+            # 正式满足 5 道门禁触发：SPY / QQQ / SOXL 各推 1 条
+            r_ok1 = imr.dispatch_vix_intraday_rebound_alerts(
+                vr_true_ebbing, macro_data=macro_ok, now_et=dt_1000, session_code="REGULAR"
+            )
+            # 同一交易日二次调用被 shared_alert_state 去重拦截
+            r_ok2 = imr.dispatch_vix_intraday_rebound_alerts(
+                vr_true_ebbing, macro_data=macro_ok, now_et=dt_1000, session_code="REGULAR"
+            )
+
+        self.assertEqual(len(r_ok1["sent"]), 3)
+        self.assertEqual(len(r_ok2["sent"]), 0)
+        self.assertEqual(len(r_ok2["skipped_dedupe"]), 3)
+        self.assertEqual(len(captured), 3)
+
+        for item in captured:
+            self.assertEqual(item["url"], self.CLAW_URL)
+            emb = item["payload"]["embeds"][0]
+            self.assertIn("VIX 盘中真退潮 · 右侧窄止损博反抽", emb["description"])
+            self.assertIn("轻仓看R1·严禁隔夜", emb["description"])
+            self.assertIn("-13.80%", emb["description"])
+            self.assertIn("0.955", emb["description"])
+
+        descs = {item["payload"]["embeds"][0]["title"]: item["payload"]["embeds"][0]["description"] for item in captured}
+        spy_d = next(v for k, v in descs.items() if "SPY" in k)
+        soxl_d = next(v for k, v in descs.items() if "SOXL" in k)
+        self.assertIn("SPY: -1.2%", spy_d)
+        self.assertIn("SOXL: -2.5%", soxl_d)
+        for tk in ("SPY", "QQQ", "SOXL"):
+            self.assertTrue(shared_alert_state.is_sent(f"2026-11-20:VIX_INTRADAY_REBOUND:{tk}"))
+
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)

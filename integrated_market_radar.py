@@ -2196,6 +2196,7 @@ def evaluate_intraday_entry(
         "rth_high": round(curr_rth_high, 2),
         "vwap": round(vwap, 2),
         "has_5m_intraday": has_5m_intraday,
+        "is_5m_green": bool(intra_info.get("is_5m_green", False)),
         "rsi_5m": out_rsi_5m,
         "rvol_5m": out_rvol_5m,
         "rs_20d": out_rs_20d,
@@ -2887,6 +2888,193 @@ def dispatch_intraday_corridor_divergence_alerts(
             color_override=color_hex,
         ):
             res["sent"].append({"ticker": tk, "status": div_status, "key": dedupe_key})
+
+    return res
+
+
+VIX_INTRADAY_REBOUND_STOP_CAPS = {
+    "SPY": "-1.2%",
+    "QQQ": "-1.2%",
+    "SOXL": "-2.5%",
+}
+
+
+def dispatch_vix_intraday_rebound_alerts(
+    vix_regime,
+    macro_data=None,
+    stocks_data=None,
+    intraday_map=None,
+    weather_info=None,
+    now_et=None,
+    session_code=None,
+    webhook_url=None,
+):
+    """
+    策略 B：⚡ VIX 盘中真退潮 · 右侧博反抽（倒挂期绝对禁多）
+    仅面向 SPY / QQQ / SOXL，路由至频道一（#买点警报大盘趋势提示 / DISCORD_CLAW_WEBHOOK_URL）。
+    必须同时满足 5 道硬门禁：
+    1) 严格倒挂禁令：vix_term_ratio < 1.00 且 vix_state != 'BACKWARDATION_BRAKE'（倒挂期绝对禁多）；
+    2) 真实恐慌背景 + 当日真退潮：(vix_10d_peak >= 24.0 或 vix_term_ratio_10d_peak >= 1.00) 且当日 ^VIX 涨跌幅 <= -5.0%；
+    3) 盘中时间窗口：严格锁定美东常规盘中 09:45 ~ 15:00 ET (REGULAR)；
+    4) 微观买盘共振：VIXY 最新价 < 自身日内 VWAP，且目标标的 (SPY/QQQ/SOXL) 最新价 > 自身日内 VWAP 且最近 5m K 线收阳；
+    5) 跨设备去重：写入 shared_alert_state.py 去重键 {date_et}:VIX_INTRADAY_REBOUND:{ticker}（每标的每日最多 1 次）。
+    """
+    res = {"sent": [], "skipped_dedupe": [], "blocked_reason": ""}
+
+    if now_et is None:
+        try:
+            from zoneinfo import ZoneInfo
+            cur_et = datetime.now(ZoneInfo("America/New_York"))
+        except Exception:
+            cur_et = datetime.now(timezone(timedelta(hours=-5)))
+    else:
+        cur_et = now_et
+
+    # 门禁 3：美东常规盘中 09:45 ~ 15:00 ET
+    if cur_et.weekday() >= 5:
+        res["blocked_reason"] = "WEEKEND"
+        return res
+    if session_code is not None and str(session_code).upper() != "REGULAR":
+        res["blocked_reason"] = f"SESSION_{str(session_code).upper()}"
+        return res
+    hm_min = cur_et.hour * 60 + cur_et.minute
+    if not (9 * 60 + 45 <= hm_min <= 15 * 60):
+        res["blocked_reason"] = "OUTSIDE_0945_1500_ET"
+        return res
+
+    vr = vix_regime if isinstance(vix_regime, dict) else ((weather_info or {}).get("vix_regime") if isinstance(weather_info, dict) else {})
+    if not isinstance(vr, dict) or vr.get("vix_spot") is None:
+        res["blocked_reason"] = "VIX_UNAVAILABLE"
+        return res
+
+    # 门禁 1：严格倒挂禁令（vix_term_ratio < 1.00 且 vix_state != BACKWARDATION_BRAKE）
+    vix_state = str(vr.get("vix_state") or "").upper()
+    if vix_state in ("UNAVAILABLE", "BACKWARDATION_BRAKE") or bool(vr.get("vix_hard_brake", False)):
+        res["blocked_reason"] = "BACKWARDATION_BRAKE_ACTIVE"
+        return res
+    try:
+        ratio_val = float(vr.get("vix_term_ratio")) if vr.get("vix_term_ratio") is not None else float("nan")
+    except Exception:
+        ratio_val = float("nan")
+    if not math.isfinite(ratio_val) or ratio_val >= 1.00:
+        res["blocked_reason"] = "BACKWARDATION_RATIO_GE_1"
+        return res
+
+    # 门禁 2：真实恐慌背景（10日峰值 >=24 或 期限比峰值 >=1.00）+ 当日 ^VIX 真退潮 (<= -5.0%)
+    try:
+        vix_peak = float(vr.get("vix_10d_peak")) if vr.get("vix_10d_peak") is not None else 0.0
+    except Exception:
+        vix_peak = 0.0
+    try:
+        ratio_peak = float(vr.get("vix_term_ratio_10d_peak")) if vr.get("vix_term_ratio_10d_peak") is not None else 0.0
+    except Exception:
+        ratio_peak = 0.0
+    if not (vix_peak >= 24.0 or ratio_peak >= 1.00):
+        res["blocked_reason"] = "NO_10D_PANIC_BACKGROUND"
+        return res
+
+    raw_vix_pct = vr.get("vix_pct")
+    if raw_vix_pct is None and vr.get("vix_spot") is not None and vr.get("vix_prev") is not None:
+        try:
+            _vp = float(vr.get("vix_prev"))
+            if _vp > 0:
+                raw_vix_pct = ((float(vr.get("vix_spot")) - _vp) / _vp) * 100.0
+        except Exception:
+            raw_vix_pct = None
+    try:
+        vix_pct_val = float(raw_vix_pct) if raw_vix_pct is not None else float("nan")
+    except Exception:
+        vix_pct_val = float("nan")
+    if not math.isfinite(vix_pct_val) or vix_pct_val > -5.0:
+        res["blocked_reason"] = "VIX_NOT_COLLAPSING_5PCT"
+        return res
+
+    # 构建行情与日内微观指标查询表
+    quote_lookup = {}
+    if isinstance(stocks_data, (list, tuple)):
+        for s in stocks_data:
+            if isinstance(s, dict) and s.get("ticker"):
+                quote_lookup[s["ticker"]] = s
+    elif isinstance(stocks_data, dict):
+        quote_lookup.update(stocks_data)
+    if isinstance(macro_data, dict):
+        quote_lookup.update(macro_data)
+
+    def _get_micro_state(sym):
+        q = quote_lookup.get(sym) if isinstance(quote_lookup.get(sym), dict) else {}
+        im = (intraday_map or {}).get(sym) if isinstance((intraday_map or {}).get(sym), dict) else {}
+        px = None
+        for k in ("active_price", "last", "rth_close", "ext_price", "price"):
+            v = q.get(k) if k in q else im.get(k)
+            try:
+                if v is not None and math.isfinite(float(v)) and float(v) > 0:
+                    px = float(v)
+                    break
+            except Exception:
+                continue
+        vwap_v = None
+        for src in (q, im):
+            try:
+                v = src.get("vwap")
+                if v is not None and math.isfinite(float(v)) and float(v) > 0:
+                    vwap_v = float(v)
+                    break
+            except Exception:
+                continue
+        if "is_5m_green" in q:
+            green_v = bool(q.get("is_5m_green"))
+        elif "is_5m_green" in im:
+            green_v = bool(im.get("is_5m_green"))
+        else:
+            green_v = False
+        return px, vwap_v, green_v
+
+    # 门禁 4A：VIXY 最新价必须位于自身日内 VWAP 下方
+    vixy_px, vixy_vwap, _ = _get_micro_state("VIXY")
+    if vixy_px is None or vixy_vwap is None or not (vixy_px < vixy_vwap):
+        res["blocked_reason"] = "VIXY_NOT_BELOW_VWAP"
+        return res
+
+    day_et = cur_et.strftime("%Y-%m-%d")
+    time_et_str = cur_et.strftime("%H:%M")
+    vix_spot_val = float(vr.get("vix_spot"))
+
+    for tk in INTRADAY_CORRIDOR_ALERT_TICKERS:
+        tk_px, tk_vwap, tk_green = _get_micro_state(tk)
+        # 门禁 4B：目标标的站稳自身日内 VWAP 上方 且 最近 5m K 线收阳
+        if tk_px is None or tk_vwap is None or not (tk_px > tk_vwap and tk_green):
+            continue
+
+        # 门禁 5：跨设备去重锁 {date_et}:VIX_INTRADAY_REBOUND:{ticker}
+        dedupe_key = f"{day_et}:VIX_INTRADAY_REBOUND:{tk}"
+        if _SHARED_ALERTS and shared_alert_state.is_sent(dedupe_key, max_age=None):
+            res["skipped_dedupe"].append(dedupe_key)
+            continue
+
+        stop_cap = VIX_INTRADAY_REBOUND_STOP_CAPS.get(tk, "-1.2%")
+        stop_px = round(tk_px * (1.0 - abs(float(stop_cap.rstrip("%"))) / 100.0), 2)
+        vwap_diff_pct = ((tk_px - tk_vwap) / tk_vwap) * 100.0 if tk_vwap > 0 else 0.0
+        vixy_diff_pct = ((vixy_px - vixy_vwap) / vixy_vwap) * 100.0 if vixy_vwap > 0 else 0.0
+
+        title = f"⚡ VIX 盘中真退潮 · 右侧窄止损博反抽（{tk} · 轻仓看R1·严禁隔夜）"
+        md_lines = [
+            f"### ⚡ **VIX 盘中真退潮 · 右侧窄止损博反抽（轻仓看R1·严禁隔夜）**",
+            f"> • **触发标的**：**`{tk}`**（`{day_et} {time_et_str} ET`）｜ **现价**：**`${tk_px:.2f}`** ＞ **日内 VWAP**：`${tk_vwap:.2f}` (`{vwap_diff_pct:+.2f}%` · 5m收阳确认)",
+            f"> • **恐慌真退潮**：**`^VIX` `{vix_spot_val:.2f}`**（当日暴跌 **`{vix_pct_val:+.2f}%`** ≤ `-5.0%` ｜ 10日峰值 `{vix_peak:.2f}`）",
+            f"> • **期限解除倒挂**：**`VIX/VIX3M` `{ratio_val:.3f}`** ＜ `1.00` ｜ **`VIXY` 跌破 VWAP**：`${vixy_px:.2f}` ＜ `${vixy_vwap:.2f}` (`{vixy_diff_pct:+.2f}%`)",
+            f"> • **现行窄止损上限参考**：**`{tk}: {stop_cap}`**（硬止损参考价 `${stop_px:.2f}` ｜ 基准上限 `SPY/QQQ: -1.2%`、`SOXL: -2.5%`）",
+            "",
+            "🛡️ **实战纪律**：仅在倒挂解除（`VIX/VIX3M < 1.00`）且 `^VIX` 当日真退潮（`≤ -5%`）时博弈右侧反抽；**轻仓看 R1 · 严禁隔夜**，跌破 VWAP 或触及窄止损无条件离场，尾盘 `15:50 ET` 前落袋！",
+        ]
+        if send_discord_claw_alert(
+            title,
+            "\n".join(md_lines),
+            webhook_url=webhook_url,
+            dedupe_key=dedupe_key,
+            dedupe_max_age=None,
+            color_override=0x00E676,
+        ):
+            res["sent"].append({"ticker": tk, "key": dedupe_key, "stop_cap": stop_cap})
 
     return res
 
@@ -6844,6 +7032,19 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
             )
         except Exception as _ip_al_err:
             print(f"  [!] 💬 盘中走廊背离 Discord 推送异常: {_ip_al_err}")
+
+        # 7.9 策略 B：⚡ VIX 盘中真退潮 · 右侧窄止损博反抽 (严格倒挂禁令 + VIX<=-5% + 09:45~15:00 ET)
+        try:
+            dispatch_vix_intraday_rebound_alerts(
+                vix_regime=vix_regime,
+                macro_data=macro_data,
+                stocks_data=stocks_sorted,
+                intraday_map=intraday_map,
+                weather_info=weather_info,
+                session_code=session_code,
+            )
+        except Exception as _vr_reb_err:
+            print(f"  [!] 💬 VIX 盘中真退潮博反抽 Discord 推送异常: {_vr_reb_err}")
     else:
         print("  [*] [Dry-Run Guard] 已屏蔽全部外部推送 (RADAR_DISABLE_EXTERNAL_ALERTS / --no-alerts)")
 

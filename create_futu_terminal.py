@@ -3744,7 +3744,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 const spClr = (spNum !== null && spNum >= 5.5) ? pal.down : ((spNum !== null && spNum >= 3.5) ? pal.warn : pal.text);
                 const techLbl = escapeNewsHtml(vrObj.tech_fear_label || "⚪ 科技波动平稳");
                 const termCn = escapeNewsHtml(vrObj.term_structure_cn || "远期监测中");
-                const advCn = escapeNewsHtml(vrObj.advice_cn || "实时跟踪 ^VIX / ^VXN / ^VIX3M 期限结构与 ^VVIX 拐点信号。");
+                const advCn = escapeNewsHtml(vrObj.advice_cn || "比值回落至 0.97 以下、恐慌自 10 日高点回撤 ≥5% 且当日 VIX 未反扑（≤+3%）时开启右侧抄底窗。");
                 vixPop.innerHTML = `
                     <div class="vix-pop-head">
                         <span>⚡ 全局真 VIX 恐慌中枢</span>
