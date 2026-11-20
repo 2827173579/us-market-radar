@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795196618.345,
-  "updated_at_et": "11-20 12:43 ET",
-  "updated_at_kst": "02:43 KST",
+  "updated_at_ts": 1795196717.465,
+  "updated_at_et": "11-20 12:45 ET",
+  "updated_at_kst": "02:45 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1753,6 +1753,20 @@
     ],
     "SPCX": [
       {
+        "title": "SpaceX-Owned Cursor Considers Dropping Chinese AI Models – A Look At Some Key Details",
+        "url": "https://stocktwits.com/news-articles/markets/equity/spacex-owned-cursor-considers-dropping-chinese-ai-models/cNbSnO3R91d?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 12:27 ET",
+        "pub_ts": 1795195647.0
+      },
+      {
+        "title": "SpaceX Stocks Drop 6.57% Premarket After $32 Billion Bond Sale at 8.26%",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/spacex-stocks-drop-6-57-172646022.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 12:26 ET",
+        "pub_ts": 1795195606.0
+      },
+      {
         "title": "SpaceX Eyes “At Least $32 Billion” of AI Chip Debt the Day Its Biggest Compute Tenant Goes Public",
         "url": "https://www.tikr.com/blog/spacex-eyes-at-least-32-billion-of-ai-chip-debt-the-day-its-biggest-compute-tenant-goes-public?ref=yahoofinance&tlnk=yf-261120-95gg2jvh&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1772,20 +1786,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 11:35 ET",
         "pub_ts": 1795192500.0
-      },
-      {
-        "title": "Why SpaceX Stock Dropped After the Anthropic IPO",
-        "url": "https://www.fool.com/investing/2026/11/20/why-spacex-stock-dropped-after-the-anthropic-ipo/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 11:17 ET",
-        "pub_ts": 1795191443.0
-      },
-      {
-        "title": "Apollo and Goldman Sachs Announce Pricing of $44 Billion SpaceX GPU Financing",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/apollo-goldman-sachs-announce-pricing-160200875.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 11:02 ET",
-        "pub_ts": 1795190520.0
       }
     ],
     "ASTS": [
@@ -2678,6 +2678,13 @@
     ],
     "ORCL": [
       {
+        "title": "Oracle Stocks Fall 2.92% to Trade Below Bernstein's $133 AI Downside Case",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/oracle-stocks-fall-2-92-172342961.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 12:23 ET",
+        "pub_ts": 1795195422.0
+      },
+      {
         "title": "Oracle (ORCL) Has a $664B Backlog. Can It Fund It?",
         "url": "https://finance.yahoo.com/markets/stocks/articles/oracle-orcl-664b-backlog-fund-152315398.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2704,13 +2711,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 09:49 ET",
         "pub_ts": 1795186140.0
-      },
-      {
-        "title": "Nebius Drops 7% as Michael Burry Takes a Victory Lap on Neocloud Rout; IREN Falls 5%, Oracle Slides 4%",
-        "url": "https://247wallst.com/investing/2026/11/20/nebius-drops-7-as-michael-burry-takes-a-victory-lap-on-neocloud-rout-iren-falls-5-oracle-slides-4/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 09:17 ET",
-        "pub_ts": 1795184230.0
       }
     ],
     "COIN": [
@@ -3271,25 +3271,25 @@
     "NOW": 1795195805.9154437,
     "AMZN": 1795195805.9154437,
     "CRWV": 1795195805.9154437,
-    "NBIS": 1795195196.5352976,
-    "APLD": 1795195196.5352976,
-    "VST": 1795195196.5352976,
-    "BE": 1795195196.5352976,
-    "CRDO": 1795195196.5352976,
-    "COHR": 1795195196.5352976,
-    "MRVL": 1795195196.5352976,
-    "LITE": 1795195196.5352976,
+    "NBIS": 1795196717.4654138,
+    "APLD": 1795196717.4654138,
+    "VST": 1795196717.4654138,
+    "BE": 1795196717.4654138,
+    "CRDO": 1795196717.4654138,
+    "COHR": 1795196717.4654138,
+    "MRVL": 1795196717.4654138,
+    "LITE": 1795196717.4654138,
     "AAOI": 1795195805.9154437,
-    "SPCX": 1795195196.5352976,
-    "ASTS": 1795195196.5352976,
-    "AXTI": 1795195196.5352976,
+    "SPCX": 1795196717.4654138,
+    "ASTS": 1795196717.4654138,
+    "AXTI": 1795196717.4654138,
     "NASA": 1795195805.9154437,
     "LUNR": 1795195805.9154437,
     "TSLA": 1795195805.9154437,
     "AXP": 1795195805.9154437,
-    "RKLB": 1795195196.5352976,
+    "RKLB": 1795196717.4654138,
     "KO": 1795195805.9154437,
-    "FLY": 1795195196.5352976,
+    "FLY": 1795196717.4654138,
     "INTC": 1795195805.9154437,
     "VRT": 1795195805.9154437,
     "HPE": 1795195805.9154437,
@@ -3304,21 +3304,21 @@
     "MSTR": 1795195914.2025309,
     "SNDK": 1795195805.9154437,
     "BTC-USD": 1795196318.8344502,
-    "CRWD": 1795195196.5352976,
-    "ORCL": 1795195196.5352976,
-    "COIN": 1795195196.5352976,
+    "CRWD": 1795196717.4654138,
+    "ORCL": 1795196717.4654138,
+    "COIN": 1795196717.4654138,
     "LLY": 1795195301.5931494,
     "MRNA": 1795195301.5931494,
     "NKE": 1795195301.5931494,
-    "MCD": 1795195196.5352976,
-    "PEP": 1795195196.5352976,
+    "MCD": 1795196717.4654138,
+    "PEP": 1795196717.4654138,
     "XOM": 1795196318.8344502,
     "JPM": 1795196318.8344502,
     "WMT": 1795196318.8344502,
-    "V": 1795195196.5352976,
+    "V": 1795196717.4654138,
     "CAT": 1795196318.8344502,
-    "FN": 1795195196.5352976,
-    "GLW": 1795195196.5352976,
+    "FN": 1795196717.4654138,
+    "GLW": 1795196717.4654138,
     "ANT": 1795196318.8344502,
     "XAUUSD": 1795196318.8344502
   },
