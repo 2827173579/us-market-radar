@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795180106.32,
-  "updated_at_et": "11-20 08:08 ET",
-  "updated_at_kst": "22:08 KST",
+  "updated_at_ts": 1795180212.204,
+  "updated_at_et": "11-20 08:10 ET",
+  "updated_at_kst": "22:10 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -898,6 +898,27 @@
     ],
     "NVDA": [
       {
+        "title": "Jensen Huang Needs to Stay Gone... His Fan Club Proves It",
+        "url": "https://app.moby.co/home/news/news-jensen-huang-needs-to-stay-gone-his-fan-club-proves-it?utm_source=yahoo_finance&utm_medium=rss&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 07:53 ET",
+        "pub_ts": 1795179180.0
+      },
+      {
+        "title": "KONST at Data Center Asia in Kuala Lumpur: Advancing Its Southeast Asia Token Factory Strategy with Flagship Projects in Cyberjaya and Jakarta",
+        "url": "https://finance.yahoo.com/technology/ai/articles/konst-data-center-asia-kuala-124600343.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 07:46 ET",
+        "pub_ts": 1795178760.0
+      },
+      {
+        "title": "House Democrats Reportedly Probe Whether Nvidia Tried To Influence US Investigation Into Megaspeed",
+        "url": "https://stocktwits.com/news-articles/markets/equity/house-democrats-probe-whether-nvidia-tried-to-influence-us-investigation-into-megaspeed/cNbSL1hR9Kt?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 07:34 ET",
+        "pub_ts": 1795178093.0
+      },
+      {
         "title": "Nasdaq Futures Slide, Anthropic Shares Reverse IPO Gains — LITE, IREN, SNDK, NVDA In Focus",
         "url": "https://stocktwits.com/news-articles/markets/equity/nasdaq-futures-slide-anthropic-shares-reverse-ipo-gains-lite-iren-sndk-nvda-in-focus/cNbSL5RR9Ks?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -910,27 +931,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 07:20 ET",
         "pub_ts": 1795177202.0
-      },
-      {
-        "title": "'Miserable 7' Stocks Shed Whopping $4 Trillion In Value Overnight",
-        "url": "https://finance.yahoo.com/m/6e6f9c49-9658-3615-8008-22c4188b1bd6/%27miserable-7%27-stocks-shed.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 07:18 ET",
-        "pub_ts": 1795177083.0
-      },
-      {
-        "title": "Nvidia Eyes $500 Million Deal That Could Change How Its AI Answers",
-        "url": "https://finance.yahoo.com/technology/ai/articles/nvidia-eyes-500-million-deal-121442355.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 07:14 ET",
-        "pub_ts": 1795176882.0
-      },
-      {
-        "title": "Nvidia Faces a New Probe Days After Cathie Wood's $85 Million Sale",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/nvidia-faces-probe-days-cathie-121218305.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 07:12 ET",
-        "pub_ts": 1795176738.0
       }
     ],
     "AMD": [
@@ -949,6 +949,13 @@
         "pub_ts": 1795176789.0
       },
       {
+        "title": "Anthropic, AMD, Intel, Marvell, Intuit, and More Stocks That Explain Today’s Market",
+        "url": "https://finance.yahoo.com/m/801603d1-8318-3eb0-99a6-10147f0d5ed5/anthropic%2C-amd%2C-intel%2C.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 07:02 ET",
+        "pub_ts": 1795176120.0
+      },
+      {
         "title": "Social Buzz: Wallstreetbets Stocks Mostly Lower Pre-Bell Friday; Sandisk, AMD to Decline",
         "url": "https://finance.yahoo.com/markets/stocks/articles/social-buzz-wallstreetbets-stocks-mostly-113227780.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -961,13 +968,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 06:26 ET",
         "pub_ts": 1795174013.0
-      },
-      {
-        "title": "What iShares Global Tech ETF (IXN) Bought: Apple Leads on Wednesday",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/ishares-global-tech-etf-ixn-110523985.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 06:05 ET",
-        "pub_ts": 1795172723.0
       }
     ],
     "ASML": [
@@ -1120,6 +1120,13 @@
     ],
     "META": [
       {
+        "title": "Apple Might Be About to Become an AI Stock—but It’s Still Dodging the Tech Selloff",
+        "url": "https://finance.yahoo.com/m/218adf20-fceb-3955-ab5b-5c4bc9cf9107/apple-might-be-about-to.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 07:44 ET",
+        "pub_ts": 1795178640.0
+      },
+      {
         "title": "Meta's AI Hardware Faces a Holiday Test, but the Real One Comes Later",
         "url": "https://finance.yahoo.com/technology/ai/articles/metas-ai-hardware-faces-holiday-120941852.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1146,16 +1153,23 @@
         "source": "Yahoo Finance",
         "time": "11-20 06:04 ET",
         "pub_ts": 1795172666.0
-      },
-      {
-        "title": "ETFs Are Net Sellers of Meta Platforms (META) on Wednesday",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-net-sellers-meta-platforms-110254507.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 06:02 ET",
-        "pub_ts": 1795172574.0
       }
     ],
     "GOOGL": [
+      {
+        "title": "Can Microsoft catch up in the frontier AI race?",
+        "url": "https://finance.yahoo.com/video/microsoft-catch-frontier-ai-race-130000484.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 08:00 ET",
+        "pub_ts": 1795179600.0
+      },
+      {
+        "title": "Amazon, Nvidia Fell As Anthropic Gained $185 Billion",
+        "url": "https://www.trefis.com/stock/amzn/articles/627187/amazon-nvidia-fell-as-anthropic-gained-185-billion/2026-11-20?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 07:51 ET",
+        "pub_ts": 1795179107.0
+      },
       {
         "title": "Apple Is Building an AI Agent That Can Use Your Computer for You",
         "url": "https://247wallst.com/investing/2026/11/20/apple-is-building-an-ai-agent-that-can-use-your-computer-for-you/?.tsrc=rss",
@@ -1164,35 +1178,35 @@
         "pub_ts": 1795178313.0
       },
       {
+        "title": "This Week In Cloud AI - AI Action Engine Revolutionizes Cloud Cost Management",
+        "url": "https://finance.yahoo.com/technology/ai/articles/week-cloud-ai-ai-action-123755581.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 07:37 ET",
+        "pub_ts": 1795178275.0
+      },
+      {
         "title": "'Miserable 7' Stocks Shed Whopping $4 Trillion In Value Overnight",
         "url": "https://finance.yahoo.com/m/6e6f9c49-9658-3615-8008-22c4188b1bd6/%27miserable-7%27-stocks-shed.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-20 07:18 ET",
         "pub_ts": 1795177083.0
-      },
-      {
-        "title": "Stanley Druckenmiller dumps Google stock in a bid to ‘not lose money’ as the outlook darkens. Here’s what he’s buying",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/stanley-druckenmiller-dumps-google-stock-121500032.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 07:15 ET",
-        "pub_ts": 1795176900.0
-      },
-      {
-        "title": "OpenAI tried to ruin Anthropic's IPO. It backfired.",
-        "url": "https://finance.yahoo.com/video/openai-tried-ruin-anthropics-ipo-120000298.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 07:00 ET",
-        "pub_ts": 1795176000.0
-      },
-      {
-        "title": "Nvidia, Google and Amazon Back Anthropic as Founders Cash Out Nearly $2 Billion",
-        "url": "https://finance.yahoo.com/technology/ai/articles/nvidia-google-amazon-back-anthropic-115953506.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 06:59 ET",
-        "pub_ts": 1795175993.0
       }
     ],
     "MSFT": [
+      {
+        "title": "Can Microsoft catch up in the frontier AI race?",
+        "url": "https://finance.yahoo.com/video/microsoft-catch-frontier-ai-race-130000484.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 08:00 ET",
+        "pub_ts": 1795179600.0
+      },
+      {
+        "title": "This Week In Cloud AI - AI Action Engine Revolutionizes Cloud Cost Management",
+        "url": "https://finance.yahoo.com/technology/ai/articles/week-cloud-ai-ai-action-123755581.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 07:37 ET",
+        "pub_ts": 1795178275.0
+      },
       {
         "title": "Danaher Collaborates with Microsoft to Make Scientific Instruments Agentically Connected and Laboratories More Intelligent",
         "url": "https://finance.yahoo.com/technology/ai/articles/danaher-collaborates-microsoft-scientific-instruments-123000585.html?.tsrc=rss",
@@ -1213,20 +1227,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 07:11 ET",
         "pub_ts": 1795176688.0
-      },
-      {
-        "title": "Does the Nestle AI Deal Matter for Microsoft Shareholders?",
-        "url": "https://247wallst.com/investing/2026/11/20/does-the-nestle-ai-deal-matter-for-microsoft-shareholders/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 07:07 ET",
-        "pub_ts": 1795176450.0
-      },
-      {
-        "title": "Microsoft and JPMorgan Outages Put Cybersecurity Stocks in Focus",
-        "url": "https://finance.yahoo.com/technology/articles/microsoft-jpmorgan-outages-put-cybersecurity-113919807.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 06:39 ET",
-        "pub_ts": 1795174759.0
       }
     ],
     "AAPL": [
@@ -3238,30 +3238,30 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795178645.5927887,
-    "SOXL": 1795178645.5927887,
-    "SPY": 1795178645.5927887,
-    "DIA": 1795178645.5927887,
-    "SOXX": 1795178645.5927887,
-    "QQQ": 1795178645.5927887,
-    "SMH": 1795178645.5927887,
-    "IWM": 1795178645.5927887,
-    "IGV": 1795178645.5927887,
-    "TLT": 1795178645.5927887,
-    "GLD": 1795178645.5927887,
-    "SQQQ": 1795178645.5927887,
-    "TSM": 1795178645.5927887,
-    "VIXY": 1795178645.5927887,
-    "SOXS": 1795178645.5927887,
-    "NVDA": 1795178645.5927887,
-    "AMD": 1795178645.5927887,
+    "KORU": 1795180212.204471,
+    "SOXL": 1795180212.204471,
+    "SPY": 1795180212.204471,
+    "DIA": 1795180212.204471,
+    "SOXX": 1795180212.204471,
+    "QQQ": 1795180212.204471,
+    "SMH": 1795180212.204471,
+    "IWM": 1795180212.204471,
+    "IGV": 1795180212.204471,
+    "TLT": 1795180212.204471,
+    "GLD": 1795180212.204471,
+    "SQQQ": 1795180212.204471,
+    "TSM": 1795180212.204471,
+    "VIXY": 1795180212.204471,
+    "SOXS": 1795180212.204471,
+    "NVDA": 1795180212.204471,
+    "AMD": 1795180212.204471,
     "ASML": 1795178645.5927887,
-    "QCOM": 1795178645.5927887,
-    "AVGO": 1795178645.5927887,
-    "AMAT": 1795178645.5927887,
-    "META": 1795178645.5927887,
-    "GOOGL": 1795178645.5927887,
-    "MSFT": 1795178645.5927887,
+    "QCOM": 1795180212.204471,
+    "AVGO": 1795180212.204471,
+    "AMAT": 1795180212.204471,
+    "META": 1795180212.204471,
+    "GOOGL": 1795180212.204471,
+    "MSFT": 1795180212.204471,
     "AAPL": 1795178753.5911746,
     "PLTR": 1795178753.5911746,
     "NOW": 1795178753.5911746,
