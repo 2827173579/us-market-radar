@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795190497.087,
-  "updated_at_et": "11-20 11:01 ET",
-  "updated_at_kst": "01:01 KST",
+  "updated_at_ts": 1795190597.456,
+  "updated_at_et": "11-20 11:03 ET",
+  "updated_at_kst": "01:03 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1530,6 +1530,13 @@
     ],
     "BE": [
       {
+        "title": "Bloom Energy Tumbles 10% Despite BMO Upgrade With $230 Target; FuelCell Energy Slides 7%, Plug Power Drops 3%",
+        "url": "https://247wallst.com/investing/2026/11/20/bloom-energy-tumbles-10-despite-bmo-upgrade-with-230-target-fuelcell-energy-slides-7-plug-power-drops-3/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 10:53 ET",
+        "pub_ts": 1795189980.0
+      },
+      {
         "title": "Bloom Energy Is Down 50% From Its High. Should You Buy the Dip?",
         "url": "https://www.fool.com/investing/2026/11/20/bloom-energy-down-50-from-high-should-you-buy/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1556,13 +1563,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 07:44 ET",
         "pub_ts": 1795178640.0
-      },
-      {
-        "title": "Has Buying Bloom Energy Stock's Dips Paid Off?",
-        "url": "https://www.trefis.com/stock/be/articles/627181/has-buying-bloom-energy-stocks-dips-paid-off/2026-11-20?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 06:22 ET",
-        "pub_ts": 1795173773.0
       }
     ],
     "CRDO": [
@@ -2714,6 +2714,20 @@
     ],
     "COIN": [
       {
+        "title": "Coinbase Sets Mid-2027 Goal to Write Its Own Event Contracts, Bloomberg Reports",
+        "url": "https://unchainedcrypto.com/coinbase-sets-mid-2027-goal-to-write-its-own-event-contracts-bloomberg-reports/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 10:30 ET",
+        "pub_ts": 1795188619.0
+      },
+      {
+        "title": "Coinbase falls below Morgan Stanley’s $120 target",
+        "url": "https://www.thestreet.com/crypto/markets/coinbase-slides-to-a-one-year-low-below-morgan-stanleys-120-target?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 10:30 ET",
+        "pub_ts": 1795188600.0
+      },
+      {
         "title": "Fake Elon Musk Stream Drew 500,000 Viewers as Coinbase AI Blocked $4.7M in Crypto Transfers",
         "url": "https://www.ccn.com/news/crypto/fake-elon-musk-drew-500000-viewers-coinbase-ai-blocked-crypto/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2733,20 +2747,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 06:10 ET",
         "pub_ts": 1795173001.0
-      },
-      {
-        "title": "Coinbase Asks CFTC to Keep Crypto Contracts in Play Under Prediction Market Swap Rule",
-        "url": "https://unchainedcrypto.com/coinbase-asks-cftc-to-keep-crypto-contracts-in-play-under-prediction-market-swap-rule/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 05:30 ET",
-        "pub_ts": 1795170653.0
-      },
-      {
-        "title": "Coinbase Plans to Launch Its Own US Prediction Market Contracts in Early 2027",
-        "url": "https://www.ccn.com/news/crypto/coinbase-us-prediction-market-contracts-2027/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 04:39 ET",
-        "pub_ts": 1795167540.0
       }
     ],
     "LLY": [
@@ -2862,6 +2862,13 @@
     ],
     "MCD": [
       {
+        "title": "McDonald’s Is Testing $3.50 Bundles in 1,900 Stores: Is It Time to Buy, or Wait?",
+        "url": "https://www.tikr.com/blog/mcdonalds-is-testing-3-50-bundles-in-1900-stores-is-it-time-to-buy-or-wait?ref=yahoofinance&tlnk=yf-261120-4c9m5gqr&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 10:20 ET",
+        "pub_ts": 1795188025.0
+      },
+      {
         "title": "Filings Show Trump Sold MCD and HD and Bought SpaceX Stock Instead",
         "url": "https://247wallst.com/investing/2026/11/20/filings-show-trump-sold-mcd-and-hd-and-bought-spacex-stock-instead/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2888,13 +2895,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 03:26 ET",
         "pub_ts": 1795163192.0
-      },
-      {
-        "title": "Sector Update: Consumer Stocks Fall Late Afternoon",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/sector-consumer-stocks-fall-afternoon-204435029.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 15:44 ET",
-        "pub_ts": 1795121075.0
       }
     ],
     "PEP": [
@@ -3270,25 +3270,25 @@
     "NOW": 1795189681.8292615,
     "AMZN": 1795189681.8292615,
     "CRWV": 1795189681.8292615,
-    "NBIS": 1795189070.9927175,
-    "APLD": 1795189070.9927175,
-    "VST": 1795189070.9927175,
-    "BE": 1795189070.9927175,
-    "CRDO": 1795189070.9927175,
-    "COHR": 1795189070.9927175,
-    "MRVL": 1795189070.9927175,
-    "LITE": 1795189070.9927175,
+    "NBIS": 1795190597.456359,
+    "APLD": 1795190597.456359,
+    "VST": 1795190597.456359,
+    "BE": 1795190597.456359,
+    "CRDO": 1795190597.456359,
+    "COHR": 1795190597.456359,
+    "MRVL": 1795190597.456359,
+    "LITE": 1795190597.456359,
     "AAOI": 1795189681.8292615,
-    "SPCX": 1795189070.9927175,
-    "ASTS": 1795189070.9927175,
-    "AXTI": 1795189070.9927175,
+    "SPCX": 1795190597.456359,
+    "ASTS": 1795190597.456359,
+    "AXTI": 1795190597.456359,
     "NASA": 1795189681.8292615,
     "LUNR": 1795189681.8292615,
     "TSLA": 1795189681.8292615,
     "AXP": 1795189681.8292615,
-    "RKLB": 1795189070.9927175,
+    "RKLB": 1795190597.456359,
     "KO": 1795189681.8292615,
-    "FLY": 1795189070.9927175,
+    "FLY": 1795190597.456359,
     "INTC": 1795189681.8292615,
     "VRT": 1795189681.8292615,
     "HPE": 1795189681.8292615,
@@ -3303,21 +3303,21 @@
     "MSTR": 1795189788.0418713,
     "SNDK": 1795189681.8292615,
     "BTC-USD": 1795190195.0897741,
-    "CRWD": 1795189070.9927175,
-    "ORCL": 1795189070.9927175,
-    "COIN": 1795189070.9927175,
+    "CRWD": 1795190597.456359,
+    "ORCL": 1795190597.456359,
+    "COIN": 1795190597.456359,
     "LLY": 1795189177.039331,
     "MRNA": 1795189177.039331,
     "NKE": 1795189177.039331,
-    "MCD": 1795189070.9927175,
-    "PEP": 1795189070.9927175,
+    "MCD": 1795190597.456359,
+    "PEP": 1795190597.456359,
     "XOM": 1795190195.0897741,
     "JPM": 1795190195.0897741,
     "WMT": 1795190195.0897741,
-    "V": 1795189070.9927175,
+    "V": 1795190597.456359,
     "CAT": 1795190195.0897741,
-    "FN": 1795189070.9927175,
-    "GLW": 1795189070.9927175,
+    "FN": 1795190597.456359,
+    "GLW": 1795190597.456359,
     "ANT": 1795190195.0897741,
     "XAUUSD": 1795190195.0897741
   },
