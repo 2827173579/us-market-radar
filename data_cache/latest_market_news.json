@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795168799.118,
-  "updated_at_et": "11-20 04:59 ET",
-  "updated_at_kst": "18:59 KST",
+  "updated_at_ts": 1795168895.511,
+  "updated_at_et": "11-20 05:01 ET",
+  "updated_at_kst": "19:01 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -906,6 +906,13 @@
     ],
     "NVDA": [
       {
+        "title": "Nvidia Added $111 Billion of Supply Commitments in a Quarter, Mostly Memory. Micron Is Still Priced Like a Bust",
+        "url": "https://www.tikr.com/blog/nvidia-added-111-billion-of-supply-commitments-in-a-quarter-mostly-memory-micron-is-still-priced-like-a-bust?ref=yahoofinance&tlnk=yf-261120-v94hx7gc&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 04:34 ET",
+        "pub_ts": 1795167258.0
+      },
+      {
         "title": "Nvidia Has Lost More Than the Market Value of 495 S&P 500 Companies in 6 Weeks -- and Its Downtrend May Be Just Beginning",
         "url": "https://www.fool.com/investing/2026/11/20/nvidia-lost-more-than-market-value-of-495-sp-500-companies-downtrend-just-beginning/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -920,25 +927,18 @@
         "pub_ts": 1795165090.0
       },
       {
-        "title": "Trump Admin Approved Nearly 900,000 AI Chips For China, House Data Shows: Nvidia Says H200 Shipments Were ‘Legal And Authorized’",
-        "url": "https://finance.yahoo.com/technology/ai/articles/trump-admin-approved-nearly-900-071623846.html?.tsrc=rss",
+        "title": "Amazon vs. Alphabet: Which Cloud Computing Stock Is the Better Buy?",
+        "url": "https://www.fool.com/investing/2026/11/20/amazon-vs-alphabet-which-cloud-computing-stock-is-the-better-buy/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-20 02:16 ET",
-        "pub_ts": 1795158983.0
+        "time": "11-20 04:50 ET",
+        "pub_ts": 1795168202.0
       },
       {
-        "title": "Moderna vs. BioNTech: Why Only 1 Is a Buy Heading Into 2027",
-        "url": "https://www.fool.com/investing/2026/11/20/moderna-vs-biontech-why-only-1-is-a-buy-heading-in/?.tsrc=rss",
+        "title": "Here's How Many Shares of SCHD You'd Need to Generate $1,000 in Monthly Passive Income",
+        "url": "https://www.fool.com/investing/2026/11/20/how-many-shares-schd-need-generate-1000-income/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-20 04:15 ET",
-        "pub_ts": 1795166100.0
-      },
-      {
-        "title": "Oracle Stock Just Closed at Its Lowest Price Since April 2024. Is It a Buy Now?",
-        "url": "https://www.fool.com/investing/2026/11/20/oracle-stock-just-closed-at-its-lowest-price-since-april-2024-is-it-a-buy-now/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 04:07 ET",
-        "pub_ts": 1795165622.0
+        "time": "11-20 04:35 ET",
+        "pub_ts": 1795167300.0
       }
     ],
     "AMD": [
@@ -1165,6 +1165,13 @@
     ],
     "GOOGL": [
       {
+        "title": "Amazon vs. Alphabet: Which Cloud Computing Stock Is the Better Buy?",
+        "url": "https://www.fool.com/investing/2026/11/20/amazon-vs-alphabet-which-cloud-computing-stock-is-the-better-buy/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 04:50 ET",
+        "pub_ts": 1795168202.0
+      },
+      {
         "title": "Warren Buffett’s Successor Just Bought $10 Billion of This AI Stock, and It’s Not Apple",
         "url": "https://www.fool.com/investing/2026/11/20/warren-buffetts-successor-just-bought-10-billion-of-this-ai-stock-and-its-not-apple/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1191,13 +1198,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 01:30 ET",
         "pub_ts": 1795156200.0
-      },
-      {
-        "title": "How High Can ANT Stock Go? Wall Street Debut Sparks Valuation Debate – One Analyst Sees Amazon-Google Scale Opportunity In Anthropic",
-        "url": "https://stocktwits.com/news-articles/markets/equity/how-high-can-ant-stock-go-wall-street-valuation-analyst-amazon-google-scale-opportunity/cNbSG4tR90C?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 21:23 ET",
-        "pub_ts": 1795141435.0
       }
     ],
     "MSFT": [
@@ -1223,18 +1223,18 @@
         "pub_ts": 1795144594.0
       },
       {
+        "title": "Microsoft Bought Into Anthropic Around $350 Billion. The IPO Says “Almost Exactly $1.5 Trillion”",
+        "url": "https://www.tikr.com/blog/microsoft-bought-into-anthropic-around-350-billion-the-ipo-says-almost-exactly-1-5-trillion?ref=yahoofinance&tlnk=yf-261120-g55x67qh&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 18:06 ET",
+        "pub_ts": 1795129600.0
+      },
+      {
         "title": "AI Hacking Is “a Fantastic Bonanza” for CrowdStrike and Palo Alto, per Paul Kedrosky",
         "url": "https://www.tikr.com/blog/ai-hacking-is-a-fantastic-bonanza-for-crowdstrike-and-palo-alto-per-paul-kedrosky?ref=yahoofinance&tlnk=yf-261119-xq2rf628&.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-19 17:37 ET",
         "pub_ts": 1795127877.0
-      },
-      {
-        "title": "Microsoft reveals 80% server failure behind global outage",
-        "url": "https://www.thestreet.com/investing/microsoft-reveals-80-server-failure-behind-global-outage?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 17:17 ET",
-        "pub_ts": 1795126620.0
       }
     ],
     "AAPL": [
@@ -3246,31 +3246,31 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795167378.3486795,
-    "SOXL": 1795167378.3486795,
-    "SPY": 1795167378.3486795,
-    "DIA": 1795167378.3486795,
-    "SOXX": 1795167378.3486795,
-    "QQQ": 1795167378.3486795,
-    "SMH": 1795167378.3486795,
-    "IWM": 1795167378.3486795,
-    "IGV": 1795167378.3486795,
-    "TLT": 1795167378.3486795,
-    "GLD": 1795167378.3486795,
-    "SQQQ": 1795167378.3486795,
-    "TSM": 1795167378.3486795,
-    "VIXY": 1795167378.3486795,
-    "SOXS": 1795167378.3486795,
-    "NVDA": 1795167378.3486795,
-    "AMD": 1795167378.3486795,
-    "ASML": 1795167378.3486795,
-    "QCOM": 1795167378.3486795,
-    "AVGO": 1795167378.3486795,
-    "AMAT": 1795167378.3486795,
-    "META": 1795167378.3486795,
-    "GOOGL": 1795167378.3486795,
-    "MSFT": 1795167378.3486795,
-    "AAPL": 1795167378.3486795,
+    "KORU": 1795168895.5113888,
+    "SOXL": 1795168895.5113888,
+    "SPY": 1795168895.5113888,
+    "DIA": 1795168895.5113888,
+    "SOXX": 1795168895.5113888,
+    "QQQ": 1795168895.5113888,
+    "SMH": 1795168895.5113888,
+    "IWM": 1795168895.5113888,
+    "IGV": 1795168895.5113888,
+    "TLT": 1795168895.5113888,
+    "GLD": 1795168895.5113888,
+    "SQQQ": 1795168895.5113888,
+    "TSM": 1795168895.5113888,
+    "VIXY": 1795168895.5113888,
+    "SOXS": 1795168895.5113888,
+    "NVDA": 1795168895.5113888,
+    "AMD": 1795168895.5113888,
+    "ASML": 1795168895.5113888,
+    "QCOM": 1795168895.5113888,
+    "AVGO": 1795168895.5113888,
+    "AMAT": 1795168895.5113888,
+    "META": 1795168895.5113888,
+    "GOOGL": 1795168895.5113888,
+    "MSFT": 1795168895.5113888,
+    "AAPL": 1795168895.5113888,
     "PLTR": 1795167378.3486795,
     "NOW": 1795167378.3486795,
     "AMZN": 1795167378.3486795,
