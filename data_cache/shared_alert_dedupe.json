@@ -3099,9 +3099,17 @@
     "2026-11-20:DEFENSIVE_FLIGHT:+4.1": {
       "device": "PC",
       "ts": 1795173562.9457648
+    },
+    "2026-11-20:VIX_REGIME:BACKWARDATION_BRAKE": {
+      "device": "PC",
+      "ts": 1795175611.7295375
+    },
+    "2026-11-20:VXN_TECH_DELEVERAGING": {
+      "device": "PC",
+      "ts": 1795175612.3464277
     }
   },
   "device": "PC",
-  "last_heartbeat_ts": 1795174592.5316448,
-  "updated_at": "2026-11-20T11:36:32.531917+00:00"
+  "last_heartbeat_ts": 1795175517.4252324,
+  "updated_at": "2026-11-20T11:53:32.346815+00:00"
 }
