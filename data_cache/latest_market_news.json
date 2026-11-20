@@ -1,9 +1,22 @@
 {
-  "updated_at_ts": 1795198635.442,
-  "updated_at_et": "11-20 13:17 ET",
-  "updated_at_kst": "03:17 KST",
+  "updated_at_ts": 1795198735.263,
+  "updated_at_et": "11-20 13:18 ET",
+  "updated_at_kst": "03:18 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261121021836527800",
+      "title": "美国总统特朗普：希望黄仁勋道歉并回归。",
+      "summary": "美国总统特朗普：希望黄仁勋道歉并回归。",
+      "keywords": [
+        "特朗普"
+      ],
+      "pub_ts": 1795198716.0,
+      "time_et": "11-20 13:18 ET",
+      "time_bj": "02:18 BJ",
+      "time_kst": "03:18 KST",
+      "time_display": "13:18 ET / 02:18 BJ"
+    },
     {
       "id": "20261121021252847800",
       "title": "美国总统特朗普：对万斯关于伊朗战争和大选的言论并无异议。",
@@ -328,19 +341,6 @@
       "time_bj": "21:55 BJ",
       "time_kst": "22:55 KST",
       "time_display": "08:55 ET / 21:55 BJ"
-    },
-    {
-      "id": "20261120214040779800",
-      "title": "花旗关键风险指标即将“亮红灯”，美股或重现2000年与2021年末调整路径",
-      "summary": "花旗发现，标普500指数权重最大的股票正在失去上涨动能，市场风格也快速转向防御型资产。类似变化曾出现在2000年和2021年末，随后市场经历明显调整。点击查看",
-      "keywords": [
-        "标普"
-      ],
-      "pub_ts": 1795182040.0,
-      "time_et": "11-20 08:40 ET",
-      "time_bj": "21:40 BJ",
-      "time_kst": "22:40 KST",
-      "time_display": "08:40 ET / 21:40 BJ"
     }
   ],
   "ticker_news": {
@@ -596,11 +596,11 @@
         "pub_ts": 1795000823.0
       },
       {
-        "title": "AI Unease Undermines Wall Street Pre-Bell; Asia, Europe Off",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/ai-unease-undermines-wall-street-110827735.html?.tsrc=rss",
+        "title": "Should You Invest in the VanEck Semiconductor ETF (SMH)?",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/invest-vaneck-semiconductor-etf-smh-102003234.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-20 06:08 ET",
-        "pub_ts": 1795172907.0
+        "time": "11-18 05:20 ET",
+        "pub_ts": 1794997203.0
       }
     ],
     "IWM": [
@@ -790,6 +790,20 @@
     ],
     "TSM": [
       {
+        "title": "Goldman Sachs Cut Its Broadcom Target to $460, and the Reason Has Nothing to Do With Broadcom’s Earnings",
+        "url": "https://www.tikr.com/blog/goldman-sachs-cut-its-broadcom-target-to-460-and-the-reason-has-nothing-to-do-with-broadcoms-earnings?ref=yahoofinance&tlnk=yf-261120-qgp5f5w5&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 12:41 ET",
+        "pub_ts": 1795196514.0
+      },
+      {
+        "title": "TSMC Stocks Fall 4.76% as Taiwan Logs Worst Week Since 1991",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/tsmc-stocks-fall-4-76-173926383.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 12:39 ET",
+        "pub_ts": 1795196366.0
+      },
+      {
         "title": "Asia Offers Explosive Innovation at Bargain Prices. 16 Stock Picks From Our Roundtable Experts.",
         "url": "https://finance.yahoo.com/m/2b9b2e76-5522-34df-b265-ec18f3dc350c/asia-offers-explosive.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -809,20 +823,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 09:09 ET",
         "pub_ts": 1795183755.0
-      },
-      {
-        "title": "TSMC Is Halting Some China Chip Orders as a New U.S. Rule Kicks In",
-        "url": "https://247wallst.com/investing/2026/11/20/tsmc-is-halting-some-china-chip-orders-as-a-new-u-s-rule-kicks-in/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 08:13 ET",
-        "pub_ts": 1795180412.0
-      },
-      {
-        "title": "AMD Stock Drops Another 7% Before the Bell and Taiwan Semiconductor Slides 4.2% as Nasdaq Futures Fall 1.6% After Asia’s Chip Selloff",
-        "url": "https://247wallst.com/investing/2026/11/20/amd-stock-drops-another-7-0-before-the-bell-and-taiwan-semiconductor-slides-4-2-as-nasdaq-futures-fall-1-6-after-asias-chip-selloff/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 07:13 ET",
-        "pub_ts": 1795176789.0
       }
     ],
     "VIXY": [
@@ -901,6 +901,27 @@
     ],
     "NVDA": [
       {
+        "title": "NVIDIA Is Down 37% in a Month. Can NVDA Stock Get Back to $200?",
+        "url": "https://247wallst.com/investing/2026/11/20/nvidia-is-down-37-in-a-month-can-nvda-stock-get-back-to-200/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 13:02 ET",
+        "pub_ts": 1795197764.0
+      },
+      {
+        "title": "Why Nvidia Stock Is Down Today",
+        "url": "https://www.fool.com/investing/2026/11/20/why-nvidia-stock-is-down-today/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 12:55 ET",
+        "pub_ts": 1795197302.0
+      },
+      {
+        "title": "SpaceX Just Raised $32 Billion for AI Chips. Lenders Want Elon Musk to Keep Them on Earth.",
+        "url": "https://www.fool.com/investing/2026/11/20/spacex-just-raised-32-billion-for-ai-chips-lenders-want-elon-musk-to-keep-them-on-earth/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 12:48 ET",
+        "pub_ts": 1795196882.0
+      },
+      {
         "title": "Bill Ackman points out a problem Nvidia investors can't ignore",
         "url": "https://www.thestreet.com/investing/stocks/bill-ackman-points-out-a-problem-nvidia-investors-cant-ignore?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -913,27 +934,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 12:44 ET",
         "pub_ts": 1795196669.0
-      },
-      {
-        "title": "Morgan Stanley Strategists Are \"Max Overweight\" on U.S. and Some International Stocks for 2027. How Should You Invest?",
-        "url": "https://www.fool.com/investing/2026/11/20/morgan-stanley-strategists-are-max-overweight-on-u-s-and-some-international-stocks-for-2027-how-should-you-invest/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 12:33 ET",
-        "pub_ts": 1795196028.0
-      },
-      {
-        "title": "Nvidia Is Headed for Its 7th Straight Daily Decline. History Says This Happens Next",
-        "url": "https://www.fool.com/investing/2026/11/20/nvidia-is-headed-for-its-7th-straight-decline-history-says-this-happens-next/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 12:25 ET",
-        "pub_ts": 1795195502.0
-      },
-      {
-        "title": "Prediction: This Is What Will Happen to Micron’s Stock Price in December",
-        "url": "https://www.fool.com/investing/2026/11/20/prediction-this-is-what-will-happen-to-micron-s-stock-price-in-december/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 12:38 ET",
-        "pub_ts": 1795196282.0
       }
     ],
     "AMD": [
@@ -1056,6 +1056,13 @@
         "pub_ts": 1795181818.0
       },
       {
+        "title": "Goldman Sachs Cut Its Broadcom Target to $460, and the Reason Has Nothing to Do With Broadcom’s Earnings",
+        "url": "https://www.tikr.com/blog/goldman-sachs-cut-its-broadcom-target-to-460-and-the-reason-has-nothing-to-do-with-broadcoms-earnings?ref=yahoofinance&tlnk=yf-261120-qgp5f5w5&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 12:41 ET",
+        "pub_ts": 1795196514.0
+      },
+      {
         "title": "Broadcom Stocks Move Lower as Anthropic IPO Eases Its $42 Billion Lending Risk",
         "url": "https://finance.yahoo.com/markets/stocks/articles/broadcom-stocks-move-lower-anthropic-171930686.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1075,13 +1082,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 10:24 ET",
         "pub_ts": 1795188261.0
-      },
-      {
-        "title": "Buy Broadcom Now: Get a $115 Billion AI Giant at Just 18.5x Forward Earnings",
-        "url": "https://247wallst.com/investing/2026/11/20/buy-broadcom-now-get-a-115-billion-ai-giant-at-just-18-5x-forward-earnings/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 07:15 ET",
-        "pub_ts": 1795176933.0
       }
     ],
     "AMAT": [
@@ -1123,6 +1123,13 @@
     ],
     "META": [
       {
+        "title": "Meta’s (META) AI Spending Spree Looks Risky, but There’s More to the Story",
+        "url": "https://finance.yahoo.com/technology/ai/articles/meta-meta-ai-spending-spree-180436289.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 13:04 ET",
+        "pub_ts": 1795197876.0
+      },
+      {
         "title": "Meta and Microsoft Aren't Cutting Server CPU Orders -- Why AMD and Intel Could Benefit",
         "url": "https://finance.yahoo.com/technology/articles/meta-microsoft-arent-cutting-server-165207063.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1149,87 +1156,80 @@
         "source": "Yahoo Finance",
         "time": "11-20 11:45 ET",
         "pub_ts": 1795193133.0
-      },
-      {
-        "title": "Meta Platforms (META) Down 8.1% Since Last Earnings Report: Can It Rebound?",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/meta-platforms-meta-down-8-153008960.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 10:30 ET",
-        "pub_ts": 1795188608.0
       }
     ],
     "GOOGL": [
       {
-        "title": "Investing in Women-Run Companies? 5 Stocks to Consider",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/investing-women-run-companies-5-160700245.html?.tsrc=rss",
+        "title": "Could a handful of tech giants control the future of AI?",
+        "url": "https://finance.yahoo.com/video/could-a-handful-of-tech-giants-control-the-future-of-ai-180645576.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-20 11:07 ET",
-        "pub_ts": 1795190820.0
+        "time": "11-20 13:06 ET",
+        "pub_ts": 1795198005.0
       },
       {
-        "title": "Broadcom Stocks Move Lower as Anthropic IPO Eases Its $42 Billion Lending Risk",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/broadcom-stocks-move-lower-anthropic-171930686.html?.tsrc=rss",
+        "title": "Bad News for Anthropic: “More than 60%” of Token Traffic Now Carried by Open-Weight Models per Palo Alto’s CEO",
+        "url": "https://www.tikr.com/blog/bad-news-for-anthropic-more-than-60-of-token-traffic-now-carried-by-open-weight-models-per-palo-altos-ceo?ref=yahoofinance&tlnk=yf-261120-m2hfv55p&.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-20 12:19 ET",
-        "pub_ts": 1795195170.0
+        "time": "11-20 13:06 ET",
+        "pub_ts": 1795197976.0
       },
       {
-        "title": "A $4.2 Billion Reason Why Google Stock Is Up Today",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/4-2-billion-reason-why-170912347.html?.tsrc=rss",
+        "title": "Alphabet’s (GOOGL) AI Investment Is Surging – Here’s Why the Funding Matters",
+        "url": "https://finance.yahoo.com/technology/ai/articles/alphabet-googl-ai-investment-surging-180536803.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-20 12:09 ET",
-        "pub_ts": 1795194552.0
+        "time": "11-20 13:05 ET",
+        "pub_ts": 1795197936.0
       },
       {
-        "title": "Amazon Stock: What Wall Street’s Latest Forecasts Say About Its Next Move",
-        "url": "https://247wallst.com/investing/2026/11/20/amazon-stock-what-wall-streets-latest-forecasts-say-about-its-next-move/?.tsrc=rss",
+        "title": "NVIDIA Is Down 37% in a Month. Can NVDA Stock Get Back to $200?",
+        "url": "https://247wallst.com/investing/2026/11/20/nvidia-is-down-37-in-a-month-can-nvda-stock-get-back-to-200/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-20 12:03 ET",
-        "pub_ts": 1795194190.0
+        "time": "11-20 13:02 ET",
+        "pub_ts": 1795197764.0
       },
       {
-        "title": "Google reportedly cuts Broadcom-designed TPU plans, eyes more MediaTek chips",
-        "url": "https://finance.yahoo.com/technology/ai/articles/google-reportedly-cuts-broadcom-designed-165518878.html?.tsrc=rss",
+        "title": "The AI Boom Math In Five Lines",
+        "url": "https://www.trefis.com/stock/nvda/articles/627083/the-ai-boom-math-in-five-lines/2026-11-20?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-20 11:55 ET",
-        "pub_ts": 1795193718.0
+        "time": "11-20 13:02 ET",
+        "pub_ts": 1795197733.0
       }
     ],
     "MSFT": [
       {
-        "title": "Microsoft's Copilot strategy offers path to enterprise AI growth, says Bank of America",
-        "url": "https://www.proactiveinvestors.com/companies/news/1102206/microsoft-s-copilot-strategy-offers-path-to-enterprise-ai-growth-says-bank-of-america-1102206.html?.tsrc=rss",
+        "title": "Could a handful of tech giants control the future of AI?",
+        "url": "https://finance.yahoo.com/video/could-a-handful-of-tech-giants-control-the-future-of-ai-180645576.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-20 12:36 ET",
-        "pub_ts": 1795196160.0
+        "time": "11-20 13:06 ET",
+        "pub_ts": 1795198005.0
       },
       {
-        "title": "Intel Wins Microsoft AI Chip Business as Foundry Turnaround Faces New Test",
-        "url": "https://finance.yahoo.com/technology/articles/intel-wins-microsoft-ai-chip-171706213.html?.tsrc=rss",
+        "title": "Microsoft (MSFT) and Its Rivals Are Making a Huge AI Bet – Here’s What Investors Should Know",
+        "url": "https://finance.yahoo.com/technology/ai/articles/microsoft-msft-rivals-making-huge-180640023.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-20 12:17 ET",
-        "pub_ts": 1795195026.0
+        "time": "11-20 13:06 ET",
+        "pub_ts": 1795198000.0
       },
       {
-        "title": "Meta and Microsoft Aren't Cutting Server CPU Orders -- Why AMD and Intel Could Benefit",
-        "url": "https://finance.yahoo.com/technology/articles/meta-microsoft-arent-cutting-server-165207063.html?.tsrc=rss",
+        "title": "Wedbush: Microsoft May Give Intel a Crucial AI Chip Win",
+        "url": "https://finance.yahoo.com/technology/ai/articles/wedbush-microsoft-may-intel-crucial-180407908.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-20 11:52 ET",
-        "pub_ts": 1795193527.0
+        "time": "11-20 13:04 ET",
+        "pub_ts": 1795197847.0
       },
       {
-        "title": "Tech Outages Spur Emergency Buying: Costco-Heavy ETFs in Focus",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/tech-outages-spur-emergency-buying-160000511.html?.tsrc=rss",
+        "title": "What Could Stall Microsoft Stock's Run?",
+        "url": "https://www.trefis.com/stock/msft/articles/627236/what-could-stall-microsoft-stocks-run/2026-11-20?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-20 11:00 ET",
-        "pub_ts": 1795190400.0
+        "time": "11-20 13:02 ET",
+        "pub_ts": 1795197733.0
       },
       {
-        "title": "Banks race to patch vulnerabilities amid amplified tech outage risk",
-        "url": "https://www.bankingdive.com/news/banks-patching-vulnerabilities-tech-outage-risk-ai-cybersecurity/875329/?.tsrc=rss",
+        "title": "Microsoft Stocks Fall 1.97% as Anthropic Debut Spotlights $47.2 Billion Azure Pact",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/microsoft-stocks-fall-1-97-174256311.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-20 10:48 ET",
-        "pub_ts": 1795189723.0
+        "time": "11-20 12:42 ET",
+        "pub_ts": 1795196576.0
       }
     ],
     "AAPL": [
@@ -3241,30 +3241,30 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795197218.771414,
-    "SOXL": 1795197218.771414,
-    "SPY": 1795197218.771414,
-    "DIA": 1795197218.771414,
-    "SOXX": 1795197218.771414,
-    "QQQ": 1795197218.771414,
-    "SMH": 1795197218.771414,
-    "IWM": 1795197218.771414,
-    "IGV": 1795197218.771414,
-    "TLT": 1795197218.771414,
-    "GLD": 1795197218.771414,
-    "SQQQ": 1795197218.771414,
-    "TSM": 1795197218.771414,
-    "VIXY": 1795197218.771414,
-    "SOXS": 1795197218.771414,
-    "NVDA": 1795197218.771414,
-    "AMD": 1795197218.771414,
+    "KORU": 1795198735.26279,
+    "SOXL": 1795198735.26279,
+    "SPY": 1795198735.26279,
+    "DIA": 1795198735.26279,
+    "SOXX": 1795198735.26279,
+    "QQQ": 1795198735.26279,
+    "SMH": 1795198735.26279,
+    "IWM": 1795198735.26279,
+    "IGV": 1795198735.26279,
+    "TLT": 1795198735.26279,
+    "GLD": 1795198735.26279,
+    "SQQQ": 1795198735.26279,
+    "TSM": 1795198735.26279,
+    "VIXY": 1795198735.26279,
+    "SOXS": 1795198735.26279,
+    "NVDA": 1795198735.26279,
+    "AMD": 1795198735.26279,
     "ASML": 1795197322.8692732,
     "QCOM": 1795197322.8692732,
-    "AVGO": 1795197218.771414,
-    "AMAT": 1795197218.771414,
-    "META": 1795197218.771414,
-    "GOOGL": 1795197218.771414,
-    "MSFT": 1795197218.771414,
+    "AVGO": 1795198735.26279,
+    "AMAT": 1795198735.26279,
+    "META": 1795198735.26279,
+    "GOOGL": 1795198735.26279,
+    "MSFT": 1795198735.26279,
     "AAPL": 1795197322.8692732,
     "PLTR": 1795197322.8692732,
     "NOW": 1795197322.8692732,
@@ -3324,7 +3324,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (13:12 ET / 02:12 BJ) [特朗普]：美国总统特朗普：对万斯关于伊朗战争和大选的言论并无异议。",
+    "detail": "⚡ 最新核心快讯 (13:18 ET / 02:18 BJ) [特朗普]：美国总统特朗普：希望黄仁勋道歉并回归。",
     "event_name": "",
     "minutes_left": 0
   }
