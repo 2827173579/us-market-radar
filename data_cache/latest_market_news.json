@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795177109.889,
-  "updated_at_et": "11-20 07:18 ET",
-  "updated_at_kst": "21:18 KST",
+  "updated_at_ts": 1795177214.33,
+  "updated_at_et": "11-20 07:20 ET",
+  "updated_at_kst": "21:20 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1237,6 +1237,13 @@
     ],
     "AAPL": [
       {
+        "title": "Apple Director Dumps 90,000 Shares Worth Nearly $32 Million",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/apple-director-dumps-90-000-114110537.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 06:41 ET",
+        "pub_ts": 1795174870.0
+      },
+      {
         "title": "What iShares Global Tech ETF (IXN) Bought: Apple Leads on Wednesday",
         "url": "https://finance.yahoo.com/markets/stocks/articles/ishares-global-tech-etf-ixn-110523985.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1263,13 +1270,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 06:04 ET",
         "pub_ts": 1795172651.0
-      },
-      {
-        "title": "State Street Tech Select Sector SPDR (XLK) Adds Apple and Microsoft on Nov. 18",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/state-street-tech-select-sector-110407505.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 06:04 ET",
-        "pub_ts": 1795172647.0
       }
     ],
     "PLTR": [
@@ -1385,6 +1385,20 @@
     ],
     "CRWV": [
       {
+        "title": "Jensen Huang Pledges $350 Million to Nvidia-Backed CoreWeave",
+        "url": "https://finance.yahoo.com/technology/ai/articles/jensen-huang-pledges-350-million-115855482.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 06:58 ET",
+        "pub_ts": 1795175935.0
+      },
+      {
+        "title": "CoreWeave Gains $350 Million Computing Commitment as Debt Concerns Persist",
+        "url": "https://finance.yahoo.com/technology/ai/articles/coreweave-gains-350-million-computing-113603215.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 06:36 ET",
+        "pub_ts": 1795174563.0
+      },
+      {
         "title": "CRWV, IREN, NBIS Stocks Extend Neocloud Selloff As Anthropic IPO Rally Fades – Michael Burry Takes A Victory Lap",
         "url": "https://stocktwits.com/news-articles/markets/equity/crwv-iren-nbis-stocks-extend-neocloud-selloff-as-anthropic-ipo-rally-fades-michael-burry-takes-a-victory-lap/cNbSEj6R9KJ?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1404,20 +1418,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 21:19 ET",
         "pub_ts": 1795141162.0
-      },
-      {
-        "title": "Stock Market Today, Nov. 19: CoreWeave Falls as Profit-Taking Follows Anthropic IPO Pricing Above Range",
-        "url": "https://www.fool.com/coverage/stock-market-today/2026/11/19/stock-market-today-nov-19-coreweave-falls-as-profit-taking-follows-anthropic-ipo-pricing-above-range/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 17:53 ET",
-        "pub_ts": 1795128785.0
-      },
-      {
-        "title": "Is Tech in a Bear Market? 20 Tech Stocks Fall Up to 76% From Highs",
-        "url": "https://beincrypto.com/tech-stocks-bear-market-record-highs/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 17:40 ET",
-        "pub_ts": 1795128039.0
       }
     ],
     "NBIS": [
@@ -1940,6 +1940,13 @@
     ],
     "TSLA": [
       {
+        "title": "HSBC upgrades Tesla, more than doubles target on SpaceX merger potential",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/hsbc-upgrades-tesla-more-doubles-121007073.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 07:10 ET",
+        "pub_ts": 1795176607.0
+      },
+      {
         "title": "What State Street Consumer Discretionary SPDR (XLY) Bought: Amazon Leads on Nov. 18",
         "url": "https://finance.yahoo.com/markets/stocks/articles/state-street-consumer-discretionary-spdr-110457372.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1966,13 +1973,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 06:02 ET",
         "pub_ts": 1795172562.0
-      },
-      {
-        "title": "Electric Vehicles Today - Charging Network Growth Fuels Electric Vehicle Market Expansion",
-        "url": "https://finance.yahoo.com/energy/articles/electric-vehicles-today-charging-network-103942380.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 05:39 ET",
-        "pub_ts": 1795171182.0
       }
     ],
     "AXP": [
@@ -3268,11 +3268,11 @@
     "META": 1795177109.888664,
     "GOOGL": 1795177109.888664,
     "MSFT": 1795177109.888664,
-    "AAPL": 1795175707.098499,
-    "PLTR": 1795175707.098499,
-    "NOW": 1795175707.098499,
-    "AMZN": 1795175707.098499,
-    "CRWV": 1795175707.098499,
+    "AAPL": 1795177214.329588,
+    "PLTR": 1795177214.329588,
+    "NOW": 1795177214.329588,
+    "AMZN": 1795177214.329588,
+    "CRWV": 1795177214.329588,
     "NBIS": 1795176506.8672552,
     "APLD": 1795176506.8672552,
     "VST": 1795176506.8672552,
@@ -3281,30 +3281,30 @@
     "COHR": 1795176506.8672552,
     "MRVL": 1795176506.8672552,
     "LITE": 1795176506.8672552,
-    "AAOI": 1795175707.098499,
+    "AAOI": 1795177214.329588,
     "SPCX": 1795176506.8672552,
     "ASTS": 1795176506.8672552,
     "AXTI": 1795176506.8672552,
-    "NASA": 1795175707.098499,
-    "LUNR": 1795175707.098499,
-    "TSLA": 1795175707.098499,
-    "AXP": 1795175707.098499,
+    "NASA": 1795177214.329588,
+    "LUNR": 1795177214.329588,
+    "TSLA": 1795177214.329588,
+    "AXP": 1795177214.329588,
     "RKLB": 1795176506.8672552,
-    "KO": 1795175707.098499,
+    "KO": 1795177214.329588,
     "FLY": 1795176506.8672552,
-    "INTC": 1795175707.098499,
-    "VRT": 1795175707.098499,
-    "HPE": 1795175707.098499,
-    "DELL": 1795175707.098499,
-    "OKLO": 1795175707.098499,
-    "CEG": 1795175707.098499,
-    "FPS": 1795175707.098499,
-    "MU": 1795175707.098499,
-    "SKHY": 1795175707.098499,
-    "WDC": 1795175707.098499,
-    "STX": 1795175707.098499,
-    "MSTR": 1795175707.098499,
-    "SNDK": 1795175707.098499,
+    "INTC": 1795177214.329588,
+    "VRT": 1795177214.329588,
+    "HPE": 1795177214.329588,
+    "DELL": 1795177214.329588,
+    "OKLO": 1795177214.329588,
+    "CEG": 1795177214.329588,
+    "FPS": 1795177214.329588,
+    "MU": 1795177214.329588,
+    "SKHY": 1795177214.329588,
+    "WDC": 1795177214.329588,
+    "STX": 1795177214.329588,
+    "MSTR": 1795177214.329588,
+    "SNDK": 1795177214.329588,
     "BTC-USD": 1795175817.3817728,
     "CRWD": 1795176506.8672552,
     "ORCL": 1795176506.8672552,
