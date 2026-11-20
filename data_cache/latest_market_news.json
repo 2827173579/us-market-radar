@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795138447.816,
-  "updated_at_et": "11-19 20:34 ET",
-  "updated_at_kst": "10:34 KST",
+  "updated_at_ts": 1795138553.051,
+  "updated_at_et": "11-19 20:35 ET",
+  "updated_at_kst": "10:35 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -947,13 +947,6 @@
     ],
     "AMD": [
       {
-        "title": "Dow Jones Futures: Ugly Market Reversal To New Lows As Anthropic IPO Debuts, AMD Dives",
-        "url": "https://finance.yahoo.com/m/9e02231d-41cd-31ac-b37f-993325b8a4ca/dow-jones-futures%3A-ugly.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 19:55 ET",
-        "pub_ts": 1795136128.0
-      },
-      {
         "title": "1 Unstoppable Stock to Buy Before It Joins NVDA and AAPL in the $1 Trillion Club",
         "url": "https://www.fool.com/investing/2026/11/19/1-unstoppable-stock-to-buy-before-it-joins-hot-tickers-in-the-1-3-trillion-club/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -980,6 +973,13 @@
         "source": "Yahoo Finance",
         "time": "11-19 16:18 ET",
         "pub_ts": 1795123126.0
+      },
+      {
+        "title": "Nvidia, AMD, Micron Sink as Anthropic Closes 17% Above IPO Price",
+        "url": "https://decrypt.co/383669/nvidia-amd-micron-ai-stocks-sink-anthropic-ipo-price?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 16:12 ET",
+        "pub_ts": 1795122726.0
       }
     ],
     "ASML": [
@@ -1139,6 +1139,13 @@
         "pub_ts": 1795135394.0
       },
       {
+        "title": "Apple May Try to Challenge Meta for Personal Agent Supremacy",
+        "url": "https://finance.yahoo.com/m/218adf20-fceb-3955-ab5b-5c4bc9cf9107/apple-may-try-to-challenge.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 18:51 ET",
+        "pub_ts": 1795132260.0
+      },
+      {
         "title": "S&P 500, Nasdaq, Dow End Lower As Anthropic Trading Debut Fails To Provide Adequate Confidence — ANT, META, AAPL, GME In Focus",
         "url": "https://stocktwits.com/news-articles/markets/equity/s-and-p-500-nasdaq-dow-end-lower-as-anthropic-trading-debut-fails-to-provide-adequate-confidence/cNbio2mR90v?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1158,16 +1165,16 @@
         "source": "Yahoo Finance",
         "time": "11-19 17:03 ET",
         "pub_ts": 1795125811.0
-      },
-      {
-        "title": "Meta trades at 21x P/E, yet shareholders face a massive new bill",
-        "url": "https://finance.yahoo.com/technology/articles/meta-trades-21x-p-e-202440346.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 15:24 ET",
-        "pub_ts": 1795119880.0
       }
     ],
     "GOOGL": [
+      {
+        "title": "Is Your VOO Fund Secretly An AI Bet?",
+        "url": "https://www.trefis.com/stock/voo/articles/626646/is-your-voo-fund-secretly-an-ai-bet/2026-11-19?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 19:58 ET",
+        "pub_ts": 1795136300.0
+      },
       {
         "title": "Anthropic’s Margins Will Be “Probably Better Than a Hyperscaler,” Says Its Most Bullish Analyst. Here’s What That Takes",
         "url": "https://www.tikr.com/blog/anthropics-margins-will-be-probably-better-than-a-hyperscaler-says-its-most-bullish-analyst-heres-what-that-takes?ref=yahoofinance&tlnk=yf-261119-7x5g2cff&.tsrc=rss",
@@ -1195,13 +1202,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 18:05 ET",
         "pub_ts": 1795129502.0
-      },
-      {
-        "title": "Anthropic IPO value surges in stock market debut",
-        "url": "https://www.cnn.com/2026/11/19/business/video/anthropic-ipo-value-surges-in-stock-market-debut-lead-jake-tapper?cid=external-feeds_iluminar_yahoo&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 17:54 ET",
-        "pub_ts": 1795128867.0
       }
     ],
     "MSFT": [
@@ -3262,18 +3262,18 @@
     "TLT": 1795138447.815816,
     "GLD": 1795138447.815816,
     "SQQQ": 1795138447.815816,
-    "TSM": 1795136693.2974865,
+    "TSM": 1795138553.0512857,
     "VIXY": 1795138447.815816,
     "SOXS": 1795138447.815816,
     "NVDA": 1795138447.815816,
-    "AMD": 1795136693.2974865,
-    "ASML": 1795136693.2974865,
-    "QCOM": 1795136693.2974865,
-    "AVGO": 1795136693.2974865,
-    "AMAT": 1795136693.2974865,
-    "META": 1795136693.2974865,
-    "GOOGL": 1795136693.2974865,
-    "MSFT": 1795136693.2974865,
+    "AMD": 1795138553.0512857,
+    "ASML": 1795138553.0512857,
+    "QCOM": 1795138553.0512857,
+    "AVGO": 1795138553.0512857,
+    "AMAT": 1795138553.0512857,
+    "META": 1795138553.0512857,
+    "GOOGL": 1795138553.0512857,
+    "MSFT": 1795138553.0512857,
     "AAPL": 1795137174.6853826,
     "PLTR": 1795137174.6853826,
     "NOW": 1795137174.6853826,
