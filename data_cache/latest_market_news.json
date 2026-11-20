@@ -1,9 +1,23 @@
 {
-  "updated_at_ts": 1795203082.925,
-  "updated_at_et": "11-20 14:31 ET",
-  "updated_at_kst": "04:31 KST",
+  "updated_at_ts": 1795203184.506,
+  "updated_at_et": "11-20 14:33 ET",
+  "updated_at_kst": "04:33 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261121033122552800",
+      "title": "标普500指数扩大跌幅至3%，费城半导体指数跌9.5%。",
+      "summary": "标普500指数扩大跌幅至3%，费城半导体指数跌9.5%。",
+      "keywords": [
+        "半导体",
+        "标普"
+      ],
+      "pub_ts": 1795203082.0,
+      "time_et": "11-20 14:31 ET",
+      "time_bj": "03:31 BJ",
+      "time_kst": "04:31 KST",
+      "time_display": "14:31 ET / 03:31 BJ"
+    },
     {
       "id": "20261121032416768800",
       "title": "英伟达(NVDA.O)跌幅扩大至10%，此前有报道称美国证交会对其展开会计调查。",
@@ -324,19 +338,6 @@
       "time_bj": "22:44 BJ",
       "time_kst": "23:44 KST",
       "time_display": "09:44 ET / 22:44 BJ"
-    },
-    {
-      "id": "20261120223754380800",
-      "title": "费城半导体指数下跌4.3%，触及两周低点。",
-      "summary": "费城半导体指数下跌4.3%，触及两周低点。",
-      "keywords": [
-        "半导体"
-      ],
-      "pub_ts": 1795185474.0,
-      "time_et": "11-20 09:37 ET",
-      "time_bj": "22:37 BJ",
-      "time_kst": "23:37 KST",
-      "time_display": "09:37 ET / 22:37 BJ"
     }
   ],
   "ticker_news": {
@@ -3320,7 +3321,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (14:24 ET / 03:24 BJ) [英伟达]：英伟达(NVDA.O)跌幅扩大至10%，此前有报道称美国证交会对其展开会计调查。",
+    "detail": "⚡ 最新核心快讯 (14:31 ET / 03:31 BJ) [半导体] [标普]：标普500指数扩大跌幅至3%，费城半导体指数跌9.5%。",
     "event_name": "",
     "minutes_left": 0
   }
