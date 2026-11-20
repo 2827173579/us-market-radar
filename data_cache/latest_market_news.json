@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795209253.209,
-  "updated_at_et": "11-20 16:14 ET",
-  "updated_at_kst": "06:14 KST",
+  "updated_at_ts": 1795209354.999,
+  "updated_at_et": "11-20 16:15 ET",
+  "updated_at_kst": "06:15 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -901,11 +901,32 @@
     ],
     "NVDA": [
       {
-        "title": "Nvidia stock extends $2.5 trillion rout as SEC probe reportedly investigates its accounting",
-        "url": "https://finance.yahoo.com/markets/article/nvidia-stock-extends-25-trillion-rout-as-sec-probe-reportedly-investigates-its-accounting-194945274.html?.tsrc=rss",
+        "title": "Trump critiques Jensen Huang's replacement as he wades deeper into Nvidia turmoil",
+        "url": "https://finance.yahoo.com/markets/article/trump-critiques-jensen-huangs-replacement-as-he-wades-deeper-into-nvidia-turmoil-210729338.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-20 14:42 ET",
-        "pub_ts": 1795203774.0
+        "time": "11-20 16:07 ET",
+        "pub_ts": 1795208849.0
+      },
+      {
+        "title": "Nvidia’s (NVDA) AI Demand Visibility into 2029 Keeps Me Bullish",
+        "url": "https://finance.yahoo.com/technology/ai/articles/nvidia-nvda-ai-demand-visibility-210400433.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 16:04 ET",
+        "pub_ts": 1795208640.0
+      },
+      {
+        "title": "White House Is ‘Terrified’ of Ending the AI Boom, Paul Kedrosky Says",
+        "url": "https://www.benzinga.com/markets/prediction-markets/26/11/63511454/white-house-ai-boom?utm_source=yahooFinance&utm_campaign=partner_feed&utm_medium=referral&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 16:01 ET",
+        "pub_ts": 1795208466.0
+      },
+      {
+        "title": "Sector Update: Tech Stocks Tumble Late Afternoon",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/sector-tech-stocks-tumble-afternoon-205448210.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 15:54 ET",
+        "pub_ts": 1795208088.0
       },
       {
         "title": "Nvidia Shares Sink to 52-Week Low After Report SEC Is Probing Accounting",
@@ -913,27 +934,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 15:36 ET",
         "pub_ts": 1795207014.0
-      },
-      {
-        "title": "3 Cryptocurrencies to Buy and Hold Through 2030",
-        "url": "https://www.fool.com/investing/2026/11/20/3-cryptocurrencies-to-buy-and-hold-through-2030/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 15:30 ET",
-        "pub_ts": 1795206602.0
-      },
-      {
-        "title": "Why United States Antimony Stock Is Tumbling Lower Today",
-        "url": "https://www.fool.com/investing/2026/11/20/why-united-states-antimony-stock-is-tumbling-lower-today/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 15:24 ET",
-        "pub_ts": 1795206281.0
-      },
-      {
-        "title": "Nvidia Stock Plunges 12% After Reuters Reports an SEC Probe of Its Accounting. It’s Nvidia’s Worst Day Since DeepSeek and It Has Lost $2.7 Trillion Since October",
-        "url": "https://247wallst.com/investing/2026/11/20/nvidia-stock-plunges-12-after-reuters-reports-an-sec-probe-of-its-accounting-its-nvidias-worst-day-since-deepseek-and-it-has-lost-2-7-trillion-since-october/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 15:17 ET",
-        "pub_ts": 1795205822.0
       }
     ],
     "AMD": [
@@ -943,6 +943,13 @@
         "source": "Yahoo Finance",
         "time": "11-20 13:19 ET",
         "pub_ts": 1795198755.0
+      },
+      {
+        "title": "AMD Is Down 26% and Intel Is Down 42%. Which AI Stock Is Worth Buying on the Dip?",
+        "url": "https://www.fool.com/coverage/better-buy/2026/11/20/amd-is-down-26-and-intel-is-down-42-which-ai-stock-is-worth-buying-on-the-dip/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 15:50 ET",
+        "pub_ts": 1795207802.0
       },
       {
         "title": "AMD Stock Just Crashed Nearly 8%: Here's Why and What to Do Now",
@@ -964,13 +971,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 12:20 ET",
         "pub_ts": 1795195202.0
-      },
-      {
-        "title": "Meta and Microsoft Aren't Cutting Server CPU Orders -- Why AMD and Intel Could Benefit",
-        "url": "https://finance.yahoo.com/technology/articles/meta-microsoft-arent-cutting-server-165207063.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 11:52 ET",
-        "pub_ts": 1795193527.0
       }
     ],
     "ASML": [
@@ -1160,6 +1160,20 @@
     ],
     "GOOGL": [
       {
+        "title": "Is Apple Stock Increasing Your Market Risk?",
+        "url": "https://www.trefis.com/stock/aapl/articles/627248/is-apple-stock-increasing-your-market-risk/2026-11-20?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 15:53 ET",
+        "pub_ts": 1795208025.0
+      },
+      {
+        "title": "“Pretty Bizarre”: Microsoft Is Worth More Than Alphabet. Which Makes No Sense",
+        "url": "https://www.tikr.com/blog/pretty-bizarre-microsoft-is-worth-more-than-alphabet-which-makes-no-sense?ref=yahoofinance&tlnk=yf-261120-cgch722v&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 15:38 ET",
+        "pub_ts": 1795207123.0
+      },
+      {
         "title": "Nvidia, Nasdaq Slide Deepens After Report of SEC Accounting Probe",
         "url": "https://finance.yahoo.com/m/cff37c7c-0ca9-37b0-a414-8f2a8d6939e4/nvidia%2C-nasdaq-slide-deepens.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1179,20 +1193,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 14:13 ET",
         "pub_ts": 1795201984.0
-      },
-      {
-        "title": "Trump vows tax on U.S. firms building data centers abroad",
-        "url": "https://finance.yahoo.com/economy/policy/articles/trump-vows-tax-u-firms-190429074.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 14:04 ET",
-        "pub_ts": 1795201469.0
-      },
-      {
-        "title": "Anthropic At $97: Big IPOs Rewarded Patient Buyers",
-        "url": "https://www.trefis.com/stock/ant/articles/627186/anthropic-at-97-big-ipos-rewarded-patient-buyers/2026-11-20?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 13:55 ET",
-        "pub_ts": 1795200931.0
       }
     ],
     "MSFT": [
@@ -1202,6 +1202,13 @@
         "source": "Yahoo Finance",
         "time": "11-20 13:06 ET",
         "pub_ts": 1795198005.0
+      },
+      {
+        "title": "“Pretty Bizarre”: Microsoft Is Worth More Than Alphabet. Which Makes No Sense",
+        "url": "https://www.tikr.com/blog/pretty-bizarre-microsoft-is-worth-more-than-alphabet-which-makes-no-sense?ref=yahoofinance&tlnk=yf-261120-cgch722v&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 15:38 ET",
+        "pub_ts": 1795207123.0
       },
       {
         "title": "Cerebras Stock Looks Like a Buy as Customer Base Expands",
@@ -1223,13 +1230,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 13:06 ET",
         "pub_ts": 1795198000.0
-      },
-      {
-        "title": "Wedbush: Microsoft May Give Intel a Crucial AI Chip Win",
-        "url": "https://finance.yahoo.com/technology/ai/articles/wedbush-microsoft-may-intel-crucial-180407908.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 13:04 ET",
-        "pub_ts": 1795197847.0
       }
     ],
     "AAPL": [
@@ -3241,30 +3241,30 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795207847.585409,
-    "SOXL": 1795207847.585409,
-    "SPY": 1795207847.585409,
-    "DIA": 1795207847.585409,
-    "SOXX": 1795207847.585409,
-    "QQQ": 1795207847.585409,
-    "SMH": 1795207847.585409,
-    "IWM": 1795207847.585409,
-    "IGV": 1795207847.585409,
-    "TLT": 1795207847.585409,
-    "GLD": 1795207847.585409,
-    "SQQQ": 1795207847.585409,
-    "TSM": 1795207847.585409,
-    "VIXY": 1795207847.585409,
-    "SOXS": 1795207847.585409,
-    "NVDA": 1795207847.585409,
-    "AMD": 1795207847.585409,
+    "KORU": 1795209354.9985425,
+    "SOXL": 1795209354.9985425,
+    "SPY": 1795209354.9985425,
+    "DIA": 1795209354.9985425,
+    "SOXX": 1795209354.9985425,
+    "QQQ": 1795209354.9985425,
+    "SMH": 1795209354.9985425,
+    "IWM": 1795209354.9985425,
+    "IGV": 1795209354.9985425,
+    "TLT": 1795209354.9985425,
+    "GLD": 1795209354.9985425,
+    "SQQQ": 1795209354.9985425,
+    "TSM": 1795209354.9985425,
+    "VIXY": 1795209354.9985425,
+    "SOXS": 1795209354.9985425,
+    "NVDA": 1795209354.9985425,
+    "AMD": 1795209354.9985425,
     "ASML": 1795207951.48595,
     "QCOM": 1795207951.48595,
-    "AVGO": 1795207847.585409,
-    "AMAT": 1795207847.585409,
-    "META": 1795207847.585409,
-    "GOOGL": 1795207847.585409,
-    "MSFT": 1795207847.585409,
+    "AVGO": 1795209354.9985425,
+    "AMAT": 1795209354.9985425,
+    "META": 1795209354.9985425,
+    "GOOGL": 1795209354.9985425,
+    "MSFT": 1795209354.9985425,
     "AAPL": 1795207951.48595,
     "PLTR": 1795207951.48595,
     "NOW": 1795207951.48595,
