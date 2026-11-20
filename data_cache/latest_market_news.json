@@ -1,9 +1,22 @@
 {
-  "updated_at_ts": 1795208359.85,
-  "updated_at_et": "11-20 15:59 ET",
-  "updated_at_kst": "05:59 KST",
+  "updated_at_ts": 1795208461.502,
+  "updated_at_et": "11-20 16:01 ET",
+  "updated_at_kst": "06:01 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261121045838189800",
+      "title": "纳斯达克100指数较10月创下的历史高点下跌近20%，即将进入技术性熊市。",
+      "summary": "纳斯达克100指数较10月创下的历史高点下跌近20%，即将进入技术性熊市。",
+      "keywords": [
+        "纳斯达克"
+      ],
+      "pub_ts": 1795208318.0,
+      "time_et": "11-20 15:58 ET",
+      "time_bj": "04:58 BJ",
+      "time_kst": "05:58 KST",
+      "time_display": "15:58 ET / 04:58 BJ"
+    },
     {
       "id": "20261121043308152800",
       "title": "纳指扩大跌幅至5%，标普500指数跌3.52%，道指跌1.78%。",
@@ -326,21 +339,6 @@
       "time_bj": "23:29 BJ",
       "time_kst": "00:29 KST",
       "time_display": "10:29 ET / 23:29 BJ"
-    },
-    {
-      "id": "20261120232448044800",
-      "title": "费城半导体指数跌幅扩大至5%，英伟达(NVDA.O)、台积电(TSM.N)跌超5%。",
-      "summary": "费城半导体指数跌幅扩大至5%，英伟达(NVDA.O)、台积电(TSM.N)跌超5%。",
-      "keywords": [
-        "半导体",
-        "英伟达",
-        "台积电"
-      ],
-      "pub_ts": 1795188288.0,
-      "time_et": "11-20 10:24 ET",
-      "time_bj": "23:24 BJ",
-      "time_kst": "00:24 KST",
-      "time_display": "10:24 ET / 23:24 BJ"
     }
   ],
   "ticker_news": {
@@ -2603,6 +2601,13 @@
     ],
     "BTC-USD": [
       {
+        "title": "What XRP Did After SpaceX’s IPO and What It Could Do After Anthropic’s",
+        "url": "https://247wallst.com/investing/cryptocurrency/2026/11/20/what-xrp-did-after-spacexs-ipo-and-what-it-could-do-after-anthropics/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 15:34 ET",
+        "pub_ts": 1795206859.0
+      },
+      {
         "title": "3 Cryptocurrencies to Buy and Hold Through 2030",
         "url": "https://www.fool.com/investing/2026/11/20/3-cryptocurrencies-to-buy-and-hold-through-2030/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2629,13 +2634,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 15:04 ET",
         "pub_ts": 1795205098.0
-      },
-      {
-        "title": "Strategy Is Down 44% in a Month as Crypto Stocks Crumble: Can MSTR Stock Get Back to $100 This Year?",
-        "url": "https://247wallst.com/investing/2026/11/20/strategy-is-down-44-in-a-month-as-crypto-stocks-crumble-can-mstr-stock-get-back-to-100-this-year/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 15:02 ET",
-        "pub_ts": 1795204955.0
       }
     ],
     "CRWD": [
@@ -3010,6 +3008,13 @@
     ],
     "WMT": [
       {
+        "title": "Stock Market Today: Nasdaq Tanks 5%; These AI Data Center Names Slammed (Live Coverage)",
+        "url": "https://finance.yahoo.com/m/4b546235-124e-3fa4-b951-41a067ff7bf2/stock-market-today%3A-nasdaq.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 15:34 ET",
+        "pub_ts": 1795206876.0
+      },
+      {
         "title": "Walmart’s sub-30-minute delivery volume surges in Q3",
         "url": "https://www.supplychaindive.com/news/walmarts-sub-30-minute-delivery-volume-surges-in-q3/875339/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3036,13 +3041,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 13:07 ET",
         "pub_ts": 1795198067.0
-      },
-      {
-        "title": "Walmart's value proposition supports further market share gains, says Bank of America",
-        "url": "https://www.proactiveinvestors.com/companies/news/1102207/walmart-s-value-proposition-supports-further-market-share-gains-says-bank-of-america-1102207.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 13:00 ET",
-        "pub_ts": 1795197600.0
       }
     ],
     "V": [
@@ -3302,7 +3300,7 @@
     "STX": 1795208056.7139163,
     "MSTR": 1795208056.7139163,
     "SNDK": 1795207951.48595,
-    "BTC-USD": 1795206940.811205,
+    "BTC-USD": 1795208461.50222,
     "CRWD": 1795207345.948974,
     "ORCL": 1795207345.948974,
     "COIN": 1795207345.948974,
@@ -3311,20 +3309,20 @@
     "NKE": 1795207450.8853922,
     "MCD": 1795207345.948974,
     "PEP": 1795207345.948974,
-    "XOM": 1795206940.811205,
-    "JPM": 1795206940.811205,
-    "WMT": 1795206940.811205,
+    "XOM": 1795208461.50222,
+    "JPM": 1795208461.50222,
+    "WMT": 1795208461.50222,
     "V": 1795207345.948974,
-    "CAT": 1795206940.811205,
+    "CAT": 1795208461.50222,
     "FN": 1795207345.948974,
     "GLW": 1795207345.948974,
-    "ANT": 1795206940.811205,
-    "XAUUSD": 1795206940.811205
+    "ANT": 1795208461.50222,
+    "XAUUSD": 1795208461.50222
   },
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (15:33 ET / 04:33 BJ) [标普]：纳指扩大跌幅至5%，标普500指数跌3.52%，道指跌1.78%。",
+    "detail": "⚡ 最新核心快讯 (15:58 ET / 04:58 BJ) [纳斯达克]：纳斯达克100指数较10月创下的历史高点下跌近20%，即将进入技术性熊市。",
     "event_name": "",
     "minutes_left": 0
   }
