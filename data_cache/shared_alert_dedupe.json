@@ -3275,9 +3275,17 @@
     "2026-11-20:INTRADAY_CORRIDOR:SOXL:BELOW_P25": {
       "device": "PC",
       "ts": 1795185982.7150488
+    },
+    "JIN10_FLASH:20261120224426175800": {
+      "device": "PC",
+      "ts": 1795185983.4803867
+    },
+    "2026-11-20:DEFENSIVE_FLIGHT:+6.6": {
+      "device": "PC",
+      "ts": 1795186085.0586555
     }
   },
   "device": "PC",
-  "last_heartbeat_ts": 1795185894.443998,
-  "updated_at": "2026-11-20T14:46:22.715544+00:00"
+  "last_heartbeat_ts": 1795186002.9381814,
+  "updated_at": "2026-11-20T14:48:05.059131+00:00"
 }
