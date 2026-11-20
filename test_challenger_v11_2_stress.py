@@ -459,10 +459,10 @@ class TestR4Table4SectorLinkageAndBoundary(unittest.TestCase):
             )
 
         # Verify target and stop mathematical integrity for NVDA (price=100.0, ATR=2.0%)
-        self.assertEqual(t4[0]['target_profit_price'], 103.00)
-        self.assertEqual(t4[0]['target_profit_pct'], 3.0)
-        self.assertEqual(t4[0]['stop_loss_price'], 97.80)
-        self.assertEqual(t4[0]['stop_loss_pct'], 2.2)
+        self.assertEqual(nvda_row['target_profit_price'], 103.00)
+        self.assertEqual(nvda_row['target_profit_pct'], 3.0)
+        self.assertEqual(nvda_row['stop_loss_price'], 97.80)
+        self.assertEqual(nvda_row['stop_loss_pct'], 2.2)
 
 
 class TestR4MacroWeatherMatrix(unittest.TestCase):
