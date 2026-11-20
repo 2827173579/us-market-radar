@@ -4485,13 +4485,13 @@ def generate_macro_radar_html(macro_data, weather_info, history_dict, update_tim
     # 构建表格
     rows_html = ""
     for ticker, info in macro_data.items():
-        bias_style = "color: #00e676;" if info["bias"] >= 0 else "color: #ff5252;"
-        rsi_style = "color: #ff5252; font-weight:bold;" if info["rsi"] < 30 else ("color: #00e676;" if info["rsi"] > 70 else "color: #e0e0e0;")
+        bias_style = "color: var(--color-up);" if info["bias"] >= 0 else "color: var(--color-down);"
+        rsi_style = "color: var(--color-down); font-weight:bold;" if info["rsi"] < 30 else ("color: var(--color-up);" if info["rsi"] > 70 else "color: var(--text-sub);")
         status_badge = f"<span class='badge' style='background:{info['badge_color']};'>{info['status']}</span>"
-        pct_color = "#00e676" if ui_display_pct(info) >= 0 else "#ff5252"
+        pct_color = "var(--color-up)" if ui_display_pct(info) >= 0 else "var(--color-down)"
         rows_html += f"""
         <tr>
-            <td style="font-weight: bold; color: #ffd54f;">{ticker}</td>
+            <td class="tk-cell" style="font-weight: bold;">{ticker}</td>
             <td>{info['name']}</td>
             <td><span class="category-tag">{info['cat']}</span></td>
             <td><b>${ui_display_price(info):.2f}</b> <span style="font-size: 11px; color: {pct_color};">({ui_display_pct(info):+.2f}%)</span></td>
@@ -4500,68 +4500,176 @@ def generate_macro_radar_html(macro_data, weather_info, history_dict, update_tim
             <td>${info['atr']:.2f}</td>
             <td style="{rsi_style}">{info['rsi']:.1f}</td>
             <td>{status_badge}</td>
-            <td style="font-size: 12px; color: #aaa;">{info['sub']}</td>
+            <td style="font-size: 12px; color: var(--text-muted);">{info['sub']}</td>
         </tr>
         """
 
     live_badge_html = """
     <span class="live-pill"><span class="live-dot"></span>Finnhub 秒级实时已激活 (Live)</span>
     """ if has_realtime else """
-    <span class="category-tag" style="color: #ffd54f; border-color: rgba(255,213,79,0.3);">yfinance 底模</span>
+    <span class="category-tag" style="color: var(--warning-gold); border-color: rgba(245,158,11,0.35);">yfinance 底模</span>
     """
 
     full_html = f"""<!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="refresh" content="180">
+    <meta name="theme-color" id="metaThemeColor" content="#0B0F19">
+    <script>
+        (function() {{
+            try {{
+                var savedTheme = localStorage.getItem("futu_theme");
+                var t = (savedTheme === "light") ? "light" : "dark";
+                document.documentElement.setAttribute("data-theme", t);
+            }} catch (e) {{
+                document.documentElement.setAttribute("data-theme", "dark");
+            }}
+        }})();
+    </script>
     <title>宏观大盘司令塔 · 全局水温看板 ({len(MONITORED_TARGETS["ETFS"])}只核心ETF · 全网{len(MONITORED_TARGETS["ETFS"]) + len(MONITORED_TARGETS["STOCKS"])}只标的)</title>
     <style>
-        body {{
-            background-color: #0b0e14;
-            color: #d1d5db;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", sans-serif;
-            margin: 0;
-            padding: 24px;
+        :root,
+        [data-theme="dark"] {{
+            --bg-page: #0B0F19;
+            --bg-card: #121826;
+            --bg-elevated: #1A2234;
+            --border-subtle: rgba(255, 255, 255, 0.08);
+            --border-strong: rgba(255, 255, 255, 0.16);
+            --text-main: #F3F4F6;
+            --text-sub: #CBD5E1;
+            --text-muted: #94A3B8;
+            --color-up: #10B981;
+            --color-down: #EF4444;
+            --color-accent: #38BDF8;
+            --color-purple: #A78BFA;
+            --warning-gold: #FFD54F;
+            --shadow-card: 0 2px 12px rgba(0, 0, 0, 0.28);
         }}
+        [data-theme="light"] {{
+            --bg-page: #F4F6F9;
+            --bg-card: #FFFFFF;
+            --bg-elevated: #F1F5F9;
+            --border-subtle: #E2E8F0;
+            --border-strong: #CBD5E1;
+            --text-main: #0F172A;
+            --text-sub: #334155;
+            --text-muted: #64748B;
+            --color-up: #059669;
+            --color-down: #DC2626;
+            --color-accent: #0284C7;
+            --color-purple: #7C3AED;
+            --warning-gold: #B45309;
+            --shadow-card: 0 1px 4px rgba(15, 23, 42, 0.07);
+        }}
+        * {{ box-sizing: border-box; }}
+        body {{
+            background-color: var(--bg-page);
+            color: var(--text-sub);
+            font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", sans-serif;
+            margin: 0;
+            padding: 16px 22px 32px;
+            transition: background-color 0.2s ease, color 0.2s ease;
+        }}
+        .suite-nav {{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 12px;
+            padding: 8px 14px;
+            margin-bottom: 14px;
+            flex-wrap: wrap;
+            gap: 10px;
+            box-shadow: var(--shadow-card);
+        }}
+        .suite-nav-links {{
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            flex-wrap: wrap;
+        }}
+        .suite-link {{
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 5px 11px;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-sub);
+            text-decoration: none;
+            background: var(--bg-elevated);
+            border: 1px solid var(--border-subtle);
+            transition: all 0.16s ease;
+            white-space: nowrap;
+        }}
+        .suite-link:hover {{
+            background: rgba(56, 189, 248, 0.14);
+            border-color: var(--color-accent);
+            color: var(--text-main);
+        }}
+        .suite-link.active {{
+            background: rgba(56, 189, 248, 0.18);
+            border-color: var(--color-accent);
+            color: var(--color-accent);
+            font-weight: 700;
+        }}
+        .suite-link-home {{
+            background: rgba(255, 105, 0, 0.14) !important;
+            border-color: rgba(255, 105, 0, 0.45) !important;
+            color: #FF6900 !important;
+            font-weight: 800 !important;
+        }}
+        .suite-meta {{
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+            font-size: 12px;
+            color: var(--text-muted);
+        }}
+        .theme-toggle-btn {{
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            height: 29px;
+            padding: 0 10px;
+            border-radius: 8px;
+            border: 1px solid var(--border-subtle);
+            background: var(--bg-elevated);
+            color: var(--text-main);
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.15s ease;
+            white-space: nowrap;
+        }}
+        .theme-toggle-btn:hover {{ border-color: var(--color-accent); }}
+
         .header {{
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
-            gap: 12px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            padding-bottom: 16px;
-            margin-bottom: 24px;
+            gap: 10px;
+            border-bottom: 1px solid var(--border-subtle);
+            padding-bottom: 12px;
+            margin-bottom: 18px;
         }}
-        .header h1 {{ margin: 0; font-size: 24px; color: #f3f4f6; }}
-        .header-links {{
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }}
-        .header-links a {{
-            color: #60a5fa;
-            text-decoration: none;
-            background: rgba(96, 165, 250, 0.12);
-            padding: 8px 16px;
-            border-radius: 8px;
-            border: 1px solid rgba(96, 165, 250, 0.3);
-            font-size: 14px;
-            font-weight: 500;
-            transition: all 0.2s;
-            white-space: nowrap;
-        }}
-        .header-links a:hover {{ background: rgba(96, 165, 250, 0.25); }}
-        
+        .header h1 {{ margin: 0; font-size: 22px; color: var(--text-main); }}
+        .tk-cell {{ color: var(--warning-gold); }}
+
         .live-pill {{
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            background: rgba(0, 230, 118, 0.15);
-            border: 1px solid rgba(0, 230, 118, 0.45);
-            color: #00e676;
+            background: rgba(16, 185, 129, 0.14);
+            border: 1px solid rgba(16, 185, 129, 0.4);
+            color: var(--color-up);
             padding: 3px 10px;
             border-radius: 20px;
             font-size: 11px;
@@ -4570,55 +4678,61 @@ def generate_macro_radar_html(macro_data, weather_info, history_dict, update_tim
         .live-dot {{
             width: 7px;
             height: 7px;
-            background: #00e676;
+            background: var(--color-up);
             border-radius: 50%;
-            box-shadow: 0 0 8px #00e676;
+            box-shadow: 0 0 8px var(--color-up);
         }}
 
         .weather-card {{
             background: linear-gradient(135deg, rgba(30, 41, 59, 0.8), rgba(15, 23, 42, 0.95));
             border: 1px solid {weather_info['color']};
-            box-shadow: 0 0 25px rgba(41, 182, 246, 0.15);
+            box-shadow: var(--shadow-card);
             border-radius: 14px;
-            padding: 24px 28px;
-            margin-bottom: 24px;
+            padding: 20px 24px;
+            margin-bottom: 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            gap: 16px;
         }}
-        .weather-main {{ display: flex; align-items: center; gap: 20px; }}
-        .weather-icon {{ font-size: 56px; line-height: 1; }}
-        .weather-title {{ font-size: 26px; font-weight: 800; color: {weather_info['color']}; margin-bottom: 6px; }}
-        .weather-desc {{ font-size: 14px; color: #9ca3af; max-width: 650px; line-height: 1.5; }}
-        .weather-stats {{ display: flex; gap: 18px; }}
+        [data-theme="light"] .weather-card {{
+            background: var(--bg-card) !important;
+        }}
+        .weather-main {{ display: flex; align-items: center; gap: 18px; }}
+        .weather-icon {{ font-size: 50px; line-height: 1; }}
+        .weather-title {{ font-size: 24px; font-weight: 800; color: {weather_info['color']}; margin-bottom: 6px; }}
+        .weather-desc {{ font-size: 13.5px; color: var(--text-muted); max-width: 650px; line-height: 1.5; }}
+        .weather-stats {{ display: flex; gap: 12px; flex-wrap: wrap; }}
         .stat-box {{
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: var(--bg-elevated);
+            border: 1px solid var(--border-subtle);
             border-radius: 10px;
             padding: 10px 14px;
             text-align: center;
-            min-width: 125px;
+            min-width: 120px;
             display: flex;
             flex-direction: column;
             justify-content: center;
         }}
-        .stat-label {{ font-size: 11px; color: #9ca3af; margin-bottom: 4px; white-space: nowrap; }}
-        .stat-value {{ font-size: 17px; font-weight: 700; line-height: 1.2; }}
-        .stat-sub {{ font-size: 11px; margin-top: 4px; color: #9ca3af; white-space: nowrap; }}
-        
+        .stat-label {{ font-size: 11px; color: var(--text-muted); margin-bottom: 4px; white-space: nowrap; }}
+        .stat-value {{ font-size: 17px; font-weight: 700; line-height: 1.2; color: var(--text-main); }}
+        .stat-sub {{ font-size: 11px; margin-top: 4px; color: var(--text-muted); white-space: nowrap; }}
+
         .chart-section {{
-            background: #131722;
+            background: var(--bg-card);
             border-radius: 14px;
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            border: 1px solid var(--border-subtle);
             padding: 16px;
-            margin-bottom: 24px;
+            margin-bottom: 20px;
+            box-shadow: var(--shadow-card);
         }}
         .table-card {{
-            background: #131722;
+            background: var(--bg-card);
             border-radius: 14px;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            padding: 20px;
+            border: 1px solid var(--border-subtle);
+            padding: 18px;
             overflow-x: auto;
+            box-shadow: var(--shadow-card);
         }}
         table {{
             width: 100%;
@@ -4627,23 +4741,25 @@ def generate_macro_radar_html(macro_data, weather_info, history_dict, update_tim
             text-align: left;
         }}
         th {{
-            background: rgba(255, 255, 255, 0.03);
-            color: #9ca3af;
+            background: var(--bg-elevated);
+            color: var(--text-muted);
             font-weight: 600;
-            padding: 12px 14px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 10px 12px;
+            border-bottom: 1px solid var(--border-subtle);
         }}
         td {{
-            padding: 12px 14px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 10px 12px;
+            border-bottom: 1px solid var(--border-subtle);
+            color: var(--text-sub);
         }}
-        tr:hover td {{ background: rgba(255, 255, 255, 0.02); }}
+        tr:hover td {{ background: var(--bg-elevated); }}
         .category-tag {{
-            background: rgba(255, 255, 255, 0.08);
+            background: var(--bg-elevated);
+            border: 1px solid var(--border-subtle);
             padding: 3px 8px;
             border-radius: 4px;
             font-size: 11px;
-            color: #cbd5e1;
+            color: var(--text-sub);
         }}
         .badge {{
             padding: 4px 10px;
@@ -4652,12 +4768,20 @@ def generate_macro_radar_html(macro_data, weather_info, history_dict, update_tim
             font-weight: 600;
             color: #fff;
         }}
+        [data-theme="light"] #siteDisclaimerBanner {{
+            background: #FFFBEB !important;
+            border-color: #FCD34D !important;
+            color: #92400E !important;
+        }}
+        [data-theme="light"] #siteDisclaimerBanner strong {{
+            color: #B45309 !important;
+        }}
         @media (max-width: 768px) {{
-            body {{ padding: 12px; }}
-            .header {{ flex-direction: column; align-items: flex-start; gap: 10px; }}
+            body {{ padding: 10px; }}
+            .suite-nav {{ padding: 8px 10px; }}
+            .suite-nav-links {{ width: 100%; display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px; }}
+            .suite-link {{ justify-content: center; text-align: center; padding: 6px 8px; font-size: 12px; }}
             .header h1 {{ font-size: 19px; }}
-            .header-links {{ width: 100%; display: grid !important; grid-template-columns: repeat(2, 1fr); gap: 6px; }}
-            .header-links a {{ text-align: center; padding: 7px 8px; font-size: 12.5px; }}
             .weather-card {{ flex-direction: column; align-items: flex-start; gap: 16px; padding: 16px; }}
             .weather-stats {{ width: 100%; display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }}
             .stat-box {{ min-width: 0; }}
@@ -4665,22 +4789,32 @@ def generate_macro_radar_html(macro_data, weather_info, history_dict, update_tim
     </style>
 </head>
 <body>
+    <nav class="suite-nav">
+        <div class="suite-nav-links">
+            <a href="futu_pro_terminal.html" class="suite-link suite-link-home">🐮 看盘主终端</a>
+            <a href="stocks_radar.html" class="suite-link">🎯 核心个股雷达</a>
+            <a href="macro_radar.html" class="suite-link active">🏛️ 宏观司令塔</a>
+            <a href="backtest_report_5y.html" class="suite-link">🛡️ 5Y回测</a>
+            <a href="predict_radar_5y.html" class="suite-link">⚡ AI 15日推演</a>
+        </div>
+        <div class="suite-meta">
+            <span>⏱️ 自动刷新: 每3分钟</span>
+            <span>最近更新: {update_time_str}</span>
+            {live_badge_html}
+            <button type="button" id="btnThemeToggle" class="theme-toggle-btn" onclick="toggleTheme()" title="切换浅色模式" aria-label="切换浅色或深色模式">
+                <span id="themeToggleIcon">☀️</span>
+                <span class="theme-toggle-text" id="themeToggleLabel">浅色</span>
+            </button>
+        </div>
+    </nav>
+
     <div class="header">
         <div>
             <h1>🏛️ 宏观大盘司令塔 · 全局水温看板</h1>
-            <div style="font-size: 12px; color: #6b7280; margin-top: 6px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+            <div style="font-size: 12px; color: var(--text-muted); margin-top: 6px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
                 <span>全网 {len(MONITORED_TARGETS["ETFS"]) + len(MONITORED_TARGETS["STOCKS"])} 只标的监控 ({len(MONITORED_TARGETS["ETFS"])} 只 ETF + {len(MONITORED_TARGETS["STOCKS"])} 只核心个股) | 大盘基准: QQQ / SPY / DIA / IWM | 行业风向: SMH / IGV | 避险: TLT / GLD / VIXY</span>
-                <span style="color:#60a5fa;">⏱️ 自动刷新: 每3分钟 (180s)</span>
-                <span>最近更新: {update_time_str}</span>
-                {live_badge_html}
-                <span style="color:#fbbf24; background:rgba(245,158,11,0.12); border:1px solid rgba(245,158,11,0.32); padding:2px 8px; border-radius:4px; font-weight:600;">⚠️ 数据仅供参考·不构成投资建议</span>
+                <span style="color:var(--warning-gold); background:rgba(245,158,11,0.12); border:1px solid rgba(245,158,11,0.32); padding:2px 8px; border-radius:4px; font-weight:600;">⚠️ 数据仅供参考·不构成投资建议</span>
             </div>
-        </div>
-        <div class="header-links">
-            <a href="futu_pro_terminal.html" style="background: rgba(255,105,0,0.18); border: 1px solid rgba(255,105,0,0.5); color: #ff6900; font-weight: 800;">🐮 看盘主终端</a>
-            <a href="predict_radar_5y.html" style="background: rgba(188,140,255,0.16); border: 1px solid rgba(188,140,255,0.45); color: #d8b4fe; font-weight: 700;">⚡ AI 5年预测雷达</a>
-            <a href="stocks_radar.html">🎯 核心个股雷达</a>
-            <a href="backtest_report_5y.html" style="background: rgba(59,130,246,0.15); border: 1px solid rgba(59,130,246,0.4); color: #60a5fa; font-weight: 700;">🛡️ 5Y回测</a>
         </div>
     </div>
 
@@ -4691,33 +4825,33 @@ def generate_macro_radar_html(macro_data, weather_info, history_dict, update_tim
             <div>
                 <div class="weather-title">【{weather_info['weather']}】模式</div>
                 <div class="weather-desc"><b>风向研判：</b>{weather_info['desc']}</div>
-                <div class="weather-desc" style="color: #60a5fa; margin-top: 4px;"><b>作战军规：</b>{weather_info['tactics']}</div>
+                <div class="weather-desc" style="color: var(--color-accent); margin-top: 4px;"><b>作战军规：</b>{weather_info['tactics']}</div>
             </div>
         </div>
         <div class="weather-stats">
             <div class="stat-box">
                 <div class="stat-label">QQQ 偏离 MA50</div>
-                <div class="stat-value" style="color: {'#00e676' if weather_info['qqqm_bias']>=0 else '#ff5252'};">{weather_info['qqqm_bias']:+.2f}%</div>
+                <div class="stat-value" style="color: {'var(--color-up)' if weather_info['qqqm_bias']>=0 else 'var(--color-down)'};">{weather_info['qqqm_bias']:+.2f}%</div>
                 <div class="stat-sub">MA20: {weather_info.get('qqqm_ma20_bias', 0.0):+.1f}% | 今日: {weather_info.get('qqqm_pct', 0.0):+.2f}%</div>
             </div>
             <div class="stat-box">
                 <div class="stat-label">SMH 偏离 MA50</div>
-                <div class="stat-value" style="color: {'#00e676' if weather_info['smh_bias']>=0 else '#ff5252'};">{weather_info['smh_bias']:+.2f}%</div>
+                <div class="stat-value" style="color: {'var(--color-up)' if weather_info['smh_bias']>=0 else 'var(--color-down)'};">{weather_info['smh_bias']:+.2f}%</div>
                 <div class="stat-sub">MA20: {weather_info.get('smh_ma20_bias', 0.0):+.1f}% | 今日: {weather_info.get('smh_pct', 0.0):+.2f}%</div>
             </div>
-            <div class="stat-box" style="border-color: {'#ff1744' if weather_info.get('is_vix_panic') else 'rgba(255, 255, 255, 0.08)'};">
+            <div class="stat-box" style="border-color: {'var(--color-down)' if weather_info.get('is_vix_panic') else 'var(--border-subtle)'};">
                 <div class="stat-label">VIXY 恐慌指数</div>
-                <div class="stat-value" style="color: {'#ff1744' if weather_info.get('is_vix_panic') else '#ffd54f'};">${weather_info['vixy_last']:.2f}</div>
-                <div class="stat-sub" style="color: {'#ff5252' if weather_info.get('is_vix_panic') else '#9ca3af'};">MA20: {weather_info.get('vixy_ma20_bias', 0.0):+.1f}% | 60d: {weather_info.get('vixy_pos_60', 50.0):.0f}%</div>
+                <div class="stat-value" style="color: {'var(--color-down)' if weather_info.get('is_vix_panic') else 'var(--warning-gold)'};">${weather_info['vixy_last']:.2f}</div>
+                <div class="stat-sub" style="color: {'var(--color-down)' if weather_info.get('is_vix_panic') else 'var(--text-muted)'};">MA20: {weather_info.get('vixy_ma20_bias', 0.0):+.1f}% | 60d: {weather_info.get('vixy_pos_60', 50.0):.0f}%</div>
             </div>
-            <div class="stat-box" style="border-color: {weather_info.get('tlt_color', '#9ca3af')}44;">
+            <div class="stat-box">
                 <div class="stat-label">美债利率定性</div>
-                <div class="stat-value" style="color: {weather_info.get('tlt_color', '#9ca3af')}; font-size: 15px;">{weather_info.get('tlt_state', '⚪ 中性震荡')}</div>
+                <div class="stat-value" style="color: {weather_info.get('tlt_color', 'var(--text-muted)')}; font-size: 15px;">{weather_info.get('tlt_state', '⚪ 中性震荡')}</div>
                 <div class="stat-sub">TLT偏离: {weather_info['tlt_bias']:+.2f}%</div>
             </div>
-            <div class="stat-box" style="border-color: {(weather_info.get('cross_industry_breadth') or {}).get('color', '#9ca3af')}55;">
+            <div class="stat-box">
                 <div class="stat-label">跨行业市场广度</div>
-                <div class="stat-value" style="color: {(weather_info.get('cross_industry_breadth') or {}).get('color', '#9ca3af')}; font-size: 14px;">{(weather_info.get('cross_industry_breadth') or {}).get('short_badge', '🛡️ 广度均衡')}</div>
+                <div class="stat-value" style="color: {(weather_info.get('cross_industry_breadth') or {}).get('color', 'var(--text-muted)')}; font-size: 14px;">{(weather_info.get('cross_industry_breadth') or {}).get('short_badge', '🛡️ 广度均衡')}</div>
                 <div class="stat-sub">传统 {(weather_info.get('cross_industry_breadth') or {}).get('trad_mean_chg', 0.0):+.2f}% vs 科技 {(weather_info.get('cross_industry_breadth') or {}).get('tech_mean_chg', 0.0):+.2f}%</div>
             </div>
         </div>
@@ -4730,7 +4864,7 @@ def generate_macro_radar_html(macro_data, weather_info, history_dict, update_tim
 
     <!-- 宏观水温监控表 -->
     <div class="table-card">
-        <h3 style="margin-top: 0; margin-bottom: 16px; font-size: 16px; color: #e2e8f0;">📊 宏观资产数字化水温总表 ({len(macro_data)} 只 ETF · 实时行情)</h3>
+        <h3 style="margin-top: 0; margin-bottom: 14px; font-size: 16px; color: var(--text-main);">📊 宏观资产数字化水温总表 ({len(macro_data)} 只 ETF · 实时行情)</h3>
         <table>
             <thead>
                 <tr>
@@ -4754,6 +4888,56 @@ def generate_macro_radar_html(macro_data, weather_info, history_dict, update_tim
     <footer id="siteDisclaimerBanner" style="margin: 24px 0 8px; padding: 12px 18px; background: rgba(245, 158, 11, 0.08); border: 1px solid rgba(245, 158, 11, 0.32); border-radius: 10px; color: #fde68a; font-size: 12px; line-height: 1.6; text-align: center;">
         ⚠️ <strong style="color: #fbbf24;">免责声明</strong>：本看板所有行情数据、量化指标与 AI 历史统计推演均为程序客观计算结果，仅作个人学习研究与看盘辅助参考，<strong style="color: #fbbf24;">不构成任何投资或买卖建议</strong>。美股及杠杆产品波动剧烈，请独立决策并严控风险。
     </footer>
+    <script>
+        function getCurrentTheme() {{
+            const attr = document.documentElement.getAttribute('data-theme');
+            if (attr === 'light' || attr === 'dark') return attr;
+            try {{
+                return localStorage.getItem('futu_theme') === 'light' ? 'light' : 'dark';
+            }} catch (e) {{ return 'dark'; }}
+        }}
+        function updateThemeToggleUI(theme) {{
+            const isLight = (theme === 'light');
+            const icon = document.getElementById('themeToggleIcon');
+            const label = document.getElementById('themeToggleLabel');
+            const btn = document.getElementById('btnThemeToggle');
+            const meta = document.getElementById('metaThemeColor');
+            if (icon) icon.innerText = isLight ? '🌙' : '☀️';
+            if (label) label.innerText = isLight ? '深色' : '浅色';
+            if (btn) btn.title = isLight ? '切换到深色模式' : '切换到浅色模式';
+            if (meta) meta.setAttribute('content', isLight ? '#F4F6F9' : '#0B0F19');
+        }}
+        function applyPlotlyTheme(theme) {{
+            if (typeof Plotly === 'undefined' || !Plotly.relayout) return;
+            const isLight = (theme === 'light');
+            const layoutUpd = {{
+                paper_bgcolor: isLight ? '#FFFFFF' : '#121826',
+                plot_bgcolor: isLight ? '#FFFFFF' : '#121826',
+                'font.color': isLight ? '#0F172A' : '#CBD5E1'
+            }};
+            document.querySelectorAll('.plotly-graph-div').forEach(function(gd) {{
+                try {{ Plotly.relayout(gd, layoutUpd); }} catch (e) {{}}
+            }});
+        }}
+        function applyTheme(theme) {{
+            const nextTheme = (theme === 'light') ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', nextTheme);
+            try {{ localStorage.setItem('futu_theme', nextTheme); }} catch (e) {{}}
+            updateThemeToggleUI(nextTheme);
+            applyPlotlyTheme(nextTheme);
+        }}
+        function toggleTheme() {{
+            applyTheme(getCurrentTheme() === 'dark' ? 'light' : 'dark');
+        }}
+        window.addEventListener('storage', function(ev) {{
+            if (ev && ev.key === 'futu_theme' && ev.newValue) applyTheme(ev.newValue);
+        }});
+        document.addEventListener('DOMContentLoaded', function() {{
+            const t = getCurrentTheme();
+            updateThemeToggleUI(t);
+            setTimeout(function() {{ applyPlotlyTheme(t); }}, 150);
+        }});
+    </script>
 </body>
 </html>
 """
@@ -4856,7 +5040,7 @@ def generate_stocks_radar_html(stocks_data, history_dict, update_time_str="", ha
 
         rows_html += f"""
         <tr>
-            <td style="font-weight: bold; color: #ffd54f;">{r['ticker']}</td>
+            <td class="tk-cell" style="font-weight: bold;">{r['ticker']}</td>
             <td>{r['name']}</td>
             <td><span class="category-tag">{r['cat']}</span></td>
             <td><b>${ui_display_price(r):.2f}</b> <span style="font-size: 11px; color: {pct_color};">({ui_display_pct(r):+.2f}%)</span></td>
@@ -4864,7 +5048,7 @@ def generate_stocks_radar_html(stocks_data, history_dict, update_time_str="", ha
             <td style="{bias_style} font-weight: bold;">{r['bias']:+.2f}%</td>
             <td>${r['atr']:.2f}</td>
             <td>{r['rsi']:.1f}</td>
-            <td style="font-size: 12px; color: #64b5f6;">${r['fib_low']:.2f} ~ ${r['fib_high']:.2f}</td>
+            <td style="font-size: 12px; color: var(--color-accent);">${r['fib_low']:.2f} ~ ${r['fib_high']:.2f}</td>
             <td style="{dist_style}">{r['pit_status']}</td>
             <td style="color: {pos_color}; font-weight: bold;">{pos_pct}<div style="font-size:10px; color:#90a4ae;">{pos_note}</div></td>
             <td>{sig_badge}</td>
@@ -4876,61 +5060,167 @@ def generate_stocks_radar_html(stocks_data, history_dict, update_time_str="", ha
     live_badge_html = """
     <span class="live-pill"><span class="live-dot"></span>Finnhub 秒级实时已激活 (Live)</span>
     """ if has_realtime else """
-    <span class="category-tag" style="color: #ffd54f; border-color: rgba(255,213,79,0.3);">yfinance 底模</span>
+    <span class="category-tag" style="color: var(--warning-gold); border-color: rgba(245,158,11,0.35);">yfinance 底模</span>
     """
 
     full_html = f"""<!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="refresh" content="180">
+    <meta name="theme-color" id="metaThemeColor" content="#0B0F19">
+    <script>
+        (function() {{
+            try {{
+                var savedTheme = localStorage.getItem("futu_theme");
+                var t = (savedTheme === "light") ? "light" : "dark";
+                document.documentElement.setAttribute("data-theme", t);
+            }} catch (e) {{
+                document.documentElement.setAttribute("data-theme", "dark");
+            }}
+        }})();
+    </script>
     <title>核心个股碎股雷达 · 黄金坑作战与进攻看板 ({len(stocks_data)}只标的 · 全网{len(MONITORED_TARGETS["ETFS"]) + len(MONITORED_TARGETS["STOCKS"])}只标的)</title>
     <style>
-        body {{
-            background-color: #0b0e14;
-            color: #d1d5db;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", sans-serif;
-            margin: 0;
-            padding: 24px;
+        :root,
+        [data-theme="dark"] {{
+            --bg-page: #0B0F19;
+            --bg-card: #121826;
+            --bg-elevated: #1A2234;
+            --border-subtle: rgba(255, 255, 255, 0.08);
+            --border-strong: rgba(255, 255, 255, 0.16);
+            --text-main: #F3F4F6;
+            --text-sub: #CBD5E1;
+            --text-muted: #94A3B8;
+            --color-up: #10B981;
+            --color-down: #EF4444;
+            --color-accent: #38BDF8;
+            --warning-gold: #FFD54F;
+            --shadow-card: 0 2px 12px rgba(0, 0, 0, 0.28);
         }}
+        [data-theme="light"] {{
+            --bg-page: #F4F6F9;
+            --bg-card: #FFFFFF;
+            --bg-elevated: #F1F5F9;
+            --border-subtle: #E2E8F0;
+            --border-strong: #CBD5E1;
+            --text-main: #0F172A;
+            --text-sub: #334155;
+            --text-muted: #64748B;
+            --color-up: #059669;
+            --color-down: #DC2626;
+            --color-accent: #0284C7;
+            --warning-gold: #B45309;
+            --shadow-card: 0 1px 4px rgba(15, 23, 42, 0.07);
+        }}
+        * {{ box-sizing: border-box; }}
+        body {{
+            background-color: var(--bg-page);
+            color: var(--text-sub);
+            font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", sans-serif;
+            margin: 0;
+            padding: 16px 22px 32px;
+            transition: background-color 0.2s ease, color 0.2s ease;
+        }}
+        .suite-nav {{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 12px;
+            padding: 8px 14px;
+            margin-bottom: 14px;
+            flex-wrap: wrap;
+            gap: 10px;
+            box-shadow: var(--shadow-card);
+        }}
+        .suite-nav-links {{
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            flex-wrap: wrap;
+        }}
+        .suite-link {{
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 5px 11px;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-sub);
+            text-decoration: none;
+            background: var(--bg-elevated);
+            border: 1px solid var(--border-subtle);
+            transition: all 0.16s ease;
+            white-space: nowrap;
+        }}
+        .suite-link:hover {{
+            background: rgba(56, 189, 248, 0.14);
+            border-color: var(--color-accent);
+            color: var(--text-main);
+        }}
+        .suite-link.active {{
+            background: rgba(56, 189, 248, 0.18);
+            border-color: var(--color-accent);
+            color: var(--color-accent);
+            font-weight: 700;
+        }}
+        .suite-link-home {{
+            background: rgba(255, 105, 0, 0.14) !important;
+            border-color: rgba(255, 105, 0, 0.45) !important;
+            color: #FF6900 !important;
+            font-weight: 800 !important;
+        }}
+        .suite-meta {{
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+            font-size: 12px;
+            color: var(--text-muted);
+        }}
+        .theme-toggle-btn {{
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            height: 29px;
+            padding: 0 10px;
+            border-radius: 8px;
+            border: 1px solid var(--border-subtle);
+            background: var(--bg-elevated);
+            color: var(--text-main);
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.15s ease;
+            white-space: nowrap;
+        }}
+        .theme-toggle-btn:hover {{ border-color: var(--color-accent); }}
+
         .header {{
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
-            gap: 12px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            padding-bottom: 16px;
-            margin-bottom: 24px;
+            gap: 10px;
+            border-bottom: 1px solid var(--border-subtle);
+            padding-bottom: 12px;
+            margin-bottom: 18px;
         }}
-        .header h1 {{ margin: 0; font-size: 24px; color: #f3f4f6; }}
-        .header-links {{
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }}
-        .header-links a {{
-            color: #60a5fa;
-            text-decoration: none;
-            background: rgba(96, 165, 250, 0.12);
-            padding: 8px 16px;
-            border-radius: 8px;
-            border: 1px solid rgba(96, 165, 250, 0.3);
-            font-size: 14px;
-            font-weight: 500;
-            transition: all 0.2s;
-            white-space: nowrap;
-        }}
-        .header-links a:hover {{ background: rgba(96, 165, 250, 0.25); }}
+        .header h1 {{ margin: 0; font-size: 22px; color: var(--text-main); }}
+        .tk-cell {{ color: var(--warning-gold); }}
 
         .live-pill {{
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            background: rgba(0, 230, 118, 0.15);
-            border: 1px solid rgba(0, 230, 118, 0.45);
-            color: #00e676;
+            background: rgba(16, 185, 129, 0.14);
+            border: 1px solid rgba(16, 185, 129, 0.4);
+            color: var(--color-up);
             padding: 3px 10px;
             border-radius: 20px;
             font-size: 11px;
@@ -4939,37 +5229,39 @@ def generate_stocks_radar_html(stocks_data, history_dict, update_time_str="", ha
         .live-dot {{
             width: 7px;
             height: 7px;
-            background: #00e676;
+            background: var(--color-up);
             border-radius: 50%;
-            box-shadow: 0 0 8px #00e676;
+            box-shadow: 0 0 8px var(--color-up);
         }}
 
         .summary-grid {{
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 16px;
-            margin-bottom: 24px;
+            gap: 14px;
+            margin-bottom: 20px;
         }}
         .card {{
-            background: #131722;
+            background: var(--bg-card);
             border-radius: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            padding: 18px 22px;
+            border: 1px solid var(--border-subtle);
+            padding: 16px 20px;
+            box-shadow: var(--shadow-card);
         }}
-        .card-intc {{
-            border-left: 4px solid #00e676;
-            background: linear-gradient(135deg, rgba(0, 230, 118, 0.08), #131722);
+        .card-stop {{
+            border-left: 4px solid #ef4444;
         }}
-        .card-title {{ font-size: 13px; color: #9ca3af; margin-bottom: 6px; }}
-        .card-value {{ font-size: 22px; font-weight: 800; color: #f3f4f6; margin-bottom: 4px; }}
-        .card-sub {{ font-size: 12px; color: #6b7280; }}
+        .card-title {{ font-size: 13px; color: var(--text-muted); margin-bottom: 6px; }}
+        .card-value {{ font-size: 22px; font-weight: 800; color: var(--text-main); margin-bottom: 4px; }}
+        .card-sub {{ font-size: 12px; color: var(--text-muted); }}
 
         .chart-box {{
-            background: #131722;
+            background: var(--bg-card);
             border-radius: 14px;
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            border: 1px solid var(--border-subtle);
             padding: 16px;
-            margin-bottom: 24px;
+            margin-bottom: 20px;
+            overflow-x: auto;
+            box-shadow: var(--shadow-card);
         }}
         table {{
             width: 100%;
@@ -4978,23 +5270,25 @@ def generate_stocks_radar_html(stocks_data, history_dict, update_time_str="", ha
             text-align: left;
         }}
         th {{
-            background: rgba(255, 255, 255, 0.03);
-            color: #9ca3af;
+            background: var(--bg-elevated);
+            color: var(--text-muted);
             font-weight: 600;
-            padding: 12px 14px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 10px 12px;
+            border-bottom: 1px solid var(--border-subtle);
         }}
         td {{
-            padding: 12px 14px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 10px 12px;
+            border-bottom: 1px solid var(--border-subtle);
+            color: var(--text-sub);
         }}
-        tr:hover td {{ background: rgba(255, 255, 255, 0.02); }}
+        tr:hover td {{ background: var(--bg-elevated); }}
         .category-tag {{
-            background: rgba(255, 255, 255, 0.08);
+            background: var(--bg-elevated);
+            border: 1px solid var(--border-subtle);
             padding: 3px 8px;
             border-radius: 4px;
             font-size: 11px;
-            color: #cbd5e1;
+            color: var(--text-sub);
         }}
         .badge {{
             padding: 4px 10px;
@@ -5004,32 +5298,50 @@ def generate_stocks_radar_html(stocks_data, history_dict, update_time_str="", ha
             color: #fff;
             display: inline-block;
         }}
+        [data-theme="light"] #siteDisclaimerBanner {{
+            background: #FFFBEB !important;
+            border-color: #FCD34D !important;
+            color: #92400E !important;
+        }}
+        [data-theme="light"] #siteDisclaimerBanner strong {{
+            color: #B45309 !important;
+        }}
         @media (max-width: 768px) {{
-            body {{ padding: 12px; }}
-            .header {{ flex-direction: column; align-items: flex-start; gap: 10px; }}
+            body {{ padding: 10px; }}
+            .suite-nav {{ padding: 8px 10px; }}
+            .suite-nav-links {{ width: 100%; display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px; }}
+            .suite-link {{ justify-content: center; text-align: center; padding: 6px 8px; font-size: 12px; }}
             .header h1 {{ font-size: 19px; }}
-            .header-links {{ width: 100%; display: grid !important; grid-template-columns: repeat(2, 1fr); gap: 6px; }}
-            .header-links a {{ text-align: center; padding: 7px 8px; font-size: 12.5px; }}
         }}
     </style>
 </head>
 <body>
+    <nav class="suite-nav">
+        <div class="suite-nav-links">
+            <a href="futu_pro_terminal.html" class="suite-link suite-link-home">🐮 看盘主终端</a>
+            <a href="stocks_radar.html" class="suite-link active">🎯 核心个股雷达</a>
+            <a href="macro_radar.html" class="suite-link">🏛️ 宏观司令塔</a>
+            <a href="backtest_report_5y.html" class="suite-link">🛡️ 5Y回测</a>
+            <a href="predict_radar_5y.html" class="suite-link">⚡ AI 15日推演</a>
+        </div>
+        <div class="suite-meta">
+            <span>⏱️ 自动刷新: 每3分钟</span>
+            <span>最近更新: {update_time_str}</span>
+            {live_badge_html}
+            <button type="button" id="btnThemeToggle" class="theme-toggle-btn" onclick="toggleTheme()" title="切换浅色模式" aria-label="切换浅色或深色模式">
+                <span id="themeToggleIcon">☀️</span>
+                <span class="theme-toggle-text" id="themeToggleLabel">浅色</span>
+            </button>
+        </div>
+    </nav>
+
     <div class="header">
         <div>
             <h1>🎯 核心个股碎股雷达 · {len(stocks_data)}只标的实战看板 (全网 {len(MONITORED_TARGETS["ETFS"]) + len(MONITORED_TARGETS["STOCKS"])} 只标的 · {len(MONITORED_TARGETS["ETFS"])} ETF + {len(MONITORED_TARGETS["STOCKS"])} 个股)</h1>
-            <div style="font-size: 12px; color: #6b7280; margin-top: 6px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+            <div style="font-size: 12px; color: var(--text-muted); margin-top: 6px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
                 <span>覆盖赛道: 芯片算力 / 商业AI / 新算力云 / AI能源核电 / 液冷服务器 / 光通信 / 太空商业 / 存储闪存 / 物理AI安全 / 经典蓝筹</span>
-                <span style="color:#60a5fa;">⏱️ 自动刷新: 每3分钟 (180s)</span>
-                <span>最近更新: {update_time_str}</span>
-                {live_badge_html}
-                <span style="color:#fbbf24; background:rgba(245,158,11,0.12); border:1px solid rgba(245,158,11,0.32); padding:2px 8px; border-radius:4px; font-weight:600;">⚠️ 数据仅供参考·不构成投资建议</span>
+                <span style="color:var(--warning-gold); background:rgba(245,158,11,0.12); border:1px solid rgba(245,158,11,0.32); padding:2px 8px; border-radius:4px; font-weight:600;">⚠️ 数据仅供参考·不构成投资建议</span>
             </div>
-        </div>
-        <div class="header-links">
-            <a href="futu_pro_terminal.html" style="background: rgba(255,105,0,0.18); border: 1px solid rgba(255,105,0,0.5); color: #ff6900; font-weight: 800;">🐮 看盘主终端</a>
-            <a href="predict_radar_5y.html" style="background: rgba(188,140,255,0.16); border: 1px solid rgba(188,140,255,0.45); color: #d8b4fe; font-weight: 700;">⚡ AI 5年预测雷达</a>
-            <a href="macro_radar.html">🏛️ 宏观司令塔</a>
-            <a href="backtest_report_5y.html" style="background: rgba(59,130,246,0.15); border: 1px solid rgba(59,130,246,0.4); color: #60a5fa; font-weight: 700;">🛡️ 5Y回测</a>
         </div>
     </div>
 
@@ -5037,18 +5349,18 @@ def generate_stocks_radar_html(stocks_data, history_dict, update_time_str="", ha
     <div class="summary-grid">
         <div class="card">
             <div class="card-title">🟢 黄金坑就位与进攻机会</div>
-            <div class="card-value" style="color: #00e676;">{sum(1 for s in stocks_data if s.get('is_pit') and not s.get('is_crash_halt') and not s.get('is_cooling_halt') and not s.get('is_inverse_hedge'))} <span style="font-size: 14px; color: #888;">/ {len(stocks_data)} 只</span></div>
-            <div class="card-sub">现价进入 0.5 ~ 0.618 斐波那契回撤低吸防守带且 RSI < 52</div>
+            <div class="card-value" style="color: var(--color-up);">{sum(1 for s in stocks_data if s.get('is_pit') and not s.get('is_crash_halt') and not s.get('is_cooling_halt') and not s.get('is_inverse_hedge'))} <span style="font-size: 14px; color: var(--text-muted);">/ {len(stocks_data)} 只</span></div>
+            <div class="card-sub">现价进入 0.5 ~ 0.618 斐波那契回撤低吸防守带且 RSI &lt; 52</div>
         </div>
         <div class="card">
             <div class="card-title">💼 单股仓位配置标准 (动态比例制)</div>
-            <div class="card-value" style="color: #00e5ff;">25.0% <span style="font-size: 14px; color: #888;">(1.5%风险平价)</span></div>
+            <div class="card-value" style="color: var(--color-accent);">25.0% <span style="font-size: 14px; color: var(--text-muted);">(1.5%风险平价)</span></div>
             <div class="card-sub">单股上限 25% (1.5%风险预算一次性建仓)，纪律执行防追高，拒绝情绪化重仓</div>
         </div>
-        <div class="card" style="border-left: 4px solid #ff5252; background: linear-gradient(135deg, rgba(255, 82, 82, 0.08), #131722);">
+        <div class="card card-stop">
             <div class="card-title">🔴 破位止损与风控警戒</div>
-            <div class="card-value" style="color: #ff5252;">{sum(1 for s in stocks_data if s.get('is_stop'))} <span style="font-size: 14px; color: #888;">/ {len(stocks_data)} 只</span></div>
-            <div class="card-sub">跌破坑底 3% 或 MA50 偏离 <-12%，坚决风控防守，拒绝逆势抄底</div>
+            <div class="card-value" style="color: var(--color-down);">{sum(1 for s in stocks_data if s.get('is_stop'))} <span style="font-size: 14px; color: var(--text-muted);">/ {len(stocks_data)} 只</span></div>
+            <div class="card-sub">跌破坑底 3% 或 MA50 偏离 &lt;-12%，坚决风控防守，拒绝逆势抄底</div>
         </div>
     </div>
 
@@ -5059,7 +5371,7 @@ def generate_stocks_radar_html(stocks_data, history_dict, update_time_str="", ha
 
     <!-- 碎股作战行动表 -->
     <div class="chart-box">
-        <h3 style="margin-top: 0; margin-bottom: 16px; font-size: 16px; color: #e2e8f0;">📋 核心个股碎股作战行动表 ({len(stocks_data)}只标的 · 按距黄金坑距离升序)</h3>
+        <h3 style="margin-top: 0; margin-bottom: 14px; font-size: 16px; color: var(--text-main);">📋 核心个股碎股作战行动表 ({len(stocks_data)}只标的 · 按距黄金坑距离升序)</h3>
         <table>
             <thead>
                 <tr>
@@ -5085,6 +5397,56 @@ def generate_stocks_radar_html(stocks_data, history_dict, update_time_str="", ha
     <footer id="siteDisclaimerBanner" style="margin: 24px 0 8px; padding: 12px 18px; background: rgba(245, 158, 11, 0.08); border: 1px solid rgba(245, 158, 11, 0.32); border-radius: 10px; color: #fde68a; font-size: 12px; line-height: 1.6; text-align: center;">
         ⚠️ <strong style="color: #fbbf24;">免责声明</strong>：本看板所有行情数据、量化指标与 AI 历史统计推演均为程序客观计算结果，仅作个人学习研究与看盘辅助参考，<strong style="color: #fbbf24;">不构成任何投资或买卖建议</strong>。美股及杠杆产品波动剧烈，请独立决策并严控风险。
     </footer>
+    <script>
+        function getCurrentTheme() {{
+            const attr = document.documentElement.getAttribute('data-theme');
+            if (attr === 'light' || attr === 'dark') return attr;
+            try {{
+                return localStorage.getItem('futu_theme') === 'light' ? 'light' : 'dark';
+            }} catch (e) {{ return 'dark'; }}
+        }}
+        function updateThemeToggleUI(theme) {{
+            const isLight = (theme === 'light');
+            const icon = document.getElementById('themeToggleIcon');
+            const label = document.getElementById('themeToggleLabel');
+            const btn = document.getElementById('btnThemeToggle');
+            const meta = document.getElementById('metaThemeColor');
+            if (icon) icon.innerText = isLight ? '🌙' : '☀️';
+            if (label) label.innerText = isLight ? '深色' : '浅色';
+            if (btn) btn.title = isLight ? '切换到深色模式' : '切换到浅色模式';
+            if (meta) meta.setAttribute('content', isLight ? '#F4F6F9' : '#0B0F19');
+        }}
+        function applyPlotlyTheme(theme) {{
+            if (typeof Plotly === 'undefined' || !Plotly.relayout) return;
+            const isLight = (theme === 'light');
+            const layoutUpd = {{
+                paper_bgcolor: isLight ? '#FFFFFF' : '#121826',
+                plot_bgcolor: isLight ? '#FFFFFF' : '#121826',
+                'font.color': isLight ? '#0F172A' : '#CBD5E1'
+            }};
+            document.querySelectorAll('.plotly-graph-div').forEach(function(gd) {{
+                try {{ Plotly.relayout(gd, layoutUpd); }} catch (e) {{}}
+            }});
+        }}
+        function applyTheme(theme) {{
+            const nextTheme = (theme === 'light') ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', nextTheme);
+            try {{ localStorage.setItem('futu_theme', nextTheme); }} catch (e) {{}}
+            updateThemeToggleUI(nextTheme);
+            applyPlotlyTheme(nextTheme);
+        }}
+        function toggleTheme() {{
+            applyTheme(getCurrentTheme() === 'dark' ? 'light' : 'dark');
+        }}
+        window.addEventListener('storage', function(ev) {{
+            if (ev && ev.key === 'futu_theme' && ev.newValue) applyTheme(ev.newValue);
+        }});
+        document.addEventListener('DOMContentLoaded', function() {{
+            const t = getCurrentTheme();
+            updateThemeToggleUI(t);
+            setTimeout(function() {{ applyPlotlyTheme(t); }}, 150);
+        }});
+    </script>
 </body>
 </html>
 """

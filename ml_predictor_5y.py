@@ -5669,6 +5669,7 @@ def print_terminal_tables(tables_data: Dict) -> None:
 
 
 def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5y.html') -> None:
+    import html as html_lib
     time_cycle_json_str = json.dumps(tables_data.get('time_cycle_projections', {}))
     macro_calendar_banner_html = ""
     try:
@@ -5713,9 +5714,15 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
     all_live = tables_data.get('all_live_predictions', t4) or t4
 
     _regime_code = str(weather.get('market_regime', 'NEUTRAL_CHOP'))
+    _is_bear_defense = (_regime_code == 'BEAR_DEFENSE')
     _regime_cn = str(weather.get('market_regime_cn') or {'BULL_TREND': '🟢 多头顺风体制', 'BEAR_DEFENSE': '🔴 空头防守体制'}.get(_regime_code, '🟡 震荡分化体制'))
     _breadth_pct = float(weather.get('breadth_ma20_pct', 50.0))
     _regime_color = '#f85149' if _regime_code == 'BEAR_DEFENSE' else ('#3fb950' if _regime_code == 'BULL_TREND' else '#ffd54f')
+    _default_t4_view = 'short' if _is_bear_defense else 'dual'
+    _t4_bear_hint_html = (
+        '<span id="t4BearLongHint" class="t4-bear-hint">（当前空头防守期，常规多头胜率已压制，仅作观察）</span>'
+        if _is_bear_defense else ''
+    )
 
     _sc_7d = float(scorecard.get('win_rate_7d_pct', 50.0))
     _sc_30d = float(scorecard.get('win_rate_30d_pct', 50.0))
@@ -5840,17 +5847,17 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
         mult_color = "#3fb950" if mult_val > 1.02 else ("#f85149" if mult_val < 0.98 else "#8b949e")
         t2_rows_html += f"""
         <tr onclick="filterBySector('{r['sector_name_cn']}')" style="cursor: pointer;" title="点击筛选【{r['sector_name_cn']}】赛道的实盘预测标的">
-            <td style="text-align: center; color: #8b949e; font-weight: 700;">{idx}</td>
-            <td style="font-weight: 700; color: #f0f6fc;">
+            <td style="text-align: center; color: var(--text-muted); font-weight: 700;">{idx}</td>
+            <td style="font-weight: 700; color: var(--text-main);">
                 {r['sector_name_cn']}
-                <span style="font-size: 11px; color: #8b949e; font-weight: normal; margin-left: 4px;">({r['sector_key']})</span>
+                <span style="font-size: 11px; color: var(--text-muted); font-weight: normal; margin-left: 4px;">({r['sector_key']})</span>
             </td>
             <td style="text-align: center;"><span class="badge badge-blue">{r['tickers_count']} 股</span></td>
             <td style="text-align: right; font-family: 'JetBrains Mono', monospace;">{r['oos_total_signals']:,}</td>
             <td style="text-align: right; font-family: 'JetBrains Mono', monospace; font-weight: 600;">{r['high_conviction_signals']:,}</td>
             <td style="text-align: right;">
                 <div style="display: flex; align-items: center; justify-content: flex-end; gap: 8px;">
-                    <span><strong style="color: #3fb950;">{pos_wr:.1f}%</strong> <span style="font-size: 11px; color: #8b949e;">({touch_wr:.1f}%)</span></span>
+                    <span><strong style="color: var(--neon-green);">{pos_wr:.1f}%</strong> <span style="font-size: 11px; color: var(--text-muted);">({touch_wr:.1f}%)</span></span>
                     <div class="dual-bar-track" style="width: 56px;">
                         <div class="dual-bar-pos" style="width: {min(100.0, pos_wr)}%;"></div>
                         <div class="dual-bar-touch" style="width: {min(100.0, touch_wr)}%;"></div>
@@ -5858,12 +5865,12 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
                 </div>
             </td>
             <td style="text-align: right; color: {ret_color}; font-family: 'JetBrains Mono', monospace; font-weight: 700;">{ret_sign}{ret_val:.2f}%</td>
-            <td style="text-align: right; font-weight: 700; color: #58a6ff; font-family: 'JetBrains Mono', monospace;">{r.get('win_loss_ratio', 1.50):.2f}</td>
-            <td style="text-align: right; font-weight: 800; color: #ffd54f; font-family: 'JetBrains Mono', monospace;">
+            <td style="text-align: right; font-weight: 700; color: var(--primary-blue); font-family: 'JetBrains Mono', monospace;">{r.get('win_loss_ratio', 1.50):.2f}</td>
+            <td style="text-align: right; font-weight: 800; color: var(--warning-gold); font-family: 'JetBrains Mono', monospace;">
                 {pf_val:.2f}
                 <span style="font-size: 10px; color: {mult_color}; margin-left: 3px;" title="表 4 赛道先验校准乘数">({mult_val:.2f}x)</span>
             </td>
-            <td style="text-align: center; color: #ffd54f; font-size: 13px; font-weight: 700;">{r['alpha_rating']}</td>
+            <td style="text-align: center; color: var(--warning-gold); font-size: 13px; font-weight: 700;">{r['alpha_rating']}</td>
         </tr>
         """
 
@@ -5873,19 +5880,19 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
         cat_badge = "badge-blue" if r['category_tag'] == 'stock' else ("badge-purple" if r['category_tag'] == 'cross' else "badge-gold")
         t3_rows_html += f"""
         <tr>
-            <td style="text-align: center; color: #8b949e; font-weight: 700;">{r['rank']}</td>
-            <td style="font-weight: 700; font-family: 'JetBrains Mono', monospace; color: #f0f6fc;">{r['feature']}</td>
+            <td style="text-align: center; color: var(--text-muted); font-weight: 700;">{r['rank']}</td>
+            <td style="font-weight: 700; font-family: 'JetBrains Mono', monospace; color: var(--text-main);">{r['feature']}</td>
             <td style="text-align: center;"><span class="badge {cat_badge}">{r['category']}</span></td>
-            <td style="text-align: right; font-family: 'JetBrains Mono', monospace; color: #c9d1d9;">{r['total_gain']:,.1f}</td>
+            <td style="text-align: right; font-family: 'JetBrains Mono', monospace; color: var(--text-sub);">{r['total_gain']:,.1f}</td>
             <td style="text-align: right;">
                 <div style="display: flex; align-items: center; justify-content: flex-end; gap: 8px;">
-                    <span style="font-weight: 700; color: #bc8cff; font-family: 'JetBrains Mono', monospace;">{r['gain_share_pct']:.1f}%</span>
-                    <div style="width: 56px; height: 6px; background: rgba(255,255,255,0.08); border-radius: 3px; overflow: hidden;">
+                    <span style="font-weight: 700; color: var(--cyber-purple); font-family: 'JetBrains Mono', monospace;">{r['gain_share_pct']:.1f}%</span>
+                    <div style="width: 56px; height: 6px; background: var(--bar-track); border-radius: 3px; overflow: hidden;">
                         <div style="width: {min(100.0, r['gain_share_pct'] * 4.5)}%; height: 100%; background: linear-gradient(90deg, #8957e5, #bc8cff);"></div>
                     </div>
                 </div>
             </td>
-            <td style="font-size: 12.5px; color: #8b949e; line-height: 1.45;">{r['rationale']}</td>
+            <td style="font-size: 12.5px; color: var(--text-muted); line-height: 1.45; white-space: normal;">{r['rationale']}</td>
         </tr>
         """
 
@@ -5939,8 +5946,8 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
             s_act_badge = "badge-blue"
 
         t4_short_rows_html += f"""
-        <tr class="t4-short-row" data-rank="{s_rk}" data-sector="{r['sector_cn']}" data-ticker="{r['ticker']}">
-            <td style="text-align: center; font-size: 15px; font-weight: 800; color: #f85149;">🩸#{s_rk}</td>
+        <tr class="t4-short-row" data-rank="{s_rk}" data-sector="{r['sector_cn']}" data-ticker="{r['ticker']}" style="cursor: pointer;" onclick="if(event.target.tagName !== 'A' && !event.target.closest('a') && window.timeCycleData && window.timeCycleData['{r['ticker']}']) switchCycleSymbol('{r['ticker']}');">
+            <td style="text-align: center; font-size: 14px; font-weight: 800; color: #f85149;">🩸#{s_rk}</td>
             <td>
                 <a href="futu_pro_terminal.html?symbol={r['ticker']}" target="_blank" class="ticker-jump-link" title="点击在富途全周期看盘终端中查看 {r['ticker']} 空头走势与主力 Put 大单">
                     <span class="tk-code">{r['ticker']}</span>
@@ -5948,37 +5955,37 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
                 </a>
             </td>
             <td>
-                <div style="display: flex; align-items: center; gap: 6px;">
-                    <span class="badge badge-purple" style="cursor: pointer;" onclick="filterBySector('{r['sector_cn']}')">{r['sector_cn']}</span>
-                    <span style="font-size: 11px; color: #ffd54f;" title="赛道评级">{sec_rating[:5]}</span>
+                <div style="display: flex; align-items: center; gap: 5px; flex-wrap: wrap;">
+                    <span class="badge badge-purple" style="cursor: pointer;" onclick="event.stopPropagation(); filterBySector('{r['sector_cn']}')">{r['sector_cn']}</span>
+                    <span style="font-size: 11px; color: var(--warning-gold);" title="赛道评级">{sec_rating[:5]}</span>
                 </div>
             </td>
-            <td style="text-align: right; font-weight: 700; font-family: 'JetBrains Mono', monospace; font-size: 14.5px; color: #f0f6fc;">
+            <td style="text-align: right; font-weight: 700; font-family: 'JetBrains Mono', monospace; font-size: 13.5px; color: var(--text-main);">
                 ${r['latest_price']:.2f}
-                <span style="display: block; font-size: 10px; color: #8b949e; font-weight: normal;">ATR {atr_val:.1f}% · <span style="color: {bias_col};">MA50 {bias_val:+.1f}%</span></span>
+                <span style="display: block; font-size: 10px; color: var(--text-muted); font-weight: normal;">ATR {atr_val:.1f}% · <span style="color: {bias_col};">MA50 {bias_val:+.1f}%</span></span>
             </td>
             <td style="text-align: right;">
-                <div style="display: flex; align-items: center; justify-content: flex-end; gap: 8px;">
+                <div style="display: flex; align-items: center; justify-content: flex-end; gap: 6px;">
                     <div>
-                        <span style="font-size: 15px; font-weight: 800; color: #f85149; font-family: 'JetBrains Mono', monospace;">{cal_s_wr:.1f}%</span>
-                        <span style="font-size: 11px; color: #8b949e; display: block;" title="AI 空头先验校准胜率">原始 {raw_s_wr:.1f}%</span>
+                        <span style="font-size: 14px; font-weight: 800; color: #f85149; font-family: 'JetBrains Mono', monospace;">{cal_s_wr:.1f}%</span>
+                        <span style="font-size: 10.5px; color: var(--text-muted); display: block;" title="AI 空头先验校准胜率">原始 {raw_s_wr:.1f}%</span>
                     </div>
-                    <div style="width: 64px; height: 8px; background: rgba(255,255,255,0.08); border-radius: 4px; overflow: hidden; position: relative;">
-                        <div style="width: {min(100.0, cal_s_wr)}%; height: 100%; background: #f85149; box-shadow: 0 0 6px #f85149;"></div>
+                    <div class="t4-wr-bar" style="width: 46px; height: 7px; background: var(--bar-track); border-radius: 4px; overflow: hidden; position: relative;">
+                        <div style="width: {min(100.0, cal_s_wr)}%; height: 100%; background: #f85149;"></div>
                     </div>
                 </div>
             </td>
-            <td style="text-align: right; color: #3fb950; font-family: 'JetBrains Mono', monospace; font-weight: 700;">
+            <td style="text-align: right; color: var(--neon-green); font-family: 'JetBrains Mono', monospace; font-weight: 700;">
                 ${s_tp:.2f} <span class="pct-pill pct-up">-{s_tp_pct:.1f}%</span>
             </td>
             <td style="text-align: right; color: #f85149; font-family: 'JetBrains Mono', monospace; font-weight: 700;">
                 ${s_sl:.2f} <span class="pct-pill pct-down">+{s_sl_pct:.1f}%</span>
             </td>
             <td style="text-align: center;">
-                <span class="badge {pcr_badge_style}" style="font-size: 11px; padding: 3px 8px;">{pcr_display_text}</span>
+                <span class="badge {pcr_badge_style}" style="font-size: 11px; padding: 3px 7px;">{pcr_display_text}</span>
             </td>
             <td style="text-align: center;">
-                <span class="badge {s_act_badge}" style="font-size: 12px; padding: 4px 10px;">{s_act}</span>
+                <span class="badge {s_act_badge}" style="font-size: 11.5px; padding: 3px 8px;">{s_act}</span>
             </td>
         </tr>
         """
@@ -5993,7 +6000,6 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
         is_etf_row = bool(r.get('is_etf', (tk_str in pure_etf_set and len(all_live) > 28)))
         if is_etf_row:
             etf_count += 1
-        rank_badge = "🥇" if rk == 1 else ("🥈" if rk == 2 else ("🥉" if rk == 3 else f"#{rk}"))
         act_text = str(r.get('action', ''))
         if "🚨" in act_text or "严禁" in act_text:
             act_badge = "badge-red"
@@ -6010,6 +6016,12 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
             act_badge = "badge-orange"
         cal_wr = r.get('calibrated_win_rate_pct', r['predicted_win_rate_pct'])
         raw_wr = r['predicted_win_rate_pct']
+        if _is_bear_defense and float(cal_wr) < 50.0:
+            rank_badge = f"#{rk}"
+            rank_color = "#8b949e"
+        else:
+            rank_badge = "🥇" if rk == 1 else ("🥈" if rk == 2 else ("🥉" if rk == 3 else f"#{rk}"))
+            rank_color = '#ffd54f' if rk <= 3 else '#8b949e'
         atr_val = r.get('atr_pct', 2.5)
         bias_val = r.get('bias_ma50', None)
         bias_html = ""
@@ -6038,60 +6050,92 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
         r1_val = r.get('r1', round(r['latest_price'] * 1.04, 2))
         r2_val = r.get('r2', round(r['latest_price'] * 1.08, 2))
         four_h_div_text = r.get('four_h_div', '➖ 4H 均线震荡纠缠')
-        scenario_text = r.get('scenario_script', '')
+        scenario_text = str(r.get('scenario_script', '') or '')
+        if "暴跌熔断" in scenario_text:
+            scenario_short_tag = "熔断风控"
+        elif "空头回补" in scenario_text:
+            scenario_short_tag = "空头回补"
+        elif "破位飞刀" in scenario_text:
+            scenario_short_tag = "破位观望"
+        elif "破位反抽" in scenario_text:
+            scenario_short_tag = "破位反抽"
+        elif "黄金坑做多" in scenario_text:
+            scenario_short_tag = "黄金坑低吸"
+        elif "右侧主升" in scenario_text:
+            scenario_short_tag = "右侧顺风"
+        elif _is_bear_defense:
+            scenario_short_tag = "空头防守"
+        else:
+            scenario_short_tag = "战术推演"
+        esc_scenario = html_lib.escape(scenario_text, quote=True)
+        script_btn_html = (
+            f'<button type="button" class="t4-script-pill" onclick="event.stopPropagation(); toggleT4ScriptRow(this)" '
+            f'title="{esc_scenario}">📋 {scenario_short_tag} ▾</button>'
+            if scenario_text else ''
+        )
+        script_detail_row_html = (
+            f'<tr class="t4-script-detail-row" data-parent-ticker="{r["ticker"]}" style="display: none;">'
+            f'<td colspan="9" class="t4-script-detail-cell">'
+            f'<strong>🧭 {r["ticker"]} 完整战术剧本：</strong>{esc_scenario}'
+            f'</td></tr>'
+            if scenario_text else ''
+        )
 
         t4_rows_html += f"""
-        <tr class="t4-stock-row" data-rank="{rk}" data-short-rank="{short_rk}" data-sector="{r['sector_cn']}" data-ticker="{r['ticker']}" data-isetf="{'1' if is_etf_row else '0'}" style="{hidden_style}; cursor: pointer;" onclick="if(event.target.tagName !== 'A' && !event.target.closest('a') && window.timeCycleData && window.timeCycleData['{r['ticker']}']) switchCycleSymbol('{r['ticker']}');">
-            <td style="text-align: center; font-size: 15px; font-weight: 800; color: {'#ffd54f' if rk <= 3 else '#8b949e'};">{rank_badge}</td>
+        <tr class="t4-stock-row" data-rank="{rk}" data-short-rank="{short_rk}" data-sector="{r['sector_cn']}" data-ticker="{r['ticker']}" data-isetf="{'1' if is_etf_row else '0'}" style="{hidden_style}; cursor: pointer;" onclick="if(event.target.tagName !== 'A' && !event.target.closest('a') && !event.target.closest('button') && window.timeCycleData && window.timeCycleData['{r['ticker']}']) switchCycleSymbol('{r['ticker']}');">
+            <td style="text-align: center; font-size: 14px; font-weight: 800; color: {rank_color};">{rank_badge}</td>
             <td>
                 <a href="futu_pro_terminal.html?symbol={r['ticker']}" target="_blank" class="ticker-jump-link" title="点击在富途全周期看盘终端中打开 {r['ticker']} K线与实盘诊股">
                     <span class="tk-code">{r['ticker']}</span>
                     <span class="tk-jump-icon">📈 看盘</span>
                 </a>
-                <div style="font-size: 10px; color: #a371f7; margin-top: 2px;">{four_h_div_text}</div>
+                <div style="font-size: 10px; color: var(--cyber-purple); margin-top: 2px;">{four_h_div_text}</div>
             </td>
             <td>
-                <div style="display: flex; align-items: center; gap: 6px;">
-                    <span class="badge badge-blue" style="cursor: pointer;" onclick="filterBySector('{r['sector_cn']}')">{r['sector_cn']}</span>
-                    <span style="font-size: 11px; color: #ffd54f;" title="赛道 OOS 评级 (PF={sec_pf:.2f})">{sec_rating[:5]}</span>
+                <div style="display: flex; align-items: center; gap: 5px; flex-wrap: wrap;">
+                    <span class="badge badge-blue" style="cursor: pointer;" onclick="event.stopPropagation(); filterBySector('{r['sector_cn']}')">{r['sector_cn']}</span>
+                    <span style="font-size: 11px; color: var(--warning-gold);" title="赛道 OOS 评级 (PF={sec_pf:.2f})">{sec_rating[:5]}</span>
                 </div>
             </td>
-            <td style="text-align: right; font-weight: 700; font-family: 'JetBrains Mono', monospace; font-size: 14.5px; color: #f0f6fc;">
+            <td style="text-align: right; font-weight: 700; font-family: 'JetBrains Mono', monospace; font-size: 13.5px; color: var(--text-main);">
                 ${r['latest_price']:.2f}
-                <span style="display: block; font-size: 10px; color: #8b949e; font-weight: normal;">ATR {atr_val:.1f}%{bias_html}</span>
+                <span style="display: block; font-size: 10px; color: var(--text-muted); font-weight: normal;">ATR {atr_val:.1f}%{bias_html}</span>
             </td>
             <td style="text-align: right;">
-                <div style="display: flex; align-items: center; justify-content: flex-end; gap: 8px;">
+                <div style="display: flex; align-items: center; justify-content: flex-end; gap: 6px;">
                     <div>
-                        <span style="font-size: 15px; font-weight: 800; color: {wr_color}; font-family: 'JetBrains Mono', monospace;">{cal_wr:.1f}%</span>
-                        <span style="font-size: 11px; color: #8b949e; display: block;" title="右侧结构修正后做多胜率">原多 {raw_wr:.1f}%</span>
-                        <span class="t4-all-short-sub" style="font-size: 10px; color: #f85149; display: none;" title="AI 做空校准胜率">🩸做空 {cal_s_wr:.1f}%</span>
+                        <span style="font-size: 14px; font-weight: 800; color: {wr_color}; font-family: 'JetBrains Mono', monospace;">{cal_wr:.1f}%</span>
+                        <span style="font-size: 10.5px; color: var(--text-muted); display: block;" title="右侧结构修正后做多胜率">原多 {raw_wr:.1f}%</span>
+                        <span class="t4-all-short-sub" style="font-size: 10px; color: var(--risk-red); display: none;" title="AI 做空校准胜率">🩸做空 {cal_s_wr:.1f}%</span>
                     </div>
-                    <div style="width: 64px; height: 8px; background: rgba(255,255,255,0.08); border-radius: 4px; overflow: hidden; position: relative;">
-                        <div style="width: {min(100.0, cal_wr)}%; height: 100%; background: {wr_color}; box-shadow: 0 0 6px {wr_color};"></div>
+                    <div class="t4-wr-bar" style="width: 46px; height: 7px; background: var(--bar-track); border-radius: 4px; overflow: hidden; position: relative;">
+                        <div style="width: {min(100.0, cal_wr)}%; height: 100%; background: {wr_color};"></div>
                     </div>
                 </div>
             </td>
-            <td style="text-align: right; color: #3fb950; font-family: 'JetBrains Mono', monospace; font-weight: 700;">
+            <td style="text-align: right; color: var(--neon-green); font-family: 'JetBrains Mono', monospace; font-weight: 700;">
                 ${r['target_profit_price']:.2f} <span class="pct-pill pct-up">+{r['target_profit_pct']}%</span>
-                <div style="font-size: 10px; color: #3fb950; font-weight: normal; margin-top: 2px;" title="第一阻力 R1 (不过先跑) / 极限逼空 R2">阻力: R1 ${r1_val:.2f} / R2 ${r2_val:.2f}</div>
-                <span class="t4-all-short-sub" style="display: none; font-size: 10px; color: #8b949e; font-weight: normal;">空止盈 ${s_tp:.2f} (-{s_tp_pct:.1f}%)</span>
+                <div style="font-size: 10px; color: var(--neon-green); font-weight: normal; margin-top: 2px;" title="第一阻力 R1 (不过先跑) / 极限逼空 R2">R1 ${r1_val:.2f} / R2 ${r2_val:.2f}</div>
+                <span class="t4-all-short-sub" style="display: none; font-size: 10px; color: var(--text-muted); font-weight: normal;">空盈 ${s_tp:.2f} (-{s_tp_pct:.1f}%)</span>
             </td>
-            <td style="text-align: right; color: #f85149; font-family: 'JetBrains Mono', monospace; font-weight: 700;">
+            <td style="text-align: right; color: var(--risk-red); font-family: 'JetBrains Mono', monospace; font-weight: 700;">
                 ${r['stop_loss_price']:.2f} <span class="pct-pill pct-down">-{r['stop_loss_pct']}%</span>
-                <div style="font-size: 10px; color: #f85149; font-weight: normal; margin-top: 2px;" title="波段支撑 S1 / 极限插针底 S2">支撑: S1 ${s1_val:.2f} / S2 ${s2_val:.2f}</div>
-                <span class="t4-all-short-sub" style="display: none; font-size: 10px; color: #8b949e; font-weight: normal;">空止损 ${s_sl:.2f} (+{s_sl_pct:.1f}%)</span>
+                <div style="font-size: 10px; color: var(--risk-red); font-weight: normal; margin-top: 2px;" title="波段支撑 S1 / 极限插针底 S2">S1 ${s1_val:.2f} / S2 ${s2_val:.2f}</div>
+                <span class="t4-all-short-sub" style="display: none; font-size: 10px; color: var(--text-muted); font-weight: normal;">空损 ${s_sl:.2f} (+{s_sl_pct:.1f}%)</span>
             </td>
             <td style="text-align: center;">
                 <span class="badge badge-gold">{r['macro_temp']}</span>
-                <span class="t4-all-short-sub" style="display: none; font-size: 10px; color: #8b949e; margin-top: 2px;">{t4_pcr_sub}</span>
+                <span class="t4-all-short-sub" style="display: none; font-size: 10px; color: var(--text-muted); margin-top: 2px;">{t4_pcr_sub}</span>
             </td>
             <td style="text-align: center;">
-                <span class="badge {act_badge}" style="font-size: 12px; padding: 4px 10px;">{r['action']}</span>
-                <div class="t4-all-short-sub" style="display: none; font-size: 10px; color: #f85149; margin-top: 2px;">{s_act}</div>
-                {f'<div style="font-size: 11px; color: #cbd5e1; background: rgba(0,0,0,0.35); border-left: 2px solid #58a6ff; padding: 4px 8px; margin-top: 4px; text-align: left; line-height: 1.35; border-radius: 2px;">{scenario_text}</div>' if scenario_text else ''}
+                <div style="display: inline-flex; flex-direction: column; align-items: center; gap: 4px;">
+                    <span class="badge {act_badge}" style="font-size: 11.5px; padding: 3px 8px;">{r['action']}</span>
+                    {script_btn_html}
+                </div>
+                <div class="t4-all-short-sub" style="display: none; font-size: 10px; color: var(--risk-red); margin-top: 2px;">{s_act}</div>
             </td>
-        </tr>"""
+        </tr>
+        {script_detail_row_html}"""
 
     # 构建 7 大赛道 + ETF 专区过滤按钮
     sector_counts = {}
@@ -6107,14 +6151,24 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
         sector_pills_html += f'<button class="filter-pill" data-sec="ETF_POOL" onclick="filterBySector(this.dataset.sec)">📊 宏观与行业 ETF ({etf_count})</button>'
 
     html_content = f"""<!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
+    <meta name="theme-color" id="metaThemeColor" content="#0B0F19">
     <script>
+        (function() {{
+            try {{
+                var savedTheme = localStorage.getItem("futu_theme");
+                var t = (savedTheme === "light") ? "light" : "dark";
+                document.documentElement.setAttribute("data-theme", t);
+            }} catch (e) {{
+                document.documentElement.setAttribute("data-theme", "dark");
+            }}
+        }})();
         // ⚡ 客户端智能防缓存自动刷新 (60秒穿透 GitHub Pages / Fastly CDN 10分钟强缓存)
         setTimeout(function() {{
             try {{
@@ -6129,19 +6183,53 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
     </script>
     <title>AI 美股 5 年多赛道预测雷达 · 全景战报</title>
     <style>
-        :root {{
-            --bg-base: #070a0f;
-            --bg-card: #11161f;
-            --bg-card-hover: #171e2b;
-            --border-color: #262f3d;
-            --text-main: #f0f6fc;
-            --text-sub: #c9d1d9;
-            --text-muted: #8b949e;
-            --neon-green: #3fb950;
-            --cyber-purple: #bc8cff;
-            --primary-blue: #58a6ff;
-            --warning-gold: #ffd54f;
-            --risk-red: #f85149;
+        :root,
+        [data-theme="dark"] {{
+            --bg-page: #0B0F19;
+            --bg-base: #0B0F19;
+            --bg-card: #121826;
+            --bg-card-hover: #1A2234;
+            --bg-elevated: #1A2234;
+            --bg-input: #0F1523;
+            --border-color: rgba(255, 255, 255, 0.08);
+            --border-strong: rgba(255, 255, 255, 0.16);
+            --text-main: #F3F4F6;
+            --text-sub: #CBD5E1;
+            --text-muted: #94A3B8;
+            --neon-green: #10B981;
+            --cyber-purple: #A78BFA;
+            --primary-blue: #38BDF8;
+            --warning-gold: #F59E0B;
+            --risk-red: #EF4444;
+            --panel-surface: rgba(13, 17, 23, 0.85);
+            --canvas-bg: #0D1320;
+            --bar-track: rgba(255, 255, 255, 0.08);
+            --row-border: rgba(48, 54, 61, 0.5);
+            --shadow-card: 0 2px 12px rgba(0, 0, 0, 0.28);
+        }}
+
+        [data-theme="light"] {{
+            --bg-page: #F4F6F9;
+            --bg-base: #F4F6F9;
+            --bg-card: #FFFFFF;
+            --bg-card-hover: #F1F5F9;
+            --bg-elevated: #F1F5F9;
+            --bg-input: #F8FAFC;
+            --border-color: #E2E8F0;
+            --border-strong: #CBD5E1;
+            --text-main: #0F172A;
+            --text-sub: #334155;
+            --text-muted: #64748B;
+            --neon-green: #059669;
+            --cyber-purple: #7C3AED;
+            --primary-blue: #0284C7;
+            --warning-gold: #D97706;
+            --risk-red: #DC2626;
+            --panel-surface: #F8FAFC;
+            --canvas-bg: #FFFFFF;
+            --bar-track: rgba(15, 23, 42, 0.08);
+            --row-border: #E2E8F0;
+            --shadow-card: 0 1px 4px rgba(15, 23, 42, 0.07);
         }}
 
         * {{
@@ -6151,14 +6239,12 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
         }}
 
         body {{
-            background-color: var(--bg-base);
-            background-image:
-                radial-gradient(circle at 12% 8%, rgba(88, 166, 255, 0.07), transparent 32%),
-                radial-gradient(circle at 88% 12%, rgba(188, 140, 255, 0.07), transparent 32%);
+            background-color: var(--bg-page);
             color: var(--text-sub);
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", Roboto, sans-serif;
-            line-height: 1.5;
-            padding: 18px 24px 40px;
+            font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", Roboto, sans-serif;
+            line-height: 1.48;
+            padding: 12px 20px 32px;
+            transition: background-color 0.2s ease, color 0.2s ease;
         }}
 
         .container {{
@@ -6166,58 +6252,186 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
             margin: 0 auto;
         }}
 
-        /* Top Suite Cross-Navigation Bar */
+        /* Row 1: Unified Top Cross-Navigation Bar */
         .suite-nav {{
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: rgba(17, 22, 31, 0.88);
-            backdrop-filter: blur(12px);
+            background: var(--bg-card);
             border: 1px solid var(--border-color);
             border-radius: 12px;
-            padding: 10px 16px;
-            margin-bottom: 20px;
+            padding: 8px 14px;
+            margin-bottom: 8px;
             flex-wrap: wrap;
-            gap: 12px;
+            gap: 10px;
+            box-shadow: var(--shadow-card);
         }}
         .suite-nav-links {{
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 6px;
             flex-wrap: wrap;
         }}
         .suite-link {{
             display: inline-flex;
             align-items: center;
-            gap: 6px;
-            padding: 6px 13px;
+            gap: 5px;
+            padding: 5px 11px;
             border-radius: 8px;
-            font-size: 12.5px;
+            font-size: 12px;
             font-weight: 600;
             color: var(--text-sub);
             text-decoration: none;
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.07);
-            transition: all 0.18s ease;
+            background: var(--bg-elevated);
+            border: 1px solid var(--border-color);
+            transition: all 0.16s ease;
+            white-space: nowrap;
         }}
         .suite-link:hover {{
-            background: rgba(88, 166, 255, 0.14);
-            border-color: rgba(88, 166, 255, 0.45);
-            color: #fff;
-            transform: translateY(-1px);
+            background: rgba(56, 189, 248, 0.14);
+            border-color: var(--primary-blue);
+            color: var(--text-main);
         }}
         .suite-link.active {{
-            background: linear-gradient(135deg, rgba(188, 140, 255, 0.22), rgba(88, 166, 255, 0.18));
-            border-color: rgba(188, 140, 255, 0.55);
-            color: #e2c5ff;
+            background: linear-gradient(135deg, rgba(167, 139, 250, 0.22), rgba(56, 189, 248, 0.18));
+            border-color: var(--cyber-purple);
+            color: var(--cyber-purple);
             font-weight: 700;
-            box-shadow: 0 0 12px rgba(188, 140, 255, 0.2);
+        }}
+        .suite-link-home {{
+            background: rgba(255, 105, 0, 0.14) !important;
+            border-color: rgba(255, 105, 0, 0.45) !important;
+            color: #FF6900 !important;
+            font-weight: 800 !important;
         }}
         .suite-meta {{
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
+            font-size: 11.5px;
+            color: var(--text-muted);
+            flex-wrap: wrap;
+        }}
+        .theme-toggle-btn {{
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            height: 29px;
+            padding: 0 10px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            background: var(--bg-elevated);
+            color: var(--text-main);
             font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.15s ease;
+            white-space: nowrap;
+        }}
+        .theme-toggle-btn:hover {{
+            border-color: var(--primary-blue);
+        }}
+
+        /* Row 2: Compact Status + Macro Strip */
+        .compact-status-strip {{
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 8px 12px;
+            margin-bottom: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            box-shadow: var(--shadow-card);
+        }}
+        .compact-status-top {{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+            flex-wrap: wrap;
+        }}
+        .compact-status-left {{
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            flex-wrap: wrap;
+            min-width: 0;
+        }}
+        .compact-pill {{
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 3px 10px;
+            border-radius: 999px;
+            font-size: 11.5px;
+            font-weight: 700;
+            background: var(--bg-elevated);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            white-space: nowrap;
+        }}
+        .predict-macro-slim #macroCalendarBanner {{
+            padding: 5px 10px !important;
+            margin-bottom: 0 !important;
+            border-radius: 8px !important;
+            font-size: 11.5px !important;
+        }}
+        [data-theme="light"] .predict-macro-slim #macroCalendarBanner {{
+            background: var(--bg-elevated) !important;
+            border-color: var(--border-color) !important;
+            color: var(--text-sub) !important;
+        }}
+        [data-theme="light"] .predict-macro-slim #macroCalendarBanner[data-level="countdown_15m"] {{
+            background: #FEF2F2 !important;
+            border-color: #FCA5A5 !important;
+        }}
+        [data-theme="light"] .predict-macro-slim #macroCalHeadline {{
+            color: var(--text-main) !important;
+        }}
+        [data-theme="light"] .predict-macro-slim #macroCalDetail {{
+            color: var(--text-muted) !important;
+        }}
+        [data-theme="light"] .predict-macro-slim #macroCalendarBanner a {{
+            color: var(--primary-blue) !important;
+            background: rgba(2, 132, 199, 0.1) !important;
+            border-color: rgba(2, 132, 199, 0.35) !important;
+        }}
+
+        .drawer-toggle-btn {{
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 4px 11px;
+            border-radius: 8px;
+            border: 1px solid var(--border-strong);
+            background: var(--bg-elevated);
+            color: var(--text-main);
+            font-size: 11.5px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.15s ease;
+            white-space: nowrap;
+        }}
+        .drawer-toggle-btn:hover {{
+            border-color: var(--primary-blue);
+            color: var(--primary-blue);
+        }}
+        .drawer-bar {{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            flex-wrap: wrap;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 9px 14px;
+            margin-bottom: 14px;
+        }}
+        .drawer-bar-hint {{
+            font-size: 11.5px;
             color: var(--text-muted);
         }}
 
@@ -6300,18 +6514,18 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
             margin-bottom: 22px;
         }}
         .kpi-card {{
-            background: linear-gradient(155deg, #141b26 0%, #0d121a 100%);
+            background: var(--bg-card);
             border: 1px solid var(--border-color);
             border-radius: 13px;
-            padding: 18px 20px;
+            padding: 16px 18px;
             position: relative;
             overflow: hidden;
             transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+            box-shadow: var(--shadow-card);
         }}
         .kpi-card:hover {{
             transform: translateY(-2px);
-            border-color: rgba(88, 166, 255, 0.45);
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+            border-color: var(--primary-blue);
         }}
         .kpi-card::before {{
             content: "";
@@ -6349,33 +6563,35 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
             background: {weather_bg};
             border: 1px solid {weather_border};
             border-radius: 14px;
-            padding: 18px 24px;
-            margin-bottom: 24px;
+            padding: 16px 20px;
+            margin-bottom: 14px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
-            gap: 16px;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.28);
+            gap: 14px;
+            box-shadow: var(--shadow-card);
+        }}
+        [data-theme="light"] .weather-banner {{
+            background: var(--bg-card) !important;
         }}
         .weather-left {{
             display: flex;
             align-items: center;
-            gap: 16px;
+            gap: 14px;
         }}
         .weather-icon {{
-            font-size: 40px;
+            font-size: 36px;
             line-height: 1;
-            filter: drop-shadow(0 0 10px rgba(255,255,255,0.15));
         }}
         .weather-info h2 {{
-            font-size: 19px;
+            font-size: 18px;
             font-weight: 800;
             color: var(--text-main);
             margin-bottom: 4px;
         }}
         .weather-info p {{
-            font-size: 13px;
+            font-size: 12.5px;
             color: var(--text-sub);
         }}
         .weather-stats {{
@@ -6384,10 +6600,10 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
             flex-wrap: wrap;
         }}
         .weather-stat-pill {{
-            background: rgba(13, 17, 23, 0.65);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: var(--panel-surface);
+            border: 1px solid var(--border-color);
             border-radius: 9px;
-            padding: 8px 14px;
+            padding: 7px 12px;
             text-align: center;
             min-width: 108px;
         }}
@@ -6398,10 +6614,27 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
             margin-bottom: 2px;
         }}
         .weather-stat-pill .val {{
-            font-size: 14px;
+            font-size: 13.5px;
             font-weight: 700;
             font-family: 'JetBrains Mono', monospace;
             color: var(--text-main);
+        }}
+        [data-theme="light"] #defensiveFlightAlertBanner,
+        [data-theme="light"] #systemicSelloffAlertBanner {{
+            background: #FEF2F2 !important;
+            border-color: #FCA5A5 !important;
+            box-shadow: none !important;
+        }}
+        [data-theme="light"] #defensiveFlightAlertBanner div,
+        [data-theme="light"] #systemicSelloffAlertBanner div {{
+            color: #991B1B !important;
+        }}
+        [data-theme="light"] #structuralRotationBanner {{
+            background: #EFF6FF !important;
+            border-color: #93C5FD !important;
+        }}
+        [data-theme="light"] #structuralRotationBanner div {{
+            color: #1E3A8A !important;
         }}
 
         /* Section & Tables */
@@ -6409,30 +6642,103 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
             background: var(--bg-card);
             border: 1px solid var(--border-color);
             border-radius: 14px;
-            padding: 20px 22px;
-            margin-bottom: 24px;
+            padding: 16px 18px;
+            margin-bottom: 18px;
             overflow-x: auto;
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+            box-shadow: var(--shadow-card);
         }}
         .section-header {{
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 14px;
+            margin-bottom: 10px;
             flex-wrap: wrap;
             gap: 10px;
         }}
         .section-header h3 {{
             color: var(--text-main);
-            font-size: 17px;
+            font-size: 16px;
             font-weight: 700;
             display: flex;
             align-items: center;
             gap: 8px;
+            flex-wrap: wrap;
         }}
         .section-header .sub {{
             font-size: 12px;
             color: var(--text-muted);
+        }}
+
+        /* 15-Day Time-Cycle Grid Alignment (Eliminates Bottom-Left Black Void) */
+        .tc-main-grid {{
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) 365px;
+            gap: 14px;
+            margin-top: 10px;
+            align-items: stretch;
+        }}
+        .tc-chart-pane {{
+            background: var(--panel-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 12px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+        }}
+        #cycleCanvasWrapper {{
+            width: 100%;
+            flex: 1;
+            min-height: 390px;
+            position: relative;
+            cursor: grab;
+            user-select: none;
+            touch-action: none;
+            overflow: hidden;
+            border-radius: 8px;
+            background: var(--canvas-bg);
+            border: 1px solid var(--border-color);
+        }}
+        #cycleTooltip {{
+            position: absolute;
+            display: none;
+            pointer-events: none;
+            z-index: 20;
+            background: rgba(13, 17, 23, 0.96);
+            border: 1px solid var(--primary-blue);
+            border-radius: 8px;
+            padding: 8px 12px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11.5px;
+            color: var(--text-main);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+            min-width: 190px;
+        }}
+        [data-theme="light"] #cycleTooltip {{
+            background: rgba(255, 255, 255, 0.98) !important;
+            box-shadow: 0 8px 24px rgba(15, 23, 42, 0.14);
+        }}
+        .tc-subcard {{
+            background: var(--panel-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 10px 12px;
+        }}
+        .tc-principle-bar {{
+            margin-top: 10px;
+            background: var(--bg-elevated);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 7px 12px;
+            font-size: 11.5px;
+            color: var(--text-muted);
+            line-height: 1.45;
+        }}
+        [data-theme="light"] #cycleAnalogPeriod {{
+            background: rgba(217, 119, 6, 0.10) !important;
+            border-color: rgba(217, 119, 6, 0.30) !important;
+            color: #B45309 !important;
         }}
 
         /* Interactive Filter Toolbar for Table 4 */
@@ -6440,13 +6746,13 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
             display: flex;
             justify-content: space-between;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
             flex-wrap: wrap;
-            padding: 12px 14px;
-            background: rgba(13, 17, 23, 0.7);
-            border: 1px solid rgba(255, 255, 255, 0.06);
+            padding: 10px 12px;
+            background: var(--panel-surface);
+            border: 1px solid var(--border-color);
             border-radius: 10px;
-            margin-bottom: 14px;
+            margin-bottom: 12px;
         }}
         .filter-pills {{
             display: flex;
@@ -6455,10 +6761,10 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
             flex-wrap: wrap;
         }}
         .filter-pill {{
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid rgba(255, 255, 255, 0.09);
+            background: var(--bg-elevated);
+            border: 1px solid var(--border-color);
             color: var(--text-sub);
-            padding: 5px 11px;
+            padding: 4px 10px;
             border-radius: 6px;
             font-size: 12px;
             font-weight: 600;
@@ -6466,15 +6772,14 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
             transition: all 0.15s ease;
         }}
         .filter-pill:hover {{
-            background: rgba(88, 166, 255, 0.12);
-            border-color: rgba(88, 166, 255, 0.4);
-            color: #fff;
+            background: rgba(56, 189, 248, 0.12);
+            border-color: var(--primary-blue);
+            color: var(--text-main);
         }}
         .filter-pill.active {{
-            background: rgba(88, 166, 255, 0.2);
+            background: rgba(56, 189, 248, 0.18);
             border-color: var(--primary-blue);
             color: var(--primary-blue);
-            box-shadow: 0 0 8px rgba(88, 166, 255, 0.25);
         }}
         .t4-controls-right {{
             display: flex;
@@ -6482,23 +6787,23 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
             gap: 8px;
         }}
         .search-input {{
-            background: #0b0e14;
+            background: var(--bg-input);
             border: 1px solid var(--border-color);
             color: var(--text-main);
             padding: 5px 10px;
             border-radius: 6px;
             font-size: 12px;
-            width: 150px;
+            width: 148px;
             outline: none;
         }}
         .search-input:focus {{
             border-color: var(--primary-blue);
         }}
         .mode-btn {{
-            background: linear-gradient(135deg, rgba(188, 140, 255, 0.16), rgba(88, 166, 255, 0.16));
-            border: 1px solid rgba(188, 140, 255, 0.45);
-            color: #e2c5ff;
-            padding: 5px 12px;
+            background: rgba(167, 139, 250, 0.14);
+            border: 1px solid rgba(167, 139, 250, 0.42);
+            color: var(--cyber-purple);
+            padding: 5px 11px;
             border-radius: 6px;
             font-size: 12px;
             font-weight: 700;
@@ -6506,30 +6811,95 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
             transition: all 0.15s ease;
         }}
         .mode-btn:hover {{
-            background: rgba(188, 140, 255, 0.28);
-            color: #fff;
+            background: rgba(167, 139, 250, 0.25);
+        }}
+
+        #t4-view-container.bear-regime {{
+            display: flex;
+            flex-direction: column;
+        }}
+        #t4-view-container.bear-regime #cardT4Short {{
+            order: -1;
+            margin-top: 0 !important;
+            margin-bottom: 18px;
+        }}
+        .t4-bear-hint {{
+            display: inline-flex;
+            align-items: center;
+            padding: 2px 8px;
+            margin-left: 4px;
+            border-radius: 6px;
+            font-size: 11.5px;
+            font-weight: 700;
+            background: rgba(245, 158, 11, 0.16);
+            border: 1px solid rgba(245, 158, 11, 0.45);
+            color: var(--warning-gold);
+        }}
+        [data-theme="light"] .t4-bear-hint {{
+            background: #FEF3C7;
+            border-color: #F59E0B;
+            color: #92400E;
+        }}
+        .t4-script-pill {{
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            background: var(--bg-elevated);
+            border: 1px solid var(--border-strong);
+            color: var(--primary-blue);
+            padding: 2px 8px;
+            border-radius: 5px;
+            font-size: 11px;
+            font-weight: 600;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: all 0.15s ease;
+        }}
+        .t4-script-pill:hover {{
+            border-color: var(--primary-blue);
+            background: rgba(56, 189, 248, 0.14);
+        }}
+        .t4-script-detail-row td.t4-script-detail-cell {{
+            white-space: normal !important;
+            word-break: break-word;
+            background: var(--panel-surface);
+            color: var(--text-sub);
+            border-left: 3px solid var(--primary-blue);
+            padding: 9px 14px;
+            font-size: 12px;
+            line-height: 1.5;
+            text-align: left;
         }}
 
         table {{
             width: 100%;
             border-collapse: collapse;
-            font-size: 13px;
+            font-size: 12.5px;
             text-align: left;
         }}
         th {{
-            background: #0b0f17;
+            background: var(--bg-elevated);
             color: var(--text-muted);
             font-weight: 600;
-            padding: 11px 14px;
+            padding: 9px 10px;
             border-bottom: 1px solid var(--border-color);
-            font-size: 12px;
+            font-size: 11.5px;
             white-space: nowrap;
         }}
         td {{
-            padding: 12px 14px;
-            border-bottom: 1px solid rgba(48, 54, 61, 0.5);
+            padding: 9px 10px;
+            border-bottom: 1px solid var(--row-border);
             color: var(--text-sub);
             white-space: nowrap;
+        }}
+        .t4-card th {{
+            white-space: normal;
+            line-height: 1.25;
+            padding: 8px 6px;
+        }}
+        .t4-card td {{
+            padding: 8px 6px;
+            font-size: 12px;
         }}
         tr:hover td {{
             background-color: var(--bg-card-hover);
@@ -6539,53 +6909,48 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
         .ticker-jump-link {{
             display: inline-flex;
             align-items: center;
-            gap: 6px;
+            gap: 5px;
             text-decoration: none;
-            padding: 3px 8px;
+            padding: 3px 7px;
             border-radius: 6px;
-            background: rgba(88, 166, 255, 0.08);
-            border: 1px solid rgba(88, 166, 255, 0.22);
+            background: rgba(56, 189, 248, 0.08);
+            border: 1px solid rgba(56, 189, 248, 0.24);
             transition: all 0.15s ease;
         }}
         .ticker-jump-link:hover {{
-            background: rgba(88, 166, 255, 0.2);
+            background: rgba(56, 189, 248, 0.2);
             border-color: var(--primary-blue);
-            transform: translateX(2px);
         }}
         .tk-code {{
             font-weight: 800;
-            font-size: 15px;
-            color: #58a6ff;
+            font-size: 14px;
+            color: var(--primary-blue);
             font-family: 'JetBrains Mono', monospace;
-            letter-spacing: 0.4px;
+            letter-spacing: 0.3px;
         }}
         .tk-jump-icon {{
             font-size: 10px;
-            color: #8b949e;
-            background: rgba(255, 255, 255, 0.06);
+            color: var(--text-muted);
+            background: var(--bar-track);
             padding: 1px 5px;
             border-radius: 4px;
-        }}
-        .ticker-jump-link:hover .tk-jump-icon {{
-            color: #fff;
-            background: rgba(88, 166, 255, 0.35);
         }}
 
         .pct-pill {{
             display: inline-block;
-            font-size: 11px;
+            font-size: 10.5px;
             padding: 1px 5px;
             border-radius: 4px;
-            margin-left: 3px;
+            margin-left: 2px;
         }}
-        .pct-up {{ background: rgba(63, 185, 80, 0.14); color: #3fb950; }}
-        .pct-down {{ background: rgba(248, 81, 73, 0.14); color: #f85149; }}
+        .pct-up {{ background: rgba(16, 185, 129, 0.14); color: var(--neon-green); }}
+        .pct-down {{ background: rgba(239, 68, 68, 0.14); color: var(--risk-red); }}
 
         /* Dual-Layer Win Rate Bar */
         .dual-bar-track {{
-            width: 68px;
+            width: 60px;
             height: 8px;
-            background: rgba(255, 255, 255, 0.08);
+            background: var(--bar-track);
             border-radius: 4px;
             overflow: hidden;
             position: relative;
@@ -6593,105 +6958,108 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
         .dual-bar-pos {{
             position: absolute;
             top: 0; left: 0; bottom: 0;
-            background: rgba(63, 185, 80, 0.45);
+            background: rgba(16, 185, 129, 0.45);
             border-radius: 4px;
         }}
         .dual-bar-touch {{
             position: absolute;
             top: 2px; left: 0; bottom: 2px;
-            background: #58a6ff;
+            background: var(--primary-blue);
             border-radius: 2px;
         }}
 
         /* Badges */
         .badge {{
             display: inline-block;
-            padding: 3px 8px;
+            padding: 3px 7px;
             border-radius: 6px;
             font-size: 11px;
             font-weight: 600;
             white-space: nowrap;
         }}
-        .badge-green {{ background: rgba(63, 185, 80, 0.15); color: #3fb950; border: 1px solid rgba(63, 185, 80, 0.35); }}
-        .badge-blue {{ background: rgba(88, 166, 255, 0.15); color: #58a6ff; border: 1px solid rgba(88, 166, 255, 0.35); }}
-        .badge-purple {{ background: rgba(188, 140, 255, 0.15); color: #bc8cff; border: 1px solid rgba(188, 140, 255, 0.35); }}
-        .badge-gold {{ background: rgba(255, 213, 79, 0.15); color: #ffd54f; border: 1px solid rgba(255, 213, 79, 0.35); }}
-        .badge-red {{ background: rgba(248, 81, 73, 0.15); color: #f85149; border: 1px solid rgba(248, 81, 73, 0.35); }}
+        .badge-green {{ background: rgba(16, 185, 129, 0.14); color: var(--neon-green); border: 1px solid rgba(16, 185, 129, 0.35); }}
+        .badge-blue {{ background: rgba(56, 189, 248, 0.14); color: var(--primary-blue); border: 1px solid rgba(56, 189, 248, 0.35); }}
+        .badge-purple {{ background: rgba(167, 139, 250, 0.14); color: var(--cyber-purple); border: 1px solid rgba(167, 139, 250, 0.35); }}
+        .badge-gold {{ background: rgba(245, 158, 11, 0.14); color: var(--warning-gold); border: 1px solid rgba(245, 158, 11, 0.35); }}
+        .badge-red {{ background: rgba(239, 68, 68, 0.14); color: var(--risk-red); border: 1px solid rgba(239, 68, 68, 0.35); }}
 
         /* Milestone 3: Segmented Dual Ranking Controls */
         .t4-segmented-bar {{
             display: flex;
-            gap: 10px;
-            margin-bottom: 16px;
+            gap: 8px;
+            margin-bottom: 14px;
             flex-wrap: wrap;
         }}
         .t4-seg-btn {{
-            background: rgba(255, 255, 255, 0.05);
+            background: var(--bg-card);
             border: 1px solid var(--border-color);
             color: var(--text-sub);
-            padding: 8px 18px;
+            padding: 7px 15px;
             border-radius: 8px;
-            font-size: 13.5px;
+            font-size: 13px;
             font-weight: 700;
             cursor: pointer;
-            transition: all 0.2s ease;
+            transition: all 0.18s ease;
         }}
         .t4-seg-btn:hover {{
-            background: rgba(88, 166, 255, 0.15);
-            color: #fff;
-            border-color: rgba(88, 166, 255, 0.45);
+            background: rgba(56, 189, 248, 0.14);
+            color: var(--text-main);
+            border-color: var(--primary-blue);
         }}
         .t4-seg-btn.active {{
-            background: linear-gradient(135deg, rgba(88, 166, 255, 0.28), rgba(188, 140, 255, 0.28));
-            border-color: #58a6ff;
-            color: #fff;
-            box-shadow: 0 0 12px rgba(88, 166, 255, 0.35);
+            background: linear-gradient(135deg, rgba(56, 189, 248, 0.22), rgba(167, 139, 250, 0.22));
+            border-color: var(--primary-blue);
+            color: var(--text-main);
         }}
         .t4-card-short {{
             border-left: 4px solid #f85149 !important;
         }}
         .cycle-tab-btn {{
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid var(--border-color);
-            color: var(--text-sub);
-            padding: 5px 12px;
-            border-radius: 6px;
-            font-size: 12px;
-            font-weight: 700;
-            font-family: 'JetBrains Mono', monospace;
-            cursor: pointer;
-            transition: all 0.18s ease;
-        }}
-        .cycle-tab-btn:hover {{
-            background: rgba(88, 166, 255, 0.16);
-            border-color: rgba(88, 166, 255, 0.45);
-            color: #fff;
-        }}
-        .cycle-view-btn {{
-            background: rgba(255, 255, 255, 0.05);
+            background: var(--bg-elevated);
             border: 1px solid var(--border-color);
             color: var(--text-sub);
             padding: 4px 10px;
             border-radius: 6px;
             font-size: 11.5px;
             font-weight: 700;
+            font-family: 'JetBrains Mono', monospace;
             cursor: pointer;
-            transition: all 0.18s ease;
+            transition: all 0.16s ease;
+        }}
+        .cycle-tab-btn:hover {{
+            background: rgba(56, 189, 248, 0.16);
+            border-color: var(--primary-blue);
+            color: var(--text-main);
+        }}
+        .cycle-tab-btn.active {{
+            background: linear-gradient(135deg, rgba(56, 189, 248, 0.22), rgba(167, 139, 250, 0.22));
+            border-color: var(--primary-blue);
+            color: var(--text-main);
+        }}
+        .cycle-view-btn {{
+            background: var(--bg-elevated);
+            border: 1px solid var(--border-color);
+            color: var(--text-sub);
+            padding: 4px 9px;
+            border-radius: 6px;
+            font-size: 11.5px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.16s ease;
         }}
         .cycle-view-btn:hover {{
-            background: rgba(88, 166, 255, 0.15);
-            border-color: rgba(88, 166, 255, 0.4);
-            color: #fff;
+            background: rgba(56, 189, 248, 0.15);
+            border-color: var(--primary-blue);
+            color: var(--text-main);
         }}
         .cycle-view-btn.active {{
-            background: linear-gradient(135deg, rgba(88, 166, 255, 0.28), rgba(188, 140, 255, 0.25));
-            border-color: #58a6ff;
-            color: #fff;
-            box-shadow: 0 0 8px rgba(88, 166, 255, 0.35);
+            background: linear-gradient(135deg, rgba(56, 189, 248, 0.22), rgba(167, 139, 250, 0.22));
+            border-color: var(--primary-blue);
+            color: var(--text-main);
         }}
         .cycle-tool-btn {{
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: var(--bg-elevated);
+            border: 1px solid var(--border-color);
             color: var(--text-sub);
             padding: 3px 8px;
             border-radius: 5px;
@@ -6700,8 +7068,13 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
             transition: all 0.15s ease;
         }}
         .cycle-tool-btn:hover {{
-            background: rgba(255, 255, 255, 0.12);
-            color: #fff;
+            background: rgba(56, 189, 248, 0.14);
+            color: var(--text-main);
+        }}
+        #cycleSymbolSelect {{
+            background: var(--bg-input) !important;
+            color: var(--cyber-purple) !important;
+            border: 1px solid rgba(167, 139, 250, 0.45) !important;
         }}
         .cycle-ladder-item {{
             display: flex;
@@ -6712,7 +7085,7 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
             transition: all 0.15s ease;
         }}
         .cycle-ladder-item:hover {{
-            filter: brightness(1.15);
+            filter: brightness(1.08);
         }}
         .cycle-timeline-card {{
             border-radius: 6px;
@@ -6725,18 +7098,14 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
         }}
         .cycle-timeline-card:hover {{
             transform: translateX(2px);
-            filter: brightness(1.2);
-        }}
-        .cycle-tab-btn.active {{
-            background: linear-gradient(135deg, rgba(88, 166, 255, 0.28), rgba(188, 140, 255, 0.25));
-            border-color: #58a6ff;
-            color: #fff;
-            box-shadow: 0 0 10px rgba(88, 166, 255, 0.35);
         }}
         .badge-orange {{
             background: rgba(255, 148, 77, 0.18);
             color: #ff944d;
             border: 1px solid rgba(255, 148, 77, 0.45);
+        }}
+        [data-theme="light"] .badge-orange {{
+            color: #C2410C;
         }}
 
         /* Two-column layout for Table 1 & Table 3 on ultra-wide screens */
@@ -6749,134 +7118,170 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
         /* Footer */
         .footer {{
             border-top: 1px solid var(--border-color);
-            padding-top: 20px;
-            margin-top: 32px;
+            padding-top: 18px;
+            margin-top: 24px;
             color: var(--text-muted);
             font-size: 12px;
             text-align: center;
             line-height: 1.8;
         }}
+        [data-theme="light"] #siteDisclaimerBanner {{
+            background: #FFFBEB !important;
+            border-color: #FCD34D !important;
+            color: #92400E !important;
+        }}
+        [data-theme="light"] #siteDisclaimerBanner strong {{
+            color: #B45309 !important;
+        }}
 
+        @media (max-width: 1120px) {{
+            .tc-main-grid {{
+                grid-template-columns: 1fr;
+            }}
+            #cycleCanvasWrapper {{
+                min-height: 320px;
+            }}
+        }}
         @media (max-width: 768px) {{
-            body {{ padding: 12px; }}
-            .suite-nav {{ padding: 10px 12px; }}
+            body {{ padding: 10px; }}
+            .suite-nav {{ padding: 8px 10px; }}
             .suite-nav-links {{ width: 100%; display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px; }}
             .suite-link {{ justify-content: center; text-align: center; padding: 6px 8px; font-size: 12px; }}
-            .header-title h1 {{ font-size: 20px; }}
+            .header-title h1 {{ font-size: 19px; }}
             .weather-banner {{ padding: 14px; }}
-            .section-card {{ padding: 14px; }}
+            .section-card {{ padding: 12px; }}
         }}
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- Cross-Radar Unified Suite Navigation -->
+        <!-- Row 1: Unified Top Cross-Navigation Bar + Shared Theme Toggle -->
         <nav class="suite-nav">
             <div class="suite-nav-links">
-                <a href="futu_pro_terminal.html" class="suite-link" style="background: rgba(255,105,0,0.18); border-color: rgba(255,105,0,0.5); color: #ff6900; font-weight: 800;">🐮 看盘主终端</a>
-                <a href="stocks_radar.html" class="suite-link">🎯 核心个股实战雷达</a>
-                <a href="macro_radar.html" class="suite-link">🏛️ 宏观全天候司令塔</a>
-                <a href="backtest_report_5y.html" class="suite-link">🛡️ 5年历史回测对账</a>
-                <a href="predict_radar_5y.html" class="suite-link active">⚡ AI 5年多赛道预测引擎</a>
+                <a href="futu_pro_terminal.html" class="suite-link suite-link-home">🐮 看盘主终端</a>
+                <a href="stocks_radar.html" class="suite-link">🎯 核心个股雷达</a>
+                <a href="macro_radar.html" class="suite-link">🏛️ 宏观司令塔</a>
+                <a href="backtest_report_5y.html" class="suite-link">🛡️ 5Y回测</a>
+                <a href="predict_radar_5y.html" class="suite-link active">⚡ AI 15日推演</a>
             </div>
-            <div class="suite-meta" style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
-                <span>💡 点击表中任意股票代码可直接唤起富途多周期 K 线看盘</span>
-                <span style="font-size: 11px; color: #fbbf24; background: rgba(245, 158, 11, 0.12); border: 1px solid rgba(245, 158, 11, 0.35); padding: 2px 9px; border-radius: 999px; font-weight: 600;">⚠️ 数据与推演仅供参考·不构成投资建议</span>
+            <div class="suite-meta">
+                <span>⚡ {len(all_live)}标的 AI 推演与时空走廊</span>
+                <span>同步于: {kpi.get('sync_time', '')}</span>
+                <span style="font-size: 11px; color: var(--warning-gold); background: rgba(245, 158, 11, 0.12); border: 1px solid rgba(245, 158, 11, 0.35); padding: 2px 8px; border-radius: 999px; font-weight: 600;">⚠️ 数据仅供参考</span>
+                <button type="button" id="btnThemeToggle" class="theme-toggle-btn" onclick="toggleTheme()" title="切换浅色模式" aria-label="切换浅色或深色模式">
+                    <span id="themeToggleIcon">☀️</span>
+                    <span class="theme-toggle-text" id="themeToggleLabel">浅色</span>
+                </button>
             </div>
         </nav>
 
-        <!-- Header -->
-        <header class="header">
-            <div class="header-title">
-                <h1>⚡ AI 美股 5 年多赛道预测雷达 <span style="font-size: 13px; padding: 3px 9px; border-radius: 6px; background: rgba(188,140,255,0.16); color: #bc8cff; border: 1px solid rgba(188,140,255,0.35); font-weight: 700;">V2.0 双轨狙击与时空推演版</span></h1>
-                <p>微软 Qlib 滚动时序长表截面架构 · 7 大高弹性赛道 (28标的) + 7 宏观基准 ETF · 严守 T 日因果律与 5 日 Purge 隔离</p>
-            </div>
-            <div class="header-status">
-                <div class="engine-badge" title="实盘推理采用截至 T-5 的全部已结算历史样本重新拟合，无缝吸收 2026 最新市场微观结构">
-                    🧠 实盘模型: Full-Sample Refit (2021~T-5) · Time-Decay
+        <!-- Row 2: Compact Status Light + Scorecard + Single-Line Macro Banner + Model Details Drawer Toggle -->
+        <div class="compact-status-strip">
+            <div class="compact-status-top">
+                <div class="compact-status-left">
+                    <div class="compact-pill" id="marketRegimeBadge" title="严格基于 T 日全池 MA20 市场宽度与 SPY/QQQ 均线斜率判定的客观牛熊体制门禁">
+                        <span style="color: var(--text-muted); font-weight: 600;">体制门禁 · MA20宽度</span>
+                        <span style="color: {_regime_color};">{_regime_cn} ({_breadth_pct:.1f}%)</span>
+                    </div>
+                    <div id="liveScorecardBadge" class="compact-pill" style="background: {_sc_bg}; border-color: {_sc_border}; color: {_sc_text_color};" title="近 7 日 / 近 30 日严格样本外实盘命中率（低于 45% 自动黄灯提醒降权）">
+                        📋 实盘成绩单: 近7日 {_sc_7d:.1f}% · 近30日 {_sc_30d:.1f}%{_sc_warn_html}
+                    </div>
+                    <span class="compact-pill">宏观: <strong style="color: {weather_accent};">{weather.get('status', '☀️ 晴天做多')}</strong></span>
+                    <span class="compact-pill" style="color: var(--neon-green);"><span class="pulse-dot"></span><span>{kpi.get('data_mode', '实时在线')}</span></span>
                 </div>
-                <div id="liveScorecardBadge" class="engine-badge" style="background: {_sc_bg}; border-color: {_sc_border}; color: {_sc_text_color};" title="近 7 日 / 近 30 日严格样本外实盘命中率（低于 45% 自动黄灯提醒降权）">
-                    📋 实盘成绩单: 近7日 {_sc_7d:.1f}% · 近30日 {_sc_30d:.1f}%{_sc_warn_html}
-                </div>
-                <div class="live-badge">
-                    <span class="pulse-dot"></span>
-                    <span>{kpi.get('data_mode', '实时在线')}</span>
-                </div>
-                <span style="font-size: 12px; color: var(--text-muted);">同步于: {kpi.get('sync_time', '')}</span>
+                <button type="button" id="btnModelMacroDrawer" class="drawer-toggle-btn" onclick="toggleCollapsibleDrawer('modelMacroDrawer', this, '🔍 展开模型参数与宏观详情 ▾', '🔼 收起模型参数与宏观详情 ▴')">🔍 展开模型参数与宏观详情 ▾</button>
             </div>
-        </header>
-
-        <!-- Hero KPI Ribbon -->
-        <div class="kpi-grid">
-            <div class="kpi-card green">
-                <div class="kpi-label">高置信正收益胜率 (>=60% 阈值)</div>
-                <div class="kpi-val" style="color: var(--neon-green);">{f"{kpi.get('high_conviction_win_rate'):.1f}%" if kpi.get('high_conviction_win_rate') is not None else "--"}</div>
-                <div class="kpi-sub">2024-2026 样本外实测 · 含止盈触轨与 5 日正收益交割</div>
-            </div>
-            <div class="kpi-card gold">
-                <div class="kpi-label">高置信期望盈亏比 (Profit Factor)</div>
-                <div class="kpi-val" style="color: var(--warning-gold);">{f"{kpi.get('profit_factor'):.2f}" if kpi.get('profit_factor') is not None else "--"}</div>
-                <div class="kpi-sub">分段软压缩 ATR 动态止盈止损轨 · 真实交割收益口径</div>
-            </div>
-            <div class="kpi-card purple">
-                <div class="kpi-label">领航 Alpha 赛道</div>
-                <div class="kpi-val" style="font-size: 20px; color: var(--cyber-purple);">{kpi.get('top_sector') or '--'}</div>
-                <div class="kpi-sub">综合样本外 PF 与平均实现收益评定 · 赋能表 4 先验校准</div>
-            </div>
-            <div class="kpi-card blue">
-                <div class="kpi-label">第一核心驱动因子</div>
-                <div class="kpi-val" style="font-size: 20px; color: var(--primary-blue); font-family: 'JetBrains Mono', monospace;">{kpi.get('top_feature') or '--'}</div>
-                <div class="kpi-sub">colsample=0.65 & max_bin=63 树分裂防垄断正则化</div>
+            <div class="predict-macro-slim">
+                {macro_calendar_banner_html}
             </div>
         </div>
 
-        {flight_banner_html}
-        {breadth_banner_html}
-        {macro_calendar_banner_html}
-        <!-- Macro Weather Card -->
-        <div class="weather-banner">
-            <div class="weather-left">
-                <div class="weather-icon">{weather.get('status', '☀️ 晴天做多')[:2]}</div>
-                <div class="weather-info">
-                    <h2>当前宏观环境水温: <span style="color: {weather_accent};">{weather.get('status', '☀️ 晴天做多')}</span></h2>
-                    <p>{weather.get('desc', '多头共振 · 积极进攻')} · <span style="color: #8b949e;">表 4 决策指令已与当前宏观水温及 50% 原始胜率底线强制联动</span></p>
+        <!-- Default-Collapsed Hardcore Model Parameters & 7-Stat Macro Details Drawer -->
+        <div id="modelMacroDrawer" style="display: none; margin-bottom: 14px;">
+            <header class="header">
+                <div class="header-title">
+                    <h1>⚡ AI 美股 5 年多赛道预测雷达 <span style="font-size: 13px; padding: 3px 9px; border-radius: 6px; background: rgba(167,139,250,0.16); color: var(--cyber-purple); border: 1px solid rgba(167,139,250,0.35); font-weight: 700;">V2.0 双轨狙击与时空推演版</span></h1>
+                    <p>微软 Qlib 滚动时序长表截面架构 · 全池多赛道 ({len(all_live)}标的) + 宏观基准 ETF · 严守 T 日因果律与 5 日 Purge 隔离</p>
+                </div>
+                <div class="header-status">
+                    <div class="engine-badge" title="实盘推理采用截至 T-5 的全部已结算历史样本重新拟合，无缝吸收 2026 最新市场微观结构">
+                        🧠 实盘模型: Full-Sample Refit (2021~T-5) · Time-Decay
+                    </div>
+                </div>
+            </header>
+
+            <!-- Hero KPI Ribbon -->
+            <div class="kpi-grid">
+                <div class="kpi-card green">
+                    <div class="kpi-label">高置信正收益胜率 (>=60% 阈值)</div>
+                    <div class="kpi-val" style="color: var(--neon-green);">{f"{kpi.get('high_conviction_win_rate'):.1f}%" if kpi.get('high_conviction_win_rate') is not None else "--"}</div>
+                    <div class="kpi-sub">2024-2026 样本外实测 · 含止盈触轨与 5 日正收益交割</div>
+                </div>
+                <div class="kpi-card gold">
+                    <div class="kpi-label">高置信期望盈亏比 (Profit Factor)</div>
+                    <div class="kpi-val" style="color: var(--warning-gold);">{f"{kpi.get('profit_factor'):.2f}" if kpi.get('profit_factor') is not None else "--"}</div>
+                    <div class="kpi-sub">分段软压缩 ATR 动态止盈止损轨 · 真实交割收益口径</div>
+                </div>
+                <div class="kpi-card purple">
+                    <div class="kpi-label">领航 Alpha 赛道</div>
+                    <div class="kpi-val" style="font-size: 20px; color: var(--cyber-purple);">{kpi.get('top_sector') or '--'}</div>
+                    <div class="kpi-sub">综合样本外 PF 与平均实现收益评定 · 赋能表 4 先验校准</div>
+                </div>
+                <div class="kpi-card blue">
+                    <div class="kpi-label">第一核心驱动因子</div>
+                    <div class="kpi-val" style="font-size: 20px; color: var(--primary-blue); font-family: 'JetBrains Mono', monospace;">{kpi.get('top_feature') or '--'}</div>
+                    <div class="kpi-sub">colsample=0.65 & max_bin=63 树分裂防垄断正则化</div>
                 </div>
             </div>
-            <div class="weather-stats">
-                <div class="weather-stat-pill">
-                    <span class="lbl">QQQ MA50 乖离</span>
-                    <span class="val" style="color: {'#3fb950' if weather.get('qqqm_bias', 0) >= 0 else '#f85149'};">{weather.get('qqqm_bias', 0.0):+.2f}%</span>
+
+            {flight_banner_html}
+            {breadth_banner_html}
+
+            <!-- Macro Weather Card -->
+            <div class="weather-banner">
+                <div class="weather-left">
+                    <div class="weather-icon">{weather.get('status', '☀️ 晴天做多')[:2]}</div>
+                    <div class="weather-info">
+                        <h2>当前宏观环境水温: <span style="color: {weather_accent};">{weather.get('status', '☀️ 晴天做多')}</span></h2>
+                        <p>{weather.get('desc', '多头共振 · 积极进攻')} · <span style="color: var(--text-muted);">表 4 决策指令已与当前宏观水温及 50% 原始胜率底线强制联动</span></p>
+                    </div>
                 </div>
-                <div class="weather-stat-pill">
-                    <span class="lbl">SMH MA50 乖离</span>
-                    <span class="val" style="color: {'#3fb950' if weather.get('smh_bias', 0) >= 0 else '#f85149'};">{weather.get('smh_bias', 0.0):+.2f}%</span>
-                </div>
-                <div class="weather-stat-pill">
-                    <span class="lbl">VIXY 60日脉冲</span>
-                    <span class="val" style="color: {'#f85149' if weather.get('vixy_pos', 0.5) >= 0.75 else '#3fb950'};">{weather.get('vixy_pos', 0.5):.2f}</span>
-                </div>
-                <div class="weather-stat-pill">
-                    <span class="lbl">硬件/软件轮动 (SMH/IGV)</span>
-                    <span class="val" style="color: {'#58a6ff' if weather.get('smh_igv', 0) >= 0 else '#bc8cff'};">{weather.get('smh_igv', 0.0):+.2f}%</span>
-                </div>
-                <div class="weather-stat-pill" title="防御避险组 (KO/PEP/MCD/LLY/MRNA/TLT/GLD/VIXY) 相对进攻科技组 (QQQ/SMH/NVDA/SOXL) 超额走强背离度 (预警阈值 +2.2%)">
-                    <span class="lbl">防御/科技背离 (Flight)</span>
-                    <span class="val" style="color: {'#f85149' if (flight_info and flight_info.get('is_alert')) else ('#ffd54f' if float((flight_info or {}).get('flight_score', 0.0)) >= 1.2 else '#3fb950')};">{float((flight_info or {}).get('flight_score', 0.0)):+.2f}% {'🚨' if (flight_info and flight_info.get('is_alert')) else '🛡️'}</span>
-                </div>
-                <div class="weather-stat-pill" title="传统行业龙头 (JPM/XOM/WMT/CAT/KO/LLY/DIA) vs 科技 (QQQ/SMH/NVDA) 跨行业市场广度">
-                    <span class="lbl">跨行业广度 (传统vs科技)</span>
-                    <span class="val" id="predictBreadthVal" style="font-size: 13px; color: {breadth_info.get('color', '#9ca3af')};">{breadth_info.get('short_badge', '🛡️ 广度均衡')}</span>
-                </div>
-                <div class="weather-stat-pill" id="marketRegimeBadge" title="严格基于 T 日全池 MA20 市场宽度与 SPY/QQQ 均线斜率判定的客观牛熊体制门禁">
-                    <span class="lbl">体制门禁 · MA20宽度</span>
-                    <span class="val" style="font-size: 13px; color: {_regime_color};">{_regime_cn} ({_breadth_pct:.1f}%)</span>
+                <div class="weather-stats">
+                    <div class="weather-stat-pill">
+                        <span class="lbl">QQQ MA50 乖离</span>
+                        <span class="val" style="color: {'#3fb950' if weather.get('qqqm_bias', 0) >= 0 else '#f85149'};">{weather.get('qqqm_bias', 0.0):+.2f}%</span>
+                    </div>
+                    <div class="weather-stat-pill">
+                        <span class="lbl">SMH MA50 乖离</span>
+                        <span class="val" style="color: {'#3fb950' if weather.get('smh_bias', 0) >= 0 else '#f85149'};">{weather.get('smh_bias', 0.0):+.2f}%</span>
+                    </div>
+                    <div class="weather-stat-pill">
+                        <span class="lbl">VIXY 60日脉冲</span>
+                        <span class="val" style="color: {'#f85149' if weather.get('vixy_pos', 0.5) >= 0.75 else '#3fb950'};">{weather.get('vixy_pos', 0.5):.2f}</span>
+                    </div>
+                    <div class="weather-stat-pill">
+                        <span class="lbl">硬件/软件轮动 (SMH/IGV)</span>
+                        <span class="val" style="color: {'#58a6ff' if weather.get('smh_igv', 0) >= 0 else '#bc8cff'};">{weather.get('smh_igv', 0.0):+.2f}%</span>
+                    </div>
+                    <div class="weather-stat-pill" title="防御避险组 (KO/PEP/MCD/LLY/MRNA/TLT/GLD/VIXY) 相对进攻科技组 (QQQ/SMH/NVDA/SOXL) 超额走强背离度 (预警阈值 +2.2%)">
+                        <span class="lbl">防御/科技背离 (Flight)</span>
+                        <span class="val" style="color: {'#f85149' if (flight_info and flight_info.get('is_alert')) else ('#ffd54f' if float((flight_info or {}).get('flight_score', 0.0)) >= 1.2 else '#3fb950')};">{float((flight_info or {}).get('flight_score', 0.0)):+.2f}% {'🚨' if (flight_info and flight_info.get('is_alert')) else '🛡️'}</span>
+                    </div>
+                    <div class="weather-stat-pill" title="传统行业龙头 (JPM/XOM/WMT/CAT/KO/LLY/DIA) vs 科技 (QQQ/SMH/NVDA) 跨行业市场广度">
+                        <span class="lbl">跨行业广度 (传统vs科技)</span>
+                        <span class="val" id="predictBreadthVal" style="font-size: 13px; color: {breadth_info.get('color', '#9ca3af')};">{breadth_info.get('short_badge', '🛡️ 广度均衡')}</span>
+                    </div>
+                    <div class="weather-stat-pill" title="严格基于 T 日全池 MA20 市场宽度与 SPY/QQQ 均线斜率判定的客观牛熊体制门禁">
+                        <span class="lbl">体制门禁 · MA20宽度</span>
+                        <span class="val" style="font-size: 13px; color: {_regime_color};">{_regime_cn} ({_breadth_pct:.1f}%)</span>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- Section: Time-Cycle & Historical Analog Projection (时空周期与未来路径推演图 - 交互增强版) -->
-        <div class="section-card" id="timeCycleSection" style="margin-bottom: 24px;">
-            <div class="section-header" style="justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+        <!-- Section: Time-Cycle & Historical Analog Projection (第一屏直出核心推演主图) -->
+        <div class="section-card" id="timeCycleSection" style="margin-bottom: 18px;">
+            <div class="section-header" style="justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
                 <div>
                     <h3 style="display: flex; align-items: center; gap: 8px;">
                         <span>🔮 核心标的时空周期与未来 15 日路径推演</span>
@@ -6897,7 +7302,7 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
                     <button class="cycle-tab-btn" onclick="switchCycleSymbol('KORU')">KORU</button>
                     <button class="cycle-tab-btn" onclick="switchCycleSymbol('BTC-USD')">BTC-USD (比特币)</button>
                     <button class="cycle-tab-btn" onclick="switchCycleSymbol('XAUUSD')">XAUUSD (伦敦金)</button>
-                    <select id="cycleSymbolSelect" onchange="switchCycleSymbol(this.value)" style="background: #0b0e14; color: #e2c5ff; border: 1px solid rgba(188, 140, 255, 0.45); border-radius: 6px; padding: 4px 8px; font-size: 12px; font-weight: 700; cursor: pointer; outline: none;" title="切换核心标的时空推演图">
+                    <select id="cycleSymbolSelect" onchange="switchCycleSymbol(this.value)" style="border-radius: 6px; padding: 4px 8px; font-size: 12px; font-weight: 700; cursor: pointer; outline: none;" title="切换核心标的时空推演图">
                         <option value="SOXL">全部核心标的...</option>
                         <option value="SOXL">SOXL (半导体3倍做多)</option>
                         <option value="SOXX">SOXX (半导体1倍ETF)</option>
@@ -6926,16 +7331,16 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
                 </div>
             </div>
             
-            <div style="display: grid; grid-template-columns: 1fr 380px; gap: 16px; margin-top: 14px;">
-                <!-- Left: Interactive Canvas Container -->
-                <div style="background: rgba(7, 10, 15, 0.85); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 14px; position: relative; display: flex; flex-direction: column;">
+            <div class="tc-main-grid">
+                <!-- Left: Interactive Canvas Container (Stretches to match right cards) -->
+                <div class="tc-chart-pane">
                     <!-- Chart Control Toolbar -->
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; flex-wrap: wrap; gap: 8px;">
-                        <div style="display: flex; gap: 6px; align-items: center;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; flex-wrap: wrap; gap: 8px;">
+                        <div style="display: flex; gap: 6px; align-items: center; flex-wrap: wrap;">
                             <span style="font-size: 12px; color: var(--text-muted); font-weight: 600;">视野模式:</span>
                             <button class="cycle-view-btn active" id="btnViewFocus" onclick="setTimeCycleViewMode('focus')" title="聚焦放大未来 15 日推演波段，自适应 Y 轴缩放，细节最清晰">🔍 聚焦推演波段 (推荐)</button>
                             <button class="cycle-view-btn" id="btnViewFull" onclick="setTimeCycleViewMode('full')" title="显示过去 20 天走势与未来 15 日完整大局">🌐 全景大局 (35天)</button>
-                            <span id="cycleT15BadgeHeader" style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 4px; background: rgba(56, 189, 248, 0.12); border: 1px solid rgba(56, 189, 248, 0.35); color: #38bdf8; display: none; margin-left: 6px;"></span>
+                            <span id="cycleT15BadgeHeader" style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 4px; background: rgba(56, 189, 248, 0.12); border: 1px solid rgba(56, 189, 248, 0.35); color: var(--primary-blue); display: none; margin-left: 4px;"></span>
                         </div>
                         <div style="display: flex; gap: 6px; align-items: center;">
                             <button class="cycle-tool-btn" onclick="zoomTimeCycle(1.2)" title="放大时间轴">➕ 放大</button>
@@ -6945,50 +7350,50 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
                     </div>
 
                     <!-- Canvas Wrapper -->
-                    <div id="cycleCanvasWrapper" style="width: 100%; height: 320px; position: relative; cursor: grab; user-select: none; touch-action: none; overflow: hidden; border-radius: 8px; background: rgba(0,0,0,0.25);">
+                    <div id="cycleCanvasWrapper">
                         <canvas id="cycleChartCanvas" style="width: 100%; height: 100%; display: block;"></canvas>
                         <!-- Floating HUD Tooltip -->
-                        <div id="cycleTooltip" style="position: absolute; display: none; pointer-events: none; z-index: 20; background: rgba(13, 17, 23, 0.94); border: 1px solid rgba(88, 166, 255, 0.5); border-radius: 8px; padding: 8px 12px; font-family: 'JetBrains Mono', monospace; font-size: 11.5px; box-shadow: 0 8px 24px rgba(0,0,0,0.6); backdrop-filter: blur(8px); min-width: 190px;"></div>
+                        <div id="cycleTooltip"></div>
                     </div>
 
                     <!-- Bottom Legend and Operation Hint -->
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px; font-size: 11.5px; color: var(--text-muted); padding-top: 8px; border-top: 1px solid rgba(255,255,255,0.06); flex-wrap: wrap; gap: 8px;">
-                        <div style="display: flex; gap: 14px; align-items: center;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px; font-size: 11px; color: var(--text-muted); padding-top: 7px; border-top: 1px solid var(--border-color); flex-wrap: wrap; gap: 8px;">
+                        <div style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap;">
                             <span style="display: flex; align-items: center; gap: 4px;"><span style="display:inline-block; width:12px; height:3px; background:#38bdf8; border-radius:2px;"></span> 历史收盘价</span>
                             <span style="display: flex; align-items: center; gap: 4px;"><span style="display:inline-block; width:12px; height:0px; border-top:2px dashed #ff944d;"></span> 15日融合推演路径</span>
                             <span style="display: flex; align-items: center; gap: 4px;"><span style="display:inline-block; width:10px; height:10px; background:rgba(88,166,255,0.35); border:1px solid #58a6ff; border-radius:2px;"></span> 周期低点回踩窗</span>
                             <span style="display: flex; align-items: center; gap: 4px;"><span style="display:inline-block; width:10px; height:10px; background:rgba(227,179,65,0.35); border:1px solid #e3b341; border-radius:2px;"></span> 高位强势休整窗</span>
                             <span style="display: flex; align-items: center; gap: 4px;"><span style="display:inline-block; width:10px; height:10px; background:rgba(248,81,73,0.35); border:1px solid #f85149; border-radius:2px;"></span> 周期阻力高点窗</span>
                         </div>
-                        <span style="color: #8b949e; font-size: 11px;">🖐️ <strong>交互指南:</strong> 鼠标按住图表任意位置可<strong>自由左右拖拽</strong>，滚轮可缩放，移动光标可精确定位</span>
+                        <span style="color: var(--text-muted); font-size: 11px;">🖐️ 拖拽/滚轮缩放 · 光标悬停查价</span>
                     </div>
                 </div>
 
                 <!-- Right: Tactical Dashboard -->
-                <div style="display: flex; flex-direction: column; gap: 10px;">
+                <div style="display: flex; flex-direction: column; gap: 9px;">
                     <!-- Card 1: Header & Regime Analog Card -->
-                    <div style="background: rgba(13, 17, 23, 0.85); border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; padding: 12px 14px;">
-                        <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 8px; margin-bottom: 8px;">
+                    <div class="tc-subcard">
+                        <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--border-color); padding-bottom: 6px; margin-bottom: 6px;">
                             <div>
-                                <span id="cycleTickerTitle" style="font-size: 20px; font-weight: 800; color: #58a6ff; font-family: 'JetBrains Mono', monospace;">--</span>
+                                <span id="cycleTickerTitle" style="font-size: 20px; font-weight: 800; color: var(--primary-blue); font-family: 'JetBrains Mono', monospace;">--</span>
                                 <span id="cycleTickerSub" style="font-size: 12px; color: var(--text-sub); margin-left: 6px;">加载中...</span>
                             </div>
-                            <span id="cycleCurPrice" style="font-size: 20px; font-weight: 800; color: #f0f6fc; font-family: 'JetBrains Mono', monospace;">--</span>
+                            <span id="cycleCurPrice" style="font-size: 20px; font-weight: 800; color: var(--text-main); font-family: 'JetBrains Mono', monospace;">--</span>
                         </div>
-                        <div style="font-size: 12px; color: var(--text-sub); line-height: 1.5;">
+                        <div style="font-size: 12px; color: var(--text-sub); line-height: 1.45;">
                             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
                                 <span>🎯 5年最佳相似历史形态:</span>
-                                <span id="cycleAnalogSim" style="color: #3fb950; font-weight: 800; font-family: monospace;">--%</span>
+                                <span id="cycleAnalogSim" style="color: var(--neon-green); font-weight: 800; font-family: monospace;">--%</span>
                             </div>
                             <div id="cycleAnalogPeriod" style="color: #ffd54f; font-weight: 700; font-family: monospace; font-size: 11.5px; background: rgba(255,213,79,0.08); padding: 4px 8px; border-radius: 4px; border: 1px solid rgba(255,213,79,0.2);">--</div>
                         </div>
                     </div>
 
                     <!-- Card 2: S/R Level Ladder (攻防点位天梯) -->
-                    <div style="background: rgba(13, 17, 23, 0.85); border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; padding: 12px 14px;">
-                        <div style="font-size: 12px; font-weight: 700; color: #cbd5e1; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center;">
+                    <div class="tc-subcard">
+                        <div style="font-size: 12px; font-weight: 700; color: var(--text-main); margin-bottom: 6px; display: flex; justify-content: space-between; align-items: center;">
                             <span>🎯 多级攻防点位天梯</span>
-                            <span style="font-size: 10.5px; color: #8b949e;">软ATR+POC动态锚定</span>
+                            <span style="font-size: 10.5px; color: var(--text-muted);">软ATR+POC动态锚定</span>
                         </div>
                         <div id="cycleLevelsLadder" style="display: flex; flex-direction: column; gap: 4px; font-family: 'JetBrains Mono', monospace; font-size: 11px;">
                             <!-- Dynamic levels generated by JS -->
@@ -6996,39 +7401,42 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
                     </div>
 
                     <!-- Card 3: Tactical Windows Timeline (关键变盘时间轴) -->
-                    <div style="background: rgba(13, 17, 23, 0.85); border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; padding: 12px 14px; flex: 1; display: flex; flex-direction: column;">
-                        <div style="font-size: 12px; font-weight: 700; color: #cbd5e1; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center;">
+                    <div class="tc-subcard" style="flex: 1; display: flex; flex-direction: column;">
+                        <div style="font-size: 12px; font-weight: 700; color: var(--text-main); margin-bottom: 6px; display: flex; justify-content: space-between; align-items: center;">
                             <span>⏳ 未来 15 日关键变盘节点</span>
                             <span style="font-size: 10.5px; color: #ff944d;">高危反转时间窗</span>
                         </div>
-                        <div id="cycleWindowsList" style="flex: 1; overflow-y: auto; max-height: 150px; display: flex; flex-direction: column; gap: 6px; padding-right: 2px;">
+                        <div id="cycleWindowsList" style="flex: 1; overflow-y: auto; max-height: 168px; display: flex; flex-direction: column; gap: 5px; padding-right: 2px;">
                             <!-- Dynamic timeline cards -->
                         </div>
                     </div>
-
-                    <!-- Card 4: Trader Principle -->
-                    <div style="background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; padding: 8px 10px; font-size: 11px; color: #8b949e; line-height: 1.4;">
-                        💡 <strong>操盘手心法:</strong> 路径推演基于历史数学共振规律，实盘严守 S1/S2 支撑回踩与 R1 压力位纪律，以跌破止损位为最高防守准则。
-                    </div>
                 </div>
+            </div>
+
+            <!-- Bottom Compact Principle Bar (Aligned Full-Width) -->
+            <div class="tc-principle-bar">
+                💡 <strong>操盘手心法:</strong> 路径推演基于历史数学共振规律，实盘严守 S1/S2 支撑回踩与 R1 压力位纪律，以跌破止损位为最高防守准则。
             </div>
         </div>
 
         <!-- Table 4: Segmented Dual-Ranking Architecture (Milestone M3) -->
         <div class="t4-segmented-bar">
-            <button class="t4-seg-btn active" data-view="dual" onclick="switchT4View('dual')">⚔️ 多空双向大榜 (Dual Top 5)</button>
-            <button class="t4-seg-btn" data-view="long" onclick="switchT4View('long')">🔥 做多高胜率 Top 5 (Long Pool)</button>
-            <button class="t4-seg-btn" data-view="short" onclick="switchT4View('short')">🩸 做空高胜率 Top 5 (Short Pool)</button>
-            <button class="t4-seg-btn" data-view="all" onclick="switchT4View('all')">🌐 全域 {len(all_live)} 标的全景截面</button>
+            <button class="t4-seg-btn{' active' if _default_t4_view == 'dual' else ''}" data-view="dual" onclick="switchT4View('dual')">⚔️ 多空双向大榜 (Dual Top 5)</button>
+            <button class="t4-seg-btn{' active' if _default_t4_view == 'long' else ''}" data-view="long" onclick="switchT4View('long')">🔥 做多高胜率 Top 5 (Long Pool)</button>
+            <button class="t4-seg-btn{' active' if _default_t4_view == 'short' else ''}" data-view="short" onclick="switchT4View('short')">🩸 做空高胜率 Top 5 (Short Pool)</button>
+            <button class="t4-seg-btn{' active' if _default_t4_view == 'all' else ''}" data-view="all" onclick="switchT4View('all')">🌐 全域 {len(all_live)} 标的全景截面</button>
         </div>
 
-        <div id="t4-view-container">
+        <div id="t4-view-container" class="{'bear-regime' if _is_bear_defense else ''}">
             <!-- Card 4-A: 做多胜率 Top 5 (Bullish Conviction) -->
             <div class="section-card t4-card t4-card-long" id="cardT4Long">
                 <div class="section-header">
                     <div>
                         <h3 id="t4-long-title">🔥 表 4-A: 最新交易日 AI 预测做多胜率排行榜 Top 5 (Bullish Conviction)</h3>
-                        <span class="sub" id="t4-long-sub">5日触顶止盈概率领先 · 赛道先验正向校准 · 严格剔除破位飞刀与暴跌熔断</span>
+                        <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 6px; margin-top: 2px;">
+                            <span class="sub" id="t4-long-sub">5日触顶止盈概率领先 · 赛道先验正向校准 · 严格剔除破位飞刀与暴跌熔断</span>
+                            {_t4_bear_hint_html}
+                        </div>
                     </div>
                     <div class="t4-controls-right" id="t4-long-controls">
                         <input type="text" id="t4-search" class="search-input" placeholder="🔍 搜索代码 (如 NVDA)..." oninput="applyT4Filters()">
@@ -7094,77 +7502,85 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
             </div>
         </div>
 
-        <!-- Table 2: 7 大赛道样本外预测表现归因表 -->
-        <div class="section-card">
-            <div class="section-header">
-                <h3>🏆 表 2: 7 大核心高弹性赛道样本外预测表现归因表 (7 Sectors OOS Attribution · 点击行可联动筛选表 4)</h3>
-                <span class="sub">基于 2024-2026 样本外高置信信号 (>=60%) 期望盈亏比 (PF) 与平均实现收益综合评星 · 小样本 (&lt;10笔) 强制封顶 3 星</span>
-            </div>
-            <table>
-                <thead>
-                    <tr>
-                        <th style="text-align: center;">#</th>
-                        <th>赛道名称 (点击筛选)</th>
-                        <th style="text-align: center;">标的数</th>
-                        <th style="text-align: right;">OOS 评估样本</th>
-                        <th style="text-align: right;">高置信信号数 (>=60%)</th>
-                        <th style="text-align: right;">高置信正收益胜率 (触轨率)</th>
-                        <th style="text-align: right;">平均实现收益 %</th>
-                        <th style="text-align: right;">平均盈亏比</th>
-                        <th style="text-align: right;">期望盈亏比 PF (校准乘数)</th>
-                        <th style="text-align: center;">AI Alpha 机构评级</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {t2_rows_html}
-                </tbody>
-            </table>
+        <!-- Default-Collapsed Historical OOS Attribution & Calibration Drawer -->
+        <div class="drawer-bar">
+            <button type="button" id="btnBacktestDrawer" class="drawer-toggle-btn" onclick="toggleCollapsibleDrawer('backtestDetailsDrawer', this, '🔍 展开 5 年历史回测归因详情 ▾', '🔼 收起 5 年历史回测归因详情 ▴')">🔍 展开 5 年历史回测归因详情 ▾</button>
+            <span class="drawer-bar-hint">含表 2（7 大赛道 OOS 归因 · 点击可筛选表 4）、表 1（分位数校准）与表 3（LightGBM 特征重要度 Top 15）</span>
         </div>
 
-        <!-- Table 1: 样本外分位数校准表 -->
-        <div class="section-card">
-            <div class="section-header">
-                <h3>📊 表 1: 样本外分位数校准表 (Quantile Calibration Table - Expanding OOS 2024-2026)</h3>
-                <span class="sub">严格验证预测概率单调递增性 · 同时披露真实交割正收益胜率与 5 日触轨止盈率</span>
+        <div id="backtestDetailsDrawer" style="display: none;">
+            <!-- Table 2: 7 大赛道样本外预测表现归因表 -->
+            <div class="section-card">
+                <div class="section-header">
+                    <h3>🏆 表 2: 7 大核心高弹性赛道样本外预测表现归因表 (7 Sectors OOS Attribution · 点击行可联动筛选表 4)</h3>
+                    <span class="sub">基于 2024-2026 样本外高置信信号 (>=60%) 期望盈亏比 (PF) 与平均实现收益综合评星 · 小样本 (&lt;10笔) 强制封顶 3 星</span>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="text-align: center;">#</th>
+                            <th>赛道名称 (点击筛选)</th>
+                            <th style="text-align: center;">标的数</th>
+                            <th style="text-align: right;">OOS 评估样本</th>
+                            <th style="text-align: right;">高置信信号数 (>=60%)</th>
+                            <th style="text-align: right;">高置信正收益胜率 (触轨率)</th>
+                            <th style="text-align: right;">平均实现收益 %</th>
+                            <th style="text-align: right;">平均盈亏比</th>
+                            <th style="text-align: right;">期望盈亏比 PF (校准乘数)</th>
+                            <th style="text-align: center;">AI Alpha 机构评级</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {t2_rows_html}
+                    </tbody>
+                </table>
             </div>
-            <table>
-                <thead>
-                    <tr>
-                        <th>预测置信度档位</th>
-                        <th style="text-align: right;">触发历史样本数</th>
-                        <th style="text-align: right;">正收益胜率 (触轨止盈率)</th>
-                        <th style="text-align: right;">平均实现收益 %</th>
-                        <th style="text-align: right;">平均盈亏比 (Win/Loss)</th>
-                        <th style="text-align: right;">期望盈亏比 (PF)</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {t1_rows_html}
-                </tbody>
-            </table>
-        </div>
 
-        <!-- Table 3: LightGBM 特征重要度 Top 15 -->
-        <div class="section-card">
-            <div class="section-header">
-                <h3>📈 表 3: LightGBM 特征重要度 (Feature Importance Gain) Top 15 排行榜</h3>
-                <span class="sub">横截面分位数排名 + 连续超额收益复合因子 · 抑制宏观特征分裂垄断，提升个股微观结构权重</span>
+            <!-- Table 1: 样本外分位数校准表 -->
+            <div class="section-card">
+                <div class="section-header">
+                    <h3>📊 表 1: 样本外分位数校准表 (Quantile Calibration Table - Expanding OOS 2024-2026)</h3>
+                    <span class="sub">严格验证预测概率单调递增性 · 同时披露真实交割正收益胜率与 5 日触轨止盈率</span>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>预测置信度档位</th>
+                            <th style="text-align: right;">触发历史样本数</th>
+                            <th style="text-align: right;">正收益胜率 (触轨止盈率)</th>
+                            <th style="text-align: right;">平均实现收益 %</th>
+                            <th style="text-align: right;">平均盈亏比 (Win/Loss)</th>
+                            <th style="text-align: right;">期望盈亏比 (PF)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {t1_rows_html}
+                    </tbody>
+                </table>
             </div>
-            <table>
-                <thead>
-                    <tr>
-                        <th style="text-align: center;">#</th>
-                        <th>特征标识</th>
-                        <th style="text-align: center;">特征维度分类</th>
-                        <th style="text-align: right;">Gain 总贡献</th>
-                        <th style="text-align: right;">贡献占比 %</th>
-                        <th>量化经济学逻辑与实盘解读</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {t3_rows_html}
-                </tbody>
-            </table>
+
+            <!-- Table 3: LightGBM 特征重要度 Top 15 -->
+            <div class="section-card">
+                <div class="section-header">
+                    <h3>📈 表 3: LightGBM 特征重要度 (Feature Importance Gain) Top 15 排行榜</h3>
+                    <span class="sub">横截面分位数排名 + 连续超额收益复合因子 · 抑制宏观特征分裂垄断，提升个股微观结构权重</span>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="text-align: center;">#</th>
+                            <th>特征标识</th>
+                            <th style="text-align: center;">特征维度分类</th>
+                            <th style="text-align: right;">Gain 总贡献</th>
+                            <th style="text-align: right;">贡献占比 %</th>
+                            <th>量化经济学逻辑与实盘解读</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {t3_rows_html}
+                    </tbody>
+                </table>
+            </div>
         </div>
 
         <!-- Footer -->
@@ -7179,9 +7595,76 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
     </div>
 
     <script>
+        function getCurrentTheme() {{
+            const attr = document.documentElement.getAttribute('data-theme');
+            if (attr === 'light' || attr === 'dark') return attr;
+            try {{
+                return localStorage.getItem('futu_theme') === 'light' ? 'light' : 'dark';
+            }} catch (e) {{
+                return 'dark';
+            }}
+        }}
+
+        function updateThemeToggleUI(theme) {{
+            const isLight = (theme === 'light');
+            const icon = document.getElementById('themeToggleIcon');
+            const label = document.getElementById('themeToggleLabel');
+            const btn = document.getElementById('btnThemeToggle');
+            const meta = document.getElementById('metaThemeColor');
+            if (icon) icon.innerText = isLight ? '🌙' : '☀️';
+            if (label) label.innerText = isLight ? '深色' : '浅色';
+            if (btn) btn.title = isLight ? '切换到深色模式' : '切换到浅色模式';
+            if (meta) meta.setAttribute('content', isLight ? '#F4F6F9' : '#0B0F19');
+        }}
+
+        function applyTheme(theme, skipRedraw) {{
+            const nextTheme = (theme === 'light') ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', nextTheme);
+            try {{
+                localStorage.setItem('futu_theme', nextTheme);
+            }} catch (e) {{}}
+            updateThemeToggleUI(nextTheme);
+            if (!skipRedraw && typeof renderTimeCycleView === 'function') {{
+                renderTimeCycleView();
+            }}
+        }}
+
+        function toggleTheme() {{
+            const next = (getCurrentTheme() === 'dark') ? 'light' : 'dark';
+            applyTheme(next, false);
+        }}
+
+        function toggleCollapsibleDrawer(drawerId, btnEl, closedText, openText) {{
+            const drawer = document.getElementById(drawerId);
+            if (!drawer) return;
+            const isOpen = (drawer.style.display !== 'none' && drawer.style.display !== '');
+            const computedOpen = isOpen || (getComputedStyle(drawer).display !== 'none');
+            if (computedOpen) {{
+                drawer.style.display = 'none';
+                if (btnEl && closedText) btnEl.textContent = closedText;
+            }} else {{
+                drawer.style.display = 'block';
+                if (btnEl && openText) btnEl.textContent = openText;
+            }}
+        }}
+
+        function toggleT4ScriptRow(btn) {{
+            if (!btn) return;
+            const parentRow = btn.closest('tr');
+            if (!parentRow) return;
+            const nextRow = parentRow.nextElementSibling;
+            if (!nextRow || !nextRow.classList.contains('t4-script-detail-row')) return;
+            const isHidden = (nextRow.style.display === 'none' || getComputedStyle(nextRow).display === 'none');
+            nextRow.style.display = isHidden ? '' : 'none';
+            const txt = btn.textContent || '';
+            if (txt.includes('▾') || txt.includes('▴')) {{
+                btn.textContent = isHidden ? txt.replace('▾', '▴') : txt.replace('▴', '▾');
+            }}
+        }}
+
         let showFullPool = false;
         let currentSector = 'ALL';
-        let currentT4View = 'dual';
+        let currentT4View = '{_default_t4_view}';
 
         function switchT4View(view) {{
             currentT4View = view;
@@ -7263,6 +7746,15 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
             const rows = document.querySelectorAll('#t4-tbody .t4-stock-row');
             let maxCount = limit || (showFullPool ? {len(all_live)} : 5);
             let visibleCount = 0;
+
+            document.querySelectorAll('#t4-tbody .t4-script-detail-row').forEach(dr => {{
+                dr.style.display = 'none';
+            }});
+            document.querySelectorAll('#t4-tbody .t4-script-pill').forEach(btn => {{
+                if (btn.textContent && btn.textContent.includes('▴')) {{
+                    btn.textContent = btn.textContent.replace('▴', '▾');
+                }}
+            }});
 
             rows.forEach(row => {{
                 const rank = parseInt(row.getAttribute('data-rank') || '999', 10);
@@ -7504,15 +7996,15 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
             }}
 
             const sign = (pt.pct != null && pt.pct >= 0) ? '+' : '';
-            const pColor = (pt.pct != null && pt.pct >= 0) ? '#3fb950' : (pt.pct != null ? '#f85149' : '#f0f6fc');
+            const pColor = (pt.pct != null && pt.pct >= 0) ? 'var(--neon-green)' : (pt.pct != null ? 'var(--risk-red)' : 'var(--text-main)');
             const pctStr = pt.pct != null ? `<span style="color: ${{pColor}}; font-weight: 800; margin-left: 6px;">(${{sign}}${{pt.pct}}%)</span>` : '';
 
             tip.innerHTML = `
-                <div style="font-size: 11px; color: #8b949e; display: flex; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 4px; margin-bottom: 5px;">
+                <div style="font-size: 11px; color: var(--text-muted); display: flex; justify-content: space-between; border-bottom: 1px solid var(--border-color); padding-bottom: 4px; margin-bottom: 5px;">
                     <span>${{pt.isProj ? '🔮 未来推演' : '📊 历史实盘'}}</span>
-                    <span style="color: #cbd5e1; font-weight: 700;">${{pt.displayDate}}</span>
+                    <span style="color: var(--text-sub); font-weight: 700;">${{pt.displayDate}}</span>
                 </div>
-                <div style="font-size: 14px; font-weight: 800; color: #f0f6fc;">
+                <div style="font-size: 14px; font-weight: 800; color: var(--text-main);">
                     $${{Number(pt.price).toFixed(2)}} ${{pctStr}}
                 </div>
                 ${{winTag}}
@@ -7584,15 +8076,16 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
             if (aSimEl) aSimEl.textContent = simVal !== null ? (simVal + '% ' + (simVal >= 85 ? '⭐⭐⭐⭐⭐' : (simVal >= 75 ? '⭐⭐⭐⭐' : '⭐⭐⭐'))) : '--';
 
             // S/R Level Ladder (阶梯卡片)
+            const isLightTheme = (getCurrentTheme() === 'light');
             const ladderEl = document.getElementById('cycleLevelsLadder');
             if (ladderEl && curP > 0) {{
                 const levels = [
-                    {{ key: 'R2 极限阻力', val: data.r2, color: '#f85149', bg: 'rgba(248,81,73,0.1)' }},
-                    {{ key: 'R1 反弹第一阻力', val: data.r1, color: '#ff944d', bg: 'rgba(255,148,77,0.1)' }},
-                    {{ key: data.price_note ? '⚪ 正规盘收盘' : '⚪ 当前现价', val: curP, color: '#38bdf8', bg: 'rgba(56,189,248,0.15)', isCur: true }},
-                    {{ key: 'S1 波段支撑', val: data.s1, color: '#3fb950', bg: 'rgba(63,185,80,0.1)' }},
-                    {{ key: 'S2 极限插针底', val: data.s2, color: '#58a6ff', bg: 'rgba(88,166,255,0.1)' }},
-                    {{ key: 'SL 防守止损位', val: data.sl, color: '#f87171', bg: 'rgba(248,81,73,0.06)' }}
+                    {{ key: 'R2 极限阻力', val: data.r2, color: isLightTheme ? '#DC2626' : '#f85149', bg: isLightTheme ? 'rgba(220,38,38,0.08)' : 'rgba(248,81,73,0.1)' }},
+                    {{ key: 'R1 反弹第一阻力', val: data.r1, color: isLightTheme ? '#EA580C' : '#ff944d', bg: isLightTheme ? 'rgba(234,88,12,0.08)' : 'rgba(255,148,77,0.1)' }},
+                    {{ key: data.price_note ? '⚪ 正规盘收盘' : '⚪ 当前现价', val: curP, color: isLightTheme ? '#0284C7' : '#38bdf8', bg: isLightTheme ? 'rgba(2,132,199,0.10)' : 'rgba(56,189,248,0.15)', isCur: true }},
+                    {{ key: 'S1 波段支撑', val: data.s1, color: isLightTheme ? '#059669' : '#3fb950', bg: isLightTheme ? 'rgba(5,150,105,0.08)' : 'rgba(63,185,80,0.1)' }},
+                    {{ key: 'S2 极限插针底', val: data.s2, color: isLightTheme ? '#2563EB' : '#58a6ff', bg: isLightTheme ? 'rgba(37,99,235,0.08)' : 'rgba(88,166,255,0.1)' }},
+                    {{ key: 'SL 防守止损位', val: data.sl, color: isLightTheme ? '#B91C1C' : '#f87171', bg: isLightTheme ? 'rgba(185,28,28,0.06)' : 'rgba(248,81,73,0.06)' }}
                 ];
                 let ladHtml = '';
                 levels.forEach(lv => {{
@@ -7600,12 +8093,12 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
                     const v = Number(lv.val);
                     const diffPct = ((v / curP - 1) * 100);
                     const sign = diffPct > 0 ? '+' : '';
-                    const pctTag = lv.isCur ? '<span style="color:#38bdf8; font-weight:700;">[基准锚点]</span>' : `<span style="color:${{lv.color}}; font-weight:700;">${{sign}}${{diffPct.toFixed(1)}}%</span>`;
+                    const pctTag = lv.isCur ? `<span style="color:${{lv.color}}; font-weight:700;">[基准锚点]</span>` : `<span style="color:${{lv.color}}; font-weight:700;">${{sign}}${{diffPct.toFixed(1)}}%</span>`;
                     ladHtml += `
                         <div class="cycle-ladder-item" style="background: ${{lv.bg}}; border: 1px solid ${{lv.color}}33;">
                             <span style="color: ${{lv.color}}; font-weight: 700;">${{lv.key}}</span>
                             <div style="display: flex; gap: 8px; align-items: center;">
-                                <span style="color: #f0f6fc; font-weight: 800;">$${{v.toFixed(2)}}</span>
+                                <span style="color: var(--text-main); font-weight: 800;">$${{v.toFixed(2)}}</span>
                                 ${{pctTag}}
                             </div>
                         </div>
@@ -7613,9 +8106,9 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
                 }});
                 if (data.price_note) {{
                     ladHtml += `
-                        <div class="cycle-ladder-item" style="background: rgba(147,197,253,0.08); border: 1px solid rgba(147,197,253,0.28);">
-                            <span style="color: #93c5fd; font-weight: 700;">🌙 不是夜盘现价</span>
-                            <div style="color: #93c5fd; font-weight: 800;">${{data.price_note}}</div>
+                        <div class="cycle-ladder-item" style="background: rgba(56,189,248,0.08); border: 1px solid rgba(56,189,248,0.28);">
+                            <span style="color: var(--primary-blue); font-weight: 700;">🌙 不是夜盘现价</span>
+                            <div style="color: var(--primary-blue); font-weight: 800;">${{data.price_note}}</div>
                         </div>
                     `;
                 }}
@@ -7629,8 +8122,8 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
                     winList.innerHTML = data.cycle_windows.map(function(w) {{
                         const isTop = (w.type === 'top');
                         const isCaution = (w.type === 'caution') || (w.desc && w.desc.indexOf('高位强势休整') !== -1);
-                        const themeColor = isCaution ? '#e3b341' : (isTop ? '#f85149' : '#38bdf8');
-                        const bgAlpha = isCaution ? 'rgba(227, 179, 65, 0.08)' : (isTop ? 'rgba(248, 81, 73, 0.08)' : 'rgba(56, 189, 248, 0.08)');
+                        const themeColor = isCaution ? (isLightTheme ? '#B45309' : '#e3b341') : (isTop ? (isLightTheme ? '#DC2626' : '#f85149') : (isLightTheme ? '#0284C7' : '#38bdf8'));
+                        const bgAlpha = isCaution ? 'rgba(227, 179, 65, 0.10)' : (isTop ? 'rgba(248, 81, 73, 0.10)' : 'rgba(56, 189, 248, 0.10)');
                         const borderAlpha = isCaution ? 'rgba(227, 179, 65, 0.35)' : (isTop ? 'rgba(248, 81, 73, 0.28)' : 'rgba(56, 189, 248, 0.28)');
                         const icon = isCaution ? '⚠️' : (isTop ? '🔴' : '🔵');
                         const tag = w.tag || (isCaution ? '⚠️ 高位强势休整窗 (防追高)' : (isTop ? '周期阻力窗 (逢高不过就跑)' : '周期底回踩窗 (企稳关注)'));
@@ -7652,17 +8145,17 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
                                         <span>${{w.day}} (${{w.date ? w.date.slice(5) : ''}})</span>
                                         <span style="font-size: 9.5px; padding: 1px 5px; border-radius: 3px; background: ${{borderAlpha}};">${{tag}}</span>
                                     </div>
-                                    <div style="font-size: 10.5px; color: #8b949e; margin-top: 3px;">${{subText}}</div>
+                                    <div style="font-size: 10.5px; color: var(--text-muted); margin-top: 3px;">${{subText}}</div>
                                 </div>
                                 <div style="text-align: right; font-family: 'JetBrains Mono', monospace;">
-                                    <div style="font-size: 13.5px; font-weight: 800; color: #f0f6fc;">$${{Number(w.price).toFixed(2)}}</div>
+                                    <div style="font-size: 13.5px; font-weight: 800; color: var(--text-main);">$${{Number(w.price).toFixed(2)}}</div>
                                     <div style="font-size: 9.5px; color: ${{themeColor}};">预期目标价</div>
                                 </div>
                             </div>
                         `;
                     }}).join('');
                 }} else {{
-                    winList.innerHTML = '<div style="color: #8b949e; padding: 12px; text-align: center; font-size: 11.5px;">近期处于平稳修复通道，无极端单边反转窗口</div>';
+                    winList.innerHTML = '<div style="color: var(--text-muted); padding: 12px; text-align: center; font-size: 11.5px;">近期处于平稳修复通道，无极端单边反转窗口</div>';
                 }}
             }}
 
@@ -7790,8 +8283,26 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
             }});
             currentActiveRenderPoints = points;
 
-            // 3. Clear canvas & Background
+            // 3. Clear canvas & Theme-Aware Background
+            const isLight = (getCurrentTheme() === 'light');
+            const cGrid = isLight ? 'rgba(15, 23, 42, 0.08)' : 'rgba(255, 255, 255, 0.06)';
+            const cAxisText = isLight ? '#475569' : '#94A3B8';
+            const cSplitLine = isLight ? 'rgba(15, 23, 42, 0.35)' : 'rgba(255, 255, 255, 0.42)';
+            const cSplitText = isLight ? '#0F172A' : '#CBD5E1';
+            const cHistStroke = isLight ? '#0284C7' : '#38BDF8';
+            const cHistFillTop = isLight ? 'rgba(2, 132, 199, 0.18)' : 'rgba(56, 189, 248, 0.22)';
+            const cHistFillBot = isLight ? 'rgba(2, 132, 199, 0.0)' : 'rgba(56, 189, 248, 0.0)';
+            const cProjStroke = isLight ? '#EA580C' : '#FF944D';
+            const cProjFillTop = isLight ? 'rgba(234, 88, 12, 0.16)' : 'rgba(255, 148, 77, 0.18)';
+            const cProjFillBot = isLight ? 'rgba(234, 88, 12, 0.0)' : 'rgba(255, 148, 77, 0.0)';
+            const cPillBg = isLight ? 'rgba(255, 255, 255, 0.96)' : 'rgba(13, 17, 23, 0.92)';
+            const cCrosshair = isLight ? 'rgba(15, 23, 42, 0.45)' : 'rgba(255, 255, 255, 0.65)';
+            const cDotRing = isLight ? '#0F172A' : '#FFFFFF';
+            const cTodayX = isLight ? '#0284C7' : '#58A6FF';
+
             ctx.clearRect(0, 0, width, height);
+            ctx.fillStyle = isLight ? '#FFFFFF' : '#0D1320';
+            ctx.fillRect(0, 0, width, height);
 
             // 4. Horizontal Gridlines & Left Price Axis
             ctx.lineWidth = 1;
@@ -7803,25 +8314,25 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
             for (let g = 0; g <= numGrids; g++) {{
                 const gy = padT + (g / numGrids) * chartH;
                 const gPrice = maxY - (g / numGrids) * yRange;
-                ctx.strokeStyle = 'rgba(255, 255, 255, 0.05)';
+                ctx.strokeStyle = cGrid;
                 ctx.setLineDash([3, 3]);
                 ctx.beginPath();
                 ctx.moveTo(padL, gy);
                 ctx.lineTo(width - padR, gy);
                 ctx.stroke();
 
-                ctx.fillStyle = '#8b949e';
+                ctx.fillStyle = cAxisText;
                 ctx.fillText('$' + gPrice.toFixed(1), padL - 8, gy);
             }}
             ctx.setLineDash([]);
 
             // 5. Draw Support & Resistance Reference Lines
             const ladderLines = [
-                {{ key: 'R2', val: data.r2, color: '#f85149', lineDash: [5, 4] }},
-                {{ key: 'R1', val: data.r1, color: '#ff944d', lineDash: [5, 4] }},
-                {{ key: 'S1', val: data.s1, color: '#3fb950', lineDash: [5, 4] }},
-                {{ key: 'S2', val: data.s2, color: '#58a6ff', lineDash: [5, 4] }},
-                {{ key: 'SL', val: data.sl, color: '#f87171', lineDash: [2, 3] }}
+                {{ key: 'R2', val: data.r2, color: isLight ? '#DC2626' : '#f85149', lineDash: [5, 4] }},
+                {{ key: 'R1', val: data.r1, color: isLight ? '#EA580C' : '#ff944d', lineDash: [5, 4] }},
+                {{ key: 'S1', val: data.s1, color: isLight ? '#059669' : '#3fb950', lineDash: [5, 4] }},
+                {{ key: 'S2', val: data.s2, color: isLight ? '#2563EB' : '#58a6ff', lineDash: [5, 4] }},
+                {{ key: 'SL', val: data.sl, color: isLight ? '#B91C1C' : '#f87171', lineDash: [2, 3] }}
             ];
 
             // Filter lines within canvas Y range
@@ -7846,7 +8357,7 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
 
             visibleLadder.forEach(lv => {{
                 const ly = getY(Number(lv.val));
-                ctx.strokeStyle = lv.color + '66';
+                ctx.strokeStyle = lv.color + (isLight ? '88' : '66');
                 ctx.lineWidth = 1.2;
                 ctx.setLineDash(lv.lineDash);
                 ctx.beginPath();
@@ -7857,9 +8368,9 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
 
                 // Right Margin Pill Label
                 const badgeY = lv.drawY;
-                ctx.fillStyle = lv.color + '22';
+                ctx.fillStyle = isLight ? 'rgba(255, 255, 255, 0.94)' : (lv.color + '22');
                 ctx.fillRect(width - padR + 4, badgeY - 7, 72, 14);
-                ctx.strokeStyle = lv.color + '66';
+                ctx.strokeStyle = lv.color + (isLight ? '88' : '66');
                 ctx.strokeRect(width - padR + 4, badgeY - 7, 72, 14);
 
                 ctx.fillStyle = lv.color;
@@ -7882,7 +8393,6 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
                     const isTop = (pt.winType === 'top');
                     const isCaution = (pt.winType === 'caution') || (pt.winDesc && pt.winDesc.indexOf('高位强势休整') !== -1);
                     const bandColor = isTop ? 'rgba(248, 81, 73, ' : (isCaution ? 'rgba(227, 179, 65, ' : 'rgba(56, 189, 248, ');
-                    const alpha = isHighlight ? '0.35)' : '0.14)';
                     const colWidth = Math.max(22, 28 * cycleZoom);
 
                     const grad = ctx.createLinearGradient(0, padT, 0, padT + chartH);
@@ -7899,7 +8409,7 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
                     ctx.setLineDash([]);
 
                     // Top Tag Badge
-                    ctx.fillStyle = isTop ? '#f85149' : (isCaution ? '#e3b341' : '#38bdf8');
+                    ctx.fillStyle = isTop ? (isLight ? '#DC2626' : '#f85149') : (isCaution ? (isLight ? '#D97706' : '#e3b341') : (isLight ? '#0284C7' : '#38bdf8'));
                     ctx.font = 'bold 9px "JetBrains Mono", monospace';
                     ctx.textAlign = 'center';
                     ctx.fillText(pt.day, pt.canvasX, padT - 3);
@@ -7909,7 +8419,7 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
             // 7. Split Line (今日)
             const todayIdx = selectedHist.length - 1;
             const splitX = points[todayIdx].canvasX;
-            ctx.strokeStyle = 'rgba(255, 255, 255, 0.4)';
+            ctx.strokeStyle = cSplitLine;
             ctx.lineWidth = 1.5;
             ctx.setLineDash([4, 4]);
             ctx.beginPath();
@@ -7918,7 +8428,7 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
             ctx.stroke();
             ctx.setLineDash([]);
 
-            ctx.fillStyle = '#cbd5e1';
+            ctx.fillStyle = cSplitText;
             ctx.font = 'bold 10px sans-serif';
             ctx.textAlign = 'center';
             ctx.fillText(todayLabel, splitX, padT - 12);
@@ -7927,8 +8437,8 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
             if (selectedHist.length > 0) {{
                 // Area fill
                 const histGrad = ctx.createLinearGradient(0, padT, 0, padT + chartH);
-                histGrad.addColorStop(0, 'rgba(56, 189, 248, 0.22)');
-                histGrad.addColorStop(1, 'rgba(56, 189, 248, 0.0)');
+                histGrad.addColorStop(0, cHistFillTop);
+                histGrad.addColorStop(1, cHistFillBot);
 
                 ctx.fillStyle = histGrad;
                 ctx.beginPath();
@@ -7941,7 +8451,7 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
                 ctx.fill();
 
                 // Stroke
-                ctx.strokeStyle = '#38bdf8';
+                ctx.strokeStyle = cHistStroke;
                 ctx.lineWidth = 2.5;
                 ctx.beginPath();
                 for (let i = 0; i < selectedHist.length; i++) {{
@@ -7955,8 +8465,8 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
             if (proj.length > 0) {{
                 // Area fill
                 const projGrad = ctx.createLinearGradient(0, padT, 0, padT + chartH);
-                projGrad.addColorStop(0, 'rgba(255, 148, 77, 0.18)');
-                projGrad.addColorStop(1, 'rgba(255, 148, 77, 0.0)');
+                projGrad.addColorStop(0, cProjFillTop);
+                projGrad.addColorStop(1, cProjFillBot);
 
                 ctx.fillStyle = projGrad;
                 ctx.beginPath();
@@ -7969,7 +8479,7 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
                 ctx.fill();
 
                 // Stroke dashed
-                ctx.strokeStyle = '#ff944d';
+                ctx.strokeStyle = cProjStroke;
                 ctx.lineWidth = 2.5;
                 ctx.setLineDash([5, 4]);
                 ctx.beginPath();
@@ -7986,11 +8496,11 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
                     if (pt.isWin) {{
                         const isTop = (pt.winType === 'top');
                         const isCaution = (pt.winType === 'caution') || (pt.winDesc && pt.winDesc.indexOf('高位强势休整') !== -1);
-                        ctx.fillStyle = isTop ? '#f85149' : (isCaution ? '#e3b341' : '#38bdf8');
+                        ctx.fillStyle = isTop ? (isLight ? '#DC2626' : '#f85149') : (isCaution ? (isLight ? '#D97706' : '#e3b341') : cHistStroke);
                         ctx.beginPath();
                         ctx.arc(pt.canvasX, pt.canvasY, 4, 0, Math.PI * 2);
                         ctx.fill();
-                        ctx.strokeStyle = '#fff';
+                        ctx.strokeStyle = isLight ? '#FFFFFF' : '#fff';
                         ctx.lineWidth = 1.5;
                         ctx.stroke();
                     }}
@@ -8000,7 +8510,7 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
                 const lastPt = points[points.length - 1];
                 const lastPct = lastPt.pct || 0;
                 const sign = lastPct >= 0 ? '+' : '';
-                const pillColor = lastPct >= 0 ? '#3fb950' : '#f85149';
+                const pillColor = lastPct >= 0 ? (isLight ? '#059669' : '#3fb950') : (isLight ? '#DC2626' : '#f85149');
 
                 ctx.fillStyle = pillColor;
                 ctx.beginPath();
@@ -8024,7 +8534,7 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
                 ctx.setLineDash([]);
 
                 // Background pill
-                ctx.fillStyle = 'rgba(13, 17, 23, 0.92)';
+                ctx.fillStyle = cPillBg;
                 ctx.fillRect(pillX, pillY, pillW, pillH);
                 ctx.strokeStyle = pillColor;
                 ctx.lineWidth = 1.2;
@@ -8043,7 +8553,7 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
             if (cycleHoverIdx >= 0 && cycleHoverIdx < points.length) {{
                 const hoverPt = points[cycleHoverIdx];
 
-                ctx.strokeStyle = 'rgba(255, 255, 255, 0.65)';
+                ctx.strokeStyle = cCrosshair;
                 ctx.lineWidth = 1.2;
                 ctx.setLineDash([3, 3]);
                 ctx.beginPath();
@@ -8053,18 +8563,18 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
                 ctx.setLineDash([]);
 
                 // Highlight Circle
-                ctx.fillStyle = hoverPt.isProj ? '#ff944d' : '#38bdf8';
+                ctx.fillStyle = hoverPt.isProj ? cProjStroke : cHistStroke;
                 ctx.beginPath();
                 ctx.arc(hoverPt.canvasX, hoverPt.canvasY, 6, 0, Math.PI * 2);
                 ctx.fill();
-                ctx.strokeStyle = '#ffffff';
+                ctx.strokeStyle = cDotRing;
                 ctx.lineWidth = 2;
                 ctx.stroke();
             }}
 
             // 11. Bottom X-Axis Date Labels
             ctx.restore(); // Restore clip
-            ctx.fillStyle = '#8b949e';
+            ctx.fillStyle = cAxisText;
             ctx.font = '9px "JetBrains Mono", monospace';
             ctx.textAlign = 'center';
             ctx.textBaseline = 'top';
@@ -8081,7 +8591,7 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
                         }}
                         ctx._lastAxisLabelX = pt.canvasX;
                         const lbl = pt.isProj ? pt.day : (pt.date ? pt.date.slice(5) : pt.day);
-                        ctx.fillStyle = (idx === todayIdx) ? '#58a6ff' : '#8b949e';
+                        ctx.fillStyle = (idx === todayIdx) ? cTodayX : cAxisText;
                         ctx.font = (idx === todayIdx) ? 'bold 10px sans-serif' : '9px "JetBrains Mono", monospace';
                         ctx.fillText(lbl, pt.canvasX, padT + chartH + 6);
                     }}
@@ -8089,15 +8599,23 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
             }});
         }}
 
-                function renderTimeCycleSvg(sym) {{
+        function renderTimeCycleSvg(sym) {{
             if (sym) switchCycleSymbol(sym);
             else renderTimeCycleView();
         }}
 
-        document.addEventListener('DOMContentLoaded' , function() {{
-            let savedView = 'dual';
+        window.addEventListener('storage', function(ev) {{
+            if (ev && ev.key === 'futu_theme' && ev.newValue) {{
+                applyTheme(ev.newValue, false);
+            }}
+        }});
+
+        document.addEventListener('DOMContentLoaded', function() {{
+            updateThemeToggleUI(getCurrentTheme());
+            const defaultView = '{_default_t4_view}';
+            let savedView = defaultView;
             try {{
-                savedView = localStorage.getItem('predict_t4_view') || 'dual';
+                savedView = localStorage.getItem('predict_t4_view') || defaultView;
             }} catch(e) {{}}
             switchT4View(savedView);
             setTimeout(function() {{ renderTimeCycleView(); }}, 50);

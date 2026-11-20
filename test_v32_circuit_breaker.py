@@ -1176,7 +1176,8 @@ class TestV32CircuitBreaker(unittest.TestCase):
                 return h5_df if interval == "5m" else d1_df
 
         with _mock.patch("urllib.request.urlopen", side_effect=_fake_urlopen), \
-             _mock.patch("ml_predictor_5y.yf.Ticker", return_value=_FakeTicker()):
+             _mock.patch("ml_predictor_5y.yf.Ticker", return_value=_FakeTicker()), \
+             _mock.patch("ml_predictor_5y._to_et", return_value=_pd.Timestamp("2026-11-19 06:55:00")):
             q = ml_predictor_5y.fetch_xauusd_spot_quote()
 
         self.assertEqual(q.get("source"), "gold-api")
