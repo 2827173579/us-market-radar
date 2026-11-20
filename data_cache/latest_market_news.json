@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795163822.258,
-  "updated_at_et": "11-20 03:37 ET",
-  "updated_at_kst": "17:37 KST",
+  "updated_at_ts": 1795163930.841,
+  "updated_at_et": "11-20 03:38 ET",
+  "updated_at_kst": "17:38 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -904,6 +904,13 @@
     ],
     "NVDA": [
       {
+        "title": "Trump Admin Approved Nearly 900,000 AI Chips For China, House Data Shows: Nvidia Says H200 Shipments Were ‘Legal And Authorized’",
+        "url": "https://finance.yahoo.com/technology/ai/articles/trump-admin-approved-nearly-900-071623846.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 02:16 ET",
+        "pub_ts": 1795158983.0
+      },
+      {
         "title": "Elon Musk’s Dream Meets Wall Street Reality: SpaceX Lenders Don’t Want Nvidia Chips Leaving Earth",
         "url": "https://finance.yahoo.com/markets/stocks/articles/elon-musk-dream-meets-wall-062433324.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -930,16 +937,16 @@
         "source": "Yahoo Finance",
         "time": "11-19 23:45 ET",
         "pub_ts": 1795149923.0
-      },
-      {
-        "title": "Micron CEO’s Nvidia message comes with warning for 2027",
-        "url": "https://www.thestreet.com/investing/micron-ceo-nvidia-warning-2027-supply-already-sold-out?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 23:33 ET",
-        "pub_ts": 1795149180.0
       }
     ],
     "AMD": [
+      {
+        "title": "Trump Admin Approved Nearly 900,000 AI Chips For China, House Data Shows: Nvidia Says H200 Shipments Were ‘Legal And Authorized’",
+        "url": "https://finance.yahoo.com/technology/ai/articles/trump-admin-approved-nearly-900-071623846.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 02:16 ET",
+        "pub_ts": 1795158983.0
+      },
       {
         "title": "Nasdaq, Dow, S&P 500 Futures Slip As Anthropic’s Record Debut Fails To Lift AI Stocks: SLV, GLD, AMD, NVDA In Focus",
         "url": "https://stocktwits.com/news-articles/markets/equity/why-nasdaq-dow-futures-fell-anthropic-ipo-ai-trade-amd-nvda/cNbSGu0R9KR?.tsrc=rss",
@@ -967,13 +974,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 16:47 ET",
         "pub_ts": 1795124820.0
-      },
-      {
-        "title": "Why AMD Stock Could Hit $662 in 2027",
-        "url": "https://www.barchart.com/story/news/8925754/why-amd-stock-could-hit-662-in-2027?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 16:45 ET",
-        "pub_ts": 1795124727.0
       }
     ],
     "ASML": [
@@ -3244,27 +3244,27 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795162393.816147,
-    "SOXL": 1795162393.816147,
-    "SPY": 1795162393.816147,
-    "DIA": 1795162393.816147,
-    "SOXX": 1795162393.816147,
-    "QQQ": 1795162393.816147,
-    "SMH": 1795162393.816147,
-    "IWM": 1795162393.816147,
-    "IGV": 1795162393.816147,
-    "TLT": 1795162393.816147,
-    "GLD": 1795162393.816147,
-    "SQQQ": 1795162393.816147,
-    "TSM": 1795162393.816147,
-    "VIXY": 1795162393.816147,
-    "SOXS": 1795162393.816147,
-    "NVDA": 1795162393.816147,
-    "AMD": 1795162393.816147,
+    "KORU": 1795163930.840922,
+    "SOXL": 1795163930.840922,
+    "SPY": 1795163930.840922,
+    "DIA": 1795163930.840922,
+    "SOXX": 1795163930.840922,
+    "QQQ": 1795163930.840922,
+    "SMH": 1795163930.840922,
+    "IWM": 1795163930.840922,
+    "IGV": 1795163930.840922,
+    "TLT": 1795163930.840922,
+    "GLD": 1795163930.840922,
+    "SQQQ": 1795163930.840922,
+    "TSM": 1795163930.840922,
+    "VIXY": 1795163930.840922,
+    "SOXS": 1795163930.840922,
+    "NVDA": 1795163930.840922,
+    "AMD": 1795163930.840922,
     "ASML": 1795162499.03592,
-    "QCOM": 1795162393.816147,
-    "AVGO": 1795162393.816147,
-    "AMAT": 1795162393.816147,
+    "QCOM": 1795163930.840922,
+    "AVGO": 1795163930.840922,
+    "AMAT": 1795163930.840922,
     "META": 1795162499.03592,
     "GOOGL": 1795162499.03592,
     "MSFT": 1795162499.03592,
@@ -3314,8 +3314,8 @@
     "NKE": 1795163419.2630563,
     "MCD": 1795163419.2630563,
     "PEP": 1795163419.2630563,
-    "XOM": 1795162393.816147,
-    "JPM": 1795162393.816147,
+    "XOM": 1795163930.840922,
+    "JPM": 1795163930.840922,
     "WMT": 1795162499.03592,
     "V": 1795163313.9364083,
     "CAT": 1795162499.03592,
