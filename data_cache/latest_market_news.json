@@ -1,9 +1,23 @@
 {
-  "updated_at_ts": 1795137629.162,
-  "updated_at_et": "11-19 20:20 ET",
-  "updated_at_kst": "10:20 KST",
+  "updated_at_ts": 1795138342.918,
+  "updated_at_et": "11-19 20:32 ET",
+  "updated_at_kst": "10:32 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261120093150166800",
+      "title": "【期货热点追踪】沪银逼近1万关口！美联储加息预期彻底倒戈，Anthropic世纪IPO引…",
+      "summary": "【期货热点追踪】沪银逼近1万关口！美联储加息预期彻底倒戈，Anthropic世纪IPO引发跨市场流动性抽血，现货黄金跌破3600关口带动国内贵金属早盘低开低走！价格底部何在？",
+      "keywords": [
+        "美联储",
+        "加息"
+      ],
+      "pub_ts": 1795138310.0,
+      "time_et": "11-19 20:31 ET",
+      "time_bj": "09:31 BJ",
+      "time_kst": "10:31 KST",
+      "time_display": "20:31 ET / 09:31 BJ"
+    },
     {
       "id": "20261120091736272800",
       "title": "1. 金银继续大跌，AI资产抛售及美联储鹰派立场形成双重压力。 2. 特朗普表示不会在新…",
@@ -336,19 +350,6 @@
       "time_bj": "03:05 BJ",
       "time_kst": "04:05 KST",
       "time_display": "14:05 ET / 03:05 BJ"
-    },
-    {
-      "id": "20261120010718575800",
-      "title": "投资Anthropic的公司股价在其上市首日后回吐早盘涨幅。亚马逊(AMZN.O)下跌1…",
-      "summary": "投资Anthropic的公司股价在其上市首日后回吐早盘涨幅。亚马逊(AMZN.O)下跌1.4%，Alphabet(GOOG.O)上涨0.3%，英伟达(NVDA.O)下跌1.6%，AMD(AMD.O)下跌8.5%，博通(AVGO.O)下跌1.2%。",
-      "keywords": [
-        "英伟达"
-      ],
-      "pub_ts": 1795108038.0,
-      "time_et": "11-19 12:07 ET",
-      "time_bj": "01:07 BJ",
-      "time_kst": "02:07 KST",
-      "time_display": "12:07 ET / 01:07 BJ"
     }
   ],
   "ticker_news": {
@@ -2655,6 +2656,13 @@
         "pub_ts": 1795100825.0
       },
       {
+        "title": "Why CrowdStrike Holdings Stock Flew While the Market Flopped Today",
+        "url": "https://www.fool.com/investing/2026/11/19/why-crowdstrike-holdings-stock-flew-while-the-market-flopped-today/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 20:27 ET",
+        "pub_ts": 1795138075.0
+      },
+      {
         "title": "Palo Alto Soars 6% on Guidance Hike and $4.5 Billion AI Deal: “An Unprecedented Threat Environment”",
         "url": "https://www.tikr.com/blog/palo-alto-soars-6-on-guidance-hike-and-4-5-billion-ai-deal-an-unprecedented-threat-environment?ref=yahoofinance&tlnk=yf-261119-hcm4fxh8&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2674,13 +2682,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 13:38 ET",
         "pub_ts": 1795113526.0
-      },
-      {
-        "title": "Cybersecurity Stocks Fly on Palo Alto Earnings. Look Out for Whiplash.",
-        "url": "https://finance.yahoo.com/m/3b6bd7a8-f8ca-3823-837d-70433d1bc9fb/cybersecurity-stocks-fly-on.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 10:54 ET",
-        "pub_ts": 1795103640.0
       }
     ],
     "ORCL": [
@@ -3278,25 +3279,25 @@
     "NOW": 1795137174.6853826,
     "AMZN": 1795137174.6853826,
     "CRWV": 1795137174.6853826,
-    "NBIS": 1795136288.3318706,
-    "APLD": 1795136288.3318706,
-    "VST": 1795136288.3318706,
-    "BE": 1795136288.3318706,
-    "CRDO": 1795136288.3318706,
-    "COHR": 1795136288.3318706,
-    "MRVL": 1795136288.3318706,
-    "LITE": 1795136288.3318706,
+    "NBIS": 1795138342.917801,
+    "APLD": 1795138342.917801,
+    "VST": 1795138342.917801,
+    "BE": 1795138342.917801,
+    "CRDO": 1795138342.917801,
+    "COHR": 1795138342.917801,
+    "MRVL": 1795138342.917801,
+    "LITE": 1795138342.917801,
     "AAOI": 1795137174.6853826,
-    "SPCX": 1795136288.3318706,
-    "ASTS": 1795136288.3318706,
-    "AXTI": 1795136288.3318706,
+    "SPCX": 1795138342.917801,
+    "ASTS": 1795138342.917801,
+    "AXTI": 1795138342.917801,
     "NASA": 1795137174.6853826,
     "LUNR": 1795137174.6853826,
     "TSLA": 1795137174.6853826,
     "AXP": 1795137174.6853826,
-    "RKLB": 1795136288.3318706,
+    "RKLB": 1795138342.917801,
     "KO": 1795137174.6853826,
-    "FLY": 1795136288.3318706,
+    "FLY": 1795138342.917801,
     "INTC": 1795137174.6853826,
     "VRT": 1795137174.6853826,
     "HPE": 1795137174.6853826,
@@ -3311,28 +3312,28 @@
     "MSTR": 1795137174.6853826,
     "SNDK": 1795137174.6853826,
     "BTC-USD": 1795137174.6853826,
-    "CRWD": 1795136288.3318706,
-    "ORCL": 1795136288.3318706,
-    "COIN": 1795136288.3318706,
-    "LLY": 1795136288.3318706,
-    "MRNA": 1795136288.3318706,
-    "NKE": 1795136288.3318706,
-    "MCD": 1795136288.3318706,
-    "PEP": 1795136288.3318706,
+    "CRWD": 1795138342.917801,
+    "ORCL": 1795138342.917801,
+    "COIN": 1795138342.917801,
+    "LLY": 1795138342.917801,
+    "MRNA": 1795138342.917801,
+    "NKE": 1795138342.917801,
+    "MCD": 1795138342.917801,
+    "PEP": 1795138342.917801,
     "XOM": 1795136390.3078575,
     "JPM": 1795136390.3078575,
     "WMT": 1795136390.3078575,
-    "V": 1795136288.3318706,
+    "V": 1795138342.917801,
     "CAT": 1795136390.3078575,
-    "FN": 1795136288.3318706,
-    "GLW": 1795136288.3318706,
+    "FN": 1795138342.917801,
+    "GLW": 1795138342.917801,
     "ANT": 1795136390.3078575,
     "XAUUSD": 1795136390.3078575
   },
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (20:17 ET / 09:17 BJ) [美联储] [芯片] [特朗普]：1. 金银继续大跌，AI资产抛售及美联储鹰派立场形成双重压力。 2. 特朗普表示不会在新年前“仓促”决定对伊朗行动。 3. 津巴布韦调整锂出口税规则，强制矿企本地采购。 4. 美能源部长：正",
+    "detail": "⚡ 最新核心快讯 (20:31 ET / 09:31 BJ) [美联储] [加息]：【期货热点追踪】沪银逼近1万关口！美联储加息预期彻底倒戈，Anthropic世纪IPO引发跨市场流动性抽血，现货黄金跌破3600关口带动国内贵金属早盘低开低走！价格底部何在？",
     "event_name": "",
     "minutes_left": 0
   }
