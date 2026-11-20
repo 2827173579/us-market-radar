@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795206331.604,
-  "updated_at_et": "11-20 15:25 ET",
-  "updated_at_kst": "05:25 KST",
+  "updated_at_ts": 1795206435.798,
+  "updated_at_et": "11-20 15:27 ET",
+  "updated_at_kst": "05:27 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1977,6 +1977,13 @@
     ],
     "AXP": [
       {
+        "title": "American Express (AXP) Is Growing Revenue by More Than 10%, but Its Stock Is 25% Cheaper: Is Wall Street Missing an Opportunity?",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/american-express-axp-growing-revenue-201629481.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 15:16 ET",
+        "pub_ts": 1795205789.0
+      },
+      {
         "title": "American Express (AXP) Could Be 30% Undervalued As Trust Questions Meet ETF Outflows",
         "url": "https://finance.yahoo.com/markets/stocks/articles/american-express-axp-could-30-151150319.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2003,13 +2010,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 16:30 ET",
         "pub_ts": 1795037402.0
-      },
-      {
-        "title": "American Express vs. PayPal: Comparing Total Quarterly Revenue Scale",
-        "url": "https://www.fool.com/coverage/charts/2026/11/18/american-express-vs-paypal-comparing-total-quarterly-revenue-scale/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 12:40 ET",
-        "pub_ts": 1795023602.0
       }
     ],
     "RKLB": [
@@ -2125,6 +2125,13 @@
     ],
     "INTC": [
       {
+        "title": "Could Jensen Huang Land At Nvidia Rival Intel?",
+        "url": "https://finance.yahoo.com/m/0f796a98-f9a0-3610-b88d-21a75faa2e7b/could-jensen-huang-land-at.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 15:04 ET",
+        "pub_ts": 1795205092.0
+      },
+      {
         "title": "Intel Stock: Bounceback Potential Etches Path Toward Lower-Cost Ownership",
         "url": "https://finance.yahoo.com/m/a2b405c0-93e0-3125-87d9-0d3775897710/intel-stock%3A-bounceback.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2151,13 +2158,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 12:17 ET",
         "pub_ts": 1795195026.0
-      },
-      {
-        "title": "Meta and Microsoft Aren't Cutting Server CPU Orders -- Why AMD and Intel Could Benefit",
-        "url": "https://finance.yahoo.com/technology/articles/meta-microsoft-arent-cutting-server-165207063.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 11:52 ET",
-        "pub_ts": 1795193527.0
       }
     ],
     "VRT": [
@@ -3261,18 +3261,18 @@
     "SOXS": 1795206331.604112,
     "NVDA": 1795206331.604112,
     "AMD": 1795206331.604112,
-    "ASML": 1795204908.354009,
-    "QCOM": 1795204908.354009,
+    "ASML": 1795206435.7977147,
+    "QCOM": 1795206435.7977147,
     "AVGO": 1795206331.604112,
     "AMAT": 1795206331.604112,
     "META": 1795206331.604112,
     "GOOGL": 1795206331.604112,
     "MSFT": 1795206331.604112,
-    "AAPL": 1795204908.354009,
-    "PLTR": 1795204908.354009,
-    "NOW": 1795204908.354009,
-    "AMZN": 1795204908.354009,
-    "CRWV": 1795204908.354009,
+    "AAPL": 1795206435.7977147,
+    "PLTR": 1795206435.7977147,
+    "NOW": 1795206435.7977147,
+    "AMZN": 1795206435.7977147,
+    "CRWV": 1795206435.7977147,
     "NBIS": 1795205824.9049165,
     "APLD": 1795205824.9049165,
     "VST": 1795205824.9049165,
@@ -3281,30 +3281,30 @@
     "COHR": 1795205824.9049165,
     "MRVL": 1795205824.9049165,
     "LITE": 1795205824.9049165,
-    "AAOI": 1795204908.354009,
+    "AAOI": 1795206435.7977147,
     "SPCX": 1795205824.9049165,
     "ASTS": 1795205824.9049165,
     "AXTI": 1795205824.9049165,
-    "NASA": 1795204908.354009,
-    "LUNR": 1795204908.354009,
-    "TSLA": 1795204908.354009,
-    "AXP": 1795204908.354009,
+    "NASA": 1795206435.7977147,
+    "LUNR": 1795206435.7977147,
+    "TSLA": 1795206435.7977147,
+    "AXP": 1795206435.7977147,
     "RKLB": 1795205824.9049165,
-    "KO": 1795204908.354009,
+    "KO": 1795206435.7977147,
     "FLY": 1795205824.9049165,
-    "INTC": 1795204908.354009,
-    "VRT": 1795204908.354009,
-    "HPE": 1795204908.354009,
-    "DELL": 1795204908.354009,
-    "OKLO": 1795204908.354009,
+    "INTC": 1795206435.7977147,
+    "VRT": 1795206435.7977147,
+    "HPE": 1795206435.7977147,
+    "DELL": 1795206435.7977147,
+    "OKLO": 1795206435.7977147,
     "CEG": 1795205013.4797297,
-    "FPS": 1795204908.354009,
-    "MU": 1795204908.354009,
-    "SKHY": 1795204908.354009,
-    "WDC": 1795204908.354009,
+    "FPS": 1795206435.7977147,
+    "MU": 1795206435.7977147,
+    "SKHY": 1795206435.7977147,
+    "WDC": 1795206435.7977147,
     "STX": 1795205013.4797297,
     "MSTR": 1795205013.4797297,
-    "SNDK": 1795204908.354009,
+    "SNDK": 1795206435.7977147,
     "BTC-USD": 1795205422.1410108,
     "CRWD": 1795205824.9049165,
     "ORCL": 1795205824.9049165,
