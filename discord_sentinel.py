@@ -953,6 +953,89 @@ def format_ticker_block(ticker: str, t_data: Dict[str, Any]) -> str:
         return format_regular_ticker_block(ticker, t_data) + "\n"
 
 
+def _resolve_vix_regime_for_sentinel(weather_info: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
+    """零阻塞获取全局 VIX/VXN 恐慌中枢快照（优先 weather_info，次读本地缓存，绝不阻塞推送）。"""
+    if isinstance(weather_info, dict):
+        vr = weather_info.get("vix_regime")
+        if isinstance(vr, dict) and vr.get("vix_spot") is not None:
+            return vr
+    try:
+        import vix_regime_engine
+        vr_cache = vix_regime_engine.get_vix_regime_snapshot(allow_network=False)
+        if isinstance(vr_cache, dict) and vr_cache.get("vix_spot") is not None:
+            return vr_cache
+    except Exception:
+        pass
+    try:
+        cache_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data_cache", "latest_ai_predictions.json")
+        if os.path.exists(cache_file):
+            with open(cache_file, "r", encoding="utf-8") as f:
+                doc = json.load(f)
+            vr_json = doc.get("vix_regime") if isinstance(doc, dict) else None
+            if isinstance(vr_json, dict) and vr_json.get("vix_spot") is not None:
+                return vr_json
+    except Exception:
+        pass
+    return {}
+
+
+def format_vix_hub_summary_line(vix_regime: Optional[Dict[str, Any]]) -> str:
+    """将 VIX/VXN 恐慌中枢格式化为 1 行紧凑体温摘要，嵌入总台 Embed 顶部（绝不使用灰块代码）。"""
+    if not isinstance(vix_regime, dict) or vix_regime.get("vix_spot") is None:
+        return ""
+    try:
+        vix_val = float(vix_regime.get("vix_spot"))
+        if not math.isfinite(vix_val):
+            return ""
+    except Exception:
+        return ""
+
+    parts = [f"VIX {vix_val:.1f}"]
+
+    try:
+        raw_vxn = vix_regime.get("vxn_spot")
+        if raw_vxn is not None and math.isfinite(float(raw_vxn)):
+            vxn_val = float(raw_vxn)
+            raw_sp = vix_regime.get("vxn_vix_spread")
+            sp_val = float(raw_sp) if (raw_sp is not None and math.isfinite(float(raw_sp))) else (vxn_val - vix_val)
+            parts.append(f"VXN {vxn_val:.1f} ({sp_val:+.1f})")
+    except Exception:
+        pass
+
+    try:
+        raw_ratio = vix_regime.get("vix_term_ratio")
+        if raw_ratio is not None and math.isfinite(float(raw_ratio)):
+            ratio_val = float(raw_ratio)
+            if ratio_val >= 1.00:
+                state_tag = "倒挂"
+            elif ratio_val >= 0.95:
+                state_tag = "警戒"
+            else:
+                state_tag = "升水"
+            parts.append(f"期限比 {ratio_val:.2f} ({state_tag})")
+    except Exception:
+        pass
+
+    try:
+        raw_vvix = vix_regime.get("vvix_spot")
+        if raw_vvix is not None and math.isfinite(float(raw_vvix)):
+            parts.append(f"VVIX {float(raw_vvix):.1f}")
+    except Exception:
+        pass
+
+    try:
+        raw_tnx = vix_regime.get("tnx_yield")
+        if raw_tnx is not None and math.isfinite(float(raw_tnx)):
+            parts.append(f"10Y {float(raw_tnx):.2f}%")
+    except Exception:
+        pass
+
+    if bool(vix_regime.get("vix_bottom_signal", False)):
+        parts.append("🟢 恐慌出清抄底窗")
+
+    return "🌡️ **恐慌中枢**：" + " | ".join(parts)
+
+
 def build_message_1_embed(market_analysis: Dict[str, Any]) -> dict:
     """
     Message 1: 小豆泥·量化哨兵 3 秒抄作业总台
@@ -987,6 +1070,9 @@ def build_message_1_embed(market_analysis: Dict[str, Any]) -> dict:
 
     lines = []
     lines.append(f"📡 **时段指引**：{session_title}")
+    vix_line = format_vix_hub_summary_line(market_analysis.get("vix_regime"))
+    if vix_line:
+        lines.append(vix_line)
     lines.append("-------------------------")
 
     # 2. 🎯 【今日 3 秒抓重点：点名榜】
@@ -1233,6 +1319,11 @@ def dispatch_discord_messages(
     - 消息 2 Part A: 板块巡检 (梯队 1~3, 5 embeds) -> 休眠 1.0s 防 429
     - 消息 2 Part B: 板块巡检 (梯队 4~5, 4 embeds)
     """
+    _guard_val = str(os.environ.get("RADAR_DISABLE_EXTERNAL_ALERTS", "")).strip().lower()
+    if _guard_val in ("1", "true", "yes", "on") or ("--no-alerts" in sys.argv):
+        print("  [*] [Dry-Run Guard] 已屏蔽 Discord Sentinel 定时战报推送")
+        return False
+
     if not webhook_url:
         print("[!] ⚠️ DISCORD_WEBHOOK_URL is empty, skipping dispatch.")
         return False
@@ -1435,6 +1526,7 @@ def run_sentinel_scan(
         "session": "REGULAR",
         "tickers": tickers_res,
         "factor_y": factor_y,
+        "vix_regime": _resolve_vix_regime_for_sentinel(None),
         "resonance_alerts": [],
         "divergence_alerts": [],
         "dual_extremes": []
@@ -1778,6 +1870,7 @@ def run_sentinel_cycle_safe(macro_data=None, stocks_sorted=None, weather_info=No
                 "slot_title": slot_name,
                 "tickers": tickers_res,
                 "factor_y": factor_y,
+                "vix_regime": _resolve_vix_regime_for_sentinel(weather_info),
                 "resonance_alerts": [],
                 "divergence_alerts": [],
                 "dual_extremes": []

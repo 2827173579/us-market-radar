@@ -219,8 +219,17 @@ def get_claw_webhook_url():
 
 
 def get_defensive_webhook_url():
-    """防御因子唯一来源：DISCORD_DEFENSIVE_FLIGHT_WEBHOOK_URL，缺失返回空。"""
-    return os.environ.get("DISCORD_DEFENSIVE_FLIGHT_WEBHOOK_URL", "").strip()
+    """防御因子唯一来源：DISCORD_DEFENSIVE_FLIGHT_WEBHOOK_URL（兼容 DISCORD_DEFENSIVE_WEBHOOK_URL），缺失返回空。"""
+    return (
+        os.environ.get("DISCORD_DEFENSIVE_FLIGHT_WEBHOOK_URL", "").strip()
+        or os.environ.get("DISCORD_DEFENSIVE_WEBHOOK_URL", "").strip()
+    )
+
+
+def _external_alerts_disabled():
+    """开发验证/干跑保护：设置 RADAR_DISABLE_EXTERNAL_ALERTS=1 或 --no-alerts 时严禁任何真实外发推送。"""
+    val = str(os.environ.get("RADAR_DISABLE_EXTERNAL_ALERTS", "")).strip().lower()
+    return val in ("1", "true", "yes", "on") or ("--no-alerts" in sys.argv)
 
 # ------------------------------------------------------------------------------
 # 🎯 账户资金与风控配置 (V3.1 旗舰纯比例制 · 单股上限 25% · 1.5%风险预算一次性建仓)
@@ -2235,11 +2244,15 @@ def _shared_device_tag():
     return "ANDROID" if ANDROID_MODE else "PC"
 
 
-def send_discord_claw_alert(title, markdown_content, webhook_url=None):
+def send_discord_claw_alert(title, markdown_content, webhook_url=None, dedupe_key=None, dedupe_max_age=600, color_override=None):
     """
     通过 Discord Webhook 向专属 Claw 预警频道推送与微信 100% 同步的 Markdown 战报卡片
     具备自动颜色适配、超时隔离与长文本安全收纳。
     """
+    if _external_alerts_disabled():
+        print(f"  [*] [Dry-Run Guard] 已屏蔽 Discord Claw 推送: {title}")
+        return False
+
     url = webhook_url or get_claw_webhook_url()
     if not url:
         return False
@@ -2249,21 +2262,28 @@ def send_discord_claw_alert(title, markdown_content, webhook_url=None):
         print("  [!] 拦截：防御因子卡片禁止通过 Claw/主预警频道发送")
         return False
 
-    _dedupe_key = "" if webhook_url else _shared_dedupe_key(title, markdown_content)
-    if _dedupe_key and shared_alert_state.is_sent(_dedupe_key, max_age=600):
+    if dedupe_key is not None:
+        _dedupe_key = str(dedupe_key).strip()
+    else:
+        _dedupe_key = "" if webhook_url else _shared_dedupe_key(title, markdown_content)
+
+    if _dedupe_key and _SHARED_ALERTS and shared_alert_state.is_sent(_dedupe_key, max_age=dedupe_max_age):
         print(f"  [*] 跨设备去重跳过重复告警: {_dedupe_key}")
         return False
 
     # 1. 标题与状态智能着色
-    color = 0xFF944D  # 默认橙色 (预警提示)
-    if any(k in title for k in ("买点", "黄金坑", "企稳", "买入")):
-        color = 0x00E676  # 鲜亮翠绿
-    elif any(k in title for k in ("止损", "破位", "熔断", "暴跌", "极限风控")):
-        color = 0xF85149  # 警示鲜红
-    elif any(k in title for k in ("止盈", "卖出", "冲顶")):
-        color = 0xBC8CFF  # 阶梯紫色
-    elif any(k in title for k in ("对冲", "反向", "雷达")):
-        color = 0x58A6FF  # 科技天蓝
+    if color_override is not None:
+        color = int(color_override)
+    else:
+        color = 0xFF944D  # 默认橙色 (预警提示)
+        if any(k in title for k in ("买点", "黄金坑", "企稳", "买入", "抄底", "出清", "突破")):
+            color = 0x00E676  # 鲜亮翠绿
+        elif any(k in title for k in ("止损", "破位", "熔断", "暴跌", "极限风控", "硬刹车", "倒挂", "跌破")):
+            color = 0xF85149  # 警示鲜红
+        elif any(k in title for k in ("止盈", "卖出", "冲顶")):
+            color = 0xBC8CFF  # 阶梯紫色
+        elif any(k in title for k in ("对冲", "反向", "雷达")):
+            color = 0x58A6FF  # 科技天蓝
 
     # 2. 格式化并保护 Discord 4,096 字符上限
     desc = (markdown_content or "").strip()
@@ -2294,7 +2314,7 @@ def send_discord_claw_alert(title, markdown_content, webhook_url=None):
         with urllib.request.urlopen(req, timeout=10) as resp:
             if resp.status in (200, 204):
                 print(f"  [+] 💬 Discord ClawBot预警镜像通道推送成功: {title}")
-                if _dedupe_key:
+                if _dedupe_key and _SHARED_ALERTS:
                     shared_alert_state.mark(_dedupe_key, _shared_device_tag())
                 return True
             else:
@@ -2310,6 +2330,10 @@ def send_discord_defensive_flight_alert(df_alert, live_lookup=None, update_time_
     通过专属 Webhook 向【防御因子背离百分比】频道实时推送纯粹、聚焦的防御/科技背离因子战报。
     每次雷达刷新均精准播报，包含背离差值、防御/科技各自均值、各成分股涨跌幅细分及大白话操盘指引。
     """
+    if _external_alerts_disabled():
+        print("  [*] [Dry-Run Guard] 已屏蔽防御因子 Discord 推送")
+        return False
+
     url = webhook_url or get_defensive_webhook_url()
     if not url:
         load_env_file()
@@ -2435,6 +2459,438 @@ def send_discord_defensive_flight_alert(df_alert, live_lookup=None, update_time_
         return False
 
 
+INTRADAY_CORRIDOR_ALERT_TICKERS = ("SPY", "QQQ", "SOXL")
+_DEFENSIVE_WRONG_CHANNEL_IDS = (
+    "1569762886996197499",
+    "1569506393650634834",
+    "1569534508212944997",
+)
+
+
+def _fmt_opt_num(val, fmt=".2f", default="--"):
+    try:
+        if val is None:
+            return default
+        fv = float(val)
+        if not math.isfinite(fv):
+            return default
+        return format(fv, fmt)
+    except Exception:
+        return default
+
+
+def _extract_live_quote_price_pct(symbol, quote_lookup, intraday_forecasts=None):
+    """提取标的最新实时价格与当日涨跌幅（优先 live lookup，缺失回退走廊 actual_price）。"""
+    q = (quote_lookup or {}).get(symbol)
+    px = None
+    pct = None
+    if isinstance(q, dict):
+        for k in ("active_price", "last", "ext_price", "price"):
+            try:
+                v = q.get(k)
+                if v is not None and math.isfinite(float(v)) and float(v) > 0:
+                    px = float(v)
+                    break
+            except Exception:
+                continue
+        for k in ("effective_pct", "pct_change", "change_pct", "ext_pct"):
+            try:
+                v = q.get(k)
+                if v is not None and math.isfinite(float(v)):
+                    pct = float(v)
+                    break
+            except Exception:
+                continue
+    if px is None and isinstance(intraday_forecasts, dict):
+        it = (intraday_forecasts.get("by_ticker") or {}).get(symbol)
+        if isinstance(it, dict):
+            div = it.get("divergence") or {}
+            try:
+                v = div.get("actual_price")
+                if v is not None and math.isfinite(float(v)) and float(v) > 0:
+                    px = float(v)
+            except Exception:
+                pass
+    return px, pct
+
+
+def send_discord_vxn_deleveraging_alert(vix_regime, def_flight=None, update_time_str=None, webhook_url=None, dedupe_day=None):
+    """
+    频道二（#防御因子背离百分比 / DISCORD_DEFENSIVE_FLIGHT_WEBHOOK_URL）：
+    当 ^VXN >= 32.0 且科技恐慌溢价 VXN - VIX >= 5.5 时，推送科技/半导体极端去杠杆预警。
+    纳入 shared_alert_state.py 跨设备去重锁，每个美东交易日最多推送 1 次。
+    """
+    if not isinstance(vix_regime, dict) or bool(vix_regime.get("degraded", False)):
+        return False
+
+    try:
+        vxn_val = float(vix_regime.get("vxn_spot")) if vix_regime.get("vxn_spot") is not None else float("nan")
+        vix_val = float(vix_regime.get("vix_spot")) if vix_regime.get("vix_spot") is not None else float("nan")
+    except Exception:
+        return False
+    if not (math.isfinite(vxn_val) and math.isfinite(vix_val)):
+        return False
+
+    raw_spread = vix_regime.get("vxn_vix_spread")
+    try:
+        spread_val = float(raw_spread) if raw_spread is not None else round(vxn_val - vix_val, 2)
+    except Exception:
+        spread_val = round(vxn_val - vix_val, 2)
+    if not (math.isfinite(spread_val) and vxn_val >= 32.0 and spread_val >= 5.5):
+        return False
+
+    day_et = dedupe_day or (shared_alert_state.et_day() if _SHARED_ALERTS else now_et_str("%Y-%m-%d"))
+    dedupe_key = f"{day_et}:VXN_TECH_DELEVERAGING"
+    if _SHARED_ALERTS and shared_alert_state.is_sent(dedupe_key, max_age=None):
+        print(f"  [*] 跨设备去重跳过重复 VXN 去杠杆预警 ({dedupe_key})")
+        return False
+
+    if _external_alerts_disabled():
+        print(f"  [*] [Dry-Run Guard] 已屏蔽 VXN 极端去杠杆 Discord 推送 ({dedupe_key})")
+        return False
+
+    url = webhook_url or get_defensive_webhook_url()
+    if not url and webhook_url is None:
+        load_env_file()
+        url = get_defensive_webhook_url()
+    wrong_channel = any(ch in url for ch in _DEFENSIVE_WRONG_CHANNEL_IDS)
+    if not url or wrong_channel:
+        print("[!] 防御因子频道未配置 DISCORD_DEFENSIVE_FLIGHT_WEBHOOK_URL，跳过 VXN 去杠杆预警。")
+        return False
+
+    vvix_str = _fmt_opt_num(vix_regime.get("vvix_spot"), ".2f")
+    ratio_str = _fmt_opt_num(vix_regime.get("vix_term_ratio"), ".2f")
+    flight_str = "暂缺"
+    if isinstance(def_flight, dict) and def_flight.get("flight_score") is not None and not def_flight.get("skip_reason"):
+        try:
+            flight_str = f"{float(def_flight.get('flight_score')):+.2f}%"
+        except Exception:
+            pass
+    now_t = update_time_str or now_et_str("%Y-%m-%d %H:%M:%S")
+
+    desc = (
+        f"### 🔥 **【纳指/半导体极端去杠杆 · ^VXN 恐慌溢价飙升】**\n\n"
+        f"> 📊 **^VXN (纳指100恐慌)**：**`{vxn_val:.2f}`** ｜ **^VIX (标普恐慌)**：**`{vix_val:.2f}`**\n"
+        f"> ⚡ **科技恐慌溢价 (VXN - VIX)**：**`{spread_val:+.2f}`** (阈值 `≥ +5.5`)\n"
+        f"> 🌊 **^VVIX (波动率之波动)**：**`{vvix_str}`** ｜ **期限比 VIX/VIX3M**：`{ratio_str}`\n"
+        f"> 🛡️ **当前防御因子背离度 (Flight Score)**：**`{flight_str}`**\n\n"
+        f"---\n"
+        f"⚠️ **风控提示**：纳指/半导体成长板块恐慌度显著高于大盘，机构资金正在科技端集中去杠杆撤离！"
+        f"高波 AI/芯片多头严禁重仓扛单或盲目左侧抄底，谨防流动性踩踏。"
+    )
+
+    embed = {
+        "title": "🔥【科技极端去杠杆】^VXN 恐慌溢价预警",
+        "description": desc,
+        "color": 0xF85149,
+        "timestamp": datetime.now(timezone.utc).isoformat(),
+        "footer": {
+            "text": f"美股全周期量化雷达 · 科技恐慌溢价监测 | {now_t} ET"
+        },
+    }
+    payload = {
+        "username": "小豆泥·防御因子背离哨",
+        "embeds": [embed],
+    }
+
+    try:
+        req = urllib.request.Request(
+            url,
+            data=json.dumps(payload).encode("utf-8"),
+            headers={"Content-Type": "application/json", "User-Agent": "Mozilla/5.0"},
+        )
+        with urllib.request.urlopen(req, timeout=10) as resp:
+            if resp.status in (200, 204):
+                print(f"  [+] 💬 Discord 频道二 VXN 科技去杠杆预警推送成功: ^VXN={vxn_val:.2f}, spread={spread_val:+.2f}")
+                if _SHARED_ALERTS:
+                    shared_alert_state.mark(dedupe_key, _shared_device_tag())
+                return True
+            print(f"  [!] 💬 Discord VXN 去杠杆预警返回状态码: {resp.status}")
+            return False
+    except Exception as e:
+        print(f"  [!] 💬 Discord VXN 去杠杆预警推送异常: {e}")
+        return False
+
+
+def dispatch_vix_regime_discord_alerts(
+    vix_regime,
+    weather_info=None,
+    def_flight=None,
+    now_str=None,
+    claw_webhook_url=None,
+    def_webhook_url=None,
+    dedupe_day=None,
+):
+    """
+    统一调度 VIX/VXN 恐慌中枢跨频道预警：
+    - 频道一 (Claw)：VIX 期限倒挂硬刹车 / 恐慌出清右侧抄底观察窗（同日同状态最多 1 次）；
+    - 频道二 (防御因子背离)：^VXN >= 32 且 VXN - VIX >= 5.5 科技去杠杆预警（同日最多 1 次）。
+    """
+    summary = {
+        "vix_brake_sent": False,
+        "vix_bottom_sent": False,
+        "vxn_deleveraging_sent": False,
+        "sent_keys": [],
+        "skipped_keys": [],
+    }
+    if not isinstance(vix_regime, dict) or vix_regime.get("vix_state") == "UNAVAILABLE" or vix_regime.get("vix_spot") is None:
+        return summary
+
+    day_et = dedupe_day or (shared_alert_state.et_day() if _SHARED_ALERTS else now_et_str("%Y-%m-%d"))
+    now_t = now_str or now_et_str("%Y-%m-%d %H:%M:%S")
+    vix_state = str(vix_regime.get("vix_state") or "").upper()
+    vix_val = vix_regime.get("vix_spot")
+    vxn_val = vix_regime.get("vxn_spot")
+    spread_val = vix_regime.get("vxn_vix_spread")
+    ratio_val = vix_regime.get("vix_term_ratio")
+    vvix_val = vix_regime.get("vvix_spot")
+    tnx_val = vix_regime.get("tnx_yield")
+
+    try:
+        is_hard_brake = (
+            vix_state == "BACKWARDATION_BRAKE"
+            or (ratio_val is not None and float(ratio_val) >= 1.00)
+            or (vix_val is not None and float(vix_val) >= 30.0)
+        )
+    except Exception:
+        is_hard_brake = (vix_state == "BACKWARDATION_BRAKE")
+
+    vxn_desc = f"`{_fmt_opt_num(vxn_val)}`"
+    if spread_val is not None:
+        try:
+            vxn_desc += f" (溢价 `{float(spread_val):+.2f}`)"
+        except Exception:
+            pass
+    tnx_desc = f"`{_fmt_opt_num(tnx_val)}%`" if tnx_val is not None else "`--`"
+
+    # 1A. 频道一：🔴 VIX 期限倒挂硬刹车
+    if is_hard_brake:
+        brake_key = f"{day_et}:VIX_REGIME:BACKWARDATION_BRAKE"
+        if _SHARED_ALERTS and shared_alert_state.is_sent(brake_key, max_age=None):
+            summary["skipped_keys"].append(brake_key)
+        else:
+            title = "🔴 VIX 期限倒挂硬刹车 · 机构恐慌踩踏风控"
+            md_lines = [
+                f"### 🔴 **VIX 恐慌状态切换总开关 · 期限倒挂硬刹车 ({now_t} ET)**",
+                f"> • **`^VIX`**：`{_fmt_opt_num(vix_val)}` ｜ **`^VXN`**：{vxn_desc}",
+                f"> • **`VIX/VIX3M`**：`{_fmt_opt_num(ratio_val)}` ({vix_regime.get('term_structure_cn', '期限倒挂')})",
+                f"> • **`^VVIX`**：`{_fmt_opt_num(vvix_val)}` ｜ **`^TNX` (10Y)**：{tnx_desc}",
+                "",
+                "🛑 **操盘铁律**：机构恐慌倒挂踩踏期，常规多头已锁死上限，**严禁左侧接刀**，多头买点全面降级防守！",
+            ]
+            if send_discord_claw_alert(
+                title,
+                "\n".join(md_lines),
+                webhook_url=claw_webhook_url,
+                dedupe_key=brake_key,
+                dedupe_max_age=None,
+                color_override=0xF85149,
+            ):
+                summary["vix_brake_sent"] = True
+                summary["sent_keys"].append(brake_key)
+
+    # 1B. 频道一：🟢 恐慌出清 · 右侧抄底观察窗开启
+    elif bool(vix_regime.get("vix_bottom_signal", False)):
+        bottom_key = f"{day_et}:VIX_REGIME:WASHOUT_BOTTOM_WINDOW"
+        if _SHARED_ALERTS and shared_alert_state.is_sent(bottom_key, max_age=None):
+            summary["skipped_keys"].append(bottom_key)
+        else:
+            peak_s = _fmt_opt_num(vix_regime.get("vix_10d_peak"))
+            dd_s = _fmt_opt_num(vix_regime.get("vix_drawdown_from_peak_pct"))
+            drop_s = _fmt_opt_num(vix_regime.get("vix_term_ratio_drop"))
+            title = "🟢 恐慌出清 · 右侧抄底观察窗开启"
+            md_lines = [
+                f"### 🟢 **VIX 恐慌状态切换总开关 · 右侧抄底观察窗开启 ({now_t} ET)**",
+                f"> • **`^VIX`**：`{_fmt_opt_num(vix_val)}`（10日峰值 `{peak_s}`，回落 **`-{dd_s}%`**）",
+                f"> • **`VIX/VIX3M` 恢复升水**：`{_fmt_opt_num(ratio_val)}`（回落 `{drop_s}` · {vix_regime.get('term_structure_cn', '升水恢复')}）",
+                f"> • **`^VXN`**：{vxn_desc} ｜ **`^VVIX`**：`{_fmt_opt_num(vvix_val)}` ｜ **`^TNX`**：{tnx_desc}",
+                "",
+                "✅ **门禁切换**：恐慌出清确认，门禁已对站稳日内 VWAP 的优质标的放宽至**右侧观察窗**，拒绝盲目追高、只做企稳确认！",
+            ]
+            if send_discord_claw_alert(
+                title,
+                "\n".join(md_lines),
+                webhook_url=claw_webhook_url,
+                dedupe_key=bottom_key,
+                dedupe_max_age=None,
+                color_override=0x00E676,
+            ):
+                summary["vix_bottom_sent"] = True
+                summary["sent_keys"].append(bottom_key)
+
+    # 2. 频道二：🔥 科技/半导体极端去杠杆预警
+    df_obj = def_flight if def_flight is not None else ((weather_info or {}).get("defensive_flight") if isinstance(weather_info, dict) else None)
+    vxn_key = f"{day_et}:VXN_TECH_DELEVERAGING"
+    if _SHARED_ALERTS and shared_alert_state.is_sent(vxn_key, max_age=None):
+        summary["skipped_keys"].append(vxn_key)
+    elif send_discord_vxn_deleveraging_alert(
+        vix_regime=vix_regime,
+        def_flight=df_obj,
+        update_time_str=now_t,
+        webhook_url=def_webhook_url,
+        dedupe_day=day_et,
+    ):
+        summary["vxn_deleveraging_sent"] = True
+        summary["sent_keys"].append(vxn_key)
+
+    return summary
+
+
+def dispatch_intraday_corridor_divergence_alerts(
+    intraday_forecasts,
+    macro_data=None,
+    stocks_data=None,
+    weather_info=None,
+    now_et=None,
+    session_code=None,
+    webhook_url=None,
+):
+    """
+    频道一（#买点警报大盘趋势提示 / DISCORD_CLAW_WEBHOOK_URL）：
+    盘中预测走廊背离预警（严格限定 SPY/QQQ/SOXL 3 只风向标，绝不含 NVDA/SOXS/SQQQ 独立报警）。
+    - 时间门禁：严格锁定美东常规盘中 09:45 ~ 15:50 ET，周末/盘前/盘后/夜盘严禁误报；
+    - 反向对冲附注：QQQ 自动附带 SQQQ 现价与涨跌幅；SOXL 自动附带 SOXS 现价与涨跌幅；SPY 附带大盘体制与 VIX/VIX3M；
+    - 跨设备去重：按 (date_et, ticker, divergence_dir) 锁定，同方向每交易日最多推送 1 次。
+    """
+    res = {"sent": [], "skipped_dedupe": [], "blocked_reason": ""}
+
+    if now_et is None:
+        try:
+            from zoneinfo import ZoneInfo
+            cur_et = datetime.now(ZoneInfo("America/New_York"))
+        except Exception:
+            cur_et = datetime.now(timezone(timedelta(hours=-5)))
+    else:
+        cur_et = now_et
+
+    if cur_et.weekday() >= 5:
+        res["blocked_reason"] = "WEEKEND"
+        return res
+    if session_code is not None and str(session_code).upper() != "REGULAR":
+        res["blocked_reason"] = f"SESSION_{str(session_code).upper()}"
+        return res
+
+    hm_min = cur_et.hour * 60 + cur_et.minute
+    if not (9 * 60 + 45 <= hm_min <= 15 * 60 + 50):
+        res["blocked_reason"] = "OUTSIDE_0945_1550_ET"
+        return res
+
+    if not isinstance(intraday_forecasts, dict):
+        res["blocked_reason"] = "NO_FORECAST_DATA"
+        return res
+
+    day_et = cur_et.strftime("%Y-%m-%d")
+    doc_date = str(intraday_forecasts.get("forecast_date") or "")
+    by_ticker = intraday_forecasts.get("by_ticker")
+    if not isinstance(by_ticker, dict) or not by_ticker:
+        res["blocked_reason"] = "EMPTY_FORECASTS"
+        return res
+    if doc_date and doc_date != day_et:
+        res["blocked_reason"] = "STALE_FORECAST_DATE"
+        return res
+
+    quote_lookup = {}
+    if isinstance(stocks_data, (list, tuple)):
+        for s in stocks_data:
+            if isinstance(s, dict) and s.get("ticker"):
+                quote_lookup[s["ticker"]] = s
+    elif isinstance(stocks_data, dict):
+        quote_lookup.update(stocks_data)
+    if isinstance(macro_data, dict):
+        quote_lookup.update(macro_data)
+
+    vix_r = (weather_info or {}).get("vix_regime") if isinstance(weather_info, dict) else {}
+    if not isinstance(vix_r, dict):
+        vix_r = {}
+    regime_cn = str((weather_info or {}).get("market_regime_cn") or (weather_info or {}).get("market_regime") or intraday_forecasts.get("market_regime") or "UNKNOWN")
+
+    for tk in INTRADAY_CORRIDOR_ALERT_TICKERS:
+        item = by_ticker.get(tk)
+        if not isinstance(item, dict) or str(item.get("status") or "").lower() != "ok":
+            continue
+        item_date = str(item.get("forecast_date") or doc_date or "")
+        if item_date != day_et:
+            continue
+
+        div = item.get("divergence") or {}
+        div_status = str(div.get("status") or "").upper()
+        if div_status not in ("BELOW_P25", "ABOVE_P75"):
+            continue
+        if div.get("latest_slot") is not None:
+            try:
+                if int(div.get("latest_slot")) < 3:
+                    continue
+            except Exception:
+                pass
+
+        dedupe_key = f"{day_et}:INTRADAY_CORRIDOR:{tk}:{div_status}"
+        if _SHARED_ALERTS and shared_alert_state.is_sent(dedupe_key, max_age=None):
+            res["skipped_dedupe"].append(dedupe_key)
+            continue
+
+        actual_px = div.get("actual_price")
+        if actual_px is None:
+            actual_px, _ = _extract_live_quote_price_pct(tk, quote_lookup, intraday_forecasts)
+        p25 = div.get("slot_p25")
+        p50 = div.get("slot_p50")
+        p75 = div.get("slot_p75")
+        pct_vs_p50 = div.get("pct_vs_p50")
+        slot_time = str(div.get("latest_time") or cur_et.strftime("%H:%M"))
+
+        if div_status == "BELOW_P25":
+            dir_icon = "📉"
+            dir_title = "跌破盘前走廊下沿 (BELOW_P25)"
+            action_note = "⚠️ **方向警示**：实际走势跌破盘前历史相似日 P25 下沿，警惕高开低走或趋势性加速走弱，注意防守与对冲！"
+            color_hex = 0xF85149
+        else:
+            dir_icon = "🚀"
+            dir_title = "突破盘前走廊上沿 (ABOVE_P75)"
+            action_note = "🚀 **方向警示**：实际走势强势突破盘前历史相似日 P75 上沿，多头动能强于历史剧本，可顺势观察强弱延续！"
+            color_hex = 0x00E676
+
+        # 反向对冲现价“一鱼两吃”附注 & SPY 大盘体制附注
+        if tk == "QQQ":
+            sqqq_px, sqqq_pct = _extract_live_quote_price_pct("SQQQ", quote_lookup, intraday_forecasts)
+            if sqqq_px is not None:
+                sqqq_pct_s = f"（当日 `{sqqq_pct:+.2f}%`）" if sqqq_pct is not None else ""
+                footnote = f"🛡️ **反向对冲联动 · `SQQQ` 现价**：**`${sqqq_px:.2f}`**{sqqq_pct_s}"
+            else:
+                footnote = "🛡️ **反向对冲联动 · `SQQQ`**：实时报价暂缺"
+        elif tk == "SOXL":
+            soxs_px, soxs_pct = _extract_live_quote_price_pct("SOXS", quote_lookup, intraday_forecasts)
+            if soxs_px is not None:
+                soxs_pct_s = f"（当日 `{soxs_pct:+.2f}%`）" if soxs_pct is not None else ""
+                footnote = f"🛡️ **反向对冲联动 · `SOXS` 现价**：**`${soxs_px:.2f}`**{soxs_pct_s}"
+            else:
+                footnote = "🛡️ **反向对冲联动 · `SOXS`**：实时报价暂缺"
+        else:  # SPY
+            vix_s = _fmt_opt_num(vix_r.get("vix_spot"))
+            ratio_s = _fmt_opt_num(vix_r.get("vix_term_ratio"))
+            footnote = f"🧭 **大盘体制与恐慌读数**：体制 `{regime_cn}` ｜ `^VIX {vix_s}` ｜ `VIX/VIX3M {ratio_s}`"
+
+        pct_p50_s = f"`{float(pct_vs_p50):+.2f}%`" if pct_vs_p50 is not None else "`--`"
+        title = f"{dir_icon}【盘中走廊背离】{tk} {dir_title}"
+        md_lines = [
+            f"### {dir_icon} **{tk} · {dir_title}** (`{day_et} {slot_time} ET`)",
+            f"> • **实时现价**：**`${_fmt_opt_num(actual_px)}`**（相对剧本 P50 偏离 {pct_p50_s}）",
+            f"> • **盘前走廊区间**：P25 `${_fmt_opt_num(p25)}` ｜ P50 `${_fmt_opt_num(p50)}` ｜ P75 `${_fmt_opt_num(p75)}`",
+            f"> • {footnote}",
+            "",
+            action_note,
+        ]
+        if send_discord_claw_alert(
+            title,
+            "\n".join(md_lines),
+            webhook_url=webhook_url,
+            dedupe_key=dedupe_key,
+            dedupe_max_age=None,
+            color_override=color_hex,
+        ):
+            res["sent"].append({"ticker": tk, "status": div_status, "key": dedupe_key})
+
+    return res
+
+
 _DEFENSIVE_FLIGHT_PUSH_STATE = os.path.join(SCRATCH_DIR, ".defensive_flight_push_state.json")
 _DEFENSIVE_FLIGHT_CORE_SYMBOLS = ["KO", "PEP", "MCD", "LLY", "MRNA", "TLT", "GLD", "VIXY", "SMH", "SOXL", "NVDA", "QQQ"]
 
@@ -2513,6 +2969,10 @@ def send_pushplus_wechat_alert(title, markdown_content, channel=None):
     1. 推送至 ClawBot 微信机器人专属私聊通道与官方服务号
     2. 同步推送到 Discord 预警镜像频道 (微信发什么，此频道同步发什么)
     """
+    if _external_alerts_disabled():
+        print(f"  [*] [Dry-Run Guard] 已屏蔽微信/Claw推送: {title}")
+        return False
+
     # 0. 同步推送到 Discord 预警镜像频道 (零延迟并行镜像)
     discord_success = False
     try:
@@ -6299,6 +6759,7 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
     terminal_notifications = generate_and_sync_notifications(macro_data, stocks_sorted, weather_info, now_str, session_code=session_code)
 
     # 阶段二：更新盘前走廊与 09:45 ET 实时背离纠偏快照 (盘中 0 次全量重下 60d 底模)
+    _ip_res = None
     try:
         import intraday_path_predictor
         _ip_tickers = list(MONITORED_TARGETS.get("ETFS", {}).keys()) + list(MONITORED_TARGETS.get("STOCKS", {}).keys())
@@ -6332,32 +6793,59 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
     print(f"✅ 富途牛牛专业全周期看盘终端已生成: {FUTU_HTML_FILE}")
     sync_live_prices_to_predict_html(macro_data, stocks_sorted, session_code)
 
-    # 7. 智能去重微信预警推送 (PushPlus 微信 Markdown 卡片通道)
-    dispatch_wechat_radar_alerts(macro_data, stocks_sorted, weather_info, now_str)
+    if not _external_alerts_disabled():
+        # 7. 智能去重微信预警推送 (PushPlus 微信 Markdown 卡片通道)
+        dispatch_wechat_radar_alerts(macro_data, stocks_sorted, weather_info, now_str)
 
-    # 7.5 美股五大梯队量化哨兵与板块巡检 (Discord Webhook 富文本通道)
-    dispatch_discord_sentinel_async(macro_data, stocks_sorted, weather_info, now_str)
+        # 7.5 美股五大梯队量化哨兵与板块巡检 (Discord Webhook 富文本通道)
+        dispatch_discord_sentinel_async(macro_data, stocks_sorted, weather_info, now_str)
 
-    # 7.55 金十数据宏观红字快讯与重磅财经日历哨兵 (独立守护线程 · 3s超时熔断)
-    dispatch_jin10_sentinel_async()
+        # 7.55 金十数据宏观红字快讯与重磅财经日历哨兵 (独立守护线程 · 3s超时熔断)
+        dispatch_jin10_sentinel_async()
 
-    # 7.6 专属防御因子背离百分比频道推送 (每次雷达刷新后专属播报)
-    try:
-        import threading
-        live_lookup_df = {s["ticker"]: s for s in stocks_sorted if isinstance(s, dict) and "ticker" in s}
-        live_lookup_df.update(macro_data or {})
-        df_alert_push = weather_info.get("defensive_flight") if (weather_info and isinstance(weather_info, dict)) else None
-        if not df_alert_push:
-            import ml_predictor_5y
-            df_alert_push = ml_predictor_5y.compute_defensive_flight_alert(live_lookup=live_lookup_df, session_code=session_code)
-        # 夜盘防刷屏：仅 Score 变动 >=0.10%p 或核心成分变动 >=0.5% 才发送
-        if should_send_defensive_flight_alert(df_alert_push, live_lookup_df, session_code=session_code):
-            if send_discord_defensive_flight_alert(df_alert_push, live_lookup_df, now_str):
-                record_defensive_flight_sent(df_alert_push, live_lookup_df, session_code=session_code)
-        else:
-            print("  [*] 防御因子无显著变化（<0.10%p 且核心成分<0.5%），跳过 Discord 推送")
-    except Exception as df_err:
-        print(f"  [!] 💬 防御因子背离推送启动异常: {df_err}")
+        # 7.6 专属防御因子背离百分比频道推送 (每次雷达刷新后专属播报)
+        df_alert_push = None
+        try:
+            import threading
+            live_lookup_df = {s["ticker"]: s for s in stocks_sorted if isinstance(s, dict) and "ticker" in s}
+            live_lookup_df.update(macro_data or {})
+            df_alert_push = weather_info.get("defensive_flight") if (weather_info and isinstance(weather_info, dict)) else None
+            if not df_alert_push:
+                import ml_predictor_5y
+                df_alert_push = ml_predictor_5y.compute_defensive_flight_alert(live_lookup=live_lookup_df, session_code=session_code)
+            # 夜盘防刷屏：仅 Score 变动 >=0.10%p 或核心成分变动 >=0.5% 才发送
+            if should_send_defensive_flight_alert(df_alert_push, live_lookup_df, session_code=session_code):
+                if send_discord_defensive_flight_alert(df_alert_push, live_lookup_df, now_str):
+                    record_defensive_flight_sent(df_alert_push, live_lookup_df, session_code=session_code)
+            else:
+                print("  [*] 防御因子无显著变化（<0.10%p 且核心成分<0.5%），跳过 Discord 推送")
+        except Exception as df_err:
+            print(f"  [!] 💬 防御因子背离推送启动异常: {df_err}")
+
+        # 7.7 VIX/VXN 恐慌中枢状态切换 & 科技极端去杠杆预警
+        try:
+            dispatch_vix_regime_discord_alerts(
+                vix_regime=vix_regime,
+                weather_info=weather_info,
+                def_flight=df_alert_push,
+                now_str=now_str,
+            )
+        except Exception as _vx_err:
+            print(f"  [!] 💬 VIX/VXN 恐慌状态 Discord 推送异常: {_vx_err}")
+
+        # 7.8 盘中预测走廊背离预警 (仅限 SPY/QQQ/SOXL，且严格锁定 09:45~15:50 ET)
+        try:
+            dispatch_intraday_corridor_divergence_alerts(
+                intraday_forecasts=_ip_res,
+                macro_data=macro_data,
+                stocks_data=stocks_sorted,
+                weather_info=weather_info,
+                session_code=session_code,
+            )
+        except Exception as _ip_al_err:
+            print(f"  [!] 💬 盘中走廊背离 Discord 推送异常: {_ip_al_err}")
+    else:
+        print("  [*] [Dry-Run Guard] 已屏蔽全部外部推送 (RADAR_DISABLE_EXTERNAL_ALERTS / --no-alerts)")
 
     # 8. 更新本地同步锁时间戳
     update_last_sync_time()
