@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795209354.999,
-  "updated_at_et": "11-20 16:15 ET",
-  "updated_at_kst": "06:15 KST",
+  "updated_at_ts": 1795209476.275,
+  "updated_at_et": "11-20 16:17 ET",
+  "updated_at_kst": "06:17 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1248,6 +1248,13 @@
         "pub_ts": 1795187616.0
       },
       {
+        "title": "Is Apple Stock Increasing Your Market Risk?",
+        "url": "https://www.trefis.com/stock/aapl/articles/627248/is-apple-stock-increasing-your-market-risk/2026-11-20?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 15:53 ET",
+        "pub_ts": 1795208025.0
+      },
+      {
         "title": "Apple “Has No Idea What It’s Doing” in AI. Oh, and It’s Building Its Own AI Agent Too",
         "url": "https://www.tikr.com/blog/apple-has-no-idea-what-its-doing-in-ai-oh-and-its-building-its-own-ai-agent-too?ref=yahoofinance&tlnk=yf-261120-jcvh6wc4&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1260,13 +1267,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 13:24 ET",
         "pub_ts": 1795199041.0
-      },
-      {
-        "title": "Apple Plans an AI Agent to Rival Meta's Muse",
-        "url": "https://finance.yahoo.com/technology/ai/articles/apple-plans-ai-agent-rival-181309227.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 13:13 ET",
-        "pub_ts": 1795198389.0
       }
     ],
     "PLTR": [
@@ -1937,6 +1937,13 @@
     ],
     "TSLA": [
       {
+        "title": "Tesla Sinks 8%, SpaceX Down 7%, Rivian Down 8% as AI Sell-Off Swamps HSBC Upgrade",
+        "url": "https://www.tikr.com/blog/tesla-sinks-8-spacex-down-7-rivian-down-8-as-ai-sell-off-swamps-hsbc-upgrade?ref=yahoofinance&tlnk=yf-261120-49fmfcrf&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 15:45 ET",
+        "pub_ts": 1795207555.0
+      },
+      {
         "title": "$17B Tesla manufacturing plant led October’s construction starts rebound",
         "url": "https://www.constructiondive.com/news/tesla-manufacturing-plant-october-construction-starts-rebound/875377/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1963,13 +1970,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 11:05 ET",
         "pub_ts": 1795190718.0
-      },
-      {
-        "title": "Tesla (TSLA) Down 0.1% Since Last Earnings Report: Can It Rebound?",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/tesla-tsla-down-0-1-153011735.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 10:30 ET",
-        "pub_ts": 1795188611.0
       }
     ],
     "AXP": [
@@ -2122,6 +2122,13 @@
     ],
     "INTC": [
       {
+        "title": "AMD Is Down 26% and Intel Is Down 42%. Which AI Stock Is Worth Buying on the Dip?",
+        "url": "https://www.fool.com/coverage/better-buy/2026/11/20/amd-is-down-26-and-intel-is-down-42-which-ai-stock-is-worth-buying-on-the-dip/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 15:50 ET",
+        "pub_ts": 1795207802.0
+      },
+      {
         "title": "Could Jensen Huang Land At Nvidia Rival Intel?",
         "url": "https://finance.yahoo.com/m/0f796a98-f9a0-3610-b88d-21a75faa2e7b/could-jensen-huang-land-at.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2148,13 +2155,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 12:22 ET",
         "pub_ts": 1795195332.0
-      },
-      {
-        "title": "Intel Wins Microsoft AI Chip Business as Foundry Turnaround Faces New Test",
-        "url": "https://finance.yahoo.com/technology/articles/intel-wins-microsoft-ai-chip-171706213.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 12:17 ET",
-        "pub_ts": 1795195026.0
       }
     ],
     "VRT": [
@@ -3258,18 +3258,18 @@
     "SOXS": 1795209354.9985425,
     "NVDA": 1795209354.9985425,
     "AMD": 1795209354.9985425,
-    "ASML": 1795207951.48595,
-    "QCOM": 1795207951.48595,
+    "ASML": 1795209476.2753294,
+    "QCOM": 1795209476.2753294,
     "AVGO": 1795209354.9985425,
     "AMAT": 1795209354.9985425,
     "META": 1795209354.9985425,
     "GOOGL": 1795209354.9985425,
     "MSFT": 1795209354.9985425,
-    "AAPL": 1795207951.48595,
-    "PLTR": 1795207951.48595,
-    "NOW": 1795207951.48595,
-    "AMZN": 1795207951.48595,
-    "CRWV": 1795207951.48595,
+    "AAPL": 1795209476.2753294,
+    "PLTR": 1795209476.2753294,
+    "NOW": 1795209476.2753294,
+    "AMZN": 1795209476.2753294,
+    "CRWV": 1795209476.2753294,
     "NBIS": 1795208942.2653537,
     "APLD": 1795208942.2653537,
     "VST": 1795208942.2653537,
@@ -3278,30 +3278,30 @@
     "COHR": 1795208942.2653537,
     "MRVL": 1795208942.2653537,
     "LITE": 1795208942.2653537,
-    "AAOI": 1795207951.48595,
+    "AAOI": 1795209476.2753294,
     "SPCX": 1795208942.2653537,
     "ASTS": 1795208942.2653537,
     "AXTI": 1795208942.2653537,
-    "NASA": 1795207951.48595,
-    "LUNR": 1795207951.48595,
-    "TSLA": 1795207951.48595,
-    "AXP": 1795207951.48595,
+    "NASA": 1795209476.2753294,
+    "LUNR": 1795209476.2753294,
+    "TSLA": 1795209476.2753294,
+    "AXP": 1795209476.2753294,
     "RKLB": 1795208942.2653537,
-    "KO": 1795207951.48595,
+    "KO": 1795209476.2753294,
     "FLY": 1795208942.2653537,
-    "INTC": 1795207951.48595,
-    "VRT": 1795207951.48595,
-    "HPE": 1795207951.48595,
-    "DELL": 1795207951.48595,
-    "OKLO": 1795207951.48595,
+    "INTC": 1795209476.2753294,
+    "VRT": 1795209476.2753294,
+    "HPE": 1795209476.2753294,
+    "DELL": 1795209476.2753294,
+    "OKLO": 1795209476.2753294,
     "CEG": 1795208056.7139163,
-    "FPS": 1795207951.48595,
-    "MU": 1795207951.48595,
-    "SKHY": 1795207951.48595,
-    "WDC": 1795207951.48595,
+    "FPS": 1795209476.2753294,
+    "MU": 1795209476.2753294,
+    "SKHY": 1795209476.2753294,
+    "WDC": 1795209476.2753294,
     "STX": 1795208056.7139163,
     "MSTR": 1795208056.7139163,
-    "SNDK": 1795207951.48595,
+    "SNDK": 1795209476.2753294,
     "BTC-USD": 1795208461.50222,
     "CRWD": 1795208942.2653537,
     "ORCL": 1795208942.2653537,

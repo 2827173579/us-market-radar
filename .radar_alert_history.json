@@ -148,6 +148,14 @@
     "AMAT": {
       "state": "STOP_LOSS",
       "last_notified_at": 1795208644.2368214
+    },
+    "DELL": {
+      "state": "STOP_LOSS",
+      "last_notified_at": 1795209485.6455662
+    },
+    "BE": {
+      "state": "STOP_LOSS",
+      "last_notified_at": 1795209485.6455662
     }
   },
   "position_peaks": {
