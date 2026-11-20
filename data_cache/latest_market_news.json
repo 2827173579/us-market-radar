@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795194179.579,
-  "updated_at_et": "11-20 12:02 ET",
-  "updated_at_kst": "02:02 KST",
+  "updated_at_ts": 1795194284.047,
+  "updated_at_et": "11-20 12:04 ET",
+  "updated_at_kst": "02:04 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -974,6 +974,13 @@
     ],
     "ASML": [
       {
+        "title": "European Stocks Close Sharply Lower in Friday Trading Amid Tech Selloff",
+        "url": "https://finance.yahoo.com/markets/world-indices/articles/european-stocks-close-sharply-lower-164711944.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 11:47 ET",
+        "pub_ts": 1795193231.0
+      },
+      {
         "title": "14 ETFs Add to ASML Holding (ASML) on Nov. 18",
         "url": "https://finance.yahoo.com/markets/stocks/articles/14-etfs-add-asml-holding-110144292.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1000,13 +1007,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 06:04 ET",
         "pub_ts": 1795086284.0
-      },
-      {
-        "title": "Why Nvidia and ASML still fit an underweight tech strategy",
-        "url": "https://www.thestreet.com/investing/why-nvidia-and-asml-still-fit-an-underweight-tech-strategy?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 19:44 ET",
-        "pub_ts": 1795049094.0
       }
     ],
     "QCOM": [
@@ -1233,11 +1233,25 @@
     ],
     "AAPL": [
       {
+        "title": "Apple's secret AI agent shows John Ternus is done sitting out the AI race",
+        "url": "https://finance.yahoo.com/markets/article/apples-secret-ai-agent-shows-john-ternus-is-done-sitting-out-the-ai-race-164226953.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 11:42 ET",
+        "pub_ts": 1795192946.0
+      },
+      {
         "title": "Apple's AI agent push: Why the pressure is mounting",
         "url": "https://finance.yahoo.com/video/apples-ai-agent-push-why-the-pressure-is-mounting-151336671.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-20 10:13 ET",
         "pub_ts": 1795187616.0
+      },
+      {
+        "title": "Underweighting Apple (AAPL) Detracts from the Fund’s Relative Quarterly Returns",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/underweighting-apple-aapl-detracts-fund-165211632.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 11:52 ET",
+        "pub_ts": 1795193531.0
       },
       {
         "title": "Apple Stock Polishes Breakout As Nvidia-Led AI Boom Gets Wake-Up Call",
@@ -1252,20 +1266,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 09:00 ET",
         "pub_ts": 1795183200.0
-      },
-      {
-        "title": "3 Tech Dividend Stocks Retirees Shouldn’t Overlook",
-        "url": "https://247wallst.com/investing/2026/11/20/3-tech-dividend-stocks-retirees-shouldnt-overlook/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 08:47 ET",
-        "pub_ts": 1795182460.0
-      },
-      {
-        "title": "Apple Might Be About to Become an AI Stock—but It’s Still Dodging the Tech Selloff",
-        "url": "https://finance.yahoo.com/m/218adf20-fceb-3955-ab5b-5c4bc9cf9107/apple-might-be-about-to.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 07:44 ET",
-        "pub_ts": 1795178640.0
       }
     ],
     "PLTR": [
@@ -1307,6 +1307,13 @@
     ],
     "NOW": [
       {
+        "title": "A $4.5 Billion Fund Just Bought These 3 Stocks",
+        "url": "https://www.tikr.com/blog/a-4-5-billion-fund-just-bought-these-3-stocks?ref=yahoofinance&tlnk=yf-261120-7vmp3gpg&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 11:50 ET",
+        "pub_ts": 1795193454.0
+      },
+      {
         "title": "AI sell-off: These sectors held firm as tech slumped in Oct, Nov",
         "url": "https://finance.yahoo.com/markets/stocks/articles/ai-sell-off-sectors-held-044523371.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1333,16 +1340,23 @@
         "source": "Yahoo Finance",
         "time": "11-19 10:15 ET",
         "pub_ts": 1795101300.0
-      },
-      {
-        "title": "Is ServiceNow A Better Buy Than Atlassian Now?",
-        "url": "https://www.trefis.com/stock/team/articles/626643/is-servicenow-a-better-buy-than-atlassian-now/2026-11-19?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 07:54 ET",
-        "pub_ts": 1795092850.0
       }
     ],
     "AMZN": [
+      {
+        "title": "Amazon Warns New Yorkers They May Have to Pay an Extra $5 on Orders Due to Mayor Mamdani-Backed Bill",
+        "url": "https://firstformoney.com/amazon-warns-new-yorkers-they-may-have-to-pay-an-extra-5-on-orders-due-to-mayor-mamdani-backed-bill/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 11:30 ET",
+        "pub_ts": 1795192207.0
+      },
+      {
+        "title": "Everful Gets $48.5 Million Funding Boost",
+        "url": "https://wwd.com/sourcing-journal/industry-news/everful-raises-48-5-million-funding-round-ai-commerce-1239429533/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 11:24 ET",
+        "pub_ts": 1795191882.0
+      },
       {
         "title": "Walmart Is Amazon, But With 4,600 Stores",
         "url": "https://247wallst.com/investing/2026/11/20/walmart-is-amazon-but-with-4600-stores/?.tsrc=rss",
@@ -1363,20 +1377,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 10:15 ET",
         "pub_ts": 1795187702.0
-      },
-      {
-        "title": "Amazon vs. Alibaba: Which E-Commerce Giant Has an Edge Right Now?",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/amazon-vs-alibaba-e-commerce-145100078.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 09:51 ET",
-        "pub_ts": 1795186260.0
-      },
-      {
-        "title": "“Such A Funny Idea.” Jeff Bezos’ $41 Billion Startup Could Drive “Civilizational Wealth,” But He Doesn’t See Merging It With Amazon “Right Now”",
-        "url": "https://247wallst.com/investing/2026/11/20/such-a-funny-idea-jeff-bezos-41-billion-startup-could-drive-civilizational-wealth-but-he-doesnt-see-merging-it-with-amazon-right-now/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 09:49 ET",
-        "pub_ts": 1795186159.0
       }
     ],
     "CRWV": [
@@ -1936,6 +1936,20 @@
     ],
     "TSLA": [
       {
+        "title": "Tesla Falls 4% Despite HSBC Upgrade and $359 Target Tied to SpaceX Merger Talk; Rivian Drops 5%, Lucid Slides 4%",
+        "url": "https://247wallst.com/investing/2026/11/20/tesla-falls-4-despite-hsbc-upgrade-and-359-target-tied-to-spacex-merger-talk-rivian-drops-5-lucid-slides-4/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 11:57 ET",
+        "pub_ts": 1795193859.0
+      },
+      {
+        "title": "Why Avoiding Tesla (TSLA) Boosted Fund Performance",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/why-avoiding-tesla-tsla-boosted-165030350.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 11:50 ET",
+        "pub_ts": 1795193430.0
+      },
+      {
         "title": "Tesla proposes $3.1 billion Texas polysilicon refinery",
         "url": "https://www.manufacturingdive.com/news/LiMiK-Capital-328-million-manufacturing-plant-south-carolina/875286/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1950,25 +1964,11 @@
         "pub_ts": 1795188611.0
       },
       {
-        "title": "Can Tesla (TSLA) Robotaxis Catch Waymo? JPMorgan Is Watching",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/tesla-tsla-robotaxis-catch-waymo-152348510.html?.tsrc=rss",
+        "title": "Don’t Sell Tesla Stock. A Merger Is Coming.",
+        "url": "https://finance.yahoo.com/m/d592b819-836f-3be7-8792-8c24d9e9a701/don%E2%80%99t-sell-tesla-stock.-a.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-20 10:23 ET",
-        "pub_ts": 1795188228.0
-      },
-      {
-        "title": "Ford And GM Saved By US Government, Again",
-        "url": "https://247wallst.com/investing/2026/11/20/ford-and-gm-saved-by-us-government-again/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 10:20 ET",
-        "pub_ts": 1795188014.0
-      },
-      {
-        "title": "Elon Musk sends stark signal to Tesla stock investors",
-        "url": "https://www.thestreet.com/automotive/elon-musk-sends-stark-signal-to-tesla-stock-investors-model-yl-cybercab?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 10:17 ET",
-        "pub_ts": 1795187820.0
+        "time": "11-20 10:24 ET",
+        "pub_ts": 1795188240.0
       }
     ],
     "AXP": [
@@ -2121,6 +2121,13 @@
     ],
     "INTC": [
       {
+        "title": "Meta and Microsoft Aren't Cutting Server CPU Orders -- Why AMD and Intel Could Benefit",
+        "url": "https://finance.yahoo.com/technology/articles/meta-microsoft-arent-cutting-server-165207063.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 11:52 ET",
+        "pub_ts": 1795193527.0
+      },
+      {
         "title": "Can INTC Capitalize on AI Growth Through Its Expanded Microsoft Deal?",
         "url": "https://finance.yahoo.com/technology/ai/articles/intc-capitalize-ai-growth-expanded-150500460.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2140,13 +2147,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 09:50 ET",
         "pub_ts": 1795186201.0
-      },
-      {
-        "title": "Anthropic, Nvidia, AMD, Intuit, Bloom Energy, and More Stocks That Explain Today’s Market",
-        "url": "https://finance.yahoo.com/m/801603d1-8318-3eb0-99a6-10147f0d5ed5/anthropic%2C-nvidia%2C-amd%2C.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 08:53 ET",
-        "pub_ts": 1795182780.0
       },
       {
         "title": "Did Microsoft Azure Deal Just Shift Intel's (INTC) Investment Narrative?",
@@ -2380,11 +2380,18 @@
     ],
     "MU": [
       {
-        "title": "Nvidia stock extends 6-day losing streak, as AMD, Broadcom lead chip sector lower",
-        "url": "https://finance.yahoo.com/markets/article/nvidia-amd-and-broadcom-lead-chip-stocks-lower-133658985.html?.tsrc=rss",
+        "title": "Why Micron Stock Crashed Today",
+        "url": "https://www.fool.com/investing/2026/11/20/why-micron-stock-crashed-today/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-20 08:36 ET",
-        "pub_ts": 1795181818.0
+        "time": "11-20 11:54 ET",
+        "pub_ts": 1795193642.0
+      },
+      {
+        "title": "A $19 Billion Fund Just Bought These 3 Stocks",
+        "url": "https://www.tikr.com/blog/a-19-billion-fund-just-bought-these-3-stocks?ref=yahoofinance&tlnk=yf-261120-8mr35qm6&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 11:45 ET",
+        "pub_ts": 1795193126.0
       },
       {
         "title": "MU, SNDK, Other Chipmakers Plunge Amid AI Trade Weakness — UBS Says Risk-Reward In Equities Has Become ‘More Balanced’",
@@ -2394,25 +2401,18 @@
         "pub_ts": 1795191114.0
       },
       {
+        "title": "Anthropic, Nvidia, AMD, Micron, Sandisk, Bloom Energy, and More Stocks That Explain Today’s Market",
+        "url": "https://finance.yahoo.com/m/801603d1-8318-3eb0-99a6-10147f0d5ed5/anthropic%2C-nvidia%2C-amd%2C.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 10:59 ET",
+        "pub_ts": 1795190340.0
+      },
+      {
         "title": "Is Micron's Record Inventory A Risk For The Stock?",
         "url": "https://www.trefis.com/stock/mu/articles/627203/is-micron-s-record-inventory-a-risk-for-the-stock/2026-11-20?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-20 10:55 ET",
         "pub_ts": 1795190114.0
-      },
-      {
-        "title": "Micron (MU) Booked $54.23B in a Quarter. What Does RBC See Next?",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/micron-mu-booked-54-23b-152333605.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 10:23 ET",
-        "pub_ts": 1795188213.0
-      },
-      {
-        "title": "What Happens To Micron Stock If Prices Stop Rising?",
-        "url": "https://www.trefis.com/stock/mu/articles/627285/what-happens-to-micron-stock-if-prices-stop-rising/2026-11-20?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 10:01 ET",
-        "pub_ts": 1795186907.0
       }
     ],
     "SKHY": [
@@ -2454,6 +2454,13 @@
     ],
     "WDC": [
       {
+        "title": "Competitive Pressure and Multiple Compression Weighed on Western Digital Corporation (WDC) in Q3",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/competitive-pressure-multiple-compression-weighed-165515187.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 11:55 ET",
+        "pub_ts": 1795193715.0
+      },
+      {
         "title": "Zacks Industry Outlook Highlights Western Digital, Super Micro Computer and Quantum",
         "url": "https://finance.yahoo.com/markets/stocks/articles/zacks-industry-outlook-highlights-western-131900064.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2480,13 +2487,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 13:26 ET",
         "pub_ts": 1795112797.0
-      },
-      {
-        "title": "3 Storage Device Stocks to Buy as the Industry Gains Momentum",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/3-storage-device-stocks-buy-150600022.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 10:06 ET",
-        "pub_ts": 1795100760.0
       }
     ],
     "STX": [
@@ -2572,6 +2572,13 @@
         "pub_ts": 1795184441.0
       },
       {
+        "title": "Why Sandisk Stock Dropped Again Today",
+        "url": "https://www.fool.com/investing/2026/11/20/why-sandisk-stock-dropped-again-today/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 11:34 ET",
+        "pub_ts": 1795192440.0
+      },
+      {
         "title": "MU, SNDK, Other Chipmakers Plunge Amid AI Trade Weakness — UBS Says Risk-Reward In Equities Has Become ‘More Balanced’",
         "url": "https://stocktwits.com/news-articles/markets/equity/mu-sndk-other-chipmakers-plunge-amid-ai-trade-weakness-ubs-says-risk-reward-in-equities-has-become-more-balanced/cNbSZa1R91c?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2579,25 +2586,18 @@
         "pub_ts": 1795191114.0
       },
       {
+        "title": "Anthropic, Nvidia, AMD, Micron, Sandisk, Bloom Energy, and More Stocks That Explain Today’s Market",
+        "url": "https://finance.yahoo.com/m/801603d1-8318-3eb0-99a6-10147f0d5ed5/anthropic%2C-nvidia%2C-amd%2C.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 10:59 ET",
+        "pub_ts": 1795190340.0
+      },
+      {
         "title": "Sandisk Stock Looked Like It Fell 87%. Here’s What Really Happened.",
         "url": "https://finance.yahoo.com/m/83e6f25c-45b8-3b90-ab21-ee8d7bebe056/sandisk-stock-looked-like-it.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-20 09:46 ET",
         "pub_ts": 1795185960.0
-      },
-      {
-        "title": "Micron Sinks 6%, Sandisk Down 7% as Chip Selloff Deepens Memory’s “Abject Disaster”",
-        "url": "https://www.tikr.com/blog/micron-sinks-6-sandisk-down-7-as-chip-selloff-deepens-memorys-abject-disaster?ref=yahoofinance&tlnk=yf-261120-gwxqp9q2&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 09:38 ET",
-        "pub_ts": 1795185500.0
-      },
-      {
-        "title": "SanDisk Tumbles 8% as TrendForce Turns Bearish on 2027 NAND Prices; Micron Falls 5%, SK Hynix Slides 4%",
-        "url": "https://247wallst.com/investing/2026/11/20/sandisk-tumbles-8-as-trendforce-turns-bearish-on-2027-nand-prices-micron-falls-5-sk-hynix-slides-4/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 09:09 ET",
-        "pub_ts": 1795183769.0
       }
     ],
     "BTC-USD": [
@@ -3257,18 +3257,18 @@
     "SOXS": 1795194179.5793107,
     "NVDA": 1795194179.5793107,
     "AMD": 1795194179.5793107,
-    "ASML": 1795192756.4926186,
-    "QCOM": 1795192756.4926186,
+    "ASML": 1795194284.0469682,
+    "QCOM": 1795194284.0469682,
     "AVGO": 1795194179.5793107,
     "AMAT": 1795194179.5793107,
     "META": 1795194179.5793107,
     "GOOGL": 1795194179.5793107,
     "MSFT": 1795194179.5793107,
-    "AAPL": 1795192756.4926186,
-    "PLTR": 1795192756.4926186,
-    "NOW": 1795192756.4926186,
-    "AMZN": 1795192756.4926186,
-    "CRWV": 1795192756.4926186,
+    "AAPL": 1795194284.0469682,
+    "PLTR": 1795194284.0469682,
+    "NOW": 1795194284.0469682,
+    "AMZN": 1795194284.0469682,
+    "CRWV": 1795194284.0469682,
     "NBIS": 1795193666.939283,
     "APLD": 1795193666.939283,
     "VST": 1795193666.939283,
@@ -3277,30 +3277,30 @@
     "COHR": 1795193666.939283,
     "MRVL": 1795193666.939283,
     "LITE": 1795193666.939283,
-    "AAOI": 1795192756.4926186,
+    "AAOI": 1795194284.0469682,
     "SPCX": 1795193666.939283,
     "ASTS": 1795193666.939283,
     "AXTI": 1795193666.939283,
-    "NASA": 1795192756.4926186,
-    "LUNR": 1795192756.4926186,
-    "TSLA": 1795192756.4926186,
-    "AXP": 1795192756.4926186,
+    "NASA": 1795194284.0469682,
+    "LUNR": 1795194284.0469682,
+    "TSLA": 1795194284.0469682,
+    "AXP": 1795194284.0469682,
     "RKLB": 1795193666.939283,
-    "KO": 1795192756.4926186,
+    "KO": 1795194284.0469682,
     "FLY": 1795193666.939283,
-    "INTC": 1795192756.4926186,
-    "VRT": 1795192756.4926186,
-    "HPE": 1795192756.4926186,
-    "DELL": 1795192756.4926186,
-    "OKLO": 1795192756.4926186,
+    "INTC": 1795194284.0469682,
+    "VRT": 1795194284.0469682,
+    "HPE": 1795194284.0469682,
+    "DELL": 1795194284.0469682,
+    "OKLO": 1795194284.0469682,
     "CEG": 1795192862.4731817,
-    "FPS": 1795192756.4926186,
-    "MU": 1795192756.4926186,
-    "SKHY": 1795192756.4926186,
-    "WDC": 1795192756.4926186,
+    "FPS": 1795194284.0469682,
+    "MU": 1795194284.0469682,
+    "SKHY": 1795194284.0469682,
+    "WDC": 1795194284.0469682,
     "STX": 1795192862.4731817,
     "MSTR": 1795192862.4731817,
-    "SNDK": 1795192756.4926186,
+    "SNDK": 1795194284.0469682,
     "BTC-USD": 1795193263.91301,
     "CRWD": 1795193666.939283,
     "ORCL": 1795193666.939283,
