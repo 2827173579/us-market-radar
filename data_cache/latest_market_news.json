@@ -1,9 +1,22 @@
 {
-  "updated_at_ts": 1795206839.188,
-  "updated_at_et": "11-20 15:33 ET",
-  "updated_at_kst": "05:33 KST",
+  "updated_at_ts": 1795206940.811,
+  "updated_at_et": "11-20 15:35 ET",
+  "updated_at_kst": "05:35 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261121043308152800",
+      "title": "纳指扩大跌幅至5%，标普500指数跌3.52%，道指跌1.78%。",
+      "summary": "纳指扩大跌幅至5%，标普500指数跌3.52%，道指跌1.78%。",
+      "keywords": [
+        "标普"
+      ],
+      "pub_ts": 1795206788.0,
+      "time_et": "11-20 15:33 ET",
+      "time_bj": "04:33 BJ",
+      "time_kst": "05:33 KST",
+      "time_display": "15:33 ET / 04:33 BJ"
+    },
     {
       "id": "20261121040819292800",
       "title": "【美股三大指数集体走弱 资金转向防御板块】 11月21日讯，AI及存储芯片股遭集中抛售，…",
@@ -328,22 +341,6 @@
       "time_bj": "23:24 BJ",
       "time_kst": "00:24 KST",
       "time_display": "10:24 ET / 23:24 BJ"
-    },
-    {
-      "id": "20261120231710072800",
-      "title": "整理：11月20日欧盘美盘重要新闻汇总",
-      "summary": "国内新闻 1. 多家银行发布贵金属业务市场风险提示。 2. 上期所发布关于做好市场风险控制工作的通知。 3. 中美两军举行海上军事安全磋商机制工作小组会议和年度会晤。 4. 习近平会见马来西亚、澳大利亚、印尼、新加坡与泰国领导人。 5. 市监总局发布百度收购欢聚集团部分业务违法实施经营者集中案行政处罚决定书。 6. 证券监管部门联合公安机关依法处罚编造传播资本市场虚假信息行为，公布4起典型案例。 7. 中澳总理年度会晤联合成果声明：两国领导人同意2027年举行下一轮中澳总理年度会晤。 8. 财政部：2026年1-10月印花税4712亿元，同比增长24.6%。其中，证券交易印花税2511亿元，同比增长54.1%。 9. 恒生指数公司季检结果：恒生科技指数纳入立讯精密、宁德时代、胜宏科技等20只个股；恒生指数成份股没有变动。 国际新闻 1. 英伟达被谷歌超越，美股市值跌至第四名。 2. 英国与欧盟达成一揽子协议，深化脱欧后关系。 3. 全球股票基金连续九周吸金，单周净流入近600亿美元。 4. 美国10年期国债收益率盘中跌破5%，创上周四以来新低。 5. 市场削减欧洲央行加息押注，倾向于认为到2027年底前仅加息两次。 6. Anthropic：承销商全额行使超额配售权，IPO及配售所得款项约1195亿美元。 7. 委内瑞拉反对派领袖马查多主张深化石油改革，拟让国有石油公司逐步退出运营。 8. 中东局势— ①胡塞武装警告：沙特领空未来数小时内将成为军事行动区域。②美媒：美以考虑短期内对伊朗发动新一轮袭击。③特朗普12月5日将发表演讲，阐明对伊战争立场。v",
-      "keywords": [
-        "加息",
-        "英伟达",
-        "特朗普",
-        "中东"
-      ],
-      "pub_ts": 1795187830.0,
-      "time_et": "11-20 10:17 ET",
-      "time_bj": "23:17 BJ",
-      "time_kst": "00:17 KST",
-      "time_display": "10:17 ET / 23:17 BJ"
     }
   ],
   "ticker_news": {
@@ -2606,6 +2603,27 @@
     ],
     "BTC-USD": [
       {
+        "title": "3 Cryptocurrencies to Buy and Hold Through 2030",
+        "url": "https://www.fool.com/investing/2026/11/20/3-cryptocurrencies-to-buy-and-hold-through-2030/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 15:30 ET",
+        "pub_ts": 1795206602.0
+      },
+      {
+        "title": "S&P gives $183B financial giant its weakest rating",
+        "url": "https://www.thestreet.com/crypto/markets/s-p-gives-183b-financial-giant-its-weakest-rating-?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 15:30 ET",
+        "pub_ts": 1795206600.0
+      },
+      {
+        "title": "Quietly, the IRS Gave Crypto Investors Until December 31, 2026 to Rewrite Their Tax Basis. Most Have No Idea.",
+        "url": "https://247wallst.com/personal-finance/2026/11/20/quietly-the-irs-gave-crypto-investors-until-december-31-2026-to-rewrite-their-tax-basis-most-have-no-idea-2/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 15:14 ET",
+        "pub_ts": 1795205640.0
+      },
+      {
         "title": "Bitcoin Breaks Below $60,000. BlackRock's ETF Suffers Record $541 Million Withdrawal.",
         "url": "https://www.ibtimes.com/bitcoin-below-60000-blackrock-etf-record-outflows-3810035?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2613,32 +2631,11 @@
         "pub_ts": 1795205098.0
       },
       {
-        "title": "Bitcoin crashes below key level as extreme fear grips market",
-        "url": "https://www.thestreet.com/crypto/markets/bitcoin-crashes-below-key-level-as-extreme-fear-grips-market?.tsrc=rss",
+        "title": "Strategy Is Down 44% in a Month as Crypto Stocks Crumble: Can MSTR Stock Get Back to $100 This Year?",
+        "url": "https://247wallst.com/investing/2026/11/20/strategy-is-down-44-in-a-month-as-crypto-stocks-crumble-can-mstr-stock-get-back-to-100-this-year/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-20 14:22 ET",
-        "pub_ts": 1795202536.0
-      },
-      {
-        "title": "Why Is Wells Fargo (WFC) Losing A $1.3 Billion Team While Bitcoin ETF Holdings Grow?",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/why-wells-fargo-wfc-losing-191427098.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 14:14 ET",
-        "pub_ts": 1795202067.0
-      },
-      {
-        "title": "Ripple’s CEO Says Investors Sold XRP and Bitcoin to Buy Anthropic Shares",
-        "url": "https://247wallst.com/investing/cryptocurrency/2026/11/20/ripples-ceo-says-investors-sold-xrp-and-bitcoin-to-buy-anthropic-shares/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 14:01 ET",
-        "pub_ts": 1795201263.0
-      },
-      {
-        "title": "Sector Update: Financial Stocks Decline Friday Afternoon",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/sector-financial-stocks-decline-friday-185740161.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 13:57 ET",
-        "pub_ts": 1795201060.0
+        "time": "11-20 15:02 ET",
+        "pub_ts": 1795204955.0
       }
     ],
     "CRWD": [
@@ -3198,6 +3195,13 @@
     ],
     "ANT": [
       {
+        "title": "Anthropic Is Public, And Where Is The Capital Headed?",
+        "url": "https://finnhub.io/api/news?id=b44099e64656f5d5aded1be5894fa6a5058b11127e3081f487be5b66a2e5bc51",
+        "source": "SeekingAlpha",
+        "time": "11-20 10:05 ET",
+        "pub_ts": 1795187100.0
+      },
+      {
         "title": "Anthropic And Nvidia Are Saying The AI Bubble Is Finally Popping",
         "url": "https://finnhub.io/api/news?id=6fa5e9748a919351152f99dc01d2430e10eaf2ac257798fdb0c401a36c296e9f",
         "source": "SeekingAlpha",
@@ -3224,13 +3228,6 @@
         "source": "SeekingAlpha",
         "time": "11-20 06:05 ET",
         "pub_ts": 1795172734.0
-      },
-      {
-        "title": "Dan Ives Says Anthropic’s Blockbuster IPO Is Fueling Wall Street’s Tech Selloff. Here’s How",
-        "url": "https://finnhub.io/api/news?id=2832d4416e4500d72abb940ad572d0d6e85e4b6bd995eb997aca58b27b14b5e9",
-        "source": "Benzinga",
-        "time": "11-20 05:33 ET",
-        "pub_ts": 1795170796.0
       }
     ],
     "XAUUSD": [
@@ -3305,7 +3302,7 @@
     "STX": 1795206540.064562,
     "MSTR": 1795206540.064562,
     "SNDK": 1795206435.7977147,
-    "BTC-USD": 1795205422.1410108,
+    "BTC-USD": 1795206940.811205,
     "CRWD": 1795205824.9049165,
     "ORCL": 1795205824.9049165,
     "COIN": 1795205824.9049165,
@@ -3314,20 +3311,20 @@
     "NKE": 1795205928.8399384,
     "MCD": 1795205824.9049165,
     "PEP": 1795205824.9049165,
-    "XOM": 1795205422.1410108,
-    "JPM": 1795205422.1410108,
-    "WMT": 1795205422.1410108,
+    "XOM": 1795206940.811205,
+    "JPM": 1795206940.811205,
+    "WMT": 1795206940.811205,
     "V": 1795205824.9049165,
-    "CAT": 1795205422.1410108,
+    "CAT": 1795206940.811205,
     "FN": 1795205824.9049165,
     "GLW": 1795205824.9049165,
-    "ANT": 1795205422.1410108,
-    "XAUUSD": 1795205422.1410108
+    "ANT": 1795206940.811205,
+    "XAUUSD": 1795206940.811205
   },
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (15:08 ET / 04:08 BJ) [芯片] [半导体] [美债]：【美股三大指数集体走弱 资金转向防御板块】 11月21日讯，AI及存储芯片股遭集中抛售，纳斯达克综合指数周五盘中跌超4%，抹去2026年以来全部涨幅；标普500指数跌幅跌超3%，道指跌超1%",
+    "detail": "⚡ 最新核心快讯 (15:33 ET / 04:33 BJ) [标普]：纳指扩大跌幅至5%，标普500指数跌3.52%，道指跌1.78%。",
     "event_name": "",
     "minutes_left": 0
   }
