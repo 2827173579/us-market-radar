@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795203184.506,
-  "updated_at_et": "11-20 14:33 ET",
-  "updated_at_kst": "04:33 KST",
+  "updated_at_ts": 1795203282.604,
+  "updated_at_et": "11-20 14:34 ET",
+  "updated_at_kst": "04:34 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -905,11 +905,11 @@
         "pub_ts": 1795200883.0
       },
       {
-        "title": "Sozzi: Anthropic’s IPO Surges; Is AMD’s Pullback a Buy?",
-        "url": "https://finance.yahoo.com/video/sozzi-anthropics-ipo-surges-is-amds-pullback-a-buy-181915349.html?.tsrc=rss",
+        "title": "Is Nvidia's $81 Billion Receivables Pile A Risk?",
+        "url": "https://www.trefis.com/stock/nvda/articles/627205/is-nvidia-s-81-billion-receivables-pile-a-risk/2026-11-20?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-20 13:19 ET",
-        "pub_ts": 1795198755.0
+        "time": "11-20 14:06 ET",
+        "pub_ts": 1795201576.0
       },
       {
         "title": "SemiAnalysis Just Slashed Its AI Compute Forecast by $608 Billion",
@@ -1046,6 +1046,13 @@
     ],
     "AVGO": [
       {
+        "title": "Broadcom Stock Plunges 12% and Loses $191 Billion After a Report That Google Cut Its Plans for Broadcom AI Chips",
+        "url": "https://247wallst.com/investing/2026/11/20/broadcom-stock-plunges-12-and-loses-191-billion-after-a-report-that-google-cut-its-plans-for-broadcom-ai-chips/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 14:13 ET",
+        "pub_ts": 1795201984.0
+      },
+      {
         "title": "Broadcom is Overvalued at 17.73X P/E: Buy, Sell or Hold the Stock?",
         "url": "https://finance.yahoo.com/markets/stocks/articles/broadcom-overvalued-17-73x-p-175200037.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1072,13 +1079,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 12:19 ET",
         "pub_ts": 1795195170.0
-      },
-      {
-        "title": "Google reportedly cuts Broadcom-designed TPU plans, eyes more MediaTek chips",
-        "url": "https://finance.yahoo.com/technology/ai/articles/google-reportedly-cuts-broadcom-designed-165518878.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 11:55 ET",
-        "pub_ts": 1795193718.0
       }
     ],
     "AMAT": [
@@ -1157,11 +1157,25 @@
     ],
     "GOOGL": [
       {
+        "title": "Broadcom Stock Plunges 12% and Loses $191 Billion After a Report That Google Cut Its Plans for Broadcom AI Chips",
+        "url": "https://247wallst.com/investing/2026/11/20/broadcom-stock-plunges-12-and-loses-191-billion-after-a-report-that-google-cut-its-plans-for-broadcom-ai-chips/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 14:13 ET",
+        "pub_ts": 1795201984.0
+      },
+      {
         "title": "Trump vows tax on U.S. firms building data centers abroad",
         "url": "https://finance.yahoo.com/economy/policy/articles/trump-vows-tax-u-firms-190429074.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-20 14:04 ET",
         "pub_ts": 1795201469.0
+      },
+      {
+        "title": "Anthropic At $97: Big IPOs Rewarded Patient Buyers",
+        "url": "https://www.trefis.com/stock/ant/articles/627186/anthropic-at-97-big-ipos-rewarded-patient-buyers/2026-11-20?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 13:55 ET",
+        "pub_ts": 1795200931.0
       },
       {
         "title": "Apple “Has No Idea What It’s Doing” in AI. Oh, and It’s Building Its Own AI Agent Too",
@@ -1176,20 +1190,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 13:39 ET",
         "pub_ts": 1795199942.0
-      },
-      {
-        "title": "YouTube reportedly nearing $3 billion settlement with US school districts",
-        "url": "https://finance.yahoo.com/media-advertising/articles/youtube-reportedly-nearing-3-billion-183458006.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 13:34 ET",
-        "pub_ts": 1795199698.0
-      },
-      {
-        "title": "Connected Nation podcast spotlights two urgent issues shaping America's digital future",
-        "url": "https://finance.yahoo.com/technology/articles/connected-nation-podcast-spotlights-two-183400833.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 13:34 ET",
-        "pub_ts": 1795199640.0
       }
     ],
     "MSFT": [
@@ -3238,30 +3238,30 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795201769.0963876,
-    "SOXL": 1795201769.0963876,
-    "SPY": 1795201769.0963876,
-    "DIA": 1795201769.0963876,
-    "SOXX": 1795201769.0963876,
-    "QQQ": 1795201769.0963876,
-    "SMH": 1795201769.0963876,
-    "IWM": 1795201769.0963876,
-    "IGV": 1795201769.0963876,
-    "TLT": 1795201769.0963876,
-    "GLD": 1795201769.0963876,
-    "SQQQ": 1795201769.0963876,
-    "TSM": 1795201769.0963876,
-    "VIXY": 1795201769.0963876,
-    "SOXS": 1795201769.0963876,
-    "NVDA": 1795201769.0963876,
-    "AMD": 1795201769.0963876,
+    "KORU": 1795203282.6037898,
+    "SOXL": 1795203282.6037898,
+    "SPY": 1795203282.6037898,
+    "DIA": 1795203282.6037898,
+    "SOXX": 1795203282.6037898,
+    "QQQ": 1795203282.6037898,
+    "SMH": 1795203282.6037898,
+    "IWM": 1795203282.6037898,
+    "IGV": 1795203282.6037898,
+    "TLT": 1795203282.6037898,
+    "GLD": 1795203282.6037898,
+    "SQQQ": 1795203282.6037898,
+    "TSM": 1795203282.6037898,
+    "VIXY": 1795203282.6037898,
+    "SOXS": 1795203282.6037898,
+    "NVDA": 1795203282.6037898,
+    "AMD": 1795203282.6037898,
     "ASML": 1795201872.3525546,
     "QCOM": 1795201872.3525546,
-    "AVGO": 1795201769.0963876,
-    "AMAT": 1795201769.0963876,
-    "META": 1795201769.0963876,
-    "GOOGL": 1795201769.0963876,
-    "MSFT": 1795201769.0963876,
+    "AVGO": 1795203282.6037898,
+    "AMAT": 1795203282.6037898,
+    "META": 1795203282.6037898,
+    "GOOGL": 1795203282.6037898,
+    "MSFT": 1795203282.6037898,
     "AAPL": 1795201872.3525546,
     "PLTR": 1795201872.3525546,
     "NOW": 1795201872.3525546,
