@@ -430,8 +430,10 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                                 item['stop_loss_price'] = round(float(near_stop_px), 2)
                                 item['stop_loss_pct'] = round(((live_p - float(near_stop_px)) / live_p) * 100.0, 1)
                             else:
-                                item['stop_loss_price'] = sc_map['s2']
-                                item['stop_loss_pct'] = round(((live_p - sc_map['s2']) / live_p) * 100.0, 1)
+                                max_swing_sl = min(0.085, max(0.045, 1.35 * eff_atr))
+                                sc_stop_px = round(max(float(sc_map['s2']), live_p * (1.0 - max_swing_sl)), 2)
+                                item['stop_loss_price'] = sc_stop_px
+                                item['stop_loss_pct'] = round(((live_p - sc_stop_px) / live_p) * 100.0, 1)
                         elif near_stop_px and 0 < float(near_stop_px) < live_p:
                             item['stop_loss_price'] = round(float(near_stop_px), 2)
                             item['stop_loss_pct'] = round(((live_p - float(near_stop_px)) / live_p) * 100.0, 1)
@@ -512,6 +514,9 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                         by_ticker=ai_predictions["by_ticker"],
                         session_code=session_code,
                     )
+                    for _b_item_sync in ai_predictions["by_ticker"].values():
+                        if isinstance(_b_item_sync, dict):
+                            _ml_tc.sync_scenario_script_levels(_b_item_sync)
                 _def_flight_obj = (weather_info.get("defensive_flight") if isinstance(weather_info, dict) else None) or ai_predictions.get("defensive_flight", {})
                 ai_predictions["defensive_flight"] = _def_flight_obj
                 _breadth_obj = (weather_info.get("cross_industry_breadth") if isinstance(weather_info, dict) else None) or breadth_info or ai_predictions.get("cross_industry_breadth", {})
@@ -2198,7 +2203,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 <div class="w-tab" data-filter="能源电力">能源与核电</div>
                 <div class="w-tab" data-filter="太空商业">太空商业</div>
                 <div class="w-tab" data-filter="物理与安全">物理AI与安全</div>
-                <div class="w-tab" data-filter="数字资产" style="color: #f59e0b; font-weight: 700;">🪙 数字资产 (BTC)</div>
+                <div class="w-tab" data-filter="数字资产" style="color: #f59e0b; font-weight: 700;">💎 数字资产 (BTC)</div>
                 <div class="w-tab" data-filter="大宗商品" style="color: #fbbf24; font-weight: 700;">🥇 黄金现货</div>
                 <div class="w-tab" data-filter="生物医药">生物医药</div>
                 <div class="w-tab" data-filter="价值消费">价值与传统龙头</div>
@@ -2355,7 +2360,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                             <b style="color: #3fb950;" id="pAiTargetPrice">--</b>
                         </div>
                         <div style="background: rgba(248,81,73,0.08); border-radius: 4px; padding: 5px 7px; border: 1px solid rgba(248,81,73,0.25);">
-                            <div style="color: #9ca3af; font-size: 10px;">🛡️ 多头防守止损</div>
+                            <div style="color: #9ca3af; font-size: 10px;">🛡️ 波段防守止损</div>
                             <b style="color: #f85149;" id="pAiStopPrice">--</b>
                         </div>
                         <div style="background: rgba(248,81,73,0.08); border-radius: 4px; padding: 5px 7px; border: 1px solid rgba(248,81,73,0.25);">
@@ -2407,7 +2412,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                             <div style="font-size: 10px; color: #6b7280;" id="pOptimalNote">--</div>
                         </div>
                         <div style="background: rgba(0,0,0,0.3); border-radius: 6px; padding: 6px 8px; border: 1px solid rgba(255,82,82,0.35);">
-                            <div id="pEntryStopLabel" style="font-size: 11px; color: #9ca3af;">🛡️ 防守止损线</div>
+                            <div id="pEntryStopLabel" style="font-size: 11px; color: #9ca3af;">🛡️ 防守止损线 (日内短线)</div>
                             <div id="pEntryStopLoss" style="font-size: 22px; font-weight: 800; color: #ff5252; font-family: \'DIN Alternate\', sans-serif;">--</div>
                             <div style="font-size: 10px; color: #6b7280;" id="pEntryStopDist">距入场 --</div>
                         </div>
@@ -3399,6 +3404,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                         intraday_status_text: m.intraday_status_text,
                         intraday_reason: m.intraday_reason,
                         vwap: m.vwap,
+                        has_5m_intraday: m.has_5m_intraday,
                         rsi_5m: m.rsi_5m,
                         rvol_5m: m.rvol_5m,
                         rs_20d: m.rs_20d,
@@ -3864,18 +3870,44 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             }}
             const rsi5mEl = document.getElementById("pRsi5m");
             if (rsi5mEl) {{
-                const r5 = data.rsi_5m !== undefined ? data.rsi_5m : curRsi;
-                const rv5 = data.rvol_5m !== undefined ? data.rvol_5m : 1.0;
-                rsi5mEl.innerHTML = r5 ? `${{r5.toFixed(1)}} <span style="font-size:10px; color:${{rv5 >= 1.25 ? '#ffd600' : '#9ca3af'}};">(${{rv5.toFixed(2)}}x)</span>` : "--";
-                rsi5mEl.style.color = r5 <= 35 ? "#00e676" : (r5 >= 70 ? "#d946ef" : "#f3f4f6");
+                const has5m = (data.has_5m_intraday === true) || (data.has_5m_intraday !== false && data.rsi_5m !== undefined && data.rsi_5m !== null && data.rvol_5m !== undefined && data.rvol_5m !== null);
+                if (!has5m || data.rsi_5m === null || data.rsi_5m === undefined || Number.isNaN(Number(data.rsi_5m))) {{
+                    rsi5mEl.innerText = "待开盘 / --";
+                    rsi5mEl.style.color = "#9ca3af";
+                }} else {{
+                    const r5 = Number(data.rsi_5m);
+                    const rv5 = (data.rvol_5m !== undefined && data.rvol_5m !== null && !Number.isNaN(Number(data.rvol_5m))) ? Number(data.rvol_5m) : null;
+                    rsi5mEl.innerHTML = rv5 !== null
+                        ? `${{r5.toFixed(1)}} <span style="font-size:10px; color:${{rv5 >= 1.25 ? '#ffd600' : '#9ca3af'}};">(${{rv5.toFixed(2)}}x)</span>`
+                        : `${{r5.toFixed(1)}}`;
+                    rsi5mEl.style.color = r5 <= 35 ? "#00e676" : (r5 >= 70 ? "#d946ef" : "#f3f4f6");
+                }}
             }}
             const rs20dEl = document.getElementById("pRs20d");
             if (rs20dEl) {{
-                const rsVal = data.rs_20d !== undefined ? data.rs_20d : 0;
-                const rsSign = rsVal >= 0 ? "+" : "";
-                const rsTag = rsVal >= 3.0 ? "👑抗跌" : (rsVal >= 0 ? "💪强" : "🥀弱");
-                rs20dEl.innerText = `${{rsSign}}${{rsVal.toFixed(1)}}% (${{rsTag}})`;
-                rs20dEl.style.color = rsVal >= 3.0 ? "#ffd700" : (rsVal >= 0 ? "#00e676" : "#ff5252");
+                if (data.rs_20d === undefined || data.rs_20d === null || Number.isNaN(Number(data.rs_20d))) {{
+                    rs20dEl.innerText = "--";
+                    rs20dEl.style.color = "#9ca3af";
+                }} else {{
+                    const rsVal = Number(data.rs_20d);
+                    const rsSign = rsVal > 0 ? "+" : "";
+                    let rsTag, rsColor;
+                    if (rsVal >= 3.0) {{
+                        rsTag = "👑抗跌";
+                        rsColor = "#ffd700";
+                    }} else if (rsVal >= 0.5) {{
+                        rsTag = "💪强";
+                        rsColor = "#00e676";
+                    }} else if (rsVal <= -0.5) {{
+                        rsTag = "🥀弱";
+                        rsColor = "#ff5252";
+                    }} else {{
+                        rsTag = "➖中性";
+                        rsColor = "#9ca3af";
+                    }}
+                    rs20dEl.innerText = `${{rsSign}}${{rsVal.toFixed(1)}}% (${{rsTag}})`;
+                    rs20dEl.style.color = rsColor;
+                }}
             }}
             const earnEl = document.getElementById("pEarningsDate");
             if (earnEl) {{
@@ -3898,11 +3930,11 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             const priceLabelEl = document.getElementById("pEntryPriceLabel");
             const stopLabelEl = document.getElementById("pEntryStopLabel");
             if (priceLabelEl) priceLabelEl.innerText = "💡 参考挂单价";
-            if (stopLabelEl) stopLabelEl.innerText = "🛡️ 防守止损线";
+            if (stopLabelEl) stopLabelEl.innerText = "🛡️ 防守止损线 (日内短线)";
 
             if (isBrokenRebound) {{
                 if (priceLabelEl) priceLabelEl.innerText = "💡 反抽参考价";
-                if (stopLabelEl) stopLabelEl.innerText = "🛡️ 防守止损线";
+                if (stopLabelEl) stopLabelEl.innerText = "🛡️ 防守止损线 (日内短线)";
                 if (optEl) {{
                     optEl.innerText = (optimalLimit && optimalLimit > 0) ? ("$" + optimalLimit.toFixed(2)) : "--";
                     optEl.style.color = "#ffb74d";
@@ -4160,7 +4192,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                     if (pcrEl) {{
                         const noEquityOpts = ["XAUUSD", "BTC-USD"].includes(ticker) || (aiItem.has_options === false) || (data && data.has_options === false);
                         if (noEquityOpts) {{
-                            pcrEl.innerText = "🪙 无美股期权";
+                            pcrEl.innerText = "⚪ 无美股期权";
                         }} else if (aiItem.dollar_pcr !== undefined) {{
                             pcrEl.innerText = `PCR: ${{aiItem.dollar_pcr.toFixed(2)}} ${{aiItem.pcr_sentiment || ''}}`;
                         }} else {{

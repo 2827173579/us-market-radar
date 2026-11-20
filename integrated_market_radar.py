@@ -995,14 +995,15 @@ def fetch_intraday_5m_and_ext_data(tickers):
                 is_5m_higher_low = bool(float(l.iloc[-1]) >= float(l.iloc[-2]) * 0.999) if len(l) >= 2 else True
 
                 results[t] = {
+                    "has_5m_intraday": bool(len(c) >= 2),
                     "ext_price": ext_price,
                     "ext_time": ext_time,
                     "price_kind": _price_kind,
                     "vwap": round(vwap, 2),
-                    "rsi_5m": round(rsi_5m, 1),
-                    "prev_rsi_5m": round(prev_rsi_5m, 1),
-                    "min_rsi_5m_30m": round(min_rsi_5m_30m, 1),
-                    "rvol_5m": round(rvol_5m, 2),
+                    "rsi_5m": round(rsi_5m, 1) if len(c) >= 2 else None,
+                    "prev_rsi_5m": round(prev_rsi_5m, 1) if len(c) >= 2 else None,
+                    "min_rsi_5m_30m": round(min_rsi_5m_30m, 1) if len(c) >= 2 else None,
+                    "rvol_5m": round(rvol_5m, 2) if len(c) >= 2 else None,
                     "is_5m_green": is_5m_green,
                     "is_5m_higher_low": is_5m_higher_low,
                     "low_5m": round(float(l.iloc[-1]), 4) if len(l) else round(float(c.iloc[-1]), 4),
@@ -1762,11 +1763,19 @@ def evaluate_intraday_entry(
     4. 隔夜失忆症防御：3 日暴跌冷却期冻结 (需满足右侧反转阳线或日内收复50%大阴线实体强反抽)
     5. V3.1 9:30 开盘执行指令与挂单上限价计算
     """
+    intra_info = intra_info or {}
+    if "has_5m_intraday" in intra_info:
+        has_5m_intraday = bool(intra_info.get("has_5m_intraday")) and (intra_info.get("rsi_5m") is not None)
+    else:
+        has_5m_intraday = (intra_info.get("rsi_5m") is not None)
     vwap = intra_info.get("vwap", 0.0) or active_price
-    rsi_5m = intra_info.get("rsi_5m", 50.0)
-    prev_rsi_5m = intra_info.get("prev_rsi_5m", 50.0)
-    min_rsi_30m = intra_info.get("min_rsi_5m_30m", 50.0)
-    rvol_5m = intra_info.get("rvol_5m", 1.0)
+    rsi_5m = float(intra_info.get("rsi_5m")) if (has_5m_intraday and intra_info.get("rsi_5m") is not None) else 50.0
+    prev_rsi_5m = float(intra_info.get("prev_rsi_5m")) if (has_5m_intraday and intra_info.get("prev_rsi_5m") is not None) else rsi_5m
+    min_rsi_30m = float(intra_info.get("min_rsi_5m_30m")) if (has_5m_intraday and intra_info.get("min_rsi_5m_30m") is not None) else rsi_5m
+    rvol_5m = float(intra_info.get("rvol_5m")) if (has_5m_intraday and intra_info.get("rvol_5m") is not None) else 1.0
+    out_rsi_5m = round(rsi_5m, 1) if has_5m_intraday else None
+    out_rvol_5m = round(rvol_5m, 2) if has_5m_intraday else None
+    out_rs_20d = round(float(rs_20d), 2) if (rs_20d is not None and math.isfinite(float(rs_20d))) else None
     is_5m_green = intra_info.get("is_5m_green", True)
     is_higher_low = intra_info.get("is_5m_higher_low", True)
     rth_low = intra_info.get("rth_low", active_price)
@@ -1812,9 +1821,10 @@ def evaluate_intraday_entry(
             "rth_low": round(rth_low, 2),
             "rth_high": round(curr_rth_high, 2),
             "vwap": round(vwap, 2),
-            "rsi_5m": round(rsi_5m, 1),
-            "rvol_5m": round(rvol_5m, 2),
-            "rs_20d": round(rs_20d, 2),
+            "has_5m_intraday": has_5m_intraday,
+            "rsi_5m": out_rsi_5m,
+            "rvol_5m": out_rvol_5m,
+            "rs_20d": out_rs_20d,
             **e_info
         }
 
@@ -1858,9 +1868,10 @@ def evaluate_intraday_entry(
             "rth_low": round(rth_low, 2),
             "rth_high": round(curr_rth_high, 2),
             "vwap": round(vwap, 2),
-            "rsi_5m": round(rsi_5m, 1),
-            "rvol_5m": round(rvol_5m, 2),
-            "rs_20d": round(rs_20d, 2),
+            "has_5m_intraday": has_5m_intraday,
+            "rsi_5m": out_rsi_5m,
+            "rvol_5m": out_rvol_5m,
+            "rs_20d": out_rs_20d,
             **e_info
         }
 
@@ -1889,9 +1900,10 @@ def evaluate_intraday_entry(
                 "rth_low": round(rth_low, 2),
                 "rth_high": round(curr_rth_high, 2),
                 "vwap": round(vwap, 2),
-                "rsi_5m": round(rsi_5m, 1),
-                "rvol_5m": round(rvol_5m, 2),
-                "rs_20d": round(rs_20d, 2),
+                "has_5m_intraday": has_5m_intraday,
+                "rsi_5m": out_rsi_5m,
+                "rvol_5m": out_rvol_5m,
+                "rs_20d": out_rs_20d,
                 **e_info
             }
 
@@ -2174,9 +2186,10 @@ def evaluate_intraday_entry(
         "rth_low": round(rth_low, 2),
         "rth_high": round(curr_rth_high, 2),
         "vwap": round(vwap, 2),
-        "rsi_5m": round(rsi_5m, 1),
-        "rvol_5m": round(rvol_5m, 2),
-        "rs_20d": round(rs_20d, 2),
+        "has_5m_intraday": has_5m_intraday,
+        "rsi_5m": out_rsi_5m,
+        "rvol_5m": out_rvol_5m,
+        "rs_20d": out_rs_20d,
         "broken_rebound_ready": broken_rebound_ready,
         "broken_bearish": broken_bearish,
         "broken_s1": round(s1_support, 2) if s1_support > 0 else 0.0,
@@ -2755,9 +2768,9 @@ def dispatch_wechat_radar_alerts(macro_data, stocks_data, weather_info, now_str)
         session_tag = s.get("session_tag", "")
         bias = s["bias"]
         rsi = s.get("rsi", 0.0)
-        rsi_5m = s.get("rsi_5m", 50.0)
-        rvol_5m = s.get("rvol_5m", 1.0)
-        rs_20d = s.get("rs_20d", 0.0)
+        rsi_5m = s.get("rsi_5m") if s.get("rsi_5m") is not None else 50.0
+        rvol_5m = s.get("rvol_5m") if s.get("rvol_5m") is not None else 1.0
+        rs_20d = s.get("rs_20d") if s.get("rs_20d") is not None else 0.0
         earnings_tag = s.get("earnings_tag", "")
         vwap = s.get("vwap", last)
         dist_pit = s.get("dist_to_pit", 0.0)
@@ -5798,6 +5811,10 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
                     "atr": atr,
                     "rsi": rsi,
                     "vol_ratio": vol_ratio,
+                    "has_5m_intraday": False,
+                    "rsi_5m": None,
+                    "rvol_5m": None,
+                    "rs_20d": None,
                     "fib_low": fib_low,
                     "fib_high": fib_high,
                     "is_realtime": is_realtime,

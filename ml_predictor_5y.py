@@ -2797,7 +2797,12 @@ def compute_multi_level_scenario_map(
             s2_candidates.append(fib_s2)
     if put_wall is not None and 0.88 * close <= put_wall < close:
         s2_candidates.append(put_wall)
-    s2 = round(min(s2_candidates), 2)
+    raw_s2 = min(s2_candidates)
+    # 阶段三止损口径收敛：非第一档标的将 S2 最大跌幅收敛至波动分档上限 (<= 8.5%)，避免剧本止损与波段/日内止损极端背离
+    if not is_tier1_low_vol:
+        max_s2_dist = min(0.085, max(0.048, 1.55 * eff_atr))
+        raw_s2 = max(raw_s2, close * (1.0 - max_s2_dist))
+    s2 = round(raw_s2, 2)
 
     # S1 (波段支撑): 第一档低波黄金/美债锚定 0.8%~1.3% 窄幅防守；其余用 20日 POC 下沿 / 0.382 / 动态 ATR
     if is_tier1_low_vol:
@@ -2841,10 +2846,10 @@ def compute_multi_level_scenario_map(
         s2 = round(s1 - min_step, 2)
     sl = round(min(s2 * (0.992 if is_tier1_low_vol else 0.985), s2 - min_step), 2)
 
-    # 近端止损优先：S2 过远(>6.5%)而 S1 就在现价下方 2%~6% 时，多头防守改用 S1；第一档低波标的 (XAUUSD/GLD/TLT) 统一走 S1 窄幅防守口径 (-0.8%~-1.3%)
+    # 近端止损优先：S2 过远(>6.5%)而 S1 就在现价下方 1.5%~7.0% 时，多头防守改用 S1；第一档低波标的 (XAUUSD/GLD/TLT) 统一走 S1 窄幅防守口径 (-0.8%~-1.3%)
     s1_dist_pct = ((close - s1) / close) * 100.0 if close > 0 else 0.0
     s2_dist_pct = ((close - s2) / close) * 100.0 if close > 0 else 0.0
-    near_stop_s1 = bool(is_tier1_low_vol or ((s2_dist_pct > 6.5) and (2.0 <= s1_dist_pct <= 6.0)))
+    near_stop_s1 = bool(is_tier1_low_vol or ((s2_dist_pct > 6.5) and (1.5 <= s1_dist_pct <= 7.0)))
 
     if r1 <= close:
         r1 = round(close + min_step, 2)
@@ -2894,6 +2899,49 @@ def compute_multi_level_scenario_map(
         'near_stop_price': s1 if near_stop_s1 else None,
         'scenario_script': scenario
     }
+
+
+def sync_scenario_script_levels(item: Dict[str, Any]) -> str:
+    """
+    阶段三点位口径强绑定：
+    当 R2（或 S1/S2/R1/SL）在后续 15 日推演或实盘锚点对齐中被动态校准后，
+    同步刷新 scenario_script 正文中的对应点位数值，确保正文与表头数值 100% 零偏差。
+    """
+    import re
+    if not isinstance(item, dict):
+        return ""
+    script = str(item.get("scenario_script") or "")
+    if not script:
+        return script
+
+    def _fmt(val: Any) -> Optional[str]:
+        try:
+            v = float(val)
+            if np.isfinite(v) and v > 0:
+                return f"{v:.2f}"
+        except Exception:
+            pass
+        return None
+
+    for key, label in (("s1", "S1"), ("s2", "S2"), ("r1", "R1"), ("r2", "R2")):
+        fv = _fmt(item.get(key))
+        if fv is not None:
+            script = re.sub(
+                rf"({label}\s*\(\$)[0-9]+(?:\.[0-9]+)?",
+                rf"\g<1>{fv}",
+                script,
+            )
+
+    sl_fv = _fmt(item.get("sl"))
+    if sl_fv is not None:
+        script = re.sub(
+            r"((?:防守止损位|止损位|关键防守位|防守位)\s*\$)[0-9]+(?:\.[0-9]+)?",
+            rf"\g<1>{sl_fv}",
+            script,
+        )
+
+    item["scenario_script"] = script
+    return script
 
 
 def compute_4h_resonance_signals(
@@ -3439,6 +3487,7 @@ def align_time_cycle_projections_with_live(
                 item["r2"] = round(float(item["r1"]) + min_step, 2)
             if by_ticker and isinstance(by_ticker.get(tk), dict):
                 by_ticker[tk]["r2"] = item["r2"]
+                sync_scenario_script_levels(by_ticker[tk])
 
         try:
             item["cycle_windows"] = _build_cycle_windows_from_projections(
@@ -3871,6 +3920,7 @@ def generate_time_cycle_projections(
         existing_r2 = float(sc_levels.get('r2') or (cur_p * 1.08))
         calibrated_r2 = max(existing_r2, round(max_proj_p * 1.015, 2))
         sc_levels['r2'] = calibrated_r2
+        sync_scenario_script_levels(sc_levels)
 
         cycle_wins = _build_cycle_windows_from_projections(
             projections=projections,
@@ -5009,12 +5059,15 @@ def generate_report_tables(
             )
             row_item.update(sc_map)
 
-            # R2: 针对 B 轨空头回补滑头标的，动态校准止损与止盈：止损锚定日内低点或 S2 支撑，第一目标锚定 R1 阻力
+            # R2: 针对 B 轨空头回补滑头标的，动态校准止损与止盈：止损锚定日内低点或 S2 支撑（受波段上限约束），第一目标锚定 R1 阻力
             if is_short_covering:
                 row_item['target_profit_price'] = sc_map['r1']
-                row_item['stop_loss_price'] = sc_map['s2']
+                eff_atr_sc = compute_effective_atr(atr_pct)
+                max_swing_sl = min(0.085, max(0.045, 1.35 * eff_atr_sc))
+                sc_stop_px = round(max(float(sc_map['s2']), close_p * (1.0 - max_swing_sl)), 2)
+                row_item['stop_loss_price'] = sc_stop_px
                 row_item['target_profit_pct'] = round(((sc_map['r1'] - close_p) / close_p) * 100.0, 1)
-                row_item['stop_loss_pct'] = round(((close_p - sc_map['s2']) / close_p) * 100.0, 1)
+                row_item['stop_loss_pct'] = round(((close_p - sc_stop_px) / close_p) * 100.0, 1)
                 row_item['track'] = 'Track B'
             elif is_broken:
                 row_item['track'] = 'Track B'
@@ -5873,7 +5926,7 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
         has_opt_r = bool(r.get('has_options', r.get('ticker') not in ('XAUUSD', 'BTC-USD')))
         pcr_sent = str(r.get('pcr_sentiment', '⛅ 中性')) if has_opt_r else '无美股期权'
         pcr_badge_style = "badge-blue" if not has_opt_r else ("badge-red" if d_pcr >= 1.30 or "做空" in pcr_sent or "Put" in pcr_sent else ("badge-gold" if d_pcr >= 1.0 else "badge-blue"))
-        pcr_display_text = f"PCR {d_pcr:.2f} · {pcr_sent}" if has_opt_r else "🪙 无美股期权"
+        pcr_display_text = f"PCR {d_pcr:.2f} · {pcr_sent}" if has_opt_r else "⚪ 无美股期权"
         
         s_act = str(r.get('short_action', '👀 空头动能不足·观望'))
         if "🚨" in s_act or "熔断" in s_act or "破位" in s_act or "🩸" in s_act:

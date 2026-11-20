@@ -29,3 +29,5 @@ user_portfolio.json
 .defensive_flight_push_state.json
 .android_alert_state.json
 .jin10_pushed_ids.json
+data_cache/intraday_5m_60d.parquet
+data_cache/.intraday_5m_60d_meta.json

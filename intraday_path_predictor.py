@@ -180,6 +180,68 @@ def _extract_ticker_df_from_yf(raw_df: pd.DataFrame, ticker: str, is_single: boo
         return None
 
 
+_SPLIT_CANDIDATE_RATIOS = (
+    2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 10.0, 12.0, 15.0, 20.0, 25.0,
+    0.5, 0.25, 0.2, 0.1, 0.05,
+)
+
+
+def _match_intraday_split_factor(raw_ratio: float) -> Optional[float]:
+    if raw_ratio <= 0 or not np.isfinite(raw_ratio):
+        return None
+    best_r = min(_SPLIT_CANDIDATE_RATIOS, key=lambda r: abs(raw_ratio - r) / r)
+    rel_err = abs(raw_ratio - best_r) / best_r
+    if best_r >= 3.0 or best_r <= 0.35:
+        if rel_err <= 0.18:
+            return float(best_r)
+    elif rel_err <= 0.08:
+        return float(best_r)
+    return None
+
+
+def sanitize_5m_split_jumps(df: pd.DataFrame) -> pd.DataFrame:
+    """
+    阶段三合并层拆股跳变保护（与阶段一 ±40% 阈值一致）：
+    对单只标的按时间排序的 5m 序列检测相邻 bar 是否出现 >=40% 的除权断层
+    (curr/prev <= 0.60 或 >= 1.67)。
+    - 若比值匹配标准拆股/合股因子 (如 SNDK 1拆8)，自动将断层之前的所有 OHLC /= factor、Volume *= factor；
+    - 避免未除权历史尾巴污染 60 日波动率与 KNN 匹配。
+    """
+    if df is None or df.empty or "Close" not in df.columns or "Ticker" not in df.columns:
+        return df
+
+    healed_parts: List[pd.DataFrame] = []
+    for tk, grp in df.groupby("Ticker", sort=False):
+        g = grp.sort_values("Datetime").reset_index(drop=True).copy()
+        if str(tk) in ("ANT", "BTC-USD", "XAUUSD") or len(g) < 2:
+            healed_parts.append(g)
+            continue
+
+        closes = pd.to_numeric(g["Close"], errors="coerce").to_numpy(dtype=float, copy=True)
+        # 从最新往最旧扫描，确保连续拆股也能逐层向最新复权基准对齐
+        for idx in range(len(closes) - 1, 0, -1):
+            curr_c = closes[idx]
+            prev_c = closes[idx - 1]
+            if not (np.isfinite(curr_c) and np.isfinite(prev_c) and curr_c > 0 and prev_c > 0):
+                continue
+            step_ratio = curr_c / prev_c
+            if step_ratio <= 0.60 or step_ratio >= 1.67:
+                raw_factor = prev_c / curr_c
+                factor = _match_intraday_split_factor(raw_factor)
+                if factor is not None and factor > 0:
+                    for col in ("Open", "High", "Low", "Close"):
+                        if col in g.columns:
+                            g.loc[: idx - 1, col] = pd.to_numeric(g.loc[: idx - 1, col], errors="coerce") / factor
+                    if "Volume" in g.columns:
+                        g.loc[: idx - 1, "Volume"] = pd.to_numeric(g.loc[: idx - 1, "Volume"], errors="coerce") * factor
+                    closes[:idx] = closes[:idx] / factor
+        healed_parts.append(g)
+
+    if not healed_parts:
+        return df.iloc[0:0].copy()
+    return pd.concat(healed_parts, ignore_index=True)
+
+
 def refresh_intraday_5m_60d_cache(
     tickers: List[str],
     cache_path: str = PARQUET_CACHE_FILE,
@@ -260,6 +322,16 @@ def refresh_intraday_5m_60d_cache(
         except Exception:
             existing_df = pd.DataFrame(columns=empty_cols)
 
+    # 阶段三修复：凡是单只标的本次成功拉取到新的 60d 5m 历史数据，直接整票覆盖该标的旧缓存，
+    # 仅在单票拉取失败时才保留其旧缓存，彻底杜绝拆股后第 61~72 天未除权老尾巴残留
+    fetched_tickers = {
+        str(df["Ticker"].iloc[0])
+        for df in collected
+        if df is not None and not df.empty and "Ticker" in df.columns
+    }
+    if not existing_df.empty and fetched_tickers and "Ticker" in existing_df.columns:
+        existing_df = existing_df[~existing_df["Ticker"].astype(str).isin(fetched_tickers)].copy()
+
     frames = [df for df in ([existing_df] + collected) if df is not None and not df.empty]
     if not frames:
         return pd.DataFrame(columns=empty_cols)
@@ -268,6 +340,9 @@ def refresh_intraday_5m_60d_cache(
     merged["Datetime"] = pd.to_datetime(merged["Datetime"]).dt.tz_localize(None)
     merged["Ticker"] = merged["Ticker"].astype(str)
     merged = merged.sort_values(["Ticker", "Datetime"]).drop_duplicates(subset=["Ticker", "Datetime"], keep="last")
+
+    # 合并层拆股跳变自愈防护（±40% 断层检测与复权对齐）
+    merged = sanitize_5m_split_jumps(merged)
 
     # 裁剪至最近 72 个自然日，防止 Parquet 无限膨胀
     max_dt = merged["Datetime"].max()
