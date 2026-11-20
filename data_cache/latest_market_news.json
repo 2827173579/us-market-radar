@@ -1,9 +1,24 @@
 {
-  "updated_at_ts": 1795188248.676,
-  "updated_at_et": "11-20 10:24 ET",
-  "updated_at_kst": "00:24 KST",
+  "updated_at_ts": 1795188352.241,
+  "updated_at_et": "11-20 10:25 ET",
+  "updated_at_kst": "00:25 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261120232448044800",
+      "title": "费城半导体指数跌幅扩大至5%，英伟达(NVDA.O)、台积电(TSM.N)跌超5%。",
+      "summary": "费城半导体指数跌幅扩大至5%，英伟达(NVDA.O)、台积电(TSM.N)跌超5%。",
+      "keywords": [
+        "半导体",
+        "英伟达",
+        "台积电"
+      ],
+      "pub_ts": 1795188288.0,
+      "time_et": "11-20 10:24 ET",
+      "time_bj": "23:24 BJ",
+      "time_kst": "00:24 KST",
+      "time_display": "10:24 ET / 23:24 BJ"
+    },
     {
       "id": "20261120231710072800",
       "title": "整理：11月20日欧盘美盘重要新闻汇总",
@@ -327,19 +342,6 @@
       "time_bj": "18:16 BJ",
       "time_kst": "19:16 KST",
       "time_display": "05:16 ET / 18:16 BJ"
-    },
-    {
-      "id": "20261120174923830800",
-      "title": "WTI原油失守82美元/桶，日内跌幅2.86%。",
-      "summary": "WTI原油失守82美元/桶，日内跌幅2.86%。",
-      "keywords": [
-        "原油"
-      ],
-      "pub_ts": 1795168163.0,
-      "time_et": "11-20 04:49 ET",
-      "time_bj": "17:49 BJ",
-      "time_kst": "18:49 KST",
-      "time_display": "04:49 ET / 17:49 BJ"
     }
   ],
   "ticker_news": {
@@ -3323,7 +3325,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (10:17 ET / 23:17 BJ) [加息] [英伟达] [特朗普]：国内新闻 1. 多家银行发布贵金属业务市场风险提示。 2. 上期所发布关于做好市场风险控制工作的通知。 3. 中美两军举行海上军事安全磋商机制工作小组会议和年度会晤。 4. 习近平会见马来西",
+    "detail": "⚡ 最新核心快讯 (10:24 ET / 23:24 BJ) [半导体] [英伟达] [台积电]：费城半导体指数跌幅扩大至5%，英伟达(NVDA.O)、台积电(TSM.N)跌超5%。",
     "event_name": "",
     "minutes_left": 0
   }
