@@ -1,9 +1,22 @@
 {
-  "updated_at_ts": 1795208640.522,
-  "updated_at_et": "11-20 16:04 ET",
-  "updated_at_kst": "06:04 KST",
+  "updated_at_ts": 1795208741.896,
+  "updated_at_et": "11-20 16:05 ET",
+  "updated_at_kst": "06:05 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261121050450556800",
+      "title": "英伟达(NVDA.O)本周累计下跌23%，创2008年10月以来最大单周跌幅。",
+      "summary": "英伟达(NVDA.O)本周累计下跌23%，创2008年10月以来最大单周跌幅。",
+      "keywords": [
+        "英伟达"
+      ],
+      "pub_ts": 1795208690.0,
+      "time_et": "11-20 16:04 ET",
+      "time_bj": "05:04 BJ",
+      "time_kst": "06:04 KST",
+      "time_display": "16:04 ET / 05:04 BJ"
+    },
     {
       "id": "20261121050200915800",
       "title": "【美股收盘：三大股指低收 Anthropic跌超8%】 11月21日讯，美股周五收盘，道…",
@@ -329,19 +342,6 @@
       "time_bj": "23:39 BJ",
       "time_kst": "00:39 KST",
       "time_display": "10:39 ET / 23:39 BJ"
-    },
-    {
-      "id": "20261120233228747800",
-      "title": "美国财长贝森特：昨晚通过霍尔木兹海峡的原油量是冲突爆发以来最多的。",
-      "summary": "美国财长贝森特：昨晚通过霍尔木兹海峡的原油量是冲突爆发以来最多的。",
-      "keywords": [
-        "原油"
-      ],
-      "pub_ts": 1795188748.0,
-      "time_et": "11-20 10:32 ET",
-      "time_bj": "23:32 BJ",
-      "time_kst": "00:32 KST",
-      "time_display": "10:32 ET / 23:32 BJ"
     }
   ],
   "ticker_news": {
@@ -3325,7 +3325,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (16:02 ET / 05:02 BJ) [半导体] [英伟达] [纳斯达克]：【美股收盘：三大股指低收 Anthropic跌超8%】 11月21日讯，美股周五收盘，道指初步收跌1.93%，标普500指数跌3.69%，纳指跌5.28%，Anthropic(ANT.O)跌",
+    "detail": "⚡ 最新核心快讯 (16:04 ET / 05:04 BJ) [英伟达]：英伟达(NVDA.O)本周累计下跌23%，创2008年10月以来最大单周跌幅。",
     "event_name": "",
     "minutes_left": 0
   }
