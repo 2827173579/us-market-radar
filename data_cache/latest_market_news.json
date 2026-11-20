@@ -1,9 +1,22 @@
 {
-  "updated_at_ts": 1795141780.197,
-  "updated_at_et": "11-19 21:29 ET",
-  "updated_at_kst": "11:29 KST",
+  "updated_at_ts": 1795142399.687,
+  "updated_at_et": "11-19 21:39 ET",
+  "updated_at_kst": "11:39 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261120103539083800",
+      "title": "台湾加权指数跌逾6%，台积电跌4.5%。",
+      "summary": "台湾加权指数跌逾6%，台积电跌4.5%。",
+      "keywords": [
+        "台积电"
+      ],
+      "pub_ts": 1795142139.0,
+      "time_et": "11-19 21:35 ET",
+      "time_bj": "10:35 BJ",
+      "time_kst": "11:35 KST",
+      "time_display": "21:35 ET / 10:35 BJ"
+    },
     {
       "id": "20261120102617670800",
       "title": "国际现货黄金狂泻不止，3600美元失守后市场开始寻找下一道防线",
@@ -334,21 +347,6 @@
       "time_bj": "05:21 BJ",
       "time_kst": "06:21 KST",
       "time_display": "16:21 ET / 05:21 BJ"
-    },
-    {
-      "id": "20261120050259320800",
-      "title": "【美股收盘：三大股指跌超2% Anthropic首日收涨17%】 11月13日讯，美股周…",
-      "summary": "【美股收盘：三大股指跌超2% Anthropic首日收涨17%】 11月13日讯，美股周四收盘，道指初步收跌2.19%或1100点，标普500指数跌2.02%，纳指跌2.25%。英伟达(NVDA.O)跌3.3%，Anthropic(ANT.O)上市首日收涨17%，拼多多(PDD.O)涨11%，AMD(AMD.O)跌7.7%。纳斯达克中国金龙指数收跌1.86%，百度(BIDU.O)跌4%，网易(NTES.O)大跌11%。",
-      "keywords": [
-        "英伟达",
-        "纳斯达克",
-        "标普"
-      ],
-      "pub_ts": 1795122179.0,
-      "time_et": "11-19 16:02 ET",
-      "time_bj": "05:02 BJ",
-      "time_kst": "06:02 KST",
-      "time_display": "16:02 ET / 05:02 BJ"
     }
   ],
   "ticker_news": {
@@ -909,6 +907,20 @@
     ],
     "NVDA": [
       {
+        "title": "Michael Burry Says He Warned on AI With NVIDIA and CoreWeave: Big Short Déjà Vu?",
+        "url": "https://beincrypto.com/michael-burry-warned-nvidia-coreweave-nebius/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 21:19 ET",
+        "pub_ts": 1795141162.0
+      },
+      {
+        "title": "Nvidia Backed AI Data Center Demand Puts Schneider Electric Stock In Focus",
+        "url": "https://finance.yahoo.com/technology/ai/articles/nvidia-backed-ai-data-center-021420909.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 21:14 ET",
+        "pub_ts": 1795140860.0
+      },
+      {
         "title": "History Says This Brilliant ETF Could Help You Turn $500 Per Month Into $784,100 While Barely Lifting a Finger.",
         "url": "https://www.fool.com/investing/2026/11/19/history-says-this-brilliant-etf-could-help-you-turn-usd500-per-month-into-usd784-100-while-barely-lifting-a-finger/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -928,20 +940,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 20:25 ET",
         "pub_ts": 1795137930.0
-      },
-      {
-        "title": "Alibaba Group Holding Accused of Hiding Ties to Suspected Spy in Nvidia Scandal, Lawsuit Says",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/alibaba-group-holding-accused-hiding-010413571.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 20:04 ET",
-        "pub_ts": 1795136653.0
-      },
-      {
-        "title": "Michael Burry Says He Tried to Warn You About Nvidia, CoreWeave and Nebius. Here's What the 'Big Short' Investor Saw",
-        "url": "https://www.fool.com/investing/2026/11/19/michael-burry-says-he-tried-to-warn-you-about-nvidia-coreweave-and-nebius-stocks-here-s-what-the-big-short-investor-saw/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 20:03 ET",
-        "pub_ts": 1795136616.0
       }
     ],
     "AMD": [
@@ -1020,6 +1018,13 @@
     ],
     "QCOM": [
       {
+        "title": "What Should Qualcomm (QCOM) Investors Watch After 500 California Layoffs And New AI Moves?",
+        "url": "https://finance.yahoo.com/technology/ai/articles/qualcomm-qcom-investors-watch-500-021653323.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 21:16 ET",
+        "pub_ts": 1795141013.0
+      },
+      {
         "title": "Inside Brad Gerstner’s Portfolio: Every Move He Made in the Third Quarter",
         "url": "https://www.tikr.com/blog/inside-brad-gerstners-portfolio-every-move-he-made-in-the-third-quarter?ref=yahoofinance&tlnk=yf-261119-8874cxx4&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1046,13 +1051,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 11:52 ET",
         "pub_ts": 1795107155.0
-      },
-      {
-        "title": "Why It’s Time to Buy the Pullback in Qualcomm Stock",
-        "url": "https://www.barchart.com/story/news/8918191/why-its-time-to-buy-the-pullback-in-qualcomm-stock?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 10:00 ET",
-        "pub_ts": 1795100404.0
       }
     ],
     "AVGO": [
@@ -3249,27 +3247,27 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795140352.4437547,
-    "SOXL": 1795140352.4437547,
-    "SPY": 1795140352.4437547,
-    "DIA": 1795140352.4437547,
-    "SOXX": 1795140352.4437547,
-    "QQQ": 1795140352.4437547,
-    "SMH": 1795140352.4437547,
-    "IWM": 1795140352.4437547,
-    "IGV": 1795140352.4437547,
-    "TLT": 1795140352.4437547,
-    "GLD": 1795140352.4437547,
-    "SQQQ": 1795140352.4437547,
-    "TSM": 1795140352.4437547,
-    "VIXY": 1795140352.4437547,
-    "SOXS": 1795140352.4437547,
-    "NVDA": 1795140352.4437547,
-    "AMD": 1795140457.7727993,
+    "KORU": 1795142399.6874251,
+    "SOXL": 1795142399.6874251,
+    "SPY": 1795142399.6874251,
+    "DIA": 1795142399.6874251,
+    "SOXX": 1795142399.6874251,
+    "QQQ": 1795142399.6874251,
+    "SMH": 1795142399.6874251,
+    "IWM": 1795142399.6874251,
+    "IGV": 1795142399.6874251,
+    "TLT": 1795142399.6874251,
+    "GLD": 1795142399.6874251,
+    "SQQQ": 1795142399.6874251,
+    "TSM": 1795142399.6874251,
+    "VIXY": 1795142399.6874251,
+    "SOXS": 1795142399.6874251,
+    "NVDA": 1795142399.6874251,
+    "AMD": 1795142399.6874251,
     "ASML": 1795140457.7727993,
-    "QCOM": 1795140457.7727993,
-    "AVGO": 1795140457.7727993,
-    "AMAT": 1795140457.7727993,
+    "QCOM": 1795142399.6874251,
+    "AVGO": 1795142399.6874251,
+    "AMAT": 1795142399.6874251,
     "META": 1795140457.7727993,
     "GOOGL": 1795140457.7727993,
     "MSFT": 1795140457.7727993,
@@ -3319,8 +3317,8 @@
     "NKE": 1795141780.1969664,
     "MCD": 1795141780.1969664,
     "PEP": 1795141780.1969664,
-    "XOM": 1795140352.4437547,
-    "JPM": 1795140352.4437547,
+    "XOM": 1795142399.6874251,
+    "JPM": 1795142399.6874251,
     "WMT": 1795140352.4437547,
     "V": 1795141780.1969664,
     "CAT": 1795140457.7727993,
@@ -3332,7 +3330,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (21:26 ET / 10:26 BJ) [加息]：黄金较纪录高点已回撤约36%，但在实际利率高企与加息预期的背景下短线抛压仍未完全释放；白银期权偏斜逼近年内极值、金银比升至84附近，贵金属内部去风险仍在延续",
+    "detail": "⚡ 最新核心快讯 (21:35 ET / 10:35 BJ) [台积电]：台湾加权指数跌逾6%，台积电跌4.5%。",
     "event_name": "",
     "minutes_left": 0
   }
