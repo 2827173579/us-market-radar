@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795142506.452,
-  "updated_at_et": "11-19 21:41 ET",
-  "updated_at_kst": "11:41 KST",
+  "updated_at_ts": 1795142610.933,
+  "updated_at_et": "11-19 21:43 ET",
+  "updated_at_kst": "11:43 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2535,6 +2535,13 @@
     ],
     "MSTR": [
       {
+        "title": "Strategy Buys Back $3 Billion in STRC Shares as Credit Markets Tighten",
+        "url": "https://www.marketbeat.com/instant-alerts/event-strategy-buys-back-3-billion-in-strc-shares-as-credit-markets-tighten-2026-11-19/?utm_source=yahoofinance&utm_medium=yahoofinance&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 21:12 ET",
+        "pub_ts": 1795140728.0
+      },
+      {
         "title": "Strategy’s mNAV Is “Now Below 1,” Says Peter Schiff. That Breaks Saylor’s Favorite Trade",
         "url": "https://www.tikr.com/blog/strategys-mnav-is-now-below-1-says-peter-schiff-that-breaks-saylors-favorite-trade?ref=yahoofinance&tlnk=yf-261119-wmfh5545&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2561,13 +2568,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 16:14 ET",
         "pub_ts": 1795122864.0
-      },
-      {
-        "title": "Strategy Is Worth Less Than Its Bitcoin, Trump Media May Have To Sell",
-        "url": "https://finance.yahoo.com/m/e9c10154-a690-3fa1-858e-3f650c0702ff/strategy-is-worth-less-than.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 15:24 ET",
-        "pub_ts": 1795119877.0
       }
     ],
     "SNDK": [
@@ -2609,6 +2609,13 @@
     ],
     "BTC-USD": [
       {
+        "title": "Strategy Buys Back $3 Billion in STRC Shares as Credit Markets Tighten",
+        "url": "https://www.marketbeat.com/instant-alerts/event-strategy-buys-back-3-billion-in-strc-shares-as-credit-markets-tighten-2026-11-19/?utm_source=yahoofinance&utm_medium=yahoofinance&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 21:12 ET",
+        "pub_ts": 1795140728.0
+      },
+      {
         "title": "If you invested $1,000 in Bitcoin or gold instead of GTA V, here's what you'd have today",
         "url": "https://www.thestreet.com/crypto/markets/if-you-invested-1000-in-bitcoin-or-gold-instead-of-gta-v-heres-what-youd-have-today-?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2635,13 +2642,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 18:30 ET",
         "pub_ts": 1795131000.0
-      },
-      {
-        "title": "Zoomex Review 2026: Crypto, Stocks, AI Tools, and Savings Under One Platform",
-        "url": "https://beincrypto.com/zoomex-review-crypto-trading-stocks-ai-tools-savings/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 17:49 ET",
-        "pub_ts": 1795128593.0
       }
     ],
     "CRWD": [
@@ -3299,16 +3299,16 @@
     "VRT": 1795142506.4520364,
     "HPE": 1795142506.4520364,
     "DELL": 1795142506.4520364,
-    "OKLO": 1795140562.2185636,
+    "OKLO": 1795142610.9330502,
     "CEG": 1795142506.4520364,
-    "FPS": 1795140562.2185636,
-    "MU": 1795140562.2185636,
-    "SKHY": 1795140562.2185636,
-    "WDC": 1795140562.2185636,
-    "STX": 1795140562.2185636,
-    "MSTR": 1795140562.2185636,
-    "SNDK": 1795140562.2185636,
-    "BTC-USD": 1795140562.2185636,
+    "FPS": 1795142610.9330502,
+    "MU": 1795142610.9330502,
+    "SKHY": 1795142610.9330502,
+    "WDC": 1795142610.9330502,
+    "STX": 1795142610.9330502,
+    "MSTR": 1795142610.9330502,
+    "SNDK": 1795142610.9330502,
+    "BTC-USD": 1795142610.9330502,
     "CRWD": 1795141780.1969664,
     "ORCL": 1795141780.1969664,
     "COIN": 1795141780.1969664,
@@ -3324,8 +3324,8 @@
     "CAT": 1795142506.4520364,
     "FN": 1795141780.1969664,
     "GLW": 1795141780.1969664,
-    "ANT": 1795140457.7727993,
-    "XAUUSD": 1795140457.7727993
+    "ANT": 1795142610.9330502,
+    "XAUUSD": 1795142610.9330502
   },
   "calendar_banner": {
     "level": "idle_with_flash",
