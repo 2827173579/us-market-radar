@@ -120,6 +120,14 @@
     "BTC-USD": {
       "state": "STOP_LOSS",
       "last_notified_at": 1795203086.7192016
+    },
+    "MSTR": {
+      "state": "STOP_LOSS",
+      "last_notified_at": 1795208160.163749
+    },
+    "MU": {
+      "state": "STOP_LOSS",
+      "last_notified_at": 1795208160.163749
     }
   },
   "position_peaks": {
