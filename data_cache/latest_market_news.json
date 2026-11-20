@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795138342.918,
-  "updated_at_et": "11-19 20:32 ET",
-  "updated_at_kst": "10:32 KST",
+  "updated_at_ts": 1795138447.816,
+  "updated_at_et": "11-19 20:34 ET",
+  "updated_at_kst": "10:34 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -517,13 +517,6 @@
         "pub_ts": 1795086234.0
       },
       {
-        "title": "Which Funds With Semiconductor Exposure Best Capture The China AI Chip Curbs?",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/funds-semiconductor-exposure-best-capture-200931859.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 15:09 ET",
-        "pub_ts": 1795032571.0
-      },
-      {
         "title": "Inside Peter Thiel’s Portfolio: Every Move He Made in the Third Quarter",
         "url": "https://www.tikr.com/blog/inside-peter-thiels-portfolio-every-move-he-made-in-the-third-quarter?ref=yahoofinance&tlnk=yf-261119-g54qj9h4&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -536,6 +529,13 @@
         "source": "Yahoo Finance",
         "time": "11-19 08:58 ET",
         "pub_ts": 1795096680.0
+      },
+      {
+        "title": "ETFs Are Net Sellers of Applied Materials (AMAT) on Nov. 17",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-net-sellers-applied-materials-110334228.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 06:03 ET",
+        "pub_ts": 1795086214.0
       }
     ],
     "QQQ": [
@@ -910,6 +910,20 @@
     ],
     "NVDA": [
       {
+        "title": "Alibaba Group Holding Accused of Hiding Ties to Suspected Spy in Nvidia Scandal, Lawsuit Says",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/alibaba-group-holding-accused-hiding-010413571.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 20:04 ET",
+        "pub_ts": 1795136653.0
+      },
+      {
+        "title": "Michael Burry Says He Tried to Warn You About Nvidia, CoreWeave and Nebius. Here's What the 'Big Short' Investor Saw",
+        "url": "https://www.fool.com/investing/2026/11/19/michael-burry-says-he-tried-to-warn-you-about-nvidia-coreweave-and-nebius-stocks-here-s-what-the-big-short-investor-saw/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 20:03 ET",
+        "pub_ts": 1795136616.0
+      },
+      {
         "title": "1 Unstoppable Stock to Buy Before It Joins NVDA and AAPL in the $1 Trillion Club",
         "url": "https://www.fool.com/investing/2026/11/19/1-unstoppable-stock-to-buy-before-it-joins-hot-tickers-in-the-1-3-trillion-club/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -917,32 +931,18 @@
         "pub_ts": 1795135922.0
       },
       {
-        "title": "The Semiconductor ETF Is on Track to Beat the S&P 500 for a 4th Straight Year. It Has Never Done That Before.",
-        "url": "https://www.fool.com/investing/2026/11/19/the-semiconductor-etf-is-on-track-to-beat-the-s-and-p-500-for-a-4th-straight-year-it-has-never-done-that-before/?.tsrc=rss",
+        "title": "Nvidia Faces California Subpoena as Its Regulatory Troubles Grow",
+        "url": "https://finance.yahoo.com/m/c4255d5c-5bd9-305f-b1be-770e273d435b/nvidia-faces-california.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-19 18:43 ET",
-        "pub_ts": 1795131782.0
+        "time": "11-19 19:26 ET",
+        "pub_ts": 1795134360.0
       },
       {
-        "title": "California AG subpoenas Nvidia over China leak risks and investor disclosures",
-        "url": "https://finance.yahoo.com/news/california-ag-subpoenas-nvidia-over-232352666.html?.tsrc=rss",
+        "title": "Should You Avoid MercadoLibre (MELI) Stock, Even Now That It's Near a 52-Week Low?",
+        "url": "https://www.fool.com/investing/2026/11/19/should-you-avoid-mercadolibre-meli-stock-even-now/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-19 18:23 ET",
-        "pub_ts": 1795130632.0
-      },
-      {
-        "title": "California subpoenas Nvidia as questions about CEO affair, AI chips mount",
-        "url": "https://finance.yahoo.com/technology/ai/articles/california-subpoenas-nvidia-questions-ceo-230444672.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 18:04 ET",
-        "pub_ts": 1795129484.0
-      },
-      {
-        "title": "Grand Theft Auto VI outplays Nvidia and SpaceX",
-        "url": "https://www.thestreet.com/crypto/markets/grand-theft-auto-vi-outplays-nvidia-and-spacex?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 18:00 ET",
-        "pub_ts": 1795129200.0
+        "time": "11-19 20:25 ET",
+        "pub_ts": 1795137900.0
       }
     ],
     "AMD": [
@@ -3204,6 +3204,13 @@
     ],
     "ANT": [
       {
+        "title": "Anthropic: A Strange Time To Be Sensible",
+        "url": "https://finnhub.io/api/news?id=18c5deef7c17d602561286c5e661ed21f63ff94e5530dd0726d37d1d03b91065",
+        "source": "SeekingAlpha",
+        "time": "11-19 14:42 ET",
+        "pub_ts": 1795117359.0
+      },
+      {
         "title": "Anthropic Hits The Market, But Wall Street Hits The Brakes",
         "url": "https://finnhub.io/api/news?id=c39116210429ce75f4960335f81d89a562d2798082359d862e5f21fd953c4f8b",
         "source": "SeekingAlpha",
@@ -3230,13 +3237,6 @@
         "source": "SeekingAlpha",
         "time": "11-19 12:51 ET",
         "pub_ts": 1795110704.0
-      },
-      {
-        "title": "Anthropic IPO And SpaceX Made Me Rethink The Small-Cap Premium",
-        "url": "https://finnhub.io/api/news?id=bc25b8d0c6c7138c51138771ab97a86e4791bd617a950e7d2912e321dfdc8ebb",
-        "source": "SeekingAlpha",
-        "time": "11-19 11:55 ET",
-        "pub_ts": 1795107338.0
       }
     ],
     "XAUUSD": [
@@ -3250,22 +3250,22 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795136693.2974865,
-    "SOXL": 1795136693.2974865,
-    "SPY": 1795136693.2974865,
-    "DIA": 1795136693.2974865,
-    "SOXX": 1795136693.2974865,
-    "QQQ": 1795136693.2974865,
-    "SMH": 1795136693.2974865,
-    "IWM": 1795136693.2974865,
-    "IGV": 1795136693.2974865,
-    "TLT": 1795136693.2974865,
-    "GLD": 1795136693.2974865,
-    "SQQQ": 1795136693.2974865,
+    "KORU": 1795138447.815816,
+    "SOXL": 1795138447.815816,
+    "SPY": 1795138447.815816,
+    "DIA": 1795138447.815816,
+    "SOXX": 1795138447.815816,
+    "QQQ": 1795138447.815816,
+    "SMH": 1795138447.815816,
+    "IWM": 1795138447.815816,
+    "IGV": 1795138447.815816,
+    "TLT": 1795138447.815816,
+    "GLD": 1795138447.815816,
+    "SQQQ": 1795138447.815816,
     "TSM": 1795136693.2974865,
-    "VIXY": 1795136693.2974865,
-    "SOXS": 1795136693.2974865,
-    "NVDA": 1795136693.2974865,
+    "VIXY": 1795138447.815816,
+    "SOXS": 1795138447.815816,
+    "NVDA": 1795138447.815816,
     "AMD": 1795136693.2974865,
     "ASML": 1795136693.2974865,
     "QCOM": 1795136693.2974865,
@@ -3320,15 +3320,15 @@
     "NKE": 1795138342.917801,
     "MCD": 1795138342.917801,
     "PEP": 1795138342.917801,
-    "XOM": 1795136390.3078575,
-    "JPM": 1795136390.3078575,
-    "WMT": 1795136390.3078575,
+    "XOM": 1795138447.815816,
+    "JPM": 1795138447.815816,
+    "WMT": 1795138447.815816,
     "V": 1795138342.917801,
-    "CAT": 1795136390.3078575,
+    "CAT": 1795138447.815816,
     "FN": 1795138342.917801,
     "GLW": 1795138342.917801,
-    "ANT": 1795136390.3078575,
-    "XAUUSD": 1795136390.3078575
+    "ANT": 1795138447.815816,
+    "XAUUSD": 1795138447.815816
   },
   "calendar_banner": {
     "level": "idle_with_flash",
