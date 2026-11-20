@@ -2807,9 +2807,13 @@
     "2026-11-19:DEFENSIVE_FLIGHT:+1.5": {
       "device": "PC",
       "ts": 1795136397.3204834
+    },
+    "2026-11-19:AXP/DIA/LLY:5M_ENTRY+TAKE_PROFIT": {
+      "device": "PC",
+      "ts": 1795136495.8299718
     }
   },
   "device": "PC",
-  "last_heartbeat_ts": 1795136316.7919044,
-  "updated_at": "2026-11-20T00:59:57.320870+00:00"
+  "last_heartbeat_ts": 1795136416.6725419,
+  "updated_at": "2026-11-20T01:01:35.830364+00:00"
 }
