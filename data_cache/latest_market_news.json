@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795146282.248,
-  "updated_at_et": "11-19 22:44 ET",
-  "updated_at_kst": "12:44 KST",
+  "updated_at_ts": 1795146383.329,
+  "updated_at_et": "11-19 22:46 ET",
+  "updated_at_kst": "12:46 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1759,6 +1759,20 @@
     ],
     "SPCX": [
       {
+        "title": "SpaceX lenders seek safeguards against Musk sending AI chips into space - FT",
+        "url": "https://finance.yahoo.com/technology/ai/articles/spacex-lenders-seek-safeguards-against-031830082.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 22:18 ET",
+        "pub_ts": 1795144710.0
+      },
+      {
+        "title": "Tom Lee Says Anthropic Debut Selloff Feels Like ‘Max Pain’: Will Tech Rebound?",
+        "url": "https://beincrypto.com/tom-lee-anthropic-ipo-max-pain/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 22:05 ET",
+        "pub_ts": 1795143900.0
+      },
+      {
         "title": "SpaceX's Data Center Vote Should Be Delayed, Arizona AG Tells Cochise County",
         "url": "https://finance.yahoo.com/technology/articles/spacex-apos-data-center-vote-003116969.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1778,20 +1792,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 17:37 ET",
         "pub_ts": 1795127826.0
-      },
-      {
-        "title": "SpaceX Wins Permit For $24 Bil Texas Data Center Project, Tax Break Rejected",
-        "url": "https://finance.yahoo.com/m/670d3efa-d012-3f2d-bdb5-0b01f3ad2656/spacex-wins-permit-for-%2424.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 17:28 ET",
-        "pub_ts": 1795127288.0
-      },
-      {
-        "title": "2 Reasons to Buy SpaceX (SPCX) Stock -- and 1 Reason to Wait",
-        "url": "https://www.fool.com/investing/2026/11/19/2-reasons-to-buy-spacex-spcx-stock-and-1-reason-to-wait/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 17:04 ET",
-        "pub_ts": 1795125841.0
       }
     ],
     "ASTS": [
@@ -2691,6 +2691,13 @@
         "pub_ts": 1795134063.0
       },
       {
+        "title": "The Biggest Fear Around Oracle Could Soon End. Wall Street Sees ORCL Stock Surging 100% From Here.",
+        "url": "https://www.barchart.com/story/news/8925367/the-biggest-fear-around-oracle-could-soon-end-wall-street-sees-orcl-stock-surging-100-from-here?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 16:28 ET",
+        "pub_ts": 1795123686.0
+      },
+      {
         "title": "Why Is Oracle Spending $1.61 For Every Cash Dollar?",
         "url": "https://www.trefis.com/stock/orcl/articles/626550/why-is-oracle-spending-1-61-for-every-cash-dollar/2026-11-19?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2710,13 +2717,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 10:23 ET",
         "pub_ts": 1795101818.0
-      },
-      {
-        "title": "IT Asset Management (ITAM) Software - Global Strategic Business Report 2026: Capitalize on the $3.5 Billion Market by 2032 with ServiceNow, IBM, Microsoft, Oracle, and BMC Software",
-        "url": "https://finance.yahoo.com/technology/articles/asset-management-itam-software-global-151500668.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 10:15 ET",
-        "pub_ts": 1795101300.0
       }
     ],
     "COIN": [
@@ -3277,25 +3277,25 @@
     "NOW": 1795145568.5988398,
     "AMZN": 1795145568.5988398,
     "CRWV": 1795145568.5988398,
-    "NBIS": 1795144850.4567537,
-    "APLD": 1795144850.4567537,
-    "VST": 1795144850.4567537,
-    "BE": 1795144850.4567537,
-    "CRDO": 1795144850.4567537,
-    "COHR": 1795144850.4567537,
-    "MRVL": 1795144850.4567537,
-    "LITE": 1795144850.4567537,
+    "NBIS": 1795146383.3291159,
+    "APLD": 1795146383.3291159,
+    "VST": 1795146383.3291159,
+    "BE": 1795146383.3291159,
+    "CRDO": 1795146383.3291159,
+    "COHR": 1795146383.3291159,
+    "MRVL": 1795146383.3291159,
+    "LITE": 1795146383.3291159,
     "AAOI": 1795145568.5988398,
-    "SPCX": 1795144850.4567537,
-    "ASTS": 1795144850.4567537,
-    "AXTI": 1795144850.4567537,
+    "SPCX": 1795146383.3291159,
+    "ASTS": 1795146383.3291159,
+    "AXTI": 1795146383.3291159,
     "NASA": 1795145568.5988398,
     "LUNR": 1795145568.5988398,
     "TSLA": 1795145568.5988398,
     "AXP": 1795145568.5988398,
-    "RKLB": 1795144850.4567537,
+    "RKLB": 1795146383.3291159,
     "KO": 1795145568.5988398,
-    "FLY": 1795144850.4567537,
+    "FLY": 1795146383.3291159,
     "INTC": 1795145568.5988398,
     "VRT": 1795145568.5988398,
     "HPE": 1795145568.5988398,
@@ -3310,21 +3310,21 @@
     "MSTR": 1795145673.3748174,
     "SNDK": 1795145673.3748174,
     "BTC-USD": 1795145673.3748174,
-    "CRWD": 1795144850.4567537,
-    "ORCL": 1795144850.4567537,
-    "COIN": 1795144850.4567537,
-    "LLY": 1795144850.4567537,
-    "MRNA": 1795144850.4567537,
-    "NKE": 1795144850.4567537,
-    "MCD": 1795144850.4567537,
-    "PEP": 1795144850.4567537,
+    "CRWD": 1795146383.3291159,
+    "ORCL": 1795146383.3291159,
+    "COIN": 1795146383.3291159,
+    "LLY": 1795146383.3291159,
+    "MRNA": 1795146383.3291159,
+    "NKE": 1795146383.3291159,
+    "MCD": 1795146383.3291159,
+    "PEP": 1795146383.3291159,
     "XOM": 1795145463.7262912,
     "JPM": 1795145463.7262912,
     "WMT": 1795145568.5988398,
-    "V": 1795144850.4567537,
+    "V": 1795146383.3291159,
     "CAT": 1795145568.5988398,
-    "FN": 1795144850.4567537,
-    "GLW": 1795144850.4567537,
+    "FN": 1795146383.3291159,
+    "GLW": 1795146383.3291159,
     "ANT": 1795145673.3748174,
     "XAUUSD": 1795145673.3748174
   },
