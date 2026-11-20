@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795157663.69,
-  "updated_at_et": "11-20 01:54 ET",
-  "updated_at_kst": "15:54 KST",
+  "updated_at_ts": 1795157763.966,
+  "updated_at_et": "11-20 01:56 ET",
+  "updated_at_kst": "15:56 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -499,6 +499,13 @@
     ],
     "SOXX": [
       {
+        "title": "This Unstoppable ETF Is Up by Double Digits in 2026. Here's Where I Think It's Headed in 2027.",
+        "url": "https://www.fool.com/investing/2026/11/20/this-unstoppable-etf-is-up-double-digits-in-2026-here-s-where-i-think-it-s-headed-in-2027/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 01:30 ET",
+        "pub_ts": 1795156202.0
+      },
+      {
         "title": "iShares PHLX SOX Semiconductor (SOXX) Sells $24.6 Million More AMD on Tuesday",
         "url": "https://finance.yahoo.com/markets/stocks/articles/ishares-phlx-sox-semiconductor-soxx-110501423.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -525,13 +532,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 08:58 ET",
         "pub_ts": 1795096680.0
-      },
-      {
-        "title": "ETFs Are Net Sellers of Applied Materials (AMAT) on Nov. 17",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-net-sellers-applied-materials-110334228.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 06:03 ET",
-        "pub_ts": 1795086214.0
       }
     ],
     "QQQ": [
@@ -3246,27 +3246,27 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795156230.3734956,
-    "SOXL": 1795156230.3734956,
-    "SPY": 1795156230.3734956,
-    "DIA": 1795156230.3734956,
-    "SOXX": 1795156230.3734956,
-    "QQQ": 1795156230.3734956,
-    "SMH": 1795156230.3734956,
-    "IWM": 1795156230.3734956,
-    "IGV": 1795156230.3734956,
-    "TLT": 1795156230.3734956,
-    "GLD": 1795156230.3734956,
-    "SQQQ": 1795156230.3734956,
-    "TSM": 1795156230.3734956,
-    "VIXY": 1795156230.3734956,
-    "SOXS": 1795156230.3734956,
-    "NVDA": 1795156230.3734956,
-    "AMD": 1795156230.3734956,
+    "KORU": 1795157763.966112,
+    "SOXL": 1795157763.966112,
+    "SPY": 1795157763.966112,
+    "DIA": 1795157763.966112,
+    "SOXX": 1795157763.966112,
+    "QQQ": 1795157763.966112,
+    "SMH": 1795157763.966112,
+    "IWM": 1795157763.966112,
+    "IGV": 1795157763.966112,
+    "TLT": 1795157763.966112,
+    "GLD": 1795157763.966112,
+    "SQQQ": 1795157763.966112,
+    "TSM": 1795157763.966112,
+    "VIXY": 1795157763.966112,
+    "SOXS": 1795157763.966112,
+    "NVDA": 1795157763.966112,
+    "AMD": 1795157763.966112,
     "ASML": 1795156336.9532125,
-    "QCOM": 1795156230.3734956,
-    "AVGO": 1795156230.3734956,
-    "AMAT": 1795156230.3734956,
+    "QCOM": 1795157763.966112,
+    "AVGO": 1795157763.966112,
+    "AMAT": 1795157763.966112,
     "META": 1795156336.9532125,
     "GOOGL": 1795156336.9532125,
     "MSFT": 1795156336.9532125,
@@ -3316,8 +3316,8 @@
     "NKE": 1795157261.468735,
     "MCD": 1795157261.468735,
     "PEP": 1795157261.468735,
-    "XOM": 1795156230.3734956,
-    "JPM": 1795156230.3734956,
+    "XOM": 1795157763.966112,
+    "JPM": 1795157763.966112,
     "WMT": 1795156336.9532125,
     "V": 1795157155.191766,
     "CAT": 1795156336.9532125,
