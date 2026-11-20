@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795172155.7,
-  "updated_at_et": "11-20 05:55 ET",
-  "updated_at_kst": "19:55 KST",
+  "updated_at_ts": 1795172657.354,
+  "updated_at_et": "11-20 06:04 ET",
+  "updated_at_kst": "20:04 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2975,13 +2975,6 @@
     ],
     "JPM": [
       {
-        "title": "JPMorgan, Visa, and Mastercard disclose cyberattack on third-party vendors",
-        "url": "https://finance.yahoo.com/markets/article/jpmorgan-visa-and-mastercard-disclose-cyberattack-on-third-party-vendors-190314490.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 14:03 ET",
-        "pub_ts": 1795114994.0
-      },
-      {
         "title": "What Does JPMorgan Chase (JPM) Naming A New CFO Mean For Investors?",
         "url": "https://finance.yahoo.com/markets/stocks/articles/does-jpmorgan-chase-jpm-naming-060933124.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3008,6 +3001,13 @@
         "source": "Yahoo Finance",
         "time": "11-19 15:29 ET",
         "pub_ts": 1795120153.0
+      },
+      {
+        "title": "Top Analyst Reports for Berkshire Hathaway, JPMorgan & Procter & Gamble",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/top-analyst-reports-berkshire-hathaway-202300112.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 15:23 ET",
+        "pub_ts": 1795119780.0
       }
     ],
     "WMT": [
@@ -3197,39 +3197,39 @@
     ],
     "ANT": [
       {
-        "title": "Invesco QQQ Monthly Review",
-        "url": "https://finnhub.io/api/news?id=160c38cf1180315966a4a7333f08a04eb7c1ef94af1882a472148aa616ab8c51",
-        "source": "SeekingAlpha",
-        "time": "11-19 23:20 ET",
-        "pub_ts": 1795148400.0
+        "title": "Stock market today: Dow, S&P 500, Nasdaq futures continue to sell-off after Anthropic IPO fails to quell AI worries",
+        "url": "https://finance.yahoo.com/markets/live/stock-market-today-friday-november-19-dow-sp-500-nasdaq-anthropic-nvidia-volatility-092827348.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 04:28 ET",
+        "pub_ts": 1795166907.0
       },
       {
-        "title": "Market Brief: Anthropic After The IPO: Valuation, Float And Price",
-        "url": "https://finnhub.io/api/news?id=b182baa72606de3107ab998652afde6b42cdc89a9e0c45457f3bc0b0d82ef00a",
-        "source": "SeekingAlpha",
-        "time": "11-19 20:10 ET",
-        "pub_ts": 1795137000.0
+        "title": "Anthropic's IPO buyers made $14 billion on day one, second only to SpaceX: Chart of the Day",
+        "url": "https://finance.yahoo.com/technology/article/anthropics-ipo-buyers-made-14-billion-on-day-one-second-only-to-spacex-chart-of-the-day-110000176.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 06:00 ET",
+        "pub_ts": 1795172400.0
       },
       {
-        "title": "I'm Buying The Anthropic IPO, Here's Why",
-        "url": "https://finnhub.io/api/news?id=652d25e15d3aefee8622c81b06e1118850144da61fd966b244f4f2ab291aef4a",
-        "source": "SeekingAlpha",
-        "time": "11-19 17:44 ET",
-        "pub_ts": 1795128291.0
+        "title": "Anthropic's IPO ties the fate of the US economy closer to AI",
+        "url": "https://finance.yahoo.com/technology/article/anthropics-ipo-ties-the-fate-of-the-us-economy-closer-to-ai-110000224.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 06:00 ET",
+        "pub_ts": 1795172400.0
       },
       {
-        "title": "Anthropic: A Strange Time To Be Sensible",
-        "url": "https://finnhub.io/api/news?id=18c5deef7c17d602561286c5e661ed21f63ff94e5530dd0726d37d1d03b91065",
-        "source": "SeekingAlpha",
-        "time": "11-19 14:42 ET",
-        "pub_ts": 1795117359.0
+        "title": "Anthropic's IPO winners and losers, from Ashton Kutcher to Sam Bankman-Fried",
+        "url": "https://finance.yahoo.com/markets/article/anthropics-ipo-winners-and-losers-from-ashton-kutcher-to-sam-bankman-fried-110000728.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 06:00 ET",
+        "pub_ts": 1795172400.0
       },
       {
-        "title": "Anthropic Hits The Market, But Wall Street Hits The Brakes",
-        "url": "https://finnhub.io/api/news?id=c39116210429ce75f4960335f81d89a562d2798082359d862e5f21fd953c4f8b",
-        "source": "SeekingAlpha",
-        "time": "11-19 14:00 ET",
-        "pub_ts": 1795114800.0
+        "title": "AI wealth is already changing San Francisco's housing market",
+        "url": "https://finance.yahoo.com/real-estate/article/ai-wealth-is-already-changing-san-franciscos-housing-market-100000144.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 05:00 ET",
+        "pub_ts": 1795168800.0
       }
     ],
     "XAUUSD": [
@@ -3313,15 +3313,15 @@
     "NKE": 1795171491.354798,
     "MCD": 1795171491.354798,
     "PEP": 1795171491.354798,
-    "XOM": 1795170711.8375206,
-    "JPM": 1795170711.8375206,
-    "WMT": 1795170711.8375206,
+    "XOM": 1795172657.3536074,
+    "JPM": 1795172657.3536074,
+    "WMT": 1795172657.3536074,
     "V": 1795171491.354798,
-    "CAT": 1795170711.8375206,
+    "CAT": 1795172657.3536074,
     "FN": 1795171491.354798,
     "GLW": 1795171491.354798,
-    "ANT": 1795170711.8375206,
-    "XAUUSD": 1795170711.8375206
+    "ANT": 1795172657.3536074,
+    "XAUUSD": 1795172657.3536074
   },
   "calendar_banner": {
     "level": "idle_with_flash",
