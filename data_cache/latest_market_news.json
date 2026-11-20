@@ -1,9 +1,22 @@
 {
-  "updated_at_ts": 1795168115.993,
-  "updated_at_et": "11-20 04:48 ET",
-  "updated_at_kst": "18:48 KST",
+  "updated_at_ts": 1795168212.259,
+  "updated_at_et": "11-20 04:50 ET",
+  "updated_at_kst": "18:50 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261120174923830800",
+      "title": "WTI原油失守82美元/桶，日内跌幅2.86%。",
+      "summary": "WTI原油失守82美元/桶，日内跌幅2.86%。",
+      "keywords": [
+        "原油"
+      ],
+      "pub_ts": 1795168163.0,
+      "time_et": "11-20 04:49 ET",
+      "time_bj": "17:49 BJ",
+      "time_kst": "18:49 KST",
+      "time_display": "04:49 ET / 17:49 BJ"
+    },
     {
       "id": "20261120173430706800",
       "title": "美股AI芯片股盘前下跌，AMD(AMD.O)跌5%，英特尔(INTC.O)跌4.5%，台…",
@@ -333,19 +346,6 @@
       "time_bj": "11:53 BJ",
       "time_kst": "12:53 KST",
       "time_display": "22:53 ET / 11:53 BJ"
-    },
-    {
-      "id": "20261120113046411800",
-      "title": "贵金属抛售持续，这轮压力会否外溢？",
-      "summary": "鹰派预期压着金价，AI资产的抛售又让盘面多了一层不安。美债收益率已经回落，贵金属却仍然跌个不停。熟悉的解释还能解释多少？这轮卖盘，可能需要换个地方找。",
-      "keywords": [
-        "美债"
-      ],
-      "pub_ts": 1795145446.0,
-      "time_et": "11-19 22:30 ET",
-      "time_bj": "11:30 BJ",
-      "time_kst": "12:30 KST",
-      "time_display": "22:30 ET / 11:30 BJ"
     }
   ],
   "ticker_news": {
@@ -3329,7 +3329,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (04:34 ET / 17:34 BJ) [芯片] [英伟达] [台积电]：美股AI芯片股盘前下跌，AMD(AMD.O)跌5%，英特尔(INTC.O)跌4.5%，台积电(TSM.N)跌3.7%，博通(AVGO.O)跌3%，高通(QCOM.O)跌2.4%，英伟达(NV",
+    "detail": "⚡ 最新核心快讯 (04:49 ET / 17:49 BJ) [原油]：WTI原油失守82美元/桶，日内跌幅2.86%。",
     "event_name": "",
     "minutes_left": 0
   }
