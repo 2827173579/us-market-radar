@@ -1,9 +1,22 @@
 {
-  "updated_at_ts": 1795185460.827,
-  "updated_at_et": "11-20 09:37 ET",
-  "updated_at_kst": "23:37 KST",
+  "updated_at_ts": 1795185560.506,
+  "updated_at_et": "11-20 09:39 ET",
+  "updated_at_kst": "23:39 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261120223754380800",
+      "title": "费城半导体指数下跌4.3%，触及两周低点。",
+      "summary": "费城半导体指数下跌4.3%，触及两周低点。",
+      "keywords": [
+        "半导体"
+      ],
+      "pub_ts": 1795185474.0,
+      "time_et": "11-20 09:37 ET",
+      "time_bj": "22:37 BJ",
+      "time_kst": "23:37 KST",
+      "time_display": "09:37 ET / 22:37 BJ"
+    },
     {
       "id": "20261120223135859800",
       "title": "费城半导体指数盘初跌超3%。",
@@ -328,19 +341,6 @@
       "time_bj": "16:29 BJ",
       "time_kst": "17:29 KST",
       "time_display": "03:29 ET / 16:29 BJ"
-    },
-    {
-      "id": "20261120162144897800",
-      "title": "美、布两油日内均跌超1.00%，布伦特原油现报91.73美元/桶，WTI原油报83.48…",
-      "summary": "美、布两油日内均跌超1.00%，布伦特原油现报91.73美元/桶，WTI原油报83.48美元/桶。",
-      "keywords": [
-        "原油"
-      ],
-      "pub_ts": 1795162904.0,
-      "time_et": "11-20 03:21 ET",
-      "time_bj": "16:21 BJ",
-      "time_kst": "17:21 KST",
-      "time_display": "03:21 ET / 16:21 BJ"
     }
   ],
   "ticker_news": {
@@ -2973,6 +2973,13 @@
     ],
     "JPM": [
       {
+        "title": "Moody's Ratings Gain From AI Infrastructure and Private Credit Growth",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/moodys-ratings-gain-ai-infrastructure-131100021.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 08:11 ET",
+        "pub_ts": 1795180260.0
+      },
+      {
         "title": "Scout24 shares fall 6% as J.P. Morgan flags AI threat to property portals",
         "url": "https://finance.yahoo.com/real-estate/articles/scout24-shares-fall-6-j-120418371.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2999,13 +3006,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 17:22 ET",
         "pub_ts": 1795126933.0
-      },
-      {
-        "title": "3 Dow Dividend Passive Income Stocks for Retirement, Led by a 64-Year Streak",
-        "url": "https://247wallst.com/investing/2026/11/19/3-dow-dividend-passive-income-stocks-for-retirement-led-by-a-64-year-streak/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 15:32 ET",
-        "pub_ts": 1795120339.0
       }
     ],
     "WMT": [
@@ -3195,6 +3195,13 @@
     ],
     "ANT": [
       {
+        "title": "Why Micron Stock Is Falling Today?",
+        "url": "https://finnhub.io/api/news?id=bbbfe4704eb11bf07d8fd58f341511f215722e7b5662cb5bb48f1e013b0a90e5",
+        "source": "Benzinga",
+        "time": "11-20 05:09 ET",
+        "pub_ts": 1795169382.0
+      },
+      {
         "title": "Stock Market Today: Dow Jones, S&P 500, Nasdaq 100 Futures Fall as Trump Weighs Iran Decision— INTU, ROST, KEYS in Focus (UPDATED)",
         "url": "https://finnhub.io/api/news?id=a8dc2d34353c17c3b45edc3fd373a813b1d1ccec9bcb6c233055d4ffce06289b",
         "source": "Benzinga",
@@ -3202,32 +3209,25 @@
         "pub_ts": 1795167391.0
       },
       {
+        "title": "Google Is Turning Its AI Rivals Into Chip Customers. Nvidia Should Pay Attention",
+        "url": "https://finnhub.io/api/news?id=fdefb7b1e6d95916d06fdfe21e2fd434674a7f461d547267ab8a63cb2c7e7f24",
+        "source": "Benzinga",
+        "time": "11-20 04:29 ET",
+        "pub_ts": 1795166967.0
+      },
+      {
+        "title": "Why Is Cipher Digital Stock Falling on Friday?",
+        "url": "https://finnhub.io/api/news?id=ab10ce95d20102b1d58453b0e96735594957202a734cc36b11e2a21a69e7252a",
+        "source": "Benzinga",
+        "time": "11-20 04:15 ET",
+        "pub_ts": 1795166155.0
+      },
+      {
         "title": "Ross Stores, Intuit, Anthropic And Other Big Stocks Moving Lower In Friday’s Pre-Market Session",
         "url": "https://finnhub.io/api/news?id=53495c45ed24cd3b0c4e75e22ab035a6e4843a10cb87bfcd036b3b42c24b30b0",
         "source": "Benzinga",
         "time": "11-20 04:03 ET",
         "pub_ts": 1795165387.0
-      },
-      {
-        "title": "Anthropic, Disney, Alphabet and an Industrial Stock on CNBC’s ‘Final Trades’",
-        "url": "https://finnhub.io/api/news?id=2161bd5b38d1196dceb34be89c37a0f19421cfbcc8ed25ae891d8c28c44297a9",
-        "source": "Benzinga",
-        "time": "11-20 03:58 ET",
-        "pub_ts": 1795165081.0
-      },
-      {
-        "title": "Broadcom: A Better Bet Than A Month Ago",
-        "url": "https://finnhub.io/api/news?id=0e52610306baca9ac702f3c3092c38612307d9da1f72132489b8daa947b1b40d",
-        "source": "SeekingAlpha",
-        "time": "11-20 03:16 ET",
-        "pub_ts": 1795162575.0
-      },
-      {
-        "title": "Nvidia Stock Hits New 52-Week Low: Buy the Dip or Stay Away?",
-        "url": "https://finnhub.io/api/news?id=51f28346ff44d102946998db2521c94c8471f3d7aac2bcbf3b0a6ee09b257062",
-        "source": "Benzinga",
-        "time": "11-20 02:18 ET",
-        "pub_ts": 1795159090.0
       }
     ],
     "XAUUSD": [
@@ -3302,7 +3302,7 @@
     "STX": 1795185158.3943117,
     "MSTR": 1795185158.3943117,
     "SNDK": 1795185044.13642,
-    "BTC-USD": 1795183986.9407337,
+    "BTC-USD": 1795185560.5057821,
     "CRWD": 1795184405.716801,
     "ORCL": 1795184405.716801,
     "COIN": 1795184405.716801,
@@ -3311,20 +3311,20 @@
     "NKE": 1795184514.2102592,
     "MCD": 1795184405.716801,
     "PEP": 1795184405.716801,
-    "XOM": 1795183986.9407337,
-    "JPM": 1795183986.9407337,
-    "WMT": 1795183986.9407337,
+    "XOM": 1795185560.5057821,
+    "JPM": 1795185560.5057821,
+    "WMT": 1795185560.5057821,
     "V": 1795184405.716801,
-    "CAT": 1795183986.9407337,
+    "CAT": 1795185560.5057821,
     "FN": 1795184405.716801,
     "GLW": 1795184405.716801,
-    "ANT": 1795183986.9407337,
-    "XAUUSD": 1795183986.9407337
+    "ANT": 1795185560.5057821,
+    "XAUUSD": 1795185560.5057821
   },
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (09:31 ET / 22:31 BJ) [半导体]：费城半导体指数盘初跌超3%。",
+    "detail": "⚡ 最新核心快讯 (09:37 ET / 22:37 BJ) [半导体]：费城半导体指数下跌4.3%，触及两周低点。",
     "event_name": "",
     "minutes_left": 0
   }
