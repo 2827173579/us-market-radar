@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795150868.237,
-  "updated_at_et": "11-20 00:01 ET",
-  "updated_at_kst": "14:01 KST",
+  "updated_at_ts": 1795150974.248,
+  "updated_at_et": "11-20 00:02 ET",
+  "updated_at_kst": "14:02 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1643,6 +1643,13 @@
     ],
     "MRVL": [
       {
+        "title": "AI sell-off: These sectors held firm as tech slumped in Oct, Nov",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/ai-sell-off-sectors-held-044523371.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 23:45 ET",
+        "pub_ts": 1795149923.0
+      },
+      {
         "title": "Marvell Technology (MRVL) Settles AI Networking Patent Dispute And Clears A Key Risk",
         "url": "https://finance.yahoo.com/technology/ai/articles/marvell-technology-mrvl-settles-ai-220953345.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1669,16 +1676,16 @@
         "source": "Yahoo Finance",
         "time": "11-19 10:45 ET",
         "pub_ts": 1795103136.0
-      },
-      {
-        "title": "Can MRVL's Custom Silicon Business Drive Its Next Growth Phase?",
-        "url": "https://finance.yahoo.com/technology/ai/articles/mrvls-custom-silicon-business-drive-145200965.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 09:52 ET",
-        "pub_ts": 1795099920.0
       }
     ],
     "LITE": [
+      {
+        "title": "AI sell-off: These sectors held firm as tech slumped in Oct, Nov",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/ai-sell-off-sectors-held-044523371.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 23:45 ET",
+        "pub_ts": 1795149923.0
+      },
       {
         "title": "Lumentum’s sales surged 137%—so why is its stock crashing?",
         "url": "https://finance.yahoo.com/markets/stocks/articles/lumentum-sales-surged-137-why-202833709.html?.tsrc=rss",
@@ -1706,13 +1713,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 08:14 ET",
         "pub_ts": 1795094047.0
-      },
-      {
-        "title": "What Could Chinese Import Curbs Mean For Lumentum Holdings (LITE)?",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/could-chinese-import-curbs-mean-211117571.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 16:11 ET",
-        "pub_ts": 1795036277.0
       }
     ],
     "AAOI": [
@@ -2656,6 +2656,13 @@
         "pub_ts": 1795138075.0
       },
       {
+        "title": "AI Hacking Is “a Fantastic Bonanza” for CrowdStrike and Palo Alto, per Paul Kedrosky",
+        "url": "https://www.tikr.com/blog/ai-hacking-is-a-fantastic-bonanza-for-crowdstrike-and-palo-alto-per-paul-kedrosky?ref=yahoofinance&tlnk=yf-261119-xq2rf628&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 17:37 ET",
+        "pub_ts": 1795127877.0
+      },
+      {
         "title": "Palo Alto Soars 6% on Guidance Hike and $4.5 Billion AI Deal: “An Unprecedented Threat Environment”",
         "url": "https://www.tikr.com/blog/palo-alto-soars-6-on-guidance-hike-and-4-5-billion-ai-deal-an-unprecedented-threat-environment?ref=yahoofinance&tlnk=yf-261119-hcm4fxh8&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2668,13 +2675,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 09:00 ET",
         "pub_ts": 1795096800.0
-      },
-      {
-        "title": "Zscaler Stocks Jump 8.18% as Palo Alto Forecast Lifts Cybersecurity Names",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/zscaler-stocks-jump-8-18-183846830.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 13:38 ET",
-        "pub_ts": 1795113526.0
       }
     ],
     "ORCL": [
@@ -3056,6 +3056,13 @@
         "pub_ts": 1795114994.0
       },
       {
+        "title": "Visa Targets Secure AI Agent Payments Through Expanded Industry Partnership",
+        "url": "https://finance.yahoo.com/technology/ai/articles/visa-targets-secure-ai-agent-033005559.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 22:30 ET",
+        "pub_ts": 1795145405.0
+      },
+      {
         "title": "What Morgan Stanley Saw Before Raising Its Visa (V) Target",
         "url": "https://finance.yahoo.com/markets/stocks/articles/morgan-stanley-saw-raising-visa-223317532.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3075,13 +3082,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 15:15 ET",
         "pub_ts": 1795119332.0
-      },
-      {
-        "title": "Sector Update: Financial Stocks Lower in Afternoon Trading",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/sector-financial-stocks-lower-afternoon-185732019.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 13:57 ET",
-        "pub_ts": 1795114652.0
       }
     ],
     "CAT": [
@@ -3272,25 +3272,25 @@
     "NOW": 1795150157.8443136,
     "AMZN": 1795150157.8443136,
     "CRWV": 1795150157.8443136,
-    "NBIS": 1795149443.2057312,
-    "APLD": 1795149443.2057312,
-    "VST": 1795149443.2057312,
-    "BE": 1795149443.2057312,
-    "CRDO": 1795149443.2057312,
-    "COHR": 1795149443.2057312,
-    "MRVL": 1795149443.2057312,
-    "LITE": 1795149443.2057312,
+    "NBIS": 1795150974.2476404,
+    "APLD": 1795150974.2476404,
+    "VST": 1795150974.2476404,
+    "BE": 1795150974.2476404,
+    "CRDO": 1795150974.2476404,
+    "COHR": 1795150974.2476404,
+    "MRVL": 1795150974.2476404,
+    "LITE": 1795150974.2476404,
     "AAOI": 1795150157.8443136,
-    "SPCX": 1795149443.2057312,
-    "ASTS": 1795149443.2057312,
-    "AXTI": 1795149443.2057312,
+    "SPCX": 1795150974.2476404,
+    "ASTS": 1795150974.2476404,
+    "AXTI": 1795150974.2476404,
     "NASA": 1795150157.8443136,
     "LUNR": 1795150157.8443136,
     "TSLA": 1795150157.8443136,
     "AXP": 1795150157.8443136,
-    "RKLB": 1795149443.2057312,
+    "RKLB": 1795150974.2476404,
     "KO": 1795150157.8443136,
-    "FLY": 1795149443.2057312,
+    "FLY": 1795150974.2476404,
     "INTC": 1795150157.8443136,
     "VRT": 1795150157.8443136,
     "HPE": 1795150157.8443136,
@@ -3305,21 +3305,21 @@
     "MSTR": 1795150266.3187401,
     "SNDK": 1795150266.3187401,
     "BTC-USD": 1795150266.3187401,
-    "CRWD": 1795149443.2057312,
+    "CRWD": 1795150974.2476404,
     "ORCL": 1795149548.3177624,
-    "COIN": 1795149443.2057312,
-    "LLY": 1795149443.2057312,
-    "MRNA": 1795149443.2057312,
+    "COIN": 1795150974.2476404,
+    "LLY": 1795150974.2476404,
+    "MRNA": 1795150974.2476404,
     "NKE": 1795149443.2057312,
     "MCD": 1795149443.2057312,
     "PEP": 1795149443.2057312,
     "XOM": 1795150052.6256464,
     "JPM": 1795150052.6256464,
     "WMT": 1795150157.8443136,
-    "V": 1795149443.2057312,
+    "V": 1795150974.2476404,
     "CAT": 1795150157.8443136,
-    "FN": 1795149443.2057312,
-    "GLW": 1795149443.2057312,
+    "FN": 1795150974.2476404,
+    "GLW": 1795150974.2476404,
     "ANT": 1795150266.3187401,
     "XAUUSD": 1795150266.3187401
   },
