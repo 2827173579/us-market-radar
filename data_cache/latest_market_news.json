@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795212935.175,
-  "updated_at_et": "11-20 17:15 ET",
-  "updated_at_kst": "07:15 KST",
+  "updated_at_ts": 1795213034.6,
+  "updated_at_et": "11-20 17:17 ET",
+  "updated_at_kst": "07:17 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2603,6 +2603,13 @@
     ],
     "BTC-USD": [
       {
+        "title": "Crypto Market Today, Nov. 20: Bitcoin Plunges Below $60,000 as Wall Street's Sell-Off Spreads to Crypto",
+        "url": "https://www.fool.com/coverage/stock-market-today/2026/11/20/crypto-market-today-nov-20-bitcoin-plunges-below-usd60-000-as-wall-street-s-sell-off-spreads-to-crypto/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 17:05 ET",
+        "pub_ts": 1795212303.0
+      },
+      {
         "title": "$1,000 in Anthropic or Bitcoin: Which Could Be Worth More by 2030?",
         "url": "https://247wallst.com/investing/cryptocurrency/2026/11/20/1000-in-anthropic-or-bitcoin-which-could-be-worth-more-by-2030/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2629,13 +2636,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 15:30 ET",
         "pub_ts": 1795206602.0
-      },
-      {
-        "title": "S&P gives $183B financial giant its weakest rating",
-        "url": "https://www.thestreet.com/crypto/markets/s-p-gives-183b-financial-giant-its-weakest-rating-?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 15:30 ET",
-        "pub_ts": 1795206600.0
       }
     ],
     "CRWD": [
@@ -3302,7 +3302,7 @@
     "STX": 1795212628.6801386,
     "MSTR": 1795212628.6801386,
     "SNDK": 1795212523.5979607,
-    "BTC-USD": 1795211512.283191,
+    "BTC-USD": 1795213034.6002018,
     "CRWD": 1795212013.7451391,
     "ORCL": 1795212013.7451391,
     "COIN": 1795212013.7451391,
@@ -3311,15 +3311,15 @@
     "NKE": 1795212118.2031908,
     "MCD": 1795212013.7451391,
     "PEP": 1795212013.7451391,
-    "XOM": 1795211512.283191,
-    "JPM": 1795211512.283191,
-    "WMT": 1795211512.283191,
+    "XOM": 1795213034.6002018,
+    "JPM": 1795213034.6002018,
+    "WMT": 1795213034.6002018,
     "V": 1795212013.7451391,
-    "CAT": 1795211512.283191,
+    "CAT": 1795213034.6002018,
     "FN": 1795212013.7451391,
     "GLW": 1795212013.7451391,
-    "ANT": 1795211512.283191,
-    "XAUUSD": 1795211512.283191
+    "ANT": 1795213034.6002018,
+    "XAUUSD": 1795213034.6002018
   },
   "calendar_banner": {
     "level": "idle_with_flash",
