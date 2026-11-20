@@ -1,9 +1,22 @@
 {
-  "updated_at_ts": 1795170273.618,
-  "updated_at_et": "11-20 05:24 ET",
-  "updated_at_kst": "19:24 KST",
+  "updated_at_ts": 1795170373.846,
+  "updated_at_et": "11-20 05:26 ET",
+  "updated_at_kst": "19:26 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261120182402562800",
+      "title": "市场削减欧洲央行加息押注，倾向于认为到2027年底前仅加息两次。",
+      "summary": "市场削减欧洲央行加息押注，倾向于认为到2027年底前仅加息两次。",
+      "keywords": [
+        "加息"
+      ],
+      "pub_ts": 1795170242.0,
+      "time_et": "11-20 05:24 ET",
+      "time_bj": "18:24 BJ",
+      "time_kst": "19:24 KST",
+      "time_display": "05:24 ET / 18:24 BJ"
+    },
     {
       "id": "20261120181608416800",
       "title": "AMD股价盘前跌近6%！做空机构Hunterbrook出手，质疑AI融资模式",
@@ -332,20 +345,6 @@
       "time_bj": "12:04 BJ",
       "time_kst": "13:04 KST",
       "time_display": "23:04 ET / 12:04 BJ"
-    },
-    {
-      "id": "20261120115646409800",
-      "title": "黄金五连跌，较历史高点暴跌超2000美元！加息预期与AI抛售潮夹击",
-      "summary": "黄金连跌五个交易日，较历史高点跌超2000美元，本周跌幅或超9%。美联储加息预期升温、AI股抛售潮蔓延，加上年底流动性需求，投资者纷纷抛售黄金筹集现金。点击查看",
-      "keywords": [
-        "美联储",
-        "加息"
-      ],
-      "pub_ts": 1795147006.0,
-      "time_et": "11-19 22:56 ET",
-      "time_bj": "11:56 BJ",
-      "time_kst": "12:56 KST",
-      "time_display": "22:56 ET / 11:56 BJ"
     }
   ],
   "ticker_news": {
@@ -3329,7 +3328,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (05:16 ET / 18:16 BJ) [英伟达]：AMD曾被市场视为英伟达的重要替代者，如今却遭遇做空机构狙击。Hunterbrook质疑其客户融资模式，并指出AMD承担的客户承诺可能超过英伟达。",
+    "detail": "⚡ 最新核心快讯 (05:24 ET / 18:24 BJ) [加息]：市场削减欧洲央行加息押注，倾向于认为到2027年底前仅加息两次。",
     "event_name": "",
     "minutes_left": 0
   }
