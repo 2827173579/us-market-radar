@@ -17,9 +17,9 @@ on:
   workflow_dispatch:
     inputs:
       duration_minutes:
-        description: '持续运行分钟数'
+        description: '持续运行分钟数。0 = 只跑一轮并发布 Pages（手动默认）。填正整数则按该时长守护。定时任务忽略此值，仍跑 240 分钟。'
         required: false
-        default: '60'
+        default: '0'
         type: string
       interval_seconds:
         description: '每轮轮询间隔秒数 (默认 60s，夜盘推荐 120s)'
@@ -59,6 +59,7 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
+          python -c "import lightgbm, sklearn; print('lightgbm', lightgbm.__version__); print('sklearn', sklearn.__version__)"
 
       - name: 🛡️ 本地优先检测 (仅本仓库非 Actions 提交；忽略上游继承)
         id: check_local
@@ -94,15 +95,29 @@ jobs:
         run: |
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Actions"
+          EVENT_NAME="${{ github.event_name }}"
           DURATION="${{ github.event.inputs.duration_minutes }}"
-          [ -z "$DURATION" ] && DURATION="240"
           INTERVAL="${{ github.event.inputs.interval_seconds }}"
+          # 定时任务不读手动输入，维持盘中 240 分钟守护。手动默认 0 = 一轮后发布 Pages。
+          if [ "$EVENT_NAME" != "workflow_dispatch" ]; then
+            DURATION="240"
+          fi
+          [ -z "$DURATION" ] && DURATION="0"
           [ -z "$INTERVAL" ] && INTERVAL="60"
+          if ! DURATION_NUM=$((10#$DURATION)) 2>/dev/null; then
+            echo "duration_minutes=$DURATION 不是非负整数，按 0（单轮）处理"
+            DURATION_NUM=0
+          fi
           # 如果是夜盘亚太时段 (UTC 00:00~08:00 / 韩国 09:00~17:00)，自适应切为 2 分钟 (120s) 巡检守护
           if [ "${{ github.event.schedule }}" = "0 0 * * 1-5" ] || [ "${{ github.event.schedule }}" = "0 4 * * 1-5" ]; then
             INTERVAL="120"
           fi
-          python integrated_market_radar.py --loop-daemon --duration-minutes $DURATION --interval-seconds $INTERVAL
+          if [ "$EVENT_NAME" = "workflow_dispatch" ] && [ "$DURATION_NUM" -eq 0 ]; then
+            echo "手动触发：单轮快刷后退出，以便立刻发布 Pages。需要长驻请把 duration_minutes 设为正整数。"
+            python integrated_market_radar.py --loop-daemon --max-rounds 1 --interval-seconds "$INTERVAL"
+          else
+            python integrated_market_radar.py --loop-daemon --duration-minutes "$DURATION_NUM" --interval-seconds "$INTERVAL"
+          fi
 
       # GitHub Actions source: publish the HTML this run just wrote.
       # Deploy from a branch keeps working via POST /pages/builds inside the

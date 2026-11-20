@@ -7,3 +7,8 @@ plotly>=5.15.0
 # with engine="pyarrow". CI only installs this file; without it the refresh
 # dies with ModuleNotFoundError and latest_date never advances.
 pyarrow>=14.0.1
+# Walk-forward OOS (table1) is trained with LightGBM. Without these wheels
+# ml_predictor_5y.py falls back to a numpy logistic model and >=60% signals
+# collapse. Pins stay on the manylinux cp310 wheels so Actions does not compile.
+lightgbm>=4.3.0,<5
+scikit-learn>=1.4.2,<1.7

@@ -76,7 +76,8 @@ try:
     )
 except ImportError:
     lgb = None
-    # Termux 轻量环境：无 LightGBM/sklearn 时用 numpy 实现最小可用分类器与指标
+    # Termux 轻量环境：无 LightGBM/sklearn 时用 numpy 实现最小可用分类器与指标。
+    # GitHub Actions 必须走 LightGBM，否则 table1 >=60% 信号会从数千笔塌到个位数。
     def roc_auc_score(y, p):
         y = np.asarray(y, dtype=float); p = np.asarray(p, dtype=float)
         pos = p[y == 1]; neg = p[y != 1]
@@ -129,7 +130,21 @@ class _NumpyFallbackClassifier:
         return (self.predict_proba(X)[:, 1] >= 0.5).astype(int)
 
 
+def _ml_backend_name() -> str:
+    return "lightgbm" if lgb is not None else "numpy-fallback"
+
+
+def _refuse_actions_numpy_fallback() -> None:
+    if lgb is not None or os.environ.get("GITHUB_ACTIONS") != "true":
+        return
+    raise RuntimeError(
+        "GitHub Actions 未安装 lightgbm/scikit-learn，已拒绝 numpy 回退。"
+        "requirements.txt 必须包含这两个包，否则 table1 样本外计数会塌缩。"
+    )
+
+
 def _make_classifier(lgb_params=None):
+    _refuse_actions_numpy_fallback()
     if lgb is not None:
         return lgb.LGBMClassifier(**(lgb_params or {}))
     return _NumpyFallbackClassifier(**(lgb_params or {}))
@@ -642,6 +657,144 @@ def _ensure_parquet_engine():
         ) from exc
 
 
+def _close_by_day(frame: pd.DataFrame) -> Dict[pd.Timestamp, float]:
+    dates = pd.to_datetime(frame['Date']).dt.normalize()
+    out: Dict[pd.Timestamp, float] = {}
+    for day, close in zip(dates, frame['Close'].astype(float)):
+        if pd.notna(close) and float(close) > 0:
+            out[pd.Timestamp(day)] = float(close)
+    return out
+
+
+def _closes_diverged(old: pd.DataFrame, new: pd.DataFrame, tol: float = 0.02) -> bool:
+    """True when overlapping closes were rescaled (split/adjustment), not just extended.
+
+    The newest overlapping session is ignored so a revised official close does not
+    look like a split. A real split moves every older overlap by the same ratio.
+    """
+    if old is None or new is None or old.empty or new.empty:
+        return False
+    old_map = _close_by_day(old)
+    new_map = _close_by_day(new)
+    ratios = []
+    for day in sorted(set(old_map) & set(new_map)):
+        prev = old_map[day]
+        if prev:
+            ratios.append(new_map[day] / prev)
+    if len(ratios) < 2:
+        return False
+    ratios = ratios[:-1]
+    if not ratios:
+        return False
+    return abs(float(np.median(ratios)) - 1.0) > tol
+
+
+def _stitch_symbol_history(old: pd.DataFrame, fetched: pd.DataFrame) -> pd.DataFrame:
+    """Keep cached history before the fetched window and let the fetch replace the tail."""
+    fetched = fetched.sort_values('Date').drop_duplicates(subset=['Date'], keep='last').reset_index(drop=True)
+    if old is None or old.empty:
+        return fetched
+    new_min = pd.to_datetime(fetched['Date']).min()
+    kept = old[pd.to_datetime(old['Date']) < new_min]
+    merged = pd.concat([kept, fetched], ignore_index=True)
+    return merged.sort_values('Date').drop_duplicates(subset=['Date'], keep='last').reset_index(drop=True)
+
+
+def _symbol_expected_day(symbol: str):
+    if symbol == 'BTC-USD':
+        return _get_latest_expected_btc_day()
+    return _get_latest_expected_trading_day()
+
+
+def _incremental_refresh_frame(
+    df: pd.DataFrame,
+    symbols: List[str],
+    full_start: str,
+    max_workers: int = 8,
+    tail_calendar_days: int = 45,
+) -> Tuple[pd.DataFrame, int]:
+    """Fill only symbols that are missing or behind the completed session.
+
+    A healthy cache keeps its 5-year history. Lagging names are re-fetched on a
+    short overlap (long enough to satisfy the 20-bar minimum) and stitched.
+    If that overlap's older closes were rescaled, that one symbol is fully
+    re-downloaded. Returns (frame, number of symbols fetched).
+    """
+    out = df.copy()
+    if 'Date' in out.columns and not out.empty:
+        out['Date'] = pd.to_datetime(out['Date'])
+    jobs = []
+    for sym in symbols:
+        sub = out[out['Ticker'] == sym] if 'Ticker' in out.columns and not out.empty else out.iloc[0:0]
+        need = _symbol_expected_day(sym)
+        if sub.empty:
+            jobs.append((sym, full_start, 'full'))
+            continue
+        last = pd.to_datetime(sub['Date']).max().date()
+        if last >= need:
+            continue
+        tail_start = (pd.Timestamp(last) - pd.Timedelta(days=tail_calendar_days)).strftime('%Y-%m-%d')
+        jobs.append((sym, tail_start, 'tail'))
+    if not jobs:
+        print(f"[+] 增量校验：{len(symbols)} 只标的已覆盖最新收盘，跳过下载")
+        return out, 0
+
+    print(f"[*] 增量更新 {len(jobs)} 只落后或缺失标的（短窗口优先，价格尺度跳变才回退全量）...")
+    fetched: Dict[str, Tuple[str, Optional[pd.DataFrame]]] = {}
+    with ThreadPoolExecutor(max_workers=max_workers) as executor:
+        future_map = {
+            executor.submit(_fetch_single_ticker, sym, start): (sym, kind)
+            for sym, start, kind in jobs
+        }
+        for fut in as_completed(future_map):
+            sym, kind = future_map[fut]
+            try:
+                fetched[sym] = (kind, fut.result())
+            except Exception as exc:
+                print(f"  [-] {sym} 增量抓取异常: {exc}")
+                fetched[sym] = (kind, None)
+
+    full_again = []
+    for sym, (kind, new_df) in fetched.items():
+        old = out[out['Ticker'] == sym] if 'Ticker' in out.columns else out.iloc[0:0]
+        if kind == 'tail' and new_df is not None and not new_df.empty and _closes_diverged(old, new_df):
+            print(f"[!] {sym} 重叠区间价格尺度变化，改为全量重拉")
+            full_again.append(sym)
+    if full_again:
+        with ThreadPoolExecutor(max_workers=max_workers) as executor:
+            future_map = {executor.submit(_fetch_single_ticker, sym, full_start): sym for sym in full_again}
+            for fut in as_completed(future_map):
+                sym = future_map[fut]
+                try:
+                    fetched[sym] = ('full', fut.result())
+                except Exception as exc:
+                    print(f"  [-] {sym} 全量重拉异常: {exc}")
+                    fetched[sym] = ('full', None)
+
+    n_fetched = 0
+    for sym, (kind, new_df) in fetched.items():
+        if new_df is None or new_df.empty:
+            print(f"  [-] {sym:5s} 增量未取到新 K 线，保留缓存")
+            continue
+        old = out[out['Ticker'] == sym] if 'Ticker' in out.columns and not out.empty else out.iloc[0:0]
+        if kind == 'full' or old.empty:
+            stitched = new_df
+        elif _closes_diverged(old, new_df):
+            print(f"  [-] {sym} 全量重拉后仍无法对齐，保留缓存")
+            continue
+        else:
+            stitched = _stitch_symbol_history(old, new_df)
+        if 'Ticker' in out.columns and not out.empty:
+            out = out[out['Ticker'] != sym]
+        out = pd.concat([out, stitched], ignore_index=True)
+        n_fetched += 1
+        last_d = pd.to_datetime(stitched['Date']).max().date()
+        print(f"  [+] {sym:5s} {kind:4s} -> {last_d} ({len(stitched)} 行)")
+    if 'Date' in out.columns and not out.empty:
+        out = out.sort_values(['Date', 'Ticker']).reset_index(drop=True)
+    return out, n_fetched
+
+
 def fetch_or_load_panel_data(
     cache_file: str = 'data_cache/ml_panel_5y.parquet',
     force_refresh: bool = False,
@@ -649,54 +802,51 @@ def fetch_or_load_panel_data(
     max_workers: int = 8
 ) -> pd.DataFrame:
     """
-    加载本地 Parquet 缓存或通过 yfinance 多线程拉取 35 只标的过去的 5 年历史行情。
-    包含自动日期新鲜度校验，当缓存落后于预期最新交易日时自动触发全量刷新。
+    加载本地 Parquet 缓存或通过 yfinance 多线程拉取 35 只标的历史行情。
+
+    缓存达到 5 年体量时，无论是否 --refresh，都只为落后于最新已收盘日的标的做增量补齐。
+    缓存缺失、过小或读失败时才全量重拉。force_refresh 保留给调用方，表示「必须确认新鲜」，
+    不再表示「丢掉缓存重下 5 年」。
     
     返回:
         pd.DataFrame: 包含 ['Date', 'Ticker', 'Open', 'High', 'Low', 'Close', 'Volume'] 的长表原始面板。
     """
     _ensure_parquet_engine()
     full_cache_path = _resolve_cache_path(cache_file)
-
-    if os.path.exists(full_cache_path) and not force_refresh:
+    cached = None
+    if os.path.exists(full_cache_path):
         try:
             print(f"[*] 📦 检测到本地 5 年行情缓存: {full_cache_path}")
-            df = pd.read_parquet(full_cache_path, engine='pyarrow')
-            df['Date'] = pd.to_datetime(df['Date'])
-            tickers_in_cache = set(df['Ticker'].unique())
-            missing_tickers = set(ALL_SYMBOLS) - tickers_in_cache
-
-            # 自动化日期新鲜度校验 (防止缓存停滞在历史日期断更；同时确保 BTC-USD 包含周末自然日 K 线)
-            expected_latest_date = _get_latest_expected_trading_day()
-            max_cache_date = df['Date'].max().date() if not df.empty else None
-            # BTC-USD trades through weekends, so the panel max date can be newer
-            # than every equity. Freshness is "every non-BTC symbol reached the close".
-            equity_last = df.loc[df['Ticker'] != 'BTC-USD'].groupby('Ticker')['Date'].max()
-            lagging_n = int((pd.to_datetime(equity_last).dt.date < expected_latest_date).sum()) if len(equity_last) else 1
-            is_fresh = lagging_n == 0 and max_cache_date is not None
-
-            if not missing_tickers and len(df) > 30000 and is_fresh:
-                btc_sub = df[df['Ticker'] == 'BTC-USD']
-                btc_dates = pd.to_datetime(btc_sub['Date']).dt.date.tolist() if not btc_sub.empty else []
-                has_btc_weekends = any(d.weekday() >= 5 for d in btc_dates)
-                expected_btc_date = _get_latest_expected_btc_day()
-                btc_fresh = (bool(btc_dates) and max(btc_dates) >= expected_btc_date and has_btc_weekends)
-                if not btc_fresh:
-                    print("[*] 🔄 检测到 BTC-USD 需补齐 7x24 周末自然日 K 线与最新 UTC 日线，单独增量更新 BTC-USD...")
-                    btc_new = _fetch_single_ticker('BTC-USD', start_date=start_date)
-                    if btc_new is not None and not btc_new.empty:
-                        df = pd.concat([df[df['Ticker'] != 'BTC-USD'], btc_new], ignore_index=True)
-                        df = df.sort_values(['Date', 'Ticker']).reset_index(drop=True)
-                        df.to_parquet(full_cache_path, engine='pyarrow', index=False)
-                        max_cache_date = df['Date'].max().date()
-                print(f"[+] ✅ 缓存完整性与新鲜度校验通过: 共 {len(tickers_in_cache)} 只标的, {len(df)} 条交易日记录 (最新: {max_cache_date})")
-                return df
-            elif not is_fresh:
-                print(f"[!] ⚠️ 本地行情缓存已过期 (最新数据: {max_cache_date}, 预期最新交易日: {expected_latest_date})，自动启动全量刷新...")
-            else:
-                print(f"[!] 缓存数据缺失标的: {missing_tickers}，重新拉取全量数据...")
+            cached = pd.read_parquet(full_cache_path, engine='pyarrow')
+            cached['Date'] = pd.to_datetime(cached['Date'])
         except Exception as e:
             print(f"[!] 读取缓存异常 ({e})，重新拉取...")
+            cached = None
+
+    if cached is not None and len(cached) > 30000:
+        t0 = time.perf_counter()
+        updated, n_fetched = _incremental_refresh_frame(
+            cached, list(ALL_SYMBOLS), start_date, max_workers=max_workers
+        )
+        btc_sub = updated[updated['Ticker'] == 'BTC-USD'] if 'Ticker' in updated.columns else updated.iloc[0:0]
+        btc_dates = pd.to_datetime(btc_sub['Date']).dt.date.tolist() if not btc_sub.empty else []
+        has_btc_weekends = any(d.weekday() >= 5 for d in btc_dates)
+        if not has_btc_weekends:
+            print("[*] 🔄 BTC-USD 缓存缺少周末自然日，单独全量补齐...")
+            btc_new = _fetch_single_ticker('BTC-USD', start_date=start_date)
+            if btc_new is not None and not btc_new.empty:
+                updated = pd.concat([updated[updated['Ticker'] != 'BTC-USD'], btc_new], ignore_index=True)
+                updated = updated.sort_values(['Date', 'Ticker']).reset_index(drop=True)
+                n_fetched += 1
+        if n_fetched:
+            updated.to_parquet(full_cache_path, engine='pyarrow', index=False)
+        max_cache_date = updated['Date'].max().date() if not updated.empty else None
+        print(
+            f"[+] ✅ 面板就绪: {updated['Ticker'].nunique() if 'Ticker' in updated.columns else 0} 只标的, "
+            f"{len(updated)} 行, 最新 {max_cache_date}, 本次下载 {n_fetched} 只, "
+            f"{time.perf_counter() - t0:.1f}s (force_refresh={force_refresh})"
+        )
+        return updated
 
     print(f"[*] 🚀 启动多线程拉取 {len(ALL_SYMBOLS)} 只标的历史行情 (自 {start_date} 至今)...")
     ticker_dfs = []
@@ -731,11 +881,18 @@ def fetch_or_load_panel_data(
         if pd.to_datetime(held['Date']).max().date() < expected_last:
             repair.append(tk_name)
     if repair:
-        print(f"[*] 串行补拉 {len(repair)} 只未覆盖 {expected_last} 的标的...")
-        for tk_name in repair:
-            repaired = _fetch_single_ticker(tk_name, start_date=start_date)
-            if repaired is not None and not repaired.empty:
-                by_ticker[tk_name] = repaired
+        print(f"[*] 并发补拉 {len(repair)} 只未覆盖 {expected_last} 的标的...")
+        with ThreadPoolExecutor(max_workers=max_workers) as executor:
+            future_map = {executor.submit(_fetch_single_ticker, tk_name, start_date): tk_name for tk_name in repair}
+            for fut in as_completed(future_map):
+                tk_name = future_map[fut]
+                try:
+                    repaired = fut.result()
+                except Exception as exc:
+                    print(f"  [-] {tk_name} 补拉异常: {exc}")
+                    continue
+                if repaired is not None and not repaired.empty:
+                    by_ticker[tk_name] = repaired
     ticker_dfs = list(by_ticker.values())
 
     if not ticker_dfs:
@@ -1423,7 +1580,7 @@ def run_walk_forward_cv(
     models = {}
     models_short = {}
 
-    print(f"[*] 🚀 开始执行 Walk-Forward Expanding 滚动时序训练 (共 {len(folds)} 个测试折，5 日 Purge 隔离)...")
+    print(f"[*] 🚀 开始执行 Walk-Forward Expanding 滚动时序训练 (共 {len(folds)} 个测试折，5 日 Purge 隔离，后端 {_ml_backend_name()})...")
 
     for fold in folds:
         year = fold['year']
@@ -4273,7 +4430,8 @@ def generate_report_tables(
             'top_feature': kpi_top_feature,
             'sync_time': now_str,
             'data_mode': mode_str,
-            'is_realtime': is_realtime
+            'is_realtime': is_realtime,
+            'model_backend': _ml_backend_name()
         }
     }
 
@@ -6945,56 +7103,24 @@ def build_extended_live_features_df(
     existing_syms = set(raw_panel['Ticker'].unique())
     missing_syms = [tk for tk in EXTENDED_RADAR_SECTOR_MAP.keys() if tk not in existing_syms]
 
-    ext_frames = []
-    expected_latest_date = _get_latest_expected_trading_day()
-    if os.path.exists(full_ext_cache) and not force_refresh:
+    ext_cached_df = pd.DataFrame(columns=['Date', 'Ticker', 'Open', 'High', 'Low', 'Close', 'Volume'])
+    if os.path.exists(full_ext_cache):
         try:
             ext_cached_df = pd.read_parquet(full_ext_cache)
             ext_cached_df['Date'] = pd.to_datetime(ext_cached_df['Date'])
-            cached_syms = set(ext_cached_df['Ticker'].unique())
-            still_missing = [tk for tk in missing_syms if tk not in cached_syms]
-            ext_max_date = ext_cached_df['Date'].max().date() if not ext_cached_df.empty else None
-            # Extended names are equities and ETFs. Do not demand BTC's weekend/UTC
-            # date, and do not treat one fresh symbol as proof the whole cache is current.
-            _need_date = expected_latest_date
-            _ext_last = ext_cached_df.groupby('Ticker')['Date'].max() if not ext_cached_df.empty else pd.Series(dtype='datetime64[ns]')
-            _ext_lagging = int((pd.to_datetime(_ext_last).dt.date < _need_date).sum()) if len(_ext_last) else 1
-            is_ext_fresh = _ext_lagging == 0
-
-            if is_ext_fresh and not still_missing:
-                print(f"[+] ✅ 扩展标的缓存完整且新鲜: 共 {len(cached_syms)} 只标的 (最新: {ext_max_date})")
-                ext_frames.append(ext_cached_df)
-                missing_syms = []
-            elif not is_ext_fresh:
-                print(f"[!] ⚠️ 扩展标的缓存已过期 (最新: {ext_max_date}, 预期: {expected_latest_date})，启动全量刷新...")
-                missing_syms = [tk for tk in EXTENDED_RADAR_SECTOR_MAP.keys() if tk not in existing_syms]
-                ext_frames = []
-            else:
-                ext_frames.append(ext_cached_df)
-                missing_syms = still_missing
         except Exception as e:
-            print(f"[!] 读取扩展缓存异常 ({e})，重新拉取...")
-            missing_syms = [tk for tk in EXTENDED_RADAR_SECTOR_MAP.keys() if tk not in existing_syms]
-            ext_frames = []
+            print(f"[!] 读取扩展缓存异常 ({e})，缺失标的改为全量抓取...")
+            ext_cached_df = pd.DataFrame(columns=['Date', 'Ticker', 'Open', 'High', 'Low', 'Close', 'Volume'])
 
+    # --refresh 与过期缓存走同一条增量路径：已覆盖最新收盘的标的不重下 2023 至今。
+    t_ext = time.perf_counter()
+    ext_raw, n_ext = _incremental_refresh_frame(
+        ext_cached_df, missing_syms, "2023-01-01", max_workers=8
+    )
+    if n_ext and not ext_raw.empty:
+        ext_raw.to_parquet(full_ext_cache, index=False)
     if missing_syms:
-        print(f"[*] 📥 正在通过 yfinance 补充抓取 {len(missing_syms)} 只主终端扩展标的日线数据 (0 Finnhub 消耗)...")
-        newly_fetched = []
-        for tk in missing_syms:
-            df_tk = _fetch_single_ticker(tk, start_date="2023-01-01")
-            if df_tk is not None and not df_tk.empty:
-                sec_key = EXTENDED_RADAR_SECTOR_MAP[tk][0]
-                df_tk['Ticker'] = tk
-                df_tk['Sector'] = sec_key
-                newly_fetched.append(df_tk)
-        if newly_fetched:
-            new_df = pd.concat(newly_fetched, ignore_index=True)
-            ext_frames.append(new_df)
-            combined_ext = pd.concat(ext_frames, ignore_index=True).drop_duplicates(subset=['Date', 'Ticker'], keep='last')
-            combined_ext.to_parquet(full_ext_cache, index=False)
-            ext_frames = [combined_ext]
-
-    ext_raw = pd.concat(ext_frames, ignore_index=True) if ext_frames else pd.DataFrame()
+        print(f"[*] ⏱ 扩展面板 {len(missing_syms)} 只, 下载 {n_ext} 只, {time.perf_counter() - t_ext:.1f}s (force_refresh={force_refresh})")
 
     # 汇总全部 70 只标的的日线数据 (28 核心股 + 7 已经存在的宏观 ETF + 35 扩展股/ETF)
     macro_df = compute_macro_features(raw_panel)
@@ -7002,6 +7128,9 @@ def build_extended_live_features_df(
     core_latest_stocks['Is_Core_28'] = True
 
     extra_latest_list = []
+    macro_df_norm = macro_df.copy()
+    macro_df_norm['Date'] = pd.to_datetime(macro_df_norm['Date']).astype('datetime64[ns]')
+    macro_df_norm = macro_df_norm.sort_values('Date')
     for tk, (sec_key, sec_cn_override) in EXTENDED_RADAR_SECTOR_MAP.items():
         if tk in existing_syms:
             sub = raw_panel[raw_panel['Ticker'] == tk].copy()
@@ -7015,9 +7144,7 @@ def build_extended_live_features_df(
         feat_sub = compute_stock_features(sub).sort_values('Date')
         # pandas >= 3.0 兼容修复：merge_asof 要求两侧 Date dtype 完全一致，统一规整为 datetime64[ns]
         feat_sub['Date'] = pd.to_datetime(feat_sub['Date']).astype('datetime64[ns]')
-        macro_df_norm = macro_df.copy()
-        macro_df_norm['Date'] = pd.to_datetime(macro_df_norm['Date']).astype('datetime64[ns]')
-        merged_sub = pd.merge_asof(feat_sub, macro_df_norm.sort_values('Date'), on='Date', direction='backward')
+        merged_sub = pd.merge_asof(feat_sub, macro_df_norm, on='Date', direction='backward')
         merged_sub['Raw_Alpha_QQQ_5d'] = merged_sub['Ret_5d'] - merged_sub['QQQ_Ret_5d'].fillna(0.0)
         merged_sub['Raw_Alpha_SMH_20d'] = merged_sub['Ret_20d'] - merged_sub['SMH_Ret_20d'].fillna(0.0)
         last_row = merged_sub.sort_values('Date').iloc[[-1]].copy()
@@ -7167,7 +7294,7 @@ def verify_pipeline_integrity(feature_panel: pd.DataFrame) -> Dict:
 
 def main():
     parser = argparse.ArgumentParser(description="AI Multi-Sector 5Y US Market Predictor")
-    parser.add_argument('--refresh', action='store_true', help="强制从 yfinance 重新抓取 35 标的数据并刷新缓存")
+    parser.add_argument('--refresh', action='store_true', help="确认面板覆盖最新已收盘日；缓存健康时增量补齐，缺失时才全量重拉")
     parser.add_argument('--cache-file', type=str, default='data_cache/ml_panel_5y.parquet', help="Parquet 缓存路径")
     parser.add_argument('--verify', action='store_true', help="仅执行数据管道完整性校验")
     parser.add_argument('--realtime', action='store_true', help="从 Finnhub 抓取实时最新报价并更新最新行情与特征")
