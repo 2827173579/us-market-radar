@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795143834.475,
-  "updated_at_et": "11-19 22:03 ET",
-  "updated_at_kst": "12:03 KST",
+  "updated_at_ts": 1795143934.066,
+  "updated_at_et": "11-19 22:05 ET",
+  "updated_at_kst": "12:05 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -909,6 +909,13 @@
     ],
     "NVDA": [
       {
+        "title": "Nasdaq, Dow, S&P 500 Futures Slip As Anthropic’s Record Debut Fails To Lift AI Stocks: SLV, GLD, AMD, NVDA In Focus",
+        "url": "https://stocktwits.com/news-articles/markets/equity/why-nasdaq-dow-futures-fell-anthropic-ipo-ai-trade-amd-nvda/cNbSGu0R9KR?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 21:48 ET",
+        "pub_ts": 1795142894.0
+      },
+      {
         "title": "Michael Burry Says He Warned on AI With NVIDIA and CoreWeave: Big Short Déjà Vu?",
         "url": "https://beincrypto.com/michael-burry-warned-nvidia-coreweave-nebius/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -935,16 +942,16 @@
         "source": "Yahoo Finance",
         "time": "11-19 20:33 ET",
         "pub_ts": 1795138386.0
-      },
-      {
-        "title": "Why Nvidia's sell-off could be a buying opportunity (with a catch)",
-        "url": "https://www.thestreet.com/investing/stocks/why-nvidias-sell-off-could-be-a-buying-opportunity-with-a-catch?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 20:25 ET",
-        "pub_ts": 1795137930.0
       }
     ],
     "AMD": [
+      {
+        "title": "Nasdaq, Dow, S&P 500 Futures Slip As Anthropic’s Record Debut Fails To Lift AI Stocks: SLV, GLD, AMD, NVDA In Focus",
+        "url": "https://stocktwits.com/news-articles/markets/equity/why-nasdaq-dow-futures-fell-anthropic-ipo-ai-trade-amd-nvda/cNbSGu0R9KR?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 21:48 ET",
+        "pub_ts": 1795142894.0
+      },
       {
         "title": "1 Unstoppable Stock to Buy Before It Joins NVDA and AAPL in the $1 Trillion Club",
         "url": "https://www.fool.com/investing/2026/11/19/1-unstoppable-stock-to-buy-before-it-joins-hot-tickers-in-the-1-3-trillion-club/?.tsrc=rss",
@@ -972,13 +979,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 16:18 ET",
         "pub_ts": 1795123126.0
-      },
-      {
-        "title": "Nvidia, AMD, Micron Sink as Anthropic Closes 17% Above IPO Price",
-        "url": "https://decrypt.co/383669/nvidia-amd-micron-ai-stocks-sink-anthropic-ipo-price?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 16:12 ET",
-        "pub_ts": 1795122726.0
       }
     ],
     "ASML": [
@@ -3249,27 +3249,27 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795142399.6874251,
-    "SOXL": 1795142399.6874251,
-    "SPY": 1795142399.6874251,
-    "DIA": 1795142399.6874251,
-    "SOXX": 1795142399.6874251,
-    "QQQ": 1795142399.6874251,
-    "SMH": 1795142399.6874251,
-    "IWM": 1795142399.6874251,
-    "IGV": 1795142399.6874251,
-    "TLT": 1795142399.6874251,
-    "GLD": 1795142399.6874251,
-    "SQQQ": 1795142399.6874251,
-    "TSM": 1795142399.6874251,
-    "VIXY": 1795142399.6874251,
-    "SOXS": 1795142399.6874251,
-    "NVDA": 1795142399.6874251,
-    "AMD": 1795142399.6874251,
+    "KORU": 1795143934.066499,
+    "SOXL": 1795143934.066499,
+    "SPY": 1795143934.066499,
+    "DIA": 1795143934.066499,
+    "SOXX": 1795143934.066499,
+    "QQQ": 1795143934.066499,
+    "SMH": 1795143934.066499,
+    "IWM": 1795143934.066499,
+    "IGV": 1795143934.066499,
+    "TLT": 1795143934.066499,
+    "GLD": 1795143934.066499,
+    "SQQQ": 1795143934.066499,
+    "TSM": 1795143934.066499,
+    "VIXY": 1795143934.066499,
+    "SOXS": 1795143934.066499,
+    "NVDA": 1795143934.066499,
+    "AMD": 1795143934.066499,
     "ASML": 1795142506.4520364,
-    "QCOM": 1795142399.6874251,
-    "AVGO": 1795142399.6874251,
-    "AMAT": 1795142399.6874251,
+    "QCOM": 1795143934.066499,
+    "AVGO": 1795143934.066499,
+    "AMAT": 1795143934.066499,
     "META": 1795142506.4520364,
     "GOOGL": 1795142506.4520364,
     "MSFT": 1795142506.4520364,
@@ -3319,8 +3319,8 @@
     "NKE": 1795143312.3216496,
     "MCD": 1795143312.3216496,
     "PEP": 1795143312.3216496,
-    "XOM": 1795142399.6874251,
-    "JPM": 1795142399.6874251,
+    "XOM": 1795143934.066499,
+    "JPM": 1795143934.066499,
     "WMT": 1795142506.4520364,
     "V": 1795143312.3216496,
     "CAT": 1795142506.4520364,
