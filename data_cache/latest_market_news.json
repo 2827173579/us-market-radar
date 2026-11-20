@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795196218.766,
-  "updated_at_et": "11-20 12:36 ET",
-  "updated_at_kst": "02:36 KST",
+  "updated_at_ts": 1795196318.834,
+  "updated_at_et": "11-20 12:38 ET",
+  "updated_at_kst": "02:38 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2604,6 +2604,13 @@
     ],
     "BTC-USD": [
       {
+        "title": "Trump Media (DJT) Stock May Be Undervalued Following Note Repurchase News",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/trump-media-djt-stock-may-171101118.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 12:11 ET",
+        "pub_ts": 1795194661.0
+      },
+      {
         "title": "Institutional bitcoin ETP holdings hit record $29.8B in Q3: Galaxy Research",
         "url": "https://finance.yahoo.com/video/institutional-bitcoin-etp-holdings-hit-record-298b-in-q3-galaxy-research-170416632.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2625,18 +2632,11 @@
         "pub_ts": 1795194000.0
       },
       {
-        "title": "Coinbase Launches Crypto Options for Non-US Users",
-        "url": "https://www.cryptoprowl.com/releases/coinbase-launches-crypto-options-for-non-us-users-8007?.tsrc=rss",
+        "title": "Bitcoin sell-off versus the tech sell-off, and the SEC finds eight fake crypto trading platforms",
+        "url": "https://finance.yahoo.com/video/bitcoin-sell-off-versus-tech-170000138.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-20 11:59 ET",
-        "pub_ts": 1795193940.0
-      },
-      {
-        "title": "Exclusive: Twenty One CEO on Bitcoin, acquisitions, and building value",
-        "url": "https://finance.yahoo.com/markets/crypto/articles/exclusive-twenty-one-ceo-bitcoin-164117192.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 11:41 ET",
-        "pub_ts": 1795192877.0
+        "time": "11-20 12:00 ET",
+        "pub_ts": 1795194000.0
       }
     ],
     "CRWD": [
@@ -2974,6 +2974,27 @@
     ],
     "JPM": [
       {
+        "title": "JPMorgan Stocks Move Lower as CFO Handover Reshapes Dimon Bench",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/jpmorgan-stocks-move-lower-cfo-171753365.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 12:17 ET",
+        "pub_ts": 1795195073.0
+      },
+      {
+        "title": "Chase Customers' Data Exposed in Vendor Hack — What To Know About Protecting Your Money",
+        "url": "https://moneylion.com/trending/money/chase-customers-data-exposed-vendor-hack-protecting-your-money?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 12:00 ET",
+        "pub_ts": 1795194039.0
+      },
+      {
+        "title": "J.P. Morgan's Gatch on Where Active ETFs Go Next",
+        "url": "https://finance.yahoo.com/video/j-p-morgans-gatch-where-161937485.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 11:19 ET",
+        "pub_ts": 1795191577.0
+      },
+      {
         "title": "JPMorgan Faces Data Leak After Banking Outage: Risks Mount?",
         "url": "https://finance.yahoo.com/technology/articles/jpmorgan-faces-data-leak-banking-141200565.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2986,27 +3007,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 08:11 ET",
         "pub_ts": 1795180260.0
-      },
-      {
-        "title": "Scout24 shares fall 6% as J.P. Morgan flags AI threat to property portals",
-        "url": "https://finance.yahoo.com/real-estate/articles/scout24-shares-fall-6-j-120418371.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 07:04 ET",
-        "pub_ts": 1795176258.0
-      },
-      {
-        "title": "JPMorgan Warns Long Tail of El Niño Will Hurt Crops, Water Supplies",
-        "url": "https://finance.yahoo.com/markets/commodities/articles/jpmorgan-warns-long-tail-el-120002968.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 07:00 ET",
-        "pub_ts": 1795176002.0
-      },
-      {
-        "title": "ETFs Are Net Sellers of JPMorgan Chase (JPM) on Nov. 18",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-net-sellers-jpmorgan-chase-110300552.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 06:03 ET",
-        "pub_ts": 1795172580.0
       }
     ],
     "WMT": [
@@ -3303,7 +3303,7 @@
     "STX": 1795195914.2025309,
     "MSTR": 1795195914.2025309,
     "SNDK": 1795195805.9154437,
-    "BTC-USD": 1795194797.1374946,
+    "BTC-USD": 1795196318.8344502,
     "CRWD": 1795195196.5352976,
     "ORCL": 1795195196.5352976,
     "COIN": 1795195196.5352976,
@@ -3312,15 +3312,15 @@
     "NKE": 1795195301.5931494,
     "MCD": 1795195196.5352976,
     "PEP": 1795195196.5352976,
-    "XOM": 1795194797.1374946,
-    "JPM": 1795194797.1374946,
-    "WMT": 1795194797.1374946,
+    "XOM": 1795196318.8344502,
+    "JPM": 1795196318.8344502,
+    "WMT": 1795196318.8344502,
     "V": 1795195196.5352976,
-    "CAT": 1795194797.1374946,
+    "CAT": 1795196318.8344502,
     "FN": 1795195196.5352976,
     "GLW": 1795195196.5352976,
-    "ANT": 1795194797.1374946,
-    "XAUUSD": 1795194797.1374946
+    "ANT": 1795196318.8344502,
+    "XAUUSD": 1795196318.8344502
   },
   "calendar_banner": {
     "level": "idle_with_flash",
