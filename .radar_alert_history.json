@@ -116,6 +116,10 @@
     "TSLA": {
       "state": "NORMAL",
       "last_notified_at": 0.0
+    },
+    "BTC-USD": {
+      "state": "STOP_LOSS",
+      "last_notified_at": 1795188559.8298676
     }
   },
   "position_peaks": {
