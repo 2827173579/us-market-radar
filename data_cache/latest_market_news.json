@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795186376.216,
-  "updated_at_et": "11-20 09:52 ET",
-  "updated_at_kst": "23:52 KST",
+  "updated_at_ts": 1795186475.305,
+  "updated_at_et": "11-20 09:54 ET",
+  "updated_at_kst": "23:54 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -721,13 +721,6 @@
         "pub_ts": 1794200460.0
       },
       {
-        "title": "Gold Just Had Its Best Day Since August, Back Above $4,000",
-        "url": "https://247wallst.com/investing/2026/11/05/gold-just-had-its-best-day-since-august-back-above-4000/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-05 14:22 ET",
-        "pub_ts": 1793906567.0
-      },
-      {
         "title": "GLD, SLV Sink To Near 14-Month Lows – But This Commodities Expert Sees A ‘Relative Bright Spot’",
         "url": "https://stocktwits.com/news-articles/markets/equity/gld-slv-sink-to-near-14-month-lows-gold-silver-prices/cNbXzasR9LJ?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -747,6 +740,13 @@
         "source": "Yahoo Finance",
         "time": "11-12 11:35 ET",
         "pub_ts": 1794501300.0
+      },
+      {
+        "title": "Tether Gold Passes KPMG Audit: Can It Beat America’s Biggest Gold Fund?",
+        "url": "https://beincrypto.com/tether-gold-kpmg-audit-america-gold-fund/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-12 08:42 ET",
+        "pub_ts": 1794490927.0
       }
     ],
     "SQQQ": [
@@ -788,6 +788,13 @@
     ],
     "TSM": [
       {
+        "title": "Anthropic Sinks 9% on Day Two as AI Selloff Deepens: Strategist Warns Against “Chasing the IPO”",
+        "url": "https://www.tikr.com/blog/anthropic-sinks-9-on-day-two-as-ai-selloff-deepens-strategist-warns-against-chasing-the-ipo?ref=yahoofinance&tlnk=yf-261120-87w53p5r&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 09:40 ET",
+        "pub_ts": 1795185626.0
+      },
+      {
         "title": "Sector Update: Tech Stocks Fall Premarket Friday",
         "url": "https://finance.yahoo.com/markets/stocks/articles/sector-tech-stocks-fall-premarket-140915827.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -814,13 +821,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 07:06 ET",
         "pub_ts": 1795176387.0
-      },
-      {
-        "title": "16 ETFs Add to Taiwan Semiconductor (TSM) on Wednesday",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/16-etfs-add-taiwan-semiconductor-110100292.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 06:01 ET",
-        "pub_ts": 1795172460.0
       }
     ],
     "VIXY": [
@@ -899,6 +899,27 @@
     ],
     "NVDA": [
       {
+        "title": "Credo Sinks 6%, Marvell Down 5% as Cramer Says Nvidia Woes Are “Overwhelming the Good News”",
+        "url": "https://www.tikr.com/blog/credo-sinks-6-marvell-down-5-as-cramer-says-nvidia-woes-are-overwhelming-the-good-news?ref=yahoofinance&tlnk=yf-261120-qv55x6wh&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 09:39 ET",
+        "pub_ts": 1795185544.0
+      },
+      {
+        "title": "The U.S. Approved 879,000 Nvidia and AMD Chips for China in 6 Months",
+        "url": "https://247wallst.com/investing/2026/11/20/the-u-s-approved-879000-nvidia-and-amd-chips-for-china-in-6-months/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 09:28 ET",
+        "pub_ts": 1795184935.0
+      },
+      {
+        "title": "Netflix Stock Is Down 36% and Wall Street Keeps Downgrading It. History Says That's a Mistake.",
+        "url": "https://www.fool.com/investing/2026/11/20/netflix-stock-is-down-36-and-wall-street-keeps-dow/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 09:27 ET",
+        "pub_ts": 1795184820.0
+      },
+      {
         "title": "Sector Update: Tech Stocks Fall Premarket Friday",
         "url": "https://finance.yahoo.com/markets/stocks/articles/sector-tech-stocks-fall-premarket-140915827.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -906,32 +927,11 @@
         "pub_ts": 1795183755.0
       },
       {
-        "title": "Elon Musk Could Use His Nvidia Chip Orders to Push for Jensen Huang’s Return, Analyst Says",
-        "url": "https://finance.yahoo.com/technology/ai/articles/elon-musk-could-nvidia-chip-140807576.html?.tsrc=rss",
+        "title": "What a jump in implied correlation means for markets and the dispersion trade",
+        "url": "https://finance.yahoo.com/markets/options/articles/jump-implied-correlation-means-markets-144115357.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-20 09:08 ET",
-        "pub_ts": 1795183687.0
-      },
-      {
-        "title": "Cisco Fell 89%. Is Nvidia Stock Next?",
-        "url": "https://www.trefis.com/stock/nvda/articles/626552/cisco-fell-89-is-nvidia-stock-next/2026-11-20?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 09:03 ET",
-        "pub_ts": 1795183405.0
-      },
-      {
-        "title": "Nvidia’s financing risks could keep AI chip stocks under pressure, analyst says",
-        "url": "https://finance.yahoo.com/technology/ai/articles/nvidia-financing-risks-could-keep-135314222.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 08:53 ET",
-        "pub_ts": 1795182794.0
-      },
-      {
-        "title": "Prediction: Nvidia Will Hit a New All-Time High in 2027 (Hint: Watch This Metric)",
-        "url": "https://www.fool.com/investing/2026/11/20/prediction-nvidia-will-hit-a-new-all-time-high-in-2027-hint-watch-this-metric/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 08:50 ET",
-        "pub_ts": 1795182601.0
+        "time": "11-20 09:41 ET",
+        "pub_ts": 1795185675.0
       }
     ],
     "AMD": [
@@ -943,6 +943,13 @@
         "pub_ts": 1795181818.0
       },
       {
+        "title": "The U.S. Approved 879,000 Nvidia and AMD Chips for China in 6 Months",
+        "url": "https://247wallst.com/investing/2026/11/20/the-u-s-approved-879000-nvidia-and-amd-chips-for-china-in-6-months/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 09:28 ET",
+        "pub_ts": 1795184935.0
+      },
+      {
         "title": "If AMD Grows at 15% a Year, Here’s What $5,000 Could Become by 2030",
         "url": "https://247wallst.com/investing/2026/11/20/if-amd-grows-at-15-a-year-heres-what-5000-could-become-by-2030/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -950,25 +957,18 @@
         "pub_ts": 1795183563.0
       },
       {
+        "title": "Anthropic, Nvidia, AMD, Intuit, Bloom Energy, and More Stocks That Explain Today’s Market",
+        "url": "https://finance.yahoo.com/m/801603d1-8318-3eb0-99a6-10147f0d5ed5/anthropic%2C-nvidia%2C-amd%2C.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 08:53 ET",
+        "pub_ts": 1795182780.0
+      },
+      {
         "title": "Zacks Investment Ideas feature highlights: Nasdaq, Nvidia, Advanced Micro Devices, SanDisk, Nebius Arm Holdings and Anthropic",
         "url": "https://finance.yahoo.com/markets/stocks/articles/zacks-investment-ideas-feature-highlights-130700415.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-20 08:07 ET",
         "pub_ts": 1795180020.0
-      },
-      {
-        "title": "AI Stocks Tumble Across the Globe as Slowdown Fears Mount",
-        "url": "https://www.wsj.com/finance/stocks/nasdaq-set-for-fresh-decline-as-ai-selloff-intensifies-e974bbb5?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 07:32 ET",
-        "pub_ts": 1795177920.0
-      },
-      {
-        "title": "Jim Cramer Says He’s Buying AMD After a Short Seller’s 15% Hit",
-        "url": "https://247wallst.com/investing/2026/11/20/jim-cramer-says-hes-buying-amd-after-a-short-sellers-15-hit/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 07:22 ET",
-        "pub_ts": 1795177358.0
       }
     ],
     "ASML": [
@@ -1142,21 +1142,35 @@
         "pub_ts": 1795180297.0
       },
       {
+        "title": "A $2.4 Billion Fund Just Bought These 3 Stocks",
+        "url": "https://www.tikr.com/blog/meridiem-capital-microsoft-visa-meta-stocks?ref=yahoofinance&tlnk=yf-261120-pq6qpm7f&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 08:00 ET",
+        "pub_ts": 1795179607.0
+      },
+      {
         "title": "Apple Might Be About to Become an AI Stock—but It’s Still Dodging the Tech Selloff",
         "url": "https://finance.yahoo.com/m/218adf20-fceb-3955-ab5b-5c4bc9cf9107/apple-might-be-about-to.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-20 07:44 ET",
         "pub_ts": 1795178640.0
-      },
-      {
-        "title": "Meta's AI Hardware Faces a Holiday Test, but the Real One Comes Later",
-        "url": "https://finance.yahoo.com/technology/ai/articles/metas-ai-hardware-faces-holiday-120941852.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 07:09 ET",
-        "pub_ts": 1795176581.0
       }
     ],
     "GOOGL": [
+      {
+        "title": "Anthropic IPO: Here's What Its Spending Commitments Mean to Microsoft, SpaceX, Amazon, and Alphabet",
+        "url": "https://www.fool.com/investing/2026/11/20/anthropic-ipo-here-s-what-its-spending-commitments-mean-to-microsoft-spacex-amazon-and-alphabet/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 09:40 ET",
+        "pub_ts": 1795185602.0
+      },
+      {
+        "title": "Global Bias Monitors for Targeting Market Report 2026 | Capitalize on 22.3% CAGR as Google, Microsoft, IBM, Credo AI, and Fiddler Labs Accelerate Real-Time AI Governance",
+        "url": "https://finance.yahoo.com/technology/ai/articles/global-bias-monitors-targeting-market-143600536.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 09:36 ET",
+        "pub_ts": 1795185360.0
+      },
       {
         "title": "Stock Market Today: Anthropic’s Mega-IPO Sends Stocks Lower for a Second Day",
         "url": "https://247wallst.com/investing/2026/11/20/stock-market-today-anthropics-mega-ipo-sends-stocks-lower-for-a-second-day/?.tsrc=rss",
@@ -1165,32 +1179,18 @@
         "pub_ts": 1795184113.0
       },
       {
+        "title": "Are You Overpaying For Trade Desk Stock?",
+        "url": "https://www.trefis.com/stock/ttd/articles/627223/are-you-overpaying-for-trade-desk-stock/2026-11-20?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 09:14 ET",
+        "pub_ts": 1795184098.0
+      },
+      {
         "title": "Anthropic Sinks 14% on Day Two as AI Sell-Off Spreads; CoreWeave Falls 6%, Amazon Slips 2%",
         "url": "https://247wallst.com/investing/2026/11/20/anthropic-sinks-14-on-day-two-as-ai-sell-off-spreads-coreweave-falls-6-amazon-slips-2/?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-20 09:07 ET",
         "pub_ts": 1795183648.0
-      },
-      {
-        "title": "Cisco Fell 89%. Is Nvidia Stock Next?",
-        "url": "https://www.trefis.com/stock/nvda/articles/626552/cisco-fell-89-is-nvidia-stock-next/2026-11-20?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 09:03 ET",
-        "pub_ts": 1795183405.0
-      },
-      {
-        "title": "Spirit of St. Louis AI Innovation Center Launches First Competition to Address Humanitarian Challenges Using AI for Good",
-        "url": "https://finance.yahoo.com/technology/ai/articles/spirit-st-louis-ai-innovation-134300226.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 08:43 ET",
-        "pub_ts": 1795182180.0
-      },
-      {
-        "title": "Jim Cramer’s Favorite Chartist Sees 2 Signs of an Alphabet Stock Rally",
-        "url": "https://247wallst.com/investing/2026/11/20/jim-cramers-favorite-chartist-sees-2-signs-of-an-alphabet-stock-rally/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 08:37 ET",
-        "pub_ts": 1795181872.0
       }
     ],
     "MSFT": [
@@ -1202,32 +1202,32 @@
         "pub_ts": 1795179600.0
       },
       {
+        "title": "Anthropic IPO: Here's What Its Spending Commitments Mean to Microsoft, SpaceX, Amazon, and Alphabet",
+        "url": "https://www.fool.com/investing/2026/11/20/anthropic-ipo-here-s-what-its-spending-commitments-mean-to-microsoft-spacex-amazon-and-alphabet/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 09:40 ET",
+        "pub_ts": 1795185602.0
+      },
+      {
+        "title": "Global Through-Channel Marketing Software Market 2026 | Capitalize on AI and Cloud Growth to $6.14B by 2030 as Microsoft, Salesforce, Adobe and StructuredWeb Accelerate Automation",
+        "url": "https://finance.yahoo.com/technology/articles/global-channel-marketing-software-market-143800579.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 09:38 ET",
+        "pub_ts": 1795185480.0
+      },
+      {
+        "title": "Global Bias Monitors for Targeting Market Report 2026 | Capitalize on 22.3% CAGR as Google, Microsoft, IBM, Credo AI, and Fiddler Labs Accelerate Real-Time AI Governance",
+        "url": "https://finance.yahoo.com/technology/ai/articles/global-bias-monitors-targeting-market-143600536.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 09:36 ET",
+        "pub_ts": 1795185360.0
+      },
+      {
         "title": "Danaher Teams Up With Microsoft To Develop AI-Powered Scientific Instruments, First Applications Expected This Year",
         "url": "https://stocktwits.com/news-articles/markets/equity/danaher-teams-up-with-microsoft-to-develop-ai-powered-scientific-instruments-first-applications-expected-this-year/cNbSKjHR9Kx?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-20 08:51 ET",
         "pub_ts": 1795182696.0
-      },
-      {
-        "title": "Did Microsoft Azure Deal Just Shift Intel's (INTC) Investment Narrative?",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/did-microsoft-azure-deal-just-131148027.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 08:11 ET",
-        "pub_ts": 1795180308.0
-      },
-      {
-        "title": "This Week In Cloud AI - AI Action Engine Revolutionizes Cloud Cost Management",
-        "url": "https://finance.yahoo.com/technology/ai/articles/week-cloud-ai-ai-action-123755581.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 07:37 ET",
-        "pub_ts": 1795178275.0
-      },
-      {
-        "title": "Danaher Collaborates with Microsoft to Make Scientific Instruments Agentically Connected and Laboratories More Intelligent",
-        "url": "https://finance.yahoo.com/technology/ai/articles/danaher-collaborates-microsoft-scientific-instruments-123000585.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 07:30 ET",
-        "pub_ts": 1795177800.0
       }
     ],
     "AAPL": [
@@ -3239,30 +3239,30 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795184937.2612703,
-    "SOXL": 1795184937.2612703,
-    "SPY": 1795184937.2612703,
-    "DIA": 1795184937.2612703,
-    "SOXX": 1795184937.2612703,
-    "QQQ": 1795184937.2612703,
-    "SMH": 1795184937.2612703,
-    "IWM": 1795184937.2612703,
-    "IGV": 1795184937.2612703,
-    "TLT": 1795184937.2612703,
-    "GLD": 1795184937.2612703,
-    "SQQQ": 1795184937.2612703,
-    "TSM": 1795184937.2612703,
-    "VIXY": 1795184937.2612703,
-    "SOXS": 1795184937.2612703,
-    "NVDA": 1795184937.2612703,
-    "AMD": 1795184937.2612703,
+    "KORU": 1795186475.3045025,
+    "SOXL": 1795186475.3045025,
+    "SPY": 1795186475.3045025,
+    "DIA": 1795186475.3045025,
+    "SOXX": 1795186475.3045025,
+    "QQQ": 1795186475.3045025,
+    "SMH": 1795186475.3045025,
+    "IWM": 1795186475.3045025,
+    "IGV": 1795186475.3045025,
+    "TLT": 1795186475.3045025,
+    "GLD": 1795186475.3045025,
+    "SQQQ": 1795186475.3045025,
+    "TSM": 1795186475.3045025,
+    "VIXY": 1795186475.3045025,
+    "SOXS": 1795186475.3045025,
+    "NVDA": 1795186475.3045025,
+    "AMD": 1795186475.3045025,
     "ASML": 1795185044.13642,
     "QCOM": 1795185044.13642,
-    "AVGO": 1795184937.2612703,
-    "AMAT": 1795184937.2612703,
-    "META": 1795184937.2612703,
-    "GOOGL": 1795184937.2612703,
-    "MSFT": 1795184937.2612703,
+    "AVGO": 1795186475.3045025,
+    "AMAT": 1795186475.3045025,
+    "META": 1795186475.3045025,
+    "GOOGL": 1795186475.3045025,
+    "MSFT": 1795186475.3045025,
     "AAPL": 1795185044.13642,
     "PLTR": 1795185044.13642,
     "NOW": 1795185044.13642,
