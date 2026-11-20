@@ -31,7 +31,11 @@ if hasattr(sys.stderr, "reconfigure"):
     sys.stderr.reconfigure(encoding="utf-8")
 
 PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
+_REPO_ROOT = os.path.dirname(PROJECT_DIR)
+if _REPO_ROOT not in sys.path:
+    sys.path.insert(0, _REPO_ROOT)
 os.chdir(PROJECT_DIR)
+import display_time
 
 # ------------------------------------------------------------------------------
 # 1. 环境配置与 Token 加载
@@ -117,8 +121,7 @@ LOG_LOCK = threading.Lock()
 ALERT_HISTORY_FILE = os.path.join(PROJECT_DIR, ".android_alert_history.json")
 
 def append_log(msg: str):
-    ts = _market_et_now().strftime("%H:%M:%S")
-    entry = f"[{ts}] {msg}"
+    entry = f"[{display_time.log_clock()}] {msg}"
     with LOG_LOCK:
         LOG_BUFFER.append(entry)
         if len(LOG_BUFFER) > MAX_LOG_LINES:
@@ -631,7 +634,7 @@ def patch_predict_radar_flight(work_dir: str, flight: dict, now_str: str, sessio
         append_log("[!] AI预测页防御因子定位失败，本轮不改该页")
         return False
     html2, _ = re.subn(
-        r"同步于:\s*\d{4}-\d{2}-\d{2}\s+\d{2}:\d{2}:\d{2}",
+        r"同步于[:：]\s*\d{4}-\d{2}-\d{2}\s+\d{2}:\d{2}:\d{2}(?:\s*北京时间)?",
         f"同步于: {now_str}",
         html2,
         count=1,
@@ -1133,7 +1136,8 @@ def scan_5m_buy_points(universe, by_ticker, session_name):
 
 
 def run_single_scan_cycle(round_idx=1):
-    now_str = _market_et_now().strftime("%Y-%m-%d %H:%M:%S")
+    # 页面、提交和推送用北京时间。时段判断仍走下面的 get_us_market_session()（美东）。
+    now_str = display_time.page_update_stamp()
     session_code, session_name = get_us_market_session()
     STATE.session_name = session_name
     STATE.last_sync_time = now_str
@@ -1310,7 +1314,7 @@ def sync_to_github_pages(round_idx: int, now_str: str, quotes: dict = None, flig
 
                 # A. 替换数据时间戳
                 futu_content = re.sub(
-                    r"数据更新于[:：]\s*\d{4}-\d{2}-\d{2}\s+\d{2}:\d{2}:\d{2}",
+                    r"数据更新于[:：]\s*\d{4}-\d{2}-\d{2}\s+\d{2}:\d{2}:\d{2}(?:\s*北京时间)?",
                     f"数据更新于: {now_str}",
                     futu_content
                 )
@@ -1377,7 +1381,7 @@ def sync_to_github_pages(round_idx: int, now_str: str, quotes: dict = None, flig
 
                 # A. 替换数据时间戳
                 pred_content = re.sub(
-                    r"同步于[:：]\s*\d{4}-\d{2}-\d{2}\s+\d{2}:\d{2}:\d{2}",
+                    r"同步于[:：]\s*\d{4}-\d{2}-\d{2}\s+\d{2}:\d{2}:\d{2}(?:\s*北京时间)?",
                     f"同步于: {now_str}",
                     pred_content
                 )
@@ -1426,7 +1430,7 @@ def sync_to_github_pages(round_idx: int, now_str: str, quotes: dict = None, flig
                     with open(sub_path, "r", encoding="utf-8") as f_sub:
                         s_content = f_sub.read()
                     s_content = re.sub(
-                        r"最近更新[:：]\s*\d{4}-\d{2}-\d{2}\s+\d{2}:\d{2}:\d{2}",
+                        r"最近更新[:：]\s*\d{4}-\d{2}-\d{2}\s+\d{2}:\d{2}:\d{2}(?:\s*北京时间)?",
                         f"最近更新: {now_str}",
                         s_content
                     )
@@ -1905,7 +1909,7 @@ class AndroidRadarHandler(BaseHTTPRequestHandler):
 
         elif self.path == "/api/test_alert":
             append_log("🟣 用户在平板端触发: 发送预警镜像测试...")
-            now_s = _market_et_now().strftime("%Y-%m-%d %H:%M:%S")
+            now_s = display_time.page_update_stamp()
             title = "【美股量化雷达】📢 小米平板双通道预警测试成功"
             content = f"### 🚀 小米平板测试卡片成功投递！\\n- **测试时间**: {now_s}\\n- **通信链路**: 微信 ClawBot + 微信公众号 + Discord Webhook\\n- **设备节点**: 小米平板极速哨兵 (Android Termux)"
             send_pushplus(title, content)
@@ -1917,12 +1921,12 @@ class AndroidRadarHandler(BaseHTTPRequestHandler):
 
         elif self.path == "/api/send_sentinel":
             append_log("🟠 用户在平板端触发: 立即发送量化哨兵...")
-            now_s = _market_et_now().strftime("%Y-%m-%d %H:%M:%S")
+            now_s = display_time.page_update_stamp()
             session_code, session_name = get_us_market_session()
             ai_data = load_ai_predictions()
             weather = ai_data.get("macro_weather", {}).get("status", "⛅ 阴天防守")
             title = f"【量化哨兵】🎯 全市场核心水温战报 ({session_name})"
-            desc = f"**当前时段**: {session_name}\\n**大盘气象**: {weather}\\n**监控标的**: 71 只全量标的 (含最新接入 QCOM)\\n**哨兵节点**: 小米平板控制中心"
+            desc = f"**当前时段**: {session_name}\\n**数据时间**: {now_s}\\n**大盘气象**: {weather}\\n**监控标的**: 71 只全量标的 (含最新接入 QCOM)\\n**哨兵节点**: 小米平板控制中心"
             send_pushplus(title, desc)
             send_discord(title, desc, color=0xd29922)
             self.send_response(200)

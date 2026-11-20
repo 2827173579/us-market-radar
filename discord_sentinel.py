@@ -20,6 +20,7 @@ import threading
 from typing import Dict, Any, List, Optional, Tuple, Union
 import pandas as pd
 import numpy as np
+import display_time
 
 # Ensure UTF-8 output on Windows terminal
 if hasattr(sys.stdout, "reconfigure"):
@@ -1092,7 +1093,7 @@ def build_message_1_embed(market_analysis: Dict[str, Any]) -> dict:
         "color": 15158332,  # Red #E74C3C
         "description": description,
         "footer": {
-            "text": "小豆泥 (Xiaodouni) · 3秒抄作业总台 · 全周期定量巡检"
+            "text": "小豆泥 (Xiaodouni) · 3秒抄作业总台 · 全周期定量巡检 · 数据时间 " + display_time.page_update_stamp()
         }
     }
     return embed

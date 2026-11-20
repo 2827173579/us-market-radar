@@ -24,6 +24,7 @@ import time
 import pickle
 import argparse
 from datetime import datetime
+import display_time
 import numpy as np
 import pandas as pd
 import yfinance as yf
@@ -1787,7 +1788,7 @@ def generate_html_report(res_real, res_theory):
     <div class="header">
         <div class="title-box">
             <h1>🛡️ US-Market-Radar V2.4 策略重构与机构双录对账战报</h1>
-            <p>5年全周期实证 (2021-2026) ｜ 黄金坑右侧确认 · SMA200牛熊过滤 · ATR风险平价配仓 · NEXT_OPEN防跳空保护 · 动态保本铁盾</p>
+            <p>5年全周期实证 (2021-2026) ｜ 黄金坑右侧确认 · SMA200牛熊过滤 · ATR风险平价配仓 · NEXT_OPEN防跳空保护 · 动态保本铁盾 ｜ 报告生成于: {display_time.page_update_stamp()}</p>
         </div>
     </div>
 
