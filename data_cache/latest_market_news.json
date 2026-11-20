@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795150052.626,
-  "updated_at_et": "11-19 23:47 ET",
-  "updated_at_kst": "13:47 KST",
+  "updated_at_ts": 1795150157.844,
+  "updated_at_et": "11-19 23:49 ET",
+  "updated_at_kst": "13:49 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1238,6 +1238,13 @@
     ],
     "AAPL": [
       {
+        "title": "What Apple Doubters Got Wrong",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/apple-doubters-got-wrong-042903639.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 23:29 ET",
+        "pub_ts": 1795148943.0
+      },
+      {
         "title": "1 Unstoppable Stock to Buy Before It Joins NVDA and AAPL in the $1 Trillion Club",
         "url": "https://www.fool.com/investing/2026/11/19/1-unstoppable-stock-to-buy-before-it-joins-hot-tickers-in-the-1-3-trillion-club/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1264,13 +1271,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 16:16 ET",
         "pub_ts": 1795122960.0
-      },
-      {
-        "title": "Apple Nears a Rare Long-Term DRAM Supply Deal With Samsung Electronics. What This Means for AAPL Stock.",
-        "url": "https://www.barchart.com/story/news/8924969/apple-nears-a-rare-long-term-dram-supply-deal-with-samsung-electronics-what-this-means-for-aapl-stock?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 16:10 ET",
-        "pub_ts": 1795122652.0
       }
     ],
     "PLTR": [
@@ -1377,11 +1377,11 @@
         "pub_ts": 1795129620.0
       },
       {
-        "title": "Siteimprove.ai Accessibility Agent Now Available for AI Agents Through Agentic Commerce on AWS Marketplace",
-        "url": "https://finance.yahoo.com/technology/ai/articles/siteimprove-ai-accessibility-agent-now-220600704.html?.tsrc=rss",
+        "title": "Dan Loeb’s Third Point Exits Its Entire Stake in Amazon Stock. Where It Invested Instead.",
+        "url": "https://www.barchart.com/story/news/8926361/dan-loebs-third-point-exits-its-entire-stake-in-amazon-stock-where-it-invested-instead?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-19 17:06 ET",
-        "pub_ts": 1795125960.0
+        "time": "11-19 17:18 ET",
+        "pub_ts": 1795126719.0
       }
     ],
     "CRWV": [
@@ -1941,6 +1941,13 @@
     ],
     "TSLA": [
       {
+        "title": "What Tesla (TSLA)'s Shanghai Expansion Means For Shareholders",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/tesla-tsla-shanghai-expansion-means-043058154.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 23:30 ET",
+        "pub_ts": 1795149058.0
+      },
+      {
         "title": "Musk Says Optimus Will Do the Dishes “Within 12-18 Months.” Here’s Where Tesla’s Robot Stands",
         "url": "https://www.tikr.com/blog/musk-says-optimus-will-do-the-dishes-within-12-18-months-heres-where-teslas-robot-stands?ref=yahoofinance&tlnk=yf-261119-6gjh8j3r&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1967,13 +1974,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 15:29 ET",
         "pub_ts": 1795120171.0
-      },
-      {
-        "title": "Inside Brad Gerstner’s Portfolio: Every Move He Made in the Third Quarter",
-        "url": "https://www.tikr.com/blog/inside-brad-gerstners-portfolio-every-move-he-made-in-the-third-quarter?ref=yahoofinance&tlnk=yf-261119-8874cxx4&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 15:05 ET",
-        "pub_ts": 1795118722.0
       }
     ],
     "AXP": [
@@ -3262,18 +3262,18 @@
     "SOXS": 1795150052.6256464,
     "NVDA": 1795150052.6256464,
     "AMD": 1795150052.6256464,
-    "ASML": 1795148620.2927759,
+    "ASML": 1795150157.8443136,
     "QCOM": 1795150052.6256464,
     "AVGO": 1795150052.6256464,
     "AMAT": 1795150052.6256464,
-    "META": 1795148620.2927759,
-    "GOOGL": 1795148620.2927759,
-    "MSFT": 1795148620.2927759,
-    "AAPL": 1795148620.2927759,
-    "PLTR": 1795148620.2927759,
-    "NOW": 1795148620.2927759,
-    "AMZN": 1795148620.2927759,
-    "CRWV": 1795148620.2927759,
+    "META": 1795150157.8443136,
+    "GOOGL": 1795150157.8443136,
+    "MSFT": 1795150157.8443136,
+    "AAPL": 1795150157.8443136,
+    "PLTR": 1795150157.8443136,
+    "NOW": 1795150157.8443136,
+    "AMZN": 1795150157.8443136,
+    "CRWV": 1795150157.8443136,
     "NBIS": 1795149443.2057312,
     "APLD": 1795149443.2057312,
     "VST": 1795149443.2057312,
@@ -3282,23 +3282,23 @@
     "COHR": 1795149443.2057312,
     "MRVL": 1795149443.2057312,
     "LITE": 1795149443.2057312,
-    "AAOI": 1795148620.2927759,
+    "AAOI": 1795150157.8443136,
     "SPCX": 1795149443.2057312,
     "ASTS": 1795149443.2057312,
     "AXTI": 1795149443.2057312,
-    "NASA": 1795148620.2927759,
-    "LUNR": 1795148620.2927759,
-    "TSLA": 1795148620.2927759,
-    "AXP": 1795148620.2927759,
+    "NASA": 1795150157.8443136,
+    "LUNR": 1795150157.8443136,
+    "TSLA": 1795150157.8443136,
+    "AXP": 1795150157.8443136,
     "RKLB": 1795149443.2057312,
-    "KO": 1795148620.2927759,
+    "KO": 1795150157.8443136,
     "FLY": 1795149443.2057312,
-    "INTC": 1795148620.2927759,
-    "VRT": 1795148620.2927759,
-    "HPE": 1795148620.2927759,
-    "DELL": 1795148620.2927759,
+    "INTC": 1795150157.8443136,
+    "VRT": 1795150157.8443136,
+    "HPE": 1795150157.8443136,
+    "DELL": 1795150157.8443136,
     "OKLO": 1795148724.9941022,
-    "CEG": 1795148620.2927759,
+    "CEG": 1795150157.8443136,
     "FPS": 1795148724.9941022,
     "MU": 1795148724.9941022,
     "SKHY": 1795148724.9941022,
@@ -3317,9 +3317,9 @@
     "PEP": 1795149443.2057312,
     "XOM": 1795150052.6256464,
     "JPM": 1795150052.6256464,
-    "WMT": 1795148620.2927759,
+    "WMT": 1795150157.8443136,
     "V": 1795149443.2057312,
-    "CAT": 1795148620.2927759,
+    "CAT": 1795150157.8443136,
     "FN": 1795149443.2057312,
     "GLW": 1795149443.2057312,
     "ANT": 1795148724.9941022,
