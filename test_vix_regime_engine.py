@@ -48,11 +48,12 @@ class TestVixRegimeEngine(unittest.TestCase):
             self.assertNotIn(vix_sym, stocks)
 
         vix_s = _make_series([16.5, 16.2, 16.0, 15.8, 15.8])
+        vxn_s = _make_series([19.8, 19.5, 19.2, 19.0, 18.8])
         vix3m_s = _make_series([19.0, 18.8, 18.6, 18.5, 18.4])
         vvix_s = _make_series([92.0, 91.0, 90.0, 89.0, 88.0])
         tnx_s = _make_series([4.25, 4.26, 4.24, 4.22, 4.21])
 
-        snap = vre.compute_vix_regime_from_series(vix_s, vix3m_s, vvix_s, tnx_s)
+        snap = vre.compute_vix_regime_from_series(vix_s, vix3m_s, vvix_s, tnx_s, vxn_series=vxn_s)
         self.assertEqual(snap["term_structure_state"], "CONTANGO")
         self.assertLess(snap["vix_term_ratio"], 0.92)
         self.assertFalse(snap["vix_hard_brake"])
@@ -280,8 +281,112 @@ class TestVixRegimeEngine(unittest.TestCase):
         css_s, html_s, js_s = vre.render_vix_pill_widget_parts(popover_align="left")
         self.assertIn("pVixRegimePill", html_s)
         self.assertIn("vixDetailPopover", html_s)
+        self.assertIn("^VXN", html_s)
+        self.assertIn("VXN - VIX", html_s)
         self.assertNotIn('id="', js_s)
         self.assertTrue(len(css_s) > 100)
+
+    def test_06_vxn_tech_fear_spread_and_degradation(self):
+        # 1) 科技/半导体极端去杠杆：VXN >= 32.0 且 VXN - VIX >= 5.5
+        vix_s = _make_series([24.0, 26.0, 28.0, 28.78])
+        vxn_s = _make_series([30.0, 32.5, 35.0, 36.48])
+        vix3m_s = _make_series([24.5, 25.5, 26.2, 27.03])
+        snap_tech_stress = vre.compute_vix_regime_from_series(vix_s, vix3m_s, None, None, vxn_series=vxn_s)
+        self.assertIn("^VXN", snap_tech_stress["available_symbols"])
+        self.assertAlmostEqual(snap_tech_stress["vxn_spot"], 36.48, places=2)
+        self.assertAlmostEqual(snap_tech_stress["vxn_vix_spread"], 7.70, places=2)
+        self.assertEqual(snap_tech_stress["tech_fear_label"], "🔥 科技/半导体极端去杠杆（VXN 显著高于大盘）")
+
+        # 2) 零穿越截断 + 科技恐慌回落缓解：VXN 峰值 >= 32.0 且自高点回撤 >= 8.0%
+        vix_cool = _make_series([26.0, 29.5, 27.0, 24.5])
+        vxn_cool = _make_series([31.0, 38.0, 34.5, 32.5])  # (38-32.5)/38 = 14.47% >= 8%
+        vix3m_cool = _make_series([26.5, 27.5, 27.2, 26.5])
+        snap_cool = vre.compute_vix_regime_from_series(vix_cool, vix3m_cool, None, None, vxn_series=vxn_cool)
+        self.assertAlmostEqual(snap_cool["vxn_10d_peak"], 38.0, places=2)
+        self.assertGreaterEqual(snap_cool["vxn_drawdown_from_peak_pct"], 8.0)
+        self.assertEqual(snap_cool["tech_fear_label"], "🟢 科技恐慌回落 · 半导体/AI 压力缓解")
+
+        # 3) ^VXN 缺失或拉取失败时优雅降级不崩
+        snap_no_vxn = vre.compute_vix_regime_from_series(vix_s, vix3m_s, None, None, vxn_series=None)
+        self.assertIsNone(snap_no_vxn["vxn_spot"])
+        self.assertIsNone(snap_no_vxn["vxn_vix_spread"])
+        self.assertEqual(snap_no_vxn["tech_fear_label"], "⚪ 科技波动暂缺")
+        self.assertAlmostEqual(snap_no_vxn["vix_spot"], 28.78, places=2)
+
+    def test_07_table4a_bear_script_pill_and_table4b_spy_no_sqqq(self):
+        # 1) get_short_action_directive: SPY/IWM/DIA 禁止推荐 SQQQ，仅 QQQ/纳指科技类推荐 SQQQ
+        for broad_etf in ("SPY", "IWM", "DIA"):
+            act, cls_ = ml_predictor_5y.get_short_action_directive(
+                calibrated_short_win_rate_pct=72.0, rsi_14=50.0, is_crash_halt=False,
+                ticker=broad_etf, sector="大盘与宏观ETF", is_etf=True,
+            )
+            self.assertNotIn("SQQQ", act, f"{broad_etf} must not suggest SQQQ: {act}")
+            self.assertEqual(act, "🛡️ 建议买入反向ETF对冲")
+            self.assertEqual(cls_, "short-action-etf")
+
+        qqq_act, _ = ml_predictor_5y.get_short_action_directive(
+            calibrated_short_win_rate_pct=72.0, rsi_14=50.0, is_crash_halt=False,
+            ticker="QQQ", sector="大盘与宏观ETF", is_etf=True,
+        )
+        self.assertEqual(qqq_act, "🛡️ 建议买入SQQQ对冲")
+
+        # 2) render_html_dashboard 验证表 4-A 空头期中性按钮文案与表 4-B SPY 无 SQQQ 穿帮
+        import re as _re
+        base_rows = [
+            {
+                "rank": 1, "ticker": "NVDA", "sector_cn": "半导体芯片", "sector_rating": "⭐⭐⭐⭐⭐",
+                "latest_price": 150.0, "atr_pct": 3.0, "bias_ma50": -8.0, "calibrated_win_rate_pct": 44.0,
+                "predicted_win_rate_pct": 52.0, "sector_pf": 1.5, "action": "🛡️ 空头体制封顶·暂停常规做多",
+                "target_profit_price": 160.0, "target_profit_pct": 6.7, "stop_loss_price": 144.0, "stop_loss_pct": 4.0,
+                "macro_temp": "⛅ 阴天防守", "is_etf": False, "is_broken": False, "is_short_covering": False,
+                "calibrated_short_win_rate_pct": 55.0, "model_raw_short_prob_pct": 52.0,
+                "short_target_profit_price": 142.0, "short_target_profit_pct": 5.3,
+                "short_stop_loss_price": 155.0, "short_stop_loss_pct": 3.3,
+                "dollar_pcr": 1.1, "pcr_sentiment": "⛅ 中性", "has_options": True,
+                "short_action": "⚡ 逢高反抽沽空/买Put", "short_rank": 2,
+                "scenario_script": "【黄金坑做多剧本】仅作参考推演",
+            },
+            {
+                "rank": 2, "ticker": "SPY", "sector_cn": "大盘与宏观ETF", "sector_rating": "⭐⭐⭐☆☆",
+                "latest_price": 580.0, "atr_pct": 1.2, "bias_ma50": -2.0, "calibrated_win_rate_pct": 42.0,
+                "predicted_win_rate_pct": 48.0, "sector_pf": 1.2, "action": "🛡️ 暴雨空仓·严禁左侧接刀",
+                "target_profit_price": 595.0, "target_profit_pct": 2.6, "stop_loss_price": 570.0, "stop_loss_pct": 1.7,
+                "macro_temp": "🌧️ 暴雨空仓", "is_etf": True, "is_broken": False, "is_short_covering": False,
+                "calibrated_short_win_rate_pct": 70.0, "model_raw_short_prob_pct": 66.0,
+                "short_target_profit_price": 565.0, "short_target_profit_pct": 2.6,
+                "short_stop_loss_price": 590.0, "short_stop_loss_pct": 1.7,
+                "dollar_pcr": 1.4, "pcr_sentiment": "🐻 偏空", "has_options": True,
+                "short_action": "🛡️ 建议买入SQQQ对冲",  # 模拟旧缓存脏字段也要被渲染层纠偏
+                "short_rank": 1,
+                "scenario_script": "【黄金坑做多剧本】兜底防御检验",
+            },
+        ]
+        tables_mock = {
+            "kpi": {"high_conviction_win_rate": 60.0, "profit_factor": 1.5, "top_sector": "半导体芯片", "top_feature": "Alpha", "sync_time": "2026-11-20", "data_mode": "Test"},
+            "macro_weather": {"status": "⛅ 阴天防守", "desc": "test", "market_regime": "BEAR_DEFENSE", "market_regime_cn": "🔴 空头防守体制", "breadth_ma20_pct": 15.0, "qqqm_bias": -3.0, "smh_bias": -4.0, "vixy_pos": 0.7, "smh_igv": -1.0, "vix_regime": {"vix_spot": 28.8, "vxn_spot": 36.5, "vxn_vix_spread": 7.7, "tech_fear_label": "🔥 科技/半导体极端去杠杆（VXN 显著高于大盘）"}},
+            "table1": [{"threshold_label": ">= 60%", "trigger_count": 100, "pos_win_rate_pct": 60.0, "touch_win_rate_pct": 55.0, "avg_realized_return_pct": 2.1, "win_loss_ratio": 1.5, "profit_factor": 1.5}],
+            "table2": [{"sector_name_cn": "半导体芯片", "sector_key": "Semiconductors", "tickers_count": 10, "oos_total_signals": 200, "high_conviction_signals": 50, "high_conviction_pos_win_rate_pct": 60.0, "high_conviction_touch_win_rate_pct": 55.0, "avg_realized_return_pct": 2.5, "win_loss_ratio": 1.6, "profit_factor": 1.6, "alpha_rating": "⭐⭐⭐⭐⭐"}],
+            "table3": [{"rank": 1, "feature": "Alpha", "category": "个股", "category_tag": "stock", "total_gain": 100.0, "gain_share_pct": 10.0, "rationale": "test"}],
+            "table4": [base_rows[0]],
+            "top_short": [base_rows[1], base_rows[0]],
+            "all_live_predictions": base_rows,
+            "time_cycle_projections": {},
+        }
+        with tempfile.TemporaryDirectory() as tmpd:
+            out_html = os.path.join(tmpd, "test_predict.html")
+            ml_predictor_5y.render_html_dashboard(tables_mock, output_path=out_html)
+            with open(out_html, "r", encoding="utf-8") as hf:
+                htxt = hf.read()
+
+        t4_long = htxt.split('id="t4-tbody"')[1].split("</tbody>")[0]
+        self.assertIn("📋 查看备选剧本 ▾", t4_long)
+        self.assertNotIn("📋 黄金坑低吸 ▾", t4_long)
+        self.assertIn("t4-script-detail-row", t4_long)
+
+        spy_row_m = _re.search(r'<tr class="t4-short-row"[^>]*data-ticker="SPY".*?</tr>', htxt, _re.DOTALL)
+        self.assertIsNotNone(spy_row_m)
+        self.assertIn("🛡️ 建议买入反向ETF对冲", spy_row_m.group(0))
+        self.assertNotIn("SQQQ", spy_row_m.group(0))
 
 
 if __name__ == "__main__":

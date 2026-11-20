@@ -4387,11 +4387,15 @@ def get_short_action_directive(
     if rsi_14 < 25.0:
         return "⚠️ 严重超跌·谨防死猫跳·暂勿追空", "short-action-oversold"
     if calibrated_short_win_rate_pct >= 65.0:
+        tk_up = str(ticker or "").upper()
         semi_etfs = {"SOXX", "SOXL", "SOXS", "SMH"}
-        tech_etfs = {"QQQ", "QQQ", "SQQQ", "SPY"}
-        if is_etf and (ticker in semi_etfs or "半导体" in sector or "芯片" in sector):
+        non_nasdaq_broad_etfs = {"SPY", "IWM", "DIA", "TLT", "GLD", "VIXY"}
+        nasdaq_tech_etfs = {"QQQ", "SQQQ", "IGV"}
+        if is_etf and (tk_up in semi_etfs or "半导体" in sector or "芯片" in sector):
             return "🛡️ 建议买入SOXS对冲", "short-action-etf"
-        elif is_etf and (ticker in tech_etfs or "科技" in sector or "纳指" in sector):
+        elif is_etf and tk_up in non_nasdaq_broad_etfs:
+            return "🛡️ 建议买入反向ETF对冲", "short-action-etf"
+        elif is_etf and (tk_up in nasdaq_tech_etfs or "科技" in sector or "纳指" in sector):
             return "🛡️ 建议买入SQQQ对冲", "short-action-etf"
         elif is_etf:
             return "🛡️ 建议买入反向ETF对冲", "short-action-etf"
@@ -5869,6 +5873,8 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
     except Exception:
         vix_css, vix_pill_html, vix_js = "", "", ""
     _vr_spot = _vix_regime.get('vix_spot') if isinstance(_vix_regime, dict) else None
+    _vr_vxn = _vix_regime.get('vxn_spot') if isinstance(_vix_regime, dict) else None
+    _vr_spread = _vix_regime.get('vxn_vix_spread') if isinstance(_vix_regime, dict) else None
     _vr_vix3m = _vix_regime.get('vix3m_spot') if isinstance(_vix_regime, dict) else None
     _vr_ratio = _vix_regime.get('vix_term_ratio') if isinstance(_vix_regime, dict) else None
     _vr_vvix = _vix_regime.get('vvix_spot') if isinstance(_vix_regime, dict) else None
@@ -5879,10 +5885,18 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
         if (_vr_spot is not None and _vr_vix3m is not None and _vr_ratio is not None)
         else (f"{float(_vr_spot):.2f}" if _vr_spot is not None else "--")
     )
-    _vr_sub_str = (
-        f"VVIX {float(_vr_vvix):.1f} · 10Y {float(_vr_tnx):.2f}%"
-        if (_vr_vvix is not None and _vr_tnx is not None)
-        else (str(_vix_regime.get('term_structure_cn') or '--') if isinstance(_vix_regime, dict) else '--')
+    _vxn_part = (
+        f"VXN {float(_vr_vxn):.1f}({float(_vr_spread):+.1f})"
+        if (_vr_vxn is not None and _vr_spread is not None)
+        else (f"VXN {float(_vr_vxn):.1f}" if _vr_vxn is not None else "")
+    )
+    _tail_parts = [p for p in (
+        _vxn_part,
+        f"VVIX {float(_vr_vvix):.1f}" if _vr_vvix is not None else "",
+        f"10Y {float(_vr_tnx):.2f}%" if _vr_tnx is not None else "",
+    ) if p]
+    _vr_sub_str = " · ".join(_tail_parts) if _tail_parts else (
+        str(_vix_regime.get('term_structure_cn') or '--') if isinstance(_vix_regime, dict) else '--'
     )
 
     _sc_7d = float(scorecard.get('win_rate_7d_pct', 50.0))
@@ -6097,6 +6111,8 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
         pcr_display_text = f"PCR {d_pcr:.2f} · {pcr_sent}" if has_opt_r else "⚪ 无美股期权"
         
         s_act = str(r.get('short_action', '👀 空头动能不足·观望'))
+        if tk_str.upper() in ('SPY', 'IWM', 'DIA') and 'SQQQ' in s_act:
+            s_act = '🛡️ 建议买入反向ETF对冲'
         if "🚨" in s_act or "熔断" in s_act or "破位" in s_act or "🩸" in s_act:
             s_act_badge = "badge-red"
         elif "🛡️" in s_act or "对冲" in s_act:
@@ -6212,7 +6228,12 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
         r2_val = r.get('r2', round(r['latest_price'] * 1.08, 2))
         four_h_div_text = r.get('four_h_div', '➖ 4H 均线震荡纠缠')
         scenario_text = str(r.get('scenario_script', '') or '')
-        if "暴跌熔断" in scenario_text:
+        _is_bear_suppressed_row = bool(
+            _is_bear_defense or ("严禁左侧接刀" in act_text) or ("暴雨空仓" in act_text)
+        )
+        if _is_bear_suppressed_row:
+            scenario_short_tag = "查看备选剧本"
+        elif "暴跌熔断" in scenario_text:
             scenario_short_tag = "熔断风控"
         elif "空头回补" in scenario_text:
             scenario_short_tag = "空头回补"
@@ -6224,8 +6245,6 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
             scenario_short_tag = "黄金坑低吸"
         elif "右侧主升" in scenario_text:
             scenario_short_tag = "右侧顺风"
-        elif _is_bear_defense:
-            scenario_short_tag = "空头防守"
         else:
             scenario_short_tag = "战术推演"
         esc_scenario = html_lib.escape(scenario_text, quote=True)

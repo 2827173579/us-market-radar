@@ -431,6 +431,9 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                     else:
                         item["action"] = "👀 观望等待"
 
+                    if tk.upper() in ("SPY", "IWM", "DIA") and "SQQQ" in str(item.get("short_action", "")):
+                        item["short_action"] = "🛡️ 建议买入反向ETF对冲"
+
                     # 计算多级支撑压力与推演剧本 (与 is_effective_halt 严格对齐，彻底杜绝熔断与剧本冲突)
                     try:
                         import ml_predictor_5y
@@ -2869,6 +2872,17 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             font-variant-numeric: tabular-nums;
             color: var(--text-primary);
         }
+        .vix-pop-tech {
+            font-size: 11.5px;
+            font-weight: 700;
+            line-height: 1.4;
+            color: var(--text-primary);
+            background: var(--bg-elevated);
+            border: 1px solid var(--border-subtle);
+            border-radius: 8px;
+            padding: 6px 9px;
+            margin-bottom: 6px;
+        }
         .vix-pop-advice {
             font-size: 11.5px;
             line-height: 1.5;
@@ -3725,21 +3739,28 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 const vrObj = vr || {};
                 const ratioNum = (vrObj.vix_term_ratio !== null && vrObj.vix_term_ratio !== undefined) ? Number(vrObj.vix_term_ratio) : null;
                 const ratioClr = (ratioNum !== null && ratioNum >= 1.0) ? pal.down : ((ratioNum !== null && ratioNum >= 0.92) ? pal.warn : pal.up);
+                const spNum = (vrObj.vxn_vix_spread !== null && vrObj.vxn_vix_spread !== undefined && !Number.isNaN(Number(vrObj.vxn_vix_spread))) ? Number(vrObj.vxn_vix_spread) : null;
+                const spStr = spNum !== null ? `${spNum >= 0 ? "+" : ""}${spNum.toFixed(2)}` : "--";
+                const spClr = (spNum !== null && spNum >= 5.5) ? pal.down : ((spNum !== null && spNum >= 3.5) ? pal.warn : pal.text);
+                const techLbl = escapeNewsHtml(vrObj.tech_fear_label || "⚪ 科技波动平稳");
                 const termCn = escapeNewsHtml(vrObj.term_structure_cn || "远期监测中");
-                const advCn = escapeNewsHtml(vrObj.advice_cn || "实时跟踪 ^VIX / ^VIX3M 期限结构与 ^VVIX 拐点信号。");
+                const advCn = escapeNewsHtml(vrObj.advice_cn || "实时跟踪 ^VIX / ^VXN / ^VIX3M 期限结构与 ^VVIX 拐点信号。");
                 vixPop.innerHTML = `
                     <div class="vix-pop-head">
                         <span>⚡ 全局真 VIX 恐慌中枢</span>
                         <span style="font-size: 11px; color: ${ratioClr}; font-weight: 700;">${termCn}</span>
                     </div>
                     <div class="vix-pop-grid tabular">
-                        <div class="vix-pop-cell"><span class="vix-pop-lbl">^VIX (现货恐慌)</span><span class="vix-pop-val">${fmtNum(vrObj.vix_spot, 2)}</span></div>
+                        <div class="vix-pop-cell"><span class="vix-pop-lbl">^VIX (标普恐慌)</span><span class="vix-pop-val">${fmtNum(vrObj.vix_spot, 2)}</span></div>
                         <div class="vix-pop-cell"><span class="vix-pop-lbl">^VIX3M (3M远期)</span><span class="vix-pop-val">${fmtNum(vrObj.vix3m_spot, 2)}</span></div>
+                        <div class="vix-pop-cell"><span class="vix-pop-lbl">纳指恐慌 (^VXN)</span><span class="vix-pop-val">${fmtNum(vrObj.vxn_spot, 2)}</span></div>
+                        <div class="vix-pop-cell"><span class="vix-pop-lbl">科技溢价 (VXN - VIX)</span><span class="vix-pop-val" style="color: ${spClr};">${spStr}</span></div>
                         <div class="vix-pop-cell"><span class="vix-pop-lbl">期限比值 (VIX/VIX3M)</span><span class="vix-pop-val" style="color: ${ratioClr};">${fmtNum(vrObj.vix_term_ratio, 3)}</span></div>
                         <div class="vix-pop-cell"><span class="vix-pop-lbl">^VVIX (波动的波动)</span><span class="vix-pop-val">${fmtNum(vrObj.vvix_spot, 2)}</span></div>
                         <div class="vix-pop-cell"><span class="vix-pop-lbl">10Y 美债 (^TNX)</span><span class="vix-pop-val">${fmtNum(vrObj.tnx_yield, 2, "%")}</span></div>
                         <div class="vix-pop-cell"><span class="vix-pop-lbl">10日峰值 / 回撤</span><span class="vix-pop-val">${fmtNum(vrObj.vix_10d_peak, 2)} / -${fmtNum(vrObj.vix_drawdown_from_peak_pct, 1, "%")}</span></div>
                     </div>
+                    <div class="vix-pop-tech">${techLbl}</div>
                     <div class="vix-pop-advice">${advCn}</div>
                 `;
             }

@@ -41,13 +41,13 @@ def check_vix_pill_and_popover(page, page_name: str, vp_width: int, label_prefix
     pill_txt = pill.inner_text().strip()
     assert "VIX" in pill_txt, f"[{label_prefix} {page_name}] Unexpected pill text: {pill_txt}"
 
-    # Click pill -> verify detail popover opens and contains all 5 metrics + plain advice
+    # Click pill -> verify detail popover opens and contains all 5+ metrics + tech fear label
     pill.click()
     page.wait_for_timeout(150)
     pop = page.locator("#vixDetailPopover")
     assert pop.is_visible(), f"[{label_prefix} {page_name}] #vixDetailPopover did not open on click"
     pop_txt = pop.inner_text()
-    for token in ("^VIX", "^VIX3M", "VIX/VIX3M", "^VVIX", "^TNX"):
+    for token in ("^VIX", "^VXN", "VXN - VIX", "^VIX3M", "VIX/VIX3M", "^VVIX", "^TNX"):
         assert token in pop_txt, f"[{label_prefix} {page_name}] Popover missing '{token}': {pop_txt}"
     assert_no_overflow(page, vp_width, f"{label_prefix}-{page_name}-PopOpen")
 
@@ -55,6 +55,20 @@ def check_vix_pill_and_popover(page, page_name: str, vp_width: int, label_prefix
     page.keyboard.press("Escape")
     page.wait_for_timeout(100)
     assert not pop.is_visible(), f"[{label_prefix} {page_name}] #vixDetailPopover did not close on Escape"
+
+    if page_name == "predict_radar_5y.html":
+        reg_txt = page.locator("#marketRegimeBadge").inner_text()
+        if "空头防守体制" in reg_txt:
+            pills_txt = page.locator("#t4-tbody .t4-script-pill").all_text_contents()
+            assert pills_txt, f"[{label_prefix}] No .t4-script-pill found in Table 4-A"
+            assert all("查看备选剧本" in t and "黄金坑低吸" not in t for t in pills_txt), (
+                f"[{label_prefix}] Conflict pill text under BEAR_DEFENSE: {pills_txt[:5]}"
+            )
+        spy_rows = page.locator("#t4-short-tbody tr[data-ticker='SPY']")
+        if spy_rows.count() > 0:
+            spy_txt = spy_rows.first.inner_text()
+            assert "SQQQ" not in spy_txt, f"[{label_prefix}] Table 4-B SPY row still mentions SQQQ: {spy_txt}"
+
     return pill_txt
 
 

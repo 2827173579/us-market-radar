@@ -31,7 +31,7 @@ except Exception:  # pragma: no cover
     yf = None
 
 WORK_DIR = os.path.dirname(os.path.abspath(__file__))
-VIX_SYMBOLS = ("^VIX", "^VIX3M", "^VVIX", "^TNX")
+VIX_SYMBOLS = ("^VIX", "^VXN", "^VIX3M", "^VVIX", "^TNX")
 DEFAULT_CACHE_PATH = os.path.join(WORK_DIR, "data_cache", "vix_regime_cache.json")
 DEFAULT_TTL_SECONDS = 180
 
@@ -149,21 +149,31 @@ def compute_vix_regime_from_series(
     vvix_series: Any = None,
     tnx_series: Any = None,
     as_of_date: Optional[Any] = None,
+    vxn_series: Any = None,
 ) -> Dict[str, Any]:
     """
-    纯因果 VIX 恐慌中枢状态机（Zero Lookahead Bias）：
+    纯因果 VIX/VXN 恐慌中枢状态机（Zero Lookahead Bias）：
     严格只用 <= as_of_date 数据与向后因果前值对齐（ffill，绝不使用 bfill）。
     """
     now_str = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     vix_s = _clean_close_series(vix_series, as_of_date=as_of_date, is_tnx=False)
+    vxn_s = _clean_close_series(vxn_series, as_of_date=as_of_date, is_tnx=False)
     vix3m_s = _clean_close_series(vix3m_series, as_of_date=as_of_date, is_tnx=False)
     vvix_s = _clean_close_series(vvix_series, as_of_date=as_of_date, is_tnx=False)
     tnx_s = _clean_close_series(tnx_series, as_of_date=as_of_date, is_tnx=True)
 
     available_symbols = [
-        sym for sym, ser in (("^VIX", vix_s), ("^VIX3M", vix3m_s), ("^VVIX", vvix_s), ("^TNX", tnx_s))
+        sym for sym, ser in (("^VIX", vix_s), ("^VXN", vxn_s), ("^VIX3M", vix3m_s), ("^VVIX", vvix_s), ("^TNX", tnx_s))
         if not ser.empty
     ]
+
+    vxn_spot_unavail = round(float(vxn_s.iloc[-1]), 2) if not vxn_s.empty else None
+    vxn_peak_unavail = round(float(vxn_s.tail(10).max()), 2) if not vxn_s.empty else None
+    vxn_dd_unavail = (
+        round(((vxn_peak_unavail - vxn_spot_unavail) / vxn_peak_unavail) * 100.0, 2)
+        if (vxn_spot_unavail is not None and vxn_peak_unavail and vxn_peak_unavail > 0)
+        else None
+    )
 
     if vix_s.empty:
         return {
@@ -172,6 +182,12 @@ def compute_vix_regime_from_series(
             "vix_spot": None,
             "vix_prev": None,
             "vix_pct": None,
+            "vxn_spot": vxn_spot_unavail,
+            "vxn_pct": None,
+            "vxn_10d_peak": vxn_peak_unavail,
+            "vxn_drawdown_from_peak_pct": vxn_dd_unavail,
+            "vxn_vix_spread": None,
+            "tech_fear_label": "⚪ 科技波动暂缺",
             "vix3m_spot": round(float(vix3m_s.iloc[-1]), 2) if not vix3m_s.empty else None,
             "vix3m_pct": None,
             "vix_term_ratio": None,
@@ -209,10 +225,34 @@ def compute_vix_regime_from_series(
         return cur, prev, pct
 
     vix_spot_f, vix_prev_f, vix_pct = _last_prev_pct(vix_s)
+    vxn_spot_f, _, vxn_pct = _last_prev_pct(vxn_s)
     vix3m_spot_f, _, vix3m_pct = _last_prev_pct(vix3m_s)
     vvix_spot_f, _, vvix_pct = _last_prev_pct(vvix_s)
     tnx_spot_f, _, tnx_pct = _last_prev_pct(tnx_s)
     vix_is_down_today = bool(vix_prev_f is not None and vix_spot_f < vix_prev_f)
+
+    # 纳指 100 专属恐慌 (^VXN) 近 10 日滚动峰值/回撤 + 科技恐慌溢价 (VXN - VIX)
+    vxn_10d_peak_f: Optional[float] = None
+    vxn_dd_pct: Optional[float] = None
+    vxn_vix_spread_f: Optional[float] = None
+    if not vxn_s.empty and vxn_spot_f is not None:
+        vxn_10d = vxn_s.tail(10)
+        vxn_10d_peak_f = float(vxn_10d.max())
+        if vxn_10d_peak_f > 0:
+            vxn_dd_pct = round(((vxn_10d_peak_f - vxn_spot_f) / vxn_10d_peak_f) * 100.0, 2)
+        if vix_spot_f is not None:
+            vxn_vix_spread_f = round(vxn_spot_f - vix_spot_f, 2)
+
+    if vxn_spot_f is None:
+        tech_fear_label = "⚪ 科技波动暂缺"
+    elif vxn_10d_peak_f is not None and vxn_10d_peak_f >= 32.0 and vxn_dd_pct is not None and vxn_dd_pct >= 8.0:
+        tech_fear_label = "🟢 科技恐慌回落 · 半导体/AI 压力缓解"
+    elif vxn_spot_f >= 32.0 and (vxn_vix_spread_f is not None and vxn_vix_spread_f >= 5.5):
+        tech_fear_label = "🔥 科技/半导体极端去杠杆（VXN 显著高于大盘）"
+    elif vxn_spot_f >= 26.0:
+        tech_fear_label = "🟡 科技板块避险升温"
+    else:
+        tech_fear_label = "⚪ 科技波动平稳"
 
     # 严格因果前值对齐 (^VIX 盘前先出新 K 线时仅 ffill ^VIX3M 已知前值，绝不 bfill)
     ratio_series = pd.Series(dtype=float)
@@ -333,6 +373,12 @@ def compute_vix_regime_from_series(
         "vix_spot": round(vix_spot_f, 2),
         "vix_prev": round(vix_prev_f, 2) if vix_prev_f is not None else None,
         "vix_pct": vix_pct,
+        "vxn_spot": round(vxn_spot_f, 2) if vxn_spot_f is not None else None,
+        "vxn_pct": vxn_pct,
+        "vxn_10d_peak": round(vxn_10d_peak_f, 2) if vxn_10d_peak_f is not None else None,
+        "vxn_drawdown_from_peak_pct": vxn_dd_pct,
+        "vxn_vix_spread": vxn_vix_spread_f,
+        "tech_fear_label": tech_fear_label,
         "vix3m_spot": round(vix3m_spot_f, 2) if vix3m_spot_f is not None else None,
         "vix3m_pct": vix3m_pct,
         "vix_term_ratio": vix_term_ratio_out,
@@ -415,6 +461,7 @@ def get_vix_regime_snapshot(
         vix3m_series=raw_map.get("^VIX3M"),
         vvix_series=raw_map.get("^VVIX"),
         tnx_series=raw_map.get("^TNX"),
+        vxn_series=raw_map.get("^VXN"),
     )
 
     if snap.get("vix_spot") is None and cached and cached.get("vix_spot") is not None:
@@ -452,6 +499,13 @@ def render_vix_pill_widget_parts(
     lvl = str(vr.get("pill_level") or "neutral")
     pill_text = _html.escape(str(vr.get("pill_text") or "⚪ VIX 暂缺 · 常规门禁"))
     vix_str = _fmt_val(vr.get("vix_spot"), 2)
+    vxn_str = _fmt_val(vr.get("vxn_spot"), 2)
+    spread_v = vr.get("vxn_vix_spread")
+    try:
+        spread_str = f"{float(spread_v):+.2f}" if spread_v is not None and math.isfinite(float(spread_v)) else "--"
+    except Exception:
+        spread_str = "--"
+    tech_label = _html.escape(str(vr.get("tech_fear_label") or "⚪ 科技波动平稳"))
     vix3m_str = _fmt_val(vr.get("vix3m_spot"), 2)
     ratio_v = vr.get("vix_term_ratio")
     ratio_str = _fmt_val(ratio_v, 3)
@@ -465,6 +519,9 @@ def render_vix_pill_widget_parts(
 
     ratio_badge_cls = "vix-m-danger" if (ratio_v is not None and float(ratio_v) >= 1.0) else (
         "vix-m-warn" if (ratio_v is not None and float(ratio_v) >= 0.92) else "vix-m-ok"
+    )
+    spread_badge_cls = "vix-m-danger" if (spread_v is not None and float(spread_v) >= 5.5) else (
+        "vix-m-warn" if (spread_v is not None and float(spread_v) >= 3.5) else ""
     )
     pop_pos_css = "left: 0; right: auto;" if str(popover_align).lower() == "left" else "right: 0; left: auto;"
 
@@ -569,6 +626,17 @@ def render_vix_pill_widget_parts(
         .vix-m-danger {{ color: #ef4444 !important; }}
         .vix-m-warn {{ color: #f59e0b !important; }}
         .vix-m-ok {{ color: #10b981 !important; }}
+        .vix-pop-tech {{
+            font-size: 11.5px;
+            font-weight: 700;
+            line-height: 1.4;
+            color: var(--text-main, var(--text-primary, #f3f4f6));
+            background: var(--bg-elevated, var(--surface-elevated, rgba(255,255,255,0.05)));
+            border: 1px solid var(--border-subtle, var(--border-color, rgba(255,255,255,0.1)));
+            border-radius: 8px;
+            padding: 6px 9px;
+            margin-bottom: 6px;
+        }}
         .vix-pop-advice {{
             font-size: 11.5px;
             line-height: 1.5;
@@ -598,13 +666,16 @@ def render_vix_pill_widget_parts(
                     <span style="font-size: 11px; color: var(--text-muted, #94a3b8);">{term_cn}</span>
                 </div>
                 <div class="vix-pop-grid">
-                    <div class="vix-pop-cell"><span class="vix-pop-lbl">^VIX (现货恐慌)</span><span class="vix-pop-val">{vix_str}</span></div>
+                    <div class="vix-pop-cell"><span class="vix-pop-lbl">^VIX (标普恐慌)</span><span class="vix-pop-val">{vix_str}</span></div>
                     <div class="vix-pop-cell"><span class="vix-pop-lbl">^VIX3M (3M远期)</span><span class="vix-pop-val">{vix3m_str}</span></div>
+                    <div class="vix-pop-cell"><span class="vix-pop-lbl">纳指恐慌 (^VXN)</span><span class="vix-pop-val">{vxn_str}</span></div>
+                    <div class="vix-pop-cell"><span class="vix-pop-lbl">科技溢价 (VXN - VIX)</span><span class="vix-pop-val {spread_badge_cls}">{spread_str}</span></div>
                     <div class="vix-pop-cell"><span class="vix-pop-lbl">期限比值 (VIX/VIX3M)</span><span class="vix-pop-val {ratio_badge_cls}">{ratio_str}</span></div>
                     <div class="vix-pop-cell"><span class="vix-pop-lbl">^VVIX (波动的波动)</span><span class="vix-pop-val">{vvix_str}</span></div>
                     <div class="vix-pop-cell"><span class="vix-pop-lbl">10Y 美债 (^TNX)</span><span class="vix-pop-val">{tnx_str}</span></div>
                     <div class="vix-pop-cell"><span class="vix-pop-lbl">10日峰值 / 回撤</span><span class="vix-pop-val">{peak_str} / -{dd_str}</span></div>
                 </div>
+                <div class="vix-pop-tech">{tech_label}</div>
                 <div class="vix-pop-advice">{advice_str}</div>
             </div>
         </div>

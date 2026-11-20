@@ -4393,20 +4393,30 @@ def generate_macro_radar_html(macro_data, weather_info, history_dict, update_tim
     except Exception:
         vix_css, vix_pill_html, vix_js = "", "", ""
     _vr_spot = _vr.get("vix_spot") if isinstance(_vr, dict) else None
+    _vr_vxn = _vr.get("vxn_spot") if isinstance(_vr, dict) else None
+    _vr_spread = _vr.get("vxn_vix_spread") if isinstance(_vr, dict) else None
     _vr_vix3m = _vr.get("vix3m_spot") if isinstance(_vr, dict) else None
     _vr_ratio = _vr.get("vix_term_ratio") if isinstance(_vr, dict) else None
     _vr_vvix = _vr.get("vvix_spot") if isinstance(_vr, dict) else None
     _vr_tnx = _vr.get("tnx_yield") if isinstance(_vr, dict) else None
     _vr_ratio_color = "var(--color-down)" if (_vr_ratio is not None and float(_vr_ratio) >= 1.0) else ("var(--warning-gold)" if (_vr_ratio is not None and float(_vr_ratio) >= 0.92) else "var(--color-up)")
-    _vr_val_str = f"{float(_vr_spot):.2f}" if _vr_spot is not None else f"${weather_info['vixy_last']:.2f}"
-    _vr_lbl_str = "真 ^VIX / 期限比值" if _vr_spot is not None else "VIXY 恐慌指数"
+    _vr_val_str = (
+        f"{float(_vr_spot):.2f} / {float(_vr_vxn):.2f}"
+        if (_vr_spot is not None and _vr_vxn is not None)
+        else (f"{float(_vr_spot):.2f}" if _vr_spot is not None else f"${weather_info['vixy_last']:.2f}")
+    )
+    _vr_lbl_str = "真 ^VIX / 纳指 ^VXN" if (_vr_spot is not None and _vr_vxn is not None) else ("真 ^VIX / 期限比值" if _vr_spot is not None else "VIXY 恐慌指数")
     _vr_sub_str = (
-        f"3M {float(_vr_vix3m):.1f} · 比值 {float(_vr_ratio):.2f} · 10Y {float(_vr_tnx):.2f}%"
-        if (_vr_spot is not None and _vr_vix3m is not None and _vr_ratio is not None and _vr_tnx is not None)
+        f"3M {float(_vr_vix3m):.1f} · 比值 {float(_vr_ratio):.2f} · 溢价 {float(_vr_spread):+.1f}"
+        if (_vr_spot is not None and _vr_vix3m is not None and _vr_ratio is not None and _vr_spread is not None)
         else (
-            f"3M {float(_vr_vix3m):.1f} · 比值 {float(_vr_ratio):.2f}"
-            if (_vr_spot is not None and _vr_vix3m is not None and _vr_ratio is not None)
-            else f"MA20: {weather_info.get('vixy_ma20_bias', 0.0):+.1f}% | 60d: {weather_info.get('vixy_pos_60', 50.0):.0f}%"
+            f"3M {float(_vr_vix3m):.1f} · 比值 {float(_vr_ratio):.2f} · 10Y {float(_vr_tnx):.2f}%"
+            if (_vr_spot is not None and _vr_vix3m is not None and _vr_ratio is not None and _vr_tnx is not None)
+            else (
+                f"3M {float(_vr_vix3m):.1f} · 比值 {float(_vr_ratio):.2f}"
+                if (_vr_spot is not None and _vr_vix3m is not None and _vr_ratio is not None)
+                else f"MA20: {weather_info.get('vixy_ma20_bias', 0.0):+.1f}% | 60d: {weather_info.get('vixy_pos_60', 50.0):.0f}%"
+            )
         )
     )
     _vvix_box_val = f"{float(_vr_vvix):.1f}" if _vr_vvix is not None else "--"
@@ -5682,15 +5692,16 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
             spot_map[tk] = float(history_dict[tk]["Close"].iloc[-1])
     options_map = fetch_options_anomaly_map(all_tickers, spot_map=spot_map)
 
-    # 2.8 全局真 VIX 恐慌中枢 (^VIX / ^VIX3M / ^VVIX / ^TNX，独立于 79 交易池之外，3 分钟缓存节流 + 单指数容错)
+    # 2.8 全局真 VIX 恐慌中枢 (^VIX / ^VXN / ^VIX3M / ^VVIX / ^TNX，独立于 79 交易池之外，3 分钟缓存节流 + 单指数容错)
     vix_regime = {}
     try:
         import vix_regime_engine
         vix_regime = vix_regime_engine.get_vix_regime_snapshot(force_refresh=("--once" in sys.argv))
         print(
-            f"[+] ⚡ 全局真 VIX 中枢: ^VIX={vix_regime.get('vix_spot')} | ^VIX3M={vix_regime.get('vix3m_spot')} | "
+            f"[+] ⚡ 全局真 VIX 中枢: ^VIX={vix_regime.get('vix_spot')} | ^VXN={vix_regime.get('vxn_spot')} | "
+            f"VXN-VIX={vix_regime.get('vxn_vix_spread')} | ^VIX3M={vix_regime.get('vix3m_spot')} | "
             f"期限比值={vix_regime.get('vix_term_ratio')} | ^VVIX={vix_regime.get('vvix_spot')} | "
-            f"^TNX={vix_regime.get('tnx_yield')}% | 状态={vix_regime.get('pill_text')}"
+            f"^TNX={vix_regime.get('tnx_yield')}% | 科技判定={vix_regime.get('tech_fear_label')} | 状态={vix_regime.get('pill_text')}"
         )
     except Exception as _vre_err:
         print(f"  [!] 全局 VIX 恐慌中枢降级跳过: {_vre_err}")
