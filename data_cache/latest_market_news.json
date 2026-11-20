@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795181680.152,
-  "updated_at_et": "11-20 08:34 ET",
-  "updated_at_kst": "22:34 KST",
+  "updated_at_ts": 1795181783.271,
+  "updated_at_et": "11-20 08:36 ET",
+  "updated_at_kst": "22:36 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -789,6 +789,13 @@
     ],
     "TSM": [
       {
+        "title": "TSMC Is Halting Some China Chip Orders as a New U.S. Rule Kicks In",
+        "url": "https://247wallst.com/investing/2026/11/20/tsmc-is-halting-some-china-chip-orders-as-a-new-u-s-rule-kicks-in/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 08:13 ET",
+        "pub_ts": 1795180412.0
+      },
+      {
         "title": "AMD Stock Drops Another 7% Before the Bell and Taiwan Semiconductor Slides 4.2% as Nasdaq Futures Fall 1.6% After Asia’s Chip Selloff",
         "url": "https://247wallst.com/investing/2026/11/20/amd-stock-drops-another-7-0-before-the-bell-and-taiwan-semiconductor-slides-4-2-as-nasdaq-futures-fall-1-6-after-asias-chip-selloff/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -815,13 +822,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 05:59 ET",
         "pub_ts": 1795172373.0
-      },
-      {
-        "title": "TSMC Tightens Restrictions on Chinese AI Chip Production Following New US Export Rules",
-        "url": "https://investorshub.advfn.com/market-news/article/40446/tsmc-tightens-restrictions-on-chinese-ai-chip-production-following-new-us-export-rules?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 05:47 ET",
-        "pub_ts": 1795171625.0
       }
     ],
     "VIXY": [
@@ -900,39 +900,39 @@
     ],
     "NVDA": [
       {
-        "title": "Jensen Huang Needs to Stay Gone... His Fan Club Proves It",
-        "url": "https://app.moby.co/home/news/news-jensen-huang-needs-to-stay-gone-his-fan-club-proves-it?utm_source=yahoo_finance&utm_medium=rss&.tsrc=rss",
+        "title": "5C announces Data Center Partner designation within the NVIDIA Partner Network in new blog",
+        "url": "https://finance.yahoo.com/technology/ai/articles/5c-announces-data-center-partner-133000251.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-20 07:53 ET",
-        "pub_ts": 1795179180.0
+        "time": "11-20 08:30 ET",
+        "pub_ts": 1795181400.0
       },
       {
-        "title": "KONST at Data Center Asia in Kuala Lumpur: Advancing Its Southeast Asia Token Factory Strategy with Flagship Projects in Cyberjaya and Jakarta",
-        "url": "https://finance.yahoo.com/technology/ai/articles/konst-data-center-asia-kuala-124600343.html?.tsrc=rss",
+        "title": "Nvidia and Micron Can't Make AI Chips Without This Growth Stock. Here's Why It Could Soar.",
+        "url": "https://www.fool.com/investing/2026/11/20/nvidia-and-micron-cant-make-ai-chips-without-this-growth-stock-heres-why-it-could-soar/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-20 07:46 ET",
-        "pub_ts": 1795178760.0
+        "time": "11-20 08:20 ET",
+        "pub_ts": 1795180802.0
       },
       {
-        "title": "House Democrats Reportedly Probe Whether Nvidia Tried To Influence US Investigation Into Megaspeed",
-        "url": "https://stocktwits.com/news-articles/markets/equity/house-democrats-probe-whether-nvidia-tried-to-influence-us-investigation-into-megaspeed/cNbSL1hR9Kt?.tsrc=rss",
+        "title": "Why Did Nvidia Stock Fall 39%?",
+        "url": "https://www.trefis.com/stock/nvda/articles/626526/why-did-nvidia-stock-fall-39/2026-11-20?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-20 07:34 ET",
-        "pub_ts": 1795178093.0
+        "time": "11-20 08:14 ET",
+        "pub_ts": 1795180482.0
       },
       {
-        "title": "Nasdaq Futures Slide, Anthropic Shares Reverse IPO Gains — LITE, IREN, SNDK, NVDA In Focus",
-        "url": "https://stocktwits.com/news-articles/markets/equity/nasdaq-futures-slide-anthropic-shares-reverse-ipo-gains-lite-iren-sndk-nvda-in-focus/cNbSL5RR9Ks?.tsrc=rss",
+        "title": "Cathie Wood Buys Nearly 1 Million Anthropic Shares On IPO Day. ARK Also Cuts Nvidia Stake.",
+        "url": "https://www.ibtimes.com/ark-invest-buys-anthropic-shares-record-ipo-3810011?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-20 07:20 ET",
-        "pub_ts": 1795177204.0
+        "time": "11-20 08:10 ET",
+        "pub_ts": 1795180248.0
       },
       {
-        "title": "Prediction: Micron Stock Is Going to Soar After Its December Earnings Report",
-        "url": "https://www.fool.com/investing/2026/11/20/prediction-micron-stock-is-going-to-soar/?.tsrc=rss",
+        "title": "Musk Slams Nvidia’s Board for Kicking “Michael Jordan Off Your Team.” Cramer Sees a Fight Over Chip Prices",
+        "url": "https://www.tikr.com/blog/musk-slams-nvidias-board-for-kicking-michael-jordan-off-your-team-cramer-sees-a-fight-over-chip-prices?ref=yahoofinance&tlnk=yf-261120-fhq75j6g&.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-20 07:20 ET",
-        "pub_ts": 1795177202.0
+        "time": "11-20 08:05 ET",
+        "pub_ts": 1795179917.0
       }
     ],
     "AMD": [
@@ -1122,6 +1122,20 @@
     ],
     "META": [
       {
+        "title": "Anthropic Stock Falls 9.6% Before the Bell on Its Second Day of Trading. Facebook and Uber Both Fell 11% on Day 2. Here’s What Happened Next",
+        "url": "https://247wallst.com/investing/2026/11/20/anthropic-stock-falls-9-6-before-the-bell-on-its-second-day-of-trading-facebook-and-uber-both-fell-11-on-day-2-heres-what-happened-next/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 08:23 ET",
+        "pub_ts": 1795180982.0
+      },
+      {
+        "title": "Google's Gemini Tasks Seen As Challenger To Meta's Muse In AI Battle",
+        "url": "https://finance.yahoo.com/m/e541372f-4da6-3077-8e49-a78384b2e543/google%27s-gemini-tasks-seen-as.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 08:11 ET",
+        "pub_ts": 1795180297.0
+      },
+      {
         "title": "Apple Might Be About to Become an AI Stock—but It’s Still Dodging the Tech Selloff",
         "url": "https://finance.yahoo.com/m/218adf20-fceb-3955-ab5b-5c4bc9cf9107/apple-might-be-about-to.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1141,23 +1155,23 @@
         "source": "Yahoo Finance",
         "time": "11-20 06:05 ET",
         "pub_ts": 1795172705.0
-      },
-      {
-        "title": "What JPMorgan U.S. Tech Leaders ETF (JTEK) Bought: Meta Leads on Wednesday",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/jpmorgan-u-tech-leaders-etf-110432251.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 06:04 ET",
-        "pub_ts": 1795172672.0
-      },
-      {
-        "title": "Capital Group Core Equity (CGUS) Buys $25.4 Million More Intel on Nov. 18",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/capital-group-core-equity-cgus-110426396.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 06:04 ET",
-        "pub_ts": 1795172666.0
       }
     ],
     "GOOGL": [
+      {
+        "title": "Google's Gemini Tasks Seen As Challenger To Meta's Muse In AI Battle",
+        "url": "https://finance.yahoo.com/m/e541372f-4da6-3077-8e49-a78384b2e543/google%27s-gemini-tasks-seen-as.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 08:11 ET",
+        "pub_ts": 1795180297.0
+      },
+      {
+        "title": "A $12 Billion Fund Just Bought These 3 Stocks",
+        "url": "https://www.tikr.com/blog/unisphere-establishment-alphabet-cadence-kkr-stocks?ref=yahoofinance&tlnk=yf-261120-6cm2cv28&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 08:04 ET",
+        "pub_ts": 1795179857.0
+      },
       {
         "title": "Can Microsoft catch up in the frontier AI race?",
         "url": "https://finance.yahoo.com/video/microsoft-catch-frontier-ai-race-130000484.html?.tsrc=rss",
@@ -1178,20 +1192,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 07:38 ET",
         "pub_ts": 1795178313.0
-      },
-      {
-        "title": "This Week In Cloud AI - AI Action Engine Revolutionizes Cloud Cost Management",
-        "url": "https://finance.yahoo.com/technology/ai/articles/week-cloud-ai-ai-action-123755581.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 07:37 ET",
-        "pub_ts": 1795178275.0
-      },
-      {
-        "title": "'Miserable 7' Stocks Shed Whopping $4 Trillion In Value Overnight",
-        "url": "https://finance.yahoo.com/m/6e6f9c49-9658-3615-8008-22c4188b1bd6/%27miserable-7%27-stocks-shed.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 07:18 ET",
-        "pub_ts": 1795177083.0
       }
     ],
     "MSFT": [
@@ -1201,6 +1201,13 @@
         "source": "Yahoo Finance",
         "time": "11-20 08:00 ET",
         "pub_ts": 1795179600.0
+      },
+      {
+        "title": "Did Microsoft Azure Deal Just Shift Intel's (INTC) Investment Narrative?",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/did-microsoft-azure-deal-just-131148027.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 08:11 ET",
+        "pub_ts": 1795180308.0
       },
       {
         "title": "This Week In Cloud AI - AI Action Engine Revolutionizes Cloud Cost Management",
@@ -1222,13 +1229,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 07:24 ET",
         "pub_ts": 1795177447.0
-      },
-      {
-        "title": "Rubrik (RBRK) Moved, What Is Drawing Attention Now?",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/rubrik-rbrk-moved-drawing-attention-121128553.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 07:11 ET",
-        "pub_ts": 1795176688.0
       }
     ],
     "AAPL": [
@@ -3240,30 +3240,30 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795180212.204471,
-    "SOXL": 1795180212.204471,
-    "SPY": 1795180212.204471,
-    "DIA": 1795180212.204471,
-    "SOXX": 1795180212.204471,
-    "QQQ": 1795180212.204471,
-    "SMH": 1795180212.204471,
-    "IWM": 1795180212.204471,
-    "IGV": 1795180212.204471,
-    "TLT": 1795180212.204471,
-    "GLD": 1795180212.204471,
-    "SQQQ": 1795180212.204471,
-    "TSM": 1795180212.204471,
-    "VIXY": 1795180212.204471,
-    "SOXS": 1795180212.204471,
-    "NVDA": 1795180212.204471,
-    "AMD": 1795180212.204471,
+    "KORU": 1795181783.271338,
+    "SOXL": 1795181783.271338,
+    "SPY": 1795181783.271338,
+    "DIA": 1795181783.271338,
+    "SOXX": 1795181783.271338,
+    "QQQ": 1795181783.271338,
+    "SMH": 1795181783.271338,
+    "IWM": 1795181783.271338,
+    "IGV": 1795181783.271338,
+    "TLT": 1795181783.271338,
+    "GLD": 1795181783.271338,
+    "SQQQ": 1795181783.271338,
+    "TSM": 1795181783.271338,
+    "VIXY": 1795181783.271338,
+    "SOXS": 1795181783.271338,
+    "NVDA": 1795181783.271338,
+    "AMD": 1795181783.271338,
     "ASML": 1795180320.2673893,
-    "QCOM": 1795180212.204471,
-    "AVGO": 1795180212.204471,
-    "AMAT": 1795180212.204471,
-    "META": 1795180212.204471,
-    "GOOGL": 1795180212.204471,
-    "MSFT": 1795180212.204471,
+    "QCOM": 1795181783.271338,
+    "AVGO": 1795181783.271338,
+    "AMAT": 1795181783.271338,
+    "META": 1795181783.271338,
+    "GOOGL": 1795181783.271338,
+    "MSFT": 1795181783.271338,
     "AAPL": 1795180320.2673893,
     "PLTR": 1795180320.2673893,
     "NOW": 1795180320.2673893,
