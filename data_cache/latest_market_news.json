@@ -1,9 +1,22 @@
 {
-  "updated_at_ts": 1795202175.775,
-  "updated_at_et": "11-20 14:16 ET",
-  "updated_at_kst": "04:16 KST",
+  "updated_at_ts": 1795202278.138,
+  "updated_at_et": "11-20 14:17 ET",
+  "updated_at_kst": "04:17 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261121031550148800",
+      "title": "英伟达(NVDA.O)股价跌幅扩大至9%。",
+      "summary": "英伟达(NVDA.O)股价跌幅扩大至9%。",
+      "keywords": [
+        "英伟达"
+      ],
+      "pub_ts": 1795202150.0,
+      "time_et": "11-20 14:15 ET",
+      "time_bj": "03:15 BJ",
+      "time_kst": "04:15 KST",
+      "time_display": "14:15 ET / 03:15 BJ"
+    },
     {
       "id": "20261121031511430800",
       "title": "【纳指跌幅扩大至4%】 11月21日讯，道指跌0.91%，标普500指数跌2.54%，纳…",
@@ -324,22 +337,6 @@
       "time_bj": "22:31 BJ",
       "time_kst": "23:31 KST",
       "time_display": "09:31 ET / 22:31 BJ"
-    },
-    {
-      "id": "20261120223058528800",
-      "title": "美股开盘，道指跌0.07%，标普500指数跌0.42%，纳指跌1.2%。Anthropi…",
-      "summary": "美股开盘，道指跌0.07%，标普500指数跌0.42%，纳指跌1.2%。Anthropic(ANT.O)开跌8.7%，公司昨日挂牌并收涨17%，但今日盘前一度大跌14%。AI芯片相关股普跌，英伟达(NVDA.O)开跌2.2%，英特尔(INTC.O)跌2.8%，AMD(AMD.O)跌4.5%，台积电(TSM.N)跌4%。",
-      "keywords": [
-        "芯片",
-        "英伟达",
-        "台积电",
-        "标普"
-      ],
-      "pub_ts": 1795185058.0,
-      "time_et": "11-20 09:30 ET",
-      "time_bj": "22:30 BJ",
-      "time_kst": "23:30 KST",
-      "time_display": "09:30 ET / 22:30 BJ"
     }
   ],
   "ticker_news": {
@@ -3323,7 +3320,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (14:15 ET / 03:15 BJ) [标普]：【纳指跌幅扩大至4%】 11月21日讯，道指跌0.91%，标普500指数跌2.54%，纳指跌4%。",
+    "detail": "⚡ 最新核心快讯 (14:15 ET / 03:15 BJ) [英伟达]：英伟达(NVDA.O)股价跌幅扩大至9%。",
     "event_name": "",
     "minutes_left": 0
   }
