@@ -222,7 +222,8 @@ class WorkflowSourceTests(unittest.TestCase):
         self.assertNotIn("secrets.GH_TOKEN", text)
         self.assertIn("pages: write", text)
         self.assertIn("radar_cloud_sync.py --check-local-client", text)
-        self.assertNotIn("pyarrow", requirements)
+        self.assertIn("pip install -r requirements.txt", text)
+        self.assertIn("pyarrow", requirements)
 
 
 class GitOriginRewriteTests(unittest.TestCase):

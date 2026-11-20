@@ -17,6 +17,30 @@ import urllib.error
 import urllib.request
 
 LOCAL_CLIENT_WINDOW_SEC = 900
+
+# Produced by `ml_predictor_5y.py --refresh`. The Actions commit must stage
+# these or the next job checks out a stale panel and macro_weather.latest_date stalls.
+DAILY_PANEL_GIT_PATHS = (
+    "predict_radar_5y.html",
+    "data_cache/latest_ai_predictions.json",
+    "data_cache/ml_panel_5y.parquet",
+    "data_cache/ml_extended_panel.parquet",
+    "data_cache/.ml_panel_max_date",
+    "data_cache/.ml_btc_utc_date",
+    "data_cache/.last_daily_ml_refresh",
+)
+
+RADAR_PUBLISH_PATHS = DAILY_PANEL_GIT_PATHS + (
+    "index.html",
+    "futu_pro_terminal.html",
+    "macro_radar.html",
+    "stocks_radar.html",
+    "data_cache/shared_alert_dedupe.json",
+    ".terminal_notifications.json",
+    ".options_cache.json",
+    ".radar_alert_history.json",
+    ".gitignore",
+)
 _SECRET_ENV_KEYS = (
     "GH_TOKEN",
     "GITHUB_TOKEN",
@@ -34,6 +58,24 @@ _ACTIONS_EMAILS = {
     "actions@github.com",
     "41898282+github-actions[bot]@users.noreply.github.com",
 }
+
+
+def daily_ml_refresh_succeeded(returncode, marker, pred_day, page_day, expected_day) -> bool:
+    """True only when the predictor exited 0 and an artifact reached the closed session.
+
+    A non-zero child (missing pyarrow, incomplete download, exit 2) is never success,
+    even if an older snapshot already contains today's date string.
+    """
+    if returncode != 0:
+        return False
+    expected = str(expected_day or "")[:10]
+    if not expected:
+        return False
+    for value in (marker, pred_day, page_day):
+        got = str(value or "")[:10]
+        if got and got >= expected:
+            return True
+    return False
 
 
 def reset_runtime_cache():

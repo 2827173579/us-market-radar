@@ -69,7 +69,8 @@ user_portfolio.example.json  持仓配置模板（复制为 user_portfolio.json 
 
 - **Python ≥ 3.10**（GitHub Actions 用 3.10；本地测试用 3.11~3.13 均可）
 - 必需依赖（`requirements.txt`）：`requests / pandas / numpy / yfinance / plotly`
-- 可选依赖：`pyarrow`（读写 `data_cache/*.parquet`）、`lightgbm` + `scikit-learn`（`ml_predictor_5y.py` 训练/回测；daemon 非必需，import 时有 try/except 兜底）、`python-dotenv`（可选，未安装时有内置 .env 解析）
+- 运行时依赖：`pyarrow`（`ml_predictor_5y.py` 读写 `data_cache/*.parquet`；写在 `requirements.txt` 里，CI 缺它会在日线刷新时报 `ModuleNotFoundError` 并让 `latest_date` 停住）
+- 可选依赖：`lightgbm` + `scikit-learn`（`ml_predictor_5y.py` 训练/回测；daemon 非必需，import 时有 try/except 兜底）、`python-dotenv`（可选，未安装时有内置 .env 解析）
 - 无需 Node.js / 数据库；HTML 为单文件静态看板
 - Windows 脚本依赖：cmd、PowerShell、Windows 10+ 自带 `tar`；VPS 更新脚本依赖 OpenSSH 客户端
 

@@ -3,3 +3,7 @@ pandas>=1.5.0
 numpy>=1.23.0
 yfinance>=0.2.30
 plotly>=5.15.0
+# Daily AI panel (ml_predictor_5y.py) reads and writes data_cache/*.parquet
+# with engine="pyarrow". CI only installs this file; without it the refresh
+# dies with ModuleNotFoundError and latest_date never advances.
+pyarrow>=14.0.1
