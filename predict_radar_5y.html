@@ -3,22 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
-    <script>
-        // ⚡ 客户端智能防缓存自动刷新 (60秒穿透 GitHub Pages / Fastly CDN 10分钟强缓存)
-        setTimeout(function() {
+<script>
+    // 定时换新 HTML，避开 GitHub Pages / Fastly 约 10 分钟强缓存。
+    // 正在操作时最多再等 45000 ms，避免整页重载打断点击和滚动。
+    (function () {
+        var INTERVAL = 60000;
+        var IDLE_MS = 12000;
+        var EXTRA_CAP = 45000;
+        var started = Date.now();
+        var lastInput = 0;
+        ["pointerdown", "keydown", "touchstart", "wheel"].forEach(function (ev) {
+            window.addEventListener(ev, function () { lastInput = Date.now(); }, { passive: true });
+        });
+        function saveState() {
+            if (!false) return;
+            try {
+                var wl = document.getElementById("watchlistContainer");
+                if (wl) localStorage.setItem("futu_watchlist_scroll", String(wl.scrollTop));
+            } catch (e) {}
+        }
+        function go() {
+            saveState();
             try {
                 var cleanPath = window.location.pathname;
                 var searchParams = new URLSearchParams(window.location.search);
-                searchParams.set('_t', Date.now());
-                window.location.replace(cleanPath + '?' + searchParams.toString() + window.location.hash);
-            } catch(e) {
+                if (false) {
+                    searchParams.delete("symbol");
+                    searchParams.delete("ticker");
+                }
+                searchParams.set("_t", String(Date.now()));
+                window.location.replace(cleanPath + "?" + searchParams.toString() + window.location.hash);
+            } catch (e) {
                 window.location.reload();
             }
-        }, 60000);
-    </script>
+        }
+        function tick() {
+            var now = Date.now();
+            var elapsed = now - started;
+            if (elapsed < INTERVAL) {
+                setTimeout(tick, Math.min(1000, INTERVAL - elapsed));
+                return;
+            }
+            var busy = !document.hidden && lastInput && (now - lastInput) < IDLE_MS;
+            if (busy && elapsed < INTERVAL + EXTRA_CAP) {
+                setTimeout(tick, 1000);
+                return;
+            }
+            go();
+        }
+        setTimeout(tick, Math.min(1000, INTERVAL));
+    })();
+</script>
+
     <title>AI 美股 5 年多赛道预测雷达 · 全景战报</title>
     <style>
         :root {
@@ -5660,7 +5696,7 @@
         </footer>
     </div>
 
-    <script>
+    <script type="text/plain" id="predict-app">
         let showFullPool = false;
         let currentSector = 'ALL';
         let currentT4View = 'dual';
@@ -6565,7 +6601,7 @@
             else renderTimeCycleView();
         }
 
-        document.addEventListener('DOMContentLoaded' , function() {
+        function bootPredictPage() {
             let savedView = 'dual';
             try {
                 savedView = localStorage.getItem('predict_t4_view') || 'dual';
@@ -6573,7 +6609,32 @@
             switchT4View(savedView);
             setTimeout(function() { renderTimeCycleView(); }, 50);
             window.addEventListener('resize', function() { renderTimeCycleView(); });
-        });
+        }
+        if (document.readyState === "loading") {
+            document.addEventListener("DOMContentLoaded", bootPredictPage);
+        } else {
+            bootPredictPage();
+        }
     </script>
+
+<script id="predict-app-boot">
+    // 周期图脚本约 270KB。先把表和导航画出来，再编译这段脚本。
+    (function () {
+        function start() {
+            var src = document.getElementById("predict-app");
+            if (!src || src.getAttribute("data-ran") === "1") return;
+            src.setAttribute("data-ran", "1");
+            var s = document.createElement("script");
+            s.text = src.textContent;
+            document.body.appendChild(s);
+        }
+        if (window.requestAnimationFrame) {
+            requestAnimationFrame(function () { requestAnimationFrame(start); });
+        } else {
+            setTimeout(start, 0);
+        }
+    })();
+</script>
+
 </body>
 </html>

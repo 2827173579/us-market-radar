@@ -6,6 +6,7 @@ Helper module to build the Futu-Style Pro Terminal (futu_pro_terminal.html)
 import json
 import time
 import display_time
+import page_load
 
 
 def ai_daily_snapshot_is_stale(ai_predictions, expected_day: str) -> bool:
@@ -639,38 +640,23 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
     weather_json = json.dumps(weather_info, ensure_ascii=False)
     watchlist_json = json.dumps(target_watchlist, ensure_ascii=False)
     notifications_json = json.dumps(terminal_notifications, ensure_ascii=False)
-    ai_predictions_json = json.dumps(ai_predictions, ensure_ascii=False)
+    ai_predictions_json = json.dumps(
+        page_load.terminal_ai_embed(ai_predictions),
+        ensure_ascii=False,
+        separators=(",", ":"),
+    )
+    refresh_head = page_load.client_refresh_snippet(
+        60_000, save_watchlist=True, clear_symbol_params=True
+    )
+    tv_loader_js = page_load.futu_tv_loader_js(
+        display_time.TV_TIMEZONE, display_time.TV_TIMEZONE_QUERY
+    )
 
     html = f"""<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="90">
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
-    <script>
-        // ⚡ 客户端智能防缓存自动刷新 (彻底突破 GitHub Pages / Fastly CDN 10分钟 max-age=600 强缓存)
-        setTimeout(function() {{
-            try {{
-                var cleanPath = window.location.pathname;
-                var searchParams = new URLSearchParams(window.location.search);
-                // 清理跳转残留，防止强制复位
-                searchParams.delete('symbol');
-                searchParams.delete('ticker');
-                searchParams.set('_t', Date.now());
-
-                // 刷新前即时保存左侧滚动条与当前各状态
-                var wl = document.getElementById("watchlistContainer");
-                if (wl) {{
-                    localStorage.setItem("futu_watchlist_scroll", wl.scrollTop);
-                }}
-                window.location.replace(cleanPath + '?' + searchParams.toString() + window.location.hash);
-            }} catch(e) {{
-                window.location.reload();
-            }}
-        }}, 60000);
-    </script>
+    {refresh_head}
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -2407,8 +2393,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
         </div>
     </div>
 
-    <!-- TradingView 官方嵌入脚本与前端交互引擎 -->
-    <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+    <!-- TradingView tv.js 在列表渲染后按需加载，失败时主图区会说明原因 -->
     <script>
         // 标的池数据注入
         const STOCKS_DATA = {stocks_json};
@@ -2591,46 +2576,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
         let currentInterval = "D";
         let currentStyle = "1"; // 1=K线, 3=分时面积图
 
-        // 初始化 TradingView 图表挂载 (默认开启 Pre/Post 盘前盘后延展时段)
-        function loadTvWidget(ticker, interval, style) {{
-            const container = document.getElementById("tv_chart_container");
-            container.innerHTML = "";
-            const tvSymbol = SYMBOL_MAP[ticker] || ("NASDAQ:" + ticker);
-            const targetSession = "extended";
-
-            try {{
-                new TradingView.widget({{
-                    "autosize": true,
-                    "symbol": tvSymbol,
-                    "interval": interval,
-                    "timezone": "{display_time.TV_TIMEZONE}",
-                    "theme": "dark",
-                    "style": style || "1",
-                    "locale": "zh_CN",
-                    "toolbar_bg": "#14161b",
-                    "enable_publishing": false,
-                    "hide_side_toolbar": false,
-                    "allow_symbol_change": true,
-                    "save_image": false,
-                    "extended_hours": true,
-                    "container_id": "tv_chart_container",
-                    "enabled_features": [
-                        "pre_post_market_sessions"
-                    ],
-                    "overrides": {{
-                        "mainSeriesProperties.sessionId": targetSession
-                    }},
-                    "studies": [
-                        "MASimple@tv-basicstudies",
-                        "MACD@tv-basicstudies",
-                        "RSI@tv-basicstudies"
-                    ]
-                }});
-            }} catch(e) {{
-                const iframeUrl = `https://s.tradingview.com/widgetembed/?frameElementId=tv_widget&symbol=${{encodeURIComponent(tvSymbol)}}&interval=${{interval}}&hidesidetoolbar=0&symboledit=1&saveimage=0&toolbarbg=14161b&theme=dark&style=${{style||'1'}}&timezone={display_time.TV_TIMEZONE_QUERY}&locale=zh_CN&extended_hours=1&sessionId=${{targetSession}}`;
-                container.innerHTML = `<iframe src="${{iframeUrl}}" style="width:100%; height:100%; border:none;"></iframe>`;
-            }}
-        }}
+        {tv_loader_js}
 
         // 盯盘状态 UI 刷新函数
         function updateStarUI() {{
