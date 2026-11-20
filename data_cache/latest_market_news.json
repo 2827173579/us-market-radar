@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795151699.559,
-  "updated_at_et": "11-20 00:14 ET",
-  "updated_at_kst": "14:14 KST",
+  "updated_at_ts": 1795151807.942,
+  "updated_at_et": "11-20 00:16 ET",
+  "updated_at_kst": "14:16 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2568,6 +2568,13 @@
     ],
     "SNDK": [
       {
+        "title": "AI sell-off: These sectors held firm as tech slumped in Oct, Nov",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/ai-sell-off-sectors-held-044523371.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 23:45 ET",
+        "pub_ts": 1795149923.0
+      },
+      {
         "title": "Down More Than 40% in the Past Month, Here’s How You Should Play Sandisk Stock",
         "url": "https://www.barchart.com/story/news/8923559/down-more-than-40-in-the-past-month-heres-how-you-should-play-sandisk-stock?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2594,13 +2601,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 13:16 ET",
         "pub_ts": 1795112162.0
-      },
-      {
-        "title": "Dear Sandisk Stock Fans, November 19 Brings an 8-for-1 Split, But the Memory Boom May Already Be Unraveling",
-        "url": "https://www.barchart.com/story/news/8919330/dear-sandisk-stock-fans-november-19-brings-an-8-for-1-split-but-the-memory-boom-may-already-be-unraveling?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 10:40 ET",
-        "pub_ts": 1795102846.0
       }
     ],
     "BTC-USD": [
@@ -3295,16 +3295,16 @@
     "VRT": 1795151699.558732,
     "HPE": 1795151699.558732,
     "DELL": 1795151699.558732,
-    "OKLO": 1795150266.3187401,
+    "OKLO": 1795151807.9424138,
     "CEG": 1795151699.558732,
-    "FPS": 1795150266.3187401,
-    "MU": 1795150266.3187401,
-    "SKHY": 1795150266.3187401,
-    "WDC": 1795150266.3187401,
-    "STX": 1795150266.3187401,
-    "MSTR": 1795150266.3187401,
-    "SNDK": 1795150266.3187401,
-    "BTC-USD": 1795150266.3187401,
+    "FPS": 1795151807.9424138,
+    "MU": 1795151807.9424138,
+    "SKHY": 1795151807.9424138,
+    "WDC": 1795151807.9424138,
+    "STX": 1795151807.9424138,
+    "MSTR": 1795151807.9424138,
+    "SNDK": 1795151807.9424138,
+    "BTC-USD": 1795151807.9424138,
     "CRWD": 1795150974.2476404,
     "ORCL": 1795151080.6367383,
     "COIN": 1795150974.2476404,
@@ -3320,8 +3320,8 @@
     "CAT": 1795151699.558732,
     "FN": 1795150974.2476404,
     "GLW": 1795150974.2476404,
-    "ANT": 1795150266.3187401,
-    "XAUUSD": 1795150266.3187401
+    "ANT": 1795151807.9424138,
+    "XAUUSD": 1795151807.9424138
   },
   "calendar_banner": {
     "level": "idle_with_flash",
