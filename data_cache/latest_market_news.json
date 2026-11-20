@@ -1,9 +1,22 @@
 {
-  "updated_at_ts": 1795188760.852,
-  "updated_at_et": "11-20 10:32 ET",
-  "updated_at_kst": "00:32 KST",
+  "updated_at_ts": 1795188867.28,
+  "updated_at_et": "11-20 10:34 ET",
+  "updated_at_kst": "00:34 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261120233228747800",
+      "title": "美国财长贝森特：昨晚通过霍尔木兹海峡的原油量是冲突爆发以来最多的。",
+      "summary": "美国财长贝森特：昨晚通过霍尔木兹海峡的原油量是冲突爆发以来最多的。",
+      "keywords": [
+        "原油"
+      ],
+      "pub_ts": 1795188748.0,
+      "time_et": "11-20 10:32 ET",
+      "time_bj": "23:32 BJ",
+      "time_kst": "00:32 KST",
+      "time_display": "10:32 ET / 23:32 BJ"
+    },
     {
       "id": "20261120232926694800",
       "title": "美国财长贝森特：美联储应向前看，而非向后看。",
@@ -329,19 +342,6 @@
       "time_bj": "18:42 BJ",
       "time_kst": "19:42 KST",
       "time_display": "05:42 ET / 18:42 BJ"
-    },
-    {
-      "id": "20261120182402562800",
-      "title": "市场削减欧洲央行加息押注，倾向于认为到2027年底前仅加息两次。",
-      "summary": "市场削减欧洲央行加息押注，倾向于认为到2027年底前仅加息两次。",
-      "keywords": [
-        "加息"
-      ],
-      "pub_ts": 1795170242.0,
-      "time_et": "11-20 05:24 ET",
-      "time_bj": "18:24 BJ",
-      "time_kst": "19:24 KST",
-      "time_display": "05:24 ET / 18:24 BJ"
     }
   ],
   "ticker_news": {
@@ -3325,7 +3325,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (10:29 ET / 23:29 BJ) [美联储]：美国财长贝森特：美联储应向前看，而非向后看。",
+    "detail": "⚡ 最新核心快讯 (10:32 ET / 23:32 BJ) [原油]：美国财长贝森特：昨晚通过霍尔木兹海峡的原油量是冲突爆发以来最多的。",
     "event_name": "",
     "minutes_left": 0
   }
