@@ -50,8 +50,8 @@
       "last_notified_at": 1795050172.4137037
     },
     "FLY": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1795185363.6290934
     },
     "LLY": {
       "state": "NORMAL",
@@ -110,12 +110,12 @@
       "last_notified_at": 0.0
     },
     "CRWD": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1795185363.6290934
     },
     "TSLA": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1795185363.6290934
     }
   },
   "position_peaks": {
