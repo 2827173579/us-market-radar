@@ -1,9 +1,22 @@
 {
-  "updated_at_ts": 1795188554.307,
-  "updated_at_et": "11-20 10:29 ET",
-  "updated_at_kst": "00:29 KST",
+  "updated_at_ts": 1795188657.083,
+  "updated_at_et": "11-20 10:30 ET",
+  "updated_at_kst": "00:30 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261120232926694800",
+      "title": "美国财长贝森特：美联储应向前看，而非向后看。",
+      "summary": "美国财长贝森特：美联储应向前看，而非向后看。",
+      "keywords": [
+        "美联储"
+      ],
+      "pub_ts": 1795188566.0,
+      "time_et": "11-20 10:29 ET",
+      "time_bj": "23:29 BJ",
+      "time_kst": "00:29 KST",
+      "time_display": "10:29 ET / 23:29 BJ"
+    },
     {
       "id": "20261120232448044800",
       "title": "费城半导体指数跌幅扩大至5%，英伟达(NVDA.O)、台积电(TSM.N)跌超5%。",
@@ -329,19 +342,6 @@
       "time_bj": "18:24 BJ",
       "time_kst": "19:24 KST",
       "time_display": "05:24 ET / 18:24 BJ"
-    },
-    {
-      "id": "20261120181608416800",
-      "title": "AMD股价盘前跌近6%！做空机构Hunterbrook出手，质疑AI融资模式",
-      "summary": "AMD曾被市场视为英伟达的重要替代者，如今却遭遇做空机构狙击。Hunterbrook质疑其客户融资模式，并指出AMD承担的客户承诺可能超过英伟达。",
-      "keywords": [
-        "英伟达"
-      ],
-      "pub_ts": 1795169768.0,
-      "time_et": "11-20 05:16 ET",
-      "time_bj": "18:16 BJ",
-      "time_kst": "19:16 KST",
-      "time_display": "05:16 ET / 18:16 BJ"
     }
   ],
   "ticker_news": {
@@ -2604,39 +2604,39 @@
     ],
     "BTC-USD": [
       {
-        "title": "VanEck Drops Gemini As Custodian Of Its Crypto ETFs",
-        "url": "https://www.cryptoprowl.com/releases/vaneck-drops-gemini-as-custodian-of-its-crypto-etfs-7998?.tsrc=rss",
+        "title": "Bitcoin Heads For Longest Weekly Losing Streak Since 2022 With BlackRock’s IBIT Clocking Record Outflows",
+        "url": "https://stocktwits.com/news-articles/markets/cryptocurrency/bitcoin-heads-for-longest-weekly-losing-streak-since-2022-with-black-rock-s-ibit-clocking-record-outflows/cNbSkw7R9K6?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-20 09:51 ET",
-        "pub_ts": 1795186260.0
+        "time": "11-20 10:18 ET",
+        "pub_ts": 1795187918.0
       },
       {
-        "title": "Stock Market Today: Nasdaq Sells Off As Anthropic Plunges 10% After IPO (Live Coverage)",
-        "url": "https://finance.yahoo.com/m/4b546235-124e-3fa4-b951-41a067ff7bf2/stock-market-today%3A-nasdaq.html?.tsrc=rss",
+        "title": "Robinhood Markets vs. Nu: Which Financial Stock Is a Better Buy for 2027?",
+        "url": "https://www.fool.com/coverage/better-buy/2026/11/20/robinhood-markets-vs-nu-which-financial-stock-is-a-better-buy-for-2027/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-20 09:44 ET",
-        "pub_ts": 1795185857.0
+        "time": "11-20 10:15 ET",
+        "pub_ts": 1795187702.0
       },
       {
-        "title": "Exchange-Traded Funds, Equity Futures Fall Pre-Bell Friday Amid Continued AI Stock Selloff",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/exchange-traded-funds-equity-futures-140012643.html?.tsrc=rss",
+        "title": "BitFuFu Q3 Earnings Call Highlights",
+        "url": "https://www.marketbeat.com/instant-alerts/transcript-bitfufu-q3-earnings-call-highlights-2026-11-20/?utm_source=yahoofinance&utm_medium=yahoofinance&.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-20 09:00 ET",
-        "pub_ts": 1795183212.0
+        "time": "11-20 10:12 ET",
+        "pub_ts": 1795187556.0
       },
       {
-        "title": "Circle Stock At $52: What Would It Take To Get To $90?",
-        "url": "https://www.trefis.com/stock/crcl/articles/626496/circle-stock-at-52-what-would-it-take-to-get-to-90/2026-11-20?.tsrc=rss",
+        "title": "James Wynn suffers five liquidations in market drop",
+        "url": "https://www.thestreet.com/crypto/markets/james-wynn-suffers-five-liquidations-in-market-drop?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-20 08:33 ET",
-        "pub_ts": 1795181598.0
+        "time": "11-20 10:02 ET",
+        "pub_ts": 1795186957.0
       },
       {
-        "title": "Institutional Holdings in US Spot Bitcoin ETPs Hit Record $29.8 Billion in Q3",
-        "url": "https://www.ccn.com/news/crypto/us-spot-bitcoin-etp-institutional-holdings-q3-2026/?.tsrc=rss",
+        "title": "Bitcoin ETF Outflows In November Near $3.5 Billion",
+        "url": "https://www.cryptoprowl.com/releases/bitcoin-etf-outflows-in-november-near-35-billion-8000?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-20 07:42 ET",
-        "pub_ts": 1795178535.0
+        "time": "11-20 10:00 ET",
+        "pub_ts": 1795186800.0
       }
     ],
     "CRWD": [
@@ -2974,6 +2974,13 @@
     ],
     "JPM": [
       {
+        "title": "JPMorgan Faces Data Leak After Banking Outage: Risks Mount?",
+        "url": "https://finance.yahoo.com/technology/articles/jpmorgan-faces-data-leak-banking-141200565.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 09:12 ET",
+        "pub_ts": 1795183920.0
+      },
+      {
         "title": "Moody's Ratings Gain From AI Infrastructure and Private Credit Growth",
         "url": "https://finance.yahoo.com/markets/stocks/articles/moodys-ratings-gain-ai-infrastructure-131100021.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3000,16 +3007,16 @@
         "source": "Yahoo Finance",
         "time": "11-20 01:09 ET",
         "pub_ts": 1795154973.0
-      },
-      {
-        "title": "Vendor attack exposes JPMorgan Reserve cardholder emails",
-        "url": "https://www.americanbanker.com/news/vendor-attack-exposes-jpmorgan-reserve-cardholder-emails?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 17:22 ET",
-        "pub_ts": 1795126933.0
       }
     ],
     "WMT": [
+      {
+        "title": "WMT Q3 Earnings Call Takeaways as Sales and Profit Outlooks Rise",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/wmt-q3-earnings-call-takeaways-140000322.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 09:00 ET",
+        "pub_ts": 1795183200.0
+      },
       {
         "title": "Forget Walmart: General Mills Has More to Gain From Its Beat. Walmart Is 22% of Sales",
         "url": "https://www.tikr.com/blog/forget-walmart-general-mills-has-more-to-gain-from-its-beat-walmart-is-22-of-sales?ref=yahoofinance&tlnk=yf-261120-cpmf2pw3&.tsrc=rss",
@@ -3037,13 +3044,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 07:00 ET",
         "pub_ts": 1795176000.0
-      },
-      {
-        "title": "State Street Consumer Staples SPDR (XLP) Adds Walmart and Costco on Nov. 18",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/state-street-consumer-staples-spdr-110512500.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 06:05 ET",
-        "pub_ts": 1795172712.0
       }
     ],
     "V": [
@@ -3303,7 +3303,7 @@
     "STX": 1795188248.676324,
     "MSTR": 1795188248.676324,
     "SNDK": 1795188142.8726025,
-    "BTC-USD": 1795187103.0149376,
+    "BTC-USD": 1795188657.083135,
     "CRWD": 1795187521.8490705,
     "ORCL": 1795187521.8490705,
     "COIN": 1795187521.8490705,
@@ -3312,20 +3312,20 @@
     "NKE": 1795187634.9440722,
     "MCD": 1795187521.8490705,
     "PEP": 1795187521.8490705,
-    "XOM": 1795187103.0149376,
-    "JPM": 1795187103.0149376,
-    "WMT": 1795187103.0149376,
+    "XOM": 1795188657.083135,
+    "JPM": 1795188657.083135,
+    "WMT": 1795188657.083135,
     "V": 1795187521.8490705,
-    "CAT": 1795187103.0149376,
+    "CAT": 1795188657.083135,
     "FN": 1795187521.8490705,
     "GLW": 1795187521.8490705,
-    "ANT": 1795187103.0149376,
-    "XAUUSD": 1795187103.0149376
+    "ANT": 1795188657.083135,
+    "XAUUSD": 1795188657.083135
   },
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (10:24 ET / 23:24 BJ) [半导体] [英伟达] [台积电]：费城半导体指数跌幅扩大至5%，英伟达(NVDA.O)、台积电(TSM.N)跌超5%。",
+    "detail": "⚡ 最新核心快讯 (10:29 ET / 23:29 BJ) [美联储]：美国财长贝森特：美联储应向前看，而非向后看。",
     "event_name": "",
     "minutes_left": 0
   }
