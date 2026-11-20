@@ -18,8 +18,8 @@
       "last_notified_at": 0.0
     },
     "MRNA": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1795143520.8929532
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "CRWV": {
       "state": "STOP_LOSS",
@@ -67,7 +67,7 @@
     },
     "KO": {
       "state": "TAKE_PROFIT",
-      "last_notified_at": 1795137185.741723
+      "last_notified_at": 1795144455.6692798
     },
     "VST": {
       "state": "NORMAL",
