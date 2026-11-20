@@ -933,14 +933,34 @@ def fetch_intraday_5m_and_ext_data(tickers):
                     prev_date = unique_dates[-2] if len(unique_dates) >= 2 else last_date
                     rth_mask = (ny_idx.date == prev_date) & (ny_hr >= 9.5) & (ny_hr < 16.0)
 
+                pmh_val = 0.0
+                pml_val = 0.0
+                pm_target_date = _today if (4 * 60 <= _d < 9 * 60 + 30) else last_date
+                pm_mask = (ny_idx.date == pm_target_date) & (ny_hr >= 4.0) & (ny_hr < 9.5)
+                if pm_mask.any():
+                    pmh_val = float(h[pm_mask].max())
+                    pml_val = float(l[pm_mask].min())
+
                 if rth_mask.any():
                     tp_rth = (h[rth_mask] + l[rth_mask] + c[rth_mask]) / 3.0
                     vol_rth = v[rth_mask]
                     vwap = float((tp_rth * vol_rth).sum() / vol_rth.sum()) if vol_rth.sum() > 0 else float(c[rth_mask].mean())
                     rth_low = float(l[rth_mask].min())
                     rth_high = float(h[rth_mask].max())
+                    rth_open_val = float(o[rth_mask].iloc[0])
                     rth_close = float(c[rth_mask].iloc[-1])
                     rth_date = str(ny_idx[rth_mask][-1].date())
+                    if pmh_val <= 0:
+                        _rth_dt_obj = ny_idx[rth_mask][-1].date()
+                        _pm_day_mask = (ny_idx.date == _rth_dt_obj) & (ny_hr >= 4.0) & (ny_hr < 9.5)
+                        if _pm_day_mask.any():
+                            pmh_val = float(h[_pm_day_mask].max())
+                            pml_val = float(l[_pm_day_mask].min())
+                    rth_5m_series = []
+                    for _dt_r, _px_r in zip(ny_idx[rth_mask], c[rth_mask]):
+                        _s_idx = (int(_dt_r.hour) * 60 + int(_dt_r.minute) - 570) // 5
+                        if 0 <= _s_idx < 78 and math.isfinite(float(_px_r)) and float(_px_r) > 0:
+                            rth_5m_series.append([_s_idx, round(float(_px_r), 2)])
                     # 剔除 15:55 收盘集合竞价(MOC)脉冲毛刺，计算真实 5m 相对量比
                     rth_no_moc = (ny_idx.date == (ny_idx[rth_mask][-1].date())) & (ny_hr >= 9.5) & (ny_hr < 15.9)
                     vol_clean = v[rth_no_moc] if rth_no_moc.sum() >= 5 else vol_rth
@@ -954,8 +974,10 @@ def fetch_intraday_5m_and_ext_data(tickers):
                     vwap = float(c.iloc[-20:].mean())
                     rth_low = float(l.iloc[-20:].min())
                     rth_high = float(h.iloc[-20:].max())
+                    rth_open_val = float(o.iloc[-1])
                     rth_close = float(c.iloc[-1])
                     rth_date = str(last_date)
+                    rth_5m_series = []
                     rvol_5m = 1.0
 
                 # 计算 5 分钟级别 Wilder's RSI(14)
@@ -986,8 +1008,12 @@ def fetch_intraday_5m_and_ext_data(tickers):
                     "low_5m": round(float(l.iloc[-1]), 4) if len(l) else round(float(c.iloc[-1]), 4),
                     "rth_low": round(rth_low, 2),
                     "rth_high": round(rth_high, 2),
+                    "rth_open": round(rth_open_val, 4),
                     "rth_close": round(rth_close, 4),
-                    "rth_date": rth_date
+                    "rth_date": rth_date,
+                    "pmh": round(pmh_val, 2) if pmh_val > 0 else 0.0,
+                    "pml": round(pml_val, 2) if pml_val > 0 else 0.0,
+                    "rth_5m_series": rth_5m_series,
                 }
             except Exception:
                 continue
@@ -5816,6 +5842,23 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
     
     target_watchlist = load_target_watchlist()
     terminal_notifications = generate_and_sync_notifications(macro_data, stocks_sorted, weather_info, now_str, session_code=session_code)
+
+    # 阶段二：更新盘前走廊与 09:45 ET 实时背离纠偏快照 (盘中 0 次全量重下 60d 底模)
+    try:
+        import intraday_path_predictor
+        _ip_tickers = list(MONITORED_TARGETS.get("ETFS", {}).keys()) + list(MONITORED_TARGETS.get("STOCKS", {}).keys())
+        _ip_res = intraday_path_predictor.update_intraday_path_forecasts(
+            tickers=_ip_tickers,
+            intraday_map=intraday_map,
+            history_dict=history_dict,
+            realtime_quotes=realtime_quotes,
+            market_regime=(weather_info or {}).get("market_regime", "NEUTRAL_CHOP"),
+        )
+        _ip_cov = _ip_res.get("coverage", {})
+        print(f"[+] 📈 今日盘中走廊更新 ({_ip_res.get('forecast_date')}): 有效 {_ip_cov.get('ok_count', 0)}/{_ip_cov.get('total_count', 0)} 只 | 样本不足 {_ip_cov.get('insufficient_history_count', 0)} | 7x24 {_ip_cov.get('continuous_24h_count', 0)}")
+    except Exception as _ip_err:
+        print(f"  [!] 盘中预测走廊静默降级: {_ip_err}")
+
     try:
         import importlib, create_futu_terminal
         importlib.reload(create_futu_terminal)
@@ -6225,7 +6268,7 @@ def main():
                     pass
 
                 subprocess.run(
-                    ["git", "add", "index.html", "futu_pro_terminal.html", "predict_radar_5y.html", "data_cache/latest_ai_predictions.json", "data_cache/live_prediction_scorecard.json", "data_cache/latest_market_news.json", "data_cache/shared_alert_dedupe.json", ".terminal_notifications.json", ".options_cache.json", ".radar_alert_history.json", "macro_radar.html", "stocks_radar.html", ".gitignore"],
+                    ["git", "add", "index.html", "futu_pro_terminal.html", "predict_radar_5y.html", "data_cache/latest_ai_predictions.json", "data_cache/live_prediction_scorecard.json", "data_cache/intraday_path_forecasts.json", "data_cache/latest_market_news.json", "data_cache/shared_alert_dedupe.json", ".terminal_notifications.json", ".options_cache.json", ".radar_alert_history.json", "macro_radar.html", "stocks_radar.html", ".gitignore"],
                     check=False, creationflags=WIN_NO_WINDOW)
                 subprocess.run(
                     ["git", "commit", "-m", f"⚡ [{'小米平板实盘同步' if ANDROID_MODE else '实盘同步'}] 第 {round_idx} 轮极速刷新 ({now_ts})"],

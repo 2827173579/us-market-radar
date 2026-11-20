@@ -602,6 +602,18 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             '<!-- MACRO_CALENDAR_BANNER_END -->'
         )
 
+    intraday_path_forecasts = {}
+    try:
+        _ip_base = sync_dir or os.path.dirname(os.path.abspath(__file__))
+        _ip_p = os.path.join(_ip_base, "data_cache", "intraday_path_forecasts.json")
+        if not os.path.exists(_ip_p):
+            _ip_p = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data_cache", "intraday_path_forecasts.json")
+        if os.path.exists(_ip_p):
+            with open(_ip_p, "r", encoding="utf-8") as _ipf:
+                intraday_path_forecasts = json.load(_ipf) or {}
+    except Exception:
+        intraday_path_forecasts = {}
+
     # 将标的数据转为 JSON 供前端动态渲染
     stocks_json = json.dumps(stocks_data, ensure_ascii=False)
     macro_json = json.dumps(macro_data, ensure_ascii=False)
@@ -610,6 +622,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
     notifications_json = json.dumps(terminal_notifications, ensure_ascii=False)
     ai_predictions_json = json.dumps(ai_predictions, ensure_ascii=False)
     market_news_json = json.dumps(market_news, ensure_ascii=False)
+    intraday_path_json = json.dumps(intraday_path_forecasts, ensure_ascii=False, separators=(",", ":"))
 
     html = f"""<!DOCTYPE html>
 <html lang="zh-CN">
@@ -1032,18 +1045,184 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             font-weight: 600;
         }}
 
-        /* 中栏：TradingView 专业交互式图表区 */
+        /* 中栏：TradingView 专业交互式图表区 & 今日盘中推演走廊 */
         .chart-center {{
             flex: 1;
             background: #111317;
             position: relative;
             display: flex;
             flex-direction: column;
+            min-width: 0;
+            min-height: 0;
+        }}
+        .center-view-tabs {{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+            padding: 0 12px;
+            height: 34px;
+            background: #14161b;
+            border-bottom: 1px solid #23272e;
+            flex-shrink: 0;
+        }}
+        .center-view-tab-group {{
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            height: 100%;
+        }}
+        .cv-tab {{
+            height: 100%;
+            display: inline-flex;
+            align-items: center;
+            padding: 0 10px;
+            font-size: 12px;
+            font-weight: 600;
+            color: #9ca3af;
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+            white-space: nowrap;
+            user-select: none;
+            transition: color 0.15s, border-color 0.15s, background 0.15s;
+        }}
+        .cv-tab:hover {{
+            color: #f3f4f6;
+        }}
+        .cv-tab.active {{
+            color: #38bdf8;
+            font-weight: 700;
+            border-bottom: 2px solid #38bdf8;
+            background: rgba(56, 189, 248, 0.08);
+        }}
+        .center-view-meta {{
+            font-size: 11px;
+            color: #9ca3af;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 48%;
         }}
         .tv-container {{
             width: 100%;
-            height: 100%;
+            flex: 1;
+            min-height: 0;
             position: relative;
+        }}
+        .intraday-path-panel {{
+            flex: 1;
+            min-height: 0;
+            display: none;
+            flex-direction: column;
+            padding: 12px 14px;
+            gap: 10px;
+            background: #111317;
+            overflow-y: auto;
+        }}
+        .chart-center.is-intraday-path .tv-container,
+        .chart-center.is-intraday-path .mobile-period-bar {{
+            display: none !important;
+        }}
+        .chart-center.is-intraday-path .intraday-path-panel {{
+            display: flex !important;
+        }}
+        .ip-header-strip {{
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px 12px;
+            padding: 10px 12px;
+            background: #161922;
+            border: 1px solid #262b36;
+            border-radius: 6px;
+        }}
+        .ip-summary-block {{
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+            min-width: 220px;
+            flex: 1;
+        }}
+        .ip-summary-text {{
+            font-size: 13px;
+            font-weight: 700;
+            color: #f3f4f6;
+            line-height: 1.4;
+        }}
+        .ip-meta-tag {{
+            font-size: 11px;
+            color: #9ca3af;
+        }}
+        .ip-div-badge {{
+            font-size: 12px;
+            font-weight: 700;
+            padding: 5px 10px;
+            border-radius: 5px;
+            border: 1px solid rgba(148, 163, 184, 0.35);
+            background: rgba(148, 163, 184, 0.12);
+            color: #e2e8f0;
+            white-space: nowrap;
+        }}
+        .ip-levels-bar {{
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 8px 14px;
+            font-size: 11.5px;
+            color: #cbd5e1;
+            padding: 6px 10px;
+            background: rgba(255, 255, 255, 0.025);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 5px;
+        }}
+        .ip-chart-wrap {{
+            position: relative;
+            flex: 1;
+            min-height: 300px;
+            background: #14171f;
+            border: 1px solid #23272e;
+            border-radius: 6px;
+            padding: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }}
+        #ipChartSvg {{
+            width: 100%;
+            height: 100%;
+            max-height: 500px;
+            display: block;
+        }}
+        .ip-tooltip {{
+            display: none;
+            position: absolute;
+            top: 10px;
+            left: 14px;
+            pointer-events: none;
+            background: rgba(15, 23, 42, 0.94);
+            border: 1px solid #38bdf8;
+            border-radius: 5px;
+            padding: 6px 10px;
+            font-size: 11.5px;
+            color: #f8fafc;
+            line-height: 1.5;
+            z-index: 20;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.45);
+        }}
+        .ip-fallback-box {{
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 36px 20px;
+            background: #161922;
+            border: 1px dashed #334155;
+            border-radius: 8px;
+            color: #cbd5e1;
+            gap: 8px;
+            min-height: 240px;
         }}
 
         /* 右栏：富途风控与量化战术指挥面板 */
@@ -1823,6 +2002,30 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 font-weight: 700;
                 border-bottom: 2px solid #ff6900;
             }}
+            .center-view-tabs {{
+                padding: 0 6px;
+                height: 32px;
+            }}
+            .cv-tab {{
+                padding: 0 8px;
+                font-size: 11.5px;
+            }}
+            .center-view-meta {{
+                display: none;
+            }}
+            .intraday-path-panel {{
+                padding: 8px;
+                gap: 8px;
+            }}
+            .ip-div-badge {{
+                white-space: normal;
+                font-size: 11px;
+                padding: 4px 8px;
+            }}
+            .ip-chart-wrap {{
+                min-height: 240px;
+                padding: 4px;
+            }}
 
             /* 手机底部 5 栏导航 */
             .mobile-bottom-nav {{
@@ -2005,8 +2208,15 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             </div>
         </aside>
 
-        <!-- 中部：TradingView 图表视窗 -->
+        <!-- 中部：TradingView 图表视窗与今日盘中推演走廊双 Tab -->
         <section class="chart-center" id="chartMiddle">
+            <div class="center-view-tabs" id="centerViewTabs">
+                <div class="center-view-tab-group">
+                    <div class="cv-tab active" id="tabKlineView" data-view="kline" onclick="switchCenterChartView('kline')">📊 实时行情K线</div>
+                    <div class="cv-tab" id="tabIntradayPathView" data-view="intraday_path" onclick="switchCenterChartView('intraday_path')">📈 今日盘中推演</div>
+                </div>
+                <span class="center-view-meta" id="centerViewMeta">盘前走廊推演就绪</span>
+            </div>
             <!-- 📱 手机端专属 K 线周期切换条 (<=768px 显示) -->
             <div class="mobile-period-bar" id="mobilePeriodBar">
                 <div class="m-period-tab" data-period="1" data-style="3">分时</div>
@@ -2019,6 +2229,21 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             </div>
             <div class="tv-container" id="tv_chart_container">
                 <!-- TradingView 实例将在此挂载 -->
+            </div>
+            <div class="intraday-path-panel" id="intradayPathView">
+                <div class="ip-header-strip" id="ipHeaderStrip">
+                    <div class="ip-summary-block">
+                        <div class="ip-summary-text" id="ipSummaryText">--</div>
+                        <div class="ip-meta-tag" id="ipMetaTag">--</div>
+                    </div>
+                    <div class="ip-div-badge" id="ipDivergenceBadge">--</div>
+                </div>
+                <div class="ip-levels-bar" id="ipLevelsBar"></div>
+                <div class="ip-chart-wrap" id="ipChartWrap">
+                    <svg id="ipChartSvg" viewBox="0 0 920 420" preserveAspectRatio="xMidYMid meet"></svg>
+                    <div class="ip-tooltip" id="ipTooltip"></div>
+                </div>
+                <div class="ip-fallback-box" id="ipFallbackBox"></div>
             </div>
         </section>
 
@@ -2466,8 +2691,10 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
         const INITIAL_NOTIFICATIONS = {notifications_json};
         const AI_PREDICTIONS = {ai_predictions_json};
         const INITIAL_MARKET_NEWS = {market_news_json};
+        const INTRADAY_PATH_FORECASTS = {intraday_path_json};
 
         let currentFilter = "all";
+        let currentCenterView = "kline";
         let targetWatchlist = Array.isArray(INITIAL_WATCHLIST) ? [...INITIAL_WATCHLIST] : [];
         let userPortfolio = (typeof INITIAL_PORTFOLIO === 'object' && INITIAL_PORTFOLIO !== null) ? {{...INITIAL_PORTFOLIO}} : {{}};
         let rawTradingNotifications = Array.isArray(INITIAL_NOTIFICATIONS) ? [...INITIAL_NOTIFICATIONS] : [];
@@ -2786,6 +3013,284 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 const iframeUrl = `https://s.tradingview.com/widgetembed/?frameElementId=tv_widget&symbol=${{encodeURIComponent(tvSymbol)}}&interval=${{interval}}&hidesidetoolbar=0&symboledit=1&saveimage=0&toolbarbg=14161b&theme=dark&style=${{style||'1'}}&timezone=America%2FNew_York&locale=zh_CN&extended_hours=1&sessionId=${{targetSession}}`;
                 container.innerHTML = `<iframe src="${{iframeUrl}}" style="width:100%; height:100%; border:none;"></iframe>`;
             }}
+        }}
+
+        function _ipNum(v, fb = null) {{
+            const n = Number(v);
+            return Number.isFinite(n) ? n : fb;
+        }}
+
+        function updateCenterViewMeta(ticker) {{
+            const metaEl = document.getElementById("centerViewMeta");
+            if (!metaEl) return;
+            const byTk = (INTRADAY_PATH_FORECASTS && INTRADAY_PATH_FORECASTS.by_ticker) ? INTRADAY_PATH_FORECASTS.by_ticker : {{}};
+            const item = byTk[ticker];
+            if (!item) {{
+                metaEl.innerText = "盘前走廊推演就绪";
+                metaEl.style.color = "#9ca3af";
+                return;
+            }}
+            const divObj = item.divergence || {{}};
+            metaEl.innerText = divObj.badge || item.summary_text || "盘前走廊推演就绪";
+            metaEl.style.color = divObj.color || "#9ca3af";
+        }}
+
+        function switchCenterChartView(view) {{
+            currentCenterView = (view === "intraday_path") ? "intraday_path" : "kline";
+            const chartMid = document.getElementById("chartMiddle");
+            const tabK = document.getElementById("tabKlineView");
+            const tabI = document.getElementById("tabIntradayPathView");
+            if (tabK) tabK.classList.toggle("active", currentCenterView === "kline");
+            if (tabI) tabI.classList.toggle("active", currentCenterView === "intraday_path");
+            if (chartMid) chartMid.classList.toggle("is-intraday-path", currentCenterView === "intraday_path");
+
+            if (currentCenterView === "intraday_path") {{
+                renderIntradayPathChart(currentTicker);
+            }} else {{
+                loadTvWidget(currentTicker, currentInterval, currentStyle);
+            }}
+        }}
+
+        function renderIntradayPathChart(ticker) {{
+            const sumEl = document.getElementById("ipSummaryText");
+            const metaEl = document.getElementById("ipMetaTag");
+            const divEl = document.getElementById("ipDivergenceBadge");
+            const lvBar = document.getElementById("ipLevelsBar");
+            const wrapEl = document.getElementById("ipChartWrap");
+            const svgEl = document.getElementById("ipChartSvg");
+            const fbEl = document.getElementById("ipFallbackBox");
+            const tipEl = document.getElementById("ipTooltip");
+            if (!svgEl || !wrapEl || !fbEl) return;
+            if (tipEl) tipEl.style.display = "none";
+
+            const rootDoc = INTRADAY_PATH_FORECASTS || {{}};
+            const byTk = rootDoc.by_ticker || {{}};
+            const item = byTk[ticker];
+            const timeSlots = Array.isArray(rootDoc.time_slots) && rootDoc.time_slots.length === 78
+                ? rootDoc.time_slots
+                : Array.from({{ length: 78 }}, (_, i) => {{
+                    const tot = 570 + i * 5;
+                    return `${{String(Math.floor(tot / 60)).padStart(2, "0")}}:${{String(tot % 60).padStart(2, "0")}}`;
+                }});
+
+            if (!item) {{
+                if (sumEl) sumEl.innerText = `${{ticker}} 暂无当日盘中推演数据`;
+                if (metaEl) metaEl.innerText = "请等待每日盘前 09:25 ET 或后台增量重建完成";
+                if (divEl) {{
+                    divEl.innerText = "⏳ 等待推演数据";
+                    divEl.style.color = "#9ca3af";
+                    divEl.style.borderColor = "rgba(148,163,184,0.35)";
+                    divEl.style.background = "rgba(148,163,184,0.12)";
+                }}
+                if (lvBar) lvBar.innerHTML = "";
+                wrapEl.style.display = "none";
+                fbEl.style.display = "flex";
+                fbEl.innerHTML = `<div style="font-size:24px;">📊</div><div style="font-size:14px; font-weight:700; color:#f3f4f6;">${{escapeNewsHtml(ticker)}} 盘中走廊待生成</div><div style="font-size:12px; color:#9ca3af;">下轮扫描将自动匹配近 60 日相似开盘走势</div>`;
+                return;
+            }}
+
+            const divObj = item.divergence || {{}};
+            const divClr = divObj.color || "#60a5fa";
+            if (sumEl) sumEl.innerText = item.summary_text || item.status_message || "--";
+            if (metaEl) {{
+                const ao = _ipNum(item.anchor_open, 0);
+                const pc = _ipNum(item.prev_close, 0);
+                const lockStr = item.snapshot_locked ? "🔒 09:25盘前走廊已锁定" : "📝 盘前实时预览";
+                metaEl.innerText = `目标日 ${{item.forecast_date || rootDoc.forecast_date || "--"}} · ${{lockStr}} · 开盘锚 $${{ao > 0 ? ao.toFixed(2) : "--"}} · 昨收 $${{pc > 0 ? pc.toFixed(2) : "--"}}`;
+            }}
+            if (divEl) {{
+                divEl.innerText = divObj.badge || "--";
+                divEl.style.color = divClr;
+                divEl.style.borderColor = divClr + "66";
+                divEl.style.background = divClr + "1f";
+            }}
+
+            if (item.status !== "ok" || !Array.isArray(item.p50_prices) || item.p50_prices.length < 10) {{
+                wrapEl.style.display = "none";
+                fbEl.style.display = "flex";
+                const iconStr = item.status === "continuous_24h" ? "🌐" : "🐣";
+                const titleStr = item.status === "continuous_24h" ? "7×24 小时连续交易品种" : "次新上市·分时历史样本积累中";
+                const msgStr = item.status_message || item.summary_text || "当前暂不绘制美股 RTH 盘前走廊";
+                const stockInfo = STOCKS_DATA.find(s => s.ticker === ticker) || MACRO_DATA[ticker] || {{}};
+                const curPx = _ipNum(stockInfo.active_price || stockInfo.last, _ipNum(item.anchor_open, 0));
+                const curVwap = _ipNum(stockInfo.vwap, 0);
+                if (lvBar) {{
+                    lvBar.innerHTML = `<span>📌 标的: <b>${{escapeNewsHtml(ticker)}}</b></span><span>现价: <b>$${{curPx > 0 ? curPx.toFixed(2) : "--"}}</b></span><span>日内VWAP: <b>$${{curVwap > 0 ? curVwap.toFixed(2) : "--"}}</b></span>`;
+                }}
+                fbEl.innerHTML = `<div style="font-size:28px;">${{iconStr}}</div><div style="font-size:15px; font-weight:700; color:#f3f4f6;">${{escapeNewsHtml(ticker)}} · ${{titleStr}}</div><div style="font-size:12.5px; color:#cbd5e1; max-width:460px;">${{escapeNewsHtml(msgStr)}}</div>`;
+                return;
+            }}
+
+            fbEl.style.display = "none";
+            wrapEl.style.display = "flex";
+
+            const p25 = item.p25_prices.map(v => _ipNum(v, null));
+            const p50 = item.p50_prices.map(v => _ipNum(v, null));
+            const p75 = item.p75_prices.map(v => _ipNum(v, null));
+            const act = Array.isArray(item.actual_prices) ? item.actual_prices.map(v => _ipNum(v, null)) : new Array(78).fill(null);
+            const prevClose = _ipNum(item.prev_close, null);
+            const pmh = _ipNum(item.pmh, null);
+            const pml = _ipNum(item.pml, null);
+            const anchorOpen = _ipNum(item.anchor_open, p50[0] || 100);
+
+            if (lvBar) {{
+                const fmt = (v) => (v !== null && v > 0) ? `$${{v.toFixed(2)}}` : "--";
+                lvBar.innerHTML = `
+                    <span style="display:inline-flex;align-items:center;gap:4px;"><span style="width:10px;height:10px;background:rgba(56,189,248,0.35);border:1px solid #38bdf8;display:inline-block;border-radius:2px;"></span>P25~P75 走廊</span>
+                    <span style="color:#c4b5fd;">┈ P50 预期中位</span>
+                    <span style="color:#fb923c;">━ 当日实盘 5m</span>
+                    <span style="color:#94a3b8;">昨收 ${{fmt(prevClose)}}</span>
+                    <span style="color:#f59e0b;">PMH ${{fmt(pmh)}}</span>
+                    <span style="color:#38bdf8;">PML ${{fmt(pml)}}</span>
+                `;
+            }}
+
+            const vals = [];
+            [p25, p50, p75, act].forEach(arr => arr.forEach(v => {{ if (v !== null && v > 0) vals.push(v); }}));
+            [prevClose, pmh, pml, anchorOpen].forEach(v => {{ if (v !== null && v > 0) vals.push(v); }});
+            let minY = vals.length ? Math.min(...vals) : 95;
+            let maxY = vals.length ? Math.max(...vals) : 105;
+            if (!Number.isFinite(minY) || !Number.isFinite(maxY) || maxY <= minY) {{
+                const base = Number.isFinite(anchorOpen) && anchorOpen > 0 ? anchorOpen : 100;
+                minY = base * 0.98;
+                maxY = base * 1.02;
+            }}
+            const spanY = maxY - minY;
+            minY = minY - spanY * 0.08;
+            maxY = maxY + spanY * 0.08;
+
+            const W = 920, H = 420;
+            const pad = {{ left: 42, right: 86, top: 26, bottom: 38 }};
+            const plotW = W - pad.left - pad.right;
+            const plotH = H - pad.top - pad.bottom;
+            const nSlots = Math.max(2, p50.length);
+            const xAt = (idx) => pad.left + (idx / (nSlots - 1)) * plotW;
+            const yAt = (px) => pad.top + ((maxY - px) / (maxY - minY)) * plotH;
+
+            const parts = [];
+            parts.push(`<rect x="0" y="0" width="${{W}}" height="${{H}}" fill="#14171f" rx="6" />`);
+
+            // 1. 水平网格线 & 右侧价格/百分比刻度
+            for (let g = 0; g <= 4; g++) {{
+                const frac = g / 4;
+                const val = maxY - frac * (maxY - minY);
+                const y = yAt(val);
+                if (!Number.isFinite(y)) continue;
+                const pctStr = anchorOpen > 0 ? `${{((val - anchorOpen) / anchorOpen * 100 >= 0 ? "+" : "")}}${{((val - anchorOpen) / anchorOpen * 100).toFixed(1)}}%` : "";
+                parts.push(`<line x1="${{pad.left}}" y1="${{y.toFixed(1)}}" x2="${{W - pad.right}}" y2="${{y.toFixed(1)}}" stroke="rgba(148,163,184,0.12)" stroke-width="1" />`);
+                parts.push(`<text x="${{W - pad.right + 6}}" y="${{(y + 3.5).toFixed(1)}}" fill="#94a3b8" font-size="10.5" font-family="monospace">$${{val.toFixed(2)}}</text>`);
+                if (pctStr) {{
+                    parts.push(`<text x="${{pad.left - 4}}" y="${{(y + 3.5).toFixed(1)}}" text-anchor="end" fill="#64748b" font-size="9.5" font-family="monospace">${{pctStr}}</text>`);
+                }}
+            }}
+
+            // 2. 底部美东时间刻度 & 09:45 ET 背离检测线
+            const xTickIdxs = [0, 6, 12, 18, 24, 30, 36, 42, 48, 54, 60, 66, 72, 77];
+            xTickIdxs.forEach(idx => {{
+                if (idx >= nSlots) return;
+                const x = xAt(idx);
+                parts.push(`<line x1="${{x.toFixed(1)}}" y1="${{pad.top}}" x2="${{x.toFixed(1)}}" y2="${{H - pad.bottom}}" stroke="rgba(148,163,184,0.08)" stroke-width="1" />`);
+                parts.push(`<text x="${{x.toFixed(1)}}" y="${{H - pad.bottom + 15}}" text-anchor="middle" fill="#94a3b8" font-size="10">${{timeSlots[idx] || ""}}</text>`);
+            }});
+            const x0945 = xAt(3);
+            if (Number.isFinite(x0945)) {{
+                parts.push(`<line x1="${{x0945.toFixed(1)}}" y1="${{pad.top}}" x2="${{x0945.toFixed(1)}}" y2="${{H - pad.bottom}}" stroke="rgba(250,204,21,0.45)" stroke-width="1.2" stroke-dasharray="3 3" />`);
+                parts.push(`<text x="${{(x0945 + 4).toFixed(1)}}" y="${{pad.top + 12}}" fill="#facc15" font-size="10" font-weight="700">09:45 背离窗</text>`);
+            }}
+
+            // 3. 昨收 / PMH / PML 水平防守虚线 (带防重叠错位)
+            const refLines = [];
+            if (prevClose !== null && prevClose > 0) refLines.push({{ label: "昨收", val: prevClose, color: "#94a3b8" }});
+            if (pmh !== null && pmh > 0) refLines.push({{ label: "PMH", val: pmh, color: "#f59e0b" }});
+            if (pml !== null && pml > 0) refLines.push({{ label: "PML", val: pml, color: "#38bdf8" }});
+            refLines.sort((a, b) => yAt(a.val) - yAt(b.val));
+            let lastLabelY = -999;
+            refLines.forEach(rf => {{
+                const y = yAt(rf.val);
+                if (!Number.isFinite(y)) return;
+                const clampedY = Math.max(pad.top + 8, Math.min(H - pad.bottom - 8, y));
+                let ly = clampedY;
+                if (Math.abs(ly - lastLabelY) < 12) ly = lastLabelY + 12;
+                lastLabelY = ly;
+                parts.push(`<line x1="${{pad.left}}" y1="${{y.toFixed(1)}}" x2="${{W - pad.right}}" y2="${{y.toFixed(1)}}" stroke="${{rf.color}}" stroke-width="1.2" stroke-dasharray="5 4" opacity="0.85" />`);
+                parts.push(`<text x="${{pad.left + 6}}" y="${{(ly - 3).toFixed(1)}}" fill="${{rf.color}}" font-size="10" font-weight="700">${{rf.label}} $${{rf.val.toFixed(2)}}</text>`);
+            }});
+
+            // 4. P25 ~ P75 波动走廊阴影多边形
+            const upperPts = [];
+            const lowerPts = [];
+            for (let i = 0; i < nSlots; i++) {{
+                if (p75[i] !== null && p25[i] !== null) {{
+                    const x = xAt(i), y75 = yAt(p75[i]), y25 = yAt(p25[i]);
+                    if (Number.isFinite(x) && Number.isFinite(y75) && Number.isFinite(y25)) {{
+                        upperPts.push(`${{x.toFixed(1)}},${{y75.toFixed(1)}}`);
+                        lowerPts.unshift(`${{x.toFixed(1)}},${{y25.toFixed(1)}}`);
+                    }}
+                }}
+            }}
+            if (upperPts.length >= 2) {{
+                parts.push(`<polygon id="ipCorridorPoly" points="${{upperPts.concat(lowerPts).join(" ")}}" fill="rgba(56,189,248,0.16)" stroke="rgba(56,189,248,0.38)" stroke-width="1" />`);
+            }}
+
+            // 5. P50 预期中位数虚线
+            const p50Pts = [];
+            for (let i = 0; i < nSlots; i++) {{
+                if (p50[i] !== null) {{
+                    const x = xAt(i), y = yAt(p50[i]);
+                    if (Number.isFinite(x) && Number.isFinite(y)) p50Pts.push(`${{x.toFixed(1)}},${{y.toFixed(1)}}`);
+                }}
+            }}
+            if (p50Pts.length >= 2) {{
+                parts.push(`<polyline id="ipP50Line" fill="none" stroke="#a78bfa" stroke-width="2.2" stroke-dasharray="6 4" points="${{p50Pts.join(" ")}}" />`);
+            }}
+
+            // 6. 当日实盘 5m 走势实线与当前末端标记
+            const actPts = [];
+            let lastAct = null;
+            for (let i = 0; i < nSlots; i++) {{
+                if (act[i] !== null && act[i] > 0) {{
+                    const x = xAt(i), y = yAt(act[i]);
+                    if (Number.isFinite(x) && Number.isFinite(y)) {{
+                        actPts.push(`${{x.toFixed(1)}},${{y.toFixed(1)}}`);
+                        lastAct = {{ idx: i, x, y, px: act[i] }};
+                    }}
+                }}
+            }}
+            if (actPts.length >= 2) {{
+                parts.push(`<polyline id="ipActualLine" fill="none" stroke="#f97316" stroke-width="2.8" stroke-linejoin="round" stroke-linecap="round" points="${{actPts.join(" ")}}" />`);
+            }}
+            if (lastAct !== null) {{
+                parts.push(`<circle id="ipActualDot" cx="${{lastAct.x.toFixed(1)}}" cy="${{lastAct.y.toFixed(1)}}" r="5" fill="${{divClr}}" stroke="#ffffff" stroke-width="1.6" />`);
+            }}
+
+            // 7. 悬停十字准星占位
+            parts.push(`<line id="ipHoverLine" x1="0" y1="${{pad.top}}" x2="0" y2="${{H - pad.bottom}}" stroke="rgba(226,232,240,0.45)" stroke-width="1" stroke-dasharray="2 2" style="display:none;" />`);
+            svgEl.innerHTML = parts.join("");
+
+            svgEl.onmousemove = function(evt) {{
+                const rect = svgEl.getBoundingClientRect();
+                if (!rect || rect.width <= 0) return;
+                const relX = ((evt.clientX - rect.left) / rect.width) * W;
+                const slotF = ((relX - pad.left) / plotW) * (nSlots - 1);
+                const si = Math.max(0, Math.min(nSlots - 1, Math.round(slotF)));
+                const hx = xAt(si);
+                const hLine = document.getElementById("ipHoverLine");
+                if (hLine && Number.isFinite(hx)) {{
+                    hLine.setAttribute("x1", hx.toFixed(1));
+                    hLine.setAttribute("x2", hx.toFixed(1));
+                    hLine.style.display = "block";
+                }}
+                if (tipEl) {{
+                    const f = (v) => (v !== null && Number.isFinite(v)) ? `$${{v.toFixed(2)}}` : "--";
+                    tipEl.innerHTML = `<b>${{escapeNewsHtml(ticker)}} · ${{timeSlots[si] || ""}} ET</b><br>实际 5m: <b style="color:#fb923c;">${{f(act[si])}}</b><br>P50 预期: <b style="color:#c4b5fd;">${{f(p50[si])}}</b><br>走廊 [P25~P75]: <span style="color:#7dd3fc;">${{f(p25[si])}} ~ ${{f(p75[si])}}</span>`;
+                    tipEl.style.display = "block";
+                }}
+            }};
+            svgEl.onmouseleave = function() {{
+                const hLine = document.getElementById("ipHoverLine");
+                if (hLine) hLine.style.display = "none";
+                if (tipEl) tipEl.style.display = "none";
+            }};
         }}
 
         // 盯盘状态 UI 刷新函数 (已移除手动星标盯盘限制，全池默认开启 5m 买点监测)
@@ -3772,8 +4277,13 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 el.classList.toggle("active", el.dataset.ticker === ticker);
             }});
 
-            // 重新载入图表
-            loadTvWidget(currentTicker, currentInterval, currentStyle);
+            // 重新载入图表或刷新今日盘中推演走廊
+            updateCenterViewMeta(ticker);
+            if (currentCenterView === "intraday_path") {{
+                renderIntradayPathChart(ticker);
+            }} else {{
+                loadTvWidget(currentTicker, currentInterval, currentStyle);
+            }}
         }}
 
         // 周期按钮点击监听绑定 (分时、5日、日K、周K、月K、季K、年K)
