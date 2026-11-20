@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795156336.953,
-  "updated_at_et": "11-20 01:32 ET",
-  "updated_at_kst": "15:32 KST",
+  "updated_at_ts": 1795156442.567,
+  "updated_at_et": "11-20 01:34 ET",
+  "updated_at_kst": "15:34 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -3202,6 +3202,13 @@
     ],
     "ANT": [
       {
+        "title": "Market Brief: Anthropic After The IPO: Valuation, Float And Price",
+        "url": "https://finnhub.io/api/news?id=b182baa72606de3107ab998652afde6b42cdc89a9e0c45457f3bc0b0d82ef00a",
+        "source": "SeekingAlpha",
+        "time": "11-19 20:10 ET",
+        "pub_ts": 1795137000.0
+      },
+      {
         "title": "I'm Buying The Anthropic IPO, Here's Why",
         "url": "https://finnhub.io/api/news?id=652d25e15d3aefee8622c81b06e1118850144da61fd966b244f4f2ab291aef4a",
         "source": "SeekingAlpha",
@@ -3228,13 +3235,6 @@
         "source": "SeekingAlpha",
         "time": "11-19 13:19 ET",
         "pub_ts": 1795112360.0
-      },
-      {
-        "title": "Comfort Systems: Cheaper With Greater EPS Growth (Upgrade)",
-        "url": "https://finnhub.io/api/news?id=074e6df1055c4ec2db5eb15dd9e5496f978f92fba7924f43916e1990f5b185b0",
-        "source": "SeekingAlpha",
-        "time": "11-19 13:02 ET",
-        "pub_ts": 1795111342.0
       }
     ],
     "XAUUSD": [
@@ -3300,16 +3300,16 @@
     "VRT": 1795156336.9532125,
     "HPE": 1795156336.9532125,
     "DELL": 1795156336.9532125,
-    "OKLO": 1795154897.7763994,
+    "OKLO": 1795156442.5673268,
     "CEG": 1795156336.9532125,
-    "FPS": 1795154897.7763994,
-    "MU": 1795154897.7763994,
-    "SKHY": 1795154897.7763994,
-    "WDC": 1795154897.7763994,
-    "STX": 1795154897.7763994,
-    "MSTR": 1795154897.7763994,
-    "SNDK": 1795154897.7763994,
-    "BTC-USD": 1795154897.7763994,
+    "FPS": 1795156442.5673268,
+    "MU": 1795156442.5673268,
+    "SKHY": 1795156442.5673268,
+    "WDC": 1795156442.5673268,
+    "STX": 1795156442.5673268,
+    "MSTR": 1795156442.5673268,
+    "SNDK": 1795156442.5673268,
+    "BTC-USD": 1795156442.5673268,
     "CRWD": 1795155605.3936522,
     "ORCL": 1795155713.6982114,
     "COIN": 1795155605.3936522,
@@ -3325,8 +3325,8 @@
     "CAT": 1795156336.9532125,
     "FN": 1795155605.3936522,
     "GLW": 1795155605.3936522,
-    "ANT": 1795154897.7763994,
-    "XAUUSD": 1795154897.7763994
+    "ANT": 1795156442.5673268,
+    "XAUUSD": 1795156442.5673268
   },
   "calendar_banner": {
     "level": "idle_with_flash",
