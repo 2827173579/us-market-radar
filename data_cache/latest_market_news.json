@@ -1,9 +1,22 @@
 {
-  "updated_at_ts": 1795150157.844,
-  "updated_at_et": "11-19 23:49 ET",
-  "updated_at_kst": "13:49 KST",
+  "updated_at_ts": 1795150266.319,
+  "updated_at_et": "11-19 23:51 ET",
+  "updated_at_kst": "13:51 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261120124933465800",
+      "title": "【LPR为何按兵不动？专家：政策利率换锚 短期降息空间有限】 11月20日讯，今日，央行…",
+      "summary": "【LPR为何按兵不动？专家：政策利率换锚 短期降息空间有限】 11月20日讯，今日，央行将一年期和五年期贷款市场报价利率（LPR）分别维持在3%和3.5%不变，为连续18个月保持不变。自2025年5月调整后，1年期LPR和5年期以上LPR横盘至今。展望未来，东方金诚宏观研究团队认为， 短期内LPR报价下调的可能性不大。 东方金诚宏观研究团队判断，在以上结构性稳增长、稳楼市措施出台后，接下来将进入一段政策效果观察期，短期内全面降息等总量货币政策工具跟进的可能性下降，LPR报价的定价基础会保持稳定。 综合考虑经济金融演化趋势，预计明年央行有望全面降息10到20个基点，届时将引导LPR报价跟进下调。",
+      "keywords": [
+        "降息"
+      ],
+      "pub_ts": 1795150173.0,
+      "time_et": "11-19 23:49 ET",
+      "time_bj": "12:49 BJ",
+      "time_kst": "13:49 KST",
+      "time_display": "23:49 ET / 12:49 BJ"
+    },
     {
       "id": "20261120124134791800",
       "title": "和沃什唱反调？美联储保尔森强调：清晰指引可稳定利率预期",
@@ -330,21 +343,6 @@
       "time_bj": "07:20 BJ",
       "time_kst": "08:20 KST",
       "time_display": "18:20 ET / 07:20 BJ"
-    },
-    {
-      "id": "20261120070103925800",
-      "title": "全球财经早餐 | 2026年11月20日",
-      "summary": "美联储一大官员不排除大幅加息选项！特朗普称不会仓促决定对伊行动，普京誓言将对克里米亚大桥遇袭进行报复；中俄美计划增产精炼油……昨日今晨，全球都发生了哪些大事？",
-      "keywords": [
-        "美联储",
-        "加息",
-        "特朗普"
-      ],
-      "pub_ts": 1795129263.0,
-      "time_et": "11-19 18:01 ET",
-      "time_bj": "07:01 BJ",
-      "time_kst": "08:01 KST",
-      "time_display": "18:01 ET / 07:01 BJ"
     }
   ],
   "ticker_news": {
@@ -2392,6 +2390,20 @@
         "pub_ts": 1795109501.0
       },
       {
+        "title": "Micron CEO’s Nvidia message comes with warning for 2027",
+        "url": "https://www.thestreet.com/investing/micron-ceo-nvidia-warning-2027-supply-already-sold-out?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 23:33 ET",
+        "pub_ts": 1795149180.0
+      },
+      {
+        "title": "Nvidia Just Raised Its Supply Commitments to $390 Billion, Mostly for Memory. Micron Is the Memory Stock I'd Buy.",
+        "url": "https://www.fool.com/investing/2026/11/19/nvidia-just-raised-its-supply-commitments-to-usd390-billion-mostly-for-memory-micron-is-the-memory-stock-i-d-buy/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 23:27 ET",
+        "pub_ts": 1795148822.0
+      },
+      {
         "title": "Micron (MU) Dips More Than Broader Market: What You Should Know",
         "url": "https://finance.yahoo.com/markets/stocks/articles/micron-mu-dips-more-broader-214503318.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2404,20 +2416,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 16:12 ET",
         "pub_ts": 1795122726.0
-      },
-      {
-        "title": "Micron Technology to Report Fiscal First Quarter Results on December 17, 2026",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/micron-technology-report-fiscal-first-210100248.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 16:01 ET",
-        "pub_ts": 1795122060.0
-      },
-      {
-        "title": "Nvidia, Intel, Micron and Dell Stocks Jump as Anthropic Massive IPO Sparks Rally",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/nvidia-intel-micron-dell-stocks-185029536.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 13:50 ET",
-        "pub_ts": 1795114229.0
       }
     ],
     "SKHY": [
@@ -3297,16 +3295,16 @@
     "VRT": 1795150157.8443136,
     "HPE": 1795150157.8443136,
     "DELL": 1795150157.8443136,
-    "OKLO": 1795148724.9941022,
+    "OKLO": 1795150266.3187401,
     "CEG": 1795150157.8443136,
-    "FPS": 1795148724.9941022,
-    "MU": 1795148724.9941022,
-    "SKHY": 1795148724.9941022,
-    "WDC": 1795148724.9941022,
-    "STX": 1795148724.9941022,
-    "MSTR": 1795148724.9941022,
-    "SNDK": 1795148724.9941022,
-    "BTC-USD": 1795148724.9941022,
+    "FPS": 1795150266.3187401,
+    "MU": 1795150266.3187401,
+    "SKHY": 1795150266.3187401,
+    "WDC": 1795150266.3187401,
+    "STX": 1795150266.3187401,
+    "MSTR": 1795150266.3187401,
+    "SNDK": 1795150266.3187401,
+    "BTC-USD": 1795150266.3187401,
     "CRWD": 1795149443.2057312,
     "ORCL": 1795149548.3177624,
     "COIN": 1795149443.2057312,
@@ -3322,13 +3320,13 @@
     "CAT": 1795150157.8443136,
     "FN": 1795149443.2057312,
     "GLW": 1795149443.2057312,
-    "ANT": 1795148724.9941022,
-    "XAUUSD": 1795148724.9941022
+    "ANT": 1795150266.3187401,
+    "XAUUSD": 1795150266.3187401
   },
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (23:41 ET / 12:41 BJ) [美联储]：费城联储主席保尔森表示，清晰的政策沟通有助于稳定市场预期，使美联储能够根据经济数据调整利率，而不必频繁提供明确的利率预测。点击查看…",
+    "detail": "⚡ 最新核心快讯 (23:49 ET / 12:49 BJ) [降息]：【LPR为何按兵不动？专家：政策利率换锚 短期降息空间有限】 11月20日讯，今日，央行将一年期和五年期贷款市场报价利率（LPR）分别维持在3%和3.5%不变，为连续18个月保持不变。自20",
     "event_name": "",
     "minutes_left": 0
   }
