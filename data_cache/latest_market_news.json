@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795156129.884,
-  "updated_at_et": "11-20 01:28 ET",
-  "updated_at_kst": "15:28 KST",
+  "updated_at_ts": 1795156230.373,
+  "updated_at_et": "11-20 01:30 ET",
+  "updated_at_kst": "15:30 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2987,6 +2987,13 @@
         "pub_ts": 1795114994.0
       },
       {
+        "title": "What Does JPMorgan Chase (JPM) Naming A New CFO Mean For Investors?",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/does-jpmorgan-chase-jpm-naming-060933124.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 01:09 ET",
+        "pub_ts": 1795154973.0
+      },
+      {
         "title": "Vendor attack exposes JPMorgan Reserve cardholder emails",
         "url": "https://www.americanbanker.com/news/vendor-attack-exposes-jpmorgan-reserve-cardholder-emails?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3006,13 +3013,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 15:29 ET",
         "pub_ts": 1795120153.0
-      },
-      {
-        "title": "Top Analyst Reports for Berkshire Hathaway, JPMorgan & Procter & Gamble",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/top-analyst-reports-berkshire-hathaway-202300112.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 15:23 ET",
-        "pub_ts": 1795119780.0
       }
     ],
     "WMT": [
@@ -3248,27 +3248,27 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795154686.5776148,
-    "SOXL": 1795154686.5776148,
-    "SPY": 1795154686.5776148,
-    "DIA": 1795154686.5776148,
-    "SOXX": 1795154686.5776148,
-    "QQQ": 1795154686.5776148,
-    "SMH": 1795154686.5776148,
-    "IWM": 1795154686.5776148,
-    "IGV": 1795154686.5776148,
-    "TLT": 1795154686.5776148,
-    "GLD": 1795154686.5776148,
-    "SQQQ": 1795154686.5776148,
-    "TSM": 1795154686.5776148,
-    "VIXY": 1795154686.5776148,
-    "SOXS": 1795154686.5776148,
-    "NVDA": 1795154686.5776148,
-    "AMD": 1795154686.5776148,
+    "KORU": 1795156230.3734956,
+    "SOXL": 1795156230.3734956,
+    "SPY": 1795156230.3734956,
+    "DIA": 1795156230.3734956,
+    "SOXX": 1795156230.3734956,
+    "QQQ": 1795156230.3734956,
+    "SMH": 1795156230.3734956,
+    "IWM": 1795156230.3734956,
+    "IGV": 1795156230.3734956,
+    "TLT": 1795156230.3734956,
+    "GLD": 1795156230.3734956,
+    "SQQQ": 1795156230.3734956,
+    "TSM": 1795156230.3734956,
+    "VIXY": 1795156230.3734956,
+    "SOXS": 1795156230.3734956,
+    "NVDA": 1795156230.3734956,
+    "AMD": 1795156230.3734956,
     "ASML": 1795154791.9838514,
-    "QCOM": 1795154686.5776148,
-    "AVGO": 1795154686.5776148,
-    "AMAT": 1795154686.5776148,
+    "QCOM": 1795156230.3734956,
+    "AVGO": 1795156230.3734956,
+    "AMAT": 1795156230.3734956,
     "META": 1795154791.9838514,
     "GOOGL": 1795154791.9838514,
     "MSFT": 1795154791.9838514,
@@ -3318,8 +3318,8 @@
     "NKE": 1795155713.6982114,
     "MCD": 1795155713.6982114,
     "PEP": 1795155713.6982114,
-    "XOM": 1795154686.5776148,
-    "JPM": 1795154686.5776148,
+    "XOM": 1795156230.3734956,
+    "JPM": 1795156230.3734956,
     "WMT": 1795154791.9838514,
     "V": 1795155605.3936522,
     "CAT": 1795154791.9838514,
