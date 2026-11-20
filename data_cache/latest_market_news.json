@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795207248.669,
-  "updated_at_et": "11-20 15:40 ET",
-  "updated_at_kst": "05:40 KST",
+  "updated_at_ts": 1795207345.949,
+  "updated_at_et": "11-20 15:42 ET",
+  "updated_at_kst": "05:42 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1752,6 +1752,20 @@
     ],
     "SPCX": [
       {
+        "title": "SpaceX’s New ‘Game Plan’ Could Pay Off, Says Top Analyst",
+        "url": "https://finance.yahoo.com/technology/ai/articles/spacex-game-plan-could-pay-201104881.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 15:11 ET",
+        "pub_ts": 1795205464.0
+      },
+      {
+        "title": "Trouble For Elon Musk's SpaceX In Texas? Proposed $24 Billion Data Center and Power Plant Face Uncertainty After Local Officials Reject Tax Break",
+        "url": "https://finance.yahoo.com/technology/articles/trouble-elon-musks-spacex-texas-193005649.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 14:30 ET",
+        "pub_ts": 1795203005.0
+      },
+      {
         "title": "Forget SpaceX: This Stock Could Be the Real Winner of the Space Race",
         "url": "https://www.fool.com/investing/2026/11/20/forget-spacex-this-stock-could-be-the-real-winner-of-the-space-race/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1771,20 +1785,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 12:45 ET",
         "pub_ts": 1795196720.0
-      },
-      {
-        "title": "SpaceX-Owned Cursor Considers Dropping Chinese AI Models – A Look At Some Key Details",
-        "url": "https://stocktwits.com/news-articles/markets/equity/spacex-owned-cursor-considers-dropping-chinese-ai-models/cNbSnO3R91d?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 12:27 ET",
-        "pub_ts": 1795195647.0
-      },
-      {
-        "title": "SpaceX Stocks Drop 6.57% Premarket After $32 Billion Bond Sale at 8.26%",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/spacex-stocks-drop-6-57-172646022.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 12:26 ET",
-        "pub_ts": 1795195606.0
       }
     ],
     "ASTS": [
@@ -2714,6 +2714,13 @@
     ],
     "COIN": [
       {
+        "title": "What Coinbase Global Bears Saw Before A 54% Drop",
+        "url": "https://finance.yahoo.com/markets/crypto/articles/coinbase-global-bears-saw-54-201247395.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 15:12 ET",
+        "pub_ts": 1795205567.0
+      },
+      {
         "title": "Jesse Pollak Says Tokenized Stocks on Base Have Crossed $1 Billion in Weekly Volume",
         "url": "https://unchainedcrypto.com/jesse-pollak-says-tokenized-stocks-on-base-have-crossed-1-billion-in-weekly-volume/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2740,13 +2747,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 10:30 ET",
         "pub_ts": 1795188619.0
-      },
-      {
-        "title": "Coinbase falls below Morgan Stanley’s $120 target",
-        "url": "https://www.thestreet.com/crypto/markets/coinbase-slides-to-a-one-year-low-below-morgan-stanleys-120-target?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 10:30 ET",
-        "pub_ts": 1795188600.0
       }
     ],
     "LLY": [
@@ -2899,6 +2899,13 @@
     ],
     "PEP": [
       {
+        "title": "PepsiCo (PEP) Lands Hyatt Deal On A Fair Value Debate",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/pepsico-pep-lands-hyatt-deal-201401098.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 15:14 ET",
+        "pub_ts": 1795205641.0
+      },
+      {
         "title": "PepsiCo Has Raised Its Dividend by a Total of 37% Over the Last 5 Years. I Predict $10,000 Invested in It Today Will Pay This Much in Dividends Over the Next Decade.",
         "url": "https://www.fool.com/investing/2026/11/20/pepsico-raised-its-dividend-37-over-the-last-5-years-i-predict-usd10-000-will-pay-this-much-in-dividends-over-the-next-decade/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2925,13 +2932,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 05:50 ET",
         "pub_ts": 1795171834.0
-      },
-      {
-        "title": "Wall Street Wrap: ASTS, BE, MDB Stocks Win Bullish Calls As PEP, USAR, SMMT Face Downgrades",
-        "url": "https://stocktwits.com/news-articles/markets/equity/wall-street-wrap-asts-be-mdb-stocks-win-bullish-calls-as-pep-usar-smmt-face-downgrades/cNbSfrjR9KN?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 05:14 ET",
-        "pub_ts": 1795169690.0
       }
     ],
     "XOM": [
@@ -3270,25 +3270,25 @@
     "NOW": 1795206435.7977147,
     "AMZN": 1795206435.7977147,
     "CRWV": 1795206435.7977147,
-    "NBIS": 1795205824.9049165,
-    "APLD": 1795205824.9049165,
-    "VST": 1795205824.9049165,
-    "BE": 1795205824.9049165,
-    "CRDO": 1795205824.9049165,
-    "COHR": 1795205824.9049165,
-    "MRVL": 1795205824.9049165,
-    "LITE": 1795205824.9049165,
+    "NBIS": 1795207345.948974,
+    "APLD": 1795207345.948974,
+    "VST": 1795207345.948974,
+    "BE": 1795207345.948974,
+    "CRDO": 1795207345.948974,
+    "COHR": 1795207345.948974,
+    "MRVL": 1795207345.948974,
+    "LITE": 1795207345.948974,
     "AAOI": 1795206435.7977147,
-    "SPCX": 1795205824.9049165,
-    "ASTS": 1795205824.9049165,
-    "AXTI": 1795205824.9049165,
+    "SPCX": 1795207345.948974,
+    "ASTS": 1795207345.948974,
+    "AXTI": 1795207345.948974,
     "NASA": 1795206435.7977147,
     "LUNR": 1795206435.7977147,
     "TSLA": 1795206435.7977147,
     "AXP": 1795206435.7977147,
-    "RKLB": 1795205824.9049165,
+    "RKLB": 1795207345.948974,
     "KO": 1795206435.7977147,
-    "FLY": 1795205824.9049165,
+    "FLY": 1795207345.948974,
     "INTC": 1795206435.7977147,
     "VRT": 1795206435.7977147,
     "HPE": 1795206435.7977147,
@@ -3303,21 +3303,21 @@
     "MSTR": 1795206540.064562,
     "SNDK": 1795206435.7977147,
     "BTC-USD": 1795206940.811205,
-    "CRWD": 1795205824.9049165,
-    "ORCL": 1795205824.9049165,
-    "COIN": 1795205824.9049165,
+    "CRWD": 1795207345.948974,
+    "ORCL": 1795207345.948974,
+    "COIN": 1795207345.948974,
     "LLY": 1795205928.8399384,
     "MRNA": 1795205928.8399384,
     "NKE": 1795205928.8399384,
-    "MCD": 1795205824.9049165,
-    "PEP": 1795205824.9049165,
+    "MCD": 1795207345.948974,
+    "PEP": 1795207345.948974,
     "XOM": 1795206940.811205,
     "JPM": 1795206940.811205,
     "WMT": 1795206940.811205,
-    "V": 1795205824.9049165,
+    "V": 1795207345.948974,
     "CAT": 1795206940.811205,
-    "FN": 1795205824.9049165,
-    "GLW": 1795205824.9049165,
+    "FN": 1795207345.948974,
+    "GLW": 1795207345.948974,
     "ANT": 1795206940.811205,
     "XAUUSD": 1795206940.811205
   },
