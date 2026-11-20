@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795213839.791,
-  "updated_at_et": "11-20 17:30 ET",
-  "updated_at_kst": "07:30 KST",
+  "updated_at_ts": 1795213937.577,
+  "updated_at_et": "11-20 17:32 ET",
+  "updated_at_kst": "07:32 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -383,6 +383,13 @@
     ],
     "SOXL": [
       {
+        "title": "SOXL Crashes 32% in Its Third-Worst Day Ever and Is Down 90% From Its June Record. The Chip Index It Tracks Is Down 43%",
+        "url": "https://247wallst.com/investing/2026/11/20/soxl-crashes-32-in-its-third-worst-day-ever-and-is-down-90-from-its-june-record-the-chip-index-it-tracks-is-down-43/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 17:03 ET",
+        "pub_ts": 1795212189.0
+      },
+      {
         "title": "2 Leveraged ETFs Draw Options Traders as Tech Stocks Rebound",
         "url": "https://finance.yahoo.com/markets/options/articles/2-leveraged-etfs-draw-options-153922003.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -409,13 +416,6 @@
         "source": "Yahoo Finance",
         "time": "11-07 09:17 ET",
         "pub_ts": 1794061025.0
-      },
-      {
-        "title": "Dip Buyers in Leveraged Tech ETFs Are Getting Crushed",
-        "url": "https://247wallst.com/investing/2026/11/03/dip-buyers-in-leveraged-tech-etfs-are-getting-crushed/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-03 08:35 ET",
-        "pub_ts": 1793712957.0
       }
     ],
     "SPY": [
@@ -448,11 +448,11 @@
         "pub_ts": 1795192571.0
       },
       {
-        "title": "Exchange-Traded Funds, Equity Futures Fall Pre-Bell Friday Amid Continued AI Stock Selloff",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/exchange-traded-funds-equity-futures-140012643.html?.tsrc=rss",
+        "title": "The Biggest Winners from the Anthropic IPO Could Be Everyday SPY Investors",
+        "url": "https://www.barchart.com/story/news/8937798/the-biggest-winners-from-the-anthropic-ipo-could-be-everyday-spy-investors?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-20 09:00 ET",
-        "pub_ts": 1795183212.0
+        "time": "11-20 11:02 ET",
+        "pub_ts": 1795190524.0
       }
     ],
     "DIA": [
@@ -508,11 +508,11 @@
         "pub_ts": 1795086301.0
       },
       {
-        "title": "ETFs Are Net Sellers of NXP Semiconductors (NXPI) on Nov. 17",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-net-sellers-nxp-semiconductors-110354790.html?.tsrc=rss",
+        "title": "SOXL Crashes 32% in Its Third-Worst Day Ever and Is Down 90% From Its June Record. The Chip Index It Tracks Is Down 43%",
+        "url": "https://247wallst.com/investing/2026/11/20/soxl-crashes-32-in-its-third-worst-day-ever-and-is-down-90-from-its-june-record-the-chip-index-it-tracks-is-down-43/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-19 06:03 ET",
-        "pub_ts": 1795086234.0
+        "time": "11-20 17:03 ET",
+        "pub_ts": 1795212189.0
       },
       {
         "title": "Did the AI Bubble Pop? Polymarket Says It Could Soon, but There's a Catch",
@@ -901,6 +901,13 @@
     ],
     "NVDA": [
       {
+        "title": "Trump’s Treasury Secretary Keeps Nvidia’s H200 China Policy as House Data Show Nearly 880,000 AI Chips Approved",
+        "url": "https://www.tikr.com/blog/trumps-treasury-secretary-keeps-nvidias-h200-china-policy-as-house-data-show-nearly-880000-ai-chips-approved?ref=yahoofinance&tlnk=yf-261120-rx666q2r&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 16:58 ET",
+        "pub_ts": 1795211917.0
+      },
+      {
         "title": "Stock Market Today, Nov. 20: Nvidia's $2.5 Trillion Rout Deepens as SEC Accounting Probe Adds to Wall Street's AI Sell-Off",
         "url": "https://www.fool.com/coverage/stock-market-today/2026/11/20/stock-market-today-nov-20-nvidia-s-usd2-5-trillion-rout-deepens-as-sec-accounting-probe-adds-to-wall-street-s-ai-sell-off/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -927,13 +934,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 16:43 ET",
         "pub_ts": 1795210982.0
-      },
-      {
-        "title": "Nvidia’s Stock Slide Deepens After Report of SEC Accounting Probe",
-        "url": "https://finance.yahoo.com/m/30e2a4ab-b95f-395f-9f4d-e4058f562e01/nvidia%E2%80%99s-stock-slide-deepens.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 16:43 ET",
-        "pub_ts": 1795210980.0
       }
     ],
     "AMD": [
@@ -943,6 +943,20 @@
         "source": "Yahoo Finance",
         "time": "11-20 13:19 ET",
         "pub_ts": 1795198755.0
+      },
+      {
+        "title": "Trump’s Treasury Secretary Keeps Nvidia’s H200 China Policy as House Data Show Nearly 880,000 AI Chips Approved",
+        "url": "https://www.tikr.com/blog/trumps-treasury-secretary-keeps-nvidias-h200-china-policy-as-house-data-show-nearly-880000-ai-chips-approved?ref=yahoofinance&tlnk=yf-261120-rx666q2r&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 16:58 ET",
+        "pub_ts": 1795211917.0
+      },
+      {
+        "title": "Victor Peng Sees AI, Quantum Computing as Long-Term Opportunities",
+        "url": "https://finance.yahoo.com/video/victor-peng-sees-ai-quantum-214139731.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 16:41 ET",
+        "pub_ts": 1795210899.0
       },
       {
         "title": "AMD Stocks Plunge 7.72% as Short Seller Questions China Firmware Ties",
@@ -957,20 +971,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 15:50 ET",
         "pub_ts": 1795207802.0
-      },
-      {
-        "title": "AMD Stock Just Crashed Nearly 8%: Here's Why and What to Do Now",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/amd-stock-just-crashed-nearly-190000127.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 14:00 ET",
-        "pub_ts": 1795201200.0
-      },
-      {
-        "title": "AMD Stock Gets Crushed by Anthropic’s Drop and a Short Report. It’s No Time to Panic.",
-        "url": "https://finance.yahoo.com/m/f7918816-1d56-3219-b7b0-56c411582527/amd-stock-gets-crushed-by.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 13:42 ET",
-        "pub_ts": 1795200120.0
       }
     ],
     "ASML": [
@@ -1123,6 +1123,20 @@
     ],
     "META": [
       {
+        "title": "Shots Fired: Meta Will Reportedly Sell a $300 Muse Charm With Free Verizon 5G as Apple Builds Its Agent",
+        "url": "https://www.tikr.com/blog/shots-fired-meta-will-reportedly-sell-a-300-muse-charm-with-free-verizon-5g-as-apple-builds-its-agent?ref=yahoofinance&tlnk=yf-261120-pg825wq7&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 17:00 ET",
+        "pub_ts": 1795212018.0
+      },
+      {
+        "title": "Billionaire Dan Loeb’s “Bear Math”: AI Needs $2-3 Trillion of New Yearly Revenue. He Sold Amazon",
+        "url": "https://www.tikr.com/blog/billionaire-dan-loebs-bear-math-ai-needs-2-3-trillion-of-new-yearly-revenue-he-sold-amazon?ref=yahoofinance&tlnk=yf-261120-5qww8h93&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 16:59 ET",
+        "pub_ts": 1795211948.0
+      },
+      {
         "title": "Meta's Server Chip Shake-Up Could Hand Nvidia a Win",
         "url": "https://finance.yahoo.com/technology/articles/metas-server-chip-shake-could-214208711.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1130,32 +1144,18 @@
         "pub_ts": 1795210928.0
       },
       {
+        "title": "Apple Stock Has a New AI Catalyst -- It Could Take on OpenAI, Meta and Anthropic",
+        "url": "https://finance.yahoo.com/technology/ai/articles/apple-stock-ai-catalyst-could-214023171.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 16:40 ET",
+        "pub_ts": 1795210823.0
+      },
+      {
         "title": "Anthropic Stock Came Within 5 Cents of Its $83 IPO Price on Day 2, Then Bounced 6% to Close at $88.30. Facebook Closed Its Day 2 10% Below Its IPO Price",
         "url": "https://247wallst.com/investing/2026/11/20/anthropic-stock-came-within-5-cents-of-its-83-ipo-price-on-day-2-then-bounced-6-to-close-at-88-30-facebook-closed-its-day-2-10-below-its-ipo-price/?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-20 16:17 ET",
         "pub_ts": 1795209430.0
-      },
-      {
-        "title": "Apple Plans an AI Agent to Rival Meta's Muse",
-        "url": "https://finance.yahoo.com/technology/ai/articles/apple-plans-ai-agent-rival-181309227.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 13:13 ET",
-        "pub_ts": 1795198389.0
-      },
-      {
-        "title": "Meta (META) Stock Looks Discounted As Its 76% Five Year Run Cools",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/meta-meta-stock-looks-discounted-181051560.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 13:10 ET",
-        "pub_ts": 1795198251.0
-      },
-      {
-        "title": "Meta’s (META) AI Spending Spree Looks Risky, but There’s More to the Story",
-        "url": "https://finance.yahoo.com/technology/ai/articles/meta-meta-ai-spending-spree-180436289.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 13:04 ET",
-        "pub_ts": 1795197876.0
       }
     ],
     "GOOGL": [
@@ -1181,21 +1181,28 @@
         "pub_ts": 1795210910.0
       },
       {
+        "title": "Alphabet Stocks Fall 3.46% Even as Anthropic Debut Values Its Stake at $172 Billion",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/alphabet-stocks-fall-3-46-214144947.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 16:41 ET",
+        "pub_ts": 1795210904.0
+      },
+      {
         "title": "Alphabet Raises $4.19 Billion in Debt as Free Cash Flow Turns Negative",
         "url": "https://finance.yahoo.com/technology/articles/alphabet-raises-4-19-billion-214109252.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-20 16:41 ET",
         "pub_ts": 1795210869.0
-      },
-      {
-        "title": "Nasdaq turns negative: Why Anthropic & other tech stocks are getting crushed",
-        "url": "https://finance.yahoo.com/video/nasdaq-turns-negative-why-anthropic--other-tech-stocks-are-getting-crushed-213846825.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 16:38 ET",
-        "pub_ts": 1795210726.0
       }
     ],
     "MSFT": [
+      {
+        "title": "Mercedes F1's drivers still get the final say, even as it utilizes AI agents",
+        "url": "https://finance.yahoo.com/video/mercedes-f1s-drivers-still-get-the-final-say-even-as-it-utilizes-ai-agents-222256690.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 17:22 ET",
+        "pub_ts": 1795213376.0
+      },
       {
         "title": "Could a handful of tech giants control the future of AI?",
         "url": "https://finance.yahoo.com/video/could-a-handful-of-tech-giants-control-the-future-of-ai-180645576.html?.tsrc=rss",
@@ -1223,13 +1230,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 15:38 ET",
         "pub_ts": 1795207123.0
-      },
-      {
-        "title": "Cerebras Stock Looks Like a Buy as Customer Base Expands",
-        "url": "https://www.fool.com/investing/2026/11/20/cerebras-stock-looks-like-a-buy-as-customer-base-expands/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 14:50 ET",
-        "pub_ts": 1795204202.0
       }
     ],
     "AAPL": [
@@ -3241,30 +3241,30 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795212418.1023252,
-    "SOXL": 1795212418.1023252,
-    "SPY": 1795212418.1023252,
-    "DIA": 1795212418.1023252,
-    "SOXX": 1795212418.1023252,
-    "QQQ": 1795212418.1023252,
-    "SMH": 1795212418.1023252,
-    "IWM": 1795212418.1023252,
-    "IGV": 1795212418.1023252,
-    "TLT": 1795212418.1023252,
-    "GLD": 1795212418.1023252,
-    "SQQQ": 1795212418.1023252,
-    "TSM": 1795212418.1023252,
-    "VIXY": 1795212418.1023252,
-    "SOXS": 1795212418.1023252,
-    "NVDA": 1795212418.1023252,
-    "AMD": 1795212418.1023252,
+    "KORU": 1795213937.5765007,
+    "SOXL": 1795213937.5765007,
+    "SPY": 1795213937.5765007,
+    "DIA": 1795213937.5765007,
+    "SOXX": 1795213937.5765007,
+    "QQQ": 1795213937.5765007,
+    "SMH": 1795213937.5765007,
+    "IWM": 1795213937.5765007,
+    "IGV": 1795213937.5765007,
+    "TLT": 1795213937.5765007,
+    "GLD": 1795213937.5765007,
+    "SQQQ": 1795213937.5765007,
+    "TSM": 1795213937.5765007,
+    "VIXY": 1795213937.5765007,
+    "SOXS": 1795213937.5765007,
+    "NVDA": 1795213937.5765007,
+    "AMD": 1795213937.5765007,
     "ASML": 1795212523.5979607,
     "QCOM": 1795212523.5979607,
-    "AVGO": 1795212418.1023252,
-    "AMAT": 1795212418.1023252,
-    "META": 1795212418.1023252,
-    "GOOGL": 1795212418.1023252,
-    "MSFT": 1795212418.1023252,
+    "AVGO": 1795213937.5765007,
+    "AMAT": 1795213937.5765007,
+    "META": 1795213937.5765007,
+    "GOOGL": 1795213937.5765007,
+    "MSFT": 1795213937.5765007,
     "AAPL": 1795212523.5979607,
     "PLTR": 1795212523.5979607,
     "NOW": 1795212523.5979607,
