@@ -6688,10 +6688,12 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
             min-width: 0;
         }}
         #cycleCanvasWrapper {{
-            width: 100%;
-            flex: 1;
-            min-height: 390px;
             position: relative;
+            width: 100%;
+            height: 440px;
+            min-height: 440px;
+            max-height: 440px;
+            flex: 0 0 440px;
             cursor: grab;
             user-select: none;
             touch-action: none;
@@ -6699,6 +6701,14 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
             border-radius: 8px;
             background: var(--canvas-bg);
             border: 1px solid var(--border-color);
+            box-sizing: border-box;
+        }}
+        #cycleChartCanvas {{
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            display: block;
         }}
         #cycleTooltip {{
             position: absolute;
@@ -7139,7 +7149,10 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
                 grid-template-columns: 1fr;
             }}
             #cycleCanvasWrapper {{
+                height: 320px;
                 min-height: 320px;
+                max-height: 320px;
+                flex: 0 0 320px;
             }}
         }}
         @media (max-width: 768px) {{
@@ -7351,7 +7364,7 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
 
                     <!-- Canvas Wrapper -->
                     <div id="cycleCanvasWrapper">
-                        <canvas id="cycleChartCanvas" style="width: 100%; height: 100%; display: block;"></canvas>
+                        <canvas id="cycleChartCanvas" style="position: absolute; inset: 0; width: 100%; height: 100%; display: block;"></canvas>
                         <!-- Floating HUD Tooltip -->
                         <div id="cycleTooltip"></div>
                     </div>
@@ -8181,17 +8194,17 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
             if (!canvas || !wrapper) return;
 
             const dpr = window.devicePixelRatio || 1;
-            const rect = wrapper.getBoundingClientRect();
-            const width = rect.width || 750;
-            const height = rect.height || 320;
+            const width = Math.max(1, Math.round(wrapper.clientWidth || 750));
+            const height = Math.max(1, Math.round(wrapper.clientHeight || 440));
 
-            canvas.width = width * dpr;
-            canvas.height = height * dpr;
-            canvas.style.width = width + 'px';
-            canvas.style.height = height + 'px';
+            const targetW = Math.round(width * dpr);
+            const targetH = Math.round(height * dpr);
+            if (canvas.width !== targetW) canvas.width = targetW;
+            if (canvas.height !== targetH) canvas.height = targetH;
 
             const ctx = canvas.getContext('2d');
-            ctx.scale(dpr, dpr);
+            ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+            ctx.clearRect(0, 0, width, height);
 
             const hist = data.history || [];
             const proj = data.projection || [];

@@ -114,6 +114,20 @@ def verify_desktop(browser):
     )
     print(f"[PASS Desktop] First-screen 15-day canvas bbox={canvas_box} (<= 900px).")
 
+    # Anti-regression: 20 consecutive mousemove events over 15-day canvas + 1s wait MUST NOT grow height
+    h_before = page.evaluate("() => document.getElementById('cycleChartCanvas').getBoundingClientRect().height")
+    assert 380.0 <= h_before <= 520.0, f"Canvas height out of locked range [380, 520]: {h_before}"
+    for i in range(20):
+        mx = canvas_box["x"] + canvas_box["width"] * (0.08 + 0.84 * (i / 19.0))
+        my = canvas_box["y"] + canvas_box["height"] * (0.25 + 0.50 * ((i % 4) / 3.0))
+        page.mouse.move(mx, my)
+        page.wait_for_timeout(20)
+    page.wait_for_timeout(1000)
+    h_after = page.evaluate("() => document.getElementById('cycleChartCanvas').getBoundingClientRect().height")
+    assert h_after == h_before, f"Canvas infinite-height growth regression detected: before={h_before}px -> after={h_after}px (delta={h_after - h_before}px)"
+    assert 380.0 <= h_after <= 520.0, f"Canvas height after hover out of range [380, 520]: {h_after}"
+    print(f"[PASS Desktop] Canvas hover anti-growth: 20 mousemoves + 1s wait -> before={h_before}px, after={h_after}px (delta=0px).")
+
     # Expand/Collapse both drawers cleanly
     page.locator("#btnModelMacroDrawer").click()
     page.wait_for_timeout(150)
