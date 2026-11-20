@@ -1,9 +1,22 @@
 {
-  "updated_at_ts": 1795200356.638,
-  "updated_at_et": "11-20 13:45 ET",
-  "updated_at_kst": "03:45 KST",
+  "updated_at_ts": 1795200460.372,
+  "updated_at_et": "11-20 13:47 ET",
+  "updated_at_kst": "03:47 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261121024610212800",
+      "title": "美国总统特朗普：对美国商务部长卢特尼克尚未失去信心。",
+      "summary": "美国总统特朗普：对美国商务部长卢特尼克尚未失去信心。",
+      "keywords": [
+        "特朗普"
+      ],
+      "pub_ts": 1795200370.0,
+      "time_et": "11-20 13:46 ET",
+      "time_bj": "02:46 BJ",
+      "time_kst": "03:46 KST",
+      "time_display": "13:46 ET / 02:46 BJ"
+    },
     {
       "id": "20261121021836527800",
       "title": "美国总统特朗普：希望黄仁勋道歉并回归。",
@@ -328,19 +341,6 @@
       "time_bj": "22:27 BJ",
       "time_kst": "23:27 KST",
       "time_display": "09:27 ET / 22:27 BJ"
-    },
-    {
-      "id": "20261120215539608800",
-      "title": "【特朗普下月将发表演讲 涉及伊朗战争】 11月20日讯，据纽约邮报：美国总统特朗普将于下…",
-      "summary": "【特朗普下月将发表演讲 涉及伊朗战争】 11月20日讯，据纽约邮报：美国总统特朗普将于下月发表主旨演讲，谈及伊朗战争。（报道援引白宫发言人就特朗普12月5日演讲发表的评论）",
-      "keywords": [
-        "特朗普"
-      ],
-      "pub_ts": 1795182939.0,
-      "time_et": "11-20 08:55 ET",
-      "time_bj": "21:55 BJ",
-      "time_kst": "22:55 KST",
-      "time_display": "08:55 ET / 21:55 BJ"
     }
   ],
   "ticker_news": {
@@ -2529,6 +2529,13 @@
     ],
     "MSTR": [
       {
+        "title": "Bitcoin Drops Below $59K, Wiping Out $1.5B In Crypto Bets: MSTR, BMNR, ASST Stocks Extend Losses",
+        "url": "https://stocktwits.com/news-articles/markets/cryptocurrency/bitcoin-drops-below-59-k-wiping-out-1-5-b-in-crypto-bets-mstr-bmnr-asst-stocks-extend-losses/cNbSo2WR917?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 13:34 ET",
+        "pub_ts": 1795199646.0
+      },
+      {
         "title": "Is Monness Wrong to Give Up on Strategy? Wall Street Still Sees $233",
         "url": "https://www.tikr.com/blog/is-monness-wrong-to-give-up-on-strategy-wall-street-still-sees-233?ref=yahoofinance&tlnk=yf-261120-84j9664h&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2555,13 +2562,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 07:15 ET",
         "pub_ts": 1795176918.0
-      },
-      {
-        "title": "Strategy Buys Back $3 Billion in STRC Shares as Credit Markets Tighten",
-        "url": "https://www.marketbeat.com/instant-alerts/event-strategy-buys-back-3-billion-in-strc-shares-as-credit-markets-tighten-2026-11-19/?utm_source=yahoofinance&utm_medium=yahoofinance&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 21:12 ET",
-        "pub_ts": 1795140728.0
       }
     ],
     "SNDK": [
@@ -3294,13 +3294,13 @@
     "HPE": 1795200356.6377416,
     "DELL": 1795200356.6377416,
     "OKLO": 1795200356.6377416,
-    "CEG": 1795198945.6172318,
+    "CEG": 1795200460.3717928,
     "FPS": 1795200356.6377416,
     "MU": 1795200356.6377416,
     "SKHY": 1795200356.6377416,
     "WDC": 1795200356.6377416,
-    "STX": 1795198945.6172318,
-    "MSTR": 1795198945.6172318,
+    "STX": 1795200460.3717928,
+    "MSTR": 1795200460.3717928,
     "SNDK": 1795200356.6377416,
     "BTC-USD": 1795199343.7344005,
     "CRWD": 1795199743.8412192,
@@ -3324,7 +3324,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (13:18 ET / 02:18 BJ) [特朗普]：美国总统特朗普：希望黄仁勋道歉并回归。",
+    "detail": "⚡ 最新核心快讯 (13:46 ET / 02:46 BJ) [特朗普]：美国总统特朗普：对美国商务部长卢特尼克尚未失去信心。",
     "event_name": "",
     "minutes_left": 0
   }
