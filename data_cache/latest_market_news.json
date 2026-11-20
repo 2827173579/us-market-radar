@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795147094.917,
-  "updated_at_et": "11-19 22:58 ET",
-  "updated_at_kst": "12:58 KST",
+  "updated_at_ts": 1795147200.117,
+  "updated_at_et": "11-19 23:00 ET",
+  "updated_at_kst": "13:00 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2425,6 +2425,13 @@
     ],
     "SKHY": [
       {
+        "title": "South Korea’s Stock Market and the Nikkei 225 Sink More Than 4% as the AI Selloff Spreads From Wall Street. Here’s How Much of a Target-Date Fund Is in Samsung, SK Hynix and TSMC",
+        "url": "https://247wallst.com/investing/2026/11/19/south-koreas-stock-market-and-the-nikkei-225-sink-more-than-4-as-the-ai-selloff-spreads-from-wall-street-heres-how-much-of-a-target-date-fund-is-in-samsung-sk-hynix-and-tsmc/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 22:51 ET",
+        "pub_ts": 1795146664.0
+      },
+      {
         "title": "South Korea’s Stock Market Sinks 4.6% as KOSPI Heavyweights SK Hynix and Samsung Fall 6% After Wall Street’s AI Selloff",
         "url": "https://247wallst.com/investing/2026/11/19/south-koreas-stock-market-sinks-4-6-as-kospi-heavyweights-sk-hynix-and-samsung-fall-6-after-wall-streets-ai-selloff/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2451,13 +2458,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 07:11 ET",
         "pub_ts": 1795090276.0
-      },
-      {
-        "title": "Global chip stocks rally as Anthropic’s record IPO boosts confidence in AI trade",
-        "url": "https://finance.yahoo.com/technology/ai/articles/global-chip-stocks-rally-anthropic-112707609.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 06:27 ET",
-        "pub_ts": 1795087627.0
       }
     ],
     "WDC": [
@@ -3202,6 +3202,13 @@
     ],
     "ANT": [
       {
+        "title": "I'm Buying The Anthropic IPO, Here's Why",
+        "url": "https://finnhub.io/api/news?id=652d25e15d3aefee8622c81b06e1118850144da61fd966b244f4f2ab291aef4a",
+        "source": "SeekingAlpha",
+        "time": "11-19 17:44 ET",
+        "pub_ts": 1795128291.0
+      },
+      {
         "title": "Anthropic: A Strange Time To Be Sensible",
         "url": "https://finnhub.io/api/news?id=18c5deef7c17d602561286c5e661ed21f63ff94e5530dd0726d37d1d03b91065",
         "source": "SeekingAlpha",
@@ -3228,13 +3235,6 @@
         "source": "SeekingAlpha",
         "time": "11-19 13:02 ET",
         "pub_ts": 1795111342.0
-      },
-      {
-        "title": "Beyond The Anthropic IPO: Top AI Stocks For The Next Phase Of The Secular Bull",
-        "url": "https://finnhub.io/api/news?id=29f4434c58add3d23c83aa97ede49011cc5261f2a12a227e92df70f466aba9cb",
-        "source": "SeekingAlpha",
-        "time": "11-19 12:51 ET",
-        "pub_ts": 1795110704.0
       }
     ],
     "XAUUSD": [
@@ -3300,16 +3300,16 @@
     "VRT": 1795147094.9172387,
     "HPE": 1795147094.9172387,
     "DELL": 1795147094.9172387,
-    "OKLO": 1795145673.3748174,
+    "OKLO": 1795147200.116817,
     "CEG": 1795147094.9172387,
-    "FPS": 1795145673.3748174,
-    "MU": 1795145673.3748174,
-    "SKHY": 1795145673.3748174,
-    "WDC": 1795145673.3748174,
-    "STX": 1795145673.3748174,
-    "MSTR": 1795145673.3748174,
-    "SNDK": 1795145673.3748174,
-    "BTC-USD": 1795145673.3748174,
+    "FPS": 1795147200.116817,
+    "MU": 1795147200.116817,
+    "SKHY": 1795147200.116817,
+    "WDC": 1795147200.116817,
+    "STX": 1795147200.116817,
+    "MSTR": 1795147200.116817,
+    "SNDK": 1795147200.116817,
+    "BTC-USD": 1795147200.116817,
     "CRWD": 1795146383.3291159,
     "ORCL": 1795146383.3291159,
     "COIN": 1795146383.3291159,
@@ -3325,8 +3325,8 @@
     "CAT": 1795147094.9172387,
     "FN": 1795146383.3291159,
     "GLW": 1795146383.3291159,
-    "ANT": 1795145673.3748174,
-    "XAUUSD": 1795145673.3748174
+    "ANT": 1795147200.116817,
+    "XAUUSD": 1795147200.116817
   },
   "calendar_banner": {
     "level": "idle_with_flash",
