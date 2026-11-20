@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795168996.695,
-  "updated_at_et": "11-20 05:03 ET",
-  "updated_at_kst": "19:03 KST",
+  "updated_at_ts": 1795169099.913,
+  "updated_at_et": "11-20 05:04 ET",
+  "updated_at_kst": "19:04 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -3200,6 +3200,13 @@
     ],
     "ANT": [
       {
+        "title": "Invesco QQQ Monthly Review",
+        "url": "https://finnhub.io/api/news?id=160c38cf1180315966a4a7333f08a04eb7c1ef94af1882a472148aa616ab8c51",
+        "source": "SeekingAlpha",
+        "time": "11-19 23:20 ET",
+        "pub_ts": 1795148400.0
+      },
+      {
         "title": "Market Brief: Anthropic After The IPO: Valuation, Float And Price",
         "url": "https://finnhub.io/api/news?id=b182baa72606de3107ab998652afde6b42cdc89a9e0c45457f3bc0b0d82ef00a",
         "source": "SeekingAlpha",
@@ -3226,13 +3233,6 @@
         "source": "SeekingAlpha",
         "time": "11-19 14:00 ET",
         "pub_ts": 1795114800.0
-      },
-      {
-        "title": "Micron: A 40% Drop With A $150B Backlog (Rating Upgrade)",
-        "url": "https://finnhub.io/api/news?id=29f42de74d1fa95e02ebd228be71062ea86ea8ced340e867dddfd2bff526b911",
-        "source": "SeekingAlpha",
-        "time": "11-19 13:19 ET",
-        "pub_ts": 1795112360.0
       }
     ],
     "XAUUSD": [
@@ -3316,15 +3316,15 @@
     "NKE": 1795168309.3594632,
     "MCD": 1795168309.3594632,
     "PEP": 1795168309.3594632,
-    "XOM": 1795167378.3486795,
+    "XOM": 1795169099.913061,
     "JPM": 1795168996.6946113,
-    "WMT": 1795167378.3486795,
+    "WMT": 1795169099.913061,
     "V": 1795168309.3594632,
-    "CAT": 1795167378.3486795,
+    "CAT": 1795169099.913061,
     "FN": 1795168309.3594632,
     "GLW": 1795168309.3594632,
-    "ANT": 1795167378.3486795,
-    "XAUUSD": 1795167378.3486795
+    "ANT": 1795169099.913061,
+    "XAUUSD": 1795169099.913061
   },
   "calendar_banner": {
     "level": "idle_with_flash",
