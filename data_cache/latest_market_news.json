@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795148620.293,
-  "updated_at_et": "11-19 23:23 ET",
-  "updated_at_kst": "13:23 KST",
+  "updated_at_ts": 1795148724.994,
+  "updated_at_et": "11-19 23:25 ET",
+  "updated_at_kst": "13:25 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2461,6 +2461,13 @@
     ],
     "WDC": [
       {
+        "title": "Whale Rock Dumps Western Digital. Buy the AI Storage Dip for 113% Upside.",
+        "url": "https://www.barchart.com/story/news/8926082/whale-rock-dumps-western-digital-buy-the-ai-storage-dip-for-113-upside?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 17:03 ET",
+        "pub_ts": 1795125797.0
+      },
+      {
         "title": "Western Digital Stocks Jump 8.07% as Storage Rally Tracks Anthropic Debut",
         "url": "https://finance.yahoo.com/markets/stocks/articles/western-digital-stocks-jump-8-183711787.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2487,13 +2494,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 10:52 ET",
         "pub_ts": 1795017158.0
-      },
-      {
-        "title": "WDC Stock Falls 20% in a Month: Is the Dip a Buying Opportunity Now?",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/wdc-stock-falls-20-month-120800389.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 07:08 ET",
-        "pub_ts": 1795003680.0
       }
     ],
     "STX": [
@@ -3299,16 +3299,16 @@
     "VRT": 1795148620.2927759,
     "HPE": 1795148620.2927759,
     "DELL": 1795148620.2927759,
-    "OKLO": 1795147200.116817,
+    "OKLO": 1795148724.9941022,
     "CEG": 1795148620.2927759,
-    "FPS": 1795147200.116817,
-    "MU": 1795147200.116817,
-    "SKHY": 1795147200.116817,
-    "WDC": 1795147200.116817,
-    "STX": 1795147200.116817,
-    "MSTR": 1795147200.116817,
-    "SNDK": 1795147200.116817,
-    "BTC-USD": 1795147200.116817,
+    "FPS": 1795148724.9941022,
+    "MU": 1795148724.9941022,
+    "SKHY": 1795148724.9941022,
+    "WDC": 1795148724.9941022,
+    "STX": 1795148724.9941022,
+    "MSTR": 1795148724.9941022,
+    "SNDK": 1795148724.9941022,
+    "BTC-USD": 1795148724.9941022,
     "CRWD": 1795147911.007925,
     "ORCL": 1795147911.007925,
     "COIN": 1795147911.007925,
@@ -3324,8 +3324,8 @@
     "CAT": 1795148620.2927759,
     "FN": 1795147911.007925,
     "GLW": 1795147911.007925,
-    "ANT": 1795147200.116817,
-    "XAUUSD": 1795147200.116817
+    "ANT": 1795148724.9941022,
+    "XAUUSD": 1795148724.9941022
   },
   "calendar_banner": {
     "level": "idle_with_flash",
