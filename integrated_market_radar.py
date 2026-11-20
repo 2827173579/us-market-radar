@@ -4698,6 +4698,9 @@ def display_terminal_tables(macro_data, stocks_data, weather_info, has_realtime=
 # ==============================================================================
 def run_radar_cycle(is_first_run=False, round_idx=1):
     """单轮执行全量标的数据抓取、实时穿透、技术指标重算与三份看板覆盖写入"""
+    # Refresh the daily AI panel before the terminal overlays live quotes, so a
+    # failed predictor cannot leave fresh sync_time on a stale latest_date.
+    maybe_refresh_daily_ml_panel()
     start_star_api_server()
     try:
         import zoneinfo
@@ -5276,7 +5279,7 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
         _build_fn = create_futu_terminal.build_futu_terminal_html
     except Exception:
         _build_fn = build_futu_terminal_html
-    futu_html = _build_fn(stocks_sorted, macro_data, weather_info, update_time_str=now_str, has_realtime=has_realtime, target_watchlist=target_watchlist, terminal_notifications=terminal_notifications, session_code=session_code, session_name=session_name, sync_side_effects=True)
+    futu_html = _build_fn(stocks_sorted, macro_data, weather_info, update_time_str=now_str, has_realtime=has_realtime, target_watchlist=target_watchlist, terminal_notifications=terminal_notifications, session_code=session_code, session_name=session_name, sync_side_effects=True, block_stale_daily_overlay=_DAILY_ML_REFRESH_FAILED)
     with open(FUTU_HTML_FILE, "w", encoding="utf-8") as f:
         f.write(futu_html)
     index_html_path = os.path.join(SCRATCH_DIR, "index.html")
@@ -5416,8 +5419,32 @@ def _btc_history_status():
         return "", False
 
 
+_DAILY_ML_REFRESH_FAILED = False
+
+
+def _mark_daily_ml_refresh(failed: bool):
+    global _DAILY_ML_REFRESH_FAILED
+    _DAILY_ML_REFRESH_FAILED = bool(failed)
+
+
+def _exit_if_daily_ml_refresh_failed():
+    """The intraday loop keeps running after a failed refresh, but the process must not exit 0."""
+    if _DAILY_ML_REFRESH_FAILED:
+        print(
+            "[!] 日线 AI 面板未刷新到最新已收盘交易日，进程以失败状态退出。",
+            file=sys.stderr,
+        )
+        sys.exit(1)
+
+
 def maybe_refresh_daily_ml_panel():
-    """每当美股收盘 (16:05 ET) 或 BTC-USD 跨越 UTC 00:00 产生新的自然日 K 线时，自动执行 ml_predictor_5y.py --refresh。"""
+    """每当美股收盘 (16:05 ET) 或 BTC-USD 跨越 UTC 00:00 产生新的自然日 K 线时，自动执行 ml_predictor_5y.py --refresh。
+
+    Returns True when the daily panel already covers the latest completed session
+    or this call refreshed it. A non-zero predictor exit is a failure: the caller
+    keeps polling intraday quotes, but must not publish those quotes onto the stale
+    AI snapshot, and must not exit 0 while the panel is still behind.
+    """
     try:
         expected = _latest_closed_us_day_et()
         exp_s = expected.strftime("%Y-%m-%d")
@@ -5444,7 +5471,8 @@ def maybe_refresh_daily_ml_panel():
         us_ok = bool((marker and marker >= exp_s) and (pred_day and pred_day >= exp_s) and (page_day and page_day >= exp_s))
         btc_ok = bool((btc_marker and btc_marker >= exp_btc_utc) and (btc_last_day and btc_last_day >= exp_btc_utc) and btc_has_wknd)
         if us_ok and btc_ok:
-            return
+            _mark_daily_ml_refresh(False)
+            return True
 
         state = {}
         if os.path.exists(state_path):
@@ -5455,20 +5483,30 @@ def maybe_refresh_daily_ml_panel():
                 state = {}
         last_attempt = float(state.get("last_attempt_epoch") or 0)
         if time.time() - last_attempt < 600:
-            return
+            _mark_daily_ml_refresh(True)
+            print(
+                f"[!] 日线面板仍落后于 {exp_s}，距上次 ml_predictor_5y.py 尝试不足 10 分钟，本轮不重复启动。",
+                file=sys.stderr,
+            )
+            return False
         state["last_attempt_epoch"] = time.time()
         state.pop("success_day", None)
         with open(state_path, "w", encoding="utf-8") as sf:
             json.dump(state, sf)
 
         print(f"[*] 收盘/UTC日切全量重算触发：美股期望 {exp_s} (marker={marker or '无'}) | BTC UTC期望 {exp_btc_utc} (btc_marker={btc_marker or '无'}, wknd={btc_has_wknd})")
-        proc = subprocess.run(
-            [sys.executable, "ml_predictor_5y.py", "--refresh"],
-            cwd=SCRATCH_DIR,
-            check=False,
-            timeout=1800,
-            creationflags=WIN_NO_WINDOW
-        )
+        try:
+            proc = subprocess.run(
+                [sys.executable, "ml_predictor_5y.py", "--refresh"],
+                cwd=SCRATCH_DIR,
+                check=False,
+                timeout=3600,
+                creationflags=WIN_NO_WINDOW,
+            )
+        except subprocess.TimeoutExpired:
+            _mark_daily_ml_refresh(True)
+            print("[!] ml_predictor_5y.py --refresh 超过 3600s 仍未结束，日线面板保持原样。", file=sys.stderr)
+            return False
         marker2 = ""
         try:
             marker2 = open(marker_path, encoding="utf-8").read().strip()[:10]
@@ -5476,16 +5514,25 @@ def maybe_refresh_daily_ml_panel():
             pass
         pred2 = _prediction_last_history_day()
         page2 = _page_last_history_day()
-        if proc.returncode == 0 and (marker2 >= exp_s or pred2 >= exp_s or page2 >= exp_s):
+        if radar_cloud_sync.daily_ml_refresh_succeeded(proc.returncode, marker2, pred2, page2, exp_s):
             state["success_day"] = exp_s
             state["btc_success_utc_day"] = exp_btc_utc
             with open(state_path, "w", encoding="utf-8") as sf:
                 json.dump(state, sf)
+            _mark_daily_ml_refresh(False)
             print(f"[+] 收盘/UTC日切全量重算已完成：美股 {exp_s} / BTC UTC {exp_btc_utc}（AI {pred2} / 页面 {page2}）")
-        else:
-            print(f"[!] 收盘日线补刷未完成 {exp_s}（exit={proc.returncode}, AI={pred2}, 页面={page2}），10分钟后重试")
+            return True
+        _mark_daily_ml_refresh(True)
+        print(
+            f"[!] ml_predictor_5y.py --refresh 失败，拒绝把实时行情混写入陈旧日线快照 "
+            f"(exit={proc.returncode}, 期望={exp_s}, marker={marker2 or '无'}, AI={pred2 or '无'}, 页面={page2 or '无'})。10分钟后重试。",
+            file=sys.stderr,
+        )
+        return False
     except Exception as _e:
-        print(f"[!] 收盘日线自动补刷异常: {_e}")
+        _mark_daily_ml_refresh(True)
+        print(f"[!] 收盘日线自动补刷异常: {_e}", file=sys.stderr)
+        return False
 
 
 def _other_device_is_active():
@@ -5546,6 +5593,7 @@ def main():
         print("=" * 80)
         run_radar_cycle(is_first_run=False, round_idx=1)
         print("\n[+] ✅ 手动单次同步完成，已更新 .radar_last_sync 锁文件，后台守护进程倒计时已自动同步重置！")
+        _exit_if_daily_ml_refresh_failed()
         sys.exit(0)
 
     # 检查是否为云端/守护进程长轮询极速模式 (--loop-daemon)
@@ -5606,7 +5654,6 @@ def main():
                     round_idx += 1
                     time.sleep(15)
                     continue
-                maybe_refresh_daily_ml_panel()
                 run_radar_cycle(is_first_run=False, round_idx=round_idx)
             except Exception as e:
                 print(f"[!] ⚠️ 守护进程自动拦截异常并继续运行: {e}")
@@ -5647,9 +5694,17 @@ def main():
                     except Exception as _wait_err:
                         print("[!] Pages 守门员异常，直接放行推送: " + radar_cloud_sync.redact_secrets(str(_wait_err))[:160])
 
-                    subprocess.run(
-                        ["git", "add", "index.html", "futu_pro_terminal.html", "predict_radar_5y.html", "data_cache/latest_ai_predictions.json", "data_cache/shared_alert_dedupe.json", ".terminal_notifications.json", ".options_cache.json", ".radar_alert_history.json", "macro_radar.html", "stocks_radar.html", ".gitignore"],
-                        check=False, creationflags=WIN_NO_WINDOW)
+                    _publish = [
+                        p for p in radar_cloud_sync.RADAR_PUBLISH_PATHS
+                        if os.path.exists(os.path.join(SCRATCH_DIR, p))
+                    ]
+                    if _publish:
+                        subprocess.run(
+                            ["git", "add", "--", *_publish],
+                            cwd=SCRATCH_DIR,
+                            check=False,
+                            creationflags=WIN_NO_WINDOW,
+                        )
                     subprocess.run(
                         ["git", "commit", "-m", f"⚡ [{'小米平板实盘同步' if ANDROID_MODE else '实盘同步'}] 第 {round_idx} 轮极速刷新 ({now_ts})"],
                         check=False, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, creationflags=WIN_NO_WINDOW
@@ -5703,6 +5758,7 @@ def main():
             print(f"[*] 本轮扫描与同步耗时 {cost:.1f}s，流水线休眠 {sleep_time:.1f}s 立即启动下一轮计算...")
             time.sleep(sleep_time)
         print("\n✅ 云端守护计划周期已圆满完成。")
+        _exit_if_daily_ml_refresh_failed()
         sys.exit(0)
 
     total_etfs = len(MONITORED_TARGETS['ETFS'])

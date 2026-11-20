@@ -294,6 +294,159 @@ def _fetch_btc_live_price() -> Optional[float]:
     return None
 
 
+def _normalize_downloaded_ohlcv(
+    df: Optional[pd.DataFrame],
+    ticker: str,
+    expected_last,
+    allow_missing_close: bool = False,
+) -> Optional[pd.DataFrame]:
+    """Flatten a yfinance frame into Date/Ticker/OHLCV, clipped to the completed session."""
+    if df is None or len(df) == 0:
+        return None
+    out = df.copy()
+    if isinstance(out.columns, pd.MultiIndex):
+        out.columns = out.columns.get_level_values(0)
+    out = out.reset_index()
+    if 'Date' not in out.columns and 'Datetime' in out.columns:
+        out = out.rename(columns={'Datetime': 'Date'})
+    if 'Date' not in out.columns:
+        return None
+    dates = pd.to_datetime(out['Date'], utc=False)
+    if getattr(dates.dt, 'tz', None) is not None:
+        dates = dates.dt.tz_convert('America/New_York').dt.tz_localize(None)
+    out['Date'] = dates.dt.normalize()
+    out = out[out['Date'].dt.date <= expected_last]
+    out['Ticker'] = ticker
+    required_cols = ['Date', 'Ticker', 'Open', 'High', 'Low', 'Close', 'Volume']
+    if set(required_cols) - set(out.columns):
+        return None
+    out = out[required_cols].copy()
+    subset = ['Open', 'High', 'Low', 'Volume'] if allow_missing_close else ['Open', 'High', 'Low', 'Close', 'Volume']
+    out = out.dropna(subset=subset)
+    out = out[(out['Open'] > 0) & (out['High'] > 0) & (out['Low'] > 0)]
+    if not allow_missing_close:
+        out = out[out['Close'] > 0]
+    if out.empty:
+        return None
+    return out.sort_values('Date').drop_duplicates(subset=['Date'], keep='last').reset_index(drop=True)
+
+
+def _quote_last_price(ticker: str) -> float:
+    try:
+        info = yf.Ticker(ticker).fast_info
+        price = float(info.get("lastPrice") or info.get("last_price") or 0.0)
+    except Exception:
+        return 0.0
+    return price if price > 0 else 0.0
+
+
+def _fill_missing_close_from_quote(frame: Optional[pd.DataFrame], ticker: str, expected_last) -> Optional[pd.DataFrame]:
+    """Fill a NaN official close only when the fetched last trade sits inside that bar's high/low."""
+    if frame is None or frame.empty:
+        return frame
+    out = frame.copy()
+    mask = (out['Date'].dt.date == expected_last) & out['Close'].isna()
+    if not mask.any():
+        return out
+    price = _quote_last_price(ticker)
+    if price <= 0:
+        return out
+    for idx in out.index[mask]:
+        hi = out.at[idx, 'High']
+        lo = out.at[idx, 'Low']
+        if pd.notna(hi) and pd.notna(lo) and float(lo) <= price <= float(hi):
+            out.at[idx, 'Close'] = price
+    return out
+
+
+def _drop_incomplete_ohlcv(frame: Optional[pd.DataFrame]) -> Optional[pd.DataFrame]:
+    if frame is None or frame.empty:
+        return None
+    out = frame.dropna(subset=['Open', 'High', 'Low', 'Close', 'Volume'])
+    out = out[(out['Open'] > 0) & (out['Close'] > 0) & (out['High'] > 0) & (out['Low'] > 0)]
+    if out.empty:
+        return None
+    return out.sort_values('Date').drop_duplicates(subset=['Date'], keep='last').reset_index(drop=True)
+
+
+def _scale_to_adjusted_history(adjusted_base: pd.DataFrame, unadjusted: Optional[pd.DataFrame]) -> Optional[pd.DataFrame]:
+    """Put an unadjusted tail onto an adjusted history when a split makes the scales differ."""
+    if unadjusted is None or unadjusted.empty:
+        return None
+    out = unadjusted.copy()
+    base_dates = pd.to_datetime(adjusted_base['Date']).dt.date
+    new_dates = pd.to_datetime(out['Date']).dt.date
+    overlap = sorted(set(base_dates) & set(new_dates))
+    if overlap:
+        day = overlap[-1]
+        a_vals = adjusted_base.loc[base_dates == day, 'Close'].dropna()
+        u_vals = out.loc[new_dates == day, 'Close'].dropna()
+        if a_vals.empty or u_vals.empty:
+            return out
+        a_close = float(a_vals.iloc[-1])
+        u_close = float(u_vals.iloc[-1])
+        if u_close > 0 and abs(a_close / u_close - 1.0) > 0.005:
+            ratio = a_close / u_close
+            for col in ('Open', 'High', 'Low', 'Close'):
+                out[col] = out[col].astype(float) * ratio
+    return out
+
+
+def _splice_recent_daily_bars(df: pd.DataFrame, ticker: str, expected_last) -> pd.DataFrame:
+    """Fill a long download that stopped one session early.
+
+    Yahoo's chart range for a multi-year `download()` sometimes omits the latest
+    completed daily bar while a short window still has it. The splice uses that
+    fetched window; it does not invent a price.
+    """
+    if df is None or df.empty or ticker == 'BTC-USD':
+        return df
+    last_d = pd.to_datetime(df['Date']).max().date()
+    if last_d >= expected_last:
+        return df
+    start_recent = (expected_last - timedelta(days=14)).strftime('%Y-%m-%d')
+    end_exclusive = (expected_last + timedelta(days=1)).strftime('%Y-%m-%d')
+    def _download_window(auto_adjust: bool):
+        return yf.download(
+            ticker,
+            start=start_recent,
+            end=end_exclusive,
+            interval='1d',
+            auto_adjust=auto_adjust,
+            progress=False,
+            threads=False,
+        )
+
+    try:
+        recent = _normalize_downloaded_ohlcv(
+            _download_window(True), ticker, expected_last, allow_missing_close=True
+        )
+        session = pd.Series(dtype='datetime64[ns]')
+        if recent is not None and not recent.empty:
+            session = recent.loc[recent['Date'].dt.date == expected_last, 'Close']
+        needs_raw = recent is None or recent.empty or session.empty or bool(session.isna().all())
+        if needs_raw:
+            unadj = _normalize_downloaded_ohlcv(
+                _download_window(False), ticker, expected_last, allow_missing_close=True
+            )
+            unadj = _fill_missing_close_from_quote(unadj, ticker, expected_last)
+            unadj = _scale_to_adjusted_history(df, unadj)
+            if unadj is not None and not unadj.empty:
+                recent = unadj
+    except Exception as exc:
+        print(f"[!] {ticker} 短窗口补拉失败: {exc}")
+        return df
+    recent = _drop_incomplete_ohlcv(recent)
+    if recent is None or recent.empty:
+        return df
+    merged = pd.concat([df, recent], ignore_index=True)
+    merged = merged.sort_values('Date').drop_duplicates(subset=['Date'], keep='last').reset_index(drop=True)
+    new_last = merged['Date'].max().date()
+    if new_last > last_d:
+        print(f"[+] {ticker} 短窗口补齐收盘日 {last_d} -> {new_last}")
+    return merged
+
+
 def _fetch_single_ticker(ticker: str, start_date: str = '2021-11-01', max_retries: int = 3) -> Optional[pd.DataFrame]:
     """通过 yfinance 拉取单只标的的历史日线数据，自动扁平化多级列名（BTC-USD 启用 7x24 自然日连续模式）"""
     is_btc = (ticker == 'BTC-USD')
@@ -381,9 +534,18 @@ def _fetch_single_ticker(ticker: str, start_date: str = '2021-11-01', max_retrie
                     pass
 
             df = df.sort_values('Date').drop_duplicates(subset=['Date'], keep='last').reset_index(drop=True)
+            if not is_btc:
+                df = _splice_recent_daily_bars(df, ticker, expected_last)
 
             if len(df) >= 20:
-                return df
+                last_d = df['Date'].max().date()
+                if last_d >= expected_last or attempt == max_retries - 1:
+                    if last_d < expected_last:
+                        print(f"[!] {ticker} 最新K线 {last_d} 仍落后已收盘 {expected_last}")
+                    return df
+                print(f"[!] {ticker} 最新K线 {last_d} 落后已收盘 {expected_last}，重试 ({attempt + 1}/{max_retries})")
+                time.sleep(0.6)
+                continue
         except Exception as e:
             if attempt == max_retries - 1:
                 print(f"[!] 拉取 {ticker} 失败: {e}")
@@ -464,6 +626,22 @@ def _get_chart_session(ref_dt: Optional[datetime] = None):
     return day, last_closed, "今日", False
 
 
+def _ensure_parquet_engine():
+    """Fail fast when the CI image can read requirements.txt but not Parquet.
+
+    pandas' pyarrow engine imports pyarrow lazily. A missing module used to be
+    caught as a cache-read error, then raised again on to_parquet after a full
+    download, and the parent radar treated that non-zero exit as a soft warning.
+    """
+    try:
+        import pyarrow  # noqa: F401
+    except ImportError as exc:
+        raise RuntimeError(
+            "缺少 pyarrow，无法读写 data_cache/*.parquet。"
+            "日线刷新依赖它；请使用 pip install -r requirements.txt（与 GitHub Actions 相同）。"
+        ) from exc
+
+
 def fetch_or_load_panel_data(
     cache_file: str = 'data_cache/ml_panel_5y.parquet',
     force_refresh: bool = False,
@@ -477,6 +655,7 @@ def fetch_or_load_panel_data(
     返回:
         pd.DataFrame: 包含 ['Date', 'Ticker', 'Open', 'High', 'Low', 'Close', 'Volume'] 的长表原始面板。
     """
+    _ensure_parquet_engine()
     full_cache_path = _resolve_cache_path(cache_file)
 
     if os.path.exists(full_cache_path) and not force_refresh:
@@ -490,7 +669,11 @@ def fetch_or_load_panel_data(
             # 自动化日期新鲜度校验 (防止缓存停滞在历史日期断更；同时确保 BTC-USD 包含周末自然日 K 线)
             expected_latest_date = _get_latest_expected_trading_day()
             max_cache_date = df['Date'].max().date() if not df.empty else None
-            is_fresh = (max_cache_date is not None and max_cache_date >= expected_latest_date)
+            # BTC-USD trades through weekends, so the panel max date can be newer
+            # than every equity. Freshness is "every non-BTC symbol reached the close".
+            equity_last = df.loc[df['Ticker'] != 'BTC-USD'].groupby('Ticker')['Date'].max()
+            lagging_n = int((pd.to_datetime(equity_last).dt.date < expected_latest_date).sum()) if len(equity_last) else 1
+            is_fresh = lagging_n == 0 and max_cache_date is not None
 
             if not missing_tickers and len(df) > 30000 and is_fresh:
                 btc_sub = df[df['Ticker'] == 'BTC-USD']
@@ -531,6 +714,29 @@ def fetch_or_load_panel_data(
                     print(f"  [-] {tk:5s} 抓取失败或数据不足！")
             except Exception as e:
                 print(f"  [-] {tk:5s} 抓取异常: {e}")
+
+    expected_last = _get_latest_expected_trading_day()
+    by_ticker = {}
+    for res_df in ticker_dfs:
+        tk_name = str(res_df['Ticker'].iloc[0])
+        by_ticker[tk_name] = res_df
+    repair = []
+    for tk_name in ALL_SYMBOLS:
+        held = by_ticker.get(tk_name)
+        if held is None or held.empty:
+            repair.append(tk_name)
+            continue
+        if tk_name == 'BTC-USD':
+            continue
+        if pd.to_datetime(held['Date']).max().date() < expected_last:
+            repair.append(tk_name)
+    if repair:
+        print(f"[*] 串行补拉 {len(repair)} 只未覆盖 {expected_last} 的标的...")
+        for tk_name in repair:
+            repaired = _fetch_single_ticker(tk_name, start_date=start_date)
+            if repaired is not None and not repaired.empty:
+                by_ticker[tk_name] = repaired
+    ticker_dfs = list(by_ticker.values())
 
     if not ticker_dfs:
         raise RuntimeError("CRITICAL: 未能成功抓取任何标的行情数据！")
@@ -2975,6 +3181,15 @@ def generate_time_cycle_projections(
         }
 
     return results
+
+
+def macro_weather_session_date(latest_stocks: pd.DataFrame) -> str:
+    """Completed US session represented by the panel, ignoring BTC-USD's UTC calendar."""
+    if latest_stocks is None or latest_stocks.empty or 'Date' not in latest_stocks.columns:
+        return ""
+    equity = latest_stocks.loc[latest_stocks['Ticker'].astype(str) != 'BTC-USD', 'Date']
+    src = equity if len(equity) else latest_stocks['Date']
+    return pd.to_datetime(src).max().strftime('%Y-%m-%d')
 
 
 def evaluate_macro_weather(
@@ -6723,6 +6938,7 @@ def build_extended_live_features_df(
     通过 yfinance 抓取并缓存主终端其余标的的日 K 线 (零 Finnhub API 消耗)，
     构建覆盖全域 70 只标的 (28 核心 AI 股 + 42 扩展雷达股/ETF) 的最新 T 日截面特征表。
     """
+    _ensure_parquet_engine()
     full_ext_cache = _resolve_cache_path(ext_cache_file)
     os.makedirs(os.path.dirname(full_ext_cache), exist_ok=True)
 
@@ -6738,12 +6954,12 @@ def build_extended_live_features_df(
             cached_syms = set(ext_cached_df['Ticker'].unique())
             still_missing = [tk for tk in missing_syms if tk not in cached_syms]
             ext_max_date = ext_cached_df['Date'].max().date() if not ext_cached_df.empty else None
-            try:
-                _main_max_date = pd.to_datetime(raw_panel['Date']).max().date() if 'Date' in raw_panel.columns else expected_latest_date
-            except Exception:
-                _main_max_date = expected_latest_date
-            _need_date = max(expected_latest_date, _main_max_date)
-            is_ext_fresh = (ext_max_date is not None and ext_max_date >= _need_date)
+            # Extended names are equities and ETFs. Do not demand BTC's weekend/UTC
+            # date, and do not treat one fresh symbol as proof the whole cache is current.
+            _need_date = expected_latest_date
+            _ext_last = ext_cached_df.groupby('Ticker')['Date'].max() if not ext_cached_df.empty else pd.Series(dtype='datetime64[ns]')
+            _ext_lagging = int((pd.to_datetime(_ext_last).dt.date < _need_date).sum()) if len(_ext_last) else 1
+            is_ext_fresh = _ext_lagging == 0
 
             if is_ext_fresh and not still_missing:
                 print(f"[+] ✅ 扩展标的缓存完整且新鲜: 共 {len(cached_syms)} 只标的 (最新: {ext_max_date})")
@@ -7035,7 +7251,7 @@ def main():
     vixy_pos = float(latest_stocks['VIXY_Pos_60'].mean()) if 'VIXY_Pos_60' in latest_stocks.columns else 0.5
     smh_bias = float(latest_stocks['SMH_Bias_MA50'].mean()) if 'SMH_Bias_MA50' in latest_stocks.columns else 0.0
     smh_igv = float(latest_stocks['SMH_IGV_Ratio_Bias'].mean()) if 'SMH_IGV_Ratio_Bias' in latest_stocks.columns else 0.0
-    latest_date_str = latest_stocks['Date'].max().strftime('%Y-%m-%d') if 'Date' in latest_stocks.columns else ""
+    latest_date_str = macro_weather_session_date(latest_stocks)
 
     def_flight = compute_defensive_flight_alert(latest_stocks_df=latest_stocks)
     cross_breadth = compute_cross_industry_breadth_alert(latest_stocks_df=latest_stocks)

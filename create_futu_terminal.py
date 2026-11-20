@@ -6,7 +6,38 @@ Helper module to build the Futu-Style Pro Terminal (futu_pro_terminal.html)
 import json
 import time
 
-def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_str="", has_realtime=False, target_watchlist=None, terminal_notifications=None, session_code="REGULAR", session_name="常规盘中", sync_side_effects=False, sync_dir=None):
+
+def ai_daily_snapshot_is_stale(ai_predictions, expected_day: str) -> bool:
+    """True when the AI daily panel is behind the latest completed US session.
+
+    An empty ``latest_date`` is stale. An unknown expected session does not block
+    the live overlay. This does not invent a date; only a successful
+    ``ml_predictor_5y.py`` refresh may advance ``macro_weather.latest_date``.
+    """
+    expected = str(expected_day or "")[:10]
+    if not expected:
+        return False
+    panel_day = str((((ai_predictions or {}).get("macro_weather") or {}).get("latest_date") or ""))[:10]
+    return panel_day < expected
+
+
+def equity_cycle_bar_is_stale(last_date: str, expected_day: str) -> bool:
+    """True when an equity or ETF daily bar is older than the completed session."""
+    expected = str(expected_day or "")[:10]
+    bar = str(last_date or "")[:10]
+    if not expected or not bar:
+        return False
+    return bar < expected
+
+
+def _expected_completed_us_session_day() -> str:
+    try:
+        import ml_predictor_5y
+        return ml_predictor_5y._get_latest_expected_trading_day().strftime("%Y-%m-%d")
+    except Exception:
+        return ""
+
+def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_str="", has_realtime=False, target_watchlist=None, terminal_notifications=None, session_code="REGULAR", session_name="常规盘中", sync_side_effects=False, sync_dir=None, block_stale_daily_overlay=False):
     is_overnight = (session_code == "OVERNIGHT")
     if session_code == "OVERNIGHT":
         session_badge_html = '<span class="tool-link" style="color: #c084fc; border: 1px solid rgba(192, 132, 252, 0.45); background: rgba(192, 132, 252, 0.12); padding: 4px 7px; font-weight: 700;">🌌 美股夜盘</span>'
@@ -155,7 +186,17 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 _panel_last_close = {}
             pure_etf_set = {"QQQ", "SPY", "DIA", "IWM", "SMH", "SOXX", "SOXL", "KORU", "IGV", "TLT", "GLD", "VIXY", "SQQQ", "SOXS"}
             offensive_lev_etfs = {"SOXL", "KORU"}
-            if all_preds and live_lookup:
+            _expected_closed_day = _expected_completed_us_session_day()
+            # Only the radar sets this after ml_predictor_5y.py fails. Callers that
+            # replay a stored snapshot (tests) keep the live overlay.
+            _daily_panel_stale = bool(block_stale_daily_overlay) and ai_daily_snapshot_is_stale(ai_predictions, _expected_closed_day)
+            if _daily_panel_stale:
+                _panel_day = str((ai_predictions.get("macro_weather") or {}).get("latest_date") or "")[:10]
+                print(
+                    f"[!] AI 日线快照 latest_date={_panel_day or '空'} 落后已收盘交易日 {_expected_closed_day}，"
+                    "跳过实时字段覆盖，避免把新时间戳和盘中报价写进陈旧日线。"
+                )
+            elif all_preds and live_lookup:
                 for item in all_preds:
                     tk = str(item.get("ticker", ""))
                     is_etf = bool(item.get("is_etf", tk in pure_etf_set))
@@ -399,6 +440,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                     ai_predictions["kpi"]["sync_time"] = update_time_str
                     ai_predictions["kpi"]["data_mode"] = f"Finnhub 秒级实时 ({session_name})" if has_realtime else "yfinance 最新收盘价底模"
                 if "macro_weather" in ai_predictions and weather_info:
+                    _kept_latest_date = ai_predictions["macro_weather"].get("latest_date", "")
                     ai_predictions["macro_weather"]["status"] = w_status
                     q_bias = round(float(weather_info.get("qqqm_bias", 0.0)), 2)
                     s_bias = round(float(weather_info.get("smh_bias", 0.0)), 2)
@@ -410,12 +452,25 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                     v_pos = round(float(raw_vixy) / 100.0 if float(raw_vixy) > 1.5 else float(raw_vixy), 2)
                     ai_predictions["macro_weather"]["vixy_pos"] = v_pos
                     ai_predictions["macro_weather"]["vixy_pos_60"] = v_pos
+                    # Live biases may move. The daily close date stays the one written
+                    # by the predictor from fetched bars; this overlay must not drop it
+                    # or replace it with the scan clock.
+                    if _kept_latest_date:
+                        ai_predictions["macro_weather"]["latest_date"] = _kept_latest_date
 
                 _tc_proj = ai_predictions.get("time_cycle_projections", {})
                 if isinstance(_tc_proj, dict) and ai_predictions.get("by_ticker"):
                     for _tk_c, _tc_item in _tc_proj.items():
                         _b_item = ai_predictions["by_ticker"].get(_tk_c)
                         if isinstance(_tc_item, dict) and isinstance(_b_item, dict):
+                            _hist_pre = _tc_item.get("history") or []
+                            _bar_day = str(_hist_pre[-1].get("date", ""))[:10] if _hist_pre else ""
+                            if (
+                                block_stale_daily_overlay
+                                and _tk_c != "BTC-USD"
+                                and equity_cycle_bar_is_stale(_bar_day, _expected_closed_day)
+                            ):
+                                continue
                             _new_cp = float(_b_item.get("latest_price") or _b_item.get("current_price") or 0.0)
                             if _new_cp > 0:
                                 _cp_round = round(_new_cp, 2)
@@ -557,7 +612,19 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                         _pred_html_path = os.path.join(_sync_dir, "predict_radar_5y.html")
                         ml_predictor_5y.render_html_dashboard(_tables_for_html, output_path=_pred_html_path)
                         import subprocess
-                        subprocess.run(["git", "add", "predict_radar_5y.html", "data_cache/latest_ai_predictions.json"], cwd=_sync_dir, check=False, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+                        import radar_cloud_sync
+                        _panel_paths = [
+                            p for p in radar_cloud_sync.DAILY_PANEL_GIT_PATHS
+                            if os.path.exists(os.path.join(_sync_dir, p))
+                        ]
+                        if _panel_paths:
+                            subprocess.run(
+                                ["git", "add", "--", *_panel_paths],
+                                cwd=_sync_dir,
+                                check=False,
+                                stdout=subprocess.DEVNULL,
+                                stderr=subprocess.DEVNULL,
+                            )
                 except Exception as _re:
                     print(f"[!] 同步重绘 predict_radar_5y.html 提示: {_re}")
     except Exception:
