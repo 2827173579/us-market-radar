@@ -66,16 +66,16 @@
       "last_notified_at": 0.0
     },
     "KO": {
-      "state": "TAKE_PROFIT",
-      "last_notified_at": 1795181156.6538126
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "VST": {
       "state": "NORMAL",
       "last_notified_at": 0.0
     },
     "AXP": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1795185164.3737392
     },
     "SPY": {
       "state": "NORMAL",
@@ -114,8 +114,8 @@
       "last_notified_at": 0.0
     },
     "TSLA": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1795185164.3737392
     }
   },
   "position_peaks": {
