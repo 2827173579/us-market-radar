@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795174063.367,
-  "updated_at_et": "11-20 06:27 ET",
-  "updated_at_kst": "20:27 KST",
+  "updated_at_ts": 1795174166.475,
+  "updated_at_et": "11-20 06:29 ET",
+  "updated_at_kst": "20:29 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2938,6 +2938,20 @@
     ],
     "XOM": [
       {
+        "title": "State Street Energy SPDR (XLE) Sells $174.6 Million of Exxon on Wednesday",
+        "url": "https://finance.yahoo.com/energy/articles/state-street-energy-spdr-xle-110346712.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 06:03 ET",
+        "pub_ts": 1795172626.0
+      },
+      {
+        "title": "ETFs Are Net Sellers of ExxonMobil (XOM) on Nov. 18",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-net-sellers-exxonmobil-xom-110214806.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 06:02 ET",
+        "pub_ts": 1795172534.0
+      },
+      {
         "title": "Guyana Oil Boom Rekindles Frontier Drilling Appetite",
         "url": "https://finance.yahoo.com/energy/articles/guyana-oil-boom-rekindles-frontier-000000725.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2957,23 +2971,16 @@
         "source": "Yahoo Finance",
         "time": "11-19 14:58 ET",
         "pub_ts": 1795118297.0
-      },
-      {
-        "title": "Erste Group Upgrades ExxonMobil (XOM). Here’s What Drove It.",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/erste-group-upgrades-exxonmobil-xom-154139627.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 10:41 ET",
-        "pub_ts": 1795102899.0
-      },
-      {
-        "title": "1-Year Treasury Bills Yield 4.59%. Dividend Stocks Have a Higher Bar to Clear",
-        "url": "https://247wallst.com/investing/2026/11/19/1-year-treasury-bills-yield-4-59-dividend-stocks-have-a-higher-bar-to-clear/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 10:17 ET",
-        "pub_ts": 1795101453.0
       }
     ],
     "JPM": [
+      {
+        "title": "ETFs Are Net Sellers of JPMorgan Chase (JPM) on Nov. 18",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-net-sellers-jpmorgan-chase-110300552.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 06:03 ET",
+        "pub_ts": 1795172580.0
+      },
       {
         "title": "What Does JPMorgan Chase (JPM) Naming A New CFO Mean For Investors?",
         "url": "https://finance.yahoo.com/markets/stocks/articles/does-jpmorgan-chase-jpm-naming-060933124.html?.tsrc=rss",
@@ -3001,16 +3008,16 @@
         "source": "Yahoo Finance",
         "time": "11-19 15:29 ET",
         "pub_ts": 1795120153.0
-      },
-      {
-        "title": "Top Analyst Reports for Berkshire Hathaway, JPMorgan & Procter & Gamble",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/top-analyst-reports-berkshire-hathaway-202300112.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 15:23 ET",
-        "pub_ts": 1795119780.0
       }
     ],
     "WMT": [
+      {
+        "title": "State Street Consumer Staples SPDR (XLP) Adds Walmart and Costco on Nov. 18",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/state-street-consumer-staples-spdr-110512500.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 06:05 ET",
+        "pub_ts": 1795172712.0
+      },
       {
         "title": "Walmart (WMT) Ad Revenue Jumped 25% As AI And TV Deals Gain Traction",
         "url": "https://finance.yahoo.com/media-advertising/articles/walmart-wmt-ad-revenue-jumped-071351195.html?.tsrc=rss",
@@ -3038,13 +3045,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 17:39 ET",
         "pub_ts": 1795127981.0
-      },
-      {
-        "title": "Walmart Inc. Q3 2027 Earnings Call Summary",
-        "url": "https://app.moby.co/home/research/tools/earningsCalendar/earnings-walmart-inc-q3-2027-earnings-call-summary?utm_source=yahoo_finance&utm_medium=rss&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 17:12 ET",
-        "pub_ts": 1795126343.0
       }
     ],
     "V": [
@@ -3197,39 +3197,39 @@
     ],
     "ANT": [
       {
-        "title": "Stock market today: Dow, S&P 500, Nasdaq futures continue to sell-off after Anthropic IPO fails to quell AI worries",
-        "url": "https://finance.yahoo.com/markets/live/stock-market-today-friday-november-19-dow-sp-500-nasdaq-anthropic-nvidia-volatility-092827348.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 04:28 ET",
-        "pub_ts": 1795166907.0
+        "title": "Wall Street Breakfast Podcast: Market Sheds Anthropic's Market Cap In Crowdout",
+        "url": "https://finnhub.io/api/news?id=c642f80f287b39036dd265fb3559e20ad20a473f4f43600ee056085b3cf656df",
+        "source": "SeekingAlpha",
+        "time": "11-20 01:04 ET",
+        "pub_ts": 1795154640.0
       },
       {
-        "title": "Anthropic's IPO buyers made $14 billion on day one, second only to SpaceX: Chart of the Day",
-        "url": "https://finance.yahoo.com/technology/article/anthropics-ipo-buyers-made-14-billion-on-day-one-second-only-to-spacex-chart-of-the-day-110000176.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 06:00 ET",
-        "pub_ts": 1795172400.0
+        "title": "Invesco QQQ Monthly Review",
+        "url": "https://finnhub.io/api/news?id=160c38cf1180315966a4a7333f08a04eb7c1ef94af1882a472148aa616ab8c51",
+        "source": "SeekingAlpha",
+        "time": "11-19 23:20 ET",
+        "pub_ts": 1795148400.0
       },
       {
-        "title": "Anthropic's IPO ties the fate of the US economy closer to AI",
-        "url": "https://finance.yahoo.com/technology/article/anthropics-ipo-ties-the-fate-of-the-us-economy-closer-to-ai-110000224.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 06:00 ET",
-        "pub_ts": 1795172400.0
+        "title": "Market Brief: Anthropic After The IPO: Valuation, Float And Price",
+        "url": "https://finnhub.io/api/news?id=b182baa72606de3107ab998652afde6b42cdc89a9e0c45457f3bc0b0d82ef00a",
+        "source": "SeekingAlpha",
+        "time": "11-19 20:10 ET",
+        "pub_ts": 1795137000.0
       },
       {
-        "title": "Anthropic's IPO winners and losers, from Ashton Kutcher to Sam Bankman-Fried",
-        "url": "https://finance.yahoo.com/markets/article/anthropics-ipo-winners-and-losers-from-ashton-kutcher-to-sam-bankman-fried-110000728.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 06:00 ET",
-        "pub_ts": 1795172400.0
+        "title": "I'm Buying The Anthropic IPO, Here's Why",
+        "url": "https://finnhub.io/api/news?id=652d25e15d3aefee8622c81b06e1118850144da61fd966b244f4f2ab291aef4a",
+        "source": "SeekingAlpha",
+        "time": "11-19 17:44 ET",
+        "pub_ts": 1795128291.0
       },
       {
-        "title": "AI wealth is already changing San Francisco's housing market",
-        "url": "https://finance.yahoo.com/real-estate/article/ai-wealth-is-already-changing-san-franciscos-housing-market-100000144.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 05:00 ET",
-        "pub_ts": 1795168800.0
+        "title": "Anthropic: A Strange Time To Be Sensible",
+        "url": "https://finnhub.io/api/news?id=18c5deef7c17d602561286c5e661ed21f63ff94e5530dd0726d37d1d03b91065",
+        "source": "SeekingAlpha",
+        "time": "11-19 14:42 ET",
+        "pub_ts": 1795117359.0
       }
     ],
     "XAUUSD": [
@@ -3313,15 +3313,15 @@
     "NKE": 1795173218.5879445,
     "MCD": 1795173218.5879445,
     "PEP": 1795173218.5879445,
-    "XOM": 1795172657.3536074,
-    "JPM": 1795172657.3536074,
-    "WMT": 1795172657.3536074,
+    "XOM": 1795174166.4745383,
+    "JPM": 1795174166.4745383,
+    "WMT": 1795174166.4745383,
     "V": 1795173218.5879445,
-    "CAT": 1795172657.3536074,
+    "CAT": 1795174166.4745383,
     "FN": 1795173218.5879445,
     "GLW": 1795173218.5879445,
-    "ANT": 1795172657.3536074,
-    "XAUUSD": 1795172657.3536074
+    "ANT": 1795174166.4745383,
+    "XAUUSD": 1795174166.4745383
   },
   "calendar_banner": {
     "level": "idle_with_flash",
