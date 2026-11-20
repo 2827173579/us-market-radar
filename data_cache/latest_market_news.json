@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795175707.098,
-  "updated_at_et": "11-20 06:55 ET",
-  "updated_at_kst": "20:55 KST",
+  "updated_at_ts": 1795175817.382,
+  "updated_at_et": "11-20 06:56 ET",
+  "updated_at_kst": "20:56 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2606,6 +2606,13 @@
     ],
     "BTC-USD": [
       {
+        "title": "Perpetual Futures Are Surging in Popularity, But They Are Also Facing Mounting Controversy. Here's What Crypto Investors Need to Know.",
+        "url": "https://www.fool.com/investing/2026/11/20/perpetual-futures-are-surging-in-popularity-but-they-are-also-facing-mounting-controversy-heres-what-crypto-investors-need-to-know/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 06:10 ET",
+        "pub_ts": 1795173001.0
+      },
+      {
         "title": "Robinhood Markets vs. SoFi Technologies: Which Financial Stock Is a Better Buy for 2027?",
         "url": "https://www.fool.com/coverage/better-buy/2026/11/20/robinhood-markets-vs-sofi-technologies-which-financial-stock-is-a-better-buy-for-2027/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2627,18 +2634,11 @@
         "pub_ts": 1795169748.0
       },
       {
-        "title": "Soluna Holdings (SLNH) Stock Sees Fair Value Cut As AI Shift Raises Execution Questions",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/soluna-holdings-slnh-stock-sees-101013523.html?.tsrc=rss",
+        "title": "Bitcoin ETF Sellers Show No Mercy: BlackRock Leads $582M Bitcoin ETF Exodus as BTC Hits New Lows",
+        "url": "https://99bitcoins.com/news/bitcoin-btc/btc-usd-etf-outflows-ibit-record/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-20 05:10 ET",
-        "pub_ts": 1795169413.0
-      },
-      {
-        "title": "Bitcoin Is 35% Below Its 52-Week High While the S&P 500 Is Up. Here’s What That Says About the Digital Gold Thesis.",
-        "url": "https://www.fool.com/investing/2026/11/20/bitcoin-is-33-below-its-52-week-high-s-and-p-500-is-uphere-s-what-that-says-digital-gold-thesis/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 05:05 ET",
-        "pub_ts": 1795169102.0
+        "time": "11-20 05:12 ET",
+        "pub_ts": 1795169531.0
       }
     ],
     "CRWD": [
@@ -3198,6 +3198,13 @@
     ],
     "ANT": [
       {
+        "title": "Anthropic's IPO Funds The Chip Boom, While Falling AI Prices Strain Its Compute Commitments",
+        "url": "https://finnhub.io/api/news?id=578ee91b7f23425f2e60c619c132d374d3cb561266fe5852e73a0af997e80f74",
+        "source": "SeekingAlpha",
+        "time": "11-20 01:20 ET",
+        "pub_ts": 1795155600.0
+      },
+      {
         "title": "Wall Street Breakfast Podcast: Market Sheds Anthropic's Market Cap In Crowdout",
         "url": "https://finnhub.io/api/news?id=c642f80f287b39036dd265fb3559e20ad20a473f4f43600ee056085b3cf656df",
         "source": "SeekingAlpha",
@@ -3224,13 +3231,6 @@
         "source": "SeekingAlpha",
         "time": "11-19 17:44 ET",
         "pub_ts": 1795128291.0
-      },
-      {
-        "title": "Anthropic: A Strange Time To Be Sensible",
-        "url": "https://finnhub.io/api/news?id=18c5deef7c17d602561286c5e661ed21f63ff94e5530dd0726d37d1d03b91065",
-        "source": "SeekingAlpha",
-        "time": "11-19 14:42 ET",
-        "pub_ts": 1795117359.0
       }
     ],
     "XAUUSD": [
@@ -3305,7 +3305,7 @@
     "STX": 1795175707.098499,
     "MSTR": 1795175707.098499,
     "SNDK": 1795175707.098499,
-    "BTC-USD": 1795173857.0519462,
+    "BTC-USD": 1795175817.3817728,
     "CRWD": 1795174955.448357,
     "ORCL": 1795174955.448357,
     "COIN": 1795174955.448357,
@@ -3314,15 +3314,15 @@
     "NKE": 1795174955.448357,
     "MCD": 1795174955.448357,
     "PEP": 1795174955.448357,
-    "XOM": 1795174166.4745383,
-    "JPM": 1795174166.4745383,
-    "WMT": 1795174166.4745383,
+    "XOM": 1795175817.3817728,
+    "JPM": 1795175817.3817728,
+    "WMT": 1795175817.3817728,
     "V": 1795174955.448357,
-    "CAT": 1795174166.4745383,
+    "CAT": 1795175817.3817728,
     "FN": 1795174955.448357,
     "GLW": 1795174955.448357,
-    "ANT": 1795174166.4745383,
-    "XAUUSD": 1795174166.4745383
+    "ANT": 1795175817.3817728,
+    "XAUUSD": 1795175817.3817728
   },
   "calendar_banner": {
     "level": "idle_with_flash",
