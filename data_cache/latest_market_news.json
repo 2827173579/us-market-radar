@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795143212.268,
-  "updated_at_et": "11-19 21:53 ET",
-  "updated_at_kst": "11:53 KST",
+  "updated_at_ts": 1795143312.322,
+  "updated_at_et": "11-19 21:55 ET",
+  "updated_at_kst": "11:55 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1425,6 +1425,13 @@
     ],
     "NBIS": [
       {
+        "title": "Michael Burry Says He Warned on AI With NVIDIA and CoreWeave: Big Short Déjà Vu?",
+        "url": "https://beincrypto.com/michael-burry-warned-nvidia-coreweave-nebius/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 21:19 ET",
+        "pub_ts": 1795141162.0
+      },
+      {
         "title": "Is Tech in a Bear Market? 20 Tech Stocks Fall Up to 76% From Highs",
         "url": "https://beincrypto.com/tech-stocks-bear-market-record-highs/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1451,13 +1458,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 14:50 ET",
         "pub_ts": 1795117803.0
-      },
-      {
-        "title": "Why Wall Street Is Wrong: Buy Nebius as Customers Prepay Over 100% of Its CapEx",
-        "url": "https://247wallst.com/investing/2026/11/19/why-wall-street-is-wrong-buy-nebius-as-customers-prepay-over-100-of-its-capex/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 10:45 ET",
-        "pub_ts": 1795103125.0
       }
     ],
     "APLD": [
@@ -1758,13 +1758,6 @@
     ],
     "SPCX": [
       {
-        "title": "Anthropic IPO sets retail trading record as market sell-off weighs on buying",
-        "url": "https://finance.yahoo.com/markets/article/retail-traders-pile-into-anthropic-ipo-but-net-buying-lags-spacex-212350846.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 16:23 ET",
-        "pub_ts": 1795123430.0
-      },
-      {
         "title": "SpaceX's Data Center Vote Should Be Delayed, Arizona AG Tells Cochise County",
         "url": "https://finance.yahoo.com/technology/articles/spacex-apos-data-center-vote-003116969.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1791,6 +1784,13 @@
         "source": "Yahoo Finance",
         "time": "11-19 17:28 ET",
         "pub_ts": 1795127288.0
+      },
+      {
+        "title": "2 Reasons to Buy SpaceX (SPCX) Stock -- and 1 Reason to Wait",
+        "url": "https://www.fool.com/investing/2026/11/19/2-reasons-to-buy-spacex-spcx-stock-and-1-reason-to-wait/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 17:04 ET",
+        "pub_ts": 1795125841.0
       }
     ],
     "ASTS": [
@@ -3276,25 +3276,25 @@
     "NOW": 1795142506.4520364,
     "AMZN": 1795142506.4520364,
     "CRWV": 1795142506.4520364,
-    "NBIS": 1795141780.1969664,
-    "APLD": 1795141780.1969664,
-    "VST": 1795141780.1969664,
-    "BE": 1795141780.1969664,
-    "CRDO": 1795141780.1969664,
-    "COHR": 1795141780.1969664,
-    "MRVL": 1795141780.1969664,
-    "LITE": 1795141780.1969664,
+    "NBIS": 1795143312.3216496,
+    "APLD": 1795143312.3216496,
+    "VST": 1795143312.3216496,
+    "BE": 1795143312.3216496,
+    "CRDO": 1795143312.3216496,
+    "COHR": 1795143312.3216496,
+    "MRVL": 1795143312.3216496,
+    "LITE": 1795143312.3216496,
     "AAOI": 1795142506.4520364,
-    "SPCX": 1795141780.1969664,
-    "ASTS": 1795141780.1969664,
-    "AXTI": 1795141780.1969664,
+    "SPCX": 1795143312.3216496,
+    "ASTS": 1795143312.3216496,
+    "AXTI": 1795143312.3216496,
     "NASA": 1795142506.4520364,
     "LUNR": 1795142506.4520364,
     "TSLA": 1795142506.4520364,
     "AXP": 1795142506.4520364,
-    "RKLB": 1795141780.1969664,
+    "RKLB": 1795143312.3216496,
     "KO": 1795142506.4520364,
-    "FLY": 1795141780.1969664,
+    "FLY": 1795143312.3216496,
     "INTC": 1795142506.4520364,
     "VRT": 1795142506.4520364,
     "HPE": 1795142506.4520364,
@@ -3309,21 +3309,21 @@
     "MSTR": 1795142610.9330502,
     "SNDK": 1795142610.9330502,
     "BTC-USD": 1795142610.9330502,
-    "CRWD": 1795141780.1969664,
-    "ORCL": 1795141780.1969664,
-    "COIN": 1795141780.1969664,
-    "LLY": 1795141780.1969664,
-    "MRNA": 1795141780.1969664,
-    "NKE": 1795141780.1969664,
-    "MCD": 1795141780.1969664,
-    "PEP": 1795141780.1969664,
+    "CRWD": 1795143312.3216496,
+    "ORCL": 1795143312.3216496,
+    "COIN": 1795143312.3216496,
+    "LLY": 1795143312.3216496,
+    "MRNA": 1795143312.3216496,
+    "NKE": 1795143312.3216496,
+    "MCD": 1795143312.3216496,
+    "PEP": 1795143312.3216496,
     "XOM": 1795142399.6874251,
     "JPM": 1795142399.6874251,
     "WMT": 1795142506.4520364,
-    "V": 1795141780.1969664,
+    "V": 1795143312.3216496,
     "CAT": 1795142506.4520364,
-    "FN": 1795141780.1969664,
-    "GLW": 1795141780.1969664,
+    "FN": 1795143312.3216496,
+    "GLW": 1795143312.3216496,
     "ANT": 1795142610.9330502,
     "XAUUSD": 1795142610.9330502
   },
