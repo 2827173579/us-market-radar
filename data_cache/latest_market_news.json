@@ -1,9 +1,23 @@
 {
-  "updated_at_ts": 1795192551.608,
-  "updated_at_et": "11-20 11:35 ET",
-  "updated_at_kst": "01:35 KST",
+  "updated_at_ts": 1795192651.659,
+  "updated_at_et": "11-20 11:37 ET",
+  "updated_at_kst": "01:37 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261121003502648800",
+      "title": "费城半导体指数日内跌幅扩大至8%。美光科技(MU.O)跌超12%，AMD(AMD.O)跌…",
+      "summary": "费城半导体指数日内跌幅扩大至8%。美光科技(MU.O)跌超12%，AMD(AMD.O)跌超11%，博通(AVGO.O)跌超10%，台积电(TSM.N)跌超7%。",
+      "keywords": [
+        "半导体",
+        "台积电"
+      ],
+      "pub_ts": 1795192502.0,
+      "time_et": "11-20 11:35 ET",
+      "time_bj": "00:35 BJ",
+      "time_kst": "01:35 KST",
+      "time_display": "11:35 ET / 00:35 BJ"
+    },
     {
       "id": "20261120233910257800",
       "title": "纳斯达克100指数跌幅扩大至2.5%。",
@@ -327,20 +341,6 @@
       "time_bj": "19:44 BJ",
       "time_kst": "20:44 KST",
       "time_display": "06:44 ET / 19:44 BJ"
-    },
-    {
-      "id": "20261120194241566800",
-      "title": "法兴银行2027年展望：预计美联储将再加息两次，每次25个基点。",
-      "summary": "法兴银行2027年展望：预计美联储将再加息两次，每次25个基点。",
-      "keywords": [
-        "美联储",
-        "加息"
-      ],
-      "pub_ts": 1795174961.0,
-      "time_et": "11-20 06:42 ET",
-      "time_bj": "19:42 BJ",
-      "time_kst": "20:42 KST",
-      "time_display": "06:42 ET / 19:42 BJ"
     }
   ],
   "ticker_news": {
@@ -1086,6 +1086,13 @@
     ],
     "AMAT": [
       {
+        "title": "AMAT's AGS Gains From Growing Installed Base: What's Ahead?",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/amats-ags-gains-growing-installed-150200974.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 10:02 ET",
+        "pub_ts": 1795186920.0
+      },
+      {
         "title": "A $3 Billion Fund Is Betting Big on Applied Materials",
         "url": "https://www.tikr.com/blog/abrams-bison-investments-applied-materials-amat-stock?ref=yahoofinance&tlnk=yf-261120-fqw6rgjj&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1112,13 +1119,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 09:07 ET",
         "pub_ts": 1795097238.0
-      },
-      {
-        "title": "Applied Materials’ 2027 EPS Estimate Rose to $19.29 After Its Record Quarter. Its Average Price Target Fell to $562",
-        "url": "https://www.tikr.com/blog/applied-materials-2027-eps-estimate-rose-to-19-29-after-its-record-quarter-its-average-price-target-fell-to-562?ref=yahoofinance&tlnk=yf-261119-wrcmqmjc&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 07:06 ET",
-        "pub_ts": 1795089976.0
       }
     ],
     "META": [
@@ -1160,6 +1160,13 @@
     ],
     "GOOGL": [
       {
+        "title": "Veteran investors talk new book, 'demystifying' financial jargon to invest sooner and smarter",
+        "url": "https://finance.yahoo.com/video/veteran-investors-talk-new-book-demystifying-financial-jargon-to-invest-sooner-and-smarter-161606156.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 11:16 ET",
+        "pub_ts": 1795191366.0
+      },
+      {
         "title": "SDMC's Third Consecutive Year at Google's TV Summit, Showcasing Home Physical AI",
         "url": "https://finance.yahoo.com/technology/ai/articles/sdmcs-third-consecutive-googles-tv-155700409.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1186,13 +1193,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 10:22 ET",
         "pub_ts": 1795188151.0
-      },
-      {
-        "title": "5 Potential Multibagger Stocks to Research for Long-Term Growth",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/5-potential-multibagger-stocks-research-152159125.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 10:21 ET",
-        "pub_ts": 1795188119.0
       }
     ],
     "MSFT": [
@@ -1218,18 +1218,18 @@
         "pub_ts": 1795187280.0
       },
       {
+        "title": "Can INTC Capitalize on AI Growth Through Its Expanded Microsoft Deal?",
+        "url": "https://finance.yahoo.com/technology/ai/articles/intc-capitalize-ai-growth-expanded-150500460.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 10:05 ET",
+        "pub_ts": 1795187100.0
+      },
+      {
         "title": "Network Infrastructure and Software Market Report 2026: Global Size, Trends and Forecast to 2030 | Capitalize on Edge and Multi-Cloud Growth with AWS, Microsoft, Cisco, and Huawei",
         "url": "https://finance.yahoo.com/technology/articles/network-infrastructure-software-market-report-145300053.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-20 09:53 ET",
         "pub_ts": 1795186380.0
-      },
-      {
-        "title": "Global Data Protection and Replication Solutions Market Report 2026 | Capitalize on $18.5B by 2030 as Microsoft, Dell, IBM, Veeam, and Rubrik Drive Ransomware-Resilient Backups",
-        "url": "https://finance.yahoo.com/technology/articles/global-data-protection-replication-solutions-144900894.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 09:49 ET",
-        "pub_ts": 1795186140.0
       }
     ],
     "AAPL": [
@@ -3241,30 +3241,30 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795191112.4550397,
-    "SOXL": 1795191112.4550397,
-    "SPY": 1795191112.4550397,
-    "DIA": 1795191112.4550397,
-    "SOXX": 1795191112.4550397,
-    "QQQ": 1795191112.4550397,
-    "SMH": 1795191112.4550397,
-    "IWM": 1795191112.4550397,
-    "IGV": 1795191112.4550397,
-    "TLT": 1795191112.4550397,
-    "GLD": 1795191112.4550397,
-    "SQQQ": 1795191112.4550397,
-    "TSM": 1795191112.4550397,
-    "VIXY": 1795191112.4550397,
-    "SOXS": 1795191112.4550397,
-    "NVDA": 1795191112.4550397,
-    "AMD": 1795191112.4550397,
+    "KORU": 1795192651.6585402,
+    "SOXL": 1795192651.6585402,
+    "SPY": 1795192651.6585402,
+    "DIA": 1795192651.6585402,
+    "SOXX": 1795192651.6585402,
+    "QQQ": 1795192651.6585402,
+    "SMH": 1795192651.6585402,
+    "IWM": 1795192651.6585402,
+    "IGV": 1795192651.6585402,
+    "TLT": 1795192651.6585402,
+    "GLD": 1795192651.6585402,
+    "SQQQ": 1795192651.6585402,
+    "TSM": 1795192651.6585402,
+    "VIXY": 1795192651.6585402,
+    "SOXS": 1795192651.6585402,
+    "NVDA": 1795192651.6585402,
+    "AMD": 1795192651.6585402,
     "ASML": 1795191224.799243,
     "QCOM": 1795191224.799243,
-    "AVGO": 1795191112.4550397,
-    "AMAT": 1795191112.4550397,
-    "META": 1795191112.4550397,
-    "GOOGL": 1795191112.4550397,
-    "MSFT": 1795191112.4550397,
+    "AVGO": 1795192651.6585402,
+    "AMAT": 1795192651.6585402,
+    "META": 1795192651.6585402,
+    "GOOGL": 1795192651.6585402,
+    "MSFT": 1795192651.6585402,
     "AAPL": 1795191224.799243,
     "PLTR": 1795191224.799243,
     "NOW": 1795191224.799243,
@@ -3324,7 +3324,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (10:39 ET / 23:39 BJ) [纳斯达克]：纳斯达克100指数跌幅扩大至2.5%。",
+    "detail": "⚡ 最新核心快讯 (11:35 ET / 00:35 BJ) [半导体] [台积电]：费城半导体指数日内跌幅扩大至8%。美光科技(MU.O)跌超12%，AMD(AMD.O)跌超11%，博通(AVGO.O)跌超10%，台积电(TSM.N)跌超7%。",
     "event_name": "",
     "minutes_left": 0
   }
