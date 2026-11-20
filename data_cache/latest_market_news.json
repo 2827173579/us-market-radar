@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795214448.819,
-  "updated_at_et": "11-20 17:40 ET",
-  "updated_at_kst": "07:40 KST",
+  "updated_at_ts": 1795214553.34,
+  "updated_at_et": "11-20 17:42 ET",
+  "updated_at_kst": "07:42 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2603,6 +2603,13 @@
     ],
     "BTC-USD": [
       {
+        "title": "MARA Holdings (MARA) Could Be 65% Undervalued On Its AI And Bitcoin Reset",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/mara-holdings-mara-could-65-220853371.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 17:08 ET",
+        "pub_ts": 1795212533.0
+      },
+      {
         "title": "Crypto Market Today, Nov. 20: Bitcoin Plunges Below $60,000 as Wall Street's Sell-Off Spreads to Crypto",
         "url": "https://www.fool.com/coverage/stock-market-today/2026/11/20/crypto-market-today-nov-20-bitcoin-plunges-below-usd60-000-as-wall-street-s-sell-off-spreads-to-crypto/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2629,13 +2636,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 15:34 ET",
         "pub_ts": 1795206859.0
-      },
-      {
-        "title": "3 Cryptocurrencies to Buy and Hold Through 2030",
-        "url": "https://www.fool.com/investing/2026/11/20/3-cryptocurrencies-to-buy-and-hold-through-2030/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 15:30 ET",
-        "pub_ts": 1795206602.0
       }
     ],
     "CRWD": [
@@ -3302,7 +3302,7 @@
     "STX": 1795214148.1029162,
     "MSTR": 1795214148.1029162,
     "SNDK": 1795214044.0329792,
-    "BTC-USD": 1795213034.6002018,
+    "BTC-USD": 1795214553.3402493,
     "CRWD": 1795213534.0641363,
     "ORCL": 1795213534.0641363,
     "COIN": 1795213534.0641363,
@@ -3311,15 +3311,15 @@
     "NKE": 1795213639.6261818,
     "MCD": 1795213534.0641363,
     "PEP": 1795213534.0641363,
-    "XOM": 1795213034.6002018,
-    "JPM": 1795213034.6002018,
-    "WMT": 1795213034.6002018,
+    "XOM": 1795214553.3402493,
+    "JPM": 1795214553.3402493,
+    "WMT": 1795214553.3402493,
     "V": 1795213639.6261818,
-    "CAT": 1795213034.6002018,
+    "CAT": 1795214553.3402493,
     "FN": 1795213534.0641363,
     "GLW": 1795213534.0641363,
-    "ANT": 1795213034.6002018,
-    "XAUUSD": 1795213034.6002018
+    "ANT": 1795214553.3402493,
+    "XAUUSD": 1795214553.3402493
   },
   "calendar_banner": {
     "level": "idle_with_flash",
