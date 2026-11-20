@@ -1,9 +1,22 @@
 {
-  "updated_at_ts": 1795186278.521,
-  "updated_at_et": "11-20 09:51 ET",
-  "updated_at_kst": "23:51 KST",
+  "updated_at_ts": 1795186376.216,
+  "updated_at_et": "11-20 09:52 ET",
+  "updated_at_kst": "23:52 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261120225118488800",
+      "title": "美国芯片制造商股价下跌，AMD(AMD.O)下跌4.9%，英特尔(INTC.O)下跌1.…",
+      "summary": "美国芯片制造商股价下跌，AMD(AMD.O)下跌4.9%，英特尔(INTC.O)下跌1.6%，博通(AVGO.O)下跌1.9%，迈威尔科技(MRVL.O)下跌5.3%，美光科技(MU.O)下跌6.3%，德州仪器(TXN.O)下跌1.9%。",
+      "keywords": [
+        "芯片"
+      ],
+      "pub_ts": 1795186278.0,
+      "time_et": "11-20 09:51 ET",
+      "time_bj": "22:51 BJ",
+      "time_kst": "23:51 KST",
+      "time_display": "09:51 ET / 22:51 BJ"
+    },
     {
       "id": "20261120224426175800",
       "title": "英伟达(NVDA.O)股价跌至2025年6月以来的最低水平，最新下跌4.7%。",
@@ -326,19 +339,6 @@
       "time_bj": "17:25 BJ",
       "time_kst": "18:25 KST",
       "time_display": "04:25 ET / 17:25 BJ"
-    },
-    {
-      "id": "20261120172442944800",
-      "title": "供应修复压低战争溢价，霍尔木兹依赖可能长期下降｜原油头条",
-      "summary": "IEA最新展望提出，伊朗冲突带来的能源冲击将重塑能源体系，各国优先保障供应安全与成本，加速能源多元化、电气化和本土能源开发。",
-      "keywords": [
-        "原油"
-      ],
-      "pub_ts": 1795166682.0,
-      "time_et": "11-20 04:24 ET",
-      "time_bj": "17:24 BJ",
-      "time_kst": "18:24 KST",
-      "time_display": "04:24 ET / 17:24 BJ"
     }
   ],
   "ticker_news": {
@@ -3322,7 +3322,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (09:44 ET / 22:44 BJ) [英伟达]：英伟达(NVDA.O)股价跌至2025年6月以来的最低水平，最新下跌4.7%。",
+    "detail": "⚡ 最新核心快讯 (09:51 ET / 22:51 BJ) [芯片]：美国芯片制造商股价下跌，AMD(AMD.O)下跌4.9%，英特尔(INTC.O)下跌1.6%，博通(AVGO.O)下跌1.9%，迈威尔科技(MRVL.O)下跌5.3%，美光科技(MU.O)下",
     "event_name": "",
     "minutes_left": 0
   }
