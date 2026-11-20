@@ -3751,9 +3751,21 @@
     "2026-11-20:DEFENSIVE_FLIGHT:+17.8": {
       "device": "PC",
       "ts": 1795208469.2983603
+    },
+    "JIN10_FLASH:20261121045838189800": {
+      "device": "PC",
+      "ts": 1795208470.9284499
+    },
+    "2026-11-20:NBIS/APLD/CRDO/SKHY/AMAT/AMD:STOP_LOSS": {
+      "device": "PC",
+      "ts": 1795208644.7887337
+    },
+    "2026-11-20:DEFENSIVE_FLIGHT:-1.8": {
+      "device": "PC",
+      "ts": 1795208646.2088094
     }
   },
   "device": "PC",
-  "last_heartbeat_ts": 1795208386.0792146,
-  "updated_at": "2026-11-20T21:01:09.299113+00:00"
+  "last_heartbeat_ts": 1795208489.9636462,
+  "updated_at": "2026-11-20T21:04:06.209296+00:00"
 }

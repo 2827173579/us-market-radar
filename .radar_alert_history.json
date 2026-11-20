@@ -7,7 +7,7 @@
     },
     "NBIS": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1794877325.2745395
+      "last_notified_at": 1795208644.2368214
     },
     "NVDA": {
       "state": "STOP_LOSS",
@@ -106,8 +106,8 @@
       "last_notified_at": 0.0
     },
     "AMD": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "STOP_LOSS",
+      "last_notified_at": 1795208644.2368214
     },
     "CRWD": {
       "state": "NORMAL",
@@ -132,6 +132,22 @@
     "ASML": {
       "state": "STOP_LOSS",
       "last_notified_at": 1795208363.6759124
+    },
+    "APLD": {
+      "state": "STOP_LOSS",
+      "last_notified_at": 1795208644.2368214
+    },
+    "CRDO": {
+      "state": "STOP_LOSS",
+      "last_notified_at": 1795208644.2368214
+    },
+    "SKHY": {
+      "state": "STOP_LOSS",
+      "last_notified_at": 1795208644.2368214
+    },
+    "AMAT": {
+      "state": "STOP_LOSS",
+      "last_notified_at": 1795208644.2368214
     }
   },
   "position_peaks": {
