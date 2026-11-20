@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795182824.573,
-  "updated_at_et": "11-20 08:53 ET",
-  "updated_at_kst": "22:53 KST",
+  "updated_at_ts": 1795182933.447,
+  "updated_at_et": "11-20 08:55 ET",
+  "updated_at_kst": "22:55 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2824,6 +2824,13 @@
     ],
     "NKE": [
       {
+        "title": "Nike crashed to $34 with a 4.8% yield: Turnaround or value trap?",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/nike-crashed-34-4-8-134739092.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 08:47 ET",
+        "pub_ts": 1795182459.0
+      },
+      {
         "title": "Here’s How Many Shares of Nike You Need for $20,000 in Yearly Dividends",
         "url": "https://www.fool.com/investing/2026/11/20/heres-how-many-shares-of-nike-you-need-for-20000-in-yearly-dividends/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2850,13 +2857,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 16:37 ET",
         "pub_ts": 1795124220.0
-      },
-      {
-        "title": "Nike Sinks 5%, Dick’s Sporting Goods Down 5% as Analyst Flags Jordan Allocation Cuts of Up to 50%",
-        "url": "https://www.tikr.com/blog/nike-sinks-5-dicks-sporting-goods-down-5-as-analyst-flags-jordan-allocation-cuts-of-up-to-50?ref=yahoofinance&tlnk=yf-261119-r5m84fqw&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 14:25 ET",
-        "pub_ts": 1795116319.0
       }
     ],
     "MCD": [
@@ -3307,7 +3307,7 @@
     "COIN": 1795182824.5733588,
     "LLY": 1795182824.5733588,
     "MRNA": 1795182824.5733588,
-    "NKE": 1795181253.6527224,
+    "NKE": 1795182933.446789,
     "MCD": 1795182824.5733588,
     "PEP": 1795182824.5733588,
     "XOM": 1795182404.928296,
