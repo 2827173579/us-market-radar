@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795173654.262,
-  "updated_at_et": "11-20 06:20 ET",
-  "updated_at_kst": "20:20 KST",
+  "updated_at_ts": 1795173752.405,
+  "updated_at_et": "11-20 06:22 ET",
+  "updated_at_kst": "20:22 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -533,6 +533,13 @@
     ],
     "QQQ": [
       {
+        "title": "ETF Activity: SPY Leads $11.63 Billion Exit on Nov. 18",
+        "url": "https://finance.yahoo.com/markets/options/articles/etf-activity-spy-leads-11-110010858.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 06:00 ET",
+        "pub_ts": 1795172410.0
+      },
+      {
         "title": "Amazon Beat QQQ, But The Ride Was Much Harder",
         "url": "https://www.trefis.com/stock/amzn/articles/626704/amazon-beat-qqq-but-the-ride-was-much-harder/2026-11-19?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -559,13 +566,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 10:05 ET",
         "pub_ts": 1795100725.0
-      },
-      {
-        "title": "Exchange-Traded Funds, Equity Futures Higher Pre-Bell Thursday Ahead of Anthropic Stock Market Debut",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/exchange-traded-funds-equity-futures-141450756.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 09:14 ET",
-        "pub_ts": 1795097690.0
       }
     ],
     "SMH": [
@@ -792,39 +792,39 @@
     ],
     "TSM": [
       {
+        "title": "16 ETFs Add to Taiwan Semiconductor (TSM) on Wednesday",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/16-etfs-add-taiwan-semiconductor-110100292.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 06:01 ET",
+        "pub_ts": 1795172460.0
+      },
+      {
+        "title": "Update: Market Chatter: TSMC Tightening Restrictions on Chinese Chip Designers in Response to New US Rules",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/market-chatter-tsmc-tightening-restrictions-105933763.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 05:59 ET",
+        "pub_ts": 1795172373.0
+      },
+      {
+        "title": "TSMC Tightens Restrictions on Chinese AI Chip Production Following New US Export Rules",
+        "url": "https://investorshub.advfn.com/market-news/article/40446/tsmc-tightens-restrictions-on-chinese-ai-chip-production-following-new-us-export-rules?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 05:47 ET",
+        "pub_ts": 1795171625.0
+      },
+      {
+        "title": "TSMC Is 28% Below Its High. Another Director Just Bought $500,000 of Stock as Demand Stays “Extremely Robust”",
+        "url": "https://www.tikr.com/blog/tsmc-is-28-below-its-high-another-director-just-bought-500000-of-stock-as-demand-stays-extremely-robust?ref=yahoofinance&tlnk=yf-261120-c583cp2q&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 04:50 ET",
+        "pub_ts": 1795168251.0
+      },
+      {
         "title": "South Korea’s Stock Market and the Nikkei 225 Sink More Than 4% as the AI Selloff Spreads From Wall Street. Here’s How Much of a Target-Date Fund Is in Samsung, SK Hynix and TSMC",
         "url": "https://247wallst.com/investing/2026/11/19/south-koreas-stock-market-and-the-nikkei-225-sink-more-than-4-as-the-ai-selloff-spreads-from-wall-street-heres-how-much-of-a-target-date-fund-is-in-samsung-sk-hynix-and-tsmc/?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-19 22:51 ET",
         "pub_ts": 1795146664.0
-      },
-      {
-        "title": "TSMC halts advanced chip orders from Chinese designers in Taiwan",
-        "url": "http://www.intellinews.com/tsmc-halts-advanced-chip-orders-from-chinese-designers-in-taiwan-486911/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 19:06 ET",
-        "pub_ts": 1795133191.0
-      },
-      {
-        "title": "Susquehanna’s $600 Target Says TSMC’s Selloff Went Too Far",
-        "url": "https://www.tikr.com/blog/susquehannas-600-target-says-tsmcs-selloff-went-too-far?ref=yahoofinance&tlnk=yf-261120-fhf8xpr6&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 17:59 ET",
-        "pub_ts": 1795129174.0
-      },
-      {
-        "title": "Billionaire Stanley Druckenmiller Cut TSMC 94% in One Quarter, Leaving Just $14.9 Million",
-        "url": "https://247wallst.com/investing/2026/11/19/billionaire-stanley-druckenmiller-cut-tsmc-94-in-one-quarter-leaving-just-14-9-million/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 14:46 ET",
-        "pub_ts": 1795117611.0
-      },
-      {
-        "title": "TSMC and Samsung's China Chip Pause Has Stakes Beyond AI",
-        "url": "https://finance.yahoo.com/technology/articles/tsmc-samsungs-china-chip-pause-185414287.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 13:54 ET",
-        "pub_ts": 1795114454.0
       }
     ],
     "VIXY": [
@@ -903,6 +903,20 @@
     ],
     "NVDA": [
       {
+        "title": "SpaceX Lenders Seek Restrictions on Moving Nvidia AI Chips Into Orbit, FT Reports",
+        "url": "https://investorshub.advfn.com/market-news/article/40450/spacex-lenders-seek-restrictions-on-moving-nvidia-ai-chips-into-orbit-ft-reports?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 05:59 ET",
+        "pub_ts": 1795172340.0
+      },
+      {
+        "title": "California Opens Investigation Into Nvidia Over Alleged China Ties And Potentially Misleading Investors",
+        "url": "https://www.ibtimes.com/california-ag-subpoenas-nvidia-over-china-ties-3809997?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 05:58 ET",
+        "pub_ts": 1795172322.0
+      },
+      {
         "title": "1 Magnificent Artificial Intelligence (AI) Hardware Stock Down 57% You Might Regret Not Buying on the Dip",
         "url": "https://www.fool.com/investing/2026/11/20/1-artificial-intelligence-ai-hardware-stock-down-57-regret-not-buying-dip/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -917,25 +931,11 @@
         "pub_ts": 1795170902.0
       },
       {
-        "title": "Nvidia Added $111 Billion of Supply Commitments in a Quarter, Mostly Memory. Micron Is Still Priced Like a Bust",
-        "url": "https://www.tikr.com/blog/nvidia-added-111-billion-of-supply-commitments-in-a-quarter-mostly-memory-micron-is-still-priced-like-a-bust?ref=yahoofinance&tlnk=yf-261120-v94hx7gc&.tsrc=rss",
+        "title": "Nvidia’s SEC Probe Isn’t Going Away, Even as a Blowout Quarter and a CEO Shake-Up Steal the Spotlight",
+        "url": "https://www.tikr.com/blog/nvidias-sec-probe-isnt-going-away-even-as-a-blowout-quarter-and-a-ceo-shake-up-steal-the-spotlight?ref=yahoofinance&tlnk=yf-261120-69rqpvg4&.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-20 04:34 ET",
-        "pub_ts": 1795167258.0
-      },
-      {
-        "title": "US Chip Curbs Ignite Fresh AI Jitters: Market Snapshot",
-        "url": "https://finance.yahoo.com/video/us-chip-curbs-ignite-fresh-093202928.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 04:32 ET",
-        "pub_ts": 1795167122.0
-      },
-      {
-        "title": "Nvidia Has Lost More Than the Market Value of 495 S&P 500 Companies in 6 Weeks -- and Its Downtrend May Be Just Beginning",
-        "url": "https://www.fool.com/investing/2026/11/20/nvidia-lost-more-than-market-value-of-495-sp-500-companies-downtrend-just-beginning/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 04:26 ET",
-        "pub_ts": 1795166761.0
+        "time": "11-20 05:20 ET",
+        "pub_ts": 1795170031.0
       }
     ],
     "AMD": [
@@ -945,6 +945,13 @@
         "source": "Yahoo Finance",
         "time": "11-20 05:04 ET",
         "pub_ts": 1795169090.0
+      },
+      {
+        "title": "David Tepper Just Sold All His AMD Shares",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/david-tepper-just-sold-amd-105523872.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 05:55 ET",
+        "pub_ts": 1795172123.0
       },
       {
         "title": "Why Is AMD Down 5% In Premarket Today?",
@@ -966,13 +973,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 21:48 ET",
         "pub_ts": 1795142894.0
-      },
-      {
-        "title": "1 Unstoppable Stock to Buy Before It Joins NVDA and AAPL in the $1 Trillion Club",
-        "url": "https://www.fool.com/investing/2026/11/19/1-unstoppable-stock-to-buy-before-it-joins-hot-tickers-in-the-1-3-trillion-club/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 19:52 ET",
-        "pub_ts": 1795135922.0
       }
     ],
     "ASML": [
@@ -1199,39 +1199,39 @@
     ],
     "MSFT": [
       {
+        "title": "Microsoft CEO explains why the company asked 60K workers to quit. How to know when to accept a buyout or turn it down",
+        "url": "https://finance.yahoo.com/technology/ai/articles/microsoft-ceo-explains-why-company-100000431.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 05:00 ET",
+        "pub_ts": 1795168800.0
+      },
+      {
         "title": "What Does Mastercard (MA) Joining The AI Transparency Initiative Mean For Investors?",
-        "url": "https://finnhub.io/api/news?id=5e11f0d40eb6d3654d666415cc7d36d450add7ac6433a8e01f57a7b918eac187",
-        "source": "Yahoo",
+        "url": "https://finance.yahoo.com/technology/ai/articles/does-mastercard-ma-joining-ai-052240359.html?.tsrc=rss",
+        "source": "Yahoo Finance",
         "time": "11-20 00:22 ET",
         "pub_ts": 1795152160.0
       },
       {
-        "title": "Invesco QQQ Monthly Review",
-        "url": "https://finnhub.io/api/news?id=160c38cf1180315966a4a7333f08a04eb7c1ef94af1882a472148aa616ab8c51",
-        "source": "SeekingAlpha",
-        "time": "11-19 23:20 ET",
-        "pub_ts": 1795148400.0
-      },
-      {
         "title": "Microsoft CEO Nadella faces uncomfortable reality after outage",
-        "url": "https://finnhub.io/api/news?id=1a012ab702ee1615ee21bf68513a11c942746bfaf5b9522649bed16b905ea14b",
-        "source": "Yahoo",
+        "url": "https://www.thestreet.com/technology/microsoft-ceo-nadella-faces-uncomfortable-reality-after-outage?.tsrc=rss",
+        "source": "Yahoo Finance",
         "time": "11-19 22:47 ET",
         "pub_ts": 1795146420.0
       },
       {
         "title": "Akamai Technologies (AKAM) Expands Mobile Enterprise Browser Security",
-        "url": "https://finnhub.io/api/news?id=3df078be1f0c0bb888d0eafb1364b8b5ba0cd47c3fa12f2eb8719facc00076b0",
-        "source": "Yahoo",
+        "url": "https://finance.yahoo.com/technology/articles/akamai-technologies-akam-expands-mobile-031634349.html?.tsrc=rss",
+        "source": "Yahoo Finance",
         "time": "11-19 22:16 ET",
         "pub_ts": 1795144594.0
       },
       {
-        "title": "Tech takes a beating as AI trade comes unstuck despite Anthropic surge",
-        "url": "https://finnhub.io/api/news?id=072f02f894dda6fdda0cf11cbe0670c8d323d9bf0ff7bcd9cfdd0d5943c9feb1",
-        "source": "Yahoo",
-        "time": "11-19 22:02 ET",
-        "pub_ts": 1795143777.0
+        "title": "Microsoft Bought Into Anthropic Around $350 Billion. The IPO Says “Almost Exactly $1.5 Trillion”",
+        "url": "https://www.tikr.com/blog/microsoft-bought-into-anthropic-around-350-billion-the-ipo-says-almost-exactly-1-5-trillion?ref=yahoofinance&tlnk=yf-261120-g55x67qh&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 18:06 ET",
+        "pub_ts": 1795129600.0
       }
     ],
     "AAPL": [
@@ -3243,31 +3243,31 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795172155.7003098,
-    "SOXL": 1795172155.7003098,
-    "SPY": 1795172155.7003098,
-    "DIA": 1795172155.7003098,
-    "SOXX": 1795172155.7003098,
-    "QQQ": 1795172155.7003098,
-    "SMH": 1795172155.7003098,
-    "IWM": 1795172155.7003098,
-    "IGV": 1795172155.7003098,
-    "TLT": 1795172155.7003098,
-    "GLD": 1795172155.7003098,
-    "SQQQ": 1795172155.7003098,
-    "TSM": 1795172155.7003098,
-    "VIXY": 1795172155.7003098,
-    "SOXS": 1795172155.7003098,
-    "NVDA": 1795172155.7003098,
-    "AMD": 1795172155.7003098,
-    "ASML": 1795172155.7003098,
-    "QCOM": 1795172155.7003098,
-    "AVGO": 1795172155.7003098,
-    "AMAT": 1795172155.7003098,
-    "META": 1795172155.7003098,
-    "GOOGL": 1795172155.7003098,
-    "MSFT": 1795172155.7003098,
-    "AAPL": 1795172155.7003098,
+    "KORU": 1795173752.4053469,
+    "SOXL": 1795173752.4053469,
+    "SPY": 1795173752.4053469,
+    "DIA": 1795173752.4053469,
+    "SOXX": 1795173752.4053469,
+    "QQQ": 1795173752.4053469,
+    "SMH": 1795173752.4053469,
+    "IWM": 1795173752.4053469,
+    "IGV": 1795173752.4053469,
+    "TLT": 1795173752.4053469,
+    "GLD": 1795173752.4053469,
+    "SQQQ": 1795173752.4053469,
+    "TSM": 1795173752.4053469,
+    "VIXY": 1795173752.4053469,
+    "SOXS": 1795173752.4053469,
+    "NVDA": 1795173752.4053469,
+    "AMD": 1795173752.4053469,
+    "ASML": 1795173752.4053469,
+    "QCOM": 1795173752.4053469,
+    "AVGO": 1795173752.4053469,
+    "AMAT": 1795173752.4053469,
+    "META": 1795173752.4053469,
+    "GOOGL": 1795173752.4053469,
+    "MSFT": 1795173752.4053469,
+    "AAPL": 1795173752.4053469,
     "PLTR": 1795172155.7003098,
     "NOW": 1795172155.7003098,
     "AMZN": 1795172155.7003098,
