@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795140246.16,
-  "updated_at_et": "11-19 21:04 ET",
-  "updated_at_kst": "11:04 KST",
+  "updated_at_ts": 1795140352.444,
+  "updated_at_et": "11-19 21:05 ET",
+  "updated_at_kst": "11:05 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -910,6 +910,27 @@
     ],
     "NVDA": [
       {
+        "title": "History Says This Brilliant ETF Could Help You Turn $500 Per Month Into $784,100 While Barely Lifting a Finger.",
+        "url": "https://www.fool.com/investing/2026/11/19/history-says-this-brilliant-etf-could-help-you-turn-usd500-per-month-into-usd784-100-while-barely-lifting-a-finger/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 20:48 ET",
+        "pub_ts": 1795139282.0
+      },
+      {
+        "title": "California attorney general subpoenas Nvidia over chips, former CEO's affair",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/california-attorney-general-subpoenas-nvidia-013306809.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 20:33 ET",
+        "pub_ts": 1795138386.0
+      },
+      {
+        "title": "Why Nvidia's sell-off could be a buying opportunity (with a catch)",
+        "url": "https://www.thestreet.com/investing/stocks/why-nvidias-sell-off-could-be-a-buying-opportunity-with-a-catch?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 20:25 ET",
+        "pub_ts": 1795137930.0
+      },
+      {
         "title": "Alibaba Group Holding Accused of Hiding Ties to Suspected Spy in Nvidia Scandal, Lawsuit Says",
         "url": "https://finance.yahoo.com/markets/stocks/articles/alibaba-group-holding-accused-hiding-010413571.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -922,27 +943,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 20:03 ET",
         "pub_ts": 1795136616.0
-      },
-      {
-        "title": "1 Unstoppable Stock to Buy Before It Joins NVDA and AAPL in the $1 Trillion Club",
-        "url": "https://www.fool.com/investing/2026/11/19/1-unstoppable-stock-to-buy-before-it-joins-hot-tickers-in-the-1-3-trillion-club/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 19:52 ET",
-        "pub_ts": 1795135922.0
-      },
-      {
-        "title": "Nvidia Faces California Subpoena as Its Regulatory Troubles Grow",
-        "url": "https://finance.yahoo.com/m/c4255d5c-5bd9-305f-b1be-770e273d435b/nvidia-faces-california.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 19:26 ET",
-        "pub_ts": 1795134360.0
-      },
-      {
-        "title": "Should You Avoid MercadoLibre (MELI) Stock, Even Now That It's Near a 52-Week Low?",
-        "url": "https://www.fool.com/investing/2026/11/19/should-you-avoid-mercadolibre-meli-stock-even-now/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 20:25 ET",
-        "pub_ts": 1795137900.0
       }
     ],
     "AMD": [
@@ -3250,22 +3250,22 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795138447.815816,
-    "SOXL": 1795138447.815816,
-    "SPY": 1795138447.815816,
-    "DIA": 1795138447.815816,
-    "SOXX": 1795138447.815816,
-    "QQQ": 1795138447.815816,
-    "SMH": 1795138447.815816,
-    "IWM": 1795138447.815816,
-    "IGV": 1795138447.815816,
-    "TLT": 1795138447.815816,
-    "GLD": 1795138447.815816,
-    "SQQQ": 1795138447.815816,
-    "TSM": 1795138553.0512857,
-    "VIXY": 1795138447.815816,
-    "SOXS": 1795138447.815816,
-    "NVDA": 1795138447.815816,
+    "KORU": 1795140352.4437547,
+    "SOXL": 1795140352.4437547,
+    "SPY": 1795140352.4437547,
+    "DIA": 1795140352.4437547,
+    "SOXX": 1795140352.4437547,
+    "QQQ": 1795140352.4437547,
+    "SMH": 1795140352.4437547,
+    "IWM": 1795140352.4437547,
+    "IGV": 1795140352.4437547,
+    "TLT": 1795140352.4437547,
+    "GLD": 1795140352.4437547,
+    "SQQQ": 1795140352.4437547,
+    "TSM": 1795140352.4437547,
+    "VIXY": 1795140352.4437547,
+    "SOXS": 1795140352.4437547,
+    "NVDA": 1795140352.4437547,
     "AMD": 1795138553.0512857,
     "ASML": 1795138553.0512857,
     "QCOM": 1795138553.0512857,
@@ -3320,9 +3320,9 @@
     "NKE": 1795140246.1596444,
     "MCD": 1795140246.1596444,
     "PEP": 1795140246.1596444,
-    "XOM": 1795138447.815816,
-    "JPM": 1795138447.815816,
-    "WMT": 1795138447.815816,
+    "XOM": 1795140352.4437547,
+    "JPM": 1795140352.4437547,
+    "WMT": 1795140352.4437547,
     "V": 1795140246.1596444,
     "CAT": 1795138447.815816,
     "FN": 1795140246.1596444,
