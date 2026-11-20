@@ -3758,7 +3758,7 @@
     },
     "2026-11-20:NBIS/APLD/CRDO/SKHY/AMAT/AMD:STOP_LOSS": {
       "device": "PC",
-      "ts": 1795208644.7887337
+      "ts": 1795215879.869359
     },
     "2026-11-20:DEFENSIVE_FLIGHT:-1.8": {
       "device": "PC",
@@ -3902,6 +3902,6 @@
     }
   },
   "device": "PC",
-  "last_heartbeat_ts": 1795215700.6674654,
-  "updated_at": "2026-11-20T23:02:59.588536+00:00"
+  "last_heartbeat_ts": 1795215799.6438692,
+  "updated_at": "2026-11-20T23:04:39.869805+00:00"
 }
