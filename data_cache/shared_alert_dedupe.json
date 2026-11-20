@@ -3323,9 +3323,17 @@
     "2026-11-20:DEFENSIVE_FLIGHT:+7.9": {
       "device": "PC",
       "ts": 1795188046.8058782
+    },
+    "2026-11-20:DEFENSIVE_FLIGHT:+8.2": {
+      "device": "PC",
+      "ts": 1795188153.242078
+    },
+    "2026-11-20:INTRADAY_CORRIDOR:QQQ:BELOW_P25": {
+      "device": "PC",
+      "ts": 1795188153.9471946
     }
   },
   "device": "PC",
-  "last_heartbeat_ts": 1795187962.3097882,
-  "updated_at": "2026-11-20T15:20:46.806345+00:00"
+  "last_heartbeat_ts": 1795188066.827964,
+  "updated_at": "2026-11-20T15:22:33.947673+00:00"
 }
