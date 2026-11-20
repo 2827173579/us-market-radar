@@ -1,9 +1,22 @@
 {
-  "updated_at_ts": 1795177725.921,
-  "updated_at_et": "11-20 07:28 ET",
-  "updated_at_kst": "21:28 KST",
+  "updated_at_ts": 1795178135.788,
+  "updated_at_et": "11-20 07:35 ET",
+  "updated_at_kst": "21:35 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261120203421847800",
+      "title": "英伟达(NVDA.O)美股盘前跌幅扩大至3%。",
+      "summary": "英伟达(NVDA.O)美股盘前跌幅扩大至3%。",
+      "keywords": [
+        "英伟达"
+      ],
+      "pub_ts": 1795178061.0,
+      "time_et": "11-20 07:34 ET",
+      "time_bj": "20:34 BJ",
+      "time_kst": "21:34 KST",
+      "time_display": "07:34 ET / 20:34 BJ"
+    },
     {
       "id": "20261120202218662800",
       "title": "美联储12月激进加息50基点？美国经济恐难承受！",
@@ -331,20 +344,6 @@
       "time_bj": "13:49 BJ",
       "time_kst": "14:49 KST",
       "time_display": "00:49 ET / 13:49 BJ"
-    },
-    {
-      "id": "20261120134000000800",
-      "title": "【今日重点关注的财经数据与事件：2026年11月20日 周五】 ① 待定 恒生指数公司宣…",
-      "summary": "【今日重点关注的财经数据与事件：2026年11月20日 周五】 ① 待定 恒生指数公司宣恒生指数系列检讨结果 ② 15:00 德国10月PPI月率 ③ 15:00 英国10月公共部门净借款 ④ 15:00 英国10月季调后零售销售月率 ⑤ 16:15 欧洲央行行长拉加德发表讲话 ⑥ 21:25 美联储理事沃勒发表讲话 ⑦ 21:30 加拿大9月零售销售月率 ⑧ 23:00 欧元区11月消费者信心指数初值 ⑨ 23:00 美国11月密歇根大学消费者信心指数终值 ⑩ 23:00 美国11月一年期通胀率预期终值 ⑪ 次日01:15 美联储理事丽莎·库克发表讲话 ⑫ 次日02:00 美国至11月20日当周石油钻井总数 ⑬ 次日03:30 美油移仓换月",
-      "keywords": [
-        "美联储",
-        "PPI"
-      ],
-      "pub_ts": 1795153200.0,
-      "time_et": "11-20 00:40 ET",
-      "time_bj": "13:40 BJ",
-      "time_kst": "14:40 KST",
-      "time_display": "00:40 ET / 13:40 BJ"
     }
   ],
   "ticker_news": {
@@ -1763,32 +1762,32 @@
         "pub_ts": 1795172400.0
       },
       {
+        "title": "HSBC upgrades Tesla, more than doubles target on SpaceX merger potential",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/hsbc-upgrades-tesla-more-doubles-121007073.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 07:10 ET",
+        "pub_ts": 1795176607.0
+      },
+      {
+        "title": "SpaceX Raises $32 Billion in Debt to Buy Nvidia Chips",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/spacex-raises-32-billion-debt-120100540.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 07:01 ET",
+        "pub_ts": 1795176060.0
+      },
+      {
+        "title": "SpaceX's 8.26% Bond Yield Reveals the Cost of the AI Boom",
+        "url": "https://finance.yahoo.com/technology/ai/articles/spacexs-8-26-bond-yield-120052825.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 07:00 ET",
+        "pub_ts": 1795176052.0
+      },
+      {
         "title": "iShares A.I. Innovation and Tech Active ETF (BAI) Buys $14.3 Million More AMD on Nov. 18",
         "url": "https://finance.yahoo.com/markets/stocks/articles/ishares-innovation-tech-active-etf-110443799.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-20 06:04 ET",
         "pub_ts": 1795172683.0
-      },
-      {
-        "title": "Tesla Stock Gets An HSBC Upgrade — But Analyst Says Strategic Logic Of TSLA-SPCX Merger Is ‘Limited’",
-        "url": "https://stocktwits.com/news-articles/markets/equity/tesla-stock-gets-an-hsbc-upgrade-but-analyst-says-strategic-logic-of-tsla-spcx-merger-is-limited/cNbSgTfR9Ko?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 06:02 ET",
-        "pub_ts": 1795172562.0
-      },
-      {
-        "title": "26 ETFs Add to SpaceX (SPCX) Holdings on Nov. 18",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/26-etfs-add-spacex-spcx-110121838.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 06:01 ET",
-        "pub_ts": 1795172481.0
-      },
-      {
-        "title": "SpaceX Lenders Seek Restrictions on Moving Nvidia AI Chips Into Orbit, FT Reports",
-        "url": "https://investorshub.advfn.com/market-news/article/40450/spacex-lenders-seek-restrictions-on-moving-nvidia-ai-chips-into-orbit-ft-reports?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 05:59 ET",
-        "pub_ts": 1795172340.0
       }
     ],
     "ASTS": [
@@ -2917,6 +2916,13 @@
         "pub_ts": 1795169690.0
       },
       {
+        "title": "Seed-oil-free foods are now a $1 billion business. Stanford scientists say the health claims don’t hold up",
+        "url": "https://finance.yahoo.com/healthcare/articles/seed-oil-free-foods-now-095800510.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 04:58 ET",
+        "pub_ts": 1795168680.0
+      },
+      {
         "title": "PepsiCo stands out in consumer staples as sector breaks three-year downtrend",
         "url": "https://finance.yahoo.com/markets/stocks/articles/pepsico-stands-consumer-staples-sector-210057677.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2929,13 +2935,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 11:51 ET",
         "pub_ts": 1795107060.0
-      },
-      {
-        "title": "Bernstein Sees Trouble Ahead for PepsiCo (PEP). Here’s Where.",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/bernstein-sees-trouble-ahead-pepsico-150544527.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 10:05 ET",
-        "pub_ts": 1795100744.0
       }
     ],
     "XOM": [
@@ -3274,25 +3273,25 @@
     "NOW": 1795177214.329588,
     "AMZN": 1795177214.329588,
     "CRWV": 1795177214.329588,
-    "NBIS": 1795176506.8672552,
-    "APLD": 1795176506.8672552,
-    "VST": 1795176506.8672552,
-    "BE": 1795176506.8672552,
-    "CRDO": 1795176506.8672552,
-    "COHR": 1795176506.8672552,
-    "MRVL": 1795176506.8672552,
-    "LITE": 1795176506.8672552,
+    "NBIS": 1795178135.7881205,
+    "APLD": 1795178135.7881205,
+    "VST": 1795178135.7881205,
+    "BE": 1795178135.7881205,
+    "CRDO": 1795178135.7881205,
+    "COHR": 1795178135.7881205,
+    "MRVL": 1795178135.7881205,
+    "LITE": 1795178135.7881205,
     "AAOI": 1795177214.329588,
-    "SPCX": 1795176506.8672552,
-    "ASTS": 1795176506.8672552,
-    "AXTI": 1795176506.8672552,
+    "SPCX": 1795178135.7881205,
+    "ASTS": 1795178135.7881205,
+    "AXTI": 1795178135.7881205,
     "NASA": 1795177214.329588,
     "LUNR": 1795177214.329588,
     "TSLA": 1795177214.329588,
     "AXP": 1795177214.329588,
-    "RKLB": 1795176506.8672552,
+    "RKLB": 1795178135.7881205,
     "KO": 1795177214.329588,
-    "FLY": 1795176506.8672552,
+    "FLY": 1795178135.7881205,
     "INTC": 1795177214.329588,
     "VRT": 1795177214.329588,
     "HPE": 1795177214.329588,
@@ -3307,28 +3306,28 @@
     "MSTR": 1795177214.329588,
     "SNDK": 1795177214.329588,
     "BTC-USD": 1795177725.9212663,
-    "CRWD": 1795176506.8672552,
-    "ORCL": 1795176506.8672552,
-    "COIN": 1795176506.8672552,
-    "LLY": 1795176506.8672552,
-    "MRNA": 1795176506.8672552,
-    "NKE": 1795176506.8672552,
-    "MCD": 1795176506.8672552,
-    "PEP": 1795176506.8672552,
+    "CRWD": 1795178135.7881205,
+    "ORCL": 1795178135.7881205,
+    "COIN": 1795178135.7881205,
+    "LLY": 1795178135.7881205,
+    "MRNA": 1795178135.7881205,
+    "NKE": 1795178135.7881205,
+    "MCD": 1795178135.7881205,
+    "PEP": 1795178135.7881205,
     "XOM": 1795177725.9212663,
     "JPM": 1795177725.9212663,
     "WMT": 1795177725.9212663,
-    "V": 1795176506.8672552,
+    "V": 1795178135.7881205,
     "CAT": 1795177725.9212663,
-    "FN": 1795176506.8672552,
-    "GLW": 1795176506.8672552,
+    "FN": 1795178135.7881205,
+    "GLW": 1795178135.7881205,
     "ANT": 1795177725.9212663,
     "XAUUSD": 1795177725.9212663
   },
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (07:22 ET / 20:22 BJ) [美联储] [加息]：美联储理事沃勒提议12月加息50个基点以打破高通胀预期，但市场仍押注常规步伐。在美股回调、楼市遇冷与购买力下滑之际，激进紧缩的代价正引发争议。点击查看…",
+    "detail": "⚡ 最新核心快讯 (07:34 ET / 20:34 BJ) [英伟达]：英伟达(NVDA.O)美股盘前跌幅扩大至3%。",
     "event_name": "",
     "minutes_left": 0
   }
