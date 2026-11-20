@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795168895.511,
-  "updated_at_et": "11-20 05:01 ET",
-  "updated_at_kst": "19:01 KST",
+  "updated_at_ts": 1795168996.695,
+  "updated_at_et": "11-20 05:03 ET",
+  "updated_at_kst": "19:03 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1350,6 +1350,13 @@
     ],
     "AMZN": [
       {
+        "title": "Amazon vs. Alphabet: Which Cloud Computing Stock Is the Better Buy?",
+        "url": "https://www.fool.com/investing/2026/11/20/amazon-vs-alphabet-which-cloud-computing-stock-is-the-better-buy/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 04:50 ET",
+        "pub_ts": 1795168202.0
+      },
+      {
         "title": "How High Can ANT Stock Go? Wall Street Debut Sparks Valuation Debate – One Analyst Sees Amazon-Google Scale Opportunity In Anthropic",
         "url": "https://stocktwits.com/news-articles/markets/equity/how-high-can-ant-stock-go-wall-street-valuation-analyst-amazon-google-scale-opportunity/cNbSG4tR90C?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1376,13 +1383,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 18:07 ET",
         "pub_ts": 1795129620.0
-      },
-      {
-        "title": "Dan Loeb’s Third Point Exits Its Entire Stake in Amazon Stock. Where It Invested Instead.",
-        "url": "https://www.barchart.com/story/news/8926361/dan-loebs-third-point-exits-its-entire-stake-in-amazon-stock-where-it-invested-instead?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 17:18 ET",
-        "pub_ts": 1795126719.0
       }
     ],
     "CRWV": [
@@ -2164,6 +2164,13 @@
     ],
     "VRT": [
       {
+        "title": "Evercore’s $325 Target Says Vertiv’s Selloff Went Too Far",
+        "url": "https://www.tikr.com/blog/evercores-325-target-says-vertivs-selloff-went-too-far?ref=yahoofinance&tlnk=yf-261120-8wf76qh6&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 04:36 ET",
+        "pub_ts": 1795167395.0
+      },
+      {
         "title": "Vertiv's 800 VDC Push Boosts AI Prospects: Can It Beat APH and SMCI?",
         "url": "https://finance.yahoo.com/technology/ai/articles/vertivs-800-vdc-push-boosts-164600968.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2190,13 +2197,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 06:02 ET",
         "pub_ts": 1795086173.0
-      },
-      {
-        "title": "Top-Ranked AI Stock to Buy Now on the Dip for 100% Upside: VRT",
-        "url": "https://finance.yahoo.com/technology/ai/articles/top-ranked-ai-stock-buy-194200011.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 14:42 ET",
-        "pub_ts": 1795030920.0
       }
     ],
     "HPE": [
@@ -2386,6 +2386,13 @@
     ],
     "MU": [
       {
+        "title": "Nvidia Added $111 Billion of Supply Commitments in a Quarter, Mostly Memory. Micron Is Still Priced Like a Bust",
+        "url": "https://www.tikr.com/blog/nvidia-added-111-billion-of-supply-commitments-in-a-quarter-mostly-memory-micron-is-still-priced-like-a-bust?ref=yahoofinance&tlnk=yf-261120-v94hx7gc&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 04:34 ET",
+        "pub_ts": 1795167258.0
+      },
+      {
         "title": "Micron CEO’s Nvidia message comes with warning for 2027",
         "url": "https://www.thestreet.com/investing/micron-ceo-nvidia-warning-2027-supply-already-sold-out?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2412,13 +2419,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 16:12 ET",
         "pub_ts": 1795122726.0
-      },
-      {
-        "title": "Micron Technology to Report Fiscal First Quarter Results on December 17, 2026",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/micron-technology-report-fiscal-first-210100248.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 16:01 ET",
-        "pub_ts": 1795122060.0
       }
     ],
     "SKHY": [
@@ -3271,10 +3271,10 @@
     "GOOGL": 1795168895.5113888,
     "MSFT": 1795168895.5113888,
     "AAPL": 1795168895.5113888,
-    "PLTR": 1795167378.3486795,
-    "NOW": 1795167378.3486795,
-    "AMZN": 1795167378.3486795,
-    "CRWV": 1795167378.3486795,
+    "PLTR": 1795168996.6946113,
+    "NOW": 1795168996.6946113,
+    "AMZN": 1795168996.6946113,
+    "CRWV": 1795168996.6946113,
     "NBIS": 1795168309.3594632,
     "APLD": 1795168309.3594632,
     "VST": 1795168309.3594632,
@@ -3283,31 +3283,31 @@
     "COHR": 1795168309.3594632,
     "MRVL": 1795168309.3594632,
     "LITE": 1795168309.3594632,
-    "AAOI": 1795167378.3486795,
+    "AAOI": 1795168996.6946113,
     "SPCX": 1795168309.3594632,
     "ASTS": 1795168309.3594632,
     "AXTI": 1795168309.3594632,
-    "NASA": 1795167378.3486795,
-    "LUNR": 1795167378.3486795,
-    "TSLA": 1795167378.3486795,
-    "AXP": 1795167378.3486795,
+    "NASA": 1795168996.6946113,
+    "LUNR": 1795168996.6946113,
+    "TSLA": 1795168996.6946113,
+    "AXP": 1795168996.6946113,
     "RKLB": 1795168309.3594632,
-    "KO": 1795167378.3486795,
+    "KO": 1795168996.6946113,
     "FLY": 1795168309.3594632,
-    "INTC": 1795167378.3486795,
-    "VRT": 1795167378.3486795,
-    "HPE": 1795167378.3486795,
-    "DELL": 1795167378.3486795,
-    "OKLO": 1795167378.3486795,
-    "CEG": 1795167378.3486795,
-    "FPS": 1795167378.3486795,
-    "MU": 1795167378.3486795,
-    "SKHY": 1795167378.3486795,
-    "WDC": 1795167378.3486795,
-    "STX": 1795167378.3486795,
-    "MSTR": 1795167378.3486795,
-    "SNDK": 1795167378.3486795,
-    "BTC-USD": 1795167378.3486795,
+    "INTC": 1795168996.6946113,
+    "VRT": 1795168996.6946113,
+    "HPE": 1795168996.6946113,
+    "DELL": 1795168996.6946113,
+    "OKLO": 1795168996.6946113,
+    "CEG": 1795168996.6946113,
+    "FPS": 1795168996.6946113,
+    "MU": 1795168996.6946113,
+    "SKHY": 1795168996.6946113,
+    "WDC": 1795168996.6946113,
+    "STX": 1795168996.6946113,
+    "MSTR": 1795168996.6946113,
+    "SNDK": 1795168996.6946113,
+    "BTC-USD": 1795168996.6946113,
     "CRWD": 1795168309.3594632,
     "ORCL": 1795168309.3594632,
     "COIN": 1795168309.3594632,
@@ -3317,7 +3317,7 @@
     "MCD": 1795168309.3594632,
     "PEP": 1795168309.3594632,
     "XOM": 1795167378.3486795,
-    "JPM": 1795167378.3486795,
+    "JPM": 1795168996.6946113,
     "WMT": 1795167378.3486795,
     "V": 1795168309.3594632,
     "CAT": 1795167378.3486795,
