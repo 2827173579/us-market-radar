@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795151594.701,
-  "updated_at_et": "11-20 00:13 ET",
-  "updated_at_kst": "14:13 KST",
+  "updated_at_ts": 1795151699.559,
+  "updated_at_et": "11-20 00:14 ET",
+  "updated_at_kst": "14:14 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1213,6 +1213,13 @@
         "pub_ts": 1795144594.0
       },
       {
+        "title": "AI Hacking Is “a Fantastic Bonanza” for CrowdStrike and Palo Alto, per Paul Kedrosky",
+        "url": "https://www.tikr.com/blog/ai-hacking-is-a-fantastic-bonanza-for-crowdstrike-and-palo-alto-per-paul-kedrosky?ref=yahoofinance&tlnk=yf-261119-xq2rf628&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 17:37 ET",
+        "pub_ts": 1795127877.0
+      },
+      {
         "title": "Microsoft reveals 80% server failure behind global outage",
         "url": "https://www.thestreet.com/investing/microsoft-reveals-80-server-failure-behind-global-outage?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1225,13 +1232,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 16:06 ET",
         "pub_ts": 1795122375.0
-      },
-      {
-        "title": "Bridgewater Warns of AI Security Risk as Anthropic Shares Rise in Debut",
-        "url": "https://finance.yahoo.com/m/ac0c7cd3-afc9-37c1-b745-d9478a2ec38a/bridgewater-warns-of-ai.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 16:16 ET",
-        "pub_ts": 1795122960.0
       }
     ],
     "AAPL": [
@@ -1310,6 +1310,13 @@
     ],
     "NOW": [
       {
+        "title": "AI sell-off: These sectors held firm as tech slumped in Oct, Nov",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/ai-sell-off-sectors-held-044523371.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 23:45 ET",
+        "pub_ts": 1795149923.0
+      },
+      {
         "title": "ServiceNow vs. UiPath: Which Technology Stock Is a Better Buy for 2027?",
         "url": "https://www.fool.com/coverage/better-buy/2026/11/19/servicenow-vs-uipath-which-technology-stock-is-a-better-buy-for-2027/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1336,13 +1343,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 07:54 ET",
         "pub_ts": 1795092850.0
-      },
-      {
-        "title": "Do Wall Street Analysts Like ServiceNow Stock?",
-        "url": "https://www.barchart.com/story/news/8913726/do-wall-street-analysts-like-servicenow-stock?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 07:25 ET",
-        "pub_ts": 1795091152.0
       }
     ],
     "AMZN": [
@@ -2124,6 +2124,13 @@
     ],
     "INTC": [
       {
+        "title": "AI sell-off: These sectors held firm as tech slumped in Oct, Nov",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/ai-sell-off-sectors-held-044523371.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 23:45 ET",
+        "pub_ts": 1795149923.0
+      },
+      {
         "title": "Nvidia vs. Intel: One AI Stock Is Worth the Drama, the Other Isn’t Worth the Wait, Says Investor",
         "url": "https://finance.yahoo.com/markets/stocks/articles/nvidia-vs-intel-one-ai-222036270.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2150,13 +2157,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 14:08 ET",
         "pub_ts": 1795115324.0
-      },
-      {
-        "title": "Analysts Are Bullish on This Blue Chip Stock: Should You Buy?",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/analysts-bullish-blue-chip-stock-190838054.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 14:08 ET",
-        "pub_ts": 1795115318.0
       }
     ],
     "VRT": [
@@ -2235,6 +2235,13 @@
     ],
     "DELL": [
       {
+        "title": "AI sell-off: These sectors held firm as tech slumped in Oct, Nov",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/ai-sell-off-sectors-held-044523371.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 23:45 ET",
+        "pub_ts": 1795149923.0
+      },
+      {
         "title": "Nvidia, Intel, Micron and Dell Stocks Jump as Anthropic Massive IPO Sparks Rally",
         "url": "https://finance.yahoo.com/markets/stocks/articles/nvidia-intel-micron-dell-stocks-185029536.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2261,13 +2268,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 12:13 ET",
         "pub_ts": 1795108425.0
-      },
-      {
-        "title": "NetApp vs. Dell: Which AI Data Storage Stock is the Better Buy?",
-        "url": "https://finance.yahoo.com/technology/ai/articles/netapp-vs-dell-ai-data-145100645.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 09:51 ET",
-        "pub_ts": 1795099860.0
       }
     ],
     "OKLO": [
@@ -3260,18 +3260,18 @@
     "SOXS": 1795151594.700946,
     "NVDA": 1795151594.700946,
     "AMD": 1795151594.700946,
-    "ASML": 1795150157.8443136,
+    "ASML": 1795151699.558732,
     "QCOM": 1795151594.700946,
     "AVGO": 1795151594.700946,
     "AMAT": 1795151594.700946,
-    "META": 1795150157.8443136,
-    "GOOGL": 1795150157.8443136,
-    "MSFT": 1795150157.8443136,
-    "AAPL": 1795150157.8443136,
-    "PLTR": 1795150157.8443136,
-    "NOW": 1795150157.8443136,
-    "AMZN": 1795150157.8443136,
-    "CRWV": 1795150157.8443136,
+    "META": 1795151699.558732,
+    "GOOGL": 1795151699.558732,
+    "MSFT": 1795151699.558732,
+    "AAPL": 1795151699.558732,
+    "PLTR": 1795151699.558732,
+    "NOW": 1795151699.558732,
+    "AMZN": 1795151699.558732,
+    "CRWV": 1795151699.558732,
     "NBIS": 1795150974.2476404,
     "APLD": 1795150974.2476404,
     "VST": 1795150974.2476404,
@@ -3280,23 +3280,23 @@
     "COHR": 1795150974.2476404,
     "MRVL": 1795150974.2476404,
     "LITE": 1795150974.2476404,
-    "AAOI": 1795150157.8443136,
+    "AAOI": 1795151699.558732,
     "SPCX": 1795150974.2476404,
     "ASTS": 1795150974.2476404,
     "AXTI": 1795150974.2476404,
-    "NASA": 1795150157.8443136,
-    "LUNR": 1795150157.8443136,
-    "TSLA": 1795150157.8443136,
-    "AXP": 1795150157.8443136,
+    "NASA": 1795151699.558732,
+    "LUNR": 1795151699.558732,
+    "TSLA": 1795151699.558732,
+    "AXP": 1795151699.558732,
     "RKLB": 1795150974.2476404,
-    "KO": 1795150157.8443136,
+    "KO": 1795151699.558732,
     "FLY": 1795150974.2476404,
-    "INTC": 1795150157.8443136,
-    "VRT": 1795150157.8443136,
-    "HPE": 1795150157.8443136,
-    "DELL": 1795150157.8443136,
+    "INTC": 1795151699.558732,
+    "VRT": 1795151699.558732,
+    "HPE": 1795151699.558732,
+    "DELL": 1795151699.558732,
     "OKLO": 1795150266.3187401,
-    "CEG": 1795150157.8443136,
+    "CEG": 1795151699.558732,
     "FPS": 1795150266.3187401,
     "MU": 1795150266.3187401,
     "SKHY": 1795150266.3187401,
@@ -3315,9 +3315,9 @@
     "PEP": 1795151080.6367383,
     "XOM": 1795151594.700946,
     "JPM": 1795151594.700946,
-    "WMT": 1795150157.8443136,
+    "WMT": 1795151699.558732,
     "V": 1795150974.2476404,
-    "CAT": 1795150157.8443136,
+    "CAT": 1795151699.558732,
     "FN": 1795150974.2476404,
     "GLW": 1795150974.2476404,
     "ANT": 1795150266.3187401,
