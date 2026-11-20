@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795164036.853,
-  "updated_at_et": "11-20 03:40 ET",
-  "updated_at_kst": "17:40 KST",
+  "updated_at_ts": 1795164143.74,
+  "updated_at_et": "11-20 03:42 ET",
+  "updated_at_kst": "17:42 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2569,6 +2569,13 @@
     ],
     "SNDK": [
       {
+        "title": "SNDK Stock Falls Overnight: NAND Price Forecast Turns Bearish For 2027, According To TrendForce",
+        "url": "https://stocktwits.com/news-articles/markets/equity/sndk-stock-falls-overnight-nand-price-forecast-turns-bearish-for-2027-according-to-trend-force/cNbSJomR9Kh?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 03:19 ET",
+        "pub_ts": 1795162763.0
+      },
+      {
         "title": "AI sell-off: These sectors held firm as tech slumped in Oct, Nov",
         "url": "https://finance.yahoo.com/markets/stocks/articles/ai-sell-off-sectors-held-044523371.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2595,13 +2602,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 13:26 ET",
         "pub_ts": 1795112797.0
-      },
-      {
-        "title": "Sandisk Stock Is Worth a Third of What It Was in June. I'd Buy It Now.",
-        "url": "https://www.fool.com/investing/2026/11/19/sandisk-stock-is-worth-a-third-of-what-it-was-in-june-i-d-buy-it-now/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 13:16 ET",
-        "pub_ts": 1795112162.0
       }
     ],
     "BTC-USD": [
@@ -3296,16 +3296,16 @@
     "VRT": 1795164036.8526464,
     "HPE": 1795164036.8526464,
     "DELL": 1795164036.8526464,
-    "OKLO": 1795162605.1228049,
+    "OKLO": 1795164143.7404482,
     "CEG": 1795164036.8526464,
-    "FPS": 1795162605.1228049,
-    "MU": 1795162605.1228049,
-    "SKHY": 1795162605.1228049,
-    "WDC": 1795162605.1228049,
-    "STX": 1795162605.1228049,
-    "MSTR": 1795162605.1228049,
-    "SNDK": 1795162605.1228049,
-    "BTC-USD": 1795162605.1228049,
+    "FPS": 1795164143.7404482,
+    "MU": 1795164143.7404482,
+    "SKHY": 1795164143.7404482,
+    "WDC": 1795164143.7404482,
+    "STX": 1795164143.7404482,
+    "MSTR": 1795164143.7404482,
+    "SNDK": 1795164143.7404482,
+    "BTC-USD": 1795164143.7404482,
     "CRWD": 1795163313.9364083,
     "ORCL": 1795163419.2630563,
     "COIN": 1795163313.9364083,
@@ -3321,8 +3321,8 @@
     "CAT": 1795164036.8526464,
     "FN": 1795163313.9364083,
     "GLW": 1795163313.9364083,
-    "ANT": 1795162605.1228049,
-    "XAUUSD": 1795162605.1228049
+    "ANT": 1795164143.7404482,
+    "XAUUSD": 1795164143.7404482
   },
   "calendar_banner": {
     "level": "idle_with_flash",
