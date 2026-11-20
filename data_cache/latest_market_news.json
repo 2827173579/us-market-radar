@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795160750.716,
-  "updated_at_et": "11-20 02:45 ET",
-  "updated_at_kst": "16:45 KST",
+  "updated_at_ts": 1795160850.761,
+  "updated_at_et": "11-20 02:47 ET",
+  "updated_at_kst": "16:47 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -901,6 +901,13 @@
     ],
     "NVDA": [
       {
+        "title": "Elon Musk’s Dream Meets Wall Street Reality: SpaceX Lenders Don’t Want Nvidia Chips Leaving Earth",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/elon-musk-dream-meets-wall-062433324.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 01:24 ET",
+        "pub_ts": 1795155873.0
+      },
+      {
         "title": "Cathie Wood’s ARK Invest Loads Up $90M In Anthropic Shares, Dumps Nvidia As China Chip Sale Woes Deepen",
         "url": "https://stocktwits.com/news-articles/markets/equity/cathie-wood-s-ark-invest-loads-up-anthropic-shares-dumps-nvidia-as-china-chip-sale-woes-deepen/cNbS5zBR9KI?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -927,13 +934,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 23:33 ET",
         "pub_ts": 1795149180.0
-      },
-      {
-        "title": "Jensen Huang Spy Scandal Is Now an Alibaba Problem: Investors File Class Action Lawsuit",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/jensen-huang-spy-scandal-now-042926308.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 23:29 ET",
-        "pub_ts": 1795148966.0
       }
     ],
     "AMD": [
@@ -1077,11 +1077,11 @@
         "pub_ts": 1795118483.0
       },
       {
-        "title": "Broadcom Stocks Rise 4.21% as Chip Supplier Joins Anthropic's $26 Billion Placement",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/broadcom-stocks-rise-4-21-173026533.html?.tsrc=rss",
+        "title": "Anthropic Now Earns $1.72 “For Every Dollar of Compute,” Says Aaron Levie. Great News for Amazon and Alphabet",
+        "url": "https://www.tikr.com/blog/anthropic-now-earns-1-72-for-every-dollar-of-compute-says-aaron-levie-great-news-for-amazon-and-alphabet?ref=yahoofinance&tlnk=yf-261119-q9jf5fhh&.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-19 12:30 ET",
-        "pub_ts": 1795109426.0
+        "time": "11-19 12:31 ET",
+        "pub_ts": 1795109510.0
       }
     ],
     "AMAT": [
@@ -3241,27 +3241,27 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795159316.123296,
-    "SOXL": 1795159316.123296,
-    "SPY": 1795159316.123296,
-    "DIA": 1795159316.123296,
-    "SOXX": 1795159316.123296,
-    "QQQ": 1795159316.123296,
-    "SMH": 1795159316.123296,
-    "IWM": 1795159316.123296,
-    "IGV": 1795159316.123296,
-    "TLT": 1795159316.123296,
-    "GLD": 1795159316.123296,
-    "SQQQ": 1795159316.123296,
-    "TSM": 1795159316.123296,
-    "VIXY": 1795159316.123296,
-    "SOXS": 1795159316.123296,
-    "NVDA": 1795159316.123296,
-    "AMD": 1795159316.123296,
+    "KORU": 1795160850.761233,
+    "SOXL": 1795160850.761233,
+    "SPY": 1795160850.761233,
+    "DIA": 1795160850.761233,
+    "SOXX": 1795160850.761233,
+    "QQQ": 1795160850.761233,
+    "SMH": 1795160850.761233,
+    "IWM": 1795160850.761233,
+    "IGV": 1795160850.761233,
+    "TLT": 1795160850.761233,
+    "GLD": 1795160850.761233,
+    "SQQQ": 1795160850.761233,
+    "TSM": 1795160850.761233,
+    "VIXY": 1795160850.761233,
+    "SOXS": 1795160850.761233,
+    "NVDA": 1795160850.761233,
+    "AMD": 1795160850.761233,
     "ASML": 1795159421.7100236,
-    "QCOM": 1795159316.123296,
-    "AVGO": 1795159316.123296,
-    "AMAT": 1795159316.123296,
+    "QCOM": 1795160850.761233,
+    "AVGO": 1795160850.761233,
+    "AMAT": 1795160850.761233,
     "META": 1795159421.7100236,
     "GOOGL": 1795159421.7100236,
     "MSFT": 1795159421.7100236,
@@ -3311,8 +3311,8 @@
     "NKE": 1795160350.6282692,
     "MCD": 1795160350.6282692,
     "PEP": 1795160350.6282692,
-    "XOM": 1795159316.123296,
-    "JPM": 1795159316.123296,
+    "XOM": 1795160850.761233,
+    "JPM": 1795160850.761233,
     "WMT": 1795159421.7100236,
     "V": 1795160241.048954,
     "CAT": 1795159421.7100236,
