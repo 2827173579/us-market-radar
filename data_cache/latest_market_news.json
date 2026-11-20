@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795154580.432,
-  "updated_at_et": "11-20 01:03 ET",
-  "updated_at_kst": "15:03 KST",
+  "updated_at_ts": 1795154686.578,
+  "updated_at_et": "11-20 01:04 ET",
+  "updated_at_kst": "15:04 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -915,6 +915,13 @@
         "pub_ts": 1795152126.0
       },
       {
+        "title": "‘Bright Red Flags’: Nvidia Subpoenaed By California, Attorney General Also Probing Jensen Huang’s ‘Actions’",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/bright-red-flags-nvidia-subpoenaed-045550463.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 23:55 ET",
+        "pub_ts": 1795150550.0
+      },
+      {
         "title": "AI sell-off: These sectors held firm as tech slumped in Oct, Nov",
         "url": "https://finance.yahoo.com/markets/stocks/articles/ai-sell-off-sectors-held-044523371.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -934,13 +941,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 23:29 ET",
         "pub_ts": 1795148966.0
-      },
-      {
-        "title": "Nvidia Just Raised Its Supply Commitments to $390 Billion, Mostly for Memory. Micron Is the Memory Stock I'd Buy.",
-        "url": "https://www.fool.com/investing/2026/11/19/nvidia-just-raised-its-supply-commitments-to-usd390-billion-mostly-for-memory-micron-is-the-memory-stock-i-d-buy/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 23:27 ET",
-        "pub_ts": 1795148822.0
       }
     ],
     "AMD": [
@@ -3248,27 +3248,27 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795153146.3857799,
-    "SOXL": 1795153146.3857799,
-    "SPY": 1795153146.3857799,
-    "DIA": 1795153146.3857799,
-    "SOXX": 1795153146.3857799,
-    "QQQ": 1795153146.3857799,
-    "SMH": 1795153146.3857799,
-    "IWM": 1795153146.3857799,
-    "IGV": 1795153146.3857799,
-    "TLT": 1795153146.3857799,
-    "GLD": 1795153146.3857799,
-    "SQQQ": 1795153146.3857799,
-    "TSM": 1795153146.3857799,
-    "VIXY": 1795153146.3857799,
-    "SOXS": 1795153146.3857799,
-    "NVDA": 1795153146.3857799,
-    "AMD": 1795153146.3857799,
+    "KORU": 1795154686.5776148,
+    "SOXL": 1795154686.5776148,
+    "SPY": 1795154686.5776148,
+    "DIA": 1795154686.5776148,
+    "SOXX": 1795154686.5776148,
+    "QQQ": 1795154686.5776148,
+    "SMH": 1795154686.5776148,
+    "IWM": 1795154686.5776148,
+    "IGV": 1795154686.5776148,
+    "TLT": 1795154686.5776148,
+    "GLD": 1795154686.5776148,
+    "SQQQ": 1795154686.5776148,
+    "TSM": 1795154686.5776148,
+    "VIXY": 1795154686.5776148,
+    "SOXS": 1795154686.5776148,
+    "NVDA": 1795154686.5776148,
+    "AMD": 1795154686.5776148,
     "ASML": 1795153252.416096,
-    "QCOM": 1795153146.3857799,
-    "AVGO": 1795153146.3857799,
-    "AMAT": 1795153146.3857799,
+    "QCOM": 1795154686.5776148,
+    "AVGO": 1795154686.5776148,
+    "AMAT": 1795154686.5776148,
     "META": 1795153252.416096,
     "GOOGL": 1795153252.416096,
     "MSFT": 1795153252.416096,
@@ -3318,8 +3318,8 @@
     "NKE": 1795154169.7415147,
     "MCD": 1795154169.7415147,
     "PEP": 1795154169.7415147,
-    "XOM": 1795153146.3857799,
-    "JPM": 1795153146.3857799,
+    "XOM": 1795154686.5776148,
+    "JPM": 1795154686.5776148,
     "WMT": 1795153252.416096,
     "V": 1795154065.5168164,
     "CAT": 1795153252.416096,
