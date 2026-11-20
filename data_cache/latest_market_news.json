@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795178542.183,
-  "updated_at_et": "11-20 07:42 ET",
-  "updated_at_kst": "21:42 KST",
+  "updated_at_ts": 1795178645.593,
+  "updated_at_et": "11-20 07:44 ET",
+  "updated_at_kst": "21:44 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -793,6 +793,20 @@
     ],
     "TSM": [
       {
+        "title": "AMD Stock Drops Another 7% Before the Bell and Taiwan Semiconductor Slides 4.2% as Nasdaq Futures Fall 1.6% After Asia’s Chip Selloff",
+        "url": "https://247wallst.com/investing/2026/11/20/amd-stock-drops-another-7-0-before-the-bell-and-taiwan-semiconductor-slides-4-2-as-nasdaq-futures-fall-1-6-after-asias-chip-selloff/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 07:13 ET",
+        "pub_ts": 1795176789.0
+      },
+      {
+        "title": "Holding TSMC Near $352? Past Drops Went Deeper",
+        "url": "https://www.trefis.com/stock/tsm/articles/627206/holding-tsmc-near-352-past-drops-went-deeper/2026-11-20?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 07:06 ET",
+        "pub_ts": 1795176387.0
+      },
+      {
         "title": "16 ETFs Add to Taiwan Semiconductor (TSM) on Wednesday",
         "url": "https://finance.yahoo.com/markets/stocks/articles/16-etfs-add-taiwan-semiconductor-110100292.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -812,20 +826,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 05:47 ET",
         "pub_ts": 1795171625.0
-      },
-      {
-        "title": "TSMC Is 28% Below Its High. Another Director Just Bought $500,000 of Stock as Demand Stays “Extremely Robust”",
-        "url": "https://www.tikr.com/blog/tsmc-is-28-below-its-high-another-director-just-bought-500000-of-stock-as-demand-stays-extremely-robust?ref=yahoofinance&tlnk=yf-261120-c583cp2q&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 04:50 ET",
-        "pub_ts": 1795168251.0
-      },
-      {
-        "title": "South Korea’s Stock Market and the Nikkei 225 Sink More Than 4% as the AI Selloff Spreads From Wall Street. Here’s How Much of a Target-Date Fund Is in Samsung, SK Hynix and TSMC",
-        "url": "https://247wallst.com/investing/2026/11/19/south-koreas-stock-market-and-the-nikkei-225-sink-more-than-4-as-the-ai-selloff-spreads-from-wall-street-heres-how-much-of-a-target-date-fund-is-in-samsung-sk-hynix-and-tsmc/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 22:51 ET",
-        "pub_ts": 1795146664.0
       }
     ],
     "VIXY": [
@@ -904,48 +904,55 @@
     ],
     "NVDA": [
       {
-        "title": "The post earnings slide in Nvidia stock is getting uglier by the day",
-        "url": "https://finance.yahoo.com/markets/stocks/article/the-post-earnings-slide-in-nvidia-stock-is-getting-uglier-by-the-day-112801786.html?.tsrc=rss",
+        "title": "Nasdaq Futures Slide, Anthropic Shares Reverse IPO Gains — LITE, IREN, SNDK, NVDA In Focus",
+        "url": "https://stocktwits.com/news-articles/markets/equity/nasdaq-futures-slide-anthropic-shares-reverse-ipo-gains-lite-iren-sndk-nvda-in-focus/cNbSL5RR9Ks?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-20 06:28 ET",
-        "pub_ts": 1795174081.0
+        "time": "11-20 07:20 ET",
+        "pub_ts": 1795177204.0
       },
       {
-        "title": "Jensen Huang Pledges $350 Million to Nvidia-Backed CoreWeave",
-        "url": "https://finance.yahoo.com/technology/ai/articles/jensen-huang-pledges-350-million-115855482.html?.tsrc=rss",
+        "title": "Prediction: Micron Stock Is Going to Soar After Its December Earnings Report",
+        "url": "https://www.fool.com/investing/2026/11/20/prediction-micron-stock-is-going-to-soar/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-20 06:58 ET",
-        "pub_ts": 1795175935.0
+        "time": "11-20 07:20 ET",
+        "pub_ts": 1795177202.0
       },
       {
-        "title": "Jensen Huang's Sudden Resignation Has Created a Flash Sale For These 3 AI Stocks",
-        "url": "https://www.fool.com/investing/2026/11/20/jensen-huang-sudden-resignation-created-flash-sale-ai-stocks/?.tsrc=rss",
+        "title": "'Miserable 7' Stocks Shed Whopping $4 Trillion In Value Overnight",
+        "url": "https://finance.yahoo.com/m/6e6f9c49-9658-3615-8008-22c4188b1bd6/%27miserable-7%27-stocks-shed.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-20 06:50 ET",
-        "pub_ts": 1795175402.0
+        "time": "11-20 07:18 ET",
+        "pub_ts": 1795177083.0
       },
       {
-        "title": "“The Open Checkbook Is Over.” Nebius, Backed by $2 Billion From Nvidia, Stands to Gain",
-        "url": "https://www.tikr.com/blog/the-open-checkbook-is-over-nebius-backed-by-2-billion-from-nvidia-stands-to-gain?ref=yahoofinance&tlnk=yf-261120-x7v3x99j&.tsrc=rss",
+        "title": "Nvidia Eyes $500 Million Deal That Could Change How Its AI Answers",
+        "url": "https://finance.yahoo.com/technology/ai/articles/nvidia-eyes-500-million-deal-121442355.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-20 06:35 ET",
-        "pub_ts": 1795174513.0
+        "time": "11-20 07:14 ET",
+        "pub_ts": 1795176882.0
       },
       {
-        "title": "3 Warren Buffett Rules That Make Nvidia Stock a Buy at Today's Price",
-        "url": "https://www.fool.com/investing/2026/11/20/3-warren-buffett-rules-that-make-nvidia-stock-a-buy-at-today-s-price/?.tsrc=rss",
+        "title": "Nvidia Faces a New Probe Days After Cathie Wood's $85 Million Sale",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/nvidia-faces-probe-days-cathie-121218305.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-20 06:35 ET",
-        "pub_ts": 1795174502.0
+        "time": "11-20 07:12 ET",
+        "pub_ts": 1795176738.0
       }
     ],
     "AMD": [
       {
-        "title": "AMD stock gets drilled again in the wake of surprise short seller report",
-        "url": "https://finance.yahoo.com/markets/stocks/article/amd-stock-gets-drilled-again-in-the-wake-of-surprise-short-seller-report-100450073.html?.tsrc=rss",
+        "title": "Jim Cramer Says He’s Buying AMD After a Short Seller’s 15% Hit",
+        "url": "https://247wallst.com/investing/2026/11/20/jim-cramer-says-hes-buying-amd-after-a-short-sellers-15-hit/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-20 05:04 ET",
-        "pub_ts": 1795169090.0
+        "time": "11-20 07:22 ET",
+        "pub_ts": 1795177358.0
+      },
+      {
+        "title": "AMD Stock Drops Another 7% Before the Bell and Taiwan Semiconductor Slides 4.2% as Nasdaq Futures Fall 1.6% After Asia’s Chip Selloff",
+        "url": "https://247wallst.com/investing/2026/11/20/amd-stock-drops-another-7-0-before-the-bell-and-taiwan-semiconductor-slides-4-2-as-nasdaq-futures-fall-1-6-after-asias-chip-selloff/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 07:13 ET",
+        "pub_ts": 1795176789.0
       },
       {
         "title": "Social Buzz: Wallstreetbets Stocks Mostly Lower Pre-Bell Friday; Sandisk, AMD to Decline",
@@ -967,13 +974,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 06:05 ET",
         "pub_ts": 1795172723.0
-      },
-      {
-        "title": "iShares A.I. Innovation and Tech Active ETF (BAI) Buys $14.3 Million More AMD on Nov. 18",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/ishares-innovation-tech-active-etf-110443799.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 06:04 ET",
-        "pub_ts": 1795172683.0
       }
     ],
     "ASML": [
@@ -1052,6 +1052,13 @@
     ],
     "AVGO": [
       {
+        "title": "Buy Broadcom Now: Get a $115 Billion AI Giant at Just 18.5x Forward Earnings",
+        "url": "https://247wallst.com/investing/2026/11/20/buy-broadcom-now-get-a-115-billion-ai-giant-at-just-18-5x-forward-earnings/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 07:15 ET",
+        "pub_ts": 1795176933.0
+      },
+      {
         "title": "iShares Russell 1000 Growth (IWF) Buys $15.6 Million More NVIDIA on Wednesday",
         "url": "https://finance.yahoo.com/markets/stocks/articles/ishares-russell-1000-growth-iwf-110519980.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1078,13 +1085,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 06:03 ET",
         "pub_ts": 1795172619.0
-      },
-      {
-        "title": "ETFs Are Net Sellers of Broadcom (AVGO) on Nov. 18",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-net-sellers-broadcom-avgo-110250063.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 06:02 ET",
-        "pub_ts": 1795172570.0
       }
     ],
     "AMAT": [
@@ -1126,6 +1126,13 @@
     ],
     "META": [
       {
+        "title": "Meta's AI Hardware Faces a Holiday Test, but the Real One Comes Later",
+        "url": "https://finance.yahoo.com/technology/ai/articles/metas-ai-hardware-faces-holiday-120941852.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 07:09 ET",
+        "pub_ts": 1795176581.0
+      },
+      {
         "title": "Direxion Daily S&P 500 Bull 3X (SPXL) Sells $16.2 Million of Apple on Nov. 18",
         "url": "https://finance.yahoo.com/markets/stocks/articles/direxion-daily-p-500-bull-110505993.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1152,16 +1159,30 @@
         "source": "Yahoo Finance",
         "time": "11-20 06:02 ET",
         "pub_ts": 1795172574.0
-      },
-      {
-        "title": "Meta Platforms 'Reevaluating' 2030 Net Zero Goal as AI Buildout Strains Clean Energy Supply",
-        "url": "https://finance.yahoo.com/energy/articles/meta-platforms-apos-reevaluating-apos-004314275.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 19:43 ET",
-        "pub_ts": 1795135394.0
       }
     ],
     "GOOGL": [
+      {
+        "title": "Apple Is Building an AI Agent That Can Use Your Computer for You",
+        "url": "https://247wallst.com/investing/2026/11/20/apple-is-building-an-ai-agent-that-can-use-your-computer-for-you/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 07:38 ET",
+        "pub_ts": 1795178313.0
+      },
+      {
+        "title": "'Miserable 7' Stocks Shed Whopping $4 Trillion In Value Overnight",
+        "url": "https://finance.yahoo.com/m/6e6f9c49-9658-3615-8008-22c4188b1bd6/%27miserable-7%27-stocks-shed.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 07:18 ET",
+        "pub_ts": 1795177083.0
+      },
+      {
+        "title": "Stanley Druckenmiller dumps Google stock in a bid to ‘not lose money’ as the outlook darkens. Here’s what he’s buying",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/stanley-druckenmiller-dumps-google-stock-121500032.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 07:15 ET",
+        "pub_ts": 1795176900.0
+      },
       {
         "title": "OpenAI tried to ruin Anthropic's IPO. It backfired.",
         "url": "https://finance.yahoo.com/video/openai-tried-ruin-anthropics-ipo-120000298.html?.tsrc=rss",
@@ -1175,30 +1196,30 @@
         "source": "Yahoo Finance",
         "time": "11-20 06:59 ET",
         "pub_ts": 1795175993.0
-      },
-      {
-        "title": "Social Buzz: Wallstreetbets Stocks Mostly Lower Pre-Bell Friday; Sandisk, AMD to Decline",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/social-buzz-wallstreetbets-stocks-mostly-113227780.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 06:32 ET",
-        "pub_ts": 1795174347.0
-      },
-      {
-        "title": "iShares Russell 1000 Growth (IWF) Buys $15.6 Million More NVIDIA on Wednesday",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/ishares-russell-1000-growth-iwf-110519980.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 06:05 ET",
-        "pub_ts": 1795172719.0
-      },
-      {
-        "title": "State Street Comm Services SPDR (XLC) Buys $54.7 Million More META on Nov. 18",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/state-street-comm-services-spdr-110418329.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 06:04 ET",
-        "pub_ts": 1795172658.0
       }
     ],
     "MSFT": [
+      {
+        "title": "Danaher Collaborates with Microsoft to Make Scientific Instruments Agentically Connected and Laboratories More Intelligent",
+        "url": "https://finance.yahoo.com/technology/ai/articles/danaher-collaborates-microsoft-scientific-instruments-123000585.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 07:30 ET",
+        "pub_ts": 1795177800.0
+      },
+      {
+        "title": "Satya Nadella Says Microsoft Is “Building Tools, Not Gods” as Copilot Undercuts Anthropic on Price",
+        "url": "https://www.tikr.com/blog/satya-nadella-says-microsoft-is-building-tools-not-gods-as-copilot-undercuts-anthropic-on-price?ref=yahoofinance&tlnk=yf-261120-g49fp72m&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 07:24 ET",
+        "pub_ts": 1795177447.0
+      },
+      {
+        "title": "Rubrik (RBRK) Moved, What Is Drawing Attention Now?",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/rubrik-rbrk-moved-drawing-attention-121128553.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 07:11 ET",
+        "pub_ts": 1795176688.0
+      },
       {
         "title": "Does the Nestle AI Deal Matter for Microsoft Shareholders?",
         "url": "https://247wallst.com/investing/2026/11/20/does-the-nestle-ai-deal-matter-for-microsoft-shareholders/?.tsrc=rss",
@@ -1212,27 +1233,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 06:39 ET",
         "pub_ts": 1795174759.0
-      },
-      {
-        "title": "iShares Russell 1000 Growth (IWF) Buys $15.6 Million More NVIDIA on Wednesday",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/ishares-russell-1000-growth-iwf-110519980.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 06:05 ET",
-        "pub_ts": 1795172719.0
-      },
-      {
-        "title": "What Capital Group Growth ETF (CGGR) Bought: Meta Leads on Wednesday",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/capital-group-growth-etf-cggr-110447110.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 06:04 ET",
-        "pub_ts": 1795172687.0
-      },
-      {
-        "title": "State Street SPDR Portfolio S&P 500 (SPYM) Adds Apple and Microsoft on Nov. 18",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/state-street-spdr-portfolio-p-110411294.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 06:04 ET",
-        "pub_ts": 1795172651.0
       }
     ],
     "AAPL": [
@@ -3244,30 +3244,30 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795177109.888664,
-    "SOXL": 1795177109.888664,
-    "SPY": 1795177109.888664,
-    "DIA": 1795177109.888664,
-    "SOXX": 1795177109.888664,
-    "QQQ": 1795177109.888664,
-    "SMH": 1795177109.888664,
-    "IWM": 1795177109.888664,
-    "IGV": 1795177109.888664,
-    "TLT": 1795177109.888664,
-    "GLD": 1795177109.888664,
-    "SQQQ": 1795177109.888664,
-    "TSM": 1795177109.888664,
-    "VIXY": 1795177109.888664,
-    "SOXS": 1795177109.888664,
-    "NVDA": 1795177109.888664,
-    "AMD": 1795177109.888664,
-    "ASML": 1795177109.888664,
-    "QCOM": 1795177109.888664,
-    "AVGO": 1795177109.888664,
-    "AMAT": 1795177109.888664,
-    "META": 1795177109.888664,
-    "GOOGL": 1795177109.888664,
-    "MSFT": 1795177109.888664,
+    "KORU": 1795178645.5927887,
+    "SOXL": 1795178645.5927887,
+    "SPY": 1795178645.5927887,
+    "DIA": 1795178645.5927887,
+    "SOXX": 1795178645.5927887,
+    "QQQ": 1795178645.5927887,
+    "SMH": 1795178645.5927887,
+    "IWM": 1795178645.5927887,
+    "IGV": 1795178645.5927887,
+    "TLT": 1795178645.5927887,
+    "GLD": 1795178645.5927887,
+    "SQQQ": 1795178645.5927887,
+    "TSM": 1795178645.5927887,
+    "VIXY": 1795178645.5927887,
+    "SOXS": 1795178645.5927887,
+    "NVDA": 1795178645.5927887,
+    "AMD": 1795178645.5927887,
+    "ASML": 1795178645.5927887,
+    "QCOM": 1795178645.5927887,
+    "AVGO": 1795178645.5927887,
+    "AMAT": 1795178645.5927887,
+    "META": 1795178645.5927887,
+    "GOOGL": 1795178645.5927887,
+    "MSFT": 1795178645.5927887,
     "AAPL": 1795177214.329588,
     "PLTR": 1795177214.329588,
     "NOW": 1795177214.329588,
