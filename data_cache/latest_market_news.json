@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795201161.515,
-  "updated_at_et": "11-20 13:59 ET",
-  "updated_at_kst": "03:59 KST",
+  "updated_at_ts": 1795201261.351,
+  "updated_at_et": "11-20 14:01 ET",
+  "updated_at_kst": "04:01 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2011,6 +2011,13 @@
     ],
     "RKLB": [
       {
+        "title": "Jim Cramer now sees a buying opportunity in beaten-down space stock",
+        "url": "https://www.thestreet.com/investing/stocks/rocket-lab-jim-cramer-says-rklb-has-gotten-too-cheap-after-electrons-100th-launch-sees-buying-opportunity?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 13:47 ET",
+        "pub_ts": 1795200420.0
+      },
+      {
         "title": "Intuitive Machines vs. Rocket Lab: Which Space Stock Is a Better Buy for 2027?",
         "url": "https://www.fool.com/coverage/better-buy/2026/11/20/intuitive-machines-vs-rocket-lab-which-space-stock-is-a-better-buy-for-2027/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2037,13 +2044,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 06:04 ET",
         "pub_ts": 1795172662.0
-      },
-      {
-        "title": "SpaceX Holds Its Orbit As Space Stocks Fall Back To Earth — Inside A Rough Week For FLY, ASTS, RKLB And RDW",
-        "url": "https://stocktwits.com/news-articles/markets/equity/spacex-holds-orbit-space-stocks-fall-back-earth-rough-week-fly-asts-rklb-rdw/cNbS4SbR9KQ?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 01:58 ET",
-        "pub_ts": 1795157911.0
       }
     ],
     "KO": [
@@ -3121,6 +3121,13 @@
     ],
     "FN": [
       {
+        "title": "Fabrinet Stock Drops 20% in a Year: Should You Buy it on the Dip?",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/fabrinet-stock-drops-20-buy-173800623.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 12:38 ET",
+        "pub_ts": 1795196280.0
+      },
+      {
         "title": "AAOI Rides on AI-Led Optical Demand: Can It Beat Fabrinet and Coherent?",
         "url": "https://finance.yahoo.com/technology/ai/articles/aaoi-rides-ai-led-optical-164700563.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3147,13 +3154,6 @@
         "source": "Yahoo Finance",
         "time": "11-04 02:18 ET",
         "pub_ts": 1793776703.0
-      },
-      {
-        "title": "Record Results May Change The Case For Investing In Fabrinet Stock",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/record-results-may-change-case-061930708.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-04 01:19 ET",
-        "pub_ts": 1793773170.0
       }
     ],
     "GLW": [
@@ -3270,25 +3270,25 @@
     "NOW": 1795200356.6377416,
     "AMZN": 1795200356.6377416,
     "CRWV": 1795200356.6377416,
-    "NBIS": 1795199743.8412192,
-    "APLD": 1795199743.8412192,
-    "VST": 1795199743.8412192,
-    "BE": 1795199743.8412192,
-    "CRDO": 1795199743.8412192,
-    "COHR": 1795199743.8412192,
-    "MRVL": 1795199743.8412192,
-    "LITE": 1795199743.8412192,
+    "NBIS": 1795201261.3513236,
+    "APLD": 1795201261.3513236,
+    "VST": 1795201261.3513236,
+    "BE": 1795201261.3513236,
+    "CRDO": 1795201261.3513236,
+    "COHR": 1795201261.3513236,
+    "MRVL": 1795201261.3513236,
+    "LITE": 1795201261.3513236,
     "AAOI": 1795200356.6377416,
-    "SPCX": 1795199743.8412192,
-    "ASTS": 1795199743.8412192,
-    "AXTI": 1795199743.8412192,
+    "SPCX": 1795201261.3513236,
+    "ASTS": 1795201261.3513236,
+    "AXTI": 1795201261.3513236,
     "NASA": 1795200356.6377416,
     "LUNR": 1795200356.6377416,
     "TSLA": 1795200356.6377416,
     "AXP": 1795200356.6377416,
-    "RKLB": 1795199743.8412192,
+    "RKLB": 1795201261.3513236,
     "KO": 1795200356.6377416,
-    "FLY": 1795199743.8412192,
+    "FLY": 1795201261.3513236,
     "INTC": 1795200356.6377416,
     "VRT": 1795200356.6377416,
     "HPE": 1795200356.6377416,
@@ -3303,21 +3303,21 @@
     "MSTR": 1795200460.3717928,
     "SNDK": 1795200356.6377416,
     "BTC-USD": 1795200857.6721334,
-    "CRWD": 1795199743.8412192,
-    "ORCL": 1795199743.8412192,
-    "COIN": 1795199743.8412192,
+    "CRWD": 1795201261.3513236,
+    "ORCL": 1795201261.3513236,
+    "COIN": 1795201261.3513236,
     "LLY": 1795199853.9946618,
     "MRNA": 1795199853.9946618,
     "NKE": 1795199853.9946618,
-    "MCD": 1795199743.8412192,
-    "PEP": 1795199743.8412192,
+    "MCD": 1795201261.3513236,
+    "PEP": 1795201261.3513236,
     "XOM": 1795200857.6721334,
     "JPM": 1795200857.6721334,
     "WMT": 1795200857.6721334,
-    "V": 1795199743.8412192,
+    "V": 1795201261.3513236,
     "CAT": 1795200857.6721334,
-    "FN": 1795199743.8412192,
-    "GLW": 1795199743.8412192,
+    "FN": 1795201261.3513236,
+    "GLW": 1795201261.3513236,
     "ANT": 1795200857.6721334,
     "XAUUSD": 1795200857.6721334
   },
