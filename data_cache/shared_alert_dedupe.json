@@ -3299,9 +3299,13 @@
     "2026-11-20:INTRADAY_CORRIDOR:QQQ:ABOVE_P75": {
       "device": "PC",
       "ts": 1795186692.3014162
+    },
+    "2026-11-20:AXP/FLY:5M_ENTRY": {
+      "device": "PC",
+      "ts": 1795187740.7548974
     }
   },
   "device": "PC",
-  "last_heartbeat_ts": 1795187556.5348973,
-  "updated_at": "2026-11-20T15:12:36.535484+00:00"
+  "last_heartbeat_ts": 1795187660.7216363,
+  "updated_at": "2026-11-20T15:15:40.755367+00:00"
 }
