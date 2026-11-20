@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795187004.16,
-  "updated_at_et": "11-20 10:03 ET",
-  "updated_at_kst": "00:03 KST",
+  "updated_at_ts": 1795187103.015,
+  "updated_at_et": "11-20 10:05 ET",
+  "updated_at_kst": "00:05 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2601,11 +2601,18 @@
     ],
     "BTC-USD": [
       {
-        "title": "Stock Market Today: Tech Futures Sell Off As Anthropic Plunges 10% After IPO (Live Coverage)",
-        "url": "https://finance.yahoo.com/m/4b546235-124e-3fa4-b951-41a067ff7bf2/stock-market-today%3A-tech.html?.tsrc=rss",
+        "title": "VanEck Drops Gemini As Custodian Of Its Crypto ETFs",
+        "url": "https://www.cryptoprowl.com/releases/vaneck-drops-gemini-as-custodian-of-its-crypto-etfs-7998?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-20 09:05 ET",
-        "pub_ts": 1795183556.0
+        "time": "11-20 09:51 ET",
+        "pub_ts": 1795186260.0
+      },
+      {
+        "title": "Stock Market Today: Nasdaq Sells Off As Anthropic Plunges 10% After IPO (Live Coverage)",
+        "url": "https://finance.yahoo.com/m/4b546235-124e-3fa4-b951-41a067ff7bf2/stock-market-today%3A-nasdaq.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 09:44 ET",
+        "pub_ts": 1795185857.0
       },
       {
         "title": "Exchange-Traded Funds, Equity Futures Fall Pre-Bell Friday Amid Continued AI Stock Selloff",
@@ -2627,13 +2634,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 07:42 ET",
         "pub_ts": 1795178535.0
-      },
-      {
-        "title": "Strategy Tumbles 37% in a Month: This Wall Street Pro Predicts 400% Gains on Its Bitcoin Exposure",
-        "url": "https://247wallst.com/investing/2026/11/20/strategy-tumbles-37-in-a-month-this-wall-street-pro-predicts-400-gains-on-its-bitcoin-exposure/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 07:15 ET",
-        "pub_ts": 1795176918.0
       }
     ],
     "CRWD": [
@@ -3193,6 +3193,20 @@
     ],
     "ANT": [
       {
+        "title": "Dan Ives Says Anthropic’s Blockbuster IPO Is Fueling Wall Street’s Tech Selloff. Here’s How",
+        "url": "https://finnhub.io/api/news?id=2832d4416e4500d72abb940ad572d0d6e85e4b6bd995eb997aca58b27b14b5e9",
+        "source": "Benzinga",
+        "time": "11-20 05:33 ET",
+        "pub_ts": 1795170796.0
+      },
+      {
+        "title": "William Blair Initiates Coverage On Anthropic with Outperform Rating",
+        "url": "https://finnhub.io/api/news?id=aedbc7e33698fe8e20072cf0476c281627c1f5c340fa06388e1c54bb76ff5390",
+        "source": "Benzinga",
+        "time": "11-20 05:28 ET",
+        "pub_ts": 1795170515.0
+      },
+      {
         "title": "Why Micron Stock Is Falling Today?",
         "url": "https://finnhub.io/api/news?id=bbbfe4704eb11bf07d8fd58f341511f215722e7b5662cb5bb48f1e013b0a90e5",
         "source": "Benzinga",
@@ -3200,32 +3214,18 @@
         "pub_ts": 1795169382.0
       },
       {
+        "title": "Why Nebius Stock Is Falling Today Despite Strong AI Cloud Demand?",
+        "url": "https://finnhub.io/api/news?id=2b114127680d70fd440fb602cc9f0c19f47927fd6d5ec12a4c7e2a01000f921b",
+        "source": "Benzinga",
+        "time": "11-20 05:05 ET",
+        "pub_ts": 1795169101.0
+      },
+      {
         "title": "Stock Market Today: Dow Jones, S&P 500, Nasdaq 100 Futures Fall as Trump Weighs Iran Decision— INTU, ROST, KEYS in Focus (UPDATED)",
         "url": "https://finnhub.io/api/news?id=a8dc2d34353c17c3b45edc3fd373a813b1d1ccec9bcb6c233055d4ffce06289b",
         "source": "Benzinga",
         "time": "11-20 04:36 ET",
         "pub_ts": 1795167391.0
-      },
-      {
-        "title": "Google Is Turning Its AI Rivals Into Chip Customers. Nvidia Should Pay Attention",
-        "url": "https://finnhub.io/api/news?id=fdefb7b1e6d95916d06fdfe21e2fd434674a7f461d547267ab8a63cb2c7e7f24",
-        "source": "Benzinga",
-        "time": "11-20 04:29 ET",
-        "pub_ts": 1795166967.0
-      },
-      {
-        "title": "Why Is Cipher Digital Stock Falling on Friday?",
-        "url": "https://finnhub.io/api/news?id=ab10ce95d20102b1d58453b0e96735594957202a734cc36b11e2a21a69e7252a",
-        "source": "Benzinga",
-        "time": "11-20 04:15 ET",
-        "pub_ts": 1795166155.0
-      },
-      {
-        "title": "Ross Stores, Intuit, Anthropic And Other Big Stocks Moving Lower In Friday’s Pre-Market Session",
-        "url": "https://finnhub.io/api/news?id=53495c45ed24cd3b0c4e75e22ab035a6e4843a10cb87bfcd036b3b42c24b30b0",
-        "source": "Benzinga",
-        "time": "11-20 04:03 ET",
-        "pub_ts": 1795165387.0
       }
     ],
     "XAUUSD": [
@@ -3300,7 +3300,7 @@
     "STX": 1795186686.4304717,
     "MSTR": 1795186686.4304717,
     "SNDK": 1795186578.3877583,
-    "BTC-USD": 1795185560.5057821,
+    "BTC-USD": 1795187103.0149376,
     "CRWD": 1795185969.109867,
     "ORCL": 1795185969.109867,
     "COIN": 1795185969.109867,
@@ -3309,15 +3309,15 @@
     "NKE": 1795186078.535073,
     "MCD": 1795185969.109867,
     "PEP": 1795185969.109867,
-    "XOM": 1795185560.5057821,
-    "JPM": 1795185560.5057821,
-    "WMT": 1795185560.5057821,
+    "XOM": 1795187103.0149376,
+    "JPM": 1795187103.0149376,
+    "WMT": 1795187103.0149376,
     "V": 1795185969.109867,
-    "CAT": 1795185560.5057821,
+    "CAT": 1795187103.0149376,
     "FN": 1795185969.109867,
     "GLW": 1795185969.109867,
-    "ANT": 1795185560.5057821,
-    "XAUUSD": 1795185560.5057821
+    "ANT": 1795187103.0149376,
+    "XAUUSD": 1795187103.0149376
   },
   "calendar_banner": {
     "level": "idle_with_flash",
