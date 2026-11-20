@@ -1,9 +1,22 @@
 {
-  "updated_at_ts": 1795185869.078,
-  "updated_at_et": "11-20 09:44 ET",
-  "updated_at_kst": "23:44 KST",
+  "updated_at_ts": 1795185969.11,
+  "updated_at_et": "11-20 09:46 ET",
+  "updated_at_kst": "23:46 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261120224426175800",
+      "title": "英伟达(NVDA.O)股价跌至2025年6月以来的最低水平，最新下跌4.7%。",
+      "summary": "英伟达(NVDA.O)股价跌至2025年6月以来的最低水平，最新下跌4.7%。",
+      "keywords": [
+        "英伟达"
+      ],
+      "pub_ts": 1795185866.0,
+      "time_et": "11-20 09:44 ET",
+      "time_bj": "22:44 BJ",
+      "time_kst": "23:44 KST",
+      "time_display": "09:44 ET / 22:44 BJ"
+    },
     {
       "id": "20261120223754380800",
       "title": "费城半导体指数下跌4.3%，触及两周低点。",
@@ -326,21 +339,6 @@
       "time_bj": "17:24 BJ",
       "time_kst": "18:24 KST",
       "time_display": "04:24 ET / 17:24 BJ"
-    },
-    {
-      "id": "20261120162925493800",
-      "title": "整理：每日债券市场要闻速递（2026-11-20）",
-      "summary": "1. 11月LPR报价出炉：一年期、五年期LPR均维持不变。 2. 美联储古尔斯比：高通胀下所有选项均在考虑范围内，不排除大幅加息。 3. 市场押注美联储、欧洲央行和英国央行将继续加息，高利率至少持续到2031年。 4. 征收政府债券利息所得税议题升温，专家称短期不具备落地条件。 5. 11月以来债券取消发行规模超300亿元，近九成涉及市场波动。 6. 招商银行拟发50亿元浮息绿色金融债，为该行年内首期。 7. 财政部在香港成功发行20亿美元主权债券，发行期限为3年期，发行利率为4.821%。 8. 新增地方专项债发行进度达93%，年内累计发行约4.09万亿元。 9. SK海力士将铠侠相关债券转为股票，成为铠侠第一大股东。 10. 机构：科技股抛售引发避险买盘，美债收益率仍有下行空间。 11. 部分AI数据中心债券信用利差收窄，科技巨头发债表现好于广泛公司债。 12. Anthropic首席执行官称未来希望使用债务融资，投资级评级仍待观察。",
-      "keywords": [
-        "美联储",
-        "加息",
-        "美债"
-      ],
-      "pub_ts": 1795163365.0,
-      "time_et": "11-20 03:29 ET",
-      "time_bj": "16:29 BJ",
-      "time_kst": "17:29 KST",
-      "time_display": "03:29 ET / 16:29 BJ"
     }
   ],
   "ticker_news": {
@@ -1419,6 +1417,13 @@
     ],
     "NBIS": [
       {
+        "title": "Nebius Drops 7% as Michael Burry Takes a Victory Lap on Neocloud Rout; IREN Falls 5%, Oracle Slides 4%",
+        "url": "https://247wallst.com/investing/2026/11/20/nebius-drops-7-as-michael-burry-takes-a-victory-lap-on-neocloud-rout-iren-falls-5-oracle-slides-4/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 09:17 ET",
+        "pub_ts": 1795184230.0
+      },
+      {
         "title": "“The Open Checkbook Is Over.” Nebius, Backed by $2 Billion From Nvidia, Stands to Gain",
         "url": "https://www.tikr.com/blog/the-open-checkbook-is-over-nebius-backed-by-2-billion-from-nvidia-stands-to-gain?ref=yahoofinance&tlnk=yf-261120-x7v3x99j&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1445,13 +1450,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 17:40 ET",
         "pub_ts": 1795128039.0
-      },
-      {
-        "title": "Nebius Group (NBIS) Cuts 2026 Outlook So Is The Selloff A Buying Opportunity",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/nebius-group-nbis-cuts-2026-200959052.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 15:09 ET",
-        "pub_ts": 1795118999.0
       }
     ],
     "APLD": [
@@ -1530,6 +1528,13 @@
     ],
     "BE": [
       {
+        "title": "Zacks Investment Ideas feature highlights: Anthropic, SpaceX, Amazon, Vertiv and Bloom Energy",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/zacks-investment-ideas-feature-highlights-131200144.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 08:12 ET",
+        "pub_ts": 1795180320.0
+      },
+      {
         "title": "Bloom Energy Keeps Sliding: Why BMO Sees 37% Upside Anyway",
         "url": "https://www.tikr.com/blog/bloom-energy-keeps-sliding-why-bmo-sees-37-upside-anyway?ref=yahoofinance&tlnk=yf-261120-mrvfvmmr&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1556,13 +1561,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 05:14 ET",
         "pub_ts": 1795169690.0
-      },
-      {
-        "title": "Bloom Energy (BE), Why Is It Back In The Spotlight?",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/bloom-energy-why-back-spotlight-070959853.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 02:09 ET",
-        "pub_ts": 1795158599.0
       }
     ],
     "CRDO": [
@@ -1759,32 +1757,32 @@
         "pub_ts": 1795182862.0
       },
       {
-        "title": "Cameron County Rejects SpaceX Data Center Tax Break",
-        "url": "https://www.credaily.com/briefs/cameron-county-rejects-spacex-data-center-tax-break/?.tsrc=rss",
+        "title": "SpaceX Sells $32 Bil Of Debt For AI Chips. But Yields, Orbital Deployment Raise Concerns.",
+        "url": "https://finance.yahoo.com/m/55ee9a46-96c2-3843-82df-818e8f6dc10d/spacex-sells-%2432-bil-of-debt.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-20 08:05 ET",
-        "pub_ts": 1795179948.0
+        "time": "11-20 09:31 ET",
+        "pub_ts": 1795185094.0
       },
       {
-        "title": "Don’t Sell Tesla Stock. A Merger Is Coming.",
-        "url": "https://finance.yahoo.com/m/d592b819-836f-3be7-8792-8c24d9e9a701/don%E2%80%99t-sell-tesla-stock.-a.html?.tsrc=rss",
+        "title": "SpaceX Lenders Reportedly Do Not Want Musk’s $40B AI Chips To Be Launched Into Orbit – SPCX Stock Falls Below IPO Price Pre-Market",
+        "url": "https://stocktwits.com/news-articles/markets/equity/spacex-lenders-dont-want-musk-40b-ai-chips-in-space-ft-report-spcx-stock-falls-below-ipo-price/cNbSSIeR9KU?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-20 07:24 ET",
-        "pub_ts": 1795177440.0
+        "time": "11-20 09:15 ET",
+        "pub_ts": 1795184145.0
       },
       {
-        "title": "HSBC upgrades Tesla, more than doubles target on SpaceX merger potential",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/hsbc-upgrades-tesla-more-doubles-121007073.html?.tsrc=rss",
+        "title": "Filings Show Trump Sold MCD and HD and Bought SpaceX Stock Instead",
+        "url": "https://247wallst.com/investing/2026/11/20/filings-show-trump-sold-mcd-and-hd-and-bought-spacex-stock-instead/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-20 07:10 ET",
-        "pub_ts": 1795176607.0
+        "time": "11-20 09:13 ET",
+        "pub_ts": 1795184034.0
       },
       {
-        "title": "SpaceX Raises $32 Billion in Debt to Buy Nvidia Chips",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/spacex-raises-32-billion-debt-120100540.html?.tsrc=rss",
+        "title": "Zacks Investment Ideas feature highlights: Anthropic, SpaceX, Amazon, Vertiv and Bloom Energy",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/zacks-investment-ideas-feature-highlights-131200144.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-20 07:01 ET",
-        "pub_ts": 1795176060.0
+        "time": "11-20 08:12 ET",
+        "pub_ts": 1795180320.0
       }
     ],
     "ASTS": [
@@ -2677,6 +2675,13 @@
     ],
     "ORCL": [
       {
+        "title": "Nebius Drops 7% as Michael Burry Takes a Victory Lap on Neocloud Rout; IREN Falls 5%, Oracle Slides 4%",
+        "url": "https://247wallst.com/investing/2026/11/20/nebius-drops-7-as-michael-burry-takes-a-victory-lap-on-neocloud-rout-iren-falls-5-oracle-slides-4/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 09:17 ET",
+        "pub_ts": 1795184230.0
+      },
+      {
         "title": "Oracle Stock Just Closed at Its Lowest Price Since April 2024. Is It a Buy Now?",
         "url": "https://www.fool.com/investing/2026/11/20/oracle-stock-just-closed-at-its-lowest-price-since-april-2024-is-it-a-buy-now/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2703,16 +2708,16 @@
         "source": "Yahoo Finance",
         "time": "11-19 12:01 ET",
         "pub_ts": 1795107718.0
-      },
-      {
-        "title": "David Tepper and 27 Other Big Funds Bought Oracle Last Quarter, While 12 Sold. Who’s Right?",
-        "url": "https://www.tikr.com/blog/david-tepper-and-27-other-big-funds-bought-oracle-last-quarter-while-12-sold-whos-right?ref=yahoofinance&tlnk=yf-261119-jvqfh358&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 10:30 ET",
-        "pub_ts": 1795102220.0
       }
     ],
     "COIN": [
+      {
+        "title": "Fake Elon Musk Stream Drew 500,000 Viewers as Coinbase AI Blocked $4.7M in Crypto Transfers",
+        "url": "https://www.ccn.com/news/crypto/fake-elon-musk-drew-500000-viewers-coinbase-ai-blocked-crypto/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 09:12 ET",
+        "pub_ts": 1795183961.0
+      },
       {
         "title": "Coinbase Targets In-House Prediction Markets by First Half of 2027: Report",
         "url": "https://decrypt.co/383682/coinbase-targets-in-house-prediction-markets-by-first-half-of-2027-report?.tsrc=rss",
@@ -2740,13 +2745,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 04:39 ET",
         "pub_ts": 1795167540.0
-      },
-      {
-        "title": "Brian Armstrong on bitcoin’s bottom, AI trading agents and Coinbase’s next act",
-        "url": "http://videos.coindesk.com/previews/bAKzCFKJ?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 16:02 ET",
-        "pub_ts": 1795122136.0
       }
     ],
     "LLY": [
@@ -2862,6 +2860,13 @@
     ],
     "MCD": [
       {
+        "title": "Filings Show Trump Sold MCD and HD and Bought SpaceX Stock Instead",
+        "url": "https://247wallst.com/investing/2026/11/20/filings-show-trump-sold-mcd-and-hd-and-bought-spacex-stock-instead/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 09:13 ET",
+        "pub_ts": 1795184034.0
+      },
+      {
         "title": "Amazon and McDonald’s just backed Uber—so why is the stock falling?",
         "url": "https://finance.yahoo.com/markets/stocks/articles/amazon-mcdonald-just-backed-uber-134946614.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2888,13 +2893,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 15:44 ET",
         "pub_ts": 1795121075.0
-      },
-      {
-        "title": "McDonald's Comparable Sales Trends Improving Amid New Initiatives, Oppenheimer Says",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/mcdonald-apos-comparable-sales-trends-193809483.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 14:38 ET",
-        "pub_ts": 1795117089.0
       }
     ],
     "PEP": [
@@ -3270,25 +3268,25 @@
     "NOW": 1795185044.13642,
     "AMZN": 1795185044.13642,
     "CRWV": 1795185044.13642,
-    "NBIS": 1795184405.716801,
-    "APLD": 1795184405.716801,
-    "VST": 1795184405.716801,
-    "BE": 1795184405.716801,
-    "CRDO": 1795184405.716801,
-    "COHR": 1795184405.716801,
-    "MRVL": 1795184405.716801,
-    "LITE": 1795184405.716801,
+    "NBIS": 1795185969.109867,
+    "APLD": 1795185969.109867,
+    "VST": 1795185969.109867,
+    "BE": 1795185969.109867,
+    "CRDO": 1795185969.109867,
+    "COHR": 1795185969.109867,
+    "MRVL": 1795185969.109867,
+    "LITE": 1795185969.109867,
     "AAOI": 1795185044.13642,
-    "SPCX": 1795184405.716801,
-    "ASTS": 1795184405.716801,
-    "AXTI": 1795184405.716801,
+    "SPCX": 1795185969.109867,
+    "ASTS": 1795185969.109867,
+    "AXTI": 1795185969.109867,
     "NASA": 1795185044.13642,
     "LUNR": 1795185044.13642,
     "TSLA": 1795185044.13642,
     "AXP": 1795185044.13642,
-    "RKLB": 1795184405.716801,
+    "RKLB": 1795185969.109867,
     "KO": 1795185044.13642,
-    "FLY": 1795184405.716801,
+    "FLY": 1795185969.109867,
     "INTC": 1795185044.13642,
     "VRT": 1795185044.13642,
     "HPE": 1795185044.13642,
@@ -3303,28 +3301,28 @@
     "MSTR": 1795185158.3943117,
     "SNDK": 1795185044.13642,
     "BTC-USD": 1795185560.5057821,
-    "CRWD": 1795184405.716801,
-    "ORCL": 1795184405.716801,
-    "COIN": 1795184405.716801,
+    "CRWD": 1795185969.109867,
+    "ORCL": 1795185969.109867,
+    "COIN": 1795185969.109867,
     "LLY": 1795184405.716801,
     "MRNA": 1795184405.716801,
     "NKE": 1795184514.2102592,
-    "MCD": 1795184405.716801,
-    "PEP": 1795184405.716801,
+    "MCD": 1795185969.109867,
+    "PEP": 1795185969.109867,
     "XOM": 1795185560.5057821,
     "JPM": 1795185560.5057821,
     "WMT": 1795185560.5057821,
-    "V": 1795184405.716801,
+    "V": 1795185969.109867,
     "CAT": 1795185560.5057821,
-    "FN": 1795184405.716801,
-    "GLW": 1795184405.716801,
+    "FN": 1795185969.109867,
+    "GLW": 1795185969.109867,
     "ANT": 1795185560.5057821,
     "XAUUSD": 1795185560.5057821
   },
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (09:37 ET / 22:37 BJ) [半导体]：费城半导体指数下跌4.3%，触及两周低点。",
+    "detail": "⚡ 最新核心快讯 (09:44 ET / 22:44 BJ) [英伟达]：英伟达(NVDA.O)股价跌至2025年6月以来的最低水平，最新下跌4.7%。",
     "event_name": "",
     "minutes_left": 0
   }

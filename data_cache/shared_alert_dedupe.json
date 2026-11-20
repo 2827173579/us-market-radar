@@ -3263,9 +3263,21 @@
     "2026-11-20:DEFENSIVE_FLIGHT:+6.4": {
       "device": "PC",
       "ts": 1795185874.7718592
+    },
+    "2026-11-20:FLY:5M_ENTRY": {
+      "device": "PC",
+      "ts": 1795185980.037798
+    },
+    "2026-11-20:DEFENSIVE_FLIGHT:+7.0": {
+      "device": "PC",
+      "ts": 1795185981.9872675
+    },
+    "2026-11-20:INTRADAY_CORRIDOR:SOXL:BELOW_P25": {
+      "device": "PC",
+      "ts": 1795185982.7150488
     }
   },
   "device": "PC",
-  "last_heartbeat_ts": 1795185793.3877156,
-  "updated_at": "2026-11-20T14:44:34.772346+00:00"
+  "last_heartbeat_ts": 1795185894.443998,
+  "updated_at": "2026-11-20T14:46:22.715544+00:00"
 }

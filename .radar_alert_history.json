@@ -50,8 +50,8 @@
       "last_notified_at": 1795050172.4137037
     },
     "FLY": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1795185979.4018016
     },
     "LLY": {
       "state": "NORMAL",
@@ -114,8 +114,8 @@
       "last_notified_at": 0.0
     },
     "TSLA": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1795185872.7825856
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     }
   },
   "position_peaks": {
