@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795138654.939,
-  "updated_at_et": "11-19 20:37 ET",
-  "updated_at_kst": "10:37 KST",
+  "updated_at_ts": 1795138753.624,
+  "updated_at_et": "11-19 20:39 ET",
+  "updated_at_kst": "10:39 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1250,6 +1250,13 @@
         "pub_ts": 1795135922.0
       },
       {
+        "title": "Apple May Try to Challenge Meta for Personal Agent Supremacy",
+        "url": "https://finance.yahoo.com/m/218adf20-fceb-3955-ab5b-5c4bc9cf9107/apple-may-try-to-challenge.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 18:51 ET",
+        "pub_ts": 1795132260.0
+      },
+      {
         "title": "S&P 500, Nasdaq, Dow End Lower As Anthropic Trading Debut Fails To Provide Adequate Confidence — ANT, META, AAPL, GME In Focus",
         "url": "https://stocktwits.com/news-articles/markets/equity/s-and-p-500-nasdaq-dow-end-lower-as-anthropic-trading-debut-fails-to-provide-adequate-confidence/cNbio2mR90v?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1269,13 +1276,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 16:00 ET",
         "pub_ts": 1795122020.0
-      },
-      {
-        "title": "Apple (AAPL) Faces UK Backdoor Admission And French Obsolescence Trial",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/apple-aapl-faces-uk-backdoor-191555370.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 14:15 ET",
-        "pub_ts": 1795115755.0
       }
     ],
     "PLTR": [
@@ -1354,6 +1354,13 @@
     ],
     "AMZN": [
       {
+        "title": "Peter Thiel Now Has as Much Money in an Argentine Oil Stock as in Amazon. It’s Down 23% Since September 30",
+        "url": "https://247wallst.com/investing/2026/11/19/peter-thiel-now-has-as-much-money-in-an-argentine-oil-stock-as-in-amazon-its-down-23-since-september-30/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 20:17 ET",
+        "pub_ts": 1795137426.0
+      },
+      {
         "title": "NYC lawmakers weigh compromise on Amazon delivery worker bill, Bloomberg reports",
         "url": "https://finance.yahoo.com/economy/policy/articles/nyc-lawmakers-weigh-compromise-amazon-234713116.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1369,7 +1376,7 @@
       },
       {
         "title": "Siteimprove.ai Accessibility Agent Now Available for AI Agents Through Agentic Commerce on AWS Marketplace",
-        "url": "https://finance.yahoo.com/technology/ai/articles/siteimprove-ai-accessibility-agent-now-220600704.html?.tsrc=rss",
+        "url": "https://finance.yahoo.com/news/siteimprove-ai-accessibility-agent-now-220600790.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-19 17:06 ET",
         "pub_ts": 1795125960.0
@@ -1380,13 +1387,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 17:04 ET",
         "pub_ts": 1795125846.0
-      },
-      {
-        "title": "Blue Owl Taps Wall Street For $513M To Finance Amazon Data Center",
-        "url": "https://www.benzinga.com/markets/private-markets/26/11/63461413/blue-owl-taps-wall-street-for-513m-to-finance-amazon-data-center?utm_source=yahooFinance&utm_campaign=partner_feed&utm_medium=referral&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 16:50 ET",
-        "pub_ts": 1795125019.0
       }
     ],
     "CRWV": [
@@ -1946,6 +1946,13 @@
     ],
     "TSLA": [
       {
+        "title": "Musk Says Optimus Will Do the Dishes “Within 12-18 Months.” Here’s Where Tesla’s Robot Stands",
+        "url": "https://www.tikr.com/blog/musk-says-optimus-will-do-the-dishes-within-12-18-months-heres-where-teslas-robot-stands?ref=yahoofinance&tlnk=yf-261119-6gjh8j3r&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 17:37 ET",
+        "pub_ts": 1795127872.0
+      },
+      {
         "title": "Tesla Robo-Taxi Expands to Dallas. It Isn’t Enough.",
         "url": "https://finance.yahoo.com/m/bb73f711-c5b1-3f23-8b24-3dd6a248b942/tesla-robo-taxi-expands-to.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1972,13 +1979,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 15:05 ET",
         "pub_ts": 1795118722.0
-      },
-      {
-        "title": "Tesla Expands Cybercab To Dallas In First Move Outside Austin",
-        "url": "https://stocktwits.com/news-articles/markets/equity/tesla-expands-cybercab-to-dallas-in-first-move-outside-austin/cNbik2YR90r?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 14:55 ET",
-        "pub_ts": 1795118117.0
       }
     ],
     "AXP": [
@@ -3274,11 +3274,11 @@
     "META": 1795138553.0512857,
     "GOOGL": 1795138553.0512857,
     "MSFT": 1795138553.0512857,
-    "AAPL": 1795137174.6853826,
-    "PLTR": 1795137174.6853826,
-    "NOW": 1795137174.6853826,
-    "AMZN": 1795137174.6853826,
-    "CRWV": 1795137174.6853826,
+    "AAPL": 1795138753.6240938,
+    "PLTR": 1795138753.6240938,
+    "NOW": 1795138753.6240938,
+    "AMZN": 1795138753.6240938,
+    "CRWV": 1795138753.6240938,
     "NBIS": 1795138342.917801,
     "APLD": 1795138342.917801,
     "VST": 1795138342.917801,
@@ -3287,30 +3287,30 @@
     "COHR": 1795138342.917801,
     "MRVL": 1795138342.917801,
     "LITE": 1795138342.917801,
-    "AAOI": 1795137174.6853826,
+    "AAOI": 1795138753.6240938,
     "SPCX": 1795138342.917801,
     "ASTS": 1795138342.917801,
     "AXTI": 1795138342.917801,
-    "NASA": 1795137174.6853826,
-    "LUNR": 1795137174.6853826,
-    "TSLA": 1795137174.6853826,
-    "AXP": 1795137174.6853826,
+    "NASA": 1795138753.6240938,
+    "LUNR": 1795138753.6240938,
+    "TSLA": 1795138753.6240938,
+    "AXP": 1795138753.6240938,
     "RKLB": 1795138342.917801,
-    "KO": 1795137174.6853826,
+    "KO": 1795138753.6240938,
     "FLY": 1795138342.917801,
-    "INTC": 1795137174.6853826,
-    "VRT": 1795137174.6853826,
-    "HPE": 1795137174.6853826,
-    "DELL": 1795137174.6853826,
-    "OKLO": 1795137174.6853826,
-    "CEG": 1795137174.6853826,
-    "FPS": 1795137174.6853826,
-    "MU": 1795137174.6853826,
-    "SKHY": 1795137174.6853826,
-    "WDC": 1795137174.6853826,
-    "STX": 1795137174.6853826,
-    "MSTR": 1795137174.6853826,
-    "SNDK": 1795137174.6853826,
+    "INTC": 1795138753.6240938,
+    "VRT": 1795138753.6240938,
+    "HPE": 1795138753.6240938,
+    "DELL": 1795138753.6240938,
+    "OKLO": 1795138753.6240938,
+    "CEG": 1795138753.6240938,
+    "FPS": 1795138753.6240938,
+    "MU": 1795138753.6240938,
+    "SKHY": 1795138753.6240938,
+    "WDC": 1795138753.6240938,
+    "STX": 1795138753.6240938,
+    "MSTR": 1795138753.6240938,
+    "SNDK": 1795138753.6240938,
     "BTC-USD": 1795137174.6853826,
     "CRWD": 1795138342.917801,
     "ORCL": 1795138342.917801,
