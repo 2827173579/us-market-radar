@@ -1,9 +1,22 @@
 {
-  "updated_at_ts": 1795186475.305,
-  "updated_at_et": "11-20 09:54 ET",
-  "updated_at_kst": "23:54 KST",
+  "updated_at_ts": 1795186578.388,
+  "updated_at_et": "11-20 09:56 ET",
+  "updated_at_kst": "23:56 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261120225346481800",
+      "title": "【英伟达市值被谷歌超越】 11月20日讯，英伟达(NVDA.O)市值被谷歌(GOOG.O…",
+      "summary": "【英伟达市值被谷歌超越】 11月20日讯，英伟达(NVDA.O)市值被谷歌(GOOG.O)超越，成为美国市值第四大的公司，公司市值缩水至3.4万亿。",
+      "keywords": [
+        "英伟达"
+      ],
+      "pub_ts": 1795186426.0,
+      "time_et": "11-20 09:53 ET",
+      "time_bj": "22:53 BJ",
+      "time_kst": "23:53 KST",
+      "time_display": "09:53 ET / 22:53 BJ"
+    },
     {
       "id": "20261120225118488800",
       "title": "美国芯片制造商股价下跌，AMD(AMD.O)下跌4.9%，英特尔(INTC.O)下跌1.…",
@@ -326,19 +339,6 @@
       "time_bj": "17:34 BJ",
       "time_kst": "18:34 KST",
       "time_display": "04:34 ET / 17:34 BJ"
-    },
-    {
-      "id": "20261120172510421800",
-      "title": "泰国商务部长：正就将美国关税从12.5%降至10%进行磋商。",
-      "summary": "泰国商务部长：正就将美国关税从12.5%降至10%进行磋商。",
-      "keywords": [
-        "关税"
-      ],
-      "pub_ts": 1795166710.0,
-      "time_et": "11-20 04:25 ET",
-      "time_bj": "17:25 BJ",
-      "time_kst": "18:25 KST",
-      "time_display": "04:25 ET / 17:25 BJ"
     }
   ],
   "ticker_news": {
@@ -1343,6 +1343,13 @@
     ],
     "AMZN": [
       {
+        "title": "How Much Would You Need to Invest in Amazon to Generate $1,000 a Month",
+        "url": "https://247wallst.com/investing/2026/11/20/how-much-would-you-need-to-invest-in-amazon-to-generate-1000-a-month/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 09:33 ET",
+        "pub_ts": 1795185228.0
+      },
+      {
         "title": "Anthropic Sinks 14% on Day Two as AI Sell-Off Spreads; CoreWeave Falls 6%, Amazon Slips 2%",
         "url": "https://247wallst.com/investing/2026/11/20/anthropic-sinks-14-on-day-two-as-ai-sell-off-spreads-coreweave-falls-6-amazon-slips-2/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1369,16 +1376,16 @@
         "source": "Yahoo Finance",
         "time": "11-20 08:37 ET",
         "pub_ts": 1795181820.0
-      },
-      {
-        "title": "Zacks Investment Ideas feature highlights: Anthropic, SpaceX, Amazon, Vertiv and Bloom Energy",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/zacks-investment-ideas-feature-highlights-131200144.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 08:12 ET",
-        "pub_ts": 1795180320.0
       }
     ],
     "CRWV": [
+      {
+        "title": "Cipher Digital Sinks 5%, CoreWeave Down 7% as Anthropic’s Debut Fails to Stop AI Selloff",
+        "url": "https://www.tikr.com/blog/cipher-digital-sinks-5-coreweave-down-7-as-anthropics-debut-fails-to-stop-ai-selloff?ref=yahoofinance&tlnk=yf-261120-46j662p9&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 09:39 ET",
+        "pub_ts": 1795185589.0
+      },
       {
         "title": "CoreWeave’s Founders Sold $3.3 Billion of Stock. One Is Now Buying the Bonds",
         "url": "https://247wallst.com/investing/2026/11/20/coreweaves-founders-sold-3-3-billion-of-stock-one-is-now-buying-the-bonds/?.tsrc=rss",
@@ -1406,13 +1413,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 01:21 ET",
         "pub_ts": 1795155669.0
-      },
-      {
-        "title": "Why Is CoreWeave (CRWV) Facing New Supply Chain Risk From A US Ban?",
-        "url": "https://finance.yahoo.com/technology/ai/articles/why-coreweave-crwv-facing-supply-061626242.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 01:16 ET",
-        "pub_ts": 1795155386.0
       }
     ],
     "NBIS": [
@@ -1935,6 +1935,13 @@
     ],
     "TSLA": [
       {
+        "title": "Tesla upgraded, Berkshire Hathaway downgraded: Wall Street's top analyst calls",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/tesla-upgraded-applovin-initiated-wall-135331262.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 09:43 ET",
+        "pub_ts": 1795185806.0
+      },
+      {
         "title": "Can Tesla Revive China Sales While Ramping Up Shanghai Output?",
         "url": "https://finance.yahoo.com/markets/stocks/articles/tesla-revive-china-sales-while-131500253.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1961,13 +1968,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 06:04 ET",
         "pub_ts": 1795172697.0
-      },
-      {
-        "title": "ARK Autonomous Tech & Robotics (ARKQ) Buys $34.6 Million More Tesla on Nov. 18",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/ark-autonomous-tech-robotics-arkq-110422510.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 06:04 ET",
-        "pub_ts": 1795172662.0
       }
     ],
     "AXP": [
@@ -2120,6 +2120,13 @@
     ],
     "INTC": [
       {
+        "title": "Anthropic, Nvidia, AMD, Intuit, Bloom Energy, and More Stocks That Explain Today’s Market",
+        "url": "https://finance.yahoo.com/m/801603d1-8318-3eb0-99a6-10147f0d5ed5/anthropic%2C-nvidia%2C-amd%2C.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 08:53 ET",
+        "pub_ts": 1795182780.0
+      },
+      {
         "title": "Did Microsoft Azure Deal Just Shift Intel's (INTC) Investment Narrative?",
         "url": "https://finance.yahoo.com/markets/stocks/articles/did-microsoft-azure-deal-just-131148027.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2132,13 +2139,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 07:30 ET",
         "pub_ts": 1795177808.0
-      },
-      {
-        "title": "Anthropic, AMD, Intel, Marvell, Intuit, and More Stocks That Explain Today’s Market",
-        "url": "https://finance.yahoo.com/m/801603d1-8318-3eb0-99a6-10147f0d5ed5/anthropic%2C-amd%2C-intel%2C.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 07:02 ET",
-        "pub_ts": 1795176120.0
       },
       {
         "title": "Capital Group Core Equity (CGUS) Buys $25.4 Million More Intel on Nov. 18",
@@ -2231,6 +2231,13 @@
     ],
     "DELL": [
       {
+        "title": "Record AI Orders Solidifies Dell Technologies’s (DELL) Hardware Leadership",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/record-ai-orders-solidifies-dell-143153349.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 09:31 ET",
+        "pub_ts": 1795185113.0
+      },
+      {
         "title": "Dell, HP Enterprise Highlight Thanksgiving Week Earnings, Plus These 2 Hot Retailers",
         "url": "https://finance.yahoo.com/m/9fb39b49-474f-3ca7-b9f2-118b6fd57f11/dell%2C-hp-enterprise-highlight.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2257,13 +2264,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 13:33 ET",
         "pub_ts": 1795113191.0
-      },
-      {
-        "title": "$310 And Falling: Why Nvidia’s Turmoil and AI Server Margin Pressure Are Dragging Dell Lower Before Earnings",
-        "url": "https://247wallst.com/investing/2026/11/19/310-and-falling-why-nvidias-turmoil-and-ai-server-margin-pressure-are-dragging-dell-lower-before-earnings/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 12:45 ET",
-        "pub_ts": 1795110306.0
       }
     ],
     "OKLO": [
@@ -2386,6 +2386,20 @@
         "pub_ts": 1795181818.0
       },
       {
+        "title": "Micron Keeps Falling as Memory Stocks Get Agonizingly Cheap. The Next Catalyst.",
+        "url": "https://finance.yahoo.com/m/3cab338f-3845-34b9-9d7a-2c45977740d5/micron-keeps-falling-as.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 09:44 ET",
+        "pub_ts": 1795185840.0
+      },
+      {
+        "title": "Micron Sinks 6%, Sandisk Down 7% as Chip Selloff Deepens Memory’s “Abject Disaster”",
+        "url": "https://www.tikr.com/blog/micron-sinks-6-sandisk-down-7-as-chip-selloff-deepens-memorys-abject-disaster?ref=yahoofinance&tlnk=yf-261120-gwxqp9q2&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 09:38 ET",
+        "pub_ts": 1795185500.0
+      },
+      {
         "title": "SanDisk Tumbles 8% as TrendForce Turns Bearish on 2027 NAND Prices; Micron Falls 5%, SK Hynix Slides 4%",
         "url": "https://247wallst.com/investing/2026/11/20/sandisk-tumbles-8-as-trendforce-turns-bearish-on-2027-nand-prices-micron-falls-5-sk-hynix-slides-4/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2398,20 +2412,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 08:45 ET",
         "pub_ts": 1795182350.0
-      },
-      {
-        "title": "Nvidia and Micron Can't Make AI Chips Without This Growth Stock. Here's Why It Could Soar.",
-        "url": "https://www.fool.com/investing/2026/11/20/nvidia-and-micron-cant-make-ai-chips-without-this-growth-stock-heres-why-it-could-soar/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 08:20 ET",
-        "pub_ts": 1795180802.0
-      },
-      {
-        "title": "This Could Be the Most Undervalued AI Stock Heading Into 2027",
-        "url": "https://247wallst.com/investing/2026/11/20/this-could-be-the-most-undervalued-ai-stock-heading-into-2027/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 08:04 ET",
-        "pub_ts": 1795179897.0
       }
     ],
     "SKHY": [
@@ -2453,6 +2453,13 @@
     ],
     "WDC": [
       {
+        "title": "Zacks Industry Outlook Highlights Western Digital, Super Micro Computer and Quantum",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/zacks-industry-outlook-highlights-western-131900064.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 08:19 ET",
+        "pub_ts": 1795180740.0
+      },
+      {
         "title": "Whale Rock Dumps Western Digital. Buy the AI Storage Dip for 113% Upside.",
         "url": "https://www.barchart.com/story/news/8926082/whale-rock-dumps-western-digital-buy-the-ai-storage-dip-for-113-upside?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2479,13 +2486,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 10:06 ET",
         "pub_ts": 1795100760.0
-      },
-      {
-        "title": "A $3.8 Billion Fund Dumps These 3 Stocks",
-        "url": "https://www.tikr.com/blog/a-3-8-billion-fund-dumps-these-3-stocks?ref=yahoofinance&tlnk=yf-261118-848c25mv&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 10:52 ET",
-        "pub_ts": 1795017158.0
       }
     ],
     "STX": [
@@ -2571,6 +2571,20 @@
         "pub_ts": 1795184441.0
       },
       {
+        "title": "Sandisk Stock Looked Like It Fell 87%. Here’s What Really Happened.",
+        "url": "https://finance.yahoo.com/m/83e6f25c-45b8-3b90-ab21-ee8d7bebe056/sandisk-stock-looked-like-it.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 09:46 ET",
+        "pub_ts": 1795185960.0
+      },
+      {
+        "title": "Micron Sinks 6%, Sandisk Down 7% as Chip Selloff Deepens Memory’s “Abject Disaster”",
+        "url": "https://www.tikr.com/blog/micron-sinks-6-sandisk-down-7-as-chip-selloff-deepens-memorys-abject-disaster?ref=yahoofinance&tlnk=yf-261120-gwxqp9q2&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 09:38 ET",
+        "pub_ts": 1795185500.0
+      },
+      {
         "title": "SanDisk Tumbles 8% as TrendForce Turns Bearish on 2027 NAND Prices; Micron Falls 5%, SK Hynix Slides 4%",
         "url": "https://247wallst.com/investing/2026/11/20/sandisk-tumbles-8-as-trendforce-turns-bearish-on-2027-nand-prices-micron-falls-5-sk-hynix-slides-4/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2583,20 +2597,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 08:45 ET",
         "pub_ts": 1795182350.0
-      },
-      {
-        "title": "Zacks Investment Ideas feature highlights: Nasdaq, Nvidia, Advanced Micro Devices, SanDisk, Nebius Arm Holdings and Anthropic",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/zacks-investment-ideas-feature-highlights-130700415.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 08:07 ET",
-        "pub_ts": 1795180020.0
-      },
-      {
-        "title": "Nasdaq Futures Slide, Anthropic Shares Reverse IPO Gains — LITE, IREN, SNDK, NVDA In Focus",
-        "url": "https://stocktwits.com/news-articles/markets/equity/nasdaq-futures-slide-anthropic-shares-reverse-ipo-gains-lite-iren-sndk-nvda-in-focus/cNbSL5RR9Ks?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 07:20 ET",
-        "pub_ts": 1795177204.0
       }
     ],
     "BTC-USD": [
@@ -3256,18 +3256,18 @@
     "SOXS": 1795186475.3045025,
     "NVDA": 1795186475.3045025,
     "AMD": 1795186475.3045025,
-    "ASML": 1795185044.13642,
-    "QCOM": 1795185044.13642,
+    "ASML": 1795186578.3877583,
+    "QCOM": 1795186578.3877583,
     "AVGO": 1795186475.3045025,
     "AMAT": 1795186475.3045025,
     "META": 1795186475.3045025,
     "GOOGL": 1795186475.3045025,
     "MSFT": 1795186475.3045025,
-    "AAPL": 1795185044.13642,
-    "PLTR": 1795185044.13642,
-    "NOW": 1795185044.13642,
-    "AMZN": 1795185044.13642,
-    "CRWV": 1795185044.13642,
+    "AAPL": 1795186578.3877583,
+    "PLTR": 1795186578.3877583,
+    "NOW": 1795186578.3877583,
+    "AMZN": 1795186578.3877583,
+    "CRWV": 1795186578.3877583,
     "NBIS": 1795185969.109867,
     "APLD": 1795185969.109867,
     "VST": 1795185969.109867,
@@ -3276,30 +3276,30 @@
     "COHR": 1795185969.109867,
     "MRVL": 1795185969.109867,
     "LITE": 1795185969.109867,
-    "AAOI": 1795185044.13642,
+    "AAOI": 1795186578.3877583,
     "SPCX": 1795185969.109867,
     "ASTS": 1795185969.109867,
     "AXTI": 1795185969.109867,
-    "NASA": 1795185044.13642,
-    "LUNR": 1795185044.13642,
-    "TSLA": 1795185044.13642,
-    "AXP": 1795185044.13642,
+    "NASA": 1795186578.3877583,
+    "LUNR": 1795186578.3877583,
+    "TSLA": 1795186578.3877583,
+    "AXP": 1795186578.3877583,
     "RKLB": 1795185969.109867,
-    "KO": 1795185044.13642,
+    "KO": 1795186578.3877583,
     "FLY": 1795185969.109867,
-    "INTC": 1795185044.13642,
-    "VRT": 1795185044.13642,
-    "HPE": 1795185044.13642,
-    "DELL": 1795185044.13642,
-    "OKLO": 1795185044.13642,
+    "INTC": 1795186578.3877583,
+    "VRT": 1795186578.3877583,
+    "HPE": 1795186578.3877583,
+    "DELL": 1795186578.3877583,
+    "OKLO": 1795186578.3877583,
     "CEG": 1795185158.3943117,
-    "FPS": 1795185044.13642,
-    "MU": 1795185044.13642,
-    "SKHY": 1795185044.13642,
-    "WDC": 1795185044.13642,
+    "FPS": 1795186578.3877583,
+    "MU": 1795186578.3877583,
+    "SKHY": 1795186578.3877583,
+    "WDC": 1795186578.3877583,
     "STX": 1795185158.3943117,
     "MSTR": 1795185158.3943117,
-    "SNDK": 1795185044.13642,
+    "SNDK": 1795186578.3877583,
     "BTC-USD": 1795185560.5057821,
     "CRWD": 1795185969.109867,
     "ORCL": 1795185969.109867,
@@ -3322,7 +3322,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (09:51 ET / 22:51 BJ) [芯片]：美国芯片制造商股价下跌，AMD(AMD.O)下跌4.9%，英特尔(INTC.O)下跌1.6%，博通(AVGO.O)下跌1.9%，迈威尔科技(MRVL.O)下跌5.3%，美光科技(MU.O)下",
+    "detail": "⚡ 最新核心快讯 (09:53 ET / 22:53 BJ) [英伟达]：【英伟达市值被谷歌超越】 11月20日讯，英伟达(NVDA.O)市值被谷歌(GOOG.O)超越，成为美国市值第四大的公司，公司市值缩水至3.4万亿。",
     "event_name": "",
     "minutes_left": 0
   }
