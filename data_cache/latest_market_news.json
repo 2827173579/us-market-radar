@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795170479.185,
-  "updated_at_et": "11-20 05:27 ET",
-  "updated_at_kst": "19:27 KST",
+  "updated_at_ts": 1795170586.886,
+  "updated_at_et": "11-20 05:29 ET",
+  "updated_at_kst": "19:29 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1941,6 +1941,13 @@
     ],
     "TSLA": [
       {
+        "title": "A SpaceX-Tesla Merger Needs \"Yes\" From 50% of All Tesla Shares, Not Just Votes Cast. Here's Why That Math Is Harder Than Wall Street Thinks.",
+        "url": "https://www.fool.com/investing/2026/11/20/a-spacex-tesla-merger-needs-yes-from-50-of-all-tes/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 05:04 ET",
+        "pub_ts": 1795169040.0
+      },
+      {
         "title": "Could Tesla Become The Next Lumentum? Gary Black Warns A SpaceX Stock Deal Could Send TSLA Down 25%",
         "url": "https://stocktwits.com/news-articles/markets/equity/could-tesla-become-next-lumentum-gary-black-spacex-stock-deal-send-tsla-down/cNbSEW5R9K7?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1967,13 +1974,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 17:37 ET",
         "pub_ts": 1795127872.0
-      },
-      {
-        "title": "Tesla Robo-Taxi Expands to Dallas. It Isn’t Enough.",
-        "url": "https://finance.yahoo.com/m/bb73f711-c5b1-3f23-8b24-3dd6a248b942/tesla-robo-taxi-expands-to.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 16:07 ET",
-        "pub_ts": 1795122420.0
       }
     ],
     "AXP": [
@@ -2607,39 +2607,39 @@
     ],
     "BTC-USD": [
       {
+        "title": "Gemini Will Stop Holding Coins for VanEck’s HODL, ETHV and VSOL in February",
+        "url": "https://unchainedcrypto.com/gemini-will-stop-holding-coins-for-vanecks-hodl-ethv-and-vsol-in-february/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 05:15 ET",
+        "pub_ts": 1795169748.0
+      },
+      {
+        "title": "Soluna Holdings (SLNH) Stock Sees Fair Value Cut As AI Shift Raises Execution Questions",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/soluna-holdings-slnh-stock-sees-101013523.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 05:10 ET",
+        "pub_ts": 1795169413.0
+      },
+      {
+        "title": "Bitcoin Is 35% Below Its 52-Week High While the S&P 500 Is Up. Here’s What That Says About the Digital Gold Thesis.",
+        "url": "https://www.fool.com/investing/2026/11/20/bitcoin-is-33-below-its-52-week-high-s-and-p-500-is-uphere-s-what-that-says-digital-gold-thesis/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 05:05 ET",
+        "pub_ts": 1795169102.0
+      },
+      {
+        "title": "Bitcoin Price Has Never Had Two Red Years in a Row: 4-Year Cycle Broken?",
+        "url": "https://99bitcoins.com/news/bitcoin-btc/bitcoin-price-two-consecutive-losing-years/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 04:32 ET",
+        "pub_ts": 1795167160.0
+      },
+      {
         "title": "Fed Tightening Is Ending the Easy-Money Regime as Dollar Breaks Out and Gold, BTC Slide",
         "url": "https://beincrypto.com/fed-tightening-dollar-breakout-gold-bitcoin/?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-20 03:55 ET",
         "pub_ts": 1795164905.0
-      },
-      {
-        "title": "BlackRock’s Bitcoin ETF Sees Record $541 Million Outflow in a Single Day",
-        "url": "https://beincrypto.com/blackrock-bitcoin-etf-record-outflow/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 02:00 ET",
-        "pub_ts": 1795158000.0
-      },
-      {
-        "title": "Bitcoin hits near 5-mth low below $62k as AI rout batters risk appetite",
-        "url": "https://finance.yahoo.com/markets/crypto/articles/bitcoin-hits-near-5-mth-065931562.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 01:59 ET",
-        "pub_ts": 1795157971.0
-      },
-      {
-        "title": "Bitcoin Falls to Mining Cost Level as Hashrate Nears Record and Indicators Flip Bearish",
-        "url": "https://beincrypto.com/bitcoin-mining-cost-hashrate-bearish/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 21:39 ET",
-        "pub_ts": 1795142391.0
-      },
-      {
-        "title": "Strategy Buys Back $3 Billion in STRC Shares as Credit Markets Tighten",
-        "url": "https://www.marketbeat.com/instant-alerts/event-strategy-buys-back-3-billion-in-strc-shares-as-credit-markets-tighten-2026-11-19/?utm_source=yahoofinance&utm_medium=yahoofinance&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 21:12 ET",
-        "pub_ts": 1795140728.0
       }
     ],
     "CRWD": [
@@ -3269,11 +3269,11 @@
     "META": 1795170479.1853998,
     "GOOGL": 1795170479.1853998,
     "MSFT": 1795170479.1853998,
-    "AAPL": 1795168895.5113888,
-    "PLTR": 1795168996.6946113,
-    "NOW": 1795168996.6946113,
-    "AMZN": 1795168996.6946113,
-    "CRWV": 1795168996.6946113,
+    "AAPL": 1795170586.8861907,
+    "PLTR": 1795170586.8861907,
+    "NOW": 1795170586.8861907,
+    "AMZN": 1795170586.8861907,
+    "CRWV": 1795170586.8861907,
     "NBIS": 1795169884.4844477,
     "APLD": 1795169884.4844477,
     "VST": 1795169884.4844477,
@@ -3282,31 +3282,31 @@
     "COHR": 1795169884.4844477,
     "MRVL": 1795169884.4844477,
     "LITE": 1795169884.4844477,
-    "AAOI": 1795168996.6946113,
+    "AAOI": 1795170586.8861907,
     "SPCX": 1795169884.4844477,
     "ASTS": 1795169884.4844477,
     "AXTI": 1795169884.4844477,
-    "NASA": 1795168996.6946113,
-    "LUNR": 1795168996.6946113,
-    "TSLA": 1795168996.6946113,
-    "AXP": 1795168996.6946113,
+    "NASA": 1795170586.8861907,
+    "LUNR": 1795170586.8861907,
+    "TSLA": 1795170586.8861907,
+    "AXP": 1795170586.8861907,
     "RKLB": 1795169884.4844477,
-    "KO": 1795168996.6946113,
+    "KO": 1795170586.8861907,
     "FLY": 1795169884.4844477,
-    "INTC": 1795168996.6946113,
-    "VRT": 1795168996.6946113,
-    "HPE": 1795168996.6946113,
-    "DELL": 1795168996.6946113,
-    "OKLO": 1795168996.6946113,
-    "CEG": 1795168996.6946113,
-    "FPS": 1795168996.6946113,
-    "MU": 1795168996.6946113,
-    "SKHY": 1795168996.6946113,
-    "WDC": 1795168996.6946113,
-    "STX": 1795168996.6946113,
-    "MSTR": 1795168996.6946113,
-    "SNDK": 1795168996.6946113,
-    "BTC-USD": 1795168996.6946113,
+    "INTC": 1795170586.8861907,
+    "VRT": 1795170586.8861907,
+    "HPE": 1795170586.8861907,
+    "DELL": 1795170586.8861907,
+    "OKLO": 1795170586.8861907,
+    "CEG": 1795170586.8861907,
+    "FPS": 1795170586.8861907,
+    "MU": 1795170586.8861907,
+    "SKHY": 1795170586.8861907,
+    "WDC": 1795170586.8861907,
+    "STX": 1795170586.8861907,
+    "MSTR": 1795170586.8861907,
+    "SNDK": 1795170586.8861907,
+    "BTC-USD": 1795170586.8861907,
     "CRWD": 1795169884.4844477,
     "ORCL": 1795169884.4844477,
     "COIN": 1795169884.4844477,
