@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795160134.005,
-  "updated_at_et": "11-20 02:35 ET",
-  "updated_at_kst": "16:35 KST",
+  "updated_at_ts": 1795160241.049,
+  "updated_at_et": "11-20 02:37 ET",
+  "updated_at_kst": "16:37 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1530,6 +1530,13 @@
     ],
     "BE": [
       {
+        "title": "Bloom Energy (BE), Why Is It Back In The Spotlight?",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/bloom-energy-why-back-spotlight-070959853.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 02:09 ET",
+        "pub_ts": 1795158599.0
+      },
+      {
         "title": "Is a Bloom Energy Stock Crash Coming? 1 Warning Sign Investors Shouldn’t Ignore.",
         "url": "https://www.fool.com/investing/2026/11/19/is-a-bloom-energy-stock-crash-coming-1-warning-sign-investors-shouldnt-ignore/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1556,13 +1563,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 10:37 ET",
         "pub_ts": 1795102620.0
-      },
-      {
-        "title": "Bloom Energy Soars 6% as One-Time Skeptic BMO Upgrades on Anthropic IPO Day",
-        "url": "https://www.tikr.com/blog/bloom-energy-soars-6-as-one-time-skeptic-bmo-upgrades-on-anthropic-ipo-day?ref=yahoofinance&tlnk=yf-261119-5r2wf69r&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 09:34 ET",
-        "pub_ts": 1795098863.0
       }
     ],
     "CRDO": [
@@ -1759,6 +1759,13 @@
         "pub_ts": 1795157911.0
       },
       {
+        "title": "Elon Musk’s Dream Meets Wall Street Reality: SpaceX Lenders Don’t Want Nvidia Chips Leaving Earth",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/elon-musk-dream-meets-wall-062433324.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 01:24 ET",
+        "pub_ts": 1795155873.0
+      },
+      {
         "title": "Could Tesla Become The Next Lumentum? Gary Black Warns A SpaceX Stock Deal Could Send TSLA Down 25%",
         "url": "https://stocktwits.com/news-articles/markets/equity/could-tesla-become-next-lumentum-gary-black-spacex-stock-deal-send-tsla-down/cNbSEW5R9K7?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1778,13 +1785,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 23:30 ET",
         "pub_ts": 1795149007.0
-      },
-      {
-        "title": "SpaceX lenders seek safeguards against Musk sending AI chips into space - FT",
-        "url": "https://finance.yahoo.com/technology/ai/articles/spacex-lenders-seek-safeguards-against-031830082.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 22:18 ET",
-        "pub_ts": 1795144710.0
       }
     ],
     "ASTS": [
@@ -3270,25 +3270,25 @@
     "NOW": 1795159421.7100236,
     "AMZN": 1795159421.7100236,
     "CRWV": 1795159421.7100236,
-    "NBIS": 1795158701.775705,
-    "APLD": 1795158701.775705,
-    "VST": 1795158701.775705,
-    "BE": 1795158701.775705,
-    "CRDO": 1795158701.775705,
-    "COHR": 1795158701.775705,
-    "MRVL": 1795158701.775705,
-    "LITE": 1795158701.775705,
+    "NBIS": 1795160241.048954,
+    "APLD": 1795160241.048954,
+    "VST": 1795160241.048954,
+    "BE": 1795160241.048954,
+    "CRDO": 1795160241.048954,
+    "COHR": 1795160241.048954,
+    "MRVL": 1795160241.048954,
+    "LITE": 1795160241.048954,
     "AAOI": 1795159421.7100236,
-    "SPCX": 1795158701.775705,
-    "ASTS": 1795158701.775705,
-    "AXTI": 1795158701.775705,
+    "SPCX": 1795160241.048954,
+    "ASTS": 1795160241.048954,
+    "AXTI": 1795160241.048954,
     "NASA": 1795159421.7100236,
     "LUNR": 1795159421.7100236,
     "TSLA": 1795159421.7100236,
     "AXP": 1795159421.7100236,
-    "RKLB": 1795158701.775705,
+    "RKLB": 1795160241.048954,
     "KO": 1795159421.7100236,
-    "FLY": 1795158701.775705,
+    "FLY": 1795160241.048954,
     "INTC": 1795159421.7100236,
     "VRT": 1795159421.7100236,
     "HPE": 1795159421.7100236,
@@ -3303,21 +3303,21 @@
     "MSTR": 1795159527.166691,
     "SNDK": 1795159527.166691,
     "BTC-USD": 1795159527.166691,
-    "CRWD": 1795158701.775705,
+    "CRWD": 1795160241.048954,
     "ORCL": 1795158806.809848,
-    "COIN": 1795158701.775705,
-    "LLY": 1795158701.775705,
-    "MRNA": 1795158701.775705,
+    "COIN": 1795160241.048954,
+    "LLY": 1795160241.048954,
+    "MRNA": 1795160241.048954,
     "NKE": 1795158806.809848,
     "MCD": 1795158806.809848,
     "PEP": 1795158806.809848,
     "XOM": 1795159316.123296,
     "JPM": 1795159316.123296,
     "WMT": 1795159421.7100236,
-    "V": 1795158701.775705,
+    "V": 1795160241.048954,
     "CAT": 1795159421.7100236,
-    "FN": 1795158701.775705,
-    "GLW": 1795158701.775705,
+    "FN": 1795160241.048954,
+    "GLW": 1795160241.048954,
     "ANT": 1795159527.166691,
     "XAUUSD": 1795159527.166691
   },
