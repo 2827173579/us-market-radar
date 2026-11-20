@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795153966.356,
-  "updated_at_et": "11-20 00:52 ET",
-  "updated_at_kst": "14:52 KST",
+  "updated_at_ts": 1795154065.517,
+  "updated_at_et": "11-20 00:54 ET",
+  "updated_at_kst": "14:54 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1756,6 +1756,20 @@
     ],
     "SPCX": [
       {
+        "title": "‘I Don’t Hate Data Centers’: Gina Hinojosa Willing to Talk to SpaceX CEO Elon Musk, but Will Make Sure Texans Are ‘Thriving’",
+        "url": "https://finance.yahoo.com/economy/policy/articles/don-t-hate-data-centers-043014215.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 23:30 ET",
+        "pub_ts": 1795149014.0
+      },
+      {
+        "title": "Elon Musk Says Grok Can ‘Do Your Accounting’ as SpaceXSI Adds Five Full-Time AI Bots, Cutting Invoice Processing From 24 Hours to Minutes",
+        "url": "https://finance.yahoo.com/technology/ai/articles/elon-musk-says-grok-accounting-043007297.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 23:30 ET",
+        "pub_ts": 1795149007.0
+      },
+      {
         "title": "SpaceX lenders seek safeguards against Musk sending AI chips into space - FT",
         "url": "https://finance.yahoo.com/technology/ai/articles/spacex-lenders-seek-safeguards-against-031830082.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1775,20 +1789,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 19:31 ET",
         "pub_ts": 1795134676.0
-      },
-      {
-        "title": "Anthropic’s IPO nets Goldman Sachs and Morgan Stanley $113 million apiece in fees, eclipsing their SpaceX paydays",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/anthropic-ipo-nets-goldman-sachs-233822497.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 18:38 ET",
-        "pub_ts": 1795131502.0
-      },
-      {
-        "title": "SpaceX Stock Price Forecast: How Much Upside Do Analysts See as Anthropic Goes Public?",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/spacex-stock-price-forecast-much-223706612.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 17:37 ET",
-        "pub_ts": 1795127826.0
       }
     ],
     "ASTS": [
@@ -2651,6 +2651,13 @@
         "pub_ts": 1795100825.0
       },
       {
+        "title": "CrowdStrike (CRWD) Brings Apple Device Automation Into Falcon Foundry Through A New Tie Up",
+        "url": "https://finance.yahoo.com/technology/articles/crowdstrike-crwd-brings-apple-device-051725940.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 00:17 ET",
+        "pub_ts": 1795151845.0
+      },
+      {
         "title": "Why CrowdStrike Holdings Stock Flew While the Market Flopped Today",
         "url": "https://www.fool.com/investing/2026/11/19/why-crowdstrike-holdings-stock-flew-while-the-market-flopped-today/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2670,13 +2677,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 09:39 ET",
         "pub_ts": 1795099182.0
-      },
-      {
-        "title": "Cynet Named Founding Party Member of GTIA's Managed Intelligence Alliance",
-        "url": "https://finance.yahoo.com/technology/ai/articles/cynet-named-founding-party-member-140000862.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 09:00 ET",
-        "pub_ts": 1795096800.0
       }
     ],
     "ORCL": [
@@ -3274,25 +3274,25 @@
     "NOW": 1795153252.416096,
     "AMZN": 1795153252.416096,
     "CRWV": 1795153252.416096,
-    "NBIS": 1795152519.8356826,
-    "APLD": 1795152519.8356826,
-    "VST": 1795152519.8356826,
-    "BE": 1795152519.8356826,
-    "CRDO": 1795152519.8356826,
-    "COHR": 1795152519.8356826,
-    "MRVL": 1795152519.8356826,
-    "LITE": 1795152519.8356826,
+    "NBIS": 1795154065.5168164,
+    "APLD": 1795154065.5168164,
+    "VST": 1795154065.5168164,
+    "BE": 1795154065.5168164,
+    "CRDO": 1795154065.5168164,
+    "COHR": 1795154065.5168164,
+    "MRVL": 1795154065.5168164,
+    "LITE": 1795154065.5168164,
     "AAOI": 1795153252.416096,
-    "SPCX": 1795152519.8356826,
-    "ASTS": 1795152519.8356826,
-    "AXTI": 1795152519.8356826,
+    "SPCX": 1795154065.5168164,
+    "ASTS": 1795154065.5168164,
+    "AXTI": 1795154065.5168164,
     "NASA": 1795153252.416096,
     "LUNR": 1795153252.416096,
     "TSLA": 1795153252.416096,
     "AXP": 1795153252.416096,
-    "RKLB": 1795152519.8356826,
+    "RKLB": 1795154065.5168164,
     "KO": 1795153252.416096,
-    "FLY": 1795152519.8356826,
+    "FLY": 1795154065.5168164,
     "INTC": 1795153252.416096,
     "VRT": 1795153252.416096,
     "HPE": 1795153252.416096,
@@ -3307,21 +3307,21 @@
     "MSTR": 1795153358.4664555,
     "SNDK": 1795153358.4664555,
     "BTC-USD": 1795153358.4664555,
-    "CRWD": 1795152519.8356826,
+    "CRWD": 1795154065.5168164,
     "ORCL": 1795152624.580631,
-    "COIN": 1795152519.8356826,
-    "LLY": 1795152519.8356826,
-    "MRNA": 1795152519.8356826,
+    "COIN": 1795154065.5168164,
+    "LLY": 1795154065.5168164,
+    "MRNA": 1795154065.5168164,
     "NKE": 1795152624.580631,
     "MCD": 1795152624.580631,
     "PEP": 1795152624.580631,
     "XOM": 1795153146.3857799,
     "JPM": 1795153146.3857799,
     "WMT": 1795153252.416096,
-    "V": 1795152519.8356826,
+    "V": 1795154065.5168164,
     "CAT": 1795153252.416096,
-    "FN": 1795152519.8356826,
-    "GLW": 1795152519.8356826,
+    "FN": 1795154065.5168164,
+    "GLW": 1795154065.5168164,
     "ANT": 1795153358.4664555,
     "XAUUSD": 1795153358.4664555
   },
