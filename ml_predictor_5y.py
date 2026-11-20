@@ -3329,6 +3329,8 @@ def align_time_cycle_projections_with_live(
             continue
         px = round(px, 2)
 
+        px_live_ref = px
+        _keep_live_on_card = False
         if tk == "BTC-USD":
             if hist:
                 if str(hist[-1].get("date", ""))[:10] < btc_today_s:
@@ -3359,13 +3361,20 @@ def align_time_cycle_projections_with_live(
                         item["today_label"] = eq_label
                         item["session_open"] = eq_session_open
                         item["price_note"] = ""
-                    elif sc == "WEEKEND" and last_hist_s:
-                        try:
-                            _ld = datetime.strptime(last_hist_s, "%Y-%m-%d").date()
-                            item["today_label"] = f"最新收盘 ({_ld.strftime('%m-%d')})"
-                        except Exception:
-                            pass
-                        item["session_open"] = False
+                    else:
+                        if has_real_live and hist[-1].get("price") is not None:
+                            item["post_price"] = px
+                            px = round(float(hist[-1]["price"]), 2)
+                            _keep_live_on_card = True
+                        elif hist[-1].get("price") is not None:
+                            px = round(float(hist[-1]["price"]), 2)
+                        if sc == "WEEKEND" and last_hist_s:
+                            try:
+                                _ld = datetime.strptime(last_hist_s, "%Y-%m-%d").date()
+                                item["today_label"] = f"最新收盘 ({_ld.strftime('%m-%d')})"
+                            except Exception:
+                                pass
+                            item["session_open"] = False
             elif can_append_eq and has_real_live:
                 item["history"] = [{"date": eq_day_s, "price": px}]
                 item["today_label"] = eq_label
@@ -3414,8 +3423,9 @@ def align_time_cycle_projections_with_live(
 
         if by_ticker and isinstance(by_ticker.get(tk), dict):
             b_item = by_ticker[tk]
-            b_item["latest_price"] = px
-            b_item["current_price"] = px
+            if not _keep_live_on_card:
+                b_item["latest_price"] = px
+                b_item["current_price"] = px
             for k_lvl in ("s1", "s2", "sl", "r1", "r2"):
                 if b_item.get(k_lvl) is not None:
                     item[k_lvl] = b_item[k_lvl]
