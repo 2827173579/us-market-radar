@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795151491.881,
-  "updated_at_et": "11-20 00:11 ET",
-  "updated_at_kst": "14:11 KST",
+  "updated_at_ts": 1795151594.701,
+  "updated_at_et": "11-20 00:13 ET",
+  "updated_at_kst": "14:13 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -903,6 +903,13 @@
     ],
     "NVDA": [
       {
+        "title": "AI sell-off: These sectors held firm as tech slumped in Oct, Nov",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/ai-sell-off-sectors-held-044523371.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 23:45 ET",
+        "pub_ts": 1795149923.0
+      },
+      {
         "title": "Micron CEO’s Nvidia message comes with warning for 2027",
         "url": "https://www.thestreet.com/investing/micron-ceo-nvidia-warning-2027-supply-already-sold-out?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -929,13 +936,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 22:54 ET",
         "pub_ts": 1795146888.0
-      },
-      {
-        "title": "Michael Burry Says He ‘Tried to Warn’ About Nvidia, CoreWeave: Shay Boloor Comes Back With ‘I Also Warned Everyone About Rain Once…’",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/michael-burry-says-tried-warn-033416913.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 22:34 ET",
-        "pub_ts": 1795145656.0
       }
     ],
     "AMD": [
@@ -3243,27 +3243,27 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795150052.6256464,
-    "SOXL": 1795150052.6256464,
-    "SPY": 1795150052.6256464,
-    "DIA": 1795150052.6256464,
-    "SOXX": 1795150052.6256464,
-    "QQQ": 1795150052.6256464,
-    "SMH": 1795150052.6256464,
-    "IWM": 1795150052.6256464,
-    "IGV": 1795150052.6256464,
-    "TLT": 1795150052.6256464,
-    "GLD": 1795150052.6256464,
-    "SQQQ": 1795150052.6256464,
-    "TSM": 1795150052.6256464,
-    "VIXY": 1795150052.6256464,
-    "SOXS": 1795150052.6256464,
-    "NVDA": 1795150052.6256464,
-    "AMD": 1795150052.6256464,
+    "KORU": 1795151594.700946,
+    "SOXL": 1795151594.700946,
+    "SPY": 1795151594.700946,
+    "DIA": 1795151594.700946,
+    "SOXX": 1795151594.700946,
+    "QQQ": 1795151594.700946,
+    "SMH": 1795151594.700946,
+    "IWM": 1795151594.700946,
+    "IGV": 1795151594.700946,
+    "TLT": 1795151594.700946,
+    "GLD": 1795151594.700946,
+    "SQQQ": 1795151594.700946,
+    "TSM": 1795151594.700946,
+    "VIXY": 1795151594.700946,
+    "SOXS": 1795151594.700946,
+    "NVDA": 1795151594.700946,
+    "AMD": 1795151594.700946,
     "ASML": 1795150157.8443136,
-    "QCOM": 1795150052.6256464,
-    "AVGO": 1795150052.6256464,
-    "AMAT": 1795150052.6256464,
+    "QCOM": 1795151594.700946,
+    "AVGO": 1795151594.700946,
+    "AMAT": 1795151594.700946,
     "META": 1795150157.8443136,
     "GOOGL": 1795150157.8443136,
     "MSFT": 1795150157.8443136,
@@ -3313,8 +3313,8 @@
     "NKE": 1795151080.6367383,
     "MCD": 1795151080.6367383,
     "PEP": 1795151080.6367383,
-    "XOM": 1795150052.6256464,
-    "JPM": 1795150052.6256464,
+    "XOM": 1795151594.700946,
+    "JPM": 1795151594.700946,
     "WMT": 1795150157.8443136,
     "V": 1795150974.2476404,
     "CAT": 1795150157.8443136,
