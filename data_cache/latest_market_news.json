@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795193163.542,
-  "updated_at_et": "11-20 11:46 ET",
-  "updated_at_kst": "01:46 KST",
+  "updated_at_ts": 1795193263.913,
+  "updated_at_et": "11-20 11:47 ET",
+  "updated_at_kst": "01:47 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2603,6 +2603,27 @@
     ],
     "BTC-USD": [
       {
+        "title": "Exclusive: Twenty One CEO on Bitcoin, acquisitions, and building value",
+        "url": "https://finance.yahoo.com/markets/crypto/articles/exclusive-twenty-one-ceo-bitcoin-164117192.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 11:41 ET",
+        "pub_ts": 1795192877.0
+      },
+      {
+        "title": "Bitcoin Breaks Below $60K as Crypto Fear Index Hits Worst Level Since February",
+        "url": "https://decrypt.co/383702/bitcoin-breaks-below-60k-crypto-fear-greed-index-lowest?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 11:35 ET",
+        "pub_ts": 1795192559.0
+      },
+      {
+        "title": "Bitcoin plunges below $60,000, on pace for its worst month since June 2022",
+        "url": "https://finance.yahoo.com/markets/article/bitcoin-plunges-below-60000-on-pace-for-its-worst-month-since-june-2022-162908483.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 11:29 ET",
+        "pub_ts": 1795192148.0
+      },
+      {
         "title": "Bitcoin on track for seventh straight weekly loss as ETF outflows hit record",
         "url": "https://finance.yahoo.com/markets/crypto/articles/bitcoin-track-seventh-straight-weekly-160847329.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2615,27 +2636,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 11:06 ET",
         "pub_ts": 1795190785.0
-      },
-      {
-        "title": "Applied Digital and Core Scientific Sink 12% as AI Infrastructure Sell-Off Deepens; TeraWulf Tumbles 10%",
-        "url": "https://247wallst.com/investing/2026/11/20/applied-digital-and-core-scientific-sink-12-as-ai-infrastructure-sell-off-deepens-terawulf-tumbles-10/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 10:56 ET",
-        "pub_ts": 1795190217.0
-      },
-      {
-        "title": "Anthropic’s record IPO sends Bitcoin to 4-month low",
-        "url": "http://videos.coindesk.com/previews/89A071Nr?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 10:53 ET",
-        "pub_ts": 1795190003.0
-      },
-      {
-        "title": "Bitcoin Drops Below $60,000 for First Time Since July",
-        "url": "https://beincrypto.com/bitcoin-below-60000-first-time-since-july/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 10:45 ET",
-        "pub_ts": 1795189537.0
       }
     ],
     "CRWD": [
@@ -3010,11 +3010,25 @@
     ],
     "WMT": [
       {
+        "title": "Walmart Posted Largely In-Line Q3 Results Amid High Bar, RBC Says",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/walmart-posted-largely-line-q3-161527222.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 11:15 ET",
+        "pub_ts": 1795191327.0
+      },
+      {
         "title": "Walmart Is Amazon, But With 4,600 Stores",
         "url": "https://247wallst.com/investing/2026/11/20/walmart-is-amazon-but-with-4600-stores/?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-20 11:11 ET",
         "pub_ts": 1795191108.0
+      },
+      {
+        "title": "The Weekly Closeout: NYC bans surveillance pricing, FabFitFun lands in Walmart",
+        "url": "https://www.retaildive.com/news/nyc-surveillance-pricing-ban-fabfitfun-walmart/875277/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 10:35 ET",
+        "pub_ts": 1795188900.0
       },
       {
         "title": "WMT Q3 Earnings Call Takeaways as Sales and Profit Outlooks Rise",
@@ -3029,20 +3043,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 08:27 ET",
         "pub_ts": 1795181255.0
-      },
-      {
-        "title": "343 Companies Report $28.5 Billion In Trump Tariff Refunds. Here's Where The Money Is Going.",
-        "url": "https://www.ibtimes.com/us-companies-tariff-refunds-supreme-court-ruling-3810008?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 07:48 ET",
-        "pub_ts": 1795178899.0
-      },
-      {
-        "title": "Walmart Is Up 183% in Five Years and Just Raised Guidance Again. Is There Room Left to Run?",
-        "url": "https://247wallst.com/investing/2026/11/20/walmart-is-up-183-in-five-years-and-just-raised-guidance-again-is-there-room-left-to-run/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 07:47 ET",
-        "pub_ts": 1795178828.0
       }
     ],
     "V": [
@@ -3084,6 +3084,13 @@
     ],
     "CAT": [
       {
+        "title": "Caterpillar Sinks 11% in a Week to a New 52-Week Low. Is the Selling Overdone?",
+        "url": "https://www.tikr.com/blog/caterpillar-sinks-11-in-a-week-to-a-new-52-week-low-is-the-selling-overdone?ref=yahoofinance&tlnk=yf-261120-w3r4pmj4&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 11:05 ET",
+        "pub_ts": 1795190750.0
+      },
+      {
         "title": "Caterpillar’s 35% 3-Month Downturn: This Sell-Side Firm Predicts 90% Returns From Here With Another Close Behind",
         "url": "https://247wallst.com/investing/2026/11/20/caterpillars-35-3-month-downturn-this-sell-side-firm-predicts-90-returns-from-here-with-another-close-behind/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3110,13 +3117,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 13:14 ET",
         "pub_ts": 1795112040.0
-      },
-      {
-        "title": "Caterpillar vs. Deere: Which Heavy Equipment Stock Should You Bet On?",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/caterpillar-vs-deere-heavy-equipment-151400132.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 10:14 ET",
-        "pub_ts": 1795101240.0
       }
     ],
     "FN": [
@@ -3195,6 +3195,13 @@
     ],
     "ANT": [
       {
+        "title": "Anthropic IPO: My 10-Year Outlook For AI",
+        "url": "https://finnhub.io/api/news?id=f7d4a40e4f79d4d6d3d5c173fd63e95d22429572444c377094ac9b4a4947d2f5",
+        "source": "SeekingAlpha",
+        "time": "11-20 06:05 ET",
+        "pub_ts": 1795172734.0
+      },
+      {
         "title": "Dan Ives Says Anthropic’s Blockbuster IPO Is Fueling Wall Street’s Tech Selloff. Here’s How",
         "url": "https://finnhub.io/api/news?id=2832d4416e4500d72abb940ad572d0d6e85e4b6bd995eb997aca58b27b14b5e9",
         "source": "Benzinga",
@@ -3221,13 +3228,6 @@
         "source": "Benzinga",
         "time": "11-20 05:05 ET",
         "pub_ts": 1795169101.0
-      },
-      {
-        "title": "Stock Market Today: Dow Jones, S&P 500, Nasdaq 100 Futures Fall as Trump Weighs Iran Decision— INTU, ROST, KEYS in Focus (UPDATED)",
-        "url": "https://finnhub.io/api/news?id=a8dc2d34353c17c3b45edc3fd373a813b1d1ccec9bcb6c233055d4ffce06289b",
-        "source": "Benzinga",
-        "time": "11-20 04:36 ET",
-        "pub_ts": 1795167391.0
       }
     ],
     "XAUUSD": [
@@ -3302,7 +3302,7 @@
     "STX": 1795192862.4731817,
     "MSTR": 1795192862.4731817,
     "SNDK": 1795192756.4926186,
-    "BTC-USD": 1795191731.8193755,
+    "BTC-USD": 1795193263.91301,
     "CRWD": 1795192132.5067763,
     "ORCL": 1795192132.5067763,
     "COIN": 1795192132.5067763,
@@ -3311,15 +3311,15 @@
     "NKE": 1795192241.5076113,
     "MCD": 1795192132.5067763,
     "PEP": 1795192132.5067763,
-    "XOM": 1795191731.8193755,
-    "JPM": 1795191731.8193755,
-    "WMT": 1795191731.8193755,
+    "XOM": 1795193263.91301,
+    "JPM": 1795193263.91301,
+    "WMT": 1795193263.91301,
     "V": 1795192132.5067763,
-    "CAT": 1795191731.8193755,
+    "CAT": 1795193263.91301,
     "FN": 1795192132.5067763,
     "GLW": 1795192132.5067763,
-    "ANT": 1795191731.8193755,
-    "XAUUSD": 1795191731.8193755
+    "ANT": 1795193263.91301,
+    "XAUUSD": 1795193263.91301
   },
   "calendar_banner": {
     "level": "idle_with_flash",
