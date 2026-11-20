@@ -1,9 +1,26 @@
 {
-  "updated_at_ts": 1795205322.495,
-  "updated_at_et": "11-20 15:08 ET",
-  "updated_at_kst": "05:08 KST",
+  "updated_at_ts": 1795205422.141,
+  "updated_at_et": "11-20 15:10 ET",
+  "updated_at_kst": "05:10 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261121040819292800",
+      "title": "【美股三大指数集体走弱 资金转向防御板块】 11月21日讯，AI及存储芯片股遭集中抛售，…",
+      "summary": "【美股三大指数集体走弱 资金转向防御板块】 11月21日讯，AI及存储芯片股遭集中抛售，纳斯达克综合指数周五盘中跌超4%，抹去2026年以来全部涨幅；标普500指数跌幅跌超3%，道指跌超1%，两者均进入技术性回调区间。恐慌指数VIX大幅攀升，纽交所下跌个股数量约为上涨个股的两倍，显示市场避险情绪明显升温。半导体及存储板块成为抛售重灾区。AMD(AMD.O)跌约12%，此前做空报告加剧市场对其业务风险的担忧；Arm(ARM.O)跌约11%，闪迪(SNDK.O)跌约13%，美光科技(MU.O)、希捷科技(STX.O)和西部数据(WDC.O)跌幅均超过10%。AI数据中心运营商Coreweave(CRWV.O)和Nebius也分别下跌约9%。Anthropic(ANT.O)上市次日跌约11%，创纪录IPO未能提振AI投资信心。纳斯达克中国金龙指数下跌3%。资金开始转向防御性板块。沃尔玛百货(WMT.N)上涨近3%，好市多(COST.O)、宝洁(PG.N)、通用磨坊和味好美等消费必需品企业逆势走强，标普500消费必需品板块上涨近2%；保险、公用事业及能源股也相对抗跌。与此同时，10年期美债收益率下跌11个基点至4.94%。整体来看，市场正在从此前集中追逐AI增长预期，转向重新评估科技企业估值、投资回报及融资风险，资金也开始向消费必需品等防御性资产转移。",
+      "keywords": [
+        "芯片",
+        "半导体",
+        "美债",
+        "纳斯达克",
+        "标普"
+      ],
+      "pub_ts": 1795205299.0,
+      "time_et": "11-20 15:08 ET",
+      "time_bj": "04:08 BJ",
+      "time_kst": "05:08 KST",
+      "time_display": "15:08 ET / 04:08 BJ"
+    },
     {
       "id": "20261121033706707800",
       "title": "交易员已不再完全消化美联储12月加息的预期。",
@@ -327,19 +344,6 @@
       "time_bj": "23:17 BJ",
       "time_kst": "00:17 KST",
       "time_display": "10:17 ET / 23:17 BJ"
-    },
-    {
-      "id": "20261120225346481800",
-      "title": "【英伟达市值被谷歌超越】 11月20日讯，英伟达(NVDA.O)市值被谷歌(GOOG.O…",
-      "summary": "【英伟达市值被谷歌超越】 11月20日讯，英伟达(NVDA.O)市值被谷歌(GOOG.O)超越，成为美国市值第四大的公司，公司市值缩水至3.4万亿。",
-      "keywords": [
-        "英伟达"
-      ],
-      "pub_ts": 1795186426.0,
-      "time_et": "11-20 09:53 ET",
-      "time_bj": "22:53 BJ",
-      "time_kst": "23:53 KST",
-      "time_display": "09:53 ET / 22:53 BJ"
     }
   ],
   "ticker_news": {
@@ -2602,6 +2606,13 @@
     ],
     "BTC-USD": [
       {
+        "title": "Bitcoin Breaks Below $60,000. BlackRock's ETF Suffers Record $541 Million Withdrawal.",
+        "url": "https://www.ibtimes.com/bitcoin-below-60000-blackrock-etf-record-outflows-3810035?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 15:04 ET",
+        "pub_ts": 1795205098.0
+      },
+      {
         "title": "Bitcoin crashes below key level as extreme fear grips market",
         "url": "https://www.thestreet.com/crypto/markets/bitcoin-crashes-below-key-level-as-extreme-fear-grips-market?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2628,13 +2639,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 13:57 ET",
         "pub_ts": 1795201060.0
-      },
-      {
-        "title": "CleanSpark Just Dropped 40% in a Month on Bitcoin and Texas. Is It Time to Sell, or Load Up?",
-        "url": "https://www.tikr.com/blog/cleanspark-just-dropped-30-in-a-month-on-bitcoin-and-texas-is-it-time-to-sell-or-load-up?ref=yahoofinance&tlnk=yf-261120-56ghgcq4&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 13:50 ET",
-        "pub_ts": 1795200644.0
       }
     ],
     "CRWD": [
@@ -2980,7 +2984,7 @@
       },
       {
         "title": "Labour’s ‘unfair’ bank tax will have consequences, warns JP Morgan boss",
-        "url": "https://uk.finance.yahoo.com/news/labour-unfair-bank-tax-consequences-190058863.html?.tsrc=rss",
+        "url": "https://www.telegraph.co.uk/business/2026/11/20/labour-unfair-bank-tax-consequences-jp-morgan/?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-20 14:00 ET",
         "pub_ts": 1795201258.0
@@ -3301,7 +3305,7 @@
     "STX": 1795205013.4797297,
     "MSTR": 1795205013.4797297,
     "SNDK": 1795204908.354009,
-    "BTC-USD": 1795203898.776391,
+    "BTC-USD": 1795205422.1410108,
     "CRWD": 1795204301.7870433,
     "ORCL": 1795204301.7870433,
     "COIN": 1795204301.7870433,
@@ -3310,20 +3314,20 @@
     "NKE": 1795204406.6752503,
     "MCD": 1795204301.7870433,
     "PEP": 1795204301.7870433,
-    "XOM": 1795203898.776391,
-    "JPM": 1795203898.776391,
-    "WMT": 1795203898.776391,
+    "XOM": 1795205422.1410108,
+    "JPM": 1795205422.1410108,
+    "WMT": 1795205422.1410108,
     "V": 1795204301.7870433,
-    "CAT": 1795203898.776391,
+    "CAT": 1795205422.1410108,
     "FN": 1795204301.7870433,
     "GLW": 1795204301.7870433,
-    "ANT": 1795203898.776391,
-    "XAUUSD": 1795203898.776391
+    "ANT": 1795205422.1410108,
+    "XAUUSD": 1795205422.1410108
   },
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (14:37 ET / 03:37 BJ) [美联储] [加息]：交易员已不再完全消化美联储12月加息的预期。",
+    "detail": "⚡ 最新核心快讯 (15:08 ET / 04:08 BJ) [芯片] [半导体] [美债]：【美股三大指数集体走弱 资金转向防御板块】 11月21日讯，AI及存储芯片股遭集中抛售，纳斯达克综合指数周五盘中跌超4%，抹去2026年以来全部涨幅；标普500指数跌幅跌超3%，道指跌超1%",
     "event_name": "",
     "minutes_left": 0
   }
