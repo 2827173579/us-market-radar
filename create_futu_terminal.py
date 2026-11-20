@@ -174,7 +174,13 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 or ai_predictions.get("breadth_ma20_pct")
                 or 50.0
             )
-            _is_bear_regime = (_active_regime == "BEAR_DEFENSE")
+            _active_vix_regime = (
+                (weather_info.get("vix_regime") if isinstance(weather_info, dict) else None)
+                or ai_predictions.get("vix_regime")
+                or (ai_predictions.get("macro_weather") or {}).get("vix_regime")
+                or {}
+            )
+            _is_bear_regime = (_active_regime == "BEAR_DEFENSE" or bool(isinstance(_active_vix_regime, dict) and _active_vix_regime.get("vix_hard_brake")))
             _scorecard_obj = ai_predictions.get("live_scorecard") or {}
             _sc_path = os.path.join(sc_dir, "data_cache", "live_prediction_scorecard.json")
             if os.path.exists(_sc_path):
@@ -188,11 +194,13 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             ai_predictions["market_regime"] = _active_regime
             ai_predictions["market_regime_cn"] = _active_regime_cn
             ai_predictions["breadth_ma20_pct"] = round(_active_breadth_ma20, 1)
+            ai_predictions["vix_regime"] = _active_vix_regime
             ai_predictions["live_scorecard"] = _scorecard_obj
             if isinstance(ai_predictions.get("macro_weather"), dict):
                 ai_predictions["macro_weather"]["market_regime"] = _active_regime
                 ai_predictions["macro_weather"]["market_regime_cn"] = _active_regime_cn
                 ai_predictions["macro_weather"]["breadth_ma20_pct"] = round(_active_breadth_ma20, 1)
+                ai_predictions["macro_weather"]["vix_regime"] = _active_vix_regime
 
             if all_preds and live_lookup:
                 for item in all_preds:
@@ -256,10 +264,11 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                     intra_adj = float(np.clip(pct_chg * 0.12, -1.5, 1.5))
 
                     # A/B 双轨分类引擎 (Track A 趋势动量 vs Track B Short-Covering Sniper 空头回补滑头引擎)
+                    live_vwap = float(lv.get('vwap', 0.0)) if (lv.get('vwap') and float(lv.get('vwap', 0.0)) > 0) else None
                     try:
                         import ml_predictor_5y
                         prior_low_val = float(item.get('low_prev') or lv.get('prev_low') or 0.0) or None
-                        vwap_val = float(lv.get('vwap', 0.0)) if (lv.get('vwap') and float(lv.get('vwap', 0.0)) > 0) else None
+                        vwap_val = live_vwap
                         live_bias_20 = float(lv.get('bias_ma20') or item.get('bias_ma20') or (live_bias * 0.75))
                         live_atr_val = live_atr if live_atr > 0 else (live_p * (atr_pct / 100.0))
                         track_res = ml_predictor_5y.classify_dual_track_candidate(
@@ -349,19 +358,42 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                         except Exception:
                             pass
 
-                    # 阶段一规则 1：空头防守体制门禁 (BEAR_DEFENSE 对常规多头平滑压制并封顶 <=48.0%)
+                    # 阶段一 + 真 VIX 恐慌中枢联动门禁：
+                    # 状态 A (倒挂硬刹车/空头防守) 封顶 <=48.0%；状态 B (恐慌出清抄底窗) 对站稳 VWAP 非熔断优质标的平滑放宽至 <=58.0%
                     _is_regime_capped = False
-                    if _is_bear_regime and tk not in _exempt_regime_set:
-                        if new_cal > 40.0:
-                            new_cal = round(40.0 + (new_cal - 40.0) * 0.25, 1)
-                        new_cal = round(float(np.clip(new_cal, 15.0, 48.0)), 1)
-                        if is_short_covering:
+                    try:
+                        import ml_predictor_5y as _ml_gate
+                        _gate_res = _ml_gate.apply_market_regime_winrate_gate(
+                            cal_prob_pct=new_cal,
+                            ticker=tk,
+                            market_regime=_active_regime,
+                            vix_regime=_active_vix_regime,
+                            is_crash_halt=is_crash_halt,
+                            is_cooling_halt=is_cooling_halt,
+                            price=live_p,
+                            vwap=live_vwap,
+                            is_broken=is_broken,
+                        )
+                        _is_regime_capped = bool(_gate_res["is_regime_capped"])
+                        new_cal = float(_gate_res["gated_prob_pct"])
+                        if _is_regime_capped and (not _gate_res["vix_bottom_relaxed"]) and is_short_covering:
                             is_short_covering = False
                             is_broken = True
                             item["is_short_covering"] = False
                             item["is_broken"] = True
                             item["track"] = "Track B"
-                        _is_regime_capped = True
+                    except Exception:
+                        if _is_bear_regime and tk not in _exempt_regime_set:
+                            if new_cal > 40.0:
+                                new_cal = round(40.0 + (new_cal - 40.0) * 0.25, 1)
+                            new_cal = round(float(np.clip(new_cal, 15.0, 48.0)), 1)
+                            if is_short_covering:
+                                is_short_covering = False
+                                is_broken = True
+                                item["is_short_covering"] = False
+                                item["is_broken"] = True
+                                item["track"] = "Track B"
+                            _is_regime_capped = True
                     item["market_regime"] = _active_regime
                     item["is_regime_capped"] = _is_regime_capped
 
@@ -524,12 +556,14 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 ai_predictions["market_regime"] = _active_regime
                 ai_predictions["market_regime_cn"] = _active_regime_cn
                 ai_predictions["breadth_ma20_pct"] = round(_active_breadth_ma20, 1)
+                ai_predictions["vix_regime"] = _active_vix_regime
                 ai_predictions["live_scorecard"] = _scorecard_obj
                 if isinstance(ai_predictions.get("macro_weather"), dict):
                     ai_predictions["macro_weather"]["cross_industry_breadth"] = _breadth_obj
                     ai_predictions["macro_weather"]["market_regime"] = _active_regime
                     ai_predictions["macro_weather"]["market_regime_cn"] = _active_regime_cn
                     ai_predictions["macro_weather"]["breadth_ma20_pct"] = round(_active_breadth_ma20, 1)
+                    ai_predictions["macro_weather"]["vix_regime"] = _active_vix_regime
 
                 if sync_dir:
                     _sync_dir = sync_dir
@@ -561,6 +595,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                     _tables_for_html = {
                         "kpi": ai_predictions.get("kpi", {}),
                         "macro_weather": ai_predictions.get("macro_weather", {}),
+                        "vix_regime": _active_vix_regime,
                         "defensive_flight": _def_flight_obj,
                         "cross_industry_breadth": _breadth_obj,
                         "live_scorecard": _scorecard_obj,
@@ -790,7 +825,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             gap: 8px;
             min-width: 0;
             flex: 1;
-            flex-wrap: nowrap;
+            flex-wrap: wrap;
         }
 
         .futu-logo {
@@ -2752,6 +2787,121 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 width: 100vw !important;
             }
         }
+
+        /* 全局真 VIX 恐慌中枢胶囊与浮层 + VIXY 现货提醒条 */
+        .vix-pill-wrap {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            flex-shrink: 0;
+        }
+        .vix-regime-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 4px 10px;
+            border-radius: 999px;
+            font-size: 11.5px;
+            font-weight: 700;
+            background: var(--bg-elevated);
+            border: 1px solid var(--border-subtle);
+            color: var(--text-primary);
+            cursor: pointer;
+            white-space: nowrap;
+            font-family: inherit;
+            transition: border-color 0.15s ease;
+        }
+        .vix-regime-pill:hover {
+            border-color: var(--color-accent);
+        }
+        .vix-detail-popover {
+            display: none;
+            position: absolute;
+            top: calc(100% + 8px);
+            left: 0;
+            width: 340px;
+            max-width: calc(100vw - 24px);
+            background: var(--bg-card);
+            border: 1px solid var(--border-strong);
+            border-radius: 12px;
+            padding: 12px 14px;
+            box-shadow: var(--shadow-float, var(--shadow-card));
+            z-index: 950;
+            text-align: left;
+            color: var(--text-primary);
+        }
+        .vix-detail-popover.is-open,
+        .vix-detail-popover.is-hover-open {
+            display: block;
+        }
+        .vix-pop-head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+            padding-bottom: 8px;
+            margin-bottom: 8px;
+            border-bottom: 1px solid var(--border-subtle);
+            font-size: 12.5px;
+            font-weight: 800;
+        }
+        .vix-pop-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 6px;
+            margin-bottom: 8px;
+        }
+        .vix-pop-cell {
+            background: var(--bg-elevated);
+            border: 1px solid var(--border-subtle);
+            border-radius: 8px;
+            padding: 6px 8px;
+        }
+        .vix-pop-lbl {
+            display: block;
+            font-size: 10.5px;
+            color: var(--text-muted);
+            margin-bottom: 2px;
+        }
+        .vix-pop-val {
+            font-size: 13px;
+            font-weight: 800;
+            font-variant-numeric: tabular-nums;
+            color: var(--text-primary);
+        }
+        .vix-pop-advice {
+            font-size: 11.5px;
+            line-height: 1.5;
+            color: var(--text-secondary);
+            background: var(--bg-elevated);
+            border-radius: 8px;
+            padding: 7px 9px;
+        }
+        .vixy-spot-hint {
+            margin-top: 8px;
+            padding: 8px 10px;
+            border-radius: 8px;
+            border: 1px solid var(--color-accent-border);
+            background: var(--color-accent-bg);
+            color: var(--text-primary);
+            font-size: 11.5px;
+            line-height: 1.45;
+        }
+        @media (max-width: 768px) {
+            .vix-regime-pill {
+                font-size: 10.5px;
+                padding: 3px 8px;
+                max-width: 100%;
+            }
+            .vix-detail-popover {
+                position: fixed;
+                left: 10px !important;
+                right: 10px !important;
+                top: 56px;
+                width: auto;
+                max-width: calc(100vw - 20px);
+            }
+        }
     </style>
 </head>
 <body>
@@ -2764,8 +2914,12 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 <span class="brand-text">量化雷达</span>
                 <span class="brand-count">__PY_TPL_TOTAL_COUNT__标的</span>
             </div>
-            <!-- 大盘红绿灯一句话胶囊 + 实盘成绩单胶囊 -->
+            <!-- 大盘红绿灯一句话胶囊 + 全局真VIX恐慌胶囊 + 实盘成绩单胶囊 -->
             <span id="pAiRegimePill" class="regime-pill" title="大盘体制状态">--</span>
+            <div class="vix-pill-wrap" id="vixPillWrap">
+                <button type="button" id="pVixRegimePill" class="vix-regime-pill" onclick="toggleVixPopover(event)" title="全局真 VIX 恐慌中枢" aria-expanded="false" aria-controls="vixDetailPopover">⚪ VIX --</button>
+                <div id="vixDetailPopover" class="vix-detail-popover" role="dialog" aria-label="全局真 VIX 恐慌中枢详情"></div>
+            </div>
             <span id="pAiScorecardPill" class="scorecard-pill tabular" title="AI 实盘近7日/30日滚动胜率">--</span>
             <div class="header-status-badges">
                 __PY_TPL_SESSION_BADGE__
@@ -2984,6 +3138,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                         <span class="verdict-chip" id="pAiShrinkBadge" style="display: none;"></span>
                         <span class="verdict-chip" id="pIpoNoticeBadge" style="display: none;">🆕 IPO 首日观察 · 满5日开启完整模型</span>
                     </div>
+                    <div id="pVixySpotHint" class="vixy-spot-hint" style="display: none;"></div>
                 </div>
 
                 <!-- 2. 三个直白价格格 (三列大号数字，全站唯一口径) -->
@@ -3057,7 +3212,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                         <div class="metrics-grid tabular">
                             <div class="m-item"><span class="m-lbl">日内 VWAP 均价</span><span class="m-val" id="pVwap">--</span></div>
                             <div class="m-item"><span class="m-lbl">5m RSI / 量比</span><span class="m-val" id="pRsi5m">--</span></div>
-                            <div class="m-item"><span class="m-lbl">20日超额RS</span><span class="m-val" id="pRs20d">--</span></div>
+                            <div class="m-item"><span class="m-lbl" id="pRs20dLabel">20日超额RS</span><span class="m-val" id="pRs20d">--</span></div>
                             <div class="m-item"><span class="m-lbl">财报避雷日历</span><span class="m-val" id="pEarningsDate">--</span></div>
                             <div class="m-item" style="grid-column: span 2;"><span class="m-lbl">黄金坑支撑带</span><span class="m-val" id="pEntryFibBand">--</span></div>
                             <div class="m-item"><span class="m-lbl" id="pEntryPriceLabel">💡 参考挂单价</span><span class="m-val" id="pProEntryRef">--</span></div>
@@ -3532,7 +3687,103 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                     scEl.style.borderColor = pal.border;
                 }
             }
+
+            const vixPill = document.getElementById("pVixRegimePill");
+            const vixPop = document.getElementById("vixDetailPopover");
+            const vr = (AI_PREDICTIONS && (AI_PREDICTIONS.vix_regime || (AI_PREDICTIONS.macro_weather && AI_PREDICTIONS.macro_weather.vix_regime))) || null;
+            if (vixPill) {
+                if (vr && vr.pill_text) {
+                    vixPill.innerText = String(vr.pill_text);
+                    const lvl = String(vr.pill_level || "neutral");
+                    if (lvl === "danger") {
+                        vixPill.style.color = pal.down;
+                        vixPill.style.background = pal.downBg;
+                        vixPill.style.borderColor = pal.downBorder;
+                    } else if (lvl === "bottom") {
+                        vixPill.style.color = pal.up;
+                        vixPill.style.background = pal.upBg;
+                        vixPill.style.borderColor = pal.upBorder;
+                    } else if (lvl === "warn") {
+                        vixPill.style.color = pal.warn;
+                        vixPill.style.background = pal.warnBg;
+                        vixPill.style.borderColor = pal.warnBorder;
+                    } else {
+                        vixPill.style.color = pal.sub;
+                        vixPill.style.background = pal.elevatedBg;
+                        vixPill.style.borderColor = pal.border;
+                    }
+                    vixPill.title = vr.summary_cn || "全局真 VIX 恐慌中枢";
+                } else {
+                    vixPill.innerText = "⚪ VIX 暂缺 · 常规门禁";
+                    vixPill.style.color = pal.sub;
+                    vixPill.style.background = pal.elevatedBg;
+                    vixPill.style.borderColor = pal.border;
+                }
+            }
+            if (vixPop) {
+                const fmtNum = (val, dec, suf = "") => (val !== null && val !== undefined && !Number.isNaN(Number(val))) ? `${Number(val).toFixed(dec)}${suf}` : "--";
+                const vrObj = vr || {};
+                const ratioNum = (vrObj.vix_term_ratio !== null && vrObj.vix_term_ratio !== undefined) ? Number(vrObj.vix_term_ratio) : null;
+                const ratioClr = (ratioNum !== null && ratioNum >= 1.0) ? pal.down : ((ratioNum !== null && ratioNum >= 0.92) ? pal.warn : pal.up);
+                const termCn = escapeNewsHtml(vrObj.term_structure_cn || "远期监测中");
+                const advCn = escapeNewsHtml(vrObj.advice_cn || "实时跟踪 ^VIX / ^VIX3M 期限结构与 ^VVIX 拐点信号。");
+                vixPop.innerHTML = `
+                    <div class="vix-pop-head">
+                        <span>⚡ 全局真 VIX 恐慌中枢</span>
+                        <span style="font-size: 11px; color: ${ratioClr}; font-weight: 700;">${termCn}</span>
+                    </div>
+                    <div class="vix-pop-grid tabular">
+                        <div class="vix-pop-cell"><span class="vix-pop-lbl">^VIX (现货恐慌)</span><span class="vix-pop-val">${fmtNum(vrObj.vix_spot, 2)}</span></div>
+                        <div class="vix-pop-cell"><span class="vix-pop-lbl">^VIX3M (3M远期)</span><span class="vix-pop-val">${fmtNum(vrObj.vix3m_spot, 2)}</span></div>
+                        <div class="vix-pop-cell"><span class="vix-pop-lbl">期限比值 (VIX/VIX3M)</span><span class="vix-pop-val" style="color: ${ratioClr};">${fmtNum(vrObj.vix_term_ratio, 3)}</span></div>
+                        <div class="vix-pop-cell"><span class="vix-pop-lbl">^VVIX (波动的波动)</span><span class="vix-pop-val">${fmtNum(vrObj.vvix_spot, 2)}</span></div>
+                        <div class="vix-pop-cell"><span class="vix-pop-lbl">10Y 美债 (^TNX)</span><span class="vix-pop-val">${fmtNum(vrObj.tnx_yield, 2, "%")}</span></div>
+                        <div class="vix-pop-cell"><span class="vix-pop-lbl">10日峰值 / 回撤</span><span class="vix-pop-val">${fmtNum(vrObj.vix_10d_peak, 2)} / -${fmtNum(vrObj.vix_drawdown_from_peak_pct, 1, "%")}</span></div>
+                    </div>
+                    <div class="vix-pop-advice">${advCn}</div>
+                `;
+            }
         }
+
+        function toggleVixPopover(ev) {
+            if (ev && ev.stopPropagation) ev.stopPropagation();
+            const pop = document.getElementById("vixDetailPopover");
+            const pill = document.getElementById("pVixRegimePill");
+            if (!pop || !pill) return;
+            const willOpen = !pop.classList.contains("is-open");
+            pop.classList.toggle("is-open", willOpen);
+            if (!willOpen) pop.classList.remove("is-hover-open");
+            pill.setAttribute("aria-expanded", willOpen ? "true" : "false");
+        }
+        (function bindVixPillInteractions() {
+            document.addEventListener("DOMContentLoaded", function() {
+                const wrap = document.getElementById("vixPillWrap");
+                const pop = document.getElementById("vixDetailPopover");
+                if (wrap && pop && window.matchMedia && window.matchMedia("(hover: hover)").matches) {
+                    wrap.addEventListener("mouseenter", function() { pop.classList.add("is-hover-open"); });
+                    wrap.addEventListener("mouseleave", function() { pop.classList.remove("is-hover-open"); });
+                }
+            });
+            document.addEventListener("click", function(e) {
+                const wrap = document.getElementById("vixPillWrap");
+                const pop = document.getElementById("vixDetailPopover");
+                const pill = document.getElementById("pVixRegimePill");
+                if (!wrap || !pop) return;
+                if (!wrap.contains(e.target) && (pop.classList.contains("is-open") || pop.classList.contains("is-hover-open"))) {
+                    pop.classList.remove("is-open");
+                    pop.classList.remove("is-hover-open");
+                    if (pill) pill.setAttribute("aria-expanded", "false");
+                }
+            });
+            document.addEventListener("keydown", function(e) {
+                if (e && e.key === "Escape") {
+                    const pop = document.getElementById("vixDetailPopover");
+                    const pill = document.getElementById("pVixRegimePill");
+                    if (pop) { pop.classList.remove("is-open"); pop.classList.remove("is-hover-open"); }
+                    if (pill) pill.setAttribute("aria-expanded", "false");
+                }
+            });
+        })();
 
         function escapeNewsHtml(str) {
             if (str === null || str === undefined) return "";
@@ -3592,10 +3843,16 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             const listEl = document.getElementById("pTickerNewsList");
             if (badgeEl) badgeEl.innerText = ticker || "--";
 
+            const isVixy = (ticker === "VIXY");
             const isEtf = !!(typeof MACRO_DATA !== "undefined" && MACRO_DATA && MACRO_DATA[ticker]) || (dataObj && dataObj.cat === "ETF基准");
             const isMacroSpot = ["XAUUSD", "BTC-USD"].includes(ticker) || (dataObj && dataObj.cat === "大宗商品");
             if (earnEl) {
-                if (dataObj && dataObj.earnings_tag) {
+                if (isVixy) {
+                    earnEl.innerText = "📉 波动率期货工具（含展期损耗·无财报）";
+                    earnEl.style.color = pal.accent;
+                    earnEl.style.borderColor = pal.border;
+                    earnEl.style.background = pal.elevatedBg;
+                } else if (dataObj && dataObj.earnings_tag) {
                     earnEl.innerText = dataObj.is_earnings_risk
                         ? `🚨 高危财报排雷：${dataObj.earnings_tag}（防财报跳空插针）`
                         : `📅 财报倒计时：${dataObj.earnings_tag}`;
@@ -4818,11 +5075,35 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                     rsi5mEl.style.color = r5 <= 35 ? pal.up : (r5 >= 70 ? pal.purple : pal.text);
                 }
             }
+            const rsLblEl = document.getElementById("pRs20dLabel");
             const rs20dEl = document.getElementById("pRs20d");
+            const isVixySym = (ticker === "VIXY");
+            if (rsLblEl) {
+                rsLblEl.innerText = isVixySym ? "20日对冲脉冲" : "20日超额RS";
+            }
             if (rs20dEl) {
                 if (data.rs_20d === undefined || data.rs_20d === null || Number.isNaN(Number(data.rs_20d))) {
                     rs20dEl.innerText = "--";
                     rs20dEl.style.color = pal.sub;
+                } else if (isVixySym) {
+                    const rsVal = Number(data.rs_20d);
+                    const rsSign = rsVal > 0 ? "+" : "";
+                    let rsTag, rsColor;
+                    if (rsVal >= 10.0) {
+                        rsTag = "⚡避险飙升";
+                        rsColor = pal.down;
+                    } else if (rsVal >= 2.0) {
+                        rsTag = "📈避险走强";
+                        rsColor = pal.warn;
+                    } else if (rsVal <= -5.0) {
+                        rsTag = "📉恐慌回落";
+                        rsColor = pal.up;
+                    } else {
+                        rsTag = "➖脉冲平稳";
+                        rsColor = pal.sub;
+                    }
+                    rs20dEl.innerText = `${rsSign}${rsVal.toFixed(1)}% (${rsTag})`;
+                    rs20dEl.style.color = rsColor;
                 } else {
                     const rsVal = Number(data.rs_20d);
                     const rsSign = rsVal > 0 ? "+" : "";
@@ -4846,7 +5127,10 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             }
             const earnEl = document.getElementById("pEarningsDate");
             if (earnEl) {
-                if (data.earnings_tag) {
+                if (isVixySym) {
+                    earnEl.innerText = "📉 波动率期货工具（含展期损耗·无财报）";
+                    earnEl.style.color = pal.accent;
+                } else if (data.earnings_tag) {
                     earnEl.innerText = data.earnings_tag;
                     earnEl.style.color = data.is_earnings_risk ? pal.down : pal.warn;
                 } else if (["XAUUSD", "BTC-USD"].includes(ticker) || curCat === "大宗商品") {
@@ -4855,6 +5139,21 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 } else {
                     earnEl.innerText = "🟢 近期无财报";
                     earnEl.style.color = pal.sub;
+                }
+            }
+
+            const vixHintEl = document.getElementById("pVixySpotHint");
+            if (vixHintEl) {
+                if (isVixySym) {
+                    const vr = (AI_PREDICTIONS && (AI_PREDICTIONS.vix_regime || (AI_PREDICTIONS.macro_weather && AI_PREDICTIONS.macro_weather.vix_regime))) || {};
+                    const vSpot = (vr.vix_spot !== null && vr.vix_spot !== undefined) ? Number(vr.vix_spot).toFixed(2) : "--";
+                    const v3m = (vr.vix3m_spot !== null && vr.vix3m_spot !== undefined) ? Number(vr.vix3m_spot).toFixed(2) : "--";
+                    const vRatio = (vr.vix_term_ratio !== null && vr.vix_term_ratio !== undefined) ? Number(vr.vix_term_ratio).toFixed(3) : "--";
+                    const vTermCn = escapeNewsHtml(vr.term_structure_cn || "期限监测中");
+                    vixHintEl.innerHTML = `<b>⚡ 真 ^VIX 现货水位：</b>${vSpot} ｜ <b>^VIX3M：</b>${v3m} ｜ <b>期限比值 (VIX/VIX3M)：</b>${vRatio}（${vTermCn}）<br><span style="color: var(--text-secondary);">注：VIXY 跟踪短期波动率期货，存在展期损耗与多次合股历史，请以真实 ^VIX 现货水位与期限结构为准，勿被绝对股价误导。</span>`;
+                    vixHintEl.style.display = "block";
+                } else {
+                    vixHintEl.style.display = "none";
                 }
             }
 

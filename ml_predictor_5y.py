@@ -279,10 +279,12 @@ def compute_market_regime_state(
     qqq_ret_5d: float = 0.0,
     qqq_down_days_5d: float = 0.0,
     defensive_flight_alert: bool = False,
+    vix_regime: Optional[Dict[str, Any]] = None,
 ) -> Dict[str, Any]:
     """
-    阶段一核心引擎 1：客观三态牛熊体制门禁 (Market Regime Gate，严格仅用 T 日及以前已知数据)。
-    返回 BULL_TREND / NEUTRAL_CHOP / BEAR_DEFENSE。
+    阶段一核心引擎 1 + 真 VIX 恐慌中枢联动：
+    客观三态牛熊体制门禁 (Market Regime Gate，严格仅用 T 日及以前已知数据)。
+    返回 BULL_TREND / NEUTRAL_CHOP / BEAR_DEFENSE，并叠加期限结构倒挂硬刹车与恐慌出清抄底信号。
     """
     def _sf(v, default=0.0):
         try:
@@ -300,7 +302,24 @@ def compute_market_regime_state(
     q_ret5 = _sf(qqq_ret_5d, 0.0)
     q_down5 = _sf(qqq_down_days_5d, 0.0)
 
+    vr = vix_regime if isinstance(vix_regime, dict) else {}
+    vix_spot_raw = vr.get("vix_spot")
+    vix_ratio_raw = vr.get("vix_term_ratio")
+    vix_spot = _sf(vix_spot_raw, None) if vix_spot_raw is not None else None
+    vix_ratio = _sf(vix_ratio_raw, None) if vix_ratio_raw is not None else None
+    vix_hard_brake = bool(
+        vr.get("vix_hard_brake", False)
+        or (vix_ratio is not None and vix_ratio >= 1.00)
+        or (vix_spot is not None and vix_spot >= 30.0)
+    )
+    vix_bottom_signal = bool(vr.get("vix_bottom_signal", False)) and (not vix_hard_brake)
+
     reasons = []
+    if vix_hard_brake:
+        if vix_ratio is not None and vix_ratio >= 1.00:
+            reasons.append(f"真VIX期限结构倒挂(VIX/VIX3M={vix_ratio:.2f}>=1.00 · 机构恐慌踩踏)")
+        if vix_spot is not None and vix_spot >= 30.0:
+            reasons.append(f"真VIX现货飙升至{vix_spot:.1f}>=30.0(极端高恐慌)")
     if q20 < 0.0 and s20 < 0.0 and breadth < 35.0:
         reasons.append(f"SPY/QQQ双破MA20且市场宽度仅{breadth:.1f}%<35%")
     if q50 < -3.0 and smh50 < -3.0:
@@ -309,6 +328,12 @@ def compute_market_regime_state(
         reasons.append(f"全池宽度极低({breadth:.1f}%<28%)且指数承压")
     if (q_down5 >= 4.0 or q_ret5 <= -3.5) and q20 < 0.0 and breadth < 45.0:
         reasons.append(f"大盘5日急杀/连跌({q_ret5:+.1f}%)且跌破MA20")
+
+    vix_ok_for_bull = (
+        (not vix_hard_brake)
+        and (vix_spot is None or vix_spot < 24.0)
+        and (vix_ratio is None or vix_ratio < 0.96)
+    )
 
     if reasons:
         regime = "BEAR_DEFENSE"
@@ -320,6 +345,7 @@ def compute_market_regime_state(
         and q50 >= 0.25
         and breadth >= 50.0
         and vix_p < 0.75
+        and vix_ok_for_bull
         and not defensive_flight_alert
     ):
         regime = "BULL_TREND"
@@ -332,6 +358,9 @@ def compute_market_regime_state(
         regime_score = 0.0
         reasons.append(f"指数与宽度({breadth:.1f}%)处于拉锯分化状态")
 
+    if vix_bottom_signal:
+        reasons.append(f"🟢 恐慌出清抄底观察窗已开启(VIX回撤{vr.get('vix_drawdown_from_peak_pct', 0.0)}%)")
+
     return {
         "market_regime": regime,
         "market_regime_cn": regime_cn,
@@ -341,6 +370,97 @@ def compute_market_regime_state(
         "spy_bias_ma20": round(s20, 2),
         "qqq_down_days_5d": int(round(q_down5)),
         "regime_reasons": reasons,
+        "vix_hard_brake": vix_hard_brake,
+        "vix_bottom_signal": vix_bottom_signal,
+        "vix_state": str(vr.get("vix_state") or "UNAVAILABLE"),
+        "vix_term_ratio": vr.get("vix_term_ratio"),
+        "vix_spot": vr.get("vix_spot"),
+    }
+
+
+def apply_market_regime_winrate_gate(
+    cal_prob_pct: float,
+    ticker: str,
+    market_regime: str,
+    vix_regime: Optional[Dict[str, Any]] = None,
+    is_crash_halt: bool = False,
+    is_cooling_halt: bool = False,
+    price: Optional[float] = None,
+    vwap: Optional[float] = None,
+    is_broken: bool = False,
+) -> Dict[str, Any]:
+    """
+    统一多头胜率门禁（跨 ml_predictor_5y 与 create_futu_terminal 唯一口径）：
+    - 反向/避险标的 (SQQQ/SOXS/VIXY/TLT/GLD/XAUUSD) 豁免封顶；
+    - 状态 A（VIX 倒挂硬刹车或常规 BEAR_DEFENSE）：常规多头平滑压制并硬封顶 <= 48.0%；
+    - 状态 B（恐慌出清·右侧抄底观察窗 vix_bottom_signal=True 且无倒挂刹车）：
+      对非暴跌熔断/非冷却/非破位且站稳日内 VWAP 的优质标的，平滑放宽做多上限至 <= 58.0%。
+    """
+    try:
+        cal_val = float(cal_prob_pct)
+    except Exception:
+        cal_val = 50.0
+    cal_val = float(np.clip(cal_val, 15.0, 95.0))
+
+    if str(ticker) in INVERSE_OR_SAFE_HAVEN_TICKERS:
+        return {
+            "gated_prob_pct": round(cal_val, 1),
+            "is_regime_capped": False,
+            "cap_limit_pct": 95.0,
+            "vix_bottom_relaxed": False,
+        }
+
+    vr = vix_regime if isinstance(vix_regime, dict) else {}
+    vix_spot_r = vr.get("vix_spot")
+    vix_ratio_r = vr.get("vix_term_ratio")
+    hard_brake = bool(
+        vr.get("vix_hard_brake", False)
+        or (vix_ratio_r is not None and float(vix_ratio_r) >= 1.00)
+        or (vix_spot_r is not None and float(vix_spot_r) >= 30.0)
+    )
+    bottom_signal = bool(vr.get("vix_bottom_signal", False)) and (not hard_brake)
+
+    if str(market_regime) == "BEAR_DEFENSE" or hard_brake:
+        vwap_reclaimed = False
+        try:
+            if vwap is not None and price is not None and float(vwap) > 0 and float(price) >= float(vwap):
+                vwap_reclaimed = True
+        except Exception:
+            vwap_reclaimed = False
+
+        qualifies_washout_relax = (
+            bottom_signal
+            and (not bool(is_crash_halt))
+            and (not bool(is_cooling_halt))
+            and (not bool(is_broken))
+            and vwap_reclaimed
+        )
+        if qualifies_washout_relax:
+            if cal_val > 48.0:
+                cal_val = 48.0 + (cal_val - 48.0) * 0.45
+            cal_val = float(np.clip(cal_val, 15.0, 58.0))
+            return {
+                "gated_prob_pct": round(cal_val, 1),
+                "is_regime_capped": True,
+                "cap_limit_pct": 58.0,
+                "vix_bottom_relaxed": True,
+            }
+
+        if cal_val > 40.0:
+            cal_val = 40.0 + (cal_val - 40.0) * 0.25
+        cal_val = float(np.clip(cal_val, 15.0, 48.0))
+        return {
+            "gated_prob_pct": round(cal_val, 1),
+            "is_regime_capped": True,
+            "cap_limit_pct": 48.0,
+            "vix_bottom_relaxed": False,
+        }
+
+    return {
+        "gated_prob_pct": round(cal_val, 1),
+        "is_regime_capped": False,
+        "cap_limit_pct": 95.0,
+        "vix_bottom_relaxed": False,
     }
 
 
@@ -3968,6 +4088,7 @@ def evaluate_macro_weather(
     qqq_ret_5d: Optional[float] = None,
     qqq_down_days_5d: Optional[float] = None,
     latest_stocks_df: Optional[pd.DataFrame] = None,
+    vix_regime: Optional[Dict[str, Any]] = None,
 ) -> Dict[str, Any]:
     """
     统一宏观水温气象判定引擎 (含阶段一三态牛熊体制门禁 Market Regime Gate):
@@ -4015,9 +4136,10 @@ def evaluate_macro_weather(
         qqq_ret_5d=float(qqq_ret_5d or 0.0),
         qqq_down_days_5d=float(qqq_down_days_5d or 0.0),
         defensive_flight_alert=bool(flight_info.get('is_alert')),
+        vix_regime=vix_regime,
     )
 
-    is_vix_panic = bool(vixy_pos >= 0.75)
+    is_vix_panic = bool(vixy_pos >= 0.75 or (isinstance(vix_regime, dict) and vix_regime.get('vix_hard_brake')))
     is_bull_base = bool(qqqm_bias >= 0.25 and smh_bias >= 0.25)
 
     if qqqm_bias < -3.0 and smh_bias < -3.0:
@@ -4064,6 +4186,9 @@ def evaluate_macro_weather(
         'regime_reasons': regime_info['regime_reasons'],
         'defensive_flight': flight_info,
         'cross_industry_breadth': breadth_info,
+        'vix_regime': vix_regime or {},
+        'vix_hard_brake': regime_info.get('vix_hard_brake', False),
+        'vix_bottom_signal': regime_info.get('vix_bottom_signal', False),
     }
 
 
@@ -4795,6 +4920,8 @@ def generate_report_tables(
                 eff_raw_p = model_raw_p
                 cal_p = model_raw_p * mult
                 sort_tier = 0
+                c_p = None
+                vwap_val = None
 
             # 阶段一规则 3：次新股与短样本 (<756日) 贝叶斯强收缩 + <500日置信上限
             shrink_res = apply_short_history_bayesian_shrinkage(cal_p, n_days_tk)
@@ -4803,19 +4930,29 @@ def generate_report_tables(
                 if is_broken:
                     cal_p = min(cal_p, 0.495)
 
-            # 阶段一规则 1：空头防守体制门禁 (BEAR_DEFENSE 对常规多头平滑压制并硬封顶 <=48.0%，取消激进抄底)
-            is_regime_capped = False
-            if is_bear_regime and tk not in INVERSE_OR_SAFE_HAVEN_TICKERS:
-                if cal_p > 0.40:
-                    cal_p = 0.40 + (cal_p - 0.40) * 0.25
-                cal_p = float(np.clip(cal_p, 0.15, 0.480))
-                if is_short_covering:
-                    is_short_covering = False
-                    is_broken = True
-                    sort_tier = 2
-                elif sort_tier == 0:
-                    sort_tier = 2
-                is_regime_capped = True
+            # 阶段一 + 真VIX恐慌中枢联动门禁：
+            # 倒挂/BEAR_DEFENSE 硬封顶 <=48.0%；恐慌出清抄底窗对非熔断且站稳 VWAP 标的平滑放宽至 <=58.0%
+            _gate_res = apply_market_regime_winrate_gate(
+                cal_prob_pct=cal_p * 100.0,
+                ticker=tk,
+                market_regime=market_regime,
+                vix_regime=_mw_dict.get('vix_regime'),
+                is_crash_halt=bool(row.get('is_crash_halt', False)) if has_live_structure else False,
+                is_cooling_halt=bool(row.get('is_cooling_halt', False)) if has_live_structure else False,
+                price=c_p,
+                vwap=vwap_val,
+                is_broken=is_broken,
+            )
+            is_regime_capped = bool(_gate_res['is_regime_capped'])
+            if is_regime_capped:
+                cal_p = float(_gate_res['gated_prob_pct']) / 100.0
+                if not _gate_res['vix_bottom_relaxed']:
+                    if is_short_covering:
+                        is_short_covering = False
+                        is_broken = True
+                        sort_tier = 2
+                    elif sort_tier == 0:
+                        sort_tier = 2
 
             is_short_covering_flags.append(is_short_covering)
             model_raw_probs.append(model_raw_p)
@@ -5195,6 +5332,7 @@ def generate_report_tables(
         'top10': top_long_stocks,
         'all_live_predictions': all_live_rows,
         'macro_weather': mw_out,
+        'vix_regime': mw_out.get('vix_regime', {}),
         'live_scorecard': live_scorecard,
         'time_cycle_projections': time_cycle_proj,
         'kpi': {
@@ -5722,6 +5860,29 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
     _t4_bear_hint_html = (
         '<span id="t4BearLongHint" class="t4-bear-hint">（当前空头防守期，常规多头胜率已压制，仅作观察）</span>'
         if _is_bear_defense else ''
+    )
+
+    _vix_regime = tables_data.get('vix_regime') or weather.get('vix_regime') or {}
+    try:
+        import vix_regime_engine as _vre_html
+        vix_css, vix_pill_html, vix_js = _vre_html.render_vix_pill_widget_parts(_vix_regime, popover_align='left')
+    except Exception:
+        vix_css, vix_pill_html, vix_js = "", "", ""
+    _vr_spot = _vix_regime.get('vix_spot') if isinstance(_vix_regime, dict) else None
+    _vr_vix3m = _vix_regime.get('vix3m_spot') if isinstance(_vix_regime, dict) else None
+    _vr_ratio = _vix_regime.get('vix_term_ratio') if isinstance(_vix_regime, dict) else None
+    _vr_vvix = _vix_regime.get('vvix_spot') if isinstance(_vix_regime, dict) else None
+    _vr_tnx = _vix_regime.get('tnx_yield') if isinstance(_vix_regime, dict) else None
+    _vr_ratio_color = '#f85149' if (_vr_ratio is not None and float(_vr_ratio) >= 1.0) else ('#ffd54f' if (_vr_ratio is not None and float(_vr_ratio) >= 0.92) else '#3fb950')
+    _vr_main_str = (
+        f"{float(_vr_spot):.2f} / {float(_vr_vix3m):.2f} ({float(_vr_ratio):.3f})"
+        if (_vr_spot is not None and _vr_vix3m is not None and _vr_ratio is not None)
+        else (f"{float(_vr_spot):.2f}" if _vr_spot is not None else "--")
+    )
+    _vr_sub_str = (
+        f"VVIX {float(_vr_vvix):.1f} · 10Y {float(_vr_tnx):.2f}%"
+        if (_vr_vvix is not None and _vr_tnx is not None)
+        else (str(_vix_regime.get('term_structure_cn') or '--') if isinstance(_vix_regime, dict) else '--')
     )
 
     _sc_7d = float(scorecard.get('win_rate_7d_pct', 50.0))
@@ -7164,6 +7325,7 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
             .weather-banner {{ padding: 14px; }}
             .section-card {{ padding: 12px; }}
         }}
+        {vix_css}
     </style>
 </head>
 <body>
@@ -7196,6 +7358,7 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
                         <span style="color: var(--text-muted); font-weight: 600;">体制门禁 · MA20宽度</span>
                         <span style="color: {_regime_color};">{_regime_cn} ({_breadth_pct:.1f}%)</span>
                     </div>
+                    {vix_pill_html}
                     <div id="liveScorecardBadge" class="compact-pill" style="background: {_sc_bg}; border-color: {_sc_border}; color: {_sc_text_color};" title="近 7 日 / 近 30 日严格样本外实盘命中率（低于 45% 自动黄灯提醒降权）">
                         📋 实盘成绩单: 近7日 {_sc_7d:.1f}% · 近30日 {_sc_30d:.1f}%{_sc_warn_html}
                     </div>
@@ -7287,6 +7450,11 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
                     <div class="weather-stat-pill" title="严格基于 T 日全池 MA20 市场宽度与 SPY/QQQ 均线斜率判定的客观牛熊体制门禁">
                         <span class="lbl">体制门禁 · MA20宽度</span>
                         <span class="val" style="font-size: 13px; color: {_regime_color};">{_regime_cn} ({_breadth_pct:.1f}%)</span>
+                    </div>
+                    <div class="weather-stat-pill" title="全局真 VIX 恐慌中枢：^VIX / ^VIX3M 期限比值 + ^VVIX 领先指标 + 10Y美债">
+                        <span class="lbl">真 VIX / VIX3M (比值)</span>
+                        <span class="val" style="font-size: 13px; color: {_vr_ratio_color};">{_vr_main_str}</span>
+                        <span style="font-size: 10.5px; color: var(--text-muted);">{_vr_sub_str}</span>
                     </div>
                 </div>
             </div>
@@ -8634,6 +8802,7 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
             setTimeout(function() {{ renderTimeCycleView(); }}, 50);
             window.addEventListener('resize', function() {{ renderTimeCycleView(); }});
         }});
+        {vix_js}
     </script>
 </body>
 </html>"""
@@ -8927,6 +9096,7 @@ def export_latest_ai_predictions_json(tables_data: Dict, json_path: str = 'data_
     payload = {
         'kpi': tables_data.get('kpi', {}),
         'macro_weather': mw,
+        'vix_regime': tables_data.get('vix_regime') or mw.get('vix_regime', {}),
         'market_regime': mw.get('market_regime', 'NEUTRAL_CHOP'),
         'breadth_ma20_pct': mw.get('breadth_ma20_pct', 50.0),
         'live_scorecard': tables_data.get('live_scorecard', {}),

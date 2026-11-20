@@ -3696,12 +3696,12 @@ def compute_indicators(df):
 # ==============================================================================
 # 四、 宏观气象与个股碎股信号判定
 # ==============================================================================
-def evaluate_market_weather(macro_dict, history_dict=None, stocks_lookup=None):
+def evaluate_market_weather(macro_dict, history_dict=None, stocks_lookup=None, vix_regime=None):
     """
-    根据五大量化模型评定宏观气象与作战军规 (V3 深度升级版)：
-    1. VIXY 三因子复合脉冲模型 (单日涨跌幅, MA20偏离度, 60日分位)
+    根据五大量化模型 + 全局真 VIX 恐慌中枢评定宏观气象与作战军规 (V3 深度升级版)：
+    1. VIXY 三因子复合脉冲模型 (单日涨跌幅, MA20偏离度, 60日分位) + 真 ^VIX/^VIX3M/^VVIX/^TNX 中枢
     2. TLT 美债双向利率状态机 (估值顺风, 利率杀估值, 衰退避险, 中性震荡)
-    3. 晴天做多一票否决权 (Veto) 机制 (高位急跌, 破MA20, 恐慌脉冲)
+    3. 晴天做多一票否决权 (Veto) 机制 (高位急跌, 破MA20, 恐慌脉冲, VIX期限倒挂)
     4. SMH/IGV 相对强弱动态驱动风格主线军规
     5. 跨行业市场广度与普跌预警 (传统龙头 JPM/XOM/WMT/CAT/KO/LLY/DIA vs 科技 QQQ/SMH/NVDA)
     """
@@ -3928,9 +3928,22 @@ def evaluate_market_weather(macro_dict, history_dict=None, stocks_lookup=None):
             vixy_pos_60=vixy_pos_60,
             qqq_ret_5d=qqq_ret_5d_val,
             qqq_down_days_5d=qqq_down_5d_val,
+            vix_regime=vix_regime,
         )
     except Exception:
         pass
+
+    _vr = vix_regime if isinstance(vix_regime, dict) else {}
+    _vr_hard_brake = bool(_vr.get("vix_hard_brake") or regime_info.get("vix_hard_brake", False))
+    _vr_bottom = bool(_vr.get("vix_bottom_signal") or regime_info.get("vix_bottom_signal", False))
+    if _vr_hard_brake:
+        _r_txt = f"{float(_vr['vix_term_ratio']):.2f}" if _vr.get("vix_term_ratio") is not None else "--"
+        _v_txt = f"{float(_vr['vix_spot']):.1f}" if _vr.get("vix_spot") is not None else "--"
+        desc += f" ｜ 🔴 真VIX期限倒挂刹车 (^VIX={_v_txt}, 比值={_r_txt})"
+        tactics += " ｜ 🔴 机构恐慌倒挂踩踏期：严禁左侧接飞刀，常规多头胜率锁死 <=48%"
+    elif _vr_bottom:
+        desc += " ｜ 🟢 VIX恐慌出清·右侧抄底观察窗已开启"
+        tactics += " ｜ 🟢 恐慌确认见顶回落：对站稳日内 VWAP 的非熔断优质标的平滑放宽右侧抄底权限"
 
     return {
         "weather": weather,
@@ -3952,7 +3965,7 @@ def evaluate_market_weather(macro_dict, history_dict=None, stocks_lookup=None):
         "vixy_pct": vixy_pct,
         "vixy_ma20_bias": vixy_ma20_bias,
         "vixy_pos_60": vixy_pos_60,
-        "is_vix_panic": is_vix_panic,
+        "is_vix_panic": bool(is_vix_panic or _vr_hard_brake),
         "tlt_bias": tlt_bias,
         "tlt_state": tlt_state,
         "tlt_color": tlt_color,
@@ -3962,6 +3975,9 @@ def evaluate_market_weather(macro_dict, history_dict=None, stocks_lookup=None):
         "market_regime_cn": regime_info.get("market_regime_cn", "🟡 震荡分化体制"),
         "regime_score": regime_info.get("regime_score", 0.0),
         "breadth_ma20_pct": regime_info.get("breadth_ma20_pct", 50.0),
+        "vix_regime": _vr,
+        "vix_hard_brake": _vr_hard_brake,
+        "vix_bottom_signal": _vr_bottom,
     }
 
 def evaluate_stock_signal(
@@ -4370,6 +4386,31 @@ def generate_macro_radar_html(macro_data, weather_info, history_dict, update_tim
     """生成包含 12 只核心 ETF 的宏观大盘司令塔看板"""
     if not update_time_str:
         update_time_str = now_et_str("%Y-%m-%d %H:%M:%S")
+    _vr = (weather_info or {}).get("vix_regime") or {}
+    try:
+        import vix_regime_engine as _vre_m
+        vix_css, vix_pill_html, vix_js = _vre_m.render_vix_pill_widget_parts(_vr, popover_align="right")
+    except Exception:
+        vix_css, vix_pill_html, vix_js = "", "", ""
+    _vr_spot = _vr.get("vix_spot") if isinstance(_vr, dict) else None
+    _vr_vix3m = _vr.get("vix3m_spot") if isinstance(_vr, dict) else None
+    _vr_ratio = _vr.get("vix_term_ratio") if isinstance(_vr, dict) else None
+    _vr_vvix = _vr.get("vvix_spot") if isinstance(_vr, dict) else None
+    _vr_tnx = _vr.get("tnx_yield") if isinstance(_vr, dict) else None
+    _vr_ratio_color = "var(--color-down)" if (_vr_ratio is not None and float(_vr_ratio) >= 1.0) else ("var(--warning-gold)" if (_vr_ratio is not None and float(_vr_ratio) >= 0.92) else "var(--color-up)")
+    _vr_val_str = f"{float(_vr_spot):.2f}" if _vr_spot is not None else f"${weather_info['vixy_last']:.2f}"
+    _vr_lbl_str = "真 ^VIX / 期限比值" if _vr_spot is not None else "VIXY 恐慌指数"
+    _vr_sub_str = (
+        f"3M {float(_vr_vix3m):.1f} · 比值 {float(_vr_ratio):.2f} · 10Y {float(_vr_tnx):.2f}%"
+        if (_vr_spot is not None and _vr_vix3m is not None and _vr_ratio is not None and _vr_tnx is not None)
+        else (
+            f"3M {float(_vr_vix3m):.1f} · 比值 {float(_vr_ratio):.2f}"
+            if (_vr_spot is not None and _vr_vix3m is not None and _vr_ratio is not None)
+            else f"MA20: {weather_info.get('vixy_ma20_bias', 0.0):+.1f}% | 60d: {weather_info.get('vixy_pos_60', 50.0):.0f}%"
+        )
+    )
+    _vvix_box_val = f"{float(_vr_vvix):.1f}" if _vr_vvix is not None else "--"
+    _tnx_box_val = f"{float(_vr_tnx):.2f}%" if _vr_tnx is not None else f"{weather_info['tlt_bias']:+.2f}%"
 
     fig = make_subplots(
         rows=2, cols=2,
@@ -4786,6 +4827,7 @@ def generate_macro_radar_html(macro_data, weather_info, history_dict, update_tim
             .weather-stats {{ width: 100%; display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }}
             .stat-box {{ min-width: 0; }}
         }}
+        {vix_css}
     </style>
 </head>
 <body>
@@ -4801,6 +4843,7 @@ def generate_macro_radar_html(macro_data, weather_info, history_dict, update_tim
             <span>⏱️ 自动刷新: 每3分钟</span>
             <span>最近更新: {update_time_str}</span>
             {live_badge_html}
+            {vix_pill_html}
             <button type="button" id="btnThemeToggle" class="theme-toggle-btn" onclick="toggleTheme()" title="切换浅色模式" aria-label="切换浅色或深色模式">
                 <span id="themeToggleIcon">☀️</span>
                 <span class="theme-toggle-text" id="themeToggleLabel">浅色</span>
@@ -4840,14 +4883,14 @@ def generate_macro_radar_html(macro_data, weather_info, history_dict, update_tim
                 <div class="stat-sub">MA20: {weather_info.get('smh_ma20_bias', 0.0):+.1f}% | 今日: {weather_info.get('smh_pct', 0.0):+.2f}%</div>
             </div>
             <div class="stat-box" style="border-color: {'var(--color-down)' if weather_info.get('is_vix_panic') else 'var(--border-subtle)'};">
-                <div class="stat-label">VIXY 恐慌指数</div>
-                <div class="stat-value" style="color: {'var(--color-down)' if weather_info.get('is_vix_panic') else 'var(--warning-gold)'};">${weather_info['vixy_last']:.2f}</div>
-                <div class="stat-sub" style="color: {'var(--color-down)' if weather_info.get('is_vix_panic') else 'var(--text-muted)'};">MA20: {weather_info.get('vixy_ma20_bias', 0.0):+.1f}% | 60d: {weather_info.get('vixy_pos_60', 50.0):.0f}%</div>
+                <div class="stat-label">{_vr_lbl_str}</div>
+                <div class="stat-value" style="color: {_vr_ratio_color if _vr_spot is not None else ('var(--color-down)' if weather_info.get('is_vix_panic') else 'var(--warning-gold)')};">{_vr_val_str}</div>
+                <div class="stat-sub" style="color: {'var(--color-down)' if weather_info.get('is_vix_panic') else 'var(--text-muted)'};">{_vr_sub_str}</div>
             </div>
             <div class="stat-box">
-                <div class="stat-label">美债利率定性</div>
-                <div class="stat-value" style="color: {weather_info.get('tlt_color', 'var(--text-muted)')}; font-size: 15px;">{weather_info.get('tlt_state', '⚪ 中性震荡')}</div>
-                <div class="stat-sub">TLT偏离: {weather_info['tlt_bias']:+.2f}%</div>
+                <div class="stat-label">^VVIX / 10Y美债 (^TNX)</div>
+                <div class="stat-value" style="color: {weather_info.get('tlt_color', 'var(--text-muted)')}; font-size: 15px;">{_vvix_box_val} / {_tnx_box_val}</div>
+                <div class="stat-sub">{weather_info.get('tlt_state', '⚪ 中性震荡')} · TLT {weather_info['tlt_bias']:+.2f}%</div>
             </div>
             <div class="stat-box">
                 <div class="stat-label">跨行业市场广度</div>
@@ -4937,6 +4980,7 @@ def generate_macro_radar_html(macro_data, weather_info, history_dict, update_tim
             updateThemeToggleUI(t);
             setTimeout(function() {{ applyPlotlyTheme(t); }}, 150);
         }});
+        {vix_js}
     </script>
 </body>
 </html>
@@ -4948,10 +4992,15 @@ def generate_macro_radar_html(macro_data, weather_info, history_dict, update_tim
 # ==============================================================================
 # 六、 页面 2：核心个股碎股雷达 (stocks_radar.html · 27 只个股)
 # ==============================================================================
-def generate_stocks_radar_html(stocks_data, history_dict, update_time_str="", has_realtime=False):
+def generate_stocks_radar_html(stocks_data, history_dict, update_time_str="", has_realtime=False, vix_regime=None):
     """生成包含 27 只核心科技个股的碎股雷达与黄金坑矩阵"""
     if not update_time_str:
         update_time_str = now_et_str("%Y-%m-%d %H:%M:%S")
+    try:
+        import vix_regime_engine as _vre_s
+        vix_css, vix_pill_html, vix_js = _vre_s.render_vix_pill_widget_parts(vix_regime, popover_align="right")
+    except Exception:
+        vix_css, vix_pill_html, vix_js = "", "", ""
 
     # 2. 绘制 27 只个股“黄金坑距离 vs RSI”散点作战矩阵
     fig_matrix = go.Figure()
@@ -5313,6 +5362,7 @@ def generate_stocks_radar_html(stocks_data, history_dict, update_time_str="", ha
             .suite-link {{ justify-content: center; text-align: center; padding: 6px 8px; font-size: 12px; }}
             .header h1 {{ font-size: 19px; }}
         }}
+        {vix_css}
     </style>
 </head>
 <body>
@@ -5328,6 +5378,7 @@ def generate_stocks_radar_html(stocks_data, history_dict, update_time_str="", ha
             <span>⏱️ 自动刷新: 每3分钟</span>
             <span>最近更新: {update_time_str}</span>
             {live_badge_html}
+            {vix_pill_html}
             <button type="button" id="btnThemeToggle" class="theme-toggle-btn" onclick="toggleTheme()" title="切换浅色模式" aria-label="切换浅色或深色模式">
                 <span id="themeToggleIcon">☀️</span>
                 <span class="theme-toggle-text" id="themeToggleLabel">浅色</span>
@@ -5446,6 +5497,7 @@ def generate_stocks_radar_html(stocks_data, history_dict, update_time_str="", ha
             updateThemeToggleUI(t);
             setTimeout(function() {{ applyPlotlyTheme(t); }}, 150);
         }});
+        {vix_js}
     </script>
 </body>
 </html>
@@ -5629,6 +5681,19 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
         elif tk in history_dict and len(history_dict[tk]) > 0:
             spot_map[tk] = float(history_dict[tk]["Close"].iloc[-1])
     options_map = fetch_options_anomaly_map(all_tickers, spot_map=spot_map)
+
+    # 2.8 全局真 VIX 恐慌中枢 (^VIX / ^VIX3M / ^VVIX / ^TNX，独立于 79 交易池之外，3 分钟缓存节流 + 单指数容错)
+    vix_regime = {}
+    try:
+        import vix_regime_engine
+        vix_regime = vix_regime_engine.get_vix_regime_snapshot(force_refresh=("--once" in sys.argv))
+        print(
+            f"[+] ⚡ 全局真 VIX 中枢: ^VIX={vix_regime.get('vix_spot')} | ^VIX3M={vix_regime.get('vix3m_spot')} | "
+            f"期限比值={vix_regime.get('vix_term_ratio')} | ^VVIX={vix_regime.get('vvix_spot')} | "
+            f"^TNX={vix_regime.get('tnx_yield')}% | 状态={vix_regime.get('pill_text')}"
+        )
+    except Exception as _vre_err:
+        print(f"  [!] 全局 VIX 恐慌中枢降级跳过: {_vre_err}")
     print("")
 
     has_realtime = len(realtime_quotes) > 0 or len(intraday_map) > 0
@@ -5866,7 +5931,7 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
                 **options_map.get(ticker, {})
             }
 
-    weather_info = evaluate_market_weather(macro_data, history_dict=history_dict)
+    weather_info = evaluate_market_weather(macro_data, history_dict=history_dict, vix_regime=vix_regime)
 
     # 4. 处理全量个股数据并计算碎股、日线信号与 5m 日内建仓信号
     stocks_list = []
@@ -6191,7 +6256,7 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
 
     # 使用全量个股 + 宏观 ETF 重新完整核算跨行业市场广度与普跌预警
     stocks_lookup = {s["ticker"]: s for s in stocks_sorted if isinstance(s, dict) and s.get("ticker")}
-    weather_info = evaluate_market_weather(macro_data, history_dict=history_dict, stocks_lookup=stocks_lookup)
+    weather_info = evaluate_market_weather(macro_data, history_dict=history_dict, stocks_lookup=stocks_lookup, vix_regime=vix_regime)
 
     # 5. 终端打印规整 Rich 表格
     display_terminal_tables(macro_data, stocks_sorted, weather_info, has_realtime=has_realtime)
@@ -6217,7 +6282,7 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
         print(f"  [!] 📰 消息面缓存聚合静默降级: {_mn_err}")
 
     generate_macro_radar_html(macro_data, weather_info, history_dict, update_time_str=now_str, has_realtime=has_realtime)
-    generate_stocks_radar_html(stocks_sorted, history_dict, update_time_str=now_str, has_realtime=has_realtime)
+    generate_stocks_radar_html(stocks_sorted, history_dict, update_time_str=now_str, has_realtime=has_realtime, vix_regime=vix_regime)
     
     target_watchlist = load_target_watchlist()
     terminal_notifications = generate_and_sync_notifications(macro_data, stocks_sorted, weather_info, now_str, session_code=session_code)
