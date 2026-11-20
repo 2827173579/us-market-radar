@@ -2523,6 +2523,178 @@ def send_pushplus_wechat_alert(title, markdown_content, channel=None):
     _already_sent_discord = bool(_dedupe_key and _SHARED_ALERTS and shared_alert_state.is_sent(_dedupe_key, max_age=600))
     return bool(any_success or discord_success or _already_sent_discord)
 
+_CANDIDATE_SPLIT_RATIOS = (
+    2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 10.0, 15.0, 20.0, 25.0, 50.0,
+    1.5, 0.5, 1.0 / 3.0, 0.25, 0.2, 0.125, 0.1, 0.05, 0.04, 0.02,
+)
+
+
+def should_suppress_stop_loss_alert(item):
+    """阶段一拆股/异常跳变防误报：未除权对齐或单日暴跌 <= -40% 时禁止触发虚假破位止损弹窗。"""
+    if not isinstance(item, dict):
+        return False
+    if bool(item.get("split_suspect_unhealed", False)):
+        return True
+    try:
+        pct_val = float(item.get("pct_change", 0.0) or 0.0)
+    except Exception:
+        pct_val = 0.0
+    try:
+        ext_val = float(item.get("ext_pct", 0.0) or 0.0)
+    except Exception:
+        ext_val = 0.0
+    return bool(pct_val <= -40.0 or ext_val <= -40.0)
+
+
+def _calc_bias_ma20(df_hist, live_px):
+    try:
+        if df_hist is None or len(df_hist) < 20 or "Close" not in df_hist.columns:
+            return 0.0
+        closes = pd.to_numeric(df_hist["Close"], errors="coerce").dropna()
+        if len(closes) < 20:
+            return 0.0
+        ma20 = float(closes.iloc[-20:].mean())
+        if ma20 <= 0:
+            return 0.0
+        return round(((float(live_px) - ma20) / ma20) * 100.0, 2)
+    except Exception:
+        return 0.0
+
+
+def _normalize_ai_levels_for_price(ai_entry, live_px, split_meta=None):
+    """若 AI JSON 中的 S1/R1 仍停留在拆股前量纲，则按拆股因子或合理阈值同步归一化。"""
+    if not isinstance(ai_entry, dict):
+        return None, None, None
+    s1 = ai_entry.get("s1")
+    r1 = ai_entry.get("r1")
+    cwr = ai_entry.get("cal_win_rate")
+    try:
+        px = float(live_px or 0.0)
+    except Exception:
+        px = 0.0
+    if px <= 0:
+        return s1, r1, cwr
+
+    sf = float((split_meta or {}).get("split_factor", 1.0) or 1.0)
+
+    def _scale_lv(val):
+        if val is None:
+            return None
+        try:
+            fv = float(val)
+        except Exception:
+            return None
+        if fv <= 0:
+            return fv
+        ratio = fv / px
+        if ratio <= 0.60 or ratio >= 1.67:
+            if sf != 1.0:
+                cand = fv / sf
+                if 0.60 < (cand / px) < 1.67:
+                    return round(cand, 2)
+            best_r = min(_CANDIDATE_SPLIT_RATIOS, key=lambda r: abs(ratio - r) / r)
+            if abs(ratio - best_r) / best_r <= 0.25:
+                return round(fv / best_r, 2)
+            return None
+        return fv
+
+    return _scale_lv(s1), _scale_lv(r1), cwr
+
+
+def reconcile_live_quote_with_split_guard(ticker, df_hist, rq=None, allow_network_on_jump=True):
+    """
+    阶段一核心防护：对齐实盘报价与本地历史序列的拆股/合股跳变 (如 SNDK 1拆8)。
+    正常无 ±40% 跳变时 0 网络开销直接放行；
+    一旦触发 ±40% 跳变，立即调用 ml_predictor_5y.detect_and_heal_stock_split 自愈复权历史与实时涨跌幅。
+    """
+    default_meta = {
+        "split_detected": False,
+        "split_factor": 1.0,
+        "healed_rows": 0,
+        "split_suspect_unhealed": False,
+        "reason": "",
+    }
+    if ticker in ("ANT", "BTC-USD", "XAUUSD") or df_hist is None or len(df_hist) == 0 or "Close" not in df_hist.columns:
+        return df_hist, rq, default_meta
+
+    closes = pd.to_numeric(df_hist["Close"], errors="coerce").dropna()
+    if len(closes) == 0:
+        return df_hist, rq, default_meta
+
+    live_px = None
+    if isinstance(rq, dict):
+        try:
+            lp = float(rq.get("last") or 0.0)
+            if lp > 0 and math.isfinite(lp):
+                live_px = lp
+        except Exception:
+            live_px = None
+
+    has_jump = False
+    if len(closes) >= 2:
+        tail_arr = closes.iloc[-6:].to_numpy(dtype=float)
+        ratios = tail_arr[1:] / np.maximum(tail_arr[:-1], 1e-9)
+        if np.any((ratios <= 0.60) | (ratios >= 1.67)):
+            has_jump = True
+
+    last_hist_c = float(closes.iloc[-1])
+    if not has_jump and live_px is not None and last_hist_c > 0:
+        live_ratio = live_px / last_hist_c
+        if live_ratio <= 0.60 or live_ratio >= 1.67:
+            has_jump = True
+
+    if not has_jump:
+        return df_hist, rq, default_meta
+
+    try:
+        import ml_predictor_5y
+        df_healed, meta = ml_predictor_5y.detect_and_heal_stock_split(
+            ticker=ticker,
+            df_hist=df_hist,
+            live_price=live_px,
+            allow_network=allow_network_on_jump,
+        )
+    except Exception:
+        return df_hist, rq, default_meta
+
+    rq_out = dict(rq) if isinstance(rq, dict) else rq
+    if isinstance(rq_out, dict) and live_px is not None:
+        sf = float(meta.get("split_factor", 1.0) or 1.0)
+        if meta.get("split_detected") and sf != 1.0:
+            try:
+                old_chg = float(rq_out.get("change") or 0.0)
+                old_pct = float(rq_out.get("pct_change") or 0.0)
+            except Exception:
+                old_chg, old_pct = 0.0, 0.0
+
+            implied_pc = live_px - old_chg
+            adj_pc = None
+            if implied_pc > 0 and (implied_pc / live_px >= 1.67 or live_px / implied_pc >= 1.67):
+                adj_pc = implied_pc / sf
+            elif abs(old_pct) >= 35.0 and df_healed is not None and len(df_healed) >= 1 and "Close" in df_healed.columns:
+                hc = pd.to_numeric(df_healed["Close"], errors="coerce").dropna()
+                if len(hc) >= 2:
+                    last_dt = pd.to_datetime(hc.index[-1]).date() if hasattr(hc.index[-1], "date") else None
+                    et_today = datetime.now(timezone(timedelta(hours=-4))).date()
+                    adj_pc = float(hc.iloc[-2]) if (last_dt == et_today) else float(hc.iloc[-1])
+                elif len(hc) == 1:
+                    adj_pc = float(hc.iloc[-1])
+
+            if adj_pc is not None and adj_pc > 0:
+                rq_out["change"] = round(live_px - adj_pc, 2)
+                rq_out["pct_change"] = round(((live_px - adj_pc) / adj_pc) * 100.0, 2)
+
+            for k_hl in ("high", "low"):
+                try:
+                    hv = float(rq_out.get(k_hl) or 0.0)
+                    if hv > 0 and (hv / live_px >= 1.67 or live_px / hv >= 1.67):
+                        rq_out[k_hl] = round(hv / sf, 2)
+                except Exception:
+                    pass
+
+    return df_healed, rq_out, meta
+
+
 def dispatch_wechat_radar_alerts(macro_data, stocks_data, weather_info, now_str):
     """
     智能去重微信预警分发引擎：
@@ -2585,7 +2757,7 @@ def dispatch_wechat_radar_alerts(macro_data, stocks_data, weather_info, now_str)
 
         # 当前核心技术状态 (全池 5m 买点共振、黄金坑、技术止损、冲顶止盈；低波观察池不触发高弹性买点弹窗)
         current_state = "NORMAL"
-        if is_stop and not is_etf and not is_obs_only:
+        if is_stop and not is_etf and not is_obs_only and not should_suppress_stop_loss_alert(s):
             current_state = "STOP_LOSS"
         elif intraday_ready and not is_stop and not is_obs_only:
             current_state = "WATCHLIST_ENTRY_READY"
@@ -3135,17 +3307,24 @@ def generate_and_sync_notifications(macro_data, stocks_data, weather_info, now_s
                         trailing_title = f"🟣 {ticker} 跌破趋势线 EMA20(${ema20:.2f})移动止盈！"
                         trailing_desc = f"现价 ${active_price:.2f} 浮盈 {pnl_pct:+.1f}% 跌破 EMA20，主升浪趋缓，执行波段移动止盈！"
 
-                if be_active and active_price <= be_stop:
+                _suppress_port_stop = bool(
+                    float(pct_change or 0.0) <= -40.0
+                    or any(
+                        st.get("ticker") == ticker and should_suppress_stop_loss_alert(st)
+                        for st in (stocks_data or [])
+                    )
+                )
+                if not _suppress_port_stop and be_active and active_price <= be_stop:
                     p_level = "danger"
                     p_substate = "BREAKEVEN" if lock_label == "保本盾" else "TIERED_LOCK"
                     p_title = f"🚨 {ticker} 触及{lock_label}止损线(${be_stop:.2f})！"
                     p_desc = f"历史最高曾达 ${peak_price:.2f} (+{max_pnl_pct:.1f}%)，现价回踩跌破{lock_label}，立即兑现锁利！"
-                elif effective_stop > 0 and active_price <= effective_stop:
+                elif not _suppress_port_stop and effective_stop > 0 and active_price <= effective_stop:
                     p_level = "danger"
                     p_substate = "STOP"
                     p_title = f"🚨 {ticker} 击穿 ${effective_stop:.2f} 铁血硬止损线！"
                     p_desc = f"现价 ${active_price:.2f} 破位！持仓 {shares:g} 股，严格执行保命防守纪律！"
-                elif effective_stop > 0 and buffer_pct <= 3.0:
+                elif not _suppress_port_stop and effective_stop > 0 and buffer_pct <= 3.0:
                     p_level = "warning"
                     p_substate = "NEAR_STOP"
                     p_title = f"⚠️ {ticker} 紧迫风控预警：逼近防守线！"
@@ -3218,7 +3397,7 @@ def generate_and_sync_notifications(macro_data, stocks_data, weather_info, now_s
             })
 
         # 4. 🔴 破位止损通知
-        if is_stop and not ticker.endswith("ETF"):
+        if is_stop and not ticker.endswith("ETF") and not should_suppress_stop_loss_alert(s):
             new_notifs.append({
                 "id": f"STOP_{ticker}_{date_tag}",
                 "time": now_str[5:16],
@@ -3367,6 +3546,19 @@ def fetch_all_market_data(tickers, period="1y", retries=2):
                         data_dict[t] = merged_df
                 except Exception:
                     pass
+
+    # 阶段一规则 4：历史日线拆股/合股除权自检自愈 (无跳变 0 网络开销)
+    for _tk_h in list(data_dict.keys()):
+        try:
+            _healed_df, _, _sp_meta = reconcile_live_quote_with_split_guard(
+                _tk_h, data_dict[_tk_h], rq=None, allow_network_on_jump=True
+            )
+            if _healed_df is not None and len(_healed_df) > 0:
+                data_dict[_tk_h] = _healed_df
+            if _sp_meta.get("split_detected"):
+                print(f"[+] 🔧 拆股除权自愈 ({_tk_h}): {_sp_meta.get('reason')} (修复 {_sp_meta.get('healed_rows', 0)} 行)")
+        except Exception:
+            pass
 
     print(f"[+] 历史形态抓取完成，成功获取 {len(data_dict)}/{len(tickers)} 只标的数据。\n")
     return data_dict
@@ -3628,6 +3820,79 @@ def evaluate_market_weather(macro_dict, history_dict=None, stocks_lookup=None):
         qqq_parking_desc = "大盘处于 MA50 震荡拉锯期，暂缓新资金泊入 QQQ，保持轻仓防守"
         qqq_parking_color = "#ffd54f"
 
+    # 阶段一核心：计算客观三态牛熊体制 (Market Regime Gate) 与全池 MA20 市场宽度
+    regime_info = {
+        "market_regime": "NEUTRAL_CHOP",
+        "market_regime_cn": "🟡 震荡分化体制",
+        "regime_score": 0.0,
+        "breadth_ma20_pct": 50.0,
+    }
+    try:
+        import ml_predictor_5y
+        spy_ma20_bias_val = spy_bias
+        qqq_ret_5d_val = 0.0
+        qqq_down_5d_val = 0.0
+        if history_dict:
+            spy_df = history_dict.get("SPY")
+            if spy_df is not None and len(spy_df) >= 20 and "Close" in spy_df.columns:
+                spy_c = pd.to_numeric(spy_df["Close"], errors="coerce").dropna()
+                if len(spy_c) >= 20:
+                    spy_last_v = float(macro_dict.get("SPY", {}).get("last") or spy_c.iloc[-1])
+                    spy_ma20_v = float(spy_c.iloc[-20:].mean())
+                    if spy_ma20_v > 0:
+                        spy_ma20_bias_val = ((spy_last_v - spy_ma20_v) / spy_ma20_v) * 100.0
+            qqq_df = history_dict.get("QQQ")
+            if qqq_df is not None and len(qqq_df) >= 6 and "Close" in qqq_df.columns:
+                qqq_c = pd.to_numeric(qqq_df["Close"], errors="coerce").dropna()
+                if len(qqq_c) >= 6:
+                    qqq_last_v = float(macro_dict.get("QQQ", {}).get("last") or qqq_c.iloc[-1])
+                    qqq_5d_base = float(qqq_c.iloc[-6])
+                    if qqq_5d_base > 0:
+                        qqq_ret_5d_val = ((qqq_last_v - qqq_5d_base) / qqq_5d_base) * 100.0
+                    diffs = qqq_c.iloc[-6:].diff().dropna()
+                    qqq_down_5d_val = float((diffs < 0).sum())
+
+        exempt_breadth = {"SQQQ", "SOXS", "VIXY", "TLT", "GLD", "XAUUSD"}
+        above_ma20 = 0
+        valid_ma20 = 0
+        seen_breadth = set()
+        if stocks_lookup:
+            for _tk, _sitem in stocks_lookup.items():
+                if _tk in exempt_breadth:
+                    continue
+                _b20 = _sitem.get("bias_ma20")
+                if _b20 is not None and not (isinstance(_b20, float) and math.isnan(_b20)):
+                    valid_ma20 += 1
+                    seen_breadth.add(_tk)
+                    if float(_b20) > 0.0:
+                        above_ma20 += 1
+        if history_dict:
+            for _tk, _hdf in history_dict.items():
+                if _tk in exempt_breadth or _tk in seen_breadth:
+                    continue
+                if _hdf is not None and len(_hdf) >= 20 and "Close" in _hdf.columns:
+                    _hc = pd.to_numeric(_hdf["Close"], errors="coerce").dropna()
+                    if len(_hc) >= 20:
+                        _m20 = float(_hc.iloc[-20:].mean())
+                        _lc = float((macro_dict.get(_tk, {}) or {}).get("last") or _hc.iloc[-1])
+                        if _m20 > 0:
+                            valid_ma20 += 1
+                            if _lc > _m20:
+                                above_ma20 += 1
+        breadth_ma20_pct_val = (above_ma20 / valid_ma20 * 100.0) if valid_ma20 > 0 else 50.0
+        regime_info = ml_predictor_5y.compute_market_regime_state(
+            qqq_bias_ma20=qqqm_ma20_bias,
+            spy_bias_ma20=spy_ma20_bias_val,
+            qqq_bias_ma50=qqqm_bias,
+            smh_bias_ma50=smh_bias,
+            breadth_ma20_pct=breadth_ma20_pct_val,
+            vixy_pos_60=vixy_pos_60,
+            qqq_ret_5d=qqq_ret_5d_val,
+            qqq_down_days_5d=qqq_down_5d_val,
+        )
+    except Exception:
+        pass
+
     return {
         "weather": weather,
         "icon": icon,
@@ -3654,6 +3919,10 @@ def evaluate_market_weather(macro_dict, history_dict=None, stocks_lookup=None):
         "tlt_color": tlt_color,
         "tlt_desc": tlt_desc,
         "cross_industry_breadth": breadth_info,
+        "market_regime": regime_info.get("market_regime", "NEUTRAL_CHOP"),
+        "market_regime_cn": regime_info.get("market_regime_cn", "🟡 震荡分化体制"),
+        "regime_score": regime_info.get("regime_score", 0.0),
+        "breadth_ma20_pct": regime_info.get("breadth_ma20_pct", 50.0),
     }
 
 def evaluate_stock_signal(
@@ -4975,6 +5244,12 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
     macro_data = {}
     for ticker, meta in MONITORED_TARGETS["ETFS"].items():
         if ticker in history_dict and len(history_dict[ticker]) >= 20:
+            _rq_raw = realtime_quotes.get(ticker)
+            history_dict[ticker], _rq_healed, _etf_split_meta = reconcile_live_quote_with_split_guard(
+                ticker, history_dict[ticker], rq=_rq_raw, allow_network_on_jump=True
+            )
+            if _rq_healed is not None and ticker in realtime_quotes:
+                realtime_quotes[ticker] = _rq_healed
             if ticker in realtime_quotes:
                 rq = realtime_quotes[ticker]
                 last = rq["last"]
@@ -5196,6 +5471,14 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
     stocks_list = []
     for ticker, meta in MONITORED_TARGETS["STOCKS"].items():
         if ticker in history_dict and len(history_dict[ticker]) >= 20:
+            _rq_raw = realtime_quotes.get(ticker)
+            history_dict[ticker], _rq_healed, split_meta = reconcile_live_quote_with_split_guard(
+                ticker, history_dict[ticker], rq=_rq_raw, allow_network_on_jump=True
+            )
+            if _rq_healed is not None and ticker in realtime_quotes:
+                realtime_quotes[ticker] = _rq_healed
+            if split_meta.get("split_detected"):
+                print(f"[+] 🔧 实盘拆股自愈 ({ticker}): {split_meta.get('reason')}")
             if ticker in realtime_quotes:
                 rq = realtime_quotes[ticker]
                 last = rq["last"]
@@ -5323,20 +5606,24 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
                 sma200=sma200, min_rsi_3d=min_rsi_3d, atr_pct=atr_pct, fib_pos=fib_pos,
                 crash_5d=crash_5d, is_right_turn=is_right_turn, rs_60=rs_60, low_price=float(df['Low'].iloc[-1]) if 'Low' in df else effective_price, rth_low=intra_info.get('rth_low', effective_price)
             )
+            _ai_s1_n, _ai_r1_n, _ai_cwr_n = _normalize_ai_levels_for_price(
+                load_ai_levels_map().get(ticker), active_price, split_meta
+            )
             intra_eval = evaluate_intraday_entry(
                 active_price, fib_low, fib_high, ma50,
                 eval_res["is_pit"], eval_res["is_stop"], eval_res["dist_to_pit"], intra_info,
                 earnings_info=earnings_map.get(ticker), rs_20d=rs_20d, atr=atr, daily_rsi=rsi,
                 options_info=options_map.get(ticker),
-                ai_s1=(load_ai_levels_map().get(ticker) or {}).get("s1"),
-                ai_r1=(load_ai_levels_map().get(ticker) or {}).get("r1"),
-                ai_cal_win_rate=(load_ai_levels_map().get(ticker) or {}).get("cal_win_rate"),
+                ai_s1=_ai_s1_n,
+                ai_r1=_ai_r1_n,
+                ai_cal_win_rate=_ai_cwr_n,
                 pct_change=pct_change, ext_pct=ext_pct,
                 rth_high=rth_high, prev_crash_3d=prev_crash_3d, prev_is_right_turn=prev_is_right_turn,
                 ema5=ema5, prev_crash_body=prev_crash_body, prev_crash_close=prev_crash_close,
                 session_code=session_code, ticker=ticker, crash_3d=crash_3d
             )
 
+            _stock_bias_ma20 = _calc_bias_ma20(history_dict[ticker], active_price)
             stocks_list.append({
                 "ticker": ticker,
                 "name": meta["name"],
@@ -5360,6 +5647,10 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
                 "effective_pct": effective_pct,
                 "overnight_pct": overnight_pct,
                 "ma50": ma50,
+                "bias_ma20": _stock_bias_ma20,
+                "split_detected": bool(split_meta.get("split_detected", False)),
+                "split_factor": float(split_meta.get("split_factor", 1.0) or 1.0),
+                "split_suspect_unhealed": bool(split_meta.get("split_suspect_unhealed", False)),
                 "ema20": ema20,
                 "ema10": ema10,
                 "ema5": ema5,
@@ -5934,7 +6225,7 @@ def main():
                     pass
 
                 subprocess.run(
-                    ["git", "add", "index.html", "futu_pro_terminal.html", "predict_radar_5y.html", "data_cache/latest_ai_predictions.json", "data_cache/latest_market_news.json", "data_cache/shared_alert_dedupe.json", ".terminal_notifications.json", ".options_cache.json", ".radar_alert_history.json", "macro_radar.html", "stocks_radar.html", ".gitignore"],
+                    ["git", "add", "index.html", "futu_pro_terminal.html", "predict_radar_5y.html", "data_cache/latest_ai_predictions.json", "data_cache/live_prediction_scorecard.json", "data_cache/latest_market_news.json", "data_cache/shared_alert_dedupe.json", ".terminal_notifications.json", ".options_cache.json", ".radar_alert_history.json", "macro_radar.html", "stocks_radar.html", ".gitignore"],
                     check=False, creationflags=WIN_NO_WINDOW)
                 subprocess.run(
                     ["git", "commit", "-m", f"⚡ [{'小米平板实盘同步' if ANDROID_MODE else '实盘同步'}] 第 {round_idx} 轮极速刷新 ({now_ts})"],

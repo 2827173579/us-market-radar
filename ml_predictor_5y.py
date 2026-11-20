@@ -104,15 +104,21 @@ class _NumpyFallbackClassifier:
         self._w = np.zeros(1)
         self._b = 0.0
 
-    def fit(self, X, y):
+    def fit(self, X, y, sample_weight=None):
         X = np.asarray(X, dtype=float); y = np.asarray(y, dtype=float)
+        if sample_weight is not None:
+            sw = np.asarray(sample_weight, dtype=float)
+            sw = np.where(np.isfinite(sw) & (sw > 0), sw, 1.0)
+            sw = sw / max(float(sw.sum()), 1e-12)
+        else:
+            sw = np.full(len(y), 1.0 / max(len(y), 1), dtype=float)
         self._mu = np.nanmean(X, axis=0); self._sd = np.nanstd(X, axis=0); self._sd[self._sd < 1e-9] = 1.0
         Z = np.nan_to_num((X - self._mu) / self._sd, nan=0.0, posinf=0.0, neginf=0.0)
         Z = np.column_stack([np.ones(len(Z)), Z])
         w = np.zeros(Z.shape[1]); w[0] = np.log((y.mean() + 1e-6) / (1 - y.mean() + 1e-6))
         for _ in range(120):
             z = np.clip(Z @ w, -30, 30); p = 1.0 / (1.0 + np.exp(-z))
-            grad = Z.T @ (p - y) / max(len(y), 1) + 1e-4 * w
+            grad = (Z.T @ ((p - y) * sw)) + 1e-4 * w
             w -= 0.5 * grad
         self._w = w[1:]; self._b = float(w[0])
         self.feature_importances_ = np.abs(self._w)
@@ -222,10 +228,16 @@ MACRO_FEATURE_COLS = [
     'VIXY_Bias_MA20',
     'VIXY_Pos_60',
     'SMH_IGV_Ratio_Bias',
+    'QQQ_Bias_MA20',
+    'Breadth_MA20_Pct',
+    'Market_Regime_Score',
 ]
 
 FEATURE_COLS = STOCK_FEATURE_COLS + CROSS_ASSET_FEATURE_COLS + MACRO_FEATURE_COLS
-assert len(FEATURE_COLS) == 23, f"Expected exactly 23 features, got {len(FEATURE_COLS)}"
+assert len(FEATURE_COLS) == 26, f"Expected exactly 26 features, got {len(FEATURE_COLS)}"
+
+INVERSE_OR_SAFE_HAVEN_TICKERS = {'SQQQ', 'SOXS', 'VIXY', 'TLT', 'GLD', 'XAUUSD'}
+CANDIDATE_SPLIT_RATIOS = [2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 10.0, 12.0, 15.0, 20.0, 25.0, 0.5, 0.25, 0.2, 0.125, 0.1, 0.05]
 
 FEATURE_RATIONALES = {
     'QQQ_Bias_MA50': '纳指100大盘50日均线乖离，系统性科技Beta环境水温计',
@@ -250,8 +262,333 @@ FEATURE_RATIONALES = {
     'VIXY_Bias_MA20': '恐慌指数20日均线乖离，预警全市场流动性冲击与系统性踩踏',
     'SMH_Bias_MA50': '核心半导体硬件链50日均线状态，标定科技成长风格的系统性风险水位',
     'TLT_Bias_MA50': '20年+美债利率趋势偏离，映射宏观流动性宽松与贴现率预期对估值的压制',
-    'VIXY_Pos_60': '60日恐慌指数脉冲分位数，量化全市场风险偏好处于贪婪或极度恐慌底部'
+    'VIXY_Pos_60': '60日恐慌指数脉冲分位数，量化全市场风险偏好处于贪婪或极度恐慌底部',
+    'QQQ_Bias_MA20': '纳指20日均线短中期结构乖离，识别上涨顺风与破位空头切换拐点',
+    'Breadth_MA20_Pct': '全池79标的站上MA20市场宽度占比(%)，实时衡量个股赚钱效应与系统性广度',
+    'Market_Regime_Score': '客观牛熊体制得分(+1 多头顺风 / 0 震荡分化 / -1 空头防守)，抑制单边抄底惯性'
 }
+
+
+def compute_market_regime_state(
+    qqq_bias_ma20: float,
+    spy_bias_ma20: float,
+    qqq_bias_ma50: float = 0.0,
+    smh_bias_ma50: float = 0.0,
+    breadth_ma20_pct: float = 50.0,
+    vixy_pos_60: float = 0.5,
+    qqq_ret_5d: float = 0.0,
+    qqq_down_days_5d: float = 0.0,
+    defensive_flight_alert: bool = False,
+) -> Dict[str, Any]:
+    """
+    阶段一核心引擎 1：客观三态牛熊体制门禁 (Market Regime Gate，严格仅用 T 日及以前已知数据)。
+    返回 BULL_TREND / NEUTRAL_CHOP / BEAR_DEFENSE。
+    """
+    def _sf(v, default=0.0):
+        try:
+            f = float(v)
+            return default if (math.isnan(f) or math.isinf(f)) else f
+        except Exception:
+            return default
+
+    q20 = _sf(qqq_bias_ma20, 0.0)
+    s20 = _sf(spy_bias_ma20, q20)
+    q50 = _sf(qqq_bias_ma50, 0.0)
+    smh50 = _sf(smh_bias_ma50, 0.0)
+    breadth = float(np.clip(_sf(breadth_ma20_pct, 50.0), 0.0, 100.0))
+    vix_p = _sf(vixy_pos_60, 0.5)
+    q_ret5 = _sf(qqq_ret_5d, 0.0)
+    q_down5 = _sf(qqq_down_days_5d, 0.0)
+
+    reasons = []
+    if q20 < 0.0 and s20 < 0.0 and breadth < 35.0:
+        reasons.append(f"SPY/QQQ双破MA20且市场宽度仅{breadth:.1f}%<35%")
+    if q50 < -3.0 and smh50 < -3.0:
+        reasons.append(f"QQQ({q50:+.1f}%)与SMH({smh50:+.1f}%)双破MA50<-3%")
+    if breadth < 28.0 and (q20 < -0.5 or s20 < -0.5):
+        reasons.append(f"全池宽度极低({breadth:.1f}%<28%)且指数承压")
+    if (q_down5 >= 4.0 or q_ret5 <= -3.5) and q20 < 0.0 and breadth < 45.0:
+        reasons.append(f"大盘5日急杀/连跌({q_ret5:+.1f}%)且跌破MA20")
+
+    if reasons:
+        regime = "BEAR_DEFENSE"
+        regime_cn = "🔴 空头防守体制"
+        regime_score = -1.0
+    elif (
+        q20 >= 0.0
+        and s20 >= 0.0
+        and q50 >= 0.25
+        and breadth >= 50.0
+        and vix_p < 0.75
+        and not defensive_flight_alert
+    ):
+        regime = "BULL_TREND"
+        regime_cn = "🟢 多头顺风体制"
+        regime_score = 1.0
+        reasons.append(f"SPY/QQQ站稳MA20与MA50且宽度{breadth:.1f}%>=50%")
+    else:
+        regime = "NEUTRAL_CHOP"
+        regime_cn = "🟡 震荡分化体制"
+        regime_score = 0.0
+        reasons.append(f"指数与宽度({breadth:.1f}%)处于拉锯分化状态")
+
+    return {
+        "market_regime": regime,
+        "market_regime_cn": regime_cn,
+        "regime_score": regime_score,
+        "breadth_ma20_pct": round(breadth, 1),
+        "qqq_bias_ma20": round(q20, 2),
+        "spy_bias_ma20": round(s20, 2),
+        "qqq_down_days_5d": int(round(q_down5)),
+        "regime_reasons": reasons,
+    }
+
+
+def compute_time_decay_sample_weights(
+    dates: pd.Series,
+    fold_max_date: Optional[Any] = None,
+    half_life_trading_days: float = 210.0,
+    min_weight: float = 0.18,
+) -> np.ndarray:
+    """
+    阶段一核心引擎 2：Walk-Forward 折内指数时间衰减样本权重 (Zero Lookahead Leakage)。
+    严格以 fold_max_date (若未传入则取本训练集自身 dates.max()) 为锚点，
+    提高近 60~120 交易日样本话语权并压低 2~5 年前旧样本权重，均值归一化为 1.0。
+    """
+    if dates is None or len(dates) == 0:
+        return np.array([], dtype=float)
+    dts = pd.to_datetime(dates).dt.tz_localize(None)
+    anchor_dt = pd.to_datetime(fold_max_date).tz_localize(None) if (fold_max_date is not None and getattr(pd.to_datetime(fold_max_date), 'tzinfo', None) is not None) else (
+        pd.to_datetime(fold_max_date) if fold_max_date is not None else dts.max()
+    )
+    if fold_max_date is not None and len(dts) > 0:
+        max_sample_dt = dts.max()
+        assert max_sample_dt <= anchor_dt + pd.Timedelta(seconds=1), (
+            f"Time-decay leakage guard: sample date {max_sample_dt} > fold_max_date {anchor_dt}"
+        )
+    cal_age_days = np.maximum(0.0, (anchor_dt - dts).dt.total_seconds().to_numpy(dtype=float) / 86400.0)
+    age_trading_days = cal_age_days * (252.0 / 365.25)
+    raw_w = np.power(0.5, age_trading_days / max(float(half_life_trading_days), 1.0))
+    clipped_w = np.clip(raw_w, float(min_weight), 1.0)
+    mean_w = float(np.mean(clipped_w)) if len(clipped_w) > 0 else 1.0
+    if mean_w > 0:
+        clipped_w = clipped_w / mean_w
+    return clipped_w.astype(float)
+
+
+def apply_short_history_bayesian_shrinkage(
+    prob_val: float,
+    n_days: Optional[int],
+    min_full_days: int = 756,
+    prior_k: float = 500.0,
+    sub_500_cap_pct: float = 55.0,
+) -> Dict[str, Any]:
+    """
+    阶段一核心引擎 3：次新股与短样本贝叶斯胜率强收缩 (Bayesian Shrinkage)。
+    对有效历史日线 < 756 天（约3年）的标的，按 n/(n+500) 向 50% 基准收敛，
+    对 < 500 天样本额外设定 55% 上限并输出 95% 置信区间半径与降权标识。
+    """
+    try:
+        raw_f = float(prob_val)
+    except Exception:
+        raw_f = 50.0
+    p_pct = raw_f * 100.0 if raw_f <= 1.0 else raw_f
+    p_pct = float(np.clip(p_pct, 10.0, 95.0))
+
+    if n_days is None or int(n_days) <= 0:
+        return {
+            "shrunk_pct": round(p_pct, 1),
+            "shrunk_prob": round(p_pct / 100.0, 4),
+            "is_short_sample": False,
+            "shrink_factor": 1.0,
+            "ci_half_width": 0.0,
+            "ci_low": round(p_pct, 1),
+            "ci_high": round(p_pct, 1),
+            "sample_shrinkage_tag": "",
+        }
+
+    n_int = int(n_days)
+    if n_int >= int(min_full_days):
+        return {
+            "shrunk_pct": round(p_pct, 1),
+            "shrunk_prob": round(p_pct / 100.0, 4),
+            "is_short_sample": False,
+            "shrink_factor": 1.0,
+            "ci_half_width": 0.0,
+            "ci_low": round(p_pct, 1),
+            "ci_high": round(p_pct, 1),
+            "sample_shrinkage_tag": "",
+        }
+
+    shrink_factor = float(n_int) / (float(n_int) + float(prior_k))
+    shrunk_pct = 50.0 + (p_pct - 50.0) * shrink_factor
+    if n_int < 500:
+        shrunk_pct = min(shrunk_pct, float(sub_500_cap_pct))
+        tag = f"⚠️ 次新短样本({n_int}日·已收缩降权)"
+    else:
+        tag = f"📉 短样本({n_int}日·平滑收缩)"
+
+    shrunk_pct = float(np.clip(shrunk_pct, 10.0, 95.0))
+    ci_hw = round(min(25.0, 1.96 * 50.0 / math.sqrt(max(n_int, 20))), 1)
+    return {
+        "shrunk_pct": round(shrunk_pct, 1),
+        "shrunk_prob": round(shrunk_pct / 100.0, 4),
+        "is_short_sample": True,
+        "shrink_factor": round(shrink_factor, 4),
+        "ci_half_width": ci_hw,
+        "ci_low": round(max(10.0, shrunk_pct - ci_hw), 1),
+        "ci_high": round(min(95.0, shrunk_pct + ci_hw), 1),
+        "sample_shrinkage_tag": tag,
+    }
+
+
+def detect_and_heal_stock_split(
+    ticker: str,
+    df_hist: Optional[pd.DataFrame],
+    live_price: Optional[float] = None,
+    allow_network: bool = False,
+) -> Tuple[Optional[pd.DataFrame], Dict[str, Any]]:
+    """
+    阶段一核心引擎 4：拆股/合股除权自动检测与历史序列自愈防护 (处理 SNDK 1拆8 等异常跳变)。
+    当任意标的实时价或最新收盘价相对前序历史突变超过 ±40%（比值 <=0.60 或 >=1.67，排除 ANT/BTC-USD/XAUUSD）：
+    - 匹配标准拆股比例因子 (如 8.0 / 10.0 / 4.0 / 2.0 / 0.1 等)，可选结合 yfinance.splits 校验；
+    - 确认拆股后自动对未除权历史 OHLC 执行 /= split_factor、Volume *= split_factor；
+    - 未能确认合理解释的 >=40% 跳变则置 split_suspect_unhealed=True 拦截虚假止损推送。
+    """
+    meta: Dict[str, Any] = {
+        "split_detected": False,
+        "split_factor": 1.0,
+        "healed_rows": 0,
+        "split_suspect_unhealed": False,
+        "reason": "",
+    }
+    if ticker in ("ANT", "BTC-USD", "XAUUSD") or df_hist is None or len(df_hist) == 0:
+        return df_hist, meta
+
+    df = df_hist.copy()
+    has_date_col = "Date" in df.columns
+    if has_date_col:
+        df = df.sort_values("Date").reset_index(drop=True)
+    else:
+        df = df.sort_index()
+
+    if "Close" not in df.columns:
+        return df_hist, meta
+
+    closes = pd.to_numeric(df["Close"], errors="coerce").to_numpy(dtype=float)
+    valid_mask = np.isfinite(closes) & (closes > 0)
+    if not valid_mask.any():
+        return df_hist, meta
+
+    yf_confirmed_factor: Optional[float] = None
+    if allow_network:
+        try:
+            sp_ser = yf.Ticker(ticker).splits
+            if sp_ser is not None and len(sp_ser) > 0:
+                latest_sp = float(sp_ser.iloc[-1])
+                if latest_sp > 0 and latest_sp != 1.0:
+                    yf_confirmed_factor = latest_sp
+        except Exception:
+            yf_confirmed_factor = None
+
+    def _match_split_factor(raw_ratio: float) -> Optional[float]:
+        if raw_ratio <= 0 or not np.isfinite(raw_ratio):
+            return None
+        if yf_confirmed_factor is not None:
+            rel_yf = abs(raw_ratio - yf_confirmed_factor) / yf_confirmed_factor
+            if rel_yf <= 0.22:
+                return float(yf_confirmed_factor)
+        best_r = min(CANDIDATE_SPLIT_RATIOS, key=lambda r: abs(raw_ratio - r) / r)
+        rel_err = abs(raw_ratio - best_r) / best_r
+        if best_r >= 3.0 or best_r <= 0.35:
+            if rel_err <= 0.18:
+                return float(best_r)
+        elif rel_err <= 0.08 or (yf_confirmed_factor is not None and abs(yf_confirmed_factor - best_r) < 1e-3):
+            return float(best_r)
+        return None
+
+    def _apply_scale_before_ref(post_ref: float, factor: float, cutoff_pos: Optional[int] = None) -> int:
+        idx_arr = np.arange(len(df))
+        if cutoff_pos is not None:
+            pos_mask = idx_arr < cutoff_pos
+            ref_pos = int(cutoff_pos) - 1
+        else:
+            pos_mask = np.ones(len(df), dtype=bool)
+            ref_pos = len(df) - 1
+        if ref_pos < 0 or ref_pos >= len(closes) or not valid_mask[ref_pos]:
+            return 0
+        ref_c = closes[ref_pos]
+        if factor > 1.0:
+            if not (ref_c > (post_ref * 1.67)):
+                return 0
+        else:
+            if not (ref_c < (post_ref * 0.60)):
+                return 0
+        target_mask = pos_mask & valid_mask
+        if not target_mask.any():
+            return 0
+        row_labels = df.index[target_mask]
+        for col in ("Open", "High", "Low", "Close"):
+            if col in df.columns:
+                df.loc[row_labels, col] = pd.to_numeric(df.loc[row_labels, col], errors="coerce").astype(float) / factor
+        if "Volume" in df.columns:
+            df.loc[row_labels, "Volume"] = pd.to_numeric(df.loc[row_labels, "Volume"], errors="coerce").astype(float) * factor
+        return int(target_mask.sum())
+
+    # 1. Trigger A: 历史序列内部相邻交易日突变 > ±40%
+    # 若未得到 yfinance.splits 官方拆股确认，仅扫描末尾最近 5 个交易日边界，严禁误伤多年以前的新股/de-SPAC 剧烈波动
+    if len(closes) >= 2:
+        scan_start = 1 if yf_confirmed_factor is not None else max(1, len(closes) - 5)
+        for i in range(len(closes) - 1, scan_start - 1, -1):
+            c_prev = closes[i - 1]
+            c_cur = closes[i]
+            if not (np.isfinite(c_prev) and np.isfinite(c_cur) and c_prev > 0 and c_cur > 0):
+                continue
+            step_ratio = c_cur / c_prev
+            if step_ratio <= 0.60 or step_ratio >= 1.67:
+                raw_factor = c_prev / c_cur
+                matched = _match_split_factor(raw_factor)
+                if matched is not None:
+                    n_healed = _apply_scale_before_ref(c_cur, matched, cutoff_pos=i)
+                    if n_healed > 0:
+                        closes = pd.to_numeric(df["Close"], errors="coerce").to_numpy(dtype=float)
+                        meta.update({
+                            "split_detected": True,
+                            "split_factor": matched,
+                            "healed_rows": n_healed,
+                            "reason": f"内部日线断层除权自愈 ({c_prev:.2f}->{c_cur:.2f}, {matched:g}:1)",
+                        })
+                        break
+                else:
+                    meta["split_suspect_unhealed"] = True
+                    meta["reason"] = f"异常跳变待核验 ({c_prev:.2f}->{c_cur:.2f})"
+                    break
+
+    # 2. Trigger B: live_price 相对末尾收盘突变 > ±40%
+    if live_price is not None and float(live_price) > 0 and np.isfinite(float(live_price)):
+        lp = float(live_price)
+        last_c = float(closes[-1])
+        if last_c > 0:
+            ratio_cur = lp / last_c
+            if ratio_cur <= 0.60 or ratio_cur >= 1.67:
+                raw_factor = last_c / lp
+                matched = _match_split_factor(raw_factor)
+                if matched is not None:
+                    n_healed = _apply_scale_before_ref(lp, matched, cutoff_pos=None)
+                    if n_healed > 0:
+                        total_healed = int(meta.get("healed_rows", 0)) + n_healed
+                        meta.update({
+                            "split_detected": True,
+                            "split_factor": matched,
+                            "healed_rows": total_healed,
+                            "split_suspect_unhealed": False,
+                            "reason": f"实时价触发除权自愈 ({last_c:.2f} vs live {lp:.2f}, {matched:g}:1)",
+                        })
+                else:
+                    meta["split_suspect_unhealed"] = True
+                    meta["reason"] = f"实时价异常跳变待确认 ({last_c:.2f} vs {lp:.2f})"
+
+    return df, meta
 
 
 # ==============================================================================
@@ -707,14 +1044,25 @@ def fetch_or_load_panel_data(
                 has_btc_weekends = any(d.weekday() >= 5 for d in btc_dates)
                 expected_btc_date = _get_latest_expected_btc_day()
                 btc_fresh = (bool(btc_dates) and max(btc_dates) >= expected_btc_date and has_btc_weekends)
+                cache_modified = False
                 if not btc_fresh:
                     print("[*] 🔄 检测到 BTC-USD 需补齐 7x24 周末自然日 K 线与最新 UTC 日线，单独增量更新 BTC-USD...")
                     btc_new = _fetch_single_ticker('BTC-USD', start_date=start_date)
                     if btc_new is not None and not btc_new.empty:
                         df = pd.concat([df[df['Ticker'] != 'BTC-USD'], btc_new], ignore_index=True)
-                        df = df.sort_values(['Date', 'Ticker']).reset_index(drop=True)
-                        df.to_parquet(full_cache_path, engine='pyarrow', index=False)
-                        max_cache_date = df['Date'].max().date()
+                        cache_modified = True
+                # 拆股/合股除权自愈巡检（如 SNDK 1拆8）
+                healed_groups = []
+                for _tk, _grp in df.groupby('Ticker', sort=False):
+                    _h_grp, _sp_meta = detect_and_heal_stock_split(_tk, _grp, allow_network=False)
+                    if _sp_meta.get('split_detected'):
+                        print(f"  [🔧 Split Self-Heal] {_tk}: {_sp_meta.get('reason')} (修复 {_sp_meta.get('healed_rows')} 行)")
+                        cache_modified = True
+                    healed_groups.append(_h_grp)
+                if cache_modified:
+                    df = pd.concat(healed_groups, ignore_index=True).sort_values(['Date', 'Ticker']).reset_index(drop=True)
+                    df.to_parquet(full_cache_path, engine='pyarrow', index=False)
+                    max_cache_date = df['Date'].max().date()
                 print(f"[+] ✅ 缓存完整性与新鲜度校验通过: 共 {len(tickers_in_cache)} 只标的, {len(df)} 条交易日记录 (最新: {max_cache_date})")
                 return df
             elif not is_fresh:
@@ -826,6 +1174,7 @@ def compute_stock_features(df_stock: pd.DataFrame) -> pd.DataFrame:
     df['Vol_Ratio_20'] = volume / (vol_ma20 + 1e-6)
     bar_range = high - low
     df['Bar_Strength'] = (close - low) / np.where(bar_range > 1e-6, bar_range, 1.0)
+    df['History_Bars'] = np.arange(1, len(df) + 1, dtype=int)
 
     # 安全清洗异常值
     for col in STOCK_FEATURE_COLS:
@@ -839,7 +1188,7 @@ def compute_macro_features(
     macro_map: Optional[Dict[str, pd.DataFrame]] = None
 ) -> pd.DataFrame:
     """
-    基于宏观基准 ETF (QQQ, SMH, IGV, TLT, VIXY) 计算 6 维全局气象特征与基准收益率。
+    基于宏观基准 ETF (QQQ, SPY, SMH, IGV, TLT, VIXY) 计算全局气象特征、MA20 体制与基准收益率。
     支持直接传入 macro_map 字典或从 raw_panel 中提取。
     每个 ETF 子表独立按 Date 排序并计算指标，统一通过 pd.merge(..., on='Date', how='left') 合并，
     彻底解决切片行号索引不相交导致特征全为 NaN 并被静默填 0 的问题。
@@ -868,14 +1217,33 @@ def compute_macro_features(
     tlt = etf_dfs['TLT'].sort_values('Date').reset_index(drop=True)
     vixy = etf_dfs['VIXY'].sort_values('Date').reset_index(drop=True)
 
-    # 1. QQQ 特征表
+    # 1. QQQ 特征表 (含 MA50 / MA20 乖离与近 5 日连跌天数)
     qqqm_close = qqqm['Close'].astype(float)
     qqqm_ma50 = qqqm_close.rolling(50, min_periods=1).mean()
+    qqqm_ma20 = qqqm_close.rolling(20, min_periods=1).mean()
+    qqqm_down_days_5d = (qqqm_close.diff() < 0.0).astype(float).rolling(5, min_periods=1).sum()
     qqqm_feat = pd.DataFrame({
         'Date': qqqm['Date'],
         'QQQ_Bias_MA50': ((qqqm_close - qqqm_ma50) / (qqqm_ma50 + 1e-8)) * 100.0,
-        'QQQ_Ret_5d': qqqm_close.pct_change(5).fillna(0.0) * 100.0
+        'QQQ_Bias_MA20': ((qqqm_close - qqqm_ma20) / (qqqm_ma20 + 1e-8)) * 100.0,
+        'QQQ_Ret_5d': qqqm_close.pct_change(5).fillna(0.0) * 100.0,
+        'QQQ_Down_Days_5d': qqqm_down_days_5d.fillna(0.0),
     })
+
+    # 1.5 SPY 特征表 (缺失 SPY 时优雅回退 QQQ)
+    if 'SPY' in etf_dfs and len(etf_dfs['SPY']) > 0:
+        spy_df = etf_dfs['SPY'].sort_values('Date').reset_index(drop=True)
+        spy_close = spy_df['Close'].astype(float)
+        spy_ma20 = spy_close.rolling(20, min_periods=1).mean()
+        spy_feat = pd.DataFrame({
+            'Date': spy_df['Date'],
+            'SPY_Bias_MA20': ((spy_close - spy_ma20) / (spy_ma20 + 1e-8)) * 100.0,
+        })
+    else:
+        spy_feat = pd.DataFrame({
+            'Date': qqqm['Date'],
+            'SPY_Bias_MA20': qqqm_feat['QQQ_Bias_MA20'],
+        })
 
     # 2. SMH 特征表
     smh_close = smh['Close'].astype(float)
@@ -929,8 +1297,12 @@ def compute_macro_features(
     else:
         all_macro_dates = sorted(qqqm['Date'].unique())
     macro_df = pd.DataFrame({'Date': all_macro_dates})
-    for sub_df in [qqqm_feat, smh_feat, tlt_feat, vixy_feat, smh_igv_feat]:
+    for sub_df in [qqqm_feat, spy_feat, smh_feat, tlt_feat, vixy_feat, smh_igv_feat]:
         macro_df = pd.merge(macro_df, sub_df, on='Date', how='left')
+
+    # 默认中性宽度/体制占位 (将在 build_feature_panel 内用当日真实全池宽度精准覆写)
+    macro_df['Breadth_MA20_Pct'] = 50.0
+    macro_df['Market_Regime_Score'] = 0.0
 
     # 因果安全前向填充并清洗异常值
     for col in macro_df.columns:
@@ -942,19 +1314,20 @@ def compute_macro_features(
 
 def build_feature_panel(
     raw_panel: pd.DataFrame,
-    macro_map: Optional[Dict[str, pd.DataFrame]] = None
+    macro_map: Optional[Dict[str, pd.DataFrame]] = None,
+    drop_warmup: bool = False
 ) -> pd.DataFrame:
     """
     构建 Qlib 风格长表截面数据 (Long Panel Format [Date, Ticker, Sector]):
     1. 独立计算每个股票自身的 15 维技术指标；
-    2. 计算宏观 ETF 的 6 维全局气象与基准收益率；
+    2. 计算宏观 ETF 的全局气象与基准收益率；
     3. 按 Date 将宏观特征左连接广播到每个个股；
-    4. 计算跨资产超额收益 Alpha_QQQ_5d, Alpha_SMH_20d；
+    4. 计算跨资产超额收益 Alpha_QQQ_5d, Alpha_SMH_20d 与严格同日横截面市场宽度 Breadth_MA20_Pct & 体制得分 Market_Regime_Score；
     5. 纵向垂直堆叠为长表截面格式；
-    6. 严格禁止宽表全局 dropna()，确保次新股 (CRWV, LUNR, CRDO) 不会截断成熟股票的 2021-2023 历史样本。
+    6. 严格禁止宽表全局 dropna()，确保次新股 (CRWV, LUNR, CRDO, SNDK) 不会截断成熟股票的历史样本。
     
     返回:
-        pd.DataFrame: 包含 Date, Ticker, Sector, 基础价格与 23 维特征的长表 DataFrame。
+        pd.DataFrame: 包含 Date, Ticker, Sector, 基础价格与 26 维特征的长表 DataFrame。
     """
     macro_df = compute_macro_features(raw_panel=raw_panel, macro_map=macro_map)
 
@@ -993,14 +1366,42 @@ def build_feature_panel(
     merged['Alpha_SMH_20d'] = np.clip(0.65 * cs_rank_smh + 0.35 * sig_smh, 0.0, 1.0)
     merged = merged.drop(columns=['_raw_alpha_qqqm', '_raw_alpha_smh'], errors='ignore')
 
-    # 保证 23 维特征完整且无 unhandled NaN/Inf
+    # 计算严格 T 日同日横截面 MA20 市场宽度与三态牛熊体制得分 (零未来函数)
+    merged['_above_ma20'] = (merged['Bias_MA20'] >= 0.0).astype(float)
+    merged['Breadth_MA20_Pct'] = merged.groupby('Date')['_above_ma20'].transform('mean').fillna(0.5) * 100.0
+    q20 = merged['QQQ_Bias_MA20'].astype(float)
+    s20 = merged['SPY_Bias_MA20'].astype(float)
+    q50 = merged['QQQ_Bias_MA50'].astype(float)
+    smh50 = merged['SMH_Bias_MA50'].astype(float)
+    br = merged['Breadth_MA20_Pct'].astype(float)
+    vix_p = merged['VIXY_Pos_60'].astype(float)
+    q_ret5 = merged['QQQ_Ret_5d'].astype(float)
+    q_down5 = merged['QQQ_Down_Days_5d'].astype(float)
+
+    bear_cond = (
+        ((q20 < 0.0) & (s20 < 0.0) & (br < 35.0))
+        | ((q50 < -3.0) & (smh50 < -3.0))
+        | ((br < 28.0) & ((q20 < -0.5) | (s20 < -0.5)))
+        | (((q_down5 >= 4.0) | (q_ret5 <= -3.5)) & (q20 < 0.0) & (br < 45.0))
+    )
+    bull_cond = (
+        (~bear_cond)
+        & (q20 >= 0.0)
+        & (s20 >= 0.0)
+        & (q50 >= 0.25)
+        & (br >= 50.0)
+        & (vix_p < 0.75)
+    )
+    merged['Market_Regime_Score'] = np.where(bear_cond, -1.0, np.where(bull_cond, 1.0, 0.0))
+
+    # 保证 26 维特征完整且无 unhandled NaN/Inf
     for feat in FEATURE_COLS:
         if feat not in merged.columns:
             merged[feat] = 0.0
         merged[feat] = merged[feat].replace([np.inf, -np.inf], np.nan).fillna(0.0)
 
-    # 移除辅助对齐列
-    merged = merged.drop(columns=['QQQ_Ret_5d', 'SMH_Ret_20d'], errors='ignore')
+    # 移除临时辅助列
+    merged = merged.drop(columns=['QQQ_Ret_5d', 'SMH_Ret_20d', '_above_ma20'], errors='ignore')
 
     return merged
 
@@ -1339,29 +1740,33 @@ def train_live_models(
             'n_jobs': -1
         }
 
-    # 做多实盘专属模型训练
+    # 做多实盘专属模型训练 (引入时间衰减样本权重，half_life=210 交易日)
     live_train_long = df.dropna(subset=['Label']).copy()
     live_clf_long = None
     if len(live_train_long) >= 20 and live_train_long['Label'].nunique() >= 2:
         t_live_start = time.time()
+        live_max_d_ts = pd.to_datetime(live_train_long['Date']).max()
+        w_live_long = compute_time_decay_sample_weights(live_train_long['Date'], fold_max_date=live_max_d_ts)
         live_clf_long = _make_classifier(lgb_params)
-        live_clf_long.fit(live_train_long[feature_cols], live_train_long['Label'].astype(int))
+        live_clf_long.fit(live_train_long[feature_cols], live_train_long['Label'].astype(int), sample_weight=w_live_long)
         t_live_elapsed = time.time() - t_live_start
         live_min_d = live_train_long['Date'].min().strftime('%Y-%m-%d')
-        live_max_d = live_train_long['Date'].max().strftime('%Y-%m-%d')
-        print(f"  [+] Live Refit (做多专属实盘模型): 全量已结算样本 ({live_min_d} ~ {live_max_d}, {len(live_train_long)} 样本, 严守 T-5 尾部隔离) | 训练耗时 {t_live_elapsed:.1f}s")
+        live_max_d = live_max_d_ts.strftime('%Y-%m-%d')
+        print(f"  [+] Live Refit (做多专属实盘模型 · Time-Decay 210d): 全量已结算样本 ({live_min_d} ~ {live_max_d}, {len(live_train_long)} 样本, 严守 T-5 尾部隔离) | 训练耗时 {t_live_elapsed:.1f}s")
 
-    # 做空实盘专属模型训练
+    # 做空实盘专属模型训练 (引入时间衰减样本权重，half_life=210 交易日)
     live_train_short = df.dropna(subset=['Label_Short']).copy()
     live_clf_short = None
     if len(live_train_short) >= 20 and live_train_short['Label_Short'].nunique() >= 2:
         t_live_start = time.time()
+        live_max_ds_ts = pd.to_datetime(live_train_short['Date']).max()
+        w_live_short = compute_time_decay_sample_weights(live_train_short['Date'], fold_max_date=live_max_ds_ts)
         live_clf_short = _make_classifier(lgb_params)
-        live_clf_short.fit(live_train_short[feature_cols], live_train_short['Label_Short'].astype(int))
+        live_clf_short.fit(live_train_short[feature_cols], live_train_short['Label_Short'].astype(int), sample_weight=w_live_short)
         t_live_elapsed = time.time() - t_live_start
         live_min_ds = live_train_short['Date'].min().strftime('%Y-%m-%d')
-        live_max_ds = live_train_short['Date'].max().strftime('%Y-%m-%d')
-        print(f"  [+] Live Refit (做空专属实盘模型): 全量已结算样本 ({live_min_ds} ~ {live_max_ds}, {len(live_train_short)} 样本, 严守 T-5 尾部隔离) | 训练耗时 {t_live_elapsed:.1f}s")
+        live_max_ds = live_max_ds_ts.strftime('%Y-%m-%d')
+        print(f"  [+] Live Refit (做空专属实盘模型 · Time-Decay 210d): 全量已结算样本 ({live_min_ds} ~ {live_max_ds}, {len(live_train_short)} 样本, 严守 T-5 尾部隔离) | 训练耗时 {t_live_elapsed:.1f}s")
 
     return {
         'long': live_clf_long,
@@ -1443,22 +1848,24 @@ def run_walk_forward_cv(
             print(f"  [-] Fold {year}: 有效样本为空，跳过！")
             continue
 
-        # --- 做多模型训练 ---
+        # --- 做多模型训练 (折内独立计算时间衰减权重，零未来泄漏) ---
         X_train = train_clean[FEATURE_COLS]
         y_train = train_clean['Label'].astype(int)
         X_test = test_clean[FEATURE_COLS]
         y_test = test_clean['Label'].astype(int)
+        w_fold_long = compute_time_decay_sample_weights(train_clean['Date'], fold_max_date=fold['max_train_date'])
 
         t_start = time.time()
         clf = _make_classifier(lgb_params)
-        clf.fit(X_train, y_train)
+        clf.fit(X_train, y_train, sample_weight=w_fold_long)
         probs = clf.predict_proba(X_test)[:, 1]
         preds = (probs >= 0.5).astype(int)
 
-        # --- 做空模型训练 ---
+        # --- 做空模型训练 (折内独立计算时间衰减权重，零未来泄漏) ---
         clf_short = _make_classifier(lgb_params)
         if len(train_clean_short) >= 10 and train_clean_short['Label_Short'].nunique() >= 2:
-            clf_short.fit(train_clean_short[FEATURE_COLS], train_clean_short['Label_Short'].astype(int))
+            w_fold_short = compute_time_decay_sample_weights(train_clean_short['Date'], fold_max_date=fold['max_train_date'])
+            clf_short.fit(train_clean_short[FEATURE_COLS], train_clean_short['Label_Short'].astype(int), sample_weight=w_fold_short)
             probs_short = clf_short.predict_proba(X_test)[:, 1]
             preds_short = (probs_short >= 0.5).astype(int)
         else:
@@ -1468,7 +1875,8 @@ def run_walk_forward_cv(
 
         cols_to_keep = ['Date', 'Ticker', 'Sector', 'Close', 'Label']
         for col_name in ['Entry_Price', 'Target_Upper', 'Target_Lower', 'Max_Gain_5d', 'Realized_Return', 'Barrier_Hit',
-                         'Label_Short', 'Short_Target_TP', 'Short_Target_SL', 'Barrier_Hit_Short', 'Realized_Return_Short']:
+                         'Label_Short', 'Short_Target_TP', 'Short_Target_SL', 'Barrier_Hit_Short', 'Realized_Return_Short',
+                         'Market_Regime_Score', 'Breadth_MA20_Pct', 'QQQ_Bias_MA20']:
             if col_name in test_clean.columns:
                 cols_to_keep.append(col_name)
         fold_oos = test_clean[cols_to_keep].copy()
@@ -1712,7 +2120,7 @@ def fetch_finnhub_realtime_quotes(tickers: List[str]) -> Dict[str, Dict]:
 def overlay_finnhub_quotes(raw_panel: pd.DataFrame, quotes: Dict[str, Dict]) -> pd.DataFrame:
     """
     将 Finnhub 实时报价精准覆盖到最新日 K 线上。
-    若某个标的缺少实时报价，则保持 yfinance 最新收盘价不变 (优雅兜底)。
+    若检测到相对历史收盘价发生 ±40% 拆股/合股跳变，自动触发除权自愈后再写入实时价。
     """
     if not quotes:
         return raw_panel
@@ -1720,12 +2128,20 @@ def overlay_finnhub_quotes(raw_panel: pd.DataFrame, quotes: Dict[str, Dict]) -> 
     df = raw_panel.copy()
     overlay_count = 0
     for symbol, q in quotes.items():
-        sub_idx = df[df['Ticker'] == symbol].index
+        sub_mask = (df['Ticker'] == symbol)
+        sub_idx = df[sub_mask].index
         if len(sub_idx) == 0:
             continue
-        last_idx = sub_idx[-1]
         active_price = q.get('last', 0.0)
         if active_price > 0:
+            sub_df = df.loc[sub_idx].copy()
+            healed_sub, sp_meta = detect_and_heal_stock_split(symbol, sub_df, live_price=active_price, allow_network=True)
+            if sp_meta.get('split_detected'):
+                print(f"  [🔧 Split Self-Heal Overlay] {symbol}: {sp_meta.get('reason')}")
+                for col in ('Open', 'High', 'Low', 'Close', 'Volume'):
+                    if col in healed_sub.columns and col in df.columns:
+                        df.loc[sub_idx, col] = healed_sub[col].values
+            last_idx = sub_idx[-1]
             df.at[last_idx, 'Close'] = active_price
             q_high = q.get('high', 0.0)
             q_low = q.get('low', 0.0)
@@ -3485,17 +3901,62 @@ def evaluate_macro_weather(
     smh_igv: float = 0.0,
     latest_date: str = "",
     defensive_flight: Optional[Dict[str, Any]] = None,
-    cross_industry_breadth: Optional[Dict[str, Any]] = None
+    cross_industry_breadth: Optional[Dict[str, Any]] = None,
+    qqq_bias_ma20: Optional[float] = None,
+    spy_bias_ma20: Optional[float] = None,
+    breadth_ma20_pct: Optional[float] = None,
+    qqq_ret_5d: Optional[float] = None,
+    qqq_down_days_5d: Optional[float] = None,
+    latest_stocks_df: Optional[pd.DataFrame] = None,
 ) -> Dict[str, Any]:
     """
-    统一宏观水温气象判定引擎 (与 integrated_market_radar.py 保持 100% 规则对齐):
+    统一宏观水温气象判定引擎 (含阶段一三态牛熊体制门禁 Market Regime Gate):
     1. 暴雨空仓: QQQ_Bias_MA50 < -3.0% 且 SMH_Bias_MA50 < -3.0% (双破位共振)
     2. 晴天做多: 纳指与半导体双双站上生命线 (QQQ >= 0.25% 且 SMH >= 0.25%) 且无 VIX 恐慌脉冲 (VIXY_Pos_60 < 0.75)
     3. 阴天防守: 单边偏离在 0% ~ -5% 且未双破位、或大盘/芯片分化、或 VIX 脉冲预警、或防御因子起飞
-    4. 跨行业广度联动: 识别 🔄 科技结构性轮动（传统板块抗跌）与 🚨 全市场系统性普跌预警
+    4. 三态体制划分: BULL_TREND / NEUTRAL_CHOP / BEAR_DEFENSE + 79 全池 MA20 宽度联动
     """
     flight_info = defensive_flight or compute_defensive_flight_alert()
     breadth_info = cross_industry_breadth or compute_cross_industry_breadth_alert()
+
+    if latest_stocks_df is not None and not latest_stocks_df.empty:
+        if qqq_bias_ma20 is None and 'QQQ_Bias_MA20' in latest_stocks_df.columns:
+            qqq_bias_ma20 = float(latest_stocks_df['QQQ_Bias_MA20'].mean())
+        if spy_bias_ma20 is None and 'SPY_Bias_MA20' in latest_stocks_df.columns:
+            spy_bias_ma20 = float(latest_stocks_df['SPY_Bias_MA20'].mean())
+        if breadth_ma20_pct is None:
+            if 'Breadth_MA20_Pct' in latest_stocks_df.columns:
+                breadth_ma20_pct = float(latest_stocks_df['Breadth_MA20_Pct'].mean())
+            elif 'Bias_MA20' in latest_stocks_df.columns:
+                breadth_ma20_pct = float((latest_stocks_df['Bias_MA20'] >= 0.0).mean() * 100.0)
+        if qqq_ret_5d is None and 'QQQ_Ret_5d' in latest_stocks_df.columns:
+            qqq_ret_5d = float(latest_stocks_df['QQQ_Ret_5d'].mean())
+        if qqq_down_days_5d is None and 'QQQ_Down_Days_5d' in latest_stocks_df.columns:
+            qqq_down_days_5d = float(latest_stocks_df['QQQ_Down_Days_5d'].mean())
+
+    eff_q20 = float(qqq_bias_ma20) if qqq_bias_ma20 is not None else float(qqqm_bias * 0.7)
+    eff_s20 = float(spy_bias_ma20) if spy_bias_ma20 is not None else eff_q20
+    if breadth_ma20_pct is not None:
+        eff_breadth = float(breadth_ma20_pct)
+    elif qqqm_bias < -3.0 and smh_bias < -3.0:
+        eff_breadth = 25.0
+    elif qqqm_bias >= 0.25 and smh_bias >= 0.25:
+        eff_breadth = 60.0
+    else:
+        eff_breadth = 45.0
+
+    regime_info = compute_market_regime_state(
+        qqq_bias_ma20=eff_q20,
+        spy_bias_ma20=eff_s20,
+        qqq_bias_ma50=qqqm_bias,
+        smh_bias_ma50=smh_bias,
+        breadth_ma20_pct=eff_breadth,
+        vixy_pos_60=vixy_pos,
+        qqq_ret_5d=float(qqq_ret_5d or 0.0),
+        qqq_down_days_5d=float(qqq_down_days_5d or 0.0),
+        defensive_flight_alert=bool(flight_info.get('is_alert')),
+    )
+
     is_vix_panic = bool(vixy_pos >= 0.75)
     is_bull_base = bool(qqqm_bias >= 0.25 and smh_bias >= 0.25)
 
@@ -3534,6 +3995,13 @@ def evaluate_macro_weather(
         'smh_bias_ma50': round(smh_bias, 2),
         'smh_igv': round(smh_igv, 2),
         'latest_date': latest_date,
+        'market_regime': regime_info['market_regime'],
+        'market_regime_cn': regime_info['market_regime_cn'],
+        'regime_score': regime_info['regime_score'],
+        'breadth_ma20_pct': regime_info['breadth_ma20_pct'],
+        'qqq_bias_ma20': regime_info['qqq_bias_ma20'],
+        'spy_bias_ma20': regime_info['spy_bias_ma20'],
+        'regime_reasons': regime_info['regime_reasons'],
         'defensive_flight': flight_info,
         'cross_industry_breadth': breadth_info,
     }
@@ -4135,9 +4603,39 @@ def generate_report_tables(
 
         latest_df['Prob_Short_1'] = live_short_probs
 
-        has_live_structure = ('Bias_MA50' in latest_df.columns)
+        _is_synthetic_const_placeholder = (
+            ('RSI_14' in latest_df.columns)
+            and ('Is_Core_28' not in latest_df.columns)
+            and ('Low_Prev' not in latest_df.columns)
+            and bool((latest_df['RSI_14'] == 1.0).all())
+            and bool((latest_df['Bias_MA50'] == 1.0).all())
+        )
+        has_live_structure = ('Bias_MA50' in latest_df.columns) and (not _is_synthetic_const_placeholder)
         pure_etf_15 = {'QQQ', 'SPY', 'DIA', 'IWM', 'SMH', 'SOXX', 'SOXL', 'KORU', 'IGV', 'TLT', 'GLD', 'VIXY', 'SQQQ', 'SOXS'}
         is_70_pool = (len(latest_df) > 28)
+
+        raw_hist_bars_map: Dict[str, int] = {}
+        if raw_panel is not None and not raw_panel.empty and 'Ticker' in raw_panel.columns:
+            try:
+                raw_hist_bars_map = {str(k): int(v) for k, v in raw_panel.groupby('Ticker').size().to_dict().items()}
+            except Exception:
+                raw_hist_bars_map = {}
+
+        _mw_dict = macro_weather if isinstance(macro_weather, dict) else {}
+        market_regime = str(_mw_dict.get('market_regime') or '')
+        if not market_regime:
+            if has_live_structure and ('Market_Regime_Score' in latest_df.columns or 'Breadth_MA20_Pct' in latest_df.columns):
+                _r_score = float(latest_df['Market_Regime_Score'].mean()) if 'Market_Regime_Score' in latest_df.columns else 0.0
+                _br = float(latest_df['Breadth_MA20_Pct'].mean()) if 'Breadth_MA20_Pct' in latest_df.columns else 50.0
+                if _r_score <= -0.5 or _br < 35.0:
+                    market_regime = 'BEAR_DEFENSE'
+                elif _r_score >= 0.5:
+                    market_regime = 'BULL_TREND'
+                else:
+                    market_regime = 'NEUTRAL_CHOP'
+            else:
+                market_regime = 'NEUTRAL_CHOP'
+        is_bear_regime = (market_regime == 'BEAR_DEFENSE')
 
         calibrated_probs = []
         effective_raw_probs = []
@@ -4147,12 +4645,17 @@ def generate_report_tables(
         is_etf_flags = []
         is_short_covering_flags = []
         sort_tier_flags = []
+        history_bars_list = []
+        is_short_sample_flags = []
+        shrinkage_tags = []
+        win_rate_cis = []
+        is_regime_capped_flags = []
         four_h_signals_map = compute_4h_resonance_signals(
             tickers=[str(t) for t in latest_df['Ticker'].tolist()],
             raw_panel=raw_panel,
             latest_df=latest_df,
             allow_network=False
-        ) if has_live_structure else {}
+        ) if (has_live_structure and (raw_panel is not None or len(latest_df) > 15)) else {}
 
         for _, row in latest_df.iterrows():
             tk = str(row['Ticker'])
@@ -4164,6 +4667,11 @@ def generate_report_tables(
 
             model_raw_p = float(row['Prob_1'])
             is_etf = (tk in pure_etf_15)
+            n_days_val = row.get('History_Bars', None)
+            try:
+                n_days_tk = int(n_days_val) if (n_days_val is not None and not pd.isna(n_days_val) and int(n_days_val) > 0) else raw_hist_bars_map.get(tk)
+            except Exception:
+                n_days_tk = raw_hist_bars_map.get(tk)
 
             if has_live_structure:
                 bias_ma50 = float(row.get('Bias_MA50', 0.0))
@@ -4228,6 +4736,27 @@ def generate_report_tables(
                 cal_p = model_raw_p * mult
                 sort_tier = 0
 
+            # 阶段一规则 3：次新股与短样本 (<756日) 贝叶斯强收缩 + <500日置信上限
+            shrink_res = apply_short_history_bayesian_shrinkage(cal_p, n_days_tk)
+            if shrink_res['is_short_sample']:
+                cal_p = float(shrink_res['shrunk_prob'])
+                if is_broken:
+                    cal_p = min(cal_p, 0.495)
+
+            # 阶段一规则 1：空头防守体制门禁 (BEAR_DEFENSE 对常规多头平滑压制并硬封顶 <=48.0%，取消激进抄底)
+            is_regime_capped = False
+            if is_bear_regime and tk not in INVERSE_OR_SAFE_HAVEN_TICKERS:
+                if cal_p > 0.40:
+                    cal_p = 0.40 + (cal_p - 0.40) * 0.25
+                cal_p = float(np.clip(cal_p, 0.15, 0.480))
+                if is_short_covering:
+                    is_short_covering = False
+                    is_broken = True
+                    sort_tier = 2
+                elif sort_tier == 0:
+                    sort_tier = 2
+                is_regime_capped = True
+
             is_short_covering_flags.append(is_short_covering)
             model_raw_probs.append(model_raw_p)
             effective_raw_probs.append(eff_raw_p)
@@ -4236,6 +4765,11 @@ def generate_report_tables(
             is_broken_flags.append(is_broken)
             is_etf_flags.append(is_etf)
             sort_tier_flags.append(sort_tier)
+            history_bars_list.append(n_days_tk)
+            is_short_sample_flags.append(bool(shrink_res['is_short_sample']))
+            shrinkage_tags.append(str(shrink_res['sample_shrinkage_tag']))
+            win_rate_cis.append([shrink_res['ci_low'], shrink_res['ci_high']] if shrink_res['is_short_sample'] else None)
+            is_regime_capped_flags.append(is_regime_capped)
 
         latest_df['Model_Raw_Prob'] = model_raw_probs
         latest_df['Prob_1'] = effective_raw_probs
@@ -4245,6 +4779,11 @@ def generate_report_tables(
         latest_df['Is_Short_Covering'] = is_short_covering_flags
         latest_df['Is_ETF'] = is_etf_flags
         latest_df['Sort_Tier'] = sort_tier_flags
+        latest_df['History_Bars_Resolved'] = history_bars_list
+        latest_df['Is_Short_Sample'] = is_short_sample_flags
+        latest_df['Sample_Shrinkage_Tag'] = shrinkage_tags
+        latest_df['Win_Rate_CI_Pct'] = win_rate_cis
+        latest_df['Is_Regime_Capped'] = is_regime_capped_flags
 
         # 按右侧结构完好正股优先 + 赛道校准得分 Calibrated_Prob 降序排序，杜绝破位飞刀与 ETF 霸榜
         latest_sorted = latest_df.sort_values(
@@ -4265,6 +4804,18 @@ def generate_report_tables(
             is_etf = bool(row.get('Is_ETF', False))
             is_crash_halt = bool(row.get('is_crash_halt', False))
             is_cooling_halt = bool(row.get('is_cooling_halt', False))
+            is_regime_capped = bool(row.get('Is_Regime_Capped', False))
+            n_days_tk = row.get('History_Bars_Resolved', None)
+            if pd.isna(n_days_tk):
+                n_days_tk = None
+            else:
+                try:
+                    n_days_tk = int(n_days_tk)
+                except Exception:
+                    n_days_tk = None
+            is_short_sample = bool(row.get('Is_Short_Sample', False))
+            sample_shrinkage_tag = str(row.get('Sample_Shrinkage_Tag', '') or '')
+            win_rate_ci_pct = row.get('Win_Rate_CI_Pct', None)
 
             bias_ma50_val = round(float(row.get('Bias_MA50', 0.0)), 2) if has_live_structure else 0.0
             ema10_20_spread_val = round(float(row.get('EMA10_20_Spread', 0.0)), 2) if has_live_structure else 0.0
@@ -4303,6 +4854,9 @@ def generate_report_tables(
             elif is_broken:
                 action = "🚨 破位飞刀·严禁左侧抄底"
                 action_tag = "action-warning"
+            elif is_regime_capped:
+                action = "🛡️ 暴雨空仓·严禁左侧接刀" if is_storm else "🛡️ 空头体制封顶·暂停常规做多"
+                action_tag = "action-watch"
             elif is_storm:
                 if raw_prob_pct >= 50.0 and cal_prob_pct >= 55.0:
                     action = "🛡️ 暴雨防守·仅极小仓试错"
@@ -4352,6 +4906,8 @@ def generate_report_tables(
                 put_wall=put_wall_val,
                 pcr=pcr_val
             )
+            if n_days_tk is not None and n_days_tk < 756:
+                cal_short_p = float(apply_short_history_bayesian_shrinkage(cal_short_p, n_days_tk)['shrunk_pct'])
 
             # 空头动态止盈下沿与防守止损上沿
             short_entry_p = close_p
@@ -4387,6 +4943,12 @@ def generate_report_tables(
                 'is_crash_halt': is_crash_halt,
                 'is_cooling_halt': is_cooling_halt,
                 'macro_temp': weather_status,
+                'market_regime': market_regime,
+                'is_regime_capped': is_regime_capped,
+                'history_bars': n_days_tk,
+                'is_short_sample': is_short_sample,
+                'sample_shrinkage_tag': sample_shrinkage_tag,
+                'win_rate_ci_pct': win_rate_ci_pct,
 
                 # 多头决策字段
                 'model_raw_prob_pct': round(model_raw_pct, 1),
@@ -4518,7 +5080,7 @@ def generate_report_tables(
     time_cycle_proj = {}
     try:
         p_df = raw_panel
-        if p_df is None or p_df.empty:
+        if (p_df is None or p_df.empty) and len(latest_df) > 15:
             cache_p = _resolve_cache_path('data_cache/ml_panel_5y.parquet')
             if os.path.exists(cache_p):
                 p_df = pd.read_parquet(cache_p)
@@ -4541,6 +5103,23 @@ def generate_report_tables(
     now_str = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     mode_str = "Finnhub 实时盘前/盘中穿透" if is_realtime else "yfinance 最新收盘价底模"
 
+    _should_save_sc = bool(raw_panel is not None or len(latest_df) > 15)
+    live_scorecard = build_and_save_live_prediction_scorecard(
+        oos_df=oos_df,
+        raw_panel=raw_panel,
+        all_live_rows=all_live_rows,
+        save_to_disk=_should_save_sc,
+    )
+
+    mw_out = dict(macro_weather or {})
+    if 'market_regime' not in mw_out:
+        _r_sc = float(latest_df['Market_Regime_Score'].mean()) if (not latest_df.empty and 'Market_Regime_Score' in latest_df.columns) else 0.0
+        _br_v = float(latest_df['Breadth_MA20_Pct'].mean()) if (not latest_df.empty and 'Breadth_MA20_Pct' in latest_df.columns) else 50.0
+        _reg_s = 'BEAR_DEFENSE' if (_r_sc <= -0.5 or _br_v < 35.0) else ('BULL_TREND' if _r_sc >= 0.5 else 'NEUTRAL_CHOP')
+        mw_out['market_regime'] = _reg_s
+        mw_out['market_regime_cn'] = {'BEAR_DEFENSE': '🔴 空头防守体制', 'BULL_TREND': '🟢 多头顺风体制'}.get(_reg_s, '🟡 震荡分化体制')
+        mw_out['breadth_ma20_pct'] = round(_br_v, 1)
+
     return {
         'table1': table1_rows,
         'table2': table2_rows,
@@ -4552,7 +5131,8 @@ def generate_report_tables(
         'top_short': top_short_stocks,
         'top10': top_long_stocks,
         'all_live_predictions': all_live_rows,
-        'macro_weather': macro_weather or {},
+        'macro_weather': mw_out,
+        'live_scorecard': live_scorecard,
         'time_cycle_projections': time_cycle_proj,
         'kpi': {
             'high_conviction_win_rate': kpi_win_rate,
@@ -4564,6 +5144,259 @@ def generate_report_tables(
             'is_realtime': is_realtime
         }
     }
+
+
+def _evaluate_scorecard_window(sub_df: pd.DataFrame) -> Dict[str, Any]:
+    """统计指定样本外交易日窗口内的做多、做空与有效方向信号真实命中率。"""
+    if sub_df is None or sub_df.empty:
+        return {
+            'trading_days': 0,
+            'sample_count': 0,
+            'win_rate_pct': 50.0,
+            'long_count': 0,
+            'long_win_rate_pct': 0.0,
+            'short_count': 0,
+            'short_win_rate_pct': 0.0,
+            'avg_return_pct': 0.0,
+        }
+
+    df = sub_df.copy()
+    n_days = int(pd.to_datetime(df['Date']).dt.date.nunique()) if 'Date' in df.columns else len(df)
+    has_ret = 'Realized_Return' in df.columns
+    has_s_prob = 'Prob_Short_1' in df.columns and df['Prob_Short_1'].notna().any()
+    has_s_label = 'Label_Short' in df.columns and df['Label_Short'].notna().any()
+    has_s_ret = 'Realized_Return_Short' in df.columns and df['Realized_Return_Short'].notna().any()
+    has_regime = 'Market_Regime_Score' in df.columns
+
+    p_long = pd.to_numeric(df['Prob_1'], errors='coerce').fillna(0.5).to_numpy(dtype=float)
+    y_long = pd.to_numeric(df['Label'], errors='coerce').fillna(0.0).to_numpy(dtype=float)
+    ret_long = pd.to_numeric(df['Realized_Return'], errors='coerce').fillna(0.0).to_numpy(dtype=float) if has_ret else np.where(y_long == 1.0, 1.0, -1.0)
+    win_long = (ret_long > 0.0) if has_ret else (y_long == 1.0)
+
+    reg_arr = pd.to_numeric(df['Market_Regime_Score'], errors='coerce').fillna(0.0).to_numpy(dtype=float) if has_regime else np.zeros(len(df))
+    long_allowed = ~(reg_arr <= -0.5)
+
+    l_mask = (p_long >= 0.55)
+    long_cnt = int(l_mask.sum())
+    long_wr = round(float(win_long[l_mask].mean() * 100.0), 1) if long_cnt > 0 else 0.0
+
+    if has_s_prob and has_s_label:
+        p_short = pd.to_numeric(df['Prob_Short_1'], errors='coerce').fillna(0.45).to_numpy(dtype=float)
+        y_short = pd.to_numeric(df['Label_Short'], errors='coerce').fillna(0.0).to_numpy(dtype=float)
+        ret_short = pd.to_numeric(df['Realized_Return_Short'], errors='coerce').fillna(0.0).to_numpy(dtype=float) if has_s_ret else np.where(y_short == 1.0, 1.0, -1.0)
+        win_short = (ret_short > 0.0) if has_s_ret else (y_short == 1.0)
+        s_mask = (p_short >= 0.55) & df['Label_Short'].notna().to_numpy()
+        short_cnt = int(s_mask.sum())
+        short_wr = round(float(win_short[s_mask].mean() * 100.0), 1) if short_cnt > 0 else 0.0
+    else:
+        p_short = np.zeros(len(df), dtype=float)
+        ret_short = np.zeros(len(df), dtype=float)
+        win_short = np.zeros(len(df), dtype=bool)
+        short_cnt = 0
+        short_wr = 0.0
+
+    # 综合实战触发口径：多头高置信 (非空头体制下) vs 空头高置信，取活跃且更高置信度方向；若无 >=55% 则降维到 >=50%
+    outcomes = []
+    returns_used = []
+    for i in range(len(df)):
+        act_l = bool(p_long[i] >= 0.55 and long_allowed[i])
+        act_s = bool(has_s_prob and has_s_label and p_short[i] >= 0.55)
+        if act_l and act_s:
+            if p_long[i] >= p_short[i]:
+                outcomes.append(bool(win_long[i]))
+                returns_used.append(float(ret_long[i]))
+            else:
+                outcomes.append(bool(win_short[i]))
+                returns_used.append(float(ret_short[i]))
+        elif act_l:
+            outcomes.append(bool(win_long[i]))
+            returns_used.append(float(ret_long[i]))
+        elif act_s:
+            outcomes.append(bool(win_short[i]))
+            returns_used.append(float(ret_short[i]))
+
+    if not outcomes:
+        for i in range(len(df)):
+            if p_long[i] >= 0.50 and long_allowed[i]:
+                outcomes.append(bool(win_long[i]))
+                returns_used.append(float(ret_long[i]))
+            elif has_s_prob and has_s_label and p_short[i] >= 0.50:
+                outcomes.append(bool(win_short[i]))
+                returns_used.append(float(ret_short[i]))
+        if not outcomes:
+            outcomes = [bool(x) for x in win_long.tolist()]
+            returns_used = [float(x) for x in ret_long.tolist()]
+
+    wr_pct = round(float(np.mean(outcomes) * 100.0), 1) if outcomes else 50.0
+    avg_r = round(float(np.mean(returns_used)), 2) if returns_used else 0.0
+
+    return {
+        'trading_days': n_days,
+        'sample_count': len(outcomes),
+        'win_rate_pct': wr_pct,
+        'long_count': long_cnt,
+        'long_win_rate_pct': long_wr,
+        'short_count': short_cnt,
+        'short_win_rate_pct': short_wr,
+        'avg_return_pct': avg_r,
+    }
+
+
+def build_and_save_live_prediction_scorecard(
+    oos_df: Optional[pd.DataFrame],
+    raw_panel: Optional[pd.DataFrame] = None,
+    all_live_rows: Optional[List[Dict[str, Any]]] = None,
+    scorecard_path: str = 'data_cache/live_prediction_scorecard.json',
+    save_to_disk: bool = True,
+) -> Dict[str, Any]:
+    """
+    阶段一核心引擎 5：实盘预测成绩单 (Live Prediction Scorecard)。
+    - 基于最近 30 个与最近 7 个已结算样本外交易日初始化/更新滚动真实命中率；
+    - 在收盘后自动核对历史 pending_predictions 是否已到 5 日结算期；
+    - 若近 7 个交易日真实胜率 < 45.0%，自动点亮黄灯 ⚠️ 模型近期失准·自动降权参考。
+    """
+    full_path = _resolve_cache_path(scorecard_path) if not os.path.isabs(scorecard_path) else scorecard_path
+    existing: Dict[str, Any] = {}
+    if os.path.exists(full_path):
+        try:
+            with open(full_path, 'r', encoding='utf-8') as f:
+                existing = json.load(f) or {}
+        except Exception:
+            existing = {}
+
+    pending_list = list(existing.get('pending_predictions', [])) if isinstance(existing.get('pending_predictions'), list) else []
+    reconciled_records = list(existing.get('reconciled_live_records', [])) if isinstance(existing.get('reconciled_live_records'), list) else []
+
+    # 1. 收盘后自动核对历史 pending_predictions vs 真实后续 5 日收盘表现
+    still_pending = []
+    if raw_panel is not None and not raw_panel.empty and pending_list:
+        rp = raw_panel.copy()
+        rp['Date_dt'] = pd.to_datetime(rp['Date']).dt.normalize()
+        for item in pending_list:
+            tk = item.get('ticker')
+            p_date = pd.to_datetime(item.get('pred_date', ''), errors='coerce')
+            entry_px = float(item.get('entry_price') or 0.0)
+            direction = str(item.get('direction', 'LONG')).upper()
+            if not tk or pd.isna(p_date) or entry_px <= 0:
+                continue
+            sub_tk = rp[(rp['Ticker'] == tk) & (rp['Date_dt'] > p_date)].sort_values('Date_dt')
+            if len(sub_tk) >= 5:
+                settle_px = float(sub_tk.iloc[4]['Close'])
+                raw_ret = ((settle_px - entry_px) / entry_px) * 100.0
+                dir_ret = -raw_ret if direction == 'SHORT' else raw_ret
+                reconciled_records.append({
+                    'ticker': tk,
+                    'pred_date': p_date.strftime('%Y-%m-%d'),
+                    'settle_date': sub_tk.iloc[4]['Date_dt'].strftime('%Y-%m-%d'),
+                    'direction': direction,
+                    'entry_price': round(entry_px, 2),
+                    'settle_price': round(settle_px, 2),
+                    'realized_return_pct': round(dir_ret, 2),
+                    'is_win': bool(dir_ret > 0.0),
+                })
+            else:
+                still_pending.append(item)
+    else:
+        still_pending = pending_list
+
+    # 2. 基于最近 30 / 7 个交易日样本外预测统计滚动命中率
+    if oos_df is not None and not oos_df.empty and 'Date' in oos_df.columns:
+        o_df = oos_df.copy()
+        o_df['_Date_dt'] = pd.to_datetime(o_df['Date']).dt.normalize()
+        settled_dates = sorted(o_df['_Date_dt'].dropna().unique().tolist())
+        last_7_dates = settled_dates[-7:] if len(settled_dates) >= 7 else settled_dates
+        last_30_dates = settled_dates[-30:] if len(settled_dates) >= 30 else settled_dates
+        sub_7 = o_df[o_df['_Date_dt'].isin(last_7_dates)]
+        sub_30 = o_df[o_df['_Date_dt'].isin(last_30_dates)]
+        w7 = _evaluate_scorecard_window(sub_7)
+        w30 = _evaluate_scorecard_window(sub_30)
+        window_7d_range = f"{pd.Timestamp(last_7_dates[0]).strftime('%Y-%m-%d')}~{pd.Timestamp(last_7_dates[-1]).strftime('%Y-%m-%d')}" if last_7_dates else "--"
+        window_30d_range = f"{pd.Timestamp(last_30_dates[0]).strftime('%Y-%m-%d')}~{pd.Timestamp(last_30_dates[-1]).strftime('%Y-%m-%d')}" if last_30_dates else "--"
+        daily_rows = []
+        for dt_val in last_30_dates:
+            day_df = o_df[o_df['_Date_dt'] == dt_val]
+            d_stat = _evaluate_scorecard_window(day_df)
+            daily_rows.append({
+                'date': pd.Timestamp(dt_val).strftime('%Y-%m-%d'),
+                'win_rate_pct': d_stat['win_rate_pct'],
+                'long_win_rate_pct': d_stat['long_win_rate_pct'],
+                'short_win_rate_pct': d_stat['short_win_rate_pct'],
+                'sample_count': d_stat['sample_count'],
+                'avg_return_pct': d_stat['avg_return_pct'],
+            })
+    elif oos_df is not None and not oos_df.empty:
+        w7 = _evaluate_scorecard_window(oos_df.tail(7))
+        w30 = _evaluate_scorecard_window(oos_df.tail(30))
+        window_7d_range = "--"
+        window_30d_range = "--"
+        daily_rows = []
+    else:
+        w7 = _evaluate_scorecard_window(pd.DataFrame())
+        w30 = _evaluate_scorecard_window(pd.DataFrame())
+        window_7d_range = "--"
+        window_30d_range = "--"
+        daily_rows = []
+
+    # 3. 登记最新待核验预测队列 (去重按 pred_date + ticker)
+    if all_live_rows:
+        today_str = datetime.now().strftime('%Y-%m-%d')
+        existing_keys = {(str(x.get('pred_date')), str(x.get('ticker'))) for x in still_pending}
+        for row in all_live_rows:
+            if not isinstance(row, dict) or row.get('is_etf'):
+                continue
+            tk = str(row.get('ticker', ''))
+            px = float(row.get('latest_price') or 0.0)
+            lw = float(row.get('calibrated_win_rate_pct') or 50.0)
+            sw = float(row.get('calibrated_short_win_rate_pct') or 50.0)
+            if not tk or px <= 0 or (max(lw, sw) < 55.0):
+                continue
+            if (today_str, tk) not in existing_keys:
+                still_pending.append({
+                    'ticker': tk,
+                    'pred_date': today_str,
+                    'direction': 'LONG' if lw >= sw else 'SHORT',
+                    'pred_prob_pct': round(max(lw, sw), 1),
+                    'entry_price': round(px, 2),
+                })
+                existing_keys.add((today_str, tk))
+        still_pending = still_pending[-300:]
+
+    wr_7d = float(w7['win_rate_pct'])
+    wr_30d = float(w30['win_rate_pct'])
+    is_degraded = bool(w7['sample_count'] > 0 and wr_7d < 45.0)
+    warning_text = "⚠️ 模型近期失准·自动降权参考" if is_degraded else "✅ 模型近期实盘命中稳健"
+
+    scorecard = {
+        'updated_at': datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
+        'win_rate_7d_pct': wr_7d,
+        'win_rate_30d_pct': wr_30d,
+        'long_win_rate_7d_pct': float(w7['long_win_rate_pct']),
+        'short_win_rate_7d_pct': float(w7['short_win_rate_pct']),
+        'long_win_rate_30d_pct': float(w30['long_win_rate_pct']),
+        'short_win_rate_30d_pct': float(w30['short_win_rate_pct']),
+        'sample_count_7d': int(w7['sample_count']),
+        'sample_count_30d': int(w30['sample_count']),
+        'avg_return_7d_pct': float(w7['avg_return_pct']),
+        'avg_return_30d_pct': float(w30['avg_return_pct']),
+        'window_7d_range': window_7d_range,
+        'window_30d_range': window_30d_range,
+        'is_degraded': is_degraded,
+        'warning_text': warning_text,
+        'reconciled_live_count': len(reconciled_records),
+        'reconciled_live_records': reconciled_records[-60:],
+        'pending_predictions': still_pending,
+        'daily_breakdown_30d': daily_rows,
+    }
+
+    if save_to_disk:
+        try:
+            os.makedirs(os.path.dirname(full_path), exist_ok=True)
+            with open(full_path, 'w', encoding='utf-8') as f:
+                json.dump(scorecard, f, ensure_ascii=False, indent=2)
+        except Exception:
+            pass
+
+    return scorecard
 
 
 def _get_display_width(s: Any) -> int:
@@ -4801,11 +5634,33 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
     """
     kpi = tables_data.get('kpi', {})
     weather = tables_data.get('macro_weather', {})
+    scorecard = tables_data.get('live_scorecard', {})
+    if not scorecard:
+        try:
+            _sc_path = _resolve_cache_path('data_cache/live_prediction_scorecard.json')
+            if os.path.exists(_sc_path):
+                with open(_sc_path, 'r', encoding='utf-8') as _scf:
+                    scorecard = json.load(_scf) or {}
+        except Exception:
+            scorecard = {}
     t1 = tables_data.get('table1', [])
     t2 = tables_data.get('table2', [])
     t3 = tables_data.get('table3', [])
     t4 = tables_data.get('table4', [])
     all_live = tables_data.get('all_live_predictions', t4) or t4
+
+    _regime_code = str(weather.get('market_regime', 'NEUTRAL_CHOP'))
+    _regime_cn = str(weather.get('market_regime_cn') or {'BULL_TREND': '🟢 多头顺风体制', 'BEAR_DEFENSE': '🔴 空头防守体制'}.get(_regime_code, '🟡 震荡分化体制'))
+    _breadth_pct = float(weather.get('breadth_ma20_pct', 50.0))
+    _regime_color = '#f85149' if _regime_code == 'BEAR_DEFENSE' else ('#3fb950' if _regime_code == 'BULL_TREND' else '#ffd54f')
+
+    _sc_7d = float(scorecard.get('win_rate_7d_pct', 50.0))
+    _sc_30d = float(scorecard.get('win_rate_30d_pct', 50.0))
+    _sc_degraded = bool(scorecard.get('is_degraded', False))
+    _sc_warn_html = ' · <span style="color:#ffd54f; font-weight:800;">⚠️ 模型近期失准·自动降权参考</span>' if _sc_degraded else ''
+    _sc_border = 'rgba(255, 213, 79, 0.55)' if _sc_degraded else 'rgba(63, 185, 80, 0.42)'
+    _sc_bg = 'rgba(255, 213, 79, 0.14)' if _sc_degraded else 'rgba(63, 185, 80, 0.10)'
+    _sc_text_color = '#ffd54f' if _sc_degraded else '#3fb950'
 
     flight_info = tables_data.get('defensive_flight') or weather.get('defensive_flight', {})
     flight_banner_html = ""
@@ -5875,7 +6730,10 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
             </div>
             <div class="header-status">
                 <div class="engine-badge" title="实盘推理采用截至 T-5 的全部已结算历史样本重新拟合，无缝吸收 2026 最新市场微观结构">
-                    🧠 实盘模型: Full-Sample Refit (2021~T-5)
+                    🧠 实盘模型: Full-Sample Refit (2021~T-5) · Time-Decay
+                </div>
+                <div id="liveScorecardBadge" class="engine-badge" style="background: {_sc_bg}; border-color: {_sc_border}; color: {_sc_text_color};" title="近 7 日 / 近 30 日严格样本外实盘命中率（低于 45% 自动黄灯提醒降权）">
+                    📋 实盘成绩单: 近7日 {_sc_7d:.1f}% · 近30日 {_sc_30d:.1f}%{_sc_warn_html}
                 </div>
                 <div class="live-badge">
                     <span class="pulse-dot"></span>
@@ -5945,6 +6803,10 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
                 <div class="weather-stat-pill" title="传统行业龙头 (JPM/XOM/WMT/CAT/KO/LLY/DIA) vs 科技 (QQQ/SMH/NVDA) 跨行业市场广度">
                     <span class="lbl">跨行业广度 (传统vs科技)</span>
                     <span class="val" id="predictBreadthVal" style="font-size: 13px; color: {breadth_info.get('color', '#9ca3af')};">{breadth_info.get('short_badge', '🛡️ 广度均衡')}</span>
+                </div>
+                <div class="weather-stat-pill" id="marketRegimeBadge" title="严格基于 T 日全池 MA20 市场宽度与 SPY/QQQ 均线斜率判定的客观牛熊体制门禁">
+                    <span class="lbl">体制门禁 · MA20宽度</span>
+                    <span class="val" style="font-size: 13px; color: {_regime_color};">{_regime_cn} ({_breadth_pct:.1f}%)</span>
                 </div>
             </div>
         </div>
@@ -7340,10 +8202,24 @@ def build_extended_live_features_df(
             ext_frames = [combined_ext]
 
     ext_raw = pd.concat(ext_frames, ignore_index=True) if ext_frames else pd.DataFrame()
+    if not ext_raw.empty:
+        _ext_healed_parts = []
+        _ext_split_changed = False
+        for _tk_e, _grp_e in ext_raw.groupby('Ticker', sort=False):
+            _h_e, _sp_e = detect_and_heal_stock_split(str(_tk_e), _grp_e, allow_network=bool(force_refresh))
+            if _sp_e.get('split_detected'):
+                print(f"  [🔧 Ext Split Self-Heal] {_tk_e}: {_sp_e.get('reason')} (修复 {_sp_e.get('healed_rows')} 行)")
+                _ext_split_changed = True
+            _ext_healed_parts.append(_h_e)
+        if _ext_split_changed:
+            ext_raw = pd.concat(_ext_healed_parts, ignore_index=True).sort_values(['Date', 'Ticker']).reset_index(drop=True)
+            try:
+                ext_raw.to_parquet(full_ext_cache, index=False)
+            except Exception:
+                pass
 
-    # 汇总全部 70 只标的的日线数据 (28 核心股 + 7 已经存在的宏观 ETF + 35 扩展股/ETF)
+    # 汇总全部 70+ 只标的的日线数据
     macro_df = compute_macro_features(raw_panel)
-    all_70_latest_rows = [core_latest_stocks.copy()]
     core_latest_stocks['Is_Core_28'] = True
 
     extra_latest_list = []
@@ -7382,7 +8258,31 @@ def build_extended_live_features_df(
         full_latest['Sector_CN_Override'] = ""
         full_latest['Is_Core_28'] = True
 
-    # 在 70 只标的全截面上重算今日 Alpha_QQQ_5d 与 Alpha_SMH_20d (0.65 * cs_rank + 0.35 * sigmoid)
+    # 在全截面上重算今日 Alpha_QQQ_5d / Alpha_SMH_20d 以及 78 标的全池 MA20 市场宽度与牛熊体制得分
+    if 'Bias_MA20' in full_latest.columns and len(full_latest) > 0:
+        _non_etf = full_latest[~full_latest['Ticker'].isin(INVERSE_OR_SAFE_HAVEN_TICKERS)]
+        _br_src = _non_etf if len(_non_etf) >= 5 else full_latest
+        _full_breadth = float((_br_src['Bias_MA20'] >= 0.0).mean() * 100.0)
+        full_latest['Breadth_MA20_Pct'] = round(_full_breadth, 2)
+        _q20_m = float(full_latest['QQQ_Bias_MA20'].mean()) if 'QQQ_Bias_MA20' in full_latest.columns else 0.0
+        _s20_m = float(full_latest['SPY_Bias_MA20'].mean()) if 'SPY_Bias_MA20' in full_latest.columns else _q20_m
+        _q50_m = float(full_latest['QQQ_Bias_MA50'].mean()) if 'QQQ_Bias_MA50' in full_latest.columns else 0.0
+        _sm50_m = float(full_latest['SMH_Bias_MA50'].mean()) if 'SMH_Bias_MA50' in full_latest.columns else 0.0
+        _vp_m = float(full_latest['VIXY_Pos_60'].mean()) if 'VIXY_Pos_60' in full_latest.columns else 0.5
+        _qr5_m = float(full_latest['QQQ_Ret_5d'].mean()) if 'QQQ_Ret_5d' in full_latest.columns else 0.0
+        _qd5_m = float(full_latest['QQQ_Down_Days_5d'].mean()) if 'QQQ_Down_Days_5d' in full_latest.columns else 0.0
+        _reg_m = compute_market_regime_state(
+            qqq_bias_ma20=_q20_m,
+            spy_bias_ma20=_s20_m,
+            qqq_bias_ma50=_q50_m,
+            smh_bias_ma50=_sm50_m,
+            breadth_ma20_pct=_full_breadth,
+            vixy_pos_60=_vp_m,
+            qqq_ret_5d=_qr5_m,
+            qqq_down_days_5d=_qd5_m,
+        )
+        full_latest['Market_Regime_Score'] = float(_reg_m['regime_score'])
+
     if 'Raw_Alpha_QQQ_5d' in full_latest.columns:
         cs_q5 = full_latest['Raw_Alpha_QQQ_5d'].rank(pct=True, method='average').fillna(0.5)
         sig_q5 = 1.0 / (1.0 + np.exp(-np.clip(full_latest['Raw_Alpha_QQQ_5d'] / 8.0, -15.0, 15.0)))
@@ -7433,6 +8333,9 @@ def export_latest_ai_predictions_json(tables_data: Dict, json_path: str = 'data_
     payload = {
         'kpi': tables_data.get('kpi', {}),
         'macro_weather': mw,
+        'market_regime': mw.get('market_regime', 'NEUTRAL_CHOP'),
+        'breadth_ma20_pct': mw.get('breadth_ma20_pct', 50.0),
+        'live_scorecard': tables_data.get('live_scorecard', {}),
         'table1': tables_data.get('table1', []),
         'table2': tables_data.get('table2', []),
         'table3': tables_data.get('table3', []),
@@ -7539,7 +8442,7 @@ def main():
     for k, v in report.items():
         print(f"  • {k:20s}: {v}")
     print("=" * 70)
-    print("✅ Milestone M1 基础管道与 23 维因果特征构建成功！\n")
+    print(f"✅ Milestone M1 基础管道与 {len(FEATURE_COLS)} 维因果特征构建成功！\n")
 
     if args.verify:
         print("[*] 仅校验模式，执行完毕。")
@@ -7607,7 +8510,8 @@ def main():
         smh_igv=smh_igv,
         latest_date=latest_date_str,
         defensive_flight=def_flight,
-        cross_industry_breadth=cross_breadth
+        cross_industry_breadth=cross_breadth,
+        latest_stocks_df=latest_stocks,
     )
 
     # 生成 4 大核心数据表

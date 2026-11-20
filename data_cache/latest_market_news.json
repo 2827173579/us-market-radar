@@ -1,9 +1,36 @@
 {
-  "updated_at_ts": 1795133301.797,
-  "updated_at_et": "11-19 19:08 ET",
-  "updated_at_kst": "09:08 KST",
+  "updated_at_ts": 1795135192.064,
+  "updated_at_et": "11-19 19:39 ET",
+  "updated_at_kst": "09:39 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261120083712169800",
+      "title": "50个基点的加息重回桌面？美联储古尔斯比称不排除大幅加息选项",
+      "summary": "继沃勒抛出“12月加息50个基点”的方案后，芝加哥联储主席古尔斯比周四直言：下月利率决策“应保留所有选项”。点击查看…",
+      "keywords": [
+        "美联储",
+        "加息"
+      ],
+      "pub_ts": 1795135032.0,
+      "time_et": "11-19 19:37 ET",
+      "time_bj": "08:37 BJ",
+      "time_kst": "09:37 KST",
+      "time_display": "19:37 ET / 08:37 BJ"
+    },
+    {
+      "id": "20261120081721441800",
+      "title": "日本芯片股大幅下跌，软银集团暴跌14%，铠侠跌近10%，爱德万测试跌8%。",
+      "summary": "日本芯片股大幅下跌，软银集团暴跌14%，铠侠跌近10%，爱德万测试跌8%。",
+      "keywords": [
+        "芯片"
+      ],
+      "pub_ts": 1795133841.0,
+      "time_et": "11-19 19:17 ET",
+      "time_bj": "08:17 BJ",
+      "time_kst": "09:17 KST",
+      "time_display": "19:17 ET / 08:17 BJ"
+    },
     {
       "id": "20261120075259498800",
       "title": "特朗普投资账户一个月交易751笔，涉及资金最高1.48亿美元！英伟达、Palantir、SpaceX在列",
@@ -318,33 +345,6 @@
       "time_bj": "23:49 BJ",
       "time_kst": "00:49 KST",
       "time_display": "10:49 ET / 23:49 BJ"
-    },
-    {
-      "id": "20261119234406045800",
-      "title": "标普500指数下跌逾0.5%，触及6月以来最低水平。",
-      "summary": "标普500指数下跌逾0.5%，触及6月以来最低水平。",
-      "keywords": [
-        "标普"
-      ],
-      "pub_ts": 1795103046.0,
-      "time_et": "11-19 10:44 ET",
-      "time_bj": "23:44 BJ",
-      "time_kst": "00:44 KST",
-      "time_display": "10:44 ET / 23:44 BJ"
-    },
-    {
-      "id": "20261119231609393800",
-      "title": "整理：11月19日欧盘美盘重要新闻汇总",
-      "summary": "国内新闻 1. 习近平就大国如何正确相处提出4点看法。 2. 中美同意制定建设性战略稳定关系行动计划。 3. 商务部：中美贸易理事会农业工作组将于近期召开首次会议。 4. 习近平主持亚太经合组织第三十三次领导人非正式会议并发表重要讲话。 5. 中日领导人是否将举行会晤？外交部回应：关于中日关系，中方的立场是明确的。 6. 中俄美元首和平宣言：三国计划增加精炼石油产品的生产和供应，三国元首重申核战争打不赢也打不得。 7. 习近平会见美国总统特朗普，强调中美要拉长合作清单、压缩问题清单，一时解决不了的分歧要建设性管控，防止矛盾升级。 国际新闻 1. 丹麦议会批准格陵兰安全协议，美国将新建两座军事基地。 2. 美国能源部长：美国正考虑增加对欧洲的柴油和石油出口。 3. Anthropic股票预示开盘价为每股102美元，IPO发行价为83美元。 4. 伦敦金属交易所暂停迷你合约交易，为后续重推小规格合约做准备。 5. 普京：将对大桥遭袭进行报复；有兴趣结束俄乌冲突，但乌克兰必须接受妥协。 6. 中东局势—①伊朗：两艘违规的超大型油轮在霍尔木兹海峡未经授权航道行驶时触雷爆炸。②美媒：白宫要求研判伊朗对各种打击方案的潜在反应。",
-      "keywords": [
-        "特朗普",
-        "中东"
-      ],
-      "pub_ts": 1795101369.0,
-      "time_et": "11-19 10:16 ET",
-      "time_bj": "23:16 BJ",
-      "time_kst": "00:16 KST",
-      "time_display": "10:16 ET / 23:16 BJ"
     }
   ],
   "ticker_news": {
@@ -572,6 +572,13 @@
     ],
     "SMH": [
       {
+        "title": "The Semiconductor ETF Is on Track to Beat the S&P 500 for a 4th Straight Year. It Has Never Done That Before.",
+        "url": "https://www.fool.com/investing/2026/11/19/the-semiconductor-etf-is-on-track-to-beat-the-s-and-p-500-for-a-4th-straight-year-it-has-never-done-that-before/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 18:43 ET",
+        "pub_ts": 1795131782.0
+      },
+      {
         "title": "Dividend Stocks Or AI Stocks: Which Fits Now?",
         "url": "https://www.trefis.com/stock/smh/articles/626520/dividend-stocks-or-ai-stocks-which-fits-now/2026-11-19?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -598,13 +605,6 @@
         "source": "Yahoo Finance",
         "time": "11-18 05:20 ET",
         "pub_ts": 1794997203.0
-      },
-      {
-        "title": "Is SMH A Great Dip Buy At 31% Off?",
-        "url": "https://www.trefis.com/stock/smh/articles/626017/is-smh-a-great-dip-buy-at-31-off/2026-11-17?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 12:21 ET",
-        "pub_ts": 1794936105.0
       }
     ],
     "IWM": [
@@ -794,6 +794,13 @@
     ],
     "TSM": [
       {
+        "title": "TSMC halts advanced chip orders from Chinese designers in Taiwan",
+        "url": "http://www.intellinews.com/tsmc-halts-advanced-chip-orders-from-chinese-designers-in-taiwan-486911/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 19:06 ET",
+        "pub_ts": 1795133191.0
+      },
+      {
         "title": "Billionaire Stanley Druckenmiller Cut TSMC 94% in One Quarter, Leaving Just $14.9 Million",
         "url": "https://247wallst.com/investing/2026/11/19/billionaire-stanley-druckenmiller-cut-tsmc-94-in-one-quarter-leaving-just-14-9-million/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -820,13 +827,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 12:45 ET",
         "pub_ts": 1795110320.0
-      },
-      {
-        "title": "TSMC Stocks Rise 3.11% as Foundry Takes $500 Million Slice of Anthropic IPO Placement",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/tsmc-stocks-rise-3-11-172326201.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 12:23 ET",
-        "pub_ts": 1795109006.0
       }
     ],
     "VIXY": [
@@ -905,11 +905,25 @@
     ],
     "NVDA": [
       {
+        "title": "The Semiconductor ETF Is on Track to Beat the S&P 500 for a 4th Straight Year. It Has Never Done That Before.",
+        "url": "https://www.fool.com/investing/2026/11/19/the-semiconductor-etf-is-on-track-to-beat-the-s-and-p-500-for-a-4th-straight-year-it-has-never-done-that-before/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 18:43 ET",
+        "pub_ts": 1795131782.0
+      },
+      {
         "title": "California AG subpoenas Nvidia over China leak risks and investor disclosures",
         "url": "https://finance.yahoo.com/news/california-ag-subpoenas-nvidia-over-232352666.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-19 18:23 ET",
         "pub_ts": 1795130632.0
+      },
+      {
+        "title": "California subpoenas Nvidia as questions about CEO affair, AI chips mount",
+        "url": "https://finance.yahoo.com/technology/ai/articles/california-subpoenas-nvidia-questions-ceo-230444672.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 18:04 ET",
+        "pub_ts": 1795129484.0
       },
       {
         "title": "Grand Theft Auto VI outplays Nvidia and SpaceX",
@@ -919,25 +933,11 @@
         "pub_ts": 1795129200.0
       },
       {
-        "title": "Nvidia vs. Intel: One AI Stock Is Worth the Drama, the Other Isn’t Worth the Wait, Says Investor",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/nvidia-vs-intel-one-ai-222036270.html?.tsrc=rss",
+        "title": "IBM (IBM) Stock May Be 27% Below Fair Value On Quantum Platform News",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/ibm-ibm-stock-may-27-002028644.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-19 17:20 ET",
-        "pub_ts": 1795126836.0
-      },
-      {
-        "title": "Stock Market Today, Nov. 19: Nvidia Slides as Investors Weigh CEO Transition Fallout Despite Strong Q3 Results",
-        "url": "https://www.fool.com/coverage/stock-market-today/2026/11/19/stock-market-today-nov-19-nvidia-slides-as-investors-weigh-ceo-transition-fallout-despite-strong-q3-results/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 17:20 ET",
-        "pub_ts": 1795126825.0
-      },
-      {
-        "title": "Maximus, Inc. Q4 2026 Earnings Call Summary",
-        "url": "https://app.moby.co/home/research/tools/earningsCalendar/earnings-maximus-inc-q4-2026-earnings-call-summary?utm_source=yahoo_finance&utm_medium=rss&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 17:12 ET",
-        "pub_ts": 1795126350.0
+        "time": "11-19 19:20 ET",
+        "pub_ts": 1795134028.0
       }
     ],
     "AMD": [
@@ -945,8 +945,8 @@
         "title": "Dow Jones Futures: Ugly Market Reversal To New Lows As Anthropic IPO Debuts, AMD Dives",
         "url": "https://finance.yahoo.com/m/9e02231d-41cd-31ac-b37f-993325b8a4ca/dow-jones-futures%3A-ugly.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-19 18:36 ET",
-        "pub_ts": 1795131371.0
+        "time": "11-19 19:22 ET",
+        "pub_ts": 1795134162.0
       },
       {
         "title": "Anthropic, AMD, Alphabet, Palo Alto, Take-Two, Walmart, and More Stocks That Explain Today’s Market",
@@ -1164,6 +1164,13 @@
     ],
     "GOOGL": [
       {
+        "title": "Anthropic Just Went Public at $1.5 Trillion. VOO Won’t Own a Share Until Late 2027 at the Earliest",
+        "url": "https://247wallst.com/investing/etf/2026/11/19/anthropic-just-went-public-at-1-5-trillion-voo-wont-own-a-share-until-late-2027-at-the-earliest/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 18:52 ET",
+        "pub_ts": 1795132361.0
+      },
+      {
         "title": "Anthropic’s Record IPO Is Good News for Hut 8. Here’s the Number That Matters",
         "url": "https://www.tikr.com/blog/anthropics-record-ipo-is-good-news-for-hut-8-heres-the-number-that-matters?ref=yahoofinance&tlnk=yf-261119-h84r624c&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1190,13 +1197,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 17:32 ET",
         "pub_ts": 1795127555.0
-      },
-      {
-        "title": "Stock Market Today, Nov. 19: Alphabet Shares Fall as Anthropic Nasdaq Debut Puts Fresh Value on Google's Stake",
-        "url": "https://www.fool.com/coverage/stock-market-today/2026/11/19/stock-market-today-nov-19-alphabet-shares-fall-as-anthropic-nasdaq-debut-puts-fresh-value-on-googles-stake/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 17:18 ET",
-        "pub_ts": 1795126710.0
       }
     ],
     "MSFT": [
@@ -1215,13 +1215,6 @@
         "pub_ts": 1795122375.0
       },
       {
-        "title": "Microsoft well positioned to weather AI slowdown, says Jefferies after Ignite meetings",
-        "url": "https://www.proactiveinvestors.com/companies/news/1102143/microsoft-well-positioned-to-weather-ai-slowdown-says-jefferies-after-ignite-meetings-1102143.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 13:30 ET",
-        "pub_ts": 1795113000.0
-      },
-      {
         "title": "Bridgewater Warns of AI Security Risk as Anthropic Shares Rise in Debut",
         "url": "https://finance.yahoo.com/m/ac0c7cd3-afc9-37c1-b745-d9478a2ec38a/bridgewater-warns-of-ai.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1234,6 +1227,13 @@
         "source": "Yahoo Finance",
         "time": "11-19 15:24 ET",
         "pub_ts": 1795119880.0
+      },
+      {
+        "title": "JPMorgan Chase Reveals Data Breach Involving Third-Party Vendors",
+        "url": "https://finance.yahoo.com/technology/articles/jpmorgan-chase-reveals-data-breach-184543857.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 13:45 ET",
+        "pub_ts": 1795113943.0
       }
     ],
     "AAPL": [
@@ -1349,6 +1349,13 @@
     ],
     "AMZN": [
       {
+        "title": "NYC lawmakers weigh compromise on Amazon delivery worker bill, Bloomberg reports",
+        "url": "https://finance.yahoo.com/economy/policy/articles/nyc-lawmakers-weigh-compromise-amazon-234713116.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 18:47 ET",
+        "pub_ts": 1795132033.0
+      },
+      {
         "title": "Jeff Bezos says 2 policies drive up housing costs, and it's 'not hard to figure out'",
         "url": "https://www.thestreet.com/real-estate/jeff-bezos-says-2-policies-drive-up-housing-costs-subsidize-demand-constrain-supply?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1357,7 +1364,7 @@
       },
       {
         "title": "Siteimprove.ai Accessibility Agent Now Available for AI Agents Through Agentic Commerce on AWS Marketplace",
-        "url": "https://finance.yahoo.com/technology/ai/articles/siteimprove-ai-accessibility-agent-now-220600704.html?.tsrc=rss",
+        "url": "https://finance.yahoo.com/news/siteimprove-ai-accessibility-agent-now-220600790.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-19 17:06 ET",
         "pub_ts": 1795125960.0
@@ -1375,13 +1382,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 16:50 ET",
         "pub_ts": 1795125019.0
-      },
-      {
-        "title": "IBD Stock Of The Day: Amazon Chases Entry As Anthropic IPO Swings AI Sentiment",
-        "url": "https://finance.yahoo.com/m/ffef95a7-3317-39a7-af61-44c06f2b7bb5/ibd-stock-of-the-day%3A-amazon.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 16:39 ET",
-        "pub_ts": 1795124398.0
       }
     ],
     "CRWV": [
@@ -2052,6 +2052,13 @@
     ],
     "KO": [
       {
+        "title": "Coca-Cola (KO) Stock Fair Value Edges Higher After Q3 Beat And Analyst Target Increases",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/coca-cola-ko-stock-fair-001734331.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 19:17 ET",
+        "pub_ts": 1795133854.0
+      },
+      {
         "title": "This drinks company is TD Cowen’s top stock pick for 2027 as target rises to $112",
         "url": "https://finance.yahoo.com/markets/stocks/articles/drinks-company-td-cowen-top-204842392.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2078,13 +2085,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 14:50 ET",
         "pub_ts": 1795117802.0
-      },
-      {
-        "title": "Meet Wall Street’s Safe Passive Income Dividend Stocks: 4 Companies That Keep Paying Through Downturns",
-        "url": "https://247wallst.com/investing/2026/11/19/meet-wall-streets-safepassive-income-dividend-stocks-4-companies-that-keep-paying-through-downturns/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 14:21 ET",
-        "pub_ts": 1795116075.0
       }
     ],
     "FLY": [
@@ -2533,6 +2533,13 @@
     ],
     "MSTR": [
       {
+        "title": "Strategy’s mNAV Is “Now Below 1,” Says Peter Schiff. That Breaks Saylor’s Favorite Trade",
+        "url": "https://www.tikr.com/blog/strategys-mnav-is-now-below-1-says-peter-schiff-that-breaks-saylors-favorite-trade?ref=yahoofinance&tlnk=yf-261119-wmfh5545&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 17:37 ET",
+        "pub_ts": 1795127864.0
+      },
+      {
         "title": "Analyst sounds alarm over New York pension fund’s major investment",
         "url": "https://www.thestreet.com/crypto/markets/analyst-sounds-alarm-over-new-york-pension-funds-major-investment?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2559,13 +2566,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 15:24 ET",
         "pub_ts": 1795119877.0
-      },
-      {
-        "title": "Wall Street analysts say buy Strategy Inc, yet a November 30 shock is coming",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/wall-street-analysts-buy-strategy-202222723.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 15:22 ET",
-        "pub_ts": 1795119742.0
       }
     ],
     "SNDK": [
@@ -2607,6 +2607,13 @@
     ],
     "BTC-USD": [
       {
+        "title": "Webull Q3 Earnings Call Highlights",
+        "url": "https://www.marketbeat.com/instant-alerts/transcript-webull-q3-earnings-call-highlights-2026-11-19/?utm_source=yahoofinance&utm_medium=yahoofinance&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 19:14 ET",
+        "pub_ts": 1795133647.0
+      },
+      {
         "title": "Gold and Bitcoin Are Falling. Peter Schiff Sees Opportunities for Both",
         "url": "https://beincrypto.com/peter-schiff-gold-bitcoin-falling/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2628,18 +2635,11 @@
         "pub_ts": 1795128302.0
       },
       {
-        "title": "Ripple CEO sees crypto rebound, draws Anthropic IPO-SpaceX parallel",
-        "url": "https://www.thestreet.com/crypto/markets/ripple-ceo-sees-crypto-rebound-draws-anthropic-ipo-spacex-parallel?.tsrc=rss",
+        "title": "Strategy’s mNAV Is “Now Below 1,” Says Peter Schiff. That Breaks Saylor’s Favorite Trade",
+        "url": "https://www.tikr.com/blog/strategys-mnav-is-now-below-1-says-peter-schiff-that-breaks-saylors-favorite-trade?ref=yahoofinance&tlnk=yf-261119-wmfh5545&.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-19 17:30 ET",
-        "pub_ts": 1795127400.0
-      },
-      {
-        "title": "$100 a Month in XRP or Bitcoin: Which Could Be Worth More in 5 Years?",
-        "url": "https://247wallst.com/investing/cryptocurrency/2026/11/19/100-a-month-in-xrp-or-bitcoin-which-could-be-worth-more-in-5-years/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 17:21 ET",
-        "pub_ts": 1795126904.0
+        "time": "11-19 17:37 ET",
+        "pub_ts": 1795127864.0
       }
     ],
     "CRWD": [
@@ -3245,35 +3245,35 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795131855.93104,
-    "SOXL": 1795131855.93104,
-    "SPY": 1795131855.93104,
-    "DIA": 1795131855.93104,
-    "SOXX": 1795131855.93104,
-    "QQQ": 1795131855.93104,
-    "SMH": 1795131855.93104,
-    "IWM": 1795131855.93104,
-    "IGV": 1795131855.93104,
-    "TLT": 1795131855.93104,
-    "GLD": 1795131855.93104,
-    "SQQQ": 1795131855.93104,
-    "TSM": 1795131855.93104,
-    "VIXY": 1795131855.93104,
-    "SOXS": 1795131855.93104,
-    "NVDA": 1795131855.93104,
-    "AMD": 1795131855.93104,
-    "ASML": 1795131958.935267,
-    "QCOM": 1795131855.93104,
-    "AVGO": 1795131855.93104,
-    "AMAT": 1795131855.93104,
-    "META": 1795131958.935267,
-    "GOOGL": 1795131855.93104,
-    "MSFT": 1795131855.93104,
-    "AAPL": 1795132056.898251,
-    "PLTR": 1795132159.4686317,
-    "NOW": 1795132159.4686317,
-    "AMZN": 1795132159.4686317,
-    "CRWV": 1795132159.4686317,
+    "KORU": 1795135192.063615,
+    "SOXL": 1795135192.063615,
+    "SPY": 1795135192.063615,
+    "DIA": 1795135192.063615,
+    "SOXX": 1795135192.063615,
+    "QQQ": 1795135192.063615,
+    "SMH": 1795135192.063615,
+    "IWM": 1795135192.063615,
+    "IGV": 1795135192.063615,
+    "TLT": 1795135192.063615,
+    "GLD": 1795135192.063615,
+    "SQQQ": 1795135192.063615,
+    "TSM": 1795135192.063615,
+    "VIXY": 1795135192.063615,
+    "SOXS": 1795135192.063615,
+    "NVDA": 1795135192.063615,
+    "AMD": 1795135192.063615,
+    "ASML": 1795135192.063615,
+    "QCOM": 1795135192.063615,
+    "AVGO": 1795135192.063615,
+    "AMAT": 1795135192.063615,
+    "META": 1795135192.063615,
+    "GOOGL": 1795135192.063615,
+    "MSFT": 1795135192.063615,
+    "AAPL": 1795135192.063615,
+    "PLTR": 1795135192.063615,
+    "NOW": 1795135192.063615,
+    "AMZN": 1795135192.063615,
+    "CRWV": 1795135192.063615,
     "NBIS": 1795132159.4686317,
     "APLD": 1795132159.4686317,
     "VST": 1795132159.4686317,
@@ -3282,31 +3282,31 @@
     "COHR": 1795132159.4686317,
     "MRVL": 1795132159.4686317,
     "LITE": 1795132159.4686317,
-    "AAOI": 1795132056.898251,
+    "AAOI": 1795135192.063615,
     "SPCX": 1795132159.4686317,
     "ASTS": 1795132159.4686317,
     "AXTI": 1795132159.4686317,
-    "NASA": 1795132056.898251,
-    "LUNR": 1795132056.898251,
-    "TSLA": 1795132056.898251,
-    "AXP": 1795132056.898251,
+    "NASA": 1795135192.063615,
+    "LUNR": 1795135192.063615,
+    "TSLA": 1795135192.063615,
+    "AXP": 1795135192.063615,
     "RKLB": 1795132159.4686317,
-    "KO": 1795132056.898251,
+    "KO": 1795135192.063615,
     "FLY": 1795132159.4686317,
-    "INTC": 1795132056.898251,
-    "VRT": 1795132056.898251,
-    "HPE": 1795132056.898251,
-    "DELL": 1795132056.898251,
-    "OKLO": 1795132056.898251,
-    "CEG": 1795132056.898251,
-    "FPS": 1795132056.898251,
-    "MU": 1795132056.898251,
-    "SKHY": 1795132056.898251,
-    "WDC": 1795132056.898251,
-    "STX": 1795132056.898251,
-    "MSTR": 1795132056.898251,
-    "SNDK": 1795132056.898251,
-    "BTC-USD": 1795132056.898251,
+    "INTC": 1795135192.063615,
+    "VRT": 1795135192.063615,
+    "HPE": 1795135192.063615,
+    "DELL": 1795135192.063615,
+    "OKLO": 1795135192.063615,
+    "CEG": 1795135192.063615,
+    "FPS": 1795135192.063615,
+    "MU": 1795135192.063615,
+    "SKHY": 1795135192.063615,
+    "WDC": 1795135192.063615,
+    "STX": 1795135192.063615,
+    "MSTR": 1795135192.063615,
+    "SNDK": 1795135192.063615,
+    "BTC-USD": 1795135192.063615,
     "CRWD": 1795132159.4686317,
     "ORCL": 1795132262.139766,
     "COIN": 1795132262.139766,
@@ -3328,7 +3328,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (18:52 ET / 07:52 BJ) [英伟达] [特朗普]：特朗普最新财务披露显示，其投资账户9月进行了751笔交易，买卖金额合计约4090万至1.481亿美元。部分交易发生在相关企业获得联邦政府合同前后。点击查看...",
+    "detail": "⚡ 最新核心快讯 (19:37 ET / 08:37 BJ) [美联储] [加息]：继沃勒抛出“12月加息50个基点”的方案后，芝加哥联储主席古尔斯比周四直言：下月利率决策“应保留所有选项”。点击查看…",
     "event_name": "",
     "minutes_left": 0
   }

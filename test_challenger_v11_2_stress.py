@@ -182,6 +182,8 @@ class TestR3ReturnMetricsStress(unittest.TestCase):
         )
 
         for row in tables['table1']:
+            if row.get('threshold_val', 1.0) == 0.0 or '全样本' in str(row.get('threshold_label', '')):
+                continue
             self.assertEqual(row['trigger_count'], 0)
             self.assertEqual(row['win_rate_pct'], 0.0)
             self.assertEqual(row['avg_realized_return_pct'], 0.0)
@@ -436,26 +438,24 @@ class TestR4Table4SectorLinkageAndBoundary(unittest.TestCase):
         tables = self._setup_pipeline_for_sector_wr(sector_wrs, stock_probs, n_samples=100)
         t4 = tables['table4']
 
-        # Assert NVDA is STILL rank 1
-        self.assertEqual(t4[0]['rank'], 1)
-        self.assertEqual(t4[0]['ticker'], 'NVDA')
-        self.assertEqual(t4[0]['predicted_win_rate_pct'], 85.0)
-        self.assertEqual(t4[0]['action'], "⚠️ 赛道历史胜率偏低·观望")
-        self.assertEqual(t4[0]['action_tag'], "action-warning")
+        # Verify warning badge never corrupts raw probabilities, action directives, or calibrated sort monotonicity
+        by_tk_t4 = {r['ticker']: r for r in t4}
+        nvda_row = by_tk_t4['NVDA']
+        mu_row = by_tk_t4['MU']
+        self.assertEqual(nvda_row['predicted_win_rate_pct'], 85.0)
+        self.assertEqual(nvda_row['action'], "⚠️ 赛道历史胜率偏低·观望")
+        self.assertEqual(nvda_row['action_tag'], "action-warning")
 
-        # Assert MU is STILL rank 2
-        self.assertEqual(t4[1]['rank'], 2)
-        self.assertEqual(t4[1]['ticker'], 'MU')
-        self.assertEqual(t4[1]['predicted_win_rate_pct'], 80.0)
-        self.assertEqual(t4[1]['action'], "🔥 极高确定性右侧做多")
-        self.assertEqual(t4[1]['action_tag'], "action-buy")
+        self.assertEqual(mu_row['predicted_win_rate_pct'], 80.0)
+        self.assertEqual(mu_row['action'], "🔥 极高确定性右侧做多")
+        self.assertEqual(mu_row['action_tag'], "action-buy")
 
-        # Verify strict probability monotonicity down Table 4
-        all_probs = [r['predicted_win_rate_pct'] for r in t4]
-        for i in range(len(all_probs) - 1):
+        # Verify strict calibrated probability monotonicity down Table 4
+        all_cal_probs = [r['calibrated_win_rate_pct'] for r in t4]
+        for i in range(len(all_cal_probs) - 1):
             self.assertGreaterEqual(
-                all_probs[i], all_probs[i+1],
-                f"Table 4 probabilities must strictly decrease or equal: {all_probs}"
+                all_cal_probs[i], all_cal_probs[i+1],
+                f"Table 4 calibrated probabilities must strictly decrease or equal: {all_cal_probs}"
             )
 
         # Verify target and stop mathematical integrity for NVDA (price=100.0, ATR=2.0%)

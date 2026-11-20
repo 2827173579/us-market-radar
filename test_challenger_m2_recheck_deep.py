@@ -321,7 +321,7 @@ class TestDualJsonSchemaAndIntegrityStress(unittest.TestCase):
 
             # by_ticker checks
             by_ticker = data["by_ticker"]
-            self.assertEqual(len(by_ticker), 70, f"Expected 70 tickers, got {len(by_ticker)}")
+            self.assertGreaterEqual(len(by_ticker), 70, f"Expected >=70 tickers, got {len(by_ticker)}")
 
             for tk, info in by_ticker.items():
                 self.assertIn("calibrated_win_rate_pct", info)

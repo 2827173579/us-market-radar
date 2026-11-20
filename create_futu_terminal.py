@@ -155,6 +155,45 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 _panel_last_close = {}
             pure_etf_set = {"QQQ", "SPY", "DIA", "IWM", "SMH", "SOXX", "SOXL", "KORU", "IGV", "TLT", "GLD", "VIXY", "SQQQ", "SOXS"}
             offensive_lev_etfs = {"SOXL", "KORU"}
+            _exempt_regime_set = {"SQQQ", "SOXS", "VIXY", "TLT", "GLD", "XAUUSD"}
+            _active_regime = str(
+                (weather_info.get("market_regime") if isinstance(weather_info, dict) else None)
+                or (ai_predictions.get("macro_weather") or {}).get("market_regime")
+                or ai_predictions.get("market_regime")
+                or "NEUTRAL_CHOP"
+            )
+            _active_regime_cn = str(
+                (weather_info.get("market_regime_cn") if isinstance(weather_info, dict) else None)
+                or (ai_predictions.get("macro_weather") or {}).get("market_regime_cn")
+                or ai_predictions.get("market_regime_cn")
+                or ("🔴 空头防守体制" if _active_regime == "BEAR_DEFENSE" else ("🟢 多头顺风体制" if _active_regime == "BULL_TREND" else "🟡 震荡分化体制"))
+            )
+            _active_breadth_ma20 = float(
+                (weather_info.get("breadth_ma20_pct") if isinstance(weather_info, dict) and weather_info.get("breadth_ma20_pct") is not None else None)
+                or (ai_predictions.get("macro_weather") or {}).get("breadth_ma20_pct")
+                or ai_predictions.get("breadth_ma20_pct")
+                or 50.0
+            )
+            _is_bear_regime = (_active_regime == "BEAR_DEFENSE")
+            _scorecard_obj = ai_predictions.get("live_scorecard") or {}
+            _sc_path = os.path.join(sc_dir, "data_cache", "live_prediction_scorecard.json")
+            if os.path.exists(_sc_path):
+                try:
+                    with open(_sc_path, "r", encoding="utf-8") as _scf:
+                        _loaded_sc = json.load(_scf)
+                    if isinstance(_loaded_sc, dict) and _loaded_sc:
+                        _scorecard_obj = _loaded_sc
+                except Exception:
+                    pass
+            ai_predictions["market_regime"] = _active_regime
+            ai_predictions["market_regime_cn"] = _active_regime_cn
+            ai_predictions["breadth_ma20_pct"] = round(_active_breadth_ma20, 1)
+            ai_predictions["live_scorecard"] = _scorecard_obj
+            if isinstance(ai_predictions.get("macro_weather"), dict):
+                ai_predictions["macro_weather"]["market_regime"] = _active_regime
+                ai_predictions["macro_weather"]["market_regime_cn"] = _active_regime_cn
+                ai_predictions["macro_weather"]["breadth_ma20_pct"] = round(_active_breadth_ma20, 1)
+
             if all_preds and live_lookup:
                 for item in all_preds:
                     tk = str(item.get("ticker", ""))
@@ -292,6 +331,40 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                         mult = float(np.clip(sec_pf / 1.30, 0.75, 1.15))
                         new_cal = round(float(np.clip(new_raw * mult + fh_bonus, 15.0, 95.0)), 1)
 
+                    # 阶段一规则 3：次新股与短样本 (<756日) 贝叶斯强收缩 + <500日置信上限
+                    _n_hist_bars = item.get("history_bars")
+                    if _n_hist_bars is not None:
+                        try:
+                            import ml_predictor_5y
+                            _shrink_res = ml_predictor_5y.apply_short_history_bayesian_shrinkage(
+                                new_cal / 100.0, int(_n_hist_bars)
+                            )
+                            if _shrink_res.get("is_short_sample"):
+                                new_cal = round(float(_shrink_res["shrunk_pct"]), 1)
+                                if is_broken:
+                                    new_cal = min(new_cal, 49.5)
+                                item["is_short_sample"] = True
+                                item["sample_shrinkage_tag"] = str(_shrink_res.get("sample_shrinkage_tag", ""))
+                                item["win_rate_ci_pct"] = [_shrink_res.get("ci_low", 50.0), _shrink_res.get("ci_high", 50.0)]
+                        except Exception:
+                            pass
+
+                    # 阶段一规则 1：空头防守体制门禁 (BEAR_DEFENSE 对常规多头平滑压制并封顶 <=48.0%)
+                    _is_regime_capped = False
+                    if _is_bear_regime and tk not in _exempt_regime_set:
+                        if new_cal > 40.0:
+                            new_cal = round(40.0 + (new_cal - 40.0) * 0.25, 1)
+                        new_cal = round(float(np.clip(new_cal, 15.0, 48.0)), 1)
+                        if is_short_covering:
+                            is_short_covering = False
+                            is_broken = True
+                            item["is_short_covering"] = False
+                            item["is_broken"] = True
+                            item["track"] = "Track B"
+                        _is_regime_capped = True
+                    item["market_regime"] = _active_regime
+                    item["is_regime_capped"] = _is_regime_capped
+
                     item["base_raw_prob_pct"] = new_raw
                     item["predicted_win_rate_pct"] = new_raw
                     item["calibrated_win_rate_pct"] = new_cal
@@ -308,6 +381,8 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                         item["action"] = "🔥 恐慌衰竭·博弈空头回补 (压力位不过就跑)"
                     elif is_broken:
                         item["action"] = "🚨 破位飞刀·严禁左侧抄底"
+                    elif _is_regime_capped:
+                        item["action"] = "🛡️ 暴雨空仓·严禁左侧接刀" if is_storm else "🛡️ 空头体制封顶·暂停常规做多"
                     elif is_storm:
                         if raw_prob_pct >= 50.0 and cal_prob_pct >= 55.0:
                             item["action"] = "🛡️ 暴雨防守·仅极小仓试错"
@@ -329,6 +404,10 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                         import ml_predictor_5y
                         pw_val = float(item.get('put_wall', 0.0)) if item.get('put_wall') else None
                         cw_val = float(item.get('call_wall', 0.0)) if item.get('call_wall') else None
+                        if pw_val and live_p > 0 and (pw_val / live_p >= 1.67 or live_p / pw_val >= 1.67):
+                            pw_val = None
+                        if cw_val and live_p > 0 and (cw_val / live_p >= 1.67 or live_p / cw_val >= 1.67):
+                            cw_val = None
                         sc_map = ml_predictor_5y.compute_multi_level_scenario_map(
                             ticker=tk,
                             current_price=live_p,
@@ -437,8 +516,15 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 ai_predictions["defensive_flight"] = _def_flight_obj
                 _breadth_obj = (weather_info.get("cross_industry_breadth") if isinstance(weather_info, dict) else None) or breadth_info or ai_predictions.get("cross_industry_breadth", {})
                 ai_predictions["cross_industry_breadth"] = _breadth_obj
+                ai_predictions["market_regime"] = _active_regime
+                ai_predictions["market_regime_cn"] = _active_regime_cn
+                ai_predictions["breadth_ma20_pct"] = round(_active_breadth_ma20, 1)
+                ai_predictions["live_scorecard"] = _scorecard_obj
                 if isinstance(ai_predictions.get("macro_weather"), dict):
                     ai_predictions["macro_weather"]["cross_industry_breadth"] = _breadth_obj
+                    ai_predictions["macro_weather"]["market_regime"] = _active_regime
+                    ai_predictions["macro_weather"]["market_regime_cn"] = _active_regime_cn
+                    ai_predictions["macro_weather"]["breadth_ma20_pct"] = round(_active_breadth_ma20, 1)
 
                 if sync_dir:
                     _sync_dir = sync_dir
@@ -472,6 +558,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                         "macro_weather": ai_predictions.get("macro_weather", {}),
                         "defensive_flight": _def_flight_obj,
                         "cross_industry_breadth": _breadth_obj,
+                        "live_scorecard": _scorecard_obj,
                         "table1": ai_predictions.get("table1", []),
                         "table2": ai_predictions.get("sectors", ai_predictions.get("table2", [])),
                         "table3": ai_predictions.get("table3", []),
@@ -485,7 +572,10 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                         _pred_html_path = os.path.join(_sync_dir, "predict_radar_5y.html")
                         ml_predictor_5y.render_html_dashboard(_tables_for_html, output_path=_pred_html_path)
                         import subprocess
-                        subprocess.run(["git", "add", "predict_radar_5y.html", "data_cache/latest_ai_predictions.json"], cwd=_sync_dir, check=False, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+                        _git_stage = ["predict_radar_5y.html", "data_cache/latest_ai_predictions.json"]
+                        if os.path.exists(os.path.join(_sync_dir, "data_cache", "live_prediction_scorecard.json")):
+                            _git_stage.append("data_cache/live_prediction_scorecard.json")
+                        subprocess.run(["git", "add"] + _git_stage, cwd=_sync_dir, check=False, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
                 except Exception as _re:
                     print(f"[!] 同步重绘 predict_radar_5y.html 提示: {_re}")
     except Exception:
@@ -1993,9 +2083,16 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 </div>
                 <div class="panel-box-content" id="pAiCardBody">
                     <!-- 1. Dominant Decision Banner -->
-                    <div id="pAiActionBanner" style="background: rgba(188, 140, 255, 0.12); border: 1px solid rgba(188, 140, 255, 0.35); border-radius: 5px; padding: 5px 8px; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 4px 8px;">
+                    <div id="pAiActionBanner" style="background: rgba(188, 140, 255, 0.12); border: 1px solid rgba(188, 140, 255, 0.35); border-radius: 5px; padding: 5px 8px; margin-bottom: 6px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 4px 8px;">
                         <span id="pAiActionText" style="font-size: 12px; font-weight: 800; color: #e2c5ff; white-space: nowrap; flex-shrink: 0;">--</span>
                         <span id="pAiSectorStar" style="font-size: 11px; color: #ffd54f; font-weight: 700; white-space: nowrap; flex-shrink: 0;">--</span>
+                    </div>
+
+                    <!-- 1b. Market Regime & Live Prediction Scorecard Pill -->
+                    <div id="pAiRegimeScorecardBar" style="display: flex; flex-wrap: wrap; gap: 4px 6px; align-items: center; justify-content: space-between; margin-bottom: 8px; padding: 4px 7px; border-radius: 5px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); font-size: 10.5px;">
+                        <span id="pAiRegimePill" style="font-weight: 700; color: #9ca3af;">--</span>
+                        <span id="pAiShrinkBadge" style="display: none; font-size: 9.5px; padding: 1px 5px; border-radius: 3px; background: rgba(210,153,34,0.18); color: #f59e0b; border: 1px solid rgba(210,153,34,0.4); font-weight: 700;"></span>
+                        <span id="pAiScorecardPill" style="font-weight: 700; color: #c9d1d9;">--</span>
                     </div>
 
                     <!-- 2. Dual Comparison Tug-of-War Probability Module -->
@@ -3501,6 +3598,44 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                     if (lwrEl) lwrEl.innerText = `${{longWr.toFixed(1)}}%`;
                     const swrEl = document.getElementById("pAiShortWr");
                     if (swrEl) swrEl.innerText = `${{shortWr.toFixed(1)}}%`;
+
+                    // 3b. Market Regime, Short-Sample Badge & Live Scorecard Pill
+                    const regEl = document.getElementById("pAiRegimePill");
+                    if (regEl) {{
+                        const regCn = (AI_PREDICTIONS && (AI_PREDICTIONS.market_regime_cn || (AI_PREDICTIONS.macro_weather && AI_PREDICTIONS.macro_weather.market_regime_cn))) || "🟡 震荡分化体制";
+                        const regCode = (AI_PREDICTIONS && (AI_PREDICTIONS.market_regime || (AI_PREDICTIONS.macro_weather && AI_PREDICTIONS.macro_weather.market_regime))) || "NEUTRAL_CHOP";
+                        const brPct = (AI_PREDICTIONS && AI_PREDICTIONS.breadth_ma20_pct !== undefined) ? Number(AI_PREDICTIONS.breadth_ma20_pct) : 50.0;
+                        regEl.innerText = `${{regCn}} · 宽度${{brPct.toFixed(0)}}%`;
+                        regEl.style.color = regCode === "BEAR_DEFENSE" ? "#ff7b72" : (regCode === "BULL_TREND" ? "#4ade80" : "#ffd54f");
+                    }}
+                    const shEl = document.getElementById("pAiShrinkBadge");
+                    if (shEl) {{
+                        if (aiItem && aiItem.is_short_sample && aiItem.sample_shrinkage_tag) {{
+                            shEl.innerText = String(aiItem.sample_shrinkage_tag);
+                            shEl.style.display = "inline-block";
+                        }} else {{
+                            shEl.style.display = "none";
+                        }}
+                    }}
+                    const scEl = document.getElementById("pAiScorecardPill");
+                    if (scEl) {{
+                        const scObj = (AI_PREDICTIONS && AI_PREDICTIONS.live_scorecard) ? AI_PREDICTIONS.live_scorecard : null;
+                        if (scObj && scObj.sample_count_7d !== undefined) {{
+                            const wr7 = Number(scObj.win_rate_7d_pct || 0);
+                            const wr30 = Number(scObj.win_rate_30d_pct || 0);
+                            const isDeg = Boolean(scObj.is_degraded || (Number(scObj.sample_count_7d || 0) > 0 && wr7 < 45.0));
+                            if (isDeg) {{
+                                scEl.innerText = `⚠️ 模型近期失准·自动降权参考 (7D:${{wr7.toFixed(1)}}% | 30D:${{wr30.toFixed(1)}}%)`;
+                                scEl.style.color = "#f59e0b";
+                            }} else {{
+                                scEl.innerText = `📊 实盘胜率 7D:${{wr7.toFixed(1)}}% | 30D:${{wr30.toFixed(1)}}%`;
+                                scEl.style.color = "#4ade80";
+                            }}
+                        }} else {{
+                            scEl.innerText = "📊 实盘成绩单初始化中";
+                            scEl.style.color = "#9ca3af";
+                        }}
+                    }}
 
                     const totalWr = (longWr + shortWr) || 100.0;
                     const longRatio = Math.max(10, Math.min(90, (longWr / totalWr) * 100));

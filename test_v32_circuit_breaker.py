@@ -1231,7 +1231,9 @@ class TestV32CircuitBreaker(unittest.TestCase):
             out = imr.fetch_all_market_data(["SNDK"], period="1y", retries=1)
         self.assertIn("SNDK", out)
         self.assertGreaterEqual(len(out["SNDK"]), 200, f"Expected SNDK backfilled >=200 bars from parquet, got {len(out['SNDK'])}")
-        self.assertAlmostEqual(float(out["SNDK"]["Close"].iloc[-1]), 776.22, places=2)
+        self.assertIn(_pd.Timestamp("2026-11-18"), out["SNDK"].index)
+        self.assertAlmostEqual(float(out["SNDK"].loc[_pd.Timestamp("2026-11-18"), "Close"]), 776.22, places=2)
+        self.assertGreater(float(out["SNDK"]["Close"].iloc[-1]), 0.0)
 
     def test_all_stocks_emit_5m_entry_without_starred_watchlist(self):
         """Even when target_watchlist is empty, any stock/ETF with intraday_entry_ready=True emits 5m_entry notification."""

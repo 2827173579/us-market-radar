@@ -1,0 +1,487 @@
+{
+  "updated_at": "2026-11-20 09:38:13",
+  "win_rate_7d_pct": 63.0,
+  "win_rate_30d_pct": 52.8,
+  "long_win_rate_7d_pct": 31.9,
+  "short_win_rate_7d_pct": 63.0,
+  "long_win_rate_30d_pct": 32.6,
+  "short_win_rate_30d_pct": 52.8,
+  "sample_count_7d": 27,
+  "sample_count_30d": 142,
+  "avg_return_7d_pct": 2.25,
+  "avg_return_30d_pct": 1.01,
+  "window_7d_range": "2026-11-09~2026-11-15",
+  "window_30d_range": "2026-10-17~2026-11-15",
+  "is_degraded": false,
+  "warning_text": "✅ 模型近期实盘命中稳健",
+  "reconciled_live_count": 0,
+  "reconciled_live_records": [],
+  "pending_predictions": [
+    {
+      "ticker": "NKE",
+      "pred_date": "2026-11-20",
+      "direction": "SHORT",
+      "pred_prob_pct": 58.5,
+      "entry_price": 34.33
+    },
+    {
+      "ticker": "CEG",
+      "pred_date": "2026-11-20",
+      "direction": "SHORT",
+      "pred_prob_pct": 57.6,
+      "entry_price": 252.03
+    },
+    {
+      "ticker": "ORCL",
+      "pred_date": "2026-11-20",
+      "direction": "SHORT",
+      "pred_prob_pct": 56.4,
+      "entry_price": 110.57
+    },
+    {
+      "ticker": "JPM",
+      "pred_date": "2026-11-20",
+      "direction": "SHORT",
+      "pred_prob_pct": 58.9,
+      "entry_price": 320.22
+    },
+    {
+      "ticker": "GOOGL",
+      "pred_date": "2026-11-20",
+      "direction": "SHORT",
+      "pred_prob_pct": 59.6,
+      "entry_price": 272.66
+    },
+    {
+      "ticker": "MCD",
+      "pred_date": "2026-11-20",
+      "direction": "SHORT",
+      "pred_prob_pct": 57.4,
+      "entry_price": 272.35
+    },
+    {
+      "ticker": "META",
+      "pred_date": "2026-11-20",
+      "direction": "SHORT",
+      "pred_prob_pct": 56.4,
+      "entry_price": 596.22
+    },
+    {
+      "ticker": "XOM",
+      "pred_date": "2026-11-20",
+      "direction": "SHORT",
+      "pred_prob_pct": 57.2,
+      "entry_price": 158.93
+    },
+    {
+      "ticker": "NOW",
+      "pred_date": "2026-11-20",
+      "direction": "SHORT",
+      "pred_prob_pct": 55.7,
+      "entry_price": 88.87
+    },
+    {
+      "ticker": "CAT",
+      "pred_date": "2026-11-20",
+      "direction": "SHORT",
+      "pred_prob_pct": 56.0,
+      "entry_price": 537.37
+    },
+    {
+      "ticker": "AAOI",
+      "pred_date": "2026-11-20",
+      "direction": "SHORT",
+      "pred_prob_pct": 66.2,
+      "entry_price": 39.46
+    },
+    {
+      "ticker": "INTC",
+      "pred_date": "2026-11-20",
+      "direction": "SHORT",
+      "pred_prob_pct": 56.8,
+      "entry_price": 55.72
+    },
+    {
+      "ticker": "V",
+      "pred_date": "2026-11-20",
+      "direction": "SHORT",
+      "pred_prob_pct": 55.2,
+      "entry_price": 402.25
+    },
+    {
+      "ticker": "TSLA",
+      "pred_date": "2026-11-20",
+      "direction": "SHORT",
+      "pred_prob_pct": 55.1,
+      "entry_price": 374.41
+    },
+    {
+      "ticker": "CRWV",
+      "pred_date": "2026-11-20",
+      "direction": "SHORT",
+      "pred_prob_pct": 55.0,
+      "entry_price": 44.91
+    },
+    {
+      "ticker": "FN",
+      "pred_date": "2026-11-20",
+      "direction": "SHORT",
+      "pred_prob_pct": 56.6,
+      "entry_price": 311.71
+    },
+    {
+      "ticker": "LUNR",
+      "pred_date": "2026-11-20",
+      "direction": "SHORT",
+      "pred_prob_pct": 58.4,
+      "entry_price": 9.78
+    },
+    {
+      "ticker": "VRT",
+      "pred_date": "2026-11-20",
+      "direction": "SHORT",
+      "pred_prob_pct": 59.7,
+      "entry_price": 184.99
+    },
+    {
+      "ticker": "RKLB",
+      "pred_date": "2026-11-20",
+      "direction": "SHORT",
+      "pred_prob_pct": 64.2,
+      "entry_price": 50.99
+    },
+    {
+      "ticker": "OKLO",
+      "pred_date": "2026-11-20",
+      "direction": "SHORT",
+      "pred_prob_pct": 60.4,
+      "entry_price": 20.84
+    },
+    {
+      "ticker": "COHR",
+      "pred_date": "2026-11-20",
+      "direction": "SHORT",
+      "pred_prob_pct": 58.1,
+      "entry_price": 214.94
+    },
+    {
+      "ticker": "COIN",
+      "pred_date": "2026-11-20",
+      "direction": "SHORT",
+      "pred_prob_pct": 63.1,
+      "entry_price": 108.87
+    },
+    {
+      "ticker": "MSFT",
+      "pred_date": "2026-11-20",
+      "direction": "SHORT",
+      "pred_prob_pct": 58.0,
+      "entry_price": 498.3
+    },
+    {
+      "ticker": "CRDO",
+      "pred_date": "2026-11-20",
+      "direction": "SHORT",
+      "pred_prob_pct": 57.2,
+      "entry_price": 117.76
+    },
+    {
+      "ticker": "VST",
+      "pred_date": "2026-11-20",
+      "direction": "SHORT",
+      "pred_prob_pct": 58.5,
+      "entry_price": 124.15
+    },
+    {
+      "ticker": "MU",
+      "pred_date": "2026-11-20",
+      "direction": "SHORT",
+      "pred_prob_pct": 59.2,
+      "entry_price": 690.44
+    },
+    {
+      "ticker": "MSTR",
+      "pred_date": "2026-11-20",
+      "direction": "SHORT",
+      "pred_prob_pct": 64.1,
+      "entry_price": 86.13
+    },
+    {
+      "ticker": "ASML",
+      "pred_date": "2026-11-20",
+      "direction": "SHORT",
+      "pred_prob_pct": 59.0,
+      "entry_price": 1356.2
+    },
+    {
+      "ticker": "AMAT",
+      "pred_date": "2026-11-20",
+      "direction": "SHORT",
+      "pred_prob_pct": 60.7,
+      "entry_price": 338.93
+    },
+    {
+      "ticker": "TSM",
+      "pred_date": "2026-11-20",
+      "direction": "SHORT",
+      "pred_prob_pct": 58.1,
+      "entry_price": 352.09
+    },
+    {
+      "ticker": "BTC-USD",
+      "pred_date": "2026-11-20",
+      "direction": "SHORT",
+      "pred_prob_pct": 58.3,
+      "entry_price": 61959.97
+    },
+    {
+      "ticker": "PLTR",
+      "pred_date": "2026-11-20",
+      "direction": "SHORT",
+      "pred_prob_pct": 60.8,
+      "entry_price": 153.68
+    }
+  ],
+  "daily_breakdown_30d": [
+    {
+      "date": "2026-10-17",
+      "win_rate_pct": 0.0,
+      "long_win_rate_pct": 0.0,
+      "short_win_rate_pct": 0.0,
+      "sample_count": 1,
+      "avg_return_pct": -2.6
+    },
+    {
+      "date": "2026-10-18",
+      "win_rate_pct": 0.0,
+      "long_win_rate_pct": 0.0,
+      "short_win_rate_pct": 0.0,
+      "sample_count": 1,
+      "avg_return_pct": -2.54
+    },
+    {
+      "date": "2026-10-19",
+      "win_rate_pct": 11.1,
+      "long_win_rate_pct": 42.9,
+      "short_win_rate_pct": 0.0,
+      "sample_count": 9,
+      "avg_return_pct": -4.22
+    },
+    {
+      "date": "2026-10-20",
+      "win_rate_pct": 75.0,
+      "long_win_rate_pct": 5.3,
+      "short_win_rate_pct": 0.0,
+      "sample_count": 4,
+      "avg_return_pct": 3.61
+    },
+    {
+      "date": "2026-10-21",
+      "win_rate_pct": 28.6,
+      "long_win_rate_pct": 17.6,
+      "short_win_rate_pct": 0.0,
+      "sample_count": 28,
+      "avg_return_pct": -1.84
+    },
+    {
+      "date": "2026-10-22",
+      "win_rate_pct": 13.0,
+      "long_win_rate_pct": 100.0,
+      "short_win_rate_pct": 13.0,
+      "sample_count": 23,
+      "avg_return_pct": -3.56
+    },
+    {
+      "date": "2026-10-23",
+      "win_rate_pct": 29.4,
+      "long_win_rate_pct": 0.0,
+      "short_win_rate_pct": 29.4,
+      "sample_count": 17,
+      "avg_return_pct": -1.16
+    },
+    {
+      "date": "2026-10-24",
+      "win_rate_pct": 100.0,
+      "long_win_rate_pct": 0.0,
+      "short_win_rate_pct": 100.0,
+      "sample_count": 1,
+      "avg_return_pct": 3.58
+    },
+    {
+      "date": "2026-10-25",
+      "win_rate_pct": 100.0,
+      "long_win_rate_pct": 0.0,
+      "short_win_rate_pct": 100.0,
+      "sample_count": 1,
+      "avg_return_pct": 3.59
+    },
+    {
+      "date": "2026-10-26",
+      "win_rate_pct": 40.0,
+      "long_win_rate_pct": 100.0,
+      "short_win_rate_pct": 40.0,
+      "sample_count": 25,
+      "avg_return_pct": -1.45
+    },
+    {
+      "date": "2026-10-27",
+      "win_rate_pct": 66.7,
+      "long_win_rate_pct": 0.0,
+      "short_win_rate_pct": 66.7,
+      "sample_count": 9,
+      "avg_return_pct": 4.03
+    },
+    {
+      "date": "2026-10-28",
+      "win_rate_pct": 100.0,
+      "long_win_rate_pct": 0.0,
+      "short_win_rate_pct": 0.0,
+      "sample_count": 5,
+      "avg_return_pct": 7.41
+    },
+    {
+      "date": "2026-10-29",
+      "win_rate_pct": 100.0,
+      "long_win_rate_pct": 0.0,
+      "short_win_rate_pct": 100.0,
+      "sample_count": 10,
+      "avg_return_pct": 7.56
+    },
+    {
+      "date": "2026-10-30",
+      "win_rate_pct": 81.8,
+      "long_win_rate_pct": 0.0,
+      "short_win_rate_pct": 81.8,
+      "sample_count": 22,
+      "avg_return_pct": 4.31
+    },
+    {
+      "date": "2026-10-31",
+      "win_rate_pct": 0.0,
+      "long_win_rate_pct": 0.0,
+      "short_win_rate_pct": 0.0,
+      "sample_count": 1,
+      "avg_return_pct": -2.53
+    },
+    {
+      "date": "2026-11-01",
+      "win_rate_pct": 0.0,
+      "long_win_rate_pct": 0.0,
+      "short_win_rate_pct": 0.0,
+      "sample_count": 1,
+      "avg_return_pct": -2.45
+    },
+    {
+      "date": "2026-11-02",
+      "win_rate_pct": 60.0,
+      "long_win_rate_pct": 16.7,
+      "short_win_rate_pct": 0.0,
+      "sample_count": 10,
+      "avg_return_pct": 1.48
+    },
+    {
+      "date": "2026-11-03",
+      "win_rate_pct": 57.1,
+      "long_win_rate_pct": 0.0,
+      "short_win_rate_pct": 57.1,
+      "sample_count": 7,
+      "avg_return_pct": 0.85
+    },
+    {
+      "date": "2026-11-04",
+      "win_rate_pct": 7.1,
+      "long_win_rate_pct": 4.5,
+      "short_win_rate_pct": 0.0,
+      "sample_count": 28,
+      "avg_return_pct": -4.66
+    },
+    {
+      "date": "2026-11-05",
+      "win_rate_pct": 100.0,
+      "long_win_rate_pct": 62.5,
+      "short_win_rate_pct": 0.0,
+      "sample_count": 1,
+      "avg_return_pct": 7.8
+    },
+    {
+      "date": "2026-11-06",
+      "win_rate_pct": 75.0,
+      "long_win_rate_pct": 83.3,
+      "short_win_rate_pct": 0.0,
+      "sample_count": 28,
+      "avg_return_pct": 4.65
+    },
+    {
+      "date": "2026-11-07",
+      "win_rate_pct": 0.0,
+      "long_win_rate_pct": 0.0,
+      "short_win_rate_pct": 0.0,
+      "sample_count": 1,
+      "avg_return_pct": -2.94
+    },
+    {
+      "date": "2026-11-08",
+      "win_rate_pct": 0.0,
+      "long_win_rate_pct": 0.0,
+      "short_win_rate_pct": 0.0,
+      "sample_count": 1,
+      "avg_return_pct": -3.1
+    },
+    {
+      "date": "2026-11-09",
+      "win_rate_pct": 67.9,
+      "long_win_rate_pct": 72.2,
+      "short_win_rate_pct": 0.0,
+      "sample_count": 28,
+      "avg_return_pct": 4.44
+    },
+    {
+      "date": "2026-11-10",
+      "win_rate_pct": 14.3,
+      "long_win_rate_pct": 9.5,
+      "short_win_rate_pct": 0.0,
+      "sample_count": 28,
+      "avg_return_pct": -3.5
+    },
+    {
+      "date": "2026-11-11",
+      "win_rate_pct": 60.0,
+      "long_win_rate_pct": 0.0,
+      "short_win_rate_pct": 60.0,
+      "sample_count": 25,
+      "avg_return_pct": 1.7
+    },
+    {
+      "date": "2026-11-12",
+      "win_rate_pct": 100.0,
+      "long_win_rate_pct": 0.0,
+      "short_win_rate_pct": 100.0,
+      "sample_count": 2,
+      "avg_return_pct": 9.16
+    },
+    {
+      "date": "2026-11-13",
+      "win_rate_pct": 0.0,
+      "long_win_rate_pct": 0.0,
+      "short_win_rate_pct": 0.0,
+      "sample_count": 1,
+      "avg_return_pct": -3.56
+    },
+    {
+      "date": "2026-11-14",
+      "win_rate_pct": 0.0,
+      "long_win_rate_pct": 0.0,
+      "short_win_rate_pct": 0.0,
+      "sample_count": 1,
+      "avg_return_pct": -4.14
+    },
+    {
+      "date": "2026-11-15",
+      "win_rate_pct": 0.0,
+      "long_win_rate_pct": 0.0,
+      "short_win_rate_pct": 0.0,
+      "sample_count": 1,
+      "avg_return_pct": -4.27
+    }
+  ]
+}
