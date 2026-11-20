@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795159421.71,
-  "updated_at_et": "11-20 02:23 ET",
-  "updated_at_kst": "16:23 KST",
+  "updated_at_ts": 1795159527.167,
+  "updated_at_et": "11-20 02:25 ET",
+  "updated_at_kst": "16:25 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2603,6 +2603,20 @@
     ],
     "BTC-USD": [
       {
+        "title": "BlackRock’s Bitcoin ETF Sees Record $541 Million Outflow in a Single Day",
+        "url": "https://beincrypto.com/blackrock-bitcoin-etf-record-outflow/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 02:00 ET",
+        "pub_ts": 1795158000.0
+      },
+      {
+        "title": "Bitcoin hits near 5-mth low below $62k as AI rout batters risk appetite",
+        "url": "https://finance.yahoo.com/markets/crypto/articles/bitcoin-hits-near-5-mth-065931562.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 01:59 ET",
+        "pub_ts": 1795157971.0
+      },
+      {
         "title": "Bitcoin Falls to Mining Cost Level as Hashrate Nears Record and Indicators Flip Bearish",
         "url": "https://beincrypto.com/bitcoin-mining-cost-hashrate-bearish/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2622,20 +2636,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 20:30 ET",
         "pub_ts": 1795138200.0
-      },
-      {
-        "title": "AVAX One Technology Ltd (AVX) (Q3 2026) Earnings Call Highlights: Revenue Surges Fourfold as ...",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/avax-one-technology-ltd-avx-010110975.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 20:01 ET",
-        "pub_ts": 1795136470.0
-      },
-      {
-        "title": "Webull Q3 Earnings Call Highlights",
-        "url": "https://www.marketbeat.com/instant-alerts/transcript-webull-q3-earnings-call-highlights-2026-11-19/?utm_source=yahoofinance&utm_medium=yahoofinance&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 19:14 ET",
-        "pub_ts": 1795133647.0
       }
     ],
     "CRWD": [
@@ -3293,16 +3293,16 @@
     "VRT": 1795159421.7100236,
     "HPE": 1795159421.7100236,
     "DELL": 1795159421.7100236,
-    "OKLO": 1795157976.4707427,
+    "OKLO": 1795159527.166691,
     "CEG": 1795159421.7100236,
-    "FPS": 1795157976.4707427,
-    "MU": 1795157976.4707427,
-    "SKHY": 1795157976.4707427,
-    "WDC": 1795157976.4707427,
-    "STX": 1795157976.4707427,
-    "MSTR": 1795157976.4707427,
-    "SNDK": 1795157976.4707427,
-    "BTC-USD": 1795157976.4707427,
+    "FPS": 1795159527.166691,
+    "MU": 1795159527.166691,
+    "SKHY": 1795159527.166691,
+    "WDC": 1795159527.166691,
+    "STX": 1795159527.166691,
+    "MSTR": 1795159527.166691,
+    "SNDK": 1795159527.166691,
+    "BTC-USD": 1795159527.166691,
     "CRWD": 1795158701.775705,
     "ORCL": 1795158806.809848,
     "COIN": 1795158701.775705,
@@ -3318,8 +3318,8 @@
     "CAT": 1795159421.7100236,
     "FN": 1795158701.775705,
     "GLW": 1795158701.775705,
-    "ANT": 1795157976.4707427,
-    "XAUUSD": 1795157976.4707427
+    "ANT": 1795159527.166691,
+    "XAUUSD": 1795159527.166691
   },
   "calendar_banner": {
     "level": "idle_with_flash",
