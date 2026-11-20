@@ -1,9 +1,23 @@
 {
-  "updated_at_ts": 1795146989.92,
-  "updated_at_et": "11-19 22:56 ET",
-  "updated_at_kst": "12:56 KST",
+  "updated_at_ts": 1795147094.917,
+  "updated_at_et": "11-19 22:58 ET",
+  "updated_at_kst": "12:58 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261120115646409800",
+      "title": "黄金五连跌，较历史高点暴跌超2000美元！加息预期与AI抛售潮夹击",
+      "summary": "黄金连跌五个交易日，较历史高点跌超2000美元，本周跌幅或超9%。美联储加息预期升温、AI股抛售潮蔓延，加上年底流动性需求，投资者纷纷抛售黄金筹集现金。点击查看",
+      "keywords": [
+        "美联储",
+        "加息"
+      ],
+      "pub_ts": 1795147006.0,
+      "time_et": "11-19 22:56 ET",
+      "time_bj": "11:56 BJ",
+      "time_kst": "12:56 KST",
+      "time_display": "22:56 ET / 11:56 BJ"
+    },
     {
       "id": "20261120115323335800",
       "title": "美元多头已挤到极致，12月点阵图或成为下一处分水岭",
@@ -334,19 +348,6 @@
       "time_bj": "06:30 BJ",
       "time_kst": "07:30 KST",
       "time_display": "17:30 ET / 06:30 BJ"
-    },
-    {
-      "id": "20261120060048752800",
-      "title": "英伟达(NVDA.O)宣布即将面向金融界举行活动。",
-      "summary": "英伟达(NVDA.O)宣布即将面向金融界举行活动。",
-      "keywords": [
-        "英伟达"
-      ],
-      "pub_ts": 1795125648.0,
-      "time_et": "11-19 17:00 ET",
-      "time_bj": "06:00 BJ",
-      "time_kst": "07:00 KST",
-      "time_display": "17:00 ET / 06:00 BJ"
     }
   ],
   "ticker_news": {
@@ -1203,6 +1204,20 @@
     ],
     "MSFT": [
       {
+        "title": "Microsoft CEO Nadella faces uncomfortable reality after outage",
+        "url": "https://www.thestreet.com/technology/microsoft-ceo-nadella-faces-uncomfortable-reality-after-outage?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 22:47 ET",
+        "pub_ts": 1795146420.0
+      },
+      {
+        "title": "Akamai Technologies (AKAM) Expands Mobile Enterprise Browser Security",
+        "url": "https://finance.yahoo.com/technology/articles/akamai-technologies-akam-expands-mobile-031634349.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 22:16 ET",
+        "pub_ts": 1795144594.0
+      },
+      {
         "title": "Microsoft reveals 80% server failure behind global outage",
         "url": "https://www.thestreet.com/investing/microsoft-reveals-80-server-failure-behind-global-outage?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1222,20 +1237,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 16:16 ET",
         "pub_ts": 1795122960.0
-      },
-      {
-        "title": "Meta trades at 21x P/E, yet shareholders face a massive new bill",
-        "url": "https://finance.yahoo.com/technology/articles/meta-trades-21x-p-e-202440346.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 15:24 ET",
-        "pub_ts": 1795119880.0
-      },
-      {
-        "title": "Tech takes a beating as AI trade comes unstuck despite Anthropic surge",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/tech-takes-beating-ai-trade-030257717.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 22:02 ET",
-        "pub_ts": 1795143777.0
       }
     ],
     "AAPL": [
@@ -1380,7 +1381,7 @@
       },
       {
         "title": "Siteimprove.ai Accessibility Agent Now Available for AI Agents Through Agentic Commerce on AWS Marketplace",
-        "url": "https://finance.yahoo.com/news/siteimprove-ai-accessibility-agent-now-220600790.html?.tsrc=rss",
+        "url": "https://finance.yahoo.com/technology/ai/articles/siteimprove-ai-accessibility-agent-now-220600704.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-19 17:06 ET",
         "pub_ts": 1795125960.0
@@ -3264,18 +3265,18 @@
     "SOXS": 1795146989.9197507,
     "NVDA": 1795146989.9197507,
     "AMD": 1795146989.9197507,
-    "ASML": 1795145568.5988398,
+    "ASML": 1795147094.9172387,
     "QCOM": 1795146989.9197507,
     "AVGO": 1795146989.9197507,
     "AMAT": 1795146989.9197507,
-    "META": 1795145568.5988398,
-    "GOOGL": 1795145568.5988398,
-    "MSFT": 1795145568.5988398,
-    "AAPL": 1795145568.5988398,
-    "PLTR": 1795145568.5988398,
-    "NOW": 1795145568.5988398,
-    "AMZN": 1795145568.5988398,
-    "CRWV": 1795145568.5988398,
+    "META": 1795147094.9172387,
+    "GOOGL": 1795147094.9172387,
+    "MSFT": 1795147094.9172387,
+    "AAPL": 1795147094.9172387,
+    "PLTR": 1795147094.9172387,
+    "NOW": 1795147094.9172387,
+    "AMZN": 1795147094.9172387,
+    "CRWV": 1795147094.9172387,
     "NBIS": 1795146383.3291159,
     "APLD": 1795146383.3291159,
     "VST": 1795146383.3291159,
@@ -3284,23 +3285,23 @@
     "COHR": 1795146383.3291159,
     "MRVL": 1795146383.3291159,
     "LITE": 1795146383.3291159,
-    "AAOI": 1795145568.5988398,
+    "AAOI": 1795147094.9172387,
     "SPCX": 1795146383.3291159,
     "ASTS": 1795146383.3291159,
     "AXTI": 1795146383.3291159,
-    "NASA": 1795145568.5988398,
-    "LUNR": 1795145568.5988398,
-    "TSLA": 1795145568.5988398,
-    "AXP": 1795145568.5988398,
+    "NASA": 1795147094.9172387,
+    "LUNR": 1795147094.9172387,
+    "TSLA": 1795147094.9172387,
+    "AXP": 1795147094.9172387,
     "RKLB": 1795146383.3291159,
-    "KO": 1795145568.5988398,
+    "KO": 1795147094.9172387,
     "FLY": 1795146383.3291159,
-    "INTC": 1795145568.5988398,
-    "VRT": 1795145568.5988398,
-    "HPE": 1795145568.5988398,
-    "DELL": 1795145568.5988398,
+    "INTC": 1795147094.9172387,
+    "VRT": 1795147094.9172387,
+    "HPE": 1795147094.9172387,
+    "DELL": 1795147094.9172387,
     "OKLO": 1795145673.3748174,
-    "CEG": 1795145568.5988398,
+    "CEG": 1795147094.9172387,
     "FPS": 1795145673.3748174,
     "MU": 1795145673.3748174,
     "SKHY": 1795145673.3748174,
@@ -3319,9 +3320,9 @@
     "PEP": 1795146383.3291159,
     "XOM": 1795146989.9197507,
     "JPM": 1795146989.9197507,
-    "WMT": 1795145568.5988398,
+    "WMT": 1795147094.9172387,
     "V": 1795146383.3291159,
-    "CAT": 1795145568.5988398,
+    "CAT": 1795147094.9172387,
     "FN": 1795146383.3291159,
     "GLW": 1795146383.3291159,
     "ANT": 1795145673.3748174,
@@ -3330,7 +3331,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (22:53 ET / 11:53 BJ) [美联储]：美国经济韧性、通胀黏性与美联储鹰派预期仍在支撑美元，美银认为进入2027年美元升值交易仍是首选；但花旗模型显示主要货币对的美元多仓已普遍升至最高档位",
+    "detail": "⚡ 最新核心快讯 (22:56 ET / 11:56 BJ) [美联储] [加息]：黄金连跌五个交易日，较历史高点跌超2000美元，本周跌幅或超9%。美联储加息预期升温、AI股抛售潮蔓延，加上年底流动性需求，投资者纷纷抛售黄金筹集现金。点击查看",
     "event_name": "",
     "minutes_left": 0
   }
