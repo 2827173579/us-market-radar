@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795180212.204,
-  "updated_at_et": "11-20 08:10 ET",
-  "updated_at_kst": "22:10 KST",
+  "updated_at_ts": 1795180320.267,
+  "updated_at_et": "11-20 08:12 ET",
+  "updated_at_kst": "22:12 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1231,11 +1231,25 @@
     ],
     "AAPL": [
       {
+        "title": "Apple Might Be About to Become an AI Stock—but It’s Still Dodging the Tech Selloff",
+        "url": "https://finance.yahoo.com/m/218adf20-fceb-3955-ab5b-5c4bc9cf9107/apple-might-be-about-to.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 07:44 ET",
+        "pub_ts": 1795178640.0
+      },
+      {
         "title": "Apple Is Building an AI Agent That Can Use Your Computer for You",
         "url": "https://247wallst.com/investing/2026/11/20/apple-is-building-an-ai-agent-that-can-use-your-computer-for-you/?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-20 07:38 ET",
         "pub_ts": 1795178313.0
+      },
+      {
+        "title": "Mark Gurman Says Apple Is “Five Plus Years Behind” in AI. Its Delayed Glasses Are Meta’s Opening",
+        "url": "https://www.tikr.com/blog/mark-gurman-says-apple-is-five-plus-years-behind-in-ai-its-delayed-glasses-are-metas-opening?ref=yahoofinance&tlnk=yf-261120-92c97fc8&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 07:35 ET",
+        "pub_ts": 1795178148.0
       },
       {
         "title": "Here’s How The Bulls Expect Apple to Hit $460 Per Share in 2027",
@@ -1250,20 +1264,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 07:11 ET",
         "pub_ts": 1795176690.0
-      },
-      {
-        "title": "Apple Director Dumps 90,000 Shares Worth Nearly $32 Million",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/apple-director-dumps-90-000-114110537.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 06:41 ET",
-        "pub_ts": 1795174870.0
-      },
-      {
-        "title": "What iShares Global Tech ETF (IXN) Bought: Apple Leads on Wednesday",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/ishares-global-tech-etf-ixn-110523985.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 06:05 ET",
-        "pub_ts": 1795172723.0
       }
     ],
     "PLTR": [
@@ -1342,6 +1342,20 @@
     ],
     "AMZN": [
       {
+        "title": "Amazon, Nvidia Fell As Anthropic Gained $185 Billion",
+        "url": "https://www.trefis.com/stock/amzn/articles/627187/amazon-nvidia-fell-as-anthropic-gained-185-billion/2026-11-20?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 07:51 ET",
+        "pub_ts": 1795179107.0
+      },
+      {
+        "title": "Bitwise CIO Predicts Hyperliquid Could Become \"the Next Amazon.\" Here's Why He's Right.",
+        "url": "https://www.fool.com/investing/2026/11/20/bitwise-cio-predicts-hyperliquid-could-become-the-next-amazon-heres-why-hes-rightwrong/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 07:50 ET",
+        "pub_ts": 1795179002.0
+      },
+      {
         "title": "Move Over, Amazon! Billionaire David Tepper of Appaloosa Has a New No. 1 Holding.",
         "url": "https://www.fool.com/investing/2026/11/20/move-over-amazon-billionaire-david-tepper-of-appaloosa-has-a-new-no-1-holding/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1361,20 +1375,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 06:05 ET",
         "pub_ts": 1795172705.0
-      },
-      {
-        "title": "What State Street Consumer Discretionary SPDR (XLY) Bought: Amazon Leads on Nov. 18",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/state-street-consumer-discretionary-spdr-110457372.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 06:04 ET",
-        "pub_ts": 1795172697.0
-      },
-      {
-        "title": "ETFs Are Net Sellers of Amazon (AMZN) on Nov. 18",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-net-sellers-amazon-amzn-110209755.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 06:02 ET",
-        "pub_ts": 1795172529.0
       }
     ],
     "CRWV": [
@@ -1386,7 +1386,7 @@
         "pub_ts": 1795175935.0
       },
       {
-        "title": "CoreWeave Gains $350 Million Computing Commitment as Debt Concerns Persist",
+        "title": "Jensen Huang's $350 Million CoreWeave Deal Raises Questions About AI Financing",
         "url": "https://finance.yahoo.com/technology/ai/articles/coreweave-gains-350-million-computing-113603215.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-20 06:36 ET",
@@ -1934,6 +1934,13 @@
     ],
     "TSLA": [
       {
+        "title": "Don’t Sell Tesla Stock. A Merger Is Coming.",
+        "url": "https://finance.yahoo.com/m/d592b819-836f-3be7-8792-8c24d9e9a701/don%E2%80%99t-sell-tesla-stock.-a.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 07:24 ET",
+        "pub_ts": 1795177440.0
+      },
+      {
         "title": "HSBC upgrades Tesla, more than doubles target on SpaceX merger potential",
         "url": "https://finance.yahoo.com/markets/stocks/articles/hsbc-upgrades-tesla-more-doubles-121007073.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1960,13 +1967,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 06:03 ET",
         "pub_ts": 1795172590.0
-      },
-      {
-        "title": "Tesla Stock Gets An HSBC Upgrade — But Analyst Says Strategic Logic Of TSLA-SPCX Merger Is ‘Limited’",
-        "url": "https://stocktwits.com/news-articles/markets/equity/tesla-stock-gets-an-hsbc-upgrade-but-analyst-says-strategic-logic-of-tsla-spcx-merger-is-limited/cNbSgTfR9Ko?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 06:02 ET",
-        "pub_ts": 1795172562.0
       }
     ],
     "AXP": [
@@ -2119,6 +2119,13 @@
     ],
     "INTC": [
       {
+        "title": "Anthropic, AMD, Intel, Marvell, Intuit, and More Stocks That Explain Today’s Market",
+        "url": "https://finance.yahoo.com/m/801603d1-8318-3eb0-99a6-10147f0d5ed5/anthropic%2C-amd%2C-intel%2C.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 07:02 ET",
+        "pub_ts": 1795176120.0
+      },
+      {
         "title": "Capital Group Core Equity (CGUS) Buys $25.4 Million More Intel on Nov. 18",
         "url": "https://finance.yahoo.com/markets/stocks/articles/capital-group-core-equity-cgus-110426396.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2145,13 +2152,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 15:56 ET",
         "pub_ts": 1795121762.0
-      },
-      {
-        "title": "What's Happening To Intel's Factory Cash?",
-        "url": "https://www.trefis.com/stock/intc/articles/626665/what-s-happening-to-intel-s-factory-cash/2026-11-19?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 14:14 ET",
-        "pub_ts": 1795115647.0
       }
     ],
     "VRT": [
@@ -2392,6 +2392,13 @@
         "pub_ts": 1795177202.0
       },
       {
+        "title": "Micron Keeps Falling as Memory Stocks Get Agonizingly Cheap. The Next Catalyst.",
+        "url": "https://finance.yahoo.com/m/3cab338f-3845-34b9-9d7a-2c45977740d5/micron-keeps-falling-as.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 06:58 ET",
+        "pub_ts": 1795175880.0
+      },
+      {
         "title": "ETFs Are Net Sellers of Micron Technology (MU) on Nov. 18",
         "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-net-sellers-micron-technology-110313234.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2404,13 +2411,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 04:34 ET",
         "pub_ts": 1795167258.0
-      },
-      {
-        "title": "Micron CEO’s Nvidia message comes with warning for 2027",
-        "url": "https://www.thestreet.com/investing/micron-ceo-nvidia-warning-2027-supply-already-sold-out?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 23:33 ET",
-        "pub_ts": 1795149180.0
       }
     ],
     "SKHY": [
@@ -2570,6 +2570,13 @@
         "pub_ts": 1795177204.0
       },
       {
+        "title": "Sandisk Stock Looked Like It Fell 87%. Here’s What Really Happened.",
+        "url": "https://finance.yahoo.com/m/83e6f25c-45b8-3b90-ab21-ee8d7bebe056/sandisk-stock-looked-like-it.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 07:16 ET",
+        "pub_ts": 1795176960.0
+      },
+      {
         "title": "Social Buzz: Wallstreetbets Stocks Mostly Lower Pre-Bell Friday; Sandisk, AMD to Decline",
         "url": "https://finance.yahoo.com/markets/stocks/articles/social-buzz-wallstreetbets-stocks-mostly-113227780.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2589,13 +2596,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 23:45 ET",
         "pub_ts": 1795149923.0
-      },
-      {
-        "title": "Down More Than 40% in the Past Month, Here’s How You Should Play Sandisk Stock",
-        "url": "https://www.barchart.com/story/news/8923559/down-more-than-40-in-the-past-month-heres-how-you-should-play-sandisk-stock?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 14:45 ET",
-        "pub_ts": 1795117533.0
       }
     ],
     "BTC-USD": [
@@ -3255,18 +3255,18 @@
     "SOXS": 1795180212.204471,
     "NVDA": 1795180212.204471,
     "AMD": 1795180212.204471,
-    "ASML": 1795178645.5927887,
+    "ASML": 1795180320.2673893,
     "QCOM": 1795180212.204471,
     "AVGO": 1795180212.204471,
     "AMAT": 1795180212.204471,
     "META": 1795180212.204471,
     "GOOGL": 1795180212.204471,
     "MSFT": 1795180212.204471,
-    "AAPL": 1795178753.5911746,
-    "PLTR": 1795178753.5911746,
-    "NOW": 1795178753.5911746,
-    "AMZN": 1795178753.5911746,
-    "CRWV": 1795178753.5911746,
+    "AAPL": 1795180320.2673893,
+    "PLTR": 1795180320.2673893,
+    "NOW": 1795180320.2673893,
+    "AMZN": 1795180320.2673893,
+    "CRWV": 1795180320.2673893,
     "NBIS": 1795179691.3708367,
     "APLD": 1795179691.3708367,
     "VST": 1795179691.3708367,
@@ -3275,30 +3275,30 @@
     "COHR": 1795179691.3708367,
     "MRVL": 1795179691.3708367,
     "LITE": 1795179691.3708367,
-    "AAOI": 1795178753.5911746,
+    "AAOI": 1795180320.2673893,
     "SPCX": 1795179691.3708367,
     "ASTS": 1795179691.3708367,
     "AXTI": 1795179691.3708367,
-    "NASA": 1795178753.5911746,
-    "LUNR": 1795178753.5911746,
-    "TSLA": 1795178753.5911746,
-    "AXP": 1795178753.5911746,
+    "NASA": 1795180320.2673893,
+    "LUNR": 1795180320.2673893,
+    "TSLA": 1795180320.2673893,
+    "AXP": 1795180320.2673893,
     "RKLB": 1795179691.3708367,
-    "KO": 1795178753.5911746,
+    "KO": 1795180320.2673893,
     "FLY": 1795179691.3708367,
-    "INTC": 1795178753.5911746,
-    "VRT": 1795178753.5911746,
-    "HPE": 1795178753.5911746,
-    "DELL": 1795178753.5911746,
-    "OKLO": 1795178753.5911746,
-    "CEG": 1795178753.5911746,
-    "FPS": 1795178753.5911746,
-    "MU": 1795178753.5911746,
-    "SKHY": 1795178753.5911746,
-    "WDC": 1795178753.5911746,
-    "STX": 1795178753.5911746,
+    "INTC": 1795180320.2673893,
+    "VRT": 1795180320.2673893,
+    "HPE": 1795180320.2673893,
+    "DELL": 1795180320.2673893,
+    "OKLO": 1795180320.2673893,
+    "CEG": 1795180320.2673893,
+    "FPS": 1795180320.2673893,
+    "MU": 1795180320.2673893,
+    "SKHY": 1795180320.2673893,
+    "WDC": 1795180320.2673893,
+    "STX": 1795180320.2673893,
     "MSTR": 1795178753.5911746,
-    "SNDK": 1795178753.5911746,
+    "SNDK": 1795180320.2673893,
     "BTC-USD": 1795179272.2320786,
     "CRWD": 1795179691.3708367,
     "ORCL": 1795179691.3708367,
