@@ -1,9 +1,23 @@
 {
-  "updated_at_ts": 1795184833.766,
-  "updated_at_et": "11-20 09:27 ET",
-  "updated_at_kst": "23:27 KST",
+  "updated_at_ts": 1795184937.261,
+  "updated_at_et": "11-20 09:28 ET",
+  "updated_at_kst": "23:28 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261120222723613800",
+      "title": "标普六连跌后，历史规律指向反弹！美银却担心经济硬着陆风险被低估",
+      "summary": "历史数据支持标普500指数连续下跌后的反弹可能，但美联储鹰派立场和经济硬着陆风险仍构成压力。技术派对下一道防线也存在分歧......点击查看...",
+      "keywords": [
+        "美联储",
+        "标普"
+      ],
+      "pub_ts": 1795184843.0,
+      "time_et": "11-20 09:27 ET",
+      "time_bj": "22:27 BJ",
+      "time_kst": "23:27 KST",
+      "time_display": "09:27 ET / 22:27 BJ"
+    },
     {
       "id": "20261120215539608800",
       "title": "【特朗普下月将发表演讲 涉及伊朗战争】 11月20日讯，据纽约邮报：美国总统特朗普将于下…",
@@ -326,20 +340,6 @@
       "time_bj": "16:05 BJ",
       "time_kst": "17:05 KST",
       "time_display": "03:05 ET / 16:05 BJ"
-    },
-    {
-      "id": "20261120154923195800",
-      "title": "国际金银齐跌持仓却存在分化，市场已做好3500失守的准备...｜市场赔率数据表",
-      "summary": "金银同跌却见基金持仓分化，市场已做好黄金月内跌破3500并跌向3400的准备。美联储12月加息25bp尚作为市场主流预期，美日持续上探的风险有所消退...",
-      "keywords": [
-        "美联储",
-        "加息"
-      ],
-      "pub_ts": 1795160963.0,
-      "time_et": "11-20 02:49 ET",
-      "time_bj": "15:49 BJ",
-      "time_kst": "16:49 KST",
-      "time_display": "02:49 ET / 15:49 BJ"
     }
   ],
   "ticker_news": {
@@ -789,6 +789,13 @@
     ],
     "TSM": [
       {
+        "title": "Sector Update: Tech Stocks Fall Premarket Friday",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/sector-tech-stocks-fall-premarket-140915827.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 09:09 ET",
+        "pub_ts": 1795183755.0
+      },
+      {
         "title": "TSMC Is Halting Some China Chip Orders as a New U.S. Rule Kicks In",
         "url": "https://247wallst.com/investing/2026/11/20/tsmc-is-halting-some-china-chip-orders-as-a-new-u-s-rule-kicks-in/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -815,13 +822,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 06:01 ET",
         "pub_ts": 1795172460.0
-      },
-      {
-        "title": "Update: Market Chatter: TSMC Tightening Restrictions on Chinese Chip Designers in Response to New US Rules",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/market-chatter-tsmc-tightening-restrictions-105933763.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 05:59 ET",
-        "pub_ts": 1795172373.0
       }
     ],
     "VIXY": [
@@ -900,11 +900,25 @@
     ],
     "NVDA": [
       {
-        "title": "Nvidia stock extends 6-day losing streak, as AMD, Broadcom lead chip sector lower",
-        "url": "https://finance.yahoo.com/markets/article/nvidia-amd-and-broadcom-lead-chip-stocks-lower-133658985.html?.tsrc=rss",
+        "title": "Sector Update: Tech Stocks Fall Premarket Friday",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/sector-tech-stocks-fall-premarket-140915827.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-20 08:36 ET",
-        "pub_ts": 1795181818.0
+        "time": "11-20 09:09 ET",
+        "pub_ts": 1795183755.0
+      },
+      {
+        "title": "Elon Musk Could Use His Nvidia Chip Orders to Push for Jensen Huang’s Return, Analyst Says",
+        "url": "https://finance.yahoo.com/technology/ai/articles/elon-musk-could-nvidia-chip-140807576.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 09:08 ET",
+        "pub_ts": 1795183687.0
+      },
+      {
+        "title": "Cisco Fell 89%. Is Nvidia Stock Next?",
+        "url": "https://www.trefis.com/stock/nvda/articles/626552/cisco-fell-89-is-nvidia-stock-next/2026-11-20?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 09:03 ET",
+        "pub_ts": 1795183405.0
       },
       {
         "title": "Nvidia’s financing risks could keep AI chip stocks under pressure, analyst says",
@@ -914,25 +928,11 @@
         "pub_ts": 1795182794.0
       },
       {
-        "title": "Here’s The Real Asymmetry That Keeps Me Buying NVIDIA in the $140s",
-        "url": "https://247wallst.com/investing/2026/11/20/heres-the-real-asymmetry-that-keeps-me-buying-nvidia-in-the-140s/?.tsrc=rss",
+        "title": "Prediction: Nvidia Will Hit a New All-Time High in 2027 (Hint: Watch This Metric)",
+        "url": "https://www.fool.com/investing/2026/11/20/prediction-nvidia-will-hit-a-new-all-time-high-in-2027-hint-watch-this-metric/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-20 08:45 ET",
-        "pub_ts": 1795182354.0
-      },
-      {
-        "title": "Dell, HP Enterprise Highlight Thanksgiving Week Earnings, Plus These 2 Hot Retailers",
-        "url": "https://finance.yahoo.com/m/9fb39b49-474f-3ca7-b9f2-118b6fd57f11/dell%2C-hp-enterprise-highlight.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 08:30 ET",
-        "pub_ts": 1795181412.0
-      },
-      {
-        "title": "5C announces Data Center Partner designation within the NVIDIA Partner Network in new blog",
-        "url": "https://finance.yahoo.com/technology/ai/articles/5c-announces-data-center-partner-133000251.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 08:30 ET",
-        "pub_ts": 1795181400.0
+        "time": "11-20 08:50 ET",
+        "pub_ts": 1795182601.0
       }
     ],
     "AMD": [
@@ -942,6 +942,20 @@
         "source": "Yahoo Finance",
         "time": "11-20 08:36 ET",
         "pub_ts": 1795181818.0
+      },
+      {
+        "title": "If AMD Grows at 15% a Year, Here’s What $5,000 Could Become by 2030",
+        "url": "https://247wallst.com/investing/2026/11/20/if-amd-grows-at-15-a-year-heres-what-5000-could-become-by-2030/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 09:06 ET",
+        "pub_ts": 1795183563.0
+      },
+      {
+        "title": "Zacks Investment Ideas feature highlights: Nasdaq, Nvidia, Advanced Micro Devices, SanDisk, Nebius Arm Holdings and Anthropic",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/zacks-investment-ideas-feature-highlights-130700415.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 08:07 ET",
+        "pub_ts": 1795180020.0
       },
       {
         "title": "AI Stocks Tumble Across the Globe as Slowdown Fears Mount",
@@ -956,20 +970,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 07:22 ET",
         "pub_ts": 1795177358.0
-      },
-      {
-        "title": "AMD Stock Drops Another 7% Before the Bell and Taiwan Semiconductor Slides 4.2% as Nasdaq Futures Fall 1.6% After Asia’s Chip Selloff",
-        "url": "https://247wallst.com/investing/2026/11/20/amd-stock-drops-another-7-0-before-the-bell-and-taiwan-semiconductor-slides-4-2-as-nasdaq-futures-fall-1-6-after-asias-chip-selloff/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 07:13 ET",
-        "pub_ts": 1795176789.0
-      },
-      {
-        "title": "Anthropic, AMD, Intel, Marvell, Intuit, and More Stocks That Explain Today’s Market",
-        "url": "https://finance.yahoo.com/m/801603d1-8318-3eb0-99a6-10147f0d5ed5/anthropic%2C-amd%2C-intel%2C.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 07:02 ET",
-        "pub_ts": 1795176120.0
       }
     ],
     "ASML": [
@@ -1085,6 +1085,13 @@
     ],
     "AMAT": [
       {
+        "title": "A $3 Billion Fund Is Betting Big on Applied Materials",
+        "url": "https://www.tikr.com/blog/abrams-bison-investments-applied-materials-amat-stock?ref=yahoofinance&tlnk=yf-261120-fqw6rgjj&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 09:04 ET",
+        "pub_ts": 1795183444.0
+      },
+      {
         "title": "Multiple Compression Weighs on Applied Materials (AMAT) in Q3",
         "url": "https://finance.yahoo.com/markets/stocks/articles/multiple-compression-weighs-applied-materials-164926922.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1111,13 +1118,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 07:06 ET",
         "pub_ts": 1795089976.0
-      },
-      {
-        "title": "ETFs Are Net Sellers of Applied Materials (AMAT) on Nov. 17",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-net-sellers-applied-materials-110334228.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 06:03 ET",
-        "pub_ts": 1795086214.0
       }
     ],
     "META": [
@@ -1159,6 +1159,27 @@
     ],
     "GOOGL": [
       {
+        "title": "Stock Market Today: Anthropic’s Mega-IPO Sends Stocks Lower for a Second Day",
+        "url": "https://247wallst.com/investing/2026/11/20/stock-market-today-anthropics-mega-ipo-sends-stocks-lower-for-a-second-day/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 09:15 ET",
+        "pub_ts": 1795184113.0
+      },
+      {
+        "title": "Anthropic Sinks 14% on Day Two as AI Sell-Off Spreads; CoreWeave Falls 6%, Amazon Slips 2%",
+        "url": "https://247wallst.com/investing/2026/11/20/anthropic-sinks-14-on-day-two-as-ai-sell-off-spreads-coreweave-falls-6-amazon-slips-2/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 09:07 ET",
+        "pub_ts": 1795183648.0
+      },
+      {
+        "title": "Cisco Fell 89%. Is Nvidia Stock Next?",
+        "url": "https://www.trefis.com/stock/nvda/articles/626552/cisco-fell-89-is-nvidia-stock-next/2026-11-20?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 09:03 ET",
+        "pub_ts": 1795183405.0
+      },
+      {
         "title": "Spirit of St. Louis AI Innovation Center Launches First Competition to Address Humanitarian Challenges Using AI for Good",
         "url": "https://finance.yahoo.com/technology/ai/articles/spirit-st-louis-ai-innovation-134300226.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1171,27 +1192,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 08:37 ET",
         "pub_ts": 1795181872.0
-      },
-      {
-        "title": "Google's Gemini Tasks Seen As Challenger To Meta's Muse In AI Battle",
-        "url": "https://finance.yahoo.com/m/e541372f-4da6-3077-8e49-a78384b2e543/google%27s-gemini-tasks-seen-as.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 08:11 ET",
-        "pub_ts": 1795180297.0
-      },
-      {
-        "title": "A $12 Billion Fund Just Bought These 3 Stocks",
-        "url": "https://www.tikr.com/blog/unisphere-establishment-alphabet-cadence-kkr-stocks?ref=yahoofinance&tlnk=yf-261120-6cm2cv28&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 08:04 ET",
-        "pub_ts": 1795179857.0
-      },
-      {
-        "title": "Can Microsoft catch up in the frontier AI race?",
-        "url": "https://finance.yahoo.com/video/microsoft-catch-frontier-ai-race-130000484.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 08:00 ET",
-        "pub_ts": 1795179600.0
       }
     ],
     "MSFT": [
@@ -1201,6 +1201,13 @@
         "source": "Yahoo Finance",
         "time": "11-20 08:00 ET",
         "pub_ts": 1795179600.0
+      },
+      {
+        "title": "Danaher Teams Up With Microsoft To Develop AI-Powered Scientific Instruments, First Applications Expected This Year",
+        "url": "https://stocktwits.com/news-articles/markets/equity/danaher-teams-up-with-microsoft-to-develop-ai-powered-scientific-instruments-first-applications-expected-this-year/cNbSKjHR9Kx?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 08:51 ET",
+        "pub_ts": 1795182696.0
       },
       {
         "title": "Did Microsoft Azure Deal Just Shift Intel's (INTC) Investment Narrative?",
@@ -1222,13 +1229,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 07:30 ET",
         "pub_ts": 1795177800.0
-      },
-      {
-        "title": "Satya Nadella Says Microsoft Is “Building Tools, Not Gods” as Copilot Undercuts Anthropic on Price",
-        "url": "https://www.tikr.com/blog/satya-nadella-says-microsoft-is-building-tools-not-gods-as-copilot-undercuts-anthropic-on-price?ref=yahoofinance&tlnk=yf-261120-g49fp72m&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 07:24 ET",
-        "pub_ts": 1795177447.0
       }
     ],
     "AAPL": [
@@ -3240,30 +3240,30 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795183354.7552645,
-    "SOXL": 1795183354.7552645,
-    "SPY": 1795183354.7552645,
-    "DIA": 1795183354.7552645,
-    "SOXX": 1795183354.7552645,
-    "QQQ": 1795183354.7552645,
-    "SMH": 1795183354.7552645,
-    "IWM": 1795183354.7552645,
-    "IGV": 1795183354.7552645,
-    "TLT": 1795183354.7552645,
-    "GLD": 1795183354.7552645,
-    "SQQQ": 1795183354.7552645,
-    "TSM": 1795183354.7552645,
-    "VIXY": 1795183354.7552645,
-    "SOXS": 1795183354.7552645,
-    "NVDA": 1795183354.7552645,
-    "AMD": 1795183354.7552645,
+    "KORU": 1795184937.2612703,
+    "SOXL": 1795184937.2612703,
+    "SPY": 1795184937.2612703,
+    "DIA": 1795184937.2612703,
+    "SOXX": 1795184937.2612703,
+    "QQQ": 1795184937.2612703,
+    "SMH": 1795184937.2612703,
+    "IWM": 1795184937.2612703,
+    "IGV": 1795184937.2612703,
+    "TLT": 1795184937.2612703,
+    "GLD": 1795184937.2612703,
+    "SQQQ": 1795184937.2612703,
+    "TSM": 1795184937.2612703,
+    "VIXY": 1795184937.2612703,
+    "SOXS": 1795184937.2612703,
+    "NVDA": 1795184937.2612703,
+    "AMD": 1795184937.2612703,
     "ASML": 1795183463.697611,
     "QCOM": 1795183354.7552645,
-    "AVGO": 1795183354.7552645,
-    "AMAT": 1795183354.7552645,
-    "META": 1795183354.7552645,
-    "GOOGL": 1795183354.7552645,
-    "MSFT": 1795183354.7552645,
+    "AVGO": 1795184937.2612703,
+    "AMAT": 1795184937.2612703,
+    "META": 1795184937.2612703,
+    "GOOGL": 1795184937.2612703,
+    "MSFT": 1795184937.2612703,
     "AAPL": 1795183463.697611,
     "PLTR": 1795183463.697611,
     "NOW": 1795183463.697611,
@@ -3323,7 +3323,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (08:55 ET / 21:55 BJ) [特朗普]：【特朗普下月将发表演讲 涉及伊朗战争】 11月20日讯，据纽约邮报：美国总统特朗普将于下月发表主旨演讲，谈及伊朗战争。（报道援引白宫发言人就特朗普12月5日演讲发表的评论）",
+    "detail": "⚡ 最新核心快讯 (09:27 ET / 22:27 BJ) [美联储] [标普]：历史数据支持标普500指数连续下跌后的反弹可能，但美联储鹰派立场和经济硬着陆风险仍构成压力。技术派对下一道防线也存在分歧......点击查看...",
     "event_name": "",
     "minutes_left": 0
   }
