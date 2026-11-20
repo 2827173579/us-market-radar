@@ -1,9 +1,22 @@
 {
-  "updated_at_ts": 1795202677.038,
-  "updated_at_et": "11-20 14:24 ET",
-  "updated_at_kst": "04:24 KST",
+  "updated_at_ts": 1795202776.465,
+  "updated_at_et": "11-20 14:26 ET",
+  "updated_at_kst": "04:26 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261121032416768800",
+      "title": "英伟达(NVDA.O)跌幅扩大至10%，此前有报道称美国证交会对其展开会计调查。",
+      "summary": "英伟达(NVDA.O)跌幅扩大至10%，此前有报道称美国证交会对其展开会计调查。",
+      "keywords": [
+        "英伟达"
+      ],
+      "pub_ts": 1795202656.0,
+      "time_et": "11-20 14:24 ET",
+      "time_bj": "03:24 BJ",
+      "time_kst": "04:24 KST",
+      "time_display": "14:24 ET / 03:24 BJ"
+    },
     {
       "id": "20261121031550148800",
       "title": "英伟达(NVDA.O)股价跌幅扩大至9%。",
@@ -324,19 +337,6 @@
       "time_bj": "22:37 BJ",
       "time_kst": "23:37 KST",
       "time_display": "09:37 ET / 22:37 BJ"
-    },
-    {
-      "id": "20261120223135859800",
-      "title": "费城半导体指数盘初跌超3%。",
-      "summary": "费城半导体指数盘初跌超3%。",
-      "keywords": [
-        "半导体"
-      ],
-      "pub_ts": 1795185095.0,
-      "time_et": "11-20 09:31 ET",
-      "time_bj": "22:31 BJ",
-      "time_kst": "23:31 KST",
-      "time_display": "09:31 ET / 22:31 BJ"
     }
   ],
   "ticker_news": {
@@ -1748,6 +1748,13 @@
     ],
     "SPCX": [
       {
+        "title": "Forget SpaceX: This Stock Could Be the Real Winner of the Space Race",
+        "url": "https://www.fool.com/investing/2026/11/20/forget-spacex-this-stock-could-be-the-real-winner-of-the-space-race/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 13:50 ET",
+        "pub_ts": 1795200602.0
+      },
+      {
         "title": "SpaceX Just Raised $32 Billion for AI Chips. Lenders Want Elon Musk to Keep Them on Earth.",
         "url": "https://www.fool.com/investing/2026/11/20/spacex-just-raised-32-billion-for-ai-chips-lenders-want-elon-musk-to-keep-them-on-earth/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1774,16 +1781,16 @@
         "source": "Yahoo Finance",
         "time": "11-20 12:26 ET",
         "pub_ts": 1795195606.0
-      },
-      {
-        "title": "SpaceX Eyes “At Least $32 Billion” of AI Chip Debt the Day Its Biggest Compute Tenant Goes Public",
-        "url": "https://www.tikr.com/blog/spacex-eyes-at-least-32-billion-of-ai-chip-debt-the-day-its-biggest-compute-tenant-goes-public?ref=yahoofinance&tlnk=yf-261120-95gg2jvh&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 11:52 ET",
-        "pub_ts": 1795193534.0
       }
     ],
     "ASTS": [
+      {
+        "title": "AST SpaceMobile vs. Redwire: Which Space Infrastructure Stock Is a Better Buy for 2027?",
+        "url": "https://www.fool.com/coverage/better-buy/2026/11/20/ast-spacemobile-vs-redwire-which-space-infrastructure-stock-is-a-better-buy-for-2027/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 13:50 ET",
+        "pub_ts": 1795200602.0
+      },
       {
         "title": "AST SpaceMobile (ASTS), What Is Behind The Fresh Attention?",
         "url": "https://finance.yahoo.com/markets/stocks/articles/ast-spacemobile-asts-behind-fresh-151017644.html?.tsrc=rss",
@@ -1811,13 +1818,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 12:03 ET",
         "pub_ts": 1795107823.0
-      },
-      {
-        "title": "Why AST SpaceMobile Stock Just Popped",
-        "url": "https://www.fool.com/investing/2026/11/19/why-ast-spacemobile-stock-just-popped/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 11:36 ET",
-        "pub_ts": 1795106160.0
       }
     ],
     "AXTI": [
@@ -2710,6 +2710,13 @@
     ],
     "COIN": [
       {
+        "title": "Jesse Pollak Says Tokenized Stocks on Base Have Crossed $1 Billion in Weekly Volume",
+        "url": "https://unchainedcrypto.com/jesse-pollak-says-tokenized-stocks-on-base-have-crossed-1-billion-in-weekly-volume/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 14:09 ET",
+        "pub_ts": 1795201740.0
+      },
+      {
         "title": "Coinbase Launches Crypto Options for Non-US Users",
         "url": "https://www.cryptoprowl.com/releases/coinbase-launches-crypto-options-for-non-us-users-8007?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2736,13 +2743,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 10:30 ET",
         "pub_ts": 1795188600.0
-      },
-      {
-        "title": "Fake Elon Musk Stream Drew 500,000 Viewers as Coinbase AI Blocked $4.7M in Crypto Transfers",
-        "url": "https://www.ccn.com/news/crypto/fake-elon-musk-drew-500000-viewers-coinbase-ai-blocked-crypto/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 09:12 ET",
-        "pub_ts": 1795183961.0
       }
     ],
     "LLY": [
@@ -3057,6 +3057,13 @@
         "pub_ts": 1795189203.0
       },
       {
+        "title": "A $4.7 Billion Fund Just Bought These 3 Stocks",
+        "url": "https://www.tikr.com/blog/a-4-7-billion-fund-just-bought-these-3-stocks?ref=yahoofinance&tlnk=yf-261120-53j3h7w2&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 09:57 ET",
+        "pub_ts": 1795186664.0
+      },
+      {
         "title": "JPMorgan Faces Data Leak After Banking Outage: Risks Mount?",
         "url": "https://finance.yahoo.com/technology/articles/jpmorgan-faces-data-leak-banking-141200565.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3069,13 +3076,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 08:47 ET",
         "pub_ts": 1795182460.0
-      },
-      {
-        "title": "What Capital Group Growth ETF (CGGR) Bought: Meta Leads on Wednesday",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/capital-group-growth-etf-cggr-110447110.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 06:04 ET",
-        "pub_ts": 1795172687.0
       }
     ],
     "CAT": [
@@ -3266,25 +3266,25 @@
     "NOW": 1795201872.3525546,
     "AMZN": 1795201872.3525546,
     "CRWV": 1795201872.3525546,
-    "NBIS": 1795201261.3513236,
-    "APLD": 1795201261.3513236,
-    "VST": 1795201261.3513236,
-    "BE": 1795201261.3513236,
-    "CRDO": 1795201261.3513236,
-    "COHR": 1795201261.3513236,
-    "MRVL": 1795201261.3513236,
-    "LITE": 1795201261.3513236,
+    "NBIS": 1795202776.4653058,
+    "APLD": 1795202776.4653058,
+    "VST": 1795202776.4653058,
+    "BE": 1795202776.4653058,
+    "CRDO": 1795202776.4653058,
+    "COHR": 1795202776.4653058,
+    "MRVL": 1795202776.4653058,
+    "LITE": 1795202776.4653058,
     "AAOI": 1795201872.3525546,
-    "SPCX": 1795201261.3513236,
-    "ASTS": 1795201261.3513236,
-    "AXTI": 1795201261.3513236,
+    "SPCX": 1795202776.4653058,
+    "ASTS": 1795202776.4653058,
+    "AXTI": 1795202776.4653058,
     "NASA": 1795201872.3525546,
     "LUNR": 1795201872.3525546,
     "TSLA": 1795201872.3525546,
     "AXP": 1795201872.3525546,
-    "RKLB": 1795201261.3513236,
+    "RKLB": 1795202776.4653058,
     "KO": 1795201872.3525546,
-    "FLY": 1795201261.3513236,
+    "FLY": 1795202776.4653058,
     "INTC": 1795201872.3525546,
     "VRT": 1795201872.3525546,
     "HPE": 1795201872.3525546,
@@ -3299,28 +3299,28 @@
     "MSTR": 1795201977.0167515,
     "SNDK": 1795201872.3525546,
     "BTC-USD": 1795202378.2367966,
-    "CRWD": 1795201261.3513236,
-    "ORCL": 1795201261.3513236,
-    "COIN": 1795201261.3513236,
+    "CRWD": 1795202776.4653058,
+    "ORCL": 1795202776.4653058,
+    "COIN": 1795202776.4653058,
     "LLY": 1795201365.435475,
     "MRNA": 1795201365.435475,
     "NKE": 1795201365.435475,
-    "MCD": 1795201261.3513236,
-    "PEP": 1795201261.3513236,
+    "MCD": 1795202776.4653058,
+    "PEP": 1795202776.4653058,
     "XOM": 1795202378.2367966,
     "JPM": 1795202378.2367966,
     "WMT": 1795202378.2367966,
-    "V": 1795201261.3513236,
+    "V": 1795202776.4653058,
     "CAT": 1795202378.2367966,
-    "FN": 1795201261.3513236,
-    "GLW": 1795201261.3513236,
+    "FN": 1795202776.4653058,
+    "GLW": 1795202776.4653058,
     "ANT": 1795202378.2367966,
     "XAUUSD": 1795202378.2367966
   },
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (14:15 ET / 03:15 BJ) [英伟达]：英伟达(NVDA.O)股价跌幅扩大至9%。",
+    "detail": "⚡ 最新核心快讯 (14:24 ET / 03:24 BJ) [英伟达]：英伟达(NVDA.O)跌幅扩大至10%，此前有报道称美国证交会对其展开会计调查。",
     "event_name": "",
     "minutes_left": 0
   }
