@@ -1,13 +1,13 @@
 {
-  "updated_at_ts": 1795153031.015,
-  "updated_at_et": "11-20 00:37 ET",
-  "updated_at_kst": "14:37 KST",
+  "updated_at_ts": 1795153146.386,
+  "updated_at_et": "11-20 00:39 ET",
+  "updated_at_kst": "14:39 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
       "id": "20261120131823332800",
-      "title": "台湾加权指数跌近7%，创4个月以来最大百分比跌幅，台积电跌5.7%，鸿海跌5.44%，联…",
-      "summary": "台湾加权指数跌近7%，创4个月以来最大百分比跌幅，台积电跌5.7%，鸿海跌5.44%，联发科跌9.81%。",
+      "title": "台湾加权指数跌近7%，创2025年4月以来最大百分比跌幅，台积电跌5.7%，鸿海跌5.4…",
+      "summary": "台湾加权指数跌近7%，创2025年4月以来最大百分比跌幅，台积电跌5.7%，鸿海跌5.44%，联发科跌9.81%。",
       "keywords": [
         "台积电"
       ],
@@ -903,6 +903,13 @@
     ],
     "NVDA": [
       {
+        "title": "Cathie Wood’s ARK Invest Loads Up $90M In Anthropic Shares, Dumps Nvidia As China Chip Sale Woes Deepen",
+        "url": "https://stocktwits.com/news-articles/markets/equity/cathie-wood-s-ark-invest-loads-up-anthropic-shares-dumps-nvidia-as-china-chip-sale-woes-deepen/cNbS5zBR9KI?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 00:22 ET",
+        "pub_ts": 1795152126.0
+      },
+      {
         "title": "AI sell-off: These sectors held firm as tech slumped in Oct, Nov",
         "url": "https://finance.yahoo.com/markets/stocks/articles/ai-sell-off-sectors-held-044523371.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -917,25 +924,18 @@
         "pub_ts": 1795149180.0
       },
       {
+        "title": "Jensen Huang Spy Scandal Is Now an Alibaba Problem: Investors File Class Action Lawsuit",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/jensen-huang-spy-scandal-now-042926308.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 23:29 ET",
+        "pub_ts": 1795148966.0
+      },
+      {
         "title": "Nvidia Just Raised Its Supply Commitments to $390 Billion, Mostly for Memory. Micron Is the Memory Stock I'd Buy.",
         "url": "https://www.fool.com/investing/2026/11/19/nvidia-just-raised-its-supply-commitments-to-usd390-billion-mostly-for-memory-micron-is-the-memory-stock-i-d-buy/?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-19 23:27 ET",
         "pub_ts": 1795148822.0
-      },
-      {
-        "title": "NVDA Stock Down 40% From October Peak Amid China Spying Crisis: California Begins Probe Into Chip Sales",
-        "url": "https://stocktwits.com/news-articles/markets/equity/nvda-stock-down-40-from-october-peak-amid-china-spying-crisis-california-begins-probe-into-chip-sales/cNbS2JLR9K5?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 23:18 ET",
-        "pub_ts": 1795148280.0
-      },
-      {
-        "title": "Why Did NVDA, NIO, ONDS Stocks Tumble To 52-Week Lows Today?",
-        "url": "https://stocktwits.com/news-articles/markets/equity/why-did-nvda-nio-onds-stocks-tumble-to-52-week-lows-today/cNbSTZCR9Kc?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 22:54 ET",
-        "pub_ts": 1795146888.0
       }
     ],
     "AMD": [
@@ -3243,27 +3243,27 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795151594.700946,
-    "SOXL": 1795151594.700946,
-    "SPY": 1795151594.700946,
-    "DIA": 1795151594.700946,
-    "SOXX": 1795151594.700946,
-    "QQQ": 1795151594.700946,
-    "SMH": 1795151594.700946,
-    "IWM": 1795151594.700946,
-    "IGV": 1795151594.700946,
-    "TLT": 1795151594.700946,
-    "GLD": 1795151594.700946,
-    "SQQQ": 1795151594.700946,
-    "TSM": 1795151594.700946,
-    "VIXY": 1795151594.700946,
-    "SOXS": 1795151594.700946,
-    "NVDA": 1795151594.700946,
-    "AMD": 1795151594.700946,
+    "KORU": 1795153146.3857799,
+    "SOXL": 1795153146.3857799,
+    "SPY": 1795153146.3857799,
+    "DIA": 1795153146.3857799,
+    "SOXX": 1795153146.3857799,
+    "QQQ": 1795153146.3857799,
+    "SMH": 1795153146.3857799,
+    "IWM": 1795153146.3857799,
+    "IGV": 1795153146.3857799,
+    "TLT": 1795153146.3857799,
+    "GLD": 1795153146.3857799,
+    "SQQQ": 1795153146.3857799,
+    "TSM": 1795153146.3857799,
+    "VIXY": 1795153146.3857799,
+    "SOXS": 1795153146.3857799,
+    "NVDA": 1795153146.3857799,
+    "AMD": 1795153146.3857799,
     "ASML": 1795151699.558732,
-    "QCOM": 1795151594.700946,
-    "AVGO": 1795151594.700946,
-    "AMAT": 1795151594.700946,
+    "QCOM": 1795153146.3857799,
+    "AVGO": 1795153146.3857799,
+    "AMAT": 1795153146.3857799,
     "META": 1795151699.558732,
     "GOOGL": 1795151699.558732,
     "MSFT": 1795151699.558732,
@@ -3313,8 +3313,8 @@
     "NKE": 1795152624.580631,
     "MCD": 1795152624.580631,
     "PEP": 1795152624.580631,
-    "XOM": 1795151594.700946,
-    "JPM": 1795151594.700946,
+    "XOM": 1795153146.3857799,
+    "JPM": 1795153146.3857799,
     "WMT": 1795151699.558732,
     "V": 1795152519.8356826,
     "CAT": 1795151699.558732,
@@ -3326,7 +3326,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (00:18 ET / 13:18 BJ) [台积电]：台湾加权指数跌近7%，创4个月以来最大百分比跌幅，台积电跌5.7%，鸿海跌5.44%，联发科跌9.81%。",
+    "detail": "⚡ 最新核心快讯 (00:18 ET / 13:18 BJ) [台积电]：台湾加权指数跌近7%，创2025年4月以来最大百分比跌幅，台积电跌5.7%，鸿海跌5.44%，联发科跌9.81%。",
     "event_name": "",
     "minutes_left": 0
   }
