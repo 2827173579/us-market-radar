@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795183244.738,
-  "updated_at_et": "11-20 09:00 ET",
-  "updated_at_kst": "23:00 KST",
+  "updated_at_ts": 1795183354.755,
+  "updated_at_et": "11-20 09:02 ET",
+  "updated_at_kst": "23:02 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -433,6 +433,13 @@
         "pub_ts": 1795172570.0
       },
       {
+        "title": "Exchange-Traded Funds, Equity Futures Fall Pre-Bell Friday Amid Continued AI Stock Selloff",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/exchange-traded-funds-equity-futures-140012643.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 09:00 ET",
+        "pub_ts": 1795183212.0
+      },
+      {
         "title": "ETFs Are Net Sellers of Johnson & Johnson (JNJ) on Wednesday",
         "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-net-sellers-johnson-johnson-110303332.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -445,13 +452,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 06:03 ET",
         "pub_ts": 1795172580.0
-      },
-      {
-        "title": "ETFs Are Net Sellers of Chevron (CVX) on Nov. 18",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-net-sellers-chevron-cvx-110244445.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 06:02 ET",
-        "pub_ts": 1795172564.0
       }
     ],
     "DIA": [
@@ -530,6 +530,13 @@
     ],
     "QQQ": [
       {
+        "title": "Exchange-Traded Funds, Equity Futures Fall Pre-Bell Friday Amid Continued AI Stock Selloff",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/exchange-traded-funds-equity-futures-140012643.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 09:00 ET",
+        "pub_ts": 1795183212.0
+      },
+      {
         "title": "INVESCO QQQ (QQQ) Sells Apple and Microsoft on Nov. 18",
         "url": "https://finance.yahoo.com/markets/stocks/articles/invesco-qqq-qqq-sells-apple-110342108.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -556,13 +563,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 13:17 ET",
         "pub_ts": 1795112253.0
-      },
-      {
-        "title": "What Ten Years Of VYM Did To $1 Million",
-        "url": "https://www.trefis.com/stock/vym/articles/626697/what-ten-years-of-vym-did-to-1-million/2026-11-19?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 10:13 ET",
-        "pub_ts": 1795101203.0
       }
     ],
     "SMH": [
@@ -900,42 +900,56 @@
     ],
     "NVDA": [
       {
+        "title": "Nvidia stock extends 6-day losing streak, as AMD, Broadcom lead chip sector lower",
+        "url": "https://finance.yahoo.com/markets/article/nvidia-amd-and-broadcom-lead-chip-stocks-lower-133658985.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 08:36 ET",
+        "pub_ts": 1795181818.0
+      },
+      {
+        "title": "Nvidia’s financing risks could keep AI chip stocks under pressure, analyst says",
+        "url": "https://finance.yahoo.com/technology/ai/articles/nvidia-financing-risks-could-keep-135314222.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 08:53 ET",
+        "pub_ts": 1795182794.0
+      },
+      {
+        "title": "Here’s The Real Asymmetry That Keeps Me Buying NVIDIA in the $140s",
+        "url": "https://247wallst.com/investing/2026/11/20/heres-the-real-asymmetry-that-keeps-me-buying-nvidia-in-the-140s/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 08:45 ET",
+        "pub_ts": 1795182354.0
+      },
+      {
+        "title": "Dell, HP Enterprise Highlight Thanksgiving Week Earnings, Plus These 2 Hot Retailers",
+        "url": "https://finance.yahoo.com/m/9fb39b49-474f-3ca7-b9f2-118b6fd57f11/dell%2C-hp-enterprise-highlight.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 08:30 ET",
+        "pub_ts": 1795181412.0
+      },
+      {
         "title": "5C announces Data Center Partner designation within the NVIDIA Partner Network in new blog",
         "url": "https://finance.yahoo.com/technology/ai/articles/5c-announces-data-center-partner-133000251.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-20 08:30 ET",
         "pub_ts": 1795181400.0
-      },
-      {
-        "title": "Nvidia and Micron Can't Make AI Chips Without This Growth Stock. Here's Why It Could Soar.",
-        "url": "https://www.fool.com/investing/2026/11/20/nvidia-and-micron-cant-make-ai-chips-without-this-growth-stock-heres-why-it-could-soar/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 08:20 ET",
-        "pub_ts": 1795180802.0
-      },
-      {
-        "title": "Why Did Nvidia Stock Fall 39%?",
-        "url": "https://www.trefis.com/stock/nvda/articles/626526/why-did-nvidia-stock-fall-39/2026-11-20?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 08:14 ET",
-        "pub_ts": 1795180482.0
-      },
-      {
-        "title": "Cathie Wood Buys Nearly 1 Million Anthropic Shares On IPO Day. ARK Also Cuts Nvidia Stake.",
-        "url": "https://www.ibtimes.com/ark-invest-buys-anthropic-shares-record-ipo-3810011?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 08:10 ET",
-        "pub_ts": 1795180248.0
-      },
-      {
-        "title": "Musk Slams Nvidia’s Board for Kicking “Michael Jordan Off Your Team.” Cramer Sees a Fight Over Chip Prices",
-        "url": "https://www.tikr.com/blog/musk-slams-nvidias-board-for-kicking-michael-jordan-off-your-team-cramer-sees-a-fight-over-chip-prices?ref=yahoofinance&tlnk=yf-261120-fhq75j6g&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 08:05 ET",
-        "pub_ts": 1795179917.0
       }
     ],
     "AMD": [
+      {
+        "title": "Nvidia stock extends 6-day losing streak, as AMD, Broadcom lead chip sector lower",
+        "url": "https://finance.yahoo.com/markets/article/nvidia-amd-and-broadcom-lead-chip-stocks-lower-133658985.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 08:36 ET",
+        "pub_ts": 1795181818.0
+      },
+      {
+        "title": "AI Stocks Tumble Across the Globe as Slowdown Fears Mount",
+        "url": "https://www.wsj.com/finance/stocks/nasdaq-set-for-fresh-decline-as-ai-selloff-intensifies-e974bbb5?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 07:32 ET",
+        "pub_ts": 1795177920.0
+      },
       {
         "title": "Jim Cramer Says He’s Buying AMD After a Short Seller’s 15% Hit",
         "url": "https://247wallst.com/investing/2026/11/20/jim-cramer-says-hes-buying-amd-after-a-short-sellers-15-hit/?.tsrc=rss",
@@ -956,20 +970,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 07:02 ET",
         "pub_ts": 1795176120.0
-      },
-      {
-        "title": "Social Buzz: Wallstreetbets Stocks Mostly Lower Pre-Bell Friday; Sandisk, AMD to Decline",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/social-buzz-wallstreetbets-stocks-mostly-113227780.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 06:32 ET",
-        "pub_ts": 1795174347.0
-      },
-      {
-        "title": "AMD Trades at Triple Nvidia's Forward P/E as Regulatory Risks Mount",
-        "url": "https://finance.yahoo.com/technology/articles/amd-trades-triple-nvidias-forward-112653297.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 06:26 ET",
-        "pub_ts": 1795174013.0
       }
     ],
     "ASML": [
@@ -1048,6 +1048,13 @@
     ],
     "AVGO": [
       {
+        "title": "Nvidia stock extends 6-day losing streak, as AMD, Broadcom lead chip sector lower",
+        "url": "https://finance.yahoo.com/markets/article/nvidia-amd-and-broadcom-lead-chip-stocks-lower-133658985.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 08:36 ET",
+        "pub_ts": 1795181818.0
+      },
+      {
         "title": "Buy Broadcom Now: Get a $115 Billion AI Giant at Just 18.5x Forward Earnings",
         "url": "https://247wallst.com/investing/2026/11/20/buy-broadcom-now-get-a-115-billion-ai-giant-at-just-18-5x-forward-earnings/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1074,13 +1081,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 06:04 ET",
         "pub_ts": 1795172683.0
-      },
-      {
-        "title": "SPDR S&P 500 ETF (SPY) Sells Apple and Microsoft on Nov. 18",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/spdr-p-500-etf-spy-110339564.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 06:03 ET",
-        "pub_ts": 1795172619.0
       }
     ],
     "AMAT": [
@@ -1122,6 +1122,13 @@
     ],
     "META": [
       {
+        "title": "Anthropic just went public. Here's what SpaceX and Facebook IPOs tell us about where the stock goes next.",
+        "url": "https://finance.yahoo.com/markets/article/anthropic-just-went-public-heres-what-spacex-and-facebook-ipos-tell-us-about-where-the-stock-goes-next-135422687.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 08:54 ET",
+        "pub_ts": 1795182862.0
+      },
+      {
         "title": "Anthropic Stock Falls 9.6% Before the Bell on Its Second Day of Trading. Facebook and Uber Both Fell 11% on Day 2. Here’s What Happened Next",
         "url": "https://247wallst.com/investing/2026/11/20/anthropic-stock-falls-9-6-before-the-bell-on-its-second-day-of-trading-facebook-and-uber-both-fell-11-on-day-2-heres-what-happened-next/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1148,16 +1155,23 @@
         "source": "Yahoo Finance",
         "time": "11-20 07:09 ET",
         "pub_ts": 1795176581.0
-      },
-      {
-        "title": "Direxion Daily S&P 500 Bull 3X (SPXL) Sells $16.2 Million of Apple on Nov. 18",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/direxion-daily-p-500-bull-110505993.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 06:05 ET",
-        "pub_ts": 1795172705.0
       }
     ],
     "GOOGL": [
+      {
+        "title": "Spirit of St. Louis AI Innovation Center Launches First Competition to Address Humanitarian Challenges Using AI for Good",
+        "url": "https://finance.yahoo.com/technology/ai/articles/spirit-st-louis-ai-innovation-134300226.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 08:43 ET",
+        "pub_ts": 1795182180.0
+      },
+      {
+        "title": "Jim Cramer’s Favorite Chartist Sees 2 Signs of an Alphabet Stock Rally",
+        "url": "https://247wallst.com/investing/2026/11/20/jim-cramers-favorite-chartist-sees-2-signs-of-an-alphabet-stock-rally/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 08:37 ET",
+        "pub_ts": 1795181872.0
+      },
       {
         "title": "Google's Gemini Tasks Seen As Challenger To Meta's Muse In AI Battle",
         "url": "https://finance.yahoo.com/m/e541372f-4da6-3077-8e49-a78384b2e543/google%27s-gemini-tasks-seen-as.html?.tsrc=rss",
@@ -1178,20 +1192,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 08:00 ET",
         "pub_ts": 1795179600.0
-      },
-      {
-        "title": "Amazon, Nvidia Fell As Anthropic Gained $185 Billion",
-        "url": "https://www.trefis.com/stock/amzn/articles/627187/amazon-nvidia-fell-as-anthropic-gained-185-billion/2026-11-20?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 07:51 ET",
-        "pub_ts": 1795179107.0
-      },
-      {
-        "title": "Apple Is Building an AI Agent That Can Use Your Computer for You",
-        "url": "https://247wallst.com/investing/2026/11/20/apple-is-building-an-ai-agent-that-can-use-your-computer-for-you/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 07:38 ET",
-        "pub_ts": 1795178313.0
       }
     ],
     "MSFT": [
@@ -3240,30 +3240,30 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795181783.271338,
-    "SOXL": 1795181783.271338,
-    "SPY": 1795181783.271338,
-    "DIA": 1795181783.271338,
-    "SOXX": 1795181783.271338,
-    "QQQ": 1795181783.271338,
-    "SMH": 1795181783.271338,
-    "IWM": 1795181783.271338,
-    "IGV": 1795181783.271338,
-    "TLT": 1795181783.271338,
-    "GLD": 1795181783.271338,
-    "SQQQ": 1795181783.271338,
-    "TSM": 1795181783.271338,
-    "VIXY": 1795181783.271338,
-    "SOXS": 1795181783.271338,
-    "NVDA": 1795181783.271338,
-    "AMD": 1795181783.271338,
+    "KORU": 1795183354.7552645,
+    "SOXL": 1795183354.7552645,
+    "SPY": 1795183354.7552645,
+    "DIA": 1795183354.7552645,
+    "SOXX": 1795183354.7552645,
+    "QQQ": 1795183354.7552645,
+    "SMH": 1795183354.7552645,
+    "IWM": 1795183354.7552645,
+    "IGV": 1795183354.7552645,
+    "TLT": 1795183354.7552645,
+    "GLD": 1795183354.7552645,
+    "SQQQ": 1795183354.7552645,
+    "TSM": 1795183354.7552645,
+    "VIXY": 1795183354.7552645,
+    "SOXS": 1795183354.7552645,
+    "NVDA": 1795183354.7552645,
+    "AMD": 1795183354.7552645,
     "ASML": 1795181890.9469185,
-    "QCOM": 1795181783.271338,
-    "AVGO": 1795181783.271338,
-    "AMAT": 1795181783.271338,
-    "META": 1795181783.271338,
-    "GOOGL": 1795181783.271338,
-    "MSFT": 1795181783.271338,
+    "QCOM": 1795183354.7552645,
+    "AVGO": 1795183354.7552645,
+    "AMAT": 1795183354.7552645,
+    "META": 1795183354.7552645,
+    "GOOGL": 1795183354.7552645,
+    "MSFT": 1795183354.7552645,
     "AAPL": 1795181890.9469185,
     "PLTR": 1795181890.9469185,
     "NOW": 1795181890.9469185,
