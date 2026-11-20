@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795148415.053,
-  "updated_at_et": "11-19 23:20 ET",
-  "updated_at_kst": "13:20 KST",
+  "updated_at_ts": 1795148515.461,
+  "updated_at_et": "11-19 23:21 ET",
+  "updated_at_kst": "13:21 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -796,6 +796,13 @@
     ],
     "TSM": [
       {
+        "title": "South Korea’s Stock Market and the Nikkei 225 Sink More Than 4% as the AI Selloff Spreads From Wall Street. Here’s How Much of a Target-Date Fund Is in Samsung, SK Hynix and TSMC",
+        "url": "https://247wallst.com/investing/2026/11/19/south-koreas-stock-market-and-the-nikkei-225-sink-more-than-4-as-the-ai-selloff-spreads-from-wall-street-heres-how-much-of-a-target-date-fund-is-in-samsung-sk-hynix-and-tsmc/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 22:51 ET",
+        "pub_ts": 1795146664.0
+      },
+      {
         "title": "TSMC halts advanced chip orders from Chinese designers in Taiwan",
         "url": "http://www.intellinews.com/tsmc-halts-advanced-chip-orders-from-chinese-designers-in-taiwan-486911/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -822,13 +829,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 13:12 ET",
         "pub_ts": 1795111956.0
-      },
-      {
-        "title": "Taiwan Semiconductor Slipped 14% This Month Amidst Tech Contraction: 175% Gains to Materialize According to One Wall Street Desk",
-        "url": "https://247wallst.com/investing/2026/11/19/taiwan-semiconductor-slipped-14-this-month-amidst-tech-contraction-175-gains-to-materialize-according-to-one-wall-street-desk/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 12:45 ET",
-        "pub_ts": 1795110320.0
       }
     ],
     "VIXY": [
@@ -907,6 +907,13 @@
     ],
     "NVDA": [
       {
+        "title": "Why Did NVDA, NIO, ONDS Stocks Tumble To 52-Week Lows Today?",
+        "url": "https://stocktwits.com/news-articles/markets/equity/why-did-nvda-nio-onds-stocks-tumble-to-52-week-lows-today/cNbSTZCR9Kc?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-19 22:54 ET",
+        "pub_ts": 1795146888.0
+      },
+      {
         "title": "Nasdaq, Dow, S&P 500 Futures Slip As Anthropic’s Record Debut Fails To Lift AI Stocks: SLV, GLD, AMD, NVDA In Focus",
         "url": "https://stocktwits.com/news-articles/markets/equity/why-nasdaq-dow-futures-fell-anthropic-ipo-ai-trade-amd-nvda/cNbSGu0R9KR?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -933,13 +940,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 20:48 ET",
         "pub_ts": 1795139282.0
-      },
-      {
-        "title": "California attorney general subpoenas Nvidia over chips, former CEO's affair",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/california-attorney-general-subpoenas-nvidia-013306809.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 20:33 ET",
-        "pub_ts": 1795138386.0
       }
     ],
     "AMD": [
@@ -1083,11 +1083,11 @@
         "pub_ts": 1795118483.0
       },
       {
-        "title": "Broadcom Stocks Rise 4.21% as Chip Supplier Joins Anthropic's $26 Billion Placement",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/broadcom-stocks-rise-4-21-173026533.html?.tsrc=rss",
+        "title": "Anthropic Now Earns $1.72 “For Every Dollar of Compute,” Says Aaron Levie. Great News for Amazon and Alphabet",
+        "url": "https://www.tikr.com/blog/anthropic-now-earns-1-72-for-every-dollar-of-compute-says-aaron-levie-great-news-for-amazon-and-alphabet?ref=yahoofinance&tlnk=yf-261119-q9jf5fhh&.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-19 12:30 ET",
-        "pub_ts": 1795109426.0
+        "time": "11-19 12:31 ET",
+        "pub_ts": 1795109510.0
       }
     ],
     "AMAT": [
@@ -3247,27 +3247,27 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795146989.9197507,
-    "SOXL": 1795146989.9197507,
-    "SPY": 1795146989.9197507,
-    "DIA": 1795146989.9197507,
-    "SOXX": 1795146989.9197507,
-    "QQQ": 1795146989.9197507,
-    "SMH": 1795146989.9197507,
-    "IWM": 1795146989.9197507,
-    "IGV": 1795146989.9197507,
-    "TLT": 1795146989.9197507,
-    "GLD": 1795146989.9197507,
-    "SQQQ": 1795146989.9197507,
-    "TSM": 1795146989.9197507,
-    "VIXY": 1795146989.9197507,
-    "SOXS": 1795146989.9197507,
-    "NVDA": 1795146989.9197507,
-    "AMD": 1795146989.9197507,
+    "KORU": 1795148515.4605124,
+    "SOXL": 1795148515.4605124,
+    "SPY": 1795148515.4605124,
+    "DIA": 1795148515.4605124,
+    "SOXX": 1795148515.4605124,
+    "QQQ": 1795148515.4605124,
+    "SMH": 1795148515.4605124,
+    "IWM": 1795148515.4605124,
+    "IGV": 1795148515.4605124,
+    "TLT": 1795148515.4605124,
+    "GLD": 1795148515.4605124,
+    "SQQQ": 1795148515.4605124,
+    "TSM": 1795148515.4605124,
+    "VIXY": 1795148515.4605124,
+    "SOXS": 1795148515.4605124,
+    "NVDA": 1795148515.4605124,
+    "AMD": 1795148515.4605124,
     "ASML": 1795147094.9172387,
-    "QCOM": 1795146989.9197507,
-    "AVGO": 1795146989.9197507,
-    "AMAT": 1795146989.9197507,
+    "QCOM": 1795148515.4605124,
+    "AVGO": 1795148515.4605124,
+    "AMAT": 1795148515.4605124,
     "META": 1795147094.9172387,
     "GOOGL": 1795147094.9172387,
     "MSFT": 1795147094.9172387,
@@ -3317,8 +3317,8 @@
     "NKE": 1795147911.007925,
     "MCD": 1795147911.007925,
     "PEP": 1795147911.007925,
-    "XOM": 1795146989.9197507,
-    "JPM": 1795146989.9197507,
+    "XOM": 1795148515.4605124,
+    "JPM": 1795148515.4605124,
     "WMT": 1795147094.9172387,
     "V": 1795147911.007925,
     "CAT": 1795147094.9172387,
