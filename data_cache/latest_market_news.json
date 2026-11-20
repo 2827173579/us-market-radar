@@ -1,9 +1,22 @@
 {
-  "updated_at_ts": 1795208741.896,
-  "updated_at_et": "11-20 16:05 ET",
-  "updated_at_kst": "06:05 KST",
+  "updated_at_ts": 1795208841.292,
+  "updated_at_et": "11-20 16:07 ET",
+  "updated_at_kst": "06:07 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261121050612810800",
+      "title": "标普500指数与道指收盘进入回调区间。",
+      "summary": "标普500指数与道指收盘进入回调区间。",
+      "keywords": [
+        "标普"
+      ],
+      "pub_ts": 1795208772.0,
+      "time_et": "11-20 16:06 ET",
+      "time_bj": "05:06 BJ",
+      "time_kst": "06:06 KST",
+      "time_display": "16:06 ET / 05:06 BJ"
+    },
     {
       "id": "20261121050450556800",
       "title": "英伟达(NVDA.O)本周累计下跌23%，创2008年10月以来最大单周跌幅。",
@@ -329,19 +342,6 @@
       "time_bj": "00:35 BJ",
       "time_kst": "01:35 KST",
       "time_display": "11:35 ET / 00:35 BJ"
-    },
-    {
-      "id": "20261120233910257800",
-      "title": "纳斯达克100指数跌幅扩大至2.5%。",
-      "summary": "纳斯达克100指数跌幅扩大至2.5%。",
-      "keywords": [
-        "纳斯达克"
-      ],
-      "pub_ts": 1795189150.0,
-      "time_et": "11-20 10:39 ET",
-      "time_bj": "23:39 BJ",
-      "time_kst": "00:39 KST",
-      "time_display": "10:39 ET / 23:39 BJ"
     }
   ],
   "ticker_news": {
@@ -3325,7 +3325,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (16:04 ET / 05:04 BJ) [英伟达]：英伟达(NVDA.O)本周累计下跌23%，创2008年10月以来最大单周跌幅。",
+    "detail": "⚡ 最新核心快讯 (16:06 ET / 05:06 BJ) [标普]：标普500指数与道指收盘进入回调区间。",
     "event_name": "",
     "minutes_left": 0
   }
