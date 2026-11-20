@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795157869.182,
-  "updated_at_et": "11-20 01:57 ET",
-  "updated_at_kst": "15:57 KST",
+  "updated_at_ts": 1795157976.471,
+  "updated_at_et": "11-20 01:59 ET",
+  "updated_at_kst": "15:59 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2423,6 +2423,13 @@
     ],
     "SKHY": [
       {
+        "title": "SK Hynix weighs converting Kioxia bonds to shares, report says",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/sk-hynix-weighs-converting-kioxia-065103840.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 01:51 ET",
+        "pub_ts": 1795157463.0
+      },
+      {
         "title": "South Korea’s Stock Market and the Nikkei 225 Sink More Than 4% as the AI Selloff Spreads From Wall Street. Here’s How Much of a Target-Date Fund Is in Samsung, SK Hynix and TSMC",
         "url": "https://247wallst.com/investing/2026/11/19/south-koreas-stock-market-and-the-nikkei-225-sink-more-than-4-as-the-ai-selloff-spreads-from-wall-street-heres-how-much-of-a-target-date-fund-is-in-samsung-sk-hynix-and-tsmc/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2449,13 +2456,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 11:41 ET",
         "pub_ts": 1795106503.0
-      },
-      {
-        "title": "Which ETFs Give You SK hynix While Softening Its Stock Specific Risks?",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-sk-hynix-while-softening-121116425.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 07:11 ET",
-        "pub_ts": 1795090276.0
       }
     ],
     "WDC": [
@@ -3298,16 +3298,16 @@
     "VRT": 1795157869.1819577,
     "HPE": 1795157869.1819577,
     "DELL": 1795157869.1819577,
-    "OKLO": 1795156442.5673268,
+    "OKLO": 1795157976.4707427,
     "CEG": 1795157869.1819577,
-    "FPS": 1795156442.5673268,
-    "MU": 1795156442.5673268,
-    "SKHY": 1795156442.5673268,
-    "WDC": 1795156442.5673268,
-    "STX": 1795156442.5673268,
-    "MSTR": 1795156442.5673268,
-    "SNDK": 1795156442.5673268,
-    "BTC-USD": 1795156442.5673268,
+    "FPS": 1795157976.4707427,
+    "MU": 1795157976.4707427,
+    "SKHY": 1795157976.4707427,
+    "WDC": 1795157976.4707427,
+    "STX": 1795157976.4707427,
+    "MSTR": 1795157976.4707427,
+    "SNDK": 1795157976.4707427,
+    "BTC-USD": 1795157976.4707427,
     "CRWD": 1795157155.191766,
     "ORCL": 1795157261.468735,
     "COIN": 1795157155.191766,
@@ -3323,8 +3323,8 @@
     "CAT": 1795157869.1819577,
     "FN": 1795157155.191766,
     "GLW": 1795157155.191766,
-    "ANT": 1795156442.5673268,
-    "XAUUSD": 1795156442.5673268
+    "ANT": 1795157976.4707427,
+    "XAUUSD": 1795157976.4707427
   },
   "calendar_banner": {
     "level": "idle_with_flash",
