@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795173752.405,
-  "updated_at_et": "11-20 06:22 ET",
-  "updated_at_kst": "20:22 KST",
+  "updated_at_ts": 1795173857.052,
+  "updated_at_et": "11-20 06:24 ET",
+  "updated_at_kst": "20:24 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1939,6 +1939,20 @@
     ],
     "TSLA": [
       {
+        "title": "Tesla Stock Gets An HSBC Upgrade — But Analyst Says Strategic Logic Of TSLA-SPCX Merger Is ‘Limited’",
+        "url": "https://stocktwits.com/news-articles/markets/equity/tesla-stock-gets-an-hsbc-upgrade-but-analyst-says-strategic-logic-of-tsla-spcx-merger-is-limited/cNbSgTfR9Ko?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 06:02 ET",
+        "pub_ts": 1795172562.0
+      },
+      {
+        "title": "Electric Vehicles Today - Charging Network Growth Fuels Electric Vehicle Market Expansion",
+        "url": "https://finance.yahoo.com/energy/articles/electric-vehicles-today-charging-network-103942380.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 05:39 ET",
+        "pub_ts": 1795171182.0
+      },
+      {
         "title": "A SpaceX-Tesla Merger Needs \"Yes\" From 50% of All Tesla Shares, Not Just Votes Cast. Here's Why That Math Is Harder Than Wall Street Thinks.",
         "url": "https://www.fool.com/investing/2026/11/20/a-spacex-tesla-merger-needs-yes-from-50-of-all-tes/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1958,20 +1972,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 23:30 ET",
         "pub_ts": 1795149058.0
-      },
-      {
-        "title": "Tesla’s Cybercab “Has Arrived” in Dallas. That’s a Growing Threat to Uber",
-        "url": "https://www.tikr.com/blog/teslas-cybercab-has-arrived-in-dallas-thats-a-growing-threat-to-uber?ref=yahoofinance&tlnk=yf-261120-m4qj6rjf&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 18:00 ET",
-        "pub_ts": 1795129255.0
-      },
-      {
-        "title": "Musk Says Optimus Will Do the Dishes “Within 12-18 Months.” Here’s Where Tesla’s Robot Stands",
-        "url": "https://www.tikr.com/blog/musk-says-optimus-will-do-the-dishes-within-12-18-months-heres-where-teslas-robot-stands?ref=yahoofinance&tlnk=yf-261119-6gjh8j3r&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 17:37 ET",
-        "pub_ts": 1795127872.0
       }
     ],
     "AXP": [
@@ -2050,6 +2050,13 @@
     ],
     "KO": [
       {
+        "title": "Is Coca-Cola (KO) the Best Stock to Own During a Market Sell-Off?",
+        "url": "https://www.fool.com/investing/2026/11/20/is-coca-cola-ko-the-best-stock-to-own-during-a-market-sell-off/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 06:06 ET",
+        "pub_ts": 1795172761.0
+      },
+      {
         "title": "Coca-Cola (KO) Stock Fair Value Edges Higher After Q3 Beat And Analyst Target Increases",
         "url": "https://finance.yahoo.com/markets/stocks/articles/coca-cola-ko-stock-fair-001734331.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2076,13 +2083,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 15:21 ET",
         "pub_ts": 1795119686.0
-      },
-      {
-        "title": "Warren Buffett Has Backed This Consumer Stock for Decades, and Greg Abel Is Still Holding It. Here's Why It's a Buy in November.",
-        "url": "https://www.fool.com/investing/2026/11/19/warren-buffett-has-backed-this-consumer-stock-for-decades-and-greg-abel-is-still-holding-it-heres-why-its-a-buy-in-november/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 14:50 ET",
-        "pub_ts": 1795117802.0
       }
     ],
     "FLY": [
@@ -2605,6 +2605,13 @@
     ],
     "BTC-USD": [
       {
+        "title": "Robinhood Markets vs. SoFi Technologies: Which Financial Stock Is a Better Buy for 2027?",
+        "url": "https://www.fool.com/coverage/better-buy/2026/11/20/robinhood-markets-vs-sofi-technologies-which-financial-stock-is-a-better-buy-for-2027/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 06:08 ET",
+        "pub_ts": 1795172881.0
+      },
+      {
         "title": "Should You Forget Nvidia? 2 Artificial Intelligence (AI) Stocks With More Room to 10x",
         "url": "https://www.fool.com/investing/2026/11/20/should-you-forget-nvidia-2-artificial-intelligence-ai-stocks-with-more-room-to-10x/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2631,13 +2638,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 05:05 ET",
         "pub_ts": 1795169102.0
-      },
-      {
-        "title": "Bitcoin Price Has Never Had Two Red Years in a Row: 4-Year Cycle Broken?",
-        "url": "https://99bitcoins.com/news/bitcoin-btc/bitcoin-price-two-consecutive-losing-years/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 04:32 ET",
-        "pub_ts": 1795167160.0
       }
     ],
     "CRWD": [
@@ -3268,10 +3268,10 @@
     "GOOGL": 1795173752.4053469,
     "MSFT": 1795173752.4053469,
     "AAPL": 1795173752.4053469,
-    "PLTR": 1795172155.7003098,
-    "NOW": 1795172155.7003098,
-    "AMZN": 1795172155.7003098,
-    "CRWV": 1795172155.7003098,
+    "PLTR": 1795173857.0519462,
+    "NOW": 1795173857.0519462,
+    "AMZN": 1795173857.0519462,
+    "CRWV": 1795173857.0519462,
     "NBIS": 1795173218.5879445,
     "APLD": 1795173218.5879445,
     "VST": 1795173218.5879445,
@@ -3280,31 +3280,31 @@
     "COHR": 1795173218.5879445,
     "MRVL": 1795173218.5879445,
     "LITE": 1795173218.5879445,
-    "AAOI": 1795172155.7003098,
+    "AAOI": 1795173857.0519462,
     "SPCX": 1795173218.5879445,
     "ASTS": 1795173218.5879445,
     "AXTI": 1795173218.5879445,
-    "NASA": 1795172155.7003098,
-    "LUNR": 1795172155.7003098,
-    "TSLA": 1795172155.7003098,
-    "AXP": 1795172155.7003098,
+    "NASA": 1795173857.0519462,
+    "LUNR": 1795173857.0519462,
+    "TSLA": 1795173857.0519462,
+    "AXP": 1795173857.0519462,
     "RKLB": 1795173218.5879445,
-    "KO": 1795172155.7003098,
+    "KO": 1795173857.0519462,
     "FLY": 1795173218.5879445,
-    "INTC": 1795172155.7003098,
-    "VRT": 1795172155.7003098,
-    "HPE": 1795172155.7003098,
-    "DELL": 1795172155.7003098,
-    "OKLO": 1795172155.7003098,
-    "CEG": 1795172155.7003098,
-    "FPS": 1795172155.7003098,
-    "MU": 1795172155.7003098,
-    "SKHY": 1795172155.7003098,
-    "WDC": 1795172155.7003098,
-    "STX": 1795172155.7003098,
-    "MSTR": 1795172155.7003098,
-    "SNDK": 1795172155.7003098,
-    "BTC-USD": 1795172155.7003098,
+    "INTC": 1795173857.0519462,
+    "VRT": 1795173857.0519462,
+    "HPE": 1795173857.0519462,
+    "DELL": 1795173857.0519462,
+    "OKLO": 1795173857.0519462,
+    "CEG": 1795173857.0519462,
+    "FPS": 1795173857.0519462,
+    "MU": 1795173857.0519462,
+    "SKHY": 1795173857.0519462,
+    "WDC": 1795173857.0519462,
+    "STX": 1795173857.0519462,
+    "MSTR": 1795173857.0519462,
+    "SNDK": 1795173857.0519462,
+    "BTC-USD": 1795173857.0519462,
     "CRWD": 1795173218.5879445,
     "ORCL": 1795173218.5879445,
     "COIN": 1795173218.5879445,
