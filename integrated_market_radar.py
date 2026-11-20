@@ -21,6 +21,7 @@ import time
 import random
 from datetime import datetime, timezone, timedelta
 import display_time
+import page_load
 import urllib.request
 import urllib.error
 import radar_cloud_sync
@@ -3989,7 +3990,8 @@ def generate_macro_radar_html(macro_data, weather_info, history_dict, update_tim
         hovermode="x unified",
         legend=dict(orientation="h", yanchor="bottom", y=1.03, xanchor="center", x=0.5, font=dict(size=10))
     )
-    chart_div = fig.to_html(full_html=False, include_plotlyjs="cdn")
+    chart_div = page_load.defer_plotly_cdn(fig.to_html(full_html=False, include_plotlyjs="cdn"))
+    refresh_head = page_load.client_refresh_snippet(180_000)
 
     # 构建表格
     rows_html = ""
@@ -4024,7 +4026,7 @@ def generate_macro_radar_html(macro_data, weather_info, history_dict, update_tim
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="refresh" content="180">
+    {refresh_head}
     <title>宏观大盘司令塔 · 全局水温看板 ({len(MONITORED_TARGETS["ETFS"])}只核心ETF · 全网{len(MONITORED_TARGETS["ETFS"]) + len(MONITORED_TARGETS["STOCKS"])}只标的)</title>
     <style>
         body {{
@@ -4326,7 +4328,8 @@ def generate_stocks_radar_html(stocks_data, history_dict, update_time_str="", ha
         margin=dict(l=50, r=40, t=60, b=50),
         showlegend=False
     )
-    matrix_div = fig_matrix.to_html(full_html=False, include_plotlyjs="cdn")
+    matrix_div = page_load.defer_plotly_cdn(fig_matrix.to_html(full_html=False, include_plotlyjs="cdn"))
+    refresh_head = page_load.client_refresh_snippet(180_000)
 
     # 构建个股表格
     def _position_display(r):
@@ -4393,7 +4396,7 @@ def generate_stocks_radar_html(stocks_data, history_dict, update_time_str="", ha
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="refresh" content="180">
+    {refresh_head}
     <title>核心个股碎股雷达 · 黄金坑作战与进攻看板 ({len(stocks_data)}只标的 · 全网{len(MONITORED_TARGETS["ETFS"]) + len(MONITORED_TARGETS["STOCKS"])}只标的)</title>
     <style>
         body {{

@@ -5034,27 +5034,16 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
     if etf_count > 0:
         sector_pills_html += f'<button class="filter-pill" data-sec="ETF_POOL" onclick="filterBySector(this.dataset.sec)">📊 宏观与行业 ETF ({etf_count})</button>'
 
+    import page_load
+    refresh_head = page_load.client_refresh_snippet(60_000)
+    predict_boot = page_load.PREDICT_BOOT_JS.replace("<script>", '<script id="predict-app-boot">', 1)
+
     html_content = f"""<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
-    <script>
-        // ⚡ 客户端智能防缓存自动刷新 (60秒穿透 GitHub Pages / Fastly CDN 10分钟强缓存)
-        setTimeout(function() {{
-            try {{
-                var cleanPath = window.location.pathname;
-                var searchParams = new URLSearchParams(window.location.search);
-                searchParams.set('_t', Date.now());
-                window.location.replace(cleanPath + '?' + searchParams.toString() + window.location.hash);
-            }} catch(e) {{
-                window.location.reload();
-            }}
-        }}, 60000);
-    </script>
+    {refresh_head}
     <title>AI 美股 5 年多赛道预测雷达 · 全景战报</title>
     <style>
         :root {{
@@ -6095,7 +6084,7 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
         </footer>
     </div>
 
-    <script>
+    <script type="text/plain" id="predict-app">
         let showFullPool = false;
         let currentSector = 'ALL';
         let currentT4View = 'dual';
@@ -7000,7 +6989,7 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
             else renderTimeCycleView();
         }}
 
-        document.addEventListener('DOMContentLoaded' , function() {{
+        function bootPredictPage() {{
             let savedView = 'dual';
             try {{
                 savedView = localStorage.getItem('predict_t4_view') || 'dual';
@@ -7008,8 +6997,14 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
             switchT4View(savedView);
             setTimeout(function() {{ renderTimeCycleView(); }}, 50);
             window.addEventListener('resize', function() {{ renderTimeCycleView(); }});
-        }});
+        }}
+        if (document.readyState === "loading") {{
+            document.addEventListener("DOMContentLoaded", bootPredictPage);
+        }} else {{
+            bootPredictPage();
+        }}
     </script>
+    {predict_boot}
 </body>
 </html>"""
 
