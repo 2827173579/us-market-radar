@@ -5,6 +5,7 @@ Helper module to build the Futu-Style Pro Terminal (futu_pro_terminal.html)
 """
 import json
 import time
+import display_time
 
 
 def ai_daily_snapshot_is_stale(ai_predictions, expected_day: str) -> bool:
@@ -38,6 +39,8 @@ def _expected_completed_us_session_day() -> str:
         return ""
 
 def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_str="", has_realtime=False, target_watchlist=None, terminal_notifications=None, session_code="REGULAR", session_name="常规盘中", sync_side_effects=False, sync_dir=None, block_stale_daily_overlay=False):
+    if not str(update_time_str or "").strip():
+        update_time_str = display_time.page_update_stamp()
     is_overnight = (session_code == "OVERNIGHT")
     if session_code == "OVERNIGHT":
         session_badge_html = '<span class="tool-link" style="color: #c084fc; border: 1px solid rgba(192, 132, 252, 0.45); background: rgba(192, 132, 252, 0.12); padding: 4px 7px; font-weight: 700;">🌌 美股夜盘</span>'
@@ -2600,7 +2603,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                     "autosize": true,
                     "symbol": tvSymbol,
                     "interval": interval,
-                    "timezone": "America/New_York",
+                    "timezone": "{display_time.TV_TIMEZONE}",
                     "theme": "dark",
                     "style": style || "1",
                     "locale": "zh_CN",
@@ -2624,7 +2627,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                     ]
                 }});
             }} catch(e) {{
-                const iframeUrl = `https://s.tradingview.com/widgetembed/?frameElementId=tv_widget&symbol=${{encodeURIComponent(tvSymbol)}}&interval=${{interval}}&hidesidetoolbar=0&symboledit=1&saveimage=0&toolbarbg=14161b&theme=dark&style=${{style||'1'}}&timezone=America%2FNew_York&locale=zh_CN&extended_hours=1&sessionId=${{targetSession}}`;
+                const iframeUrl = `https://s.tradingview.com/widgetembed/?frameElementId=tv_widget&symbol=${{encodeURIComponent(tvSymbol)}}&interval=${{interval}}&hidesidetoolbar=0&symboledit=1&saveimage=0&toolbarbg=14161b&theme=dark&style=${{style||'1'}}&timezone={display_time.TV_TIMEZONE_QUERY}&locale=zh_CN&extended_hours=1&sessionId=${{targetSession}}`;
                 container.innerHTML = `<iframe src="${{iframeUrl}}" style="width:100%; height:100%; border:none;"></iframe>`;
             }}
         }}

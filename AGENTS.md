@@ -89,7 +89,7 @@ user_portfolio.example.json  持仓配置模板（复制为 user_portfolio.json 
 | `DISCORD_CLAW_WEBHOOK_URL` | 可选 | 微信告警镜像频道（兼容 `DISCORD_ALERT_WEBHOOK_URL`） |
 | `DISCORD_DEFENSIVE_FLIGHT_WEBHOOK_URL` | 可选 | 防御因子背离专属频道 |
 | `GH_TOKEN` | 自动同步必需 | 有本仓库 `contents:write` 权限的 PAT；Actions 环境用内置 `GITHUB_TOKEN` |
-| `TZ` | 可选 | 时区（默认 Asia/Seoul；VPS systemd 注入） |
+| `TZ` | 可选 | 不再决定看盘页或实盘同步时间。页面、通知和提交说明固定 `Asia/Shanghai`（带「北京时间」）；美股时段与 K 线对齐固定 `America/New_York`。 |
 
 > 代码加载顺序：脚本目录下 `.env`（`load_env_file()`）→ 系统环境变量。**环境变量优先**。
 

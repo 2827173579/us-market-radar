@@ -59,6 +59,7 @@ import unicodedata
 import urllib.request
 import urllib.error
 from datetime import datetime, timezone, timedelta
+import display_time
 from typing import List, Dict, Tuple, Optional, Any, Union
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
@@ -4407,7 +4408,7 @@ def generate_report_tables(
     except Exception as _tce:
         time_cycle_proj = {}
 
-    now_str = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    now_str = display_time.page_update_stamp()
     mode_str = "Finnhub 实时盘前/盘中穿透" if is_realtime else "yfinance 最新收盘价底模"
 
     return {

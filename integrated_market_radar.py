@@ -20,6 +20,7 @@ NO_BROWSER = ("--no-browser" in sys.argv) or ANDROID_MODE
 import time
 import random
 from datetime import datetime, timezone, timedelta
+import display_time
 import urllib.request
 import urllib.error
 import radar_cloud_sync
@@ -669,7 +670,7 @@ def fetch_finnhub_quotes_batch(tickers, api_key):
     return results
 
 def now_et_str(fmt="%Y-%m-%d %H:%M:%S"):
-    """统一使用美东时间显示/日志/推送。"""
+    """美东时间。只用于交易时段、告警去重日期和内部状态，不写入看盘页。"""
     try:
         from zoneinfo import ZoneInfo
         return datetime.now(ZoneInfo("America/New_York")).strftime(fmt)
@@ -2135,7 +2136,7 @@ def send_discord_defensive_flight_alert(df_alert, live_lookup=None, update_time_
             status_tag = "🛡️ **【夜盘·期货代理】防御因子平稳 · 期货代理非现货篮子**"
             advice = "✅ **期货代理**：NQ=F / ZB=F / GC=F 夜盘期货方向；这不是现货篮子分数，不改变白天现货计算。"
     print(f"  [+] 防御因子真实成分: 防御 {len(def_items)} 只 / 进攻 {len(off_items)} 只")
-    now_t = update_time_str or now_et_str("%Y-%m-%d %H:%M:%S")
+    now_t = update_time_str or display_time.page_update_stamp()
 
     desc = f"""### {status_tag}
 
@@ -2628,7 +2629,7 @@ def dispatch_wechat_radar_alerts(macro_data, stocks_data, weather_info, now_str)
 
     md = [
         f"### 🔔 美股量化雷达 ｜ {current_weather}",
-        f"> ⏱️ **时间**：`{now_str[5:16]}` ｜ **大盘**：{weather_info.get('desc', '')[:28]}",
+        f"> ⏱️ **时间**：`{display_time.compact_beijing_stamp(now_str) if now_str and '北京时间' in now_str else ((now_str or '')[5:16] or display_time.format_beijing_short())}` ｜ **大盘**：{weather_info.get('desc', '')[:28]}",
         ""
     ]
 
@@ -2722,15 +2723,17 @@ def dispatch_discord_sentinel_async(macro_data, stocks_sorted, weather_info, now
     except Exception as e:
         print(f"[!] ⚠️ Discord Sentinel async launch failed: {e}")
 
-def generate_and_sync_notifications(macro_data, stocks_data, weather_info, now_str, session_code="REGULAR"):
+def generate_and_sync_notifications(macro_data, stocks_data, weather_info, now_str, session_code="REGULAR", display_stamp=None):
     """
     生成与微信通知 100% 同步的结构化分类消息中心数据，并持久化到 .terminal_notifications.json
-    采用【日期+类型+标的+子状态】作为唯一 ID，同日同状态原地更新最新价格，杜绝每3分钟重复堆叠与误报响铃。
+    采用【美东日期+类型+标的+子状态】作为唯一 ID，同日同状态原地更新最新价格，杜绝每3分钟重复堆叠与误报响铃。
+    now_str 的日期必须是美东交易日（去重主键）。display_stamp 是看盘页上的北京时间。
     """
     target_watchlist = load_target_watchlist()
     existing_notifs = load_terminal_notifications()
     new_notifs = []
-    date_tag = now_str[:10]
+    date_tag = (now_str or "")[:10] or now_et_str("%Y-%m-%d")
+    chip = display_time.compact_beijing_stamp(display_stamp) if display_stamp else ((now_str or "")[5:16] or display_time.format_beijing_short())
 
     # 0. 🚨 防御因子起飞与机构去杠杆踩踏警报 (Defensive Flight Alert)
     try:
@@ -2746,7 +2749,7 @@ def generate_and_sync_notifications(macro_data, stocks_data, weather_info, now_s
             flight_score = df_alert.get("flight_score", 0.0)
             new_notifs.append({
                 "id": f"DEF_FLIGHT_{date_tag}",
-                "time": now_str[5:16],
+                "time": chip,
                 "category": "defensive_flight",
                 "cat_label": "🚨 防御起飞",
                 "level": "danger",
@@ -2783,7 +2786,7 @@ def generate_and_sync_notifications(macro_data, stocks_data, weather_info, now_s
         if is_watched and intraday_ready and not is_stop and not is_obs_only:
             new_notifs.append({
                 "id": f"5M_{ticker}_{date_tag}",
-                "time": now_str[5:16],
+                "time": chip,
                 "category": "5m_entry",
                 "cat_label": "🎯 5m买点",
                 "level": "success",
@@ -2957,7 +2960,7 @@ def generate_and_sync_notifications(macro_data, stocks_data, weather_info, now_s
 
             new_notifs.append({
                 "id": f"PORT_{ticker}_{p_substate}_{date_tag}",
-                "time": now_str[5:16],
+                "time": chip,
                 "category": "portfolio",
                 "cat_label": "💼 持仓风控",
                 "level": p_level,
@@ -2979,7 +2982,7 @@ def generate_and_sync_notifications(macro_data, stocks_data, weather_info, now_s
         if is_pit and not is_stop and not s.get("is_crash_halt") and not s.get("is_cooling_halt"):
             new_notifs.append({
                 "id": f"PIT_{ticker}_{date_tag}",
-                "time": now_str[5:16],
+                "time": chip,
                 "category": "golden_pit",
                 "cat_label": "🟢 黄金坑",
                 "level": "success",
@@ -2999,7 +3002,7 @@ def generate_and_sync_notifications(macro_data, stocks_data, weather_info, now_s
         if is_stop and not ticker.endswith("ETF"):
             new_notifs.append({
                 "id": f"STOP_{ticker}_{date_tag}",
-                "time": now_str[5:16],
+                "time": chip,
                 "category": "stop_loss",
                 "cat_label": "🔴 破位止损",
                 "level": "danger",
@@ -3016,7 +3019,7 @@ def generate_and_sync_notifications(macro_data, stocks_data, weather_info, now_s
         if is_tp:
             new_notifs.append({
                 "id": f"TP_{ticker}_{date_tag}",
-                "time": now_str[5:16],
+                "time": chip,
                 "category": "take_profit",
                 "cat_label": "🟣 冲顶减仓",
                 "level": "purple",
@@ -3033,7 +3036,7 @@ def generate_and_sync_notifications(macro_data, stocks_data, weather_info, now_s
     cur_weather = weather_info.get("weather", "阴天防守")
     new_notifs.append({
         "id": f"WEATHER_{cur_weather}_{date_tag}",
-        "time": now_str[5:16],
+        "time": chip,
         "category": "macro_weather",
         "cat_label": "⛅ 宏观气象",
         "level": "info",
@@ -3875,7 +3878,7 @@ patch_predict_time_cycle_anchor = sync_live_prices_to_predict_html
 def generate_macro_radar_html(macro_data, weather_info, history_dict, update_time_str="", has_realtime=False):
     """生成包含 12 只核心 ETF 的宏观大盘司令塔看板"""
     if not update_time_str:
-        update_time_str = now_et_str("%Y-%m-%d %H:%M:%S")
+        update_time_str = display_time.page_update_stamp()
 
     fig = make_subplots(
         rows=2, cols=2,
@@ -4273,7 +4276,7 @@ def generate_macro_radar_html(macro_data, weather_info, history_dict, update_tim
 def generate_stocks_radar_html(stocks_data, history_dict, update_time_str="", has_realtime=False):
     """生成包含 27 只核心科技个股的碎股雷达与黄金坑矩阵"""
     if not update_time_str:
-        update_time_str = now_et_str("%Y-%m-%d %H:%M:%S")
+        update_time_str = display_time.page_update_stamp()
 
     # 2. 绘制 27 只个股“黄金坑距离 vs RSI”散点作战矩阵
     fig_matrix = go.Figure()
@@ -4702,13 +4705,9 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
     # failed predictor cannot leave fresh sync_time on a stale latest_date.
     maybe_refresh_daily_ml_panel()
     start_star_api_server()
-    try:
-        import zoneinfo
-        local_tz = zoneinfo.ZoneInfo("Asia/Seoul")
-    except Exception:
-        from datetime import timezone, timedelta
-        local_tz = timezone(timedelta(hours=9))
-    now_str = now_et_str("%Y-%m-%d %H:%M:%S")
+    # 页面、推送和提交说明用北京时间；告警去重日期仍用美东交易日。
+    now_et = now_et_str("%Y-%m-%d %H:%M:%S")
+    now_bj = display_time.page_update_stamp()
 
     # 实盘持仓功能已移除：不再加载或合并 user_portfolio.json
     user_portfolio = {}
@@ -5270,18 +5269,18 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
         print("[!] ⚠️ 警告: 本轮抓取标的数异常为空 (疑似网络瞬时断连)，保留上一轮有效看板数据，跳过覆盖写入以防页面白屏。")
         return
 
-    generate_macro_radar_html(macro_data, weather_info, history_dict, update_time_str=now_str, has_realtime=has_realtime)
-    generate_stocks_radar_html(stocks_sorted, history_dict, update_time_str=now_str, has_realtime=has_realtime)
+    generate_macro_radar_html(macro_data, weather_info, history_dict, update_time_str=now_bj, has_realtime=has_realtime)
+    generate_stocks_radar_html(stocks_sorted, history_dict, update_time_str=now_bj, has_realtime=has_realtime)
     
     target_watchlist = load_target_watchlist()
-    terminal_notifications = generate_and_sync_notifications(macro_data, stocks_sorted, weather_info, now_str, session_code=session_code)
+    terminal_notifications = generate_and_sync_notifications(macro_data, stocks_sorted, weather_info, now_et, session_code=session_code, display_stamp=now_bj)
     try:
         import importlib, create_futu_terminal
         importlib.reload(create_futu_terminal)
         _build_fn = create_futu_terminal.build_futu_terminal_html
     except Exception:
         _build_fn = build_futu_terminal_html
-    futu_html = _build_fn(stocks_sorted, macro_data, weather_info, update_time_str=now_str, has_realtime=has_realtime, target_watchlist=target_watchlist, terminal_notifications=terminal_notifications, session_code=session_code, session_name=session_name, sync_side_effects=True, block_stale_daily_overlay=_DAILY_ML_REFRESH_FAILED)
+    futu_html = _build_fn(stocks_sorted, macro_data, weather_info, update_time_str=now_bj, has_realtime=has_realtime, target_watchlist=target_watchlist, terminal_notifications=terminal_notifications, session_code=session_code, session_name=session_name, sync_side_effects=True, block_stale_daily_overlay=_DAILY_ML_REFRESH_FAILED)
     with open(FUTU_HTML_FILE, "w", encoding="utf-8") as f:
         f.write(futu_html)
     index_html_path = os.path.join(SCRATCH_DIR, "index.html")
@@ -5294,10 +5293,11 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
     sync_live_prices_to_predict_html(macro_data, stocks_sorted, session_code)
 
     # 7. 智能去重微信预警推送 (PushPlus 微信 Markdown 卡片通道)
-    dispatch_wechat_radar_alerts(macro_data, stocks_sorted, weather_info, now_str)
+    dispatch_wechat_radar_alerts(macro_data, stocks_sorted, weather_info, now_bj)
 
     # 7.5 美股五大梯队量化哨兵与板块巡检 (Discord Webhook 富文本通道)
-    dispatch_discord_sentinel_async(macro_data, stocks_sorted, weather_info, now_str)
+    # 哨兵时段标题仍标注美东；now_bj 只作为报告上的数据时间。
+    dispatch_discord_sentinel_async(macro_data, stocks_sorted, weather_info, now_bj)
 
     # 7.6 专属防御因子背离百分比频道推送 (每次雷达刷新后专属播报)
     try:
@@ -5310,7 +5310,7 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
             df_alert_push = ml_predictor_5y.compute_defensive_flight_alert(live_lookup=live_lookup_df, session_code=session_code)
         # 夜盘防刷屏：仅 Score 变动 >=0.10%p 或核心成分变动 >=0.5% 才发送
         if should_send_defensive_flight_alert(df_alert_push, live_lookup_df, session_code=session_code):
-            if send_discord_defensive_flight_alert(df_alert_push, live_lookup_df, now_str):
+            if send_discord_defensive_flight_alert(df_alert_push, live_lookup_df, now_bj):
                 record_defensive_flight_sent(df_alert_push, live_lookup_df, session_code=session_code)
         else:
             print("  [*] 防御因子无显著变化（<0.10%p 且核心成分<0.5%），跳过 Discord 推送")
@@ -5637,7 +5637,7 @@ def main():
 
         while (duration_min <= 0) or (time.time() < end_time):
             c_start = time.time()
-            now_ts = now_et_str("%Y-%m-%d %H:%M:%S")
+            now_ts = display_time.page_update_stamp()
 
             # 🛡️ 云端 Actions 互斥：只避让「本仓库」15 分钟内的非 Actions 提交。
             # fork 继承的上游提交、以及从上游同步过来的同一 SHA，不算本地客户端。
@@ -5809,7 +5809,7 @@ def main():
     if _initial_standby:
         print("[Standby] PC 主机在线，完整引擎首轮仅待命")
     elif elapsed >= SYNC_INTERVAL or last_sync == 0.0:
-        start_ts = now_et_str("%Y-%m-%d %H:%M:%S")
+        start_ts = display_time.page_update_stamp()
         print(f"\n" + "-" * 75)
         print(f"⏱️ [{start_ts}] 正在执行第 {round_count} 轮全市场数据同步与指标扫描...")
         print("-" * 75)
@@ -5827,14 +5827,14 @@ def main():
             elapsed = time.time() - last_sync
 
             if elapsed >= SYNC_INTERVAL:
-                start_ts = now_et_str("%Y-%m-%d %H:%M:%S")
+                start_ts = display_time.page_update_stamp()
                 print(f"\n" + "-" * 75)
                 print(f"⏱️ [{start_ts}] 达到 180 秒调度周期，正在执行第 {round_count} 轮数据同步...")
                 print("-" * 75)
 
                 run_radar_cycle(is_first_run=False, round_idx=round_count)
 
-                end_ts = now_et_str("%Y-%m-%d %H:%M:%S")
+                end_ts = display_time.page_update_stamp()
                 print(f"\n[{end_ts}] ✅ 第 {round_count} 轮数据更新完成！")
                 print(f"⏳ 守护引擎进入 180 秒 (3分钟) 休眠倒计时...")
 
