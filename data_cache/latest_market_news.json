@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795215975.083,
-  "updated_at_et": "11-20 18:06 ET",
-  "updated_at_kst": "08:06 KST",
+  "updated_at_ts": 1795216075.405,
+  "updated_at_et": "11-20 18:07 ET",
+  "updated_at_kst": "08:07 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2603,6 +2603,20 @@
     ],
     "BTC-USD": [
       {
+        "title": "Weekly Wrap: Crypto Falls As Stocks Struggle",
+        "url": "https://www.cryptoprowl.com/releases/weekly-wrap-crypto-falls-as-stocks-struggle-8016?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 17:38 ET",
+        "pub_ts": 1795214280.0
+      },
+      {
+        "title": "Fear and 'Hot Sauce': Young Investors Want To Catch Up",
+        "url": "https://finance.yahoo.com/video/fear-hot-sauce-young-investors-220908046.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 17:09 ET",
+        "pub_ts": 1795212548.0
+      },
+      {
         "title": "MARA Holdings (MARA) Could Be 65% Undervalued On Its AI And Bitcoin Reset",
         "url": "https://finance.yahoo.com/markets/stocks/articles/mara-holdings-mara-could-65-220853371.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2622,20 +2636,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 16:12 ET",
         "pub_ts": 1795209120.0
-      },
-      {
-        "title": "Sector Update: Financial Stocks Decline Late Afternoon",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/sector-financial-stocks-decline-afternoon-210945260.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 16:09 ET",
-        "pub_ts": 1795208985.0
-      },
-      {
-        "title": "What XRP Did After SpaceX’s IPO and What It Could Do After Anthropic’s",
-        "url": "https://247wallst.com/investing/cryptocurrency/2026/11/20/what-xrp-did-after-spacexs-ipo-and-what-it-could-do-after-anthropics/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 15:34 ET",
-        "pub_ts": 1795206859.0
       }
     ],
     "CRWD": [
@@ -3302,7 +3302,7 @@
     "STX": 1795215674.6706288,
     "MSTR": 1795215674.6706288,
     "SNDK": 1795215562.5787063,
-    "BTC-USD": 1795214553.3402493,
+    "BTC-USD": 1795216075.4052286,
     "CRWD": 1795215054.17392,
     "ORCL": 1795215054.17392,
     "COIN": 1795215054.17392,
@@ -3311,15 +3311,15 @@
     "NKE": 1795215158.4683945,
     "MCD": 1795215054.17392,
     "PEP": 1795215054.17392,
-    "XOM": 1795214553.3402493,
-    "JPM": 1795214553.3402493,
-    "WMT": 1795214553.3402493,
+    "XOM": 1795216075.4052286,
+    "JPM": 1795216075.4052286,
+    "WMT": 1795216075.4052286,
     "V": 1795215158.4683945,
-    "CAT": 1795214553.3402493,
+    "CAT": 1795216075.4052286,
     "FN": 1795215054.17392,
     "GLW": 1795215054.17392,
-    "ANT": 1795214553.3402493,
-    "XAUUSD": 1795214553.3402493
+    "ANT": 1795216075.4052286,
+    "XAUUSD": 1795216075.4052286
   },
   "calendar_banner": {
     "level": "idle_with_flash",
