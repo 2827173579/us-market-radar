@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795199244.344,
-  "updated_at_et": "11-20 13:27 ET",
-  "updated_at_kst": "03:27 KST",
+  "updated_at_ts": 1795199343.734,
+  "updated_at_et": "11-20 13:29 ET",
+  "updated_at_kst": "03:29 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2603,6 +2603,20 @@
     ],
     "BTC-USD": [
       {
+        "title": "Anthropic IPO: Ashton Kutcher Wins Big, These Other 2 Celebrities Also Backed AI Company",
+        "url": "https://www.benzinga.com/markets/ipos/26/11/63495564/anthropic-ipo-ashton-kutcher-wins-big-these-other-2-celebrities-also-backed-ai-company?utm_source=yahooFinance&utm_campaign=partner_feed&utm_medium=referral&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 13:17 ET",
+        "pub_ts": 1795198663.0
+      },
+      {
+        "title": "Exclusive: Twenty One CEO on Bitcoin, acquisitions, and building value",
+        "url": "https://finance.yahoo.com/markets/crypto/articles/exclusive-twenty-one-ceo-bitcoin-164117192.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 12:55 ET",
+        "pub_ts": 1795197316.0
+      },
+      {
         "title": "Bitcoin Falls Below $60K as ETFs Bleed",
         "url": "https://www.bankless.com/read/news/bitcoin-falls-below-60k-as-etf-outflows-mount?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2622,20 +2636,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 12:35 ET",
         "pub_ts": 1795196102.0
-      },
-      {
-        "title": "Is Monness Wrong to Give Up on Strategy? Wall Street Still Sees $233",
-        "url": "https://www.tikr.com/blog/is-monness-wrong-to-give-up-on-strategy-wall-street-still-sees-233?ref=yahoofinance&tlnk=yf-261120-84j9664h&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 12:32 ET",
-        "pub_ts": 1795195977.0
-      },
-      {
-        "title": "Trump Media (DJT) Stock May Be Undervalued Following Note Repurchase News",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/trump-media-djt-stock-may-171101118.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 12:11 ET",
-        "pub_ts": 1795194661.0
       }
     ],
     "CRWD": [
@@ -2973,6 +2973,13 @@
     ],
     "JPM": [
       {
+        "title": "JPMorgan, Visa Warn of Cyberattack That Hit Outside Vendor",
+        "url": "https://finance.yahoo.com/video/jpmorgan-visa-warn-cyberattack-hit-175529831.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 12:55 ET",
+        "pub_ts": 1795197329.0
+      },
+      {
         "title": "JPMorgan Sees US IPO Proceeds Near $290B In 2026, Says Investor Demand Is Growing Faster Than Supply",
         "url": "https://stocktwits.com/news-articles/markets/equity/jp-morgan-sees-us-ipo-proceeds-near-290-b-in-2026-says-investor-demand-is-growing-faster-than-supply/cNbSnA0R914?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2999,16 +3006,16 @@
         "source": "Yahoo Finance",
         "time": "11-20 11:19 ET",
         "pub_ts": 1795191577.0
-      },
-      {
-        "title": "JPMorgan Faces Data Leak After Banking Outage: Risks Mount?",
-        "url": "https://finance.yahoo.com/technology/articles/jpmorgan-faces-data-leak-banking-141200565.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 09:12 ET",
-        "pub_ts": 1795183920.0
       }
     ],
     "WMT": [
+      {
+        "title": "Walmart's value proposition supports further market share gains, says Bank of America",
+        "url": "https://www.proactiveinvestors.com/companies/news/1102207/walmart-s-value-proposition-supports-further-market-share-gains-says-bank-of-america-1102207.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 13:00 ET",
+        "pub_ts": 1795197600.0
+      },
       {
         "title": "Walmart's Q3 Results Strengthen Bull Case as E-Commerce Economics Improve, UBS Says",
         "url": "https://finance.yahoo.com/markets/stocks/articles/walmart-apos-q3-results-strengthen-173429075.html?.tsrc=rss",
@@ -3036,13 +3043,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 11:58 ET",
         "pub_ts": 1795193890.0
-      },
-      {
-        "title": "Edible Garden Partners with Walmart, Hannaford, Kroger, Meijer, Target and Wakefern/ShopRite to Help Keep Fresh Herbs Affordable This Thanksgiving",
-        "url": "https://finance.yahoo.com/small-business/articles/edible-garden-partners-walmart-hannaford-164800334.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 11:48 ET",
-        "pub_ts": 1795193280.0
       }
     ],
     "V": [
@@ -3302,7 +3302,7 @@
     "STX": 1795198945.6172318,
     "MSTR": 1795198945.6172318,
     "SNDK": 1795198839.396286,
-    "BTC-USD": 1795197827.3016608,
+    "BTC-USD": 1795199343.7344005,
     "CRWD": 1795198233.231557,
     "ORCL": 1795198233.231557,
     "COIN": 1795198233.231557,
@@ -3311,15 +3311,15 @@
     "NKE": 1795198338.321366,
     "MCD": 1795198233.231557,
     "PEP": 1795198233.231557,
-    "XOM": 1795197827.3016608,
-    "JPM": 1795197827.3016608,
-    "WMT": 1795197827.3016608,
+    "XOM": 1795199343.7344005,
+    "JPM": 1795199343.7344005,
+    "WMT": 1795199343.7344005,
     "V": 1795198233.231557,
-    "CAT": 1795197827.3016608,
+    "CAT": 1795199343.7344005,
     "FN": 1795198233.231557,
     "GLW": 1795198233.231557,
-    "ANT": 1795197827.3016608,
-    "XAUUSD": 1795197827.3016608
+    "ANT": 1795199343.7344005,
+    "XAUUSD": 1795199343.7344005
   },
   "calendar_banner": {
     "level": "idle_with_flash",
