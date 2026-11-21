@@ -1,9 +1,23 @@
 {
-  "updated_at_ts": 1795230061.695,
-  "updated_at_et": "11-20 22:01 ET",
-  "updated_at_kst": "12:01 KST",
+  "updated_at_ts": 1795231907.872,
+  "updated_at_et": "11-20 22:31 ET",
+  "updated_at_kst": "12:31 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261121110305244800",
+      "title": "避险的钱来了，怎么绕开了黄金？｜大师复盘",
+      "summary": "AI资产抛售以及美联储鹰派立场形成双重压力，投资者纷纷寻找落脚处；美债有人买，美元有人抢，黄金却遭到抛售。同样叫避险，资金这回究竟在挑什么？",
+      "keywords": [
+        "美联储",
+        "美债"
+      ],
+      "pub_ts": 1795230185.0,
+      "time_et": "11-20 22:03 ET",
+      "time_bj": "11:03 BJ",
+      "time_kst": "12:03 KST",
+      "time_display": "22:03 ET / 11:03 BJ"
+    },
     {
       "id": "20261121103304437800",
       "title": "【孙正义被曝拟豪赌存储芯片市场，曾考虑斥资1万亿美元收购SK海力士】 11月21日讯，据…",
@@ -336,19 +350,6 @@
       "time_bj": "01:15 BJ",
       "time_kst": "02:15 KST",
       "time_display": "12:15 ET / 01:15 BJ"
-    },
-    {
-      "id": "20261121010500001800",
-      "title": "美联储理事丽莎·库克将于十分钟后发表讲话。",
-      "summary": "美联储理事丽莎·库克将于十分钟后发表讲话。",
-      "keywords": [
-        "美联储"
-      ],
-      "pub_ts": 1795194300.0,
-      "time_et": "11-20 12:05 ET",
-      "time_bj": "01:05 BJ",
-      "time_kst": "02:05 KST",
-      "time_display": "12:05 ET / 01:05 BJ"
     }
   ],
   "ticker_news": {
@@ -909,6 +910,13 @@
     ],
     "NVDA": [
       {
+        "title": "NVDA Stock Sees Biggest Fall In 22 Months, But Top Analyst Says Nvidia’s AI Boom Isn’t Over Yet — Here Are 5 Reasons Why",
+        "url": "https://stocktwits.com/news-articles/markets/equity/nvda-stock-fall-nvidia-ai-boom-not-over-yet-top-analyst-5-reasons/cNbmIC8R91h?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 21:48 ET",
+        "pub_ts": 1795229305.0
+      },
+      {
         "title": "Dow Jones Futures: Market Has Worst Week Since Covid Amid Nvidia, Anthropic. Does Fear Gauge Offer Hope?",
         "url": "https://finance.yahoo.com/m/9ef9da98-bccf-3565-9a30-9bc3e57ad4b9/dow-jones-futures%3A-market-has.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -935,13 +943,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 19:46 ET",
         "pub_ts": 1795221964.0
-      },
-      {
-        "title": "Here's How Much Nvidia Stock Is Worth Without Jensen Huang, According to Dan Ives",
-        "url": "https://www.fool.com/investing/2026/11/20/here-s-how-much-nvidia-stock-is-worth-without-jensen-huang-according-to-dan-ives/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 19:30 ET",
-        "pub_ts": 1795221004.0
       }
     ],
     "AMD": [
@@ -2537,6 +2538,13 @@
     ],
     "MSTR": [
       {
+        "title": "Bitcoin Falls Below $60K For First Time Since July, Saylor's MSTR Hits 52-Week Low Amid $14B Paper Loss",
+        "url": "https://stocktwits.com/news-articles/markets/equity/bitcoin-falls-below-60-k-for-first-time-since-july-saylor-s-mstr-hits-52-week-low-amid-14-b-paper-loss/cNbm7NeR91L?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 22:10 ET",
+        "pub_ts": 1795230659.0
+      },
+      {
         "title": "Strategy Is Down 44% in a Month as Crypto Stocks Crumble: Can MSTR Stock Get Back to $100 This Year?",
         "url": "https://247wallst.com/investing/2026/11/20/strategy-is-down-44-in-a-month-as-crypto-stocks-crumble-can-mstr-stock-get-back-to-100-this-year/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2563,13 +2571,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 10:37 ET",
         "pub_ts": 1795189022.0
-      },
-      {
-        "title": "Strategy's Growing USD Reserves: Is Financial Flexibility Improving?",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/strategys-growing-usd-reserves-financial-141600062.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 09:16 ET",
-        "pub_ts": 1795184160.0
       }
     ],
     "SNDK": [
@@ -2611,6 +2612,13 @@
     ],
     "BTC-USD": [
       {
+        "title": "Bitcoin Falls Below $60K For First Time Since July, Saylor's MSTR Hits 52-Week Low Amid $14B Paper Loss",
+        "url": "https://stocktwits.com/news-articles/markets/equity/bitcoin-falls-below-60-k-for-first-time-since-july-saylor-s-mstr-hits-52-week-low-amid-14-b-paper-loss/cNbm7NeR91L?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 22:10 ET",
+        "pub_ts": 1795230659.0
+      },
+      {
         "title": "Veteran trader who nailed 2018 Bitcoin crash issues this brutal warning",
         "url": "https://www.thestreet.com/crypto/markets/veteran-trader-who-nailed-2018-bitcoin-crash-issues-this-brutal-warning?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2637,13 +2645,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 19:30 ET",
         "pub_ts": 1795221000.0
-      },
-      {
-        "title": "PayPal vs. SoFi Technologies: Which Financial Stock Is a Better Buy for 2027?",
-        "url": "https://www.fool.com/coverage/better-buy/2026/11/20/paypal-vs-sofi-technologies-which-financial-stock-is-a-better-buy-for-2027/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 18:25 ET",
-        "pub_ts": 1795217139.0
       }
     ],
     "CRWD": [
@@ -2653,6 +2654,13 @@
         "source": "Yahoo Finance",
         "time": "11-20 17:45 ET",
         "pub_ts": 1795214717.0
+      },
+      {
+        "title": "Crowd Pleaser….Crowdstrike Wants to Buy Zscaler",
+        "url": "https://www.fool.com/investing/2026/11/20/crowd-pleaser-crowdstrike-wants-to-buy-zscaler/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 21:29 ET",
+        "pub_ts": 1795228173.0
       },
       {
         "title": "Nasdaq 100 Ends Worst Week Since 2020, S&P 500 In Correction Territory As AI Rout Sours Sentiment — ANT, NVDA, TTWO, ZS, CRWD In Focus",
@@ -2674,13 +2682,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 17:27 ET",
         "pub_ts": 1795213660.0
-      },
-      {
-        "title": "ZS Stock Soars After-Hours While CRWD Slips On Reported $265B Takeover Talks",
-        "url": "https://stocktwits.com/news-articles/markets/equity/zs-stock-soars-after-hours-while-crwd-slips-on-reported-265-b-takeover-talks/cNbSHb0R91a?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 17:16 ET",
-        "pub_ts": 1795212962.0
       }
     ],
     "ORCL": [
@@ -3249,90 +3250,90 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795229290.2747602,
-    "SOXL": 1795229290.2747602,
-    "SPY": 1795229290.2747602,
-    "DIA": 1795229290.2747602,
-    "SOXX": 1795229290.2747602,
-    "QQQ": 1795229290.2747602,
-    "SMH": 1795229290.2747602,
-    "IWM": 1795229290.2747602,
-    "IGV": 1795229290.2747602,
-    "TLT": 1795229290.2747602,
-    "GLD": 1795229290.2747602,
-    "SQQQ": 1795229290.2747602,
-    "TSM": 1795229290.2747602,
-    "VIXY": 1795229290.2747602,
-    "SOXS": 1795229290.2747602,
-    "NVDA": 1795229290.2747602,
-    "AMD": 1795229482.990221,
-    "ASML": 1795229482.990221,
-    "QCOM": 1795229482.990221,
-    "AVGO": 1795229482.990221,
-    "AMAT": 1795229482.990221,
-    "META": 1795229482.990221,
-    "GOOGL": 1795229482.990221,
-    "MSFT": 1795229482.990221,
-    "AAPL": 1795229482.990221,
-    "PLTR": 1795229482.990221,
-    "NOW": 1795229482.990221,
-    "AMZN": 1795229482.990221,
-    "CRWV": 1795229482.990221,
-    "NBIS": 1795228901.202343,
-    "APLD": 1795228901.202343,
-    "VST": 1795228901.202343,
-    "BE": 1795228901.202343,
-    "CRDO": 1795228901.202343,
-    "COHR": 1795228901.202343,
-    "MRVL": 1795228901.202343,
-    "LITE": 1795228901.202343,
-    "AAOI": 1795229482.990221,
-    "SPCX": 1795228901.202343,
-    "ASTS": 1795228901.202343,
-    "AXTI": 1795228901.202343,
-    "NASA": 1795229482.990221,
-    "LUNR": 1795229482.990221,
-    "TSLA": 1795229482.990221,
-    "AXP": 1795229482.990221,
-    "RKLB": 1795228901.202343,
-    "KO": 1795229482.990221,
-    "FLY": 1795228901.202343,
-    "INTC": 1795229482.990221,
-    "VRT": 1795229482.990221,
-    "HPE": 1795229582.866576,
-    "DELL": 1795229482.990221,
-    "OKLO": 1795229482.990221,
-    "CEG": 1795229582.866576,
-    "FPS": 1795229582.866576,
-    "MU": 1795229582.866576,
-    "SKHY": 1795229582.866576,
-    "WDC": 1795229582.866576,
-    "STX": 1795229582.866576,
-    "MSTR": 1795229582.866576,
-    "SNDK": 1795229582.866576,
-    "BTC-USD": 1795229963.222933,
-    "CRWD": 1795228901.202343,
-    "ORCL": 1795228901.202343,
-    "COIN": 1795228901.202343,
-    "LLY": 1795229001.4344938,
-    "MRNA": 1795229001.4344938,
-    "NKE": 1795229001.4344938,
-    "MCD": 1795228901.202343,
-    "PEP": 1795228901.202343,
-    "XOM": 1795229963.222933,
-    "JPM": 1795229963.222933,
-    "WMT": 1795229963.222933,
-    "V": 1795229001.4344938,
-    "CAT": 1795229963.222933,
-    "FN": 1795228901.202343,
-    "GLW": 1795228901.202343,
-    "ANT": 1795229963.222933,
-    "XAUUSD": 1795229963.222933
+    "KORU": 1795230844.319021,
+    "SOXL": 1795230844.319021,
+    "SPY": 1795230844.319021,
+    "DIA": 1795230844.319021,
+    "SOXX": 1795230844.319021,
+    "QQQ": 1795230844.319021,
+    "SMH": 1795230844.319021,
+    "IWM": 1795230844.319021,
+    "IGV": 1795230844.319021,
+    "TLT": 1795230844.319021,
+    "GLD": 1795230844.319021,
+    "SQQQ": 1795230844.319021,
+    "TSM": 1795230844.319021,
+    "VIXY": 1795230844.319021,
+    "SOXS": 1795230844.319021,
+    "NVDA": 1795230844.319021,
+    "AMD": 1795231036.7457426,
+    "ASML": 1795231036.7457426,
+    "QCOM": 1795231036.7457426,
+    "AVGO": 1795231036.7457426,
+    "AMAT": 1795231036.7457426,
+    "META": 1795231036.7457426,
+    "GOOGL": 1795231036.7457426,
+    "MSFT": 1795231036.7457426,
+    "AAPL": 1795231036.7457426,
+    "PLTR": 1795231036.7457426,
+    "NOW": 1795231036.7457426,
+    "AMZN": 1795231036.7457426,
+    "CRWV": 1795231036.7457426,
+    "NBIS": 1795230461.2001357,
+    "APLD": 1795230461.2001357,
+    "VST": 1795230461.2001357,
+    "BE": 1795230461.2001357,
+    "CRDO": 1795230461.2001357,
+    "COHR": 1795230461.2001357,
+    "MRVL": 1795230461.2001357,
+    "LITE": 1795230461.2001357,
+    "AAOI": 1795231036.7457426,
+    "SPCX": 1795230461.2001357,
+    "ASTS": 1795230461.2001357,
+    "AXTI": 1795230461.2001357,
+    "NASA": 1795231036.7457426,
+    "LUNR": 1795231036.7457426,
+    "TSLA": 1795231036.7457426,
+    "AXP": 1795231036.7457426,
+    "RKLB": 1795230461.2001357,
+    "KO": 1795231036.7457426,
+    "FLY": 1795230461.2001357,
+    "INTC": 1795231036.7457426,
+    "VRT": 1795231036.7457426,
+    "HPE": 1795231144.1906424,
+    "DELL": 1795231036.7457426,
+    "OKLO": 1795231036.7457426,
+    "CEG": 1795231144.1906424,
+    "FPS": 1795231144.1906424,
+    "MU": 1795231144.1906424,
+    "SKHY": 1795231144.1906424,
+    "WDC": 1795231144.1906424,
+    "STX": 1795231144.1906424,
+    "MSTR": 1795231144.1906424,
+    "SNDK": 1795231144.1906424,
+    "BTC-USD": 1795231523.1648061,
+    "CRWD": 1795230461.2001357,
+    "ORCL": 1795230461.2001357,
+    "COIN": 1795230461.2001357,
+    "LLY": 1795230561.6407394,
+    "MRNA": 1795230561.6407394,
+    "NKE": 1795230561.6407394,
+    "MCD": 1795230461.2001357,
+    "PEP": 1795230461.2001357,
+    "XOM": 1795231523.1648061,
+    "JPM": 1795231523.1648061,
+    "WMT": 1795231523.1648061,
+    "V": 1795230561.6407394,
+    "CAT": 1795231523.1648061,
+    "FN": 1795230461.2001357,
+    "GLW": 1795230461.2001357,
+    "ANT": 1795231523.1648061,
+    "XAUUSD": 1795231523.1648061
   },
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (21:33 ET / 10:33 BJ) [芯片]：【孙正义被曝拟豪赌存储芯片市场，曾考虑斥资1万亿美元收购SK海力士】 11月21日讯，据The Information援引知情人士的话报道，软银CEO孙正义近期曾与华尔街机构接洽，探讨为可能",
+    "detail": "⚡ 最新核心快讯 (22:03 ET / 11:03 BJ) [美联储] [美债]：AI资产抛售以及美联储鹰派立场形成双重压力，投资者纷纷寻找落脚处；美债有人买，美元有人抢，黄金却遭到抛售。同样叫避险，资金这回究竟在挑什么？",
     "event_name": "",
     "minutes_left": 0
   }
