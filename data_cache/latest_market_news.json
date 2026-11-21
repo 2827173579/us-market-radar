@@ -1,9 +1,25 @@
 {
-  "updated_at_ts": 1795224549.737,
-  "updated_at_et": "11-20 20:29 ET",
-  "updated_at_kst": "10:29 KST",
+  "updated_at_ts": 1795226381.05,
+  "updated_at_et": "11-20 20:59 ET",
+  "updated_at_kst": "10:59 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261121093704087800",
+      "title": "人工智能： 1. 特朗普：不允许美国企业在海外建设数据中心。 2. 特朗普对Anthro…",
+      "summary": "人工智能： 1. 特朗普：不允许美国企业在海外建设数据中心。 2. 特朗普对Anthropic态度缓和，称尊重其CEO。 3. 文远知行：第三季度AI基础设施业务收入近翻倍。 4. 美国财长贝森特：AI实验室一直在配合美国的安全措施。 5. OpenAI推出MedChemBench，并向Plus用户推出ChatGPTSpace。 6. 甲骨文：已获得履行与OpenAI合同所需的全部资金，将于2028财年下半年实现自由现金流转正，2029财年自由现金流将超过300亿美元。 集成电路（芯片）： 1. SK海力士将铠侠相关债券转为股票，成为铠侠第一大股东。 2. 据英国金融时报：债权人寻求阻止SpaceX将价值400亿美元的芯片送入轨道。 3. 三星电子任命HBM研发负责人执掌存储器业务部门，调整半导体业务管理架构。 4. 美光新加坡HBM先进封装工厂开始进驻首台设备，预计2027年启动生产。 5. SK海力士据报计划采购荷兰Besi的混合键合设备，用于下一代HBM生产。 6. 台湾Etron预计特殊存储器供应紧张局面将持续至2027年下半年，并与南亚科合作开发AI存储器。 新能源汽车： 1. 据相关声明，意大利在欧盟批准前为特斯拉的自动驾驶系统“开绿灯”。 2. 国家能源局：截至10月底，我国电动汽车充电基础设施（枪）同比增长36.2%。 其他： 1. 英国商用冷藏设备发现安全漏洞，修复措施已推出。 2. 据福克斯新闻：美国国家安全局的网络故障已修复并恢复运行。 3. 欧洲央行行长拉加德警告：AI辅助的网络威胁或成金融业最紧迫挑战。 4. 日本政府核心网络系统遭入侵：持续非法访问超3个月，部分内部文件可能泄露。 5. 隔夜纳指暴跌5%，半导体及存储板块成抛售重灾，英伟达暴跌14%，市值被谷歌超越；AMD跌超13%，Anthropic重挫8.5%，SpaceX跌超7%。 6. 白宫国家安全网络主管凯恩克罗斯即将卸任，此前美国多次出现网络技术故障；美国防部网络主管柯尔斯滕·戴维斯将接任。",
+      "keywords": [
+        "芯片",
+        "半导体",
+        "英伟达",
+        "特朗普"
+      ],
+      "pub_ts": 1795225024.0,
+      "time_et": "11-20 20:37 ET",
+      "time_bj": "09:37 BJ",
+      "time_kst": "10:37 KST",
+      "time_display": "20:37 ET / 09:37 BJ"
+    },
     {
       "id": "20261121090306046800",
       "title": "美伊冲突： 1. 伊朗媒体称格什姆岛遭导弹袭击。 2. 美媒：美以考虑短期内对伊朗发动新…",
@@ -334,19 +350,6 @@
       "time_bj": "01:04 BJ",
       "time_kst": "02:04 KST",
       "time_display": "12:04 ET / 01:04 BJ"
-    },
-    {
-      "id": "20261121004915278800",
-      "title": "标普500指数日内跌幅扩大至2%，较10月创下的纪录水平下跌10%，进入回调区间。",
-      "summary": "标普500指数日内跌幅扩大至2%，较10月创下的纪录水平下跌10%，进入回调区间。",
-      "keywords": [
-        "标普"
-      ],
-      "pub_ts": 1795193355.0,
-      "time_et": "11-20 11:49 ET",
-      "time_bj": "00:49 BJ",
-      "time_kst": "01:49 KST",
-      "time_display": "11:49 ET / 00:49 BJ"
     }
   ],
   "ticker_news": {
@@ -907,6 +910,13 @@
     ],
     "NVDA": [
       {
+        "title": "Nasdaq 100 Ends Worst Week Since 2020, S&P 500 In Correction Territory As AI Rout Sours Sentiment — ANT, NVDA, TTWO, ZS, CRWD In Focus",
+        "url": "https://stocktwits.com/news-articles/markets/equity/nasdaq-100-ends-worst-week-since-2020-s-and-p-500-in-correction-territory-as-ai-rout-sours-sentiment-ant-nvda-ttwo-zs-crwd-in-focus/cNbm3xQR91W?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 20:30 ET",
+        "pub_ts": 1795224625.0
+      },
+      {
         "title": "Has AI's honeymoon ended on Wall Street?",
         "url": "https://finance.yahoo.com/markets/stocks/articles/ais-honeymoon-ended-wall-street-004604807.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -933,13 +943,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 19:16 ET",
         "pub_ts": 1795220175.0
-      },
-      {
-        "title": "Prediction: Nvidia Stock Will Do This in the 6 Months After a New CEO Takes Over, According to History",
-        "url": "https://www.fool.com/investing/2026/11/20/prediction-nvidia-stock-will-do-this-in-the-6-months-after-a-new-ceo-takes-over-according-to-history/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 19:02 ET",
-        "pub_ts": 1795219371.0
       }
     ],
     "AMD": [
@@ -1018,6 +1021,13 @@
     ],
     "QCOM": [
       {
+        "title": "George Soros and 20 Other Big Funds Bought Qualcomm Last Quarter. David Tepper and 14 Others Sold. Who’s Right?",
+        "url": "https://www.tikr.com/blog/george-soros-and-20-other-big-funds-bought-qualcomm-last-quarter-david-tepper-and-14-others-sold-whos-right?ref=yahoofinance&tlnk=yf-261120-7fxgch3m&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 19:35 ET",
+        "pub_ts": 1795221315.0
+      },
+      {
         "title": "Why Are Investors Ignoring Qualcomm Stock's High Cash Yield?",
         "url": "https://www.trefis.com/stock/qcom/articles/627180/why-are-investors-ignoring-qualcomm-stocks-high-cash-yield/2026-11-20?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1044,13 +1054,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 15:05 ET",
         "pub_ts": 1795118722.0
-      },
-      {
-        "title": "Qualcomm lays off 100s amid global restructuring, raises $4 billion",
-        "url": "https://www.thestreet.com/employment/qualcomm-lays-off-100s-amid-global-restructuring-raises-4-billion?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 13:33 ET",
-        "pub_ts": 1795113180.0
       }
     ],
     "AVGO": [
@@ -1129,6 +1132,13 @@
     ],
     "META": [
       {
+        "title": "George Soros Raised His Meta (META) Stake by 596%. Then the Stock Fell",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/george-soros-raised-meta-meta-011000430.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 20:10 ET",
+        "pub_ts": 1795223400.0
+      },
+      {
         "title": "Shots Fired: Meta Will Reportedly Sell a $300 Muse Charm With Free Verizon 5G as Apple Builds Its Agent",
         "url": "https://www.tikr.com/blog/shots-fired-meta-will-reportedly-sell-a-300-muse-charm-with-free-verizon-5g-as-apple-builds-its-agent?ref=yahoofinance&tlnk=yf-261120-pg825wq7&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1155,16 +1165,30 @@
         "source": "Yahoo Finance",
         "time": "11-20 16:40 ET",
         "pub_ts": 1795210823.0
-      },
-      {
-        "title": "Anthropic Stock Came Within 5 Cents of Its $83 IPO Price on Day 2, Then Bounced 6% to Close at $88.30. Facebook Closed Its Day 2 10% Below Its IPO Price",
-        "url": "https://247wallst.com/investing/2026/11/20/anthropic-stock-came-within-5-cents-of-its-83-ipo-price-on-day-2-then-bounced-6-to-close-at-88-30-facebook-closed-its-day-2-10-below-its-ipo-price/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 16:17 ET",
-        "pub_ts": 1795209430.0
       }
     ],
     "GOOGL": [
+      {
+        "title": "Top 5 Stocks to Buy According to Billionaire George Soros",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/top-5-stocks-buy-according-010421254.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 20:04 ET",
+        "pub_ts": 1795223061.0
+      },
+      {
+        "title": "Morgan Stanley sends a strong signal to Google stock investors",
+        "url": "https://www.thestreet.com/investing/stocks/morgan-stanley-sends-a-strong-signal-to-google-stock-investors?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 20:03 ET",
+        "pub_ts": 1795222980.0
+      },
+      {
+        "title": "Review & Preview: Hype Halted",
+        "url": "https://finance.yahoo.com/m/7f9bf2d2-c34f-310e-9971-12201d455bb0/review-%26-preview%3A-hype-halted.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 19:55 ET",
+        "pub_ts": 1795222500.0
+      },
       {
         "title": "Has AI's honeymoon ended on Wall Street?",
         "url": "https://finance.yahoo.com/markets/stocks/articles/ais-honeymoon-ended-wall-street-004604807.html?.tsrc=rss",
@@ -1178,27 +1202,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 19:45 ET",
         "pub_ts": 1795221941.0
-      },
-      {
-        "title": "Data Center AI Chips Could Change the Winners: Broadcom and Marvell",
-        "url": "https://247wallst.com/investing/2026/11/20/data-center-ai-chips-could-change-the-winners-broadcom-and-marvell/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 18:25 ET",
-        "pub_ts": 1795217154.0
-      },
-      {
-        "title": "Stock Market Today, Nov. 20: Stocks Plunge as AI Trade Unwinds",
-        "url": "https://www.fool.com/coverage/stock-market-today/2026/11/20/stock-market-today-nov-20-stocks-plunge-as-ai-trade-unwinds/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 17:35 ET",
-        "pub_ts": 1795214113.0
-      },
-      {
-        "title": "Tech sees huge sell-off as Anthropic IPO fails to lift the market",
-        "url": "https://finance.yahoo.com/video/tech-sees-huge-sell-off-as-anthropic-ipo-fails-to-lift-the-market-221925316.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 17:19 ET",
-        "pub_ts": 1795213165.0
       }
     ],
     "MSFT": [
@@ -1240,13 +1243,6 @@
     ],
     "AAPL": [
       {
-        "title": "Apple's secret AI agent shows John Ternus is done sitting out the AI race",
-        "url": "https://finance.yahoo.com/markets/article/apples-secret-ai-agent-shows-john-ternus-is-done-sitting-out-the-ai-race-164226953.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 11:42 ET",
-        "pub_ts": 1795192946.0
-      },
-      {
         "title": "Shots Fired: Meta Will Reportedly Sell a $300 Muse Charm With Free Verizon 5G as Apple Builds Its Agent",
         "url": "https://www.tikr.com/blog/shots-fired-meta-will-reportedly-sell-a-300-muse-charm-with-free-verizon-5g-as-apple-builds-its-agent?ref=yahoofinance&tlnk=yf-261120-pg825wq7&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1273,6 +1269,13 @@
         "source": "Yahoo Finance",
         "time": "11-20 15:53 ET",
         "pub_ts": 1795208025.0
+      },
+      {
+        "title": "Apple “Has No Idea What It’s Doing” in AI. Oh, and It’s Building Its Own AI Agent Too",
+        "url": "https://www.tikr.com/blog/apple-has-no-idea-what-its-doing-in-ai-oh-and-its-building-its-own-ai-agent-too?ref=yahoofinance&tlnk=yf-261120-jcvh6wc4&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 13:49 ET",
+        "pub_ts": 1795200540.0
       }
     ],
     "PLTR": [
@@ -2017,6 +2020,13 @@
     ],
     "RKLB": [
       {
+        "title": "What Does Rocket Lab (RKLB) Achieving A Mars Burn Milestone Mean Now?",
+        "url": "https://finance.yahoo.com/technology/articles/does-rocket-lab-rklb-achieving-011345764.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 20:13 ET",
+        "pub_ts": 1795223625.0
+      },
+      {
         "title": "Prediction: Rocket Lab Will Triple Its Revenue by 2028. Here’s What That Would Mean for the Stock.",
         "url": "https://www.fool.com/investing/2026/11/20/prediction-rocket-lab-will-triple-its-revenue-by-2028-here-s-what-that-would-mean-for-the-stock/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2043,13 +2053,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 13:20 ET",
         "pub_ts": 1795198803.0
-      },
-      {
-        "title": "Protolabs Appoints Frank Klein to Board of Directors",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/protolabs-appoints-frank-klein-board-140000682.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 09:00 ET",
-        "pub_ts": 1795183200.0
       }
     ],
     "KO": [
@@ -2239,6 +2242,13 @@
     ],
     "DELL": [
       {
+        "title": "Dell Technologies (DELL) Stock Gets Fair Value Trim As Analysts Weigh AI Demand",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/dell-technologies-dell-stock-gets-010926718.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 20:09 ET",
+        "pub_ts": 1795223366.0
+      },
+      {
         "title": "Is Dell Stock's Steep Fall A Bargain Or A Warning?",
         "url": "https://www.trefis.com/stock/dell/articles/627170/is-dell-stocks-steep-fall-a-bargain-or-a-warning/2026-11-20?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2265,13 +2275,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 09:57 ET",
         "pub_ts": 1795186656.0
-      },
-      {
-        "title": "Global Data Protection and Replication Solutions Market Report 2026 | Capitalize on $18.5B by 2030 as Microsoft, Dell, IBM, Veeam, and Rubrik Drive Ransomware-Resilient Backups",
-        "url": "https://finance.yahoo.com/technology/articles/global-data-protection-replication-solutions-144900894.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 09:49 ET",
-        "pub_ts": 1795186140.0
       }
     ],
     "OKLO": [
@@ -2609,6 +2612,20 @@
     ],
     "BTC-USD": [
       {
+        "title": "Nasdaq 100 Ends Worst Week Since 2020, S&P 500 In Correction Territory As AI Rout Sours Sentiment — ANT, NVDA, TTWO, ZS, CRWD In Focus",
+        "url": "https://stocktwits.com/news-articles/markets/equity/nasdaq-100-ends-worst-week-since-2020-s-and-p-500-in-correction-territory-as-ai-rout-sours-sentiment-ant-nvda-ttwo-zs-crwd-in-focus/cNbm3xQR91W?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 20:30 ET",
+        "pub_ts": 1795224625.0
+      },
+      {
+        "title": "MARA Holdings (MARA) Stock Looks Pricey On Current Sales",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/mara-holdings-mara-stock-looks-011454404.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 20:14 ET",
+        "pub_ts": 1795223694.0
+      },
+      {
         "title": "3 signals the biggest Bitcoin treasury company checks before its next move",
         "url": "https://www.thestreet.com/crypto/markets/3-signals-the-biggest-bitcoin-treasury-company-checks-before-its-next-move?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2628,20 +2645,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 17:38 ET",
         "pub_ts": 1795214280.0
-      },
-      {
-        "title": "Fear and 'Hot Sauce': Young Investors Want To Catch Up",
-        "url": "https://finance.yahoo.com/video/fear-hot-sauce-young-investors-220908046.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 17:09 ET",
-        "pub_ts": 1795212548.0
-      },
-      {
-        "title": "MARA Holdings (MARA) Could Be 65% Undervalued On Its AI And Bitcoin Reset",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/mara-holdings-mara-could-65-220853371.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 17:08 ET",
-        "pub_ts": 1795212533.0
       }
     ],
     "CRWD": [
@@ -2651,6 +2654,13 @@
         "source": "Yahoo Finance",
         "time": "11-20 17:45 ET",
         "pub_ts": 1795214717.0
+      },
+      {
+        "title": "Nasdaq 100 Ends Worst Week Since 2020, S&P 500 In Correction Territory As AI Rout Sours Sentiment — ANT, NVDA, TTWO, ZS, CRWD In Focus",
+        "url": "https://stocktwits.com/news-articles/markets/equity/nasdaq-100-ends-worst-week-since-2020-s-and-p-500-in-correction-territory-as-ai-rout-sours-sentiment-ant-nvda-ttwo-zs-crwd-in-focus/cNbm3xQR91W?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 20:30 ET",
+        "pub_ts": 1795224625.0
       },
       {
         "title": "CrowdStrike, Zscaler Merger Would Create Cybersecurity Giant",
@@ -2672,13 +2682,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 17:16 ET",
         "pub_ts": 1795212962.0
-      },
-      {
-        "title": "CrowdStrike Said in Talks to Buy Cybersecurity Firm Zscaler",
-        "url": "https://finance.yahoo.com/video/crowdstrike-said-talks-buy-cybersecurity-215606920.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 16:56 ET",
-        "pub_ts": 1795211766.0
       }
     ],
     "ORCL": [
@@ -2720,6 +2723,13 @@
     ],
     "COIN": [
       {
+        "title": "3 Stocks to Watch as Coinbase and Trading Platforms Face a Volatility Test",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/3-stocks-watch-coinbase-trading-011040032.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 20:10 ET",
+        "pub_ts": 1795223440.0
+      },
+      {
         "title": "What Coinbase Global Bears Saw Before A 54% Drop",
         "url": "https://finance.yahoo.com/markets/crypto/articles/coinbase-global-bears-saw-54-201247395.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2746,13 +2756,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 11:53 ET",
         "pub_ts": 1795193586.0
-      },
-      {
-        "title": "Coinbase Sets Mid-2027 Goal to Write Its Own Event Contracts, Bloomberg Reports",
-        "url": "https://unchainedcrypto.com/coinbase-sets-mid-2027-goal-to-write-its-own-event-contracts-bloomberg-reports/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 10:30 ET",
-        "pub_ts": 1795188619.0
       }
     ],
     "LLY": [
@@ -3016,6 +3019,13 @@
     ],
     "WMT": [
       {
+        "title": "Synchrony Financial Puts Lending Discipline First, Sees Walmart as Growth Opportunity",
+        "url": "https://www.marketbeat.com/instant-alerts/event-synchrony-financial-puts-lending-discipline-first-sees-walmart-as-growth-opportunity-2026-11-20/?utm_source=yahoofinance&utm_medium=yahoofinance&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 20:12 ET",
+        "pub_ts": 1795223530.0
+      },
+      {
         "title": "Walmart has a surprising update on grocery prices",
         "url": "https://www.thestreet.com/retail/walmart-has-a-surprising-update-on-grocery-prices?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3042,13 +3052,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 14:38 ET",
         "pub_ts": 1795203480.0
-      },
-      {
-        "title": "Own Walmart? Its Cash Lags Its Price",
-        "url": "https://www.trefis.com/stock/wmt/articles/627188/own-walmart-its-cash-lags-its-price/2026-11-20?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 13:24 ET",
-        "pub_ts": 1795199051.0
       }
     ],
     "V": [
@@ -3247,90 +3250,90 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795223108.6575437,
-    "SOXL": 1795223108.6575437,
-    "SPY": 1795223108.6575437,
-    "DIA": 1795223108.6575437,
-    "SOXX": 1795223108.6575437,
-    "QQQ": 1795223108.6575437,
-    "SMH": 1795223108.6575437,
-    "IWM": 1795223108.6575437,
-    "IGV": 1795223108.6575437,
-    "TLT": 1795223108.6575437,
-    "GLD": 1795223108.6575437,
-    "SQQQ": 1795223108.6575437,
-    "TSM": 1795223108.6575437,
-    "VIXY": 1795223108.6575437,
-    "SOXS": 1795223108.6575437,
-    "NVDA": 1795223108.6575437,
-    "AMD": 1795223302.443882,
-    "ASML": 1795223302.443882,
-    "QCOM": 1795223302.443882,
-    "AVGO": 1795223302.443882,
-    "AMAT": 1795223302.443882,
-    "META": 1795223302.443882,
-    "GOOGL": 1795223302.443882,
-    "MSFT": 1795223302.443882,
-    "AAPL": 1795223302.443882,
-    "PLTR": 1795223302.443882,
-    "NOW": 1795223302.443882,
-    "AMZN": 1795223302.443882,
-    "CRWV": 1795223302.443882,
-    "NBIS": 1795224259.8031259,
-    "APLD": 1795224259.8031259,
-    "VST": 1795224259.8031259,
-    "BE": 1795224259.8031259,
-    "CRDO": 1795224259.8031259,
-    "COHR": 1795224259.8031259,
-    "MRVL": 1795224259.8031259,
-    "LITE": 1795224259.8031259,
-    "AAOI": 1795223302.443882,
-    "SPCX": 1795224259.8031259,
-    "ASTS": 1795224259.8031259,
-    "AXTI": 1795224259.8031259,
-    "NASA": 1795223302.443882,
-    "LUNR": 1795223302.443882,
-    "TSLA": 1795223302.443882,
-    "AXP": 1795223302.443882,
-    "RKLB": 1795224259.8031259,
-    "KO": 1795223302.443882,
-    "FLY": 1795224259.8031259,
-    "INTC": 1795223302.443882,
-    "VRT": 1795223302.443882,
-    "HPE": 1795223401.9943113,
-    "DELL": 1795223302.443882,
-    "OKLO": 1795223302.443882,
-    "CEG": 1795223401.9943113,
-    "FPS": 1795223401.9943113,
-    "MU": 1795223401.9943113,
-    "SKHY": 1795223401.9943113,
-    "WDC": 1795223401.9943113,
-    "STX": 1795223401.9943113,
-    "MSTR": 1795223401.9943113,
-    "SNDK": 1795223401.9943113,
-    "BTC-USD": 1795223786.6192262,
-    "CRWD": 1795224259.8031259,
-    "ORCL": 1795224259.8031259,
-    "COIN": 1795224259.8031259,
-    "LLY": 1795224359.4701173,
-    "MRNA": 1795224359.4701173,
-    "NKE": 1795224359.4701173,
-    "MCD": 1795224259.8031259,
-    "PEP": 1795224259.8031259,
-    "XOM": 1795223786.6192262,
-    "JPM": 1795223786.6192262,
-    "WMT": 1795223786.6192262,
-    "V": 1795224359.4701173,
-    "CAT": 1795223786.6192262,
-    "FN": 1795224259.8031259,
-    "GLW": 1795224259.8031259,
-    "ANT": 1795223786.6192262,
-    "XAUUSD": 1795223786.6192262
+    "KORU": 1795226188.056959,
+    "SOXL": 1795226188.056959,
+    "SPY": 1795226188.056959,
+    "DIA": 1795226188.056959,
+    "SOXX": 1795226188.056959,
+    "QQQ": 1795226188.056959,
+    "SMH": 1795226188.056959,
+    "IWM": 1795226188.056959,
+    "IGV": 1795226188.056959,
+    "TLT": 1795226188.056959,
+    "GLD": 1795226188.056959,
+    "SQQQ": 1795226188.056959,
+    "TSM": 1795226188.056959,
+    "VIXY": 1795226188.056959,
+    "SOXS": 1795226188.056959,
+    "NVDA": 1795226188.056959,
+    "AMD": 1795226381.0502276,
+    "ASML": 1795226381.0502276,
+    "QCOM": 1795226381.0502276,
+    "AVGO": 1795226381.0502276,
+    "AMAT": 1795226381.0502276,
+    "META": 1795226381.0502276,
+    "GOOGL": 1795226381.0502276,
+    "MSFT": 1795226381.0502276,
+    "AAPL": 1795226381.0502276,
+    "PLTR": 1795226381.0502276,
+    "NOW": 1795226381.0502276,
+    "AMZN": 1795226381.0502276,
+    "CRWV": 1795226381.0502276,
+    "NBIS": 1795225803.3905957,
+    "APLD": 1795225803.3905957,
+    "VST": 1795225803.3905957,
+    "BE": 1795225803.3905957,
+    "CRDO": 1795225803.3905957,
+    "COHR": 1795225803.3905957,
+    "MRVL": 1795225803.3905957,
+    "LITE": 1795225803.3905957,
+    "AAOI": 1795226381.0502276,
+    "SPCX": 1795225803.3905957,
+    "ASTS": 1795225803.3905957,
+    "AXTI": 1795225803.3905957,
+    "NASA": 1795226381.0502276,
+    "LUNR": 1795226381.0502276,
+    "TSLA": 1795226381.0502276,
+    "AXP": 1795226381.0502276,
+    "RKLB": 1795225803.3905957,
+    "KO": 1795226381.0502276,
+    "FLY": 1795225803.3905957,
+    "INTC": 1795226381.0502276,
+    "VRT": 1795226381.0502276,
+    "HPE": 1795224944.092391,
+    "DELL": 1795226381.0502276,
+    "OKLO": 1795226381.0502276,
+    "CEG": 1795224944.092391,
+    "FPS": 1795224944.092391,
+    "MU": 1795224944.092391,
+    "SKHY": 1795224944.092391,
+    "WDC": 1795224944.092391,
+    "STX": 1795224944.092391,
+    "MSTR": 1795224944.092391,
+    "SNDK": 1795224944.092391,
+    "BTC-USD": 1795225323.2468524,
+    "CRWD": 1795225803.3905957,
+    "ORCL": 1795225803.3905957,
+    "COIN": 1795225803.3905957,
+    "LLY": 1795225903.3001664,
+    "MRNA": 1795225903.3001664,
+    "NKE": 1795225903.3001664,
+    "MCD": 1795225803.3905957,
+    "PEP": 1795225803.3905957,
+    "XOM": 1795225323.2468524,
+    "JPM": 1795225323.2468524,
+    "WMT": 1795225323.2468524,
+    "V": 1795225903.3001664,
+    "CAT": 1795225323.2468524,
+    "FN": 1795225803.3905957,
+    "GLW": 1795225803.3905957,
+    "ANT": 1795225323.2468524,
+    "XAUUSD": 1795225323.2468524
   },
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (20:03 ET / 09:03 BJ) [特朗普] [中东]：美伊冲突： 1. 伊朗媒体称格什姆岛遭导弹袭击。 2. 美媒：美以考虑短期内对伊朗发动新一轮袭击。 3. 美国财长贝森特：将继续对伊朗伊斯兰革命卫队施压，直至其准备好达成协议。 4. 据伊朗",
+    "detail": "⚡ 最新核心快讯 (20:37 ET / 09:37 BJ) [芯片] [半导体] [英伟达]：人工智能： 1. 特朗普：不允许美国企业在海外建设数据中心。 2. 特朗普对Anthropic态度缓和，称尊重其CEO。 3. 文远知行：第三季度AI基础设施业务收入近翻倍。 4. 美国财长",
     "event_name": "",
     "minutes_left": 0
   }
