@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795220606.644,
-  "updated_at_et": "11-20 19:23 ET",
-  "updated_at_kst": "09:23 KST",
+  "updated_at_ts": 1795220705.308,
+  "updated_at_et": "11-20 19:25 ET",
+  "updated_at_kst": "09:25 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -3017,6 +3017,13 @@
         "pub_ts": 1795216433.0
       },
       {
+        "title": "Target Shines, Walmart Merely Fine: Two Retail Giants Split on Q3 Results",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/target-shines-walmart-merely-fine-224900183.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 17:49 ET",
+        "pub_ts": 1795214940.0
+      },
+      {
         "title": "Walmart’s sub-30-minute delivery volume surges in Q3",
         "url": "https://www.supplychaindive.com/news/walmarts-sub-30-minute-delivery-volume-surges-in-q3/875339/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3036,13 +3043,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 13:20 ET",
         "pub_ts": 1795198803.0
-      },
-      {
-        "title": "Walmart Stocks Fall 1.04% Despite Raised Outlook and 23% U.S. E-Commerce Jump",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/walmart-stocks-fall-1-04-180747684.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 13:07 ET",
-        "pub_ts": 1795198067.0
       }
     ],
     "V": [
@@ -3195,39 +3195,39 @@
     ],
     "ANT": [
       {
-        "title": "Tech sees huge sell-off as Anthropic IPO fails to lift the market",
-        "url": "https://finance.yahoo.com/video/tech-sees-huge-sell-off-as-anthropic-ipo-fails-to-lift-the-market-221925316.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 17:19 ET",
-        "pub_ts": 1795213165.0
+        "title": "Anthropic Is Public, And Where Is The Capital Headed?",
+        "url": "https://finnhub.io/api/news?id=b44099e64656f5d5aded1be5894fa6a5058b11127e3081f487be5b66a2e5bc51",
+        "source": "SeekingAlpha",
+        "time": "11-20 10:05 ET",
+        "pub_ts": 1795187100.0
       },
       {
-        "title": "Hindlian Advisory CEO on AI & Anthropic Market Sell-off",
-        "url": "https://finance.yahoo.com/video/hindlian-advisory-ceo-ai-anthropic-230050991.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 18:00 ET",
-        "pub_ts": 1795215650.0
+        "title": "Anthropic And Nvidia Are Saying The AI Bubble Is Finally Popping",
+        "url": "https://finnhub.io/api/news?id=6fa5e9748a919351152f99dc01d2430e10eaf2ac257798fdb0c401a36c296e9f",
+        "source": "SeekingAlpha",
+        "time": "11-20 08:22 ET",
+        "pub_ts": 1795180932.0
       },
       {
-        "title": "Why a top economist says the stock market will remain volatile",
-        "url": "https://www.cnn.com/2026/11/20/business/video/why-a-top-economist-says-the-stock-market-will-remain-volatile-the-lead-jake-tapper?cid=external-feeds_iluminar_yahoo&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 18:00 ET",
-        "pub_ts": 1795215639.0
+        "title": "SP500: Liquidity Shock, It's A Tactical Buying Opportunity",
+        "url": "https://finnhub.io/api/news?id=60cd5bb821d3e021f5f50905c9fe39e50f31180167384a896512f0591acd9414",
+        "source": "SeekingAlpha",
+        "time": "11-20 06:44 ET",
+        "pub_ts": 1795175074.0
       },
       {
-        "title": "Jim Cramer warns Anthropic investors were 'fooled badly' as Cathie Wood's Ark scoops up $90.8M in shares",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/jim-cramer-warns-anthropic-investors-230000036.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 18:00 ET",
-        "pub_ts": 1795215600.0
+        "title": "Broadcom: Time To Pounce Before The Market Returns",
+        "url": "https://finnhub.io/api/news?id=24bd358181c889e4032dc9ad56bc194ef84478306076b02db621ec439456ca89",
+        "source": "SeekingAlpha",
+        "time": "11-20 06:30 ET",
+        "pub_ts": 1795174200.0
       },
       {
-        "title": "ANT Stock Ends Lower: Retail Investors Reportedly Bought As Much As $120B Of Anthropic, Beating SpaceX Debut",
-        "url": "https://stocktwits.com/news-articles/markets/equity/ant-stock-ends-lower-retail-investors-reportedly-bought-as-much-as-120-b-of-anthropic-beating-space-x-debut/cNbSHoQR91f?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 17:41 ET",
-        "pub_ts": 1795214497.0
+        "title": "Anthropic IPO: My 10-Year Outlook For AI",
+        "url": "https://finnhub.io/api/news?id=f7d4a40e4f79d4d6d3d5c173fd63e95d22429572444c377094ac9b4a4947d2f5",
+        "source": "SeekingAlpha",
+        "time": "11-20 06:05 ET",
+        "pub_ts": 1795172734.0
       }
     ],
     "XAUUSD": [
@@ -3302,7 +3302,7 @@
     "STX": 1795220308.4740858,
     "MSTR": 1795220308.4740858,
     "SNDK": 1795220204.102421,
-    "BTC-USD": 1795219113.7596798,
+    "BTC-USD": 1795220705.3082528,
     "CRWD": 1795219690.1719327,
     "ORCL": 1795219690.1719327,
     "COIN": 1795219690.1719327,
@@ -3311,15 +3311,15 @@
     "NKE": 1795219794.6905544,
     "MCD": 1795219690.1719327,
     "PEP": 1795219690.1719327,
-    "XOM": 1795219113.7596798,
-    "JPM": 1795219113.7596798,
-    "WMT": 1795219113.7596798,
+    "XOM": 1795220705.3082528,
+    "JPM": 1795220705.3082528,
+    "WMT": 1795220705.3082528,
     "V": 1795219794.6905544,
-    "CAT": 1795219113.7596798,
+    "CAT": 1795220705.3082528,
     "FN": 1795219690.1719327,
     "GLW": 1795219690.1719327,
-    "ANT": 1795219113.7596798,
-    "XAUUSD": 1795219113.7596798
+    "ANT": 1795220705.3082528,
+    "XAUUSD": 1795220705.3082528
   },
   "calendar_banner": {
     "level": "idle_with_flash",
