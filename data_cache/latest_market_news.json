@@ -1,9 +1,23 @@
 {
-  "updated_at_ts": 1795231907.872,
-  "updated_at_et": "11-20 22:31 ET",
-  "updated_at_kst": "12:31 KST",
+  "updated_at_ts": 1795233754.658,
+  "updated_at_et": "11-20 23:02 ET",
+  "updated_at_kst": "13:02 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261121113909981800",
+      "title": "一周热榜精选：美元飙升重挫金银等资产！Anthropic上市未能扭转板块情绪",
+      "summary": "美联储鹰派信号越发强烈，贵金属重挫。Anthropic上市次日接近破发。特朗普推迟对伊行动决定？普京拒绝局部停火！美国连发系统故障…本周你错过哪些刺激行情？",
+      "keywords": [
+        "美联储",
+        "特朗普"
+      ],
+      "pub_ts": 1795232349.0,
+      "time_et": "11-20 22:39 ET",
+      "time_bj": "11:39 BJ",
+      "time_kst": "12:39 KST",
+      "time_display": "22:39 ET / 11:39 BJ"
+    },
     {
       "id": "20261121110305244800",
       "title": "避险的钱来了，怎么绕开了黄金？｜大师复盘",
@@ -336,20 +350,6 @@
       "time_bj": "01:15 BJ",
       "time_kst": "02:15 KST",
       "time_display": "12:15 ET / 01:15 BJ"
-    },
-    {
-      "id": "20261121011533857800",
-      "title": "美联储理事库克：9月加息不足以抑制高通胀。",
-      "summary": "美联储理事库克：9月加息不足以抑制高通胀。",
-      "keywords": [
-        "美联储",
-        "加息"
-      ],
-      "pub_ts": 1795194933.0,
-      "time_et": "11-20 12:15 ET",
-      "time_bj": "01:15 BJ",
-      "time_kst": "02:15 KST",
-      "time_display": "12:15 ET / 01:15 BJ"
     }
   ],
   "ticker_news": {
@@ -598,18 +598,18 @@
         "pub_ts": 1795032571.0
       },
       {
-        "title": "Nvidia Q3 Results Underpin Wall Street Pre-Bell; Asia Mixed, Europe Up",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/nvidia-q3-results-underpin-wall-112023816.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 06:20 ET",
-        "pub_ts": 1795000823.0
-      },
-      {
         "title": "Michael Burry Locks In Gains on Nvidia, Chipmaker ETF Puts As AI Rout Deepens",
         "url": "https://stocktwits.com/news-articles/markets/equity/michael-burry-locks-in-gains-on-nvidia-chipmaker-etf-puts-as-ai-rout-deepens/cNbSoRqR91e?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-20 13:32 ET",
         "pub_ts": 1795199561.0
+      },
+      {
+        "title": "AI Unease Undermines Wall Street Pre-Bell; Asia, Europe Off",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/ai-unease-undermines-wall-street-110827735.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 06:08 ET",
+        "pub_ts": 1795172907.0
       }
     ],
     "IWM": [
@@ -910,6 +910,13 @@
     ],
     "NVDA": [
       {
+        "title": "Is CoreWeave (CRWV) Fairly Valued After Fresh MLPerf Results?",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/coreweave-crwv-fairly-valued-fresh-031612848.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 22:16 ET",
+        "pub_ts": 1795230972.0
+      },
+      {
         "title": "NVDA Stock Sees Biggest Fall In 22 Months, But Top Analyst Says Nvidia’s AI Boom Isn’t Over Yet — Here Are 5 Reasons Why",
         "url": "https://stocktwits.com/news-articles/markets/equity/nvda-stock-fall-nvidia-ai-boom-not-over-yet-top-analyst-5-reasons/cNbmIC8R91h?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -936,13 +943,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 20:30 ET",
         "pub_ts": 1795224625.0
-      },
-      {
-        "title": "Has AI's honeymoon ended on Wall Street?",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/ais-honeymoon-ended-wall-street-004604807.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 19:46 ET",
-        "pub_ts": 1795221964.0
       }
     ],
     "AMD": [
@@ -1391,6 +1391,13 @@
     ],
     "CRWV": [
       {
+        "title": "Is CoreWeave (CRWV) Fairly Valued After Fresh MLPerf Results?",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/coreweave-crwv-fairly-valued-fresh-031612848.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 22:16 ET",
+        "pub_ts": 1795230972.0
+      },
+      {
         "title": "CoreWeave Finds AI Demand Outside the Commercial Market",
         "url": "https://finance.yahoo.com/technology/ai/articles/coreweave-finds-ai-demand-outside-213902215.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1417,13 +1424,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 11:49 ET",
         "pub_ts": 1795193373.0
-      },
-      {
-        "title": "Between IREN and CoreWeave Here’s Who Has the Cleaner Path to a Sustained 30% Rebound",
-        "url": "https://247wallst.com/investing/2026/11/20/between-iren-and-coreweave-heres-who-has-the-cleaner-path-to-a-sustained-30-rebound/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 10:45 ET",
-        "pub_ts": 1795189535.0
       }
     ],
     "NBIS": [
@@ -3232,11 +3232,11 @@
         "pub_ts": 1795220175.0
       },
       {
-        "title": "Hindlian Advisory CEO on AI & Anthropic Market Sell-off",
-        "url": "https://finance.yahoo.com/video/hindlian-advisory-ceo-ai-anthropic-230050991.html?.tsrc=rss",
+        "title": "Dow Jones Futures: Market Has Worst Week Since Covid Amid Nvidia, Anthropic. Does Fear Gauge Offer Hope?",
+        "url": "https://finance.yahoo.com/m/9ef9da98-bccf-3565-9a30-9bc3e57ad4b9/dow-jones-futures%3A-market-has.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-20 18:00 ET",
-        "pub_ts": 1795215650.0
+        "time": "11-20 21:19 ET",
+        "pub_ts": 1795227567.0
       }
     ],
     "XAUUSD": [
@@ -3250,90 +3250,90 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795230844.319021,
-    "SOXL": 1795230844.319021,
-    "SPY": 1795230844.319021,
-    "DIA": 1795230844.319021,
-    "SOXX": 1795230844.319021,
-    "QQQ": 1795230844.319021,
-    "SMH": 1795230844.319021,
-    "IWM": 1795230844.319021,
-    "IGV": 1795230844.319021,
-    "TLT": 1795230844.319021,
-    "GLD": 1795230844.319021,
-    "SQQQ": 1795230844.319021,
-    "TSM": 1795230844.319021,
-    "VIXY": 1795230844.319021,
-    "SOXS": 1795230844.319021,
-    "NVDA": 1795230844.319021,
-    "AMD": 1795231036.7457426,
-    "ASML": 1795231036.7457426,
-    "QCOM": 1795231036.7457426,
-    "AVGO": 1795231036.7457426,
-    "AMAT": 1795231036.7457426,
-    "META": 1795231036.7457426,
-    "GOOGL": 1795231036.7457426,
-    "MSFT": 1795231036.7457426,
-    "AAPL": 1795231036.7457426,
-    "PLTR": 1795231036.7457426,
-    "NOW": 1795231036.7457426,
-    "AMZN": 1795231036.7457426,
-    "CRWV": 1795231036.7457426,
-    "NBIS": 1795230461.2001357,
-    "APLD": 1795230461.2001357,
-    "VST": 1795230461.2001357,
-    "BE": 1795230461.2001357,
-    "CRDO": 1795230461.2001357,
-    "COHR": 1795230461.2001357,
-    "MRVL": 1795230461.2001357,
-    "LITE": 1795230461.2001357,
-    "AAOI": 1795231036.7457426,
-    "SPCX": 1795230461.2001357,
-    "ASTS": 1795230461.2001357,
-    "AXTI": 1795230461.2001357,
-    "NASA": 1795231036.7457426,
-    "LUNR": 1795231036.7457426,
-    "TSLA": 1795231036.7457426,
-    "AXP": 1795231036.7457426,
-    "RKLB": 1795230461.2001357,
-    "KO": 1795231036.7457426,
-    "FLY": 1795230461.2001357,
-    "INTC": 1795231036.7457426,
-    "VRT": 1795231036.7457426,
-    "HPE": 1795231144.1906424,
-    "DELL": 1795231036.7457426,
-    "OKLO": 1795231036.7457426,
-    "CEG": 1795231144.1906424,
-    "FPS": 1795231144.1906424,
-    "MU": 1795231144.1906424,
-    "SKHY": 1795231144.1906424,
-    "WDC": 1795231144.1906424,
-    "STX": 1795231144.1906424,
-    "MSTR": 1795231144.1906424,
-    "SNDK": 1795231144.1906424,
-    "BTC-USD": 1795231523.1648061,
-    "CRWD": 1795230461.2001357,
-    "ORCL": 1795230461.2001357,
-    "COIN": 1795230461.2001357,
-    "LLY": 1795230561.6407394,
-    "MRNA": 1795230561.6407394,
-    "NKE": 1795230561.6407394,
-    "MCD": 1795230461.2001357,
-    "PEP": 1795230461.2001357,
-    "XOM": 1795231523.1648061,
-    "JPM": 1795231523.1648061,
-    "WMT": 1795231523.1648061,
-    "V": 1795230561.6407394,
-    "CAT": 1795231523.1648061,
-    "FN": 1795230461.2001357,
-    "GLW": 1795230461.2001357,
-    "ANT": 1795231523.1648061,
-    "XAUUSD": 1795231523.1648061
+    "KORU": 1795232395.4523945,
+    "SOXL": 1795232395.4523945,
+    "SPY": 1795232395.4523945,
+    "DIA": 1795232395.4523945,
+    "SOXX": 1795232395.4523945,
+    "QQQ": 1795232395.4523945,
+    "SMH": 1795232395.4523945,
+    "IWM": 1795232395.4523945,
+    "IGV": 1795232395.4523945,
+    "TLT": 1795232395.4523945,
+    "GLD": 1795232395.4523945,
+    "SQQQ": 1795232395.4523945,
+    "TSM": 1795232395.4523945,
+    "VIXY": 1795232395.4523945,
+    "SOXS": 1795232395.4523945,
+    "NVDA": 1795232395.4523945,
+    "AMD": 1795232589.4555655,
+    "ASML": 1795232589.4555655,
+    "QCOM": 1795232589.4555655,
+    "AVGO": 1795232589.4555655,
+    "AMAT": 1795232589.4555655,
+    "META": 1795232589.4555655,
+    "GOOGL": 1795232589.4555655,
+    "MSFT": 1795232589.4555655,
+    "AAPL": 1795232589.4555655,
+    "PLTR": 1795232589.4555655,
+    "NOW": 1795232589.4555655,
+    "AMZN": 1795232589.4555655,
+    "CRWV": 1795232589.4555655,
+    "NBIS": 1795233558.6628606,
+    "APLD": 1795233558.6628606,
+    "VST": 1795233558.6628606,
+    "BE": 1795233558.6628606,
+    "CRDO": 1795233558.6628606,
+    "COHR": 1795233558.6628606,
+    "MRVL": 1795233558.6628606,
+    "LITE": 1795233558.6628606,
+    "AAOI": 1795232589.4555655,
+    "SPCX": 1795233558.6628606,
+    "ASTS": 1795233558.6628606,
+    "AXTI": 1795233558.6628606,
+    "NASA": 1795232589.4555655,
+    "LUNR": 1795232589.4555655,
+    "TSLA": 1795232589.4555655,
+    "AXP": 1795232589.4555655,
+    "RKLB": 1795233558.6628606,
+    "KO": 1795232589.4555655,
+    "FLY": 1795233558.6628606,
+    "INTC": 1795232589.4555655,
+    "VRT": 1795232589.4555655,
+    "HPE": 1795232692.4593682,
+    "DELL": 1795232589.4555655,
+    "OKLO": 1795232589.4555655,
+    "CEG": 1795232692.4593682,
+    "FPS": 1795232692.4593682,
+    "MU": 1795232692.4593682,
+    "SKHY": 1795232692.4593682,
+    "WDC": 1795232692.4593682,
+    "STX": 1795232692.4593682,
+    "MSTR": 1795232692.4593682,
+    "SNDK": 1795232692.4593682,
+    "BTC-USD": 1795233079.7379394,
+    "CRWD": 1795233558.6628606,
+    "ORCL": 1795233558.6628606,
+    "COIN": 1795233558.6628606,
+    "LLY": 1795233659.1088848,
+    "MRNA": 1795233659.1088848,
+    "NKE": 1795233659.1088848,
+    "MCD": 1795233558.6628606,
+    "PEP": 1795233558.6628606,
+    "XOM": 1795233079.7379394,
+    "JPM": 1795233079.7379394,
+    "WMT": 1795233079.7379394,
+    "V": 1795233659.1088848,
+    "CAT": 1795233079.7379394,
+    "FN": 1795233558.6628606,
+    "GLW": 1795233558.6628606,
+    "ANT": 1795233079.7379394,
+    "XAUUSD": 1795233079.7379394
   },
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (22:03 ET / 11:03 BJ) [美联储] [美债]：AI资产抛售以及美联储鹰派立场形成双重压力，投资者纷纷寻找落脚处；美债有人买，美元有人抢，黄金却遭到抛售。同样叫避险，资金这回究竟在挑什么？",
+    "detail": "⚡ 最新核心快讯 (22:39 ET / 11:39 BJ) [美联储] [特朗普]：美联储鹰派信号越发强烈，贵金属重挫。Anthropic上市次日接近破发。特朗普推迟对伊行动决定？普京拒绝局部停火！美国连发系统故障…本周你错过哪些刺激行情？",
     "event_name": "",
     "minutes_left": 0
   }
