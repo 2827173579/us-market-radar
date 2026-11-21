@@ -3734,7 +3734,7 @@
     },
     "2026-11-20:MSTR/MU:STOP_LOSS": {
       "device": "PC",
-      "ts": 1795222624.5507817
+      "ts": 1795229871.9041991
     },
     "2026-11-20:DEFENSIVE_FLIGHT:+17.9": {
       "device": "PC",
@@ -3742,7 +3742,7 @@
     },
     "2026-11-20:ASML:STOP_LOSS": {
       "device": "PC",
-      "ts": 1795222830.0959997
+      "ts": 1795230066.3698483
     },
     "2026-11-20:DEFENSIVE_FLIGHT:+17.6": {
       "device": "PC",
@@ -3927,9 +3927,17 @@
     "JIN10_FLASH:20261121093704087800": {
       "device": "PC",
       "ts": 1795225141.8470314
+    },
+    "2026-11-20:NBIS/APLD/CRDO/COIN/BE/DELL/SKHY/NVDA/AMAT/TSM:STOP_LOSS": {
+      "device": "PC",
+      "ts": 1795228432.708577
+    },
+    "JIN10_FLASH:20261121103304437800": {
+      "device": "PC",
+      "ts": 1795228719.510719
     }
   },
   "device": "PC",
-  "last_heartbeat_ts": 1795228155.2373364,
-  "updated_at": "2026-11-21T02:29:15.237848+00:00"
+  "last_heartbeat_ts": 1795229986.1656456,
+  "updated_at": "2026-11-21T03:01:06.370250+00:00"
 }

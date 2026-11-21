@@ -1,9 +1,22 @@
 {
-  "updated_at_ts": 1795228230.958,
-  "updated_at_et": "11-20 21:30 ET",
-  "updated_at_kst": "11:30 KST",
+  "updated_at_ts": 1795230061.695,
+  "updated_at_et": "11-20 22:01 ET",
+  "updated_at_kst": "12:01 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261121103304437800",
+      "title": "【孙正义被曝拟豪赌存储芯片市场，曾考虑斥资1万亿美元收购SK海力士】 11月21日讯，据…",
+      "summary": "【孙正义被曝拟豪赌存储芯片市场，曾考虑斥资1万亿美元收购SK海力士】 11月21日讯，据The Information援引知情人士的话报道，软银CEO孙正义近期曾与华尔街机构接洽，探讨为可能以1万亿美元收购SK海力士融资。但软银发言人表示，孙正义已不再积极考虑该交易。软银发言人表示：“软银一直在探索各种机会，目前已不再积极考虑这一方案。”报道指出，若软银推进这笔收购，将成为这家OpenAI投资方迄今最为大胆的一次布局，使孙正义得以进入具有重要战略价值的存储芯片市场。孙正义甚至考虑过如此大胆、看似难以实现的交易，也足以体现其宏大的投资野心。鉴于软银的资产负债表已经因对OpenAI的投资而捉襟见肘，目前尚不清楚软银将如何为这笔收购提供资金。",
+      "keywords": [
+        "芯片"
+      ],
+      "pub_ts": 1795228384.0,
+      "time_et": "11-20 21:33 ET",
+      "time_bj": "10:33 BJ",
+      "time_kst": "11:33 KST",
+      "time_display": "21:33 ET / 10:33 BJ"
+    },
     {
       "id": "20261121093704087800",
       "title": "人工智能： 1. 特朗普：不允许美国企业在海外建设数据中心。 2. 特朗普对Anthro…",
@@ -336,20 +349,6 @@
       "time_bj": "01:05 BJ",
       "time_kst": "02:05 KST",
       "time_display": "12:05 ET / 01:05 BJ"
-    },
-    {
-      "id": "20261121010427941800",
-      "title": "标普500指数日内跌幅扩大至2%，费城半导体指数跌幅扩大至9%。",
-      "summary": "标普500指数日内跌幅扩大至2%，费城半导体指数跌幅扩大至9%。",
-      "keywords": [
-        "半导体",
-        "标普"
-      ],
-      "pub_ts": 1795194267.0,
-      "time_et": "11-20 12:04 ET",
-      "time_bj": "01:04 BJ",
-      "time_kst": "02:04 KST",
-      "time_display": "12:04 ET / 01:04 BJ"
     }
   ],
   "ticker_news": {
@@ -910,6 +909,13 @@
     ],
     "NVDA": [
       {
+        "title": "Dow Jones Futures: Market Has Worst Week Since Covid Amid Nvidia, Anthropic. Does Fear Gauge Offer Hope?",
+        "url": "https://finance.yahoo.com/m/9ef9da98-bccf-3565-9a30-9bc3e57ad4b9/dow-jones-futures%3A-market-has.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 21:19 ET",
+        "pub_ts": 1795227567.0
+      },
+      {
         "title": "Here's Why Nvidia Stock Crashed on Friday",
         "url": "https://www.fool.com/investing/2026/11/20/here-is-why-nvidia-stock-crashed-on-friday/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -929,13 +935,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 19:46 ET",
         "pub_ts": 1795221964.0
-      },
-      {
-        "title": "Dow Jones Futures: Market Has Worst Week Since Covid Amid Nvidia, Anthropic. Does Fear Gauge Offer Hope?",
-        "url": "https://finance.yahoo.com/m/9ef9da98-bccf-3565-9a30-9bc3e57ad4b9/dow-jones-futures%3A-market-has.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 19:34 ET",
-        "pub_ts": 1795221267.0
       },
       {
         "title": "Here's How Much Nvidia Stock Is Worth Without Jensen Huang, According to Dan Ives",
@@ -1271,11 +1270,11 @@
         "pub_ts": 1795208025.0
       },
       {
-        "title": "Apple “Has No Idea What It’s Doing” in AI. Oh, and It’s Building Its Own AI Agent Too",
-        "url": "https://www.tikr.com/blog/apple-has-no-idea-what-its-doing-in-ai-oh-and-its-building-its-own-ai-agent-too?ref=yahoofinance&tlnk=yf-261120-jcvh6wc4&.tsrc=rss",
+        "title": "AAPL Stock Alert: What to Know as Apple Develops AI Agent to Compete With Muse",
+        "url": "https://www.barchart.com/story/news/8941997/aapl-stock-alert-what-to-know-as-apple-develops-ai-agent-to-compete-with-muse?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-20 13:49 ET",
-        "pub_ts": 1795200540.0
+        "time": "11-20 15:32 ET",
+        "pub_ts": 1795206769.0
       }
     ],
     "PLTR": [
@@ -2612,6 +2611,13 @@
     ],
     "BTC-USD": [
       {
+        "title": "Veteran trader who nailed 2018 Bitcoin crash issues this brutal warning",
+        "url": "https://www.thestreet.com/crypto/markets/veteran-trader-who-nailed-2018-bitcoin-crash-issues-this-brutal-warning?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 21:30 ET",
+        "pub_ts": 1795228200.0
+      },
+      {
         "title": "Nasdaq 100 Ends Worst Week Since 2020, S&P 500 In Correction Territory As AI Rout Sours Sentiment — ANT, NVDA, TTWO, ZS, CRWD In Focus",
         "url": "https://stocktwits.com/news-articles/markets/equity/nasdaq-100-ends-worst-week-since-2020-s-and-p-500-in-correction-territory-as-ai-rout-sours-sentiment-ant-nvda-ttwo-zs-crwd-in-focus/cNbm3xQR91W?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2638,13 +2644,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 18:25 ET",
         "pub_ts": 1795217139.0
-      },
-      {
-        "title": "Weekly Wrap: Crypto Falls As Stocks Struggle",
-        "url": "https://www.cryptoprowl.com/releases/weekly-wrap-crypto-falls-as-stocks-struggle-8016?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 17:38 ET",
-        "pub_ts": 1795214280.0
       }
     ],
     "CRWD": [
@@ -3204,6 +3203,13 @@
     ],
     "ANT": [
       {
+        "title": "Jim Cramer sends strong signal to SpaceX, Anthropic stock investors",
+        "url": "https://www.thestreet.com/investing/stocks/cramer-spacex-anthropic-compute-deal?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 21:03 ET",
+        "pub_ts": 1795226580.0
+      },
+      {
         "title": "3 Stocks to Watch as Coinbase and Trading Platforms Face a Volatility Test",
         "url": "https://finance.yahoo.com/markets/stocks/articles/3-stocks-watch-coinbase-trading-011040032.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3230,13 +3236,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 18:00 ET",
         "pub_ts": 1795215650.0
-      },
-      {
-        "title": "Why a top economist says the stock market will remain volatile",
-        "url": "https://www.cnn.com/2026/11/20/business/video/why-a-top-economist-says-the-stock-market-will-remain-volatile-the-lead-jake-tapper?cid=external-feeds_iluminar_yahoo&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 18:00 ET",
-        "pub_ts": 1795215639.0
       }
     ],
     "XAUUSD": [
@@ -3250,90 +3249,90 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795227745.066689,
-    "SOXL": 1795227745.066689,
-    "SPY": 1795227745.066689,
-    "DIA": 1795227745.066689,
-    "SOXX": 1795227745.066689,
-    "QQQ": 1795227745.066689,
-    "SMH": 1795227745.066689,
-    "IWM": 1795227745.066689,
-    "IGV": 1795227745.066689,
-    "TLT": 1795227745.066689,
-    "GLD": 1795227745.066689,
-    "SQQQ": 1795227745.066689,
-    "TSM": 1795227745.066689,
-    "VIXY": 1795227745.066689,
-    "SOXS": 1795227745.066689,
-    "NVDA": 1795227745.066689,
-    "AMD": 1795227938.4520056,
-    "ASML": 1795227938.4520056,
-    "QCOM": 1795227938.4520056,
-    "AVGO": 1795227938.4520056,
-    "AMAT": 1795227938.4520056,
-    "META": 1795227938.4520056,
-    "GOOGL": 1795227938.4520056,
-    "MSFT": 1795227938.4520056,
-    "AAPL": 1795227938.4520056,
-    "PLTR": 1795227938.4520056,
-    "NOW": 1795227938.4520056,
-    "AMZN": 1795227938.4520056,
-    "CRWV": 1795227938.4520056,
-    "NBIS": 1795227353.6632254,
-    "APLD": 1795227353.6632254,
-    "VST": 1795227353.6632254,
-    "BE": 1795227353.6632254,
-    "CRDO": 1795227353.6632254,
-    "COHR": 1795227353.6632254,
-    "MRVL": 1795227353.6632254,
-    "LITE": 1795227353.6632254,
-    "AAOI": 1795227938.4520056,
-    "SPCX": 1795227353.6632254,
-    "ASTS": 1795227353.6632254,
-    "AXTI": 1795227353.6632254,
-    "NASA": 1795227938.4520056,
-    "LUNR": 1795227938.4520056,
-    "TSLA": 1795227938.4520056,
-    "AXP": 1795227938.4520056,
-    "RKLB": 1795227353.6632254,
-    "KO": 1795227938.4520056,
-    "FLY": 1795227353.6632254,
-    "INTC": 1795227938.4520056,
-    "VRT": 1795227938.4520056,
-    "HPE": 1795228038.9334605,
-    "DELL": 1795227938.4520056,
-    "OKLO": 1795227938.4520056,
-    "CEG": 1795228038.9334605,
-    "FPS": 1795228038.9334605,
-    "MU": 1795228038.9334605,
-    "SKHY": 1795228038.9334605,
-    "WDC": 1795228038.9334605,
-    "STX": 1795228038.9334605,
-    "MSTR": 1795228038.9334605,
-    "SNDK": 1795228038.9334605,
-    "BTC-USD": 1795226880.91162,
-    "CRWD": 1795227353.6632254,
-    "ORCL": 1795227353.6632254,
-    "COIN": 1795227353.6632254,
-    "LLY": 1795227461.064385,
-    "MRNA": 1795227461.064385,
-    "NKE": 1795227461.064385,
-    "MCD": 1795227353.6632254,
-    "PEP": 1795227353.6632254,
-    "XOM": 1795226880.91162,
-    "JPM": 1795226880.91162,
-    "WMT": 1795226880.91162,
-    "V": 1795227461.064385,
-    "CAT": 1795226880.91162,
-    "FN": 1795227353.6632254,
-    "GLW": 1795227353.6632254,
-    "ANT": 1795226880.91162,
-    "XAUUSD": 1795226880.91162
+    "KORU": 1795229290.2747602,
+    "SOXL": 1795229290.2747602,
+    "SPY": 1795229290.2747602,
+    "DIA": 1795229290.2747602,
+    "SOXX": 1795229290.2747602,
+    "QQQ": 1795229290.2747602,
+    "SMH": 1795229290.2747602,
+    "IWM": 1795229290.2747602,
+    "IGV": 1795229290.2747602,
+    "TLT": 1795229290.2747602,
+    "GLD": 1795229290.2747602,
+    "SQQQ": 1795229290.2747602,
+    "TSM": 1795229290.2747602,
+    "VIXY": 1795229290.2747602,
+    "SOXS": 1795229290.2747602,
+    "NVDA": 1795229290.2747602,
+    "AMD": 1795229482.990221,
+    "ASML": 1795229482.990221,
+    "QCOM": 1795229482.990221,
+    "AVGO": 1795229482.990221,
+    "AMAT": 1795229482.990221,
+    "META": 1795229482.990221,
+    "GOOGL": 1795229482.990221,
+    "MSFT": 1795229482.990221,
+    "AAPL": 1795229482.990221,
+    "PLTR": 1795229482.990221,
+    "NOW": 1795229482.990221,
+    "AMZN": 1795229482.990221,
+    "CRWV": 1795229482.990221,
+    "NBIS": 1795228901.202343,
+    "APLD": 1795228901.202343,
+    "VST": 1795228901.202343,
+    "BE": 1795228901.202343,
+    "CRDO": 1795228901.202343,
+    "COHR": 1795228901.202343,
+    "MRVL": 1795228901.202343,
+    "LITE": 1795228901.202343,
+    "AAOI": 1795229482.990221,
+    "SPCX": 1795228901.202343,
+    "ASTS": 1795228901.202343,
+    "AXTI": 1795228901.202343,
+    "NASA": 1795229482.990221,
+    "LUNR": 1795229482.990221,
+    "TSLA": 1795229482.990221,
+    "AXP": 1795229482.990221,
+    "RKLB": 1795228901.202343,
+    "KO": 1795229482.990221,
+    "FLY": 1795228901.202343,
+    "INTC": 1795229482.990221,
+    "VRT": 1795229482.990221,
+    "HPE": 1795229582.866576,
+    "DELL": 1795229482.990221,
+    "OKLO": 1795229482.990221,
+    "CEG": 1795229582.866576,
+    "FPS": 1795229582.866576,
+    "MU": 1795229582.866576,
+    "SKHY": 1795229582.866576,
+    "WDC": 1795229582.866576,
+    "STX": 1795229582.866576,
+    "MSTR": 1795229582.866576,
+    "SNDK": 1795229582.866576,
+    "BTC-USD": 1795229963.222933,
+    "CRWD": 1795228901.202343,
+    "ORCL": 1795228901.202343,
+    "COIN": 1795228901.202343,
+    "LLY": 1795229001.4344938,
+    "MRNA": 1795229001.4344938,
+    "NKE": 1795229001.4344938,
+    "MCD": 1795228901.202343,
+    "PEP": 1795228901.202343,
+    "XOM": 1795229963.222933,
+    "JPM": 1795229963.222933,
+    "WMT": 1795229963.222933,
+    "V": 1795229001.4344938,
+    "CAT": 1795229963.222933,
+    "FN": 1795228901.202343,
+    "GLW": 1795228901.202343,
+    "ANT": 1795229963.222933,
+    "XAUUSD": 1795229963.222933
   },
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (20:37 ET / 09:37 BJ) [芯片] [半导体] [英伟达]：人工智能： 1. 特朗普：不允许美国企业在海外建设数据中心。 2. 特朗普对Anthropic态度缓和，称尊重其CEO。 3. 文远知行：第三季度AI基础设施业务收入近翻倍。 4. 美国财长",
+    "detail": "⚡ 最新核心快讯 (21:33 ET / 10:33 BJ) [芯片]：【孙正义被曝拟豪赌存储芯片市场，曾考虑斥资1万亿美元收购SK海力士】 11月21日讯，据The Information援引知情人士的话报道，软银CEO孙正义近期曾与华尔街机构接洽，探讨为可能",
     "event_name": "",
     "minutes_left": 0
   }

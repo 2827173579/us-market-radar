@@ -7,11 +7,11 @@
     },
     "NBIS": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1795215878.9256938
+      "last_notified_at": 1795228431.4479449
     },
     "NVDA": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1795219120.3969996
+      "last_notified_at": 1795228431.4479449
     },
     "META": {
       "state": "NORMAL",
@@ -47,7 +47,7 @@
     },
     "TSM": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1795216181.310741
+      "last_notified_at": 1795228431.4479449
     },
     "FLY": {
       "state": "NORMAL",
@@ -66,8 +66,8 @@
       "last_notified_at": 0.0
     },
     "KO": {
-      "state": "TAKE_PROFIT",
-      "last_notified_at": 1795222923.6850078
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "VST": {
       "state": "NORMAL",
@@ -123,43 +123,43 @@
     },
     "MSTR": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1795222622.8501084
+      "last_notified_at": 1795229871.2052438
     },
     "MU": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1795222622.8501084
+      "last_notified_at": 1795229871.2052438
     },
     "ASML": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1795222829.0947297
+      "last_notified_at": 1795230065.5325263
     },
     "APLD": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1795215878.9256938
+      "last_notified_at": 1795228431.4479449
     },
     "CRDO": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1795215878.9256938
+      "last_notified_at": 1795228431.4479449
     },
     "SKHY": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1795215878.9256938
+      "last_notified_at": 1795228431.4479449
     },
     "AMAT": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1795215878.9256938
+      "last_notified_at": 1795228431.4479449
     },
     "DELL": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1795216692.6103718
+      "last_notified_at": 1795228431.4479449
     },
     "BE": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1795216692.6103718
+      "last_notified_at": 1795228431.4479449
     },
     "COIN": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1795219395.7566614
+      "last_notified_at": 1795228431.4479449
     }
   },
   "position_peaks": {
