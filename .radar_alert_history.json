@@ -66,8 +66,8 @@
       "last_notified_at": 0.0
     },
     "KO": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "TAKE_PROFIT",
+      "last_notified_at": 1795222923.6850078
     },
     "VST": {
       "state": "NORMAL",
@@ -107,7 +107,7 @@
     },
     "AMD": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1795215878.9256938
+      "last_notified_at": 1795223116.5281444
     },
     "CRWD": {
       "state": "NORMAL",
@@ -131,7 +131,7 @@
     },
     "ASML": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1795215572.3735085
+      "last_notified_at": 1795222829.0947297
     },
     "APLD": {
       "state": "STOP_LOSS",

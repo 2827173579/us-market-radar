@@ -1,9 +1,23 @@
 {
-  "updated_at_ts": 1795222719.211,
-  "updated_at_et": "11-20 19:58 ET",
-  "updated_at_kst": "09:58 KST",
+  "updated_at_ts": 1795224549.737,
+  "updated_at_et": "11-20 20:29 ET",
+  "updated_at_kst": "10:29 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261121090306046800",
+      "title": "美伊冲突： 1. 伊朗媒体称格什姆岛遭导弹袭击。 2. 美媒：美以考虑短期内对伊朗发动新…",
+      "summary": "美伊冲突： 1. 伊朗媒体称格什姆岛遭导弹袭击。 2. 美媒：美以考虑短期内对伊朗发动新一轮袭击。 3. 美国财长贝森特：将继续对伊朗伊斯兰革命卫队施压，直至其准备好达成协议。 4. 据伊朗媒体Fars News：一架美军F-16战斗机在从霍尔木兹海峡返回后，于阿联酋上空发出7700紧急求救信号。 也门冲突： 1. 胡塞武装：对沙特吉赞省舒盖格发电站和吉赞港发动军事行动，打击精准命中目标并造成重大损失。 2. 胡塞武装：自新一轮军事升级以来，沙特联军发动的袭击总数已达5429次，总死亡人数已达到438人。 3. 沙特主导的联军宣布在也门境内针对胡塞武装的军事设施及相关目标实施军事打击，摧毁了7处军事目标。 和平谈判： 1. 美特使与卡塔尔官员会面，讨论美伊斡旋事宜。 2. 美国总统特朗普：伊朗想达成协议，但“不想达成我能接受的协议”。 3. 伊朗外长阿拉格齐：两日方案仍在考虑之中。需要采取“建立信任”措施，确保美国不会恢复空袭。若美方提出有条件的方案，伊朗“愿意谈判”。 海峡情况： 1. 美国扩大封锁范围之际，伊朗石油在油轮间进行转运。 2. 伊朗革命卫队：一艘违规油轮在霍尔木兹海峡触雷后爆炸起火。 3. 伊朗外长阿拉格齐：霍尔木兹海峡将继续关闭，直到美国满足伊朗提出的七项条件。 4. 英国海事贸易组织：收到一份关于也门穆卡拉西南95海里处发生事件的报告。小船已驶离，散货船继续航行；船舶及船员均未报告受损或受伤。 其他情况： 1. 万斯拒绝表态是否会下令对伊朗发动袭击。 2. 美政府监督机构：伊朗战争加剧美军弹药短缺。 3. 五角大楼官员：美国已为伊朗战事花费超480亿美元。 4. 以色列升级防空系统，可以更低成本抵御更长时间的攻击。 5. 美国总统特朗普：对万斯关于伊朗战争和大选的言论并无异议。 6. 据纽约邮报：美国总统特朗普将于下月发表主旨演讲，谈及伊朗战争。 7. 据英国金融时报：在特朗普考虑对伊朗发动新一轮打击之际，美军警告部队已不堪重负。美国和以色列的鹰派官员敦促特朗普打击伊朗。",
+      "keywords": [
+        "特朗普",
+        "中东"
+      ],
+      "pub_ts": 1795222986.0,
+      "time_et": "11-20 20:03 ET",
+      "time_bj": "09:03 BJ",
+      "time_kst": "10:03 KST",
+      "time_display": "20:03 ET / 09:03 BJ"
+    },
     {
       "id": "20261121084350611800",
       "title": "整理：昨日今晨重要新闻汇总（2026-11-21）",
@@ -333,19 +347,6 @@
       "time_bj": "00:49 BJ",
       "time_kst": "01:49 KST",
       "time_display": "11:49 ET / 00:49 BJ"
-    },
-    {
-      "id": "20261121004344268800",
-      "title": "英伟达(NVDA.O)跌至盘中低点，现跌超5%。",
-      "summary": "英伟达(NVDA.O)跌至盘中低点，现跌超5%。",
-      "keywords": [
-        "英伟达"
-      ],
-      "pub_ts": 1795193024.0,
-      "time_et": "11-20 11:43 ET",
-      "time_bj": "00:43 BJ",
-      "time_kst": "01:43 KST",
-      "time_display": "11:43 ET / 00:43 BJ"
     }
   ],
   "ticker_news": {
@@ -906,6 +907,27 @@
     ],
     "NVDA": [
       {
+        "title": "Has AI's honeymoon ended on Wall Street?",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/ais-honeymoon-ended-wall-street-004604807.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 19:46 ET",
+        "pub_ts": 1795221964.0
+      },
+      {
+        "title": "Dow Jones Futures: Market Has Worst Week Since Covid Amid Nvidia, Anthropic. Does Fear Gauge Offer Hope?",
+        "url": "https://finance.yahoo.com/m/9ef9da98-bccf-3565-9a30-9bc3e57ad4b9/dow-jones-futures%3A-market-has.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 19:34 ET",
+        "pub_ts": 1795221267.0
+      },
+      {
+        "title": "Here's How Much Nvidia Stock Is Worth Without Jensen Huang, According to Dan Ives",
+        "url": "https://www.fool.com/investing/2026/11/20/here-s-how-much-nvidia-stock-is-worth-without-jensen-huang-according-to-dan-ives/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 19:30 ET",
+        "pub_ts": 1795221004.0
+      },
+      {
         "title": "The Weekly Spread: What Shaped US Treasury Yields And The Dollar This Week",
         "url": "https://stocktwits.com/news-articles/markets/equity/the-weekly-spread-what-shaped-us-treasury-yields-and-the-dollar-this-week-1/cNbmPyOR91X?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -918,27 +940,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 19:02 ET",
         "pub_ts": 1795219371.0
-      },
-      {
-        "title": "NVDA Stock Clocks Worst Week In 18 Years As SEC Reportedly Probes Its Accounting Practices",
-        "url": "https://stocktwits.com/news-articles/markets/equity/nvda-stock-clocks-worst-week-in-18-years-as-sec-reportedly-probes-its-accounting-practices/cNbSDIWR91Q?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 18:38 ET",
-        "pub_ts": 1795217892.0
-      },
-      {
-        "title": "At AI Summit, Industry Titans Wave Off Market Woes—and Defend Jensen Huang",
-        "url": "https://finance.yahoo.com/m/b4ceaf2c-2be0-3edd-98d2-13d5b3cc7cca/at-ai-summit%2C-industry-titans.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 18:28 ET",
-        "pub_ts": 1795217280.0
-      },
-      {
-        "title": "Data Center AI Chips Could Change the Winners: Broadcom and Marvell",
-        "url": "https://247wallst.com/investing/2026/11/20/data-center-ai-chips-could-change-the-winners-broadcom-and-marvell/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 18:25 ET",
-        "pub_ts": 1795217154.0
       }
     ],
     "AMD": [
@@ -1165,6 +1166,20 @@
     ],
     "GOOGL": [
       {
+        "title": "Has AI's honeymoon ended on Wall Street?",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/ais-honeymoon-ended-wall-street-004604807.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 19:46 ET",
+        "pub_ts": 1795221964.0
+      },
+      {
+        "title": "Zero To Sixty: Tesla Expands Cybercab To Dallas As Waymo Pauses Freeway Operations This Week",
+        "url": "https://stocktwits.com/news-articles/markets/equity/zero-to-sixty-tesla-expands-cybercab-to-dallas-as-waymo-pauses-freeway-operations-this-week/cNbm5YSR91g?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 19:45 ET",
+        "pub_ts": 1795221941.0
+      },
+      {
         "title": "Data Center AI Chips Could Change the Winners: Broadcom and Marvell",
         "url": "https://247wallst.com/investing/2026/11/20/data-center-ai-chips-could-change-the-winners-broadcom-and-marvell/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1184,20 +1199,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 17:19 ET",
         "pub_ts": 1795213165.0
-      },
-      {
-        "title": "Jevons paradox and AI: Data shows usage soars as prices plunge",
-        "url": "https://finance.yahoo.com/video/jevons-paradox-and-ai-data-shows-usage-soars-as-prices-plunge-220139526.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 17:01 ET",
-        "pub_ts": 1795212099.0
-      },
-      {
-        "title": "Nvidia’s Stock Slide Deepens After Report of SEC Accounting Probe",
-        "url": "https://finance.yahoo.com/m/30e2a4ab-b95f-395f-9f4d-e4058f562e01/nvidia%E2%80%99s-stock-slide-deepens.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 16:43 ET",
-        "pub_ts": 1795210980.0
       }
     ],
     "MSFT": [
@@ -1942,6 +1943,13 @@
     ],
     "TSLA": [
       {
+        "title": "Zero To Sixty: Tesla Expands Cybercab To Dallas As Waymo Pauses Freeway Operations This Week",
+        "url": "https://stocktwits.com/news-articles/markets/equity/zero-to-sixty-tesla-expands-cybercab-to-dallas-as-waymo-pauses-freeway-operations-this-week/cNbm5YSR91g?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 19:45 ET",
+        "pub_ts": 1795221941.0
+      },
+      {
         "title": "David Ellison Calls Elon Musk’s $1 Billion Investment ‘an Honor and a Privilege,’ Open to Future Starlink Collaboration",
         "url": "https://finance.yahoo.com/media-advertising/articles/david-ellison-calls-elon-musk-233006805.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1968,13 +1976,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 14:42 ET",
         "pub_ts": 1795203720.0
-      },
-      {
-        "title": "Tesla Falls 4% Despite HSBC Upgrade and $359 Target Tied to SpaceX Merger Talk; Rivian Drops 5%, Lucid Slides 4%",
-        "url": "https://247wallst.com/investing/2026/11/20/tesla-falls-4-despite-hsbc-upgrade-and-359-target-tied-to-spacex-merger-talk-rivian-drops-5-lucid-slides-4/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 11:57 ET",
-        "pub_ts": 1795193859.0
       }
     ],
     "AXP": [
@@ -2141,6 +2142,13 @@
         "pub_ts": 1795207802.0
       },
       {
+        "title": "How to Play INTC Stock as Intel Launches Another Round of Layoffs",
+        "url": "https://www.barchart.com/story/news/8940766/how-to-play-intc-stock-as-intel-launches-another-round-of-layoffs?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 13:40 ET",
+        "pub_ts": 1795200004.0
+      },
+      {
         "title": "Intel Stock: Bounceback Potential Etches Path Toward Lower-Cost Ownership",
         "url": "https://finance.yahoo.com/m/a2b405c0-93e0-3125-87d9-0d3775897710/intel-stock%3A-bounceback.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2153,13 +2161,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 13:04 ET",
         "pub_ts": 1795197847.0
-      },
-      {
-        "title": "Intel Corporation (INTC) Faces a High-Stakes Turnaround as Server Demand Improves: Can the Stock Recover?",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/intel-corporation-intc-faces-high-172212578.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 12:22 ET",
-        "pub_ts": 1795195332.0
       }
     ],
     "VRT": [
@@ -3200,37 +3201,37 @@
     ],
     "ANT": [
       {
-        "title": "How much Anthropic stock does CEO Dario Amodei actually own?",
-        "url": "https://www.thestreet.com/personalities/how-much-anthropic-stock-does-dario-amodei-own?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 19:22 ET",
-        "pub_ts": 1795220527.0
+        "title": "Goldman Sachs issues sobering verdict on S&P 500 year-end rally",
+        "url": "https://finnhub.io/api/news?id=413118ddfc0733dac30126a265def72d894060fcfd570aeaa164bb300602c359",
+        "source": "Yahoo",
+        "time": "11-20 18:33 ET",
+        "pub_ts": 1795217580.0
       },
       {
-        "title": "The Weekly Spread: What Shaped US Treasury Yields And The Dollar This Week",
-        "url": "https://stocktwits.com/news-articles/markets/equity/the-weekly-spread-what-shaped-us-treasury-yields-and-the-dollar-this-week-1/cNbmPyOR91X?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 19:16 ET",
-        "pub_ts": 1795220175.0
+        "title": "Dow Jones Futures: Market Has Worst Week Since Covid Amid Nvidia, Anthropic. Does Fear Gauge Offer Hope?",
+        "url": "https://finnhub.io/api/news?id=a461bf9206b72f4ed5bbda580ba12f32748c5dc1fc3ce52df1fae999182f1a09",
+        "source": "Yahoo",
+        "time": "11-20 18:15 ET",
+        "pub_ts": 1795216509.0
       },
       {
         "title": "Hindlian Advisory CEO on AI & Anthropic Market Sell-off",
-        "url": "https://finance.yahoo.com/video/hindlian-advisory-ceo-ai-anthropic-230050991.html?.tsrc=rss",
-        "source": "Yahoo Finance",
+        "url": "https://finnhub.io/api/news?id=782ba64ff9f2edfc6140ed54db5f4527169a0f7d2a64d5407990caa040182599",
+        "source": "Yahoo",
         "time": "11-20 18:00 ET",
         "pub_ts": 1795215650.0
       },
       {
         "title": "Why a top economist says the stock market will remain volatile",
-        "url": "https://www.cnn.com/2026/11/20/business/video/why-a-top-economist-says-the-stock-market-will-remain-volatile-the-lead-jake-tapper?cid=external-feeds_iluminar_yahoo&.tsrc=rss",
-        "source": "Yahoo Finance",
+        "url": "https://finnhub.io/api/news?id=be54d0595f902c2987030940a28a2d4bd2bf7d0642d8f33886ead5abb0c0e763",
+        "source": "Yahoo",
         "time": "11-20 18:00 ET",
         "pub_ts": 1795215639.0
       },
       {
         "title": "Jim Cramer warns Anthropic investors were 'fooled badly' as Cathie Wood's Ark scoops up $90.8M in shares",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/jim-cramer-warns-anthropic-investors-230000036.html?.tsrc=rss",
-        "source": "Yahoo Finance",
+        "url": "https://finnhub.io/api/news?id=5daa18921800ca83023124aa1e8353db62303c4fd9a2ae9253f3672c0c99f735",
+        "source": "Yahoo",
         "time": "11-20 18:00 ET",
         "pub_ts": 1795215600.0
       }
@@ -3246,90 +3247,90 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795221604.9722717,
-    "SOXL": 1795221604.9722717,
-    "SPY": 1795221604.9722717,
-    "DIA": 1795221604.9722717,
-    "SOXX": 1795221604.9722717,
-    "QQQ": 1795221604.9722717,
-    "SMH": 1795221604.9722717,
-    "IWM": 1795221604.9722717,
-    "IGV": 1795221604.9722717,
-    "TLT": 1795221604.9722717,
-    "GLD": 1795221604.9722717,
-    "SQQQ": 1795221604.9722717,
-    "TSM": 1795221604.9722717,
-    "VIXY": 1795221604.9722717,
-    "SOXS": 1795221604.9722717,
-    "NVDA": 1795221604.9722717,
-    "AMD": 1795221710.098645,
-    "ASML": 1795221710.098645,
-    "QCOM": 1795221710.098645,
-    "AVGO": 1795221710.098645,
-    "AMAT": 1795221710.098645,
-    "META": 1795221710.098645,
-    "GOOGL": 1795221710.098645,
-    "MSFT": 1795221710.098645,
-    "AAPL": 1795221710.098645,
-    "PLTR": 1795221710.098645,
-    "NOW": 1795221710.098645,
-    "AMZN": 1795221710.098645,
-    "CRWV": 1795221710.098645,
-    "NBIS": 1795222719.2108192,
-    "APLD": 1795222719.2108192,
-    "VST": 1795222719.2108192,
-    "BE": 1795222719.2108192,
-    "CRDO": 1795222719.2108192,
-    "COHR": 1795222719.2108192,
-    "MRVL": 1795222719.2108192,
-    "LITE": 1795222719.2108192,
-    "AAOI": 1795221710.098645,
-    "SPCX": 1795222719.2108192,
-    "ASTS": 1795222719.2108192,
-    "AXTI": 1795222719.2108192,
-    "NASA": 1795221710.098645,
-    "LUNR": 1795221710.098645,
-    "TSLA": 1795221710.098645,
-    "AXP": 1795221710.098645,
-    "RKLB": 1795222719.2108192,
-    "KO": 1795221710.098645,
-    "FLY": 1795222719.2108192,
-    "INTC": 1795221710.098645,
-    "VRT": 1795221710.098645,
-    "HPE": 1795221816.043566,
-    "DELL": 1795221710.098645,
-    "OKLO": 1795221710.098645,
-    "CEG": 1795221816.043566,
-    "FPS": 1795221816.043566,
-    "MU": 1795221816.043566,
-    "SKHY": 1795221816.043566,
-    "WDC": 1795221816.043566,
-    "STX": 1795221816.043566,
-    "MSTR": 1795221816.043566,
-    "SNDK": 1795221816.043566,
-    "BTC-USD": 1795222220.8328402,
-    "CRWD": 1795222719.2108192,
-    "ORCL": 1795222719.2108192,
-    "COIN": 1795222719.2108192,
-    "LLY": 1795221305.93209,
-    "MRNA": 1795221305.93209,
-    "NKE": 1795221305.93209,
-    "MCD": 1795222719.2108192,
-    "PEP": 1795222719.2108192,
-    "XOM": 1795222220.8328402,
-    "JPM": 1795222220.8328402,
-    "WMT": 1795222220.8328402,
-    "V": 1795221305.93209,
-    "CAT": 1795222220.8328402,
-    "FN": 1795222719.2108192,
-    "GLW": 1795222719.2108192,
-    "ANT": 1795222220.8328402,
-    "XAUUSD": 1795222220.8328402
+    "KORU": 1795223108.6575437,
+    "SOXL": 1795223108.6575437,
+    "SPY": 1795223108.6575437,
+    "DIA": 1795223108.6575437,
+    "SOXX": 1795223108.6575437,
+    "QQQ": 1795223108.6575437,
+    "SMH": 1795223108.6575437,
+    "IWM": 1795223108.6575437,
+    "IGV": 1795223108.6575437,
+    "TLT": 1795223108.6575437,
+    "GLD": 1795223108.6575437,
+    "SQQQ": 1795223108.6575437,
+    "TSM": 1795223108.6575437,
+    "VIXY": 1795223108.6575437,
+    "SOXS": 1795223108.6575437,
+    "NVDA": 1795223108.6575437,
+    "AMD": 1795223302.443882,
+    "ASML": 1795223302.443882,
+    "QCOM": 1795223302.443882,
+    "AVGO": 1795223302.443882,
+    "AMAT": 1795223302.443882,
+    "META": 1795223302.443882,
+    "GOOGL": 1795223302.443882,
+    "MSFT": 1795223302.443882,
+    "AAPL": 1795223302.443882,
+    "PLTR": 1795223302.443882,
+    "NOW": 1795223302.443882,
+    "AMZN": 1795223302.443882,
+    "CRWV": 1795223302.443882,
+    "NBIS": 1795224259.8031259,
+    "APLD": 1795224259.8031259,
+    "VST": 1795224259.8031259,
+    "BE": 1795224259.8031259,
+    "CRDO": 1795224259.8031259,
+    "COHR": 1795224259.8031259,
+    "MRVL": 1795224259.8031259,
+    "LITE": 1795224259.8031259,
+    "AAOI": 1795223302.443882,
+    "SPCX": 1795224259.8031259,
+    "ASTS": 1795224259.8031259,
+    "AXTI": 1795224259.8031259,
+    "NASA": 1795223302.443882,
+    "LUNR": 1795223302.443882,
+    "TSLA": 1795223302.443882,
+    "AXP": 1795223302.443882,
+    "RKLB": 1795224259.8031259,
+    "KO": 1795223302.443882,
+    "FLY": 1795224259.8031259,
+    "INTC": 1795223302.443882,
+    "VRT": 1795223302.443882,
+    "HPE": 1795223401.9943113,
+    "DELL": 1795223302.443882,
+    "OKLO": 1795223302.443882,
+    "CEG": 1795223401.9943113,
+    "FPS": 1795223401.9943113,
+    "MU": 1795223401.9943113,
+    "SKHY": 1795223401.9943113,
+    "WDC": 1795223401.9943113,
+    "STX": 1795223401.9943113,
+    "MSTR": 1795223401.9943113,
+    "SNDK": 1795223401.9943113,
+    "BTC-USD": 1795223786.6192262,
+    "CRWD": 1795224259.8031259,
+    "ORCL": 1795224259.8031259,
+    "COIN": 1795224259.8031259,
+    "LLY": 1795224359.4701173,
+    "MRNA": 1795224359.4701173,
+    "NKE": 1795224359.4701173,
+    "MCD": 1795224259.8031259,
+    "PEP": 1795224259.8031259,
+    "XOM": 1795223786.6192262,
+    "JPM": 1795223786.6192262,
+    "WMT": 1795223786.6192262,
+    "V": 1795224359.4701173,
+    "CAT": 1795223786.6192262,
+    "FN": 1795224259.8031259,
+    "GLW": 1795224259.8031259,
+    "ANT": 1795223786.6192262,
+    "XAUUSD": 1795223786.6192262
   },
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (19:43 ET / 08:43 BJ) [美联储] [加息] [半导体]：国内新闻 1. 多家银行发布贵金属业务市场风险提示。 2. 上期所发布关于做好市场风险控制工作的通知。 3. 中美两军举行海上军事安全磋商机制工作小组会议和年度会晤。 4. 习近平会见马来西",
+    "detail": "⚡ 最新核心快讯 (20:03 ET / 09:03 BJ) [特朗普] [中东]：美伊冲突： 1. 伊朗媒体称格什姆岛遭导弹袭击。 2. 美媒：美以考虑短期内对伊朗发动新一轮袭击。 3. 美国财长贝森特：将继续对伊朗伊斯兰革命卫队施压，直至其准备好达成协议。 4. 据伊朗",
     "event_name": "",
     "minutes_left": 0
   }
