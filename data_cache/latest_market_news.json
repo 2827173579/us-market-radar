@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795235589.574,
-  "updated_at_et": "11-20 23:33 ET",
-  "updated_at_kst": "13:33 KST",
+  "updated_at_ts": 1795237448.518,
+  "updated_at_et": "11-21 00:04 ET",
+  "updated_at_kst": "14:04 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -799,6 +799,13 @@
     ],
     "TSM": [
       {
+        "title": "Taiwan Semiconductor Manufacturing (NYSE:TSM) Pauses Advanced Chip Shipments To China",
+        "url": "https://finance.yahoo.com/technology/articles/taiwan-semiconductor-manufacturing-nyse-tsm-042528694.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 23:25 ET",
+        "pub_ts": 1795235128.0
+      },
+      {
         "title": "Goldman Sachs Cut Its Broadcom Target to $460, and the Reason Has Nothing to Do With Broadcom’s Earnings",
         "url": "https://www.tikr.com/blog/goldman-sachs-cut-its-broadcom-target-to-460-and-the-reason-has-nothing-to-do-with-broadcoms-earnings?ref=yahoofinance&tlnk=yf-261120-qgp5f5w5&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -825,13 +832,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 09:40 ET",
         "pub_ts": 1795185626.0
-      },
-      {
-        "title": "Sector Update: Tech Stocks Fall Premarket Friday",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/sector-tech-stocks-fall-premarket-140915827.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 09:09 ET",
-        "pub_ts": 1795183755.0
       }
     ],
     "VIXY": [
@@ -917,6 +917,13 @@
         "pub_ts": 1795230972.0
       },
       {
+        "title": "Jensen Huang Passed Billions in Nvidia Stock to His Heirs Months Before His Downfall",
+        "url": "https://finance.yahoo.com/m/f93688e0-5c36-372b-855e-b722a7cce11d/jensen-huang-passed-billions.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 22:14 ET",
+        "pub_ts": 1795230840.0
+      },
+      {
         "title": "NVDA Stock Sees Biggest Fall In 22 Months, But Top Analyst Says Nvidia’s AI Boom Isn’t Over Yet — Here Are 5 Reasons Why",
         "url": "https://stocktwits.com/news-articles/markets/equity/nvda-stock-fall-nvidia-ai-boom-not-over-yet-top-analyst-5-reasons/cNbmIC8R91h?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -936,13 +943,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 20:45 ET",
         "pub_ts": 1795225533.0
-      },
-      {
-        "title": "Nasdaq 100 Ends Worst Week Since 2020, S&P 500 In Correction Territory As AI Rout Sours Sentiment — ANT, NVDA, TTWO, ZS, CRWD In Focus",
-        "url": "https://stocktwits.com/news-articles/markets/equity/nasdaq-100-ends-worst-week-since-2020-s-and-p-500-in-correction-territory-as-ai-rout-sours-sentiment-ant-nvda-ttwo-zs-crwd-in-focus/cNbm3xQR91W?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 20:30 ET",
-        "pub_ts": 1795224625.0
       }
     ],
     "AMD": [
@@ -1197,11 +1197,11 @@
         "pub_ts": 1795221964.0
       },
       {
-        "title": "Data Center AI Chips Could Change the Winners: Broadcom and Marvell",
-        "url": "https://247wallst.com/investing/2026/11/20/data-center-ai-chips-could-change-the-winners-broadcom-and-marvell/?.tsrc=rss",
+        "title": "Zero To Sixty: Tesla Expands Cybercab To Dallas As Waymo Pauses Freeway Operations This Week",
+        "url": "https://stocktwits.com/news-articles/markets/equity/zero-to-sixty-tesla-expands-cybercab-to-dallas-as-waymo-pauses-freeway-operations-this-week/cNbm5YSR91g?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-20 18:25 ET",
-        "pub_ts": 1795217154.0
+        "time": "11-20 19:45 ET",
+        "pub_ts": 1795221941.0
       }
     ],
     "MSFT": [
@@ -1211,6 +1211,13 @@
         "source": "Yahoo Finance",
         "time": "11-20 17:22 ET",
         "pub_ts": 1795213376.0
+      },
+      {
+        "title": "Is Danaher (DHR) Undervalued After Its Microsoft AI Lab Partnership?",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/danaher-dhr-undervalued-microsoft-ai-042011998.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 23:20 ET",
+        "pub_ts": 1795234811.0
       },
       {
         "title": "Mets Owner Steve Cohen’s Fund Dumped Nearly All of Its AMD and Bet $1 Billion That Microsoft Is the Safer AI Stock. AMD Has Fallen 31% Since",
@@ -1232,16 +1239,16 @@
         "source": "Yahoo Finance",
         "time": "11-20 17:26 ET",
         "pub_ts": 1795213598.0
-      },
-      {
-        "title": "Cramer: Microsoft the “Smartest of the Hyperscalers” With Relentless Focus on Positive Cashflow. That Includes Asking 60,000 Employees to Quit",
-        "url": "https://www.tikr.com/blog/cramer-microsoft-the-smartest-of-the-hyperscalers-with-relentless-focus-on-positive-cashflow-that-includes-asking-60000-employees-to-quit?ref=yahoofinance&tlnk=yf-261120-mq52hwf2&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 17:22 ET",
-        "pub_ts": 1795213340.0
       }
     ],
     "AAPL": [
+      {
+        "title": "Startup sues Apple in India over tap-to-share contacts feature",
+        "url": "https://finance.yahoo.com/technology/articles/startup-sues-apple-india-over-040000799.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 23:00 ET",
+        "pub_ts": 1795233600.0
+      },
       {
         "title": "Shots Fired: Meta Will Reportedly Sell a $300 Muse Charm With Free Verizon 5G as Apple Builds Its Agent",
         "url": "https://www.tikr.com/blog/shots-fired-meta-will-reportedly-sell-a-300-muse-charm-with-free-verizon-5g-as-apple-builds-its-agent?ref=yahoofinance&tlnk=yf-261120-pg825wq7&.tsrc=rss",
@@ -1269,13 +1276,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 15:53 ET",
         "pub_ts": 1795208025.0
-      },
-      {
-        "title": "AAPL Stock Alert: What to Know as Apple Develops AI Agent to Compete With Muse",
-        "url": "https://www.barchart.com/story/news/8941997/aapl-stock-alert-what-to-know-as-apple-develops-ai-agent-to-compete-with-muse?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 15:32 ET",
-        "pub_ts": 1795206769.0
       }
     ],
     "PLTR": [
@@ -2582,6 +2582,13 @@
         "pub_ts": 1795184441.0
       },
       {
+        "title": "Sandisk (SNDK) Implements 8 For 1 Stock Split",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/sandisk-sndk-implements-8-1-042529050.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 23:25 ET",
+        "pub_ts": 1795235129.0
+      },
+      {
         "title": "Sandisk’s Data Center Portfolio Soars 1,700% as AI Demand Reshapes NAND Business",
         "url": "https://www.marketbeat.com/instant-alerts/event-sandisks-data-center-portfolio-soars-1700-as-ai-demand-reshapes-nand-business-2026-11-20/?utm_source=yahoofinance&utm_medium=yahoofinance&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2601,16 +2608,16 @@
         "source": "Yahoo Finance",
         "time": "11-20 12:39 ET",
         "pub_ts": 1795196355.0
-      },
-      {
-        "title": "Sandisk Stock Looked Like It Fell 87%. Here’s What Really Happened.",
-        "url": "https://finance.yahoo.com/m/83e6f25c-45b8-3b90-ab21-ee8d7bebe056/sandisk-stock-looked-like-it.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 12:02 ET",
-        "pub_ts": 1795194120.0
       }
     ],
     "BTC-USD": [
+      {
+        "title": "ARK Invest Adds More Anthropic Shares While Trimming Crypto Stocks As Bitcoin Slides",
+        "url": "https://stocktwits.com/news-articles/markets/equity/cathie-wood-sells-crypto-bets-piles-into-anthropic-after-ai-firm-s-market-debut/cNbm9L8R910?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 23:19 ET",
+        "pub_ts": 1795234777.0
+      },
       {
         "title": "Bitcoin Falls Below $60K For First Time Since July, Saylor's MSTR Hits 52-Week Low Amid $14B Paper Loss",
         "url": "https://stocktwits.com/news-articles/markets/equity/bitcoin-falls-below-60-k-for-first-time-since-july-saylor-s-mstr-hits-52-week-low-amid-14-b-paper-loss/cNbm7NeR91L?.tsrc=rss",
@@ -2638,13 +2645,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 20:14 ET",
         "pub_ts": 1795223694.0
-      },
-      {
-        "title": "3 signals the biggest Bitcoin treasury company checks before its next move",
-        "url": "https://www.thestreet.com/crypto/markets/3-signals-the-biggest-bitcoin-treasury-company-checks-before-its-next-move?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 19:30 ET",
-        "pub_ts": 1795221000.0
       }
     ],
     "CRWD": [
@@ -3204,6 +3204,27 @@
     ],
     "ANT": [
       {
+        "title": "3 Canadian Growth Stocks With Earnings Growth Over 46%",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/3-canadian-growth-stocks-earnings-042349038.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 23:23 ET",
+        "pub_ts": 1795235029.0
+      },
+      {
+        "title": "ARK Invest Adds More Anthropic Shares While Trimming Crypto Stocks As Bitcoin Slides",
+        "url": "https://stocktwits.com/news-articles/markets/equity/cathie-wood-sells-crypto-bets-piles-into-anthropic-after-ai-firm-s-market-debut/cNbm9L8R910?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 23:19 ET",
+        "pub_ts": 1795234777.0
+      },
+      {
+        "title": "Dan Ives Says Anthropic IPO Sees 'Very Strong Appetite,' Calls It A 'Big Win' for Tech Sector After 'White-Knuckle' Nvidia Period",
+        "url": "https://finance.yahoo.com/technology/ai/articles/dan-ives-says-anthropic-ipo-033013948.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-20 22:30 ET",
+        "pub_ts": 1795231813.0
+      },
+      {
         "title": "Jim Cramer sends strong signal to SpaceX, Anthropic stock investors",
         "url": "https://www.thestreet.com/investing/stocks/cramer-spacex-anthropic-compute-deal?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3216,27 +3237,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 20:10 ET",
         "pub_ts": 1795223440.0
-      },
-      {
-        "title": "How much Anthropic stock does CEO Dario Amodei actually own?",
-        "url": "https://www.thestreet.com/personalities/how-much-anthropic-stock-does-dario-amodei-own?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 19:22 ET",
-        "pub_ts": 1795220527.0
-      },
-      {
-        "title": "The Weekly Spread: What Shaped US Treasury Yields And The Dollar This Week",
-        "url": "https://stocktwits.com/news-articles/markets/equity/the-weekly-spread-what-shaped-us-treasury-yields-and-the-dollar-this-week-1/cNbmPyOR91X?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 19:16 ET",
-        "pub_ts": 1795220175.0
-      },
-      {
-        "title": "Dow Jones Futures: Market Has Worst Week Since Covid Amid Nvidia, Anthropic. Does Fear Gauge Offer Hope?",
-        "url": "https://finance.yahoo.com/m/9ef9da98-bccf-3565-9a30-9bc3e57ad4b9/dow-jones-futures%3A-market-has.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 21:19 ET",
-        "pub_ts": 1795227567.0
       }
     ],
     "XAUUSD": [
@@ -3250,85 +3250,85 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795235490.4721358,
-    "SOXL": 1795235490.4721358,
-    "SPY": 1795235490.4721358,
-    "DIA": 1795235490.4721358,
-    "SOXX": 1795235490.4721358,
-    "QQQ": 1795235490.4721358,
-    "SMH": 1795235490.4721358,
-    "IWM": 1795235490.4721358,
-    "IGV": 1795235490.4721358,
-    "TLT": 1795235490.4721358,
-    "GLD": 1795235490.4721358,
-    "SQQQ": 1795235490.4721358,
-    "TSM": 1795235490.4721358,
-    "VIXY": 1795235490.4721358,
-    "SOXS": 1795235490.4721358,
-    "NVDA": 1795235490.4721358,
-    "AMD": 1795234142.9204915,
-    "ASML": 1795234142.9204915,
-    "QCOM": 1795234142.9204915,
-    "AVGO": 1795234142.9204915,
-    "AMAT": 1795234142.9204915,
-    "META": 1795234142.9204915,
-    "GOOGL": 1795234142.9204915,
-    "MSFT": 1795234142.9204915,
-    "AAPL": 1795234142.9204915,
-    "PLTR": 1795234142.9204915,
-    "NOW": 1795234142.9204915,
-    "AMZN": 1795234142.9204915,
-    "CRWV": 1795234142.9204915,
-    "NBIS": 1795235103.7832913,
-    "APLD": 1795235103.7832913,
-    "VST": 1795235103.7832913,
-    "BE": 1795235103.7832913,
-    "CRDO": 1795235103.7832913,
-    "COHR": 1795235103.7832913,
-    "MRVL": 1795235103.7832913,
-    "LITE": 1795235103.7832913,
-    "AAOI": 1795234142.9204915,
-    "SPCX": 1795235103.7832913,
-    "ASTS": 1795235103.7832913,
-    "AXTI": 1795235103.7832913,
-    "NASA": 1795234142.9204915,
-    "LUNR": 1795234142.9204915,
-    "TSLA": 1795234142.9204915,
-    "AXP": 1795234142.9204915,
-    "RKLB": 1795235103.7832913,
-    "KO": 1795234142.9204915,
-    "FLY": 1795235103.7832913,
-    "INTC": 1795234142.9204915,
-    "VRT": 1795234142.9204915,
-    "HPE": 1795234242.7724707,
-    "DELL": 1795234142.9204915,
-    "OKLO": 1795234142.9204915,
-    "CEG": 1795234242.7724707,
-    "FPS": 1795234242.7724707,
-    "MU": 1795234242.7724707,
-    "SKHY": 1795234242.7724707,
-    "WDC": 1795234242.7724707,
-    "STX": 1795234242.7724707,
-    "MSTR": 1795234242.7724707,
-    "SNDK": 1795234242.7724707,
-    "BTC-USD": 1795234622.8269498,
-    "CRWD": 1795235103.7832913,
-    "ORCL": 1795235103.7832913,
-    "COIN": 1795235103.7832913,
-    "LLY": 1795235204.934747,
-    "MRNA": 1795235204.934747,
-    "NKE": 1795235204.934747,
-    "MCD": 1795235103.7832913,
-    "PEP": 1795235103.7832913,
-    "XOM": 1795234622.8269498,
-    "JPM": 1795234622.8269498,
-    "WMT": 1795234622.8269498,
-    "V": 1795235204.934747,
-    "CAT": 1795234622.8269498,
-    "FN": 1795235103.7832913,
-    "GLW": 1795235103.7832913,
-    "ANT": 1795234622.8269498,
-    "XAUUSD": 1795234622.8269498
+    "KORU": 1795237048.7640312,
+    "SOXL": 1795237048.7640312,
+    "SPY": 1795237048.7640312,
+    "DIA": 1795237048.7640312,
+    "SOXX": 1795237048.7640312,
+    "QQQ": 1795237048.7640312,
+    "SMH": 1795237048.7640312,
+    "IWM": 1795237048.7640312,
+    "IGV": 1795237048.7640312,
+    "TLT": 1795237048.7640312,
+    "GLD": 1795237048.7640312,
+    "SQQQ": 1795237048.7640312,
+    "TSM": 1795237048.7640312,
+    "VIXY": 1795237048.7640312,
+    "SOXS": 1795237048.7640312,
+    "NVDA": 1795237048.7640312,
+    "AMD": 1795237243.0415313,
+    "ASML": 1795237243.0415313,
+    "QCOM": 1795237243.0415313,
+    "AVGO": 1795237243.0415313,
+    "AMAT": 1795237243.0415313,
+    "META": 1795237243.0415313,
+    "GOOGL": 1795237243.0415313,
+    "MSFT": 1795237243.0415313,
+    "AAPL": 1795237243.0415313,
+    "PLTR": 1795237243.0415313,
+    "NOW": 1795237243.0415313,
+    "AMZN": 1795237243.0415313,
+    "CRWV": 1795237243.0415313,
+    "NBIS": 1795236662.7219722,
+    "APLD": 1795236662.7219722,
+    "VST": 1795236662.7219722,
+    "BE": 1795236662.7219722,
+    "CRDO": 1795236662.7219722,
+    "COHR": 1795236662.7219722,
+    "MRVL": 1795236662.7219722,
+    "LITE": 1795236662.7219722,
+    "AAOI": 1795237243.0415313,
+    "SPCX": 1795236662.7219722,
+    "ASTS": 1795236662.7219722,
+    "AXTI": 1795236662.7219722,
+    "NASA": 1795237243.0415313,
+    "LUNR": 1795237243.0415313,
+    "TSLA": 1795237243.0415313,
+    "AXP": 1795237243.0415313,
+    "RKLB": 1795236662.7219722,
+    "KO": 1795237243.0415313,
+    "FLY": 1795236662.7219722,
+    "INTC": 1795237243.0415313,
+    "VRT": 1795237243.0415313,
+    "HPE": 1795237346.8433464,
+    "DELL": 1795237243.0415313,
+    "OKLO": 1795237243.0415313,
+    "CEG": 1795237346.8433464,
+    "FPS": 1795237346.8433464,
+    "MU": 1795237346.8433464,
+    "SKHY": 1795237346.8433464,
+    "WDC": 1795237346.8433464,
+    "STX": 1795237346.8433464,
+    "MSTR": 1795237346.8433464,
+    "SNDK": 1795237346.8433464,
+    "BTC-USD": 1795236179.516075,
+    "CRWD": 1795236662.7219722,
+    "ORCL": 1795236662.7219722,
+    "COIN": 1795236662.7219722,
+    "LLY": 1795236763.5271096,
+    "MRNA": 1795236763.5271096,
+    "NKE": 1795236763.5271096,
+    "MCD": 1795236662.7219722,
+    "PEP": 1795236662.7219722,
+    "XOM": 1795236179.516075,
+    "JPM": 1795236179.516075,
+    "WMT": 1795236179.516075,
+    "V": 1795236763.5271096,
+    "CAT": 1795236179.516075,
+    "FN": 1795236662.7219722,
+    "GLW": 1795236662.7219722,
+    "ANT": 1795236179.516075,
+    "XAUUSD": 1795236179.516075
   },
   "calendar_banner": {
     "level": "idle_with_flash",
