@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795328381.057,
-  "updated_at_et": "11-22 01:19 ET",
-  "updated_at_kst": "15:19 KST",
+  "updated_at_ts": 1795330410.569,
+  "updated_at_et": "11-22 01:53 ET",
+  "updated_at_kst": "15:53 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -912,6 +912,13 @@
     ],
     "NVDA": [
       {
+        "title": "The 2 ETFs I'd Buy Today: 1 for Growth, 1 for Dividends",
+        "url": "https://www.fool.com/investing/2026/11/22/the-2-etfs-i-d-buy-today-1-for-growth-1-for-dividends/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-22 00:57 ET",
+        "pub_ts": 1795327022.0
+      },
+      {
         "title": "Where Will Nvidia Stock Be in 20 Years? The Answer Might Surprise You.",
         "url": "https://www.fool.com/investing/2026/11/22/where-will-nvidia-stock-be-in-20-years-the-answer-might-surprise-you/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -938,13 +945,6 @@
         "source": "Yahoo Finance",
         "time": "11-21 22:50 ET",
         "pub_ts": 1795319402.0
-      },
-      {
-        "title": "Billionaire David Tepper Just Made a Massive AI Chip Rotation — Will It Pay Off?",
-        "url": "https://www.fool.com/investing/2026/11/21/billionaire-david-tepper-just-made-a-massive-ai-chip-rotation-will-it-pay-off/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-21 22:20 ET",
-        "pub_ts": 1795317602.0
       }
     ],
     "AMD": [
@@ -1763,6 +1763,13 @@
     ],
     "SPCX": [
       {
+        "title": "Goldman Sachs (GS) Backs Record $44 Billion GPU Financing Deal",
+        "url": "https://finance.yahoo.com/technology/ai/articles/goldman-sachs-gs-backs-record-061306562.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-22 01:13 ET",
+        "pub_ts": 1795327986.0
+      },
+      {
         "title": "ULA Vulcan Launch Ends in Disaster for Amazon's Satellite Internet Ambitions",
         "url": "https://www.fool.com/investing/2026/11/21/ula-vulcan-launch-ends-in-disaster-for-amazon-s-satellite-internet-ambitions/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1789,13 +1796,6 @@
         "source": "Yahoo Finance",
         "time": "11-21 14:35 ET",
         "pub_ts": 1795289702.0
-      },
-      {
-        "title": "Musk Says AT&T and Verizon May “Lose Some Revenue” as Starlink’s Phone Service Gets 40x the Bandwidth",
-        "url": "https://www.tikr.com/blog/musk-says-att-and-verizon-may-lose-some-revenue-as-starlinks-phone-service-gets-40x-the-bandwidth?ref=yahoofinance&tlnk=yf-261121-33qf4mj4&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-21 12:20 ET",
-        "pub_ts": 1795281639.0
       }
     ],
     "ASTS": [
@@ -3264,35 +3264,35 @@
     "TLT": 1795328381.0570495,
     "GLD": 1795328381.0570495,
     "SQQQ": 1795328381.0570495,
-    "TSM": 1795326445.0481892,
+    "TSM": 1795330410.5690634,
     "VIXY": 1795328381.0570495,
     "SOXS": 1795328381.0570495,
-    "NVDA": 1795326445.0481892,
-    "AMD": 1795326445.0481892,
-    "ASML": 1795326445.0481892,
-    "QCOM": 1795326445.0481892,
-    "AVGO": 1795326445.0481892,
-    "AMAT": 1795326445.0481892,
-    "META": 1795326445.0481892,
-    "GOOGL": 1795326445.0481892,
-    "MSFT": 1795326445.0481892,
-    "AAPL": 1795326445.0481892,
-    "PLTR": 1795326445.0481892,
+    "NVDA": 1795330410.5690634,
+    "AMD": 1795330410.5690634,
+    "ASML": 1795330410.5690634,
+    "QCOM": 1795330410.5690634,
+    "AVGO": 1795330410.5690634,
+    "AMAT": 1795330410.5690634,
+    "META": 1795330410.5690634,
+    "GOOGL": 1795330410.5690634,
+    "MSFT": 1795330410.5690634,
+    "AAPL": 1795330410.5690634,
+    "PLTR": 1795330410.5690634,
     "NOW": 1795326930.8797998,
-    "AMZN": 1795326445.0481892,
+    "AMZN": 1795330410.5690634,
     "CRWV": 1795326930.8797998,
-    "NBIS": 1795326445.0481892,
-    "APLD": 1795326445.0481892,
-    "VST": 1795326445.0481892,
-    "BE": 1795326445.0481892,
-    "CRDO": 1795326445.0481892,
-    "COHR": 1795326445.0481892,
-    "MRVL": 1795326445.0481892,
-    "LITE": 1795326445.0481892,
+    "NBIS": 1795330410.5690634,
+    "APLD": 1795330410.5690634,
+    "VST": 1795330410.5690634,
+    "BE": 1795330410.5690634,
+    "CRDO": 1795330410.5690634,
+    "COHR": 1795330410.5690634,
+    "MRVL": 1795330410.5690634,
+    "LITE": 1795330410.5690634,
     "AAOI": 1795326930.8797998,
-    "SPCX": 1795326445.0481892,
+    "SPCX": 1795330410.5690634,
     "ASTS": 1795326445.0481892,
-    "AXTI": 1795326445.0481892,
+    "AXTI": 1795330410.5690634,
     "NASA": 1795326930.8797998,
     "LUNR": 1795326930.8797998,
     "TSLA": 1795326930.8797998,
@@ -3327,8 +3327,8 @@
     "WMT": 1795326930.8797998,
     "V": 1795326930.8797998,
     "CAT": 1795326930.8797998,
-    "FN": 1795326445.0481892,
-    "GLW": 1795326445.0481892,
+    "FN": 1795330410.5690634,
+    "GLW": 1795330410.5690634,
     "ANT": 1795326930.8797998,
     "XAUUSD": 1795328381.0570495
   },
