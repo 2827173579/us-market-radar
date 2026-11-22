@@ -727,13 +727,23 @@ def build_check_embed_dict(
     if res_suppressed and res_badge:
         ai_line += f" ｜ {res_badge}"
 
+    exam_lines = [vwap_line, path_line, rs_line, ai_line]
+    bear_inertia_on = bool(item.get("bear_inertia_active")) and (not is_inv)
+    if bear_inertia_on:
+        p15_t5 = _opt_float(item.get("p15_t5_pct"))
+        if p15_t5 is not None:
+            tc_bear_line = f"• **15日推演**：⛔ 空头惯性延续，已切入空头防守同境模式（T+5 悲观下沿 {_fmt_pct(p15_t5)}，暂缓盲目看涨反弹）"
+        else:
+            tc_bear_line = "• **15日推演**：⛔ 空头惯性延续，已切入空头防守同境模式（暂缓盲目看涨反弹）"
+        exam_lines.append(tc_bear_line)
+
     fields = [
         {"name": "💰 价格", "value": _strip_bare_hr_lines(price_text)[:1024], "inline": False},
         {"name": "🎯 怎么操作", "value": _strip_bare_hr_lines("\n".join(op_lines))[:1024], "inline": False},
         {"name": "🧱 关键价位", "value": _strip_bare_hr_lines("\n".join(levels_lines))[:1024], "inline": False},
         {
             "name": "📊 通俗体检",
-            "value": _strip_bare_hr_lines("\n".join([vwap_line, path_line, rs_line, ai_line]))[:1024],
+            "value": _strip_bare_hr_lines("\n".join(exam_lines))[:1024],
             "inline": False,
         },
     ]

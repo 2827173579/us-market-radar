@@ -4607,6 +4607,28 @@ def fetch_all_market_data(tickers, period="1y", retries=2):
                     if t in data_dict and not data_dict[t].empty and set(req_cols).issubset(data_dict[t].columns):
                         cur_df = data_dict[t][req_cols].copy()
                         cur_df.index = pd.to_datetime(cur_df.index).tz_localize(None).normalize()
+                        max_cur_dt = cur_df.index.max()
+                        if pd.notna(max_cur_dt):
+                            sub_pq = sub_pq[sub_pq.index <= max_cur_dt].copy()
+                        overlap_idx = sub_pq.index.intersection(cur_df.index)
+                        if len(overlap_idx) > 0:
+                            c_cur = pd.to_numeric(cur_df.loc[overlap_idx, "Close"], errors="coerce").dropna()
+                            c_pq = pd.to_numeric(sub_pq.loc[overlap_idx, "Close"], errors="coerce").dropna()
+                            common_ov = c_cur.index.intersection(c_pq.index)
+                            if len(common_ov) > 0 and float(c_pq.loc[common_ov[-1]]) > 0:
+                                raw_ratio = float(c_cur.loc[common_ov[-1]]) / float(c_pq.loc[common_ov[-1]])
+                                if raw_ratio >= 1.67:
+                                    sf = _match_split_factor_value(raw_ratio)
+                                    if sf and sf > 1.0:
+                                        for col_px in ("Open", "High", "Low", "Close"):
+                                            sub_pq[col_px] = pd.to_numeric(sub_pq[col_px], errors="coerce") * sf
+                                        sub_pq["Volume"] = pd.to_numeric(sub_pq["Volume"], errors="coerce") / sf
+                                elif 0 < raw_ratio <= 0.60:
+                                    sf = _match_split_factor_value(1.0 / raw_ratio)
+                                    if sf and sf > 1.0:
+                                        for col_px in ("Open", "High", "Low", "Close"):
+                                            sub_pq[col_px] = pd.to_numeric(sub_pq[col_px], errors="coerce") / sf
+                                        sub_pq["Volume"] = pd.to_numeric(sub_pq["Volume"], errors="coerce") * sf
                         merged_df = pd.concat([sub_pq, cur_df])
                     else:
                         merged_df = sub_pq
@@ -5380,8 +5402,13 @@ def sync_live_prices_to_predict_html(macro_data=None, stocks_data=None, session_
                         if isinstance(row, dict) and row.get("ticker") in live:
                             row["latest_price"] = live[row["ticker"]]
                             row["current_price"] = live[row["ticker"]]
-                            if row["ticker"] in html_tc_data and html_tc_data[row["ticker"]].get("r2"):
-                                row["r2"] = html_tc_data[row["ticker"]]["r2"]
+                            if row["ticker"] in html_tc_data:
+                                tc_row = html_tc_data[row["ticker"]]
+                                if tc_row.get("r2"):
+                                    row["r2"] = tc_row["r2"]
+                                for k_v46 in ("v46_regime_mode", "bear_inertia_active", "p15_t5_pct", "p15_t15_pct", "p85_t15_pct"):
+                                    if tc_row.get(k_v46) is not None:
+                                        row[k_v46] = tc_row[k_v46]
             with open(json_path, "w", encoding="utf-8") as jf:
                 _json.dump(ai_payload, jf, ensure_ascii=False, indent=2)
 
@@ -5583,6 +5610,11 @@ def build_latest_radar_snapshot(
         for k, v in ai_doc["by_ticker"].items():
             if isinstance(v, dict):
                 ai_by_tk[str(k).upper()] = v
+    tc_by_tk: Dict[str, Dict[str, Any]] = {}
+    if isinstance(ai_doc.get("time_cycle_projections"), dict):
+        for k, v in ai_doc["time_cycle_projections"].items():
+            if isinstance(v, dict):
+                tc_by_tk[str(k).upper()] = v
     if isinstance(ai_doc.get("all_predictions"), list):
         for row in ai_doc["all_predictions"]:
             if isinstance(row, dict) and row.get("ticker"):
@@ -5678,6 +5710,7 @@ def build_latest_radar_snapshot(
     tickers_out: Dict[str, Dict[str, Any]] = {}
     for tk_u, (src, is_etf_flag) in raw_items.items():
         ai_item = ai_by_tk.get(tk_u, {})
+        tc_item = tc_by_tk.get(tk_u, {})
         meta_fallback = (MONITORED_TARGETS.get("ETFS", {}).get(tk_u) or MONITORED_TARGETS.get("STOCKS", {}).get(tk_u) or {})
         name = str(src.get("name") or meta_fallback.get("name") or tk_u)
         sub = str(src.get("sub") or meta_fallback.get("sub") or "")
@@ -5958,6 +5991,24 @@ def build_latest_radar_snapshot(
             "fib_low": _snap_opt_float(src.get("fib_low"), 2),
             "fib_high": _snap_opt_float(src.get("fib_high"), 2),
             "corridor": corridor_out,
+            "v46_regime_mode": str(tc_item.get("v46_regime_mode") or ai_item.get("v46_regime_mode") or "NORMAL_BASE"),
+            "bear_inertia_active": bool(
+                tc_item.get("bear_inertia_active")
+                if tc_item.get("bear_inertia_active") is not None
+                else ai_item.get("bear_inertia_active", False)
+            ),
+            "p15_t5_pct": _snap_opt_float(
+                tc_item.get("p15_t5_pct") if tc_item.get("p15_t5_pct") is not None else ai_item.get("p15_t5_pct"),
+                1,
+            ),
+            "p15_t15_pct": _snap_opt_float(
+                tc_item.get("p15_t15_pct") if tc_item.get("p15_t15_pct") is not None else ai_item.get("p15_t15_pct"),
+                1,
+            ),
+            "p85_t15_pct": _snap_opt_float(
+                tc_item.get("p85_t15_pct") if tc_item.get("p85_t15_pct") is not None else ai_item.get("p85_t15_pct"),
+                1,
+            ),
         }
 
     return {

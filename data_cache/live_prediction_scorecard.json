@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-23 02:22:47",
+  "updated_at": "2026-11-23 03:28:00",
   "win_rate_7d_pct": 73.9,
   "win_rate_30d_pct": 48.5,
   "long_win_rate_7d_pct": 11.5,
@@ -450,6 +450,13 @@
       "direction": "LONG",
       "pred_prob_pct": 55.0,
       "entry_price": 195.19
+    },
+    {
+      "ticker": "JPM",
+      "pred_date": "2026-11-23",
+      "direction": "SHORT",
+      "pred_prob_pct": 56.2,
+      "entry_price": 310.53
     }
   ],
   "daily_breakdown_30d": [

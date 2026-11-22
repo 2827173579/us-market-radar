@@ -3609,6 +3609,8 @@ def align_time_cycle_projections_with_live(
                 base_d = eq_day
 
         scale_ratio = (px / old_anchor) if old_anchor > 0 else 1.0
+        p15_list = item.get("path_p15") if isinstance(item.get("path_p15"), list) else []
+        p85_list = item.get("path_p85") if isinstance(item.get("path_p85"), list) else []
         cursor_d = base_d
         for d_i, p_obj in enumerate(projs):
             if not isinstance(p_obj, dict):
@@ -3636,11 +3638,64 @@ def align_time_cycle_projections_with_live(
                     cursor_d += timedelta(days=1)
                 p_obj["date"] = cursor_d.strftime("%Y-%m-%d")
 
+            def _scale_band_point(b_list, wr_key, px_key, pct_key, fallback_wr):
+                b_obj = b_list[d_i] if (d_i < len(b_list) and isinstance(b_list[d_i], dict)) else None
+                b_wr = None
+                if b_obj is not None and b_obj.get("wave_ret") is not None:
+                    b_wr = float(b_obj["wave_ret"])
+                elif p_obj.get(wr_key) is not None:
+                    b_wr = float(p_obj[wr_key])
+                elif b_obj is not None and old_anchor > 0 and b_obj.get("price") is not None:
+                    b_wr = (float(b_obj["price"]) - old_anchor) / old_anchor
+                elif old_anchor > 0 and p_obj.get(px_key) is not None:
+                    b_wr = (float(p_obj[px_key]) - old_anchor) / old_anchor
+                elif b_obj is not None and b_obj.get("pct") is not None:
+                    b_wr = float(b_obj["pct"]) / 100.0
+                elif p_obj.get(pct_key) is not None:
+                    b_wr = float(p_obj[pct_key]) / 100.0
+                else:
+                    b_wr = fallback_wr
+                b_p = round(px * (1.0 + b_wr), 2)
+                b_pct = round(((b_p - px) / (px + 1e-8)) * 100.0, 1)
+                if b_obj is not None:
+                    b_obj["wave_ret"] = round(b_wr, 6)
+                    b_obj["price"] = b_p
+                    b_obj["pct"] = b_pct
+                    b_obj["date"] = p_obj["date"]
+                return b_p, b_pct, round(b_wr, 6), b_obj
+
+            b15_p, b15_pct, b15_wr, b15_obj = _scale_band_point(p15_list, "p15_wave_ret", "p15_price", "p15_pct", w_ret)
+            b85_p, b85_pct, b85_wr, b85_obj = _scale_band_point(p85_list, "p85_wave_ret", "p85_price", "p85_pct", w_ret)
+            if b15_p > new_p:
+                b15_p, b15_pct = new_p, p_obj["pct"]
+                if b15_obj is not None:
+                    b15_obj["price"], b15_obj["pct"] = b15_p, b15_pct
+            if b85_p < new_p:
+                b85_p, b85_pct = new_p, p_obj["pct"]
+                if b85_obj is not None:
+                    b85_obj["price"], b85_obj["pct"] = b85_p, b85_pct
+            p_obj["p15_price"], p_obj["p15_pct"], p_obj["p15_wave_ret"] = b15_p, b15_pct, b15_wr
+            p_obj["p85_price"], p_obj["p85_pct"], p_obj["p85_wave_ret"] = b85_p, b85_pct, b85_wr
+
+        if p15_list:
+            item["p15_t5_pct"] = float(p15_list[min(4, len(p15_list) - 1)].get("pct", 0.0))
+            item["p15_t15_pct"] = float(p15_list[-1].get("pct", 0.0))
+        elif projs:
+            item["p15_t5_pct"] = float(projs[min(4, len(projs) - 1)].get("p15_pct", 0.0))
+            item["p15_t15_pct"] = float(projs[-1].get("p15_pct", 0.0))
+        if p85_list:
+            item["p85_t15_pct"] = float(p85_list[-1].get("pct", 0.0))
+        elif projs:
+            item["p85_t15_pct"] = float(projs[-1].get("p85_pct", 0.0))
+
         if by_ticker and isinstance(by_ticker.get(tk), dict):
             b_item = by_ticker[tk]
             if not _keep_live_on_card:
                 b_item["latest_price"] = px
                 b_item["current_price"] = px
+            for k_v46 in ("v46_regime_mode", "bear_inertia_active", "p15_t5_pct", "p15_t15_pct", "p85_t15_pct"):
+                if item.get(k_v46) is not None:
+                    b_item[k_v46] = item[k_v46]
             for k_lvl in (
                 "s1", "s2", "sl", "r1", "r2",
                 "anchor_s1", "anchor_s2", "anchor_sl", "anchor_r1", "anchor_r2",
@@ -3705,6 +3760,171 @@ def align_time_cycle_projections_with_live(
                         cw["type"] = "bottom"
                         cw["desc"] = "🔵 周期底回踩窗 (关注空头回补企稳)"
                         cw["tag"] = "周期底回踩窗 (企稳关注)"
+
+
+def compute_v46_c5_switch_flag(
+    qqq_bias50: float,
+    smh_bias50: float,
+    spy_bias50: float,
+    spy_bias20: float,
+    qqq_bias20: float,
+    breadth_ma20: float,
+    vixy_pos60: float,
+    vixy_bias20: float,
+    vix_proxy: float,
+    cur_tk_c: float,
+    cur_ema5: float,
+    cur_ema10: float,
+    cur_ema20: float,
+    cur_b20: float,
+    cur_b50: float,
+    cur_ret3: float,
+    cur_ret5: float,
+    cur_down4: float,
+    ticker: str = "",
+) -> Dict[str, Any]:
+    """
+    V4.6 C5 去孤立宽度误触的双态开关（100% 复现实验通过规则，零修改原数值阈值）:
+    - 取消 breadth_ma20 < 35.0 孤立单票触发权，需伴随 SPY/QQQ 均破 MA20、VIXY > MA20 且伴随 MA50 破位或 vix_proxy >= 25.0；
+    - 反向对冲 ETF (SQQQ / SOXS / VIXY) 固定维持 NORMAL_BASE，防止大盘暴跌期反向误压抑其对冲上行弹性。
+    """
+    breadth_confirmed_weak = bool(
+        (breadth_ma20 < 35.0)
+        and (spy_bias20 < 0.0 and qqq_bias20 < 0.0)
+        and (vixy_bias20 > 0.0)
+        and (spy_bias50 < 0.0 or qqq_bias50 < 0.0 or vix_proxy >= 25.0)
+    )
+    macro_bear_defense = bool(
+        (qqq_bias50 < -3.0 and smh_bias50 < -3.0)
+        or breadth_confirmed_weak
+        or (vixy_pos60 >= 0.75)
+        or (vixy_bias20 >= 8.0)
+    )
+    stock_deep_breakdown = bool(
+        (cur_tk_c < cur_ema5 < cur_ema10 < cur_ema20)
+        and (cur_b50 < -6.5)
+        and (cur_ret5 <= -5.0)
+        and (cur_down4 >= 3.0)
+    )
+    is_inverse_hedge = str(ticker or "").upper().strip() in ("SQQQ", "SOXS", "VIXY")
+    if is_inverse_hedge:
+        c5_switch_active = False
+    else:
+        c5_switch_active = bool(
+            (macro_bear_defense and (cur_tk_c < cur_ema10 or cur_ret3 < 0.0 or cur_b20 < 0.0))
+            or stock_deep_breakdown
+        )
+    return {
+        "c5_switch_active": c5_switch_active,
+        "macro_bear_defense": macro_bear_defense,
+        "stock_deep_breakdown": stock_deep_breakdown,
+        "breadth_confirmed_weak": breadth_confirmed_weak,
+        "v46_regime_mode": "BEAR_INERTIA_C5" if c5_switch_active else "NORMAL_BASE",
+    }
+
+
+def _prepare_v46_causal_regime_context(piv: pd.DataFrame, window_len: int = 25) -> Optional[Dict[str, Any]]:
+    """
+    仅使用 <= t 日已收盘行情因果构建 V4.6 宏观/个股体制面板与 Z-score 历史形态矩阵。
+    严格对齐 exp_v46_predictor_challenger.py，缺 SPY/VIXY 时平滑降级。
+    """
+    if piv is None or piv.empty or not {"SMH", "QQQ"}.issubset(set(piv.columns)):
+        return None
+    piv_close = piv.sort_index().copy()
+    if "SPY" in piv_close.columns:
+        piv_close = piv_close[piv_close["SPY"].notna()].copy()
+    piv_close = piv_close.dropna(subset=["SMH", "QQQ"])
+    n_dates = len(piv_close)
+    if n_dates < window_len + 20:
+        return None
+
+    ema5 = piv_close.ewm(span=5, adjust=False).mean()
+    ema10 = piv_close.ewm(span=10, adjust=False).mean()
+    ema20 = piv_close.ewm(span=20, adjust=False).mean()
+    ma20 = piv_close.rolling(20, min_periods=10).mean()
+    ma50 = piv_close.rolling(50, min_periods=20).mean()
+
+    ret1 = piv_close.pct_change(1) * 100.0
+    ret3 = piv_close.pct_change(3) * 100.0
+    ret5 = piv_close.pct_change(5) * 100.0
+    down_days_4 = (ret1 < 0).astype(float).rolling(4, min_periods=1).sum()
+
+    bias20 = ((piv_close - ma20) / (ma20 + 1e-8) * 100.0).fillna(0.0)
+    bias50 = ((piv_close - ma50) / (ma50 + 1e-8) * 100.0).fillna(0.0)
+
+    non_lev_cols = [c for c in piv_close.columns if c not in ("SQQQ", "SOXS", "VIXY", "TLT", "GLD", "XAUUSD", "BTC-USD")]
+    if non_lev_cols:
+        breadth_ma20 = ((piv_close[non_lev_cols] >= ma20[non_lev_cols]).mean(axis=1) * 100.0).fillna(50.0)
+    else:
+        breadth_ma20 = pd.Series(50.0, index=piv_close.index)
+
+    if "VIXY" in piv_close.columns and piv_close["VIXY"].notna().sum() >= 15:
+        vixy_c = piv_close["VIXY"]
+        vixy_ma20 = vixy_c.rolling(20, min_periods=10).mean()
+        vixy_bias20 = ((vixy_c - vixy_ma20) / (vixy_ma20 + 1e-8) * 100.0).fillna(0.0)
+        vixy_low60 = vixy_c.rolling(60, min_periods=15).min()
+        vixy_high60 = vixy_c.rolling(60, min_periods=15).max()
+        vixy_pos60 = ((vixy_c - vixy_low60) / (vixy_high60 - vixy_low60 + 1e-8)).clip(0.0, 1.0).fillna(0.5)
+    else:
+        vixy_bias20 = pd.Series(0.0, index=piv_close.index)
+        vixy_pos60 = pd.Series(0.5, index=piv_close.index)
+
+    ref_idx_col = "SPY" if "SPY" in piv_close.columns else "QQQ"
+    spy_rvol10 = (piv_close[ref_idx_col].pct_change().rolling(10, min_periods=5).std() * np.sqrt(252.0) * 100.0).fillna(12.0)
+    vix_proxy = (
+        14.0
+        + 0.55 * vixy_bias20.clip(lower=0.0)
+        + 14.0 * vixy_pos60
+        + 0.35 * (spy_rvol10 - 12.0).clip(lower=0.0)
+    )
+
+    spy_b20 = bias20[ref_idx_col].fillna(0.0)
+    qqq_b20 = bias20["QQQ"].fillna(0.0)
+    smh_b20 = bias20["SMH"].fillna(0.0)
+
+    is_bear_or_panic = (
+        (vix_proxy >= 25.0)
+        | (vixy_bias20 >= 6.0)
+        | ((spy_b20 < -0.5) & (breadth_ma20 < 42.0))
+        | ((qqq_b20 < -1.0) & (smh_b20 < -1.5))
+    ).values
+
+    smh_vals = piv_close["SMH"].values.astype(float)
+    qqq_vals = piv_close["QQQ"].values.astype(float)
+    norm_smh = np.full((n_dates, window_len), np.nan, dtype=float)
+    norm_qqq = np.full((n_dates, window_len), np.nan, dtype=float)
+    for i in range(0, n_dates - window_len + 1):
+        w_s = smh_vals[i:i + window_len]
+        w_q = qqq_vals[i:i + window_len]
+        if not np.isnan(w_s).any() and not np.isnan(w_q).any():
+            std_s = np.std(w_s)
+            std_q = np.std(w_q)
+            if std_s > 1e-8 and std_q > 1e-8:
+                norm_smh[i] = (w_s - np.mean(w_s)) / std_s
+                norm_qqq[i] = (w_q - np.mean(w_q)) / std_q
+
+    return {
+        "dates": piv_close.index,
+        "n_dates": n_dates,
+        "piv_close": piv_close,
+        "ref_idx_col": ref_idx_col,
+        "ema5": ema5,
+        "ema10": ema10,
+        "ema20": ema20,
+        "ret1": ret1.fillna(0.0),
+        "ret3": ret3.fillna(0.0),
+        "ret5": ret5.fillna(0.0),
+        "down_days_4": down_days_4.fillna(0.0),
+        "bias20": bias20,
+        "bias50": bias50,
+        "breadth_ma20": breadth_ma20.values,
+        "vix_proxy": vix_proxy.values,
+        "vixy_bias20": vixy_bias20.values,
+        "vixy_pos60": vixy_pos60.values,
+        "is_bear_or_panic": is_bear_or_panic,
+        "norm_smh": norm_smh,
+        "norm_qqq": norm_qqq,
+    }
 
 
 def generate_time_cycle_projections(
@@ -3777,16 +3997,20 @@ def generate_time_cycle_projections(
 
     window_len = 25
 
-    # 若包含完整多标的面板 (SMH 与 QQQ 均存在且长度充足)，预计算全局 Top-5 联合历史相似时间窗
+    # 若包含完整多标的面板 (SMH 与 QQQ 均存在且长度充足)，预计算全局 Top-5 联合历史相似时间窗与 V4.6 因果体制上下文
     piv = None
+    ctx_v46 = None
     joint_top_k = []
     joint_weights = None
     try:
         if 'Date' in combined_panel.columns and {'SMH', 'QQQ'}.issubset(set(combined_panel['Ticker'].unique())):
             piv = combined_panel.pivot(index='Date', columns='Ticker', values='Close').sort_index()
             valid_piv = piv.dropna(subset=['SMH', 'QQQ'])
+            if 'SPY' in valid_piv.columns:
+                valid_piv = valid_piv[valid_piv['SPY'].notna()]
             if len(valid_piv) > window_len + forecast_days + 120:
                 piv = valid_piv
+                ctx_v46 = _prepare_v46_causal_regime_context(piv, window_len=window_len)
                 dates_idx = piv.index
                 n_piv = len(piv)
                 # 仅在扩展库与主库共同覆盖的近 4 年区间 (2023-02 以后) 检索同日窗口，确保 SOXL/SOXS/KORU 等均有真实同日数据
@@ -3801,7 +4025,11 @@ def generate_time_cycle_projections(
                     cur_b1_smh = (t_smh[-1] - t_smh[-2]) / (t_smh[-2] + 1e-8)
 
                     raw_cands = []
+                    t_idx_piv = n_piv - 1
                     for i in range(start_i, end_i):
+                        e_idx_cand = i + window_len - 1
+                        if e_idx_cand > (t_idx_piv - 16):
+                            raise AssertionError(f"Lookahead violation in joint search: e_idx={e_idx_cand} > t_idx-16={t_idx_piv - 16}")
                         c_smh = piv['SMH'].values[i:i + window_len]
                         c_qqq = piv['QQQ'].values[i:i + window_len]
                         corr_s = float(np.corrcoef(n_smh, (c_smh - np.mean(c_smh)) / (np.std(c_smh) + 1e-8))[0, 1])
@@ -3825,9 +4053,12 @@ def generate_time_cycle_projections(
                     if joint_top_k:
                         w_arr = np.array([max(0.1, c[0]) ** 2 for c in joint_top_k], dtype=float)
                         joint_weights = w_arr / np.sum(w_arr)
+    except AssertionError:
+        raise
     except Exception:
         joint_top_k = []
         joint_weights = None
+        ctx_v46 = None
 
     _ipo_default_prices = {'ANT': 83.0}
     for tk in target_tickers:
@@ -3884,9 +4115,27 @@ def generate_time_cycle_projections(
                 'sr_anchor_locked': bool(sc_info.get('sr_anchor_locked', False)),
                 'history': hist_entries_short[-20:],
                 'projection': [
+                    {
+                        'day': f'T+{d_i + 1}', 'date': dt_s, 'price': cp, 'pct': 0.0, 'wave_ret': 0.0,
+                        'p15_price': cp, 'p15_pct': 0.0, 'p15_wave_ret': 0.0,
+                        'p85_price': cp, 'p85_pct': 0.0, 'p85_wave_ret': 0.0,
+                    }
+                    for d_i, dt_s in enumerate(_short_dates)
+                ],
+                'path_p15': [
                     {'day': f'T+{d_i + 1}', 'date': dt_s, 'price': cp, 'pct': 0.0, 'wave_ret': 0.0}
                     for d_i, dt_s in enumerate(_short_dates)
                 ],
+                'path_p85': [
+                    {'day': f'T+{d_i + 1}', 'date': dt_s, 'price': cp, 'pct': 0.0, 'wave_ret': 0.0}
+                    for d_i, dt_s in enumerate(_short_dates)
+                ],
+                'v46_regime_mode': 'NORMAL_BASE',
+                'bear_inertia_active': False,
+                'fft_weight': 0.0,
+                'p15_t5_pct': 0.0,
+                'p15_t15_pct': 0.0,
+                'p85_t15_pct': 0.0,
                 'cycle_windows': [],
                 'analog_match': {
                     'period': '🆕 IPO 新股上市期 (待积累5日K线)',
@@ -4019,93 +4268,352 @@ def generate_time_cycle_projections(
         # 消除谐波首尾线性趋势漂移，仅保留纯粹的周期振荡波形 (t=0 与 t=T 归零，绝不人为制造虚假斜率)
         harm_osc = harm_pct - np.linspace(harm_pct[0], harm_pct[-1], forecast_days)
 
-        # 2. KNN-5 同日联合历史相似路径提取 (若为单标的测试面板则回退至单标的历史匹配)
+        # 2. V4.6 C5 非对称双态判定与 Top-K 历史相似路径提取
+        c5_info = {
+            "c5_switch_active": False,
+            "macro_bear_defense": False,
+            "stock_deep_breakdown": False,
+            "breadth_confirmed_weak": False,
+            "v46_regime_mode": "NORMAL_BASE",
+        }
+        use_c5_bear = False
+        c3_done = False
         analog_ret = None
+        comb_ret = None
+        p15_ret = None
+        p85_ret = None
+        raw_paths_list = []
+        fft_weight = 0.50
         best_period = "2024-07-05 ~ 2024-08-08"
         best_corr = 0.85
 
-        if tk != 'BTC-USD' and piv is not None and joint_top_k and joint_weights is not None and tk in piv.columns:
-            col_vals = piv[tk].values
-            acc_ret = np.zeros(forecast_days, dtype=float)
-            acc_w = 0.0
-            for w_val, (c_score, idx_h, s_dt, e_dt) in zip(joint_weights, joint_top_k):
-                base_v = col_vals[idx_h + window_len - 1]
-                fut_v = col_vals[idx_h + window_len:idx_h + window_len + forecast_days]
-                if pd.notna(base_v) and base_v > 0 and len(fut_v) == forecast_days and not np.isnan(fut_v).any():
-                    r_p = np.clip((fut_v - base_v) / base_v, -0.35, 0.35)
-                    acc_ret += w_val * r_p
-                    acc_w += w_val
-            if acc_w > 0:
-                analog_ret = acc_ret / acc_w
-                best_corr = float(joint_top_k[0][0])
-                best_period = f"{joint_top_k[0][2]} ~ {joint_top_k[0][3]} (KNN-5 联合同日)"
+        if tk != 'BTC-USD' and ctx_v46 is not None and tk in ctx_v46["piv_close"].columns:
+            t_idx_c5 = ctx_v46["n_dates"] - 1
+            tk_piv_vals = ctx_v46["piv_close"][tk].values.astype(float)
+            valid_tk_cnt = int(np.sum(~np.isnan(tk_piv_vals)))
+            q_start_c5 = t_idx_c5 - window_len + 1
+            if valid_tk_cnt >= 40 and q_start_c5 >= 0 and not np.isnan(tk_piv_vals[t_idx_c5]):
+                ref_idx_col = ctx_v46["ref_idx_col"]
+                cur_tk_c = float(tk_piv_vals[t_idx_c5])
+                cur_ema5 = float(ctx_v46["ema5"][tk].iloc[t_idx_c5])
+                cur_ema10 = float(ctx_v46["ema10"][tk].iloc[t_idx_c5])
+                cur_ema20 = float(ctx_v46["ema20"][tk].iloc[t_idx_c5])
+                cur_b20 = float(ctx_v46["bias20"][tk].iloc[t_idx_c5])
+                cur_b50 = float(ctx_v46["bias50"][tk].iloc[t_idx_c5])
+                cur_ret1 = float(ctx_v46["ret1"][tk].iloc[t_idx_c5])
+                cur_ret3 = float(ctx_v46["ret3"][tk].iloc[t_idx_c5])
+                cur_ret5 = float(ctx_v46["ret5"][tk].iloc[t_idx_c5])
+                cur_down4 = float(ctx_v46["down_days_4"][tk].iloc[t_idx_c5])
+                c5_info = compute_v46_c5_switch_flag(
+                    qqq_bias50=float(ctx_v46["bias50"]["QQQ"].iloc[t_idx_c5]),
+                    smh_bias50=float(ctx_v46["bias50"]["SMH"].iloc[t_idx_c5]),
+                    spy_bias50=float(ctx_v46["bias50"][ref_idx_col].iloc[t_idx_c5]),
+                    spy_bias20=float(ctx_v46["bias20"][ref_idx_col].iloc[t_idx_c5]),
+                    qqq_bias20=float(ctx_v46["bias20"]["QQQ"].iloc[t_idx_c5]),
+                    breadth_ma20=float(ctx_v46["breadth_ma20"][t_idx_c5]),
+                    vixy_pos60=float(ctx_v46["vixy_pos60"][t_idx_c5]),
+                    vixy_bias20=float(ctx_v46["vixy_bias20"][t_idx_c5]),
+                    vix_proxy=float(ctx_v46["vix_proxy"][t_idx_c5]),
+                    cur_tk_c=cur_tk_c,
+                    cur_ema5=cur_ema5,
+                    cur_ema10=cur_ema10,
+                    cur_ema20=cur_ema20,
+                    cur_b20=cur_b20,
+                    cur_b50=cur_b50,
+                    cur_ret3=cur_ret3,
+                    cur_ret5=cur_ret5,
+                    cur_down4=cur_down4,
+                    ticker=tk,
+                )
+                use_c5_bear = bool(c5_info["c5_switch_active"])
 
-        if analog_ret is None:
-            # 单测或独立标的后备匹配
-            target_win = closes[-window_len:] if n >= window_len else closes
-            w_len = len(target_win)
-            norm_target = (target_win - np.mean(target_win)) / (np.std(target_win) + 1e-6)
-            search_end = max(1, n - w_len - forecast_days - (60 if n > w_len + forecast_days + 60 else 0))
-            best_c = -1.0
-            best_r = np.zeros(forecast_days, dtype=float)
-            for i in range(0, search_end):
-                cand_win = closes[i:i + w_len]
-                std_c = np.std(cand_win)
-                if std_c < 1e-4:
-                    continue
-                corr = float(np.corrcoef(norm_target, (cand_win - np.mean(cand_win)) / std_c)[0, 1])
-                if corr > best_c:
-                    best_c = corr
+                if use_c5_bear:
+                    q_tk_win = tk_piv_vals[q_start_c5:q_start_c5 + window_len]
+                    max_i_c3 = t_idx_c5 - 16 - (window_len - 1)
+                    if (not np.isnan(q_tk_win).any()) and np.std(q_tk_win) > 1e-8 and max_i_c3 > 0:
+                        t_smh_n = ctx_v46["norm_smh"][q_start_c5]
+                        t_qqq_n = ctx_v46["norm_qqq"][q_start_c5]
+                        t_tk_n = (q_tk_win - np.mean(q_tk_win)) / np.std(q_tk_win)
+                        if (not np.isnan(t_smh_n).any()) and (not np.isnan(t_qqq_n).any()):
+                            norm_tk_mat = np.full((ctx_v46["n_dates"], window_len), np.nan, dtype=float)
+                            for i_w in range(0, max_i_c3 + 1):
+                                w_t = tk_piv_vals[i_w:i_w + window_len]
+                                if not np.isnan(w_t).any():
+                                    sd_t = np.std(w_t)
+                                    if sd_t > 1e-8:
+                                        norm_tk_mat[i_w] = (w_t - np.mean(w_t)) / sd_t
+
+                            cur_bear_panic = bool(ctx_v46["is_bear_or_panic"][t_idx_c5])
+                            cur_vix = float(ctx_v46["vix_proxy"][t_idx_c5])
+                            cur_spy_b20 = float(ctx_v46["bias20"][ref_idx_col].iloc[t_idx_c5])
+                            cur_breadth = float(ctx_v46["breadth_ma20"][t_idx_c5])
+
+                            m_smh_c3 = ctx_v46["norm_smh"][:max_i_c3 + 1]
+                            m_qqq_c3 = ctx_v46["norm_qqq"][:max_i_c3 + 1]
+                            m_tk_c3 = norm_tk_mat[:max_i_c3 + 1]
+                            corr_s_c3 = (m_smh_c3 @ t_smh_n) / window_len
+                            corr_q_c3 = (m_qqq_c3 @ t_qqq_n) / window_len
+                            corr_t_c3 = (m_tk_c3 @ t_tk_n) / window_len
+                            j_corr_c3 = 0.45 * corr_s_c3 + 0.25 * corr_q_c3 + 0.30 * corr_t_c3
+
+                            tk_ret5_series = ctx_v46["ret5"][tk].values
+                            spy_b20_series = ctx_v46["bias20"][ref_idx_col].values
+                            vix_series = ctx_v46["vix_proxy"]
+                            breadth_series = ctx_v46["breadth_ma20"]
+                            bear_panic_series = ctx_v46["is_bear_or_panic"]
+
+                            strict_cands = []
+                            relaxed_cands = []
+                            for i_c3 in range(len(j_corr_c3)):
+                                sim = float(j_corr_c3[i_c3])
+                                if np.isnan(sim):
+                                    continue
+                                e_idx_c3 = i_c3 + window_len - 1
+                                if e_idx_c3 > (t_idx_c5 - 16):
+                                    raise AssertionError(
+                                        f"Lookahead violation in C3 bear search: e_idx={e_idx_c3} > t_idx-16={t_idx_c5 - 16}"
+                                    )
+                                base_v = tk_piv_vals[e_idx_c3]
+                                fut_v = tk_piv_vals[e_idx_c3 + 1:e_idx_c3 + 1 + forecast_days]
+                                if np.isnan(base_v) or base_v <= 0 or len(fut_v) != forecast_days or np.isnan(fut_v).any():
+                                    continue
+
+                                r_p = np.clip((fut_v - base_v) / base_v, -0.35, 0.35)
+                                h_bear_panic = bool(bear_panic_series[e_idx_c3])
+                                h_vix = float(vix_series[e_idx_c3])
+                                h_spy_b20 = float(spy_b20_series[e_idx_c3])
+                                h_breadth = float(breadth_series[e_idx_c3])
+                                h_tk_ret5 = float(tk_ret5_series[e_idx_c3]) if not np.isnan(tk_ret5_series[e_idx_c3]) else 0.0
+                                regime_dist = (
+                                    0.03 * abs(cur_vix - h_vix)
+                                    + 0.05 * abs(cur_spy_b20 - h_spy_b20)
+                                    + 0.015 * abs(cur_breadth - h_breadth)
+                                    + 0.03 * abs(cur_ret5 - h_tk_ret5)
+                                )
+                                is_same_regime = h_bear_panic or (h_spy_b20 < -1.0 and h_vix >= 21.5) or (h_tk_ret5 < -3.0)
+                                score_c3 = sim - 0.16 * regime_dist
+                                if is_same_regime:
+                                    strict_cands.append((score_c3, i_c3, r_p, sim))
+                                else:
+                                    relaxed_cands.append((score_c3 - 0.55, i_c3, r_p, sim))
+
+                            strict_cands.sort(key=lambda x: x[0], reverse=True)
+                            top_k_c3 = []
+                            for cand in strict_cands:
+                                if all(abs(cand[1] - prev[1]) >= 20 for prev in top_k_c3):
+                                    top_k_c3.append(cand)
+                                if len(top_k_c3) == 8:
+                                    break
+                            if len(top_k_c3) < 5 and relaxed_cands:
+                                relaxed_cands.sort(key=lambda x: x[0], reverse=True)
+                                for cand in relaxed_cands:
+                                    if all(abs(cand[1] - prev[1]) >= 20 for prev in top_k_c3):
+                                        top_k_c3.append(cand)
+                                    if len(top_k_c3) == 8:
+                                        break
+
+                            if top_k_c3:
+                                top5_c3 = top_k_c3[:5]
+                                w5_c3 = np.array([max(0.1, c[0] + 0.5) ** 2 for c in top5_c3], dtype=float)
+                                w5_c3 /= np.sum(w5_c3)
+                                analog_5 = np.zeros(forecast_days, dtype=float)
+                                for w_val, (_, _, r_p, _) in zip(w5_c3, top5_c3):
+                                    analog_5 += w_val * r_p
+
+                                fft_weight = 0.0
+                                c2_ret = 0.55 * analog_5
+                                raw_paths = np.array([c[2] for c in top_k_c3], dtype=float)
+                                raw_p15 = np.percentile(raw_paths, 15, axis=0)
+                                raw_p50 = np.percentile(raw_paths, 50, axis=0)
+                                raw_p85 = np.percentile(raw_paths, 85, axis=0)
+                                p50_ret = np.percentile(0.55 * raw_paths, 50, axis=0)
+
+                                has_right_side_stab = bool(cur_tk_c > cur_ema5 and cur_ret1 >= 1.2)
+                                bear_inertia_gate = bool(
+                                    (cur_bear_panic or (cur_b20 < -5.0 and cur_ret5 < -4.0))
+                                    and ((cur_tk_c < cur_ema5 < cur_ema10) or (cur_tk_c < cur_ema10 < cur_ema20 and cur_ret3 < -1.5))
+                                    and not has_right_side_stab
+                                )
+                                horizons_arr = np.arange(1, forecast_days + 1, dtype=float)
+                                if bear_inertia_gate:
+                                    base_mid = 0.5 * c2_ret + 0.5 * p50_ret
+                                    damped_mid = np.where(base_mid > 0.0, base_mid * 0.45, base_mid)
+                                    inertia_drag = np.clip(0.22 * (cur_ret3 / 100.0), -0.035, 0.0) * np.exp(-horizons_arr / 4.5)
+                                    comb_ret = damped_mid + inertia_drag
+                                else:
+                                    inertia_drag = np.zeros(forecast_days, dtype=float)
+                                    comb_ret = c2_ret.copy()
+
+                                down_spread = np.minimum(-0.008, raw_p15 - raw_p50)
+                                p15_damped = np.where(raw_p15 > 0.0, raw_p15 * 0.55 * 0.45, raw_p15) + 0.5 * inertia_drag
+                                p15_ret = np.minimum(comb_ret + down_spread, p15_damped)
+                                up_spread = np.maximum(0.008, 0.65 * (raw_p85 - raw_p50))
+                                p85_cand = np.where(raw_p85 > 0.0, 0.65 * raw_p85, 0.55 * raw_p85)
+                                p85_ret = np.maximum(comb_ret + up_spread, p85_cand)
+
+                                dates_c3 = ctx_v46["dates"]
+                                best_c3 = top_k_c3[0]
+                                b_s_dt = dates_c3[best_c3[1]].strftime('%Y-%m-%d')
+                                b_e_dt = dates_c3[best_c3[1] + window_len - 1].strftime('%Y-%m-%d')
+                                best_period = f"{b_s_dt} ~ {b_e_dt} (C5 恐慌同境)"
+                                best_corr = float(max(0.50, best_c3[3]))
+                                c3_done = True
+
+        if not c3_done:
+            use_c5_bear = False
+            c5_info["c5_switch_active"] = False
+            c5_info["v46_regime_mode"] = "NORMAL_BASE"
+            fft_weight = 0.50
+
+            if tk != 'BTC-USD' and piv is not None and joint_top_k and joint_weights is not None and tk in piv.columns:
+                col_vals = piv[tk].values
+                acc_ret = np.zeros(forecast_days, dtype=float)
+                acc_w = 0.0
+                for w_val, (c_score, idx_h, s_dt, e_dt) in zip(joint_weights, joint_top_k):
+                    base_v = col_vals[idx_h + window_len - 1]
+                    fut_v = col_vals[idx_h + window_len:idx_h + window_len + forecast_days]
+                    if pd.notna(base_v) and base_v > 0 and len(fut_v) == forecast_days and not np.isnan(fut_v).any():
+                        r_p = np.clip((fut_v - base_v) / base_v, -0.35, 0.35)
+                        acc_ret += w_val * r_p
+                        acc_w += w_val
+                        raw_paths_list.append(r_p)
+                if acc_w > 0:
+                    analog_ret = acc_ret / acc_w
+                    best_corr = float(joint_top_k[0][0])
+                    best_period = f"{joint_top_k[0][2]} ~ {joint_top_k[0][3]} (KNN-5 联合同日)"
+
+            if analog_ret is None:
+                # 单测或独立标的后备匹配
+                target_win = closes[-window_len:] if n >= window_len else closes
+                w_len = len(target_win)
+                norm_target = (target_win - np.mean(target_win)) / (np.std(target_win) + 1e-6)
+                search_end = max(1, n - w_len - forecast_days - (60 if n > w_len + forecast_days + 60 else 0))
+                t_idx_fb = n - 1
+                best_c = -1.0
+                best_r = np.zeros(forecast_days, dtype=float)
+                fb_cands = []
+                for i in range(0, search_end):
+                    e_idx_fb = i + w_len - 1
+                    if n >= w_len + forecast_days + 16 and e_idx_fb > (t_idx_fb - 16):
+                        raise AssertionError(
+                            f"Lookahead violation in fallback search: e_idx={e_idx_fb} > t_idx-16={t_idx_fb - 16}"
+                        )
+                    cand_win = closes[i:i + w_len]
+                    std_c = np.std(cand_win)
+                    if std_c < 1e-4:
+                        continue
+                    corr = float(np.corrcoef(norm_target, (cand_win - np.mean(cand_win)) / std_c)[0, 1])
                     fut_raw = closes[i + w_len:i + w_len + forecast_days]
-                    if len(fut_raw) == forecast_days:
-                        best_r = np.clip((fut_raw - cand_win[-1]) / (cand_win[-1] + 1e-8), -0.35, 0.35)
-                    if 'Date' in sub.columns:
-                        dt_s = sub.at[i, 'Date']
-                        dt_e = sub.at[min(n - 1, i + w_len - 1), 'Date']
-                        s_str = dt_s.strftime('%Y-%m-%d') if hasattr(dt_s, 'strftime') else str(dt_s)[:10]
-                        e_str = dt_e.strftime('%Y-%m-%d') if hasattr(dt_e, 'strftime') else str(dt_e)[:10]
-                        best_period = f"{s_str} ~ {e_str}"
-            analog_ret = best_r
-            best_corr = max(0.50, best_c)
+                    r_p_fb = np.clip((fut_raw - cand_win[-1]) / (cand_win[-1] + 1e-8), -0.35, 0.35) if len(fut_raw) == forecast_days else None
+                    if r_p_fb is not None and not np.isnan(corr):
+                        fb_cands.append((corr, i, r_p_fb))
+                    if corr > best_c:
+                        best_c = corr
+                        if r_p_fb is not None:
+                            best_r = r_p_fb
+                        if 'Date' in sub.columns:
+                            dt_s = sub.at[i, 'Date']
+                            dt_e = sub.at[min(n - 1, i + w_len - 1), 'Date']
+                            s_str = dt_s.strftime('%Y-%m-%d') if hasattr(dt_s, 'strftime') else str(dt_s)[:10]
+                            e_str = dt_e.strftime('%Y-%m-%d') if hasattr(dt_e, 'strftime') else str(dt_e)[:10]
+                            best_period = f"{s_str} ~ {e_str}"
+                analog_ret = best_r
+                best_corr = max(0.50, best_c)
+                if fb_cands:
+                    fb_cands.sort(key=lambda x: x[0], reverse=True)
+                    top_fb = []
+                    for fc in fb_cands:
+                        if all(abs(fc[1] - prev[1]) >= max(5, w_len // 2) for prev in top_fb):
+                            top_fb.append(fc)
+                        if len(top_fb) == 5:
+                            break
+                    raw_paths_list = [fc[2] for fc in top_fb]
+                if not raw_paths_list:
+                    raw_paths_list = [best_r]
 
-        # 每只标的独立 Top-1 历史相似区间（即使联合路径可用，也不能复用大盘同一日期）
-        _target_win_ind = closes[-window_len:] if n >= window_len else closes
-        _w_len_ind = len(_target_win_ind)
-        if _w_len_ind >= 8:
-            _norm_target_ind = (_target_win_ind - np.mean(_target_win_ind)) / (np.std(_target_win_ind) + 1e-6)
-            _search_end_ind = min(max(1, n - _w_len_ind - forecast_days - (60 if n > _w_len_ind + forecast_days + 60 else 0)), n - _w_len_ind)
-            _best_c_ind = -1.0
-            _best_period_ind = best_period
-            for _i in range(0, _search_end_ind):
-                _cand = closes[_i:_i + _w_len_ind]
-                _std = np.std(_cand)
-                if _std < 1e-4 or len(_cand) != _w_len_ind:
-                    continue
-                _corr = float(np.corrcoef(_norm_target_ind, (_cand - np.mean(_cand)) / _std)[0, 1])
-                if _corr > _best_c_ind:
-                    _best_c_ind = _corr
-                    if 'Date' in sub.columns:
-                        _ds = sub.at[_i, 'Date']
-                        _de = sub.at[min(n - 1, _i + _w_len_ind - 1), 'Date']
-                        _s_str = _ds.strftime('%Y-%m-%d') if hasattr(_ds, 'strftime') else str(_ds)[:10]
-                        _e_str = _de.strftime('%Y-%m-%d') if hasattr(_de, 'strftime') else str(_de)[:10]
-                        _best_period_ind = f"{_s_str} ~ {_e_str}"
-            if _best_c_ind > -1:
-                best_corr = max(0.50, _best_c_ind)
-                best_period = _best_period_ind
+            # 每只标的独立 Top-1 历史相似区间（即使联合路径可用，也不能复用大盘同一日期）
+            _target_win_ind = closes[-window_len:] if n >= window_len else closes
+            _w_len_ind = len(_target_win_ind)
+            if _w_len_ind >= 8:
+                _norm_target_ind = (_target_win_ind - np.mean(_target_win_ind)) / (np.std(_target_win_ind) + 1e-6)
+                _search_end_ind = min(max(1, n - _w_len_ind - forecast_days - (60 if n > _w_len_ind + forecast_days + 60 else 0)), n - _w_len_ind)
+                _best_c_ind = -1.0
+                _best_period_ind = best_period
+                for _i in range(0, _search_end_ind):
+                    _cand = closes[_i:_i + _w_len_ind]
+                    _std = np.std(_cand)
+                    if _std < 1e-4 or len(_cand) != _w_len_ind:
+                        continue
+                    _corr = float(np.corrcoef(_norm_target_ind, (_cand - np.mean(_cand)) / _std)[0, 1])
+                    if _corr > _best_c_ind:
+                        _best_c_ind = _corr
+                        if 'Date' in sub.columns:
+                            _ds = sub.at[_i, 'Date']
+                            _de = sub.at[min(n - 1, _i + _w_len_ind - 1), 'Date']
+                            _s_str = _ds.strftime('%Y-%m-%d') if hasattr(_ds, 'strftime') else str(_ds)[:10]
+                            _e_str = _de.strftime('%Y-%m-%d') if hasattr(_de, 'strftime') else str(_de)[:10]
+                            _best_period_ind = f"{_s_str} ~ {_e_str}"
+                if _best_c_ind > -1:
+                    best_corr = max(0.50, _best_c_ind)
+                    best_period = _best_period_ind
 
-        # 3. 真实融合: 0.55x James-Stein 样本外历史相似路径收缩 + 0.50x 纯零漂移 FFT 谐波振荡
-        comb_ret = 0.55 * analog_ret + 0.50 * harm_osc
+            # 3. 真实融合 (常态 Base 100% 逐位一致): 0.55x James-Stein 样本外历史相似路径收缩 + 0.50x 纯零漂移 FFT 谐波振荡
+            comb_ret = 0.55 * analog_ret + 0.50 * harm_osc
+            raw_paths_norm = np.array(raw_paths_list if raw_paths_list else [analog_ret], dtype=float)
+            shrunk_paths = 0.55 * raw_paths_norm + (0.50 * harm_osc)[None, :]
+            raw_p15 = np.percentile(raw_paths_norm, 15, axis=0)
+            raw_p50 = np.percentile(raw_paths_norm, 50, axis=0)
+            down_spread = np.minimum(-0.005, raw_p15 - raw_p50)
+            p15_ret = np.minimum(comb_ret + down_spread, np.minimum(raw_p15, np.percentile(shrunk_paths, 15, axis=0)))
+            shrunk_p50 = np.percentile(shrunk_paths, 50, axis=0)
+            shrunk_p85 = np.percentile(shrunk_paths, 85, axis=0)
+            up_spread = np.maximum(0.005, shrunk_p85 - shrunk_p50)
+            p85_ret = np.maximum(comb_ret + up_spread, shrunk_p85)
+
+        p15_ret = np.minimum(p15_ret, comb_ret)
+        p85_ret = np.maximum(p85_ret, comb_ret)
         final_prices = cur_p * (1.0 + comb_ret)
+        p15_prices = cur_p * (1.0 + p15_ret)
+        p85_prices = cur_p * (1.0 + p85_ret)
 
         projections = []
-        for d_idx, (dt_str, p_val) in enumerate(zip(use_dates, final_prices)):
+        path_p15 = []
+        path_p85 = []
+        for d_idx, (dt_str, p_val, p15_val, p85_val) in enumerate(zip(use_dates, final_prices, p15_prices, p85_prices)):
+            main_p = round(float(p_val), 2)
+            main_pct = round(float((p_val - cur_p) / (cur_p + 1e-8) * 100.0), 1)
+            b15_p = min(main_p, round(float(p15_val), 2))
+            b15_pct = min(main_pct, round(float((b15_p - cur_p) / (cur_p + 1e-8) * 100.0), 1))
+            b85_p = max(main_p, round(float(p85_val), 2))
+            b85_pct = max(main_pct, round(float((b85_p - cur_p) / (cur_p + 1e-8) * 100.0), 1))
+            w_p15 = round(float(min(p15_ret[d_idx], comb_ret[d_idx])), 6)
+            w_p85 = round(float(max(p85_ret[d_idx], comb_ret[d_idx])), 6)
             projections.append({
                 'day': f"T+{d_idx + 1}",
                 'date': dt_str,
-                'price': round(float(p_val), 2),
-                'pct': round(float((p_val - cur_p) / (cur_p + 1e-8) * 100.0), 1),
-                'wave_ret': round(float(comb_ret[d_idx]), 6)
+                'price': main_p,
+                'pct': main_pct,
+                'wave_ret': round(float(comb_ret[d_idx]), 6),
+                'p15_price': b15_p,
+                'p15_pct': b15_pct,
+                'p15_wave_ret': w_p15,
+                'p85_price': b85_p,
+                'p85_pct': b85_pct,
+                'p85_wave_ret': w_p85,
+            })
+            path_p15.append({
+                'day': f"T+{d_idx + 1}",
+                'date': dt_str,
+                'price': b15_p,
+                'pct': b15_pct,
+                'wave_ret': w_p15,
+            })
+            path_p85.append({
+                'day': f"T+{d_idx + 1}",
+                'date': dt_str,
+                'price': b85_p,
+                'pct': b85_pct,
+                'wave_ret': w_p85,
             })
 
         hist_20 = hist_entries[-20:]
@@ -4156,6 +4664,14 @@ def generate_time_cycle_projections(
             'sr_anchor_locked': bool(sc_levels.get('sr_anchor_locked', False)),
             'history': hist_20,
             'projection': projections,
+            'path_p15': path_p15,
+            'path_p85': path_p85,
+            'v46_regime_mode': c5_info["v46_regime_mode"],
+            'bear_inertia_active': bool(use_c5_bear),
+            'fft_weight': float(fft_weight),
+            'p15_t5_pct': float(path_p15[min(4, len(path_p15) - 1)]['pct']) if path_p15 else 0.0,
+            'p15_t15_pct': float(path_p15[-1]['pct']) if path_p15 else 0.0,
+            'p85_t15_pct': float(path_p85[-1]['pct']) if path_p85 else 0.0,
             'cycle_windows': cycle_wins,
             'analog_match': {
                 'period': best_period,
@@ -5416,6 +5932,18 @@ def generate_report_tables(
                 forecast_days=15,
                 scenario_map_by_ticker=sc_by_tk
             )
+            if isinstance(time_cycle_proj, dict):
+                for _rows_grp in (all_live_rows, top_long_stocks, top_short_stocks, table4_rows):
+                    if not isinstance(_rows_grp, list):
+                        continue
+                    for _r_obj in _rows_grp:
+                        if not isinstance(_r_obj, dict):
+                            continue
+                        _tc_m = time_cycle_proj.get(_r_obj.get('ticker'))
+                        if isinstance(_tc_m, dict):
+                            for _k_v46 in ('v46_regime_mode', 'bear_inertia_active', 'p15_t5_pct', 'p15_t15_pct', 'p85_t15_pct'):
+                                if _tc_m.get(_k_v46) is not None:
+                                    _r_obj[_k_v46] = _tc_m[_k_v46]
     except Exception as _tce:
         time_cycle_proj = {}
 
@@ -8110,6 +8638,7 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
                             <button class="cycle-view-btn active" id="btnViewFocus" onclick="setTimeCycleViewMode('focus')" title="聚焦放大未来 15 日推演波段，自适应 Y 轴缩放，细节最清晰">🔍 聚焦推演波段 (推荐)</button>
                             <button class="cycle-view-btn" id="btnViewFull" onclick="setTimeCycleViewMode('full')" title="显示过去 20 天走势与未来 15 日完整大局">🌐 全景大局 (35天)</button>
                             <span id="cycleT15BadgeHeader" style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 4px; background: rgba(56, 189, 248, 0.12); border: 1px solid rgba(56, 189, 248, 0.35); color: var(--primary-blue); display: none; margin-left: 4px;"></span>
+                            <span id="cycleRegimeModeBadge" style="font-family: 'JetBrains Mono', 'PingFang SC', sans-serif; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 4px; display: inline-block; margin-left: 4px; max-width: 100%; white-space: normal;"></span>
                         </div>
                         <div style="display: flex; gap: 6px; align-items: center;">
                             <button class="cycle-tool-btn" onclick="zoomTimeCycle(1.2)" title="放大时间轴">➕ 放大</button>
@@ -8130,6 +8659,7 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
                         <div style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap;">
                             <span style="display: flex; align-items: center; gap: 4px;"><span style="display:inline-block; width:12px; height:3px; background:#38bdf8; border-radius:2px;"></span> 历史收盘价</span>
                             <span style="display: flex; align-items: center; gap: 4px;"><span style="display:inline-block; width:12px; height:0px; border-top:2px dashed #ff944d;"></span> 15日融合推演路径</span>
+                            <span style="display: flex; align-items: center; gap: 4px;"><span style="display:inline-block; width:12px; height:8px; background:rgba(245,158,11,0.20); border-top:1.5px dashed #34d399; border-bottom:1.5px dashed #f87171; border-radius:2px;"></span> 悲观~乐观区间 (P15~P85)</span>
                             <span style="display: flex; align-items: center; gap: 4px;"><span style="display:inline-block; width:10px; height:10px; background:rgba(88,166,255,0.35); border:1px solid #58a6ff; border-radius:2px;"></span> 周期低点回踩窗</span>
                             <span style="display: flex; align-items: center; gap: 4px;"><span style="display:inline-block; width:10px; height:10px; background:rgba(227,179,65,0.35); border:1px solid #e3b341; border-radius:2px;"></span> 高位强势休整窗</span>
                             <span style="display: flex; align-items: center; gap: 4px;"><span style="display:inline-block; width:10px; height:10px; background:rgba(248,81,73,0.35); border:1px solid #f85149; border-radius:2px;"></span> 周期阻力高点窗</span>
@@ -8765,8 +9295,26 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
             }}
 
             const sign = (pt.pct != null && pt.pct >= 0) ? '+' : '';
-            const pColor = (pt.pct != null && pt.pct >= 0) ? 'var(--neon-green)' : (pt.pct != null ? 'var(--risk-red)' : 'var(--text-main)');
+            const pColor = (pt.pct != null && pt.pct >= 0) ? (Boolean(data.bear_inertia_active) ? 'var(--warning-gold)' : 'var(--neon-green)') : (pt.pct != null ? 'var(--risk-red)' : 'var(--text-main)');
             const pctStr = pt.pct != null ? `<span style="color: ${{pColor}}; font-weight: 800; margin-left: 6px;">(${{sign}}${{pt.pct}}%)</span>` : '';
+
+            let bandHint = '';
+            if (pt.isProj && pt.p15Price != null && pt.p85Price != null) {{
+                const fmtB = (pxVal, pctVal, cHex) => {{
+                    const pNum = Number(pctVal || 0);
+                    const pSign = pNum >= 0 ? '+' : '';
+                    return `<span style="color:${{cHex}}; font-weight:700;">$${{Number(pxVal).toFixed(2)}} (${{pSign}}${{pNum.toFixed(1)}}%)</span>`;
+                }};
+                const p15Html = fmtB(pt.p15Price, pt.p15Pct, '#f87171');
+                const p85Html = fmtB(pt.p85Price, pt.p85Pct, Boolean(data.bear_inertia_active) ? '#e3b341' : '#34d399');
+                bandHint = `
+                    <div style="margin-top: 5px; padding-top: 4px; border-top: 1px dashed var(--border-color); font-size: 11px; line-height: 1.5; font-family: 'JetBrains Mono', monospace;">
+                        <div>推演中位: <strong style="color:var(--text-main);">$${{Number(pt.price).toFixed(2)}} (${{sign}}${{Number(pt.pct || 0).toFixed(1)}}%)</strong></div>
+                        <div>悲观下沿 (P15): ${{p15Html}}</div>
+                        <div>乐观上沿 (P85): ${{p85Html}}</div>
+                    </div>
+                `;
+            }}
 
             tip.innerHTML = `
                 <div style="font-size: 11px; color: var(--text-muted); display: flex; justify-content: space-between; border-bottom: 1px solid var(--border-color); padding-bottom: 4px; margin-bottom: 5px;">
@@ -8776,6 +9324,7 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
                 <div style="font-size: 14px; font-weight: 800; color: var(--text-main);">
                     $${{Number(pt.price).toFixed(2)}} ${{pctStr}}
                 </div>
+                ${{bandHint}}
                 ${{winTag}}
                 ${{s1r1Hint}}
             `;
@@ -9135,19 +9684,43 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
                 }}
             }}
 
-            // Update Header T+15 Badge
+            // Update Header T+15 Badge & Plain-Language V4.6 Regime Badge
+            const isBearInertia = Boolean(data.bear_inertia_active);
             const headerBadge = document.getElementById('cycleT15BadgeHeader');
             if (headerBadge && data.projection && data.projection.length > 0) {{
                 const lastP = data.projection[data.projection.length - 1];
                 const sign = (lastP.pct >= 0) ? '+' : '';
-                const bColor = (lastP.pct >= 0) ? '#3fb950' : '#f85149';
-                const bBg = (lastP.pct >= 0) ? 'rgba(63, 185, 80, 0.15)' : 'rgba(248, 81, 73, 0.15)';
-                const bBorder = (lastP.pct >= 0) ? 'rgba(63, 185, 80, 0.4)' : 'rgba(248, 81, 73, 0.4)';
+                let bColor = (lastP.pct >= 0) ? (isLightTheme ? '#059669' : '#3fb950') : (isLightTheme ? '#DC2626' : '#f85149');
+                let bBg = (lastP.pct >= 0) ? 'rgba(63, 185, 80, 0.15)' : 'rgba(248, 81, 73, 0.15)';
+                let bBorder = (lastP.pct >= 0) ? 'rgba(63, 185, 80, 0.4)' : 'rgba(248, 81, 73, 0.4)';
+                if (isBearInertia && lastP.pct >= 0) {{
+                    bColor = isLightTheme ? '#B45309' : '#e3b341';
+                    bBg = 'rgba(227, 179, 65, 0.16)';
+                    bBorder = 'rgba(227, 179, 65, 0.45)';
+                }}
                 headerBadge.style.color = bColor;
                 headerBadge.style.background = bBg;
                 headerBadge.style.borderColor = bBorder;
                 headerBadge.innerHTML = `T+15 终点: <strong>${{sign}}${{lastP.pct}}%</strong> ($${{Number(lastP.price).toFixed(2)}})`;
                 headerBadge.style.display = 'inline-block';
+            }}
+            const regimeBadge = document.getElementById('cycleRegimeModeBadge');
+            if (regimeBadge) {{
+                if (isBearInertia) {{
+                    const p15T5Val = (data.p15_t5_pct != null && Number.isFinite(Number(data.p15_t5_pct)))
+                        ? Number(data.p15_t5_pct)
+                        : ((data.path_p15 && data.path_p15.length >= 5) ? Number(data.path_p15[4].pct || 0) : -5.0);
+                    const p15Sign = p15T5Val >= 0 ? '+' : '';
+                    regimeBadge.textContent = `⛔ 空头惯性延续 · 暂缓乐观反弹预期（已切恐慌同境引擎 | T+5悲观下沿 ${{p15Sign}}${{p15T5Val.toFixed(1)}}%）`;
+                    regimeBadge.style.color = isLightTheme ? '#B45309' : '#fbbf24';
+                    regimeBadge.style.background = isLightTheme ? 'rgba(245, 158, 11, 0.14)' : 'rgba(248, 81, 73, 0.16)';
+                    regimeBadge.style.border = isLightTheme ? '1px solid rgba(217, 119, 6, 0.45)' : '1px solid rgba(248, 81, 73, 0.48)';
+                }} else {{
+                    regimeBadge.textContent = '常态推演 · 含 P15~P85 波动参考';
+                    regimeBadge.style.color = isLightTheme ? '#0369A1' : '#7dd3fc';
+                    regimeBadge.style.background = isLightTheme ? 'rgba(2, 132, 199, 0.10)' : 'rgba(56, 189, 248, 0.12)';
+                    regimeBadge.style.border = isLightTheme ? '1px solid rgba(2, 132, 199, 0.28)' : '1px solid rgba(56, 189, 248, 0.30)';
+                }}
             }}
         }}
 
@@ -9171,6 +9744,8 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
 
             const hist = data.history || [];
             const proj = data.projection || [];
+            const pathP15 = data.path_p15 || [];
+            const pathP85 = data.path_p85 || [];
 
             // 1. Select points based on view mode (Focus mode zooms into projection)
             let selectedHist = hist;
@@ -9181,11 +9756,16 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
             const points = [];
             const todayLabel = (data && data.today_label) ? data.today_label : '今日';
             selectedHist.forEach((p, idx) => {{
+                const pxVal = Number(p.price);
                 points.push({{
                     day: idx === selectedHist.length - 1 ? todayLabel : `T-${{selectedHist.length - 1 - idx}}`,
                     date: p.date,
                     displayDate: p.date,
-                    price: Number(p.price),
+                    price: pxVal,
+                    p15Price: pxVal,
+                    p85Price: pxVal,
+                    p15Pct: 0,
+                    p85Pct: 0,
                     isProj: false,
                     pct: null
                 }});
@@ -9206,11 +9786,22 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
                         }}
                     }}
                 }}
+                const mainPx = Number(p.price);
+                const b15Obj = pathP15[idx];
+                const b85Obj = pathP85[idx];
+                const p15Px = (b15Obj && b15Obj.price != null) ? Number(b15Obj.price) : ((p.p15_price != null) ? Number(p.p15_price) : mainPx);
+                const p15PctVal = (b15Obj && b15Obj.pct != null) ? Number(b15Obj.pct) : ((p.p15_pct != null) ? Number(p.p15_pct) : Number(p.pct || 0));
+                const p85Px = (b85Obj && b85Obj.price != null) ? Number(b85Obj.price) : ((p.p85_price != null) ? Number(p.p85_price) : mainPx);
+                const p85PctVal = (b85Obj && b85Obj.pct != null) ? Number(b85Obj.pct) : ((p.p85_pct != null) ? Number(p.p85_pct) : Number(p.pct || 0));
                 points.push({{
                     day: _canonDay,
                     date: p.date,
                     displayDate: `${{_canonDay}} (${{p.date ? p.date.slice(5) : ''}})`,
-                    price: Number(p.price),
+                    price: mainPx,
+                    p15Price: Math.min(mainPx, p15Px),
+                    p85Price: Math.max(mainPx, p85Px),
+                    p15Pct: Math.min(Number(p.pct || 0), p15PctVal),
+                    p85Pct: Math.max(Number(p.pct || 0), p85PctVal),
                     isProj: true,
                     pct: p.pct,
                     isWin: isWin,
@@ -9222,7 +9813,12 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
             if (points.length === 0) return;
 
             // 2. Dynamic Y-Axis scale calculation
-            const yVals = points.map(p => p.price);
+            const yVals = [];
+            points.forEach(p => {{
+                yVals.push(p.price);
+                if (p.isProj && p.p15Price != null) yVals.push(p.p15Price);
+                if (p.isProj && p.p85Price != null) yVals.push(p.p85Price);
+            }});
             const curP = Number(data.current_price || points[0].price);
             
             // In focus mode, keep levels strictly bounded to projection neighborhood
@@ -9256,6 +9852,8 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
             points.forEach((p, idx) => {{
                 p.canvasX = getX(idx);
                 p.canvasY = getY(p.price);
+                p.canvasY_p15 = getY(p.p15Price != null ? p.p15Price : p.price);
+                p.canvasY_p85 = getY(p.p85Price != null ? p.p85Price : p.price);
             }});
             currentActiveRenderPoints = points;
 
@@ -9449,9 +10047,58 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
                 ctx.stroke();
             }}
 
-            // 9. Draw Future 15-Day Projection Path (Orange Wave + Glow)
+            // 9. Draw Empirical P15~P85 Risk Band & Future 15-Day Projection Path
             if (proj.length > 0) {{
-                // Area fill
+                // 9a. Shaded P15~P85 Confidence / Tail Risk Corridor
+                const isBearInertiaBand = Boolean(data.bear_inertia_active);
+                ctx.fillStyle = isBearInertiaBand
+                    ? (isLight ? 'rgba(234, 88, 12, 0.12)' : 'rgba(248, 113, 113, 0.14)')
+                    : (isLight ? 'rgba(2, 132, 199, 0.10)' : 'rgba(56, 189, 248, 0.12)');
+                ctx.beginPath();
+                ctx.moveTo(points[todayIdx].canvasX, points[todayIdx].canvasY_p85);
+                for (let j = todayIdx + 1; j < points.length; j++) {{
+                    ctx.lineTo(points[j].canvasX, points[j].canvasY_p85);
+                }}
+                for (let j = points.length - 1; j >= todayIdx; j--) {{
+                    ctx.lineTo(points[j].canvasX, points[j].canvasY_p15);
+                }}
+                ctx.closePath();
+                ctx.fill();
+
+                // P85 upper dashed border
+                ctx.strokeStyle = isLight ? 'rgba(5, 150, 105, 0.65)' : 'rgba(52, 211, 153, 0.68)';
+                ctx.lineWidth = 1.35;
+                ctx.setLineDash([3, 3]);
+                ctx.beginPath();
+                for (let j = todayIdx; j < points.length; j++) {{
+                    if (j === todayIdx) ctx.moveTo(points[j].canvasX, points[j].canvasY_p85);
+                    else ctx.lineTo(points[j].canvasX, points[j].canvasY_p85);
+                }}
+                ctx.stroke();
+
+                // P15 lower dashed border
+                ctx.strokeStyle = isLight ? 'rgba(220, 38, 38, 0.72)' : 'rgba(248, 113, 113, 0.78)';
+                ctx.lineWidth = 1.45;
+                ctx.setLineDash([3, 3]);
+                ctx.beginPath();
+                for (let j = todayIdx; j < points.length; j++) {{
+                    if (j === todayIdx) ctx.moveTo(points[j].canvasX, points[j].canvasY_p15);
+                    else ctx.lineTo(points[j].canvasX, points[j].canvasY_p15);
+                }}
+                ctx.stroke();
+                ctx.setLineDash([]);
+
+                window._lastCycleBandStats = {{
+                    symbol: activeCycleSymbol,
+                    hasBand: proj.length > 0,
+                    bearInertiaActive: isBearInertiaBand,
+                    p15T5Pct: data.p15_t5_pct,
+                    p15Prices: proj.map((_, i) => points[todayIdx + 1 + i].p15Price),
+                    mainPrices: proj.map((_, i) => points[todayIdx + 1 + i].price),
+                    p85Prices: proj.map((_, i) => points[todayIdx + 1 + i].p85Price),
+                }};
+
+                // 9b. Median Projection Area fill
                 const projGrad = ctx.createLinearGradient(0, padT, 0, padT + chartH);
                 projGrad.addColorStop(0, cProjFillTop);
                 projGrad.addColorStop(1, cProjFillBot);
@@ -9494,11 +10141,13 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
                     }}
                 }});
 
-                // Final Day +% Pill (Repositioned to prevent overlap with projected curve and right R1/R2 ladder labels)
+                // Final Day +% Pill (downgrade optimistic green to amber caution when bear_inertia_active is true)
                 const lastPt = points[points.length - 1];
                 const lastPct = lastPt.pct || 0;
                 const sign = lastPct >= 0 ? '+' : '';
-                const pillColor = lastPct >= 0 ? (isLight ? '#059669' : '#3fb950') : (isLight ? '#DC2626' : '#f85149');
+                const pillColor = lastPct >= 0
+                    ? (isBearInertiaBand ? (isLight ? '#B45309' : '#e3b341') : (isLight ? '#059669' : '#3fb950'))
+                    : (isLight ? '#DC2626' : '#f85149');
 
                 ctx.fillStyle = pillColor;
                 ctx.beginPath();

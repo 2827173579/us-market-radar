@@ -82,7 +82,45 @@ def verify_soxl_ladder(page, tag):
         if s1_canvas:
             assert s1_canvas[0].get("key") == "原S1(已破)", f"[{tag}] Canvas S1 label mismatch: {s1_canvas[0]}"
             assert str(s1_canvas[0].get("color", "")).lower() not in {"#3fb950", "#059669"}, f"[{tag}] Canvas breached S1 still green: {s1_canvas[0]}"
-    print(f"[PASS {tag}] SOXL ladder descending={prices}, subtitle={sub_txt!r}")
+
+    # V4.6 P15~P85 band + plain-language regime badge verification on SOXL & NVDA
+    legend_txt = page.locator("#timeCycleSection").inner_text()
+    assert "悲观~乐观区间 (P15~P85)" in legend_txt, f"[{tag}] Missing P15~P85 legend on predict_radar_5y.html"
+    for sym in ("SOXL", "NVDA"):
+        page.evaluate(f"switchCycleSymbol('{sym}');")
+        page.wait_for_timeout(160)
+        v46_ui = page.evaluate("""(s) => {
+            const d = (window.timeCycleData && window.timeCycleData[s]) || {};
+            const badge = document.getElementById('cycleRegimeModeBadge');
+            const stats = window._lastCycleBandStats || {};
+            return {
+                bearInertia: Boolean(d.bear_inertia_active),
+                v46Mode: d.v46_regime_mode || '',
+                badgeVisible: badge ? (getComputedStyle(badge).display !== 'none' && badge.offsetParent !== null) : false,
+                badgeText: badge ? badge.innerText.trim() : '',
+                hasBand: Boolean(stats.hasBand),
+                symStats: stats.symbol || '',
+                p15Prices: stats.p15Prices || [],
+                mainPrices: stats.mainPrices || [],
+                p85Prices: stats.p85Prices || [],
+            };
+        }""", sym)
+        assert v46_ui["badgeVisible"] and v46_ui["badgeText"], f"[{tag}] {sym} #cycleRegimeModeBadge not visible: {v46_ui}"
+        assert v46_ui["hasBand"] and v46_ui["symStats"] == sym, f"[{tag}] {sym} missing _lastCycleBandStats: {v46_ui}"
+        assert len(v46_ui["p15Prices"]) == 15 and len(v46_ui["mainPrices"]) == 15 and len(v46_ui["p85Prices"]) == 15, f"[{tag}] {sym} band length != 15: {v46_ui}"
+        for idx_b in range(15):
+            assert v46_ui["p15Prices"][idx_b] <= v46_ui["mainPrices"][idx_b] <= v46_ui["p85Prices"][idx_b], (
+                f"[{tag}] {sym} P15<=Main<=P85 violated at T+{idx_b+1}: {v46_ui}"
+            )
+        if v46_ui["bearInertia"]:
+            assert "空头惯性延续" in v46_ui["badgeText"] and "T+5悲观下沿" in v46_ui["badgeText"], (
+                f"[{tag}] {sym} bear inertia badge text mismatch: {v46_ui['badgeText']!r}"
+            )
+        else:
+            assert "常态推演" in v46_ui["badgeText"], f"[{tag}] {sym} calm badge mismatch: {v46_ui['badgeText']!r}"
+    page.evaluate("switchCycleSymbol('SOXL');")
+    page.wait_for_timeout(140)
+    print(f"[PASS {tag}] SOXL ladder descending={prices}, subtitle={sub_txt!r}, V4.6 P15~P85 band & regime badges verified on SOXL/NVDA")
 
 
 def verify_desktop(browser):
