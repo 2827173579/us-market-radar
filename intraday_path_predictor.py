@@ -576,6 +576,409 @@ def _format_pattern_summary(neighbors: List[Dict[str, Any]], median_close_ret: f
     return summary_text, stats
 
 
+def _build_24h_series_from_df(df_tk: Optional[pd.DataFrame], ticker: str) -> Optional[Dict[str, Any]]:
+    """从通用 5m/15m DataFrame 提取滚动近 24H 价格与累计 VWAP 曲线（供离线测试或兜底使用）。"""
+    if df_tk is None or not isinstance(df_tk, pd.DataFrame) or df_tk.empty or "Close" not in df_tk.columns:
+        return None
+    try:
+        sub = df_tk.copy()
+        if "Datetime" in sub.columns:
+            dt_ser = pd.to_datetime(sub["Datetime"], errors="coerce")
+            sub = sub.loc[dt_ser.notna()].copy()
+            sub.index = pd.DatetimeIndex(dt_ser[dt_ser.notna()])
+        else:
+            dt_idx = pd.to_datetime(sub.index, errors="coerce")
+            sub = sub.loc[dt_idx.notna()].copy()
+            sub.index = pd.DatetimeIndex(dt_idx[dt_idx.notna()])
+
+        if sub.empty:
+            return None
+        if getattr(sub.index, "tz", None) is not None:
+            sub.index = sub.index.tz_convert("UTC")
+        else:
+            sub.index = sub.index.tz_localize("UTC")
+
+        for col in ("Open", "High", "Low"):
+            if col not in sub.columns:
+                sub[col] = sub["Close"]
+            sub[col] = pd.to_numeric(sub[col], errors="coerce").fillna(pd.to_numeric(sub["Close"], errors="coerce"))
+        sub["Close"] = pd.to_numeric(sub["Close"], errors="coerce")
+        sub["Volume"] = pd.to_numeric(sub["Volume"], errors="coerce").fillna(0.0) if "Volume" in sub.columns else 0.0
+        sub = sub.dropna(subset=["Close"]).sort_index()
+        sub = sub[sub["Close"] > 0]
+        if len(sub) < 2:
+            return None
+
+        last_ts = sub.index[-1]
+        win = sub[sub.index >= (last_ts - pd.Timedelta(hours=24))]
+        if len(win) < 2:
+            win = sub
+        high_24h = float(win["High"].max())
+        low_24h = float(win["Low"].min())
+        if len(win) > 96:
+            bars = (
+                win.resample("15min")
+                .agg({"Open": "first", "High": "max", "Low": "min", "Close": "last", "Volume": "sum"})
+                .dropna(subset=["Close"])
+            )
+            interval_lbl = "15m"
+            if len(bars) < 2:
+                bars = win.copy()
+                interval_lbl = "5m"
+        else:
+            bars = win.copy()
+            interval_lbl = "5m"
+
+        last_date_utc = last_ts.date()
+        same_day = sub[sub.index.date == last_date_utc]
+        utc_open = float(same_day["Open"].iloc[0]) if not same_day.empty else float(bars["Open"].iloc[0])
+        same_utc_idxs = [idx_b for idx_b, ts_b in enumerate(bars.index) if ts_b.date() == last_date_utc]
+        utc00_idx = None
+        if same_utc_idxs:
+            cand_i = same_utc_idxs[0]
+            ts0 = bars.index[cand_i]
+            if cand_i > 0 or (ts0.hour == 0 and ts0.minute < 30):
+                utc00_idx = int(cand_i)
+
+        actual_24h: List[float] = []
+        vwap_24h: List[float] = []
+        cum_pv, cum_vol, tp_sum, tp_cnt = 0.0, 0.0, 0.0, 0
+        for _, row_b in bars.iterrows():
+            cl_b = float(row_b["Close"])
+            hi_b = float(row_b["High"]) if math.isfinite(float(row_b["High"])) else cl_b
+            lo_b = float(row_b["Low"]) if math.isfinite(float(row_b["Low"])) else cl_b
+            vo_b = max(0.0, float(row_b["Volume"])) if math.isfinite(float(row_b["Volume"])) else 0.0
+            tp_b = (hi_b + lo_b + cl_b) / 3.0
+            tp_sum += tp_b
+            tp_cnt += 1
+            if vo_b > 0:
+                cum_pv += tp_b * vo_b
+                cum_vol += vo_b
+            vw_b = (cum_pv / cum_vol) if cum_vol > 0 else (tp_sum / max(1, tp_cnt))
+            actual_24h.append(round(cl_b, 2))
+            vwap_24h.append(round(vw_b, 2))
+
+        is_wknd_closed = bool(
+            str(ticker) == "XAUUSD"
+            and (datetime.now(timezone.utc) - last_ts.to_pydatetime()) > timedelta(hours=3)
+        )
+        return {
+            "time_labels": [ts_b.strftime("%H:%M") for ts_b in bars.index],
+            "time_labels_full": [ts_b.strftime("%m-%d %H:%M UTC") for ts_b in bars.index],
+            "actual_prices": actual_24h,
+            "vwap_prices": vwap_24h,
+            "utc_open": round(utc_open, 2),
+            "utc00_idx": utc00_idx,
+            "high_24h": round(high_24h, 2),
+            "low_24h": round(low_24h, 2),
+            "last_bar_utc": last_ts.strftime("%Y-%m-%d %H:%M UTC"),
+            "window_start_utc": bars.index[0].strftime("%Y-%m-%d %H:%M UTC"),
+            "interval_label": interval_lbl,
+            "is_weekend_closed": is_wknd_closed,
+        }
+    except Exception:
+        return None
+
+
+def partition_24h_sr_for_viewport(
+    spot: Any,
+    core_min: Any,
+    core_max: Any,
+    anchor_sr: Optional[Dict[str, Any]] = None,
+    max_pct_dist: float = 0.08,
+    max_span_expand: float = 0.35,
+) -> Dict[str, Any]:
+    """
+    Y 轴防压扁分流器：
+    仅将在 24H 价格合理视窗内（默认距现价 <= ±8% 且不把当前波动带拉垮 >35%）的 S/R 静态锚画入主图虚线，
+    远端 S/R 转为图表边缘提示标签，严格保留 ATR_ESTIMATE 非绿分色标记。
+    """
+    spot_f = _safe_float(spot, 0.0)
+    c_min = _safe_float(core_min, spot_f * 0.98 if spot_f > 0 else 95.0)
+    c_max = _safe_float(core_max, spot_f * 1.02 if spot_f > 0 else 105.0)
+    if spot_f <= 0:
+        spot_f = (c_min + c_max) / 2.0 if (c_min > 0 and c_max > 0) else 100.0
+    if c_max <= c_min:
+        c_min, c_max = spot_f * 0.985, spot_f * 1.015
+    core_span = max(c_max - c_min, spot_f * 0.015)
+
+    anc = anchor_sr if isinstance(anchor_sr, dict) else {}
+    raw_levels = [
+        ("S1", "support", anc.get("anchor_s1") if anc.get("anchor_s1") is not None else anc.get("s1"), anc.get("s1_source")),
+        ("S2", "support", anc.get("anchor_s2") if anc.get("anchor_s2") is not None else anc.get("s2"), anc.get("s2_source")),
+        ("R1", "resistance", anc.get("anchor_r1") if anc.get("anchor_r1") is not None else anc.get("r1"), anc.get("r1_source")),
+        ("R2", "resistance", anc.get("anchor_r2") if anc.get("anchor_r2") is not None else anc.get("r2"), anc.get("r2_source")),
+    ]
+
+    in_window: List[Dict[str, Any]] = []
+    far_upper: List[Dict[str, Any]] = []
+    far_lower: List[Dict[str, Any]] = []
+    for key, side, val_raw, src_raw in raw_levels:
+        lv = _safe_float(val_raw, 0.0)
+        if lv <= 0:
+            continue
+        src_u = str(src_raw or "ATR_ESTIMATE").strip().upper() or "ATR_ESTIMATE"
+        pct_vs_spot = round(((lv - spot_f) / spot_f) * 100.0, 1)
+        entry = {
+            "key": key,
+            "side": side,
+            "price": round(lv, 2),
+            "source": src_u,
+            "is_estimate": (src_u == "ATR_ESTIMATE"),
+            "pct_vs_spot": pct_vs_spot,
+        }
+        in_pct = abs(lv - spot_f) / spot_f <= max_pct_dist
+        in_span = (c_min - core_span * max_span_expand) <= lv <= (c_max + core_span * max_span_expand)
+        if in_pct and in_span:
+            in_window.append(entry)
+        elif lv >= spot_f:
+            far_upper.append(entry)
+        else:
+            far_lower.append(entry)
+
+    y_vals = [c_min, c_max] + [x["price"] for x in in_window]
+    raw_min = min(y_vals)
+    raw_max = max(y_vals)
+    span_y = max(raw_max - raw_min, spot_f * 0.01)
+    return {
+        "in_window": in_window,
+        "far_upper": far_upper,
+        "far_lower": far_lower,
+        "y_min": round(raw_min - span_y * 0.08, 2),
+        "y_max": round(raw_max + span_y * 0.08, 2),
+    }
+
+
+def _compute_24h_vol_quantiles(ticker: str, history_df: Optional[pd.DataFrame], forecast_date: date) -> Tuple[float, float, float]:
+    """从历史 60~120 日 K 线无前瞻提取 24H 日内振幅 P25/P50/P75 分布。"""
+    default_bounds = (-0.022, 0.0, 0.022) if str(ticker) == "BTC-USD" else (-0.009, 0.0, 0.009)
+    min_half = 0.007 if str(ticker) == "BTC-USD" else 0.0035
+    if history_df is None or not isinstance(history_df, pd.DataFrame) or len(history_df) < 10 or "Close" not in history_df.columns:
+        return default_bounds
+    try:
+        hd = history_df.copy()
+        idx_dt = pd.to_datetime(hd.index, errors="coerce")
+        valid_mask = idx_dt.notna()
+        if valid_mask.any():
+            hd = hd.loc[valid_mask].copy()
+            idx_clean = idx_dt[valid_mask]
+            if getattr(idx_clean, "tz", None) is not None:
+                idx_clean = idx_clean.tz_localize(None)
+            prior = hd[np.array([x.date() for x in idx_clean]) < forecast_date]
+            if len(prior) >= 10:
+                hd = prior
+        tail_hd = hd.tail(120)
+        closes = pd.to_numeric(tail_hd["Close"], errors="coerce")
+        if "Open" in tail_hd.columns:
+            opens = pd.to_numeric(tail_hd["Open"], errors="coerce").fillna(closes)
+        else:
+            opens = closes.shift(1).fillna(closes)
+        valid = (opens > 0) & (closes > 0) & closes.notna() & opens.notna()
+        rets = ((closes[valid] - opens[valid]) / opens[valid]).to_numpy(dtype=float)
+        if len(rets) < 10:
+            return default_bounds
+        q25 = float(np.percentile(rets, 25))
+        q50 = float(np.percentile(rets, 50))
+        q75 = float(np.percentile(rets, 75))
+        if (q50 - q25) < min_half:
+            q25 = q50 - min_half
+        if (q75 - q50) < min_half:
+            q75 = q50 + min_half
+        return float(q25), float(q50), float(q75)
+    except Exception:
+        return default_bounds
+
+
+def compute_continuous_24h_corridor(
+    ticker: str,
+    intraday_info: Optional[Dict[str, Any]] = None,
+    df_tk: Optional[pd.DataFrame] = None,
+    history_df: Optional[pd.DataFrame] = None,
+    realtime_quote: Optional[Dict[str, Any]] = None,
+    prev_item: Optional[Dict[str, Any]] = None,
+    now_et: Optional[datetime] = None,
+) -> Dict[str, Any]:
+    """
+    为 BTC-USD（7×24h 连续）与 XAUUSD（24H 连续现货黄金）生成真实 24H 滚动走势 + 实时 VWAP + 历史波动带 (P25~P75)。
+    周末黄金休市时优雅回退至最近一个完整 24H 有效交易时段。
+    """
+    tk = str(ticker or "").strip().upper()
+    cur_et = _to_et_datetime(now_et)
+    f_date = cur_et.date()
+    f_date_str = f_date.strftime("%Y-%m-%d")
+
+    info = intraday_info if isinstance(intraday_info, dict) else {}
+    c24 = info.get("continuous_24h") if isinstance(info.get("continuous_24h"), dict) else None
+    if not (isinstance(c24, dict) and isinstance(c24.get("actual_prices"), list) and len(c24["actual_prices"]) >= 2):
+        c24 = _build_24h_series_from_df(df_tk, tk)
+    reused_prev_weekend = False
+    if not (isinstance(c24, dict) and isinstance(c24.get("actual_prices"), list) and len(c24["actual_prices"]) >= 2):
+        if (
+            isinstance(prev_item, dict)
+            and prev_item.get("status") == "continuous_24h"
+            and isinstance(prev_item.get("actual_prices"), list)
+            and len(prev_item["actual_prices"]) >= 2
+        ):
+            c24 = {
+                "time_labels": list(prev_item.get("time_labels") or []),
+                "time_labels_full": list(prev_item.get("time_labels_full") or []),
+                "actual_prices": list(prev_item.get("actual_prices") or []),
+                "vwap_prices": list(prev_item.get("vwap_prices") or prev_item.get("actual_prices") or []),
+                "utc_open": prev_item.get("utc_open") or prev_item.get("anchor_open"),
+                "utc00_idx": prev_item.get("utc00_idx"),
+                "high_24h": prev_item.get("high_24h"),
+                "low_24h": prev_item.get("low_24h"),
+                "last_bar_utc": prev_item.get("last_bar_utc", ""),
+                "window_start_utc": prev_item.get("window_start_utc", ""),
+                "interval_label": prev_item.get("interval_label", "15m"),
+                "is_weekend_closed": True if tk == "XAUUSD" else bool(prev_item.get("is_weekend_closed", False)),
+            }
+            reused_prev_weekend = True
+
+    live_px = _safe_float((realtime_quote or {}).get("last"), 0.0)
+    if not (isinstance(c24, dict) and len(c24.get("actual_prices") or []) >= 2):
+        fb_px = live_px if live_px > 0 else _safe_float(info.get("rth_close"), 0.0)
+        msg = "7×24h 连续交易品种，以日内 VWAP 与 4H 筹码为准" if tk == "BTC-USD" else "24H 连续走势，以实时 VWAP 与 4H 筹码为准"
+        return {
+            "ticker": tk,
+            "forecast_date": f_date_str,
+            "prev_close": round(fb_px, 2),
+            "anchor_open": round(fb_px, 2),
+            "utc_open": round(fb_px, 2),
+            "status": "continuous_24h",
+            "has_24h_series": False,
+            "is_weekend_closed": bool(tk == "XAUUSD" and cur_et.weekday() >= 5),
+            "meta_header": "UTC 00:00 日锚 · 24H 滚动刷新" if tk == "BTC-USD" else "24H 连续走势 · 实时 VWAP 锚定",
+            "status_message": msg,
+            "summary_text": msg,
+            "p25_prices": [],
+            "p50_prices": [],
+            "p75_prices": [],
+            "actual_prices": [],
+            "vwap_prices": [],
+            "snapshot_locked": False,
+            "lock_window_tag": "CONTINUOUS_24H_ROLLING",
+            "divergence": {
+                "status": "CONTINUOUS_24H",
+                "badge": "🌐 7×24h 实时滚动 · 锚定 VWAP",
+                "color": "#38bdf8",
+                "latest_slot": None,
+            },
+        }
+
+    actual_24h = [round(float(v), 2) for v in c24["actual_prices"] if _safe_float(v, 0.0) > 0]
+    vwap_raw = c24.get("vwap_prices") or actual_24h
+    vwap_24h = [round(float(v), 2) for v in vwap_raw[:len(actual_24h)] if _safe_float(v, 0.0) > 0]
+    while len(vwap_24h) < len(actual_24h):
+        vwap_24h.append(vwap_24h[-1] if vwap_24h else actual_24h[len(vwap_24h)])
+
+    n_pts = len(actual_24h)
+    time_labels = list((c24.get("time_labels") or [])[:n_pts])
+    if len(time_labels) < n_pts:
+        time_labels = [f"{i:02d}" for i in range(n_pts)]
+    time_labels_full = list((c24.get("time_labels_full") or time_labels)[:n_pts])
+
+    is_wknd_closed = bool(c24.get("is_weekend_closed", False)) or reused_prev_weekend
+    if tk == "BTC-USD":
+        is_wknd_closed = False
+
+    utc_open = _safe_float(c24.get("utc_open"), actual_24h[0])
+    if utc_open <= 0:
+        utc_open = actual_24h[0]
+    high_24h = max(_safe_float(c24.get("high_24h"), max(actual_24h)), max(actual_24h))
+    low_24h = min(_safe_float(c24.get("low_24h"), min(actual_24h)), min(actual_24h))
+
+    if live_px > 0 and not is_wknd_closed:
+        ref_last = actual_24h[-1]
+        if ref_last > 0 and 0.95 <= (live_px / ref_last) <= 1.05:
+            actual_24h[-1] = round(live_px, 2)
+            high_24h = max(high_24h, live_px)
+            low_24h = min(low_24h, live_px)
+
+    cur_px = actual_24h[-1]
+    cur_vwap = vwap_24h[-1] if vwap_24h else cur_px
+
+    q25, q50, q75 = _compute_24h_vol_quantiles(tk, history_df, f_date)
+    p25_val = round(utc_open * (1.0 + q25), 2)
+    p50_val = round(utc_open * (1.0 + q50), 2)
+    p75_val = round(utc_open * (1.0 + q75), 2)
+
+    p25_prices = [p25_val] * n_pts
+    p50_prices = [p50_val] * n_pts
+    p75_prices = [p75_val] * n_pts
+
+    vwap_diff_pct = round(((cur_px - cur_vwap) / cur_vwap) * 100.0, 2) if cur_vwap > 0 else 0.0
+    pct_vs_p50 = round(((cur_px - p50_val) / p50_val) * 100.0, 2) if p50_val > 0 else 0.0
+
+    if cur_px > p75_val:
+        band_status = "ABOVE_P75"
+        band_cn = "突破近 24H 正常波动带上沿"
+    elif cur_px < p25_val:
+        band_status = "BELOW_P25"
+        band_cn = "跌破近 24H 正常波动带下沿"
+    else:
+        band_status = "IN_CORRIDOR"
+        band_cn = "处于近 24H 正常波动带内"
+
+    pos_vwap = f"上方 +{vwap_diff_pct:.1f}%" if vwap_diff_pct >= 0 else f"下方 {vwap_diff_pct:.1f}%"
+    weekend_note = "（周末休市，展示最近完整 24H 交易走势）" if (tk == "XAUUSD" and is_wknd_closed) else ""
+    summary_text = f"现价位于 24H 均价线 (VWAP) {pos_vwap}，{band_cn}{weekend_note}"
+
+    if tk == "BTC-USD":
+        meta_header = f"UTC 00:00 日锚 · 24H 滚动刷新 | UTC开盘 ${utc_open:,.2f} · 24H高 ${high_24h:,.2f} · 24H低 ${low_24h:,.2f}"
+        badge = "🌐 7×24h 实时滚动 · 锚定 VWAP"
+    else:
+        wk_tag = " · 周末展示最近24H" if is_wknd_closed else ""
+        meta_header = f"24H 连续走势 · 实时 VWAP 锚定{wk_tag} | 开盘锚 ${utc_open:,.2f} · 24H高 ${high_24h:,.2f} · 24H低 ${low_24h:,.2f}"
+        badge = "🌙 最近 24H 交易走势 · 周末休市" if is_wknd_closed else "🌐 24H 连续走势 · 实时 VWAP 锚定"
+
+    badge_clr = "#10b981" if (band_status == "ABOVE_P75" or (vwap_diff_pct >= 0 and band_status == "IN_CORRIDOR")) else ("#ef4444" if band_status == "BELOW_P25" else "#38bdf8")
+
+    return {
+        "ticker": tk,
+        "forecast_date": f_date_str,
+        "prev_close": round(utc_open, 2),
+        "anchor_open": round(utc_open, 2),
+        "utc_open": round(utc_open, 2),
+        "utc00_idx": c24.get("utc00_idx"),
+        "high_24h": round(high_24h, 2),
+        "low_24h": round(low_24h, 2),
+        "last_bar_utc": str(c24.get("last_bar_utc") or ""),
+        "window_start_utc": str(c24.get("window_start_utc") or ""),
+        "interval_label": str(c24.get("interval_label") or "15m"),
+        "is_weekend_closed": is_wknd_closed,
+        "time_labels": time_labels,
+        "time_labels_full": time_labels_full,
+        "p25_prices": p25_prices,
+        "p50_prices": p50_prices,
+        "p75_prices": p75_prices,
+        "actual_prices": actual_24h,
+        "vwap_prices": vwap_24h,
+        "status": "continuous_24h",
+        "has_24h_series": True,
+        "meta_header": meta_header,
+        "summary_text": summary_text,
+        "status_message": summary_text,
+        "latest_slot": n_pts - 1,
+        "snapshot_locked": False,
+        "lock_window_tag": "CONTINUOUS_24H_ROLLING",
+        "divergence": {
+            "status": band_status,
+            "badge": badge,
+            "color": badge_clr,
+            "latest_slot": n_pts - 1,
+            "latest_time": time_labels[-1],
+            "actual_price": round(cur_px, 2),
+            "vwap_price": round(cur_vwap, 2),
+            "vwap_diff_pct": vwap_diff_pct,
+            "slot_p25": p25_val,
+            "slot_p50": p50_val,
+            "slot_p75": p75_val,
+            "pct_vs_p50": pct_vs_p50,
+        },
+    }
+
+
 def compute_knn_intraday_corridor(
     ticker: str,
     df_tk: Optional[pd.DataFrame],
@@ -590,6 +993,9 @@ def compute_knn_intraday_corridor(
     qqq_regime_by_date: Optional[Dict[date, float]] = None,
     k_neighbors: int = 12,
     today_vol_5d: Optional[float] = None,
+    history_df: Optional[pd.DataFrame] = None,
+    intraday_info: Optional[Dict[str, Any]] = None,
+    realtime_quote: Optional[Dict[str, Any]] = None,
 ) -> Dict[str, Any]:
     """
     计算单个标的在 forecast_date 的 KNN 历史相似日盘中走廊 (P25 / P50 / P75)。
@@ -633,18 +1039,14 @@ def compute_knn_intraday_corridor(
     }
 
     if tk in CONTINUOUS_24H_TICKERS:
-        base_item.update({
-            "status": "continuous_24h",
-            "status_message": "7×24h 连续交易品种，以日内 VWAP 与 4H 筹码为准",
-            "summary_text": "7×24h 连续交易品种，以日内 VWAP 与 4H 筹码为准",
-            "divergence": {
-                "status": "CONTINUOUS_24H",
-                "badge": "🌐 7×24h 连续交易 · 锚定日内 VWAP",
-                "color": "#fbbf24",
-                "latest_slot": None,
-            },
-        })
-        return base_item
+        return compute_continuous_24h_corridor(
+            ticker=tk,
+            intraday_info=intraday_info,
+            df_tk=df_tk,
+            history_df=history_df,
+            realtime_quote=realtime_quote or ({"last": ao_val} if ao_val > 0 else None),
+            now_et=pd.Timestamp(f_date_str).to_pydatetime(),
+        )
 
     profiles = extract_historical_day_profiles(
         df_tk=df_tk,
@@ -1059,6 +1461,20 @@ def update_intraday_path_forecasts(
     for tk in dict.fromkeys(tickers or []):
         tk_s = str(tk)
         df_tk = grouped_60d.get(tk_s)
+        prev_item = prev_by_ticker.get(tk_s)
+
+        if tk_s in CONTINUOUS_24H_TICKERS:
+            by_ticker[tk_s] = compute_continuous_24h_corridor(
+                ticker=tk_s,
+                intraday_info=(intraday_map or {}).get(tk_s, {}),
+                df_tk=df_tk,
+                history_df=(history_dict or {}).get(tk_s),
+                realtime_quote=(realtime_quotes or {}).get(tk_s),
+                prev_item=prev_item,
+                now_et=cur_et,
+            )
+            continue
+
         prev_c, anchor_o, pmh, pml, new_actual = _extract_day_features_for_target(
             tk_s,
             df_tk,
@@ -1069,12 +1485,11 @@ def update_intraday_path_forecasts(
             cur_et,
         )
 
-        prev_item = prev_by_ticker.get(tk_s)
         is_already_locked = bool(
             isinstance(prev_item, dict)
             and str(prev_item.get("forecast_date", "")) == target_str
             and bool(prev_item.get("snapshot_locked", False))
-            and prev_item.get("status") in ("ok", "insufficient_history", "continuous_24h")
+            and prev_item.get("status") in ("ok", "insufficient_history")
         )
 
         if is_already_locked:

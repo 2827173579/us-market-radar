@@ -774,6 +774,20 @@ def _apply_xauusd_spot_basis(history_dict, intraday_map, realtime_quotes):
                     val = intra.get(key)
                     if val is not None and float(val) > 0:
                         intra[key] = round(float(val) * ratio, 2)
+                c24 = intra.get("continuous_24h")
+                if isinstance(c24, dict):
+                    for sk in ("utc_open", "high_24h", "low_24h"):
+                        sv = c24.get(sk)
+                        if sv is not None and float(sv) > 0:
+                            c24[sk] = round(float(sv) * ratio, 2)
+                    for ak in ("actual_prices", "vwap_prices"):
+                        arr = c24.get(ak)
+                        if isinstance(arr, list) and arr:
+                            c24[ak] = [round(float(x) * ratio, 2) if (x is not None and float(x) > 0) else x for x in arr]
+                    if isinstance(c24.get("vwap_prices"), list) and c24["vwap_prices"]:
+                        last_vw = c24["vwap_prices"][-1]
+                        if last_vw is not None and float(last_vw) > 0:
+                            intra["vwap"] = round(float(last_vw), 2)
                 intra["rth_close"] = round(xau_spot, 2)
                 intra["ext_price"] = 0.0
 
@@ -877,8 +891,8 @@ def fetch_intraday_5m_and_ext_data(tickers):
             import zoneinfo
             ny_tz = zoneinfo.ZoneInfo("America/New_York")
         except Exception:
-            from datetime import timezone, timedelta
-            ny_tz = timezone(timedelta(hours=-4))
+            from datetime import timezone as _fb_tz, timedelta as _fb_td
+            ny_tz = _fb_tz(_fb_td(hours=-4))
 
         _proxy_map = {"XAUUSD": "GC=F"}
         _dl_tickers = list(dict.fromkeys([_proxy_map.get(t, t) for t in tickers]))
@@ -1009,12 +1023,109 @@ def fetch_intraday_5m_and_ext_data(tickers):
                 is_5m_green = bool(float(c.iloc[-1]) >= float(o.iloc[-1]))
                 is_5m_higher_low = bool(float(l.iloc[-1]) >= float(l.iloc[-2]) * 0.999) if len(l) >= 2 else True
 
+                continuous_24h_payload = None
+                vwap_final = vwap
+                if t in ("BTC-USD", "XAUUSD"):
+                    try:
+                        utc_idx = (
+                            c.index.tz_convert("UTC")
+                            if getattr(c.index, "tz", None) is not None
+                            else pd.to_datetime(c.index).tz_localize("UTC")
+                        )
+                        df_5m = pd.DataFrame(
+                            {
+                                "Open": pd.to_numeric(o, errors="coerce"),
+                                "High": pd.to_numeric(h, errors="coerce"),
+                                "Low": pd.to_numeric(l, errors="coerce"),
+                                "Close": pd.to_numeric(c, errors="coerce"),
+                                "Volume": pd.to_numeric(v, errors="coerce").fillna(0.0),
+                            },
+                            index=utc_idx,
+                        ).dropna(subset=["Close"]).sort_index()
+                        df_5m = df_5m[df_5m["Close"] > 0]
+                        if len(df_5m) >= 2:
+                            last_ts = df_5m.index[-1]
+                            win = df_5m[df_5m.index >= (last_ts - pd.Timedelta(hours=24))]
+                            if len(win) < 2:
+                                win = df_5m
+                            high_24h = float(win["High"].max())
+                            low_24h = float(win["Low"].min())
+                            if len(win) > 96:
+                                bars = (
+                                    win.resample("15min")
+                                    .agg({"Open": "first", "High": "max", "Low": "min", "Close": "last", "Volume": "sum"})
+                                    .dropna(subset=["Close"])
+                                )
+                                interval_lbl = "15m"
+                                if len(bars) < 2:
+                                    bars = win.copy()
+                                    interval_lbl = "5m"
+                            else:
+                                bars = win.copy()
+                                interval_lbl = "5m"
+
+                            last_date_utc = last_ts.date()
+                            same_day_df = df_5m[df_5m.index.date == last_date_utc]
+                            utc_open = float(same_day_df["Open"].iloc[0]) if not same_day_df.empty else float(bars["Open"].iloc[0])
+
+                            same_utc_idxs = [idx_b for idx_b, ts_b in enumerate(bars.index) if ts_b.date() == last_date_utc]
+                            utc00_idx = None
+                            if same_utc_idxs:
+                                cand_i = same_utc_idxs[0]
+                                ts0 = bars.index[cand_i]
+                                if cand_i > 0 or (ts0.hour == 0 and ts0.minute < 30):
+                                    utc00_idx = int(cand_i)
+
+                            actual_24h: list = []
+                            vwap_24h: list = []
+                            cum_pv = 0.0
+                            cum_vol = 0.0
+                            tp_sum = 0.0
+                            tp_cnt = 0
+                            for _, row_b in bars.iterrows():
+                                cl_b = float(row_b["Close"])
+                                hi_b = float(row_b["High"]) if math.isfinite(float(row_b["High"])) else cl_b
+                                lo_b = float(row_b["Low"]) if math.isfinite(float(row_b["Low"])) else cl_b
+                                vo_b = max(0.0, float(row_b["Volume"])) if math.isfinite(float(row_b["Volume"])) else 0.0
+                                tp_b = (hi_b + lo_b + cl_b) / 3.0
+                                tp_sum += tp_b
+                                tp_cnt += 1
+                                if vo_b > 0:
+                                    cum_pv += tp_b * vo_b
+                                    cum_vol += vo_b
+                                vw_b = (cum_pv / cum_vol) if cum_vol > 0 else (tp_sum / max(1, tp_cnt))
+                                actual_24h.append(round(cl_b, 2))
+                                vwap_24h.append(round(vw_b, 2))
+
+                            if vwap_24h:
+                                vwap_final = float(vwap_24h[-1])
+                            is_wknd_closed = bool(
+                                t == "XAUUSD"
+                                and (datetime.now(timezone.utc) - last_ts.to_pydatetime()) > timedelta(hours=3)
+                            )
+                            continuous_24h_payload = {
+                                "time_labels": [ts_b.strftime("%H:%M") for ts_b in bars.index],
+                                "time_labels_full": [ts_b.strftime("%m-%d %H:%M UTC") for ts_b in bars.index],
+                                "actual_prices": actual_24h,
+                                "vwap_prices": vwap_24h,
+                                "utc_open": round(utc_open, 2),
+                                "utc00_idx": utc00_idx,
+                                "high_24h": round(high_24h, 2),
+                                "low_24h": round(low_24h, 2),
+                                "last_bar_utc": last_ts.strftime("%Y-%m-%d %H:%M UTC"),
+                                "window_start_utc": bars.index[0].strftime("%Y-%m-%d %H:%M UTC"),
+                                "interval_label": interval_lbl,
+                                "is_weekend_closed": is_wknd_closed,
+                            }
+                    except Exception:
+                        continuous_24h_payload = None
+
                 results[t] = {
                     "has_5m_intraday": bool(len(c) >= 2),
                     "ext_price": ext_price,
                     "ext_time": ext_time,
                     "price_kind": _price_kind,
-                    "vwap": round(vwap, 2),
+                    "vwap": round(vwap_final, 2),
                     "rsi_5m": round(rsi_5m, 1) if len(c) >= 2 else None,
                     "prev_rsi_5m": round(prev_rsi_5m, 1) if len(c) >= 2 else None,
                     "min_rsi_5m_30m": round(min_rsi_5m_30m, 1) if len(c) >= 2 else None,
@@ -1031,6 +1142,8 @@ def fetch_intraday_5m_and_ext_data(tickers):
                     "pml": round(pml_val, 2) if pml_val > 0 else 0.0,
                     "rth_5m_series": rth_5m_series,
                 }
+                if continuous_24h_payload is not None:
+                    results[t]["continuous_24h"] = continuous_24h_payload
             except Exception:
                 continue
     except Exception as e:

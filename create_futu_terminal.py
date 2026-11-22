@@ -1642,10 +1642,13 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
         }
 
         .stale-ref-tag {
+            display: block;
             font-size: 9.5px;
             font-weight: 500;
             color: var(--text-muted);
-            margin-left: 3px;
+            margin-left: 0;
+            line-height: 1.25;
+            white-space: normal;
         }
 
         .price-trio-bear-note {
@@ -2436,8 +2439,8 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
 
         .metrics-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 8px 12px;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 7px 8px;
             font-size: 11.5px;
         }
 
@@ -2445,15 +2448,33 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             display: flex;
             justify-content: space-between;
             align-items: center;
-            gap: 6px;
+            flex-wrap: wrap;
+            row-gap: 2px;
+            column-gap: 6px;
+            min-width: 0;
             padding: 6px 8px;
             border-radius: 8px;
             background: var(--bg-elevated);
             border: 1px solid var(--border-subtle);
         }
 
-        .m-lbl { color: var(--text-secondary); white-space: nowrap; }
-        .m-val { font-weight: 700; color: var(--text-primary); text-align: right; }
+        .m-lbl {
+            color: var(--text-secondary);
+            white-space: normal;
+            line-height: 1.3;
+            min-width: 0;
+            overflow-wrap: break-word;
+        }
+
+        .m-val {
+            font-weight: 700;
+            color: var(--text-primary);
+            text-align: right;
+            margin-left: auto;
+            min-width: 0;
+            max-width: 100%;
+            overflow-wrap: break-word;
+        }
 
         .pro-sub-banner {
             padding: 8px 10px;
@@ -4590,14 +4611,36 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 return;
             }
 
+            const is24h = (item.status === "continuous_24h");
+            const actValidCnt = Array.isArray(item.actual_prices) ? item.actual_prices.filter(v => _ipNum(v, 0) > 0).length : 0;
+            const p50ValidCnt = Array.isArray(item.p50_prices) ? item.p50_prices.filter(v => _ipNum(v, 0) > 0).length : 0;
+            const has24hChart = is24h && actValidCnt >= 2 && p50ValidCnt >= 2;
+
             const divObj = item.divergence || {};
             const divClr = divObj.color || pal.accent;
             if (sumEl) sumEl.innerText = item.summary_text || item.status_message || "--";
             if (metaEl) {
-                const ao = _ipNum(item.anchor_open, 0);
-                const pc = _ipNum(item.prev_close, 0);
-                const lockStr = item.snapshot_locked ? "🔒 09:25盘前走廊已锁定" : "📝 盘前实时预览";
-                metaEl.innerText = `目标日 ${item.forecast_date || rootDoc.forecast_date || "--"} · ${lockStr} · 开盘锚 $${ao > 0 ? ao.toFixed(2) : "--"} · 昨收 $${pc > 0 ? pc.toFixed(2) : "--"}`;
+                if (is24h) {
+                    if (item.meta_header) {
+                        metaEl.innerText = String(item.meta_header);
+                    } else {
+                        const uo = _ipNum(item.utc_open !== undefined ? item.utc_open : item.anchor_open, 0);
+                        const h24 = _ipNum(item.high_24h, 0);
+                        const l24 = _ipNum(item.low_24h, 0);
+                        const fmtM = (v) => (v > 0 ? `$${v.toFixed(2)}` : "--");
+                        if (ticker === "BTC-USD") {
+                            metaEl.innerText = `UTC 00:00 日锚 · 24H 滚动刷新 | UTC开盘 ${fmtM(uo)} · 24H高 ${fmtM(h24)} · 24H低 ${fmtM(l24)}`;
+                        } else {
+                            const wk = item.is_weekend_closed ? " · 周末展示最近24H" : "";
+                            metaEl.innerText = `24H 连续走势 · 实时 VWAP 锚定${wk} | 开盘锚 ${fmtM(uo)} · 24H高 ${fmtM(h24)} · 24H低 ${fmtM(l24)}`;
+                        }
+                    }
+                } else {
+                    const ao = _ipNum(item.anchor_open, 0);
+                    const pc = _ipNum(item.prev_close, 0);
+                    const lockStr = item.snapshot_locked ? "🔒 09:25盘前走廊已锁定" : "📝 盘前实时预览";
+                    metaEl.innerText = `目标日 ${item.forecast_date || rootDoc.forecast_date || "--"} · ${lockStr} · 开盘锚 $${ao > 0 ? ao.toFixed(2) : "--"} · 昨收 $${pc > 0 ? pc.toFixed(2) : "--"}`;
+                }
             }
             if (divEl) {
                 divEl.innerText = divObj.badge || "--";
@@ -4607,7 +4650,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                         divEl.style.color = pal.down;
                         divEl.style.borderColor = pal.downBorder;
                         divEl.style.background = pal.downBg;
-                    } else if (st === "ABOVE_P75") {
+                    } else if (st === "ABOVE_P75" || divClr === "#10b981") {
                         divEl.style.color = pal.up;
                         divEl.style.borderColor = pal.upBorder;
                         divEl.style.background = pal.upBg;
@@ -4623,17 +4666,17 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 }
             }
 
-            if (item.status !== "ok" || !Array.isArray(item.p50_prices) || item.p50_prices.length < 10) {
+            if (!has24hChart && (item.status !== "ok" || !Array.isArray(item.p50_prices) || item.p50_prices.length < 10)) {
                 wrapEl.style.display = "none";
                 fbEl.style.display = "flex";
-                const iconStr = item.status === "continuous_24h" ? "🌐" : "🐣";
-                const titleStr = item.status === "continuous_24h" ? "7×24 小时连续交易品种" : "次新上市·分时历史样本积累中";
+                const iconStr = is24h ? "🌐" : "🐣";
+                const titleStr = is24h ? "24H 连续交易品种" : "次新上市·分时历史样本积累中";
                 const msgStr = item.status_message || item.summary_text || "当前暂不绘制美股 RTH 盘前走廊";
                 const stockInfo = STOCKS_DATA.find(s => s.ticker === ticker) || MACRO_DATA[ticker] || {};
                 const curPx = _ipNum(stockInfo.active_price || stockInfo.last, _ipNum(item.anchor_open, 0));
                 const curVwap = _ipNum(stockInfo.vwap, 0);
                 if (lvBar) {
-                    lvBar.innerHTML = `<span>📌 标的: <b style="color:${pal.text};">${escapeNewsHtml(ticker)}</b></span><span>现价: <b style="color:${pal.text};">$${curPx > 0 ? curPx.toFixed(2) : "--"}</b></span><span>日内VWAP: <b style="color:${pal.accent};">$${curVwap > 0 ? curVwap.toFixed(2) : "--"}</b></span>`;
+                    lvBar.innerHTML = `<span>📌 标的: <b style="color:${pal.text};">${escapeNewsHtml(ticker)}</b></span><span>现价: <b style="color:${pal.text};">$${curPx > 0 ? curPx.toFixed(2) : "--"}</b></span><span>${is24h ? "24H VWAP" : "日内VWAP"}: <b style="color:${pal.accent};">$${curVwap > 0 ? curVwap.toFixed(2) : "--"}</b></span>`;
                 }
                 fbEl.innerHTML = `<div style="font-size:28px;">${iconStr}</div><div style="font-size:15px; font-weight:700; color:${pal.text};">${escapeNewsHtml(ticker)} · ${titleStr}</div><div style="font-size:12.5px; color:${pal.sub}; max-width:460px;">${escapeNewsHtml(msgStr)}</div>`;
                 return;
@@ -4645,43 +4688,119 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             const p25 = item.p25_prices.map(v => _ipNum(v, null));
             const p50 = item.p50_prices.map(v => _ipNum(v, null));
             const p75 = item.p75_prices.map(v => _ipNum(v, null));
-            const act = Array.isArray(item.actual_prices) ? item.actual_prices.map(v => _ipNum(v, null)) : new Array(78).fill(null);
+            const nSlots = Math.max(2, p50.length);
+            const act = Array.isArray(item.actual_prices) ? item.actual_prices.map(v => _ipNum(v, null)) : new Array(nSlots).fill(null);
+            const vwapArr = (has24hChart && Array.isArray(item.vwap_prices)) ? item.vwap_prices.map(v => _ipNum(v, null)) : [];
+            const xLabels = (has24hChart && Array.isArray(item.time_labels) && item.time_labels.length >= nSlots) ? item.time_labels : timeSlots;
+            const xLabelsFull = (has24hChart && Array.isArray(item.time_labels_full) && item.time_labels_full.length >= nSlots) ? item.time_labels_full : null;
+
             const prevClose = _ipNum(item.prev_close, null);
             const pmh = _ipNum(item.pmh, null);
             const pml = _ipNum(item.pml, null);
-            const anchorOpen = _ipNum(item.anchor_open, p50[0] || 100);
+            const utcOpen = _ipNum(item.utc_open !== undefined ? item.utc_open : item.anchor_open, p50[0] || 100);
+            const high24 = _ipNum(item.high_24h, null);
+            const low24 = _ipNum(item.low_24h, null);
+            const anchorOpen = has24hChart ? utcOpen : _ipNum(item.anchor_open, p50[0] || 100);
 
             if (lvBar) {
                 const fmt = (v) => (v !== null && v > 0) ? `$${v.toFixed(2)}` : "--";
-                lvBar.innerHTML = `
-                    <span style="display:inline-flex;align-items:center;gap:4px;"><span style="width:10px;height:10px;background:${pal.svgCorridorFill};border:1px solid ${pal.accent};display:inline-block;border-radius:2px;"></span>正常波动带 (P25~P75)</span>
-                    <span style="color:${pal.svgP50}; font-weight:600;">┈ 预期中位线 (P50)</span>
-                    <span style="color:${pal.svgActual}; font-weight:600;">━ 今日实际走势</span>
-                    <span style="color:${pal.sub};">昨收 ${fmt(prevClose)}</span>
-                    <span style="color:${pal.warn};">盘前高 ${fmt(pmh)}</span>
-                    <span style="color:${pal.accent};">盘前低 ${fmt(pml)}</span>
-                `;
+                if (has24hChart) {
+                    const lastVwap = vwapArr.length ? (vwapArr.slice().reverse().find(v => v !== null && v > 0) || null) : null;
+                    lvBar.innerHTML = `
+                        <span style="display:inline-flex;align-items:center;gap:4px;"><span style="width:10px;height:10px;background:${pal.svgCorridorFill};border:1px solid ${pal.accent};display:inline-block;border-radius:2px;"></span>24H 波动带 (P25~P75)</span>
+                        <span style="color:${pal.svgP50}; font-weight:600;">┈ 中位线 (P50)</span>
+                        <span style="color:${pal.svgActual}; font-weight:600;">━ 近24H价格走势</span>
+                        <span style="color:${pal.accent}; font-weight:600;">╍ 实时 VWAP ${fmt(lastVwap)}</span>
+                        <span style="color:${pal.sub};">UTC开盘 ${fmt(utcOpen)}</span>
+                        <span style="color:${pal.warn};">24H高 ${fmt(high24)}</span>
+                        <span style="color:${pal.accent};">24H低 ${fmt(low24)}</span>
+                    `;
+                } else {
+                    lvBar.innerHTML = `
+                        <span style="display:inline-flex;align-items:center;gap:4px;"><span style="width:10px;height:10px;background:${pal.svgCorridorFill};border:1px solid ${pal.accent};display:inline-block;border-radius:2px;"></span>正常波动带 (P25~P75)</span>
+                        <span style="color:${pal.svgP50}; font-weight:600;">┈ 预期中位线 (P50)</span>
+                        <span style="color:${pal.svgActual}; font-weight:600;">━ 今日实际走势</span>
+                        <span style="color:${pal.sub};">昨收 ${fmt(prevClose)}</span>
+                        <span style="color:${pal.warn};">盘前高 ${fmt(pmh)}</span>
+                        <span style="color:${pal.accent};">盘前低 ${fmt(pml)}</span>
+                    `;
+                }
             }
 
             const vals = [];
-            [p25, p50, p75, act].forEach(arr => arr.forEach(v => { if (v !== null && v > 0) vals.push(v); }));
-            [prevClose, pmh, pml, anchorOpen].forEach(v => { if (v !== null && v > 0) vals.push(v); });
-            let minY = vals.length ? Math.min(...vals) : 95;
-            let maxY = vals.length ? Math.max(...vals) : 105;
-            if (!Number.isFinite(minY) || !Number.isFinite(maxY) || maxY <= minY) {
+            [p25, p50, p75, act, vwapArr].forEach(arr => arr.forEach(v => { if (v !== null && v > 0) vals.push(v); }));
+            if (has24hChart) {
+                [utcOpen, high24, low24].forEach(v => { if (v !== null && v > 0) vals.push(v); });
+            } else {
+                [prevClose, pmh, pml, anchorOpen].forEach(v => { if (v !== null && v > 0) vals.push(v); });
+            }
+
+            let coreMin = vals.length ? Math.min(...vals) : 95;
+            let coreMax = vals.length ? Math.max(...vals) : 105;
+            if (!Number.isFinite(coreMin) || !Number.isFinite(coreMax) || coreMax <= coreMin) {
                 const base = Number.isFinite(anchorOpen) && anchorOpen > 0 ? anchorOpen : 100;
-                minY = base * 0.98;
-                maxY = base * 1.02;
+                coreMin = base * 0.98;
+                coreMax = base * 1.02;
+            }
+
+            const inWindowSr = [];
+            const farUpperSr = [];
+            const farLowerSr = [];
+            if (has24hChart) {
+                const aiByTk = (AI_PREDICTIONS && AI_PREDICTIONS.by_ticker) ? AI_PREDICTIONS.by_ticker : {};
+                const aiSr = aiByTk[ticker] || {};
+                const validActs = act.filter(v => v !== null && v > 0);
+                const spot24 = validActs.length ? validActs[validActs.length - 1] : anchorOpen;
+                const coreSpan = Math.max(coreMax - coreMin, spot24 * 0.015);
+                const rawSr = [
+                    { key: "S1", side: "support", raw: aiSr.anchor_s1 !== undefined ? aiSr.anchor_s1 : aiSr.s1, src: aiSr.s1_source },
+                    { key: "S2", side: "support", raw: aiSr.anchor_s2 !== undefined ? aiSr.anchor_s2 : aiSr.s2, src: aiSr.s2_source },
+                    { key: "R1", side: "resistance", raw: aiSr.anchor_r1 !== undefined ? aiSr.anchor_r1 : aiSr.r1, src: aiSr.r1_source },
+                    { key: "R2", side: "resistance", raw: aiSr.anchor_r2 !== undefined ? aiSr.anchor_r2 : aiSr.r2, src: aiSr.r2_source },
+                ];
+                rawSr.forEach(sr => {
+                    const lv = _ipNum(sr.raw, 0);
+                    if (!(lv > 0 && spot24 > 0)) return;
+                    const srcU = String(sr.src || "ATR_ESTIMATE").toUpperCase();
+                    const isEst = (srcU === "ATR_ESTIMATE");
+                    const pctSpot = ((lv - spot24) / spot24) * 100.0;
+                    const clr = isEst ? pal.warn : (sr.side === "support" ? pal.up : pal.down);
+                    const lblPrefix = isEst
+                        ? (sr.side === "support" ? "估算防线 " : "估算压力 ")
+                        : (sr.side === "support" ? "支撑 " : "阻力 ");
+                    const entry = { key: sr.key, side: sr.side, val: lv, src: srcU, isEst, pctSpot, clr, label: `${lblPrefix}${sr.key}` };
+                    const inPct = Math.abs(lv - spot24) / spot24 <= 0.08;
+                    const inSpan = lv >= (coreMin - coreSpan * 0.35) && lv <= (coreMax + coreSpan * 0.35);
+                    if (inPct && inSpan) {
+                        inWindowSr.push(entry);
+                        vals.push(lv);
+                    } else if (lv >= spot24) {
+                        farUpperSr.push(entry);
+                    } else {
+                        farLowerSr.push(entry);
+                    }
+                });
+            }
+
+            let minY = vals.length ? Math.min(...vals) : coreMin;
+            let maxY = vals.length ? Math.max(...vals) : coreMax;
+            if (!Number.isFinite(minY) || !Number.isFinite(maxY) || maxY <= minY) {
+                minY = coreMin;
+                maxY = coreMax;
             }
             const spanY = maxY - minY;
             minY = minY - spanY * 0.08;
             maxY = maxY + spanY * 0.08;
 
             const W = 920, H = 420;
-            const pad = { left: 46, right: 86, top: 26, bottom: 38 };
+            const pad = {
+                left: 48,
+                right: 88,
+                top: (has24hChart && farUpperSr.length) ? 36 : 26,
+                bottom: (has24hChart && farLowerSr.length) ? 54 : 38
+            };
             const plotW = W - pad.left - pad.right;
             const plotH = H - pad.top - pad.bottom;
-            const nSlots = Math.max(2, p50.length);
             const xAt = (idx) => pad.left + (idx / (nSlots - 1)) * plotW;
             const yAt = (px) => pad.top + ((maxY - px) / (maxY - minY)) * plotH;
 
@@ -4701,34 +4820,65 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 }
             }
 
-            const xTickIdxs = [0, 6, 12, 18, 24, 30, 36, 42, 48, 54, 60, 66, 72, 77];
-            xTickIdxs.forEach(idx => {
-                if (idx >= nSlots) return;
-                const x = xAt(idx);
-                parts.push(`<line x1="${x.toFixed(1)}" y1="${pad.top}" x2="${x.toFixed(1)}" y2="${H - pad.bottom}" stroke="${pal.svgGrid}" stroke-width="1" />`);
-                parts.push(`<text x="${x.toFixed(1)}" y="${H - pad.bottom + 15}" text-anchor="middle" fill="${pal.svgAxis}" font-size="10">${timeSlots[idx] || ""}</text>`);
-            });
-            const x0945 = xAt(3);
-            if (Number.isFinite(x0945)) {
-                parts.push(`<line x1="${x0945.toFixed(1)}" y1="${pad.top}" x2="${x0945.toFixed(1)}" y2="${H - pad.bottom}" stroke="${pal.svgDiv0945}" stroke-width="1.2" stroke-dasharray="3 3" />`);
-                parts.push(`<text x="${(x0945 + 4).toFixed(1)}" y="${pad.top + 12}" fill="${pal.svgDiv0945Text}" font-size="10" font-weight="700">09:45 背离窗</text>`);
+            if (has24hChart) {
+                const tickCount = Math.min(7, nSlots);
+                const seenX = new Set();
+                for (let k = 0; k < tickCount; k++) {
+                    const idx = tickCount === 1 ? 0 : Math.round(k * (nSlots - 1) / (tickCount - 1));
+                    if (seenX.has(idx)) continue;
+                    seenX.add(idx);
+                    const x = xAt(idx);
+                    const lblTxt = xLabels[idx] ? `${xLabels[idx]} UTC` : "";
+                    parts.push(`<line x1="${x.toFixed(1)}" y1="${pad.top}" x2="${x.toFixed(1)}" y2="${H - pad.bottom}" stroke="${pal.svgGrid}" stroke-width="1" />`);
+                    parts.push(`<text x="${x.toFixed(1)}" y="${H - pad.bottom + 15}" text-anchor="middle" fill="${pal.svgAxis}" font-size="9.5">${escapeNewsHtml(lblTxt)}</text>`);
+                }
+                const uIdx = Number(item.utc00_idx);
+                if (item.utc00_idx !== null && item.utc00_idx !== undefined && Number.isFinite(uIdx) && uIdx >= 0 && uIdx < nSlots) {
+                    const xu = xAt(uIdx);
+                    if (Number.isFinite(xu)) {
+                        parts.push(`<line x1="${xu.toFixed(1)}" y1="${pad.top}" x2="${xu.toFixed(1)}" y2="${H - pad.bottom}" stroke="${pal.svgDiv0945}" stroke-width="1.2" stroke-dasharray="3 3" />`);
+                        parts.push(`<text x="${Math.min(W - pad.right - 82, xu + 4).toFixed(1)}" y="${pad.top + 12}" fill="${pal.svgDiv0945Text}" font-size="10" font-weight="700">UTC 00:00 日锚</text>`);
+                    }
+                }
+            } else {
+                const xTickIdxs = [0, 6, 12, 18, 24, 30, 36, 42, 48, 54, 60, 66, 72, 77];
+                xTickIdxs.forEach(idx => {
+                    if (idx >= nSlots) return;
+                    const x = xAt(idx);
+                    parts.push(`<line x1="${x.toFixed(1)}" y1="${pad.top}" x2="${x.toFixed(1)}" y2="${H - pad.bottom}" stroke="${pal.svgGrid}" stroke-width="1" />`);
+                    parts.push(`<text x="${x.toFixed(1)}" y="${H - pad.bottom + 15}" text-anchor="middle" fill="${pal.svgAxis}" font-size="10">${timeSlots[idx] || ""}</text>`);
+                });
+                const x0945 = xAt(3);
+                if (Number.isFinite(x0945)) {
+                    parts.push(`<line x1="${x0945.toFixed(1)}" y1="${pad.top}" x2="${x0945.toFixed(1)}" y2="${H - pad.bottom}" stroke="${pal.svgDiv0945}" stroke-width="1.2" stroke-dasharray="3 3" />`);
+                    parts.push(`<text x="${(x0945 + 4).toFixed(1)}" y="${pad.top + 12}" fill="${pal.svgDiv0945Text}" font-size="10" font-weight="700">09:45 背离窗</text>`);
+                }
             }
 
             const refLines = [];
-            if (prevClose !== null && prevClose > 0) refLines.push({ label: "昨收", val: prevClose, color: pal.svgAxis });
-            if (pmh !== null && pmh > 0) refLines.push({ label: "PMH", val: pmh, color: pal.warn });
-            if (pml !== null && pml > 0) refLines.push({ label: "PML", val: pml, color: pal.accent });
+            if (has24hChart) {
+                if (utcOpen !== null && utcOpen > 0) refLines.push({ label: "UTC开盘", val: utcOpen, color: pal.svgAxis, dash: "5 4" });
+                if (high24 !== null && high24 > 0) refLines.push({ label: "24H高", val: high24, color: pal.warn, dash: "4 4" });
+                if (low24 !== null && low24 > 0) refLines.push({ label: "24H低", val: low24, color: pal.accent, dash: "4 4" });
+                inWindowSr.forEach(sr => {
+                    refLines.push({ label: sr.label, val: sr.val, color: sr.clr, dash: sr.isEst ? "2 3" : "5 3" });
+                });
+            } else {
+                if (prevClose !== null && prevClose > 0) refLines.push({ label: "昨收", val: prevClose, color: pal.svgAxis, dash: "5 4" });
+                if (pmh !== null && pmh > 0) refLines.push({ label: "PMH", val: pmh, color: pal.warn, dash: "5 4" });
+                if (pml !== null && pml > 0) refLines.push({ label: "PML", val: pml, color: pal.accent, dash: "5 4" });
+            }
             refLines.sort((a, b) => yAt(a.val) - yAt(b.val));
             let lastLabelY = -999;
             refLines.forEach(rf => {
                 const y = yAt(rf.val);
-                if (!Number.isFinite(y)) return;
-                const clampedY = Math.max(pad.top + 8, Math.min(H - pad.bottom - 8, y));
+                if (!Number.isFinite(y) || y < pad.top - 2 || y > H - pad.bottom + 2) return;
+                const clampedY = Math.max(pad.top + 9, Math.min(H - pad.bottom - 8, y));
                 let ly = clampedY;
-                if (Math.abs(ly - lastLabelY) < 12) ly = lastLabelY + 12;
+                if (Math.abs(ly - lastLabelY) < 12) ly = Math.min(H - pad.bottom - 4, lastLabelY + 12);
                 lastLabelY = ly;
-                parts.push(`<line x1="${pad.left}" y1="${y.toFixed(1)}" x2="${W - pad.right}" y2="${y.toFixed(1)}" stroke="${rf.color}" stroke-width="1.2" stroke-dasharray="5 4" opacity="0.85" />`);
-                parts.push(`<text x="${pad.left + 6}" y="${(ly - 3).toFixed(1)}" fill="${rf.color}" font-size="10" font-weight="700">${rf.label} $${rf.val.toFixed(2)}</text>`);
+                parts.push(`<line x1="${pad.left}" y1="${y.toFixed(1)}" x2="${W - pad.right}" y2="${y.toFixed(1)}" stroke="${rf.color}" stroke-width="1.2" stroke-dasharray="${rf.dash}" opacity="0.85" />`);
+                parts.push(`<text x="${pad.left + 6}" y="${(ly - 3).toFixed(1)}" fill="${rf.color}" font-size="10" font-weight="700">${escapeNewsHtml(rf.label)} $${rf.val.toFixed(2)}</text>`);
             });
 
             const upperPts = [];
@@ -4754,7 +4904,20 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 }
             }
             if (p50Pts.length >= 2) {
-                parts.push(`<polyline id="ipP50Line" fill="none" stroke="${pal.svgP50}" stroke-width="2.2" stroke-dasharray="6 4" points="${p50Pts.join(" ")}" />`);
+                parts.push(`<polyline id="ipP50Line" fill="none" stroke="${pal.svgP50}" stroke-width="2.0" stroke-dasharray="6 4" points="${p50Pts.join(" ")}" />`);
+            }
+
+            if (has24hChart) {
+                const vwapPts = [];
+                for (let i = 0; i < nSlots; i++) {
+                    if (i < vwapArr.length && vwapArr[i] !== null && vwapArr[i] > 0) {
+                        const x = xAt(i), y = yAt(vwapArr[i]);
+                        if (Number.isFinite(x) && Number.isFinite(y)) vwapPts.push(`${x.toFixed(1)},${y.toFixed(1)}`);
+                    }
+                }
+                if (vwapPts.length >= 2) {
+                    parts.push(`<polyline id="ipVwapLine" fill="none" stroke="${pal.accent}" stroke-width="2.2" stroke-dasharray="5 3" points="${vwapPts.join(" ")}" />`);
+                }
             }
 
             const actPts = [];
@@ -4775,6 +4938,23 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 parts.push(`<circle id="ipActualDot" cx="${lastAct.x.toFixed(1)}" cy="${lastAct.y.toFixed(1)}" r="5" fill="${divClr}" stroke="${pal.svgDotStroke}" stroke-width="1.6" />`);
             }
 
+            if (has24hChart && farUpperSr.length) {
+                const upTxt = farUpperSr
+                    .sort((a, b) => a.val - b.val)
+                    .map(s => `${s.label}:$${s.val.toFixed(2)}(+${Math.abs(s.pctSpot).toFixed(1)}%)`)
+                    .join(" · ");
+                const upClr = farUpperSr.some(s => !s.isEst) ? pal.down : pal.warn;
+                parts.push(`<g id="ipFarSrUpper"><text x="${pad.left + 4}" y="17" fill="${upClr}" font-size="10.5" font-weight="700">▲ 视窗外高阻: ${escapeNewsHtml(upTxt)}</text></g>`);
+            }
+            if (has24hChart && farLowerSr.length) {
+                const loTxt = farLowerSr
+                    .sort((a, b) => b.val - a.val)
+                    .map(s => `${s.label}:$${s.val.toFixed(2)}(-${Math.abs(s.pctSpot).toFixed(1)}%)`)
+                    .join(" · ");
+                const loClr = farLowerSr.some(s => s.isEst) ? pal.warn : pal.up;
+                parts.push(`<g id="ipFarSrLower"><text x="${pad.left + 4}" y="${H - 7}" fill="${loClr}" font-size="10.5" font-weight="700">▼ 视窗外低撑: ${escapeNewsHtml(loTxt)}</text></g>`);
+            }
+
             parts.push(`<line id="ipHoverLine" x1="0" y1="${pad.top}" x2="0" y2="${H - pad.bottom}" stroke="${pal.svgHover}" stroke-width="1" stroke-dasharray="2 2" style="display:none;" />`);
             svgEl.innerHTML = parts.join("");
 
@@ -4793,7 +4973,15 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 }
                 if (tipEl) {
                     const f = (v) => (v !== null && Number.isFinite(v)) ? `$${v.toFixed(2)}` : "--";
-                    tipEl.innerHTML = `<b>${escapeNewsHtml(ticker)} · ${timeSlots[si] || ""} ET</b><br>实际 5m: <b style="color:${pal.svgActual};">${f(act[si])}</b><br>P50 预期: <b style="color:${pal.svgP50};">${f(p50[si])}</b><br>走廊 [P25~P75]: <span style="color:${pal.accent};">${f(p25[si])} ~ ${f(p75[si])}</span>`;
+                    if (has24hChart) {
+                        const tStr = xLabelsFull ? (xLabelsFull[si] || "") : `${xLabels[si] || ""} UTC`;
+                        const pxV = act[si];
+                        const vwV = si < vwapArr.length ? vwapArr[si] : null;
+                        const vwDiff = (pxV !== null && vwV !== null && vwV > 0) ? ` (${((pxV - vwV) / vwV * 100 >= 0 ? "+" : "")}${((pxV - vwV) / vwV * 100).toFixed(2)}%)` : "";
+                        tipEl.innerHTML = `<b>${escapeNewsHtml(ticker)} · ${escapeNewsHtml(tStr)}</b><br>24H 价格: <b style="color:${pal.svgActual};">${f(pxV)}</b><br>实时 VWAP: <b style="color:${pal.accent};">${f(vwV)}${vwDiff}</b><br>24H 波动带 [P25~P75]: <span style="color:${pal.accent};">${f(p25[si])} ~ ${f(p75[si])}</span><br>中位参考 P50: <b style="color:${pal.svgP50};">${f(p50[si])}</b>`;
+                    } else {
+                        tipEl.innerHTML = `<b>${escapeNewsHtml(ticker)} · ${timeSlots[si] || ""} ET</b><br>实际 5m: <b style="color:${pal.svgActual};">${f(act[si])}</b><br>P50 预期: <b style="color:${pal.svgP50};">${f(p50[si])}</b><br>走廊 [P25~P75]: <span style="color:${pal.accent};">${f(p25[si])} ~ ${f(p75[si])}</span>`;
+                    }
                     tipEl.style.display = "block";
                 }
             };
