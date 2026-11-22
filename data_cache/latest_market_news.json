@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795326445.048,
-  "updated_at_et": "11-22 00:47 ET",
-  "updated_at_kst": "14:47 KST",
+  "updated_at_ts": 1795326930.88,
+  "updated_at_et": "11-22 00:55 ET",
+  "updated_at_kst": "14:55 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2873,6 +2873,13 @@
     ],
     "MCD": [
       {
+        "title": "The $15M founder who went to work at McDonald’s",
+        "url": "https://myfirstmillion.videonest.co/videos/2448115/the-15m-founder-who-went-to-work-at-mcdonalds-T04AXXcjBb?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-22 00:33 ET",
+        "pub_ts": 1795325613.0
+      },
+      {
         "title": "Wawa beats McDonald's on food, and 7-Eleven wants in",
         "url": "https://www.thestreet.com/retail/circle-k-7-eleven-and-wawa-try-to-take-down-mcdonalds?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2899,13 +2906,6 @@
         "source": "Yahoo Finance",
         "time": "11-21 08:03 ET",
         "pub_ts": 1795266196.0
-      },
-      {
-        "title": "McDonald’s, Publix and Trader Joe’s inducted into ‘Toxic Hall of Shame’ — hit with F grades for chemicals and plastics",
-        "url": "https://finance.yahoo.com/healthcare/articles/mcdonald-publix-trader-joe-inducted-123000032.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-21 07:30 ET",
-        "pub_ts": 1795264200.0
       }
     ],
     "PEP": [
@@ -3213,6 +3213,13 @@
         "pub_ts": 1795278234.0
       },
       {
+        "title": "Anthropic IPO Buzz Builds as Crypto Bettors Raise the Stakes on ANT Valuation",
+        "url": "https://finance.yahoo.com/technology/ai/articles/anthropic-ipo-buzz-builds-crypto-043005175.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-21 23:30 ET",
+        "pub_ts": 1795321805.0
+      },
+      {
         "title": "Prediction: Some Anthropic Investors Are About to Learn an Expensive Lesson",
         "url": "https://www.fool.com/investing/2026/11/21/prediction-some-anthropic-investors-are-about-to-learn-an-expensive-lesson/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3232,13 +3239,6 @@
         "source": "Yahoo Finance",
         "time": "11-21 16:00 ET",
         "pub_ts": 1795294803.0
-      },
-      {
-        "title": "GraniteShares Introduces 2x Long and 2x Short Anthropic ETFs",
-        "url": "https://finance.yahoo.com/markets/options/articles/graniteshares-introduces-2x-long-2x-201700018.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-21 15:17 ET",
-        "pub_ts": 1795292220.0
       }
     ],
     "XAUUSD": [
@@ -3278,9 +3278,9 @@
     "MSFT": 1795326445.0481892,
     "AAPL": 1795326445.0481892,
     "PLTR": 1795326445.0481892,
-    "NOW": 1795324188.5452878,
+    "NOW": 1795326930.8797998,
     "AMZN": 1795326445.0481892,
-    "CRWV": 1795324188.5452878,
+    "CRWV": 1795326930.8797998,
     "NBIS": 1795326445.0481892,
     "APLD": 1795326445.0481892,
     "VST": 1795326445.0481892,
@@ -3289,23 +3289,23 @@
     "COHR": 1795326445.0481892,
     "MRVL": 1795326445.0481892,
     "LITE": 1795326445.0481892,
-    "AAOI": 1795324188.5452878,
+    "AAOI": 1795326930.8797998,
     "SPCX": 1795326445.0481892,
     "ASTS": 1795326445.0481892,
     "AXTI": 1795326445.0481892,
-    "NASA": 1795324188.5452878,
-    "LUNR": 1795324188.5452878,
-    "TSLA": 1795324188.5452878,
-    "AXP": 1795324188.5452878,
+    "NASA": 1795326930.8797998,
+    "LUNR": 1795326930.8797998,
+    "TSLA": 1795326930.8797998,
+    "AXP": 1795326930.8797998,
     "RKLB": 1795326445.0481892,
-    "KO": 1795324188.5452878,
+    "KO": 1795326930.8797998,
     "FLY": 1795326445.0481892,
-    "INTC": 1795324188.5452878,
-    "VRT": 1795324188.5452878,
-    "HPE": 1795324188.5452878,
-    "DELL": 1795324188.5452878,
-    "OKLO": 1795324188.5452878,
-    "CEG": 1795324188.5452878,
+    "INTC": 1795326930.8797998,
+    "VRT": 1795326930.8797998,
+    "HPE": 1795326930.8797998,
+    "DELL": 1795326930.8797998,
+    "OKLO": 1795326930.8797998,
+    "CEG": 1795326930.8797998,
     "FPS": 1795324188.5452878,
     "MU": 1795324188.5452878,
     "SKHY": 1795324188.5452878,
@@ -3319,17 +3319,17 @@
     "COIN": 1795326445.0481892,
     "LLY": 1795326445.0481892,
     "MRNA": 1795326445.0481892,
-    "NKE": 1795323676.7731457,
-    "MCD": 1795323676.7731457,
-    "PEP": 1795323676.7731457,
-    "XOM": 1795323676.7731457,
-    "JPM": 1795323676.7731457,
-    "WMT": 1795323676.7731457,
-    "V": 1795323676.7731457,
-    "CAT": 1795323676.7731457,
+    "NKE": 1795326930.8797998,
+    "MCD": 1795326930.8797998,
+    "PEP": 1795326930.8797998,
+    "XOM": 1795326930.8797998,
+    "JPM": 1795326930.8797998,
+    "WMT": 1795326930.8797998,
+    "V": 1795326930.8797998,
+    "CAT": 1795326930.8797998,
     "FN": 1795326445.0481892,
     "GLW": 1795326445.0481892,
-    "ANT": 1795323676.7731457,
+    "ANT": 1795326930.8797998,
     "XAUUSD": 1795323676.7731457
   },
   "opex_shield": {
