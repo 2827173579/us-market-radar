@@ -5,7 +5,10 @@ test_defects_6_7_9_10.py - Dedicated Automated Test Suite for Defects 6, 7, 9, 1
 import os
 import sys
 import json
+import hashlib
+import tempfile
 import unittest
+from unittest.mock import patch
 
 PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
 SCRATCH_DIR = PROJECT_DIR  # 兼容旧变量名：单根目录部署时两者一致
@@ -15,10 +18,34 @@ if PROJECT_DIR not in sys.path:
 import create_futu_terminal as cft
 import integrated_market_radar as imr
 
+ROOT_DASHBOARD_HTMLS = (
+    "macro_radar.html",
+    "stocks_radar.html",
+    "futu_pro_terminal.html",
+    "index.html",
+    "predict_radar_5y.html",
+)
+
+
+def _snapshot_root_htmls():
+    snap = {}
+    for name in ROOT_DASHBOARD_HTMLS:
+        p = os.path.join(PROJECT_DIR, name)
+        if os.path.exists(p):
+            st = os.stat(p)
+            with open(p, "rb") as f:
+                digest = hashlib.sha256(f.read()).hexdigest()
+            snap[name] = (st.st_mtime_ns, digest)
+        else:
+            snap[name] = None
+    return snap
+
 
 class TestDefects67910(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
+        cls._root_html_before = _snapshot_root_htmls()
+        cls._tmp_dir = tempfile.TemporaryDirectory()
         # Generate sample HTML from create_futu_terminal
         cls.stocks_sample = [
             {
@@ -65,8 +92,15 @@ class TestDefects67910(unittest.TestCase):
             stocks_data=cls.stocks_sample,
             macro_data=cls.macro_sample,
             weather_info=cls.weather_sample,
-            update_time_str="2026-11-03 10:30:00"
+            update_time_str="2026-11-03 10:30:00",
+            sync_side_effects=False,
+            sync_dir=cls._tmp_dir.name,
         )
+
+    @classmethod
+    def tearDownClass(cls):
+        if hasattr(cls, "_tmp_dir") and cls._tmp_dir is not None:
+            cls._tmp_dir.cleanup()
 
     # -------------------------------------------------------------------------
     # Defect 6: TradingView K-Line Mapping
@@ -78,7 +112,7 @@ class TestDefects67910(unittest.TestCase):
         self.assertIn('"COIN": "NASDAQ:COIN"', self.terminal_html)
         self.assertIn('"FLY": "NASDAQ:FLY"', self.terminal_html)
         self.assertIn('"QCOM": "NASDAQ:QCOM"', self.terminal_html)
-        self.assertIn("TradingView 交易所标的代码映射 (全量 71 只)", self.terminal_html)
+        self.assertIn("TradingView 交易所标的代码映射 (全量 79 只)", self.terminal_html)
 
     # -------------------------------------------------------------------------
     # Defect 7: Golden Pit Filter & Card Stats Leakage Prevention
@@ -143,29 +177,63 @@ class TestDefects67910(unittest.TestCase):
         self.assertNotIn('href="/manifest.json"', self.terminal_html)
 
     def test_defect_10_top_navbars_5y_backtest_button_and_70_tickers(self):
-        """Verify top navbar in macro_radar.html and stocks_radar.html templates."""
-        imr.generate_macro_radar_html(
-            macro_data={},
-            weather_info={"weather": "晴天", "icon": "☀️", "color": "#00e676", "desc": "良好", "tactics": "进攻", "qqqm_bias": 1.0, "smh_bias": 1.0, "vixy_pos_60": 40.0, "vixy_last": 20.5, "tlt_bias": 0.5},
-            history_dict={},
-            update_time_str="2026-11-03 10:30:00"
-        )
-        with open(imr.MACRO_HTML_FILE, "r", encoding="utf-8") as f:
-            macro_html = f.read()
-        self.assertIn('🛡️ 5Y回测', macro_html)
-        self.assertIn('backtest_report_5y.html', macro_html)
-        self.assertIn('16只核心ETF · 全网71只标的', macro_html)
+        """Verify top navbar in macro_radar.html and stocks_radar.html templates using isolated temp files."""
+        tmp_macro_html = os.path.join(self._tmp_dir.name, "macro_radar.html")
+        tmp_stocks_html = os.path.join(self._tmp_dir.name, "stocks_radar.html")
 
-        imr.generate_stocks_radar_html(
-            stocks_data=self.stocks_sample,
-            history_dict={},
-            update_time_str="2026-11-03 10:30:00"
-        )
-        with open(imr.STOCKS_HTML_FILE, "r", encoding="utf-8") as f:
-            stocks_html = f.read()
-        self.assertIn('🛡️ 5Y回测', stocks_html)
-        self.assertIn('backtest_report_5y.html', stocks_html)
-        self.assertIn('全网 71 只标的 · 16 ETF + 55 个股', stocks_html)
+        with patch.object(imr, "MACRO_HTML_FILE", tmp_macro_html), patch.object(imr, "STOCKS_HTML_FILE", tmp_stocks_html):
+            imr.generate_macro_radar_html(
+                macro_data={},
+                weather_info={"weather": "晴天", "icon": "☀️", "color": "#00e676", "desc": "良好", "tactics": "进攻", "qqqm_bias": 1.0, "smh_bias": 1.0, "vixy_pos_60": 40.0, "vixy_last": 20.5, "tlt_bias": 0.5},
+                history_dict={},
+                update_time_str="2026-11-03 10:30:00"
+            )
+            with open(tmp_macro_html, "r", encoding="utf-8") as f:
+                macro_html = f.read()
+            self.assertIn('🛡️ 5Y回测', macro_html)
+            self.assertIn('backtest_report_5y.html', macro_html)
+            self.assertIn('14只核心ETF · 全网79只标的', macro_html)
+
+            imr.generate_stocks_radar_html(
+                stocks_data=self.stocks_sample,
+                history_dict={},
+                update_time_str="2026-11-03 10:30:00"
+            )
+            with open(tmp_stocks_html, "r", encoding="utf-8") as f:
+                stocks_html = f.read()
+            self.assertIn('🛡️ 5Y回测', stocks_html)
+            self.assertIn('backtest_report_5y.html', stocks_html)
+            self.assertIn('全网 79 只标的 · 14 ETF + 65 个股', stocks_html)
+
+    def test_root_production_html_files_never_modified_by_tests(self):
+        """Regression guard: running mock HTML generation tests must never modify root production dashboards."""
+        pre_snapshot = _snapshot_root_htmls()
+        with tempfile.TemporaryDirectory() as td:
+            tmp_macro = os.path.join(td, "macro_radar.html")
+            tmp_stocks = os.path.join(td, "stocks_radar.html")
+            with patch.object(imr, "MACRO_HTML_FILE", tmp_macro), patch.object(imr, "STOCKS_HTML_FILE", tmp_stocks):
+                imr.generate_macro_radar_html(
+                    macro_data={},
+                    weather_info={"weather": "晴天", "icon": "☀️", "color": "#00e676", "desc": "良好", "tactics": "进攻", "qqqm_bias": 1.0, "smh_bias": 1.0, "vixy_pos_60": 40.0, "vixy_last": 20.5, "tlt_bias": 0.5},
+                    history_dict={},
+                    update_time_str="2026-11-03 10:30:00"
+                )
+                imr.generate_stocks_radar_html(
+                    stocks_data=self.stocks_sample,
+                    history_dict={},
+                    update_time_str="2026-11-03 10:30:00"
+                )
+                cft.build_futu_terminal_html(
+                    stocks_data=self.stocks_sample,
+                    macro_data=self.macro_sample,
+                    weather_info=self.weather_sample,
+                    update_time_str="2026-11-03 10:30:00",
+                    sync_side_effects=False,
+                    sync_dir=td,
+                )
+        post_snapshot = _snapshot_root_htmls()
+        self.assertEqual(self._root_html_before, post_snapshot, "Root production HTML changed compared to pre-suite snapshot")
+        self.assertEqual(pre_snapshot, post_snapshot, "Root production HTML modified during HTML generation test")
 
     def test_defect_10_readme_documentation(self):
         """Verify README.md contains GitHub Pages URLs, PWA setup, and V3.1/V3.2 metrics."""

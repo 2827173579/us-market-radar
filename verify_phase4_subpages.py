@@ -39,7 +39,17 @@ def check_static_subpages():
     ids = re.findall(r'\bid="([^"]+)"', body_only)
     dups = sorted({i for i in ids if ids.count(i) > 1})
     assert not dups, f"Duplicate DOM IDs in predict_radar_5y.html: {dups}"
-    print(f"[PASS] Static subpages audit: 0 coin glyphs, 79标的 ok, {len(ids)} unique IDs in predict_radar_5y.html.")
+
+    macro_txt = MACRO_HTML.read_text(encoding="utf-8")
+    assert "2026-11-03 10:30:00" not in macro_txt, "Polluted fake test timestamp 2026-11-03 10:30:00 found in macro_radar.html"
+    assert "$20.50" not in macro_txt, "Polluted fake VIXY $20.50 placeholder found in macro_radar.html"
+    assert "【晴天】模式" not in macro_txt, "Polluted fake 【晴天】模式 placeholder found in macro_radar.html"
+    assert "<b>风向研判：</b>良好" not in macro_txt, "Polluted fake 风向研判 placeholder found in macro_radar.html"
+    assert 'id="crossMarketLiquidityCard"' in macro_txt, "Missing crossMarketLiquidityCard in macro_radar.html"
+    assert "plotly-graph-div" in macro_txt, "Missing Plotly chart container in macro_radar.html"
+    assert "QQQ (" in macro_txt, "Missing live QQQ 180-day trace in macro_radar.html"
+    assert "SMH (" in macro_txt and "VIXY " in macro_txt, "Missing live SMH/VIXY traces in macro_radar.html"
+    print(f"[PASS] Static subpages audit: 0 coin glyphs, 79标的 ok, {len(ids)} unique IDs in predict_radar_5y.html, clean live macro_radar.html.")
 
 
 def verify_soxl_ladder(page, tag):

@@ -33,6 +33,7 @@ import os
 import sys
 import math
 import json
+import tempfile
 import unittest
 from typing import Dict, Any, List
 
@@ -309,43 +310,49 @@ class TestDataCacheDualJsonContractsStress(unittest.TestCase):
         """
         Stress test live updates through build_futu_terminal_html:
         Simulate severe market changes (crashes, rallies, halts) and verify that
-        data contracts and sort invariance hold across updates.
+        data contracts and sort invariance hold across updates in an isolated temp dir.
         """
-        backup_content = json.dumps(self.cached_data, ensure_ascii=False, indent=2)
+        import hashlib
+        pred_root_html = os.path.join(RADAR_DIR, "predict_radar_5y.html")
+        pre_ai_hash = hashlib.sha256(open(self.ai_path, "rb").read()).hexdigest()
+        pre_pred_hash = hashlib.sha256(open(pred_root_html, "rb").read()).hexdigest() if os.path.exists(pred_root_html) else None
 
-        try:
-            # Scenario 1: Mixed crash halts and sudden price movements
-            perturbed_stocks = []
-            tickers = list(self.cached_data.get("by_ticker", {}).keys())
-            for i, tk in enumerate(tickers):
-                perturbed_stocks.append({
-                    "ticker": tk,
-                    "active_price": 100.0 + i,
-                    "last": 100.0 + i,
-                    "bias": -8.0 if i % 3 == 0 else (5.0 if i % 3 == 1 else -1.0),
-                    "rsi": 22.0 if i % 5 == 0 else 55.0,
-                    "is_crash_halt": (i % 7 == 0),
-                    "is_cooling_halt": (i % 11 == 0),
-                    "atr": 3.0,
-                })
+        # Scenario 1: Mixed crash halts and sudden price movements
+        perturbed_stocks = []
+        tickers = list(self.cached_data.get("by_ticker", {}).keys())
+        for i, tk in enumerate(tickers):
+            perturbed_stocks.append({
+                "ticker": tk,
+                "active_price": 100.0 + i,
+                "last": 100.0 + i,
+                "bias": -8.0 if i % 3 == 0 else (5.0 if i % 3 == 1 else -1.0),
+                "rsi": 22.0 if i % 5 == 0 else 55.0,
+                "is_crash_halt": (i % 7 == 0),
+                "is_cooling_halt": (i % 11 == 0),
+                "atr": 3.0,
+            })
 
-            weather_storm = {
-                "weather": "🌧️ 暴雨空仓",
-                "icon": "🌧️",
-                "qqqm_bias": -6.50,
-                "smh_bias": -11.20,
-                "vixy_pos_60": 0.72,
-            }
+        weather_storm = {
+            "weather": "🌧️ 暴雨空仓",
+            "icon": "🌧️",
+            "qqqm_bias": -6.50,
+            "smh_bias": -11.20,
+            "vixy_pos_60": 0.72,
+        }
 
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_ai_path = os.path.join(tmp_dir, "data_cache", "latest_ai_predictions.json")
             cft.build_futu_terminal_html(
                 stocks_data=perturbed_stocks,
                 macro_data={},
                 weather_info=weather_storm,
-                update_time_str="2026-11-03 14:00:00"
+                update_time_str="2026-11-03 14:00:00",
+                sync_side_effects=False,
+                sync_dir=tmp_dir,
             )
 
-            # Re-read and assert invariants
-            with open(self.ai_path, "r", encoding="utf-8") as f:
+            self.assertTrue(os.path.exists(tmp_ai_path), f"Expected isolated JSON output at {tmp_ai_path}")
+            with open(tmp_ai_path, "r", encoding="utf-8") as f:
                 updated_data = json.load(f)
 
             # Check top_short sort
@@ -372,14 +379,10 @@ class TestDataCacheDualJsonContractsStress(unittest.TestCase):
             self.assertEqual(mw.get("smh_bias"), mw.get("smh_bias_ma50"))
             self.assertEqual(mw.get("vixy_pos"), mw.get("vixy_pos_60"))
 
-        finally:
-            # Safely restore original json cache to BOTH scratch root and us-market-radar
-            with open(self.ai_path, "w", encoding="utf-8") as f:
-                f.write(backup_content)
-            radar_ai_path = os.path.join(RADAR_DIR, "data_cache", "latest_ai_predictions.json")
-            if os.path.exists(os.path.dirname(radar_ai_path)):
-                with open(radar_ai_path, "w", encoding="utf-8") as f:
-                    f.write(backup_content)
+        post_ai_hash = hashlib.sha256(open(self.ai_path, "rb").read()).hexdigest()
+        post_pred_hash = hashlib.sha256(open(pred_root_html, "rb").read()).hexdigest() if os.path.exists(pred_root_html) else None
+        self.assertEqual(pre_ai_hash, post_ai_hash, "Root data_cache/latest_ai_predictions.json was modified by test!")
+        self.assertEqual(pre_pred_hash, post_pred_hash, "Root predict_radar_5y.html was modified by test!")
 
 
 if __name__ == "__main__":
