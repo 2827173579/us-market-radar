@@ -79,7 +79,9 @@ class TestAll21TickersAdversarialAudit(unittest.TestCase):
                 max_proj = max(proj_prices)
 
                 # Invariant 1: Dynamic R2 envelope calibration
-                if r2 is not None and r2 > 0:
+                # V4.4 static-anchor rule: when cur_p > r2 (ALL_RESISTANCE_BROKEN), r2 is intentionally frozen as a floor
+                # instead of fabricating a fake higher ceiling.
+                if r2 is not None and r2 > 0 and not (cur_p > r2):
                     self.assertLessEqual(
                         max_proj, r2,
                         f"[{source_name}] {ticker}: max projection ${max_proj:.2f} floats above R2 ${r2:.2f}"
