@@ -1,9 +1,22 @@
 {
-  "updated_at_ts": 1795343017.369,
-  "updated_at_et": "11-22 05:23 ET",
-  "updated_at_kst": "19:23 KST",
+  "updated_at_ts": 1795344877.237,
+  "updated_at_et": "11-22 05:54 ET",
+  "updated_at_kst": "19:54 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261122182731422800",
+      "title": "整理：特朗普过去24小时都忙了什么？（2026-11-22）",
+      "summary": "1. 美国总统特朗普在社交平台发布一张图片，称民主党导致股市受损。 2. 承诺与民主党合作，将信用卡利率上限设为10% ——据福克斯新闻，美国总统特朗普表示，将与即将上任的民主党国会合作，推动设定信用卡利率上限，以兑现其2024年竞选期间作出的承诺。特朗普说：“我愿意这么做。这些信用卡公司已经赚了很多钱。”民主党和特朗普均支持限制信用卡利率，目前主流提案是将上限设为10%，而纽约联储8月调查显示，美国信用卡利率中位数约为22.2%。 3. 称FBI数据库遭黑客入侵或有“积极一面”：可能借机发现选举舞弊信息 ——美国总统特朗普周六表示，联邦调查局（FBI）一套存储执法信息的计算机系统遭黑客入侵，但事件或许也有“积极一面”，可能借此发现选举舞弊等信息。据知情人士透露，黑客侵入的是美国国家犯罪信息中心（NCIC），该数据库存有FBI指纹记录、通缉人员、暴力犯罪者及失踪人员等信息，仅供执法部门使用，但不属于机密系统，目前尚不清楚哪些数据遭窃取。 4. 称寻求与伊朗达成一项永久性协议 ——美国总统特朗普在美国福克斯新闻频道21日播出的采访节目中说，将寻求与伊朗达成一项永久性协议。特朗普说：“我所做的是，我要确保即使四年、十五年或二十年后我们有一位不称职的总统，我达成的协议也将是永久性的。我不会让某人允许他们拥有核武器并对达成的协议出尔反尔。”特朗普还称，没有考虑伊朗政权更迭，“我从来不太在乎政权”。",
+      "keywords": [
+        "特朗普"
+      ],
+      "pub_ts": 1795343251.0,
+      "time_et": "11-22 05:27 ET",
+      "time_bj": "18:27 BJ",
+      "time_kst": "19:27 KST",
+      "time_display": "05:27 ET / 18:27 BJ"
+    },
     {
       "id": "20261122113151321800",
       "title": "一周展望：感恩节前数据扎堆，10月核心PCE携美联储褐皮书拷问加息预期！",
@@ -339,19 +352,6 @@
       "time_bj": "01:31 BJ",
       "time_kst": "02:31 KST",
       "time_display": "12:31 ET / 01:31 BJ"
-    },
-    {
-      "id": "20261121011554703800",
-      "title": "美联储理事库克：嵌入式通胀将要求美联储采取更激进的应对措施。",
-      "summary": "美联储理事库克：嵌入式通胀将要求美联储采取更激进的应对措施。",
-      "keywords": [
-        "美联储"
-      ],
-      "pub_ts": 1795194954.0,
-      "time_et": "11-20 12:15 ET",
-      "time_bj": "01:15 BJ",
-      "time_kst": "02:15 KST",
-      "time_display": "12:15 ET / 01:15 BJ"
     }
   ],
   "ticker_news": {
@@ -912,6 +912,20 @@
     ],
     "NVDA": [
       {
+        "title": "This Pipeline Partnership Raised Its Payout by 12.5% for the Third Straight Year. Here’s How Much Longer It Can Keep That Up.",
+        "url": "https://www.fool.com/investing/2026/11/22/this-pipeline-partnership-raised-its-payout-by-125-for-the-third-straight-year-heres-how-much-longer-it-can-keep-that-up/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-22 05:27 ET",
+        "pub_ts": 1795343222.0
+      },
+      {
+        "title": "Plot Twist: As CFO, Nvidia’s Interim CEO Said “Over 99%” of Singapore Billings Were for U.S. Customers",
+        "url": "https://www.tikr.com/blog/plot-twist-as-cfo-nvidias-interim-ceo-said-over-99-of-singapore-billings-were-for-u-s-customers?ref=yahoofinance&tlnk=yf-261122-mmcx4jc4&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-22 05:04 ET",
+        "pub_ts": 1795341867.0
+      },
+      {
         "title": "Nvidia Just Delivered Incredible Results. Buy This Artificial Intelligence (AI) Stock Instead If You’re Still Worried About the Semiconductor Giant’s Future",
         "url": "https://www.fool.com/investing/2026/11/22/nvidia-just-delivered-incredible-results-buy-this-artificial-intelligence-ai-stock-instead-if-you-re-still-worried-about-the-semiconductor-giant-s-future/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -931,23 +945,16 @@
         "source": "Yahoo Finance",
         "time": "11-22 03:20 ET",
         "pub_ts": 1795335603.0
-      },
-      {
-        "title": "Mortgage Rates Have Jumped More Than 1 Point Since February. Home Depot and Lowe’s Shareholders Are Feeling the Pain.",
-        "url": "https://www.fool.com/investing/2026/11/22/mortgage-rates-have-jumped-more-than-1-point-since-february-home-depot-and-lowes-shareholders-are-feeling-the-pain/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-22 02:43 ET",
-        "pub_ts": 1795333382.0
-      },
-      {
-        "title": "Chamath Palihapitiya Praises Jensen Huang As ‘Biblically Good,’ But Warns Bringing Him Back At Nvidia Could Put ‘Everybody’ At Risk",
-        "url": "https://stocktwits.com/news-articles/markets/equity/chamath-palihapitiya-praises-jensen-huang-biblically-good-nvidia-risk/cNbnmnOR91r?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-22 01:52 ET",
-        "pub_ts": 1795330345.0
       }
     ],
     "AMD": [
+      {
+        "title": "Stanley Druckenmiller, David Tepper and 33 Other Big Funds Sold Advanced Micro Devices Last Quarter, While 21 Bought. Who’s Right?",
+        "url": "https://www.tikr.com/blog/stanley-druckenmiller-david-tepper-and-33-other-big-funds-sold-advanced-micro-devices-last-quarter-while-21-bought-whos-right?ref=yahoofinance&tlnk=yf-261122-4w2438x8&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-22 05:22 ET",
+        "pub_ts": 1795342963.0
+      },
       {
         "title": "AMD Stock Just Plunged on a Short-Seller Report. Is This a Golden Buying Opportunity?",
         "url": "https://www.fool.com/investing/2026/11/22/amd-stock-just-plunged-on-a-short-seller-report-is-this-a-golden-buying-opportunity/?.tsrc=rss",
@@ -975,13 +982,6 @@
         "source": "Yahoo Finance",
         "time": "11-21 08:00 ET",
         "pub_ts": 1795266002.0
-      },
-      {
-        "title": "AMD Is “A Direct Stakeholder in Anthropic.” That’s Up to $5 Billion Riding on Its IPO",
-        "url": "https://www.tikr.com/blog/amd-is-a-direct-stakeholder-in-anthropic-thats-up-to-5-billion-riding-on-its-ipo?ref=yahoofinance&tlnk=yf-261121-5x6px635&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-21 07:38 ET",
-        "pub_ts": 1795264687.0
       }
     ],
     "ASML": [
@@ -1171,6 +1171,13 @@
     ],
     "GOOGL": [
       {
+        "title": "Jason Calacanis Will “Catch Every Knife” With SpaceX, Tesla and Google. Only Some Are Cheap",
+        "url": "https://www.tikr.com/blog/jason-calacanis-will-catch-every-knife-with-spacex-tesla-and-google-only-some-are-cheap?ref=yahoofinance&tlnk=yf-261122-4rm83mgv&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-22 05:03 ET",
+        "pub_ts": 1795341810.0
+      },
+      {
         "title": "Billionaire David Tepper Just Made a Massive AI Chip Rotation — Will It Pay Off?",
         "url": "https://www.fool.com/investing/2026/11/21/billionaire-david-tepper-just-made-a-massive-ai-chip-rotation-will-it-pay-off/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1197,13 +1204,6 @@
         "source": "Yahoo Finance",
         "time": "11-21 18:39 ET",
         "pub_ts": 1795304366.0
-      },
-      {
-        "title": "Alphabet Stock Just Hit a 1-Year Low. Why Is Google's Parent Borrowing So Much Money?",
-        "url": "https://www.fool.com/investing/2026/11/21/alphabet-stock-just-hit-a-1-year-low-why-is-google-s-parent-borrowing-so-much-money/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-21 18:20 ET",
-        "pub_ts": 1795303248.0
       }
     ],
     "MSFT": [
@@ -1578,6 +1578,13 @@
     ],
     "CRDO": [
       {
+        "title": "150% Upside for Credo Technology? Stifel Thinks So, and Here’s How",
+        "url": "https://www.tikr.com/blog/150-upside-for-credo-technology-stifel-thinks-so-and-heres-how?ref=yahoofinance&tlnk=yf-261122-7jhw3mjq&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-22 05:09 ET",
+        "pub_ts": 1795342163.0
+      },
+      {
         "title": "Credo Technology Group vs. Western Digital: Which Technology Stock Is a Better Buy for 2027?",
         "url": "https://www.fool.com/coverage/better-buy/2026/11/20/credo-technology-group-vs-western-digital-which-technology-stock-is-a-better-buy-for-2027/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1604,13 +1611,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 17:09 ET",
         "pub_ts": 1795126193.0
-      },
-      {
-        "title": "Credo Sinks 8% in a Week, Marvell 8%, as Bessent Calls for a Nvidia “Dramatic Shakeup.” Time to Buy?",
-        "url": "https://www.tikr.com/blog/credo-stock-drop-nvidia-turmoil-marvell-patent-settlement-buy?ref=yahoofinance&tlnk=yf-261119-7f4x9qjq&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 09:07 ET",
-        "pub_ts": 1795097257.0
       }
     ],
     "COHR": [
@@ -1763,6 +1763,20 @@
     ],
     "SPCX": [
       {
+        "title": "Elon Musk's Tesla and SpaceX Each Formed a Special Committee to Explore a Merger as His AI Spending Accelerates. Here's Why Combining Them Could Reshape How Investors Value Tesla's Robotaxi Business.",
+        "url": "https://www.fool.com/investing/2026/11/22/elon-musks-tesla-and-spacex-committee-merger/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-22 05:20 ET",
+        "pub_ts": 1795342800.0
+      },
+      {
+        "title": "Jason Calacanis Will “Catch Every Knife” With SpaceX, Tesla and Google. Only Some Are Cheap",
+        "url": "https://www.tikr.com/blog/jason-calacanis-will-catch-every-knife-with-spacex-tesla-and-google-only-some-are-cheap?ref=yahoofinance&tlnk=yf-261122-4rm83mgv&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-22 05:03 ET",
+        "pub_ts": 1795341810.0
+      },
+      {
         "title": "Tesla Just Started Selling Cybercabs, Here's What It Means for a SpaceX and Tesla Merger .",
         "url": "https://www.fool.com/investing/2026/11/22/tesla-just-started-selling-cybercabs-here-s-what-it-means-for-a-spacex-and-tesla-merger/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1782,20 +1796,6 @@
         "source": "Yahoo Finance",
         "time": "11-21 21:47 ET",
         "pub_ts": 1795315622.0
-      },
-      {
-        "title": "Trump Recalls Helping Elon Musk When He Was ‘In Big Trouble,’ Defends Nvidia’s Jensen Huang as One of America’s Rare 'Geniuses'",
-        "url": "https://finance.yahoo.com/technology/articles/trump-recalls-helping-elon-musk-003010870.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-21 19:30 ET",
-        "pub_ts": 1795307410.0
-      },
-      {
-        "title": "Musk Filed This Plan Long Before the Election. Now It Looks Like He Saw It Coming.",
-        "url": "https://finance.yahoo.com/technology/ai/articles/musk-filed-plan-long-election-223400549.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-21 17:34 ET",
-        "pub_ts": 1795300440.0
       }
     ],
     "ASTS": [
@@ -1948,6 +1948,13 @@
     ],
     "TSLA": [
       {
+        "title": "Elon Musk's Tesla and SpaceX Each Formed a Special Committee to Explore a Merger as His AI Spending Accelerates. Here's Why Combining Them Could Reshape How Investors Value Tesla's Robotaxi Business.",
+        "url": "https://www.fool.com/investing/2026/11/22/elon-musks-tesla-and-spacex-committee-merger/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-22 05:20 ET",
+        "pub_ts": 1795342800.0
+      },
+      {
         "title": "Jason Calacanis Will “Catch Every Knife” With SpaceX, Tesla and Google. Only Some Are Cheap",
         "url": "https://www.tikr.com/blog/jason-calacanis-will-catch-every-knife-with-spacex-tesla-and-google-only-some-are-cheap?ref=yahoofinance&tlnk=yf-261122-4rm83mgv&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1974,13 +1981,6 @@
         "source": "Yahoo Finance",
         "time": "11-21 16:08 ET",
         "pub_ts": 1795295334.0
-      },
-      {
-        "title": "Tesla FSD V15 Rolling Out, Goes 'Wide' Next Month. Elon Musk Says It's 'Something Special.'",
-        "url": "https://finance.yahoo.com/m/b31af40e-5144-3249-9033-82521507fe84/tesla-fsd-v15-rolling-out%2C.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-21 15:46 ET",
-        "pub_ts": 1795294012.0
       }
     ],
     "AXP": [
@@ -3021,6 +3021,13 @@
     ],
     "WMT": [
       {
+        "title": "TD Cowen Raises Its Walmart Target to $147. Is It Still Too Low?",
+        "url": "https://www.tikr.com/blog/td-cowen-raises-its-walmart-target-to-147-is-it-still-too-low?ref=yahoofinance&tlnk=yf-261122-gr23fpjr&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-22 05:26 ET",
+        "pub_ts": 1795343163.0
+      },
+      {
         "title": "Walmart's CEO shares big news for time-strapped grocery shoppers",
         "url": "https://www.thestreet.com/investing/stocks/wmt-walmart-ceo-john-furner-says-ai-assistant-sparky-is-transforming-grocery-shopping-for-busy-shoppers?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3047,13 +3054,6 @@
         "source": "Yahoo Finance",
         "time": "11-21 09:01 ET",
         "pub_ts": 1795269695.0
-      },
-      {
-        "title": "Why Isn't Walmart's Stock Bouncing Back After Weak Earnings Results?",
-        "url": "https://www.fool.com/investing/2026/11/21/why-isn-t-walmart-s-stock-bouncing-back-after-weak-earnings-results/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-21 08:57 ET",
-        "pub_ts": 1795269464.0
       }
     ],
     "V": [
@@ -3252,85 +3252,85 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795343017.369158,
-    "SOXL": 1795343017.369158,
-    "SPY": 1795343017.369158,
-    "DIA": 1795343017.369158,
-    "SOXX": 1795343017.369158,
-    "QQQ": 1795343017.369158,
-    "SMH": 1795343017.369158,
-    "IWM": 1795343017.369158,
-    "IGV": 1795343017.369158,
-    "TLT": 1795343017.369158,
-    "GLD": 1795343017.369158,
-    "SQQQ": 1795343017.369158,
-    "TSM": 1795341544.51728,
-    "VIXY": 1795343017.369158,
-    "SOXS": 1795343017.369158,
-    "NVDA": 1795341544.51728,
-    "AMD": 1795341544.51728,
-    "ASML": 1795341544.51728,
-    "QCOM": 1795341544.51728,
-    "AVGO": 1795341544.51728,
-    "AMAT": 1795341544.51728,
-    "META": 1795341544.51728,
-    "GOOGL": 1795341544.51728,
-    "MSFT": 1795341544.51728,
-    "AAPL": 1795341544.51728,
-    "PLTR": 1795341544.51728,
-    "NOW": 1795342921.1911407,
-    "AMZN": 1795341544.51728,
-    "CRWV": 1795342921.1911407,
-    "NBIS": 1795341544.51728,
-    "APLD": 1795341544.51728,
-    "VST": 1795341544.51728,
-    "BE": 1795341544.51728,
-    "CRDO": 1795341544.51728,
-    "COHR": 1795341544.51728,
-    "MRVL": 1795341544.51728,
-    "LITE": 1795341640.7067752,
-    "AAOI": 1795342921.1911407,
-    "SPCX": 1795341640.7067752,
-    "ASTS": 1795342921.1911407,
-    "AXTI": 1795341544.51728,
-    "NASA": 1795342921.1911407,
-    "LUNR": 1795342921.1911407,
-    "TSLA": 1795342921.1911407,
-    "AXP": 1795342921.1911407,
-    "RKLB": 1795342921.1911407,
-    "KO": 1795342921.1911407,
-    "FLY": 1795342921.1911407,
-    "INTC": 1795342921.1911407,
-    "VRT": 1795342921.1911407,
-    "HPE": 1795342921.1911407,
-    "DELL": 1795342921.1911407,
-    "OKLO": 1795342921.1911407,
-    "CEG": 1795342921.1911407,
-    "FPS": 1795343017.369158,
-    "MU": 1795343017.369158,
-    "SKHY": 1795343017.369158,
-    "WDC": 1795343017.369158,
-    "STX": 1795341544.51728,
-    "MSTR": 1795341544.51728,
-    "SNDK": 1795341544.51728,
-    "BTC-USD": 1795342921.1911407,
-    "CRWD": 1795342921.1911407,
-    "ORCL": 1795342921.1911407,
-    "COIN": 1795342921.1911407,
-    "LLY": 1795342921.1911407,
-    "MRNA": 1795342921.1911407,
-    "NKE": 1795342921.1911407,
-    "MCD": 1795342921.1911407,
-    "PEP": 1795343017.369158,
-    "XOM": 1795343017.369158,
-    "JPM": 1795343017.369158,
-    "WMT": 1795343017.369158,
-    "V": 1795343017.369158,
-    "CAT": 1795343017.369158,
-    "FN": 1795341640.7067752,
-    "GLW": 1795341640.7067752,
-    "ANT": 1795343017.369158,
-    "XAUUSD": 1795341640.7067752
+    "KORU": 1795344590.9188688,
+    "SOXL": 1795344590.9188688,
+    "SPY": 1795344590.9188688,
+    "DIA": 1795344590.9188688,
+    "SOXX": 1795344590.9188688,
+    "QQQ": 1795344590.9188688,
+    "SMH": 1795344590.9188688,
+    "IWM": 1795344590.9188688,
+    "IGV": 1795344590.9188688,
+    "TLT": 1795344590.9188688,
+    "GLD": 1795344590.9188688,
+    "SQQQ": 1795344590.9188688,
+    "TSM": 1795344685.4533024,
+    "VIXY": 1795344590.9188688,
+    "SOXS": 1795344590.9188688,
+    "NVDA": 1795344685.4533024,
+    "AMD": 1795344685.4533024,
+    "ASML": 1795344685.4533024,
+    "QCOM": 1795344685.4533024,
+    "AVGO": 1795344685.4533024,
+    "AMAT": 1795344685.4533024,
+    "META": 1795344685.4533024,
+    "GOOGL": 1795344685.4533024,
+    "MSFT": 1795344685.4533024,
+    "AAPL": 1795344685.4533024,
+    "PLTR": 1795344685.4533024,
+    "NOW": 1795344495.0181186,
+    "AMZN": 1795344685.4533024,
+    "CRWV": 1795344495.0181186,
+    "NBIS": 1795344685.4533024,
+    "APLD": 1795344685.4533024,
+    "VST": 1795344685.4533024,
+    "BE": 1795344685.4533024,
+    "CRDO": 1795344685.4533024,
+    "COHR": 1795344685.4533024,
+    "MRVL": 1795344685.4533024,
+    "LITE": 1795344780.9778292,
+    "AAOI": 1795344495.0181186,
+    "SPCX": 1795344780.9778292,
+    "ASTS": 1795344495.0181186,
+    "AXTI": 1795344685.4533024,
+    "NASA": 1795344495.0181186,
+    "LUNR": 1795344495.0181186,
+    "TSLA": 1795344495.0181186,
+    "AXP": 1795344495.0181186,
+    "RKLB": 1795344495.0181186,
+    "KO": 1795344495.0181186,
+    "FLY": 1795344495.0181186,
+    "INTC": 1795344495.0181186,
+    "VRT": 1795344495.0181186,
+    "HPE": 1795344495.0181186,
+    "DELL": 1795344495.0181186,
+    "OKLO": 1795344495.0181186,
+    "CEG": 1795344495.0181186,
+    "FPS": 1795344590.9188688,
+    "MU": 1795344590.9188688,
+    "SKHY": 1795344590.9188688,
+    "WDC": 1795344590.9188688,
+    "STX": 1795344685.4533024,
+    "MSTR": 1795344685.4533024,
+    "SNDK": 1795344685.4533024,
+    "BTC-USD": 1795344495.0181186,
+    "CRWD": 1795344495.0181186,
+    "ORCL": 1795344495.0181186,
+    "COIN": 1795344495.0181186,
+    "LLY": 1795344495.0181186,
+    "MRNA": 1795344495.0181186,
+    "NKE": 1795344495.0181186,
+    "MCD": 1795344495.0181186,
+    "PEP": 1795344590.9188688,
+    "XOM": 1795344590.9188688,
+    "JPM": 1795344590.9188688,
+    "WMT": 1795344590.9188688,
+    "V": 1795344590.9188688,
+    "CAT": 1795344590.9188688,
+    "FN": 1795344780.9778292,
+    "GLW": 1795344780.9778292,
+    "ANT": 1795344590.9188688,
+    "XAUUSD": 1795344780.9778292
   },
   "opex_shield": {
     "date": "2026-11-22",
@@ -3349,7 +3349,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (22:31 ET / 11:31 BJ) [美联储] [加息] [PCE]：下周迎感恩节假期，美数据前置周三集中发布。核心PCE、美联储褐皮书及威廉姆斯讲话将检验加息预期，黑五消费与乌克兰停火1月3日期限博弈同步受瞩。点击查看…",
+    "detail": "⚡ 最新核心快讯 (05:27 ET / 18:27 BJ) [特朗普]：1. 美国总统特朗普在社交平台发布一张图片，称民主党导致股市受损。 2. 承诺与民主党合作，将信用卡利率上限设为10% ——据福克斯新闻，美国总统特朗普表示，将与即将上任的民主党国会合作，推",
     "event_name": "",
     "minutes_left": 0,
     "opex_shield": {
