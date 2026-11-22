@@ -3991,9 +3991,21 @@
     "JIN10_FLASH:20261122182731422800": {
       "device": "PC",
       "ts": 1795343315.4748473
+    },
+    "JIN10_FLASH:20261122201051968800": {
+      "device": "PC",
+      "ts": 1795350541.4730163
+    },
+    "2026-11-22:AMZN:5M_ENTRY": {
+      "device": "PC",
+      "ts": 1795351555.616994
+    },
+    "2026-11-22:NBIS/APLD/CRDO/MSTR/DELL/BE/COIN/NVDA/SKHY/MU/AMAT/TSM/ASML/AMD/QCOM:STOP_LOSS": {
+      "device": "PC",
+      "ts": 1795368665.9645202
     }
   },
   "device": "PC",
-  "last_heartbeat_ts": 1795350359.1666155,
-  "updated_at": "2026-11-22T12:25:59.166823+00:00"
+  "last_heartbeat_ts": 1795368580.0774279,
+  "updated_at": "2026-11-22T17:31:05.964767+00:00"
 }

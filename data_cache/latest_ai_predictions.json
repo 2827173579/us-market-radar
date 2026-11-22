@@ -4,7 +4,7 @@
     "profit_factor": 1.16,
     "top_sector": "太空商业 (⭐⭐⭐⭐☆)",
     "top_feature": "SMH_IGV_Ratio_Bias (10.56%)",
-    "sync_time": "2026-11-22 12:15:09",
+    "sync_time": "2026-11-22 12:29:42",
     "data_mode": "Finnhub 秒级实时 (☕ 周末休市)",
     "is_realtime": false
   },
@@ -77,7 +77,7 @@
     },
     "vix_regime": {
       "as_of_date": "2026-11-20",
-      "updated_at": "2026-11-23 02:16:42",
+      "updated_at": "2026-11-23 02:30:54",
       "vix_spot": 35.89,
       "vix_prev": 28.44,
       "vix_pct": 26.2,
@@ -128,7 +128,7 @@
   },
   "vix_regime": {
     "as_of_date": "2026-11-20",
-    "updated_at": "2026-11-23 02:16:42",
+    "updated_at": "2026-11-23 02:30:54",
     "vix_spot": 35.89,
     "vix_prev": 28.44,
     "vix_pct": 26.2,
@@ -177,7 +177,7 @@
   "market_regime": "BEAR_DEFENSE",
   "breadth_ma20_pct": 5.6,
   "live_scorecard": {
-    "updated_at": "2026-11-22 21:27:21",
+    "updated_at": "2026-11-23 02:22:47",
     "win_rate_7d_pct": 73.9,
     "win_rate_30d_pct": 48.5,
     "long_win_rate_7d_pct": 11.5,
@@ -432,6 +432,202 @@
         "direction": "SHORT",
         "pred_prob_pct": 56.4,
         "entry_price": 310.53
+      },
+      {
+        "ticker": "LUNR",
+        "pred_date": "2026-11-23",
+        "direction": "LONG",
+        "pred_prob_pct": 95.0,
+        "entry_price": 9.05
+      },
+      {
+        "ticker": "APLD",
+        "pred_date": "2026-11-23",
+        "direction": "LONG",
+        "pred_prob_pct": 89.0,
+        "entry_price": 5.25
+      },
+      {
+        "ticker": "AAOI",
+        "pred_date": "2026-11-23",
+        "direction": "LONG",
+        "pred_prob_pct": 84.9,
+        "entry_price": 14.44
+      },
+      {
+        "ticker": "CRDO",
+        "pred_date": "2026-11-23",
+        "direction": "LONG",
+        "pred_prob_pct": 84.9,
+        "entry_price": 102.46
+      },
+      {
+        "ticker": "LITE",
+        "pred_date": "2026-11-23",
+        "direction": "LONG",
+        "pred_prob_pct": 84.9,
+        "entry_price": 558.44
+      },
+      {
+        "ticker": "MRVL",
+        "pred_date": "2026-11-23",
+        "direction": "LONG",
+        "pred_prob_pct": 84.9,
+        "entry_price": 61.78
+      },
+      {
+        "ticker": "BE",
+        "pred_date": "2026-11-23",
+        "direction": "LONG",
+        "pred_prob_pct": 83.3,
+        "entry_price": 135.19
+      },
+      {
+        "ticker": "CEG",
+        "pred_date": "2026-11-23",
+        "direction": "LONG",
+        "pred_prob_pct": 83.3,
+        "entry_price": 251.0
+      },
+      {
+        "ticker": "VST",
+        "pred_date": "2026-11-23",
+        "direction": "LONG",
+        "pred_prob_pct": 83.3,
+        "entry_price": 151.13
+      },
+      {
+        "ticker": "COHR",
+        "pred_date": "2026-11-23",
+        "direction": "LONG",
+        "pred_prob_pct": 81.9,
+        "entry_price": 235.72
+      },
+      {
+        "ticker": "MU",
+        "pred_date": "2026-11-23",
+        "direction": "LONG",
+        "pred_prob_pct": 80.8,
+        "entry_price": 80.2
+      },
+      {
+        "ticker": "STX",
+        "pred_date": "2026-11-23",
+        "direction": "LONG",
+        "pred_prob_pct": 80.8,
+        "entry_price": 351.65
+      },
+      {
+        "ticker": "WDC",
+        "pred_date": "2026-11-23",
+        "direction": "LONG",
+        "pred_prob_pct": 77.8,
+        "entry_price": 245.11
+      },
+      {
+        "ticker": "BTC-USD",
+        "pred_date": "2026-11-23",
+        "direction": "LONG",
+        "pred_prob_pct": 73.4,
+        "entry_price": 68859.83
+      },
+      {
+        "ticker": "COIN",
+        "pred_date": "2026-11-23",
+        "direction": "LONG",
+        "pred_prob_pct": 73.4,
+        "entry_price": 174.79
+      },
+      {
+        "ticker": "MSTR",
+        "pred_date": "2026-11-23",
+        "direction": "LONG",
+        "pred_prob_pct": 73.4,
+        "entry_price": 127.69
+      },
+      {
+        "ticker": "AMAT",
+        "pred_date": "2026-11-23",
+        "direction": "LONG",
+        "pred_prob_pct": 71.4,
+        "entry_price": 351.28
+      },
+      {
+        "ticker": "ASML",
+        "pred_date": "2026-11-23",
+        "direction": "LONG",
+        "pred_prob_pct": 71.4,
+        "entry_price": 1286.62
+      },
+      {
+        "ticker": "NVDA",
+        "pred_date": "2026-11-23",
+        "direction": "LONG",
+        "pred_prob_pct": 71.4,
+        "entry_price": 177.23
+      },
+      {
+        "ticker": "TSM",
+        "pred_date": "2026-11-23",
+        "direction": "LONG",
+        "pred_prob_pct": 71.4,
+        "entry_price": 336.25
+      },
+      {
+        "ticker": "ORCL",
+        "pred_date": "2026-11-23",
+        "direction": "LONG",
+        "pred_prob_pct": 69.0,
+        "entry_price": 144.0
+      },
+      {
+        "ticker": "PLTR",
+        "pred_date": "2026-11-23",
+        "direction": "LONG",
+        "pred_prob_pct": 69.0,
+        "entry_price": 128.06
+      },
+      {
+        "ticker": "AMD",
+        "pred_date": "2026-11-23",
+        "direction": "LONG",
+        "pred_prob_pct": 68.4,
+        "entry_price": 500.94
+      },
+      {
+        "ticker": "AVGO",
+        "pred_date": "2026-11-23",
+        "direction": "LONG",
+        "pred_prob_pct": 68.4,
+        "entry_price": 313.36
+      },
+      {
+        "ticker": "NOW",
+        "pred_date": "2026-11-23",
+        "direction": "LONG",
+        "pred_prob_pct": 67.3,
+        "entry_price": 102.42
+      },
+      {
+        "ticker": "MSFT",
+        "pred_date": "2026-11-23",
+        "direction": "LONG",
+        "pred_prob_pct": 66.0,
+        "entry_price": 370.66
+      },
+      {
+        "ticker": "CRWV",
+        "pred_date": "2026-11-23",
+        "direction": "LONG",
+        "pred_prob_pct": 55.0,
+        "entry_price": 80.94
+      },
+      {
+        "ticker": "NBIS",
+        "pred_date": "2026-11-23",
+        "direction": "LONG",
+        "pred_prob_pct": 55.0,
+        "entry_price": 195.19
       }
     ],
     "daily_breakdown_30d": [
@@ -5598,13 +5794,13 @@
       "sector_key": "Crypto_Proxy",
       "sector_cn": "加密币股代理",
       "sector_rating": "⭐☆☆☆☆",
-      "latest_price": 60709.62,
-      "current_price": 60709.62,
-      "atr_pct": 4.85,
-      "bias_ma50": -20.8,
+      "latest_price": 60781.71,
+      "current_price": 60781.71,
+      "atr_pct": 4.84,
+      "bias_ma50": -20.71,
       "bias_ma20": -12.64,
       "low_prev": 55149.57,
-      "rsi_14": 25.1,
+      "rsi_14": 25.4,
       "is_broken": true,
       "is_etf": false,
       "is_crash_halt": false,
@@ -5621,18 +5817,18 @@
       "predicted_win_rate_pct": 68.9,
       "calibrated_win_rate_pct": 44.6,
       "sector_pf": 1.04,
-      "target_profit_price": 64336.26,
+      "target_profit_price": 64408.56,
       "target_profit_pct": 6.0,
-      "stop_loss_price": 58023.22,
+      "stop_loss_price": 58095.16,
       "stop_loss_pct": 4.4,
       "action": "🚨 破位飞刀·严禁左侧抄底",
       "action_tag": "action-warning",
       "model_raw_short_prob_pct": 21.7,
       "calibrated_short_win_rate_pct": 21.1,
       "short_entry_price": 60532.4,
-      "short_target_profit_price": 57082.98,
+      "short_target_profit_price": 57154.87,
       "short_target_profit_pct": 6.0,
-      "short_stop_loss_price": 63396.02,
+      "short_stop_loss_price": 63468.26,
       "short_stop_loss_pct": 4.4,
       "dollar_pcr": 1.0,
       "pcr": 1.0,
@@ -12170,13 +12366,13 @@
       "sector_key": "Crypto_Proxy",
       "sector_cn": "加密币股代理",
       "sector_rating": "⭐☆☆☆☆",
-      "latest_price": 60709.62,
-      "current_price": 60709.62,
-      "atr_pct": 4.85,
-      "bias_ma50": -20.8,
+      "latest_price": 60781.71,
+      "current_price": 60781.71,
+      "atr_pct": 4.84,
+      "bias_ma50": -20.71,
       "bias_ma20": -12.64,
       "low_prev": 55149.57,
-      "rsi_14": 25.1,
+      "rsi_14": 25.4,
       "is_broken": true,
       "is_etf": false,
       "is_crash_halt": false,
@@ -12193,18 +12389,18 @@
       "predicted_win_rate_pct": 68.9,
       "calibrated_win_rate_pct": 44.6,
       "sector_pf": 1.04,
-      "target_profit_price": 64336.26,
+      "target_profit_price": 64408.56,
       "target_profit_pct": 6.0,
-      "stop_loss_price": 58023.22,
+      "stop_loss_price": 58095.16,
       "stop_loss_pct": 4.4,
       "action": "🚨 破位飞刀·严禁左侧抄底",
       "action_tag": "action-warning",
       "model_raw_short_prob_pct": 21.7,
       "calibrated_short_win_rate_pct": 21.1,
       "short_entry_price": 60532.4,
-      "short_target_profit_price": 57082.98,
+      "short_target_profit_price": 57154.87,
       "short_target_profit_pct": 6.0,
-      "short_stop_loss_price": 63396.02,
+      "short_stop_loss_price": 63468.26,
       "short_stop_loss_pct": 4.4,
       "dollar_pcr": 1.0,
       "pcr": 1.0,
@@ -20671,8 +20867,8 @@
     },
     "BTC-USD": {
       "ticker": "BTC-USD",
-      "current_price": 60709.62,
-      "anchor_price": 60709.62,
+      "current_price": 60781.71,
+      "anchor_price": 60781.71,
       "s1": 59924.64,
       "s2": 58079.28,
       "sl": 57208.09,
@@ -20757,112 +20953,112 @@
         },
         {
           "date": "2026-11-22",
-          "price": 60709.62
+          "price": 60781.71
         }
       ],
       "projection": [
         {
           "day": "T+1",
           "date": "2026-11-23",
-          "price": 60700.21,
+          "price": 60772.29,
           "pct": -0.0,
           "wave_ret": -0.000155
         },
         {
           "day": "T+2",
           "date": "2026-11-24",
-          "price": 61305.67,
+          "price": 61378.46,
           "pct": 1.0,
           "wave_ret": 0.009818
         },
         {
           "day": "T+3",
           "date": "2026-11-25",
-          "price": 62101.33,
+          "price": 62175.07,
           "pct": 2.3,
           "wave_ret": 0.022924
         },
         {
           "day": "T+4",
           "date": "2026-11-26",
-          "price": 62506.81,
+          "price": 62581.03,
           "pct": 3.0,
           "wave_ret": 0.029603
         },
         {
           "day": "T+5",
           "date": "2026-11-27",
-          "price": 62237.92,
+          "price": 62311.83,
           "pct": 2.5,
           "wave_ret": 0.025174
         },
         {
           "day": "T+6",
           "date": "2026-11-28",
-          "price": 61707.87,
+          "price": 61781.14,
           "pct": 1.6,
           "wave_ret": 0.016443
         },
         {
           "day": "T+7",
           "date": "2026-11-29",
-          "price": 60997.99,
+          "price": 61070.42,
           "pct": 0.5,
           "wave_ret": 0.00475
         },
         {
           "day": "T+8",
           "date": "2026-11-30",
-          "price": 61418.83,
+          "price": 61491.76,
           "pct": 1.2,
           "wave_ret": 0.011682
         },
         {
           "day": "T+9",
           "date": "2026-12-01",
-          "price": 61848.53,
+          "price": 61921.97,
           "pct": 1.9,
           "wave_ret": 0.01876
         },
         {
           "day": "T+10",
           "date": "2026-12-02",
-          "price": 61348.59,
+          "price": 61421.44,
           "pct": 1.1,
           "wave_ret": 0.010525
         },
         {
           "day": "T+11",
           "date": "2026-12-03",
-          "price": 61697.3,
+          "price": 61770.57,
           "pct": 1.6,
           "wave_ret": 0.016269
         },
         {
           "day": "T+12",
           "date": "2026-12-04",
-          "price": 60929.33,
+          "price": 61001.68,
           "pct": 0.4,
           "wave_ret": 0.003619
         },
         {
           "day": "T+13",
           "date": "2026-12-05",
-          "price": 59884.21,
+          "price": 59955.32,
           "pct": -1.4,
           "wave_ret": -0.013596
         },
         {
           "day": "T+14",
           "date": "2026-12-06",
-          "price": 58980.25,
+          "price": 59050.28,
           "pct": -2.8,
           "wave_ret": -0.028486
         },
         {
           "day": "T+15",
           "date": "2026-12-07",
-          "price": 58847.53,
+          "price": 58917.41,
           "pct": -3.1,
           "wave_ret": -0.030672
         }
@@ -20872,7 +21068,7 @@
           "type": "top",
           "date": "2026-11-26",
           "day": "T+4",
-          "price": 62506.81,
+          "price": 62581.03,
           "desc": "🔴 周期峰阻力窗 (高危变盘·压力不过就跑)",
           "tag": "周期阻力窗 (逢高不过就跑)"
         },
@@ -20880,7 +21076,7 @@
           "type": "bottom",
           "date": "2026-11-29",
           "day": "T+7",
-          "price": 60997.99,
+          "price": 61070.42,
           "desc": "🔵 周期底回踩窗 (关注空头回补企稳)",
           "tag": "周期底回踩窗 (企稳关注)"
         },
@@ -20888,7 +21084,7 @@
           "type": "top",
           "date": "2026-12-01",
           "day": "T+9",
-          "price": 61848.53,
+          "price": 61921.97,
           "desc": "🔴 周期峰阻力窗 (高危变盘·压力不过就跑)",
           "tag": "周期阻力窗 (逢高不过就跑)"
         }
