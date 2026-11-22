@@ -208,9 +208,11 @@ def _build_full_79_pool_fixture(session_code: str = "REGULAR"):
                 "model_raw_short_prob_pct": 58.0,
                 "action": "🛡️ 暴雨空仓·严禁左侧接刀",
                 "short_action": "🩸 空头占优·逢高做空",
-                "r1": 115.2,
-                "s1": 92.8,
-                "target_profit_price": 114.0,
+                "r1": 92.8,
+                "r2": 102.0,
+                "s1": 79.0,
+                "s2": 75.5,
+                "target_profit_price": 92.8,
             },
         }
     }

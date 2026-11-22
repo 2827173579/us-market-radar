@@ -2885,8 +2885,15 @@ def compute_multi_level_scenario_map(
     close = max(0.01, float(raw_p))
     eff_atr = compute_effective_atr(atr_pct)
 
+    has_real_hist = df_history is not None and not df_history.empty
+    has_real_sr_struct = bool(has_real_hist or any(x is not None for x in (low_60d, high_60d, poc_20d, ema20, put_wall, call_wall)))
+    real_low60_arg = low_60d
+    real_high60_arg = high_60d
+    real_poc20_arg = poc_20d
+    real_ema20_arg = ema20
+
     # 提取历史 60 日极值与 EMA20
-    if df_history is not None and not df_history.empty:
+    if has_real_hist:
         sub60 = df_history.tail(60)
         low_60d = low_60d or (float(sub60['Low'].min()) if 'Low' in sub60.columns else float(sub60['Close'].min()))
         high_60d = high_60d or (float(sub60['High'].max()) if 'High' in sub60.columns else float(sub60['Close'].max()))
@@ -2894,6 +2901,8 @@ def compute_multi_level_scenario_map(
             ema20 = float(df_history['Close'].ewm(span=20, adjust=False).mean().iloc[-1])
         if poc_20d is None:
             poc_20d = compute_volume_profile_poc(df=df_history, window=20)
+
+    has_real_range = bool(has_real_hist or (real_low60_arg is not None and real_high60_arg is not None))
 
     # 估计 60 日振幅与斐波那契参考
     if low_60d is None or high_60d is None or high_60d <= low_60d:
@@ -2909,61 +2918,93 @@ def compute_multi_level_scenario_map(
     # S2 (极限插针支撑): 60日低点 / 0.618 支撑 / Put wall / 动态 ATR
     fib_s2 = high_60d - 0.618 * rng60
     s2_floor = max(0.022, 1.00 * eff_atr) if is_tier1_low_vol else max(0.045, 1.45 * eff_atr)
-    s2_candidates = [close * (1.0 - s2_floor)]
+    s2_atr_val = close * (1.0 - s2_floor)
+    s2_candidates = [s2_atr_val]
+    real_s2_pool = []
     if not is_tier1_low_vol or df_history is not None:
-        if 0.50 * close <= low_60d < close:
+        if 0.50 * close <= low_60d < close and has_real_range:
             s2_candidates.append(low_60d)
-        if 0.50 * close <= fib_s2 < close:
+            real_s2_pool.append(round(low_60d, 2))
+        if 0.50 * close <= fib_s2 < close and has_real_range:
             s2_candidates.append(fib_s2)
+            real_s2_pool.append(round(fib_s2, 2))
     if put_wall is not None and 0.88 * close <= put_wall < close:
         s2_candidates.append(put_wall)
+        real_s2_pool.append(round(float(put_wall), 2))
     raw_s2 = min(s2_candidates)
+    s2_clamped = False
     # 阶段三止损口径收敛：非第一档标的将 S2 最大跌幅收敛至波动分档上限 (<= 8.5%)，避免剧本止损与波段/日内止损极端背离
     if not is_tier1_low_vol:
         max_s2_dist = min(0.085, max(0.048, 1.55 * eff_atr))
-        raw_s2 = max(raw_s2, close * (1.0 - max_s2_dist))
+        clamp_floor = close * (1.0 - max_s2_dist)
+        if raw_s2 < clamp_floor:
+            raw_s2 = clamp_floor
+            s2_clamped = True
     s2 = round(raw_s2, 2)
+    s2_source = (
+        "REAL_CHIPS"
+        if (not s2_clamped and any(abs(s2 - x) <= 0.02 for x in real_s2_pool))
+        else "ATR_ESTIMATE"
+    )
 
     # S1 (波段支撑): 第一档低波黄金/美债锚定 0.8%~1.3% 窄幅防守；其余用 20日 POC 下沿 / 0.382 / 动态 ATR
     if is_tier1_low_vol:
         s1 = round(close * (1.0 - t1_stop_mult), 2)
+        s1_source = "ATR_ESTIMATE"
     else:
         fib_s1 = high_60d - 0.382 * rng60
+        s1_atr_val = round(close * (1.0 - max(0.025, 0.75 * eff_atr)), 2)
         s1_candidates = [close * (1.0 - max(0.025, 0.75 * eff_atr))]
-        if poc_20d is not None and 0.65 * close <= (poc_20d * 0.99) < close:
+        real_s1_cnt = 0
+        if poc_20d is not None and 0.65 * close <= (poc_20d * 0.99) < close and (has_real_hist or real_poc20_arg is not None):
             s1_candidates.append(poc_20d * 0.99)
-        if 0.65 * close <= fib_s1 < close:
+            real_s1_cnt += 1
+        if 0.65 * close <= fib_s1 < close and has_real_range:
             s1_candidates.append(fib_s1)
+            real_s1_cnt += 1
         s1 = round(float(np.median(s1_candidates)), 2)
+        s1_source = "REAL_CHIPS" if (real_s1_cnt > 0 and abs(s1 - s1_atr_val) > 0.02) else "ATR_ESTIMATE"
 
     # R1 (第一止盈/反弹阻力): 20日 POC / EMA20 / 动态 ATR
+    r1_atr_val = round(close * (1.0 + max(0.030, 0.85 * eff_atr)), 2)
     r1_candidates = [close * (1.0 + max(0.030, 0.85 * eff_atr))]
-    if poc_20d is not None and close < poc_20d <= 1.35 * close:
+    real_r1_pool = []
+    if poc_20d is not None and close < poc_20d <= 1.35 * close and (has_real_hist or real_poc20_arg is not None):
         r1_candidates.append(poc_20d)
-    if ema20 is not None and close < ema20 <= 1.35 * close:
+        real_r1_pool.append(round(float(poc_20d), 2))
+    if ema20 is not None and close < ema20 <= 1.35 * close and (has_real_hist or real_ema20_arg is not None):
         r1_candidates.append(ema20)
+        real_r1_pool.append(round(float(ema20), 2))
     r1 = round(min(r1_candidates), 2)
+    r1_source = "REAL_CHIPS" if any(abs(r1 - x) <= 0.02 for x in real_r1_pool) else "ATR_ESTIMATE"
 
     # R2 (极限逼空/主升目标): 60日高点 / 0.618 扩展 / Call wall / 动态 ATR
     fib_r2 = close + 0.618 * rng60
     r2_candidates = [close * (1.0 + max(0.060, 1.65 * eff_atr))]
-    if high_60d > close and high_60d <= 1.50 * close:
+    real_r2_pool = []
+    if high_60d > close and high_60d <= 1.50 * close and has_real_range:
         r2_candidates.append(high_60d)
-    if fib_r2 > close and fib_r2 <= 1.50 * close:
+        real_r2_pool.append(round(float(high_60d), 2))
+    if fib_r2 > close and fib_r2 <= 1.50 * close and has_real_range:
         r2_candidates.append(fib_r2)
+        real_r2_pool.append(round(float(fib_r2), 2))
     if call_wall is not None and close < call_wall <= 1.50 * close:
         r2_candidates.append(call_wall)
+        real_r2_pool.append(round(float(call_wall), 2))
     if knn_upper is not None and knn_upper > close:
         r2_candidates.append(round(knn_upper * 1.015, 2))
     r2 = round(max(r2_candidates), 2)
+    r2_source = "REAL_CHIPS" if (has_real_sr_struct and any(abs(r2 - x) <= 0.02 for x in real_r2_pool)) else "ATR_ESTIMATE"
 
     # 严格单调性不变式防御保证: SL < S2 < S1 < close < R1 < R2
     min_step = max(0.01, round(close * 0.005, 2))
 
     if s1 >= close:
         s1 = round(close - min_step, 2)
+        s1_source = "ATR_ESTIMATE"
     if s2 >= s1:
         s2 = round(s1 - min_step, 2)
+        s2_source = "ATR_ESTIMATE"
     sl = round(min(s2 * (0.992 if is_tier1_low_vol else 0.985), s2 - min_step), 2)
 
     # 近端止损优先：S2 过远(>6.5%)而 S1 就在现价下方 1.5%~7.0% 时，多头防守改用 S1；第一档低波标的 (XAUUSD/GLD/TLT) 统一走 S1 窄幅防守口径 (-0.8%~-1.3%)
@@ -2973,8 +3014,10 @@ def compute_multi_level_scenario_map(
 
     if r1 <= close:
         r1 = round(close + min_step, 2)
+        r1_source = "ATR_ESTIMATE"
     if r2 <= r1:
         r2 = round(r1 + min_step, 2)
+        r2_source = "ATR_ESTIMATE"
 
     # 生成盘前盘中结构化实战剧本 (包含防守点位、目标阻力与失效止损，严禁与 action 产生逻辑冲突)
     t1_tag = f"·窄幅 {s1_dist_pct:.1f}% 防守" if is_tier1_low_vol else ""
@@ -3015,6 +3058,10 @@ def compute_multi_level_scenario_map(
         'sl': sl,
         'r1': r1,
         'r2': r2,
+        's1_source': s1_source,
+        's2_source': s2_source,
+        'r1_source': r1_source,
+        'r2_source': r2_source,
         'near_stop_s1': near_stop_s1,
         'near_stop_price': s1 if near_stop_s1 else None,
         'scenario_script': scenario
@@ -3600,14 +3647,20 @@ def align_time_cycle_projections_with_live(
 
         proj_prices = [float(p["price"]) for p in projs if isinstance(p, dict) and p.get("price") is not None]
         if proj_prices:
-            max_proj_p = max(proj_prices)
-            item["r2"] = max(float(item.get("r2") or 0.0), round(max_proj_p * 1.015, 2))
-            if item.get("r1") is not None and float(item["r2"]) <= float(item["r1"]):
-                min_step = max(0.01, round(px * 0.005, 2))
-                item["r2"] = round(float(item["r1"]) + min_step, 2)
-            if by_ticker and isinstance(by_ticker.get(tk), dict):
-                by_ticker[tk]["r2"] = item["r2"]
-                sync_scenario_script_levels(by_ticker[tk])
+            _has_locked = bool(
+                by_ticker
+                and isinstance(by_ticker.get(tk), dict)
+                and by_ticker[tk].get("sr_anchor_locked")
+            )
+            if not _has_locked:
+                max_proj_p = max(proj_prices)
+                item["r2"] = max(float(item.get("r2") or 0.0), round(max_proj_p * 1.015, 2))
+                if item.get("r1") is not None and float(item["r2"]) <= float(item["r1"]):
+                    min_step = max(0.01, round(px * 0.005, 2))
+                    item["r2"] = round(float(item["r1"]) + min_step, 2)
+                if by_ticker and isinstance(by_ticker.get(tk), dict):
+                    by_ticker[tk]["r2"] = item["r2"]
+                    sync_scenario_script_levels(by_ticker[tk])
 
         try:
             item["cycle_windows"] = _build_cycle_windows_from_projections(
@@ -5244,6 +5297,25 @@ def generate_report_tables(
                     four_h_div = "➖ 4H 均线震荡纠缠"
                     four_h_tag = "div-neutral"
 
+            try:
+                import sr_anchor_engine as _sr_res_mod
+                _sup_res = _sr_res_mod.suppress_resonance_badge(
+                    four_h_div=four_h_div,
+                    four_h_tag=four_h_tag,
+                    is_crash_halt=is_crash_halt,
+                    is_cooling_halt=is_cooling_halt,
+                    vix_regime=(_mw_dict.get('vix_regime') if isinstance(_mw_dict, dict) else None),
+                )
+                four_h_div = _sup_res['four_h_div']
+                four_h_tag = _sup_res['four_h_tag']
+                row_item['resonance_badge_text'] = _sup_res['resonance_badge_text']
+                row_item['resonance_badge_tag'] = _sup_res['resonance_badge_tag']
+                row_item['resonance_suppressed'] = _sup_res['resonance_suppressed']
+            except Exception:
+                row_item['resonance_badge_text'] = four_h_div
+                row_item['resonance_badge_tag'] = four_h_tag
+                row_item['resonance_suppressed'] = False
+
             row_item['four_h_rsi'] = four_h_rsi
             row_item['four_h_div'] = four_h_div
             row_item['four_h_tag'] = four_h_tag
@@ -6338,7 +6410,17 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
         s2_val = r.get('s2', round(r['latest_price'] * 0.94, 2))
         r1_val = r.get('r1', round(r['latest_price'] * 1.04, 2))
         r2_val = r.get('r2', round(r['latest_price'] * 1.08, 2))
-        four_h_div_text = r.get('four_h_div', '➖ 4H 均线震荡纠缠')
+        four_h_div_text = r.get('resonance_badge_text') or r.get('four_h_div', '➖ 4H 均线震荡纠缠')
+        four_h_tag_val = str(r.get('four_h_tag', 'div-neutral') or 'div-neutral')
+        four_h_color = 'var(--warning-gold)' if four_h_tag_val == 'div-suppressed' else ('var(--neon-green)' if four_h_tag_val == 'div-bull' else ('var(--risk-red)' if four_h_tag_val == 'div-bear' else 'var(--cyber-purple)'))
+        s1_is_est = (str(r.get('s1_source', '') or '') == 'ATR_ESTIMATE')
+        s2_is_est = (str(r.get('s2_source', '') or '') == 'ATR_ESTIMATE')
+        r1_is_est = (str(r.get('r1_source', '') or '') == 'ATR_ESTIMATE')
+        r2_is_est = (str(r.get('r2_source', '') or '') == 'ATR_ESTIMATE')
+        res_lvl_color = 'var(--text-muted)' if (r1_is_est and r2_is_est) else 'var(--neon-green)'
+        sup_lvl_color = 'var(--warning-gold)' if (s1_is_est and s2_is_est) else 'var(--risk-red)'
+        sup_lvl_prefix = '估算S1' if (s1_is_est and s2_is_est) else 'S1'
+        res_lvl_prefix = '估算R1' if (r1_is_est and r2_is_est) else 'R1'
         scenario_text = str(r.get('scenario_script', '') or '')
         _is_bear_suppressed_row = bool(
             _is_bear_defense or ("严禁左侧接刀" in act_text) or ("暴雨空仓" in act_text)
@@ -6381,7 +6463,7 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
                     <span class="tk-code">{r['ticker']}</span>
                     <span class="tk-jump-icon">📈 看盘</span>
                 </a>
-                <div style="font-size: 10px; color: var(--cyber-purple); margin-top: 2px;">{four_h_div_text}</div>
+                <div style="font-size: 10px; color: {four_h_color}; margin-top: 2px;">{four_h_div_text}</div>
             </td>
             <td>
                 <div style="display: flex; align-items: center; gap: 5px; flex-wrap: wrap;">
@@ -6407,12 +6489,12 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
             </td>
             <td style="text-align: right; color: var(--neon-green); font-family: 'JetBrains Mono', monospace; font-weight: 700;">
                 ${r['target_profit_price']:.2f} <span class="pct-pill pct-up">+{r['target_profit_pct']}%</span>
-                <div style="font-size: 10px; color: var(--neon-green); font-weight: normal; margin-top: 2px;" title="第一阻力 R1 (不过先跑) / 极限逼空 R2">R1 ${r1_val:.2f} / R2 ${r2_val:.2f}</div>
+                <div style="font-size: 10px; color: {res_lvl_color}; font-weight: normal; margin-top: 2px;" title="第一阻力 R1 / 极限逼空 R2 ({r.get('r1_source','--')})">{res_lvl_prefix} ${r1_val:.2f} / R2 ${r2_val:.2f}</div>
                 <span class="t4-all-short-sub" style="display: none; font-size: 10px; color: var(--text-muted); font-weight: normal;">空盈 ${s_tp:.2f} (-{s_tp_pct:.1f}%)</span>
             </td>
             <td style="text-align: right; color: var(--risk-red); font-family: 'JetBrains Mono', monospace; font-weight: 700;">
                 ${r['stop_loss_price']:.2f} <span class="pct-pill pct-down">-{r['stop_loss_pct']}%</span>
-                <div style="font-size: 10px; color: var(--risk-red); font-weight: normal; margin-top: 2px;" title="波段支撑 S1 / 极限插针底 S2">S1 ${s1_val:.2f} / S2 ${s2_val:.2f}</div>
+                <div style="font-size: 10px; color: {sup_lvl_color}; font-weight: normal; margin-top: 2px;" title="波段支撑 S1 / 极限插针底 S2 ({r.get('s1_source','--')})">{sup_lvl_prefix} ${s1_val:.2f} / S2 ${s2_val:.2f}</div>
                 <span class="t4-all-short-sub" style="display: none; font-size: 10px; color: var(--text-muted); font-weight: normal;">空损 ${s_sl:.2f} (+{s_sl_pct:.1f}%)</span>
             </td>
             <td style="text-align: center;">

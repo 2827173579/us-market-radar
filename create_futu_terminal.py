@@ -123,7 +123,7 @@ def compute_resilient_leaders_top5(stocks_data, macro_data=None, session_code="R
     return ranked[:max(1, int(top_n))]
 
 
-def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_str="", has_realtime=False, target_watchlist=None, terminal_notifications=None, session_code="REGULAR", session_name="常规盘中", sync_side_effects=False, sync_dir=None):
+def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_str="", has_realtime=False, target_watchlist=None, terminal_notifications=None, session_code="REGULAR", session_name="常规盘中", sync_side_effects=False, sync_dir=None, daily_sr_anchors=None):
     is_overnight = (session_code == "OVERNIGHT")
     if session_code == "OVERNIGHT":
         session_badge_html = '<span class="tool-link" style="color: #c084fc; border: 1px solid rgba(192, 132, 252, 0.45); background: rgba(192, 132, 252, 0.12); padding: 4px 7px; font-weight: 700;">🌌 美股夜盘</span>'
@@ -319,6 +319,16 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 ai_predictions["macro_weather"]["breadth_ma20_pct"] = round(_active_breadth_ma20, 1)
                 ai_predictions["macro_weather"]["vix_regime"] = _active_vix_regime
 
+            _sr_anchors_lookup = {}
+            if isinstance(daily_sr_anchors, dict):
+                _sr_anchors_lookup = (daily_sr_anchors.get("anchors") if isinstance(daily_sr_anchors.get("anchors"), dict) else daily_sr_anchors) or {}
+            else:
+                try:
+                    import sr_anchor_engine as _sr_ld
+                    _sr_anchors_lookup = _sr_ld.load_daily_sr_anchors().get("anchors") or {}
+                except Exception:
+                    _sr_anchors_lookup = {}
+
             if all_preds and live_lookup:
                 for item in all_preds:
                     tk = str(item.get("ticker", ""))
@@ -430,6 +440,27 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                         item["four_h_div"] = item.get("four_h_div") or "➖ 4H 均线震荡纠缠"
                         item["four_h_tag"] = item.get("four_h_tag") or "div-neutral"
                         fh_bonus = 0.0
+
+                    try:
+                        import sr_anchor_engine as _sr_fh_sup
+                        _fh_sup_res = _sr_fh_sup.suppress_resonance_badge(
+                            four_h_div=item.get("four_h_div"),
+                            four_h_tag=item.get("four_h_tag"),
+                            is_crash_halt=is_crash_halt,
+                            is_cooling_halt=is_cooling_halt,
+                            vix_regime=_active_vix_regime,
+                        )
+                        item["four_h_div"] = _fh_sup_res["four_h_div"]
+                        item["four_h_tag"] = _fh_sup_res["four_h_tag"]
+                        item["resonance_badge_text"] = _fh_sup_res["resonance_badge_text"]
+                        item["resonance_badge_tag"] = _fh_sup_res["resonance_badge_tag"]
+                        item["resonance_suppressed"] = _fh_sup_res["resonance_suppressed"]
+                        if _fh_sup_res["resonance_suppressed"] and fh_bonus > 0:
+                            fh_bonus = 0.0
+                    except Exception:
+                        item["resonance_badge_text"] = item["four_h_div"]
+                        item["resonance_badge_tag"] = item["four_h_tag"]
+                        item["resonance_suppressed"] = False
 
                     if is_short_covering:
                         new_raw = round(float(np.clip(model_raw + intra_adj, 15.0, 85.0)), 1)
@@ -573,6 +604,46 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                             call_wall=cw_val,
                             is_halt=is_effective_halt
                         )
+                        try:
+                            import sr_anchor_engine as _sr_state_mod
+                            _tk_anchor = _sr_anchors_lookup.get(tk.upper()) if isinstance(_sr_anchors_lookup, dict) else None
+                            if isinstance(_tk_anchor, dict) and _tk_anchor.get("anchor_s1"):
+                                _sr_eval = _sr_state_mod.evaluate_sr_breach_state(
+                                    price=live_p,
+                                    anchor=_tk_anchor,
+                                    is_halt=is_effective_halt,
+                                    is_short_covering=is_short_covering,
+                                    is_broken=is_broken,
+                                    bias_ma50=live_bias,
+                                    vwap=live_vwap,
+                                    base_script=sc_map.get("scenario_script", ""),
+                                )
+                                sc_map.update(_sr_eval)
+                            else:
+                                _sr_eval = _sr_state_mod.evaluate_sr_breach_state(
+                                    price=live_p,
+                                    anchor={
+                                        "anchor_s1": sc_map["s1"],
+                                        "anchor_s2": sc_map["s2"],
+                                        "anchor_sl": sc_map["sl"],
+                                        "anchor_r1": sc_map["r1"],
+                                        "anchor_r2": sc_map["r2"],
+                                        "s1_source": sc_map.get("s1_source", "ATR_ESTIMATE"),
+                                        "s2_source": sc_map.get("s2_source", "ATR_ESTIMATE"),
+                                        "r1_source": sc_map.get("r1_source", "ATR_ESTIMATE"),
+                                        "r2_source": sc_map.get("r2_source", "ATR_ESTIMATE"),
+                                    },
+                                    is_halt=is_effective_halt,
+                                    is_short_covering=is_short_covering,
+                                    is_broken=is_broken,
+                                    bias_ma50=live_bias,
+                                    vwap=live_vwap,
+                                    base_script=sc_map.get("scenario_script", ""),
+                                )
+                                _sr_eval["sr_anchor_locked"] = False
+                                sc_map.update(_sr_eval)
+                        except Exception:
+                            pass
                         item.update(sc_map)
                         near_stop_px = sc_map.get('near_stop_price') if sc_map.get('near_stop_s1') else None
                         if is_short_covering:
@@ -5800,17 +5871,87 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 if (sslEl) sslEl.innerHTML = `$${(aiItem.short_stop_loss_price || 0).toFixed(2)} <span style="font-size:10px; opacity:0.85;">(+${(aiItem.short_stop_loss_pct || 0).toFixed(1)}%)</span>`;
 
                 const fhEl = document.getElementById("pAiFourHDiv");
-                if (fhEl) fhEl.innerText = aiItem.four_h_div || "➖ 4H 均线震荡纠缠";
+                if (fhEl) {
+                    const fhTxt = aiItem.resonance_badge_text || aiItem.four_h_div || "➖ 4H 均线震荡纠缠";
+                    const fhTag = String(aiItem.resonance_badge_tag || aiItem.four_h_tag || "");
+                    fhEl.innerText = fhTxt;
+                    if (fhTag === "div-suppressed" || aiItem.resonance_suppressed) {
+                        fhEl.style.color = pal.warn;
+                    } else if (fhTag === "div-bull") {
+                        fhEl.style.color = pal.up;
+                    } else if (fhTag === "div-bear") {
+                        fhEl.style.color = pal.down;
+                    } else if (fhTag === "div-trend") {
+                        fhEl.style.color = pal.accent;
+                    } else {
+                        fhEl.style.color = pal.sub;
+                    }
+                }
                 const mlEl = document.getElementById("pAiMultiLevels");
                 if (mlEl) {
-                    const s1v = aiItem.s1 !== undefined ? `$${Number(aiItem.s1).toFixed(2)}` : "--";
-                    const s2v = aiItem.s2 !== undefined ? `$${Number(aiItem.s2).toFixed(2)}` : "--";
-                    const r1v = aiItem.r1 !== undefined ? `$${Number(aiItem.r1).toFixed(2)}` : "--";
-                    const r2v = aiItem.r2 !== undefined ? `$${Number(aiItem.r2).toFixed(2)}` : "--";
-                    mlEl.innerHTML = `<span style="color:${pal.up};">支撑 S1:${s1v} / S2:${s2v}</span><span style="color:${pal.down};">阻力 R1:${r1v} / R2:${r2v}</span>`;
+                    const s1Raw = aiItem.anchor_s1 !== undefined ? aiItem.anchor_s1 : aiItem.s1;
+                    const s2Raw = aiItem.anchor_s2 !== undefined ? aiItem.anchor_s2 : aiItem.s2;
+                    const r1Raw = aiItem.anchor_r1 !== undefined ? aiItem.anchor_r1 : aiItem.r1;
+                    const r2Raw = aiItem.anchor_r2 !== undefined ? aiItem.anchor_r2 : aiItem.r2;
+                    const s1v = s1Raw !== undefined ? `$${Number(s1Raw).toFixed(2)}` : "--";
+                    const s2v = s2Raw !== undefined ? `$${Number(s2Raw).toFixed(2)}` : "--";
+                    const r1v = r1Raw !== undefined ? `$${Number(r1Raw).toFixed(2)}` : "--";
+                    const r2v = r2Raw !== undefined ? `$${Number(r2Raw).toFixed(2)}` : "--";
+                    const s1Src = String(aiItem.s1_source || "");
+                    const s2Src = String(aiItem.s2_source || "");
+                    const r1Src = String(aiItem.r1_source || "");
+                    const r2Src = String(aiItem.r2_source || "");
+                    const srState = String(aiItem.sr_breach_state || "INTACT").toUpperCase();
+
+                    let leftHtml = "";
+                    let rightHtml = "";
+
+                    if (srState === "ALL_SUPPORT_BREACHED") {
+                        leftHtml = `<span style="color:${pal.down}; font-weight:700;">⚠️ 今日原始支撑全线击穿 (原S1:${s1v} / 原S2:${s2v}) · 真空寻底</span>`;
+                        rightHtml = `<span style="color:${pal.down};">上方前压 R1:${r1v} / R2:${r2v}</span>`;
+                    } else if (srState === "S1_BREACHED") {
+                        const s2IsEst = (s2Src === "ATR_ESTIMATE");
+                        const s2Clr = s2IsEst ? pal.warn : pal.up;
+                        const s2Tag = s2IsEst ? `退守估算防线 S2:${s2v} (无真实筹码)` : `退守 S2:${s2v}`;
+                        leftHtml = `<span><s style="color:${pal.sub};">S1:${s1v}</s> <span style="color:${pal.warn}; font-weight:700;">已击穿转压 ➔ </span><span style="color:${s2Clr}; font-weight:700;">${s2Tag}</span></span>`;
+                        rightHtml = `<span style="color:${pal.down};">${r1Src === "ATR_ESTIMATE" ? "估算阻力" : "阻力"} R1:${r1v} / R2:${r2v}</span>`;
+                    } else if (srState === "ALL_RESISTANCE_BROKEN") {
+                        leftHtml = `<span style="color:${pal.up}; font-weight:700;">🛡️ 原R2:${r2v} (已突破 ➔ 转为防守底线)</span>`;
+                        rightHtml = `<span style="color:${pal.accent}; font-weight:700;">🚀 突破今日全线阻力 (原R1:${r1v} / 原R2:${r2v}) · 沿VWAP/EMA9移动止盈</span>`;
+                    } else if (srState === "R1_BROKEN") {
+                        leftHtml = `<span style="color:${pal.up}; font-weight:700;">🛡️ R1:${r1v} (已突破 ➔ 转为支撑)</span>`;
+                        const r2Tag = (r2Src === "ATR_ESTIMATE") ? `上看估算阻力 R2:${r2v}` : `上看目标 R2:${r2v}`;
+                        rightHtml = `<span style="color:${r2Src === "ATR_ESTIMATE" ? pal.warn : pal.down}; font-weight:700;">${r2Tag}</span>`;
+                    } else {
+                        if (s1Src === "ATR_ESTIMATE" && s2Src === "ATR_ESTIMATE") {
+                            leftHtml = `<span style="color:${pal.warn};" title="无真实历史筹码密集区，按ATR估算">估算防线(无真实筹码) S1:${s1v} / S2:${s2v}</span>`;
+                        } else if (s1Src === "ATR_ESTIMATE" || s2Src === "ATR_ESTIMATE") {
+                            const s1Span = s1Src === "ATR_ESTIMATE" ? `<span style="color:${pal.sub};">估算防线 S1:${s1v}(无真实筹码)</span>` : `<span style="color:${pal.up};">支撑 S1:${s1v}</span>`;
+                            const s2Span = s2Src === "ATR_ESTIMATE" ? `<span style="color:${pal.sub};">估算S2:${s2v}(无真实筹码)</span>` : `<span style="color:${pal.up};">S2:${s2v}</span>`;
+                            leftHtml = `${s1Span} <span style="color:${pal.sub};">/</span> ${s2Span}`;
+                        } else {
+                            leftHtml = `<span style="color:${pal.up};">支撑 S1:${s1v} / S2:${s2v}</span>`;
+                        }
+                        if (r1Src === "ATR_ESTIMATE" && r2Src === "ATR_ESTIMATE") {
+                            rightHtml = `<span style="color:${pal.warn};" title="无真实历史压力区，按ATR估算">估算压力 R1:${r1v} / R2:${r2v}</span>`;
+                        } else if (r1Src === "ATR_ESTIMATE" || r2Src === "ATR_ESTIMATE") {
+                            const r1Span = r1Src === "ATR_ESTIMATE" ? `<span style="color:${pal.sub};">估算压力 R1:${r1v}</span>` : `<span style="color:${pal.down};">阻力 R1:${r1v}</span>`;
+                            const r2Span = r2Src === "ATR_ESTIMATE" ? `<span style="color:${pal.sub};">估算R2:${r2v}</span>` : `<span style="color:${pal.down};">R2:${r2v}</span>`;
+                            rightHtml = `${r1Span} <span style="color:${pal.sub};">/</span> ${r2Span}`;
+                        } else {
+                            rightHtml = `<span style="color:${pal.down};">阻力 R1:${r1v} / R2:${r2v}</span>`;
+                        }
+                    }
+                    mlEl.innerHTML = `${leftHtml}${rightHtml}`;
                 }
                 const scScriptEl = document.getElementById("pAiScenarioScript");
-                if (scScriptEl) scScriptEl.innerText = aiItem.scenario_script || "--";
+                if (scScriptEl) {
+                    scScriptEl.innerText = aiItem.scenario_script || "--";
+                    const srStateSc = String(aiItem.sr_breach_state || "INTACT").toUpperCase();
+                    scScriptEl.style.borderLeftColor = (srStateSc === "ALL_SUPPORT_BREACHED")
+                        ? pal.down
+                        : ((srStateSc === "S1_BREACHED" || aiItem.resonance_suppressed) ? pal.warn : ((srStateSc === "R1_BROKEN" || srStateSc === "ALL_RESISTANCE_BROKEN") ? pal.up : pal.accent));
+                }
             } else {
                 if (aiBox) aiBox.style.display = "none";
                 if (actText) actText.innerText = isIpo ? "🆕 IPO 新股观察期" : (curSignal || "--");

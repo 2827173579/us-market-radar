@@ -5375,6 +5375,7 @@ def build_latest_radar_snapshot(
     now_str: Optional[str] = None,
     now_et: Optional[datetime] = None,
     opex_shield: Optional[Dict[str, Any]] = None,
+    daily_sr_anchors: Optional[Dict[str, Any]] = None,
 ) -> Dict[str, Any]:
     """构建供 Discord 交互机器人零 API 压力只读消费的轻量全市场快照。"""
     sess = str(session_code or "REGULAR").strip().upper() or "REGULAR"
@@ -5487,6 +5488,18 @@ def build_latest_radar_snapshot(
             except Exception:
                 ip_doc = {}
     ip_by_tk = ip_doc.get("by_ticker") if isinstance(ip_doc.get("by_ticker"), dict) else {}
+
+    sr_anchors_map: Dict[str, Dict[str, Any]] = {}
+    if isinstance(daily_sr_anchors, dict):
+        inner = daily_sr_anchors.get("anchors") if isinstance(daily_sr_anchors.get("anchors"), dict) else daily_sr_anchors
+        sr_anchors_map = {str(k).upper(): v for k, v in inner.items() if isinstance(v, dict)}
+    else:
+        try:
+            import sr_anchor_engine as _sr_snap_mod
+            loaded_anc = _sr_snap_mod.load_daily_sr_anchors().get("anchors") or {}
+            sr_anchors_map = {str(k).upper(): v for k, v in loaded_anc.items() if isinstance(v, dict)}
+        except Exception:
+            sr_anchors_map = {}
 
     # 统一收集全部已刷新的 ETF + 个股（确保不混入未监控指数）
     raw_items: Dict[str, Tuple[Dict[str, Any], bool]] = {}
@@ -5643,8 +5656,80 @@ def build_latest_radar_snapshot(
                 verdict = "🔴 空头占优 · 严禁左侧接刀"
                 verdict_sub = str(ai_act_disp)
 
-        r1_val = _snap_opt_float(ai_item.get("r1") or src.get("broken_r1") or ai_item.get("target_profit_price"), 2)
-        s1_val = _snap_opt_float(ai_item.get("s1") or src.get("broken_s1") or ai_item.get("short_target_profit_price") or src.get("entry_stop_loss"), 2)
+        # V4.4 静态支撑/阻力锚点 + 对称顶底互换状态 + 真实筹码/ATR区分 + 4H见底绿标压制
+        anchor_row = sr_anchors_map.get(tk_u) if isinstance(sr_anchors_map, dict) else None
+        is_sc_flag = bool(ai_item.get("is_short_covering", False))
+        is_bk_flag = bool(ai_item.get("is_broken", False) or is_broken_bear or is_stop)
+        if not (isinstance(anchor_row, dict) and anchor_row.get("anchor_s1")):
+            fallback_s1 = _snap_opt_float(ai_item.get("anchor_s1") or ai_item.get("s1") or src.get("broken_s1") or src.get("entry_stop_loss"), 2)
+            fallback_s2 = _snap_opt_float(ai_item.get("anchor_s2") or ai_item.get("s2") or (round(float(fallback_s1) * 0.96, 2) if fallback_s1 else None), 2)
+            fallback_r1 = _snap_opt_float(ai_item.get("anchor_r1") or ai_item.get("r1") or src.get("broken_r1") or ai_item.get("target_profit_price"), 2)
+            fallback_r2 = _snap_opt_float(ai_item.get("anchor_r2") or ai_item.get("r2") or (round(float(fallback_r1) * 1.04, 2) if fallback_r1 else None), 2)
+            if fallback_s1 and fallback_r1:
+                anchor_row = {
+                    "anchor_s1": fallback_s1,
+                    "anchor_s2": fallback_s2 or round(fallback_s1 * 0.96, 2),
+                    "anchor_sl": _snap_opt_float(ai_item.get("anchor_sl") or ai_item.get("sl") or round((fallback_s2 or fallback_s1 * 0.96) * 0.985, 2), 2),
+                    "anchor_r1": fallback_r1,
+                    "anchor_r2": fallback_r2 or round(fallback_r1 * 1.04, 2),
+                    "s1_source": str(ai_item.get("s1_source") or "ATR_ESTIMATE"),
+                    "s2_source": str(ai_item.get("s2_source") or "ATR_ESTIMATE"),
+                    "r1_source": str(ai_item.get("r1_source") or "ATR_ESTIMATE"),
+                    "r2_source": str(ai_item.get("r2_source") or "ATR_ESTIMATE"),
+                }
+
+        sr_eval_out: Dict[str, Any] = {}
+        if isinstance(anchor_row, dict) and anchor_row.get("anchor_s1") and anchor_row.get("anchor_r1"):
+            try:
+                import sr_anchor_engine as _sr_snap_eval
+                sr_eval_out = _sr_snap_eval.evaluate_sr_breach_state(
+                    price=active_px,
+                    anchor=anchor_row,
+                    is_halt=bool(is_crash or is_cooling),
+                    is_short_covering=is_sc_flag,
+                    is_broken=is_bk_flag,
+                    bias_ma50=float(src.get("bias") or 0.0),
+                    vwap=vwap_val,
+                    base_script=str(ai_item.get("scenario_script") or ""),
+                )
+            except Exception:
+                sr_eval_out = {}
+
+        r1_val = _snap_opt_float(sr_eval_out.get("anchor_r1") or ai_item.get("r1") or src.get("broken_r1") or ai_item.get("target_profit_price"), 2)
+        r2_val = _snap_opt_float(sr_eval_out.get("anchor_r2") or ai_item.get("r2"), 2)
+        s1_val = _snap_opt_float(sr_eval_out.get("anchor_s1") or ai_item.get("s1") or src.get("broken_s1") or ai_item.get("short_target_profit_price") or src.get("entry_stop_loss"), 2)
+        s2_val = _snap_opt_float(sr_eval_out.get("anchor_s2") or ai_item.get("s2"), 2)
+
+        raw_rsi14 = _snap_opt_float(src.get("rsi"), 1)
+        raw_bias50 = _snap_opt_float(src.get("bias"), 2)
+        base_4h_div = ai_item.get("four_h_div")
+        base_4h_tag = ai_item.get("four_h_tag")
+        if not base_4h_div:
+            if raw_rsi14 is not None and raw_bias50 is not None and raw_rsi14 < 32.0 and raw_bias50 < -10.0:
+                base_4h_div, base_4h_tag = "🟢 4H 底背离拐点 (见底信号)", "div-bull"
+            elif raw_rsi14 is not None and raw_bias50 is not None and raw_rsi14 > 68.0 and raw_bias50 > 10.0:
+                base_4h_div, base_4h_tag = "🔴 4H 顶背离滞涨 (防回踩)", "div-bear"
+            elif raw_rsi14 is not None and raw_bias50 is not None and raw_bias50 >= -4.0 and raw_rsi14 >= 45.0:
+                base_4h_div, base_4h_tag = "⚡ 4H 均线多头共振", "div-trend"
+            else:
+                base_4h_div, base_4h_tag = "➖ 4H 均线震荡纠缠", "div-neutral"
+        try:
+            import sr_anchor_engine as _sr_snap_fh
+            sup_fh_out = _sr_snap_fh.suppress_resonance_badge(
+                four_h_div=base_4h_div,
+                four_h_tag=base_4h_tag or "div-neutral",
+                is_crash_halt=is_crash,
+                is_cooling_halt=is_cooling,
+                vix_regime=vr_out,
+            )
+        except Exception:
+            sup_fh_out = {
+                "four_h_div": str(base_4h_div),
+                "four_h_tag": str(base_4h_tag or "div-neutral"),
+                "resonance_badge_text": str(base_4h_div),
+                "resonance_badge_tag": str(base_4h_tag or "div-neutral"),
+                "resonance_suppressed": False,
+            }
 
         ip_entry = ip_by_tk.get(tk_u) if isinstance(ip_by_tk.get(tk_u), dict) else {}
         div_obj = ip_entry.get("divergence") if isinstance(ip_entry.get("divergence"), dict) else {}
@@ -5713,7 +5798,24 @@ def build_latest_radar_snapshot(
             "entry_stop_loss": _snap_opt_float(src.get("entry_stop_loss"), 2),
             "target_profit_price": _snap_opt_float(ai_item.get("target_profit_price"), 2),
             "r1": r1_val,
+            "r2": r2_val,
             "s1": s1_val,
+            "s2": s2_val,
+            "anchor_s1": s1_val,
+            "anchor_s2": s2_val,
+            "anchor_sl": _snap_opt_float(sr_eval_out.get("anchor_sl") or ai_item.get("sl"), 2),
+            "anchor_r1": r1_val,
+            "anchor_r2": r2_val,
+            "s1_source": str(sr_eval_out.get("s1_source") or ai_item.get("s1_source") or "ATR_ESTIMATE"),
+            "s2_source": str(sr_eval_out.get("s2_source") or ai_item.get("s2_source") or "ATR_ESTIMATE"),
+            "r1_source": str(sr_eval_out.get("r1_source") or ai_item.get("r1_source") or "ATR_ESTIMATE"),
+            "r2_source": str(sr_eval_out.get("r2_source") or ai_item.get("r2_source") or "ATR_ESTIMATE"),
+            "sr_breach_state": str(sr_eval_out.get("sr_breach_state") or "INTACT"),
+            "sr_status_badge": str(sr_eval_out.get("sr_status_badge") or "今日原始支撑/阻力完好"),
+            "scenario_script": str(sr_eval_out.get("scenario_script") or ai_item.get("scenario_script") or ""),
+            "resonance_badge_text": str(sup_fh_out.get("resonance_badge_text") or base_4h_div),
+            "resonance_badge_tag": str(sup_fh_out.get("resonance_badge_tag") or "div-neutral"),
+            "resonance_suppressed": bool(sup_fh_out.get("resonance_suppressed", False)),
             "fib_low": _snap_opt_float(src.get("fib_low"), 2),
             "fib_high": _snap_opt_float(src.get("fib_high"), 2),
             "corridor": corridor_out,
@@ -7907,13 +8009,46 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
     except Exception as _ip_err:
         print(f"  [!] 盘中预测走廊静默降级: {_ip_err}")
 
+    # 6.94 锁定当日 S1/S2/R1/R2 静态筹码锚点 (data_cache/daily_sr_anchors.json · 盘中不随现价漂移)
+    _sr_anchors_map = {}
+    try:
+        import sr_anchor_engine as _sr_eng
+        _sr_date_et = _sr_eng.resolve_trading_date_et(session_code=session_code)
+        _sr_batch_items = []
+        _seen_sr = set()
+        for _tk_sr, _it_sr in [(str(k), v) for k, v in (macro_data or {}).items() if isinstance(v, dict)] + [(str(s.get("ticker")), s) for s in (stocks_sorted or []) if isinstance(s, dict) and s.get("ticker")]:
+            _tk_u = str(_tk_sr).upper()
+            if not _tk_u or _tk_u in _seen_sr:
+                continue
+            _seen_sr.add(_tk_u)
+            _df_h = history_dict.get(_tk_u) if isinstance(history_dict, dict) else None
+            _opt_sr = options_map.get(_tk_u) if isinstance(options_map, dict) else {}
+            _last_sr = float(_it_sr.get("last") or 0.0)
+            _chg_sr = float(_it_sr.get("change") or 0.0)
+            _prev_c_fb = (_last_sr - _chg_sr) if (_last_sr > 0 and (_last_sr - _chg_sr) > 0 and abs(_chg_sr) > 0) else _last_sr
+            _atr_sr = float(_it_sr.get("atr") or 0.0)
+            _atr_pct_sr = ((_atr_sr / _last_sr) * 100.0) if (_atr_sr > 0 and _last_sr > 0) else 2.5
+            _sr_batch_items.append({
+                "ticker": _tk_u,
+                "prev_close": None if (_df_h is not None and not _df_h.empty and len(_df_h) >= 10) else _prev_c_fb,
+                "atr_pct": _atr_pct_sr,
+                "df_history": _df_h,
+                "put_wall": (_opt_sr or {}).get("put_wall"),
+                "call_wall": (_opt_sr or {}).get("call_wall"),
+                "split_detected": bool(_it_sr.get("split_detected", False)),
+            })
+        _sr_anchors_map = _sr_eng.update_daily_sr_anchors_batch(_sr_batch_items, date_et=_sr_date_et)
+        print(f"[+] ⚓ 当日静态支撑/阻力锚点已锁定 ({_sr_date_et}): {len(_sr_anchors_map)} 只标的")
+    except Exception as _sr_err:
+        print(f"  [!] ⚓ 当日静态 S/R 锚点锁定降级跳过: {_sr_err}")
+
     try:
         import importlib, create_futu_terminal
         importlib.reload(create_futu_terminal)
         _build_fn = create_futu_terminal.build_futu_terminal_html
     except Exception:
         _build_fn = build_futu_terminal_html
-    futu_html = _build_fn(stocks_sorted, macro_data, weather_info, update_time_str=now_str, has_realtime=has_realtime, target_watchlist=target_watchlist, terminal_notifications=terminal_notifications, session_code=session_code, session_name=session_name, sync_side_effects=True)
+    futu_html = _build_fn(stocks_sorted, macro_data, weather_info, update_time_str=now_str, has_realtime=has_realtime, target_watchlist=target_watchlist, terminal_notifications=terminal_notifications, session_code=session_code, session_name=session_name, sync_side_effects=True, daily_sr_anchors=_sr_anchors_map)
     with open(FUTU_HTML_FILE, "w", encoding="utf-8") as f:
         f.write(futu_html)
     index_html_path = os.path.join(SCRATCH_DIR, "index.html")
@@ -7937,6 +8072,7 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
             session_code=session_code,
             session_name=session_name,
             now_str=now_str,
+            daily_sr_anchors=_sr_anchors_map,
         )
         _snap_written = write_latest_radar_snapshot(_snap_obj)
         print(f"[+] 📦 轻量只读快照已更新: {_snap_written} ({_snap_obj.get('ticker_count', 0)} 只标的)")

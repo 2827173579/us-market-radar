@@ -488,19 +488,61 @@ def build_check_embed_dict(
     verdict = str(item.get("decision_verdict") or "⚪ 震荡整理 · 等待明确方向")
     verdict_sub = str(item.get("decision_sub") or "")
     ai_act = str(item.get("ai_action") or "").strip()
+    res_badge = str(item.get("resonance_badge_text") or item.get("four_h_div") or "").strip()
     decision_lines = [f"**{verdict}**"]
     if verdict_sub:
         decision_lines.append(verdict_sub)
+    if res_badge:
+        decision_lines.append(f"4H 共振状态：**{res_badge}**")
     if ai_act and ai_act not in verdict_sub:
         decision_lines.append(f"AI 战术提示：{ai_act}")
 
-    if is_bear:
-        r1 = item.get("r1")
-        s1 = item.get("s1")
+    def _src_tag(src_val: Any) -> str:
+        return " (无真实筹码·估算)" if str(src_val or "").upper() == "ATR_ESTIMATE" else ""
+
+    anc_s1 = item.get("anchor_s1") if item.get("anchor_s1") is not None else item.get("s1")
+    anc_s2 = item.get("anchor_s2") if item.get("anchor_s2") is not None else item.get("s2")
+    anc_r1 = item.get("anchor_r1") if item.get("anchor_r1") is not None else item.get("r1")
+    anc_r2 = item.get("anchor_r2") if item.get("anchor_r2") is not None else item.get("r2")
+    s1_src = item.get("s1_source")
+    s2_src = item.get("s2_source")
+    r1_src = item.get("r1_source")
+    r2_src = item.get("r2_source")
+    sr_state = str(item.get("sr_breach_state") or "INTACT").upper()
+
+    if sr_state == "ALL_SUPPORT_BREACHED":
+        levels_title = "⚠️ 支撑全线击穿 · 真空寻底"
+        levels_lines = [
+            f"⚠️ 今日原始支撑全线击穿 (原S1:{_fmt_price(anc_s1)} / 原S2:{_fmt_price(anc_s2)}) · 真空寻底",
+            f"反抽压力：原S2 **{_fmt_price(anc_s2)}**{_src_tag(s2_src)} ｜ R1 **{_fmt_price(anc_r1)}**{_src_tag(r1_src)}",
+            "风控纪律：**严禁左侧接刀**，仅认放量收回原 S2 或重夺当日 VWAP 的右侧确认",
+        ]
+    elif sr_state == "S1_BREACHED":
+        levels_title = "📉 原 S1 击穿转压 · 退守 S2"
+        levels_lines = [
+            f"~~S1:{_fmt_price(anc_s1)}~~ 已击穿转压 ➔ 退守 S2：**{_fmt_price(anc_s2)}**{_src_tag(s2_src)}{_rel_pct_str(anc_s2, price)}",
+            f"上方压力 R1 / 原S1：**{_fmt_price(anc_s1)}** ｜ R1 **{_fmt_price(anc_r1)}**{_src_tag(r1_src)}",
+            "风控纪律：**严禁左侧接刀**，反抽原 S1 视作上方压力",
+        ]
+    elif sr_state == "ALL_RESISTANCE_BROKEN":
+        levels_title = "🚀 突破今日全线阻力 · 趋势延伸"
+        levels_lines = [
+            f"🚀 突破今日全线阻力 (原R1:{_fmt_price(anc_r1)} / 原R2:{_fmt_price(anc_r2)})",
+            f"防守底线：原 R2 **{_fmt_price(anc_r2)}** (已突破 ➔ 转为支撑){_rel_pct_str(anc_r2, price)}",
+            "止盈策略：上方不设假天花板，**沿日内 VWAP / EMA9 移动止盈托管**，防假突破回踩原 R2",
+        ]
+    elif sr_state == "R1_BROKEN":
+        levels_title = "📈 R1 突破转支撑 · 看高 R2"
+        levels_lines = [
+            f"R1：**{_fmt_price(anc_r1)}** (已突破 ➔ 转为支撑){_rel_pct_str(anc_r1, price)}",
+            f"上看目标 R2：**{_fmt_price(anc_r2)}**{_src_tag(r2_src)}{_rel_pct_str(anc_r2, price)}",
+            f"原下轨参考：S1 {_fmt_price(anc_s1)}{_src_tag(s1_src)} · 不追冲高针，等回踩原 R1 或 VWAP 企稳",
+        ]
+    elif is_bear:
         levels_title = "🧭 关键压力 / 支撑（防守视角）"
         levels_lines = [
-            f"上方压力 R1：**{_fmt_price(r1)}**{_rel_pct_str(r1, price)}",
-            f"下方支撑 S1：**{_fmt_price(s1)}**{_rel_pct_str(s1, price)}",
+            f"上方压力 R1：**{_fmt_price(anc_r1)}**{_src_tag(r1_src)}{_rel_pct_str(anc_r1, price)}" + (f" ｜ R2 {_fmt_price(anc_r2)}{_src_tag(r2_src)}" if anc_r2 else ""),
+            f"下方支撑 S1：**{_fmt_price(anc_s1)}**{_src_tag(s1_src)}{_rel_pct_str(anc_s1, price)}" + (f" ｜ S2 {_fmt_price(anc_s2)}{_src_tag(s2_src)}" if anc_s2 else ""),
             "风控纪律：**严禁左侧接刀**，等重新站稳 VWAP 再看反抽",
         ]
     else:
@@ -515,6 +557,10 @@ def build_check_embed_dict(
             f"防守止损：**{_fmt_price(sl_px)}**{_rel_pct_str(sl_px, price)}" if (_opt_float(sl_px) or 0) > 0 else "防守止损：**--**",
             f"目标参考：**{_fmt_price(tp_px)}**{_rel_pct_str(tp_px, price)}" if (_opt_float(tp_px) or 0) > 0 else f"60日坑带：{_fmt_price(fib_lo)} ~ {_fmt_price(fib_hi)}",
         ]
+        if anc_s1 or anc_r1:
+            levels_lines.append(
+                f"筹码锚点：S1 {_fmt_price(anc_s1)}{_src_tag(s1_src)} / R1 {_fmt_price(anc_r1)}{_src_tag(r1_src)}"
+            )
 
     vwap_val = _opt_float(item.get("vwap"))
     vwap_diff = _opt_float(item.get("vwap_diff_pct"))
