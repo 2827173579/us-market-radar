@@ -3975,9 +3975,21 @@
     "2026-11-22:VXN_TECH_DELEVERAGING": {
       "device": "PC",
       "ts": 1795324207.036931
+    },
+    "2026-11-22:QCOM:STOP_LOSS": {
+      "device": "PC",
+      "ts": 1795338027.3767903
+    },
+    "2026-11-22:DEFENSIVE_FLIGHT:+0.0": {
+      "device": "PC",
+      "ts": 1795338033.2014637
+    },
+    "2026-11-22:NBIS/APLD/CRDO/MSTR/DELL/BE/COIN/NVDA/SKHY/MU/AMAT/TSM/ASML/AMD:STOP_LOSS": {
+      "device": "PC",
+      "ts": 1795339225.795691
     }
   },
   "device": "PC",
-  "last_heartbeat_ts": 1795337396.9612365,
-  "updated_at": "2026-11-22T08:49:56.961481+00:00"
+  "last_heartbeat_ts": 1795339242.0148952,
+  "updated_at": "2026-11-22T09:20:42.015168+00:00"
 }
