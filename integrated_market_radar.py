@@ -5493,7 +5493,7 @@ def build_latest_radar_snapshot(
     if isinstance(daily_sr_anchors, dict):
         inner = daily_sr_anchors.get("anchors") if isinstance(daily_sr_anchors.get("anchors"), dict) else daily_sr_anchors
         sr_anchors_map = {str(k).upper(): v for k, v in inner.items() if isinstance(v, dict)}
-    else:
+    elif ai_predictions is None:
         try:
             import sr_anchor_engine as _sr_snap_mod
             loaded_anc = _sr_snap_mod.load_daily_sr_anchors().get("anchors") or {}

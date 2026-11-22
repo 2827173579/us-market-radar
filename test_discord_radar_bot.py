@@ -277,6 +277,7 @@ class TestDiscordRadarBot(unittest.TestCase):
                 now_str="2026-11-20 14:30:00",
                 now_et=datetime(2026, 11, 20, 14, 30, tzinfo=NY_TZ),
                 opex_shield=opex,
+                daily_sr_anchors={},
             )
             written = radar.write_latest_radar_snapshot(snap, snapshot_path=snap_path)
             self.assertTrue(os.path.exists(written))
@@ -314,6 +315,7 @@ class TestDiscordRadarBot(unittest.TestCase):
             now_str="2026-11-20 08:15:00",
             now_et=datetime(2026, 11, 20, 8, 15, tzinfo=NY_TZ),
             opex_shield=opex,
+            daily_sr_anchors={},
         )
 
         # Autocomplete 上限、关键词命中、大小写不敏感
@@ -389,6 +391,7 @@ class TestDiscordRadarBot(unittest.TestCase):
             now_str="2026-11-20 08:30:00",
             now_et=datetime(2026, 11, 20, 8, 30, tzinfo=NY_TZ),
             opex_shield=opex,
+            daily_sr_anchors={},
         )
 
         vix_emb = bot.build_vix_embed_dict(snap)
