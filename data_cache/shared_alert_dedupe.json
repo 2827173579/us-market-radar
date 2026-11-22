@@ -3978,7 +3978,7 @@
     },
     "2026-11-22:QCOM:STOP_LOSS": {
       "device": "PC",
-      "ts": 1795338027.3767903
+      "ts": 1795345277.199541
     },
     "2026-11-22:DEFENSIVE_FLIGHT:+0.0": {
       "device": "PC",
@@ -3986,7 +3986,7 @@
     },
     "2026-11-22:NBIS/APLD/CRDO/MSTR/DELL/BE/COIN/NVDA/SKHY/MU/AMAT/TSM/ASML/AMD:STOP_LOSS": {
       "device": "PC",
-      "ts": 1795339225.795691
+      "ts": 1795346458.6331213
     },
     "JIN10_FLASH:20261122182731422800": {
       "device": "PC",
@@ -3994,6 +3994,6 @@
     }
   },
   "device": "PC",
-  "last_heartbeat_ts": 1795344801.0334015,
-  "updated_at": "2026-11-22T10:53:21.033660+00:00"
+  "last_heartbeat_ts": 1795346665.5535436,
+  "updated_at": "2026-11-22T11:24:25.553989+00:00"
 }
