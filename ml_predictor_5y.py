@@ -5907,6 +5907,118 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
     _sc_bg = 'rgba(255, 213, 79, 0.14)' if _sc_degraded else 'rgba(63, 185, 80, 0.10)'
     _sc_text_color = '#ffd54f' if _sc_degraded else '#3fb950'
 
+    # V4.2 轻量实盘推送信号记账本（近 30 日，默认折叠不占首屏高度）
+    ledger_summary = tables_data.get('signal_ledger_summary')
+    if not isinstance(ledger_summary, dict):
+        try:
+            import signal_ledger as _sl_ui
+            ledger_summary = _sl_ui.get_recent_summary(days=30, max_recent=10)
+        except Exception:
+            ledger_summary = {}
+    _sl_total = int((ledger_summary or {}).get('total_records') or 0)
+    _sl_settled = int((ledger_summary or {}).get('settled_total') or 0)
+    _sl_long_wr = (ledger_summary or {}).get('long_win_rate_pct')
+    _sl_long_wins = int((ledger_summary or {}).get('long_wins') or 0)
+    _sl_long_settled = int((ledger_summary or {}).get('long_settled') or 0)
+    _sl_def_eff = (ledger_summary or {}).get('defense_eff_rate_pct')
+    _sl_def_hits = int((ledger_summary or {}).get('defense_hits') or 0)
+    _sl_def_settled = int((ledger_summary or {}).get('defense_settled') or 0)
+    _sl_rows = (ledger_summary or {}).get('recent_records') or []
+
+    def _fmt_sl_pct(val):
+        try:
+            if val is None or not math.isfinite(float(val)):
+                return "--", "var(--text-muted)"
+            fv = float(val)
+            col = "var(--neon-green)" if fv > 0 else ("#f85149" if fv < 0 else "var(--text-sub)")
+            return f"{fv:+.2f}%", col
+        except Exception:
+            return "--", "var(--text-muted)"
+
+    _sl_long_wr_str = f"{float(_sl_long_wr):.1f}% ({_sl_long_wins}/{_sl_long_settled})" if _sl_long_wr is not None else "待结算"
+    _sl_def_eff_str = f"{float(_sl_def_eff):.1f}% ({_sl_def_hits}/{_sl_def_settled})" if _sl_def_eff is not None else "待结算"
+    _sl_btn_closed = f"📒 实盘信号记账本 ({_sl_total}笔) ▾" if _sl_total > 0 else "📒 实盘信号记账本 ▾"
+    _sl_btn_open = "🔼 收起实盘信号记账本 ▴"
+
+    if _sl_total == 0:
+        _sl_body_html = (
+            '<div style="padding: 16px 18px; border-radius: 10px; background: var(--bg-elevated); '
+            'border: 1px dashed var(--border-strong); color: var(--text-sub); font-size: 13px; text-align: center;">'
+            '📒 <strong>账本已就绪 · 自下周首条实盘推送起自动记账复盘</strong>'
+            '<div style="font-size: 11.5px; color: var(--text-muted); margin-top: 4px;">'
+            '后续每次 5m 买点 / 策略 A·B / 盘中走廊 / VIX 倒挂刹车推送后，系统将零未来函数自动回填 +1h / EOD / T+3 / T+5 与 MAE。'
+            '</div></div>'
+        )
+    else:
+        _sl_tr_list = []
+        for _sr in _sl_rows[:10]:
+            _ts_disp = html_lib.escape(str(_sr.get('timestamp_et') or _sr.get('date_et') or '--')[:16].replace('T', ' '))
+            _sig_lbl = html_lib.escape(str(_sr.get('signal_label_cn') or _sr.get('signal_type') or '--'))
+            _dir_raw = str(_sr.get('direction') or 'LONG').upper()
+            _dir_badge = (
+                '<span style="padding:2px 7px; border-radius:999px; font-size:10.5px; font-weight:700; '
+                'background:rgba(63,185,80,0.14); color:#3fb950;">做多</span>'
+                if _dir_raw == 'LONG'
+                else '<span style="padding:2px 7px; border-radius:999px; font-size:10.5px; font-weight:700; '
+                     'background:rgba(248,81,73,0.14); color:#f85149;">防守</span>'
+            )
+            _tk_disp = html_lib.escape(str(_sr.get('ticker') or '--'))
+            try:
+                _ep_disp = f"${float(_sr.get('entry_price')):.2f}"
+            except Exception:
+                _ep_disp = "--"
+            _eod_s, _eod_c = _fmt_sl_pct(_sr.get('ret_eod_pct'))
+            _t3_s, _t3_c = _fmt_sl_pct(_sr.get('ret_t3_pct'))
+            _mae_s, _mae_c = _fmt_sl_pct(_sr.get('mae_pct'))
+            _st_disp = "已结算" if str(_sr.get('status') or '') == 'COMPLETE' else "追踪中"
+            _sl_tr_list.append(
+                f"<tr>"
+                f"<td style='white-space:nowrap; color:var(--text-muted); font-family:\"JetBrains Mono\",monospace; font-size:11.5px;'>{_ts_disp}</td>"
+                f"<td style='white-space:nowrap;'>{_sig_lbl}</td>"
+                f"<td style='white-space:nowrap;'>{_dir_badge}</td>"
+                f"<td style='font-weight:700; color:var(--text-main);'>{_tk_disp}</td>"
+                f"<td style='font-family:\"JetBrains Mono\",monospace;'>{_ep_disp}</td>"
+                f"<td style='font-family:\"JetBrains Mono\",monospace; color:{_eod_c};'>{_eod_s}</td>"
+                f"<td style='font-family:\"JetBrains Mono\",monospace; color:{_t3_c};'>{_t3_s}</td>"
+                f"<td style='font-family:\"JetBrains Mono\",monospace; color:{_mae_c};'>{_mae_s}</td>"
+                f"<td style='white-space:nowrap; font-size:11.5px; color:var(--text-sub);'>{_st_disp}</td>"
+                f"</tr>"
+            )
+        _sl_body_html = (
+            '<div style="overflow-x: auto; max-width: 100%;">'
+            '<table style="width:100%; border-collapse:collapse; font-size:12px;">'
+            '<thead><tr style="text-align:left; border-bottom:1px solid var(--border-color); color:var(--text-muted);">'
+            '<th style="padding:7px 8px;">时间 (ET)</th>'
+            '<th style="padding:7px 8px;">信号类型</th>'
+            '<th style="padding:7px 8px;">方向</th>'
+            '<th style="padding:7px 8px;">标的</th>'
+            '<th style="padding:7px 8px;">触发价</th>'
+            '<th style="padding:7px 8px;">当日 EOD</th>'
+            '<th style="padding:7px 8px;">T+3</th>'
+            '<th style="padding:7px 8px;">MAE</th>'
+            '<th style="padding:7px 8px;">状态</th>'
+            '</tr></thead>'
+            f'<tbody>{"".join(_sl_tr_list)}</tbody>'
+            '</table></div>'
+        )
+
+    signal_ledger_drawer_html = f"""
+        <div id="signalLedgerDrawer" class="section-card" style="display: none; margin-bottom: 14px; padding: 14px 16px;">
+            <div style="display:flex; align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap; margin-bottom:12px;">
+                <div>
+                    <div style="font-size:15px; font-weight:800; color:var(--text-main);">📒 实盘推送信号记账本（近 30 日）</div>
+                    <div style="font-size:11.5px; color:var(--text-muted); margin-top:2px;">仅统计 Discord 真实推送落盘信号 · 严格分离做多胜率与防守拦截有效率</div>
+                </div>
+                <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+                    <span class="compact-pill">总记录/已结算: <strong>{_sl_total} / {_sl_settled}</strong></span>
+                    <span class="compact-pill" style="color:var(--neon-green);">多头实盘胜率: <strong>{_sl_long_wr_str}</strong></span>
+                    <span class="compact-pill" style="color:var(--warning-gold);">防守拦截有效率: <strong>{_sl_def_eff_str}</strong></span>
+                </div>
+            </div>
+            {_sl_body_html}
+        </div>
+    """
+
     flight_info = tables_data.get('defensive_flight') or weather.get('defensive_flight', {})
     flight_banner_html = ""
     if flight_info and flight_info.get('is_alert'):
@@ -7384,12 +7496,18 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
                     <span class="compact-pill">宏观: <strong style="color: {weather_accent};">{weather.get('status', '☀️ 晴天做多')}</strong></span>
                     <span class="compact-pill" style="color: var(--neon-green);"><span class="pulse-dot"></span><span>{kpi.get('data_mode', '实时在线')}</span></span>
                 </div>
-                <button type="button" id="btnModelMacroDrawer" class="drawer-toggle-btn" onclick="toggleCollapsibleDrawer('modelMacroDrawer', this, '🔍 展开模型参数与宏观详情 ▾', '🔼 收起模型参数与宏观详情 ▴')">🔍 展开模型参数与宏观详情 ▾</button>
+                <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                    <button type="button" id="btnSignalLedgerDrawer" class="drawer-toggle-btn" onclick="toggleCollapsibleDrawer('signalLedgerDrawer', this, '{_sl_btn_closed}', '{_sl_btn_open}')">{_sl_btn_closed}</button>
+                    <button type="button" id="btnModelMacroDrawer" class="drawer-toggle-btn" onclick="toggleCollapsibleDrawer('modelMacroDrawer', this, '🔍 展开模型参数与宏观详情 ▾', '🔼 收起模型参数与宏观详情 ▴')">🔍 展开模型参数与宏观详情 ▾</button>
+                </div>
             </div>
             <div class="predict-macro-slim">
                 {macro_calendar_banner_html}
             </div>
         </div>
+
+        <!-- Default-Collapsed Live Discord Signal Ledger Drawer (0px first-screen impact) -->
+        {signal_ledger_drawer_html}
 
         <!-- Default-Collapsed Hardcore Model Parameters & 7-Stat Macro Details Drawer -->
         <div id="modelMacroDrawer" style="display: none; margin-bottom: 14px;">

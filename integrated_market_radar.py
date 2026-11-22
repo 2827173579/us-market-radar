@@ -2616,6 +2616,37 @@ def send_discord_vxn_deleveraging_alert(vix_regime, def_flight=None, update_time
         return False
 
 
+def _should_record_signal_ledger(webhook_url=None, explicit_ledger_path=None):
+    """
+    仅在真实推送生效或测试显式指定隔离账本路径时记账：
+    - RADAR_DISABLE_EXTERNAL_ALERTS=1 / --no-alerts 下严格禁写；
+    - 无显式隔离路径的单元测试或 example.invalid 测试 Webhook 严禁污染生产 data_cache/signal_ledger.json。
+    """
+    if _external_alerts_disabled():
+        return False
+    if explicit_ledger_path or os.environ.get("SIGNAL_LEDGER_PATH", "").strip():
+        return True
+    if "unittest" in sys.modules:
+        return False
+    eff_url = str(webhook_url or get_claw_webhook_url() or get_defensive_webhook_url() or "").strip().lower()
+    if (not eff_url) or ("example.invalid" in eff_url) or ("localhost" in eff_url) or ("127.0.0.1" in eff_url):
+        return False
+    return True
+
+
+def _build_quote_lookup_map(macro_data=None, stocks_data=None):
+    ql = {}
+    if isinstance(stocks_data, (list, tuple)):
+        for s in stocks_data:
+            if isinstance(s, dict) and s.get("ticker"):
+                ql[s["ticker"]] = s
+    elif isinstance(stocks_data, dict):
+        ql.update(stocks_data)
+    if isinstance(macro_data, dict):
+        ql.update(macro_data)
+    return ql
+
+
 def dispatch_vix_regime_discord_alerts(
     vix_regime,
     weather_info=None,
@@ -2625,6 +2656,9 @@ def dispatch_vix_regime_discord_alerts(
     def_webhook_url=None,
     dedupe_day=None,
     session_code=None,
+    macro_data=None,
+    stocks_data=None,
+    ledger_path=None,
 ):
     """
     统一调度 VIX/VXN 恐慌中枢跨频道预警：
@@ -2696,6 +2730,19 @@ def dispatch_vix_regime_discord_alerts(
             ):
                 summary["vix_brake_sent"] = True
                 summary["sent_keys"].append(brake_key)
+                if _should_record_signal_ledger(claw_webhook_url or get_claw_webhook_url(), ledger_path):
+                    try:
+                        import signal_ledger
+                        _ql_brk = _build_quote_lookup_map(macro_data=macro_data, stocks_data=stocks_data)
+                        signal_ledger.record_benchmark_signals(
+                            "VIX_BACKWARDATION_BRAKE",
+                            quote_lookup=_ql_brk,
+                            vix_regime=vix_regime,
+                            timestamp_et=now_t,
+                            ledger_path=ledger_path,
+                        )
+                    except Exception as _sl_err:
+                        print(f"  [!] 记账本写入跳过 (VIX刹车): {_sl_err}")
 
     # 1B. 频道一：🟢 恐慌出清 · 右侧抄底观察窗开启 (严格锁定美东常规盘中 REGULAR，盘前/夜盘只预览不推 Discord、不落锁)
     elif (
@@ -2737,6 +2784,19 @@ def dispatch_vix_regime_discord_alerts(
                 ):
                     summary["vix_bottom_sent"] = True
                     summary["sent_keys"].append(bottom_key)
+                    if _should_record_signal_ledger(claw_webhook_url or get_claw_webhook_url(), ledger_path):
+                        try:
+                            import signal_ledger
+                            _ql_bot = _build_quote_lookup_map(macro_data=macro_data, stocks_data=stocks_data)
+                            signal_ledger.record_benchmark_signals(
+                                "VIX_STRATEGY_A_BOTTOM",
+                                quote_lookup=_ql_bot,
+                                vix_regime=vix_regime,
+                                timestamp_et=now_t,
+                                ledger_path=ledger_path,
+                            )
+                        except Exception as _sl_err:
+                            print(f"  [!] 记账本写入跳过 (策略A): {_sl_err}")
 
     # 2. 频道二：🔥 科技/半导体极端去杠杆预警
     df_obj = def_flight if def_flight is not None else ((weather_info or {}).get("defensive_flight") if isinstance(weather_info, dict) else None)
@@ -2752,6 +2812,19 @@ def dispatch_vix_regime_discord_alerts(
     ):
         summary["vxn_deleveraging_sent"] = True
         summary["sent_keys"].append(vxn_key)
+        if _should_record_signal_ledger(def_webhook_url or get_defensive_webhook_url(), ledger_path):
+            try:
+                import signal_ledger
+                _ql_vxn = _build_quote_lookup_map(macro_data=macro_data, stocks_data=stocks_data)
+                signal_ledger.record_benchmark_signals(
+                    "TECH_DELEVERAGE_ALERT",
+                    quote_lookup=_ql_vxn,
+                    vix_regime=vix_regime,
+                    timestamp_et=now_t,
+                    ledger_path=ledger_path,
+                )
+            except Exception as _sl_err:
+                print(f"  [!] 记账本写入跳过 (VXN去杠杆): {_sl_err}")
 
     return summary
 
@@ -2764,6 +2837,7 @@ def dispatch_intraday_corridor_divergence_alerts(
     now_et=None,
     session_code=None,
     webhook_url=None,
+    ledger_path=None,
 ):
     """
     频道一（#买点警报大盘趋势提示 / DISCORD_CLAW_WEBHOOK_URL）：
@@ -2907,6 +2981,22 @@ def dispatch_intraday_corridor_divergence_alerts(
             color_override=color_hex,
         ):
             res["sent"].append({"ticker": tk, "status": div_status, "key": dedupe_key})
+            if _should_record_signal_ledger(webhook_url or get_claw_webhook_url(), ledger_path) and actual_px is not None:
+                try:
+                    import signal_ledger
+                    sig_t = "CORRIDOR_BREAK_ABOVE" if div_status == "ABOVE_P75" else "CORRIDOR_BREAK_BELOW"
+                    signal_ledger.record_signal(
+                        signal_type=sig_t,
+                        ticker=tk,
+                        entry_price=actual_px,
+                        timestamp_et=cur_et,
+                        vix_at_entry=vix_r.get("vix_spot"),
+                        vix_ratio_at_entry=vix_r.get("vix_term_ratio"),
+                        meta={"slot_time": slot_time, "pct_vs_p50": pct_vs_p50},
+                        ledger_path=ledger_path,
+                    )
+                except Exception as _sl_err:
+                    print(f"  [!] 记账本写入跳过 (盘中走廊 {tk}): {_sl_err}")
 
     return res
 
@@ -2927,6 +3017,7 @@ def dispatch_vix_intraday_rebound_alerts(
     now_et=None,
     session_code=None,
     webhook_url=None,
+    ledger_path=None,
 ):
     """
     策略 B：⚡ VIX 盘中真退潮 · 右侧博反抽（倒挂期绝对禁多）
@@ -3094,6 +3185,21 @@ def dispatch_vix_intraday_rebound_alerts(
             color_override=0x00E676,
         ):
             res["sent"].append({"ticker": tk, "key": dedupe_key, "stop_cap": stop_cap})
+            if _should_record_signal_ledger(webhook_url or get_claw_webhook_url(), ledger_path):
+                try:
+                    import signal_ledger
+                    signal_ledger.record_signal(
+                        signal_type="VIX_STRATEGY_B_REBOUND",
+                        ticker=tk,
+                        entry_price=tk_px,
+                        timestamp_et=cur_et,
+                        vix_at_entry=vr.get("vix_spot"),
+                        vix_ratio_at_entry=vr.get("vix_term_ratio"),
+                        meta={"stop_cap": stop_cap, "vix_pct": round(vix_pct_val, 2)},
+                        ledger_path=ledger_path,
+                    )
+                except Exception as _sl_err:
+                    print(f"  [!] 记账本写入跳过 (策略B {tk}): {_sl_err}")
 
     return res
 
@@ -3525,7 +3631,7 @@ def reconcile_extended_quote_with_split_guard(
     return lp, 0.0, 0.0, 0.0, True, "extreme_ext_cliff_suppressed"
 
 
-def dispatch_wechat_radar_alerts(macro_data, stocks_data, weather_info, now_str):
+def dispatch_wechat_radar_alerts(macro_data, stocks_data, weather_info, now_str, ledger_path=None):
     """
     智能去重微信预警分发引擎：
     1. 扫描 🎯自选盯盘5m日内买点触发、🟢黄金坑就位、🔴破位止损、🟣止盈卖出、INTC 重点防线 及 宏观气象异动
@@ -3911,6 +4017,25 @@ def dispatch_wechat_radar_alerts(macro_data, stocks_data, weather_info, now_str)
             history["weather"] = current_weather
         save_alert_history(history)
         print(f"  [+] 📱 微信预警成功推送并持久化冷却状态 ({len(pending_target_updates)} 项)")
+        if watchlist_entry_alerts and _should_record_signal_ledger(explicit_ledger_path=ledger_path):
+            try:
+                import signal_ledger
+                _vr_5m = (weather_info or {}).get("vix_regime") if isinstance(weather_info, dict) else {}
+                _vr_5m = _vr_5m if isinstance(_vr_5m, dict) else {}
+                for _item_5m in watchlist_entry_alerts:
+                    _px_5m = _item_5m.get("active_price") or _item_5m.get("last")
+                    signal_ledger.record_signal(
+                        signal_type="INTRADAY_5M_BUY",
+                        ticker=_item_5m.get("ticker", ""),
+                        entry_price=_px_5m,
+                        timestamp_et=now_str,
+                        vix_at_entry=_vr_5m.get("vix_spot"),
+                        vix_ratio_at_entry=_vr_5m.get("vix_term_ratio"),
+                        meta={"optimal_limit": _item_5m.get("optimal_limit"), "rsi_5m": _item_5m.get("rsi_5m")},
+                        ledger_path=ledger_path,
+                    )
+            except Exception as _sl_err:
+                print(f"  [!] 记账本写入跳过 (5m买点): {_sl_err}")
     else:
         save_alert_history(history)
         print("  [!] 📱 微信推送未成功确认，保留预警重试资格 (不更新冷却时间戳)")
@@ -7259,6 +7384,21 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
         print("[!] ⚠️ 警告: 本轮抓取标的数异常为空 (疑似网络瞬时断连)，保留上一轮有效看板数据，跳过覆盖写入以防页面白屏。")
         return
 
+    # 6.9 静默零未来函数自动回填未完成实盘推送信号账本 (Dry-Run / --no-alerts 下严禁修改生产账本)
+    if not _external_alerts_disabled():
+        try:
+            import signal_ledger as _sl_bf
+            _all_live_lk = _build_quote_lookup_map(macro_data=macro_data, stocks_data=stocks_sorted)
+            _bf_res = _sl_bf.backfill_open_signals(
+                live_quotes=_all_live_lk,
+                history_dict=history_dict,
+                intraday_map=intraday_map,
+            )
+            if _bf_res.get("updated", 0) > 0:
+                print(f"[+] 📒 实盘信号账本自动回填: 更新 {_bf_res['updated']} 笔 / 完结 {_bf_res['completed']} 笔")
+        except Exception as _sl_bf_err:
+            print(f"  [!] 📒 信号账本自动回填降级跳过: {_sl_bf_err}")
+
     # 7.0 聚合脱敏新闻面、宏观日历防插针状态与个股资讯缓存 (data_cache/latest_market_news.json, 严格timeout=3s且异常静默降级)
     try:
         import jin10_news_sentinel as _jn_agg
@@ -7359,6 +7499,8 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
                 def_flight=df_alert_push,
                 now_str=now_str,
                 session_code=session_code,
+                macro_data=macro_data,
+                stocks_data=stocks_sorted,
             )
         except Exception as _vx_err:
             print(f"  [!] 💬 VIX/VXN 恐慌状态 Discord 推送异常: {_vx_err}")
@@ -7387,6 +7529,13 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
             )
         except Exception as _vr_reb_err:
             print(f"  [!] 💬 VIX 盘中真退潮博反抽 Discord 推送异常: {_vr_reb_err}")
+
+        # 7.10 每周六实盘信号复盘周报 (美东周五 18:30 ET ~ 周六 12:00 ET，跨设备每周唯一)
+        try:
+            import signal_ledger as _sl_wk
+            _sl_wk.dispatch_weekly_recap_discord(device_tag=_shared_device_tag())
+        except Exception as _wk_err:
+            print(f"  [!] 📒 Discord 每周实盘复盘周报推送异常: {_wk_err}")
     else:
         print("  [*] [Dry-Run Guard] 已屏蔽全部外部推送 (RADAR_DISABLE_EXTERNAL_ALERTS / --no-alerts)")
 

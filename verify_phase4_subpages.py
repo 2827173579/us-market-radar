@@ -105,6 +105,7 @@ def verify_desktop(browser):
     assert page.locator("#marketRegimeBadge").is_visible()
     assert page.locator("#liveScorecardBadge").is_visible()
     assert page.locator("#macroCalendarBanner").is_visible()
+    assert not page.locator("#signalLedgerDrawer").is_visible(), "#signalLedgerDrawer must be collapsed by default"
     assert not page.locator("#modelMacroDrawer").is_visible(), "#modelMacroDrawer must be collapsed by default"
     assert not page.locator("#backtestDetailsDrawer").is_visible(), "#backtestDetailsDrawer must be collapsed by default"
 
@@ -128,7 +129,15 @@ def verify_desktop(browser):
     assert 380.0 <= h_after <= 520.0, f"Canvas height after hover out of range [380, 520]: {h_after}"
     print(f"[PASS Desktop] Canvas hover anti-growth: 20 mousemoves + 1s wait -> before={h_before}px, after={h_after}px (delta=0px).")
 
-    # Expand/Collapse both drawers cleanly
+    # Expand/Collapse all drawers cleanly
+    page.locator("#btnSignalLedgerDrawer").click()
+    page.wait_for_timeout(150)
+    assert page.locator("#signalLedgerDrawer").is_visible(), "#signalLedgerDrawer failed to expand"
+    assert page.evaluate("document.documentElement.scrollWidth") <= 1441, "Signal ledger drawer caused horizontal overflow"
+    page.locator("#btnSignalLedgerDrawer").click()
+    page.wait_for_timeout(150)
+    assert not page.locator("#signalLedgerDrawer").is_visible(), "#signalLedgerDrawer failed to collapse"
+
     page.locator("#btnModelMacroDrawer").click()
     page.wait_for_timeout(150)
     assert page.locator("#modelMacroDrawer").is_visible(), "#modelMacroDrawer failed to expand"
@@ -217,6 +226,14 @@ def verify_mobile(browser):
         assert m_info["sw"] <= 391, f"[Mobile] {sub_name} outer page overflowed 390px: {m_info['sw']}"
         ret = page.locator('a[href="futu_pro_terminal.html"]').first
         assert ret.is_visible() and "看盘" in ret.inner_text()
+        if sub_name == "predict_radar_5y.html":
+            assert not page.locator("#signalLedgerDrawer").is_visible(), "[Mobile] #signalLedgerDrawer must start collapsed"
+            page.locator("#btnSignalLedgerDrawer").click()
+            page.wait_for_timeout(150)
+            assert page.locator("#signalLedgerDrawer").is_visible(), "[Mobile] #signalLedgerDrawer failed to expand"
+            assert page.evaluate("document.documentElement.scrollWidth") <= 391, "[Mobile] #signalLedgerDrawer overflowed 390px"
+            page.locator("#btnSignalLedgerDrawer").click()
+            page.wait_for_timeout(120)
         print(f"[PASS Mobile 390x844] {sub_name}: light theme ok, scrollWidth={m_info['sw']}")
 
     assert not errors, f"Mobile JS pageerrors: {errors}"
