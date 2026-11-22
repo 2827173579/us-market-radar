@@ -3962,7 +3962,7 @@
     },
     "2026-11-22:NBIS/APLD/CRDO/MSTR/COIN/BE/DELL/SKHY/NVDA/MU/AMAT/TSM/ASML/AMD:STOP_LOSS": {
       "device": "PC",
-      "ts": 1795324197.5966394
+      "ts": 1795331953.4943666
     },
     "2026-11-22:VIX_REGIME:BACKWARDATION_BRAKE": {
       "device": "PC",
@@ -3978,6 +3978,6 @@
     }
   },
   "device": "PC",
-  "last_heartbeat_ts": 1795330271.6060436,
-  "updated_at": "2026-11-22T06:51:11.606262+00:00"
+  "last_heartbeat_ts": 1795331812.2706206,
+  "updated_at": "2026-11-22T07:19:13.494581+00:00"
 }

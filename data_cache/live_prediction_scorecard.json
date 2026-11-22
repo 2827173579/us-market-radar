@@ -1,15 +1,15 @@
 {
-  "updated_at": "2026-11-22 15:52:10",
-  "win_rate_7d_pct": 65.0,
-  "win_rate_30d_pct": 49.3,
-  "long_win_rate_7d_pct": 11.5,
-  "short_win_rate_7d_pct": 65.0,
-  "long_win_rate_30d_pct": 34.9,
-  "short_win_rate_30d_pct": 49.3,
-  "sample_count_7d": 20,
-  "sample_count_30d": 138,
-  "avg_return_7d_pct": 2.79,
-  "avg_return_30d_pct": 0.55,
+  "updated_at": "2026-11-22 16:17:50",
+  "win_rate_7d_pct": 70.8,
+  "win_rate_30d_pct": 47.9,
+  "long_win_rate_7d_pct": 9.7,
+  "short_win_rate_7d_pct": 70.8,
+  "long_win_rate_30d_pct": 33.2,
+  "short_win_rate_30d_pct": 47.9,
+  "sample_count_7d": 24,
+  "sample_count_30d": 144,
+  "avg_return_7d_pct": 3.79,
+  "avg_return_30d_pct": 0.41,
   "window_7d_range": "2026-11-11~2026-11-17",
   "window_30d_range": "2026-10-19~2026-11-17",
   "is_degraded": false,
@@ -259,43 +259,43 @@
   "daily_breakdown_30d": [
     {
       "date": "2026-10-19",
-      "win_rate_pct": 14.3,
-      "long_win_rate_pct": 41.7,
+      "win_rate_pct": 18.2,
+      "long_win_rate_pct": 40.0,
       "short_win_rate_pct": 0.0,
-      "sample_count": 7,
-      "avg_return_pct": -3.65
+      "sample_count": 11,
+      "avg_return_pct": -3.46
     },
     {
       "date": "2026-10-20",
-      "win_rate_pct": 66.7,
+      "win_rate_pct": 50.0,
       "long_win_rate_pct": 0.0,
       "short_win_rate_pct": 0.0,
-      "sample_count": 3,
-      "avg_return_pct": 3.21
+      "sample_count": 4,
+      "avg_return_pct": 1.06
     },
     {
       "date": "2026-10-21",
       "win_rate_pct": 100.0,
-      "long_win_rate_pct": 20.8,
+      "long_win_rate_pct": 21.1,
       "short_win_rate_pct": 0.0,
       "sample_count": 1,
       "avg_return_pct": 8.66
     },
     {
       "date": "2026-10-22",
-      "win_rate_pct": 13.0,
+      "win_rate_pct": 12.5,
       "long_win_rate_pct": 100.0,
-      "short_win_rate_pct": 13.0,
-      "sample_count": 23,
-      "avg_return_pct": -3.56
+      "short_win_rate_pct": 12.5,
+      "sample_count": 24,
+      "avg_return_pct": -3.7
     },
     {
       "date": "2026-10-23",
-      "win_rate_pct": 22.7,
+      "win_rate_pct": 21.7,
       "long_win_rate_pct": 100.0,
-      "short_win_rate_pct": 22.7,
-      "sample_count": 22,
-      "avg_return_pct": -2.23
+      "short_win_rate_pct": 21.7,
+      "sample_count": 23,
+      "avg_return_pct": -2.44
     },
     {
       "date": "2026-10-24",
@@ -315,35 +315,35 @@
     },
     {
       "date": "2026-10-26",
-      "win_rate_pct": 43.5,
+      "win_rate_pct": 40.0,
       "long_win_rate_pct": 100.0,
-      "short_win_rate_pct": 43.5,
-      "sample_count": 23,
-      "avg_return_pct": -0.97
+      "short_win_rate_pct": 40.0,
+      "sample_count": 25,
+      "avg_return_pct": -1.45
     },
     {
       "date": "2026-10-27",
-      "win_rate_pct": 66.7,
+      "win_rate_pct": 50.0,
       "long_win_rate_pct": 0.0,
-      "short_win_rate_pct": 66.7,
-      "sample_count": 3,
-      "avg_return_pct": 2.01
+      "short_win_rate_pct": 50.0,
+      "sample_count": 4,
+      "avg_return_pct": 0.35
     },
     {
       "date": "2026-10-28",
-      "win_rate_pct": 87.5,
+      "win_rate_pct": 100.0,
       "long_win_rate_pct": 0.0,
-      "short_win_rate_pct": 0.0,
-      "sample_count": 8,
-      "avg_return_pct": 5.81
+      "short_win_rate_pct": 100.0,
+      "sample_count": 1,
+      "avg_return_pct": 9.03
     },
     {
       "date": "2026-10-29",
       "win_rate_pct": 100.0,
       "long_win_rate_pct": 0.0,
       "short_win_rate_pct": 100.0,
-      "sample_count": 3,
-      "avg_return_pct": 7.82
+      "sample_count": 1,
+      "avg_return_pct": 6.4
     },
     {
       "date": "2026-10-30",
@@ -372,10 +372,10 @@
     {
       "date": "2026-11-02",
       "win_rate_pct": 100.0,
-      "long_win_rate_pct": 18.8,
+      "long_win_rate_pct": 11.8,
       "short_win_rate_pct": 100.0,
-      "sample_count": 4,
-      "avg_return_pct": 5.13
+      "sample_count": 2,
+      "avg_return_pct": 5.26
     },
     {
       "date": "2026-11-03",
@@ -396,7 +396,7 @@
     {
       "date": "2026-11-05",
       "win_rate_pct": 50.0,
-      "long_win_rate_pct": 58.8,
+      "long_win_rate_pct": 62.5,
       "short_win_rate_pct": 0.0,
       "sample_count": 2,
       "avg_return_pct": 1.3
@@ -428,7 +428,7 @@
     {
       "date": "2026-11-09",
       "win_rate_pct": 67.9,
-      "long_win_rate_pct": 78.9,
+      "long_win_rate_pct": 81.2,
       "short_win_rate_pct": 0.0,
       "sample_count": 28,
       "avg_return_pct": 4.44
@@ -443,24 +443,24 @@
     },
     {
       "date": "2026-11-11",
-      "win_rate_pct": 61.1,
+      "win_rate_pct": 63.2,
       "long_win_rate_pct": 0.0,
-      "short_win_rate_pct": 61.1,
-      "sample_count": 18,
-      "avg_return_pct": 2.16
+      "short_win_rate_pct": 63.2,
+      "sample_count": 19,
+      "avg_return_pct": 2.44
     },
     {
       "date": "2026-11-12",
       "win_rate_pct": 100.0,
       "long_win_rate_pct": 0.0,
       "short_win_rate_pct": 100.0,
-      "sample_count": 2,
-      "avg_return_pct": 8.41
+      "sample_count": 5,
+      "avg_return_pct": 8.92
     },
     {
       "date": "2026-11-13",
       "win_rate_pct": 14.3,
-      "long_win_rate_pct": 13.0,
+      "long_win_rate_pct": 13.6,
       "short_win_rate_pct": 0.0,
       "sample_count": 28,
       "avg_return_pct": -3.74
