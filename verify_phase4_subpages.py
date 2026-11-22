@@ -33,11 +33,56 @@ def check_static_subpages():
     pred_txt = PREDICT_HTML.read_text(encoding="utf-8")
     assert "28标的" not in pred_txt, "Outdated '28标的' text still present in predict_radar_5y.html"
     assert "79标的" in pred_txt, "Expected '79标的' in predict_radar_5y.html"
+    assert "软ATR+POC动态锚定" not in pred_txt, "Outdated '软ATR+POC动态锚定' text still present in predict_radar_5y.html"
+    assert "当日静态锚定" in pred_txt, "Expected '当日静态锚定' in predict_radar_5y.html"
     body_only = pred_txt.split("<body>")[1].split("const timeCycleData")[0]
     ids = re.findall(r'\bid="([^"]+)"', body_only)
     dups = sorted({i for i in ids if ids.count(i) > 1})
     assert not dups, f"Duplicate DOM IDs in predict_radar_5y.html: {dups}"
     print(f"[PASS] Static subpages audit: 0 coin glyphs, 79标的 ok, {len(ids)} unique IDs in predict_radar_5y.html.")
+
+
+def verify_soxl_ladder(page, tag):
+    page.evaluate("switchCycleSymbol('SOXL');")
+    page.wait_for_timeout(160)
+    sub_txt = page.locator("#cycleLadderSubtitle").inner_text().strip()
+    assert "当日静态锚定" in sub_txt, f"[{tag}] Unexpected ladder subtitle: {sub_txt!r}"
+    assert "软ATR+POC动态锚定" not in sub_txt, f"[{tag}] Legacy subtitle still present: {sub_txt!r}"
+
+    lad_info = page.evaluate("""() => {
+        const items = Array.from(document.querySelectorAll('#cycleLevelsLadder .cycle-ladder-item[data-price]'));
+        const rows = items.map(el => {
+            const sp = el.querySelector('span');
+            return {
+                level: el.getAttribute('data-level') || '',
+                price: Number(el.getAttribute('data-price') || 0),
+                breached: el.getAttribute('data-breached') === '1',
+                color: sp ? getComputedStyle(sp).color : '',
+                text: el.innerText.trim()
+            };
+        });
+        const d = (window.timeCycleData && window.timeCycleData['SOXL']) || {};
+        const ladderText = (document.getElementById('cycleLevelsLadder') || {}).innerText || '';
+        const canvasLines = window._lastCycleCanvasLadder || [];
+        return { rows, curP: Number(d.current_price || 0), s1: Number(d.anchor_s1 || d.s1 || 0), s2: Number(d.anchor_s2 || d.s2 || 0), ladderText, canvasLines };
+    }""")
+    prices = [r["price"] for r in lad_info["rows"]]
+    assert len(prices) >= 3, f"[{tag}] Too few ladder rows for SOXL: {lad_info['rows']}"
+    assert prices == sorted(prices, reverse=True), f"[{tag}] SOXL ladder prices not descending: {prices}"
+
+    green_rgbs = {"rgb(5, 150, 105)", "rgb(63, 185, 80)", "rgb(16, 185, 129)", "rgb(45, 212, 191)"}
+    if lad_info["curP"] > 0 and lad_info["s1"] > 0 and lad_info["curP"] < lad_info["s1"]:
+        assert "已击穿转压" in lad_info["ladderText"], f"[{tag}] Breached SOXL missing '已击穿转压': {lad_info['ladderText']}"
+        for r in lad_info["rows"]:
+            if r["breached"]:
+                assert r["color"] not in green_rgbs, f"[{tag}] Breached support {r['level']} kept green color {r['color']}"
+        if lad_info["s2"] > 0 and lad_info["curP"] < lad_info["s2"]:
+            assert "今日原定支撑全线击穿" in lad_info["ladderText"], f"[{tag}] Missing ALL_SUPPORT_BREACHED banner: {lad_info['ladderText']}"
+        s1_canvas = [c for c in lad_info["canvasLines"] if c.get("id") == "S1"]
+        if s1_canvas:
+            assert s1_canvas[0].get("key") == "原S1(已破)", f"[{tag}] Canvas S1 label mismatch: {s1_canvas[0]}"
+            assert str(s1_canvas[0].get("color", "")).lower() not in {"#3fb950", "#059669"}, f"[{tag}] Canvas breached S1 still green: {s1_canvas[0]}"
+    print(f"[PASS {tag}] SOXL ladder descending={prices}, subtitle={sub_txt!r}")
 
 
 def verify_desktop(browser):
@@ -128,6 +173,8 @@ def verify_desktop(browser):
     assert h_after == h_before, f"Canvas infinite-height growth regression detected: before={h_before}px -> after={h_after}px (delta={h_after - h_before}px)"
     assert 380.0 <= h_after <= 520.0, f"Canvas height after hover out of range [380, 520]: {h_after}"
     print(f"[PASS Desktop] Canvas hover anti-growth: 20 mousemoves + 1s wait -> before={h_before}px, after={h_after}px (delta=0px).")
+
+    verify_soxl_ladder(page, "Desktop-Dark")
 
     # Expand/Collapse all drawers cleanly
     page.locator("#btnSignalLedgerDrawer").click()
@@ -227,6 +274,7 @@ def verify_mobile(browser):
         ret = page.locator('a[href="futu_pro_terminal.html"]').first
         assert ret.is_visible() and "看盘" in ret.inner_text()
         if sub_name == "predict_radar_5y.html":
+            verify_soxl_ladder(page, "Mobile-Light")
             assert not page.locator("#signalLedgerDrawer").is_visible(), "[Mobile] #signalLedgerDrawer must start collapsed"
             page.locator("#btnSignalLedgerDrawer").click()
             page.wait_for_timeout(150)

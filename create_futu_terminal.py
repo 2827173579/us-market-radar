@@ -4868,17 +4868,57 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 if (pmh !== null && pmh > 0) refLines.push({ label: "PMH", val: pmh, color: pal.warn, dash: "5 4" });
                 if (pml !== null && pml > 0) refLines.push({ label: "PML", val: pml, color: pal.accent, dash: "5 4" });
             }
-            refLines.sort((a, b) => yAt(a.val) - yAt(b.val));
-            let lastLabelY = -999;
+            const minGapPx = 16;
+            const minLabelY = pad.top + (has24hChart ? 26 : 14);
+            const maxLabelY = H - pad.bottom - 5;
+            const visibleRefs = [];
             refLines.forEach(rf => {
                 const y = yAt(rf.val);
                 if (!Number.isFinite(y) || y < pad.top - 2 || y > H - pad.bottom + 2) return;
-                const clampedY = Math.max(pad.top + 9, Math.min(H - pad.bottom - 8, y));
-                let ly = clampedY;
-                if (Math.abs(ly - lastLabelY) < 12) ly = Math.min(H - pad.bottom - 4, lastLabelY + 12);
-                lastLabelY = ly;
-                parts.push(`<line x1="${pad.left}" y1="${y.toFixed(1)}" x2="${W - pad.right}" y2="${y.toFixed(1)}" stroke="${rf.color}" stroke-width="1.2" stroke-dasharray="${rf.dash}" opacity="0.85" />`);
-                parts.push(`<text x="${pad.left + 6}" y="${(ly - 3).toFixed(1)}" fill="${rf.color}" font-size="10" font-weight="700">${escapeNewsHtml(rf.label)} $${rf.val.toFixed(2)}</text>`);
+                visibleRefs.push({
+                    label: rf.label,
+                    val: rf.val,
+                    color: rf.color,
+                    dash: rf.dash,
+                    rawY: y,
+                    labelY: Math.max(minLabelY, Math.min(maxLabelY, y - 3)),
+                    alignRight: false
+                });
+            });
+            visibleRefs.sort((a, b) => a.rawY - b.rawY);
+            if (has24hChart) {
+                for (let i = 1; i < visibleRefs.length; i++) {
+                    if (Math.abs(visibleRefs[i].rawY - visibleRefs[i - 1].rawY) < minGapPx) {
+                        visibleRefs[i].alignRight = !visibleRefs[i - 1].alignRight;
+                    }
+                }
+            }
+            [visibleRefs.filter(x => !x.alignRight), visibleRefs.filter(x => x.alignRight)].forEach(group => {
+                if (!group.length) return;
+                for (let i = 1; i < group.length; i++) {
+                    if (group[i].labelY - group[i - 1].labelY < minGapPx) {
+                        group[i].labelY = group[i - 1].labelY + minGapPx;
+                    }
+                }
+                for (let i = group.length - 1; i >= 0; i--) {
+                    group[i].labelY = Math.min(maxLabelY, group[i].labelY);
+                    if (i < group.length - 1 && (group[i + 1].labelY - group[i].labelY) < minGapPx) {
+                        group[i].labelY = Math.max(minLabelY, group[i + 1].labelY - minGapPx);
+                    }
+                }
+                for (let i = 0; i < group.length; i++) {
+                    group[i].labelY = Math.max(minLabelY, Math.min(maxLabelY, group[i].labelY));
+                    if (i > 0 && (group[i].labelY - group[i - 1].labelY) < minGapPx) {
+                        group[i].labelY = Math.min(maxLabelY, group[i - 1].labelY + minGapPx);
+                    }
+                }
+            });
+            visibleRefs.forEach(rf => {
+                parts.push(`<line x1="${pad.left}" y1="${rf.rawY.toFixed(1)}" x2="${W - pad.right}" y2="${rf.rawY.toFixed(1)}" stroke="${rf.color}" stroke-width="1.2" stroke-dasharray="${rf.dash}" opacity="0.85" />`);
+                const txtX = rf.alignRight ? (W - pad.right - 8).toFixed(1) : (pad.left + 6).toFixed(1);
+                const anchorAttr = rf.alignRight ? 'end' : 'start';
+                const sideTag = rf.alignRight ? 'right' : 'left';
+                parts.push(`<text class="ip-ref-label" data-side="${sideTag}" x="${txtX}" y="${rf.labelY.toFixed(1)}" text-anchor="${anchorAttr}" fill="${rf.color}" font-size="10" font-weight="700">${escapeNewsHtml(rf.label)} $${rf.val.toFixed(2)}</text>`);
             });
 
             const upperPts = [];
@@ -5698,18 +5738,31 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 }
             }
 
-            const isNonRth = (SESSION_CODE !== "REGULAR");
+            function getMicroLabelSuffixHtml(sym) {
+                const ipByTk = (typeof INTRADAY_PATH_FORECASTS !== "undefined" && INTRADAY_PATH_FORECASTS && INTRADAY_PATH_FORECASTS.by_ticker) ? INTRADAY_PATH_FORECASTS.by_ticker : {};
+                const ipTk = ipByTk[sym] || {};
+                if (sym === "BTC-USD") {
+                    return '<span class="stale-ref-tag">(24H 实时滚动)</span>';
+                }
+                if (sym === "XAUUSD") {
+                    const isXauClosed = Boolean(ipTk.is_weekend_closed) || (SESSION_CODE === "WEEKEND");
+                    return isXauClosed
+                        ? '<span class="stale-ref-tag">(最近24H参考 · 休市)</span>'
+                        : '<span class="stale-ref-tag">(24H 实时滚动)</span>';
+                }
+                return (SESSION_CODE !== "REGULAR")
+                    ? '<span class="stale-ref-tag">(上日参考 · 09:30重置)</span>'
+                    : '';
+            }
+            window.getMicroLabelSuffixHtml = getMicroLabelSuffixHtml;
+            const microRefTag = getMicroLabelSuffixHtml(ticker);
             const vwapLblEl = document.getElementById("pVwapLabel");
             if (vwapLblEl) {
-                vwapLblEl.innerHTML = isNonRth
-                    ? '日内 VWAP 均价<span class="stale-ref-tag">(上日参考 · 09:30重置)</span>'
-                    : '日内 VWAP 均价';
+                vwapLblEl.innerHTML = '日内 VWAP 均价' + microRefTag;
             }
             const rsi5LblEl = document.getElementById("pRsi5mLabel");
             if (rsi5LblEl) {
-                rsi5LblEl.innerHTML = isNonRth
-                    ? '5m RSI / 量比<span class="stale-ref-tag">(上日参考 · 09:30重置)</span>'
-                    : '5m RSI / 量比';
+                rsi5LblEl.innerHTML = '5m RSI / 量比' + microRefTag;
             }
             const vwapEl = document.getElementById("pVwap");
             if (vwapEl) {

@@ -3641,16 +3641,20 @@ def align_time_cycle_projections_with_live(
             if not _keep_live_on_card:
                 b_item["latest_price"] = px
                 b_item["current_price"] = px
-            for k_lvl in ("s1", "s2", "sl", "r1", "r2"):
+            for k_lvl in (
+                "s1", "s2", "sl", "r1", "r2",
+                "anchor_s1", "anchor_s2", "anchor_sl", "anchor_r1", "anchor_r2",
+                "s1_source", "s2_source", "r1_source", "r2_source",
+                "sr_breach_state", "sr_status_badge", "sr_anchor_locked",
+            ):
                 if b_item.get(k_lvl) is not None:
                     item[k_lvl] = b_item[k_lvl]
 
         proj_prices = [float(p["price"]) for p in projs if isinstance(p, dict) and p.get("price") is not None]
         if proj_prices:
             _has_locked = bool(
-                by_ticker
-                and isinstance(by_ticker.get(tk), dict)
-                and by_ticker[tk].get("sr_anchor_locked")
+                (by_ticker and isinstance(by_ticker.get(tk), dict) and by_ticker[tk].get("sr_anchor_locked"))
+                or item.get("sr_anchor_locked")
             )
             if not _has_locked:
                 max_proj_p = max(proj_prices)
@@ -3661,6 +3665,21 @@ def align_time_cycle_projections_with_live(
                 if by_ticker and isinstance(by_ticker.get(tk), dict):
                     by_ticker[tk]["r2"] = item["r2"]
                     sync_scenario_script_levels(by_ticker[tk])
+
+        try:
+            import sr_anchor_engine as _sr_tc_sync
+            if item.get("s1") is not None or item.get("anchor_s1") is not None:
+                _sr_eval_tc = _sr_tc_sync.evaluate_sr_breach_state(price=px, anchor=item)
+                item["sr_breach_state"] = _sr_eval_tc["sr_breach_state"]
+                item["sr_status_badge"] = _sr_eval_tc["sr_status_badge"]
+                for _ak, _sk in (
+                    ("anchor_s1", "s1"), ("anchor_s2", "s2"), ("anchor_sl", "sl"),
+                    ("anchor_r1", "r1"), ("anchor_r2", "r2"),
+                ):
+                    if item.get(_ak) is None and item.get(_sk) is not None:
+                        item[_ak] = item[_sk]
+        except Exception:
+            pass
 
         try:
             item["cycle_windows"] = _build_cycle_windows_from_projections(
@@ -3846,11 +3865,23 @@ def generate_time_cycle_projections(
                 'ticker': tk,
                 'current_price': cp,
                 'anchor_price': cp,
-                's1': round(cp * 0.94, 2),
-                's2': round(cp * 0.88, 2),
-                'sl': round(cp * 0.85, 2),
-                'r1': round(cp * 1.06, 2),
-                'r2': round(cp * 1.12, 2),
+                's1': sc_info.get('s1') or round(cp * 0.94, 2),
+                's2': sc_info.get('s2') or round(cp * 0.88, 2),
+                'sl': sc_info.get('sl') or round(cp * 0.85, 2),
+                'r1': sc_info.get('r1') or round(cp * 1.06, 2),
+                'r2': sc_info.get('r2') or round(cp * 1.12, 2),
+                'anchor_s1': sc_info.get('anchor_s1') or sc_info.get('s1') or round(cp * 0.94, 2),
+                'anchor_s2': sc_info.get('anchor_s2') or sc_info.get('s2') or round(cp * 0.88, 2),
+                'anchor_sl': sc_info.get('anchor_sl') or sc_info.get('sl') or round(cp * 0.85, 2),
+                'anchor_r1': sc_info.get('anchor_r1') or sc_info.get('r1') or round(cp * 1.06, 2),
+                'anchor_r2': sc_info.get('anchor_r2') or sc_info.get('r2') or round(cp * 1.12, 2),
+                's1_source': sc_info.get('s1_source', 'ATR_ESTIMATE'),
+                's2_source': sc_info.get('s2_source', 'ATR_ESTIMATE'),
+                'r1_source': sc_info.get('r1_source', 'ATR_ESTIMATE'),
+                'r2_source': sc_info.get('r2_source', 'ATR_ESTIMATE'),
+                'sr_breach_state': sc_info.get('sr_breach_state', 'INTACT'),
+                'sr_status_badge': sc_info.get('sr_status_badge', ''),
+                'sr_anchor_locked': bool(sc_info.get('sr_anchor_locked', False)),
                 'history': hist_entries_short[-20:],
                 'projection': [
                     {'day': f'T+{d_i + 1}', 'date': dt_s, 'price': cp, 'pct': 0.0, 'wave_ret': 0.0}
@@ -4111,6 +4142,18 @@ def generate_time_cycle_projections(
             'sl': sc_levels.get('sl'),
             'r1': sc_levels.get('r1'),
             'r2': calibrated_r2,
+            'anchor_s1': sc_levels.get('anchor_s1') or sc_levels.get('s1'),
+            'anchor_s2': sc_levels.get('anchor_s2') or sc_levels.get('s2'),
+            'anchor_sl': sc_levels.get('anchor_sl') or sc_levels.get('sl'),
+            'anchor_r1': sc_levels.get('anchor_r1') or sc_levels.get('r1'),
+            'anchor_r2': sc_levels.get('anchor_r2') or calibrated_r2,
+            's1_source': sc_levels.get('s1_source'),
+            's2_source': sc_levels.get('s2_source'),
+            'r1_source': sc_levels.get('r1_source'),
+            'r2_source': sc_levels.get('r2_source'),
+            'sr_breach_state': sc_levels.get('sr_breach_state'),
+            'sr_status_badge': sc_levels.get('sr_status_badge'),
+            'sr_anchor_locked': bool(sc_levels.get('sr_anchor_locked', False)),
             'history': hist_20,
             'projection': projections,
             'cycle_windows': cycle_wins,
@@ -5882,9 +5925,324 @@ def print_terminal_tables(tables_data: Dict) -> None:
     print("=" * 90 + "\n")
 
 
+def build_cycle_sr_ladder_spec(data: Dict[str, Any], is_light_theme: bool = False) -> Dict[str, Any]:
+    """
+    构建 V4.4 静态锚对齐的多级攻防点位天梯与 15 日主图水平线渲染规格：
+    1. 所有天梯点位 (R2, R1, 当前现价, S1, S2, SL) 严格按实际价格从高到低动态排序；
+    2. 已跌穿的 S1/S2/SL 取消绿色支撑样式，改为灰/红虚化删除线并标注 原S1 (已击穿转压) / 原SL (已触及)；
+    3. 已突破的 R1/R2 落至现价下方并标为 原R1 (已突破转撑) / 原R2 (已突破转撑)（青/绿支撑态）；
+    4. ATR_ESTIMATE 点位取消纯绿支撑态，补充 (估算·无真实筹码) 副标；
+    5. 主图右侧参考线同步遵守上述颜色、虚线与简短标签 (原S1(已破) / 原R1(转撑) / 估算S1 等)。
+    """
+    d = data if isinstance(data, dict) else {}
+
+    def _f(v: Any) -> float:
+        try:
+            fv = float(v)
+            return fv if (fv > 0 and math.isfinite(fv)) else 0.0
+        except Exception:
+            return 0.0
+
+    cur_p = _f(d.get("current_price") or d.get("latest_price"))
+    s1 = _f(d.get("anchor_s1") or d.get("s1"))
+    s2 = _f(d.get("anchor_s2") or d.get("s2"))
+    sl = _f(d.get("anchor_sl") or d.get("sl"))
+    r1 = _f(d.get("anchor_r1") or d.get("r1"))
+    r2 = _f(d.get("anchor_r2") or d.get("r2"))
+
+    s1_src = str(d.get("s1_source") or "").upper()
+    s2_src = str(d.get("s2_source") or "").upper()
+    r1_src = str(d.get("r1_source") or "").upper()
+    r2_src = str(d.get("r2_source") or "").upper()
+    s1_est = (s1_src == "ATR_ESTIMATE")
+    s2_est = (s2_src == "ATR_ESTIMATE")
+    r1_est = (r1_src == "ATR_ESTIMATE")
+    r2_est = (r2_src == "ATR_ESTIMATE")
+
+    s1_breached = bool(s1 > 0 and cur_p > 0 and cur_p < s1)
+    s2_breached = bool(s2 > 0 and cur_p > 0 and cur_p < s2)
+    sl_breached = bool(sl > 0 and cur_p > 0 and cur_p < sl)
+    r1_broken = bool(r1 > 0 and cur_p > 0 and cur_p > r1)
+    r2_broken = bool(r2 > 0 and cur_p > 0 and cur_p > r2)
+
+    if s2_breached:
+        sr_state = "ALL_SUPPORT_BREACHED"
+        subtitle = "当日静态锚定 · 支撑击穿转压"
+    elif s1_breached:
+        sr_state = "S1_BREACHED"
+        subtitle = "当日静态锚定 · S1击穿转压"
+    elif r2_broken:
+        sr_state = "ALL_RESISTANCE_BROKEN"
+        subtitle = "当日静态锚定 · 全线突破转撑"
+    elif r1_broken:
+        sr_state = "R1_BROKEN"
+        subtitle = "当日静态锚定 · R1突破转撑"
+    else:
+        sr_state = "INTACT"
+        subtitle = "当日静态锚定"
+
+    items: List[Dict[str, Any]] = []
+    canvas_lines: List[Dict[str, Any]] = []
+    est_suffix = " (估算·无真实筹码)"
+
+    if r2 > 0:
+        if r2_broken:
+            r2_color = "#0D9488" if is_light_theme else "#2dd4bf"
+            r2_bg = "rgba(13,148,136,0.10)" if is_light_theme else "rgba(45,212,191,0.12)"
+            r2_key = f"原R2 (已突破转撑){est_suffix if r2_est else ''}"
+            r2_ckey = "原R2(转撑)"
+            r2_dash = [4, 3]
+        elif r2_est:
+            r2_color = "#B45309" if is_light_theme else "#e3b341"
+            r2_bg = "rgba(180,83,9,0.08)" if is_light_theme else "rgba(227,179,65,0.10)"
+            r2_key = f"R2 极限阻力{est_suffix}"
+            r2_ckey = "估算R2"
+            r2_dash = [2, 3]
+        else:
+            r2_color = "#DC2626" if is_light_theme else "#f85149"
+            r2_bg = "rgba(220,38,38,0.08)" if is_light_theme else "rgba(248,81,73,0.10)"
+            r2_key = "R2 极限阻力"
+            r2_ckey = "R2"
+            r2_dash = [5, 4]
+        items.append({
+            "id": "R2", "key": r2_key, "val": r2, "color": r2_color, "bg": r2_bg,
+            "border_style": "dashed" if (r2_broken or r2_est) else "solid",
+            "is_breached": False, "is_broken": r2_broken, "is_cur": False, "is_est": r2_est, "order": 0,
+        })
+        canvas_lines.append({
+            "id": "R2", "key": r2_ckey, "val": r2, "color": r2_color,
+            "lineDash": r2_dash, "isBreached": False, "isBroken": r2_broken, "isEst": r2_est,
+        })
+
+    if r1 > 0:
+        if r1_broken:
+            r1_color = "#059669" if is_light_theme else "#3fb950"
+            r1_bg = "rgba(5,150,105,0.10)" if is_light_theme else "rgba(63,185,80,0.12)"
+            r1_key = f"原R1 (已突破转撑){est_suffix if r1_est else ''}"
+            r1_ckey = "原R1(转撑)"
+            r1_dash = [4, 3]
+        elif r1_est:
+            r1_color = "#B45309" if is_light_theme else "#e3b341"
+            r1_bg = "rgba(180,83,9,0.08)" if is_light_theme else "rgba(227,179,65,0.10)"
+            r1_key = f"R1 反弹第一阻力{est_suffix}"
+            r1_ckey = "估算R1"
+            r1_dash = [2, 3]
+        else:
+            r1_color = "#EA580C" if is_light_theme else "#ff944d"
+            r1_bg = "rgba(234,88,12,0.08)" if is_light_theme else "rgba(255,148,77,0.10)"
+            r1_key = "R1 反弹第一阻力"
+            r1_ckey = "R1"
+            r1_dash = [5, 4]
+        items.append({
+            "id": "R1", "key": r1_key, "val": r1, "color": r1_color, "bg": r1_bg,
+            "border_style": "dashed" if (r1_broken or r1_est) else "solid",
+            "is_breached": False, "is_broken": r1_broken, "is_cur": False, "is_est": r1_est, "order": 1,
+        })
+        canvas_lines.append({
+            "id": "R1", "key": r1_ckey, "val": r1, "color": r1_color,
+            "lineDash": r1_dash, "isBreached": False, "isBroken": r1_broken, "isEst": r1_est,
+        })
+
+    if cur_p > 0:
+        cur_color = "#0284C7" if is_light_theme else "#38bdf8"
+        cur_bg = "rgba(2,132,199,0.10)" if is_light_theme else "rgba(56,189,248,0.15)"
+        items.append({
+            "id": "CUR", "key": "⚪ 正规盘收盘" if d.get("price_note") else "⚪ 当前现价",
+            "val": cur_p, "color": cur_color, "bg": cur_bg,
+            "border_style": "solid", "is_breached": False, "is_broken": False, "is_cur": True, "is_est": False, "order": 2,
+        })
+
+    if s1 > 0:
+        if s1_breached:
+            s1_color = "#991B1B" if is_light_theme else "#f87171"
+            s1_bg = "rgba(148,163,184,0.10)" if is_light_theme else "rgba(248,113,113,0.07)"
+            s1_key = f"原S1 (已击穿转压){est_suffix if s1_est else ''}"
+            s1_ckey = "原S1(已破)"
+            s1_ccolor = "#94A3B8" if is_light_theme else "#f87171"
+            s1_dash = [3, 3]
+        elif s1_est:
+            s1_color = "#B45309" if is_light_theme else "#e3b341"
+            s1_bg = "rgba(180,83,9,0.08)" if is_light_theme else "rgba(227,179,65,0.10)"
+            s1_key = f"S1 波段支撑{est_suffix}"
+            s1_ckey = "估算S1"
+            s1_ccolor = s1_color
+            s1_dash = [2, 3]
+        else:
+            s1_color = "#059669" if is_light_theme else "#3fb950"
+            s1_bg = "rgba(5,150,105,0.08)" if is_light_theme else "rgba(63,185,80,0.10)"
+            s1_key = "S1 波段支撑"
+            s1_ckey = "S1"
+            s1_ccolor = s1_color
+            s1_dash = [5, 4]
+        items.append({
+            "id": "S1", "key": s1_key, "val": s1, "color": s1_color, "bg": s1_bg,
+            "border_style": "dashed" if (s1_breached or s1_est) else "solid",
+            "is_breached": s1_breached, "is_broken": False, "is_cur": False, "is_est": s1_est, "order": 3,
+        })
+        canvas_lines.append({
+            "id": "S1", "key": s1_ckey, "val": s1, "color": s1_ccolor,
+            "lineDash": s1_dash, "isBreached": s1_breached, "isBroken": False, "isEst": s1_est,
+        })
+
+    if s2 > 0:
+        if s2_breached:
+            s2_color = "#B91C1C" if is_light_theme else "#ef4444"
+            s2_bg = "rgba(148,163,184,0.10)" if is_light_theme else "rgba(239,68,68,0.07)"
+            s2_key = f"原S2 (已击穿转压){est_suffix if s2_est else ''}"
+            s2_ckey = "原S2(已破)"
+            s2_ccolor = "#94A3B8" if is_light_theme else "#ef4444"
+            s2_dash = [3, 3]
+        elif s2_est:
+            s2_color = "#B45309" if is_light_theme else "#d29922"
+            s2_bg = "rgba(180,83,9,0.07)" if is_light_theme else "rgba(210,153,34,0.09)"
+            s2_key = f"S2 极限插针底{est_suffix}"
+            s2_ckey = "估算S2"
+            s2_ccolor = s2_color
+            s2_dash = [2, 3]
+        else:
+            s2_color = "#2563EB" if is_light_theme else "#58a6ff"
+            s2_bg = "rgba(37,99,235,0.08)" if is_light_theme else "rgba(88,166,255,0.10)"
+            s2_key = "S2 极限插针底"
+            s2_ckey = "S2"
+            s2_ccolor = s2_color
+            s2_dash = [5, 4]
+        items.append({
+            "id": "S2", "key": s2_key, "val": s2, "color": s2_color, "bg": s2_bg,
+            "border_style": "dashed" if (s2_breached or s2_est) else "solid",
+            "is_breached": s2_breached, "is_broken": False, "is_cur": False, "is_est": s2_est, "order": 4,
+        })
+        canvas_lines.append({
+            "id": "S2", "key": s2_ckey, "val": s2, "color": s2_ccolor,
+            "lineDash": s2_dash, "isBreached": s2_breached, "isBroken": False, "isEst": s2_est,
+        })
+
+    if sl > 0:
+        if sl_breached:
+            sl_color = "#64748B" if is_light_theme else "#94a3b8"
+            sl_bg = "rgba(100,116,139,0.08)"
+            sl_key = "原SL (已触及)"
+            sl_ckey = "原SL(已破)"
+            sl_dash = [2, 3]
+        else:
+            sl_color = "#B91C1C" if is_light_theme else "#f87171"
+            sl_bg = "rgba(185,28,28,0.06)" if is_light_theme else "rgba(248,81,73,0.06)"
+            sl_key = "SL 防守止损位"
+            sl_ckey = "SL"
+            sl_dash = [2, 3]
+        items.append({
+            "id": "SL", "key": sl_key, "val": sl, "color": sl_color, "bg": sl_bg,
+            "border_style": "dashed" if sl_breached else "solid",
+            "is_breached": sl_breached, "is_broken": False, "is_cur": False, "is_est": False, "order": 5,
+        })
+        canvas_lines.append({
+            "id": "SL", "key": sl_ckey, "val": sl, "color": sl_color,
+            "lineDash": sl_dash, "isBreached": sl_breached, "isBroken": False, "isEst": False,
+        })
+
+    items.sort(key=lambda x: (-float(x["val"]), int(x["order"])))
+    top_banner = "🚀 突破今日全线阻力 · 沿 VWAP/EMA9 移动止盈" if sr_state == "ALL_RESISTANCE_BROKEN" else ""
+    bottom_banner = "⚠️ 今日原定支撑全线击穿 · 下方真空寻底（严禁左侧接刀）" if sr_state == "ALL_SUPPORT_BREACHED" else ""
+
+    return {
+        "sr_state": sr_state,
+        "subtitle": subtitle,
+        "top_banner": top_banner,
+        "bottom_banner": bottom_banner,
+        "items": items,
+        "canvas_lines": canvas_lines,
+        "cur_price": cur_p,
+    }
+
+
+def _render_cycle_ladder_html(data: Dict[str, Any], is_light_theme: bool = False) -> Tuple[str, str]:
+    """为服务端初始渲染预生成与前端完全同构的点位天梯 HTML 与副标题，零重复 DOM ID。"""
+    import html as _html_l
+    spec = build_cycle_sr_ladder_spec(data, is_light_theme=is_light_theme)
+    cur_p = float(spec.get("cur_price") or 0.0)
+    if cur_p <= 0 or not spec["items"]:
+        return "", spec["subtitle"]
+    parts: List[str] = []
+    if spec["top_banner"]:
+        parts.append(
+            '<div class="cycle-ladder-alert cycle-ladder-alert-bull" '
+            'style="background: rgba(16,185,129,0.14); border: 1px solid rgba(16,185,129,0.45); '
+            'color: #34d399; padding: 4px 8px; border-radius: 4px; font-weight: 700; font-size: 10.5px;">'
+            f'{_html_l.escape(spec["top_banner"])}</div>'
+        )
+    for lv in spec["items"]:
+        v = float(lv["val"])
+        diff_pct = ((v / cur_p) - 1.0) * 100.0
+        sign = "+" if diff_pct > 0 else ""
+        if lv["is_cur"]:
+            pct_tag = f'<span style="color:{lv["color"]}; font-weight:700;">[基准锚点]</span>'
+        else:
+            pct_tag = f'<span style="color:{lv["color"]}; font-weight:700;">{sign}{diff_pct:.1f}%</span>'
+        b_style = lv["border_style"]
+        cls_extra = " cycle-ladder-breached" if lv["is_breached"] else ""
+        strike_style = "text-decoration: line-through; opacity: 0.85;" if lv["is_breached"] else ""
+        parts.append(
+            f'<div class="cycle-ladder-item{cls_extra}" data-level="{lv["id"]}" data-price="{v:.2f}" '
+            f'data-breached="{"1" if lv["is_breached"] else "0"}" data-broken="{"1" if lv["is_broken"] else "0"}" '
+            f'style="background: {lv["bg"]}; border: 1px {b_style} {lv["color"]}44;">'
+            f'<span style="color: {lv["color"]}; font-weight: 700; {strike_style}">{_html_l.escape(lv["key"])}</span>'
+            f'<div style="display: flex; gap: 8px; align-items: center;">'
+            f'<span style="color: var(--text-main); font-weight: 800; {strike_style}">${v:.2f}</span>'
+            f'{pct_tag}</div></div>'
+        )
+        if lv["is_cur"] and spec["bottom_banner"]:
+            parts.append(
+                '<div class="cycle-ladder-alert cycle-ladder-alert-bear" '
+                'style="background: rgba(248,81,73,0.14); border: 1px solid rgba(248,81,73,0.45); '
+                'color: #f87171; padding: 4px 8px; border-radius: 4px; font-weight: 700; font-size: 10.5px;">'
+                f'{_html_l.escape(spec["bottom_banner"])}</div>'
+            )
+    price_note = str(data.get("price_note") or "")
+    if price_note:
+        parts.append(
+            '<div class="cycle-ladder-item" style="background: rgba(56,189,248,0.08); border: 1px solid rgba(56,189,248,0.28);">'
+            '<span style="color: var(--primary-blue); font-weight: 700;">🌙 不是夜盘现价</span>'
+            f'<div style="color: var(--primary-blue); font-weight: 800;">{_html_l.escape(price_note)}</div></div>'
+        )
+    return "\n".join(parts), spec["subtitle"]
+
+
 def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5y.html') -> None:
     import html as html_lib
-    time_cycle_json_str = json.dumps(tables_data.get('time_cycle_projections', {}))
+    raw_tc = tables_data.get('time_cycle_projections', {}) or {}
+    all_live_pre = tables_data.get('all_live_predictions') or tables_data.get('table4') or []
+    live_by_tk = {
+        str(r.get('ticker')): r
+        for r in all_live_pre
+        if isinstance(r, dict) and r.get('ticker')
+    }
+    tc_enriched: Dict[str, Any] = {}
+    for tk_c, item_c in raw_tc.items():
+        if not isinstance(item_c, dict):
+            tc_enriched[tk_c] = item_c
+            continue
+        merged_c = dict(item_c)
+        b_ref = live_by_tk.get(str(tk_c))
+        if isinstance(b_ref, dict):
+            for k_meta in (
+                'anchor_s1', 'anchor_s2', 'anchor_sl', 'anchor_r1', 'anchor_r2',
+                's1_source', 's2_source', 'r1_source', 'r2_source',
+                'sr_breach_state', 'sr_status_badge', 'sr_anchor_locked',
+            ):
+                if merged_c.get(k_meta) is None and b_ref.get(k_meta) is not None:
+                    merged_c[k_meta] = b_ref[k_meta]
+        try:
+            import sr_anchor_engine as _sr_tc_render
+            _px_c = float(merged_c.get('current_price') or merged_c.get('latest_price') or 0.0)
+            if _px_c > 0 and (merged_c.get('anchor_s1') or merged_c.get('s1')):
+                _eval_c = _sr_tc_render.evaluate_sr_breach_state(price=_px_c, anchor=merged_c)
+                merged_c['sr_breach_state'] = _eval_c['sr_breach_state']
+                merged_c['sr_status_badge'] = _eval_c['sr_status_badge']
+        except Exception:
+            pass
+        tc_enriched[tk_c] = merged_c
+    _default_tc_item = tc_enriched.get('SOXL') or (next(iter(tc_enriched.values())) if tc_enriched else {})
+    _init_ladder_html, _init_ladder_subtitle = _render_cycle_ladder_html(_default_tc_item, is_light_theme=False)
+    time_cycle_json_str = json.dumps(tc_enriched)
     macro_calendar_banner_html = ""
     try:
         import os as _os_mn
@@ -7467,9 +7825,20 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
             padding: 3px 8px;
             border-radius: 4px;
             transition: all 0.15s ease;
+            gap: 6px;
         }}
         .cycle-ladder-item:hover {{
             filter: brightness(1.08);
+        }}
+        .cycle-ladder-item.cycle-ladder-breached {{
+            opacity: 0.85;
+        }}
+        .cycle-ladder-alert {{
+            border-radius: 4px;
+            padding: 4px 8px;
+            font-size: 10.5px;
+            font-weight: 700;
+            line-height: 1.35;
         }}
         .cycle-timeline-card {{
             border-radius: 6px;
@@ -7791,12 +8160,12 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
 
                     <!-- Card 2: S/R Level Ladder (攻防点位天梯) -->
                     <div class="tc-subcard">
-                        <div style="font-size: 12px; font-weight: 700; color: var(--text-main); margin-bottom: 6px; display: flex; justify-content: space-between; align-items: center;">
+                        <div style="font-size: 12px; font-weight: 700; color: var(--text-main); margin-bottom: 6px; display: flex; justify-content: space-between; align-items: center; gap: 6px;">
                             <span>🎯 多级攻防点位天梯</span>
-                            <span style="font-size: 10.5px; color: var(--text-muted);">软ATR+POC动态锚定</span>
+                            <span id="cycleLadderSubtitle" style="font-size: 10.5px; color: var(--text-muted);">{_init_ladder_subtitle}</span>
                         </div>
                         <div id="cycleLevelsLadder" style="display: flex; flex-direction: column; gap: 4px; font-family: 'JetBrains Mono', monospace; font-size: 11px;">
-                            <!-- Dynamic levels generated by JS -->
+                            {_init_ladder_html}
                         </div>
                     </div>
 
@@ -8441,6 +8810,202 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
             drawTimeCycleCanvas(data);
         }}
 
+        function buildCycleSrLadderSpec(data, isLightTheme) {{
+            const d = data || {{}};
+            const num = (v) => {{
+                const n = Number(v);
+                return (Number.isFinite(n) && n > 0) ? n : 0;
+            }};
+            const curP = num(d.current_price || d.latest_price);
+            const s1 = num(d.anchor_s1 || d.s1);
+            const s2 = num(d.anchor_s2 || d.s2);
+            const sl = num(d.anchor_sl || d.sl);
+            const r1 = num(d.anchor_r1 || d.r1);
+            const r2 = num(d.anchor_r2 || d.r2);
+
+            const s1Src = String(d.s1_source || '').toUpperCase();
+            const s2Src = String(d.s2_source || '').toUpperCase();
+            const r1Src = String(d.r1_source || '').toUpperCase();
+            const r2Src = String(d.r2_source || '').toUpperCase();
+            const s1Est = (s1Src === 'ATR_ESTIMATE');
+            const s2Est = (s2Src === 'ATR_ESTIMATE');
+            const r1Est = (r1Src === 'ATR_ESTIMATE');
+            const r2Est = (r2Src === 'ATR_ESTIMATE');
+
+            const s1Breached = (s1 > 0 && curP > 0 && curP < s1);
+            const s2Breached = (s2 > 0 && curP > 0 && curP < s2);
+            const slBreached = (sl > 0 && curP > 0 && curP < sl);
+            const r1Broken = (r1 > 0 && curP > 0 && curP > r1);
+            const r2Broken = (r2 > 0 && curP > 0 && curP > r2);
+
+            let srState = 'INTACT';
+            let subtitle = '当日静态锚定';
+            if (s2Breached) {{
+                srState = 'ALL_SUPPORT_BREACHED';
+                subtitle = '当日静态锚定 · 支撑击穿转压';
+            }} else if (s1Breached) {{
+                srState = 'S1_BREACHED';
+                subtitle = '当日静态锚定 · S1击穿转压';
+            }} else if (r2Broken) {{
+                srState = 'ALL_RESISTANCE_BROKEN';
+                subtitle = '当日静态锚定 · 全线突破转撑';
+            }} else if (r1Broken) {{
+                srState = 'R1_BROKEN';
+                subtitle = '当日静态锚定 · R1突破转撑';
+            }}
+
+            const estSuffix = ' (估算·无真实筹码)';
+            const items = [];
+            const canvasLines = [];
+
+            if (r2 > 0) {{
+                let color, bg, key, ckey, dash;
+                if (r2Broken) {{
+                    color = isLightTheme ? '#0D9488' : '#2dd4bf';
+                    bg = isLightTheme ? 'rgba(13,148,136,0.10)' : 'rgba(45,212,191,0.12)';
+                    key = '原R2 (已突破转撑)' + (r2Est ? estSuffix : '');
+                    ckey = '原R2(转撑)';
+                    dash = [4, 3];
+                }} else if (r2Est) {{
+                    color = isLightTheme ? '#B45309' : '#e3b341';
+                    bg = isLightTheme ? 'rgba(180,83,9,0.08)' : 'rgba(227,179,65,0.10)';
+                    key = 'R2 极限阻力' + estSuffix;
+                    ckey = '估算R2';
+                    dash = [2, 3];
+                }} else {{
+                    color = isLightTheme ? '#DC2626' : '#f85149';
+                    bg = isLightTheme ? 'rgba(220,38,38,0.08)' : 'rgba(248,81,73,0.10)';
+                    key = 'R2 极限阻力';
+                    ckey = 'R2';
+                    dash = [5, 4];
+                }}
+                items.push({{ id: 'R2', key, val: r2, color, bg, borderStyle: (r2Broken || r2Est) ? 'dashed' : 'solid', isBreached: false, isBroken: r2Broken, isCur: false, isEst: r2Est, order: 0 }});
+                canvasLines.push({{ id: 'R2', key: ckey, val: r2, color, lineDash: dash, isBreached: false, isBroken: r2Broken, isEst: r2Est }});
+            }}
+
+            if (r1 > 0) {{
+                let color, bg, key, ckey, dash;
+                if (r1Broken) {{
+                    color = isLightTheme ? '#059669' : '#3fb950';
+                    bg = isLightTheme ? 'rgba(5,150,105,0.10)' : 'rgba(63,185,80,0.12)';
+                    key = '原R1 (已突破转撑)' + (r1Est ? estSuffix : '');
+                    ckey = '原R1(转撑)';
+                    dash = [4, 3];
+                }} else if (r1Est) {{
+                    color = isLightTheme ? '#B45309' : '#e3b341';
+                    bg = isLightTheme ? 'rgba(180,83,9,0.08)' : 'rgba(227,179,65,0.10)';
+                    key = 'R1 反弹第一阻力' + estSuffix;
+                    ckey = '估算R1';
+                    dash = [2, 3];
+                }} else {{
+                    color = isLightTheme ? '#EA580C' : '#ff944d';
+                    bg = isLightTheme ? 'rgba(234,88,12,0.08)' : 'rgba(255,148,77,0.10)';
+                    key = 'R1 反弹第一阻力';
+                    ckey = 'R1';
+                    dash = [5, 4];
+                }}
+                items.push({{ id: 'R1', key, val: r1, color, bg, borderStyle: (r1Broken || r1Est) ? 'dashed' : 'solid', isBreached: false, isBroken: r1Broken, isCur: false, isEst: r1Est, order: 1 }});
+                canvasLines.push({{ id: 'R1', key: ckey, val: r1, color, lineDash: dash, isBreached: false, isBroken: r1Broken, isEst: r1Est }});
+            }}
+
+            if (curP > 0) {{
+                items.push({{
+                    id: 'CUR',
+                    key: d.price_note ? '⚪ 正规盘收盘' : '⚪ 当前现价',
+                    val: curP,
+                    color: isLightTheme ? '#0284C7' : '#38bdf8',
+                    bg: isLightTheme ? 'rgba(2,132,199,0.10)' : 'rgba(56,189,248,0.15)',
+                    borderStyle: 'solid',
+                    isBreached: false,
+                    isBroken: false,
+                    isCur: true,
+                    isEst: false,
+                    order: 2
+                }});
+            }}
+
+            if (s1 > 0) {{
+                let color, bg, key, ckey, ccolor, dash;
+                if (s1Breached) {{
+                    color = isLightTheme ? '#991B1B' : '#f87171';
+                    bg = isLightTheme ? 'rgba(148,163,184,0.10)' : 'rgba(248,113,113,0.07)';
+                    key = '原S1 (已击穿转压)' + (s1Est ? estSuffix : '');
+                    ckey = '原S1(已破)';
+                    ccolor = isLightTheme ? '#94A3B8' : '#f87171';
+                    dash = [3, 3];
+                }} else if (s1Est) {{
+                    color = isLightTheme ? '#B45309' : '#e3b341';
+                    bg = isLightTheme ? 'rgba(180,83,9,0.08)' : 'rgba(227,179,65,0.10)';
+                    key = 'S1 波段支撑' + estSuffix;
+                    ckey = '估算S1';
+                    ccolor = color;
+                    dash = [2, 3];
+                }} else {{
+                    color = isLightTheme ? '#059669' : '#3fb950';
+                    bg = isLightTheme ? 'rgba(5,150,105,0.08)' : 'rgba(63,185,80,0.10)';
+                    key = 'S1 波段支撑';
+                    ckey = 'S1';
+                    ccolor = color;
+                    dash = [5, 4];
+                }}
+                items.push({{ id: 'S1', key, val: s1, color, bg, borderStyle: (s1Breached || s1Est) ? 'dashed' : 'solid', isBreached: s1Breached, isBroken: false, isCur: false, isEst: s1Est, order: 3 }});
+                canvasLines.push({{ id: 'S1', key: ckey, val: s1, color: ccolor, lineDash: dash, isBreached: s1Breached, isBroken: false, isEst: s1Est }});
+            }}
+
+            if (s2 > 0) {{
+                let color, bg, key, ckey, ccolor, dash;
+                if (s2Breached) {{
+                    color = isLightTheme ? '#B91C1C' : '#ef4444';
+                    bg = isLightTheme ? 'rgba(148,163,184,0.10)' : 'rgba(239,68,68,0.07)';
+                    key = '原S2 (已击穿转压)' + (s2Est ? estSuffix : '');
+                    ckey = '原S2(已破)';
+                    ccolor = isLightTheme ? '#94A3B8' : '#ef4444';
+                    dash = [3, 3];
+                }} else if (s2Est) {{
+                    color = isLightTheme ? '#B45309' : '#d29922';
+                    bg = isLightTheme ? 'rgba(180,83,9,0.07)' : 'rgba(210,153,34,0.09)';
+                    key = 'S2 极限插针底' + estSuffix;
+                    ckey = '估算S2';
+                    ccolor = color;
+                    dash = [2, 3];
+                }} else {{
+                    color = isLightTheme ? '#2563EB' : '#58a6ff';
+                    bg = isLightTheme ? 'rgba(37,99,235,0.08)' : 'rgba(88,166,255,0.10)';
+                    key = 'S2 极限插针底';
+                    ckey = 'S2';
+                    ccolor = color;
+                    dash = [5, 4];
+                }}
+                items.push({{ id: 'S2', key, val: s2, color, bg, borderStyle: (s2Breached || s2Est) ? 'dashed' : 'solid', isBreached: s2Breached, isBroken: false, isCur: false, isEst: s2Est, order: 4 }});
+                canvasLines.push({{ id: 'S2', key: ckey, val: s2, color: ccolor, lineDash: dash, isBreached: s2Breached, isBroken: false, isEst: s2Est }});
+            }}
+
+            if (sl > 0) {{
+                let color, bg, key, ckey, dash;
+                if (slBreached) {{
+                    color = isLightTheme ? '#64748B' : '#94a3b8';
+                    bg = 'rgba(100,116,139,0.08)';
+                    key = '原SL (已触及)';
+                    ckey = '原SL(已破)';
+                    dash = [2, 3];
+                }} else {{
+                    color = isLightTheme ? '#B91C1C' : '#f87171';
+                    bg = isLightTheme ? 'rgba(185,28,28,0.06)' : 'rgba(248,81,73,0.06)';
+                    key = 'SL 防守止损位';
+                    ckey = 'SL';
+                    dash = [2, 3];
+                }}
+                items.push({{ id: 'SL', key, val: sl, color, bg, borderStyle: slBreached ? 'dashed' : 'solid', isBreached: slBreached, isBroken: false, isCur: false, isEst: false, order: 5 }});
+                canvasLines.push({{ id: 'SL', key: ckey, val: sl, color, lineDash: dash, isBreached: slBreached, isBroken: false, isEst: false }});
+            }}
+
+            items.sort((a, b) => (Math.abs(b.val - a.val) > 1e-6) ? (b.val - a.val) : (a.order - b.order));
+            const topBanner = (srState === 'ALL_RESISTANCE_BROKEN') ? '🚀 突破今日全线阻力 · 沿 VWAP/EMA9 移动止盈' : '';
+            const bottomBanner = (srState === 'ALL_SUPPORT_BREACHED') ? '⚠️ 今日原定支撑全线击穿 · 下方真空寻底（严禁左侧接刀）' : '';
+            return {{ srState, subtitle, topBanner, bottomBanner, items, canvasLines }};
+        }}
+        window.buildCycleSrLadderSpec = buildCycleSrLadderSpec;
+
         function updateTacticalSidebar(data) {{
             const titleEl = document.getElementById('cycleTickerTitle');
             const subEl = document.getElementById('cycleTickerSub');
@@ -8475,34 +9040,45 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
             const simVal = (data.analog_match && data.analog_match.similarity_pct) != null ? Number(data.analog_match.similarity_pct) : null;
             if (aSimEl) aSimEl.textContent = simVal !== null ? (simVal + '% ' + (simVal >= 85 ? '⭐⭐⭐⭐⭐' : (simVal >= 75 ? '⭐⭐⭐⭐' : '⭐⭐⭐'))) : '--';
 
-            // S/R Level Ladder (阶梯卡片)
+            // S/R Level Ladder (V4.4 静态锚点 + 价格严格降序 + 顶底互换状态)
             const isLightTheme = (getCurrentTheme() === 'light');
+            const srSpec = buildCycleSrLadderSpec(data, isLightTheme);
+            const ladSubEl = document.getElementById('cycleLadderSubtitle');
+            if (ladSubEl) ladSubEl.textContent = srSpec.subtitle;
             const ladderEl = document.getElementById('cycleLevelsLadder');
             if (ladderEl && curP > 0) {{
-                const levels = [
-                    {{ key: 'R2 极限阻力', val: data.r2, color: isLightTheme ? '#DC2626' : '#f85149', bg: isLightTheme ? 'rgba(220,38,38,0.08)' : 'rgba(248,81,73,0.1)' }},
-                    {{ key: 'R1 反弹第一阻力', val: data.r1, color: isLightTheme ? '#EA580C' : '#ff944d', bg: isLightTheme ? 'rgba(234,88,12,0.08)' : 'rgba(255,148,77,0.1)' }},
-                    {{ key: data.price_note ? '⚪ 正规盘收盘' : '⚪ 当前现价', val: curP, color: isLightTheme ? '#0284C7' : '#38bdf8', bg: isLightTheme ? 'rgba(2,132,199,0.10)' : 'rgba(56,189,248,0.15)', isCur: true }},
-                    {{ key: 'S1 波段支撑', val: data.s1, color: isLightTheme ? '#059669' : '#3fb950', bg: isLightTheme ? 'rgba(5,150,105,0.08)' : 'rgba(63,185,80,0.1)' }},
-                    {{ key: 'S2 极限插针底', val: data.s2, color: isLightTheme ? '#2563EB' : '#58a6ff', bg: isLightTheme ? 'rgba(37,99,235,0.08)' : 'rgba(88,166,255,0.1)' }},
-                    {{ key: 'SL 防守止损位', val: data.sl, color: isLightTheme ? '#B91C1C' : '#f87171', bg: isLightTheme ? 'rgba(185,28,28,0.06)' : 'rgba(248,81,73,0.06)' }}
-                ];
                 let ladHtml = '';
-                levels.forEach(lv => {{
+                if (srSpec.topBanner) {{
+                    const bullBg = isLightTheme ? 'rgba(5,150,105,0.12)' : 'rgba(16,185,129,0.14)';
+                    const bullBd = isLightTheme ? 'rgba(5,150,105,0.40)' : 'rgba(16,185,129,0.45)';
+                    const bullCl = isLightTheme ? '#059669' : '#34d399';
+                    ladHtml += `<div class="cycle-ladder-alert cycle-ladder-alert-bull" style="background: ${{bullBg}}; border: 1px solid ${{bullBd}}; color: ${{bullCl}};">${{srSpec.topBanner}}</div>`;
+                }}
+                srSpec.items.forEach(lv => {{
                     if (!lv.val) return;
                     const v = Number(lv.val);
                     const diffPct = ((v / curP - 1) * 100);
                     const sign = diffPct > 0 ? '+' : '';
-                    const pctTag = lv.isCur ? `<span style="color:${{lv.color}}; font-weight:700;">[基准锚点]</span>` : `<span style="color:${{lv.color}}; font-weight:700;">${{sign}}${{diffPct.toFixed(1)}}%</span>`;
+                    const pctTag = lv.isCur
+                        ? `<span style="color:${{lv.color}}; font-weight:700;">[基准锚点]</span>`
+                        : `<span style="color:${{lv.color}}; font-weight:700;">${{sign}}${{diffPct.toFixed(1)}}%</span>`;
+                    const strikeStyle = lv.isBreached ? 'text-decoration: line-through; opacity: 0.85;' : '';
+                    const clsExtra = lv.isBreached ? ' cycle-ladder-breached' : '';
                     ladHtml += `
-                        <div class="cycle-ladder-item" style="background: ${{lv.bg}}; border: 1px solid ${{lv.color}}33;">
-                            <span style="color: ${{lv.color}}; font-weight: 700;">${{lv.key}}</span>
-                            <div style="display: flex; gap: 8px; align-items: center;">
-                                <span style="color: var(--text-main); font-weight: 800;">$${{v.toFixed(2)}}</span>
+                        <div class="cycle-ladder-item${{clsExtra}}" data-level="${{lv.id}}" data-price="${{v.toFixed(2)}}" data-breached="${{lv.isBreached ? '1' : '0'}}" data-broken="${{lv.isBroken ? '1' : '0'}}" style="background: ${{lv.bg}}; border: 1px ${{lv.borderStyle}} ${{lv.color}}44;">
+                            <span style="color: ${{lv.color}}; font-weight: 700; ${{strikeStyle}}">${{lv.key}}</span>
+                            <div style="display: flex; gap: 8px; align-items: center; flex-shrink: 0;">
+                                <span style="color: var(--text-main); font-weight: 800; ${{strikeStyle}}">$${{v.toFixed(2)}}</span>
                                 ${{pctTag}}
                             </div>
                         </div>
                     `;
+                    if (lv.isCur && srSpec.bottomBanner) {{
+                        const bearBg = isLightTheme ? 'rgba(220,38,38,0.10)' : 'rgba(248,81,73,0.14)';
+                        const bearBd = isLightTheme ? 'rgba(220,38,38,0.40)' : 'rgba(248,81,73,0.45)';
+                        const bearCl = isLightTheme ? '#DC2626' : '#f87171';
+                        ladHtml += `<div class="cycle-ladder-alert cycle-ladder-alert-bear" style="background: ${{bearBg}}; border: 1px solid ${{bearBd}}; color: ${{bearCl}};">${{srSpec.bottomBanner}}</div>`;
+                    }}
                 }});
                 if (data.price_note) {{
                     ladHtml += `
@@ -8668,7 +9244,7 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
             const maxY = rawMaxY + margin;
             const yRange = (maxY - minY) || 1;
 
-            const padL = 52, padR = 80, padT = 24, padB = 28;
+            const padL = 52, padR = (width < 460 ? 96 : 108), padT = 24, padB = 28;
             const baseChartW = width - padL - padR;
             const chartW = baseChartW * cycleZoom;
             const chartH = height - padT - padB;
@@ -8726,14 +9302,9 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
             }}
             ctx.setLineDash([]);
 
-            // 5. Draw Support & Resistance Reference Lines
-            const ladderLines = [
-                {{ key: 'R2', val: data.r2, color: isLight ? '#DC2626' : '#f85149', lineDash: [5, 4] }},
-                {{ key: 'R1', val: data.r1, color: isLight ? '#EA580C' : '#ff944d', lineDash: [5, 4] }},
-                {{ key: 'S1', val: data.s1, color: isLight ? '#059669' : '#3fb950', lineDash: [5, 4] }},
-                {{ key: 'S2', val: data.s2, color: isLight ? '#2563EB' : '#58a6ff', lineDash: [5, 4] }},
-                {{ key: 'SL', val: data.sl, color: isLight ? '#B91C1C' : '#f87171', lineDash: [2, 3] }}
-            ];
+            // 5. Draw Support & Resistance Reference Lines (Aligned with V4.4 S/R Flip & Source)
+            const _canvasSrSpec = buildCycleSrLadderSpec(data, isLight);
+            const ladderLines = _canvasSrSpec.canvasLines || [];
 
             // Filter lines within canvas Y range
             const visibleLadder = ladderLines.filter(lv => {{
@@ -8742,23 +9313,36 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
                 return (ly >= padT - 5 && ly <= padT + chartH + 5);
             }});
 
-            // Prevent label collisions with repulsive positioning
+            // Prevent label collisions with two-pass repulsive positioning
+            const minPillGap = 15;
+            const maxPillY = padT + chartH - 7;
             visibleLadder.sort((a, b) => getY(Number(a.val)) - getY(Number(b.val)));
             for (let i = 0; i < visibleLadder.length; i++) {{
-                let currentY = getY(Number(visibleLadder[i].val));
+                let currentY = Math.max(padT + 7, Math.min(maxPillY, getY(Number(visibleLadder[i].val))));
                 if (i > 0) {{
                     const prevY = visibleLadder[i - 1].drawY;
-                    if (currentY - prevY < 13) {{
-                        currentY = prevY + 13;
+                    if (currentY - prevY < minPillGap) {{
+                        currentY = prevY + minPillGap;
                     }}
                 }}
                 visibleLadder[i].drawY = currentY;
             }}
+            for (let i = visibleLadder.length - 1; i >= 0; i--) {{
+                if (visibleLadder[i].drawY > maxPillY) visibleLadder[i].drawY = maxPillY;
+                if (i < visibleLadder.length - 1) {{
+                    const nextY = visibleLadder[i + 1].drawY;
+                    if (nextY - visibleLadder[i].drawY < minPillGap) {{
+                        visibleLadder[i].drawY = Math.max(padT + 7, nextY - minPillGap);
+                    }}
+                }}
+            }}
 
+            const pillW = padR - 8;
+            const fmtLvPrice = (v) => Number(v) >= 1000 ? Number(v).toFixed(0) : Number(v).toFixed(1);
             visibleLadder.forEach(lv => {{
                 const ly = getY(Number(lv.val));
-                ctx.strokeStyle = lv.color + (isLight ? '88' : '66');
-                ctx.lineWidth = 1.2;
+                ctx.strokeStyle = lv.color + (isLight ? '99' : '77');
+                ctx.lineWidth = 1.25;
                 ctx.setLineDash(lv.lineDash);
                 ctx.beginPath();
                 ctx.moveTo(padL, ly);
@@ -8768,16 +9352,20 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
 
                 // Right Margin Pill Label
                 const badgeY = lv.drawY;
-                ctx.fillStyle = isLight ? 'rgba(255, 255, 255, 0.94)' : (lv.color + '22');
-                ctx.fillRect(width - padR + 4, badgeY - 7, 72, 14);
+                ctx.fillStyle = isLight ? 'rgba(255, 255, 255, 0.94)' : (lv.color + '1E');
+                ctx.fillRect(width - padR + 4, badgeY - 7, pillW, 14);
                 ctx.strokeStyle = lv.color + (isLight ? '88' : '66');
-                ctx.strokeRect(width - padR + 4, badgeY - 7, 72, 14);
+                if (lv.isBreached) ctx.setLineDash([2, 2]);
+                ctx.strokeRect(width - padR + 4, badgeY - 7, pillW, 14);
+                ctx.setLineDash([]);
 
                 ctx.fillStyle = lv.color;
-                ctx.font = '9.5px "JetBrains Mono", monospace';
+                ctx.font = (width < 460 ? '8.5px' : '9px') + ' "JetBrains Mono", monospace';
                 ctx.textAlign = 'left';
-                ctx.fillText(`${{lv.key}} $${{Number(lv.val).toFixed(1)}}`, width - padR + 7, badgeY);
+                ctx.textBaseline = 'middle';
+                ctx.fillText(`${{lv.key}} $${{fmtLvPrice(lv.val)}}`, width - padR + 7, badgeY);
             }});
+            window._lastCycleCanvasLadder = visibleLadder;
 
             // 6. Draw Turning Window Zones (Vertical Gradient Bands)
             ctx.save();
