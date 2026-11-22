@@ -117,8 +117,74 @@ def check_futu_pool_and_vixy_fixes(page, is_mobile: bool):
     page.wait_for_timeout(150)
     assert not spot_hint.is_visible(), "#pVixySpotHint should hide for non-VIXY ticker NVDA"
     assert page.locator("#pRs20dLabel").inner_text().strip() == "20日超额RS"
-    page.locator("#btnProQuantToggle").click()
-    page.wait_for_timeout(120)
+
+    # 3. V4.1 Stale VWAP/5m RSI label when SESSION_CODE !== "REGULAR"
+    sess_code = page.evaluate("typeof SESSION_CODE !== 'undefined' ? SESSION_CODE : 'REGULAR'")
+    vwap_lbl = page.locator("#pVwapLabel").inner_text().strip()
+    rsi5_lbl = page.locator("#pRsi5mLabel").inner_text().strip()
+    if sess_code != "REGULAR":
+        assert "(上日参考 · 09:30重置)" in vwap_lbl, f"Missing stale ref label in #pVwapLabel: {vwap_lbl!r}"
+        assert "(上日参考 · 09:30重置)" in rsi5_lbl, f"Missing stale ref label in #pRsi5mLabel: {rsi5_lbl!r}"
+
+    # 4. V4.1 Bear/Hedge Card Anti-Inversion
+    bear_tk = page.evaluate("""() => {
+        const byTk = (typeof AI_PREDICTIONS !== 'undefined' && AI_PREDICTIONS && AI_PREDICTIONS.by_ticker) || {};
+        for (const [tk, row] of Object.entries(byTk)) {
+            const sa = String((row && row.short_action) || '');
+            const lw = Number((row && row.calibrated_win_rate_pct) || 50);
+            const sw = Number((row && row.calibrated_short_win_rate_pct) || 50);
+            if (!['SQQQ', 'SOXS', 'VIXY'].includes(tk) && (sa.includes('建议买入反向ETF对冲') || sa.includes('空头占优')) && sw > lw) {
+                return tk;
+            }
+        }
+        return null;
+    }""")
+    if bear_tk:
+        page.evaluate(f"selectTicker({bear_tk!r});")
+        page.wait_for_timeout(160)
+        tp_lbl = page.locator("#pTileTpLbl").inner_text().strip()
+        st_lbl = page.locator("#pTileStopLbl").inner_text().strip()
+        assert tp_lbl == "上方压力 (R1)", f"Expected '上方压力 (R1)' for bear ticker {bear_tk}, got {tp_lbl!r}"
+        assert st_lbl == "下方支撑 (S1)", f"Expected '下方支撑 (S1)' for bear ticker {bear_tk}, got {st_lbl!r}"
+        assert page.locator("#pBearDefenseNote").is_visible(), f"Missing #pBearDefenseNote for bear ticker {bear_tk}"
+        page.evaluate("selectTicker('NVDA');")
+        page.wait_for_timeout(120)
+
+    # Collapse drawer back cleanly
+    if page.locator("#proQuantDrawer").is_visible():
+        page.locator("#btnProQuantToggle").click()
+        page.wait_for_timeout(120)
+
+    # 5. V4.1 Resilient Leaders Top 5 filter & panic-state top strip
+    if is_mobile:
+        page.locator("#mobileBottomNav .m-nav-tab[data-tab='watchlist']").click()
+        page.wait_for_timeout(150)
+
+    leader_btn = page.locator("#btnResilientTop5")
+    assert leader_btn.is_visible(), "#btnResilientTop5 not visible"
+    leader_btn.click()
+    page.wait_for_timeout(150)
+    top5_tickers = page.locator("#watchlistContainer .stock-item").evaluate_all(
+        "els => els.map(e => e.getAttribute('data-ticker'))"
+    )
+    assert 1 <= len(top5_tickers) <= 5, f"Expected Top 5 filter 1..5 items, got {len(top5_tickers)}: {top5_tickers}"
+    for inv in ("SQQQ", "SOXS", "VIXY", "TLT", "GLD", "XAUUSD", "BTC-USD"):
+        assert inv not in top5_tickers, f"{inv} leaked into Resilient Top 5: {top5_tickers}"
+    page.locator("#wlPrimaryFilters .wl-pill-btn[data-filter='all']").click()
+    page.wait_for_timeout(140)
+    assert page.locator("#watchlistContainer .stock-item").count() == 79, "Restoring 'all' filter did not return 79 items"
+
+    if not is_mobile:
+        strip = page.locator("#resilientLeadersStrip")
+        if strip.is_visible():
+            chips = strip.locator(".leader-chip")
+            assert chips.count() == 5, f"Expected 5 .leader-chip buttons in strip, got {chips.count()}"
+            first_tk = chips.first.get_attribute("data-ticker")
+            chips.first.click()
+            page.wait_for_timeout(120)
+            assert page.locator("#curSym").inner_text().strip() == first_tk
+            page.evaluate("selectTicker('NVDA');")
+            page.wait_for_timeout(100)
 
 
 def verify_viewport(browser, width: int, height: int, is_mobile: bool):
@@ -145,11 +211,17 @@ def verify_viewport(browser, width: int, height: int, is_mobile: bool):
             assert cur_theme == theme, f"[{tag} {name}] Expected theme={theme}, got {cur_theme}"
             assert_no_overflow(page, width, f"{tag}-{theme}-{name}")
             pill_txt = check_vix_pill_and_popover(page, name, width, f"{tag}-{theme}")
+            if name == "macro_radar.html":
+                liq_card = page.locator("#crossMarketLiquidityCard")
+                assert liq_card.is_visible(), f"[{tag} {theme}] #crossMarketLiquidityCard is not visible"
+                liq_txt = liq_card.inner_text()
+                for token in ("HYG / IEF", "DX-Y.NYB", "JPY=X"):
+                    assert token in liq_txt, f"[{tag} {theme}] Liquidity card missing '{token}': {liq_txt}"
             if name == "futu_pro_terminal.html":
                 check_futu_pool_and_vixy_fixes(page, is_mobile=is_mobile)
                 assert_no_overflow(page, width, f"{tag}-{theme}-{name}-afterVixy")
                 if theme == "dark":
-                    print(f"[PASS {tag}] Pill='{pill_txt}' | 79 tickers | VIXY 3 fixes verified (Dark & Light).")
+                    print(f"[PASS {tag}] Pill='{pill_txt}' | 79 tickers | VIXY & V4.1 checks verified (Dark & Light).")
 
     assert not errors, f"[{tag}] JS pageerrors: {errors}"
     ctx.close()

@@ -4,7 +4,124 @@ Helper module to build the Futu-Style Pro Terminal (futu_pro_terminal.html)
 支持 55 只全量标的池 (12 ETF + 43 个股)，全周期切换与分钟下拉菜单
 """
 import json
+import math
 import time
+
+EXCLUDED_LEADER_TICKERS = frozenset({
+    "SQQQ", "SOXS", "VIXY", "TLT", "GLD", "XAUUSD", "BTC-USD", "SHY", "IEF", "HYG", "UUP"
+})
+EXCLUDED_LEADER_CATS = frozenset({
+    "大宗商品", "数字资产", "避险美债", "恐慌指数", "反向做空"
+})
+
+
+def compute_resilient_leaders_top5(stocks_data, macro_data=None, session_code="REGULAR", top_n=5):
+    """
+    恐慌退潮·抗跌领涨真龙头筛选器 (Top 5):
+    严格排除反向 ETF (SQQQ/SOXS/VIXY)、国债/黄金/加密等防御或非权益杂项，
+    优先筛选站稳当日 VWAP 上方（非美东常规盘中回退为正涨幅或强于 SPY）的标的，
+    结合 20 日超额相对强弱 (RS) 与相对 SPY 超额表现综合排序取前 5 名。
+    """
+    sess = str(session_code or "REGULAR").strip().upper() or "REGULAR"
+    unified = []
+    seen = set()
+    for s in (stocks_data or []):
+        if isinstance(s, dict) and s.get("ticker"):
+            tk = str(s["ticker"]).upper()
+            if tk not in seen:
+                seen.add(tk)
+                unified.append({**s, "ticker": tk})
+    if isinstance(macro_data, dict):
+        for tk_m, m in macro_data.items():
+            if isinstance(m, dict):
+                tk = str(tk_m).upper()
+                if tk not in seen:
+                    seen.add(tk)
+                    unified.append({**m, "ticker": tk})
+
+    def _eff_pct(item):
+        if sess == "REGULAR":
+            val = item.get("pct_change")
+        else:
+            ext_p = item.get("ext_price") or 0
+            if ext_p and float(ext_p) > 0 and item.get("ext_pct") is not None:
+                val = item.get("ext_pct")
+            else:
+                val = item.get("pct_change")
+        try:
+            fv = float(val if val is not None else 0.0)
+            return fv if math.isfinite(fv) else 0.0
+        except Exception:
+            return 0.0
+
+    spy_pct = 0.0
+    for it in unified:
+        if it["ticker"] == "SPY":
+            spy_pct = _eff_pct(it)
+            break
+
+    ranked = []
+    for it in unified:
+        tk = it["ticker"]
+        cat = str(it.get("cat") or "")
+        if tk in EXCLUDED_LEADER_TICKERS or cat in EXCLUDED_LEADER_CATS:
+            continue
+        if bool(it.get("is_inverse_hedge")) or bool(it.get("is_crash_halt")) or bool(it.get("is_cooling_halt")) or bool(it.get("is_ipo_pending")):
+            continue
+        try:
+            active_px = float(it.get("active_price") or it.get("last") or 0.0)
+        except Exception:
+            active_px = 0.0
+        if active_px <= 0 or not math.isfinite(active_px):
+            continue
+
+        tk_pct = _eff_pct(it)
+        excess_vs_spy = round(tk_pct - spy_pct, 2)
+        try:
+            rs_20d = float(it.get("rs_20d") if it.get("rs_20d") is not None else 0.0)
+            if not math.isfinite(rs_20d):
+                rs_20d = 0.0
+        except Exception:
+            rs_20d = 0.0
+        try:
+            vwap_val = float(it.get("vwap") or 0.0)
+            if not math.isfinite(vwap_val):
+                vwap_val = 0.0
+        except Exception:
+            vwap_val = 0.0
+
+        if sess == "REGULAR":
+            above_vwap = bool(vwap_val > 0 and active_px >= vwap_val)
+            vwap_tag = "✓VWAP" if above_vwap else "VWAP下"
+        else:
+            above_vwap = bool((tk_pct > 0) or (excess_vs_spy > 0.3))
+            if excess_vs_spy > 0.3:
+                vwap_tag = "✓强于SPY"
+            elif tk_pct > 0:
+                vwap_tag = "✓正涨幅"
+            else:
+                vwap_tag = "偏弱"
+
+        rs_c = max(-30.0, min(40.0, rs_20d))
+        exc_c = max(-15.0, min(20.0, excess_vs_spy))
+        score = round((25.0 if above_vwap else 0.0) + rs_c * 1.2 + exc_c * 2.0, 2)
+        ranked.append({
+            "ticker": tk,
+            "name": str(it.get("name") or tk),
+            "rs_20d": round(rs_20d, 2),
+            "pct": round(tk_pct, 2),
+            "excess_vs_spy": excess_vs_spy,
+            "above_vwap": above_vwap,
+            "vwap_tag": vwap_tag,
+            "leader_score": score,
+        })
+
+    ranked.sort(
+        key=lambda x: (1 if x["above_vwap"] else 0, x["leader_score"], x["rs_20d"], x["excess_vs_spy"]),
+        reverse=True,
+    )
+    return ranked[:max(1, int(top_n))]
+
 
 def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_str="", has_realtime=False, target_watchlist=None, terminal_notifications=None, session_code="REGULAR", session_name="常规盘中", sync_side_effects=False, sync_dir=None):
     is_overnight = (session_code == "OVERNIGHT")
@@ -658,6 +775,12 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
         intraday_path_forecasts = {}
 
     # 将标的数据转为 JSON 供前端动态渲染
+    resilient_leaders_top5 = compute_resilient_leaders_top5(
+        stocks_data=stocks_data,
+        macro_data=macro_data,
+        session_code=session_code,
+        top_n=5,
+    )
     stocks_json = json.dumps(stocks_data, ensure_ascii=False)
     macro_json = json.dumps(macro_data, ensure_ascii=False)
     weather_json = json.dumps(weather_info, ensure_ascii=False)
@@ -666,6 +789,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
     ai_predictions_json = json.dumps(ai_predictions, ensure_ascii=False)
     market_news_json = json.dumps(market_news, ensure_ascii=False)
     intraday_path_json = json.dumps(intraday_path_forecasts, ensure_ascii=False, separators=(",", ":"))
+    leaders_json = json.dumps(resilient_leaders_top5, ensure_ascii=False)
 
     html = r"""<!DOCTYPE html>
 <html lang="zh-CN" data-theme="dark">
@@ -1360,6 +1484,108 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
         .wl-more-btn.active {
             color: var(--text-primary);
             border-color: var(--border-strong);
+        }
+
+        .wl-leader-bar {
+            display: flex;
+            align-items: center;
+        }
+
+        .wl-leader-btn {
+            width: 100%;
+            padding: 6px 10px;
+            border-radius: 8px;
+            border: 1px solid rgba(16, 185, 129, 0.35);
+            background: rgba(16, 185, 129, 0.10);
+            color: var(--color-up);
+            font-size: 11.5px;
+            font-weight: 700;
+            cursor: pointer;
+            text-align: center;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            transition: all 0.15s ease;
+        }
+
+        .wl-leader-btn:hover {
+            border-color: var(--color-up);
+            background: rgba(16, 185, 129, 0.18);
+        }
+
+        .wl-leader-btn.active {
+            background: var(--color-up);
+            color: #FFFFFF;
+            border-color: var(--color-up);
+        }
+
+        .resilient-leaders-strip {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 12px;
+            width: 100%;
+            max-width: 100%;
+            overflow-x: auto;
+            border-bottom: 1px solid var(--border-subtle);
+            background: var(--bg-elevated);
+            flex-shrink: 0;
+        }
+
+        .leaders-strip-lbl {
+            font-size: 11px;
+            font-weight: 800;
+            color: var(--color-up);
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        .leader-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 3px 8px;
+            border-radius: 999px;
+            border: 1px solid var(--border-subtle);
+            background: var(--bg-card);
+            color: var(--text-primary);
+            font-size: 11px;
+            font-weight: 600;
+            cursor: pointer;
+            white-space: nowrap;
+            flex-shrink: 0;
+            transition: border-color 0.15s ease, background-color 0.15s ease;
+        }
+
+        .leader-chip:hover,
+        .leader-chip.active {
+            border-color: var(--color-up);
+            background: var(--color-up-bg, rgba(16, 185, 129, 0.14));
+        }
+
+        .leader-chip .lc-tag {
+            font-size: 10px;
+            color: var(--color-up);
+            font-weight: 700;
+        }
+
+        .stale-ref-tag {
+            font-size: 9.5px;
+            font-weight: 500;
+            color: var(--text-muted);
+            margin-left: 3px;
+        }
+
+        .price-trio-bear-note {
+            margin-top: 6px;
+            padding: 5px 8px;
+            border-radius: 7px;
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--color-warn);
+            background: var(--color-warn-bg);
+            border: 1px solid var(--color-warn-border);
+            line-height: 1.35;
         }
 
         .watchlist-categories {
@@ -3000,10 +3226,14 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                     <button type="button" class="wl-pill-btn" data-filter="risk" onclick="setWatchlistFilter('risk')">⚠️ 风险避坑</button>
                     <button type="button" class="wl-pill-btn" data-filter="gold_crypto" onclick="setWatchlistFilter('gold_crypto')">🥇 黄金·加密</button>
                 </div>
+                <div class="wl-leader-bar">
+                    <button type="button" id="btnResilientTop5" class="wl-leader-btn" data-filter="resilient_top5" onclick="setWatchlistFilter('resilient_top5')" title="恐慌退潮真龙头：排除反向ETF，优先站稳VWAP + 20日超额RS + 相对SPY强弱">🛡️ 抗跌领涨 Top 5</button>
+                </div>
                 <!-- 二级细分赛道下拉 + 展开按钮 -->
                 <div class="wl-secondary-bar">
                     <select id="sectorFilterSelect" class="wl-sector-select" onchange="onSectorSelectChange(this.value)" aria-label="按行业赛道或策略筛选">
                         <option value="">更多赛道 / 策略筛选...</option>
+                        <option value="resilient_top5">🛡️ 抗跌领涨 Top 5</option>
                         <option value="ai_top">⚡ AI高胜率排序</option>
                         <option value="ai_short">🩸 AI做空榜 (Top 5)</option>
                         <option value="pit">🟢 黄金坑低吸</option>
@@ -3031,6 +3261,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             <!-- 默认折叠的细分赛道标签栏 -->
             <div class="watchlist-categories" id="watchlistCategories">
                 <div class="w-tab active" data-filter="all">全部 (__PY_TPL_TOTAL_COUNT__)</div>
+                <div class="w-tab" data-filter="resilient_top5" style="color: var(--color-up); font-weight: 700;">🛡️ 抗跌领涨 Top 5</div>
                 <div class="w-tab" data-filter="ai_top" style="color: #a78bfa; font-weight: 700;">⚡ AI高胜率 (__PY_TPL_TOTAL_COUNT__)</div>
                 <div class="w-tab" data-filter="ai_short" style="color: #ff5252; font-weight: 700; background: rgba(248, 81, 73, 0.14); border-color: rgba(248, 81, 73, 0.35);">🩸 AI做空榜 (Top 5)</div>
                 <div class="w-tab" data-filter="pit">🟢 黄金坑</div>
@@ -3057,6 +3288,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
 
         <!-- 中栏：TradingView 主图 + 今日盘中推演 Segmented Control -->
         <section class="chart-center" id="chartMiddle">
+            <div id="resilientLeadersStrip" class="resilient-leaders-strip" style="display: none;"></div>
             <div class="chart-stage-header">
                 <div class="current-stock-badge" id="headerStockBadge">
                     <span class="cur-sym" id="curSym">--</span>
@@ -3158,21 +3390,22 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 <!-- 2. 三个直白价格格 (三列大号数字，全站唯一口径) -->
                 <div class="price-trio-grid">
                     <div class="price-tile">
-                        <div class="price-tile-lbl">参考买点 / 观察价</div>
+                        <div class="price-tile-lbl" id="pTileBuyLbl">参考买点 / 观察价</div>
                         <div class="price-tile-val warn tabular" id="pOptimalLimit">--</div>
                         <div class="price-tile-sub tabular" id="pOptimalNote">--</div>
                     </div>
                     <div class="price-tile">
-                        <div class="price-tile-lbl">目标止盈</div>
+                        <div class="price-tile-lbl" id="pTileTpLbl">目标止盈</div>
                         <div class="price-tile-val up tabular" id="pBeginnerTakeProfit">--</div>
                         <div class="price-tile-sub tabular" id="pBeginnerTakeProfitPct">--</div>
                     </div>
                     <div class="price-tile">
-                        <div class="price-tile-lbl">跌破必砍 (短线止损)</div>
+                        <div class="price-tile-lbl" id="pTileStopLbl">跌破必砍 (短线止损)</div>
                         <div class="price-tile-val down tabular" id="pEntryStopLoss">--</div>
                         <div class="price-tile-sub tabular" id="pEntryStopDist">--</div>
                     </div>
                 </div>
+                <div id="pBearDefenseNote" class="price-trio-bear-note" style="display: none;">🧭 空头留意支撑区止盈 / 反抽压力位防守</div>
 
                 <!-- 3. 多空趋势温度条 -->
                 <div class="trend-thermo-card">
@@ -3224,8 +3457,8 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                             <span id="pSignalTag" style="font-size: 10.5px; padding: 2px 7px; border-radius: 5px; background: var(--bg-card); font-weight: 600;">--</span>
                         </div>
                         <div class="metrics-grid tabular">
-                            <div class="m-item"><span class="m-lbl">日内 VWAP 均价</span><span class="m-val" id="pVwap">--</span></div>
-                            <div class="m-item"><span class="m-lbl">5m RSI / 量比</span><span class="m-val" id="pRsi5m">--</span></div>
+                            <div class="m-item"><span class="m-lbl" id="pVwapLabel">日内 VWAP 均价</span><span class="m-val" id="pVwap">--</span></div>
+                            <div class="m-item"><span class="m-lbl" id="pRsi5mLabel">5m RSI / 量比</span><span class="m-val" id="pRsi5m">--</span></div>
                             <div class="m-item"><span class="m-lbl" id="pRs20dLabel">20日超额RS</span><span class="m-val" id="pRs20d">--</span></div>
                             <div class="m-item"><span class="m-lbl">财报避雷日历</span><span class="m-val" id="pEarningsDate">--</span></div>
                             <div class="m-item" style="grid-column: span 2;"><span class="m-lbl">黄金坑支撑带</span><span class="m-val" id="pEntryFibBand">--</span></div>
@@ -3488,6 +3721,8 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
         const AI_PREDICTIONS = __PY_TPL_AI_PREDICTIONS_JSON__;
         const INITIAL_MARKET_NEWS = __PY_TPL_MARKET_NEWS_JSON__;
         const INTRADAY_PATH_FORECASTS = __PY_TPL_INTRADAY_PATH_JSON__;
+        const SESSION_CODE = "__PY_TPL_SESSION_CODE__";
+        const RESILIENT_LEADERS_INIT = __PY_TPL_LEADERS_JSON__;
 
         let currentFilter = "all";
         let currentCenterView = "kline";
@@ -3704,7 +3939,9 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
 
             const vixPill = document.getElementById("pVixRegimePill");
             const vixPop = document.getElementById("vixDetailPopover");
-            const vr = (AI_PREDICTIONS && (AI_PREDICTIONS.vix_regime || (AI_PREDICTIONS.macro_weather && AI_PREDICTIONS.macro_weather.vix_regime))) || null;
+            const vr = (WEATHER_INFO && WEATHER_INFO.vix_regime && WEATHER_INFO.vix_regime.vix_spot !== undefined)
+                ? WEATHER_INFO.vix_regime
+                : ((AI_PREDICTIONS && (AI_PREDICTIONS.vix_regime || (AI_PREDICTIONS.macro_weather && AI_PREDICTIONS.macro_weather.vix_regime))) || null);
             if (vixPill) {
                 if (vr && vr.pill_text) {
                     vixPill.innerText = String(vr.pill_text);
@@ -3764,6 +4001,122 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                     <div class="vix-pop-advice">${advCn}</div>
                 `;
             }
+            renderResilientLeadersStrip();
+        }
+
+        const LEADER_EXCLUDED_TICKERS = new Set(["SQQQ", "SOXS", "VIXY", "TLT", "GLD", "XAUUSD", "BTC-USD", "SHY", "IEF", "HYG", "UUP"]);
+        const LEADER_EXCLUDED_CATS = new Set(["大宗商品", "数字资产", "避险美债", "恐慌指数", "反向做空"]);
+
+        function computeResilientLeadersTop5() {
+            const unified = [];
+            const seen = new Set();
+            (Array.isArray(STOCKS_DATA) ? STOCKS_DATA : []).forEach(s => {
+                if (s && s.ticker && !seen.has(s.ticker)) {
+                    seen.add(s.ticker);
+                    unified.push({ ...s, is_stock: true });
+                }
+            });
+            Object.keys(MACRO_DATA || {}).forEach(t => {
+                if (!seen.has(t) && MACRO_DATA[t]) {
+                    seen.add(t);
+                    unified.push(buildMacroListEntry(t, MACRO_DATA[t]));
+                }
+            });
+
+            const effPct = (it) => {
+                if (SESSION_CODE === "REGULAR") {
+                    const v = Number(it.pct_change || 0);
+                    return Number.isFinite(v) ? v : 0;
+                }
+                const ep = Number(it.ext_price || 0);
+                if (ep > 0 && it.ext_pct !== undefined && it.ext_pct !== null) {
+                    const ev = Number(it.ext_pct);
+                    return Number.isFinite(ev) ? ev : 0;
+                }
+                const v = Number(it.pct_change || 0);
+                return Number.isFinite(v) ? v : 0;
+            };
+
+            const spyObj = unified.find(u => u.ticker === "SPY");
+            const spyPct = spyObj ? effPct(spyObj) : 0;
+
+            const ranked = [];
+            unified.forEach(it => {
+                const tk = String(it.ticker || "").toUpperCase();
+                const cat = String(it.cat || "");
+                if (!tk || LEADER_EXCLUDED_TICKERS.has(tk) || LEADER_EXCLUDED_CATS.has(cat)) return;
+                if (it.is_inverse_hedge || it.is_crash_halt || it.is_cooling_halt || it.is_ipo_pending) return;
+                const activePx = Number(it.active_price || it.last || 0);
+                if (!(activePx > 0)) return;
+
+                const tkPct = effPct(it);
+                const exc = tkPct - spyPct;
+                const rsRaw = Number(it.rs_20d !== undefined && it.rs_20d !== null ? it.rs_20d : 0);
+                const rs = Number.isFinite(rsRaw) ? rsRaw : 0;
+                const vwapVal = Number(it.vwap || 0);
+
+                let aboveVwap = false;
+                let vwapTag = "";
+                if (SESSION_CODE === "REGULAR") {
+                    aboveVwap = (vwapVal > 0 && activePx >= vwapVal);
+                    vwapTag = aboveVwap ? "✓VWAP" : "VWAP下";
+                } else {
+                    aboveVwap = (tkPct > 0) || (exc > 0.3);
+                    vwapTag = (exc > 0.3) ? "✓强于SPY" : (tkPct > 0 ? "✓正涨幅" : "偏弱");
+                }
+
+                const rsC = Math.max(-30, Math.min(40, rs));
+                const excC = Math.max(-15, Math.min(20, exc));
+                const score = (aboveVwap ? 25 : 0) + rsC * 1.2 + excC * 2.0;
+                ranked.push({
+                    entry: it,
+                    ticker: tk,
+                    name: it.name || tk,
+                    rs_20d: rs,
+                    excess_vs_spy: exc,
+                    above_vwap: aboveVwap,
+                    vwap_tag: vwapTag,
+                    leader_score: score,
+                });
+            });
+
+            ranked.sort((a, b) => {
+                if (a.above_vwap !== b.above_vwap) return a.above_vwap ? -1 : 1;
+                if (b.leader_score !== a.leader_score) return b.leader_score - a.leader_score;
+                if (b.rs_20d !== a.rs_20d) return b.rs_20d - a.rs_20d;
+                return b.excess_vs_spy - a.excess_vs_spy;
+            });
+            return ranked.slice(0, 5);
+        }
+
+        function renderResilientLeadersStrip() {
+            const strip = document.getElementById("resilientLeadersStrip");
+            if (!strip) return;
+            const vr = (WEATHER_INFO && WEATHER_INFO.vix_regime && WEATHER_INFO.vix_regime.vix_spot !== undefined)
+                ? WEATHER_INFO.vix_regime
+                : ((AI_PREDICTIONS && (AI_PREDICTIONS.vix_regime || (AI_PREDICTIONS.macro_weather && AI_PREDICTIONS.macro_weather.vix_regime))) || null);
+            const vixState = String((vr && vr.vix_state) || "").toUpperCase();
+            const showStates = new Set(["ELEVATED_CAUTION", "BACKWARDATION_BRAKE", "WASHOUT_BOTTOM_WINDOW", "BOTTOM_PREMARKET_PREVIEW"]);
+            if (!showStates.has(vixState)) {
+                strip.style.display = "none";
+                strip.innerHTML = "";
+                return;
+            }
+            const top5 = computeResilientLeadersTop5();
+            if (!top5.length) {
+                strip.style.display = "none";
+                strip.innerHTML = "";
+                return;
+            }
+            const pal = getThemePalette();
+            const chipsHtml = top5.map(ld => {
+                const isAct = (ld.ticker === currentTicker) ? " active" : "";
+                const rsStr = `${ld.rs_20d >= 0 ? "+" : ""}${ld.rs_20d.toFixed(1)}%`;
+                const tagClr = ld.above_vwap ? pal.up : pal.sub;
+                return `<button type="button" class="leader-chip${isAct}" data-ticker="${escapeNewsHtml(ld.ticker)}" onclick="selectTicker('${escapeNewsHtml(ld.ticker)}', true)" title="${escapeNewsHtml(ld.name)} · 相对SPY ${ld.excess_vs_spy >= 0 ? '+' : ''}${ld.excess_vs_spy.toFixed(2)}%"><b>${escapeNewsHtml(ld.ticker)}</b><span>RS ${rsStr}</span><span class="lc-tag" style="color:${tagClr};">${escapeNewsHtml(ld.vwap_tag)}</span></button>`;
+            }).join("");
+            strip.innerHTML = `<span class="leaders-strip-lbl">🛡️ 抗跌领涨 Top 5</span>${chipsHtml}`;
+            strip.style.display = "flex";
         }
 
         function toggleVixPopover(ev) {
@@ -4406,12 +4759,16 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             document.querySelectorAll(".wl-pill-btn").forEach(btn => {
                 btn.classList.toggle("active", btn.getAttribute("data-filter") === filter);
             });
+            const leaderBtn = document.getElementById("btnResilientTop5");
+            if (leaderBtn) {
+                leaderBtn.classList.toggle("active", filter === "resilient_top5");
+            }
             document.querySelectorAll(".w-tab").forEach(t => {
                 t.classList.toggle("active", t.getAttribute("data-filter") === filter);
             });
             const sel = document.getElementById("sectorFilterSelect");
             if (sel) {
-                sel.value = primaryFilters.has(filter) ? "" : filter;
+                sel.value = (primaryFilters.has(filter) || filter === "resilient_top5") ? "" : filter;
             }
         }
 
@@ -4579,7 +4936,13 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 if (match) items.push(buildMacroListEntry(t, m));
             });
 
-            if (filter === "ai_top" && aiByTicker) {
+            if (filter === "resilient_top5") {
+                items = computeResilientLeadersTop5().map(ld => ({
+                    ...ld.entry,
+                    _leader_rs: ld.rs_20d,
+                    _leader_tag: ld.vwap_tag,
+                }));
+            } else if (filter === "ai_top" && aiByTicker) {
                 items.sort((a, b) => ((aiByTicker[a.ticker] && aiByTicker[a.ticker].rank) || 999) - ((aiByTicker[b.ticker] && aiByTicker[b.ticker].rank) || 999));
             } else if (filter === "ai_short" && aiByTicker) {
                 items.sort((a, b) => ((aiByTicker[a.ticker] && aiByTicker[a.ticker].short_rank) || 999) - ((aiByTicker[b.ticker] && aiByTicker[b.ticker].short_rank) || 999));
@@ -5075,6 +5438,19 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 }
             }
 
+            const isNonRth = (SESSION_CODE !== "REGULAR");
+            const vwapLblEl = document.getElementById("pVwapLabel");
+            if (vwapLblEl) {
+                vwapLblEl.innerHTML = isNonRth
+                    ? '日内 VWAP 均价<span class="stale-ref-tag">(上日参考 · 09:30重置)</span>'
+                    : '日内 VWAP 均价';
+            }
+            const rsi5LblEl = document.getElementById("pRsi5mLabel");
+            if (rsi5LblEl) {
+                rsi5LblEl.innerHTML = isNonRth
+                    ? '5m RSI / 量比<span class="stale-ref-tag">(上日参考 · 09:30重置)</span>'
+                    : '5m RSI / 量比';
+            }
             const vwapEl = document.getElementById("pVwap");
             if (vwapEl) {
                 const vwapVal = data.vwap || curLast;
@@ -5166,7 +5542,9 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             const vixHintEl = document.getElementById("pVixySpotHint");
             if (vixHintEl) {
                 if (isVixySym) {
-                    const vr = (AI_PREDICTIONS && (AI_PREDICTIONS.vix_regime || (AI_PREDICTIONS.macro_weather && AI_PREDICTIONS.macro_weather.vix_regime))) || {};
+                    const vr = (WEATHER_INFO && WEATHER_INFO.vix_regime && WEATHER_INFO.vix_regime.vix_spot !== undefined)
+                        ? WEATHER_INFO.vix_regime
+                        : ((AI_PREDICTIONS && (AI_PREDICTIONS.vix_regime || (AI_PREDICTIONS.macro_weather && AI_PREDICTIONS.macro_weather.vix_regime))) || {});
                     const vSpot = (vr.vix_spot !== null && vr.vix_spot !== undefined) ? Number(vr.vix_spot).toFixed(2) : "--";
                     const v3m = (vr.vix3m_spot !== null && vr.vix3m_spot !== undefined) ? Number(vr.vix3m_spot).toFixed(2) : "--";
                     const vRatio = (vr.vix_term_ratio !== null && vr.vix_term_ratio !== undefined) ? Number(vr.vix_term_ratio).toFixed(3) : "--";
@@ -5449,6 +5827,59 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 if (sRawEl) sRawEl.innerText = "原始空: --%";
                 if (pcrEl) pcrEl.innerText = "⚪ 无美股期权";
             }
+
+            // 7.5 空头占优 / 建议买入反向ETF对冲：防看反切换（将目标止盈/跌破必砍切换为 上方压力(R1) / 下方支撑(S1)）
+            const tileTpLbl = document.getElementById("pTileTpLbl");
+            const tileStopLbl = document.getElementById("pTileStopLbl");
+            const bearDefenseNote = document.getElementById("pBearDefenseNote");
+            const actStrNow = actText ? String(actText.innerText || "") : "";
+            const isBearDefenseCard = (!isInverseHedge && !isIpo) && (
+                Boolean(isBrokenBearish)
+                || actStrNow.includes("建议买入反向ETF对冲")
+                || actStrNow.includes("空头占优")
+                || actStrNow.includes("强力做空")
+                || actStrNow.includes("逢高做空")
+            );
+            if (isBearDefenseCard) {
+                if (tileTpLbl) tileTpLbl.innerText = "上方压力 (R1)";
+                if (tileStopLbl) tileStopLbl.innerText = "下方支撑 (S1)";
+                if (bearDefenseNote) bearDefenseNote.style.display = "block";
+                const r1Px = Number((aiItem && aiItem.r1) || data.broken_r1 || (aiItem && aiItem.target_profit_price) || 0);
+                if (tpBegEl && tpPctEl) {
+                    if (r1Px > 0) {
+                        const r1Diff = curActive > 0 ? ((r1Px - curActive) / curActive * 100) : 0;
+                        tpBegEl.innerText = "$" + r1Px.toFixed(2);
+                        tpBegEl.style.color = pal.down;
+                        tpPctEl.innerText = `距现价 ${r1Diff >= 0 ? '+' : ''}${r1Diff.toFixed(1)}% · 反抽压力`;
+                        tpPctEl.style.color = pal.down;
+                    } else {
+                        tpBegEl.innerText = "--";
+                        tpBegEl.style.color = pal.sub;
+                        tpPctEl.innerText = "上方压力观察";
+                        tpPctEl.style.color = pal.sub;
+                    }
+                }
+                const s1Px = Number((aiItem && aiItem.s1) || data.broken_s1 || (aiItem && aiItem.short_target_profit_price) || stopLoss || 0);
+                if (stopEl && stopDistEl) {
+                    if (s1Px > 0) {
+                        const s1Diff = curActive > 0 ? ((s1Px - curActive) / curActive * 100) : 0;
+                        stopEl.innerText = "$" + s1Px.toFixed(2);
+                        stopEl.style.color = pal.warn;
+                        stopDistEl.innerText = `距现价 ${s1Diff >= 0 ? '+' : ''}${s1Diff.toFixed(1)}% · 支撑关注`;
+                        stopDistEl.style.color = pal.warn;
+                    } else {
+                        stopEl.innerText = "--";
+                        stopEl.style.color = pal.sub;
+                        stopDistEl.innerText = "下方支撑观察";
+                        stopDistEl.style.color = pal.sub;
+                    }
+                }
+            } else {
+                if (tileTpLbl) tileTpLbl.innerText = "目标止盈";
+                if (tileStopLbl) tileStopLbl.innerText = "跌破必砍 (短线止损)";
+                if (bearDefenseNote) bearDefenseNote.style.display = "none";
+            }
+            renderResilientLeadersStrip();
 
             // 8. 机构期权雷达 (Group ②)
             const optBox = document.getElementById("optionsAnomalyBox");
@@ -6296,6 +6727,8 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
         "__PY_TPL_AI_PREDICTIONS_JSON__": ai_predictions_json,
         "__PY_TPL_MARKET_NEWS_JSON__": market_news_json,
         "__PY_TPL_INTRADAY_PATH_JSON__": intraday_path_json,
+        "__PY_TPL_SESSION_CODE__": str(session_code or "REGULAR"),
+        "__PY_TPL_LEADERS_JSON__": leaders_json,
     }
     for _tok, _val in replacements.items():
         html = html.replace(_tok, _val)

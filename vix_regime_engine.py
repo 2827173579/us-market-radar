@@ -32,8 +32,97 @@ except Exception:  # pragma: no cover
 
 WORK_DIR = os.path.dirname(os.path.abspath(__file__))
 VIX_SYMBOLS = ("^VIX", "^VXN", "^VIX3M", "^VVIX", "^TNX")
+LIQUIDITY_SYMBOLS = ("HYG", "IEF", "DX-Y.NYB", "JPY=X")
 DEFAULT_CACHE_PATH = os.path.join(WORK_DIR, "data_cache", "vix_regime_cache.json")
+DEFAULT_LIQUIDITY_CACHE_PATH = os.path.join(WORK_DIR, "data_cache", "macro_liquidity_cache.json")
 DEFAULT_TTL_SECONDS = 180
+
+
+def _normalize_session_code(session_code: Optional[str]) -> str:
+    if session_code is None:
+        return "REGULAR"
+    cleaned = str(session_code).strip().upper()
+    return cleaned or "REGULAR"
+
+
+def _apply_session_lock_to_snapshot(snap: Dict[str, Any], session_code: Optional[str] = None) -> Dict[str, Any]:
+    """
+    策略 A 盘前/夜盘防误触发锁：
+    仅当美东常规盘中 (REGULAR) 且 raw_bottom_signal=True 时才允许正式亮绿灯并开启抄底观察窗；
+    在 PRE_MARKET / OVERNIGHT / POST_MARKET / WEEKEND 等非常规时段，强制保持
+    vix_bottom_signal=False 与 vix_bottom_premarket_preview=True（盘前预热·待09:30确认）。
+    """
+    out = dict(snap or {})
+    sess = _normalize_session_code(session_code)
+    out["session_code"] = sess
+
+    vix_spot = out.get("vix_spot")
+    if vix_spot is None or str(out.get("vix_state") or "").upper() == "UNAVAILABLE":
+        out["raw_bottom_signal"] = False
+        out["vix_bottom_premarket_preview"] = False
+        return out
+
+    raw_bottom = out.get("raw_bottom_signal")
+    if raw_bottom is None:
+        raw_bottom = bool(out.get("vix_bottom_signal") or out.get("vix_bottom_premarket_preview"))
+    raw_bottom = bool(raw_bottom) and (not bool(out.get("vix_hard_brake")))
+    out["raw_bottom_signal"] = raw_bottom
+
+    try:
+        vix_disp = f"{float(vix_spot):.1f}"
+    except Exception:
+        vix_disp = "--"
+    ratio_v = out.get("vix_term_ratio")
+    try:
+        ratio_disp = f"{float(ratio_v):.2f}" if ratio_v is not None else None
+    except Exception:
+        ratio_disp = None
+    try:
+        peak_f = float(out.get("vix_10d_peak") or vix_spot)
+    except Exception:
+        peak_f = 0.0
+    try:
+        dd_f = float(out.get("vix_drawdown_from_peak_pct") or 0.0)
+    except Exception:
+        dd_f = 0.0
+
+    if bool(out.get("vix_hard_brake")):
+        out["vix_bottom_signal"] = False
+        out["vix_bottom_premarket_preview"] = False
+        return out
+
+    if raw_bottom:
+        if sess != "REGULAR":
+            out["vix_bottom_signal"] = False
+            out["vix_bottom_premarket_preview"] = True
+            out["vix_state"] = "BOTTOM_PREMARKET_PREVIEW"
+            out["pill_level"] = "warn"
+            out["pill_text"] = f"🟡 VIX {vix_disp} · 盘前预热 (待09:30确认)"
+            out["summary_cn"] = (
+                f"盘前预热 · 待 09:30 确认（非常规盘中 ^VIX3M 冻结在上一收盘价，恐慌回撤 {dd_f:.1f}% 需开盘确认）"
+            )
+            out["advice_cn"] = (
+                f"当前处于非美东常规盘中（{sess}），^VIX3M 远期报价冻结在上一收盘价，"
+                f"VIX/VIX3M ({ratio_disp or '--'}) 可能被盘前瞬时波动人为压低。"
+                "系统已启用盘前防误触发锁，暂不亮抄底绿灯、不推送 Discord 且不写入当日去重锁，待 09:30 ET 开盘确认后生效。"
+            )
+        else:
+            out["vix_bottom_signal"] = True
+            out["vix_bottom_premarket_preview"] = False
+            out["vix_state"] = "WASHOUT_BOTTOM_WINDOW"
+            out["pill_level"] = "bottom"
+            out["pill_text"] = f"🟢 VIX {vix_disp} · 恐慌出清抄底窗"
+            out["summary_cn"] = f"恐慌确认见顶回落（高点 {peak_f:.1f} 回撤 {dd_f:.1f}%），右侧优质标的抄底窗已开启"
+            out["advice_cn"] = (
+                f"近10日极端恐慌已回落 {dd_f:.1f}%（≥5%）、比值回落至 0.97 以下"
+                f"（ratio={float(ratio_v):.2f}）且当日 VIX 未反扑（≤+3%），对非暴跌熔断且站稳日内 VWAP 的优质标的放宽多头胜率上限至 58%。"
+                if ratio_v is not None
+                else "比值回落至 0.97 以下、恐慌自 10 日高点回撤 ≥5% 且当日 VIX 未反扑（≤+3%）时开启右侧抄底窗。"
+            )
+    else:
+        out["vix_bottom_signal"] = False
+        out["vix_bottom_premarket_preview"] = False
+    return out
 
 
 def _clean_close_series(raw_series: Any, as_of_date: Optional[Any] = None, is_tnx: bool = False) -> pd.Series:
@@ -150,11 +239,13 @@ def compute_vix_regime_from_series(
     tnx_series: Any = None,
     as_of_date: Optional[Any] = None,
     vxn_series: Any = None,
+    session_code: Optional[str] = None,
 ) -> Dict[str, Any]:
     """
     纯因果 VIX/VXN 恐慌中枢状态机（Zero Lookahead Bias）：
     严格只用 <= as_of_date 数据与向后因果前值对齐（ffill，绝不使用 bfill）。
     """
+    sess = _normalize_session_code(session_code)
     now_str = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     vix_s = _clean_close_series(vix_series, as_of_date=as_of_date, is_tnx=False)
     vxn_s = _clean_close_series(vxn_series, as_of_date=as_of_date, is_tnx=False)
@@ -206,7 +297,10 @@ def compute_vix_regime_from_series(
             "term_structure_state": "UNKNOWN",
             "term_structure_cn": "数据暂缺",
             "vix_hard_brake": False,
+            "raw_bottom_signal": False,
+            "vix_bottom_premarket_preview": False,
             "vix_bottom_signal": False,
+            "session_code": sess,
             "vix_state": "UNAVAILABLE",
             "pill_level": "neutral",
             "pill_text": "⚪ VIX 暂缺 · 常规门禁",
@@ -327,13 +421,15 @@ def compute_vix_regime_from_series(
         or (vvix_dd_pct is not None and vvix_dd_pct >= 5.0 and vix_is_down_today)
     )
     no_vix_rebound_spike = bool(vix_pct is None or float(vix_pct) <= 3.0)
-    vix_bottom_signal = bool(
+    raw_bottom_signal = bool(
         (not vix_hard_brake)
         and had_extreme_panic_10d
         and ratio_cooled
         and vol_cooled
         and no_vix_rebound_spike
     )
+    vix_bottom_premarket_preview = bool(raw_bottom_signal and sess != "REGULAR")
+    vix_bottom_signal = bool(raw_bottom_signal and sess == "REGULAR")
 
     vix_disp = f"{vix_spot_f:.1f}"
     ratio_disp = f"{vix_term_ratio_f:.2f}" if vix_term_ratio_f is not None else None
@@ -352,7 +448,7 @@ def compute_vix_regime_from_series(
             "倒挂说明机构仍在抢买近期保护，大盘体制强制锁死 BEAR_DEFENSE、多头胜率封顶 48%；"
             "比值回落至 0.97 以下、恐慌自 10 日高点回撤 ≥5% 且当日 VIX 未反扑（≤+3%）时开启右侧抄底窗。"
         )
-    elif vix_bottom_signal:
+    elif vix_bottom_signal or vix_bottom_premarket_preview:
         vix_state = "WASHOUT_BOTTOM_WINDOW"
         pill_level = "bottom"
         pill_text = f"🟢 VIX {vix_disp} · 恐慌出清抄底窗"
@@ -383,7 +479,7 @@ def compute_vix_regime_from_series(
         )
 
     degraded = len(available_symbols) < len(VIX_SYMBOLS)
-    return {
+    payload = {
         "as_of_date": vix_s.index[-1].strftime("%Y-%m-%d"),
         "updated_at": now_str,
         "vix_spot": round(vix_spot_f, 2),
@@ -413,7 +509,10 @@ def compute_vix_regime_from_series(
         "term_structure_state": term_structure_state,
         "term_structure_cn": term_structure_cn,
         "vix_hard_brake": vix_hard_brake,
+        "raw_bottom_signal": raw_bottom_signal,
+        "vix_bottom_premarket_preview": vix_bottom_premarket_preview,
         "vix_bottom_signal": vix_bottom_signal,
+        "session_code": sess,
         "vix_state": vix_state,
         "pill_level": pill_level,
         "pill_text": pill_text,
@@ -422,6 +521,7 @@ def compute_vix_regime_from_series(
         "available_symbols": available_symbols,
         "degraded": degraded,
     }
+    return _apply_session_lock_to_snapshot(payload, session_code=sess)
 
 
 def _read_cached_snapshot(cache_path: str) -> Optional[Dict[str, Any]]:
@@ -453,23 +553,26 @@ def get_vix_regime_snapshot(
     cache_path: str = DEFAULT_CACHE_PATH,
     ttl_seconds: int = DEFAULT_TTL_SECONDS,
     allow_network: bool = True,
+    session_code: Optional[str] = None,
 ) -> Dict[str, Any]:
     """
     获取全局 VIX 恐慌中枢快照（带本地 TTL 节流与静默降级）。
     优先读取未过期的本地缓存；过期或强制刷新时批量抓取 ^VIX/^VIX3M/^VVIX/^TNX；
     网络失败时优雅回退旧缓存或返回 UNAVAILABLE 结构。
     """
+    sess = _normalize_session_code(session_code)
     cached = _read_cached_snapshot(cache_path)
     if cached and not force_refresh:
         cached_epoch = float(cached.get("_cached_epoch", 0.0) or 0.0)
         if cached_epoch > 0 and (time.time() - cached_epoch) < max(5, int(ttl_seconds)):
             out = {k: v for k, v in cached.items() if k != "_cached_epoch"}
-            return out
+            return _apply_session_lock_to_snapshot(out, session_code=sess)
 
     if not allow_network:
         if cached:
-            return {k: v for k, v in cached.items() if k != "_cached_epoch"}
-        return compute_vix_regime_from_series(None)
+            out = {k: v for k, v in cached.items() if k != "_cached_epoch"}
+            return _apply_session_lock_to_snapshot(out, session_code=sess)
+        return compute_vix_regime_from_series(None, session_code=sess)
 
     raw_map = fetch_vix_raw_series()
     snap = compute_vix_regime_from_series(
@@ -478,14 +581,214 @@ def get_vix_regime_snapshot(
         vvix_series=raw_map.get("^VVIX"),
         tnx_series=raw_map.get("^TNX"),
         vxn_series=raw_map.get("^VXN"),
+        session_code=sess,
     )
 
     if snap.get("vix_spot") is None and cached and cached.get("vix_spot") is not None:
         fallback = {k: v for k, v in cached.items() if k != "_cached_epoch"}
         fallback["degraded"] = True
-        return fallback
+        return _apply_session_lock_to_snapshot(fallback, session_code=sess)
 
     if snap.get("vix_spot") is not None:
+        _write_cached_snapshot(cache_path, snap)
+    return snap
+
+
+def fetch_cross_market_liquidity_raw(timeout: float = 10.0) -> Dict[str, pd.Series]:
+    """
+    抓取宏观跨市场流动性指标 (HYG / IEF / DX-Y.NYB / JPY=X 近 1 个月日线)。
+    严格归属宏观引擎，严禁混入 79 只可交易标的池；任一指数异常静默降级不阻断主流程。
+    """
+    result: Dict[str, pd.Series] = {sym: pd.Series(dtype=float) for sym in LIQUIDITY_SYMBOLS}
+    if yf is None:
+        return result
+
+    batch_df = None
+    try:
+        batch_df = yf.download(
+            list(LIQUIDITY_SYMBOLS),
+            period="1mo",
+            interval="1d",
+            auto_adjust=False,
+            progress=False,
+            threads=False,
+            timeout=timeout,
+        )
+    except Exception:
+        batch_df = None
+
+    for sym in LIQUIDITY_SYMBOLS:
+        raw_s = _extract_symbol_close_from_download(batch_df, sym) if batch_df is not None else pd.Series(dtype=float)
+        cleaned = _clean_close_series(raw_s, is_tnx=False)
+        if cleaned.empty:
+            try:
+                hist_df = yf.Ticker(sym).history(period="1mo", interval="1d", auto_adjust=False)
+                cleaned = _clean_close_series(_extract_symbol_close_from_download(hist_df, sym), is_tnx=False)
+            except Exception:
+                cleaned = pd.Series(dtype=float)
+        result[sym] = cleaned
+    return result
+
+
+def compute_cross_market_liquidity_from_series(
+    hyg_series: Any = None,
+    ief_series: Any = None,
+    dxy_series: Any = None,
+    usdjpy_series: Any = None,
+    as_of_date: Optional[Any] = None,
+) -> Dict[str, Any]:
+    """
+    纯因果计算跨市场流动性压力指标：
+    1. HYG / IEF（高收益债信用利差比值：下行代表信用利差走阔/抽血）；
+    2. DX-Y.NYB（美元指数 DXY：急升代表美元流动性收紧）；
+    3. JPY=X（美元兑日元：急跌/日元急升代表 Carry Trade 套息交易去杠杆）。
+    """
+    now_str = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    hyg_s = _clean_close_series(hyg_series, as_of_date=as_of_date, is_tnx=False)
+    ief_s = _clean_close_series(ief_series, as_of_date=as_of_date, is_tnx=False)
+    dxy_s = _clean_close_series(dxy_series, as_of_date=as_of_date, is_tnx=False)
+    jpy_s = _clean_close_series(usdjpy_series, as_of_date=as_of_date, is_tnx=False)
+
+    available_symbols = [
+        sym for sym, ser in (("HYG", hyg_s), ("IEF", ief_s), ("DX-Y.NYB", dxy_s), ("JPY=X", jpy_s))
+        if not ser.empty
+    ]
+
+    def _spot_and_5d_pct(ser: pd.Series, digits: int = 2) -> Tuple[Optional[float], Optional[float], Optional[float]]:
+        if ser is None or ser.empty:
+            return None, None, None
+        cur = float(ser.iloc[-1])
+        prev1 = float(ser.iloc[-2]) if len(ser) >= 2 else None
+        pct1 = round(((cur - prev1) / prev1) * 100.0, 2) if (prev1 and prev1 > 0) else None
+        ref5 = float(ser.iloc[-6]) if len(ser) >= 6 else (float(ser.iloc[0]) if len(ser) >= 2 else None)
+        pct5 = round(((cur - ref5) / ref5) * 100.0, 2) if (ref5 and ref5 > 0) else None
+        return round(cur, digits), pct1, pct5
+
+    hyg_ief_ratio_s = pd.Series(dtype=float)
+    if not hyg_s.empty and not ief_s.empty:
+        u_idx = hyg_s.index.union(ief_s.index).sort_values()
+        hyg_u = hyg_s.reindex(u_idx).ffill()
+        ief_u = ief_s.reindex(u_idx).ffill()
+        hyg_ief_ratio_s = (hyg_u / ief_u).replace([np.inf, -np.inf], np.nan).dropna()
+
+    hyg_ief_ratio, hyg_ief_1d_pct, hyg_ief_5d_pct = _spot_and_5d_pct(hyg_ief_ratio_s, digits=4)
+    dxy_spot, dxy_1d_pct, dxy_5d_pct = _spot_and_5d_pct(dxy_s, digits=2)
+    usdjpy_spot, usdjpy_1d_pct, usdjpy_5d_pct = _spot_and_5d_pct(jpy_s, digits=2)
+
+    if hyg_ief_ratio is None and dxy_spot is None and usdjpy_spot is None:
+        return {
+            "as_of_date": None,
+            "updated_at": now_str,
+            "hyg_ief_ratio": None,
+            "hyg_ief_1d_pct": None,
+            "hyg_ief_5d_pct": None,
+            "dxy_spot": None,
+            "dxy_1d_pct": None,
+            "dxy_5d_pct": None,
+            "usdjpy_spot": None,
+            "usdjpy_1d_pct": None,
+            "usdjpy_5d_pct": None,
+            "credit_stress": False,
+            "dxy_tightening": False,
+            "carry_unwind": False,
+            "stress_flags": [],
+            "stress_level": "degraded",
+            "badge_cn": "⚪ 跨市场流动性暂缺",
+            "summary_cn": "跨市场指标（HYG/IEF · DXY · USD/JPY）外部源暂不可用，已自动静默降级不阻塞主雷达。",
+            "available_symbols": available_symbols,
+            "degraded": True,
+        }
+
+    credit_stress = bool(hyg_ief_5d_pct is not None and hyg_ief_5d_pct <= -1.0)
+    dxy_tightening = bool(dxy_5d_pct is not None and dxy_5d_pct >= 1.2)
+    carry_unwind = bool(usdjpy_5d_pct is not None and usdjpy_5d_pct <= -1.5)
+
+    stress_flags = []
+    if credit_stress:
+        stress_flags.append("信用利差走阔")
+    if dxy_tightening:
+        stress_flags.append("美元急升收紧")
+    if carry_unwind:
+        stress_flags.append("日元急升/套息逆转")
+
+    if len(stress_flags) >= 2:
+        stress_level = "danger"
+        badge_cn = "🔴 跨市场流动性收紧预警"
+        summary_cn = (
+            f"{' + '.join(stress_flags)} ➔ 警惕全球流动性收紧与机构去杠杆波及风险资产。"
+        )
+    elif len(stress_flags) == 1:
+        stress_level = "warn"
+        badge_cn = "🟡 局部跨市场流动性波动"
+        summary_cn = (
+            f"监测到【{stress_flags[0]}】➔ 留意风险溢价波动，精选强现金流及抗跌标的。"
+        )
+    else:
+        stress_level = "calm"
+        badge_cn = "🟢 跨市场流动性平稳"
+        summary_cn = "高收益信用利差、美元指数与日元套息线温和运行，未见跨市场流动性抽血共振。"
+
+    latest_dates = [
+        ser.index[-1] for ser in (hyg_ief_ratio_s, dxy_s, jpy_s) if not ser.empty
+    ]
+    as_of_str = max(latest_dates).strftime("%Y-%m-%d") if latest_dates else None
+
+    return {
+        "as_of_date": as_of_str,
+        "updated_at": now_str,
+        "hyg_ief_ratio": hyg_ief_ratio,
+        "hyg_ief_1d_pct": hyg_ief_1d_pct,
+        "hyg_ief_5d_pct": hyg_ief_5d_pct,
+        "dxy_spot": dxy_spot,
+        "dxy_1d_pct": dxy_1d_pct,
+        "dxy_5d_pct": dxy_5d_pct,
+        "usdjpy_spot": usdjpy_spot,
+        "usdjpy_1d_pct": usdjpy_1d_pct,
+        "usdjpy_5d_pct": usdjpy_5d_pct,
+        "credit_stress": credit_stress,
+        "dxy_tightening": dxy_tightening,
+        "carry_unwind": carry_unwind,
+        "stress_flags": stress_flags,
+        "stress_level": stress_level,
+        "badge_cn": badge_cn,
+        "summary_cn": summary_cn,
+        "available_symbols": available_symbols,
+        "degraded": len(available_symbols) < len(LIQUIDITY_SYMBOLS),
+    }
+
+
+def get_cross_market_liquidity_snapshot(
+    force_refresh: bool = False,
+    cache_path: str = DEFAULT_LIQUIDITY_CACHE_PATH,
+    ttl_seconds: int = 300,
+    allow_network: bool = True,
+) -> Dict[str, Any]:
+    """获取跨市场流动性监控快照（HYG/IEF + DX-Y.NYB + JPY=X，TTL 缓存 + 静默降级）。"""
+    cached = _read_cached_snapshot(cache_path)
+    if cached and not force_refresh:
+        cached_epoch = float(cached.get("_cached_epoch", 0.0) or 0.0)
+        if cached_epoch > 0 and (time.time() - cached_epoch) < max(5, int(ttl_seconds)):
+            return {k: v for k, v in cached.items() if k != "_cached_epoch"}
+
+    if not allow_network:
+        if cached:
+            return {k: v for k, v in cached.items() if k != "_cached_epoch"}
+        return compute_cross_market_liquidity_from_series()
+
+    raw_map = fetch_cross_market_liquidity_raw()
+    snap = compute_cross_market_liquidity_from_series(
+        hyg_series=raw_map.get("HYG"),
+        ief_series=raw_map.get("IEF"),
+        dxy_series=raw_map.get("DX-Y.NYB"),
+        usdjpy_series=raw_map.get("JPY=X"),
+    )
+
+    if snap.get("stress_level") == "degraded" and cached and cached.get("stress_level") != "degraded":
+        fallback = {k: v for k, v in cached.items() if k != "_cached_epoch"}
+        fallback["degraded"] = True
+        return fallback
+
+    if snap.get("stress_level") != "degraded":
         _write_cached_snapshot(cache_path, snap)
     return snap
 

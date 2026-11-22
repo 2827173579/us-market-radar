@@ -21,7 +21,7 @@ import threading
 import time
 import xml.etree.ElementTree as ET
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from datetime import datetime, timedelta, timezone
+from datetime import date, datetime, timedelta, timezone
 from email.utils import parsedate_to_datetime
 from typing import Any, Dict, List, Optional, Tuple
 from urllib.parse import quote_plus
@@ -974,22 +974,110 @@ def build_sanitized_flash_item(flash: Dict[str, Any]) -> Optional[Dict[str, Any]
     }
 
 
+def third_friday_of_month(year: int, month: int) -> date:
+    """计算指定年月的美股第三个星期五 (Monthly OPEX / Quad Witching 期权到期日)。"""
+    d1 = date(int(year), int(month), 1)
+    first_friday_day = 1 + (4 - d1.weekday()) % 7
+    return date(int(year), int(month), first_friday_day + 14)
+
+
+def compute_opex_shield_info(target_date: Optional[Any] = None) -> Dict[str, Any]:
+    """
+    自动计算美股月度 OPEX（每月第 3 个周五）与四巫日 Quad Witching（3/6/9/12 月第 3 个周五），
+    并在到期日当天及前 1 个交易日（T-1 周四）激活顶部宏观防踩踏护盾提示。
+    """
+    if target_date is None:
+        d = datetime.now(_get_tz("America/New_York", -5)).date()
+    elif isinstance(target_date, datetime):
+        d = target_date.date()
+    elif isinstance(target_date, date):
+        d = target_date
+    else:
+        d = datetime.strptime(str(target_date).strip()[:10], "%Y-%m-%d").date()
+
+    opex_day = third_friday_of_month(d.year, d.month)
+    is_quad = d.month in (3, 6, 9, 12)
+    t_minus_1 = opex_day - timedelta(days=1)
+
+    if d <= opex_day:
+        next_opex = opex_day
+        next_is_quad = is_quad
+    else:
+        ny = d.year + (1 if d.month == 12 else 0)
+        nm = 1 if d.month == 12 else (d.month + 1)
+        next_opex = third_friday_of_month(ny, nm)
+        next_is_quad = nm in (3, 6, 9, 12)
+
+    active = False
+    timing = "NONE"
+    kind = "NONE"
+    badge = ""
+    headline = ""
+    detail = ""
+
+    if d == opex_day:
+        active = True
+        timing = "TODAY"
+        kind = "QUAD_WITCHING" if is_quad else "MONTHLY_OPEX"
+        badge = "四巫日护盾" if is_quad else "OPEX 护盾"
+        if is_quad:
+            headline = "⚠️ 四巫日 (Quad Witching) · 警惕全天及尾盘负 Gamma 剧烈波动"
+            detail = "股指期货/股指期权/个股期权/个股期货四重到期，机构尾盘再平衡易放大急涨急跌，严防尾盘踩踏。"
+        else:
+            headline = "⚠️ 月度 OPEX 期权到期日 · 警惕尾盘负 Gamma 剧烈波动"
+            detail = "大量月度期权集中到期与做市商 Gamma 对冲再平衡，尾盘易出现剧烈插针，控制杠杆切勿追高。"
+    elif d == t_minus_1:
+        active = True
+        timing = "T_MINUS_1"
+        kind = "QUAD_WITCHING" if is_quad else "MONTHLY_OPEX"
+        badge = "四巫日 T-1" if is_quad else "OPEX T-1"
+        if is_quad:
+            headline = "⚠️ 明日四巫日 (Quad Witching T-1) · 警惕机构提前换仓与负 Gamma 波动"
+            detail = f"明日 ({opex_day.isoformat()}) 为四巫日，机构提前展期换仓易诱发盘口假突破或急杀，谨慎重仓。"
+        else:
+            headline = "⚠️ 明日月度 OPEX 期权到期 (T-1) · 警惕机构换仓与尾盘负 Gamma 波动"
+            detail = f"明日 ({opex_day.isoformat()}) 为月度 OPEX 期权到期日，防范盘中做市商调仓引发的剧烈波动。"
+
+    return {
+        "date": d.isoformat(),
+        "active": active,
+        "timing": timing,
+        "kind": kind,
+        "is_quad_witching": is_quad if d in (opex_day, t_minus_1) else False,
+        "opex_date": opex_day.isoformat(),
+        "next_opex_date": next_opex.isoformat(),
+        "next_is_quad_witching": next_is_quad,
+        "days_to_opex": int((next_opex - d).days),
+        "badge": badge,
+        "headline": headline,
+        "detail": detail,
+    }
+
+
 def build_calendar_banner_summary(
     macro_calendar: List[Dict[str, Any]],
     macro_flashes: List[Dict[str, Any]],
+    target_date: Optional[Any] = None,
 ) -> Dict[str, Any]:
-    """为网页顶部 #macroCalendarBanner 生成统一的展示摘要结构。"""
+    """为网页顶部 #macroCalendarBanner 生成统一的展示摘要结构（含 OPEX / 四巫日防踩踏护盾）。"""
+    opex = compute_opex_shield_info(target_date)
+    apply_opex = bool(target_date is not None and opex.get("active"))
+
     countdowns = [ev for ev in (macro_calendar or []) if ev.get("status") == "countdown_15m"]
     if countdowns:
         ev = countdowns[0]
         mins = max(1, int(ev.get("minutes_left") or 15))
         name = ev.get("name", "美国重磅数据")
+        det = f"公布时间 {ev.get('pub_time_et', '--')} / {ev.get('pub_time_kst', '--')} ｜ 前值 {ev.get('previous', '待公布')} · 预期 {ev.get('forecast', '待公布')}"
+        if apply_opex:
+            det = f"{det} ｜ {opex['headline']}"
         return {
             "level": "countdown_15m",
             "headline": f"⚠️ 宏观防插针预警：距离【{name}】公布还有 {mins} 分钟，盘口极易上下剧烈插针，暂停左侧盲目挂单！",
-            "detail": f"公布时间 {ev.get('pub_time_et', '--')} / {ev.get('pub_time_kst', '--')} ｜ 前值 {ev.get('previous', '待公布')} · 预期 {ev.get('forecast', '待公布')}",
+            "detail": det,
             "event_name": name,
             "minutes_left": mins,
+            "opex_shield": opex,
         }
 
     if macro_calendar:
@@ -1000,22 +1088,43 @@ def build_calendar_banner_summary(
         t_pair = f"{ev.get('pub_time_et', '--')} / {ev.get('pub_time_kst', '--')}"
         if ev.get("status") == "released":
             extra = f"（今日另有 {len(upcoming)} 项待公布）" if upcoming else ""
+            det = f"{ev.get('impact_note', '')} · {t_pair}{extra}"
+            if apply_opex:
+                det = f"{det} ｜ {opex['headline']}"
             return {
                 "level": "released",
                 "headline": f"📊 今日重磅公布【{name}】· 公布值 {ev.get('actual', '--')}（前值 {ev.get('previous', '--')} / 预期 {ev.get('forecast', '--')}）",
-                "detail": f"{ev.get('impact_note', '')} · {t_pair}{extra}",
+                "detail": det,
                 "event_name": name,
                 "minutes_left": 0,
+                "opex_shield": opex,
             }
+        det = f"前值 {ev.get('previous', '待公布')} ｜ 预期 {ev.get('forecast', '待公布')} ｜ 临近公布前15分钟将自动触发防插针预警"
+        if apply_opex:
+            det = f"{det} ｜ {opex['headline']}"
         return {
             "level": "upcoming",
             "headline": f"📅 今日美股重磅预告【{name}】· 距公布约 {ev.get('minutes_left', '--')} 分钟（{t_pair}）",
-            "detail": f"前值 {ev.get('previous', '待公布')} ｜ 预期 {ev.get('forecast', '待公布')} ｜ 临近公布前15分钟将自动触发防插针预警",
+            "detail": det,
             "event_name": name,
             "minutes_left": int(ev.get("minutes_left") or 0),
+            "opex_shield": opex,
         }
 
     latest_flash = (macro_flashes or [None])[0]
+    if apply_opex:
+        det = opex["detail"]
+        if isinstance(latest_flash, dict) and latest_flash.get("summary"):
+            det = f"{det} ｜ ⚡ 快讯 ({latest_flash.get('time_display', '--')})：{latest_flash['summary'][:68]}"
+        return {
+            "level": "opex_shield",
+            "headline": opex["headline"],
+            "detail": det,
+            "event_name": opex["kind"],
+            "minutes_left": 0,
+            "opex_shield": opex,
+        }
+
     if isinstance(latest_flash, dict) and latest_flash.get("summary"):
         kw_str = " ".join(f"[{k}]" for k in latest_flash.get("keywords", [])[:3])
         return {
@@ -1024,6 +1133,7 @@ def build_calendar_banner_summary(
             "detail": f"⚡ 最新核心快讯 ({latest_flash.get('time_display', '--')}) {kw_str}：{latest_flash['summary'][:95]}",
             "event_name": "",
             "minutes_left": 0,
+            "opex_shield": opex,
         }
 
     return {
@@ -1032,6 +1142,7 @@ def build_calendar_banner_summary(
         "detail": "已接入美联储 / CPI / PPI / PCE / 非农 / 关税与半导体要闻 7×24 实时监控（异常静默降级）",
         "event_name": "",
         "minutes_left": 0,
+        "opex_shield": opex,
     }
 
 
@@ -1338,6 +1449,8 @@ def build_latest_market_news_cache(
         ticker_news, ticker_news_ts = prev_tnews, prev_tts
 
     t_et, _, t_kst, _ = _format_dual_tz(cur_ts)
+    target_d_et = datetime.fromtimestamp(cur_ts, tz=_get_tz("America/New_York", -5)).date()
+    opex_shield = compute_opex_shield_info(target_d_et)
     payload = {
         "updated_at_ts": round(cur_ts, 3),
         "updated_at_et": t_et,
@@ -1346,7 +1459,8 @@ def build_latest_market_news_cache(
         "macro_flashes": macro_flashes,
         "ticker_news": ticker_news,
         "ticker_news_ts": ticker_news_ts,
-        "calendar_banner": build_calendar_banner_summary(macro_calendar, macro_flashes),
+        "opex_shield": opex_shield,
+        "calendar_banner": build_calendar_banner_summary(macro_calendar, macro_flashes, target_date=target_d_et),
     }
 
     if cache_path:
@@ -1366,17 +1480,20 @@ def build_latest_market_news_cache(
 def render_macro_calendar_banner_html(
     market_news: Optional[Dict[str, Any]] = None,
     variant: str = "terminal",
+    target_date: Optional[Any] = None,
 ) -> str:
-    """统一渲染网页顶部 #macroCalendarBanner 横幅（支持 terminal 与 predict 两种页面皮肤）。"""
+    """统一渲染网页顶部 #macroCalendarBanner 横幅（支持 terminal 与 predict 两种页面皮肤及 OPEX 护盾）。"""
     data = market_news if isinstance(market_news, dict) else load_latest_market_news_cache()
     banner = data.get("calendar_banner")
-    if not isinstance(banner, dict) or not banner.get("headline"):
+    if target_date is not None or not isinstance(banner, dict) or not banner.get("headline"):
         banner = build_calendar_banner_summary(
             data.get("macro_calendar") or [],
             data.get("macro_flashes") or [],
+            target_date=target_date,
         )
 
     level = str(banner.get("level") or "idle")
+    opex_info = banner.get("opex_shield") if isinstance(banner.get("opex_shield"), dict) else {}
     headline = html_lib.escape(str(banner.get("headline") or ""))
     detail = html_lib.escape(str(banner.get("detail") or ""))
 
@@ -1387,6 +1504,13 @@ def render_macro_calendar_banner_html(
         det_col = "#fecaca"
         badge_bg = "rgba(239, 68, 68, 0.35)"
         badge_txt = "防插针警戒"
+    elif level == "opex_shield":
+        bg = "linear-gradient(90deg, rgba(245, 158, 11, 0.28), rgba(234, 88, 12, 0.22))"
+        border_col = "rgba(251, 191, 36, 0.78)"
+        head_col = "#fde68a"
+        det_col = "#fef3c7"
+        badge_bg = "rgba(245, 158, 11, 0.32)"
+        badge_txt = html_lib.escape(str(opex_info.get("badge") or "OPEX 护盾"))
     elif level == "released":
         bg = "linear-gradient(90deg, rgba(37, 99, 235, 0.20), rgba(15, 23, 42, 0.85))"
         border_col = "rgba(96, 165, 250, 0.45)"
@@ -1437,12 +1561,24 @@ def render_macro_calendar_banner_html(
             'cursor: pointer; font-weight: 700; white-space: nowrap;">⚡ 实时快讯</button>'
         )
 
+    extra_opex_badge = ""
+    if level != "opex_shield" and isinstance(opex_info, dict) and opex_info.get("active"):
+        opx_hl = str(opex_info.get("headline") or "")
+        if opx_hl and opx_hl in str(banner.get("detail") or ""):
+            opx_b = html_lib.escape(str(opex_info.get("badge") or "OPEX 护盾"))
+            extra_opex_badge = (
+                f'<span id="macroOpexBadge" style="font-size: 10.5px; font-weight: 800; color: #fde68a; '
+                f'background: rgba(245, 158, 11, 0.28); border: 1px solid rgba(251, 191, 36, 0.55); '
+                f'padding: 1px 7px; border-radius: 4px; white-space: nowrap;">⚠️ {opx_b}</span>'
+            )
+
     return (
         f'<!-- MACRO_CALENDAR_BANNER_START -->\n'
         f'<div id="macroCalendarBanner" data-level="{html_lib.escape(level)}" style="{box_style}">'
         f'<div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap; min-width: 0; flex: 1;">'
         f'<span style="font-size: 10.5px; font-weight: 800; color: {head_col}; background: {badge_bg}; '
         f'padding: 1px 7px; border-radius: 4px; white-space: nowrap;">{badge_txt}</span>'
+        f'{extra_opex_badge}'
         f'<span id="macroCalHeadline" style="font-weight: 700; color: {head_col};">{headline}</span>'
         f'<span id="macroCalDetail" style="font-size: 11.5px; color: {det_col};">{detail}</span>'
         f'</div>'

@@ -185,7 +185,8 @@ def verify_desktop(browser):
     page.evaluate("selectTicker('SNDK');")
     page.wait_for_timeout(150)
     assert page.locator("#pAiShrinkBadge").is_visible()
-    assert "445日" in page.locator("#pAiShrinkBadge").inner_text()
+    shrink_txt = page.locator("#pAiShrinkBadge").inner_text()
+    assert re.search(r"次新短样本\(\d+日", shrink_txt), f"Unexpected SNDK shrink badge: {shrink_txt!r}"
 
     page.evaluate("selectTicker('ANT');")
     page.wait_for_timeout(150)

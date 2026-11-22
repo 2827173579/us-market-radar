@@ -12,6 +12,7 @@ Integrated Market Radar & Futu Pro Terminal - 37 标的全量量化终端与司�
 """
 
 import sys
+import socket
 import subprocess
 WIN_NO_WINDOW = 0x08000000 if sys.platform == "win32" else 0
 import os
@@ -20,6 +21,10 @@ NO_BROWSER = ("--no-browser" in sys.argv) or ANDROID_MODE
 import time
 import random
 from datetime import datetime, timezone, timedelta
+try:
+    from zoneinfo import ZoneInfo
+except ImportError:
+    ZoneInfo = None
 import urllib.request
 import urllib.error
 from urllib.parse import urlparse, parse_qs
@@ -2422,7 +2427,6 @@ def send_discord_defensive_flight_alert(df_alert, live_lookup=None, update_time_
 > ⚔️ **进攻科技成长** (平均 `{off_mean:+.2f}%`)：
 > {off_str}
 
----
 {advice}"""
 
     embed = {
@@ -2575,7 +2579,6 @@ def send_discord_vxn_deleveraging_alert(vix_regime, def_flight=None, update_time
         f"> ⚡ **科技恐慌溢价 (VXN - VIX)**：**`{spread_val:+.2f}`** (阈值 `≥ +5.5`)\n"
         f"> 🌊 **^VVIX (波动率之波动)**：**`{vvix_str}`** ｜ **期限比 VIX/VIX3M**：`{ratio_str}`\n"
         f"> 🛡️ **当前防御因子背离度 (Flight Score)**：**`{flight_str}`**\n\n"
-        f"---\n"
         f"⚠️ **风控提示**：纳指/半导体成长板块恐慌度显著高于大盘，机构资金正在科技端集中去杠杆撤离！"
         f"高波 AI/芯片多头严禁重仓扛单或盲目左侧抄底，谨防流动性踩踏。"
     )
@@ -2621,22 +2624,26 @@ def dispatch_vix_regime_discord_alerts(
     claw_webhook_url=None,
     def_webhook_url=None,
     dedupe_day=None,
+    session_code=None,
 ):
     """
     统一调度 VIX/VXN 恐慌中枢跨频道预警：
     - 频道一 (Claw)：VIX 期限倒挂硬刹车 / 恐慌出清右侧抄底观察窗（同日同状态最多 1 次）；
+      其中策略 A 绿灯 (WASHOUT_BOTTOM_WINDOW) 仅允许在美东常规盘中 (REGULAR) 推送与落盘去重锁；
     - 频道二 (防御因子背离)：^VXN >= 32 且 VXN - VIX >= 5.5 科技去杠杆预警（同日最多 1 次）。
     """
     summary = {
         "vix_brake_sent": False,
         "vix_bottom_sent": False,
         "vxn_deleveraging_sent": False,
+        "skipped_premarket_bottom": False,
         "sent_keys": [],
         "skipped_keys": [],
     }
     if not isinstance(vix_regime, dict) or vix_regime.get("vix_state") == "UNAVAILABLE" or vix_regime.get("vix_spot") is None:
         return summary
 
+    eff_session = str(session_code or vix_regime.get("session_code") or "REGULAR").strip().upper() or "REGULAR"
     day_et = dedupe_day or (shared_alert_state.et_day() if _SHARED_ALERTS else now_et_str("%Y-%m-%d"))
     now_t = now_str or now_et_str("%Y-%m-%d %H:%M:%S")
     vix_state = str(vix_regime.get("vix_state") or "").upper()
@@ -2690,34 +2697,46 @@ def dispatch_vix_regime_discord_alerts(
                 summary["vix_brake_sent"] = True
                 summary["sent_keys"].append(brake_key)
 
-    # 1B. 频道一：🟢 恐慌出清 · 右侧抄底观察窗开启
-    elif bool(vix_regime.get("vix_bottom_signal", False)):
-        bottom_key = f"{day_et}:VIX_REGIME:WASHOUT_BOTTOM_WINDOW"
-        if _SHARED_ALERTS and shared_alert_state.is_sent(bottom_key, max_age=None):
-            summary["skipped_keys"].append(bottom_key)
+    # 1B. 频道一：🟢 恐慌出清 · 右侧抄底观察窗开启 (严格锁定美东常规盘中 REGULAR，盘前/夜盘只预览不推 Discord、不落锁)
+    elif (
+        bool(vix_regime.get("vix_bottom_signal", False))
+        or bool(vix_regime.get("vix_bottom_premarket_preview", False))
+        or bool(vix_regime.get("raw_bottom_signal", False))
+    ):
+        if (
+            eff_session != "REGULAR"
+            or bool(vix_regime.get("vix_bottom_premarket_preview", False))
+            or not bool(vix_regime.get("vix_bottom_signal", False))
+        ):
+            summary["skipped_premarket_bottom"] = True
+            print(f"  [*] [盘前防误触发锁] 当前处于 {eff_session}（^VIX3M 冻结），跳过策略 A Discord 绿灯推送且不写当日去重锁")
         else:
-            peak_s = _fmt_opt_num(vix_regime.get("vix_10d_peak"))
-            dd_s = _fmt_opt_num(vix_regime.get("vix_drawdown_from_peak_pct"))
-            drop_s = _fmt_opt_num(vix_regime.get("vix_term_ratio_drop"))
-            title = "🟢 恐慌出清 · 右侧抄底观察窗开启"
-            md_lines = [
-                f"### 🟢 **VIX 恐慌状态切换总开关 · 右侧抄底观察窗开启 ({now_t} ET)**",
-                f"> • **`^VIX`**：`{_fmt_opt_num(vix_val)}`（10日峰值 `{peak_s}`，回落 **`-{dd_s}%`**）",
-                f"> • **`VIX/VIX3M` 恢复升水**：`{_fmt_opt_num(ratio_val)}`（回落 `{drop_s}` · {vix_regime.get('term_structure_cn', '升水恢复')}）",
-                f"> • **`^VXN`**：{vxn_desc} ｜ **`^VVIX`**：`{_fmt_opt_num(vvix_val)}` ｜ **`^TNX`**：{tnx_desc}",
-                "",
-                "✅ **门禁切换**：恐慌出清确认，门禁已对站稳日内 VWAP 的优质标的放宽至**右侧观察窗**，拒绝盲目追高、只做企稳确认！",
-            ]
-            if send_discord_claw_alert(
-                title,
-                "\n".join(md_lines),
-                webhook_url=claw_webhook_url,
-                dedupe_key=bottom_key,
-                dedupe_max_age=None,
-                color_override=0x00E676,
-            ):
-                summary["vix_bottom_sent"] = True
-                summary["sent_keys"].append(bottom_key)
+            bottom_key = f"{day_et}:VIX_REGIME:WASHOUT_BOTTOM_WINDOW"
+            if _SHARED_ALERTS and shared_alert_state.is_sent(bottom_key, max_age=None):
+                summary["skipped_keys"].append(bottom_key)
+            else:
+                peak_s = _fmt_opt_num(vix_regime.get("vix_10d_peak"))
+                dd_s = _fmt_opt_num(vix_regime.get("vix_drawdown_from_peak_pct"))
+                drop_s = _fmt_opt_num(vix_regime.get("vix_term_ratio_drop"))
+                title = "🟢 恐慌出清 · 右侧抄底观察窗开启"
+                md_lines = [
+                    f"### 🟢 **VIX 恐慌状态切换总开关 · 右侧抄底观察窗开启 ({now_t} ET)**",
+                    f"> • **`^VIX`**：`{_fmt_opt_num(vix_val)}`（10日峰值 `{peak_s}`，回落 **`-{dd_s}%`**）",
+                    f"> • **`VIX/VIX3M` 恢复升水**：`{_fmt_opt_num(ratio_val)}`（回落 `{drop_s}` · {vix_regime.get('term_structure_cn', '升水恢复')}）",
+                    f"> • **`^VXN`**：{vxn_desc} ｜ **`^VVIX`**：`{_fmt_opt_num(vvix_val)}` ｜ **`^TNX`**：{tnx_desc}",
+                    "",
+                    "✅ **门禁切换**：恐慌出清确认，门禁已对站稳日内 VWAP 的优质标的放宽至**右侧观察窗**，拒绝盲目追高、只做企稳确认！",
+                ]
+                if send_discord_claw_alert(
+                    title,
+                    "\n".join(md_lines),
+                    webhook_url=claw_webhook_url,
+                    dedupe_key=bottom_key,
+                    dedupe_max_age=None,
+                    color_override=0x00E676,
+                ):
+                    summary["vix_bottom_sent"] = True
+                    summary["sent_keys"].append(bottom_key)
 
     # 2. 频道二：🔥 科技/半导体极端去杠杆预警
     df_obj = def_flight if def_flight is not None else ((weather_info or {}).get("defensive_flight") if isinstance(weather_info, dict) else None)
@@ -3382,6 +3401,130 @@ def reconcile_live_quote_with_split_guard(ticker, df_hist, rq=None, allow_networ
     return df_healed, rq_out, meta
 
 
+_EXT_SPLIT_CANDIDATES = (2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 10.0, 12.0, 15.0, 20.0)
+
+
+def _match_split_factor_value(raw_mult, explicit_factor=None):
+    try:
+        mv = float(raw_mult)
+    except Exception:
+        return None
+    if not (math.isfinite(mv) and mv > 1.0):
+        return None
+    if explicit_factor is not None:
+        try:
+            ef = float(explicit_factor)
+            eff = ef if ef >= 1.0 else (1.0 / ef if ef > 0 else 0.0)
+            if eff > 1.0 and abs(mv - eff) / eff <= 0.22:
+                return eff
+        except Exception:
+            pass
+    best = min(_EXT_SPLIT_CANDIDATES, key=lambda r: abs(mv - r) / r)
+    rel_err = abs(mv - best) / best
+    tol = 0.10 if best == 2.0 else 0.18
+    return float(best) if rel_err <= tol else None
+
+
+def _scale_intra_split_fields(intra_info, ref_px, factor, is_forward_split=True):
+    if not isinstance(intra_info, dict) or ref_px <= 0 or factor <= 1.0:
+        return
+    for _k in ("vwap", "rth_low", "rth_high", "rth_close", "rth_open", "pmh", "pml", "low_5m"):
+        try:
+            _v = float(intra_info.get(_k) or 0.0)
+        except Exception:
+            continue
+        if _v <= 0 or not math.isfinite(_v):
+            continue
+        if is_forward_split and (_v / ref_px) >= 1.67:
+            intra_info[_k] = round(_v / factor, 2)
+        elif (not is_forward_split) and (ref_px / _v) >= 1.67:
+            intra_info[_k] = round(_v * factor, 2)
+
+
+def reconcile_extended_quote_with_split_guard(
+    ticker,
+    last_price,
+    ext_price,
+    df_hist=None,
+    split_meta=None,
+    intra_info=None,
+):
+    """
+    盘前/盘后/夜盘拆股断层对齐与异常涨跌幅防护 (如 SNDK 1 拆 8 导致昨收未除权 vs 盘前已除权 -88.33% 假暴跌)：
+    返回 (aligned_last, aligned_ext, ext_change, ext_pct, healed, reason)。
+    """
+    try:
+        lp = float(last_price or 0.0)
+        ep = float(ext_price or 0.0)
+    except Exception:
+        return last_price, ext_price, 0.0, 0.0, False, ""
+
+    if ticker in ("ANT", "BTC-USD", "XAUUSD") or lp <= 0 or ep <= 0 or not (math.isfinite(lp) and math.isfinite(ep)):
+        return lp, ep, 0.0, 0.0, False, ""
+
+    raw_ratio = ep / lp
+    if 0.40 < raw_ratio < 2.50:
+        ext_chg = ep - lp
+        ext_pct = (ext_chg / lp) * 100.0
+        return lp, ep, ext_chg, ext_pct, False, ""
+
+    explicit_sf = None
+    if isinstance(split_meta, dict) and split_meta.get("split_detected"):
+        try:
+            sf_val = float(split_meta.get("split_factor") or 1.0)
+            if sf_val > 0 and sf_val != 1.0:
+                explicit_sf = sf_val
+        except Exception:
+            explicit_sf = None
+
+    # 1. 若本地历史近期已复权 (last_hist_close 与盘前价处于同量纲，而 last 处于旧量纲)，优先用复权收盘价对齐昨收
+    hist_c = None
+    if df_hist is not None and len(df_hist) > 0 and "Close" in df_hist.columns:
+        try:
+            hc_ser = pd.to_numeric(df_hist["Close"], errors="coerce").dropna()
+            if len(hc_ser) >= 2:
+                # 倒数第二根常为未覆盖实时值的昨收
+                cands = [float(hc_ser.iloc[-1]), float(hc_ser.iloc[-2])]
+            elif len(hc_ser) == 1:
+                cands = [float(hc_ser.iloc[-1])]
+            else:
+                cands = []
+            for cand in cands:
+                if cand > 0 and 0.60 <= (ep / cand) <= 1.67 and (lp / cand >= 1.67 or cand / lp >= 1.67):
+                    hist_c = round(cand, 2)
+                    break
+        except Exception:
+            hist_c = None
+
+    if hist_c is not None and hist_c > 0:
+        sf_est = _match_split_factor_value(max(lp / hist_c, hist_c / lp), explicit_factor=explicit_sf)
+        if sf_est and lp > hist_c * 1.67:
+            _scale_intra_split_fields(intra_info, ep, sf_est, is_forward_split=True)
+        adj_chg = round(ep - hist_c, 2)
+        adj_pct = round((adj_chg / hist_c) * 100.0, 2)
+        return hist_c, ep, adj_chg, adj_pct, True, "ext_aligned_to_adjusted_hist"
+
+    # 2. 拆股比例匹配 (例如 320.0 -> 37.34 命中 8x 拆股因子)
+    inv_mult = (lp / ep) if raw_ratio <= 0.40 else (ep / lp)
+    sf = _match_split_factor_value(inv_mult, explicit_factor=explicit_sf)
+    if sf is not None and sf > 1.0:
+        if raw_ratio <= 0.40:
+            adj_last = round(lp / sf, 2)
+            _scale_intra_split_fields(intra_info, ep, sf, is_forward_split=True)
+            adj_chg = round(ep - adj_last, 2)
+            adj_pct = round((adj_chg / adj_last) * 100.0, 2) if adj_last > 0 else 0.0
+            return adj_last, ep, adj_chg, adj_pct, True, f"ext_split_aligned_{sf:g}x"
+        else:
+            # raw_ratio >= 2.50: 常见为 df_hist/last 已除权而盘前数据源仍报未除权旧价，或合股反转
+            adj_ext = round(ep / sf, 2)
+            adj_chg = round(adj_ext - lp, 2)
+            adj_pct = round((adj_chg / lp) * 100.0, 2) if lp > 0 else 0.0
+            return lp, adj_ext, adj_chg, adj_pct, True, f"ext_price_deinflated_{sf:g}x"
+
+    # 3. 无法确认合理拆股因子的极端 >60% / +150% 毛刺跳变 -> 拦截扩展报价防自选榜假暴跌
+    return lp, 0.0, 0.0, 0.0, True, "extreme_ext_cliff_suppressed"
+
+
 def dispatch_wechat_radar_alerts(macro_data, stocks_data, weather_info, now_str):
     """
     智能去重微信预警分发引擎：
@@ -3723,7 +3866,7 @@ def dispatch_wechat_radar_alerts(macro_data, stocks_data, weather_info, now_str)
             if call_put_brief:
                 logic_line += f" ｜ {call_put_brief}"
             md.append(f"> 💡 **触发逻辑**：{logic_line}")
-            md.append("---")
+            md.append("")
         md.append("")
 
     if pit_alerts:
@@ -3742,7 +3885,7 @@ def dispatch_wechat_radar_alerts(macro_data, stocks_data, weather_info, now_str)
             md.append(f"> 1️⃣ **9:30开盘买入上限价 (Limit)**：**`${t_buy_limit:.2f}`** (开盘高于此价放弃不追)")
             md.append(f"> 2️⃣ **隔夜低开作废底线**：**`${t_cancel_line:.2f}`** (开盘跌破此价撤单不买)")
             md.append(f"> 3️⃣ **GTC 铁血结构止损单**：**`${t_stop_loss:.2f}`**")
-            md.append("---")
+            md.append("")
         md.append("")
 
     if stop_alerts:
@@ -3750,7 +3893,7 @@ def dispatch_wechat_radar_alerts(macro_data, stocks_data, weather_info, now_str)
         for a in stop_alerts:
             md.append(f"> 🚨 **{a['ticker']}** ({a['name']}) 现价 **`${a['last']:.2f}`** (偏离度 `{a['bias']:+.1f}%`)")
             md.append(f"> • 跌破斐波那契下沿 **`${a['fib_low']:.2f}`**，进入空头宣泄期，严禁左侧接刀！")
-            md.append("---")
+            md.append("")
         md.append("")
 
     if tp_alerts:
@@ -3758,7 +3901,7 @@ def dispatch_wechat_radar_alerts(macro_data, stocks_data, weather_info, now_str)
         for a in tp_alerts:
             md.append(f"> 💰 **{a['ticker']}** ({a['name']}) 现价 **`${a['last']:.2f}`** (偏离度 `{a['bias']:+.1f}%` · RSI `{a['rsi']:.1f}`)")
             md.append(f"> • 触发原因：`{a['reason']}`，建议分批减半锁定利润！")
-            md.append("---")
+            md.append("")
         md.append("")
 
     send_success = send_pushplus_wechat_alert(msg_title, "\n".join(md))
@@ -5030,11 +5173,59 @@ def sync_live_prices_to_predict_html(macro_data=None, stocks_data=None, session_
 patch_predict_time_cycle_anchor = sync_live_prices_to_predict_html
 
 
-def generate_macro_radar_html(macro_data, weather_info, history_dict, update_time_str="", has_realtime=False):
-    """生成包含 12 只核心 ETF 的宏观大盘司令塔看板"""
+def generate_macro_radar_html(
+    macro_data,
+    weather_info,
+    history_dict,
+    update_time_str="",
+    has_realtime=False,
+    cross_market_liquidity=None,
+):
+    """生成包含 14 只核心 ETF 与跨市场流动性监测的宏观大盘司令塔看板"""
     if not update_time_str:
         update_time_str = now_et_str("%Y-%m-%d %H:%M:%S")
     _vr = (weather_info or {}).get("vix_regime") or {}
+    _liq = cross_market_liquidity if isinstance(cross_market_liquidity, dict) else ((weather_info or {}).get("cross_market_liquidity") or {})
+    if not _liq:
+        try:
+            import vix_regime_engine as _vre_liq
+            _liq = _vre_liq.get_cross_market_liquidity_snapshot(allow_network=False)
+        except Exception:
+            _liq = {}
+
+    def _fmt_liq_num(val, digits=2):
+        try:
+            if val is None or not math.isfinite(float(val)):
+                return "--"
+            return f"{float(val):.{digits}f}"
+        except Exception:
+            return "--"
+
+    def _fmt_liq_5d(pct, bad_when="low"):
+        try:
+            if pct is None or not math.isfinite(float(pct)):
+                return "5日 --", "var(--text-muted)"
+            pv = float(pct)
+            is_bad = (pv <= -1.0) if bad_when == "low" else (pv >= 1.2)
+            col = "var(--color-down)" if is_bad else ("var(--color-up)" if abs(pv) < 0.8 else "var(--warning-gold)")
+            return f"5日 {pv:+.2f}%", col
+        except Exception:
+            return "5日 --", "var(--text-muted)"
+
+    _liq_level = str(_liq.get("stress_level") or "degraded")
+    _liq_badge_cn = str(_liq.get("badge_cn") or "⚪ 跨市场流动性暂缺")
+    _liq_summary_cn = str(_liq.get("summary_cn") or "跨市场指标监测中（异常静默降级）。")
+    _liq_border_col = (
+        "var(--color-down)" if _liq_level == "danger"
+        else ("var(--warning-gold)" if _liq_level == "warn"
+              else ("var(--color-up)" if _liq_level == "calm" else "var(--border-subtle)"))
+    )
+    _liq_hyg_ief_val = _fmt_liq_num(_liq.get("hyg_ief_ratio"), 4)
+    _liq_hyg_5d, _liq_hyg_col = _fmt_liq_5d(_liq.get("hyg_ief_5d_pct"), bad_when="low")
+    _liq_dxy_val = _fmt_liq_num(_liq.get("dxy_spot"), 2)
+    _liq_dxy_5d, _liq_dxy_col = _fmt_liq_5d(_liq.get("dxy_5d_pct"), bad_when="high")
+    _liq_jpy_val = _fmt_liq_num(_liq.get("usdjpy_spot"), 2)
+    _liq_jpy_5d, _liq_jpy_col = _fmt_liq_5d(_liq.get("usdjpy_5d_pct"), bad_when="low")
     try:
         import vix_regime_engine as _vre_m
         vix_css, vix_pill_html, vix_js = _vre_m.render_vix_pill_widget_parts(_vr, popover_align="right")
@@ -5484,6 +5675,65 @@ def generate_macro_radar_html(macro_data, weather_info, history_dict, update_tim
             .weather-card {{ flex-direction: column; align-items: flex-start; gap: 16px; padding: 16px; }}
             .weather-stats {{ width: 100%; display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }}
             .stat-box {{ min-width: 0; }}
+            .liquidity-grid {{ grid-template-columns: 1fr !important; }}
+        }}
+        .liquidity-card {{
+            background: var(--bg-card);
+            border: 1px solid {_liq_border_col};
+            border-radius: 14px;
+            padding: 16px 20px;
+            margin-bottom: 20px;
+            box-shadow: var(--shadow-card);
+        }}
+        .liquidity-head {{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 12px;
+        }}
+        .liquidity-title {{
+            font-size: 15px;
+            font-weight: 800;
+            color: var(--text-main);
+        }}
+        .liquidity-badge {{
+            font-size: 12px;
+            font-weight: 700;
+            padding: 3px 10px;
+            border-radius: 999px;
+            background: var(--bg-elevated);
+            border: 1px solid {_liq_border_col};
+            color: {_liq_border_col if _liq_level != 'degraded' else 'var(--text-muted)'};
+        }}
+        .liquidity-grid {{
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 12px;
+            margin-bottom: 10px;
+        }}
+        .liq-item {{
+            background: var(--bg-elevated);
+            border: 1px solid var(--border-subtle);
+            border-radius: 10px;
+            padding: 11px 14px;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }}
+        .liq-lbl {{ font-size: 11.5px; color: var(--text-muted); font-weight: 600; }}
+        .liq-val-row {{ display: flex; align-items: baseline; justify-content: space-between; gap: 8px; flex-wrap: wrap; }}
+        .liq-val {{ font-size: 18px; font-weight: 800; color: var(--text-main); font-variant-numeric: tabular-nums; }}
+        .liq-chg {{ font-size: 12px; font-weight: 700; font-variant-numeric: tabular-nums; }}
+        .liq-hint {{ font-size: 11px; color: var(--text-muted); }}
+        .liquidity-summary {{
+            font-size: 12.5px;
+            line-height: 1.5;
+            color: var(--text-sub);
+            background: var(--bg-elevated);
+            border-radius: 8px;
+            padding: 8px 12px;
         }}
         {vix_css}
     </style>
@@ -5557,6 +5807,41 @@ def generate_macro_radar_html(macro_data, weather_info, history_dict, update_tim
             </div>
         </div>
     </div>
+
+    <!-- 跨市场流动性压力卡片 (独立宏观监控，不混入 79 只可交易标的池) -->
+    <section id="crossMarketLiquidityCard" class="liquidity-card">
+        <div class="liquidity-head">
+            <div class="liquidity-title">🌐 跨市场流动性压力监控 (信用利差 · 美元 · 日元套息)</div>
+            <span class="liquidity-badge">{_liq_badge_cn}</span>
+        </div>
+        <div class="liquidity-grid">
+            <div class="liq-item">
+                <div class="liq-lbl">高收益债信用利差比值 (HYG / IEF)</div>
+                <div class="liq-val-row">
+                    <span class="liq-val">{_liq_hyg_ief_val}</span>
+                    <span class="liq-chg" style="color: {_liq_hyg_col};">{_liq_hyg_5d}</span>
+                </div>
+                <div class="liq-hint">比值走弱代表信用利差走阔 / 债市开始抽血</div>
+            </div>
+            <div class="liq-item">
+                <div class="liq-lbl">美元指数 (DXY · DX-Y.NYB)</div>
+                <div class="liq-val-row">
+                    <span class="liq-val">{_liq_dxy_val}</span>
+                    <span class="liq-chg" style="color: {_liq_dxy_col};">{_liq_dxy_5d}</span>
+                </div>
+                <div class="liq-hint">美元急升代表全球美元流动性边际收紧</div>
+            </div>
+            <div class="liq-item">
+                <div class="liq-lbl">美元兑日元 (USD/JPY · JPY=X)</div>
+                <div class="liq-val-row">
+                    <span class="liq-val">{_liq_jpy_val}</span>
+                    <span class="liq-chg" style="color: {_liq_jpy_col};">{_liq_jpy_5d}</span>
+                </div>
+                <div class="liq-hint">急跌（日元急升）代表套息交易 Carry Trade 去杠杆风险</div>
+            </div>
+        </div>
+        <div class="liquidity-summary">💡 <b>宏观流动解读：</b>{_liq_summary_cn}</div>
+    </section>
 
     <!-- 综合量化图表 -->
     <div class="chart-section">
@@ -6344,7 +6629,10 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
     vix_regime = {}
     try:
         import vix_regime_engine
-        vix_regime = vix_regime_engine.get_vix_regime_snapshot(force_refresh=("--once" in sys.argv))
+        vix_regime = vix_regime_engine.get_vix_regime_snapshot(
+            force_refresh=("--once" in sys.argv),
+            session_code=session_code,
+        )
         print(
             f"[+] ⚡ 全局真 VIX 中枢: ^VIX={vix_regime.get('vix_spot')} | ^VXN={vix_regime.get('vxn_spot')} | "
             f"VXN-VIX={vix_regime.get('vxn_vix_spread')} | ^VIX3M={vix_regime.get('vix3m_spot')} | "
@@ -6353,6 +6641,20 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
         )
     except Exception as _vre_err:
         print(f"  [!] 全局 VIX 恐慌中枢降级跳过: {_vre_err}")
+
+    # 2.9 宏观跨市场流动性监控 (HYG/IEF · DX-Y.NYB · JPY=X，严格独立于 79 只可交易标的池之外)
+    cross_market_liquidity = {}
+    try:
+        import vix_regime_engine as _vre_liq_c
+        cross_market_liquidity = _vre_liq_c.get_cross_market_liquidity_snapshot(force_refresh=("--once" in sys.argv))
+        print(
+            f"[+] 🌐 跨市场流动性: HYG/IEF={cross_market_liquidity.get('hyg_ief_ratio')} ({cross_market_liquidity.get('hyg_ief_5d_pct')}%) | "
+            f"DXY={cross_market_liquidity.get('dxy_spot')} ({cross_market_liquidity.get('dxy_5d_pct')}%) | "
+            f"USDJPY={cross_market_liquidity.get('usdjpy_spot')} ({cross_market_liquidity.get('usdjpy_5d_pct')}%) | "
+            f"判定={cross_market_liquidity.get('badge_cn')}"
+        )
+    except Exception as _liq_err:
+        print(f"  [!] 跨市场流动性监控降级跳过: {_liq_err}")
     print("")
 
     has_realtime = len(realtime_quotes) > 0 or len(intraday_map) > 0
@@ -6410,6 +6712,8 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
 
             # 提取盘前/盘后独立价格与 5m 日内数据
             intra_info = intraday_map.get(ticker, {})
+            if _etf_split_meta.get("split_detected") and float(_etf_split_meta.get("split_factor") or 1.0) > 1.0:
+                _scale_intra_split_fields(intra_info, last, float(_etf_split_meta["split_factor"]), is_forward_split=True)
             ext_price = 0.0
             ext_change = 0.0
             ext_pct = 0.0
@@ -6417,11 +6721,20 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
             active_price = last
             if session_code in ["PRE_MARKET", "POST_MARKET", "OVERNIGHT", "WEEKEND"] and intra_info.get("ext_price", 0) > 0:
                 ep = intra_info["ext_price"]
-                if last > 0 and abs(ep - last) >= 0.005:
-                    ext_price = ep
-                    ext_change = ep - last
-                    ext_pct = (ext_change / last) * 100
-                    active_price = ep
+                _adj_last, _adj_ep, _ext_chg, _ext_pct_g, _ext_healed, _ext_reason = reconcile_extended_quote_with_split_guard(
+                    ticker, last, ep, df_hist=history_dict[ticker], split_meta=_etf_split_meta, intra_info=intra_info
+                )
+                if _ext_healed:
+                    print(f"[+] 🔧 盘前/盘后拆股对齐 ({ticker}): {_ext_reason}")
+                    if _adj_last > 0 and _adj_last != last:
+                        last = _adj_last
+                        active_price = _adj_last
+                        history_dict[ticker].loc[history_dict[ticker].index[-1], "Close"] = last
+                if _adj_ep > 0 and last > 0 and abs(_adj_ep - last) >= 0.005:
+                    ext_price = _adj_ep
+                    ext_change = _ext_chg
+                    ext_pct = _ext_pct_g
+                    active_price = _adj_ep
                     if session_code == "PRE_MARKET":
                         session_tag = "盘前"
                     elif session_code == "POST_MARKET":
@@ -6591,6 +6904,8 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
             }
 
     weather_info = evaluate_market_weather(macro_data, history_dict=history_dict, vix_regime=vix_regime)
+    if isinstance(weather_info, dict):
+        weather_info["cross_market_liquidity"] = cross_market_liquidity
 
     # 4. 处理全量个股数据并计算碎股、日线信号与 5m 日内建仓信号
     stocks_list = []
@@ -6635,6 +6950,8 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
 
             # 提取盘前/盘后独立价格与 5m 日内指标 (不篡改日线 Close，保证 MA50/RSI/日阳线纯净)
             intra_info = intraday_map.get(ticker, {})
+            if split_meta.get("split_detected") and float(split_meta.get("split_factor") or 1.0) > 1.0:
+                _scale_intra_split_fields(intra_info, last, float(split_meta["split_factor"]), is_forward_split=True)
             ext_price = 0.0
             ext_change = 0.0
             ext_pct = 0.0
@@ -6642,11 +6959,20 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
             active_price = last
             if session_code in ["PRE_MARKET", "POST_MARKET", "OVERNIGHT", "WEEKEND"] and intra_info.get("ext_price", 0) > 0:
                 ep = intra_info["ext_price"]
-                if last > 0 and abs(ep - last) >= 0.005:
-                    ext_price = ep
-                    ext_change = ep - last
-                    ext_pct = (ext_change / last) * 100
-                    active_price = ep
+                _adj_last, _adj_ep, _ext_chg, _ext_pct_g, _ext_healed, _ext_reason = reconcile_extended_quote_with_split_guard(
+                    ticker, last, ep, df_hist=history_dict[ticker], split_meta=split_meta, intra_info=intra_info
+                )
+                if _ext_healed:
+                    print(f"[+] 🔧 盘前/盘后拆股对齐 ({ticker}): {_ext_reason}")
+                    if _adj_last > 0 and _adj_last != last:
+                        last = _adj_last
+                        active_price = _adj_last
+                        history_dict[ticker].loc[history_dict[ticker].index[-1], "Close"] = last
+                if _adj_ep > 0 and last > 0 and abs(_adj_ep - last) >= 0.005:
+                    ext_price = _adj_ep
+                    ext_change = _ext_chg
+                    ext_pct = _ext_pct_g
+                    active_price = _adj_ep
                     if session_code == "PRE_MARKET":
                         session_tag = "盘前"
                     elif session_code == "POST_MARKET":
@@ -6836,11 +7162,17 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
                 ext_change = 0.0
                 ext_pct = 0.0
                 session_tag = ""
-                if session_code in ["PRE_MARKET", "POST_MARKET", "OVERNIGHT", "WEEKEND"] and raw_ep > 0 and abs(raw_ep - last) >= 0.005:
-                    ext_price = raw_ep
-                    ext_change = raw_ep - last
-                    ext_pct = (ext_change / last) * 100.0
-                    session_tag = "盘前" if session_code == "PRE_MARKET" else ("盘后" if session_code == "POST_MARKET" else ("夜盘" if session_code == "OVERNIGHT" else "休市"))
+                if session_code in ["PRE_MARKET", "POST_MARKET", "OVERNIGHT", "WEEKEND"] and raw_ep > 0:
+                    _adj_last, _adj_ep, _ext_chg, _ext_pct_g, _ext_healed, _ = reconcile_extended_quote_with_split_guard(
+                        ticker, last, raw_ep, df_hist=df_short, intra_info=intra_fb
+                    )
+                    if _ext_healed and _adj_last > 0 and _adj_last != last:
+                        last = _adj_last
+                    if _adj_ep > 0 and last > 0 and abs(_adj_ep - last) >= 0.005:
+                        ext_price = _adj_ep
+                        ext_change = _ext_chg
+                        ext_pct = _ext_pct_g
+                        session_tag = "盘前" if session_code == "PRE_MARKET" else ("盘后" if session_code == "POST_MARKET" else ("夜盘" if session_code == "OVERNIGHT" else "休市"))
                 active_price = ext_price if ext_price > 0 else last
                 ma50 = float(df_short["Close"].mean()) if (df_short is not None and not df_short.empty) else last
                 ema20 = ma50
@@ -6916,6 +7248,8 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
     # 使用全量个股 + 宏观 ETF 重新完整核算跨行业市场广度与普跌预警
     stocks_lookup = {s["ticker"]: s for s in stocks_sorted if isinstance(s, dict) and s.get("ticker")}
     weather_info = evaluate_market_weather(macro_data, history_dict=history_dict, stocks_lookup=stocks_lookup, vix_regime=vix_regime)
+    if isinstance(weather_info, dict):
+        weather_info["cross_market_liquidity"] = cross_market_liquidity
 
     # 5. 终端打印规整 Rich 表格
     display_terminal_tables(macro_data, stocks_sorted, weather_info, has_realtime=has_realtime)
@@ -6940,7 +7274,14 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
     except Exception as _mn_err:
         print(f"  [!] 📰 消息面缓存聚合静默降级: {_mn_err}")
 
-    generate_macro_radar_html(macro_data, weather_info, history_dict, update_time_str=now_str, has_realtime=has_realtime)
+    generate_macro_radar_html(
+        macro_data,
+        weather_info,
+        history_dict,
+        update_time_str=now_str,
+        has_realtime=has_realtime,
+        cross_market_liquidity=cross_market_liquidity,
+    )
     generate_stocks_radar_html(stocks_sorted, history_dict, update_time_str=now_str, has_realtime=has_realtime, vix_regime=vix_regime)
     
     target_watchlist = load_target_watchlist()
@@ -7017,6 +7358,7 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
                 weather_info=weather_info,
                 def_flight=df_alert_push,
                 now_str=now_str,
+                session_code=session_code,
             )
         except Exception as _vx_err:
             print(f"  [!] 💬 VIX/VXN 恐慌状态 Discord 推送异常: {_vx_err}")
