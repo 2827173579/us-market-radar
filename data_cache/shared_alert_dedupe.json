@@ -3959,9 +3959,25 @@
     "2026-11-21:ASML:STOP_LOSS": {
       "device": "PC",
       "ts": 1795237355.3248165
+    },
+    "2026-11-22:NBIS/APLD/CRDO/MSTR/COIN/BE/DELL/SKHY/NVDA/MU/AMAT/TSM/ASML/AMD:STOP_LOSS": {
+      "device": "PC",
+      "ts": 1795324197.5966394
+    },
+    "2026-11-22:VIX_REGIME:BACKWARDATION_BRAKE": {
+      "device": "PC",
+      "ts": 1795324206.467165
+    },
+    "JIN10_FLASH:20261122113151321800": {
+      "device": "PC",
+      "ts": 1795324206.969875
+    },
+    "2026-11-22:VXN_TECH_DELEVERAGING": {
+      "device": "PC",
+      "ts": 1795324207.036931
     }
   },
   "device": "PC",
-  "last_heartbeat_ts": 1795237374.2769015,
-  "updated_at": "2026-11-21T05:02:54.277372+00:00"
+  "last_heartbeat_ts": 1795324056.925801,
+  "updated_at": "2026-11-22T05:10:07.037156+00:00"
 }
