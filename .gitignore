@@ -34,3 +34,4 @@ data_cache/.intraday_5m_60d_meta.json
 data_cache/vix_regime_cache.json
 data_cache/macro_liquidity_cache.json
 data_cache/signal_ledger.json
+data_cache/latest_radar_snapshot.json

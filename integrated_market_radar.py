@@ -45,7 +45,7 @@ import yfinance as yf
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 import math
-from typing import Optional, Union, Dict, Tuple
+from typing import Any, Optional, Union, Dict, Tuple
 
 from create_futu_terminal import build_futu_terminal_html
 
@@ -247,6 +247,7 @@ SCRATCH_DIR = os.path.dirname(os.path.abspath(__file__))
 MACRO_HTML_FILE = os.path.join(SCRATCH_DIR, "macro_radar.html")
 STOCKS_HTML_FILE = os.path.join(SCRATCH_DIR, "stocks_radar.html")
 FUTU_HTML_FILE = os.path.join(SCRATCH_DIR, "futu_pro_terminal.html")
+LATEST_RADAR_SNAPSHOT_FILE = os.path.join(SCRATCH_DIR, "data_cache", "latest_radar_snapshot.json")
 ALERT_CACHE_FILE = os.path.join(SCRATCH_DIR, ".radar_alert_history.json")
 TARGET_WATCHLIST_FILE = os.path.join(SCRATCH_DIR, "target_watchlist.json")
 USER_PORTFOLIO_FILE = os.path.join(SCRATCH_DIR, "user_portfolio.json")
@@ -5298,6 +5299,468 @@ def sync_live_prices_to_predict_html(macro_data=None, stocks_data=None, session_
 patch_predict_time_cycle_anchor = sync_live_prices_to_predict_html
 
 
+def _snap_opt_float(val, digits: Optional[int] = 2) -> Optional[float]:
+    if val is None or isinstance(val, bool):
+        return None
+    try:
+        fv = float(val)
+        if not math.isfinite(fv):
+            return None
+        return round(fv, digits) if digits is not None else fv
+    except Exception:
+        return None
+
+
+def _coerce_et_datetime_for_snapshot(now_et=None, now_str: Optional[str] = None) -> datetime:
+    et_tz = ZoneInfo("America/New_York") if ZoneInfo is not None else timezone(timedelta(hours=-5))
+    if isinstance(now_et, datetime):
+        return now_et.replace(tzinfo=et_tz) if now_et.tzinfo is None else now_et.astimezone(et_tz)
+    if now_str:
+        s = str(now_str).strip()
+        for fmt in ("%Y-%m-%d %H:%M:%S", "%Y-%m-%d %H:%M"):
+            try:
+                return datetime.strptime(s[:19], fmt).replace(tzinfo=et_tz)
+            except Exception:
+                continue
+    return datetime.now(et_tz)
+
+
+def _compute_strategy_a_b_statuses(vix_regime: Dict[str, Any], session_code: str, cur_et_dt: datetime) -> Tuple[str, str]:
+    vr = vix_regime if isinstance(vix_regime, dict) else {}
+    vix_spot = _snap_opt_float(vr.get("vix_spot"), 2)
+    vix_pct = _snap_opt_float(vr.get("vix_pct"), 2)
+    ratio = _snap_opt_float(vr.get("vix_term_ratio"), 3)
+    vix_peak = _snap_opt_float(vr.get("vix_10d_peak"), 2) or 0.0
+    ratio_peak = _snap_opt_float(vr.get("vix_term_ratio_10d_peak"), 3) or 0.0
+    vix_state = str(vr.get("vix_state") or "UNAVAILABLE").upper()
+    hard_brake = bool(vr.get("vix_hard_brake", False))
+    bottom_sig = bool(vr.get("vix_bottom_signal", False))
+    bottom_preview = bool(vr.get("vix_bottom_premarket_preview", False))
+
+    if vix_spot is None or vix_state == "UNAVAILABLE":
+        return "⚪ VIX 数据暂缺", "⚪ VIX 数据暂缺"
+
+    if hard_brake:
+        strat_a = "🔴 倒挂硬刹车锁定"
+    elif bottom_sig:
+        strat_a = "🟢 抄底观察窗已激活"
+    elif bottom_preview:
+        strat_a = "🟡 盘前预热 · 待 09:30 确认"
+    else:
+        strat_a = "⚪ 未触发 (待恐慌出清)"
+
+    hm = cur_et_dt.hour * 60 + cur_et_dt.minute
+    in_b_window = (str(session_code).upper() == "REGULAR") and (cur_et_dt.weekday() < 5) and (9 * 60 + 45 <= hm <= 15 * 60)
+    if hard_brake or vix_state == "BACKWARDATION_BRAKE" or (ratio is not None and ratio >= 1.00):
+        strat_b = "🔴 倒挂期绝对禁多"
+    elif not in_b_window:
+        strat_b = "⏳ 时段锁 (仅美东 09:45~15:00 开放)"
+    elif (vix_peak >= 24.0 or ratio_peak >= 1.00) and (vix_pct is not None and vix_pct <= -5.0):
+        strat_b = "🟢 退潮窗口打开 (需站稳VWAP+5m收阳)"
+    else:
+        strat_b = "⚪ 待命 (需10日恐慌背景且当日^VIX≤-5%)"
+    return strat_a, strat_b
+
+
+def build_latest_radar_snapshot(
+    macro_data=None,
+    stocks_data=None,
+    weather_info=None,
+    vix_regime=None,
+    cross_market_liquidity=None,
+    intraday_forecasts=None,
+    ai_predictions=None,
+    session_code: str = "REGULAR",
+    session_name: str = "",
+    now_str: Optional[str] = None,
+    now_et: Optional[datetime] = None,
+    opex_shield: Optional[Dict[str, Any]] = None,
+) -> Dict[str, Any]:
+    """构建供 Discord 交互机器人零 API 压力只读消费的轻量全市场快照。"""
+    sess = str(session_code or "REGULAR").strip().upper() or "REGULAR"
+    sess_name_map = {
+        "REGULAR": "常规盘中",
+        "PRE_MARKET": "盘前交易",
+        "POST_MARKET": "盘后交易",
+        "OVERNIGHT": "美股夜盘",
+        "WEEKEND": "周末休市",
+    }
+    sess_name_clean = str(session_name or "").strip() or sess_name_map.get(sess, sess)
+    cur_et_dt = _coerce_et_datetime_for_snapshot(now_et=now_et, now_str=now_str)
+    updated_at_et = str(now_str or cur_et_dt.strftime("%Y-%m-%d %H:%M:%S"))
+    wi = weather_info if isinstance(weather_info, dict) else {}
+
+    vr_raw = vix_regime if isinstance(vix_regime, dict) and vix_regime else (wi.get("vix_regime") if isinstance(wi.get("vix_regime"), dict) else {})
+    strat_a, strat_b = _compute_strategy_a_b_statuses(vr_raw, sess, cur_et_dt)
+    vr_out = {
+        "as_of_date": vr_raw.get("as_of_date"),
+        "updated_at": vr_raw.get("updated_at"),
+        "vix_spot": _snap_opt_float(vr_raw.get("vix_spot"), 2),
+        "vix_pct": _snap_opt_float(vr_raw.get("vix_pct"), 2),
+        "vxn_spot": _snap_opt_float(vr_raw.get("vxn_spot"), 2),
+        "vxn_pct": _snap_opt_float(vr_raw.get("vxn_pct"), 2),
+        "vxn_vix_spread": _snap_opt_float(vr_raw.get("vxn_vix_spread"), 2),
+        "tech_fear_label": str(vr_raw.get("tech_fear_label") or "⚪ 科技波动平稳"),
+        "vix3m_spot": _snap_opt_float(vr_raw.get("vix3m_spot"), 2),
+        "vix_term_ratio": _snap_opt_float(vr_raw.get("vix_term_ratio"), 3),
+        "term_structure_state": str(vr_raw.get("term_structure_state") or "UNKNOWN"),
+        "term_structure_cn": str(vr_raw.get("term_structure_cn") or "数据暂缺"),
+        "vvix_spot": _snap_opt_float(vr_raw.get("vvix_spot"), 2),
+        "tnx_yield": _snap_opt_float(vr_raw.get("tnx_yield"), 2),
+        "vix_10d_peak": _snap_opt_float(vr_raw.get("vix_10d_peak"), 2),
+        "vix_drawdown_from_peak_pct": _snap_opt_float(vr_raw.get("vix_drawdown_from_peak_pct"), 1),
+        "vix_term_ratio_10d_peak": _snap_opt_float(vr_raw.get("vix_term_ratio_10d_peak"), 3),
+        "vix_state": str(vr_raw.get("vix_state") or "UNAVAILABLE").upper(),
+        "vix_hard_brake": bool(vr_raw.get("vix_hard_brake", False)),
+        "raw_bottom_signal": bool(vr_raw.get("raw_bottom_signal", False)),
+        "vix_bottom_signal": bool(vr_raw.get("vix_bottom_signal", False)),
+        "vix_bottom_premarket_preview": bool(vr_raw.get("vix_bottom_premarket_preview", False)),
+        "pill_text": str(vr_raw.get("pill_text") or "⚪ VIX 暂缺 · 常规门禁"),
+        "summary_cn": str(vr_raw.get("summary_cn") or "波动率监测中"),
+        "advice_cn": str(vr_raw.get("advice_cn") or ""),
+        "degraded": bool(vr_raw.get("degraded", False)),
+        "strategy_a_status": strat_a,
+        "strategy_b_status": strat_b,
+    }
+
+    liq_raw = (
+        cross_market_liquidity
+        if isinstance(cross_market_liquidity, dict) and cross_market_liquidity
+        else (wi.get("cross_market_liquidity") if isinstance(wi.get("cross_market_liquidity"), dict) else {})
+    )
+    liq_out = {
+        "hyg_ief_ratio": _snap_opt_float(liq_raw.get("hyg_ief_ratio"), 4),
+        "hyg_ief_1d_pct": _snap_opt_float(liq_raw.get("hyg_ief_1d_pct"), 2),
+        "hyg_ief_5d_pct": _snap_opt_float(liq_raw.get("hyg_ief_5d_pct"), 2),
+        "dxy_spot": _snap_opt_float(liq_raw.get("dxy_spot"), 2),
+        "dxy_1d_pct": _snap_opt_float(liq_raw.get("dxy_1d_pct"), 2),
+        "dxy_5d_pct": _snap_opt_float(liq_raw.get("dxy_5d_pct"), 2),
+        "usdjpy_spot": _snap_opt_float(liq_raw.get("usdjpy_spot"), 2),
+        "usdjpy_1d_pct": _snap_opt_float(liq_raw.get("usdjpy_1d_pct"), 2),
+        "usdjpy_5d_pct": _snap_opt_float(liq_raw.get("usdjpy_5d_pct"), 2),
+        "stress_level": str(liq_raw.get("stress_level") or "degraded"),
+        "stress_flags": list(liq_raw.get("stress_flags") or []),
+        "badge_cn": str(liq_raw.get("badge_cn") or "⚪ 跨市场流动性暂缺"),
+        "summary_cn": str(liq_raw.get("summary_cn") or ""),
+        "degraded": bool(liq_raw.get("degraded", False)),
+    }
+
+    if isinstance(opex_shield, dict) and opex_shield:
+        opex_out = dict(opex_shield)
+    else:
+        try:
+            import jin10_news_sentinel as _jn_opx
+            opex_out = _jn_opx.compute_opex_shield_info(cur_et_dt.date())
+        except Exception:
+            opex_out = {"active": False, "timing": "NONE", "badge": "", "headline": "", "detail": ""}
+
+    # 加载本地已生成的 AI 预测与盘中预测走廊（纯磁盘读取，0 网络）
+    ai_doc = ai_predictions if isinstance(ai_predictions, dict) else {}
+    if not ai_doc:
+        _ai_path = os.path.join(SCRATCH_DIR, "data_cache", "latest_ai_predictions.json")
+        if os.path.exists(_ai_path):
+            try:
+                with open(_ai_path, "r", encoding="utf-8") as _af:
+                    ai_doc = json.load(_af) or {}
+            except Exception:
+                ai_doc = {}
+    ai_by_tk: Dict[str, Dict[str, Any]] = {}
+    if isinstance(ai_doc.get("by_ticker"), dict):
+        for k, v in ai_doc["by_ticker"].items():
+            if isinstance(v, dict):
+                ai_by_tk[str(k).upper()] = v
+    if isinstance(ai_doc.get("all_predictions"), list):
+        for row in ai_doc["all_predictions"]:
+            if isinstance(row, dict) and row.get("ticker"):
+                tk_u = str(row["ticker"]).upper()
+                merged = dict(row)
+                merged.update(ai_by_tk.get(tk_u, {}))
+                ai_by_tk[tk_u] = merged
+
+    ip_doc = intraday_forecasts if isinstance(intraday_forecasts, dict) else {}
+    if not ip_doc:
+        _ip_path = os.path.join(SCRATCH_DIR, "data_cache", "intraday_path_forecasts.json")
+        if os.path.exists(_ip_path):
+            try:
+                with open(_ip_path, "r", encoding="utf-8") as _ipf:
+                    ip_doc = json.load(_ipf) or {}
+            except Exception:
+                ip_doc = {}
+    ip_by_tk = ip_doc.get("by_ticker") if isinstance(ip_doc.get("by_ticker"), dict) else {}
+
+    # 统一收集全部已刷新的 ETF + 个股（确保不混入未监控指数）
+    raw_items: Dict[str, Tuple[Dict[str, Any], bool]] = {}
+    if isinstance(macro_data, dict):
+        for tk_m, m_val in macro_data.items():
+            if isinstance(m_val, dict):
+                tk_u = str(tk_m).upper()
+                raw_items[tk_u] = ({"ticker": tk_u, **m_val}, True)
+    if isinstance(stocks_data, (list, tuple)):
+        for s_val in stocks_data:
+            if isinstance(s_val, dict) and s_val.get("ticker"):
+                tk_u = str(s_val["ticker"]).upper()
+                if tk_u not in raw_items:
+                    raw_items[tk_u] = (dict(s_val), False)
+    elif isinstance(stocks_data, dict):
+        for tk_s, s_val in stocks_data.items():
+            if isinstance(s_val, dict):
+                tk_u = str(tk_s).upper()
+                if tk_u not in raw_items:
+                    raw_items[tk_u] = ({"ticker": tk_u, **s_val}, False)
+
+    # Top 5 抗跌领涨真龙头榜
+    try:
+        from create_futu_terminal import compute_resilient_leaders_top5
+        top5_raw = compute_resilient_leaders_top5(
+            [v for v, is_etf in raw_items.values() if not is_etf],
+            macro_data={k: v for k, (v, is_etf) in raw_items.items() if is_etf},
+            session_code=sess,
+            top_n=5,
+        )
+    except Exception:
+        top5_raw = []
+
+    top5_out = []
+    for idx_ld, ld in enumerate(top5_raw or [], 1):
+        tk_ld = str(ld.get("ticker") or "").upper()
+        src_ld = raw_items.get(tk_ld, ({}, False))[0]
+        px_ld = _snap_opt_float(src_ld.get("active_price") or src_ld.get("last"), 2)
+        top5_out.append({
+            "rank": idx_ld,
+            "ticker": tk_ld,
+            "name": str(ld.get("name") or src_ld.get("name") or tk_ld),
+            "cat": str(src_ld.get("cat") or ""),
+            "price": px_ld,
+            "pct": _snap_opt_float(ld.get("pct"), 2),
+            "excess_vs_spy": _snap_opt_float(ld.get("excess_vs_spy"), 2),
+            "rs_20d": _snap_opt_float(ld.get("rs_20d"), 2),
+            "above_vwap": bool(ld.get("above_vwap", False)),
+            "vwap_tag": str(ld.get("vwap_tag") or ""),
+        })
+
+    corridor_label_map = {
+        "ABOVE_P75": "突破上沿",
+        "BELOW_P25": "跌破下沿",
+        "IN_CORRIDOR": "贴合剧本",
+    }
+
+    tickers_out: Dict[str, Dict[str, Any]] = {}
+    for tk_u, (src, is_etf_flag) in raw_items.items():
+        ai_item = ai_by_tk.get(tk_u, {})
+        meta_fallback = (MONITORED_TARGETS.get("ETFS", {}).get(tk_u) or MONITORED_TARGETS.get("STOCKS", {}).get(tk_u) or {})
+        name = str(src.get("name") or meta_fallback.get("name") or tk_u)
+        sub = str(src.get("sub") or meta_fallback.get("sub") or "")
+        cat = str(src.get("cat") or meta_fallback.get("cat") or "")
+
+        last_px = _snap_opt_float(src.get("last"), 2)
+        ext_px = _snap_opt_float(src.get("ext_price"), 2)
+        active_px = _snap_opt_float(src.get("active_price") or (ext_px if (ext_px and ext_px > 0) else last_px) or last_px, 2)
+        pct_chg = _snap_opt_float(src.get("pct_change"), 2)
+        ext_pct = _snap_opt_float(src.get("ext_pct"), 2)
+        eff_pct = _snap_opt_float(
+            src.get("effective_pct")
+            if src.get("effective_pct") is not None
+            else (ext_pct if (ext_px and ext_px > 0 and ext_pct is not None) else pct_chg),
+            2,
+        )
+        sess_tag = str(src.get("session_tag") or ("盘中" if sess == "REGULAR" else sess_name_clean[:2]))
+
+        vwap_val = _snap_opt_float(src.get("vwap"), 2)
+        if vwap_val is None or vwap_val <= 0:
+            vwap_val = last_px
+        vwap_stale = (sess != "REGULAR")
+        vwap_diff = (
+            _snap_opt_float(((active_px - vwap_val) / vwap_val) * 100.0, 2)
+            if (active_px and vwap_val and vwap_val > 0)
+            else None
+        )
+
+        long_wr = _snap_opt_float(ai_item.get("calibrated_win_rate_pct"), 1)
+        long_raw = _snap_opt_float(ai_item.get("model_raw_prob_pct") if ai_item.get("model_raw_prob_pct") is not None else ai_item.get("predicted_win_rate_pct"), 1)
+        short_wr = _snap_opt_float(ai_item.get("calibrated_short_win_rate_pct"), 1)
+        short_raw = _snap_opt_float(
+            ai_item.get("model_raw_short_prob_pct")
+            if ai_item.get("model_raw_short_prob_pct") is not None
+            else ai_item.get("short_model_raw_prob_pct"),
+            1,
+        )
+        ai_act = str(ai_item.get("action") or "")
+        ai_short_act = str(ai_item.get("short_action") or "")
+        if bool(ai_item.get("is_short_covering")) and ai_act:
+            ai_act_disp = ai_act
+        elif ai_short_act and (((short_wr or 0.0) > (long_wr or 0.0)) or ("🩸" in ai_short_act and not ai_act)):
+            ai_act_disp = ai_short_act
+        else:
+            ai_act_disp = ai_act or ai_short_act
+
+        sig_str = str(src.get("signal") or "")
+        is_inv = bool(src.get("is_inverse_hedge") or tk_u in ("SQQQ", "SOXS", "VIXY"))
+        is_ipo = bool(src.get("is_ipo_pending") or (float(src.get("ipo_price") or 0) > 0 and "IPO" in sig_str))
+        is_crash = bool(src.get("is_crash_halt"))
+        is_cooling = bool(src.get("is_cooling_halt"))
+        is_broken_bear = bool(src.get("broken_bearish") or src.get("is_broken_bearish"))
+        is_broken_reb = bool(src.get("broken_rebound_ready") or src.get("is_broken_rebound"))
+        is_stop = bool(src.get("is_stop"))
+        is_pit = bool(src.get("is_pit"))
+        is_pit_watch = ("坑内观察" in sig_str)
+        is_tp = bool(src.get("is_take_profit"))
+        is_deep_pb = bool(src.get("is_deep_pullback"))
+        is_bull = bool(src.get("is_momentum") or ("多头" in sig_str and not is_tp and not is_stop and not is_crash and not is_cooling))
+
+        bear_kw = any(k in ai_act_disp for k in ("建议买入反向ETF对冲", "空头占优", "强力做空", "逢高做空"))
+        is_bear_card = bool((not is_inv) and (not is_ipo) and (is_broken_bear or is_crash or is_cooling or is_stop or bear_kw))
+
+        if is_ipo:
+            stance, verdict, verdict_sub = "NEUTRAL", "🆕 IPO 新股观察期 · 先看少动", "上市不足 5 日，观察换手与 VWAP 承接。"
+        elif is_crash:
+            stance, verdict, verdict_sub = "BEAR", "🔴 暴跌风险期 · 严禁抄底接刀", "短线剧烈跳空或大跌，模型冻结买点等待日线企稳。"
+        elif is_cooling:
+            stance, verdict, verdict_sub = "BEAR", "🔴 大跌冷却期 · 暂缓买入", "近 3 日经历剧烈下跌，等待日线右侧企稳确认。"
+        elif is_broken_bear:
+            stance, verdict, verdict_sub = "BEAR", "🔴 空头占优 · 严禁左侧接刀", "股价压制于日内均价线与支撑带下方，未站稳前别急着抄底。"
+        elif is_stop:
+            stance, verdict, verdict_sub = "BEAR", "🔴 跌破支撑线 · 防守为主", "关键支撑位破位，严格风控不盲目补仓。"
+        elif is_pit_watch:
+            stance, verdict, verdict_sub = "NEUTRAL", "🟡 接近低吸区但板块偏弱 · 先观望", "行业 ETF 偏弱，暂不抢跑左侧接刀。"
+        elif is_pit:
+            stance, verdict, verdict_sub = "BULL", "🟢 低吸窗口打开 · 可按参考挂单", "回踩支撑区间且呈现止跌迹象，同步设好止损位。"
+        elif is_broken_reb:
+            stance, verdict, verdict_sub = "NEUTRAL", "🟡 破位后短线反抽 · 快进快出", "中期趋势仍弱，仅限小仓位盯紧短止损与压力 R1。"
+        elif is_tp:
+            stance, verdict, verdict_sub = "NEUTRAL", "🟣 高位震荡 / 跌破短均 · 注意分批止盈", "短期积累较大涨幅或跌破短均保护，建议落袋保护利润。"
+        elif is_deep_pb:
+            stance, verdict, verdict_sub = "NEUTRAL", "⚪ 深度回调 · 等待站稳均价线", "处于回调消化期，等待日内放量站稳 VWAP 再考虑低吸。"
+        elif is_inv:
+            stance, verdict, verdict_sub = "NEUTRAL", "🛡️ 反向避险工具 · 仅限短线对冲", "具备杠杆/展期损耗，仅适合大盘下跌时短线防守对冲。"
+        elif is_bull:
+            stance, verdict, verdict_sub = "BULL", "🟢 趋势偏强 · 顺势持有", "运行在中期均线上方，顺势持有为主，回踩不破再低吸。"
+        else:
+            stance, verdict, verdict_sub = "NEUTRAL", "⚪ 震荡整理 · 等待高胜率买点", "多空暂时胶着，控制仓位耐心等待明确买点。"
+
+        if is_bear_card and stance != "BEAR":
+            stance = "BEAR"
+            if bear_kw:
+                verdict = "🔴 空头占优 · 严禁左侧接刀"
+                verdict_sub = str(ai_act_disp)
+
+        r1_val = _snap_opt_float(ai_item.get("r1") or src.get("broken_r1") or ai_item.get("target_profit_price"), 2)
+        s1_val = _snap_opt_float(ai_item.get("s1") or src.get("broken_s1") or ai_item.get("short_target_profit_price") or src.get("entry_stop_loss"), 2)
+
+        ip_entry = ip_by_tk.get(tk_u) if isinstance(ip_by_tk.get(tk_u), dict) else {}
+        div_obj = ip_entry.get("divergence") if isinstance(ip_entry.get("divergence"), dict) else {}
+        div_status = str(div_obj.get("status") or "UNAVAILABLE").upper()
+        if str(ip_entry.get("status") or "").lower() != "ok" and not div_obj:
+            div_status = "UNAVAILABLE"
+        slot_p25 = _snap_opt_float(div_obj.get("slot_p25"), 2)
+        slot_p50 = _snap_opt_float(div_obj.get("slot_p50"), 2)
+        slot_p75 = _snap_opt_float(div_obj.get("slot_p75"), 2)
+        if slot_p50 is None and isinstance(ip_entry.get("p50_prices"), list) and ip_entry["p50_prices"]:
+            idx_last = min(len(ip_entry["p50_prices"]) - 1, int(ip_entry.get("latest_slot") or (len(ip_entry["p50_prices"]) - 1)))
+            slot_p25 = _snap_opt_float((ip_entry.get("p25_prices") or [None])[min(idx_last, len(ip_entry.get("p25_prices") or []) - 1)], 2)
+            slot_p50 = _snap_opt_float(ip_entry["p50_prices"][idx_last], 2)
+            slot_p75 = _snap_opt_float((ip_entry.get("p75_prices") or [None])[min(idx_last, len(ip_entry.get("p75_prices") or []) - 1)], 2)
+
+        corridor_out = {
+            "status": div_status,
+            "status_cn": corridor_label_map.get(div_status, "暂无走廊"),
+            "badge": str(div_obj.get("badge") or ip_entry.get("status_message") or ""),
+            "pmh": _snap_opt_float(ip_entry.get("pmh"), 2),
+            "pml": _snap_opt_float(ip_entry.get("pml"), 2),
+            "p25": slot_p25,
+            "p50": slot_p50,
+            "p75": slot_p75,
+            "pct_vs_p50": _snap_opt_float(div_obj.get("pct_vs_p50"), 2),
+            "latest_time": str(div_obj.get("latest_time") or ""),
+        }
+
+        tickers_out[tk_u] = {
+            "ticker": tk_u,
+            "name": name,
+            "sub": sub,
+            "cat": cat,
+            "is_etf": bool(is_etf_flag),
+            "price": active_px,
+            "last": last_px,
+            "pct_change": pct_chg,
+            "ext_price": ext_px if (ext_px and ext_px > 0) else None,
+            "ext_pct": ext_pct if (ext_px and ext_px > 0) else None,
+            "effective_pct": eff_pct,
+            "session_tag": sess_tag,
+            "vwap": vwap_val,
+            "vwap_rth": vwap_val if not vwap_stale else None,
+            "vwap_prev": vwap_val if vwap_stale else None,
+            "vwap_stale": vwap_stale,
+            "vwap_label": "上日参考 · 09:30重置" if vwap_stale else "当日日内",
+            "vwap_diff_pct": vwap_diff,
+            "has_5m_intraday": bool(src.get("has_5m_intraday", src.get("rsi_5m") is not None)),
+            "rsi_14": _snap_opt_float(src.get("rsi"), 1),
+            "rsi_5m": _snap_opt_float(src.get("rsi_5m"), 1),
+            "rvol_5m": _snap_opt_float(src.get("rvol_5m"), 2),
+            "rs_20d": _snap_opt_float(src.get("rs_20d"), 2),
+            "bias_ma50": _snap_opt_float(src.get("bias"), 2),
+            "ai_long_win_rate_pct": long_wr,
+            "ai_long_raw_pct": long_raw,
+            "ai_short_win_rate_pct": short_wr,
+            "ai_short_raw_pct": short_raw,
+            "ai_action": ai_act_disp,
+            "is_inverse_hedge": is_inv,
+            "is_ipo": is_ipo,
+            "is_bear_defense_card": is_bear_card,
+            "decision_stance": stance,
+            "decision_verdict": verdict,
+            "decision_sub": verdict_sub,
+            "optimal_limit": _snap_opt_float(src.get("optimal_limit"), 2),
+            "entry_stop_loss": _snap_opt_float(src.get("entry_stop_loss"), 2),
+            "target_profit_price": _snap_opt_float(ai_item.get("target_profit_price"), 2),
+            "r1": r1_val,
+            "s1": s1_val,
+            "fib_low": _snap_opt_float(src.get("fib_low"), 2),
+            "fib_high": _snap_opt_float(src.get("fib_high"), 2),
+            "corridor": corridor_out,
+        }
+
+    return {
+        "schema_version": "v4.3-bot-snapshot",
+        "updated_at_et": updated_at_et,
+        "updated_at_utc": datetime.now(timezone.utc).isoformat(),
+        "session_code": sess,
+        "session_name": sess_name_clean,
+        "market_regime": str(wi.get("market_regime") or ai_doc.get("market_regime") or "NEUTRAL_CHOP"),
+        "market_regime_cn": str(wi.get("market_regime_cn") or ai_doc.get("market_regime_cn") or ""),
+        "weather": str(wi.get("weather") or "阴天防守"),
+        "weather_desc": str(wi.get("desc") or ""),
+        "breadth_ma20_pct": _snap_opt_float(wi.get("breadth_ma20_pct") if wi.get("breadth_ma20_pct") is not None else ai_doc.get("breadth_ma20_pct"), 1),
+        "vix_regime": vr_out,
+        "cross_market_liquidity": liq_out,
+        "opex_shield": opex_out,
+        "resilient_leaders_top5": top5_out,
+        "ticker_count": len(tickers_out),
+        "tickers": tickers_out,
+    }
+
+
+def write_latest_radar_snapshot(snapshot: Dict[str, Any], snapshot_path: Optional[str] = None) -> str:
+    """原子写入轻量只读全市场快照 (latest_radar_snapshot.json)，保护 Windows 并发读取零截断。"""
+    target = os.path.abspath(snapshot_path or LATEST_RADAR_SNAPSHOT_FILE)
+    parent = os.path.dirname(target)
+    if parent:
+        os.makedirs(parent, exist_ok=True)
+    tmp_path = f"{target}.tmp.{os.getpid()}"
+    try:
+        with open(tmp_path, "w", encoding="utf-8") as f:
+            json.dump(snapshot, f, ensure_ascii=False, indent=2, allow_nan=False)
+            f.flush()
+        os.replace(tmp_path, target)
+        return target
+    except Exception:
+        if os.path.exists(tmp_path):
+            try:
+                os.remove(tmp_path)
+            except Exception:
+                pass
+        raise
+
+
 def generate_macro_radar_html(
     macro_data,
     weather_info,
@@ -7461,6 +7924,24 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
         pass
     print(f"✅ 富途牛牛专业全周期看盘终端已生成: {FUTU_HTML_FILE}")
     sync_live_prices_to_predict_html(macro_data, stocks_sorted, session_code)
+
+    # 6.95 原子写入轻量只读快照 data_cache/latest_radar_snapshot.json 供独立 Discord Bot 秒查 (零额外 API)
+    try:
+        _snap_obj = build_latest_radar_snapshot(
+            macro_data=macro_data,
+            stocks_data=stocks_sorted,
+            weather_info=weather_info,
+            vix_regime=vix_regime,
+            cross_market_liquidity=cross_market_liquidity,
+            intraday_forecasts=_ip_res,
+            session_code=session_code,
+            session_name=session_name,
+            now_str=now_str,
+        )
+        _snap_written = write_latest_radar_snapshot(_snap_obj)
+        print(f"[+] 📦 轻量只读快照已更新: {_snap_written} ({_snap_obj.get('ticker_count', 0)} 只标的)")
+    except Exception as _snap_err:
+        print(f"  [!] 📦 轻量只读快照落盘降级跳过: {_snap_err}")
 
     if not _external_alerts_disabled():
         # 7. 智能去重微信预警推送 (PushPlus 微信 Markdown 卡片通道)
