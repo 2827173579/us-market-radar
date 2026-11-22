@@ -1,9 +1,52 @@
 {
-  "updated_at_ts": 1795375550.644,
-  "updated_at_et": "11-22 14:25 ET",
-  "updated_at_kst": "04:25 KST",
+  "updated_at_ts": 1795388521.432,
+  "updated_at_et": "11-22 18:02 ET",
+  "updated_at_kst": "08:02 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261123065000000800",
+      "title": "【今日重点关注的财经数据与事件：2026年11月23日 周一】 ① 16:15 法国11…",
+      "summary": "【今日重点关注的财经数据与事件：2026年11月23日 周一】 ① 16:15 法国11月制造业PMI初值 ② 16:30 德国11月制造业PMI初值 ③ 17:00 欧元区11月制造业PMI初值 ④ 17:30 英国11月制造业PMI初值 ⑤ 17:30 英国11月服务业PMI初值 ⑥ 22:45 美国11月标普全球制造业PMI初值 ⑦ 22:45 美国11月标普全球服务业PMI初值 ⑧ 次日05:00 美联储威廉姆斯发表讲话",
+      "keywords": [
+        "美联储",
+        "标普"
+      ],
+      "pub_ts": 1795387800.0,
+      "time_et": "11-22 17:50 ET",
+      "time_bj": "06:50 BJ",
+      "time_kst": "07:50 KST",
+      "time_display": "17:50 ET / 06:50 BJ"
+    },
+    {
+      "id": "20261123064849099800",
+      "title": "特朗普扬言新年后再度空袭伊朗！斥谈判“全是废话”，海湾地区袭击接连发生",
+      "summary": "特朗普表示，如果美伊无法达成协议，他倾向于在新年后下令再次打击伊朗，并将谈判斥为“全是废话”。同时，沙特和巴林接连报告遭袭，伊朗外长表示仍愿谈判。点击查看...",
+      "keywords": [
+        "特朗普"
+      ],
+      "pub_ts": 1795387729.0,
+      "time_et": "11-22 17:48 ET",
+      "time_bj": "06:48 BJ",
+      "time_kst": "07:48 KST",
+      "time_display": "17:48 ET / 06:48 BJ"
+    },
+    {
+      "id": "20261123063209581800",
+      "title": "整理：昨日今晨重要新闻汇总（2026-11-23）",
+      "summary": "国内新闻： 1. 沪深北交易所降低融资保证金比例下限至80%。 2. 沪深交易所、中国结算推出一揽子降费措施。 3. 创业板拟引入做市商制度。 4. 上交所正推动修订科创板做市商规则。 5. 丁薛祥会见新加坡总理黄循财。 6. 中国台湾证交所与券商达成共识：融资担保维持率从130%降到120%。 7. 商务部：坚决反对美联邦通信委员会恶意打压中国电信企业在美运营。 国际新闻： 1. 俄罗斯军舰在利比亚东部遭袭。 2. 特朗普称民主党政策导致美股蒸发超6万亿美元。 3. 英媒：美国民主党将寻求推翻特朗普的税收和关税政策。 4. 韩国政府准备启动股市稳定基金，放宽回购限制、打击非法卖空。 5. 贝森特：美股市场抛售是受到美联储言论、中期选举等因素影响。美联储过度收紧或危及美国经济。 6. 中东局势— ①特朗普：如果无法达成协议，倾向于新年后打击伊朗。 ②伊朗外长阿拉格齐：美伊之间的现有调解方正频繁往返，并在会晤中传递想法与建议。 ③伊朗总统：有必要走出“不战不和”的状态。 ④战事影响能源供应，伊朗实施限电措施。 ⑥内塔尼亚胡被曝正考虑单独对伊朗动武。 ⑦也门胡塞武装称打击沙特炼油厂和雷达。",
+      "keywords": [
+        "美联储",
+        "关税",
+        "特朗普",
+        "中东"
+      ],
+      "pub_ts": 1795386729.0,
+      "time_et": "11-22 17:32 ET",
+      "time_bj": "06:32 BJ",
+      "time_kst": "07:32 KST",
+      "time_display": "17:32 ET / 06:32 BJ"
+    },
     {
       "id": "20261123015954763800",
       "title": "【特朗普：如果无法达成协议，倾向于新年后打击伊朗】 11月23日讯，据福克斯新闻，美国总…",
@@ -316,45 +359,6 @@
       "time_bj": "03:24 BJ",
       "time_kst": "04:24 KST",
       "time_display": "14:24 ET / 03:24 BJ"
-    },
-    {
-      "id": "20261121031550148800",
-      "title": "英伟达(NVDA.O)股价跌幅扩大至9%。",
-      "summary": "英伟达(NVDA.O)股价跌幅扩大至9%。",
-      "keywords": [
-        "英伟达"
-      ],
-      "pub_ts": 1795202150.0,
-      "time_et": "11-20 14:15 ET",
-      "time_bj": "03:15 BJ",
-      "time_kst": "04:15 KST",
-      "time_display": "14:15 ET / 03:15 BJ"
-    },
-    {
-      "id": "20261121031511430800",
-      "title": "【纳指跌幅扩大至4%】 11月21日讯，道指跌0.91%，标普500指数跌2.54%，纳…",
-      "summary": "【纳指跌幅扩大至4%】 11月21日讯，道指跌0.91%，标普500指数跌2.54%，纳指跌4%。",
-      "keywords": [
-        "标普"
-      ],
-      "pub_ts": 1795202111.0,
-      "time_et": "11-20 14:15 ET",
-      "time_bj": "03:15 BJ",
-      "time_kst": "04:15 KST",
-      "time_display": "14:15 ET / 03:15 BJ"
-    },
-    {
-      "id": "20261121024610212800",
-      "title": "美国总统特朗普：对美国商务部长卢特尼克尚未失去信心。",
-      "summary": "美国总统特朗普：对美国商务部长卢特尼克尚未失去信心。",
-      "keywords": [
-        "特朗普"
-      ],
-      "pub_ts": 1795200370.0,
-      "time_et": "11-20 13:46 ET",
-      "time_bj": "02:46 BJ",
-      "time_kst": "03:46 KST",
-      "time_display": "13:46 ET / 02:46 BJ"
     }
   ],
   "ticker_news": {
@@ -455,11 +459,11 @@
         "pub_ts": 1795199370.0
       },
       {
-        "title": "Managed Futures Are a Hedge Fund Staple. RSST Stacks $1 of Them on Top of $1 of U.S. Stocks",
-        "url": "https://247wallst.com/investing/etf/2026/11/20/managed-futures-are-a-hedge-fund-staple-rsst-stacks-1-of-them-on-top-of-1-of-u-s-stocks/?.tsrc=rss",
+        "title": "Charlie Bilello Flags the Nasdaq 100’s First Bear Market Since April 2025",
+        "url": "https://247wallst.com/investing/2026/11/22/charlie-bilello-flags-the-nasdaq-100s-first-bear-market-since-april-2025/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-20 11:36 ET",
-        "pub_ts": 1795192571.0
+        "time": "11-22 16:17 ET",
+        "pub_ts": 1795382236.0
       },
       {
         "title": "Billionaire Ray Dalio’s Bridgewater Keeps 16% of Its $23 Billion Stock Portfolio in S&P 500 Index Funds, Even After Cutting Them",
@@ -804,6 +808,13 @@
     ],
     "TSM": [
       {
+        "title": "Taiwan stocks suffer worst week since 1990 as AI rout drains emerging Asia",
+        "url": "http://www.intellinews.com/taiwan-stocks-suffer-worst-week-since-1990-as-ai-rout-drains-emerging-asia-487378/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-22 14:21 ET",
+        "pub_ts": 1795375273.0
+      },
+      {
         "title": "Stanley Druckenmiller, Leopold Aschenbrenner and 25 Other Big Funds Sold Taiwan Semiconductor Last Quarter, While 38 Bought. Who’s Right?",
         "url": "https://www.tikr.com/blog/stanley-druckenmiller-leopold-aschenbrenner-and-25-other-big-funds-sold-taiwan-semiconductor-last-quarter-while-38-bought-whos-right?ref=yahoofinance&tlnk=yf-261122-frx2h3mh&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -830,13 +841,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 23:25 ET",
         "pub_ts": 1795235128.0
-      },
-      {
-        "title": "Goldman Sachs Cut Its Broadcom Target to $460, and the Reason Has Nothing to Do With Broadcom’s Earnings",
-        "url": "https://www.tikr.com/blog/goldman-sachs-cut-its-broadcom-target-to-460-and-the-reason-has-nothing-to-do-with-broadcoms-earnings?ref=yahoofinance&tlnk=yf-261120-qgp5f5w5&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 12:41 ET",
-        "pub_ts": 1795196514.0
       }
     ],
     "VIXY": [
@@ -915,39 +919,39 @@
     ],
     "NVDA": [
       {
-        "title": "SpaceX Expects to Pass “One Gigawatt a Month” of AI Compute by the End of 2027. That’s Great News for Nvidia",
-        "url": "https://www.tikr.com/blog/spacex-expects-to-pass-one-gigawatt-a-month-of-ai-compute-by-the-end-of-2027-thats-great-news-for-nvidia?ref=yahoofinance&tlnk=yf-261122-96p3m6c4&.tsrc=rss",
+        "title": "3 AI Hardware Stocks Down More Than 30% From Their Records to Buy Now and Hold Through 2030",
+        "url": "https://www.fool.com/investing/2026/11/22/3-ai-hardware-stocks-down-more-than-30-from-their-records-to-buy-now-and-hold-through-2030/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-22 13:40 ET",
-        "pub_ts": 1795372808.0
+        "time": "11-22 17:03 ET",
+        "pub_ts": 1795384982.0
       },
       {
-        "title": "Walmart Has Raised Its Dividend 53 Straight Years. I'd Buy It Before December and Never Sell.",
-        "url": "https://www.fool.com/investing/2026/11/22/walmart-has-raised-its-dividend-53-straight-years-id-buy-it-before-december-and-never-sell/?.tsrc=rss",
+        "title": "U.S. Treasury Secretary Scott Bessent Just Delivered Great News to Former Nvidia CEO Jensen Huang. Should You Buy Nvidia Stock Before Nov. 25?",
+        "url": "https://www.fool.com/investing/2026/11/22/u-s-treasury-secretary-scott-bessent-just-delivered-great-news-to-former-nvidia-ceo-jensen-huang-should-you-buy-nvidia-stock-before-nov-25/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-22 14:05 ET",
-        "pub_ts": 1795374302.0
+        "time": "11-22 16:08 ET",
+        "pub_ts": 1795381684.0
       },
       {
-        "title": "Palantir Stock Could Finish 2026 Lower. Its Only 2 Losing Years Ended Very Differently.",
-        "url": "https://www.fool.com/investing/2026/11/22/palantir-stock-could-finish-2026-lower-its-only-2-losing-years-ended-very-differently/?.tsrc=rss",
+        "title": "Jeff Bezos sends a strong signal to Nvidia stock investors as CEO search heats up",
+        "url": "https://www.thestreet.com/investing/jeff-bezos-sends-a-strong-signal-to-nvidia-stock-investors-as-ceo-search-heats-up?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-22 13:57 ET",
-        "pub_ts": 1795373822.0
+        "time": "11-22 16:07 ET",
+        "pub_ts": 1795381620.0
       },
       {
-        "title": "Billionaire Ray Dalio’s Bridgewater Keeps 16% of Its $23 Billion Stock Portfolio in S&P 500 Index Funds, Even After Cutting Them",
-        "url": "https://247wallst.com/investing/2026/11/22/billionaire-ray-dalios-bridgewater-keeps-16-of-its-23-billion-stock-portfolio-in-sp-500-index-funds-even-after-cutting-them/?.tsrc=rss",
+        "title": "Your 401(k) Has New Contribution Limits for 2027. Here's What You Need to Know",
+        "url": "https://www.fool.com/retirement/2026/11/22/your-401-k-has-new-contribution-limits-for-2027-here-s-what-you-need-to-know/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-22 13:43 ET",
-        "pub_ts": 1795372995.0
+        "time": "11-22 14:50 ET",
+        "pub_ts": 1795377002.0
       },
       {
-        "title": "Is Coinbase Stock a Buy, Sell, or Hold 64% Below Its 52-Week High?",
-        "url": "https://www.fool.com/investing/2026/11/22/is-coinbase-stock-a-buy-sell-or-hold-61-below-its-52-week-high/?.tsrc=rss",
+        "title": "Apple Is Now 25% of Berkshire Hathaway's Stock Portfolio. Here's What Holding Every Share Tells Investors.",
+        "url": "https://www.fool.com/investing/2026/11/22/apple-is-now-25-of-berkshire-hathaway-s-stock-portfolio-here-s-what-holding-every-share-tells-investors/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-22 13:40 ET",
-        "pub_ts": 1795372802.0
+        "time": "11-22 17:55 ET",
+        "pub_ts": 1795388102.0
       }
     ],
     "AMD": [
@@ -1063,6 +1067,13 @@
     ],
     "AVGO": [
       {
+        "title": "Here's What a $1,000 Investment in Broadcom Stock Could Be Worth By 2035",
+        "url": "https://www.fool.com/investing/2026/11/22/here-s-what-a-usd1-000-investment-in-broadcom-stock-could-be-worth-by-2035/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-22 14:22 ET",
+        "pub_ts": 1795375322.0
+      },
+      {
         "title": "Broadcom (AVGO) Faces Reported AI Chip Order Cut From A Major Customer",
         "url": "https://finance.yahoo.com/technology/ai/articles/broadcom-avgo-faces-reported-ai-150805371.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1089,13 +1100,6 @@
         "source": "Yahoo Finance",
         "time": "11-21 19:47 ET",
         "pub_ts": 1795308420.0
-      },
-      {
-        "title": "Why It’s Time to Buy the Pullback in Broadcom Stock",
-        "url": "https://www.barchart.com/story/news/8953006/why-its-time-to-buy-the-pullback-in-broadcom-stock?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-21 16:30 ET",
-        "pub_ts": 1795296603.0
       }
     ],
     "AMAT": [
@@ -1174,6 +1178,20 @@
     ],
     "GOOGL": [
       {
+        "title": "Her $420,000 in Employer Stock Inside Her 401(k) Lost 11% in a Day. Rolling It Into an IRA Would Turn Her Long-Term Gain Into Ordinary Income",
+        "url": "https://247wallst.com/personal-finance/2026/11/22/her-420000-in-employer-stock-inside-her-401k-lost-11-in-a-day-rolling-it-into-an-ira-would-turn-her-long-term-gain-into-ordinary-income/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-22 16:17 ET",
+        "pub_ts": 1795382223.0
+      },
+      {
+        "title": "Google’s 2027 chip plan is bad news for Broadcom",
+        "url": "https://www.thestreet.com/technology/google-2027-chip-plan-broadcom?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-22 14:47 ET",
+        "pub_ts": 1795376820.0
+      },
+      {
         "title": "Google Backs Superhot Geothermal in 50 MW Oregon Power Deal",
         "url": "https://finance.yahoo.com/energy/articles/google-backs-superhot-geothermal-50-180000366.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1193,23 +1211,16 @@
         "source": "Yahoo Finance",
         "time": "11-22 12:16 ET",
         "pub_ts": 1795367778.0
-      },
-      {
-        "title": "Anthropic Drove “the Entire Acceleration in AWS and Google Cloud,” per Gil Luria. That’s a Big Risk for Amazon and Alphabet",
-        "url": "https://www.tikr.com/blog/anthropic-drove-the-entire-acceleration-in-aws-and-google-cloud-per-gil-luria-thats-a-big-risk-for-amazon-and-alphabet?ref=yahoofinance&tlnk=yf-261122-rqv8x2vc&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-22 11:09 ET",
-        "pub_ts": 1795363753.0
-      },
-      {
-        "title": "Anthropic’s Record-Breaking IPO Comes With a $1 Trillion Financial Burden Wall Street Can’t Ignore",
-        "url": "https://247wallst.com/investing/2026/11/22/anthropics-record-breaking-ipo-comes-with-a-1-trillion-financial-burden-wall-street-cant-ignore/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-22 10:36 ET",
-        "pub_ts": 1795361773.0
       }
     ],
     "MSFT": [
+      {
+        "title": "15% of parents already cut college savings after Microsoft AI CEO told a mom 'probably not' to bother saving",
+        "url": "https://finance.yahoo.com/technology/ai/articles/15-parents-already-cut-college-211500548.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-22 16:15 ET",
+        "pub_ts": 1795382100.0
+      },
       {
         "title": "Bank of America sends strong signal to Microsoft stock investors",
         "url": "https://www.thestreet.com/investing/stocks/bank-of-america-sends-strong-signal-to-microsoft-stock-investors?.tsrc=rss",
@@ -1237,16 +1248,16 @@
         "source": "Yahoo Finance",
         "time": "11-22 06:20 ET",
         "pub_ts": 1795346452.0
-      },
-      {
-        "title": "A $1.2 Billion Fund Just Bought These 3 Stocks",
-        "url": "https://www.tikr.com/blog/a-1-2-billion-fund-just-bought-these-3-stocks?ref=yahoofinance&tlnk=yf-261122-77qr38x6&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-22 06:20 ET",
-        "pub_ts": 1795346401.0
       }
     ],
     "AAPL": [
+      {
+        "title": "What Is Apple (AAPL) Planning With Its New Autonomous AI Agent?",
+        "url": "https://finance.yahoo.com/technology/ai/articles/apple-aapl-planning-autonomous-ai-200614575.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-22 15:06 ET",
+        "pub_ts": 1795377974.0
+      },
       {
         "title": "An $8.3 Billion Fund Just Bought These 3 Stocks",
         "url": "https://www.tikr.com/blog/an-8-3-billion-fund-just-bought-these-3-stocks?ref=yahoofinance&tlnk=yf-261122-2jg2vpjj&.tsrc=rss",
@@ -1269,18 +1280,11 @@
         "pub_ts": 1795350921.0
       },
       {
-        "title": "“The Selloff Does Not End When Fundamentals Improve,” Warns Gene Munster. Nvidia Looks Like 2012 Apple",
-        "url": "https://www.tikr.com/blog/the-selloff-does-not-end-when-fundamentals-improve-warns-gene-munster-nvidia-looks-like-2012-apple?ref=yahoofinance&tlnk=yf-261122-jwx4m5q4&.tsrc=rss",
+        "title": "Why is Apple Stock Holding Strong While the Rest of the Market Falls?",
+        "url": "https://beincrypto.com/apple-stock-market-crash-price-outlook/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-22 05:07 ET",
-        "pub_ts": 1795342036.0
-      },
-      {
-        "title": "GTA 6's $3.79 billion debut sends Apple stock investors an unmistakable signal",
-        "url": "https://www.thestreet.com/investing/stocks/gta-6-apple-innovation?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-21 23:17 ET",
-        "pub_ts": 1795321020.0
+        "time": "11-22 07:25 ET",
+        "pub_ts": 1795350331.0
       }
     ],
     "PLTR": [
@@ -3255,31 +3259,31 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795375284.597176,
-    "SOXL": 1795375284.597176,
-    "SPY": 1795375284.597176,
-    "DIA": 1795375284.597176,
-    "SOXX": 1795375284.597176,
-    "QQQ": 1795375284.597176,
-    "SMH": 1795375284.597176,
-    "IWM": 1795375284.597176,
-    "IGV": 1795375284.597176,
-    "TLT": 1795375284.597176,
-    "GLD": 1795375284.597176,
-    "SQQQ": 1795375284.597176,
-    "TSM": 1795375284.597176,
-    "VIXY": 1795375284.597176,
-    "SOXS": 1795375284.597176,
-    "NVDA": 1795375284.597176,
-    "AMD": 1795375284.597176,
-    "ASML": 1795375284.597176,
-    "QCOM": 1795375284.597176,
-    "AVGO": 1795375284.597176,
-    "AMAT": 1795375284.597176,
-    "META": 1795375284.597176,
-    "GOOGL": 1795375284.597176,
-    "MSFT": 1795375284.597176,
-    "AAPL": 1795375284.597176,
+    "KORU": 1795388521.4320092,
+    "SOXL": 1795388521.4320092,
+    "SPY": 1795388521.4320092,
+    "DIA": 1795388521.4320092,
+    "SOXX": 1795388521.4320092,
+    "QQQ": 1795388521.4320092,
+    "SMH": 1795388521.4320092,
+    "IWM": 1795388521.4320092,
+    "IGV": 1795388521.4320092,
+    "TLT": 1795388521.4320092,
+    "GLD": 1795388521.4320092,
+    "SQQQ": 1795388521.4320092,
+    "TSM": 1795388521.4320092,
+    "VIXY": 1795388521.4320092,
+    "SOXS": 1795388521.4320092,
+    "NVDA": 1795388521.4320092,
+    "AMD": 1795388521.4320092,
+    "ASML": 1795388521.4320092,
+    "QCOM": 1795388521.4320092,
+    "AVGO": 1795388521.4320092,
+    "AMAT": 1795388521.4320092,
+    "META": 1795388521.4320092,
+    "GOOGL": 1795388521.4320092,
+    "MSFT": 1795388521.4320092,
+    "AAPL": 1795388521.4320092,
     "PLTR": 1795375550.644411,
     "NOW": 1795375284.597176,
     "AMZN": 1795375284.597176,
@@ -3352,7 +3356,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (12:59 ET / 01:59 BJ) [特朗普]：【特朗普：如果无法达成协议，倾向于新年后打击伊朗】 11月23日讯，据福克斯新闻，美国总统特朗普称，如果无法达成协议，他倾向于在新年之后恢复对伊朗的战争。他说：“美国与伊朗仍在进行间接谈判，",
+    "detail": "⚡ 最新核心快讯 (17:50 ET / 06:50 BJ) [美联储] [标普]：【今日重点关注的财经数据与事件：2026年11月23日 周一】 ① 16:15 法国11月制造业PMI初值 ② 16:30 德国11月制造业PMI初值 ③ 17:00 欧元区11月制造业PM",
     "event_name": "",
     "minutes_left": 0,
     "opex_shield": {

@@ -4002,7 +4002,7 @@
     },
     "2026-11-22:NBIS/APLD/CRDO/MSTR/DELL/BE/COIN/NVDA/SKHY/MU/AMAT/TSM/ASML/AMD/QCOM:STOP_LOSS": {
       "device": "PC",
-      "ts": 1795368665.9645202
+      "ts": 1795388531.2239084
     },
     "JIN10_FLASH:20261123013448969800": {
       "device": "PC",
@@ -4014,6 +4014,6 @@
     }
   },
   "device": "PC",
-  "last_heartbeat_ts": 1795375476.6855083,
-  "updated_at": "2026-11-22T19:24:36.685708+00:00"
+  "last_heartbeat_ts": 1795388435.9822443,
+  "updated_at": "2026-11-22T23:02:11.224200+00:00"
 }
