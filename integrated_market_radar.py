@@ -5537,13 +5537,18 @@ def build_latest_radar_snapshot(
     for idx_ld, ld in enumerate(top5_raw or [], 1):
         tk_ld = str(ld.get("ticker") or "").upper()
         src_ld = raw_items.get(tk_ld, ({}, False))[0]
-        px_ld = _snap_opt_float(src_ld.get("active_price") or src_ld.get("last"), 2)
+        if sess in ("POST_MARKET", "WEEKEND"):
+            px_ld = _snap_opt_float(src_ld.get("last") or ld.get("rth_close") or src_ld.get("active_price"), 2)
+        else:
+            px_ld = _snap_opt_float(src_ld.get("active_price") or src_ld.get("last"), 2)
         top5_out.append({
             "rank": idx_ld,
             "ticker": tk_ld,
             "name": str(ld.get("name") or src_ld.get("name") or tk_ld),
             "cat": str(src_ld.get("cat") or ""),
             "price": px_ld,
+            "rth_close": _snap_opt_float(src_ld.get("last") or ld.get("rth_close"), 2),
+            "rth_pct": _snap_opt_float(src_ld.get("pct_change"), 2),
             "pct": _snap_opt_float(ld.get("pct"), 2),
             "excess_vs_spy": _snap_opt_float(ld.get("excess_vs_spy"), 2),
             "rs_20d": _snap_opt_float(ld.get("rs_20d"), 2),
@@ -5788,9 +5793,30 @@ def build_latest_radar_snapshot(
             "ai_short_win_rate_pct": short_wr,
             "ai_short_raw_pct": short_raw,
             "ai_action": ai_act_disp,
+            "ai_regime_capped": bool(
+                vr_out.get("vix_hard_brake")
+                or (
+                    long_raw is not None
+                    and long_wr is not None
+                    and (long_raw - long_wr) >= 8.0
+                    and str(wi.get("market_regime") or "").upper() == "BEAR_DEFENSE"
+                )
+            ),
             "is_inverse_hedge": is_inv,
             "is_ipo": is_ipo,
             "is_bear_defense_card": is_bear_card,
+            "is_take_profit": is_tp,
+            "is_crash_halt": is_crash,
+            "is_cooling_halt": is_cooling,
+            "is_broken_bearish": is_broken_bear,
+            "is_broken_rebound": is_broken_reb,
+            "is_stop": is_stop,
+            "is_pit": is_pit,
+            "is_pit_watch": is_pit_watch,
+            "is_deep_pullback": is_deep_pb,
+            "is_bull_trend": is_bull,
+            "ema20": _snap_opt_float(src.get("ema20"), 2),
+            "ma50": _snap_opt_float(src.get("ma50"), 2),
             "decision_stance": stance,
             "decision_verdict": verdict,
             "decision_sub": verdict_sub,
@@ -5822,7 +5848,7 @@ def build_latest_radar_snapshot(
         }
 
     return {
-        "schema_version": "v4.3-bot-snapshot",
+        "schema_version": "v4.4-bot-snapshot",
         "updated_at_et": updated_at_et,
         "updated_at_utc": datetime.now(timezone.utc).isoformat(),
         "session_code": sess,

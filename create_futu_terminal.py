@@ -40,7 +40,7 @@ def compute_resilient_leaders_top5(stocks_data, macro_data=None, session_code="R
                     unified.append({**m, "ticker": tk})
 
     def _eff_pct(item):
-        if sess == "REGULAR":
+        if sess in ("REGULAR", "POST_MARKET", "WEEKEND"):
             val = item.get("pct_change")
         else:
             ext_p = item.get("ext_price") or 0
@@ -108,6 +108,7 @@ def compute_resilient_leaders_top5(stocks_data, macro_data=None, session_code="R
         ranked.append({
             "ticker": tk,
             "name": str(it.get("name") or tk),
+            "rth_close": round(float(it.get("last") or active_px), 2),
             "rs_20d": round(rs_20d, 2),
             "pct": round(tk_pct, 2),
             "excess_vs_spy": excess_vs_spy,
@@ -4095,7 +4096,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             });
 
             const effPct = (it) => {
-                if (SESSION_CODE === "REGULAR") {
+                if (SESSION_CODE === "REGULAR" || SESSION_CODE === "POST_MARKET" || SESSION_CODE === "WEEKEND") {
                     const v = Number(it.pct_change || 0);
                     return Number.isFinite(v) ? v : 0;
                 }
@@ -5907,7 +5908,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                     let rightHtml = "";
 
                     if (srState === "ALL_SUPPORT_BREACHED") {
-                        leftHtml = `<span style="color:${pal.down}; font-weight:700;">⚠️ 今日原始支撑全线击穿 (原S1:${s1v} / 原S2:${s2v}) · 真空寻底</span>`;
+                        leftHtml = `<span style="color:${pal.down}; font-weight:700;">⚠️ 今日原定支撑全线跌穿 (原S1:${s1v} / 原S2:${s2v}) · 下方无真实支撑，别猜底</span>`;
                         rightHtml = `<span style="color:${pal.down};">上方前压 R1:${r1v} / R2:${r2v}</span>`;
                     } else if (srState === "S1_BREACHED") {
                         const s2IsEst = (s2Src === "ATR_ESTIMATE");
@@ -5924,10 +5925,10 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                         rightHtml = `<span style="color:${r2Src === "ATR_ESTIMATE" ? pal.warn : pal.down}; font-weight:700;">${r2Tag}</span>`;
                     } else {
                         if (s1Src === "ATR_ESTIMATE" && s2Src === "ATR_ESTIMATE") {
-                            leftHtml = `<span style="color:${pal.warn};" title="无真实历史筹码密集区，按ATR估算">估算防线(无真实筹码) S1:${s1v} / S2:${s2v}</span>`;
+                            leftHtml = `<span style="color:${pal.warn};" title="无真实历史筹码密集区，按ATR估算">估算防线 (无真实筹码) S1:${s1v} / S2:${s2v}</span>`;
                         } else if (s1Src === "ATR_ESTIMATE" || s2Src === "ATR_ESTIMATE") {
-                            const s1Span = s1Src === "ATR_ESTIMATE" ? `<span style="color:${pal.sub};">估算防线 S1:${s1v}(无真实筹码)</span>` : `<span style="color:${pal.up};">支撑 S1:${s1v}</span>`;
-                            const s2Span = s2Src === "ATR_ESTIMATE" ? `<span style="color:${pal.sub};">估算S2:${s2v}(无真实筹码)</span>` : `<span style="color:${pal.up};">S2:${s2v}</span>`;
+                            const s1Span = s1Src === "ATR_ESTIMATE" ? `<span style="color:${pal.sub};">估算防线 S1:${s1v} (无真实筹码)</span>` : `<span style="color:${pal.up};">支撑 S1:${s1v}</span>`;
+                            const s2Span = s2Src === "ATR_ESTIMATE" ? `<span style="color:${pal.sub};">估算防线 S2:${s2v} (无真实筹码)</span>` : `<span style="color:${pal.up};">S2:${s2v}</span>`;
                             leftHtml = `${s1Span} <span style="color:${pal.sub};">/</span> ${s2Span}`;
                         } else {
                             leftHtml = `<span style="color:${pal.up};">支撑 S1:${s1v} / S2:${s2v}</span>`;

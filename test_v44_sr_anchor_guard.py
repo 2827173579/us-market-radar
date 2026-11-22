@@ -135,8 +135,8 @@ class TestV44SrAnchorGuard(unittest.TestCase):
             all_sup_px = round(min(30.88, s2 - 1.50), 2)
             st_all_sup = sre.evaluate_sr_breach_state(all_sup_px, locked, is_halt=True, vwap=36.20)
             self.assertEqual(st_all_sup["sr_breach_state"], sre.STATE_ALL_SUPPORT_BREACHED)
-            self.assertIn("今日原始支撑全线击穿", st_all_sup["sr_status_badge"])
-            self.assertIn("真空寻底", st_all_sup["sr_status_badge"])
+            self.assertIn("今日原定支撑全线跌穿", st_all_sup["sr_status_badge"])
+            self.assertIn("下方无真实支撑，别猜底", st_all_sup["sr_status_badge"])
             self.assertIn("【暴跌熔断风控剧本】", st_all_sup["scenario_script"])
             # 确保锚点在剧本中也完全未漂移
             self.assertEqual(st_all_sup["anchor_s1"], s1)
@@ -206,8 +206,8 @@ class TestV44SrAnchorGuard(unittest.TestCase):
             },
             daily_sr_anchors={"NVDA": {**bd_res, "anchor_s1": 36.20, "anchor_s2": 34.40, "anchor_sl": 33.80, "anchor_r1": 45.00, "anchor_r2": 52.00}},
         )
-        self.assertIn("估算防线(无真实筹码)", html_out)
-        self.assertIn("今日原始支撑全线击穿", html_out)
+        self.assertIn("估算防线 (无真实筹码)", html_out)
+        self.assertIn("今日原定支撑全线跌穿", html_out)
         self.assertIn("突破今日全线阻力", html_out)
 
     def test_03_suppress_4h_bottom_badge_on_halt_and_vix_backwardation(self):
@@ -308,8 +308,10 @@ class TestV44SrAnchorGuard(unittest.TestCase):
         soxl_emb = bot.build_check_embed_dict("soxl", snap)
         _assert_no_bare_hr(self, soxl_emb)
         soxl_txt = json.dumps(soxl_emb, ensure_ascii=False)
-        self.assertIn("今日原始支撑全线击穿", soxl_txt)
-        self.assertIn("(无真实筹码·估算)", soxl_txt)
+        self.assertIn("一句话结论", soxl_txt)
+        self.assertIn("今日原定支撑已全线跌穿", soxl_txt)
+        self.assertIn("下方无真实支撑，别猜底", soxl_txt)
+        self.assertIn("（估算参考，无真实筹码）", soxl_txt)
         self.assertIn("⚠️ 4H 潜在背离 (熔断锁定·未确认)", soxl_txt)
         self.assertNotIn("见底信号", soxl_txt)
 
@@ -318,8 +320,8 @@ class TestV44SrAnchorGuard(unittest.TestCase):
         qqq_emb = bot.build_check_embed_dict("qqq", snap)
         _assert_no_bare_hr(self, qqq_emb)
         qqq_txt = json.dumps(qqq_emb, ensure_ascii=False)
-        self.assertIn("突破今日全线阻力", qqq_txt)
-        self.assertIn("VWAP / EMA9 移动止盈", qqq_txt)
+        self.assertIn("已突破今日全部原定阻力", qqq_txt)
+        self.assertIn("移动止盈", qqq_txt)
 
 
 if __name__ == "__main__":

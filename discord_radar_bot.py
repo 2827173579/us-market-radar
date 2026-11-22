@@ -403,20 +403,65 @@ def _rel_pct_str(level_px: Any, spot_px: Any) -> str:
     return f" ({diff:+.1f}%)"
 
 
+def _plain_regime_label(snapshot: Optional[Dict[str, Any]]) -> str:
+    snap = snapshot if isinstance(snapshot, dict) else {}
+    code = str(snap.get("market_regime") or "").strip().upper()
+    if code == "BEAR_DEFENSE":
+        return "空头防守（大盘偏弱，管住手）"
+    if code == "BULL_TREND":
+        return "多头顺风（大盘偏强）"
+    if code == "NEUTRAL_CHOP":
+        return "震荡分化（挑强做、别追高）"
+    cn = str(snap.get("market_regime_cn") or "").strip()
+    return cn.replace("🔴 ", "").replace("🟢 ", "").replace("🟡 ", "") or "稳健观察"
+
+
+def _pick_profit_protection_line(item: Dict[str, Any], price: Optional[float]) -> Optional[float]:
+    """为止盈/高位震荡标的选择合理的利润保护线（优先均线/防守止损/破前压力转支撑）。"""
+    ref_spot = price if (price and price > 0) else _opt_float(item.get("last"))
+    cands: List[float] = []
+    sr_state = str(item.get("sr_breach_state") or "").upper()
+    anc_r1 = _opt_float(item.get("anchor_r1") if item.get("anchor_r1") is not None else item.get("r1"))
+    anc_r2 = _opt_float(item.get("anchor_r2") if item.get("anchor_r2") is not None else item.get("r2"))
+    anc_s1 = _opt_float(item.get("anchor_s1") if item.get("anchor_s1") is not None else item.get("s1"))
+    for raw in (
+        item.get("ema20"),
+        item.get("entry_stop_loss"),
+        anc_r2 if sr_state == "ALL_RESISTANCE_BROKEN" else None,
+        anc_r1 if sr_state == "R1_BROKEN" else None,
+        item.get("vwap"),
+        anc_s1,
+    ):
+        fv = _opt_float(raw)
+        if fv is not None and fv > 0:
+            if ref_spot and ref_spot > 0:
+                if fv < ref_spot * 0.995:
+                    cands.append(fv)
+            else:
+                cands.append(fv)
+    if cands:
+        return round(max(cands), 2)
+    for raw in (item.get("entry_stop_loss"), item.get("vwap"), anc_s1):
+        fv = _opt_float(raw)
+        if fv is not None and fv > 0:
+            return round(fv, 2)
+    return None
+
+
 def build_check_embed_dict(
     query: str,
     snapshot: Optional[Dict[str, Any]],
 ) -> Dict[str, Any]:
-    """构建 `/check <ticker>` 动态颜色单标的全景诊断 Embed 字典。"""
+    """构建 `/check <ticker>` 3 秒通俗诊断卡 Embed 字典。"""
     footer_txt = _build_footer_text(snapshot)
     now_iso = datetime.now(timezone.utc).isoformat()
 
     if not isinstance(snapshot, dict) or not isinstance(snapshot.get("tickers"), dict) or not snapshot["tickers"]:
         return {
-            "title": "⏳ 量化雷达快照尚未就绪",
+            "title": "⏳ 量化雷达数据还没准备好",
             "description": _strip_bare_hr_lines(
-                "本地只读快照 `data_cache/latest_radar_snapshot.json` 暂未生成或为空。\n"
-                "请先确认主雷达守护进程已完成本轮刷新后再试。"
+                "💬 一句话结论：主雷达正在刷新最新行情，稍等一两分钟再查。\n"
+                "本地只读快照 `data_cache/latest_radar_snapshot.json` 暂未生成或为空，请稍后重试。"
             ),
             "color": 0xF59E0B,
             "timestamp": now_iso,
@@ -428,14 +473,14 @@ def build_check_embed_dict(
     if not tk or tk not in tickers_map:
         cands = search_ticker_candidates(query, snapshot, limit=5)
         sug_lines = [
-            f"• **`{c['ticker']}`** · {c['name']}" + (f" ({c['cat']})" if c.get("cat") else "")
+            f"• **{c['ticker']}** · {c['name']}" + (f"（{c['cat']}）" if c.get("cat") else "")
             for c in cands
         ]
         sug_block = "\n".join(sug_lines) if sug_lines else "• 热门示例：`NVDA` · `SOXL` · `QQQ` · `SPY` · `XAUUSD` · `BTC-USD`"
         return {
-            "title": f"🔍 未找到 `{str(query or '').strip()[:40] or '--'}`",
+            "title": f"🔍 没找到「{str(query or '').strip()[:40] or '--'}」",
             "description": _strip_bare_hr_lines(
-                f"当前仅支持雷达监控池内的 **{len(tickers_map)} 只标的（14 ETF + 65 个股）**，并支持大小写与中文关键词自动补全。\n\n"
+                f"💬 一句话结论：这只票不在当前监控的 {len(tickers_map)} 只核心名单里（支持大小写和中文搜名字）。\n\n"
                 f"**您是不是要找：**\n{sug_block}"
             ),
             "color": 0xF59E0B,
@@ -445,12 +490,24 @@ def build_check_embed_dict(
 
     item = tickers_map[tk]
     stance = str(item.get("decision_stance") or "NEUTRAL").upper()
-    is_bear = bool(item.get("is_bear_defense_card")) or (stance == "BEAR")
+    verdict = str(item.get("decision_verdict") or "")
+    is_inv = bool(item.get("is_inverse_hedge") or tk in ("SQQQ", "SOXS", "VIXY"))
+    is_ipo = bool(item.get("is_ipo"))
+    is_crash = bool(item.get("is_crash_halt")) or ("暴跌风险" in verdict)
+    is_cooling = bool(item.get("is_cooling_halt")) or ("大跌冷却" in verdict)
+    is_broken_bear = bool(item.get("is_broken_bearish")) or ("空头占优" in verdict)
+    is_stop = bool(item.get("is_stop")) or ("跌破支撑" in verdict)
+    is_pit = bool(item.get("is_pit")) or ("低吸窗口" in verdict)
+    is_pit_watch = bool(item.get("is_pit_watch")) or ("先观望" in verdict)
+    is_deep_pb = bool(item.get("is_deep_pullback")) or ("深度回调" in verdict)
+    is_broken_reb = bool(item.get("is_broken_rebound")) or ("短线反抽" in verdict)
+    is_tp_mode = bool(item.get("is_take_profit")) or any(k in verdict for k in ("止盈", "高位震荡", "落袋"))
+    is_bear = bool(item.get("is_bear_defense_card")) or (stance == "BEAR") or is_crash or is_cooling or is_broken_bear or is_stop
 
     if is_bear:
         color = 0xEF4444
         stance_icon = "🔴"
-    elif stance == "BULL":
+    elif stance == "BULL" and not is_tp_mode and not is_inv and not is_ipo:
         color = 0x10B981
         stance_icon = "🟢"
     else:
@@ -458,47 +515,15 @@ def build_check_embed_dict(
         stance_icon = "🟡"
 
     name = str(item.get("name") or tk)
-    cat = str(item.get("cat") or "未分类")
-    sub = str(item.get("sub") or "")
+    cat = str(item.get("cat") or "核心池")
     price = _opt_float(item.get("price") or item.get("last"))
     last = _opt_float(item.get("last"))
     eff_pct = _opt_float(item.get("effective_pct") if item.get("effective_pct") is not None else item.get("pct_change"))
     pct_rth = _opt_float(item.get("pct_change"))
     ext_px = _opt_float(item.get("ext_price"))
     ext_pct = _opt_float(item.get("ext_pct"))
-    sess_tag = str(item.get("session_tag") or snapshot.get("session_name") or "盘中")
-
-    price_lines = [
-        f"现价：**{_fmt_price(price)}** (`{_fmt_pct(eff_pct)}` · {sess_tag})",
-    ]
-    if ext_px and ext_px > 0 and last and last > 0:
-        price_lines.append(f"正规盘收：{_fmt_price(last)} (`{_fmt_pct(pct_rth)}`)")
-        price_lines.append(f"扩展时段：{_fmt_price(ext_px)} (`{_fmt_pct(ext_pct)}`)")
-
-    l_cal = _fmt_num(item.get("ai_long_win_rate_pct"), 1, "%")
-    l_raw = _fmt_num(item.get("ai_long_raw_pct"), 1, "%")
-    s_cal = _fmt_num(item.get("ai_short_win_rate_pct"), 1, "%")
-    s_raw = _fmt_num(item.get("ai_short_raw_pct"), 1, "%")
-    ai_lines = [
-        f"赛道：**{cat}**" + (f" · {sub[:28]}" if sub else ""),
-        f"做多校准胜率：**{l_cal}** (原始 {l_raw})",
-        f"做空校准胜率：**{s_cal}** (原始 {s_raw})",
-    ]
-
-    verdict = str(item.get("decision_verdict") or "⚪ 震荡整理 · 等待明确方向")
-    verdict_sub = str(item.get("decision_sub") or "")
-    ai_act = str(item.get("ai_action") or "").strip()
-    res_badge = str(item.get("resonance_badge_text") or item.get("four_h_div") or "").strip()
-    decision_lines = [f"**{verdict}**"]
-    if verdict_sub:
-        decision_lines.append(verdict_sub)
-    if res_badge:
-        decision_lines.append(f"4H 共振状态：**{res_badge}**")
-    if ai_act and ai_act not in verdict_sub:
-        decision_lines.append(f"AI 战术提示：{ai_act}")
-
-    def _src_tag(src_val: Any) -> str:
-        return " (无真实筹码·估算)" if str(src_val or "").upper() == "ATR_ESTIMATE" else ""
+    sess_code = str(snapshot.get("session_code") or "").strip().upper()
+    sess_tag = str(item.get("session_tag") or "").strip()
 
     anc_s1 = item.get("anchor_s1") if item.get("anchor_s1") is not None else item.get("s1")
     anc_s2 = item.get("anchor_s2") if item.get("anchor_s2") is not None else item.get("s2")
@@ -510,100 +535,214 @@ def build_check_embed_dict(
     r2_src = item.get("r2_source")
     sr_state = str(item.get("sr_breach_state") or "INTACT").upper()
 
-    if sr_state == "ALL_SUPPORT_BREACHED":
-        levels_title = "⚠️ 支撑全线击穿 · 真空寻底"
-        levels_lines = [
-            f"⚠️ 今日原始支撑全线击穿 (原S1:{_fmt_price(anc_s1)} / 原S2:{_fmt_price(anc_s2)}) · 真空寻底",
-            f"反抽压力：原S2 **{_fmt_price(anc_s2)}**{_src_tag(s2_src)} ｜ R1 **{_fmt_price(anc_r1)}**{_src_tag(r1_src)}",
-            "风控纪律：**严禁左侧接刀**，仅认放量收回原 S2 或重夺当日 VWAP 的右侧确认",
-        ]
-    elif sr_state == "S1_BREACHED":
-        levels_title = "📉 原 S1 击穿转压 · 退守 S2"
-        levels_lines = [
-            f"~~S1:{_fmt_price(anc_s1)}~~ 已击穿转压 ➔ 退守 S2：**{_fmt_price(anc_s2)}**{_src_tag(s2_src)}{_rel_pct_str(anc_s2, price)}",
-            f"上方压力 R1 / 原S1：**{_fmt_price(anc_s1)}** ｜ R1 **{_fmt_price(anc_r1)}**{_src_tag(r1_src)}",
-            "风控纪律：**严禁左侧接刀**，反抽原 S1 视作上方压力",
-        ]
-    elif sr_state == "ALL_RESISTANCE_BROKEN":
-        levels_title = "🚀 突破今日全线阻力 · 趋势延伸"
-        levels_lines = [
-            f"🚀 突破今日全线阻力 (原R1:{_fmt_price(anc_r1)} / 原R2:{_fmt_price(anc_r2)})",
-            f"防守底线：原 R2 **{_fmt_price(anc_r2)}** (已突破 ➔ 转为支撑){_rel_pct_str(anc_r2, price)}",
-            "止盈策略：上方不设假天花板，**沿日内 VWAP / EMA9 移动止盈托管**，防假突破回踩原 R2",
-        ]
-    elif sr_state == "R1_BROKEN":
-        levels_title = "📈 R1 突破转支撑 · 看高 R2"
-        levels_lines = [
-            f"R1：**{_fmt_price(anc_r1)}** (已突破 ➔ 转为支撑){_rel_pct_str(anc_r1, price)}",
-            f"上看目标 R2：**{_fmt_price(anc_r2)}**{_src_tag(r2_src)}{_rel_pct_str(anc_r2, price)}",
-            f"原下轨参考：S1 {_fmt_price(anc_s1)}{_src_tag(s1_src)} · 不追冲高针，等回踩原 R1 或 VWAP 企稳",
-        ]
+    if is_ipo:
+        one_liner = "刚上市没几天，波动大、规律还没出来，先看少动。"
+    elif is_crash:
+        one_liner = "正在暴跌，千万别手痒抄底，先看戏等企稳。"
+    elif is_cooling:
+        one_liner = "刚经历急跌，余震还没消，暂时别急着抄底。"
     elif is_bear:
-        levels_title = "🧭 关键压力 / 支撑（防守视角）"
-        levels_lines = [
-            f"上方压力 R1：**{_fmt_price(anc_r1)}**{_src_tag(r1_src)}{_rel_pct_str(anc_r1, price)}" + (f" ｜ R2 {_fmt_price(anc_r2)}{_src_tag(r2_src)}" if anc_r2 else ""),
-            f"下方支撑 S1：**{_fmt_price(anc_s1)}**{_src_tag(s1_src)}{_rel_pct_str(anc_s1, price)}" + (f" ｜ S2 {_fmt_price(anc_s2)}{_src_tag(s2_src)}" if anc_s2 else ""),
-            "风控纪律：**严禁左侧接刀**，等重新站稳 VWAP 再看反抽",
-        ]
+        one_liner = "趋势走弱还没止跌，千万别手痒抄底，等重新站稳均价线再看。"
+    elif is_tp_mode:
+        one_liner = "涨太高了别追，手里有货的记得分批落袋保护利润。"
+    elif is_inv:
+        one_liner = "这是大盘下跌时的反向防守工具，只适合短线对冲，涨多了别追、别长拿。"
+    elif is_pit_watch:
+        one_liner = "快到低吸位置了，但板块或大盘还偏弱，先忍住别急着接刀。"
+    elif is_deep_pb:
+        one_liner = "回撤比较深但还没完全止跌，等股价放量站回均价线上方再考虑。"
+    elif is_broken_reb:
+        one_liner = "大趋势还偏弱，现在只是跌多了反抽一下，快进快出别贪心。"
+    elif stance == "BULL":
+        if sr_state == "ALL_RESISTANCE_BROKEN":
+            one_liner = "走势非常强，已冲破今天所有原定压力，拿稳筹码跟着均价线移动止盈、别追高。"
+        elif is_pit:
+            one_liner = "跌到了关键支撑区且开始止跌，可留意低吸机会并带好止损。"
+        else:
+            one_liner = "走势偏强且站稳节奏，可留意回踩均价线或支撑位时的机会，别忘了设止损。"
     else:
-        opt_lim = item.get("optimal_limit")
-        sl_px = item.get("entry_stop_loss")
-        tp_px = item.get("target_profit_price")
-        fib_lo = item.get("fib_low")
-        fib_hi = item.get("fib_high")
-        levels_title = "🎯 参考挂单与防守点位"
-        levels_lines = [
-            f"参考挂单：**{_fmt_price(opt_lim)}**{_rel_pct_str(opt_lim, price)}" if (_opt_float(opt_lim) or 0) > 0 else "参考挂单：**暂缓 / 观察**",
-            f"防守止损：**{_fmt_price(sl_px)}**{_rel_pct_str(sl_px, price)}" if (_opt_float(sl_px) or 0) > 0 else "防守止损：**--**",
-            f"目标参考：**{_fmt_price(tp_px)}**{_rel_pct_str(tp_px, price)}" if (_opt_float(tp_px) or 0) > 0 else f"60日坑带：{_fmt_price(fib_lo)} ~ {_fmt_price(fib_hi)}",
-        ]
-        if anc_s1 or anc_r1:
-            levels_lines.append(
-                f"筹码锚点：S1 {_fmt_price(anc_s1)}{_src_tag(s1_src)} / R1 {_fmt_price(anc_r1)}{_src_tag(r1_src)}"
-            )
+        one_liner = "正在不上不下地晃悠，没有高把握买点，先观望最省心。"
 
+    # 1. 💰 价格（严格区分盘后/休市薄盘 vs 正规盘收盘）
+    is_post_or_weekend = sess_code in ("POST_MARKET", "WEEKEND") or (not sess_code and sess_tag in ("休市", "盘后"))
+    is_pre_or_night = sess_code in ("PRE_MARKET", "OVERNIGHT") or (not sess_code and sess_tag in ("盘前", "夜盘"))
+    if is_post_or_weekend:
+        if ext_px and ext_px > 0 and last and last > 0:
+            price_text = f"盘后 **{_fmt_price(ext_px)}**（盘后 {_fmt_pct(ext_pct)}，休市薄盘别当真）｜正规盘收 **{_fmt_price(last)}**（{_fmt_pct(pct_rth)}）"
+        else:
+            price_text = f"正规盘收 **{_fmt_price(last or price)}**（{_fmt_pct(pct_rth if pct_rth is not None else eff_pct)}）· 当前休市"
+    elif is_pre_or_night:
+        ext_lbl = "夜盘" if (sess_code == "OVERNIGHT" or sess_tag == "夜盘") else "盘前"
+        if ext_px and ext_px > 0 and last and last > 0:
+            price_text = f"{ext_lbl} **{_fmt_price(ext_px)}**（{ext_lbl} {_fmt_pct(ext_pct)}，薄盘供参考）｜上日正规盘收 **{_fmt_price(last)}**（{_fmt_pct(pct_rth)}）"
+        else:
+            price_text = f"上日正规盘收 **{_fmt_price(last or price)}**（{_fmt_pct(pct_rth if pct_rth is not None else eff_pct)}）· {ext_lbl}暂无新成交"
+    else:
+        price_text = f"现价 **{_fmt_price(price)}**（今日 {_fmt_pct(pct_rth if pct_rth is not None else eff_pct)} · 常规盘中）"
+
+    # 2. 🎯 怎么操作（彻底解决止盈/观望态还出“参考挂单”的自相矛盾）
     vwap_val = _opt_float(item.get("vwap"))
     vwap_diff = _opt_float(item.get("vwap_diff_pct"))
-    vwap_stale = bool(item.get("vwap_stale"))
-    vwap_lbl = str(item.get("vwap_label") or ("上日参考 · 09:30重置" if vwap_stale else "当日日内"))
-    vwap_tag_str = f" _({vwap_lbl})_" if vwap_stale else f" ({vwap_lbl})"
-    rsi5_str = _fmt_num(item.get("rsi_5m"), 1) if item.get("rsi_5m") is not None else "待开盘 / --"
-    rvol5_str = f" ({_fmt_num(item.get('rvol_5m'), 2, 'x')})" if item.get("rvol_5m") is not None else ""
-    micro_lines = [
-        f"日内 VWAP：**{_fmt_price(vwap_val)}** (`{_fmt_pct(vwap_diff)}`){vwap_tag_str}",
-        f"5m RSI：**{rsi5_str}**{rvol5_str} ｜ 14日 RSI：{_fmt_num(item.get('rsi_14'), 1)}",
-        f"20日超额 RS：**{_fmt_pct(item.get('rs_20d'), 1)}** ｜ MA50 偏离：{_fmt_pct(item.get('bias_ma50'), 1)}",
-    ]
+    vwap_stale = bool(item.get("vwap_stale")) or (sess_code not in ("", "REGULAR"))
+    res_badge = str(item.get("resonance_badge_text") or item.get("four_h_div") or "").strip()
+    res_suppressed = bool(item.get("resonance_suppressed"))
+    opt_lim = item.get("optimal_limit")
+    sl_px = item.get("entry_stop_loss")
+    tp_px = item.get("target_profit_price")
+
+    op_lines: List[str] = []
+    if is_bear:
+        op_lines.append("🚫 **别抄底 · 先管住手等右边走稳**")
+        vwap_cond = f"放量站稳均价线 {_fmt_price(vwap_val)}" if (vwap_val and vwap_val > 0) else "放量止跌转强"
+        if sr_state == "ALL_SUPPORT_BREACHED" and anc_s2:
+            op_lines.append(f"观察条件：至少等放量收回原支撑 {_fmt_price(anc_s2)} 或{vwap_cond}，别在下跌半途接刀。")
+        else:
+            op_lines.append(f"观察条件：至少等{vwap_cond}、不再创新低，确认止跌了再考虑。")
+        if res_suppressed and res_badge:
+            badge_disp = res_badge if res_badge.startswith("⚠️") else f"⚠️ {res_badge}"
+            op_lines.append(f"{badge_disp}（别把弱势超跌误当成见底买点）")
+    elif is_tp_mode:
+        op_lines.append("🟣 **别追高 · 手里有货的分批止盈**")
+        prot_px = _pick_profit_protection_line(item, price)
+        if prot_px:
+            op_lines.append(f"🛡️ **利润保护线**：**{_fmt_price(prot_px)}**{_rel_pct_str(prot_px, price)}（跌破这里说明冲高结束，先落袋保护利润）")
+        else:
+            op_lines.append(f"🛡️ **利润保护线**：盯紧当日均价线 {_fmt_price(vwap_val)}，跌破及时落袋。")
+        if is_inv:
+            op_lines.append("⚠️ 反向杠杆损耗大、波动剧烈，见好就收别恋战；空仓现在绝对别追。")
+        else:
+            op_lines.append("💡 没上车的别追涨，等充分回踩企稳再说。")
+    elif is_inv:
+        op_lines.append("🛡️ **反向防守工具 · 别追高，仅限大盘大跌时短线对冲**")
+        prot_px = _pick_profit_protection_line(item, price)
+        if prot_px:
+            op_lines.append(f"🛡️ **利润保护线**：**{_fmt_price(prot_px)}**{_rel_pct_str(prot_px, price)}（走弱及时兑现，不长期拿着耗损净值）")
+    elif stance != "BULL":
+        op_lines.append("👀 **先观望 · 暂不急着买入**")
+        vwap_cond = f"站稳均价线 {_fmt_price(vwap_val)}" if (vwap_val and vwap_val > 0) else "走出明确强势"
+        if is_broken_reb and anc_r1:
+            op_lines.append(f"短线反抽到原压力 {_fmt_price(anc_r1)} 附近容易遇阻，{vwap_cond}前小仓短做或继续看戏。")
+        else:
+            op_lines.append(f"等待股价{vwap_cond}并走出高胜率多头信号再动手。")
+    else:
+        if (_opt_float(opt_lim) or 0) > 0:
+            op_lines.append(f"🟢 **参考关注价**：**{_fmt_price(opt_lim)}**{_rel_pct_str(opt_lim, price)}（回踩这附近企稳再考虑）")
+        else:
+            op_lines.append(f"🟢 **顺势低吸**：不追高，留意回踩均价线 {_fmt_price(vwap_val)} 附近企稳机会")
+        if (_opt_float(sl_px) or 0) > 0:
+            op_lines.append(f"🛡️ **防守止损线**：**{_fmt_price(sl_px)}**{_rel_pct_str(sl_px, price)}（跌破先撤退保本金）")
+        tp_use = tp_px if (_opt_float(tp_px) or 0) > 0 else anc_r1
+        if (_opt_float(tp_use) or 0) > 0:
+            op_lines.append(f"🏁 **上方目标参考**：**{_fmt_price(tp_use)}**{_rel_pct_str(tp_use, price)}")
+        if sr_state == "ALL_RESISTANCE_BROKEN":
+            op_lines.append("🚀 今日原定压力已全破，不猜天花板，沿均价线移动止盈。")
+
+    # 3. 🧱 关键价位（大白话接管 V4.4 静态锚 + ATR 估算标注）
+    def _src_plain(src_val: Any) -> str:
+        return "（估算参考，无真实筹码）" if str(src_val or "").upper() == "ATR_ESTIMATE" else ""
+
+    if sr_state == "ALL_SUPPORT_BREACHED":
+        levels_lines = [
+            f"⚠️ **今日原定支撑已全线跌穿**（原支撑一 {_fmt_price(anc_s1)} / 原支撑二 {_fmt_price(anc_s2)}），**下方无真实支撑，别猜底**",
+            f"上方先看压力：原支撑二 **{_fmt_price(anc_s2)}**{_src_plain(s2_src)} ➔ 原压力一 **{_fmt_price(anc_r1)}**{_src_plain(r1_src)}",
+        ]
+    elif sr_state == "S1_BREACHED":
+        levels_lines = [
+            f"📉 原支撑一 {_fmt_price(anc_s1)} 已跌穿（转为上方压力），半空别接刀",
+            f"下方退守支撑二：**{_fmt_price(anc_s2)}**{_src_plain(s2_src)}{_rel_pct_str(anc_s2, price)} ｜ 上方压力：{_fmt_price(anc_s1)} / {_fmt_price(anc_r1)}{_src_plain(r1_src)}",
+        ]
+    elif sr_state == "ALL_RESISTANCE_BROKEN":
+        levels_lines = [
+            f"🚀 **已突破今日全部原定阻力**（原压力一 {_fmt_price(anc_r1)} / 原压力二 {_fmt_price(anc_r2)}），上方不硬猜天花板",
+            f"原压力二 **{_fmt_price(anc_r2)}** 现转为防守底线{_rel_pct_str(anc_r2, price)}，跌不破可继续拿着跟趋势",
+        ]
+    elif sr_state == "R1_BROKEN":
+        levels_lines = [
+            f"📈 **已突破原阻力 {_fmt_price(anc_r1)}（现转为支撑）**{_rel_pct_str(anc_r1, price)}，上看 **{_fmt_price(anc_r2)}**{_src_plain(r2_src)}{_rel_pct_str(anc_r2, price)}",
+            f"不追冲高针，等回踩原阻力 {_fmt_price(anc_r1)} 或均价线站稳更稳妥",
+        ]
+    else:
+        sup_s = f"下方支撑：**{_fmt_price(anc_s1)}**{_src_plain(s1_src)}{_rel_pct_str(anc_s1, price)}"
+        if anc_s2:
+            sup_s += f" / 深度支撑 {_fmt_price(anc_s2)}{_src_plain(s2_src)}"
+        res_s = f"上方压力：**{_fmt_price(anc_r1)}**{_src_plain(r1_src)}{_rel_pct_str(anc_r1, price)}"
+        if anc_r2:
+            res_s += f" / 强压力 {_fmt_price(anc_r2)}{_src_plain(r2_src)}"
+        levels_lines = [sup_s, res_s]
+
+    # 4. 📊 通俗体检（把所有技术指标翻成 4 句大白话）
+    vr_snap = snapshot.get("vix_regime") if isinstance(snapshot.get("vix_regime"), dict) else {}
+    if vwap_val and vwap_val > 0 and price:
+        diff_v = vwap_diff if vwap_diff is not None else (((price - vwap_val) / vwap_val) * 100.0)
+        pos_w = "上方" if diff_v >= 0 else "下方"
+        mood_w = "偏强（买盘占优）" if diff_v >= 0.3 else ("偏弱（上方有抛压）" if diff_v <= -0.3 else "贴近均价（多空胶着）")
+        stale_w = "（昨日参考）" if vwap_stale else ""
+        vwap_line = f"• **均价线**：现价在均价线 {_fmt_price(vwap_val)} {pos_w}（{diff_v:+.1f}%），{mood_w}{stale_w}"
+    else:
+        vwap_line = "• **均价线**：暂无当日均价数据"
 
     cor = item.get("corridor") if isinstance(item.get("corridor"), dict) else {}
-    cor_cn = str(cor.get("status_cn") or "暂无走廊")
-    cor_time = f" ({cor.get('latest_time')} ET)" if cor.get("latest_time") else ""
-    cor_dev = f" ｜ 偏离 P50 `{_fmt_pct(cor.get('pct_vs_p50'))}`" if cor.get("pct_vs_p50") is not None else ""
-    if cor.get("p50") is not None:
-        cor_range = f"P25 **{_fmt_price(cor.get('p25'))}** ｜ P50 **{_fmt_price(cor.get('p50'))}** ｜ P75 **{_fmt_price(cor.get('p75'))}**"
+    cor_stat = str(cor.get("status") or "").upper()
+    if cor_stat == "BELOW_P25":
+        path_desc = "比预期弱很多，已跌破正常波动范围"
+    elif cor_stat == "ABOVE_P75":
+        path_desc = "走势很强，超出正常预期"
+    elif cor_stat == "IN_CORRIDOR":
+        path_desc = "基本按正常预期节奏走，没明显走坏"
     else:
-        cor_range = "盘前开盘 corridor 尚未就绪或连续/次新品种跳过"
-    pm_line = ""
+        path_desc = "今日正常波动范围尚未生成"
+    pm_hl = ""
     if cor.get("pmh") or cor.get("pml"):
-        pm_line = f"\n盘前/参考高低：PMH {_fmt_price(cor.get('pmh'))} ｜ PML {_fmt_price(cor.get('pml'))}"
+        pm_hl = f"（盘前高 {_fmt_price(cor.get('pmh'))} / 盘前低 {_fmt_price(cor.get('pml'))}）"
+    path_line = f"• **今日强弱**：{path_desc}{pm_hl}"
+
+    rs20 = _opt_float(item.get("rs_20d"))
+    if rs20 is None:
+        rs_desc = "近一月对比大盘数据暂缺"
+    elif rs20 >= 8.0:
+        rs_desc = f"明显跑赢大盘（近一月强于大盘 {rs20:+.1f}%）"
+    elif rs20 >= 2.0:
+        rs_desc = f"小幅跑赢大盘（近一月强于大盘 {rs20:+.1f}%）"
+    elif rs20 > -2.0:
+        rs_desc = f"基本跟着大盘走（近一月和大盘差 {rs20:+.1f}%）"
+    elif rs20 > -8.0:
+        rs_desc = f"略微跑输大盘（近一月落后 {rs20:+.1f}%）"
+    else:
+        rs_desc = f"明显跑输大盘（近一月落后 {rs20:+.1f}%）"
+    rs_line = f"• **近一月表现**：{rs_desc}"
+
+    l_wr = _opt_float(item.get("ai_long_win_rate_pct"))
+    l_raw = _opt_float(item.get("ai_long_raw_pct"))
+    is_capped = (not is_inv) and (
+        bool(item.get("ai_regime_capped"))
+        or bool(
+            (vr_snap.get("vix_hard_brake") or str(snapshot.get("market_regime") or "").upper() == "BEAR_DEFENSE")
+            and l_raw is not None
+            and l_wr is not None
+            and (l_raw - l_wr) >= 5.0
+        )
+    )
+    cap_txt = "（大盘太恐慌，系统已强制降档）" if is_capped else ""
+    ai_line = f"• **AI 胜率**：做多参考胜率 **{_fmt_num(l_wr, 1, '%')}**{cap_txt}"
+    if res_suppressed and res_badge:
+        ai_line += f" ｜ {res_badge}"
 
     fields = [
-        {"name": "💰 报价与时段", "value": _strip_bare_hr_lines("\n".join(price_lines))[:1024], "inline": True},
-        {"name": "🤖 赛道与 AI 胜率", "value": _strip_bare_hr_lines("\n".join(ai_lines))[:1024], "inline": True},
-        {"name": "🧭 当前决策结论", "value": _strip_bare_hr_lines("\n".join(decision_lines))[:1024], "inline": False},
-        {"name": levels_title, "value": _strip_bare_hr_lines("\n".join(levels_lines))[:1024], "inline": True},
-        {"name": "📐 微观量价与强弱", "value": _strip_bare_hr_lines("\n".join(micro_lines))[:1024], "inline": True},
+        {"name": "💰 价格", "value": _strip_bare_hr_lines(price_text)[:1024], "inline": False},
+        {"name": "🎯 怎么操作", "value": _strip_bare_hr_lines("\n".join(op_lines))[:1024], "inline": False},
+        {"name": "🧱 关键价位", "value": _strip_bare_hr_lines("\n".join(levels_lines))[:1024], "inline": False},
         {
-            "name": f"📈 今日盘中走廊 (P25~P75){cor_time}",
-            "value": _strip_bare_hr_lines(f"状态：**{cor_cn}**{cor_dev}\n{cor_range}{pm_line}")[:1024],
+            "name": "📊 通俗体检",
+            "value": _strip_bare_hr_lines("\n".join([vwap_line, path_line, rs_line, ai_line]))[:1024],
             "inline": False,
         },
     ]
 
     return {
-        "title": f"{stance_icon} {tk} · {name} 全景诊断"[:256],
+        "title": f"{stance_icon} {tk} · {name}（{cat}）"[:256],
         "description": _strip_bare_hr_lines(
-            f"大盘体制：**{snapshot.get('market_regime_cn') or snapshot.get('market_regime') or '--'}** ｜ 宏观气象：{snapshot.get('weather') or '--'}"
+            f"💬 一句话结论：**{one_liner}**\n"
+            f"大盘环境：{_plain_regime_label(snapshot)} ｜ 天气：{snapshot.get('weather') or '稳健观察'}"
         ),
         "color": color,
         "fields": fields,
@@ -613,14 +752,16 @@ def build_check_embed_dict(
 
 
 def build_vix_embed_dict(snapshot: Optional[Dict[str, Any]]) -> Dict[str, Any]:
-    """构建 `/vix` 真 VIX/VXN 恐慌中枢 + 跨市场流动性 + OPEX 护盾 Embed 字典。"""
+    """构建 `/vix` 今天大盘安全吗？大白话诊断 Embed 字典。"""
     footer_txt = _build_footer_text(snapshot)
     now_iso = datetime.now(timezone.utc).isoformat()
 
     if not isinstance(snapshot, dict):
         return {
-            "title": "⏳ VIX 恐慌中枢快照尚未就绪",
-            "description": "请等待主雷达首轮刷新完成生成 `data_cache/latest_radar_snapshot.json` 后再查。",
+            "title": "⚡ 今天大盘安全吗？",
+            "description": _strip_bare_hr_lines(
+                "💬 一句话结论：主雷达正在刷新最新恐慌数据，请稍等片刻再查。"
+            ),
             "color": 0xF59E0B,
             "timestamp": now_iso,
             "footer": {"text": footer_txt},
@@ -640,56 +781,140 @@ def build_vix_embed_dict(snapshot: Optional[Dict[str, Any]]) -> Dict[str, Any]:
     }
     color = color_map.get(vix_state, 0x64748B)
 
+    headline_map = {
+        "BACKWARDATION_BRAKE": "市场非常恐慌，机构还在抢避险，今天管住手别抄底。",
+        "WASHOUT_BOTTOM_WINDOW": "恐慌明显退潮，可以开始关注右侧抄底机会。",
+        "BOTTOM_PREMARKET_PREVIEW": "盘前恐慌有降温苗头，但还没开正式盘不算数，等美东 09:30 开盘确认后再动手。",
+        "ELEVATED_CAUTION": "市场情绪依然偏紧张，轻仓防守为主，别盲目重仓抄底。",
+        "CALM": "大盘情绪平稳，按个股节奏正常操作即可。",
+    }
+    headline = headline_map.get(vix_state, "正在监测市场恐慌情绪，控制仓位按强弱选股。")
+
+    vix_spot = _opt_float(vr.get("vix_spot"))
+    vxn_spot = _opt_float(vr.get("vxn_spot"))
     spread_v = _opt_float(vr.get("vxn_vix_spread"))
-    spread_str = f"{spread_v:+.2f}" if spread_v is not None else "--"
+    ratio_v = _opt_float(vr.get("vix_term_ratio"))
+    tnx_v = _opt_float(vr.get("tnx_yield"))
+    peak_v = _opt_float(vr.get("vix_10d_peak"))
+    dd_v = _opt_float(vr.get("vix_drawdown_from_peak_pct"))
 
+    if vix_spot is None:
+        vix_mood = "暂无数据"
+    elif vix_spot >= 30:
+        vix_mood = "很慌"
+    elif vix_spot >= 22:
+        vix_mood = "偏紧张"
+    elif vix_spot >= 16:
+        vix_mood = "小有波动"
+    else:
+        vix_mood = "很平静"
+
+    if spread_v is None:
+        tech_mood = "科技股恐慌暂无数据"
+    elif spread_v >= 4.0:
+        tech_mood = "跌得比大盘狠"
+    elif spread_v >= 2.0:
+        tech_mood = "科技股比大盘更紧张"
+    else:
+        tech_mood = "和大盘情绪差不多"
+
+    if ratio_v is None:
+        term_plain = "远期恐慌数据暂缺"
+    elif ratio_v >= 1.00:
+        term_plain = f"短期比长期还慌（倒挂 {ratio_v:.2f}，还没跌透）"
+    elif ratio_v >= 0.94:
+        term_plain = f"短长期接近（比值 {ratio_v:.2f}，情绪还在消化）"
+    else:
+        term_plain = f"短期低于长期（比值 {ratio_v:.2f}，恐慌结构恢复正常）"
+
+    peak_note = f" ｜ 近10天最高 {_fmt_num(peak_v, 1)}（已回落 {_fmt_num(dd_v, 1, '%')}）" if peak_v is not None else ""
     vix_lines = [
-        f"• **`^VIX` 标普恐慌**：`{_fmt_num(vr.get('vix_spot'))}` ({_fmt_pct(vr.get('vix_pct'))}) ｜ **`^VIX3M`**：`{_fmt_num(vr.get('vix3m_spot'))}`",
-        f"• **期限比 `VIX/VIX3M`**：**`{_fmt_num(vr.get('vix_term_ratio'), 3)}`** ({vr.get('term_structure_cn') or '--'})",
-        f"• **`^VXN` 纳指恐慌**：`{_fmt_num(vr.get('vxn_spot'))}` ｜ 科技溢价 `(VXN - VIX)`：**`{spread_str}`**",
-        f"• **科技压制评估**：{vr.get('tech_fear_label') or '⚪ 科技波动平稳'}",
-        f"• **`^VVIX`**：`{_fmt_num(vr.get('vvix_spot'))}` ｜ **10Y 美债 `^TNX`**：`{_fmt_num(vr.get('tnx_yield'), 2, '%')}`",
-        f"• **10日峰值 / 回撤**：`{_fmt_num(vr.get('vix_10d_peak'))}` / `-{_fmt_num(vr.get('vix_drawdown_from_peak_pct'), 1, '%')}`",
+        f"• 大盘恐慌 **{_fmt_num(vix_spot, 1)}**（{vix_mood}）｜科技股恐慌 **{_fmt_num(vxn_spot, 1)}**（{tech_mood}）",
+        f"• 短期 vs 长期：**{term_plain}**",
+        f"• 10年美债利率：**{_fmt_num(tnx_v, 2, '%')}**{peak_note}",
     ]
 
-    gate_lines = [
-        f"• **策略 A（波段抄底窗）**：{vr.get('strategy_a_status') or '--'}",
-        f"• **策略 B（盘中真退潮）**：{vr.get('strategy_b_status') or '--'}",
-        f"• **门禁指引**：{vr.get('advice_cn') or vr.get('summary_cn') or '--'}",
-    ]
-
-    liq_lines = [
-        f"• **综合判定**：{liq.get('badge_cn') or '⚪ 暂缺'}",
-        f"• **`HYG / IEF` 信用利差**：`{_fmt_num(liq.get('hyg_ief_ratio'), 4)}` (5日 `{_fmt_pct(liq.get('hyg_ief_5d_pct'))}`)",
-        f"• **美元指数 `DXY`**：`{_fmt_num(liq.get('dxy_spot'))}` (5日 `{_fmt_pct(liq.get('dxy_5d_pct'))}`)",
-        f"• **美元/日元 `USD/JPY`**：`{_fmt_num(liq.get('usdjpy_spot'))}` (5日 `{_fmt_pct(liq.get('usdjpy_5d_pct'))}`)",
-    ]
-
-    if opx.get("active"):
-        opx_lines = [
-            f"• **激活护盾**：**{opx.get('badge') or 'OPEX 护盾'}**",
-            f"• {opx.get('headline') or ''}",
-            f"• {opx.get('detail') or ''}",
+    if vix_state == "BACKWARDATION_BRAKE":
+        gate_lines = [
+            "• **波段抄底**：🔴 **红灯停** — 机构还在抢短期避险，需等恐慌比值回落到 0.97 以下、并从高点明显回落后再亮灯",
+            "• **日内抢反弹**：🔴 **禁止抄底** — 短期倒挂踩踏期极易接在半山腰",
+        ]
+    elif vix_state == "WASHOUT_BOTTOM_WINDOW":
+        gate_lines = [
+            "• **波段抄底**：🟢 **绿灯亮了** — 恐慌已从高位明显退潮且结构恢复正常，可留意抗跌龙头右侧机会",
+            "• **日内抢反弹**：🟢 **允许参与** — 可依托均价线和支撑位顺势低吸",
+        ]
+    elif vix_state == "BOTTOM_PREMARKET_PREVIEW":
+        gate_lines = [
+            "• **波段抄底**：🟡 **黄灯预热** — 盘前恐慌看着在降温，但远期合约还没开盘，需等美东 09:30 开正式盘确认才算亮灯",
+            "• **日内抢反弹**：🟡 **等开盘** — 美东 09:30 开盘后再动手，盘前不提前抢跑",
+        ]
+    elif vix_state == "ELEVATED_CAUTION":
+        gate_lines = [
+            "• **波段抄底**：🟡 **黄灯等待** — 恐慌还没彻底消退，还差自高点继续回落并稳在 0.97 以下的确认",
+            "• **日内抢反弹**：🟡 **轻仓挑强** — 只做明显强于大盘的票，破位弱股不接刀",
         ]
     else:
-        opx_lines = [
-            "• **状态**：⚪ 非 OPEX / T-1 常规交易日",
-            f"• **下一次 OPEX / 四巫日**：`{opx.get('next_opex_date') or '--'}`（距今 `{opx.get('days_to_opex', '--')}` 天）",
+        gate_lines = [
+            "• **波段抄底**：⚪ **无需避险刹车** — 大盘没有系统性恐慌，按个股自身买点正常操作",
+            "• **日内抢反弹**：🟢 **正常允许** — 关注均价线附近低吸节奏即可",
         ]
 
+    hyg_5d = _opt_float(liq.get("hyg_ief_5d_pct"))
+    dxy_5d = _opt_float(liq.get("dxy_5d_pct"))
+    jpy_5d = _opt_float(liq.get("usdjpy_5d_pct"))
+
+    if hyg_5d is None:
+        hyg_plain = "暂无近5天数据"
+    elif hyg_5d <= -0.8:
+        hyg_plain = "资金明显在躲风险"
+    elif hyg_5d >= 0.8:
+        hyg_plain = "资金愿意买风险资产"
+    else:
+        hyg_plain = "风险偏好大致平稳"
+
+    if dxy_5d is None:
+        dxy_plain = "变动不大"
+    elif dxy_5d >= 0.8:
+        dxy_plain = "美元走强，场外资金偏紧"
+    elif dxy_5d <= -0.8:
+        dxy_plain = "美元走弱，资金压力缓和"
+    else:
+        dxy_plain = "波动温和"
+
+    if jpy_5d is None:
+        jpy_plain = "平稳"
+    elif jpy_5d <= -1.2:
+        jpy_plain = "日元急升，小心套息资金撤退"
+    else:
+        jpy_plain = "走势平稳"
+
+    if opx.get("active"):
+        kind_cn = "四巫日" if opx.get("is_quad_witching") else "月度期权到期日"
+        when_cn = "今天" if str(opx.get("timing") or "").upper() == "TODAY" else "明天"
+        opx_line = f"• **期权到期日提醒**：⚠️ {when_cn}是{kind_cn}，尾盘容易剧烈波动，小心冲高回落假突破"
+    else:
+        kind_cn = "四巫日" if opx.get("next_is_quad_witching") else "月度期权到期日"
+        days_s = opx.get("days_to_opex", "--")
+        opx_line = f"• **期权到期日提醒**：距下次{kind_cn}（{opx.get('next_opex_date') or '--'}）还有 **{days_s} 天**，近期暂无到期扰动"
+
+    liq_lines = [
+        f"• **高收益债偏好（跌 = 资金在躲风险）**：近5天 `{_fmt_pct(hyg_5d)}`（{hyg_plain}）",
+        f"• **美元指数**：{_fmt_num(liq.get('dxy_spot'))}（近5天 `{_fmt_pct(dxy_5d)}`，{dxy_plain}）｜**日元**：{_fmt_num(liq.get('usdjpy_spot'))}（近5天 `{_fmt_pct(jpy_5d)}`，{jpy_plain}）",
+        opx_line,
+    ]
+
     return {
-        "title": "⚡ 美股量化雷达 · 真 VIX/VXN 恐慌中枢与宏观护盾",
+        "title": "⚡ 今天大盘安全吗？",
         "description": _strip_bare_hr_lines(
-            f"**{vr.get('pill_text') or '--'}**\n"
-            f"大盘体制：**{snapshot.get('market_regime_cn') or snapshot.get('market_regime') or '--'}** ｜ "
-            f"气象：**{snapshot.get('weather') or '--'}**"
+            f"💬 一句话结论：**{headline}**\n"
+            f"大盘环境：{_plain_regime_label(snapshot)} ｜ 天气：**{snapshot.get('weather') or '观察中'}**"
         ),
         "color": color,
         "fields": [
-            {"name": "🌡️ VIX / VXN 期限矩阵", "value": _strip_bare_hr_lines("\n".join(vix_lines))[:1024], "inline": False},
-            {"name": "🚦 策略 A / B 双保险门禁", "value": _strip_bare_hr_lines("\n".join(gate_lines))[:1024], "inline": False},
-            {"name": "🌊 跨市场流动性", "value": _strip_bare_hr_lines("\n".join(liq_lines))[:1024], "inline": True},
-            {"name": "🗓️ OPEX / 四巫日护盾", "value": _strip_bare_hr_lines("\n".join(opx_lines))[:1024], "inline": True},
+            {"name": "🌡️ 恐慌温度", "value": _strip_bare_hr_lines("\n".join(vix_lines))[:1024], "inline": False},
+            {"name": "🚦 抄底灯亮了吗", "value": _strip_bare_hr_lines("\n".join(gate_lines))[:1024], "inline": False},
+            {"name": "🌊 场外资金风向", "value": _strip_bare_hr_lines("\n".join(liq_lines))[:1024], "inline": False},
         ],
         "timestamp": now_iso,
         "footer": {"text": footer_txt},
@@ -697,14 +922,16 @@ def build_vix_embed_dict(snapshot: Optional[Dict[str, Any]]) -> Dict[str, Any]:
 
 
 def build_top5_embed_dict(snapshot: Optional[Dict[str, Any]]) -> Dict[str, Any]:
-    """构建 `/top5` 🛡️ 抗跌领涨 Top 5 真龙头榜 Embed 字典。"""
+    """构建 `/top5` 大盘震荡期最抗跌的 5 只票（紧凑 2 行防折行、休市统一用正规盘数据）。"""
     footer_txt = _build_footer_text(snapshot)
     now_iso = datetime.now(timezone.utc).isoformat()
 
     if not isinstance(snapshot, dict):
         return {
-            "title": "🛡️ 抗跌领涨 Top 5 真龙头榜",
-            "description": "本地只读快照尚未就绪，请等待主雷达完成首轮刷新后再试。",
+            "title": "🛡️ 大盘震荡期最抗跌的 5 只票",
+            "description": _strip_bare_hr_lines(
+                "💬 一句话结论：主雷达正在刷新最新排名，请稍等片刻再查。"
+            ),
             "color": 0xF59E0B,
             "timestamp": now_iso,
             "footer": {"text": footer_txt},
@@ -713,38 +940,63 @@ def build_top5_embed_dict(snapshot: Optional[Dict[str, Any]]) -> Dict[str, Any]:
     top5 = snapshot.get("resilient_leaders_top5")
     if not isinstance(top5, list) or not top5:
         return {
-            "title": "🛡️ 抗跌领涨 Top 5 真龙头榜",
+            "title": "🛡️ 大盘震荡期最抗跌的 5 只票",
             "description": _strip_bare_hr_lines(
-                "当前暂无满足筛选条件的抗跌领涨榜单。\n"
-                "（筛选器已自动剔除 `SQQQ / SOXS / VIXY / TLT / GLD / XAUUSD / BTC-USD` 等反向与防御避险工具，仅保留非暴跌冷却的正向抗跌领涨标的。）"
+                "💬 一句话结论：现在没有同时抗跌又走稳的股票，先管住手等机会。\n"
+                "已自动排除反向做空、黄金、国债、比特币和刚暴跌的股票，目前无标的达标。"
             ),
             "color": 0x64748B,
             "timestamp": now_iso,
             "footer": {"text": footer_txt},
         }
 
-    vr = snapshot.get("vix_regime") if isinstance(snapshot.get("vix_regime"), dict) else {}
+    sess_code = str(snapshot.get("session_code") or "").strip().upper()
+    is_closed_rth = sess_code in ("POST_MARKET", "WEEKEND")
+    px_lbl = "收" if is_closed_rth else ("盘前" if sess_code == "PRE_MARKET" else "现")
+
     rows: List[str] = []
     for idx, ld in enumerate(top5[:5], 1):
         tk = str(ld.get("ticker") or "--")
         name = str(ld.get("name") or tk)
         cat = str(ld.get("cat") or "")
-        px_s = _fmt_price(ld.get("price"))
-        pct_s = _fmt_pct(ld.get("pct"))
-        rs_s = _fmt_pct(ld.get("rs_20d"), 1)
-        exc_s = _fmt_pct(ld.get("excess_vs_spy"))
-        vwap_tag = str(ld.get("vwap_tag") or ("✓VWAP" if ld.get("above_vwap") else "VWAP下"))
-        cat_part = f" · {cat}" if cat else ""
+        px_val = ld.get("rth_close") if (is_closed_rth and ld.get("rth_close") is not None) else ld.get("price")
+        pct_val = ld.get("rth_pct") if (is_closed_rth and ld.get("rth_pct") is not None) else ld.get("pct")
+        px_s = _fmt_price(px_val)
+        pct_num = _opt_float(pct_val) or 0.0
+        pct_s = _fmt_pct(pct_num)
+        exc_num = _opt_float(ld.get("excess_vs_spy")) or 0.0
+        exc_word = f"比大盘强 {exc_num:+.1f}%" if exc_num >= 0 else f"比大盘弱 {exc_num:+.1f}%"
+
+        rs_num = _opt_float(ld.get("rs_20d")) or 0.0
+        if rs_num >= 8.0:
+            month_str = "近一月强势"
+        elif rs_num >= 2.0:
+            month_str = "近一月偏强"
+        elif rs_num > -2.0:
+            month_str = "近一月平稳"
+        else:
+            month_str = "近一月偏弱"
+
+        if not is_closed_rth and sess_code == "REGULAR" and ld.get("above_vwap"):
+            short_badge = "站稳均价"
+        elif pct_num > 0:
+            short_badge = "正涨幅"
+        elif exc_num > 0.3:
+            short_badge = "强于大盘"
+        else:
+            short_badge = "相对抗跌"
+
+        cat_part = f"（{cat}）" if cat else ""
         rows.append(
-            f"**{idx}. `{tk}`** ({name}{cat_part})\n"
-            f"> 现价 `{px_s}` (`{pct_s}` ｜ 相对SPY `{exc_s}`) ｜ 20日RS **`{rs_s}`** ｜ `{vwap_tag}`"
+            f"**{idx}. {tk}** {name}{cat_part} · {short_badge}\n"
+            f"{px_lbl} {px_s} ({pct_s})｜{exc_word}｜{month_str}"
         )
 
     return {
-        "title": "🛡️ 抗跌领涨 Top 5 真龙头榜",
+        "title": "🛡️ 大盘震荡期最抗跌的 5 只票",
         "description": _strip_bare_hr_lines(
-            f"当前恐慌状态：{vr.get('pill_text') or '--'} ｜ 自动剔除反向 ETF/国债/黄金/加密与暴跌熔断股，按 20日超额 RS 与日内 VWAP 承接排序。\n\n"
-            + "\n".join(rows)
+            "💬 一句话结论：大盘恐慌时，这 5 只股票最抗跌、资金还在买（已自动排除反向做空和黄金国债）：\n\n"
+            + "\n\n".join(rows)
         ),
         "color": 0x10B981,
         "timestamp": now_iso,
@@ -756,15 +1008,17 @@ def build_ledger_embed_dict(
     ledger_path: Optional[str] = None,
     snapshot: Optional[Dict[str, Any]] = None,
 ) -> Dict[str, Any]:
-    """构建 `/ledger` 📒 近 30 日实盘推送信号记账摘要 Embed 字典（严格只读、多空分账）。"""
+    """构建 `/ledger` 最近 30 天提醒准不准？大白话战绩摘要 Embed 字典。"""
     footer_txt = _build_footer_text(snapshot)
     now_iso = datetime.now(timezone.utc).isoformat()
     target_ledger = ledger_path or DEFAULT_LEDGER_PATH
 
     if signal_ledger is None:
         return {
-            "title": "📒 实盘推送信号记账本（近 30 日）",
-            "description": "记账本模块 `signal_ledger.py` 当前不可用，无法读取战绩数据。",
+            "title": "📒 最近 30 天提醒准不准？",
+            "description": _strip_bare_hr_lines(
+                "💬 一句话结论：记账本模块暂时未加载，稍后再试。"
+            ),
             "color": 0x64748B,
             "timestamp": now_iso,
             "footer": {"text": footer_txt},
@@ -775,11 +1029,11 @@ def build_ledger_embed_dict(
 
     if total_rec == 0:
         return {
-            "title": "📒 实盘推送信号记账本（近 30 日）",
+            "title": "📒 最近 30 天提醒准不准？",
             "description": _strip_bare_hr_lines(
-                "**📒 账本已就绪，自下周首条推送起自动记录**\n\n"
-                "当主雷达向 Discord 真实推送实盘信号后，系统会静默记账并在 `+1h` / 收盘 `16:05 ET` / `T+3` / `T+5` 自动零未来函数回填战绩，"
-                "**多头实盘胜率**与**防守拦截有效率**严格分账统计。"
+                "💬 一句话结论：📒 账本已就绪，从下周第一条实盘提醒开始自动记账复盘\n\n"
+                "之后主雷达每发一条实盘提醒，系统都会悄悄记上一笔，并在 1 小时后、当天收盘、第 3 天和第 5 天自动核对涨跌，"
+                "把**做多提醒准不准**和**提醒别抄底拦得准不准**分开算账。"
             ),
             "color": 0x38BDF8,
             "timestamp": now_iso,
@@ -787,36 +1041,40 @@ def build_ledger_embed_dict(
         }
 
     long_wr = summary.get("long_win_rate_pct")
-    long_wr_s = f"**{long_wr:.1f}%** (`{summary.get('long_wins', 0)}/{summary.get('long_settled', 0)}`)" if long_wr is not None else "待结算"
+    long_wr_s = f"**{long_wr:.1f}%**（{summary.get('long_wins', 0)}/{summary.get('long_settled', 0)} 次做对）" if long_wr is not None else "待结算"
     def_eff = summary.get("defense_eff_rate_pct")
-    def_eff_s = f"**{def_eff:.1f}%** (`{summary.get('defense_hits', 0)}/{summary.get('defense_settled', 0)}`)" if def_eff is not None else "暂无/待结算"
+    def_eff_s = f"**{def_eff:.1f}%**（{summary.get('defense_hits', 0)}/{summary.get('defense_settled', 0)} 次拦对）" if def_eff is not None else "暂无/待结算"
+
+    long_head = f"{long_wr:.0f}%" if long_wr is not None else "待结算"
+    def_head = f"{def_eff:.0f}%" if def_eff is not None else "待结算"
 
     kpi_lines = [
-        f"• **近 30 日记账总数**：`{total_rec}` 笔（已结算 `{summary.get('settled_total', 0)}` 笔）",
-        f"• 📈 **多头实盘胜率 (`{summary.get('long_total', 0)}` 笔)**：{long_wr_s}",
-        f"• 🛡️ **防守拦截有效率 (`{summary.get('defense_total', 0)}` 笔)**：{def_eff_s}",
+        f"💬 一句话结论：最近 30 天发了 {total_rec} 次提醒，做多胜率 {long_head}，拦住别抄底有效率 {def_head}。\n",
+        f"• **最近 30 天发了**：**{total_rec} 次提醒**（已核对 {summary.get('settled_total', 0)} 次）",
+        f"• 📈 **做多提醒准不准**（{summary.get('long_total', 0)} 次）：胜率 {long_wr_s}",
+        f"• 🛡️ **提醒别抄底拦得准不准**（{summary.get('defense_total', 0)} 次）：拦截有效率 {def_eff_s}",
     ]
 
     recent_lines: List[str] = []
     for rec in (summary.get("recent_records") or [])[:5]:
-        dir_tag = "🛡️防守" if rec.get("direction") == "BEAR_DEFENSE" else "📈做多"
+        is_def = (rec.get("direction") == "BEAR_DEFENSE")
+        dir_tag = "🛡️ 提醒别抄底" if is_def else "📈 做多提醒"
         hit_v = rec.get("hit")
         res_icon = "✅" if hit_v is True else ("❌" if hit_v is False else "⏳")
         eod_s = _fmt_pct(rec.get("ret_eod_pct"))
         t3_s = _fmt_pct(rec.get("ret_t3_pct"))
-        mae_s = _fmt_pct(rec.get("mae_pct"))
         recent_lines.append(
-            f"> {res_icon} `{rec.get('date_et')}` · **{rec.get('ticker')}** ({dir_tag} · {rec.get('signal_label_cn')})\n"
-            f"> 触发 `{_fmt_price(rec.get('entry_price'))}` ｜ 当日 `{eod_s}` / T+3 `{t3_s}` / MAE `{mae_s}`"
+            f"{res_icon} {rec.get('date_et')} · **{rec.get('ticker')}**（{dir_tag} · {rec.get('signal_label_cn')}）\n"
+            f"提醒价 {_fmt_price(rec.get('entry_price'))}｜当天收盘 {eod_s}｜3天后 {t3_s}"
         )
 
     return {
-        "title": "📒 实盘推送信号记账本（近 30 日）",
+        "title": "📒 最近 30 天提醒准不准？",
         "description": _strip_bare_hr_lines("\n".join(kpi_lines)),
         "color": 0x10B981 if (long_wr is not None and long_wr >= 50.0) else 0x38BDF8,
         "fields": [
             {
-                "name": "📝 最近 5 条推送追踪明细",
+                "name": "📝 最近 5 条提醒战绩",
                 "value": _strip_bare_hr_lines("\n".join(recent_lines))[:1024] if recent_lines else "暂无明细",
                 "inline": False,
             }
@@ -856,8 +1114,8 @@ if _DISCORD_PY_AVAILABLE:
         def _register_commands(self) -> None:
             bot_ref = self
 
-            @self.tree.command(name="check", description="秒查 79 只监控池标的现价、VWAP、AI胜率、关键点位与盘中走廊")
-            @app_commands.describe(ticker="输入美股代码或中文关键词（支持模糊补全，如 NVDA / soxl / 黄金 / xau）")
+            @self.tree.command(name="check", description="用大白话秒查个股能不能买、关键支撑压力与真实体检")
+            @app_commands.describe(ticker="输入美股代码或中文名（支持模糊补全，如 NVDA / soxl / 黄金）")
             @app_commands.checks.cooldown(1, BOT_COOLDOWN_SECONDS, key=lambda i: i.user.id)
             async def check_cmd(interaction: discord.Interaction, ticker: str):
                 snap = load_radar_snapshot(bot_ref.snapshot_path)
@@ -870,21 +1128,21 @@ if _DISCORD_PY_AVAILABLE:
                 choices = build_autocomplete_choices(current, snap, limit=25)
                 return [app_commands.Choice(name=label, value=val) for label, val in choices]
 
-            @self.tree.command(name="vix", description="一键查看真 VIX/VXN 恐慌中枢、策略 A/B 门禁、跨市场流动性与 OPEX 护盾")
+            @self.tree.command(name="vix", description="今天大盘安全吗？看恐慌温度、抄底灯亮了没和场外资金风向")
             @app_commands.checks.cooldown(1, BOT_COOLDOWN_SECONDS, key=lambda i: i.user.id)
             async def vix_cmd(interaction: discord.Interaction):
                 snap = load_radar_snapshot(bot_ref.snapshot_path)
                 emb = _embed_from_dict(build_vix_embed_dict(snap))
                 await interaction.response.send_message(embed=emb)
 
-            @self.tree.command(name="top5", description="一键查看当前 🛡️ 抗跌领涨 Top 5 真龙头榜")
+            @self.tree.command(name="top5", description="大盘震荡期最抗跌、资金还在买的 5 只股票")
             @app_commands.checks.cooldown(1, BOT_COOLDOWN_SECONDS, key=lambda i: i.user.id)
             async def top5_cmd(interaction: discord.Interaction):
                 snap = load_radar_snapshot(bot_ref.snapshot_path)
                 emb = _embed_from_dict(build_top5_embed_dict(snap))
                 await interaction.response.send_message(embed=emb)
 
-            @self.tree.command(name="ledger", description="查看近 30 日 Discord 实盘推送信号记账摘要（多空严格分账）")
+            @self.tree.command(name="ledger", description="最近 30 天群里发的提醒准不准？（做多与防接刀分开算账）")
             @app_commands.checks.cooldown(1, BOT_COOLDOWN_SECONDS, key=lambda i: i.user.id)
             async def ledger_cmd(interaction: discord.Interaction):
                 snap = load_radar_snapshot(bot_ref.snapshot_path)

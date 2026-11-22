@@ -551,11 +551,11 @@ def evaluate_sr_breach_state(
 
     if s2 > 0 and px < s2:
         state = STATE_ALL_SUPPORT_BREACHED
-        badge = f"⚠️ 今日原始支撑全线击穿 (原S1:${s1:.2f} / 原S2:${s2:.2f}) · 真空寻底"
+        badge = f"⚠️ 今日原定支撑全线跌穿 (原S1:${s1:.2f} / 原S2:${s2:.2f}) · 下方无真实支撑，别猜底"
         script = (
-            f"{halt_prefix}【支撑全线击穿 · 真空寻底】现价已跌破当日全部原始支撑 S1 (${s1:.2f}) / S2 (${s2:.2f})；"
+            f"{halt_prefix}【今日原定支撑全线跌穿 · 下方无真实支撑，别猜底】现价已跌破当日全部原定支撑 S1 (${s1:.2f}) / S2 (${s2:.2f})；"
             f"原 S2 (${s2:.2f}) 已反转为上方第一压力（上方前压 R1 (${r1:.2f}) / R2 (${r2:.2f})）；"
-            f"绝不左侧猜底，仅认放量收回原 S2 或重夺 {vwap_str} 的右侧确认；防守止损位 ${sl:.2f}"
+            f"严禁左侧猜底，仅认放量收回原 S2 或重夺 {vwap_str} 的右侧确认；防守止损位 ${sl:.2f}"
         )
     elif s1 > 0 and px < s1:
         state = STATE_S1_BREACHED

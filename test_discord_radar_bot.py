@@ -331,27 +331,31 @@ class TestDiscordRadarBot(unittest.TestCase):
         self.assertEqual(bot.resolve_ticker("比特币", snap), "BTC-USD")
         self.assertIsNone(bot.resolve_ticker("ZZZZZ_UNKNOWN", snap))
 
-        # 多头窗 + 盘前扩展价 + 旧 VWAP 上日参考标注
+        # 多头窗 + 盘前扩展价 + 旧 VWAP 昨日参考标注 + 大白话诊断
         soxl_emb = bot.build_check_embed_dict("soxl", snap)
         _assert_clean_embed(self, soxl_emb)
         self.assertEqual(soxl_emb["color"], 0x10B981)
         soxl_text = json.dumps(soxl_emb, ensure_ascii=False)
-        self.assertIn("参考挂单", soxl_text)
-        self.assertIn("防守止损", soxl_text)
-        self.assertIn("上日参考", soxl_text)
-        self.assertIn("扩展时段", soxl_text)
-        self.assertIn("贴合剧本", soxl_text)
+        self.assertIn("一句话结论", soxl_text)
+        self.assertIn("参考关注价", soxl_text)
+        self.assertIn("防守止损线", soxl_text)
+        self.assertIn("昨日参考", soxl_text)
+        self.assertIn("盘前", soxl_text)
+        self.assertIn("基本按正常预期节奏走", soxl_text)
+        self.assertNotIn("BEAR_DEFENSE", soxl_text)
 
-        # 空头防守视角自动切换 R1 / S1 + 严禁左侧接刀 + 跌破下沿走廊
+        # 空头防守视角：别手痒抄底 + 禁止出现挂单 + 弱于预期
         amd_emb = bot.build_check_embed_dict("AMD", snap)
         _assert_clean_embed(self, amd_emb)
         self.assertEqual(amd_emb["color"], 0xEF4444)
         amd_text = json.dumps(amd_emb, ensure_ascii=False)
-        self.assertIn("上方压力 R1", amd_text)
-        self.assertIn("下方支撑 S1", amd_text)
-        self.assertIn("严禁左侧接刀", amd_text)
-        self.assertIn("跌破下沿", amd_text)
-        self.assertNotIn("参考挂单：**$", amd_text)
+        self.assertIn("一句话结论", amd_text)
+        self.assertIn("别抄底", amd_text)
+        self.assertIn("别手痒抄底", amd_text)
+        self.assertIn("比预期弱很多", amd_text)
+        self.assertNotIn("参考挂单", amd_text)
+        self.assertNotIn("参考关注价", amd_text)
+        self.assertNotIn("BEAR_DEFENSE", amd_text)
 
         # 中文别名 "黄金" 命中 XAUUSD
         xau_emb = bot.build_check_embed_dict("黄金", snap)
@@ -398,26 +402,42 @@ class TestDiscordRadarBot(unittest.TestCase):
         _assert_clean_embed(self, vix_emb)
         self.assertEqual(vix_emb["color"], 0xF59E0B)
         vix_text = json.dumps(vix_emb, ensure_ascii=False)
-        for token in ("^VIX", "^VXN", "VIX/VIX3M", "^VVIX", "^TNX", "盘前预热", "时段锁", "HYG / IEF", "DXY", "USD/JPY", "OPEX 护盾"):
+        for token in (
+            "一句话结论",
+            "大盘恐慌",
+            "科技股恐慌",
+            "10年美债利率",
+            "波段抄底",
+            "日内抢反弹",
+            "美东 09:30",
+            "高收益债偏好（跌 = 资金在躲风险）",
+            "美元指数",
+            "日元",
+            "期权到期日提醒",
+        ):
             self.assertIn(token, vix_text)
+        for bad in ("BEAR_DEFENSE", "信用利差", "期限矩阵"):
+            self.assertNotIn(bad, vix_text)
 
         top5_emb = bot.build_top5_embed_dict(snap)
         _assert_clean_embed(self, top5_emb)
         self.assertEqual(top5_emb["color"], 0x10B981)
-        self.assertIn("抗跌领涨 Top 5", top5_emb["title"])
+        self.assertIn("最抗跌的 5 只票", top5_emb["title"])
+        self.assertIn("一句话结论", top5_emb["description"])
 
         empty_top5 = bot.build_top5_embed_dict({"resilient_leaders_top5": [], "updated_at_et": "2026-11-22 10:00:00"})
         _assert_clean_embed(self, empty_top5)
+        self.assertIn("一句话结论", empty_top5["description"])
 
     def test_04_ledger_embed_empty_and_populated(self):
         with tempfile.TemporaryDirectory() as tmpdir:
             temp_ledger = os.path.join(tmpdir, "signal_ledger.json")
 
-            # 空白状态不应创建文件，且展示「账本已就绪，自下周首条推送起自动记录」
+            # 空白状态不应创建文件，且展示「账本已就绪，从下周第一条实盘提醒开始自动记账复盘」
             empty_emb = bot.build_ledger_embed_dict(ledger_path=temp_ledger, snapshot={"updated_at_et": "2026-11-22 10:00:00"})
             _assert_clean_embed(self, empty_emb)
             self.assertFalse(os.path.exists(temp_ledger))
-            self.assertIn("账本已就绪，自下周首条推送起自动记录", empty_emb["description"])
+            self.assertIn("账本已就绪，从下周第一条实盘提醒开始自动记账复盘", empty_emb["description"])
 
             # 写入 1 笔做多成功 + 1 笔防守有效拦截（仅写入临时路径）
             now_et = datetime(2026, 11, 20, 10, 15, tzinfo=NY_TZ)
@@ -439,11 +459,13 @@ class TestDiscordRadarBot(unittest.TestCase):
             pop_emb = bot.build_ledger_embed_dict(ledger_path=temp_ledger, snapshot={"updated_at_et": "2026-11-22 10:00:00"})
             _assert_clean_embed(self, pop_emb)
             pop_text = json.dumps(pop_emb, ensure_ascii=False)
-            self.assertIn("多头实盘胜率", pop_text)
-            self.assertIn("防守拦截有效率", pop_text)
+            self.assertIn("一句话结论", pop_text)
+            self.assertIn("做多提醒准不准", pop_text)
+            self.assertIn("拦截有效率", pop_text)
             self.assertIn("100.0%", pop_text)
             self.assertIn("NVDA", pop_text)
             self.assertIn("SPY", pop_text)
+            self.assertNotIn("BEAR_DEFENSE", pop_text)
 
     def test_05_missing_token_graceful_exit_and_security_hygiene(self):
         # 缺少 Token 时返回 0 且绝不抛异常
