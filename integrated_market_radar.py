@@ -6874,13 +6874,38 @@ def generate_stocks_radar_html(stocks_data, history_dict, update_time_str="", ha
     except Exception:
         vix_css, vix_pill_html, vix_js = "", "", ""
 
-    # 2. 绘制 27 只个股“黄金坑距离 vs RSI”散点作战矩阵
+    # 2. 绘制个股“黄金坑距离 vs RSI”散点作战矩阵（严格过滤次新/无60日黄金坑占位哨兵值，防横轴被拉爆）
+    def _is_invalid_pit_item(it):
+        try:
+            fl = float(it.get("fib_low", 0.0) or 0.0)
+            fh = float(it.get("fib_high", 0.0) or 0.0)
+            dtp = float(it.get("dist_to_pit", 999.0))
+            rv = float(it.get("rsi", 50.0))
+            if not (math.isfinite(fl) and math.isfinite(fh) and math.isfinite(dtp) and math.isfinite(rv)):
+                return True
+            if fl <= 0.0 or fh <= 0.0:
+                return True
+            if abs(dtp) >= 500.0:
+                return True
+            return False
+        except Exception:
+            return True
+
     fig_matrix = go.Figure()
+    excluded_scatter_tickers = []
+    plotted_x_vals = []
+    X_CLAMP_LIMIT = 120.0
     for item in stocks_data:
         t = item["ticker"]
-        x_val = item["dist_to_pit"]
-        y_val = item["rsi"]
-        size_val = max(10, min(34, item["atr"] * 3.2))
+        if _is_invalid_pit_item(item):
+            excluded_scatter_tickers.append(t)
+            continue
+        raw_x = float(item["dist_to_pit"])
+        x_val = max(-X_CLAMP_LIMIT, min(X_CLAMP_LIMIT, raw_x))
+        x_clamped = abs(raw_x) > X_CLAMP_LIMIT
+        plotted_x_vals.append(x_val)
+        y_val = float(item["rsi"])
+        size_val = max(10, min(34, float(item.get("atr", 1.0) or 1.0) * 3.2))
 
         if item.get("is_take_profit"):
             color = "#d946ef"
@@ -6894,6 +6919,7 @@ def generate_stocks_radar_html(stocks_data, history_dict, update_time_str="", ha
             color = "#ff9100"
         else:
             color = "#29b6f6"
+        clamp_note = " (极值截断显示)" if x_clamped else ""
         fig_matrix.add_trace(go.Scatter(
             x=[x_val],
             y=[y_val],
@@ -6903,8 +6929,16 @@ def generate_stocks_radar_html(stocks_data, history_dict, update_time_str="", ha
             textposition="top center",
             marker=dict(size=[size_val], color=color, opacity=0.85, line=dict(color="#ffffff", width=1.5)),
             hoverinfo="text",
-            hovertext=f"<b>{t} ({item['name']})</b><br>赛道: {item['cat']}<br>现价: ${ui_display_price(item):.2f} ({ui_display_pct(item):+.2f}%)<br>距黄金坑: {x_val:+.2f}%<br>RSI(14): {y_val:.1f}<br>14日ATR: ${item['atr']:.2f}<br>信号: {item['signal']}"
+            hovertext=f"<b>{t} ({item['name']})</b><br>赛道: {item['cat']}<br>现价: ${ui_display_price(item):.2f} ({ui_display_pct(item):+.2f}%)<br>距黄金坑: {raw_x:+.2f}%{clamp_note}<br>RSI(14): {y_val:.1f}<br>14日ATR: ${item['atr']:.2f}<br>信号: {item['signal']}"
         ))
+
+    if plotted_x_vals:
+        x_lo = min(min(plotted_x_vals), -5.0)
+        x_hi = max(max(plotted_x_vals), 5.0)
+        x_pad = max(4.0, (x_hi - x_lo) * 0.12)
+        x_range = [round(x_lo - x_pad, 1), round(x_hi + x_pad, 1)]
+    else:
+        x_range = [-30.0, 30.0]
 
     fig_matrix.add_vline(x=0, line_dash="dash", line_color="#00e676", annotation_text="黄金坑临界带 (X=0%)", annotation_position="top left")
     fig_matrix.add_hline(y=70, line_dash="dot", line_color="#d946ef", annotation_text="超买止盈警戒带 (RSI=70)", annotation_position="top right")
@@ -6915,14 +6949,22 @@ def generate_stocks_radar_html(stocks_data, history_dict, update_time_str="", ha
         template="plotly_dark",
         plot_bgcolor="#131722",
         paper_bgcolor="#131722",
-        title=f"<b>{len(stocks_data)} 只核心个股作战雷达矩阵 (X: 距黄金坑百分比 vs Y: RSI 强弱 | 气泡大小: ATR 波动度)</b>",
+        title=f"<b>{len(plotted_x_vals)} 只有效核心个股作战雷达矩阵 (X: 距黄金坑百分比 vs Y: RSI 强弱 | 气泡大小: ATR 波动度)</b>",
         xaxis_title="距黄金坑距离 (%) [负值=跌破坑底, 0=坑内就位, 正值=坑上待回调]",
+        xaxis=dict(range=x_range),
         yaxis_title="14日 RSI 相对强弱",
         height=520,
         margin=dict(l=50, r=40, t=60, b=50),
         showlegend=False
     )
     matrix_div = fig_matrix.to_html(full_html=False, include_plotlyjs="cdn")
+    excluded_note_html = (
+        f'<div id="stocksMatrixExcludedNote" style="margin-top:8px;font-size:12px;color:var(--text-muted);text-align:right;">'
+        f'ℹ️ 未入图次新/数据不足标的：<b>{", ".join(excluded_scatter_tickers)}</b>（上市天数不足，暂缺60日黄金坑）'
+        f'</div>'
+        if excluded_scatter_tickers
+        else ""
+    )
 
     # 构建个股表格
     def _position_display(r):
@@ -6942,7 +6984,10 @@ def generate_stocks_radar_html(stocks_data, history_dict, update_time_str="", ha
     rows_html = ""
     for r in stocks_data:
         bias_style = "color: #00e676;" if r["bias"] >= 0 else "color: #ff5252;"
-        dist_style = "color: #00e676; font-weight:bold;" if r["dist_to_pit"] <= 0 else "color: #90caf9;"
+        is_inv_pit = _is_invalid_pit_item(r)
+        dist_style = "color: var(--text-muted);" if is_inv_pit else ("color: #00e676; font-weight:bold;" if r["dist_to_pit"] <= 0 else "color: #90caf9;")
+        fib_range_disp = "—" if is_inv_pit else f"${r['fib_low']:.2f} ~ ${r['fib_high']:.2f}"
+        pit_status_disp = "新股数据不足" if is_inv_pit else str(r.get("pit_status") or "—")
         pct_color = "#00e676" if r.get("pct_change", 0) >= 0 else "#ff5252"
         pos_pct, pos_note, pos_color = _position_display(r)
         
@@ -6969,8 +7014,8 @@ def generate_stocks_radar_html(stocks_data, history_dict, update_time_str="", ha
             <td style="{bias_style} font-weight: bold;">{r['bias']:+.2f}%</td>
             <td>${r['atr']:.2f}</td>
             <td>{r['rsi']:.1f}</td>
-            <td style="font-size: 12px; color: var(--color-accent);">${r['fib_low']:.2f} ~ ${r['fib_high']:.2f}</td>
-            <td style="{dist_style}">{r['pit_status']}</td>
+            <td style="font-size: 12px; color: var(--color-accent);">{fib_range_disp}</td>
+            <td style="{dist_style}">{pit_status_disp}</td>
             <td style="color: {pos_color}; font-weight: bold;">{pos_pct}<div style="font-size:10px; color:#90a4ae;">{pos_note}</div></td>
             <td>{sig_badge}</td>
         </tr>
@@ -7290,6 +7335,7 @@ def generate_stocks_radar_html(stocks_data, history_dict, update_time_str="", ha
     <!-- 黄金坑散点作战矩阵 -->
     <div class="chart-box">
         {matrix_div}
+        {excluded_note_html}
     </div>
 
     <!-- 碎股作战行动表 -->

@@ -162,6 +162,31 @@ def verify_desktop(browser):
         assert info["sw"] <= 1441, f"{sub_name} horizontal overflow on 1440px: {info['sw']}"
         assert page.locator('a[href="futu_pro_terminal.html"]').first.is_visible()
         assert page.locator("#siteDisclaimerBanner").is_visible()
+        if sub_name == "stocks_radar.html":
+            scatter_check = page.evaluate("""() => {
+                const gd = document.querySelector('.plotly-graph-div');
+                if (!gd || !Array.isArray(gd.data)) return {ok: false, reason: 'missing plotly-graph-div'};
+                const xs = [];
+                const names = [];
+                for (const tr of gd.data) {
+                    if (tr && Array.isArray(tr.x)) {
+                        for (const v of tr.x) {
+                            if (typeof v === 'number' && Number.isFinite(v)) xs.push(v);
+                        }
+                    }
+                    if (tr && tr.name) names.push(tr.name);
+                }
+                const maxAbsX = xs.length ? Math.max(...xs.map(Math.abs)) : 0;
+                const rng = (gd.layout && gd.layout.xaxis && Array.isArray(gd.layout.xaxis.range)) ? gd.layout.xaxis.range : [];
+                return {ok: true, count: xs.length, maxAbsX, hasAnt: names.includes('ANT'), range: rng};
+            }""")
+            assert scatter_check.get("ok"), f"stocks_radar Plotly check failed: {scatter_check}"
+            assert scatter_check["maxAbsX"] < 500, f"Sentinel outlier leaked into stocks_radar scatter X axis: {scatter_check}"
+            assert not scatter_check["hasAnt"], f"ANT should be excluded from scatter plot: {scatter_check}"
+            assert page.locator("#stocksMatrixExcludedNote").is_visible(), "Missing #stocksMatrixExcludedNote for ANT"
+            assert "ANT" in page.locator("#stocksMatrixExcludedNote").inner_text(), "Expected ANT in #stocksMatrixExcludedNote"
+            tbl_txt = page.locator("table").inner_text()
+            assert "999%" not in tbl_txt and "1000%" not in tbl_txt and "999.0%" not in tbl_txt and "1000.0%" not in tbl_txt, "Sentinel 999%/1000% leaked into stocks action table"
         if sub_name == "macro_radar.html":
             assert page.locator("#v50FuturesTempStage").is_visible(), "Missing V5.0 futures/temperature stage on macro_radar.html"
             assert page.locator('.v50-fut-card[data-symbol="NQ=F"]').is_visible(), "Missing NQ=F card on macro_radar.html"
