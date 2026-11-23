@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795436790.904,
-  "updated_at_et": "11-23 07:26 ET",
-  "updated_at_kst": "21:26 KST",
+  "updated_at_ts": 1795436896.621,
+  "updated_at_et": "11-23 07:28 ET",
+  "updated_at_kst": "21:28 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1643,6 +1643,13 @@
     ],
     "MRVL": [
       {
+        "title": "Marvell Technology’s Near 50% Plummet Within a Month Means Little to This Wall Street Pro Who Predicts 270% Gains From Here",
+        "url": "https://247wallst.com/investing/2026/11/23/marvell-technologys-near-50-plummet-within-a-month-means-little-to-this-wall-street-pro-who-predicts-270-gains-from-here/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 07:15 ET",
+        "pub_ts": 1795436145.0
+      },
+      {
         "title": "What Triggered The Drop In Marvell Stock?",
         "url": "https://www.trefis.com/stock/mrvl/articles/627782/what-triggered-the-drop-in-marvell-stock/2026-11-23?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1669,13 +1676,6 @@
         "source": "Yahoo Finance",
         "time": "11-21 22:12 ET",
         "pub_ts": 1795317159.0
-      },
-      {
-        "title": "Marvell Just Dropped 22% in a Week as Nvidia’s Turmoil Hit AI Chips. Sell, or Load Up Before Dec. 1?",
-        "url": "https://www.tikr.com/blog/marvell-just-dropped-22-in-a-week-as-nvidias-turmoil-hit-ai-chips-sell-or-load-up-before-dec-1?ref=yahoofinance&tlnk=yf-261121-h6wc4q3f&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-21 13:20 ET",
-        "pub_ts": 1795285237.0
       }
     ],
     "LITE": [
@@ -2383,6 +2383,13 @@
     ],
     "MU": [
       {
+        "title": "Why Is Micron Technology Stock Falling?",
+        "url": "https://www.trefis.com/stock/mu/articles/627777/why-is-micron-technology-stock-falling/2026-11-23?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 07:05 ET",
+        "pub_ts": 1795435546.0
+      },
+      {
         "title": "Avantis U.S. Large Cap Value ETF (AVLV) Buys $42 Million More Micron on Nov. 19",
         "url": "https://finance.yahoo.com/markets/stocks/articles/avantis-u-large-cap-value-110532984.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2409,13 +2416,6 @@
         "source": "Yahoo Finance",
         "time": "11-22 21:24 ET",
         "pub_ts": 1795400645.0
-      },
-      {
-        "title": "David Tepper's Micron bet raises a $32 billion question",
-        "url": "https://www.thestreet.com/investing/david-teppers-micron-bet-raises-a-32-billion-question?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-22 21:03 ET",
-        "pub_ts": 1795399380.0
       }
     ],
     "SKHY": [
@@ -2605,6 +2605,20 @@
     ],
     "BTC-USD": [
       {
+        "title": "Is IREN (IREN) Too Pricey For Its Sales As AI Optimism Builds?",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/iren-iren-too-pricey-sales-120731403.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 07:07 ET",
+        "pub_ts": 1795435651.0
+      },
+      {
+        "title": "Fibonacci Day: How Crypto Traders Use Retracement Levels to Spot Potential Bitcoin Reversals",
+        "url": "https://www.ccn.com/news/crypto/fibonacci-day-bitcoin-trading-retracement-levels-guide/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 07:02 ET",
+        "pub_ts": 1795435335.0
+      },
+      {
         "title": "Kraken Won’t Reverse Trades From a 71% Bitcoin Drop on Its Canadian Dollar Book",
         "url": "https://unchainedcrypto.com/kraken-wont-reverse-trades-from-a-71-bitcoin-drop-on-its-canadian-dollar-book/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2619,25 +2633,11 @@
         "pub_ts": 1795433295.0
       },
       {
-        "title": "Ripple News: XRP Grabs 15% of Japan’s Crypto Trading, but Heads for Its Worst November Ever",
-        "url": "https://www.coinspeaker.com/ripple-news-xrp-japan-third-most-traded/?.tsrc=rss",
+        "title": "CrowdStrike, Zscaler, Anthropic, Sandisk, Strategy, Robinhood, and More Stocks That Explain Today’s Market",
+        "url": "https://finance.yahoo.com/m/76a3103b-f3de-364f-8cd8-90e453a902d8/crowdstrike%2C-zscaler%2C.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 06:15 ET",
-        "pub_ts": 1795432551.0
-      },
-      {
-        "title": "Bitcoin Rebounds to $61K After Weekend Plunge to Two-Year Low",
-        "url": "https://decrypt.co/383758/bitcoin-rebounds-to-61k-after-weekend-plunge-to-two-year-low?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 06:14 ET",
-        "pub_ts": 1795432462.0
-      },
-      {
-        "title": "Bitcoin Regains $61,000 After Weekend Plunge as AI-Stock Rout Eases",
-        "url": "https://unchainedcrypto.com/bitcoin-regains-61000-after-weekend-plunge-as-ai-stock-rout-eases/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 06:00 ET",
-        "pub_ts": 1795431623.0
+        "time": "11-23 06:20 ET",
+        "pub_ts": 1795432800.0
       }
     ],
     "CRWD": [
@@ -2790,6 +2790,13 @@
     ],
     "MRNA": [
       {
+        "title": "Moderna to Present at Upcoming Conferences in December 2026",
+        "url": "https://finance.yahoo.com/healthcare/articles/moderna-present-upcoming-conferences-december-120000420.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 07:00 ET",
+        "pub_ts": 1795435200.0
+      },
+      {
         "title": "Invesco S&P 500 Eq Wt Health Care (RSPH) Adds Moderna, Mettler-Toledo on Nov. 19",
         "url": "https://finance.yahoo.com/healthcare/articles/invesco-p-500-eq-wt-110552224.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2816,13 +2823,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 13:29 ET",
         "pub_ts": 1795199365.0
-      },
-      {
-        "title": "1 High-Flying Stock to Buy Hand Over Fist if the Stock Market Crashes",
-        "url": "https://www.fool.com/investing/2026/11/20/1-high-flying-stock-to-buy-hand-over-fist-if-the-stock-market-crashes/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 12:41 ET",
-        "pub_ts": 1795196462.0
       }
     ],
     "NKE": [
@@ -3278,12 +3278,12 @@
     "BE": 1795435706.4393792,
     "CRDO": 1795435706.4393792,
     "COHR": 1795436251.7838874,
-    "MRVL": 1795435365.8498676,
-    "LITE": 1795435365.8498676,
+    "MRVL": 1795436896.621187,
+    "LITE": 1795436896.621187,
     "AAOI": 1795435706.4393792,
     "SPCX": 1795435706.4393792,
     "ASTS": 1795435706.4393792,
-    "AXTI": 1795435365.8498676,
+    "AXTI": 1795436896.621187,
     "NASA": 1795435706.4393792,
     "LUNR": 1795435706.4393792,
     "TSLA": 1795436142.8867898,
@@ -3298,30 +3298,30 @@
     "OKLO": 1795436251.7838874,
     "CEG": 1795436142.8867898,
     "FPS": 1795436251.7838874,
-    "MU": 1795435365.8498676,
-    "SKHY": 1795435365.8498676,
-    "WDC": 1795435365.8498676,
+    "MU": 1795436896.621187,
+    "SKHY": 1795436896.621187,
+    "WDC": 1795436896.621187,
     "STX": 1795436251.7838874,
     "MSTR": 1795436251.7838874,
     "SNDK": 1795436251.7838874,
-    "BTC-USD": 1795435365.8498676,
+    "BTC-USD": 1795436896.621187,
     "CRWD": 1795436251.7838874,
-    "ORCL": 1795435365.8498676,
-    "COIN": 1795435365.8498676,
-    "LLY": 1795435365.8498676,
-    "MRNA": 1795435365.8498676,
-    "NKE": 1795435365.8498676,
-    "MCD": 1795435365.8498676,
+    "ORCL": 1795436896.621187,
+    "COIN": 1795436896.621187,
+    "LLY": 1795436896.621187,
+    "MRNA": 1795436896.621187,
+    "NKE": 1795436896.621187,
+    "MCD": 1795436896.621187,
     "PEP": 1795435706.4393792,
     "XOM": 1795435480.2667184,
     "JPM": 1795435480.2667184,
     "WMT": 1795435593.6957073,
     "V": 1795435480.2667184,
     "CAT": 1795435593.6957073,
-    "FN": 1795435365.8498676,
+    "FN": 1795436896.621187,
     "GLW": 1795435706.4393792,
     "ANT": 1795436142.8867898,
-    "XAUUSD": 1795435365.8498676
+    "XAUUSD": 1795436896.621187
   },
   "opex_shield": {
     "date": "2026-11-23",
