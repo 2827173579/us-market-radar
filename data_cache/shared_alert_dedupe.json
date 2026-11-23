@@ -5031,9 +5031,13 @@
     "2026-11-23:AXP/DIA:5M_ENTRY": {
       "device": "PC",
       "ts": 1795466979.6528354
+    },
+    "2026-11-23:NKE/AXP/APLD:5M_ENTRY+STOP_LOSS": {
+      "device": "PC",
+      "ts": 1795467546.6425645
     }
   },
   "device": "PC",
-  "last_heartbeat_ts": 1795467353.907996,
-  "updated_at": "2026-11-23T20:57:22.803438+00:00"
+  "last_heartbeat_ts": 1795467463.909839,
+  "updated_at": "2026-11-23T20:59:06.643068+00:00"
 }
