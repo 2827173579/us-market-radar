@@ -1,9 +1,22 @@
 {
-  "updated_at_ts": 1795420478.936,
-  "updated_at_et": "11-23 02:54 ET",
-  "updated_at_kst": "16:54 KST",
+  "updated_at_ts": 1795421688.623,
+  "updated_at_et": "11-23 03:14 ET",
+  "updated_at_kst": "17:14 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261123161203418800",
+      "title": "整理：每日投行/机构观点梳理（2026-11-23）",
+      "summary": "国外 1. 高盛：美股恐慌性抛售或现机会，但这次有所不同。 2. 大摩：市场“恐慌抛售”之后股市有望反弹。 3. 小摩：亚洲股市投资者持仓降至历史低位，市场有望迎来大幅反弹。 4. 小摩：近期市场回调主要由AI交易去杠杆化驱动。 5. 小摩：本轮厄尔尼诺影响可能比以往更持久。 6. 法兴银行：AI投资与企业盈利支撑美股，标普500还有约18.5%上涨空间。 国内 1. 中金：预期2027年金价中枢在4300美元/盎司左右。 2. 中金：预计铜底部区域或锚定激励价格12500美元/吨。 3. 中金：外部“逆风”再起引致超调，保持信心。 4. 招商证券：从市场底部特征来看，多项指标逐步趋近历史底部水平。 5. 中信证券：看好明年行情宽度拓展，“行情分散、聚焦龙头”是切实可行策略。 6. 中信建投：防御品种当前仍具有较高配置价值。 7. 中信证券：银行板块短期仍受资金面影响。 8. 中信建投：迎接MLCC超级周期，重视产业链投资机遇。 9. 中信证券：美股2027年AI产业链预计呈现年初估值承压、年中估值修复、年末表现分化的阶段性特征。 10. 中信证券：预计全国性机制电价政策有望在2027年推出。 11. 中信建投食品饮料2027年投资策略：周期底部范式重构，红利守正成长出奇。",
+      "keywords": [
+        "标普"
+      ],
+      "pub_ts": 1795421523.0,
+      "time_et": "11-23 03:12 ET",
+      "time_bj": "16:12 BJ",
+      "time_kst": "17:12 KST",
+      "time_display": "03:12 ET / 16:12 BJ"
+    },
     {
       "id": "20261123153142246800",
       "title": "AI交易退潮引发跨市场抛售！3500成国际金重要关口 | Live分析更新中",
@@ -329,20 +342,6 @@
       "time_bj": "10:38 BJ",
       "time_kst": "11:38 KST",
       "time_display": "21:38 ET / 10:38 BJ"
-    },
-    {
-      "id": "20261123102240060800",
-      "title": "民主党拟推翻特朗普减税与关税政策，后者扬言已准备否决",
-      "summary": "民主党计划明年全面审查特朗普政府的减税与关税政策，并推动恢复医疗保险补贴，但特朗普扬言将否决相关法案，两党经济政策之争即将升级。点击查看…",
-      "keywords": [
-        "关税",
-        "特朗普"
-      ],
-      "pub_ts": 1795400560.0,
-      "time_et": "11-22 21:22 ET",
-      "time_bj": "10:22 BJ",
-      "time_kst": "11:22 KST",
-      "time_display": "21:22 ET / 10:22 BJ"
     }
   ],
   "ticker_news": {
@@ -2605,6 +2604,20 @@
     ],
     "BTC-USD": [
       {
+        "title": "Bitcoin rebounds above $61,000 after liquidation-driven selloff",
+        "url": "https://finance.yahoo.com/markets/crypto/articles/bitcoin-rebounds-above-61-000-074318978.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 02:43 ET",
+        "pub_ts": 1795419798.0
+      },
+      {
+        "title": "LIVE Crypto News – Bitcoin and Ethereum Bounce Back: Market Finally Turning?",
+        "url": "https://cryptonews.com/news/crypto-news-bitcoin-ethereum-recovery/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 02:12 ET",
+        "pub_ts": 1795417968.0
+      },
+      {
         "title": "$1.79 Billion Left Bitcoin ETFs in One Week: Who Is Still Buying?",
         "url": "https://beincrypto.com/bitcoin-etf-outflows-ibit-morgan-stanley/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2624,20 +2637,6 @@
         "source": "Yahoo Finance",
         "time": "11-22 23:26 ET",
         "pub_ts": 1795408008.0
-      },
-      {
-        "title": "Rare Blastoise Pokémon Card Sells for $630,000 and Shatters Record While Markets Bleed",
-        "url": "https://beincrypto.com/blastoise-pokemon-card-630000-record-sale/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-22 22:30 ET",
-        "pub_ts": 1795404600.0
-      },
-      {
-        "title": "Mike McGlone Says Crypto Crash Is A Preview Of The 'Everything Bubble' Bursting, Sees Bitcoin At $10,000 Again",
-        "url": "https://stocktwits.com/news-articles/markets/cryptocurrency/bitcoins-warning-mike-mcglone-crypto-crash-everything-bubble/cNbYN5OR9SR?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-22 21:42 ET",
-        "pub_ts": 1795401761.0
       }
     ],
     "CRWD": [
@@ -3012,6 +3011,13 @@
     ],
     "WMT": [
       {
+        "title": "Michael Burry Names Apple, Costco And Walmart Early Crash Havens — The ‘Generals’ Fell Months After 2000 And 2007 Peaks",
+        "url": "https://stocktwits.com/news-articles/markets/equity/michael-burry-apple-costco-walmart-havens-generals-2000-2007-peaks/cNbYM9pR9Sk?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 02:48 ET",
+        "pub_ts": 1795420138.0
+      },
+      {
         "title": "Walmart Has Raised Its Dividend 53 Straight Years. I'd Buy It Before December and Never Sell.",
         "url": "https://www.fool.com/investing/2026/11/22/walmart-has-raised-its-dividend-53-straight-years-id-buy-it-before-december-and-never-sell/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3038,13 +3044,6 @@
         "source": "Yahoo Finance",
         "time": "11-22 07:20 ET",
         "pub_ts": 1795350000.0
-      },
-      {
-        "title": "TD Cowen Raises Its Walmart Target to $147. Is It Still Too Low?",
-        "url": "https://www.tikr.com/blog/td-cowen-raises-its-walmart-target-to-147-is-it-still-too-low?ref=yahoofinance&tlnk=yf-261122-gr23fpjr&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-22 05:26 ET",
-        "pub_ts": 1795343163.0
       }
     ],
     "V": [
@@ -3197,6 +3196,20 @@
     ],
     "ANT": [
       {
+        "title": "A New Wave Of Anthropic ETFs Is Coming — What’s On Offer",
+        "url": "https://stocktwits.com/news-articles/markets/equity/a-new-wave-of-anthropic-et-fs-is-coming-what-s-on-offer/cNbYMLjR9Sm?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 02:54 ET",
+        "pub_ts": 1795420444.0
+      },
+      {
+        "title": "Anthropic Just Went Public. Here’s the 1 Thing I’m Watching.",
+        "url": "https://www.fool.com/investing/2026/11/23/anthropic-just-went-public-heres-the-1-thing-im-watching/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 02:20 ET",
+        "pub_ts": 1795418402.0
+      },
+      {
         "title": "AI Selloff Splits Global Markets: SPY, QQQ Rebound After Worst Weekly Rout In Years, While South Korea Slides Despite Government Support",
         "url": "https://stocktwits.com/news-articles/markets/equity/spy-qqq-dia-south-korea-japan-asia-stocks-ai-selloff/cNbYt7XR9SL?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3216,20 +3229,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 01:43 ET",
         "pub_ts": 1795416225.0
-      },
-      {
-        "title": "ANT, BABA, PANW, TTWO, ZS: Why Retail Traders Couldn’t Take Their Eyes Off These Stocks Last Week",
-        "url": "https://stocktwits.com/news-articles/markets/equity/ant-baba-panw-ttwo-zs-why-retail-traders-couldn-t-take-their-eyes-off-these-stocks-last-week/cNbYZ7qR91C?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-22 21:08 ET",
-        "pub_ts": 1795399737.0
-      },
-      {
-        "title": "How Notable Capital, GIC, and Baillie Gifford bet big on Anthropic before its IPO",
-        "url": "https://finance.yahoo.com/technology/ai/articles/notable-capital-gic-baillie-gifford-012553645.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-22 20:25 ET",
-        "pub_ts": 1795397153.0
       }
     ],
     "XAUUSD": [
@@ -3277,13 +3276,13 @@
     "VST": 1795420478.936162,
     "BE": 1795420478.936162,
     "CRDO": 1795420478.936162,
-    "COHR": 1795418989.5397758,
-    "MRVL": 1795418989.5397758,
-    "LITE": 1795418989.5397758,
+    "COHR": 1795421688.6230876,
+    "MRVL": 1795421688.6230876,
+    "LITE": 1795421688.6230876,
     "AAOI": 1795420370.461473,
     "SPCX": 1795420370.461473,
     "ASTS": 1795420370.461473,
-    "AXTI": 1795418989.5397758,
+    "AXTI": 1795421688.6230876,
     "NASA": 1795420370.461473,
     "LUNR": 1795420370.461473,
     "TSLA": 1795420478.936162,
@@ -3298,29 +3297,29 @@
     "OKLO": 1795420478.936162,
     "CEG": 1795420478.936162,
     "FPS": 1795420478.936162,
-    "MU": 1795418989.5397758,
-    "SKHY": 1795418989.5397758,
-    "WDC": 1795418989.5397758,
+    "MU": 1795421688.6230876,
+    "SKHY": 1795421688.6230876,
+    "WDC": 1795421688.6230876,
     "STX": 1795420478.936162,
     "MSTR": 1795420478.936162,
     "SNDK": 1795420478.936162,
-    "BTC-USD": 1795418989.5397758,
+    "BTC-USD": 1795421688.6230876,
     "CRWD": 1795420478.936162,
-    "ORCL": 1795418989.5397758,
-    "COIN": 1795418989.5397758,
-    "LLY": 1795418989.5397758,
-    "MRNA": 1795418989.5397758,
-    "NKE": 1795418989.5397758,
-    "MCD": 1795418989.5397758,
-    "PEP": 1795418989.5397758,
-    "XOM": 1795418989.5397758,
-    "JPM": 1795418989.5397758,
-    "WMT": 1795418989.5397758,
-    "V": 1795418989.5397758,
-    "CAT": 1795418989.5397758,
-    "FN": 1795418989.5397758,
+    "ORCL": 1795421688.6230876,
+    "COIN": 1795421688.6230876,
+    "LLY": 1795421688.6230876,
+    "MRNA": 1795421688.6230876,
+    "NKE": 1795421688.6230876,
+    "MCD": 1795421688.6230876,
+    "PEP": 1795421688.6230876,
+    "XOM": 1795421688.6230876,
+    "JPM": 1795421688.6230876,
+    "WMT": 1795421688.6230876,
+    "V": 1795421688.6230876,
+    "CAT": 1795421688.6230876,
+    "FN": 1795421688.6230876,
     "GLW": 1795420370.461473,
-    "ANT": 1795418989.5397758,
+    "ANT": 1795421688.6230876,
     "XAUUSD": 1795419098.6685262
   },
   "opex_shield": {
@@ -3340,7 +3339,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (02:31 ET / 15:31 BJ) [美联储] [加息]：国际现货黄金抛压或来自杠杆资金，3500大关是重要防守！美国短端通胀预期与加息预期背离，美联储紧缩程度被高估？",
+    "detail": "⚡ 最新核心快讯 (03:12 ET / 16:12 BJ) [标普]：国外 1. 高盛：美股恐慌性抛售或现机会，但这次有所不同。 2. 大摩：市场“恐慌抛售”之后股市有望反弹。 3. 小摩：亚洲股市投资者持仓降至历史低位，市场有望迎来大幅反弹。 4. 小摩：近",
     "event_name": "",
     "minutes_left": 0,
     "opex_shield": {
