@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795470269.03,
-  "updated_at_et": "11-23 16:44 ET",
-  "updated_at_kst": "06:44 KST",
+  "updated_at_ts": 1795470376.73,
+  "updated_at_et": "11-23 16:46 ET",
+  "updated_at_kst": "06:46 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -800,6 +800,13 @@
         "pub_ts": 1795450382.0
       },
       {
+        "title": "Why TSMC Stock Soared Today",
+        "url": "https://www.fool.com/investing/2026/11/23/why-tsmc-stock-soared-today/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 16:20 ET",
+        "pub_ts": 1795468849.0
+      },
+      {
         "title": "Billionaire Andreas Halvorsen Exited Microsoft and Made TSMC His Top Holding at $1.8 Billion",
         "url": "https://247wallst.com/investing/2026/11/23/billionaire-andreas-halvorsen-exited-microsoft-and-made-tsmc-his-top-holding-at-1-8-billion/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -819,13 +826,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 14:37 ET",
         "pub_ts": 1795462630.0
-      },
-      {
-        "title": "Tech stocks surge as Nvidia rally adds $2 trillion to Nasdaq 100",
-        "url": "https://www.proactiveinvestors.com/companies/news/1102286/tech-stocks-surge-as-nvidia-rally-adds-2-trillion-to-nasdaq-100-1102286.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 14:20 ET",
-        "pub_ts": 1795461600.0
       }
     ],
     "VIXY": [
@@ -948,6 +948,13 @@
         "pub_ts": 1795462729.0
       },
       {
+        "title": "AMD’s Blockbuster Q3 Report Is Getting Lost in the Pullback",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/amd-blockbuster-q3-report-getting-212200835.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 16:22 ET",
+        "pub_ts": 1795468920.0
+      },
+      {
         "title": "Is AMD's Stock in Trouble After a Concerning Short-Seller Report?",
         "url": "https://www.fool.com/investing/2026/11/23/is-amd-s-stock-in-trouble-after-a-concerning-short-seller-report/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -967,16 +974,16 @@
         "source": "Yahoo Finance",
         "time": "11-23 12:22 ET",
         "pub_ts": 1795454549.0
-      },
-      {
-        "title": "AMD Stocks Rise 3.41% as Nvidia Leadership Reset Narrows the Challenger's Window",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/amd-stocks-rise-3-41-170628383.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 12:06 ET",
-        "pub_ts": 1795453588.0
       }
     ],
     "ASML": [
+      {
+        "title": "ASML Stock’s Sell-Off Looks Excessive Against Its Growth Outlook",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/asml-stock-sell-off-looks-212500722.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 16:25 ET",
+        "pub_ts": 1795469100.0
+      },
       {
         "title": "3 Unstoppable AI Stocks to Buy Hand Over Fist Before the End of 2026",
         "url": "https://www.fool.com/investing/2026/11/23/3-unstoppable-ai-stocks-buy-hand-over-fist-before-end-2026/?.tsrc=rss",
@@ -1004,13 +1011,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 06:37 ET",
         "pub_ts": 1795433845.0
-      },
-      {
-        "title": "ASML vs. SK Hynix: Which Artificial Intelligence Stock Is a Better Buy for 2027?",
-        "url": "https://www.fool.com/coverage/better-buy/2026/11/21/asml-vs-sk-hynix-which-artificial-intelligence-stock-is-a-better-buy-for-2027/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-21 11:45 ET",
-        "pub_ts": 1795279501.0
       }
     ],
     "QCOM": [
@@ -1163,6 +1163,20 @@
     ],
     "GOOGL": [
       {
+        "title": "Google AI Bridges Search And Wallet To Unlock Spending Signals",
+        "url": "https://www.mediapost.com/publications/article/419633/google-ai-bridges-search-and-wallet-to-unlock-spen.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 16:39 ET",
+        "pub_ts": 1795469948.0
+      },
+      {
+        "title": "Jensen Huang's reinstatement changes how politics, business interact forever",
+        "url": "https://finance.yahoo.com/video/jensen-huangs-reinstatement-changes-how-politics-business-interact-forever-212537409.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 16:25 ET",
+        "pub_ts": 1795469137.0
+      },
+      {
         "title": "Stock Market Today: Dow Surges On Jensen Huang's Nvidia Return; Boeing Flies On This (Live Coverage)",
         "url": "https://finance.yahoo.com/m/8751de70-467e-380a-82cb-f4ee42adc461/stock-market-today%3A-dow.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1182,20 +1196,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 14:56 ET",
         "pub_ts": 1795463801.0
-      },
-      {
-        "title": "Nvidia gains nearly $1T as Trump says nobody could 'revive the stock like it's being revived'",
-        "url": "https://finance.yahoo.com/markets/article/nvidia-gains-nearly-1t-as-trump-says-nobody-could-revive-the-stock-like-its-being-revived-194634496.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 14:46 ET",
-        "pub_ts": 1795463194.0
-      },
-      {
-        "title": "Why Jensen Huang is the 'key man' behind the market rally",
-        "url": "https://finance.yahoo.com/video/why-jensen-huang-is-the-key-man-behind-the-market-rally-193849634.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 14:38 ET",
-        "pub_ts": 1795462729.0
       }
     ],
     "MSFT": [
@@ -1214,6 +1214,13 @@
         "pub_ts": 1795460389.0
       },
       {
+        "title": "Leading CHROs and Business Executives to Convene at i4cp's 2027 Next Practices Now Conference",
+        "url": "https://finance.yahoo.com/small-business/articles/leading-chros-business-executives-convene-212500658.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 16:25 ET",
+        "pub_ts": 1795469100.0
+      },
+      {
         "title": "Billionaire Andreas Halvorsen Exited Microsoft and Made TSMC His Top Holding at $1.8 Billion",
         "url": "https://247wallst.com/investing/2026/11/23/billionaire-andreas-halvorsen-exited-microsoft-and-made-tsmc-his-top-holding-at-1-8-billion/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1226,13 +1233,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 15:06 ET",
         "pub_ts": 1795464402.0
-      },
-      {
-        "title": "GTA VI Hype More Than Doubled Sony’s US PS5 And Microsoft’s Xbox Weekly Sales, Circana Says",
-        "url": "https://stocktwits.com/news-articles/markets/equity/gta-vi-hype-more-than-doubled-sony-s-us-ps-5-and-microsoft-s-xbox-weekly-sales-circana-says/cNbpaZJR9jN?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 14:13 ET",
-        "pub_ts": 1795461207.0
       }
     ],
     "AAPL": [
@@ -1311,6 +1311,20 @@
     ],
     "NOW": [
       {
+        "title": "Leading CHROs and Business Executives to Convene at i4cp's 2027 Next Practices Now Conference",
+        "url": "https://finance.yahoo.com/small-business/articles/leading-chros-business-executives-convene-212500658.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 16:25 ET",
+        "pub_ts": 1795469100.0
+      },
+      {
+        "title": "ServiceNow stock: catalysts, technicals, and outlook after the selloff",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/servicenow-stock-catalysts-technicals-outlook-212029012.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 16:20 ET",
+        "pub_ts": 1795468829.0
+      },
+      {
         "title": "Palantir Rips 10% to Lead Software Stocks. Cloudflare and ServiceNow Also Join ‘Jensen Rally’",
         "url": "https://247wallst.com/videos/palantir-rips-10-to-lead-software-stocks-cloudflare-and-servicenow-also-join-jensen-rally/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1330,20 +1344,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 06:18 ET",
         "pub_ts": 1795432697.0
-      },
-      {
-        "title": "ServiceNow (NOW) Stock: An Oversold AI Opportunity With Nearly 77% Upside?",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/servicenow-now-stock-oversold-ai-165017801.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-22 11:50 ET",
-        "pub_ts": 1795366217.0
-      },
-      {
-        "title": "ServiceNow (NOW) Launches Autonomous CRM Engine And Expands AI Risk Monitoring",
-        "url": "https://finance.yahoo.com/technology/ai/articles/servicenow-now-launches-autonomous-crm-011149322.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-21 20:11 ET",
-        "pub_ts": 1795309909.0
       }
     ],
     "AMZN": [
@@ -1385,6 +1385,13 @@
     ],
     "CRWV": [
       {
+        "title": "CoreWeave Stock Forecast: 2 ETFs to Capture CRWV’s 172% Upside Potential as Cathie Wood Buys $24.7M",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/coreweave-stock-forecast-2-etfs-211621217.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 16:16 ET",
+        "pub_ts": 1795468581.0
+      },
+      {
         "title": "CoreWeave to Participate in the 2026 UBS Global Technology and AI Conference",
         "url": "https://finance.yahoo.com/technology/ai/articles/coreweave-participate-2026-ubs-global-210500355.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1411,13 +1418,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 14:28 ET",
         "pub_ts": 1795462105.0
-      },
-      {
-        "title": "CoreWeave Stocks Soar 18.19% as Huang's Return Eases Nvidia Backstop Fears",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/coreweave-stocks-soar-18-19-175328776.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 12:53 ET",
-        "pub_ts": 1795456408.0
       }
     ],
     "NBIS": [
@@ -3256,26 +3256,26 @@
     "TLT": 1795470269.0301893,
     "GLD": 1795470269.0301893,
     "SQQQ": 1795470269.0301893,
-    "TSM": 1795468787.8952234,
+    "TSM": 1795470376.7302735,
     "VIXY": 1795470269.0301893,
     "SOXS": 1795470269.0301893,
     "NVDA": 1795470269.0301893,
-    "AMD": 1795468787.8952234,
-    "ASML": 1795468787.8952234,
-    "QCOM": 1795468787.8952234,
-    "AVGO": 1795468787.8952234,
-    "AMAT": 1795468787.8952234,
-    "META": 1795468787.8952234,
-    "GOOGL": 1795468787.8952234,
-    "MSFT": 1795468787.8952234,
-    "AAPL": 1795468787.8952234,
-    "PLTR": 1795468787.8952234,
-    "NOW": 1795468787.8952234,
-    "AMZN": 1795468787.8952234,
-    "CRWV": 1795468787.8952234,
-    "NBIS": 1795468787.8952234,
-    "APLD": 1795468787.8952234,
-    "VST": 1795468787.8952234,
+    "AMD": 1795470376.7302735,
+    "ASML": 1795470376.7302735,
+    "QCOM": 1795470376.7302735,
+    "AVGO": 1795470376.7302735,
+    "AMAT": 1795470376.7302735,
+    "META": 1795470376.7302735,
+    "GOOGL": 1795470376.7302735,
+    "MSFT": 1795470376.7302735,
+    "AAPL": 1795470376.7302735,
+    "PLTR": 1795470376.7302735,
+    "NOW": 1795470376.7302735,
+    "AMZN": 1795470376.7302735,
+    "CRWV": 1795470376.7302735,
+    "NBIS": 1795470376.7302735,
+    "APLD": 1795470376.7302735,
+    "VST": 1795470376.7302735,
     "BE": 1795468899.2888107,
     "CRDO": 1795468899.2888107,
     "COHR": 1795468899.2888107,
