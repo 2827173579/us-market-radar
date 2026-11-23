@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795399372.147,
-  "updated_at_et": "11-22 21:02 ET",
-  "updated_at_kst": "11:02 KST",
+  "updated_at_ts": 1795399474.109,
+  "updated_at_et": "11-22 21:04 ET",
+  "updated_at_kst": "11:04 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2136,6 +2136,13 @@
     ],
     "INTC": [
       {
+        "title": "Intel Just Landed Its First 18A-P Chip Customer. What That Means for INTC Stock.",
+        "url": "https://www.barchart.com/story/news/8957190/intel-just-landed-its-first-18a-p-chip-customer-what-that-means-for-intc-stock?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-22 14:30 ET",
+        "pub_ts": 1795375803.0
+      },
+      {
         "title": "Intel announces more layoffs as workforce shrinks by 7,300",
         "url": "https://www.thestreet.com/technology/intel-announces-more-layoffs-as-workforce-shrinks-by-7300?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2162,13 +2169,6 @@
         "source": "Yahoo Finance",
         "time": "11-21 10:50 ET",
         "pub_ts": 1795276202.0
-      },
-      {
-        "title": "A $3.8 Billion Fund Just Bought These 3 Stocks",
-        "url": "https://www.tikr.com/blog/a-3-8-billion-fund-just-bought-these-3-stocks?ref=yahoofinance&tlnk=yf-261121-g555pj6m&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-21 07:50 ET",
-        "pub_ts": 1795265437.0
       }
     ],
     "VRT": [
@@ -2210,18 +2210,18 @@
     ],
     "HPE": [
       {
-        "title": "A battered stock market looks for the bottom: What to watch this week",
-        "url": "https://finance.yahoo.com/markets/article/a-battered-stock-market-looks-for-the-bottom-what-to-watch-this-week-100000117.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-22 05:00 ET",
-        "pub_ts": 1795341600.0
-      },
-      {
         "title": "Ahead of Hewlett Packard Earnings, Here’s What Barchart Data Says Comes Next for HPE Stock",
         "url": "https://www.barchart.com/story/news/8956254/ahead-of-hewlett-packard-earnings-heres-what-barchart-data-says-comes-next-for-hpe-stock?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-22 09:30 ET",
         "pub_ts": 1795357803.0
+      },
+      {
+        "title": "A battered stock market looks for the bottom: What to watch this week",
+        "url": "https://finance.yahoo.com/markets/article/a-battered-stock-market-looks-for-the-bottom-what-to-watch-this-week-100000117.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-22 05:00 ET",
+        "pub_ts": 1795341600.0
       },
       {
         "title": "Dell Up 447% In 5 Years, HPE 220%: What Did Michael Dell Do Differently?",
@@ -3281,9 +3281,9 @@
     "MSFT": 1795399372.1469219,
     "AAPL": 1795399372.1469219,
     "PLTR": 1795398012.493153,
-    "NOW": 1795397909.0431654,
-    "AMZN": 1795397909.0431654,
-    "CRWV": 1795397909.0431654,
+    "NOW": 1795399474.108722,
+    "AMZN": 1795399474.108722,
+    "CRWV": 1795399474.108722,
     "NBIS": 1795398012.493153,
     "APLD": 1795398012.493153,
     "VST": 1795398012.493153,
@@ -3292,32 +3292,32 @@
     "COHR": 1795398012.493153,
     "MRVL": 1795398012.493153,
     "LITE": 1795398012.493153,
-    "AAOI": 1795397909.0431654,
-    "SPCX": 1795397909.0431654,
-    "ASTS": 1795397909.0431654,
+    "AAOI": 1795399474.108722,
+    "SPCX": 1795399474.108722,
+    "ASTS": 1795399474.108722,
     "AXTI": 1795398012.493153,
-    "NASA": 1795397909.0431654,
-    "LUNR": 1795397909.0431654,
-    "TSLA": 1795397909.0431654,
-    "AXP": 1795397909.0431654,
-    "RKLB": 1795397909.0431654,
-    "KO": 1795397909.0431654,
-    "FLY": 1795397909.0431654,
-    "INTC": 1795397909.0431654,
-    "VRT": 1795397909.0431654,
-    "HPE": 1795397909.0431654,
-    "DELL": 1795397909.0431654,
-    "OKLO": 1795397909.0431654,
-    "CEG": 1795397909.0431654,
-    "FPS": 1795397909.0431654,
+    "NASA": 1795399474.108722,
+    "LUNR": 1795399474.108722,
+    "TSLA": 1795399474.108722,
+    "AXP": 1795399474.108722,
+    "RKLB": 1795399474.108722,
+    "KO": 1795399474.108722,
+    "FLY": 1795399474.108722,
+    "INTC": 1795399474.108722,
+    "VRT": 1795399474.108722,
+    "HPE": 1795399474.108722,
+    "DELL": 1795399474.108722,
+    "OKLO": 1795399474.108722,
+    "CEG": 1795399474.108722,
+    "FPS": 1795399474.108722,
     "MU": 1795398012.493153,
     "SKHY": 1795398012.493153,
     "WDC": 1795398012.493153,
-    "STX": 1795397909.0431654,
-    "MSTR": 1795397909.0431654,
-    "SNDK": 1795397909.0431654,
+    "STX": 1795399474.108722,
+    "MSTR": 1795399474.108722,
+    "SNDK": 1795399474.108722,
     "BTC-USD": 1795398012.493153,
-    "CRWD": 1795397909.0431654,
+    "CRWD": 1795399474.108722,
     "ORCL": 1795398012.493153,
     "COIN": 1795398012.493153,
     "LLY": 1795398012.493153,
@@ -3331,7 +3331,7 @@
     "V": 1795398113.6610734,
     "CAT": 1795398113.6610734,
     "FN": 1795398012.493153,
-    "GLW": 1795397909.0431654,
+    "GLW": 1795399474.108722,
     "ANT": 1795398012.493153,
     "XAUUSD": 1795398012.493153
   },
