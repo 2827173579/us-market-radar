@@ -676,6 +676,19 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                         try:
                             import sr_anchor_engine as _sr_state_mod
                             _tk_anchor = _sr_anchors_lookup.get(tk.upper()) if isinstance(_sr_anchors_lookup, dict) else None
+                            _vix_back_now = _sr_state_mod._is_vix_backwardation_active(_active_vix_regime)
+                            _weather_bad = ("暴雨" in str((weather_info or {}).get("weather", "")))
+                            _short_dom = float(item.get("calibrated_short_win_rate_pct", 0.0) or 0.0) > float(item.get("calibrated_win_rate_pct", 50.0) or 50.0)
+                            _bear_sup = bool(
+                                _vix_back_now
+                                or _is_bear_regime
+                                or _weather_bad
+                                or _short_dom
+                                or bool(item.get("bear_inertia_active", False))
+                                or str(item.get("v46_regime_mode", "")) == "BEAR_INERTIA_C5"
+                            )
+                            _sw_tp = float(item.get("target_profit_price") or 0.0)
+                            _sw_sl = float(item.get("stop_loss_price") or 0.0)
                             if isinstance(_tk_anchor, dict) and _tk_anchor.get("anchor_s1"):
                                 _sr_eval = _sr_state_mod.evaluate_sr_breach_state(
                                     price=live_p,
@@ -686,6 +699,10 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                                     bias_ma50=live_bias,
                                     vwap=live_vwap,
                                     base_script=sc_map.get("scenario_script", ""),
+                                    bear_suppressed=_bear_sup,
+                                    swing_tp=_sw_tp,
+                                    swing_sl=_sw_sl,
+                                    atr_pct=eff_atr,
                                 )
                                 sc_map.update(_sr_eval)
                             else:
@@ -708,6 +725,10 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                                     bias_ma50=live_bias,
                                     vwap=live_vwap,
                                     base_script=sc_map.get("scenario_script", ""),
+                                    bear_suppressed=_bear_sup,
+                                    swing_tp=_sw_tp,
+                                    swing_sl=_sw_sl,
+                                    atr_pct=eff_atr,
                                 )
                                 _sr_eval["sr_anchor_locked"] = False
                                 sc_map.update(_sr_eval)
@@ -6658,12 +6679,27 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                         leftHtml = `<span><s style="color:${pal.sub};">S1:${s1v}</s> <span style="color:${pal.warn}; font-weight:700;">已击穿转压 ➔ </span><span style="color:${s2Clr}; font-weight:700;">${s2Tag}</span></span>`;
                         rightHtml = `<span style="color:${pal.down};">${r1Src === "ATR_ESTIMATE" ? "估算阻力" : "阻力"} R1:${r1v} / R2:${r2v}</span>`;
                     } else if (srState === "ALL_RESISTANCE_BROKEN") {
-                        leftHtml = `<span style="color:${pal.up}; font-weight:700;">🛡️ 原R2:${r2v} (已突破 ➔ 转为防守底线)</span>`;
-                        rightHtml = `<span style="color:${pal.accent}; font-weight:700;">🚀 突破今日全线阻力 (原R1:${r1v} / 原R2:${r2v}) · 沿VWAP/EMA9移动止盈</span>`;
+                        if (aiItem.bear_suppressed_r1_break) {
+                            leftHtml = `<span style="color:${pal.warn}; font-weight:700;">⚠️ 原R1:${r1v} / R2:${r2v} (跳空越过 · 空头/倒挂压制)</span>`;
+                            rightHtml = `<span style="color:${pal.sub}; font-weight:600;">短线以 VWAP 为界 · 暂不追高</span>`;
+                        } else {
+                            leftHtml = `<span style="color:${pal.up}; font-weight:700;">🛡️ 原R2:${r2v} (已突破 ➔ 转为防守底线)</span>`;
+                            rightHtml = `<span style="color:${pal.accent}; font-weight:700;">🚀 突破今日全线阻力 (原R1:${r1v} / 原R2:${r2v}) · 沿VWAP/EMA9移动止盈</span>`;
+                        }
                     } else if (srState === "R1_BROKEN") {
-                        leftHtml = `<span style="color:${pal.up}; font-weight:700;">🛡️ R1:${r1v} (已突破 ➔ 转为支撑)</span>`;
-                        const r2Tag = (r2Src === "ATR_ESTIMATE") ? `上看估算阻力 R2:${r2v}` : `上看目标 R2:${r2v}`;
-                        rightHtml = `<span style="color:${r2Src === "ATR_ESTIMATE" ? pal.warn : pal.down}; font-weight:700;">${r2Tag}</span>`;
+                        const isFarR2 = Boolean(aiItem.r2_is_far_historical);
+                        const r2CapNum = Number(aiItem.r2_swing_cap || 0);
+                        if (aiItem.bear_suppressed_r1_break) {
+                            leftHtml = `<span style="color:${pal.warn}; font-weight:700;">⚠️ 旧R1:${r1v} (跳空越过 · 空头/倒挂压制)</span>`;
+                            const r2RefStr = isFarR2 ? `远期前高参考 ${r2v}（非短线目标）` : `上方前压 R2:${r2v}`;
+                            rightHtml = `<span style="color:${pal.sub}; font-weight:600;">${r2RefStr}</span>`;
+                        } else {
+                            leftHtml = `<span style="color:${pal.up}; font-weight:700;">🛡️ R1:${r1v} (已突破 ➔ 转为支撑)</span>`;
+                            const r2Tag = isFarR2 && r2CapNum > 0
+                                ? `波段上沿 $${r2CapNum.toFixed(2)} (远期前高 ${r2v})`
+                                : ((r2Src === "ATR_ESTIMATE") ? `上看估算阻力 R2:${r2v}` : `上看目标 R2:${r2v}`);
+                            rightHtml = `<span style="color:${r2Src === "ATR_ESTIMATE" ? pal.warn : pal.down}; font-weight:700;">${r2Tag}</span>`;
+                        }
                     } else {
                         if (s1Src === "ATR_ESTIMATE" && s2Src === "ATR_ESTIMATE") {
                             leftHtml = `<span style="color:${pal.warn};" title="无真实历史筹码密集区，按ATR估算">估算防线 (无真实筹码) S1:${s1v} / S2:${s2v}</span>`;
@@ -6692,7 +6728,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                     const srStateSc = String(aiItem.sr_breach_state || "INTACT").toUpperCase();
                     scScriptEl.style.borderLeftColor = (srStateSc === "ALL_SUPPORT_BREACHED")
                         ? pal.down
-                        : ((srStateSc === "S1_BREACHED" || aiItem.resonance_suppressed) ? pal.warn : ((srStateSc === "R1_BROKEN" || srStateSc === "ALL_RESISTANCE_BROKEN") ? pal.up : pal.accent));
+                        : ((srStateSc === "S1_BREACHED" || aiItem.resonance_suppressed || aiItem.bear_suppressed_r1_break) ? pal.warn : ((srStateSc === "R1_BROKEN" || srStateSc === "ALL_RESISTANCE_BROKEN") ? pal.up : pal.accent));
                 }
             } else {
                 if (aiBox) aiBox.style.display = "none";
@@ -6724,16 +6760,38 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 || actStrNow.includes("逢高做空")
             );
             if (isBearDefenseCard) {
-                if (tileTpLbl) tileTpLbl.innerText = "上方压力 (R1)";
                 if (tileStopLbl) tileStopLbl.innerText = "下方支撑 (S1)";
                 if (bearDefenseNote) bearDefenseNote.style.display = "block";
-                const r1Px = Number((aiItem && aiItem.r1) || data.broken_r1 || (aiItem && aiItem.target_profit_price) || 0);
+                // 空头/防守主决策卡「上方压力」价格顺序硬防呆：必须严格 > curActive * 1.002，严禁负百分比
+                const rawR1Bear = Number((aiItem && (aiItem.anchor_r1 !== undefined ? aiItem.anchor_r1 : aiItem.r1)) || data.broken_r1 || 0);
+                const rawR2Bear = Number((aiItem && (aiItem.anchor_r2 !== undefined ? aiItem.anchor_r2 : aiItem.r2)) || 0);
+                const vwapBear = Number(data.vwap || 0);
+                const ipBear = (typeof INTRADAY_PATH_FORECASTS !== "undefined" && INTRADAY_PATH_FORECASTS && INTRADAY_PATH_FORECASTS.by_ticker) ? INTRADAY_PATH_FORECASTS.by_ticker[ticker] : null;
+                const pmhBear = Number((ipBear && ipBear.pmh) || 0);
+                const minValidRes = curActive > 0 ? (curActive * 1.002) : 0;
+                let resPx = rawR1Bear;
+                let resLblText = "上方压力 (R1)";
+                let resSubPrefix = "";
+                if (minValidRes > 0 && resPx <= minValidRes) {
+                    resLblText = "上方压力 (动态)";
+                    resSubPrefix = "已越旧R1 · 上移至动态压力 · ";
+                    if (vwapBear > minValidRes && vwapBear <= curActive * 1.06) {
+                        resPx = Number(vwapBear.toFixed(2));
+                    } else if (pmhBear > minValidRes && pmhBear <= curActive * 1.08) {
+                        resPx = Number(pmhBear.toFixed(2));
+                    } else if (rawR2Bear > minValidRes && rawR2Bear <= curActive * 1.12) {
+                        resPx = Number(rawR2Bear.toFixed(2));
+                    } else {
+                        resPx = Number((curActive * (1.0 + Math.max(0.025, 1.35 * atrFracNow))).toFixed(2));
+                    }
+                }
+                if (tileTpLbl) tileTpLbl.innerText = resLblText;
                 if (tpBegEl && tpPctEl) {
-                    if (r1Px > 0) {
-                        const r1Diff = curActive > 0 ? ((r1Px - curActive) / curActive * 100) : 0;
-                        tpBegEl.innerText = "$" + r1Px.toFixed(2);
+                    if (resPx > 0) {
+                        const r1Diff = curActive > 0 ? Math.max(0.1, ((resPx - curActive) / curActive * 100)) : 0;
+                        tpBegEl.innerText = "$" + resPx.toFixed(2);
                         tpBegEl.style.color = pal.down;
-                        tpPctEl.innerText = `距现价 ${r1Diff >= 0 ? '+' : ''}${r1Diff.toFixed(1)}% · 反抽压力`;
+                        tpPctEl.innerText = `${resSubPrefix}距现价 +${r1Diff.toFixed(1)}% · 反抽压力`;
                         tpPctEl.style.color = pal.down;
                     } else {
                         tpBegEl.innerText = "--";

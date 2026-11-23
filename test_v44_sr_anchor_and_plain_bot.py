@@ -445,6 +445,57 @@ class TestV44SrAnchorAndPlainBot(unittest.TestCase):
         self.assertLess(res_sl_broken["stop_loss_price"], 28.00)
         self.assertEqual(res_sl_broken["sl_upgrade_note"], "已破原止损 · 现价防守")
 
+    def test_07_4h_card_bear_gate_r2_cap_sl_consistency_and_bear_resistance(self):
+        """验证 4 项不变量：空头/VIX倒挂跳空越R1不喊看高R2、离群R2收口、禁推荐低于止损位的回踩位、空头主卡上方压力严格>现价。"""
+        import sr_anchor_engine
+        anchor_qqq = {
+            "anchor_s1": 600.00,
+            "anchor_s2": 581.07,
+            "anchor_sl": 572.35,
+            "anchor_r1": 625.00,
+            "anchor_r2": 762.86,
+            "s1_source": "REAL_CHIPS",
+            "s2_source": "REAL_CHIPS",
+            "r1_source": "REAL_CHIPS",
+            "r2_source": "REAL_CHIPS",
+        }
+        # 1) 空头/VIX倒挂压制下跳空越过旧 R1 ($625.00) -> 严禁喊“看高R2 / 顺势关注”，且离群 R2 ($762.86) 被标记为远期前高
+        ev_bear = sr_anchor_engine.evaluate_sr_breach_state(
+            price=651.00,
+            anchor=anchor_qqq,
+            vwap=650.53,
+            bear_suppressed=True,
+            swing_tp=679.89,
+            swing_sl=630.73,
+            atr_pct=0.02,
+        )
+        self.assertTrue(ev_bear["bear_suppressed_r1_break"])
+        self.assertTrue(ev_bear["r2_is_far_historical"])
+        self.assertLess(ev_bear["r2_swing_cap"], 720.0)
+        self.assertIn("跳空越过旧R1", ev_bear["scenario_script"])
+        self.assertNotIn("看高R2", ev_bear["scenario_script"])
+        self.assertNotIn("顺势关注", ev_bear["scenario_script"])
+
+        # 2) 多头体制下跳空越过 R1 ($625.00) 但 R1 < 波段防守止损 ($630.73) -> 严禁推荐“等回踩原 R1 ($625.00)”
+        ev_bull = sr_anchor_engine.evaluate_sr_breach_state(
+            price=651.00,
+            anchor=anchor_qqq,
+            vwap=650.53,
+            bear_suppressed=False,
+            swing_tp=679.89,
+            swing_sl=630.73,
+            atr_pct=0.02,
+        )
+        self.assertFalse(ev_bull["bear_suppressed_r1_break"])
+        self.assertTrue(ev_bull["r2_is_far_historical"])
+        self.assertNotIn("等回踩原 R1 ($625.00)", ev_bull["scenario_script"])
+        self.assertIn("远期前高参考 $762.86", ev_bull["scenario_script"])
+
+        # 3) 验证前端空头主决策卡具备「已越旧R1 · 上移至动态压力」防呆逻辑
+        with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "create_futu_terminal.py"), encoding="utf-8") as f:
+            src = f.read()
+        self.assertIn("已越旧R1 · 上移至动态压力", src)
+
 
 if __name__ == "__main__":
     unittest.main()

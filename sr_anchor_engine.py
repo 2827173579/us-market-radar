@@ -523,9 +523,13 @@ def evaluate_sr_breach_state(
     bias_ma50: float = 0.0,
     vwap: Optional[float] = None,
     base_script: str = "",
+    bear_suppressed: bool = False,
+    swing_tp: Optional[float] = None,
+    swing_sl: Optional[float] = None,
+    atr_pct: Optional[float] = None,
 ) -> Dict[str, Any]:
     """
-    对称五态顶底互换状态机 (S/R Flip):
+    对称五态顶底互换状态机 (S/R Flip) + 体制门禁 / 离群 R2 收口 / 止损一致性保护:
     - INTACT: anchor_s1 <= price <= anchor_r1
     - S1_BREACHED: anchor_s2 <= price < anchor_s1
     - ALL_SUPPORT_BREACHED: price < anchor_s2
@@ -549,6 +553,26 @@ def evaluate_sr_breach_state(
     vwap_str = f"日内 VWAP (${vwap_f:.2f})" if (vwap_f and vwap_f > 0) else "当日VWAP"
     halt_prefix = "【暴跌熔断风控剧本】触发熔断保护期；" if is_halt else ""
 
+    # 离群 R2 波段合理跨度保护（防止远期前高脱节当成短线目标）
+    atr_raw = _opt_float(atr_pct)
+    atr_f = (atr_raw / 100.0) if (atr_raw is not None and atr_raw > 1.0) else (atr_raw if (atr_raw is not None and atr_raw > 0) else 0.025)
+    atr_f = max(0.012, min(0.15, atr_f))
+    swing_tp_f = _opt_float(swing_tp) or 0.0
+    swing_sl_f = _opt_float(swing_sl) or 0.0
+    r2_is_far_historical = False
+    r2_swing_cap = r2
+    if px > 0 and r2 > px:
+        max_r2_by_atr = px * (1.0 + max(0.10, 3.5 * atr_f))
+        r2_gain = (r2 - px) / px
+        tp_gain = ((swing_tp_f - px) / px) if (swing_tp_f > px) else 0.0
+        far_by_atr = r2 > max_r2_by_atr
+        far_by_tp = (tp_gain > 0.01 and r2_gain > max(0.10, 2.5 * tp_gain))
+        if far_by_atr or far_by_tp:
+            r2_is_far_historical = True
+            r2_swing_cap = round(min(r2, max(swing_tp_f, px * (1.0 + max(0.08, 2.5 * atr_f)))), 2)
+
+    bear_suppressed_r1_break = False
+
     if s2 > 0 and px < s2:
         state = STATE_ALL_SUPPORT_BREACHED
         badge = f"⚠️ 今日原定支撑全线跌穿 (原S1:${s1:.2f} / 原S2:${s2:.2f}) · 下方无真实支撑，别猜底"
@@ -568,20 +592,53 @@ def evaluate_sr_breach_state(
         )
     elif r2 > 0 and px > r2:
         state = STATE_ALL_RESISTANCE_BROKEN
-        badge = f"🚀 突破今日全线阻力 (原R1:${r1:.2f} / 原R2:${r2:.2f}) · 趋势延伸"
-        script = (
-            f"【阻力全线突破 · 移动止盈托管】现价放量突破原 R1 (${r1:.2f}) / R2 (${r2:.2f})；"
-            f"原 R2 (${r2:.2f}) 已转为下方强防守底线（原支撑 S1 (${s1:.2f}) / S2 (${s2:.2f})）；"
-            f"上方不设假天花板，自动切换为沿 {vwap_str} / EMA9 移动止盈托管，不追高、防假突破回踩原 R2"
-        )
+        if bear_suppressed:
+            bear_suppressed_r1_break = True
+            badge = f"⚠️ 跳空越过旧R1/R2 (原R1:${r1:.2f} / 原R2:${r2:.2f}) · 仍受空头/VIX倒挂压制"
+            script = (
+                f"【跳空越过旧R1/R2 · 仍受空头/VIX倒挂压制】原静态 R1 (${r1:.2f}) / R2 (${r2:.2f}) 已被跳空越过，"
+                f"但当前处于 VIX 倒挂/空头主导格局，暂不按多头突破追高；"
+                f"短线以 {vwap_str} 为多空分水岭，风控压制解除前严禁盲目追涨"
+            )
+        else:
+            badge = f"🚀 突破今日全线阻力 (原R1:${r1:.2f} / 原R2:${r2:.2f}) · 趋势延伸"
+            script = (
+                f"【阻力全线突破 · 移动止盈托管】现价放量突破原 R1 (${r1:.2f}) / R2 (${r2:.2f})；"
+                f"原 R2 (${r2:.2f}) 已转为下方强防守底线（原支撑 S1 (${s1:.2f}) / S2 (${s2:.2f})）；"
+                f"上方不设假天花板，自动切换为沿 {vwap_str} / EMA9 移动止盈托管，不追高、防假突破回踩原 R2"
+            )
     elif r1 > 0 and px > r1:
         state = STATE_R1_BROKEN
-        badge = f"R1:${r1:.2f} (已突破 ➔ 转为支撑) · 上看 R2:${r2:.2f}"
-        script = (
-            f"【R1突破转支撑 · 看高R2】原阻力 R1 (${r1:.2f}) 已突破并反转为下方支撑，"
-            f"目标上看原定 R2 (${r2:.2f})（原下轨 S1 (${s1:.2f}) / S2 (${s2:.2f})）；"
-            f"不追第一根冲高针，等回踩原 R1 (${r1:.2f}) 或 {vwap_str} 企稳后再顺势关注"
-        )
+        if bear_suppressed:
+            bear_suppressed_r1_break = True
+            r2_note = f"（远期前高参考 ${r2:.2f}，非短线目标）" if r2_is_far_historical else ""
+            badge = f"⚠️ 跳空越过旧R1:${r1:.2f} · 仍受空头/VIX倒挂压制"
+            script = (
+                f"【跳空越过旧R1 · 仍受空头/VIX倒挂压制】原静态 R1 (${r1:.2f}) 已被跳空越过，"
+                f"但当前处于 VIX 倒挂/空头主导格局，暂不按多头突破追高{r2_note}；"
+                f"短线以 {vwap_str} 为多空分水岭，风控压制解除前严禁盲目看高 R2"
+            )
+        else:
+            r2_disp_str = (
+                f"波段目标 ${r2_swing_cap:.2f}（远期前高参考 ${r2:.2f}，非短线目标）"
+                if r2_is_far_historical
+                else f"原定 R2 (${r2:.2f})"
+            )
+            badge = (
+                f"R1:${r1:.2f} (已突破 ➔ 转为支撑) · 波段目标:${r2_swing_cap:.2f}"
+                if r2_is_far_historical
+                else f"R1:${r1:.2f} (已突破 ➔ 转为支撑) · 上看 R2:${r2:.2f}"
+            )
+            # 点位一致性校验：严禁推荐低于波段防守止损 (swing_sl) 的原 R1 作为回踩买点
+            if swing_sl_f > 0 and r1 < swing_sl_f:
+                pullback_clause = f"不追第一根冲高针，等回踩 {vwap_str} 或波段防守区（止损 ${swing_sl_f:.2f} 上方）企稳后再顺势关注"
+            else:
+                pullback_clause = f"不追第一根冲高针，等回踩原 R1 (${r1:.2f}) 或 {vwap_str} 企稳后再顺势关注"
+            script = (
+                f"【R1突破转支撑 · 看高R2】原阻力 R1 (${r1:.2f}) 已突破并反转为下方支撑，"
+                f"目标上看{r2_disp_str}（原下轨 S1 (${s1:.2f}) / S2 (${s2:.2f})）；"
+                f"{pullback_clause}"
+            )
     else:
         state = STATE_INTACT
         badge = "今日原始支撑/阻力完好"
@@ -626,6 +683,9 @@ def evaluate_sr_breach_state(
         "sr_breach_state": state,
         "sr_status_badge": badge,
         "sr_anchor_locked": True,
+        "bear_suppressed_r1_break": bear_suppressed_r1_break,
+        "r2_is_far_historical": r2_is_far_historical,
+        "r2_swing_cap": r2_swing_cap,
         "scenario_script": script,
     }
 

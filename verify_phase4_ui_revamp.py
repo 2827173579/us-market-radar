@@ -132,12 +132,13 @@ def verify_desktop(browser):
         txt = loc.inner_text().strip()
         assert txt and "NaN" not in txt and "undefined" not in txt, f"Invalid Layer A {sel}: {txt!r}"
 
-    # Verify SOXL and all 79 tickers never show inverted target profit (tp <= active_price or negative tp pct)
-    page.locator("#watchlistContainer .stock-item[data-ticker='SOXL']").click()
-    page.wait_for_timeout(150)
-    soxl_tp_txt = page.locator("#pBeginnerTakeProfit").inner_text().strip()
-    soxl_tp_pct_txt = page.locator("#pBeginnerTakeProfitPct").inner_text().strip()
-    assert "-" not in soxl_tp_pct_txt, f"SOXL target profit pct must never be negative: {soxl_tp_txt} ({soxl_tp_pct_txt})"
+    # Verify SOXL, QQQ and all 79 tickers never show inverted target profit / upper resistance (negative pct)
+    for chk_tk in ("SOXL", "QQQ"):
+        page.locator(f"#watchlistContainer .stock-item[data-ticker='{chk_tk}']").click()
+        page.wait_for_timeout(150)
+        tk_tp_txt = page.locator("#pBeginnerTakeProfit").inner_text().strip()
+        tk_tp_pct_txt = page.locator("#pBeginnerTakeProfitPct").inner_text().strip()
+        assert "-" not in tk_tp_pct_txt, f"{chk_tk} target profit / upper resistance pct must never be negative: {tk_tp_txt} ({tk_tp_pct_txt})"
 
     tp_inversion_audit = page.evaluate("""() => {
         const aiMap = (typeof AI_PREDICTIONS !== 'undefined' && AI_PREDICTIONS && AI_PREDICTIONS.by_ticker) ? AI_PREDICTIONS.by_ticker : {};
