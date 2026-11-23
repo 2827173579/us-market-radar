@@ -4171,9 +4171,13 @@
     "2026-11-23:VXN_TECH_DELEVERAGING": {
       "device": "PC",
       "ts": 1795410099.4798286
+    },
+    "2026-11-23:NBIS/APLD/CRDO/MSTR/DELL/BE/COIN/NVDA/SKHY/MU/AMAT/TSM/ASML/AMD/QCOM:STOP_LOSS": {
+      "device": "PC",
+      "ts": 1795410208.8534489
     }
   },
   "device": "PC",
-  "last_heartbeat_ts": 1795410015.432403,
-  "updated_at": "2026-11-23T05:01:39.480261+00:00"
+  "last_heartbeat_ts": 1795410119.1418452,
+  "updated_at": "2026-11-23T05:03:28.853873+00:00"
 }
