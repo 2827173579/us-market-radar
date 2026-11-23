@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795415503.867,
-  "updated_at_et": "11-23 01:31 ET",
-  "updated_at_kst": "15:31 KST",
+  "updated_at_ts": 1795415611.279,
+  "updated_at_et": "11-23 01:33 ET",
+  "updated_at_kst": "15:33 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1760,6 +1760,13 @@
         "pub_ts": 1795411202.0
       },
       {
+        "title": "Musk Hails a “32 Hour Launch Pad Recycle” as SpaceX Sets Its Fastest Same-Pad Turnaround",
+        "url": "https://www.tikr.com/blog/musk-hails-a-32-hour-launch-pad-recycle-as-spacex-sets-its-fastest-same-pad-turnaround?ref=yahoofinance&tlnk=yf-261123-q4c7xhq6&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-22 23:52 ET",
+        "pub_ts": 1795409533.0
+      },
+      {
         "title": "Elon Musk Says 2027 AI Cash Crunch Will Be ‘Nuts’ — Analysts Still See SpaceX Emerging As The Biggest AI Hyperscaler",
         "url": "https://stocktwits.com/news-articles/markets/equity/elon-musk-2027-ai-cash-crunch-analysts-spacex-biggest-ai-hyperscaler/cNbYZvbR9Sb?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1779,13 +1786,6 @@
         "source": "Yahoo Finance",
         "time": "11-22 17:35 ET",
         "pub_ts": 1795386912.0
-      },
-      {
-        "title": "Should You Buy Tesla or SpaceX Stock Before Their Potential Merger?",
-        "url": "https://www.fool.com/investing/2026/11/22/should-you-buy-tesla-or-spacex-stock-before-merger/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-22 17:21 ET",
-        "pub_ts": 1795386062.0
       }
     ],
     "ASTS": [
@@ -3262,15 +3262,15 @@
     "ASML": 1795415503.8671443,
     "QCOM": 1795415503.8671443,
     "AVGO": 1795415503.8671443,
-    "AMAT": 1795414015.2916472,
-    "META": 1795414015.2916472,
+    "AMAT": 1795415611.2792523,
+    "META": 1795415611.2792523,
     "GOOGL": 1795415503.8671443,
     "MSFT": 1795415503.8671443,
-    "AAPL": 1795414015.2916472,
+    "AAPL": 1795415611.2792523,
     "PLTR": 1795414140.2489061,
-    "NOW": 1795414015.2916472,
-    "AMZN": 1795414015.2916472,
-    "CRWV": 1795414015.2916472,
+    "NOW": 1795415611.2792523,
+    "AMZN": 1795415611.2792523,
+    "CRWV": 1795415611.2792523,
     "NBIS": 1795414140.2489061,
     "APLD": 1795414140.2489061,
     "VST": 1795414140.2489061,
@@ -3279,18 +3279,18 @@
     "COHR": 1795414259.8042727,
     "MRVL": 1795414259.8042727,
     "LITE": 1795414259.8042727,
-    "AAOI": 1795414015.2916472,
-    "SPCX": 1795414015.2916472,
-    "ASTS": 1795414015.2916472,
+    "AAOI": 1795415611.2792523,
+    "SPCX": 1795415611.2792523,
+    "ASTS": 1795415611.2792523,
     "AXTI": 1795414259.8042727,
-    "NASA": 1795414015.2916472,
-    "LUNR": 1795414015.2916472,
+    "NASA": 1795415611.2792523,
+    "LUNR": 1795415611.2792523,
     "TSLA": 1795414140.2489061,
-    "AXP": 1795414015.2916472,
-    "RKLB": 1795414015.2916472,
-    "KO": 1795414015.2916472,
-    "FLY": 1795414015.2916472,
-    "INTC": 1795414015.2916472,
+    "AXP": 1795415611.2792523,
+    "RKLB": 1795415611.2792523,
+    "KO": 1795415611.2792523,
+    "FLY": 1795415611.2792523,
+    "INTC": 1795415611.2792523,
     "VRT": 1795414140.2489061,
     "HPE": 1795414140.2489061,
     "DELL": 1795414140.2489061,
@@ -3318,7 +3318,7 @@
     "V": 1795414259.8042727,
     "CAT": 1795414259.8042727,
     "FN": 1795414259.8042727,
-    "GLW": 1795414015.2916472,
+    "GLW": 1795415611.2792523,
     "ANT": 1795414259.8042727,
     "XAUUSD": 1795414372.820465
   },
