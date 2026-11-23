@@ -98,6 +98,14 @@ def verify_desktop(browser):
     page.locator("#macroCalHeadline").click()
 
     # 3. Left Watchlist 4 primary pills + collapsed secondary sectors + strictly 1 badge per row
+    assert page.locator("#pBubbleTempPill").is_visible(), "Missing V5.0 #pBubbleTempPill in topbar"
+    assert page.locator("#pBottomTempPill").is_visible(), "Missing V5.0 #pBottomTempPill in topbar"
+    page.locator("#pBubbleTempPill").click()
+    page.wait_for_timeout(150)
+    assert page.locator("#tempDetailPopover").is_visible(), "Clicking #pBubbleTempPill did not open #tempDetailPopover"
+    assert "不含BTC" in page.locator("#tempDetailPopover").inner_text(), "Missing 不含BTC in #tempDetailPopover"
+    page.keyboard.press("Escape")
+    page.wait_for_timeout(120)
     assert page.locator("#wlPrimaryFilters .wl-pill-btn").count() == 4
     assert not page.locator("#watchlistCategories").is_visible(), "#watchlistCategories should be collapsed by default"
     badge_counts = page.locator("#watchlistContainer .stock-item").evaluate_all(

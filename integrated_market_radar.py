@@ -5516,6 +5516,7 @@ def build_latest_radar_snapshot(
     now_et: Optional[datetime] = None,
     opex_shield: Optional[Dict[str, Any]] = None,
     daily_sr_anchors: Optional[Dict[str, Any]] = None,
+    market_temperature: Optional[Dict[str, Any]] = None,
 ) -> Dict[str, Any]:
     """构建供 Discord 交互机器人零 API 压力只读消费的轻量全市场快照。"""
     sess = str(session_code or "REGULAR").strip().upper() or "REGULAR"
@@ -6025,6 +6026,15 @@ def build_latest_radar_snapshot(
         "vix_regime": vr_out,
         "cross_market_liquidity": liq_out,
         "opex_shield": opex_out,
+        "futures": (
+            (market_temperature.get("futures") if isinstance(market_temperature, dict) else None)
+            or (wi.get("futures") if isinstance(wi.get("futures"), dict) else {})
+        ),
+        "market_temperature": (
+            market_temperature
+            if isinstance(market_temperature, dict) and market_temperature
+            else (wi.get("market_temperature") if isinstance(wi.get("market_temperature"), dict) else {})
+        ),
         "resilient_leaders_top5": top5_out,
         "ticker_count": len(tickers_out),
         "tickers": tickers_out,
@@ -6060,11 +6070,32 @@ def generate_macro_radar_html(
     update_time_str="",
     has_realtime=False,
     cross_market_liquidity=None,
+    market_temperature=None,
 ):
-    """生成包含 14 只核心 ETF 与跨市场流动性监测的宏观大盘司令塔看板"""
+    """生成包含 14 只核心 ETF、股指期货先导哨、四维温度计与跨市场流动性监测的宏观大盘司令塔看板"""
     if not update_time_str:
         update_time_str = now_et_str("%Y-%m-%d %H:%M:%S")
     _vr = (weather_info or {}).get("vix_regime") or {}
+    _mt_payload = (
+        market_temperature
+        if isinstance(market_temperature, dict) and market_temperature
+        else ((weather_info or {}).get("market_temperature") or {})
+    )
+    try:
+        import market_temperature_engine as _mte_html
+        if not _mt_payload:
+            _fut_fb = _mte_html.fetch_futures_snapshot(allow_network=False)
+            _mt_payload = _mte_html.compute_market_temperature(
+                macro_data=macro_data,
+                stocks_data=None,
+                vix_regime=_vr,
+                cross_market_liquidity=cross_market_liquidity,
+                futures_snapshot=_fut_fb,
+                history_dict=history_dict,
+            )
+        futures_temp_section_html = _mte_html.render_macro_futures_and_temperature_html(_mt_payload)
+    except Exception:
+        futures_temp_section_html = ""
     _liq = cross_market_liquidity if isinstance(cross_market_liquidity, dict) else ((weather_info or {}).get("cross_market_liquidity") or {})
     if not _liq:
         try:
@@ -6687,6 +6718,9 @@ def generate_macro_radar_html(
             </div>
         </div>
     </div>
+
+    {futures_temp_section_html}
+
 
     <!-- 跨市场流动性压力卡片 (独立宏观监控，不混入 79 只可交易标的池) -->
     <section id="crossMarketLiquidityCard" class="liquidity-card">
@@ -8169,6 +8203,36 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
     except Exception as _mn_err:
         print(f"  [!] 📰 消息面缓存聚合静默降级: {_mn_err}")
 
+    # 7.05 V5.0 股指期货先导哨 (NQ=F / ES=F) + 大盘/日内泡沫与抄底四维温度计 (严格纯美股口径，0 污染 79 标的池)
+    _market_temperature = {}
+    try:
+        import market_temperature_engine as _mte_run
+        _fut_snap = _mte_run.fetch_futures_snapshot(session_code=session_code)
+        _market_temperature = _mte_run.compute_market_temperature(
+            macro_data=macro_data,
+            stocks_data=stocks_sorted,
+            vix_regime=vix_regime,
+            cross_market_liquidity=cross_market_liquidity,
+            futures_snapshot=_fut_snap,
+            session_code=session_code,
+            history_dict=history_dict,
+            intraday_map=intraday_map,
+        )
+        if isinstance(weather_info, dict):
+            weather_info["futures"] = _market_temperature.get("futures") or {}
+            weather_info["market_temperature"] = _market_temperature
+        _nq_i = (_market_temperature.get("futures") or {}).get("NQ=F") or {}
+        _es_i = (_market_temperature.get("futures") or {}).get("ES=F") or {}
+        print(
+            f"[+] 🌡️ V5.0 期货与温度计: NQ={_nq_i.get('last', '--')} ({_nq_i.get('pct_chg', '--')}%) | "
+            f"ES={_es_i.get('last', '--')} ({_es_i.get('pct_chg', '--')}%) | "
+            f"泡沫 {_market_temperature.get('macro_bubble_score')}/{_market_temperature.get('intraday_bubble_score')} | "
+            f"抄底 {_market_temperature.get('macro_bottom_score')}/{_market_temperature.get('intraday_bottom_score')} "
+            f"[锁定={_market_temperature.get('knife_catch_locked')}]"
+        )
+    except Exception as _mte_err:
+        print(f"  [!] 🌡️ V5.0 期货与温度计静默降级: {_mte_err}")
+
     generate_macro_radar_html(
         macro_data,
         weather_info,
@@ -8176,6 +8240,7 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
         update_time_str=now_str,
         has_realtime=has_realtime,
         cross_market_liquidity=cross_market_liquidity,
+        market_temperature=_market_temperature,
     )
     generate_stocks_radar_html(stocks_sorted, history_dict, update_time_str=now_str, has_realtime=has_realtime, vix_regime=vix_regime)
     
@@ -8263,6 +8328,7 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
             session_name=session_name,
             now_str=now_str,
             daily_sr_anchors=_sr_anchors_map,
+            market_temperature=_market_temperature,
         )
         _snap_written = write_latest_radar_snapshot(_snap_obj)
         print(f"[+] 📦 轻量只读快照已更新: {_snap_written} ({_snap_obj.get('ticker_count', 0)} 只标的)")

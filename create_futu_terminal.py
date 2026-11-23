@@ -3156,6 +3156,103 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
         .vix-detail-popover.is-hover-open {
             display: block;
         }
+        /* V5.0 大盘/日内泡沫与抄底温度计胶囊 + 期货迷你指示条 */
+        .temp-pill-wrap {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            flex-shrink: 0;
+        }
+        .temp-pill-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 4px 9px;
+            border-radius: 999px;
+            font-size: 11.5px;
+            font-weight: 700;
+            background: var(--bg-elevated);
+            border: 1px solid var(--border-subtle);
+            color: var(--text-primary);
+            cursor: pointer;
+            white-space: nowrap;
+            font-family: inherit;
+            transition: border-color 0.15s ease;
+        }
+        .temp-pill-btn:hover {
+            border-color: var(--color-accent);
+        }
+        .temp-futures-mini {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 3px 8px;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 600;
+            background: var(--bg-elevated);
+            border: 1px solid var(--border-subtle);
+            color: var(--text-secondary, var(--text-muted));
+            white-space: nowrap;
+        }
+        .temp-detail-popover {
+            display: none;
+            position: absolute;
+            top: calc(100% + 8px);
+            left: 0;
+            width: 360px;
+            max-width: calc(100vw - 24px);
+            background: var(--bg-card);
+            border: 1px solid var(--border-strong);
+            border-radius: 12px;
+            padding: 12px 14px;
+            box-shadow: var(--shadow-float, var(--shadow-card));
+            z-index: 955;
+            text-align: left;
+            color: var(--text-primary);
+        }
+        .temp-detail-popover.is-open,
+        .temp-detail-popover.is-hover-open {
+            display: block;
+        }
+        .temp-pop-bar-bg {
+            width: 100%;
+            height: 5px;
+            border-radius: 999px;
+            background: rgba(148, 163, 184, 0.2);
+            overflow: hidden;
+            margin: 4px 0 3px;
+        }
+        .temp-pop-bar-fill {
+            height: 100%;
+            border-radius: 999px;
+        }
+        .temp-pop-fut-strip {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px 12px;
+            margin-top: 8px;
+            padding: 7px 9px;
+            border-radius: 8px;
+            background: var(--bg-elevated);
+            border: 1px solid var(--border-subtle);
+            font-size: 11px;
+            color: var(--text-secondary, var(--text-muted));
+        }
+        @media (max-width: 768px) {
+            .temp-futures-mini {
+                display: none;
+            }
+            .temp-detail-popover {
+                position: fixed;
+                left: 10px;
+                right: 10px;
+                top: 56px;
+                width: auto;
+                max-width: calc(100vw - 20px);
+            }
+        }
         .vix-pop-head {
             display: flex;
             align-items: center;
@@ -3252,6 +3349,12 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             <div class="vix-pill-wrap" id="vixPillWrap">
                 <button type="button" id="pVixRegimePill" class="vix-regime-pill" onclick="toggleVixPopover(event)" title="全局真 VIX 恐慌中枢" aria-expanded="false" aria-controls="vixDetailPopover">⚪ VIX --</button>
                 <div id="vixDetailPopover" class="vix-detail-popover" role="dialog" aria-label="全局真 VIX 恐慌中枢详情"></div>
+            </div>
+            <div class="temp-pill-wrap" id="tempPillWrap">
+                <button type="button" id="pBubbleTempPill" class="temp-pill-btn tabular" onclick="toggleTempPopover(event)" title="大盘/日内泡沫评分（点击展开详情 · 不含BTC）" aria-expanded="false" aria-controls="tempDetailPopover">🔥 泡沫 --/--</button>
+                <button type="button" id="pBottomTempPill" class="temp-pill-btn tabular" onclick="toggleTempPopover(event)" title="大盘/日内抄底指数（点击展开详情 · 不含BTC）" aria-expanded="false" aria-controls="tempDetailPopover">🧲 抄底 --/--</button>
+                <span id="pFuturesMiniPill" class="temp-futures-mini tabular" title="美股指期货先导哨 (NQ=F / ES=F)">NQ -- · ES --</span>
+                <div id="tempDetailPopover" class="temp-detail-popover" role="dialog" aria-label="大盘与日内泡沫抄底温度计详情"></div>
             </div>
             <span id="pAiScorecardPill" class="scorecard-pill tabular" title="AI 实盘近7日/30日滚动胜率">--</span>
             <div class="header-status-badges">
@@ -4094,6 +4197,92 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                     <div class="vix-pop-advice">${advCn}</div>
                 `;
             }
+
+            // V5.0 大盘/日内泡沫与抄底温度计胶囊 + 期货迷你指示条 + 详情浮层
+            const mt = (WEATHER_INFO && WEATHER_INFO.market_temperature && typeof WEATHER_INFO.market_temperature === "object")
+                ? WEATHER_INFO.market_temperature
+                : null;
+            const bubblePill = document.getElementById("pBubbleTempPill");
+            const bottomPill = document.getElementById("pBottomTempPill");
+            const futMini = document.getElementById("pFuturesMiniPill");
+            const tempPop = document.getElementById("tempDetailPopover");
+            const _fmtScore = (v) => (v !== null && v !== undefined && !Number.isNaN(Number(v))) ? String(Math.round(Number(v))) : "--";
+            const _scoreColor = (tag) => (tag === "down" ? pal.down : (tag === "warn" ? pal.warn : (tag === "up" ? pal.up : pal.sub)));
+            if (bubblePill) {
+                if (mt) {
+                    const mb = _fmtScore(mt.macro_bubble_score);
+                    const ib = _fmtScore(mt.intraday_bubble_score);
+                    bubblePill.innerText = `🔥 泡沫 ${mb}/${ib}`;
+                    const clr = (Number(mt.macro_bubble_score) >= 65 || Number(mt.intraday_bubble_score) >= 75) ? pal.down : ((Number(mt.macro_bubble_score) >= 50 || Number(mt.intraday_bubble_score) >= 60) ? pal.warn : pal.sub);
+                    bubblePill.style.color = clr;
+                    bubblePill.title = `大盘泡沫 ${mt.macro_bubble_score} (${mt.macro_bubble_tier || ''}) | 日内泡沫 ${mt.intraday_bubble_score} (${mt.intraday_bubble_tier || ''})`;
+                } else {
+                    bubblePill.innerText = "🔥 泡沫 --/--";
+                }
+            }
+            if (bottomPill) {
+                if (mt) {
+                    const mbt = _fmtScore(mt.macro_bottom_score);
+                    const ibt = _fmtScore(mt.intraday_bottom_score);
+                    const lockIcon = (mt.knife_catch_locked || mt.intraday_knife_catch_locked) ? "🔒" : "";
+                    bottomPill.innerText = `🧲 抄底 ${mbt}/${ibt}${lockIcon}`;
+                    const clr = mt.knife_catch_locked ? pal.down : ((Number(mt.macro_bottom_score) >= 65 || Number(mt.intraday_bottom_score) >= 65) ? pal.up : pal.sub);
+                    bottomPill.style.color = clr;
+                    bottomPill.title = `大盘抄底 ${mt.macro_bottom_score} (${mt.macro_bottom_tier || ''}) | 日内抄底 ${mt.intraday_bottom_score} (${mt.intraday_bottom_tier || ''})`;
+                } else {
+                    bottomPill.innerText = "🧲 抄底 --/--";
+                }
+            }
+            if (futMini) {
+                const futs = (mt && mt.futures && typeof mt.futures === "object") ? mt.futures : ((WEATHER_INFO && WEATHER_INFO.futures) || {});
+                const nq = futs["NQ=F"] || {};
+                const es = futs["ES=F"] || {};
+                const fmtPct = (v) => (v !== null && v !== undefined && !Number.isNaN(Number(v))) ? `${Number(v) >= 0 ? "+" : ""}${Number(v).toFixed(2)}%` : "--";
+                const nqClr = (nq.pct_chg !== null && nq.pct_chg !== undefined && Number(nq.pct_chg) >= 0) ? pal.up : pal.down;
+                const esClr = (es.pct_chg !== null && es.pct_chg !== undefined && Number(es.pct_chg) >= 0) ? pal.up : pal.down;
+                futMini.innerHTML = `<span>NQ <b style="color:${nqClr}">${fmtPct(nq.pct_chg)}</b></span><span>·</span><span>ES <b style="color:${esClr}">${fmtPct(es.pct_chg)}</b></span>`;
+            }
+            if (tempPop) {
+                if (mt) {
+                    const futs = (mt.futures && typeof mt.futures === "object") ? mt.futures : {};
+                    const nq = futs["NQ=F"] || {};
+                    const es = futs["ES=F"] || {};
+                    const fmtP = (v) => (v !== null && v !== undefined && !Number.isNaN(Number(v))) ? Number(v).toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) : "--";
+                    const fmtPct = (v) => (v !== null && v !== undefined && !Number.isNaN(Number(v))) ? `${Number(v) >= 0 ? "+" : ""}${Number(v).toFixed(2)}%` : "--";
+                    const rows = [
+                        { lbl: "🔥 大盘整体泡沫", sc: Number(mt.macro_bubble_score || 0), tier: mt.macro_bubble_tier || "", clr: _scoreColor(mt.macro_bubble_color) },
+                        { lbl: `⚡ 日内泡沫 (${mt.source_tag || "期货实时"})`, sc: Number(mt.intraday_bubble_score || 0), tier: mt.intraday_bubble_tier || "", clr: _scoreColor(mt.intraday_bubble_color) },
+                        { lbl: "🧲 大盘整体抄底", sc: Number(mt.macro_bottom_score || 0), tier: mt.macro_bottom_tier || "", clr: _scoreColor(mt.macro_bottom_color) },
+                        { lbl: `🎯 日内抄底 (${mt.source_tag || "期货实时"})`, sc: Number(mt.intraday_bottom_score || 0), tier: mt.intraday_bottom_tier || "", clr: _scoreColor(mt.intraday_bottom_color) },
+                    ];
+                    const gridHtml = rows.map(r => `
+                        <div class="vix-pop-cell">
+                            <span class="vix-pop-lbl">${escapeNewsHtml(r.lbl)}</span>
+                            <span class="vix-pop-val" style="color:${r.clr};">${r.sc.toFixed(1)}<small style="font-size:10px;opacity:0.7;">/100</small></span>
+                            <div class="temp-pop-bar-bg"><div class="temp-pop-bar-fill" style="width:${Math.max(2, Math.min(100, r.sc))}%;background:${r.clr};"></div></div>
+                            <span style="font-size:10.5px;color:${r.clr};line-height:1.3;">${escapeNewsHtml(r.tier)}</span>
+                        </div>
+                    `).join("");
+                    const lockNote = (mt.knife_catch_locked || mt.intraday_knife_catch_locked)
+                        ? `<div class="vix-pop-tech" style="color:${pal.down};">🔒 硬接刀锁生效：恐慌倒挂或单边阴跌未企稳，抄底分锁定 ≤50</div>`
+                        : "";
+                    tempPop.innerHTML = `
+                        <div class="vix-pop-head">
+                            <span>🌡️ 大盘 &amp; 日内温度计</span>
+                            <span style="font-size:11px;color:${pal.up};font-weight:700;">纯美股 · 不含BTC</span>
+                        </div>
+                        <div class="vix-pop-grid tabular">${gridHtml}</div>
+                        <div class="temp-pop-fut-strip tabular">
+                            <span><b>NQ=F</b> ${fmtP(nq.last)} (${fmtPct(nq.pct_chg)} · VWAP ${fmtPct(nq.vwap_diff_pct)})</span>
+                            <span><b>ES=F</b> ${fmtP(es.last)} (${fmtPct(es.pct_chg)} · VWAP ${fmtPct(es.vwap_diff_pct)})</span>
+                        </div>
+                        ${lockNote}
+                        <div class="vix-pop-advice">${escapeNewsHtml(mt.headline_cn || "")}</div>
+                    `;
+                } else {
+                    tempPop.innerHTML = `<div class="vix-pop-head"><span>🌡️ 大盘 &amp; 日内温度计</span></div><div class="vix-pop-advice">温度计数据刷新中…</div>`;
+                }
+            }
             renderResilientLeadersStrip();
         }
 
@@ -4248,6 +4437,48 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                     const pill = document.getElementById("pVixRegimePill");
                     if (pop) { pop.classList.remove("is-open"); pop.classList.remove("is-hover-open"); }
                     if (pill) pill.setAttribute("aria-expanded", "false");
+                    const tpop = document.getElementById("tempDetailPopover");
+                    const bp = document.getElementById("pBubbleTempPill");
+                    const btp = document.getElementById("pBottomTempPill");
+                    if (tpop) { tpop.classList.remove("is-open"); tpop.classList.remove("is-hover-open"); }
+                    if (bp) bp.setAttribute("aria-expanded", "false");
+                    if (btp) btp.setAttribute("aria-expanded", "false");
+                }
+            });
+        })();
+
+        function toggleTempPopover(ev) {
+            if (ev && ev.stopPropagation) ev.stopPropagation();
+            const pop = document.getElementById("tempDetailPopover");
+            const bp = document.getElementById("pBubbleTempPill");
+            const btp = document.getElementById("pBottomTempPill");
+            if (!pop) return;
+            const willOpen = !pop.classList.contains("is-open");
+            pop.classList.toggle("is-open", willOpen);
+            if (!willOpen) pop.classList.remove("is-hover-open");
+            if (bp) bp.setAttribute("aria-expanded", willOpen ? "true" : "false");
+            if (btp) btp.setAttribute("aria-expanded", willOpen ? "true" : "false");
+        }
+        (function bindTempPillInteractions() {
+            document.addEventListener("DOMContentLoaded", function() {
+                const wrap = document.getElementById("tempPillWrap");
+                const pop = document.getElementById("tempDetailPopover");
+                if (wrap && pop && window.matchMedia && window.matchMedia("(hover: hover)").matches) {
+                    wrap.addEventListener("mouseenter", function() { pop.classList.add("is-hover-open"); });
+                    wrap.addEventListener("mouseleave", function() { pop.classList.remove("is-hover-open"); });
+                }
+            });
+            document.addEventListener("click", function(e) {
+                const wrap = document.getElementById("tempPillWrap");
+                const pop = document.getElementById("tempDetailPopover");
+                const bp = document.getElementById("pBubbleTempPill");
+                const btp = document.getElementById("pBottomTempPill");
+                if (!wrap || !pop) return;
+                if (!wrap.contains(e.target) && (pop.classList.contains("is-open") || pop.classList.contains("is-hover-open"))) {
+                    pop.classList.remove("is-open");
+                    pop.classList.remove("is-hover-open");
+                    if (bp) bp.setAttribute("aria-expanded", "false");
+                    if (btp) btp.setAttribute("aria-expanded", "false");
                 }
             });
         })();

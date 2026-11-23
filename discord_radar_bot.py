@@ -913,6 +913,21 @@ def build_vix_embed_dict(snapshot: Optional[Dict[str, Any]]) -> Dict[str, Any]:
         f"• **美元指数**：{_fmt_num(liq.get('dxy_spot'))}（近5天 `{_fmt_pct(dxy_5d)}`，{dxy_plain}）｜**日元**：{_fmt_num(liq.get('usdjpy_spot'))}（近5天 `{_fmt_pct(jpy_5d)}`，{jpy_plain}）",
         opx_line,
     ]
+    mt = snapshot.get("market_temperature") if isinstance(snapshot.get("market_temperature"), dict) else {}
+    futs = snapshot.get("futures") if isinstance(snapshot.get("futures"), dict) else (mt.get("futures") if isinstance(mt.get("futures"), dict) else {})
+    if mt or futs:
+        nq_i = futs.get("NQ=F") if isinstance(futs.get("NQ=F"), dict) else {}
+        es_i = futs.get("ES=F") if isinstance(futs.get("ES=F"), dict) else {}
+        nq_p = _fmt_pct(_opt_float(nq_i.get("pct_chg")))
+        es_p = _fmt_pct(_opt_float(es_i.get("pct_chg")))
+        mb_s = _fmt_num(_opt_float(mt.get("macro_bubble_score")), 0)
+        ib_s = _fmt_num(_opt_float(mt.get("intraday_bubble_score")), 0)
+        mbt_s = _fmt_num(_opt_float(mt.get("macro_bottom_score")), 0)
+        ibt_s = _fmt_num(_opt_float(mt.get("intraday_bottom_score")), 0)
+        lock_s = "🔒" if (mt.get("knife_catch_locked") or mt.get("intraday_knife_catch_locked")) else ""
+        liq_lines.append(
+            f"• **期货先导 (NQ/ES)**：纳指 `{nq_p}` ｜ 标普 `{es_p}` ｜ **泡沫/抄底双温**：泡沫 **{mb_s}/{ib_s}** · 抄底 **{mbt_s}/{ibt_s}{lock_s}**（查详情用 `/temp`）"
+        )
 
     return {
         "title": "⚡ 今天大盘安全吗？",
@@ -925,6 +940,98 @@ def build_vix_embed_dict(snapshot: Optional[Dict[str, Any]]) -> Dict[str, Any]:
             {"name": "🌡️ 恐慌温度", "value": _strip_bare_hr_lines("\n".join(vix_lines))[:1024], "inline": False},
             {"name": "🚦 抄底灯亮了吗", "value": _strip_bare_hr_lines("\n".join(gate_lines))[:1024], "inline": False},
             {"name": "🌊 场外资金风向", "value": _strip_bare_hr_lines("\n".join(liq_lines))[:1024], "inline": False},
+        ],
+        "timestamp": now_iso,
+        "footer": {"text": footer_txt},
+    }
+
+
+def build_temp_embed_dict(snapshot: Optional[Dict[str, Any]]) -> Dict[str, Any]:
+    """构建 `/temp` 大盘与日内泡沫/抄底双温度计及股指期货先导大白话诊断 Embed 字典。"""
+    footer_txt = _build_footer_text(snapshot)
+    now_iso = datetime.now(timezone.utc).isoformat()
+
+    if not isinstance(snapshot, dict):
+        return {
+            "title": "🌡️ 大盘泡沫与抄底温度计（不含BTC）",
+            "description": _strip_bare_hr_lines(
+                "💬 一句话结论：主雷达正在刷新最新股指期货与温度计数据，请稍等片刻再查。"
+            ),
+            "color": 0xF59E0B,
+            "timestamp": now_iso,
+            "footer": {"text": footer_txt},
+        }
+
+    mt = snapshot.get("market_temperature") if isinstance(snapshot.get("market_temperature"), dict) else {}
+    futs = snapshot.get("futures") if isinstance(snapshot.get("futures"), dict) else (mt.get("futures") if isinstance(mt.get("futures"), dict) else {})
+    if not mt and not futs:
+        return {
+            "title": "🌡️ 大盘泡沫与抄底温度计（不含BTC）",
+            "description": _strip_bare_hr_lines(
+                "💬 一句话结论：当前快照尚未写入最新温度计数据，等待主雷达下一轮刷新后即可查看。"
+            ),
+            "color": 0x64748B,
+            "timestamp": now_iso,
+            "footer": {"text": footer_txt},
+        }
+
+    mb = _opt_float(mt.get("macro_bubble_score"))
+    ib = _opt_float(mt.get("intraday_bubble_score"))
+    mbt = _opt_float(mt.get("macro_bottom_score"))
+    ibt = _opt_float(mt.get("intraday_bottom_score"))
+    macro_locked = bool(mt.get("knife_catch_locked", False))
+    intra_locked = bool(mt.get("intraday_knife_catch_locked", False))
+    src_tag = str(mt.get("source_tag") or "期货实时")
+    headline = str(mt.get("headline_cn") or "按温度计强弱与均价线节奏控制仓位，不盲目追高或接刀。")
+
+    if macro_locked or intra_locked or (mb is not None and mb >= 80.0) or (ib is not None and ib >= 75.0):
+        color = 0xEF4444
+    elif (mbt is not None and mbt >= 65.0) or (ibt is not None and ibt >= 65.0):
+        color = 0x10B981
+    elif (mb is not None and mb >= 65.0) or (ib is not None and ib >= 60.0):
+        color = 0xF59E0B
+    else:
+        color = 0x38BDF8
+
+    nq = futs.get("NQ=F") if isinstance(futs.get("NQ=F"), dict) else {}
+    es = futs.get("ES=F") if isinstance(futs.get("ES=F"), dict) else {}
+
+    def _fmt_fut_line(label: str, item: Dict[str, Any]) -> str:
+        px = _opt_float(item.get("last"))
+        pct = _opt_float(item.get("pct_chg"))
+        vdiff = _opt_float(item.get("vwap_diff_pct"))
+        stag = str(item.get("status_tag") or "24H 期货实时")
+        px_s = f"{px:,.2f}" if px is not None else "--"
+        return f"• **{label}**：`{px_s}`（`{_fmt_pct(pct)}`）｜ 相对24H均价线 `{_fmt_pct(vdiff)}` ｜ {stag}"
+
+    fut_lines = [
+        _fmt_fut_line("纳指100期货 (NQ=F)", nq),
+        _fmt_fut_line("标普500期货 (ES=F)", es),
+    ]
+
+    bubble_lines = [
+        f"• **大盘整体泡沫**：**{_fmt_num(mb, 1)} / 100** — {mt.get('macro_bubble_tier') or '正常健康'}",
+        f"• **日内泡沫（{src_tag}）**：**{_fmt_num(ib, 1)} / 100** — {mt.get('intraday_bubble_tier') or '日内无追高泡沫'}",
+    ]
+
+    lock_tag_m = " 🔒（倒挂/阴跌硬接刀锁生效，封顶 ≤50）" if macro_locked else ""
+    lock_tag_i = " 🔒（日内单边阴跌接刀锁生效，封顶 ≤50）" if intra_locked else ""
+    bottom_lines = [
+        f"• **大盘整体抄底**：**{_fmt_num(mbt, 1)} / 100** — {mt.get('macro_bottom_tier') or '未到抄底区'}{lock_tag_m}",
+        f"• **日内抄底（{src_tag}）**：**{_fmt_num(ibt, 1)} / 100** — {mt.get('intraday_bottom_tier') or '日内未见超卖抄底点'}{lock_tag_i}",
+    ]
+
+    return {
+        "title": "🌡️ 大盘泡沫与抄底温度计（纯美股 · 不含BTC）",
+        "description": _strip_bare_hr_lines(
+            f"💬 一句话结论：**{headline}**\n"
+            f"统计口径：仅计纯美股核心指数与股票（严格剔除加密、黄金、美债与反向标的）｜ 日内数据源：**{src_tag}**"
+        ),
+        "color": color,
+        "fields": [
+            {"name": "📡 股指期货先导 (NQ=F / ES=F)", "value": _strip_bare_hr_lines("\n".join(fut_lines))[:1024], "inline": False},
+            {"name": "🔥 泡沫评分（高分防追高）", "value": _strip_bare_hr_lines("\n".join(bubble_lines))[:1024], "inline": False},
+            {"name": "🧲 抄底指数（右侧解禁才动手）", "value": _strip_bare_hr_lines("\n".join(bottom_lines))[:1024], "inline": False},
         ],
         "timestamp": now_iso,
         "footer": {"text": footer_txt},
@@ -1157,6 +1264,13 @@ if _DISCORD_PY_AVAILABLE:
             async def ledger_cmd(interaction: discord.Interaction):
                 snap = load_radar_snapshot(bot_ref.snapshot_path)
                 emb = _embed_from_dict(build_ledger_embed_dict(ledger_path=bot_ref.ledger_path, snapshot=snap))
+                await interaction.response.send_message(embed=emb)
+
+            @self.tree.command(name="temp", description="看纳指/标普期货先导、大盘与日内泡沫评分和抄底指数（不含BTC）")
+            @app_commands.checks.cooldown(1, BOT_COOLDOWN_SECONDS, key=lambda i: i.user.id)
+            async def temp_cmd(interaction: discord.Interaction):
+                snap = load_radar_snapshot(bot_ref.snapshot_path)
+                emb = _embed_from_dict(build_temp_embed_dict(snap))
                 await interaction.response.send_message(embed=emb)
 
             @self.tree.error

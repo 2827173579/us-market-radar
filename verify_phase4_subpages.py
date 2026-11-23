@@ -162,6 +162,12 @@ def verify_desktop(browser):
         assert info["sw"] <= 1441, f"{sub_name} horizontal overflow on 1440px: {info['sw']}"
         assert page.locator('a[href="futu_pro_terminal.html"]').first.is_visible()
         assert page.locator("#siteDisclaimerBanner").is_visible()
+        if sub_name == "macro_radar.html":
+            assert page.locator("#v50FuturesTempStage").is_visible(), "Missing V5.0 futures/temperature stage on macro_radar.html"
+            assert page.locator('.v50-fut-card[data-symbol="NQ=F"]').is_visible(), "Missing NQ=F card on macro_radar.html"
+            assert page.locator('.v50-fut-card[data-symbol="ES=F"]').is_visible(), "Missing ES=F card on macro_radar.html"
+            assert page.locator(".v50-temp-card").count() == 4, f"Expected 4 V5.0 temperature cards, got {page.locator('.v50-temp-card').count()}"
+            assert "不含BTC" in page.locator("#v50TempDashboardBlock").inner_text(), "Missing 不含BTC badge on macro_radar.html"
         print(f"[PASS Desktop] {sub_name}: light theme synced ({info['bg']}), scrollWidth={info['sw']}")
 
     # 3. Navigate to predict_radar_5y.html -> verify Light theme, Canvas redraw, slimming & Table 4
