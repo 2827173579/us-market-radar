@@ -1,9 +1,23 @@
 {
-  "updated_at_ts": 1795443164.389,
-  "updated_at_et": "11-23 09:12 ET",
-  "updated_at_kst": "23:12 KST",
+  "updated_at_ts": 1795443281.052,
+  "updated_at_et": "11-23 09:14 ET",
+  "updated_at_kst": "23:14 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261123221207086800",
+      "title": "【黄仁勋获准重返英伟达 特朗普：正确决定】 11月23日讯，美国总统特朗普发文称，英伟达…",
+      "summary": "【黄仁勋获准重返英伟达 特朗普：正确决定】 11月23日讯，美国总统特朗普发文称，英伟达董事会已做出正确且恰当的决定，恢复黄仁勋的首席执行官职务。美国需要黄仁勋领导英伟达，以确保英伟达自身以及美国经济的成功与繁荣。 美国政府没有任何理由认为黄仁勋重返英伟达会对国家安全构成威胁。美国司法部长已确认，美国政府并无证据表明他存在任何违法行为。 就个人而言，我与黄仁勋相识已久，他是一位伟大的爱国者和国家珍宝。此外，英伟达应继续对公司的美国出口管制合规情况进行彻底的内部调查，以确保其履行法律义务，并尽到保护美国国家安全的爱国责任。祝贺黄仁勋、英伟达董事会以及美国人民乃至全世界！",
+      "keywords": [
+        "英伟达",
+        "特朗普"
+      ],
+      "pub_ts": 1795443127.0,
+      "time_et": "11-23 09:12 ET",
+      "time_bj": "22:12 BJ",
+      "time_kst": "23:12 KST",
+      "time_display": "09:12 ET / 22:12 BJ"
+    },
     {
       "id": "20261123221134431800",
       "title": "美国总统特朗普：美国司法部长已确认，美国政府没有掌握黄仁勋从事任何违法行为的证据。",
@@ -327,20 +341,6 @@
       "time_bj": "19:59 BJ",
       "time_kst": "20:59 KST",
       "time_display": "06:59 ET / 19:59 BJ"
-    },
-    {
-      "id": "20261123193916554800",
-      "title": "【期货盯盘神器专属文章】美联储加息预期生变？高盛最新警告：美国金融环境年内急剧收紧超10…",
-      "summary": "【期货盯盘神器专属文章】美联储加息预期生变？高盛最新警告：美国金融环境年内急剧收紧超100个基点，若持续至明年，或拖累GDP增速0.5个百分点！12月加息几成定局，但AI投资降温或改变2027年加息路径。点击查看高盛最新研判与三大关键变量。",
-      "keywords": [
-        "美联储",
-        "加息"
-      ],
-      "pub_ts": 1795433956.0,
-      "time_et": "11-23 06:39 ET",
-      "time_bj": "19:39 BJ",
-      "time_kst": "20:39 KST",
-      "time_display": "06:39 ET / 19:39 BJ"
     }
   ],
   "ticker_news": {
@@ -538,11 +538,11 @@
         "pub_ts": 1795431845.0
       },
       {
-        "title": "Stock Market Today: Tech Futures, Nvidia Surge After Market Sell-Off; CrowdStrike Plunges On Zscaler Deal (Live Coverage)",
+        "title": "Stock Market Today: Tech Futures Surge After Market Sell-Off; Nvidia Soars 30% On Jensen Huang Return (Live Coverage)",
         "url": "https://finance.yahoo.com/m/8751de70-467e-380a-82cb-f4ee42adc461/stock-market-today%3A-tech.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 08:38 ET",
-        "pub_ts": 1795441131.0
+        "time": "11-23 09:06 ET",
+        "pub_ts": 1795442763.0
       },
       {
         "title": "ETFs Are Net Sellers of Meta Platforms (META) on Thursday",
@@ -2936,6 +2936,13 @@
     ],
     "XOM": [
       {
+        "title": "Can Exxon Mobil Stock Outlast The Fuel Shortage?",
+        "url": "https://www.trefis.com/stock/xom/articles/627587/can-exxon-mobil-stock-outlast-the-fuel-shortage/2026-11-23?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 08:38 ET",
+        "pub_ts": 1795441105.0
+      },
+      {
         "title": "Which 3 ETFs Best Fit ExxonMobil After Its Angola Move?",
         "url": "https://finance.yahoo.com/markets/stocks/articles/3-etfs-best-fit-exxonmobil-131152914.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2962,16 +2969,23 @@
         "source": "Yahoo Finance",
         "time": "11-21 05:50 ET",
         "pub_ts": 1795258232.0
-      },
-      {
-        "title": "TechnipFMC Deepens ExxonMobil Ties With Guyana Longtail Awards",
-        "url": "https://finance.yahoo.com/energy/articles/technipfmc-deepens-exxonmobil-ties-guyana-150200655.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 10:02 ET",
-        "pub_ts": 1795186920.0
       }
     ],
     "JPM": [
+      {
+        "title": "J.P. Morgan NextList Turns 10: The Books, Stages and Destinations Defining What's Next in 2027",
+        "url": "https://finance.yahoo.com/media-advertising/articles/j-p-morgan-nextlist-turns-140000015.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 09:00 ET",
+        "pub_ts": 1795442400.0
+      },
+      {
+        "title": "Investors Heavily Search JPMorgan Chase & Co. (JPM): Here is What You Need to Know",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/investors-heavily-search-jpmorgan-chase-130004248.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 08:00 ET",
+        "pub_ts": 1795438804.0
+      },
       {
         "title": "JPMorgan Asset Management (Canada) Inc. Exchange Traded Funds 2026 Estimated Annual Reinvested Capital Gain Distributions",
         "url": "https://finance.yahoo.com/markets/stocks/articles/jpmorgan-asset-management-canada-inc-120000125.html?.tsrc=rss",
@@ -2992,20 +3006,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 06:05 ET",
         "pub_ts": 1795431902.0
-      },
-      {
-        "title": "Nemetschek falls 5% as J.P. Morgan flags weaker growth outlook",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/nemetschek-falls-5-j-p-105941084.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 05:59 ET",
-        "pub_ts": 1795431581.0
-      },
-      {
-        "title": "JPMorgan AM Says AI Borrowing Binge Is Holding Back Bond Rally",
-        "url": "https://finance.yahoo.com/markets/options/articles/jpmorgan-am-says-ai-borrowing-084139309.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 03:41 ET",
-        "pub_ts": 1795423299.0
       }
     ],
     "WMT": [
@@ -3241,20 +3241,20 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795441690.9736607,
-    "SOXL": 1795441690.9736607,
-    "SPY": 1795441690.9736607,
-    "DIA": 1795441690.9736607,
-    "SOXX": 1795441690.9736607,
-    "QQQ": 1795441690.9736607,
-    "SMH": 1795441690.9736607,
-    "IWM": 1795441690.9736607,
-    "IGV": 1795441690.9736607,
-    "TLT": 1795441690.9736607,
-    "GLD": 1795441690.9736607,
-    "SQQQ": 1795441690.9736607,
+    "KORU": 1795443281.0524106,
+    "SOXL": 1795443281.0524106,
+    "SPY": 1795443281.0524106,
+    "DIA": 1795443281.0524106,
+    "SOXX": 1795443281.0524106,
+    "QQQ": 1795443281.0524106,
+    "SMH": 1795443281.0524106,
+    "IWM": 1795443281.0524106,
+    "IGV": 1795443281.0524106,
+    "TLT": 1795443281.0524106,
+    "GLD": 1795443281.0524106,
+    "SQQQ": 1795443281.0524106,
     "TSM": 1795441808.4863145,
-    "VIXY": 1795441690.9736607,
+    "VIXY": 1795443281.0524106,
     "SOXS": 1795441808.4863145,
     "NVDA": 1795441808.4863145,
     "AMD": 1795441808.4863145,
@@ -3311,10 +3311,10 @@
     "NKE": 1795443164.389468,
     "MCD": 1795443164.389468,
     "PEP": 1795441923.7480617,
-    "XOM": 1795441690.9736607,
-    "JPM": 1795441690.9736607,
+    "XOM": 1795443281.0524106,
+    "JPM": 1795443281.0524106,
     "WMT": 1795441808.4863145,
-    "V": 1795441690.9736607,
+    "V": 1795443281.0524106,
     "CAT": 1795441808.4863145,
     "FN": 1795443164.389468,
     "GLW": 1795441923.7480617,
@@ -3338,7 +3338,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (09:11 ET / 22:11 BJ) [特朗普]：美国总统特朗普：美国司法部长已确认，美国政府没有掌握黄仁勋从事任何违法行为的证据。",
+    "detail": "⚡ 最新核心快讯 (09:12 ET / 22:12 BJ) [英伟达] [特朗普]：【黄仁勋获准重返英伟达 特朗普：正确决定】 11月23日讯，美国总统特朗普发文称，英伟达董事会已做出正确且恰当的决定，恢复黄仁勋的首席执行官职务。美国需要黄仁勋领导英伟达，以确保英伟达自身以",
     "event_name": "",
     "minutes_left": 0,
     "opex_shield": {
