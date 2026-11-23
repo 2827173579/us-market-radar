@@ -1,9 +1,22 @@
 {
-  "updated_at_ts": 1795417188.75,
-  "updated_at_et": "11-23 01:59 ET",
-  "updated_at_kst": "15:59 KST",
+  "updated_at_ts": 1795417295.921,
+  "updated_at_et": "11-23 02:01 ET",
+  "updated_at_kst": "16:01 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261123150009753800",
+      "title": "午盘收盘，国内期货主力合约跌多涨少，合成橡胶跌近5%，工业硅跌超4%，液化石油气（LPG…",
+      "summary": "午盘收盘，国内期货主力合约跌多涨少，合成橡胶跌近5%，工业硅跌超4%，液化石油气（LPG）、聚丙烯月均、丙烯跌超3%，聚丙烯跌近3%，苯乙烯（EB）、玻璃跌超2%。涨幅方面，苹果涨超6%，生猪触及涨停，红枣涨近4%，集运欧线涨超2%，钯涨近2%，豆粕、菜籽涨超1%，沪铝涨近1%。",
+      "keywords": [
+        "苹果"
+      ],
+      "pub_ts": 1795417209.0,
+      "time_et": "11-23 02:00 ET",
+      "time_bj": "15:00 BJ",
+      "time_kst": "16:00 KST",
+      "time_display": "02:00 ET / 15:00 BJ"
+    },
     {
       "id": "20261123145348138800",
       "title": "利比亚最大油田输油管道遭关闭，原油日产量骤减35万桶",
@@ -330,19 +343,6 @@
       "time_bj": "08:41 BJ",
       "time_kst": "09:41 KST",
       "time_display": "19:41 ET / 08:41 BJ"
-    },
-    {
-      "id": "20261123082732883800",
-      "title": "纳指100逼近熊市，抄底资金却不敢进场！高盛警告：真正的恐慌性出清可能还没到来",
-      "summary": "纳斯达克100指数距离熊市仅一步之遥。尽管对冲基金已大幅减仓，高盛却发现其他投资者仍持有较高股票仓位，市场尚未出现全面恐慌性出清，真正底部可能还没到来。点击查看",
-      "keywords": [
-        "纳斯达克"
-      ],
-      "pub_ts": 1795393652.0,
-      "time_et": "11-22 19:27 ET",
-      "time_bj": "08:27 BJ",
-      "time_kst": "09:27 KST",
-      "time_display": "19:27 ET / 08:27 BJ"
     }
   ],
   "ticker_news": {
@@ -1939,6 +1939,13 @@
     ],
     "TSLA": [
       {
+        "title": "Nio Sees Revenue Topping $15B This Year— But Analyst Warns Onvo Could Derail Tesla Roadster-Inspired Luxury Bet",
+        "url": "https://stocktwits.com/news-articles/markets/equity/nio-revenue-15b-this-year-analyst-onvo-derail-tesla-roadster-luxury-bet/cNbYrWER9Sh?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 01:37 ET",
+        "pub_ts": 1795415846.0
+      },
+      {
         "title": "Musk Says Tesla’s Real-World AI Will Get Smarter by “About an Order of Magnitude per Year”",
         "url": "https://www.tikr.com/blog/musk-says-teslas-real-world-ai-will-get-smarter-by-about-an-order-of-magnitude-per-year?ref=yahoofinance&tlnk=yf-261122-c3v9325h&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1965,13 +1972,6 @@
         "source": "Yahoo Finance",
         "time": "11-22 17:21 ET",
         "pub_ts": 1795386062.0
-      },
-      {
-        "title": "Elon Musk Doubles Down On Autonomy: Tesla Plans Wheel-Less, Pedal-Less Model Y To Sit Alongside Two-Seat Cybercab",
-        "url": "https://finance.yahoo.com/technology/articles/elon-musk-doubles-down-autonomy-213007363.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-22 16:30 ET",
-        "pub_ts": 1795383007.0
       }
     ],
     "AXP": [
@@ -3268,15 +3268,15 @@
     "GOOGL": 1795417081.0373266,
     "MSFT": 1795417081.0373266,
     "AAPL": 1795417188.749709,
-    "PLTR": 1795415721.1363282,
+    "PLTR": 1795417295.921486,
     "NOW": 1795417188.749709,
     "AMZN": 1795417188.749709,
     "CRWV": 1795417188.749709,
-    "NBIS": 1795415721.1363282,
-    "APLD": 1795415721.1363282,
-    "VST": 1795415721.1363282,
-    "BE": 1795415721.1363282,
-    "CRDO": 1795415721.1363282,
+    "NBIS": 1795417295.921486,
+    "APLD": 1795417295.921486,
+    "VST": 1795417295.921486,
+    "BE": 1795417295.921486,
+    "CRDO": 1795417295.921486,
     "COHR": 1795415829.115281,
     "MRVL": 1795415829.115281,
     "LITE": 1795415829.115281,
@@ -3286,26 +3286,26 @@
     "AXTI": 1795415829.115281,
     "NASA": 1795417188.749709,
     "LUNR": 1795417188.749709,
-    "TSLA": 1795415721.1363282,
+    "TSLA": 1795417295.921486,
     "AXP": 1795417188.749709,
     "RKLB": 1795417188.749709,
     "KO": 1795417188.749709,
     "FLY": 1795417188.749709,
     "INTC": 1795417188.749709,
-    "VRT": 1795415721.1363282,
-    "HPE": 1795415721.1363282,
-    "DELL": 1795415721.1363282,
-    "OKLO": 1795415721.1363282,
-    "CEG": 1795415721.1363282,
-    "FPS": 1795415721.1363282,
+    "VRT": 1795417295.921486,
+    "HPE": 1795417295.921486,
+    "DELL": 1795417295.921486,
+    "OKLO": 1795417295.921486,
+    "CEG": 1795417295.921486,
+    "FPS": 1795417295.921486,
     "MU": 1795415829.115281,
     "SKHY": 1795415829.115281,
     "WDC": 1795415829.115281,
-    "STX": 1795415721.1363282,
-    "MSTR": 1795415721.1363282,
-    "SNDK": 1795415721.1363282,
+    "STX": 1795417295.921486,
+    "MSTR": 1795417295.921486,
+    "SNDK": 1795417295.921486,
     "BTC-USD": 1795415829.115281,
-    "CRWD": 1795415721.1363282,
+    "CRWD": 1795417295.921486,
     "ORCL": 1795415829.115281,
     "COIN": 1795415829.115281,
     "LLY": 1795415829.115281,
@@ -3340,7 +3340,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (01:53 ET / 14:53 BJ) [原油]：利比亚最大油田沙拉拉的输油管道突遭人为关闭，叠加此前另一条管道停运，日产量减少约为该国此前稳定产能的三成，国际原油供应再添变数。点击查看…",
+    "detail": "⚡ 最新核心快讯 (02:00 ET / 15:00 BJ) [苹果]：午盘收盘，国内期货主力合约跌多涨少，合成橡胶跌近5%，工业硅跌超4%，液化石油气（LPG）、聚丙烯月均、丙烯跌超3%，聚丙烯跌近3%，苯乙烯（EB）、玻璃跌超2%。涨幅方面，苹果涨超6%，生",
     "event_name": "",
     "minutes_left": 0,
     "opex_shield": {
