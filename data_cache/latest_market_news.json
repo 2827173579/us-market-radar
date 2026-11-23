@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795464115.895,
-  "updated_at_et": "11-23 15:01 ET",
-  "updated_at_kst": "05:01 KST",
+  "updated_at_ts": 1795464221.489,
+  "updated_at_et": "11-23 15:03 ET",
+  "updated_at_kst": "05:03 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2492,6 +2492,13 @@
     ],
     "STX": [
       {
+        "title": "112% Upside for Seagate? Rosenblatt Thinks So, and Here’s How",
+        "url": "https://www.tikr.com/blog/112-upside-for-seagate-rosenblatt-thinks-so-and-heres-how?ref=yahoofinance&tlnk=yf-261123-pfm45wp8&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 14:40 ET",
+        "pub_ts": 1795462818.0
+      },
+      {
         "title": "Investors Might Be Underestimating Seagate’s Long-Term AI Growth Opportunity",
         "url": "https://247wallst.com/investing/2026/11/23/investors-might-be-underestimating-seagates-long-term-ai-growth-opportunity/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2518,13 +2525,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 17:11 ET",
         "pub_ts": 1795212687.0
-      },
-      {
-        "title": "Micron Stock Plunges 13% as Barron’s Calls Memory Stocks ‘Agonizingly Cheap’; Western Digital, SanDisk and Seagate Sink in AI Chip Selloff",
-        "url": "https://247wallst.com/investing/2026/11/20/micron-stock-plunges-13-as-barrons-calls-memory-stocks-agonizingly-cheap-western-digital-sandisk-and-seagate-sink-in-ai-chip-selloff/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 12:41 ET",
-        "pub_ts": 1795196464.0
       }
     ],
     "MSTR": [
@@ -3195,39 +3195,39 @@
     ],
     "ANT": [
       {
-        "title": "Anthropic Went Public Into An AI Selloff, And Its Numbers Argue Against It",
-        "url": "https://finnhub.io/api/news?id=52a4d151a49f64a7e90802605333687cb915fbf72acca8992e6dedcb2ce8b051",
-        "source": "SeekingAlpha",
-        "time": "11-23 09:05 ET",
-        "pub_ts": 1795442720.0
+        "title": "Jensen Huang's return to Nvidia: Long or short accountability?",
+        "url": "https://finance.yahoo.com/video/jensen-huangs-return-to-nvidia-long-or-short-accountability-185949254.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 13:59 ET",
+        "pub_ts": 1795460389.0
       },
       {
-        "title": "Anthropic: Priced For Perfection",
-        "url": "https://finnhub.io/api/news?id=a8de154ce967bfbd1512b4dbd07a6cb6625d49a2bc29e9b7eb99e027c2c598e4",
-        "source": "SeekingAlpha",
-        "time": "11-23 09:01 ET",
-        "pub_ts": 1795442500.0
+        "title": "OpenAI's chief scientist calls for AI speed limits",
+        "url": "https://finance.yahoo.com/video/openais-chief-scientist-calls-for-ai-speed-limits-184005095.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 13:40 ET",
+        "pub_ts": 1795459205.0
       },
       {
-        "title": "Jensen Is Back, But He Can't Fix Everything",
-        "url": "https://finnhub.io/api/news?id=94ea9d4541a02487aab0eacf0d3cb5f2a606037487cf7f672fd52449a7b860ac",
-        "source": "SeekingAlpha",
-        "time": "11-23 08:30 ET",
-        "pub_ts": 1795440613.0
+        "title": "Anthropic vs Nvidia: comparing two ways to invest in AI",
+        "url": "https://finance.yahoo.com/technology/ai/articles/anthropic-vs-nvidia-comparing-two-190331712.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 14:03 ET",
+        "pub_ts": 1795460611.0
       },
       {
-        "title": "Anthropic's Biggest Liability Is Someone Else's Biggest Asset",
-        "url": "https://finnhub.io/api/news?id=8880f642249238388ff5878bd4b5bcaaf8384016eaf5f5ab3903d9ceb226b3ee",
-        "source": "SeekingAlpha",
-        "time": "11-23 07:55 ET",
-        "pub_ts": 1795438534.0
+        "title": "Did Anthropic Stock's 9% Slide Make It Cheap?",
+        "url": "https://www.trefis.com/stock/ant/articles/627440/did-anthropic-stock-s-9-slide-make-it-cheap/2026-11-23?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 13:48 ET",
+        "pub_ts": 1795459710.0
       },
       {
-        "title": "Anthropic IPO: Why The AI Boom's Profits Won't End Up Here",
-        "url": "https://finnhub.io/api/news?id=da4e41f171618813b8826274095d4ff5c5f55015d6caafcdd8253fbc0fe13ce8",
-        "source": "SeekingAlpha",
-        "time": "11-23 07:29 ET",
-        "pub_ts": 1795436986.0
+        "title": "Kevin O’Leary warns Anthropic IPO buyers to brace for 2030",
+        "url": "https://www.thestreet.com/investing/kevin-oleary-anthropic-ipo-warning?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 13:47 ET",
+        "pub_ts": 1795459620.0
       }
     ],
     "XAUUSD": [
@@ -3299,11 +3299,11 @@
     "MU": 1795463671.7743666,
     "SKHY": 1795463671.7743666,
     "WDC": 1795463671.7743666,
-    "STX": 1795462641.557195,
-    "MSTR": 1795462641.557195,
+    "STX": 1795464221.4893281,
+    "MSTR": 1795464221.4893281,
     "SNDK": 1795464115.8954256,
     "BTC-USD": 1795463671.7743666,
-    "CRWD": 1795462641.557195,
+    "CRWD": 1795464221.4893281,
     "ORCL": 1795463671.7743666,
     "COIN": 1795463671.7743666,
     "LLY": 1795463671.7743666,
@@ -3315,11 +3315,11 @@
     "JPM": 1795463881.306905,
     "WMT": 1795464115.8954256,
     "V": 1795463881.306905,
-    "CAT": 1795462641.557195,
+    "CAT": 1795464221.4893281,
     "FN": 1795463671.7743666,
     "GLW": 1795464003.479138,
-    "ANT": 1795462641.557195,
-    "XAUUSD": 1795462641.557195
+    "ANT": 1795464221.4893281,
+    "XAUUSD": 1795464221.4893281
   },
   "opex_shield": {
     "date": "2026-11-23",
