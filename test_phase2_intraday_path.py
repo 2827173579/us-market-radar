@@ -253,6 +253,40 @@ class TestPhase2IntradayPathCorridor(unittest.TestCase):
             dt_post = datetime(self.forecast_day.year, self.forecast_day.month, self.forecast_day.day, 16, 20, tzinfo=NY_TZ)
             self.assertTrue(ipp.should_refresh_60d_cache(pq_path, meta_path, now_et=dt_post))
 
+    def test_05_rth_0930_open_anchor_translation_and_zero_lookahead(self):
+        """验证 09:30 真实开盘价偏离盘前锁定锚 >=1.5% 时纯平移走廊，保持 P25%/P50%/P75% 相对形态 100% 不变。"""
+        base_item = {
+            "status": "ok",
+            "anchor_open": 45.00,
+            "prev_close": 30.88,
+            "p25_pcts": [0.0, -1.5, -2.0],
+            "p50_pcts": [0.0, 0.2, 0.5],
+            "p75_pcts": [0.0, 1.8, 2.4],
+            "p25_prices": [45.00, 44.32, 44.10],
+            "p50_prices": [45.00, 45.09, 45.22],
+            "p75_prices": [45.00, 45.81, 46.08],
+        }
+        orig_p25_pcts = list(base_item["p25_pcts"])
+        orig_p50_pcts = list(base_item["p50_pcts"])
+        orig_p75_pcts = list(base_item["p75_pcts"])
+
+        # 09:30 真实开盘价 $42.00（较盘前锚 $45.00 偏离 -6.67% >= 1.5%）
+        actual_arr = [42.00, 42.30, None]
+        ipp.apply_rth_open_anchor_translation(base_item, actual_arr, threshold_pct=1.5)
+
+        self.assertTrue(base_item.get("rth_open_aligned"))
+        self.assertEqual(base_item["premarket_anchor_open"], 45.00)
+        self.assertEqual(base_item["anchor_open"], 42.00)
+        self.assertEqual(base_item["rth_open_price"], 42.00)
+        # Zero Lookahead：相对百分比形态严格零修改
+        self.assertEqual(base_item["p25_pcts"], orig_p25_pcts)
+        self.assertEqual(base_item["p50_pcts"], orig_p50_pcts)
+        self.assertEqual(base_item["p75_pcts"], orig_p75_pcts)
+        # 价格走廊按 $42.00 纯平移
+        self.assertEqual(base_item["p50_prices"][0], 42.00)
+        self.assertEqual(base_item["p25_prices"][2], round(42.00 * (1.0 - 0.02), 2))
+        self.assertEqual(base_item["p75_prices"][2], round(42.00 * (1.0 + 0.024), 2))
+
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)

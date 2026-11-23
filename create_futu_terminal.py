@@ -4895,6 +4895,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
         }
 
         function _ipNum(v, fb = null) {
+            if (v === null || v === undefined || v === "" || typeof v === "boolean") return fb;
             const n = Number(v);
             return Number.isFinite(n) ? n : fb;
         }
@@ -4996,9 +4997,16 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                     }
                 } else {
                     const ao = _ipNum(item.anchor_open, 0);
+                    const preAo = _ipNum(item.premarket_anchor_open, ao);
                     const pc = _ipNum(item.prev_close, 0);
                     const lockStr = item.snapshot_locked ? "🔒 09:25盘前走廊已锁定" : "📝 盘前实时预览";
-                    metaEl.innerText = `目标日 ${item.forecast_date || rootDoc.forecast_date || "--"} · ${lockStr} · 开盘锚 $${ao > 0 ? ao.toFixed(2) : "--"} · 昨收 $${pc > 0 ? pc.toFixed(2) : "--"}`;
+                    const act0 = (Array.isArray(item.actual_prices) && item.actual_prices.length > 0) ? _ipNum(item.actual_prices[0], 0) : 0;
+                    const isAligned = Boolean(item.rth_open_aligned || (act0 > 0 && preAo > 0 && Math.abs(act0 - preAo) / preAo >= 0.015));
+                    const alignedPx = _ipNum(item.rth_open_price, act0 > 0 ? act0 : ao);
+                    const anchorDesc = (isAligned && preAo > 0 && Math.abs(alignedPx - preAo) >= 0.01)
+                        ? `盘前锚 $${preAo.toFixed(2)} · 09:30实盘开盘锚已对齐 $${alignedPx.toFixed(2)}`
+                        : `开盘锚 $${ao > 0 ? ao.toFixed(2) : "--"}`;
+                    metaEl.innerText = `目标日 ${item.forecast_date || rootDoc.forecast_date || "--"} · ${lockStr} · ${anchorDesc} · 昨收 $${pc > 0 ? pc.toFixed(2) : "--"}`;
                 }
             }
             if (divEl) {
@@ -5044,11 +5052,13 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             fbEl.style.display = "none";
             wrapEl.style.display = "flex";
 
-            const p25 = item.p25_prices.map(v => _ipNum(v, null));
-            const p50 = item.p50_prices.map(v => _ipNum(v, null));
-            const p75 = item.p75_prices.map(v => _ipNum(v, null));
+            let p25 = item.p25_prices.map(v => _ipNum(v, null));
+            let p50 = item.p50_prices.map(v => _ipNum(v, null));
+            let p75 = item.p75_prices.map(v => _ipNum(v, null));
             const nSlots = Math.max(2, p50.length);
-            const act = Array.isArray(item.actual_prices) ? item.actual_prices.map(v => _ipNum(v, null)) : new Array(nSlots).fill(null);
+            const act = Array.isArray(item.actual_prices)
+                ? item.actual_prices.map(v => { const n = _ipNum(v, null); return (n !== null && n > 0) ? n : null; })
+                : new Array(nSlots).fill(null);
             const vwapArr = (has24hChart && Array.isArray(item.vwap_prices)) ? item.vwap_prices.map(v => _ipNum(v, null)) : [];
             const xLabels = (has24hChart && Array.isArray(item.time_labels) && item.time_labels.length >= nSlots) ? item.time_labels : timeSlots;
             const xLabelsFull = (has24hChart && Array.isArray(item.time_labels_full) && item.time_labels_full.length >= nSlots) ? item.time_labels_full : null;
@@ -5059,7 +5069,21 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             const utcOpen = _ipNum(item.utc_open !== undefined ? item.utc_open : item.anchor_open, p50[0] || 100);
             const high24 = _ipNum(item.high_24h, null);
             const low24 = _ipNum(item.low_24h, null);
-            const anchorOpen = has24hChart ? utcOpen : _ipNum(item.anchor_open, p50[0] || 100);
+            let anchorOpen = has24hChart ? utcOpen : _ipNum(item.anchor_open, p50[0] || 100);
+            if (!has24hChart && !item.rth_open_aligned && act[0] !== null && act[0] > 0 && anchorOpen > 0 && Math.abs(act[0] - anchorOpen) / anchorOpen >= 0.015) {
+                const rthOpen = act[0];
+                if (Array.isArray(item.p25_pcts) && Array.isArray(item.p50_pcts) && Array.isArray(item.p75_pcts) && item.p50_pcts.length === nSlots) {
+                    p25 = item.p25_pcts.map(x => Number((rthOpen * (1.0 + Number(x) / 100.0)).toFixed(2)));
+                    p50 = item.p50_pcts.map(x => Number((rthOpen * (1.0 + Number(x) / 100.0)).toFixed(2)));
+                    p75 = item.p75_pcts.map(x => Number((rthOpen * (1.0 + Number(x) / 100.0)).toFixed(2)));
+                } else {
+                    const ratio = rthOpen / anchorOpen;
+                    p25 = p25.map(v => v !== null ? Number((v * ratio).toFixed(2)) : null);
+                    p50 = p50.map(v => v !== null ? Number((v * ratio).toFixed(2)) : null);
+                    p75 = p75.map(v => v !== null ? Number((v * ratio).toFixed(2)) : null);
+                }
+                anchorOpen = rthOpen;
+            }
 
             if (lvBar) {
                 const fmt = (v) => (v !== null && v > 0) ? `$${v.toFixed(2)}` : "--";
@@ -5090,8 +5114,8 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             [p25, p50, p75, act, vwapArr].forEach(arr => arr.forEach(v => { if (v !== null && v > 0) vals.push(v); }));
             if (has24hChart) {
                 [utcOpen, high24, low24].forEach(v => { if (v !== null && v > 0) vals.push(v); });
-            } else {
-                [prevClose, pmh, pml, anchorOpen].forEach(v => { if (v !== null && v > 0) vals.push(v); });
+            } else if (vals.length === 0 && anchorOpen > 0) {
+                vals.push(anchorOpen);
             }
 
             let coreMin = vals.length ? Math.min(...vals) : 95;
@@ -5100,6 +5124,33 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 const base = Number.isFinite(anchorOpen) && anchorOpen > 0 ? anchorOpen : 100;
                 coreMin = base * 0.98;
                 coreMax = base * 1.02;
+            }
+
+            const inWindowRthRefs = [];
+            const farUpperRthRefs = [];
+            const farLowerRthRefs = [];
+            if (!has24hChart) {
+                const coreMid = (coreMin + coreMax) / 2.0;
+                const coreSpanRth = Math.max(coreMax - coreMin, coreMid * 0.025);
+                const rthCandidates = [
+                    { label: "昨收", val: prevClose, color: pal.svgAxis, dash: "5 4" },
+                    { label: "PMH", val: pmh, color: pal.warn, dash: "5 4" },
+                    { label: "PML", val: pml, color: pal.accent, dash: "5 4" },
+                ];
+                rthCandidates.forEach(rc => {
+                    if (rc.val === null || !(rc.val > 0)) return;
+                    const distMidPct = Math.abs(rc.val - coreMid) / Math.max(coreMid, 0.01);
+                    const allowPad = Math.max(coreSpanRth * 0.85, coreMid * 0.12);
+                    const inSpan = rc.val >= (coreMin - allowPad) && rc.val <= (coreMax + allowPad);
+                    if (distMidPct <= 0.22 && inSpan) {
+                        inWindowRthRefs.push(rc);
+                        vals.push(rc.val);
+                    } else if (rc.val > coreMax) {
+                        farUpperRthRefs.push(rc);
+                    } else {
+                        farLowerRthRefs.push(rc);
+                    }
+                });
             }
 
             const inWindowSr = [];
@@ -5155,8 +5206,8 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             const pad = {
                 left: 48,
                 right: 88,
-                top: (has24hChart && farUpperSr.length) ? 36 : 26,
-                bottom: (has24hChart && farLowerSr.length) ? 54 : 38
+                top: ((has24hChart && farUpperSr.length) || (!has24hChart && farUpperRthRefs.length)) ? 36 : 26,
+                bottom: ((has24hChart && farLowerSr.length) || (!has24hChart && farLowerRthRefs.length)) ? 54 : 38
             };
             const plotW = W - pad.left - pad.right;
             const plotH = H - pad.top - pad.bottom;
@@ -5223,9 +5274,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                     refLines.push({ label: sr.label, val: sr.val, color: sr.clr, dash: sr.isEst ? "2 3" : "5 3" });
                 });
             } else {
-                if (prevClose !== null && prevClose > 0) refLines.push({ label: "昨收", val: prevClose, color: pal.svgAxis, dash: "5 4" });
-                if (pmh !== null && pmh > 0) refLines.push({ label: "PMH", val: pmh, color: pal.warn, dash: "5 4" });
-                if (pml !== null && pml > 0) refLines.push({ label: "PML", val: pml, color: pal.accent, dash: "5 4" });
+                inWindowRthRefs.forEach(rc => refLines.push(rc));
             }
             const minGapPx = 16;
             const minLabelY = pad.top + (has24hChart ? 26 : 14);
@@ -5353,6 +5402,14 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 const loClr = farLowerSr.some(s => s.isEst) ? pal.warn : pal.up;
                 parts.push(`<g id="ipFarSrLower"><text x="${pad.left + 4}" y="${H - 7}" fill="${loClr}" font-size="10.5" font-weight="700">▼ 视窗外低撑: ${escapeNewsHtml(loTxt)}</text></g>`);
             }
+            if (!has24hChart && farUpperRthRefs.length) {
+                const upRefTxt = farUpperRthRefs.map(r => `${r.label} $${r.val.toFixed(2)}`).join(" · ");
+                parts.push(`<g id="ipFarRefUpper"><text x="${pad.left + 4}" y="17" fill="${pal.warn}" font-size="10.5" font-weight="700">↑ ${escapeNewsHtml(upRefTxt)}（超出主视口）</text></g>`);
+            }
+            if (!has24hChart && farLowerRthRefs.length) {
+                const loRefTxt = farLowerRthRefs.map(r => `${r.label} $${r.val.toFixed(2)}`).join(" · ");
+                parts.push(`<g id="ipFarRefLower"><text x="${pad.left + 4}" y="${H - 7}" fill="${pal.accent}" font-size="10.5" font-weight="700">↓ ${escapeNewsHtml(loRefTxt)}（超出主视口）</text></g>`);
+            }
 
             parts.push(`<line id="ipHoverLine" x1="0" y1="${pad.top}" x2="0" y2="${H - pad.bottom}" stroke="${pal.svgHover}" stroke-width="1" stroke-dasharray="2 2" style="display:none;" />`);
             svgEl.innerHTML = parts.join("");
@@ -5379,7 +5436,11 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                         const vwDiff = (pxV !== null && vwV !== null && vwV > 0) ? ` (${((pxV - vwV) / vwV * 100 >= 0 ? "+" : "")}${((pxV - vwV) / vwV * 100).toFixed(2)}%)` : "";
                         tipEl.innerHTML = `<b>${escapeNewsHtml(ticker)} · ${escapeNewsHtml(tStr)}</b><br>24H 价格: <b style="color:${pal.svgActual};">${f(pxV)}</b><br>实时 VWAP: <b style="color:${pal.accent};">${f(vwV)}${vwDiff}</b><br>24H 波动带 [P25~P75]: <span style="color:${pal.accent};">${f(p25[si])} ~ ${f(p75[si])}</span><br>中位参考 P50: <b style="color:${pal.svgP50};">${f(p50[si])}</b>`;
                     } else {
-                        tipEl.innerHTML = `<b>${escapeNewsHtml(ticker)} · ${timeSlots[si] || ""} ET</b><br>实际 5m: <b style="color:${pal.svgActual};">${f(act[si])}</b><br>P50 预期: <b style="color:${pal.svgP50};">${f(p50[si])}</b><br>走廊 [P25~P75]: <span style="color:${pal.accent};">${f(p25[si])} ~ ${f(p75[si])}</span>`;
+                        const actVal = act[si];
+                        const actDisp = (actVal !== null && Number.isFinite(actVal) && actVal > 0)
+                            ? `<b style="color:${pal.svgActual};">${f(actVal)}</b>`
+                            : `<span style="color:${pal.sub};">—（未到时段）</span>`;
+                        tipEl.innerHTML = `<b>${escapeNewsHtml(ticker)} · ${timeSlots[si] || ""} ET</b><br>实际 5m: ${actDisp}<br>P50 预期: <b style="color:${pal.svgP50};">${f(p50[si])}</b><br>走廊 [P25~P75]: <span style="color:${pal.accent};">${f(p25[si])} ~ ${f(p75[si])}</span>`;
                     }
                     tipEl.style.display = "block";
                 }

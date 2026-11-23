@@ -1394,6 +1394,47 @@ def _merge_actual_prices(old_arr: Optional[List[Any]], new_arr: Optional[List[An
     return out
 
 
+def apply_rth_open_anchor_translation(
+    item: Dict[str, Any],
+    actual_prices: Optional[List[Optional[float]]],
+    threshold_pct: float = 1.5,
+) -> Dict[str, Any]:
+    """
+    Zero-Lookahead 09:30 真实开盘锚纯平移对齐：
+    - 严格保留 09:25 ET 已锁定的相对百分比形态 (p25_pcts / p50_pcts / p75_pcts 绝不事后重算)；
+    - 一旦收到当日 09:30 ET 首根真实 RTH 5m 价格 rth_open (actual_prices[0])，
+      若 |rth_open - premarket_anchor_open| / premarket_anchor_open >= threshold_pct (默认 1.5%)，
+      则以 rth_open 对价格走廊做纯平移缩放，并保留 premarket_anchor_open 供副标题展示。
+    """
+    if not isinstance(item, dict) or item.get("status") != "ok":
+        return item
+    cur_ao = _safe_float(item.get("anchor_open"), 0.0)
+    pre_ao = _safe_float(item.get("premarket_anchor_open"), 0.0)
+    if pre_ao <= 0 and cur_ao > 0:
+        pre_ao = cur_ao
+        item["premarket_anchor_open"] = round(pre_ao, 2)
+
+    rth_open = 0.0
+    if isinstance(actual_prices, list) and len(actual_prices) > 0 and actual_prices[0] is not None:
+        rth_open = _safe_float(actual_prices[0], 0.0)
+
+    if rth_open > 0 and pre_ao > 0:
+        diff_pct = abs(rth_open - pre_ao) / pre_ao * 100.0
+        if diff_pct >= float(threshold_pct):
+            p25_pcts = item.get("p25_pcts")
+            p50_pcts = item.get("p50_pcts")
+            p75_pcts = item.get("p75_pcts")
+            if isinstance(p25_pcts, list) and isinstance(p50_pcts, list) and isinstance(p75_pcts, list) and len(p50_pcts) > 0:
+                item["p25_prices"] = [round(rth_open * (1.0 + float(x) / 100.0), 2) for x in p25_pcts]
+                item["p50_prices"] = [round(rth_open * (1.0 + float(x) / 100.0), 2) for x in p50_pcts]
+                item["p75_prices"] = [round(rth_open * (1.0 + float(x) / 100.0), 2) for x in p75_pcts]
+                item["anchor_open"] = round(rth_open, 2)
+                item["rth_open_aligned"] = True
+                item["rth_open_price"] = round(rth_open, 2)
+                item["rth_open_shift_pct"] = round(((rth_open - pre_ao) / pre_ao) * 100.0, 2)
+    return item
+
+
 def update_intraday_path_forecasts(
     tickers: List[str],
     intraday_map: Optional[Dict[str, Dict[str, Any]]] = None,
@@ -1496,6 +1537,7 @@ def update_intraday_path_forecasts(
             item = dict(prev_item)
             merged_actual = _merge_actual_prices(item.get("actual_prices"), new_actual)
             item["actual_prices"] = merged_actual
+            apply_rth_open_anchor_translation(item, merged_actual, threshold_pct=1.5)
             ao_locked = _safe_float(item.get("anchor_open"), 0.0)
             if ao_locked > 0:
                 item["actual_pcts"] = [
@@ -1527,6 +1569,7 @@ def update_intraday_path_forecasts(
         if should_lock:
             item["locked_at_et"] = cur_et.strftime("%Y-%m-%d %H:%M:%S")
         item["actual_prices"] = new_actual
+        apply_rth_open_anchor_translation(item, new_actual, threshold_pct=1.5)
         ao_cur = _safe_float(item.get("anchor_open"), 0.0)
         if ao_cur > 0:
             item["actual_pcts"] = [
