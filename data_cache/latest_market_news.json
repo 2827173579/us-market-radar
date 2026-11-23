@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795458859.544,
-  "updated_at_et": "11-23 13:34 ET",
-  "updated_at_kst": "03:34 KST",
+  "updated_at_ts": 1795458977.996,
+  "updated_at_et": "11-23 13:36 ET",
+  "updated_at_kst": "03:36 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -529,11 +529,25 @@
     ],
     "QQQ": [
       {
+        "title": "Exchange-Traded Funds Higher as US Equities Advance After Midday",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/exchange-traded-funds-higher-us-181225577.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 13:12 ET",
+        "pub_ts": 1795457545.0
+      },
+      {
         "title": "What INVESCO QQQ Trust (QQQ) Sold: Apple Leads on Nov. 19",
         "url": "https://finance.yahoo.com/markets/stocks/articles/invesco-qqq-trust-qqq-sold-110405429.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-23 06:04 ET",
         "pub_ts": 1795431845.0
+      },
+      {
+        "title": "Nvidia Just Jumped More Than 30%. A 66-Year-Old Who Moved $500,000 Out of VOO on Friday Missed a Five-Figure Day",
+        "url": "https://247wallst.com/investing/etf/2026/11/23/nvidia-just-jumped-more-than-30-a-66-year-old-who-moved-500000-out-of-voo-on-friday-missed-a-five-figure-day/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 13:31 ET",
+        "pub_ts": 1795458691.0
       },
       {
         "title": "Why stocks are having their wildest Monday morning since 2008",
@@ -548,20 +562,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 09:20 ET",
         "pub_ts": 1795443639.0
-      },
-      {
-        "title": "ETFs Are Net Sellers of Meta Platforms (META) on Thursday",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-net-sellers-meta-platforms-110311343.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 06:03 ET",
-        "pub_ts": 1795431791.0
-      },
-      {
-        "title": "ETFs Are Net Sellers of Apple (AAPL) on Thursday",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-net-sellers-apple-aapl-110249864.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 06:02 ET",
-        "pub_ts": 1795431769.0
       }
     ],
     "SMH": [
@@ -2601,6 +2601,27 @@
     ],
     "BTC-USD": [
       {
+        "title": "Jensen Huang Is Back at Nvidia: Could Bitcoin Regain What It Lost Without Him?",
+        "url": "https://247wallst.com/investing/cryptocurrency/2026/11/23/jensen-huang-is-back-at-nvidia-could-bitcoin-regain-what-it-lost-without-him/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 13:16 ET",
+        "pub_ts": 1795457810.0
+      },
+      {
+        "title": "Solo Bitcoin Miner Scores Again, Hitting $191,000 Jackpot Against the Odds",
+        "url": "https://decrypt.co/383818/solo-bitcoin-miner-scores-again-191000-jackpot?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 13:16 ET",
+        "pub_ts": 1795457785.0
+      },
+      {
+        "title": "Bitcoin rallies as Nvidia brings back Jensen Huang",
+        "url": "https://www.thestreet.com/crypto/markets/bitcoin-rallies-as-nvidia-brings-back-jensen-huang?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 13:11 ET",
+        "pub_ts": 1795457473.0
+      },
+      {
         "title": "IREN (IREN) Stock Is Soaring 27.9% Today: Nvidia CEO News Lifts AI Stocks",
         "url": "https://finance.yahoo.com/markets/stocks/articles/iren-iren-stock-soaring-27-173045028.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2613,27 +2634,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 12:05 ET",
         "pub_ts": 1795453524.0
-      },
-      {
-        "title": "Nvidia, Dell, Micron, Anthropic, CrowdStrike, UnitedHealth, and More Stocks That Explain Today’s Market",
-        "url": "https://finance.yahoo.com/m/76a3103b-f3de-364f-8cd8-90e453a902d8/nvidia%2C-dell%2C-micron%2C.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 12:03 ET",
-        "pub_ts": 1795453380.0
-      },
-      {
-        "title": "Kraken to honor trades from 71% bitcoin flash crash on Canadian dollar market",
-        "url": "https://finance.yahoo.com/video/kraken-to-honor-trades-from-71-bitcoin-flash-crash-on-canadian-dollar-market-170206732.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 12:02 ET",
-        "pub_ts": 1795453326.0
-      },
-      {
-        "title": "Bitcoin bottoms on 4-year anniversary of FTX low: Nvidia rips 30%",
-        "url": "https://finance.yahoo.com/video/bitcoin-bottoms-4-anniversary-ftx-170000657.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 12:00 ET",
-        "pub_ts": 1795453200.0
       }
     ],
     "CRWD": [
@@ -3241,10 +3241,10 @@
   "ticker_news_ts": {
     "KORU": 1795457500.7189794,
     "SOXL": 1795457500.7189794,
-    "SPY": 1795457392.7328172,
+    "SPY": 1795458977.995934,
     "DIA": 1795457500.7189794,
     "SOXX": 1795457500.7189794,
-    "QQQ": 1795457392.7328172,
+    "QQQ": 1795458977.995934,
     "SMH": 1795457500.7189794,
     "IWM": 1795457500.7189794,
     "IGV": 1795457500.7189794,
@@ -3274,12 +3274,12 @@
     "BE": 1795457711.2796578,
     "CRDO": 1795457711.2796578,
     "COHR": 1795457818.10214,
-    "MRVL": 1795457392.7328172,
-    "LITE": 1795457392.7328172,
+    "MRVL": 1795458977.995934,
+    "LITE": 1795458977.995934,
     "AAOI": 1795457711.2796578,
     "SPCX": 1795457711.2796578,
     "ASTS": 1795457711.2796578,
-    "AXTI": 1795457392.7328172,
+    "AXTI": 1795458977.995934,
     "NASA": 1795457711.2796578,
     "LUNR": 1795457711.2796578,
     "TSLA": 1795457818.10214,
@@ -3294,27 +3294,27 @@
     "OKLO": 1795457818.10214,
     "CEG": 1795457818.10214,
     "FPS": 1795457818.10214,
-    "MU": 1795457392.7328172,
-    "SKHY": 1795457392.7328172,
-    "WDC": 1795457392.7328172,
+    "MU": 1795458977.995934,
+    "SKHY": 1795458977.995934,
+    "WDC": 1795458977.995934,
     "STX": 1795457818.10214,
     "MSTR": 1795457818.10214,
     "SNDK": 1795457818.10214,
-    "BTC-USD": 1795457392.7328172,
+    "BTC-USD": 1795458977.995934,
     "CRWD": 1795457818.10214,
-    "ORCL": 1795457392.7328172,
-    "COIN": 1795457392.7328172,
-    "LLY": 1795457392.7328172,
-    "MRNA": 1795457392.7328172,
-    "NKE": 1795457392.7328172,
-    "MCD": 1795457392.7328172,
+    "ORCL": 1795458977.995934,
+    "COIN": 1795458977.995934,
+    "LLY": 1795458977.995934,
+    "MRNA": 1795458977.995934,
+    "NKE": 1795458977.995934,
+    "MCD": 1795458977.995934,
     "PEP": 1795457711.2796578,
     "XOM": 1795457500.7189794,
     "JPM": 1795457500.7189794,
     "WMT": 1795457711.2796578,
     "V": 1795457500.7189794,
     "CAT": 1795457818.10214,
-    "FN": 1795457392.7328172,
+    "FN": 1795458977.995934,
     "GLW": 1795457711.2796578,
     "ANT": 1795457818.10214,
     "XAUUSD": 1795457711.2796578
