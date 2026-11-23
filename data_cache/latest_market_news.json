@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795476075.063,
-  "updated_at_et": "11-23 18:21 ET",
-  "updated_at_kst": "08:21 KST",
+  "updated_at_ts": 1795476181.127,
+  "updated_at_et": "11-23 18:23 ET",
+  "updated_at_kst": "08:23 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2423,6 +2423,13 @@
     ],
     "SKHY": [
       {
+        "title": "Why SK Hynix Stock Skyrocketed Today",
+        "url": "https://www.fool.com/investing/2026/11/23/why-sk-hynix-stock-skyrocketed-today/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 17:56 ET",
+        "pub_ts": 1795474572.0
+      },
+      {
         "title": "SK hynix Stocks Fall 2.52% in Seoul Despite an 80% Operating Margin Quarter",
         "url": "https://finance.yahoo.com/markets/stocks/articles/sk-hynix-stocks-fall-2-175441008.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2449,13 +2456,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 05:21 ET",
         "pub_ts": 1795429293.0
-      },
-      {
-        "title": "Qualcomm Is Down 42% and SK hynix Has Plunged 48% Amid the AI Sell-Off. Which Is the Better Stock to Buy for 2027?",
-        "url": "https://www.fool.com/coverage/better-buy/2026/11/23/qualcomm-is-down-42-and-sk-hynix-has-plunged-48-amid-the-ai-sell-off-which-is-the-better-stock-to-buy-for-2027/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 05:20 ET",
-        "pub_ts": 1795429202.0
       }
     ],
     "WDC": [
@@ -2608,6 +2608,13 @@
     ],
     "BTC-USD": [
       {
+        "title": "Cathie Wood scraps plans for two new crypto ETFs",
+        "url": "https://www.thestreet.com/crypto/markets/cathie-wood-scraps-plans-for-two-new-crypto-etfs?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 18:03 ET",
+        "pub_ts": 1795474980.0
+      },
+      {
         "title": "Crypto Market Today, Nov. 23: Bitcoin Sits Out Wall Street's Historic Rally as $1.8 Billion ETF Exodus Weighs on Prices",
         "url": "https://www.fool.com/coverage/stock-market-today/2026/11/23/crypto-market-today-nov-23-bitcoin-sits-out-wall-street-s-historic-rally-as-usd1-8-billion-etf-exodus-weighs-on-prices/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2634,13 +2641,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 16:38 ET",
         "pub_ts": 1795469886.0
-      },
-      {
-        "title": "Grayscale picks 11 winners of AI's power crunch",
-        "url": "https://www.thestreet.com/crypto/markets/grayscale-picks-11-winners-of-ais-power-crunch?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 16:28 ET",
-        "pub_ts": 1795469280.0
       }
     ],
     "CRWD": [
@@ -3248,10 +3248,10 @@
   "ticker_news_ts": {
     "KORU": 1795475012.5879312,
     "SOXL": 1795475012.5879312,
-    "SPY": 1795474591.2299871,
+    "SPY": 1795476181.1268663,
     "DIA": 1795475012.5879312,
     "SOXX": 1795475012.5879312,
-    "QQQ": 1795474591.2299871,
+    "QQQ": 1795476181.1268663,
     "SMH": 1795475012.5879312,
     "IWM": 1795475012.5879312,
     "IGV": 1795475012.5879312,
@@ -3281,12 +3281,12 @@
     "BE": 1795475229.5122004,
     "CRDO": 1795475229.5122004,
     "COHR": 1795475229.5122004,
-    "MRVL": 1795474591.2299871,
-    "LITE": 1795474591.2299871,
+    "MRVL": 1795476181.1268663,
+    "LITE": 1795476181.1268663,
     "AAOI": 1795475229.5122004,
     "SPCX": 1795475229.5122004,
     "ASTS": 1795475229.5122004,
-    "AXTI": 1795474591.2299871,
+    "AXTI": 1795476181.1268663,
     "NASA": 1795475229.5122004,
     "LUNR": 1795475229.5122004,
     "TSLA": 1795475229.5122004,
@@ -3301,27 +3301,27 @@
     "OKLO": 1795475229.5122004,
     "CEG": 1795475229.5122004,
     "FPS": 1795475337.185427,
-    "MU": 1795474591.2299871,
-    "SKHY": 1795474591.2299871,
-    "WDC": 1795474591.2299871,
+    "MU": 1795476181.1268663,
+    "SKHY": 1795476181.1268663,
+    "WDC": 1795476181.1268663,
     "STX": 1795475337.185427,
     "MSTR": 1795475337.185427,
     "SNDK": 1795475337.185427,
-    "BTC-USD": 1795474591.2299871,
+    "BTC-USD": 1795476181.1268663,
     "CRWD": 1795475337.185427,
-    "ORCL": 1795474591.2299871,
-    "COIN": 1795474591.2299871,
-    "LLY": 1795474591.2299871,
-    "MRNA": 1795474591.2299871,
-    "NKE": 1795474591.2299871,
-    "MCD": 1795474591.2299871,
+    "ORCL": 1795476181.1268663,
+    "COIN": 1795476181.1268663,
+    "LLY": 1795476181.1268663,
+    "MRNA": 1795476181.1268663,
+    "NKE": 1795476181.1268663,
+    "MCD": 1795476181.1268663,
     "PEP": 1795475337.185427,
     "XOM": 1795475012.5879312,
     "JPM": 1795475012.5879312,
     "WMT": 1795475337.185427,
     "V": 1795475012.5879312,
     "CAT": 1795475337.185427,
-    "FN": 1795474591.2299871,
+    "FN": 1795476181.1268663,
     "GLW": 1795475229.5122004,
     "ANT": 1795475337.185427,
     "XAUUSD": 1795475337.185427
