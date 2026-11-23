@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795396129.683,
-  "updated_at_et": "11-22 20:08 ET",
-  "updated_at_kst": "10:08 KST",
+  "updated_at_ts": 1795396227.187,
+  "updated_at_et": "11-22 20:10 ET",
+  "updated_at_kst": "10:10 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -924,6 +924,13 @@
         "pub_ts": 1795390980.0
       },
       {
+        "title": "Bessent Softens on Jensen Huang. Can Nvidia Stock Finally Catch a Break?",
+        "url": "https://beincrypto.com/bessent-jensen-huang-nvidia-stock-outlook/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-22 17:45 ET",
+        "pub_ts": 1795387500.0
+      },
+      {
         "title": "3 AI Hardware Stocks Down More Than 30% From Their Records to Buy Now and Hold Through 2030",
         "url": "https://www.fool.com/investing/2026/11/22/3-ai-hardware-stocks-down-more-than-30-from-their-records-to-buy-now-and-hold-through-2030/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -943,16 +950,16 @@
         "source": "Yahoo Finance",
         "time": "11-22 16:07 ET",
         "pub_ts": 1795381620.0
-      },
-      {
-        "title": "Down 75%, SoundHound AI Stock Needs This 1 Thing to Happen by 2027",
-        "url": "https://www.fool.com/investing/2026/11/22/down-75-soundhound-ai-stock-needs-this-1-thing-to-happen-by-2027/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-22 19:10 ET",
-        "pub_ts": 1795392602.0
       }
     ],
     "AMD": [
+      {
+        "title": "AMD Gained From Nvidia’s China Scandal. Now a Short Seller Says AMD Has a China Problem Too.",
+        "url": "https://www.barchart.com/story/news/8957111/amd-gained-from-nvidias-china-scandal-now-a-short-seller-says-amd-has-a-china-problem-too?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-22 14:01 ET",
+        "pub_ts": 1795374064.0
+      },
       {
         "title": "Prediction: These Will Be AMD’s and Nvidia’s Stock Prices by 2028",
         "url": "https://www.fool.com/investing/2026/11/22/prediction-these-will-be-amds-and-nvidias-stock-prices-by-2028/?.tsrc=rss",
@@ -980,13 +987,6 @@
         "source": "Yahoo Finance",
         "time": "11-22 06:51 ET",
         "pub_ts": 1795348315.0
-      },
-      {
-        "title": "Stanley Druckenmiller, David Tepper and 33 Other Big Funds Sold Advanced Micro Devices Last Quarter, While 21 Bought. Who’s Right?",
-        "url": "https://www.tikr.com/blog/stanley-druckenmiller-david-tepper-and-33-other-big-funds-sold-advanced-micro-devices-last-quarter-while-21-bought-whos-right?ref=yahoofinance&tlnk=yf-261122-4w2438x8&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-22 05:22 ET",
-        "pub_ts": 1795342963.0
       }
     ],
     "ASML": [
@@ -3257,31 +3257,31 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795394722.0200863,
-    "SOXL": 1795394722.0200863,
-    "SPY": 1795394722.0200863,
-    "DIA": 1795394722.0200863,
-    "SOXX": 1795394722.0200863,
-    "QQQ": 1795394722.0200863,
-    "SMH": 1795394722.0200863,
-    "IWM": 1795394722.0200863,
-    "IGV": 1795394722.0200863,
-    "TLT": 1795394722.0200863,
-    "GLD": 1795394722.0200863,
-    "SQQQ": 1795394722.0200863,
-    "TSM": 1795394722.0200863,
-    "VIXY": 1795394722.0200863,
-    "SOXS": 1795394722.0200863,
-    "NVDA": 1795394722.0200863,
-    "AMD": 1795394722.0200863,
-    "ASML": 1795394722.0200863,
-    "QCOM": 1795394722.0200863,
-    "AVGO": 1795394722.0200863,
-    "AMAT": 1795394722.0200863,
-    "META": 1795394722.0200863,
-    "GOOGL": 1795394722.0200863,
-    "MSFT": 1795394722.0200863,
-    "AAPL": 1795394722.0200863,
+    "KORU": 1795396227.1869855,
+    "SOXL": 1795396227.1869855,
+    "SPY": 1795396227.1869855,
+    "DIA": 1795396227.1869855,
+    "SOXX": 1795396227.1869855,
+    "QQQ": 1795396227.1869855,
+    "SMH": 1795396227.1869855,
+    "IWM": 1795396227.1869855,
+    "IGV": 1795396227.1869855,
+    "TLT": 1795396227.1869855,
+    "GLD": 1795396227.1869855,
+    "SQQQ": 1795396227.1869855,
+    "TSM": 1795396227.1869855,
+    "VIXY": 1795396227.1869855,
+    "SOXS": 1795396227.1869855,
+    "NVDA": 1795396227.1869855,
+    "AMD": 1795396227.1869855,
+    "ASML": 1795396227.1869855,
+    "QCOM": 1795396227.1869855,
+    "AVGO": 1795396227.1869855,
+    "AMAT": 1795396227.1869855,
+    "META": 1795396227.1869855,
+    "GOOGL": 1795396227.1869855,
+    "MSFT": 1795396227.1869855,
+    "AAPL": 1795396227.1869855,
     "PLTR": 1795394911.2324953,
     "NOW": 1795394816.3692453,
     "AMZN": 1795394816.3692453,
