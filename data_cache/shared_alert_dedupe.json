@@ -4907,9 +4907,17 @@
     "2026-11-23:DEFENSIVE_FLIGHT:-21.3": {
       "device": "PC",
       "ts": 1795452205.406202
+    },
+    "2026-11-23:SPY/DIA/IWM:5M_ENTRY": {
+      "device": "PC",
+      "ts": 1795452647.214468
+    },
+    "2026-11-23:DEFENSIVE_FLIGHT:-22.5": {
+      "device": "PC",
+      "ts": 1795452648.92351
     }
   },
   "device": "PC",
-  "last_heartbeat_ts": 1795452432.7319272,
-  "updated_at": "2026-11-23T16:47:12.732435+00:00"
+  "last_heartbeat_ts": 1795452560.5431452,
+  "updated_at": "2026-11-23T16:50:48.923966+00:00"
 }
