@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795416978.475,
-  "updated_at_et": "11-23 01:56 ET",
-  "updated_at_kst": "15:56 KST",
+  "updated_at_ts": 1795417081.037,
+  "updated_at_et": "11-23 01:58 ET",
+  "updated_at_kst": "15:58 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -903,6 +903,13 @@
     ],
     "NVDA": [
       {
+        "title": "2 Semiconductor Stocks to Buy No Matter Who Wins the AI Chip Race",
+        "url": "https://www.fool.com/investing/2026/11/23/2-semiconductor-stocks-to-buy-no-matter-who-wins-the-ai-chip-race/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 01:50 ET",
+        "pub_ts": 1795416602.0
+      },
+      {
         "title": "Nvidia Just Reported Its First Quarter Without Jensen Huang. If the AI Trade Is Cracking, Warren Buffett’s Advice Comes Down to 1 Move.",
         "url": "https://www.fool.com/investing/2026/11/23/nvidia-just-reported-its-first-quarter-without-jensen-huang-if-the-ai-trade-is-cracking-warren-buffett-s-advice-comes-down-to-1-move/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -924,18 +931,11 @@
         "pub_ts": 1795413600.0
       },
       {
-        "title": "Tech back in the firing line as traders track Wall Street rout",
-        "url": "https://www.euronews.com/2026/11/23/tech-back-in-the-firing-line-as-traders-track-wall-street-rout?.tsrc=rss",
+        "title": "Green Week Ahead? Nvidia Futures Rip 6%, Nasdaq and S&P 500 Futures Snap Back 2%",
+        "url": "https://beincrypto.com/nvidia-futures-rip-as-markets-rebound/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 00:20 ET",
-        "pub_ts": 1795411214.0
-      },
-      {
-        "title": "Why Did NVDA, NFLX, ORCL Slip To 52-Week Lows Last Week?",
-        "url": "https://stocktwits.com/news-articles/markets/equity/why-did-nvda-nflx-orcl-slip-to-52-week-lows-last-week/cNbYpPuR9SJ?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 00:11 ET",
-        "pub_ts": 1795410679.0
+        "time": "11-23 01:00 ET",
+        "pub_ts": 1795413600.0
       }
     ],
     "AMD": [
@@ -3243,30 +3243,30 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795415503.8671443,
-    "SOXL": 1795415503.8671443,
-    "SPY": 1795415503.8671443,
-    "DIA": 1795415503.8671443,
-    "SOXX": 1795415503.8671443,
-    "QQQ": 1795415503.8671443,
-    "SMH": 1795415503.8671443,
-    "IWM": 1795415503.8671443,
-    "IGV": 1795415503.8671443,
-    "TLT": 1795415503.8671443,
-    "GLD": 1795415503.8671443,
-    "SQQQ": 1795415503.8671443,
-    "TSM": 1795415503.8671443,
-    "VIXY": 1795415503.8671443,
-    "SOXS": 1795415503.8671443,
-    "NVDA": 1795415503.8671443,
-    "AMD": 1795415503.8671443,
-    "ASML": 1795415503.8671443,
-    "QCOM": 1795415503.8671443,
-    "AVGO": 1795415503.8671443,
+    "KORU": 1795417081.0373266,
+    "SOXL": 1795417081.0373266,
+    "SPY": 1795417081.0373266,
+    "DIA": 1795417081.0373266,
+    "SOXX": 1795417081.0373266,
+    "QQQ": 1795417081.0373266,
+    "SMH": 1795417081.0373266,
+    "IWM": 1795417081.0373266,
+    "IGV": 1795417081.0373266,
+    "TLT": 1795417081.0373266,
+    "GLD": 1795417081.0373266,
+    "SQQQ": 1795417081.0373266,
+    "TSM": 1795417081.0373266,
+    "VIXY": 1795417081.0373266,
+    "SOXS": 1795417081.0373266,
+    "NVDA": 1795417081.0373266,
+    "AMD": 1795417081.0373266,
+    "ASML": 1795417081.0373266,
+    "QCOM": 1795417081.0373266,
+    "AVGO": 1795417081.0373266,
     "AMAT": 1795415611.2792523,
     "META": 1795415611.2792523,
-    "GOOGL": 1795415503.8671443,
-    "MSFT": 1795415503.8671443,
+    "GOOGL": 1795417081.0373266,
+    "MSFT": 1795417081.0373266,
     "AAPL": 1795415611.2792523,
     "PLTR": 1795415721.1363282,
     "NOW": 1795415611.2792523,
