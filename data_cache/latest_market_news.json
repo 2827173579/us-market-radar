@@ -1,9 +1,22 @@
 {
-  "updated_at_ts": 1795442514.267,
-  "updated_at_et": "11-23 09:01 ET",
-  "updated_at_kst": "23:01 KST",
+  "updated_at_ts": 1795442622.489,
+  "updated_at_et": "11-23 09:03 ET",
+  "updated_at_kst": "23:03 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261123220208731800",
+      "title": "iShares半导体ETF盘前交易大涨13%。",
+      "summary": "iShares半导体ETF盘前交易大涨13%。",
+      "keywords": [
+        "半导体"
+      ],
+      "pub_ts": 1795442528.0,
+      "time_et": "11-23 09:02 ET",
+      "time_bj": "22:02 BJ",
+      "time_kst": "23:02 KST",
+      "time_display": "09:02 ET / 22:02 BJ"
+    },
     {
       "id": "20261123220143928800",
       "title": "【英伟达：将继续对黄仁勋进行调查】 11月23日讯，英伟达(NVDA.O)：克雷斯临时C…",
@@ -331,19 +344,6 @@
       "time_bj": "17:01 BJ",
       "time_kst": "18:01 KST",
       "time_display": "04:01 ET / 17:01 BJ"
-    },
-    {
-      "id": "20261123170046858800",
-      "title": "欧洲央行管委西姆库斯：鉴于价格压力正在缓慢积聚，目前没有必要急于再次加息。",
-      "summary": "欧洲央行管委西姆库斯：鉴于价格压力正在缓慢积聚，目前没有必要急于再次加息。",
-      "keywords": [
-        "加息"
-      ],
-      "pub_ts": 1795424446.0,
-      "time_et": "11-23 04:00 ET",
-      "time_bj": "17:00 BJ",
-      "time_kst": "18:00 KST",
-      "time_display": "04:00 ET / 17:00 BJ"
     }
   ],
   "ticker_news": {
@@ -3341,7 +3341,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (09:01 ET / 22:01 BJ) [英伟达]：【英伟达：将继续对黄仁勋进行调查】 11月23日讯，英伟达(NVDA.O)：克雷斯临时CEO任期现已结束，克雷斯将继续担任CFO。董事会已成立委员会调查相关报道，将继续对黄仁勋进行调查。开始",
+    "detail": "⚡ 最新核心快讯 (09:02 ET / 22:02 BJ) [半导体]：iShares半导体ETF盘前交易大涨13%。",
     "event_name": "",
     "minutes_left": 0,
     "opex_shield": {
