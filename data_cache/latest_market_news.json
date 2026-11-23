@@ -1,9 +1,22 @@
 {
-  "updated_at_ts": 1795404626.591,
-  "updated_at_et": "11-22 22:30 ET",
-  "updated_at_kst": "12:30 KST",
+  "updated_at_ts": 1795404741.542,
+  "updated_at_et": "11-22 22:32 ET",
+  "updated_at_kst": "12:32 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261123113040193800",
+      "title": "早盘收盘，国内期货主力合约跌多涨少，合成橡胶跌近6%，工业硅跌近4%，沪银、液化石油气（…",
+      "summary": "早盘收盘，国内期货主力合约跌多涨少，合成橡胶跌近6%，工业硅跌近4%，沪银、液化石油气（LPG）、20号胶跌超3%，聚丙烯月均、橡胶跌近3%，苯乙烯（EB）跌超2%。涨幅方面，苹果涨超5%，生猪、红枣涨超3%，菜籽涨超2%，集运欧线、沪铝涨超1%，豆粕涨近1%。",
+      "keywords": [
+        "苹果"
+      ],
+      "pub_ts": 1795404640.0,
+      "time_et": "11-22 22:30 ET",
+      "time_bj": "11:30 BJ",
+      "time_kst": "12:30 KST",
+      "time_display": "22:30 ET / 11:30 BJ"
+    },
     {
       "id": "20261123111950992800",
       "title": "FBI数据库疑遭黑客入侵，特朗普称或有“积极一面”",
@@ -330,22 +343,6 @@
       "time_bj": "06:48 BJ",
       "time_kst": "07:48 KST",
       "time_display": "17:48 ET / 06:48 BJ"
-    },
-    {
-      "id": "20261123063209581800",
-      "title": "整理：昨日今晨重要新闻汇总（2026-11-23）",
-      "summary": "国内新闻： 1. 沪深北交易所降低融资保证金比例下限至80%。 2. 沪深交易所、中国结算推出一揽子降费措施。 3. 创业板拟引入做市商制度。 4. 上交所正推动修订科创板做市商规则。 5. 丁薛祥会见新加坡总理黄循财。 6. 中国台湾证交所与券商达成共识：融资担保维持率从130%降到120%。 7. 商务部：坚决反对美联邦通信委员会恶意打压中国电信企业在美运营。 国际新闻： 1. 俄罗斯军舰在利比亚东部遭袭。 2. 特朗普称民主党政策导致美股蒸发超6万亿美元。 3. 英媒：美国民主党将寻求推翻特朗普的税收和关税政策。 4. 韩国政府准备启动股市稳定基金，放宽回购限制、打击非法卖空。 5. 贝森特：美股市场抛售是受到美联储言论、中期选举等因素影响。美联储过度收紧或危及美国经济。 6. 中东局势— ①特朗普：如果无法达成协议，倾向于新年后打击伊朗。 ②伊朗外长阿拉格齐：美伊之间的现有调解方正频繁往返，并在会晤中传递想法与建议。 ③伊朗总统：有必要走出“不战不和”的状态。 ④战事影响能源供应，伊朗实施限电措施。 ⑥内塔尼亚胡被曝正考虑单独对伊朗动武。 ⑦也门胡塞武装称打击沙特炼油厂和雷达。",
-      "keywords": [
-        "美联储",
-        "关税",
-        "特朗普",
-        "中东"
-      ],
-      "pub_ts": 1795386729.0,
-      "time_et": "11-22 17:32 ET",
-      "time_bj": "06:32 BJ",
-      "time_kst": "07:32 KST",
-      "time_display": "17:32 ET / 06:32 BJ"
     }
   ],
   "ticker_news": {
@@ -2615,6 +2612,13 @@
         "pub_ts": 1795401761.0
       },
       {
+        "title": "Robert Kiyosaki Eyes Bitcoin Opportunity but the 75% Crash May Not Be Done Yet",
+        "url": "https://finance.yahoo.com/markets/crypto/articles/robert-kiyosaki-eyes-bitcoin-opportunity-023006369.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-22 21:30 ET",
+        "pub_ts": 1795401006.0
+      },
+      {
         "title": "XRP’s Next 10 Years: Is It One to Buy, Hold or Avoid?",
         "url": "https://247wallst.com/investing/cryptocurrency/2026/11/22/xrps-next-10-years-is-it-one-to-buy-hold-or-avoid/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2634,13 +2638,6 @@
         "source": "Yahoo Finance",
         "time": "11-22 16:52 ET",
         "pub_ts": 1795384377.0
-      },
-      {
-        "title": "The One Number Behind Every $5 XRP Forecast for 2030",
-        "url": "https://247wallst.com/investing/cryptocurrency/2026/11/22/the-one-number-behind-every-5-xrp-forecast-for-2030/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-22 14:56 ET",
-        "pub_ts": 1795377415.0
       }
     ],
     "CRWD": [
@@ -2685,8 +2682,8 @@
         "title": "Dow Jones Futures Rise As Oracle, Korea Try To Ease Market Fears; Look For These Absolute Losers",
         "url": "https://finance.yahoo.com/m/9ef9da98-bccf-3565-9a30-9bc3e57ad4b9/dow-jones-futures-rise-as.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-22 21:55 ET",
-        "pub_ts": 1795402536.0
+        "time": "11-22 22:18 ET",
+        "pub_ts": 1795403889.0
       },
       {
         "title": "Billionaire David Tepper’s Appaloosa Opened a $172 Million Stake in Oracle",
@@ -3200,39 +3197,39 @@
     ],
     "ANT": [
       {
-        "title": "Stocks are 'on fire sale' as Anthropic IPO fails to calm AI trade jitters",
-        "url": "https://finance.yahoo.com/markets/article/stocks-are-on-fire-sale-as-anthropic-ipo-fails-to-calm-ai-trade-jitters-190051253.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-22 14:00 ET",
-        "pub_ts": 1795374051.0
-      },
-      {
-        "title": "ANT, BABA, PANW, TTWO, ZS: Why Retail Traders Couldn’t Take Their Eyes Off These Stocks Last Week",
-        "url": "https://stocktwits.com/news-articles/markets/equity/ant-baba-panw-ttwo-zs-why-retail-traders-couldn-t-take-their-eyes-off-these-stocks-last-week/cNbYZ7qR91C?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-22 21:08 ET",
-        "pub_ts": 1795399737.0
-      },
-      {
-        "title": "How Notable Capital, GIC, and Baillie Gifford bet big on Anthropic before its IPO",
-        "url": "https://finance.yahoo.com/technology/ai/articles/notable-capital-gic-baillie-gifford-012553645.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-22 20:25 ET",
-        "pub_ts": 1795397153.0
-      },
-      {
-        "title": "Anthropic’s business model is creating a new kind of debt — comprehension debt",
-        "url": "https://www.americanbanker.com/news/anthropic-s-business-model-is-creating-a-new-kind-of-debt-comprehension-debt?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-22 19:30 ET",
-        "pub_ts": 1795393800.0
-      },
-      {
         "title": "Stock Futures Are Rebounding After Last Week’s Bloodbath",
-        "url": "https://finance.yahoo.com/m/3f2177d2-a141-387a-9038-df214f3f595a/stock-futures-are-rebounding.html?.tsrc=rss",
-        "source": "Yahoo Finance",
+        "url": "https://finnhub.io/api/news?id=c070a59889fe2ce57fe4d25368822282a6b04d9f76a8ad2ee442f6c53b6cfe98",
+        "source": "Yahoo",
         "time": "11-22 18:04 ET",
         "pub_ts": 1795388640.0
+      },
+      {
+        "title": "Does Anthropic Have a Competitive Advantage? These are the Four Big Ones",
+        "url": "https://finnhub.io/api/news?id=2653a99a4a2d5e6065228eb2131bc26bc3a7cda90932d2f5083fb8bb66f9b238",
+        "source": "Yahoo",
+        "time": "11-22 15:50 ET",
+        "pub_ts": 1795380602.0
+      },
+      {
+        "title": "Anthropic Stock Could Soar by 72%, According to This Wall Street Analyst",
+        "url": "https://finnhub.io/api/news?id=9987f74c58f7019135f2adf2f4e9cb14fd0472eebe63ce3aca35479e0354d9b1",
+        "source": "Yahoo",
+        "time": "11-22 15:36 ET",
+        "pub_ts": 1795379761.0
+      },
+      {
+        "title": "When Can Anthropic Insiders Sell? What the Post-IPO Lockup Period Means for Shareholders.",
+        "url": "https://finnhub.io/api/news?id=fcfb22c3a17ab732e676a6e8967e184bc73a4c441df3df72b8f1335ddc4c2f72",
+        "source": "Yahoo",
+        "time": "11-22 15:29 ET",
+        "pub_ts": 1795379342.0
+      },
+      {
+        "title": "Defiance 2X Long and 2X Short Daily Anthropic ETFs, ANTC and ANTQ, Begin Trading Monday, Nov. 23",
+        "url": "https://finnhub.io/api/news?id=a1ae735f70413f3aeaaab0dfe9bf41ca6938d6d520286d010880adbb3c89bafd",
+        "source": "Yahoo",
+        "time": "11-22 15:23 ET",
+        "pub_ts": 1795378980.0
       }
     ],
     "XAUUSD": [
@@ -3280,13 +3277,13 @@
     "VST": 1795404626.5908842,
     "BE": 1795404626.5908842,
     "CRDO": 1795404626.5908842,
-    "COHR": 1795403170.1628573,
-    "MRVL": 1795403170.1628573,
-    "LITE": 1795403170.1628573,
+    "COHR": 1795404741.5415213,
+    "MRVL": 1795404741.5415213,
+    "LITE": 1795404741.5415213,
     "AAOI": 1795404520.4427664,
     "SPCX": 1795404520.4427664,
     "ASTS": 1795404520.4427664,
-    "AXTI": 1795403170.1628573,
+    "AXTI": 1795404741.5415213,
     "NASA": 1795404520.4427664,
     "LUNR": 1795404520.4427664,
     "TSLA": 1795404626.5908842,
@@ -3301,29 +3298,29 @@
     "OKLO": 1795404626.5908842,
     "CEG": 1795404626.5908842,
     "FPS": 1795404626.5908842,
-    "MU": 1795403170.1628573,
-    "SKHY": 1795403170.1628573,
-    "WDC": 1795403170.1628573,
+    "MU": 1795404741.5415213,
+    "SKHY": 1795404741.5415213,
+    "WDC": 1795404741.5415213,
     "STX": 1795404626.5908842,
     "MSTR": 1795404626.5908842,
     "SNDK": 1795404626.5908842,
-    "BTC-USD": 1795403170.1628573,
+    "BTC-USD": 1795404741.5415213,
     "CRWD": 1795404626.5908842,
-    "ORCL": 1795403170.1628573,
-    "COIN": 1795403170.1628573,
-    "LLY": 1795403170.1628573,
-    "MRNA": 1795403170.1628573,
-    "NKE": 1795403170.1628573,
-    "MCD": 1795403170.1628573,
+    "ORCL": 1795404741.5415213,
+    "COIN": 1795404741.5415213,
+    "LLY": 1795404741.5415213,
+    "MRNA": 1795404741.5415213,
+    "NKE": 1795404741.5415213,
+    "MCD": 1795404741.5415213,
     "PEP": 1795403276.879366,
     "XOM": 1795403276.879366,
     "JPM": 1795403276.879366,
     "WMT": 1795403276.879366,
-    "V": 1795403170.1628573,
+    "V": 1795404741.5415213,
     "CAT": 1795403276.879366,
-    "FN": 1795403170.1628573,
+    "FN": 1795404741.5415213,
     "GLW": 1795404520.4427664,
-    "ANT": 1795403170.1628573,
+    "ANT": 1795404741.5415213,
     "XAUUSD": 1795403276.879366
   },
   "opex_shield": {
@@ -3343,7 +3340,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (22:19 ET / 11:19 BJ) [特朗普]：美国联邦调查局一套关键犯罪信息数据库疑遭黑客入侵，特朗普承认事件令人担忧，却称或能借此发现有关过去政治调查及选举舞弊的新信息。",
+    "detail": "⚡ 最新核心快讯 (22:30 ET / 11:30 BJ) [苹果]：早盘收盘，国内期货主力合约跌多涨少，合成橡胶跌近6%，工业硅跌近4%，沪银、液化石油气（LPG）、20号胶跌超3%，聚丙烯月均、橡胶跌近3%，苯乙烯（EB）跌超2%。涨幅方面，苹果涨超5%，",
     "event_name": "",
     "minutes_left": 0,
     "opex_shield": {
