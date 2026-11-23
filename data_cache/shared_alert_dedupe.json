@@ -4891,9 +4891,13 @@
     "2026-11-23:INTRADAY_CORRIDOR:SPY:ABOVE_P75": {
       "device": "PC",
       "ts": 1795450815.8730857
+    },
+    "2026-11-23:AXP/SPY/DIA:5M_ENTRY": {
+      "device": "PC",
+      "ts": 1795451343.7699564
     }
   },
   "device": "PC",
-  "last_heartbeat_ts": 1795450945.9310365,
-  "updated_at": "2026-11-23T16:22:25.931632+00:00"
+  "last_heartbeat_ts": 1795451055.499152,
+  "updated_at": "2026-11-23T16:29:03.770468+00:00"
 }
