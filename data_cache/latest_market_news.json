@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795449491.266,
-  "updated_at_et": "11-23 10:58 ET",
-  "updated_at_kst": "00:58 KST",
+  "updated_at_ts": 1795449599.764,
+  "updated_at_et": "11-23 10:59 ET",
+  "updated_at_kst": "00:59 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -513,18 +513,18 @@
         "pub_ts": 1795156202.0
       },
       {
+        "title": "Jensen Huang's Return Sparks Stock Market Surge",
+        "url": "https://finance.yahoo.com/m/e54c166a-9f48-3353-ad7b-3d7ce3fdd1ec/jensen-huang%27s-return-sparks.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 09:05 ET",
+        "pub_ts": 1795442729.0
+      },
+      {
         "title": "AI Selloff Has Opened New Ways To Play Semiconductor Short Exposure",
         "url": "https://finance.yahoo.com/technology/ai/articles/ai-selloff-opened-ways-play-211024484.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-21 16:10 ET",
         "pub_ts": 1795295424.0
-      },
-      {
-        "title": "SOXL Crashes 32% in Its Third-Worst Day Ever and Is Down 90% From Its June Record. The Chip Index It Tracks Is Down 43%",
-        "url": "https://247wallst.com/investing/2026/11/20/soxl-crashes-32-in-its-third-worst-day-ever-and-is-down-90-from-its-june-record-the-chip-index-it-tracks-is-down-43/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 17:03 ET",
-        "pub_ts": 1795212189.0
       }
     ],
     "QQQ": [
@@ -2934,6 +2934,13 @@
     ],
     "XOM": [
       {
+        "title": "ExxonMobil vs. Equinor: Which is the Stronger Integrated Player?",
+        "url": "https://finance.yahoo.com/energy/articles/exxonmobil-vs-equinor-stronger-integrated-143900281.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 09:39 ET",
+        "pub_ts": 1795444740.0
+      },
+      {
         "title": "Exxon, Chevron and ConocoPhillips Are Down. Here’s What Their Dividends Tell Investors",
         "url": "https://247wallst.com/investing/2026/11/23/exxon-chevron-and-conocophillips-are-down-heres-what-their-dividends-tell-investors/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2960,13 +2967,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 08:11 ET",
         "pub_ts": 1795439512.0
-      },
-      {
-        "title": "46 ETFs Add to ExxonMobil (XOM) Holdings on Thursday",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/46-etfs-add-exxonmobil-xom-110120321.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 06:01 ET",
-        "pub_ts": 1795431680.0
       }
     ],
     "JPM": [
@@ -3045,6 +3045,13 @@
     ],
     "V": [
       {
+        "title": "Klarna Expands Visa Partnership to Offer Flexible Payment Options Across Four Major Markets",
+        "url": "https://investorshub.advfn.com/market-news/article/40555/klarna-expands-visa-partnership-to-offer-flexible-payment-options-across-four-major-markets?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 10:01 ET",
+        "pub_ts": 1795446106.0
+      },
+      {
         "title": "Visa Launches New A.I. Agent Wallet",
         "url": "https://www.cryptoprowl.com/releases/visa-launches-new-ai-agent-wallet-8025?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3071,13 +3078,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 06:03 ET",
         "pub_ts": 1795431780.0
-      },
-      {
-        "title": "JPMorgan, Visa Warn of Cyberattack That Hit Outside Vendor",
-        "url": "https://finance.yahoo.com/video/jpmorgan-visa-warn-cyberattack-hit-175529831.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 12:55 ET",
-        "pub_ts": 1795197329.0
       }
     ],
     "CAT": [
@@ -3239,21 +3239,21 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795448088.9851124,
-    "SOXL": 1795448088.9851124,
+    "KORU": 1795449599.7635071,
+    "SOXL": 1795449599.7635071,
     "SPY": 1795449491.2661486,
-    "DIA": 1795448088.9851124,
-    "SOXX": 1795448088.9851124,
+    "DIA": 1795449599.7635071,
+    "SOXX": 1795449599.7635071,
     "QQQ": 1795449491.2661486,
-    "SMH": 1795448088.9851124,
-    "IWM": 1795448088.9851124,
-    "IGV": 1795448088.9851124,
-    "TLT": 1795448088.9851124,
-    "GLD": 1795448088.9851124,
-    "SQQQ": 1795448088.9851124,
+    "SMH": 1795449599.7635071,
+    "IWM": 1795449599.7635071,
+    "IGV": 1795449599.7635071,
+    "TLT": 1795449599.7635071,
+    "GLD": 1795449599.7635071,
+    "SQQQ": 1795449599.7635071,
     "TSM": 1795448204.9328008,
-    "VIXY": 1795448088.9851124,
-    "SOXS": 1795448088.9851124,
+    "VIXY": 1795449599.7635071,
+    "SOXS": 1795449599.7635071,
     "NVDA": 1795448204.9328008,
     "AMD": 1795448204.9328008,
     "ASML": 1795448204.9328008,
@@ -3309,10 +3309,10 @@
     "NKE": 1795449491.2661486,
     "MCD": 1795449491.2661486,
     "PEP": 1795448314.7534328,
-    "XOM": 1795448088.9851124,
-    "JPM": 1795448088.9851124,
+    "XOM": 1795449599.7635071,
+    "JPM": 1795449599.7635071,
     "WMT": 1795448314.7534328,
-    "V": 1795448088.9851124,
+    "V": 1795449599.7635071,
     "CAT": 1795448314.7534328,
     "FN": 1795449491.2661486,
     "GLW": 1795448314.7534328,
