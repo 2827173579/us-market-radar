@@ -1,9 +1,22 @@
 {
-  "updated_at_ts": 1795446114.482,
-  "updated_at_et": "11-23 10:01 ET",
-  "updated_at_kst": "00:01 KST",
+  "updated_at_ts": 1795446369.871,
+  "updated_at_et": "11-23 10:06 ET",
+  "updated_at_kst": "00:06 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261123230511324800",
+      "title": "纳斯达克100指数市值将增加逾2万亿美元，现涨6.7%。",
+      "summary": "纳斯达克100指数市值将增加逾2万亿美元，现涨6.7%。",
+      "keywords": [
+        "纳斯达克"
+      ],
+      "pub_ts": 1795446311.0,
+      "time_et": "11-23 10:05 ET",
+      "time_bj": "23:05 BJ",
+      "time_kst": "00:05 KST",
+      "time_display": "10:05 ET / 23:05 BJ"
+    },
     {
       "id": "20261123224931669800",
       "title": "黄仁勋复任英伟达CEO引爆美股！黄金白银同步走出修复行情",
@@ -327,19 +340,6 @@
       "time_bj": "22:04 BJ",
       "time_kst": "23:04 KST",
       "time_display": "09:04 ET / 22:04 BJ"
-    },
-    {
-      "id": "20261123220208731800",
-      "title": "iShares半导体ETF盘前交易大涨13%。",
-      "summary": "iShares半导体ETF盘前交易大涨13%。",
-      "keywords": [
-        "半导体"
-      ],
-      "pub_ts": 1795442528.0,
-      "time_et": "11-23 09:02 ET",
-      "time_bj": "22:02 BJ",
-      "time_kst": "23:02 KST",
-      "time_display": "09:02 ET / 22:02 BJ"
     }
   ],
   "ticker_news": {
@@ -447,11 +447,11 @@
         "pub_ts": 1795359360.0
       },
       {
-        "title": "His Indexed Annuity Tracks the S&P 500. The Fine Print Says “Price Return,” Which Means It Leaves Out Every Dividend the 500 Companies Pay",
-        "url": "https://247wallst.com/personal-finance/2026/11/21/his-indexed-annuity-tracks-the-sp-500-the-fine-print-says-price-return-which-means-it-leaves-out-every-dividend-the-500-companies-pay/?.tsrc=rss",
+        "title": "ETFs Are Net Sellers of Visa (V) on Thursday",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-net-sellers-visa-v-110300948.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-21 16:03 ET",
-        "pub_ts": 1795295029.0
+        "time": "11-23 06:03 ET",
+        "pub_ts": 1795431780.0
       }
     ],
     "DIA": [
@@ -537,18 +537,18 @@
         "pub_ts": 1795431845.0
       },
       {
+        "title": "Stock Market Today: Dow Surges 1,200 Points As Nvidia Soars 30% On Jensen Huang's Return (Live Coverage)",
+        "url": "https://finance.yahoo.com/m/8751de70-467e-380a-82cb-f4ee42adc461/stock-market-today%3A-dow.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 09:50 ET",
+        "pub_ts": 1795445441.0
+      },
+      {
         "title": "Exchange-Traded Funds, Equity Futures Higher Pre-Bell Monday as Jensen Huang Returns to Nvidia",
         "url": "https://finance.yahoo.com/markets/stocks/articles/exchange-traded-funds-equity-futures-142039189.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-23 09:20 ET",
         "pub_ts": 1795443639.0
-      },
-      {
-        "title": "Stock Market Today: Tech Futures Surge After Market Sell-Off; Nvidia Soars 30% On Jensen Huang Return (Live Coverage)",
-        "url": "https://finance.yahoo.com/m/8751de70-467e-380a-82cb-f4ee42adc461/stock-market-today%3A-tech.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 09:06 ET",
-        "pub_ts": 1795442763.0
       },
       {
         "title": "ETFs Are Net Sellers of Meta Platforms (META) on Thursday",
@@ -2380,6 +2380,13 @@
     ],
     "MU": [
       {
+        "title": "Can Micron Stock Jump 50%?",
+        "url": "https://www.trefis.com/stock/mu/articles/627563/can-micron-stock-jump-50/2026-11-23?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 09:33 ET",
+        "pub_ts": 1795444438.0
+      },
+      {
         "title": "“I Absolutely Do Not Expect” Customers to Break Their Deals, Micron’s CEO Says. Here’s What’s Riding on It",
         "url": "https://www.tikr.com/blog/i-absolutely-do-not-expect-customers-to-break-their-deals-microns-ceo-says-heres-whats-riding-on-it?ref=yahoofinance&tlnk=yf-261123-9h42533q&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2406,16 +2413,16 @@
         "source": "Yahoo Finance",
         "time": "11-23 07:44 ET",
         "pub_ts": 1795437864.0
-      },
-      {
-        "title": "Why Is Micron Technology Stock Falling?",
-        "url": "https://www.trefis.com/stock/mu/articles/627777/why-is-micron-technology-stock-falling/2026-11-23?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 07:05 ET",
-        "pub_ts": 1795435546.0
       }
     ],
     "SKHY": [
+      {
+        "title": "SK Hynix Soars 8%, Sandisk Up 6% as Memory Stocks Rebound From AI Rout",
+        "url": "https://www.tikr.com/blog/sk-hynix-soars-8-sandisk-up-6-as-memory-stocks-rebound-from-ai-rout?ref=yahoofinance&tlnk=yf-261123-3qjfmh53&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 09:33 ET",
+        "pub_ts": 1795444435.0
+      },
       {
         "title": "Premarket movers: Chip stocks lead AI rebound; CrowdStrike falls",
         "url": "https://finance.yahoo.com/markets/stocks/articles/premarket-movers-chip-stocks-lead-124424524.html?.tsrc=rss",
@@ -2443,13 +2450,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 03:07 ET",
         "pub_ts": 1795421261.0
-      },
-      {
-        "title": "A $37 Billion Fund Just Bought These 3 Stocks",
-        "url": "https://www.tikr.com/blog/a-37-billion-fund-just-bought-these-3-stocks?ref=yahoofinance&tlnk=yf-261122-8gr2cg9x&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-22 06:23 ET",
-        "pub_ts": 1795346597.0
       }
     ],
     "WDC": [
@@ -2602,6 +2602,20 @@
     ],
     "BTC-USD": [
       {
+        "title": "Stock Market Today: Dow Surges 1,200 Points As Nvidia Soars 30% On Jensen Huang's Return (Live Coverage)",
+        "url": "https://finance.yahoo.com/m/8751de70-467e-380a-82cb-f4ee42adc461/stock-market-today%3A-dow.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 09:50 ET",
+        "pub_ts": 1795445441.0
+      },
+      {
+        "title": "Bitcoin Tops $63,000 as Nvidia Brings Back Jensen Huang and Tech Shares Rally",
+        "url": "https://unchainedcrypto.com/bitcoin-tops-63000-as-nvidia-brings-back-jensen-huang-and-tech-shares-rally/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 09:35 ET",
+        "pub_ts": 1795444519.0
+      },
+      {
         "title": "Bitcoin Crash Leaves Strategy $12B and Bitmine $10B Underwater: How Much Worse Can It Get?",
         "url": "https://www.coinspeaker.com/strategy-mstr-bitmine-stock-bitcoin-55k/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2621,20 +2635,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 09:11 ET",
         "pub_ts": 1795443083.0
-      },
-      {
-        "title": "Stock Market Today: Tech Futures Surge After Market Sell-Off; Nvidia Soars 30% On Jensen Huang Return (Live Coverage)",
-        "url": "https://finance.yahoo.com/m/8751de70-467e-380a-82cb-f4ee42adc461/stock-market-today%3A-tech.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 09:06 ET",
-        "pub_ts": 1795442763.0
-      },
-      {
-        "title": "Strategy Buys $30 Million Of Bitcoin As Price Hits Two-Year Low",
-        "url": "https://www.cryptoprowl.com/releases/strategy-buys-30-million-of-bitcoin-as-price-hits-two-year-low-8024?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 09:04 ET",
-        "pub_ts": 1795442640.0
       }
     ],
     "CRWD": [
@@ -2676,6 +2676,13 @@
     ],
     "ORCL": [
       {
+        "title": "Verizon Cut Its Buying In 2002. Can Nvidia's Buyers Stop Now?",
+        "url": "https://www.trefis.com/stock/nvda/articles/627418/verizon-cut-its-buying-in-2002-can-nvidia-s-buyers-stop-now/2026-11-23?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 09:34 ET",
+        "pub_ts": 1795444469.0
+      },
+      {
         "title": "Oracle Or The Fed: What Really Moves Nvidia Stock?",
         "url": "https://www.trefis.com/stock/nvda/articles/627412/oracle-or-the-fed-what-really-moves-nvidia-stock/2026-11-23?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2702,13 +2709,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 00:11 ET",
         "pub_ts": 1795410679.0
-      },
-      {
-        "title": "Dow Jones Futures Jump As Oracle, Korea Try To Ease Market Fears; Look For These Absolute Losers",
-        "url": "https://finance.yahoo.com/m/9ef9da98-bccf-3565-9a30-9bc3e57ad4b9/dow-jones-futures-jump-as.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-22 23:15 ET",
-        "pub_ts": 1795407350.0
       }
     ],
     "COIN": [
@@ -2750,6 +2750,13 @@
     ],
     "LLY": [
       {
+        "title": "Lilly to host Innovation Day 2026",
+        "url": "https://finance.yahoo.com/healthcare/articles/lilly-host-innovation-day-2026-150000658.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 10:00 ET",
+        "pub_ts": 1795446000.0
+      },
+      {
         "title": "Eli Lilly (LLY) Acquires Huntington's Disease Drug Developer",
         "url": "https://finance.yahoo.com/healthcare/articles/eli-lilly-lly-acquires-huntingtons-131228184.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2776,13 +2783,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 06:05 ET",
         "pub_ts": 1795431913.0
-      },
-      {
-        "title": "Eli Lilly (LLY) Sees $329.4 Million in Net ETF Selling on Thursday",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/eli-lilly-lly-sees-329-110219754.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 06:02 ET",
-        "pub_ts": 1795431739.0
       }
     ],
     "MRNA": [
@@ -3242,10 +3242,10 @@
   "ticker_news_ts": {
     "KORU": 1795444826.4061859,
     "SOXL": 1795444826.4061859,
-    "SPY": 1795444826.4061859,
+    "SPY": 1795446369.8707495,
     "DIA": 1795444826.4061859,
     "SOXX": 1795444826.4061859,
-    "QQQ": 1795444826.4061859,
+    "QQQ": 1795446369.8707495,
     "SMH": 1795444826.4061859,
     "IWM": 1795444826.4061859,
     "IGV": 1795444826.4061859,
@@ -3275,12 +3275,12 @@
     "BE": 1795445047.8874571,
     "CRDO": 1795445047.8874571,
     "COHR": 1795445558.9467509,
-    "MRVL": 1795444719.9875643,
-    "LITE": 1795444719.9875643,
+    "MRVL": 1795446369.8707495,
+    "LITE": 1795446369.8707495,
     "AAOI": 1795445047.8874571,
     "SPCX": 1795445047.8874571,
     "ASTS": 1795445047.8874571,
-    "AXTI": 1795444719.9875643,
+    "AXTI": 1795446369.8707495,
     "NASA": 1795445047.8874571,
     "LUNR": 1795445047.8874571,
     "TSLA": 1795445402.363778,
@@ -3295,27 +3295,27 @@
     "OKLO": 1795445558.9467509,
     "CEG": 1795445402.363778,
     "FPS": 1795445558.9467509,
-    "MU": 1795444719.9875643,
-    "SKHY": 1795444719.9875643,
-    "WDC": 1795444719.9875643,
+    "MU": 1795446369.8707495,
+    "SKHY": 1795446369.8707495,
+    "WDC": 1795446369.8707495,
     "STX": 1795445558.9467509,
     "MSTR": 1795445558.9467509,
     "SNDK": 1795445558.9467509,
-    "BTC-USD": 1795444719.9875643,
+    "BTC-USD": 1795446369.8707495,
     "CRWD": 1795445558.9467509,
-    "ORCL": 1795444719.9875643,
-    "COIN": 1795444719.9875643,
-    "LLY": 1795444719.9875643,
-    "MRNA": 1795444719.9875643,
-    "NKE": 1795444719.9875643,
-    "MCD": 1795444719.9875643,
+    "ORCL": 1795446369.8707495,
+    "COIN": 1795446369.8707495,
+    "LLY": 1795446369.8707495,
+    "MRNA": 1795446369.8707495,
+    "NKE": 1795446369.8707495,
+    "MCD": 1795446369.8707495,
     "PEP": 1795445047.8874571,
     "XOM": 1795444826.4061859,
     "JPM": 1795444826.4061859,
     "WMT": 1795444936.1275585,
     "V": 1795444826.4061859,
     "CAT": 1795444936.1275585,
-    "FN": 1795444719.9875643,
+    "FN": 1795446369.8707495,
     "GLW": 1795445047.8874571,
     "ANT": 1795445402.363778,
     "XAUUSD": 1795444719.9875643
@@ -3337,7 +3337,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (09:49 ET / 22:49 BJ) [美联储] [英伟达]：经历上周科技股大幅抛售后，黄仁勋复职消息迅速扭转市场情绪。然而，AI投资回报、企业盈利前景和美联储政策仍存在不确定性，英伟达潜在会计问题调查也受到关注。点击查看",
+    "detail": "⚡ 最新核心快讯 (10:05 ET / 23:05 BJ) [纳斯达克]：纳斯达克100指数市值将增加逾2万亿美元，现涨6.7%。",
     "event_name": "",
     "minutes_left": 0,
     "opex_shield": {
