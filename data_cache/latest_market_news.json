@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795475012.588,
-  "updated_at_et": "11-23 18:03 ET",
-  "updated_at_kst": "08:03 KST",
+  "updated_at_ts": 1795475118.118,
+  "updated_at_et": "11-23 18:05 ET",
+  "updated_at_kst": "08:05 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -795,13 +795,6 @@
     ],
     "TSM": [
       {
-        "title": "Jensen Huang back as Nvidia CEO after 12 days: Shares surge 30%",
-        "url": "https://finance.yahoo.com/video/jensen-huang-back-as-nvidia-ceo-after-12-days-shares-surge-30-161302539.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 11:13 ET",
-        "pub_ts": 1795450382.0
-      },
-      {
         "title": "Why TSMC Stock Soared Today",
         "url": "https://www.fool.com/investing/2026/11/23/why-tsmc-stock-soared-today/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -828,6 +821,13 @@
         "source": "Yahoo Finance",
         "time": "11-23 14:37 ET",
         "pub_ts": 1795462630.0
+      },
+      {
+        "title": "Tech stocks surge as Nvidia rally adds $2 trillion to Nasdaq 100",
+        "url": "https://www.proactiveinvestors.com/companies/news/1102286/tech-stocks-surge-as-nvidia-rally-adds-2-trillion-to-nasdaq-100-1102286.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 14:20 ET",
+        "pub_ts": 1795461600.0
       }
     ],
     "VIXY": [
@@ -980,6 +980,13 @@
     ],
     "ASML": [
       {
+        "title": "Why ASML Stock Popped Today",
+        "url": "https://www.fool.com/investing/2026/11/23/why-asml-stock-popped-today/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 17:36 ET",
+        "pub_ts": 1795473384.0
+      },
+      {
         "title": "ASML Stock’s Sell-Off Looks Excessive Against Its Growth Outlook",
         "url": "https://finance.yahoo.com/markets/stocks/articles/asml-stock-sell-off-looks-212500722.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1006,13 +1013,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 07:15 ET",
         "pub_ts": 1795436136.0
-      },
-      {
-        "title": "AI Chips Update - Global Semiconductor ETF Expands International Investment Horizons",
-        "url": "https://finance.yahoo.com/technology/ai/articles/ai-chips-global-semiconductor-etf-113725192.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 06:37 ET",
-        "pub_ts": 1795433845.0
       }
     ],
     "QCOM": [
@@ -1172,6 +1172,13 @@
         "pub_ts": 1795473204.0
       },
       {
+        "title": "Crypto traders saw Anthropic's 34% debut pop coming",
+        "url": "https://www.thestreet.com/crypto/markets/crypto-traders-saw-anthropics-34-debut-pop-coming-?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 17:47 ET",
+        "pub_ts": 1795474035.0
+      },
+      {
         "title": "Steve Eisman Says “Stock Picking Is Back” Now That AI Is “No Longer One Trade”",
         "url": "https://247wallst.com/investing/2026/11/23/steve-eisman-says-stock-picking-is-back-now-that-ai-is-no-longer-one-trade/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1191,13 +1198,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 16:58 ET",
         "pub_ts": 1795471089.0
-      },
-      {
-        "title": "Stock Market Today: Dow, Nasdaq Surge As Jensen Huang Makes This Nvidia Promise; Anthropic Falls (Live Coverage)",
-        "url": "https://finance.yahoo.com/m/8751de70-467e-380a-82cb-f4ee42adc461/stock-market-today%3A-dow%2C.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 16:56 ET",
-        "pub_ts": 1795470982.0
       }
     ],
     "MSFT": [
@@ -1216,6 +1216,13 @@
         "pub_ts": 1795460389.0
       },
       {
+        "title": "Chamath Says Microsoft “Clearly Is Going to Need to Have a Frontier Model.” Nadella Is Betting It Won’t",
+        "url": "https://www.tikr.com/blog/chamath-says-microsoft-clearly-is-going-to-need-to-have-a-frontier-model-nadella-is-betting-it-wont?ref=yahoofinance&tlnk=yf-261123-rjg9hgh9&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 17:50 ET",
+        "pub_ts": 1795474231.0
+      },
+      {
         "title": "China Is “Only 12 Hours” Behind US AI Labs. ByteDance’s Reported Azure Deal Puts Microsoft in the Middle",
         "url": "https://www.tikr.com/blog/china-is-only-12-hours-behind-us-ai-labs-bytedances-reported-azure-deal-puts-microsoft-in-the-middle?ref=yahoofinance&tlnk=yf-261123-434gxg43&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1228,13 +1235,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 16:25 ET",
         "pub_ts": 1795469100.0
-      },
-      {
-        "title": "Billionaire Andreas Halvorsen Exited Microsoft and Made TSMC His Top Holding at $1.8 Billion",
-        "url": "https://247wallst.com/investing/2026/11/23/billionaire-andreas-halvorsen-exited-microsoft-and-made-tsmc-his-top-holding-at-1-8-billion/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 15:57 ET",
-        "pub_ts": 1795467446.0
       }
     ],
     "AAPL": [
@@ -3258,26 +3258,26 @@
     "TLT": 1795475012.5879312,
     "GLD": 1795475012.5879312,
     "SQQQ": 1795475012.5879312,
-    "TSM": 1795473536.227199,
+    "TSM": 1795475118.1178637,
     "VIXY": 1795475012.5879312,
     "SOXS": 1795475012.5879312,
     "NVDA": 1795475012.5879312,
-    "AMD": 1795473536.227199,
-    "ASML": 1795473536.227199,
-    "QCOM": 1795473536.227199,
-    "AVGO": 1795473536.227199,
-    "AMAT": 1795473536.227199,
-    "META": 1795473536.227199,
-    "GOOGL": 1795473536.227199,
-    "MSFT": 1795473536.227199,
-    "AAPL": 1795473536.227199,
-    "PLTR": 1795473536.227199,
-    "NOW": 1795473536.227199,
-    "AMZN": 1795473536.227199,
-    "CRWV": 1795473536.227199,
-    "NBIS": 1795473536.227199,
-    "APLD": 1795473536.227199,
-    "VST": 1795473536.227199,
+    "AMD": 1795475118.1178637,
+    "ASML": 1795475118.1178637,
+    "QCOM": 1795475118.1178637,
+    "AVGO": 1795475118.1178637,
+    "AMAT": 1795475118.1178637,
+    "META": 1795475118.1178637,
+    "GOOGL": 1795475118.1178637,
+    "MSFT": 1795475118.1178637,
+    "AAPL": 1795475118.1178637,
+    "PLTR": 1795475118.1178637,
+    "NOW": 1795475118.1178637,
+    "AMZN": 1795475118.1178637,
+    "CRWV": 1795475118.1178637,
+    "NBIS": 1795475118.1178637,
+    "APLD": 1795475118.1178637,
+    "VST": 1795475118.1178637,
     "BE": 1795473648.90606,
     "CRDO": 1795473648.90606,
     "COHR": 1795473648.90606,
