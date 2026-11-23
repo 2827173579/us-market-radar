@@ -7,7 +7,7 @@
     },
     "NBIS": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1795467651.0500002
+      "last_notified_at": 1795474912.5330784
     },
     "NVDA": {
       "state": "STOP_LOSS",
@@ -78,16 +78,16 @@
       "last_notified_at": 1795472073.5049465
     },
     "SPY": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1795474912.5330784
     },
     "DIA": {
       "state": "WATCHLIST_ENTRY_READY",
       "last_notified_at": 1795474805.3755643
     },
     "IWM": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1795474912.5330784
     },
     "IGV": {
       "state": "NORMAL",

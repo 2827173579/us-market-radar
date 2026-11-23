@@ -5147,9 +5147,13 @@
     "2026-11-23:DIA/APLD:5M_ENTRY+STOP_LOSS": {
       "device": "PC",
       "ts": 1795474809.1053302
+    },
+    "2026-11-23:SPY/IWM/NBIS:5M_ENTRY+STOP_LOSS": {
+      "device": "PC",
+      "ts": 1795474913.2395873
     }
   },
   "device": "PC",
-  "last_heartbeat_ts": 1795474724.0109339,
-  "updated_at": "2026-11-23T23:00:09.105811+00:00"
+  "last_heartbeat_ts": 1795474830.3398144,
+  "updated_at": "2026-11-23T23:01:53.240326+00:00"
 }
