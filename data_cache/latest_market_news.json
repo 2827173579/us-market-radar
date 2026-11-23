@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795421831.296,
-  "updated_at_et": "11-23 03:17 ET",
-  "updated_at_kst": "17:17 KST",
+  "updated_at_ts": 1795421936.457,
+  "updated_at_et": "11-23 03:18 ET",
+  "updated_at_kst": "17:18 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1235,6 +1235,13 @@
     ],
     "AAPL": [
       {
+        "title": "Michael Burry Names Apple, Costco And Walmart Early Crash Havens — The ‘Generals’ Fell Months After 2000 And 2007 Peaks",
+        "url": "https://stocktwits.com/news-articles/markets/equity/michael-burry-apple-costco-walmart-havens-generals-2000-2007-peaks/cNbYM9pR9Sk?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 02:48 ET",
+        "pub_ts": 1795420138.0
+      },
+      {
         "title": "BTIG's Krinsky Says S&P 500 Bottom Unlikely While Apple Holds Near Highs",
         "url": "https://beincrypto.com/sp-500-bottom-unlikely-apple-krinsky/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1261,13 +1268,6 @@
         "source": "Yahoo Finance",
         "time": "11-22 09:44 ET",
         "pub_ts": 1795358642.0
-      },
-      {
-        "title": "The App Paradigm Will “Slowly, if Not Quickly, Dissipate,” Says Mark Gurman. That’s a Problem for Apple",
-        "url": "https://www.tikr.com/blog/the-app-paradigm-will-slowly-if-not-quickly-dissipate-says-mark-gurman-thats-a-problem-for-apple?ref=yahoofinance&tlnk=yf-261122-whh6mr3f&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-22 07:35 ET",
-        "pub_ts": 1795350921.0
       }
     ],
     "PLTR": [
@@ -2012,6 +2012,13 @@
     ],
     "RKLB": [
       {
+        "title": "RKLB Stock Has Its Worst Week Ever — But CFO Sees ‘Very Strong Uplift’ In Electron Prices As SpaceX Rideshare Slots Tighten",
+        "url": "https://stocktwits.com/news-articles/markets/equity/rklb-stock-cfo-uplift-electron-prices-spacex-rideshare-slots-tighten/cNbYMSlR9SZ?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 02:57 ET",
+        "pub_ts": 1795420636.0
+      },
+      {
         "title": "If You’d Invested $10,000 in Rocket Lab 5 Years Ago, Here’s How Much You’d Have Today -- Even After a 60% Crash",
         "url": "https://www.fool.com/investing/2026/11/21/if-you-d-invested-usd10-000-in-rocket-lab-5-years-ago-here-s-how-much-you-d-have-today-even-after-a-60-crash/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2038,13 +2045,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 14:46 ET",
         "pub_ts": 1795204013.0
-      },
-      {
-        "title": "Jim Cramer now sees a buying opportunity in beaten-down space stock",
-        "url": "https://www.thestreet.com/investing/stocks/rocket-lab-jim-cramer-says-rklb-has-gotten-too-cheap-after-electrons-100th-launch-sees-buying-opportunity?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 13:47 ET",
-        "pub_ts": 1795200420.0
       }
     ],
     "KO": [
@@ -3254,23 +3254,23 @@
     "TLT": 1795421831.2962646,
     "GLD": 1795421831.2962646,
     "SQQQ": 1795421831.2962646,
-    "TSM": 1795420260.6746352,
+    "TSM": 1795421936.45709,
     "VIXY": 1795421831.2962646,
     "SOXS": 1795421831.2962646,
     "NVDA": 1795421831.2962646,
-    "AMD": 1795420260.6746352,
-    "ASML": 1795420260.6746352,
-    "QCOM": 1795420260.6746352,
-    "AVGO": 1795420260.6746352,
-    "AMAT": 1795420370.461473,
-    "META": 1795420370.461473,
-    "GOOGL": 1795420260.6746352,
-    "MSFT": 1795420260.6746352,
-    "AAPL": 1795420370.461473,
+    "AMD": 1795421936.45709,
+    "ASML": 1795421936.45709,
+    "QCOM": 1795421936.45709,
+    "AVGO": 1795421936.45709,
+    "AMAT": 1795421936.45709,
+    "META": 1795421936.45709,
+    "GOOGL": 1795421936.45709,
+    "MSFT": 1795421936.45709,
+    "AAPL": 1795421936.45709,
     "PLTR": 1795420478.936162,
-    "NOW": 1795420370.461473,
-    "AMZN": 1795420370.461473,
-    "CRWV": 1795420370.461473,
+    "NOW": 1795421936.45709,
+    "AMZN": 1795421936.45709,
+    "CRWV": 1795421936.45709,
     "NBIS": 1795420478.936162,
     "APLD": 1795420478.936162,
     "VST": 1795420478.936162,
@@ -3279,18 +3279,18 @@
     "COHR": 1795421688.6230876,
     "MRVL": 1795421688.6230876,
     "LITE": 1795421688.6230876,
-    "AAOI": 1795420370.461473,
-    "SPCX": 1795420370.461473,
-    "ASTS": 1795420370.461473,
+    "AAOI": 1795421936.45709,
+    "SPCX": 1795421936.45709,
+    "ASTS": 1795421936.45709,
     "AXTI": 1795421688.6230876,
-    "NASA": 1795420370.461473,
-    "LUNR": 1795420370.461473,
+    "NASA": 1795421936.45709,
+    "LUNR": 1795421936.45709,
     "TSLA": 1795420478.936162,
-    "AXP": 1795420370.461473,
-    "RKLB": 1795420370.461473,
-    "KO": 1795420370.461473,
-    "FLY": 1795420370.461473,
-    "INTC": 1795420370.461473,
+    "AXP": 1795421936.45709,
+    "RKLB": 1795421936.45709,
+    "KO": 1795421936.45709,
+    "FLY": 1795421936.45709,
+    "INTC": 1795421936.45709,
     "VRT": 1795420478.936162,
     "HPE": 1795420478.936162,
     "DELL": 1795420478.936162,
@@ -3318,7 +3318,7 @@
     "V": 1795421688.6230876,
     "CAT": 1795421688.6230876,
     "FN": 1795421688.6230876,
-    "GLW": 1795420370.461473,
+    "GLW": 1795421936.45709,
     "ANT": 1795421688.6230876,
     "XAUUSD": 1795421831.2962646
   },
