@@ -1,9 +1,22 @@
 {
-  "updated_at_ts": 1795429258.866,
-  "updated_at_et": "11-23 05:20 ET",
-  "updated_at_kst": "19:20 KST",
+  "updated_at_ts": 1795429366.991,
+  "updated_at_et": "11-23 05:22 ET",
+  "updated_at_kst": "19:22 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261123182106763800",
+      "title": "利比亚国家石油公司董事长：利比亚沙拉拉输油管道已重新开放，原油恢复输送。",
+      "summary": "利比亚国家石油公司董事长：利比亚沙拉拉输油管道已重新开放，原油恢复输送。",
+      "keywords": [
+        "原油"
+      ],
+      "pub_ts": 1795429266.0,
+      "time_et": "11-23 05:21 ET",
+      "time_bj": "18:21 BJ",
+      "time_kst": "19:21 KST",
+      "time_display": "05:21 ET / 18:21 BJ"
+    },
     {
       "id": "20261123175247292800",
       "title": "1. 很难与舒默合作 ——美国总统特朗普：如果查克·舒默成为参议院多数党领袖，我将很难与…",
@@ -336,19 +349,6 @@
       "time_bj": "12:01 BJ",
       "time_kst": "13:01 KST",
       "time_display": "23:01 ET / 12:01 BJ"
-    },
-    {
-      "id": "20261123113040193800",
-      "title": "早盘收盘，国内期货主力合约跌多涨少，合成橡胶跌近6%，工业硅跌近4%，沪银、液化石油气（…",
-      "summary": "早盘收盘，国内期货主力合约跌多涨少，合成橡胶跌近6%，工业硅跌近4%，沪银、液化石油气（LPG）、20号胶跌超3%，聚丙烯月均、橡胶跌近3%，苯乙烯（EB）跌超2%。涨幅方面，苹果涨超5%，生猪、红枣涨超3%，菜籽涨超2%，集运欧线、沪铝涨超1%，豆粕涨近1%。",
-      "keywords": [
-        "苹果"
-      ],
-      "pub_ts": 1795404640.0,
-      "time_et": "11-22 22:30 ET",
-      "time_bj": "11:30 BJ",
-      "time_kst": "12:30 KST",
-      "time_display": "22:30 ET / 11:30 BJ"
     }
   ],
   "ticker_news": {
@@ -2611,6 +2611,13 @@
     ],
     "BTC-USD": [
       {
+        "title": "Bitcoin rebounds above $61,000 after liquidation-driven selloff",
+        "url": "https://finance.yahoo.com/markets/crypto/articles/bitcoin-rebounds-above-61-000-074318978.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 02:43 ET",
+        "pub_ts": 1795419798.0
+      },
+      {
         "title": "MSTR Stock Jumps In Premarket As Bitcoin Reclaims $61K After Brutal Nasdaq Sell-Off",
         "url": "https://stocktwits.com/news-articles/markets/equity/mstr-stock-jumps-in-premarket-as-bitcoin-reclaims-61-k-after-brutal-nasdaq-sell-off/cNbYDgjR9SY?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2637,13 +2644,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 03:49 ET",
         "pub_ts": 1795423776.0
-      },
-      {
-        "title": "62% of Bitcoin Payments Are Made for Coffee, Jack Dorsey’s Block Data Reveals",
-        "url": "https://coingape.com/block-of-fame/pulse/62-of-bitcoin-payments-are-made-for-coffee-jack-dorseys-block-data-reveals/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 03:33 ET",
-        "pub_ts": 1795422819.0
       }
     ],
     "CRWD": [
@@ -3283,13 +3283,13 @@
     "VST": 1795428172.725004,
     "BE": 1795428172.725004,
     "CRDO": 1795428172.725004,
-    "COHR": 1795427834.8188198,
-    "MRVL": 1795427834.8188198,
-    "LITE": 1795427834.8188198,
+    "COHR": 1795429366.9913664,
+    "MRVL": 1795429366.9913664,
+    "LITE": 1795429366.9913664,
     "AAOI": 1795428061.006662,
     "SPCX": 1795428172.725004,
     "ASTS": 1795428172.725004,
-    "AXTI": 1795427834.8188198,
+    "AXTI": 1795429366.9913664,
     "NASA": 1795428172.725004,
     "LUNR": 1795428172.725004,
     "TSLA": 1795428284.9641528,
@@ -3304,27 +3304,27 @@
     "OKLO": 1795428284.9641528,
     "CEG": 1795428284.9641528,
     "FPS": 1795428284.9641528,
-    "MU": 1795427834.8188198,
-    "SKHY": 1795427834.8188198,
-    "WDC": 1795427834.8188198,
+    "MU": 1795429366.9913664,
+    "SKHY": 1795429366.9913664,
+    "WDC": 1795429366.9913664,
     "STX": 1795428284.9641528,
     "MSTR": 1795428284.9641528,
     "SNDK": 1795428284.9641528,
-    "BTC-USD": 1795427834.8188198,
+    "BTC-USD": 1795429366.9913664,
     "CRWD": 1795428284.9641528,
-    "ORCL": 1795427834.8188198,
-    "COIN": 1795427834.8188198,
-    "LLY": 1795427834.8188198,
-    "MRNA": 1795427834.8188198,
-    "NKE": 1795427834.8188198,
-    "MCD": 1795427834.8188198,
+    "ORCL": 1795429366.9913664,
+    "COIN": 1795429366.9913664,
+    "LLY": 1795429366.9913664,
+    "MRNA": 1795429366.9913664,
+    "NKE": 1795429366.9913664,
+    "MCD": 1795429366.9913664,
     "PEP": 1795427950.2176483,
-    "XOM": 1795427834.8188198,
-    "JPM": 1795427834.8188198,
-    "WMT": 1795427834.8188198,
-    "V": 1795427834.8188198,
-    "CAT": 1795427834.8188198,
-    "FN": 1795427834.8188198,
+    "XOM": 1795429366.9913664,
+    "JPM": 1795429366.9913664,
+    "WMT": 1795429366.9913664,
+    "V": 1795429366.9913664,
+    "CAT": 1795429366.9913664,
+    "FN": 1795429366.9913664,
     "GLW": 1795428172.725004,
     "ANT": 1795427950.2176483,
     "XAUUSD": 1795428172.725004
@@ -3346,7 +3346,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (04:52 ET / 17:52 BJ) [关税] [英伟达] [特朗普]：1. 很难与舒默合作 ——美国总统特朗普：如果查克·舒默成为参议院多数党领袖，我将很难与他合作。 2. 如果无法达成协议，倾向于新年后打击伊朗 ——据福克斯新闻，美国总统特朗普称，如果无法达",
+    "detail": "⚡ 最新核心快讯 (05:21 ET / 18:21 BJ) [原油]：利比亚国家石油公司董事长：利比亚沙拉拉输油管道已重新开放，原油恢复输送。",
     "event_name": "",
     "minutes_left": 0,
     "opex_shield": {
