@@ -5091,9 +5091,13 @@
     "2026-11-23:PLTR/SPY:5M_ENTRY": {
       "device": "PC",
       "ts": 1795470069.175812
+    },
+    "2026-11-23:NKE/CRWD:5M_ENTRY+STOP_LOSS": {
+      "device": "PC",
+      "ts": 1795470604.3503082
     }
   },
   "device": "PC",
-  "last_heartbeat_ts": 1795470408.0132205,
-  "updated_at": "2026-11-23T21:46:48.013703+00:00"
+  "last_heartbeat_ts": 1795470515.7659721,
+  "updated_at": "2026-11-23T21:50:04.350777+00:00"
 }
