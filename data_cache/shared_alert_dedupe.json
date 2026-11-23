@@ -4443,9 +4443,13 @@
     "2026-11-23:NBIS/CRDO/APLD/MSTR/BE/COIN/DELL/MU/NVDA/SKHY/AMAT/TSM/AMD/ASML:STOP_LOSS": {
       "device": "PC",
       "ts": 1795439185.9328144
+    },
+    "2026-11-23:DEFENSIVE_FLIGHT:-8.9": {
+      "device": "PC",
+      "ts": 1795439612.2514634
     }
   },
   "device": "PC",
-  "last_heartbeat_ts": 1795439420.8413577,
-  "updated_at": "2026-11-23T13:10:20.841877+00:00"
+  "last_heartbeat_ts": 1795439525.823071,
+  "updated_at": "2026-11-23T13:13:32.251940+00:00"
 }
