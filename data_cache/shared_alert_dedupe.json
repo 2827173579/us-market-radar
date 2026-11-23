@@ -4159,9 +4159,21 @@
     "JIN10_FLASH:20261123120105832800": {
       "device": "PC",
       "ts": 1795406529.2920434
+    },
+    "JIN10_FLASH:20261123125746212800": {
+      "device": "PC",
+      "ts": 1795409998.6144962
+    },
+    "2026-11-23:VIX_REGIME:BACKWARDATION_BRAKE": {
+      "device": "PC",
+      "ts": 1795410097.4822128
+    },
+    "2026-11-23:VXN_TECH_DELEVERAGING": {
+      "device": "PC",
+      "ts": 1795410099.4798286
     }
   },
   "device": "PC",
-  "last_heartbeat_ts": 1795409912.390461,
-  "updated_at": "2026-11-23T04:58:32.390944+00:00"
+  "last_heartbeat_ts": 1795410015.432403,
+  "updated_at": "2026-11-23T05:01:39.480261+00:00"
 }

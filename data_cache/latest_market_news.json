@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795409989.163,
-  "updated_at_et": "11-22 23:59 ET",
-  "updated_at_kst": "13:59 KST",
+  "updated_at_ts": 1795410091.723,
+  "updated_at_et": "11-23 00:01 ET",
+  "updated_at_kst": "14:01 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -3325,7 +3325,7 @@
     "XAUUSD": 1795409577.5177686
   },
   "opex_shield": {
-    "date": "2026-11-22",
+    "date": "2026-11-23",
     "active": false,
     "timing": "NONE",
     "kind": "NONE",
@@ -3333,7 +3333,7 @@
     "opex_date": "2026-11-20",
     "next_opex_date": "2026-12-18",
     "next_is_quad_witching": true,
-    "days_to_opex": 26,
+    "days_to_opex": 25,
     "badge": "",
     "headline": "",
     "detail": ""
@@ -3345,7 +3345,7 @@
     "event_name": "",
     "minutes_left": 0,
     "opex_shield": {
-      "date": "2026-11-22",
+      "date": "2026-11-23",
       "active": false,
       "timing": "NONE",
       "kind": "NONE",
@@ -3353,7 +3353,7 @@
       "opex_date": "2026-11-20",
       "next_opex_date": "2026-12-18",
       "next_is_quad_witching": true,
-      "days_to_opex": 26,
+      "days_to_opex": 25,
       "badge": "",
       "headline": "",
       "detail": ""
