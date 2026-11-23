@@ -79,7 +79,7 @@ class TestV51AiCommentaryEngine(unittest.TestCase):
         self.assertEqual(res["status"], "OK")
         self.assertTrue(res["fallback_used"])
         self.assertIn("DeepSeek V4.1 Flash (兜底)", res["provider_used"])
-        self.assertEqual(len(calls), 2)
+        self.assertGreaterEqual(len(calls), 2)
 
         # 超时同样切换 DeepSeek
         def fake_post_timeout(url, headers, payload, timeout):
@@ -313,6 +313,52 @@ class TestV51AiCommentaryEngine(unittest.TestCase):
             )
             self.assertTrue(res3.get("from_cache"))
             self.assertEqual(calls["n"], 1)
+
+    def test_06_extended_price_forwarding_session_rules_and_gemini_chain(self):
+        """验证盘前/盘后扩展价透传、盘前与夜盘系统提示词防误判铁律，以及 Gemini 503 候选链自动切 gemini-3.5-flash。"""
+        # 1) 盘前扩展价透传与提示词校验
+        snap_pre = _sample_snapshot(vix_ratio=0.92, knife_locked=False, bear_inertia=False)
+        snap_pre["session_code"] = "PRE_MARKET"
+        snap_pre["session_name"] = "盘前交易"
+        snap_pre["tickers"]["SOXX"].update({"ext_price": 128.8, "ext_pct": 4.38, "session_tag": "盘前实时"})
+        ctx_pre = ace.extract_hard_context(snap_pre, target="SOXX")
+        self.assertEqual(ctx_pre["session_code"], "PRE_MARKET")
+        self.assertEqual(ctx_pre["session_label"], "盘前交易")
+        self.assertEqual(ctx_pre["target_etf"]["ext_price"], 128.8)
+        self.assertEqual(ctx_pre["target_etf"]["extended_price"], 128.8)
+        self.assertEqual(ctx_pre["target_etf"]["ext_change_pct"], 4.38)
+        self.assertEqual(ctx_pre["target_etf"]["ext_label"], "盘前实时")
+
+        sys_pre = ace.build_system_prompt(risk_lock_active=False, batch_mode=False, session_code="PRE_MARKET")
+        self.assertIn("优先以盘前/盘后实时价作为最新价", sys_pre)
+        self.assertIn("严禁拿昨日收盘价冒充当前最新价", sys_pre)
+
+        # 2) 夜盘防误判提示词校验
+        sys_ov = ace.build_system_prompt(risk_lock_active=True, batch_mode=False, session_code="OVERNIGHT")
+        self.assertIn("免费接口无个股/ETF 夜盘实时成交价", sys_ov)
+        self.assertIn("严禁当成此刻盘中正在下跌", sys_ov)
+        self.assertIn("NQ=F / ES=F", sys_ov)
+
+        # 3) Gemini 3.8 报 503 -> 候选链自动切 gemini-3.5-flash 成功
+        tried_urls = []
+
+        def fake_gem_503_then_35_ok(url, headers, payload, timeout):
+            tried_urls.append(url)
+            if "gemini-3.8-flash" in url:
+                return 503, '{"error": {"message": "high demand"}}'
+            return 200, json.dumps({"candidates": [{"content": {"parts": [{"text": "【一句话定性】Gemini 3.5 候选链成功。"}]}}]})
+
+        res_chain = ace.call_llm_text(
+            "sys",
+            "usr",
+            provider="gemini",
+            env_override={"GEMINI_API_KEY": "MOCK_KEY", "GEMINI_MODEL": "gemini-3.8-flash"},
+            http_post_fn=fake_gem_503_then_35_ok,
+        )
+        self.assertEqual(res_chain["status"], "OK")
+        self.assertEqual(res_chain["model_id"], "gemini-3.5-flash")
+        self.assertIn("Gemini 3.5 Flash", res_chain["provider_used"])
+        self.assertEqual(len(tried_urls), 2)
 
 
 if __name__ == "__main__":

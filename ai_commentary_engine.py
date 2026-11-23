@@ -39,9 +39,15 @@ DEFAULT_SNAPSHOT_PATH = os.path.join(SCRATCH_DIR, "data_cache", "latest_radar_sn
 DEFAULT_NEWS_PATH = os.path.join(SCRATCH_DIR, "data_cache", "latest_market_news.json")
 
 DEFAULT_GEMINI_MODEL = "gemini-3.8-flash"
+GEMINI_FALLBACK_MODELS: Tuple[str, ...] = (
+    "gemini-3.8-flash",
+    "gemini-3.5-flash",
+    "gemini-2.5-flash",
+    "gemini-flash-latest",
+)
 DEFAULT_DEEPSEEK_MODEL = "deepseek-flash"
 DEFAULT_WEB_REFRESH_MINUTES = 25
-DEFAULT_HTTP_TIMEOUT = 20
+DEFAULT_HTTP_TIMEOUT = 30
 
 VALID_TARGETS: Tuple[str, ...] = ("OVERVIEW", "QQQ", "SPY", "SOXX")
 TARGET_META: Dict[str, Dict[str, str]] = {
@@ -254,12 +260,21 @@ def extract_hard_context(
 
     def _pick_ticker(tk: str) -> Dict[str, Any]:
         t = tickers.get(tk) if isinstance(tickers.get(tk), dict) else {}
+        ext_px = t.get("ext_price") if t.get("ext_price") is not None else t.get("extended_price")
+        ext_chg = t.get("ext_change_pct") if t.get("ext_change_pct") is not None else t.get("ext_pct")
+        ext_lbl = t.get("ext_label") or t.get("session_tag") or ""
+        rth_pct = t.get("pct_chg") if t.get("pct_chg") is not None else t.get("pct_change")
         return {
             "symbol": tk,
             "display_name": TARGET_META.get(tk, {}).get("title", tk),
-            "last": t.get("last"),
-            "pct_chg": t.get("pct_chg"),
-            "vwap": t.get("vwap"),
+            "last": t.get("last") if t.get("last") is not None else t.get("price"),
+            "pct_chg": rth_pct,
+            "ext_price": ext_px,
+            "extended_price": ext_px,
+            "ext_change_pct": ext_chg,
+            "ext_label": ext_lbl,
+            "vwap": t.get("vwap") if t.get("vwap") is not None else t.get("vwap_rth"),
+            "vwap_label": t.get("vwap_label") or "",
             "vwap_diff_pct": t.get("vwap_diff_pct"),
             "rsi_5m": t.get("rsi_5m"),
             "s1": t.get("anchor_s1") if t.get("anchor_s1") is not None else t.get("s1"),
@@ -271,16 +286,19 @@ def extract_hard_context(
             "v46_regime_mode": t.get("v46_regime_mode"),
             "bear_inertia_active": bool(t.get("bear_inertia_active", False)),
             "p15_t5_pct": t.get("p15_t5_pct"),
-            "ai_long_wr": t.get("ai_long_wr"),
-            "ai_short_wr": t.get("ai_short_wr"),
+            "ai_long_wr": t.get("ai_long_wr") if t.get("ai_long_wr") is not None else t.get("ai_long_win_rate_pct"),
+            "ai_short_wr": t.get("ai_short_wr") if t.get("ai_short_wr") is not None else t.get("ai_short_win_rate_pct"),
             "decision_title": t.get("decision_title") or t.get("stance_title"),
         }
 
     locked, reasons = evaluate_risk_lock(snap, target=target)
+    sess_code = str(snap.get("session_code") or "").strip().upper()
+    sess_label = str(snap.get("session_name") or snap.get("session_label") or sess_code)
     ctx: Dict[str, Any] = {
         "updated_at_et": snap.get("updated_at_et"),
-        "session_code": snap.get("session_code"),
-        "session_name": snap.get("session_name"),
+        "session_code": sess_code,
+        "session_label": sess_label,
+        "session_name": sess_label,
         "weather": snap.get("weather"),
         "market_regime": snap.get("market_regime"),
         "risk_lock_active": locked,
@@ -333,14 +351,36 @@ def extract_hard_context(
     return ctx
 
 
-def build_system_prompt(risk_lock_active: bool, batch_mode: bool = False) -> str:
-    """构建带三条铁律的系统提示词。"""
+def build_system_prompt(
+    risk_lock_active: bool,
+    batch_mode: bool = False,
+    session_code: str = "",
+) -> str:
+    """构建带四条铁律（含盘前/盘后实时价与夜盘防误判铁律）的系统提示词。"""
     lock_clause = (
         "当前 risk_lock_active=True（硬风控锁已生效）：严禁给出任何“抄底/逢低买入/左侧做多/加仓博反弹”建议！"
         "你只能用大白话讲清当前为什么危险，并明确指出必须至少收回输入 JSON 中的哪一条关键点位（如 VWAP 或 R1）才算解除警报。"
         if risk_lock_active
         else "当前 risk_lock_active=False：按客观强弱与关键点位给出克制、不盲目追高的交易剧本。"
     )
+    sess = str(session_code or "").strip().upper()
+    if sess in ("OVERNIGHT", "WEEKEND"):
+        session_clause = (
+            "当前为美股夜盘（20:00~04:00 ET）或周末休市：免费接口无个股/ETF 夜盘实时成交价，"
+            "输入 JSON 中 ETF 的 last 仅为上日收盘价、ext_price 仅为盘后定格价，严禁当成此刻盘中正在下跌或正在交易！"
+            "夜盘/休市解盘必须以实时 NQ=F / ES=F 期货走势结合上日现货结构位（VWAP / S1 / R1）推导下一交易日开盘剧本。"
+        )
+    elif sess in ("PRE_MARKET", "POST_MARKET"):
+        session_clause = (
+            "当前为美股盘前（04:00~09:30 ET）或盘后（16:00~20:00 ET）：若输入 JSON 存在有效 ext_price / extended_price，"
+            "必须优先以盘前/盘后实时价作为最新价对照 VWAP / S1 / R1 分析，并明确标注“盘前价 $X（较昨收 +Y%）”或“盘后价 $X（较收盘 +Y%）”，"
+            "严禁拿昨日收盘价冒充当前最新价！"
+        )
+    else:
+        session_clause = (
+            "若处于美股盘前/盘后且存在有效 ext_price，须优先使用盘前/盘后价并明确标注；"
+            "若处于美股夜盘/休市，须注明当前 ETF 价为上日收盘价/盘后定格价，以实时 NQ=F / ES=F 期货结合上日结构位推导开盘剧本。"
+        )
     fmt_clause = (
         "请严格返回一个合法 JSON 对象，键名必须且仅包含 \"OVERVIEW\"、\"QQQ\"、\"SPY\"、\"SOXX\" 四个字符串字段；"
         "不要输出任何 Markdown 代码块以外的多余前后缀。其中 SPY 的文案开头或正文需自然提及“SPY / VOO（走势100%同步）”。"
@@ -349,10 +389,11 @@ def build_system_prompt(risk_lock_active: bool, batch_mode: bool = False) -> str
     )
     return (
         "你是美股量化雷达的「AI 首席策略师」，只对资深个人交易者用大白话讲透盘面。\n"
-        "必须严格遵守以下三条铁律：\n"
+        "必须严格遵守以下四条铁律：\n"
         "1. 【零编造】所有价格、点位、百分比与指标数值必须 100% 源自输入 JSON，严禁自行编造任何点位或数据。\n"
         f"2. 【风控铁笼】{lock_clause}\n"
-        "3. 【大白话三段式】每份解盘严格控制在 200~320 字，禁止研报套话，必须包含以下三段：\n"
+        f"3. 【时段与盘前/盘后口径】{session_clause}\n"
+        "4. 【大白话三段式】每份解盘严格控制在 200~320 字，禁止研报套话，必须包含以下三段：\n"
         "【一句话定性】...\n"
         "【关键多空分水岭】...\n"
         "【开盘/盘中条件剧本】如果……就……；否则……（强制使用双边条件句）\n"
@@ -501,10 +542,47 @@ def _call_deepseek_once(
 
 def _format_provider_label(engine: str, model: str, is_fallback: bool = False) -> str:
     if engine == "gemini":
-        base = "Gemini 3.8 Flash" if model == "gemini-3.8-flash" else f"Gemini ({model})"
+        known_gem = {
+            "gemini-3.8-flash": "Gemini 3.8 Flash",
+            "gemini-3.5-flash": "Gemini 3.5 Flash",
+            "gemini-2.5-flash": "Gemini 2.5 Flash",
+            "gemini-flash-latest": "Gemini Flash Latest",
+        }
+        base = known_gem.get(model, f"Gemini ({model})")
     else:
         base = "DeepSeek V4.1 Flash" if model == "deepseek-flash" else f"DeepSeek ({model})"
     return f"{base} (兜底)" if is_fallback else base
+
+
+def _format_short_error_code(err_code: str) -> str:
+    """将内部错误码转换为脱敏简短展示文案（严禁包含任何密钥或 URL）。"""
+    e = str(err_code or "").lower()
+    if "http_503" in e:
+        return "HTTP 503 高峰繁忙"
+    if "http_429" in e:
+        return "HTTP 429 限流"
+    if "http_404" in e:
+        return "HTTP 404 模型不可用"
+    if "http_403" in e or "http_401" in e:
+        return "HTTP 403 权限/地区限制"
+    if "http_400" in e:
+        return "HTTP 400 参数错误"
+    if "http_5" in e:
+        return "HTTP 5xx 服务端异常"
+    if "timeout" in e:
+        return "请求超时"
+    if "net" in e:
+        return "网络异常"
+    return "接口异常"
+
+
+def _build_gemini_candidate_chain(primary_model: str) -> List[str]:
+    chain: List[str] = []
+    for m in (primary_model, *GEMINI_FALLBACK_MODELS):
+        ms = str(m or "").strip()
+        if ms and ms not in chain:
+            chain.append(ms)
+    return chain
 
 
 def call_llm_text(
@@ -516,7 +594,7 @@ def call_llm_text(
     timeout: int = DEFAULT_HTTP_TIMEOUT,
     http_post_fn: Optional[Callable[..., Tuple[int, str]]] = None,
 ) -> Dict[str, Any]:
-    """双引擎主备调用（Gemini 优先 + DeepSeek 自动兜底），绝不抛未捕获异常，绝不泄露 Key。"""
+    """双引擎主备调用（Gemini 多模型候选链优先 + DeepSeek 自动兜底），绝不抛未捕获异常，绝不泄露 Key。"""
     cfg = load_env_config(env_path=env_path, env_override=env_override)
     gem_key = str(cfg.get("GEMINI_API_KEY") or "").strip()
     ds_key = str(cfg.get("DEEPSEEK_API_KEY") or "").strip()
@@ -530,35 +608,50 @@ def call_llm_text(
         mode = "auto"
 
     if mode == "auto" and not gem_key and not ds_key:
-        return {"status": "UNCONFIGURED", "text": "", "provider_used": "未配置", "error": "no_api_key"}
+        return {"status": "UNCONFIGURED", "text": "", "provider_used": "未配置", "error": "no_api_key", "error_short": "未配置 Key"}
     if mode == "gemini" and not gem_key:
-        return {"status": "UNCONFIGURED", "text": "", "provider_used": "Gemini 未配置", "error": "no_gemini_key"}
+        return {"status": "UNCONFIGURED", "text": "", "provider_used": "Gemini 未配置", "error": "no_gemini_key", "error_short": "未配置 Key"}
     if mode == "deepseek" and not ds_key:
-        return {"status": "UNCONFIGURED", "text": "", "provider_used": "DeepSeek 未配置", "error": "no_deepseek_key"}
+        return {"status": "UNCONFIGURED", "text": "", "provider_used": "DeepSeek 未配置", "error": "no_deepseek_key", "error_short": "未配置 Key"}
 
     errors: List[str] = []
     if mode in ("auto", "gemini") and gem_key:
-        ok, txt, err = _call_gemini_once(
-            api_key=gem_key,
-            model=gem_model,
-            system_prompt=system_prompt,
-            user_prompt=user_prompt,
-            timeout=timeout,
-            http_post_fn=http_post_fn,
-        )
-        if ok:
-            return {
-                "status": "OK",
-                "text": txt,
-                "provider_used": _format_provider_label("gemini", gem_model, is_fallback=False),
-                "engine_code": "gemini",
-                "model_id": gem_model,
-                "fallback_used": False,
-                "error": "",
-            }
-        errors.append(f"gemini:{err}")
+        gem_chain = _build_gemini_candidate_chain(gem_model)
+        last_gem_err = ""
+        for idx, cand_model in enumerate(gem_chain):
+            ok, txt, err = _call_gemini_once(
+                api_key=gem_key,
+                model=cand_model,
+                system_prompt=system_prompt,
+                user_prompt=user_prompt,
+                timeout=timeout,
+                http_post_fn=http_post_fn,
+            )
+            if ok:
+                return {
+                    "status": "OK",
+                    "text": txt,
+                    "provider_used": _format_provider_label("gemini", cand_model, is_fallback=(idx > 0)),
+                    "engine_code": "gemini",
+                    "model_id": cand_model,
+                    "fallback_used": idx > 0,
+                    "error": "",
+                    "error_short": "",
+                }
+            last_gem_err = err
+            errors.append(f"gemini({cand_model}):{err}")
+            # 仅在 503/429/404/5xx/超时 等可回退错误时尝试下一个 Gemini 候选模型；401/403 鉴权或地区受限则立即退出循环
+            if err in ("http_401", "http_403"):
+                break
         if mode == "gemini":
-            return {"status": "ERROR", "text": "", "provider_used": "Gemini 调用失败", "error": ";".join(errors)}
+            short_e = _format_short_error_code(last_gem_err)
+            return {
+                "status": "ERROR",
+                "text": "",
+                "provider_used": f"Gemini 调用失败 ({short_e})",
+                "error": ";".join(errors),
+                "error_short": short_e,
+            }
 
     if mode in ("auto", "deepseek") and ds_key:
         is_fb = (mode == "auto")
@@ -579,10 +672,18 @@ def call_llm_text(
                 "model_id": ds_model,
                 "fallback_used": is_fb,
                 "error": ";".join(errors),
+                "error_short": "",
             }
         errors.append(f"deepseek:{err}")
 
-    return {"status": "ERROR", "text": "", "provider_used": "双引擎降级", "error": ";".join(errors)}
+    short_final = _format_short_error_code(errors[-1] if errors else "")
+    return {
+        "status": "ERROR",
+        "text": "",
+        "provider_used": f"双引擎降级 ({short_final})",
+        "error": ";".join(errors),
+        "error_short": short_final,
+    }
 
 
 def _parse_batch_json_response(raw_text: str) -> Optional[Dict[str, str]]:
@@ -627,7 +728,7 @@ def generate_single_brief(
         tk = "OVERVIEW"
     ctx = extract_hard_context(snapshot, news_flashes=news_flashes, target=tk)
     risk_locked = bool(ctx.get("risk_lock_active", False))
-    sys_p = build_system_prompt(risk_lock_active=risk_locked, batch_mode=False)
+    sys_p = build_system_prompt(risk_lock_active=risk_locked, batch_mode=False, session_code=str(ctx.get("session_code") or ""))
     extra_note = "（注意：请明确写出 SPY / VOO 走势 100% 同步）" if tk == "SPY" else ""
     user_p = (
         f"请基于以下实盘量化硬数据，为【{TARGET_META[tk]['title']}】{extra_note}输出三段式大白话解盘：\n"
@@ -654,6 +755,7 @@ def generate_single_brief(
             "updated_at_et": now_et.strftime("%Y-%m-%d %H:%M ET"),
             "updated_at_kst": now_kst.strftime("%Y-%m-%d %H:%M KST"),
             "error": res.get("error", ""),
+            "error_short": res.get("error_short", ""),
         }
 
     safe_text = apply_post_risk_safety_net(res.get("text", ""), risk_lock_active=risk_locked)
@@ -708,7 +810,7 @@ def generate_all_four_briefs(
     ctx = extract_hard_context(snapshot, news_flashes=news_flashes, target="OVERVIEW")
     # 若任一核心 ETF 处于熊市惯性，也纳入对应标的的独立风险锁
     macro_locked = bool(ctx.get("risk_lock_active", False))
-    sys_p = build_system_prompt(risk_lock_active=macro_locked, batch_mode=True)
+    sys_p = build_system_prompt(risk_lock_active=macro_locked, batch_mode=True, session_code=str(ctx.get("session_code") or ""))
     user_p = (
         "请基于以下实盘量化硬数据，一次性以 JSON 对象输出 4 个键（OVERVIEW、QQQ、SPY、SOXX）的三段式大白话解盘：\n"
         f"{json.dumps(ctx, ensure_ascii=False)}"

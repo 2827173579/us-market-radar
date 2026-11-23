@@ -1073,10 +1073,12 @@ def build_ai_embed_dict(
     body_txt = str(res.get("text") or "").strip()
 
     if status != "OK" or not body_txt:
+        err_short = str(res.get("error_short") or "").strip()
+        err_suffix = f"（原因：{err_short}）" if err_short else ""
         err_hint = (
             "尚未配置 GEMINI_API_KEY 或 DEEPSEEK_API_KEY，请在服务端 .env 配置后重试。"
             if status == "UNCONFIGURED"
-            else "当前大模型接口临时繁忙或暂无缓存，请稍后重试（或切换另一引擎）。"
+            else f"当前大模型接口临时繁忙或暂无缓存{err_suffix}，请稍后重试（或切换另一引擎）。"
         )
         return {
             "title": f"🧠 AI 首席策略师 · {title_lbl}",
