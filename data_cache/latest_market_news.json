@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795440595.269,
-  "updated_at_et": "11-23 08:29 ET",
-  "updated_at_kst": "22:29 KST",
+  "updated_at_ts": 1795440698.571,
+  "updated_at_et": "11-23 08:31 ET",
+  "updated_at_kst": "22:31 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2239,6 +2239,13 @@
     ],
     "DELL": [
       {
+        "title": "Hammerspace Establishes New World Performance Record, Topping Results from All Leading Commercial Parallel File Systems",
+        "url": "https://finance.yahoo.com/technology/ai/articles/hammerspace-establishes-world-performance-record-130000316.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 08:00 ET",
+        "pub_ts": 1795438800.0
+      },
+      {
         "title": "Dell and Super Micro Want Up to 45% More for AI Servers Already Under Contract. Dell Reports Tuesday",
         "url": "https://www.tikr.com/blog/dell-and-super-micro-want-up-to-45-more-for-ai-servers-already-under-contract-dell-reports-tuesday?ref=yahoofinance&tlnk=yf-261123-2hwh29jj&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2265,13 +2272,6 @@
         "source": "Yahoo Finance",
         "time": "11-22 14:00 ET",
         "pub_ts": 1795374000.0
-      },
-      {
-        "title": "Dell Technologies (DELL) Has 83.7% Upside Potential After a 37% Selloff",
-        "url": "https://finance.yahoo.com/technology/ai/articles/dell-technologies-dell-83-7-165308041.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-22 11:53 ET",
-        "pub_ts": 1795366388.0
       }
     ],
     "OKLO": [
@@ -3201,6 +3201,20 @@
     ],
     "ANT": [
       {
+        "title": "GraniteShares launches AIL and ANS, putting both sides of Anthropic on one exchange.",
+        "url": "https://finance.yahoo.com/markets/options/articles/graniteshares-launches-ail-ans-putting-131500180.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 08:15 ET",
+        "pub_ts": 1795439700.0
+      },
+      {
+        "title": "GraniteShares Commits $50.25 Million in Seed Capital to AIL and ANS, 2x Long and Short Anthropic ETFs",
+        "url": "https://finance.yahoo.com/markets/options/articles/graniteshares-commits-50-25-million-130000033.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 08:00 ET",
+        "pub_ts": 1795438800.0
+      },
+      {
         "title": "Anthropic Just Rewrote Wall Street's IPO Record Books. Here's Where History Says Its Shares Will Head Next.",
         "url": "https://www.fool.com/investing/2026/11/23/anthropic-just-rewrote-wall-street-ipo-record-books-where-history-says-shares-head-next/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3215,25 +3229,11 @@
         "pub_ts": 1795436425.0
       },
       {
-        "title": "Anthropic shares rise premarket after Friday selloff nearly erased IPO gains",
-        "url": "https://finance.yahoo.com/technology/ai/articles/anthropic-shares-rise-premarket-friday-120415190.html?.tsrc=rss",
+        "title": "Zacks Investment Ideas feature highlights: Anthropic, SpaceX and Meta Platforms",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/zacks-investment-ideas-feature-highlights-121100413.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 07:04 ET",
-        "pub_ts": 1795435455.0
-      },
-      {
-        "title": "Defiance Launches ANTC and ANTQ: 2X Long and 2X Short Daily ETFs for Anthropic",
-        "url": "https://finance.yahoo.com/markets/options/articles/defiance-launches-antc-antq-2x-120000555.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 07:00 ET",
-        "pub_ts": 1795435200.0
-      },
-      {
-        "title": "ProShares Launches ANTU and ANTY ETFs Targeting 2x and -2x Daily Returns of Anthropic Following Its Historic IPO",
-        "url": "https://finance.yahoo.com/markets/options/articles/proshares-launches-antu-anty-etfs-120000783.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 07:00 ET",
-        "pub_ts": 1795435200.0
+        "time": "11-23 07:11 ET",
+        "pub_ts": 1795435860.0
       }
     ],
     "XAUUSD": [
@@ -3290,17 +3290,17 @@
     "AXTI": 1795440027.3147466,
     "NASA": 1795440378.2629635,
     "LUNR": 1795440378.2629635,
-    "TSLA": 1795439173.4457605,
-    "AXP": 1795439173.4457605,
+    "TSLA": 1795440698.5710723,
+    "AXP": 1795440698.5710723,
     "RKLB": 1795440378.2629635,
     "KO": 1795440378.2629635,
     "FLY": 1795440378.2629635,
-    "INTC": 1795439173.4457605,
-    "VRT": 1795439173.4457605,
-    "HPE": 1795439173.4457605,
-    "DELL": 1795439173.4457605,
+    "INTC": 1795440698.5710723,
+    "VRT": 1795440698.5710723,
+    "HPE": 1795440698.5710723,
+    "DELL": 1795440698.5710723,
     "OKLO": 1795439284.177807,
-    "CEG": 1795439173.4457605,
+    "CEG": 1795440698.5710723,
     "FPS": 1795439284.177807,
     "MU": 1795440027.3147466,
     "SKHY": 1795440027.3147466,
@@ -3324,7 +3324,7 @@
     "CAT": 1795440255.7075698,
     "FN": 1795440027.3147466,
     "GLW": 1795440378.2629635,
-    "ANT": 1795439173.4457605,
+    "ANT": 1795440698.5710723,
     "XAUUSD": 1795440027.3147466
   },
   "opex_shield": {
