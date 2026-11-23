@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795462051.681,
-  "updated_at_et": "11-23 14:27 ET",
-  "updated_at_kst": "04:27 KST",
+  "updated_at_ts": 1795462155.291,
+  "updated_at_et": "11-23 14:29 ET",
+  "updated_at_kst": "04:29 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1639,6 +1639,13 @@
     ],
     "MRVL": [
       {
+        "title": "Tech stocks surge as Nvidia rally adds $2 trillion to Nasdaq 100",
+        "url": "https://www.proactiveinvestors.com/companies/news/1102286/tech-stocks-surge-as-nvidia-rally-adds-2-trillion-to-nasdaq-100-1102286.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 14:20 ET",
+        "pub_ts": 1795461600.0
+      },
+      {
         "title": "Marvell Stocks Jump 15.43% as AI Chip Rebound Sets Up December 1 Report",
         "url": "https://finance.yahoo.com/markets/stocks/articles/marvell-stocks-jump-15-43-175525167.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1665,13 +1672,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 10:52 ET",
         "pub_ts": 1795449140.0
-      },
-      {
-        "title": "What Is Marvell Technology (MRVL) Building In AI Memory Infrastructure?",
-        "url": "https://finance.yahoo.com/technology/ai/articles/marvell-technology-mrvl-building-ai-140857801.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 09:08 ET",
-        "pub_ts": 1795442937.0
       }
     ],
     "LITE": [
@@ -2379,11 +2379,18 @@
     ],
     "MU": [
       {
-        "title": "Jensen Huang back at Nvidia, stock soars; Anthropic slides",
-        "url": "https://finance.yahoo.com/video/jensen-huang-back-at-nvidia-stock-soars-anthropic-slides-161339662.html?.tsrc=rss",
+        "title": "Is Micron Technology Stock a Buy at $700?",
+        "url": "https://www.fool.com/investing/2026/11/23/is-micron-technology-stock-a-buy-at-700/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 11:13 ET",
-        "pub_ts": 1795450419.0
+        "time": "11-23 14:12 ET",
+        "pub_ts": 1795461121.0
+      },
+      {
+        "title": "Micron Stock Jumps 18%. Why the Rally Has Legs.",
+        "url": "https://finance.yahoo.com/m/3f1f89c7-5433-3bc0-990f-eab9250e8983/micron-stock-jumps-18%25.-why.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 13:52 ET",
+        "pub_ts": 1795459920.0
       },
       {
         "title": "Why Is Micron (MU) Stock Soaring Today? Nvidia's CEO Return Lifts Chip Stocks",
@@ -2405,13 +2412,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 11:57 ET",
         "pub_ts": 1795453058.0
-      },
-      {
-        "title": "Why Is GlobalFoundries (GFS) Stock Up Today? Chip Rally on Nvidia CEO Return",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/why-globalfoundries-gfs-stock-today-183102007.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 13:31 ET",
-        "pub_ts": 1795458662.0
       }
     ],
     "SKHY": [
@@ -2601,6 +2601,20 @@
     ],
     "BTC-USD": [
       {
+        "title": "Sector Update: Financial Stocks Higher Monday Afternoon",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/sector-financial-stocks-higher-monday-185322235.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 13:53 ET",
+        "pub_ts": 1795460002.0
+      },
+      {
+        "title": "Tom Lee Says XRP’s Supply Grows 5.4% a Year: Could It Cap XRP’s Price by 2028?",
+        "url": "https://247wallst.com/investing/cryptocurrency/2026/11/23/tom-lee-says-xrps-supply-grows-5-4-a-year-could-it-cap-xrps-price-by-2028/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 13:46 ET",
+        "pub_ts": 1795459611.0
+      },
+      {
         "title": "Jensen Huang Is Back at Nvidia: Could Bitcoin Regain What It Lost Without Him?",
         "url": "https://247wallst.com/investing/cryptocurrency/2026/11/23/jensen-huang-is-back-at-nvidia-could-bitcoin-regain-what-it-lost-without-him/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2620,20 +2634,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 13:11 ET",
         "pub_ts": 1795457473.0
-      },
-      {
-        "title": "IREN (IREN) Stock Is Soaring 27.9% Today: Nvidia CEO News Lifts AI Stocks",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/iren-iren-stock-soaring-27-173045028.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 12:30 ET",
-        "pub_ts": 1795455045.0
-      },
-      {
-        "title": "Crypto premarket wrap: What investors need to know before the bell",
-        "url": "https://www.thestreet.com/crypto/markets/crypto-premarket-wrap-what-investors-need-to-know-before-the-bell?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 12:05 ET",
-        "pub_ts": 1795453524.0
       }
     ],
     "CRWD": [
@@ -2675,6 +2675,13 @@
     ],
     "ORCL": [
       {
+        "title": "Oracle Stock Snaps Losing Streak. Funding for Data-Center Buildout Is in Place.",
+        "url": "https://finance.yahoo.com/m/d46a5f32-5904-33a1-9f1a-dcb0884aab9e/oracle-stock-snaps-losing.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 13:52 ET",
+        "pub_ts": 1795459920.0
+      },
+      {
         "title": "Why Oracle Stock Is Rising Today",
         "url": "https://www.fool.com/investing/2026/11/23/why-oracle-stock-is-rising/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2701,13 +2708,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 10:36 ET",
         "pub_ts": 1795448213.0
-      },
-      {
-        "title": "Digital Logistics - Global Strategic Business Report 2026: Capitalize on 21.2% CAGR and a US$179.4B Market as IBM, Oracle, SAP, Siemens, and Tech Mahindra Disrupt Supply Chains",
-        "url": "https://finance.yahoo.com/technology/articles/digital-logistics-global-strategic-business-153400223.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 10:34 ET",
-        "pub_ts": 1795448040.0
       }
     ],
     "COIN": [
@@ -2823,6 +2823,13 @@
     ],
     "NKE": [
       {
+        "title": "Why Nike and American Eagle Can Hold Up Better as Holiday Shoppers Avoid Clothing Aisles",
+        "url": "https://finance.yahoo.com/m/124188ed-2e75-3447-b48b-3a1176084010/why-nike-and-american-eagle.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 13:19 ET",
+        "pub_ts": 1795457940.0
+      },
+      {
         "title": "Did Topsports International's 62% Drop Catch You Out? What Bears Saw",
         "url": "https://finance.yahoo.com/markets/stocks/articles/did-topsports-internationals-62-drop-150820527.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2849,13 +2856,6 @@
         "source": "Yahoo Finance",
         "time": "11-22 15:11 ET",
         "pub_ts": 1795378285.0
-      },
-      {
-        "title": "Nike Is Down 79% From Its Peak. Here's How Much $10,000 Invested Pays in Dividends Now.",
-        "url": "https://www.fool.com/investing/2026/11/22/nike-is-down-79-from-its-peak-here-s-how-much-usd10-000-invested-pays-in-dividends-now/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-22 06:00 ET",
-        "pub_ts": 1795345202.0
       }
     ],
     "MCD": [
@@ -3241,10 +3241,10 @@
   "ticker_news_ts": {
     "KORU": 1795460705.4742262,
     "SOXL": 1795460705.4742262,
-    "SPY": 1795460569.1597998,
+    "SPY": 1795462155.2907438,
     "DIA": 1795460705.4742262,
     "SOXX": 1795460705.4742262,
-    "QQQ": 1795460569.1597998,
+    "QQQ": 1795462155.2907438,
     "SMH": 1795460705.4742262,
     "IWM": 1795460705.4742262,
     "IGV": 1795460705.4742262,
@@ -3274,12 +3274,12 @@
     "BE": 1795460920.3342052,
     "CRDO": 1795460920.3342052,
     "COHR": 1795460920.3342052,
-    "MRVL": 1795460569.1597998,
-    "LITE": 1795460569.1597998,
+    "MRVL": 1795462155.2907438,
+    "LITE": 1795462155.2907438,
     "AAOI": 1795460920.3342052,
     "SPCX": 1795460920.3342052,
     "ASTS": 1795460920.3342052,
-    "AXTI": 1795460569.1597998,
+    "AXTI": 1795462155.2907438,
     "NASA": 1795460920.3342052,
     "LUNR": 1795460920.3342052,
     "TSLA": 1795460920.3342052,
@@ -3294,27 +3294,27 @@
     "OKLO": 1795460920.3342052,
     "CEG": 1795460920.3342052,
     "FPS": 1795460920.3342052,
-    "MU": 1795460569.1597998,
-    "SKHY": 1795460569.1597998,
-    "WDC": 1795460569.1597998,
+    "MU": 1795462155.2907438,
+    "SKHY": 1795462155.2907438,
+    "WDC": 1795462155.2907438,
     "STX": 1795461025.816452,
     "MSTR": 1795461025.816452,
     "SNDK": 1795461025.816452,
-    "BTC-USD": 1795460569.1597998,
+    "BTC-USD": 1795462155.2907438,
     "CRWD": 1795461025.816452,
-    "ORCL": 1795460569.1597998,
-    "COIN": 1795460569.1597998,
-    "LLY": 1795460569.1597998,
-    "MRNA": 1795460569.1597998,
-    "NKE": 1795460569.1597998,
-    "MCD": 1795460569.1597998,
+    "ORCL": 1795462155.2907438,
+    "COIN": 1795462155.2907438,
+    "LLY": 1795462155.2907438,
+    "MRNA": 1795462155.2907438,
+    "NKE": 1795462155.2907438,
+    "MCD": 1795462155.2907438,
     "PEP": 1795460920.3342052,
     "XOM": 1795460705.4742262,
     "JPM": 1795460705.4742262,
     "WMT": 1795460920.3342052,
     "V": 1795460705.4742262,
     "CAT": 1795461025.816452,
-    "FN": 1795460569.1597998,
+    "FN": 1795462155.2907438,
     "GLW": 1795460812.0329792,
     "ANT": 1795461025.816452,
     "XAUUSD": 1795460920.3342052
