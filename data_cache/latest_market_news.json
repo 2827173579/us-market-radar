@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795469742.607,
-  "updated_at_et": "11-23 16:35 ET",
-  "updated_at_kst": "06:35 KST",
+  "updated_at_ts": 1795469850.796,
+  "updated_at_et": "11-23 16:37 ET",
+  "updated_at_kst": "06:37 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -423,7 +423,7 @@
     ],
     "SPY": [
       {
-        "title": "Why stocks are having their wildest Monday since 2008",
+        "title": "Why stocks had their best Monday since 2020",
         "url": "https://finance.yahoo.com/markets/article/why-stocks-are-having-their-wildest-morning-since-2008-184837610.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-23 10:31 ET",
@@ -548,7 +548,7 @@
         "pub_ts": 1795431845.0
       },
       {
-        "title": "Why stocks are having their wildest Monday since 2008",
+        "title": "Why stocks had their best Monday since 2020",
         "url": "https://finance.yahoo.com/markets/article/why-stocks-are-having-their-wildest-morning-since-2008-184837610.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-23 10:31 ET",
@@ -2606,6 +2606,13 @@
     ],
     "BTC-USD": [
       {
+        "title": "Should You Buy Cipher Digital Stock Now Or Wait For February?",
+        "url": "https://www.trefis.com/stock/cifr/articles/627678/should-you-buy-cipher-digital-stock-now-or-wait-for-february/2026-11-23?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 16:02 ET",
+        "pub_ts": 1795467746.0
+      },
+      {
         "title": "Sector Update: Financial Stocks Higher Late Afternoon",
         "url": "https://finance.yahoo.com/markets/stocks/articles/sector-financial-stocks-higher-afternoon-205942322.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2632,13 +2639,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 14:57 ET",
         "pub_ts": 1795463820.0
-      },
-      {
-        "title": "Strategy Is Still Down 45% in a Month: Can MSTR Stock Revisit $150 as Bitcoin Holds $60,000?",
-        "url": "https://247wallst.com/investing/2026/11/23/strategy-is-still-down-45-in-a-month-can-mstr-stock-revisit-150-as-bitcoin-holds-60000/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 14:54 ET",
-        "pub_ts": 1795463644.0
       }
     ],
     "CRWD": [
@@ -2754,6 +2754,13 @@
     ],
     "LLY": [
       {
+        "title": "Lilly highlights strength of breast cancer portfolio with new data across validated drivers of hormone receptor-positive disease at the 2026 San Antonio Breast Cancer Symposium",
+        "url": "https://finance.yahoo.com/healthcare/articles/lilly-highlights-strength-breast-cancer-213000694.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 16:30 ET",
+        "pub_ts": 1795469400.0
+      },
+      {
         "title": "Lilly executive calls oncology the key growth area after obesity",
         "url": "https://finance.yahoo.com/healthcare/articles/lilly-executive-calls-oncology-key-203928531.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2780,13 +2787,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 11:01 ET",
         "pub_ts": 1795449662.0
-      },
-      {
-        "title": "Eli Lilly Makes $725 Million Huntington's Disease Bet as Drug Pipeline Expands",
-        "url": "https://finance.yahoo.com/healthcare/articles/eli-lilly-makes-725-million-151535787.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 10:15 ET",
-        "pub_ts": 1795446935.0
       }
     ],
     "MRNA": [
@@ -3246,10 +3246,10 @@
   "ticker_news_ts": {
     "KORU": 1795468681.8688717,
     "SOXL": 1795468681.8688717,
-    "SPY": 1795468350.6635463,
+    "SPY": 1795469850.796352,
     "DIA": 1795468681.8688717,
     "SOXX": 1795468681.8688717,
-    "QQQ": 1795468350.6635463,
+    "QQQ": 1795469850.796352,
     "SMH": 1795468681.8688717,
     "IWM": 1795468681.8688717,
     "IGV": 1795468681.8688717,
@@ -3279,12 +3279,12 @@
     "BE": 1795468899.2888107,
     "CRDO": 1795468899.2888107,
     "COHR": 1795468899.2888107,
-    "MRVL": 1795468350.6635463,
-    "LITE": 1795468350.6635463,
+    "MRVL": 1795469850.796352,
+    "LITE": 1795469850.796352,
     "AAOI": 1795468899.2888107,
     "SPCX": 1795468899.2888107,
     "ASTS": 1795468899.2888107,
-    "AXTI": 1795468350.6635463,
+    "AXTI": 1795469850.796352,
     "NASA": 1795468899.2888107,
     "LUNR": 1795468899.2888107,
     "TSLA": 1795468899.2888107,
@@ -3299,27 +3299,27 @@
     "OKLO": 1795468899.2888107,
     "CEG": 1795468899.2888107,
     "FPS": 1795469016.8145602,
-    "MU": 1795468350.6635463,
-    "SKHY": 1795468350.6635463,
-    "WDC": 1795468350.6635463,
+    "MU": 1795469850.796352,
+    "SKHY": 1795469850.796352,
+    "WDC": 1795469850.796352,
     "STX": 1795469016.8145602,
     "MSTR": 1795469016.8145602,
     "SNDK": 1795469016.8145602,
-    "BTC-USD": 1795468350.6635463,
+    "BTC-USD": 1795469850.796352,
     "CRWD": 1795469016.8145602,
-    "ORCL": 1795468350.6635463,
-    "COIN": 1795468350.6635463,
-    "LLY": 1795468350.6635463,
-    "MRNA": 1795468350.6635463,
-    "NKE": 1795468350.6635463,
-    "MCD": 1795468350.6635463,
+    "ORCL": 1795469850.796352,
+    "COIN": 1795469850.796352,
+    "LLY": 1795469850.796352,
+    "MRNA": 1795469850.796352,
+    "NKE": 1795469850.796352,
+    "MCD": 1795469850.796352,
     "PEP": 1795469016.8145602,
     "XOM": 1795468681.8688717,
     "JPM": 1795468681.8688717,
     "WMT": 1795469016.8145602,
     "V": 1795468681.8688717,
     "CAT": 1795469016.8145602,
-    "FN": 1795468350.6635463,
+    "FN": 1795469850.796352,
     "GLW": 1795468899.2888107,
     "ANT": 1795469016.8145602,
     "XAUUSD": 1795469016.8145602
