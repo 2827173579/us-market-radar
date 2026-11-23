@@ -1,9 +1,22 @@
 {
-  "updated_at_ts": 1795436037.552,
-  "updated_at_et": "11-23 07:13 ET",
-  "updated_at_kst": "21:13 KST",
+  "updated_at_ts": 1795436142.887,
+  "updated_at_et": "11-23 07:15 ET",
+  "updated_at_kst": "21:15 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261123201417869800",
+      "title": "摩根大通：持续的供应过剩意味着，布伦特原油价格在2027年上半年可能处于70美元高位区间…",
+      "summary": "摩根大通：持续的供应过剩意味着，布伦特原油价格在2027年上半年可能处于70美元高位区间，下半年降至60美元高位区间，并在2028年回落至60美元中段。",
+      "keywords": [
+        "原油"
+      ],
+      "pub_ts": 1795436057.0,
+      "time_et": "11-23 07:14 ET",
+      "time_bj": "20:14 BJ",
+      "time_kst": "21:14 KST",
+      "time_display": "07:14 ET / 20:14 BJ"
+    },
     {
       "id": "20261123195913304800",
       "title": "DeepTalk：华尔街老将在暴跌中疯狂扫货！美联储正亲手制造流动性危机？",
@@ -330,20 +343,6 @@
       "time_bj": "14:41 BJ",
       "time_kst": "15:41 KST",
       "time_display": "01:41 ET / 14:41 BJ"
-    },
-    {
-      "id": "20261123142452854800",
-      "title": "AI泡沫破了吗？美股重演互联网泡沫崩盘剧本，存储芯片和数据中心股率先暴跌",
-      "summary": "AI股近期遭猛烈抛售，美光、英伟达等科技公司的跌幅已接近互联网泡沫破裂时期。目前破裂的主要还是数据中心及其供应商领域的局部泡沫，真正风险在于......点击查看",
-      "keywords": [
-        "芯片",
-        "英伟达"
-      ],
-      "pub_ts": 1795415092.0,
-      "time_et": "11-23 01:24 ET",
-      "time_bj": "14:24 BJ",
-      "time_kst": "15:24 KST",
-      "time_display": "01:24 ET / 14:24 BJ"
     }
   ],
   "ticker_news": {
@@ -1947,6 +1946,13 @@
         "pub_ts": 1795433202.0
       },
       {
+        "title": "Musk Admits Robot Demos Fail if You “Move the Table.” Tesla’s Optimus Bet Rides on Fixing That",
+        "url": "https://www.tikr.com/blog/musk-admits-robot-demos-fail-if-you-move-the-table-teslas-optimus-bet-rides-on-fixing-that?ref=yahoofinance&tlnk=yf-261123-wg2hxfh2&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 06:20 ET",
+        "pub_ts": 1795432822.0
+      },
+      {
         "title": "What ARK Autonomous Technology & Robotics ETF (ARKQ) Bought: Tesla Leads on Thursday",
         "url": "https://finance.yahoo.com/markets/stocks/articles/ark-autonomous-technology-robotics-etf-110438349.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1966,13 +1972,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 05:20 ET",
         "pub_ts": 1795429234.0
-      },
-      {
-        "title": "Musk Says Cybercab “Would Win Even at Price Parity.” That’s a Problem for Uber and Lyft",
-        "url": "https://www.tikr.com/blog/musk-says-cybercab-would-win-even-at-price-parity-thats-a-problem-for-uber-and-lyft?ref=yahoofinance&tlnk=yf-261123-hqxfppgq&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 03:35 ET",
-        "pub_ts": 1795422914.0
       }
     ],
     "AXP": [
@@ -2162,6 +2161,13 @@
     ],
     "VRT": [
       {
+        "title": "VRT Shares In Focus As Baird Says ‘Wall Of Worry Is Too High’ Despite Strong Fundamentals — What The Analyst Sees",
+        "url": "https://stocktwits.com/news-articles/markets/equity/vrt-shares-in-focus-as-baird-says-wall-of-worry-is-too-high-despite-strong-fundamentals-what-the-analyst-sees/cNbYCnWR9Sw?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 06:46 ET",
+        "pub_ts": 1795434402.0
+      },
+      {
         "title": "Bloom Energy Sinks 26% in a Week, Vertiv Down 18%, as Nvidia’s Turmoil Hits AI Power Stocks. Time to Buy?",
         "url": "https://www.tikr.com/blog/bloom-energy-sinks-26-in-a-week-vertiv-down-18-as-nvidias-turmoil-hits-ai-power-stocks-time-to-buy?ref=yahoofinance&tlnk=yf-261121-fv95h3w4&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2188,16 +2194,16 @@
         "source": "Yahoo Finance",
         "time": "11-20 08:12 ET",
         "pub_ts": 1795180320.0
-      },
-      {
-        "title": "Evercore’s $325 Target Says Vertiv’s Selloff Went Too Far",
-        "url": "https://www.tikr.com/blog/evercores-325-target-says-vertivs-selloff-went-too-far?ref=yahoofinance&tlnk=yf-261120-8wf76qh6&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 04:36 ET",
-        "pub_ts": 1795167395.0
       }
     ],
     "HPE": [
+      {
+        "title": "A battered stock market looks for the bottom: What to watch this week",
+        "url": "https://finance.yahoo.com/markets/article/a-battered-stock-market-looks-for-the-bottom-what-to-watch-this-week-100000117.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-22 05:00 ET",
+        "pub_ts": 1795341600.0
+      },
       {
         "title": "Why Is HPE Stock Up 6% Overnight?",
         "url": "https://stocktwits.com/news-articles/markets/equity/why-is-hpe-stock-up-6-overnight/cNbYHhnR9SN?.tsrc=rss",
@@ -2211,13 +2217,6 @@
         "source": "Yahoo Finance",
         "time": "11-22 09:30 ET",
         "pub_ts": 1795357803.0
-      },
-      {
-        "title": "A battered stock market looks for the bottom: What to watch this week",
-        "url": "https://finance.yahoo.com/markets/article/a-battered-stock-market-looks-for-the-bottom-what-to-watch-this-week-100000117.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-22 05:00 ET",
-        "pub_ts": 1795341600.0
       },
       {
         "title": "Dell Up 447% In 5 Years, HPE 220%: What Did Michael Dell Do Differently?",
@@ -3198,39 +3197,39 @@
     ],
     "ANT": [
       {
-        "title": "Anthropic Stock Is Off to a Shaky Start. Here's What Could Happen Next.",
-        "url": "https://www.fool.com/investing/2026/11/23/anthropic-stock-off-shaky-start-what-could-happen-next/?.tsrc=rss",
+        "title": "Anthropic shares rise premarket after Friday selloff nearly erased IPO gains",
+        "url": "https://finance.yahoo.com/technology/ai/articles/anthropic-shares-rise-premarket-friday-120415190.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 06:30 ET",
-        "pub_ts": 1795433402.0
+        "time": "11-23 07:04 ET",
+        "pub_ts": 1795435455.0
       },
       {
-        "title": "Claude “May Have Just Proved” the Riemann Hypothesis. Anthropic’s Stock Fell Toward Its IPO Price Anyway",
-        "url": "https://www.tikr.com/blog/claude-may-have-just-proved-the-riemann-hypothesis-anthropics-stock-fell-toward-its-ipo-price-anyway?ref=yahoofinance&tlnk=yf-261123-w3fxccw5&.tsrc=rss",
+        "title": "Defiance Launches ANTC and ANTQ: 2X Long and 2X Short Daily ETFs for Anthropic",
+        "url": "https://finance.yahoo.com/markets/options/articles/defiance-launches-antc-antq-2x-120000555.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 06:05 ET",
-        "pub_ts": 1795431935.0
+        "time": "11-23 07:00 ET",
+        "pub_ts": 1795435200.0
       },
       {
-        "title": "Alphabet Trades at “Just 18 Times Forward Earnings.” Its SpaceX and Anthropic Stakes Top $200 Billion",
-        "url": "https://www.tikr.com/blog/alphabet-trades-at-just-18-times-forward-earnings-its-spacex-and-anthropic-stakes-top-200-billion?ref=yahoofinance&tlnk=yf-261123-pc4vh8rv&.tsrc=rss",
+        "title": "ProShares Launches ANTU and ANTY ETFs Targeting 2x and -2x Daily Returns of Anthropic Following Its Historic IPO",
+        "url": "https://finance.yahoo.com/markets/options/articles/proshares-launches-antu-anty-etfs-120000783.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 06:05 ET",
-        "pub_ts": 1795431921.0
+        "time": "11-23 07:00 ET",
+        "pub_ts": 1795435200.0
       },
       {
-        "title": "What Capital Group Growth ETF (CGGR) Bought: Anthropic Leads on Nov. 19",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/capital-group-growth-etf-cggr-110412881.html?.tsrc=rss",
+        "title": "Tradr Launches 2X Long and Short Leveraged ETFs on Anthropic",
+        "url": "https://finance.yahoo.com/markets/options/articles/tradr-launches-2x-long-short-114600824.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 06:04 ET",
-        "pub_ts": 1795431852.0
+        "time": "11-23 06:46 ET",
+        "pub_ts": 1795434360.0
       },
       {
-        "title": "ETFs Are Buying Anthropic (ANT) on Nov. 19",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-buying-anthropic-ant-nov-110040924.html?.tsrc=rss",
+        "title": "Anthropic Stock Sinks After First-Day Rally",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/anthropic-stock-sinks-first-day-113429375.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 06:00 ET",
-        "pub_ts": 1795431640.0
+        "time": "11-23 06:34 ET",
+        "pub_ts": 1795433669.0
       }
     ],
     "XAUUSD": [
@@ -3287,17 +3286,17 @@
     "AXTI": 1795435365.8498676,
     "NASA": 1795435706.4393792,
     "LUNR": 1795435706.4393792,
-    "TSLA": 1795434563.130073,
-    "AXP": 1795434563.130073,
+    "TSLA": 1795436142.8867898,
+    "AXP": 1795436142.8867898,
     "RKLB": 1795435706.4393792,
     "KO": 1795435706.4393792,
     "FLY": 1795435706.4393792,
-    "INTC": 1795434563.130073,
-    "VRT": 1795434563.130073,
-    "HPE": 1795434563.130073,
-    "DELL": 1795434563.130073,
+    "INTC": 1795436142.8867898,
+    "VRT": 1795436142.8867898,
+    "HPE": 1795436142.8867898,
+    "DELL": 1795436142.8867898,
     "OKLO": 1795434723.253921,
-    "CEG": 1795434563.130073,
+    "CEG": 1795436142.8867898,
     "FPS": 1795434723.253921,
     "MU": 1795435365.8498676,
     "SKHY": 1795435365.8498676,
@@ -3321,7 +3320,7 @@
     "CAT": 1795435593.6957073,
     "FN": 1795435365.8498676,
     "GLW": 1795435706.4393792,
-    "ANT": 1795434563.130073,
+    "ANT": 1795436142.8867898,
     "XAUUSD": 1795435365.8498676
   },
   "opex_shield": {
@@ -3341,7 +3340,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (06:59 ET / 19:59 BJ) [美联储]：黄金暴跌35%，白银腰斩再腰斩，所有人都在割肉跑路，一位深耕贵金属16年的老兵却逆势买入！一月后悔没卖的人有多少，十一月后悔没买的人就会有多少？点击查看…",
+    "detail": "⚡ 最新核心快讯 (07:14 ET / 20:14 BJ) [原油]：摩根大通：持续的供应过剩意味着，布伦特原油价格在2027年上半年可能处于70美元高位区间，下半年降至60美元高位区间，并在2028年回落至60美元中段。",
     "event_name": "",
     "minutes_left": 0,
     "opex_shield": {
