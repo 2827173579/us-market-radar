@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795426359.893,
-  "updated_at_et": "11-23 04:32 ET",
-  "updated_at_kst": "18:32 KST",
+  "updated_at_ts": 1795426469.509,
+  "updated_at_et": "11-23 04:34 ET",
+  "updated_at_kst": "18:34 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1385,6 +1385,13 @@
     ],
     "CRWV": [
       {
+        "title": "CRWV, IREN, NBIS Rally After Sell-Off — New US Curbs Threaten Southeast Asia Neocloud Business",
+        "url": "https://stocktwits.com/news-articles/markets/equity/crwv-iren-nbis-rally-after-sell-off-new-us-curbs-threaten-southeast-asia-neocloud-business/cNbYwjZR9Sn?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 04:11 ET",
+        "pub_ts": 1795425116.0
+      },
+      {
         "title": "CoreWeave (CRWV) Stock Gets An AI Demand Jolt From A Record $81.3 Billion IPO",
         "url": "https://finance.yahoo.com/technology/ai/articles/coreweave-crwv-stock-gets-ai-070621794.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1411,13 +1418,6 @@
         "source": "Yahoo Finance",
         "time": "11-22 09:43 ET",
         "pub_ts": 1795358612.0
-      },
-      {
-        "title": "Debt-heavy CoreWeave just got $350M from Jensen Huang’s charity",
-        "url": "https://www.thestreet.com/investing/debt-heavy-coreweave-350m-jensen-huang-charity?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-21 13:47 ET",
-        "pub_ts": 1795286820.0
       }
     ],
     "NBIS": [
@@ -3256,23 +3256,23 @@
     "TLT": 1795426359.8926487,
     "GLD": 1795426359.8926487,
     "SQQQ": 1795426359.8926487,
-    "TSM": 1795424964.7462595,
+    "TSM": 1795426469.5087414,
     "VIXY": 1795426359.8926487,
     "SOXS": 1795426359.8926487,
     "NVDA": 1795426359.8926487,
-    "AMD": 1795424964.7462595,
-    "ASML": 1795424964.7462595,
-    "QCOM": 1795424964.7462595,
-    "AVGO": 1795424964.7462595,
-    "AMAT": 1795424964.7462595,
-    "META": 1795424964.7462595,
-    "GOOGL": 1795424964.7462595,
-    "MSFT": 1795424964.7462595,
-    "AAPL": 1795424964.7462595,
+    "AMD": 1795426469.5087414,
+    "ASML": 1795426469.5087414,
+    "QCOM": 1795426469.5087414,
+    "AVGO": 1795426469.5087414,
+    "AMAT": 1795426469.5087414,
+    "META": 1795426469.5087414,
+    "GOOGL": 1795426469.5087414,
+    "MSFT": 1795426469.5087414,
+    "AAPL": 1795426469.5087414,
     "PLTR": 1795425075.148337,
-    "NOW": 1795424964.7462595,
-    "AMZN": 1795424964.7462595,
-    "CRWV": 1795424964.7462595,
+    "NOW": 1795426469.5087414,
+    "AMZN": 1795426469.5087414,
+    "CRWV": 1795426469.5087414,
     "NBIS": 1795425075.148337,
     "APLD": 1795425075.148337,
     "VST": 1795425075.148337,
@@ -3281,7 +3281,7 @@
     "COHR": 1795426248.9373715,
     "MRVL": 1795426248.9373715,
     "LITE": 1795426248.9373715,
-    "AAOI": 1795424964.7462595,
+    "AAOI": 1795426469.5087414,
     "SPCX": 1795425075.148337,
     "ASTS": 1795425075.148337,
     "AXTI": 1795426248.9373715,
@@ -3322,7 +3322,7 @@
     "FN": 1795426248.9373715,
     "GLW": 1795425075.148337,
     "ANT": 1795426359.8926487,
-    "XAUUSD": 1795424964.7462595
+    "XAUUSD": 1795426469.5087414
   },
   "opex_shield": {
     "date": "2026-11-23",
