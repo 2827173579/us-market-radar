@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795460569.16,
-  "updated_at_et": "11-23 14:02 ET",
-  "updated_at_kst": "04:02 KST",
+  "updated_at_ts": 1795460705.474,
+  "updated_at_et": "11-23 14:05 ET",
+  "updated_at_kst": "04:05 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -492,6 +492,13 @@
     ],
     "SOXX": [
       {
+        "title": "Why iShares Semiconductor ETF (SOXX) Is Up Today",
+        "url": "https://www.fool.com/investing/2026/11/23/why-ishares-semiconductor-etf-soxx-is-up-today/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 13:35 ET",
+        "pub_ts": 1795458902.0
+      },
+      {
         "title": "SOXX Heads For Biggest Single-Day Gain in Over 18 Months As Semiconductor, AI Stocks Rebound Sharply",
         "url": "https://stocktwits.com/news-articles/markets/equity/soxx-heads-for-biggest-single-day-gain-in-over-18-months-as-semiconductor-ai-stocks-rebound-sharply/cNbp45sR9jg?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -518,13 +525,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 11:25 ET",
         "pub_ts": 1795451106.0
-      },
-      {
-        "title": "Jensen’s Return Doesn’t Answer the Big AI Questions",
-        "url": "https://finance.yahoo.com/m/fa613151-fd96-37e1-ab3a-6a39b7def7d7/jensen%E2%80%99s-return-doesn%E2%80%99t.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 11:06 ET",
-        "pub_ts": 1795449966.0
       }
     ],
     "QQQ": [
@@ -899,39 +899,39 @@
     ],
     "NVDA": [
       {
-        "title": "Why Trump thinks Jensen Huang leading Nvidia is worth the risk",
-        "url": "https://finance.yahoo.com/video/why-trump-thinks-jensen-huang-leading-nvidia-is-worth-the-risk-183034810.html?.tsrc=rss",
+        "title": "Belden (BDC) Stock Is Up 9.4% Today: Nvidia Rally Lifts AI Hardware Stocks",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/belden-bdc-stock-9-4-190030678.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 13:30 ET",
-        "pub_ts": 1795458634.0
+        "time": "11-23 14:00 ET",
+        "pub_ts": 1795460430.0
       },
       {
-        "title": "Nvidia Just Jumped More Than 30%. A 66-Year-Old Who Moved $500,000 Out of VOO on Friday Missed a Five-Figure Day",
-        "url": "https://247wallst.com/investing/etf/2026/11/23/nvidia-just-jumped-more-than-30-a-66-year-old-who-moved-500000-out-of-voo-on-friday-missed-a-five-figure-day/?.tsrc=rss",
+        "title": "Nvidia shares soar after Jensen Huang returns as CEO",
+        "url": "https://www.euronews.com/2026/11/23/nvidia-reinstates-jensen-huang-as-ceo-11-days-after-he-resigned?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 13:31 ET",
-        "pub_ts": 1795458691.0
+        "time": "11-23 13:58 ET",
+        "pub_ts": 1795460317.0
       },
       {
-        "title": "Update: US Equity Indexes Surge as Nvidia's Move to Reinstate Jensen Huang as CEO Fires Up AI Trade",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/us-equity-indexes-surge-nvidia-182720949.html?.tsrc=rss",
+        "title": "Republican dissent after Trump says he ‘convinced’ Nvidia to reinstate Jensen Huang",
+        "url": "https://finance.yahoo.com/technology/articles/trump-says-convinced-nvidia-board-161922078.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 13:27 ET",
-        "pub_ts": 1795458440.0
+        "time": "11-23 13:58 ET",
+        "pub_ts": 1795460282.0
       },
       {
-        "title": "Nvidia’s Huang to testify before U.S. Senate on Dec. 3",
-        "url": "https://finance.yahoo.com/technology/articles/nvidia-huang-testify-u-senate-182632538.html?.tsrc=rss",
+        "title": "Nvidia rally puts spotlight on Huang's influence and corporate governance",
+        "url": "https://www.proactiveinvestors.com/companies/news/1102284/nvidia-rally-puts-spotlight-on-huang-s-influence-and-corporate-governance-1102284.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 13:26 ET",
-        "pub_ts": 1795458392.0
+        "time": "11-23 13:58 ET",
+        "pub_ts": 1795460280.0
       },
       {
-        "title": "Jensen Huang Is Back at Nvidia: Could Bitcoin Regain What It Lost Without Him?",
-        "url": "https://247wallst.com/investing/cryptocurrency/2026/11/23/jensen-huang-is-back-at-nvidia-could-bitcoin-regain-what-it-lost-without-him/?.tsrc=rss",
+        "title": "Stock Market Today: Nasdaq, Dow Leap On Huang-Driven Nvidia Rally; Gold Plays Pop (Live Coverage)",
+        "url": "https://finance.yahoo.com/m/8751de70-467e-380a-82cb-f4ee42adc461/stock-market-today%3A-nasdaq%2C.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 13:16 ET",
-        "pub_ts": 1795457810.0
+        "time": "11-23 13:53 ET",
+        "pub_ts": 1795460035.0
       }
     ],
     "AMD": [
@@ -3239,22 +3239,22 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795459081.868405,
-    "SOXL": 1795459081.868405,
+    "KORU": 1795460705.4742262,
+    "SOXL": 1795460705.4742262,
     "SPY": 1795460569.1597998,
-    "DIA": 1795459081.868405,
-    "SOXX": 1795459081.868405,
+    "DIA": 1795460705.4742262,
+    "SOXX": 1795460705.4742262,
     "QQQ": 1795460569.1597998,
-    "SMH": 1795459081.868405,
-    "IWM": 1795459081.868405,
-    "IGV": 1795459081.868405,
-    "TLT": 1795459081.868405,
-    "GLD": 1795459081.868405,
-    "SQQQ": 1795459081.868405,
+    "SMH": 1795460705.4742262,
+    "IWM": 1795460705.4742262,
+    "IGV": 1795460705.4742262,
+    "TLT": 1795460705.4742262,
+    "GLD": 1795460705.4742262,
+    "SQQQ": 1795460705.4742262,
     "TSM": 1795459188.4834867,
-    "VIXY": 1795459081.868405,
-    "SOXS": 1795459081.868405,
-    "NVDA": 1795459081.868405,
+    "VIXY": 1795460705.4742262,
+    "SOXS": 1795460705.4742262,
+    "NVDA": 1795460705.4742262,
     "AMD": 1795459188.4834867,
     "ASML": 1795459188.4834867,
     "QCOM": 1795459188.4834867,
@@ -3309,10 +3309,10 @@
     "NKE": 1795460569.1597998,
     "MCD": 1795460569.1597998,
     "PEP": 1795459301.2986777,
-    "XOM": 1795459081.868405,
-    "JPM": 1795459081.868405,
+    "XOM": 1795460705.4742262,
+    "JPM": 1795460705.4742262,
     "WMT": 1795459301.2986777,
-    "V": 1795459081.868405,
+    "V": 1795460705.4742262,
     "CAT": 1795459408.9106386,
     "FN": 1795460569.1597998,
     "GLW": 1795459301.2986777,
