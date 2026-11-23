@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795426248.937,
-  "updated_at_et": "11-23 04:30 ET",
-  "updated_at_kst": "18:30 KST",
+  "updated_at_ts": 1795426359.893,
+  "updated_at_et": "11-23 04:32 ET",
+  "updated_at_kst": "18:32 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -3198,6 +3198,20 @@
     ],
     "ANT": [
       {
+        "title": "Market Chatter: Anthropic, SpaceX Imposed Restrictions on Underwriters During IPOs",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/market-chatter-anthropic-spacex-imposed-091716635.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 04:17 ET",
+        "pub_ts": 1795425436.0
+      },
+      {
+        "title": "ANUU, ANDD, and ANSS Now Trading: Leverage Shares by Themes Launches 2X Leveraged & Short Anthropic (ANT) ETFs on Cboe",
+        "url": "https://finance.yahoo.com/markets/options/articles/anuu-andd-anss-now-trading-090000363.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 04:00 ET",
+        "pub_ts": 1795424400.0
+      },
+      {
         "title": "A New Wave Of Anthropic ETFs Is Coming — What’s On Offer",
         "url": "https://stocktwits.com/news-articles/markets/equity/a-new-wave-of-anthropic-et-fs-is-coming-what-s-on-offer/cNbYMLjR9Sm?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3217,20 +3231,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 02:08 ET",
         "pub_ts": 1795417686.0
-      },
-      {
-        "title": "CoreWeave (CRWV) Stock Gets An AI Demand Jolt From A Record $81.3 Billion IPO",
-        "url": "https://finance.yahoo.com/technology/ai/articles/coreweave-crwv-stock-gets-ai-070621794.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 02:06 ET",
-        "pub_ts": 1795417581.0
-      },
-      {
-        "title": "A 167-Year-Old Math Problem Just Became Meta's Case That Superintelligence Is Near",
-        "url": "https://beincrypto.com/superintelligence-inevitable-meta-ai-chief/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 01:43 ET",
-        "pub_ts": 1795416225.0
       }
     ],
     "XAUUSD": [
@@ -3244,22 +3244,22 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795424851.2267318,
-    "SOXL": 1795424851.2267318,
-    "SPY": 1795424851.2267318,
-    "DIA": 1795424851.2267318,
-    "SOXX": 1795424851.2267318,
-    "QQQ": 1795424851.2267318,
-    "SMH": 1795424851.2267318,
-    "IWM": 1795424851.2267318,
-    "IGV": 1795424851.2267318,
-    "TLT": 1795424851.2267318,
-    "GLD": 1795424851.2267318,
-    "SQQQ": 1795424851.2267318,
+    "KORU": 1795426359.8926487,
+    "SOXL": 1795426359.8926487,
+    "SPY": 1795426359.8926487,
+    "DIA": 1795426359.8926487,
+    "SOXX": 1795426359.8926487,
+    "QQQ": 1795426359.8926487,
+    "SMH": 1795426359.8926487,
+    "IWM": 1795426359.8926487,
+    "IGV": 1795426359.8926487,
+    "TLT": 1795426359.8926487,
+    "GLD": 1795426359.8926487,
+    "SQQQ": 1795426359.8926487,
     "TSM": 1795424964.7462595,
-    "VIXY": 1795424851.2267318,
-    "SOXS": 1795424851.2267318,
-    "NVDA": 1795424851.2267318,
+    "VIXY": 1795426359.8926487,
+    "SOXS": 1795426359.8926487,
+    "NVDA": 1795426359.8926487,
     "AMD": 1795424964.7462595,
     "ASML": 1795424964.7462595,
     "QCOM": 1795424964.7462595,
@@ -3313,7 +3313,7 @@
     "MRNA": 1795426248.9373715,
     "NKE": 1795426248.9373715,
     "MCD": 1795426248.9373715,
-    "PEP": 1795424851.2267318,
+    "PEP": 1795426359.8926487,
     "XOM": 1795426248.9373715,
     "JPM": 1795426248.9373715,
     "WMT": 1795426248.9373715,
@@ -3321,7 +3321,7 @@
     "CAT": 1795426248.9373715,
     "FN": 1795426248.9373715,
     "GLW": 1795425075.148337,
-    "ANT": 1795424851.2267318,
+    "ANT": 1795426359.8926487,
     "XAUUSD": 1795424964.7462595
   },
   "opex_shield": {
