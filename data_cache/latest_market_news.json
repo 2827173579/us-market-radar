@@ -1,9 +1,49 @@
 {
-  "updated_at_ts": 1795445047.887,
-  "updated_at_et": "11-23 09:44 ET",
-  "updated_at_kst": "23:44 KST",
+  "updated_at_ts": 1795445558.947,
+  "updated_at_et": "11-23 09:52 ET",
+  "updated_at_kst": "23:52 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261123224931669800",
+      "title": "黄仁勋复任英伟达CEO引爆美股！黄金白银同步走出修复行情",
+      "summary": "经历上周科技股大幅抛售后，黄仁勋复职消息迅速扭转市场情绪。然而，AI投资回报、企业盈利前景和美联储政策仍存在不确定性，英伟达潜在会计问题调查也受到关注。点击查看",
+      "keywords": [
+        "美联储",
+        "英伟达"
+      ],
+      "pub_ts": 1795445371.0,
+      "time_et": "11-23 09:49 ET",
+      "time_bj": "22:49 BJ",
+      "time_kst": "23:49 KST",
+      "time_display": "09:49 ET / 22:49 BJ"
+    },
+    {
+      "id": "20261123224502102800",
+      "title": "美国11月标普全球服务业PMI初值 54.7，预期55.6，前值56.1。",
+      "summary": "美国11月标普全球服务业PMI初值 54.7，预期55.6，前值56.1。",
+      "keywords": [
+        "标普"
+      ],
+      "pub_ts": 1795445102.0,
+      "time_et": "11-23 09:45 ET",
+      "time_bj": "22:45 BJ",
+      "time_kst": "23:45 KST",
+      "time_display": "09:45 ET / 22:45 BJ"
+    },
+    {
+      "id": "20261123224502101800",
+      "title": "美国11月标普全球制造业PMI初值 54.5，预期54.5，前值54.9。",
+      "summary": "美国11月标普全球制造业PMI初值 54.5，预期54.5，前值54.9。",
+      "keywords": [
+        "标普"
+      ],
+      "pub_ts": 1795445102.0,
+      "time_et": "11-23 09:45 ET",
+      "time_bj": "22:45 BJ",
+      "time_kst": "23:45 KST",
+      "time_display": "09:45 ET / 22:45 BJ"
+    },
     {
       "id": "20261123224307371800",
       "title": "【潮落又潮起 英伟达几乎收复黄仁勋辞职以来的全部跌幅】 11月23日讯，据CNBC，英伟…",
@@ -300,45 +340,6 @@
       "time_bj": "22:02 BJ",
       "time_kst": "23:02 KST",
       "time_display": "09:02 ET / 22:02 BJ"
-    },
-    {
-      "id": "20261123220143928800",
-      "title": "【英伟达：将继续对黄仁勋进行调查】 11月23日讯，英伟达(NVDA.O)：克雷斯临时C…",
-      "summary": "【英伟达：将继续对黄仁勋进行调查】 11月23日讯，英伟达(NVDA.O)：克雷斯临时CEO任期现已结束，克雷斯将继续担任CFO。董事会已成立委员会调查相关报道，将继续对黄仁勋进行调查。开始物色新任首席合规官人选。恢复相关安排不会带来任何国家安全风险，公司对此充满信心。",
-      "keywords": [
-        "英伟达"
-      ],
-      "pub_ts": 1795442503.0,
-      "time_et": "11-23 09:01 ET",
-      "time_bj": "22:01 BJ",
-      "time_kst": "23:01 KST",
-      "time_display": "09:01 ET / 22:01 BJ"
-    },
-    {
-      "id": "20261123220049174800",
-      "title": "纳斯达克100指数期货涨幅扩大至6%。",
-      "summary": "纳斯达克100指数期货涨幅扩大至6%。",
-      "keywords": [
-        "纳斯达克"
-      ],
-      "pub_ts": 1795442449.0,
-      "time_et": "11-23 09:00 ET",
-      "time_bj": "22:00 BJ",
-      "time_kst": "23:00 KST",
-      "time_display": "09:00 ET / 22:00 BJ"
-    },
-    {
-      "id": "20261123215913222800",
-      "title": "英伟达(NVDA.O)盘前涨幅扩大至25%。",
-      "summary": "英伟达(NVDA.O)盘前涨幅扩大至25%。",
-      "keywords": [
-        "英伟达"
-      ],
-      "pub_ts": 1795442353.0,
-      "time_et": "11-23 08:59 ET",
-      "time_bj": "21:59 BJ",
-      "time_kst": "22:59 KST",
-      "time_display": "08:59 ET / 21:59 BJ"
     }
   ],
   "ticker_news": {
@@ -2157,6 +2158,13 @@
     ],
     "VRT": [
       {
+        "title": "Vertiv Says Its Nvidia-Backed Designs Can Add 30% More AI Output in the First Year. Here's the Catch.",
+        "url": "https://www.fool.com/investing/2026/11/23/vertiv-says-its-nvidia-backed-designs-can-add-30-m/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 09:36 ET",
+        "pub_ts": 1795444560.0
+      },
+      {
         "title": "What Is Behind The Fall In Vertiv Stock?",
         "url": "https://www.trefis.com/stock/vrt/articles/627712/what-is-behind-the-fall-in-vertiv-stock/2026-11-23?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2183,13 +2191,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 11:10 ET",
         "pub_ts": 1795191049.0
-      },
-      {
-        "title": "Prediction: These Will Be the Best-Performing Industrial Stocks of 2027",
-        "url": "https://www.fool.com/investing/2026/11/20/prediction-these-will-be-the-best-performing-industrial-stocks-of-2027/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 10:05 ET",
-        "pub_ts": 1795187102.0
       }
     ],
     "HPE": [
@@ -2268,7 +2269,14 @@
     ],
     "OKLO": [
       {
-        "title": "Energy Fuels Surges 8% on Plan to Produce 1 Million Pounds of Uranium; Oklo Climbs 7%, NuScale Power Gains 6%",
+        "title": "Wall Street Is Watching AI Stocks. But This Stock Could Be a Bigger Nuclear Energy Opportunity",
+        "url": "https://247wallst.com/investing/2026/11/23/wall-street-is-watching-ai-stocks-but-this-stock-could-be-a-bigger-nuclear-energy-opportunity/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 09:33 ET",
+        "pub_ts": 1795444403.0
+      },
+      {
+        "title": "Energy Fuels Rallies 14% on Plan to Produce 1 Million Pounds of Uranium; Oklo Surges 12%, NuScale Power Gains 13%",
         "url": "https://247wallst.com/investing/2026/11/23/energy-fuels-surges-8-on-plan-to-produce-1-million-pounds-of-uranium-oklo-climbs-7-nuscale-power-gains-6/?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-23 09:09 ET",
@@ -2294,13 +2302,6 @@
         "source": "Yahoo Finance",
         "time": "11-21 02:04 ET",
         "pub_ts": 1795244654.0
-      },
-      {
-        "title": "Wall Street Thinks Oklo Is a Buy. Here’s Why I’m Not So Sure.",
-        "url": "https://www.fool.com/investing/2026/11/20/wall-street-thinks-oklo-is-a-buy-here-s-why-i-m-not-so-sure/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 15:25 ET",
-        "pub_ts": 1795206302.0
       }
     ],
     "CEG": [
@@ -2527,6 +2528,13 @@
     ],
     "MSTR": [
       {
+        "title": "Bitcoin Crash Leaves Strategy $12B and Bitmine $10B Underwater: How Much Worse Can It Get?",
+        "url": "https://www.coinspeaker.com/strategy-mstr-bitmine-stock-bitcoin-55k/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 09:26 ET",
+        "pub_ts": 1795443984.0
+      },
+      {
         "title": "Strategy Buys $30 Million Of Bitcoin As Price Hits Two-Year Low",
         "url": "https://www.cryptoprowl.com/releases/strategy-buys-30-million-of-bitcoin-as-price-hits-two-year-low-8024?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2553,16 +2561,23 @@
         "source": "Yahoo Finance",
         "time": "11-23 08:25 ET",
         "pub_ts": 1795440335.0
-      },
-      {
-        "title": "Bitcoin Crashed to $55,000 and MicroStrategy Bought Only 457 BTC. Why?",
-        "url": "https://beincrypto.com/bitcoin-crash-microstrategy-457-btc-strc/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 08:10 ET",
-        "pub_ts": 1795439459.0
       }
     ],
     "SNDK": [
+      {
+        "title": "Even If Sandisk's Profits Get Cut in Half, Here's What $5,000 in the Stock Could Be Worth by 2030",
+        "url": "https://www.fool.com/investing/2026/11/23/even-if-sandisk-s-profits-get-cut-in-half-here-s-what-usd5-000-in-the-stock-could-be-worth-by-2030/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 09:43 ET",
+        "pub_ts": 1795444981.0
+      },
+      {
+        "title": "SK Hynix Soars 8%, Sandisk Up 6% as Memory Stocks Rebound From AI Rout",
+        "url": "https://www.tikr.com/blog/sk-hynix-soars-8-sandisk-up-6-as-memory-stocks-rebound-from-ai-rout?ref=yahoofinance&tlnk=yf-261123-3qjfmh53&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 09:33 ET",
+        "pub_ts": 1795444435.0
+      },
       {
         "title": "CrowdStrike, Zscaler, Anthropic, Sandisk, Strategy, Robinhood, and More Stocks That Explain Today’s Market",
         "url": "https://finance.yahoo.com/m/76a3103b-f3de-364f-8cd8-90e453a902d8/crowdstrike%2C-zscaler%2C.html?.tsrc=rss",
@@ -2583,20 +2598,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 01:15 ET",
         "pub_ts": 1795414541.0
-      },
-      {
-        "title": "SNDK Stock Wrapped Its Worst Week Since July: Why Morningstar Sees A NAND Memory Bust Looming For SanDisk",
-        "url": "https://stocktwits.com/news-articles/markets/equity/sndk-stock-nand-price-downcycle-forecast-morningstar/cNbYVUtR9S2?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-22 22:12 ET",
-        "pub_ts": 1795403535.0
-      },
-      {
-        "title": "Micron Technology vs. Sandisk: Which Technology Stock Is a Better Buy for 2027?",
-        "url": "https://www.fool.com/coverage/better-buy/2026/11/22/micron-technology-vs-sandisk-which-technology-stock-is-a-better-buy-for-2027/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-22 14:00 ET",
-        "pub_ts": 1795374008.0
       }
     ],
     "BTC-USD": [
@@ -2638,6 +2639,13 @@
     ],
     "CRWD": [
       {
+        "title": "Zscaler Soars 23% on $43.9 Billion CrowdStrike Buyout: “Safety Is Required to Let AI In”",
+        "url": "https://www.tikr.com/blog/zscaler-soars-23-on-43-9-billion-crowdstrike-buyout-safety-is-required-to-let-ai-in?ref=yahoofinance&tlnk=yf-261123-6cwr929g&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 09:34 ET",
+        "pub_ts": 1795444492.0
+      },
+      {
         "title": "CrowdStrike Stock Drops On Zscaler Acquisition",
         "url": "https://finance.yahoo.com/m/b843f94e-891a-3872-9c9a-288d7f3f975f/crowdstrike-stock-drops-on.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2659,18 +2667,11 @@
         "pub_ts": 1795441576.0
       },
       {
-        "title": "CrowdStrike's Zscaler Acquisition Could Broaden Security Platform, Says JPMorgan — Analysts Weigh Opportunities And Risks",
-        "url": "https://stocktwits.com/news-articles/markets/equity/crowd-strike-s-zscaler-acquisition-could-broaden-security-platform-says-jp-morgan-analysts-weigh-opportunities-and-risks/cNbpTQZR9jT?.tsrc=rss",
+        "title": "CrowdStrike (CRWD) Q3 Earnings: How Key Metrics Compare to Wall Street Estimates",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/crowdstrike-crwd-q3-earnings-key-133001253.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 08:27 ET",
-        "pub_ts": 1795440478.0
-      },
-      {
-        "title": "CrowdStrike Holdings (CRWD) Agreed $44 Billion All Stock Cybersecurity Deal",
-        "url": "https://finance.yahoo.com/technology/ai/articles/crowdstrike-holdings-crwd-agreed-44-131349393.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 08:13 ET",
-        "pub_ts": 1795439629.0
+        "time": "11-23 08:30 ET",
+        "pub_ts": 1795440601.0
       }
     ],
     "ORCL": [
@@ -3273,7 +3274,7 @@
     "VST": 1795444936.1275585,
     "BE": 1795445047.8874571,
     "CRDO": 1795445047.8874571,
-    "COHR": 1795443977.4542193,
+    "COHR": 1795445558.9467509,
     "MRVL": 1795444719.9875643,
     "LITE": 1795444719.9875643,
     "AAOI": 1795445047.8874571,
@@ -3282,26 +3283,26 @@
     "AXTI": 1795444719.9875643,
     "NASA": 1795445047.8874571,
     "LUNR": 1795445047.8874571,
-    "TSLA": 1795443838.0027757,
-    "AXP": 1795443838.0027757,
+    "TSLA": 1795445402.363778,
+    "AXP": 1795445402.363778,
     "RKLB": 1795445047.8874571,
     "KO": 1795445047.8874571,
     "FLY": 1795445047.8874571,
-    "INTC": 1795443838.0027757,
-    "VRT": 1795443838.0027757,
-    "HPE": 1795443838.0027757,
-    "DELL": 1795443838.0027757,
-    "OKLO": 1795443977.4542193,
-    "CEG": 1795443838.0027757,
-    "FPS": 1795443977.4542193,
+    "INTC": 1795445402.363778,
+    "VRT": 1795445402.363778,
+    "HPE": 1795445402.363778,
+    "DELL": 1795445402.363778,
+    "OKLO": 1795445558.9467509,
+    "CEG": 1795445402.363778,
+    "FPS": 1795445558.9467509,
     "MU": 1795444719.9875643,
     "SKHY": 1795444719.9875643,
     "WDC": 1795444719.9875643,
-    "STX": 1795443977.4542193,
-    "MSTR": 1795443977.4542193,
-    "SNDK": 1795443977.4542193,
+    "STX": 1795445558.9467509,
+    "MSTR": 1795445558.9467509,
+    "SNDK": 1795445558.9467509,
     "BTC-USD": 1795444719.9875643,
-    "CRWD": 1795443977.4542193,
+    "CRWD": 1795445558.9467509,
     "ORCL": 1795444719.9875643,
     "COIN": 1795444719.9875643,
     "LLY": 1795444719.9875643,
@@ -3316,7 +3317,7 @@
     "CAT": 1795444936.1275585,
     "FN": 1795444719.9875643,
     "GLW": 1795445047.8874571,
-    "ANT": 1795443838.0027757,
+    "ANT": 1795445402.363778,
     "XAUUSD": 1795444719.9875643
   },
   "opex_shield": {
@@ -3336,7 +3337,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (09:43 ET / 22:43 BJ) [英伟达] [苹果]：【潮落又潮起 英伟达几乎收复黄仁勋辞职以来的全部跌幅】 11月23日讯，据CNBC，英伟达(NVDA.O)周一宣布，黄仁勋即日起重返公司担任首席执行官。消息公布后，英伟达股价飙升了31%，几",
+    "detail": "⚡ 最新核心快讯 (09:49 ET / 22:49 BJ) [美联储] [英伟达]：经历上周科技股大幅抛售后，黄仁勋复职消息迅速扭转市场情绪。然而，AI投资回报、企业盈利前景和美联储政策仍存在不确定性，英伟达潜在会计问题调查也受到关注。点击查看",
     "event_name": "",
     "minutes_left": 0,
     "opex_shield": {

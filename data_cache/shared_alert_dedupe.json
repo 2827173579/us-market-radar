@@ -4687,9 +4687,37 @@
     "2026-11-23:DEFENSIVE_FLIGHT:-21.1": {
       "device": "PC",
       "ts": 1795445057.1507003
+    },
+    "JIN10_FLASH:20261123224229402800": {
+      "device": "PC",
+      "ts": 1795445058.676428
+    },
+    "JIN10_FLASH:20261123224307371800": {
+      "device": "PC",
+      "ts": 1795445060.4138768
+    },
+    "2026-11-23:DEFENSIVE_FLIGHT:-22.6": {
+      "device": "PC",
+      "ts": 1795445581.3969028
+    },
+    "2026-11-23:INTRADAY_CORRIDOR:SPY:BELOW_P25": {
+      "device": "PC",
+      "ts": 1795445582.660224
+    },
+    "JIN10_FLASH:20261123224502101800": {
+      "device": "PC",
+      "ts": 1795445582.8588054
+    },
+    "2026-11-23:INTRADAY_CORRIDOR:QQQ:BELOW_P25": {
+      "device": "PC",
+      "ts": 1795445583.2928047
+    },
+    "2026-11-23:INTRADAY_CORRIDOR:SOXL:BELOW_P25": {
+      "device": "PC",
+      "ts": 1795445584.2152836
     }
   },
   "device": "PC",
-  "last_heartbeat_ts": 1795444970.9171052,
-  "updated_at": "2026-11-23T14:44:17.151196+00:00"
+  "last_heartbeat_ts": 1795445483.4524243,
+  "updated_at": "2026-11-23T14:53:04.215743+00:00"
 }
