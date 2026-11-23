@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795424964.746,
-  "updated_at_et": "11-23 04:09 ET",
-  "updated_at_kst": "18:09 KST",
+  "updated_at_ts": 1795425075.148,
+  "updated_at_et": "11-23 04:11 ET",
+  "updated_at_kst": "18:11 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1755,6 +1755,13 @@
     ],
     "SPCX": [
       {
+        "title": "Nvidia vs. SpaceX: Here's Which Stock I'd Put $1,000 Towards Right Now",
+        "url": "https://www.fool.com/investing/2026/11/23/nvidia-vs-spacex-here-s-which-stock-i-d-put-usd1-000-towards-right-now/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 03:38 ET",
+        "pub_ts": 1795423082.0
+      },
+      {
         "title": "Cathie Wood Says TSLA Holders ‘Will Get’ A Premium If SpaceX Buys Tesla — HSBC Puts It At Over 30%",
         "url": "https://stocktwits.com/news-articles/markets/equity/cathie-wood-tsla-holders-premium-if-spacex-buys-tesla-hsbc/cNbYtWbR9Si?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1781,13 +1788,6 @@
         "source": "Yahoo Finance",
         "time": "11-22 23:52 ET",
         "pub_ts": 1795409533.0
-      },
-      {
-        "title": "Elon Musk Says 2027 AI Cash Crunch Will Be ‘Nuts’ — Analysts Still See SpaceX Emerging As The Biggest AI Hyperscaler",
-        "url": "https://stocktwits.com/news-articles/markets/equity/elon-musk-2027-ai-cash-crunch-analysts-spacex-biggest-ai-hyperscaler/cNbYZvbR9Sb?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-22 21:32 ET",
-        "pub_ts": 1795401151.0
       }
     ],
     "ASTS": [
@@ -3269,30 +3269,30 @@
     "GOOGL": 1795424964.7462595,
     "MSFT": 1795424964.7462595,
     "AAPL": 1795424964.7462595,
-    "PLTR": 1795423568.4984605,
+    "PLTR": 1795425075.148337,
     "NOW": 1795424964.7462595,
     "AMZN": 1795424964.7462595,
     "CRWV": 1795424964.7462595,
-    "NBIS": 1795423568.4984605,
-    "APLD": 1795423568.4984605,
-    "VST": 1795423568.4984605,
-    "BE": 1795423568.4984605,
-    "CRDO": 1795423568.4984605,
+    "NBIS": 1795425075.148337,
+    "APLD": 1795425075.148337,
+    "VST": 1795425075.148337,
+    "BE": 1795425075.148337,
+    "CRDO": 1795425075.148337,
     "COHR": 1795424739.590738,
     "MRVL": 1795424739.590738,
     "LITE": 1795424739.590738,
     "AAOI": 1795424964.7462595,
-    "SPCX": 1795423568.4984605,
-    "ASTS": 1795423568.4984605,
+    "SPCX": 1795425075.148337,
+    "ASTS": 1795425075.148337,
     "AXTI": 1795424739.590738,
-    "NASA": 1795423568.4984605,
-    "LUNR": 1795423568.4984605,
+    "NASA": 1795425075.148337,
+    "LUNR": 1795425075.148337,
     "TSLA": 1795423680.6303442,
-    "AXP": 1795423568.4984605,
-    "RKLB": 1795423568.4984605,
-    "KO": 1795423568.4984605,
-    "FLY": 1795423568.4984605,
-    "INTC": 1795423568.4984605,
+    "AXP": 1795425075.148337,
+    "RKLB": 1795425075.148337,
+    "KO": 1795425075.148337,
+    "FLY": 1795425075.148337,
+    "INTC": 1795425075.148337,
     "VRT": 1795423680.6303442,
     "HPE": 1795423680.6303442,
     "DELL": 1795423680.6303442,
@@ -3320,7 +3320,7 @@
     "V": 1795424739.590738,
     "CAT": 1795424739.590738,
     "FN": 1795424739.590738,
-    "GLW": 1795423568.4984605,
+    "GLW": 1795425075.148337,
     "ANT": 1795424851.2267318,
     "XAUUSD": 1795424964.7462595
   },
