@@ -1,9 +1,22 @@
 {
-  "updated_at_ts": 1795443058.233,
-  "updated_at_et": "11-23 09:10 ET",
-  "updated_at_kst": "23:10 KST",
+  "updated_at_ts": 1795443164.389,
+  "updated_at_et": "11-23 09:12 ET",
+  "updated_at_kst": "23:12 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261123221134431800",
+      "title": "美国总统特朗普：美国司法部长已确认，美国政府没有掌握黄仁勋从事任何违法行为的证据。",
+      "summary": "美国总统特朗普：美国司法部长已确认，美国政府没有掌握黄仁勋从事任何违法行为的证据。",
+      "keywords": [
+        "特朗普"
+      ],
+      "pub_ts": 1795443094.0,
+      "time_et": "11-23 09:11 ET",
+      "time_bj": "22:11 BJ",
+      "time_kst": "23:11 KST",
+      "time_display": "09:11 ET / 22:11 BJ"
+    },
     {
       "id": "20261123221056738800",
       "title": "【AI相关概念股和大宗商品拉涨】欧洲斯托克600科技指数大涨4.4%，此前英伟达重新任命…",
@@ -328,19 +341,6 @@
       "time_bj": "19:39 BJ",
       "time_kst": "20:39 KST",
       "time_display": "06:39 ET / 19:39 BJ"
-    },
-    {
-      "id": "20261123193123173800",
-      "title": "美银全球研究2027年展望预计欧洲央行将在2027年晚些时候降息50个基点。",
-      "summary": "美银全球研究2027年展望预计欧洲央行将在2027年晚些时候降息50个基点。",
-      "keywords": [
-        "降息"
-      ],
-      "pub_ts": 1795433483.0,
-      "time_et": "11-23 06:31 ET",
-      "time_bj": "19:31 BJ",
-      "time_kst": "20:31 KST",
-      "time_display": "06:31 ET / 19:31 BJ"
     }
   ],
   "ticker_news": {
@@ -2381,6 +2381,20 @@
     ],
     "MU": [
       {
+        "title": "3 Reasons the Micron Stock Rally Has Legs",
+        "url": "https://finance.yahoo.com/m/3f1f89c7-5433-3bc0-990f-eab9250e8983/3-reasons-the-micron-stock.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 08:15 ET",
+        "pub_ts": 1795439700.0
+      },
+      {
+        "title": "Micron Technology, Inc. (MU) is Attracting Investor Attention: Here is What You Should Know",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/micron-technology-inc-mu-attracting-130006021.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 08:00 ET",
+        "pub_ts": 1795438806.0
+      },
+      {
         "title": "Premarket movers: Chip stocks lead AI rebound; CrowdStrike falls",
         "url": "https://finance.yahoo.com/markets/stocks/articles/premarket-movers-chip-stocks-lead-124424524.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2400,20 +2414,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 07:02 ET",
         "pub_ts": 1795435320.0
-      },
-      {
-        "title": "Avantis U.S. Large Cap Value ETF (AVLV) Buys $42 Million More Micron on Nov. 19",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/avantis-u-large-cap-value-110532984.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 06:05 ET",
-        "pub_ts": 1795431932.0
-      },
-      {
-        "title": "Micron Stock Rallies After Brutal Selloff. 3 Reasons Its Surge Has Legs.",
-        "url": "https://finance.yahoo.com/m/3f1f89c7-5433-3bc0-990f-eab9250e8983/micron-stock-rallies-after.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 04:59 ET",
-        "pub_ts": 1795427940.0
       }
     ],
     "SKHY": [
@@ -2455,6 +2455,13 @@
     ],
     "WDC": [
       {
+        "title": "Western Digital Corporation (WDC) Is a Trending Stock: Facts to Know Before Betting on It",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/western-digital-corporation-wdc-trending-130005222.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 08:00 ET",
+        "pub_ts": 1795438805.0
+      },
+      {
         "title": "Stanley Druckenmiller and 11 Other Big Funds Bought Western Digital Last Quarter. Ken Fisher and 13 Others Sold. Who’s Right?",
         "url": "https://www.tikr.com/blog/stanley-druckenmiller-and-11-other-big-funds-bought-western-digital-last-quarter-ken-fisher-and-13-others-sold-whos-right?ref=yahoofinance&tlnk=yf-261121-gp4hj6j2&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2481,13 +2488,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 16:50 ET",
         "pub_ts": 1795211451.0
-      },
-      {
-        "title": "Western Digital Stock Falls 12% in the Memory Chip Selloff. It Spun Off Its Flash Business Last Year and Now Sits 65% Below Its Record",
-        "url": "https://247wallst.com/investing/2026/11/20/western-digital-stock-falls-12-in-the-memory-chip-selloff-it-spun-off-its-flash-business-last-year-and-now-sits-65-below-its-record/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 12:53 ET",
-        "pub_ts": 1795197187.0
       }
     ],
     "STX": [
@@ -2603,39 +2603,39 @@
     ],
     "BTC-USD": [
       {
-        "title": "Stock Market Today: Tech Futures, Nvidia Surge After Market Sell-Off; CrowdStrike Plunges On Zscaler Deal (Live Coverage)",
+        "title": "Stock Market Today: Tech Futures Surge After Market Sell-Off; Nvidia Soars 30% On Jensen Huang Return (Live Coverage)",
         "url": "https://finance.yahoo.com/m/8751de70-467e-380a-82cb-f4ee42adc461/stock-market-today%3A-tech.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 08:38 ET",
-        "pub_ts": 1795441131.0
+        "time": "11-23 09:06 ET",
+        "pub_ts": 1795442763.0
       },
       {
-        "title": "Strategy Buys $30M in Bitcoin, Moves $1B From USD Reserve to Cash Pot",
-        "url": "https://decrypt.co/383779/strategy-buys-30m-in-bitcoin-moves-1b-from-usd-reserve-to-cash-pot?.tsrc=rss",
+        "title": "Strategy Buys $30 Million Of Bitcoin As Price Hits Two-Year Low",
+        "url": "https://www.cryptoprowl.com/releases/strategy-buys-30-million-of-bitcoin-as-price-hits-two-year-low-8024?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 08:25 ET",
-        "pub_ts": 1795440335.0
+        "time": "11-23 09:04 ET",
+        "pub_ts": 1795442640.0
       },
       {
-        "title": "Bitcoin Crashed to $55,000 and MicroStrategy Bought Only 457 BTC. Why?",
-        "url": "https://beincrypto.com/bitcoin-crash-microstrategy-457-btc-strc/?.tsrc=rss",
+        "title": "Michael Saylor’s Strategy Raises Preferred Stock Buyback Program To $4B, Spends 7 Times More On STRC Than Bitcoin",
+        "url": "https://stocktwits.com/news-articles/markets/cryptocurrency/michael-saylor-strategy-raises-preferred-stock-buyback-program-to-4-b-spends-7-times-more-on-strc-than-bitcoin/cNbp27rR9jI?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 08:10 ET",
-        "pub_ts": 1795439459.0
+        "time": "11-23 09:00 ET",
+        "pub_ts": 1795442423.0
       },
       {
-        "title": "Is IREN (IREN) Too Pricey For Its Sales As AI Optimism Builds?",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/iren-iren-too-pricey-sales-120731403.html?.tsrc=rss",
+        "title": "Owning Crypto Directly Can Be Risky. In-Kind ETF Conversions Are a Better Way to Own It.",
+        "url": "https://finance.yahoo.com/m/1041db94-cf6b-3ee2-92e6-7e4fe08fbc89/owning-crypto-directly-can-be.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 07:07 ET",
-        "pub_ts": 1795435651.0
+        "time": "11-23 08:50 ET",
+        "pub_ts": 1795441800.0
       },
       {
-        "title": "Fibonacci Day: How Crypto Traders Use Retracement Levels to Spot Potential Bitcoin Reversals",
-        "url": "https://www.ccn.com/news/crypto/fibonacci-day-bitcoin-trading-retracement-levels-guide/?.tsrc=rss",
+        "title": "Bitcoin Rebounds to $61,000 After Weekend Plunge",
+        "url": "https://www.cryptoprowl.com/releases/bitcoin-rebounds-to-61000-after-weekend-plunge-8020?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 07:02 ET",
-        "pub_ts": 1795435335.0
+        "time": "11-23 08:43 ET",
+        "pub_ts": 1795441380.0
       }
     ],
     "CRWD": [
@@ -2714,6 +2714,13 @@
     ],
     "COIN": [
       {
+        "title": "OKX and NYSE Parent ICE Launch Tokenized Stock Venue With 113 Assets Lined Up",
+        "url": "https://unchainedcrypto.com/okx-and-nyse-parent-ice-launch-tokenized-stock-venue-with-113-assets-lined-up/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 09:01 ET",
+        "pub_ts": 1795442517.0
+      },
+      {
         "title": "Q.security Launches with $11.5M to Make Enterprise Cryptography Quantum-Safe",
         "url": "https://finance.yahoo.com/technology/ai/articles/q-security-launches-11-5m-130200356.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2740,13 +2747,6 @@
         "source": "Yahoo Finance",
         "time": "11-22 12:03 ET",
         "pub_ts": 1795367005.0
-      },
-      {
-        "title": "Coinbase's $21 children's book comes with $50 Bitcoin",
-        "url": "https://www.thestreet.com/crypto/business/coinbases-21-childrens-book-comes-with-50-bitcoin?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-22 03:49 ET",
-        "pub_ts": 1795337356.0
       }
     ],
     "LLY": [
@@ -2862,6 +2862,13 @@
     ],
     "MCD": [
       {
+        "title": "Is The Market Underpricing McDonald's Stock?",
+        "url": "https://www.trefis.com/stock/mcd/articles/627636/is-the-market-underpricing-mcdonalds-stock-2/2026-11-23?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 08:38 ET",
+        "pub_ts": 1795441105.0
+      },
+      {
         "title": "McDonald's (MCD) Has Raised Its Dividend 50 Straight Years. I'd Buy It in November and Never Sell.",
         "url": "https://www.fool.com/investing/2026/11/23/mcdonalds-mcd-raise-dividend-50-year-buy-sell/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2888,13 +2895,6 @@
         "source": "Yahoo Finance",
         "time": "11-22 08:20 ET",
         "pub_ts": 1795353602.0
-      },
-      {
-        "title": "The $15M founder who went to work at McDonald’s",
-        "url": "https://myfirstmillion.videonest.co/videos/2448115/the-15m-founder-who-went-to-work-at-mcdonalds-T04AXXcjBb?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-22 00:33 ET",
-        "pub_ts": 1795325613.0
       }
     ],
     "PEP": [
@@ -3276,12 +3276,12 @@
     "BE": 1795441923.7480617,
     "CRDO": 1795441923.7480617,
     "COHR": 1795442397.3644836,
-    "MRVL": 1795441576.8080497,
-    "LITE": 1795441576.8080497,
+    "MRVL": 1795443164.389468,
+    "LITE": 1795443164.389468,
     "AAOI": 1795441923.7480617,
     "SPCX": 1795441923.7480617,
     "ASTS": 1795441923.7480617,
-    "AXTI": 1795441576.8080497,
+    "AXTI": 1795443164.389468,
     "NASA": 1795441923.7480617,
     "LUNR": 1795441923.7480617,
     "TSLA": 1795442255.8019989,
@@ -3296,30 +3296,30 @@
     "OKLO": 1795442397.3644836,
     "CEG": 1795442255.8019989,
     "FPS": 1795442397.3644836,
-    "MU": 1795441576.8080497,
-    "SKHY": 1795441576.8080497,
-    "WDC": 1795441576.8080497,
+    "MU": 1795443164.389468,
+    "SKHY": 1795443164.389468,
+    "WDC": 1795443164.389468,
     "STX": 1795442397.3644836,
     "MSTR": 1795442397.3644836,
     "SNDK": 1795442397.3644836,
-    "BTC-USD": 1795441576.8080497,
+    "BTC-USD": 1795443164.389468,
     "CRWD": 1795442397.3644836,
-    "ORCL": 1795441576.8080497,
-    "COIN": 1795441576.8080497,
-    "LLY": 1795441576.8080497,
-    "MRNA": 1795441576.8080497,
-    "NKE": 1795441576.8080497,
-    "MCD": 1795441576.8080497,
+    "ORCL": 1795443164.389468,
+    "COIN": 1795443164.389468,
+    "LLY": 1795443164.389468,
+    "MRNA": 1795443164.389468,
+    "NKE": 1795443164.389468,
+    "MCD": 1795443164.389468,
     "PEP": 1795441923.7480617,
     "XOM": 1795441690.9736607,
     "JPM": 1795441690.9736607,
     "WMT": 1795441808.4863145,
     "V": 1795441690.9736607,
     "CAT": 1795441808.4863145,
-    "FN": 1795441576.8080497,
+    "FN": 1795443164.389468,
     "GLW": 1795441923.7480617,
     "ANT": 1795442255.8019989,
-    "XAUUSD": 1795441576.8080497
+    "XAUUSD": 1795443164.389468
   },
   "opex_shield": {
     "date": "2026-11-23",
@@ -3338,7 +3338,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (09:10 ET / 22:10 BJ) [半导体] [英伟达]：【AI相关概念股和大宗商品拉涨】欧洲斯托克600科技指数大涨4.4%，此前英伟达重新任命黄仁勋为首席执行官。阿斯麦股价上涨9.9%。德国半导体股上涨4.27%至12.57%。伦敦金属交易所（",
+    "detail": "⚡ 最新核心快讯 (09:11 ET / 22:11 BJ) [特朗普]：美国总统特朗普：美国司法部长已确认，美国政府没有掌握黄仁勋从事任何违法行为的证据。",
     "event_name": "",
     "minutes_left": 0,
     "opex_shield": {
