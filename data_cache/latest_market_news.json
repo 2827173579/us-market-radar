@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795465704.704,
-  "updated_at_et": "11-23 15:28 ET",
-  "updated_at_kst": "05:28 KST",
+  "updated_at_ts": 1795465816.071,
+  "updated_at_et": "11-23 15:30 ET",
+  "updated_at_kst": "05:30 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2536,6 +2536,13 @@
         "pub_ts": 1795451281.0
       },
       {
+        "title": "Strategy Is Still Down 45% in a Month: Can MSTR Stock Revisit $150 as Bitcoin Holds $60,000?",
+        "url": "https://247wallst.com/investing/2026/11/23/strategy-is-still-down-45-in-a-month-can-mstr-stock-revisit-150-as-bitcoin-holds-60000/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 14:54 ET",
+        "pub_ts": 1795463644.0
+      },
+      {
         "title": "Crypto premarket wrap: What investors need to know before the bell",
         "url": "https://www.thestreet.com/crypto/markets/crypto-premarket-wrap-what-investors-need-to-know-before-the-bell?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2555,13 +2562,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 11:30 ET",
         "pub_ts": 1795451448.0
-      },
-      {
-        "title": "Bitcoin Crash Leaves Strategy $12B and Bitmine $10B Underwater: How Much Worse Can It Get?",
-        "url": "https://www.coinspeaker.com/strategy-mstr-bitmine-stock-bitcoin-55k/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 09:26 ET",
-        "pub_ts": 1795443984.0
       }
     ],
     "SNDK": [
@@ -2640,6 +2640,13 @@
     ],
     "CRWD": [
       {
+        "title": "CrowdStrike Shares Fall 10% After a $44 Billion Zscaler Deal Despite an Earnings Beat and Raised Guidance",
+        "url": "https://247wallst.com/videos/crowdstrike-shares-fall-10-after-a-44-billion-zscaler-deal-despite-an-earnings-beat-and-raised-guidance/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 14:55 ET",
+        "pub_ts": 1795463723.0
+      },
+      {
         "title": "CrowdStrike’s Zscaler deal sets up Palo Alto rivalry, R.F. Lafferty analyst says",
         "url": "https://finance.yahoo.com/markets/stocks/articles/crowdstrike-zscaler-deal-sets-palo-192035199.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2666,13 +2673,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 13:33 ET",
         "pub_ts": 1795458788.0
-      },
-      {
-        "title": "CrowdStrike's best quarter ever gets buried by $44 billion deal",
-        "url": "https://www.thestreet.com/investing/crowdstrike-record-quarter-zscaler-deal-crwd-zs?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 13:08 ET",
-        "pub_ts": 1795457302.0
       }
     ],
     "ORCL": [
@@ -3209,6 +3209,13 @@
         "pub_ts": 1795459205.0
       },
       {
+        "title": "Anthropic Had a Strong First Day, but Will It End Up Like SpaceX?",
+        "url": "https://www.fool.com/investing/2026/11/23/anthropic-had-a-strong-first-day-but-will-it-end-up-like-spacex/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 15:12 ET",
+        "pub_ts": 1795464721.0
+      },
+      {
         "title": "Anthropic vs Nvidia: comparing two ways to invest in AI",
         "url": "https://finance.yahoo.com/technology/ai/articles/anthropic-vs-nvidia-comparing-two-190331712.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3221,13 +3228,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 13:48 ET",
         "pub_ts": 1795459710.0
-      },
-      {
-        "title": "Kevin O’Leary warns Anthropic IPO buyers to brace for 2030",
-        "url": "https://www.thestreet.com/investing/kevin-oleary-anthropic-ipo-warning?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 13:47 ET",
-        "pub_ts": 1795459620.0
       }
     ],
     "XAUUSD": [
@@ -3299,11 +3299,11 @@
     "MU": 1795465262.7768118,
     "SKHY": 1795465262.7768118,
     "WDC": 1795465262.7768118,
-    "STX": 1795464221.4893281,
-    "MSTR": 1795464221.4893281,
+    "STX": 1795465816.0712192,
+    "MSTR": 1795465816.0712192,
     "SNDK": 1795465704.7036743,
     "BTC-USD": 1795465262.7768118,
-    "CRWD": 1795464221.4893281,
+    "CRWD": 1795465816.0712192,
     "ORCL": 1795465262.7768118,
     "COIN": 1795465262.7768118,
     "LLY": 1795465262.7768118,
@@ -3315,11 +3315,11 @@
     "JPM": 1795465472.7667868,
     "WMT": 1795465704.7036743,
     "V": 1795465472.7667868,
-    "CAT": 1795464221.4893281,
+    "CAT": 1795465816.0712192,
     "FN": 1795465262.7768118,
     "GLW": 1795465597.5709558,
-    "ANT": 1795464221.4893281,
-    "XAUUSD": 1795464221.4893281
+    "ANT": 1795465816.0712192,
+    "XAUUSD": 1795465816.0712192
   },
   "opex_shield": {
     "date": "2026-11-23",
