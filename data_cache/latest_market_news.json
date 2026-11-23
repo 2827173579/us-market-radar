@@ -1,9 +1,22 @@
 {
-  "updated_at_ts": 1795448314.753,
-  "updated_at_et": "11-23 10:38 ET",
-  "updated_at_kst": "00:38 KST",
+  "updated_at_ts": 1795448521.027,
+  "updated_at_et": "11-23 10:42 ET",
+  "updated_at_kst": "00:42 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261123234134366800",
+      "title": "伯恩斯坦：将英伟达(NVDA.O)评级从与大市一致评级上调至跑赢大市评级。",
+      "summary": "伯恩斯坦：将英伟达(NVDA.O)评级从与大市一致评级上调至跑赢大市评级。",
+      "keywords": [
+        "英伟达"
+      ],
+      "pub_ts": 1795448494.0,
+      "time_et": "11-23 10:41 ET",
+      "time_bj": "23:41 BJ",
+      "time_kst": "00:41 KST",
+      "time_display": "10:41 ET / 23:41 BJ"
+    },
     {
       "id": "20261123233705253800",
       "title": "费城半导体指数一度涨15.3%，有望创下2025年3月以来最大百分比涨幅。",
@@ -330,19 +343,6 @@
       "time_bj": "22:30 BJ",
       "time_kst": "23:30 KST",
       "time_display": "09:30 ET / 22:30 BJ"
-    },
-    {
-      "id": "20261123222253564800",
-      "title": "纳指期货大涨后短暂停牌",
-      "summary": "纳斯达克100指数期货涨7%后，因波动过大短暂暂停交易。",
-      "keywords": [
-        "纳斯达克"
-      ],
-      "pub_ts": 1795443773.0,
-      "time_et": "11-23 09:22 ET",
-      "time_bj": "22:22 BJ",
-      "time_kst": "23:22 KST",
-      "time_display": "09:22 ET / 22:22 BJ"
     }
   ],
   "ticker_news": {
@@ -1946,6 +1946,20 @@
         "pub_ts": 1795438835.0
       },
       {
+        "title": "NYSE Parent's Tokenized Stock Venture Opens With 113 Assets Planned. Apple, Nvidia And Tesla Are Staying Out.",
+        "url": "https://www.ibtimes.com/okx-ice-tokenized-securities-market-113-assets-3810086?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 10:19 ET",
+        "pub_ts": 1795447167.0
+      },
+      {
+        "title": "Tesla Soars 13% as FSD V15 Rolls Out: Musk Calls It a “Banger Release”",
+        "url": "https://www.tikr.com/blog/tesla-soars-13-as-fsd-v15-rolls-out-musk-calls-it-a-banger-release?ref=yahoofinance&tlnk=yf-261123-hqjc8686&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 10:12 ET",
+        "pub_ts": 1795446770.0
+      },
+      {
         "title": "Tesla FSD V15 Rolling Out, Goes 'Wide' Next Month. Elon Musk Says It's 'Something Special.'",
         "url": "https://finance.yahoo.com/m/b31af40e-5144-3249-9033-82521507fe84/tesla-fsd-v15-rolling-out%2C.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1958,20 +1972,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 10:00 ET",
         "pub_ts": 1795446000.0
-      },
-      {
-        "title": "Tesla Bulls Banking on SpaceX “Don’t Get the Dilution Math,” Says Gary Black. Tesla Trades at 3.4x SpaceX’s 2027 Multiple",
-        "url": "https://www.tikr.com/blog/tesla-bulls-banking-on-spacex-dont-get-the-dilution-math-says-gary-black-tesla-trades-at-3-4x-spacexs-2027-multiple?ref=yahoofinance&tlnk=yf-261123-mfw83vf8&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 08:20 ET",
-        "pub_ts": 1795440048.0
-      },
-      {
-        "title": "SpaceX Stock Rebounds as Musk Starlink Talk Fuels Hopes of a Tesla Merger",
-        "url": "https://finance.yahoo.com/m/9c2ec5db-97d0-391b-9d5a-611c8d24fe36/spacex-stock-rebounds-as-musk.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 08:08 ET",
-        "pub_ts": 1795439280.0
       }
     ],
     "AXP": [
@@ -2124,6 +2124,20 @@
     ],
     "INTC": [
       {
+        "title": "Metal-Oxide-Semiconductor (MOS) Micro (MPU, MCU and DSP) Market Report 2026 | Capitalize on AI, EVs and RISC-V as Intel, Samsung, STMicroelectronics and NXP Drive 9.6% CAGR",
+        "url": "https://finance.yahoo.com/technology/articles/metal-oxide-semiconductor-mos-micro-152900907.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 10:29 ET",
+        "pub_ts": 1795447740.0
+      },
+      {
+        "title": "Metal-Oxide-Semiconductor (MOS) Microprocessor Market Global Report 2026 | Capitalize on AI, Chiplets and RISC-V as NVIDIA, Intel, Broadcom and Texas Instruments Drive 10.1% CAGR",
+        "url": "https://finance.yahoo.com/technology/articles/metal-oxide-semiconductor-mos-microprocessor-152800441.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 10:28 ET",
+        "pub_ts": 1795447680.0
+      },
+      {
         "title": "Intel Stock Could Have More Upside Than Its Current Valuation Suggests",
         "url": "https://247wallst.com/investing/2026/11/23/intel-stock-could-have-more-upside-than-its-current-valuation-suggests/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2143,23 +2157,16 @@
         "source": "Yahoo Finance",
         "time": "11-22 21:24 ET",
         "pub_ts": 1795400645.0
-      },
-      {
-        "title": "Intel Just Landed Its First 18A-P Chip Customer. What That Means for INTC Stock.",
-        "url": "https://www.barchart.com/story/news/8957190/intel-just-landed-its-first-18a-p-chip-customer-what-that-means-for-intc-stock?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-22 14:30 ET",
-        "pub_ts": 1795375803.0
-      },
-      {
-        "title": "Intel announces more layoffs as workforce shrinks by 7,300",
-        "url": "https://www.thestreet.com/technology/intel-announces-more-layoffs-as-workforce-shrinks-by-7300?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-22 14:17 ET",
-        "pub_ts": 1795375020.0
       }
     ],
     "VRT": [
+      {
+        "title": "Vertiv (VRT) Stock Looks Like A Bargain On Cash Flow",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/vertiv-vrt-stock-looks-bargain-150812044.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 10:08 ET",
+        "pub_ts": 1795446492.0
+      },
       {
         "title": "U.S. Data Center Cooling Market Size, Share, Trends and Forecast (2026-2031) Featuring Profiles of Carrier, Delta Electronics, Johnson Controls, Schneider Electric, STULZ, Vertiv and More",
         "url": "https://finance.yahoo.com/technology/articles/u-data-center-cooling-market-145700590.html?.tsrc=rss",
@@ -2187,13 +2194,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 06:46 ET",
         "pub_ts": 1795434402.0
-      },
-      {
-        "title": "Bloom Energy Sinks 26% in a Week, Vertiv Down 18%, as Nvidia’s Turmoil Hits AI Power Stocks. Time to Buy?",
-        "url": "https://www.tikr.com/blog/bloom-energy-sinks-26-in-a-week-vertiv-down-18-as-nvidias-turmoil-hits-ai-power-stocks-time-to-buy?ref=yahoofinance&tlnk=yf-261121-fv95h3w4&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 21:48 ET",
-        "pub_ts": 1795229281.0
       }
     ],
     "HPE": [
@@ -2235,6 +2235,20 @@
     ],
     "DELL": [
       {
+        "title": "Super Micro Soars 20% on Report It’s Seeking Up to 45% More for AI Servers Already Sold",
+        "url": "https://www.tikr.com/blog/super-micro-soars-20-on-report-its-seeking-up-to-45-more-for-ai-servers-already-sold?ref=yahoofinance&tlnk=yf-261123-vcfj7qh7&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 10:18 ET",
+        "pub_ts": 1795447100.0
+      },
+      {
+        "title": "Own Dell Stock? Its Profit Isn't All Cash",
+        "url": "https://www.trefis.com/stock/dell/articles/627663/own-dell-stock-its-profit-isn-t-all-cash/2026-11-23?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 10:02 ET",
+        "pub_ts": 1795446141.0
+      },
+      {
         "title": "Hammerspace Establishes New World Performance Record, Topping Results from All Leading Commercial Parallel File Systems",
         "url": "https://finance.yahoo.com/technology/ai/articles/hammerspace-establishes-world-performance-record-130000316.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2254,20 +2268,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 01:14 ET",
         "pub_ts": 1795414485.0
-      },
-      {
-        "title": "How Did Dell Grow From $56 Billion To $151 Billion In 20 Years?",
-        "url": "https://www.trefis.com/stock/dell/articles/624827/how-did-dell-grow-from-56-billion-to-151-billion-in-20-years/2026-11-22?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-22 21:44 ET",
-        "pub_ts": 1795401851.0
-      },
-      {
-        "title": "Inflation, Best Buy, Zoom, Dell, Deere, and More to Watch This Week",
-        "url": "https://finance.yahoo.com/m/b0484e57-7de1-3e23-9bf6-f4cc21f76c51/inflation%2C-best-buy%2C-zoom%2C.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-22 14:00 ET",
-        "pub_ts": 1795374000.0
       }
     ],
     "OKLO": [
@@ -3204,6 +3204,13 @@
         "pub_ts": 1795443636.0
       },
       {
+        "title": "Meta AI Chief Warns Superintelligence Is Arriving as Anthropic Claims Math Breakthrough",
+        "url": "https://finance.yahoo.com/technology/ai/articles/meta-ai-chief-warns-superintelligence-152007821.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 10:20 ET",
+        "pub_ts": 1795447207.0
+      },
+      {
         "title": "Anthropic Goes Public. Direxion Goes 2X, Long or Short.",
         "url": "https://finance.yahoo.com/markets/stocks/articles/anthropic-goes-public-direxion-goes-150600617.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3223,13 +3230,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 08:57 ET",
         "pub_ts": 1795442241.0
-      },
-      {
-        "title": "Dow Jones, Nasdaq, S&P 500 preview: Consumer spending in focus after AI rout",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/dow-jones-nasdaq-p-500-135515185.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 08:55 ET",
-        "pub_ts": 1795442115.0
       }
     ],
     "XAUUSD": [
@@ -3286,17 +3286,17 @@
     "AXTI": 1795447978.9951282,
     "NASA": 1795448314.7534328,
     "LUNR": 1795448314.7534328,
-    "TSLA": 1795446909.0592558,
-    "AXP": 1795446909.0592558,
+    "TSLA": 1795448521.0268104,
+    "AXP": 1795448521.0268104,
     "RKLB": 1795448314.7534328,
     "KO": 1795448314.7534328,
     "FLY": 1795448314.7534328,
-    "INTC": 1795446909.0592558,
-    "VRT": 1795446909.0592558,
-    "HPE": 1795446909.0592558,
-    "DELL": 1795446909.0592558,
+    "INTC": 1795448521.0268104,
+    "VRT": 1795448521.0268104,
+    "HPE": 1795448521.0268104,
+    "DELL": 1795448521.0268104,
     "OKLO": 1795447117.128291,
-    "CEG": 1795446909.0592558,
+    "CEG": 1795448521.0268104,
     "FPS": 1795447117.128291,
     "MU": 1795447978.9951282,
     "SKHY": 1795447978.9951282,
@@ -3320,7 +3320,7 @@
     "CAT": 1795448314.7534328,
     "FN": 1795447978.9951282,
     "GLW": 1795448314.7534328,
-    "ANT": 1795446909.0592558,
+    "ANT": 1795448521.0268104,
     "XAUUSD": 1795448088.9851124
   },
   "opex_shield": {
@@ -3340,7 +3340,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (10:37 ET / 23:37 BJ) [半导体]：费城半导体指数一度涨15.3%，有望创下2025年3月以来最大百分比涨幅。",
+    "detail": "⚡ 最新核心快讯 (10:41 ET / 23:41 BJ) [英伟达]：伯恩斯坦：将英伟达(NVDA.O)评级从与大市一致评级上调至跑赢大市评级。",
     "event_name": "",
     "minutes_left": 0,
     "opex_shield": {
