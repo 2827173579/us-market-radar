@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795470376.73,
-  "updated_at_et": "11-23 16:46 ET",
-  "updated_at_kst": "06:46 KST",
+  "updated_at_ts": 1795470484.386,
+  "updated_at_et": "11-23 16:48 ET",
+  "updated_at_kst": "06:48 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1533,11 +1533,11 @@
     ],
     "BE": [
       {
-        "title": "AI Energy Stocks, From Fuel Cells To Uranium, Leap As Nvidia Soars",
+        "title": "AI Energy Stocks, From Fuel Cells To Uranium, Rebound As Nvidia Soars",
         "url": "https://finance.yahoo.com/m/e2fe0876-9cdd-3a2d-96b4-7860f584a20d/ai-energy-stocks%2C-from-fuel.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 13:42 ET",
-        "pub_ts": 1795459325.0
+        "time": "11-23 16:19 ET",
+        "pub_ts": 1795468796.0
       },
       {
         "title": "Why Bloom Energy Is Up Today",
@@ -1755,6 +1755,20 @@
     ],
     "SPCX": [
       {
+        "title": "Elon Musk on his support for Jensen Huang: 'Fair-weather friends are worthless'",
+        "url": "https://finance.yahoo.com/markets/article/musk-on-support-for-jensen-huangs-return-to-nvidia-fair-weather-friends-are-worthless-212613771.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 16:26 ET",
+        "pub_ts": 1795469173.0
+      },
+      {
+        "title": "BlackRock (BLK) Anchors $44 Billion GPU Financing",
+        "url": "https://finance.yahoo.com/technology/ai/articles/blackrock-blk-anchors-44-billion-211407503.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 16:14 ET",
+        "pub_ts": 1795468447.0
+      },
+      {
         "title": "3 AI Stocks Billionaire Stanley Druckenmiller Has Been Quietly Buying",
         "url": "https://www.fool.com/investing/2026/11/23/3-ai-stocks-billionaire-stanley-druckenmiller-has-been-quietly-buying/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1774,20 +1788,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 15:12 ET",
         "pub_ts": 1795464721.0
-      },
-      {
-        "title": "Peter Schiff Pushes Back on Elon Musk's Interstellar Dreams, Says SpaceX Should Focus on ‘Economically Viable’ Orbital Compute, Lunar Base",
-        "url": "https://finance.yahoo.com/technology/ai/articles/peter-schiff-pushes-back-elon-193005710.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 14:30 ET",
-        "pub_ts": 1795462205.0
-      },
-      {
-        "title": "Warning for SpaceX: Europe’s “Move Away From Starlink Has Already Begun,” Says Anne Applebaum",
-        "url": "https://www.tikr.com/blog/warning-for-spacex-europes-move-away-from-starlink-has-already-begun-says-anne-applebaum?ref=yahoofinance&tlnk=yf-261123-537rf528&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 14:24 ET",
-        "pub_ts": 1795461843.0
       }
     ],
     "ASTS": [
@@ -2058,6 +2058,13 @@
         "pub_ts": 1795460389.0
       },
       {
+        "title": "The Coca-Cola Company Names David Elkins as Incoming Chief Financial Officer",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/coca-cola-company-names-david-213000723.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 16:30 ET",
+        "pub_ts": 1795469400.0
+      },
+      {
         "title": "If a Recession Hits in 2027, This Is the Dividend Stock I Want to Own",
         "url": "https://www.fool.com/investing/2026/11/23/if-recession-hits-2027-this-dividend-stock-i-want-to-own/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2077,13 +2084,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 10:17 ET",
         "pub_ts": 1795447020.0
-      },
-      {
-        "title": "Coca-Cola Stock Returned 40%. How Much Is Left?",
-        "url": "https://www.trefis.com/stock/ko/articles/627637/coca-cola-stock-returned-40-how-much-is-left/2026-11-23?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 08:53 ET",
-        "pub_ts": 1795442023.0
       }
     ],
     "FLY": [
@@ -2125,11 +2125,11 @@
     ],
     "INTC": [
       {
-        "title": "Jensen Huang back as Nvidia CEO after 12 days: Shares surge 30%",
-        "url": "https://finance.yahoo.com/video/jensen-huang-back-as-nvidia-ceo-after-12-days-shares-surge-30-161302539.html?.tsrc=rss",
+        "title": "Intel Corporation to Participate in Upcoming Investor Conferences",
+        "url": "https://finance.yahoo.com/technology/articles/intel-corporation-participate-upcoming-investor-213000154.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 11:13 ET",
-        "pub_ts": 1795450382.0
+        "time": "11-23 16:30 ET",
+        "pub_ts": 1795469400.0
       },
       {
         "title": "INTW 2X Intel ETF Jumps 26% in a Day: Should Investors Ride This Leveraged Intel Fund Back to $10?",
@@ -3276,28 +3276,28 @@
     "NBIS": 1795470376.7302735,
     "APLD": 1795470376.7302735,
     "VST": 1795470376.7302735,
-    "BE": 1795468899.2888107,
-    "CRDO": 1795468899.2888107,
-    "COHR": 1795468899.2888107,
+    "BE": 1795470484.3860042,
+    "CRDO": 1795470484.3860042,
+    "COHR": 1795470484.3860042,
     "MRVL": 1795469850.796352,
     "LITE": 1795469850.796352,
-    "AAOI": 1795468899.2888107,
-    "SPCX": 1795468899.2888107,
-    "ASTS": 1795468899.2888107,
+    "AAOI": 1795470484.3860042,
+    "SPCX": 1795470484.3860042,
+    "ASTS": 1795470484.3860042,
     "AXTI": 1795469850.796352,
-    "NASA": 1795468899.2888107,
-    "LUNR": 1795468899.2888107,
-    "TSLA": 1795468899.2888107,
-    "AXP": 1795468899.2888107,
-    "RKLB": 1795468899.2888107,
-    "KO": 1795468899.2888107,
-    "FLY": 1795468899.2888107,
-    "INTC": 1795468899.2888107,
-    "VRT": 1795468899.2888107,
-    "HPE": 1795468899.2888107,
-    "DELL": 1795468899.2888107,
-    "OKLO": 1795468899.2888107,
-    "CEG": 1795468899.2888107,
+    "NASA": 1795470484.3860042,
+    "LUNR": 1795470484.3860042,
+    "TSLA": 1795470484.3860042,
+    "AXP": 1795470484.3860042,
+    "RKLB": 1795470484.3860042,
+    "KO": 1795470484.3860042,
+    "FLY": 1795470484.3860042,
+    "INTC": 1795470484.3860042,
+    "VRT": 1795470484.3860042,
+    "HPE": 1795470484.3860042,
+    "DELL": 1795470484.3860042,
+    "OKLO": 1795470484.3860042,
+    "CEG": 1795470484.3860042,
     "FPS": 1795469016.8145602,
     "MU": 1795469850.796352,
     "SKHY": 1795469850.796352,
@@ -3320,7 +3320,7 @@
     "V": 1795470269.0301893,
     "CAT": 1795469016.8145602,
     "FN": 1795469850.796352,
-    "GLW": 1795468899.2888107,
+    "GLW": 1795470484.3860042,
     "ANT": 1795469016.8145602,
     "XAUUSD": 1795469016.8145602
   },
