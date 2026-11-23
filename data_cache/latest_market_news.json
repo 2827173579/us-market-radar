@@ -1,9 +1,23 @@
 {
-  "updated_at_ts": 1795474488.115,
-  "updated_at_et": "11-23 17:54 ET",
-  "updated_at_kst": "07:54 KST",
+  "updated_at_ts": 1795474591.23,
+  "updated_at_et": "11-23 17:56 ET",
+  "updated_at_kst": "07:56 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261124065557396800",
+      "title": "美联储威廉姆斯：在未来货币政策行动的步伐方面，不排除任何选项。如有必要，将在连续多次会议…",
+      "summary": "美联储威廉姆斯：在未来货币政策行动的步伐方面，不排除任何选项。如有必要，将在连续多次会议上加息。",
+      "keywords": [
+        "美联储",
+        "加息"
+      ],
+      "pub_ts": 1795474557.0,
+      "time_et": "11-23 17:55 ET",
+      "time_bj": "06:55 BJ",
+      "time_kst": "07:55 KST",
+      "time_display": "17:55 ET / 06:55 BJ"
+    },
     {
       "id": "20261124065000001800",
       "title": "【今日重点关注的财经数据与事件：2026年11月24日 周二】 ① 17:00 德国11…",
@@ -330,20 +344,6 @@
       "time_bj": "23:14 BJ",
       "time_kst": "00:14 KST",
       "time_display": "10:14 ET / 23:14 BJ"
-    },
-    {
-      "id": "20261123231113384800",
-      "title": "【特朗普称与英伟达董事会进行了直接沟通】 11月23日讯，美国总统特朗普：我一直在直接或…",
-      "summary": "【特朗普称与英伟达董事会进行了直接沟通】 11月23日讯，美国总统特朗普：我一直在直接或间接地与英伟达董事会沟通，此前直接与英伟达董事会进行了交谈，我认为英伟达董事会（的决定）是合理的。",
-      "keywords": [
-        "英伟达",
-        "特朗普"
-      ],
-      "pub_ts": 1795446673.0,
-      "time_et": "11-23 10:11 ET",
-      "time_bj": "23:11 BJ",
-      "time_kst": "00:11 KST",
-      "time_display": "10:11 ET / 23:11 BJ"
     }
   ],
   "ticker_news": {
@@ -2391,6 +2391,13 @@
         "pub_ts": 1795460389.0
       },
       {
+        "title": "Stock Market Today, Nov. 23: Micron Surges 19% as Nvidia CEO Change Calms AI Spending Fears",
+        "url": "https://www.fool.com/coverage/stock-market-today/2026/11/23/stock-market-today-nov-23-micron-surges-19-as-nvidia-ceo-change-calms-ai-spending-fears/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 17:20 ET",
+        "pub_ts": 1795472402.0
+      },
+      {
         "title": "Micron Stock Jumps 19%. Why the Rally Has Legs.",
         "url": "https://finance.yahoo.com/m/3f1f89c7-5433-3bc0-990f-eab9250e8983/micron-stock-jumps-19%25.-why.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2410,13 +2417,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 16:27 ET",
         "pub_ts": 1795469220.0
-      },
-      {
-        "title": "Jensen Huang’s Return Just Added About $500 Billion to Micron, Dell, TSMC and the AI Stocks That Depend on Nvidia",
-        "url": "https://247wallst.com/investing/2026/11/23/jensen-huangs-return-just-added-about-500-billion-to-micron-dell-tsmc-and-the-ai-stocks-that-depend-on-nvidia/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 15:13 ET",
-        "pub_ts": 1795464780.0
       }
     ],
     "SKHY": [
@@ -2828,6 +2828,13 @@
     ],
     "NKE": [
       {
+        "title": "Nike (NKE) Ascends But Remains Behind Market: Some Facts to Note",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/nike-nke-ascends-remains-behind-214502416.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 16:45 ET",
+        "pub_ts": 1795470302.0
+      },
+      {
         "title": "Foot Locker Is a Focus for Analysts When Dick’s Reports Q3 Results on Tuesday",
         "url": "https://wwd.com/footwear-news/shoe-industry-news/dicks-q3-report-wall-street-foot-locker-nike-jordan-brand-1239462436/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2854,16 +2861,16 @@
         "source": "Yahoo Finance",
         "time": "11-23 09:44 ET",
         "pub_ts": 1795445040.0
-      },
-      {
-        "title": "Is National Bank Wrong to Give Up on Nike? Wall Street Still Sees $37",
-        "url": "https://www.tikr.com/blog/national-bank-nike-downgrade-neutral-price-target?ref=yahoofinance&tlnk=yf-261123-9xmhxw2v&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 02:27 ET",
-        "pub_ts": 1795418855.0
       }
     ],
     "MCD": [
+      {
+        "title": "Colgate-Palmolive vs. McDonald's: Which Consumer Goods Stock Is a Better Buy for 2027?",
+        "url": "https://www.fool.com/coverage/better-buy/2026/11/23/colgate-palmolive-vs-mcdonalds-which-consumer-goods-stock-is-a-better-buy-for-2027/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 17:31 ET",
+        "pub_ts": 1795473062.0
+      },
       {
         "title": "McDonald’s and Burger King Items Come in ‘Lighter’ in Price vs. Portion Tests",
         "url": "https://firstformoney.com/mcdonalds-and-burger-king-items-come-in-lighter-in-price-vs-portion-tests/?.tsrc=rss",
@@ -2891,13 +2898,6 @@
         "source": "Yahoo Finance",
         "time": "11-22 23:05 ET",
         "pub_ts": 1795406700.0
-      },
-      {
-        "title": "lululemon athletica vs. McDonald's: Which Consumer Stock Is a Better Buy for 2027?",
-        "url": "https://www.fool.com/coverage/better-buy/2026/11/22/lululemon-athletica-vs-mcdonalds-which-consumer-stock-is-a-better-buy-for-2027/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-22 14:31 ET",
-        "pub_ts": 1795375914.0
       }
     ],
     "PEP": [
@@ -3246,10 +3246,10 @@
   "ticker_news_ts": {
     "KORU": 1795473427.636101,
     "SOXL": 1795473427.636101,
-    "SPY": 1795473009.3559082,
+    "SPY": 1795474591.2299871,
     "DIA": 1795473427.636101,
     "SOXX": 1795473427.636101,
-    "QQQ": 1795473009.3559082,
+    "QQQ": 1795474591.2299871,
     "SMH": 1795473427.636101,
     "IWM": 1795473427.636101,
     "IGV": 1795473427.636101,
@@ -3279,12 +3279,12 @@
     "BE": 1795473648.90606,
     "CRDO": 1795473648.90606,
     "COHR": 1795473648.90606,
-    "MRVL": 1795473009.3559082,
-    "LITE": 1795473009.3559082,
+    "MRVL": 1795474591.2299871,
+    "LITE": 1795474591.2299871,
     "AAOI": 1795473648.90606,
     "SPCX": 1795473648.90606,
     "ASTS": 1795473648.90606,
-    "AXTI": 1795473009.3559082,
+    "AXTI": 1795474591.2299871,
     "NASA": 1795473648.90606,
     "LUNR": 1795473648.90606,
     "TSLA": 1795473648.90606,
@@ -3299,27 +3299,27 @@
     "OKLO": 1795473648.90606,
     "CEG": 1795473648.90606,
     "FPS": 1795473761.5083556,
-    "MU": 1795473009.3559082,
-    "SKHY": 1795473009.3559082,
-    "WDC": 1795473009.3559082,
+    "MU": 1795474591.2299871,
+    "SKHY": 1795474591.2299871,
+    "WDC": 1795474591.2299871,
     "STX": 1795473761.5083556,
     "MSTR": 1795473761.5083556,
     "SNDK": 1795473761.5083556,
-    "BTC-USD": 1795473009.3559082,
+    "BTC-USD": 1795474591.2299871,
     "CRWD": 1795473761.5083556,
-    "ORCL": 1795473009.3559082,
-    "COIN": 1795473009.3559082,
-    "LLY": 1795473009.3559082,
-    "MRNA": 1795473009.3559082,
-    "NKE": 1795473009.3559082,
-    "MCD": 1795473009.3559082,
+    "ORCL": 1795474591.2299871,
+    "COIN": 1795474591.2299871,
+    "LLY": 1795474591.2299871,
+    "MRNA": 1795474591.2299871,
+    "NKE": 1795474591.2299871,
+    "MCD": 1795474591.2299871,
     "PEP": 1795473761.5083556,
     "XOM": 1795473427.636101,
     "JPM": 1795473427.636101,
     "WMT": 1795473761.5083556,
     "V": 1795473427.636101,
     "CAT": 1795473761.5083556,
-    "FN": 1795473009.3559082,
+    "FN": 1795474591.2299871,
     "GLW": 1795473648.90606,
     "ANT": 1795473761.5083556,
     "XAUUSD": 1795473761.5083556
@@ -3341,7 +3341,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (17:50 ET / 06:50 BJ) [原油]：【今日重点关注的财经数据与事件：2026年11月24日 周二】 ① 17:00 德国11月IFO商业景气指数 ② 19:00 英国11月CBI零售销售差值 ③ 19:30 小米公司举行Q3财",
+    "detail": "⚡ 最新核心快讯 (17:55 ET / 06:55 BJ) [美联储] [加息]：美联储威廉姆斯：在未来货币政策行动的步伐方面，不排除任何选项。如有必要，将在连续多次会议上加息。",
     "event_name": "",
     "minutes_left": 0,
     "opex_shield": {
