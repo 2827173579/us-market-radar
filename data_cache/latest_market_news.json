@@ -1,9 +1,26 @@
 {
-  "updated_at_ts": 1795446481.605,
-  "updated_at_et": "11-23 10:08 ET",
-  "updated_at_kst": "00:08 KST",
+  "updated_at_ts": 1795446589.528,
+  "updated_at_et": "11-23 10:09 ET",
+  "updated_at_kst": "00:09 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261123230820055800",
+      "title": "【英伟达创2003年以来最大盘中涨幅 带飞一众AI概念股】 11月23日讯，周一，在英伟…",
+      "summary": "【英伟达创2003年以来最大盘中涨幅 带飞一众AI概念股】 11月23日讯，周一，在英伟达(NVDA.O)宣布恢复黄仁勋的总裁兼首席执行官职务后，与人工智能相关的公司股价纷纷飙升。英伟达股价开盘即大涨33%，创下自2003年5月以来的最大盘中涨幅，带动标普500指数和纳斯达克100指数走高。这种上涨势头也惠及了其他芯片制造商，费城半导体指数飙升了14%；此外，其他与人工智能基础设施相关的股票——包括能源供应商和工业企业——也随之上扬。Bokeh Capital Partners首席投资官金·福雷斯特表示：“那件黑色夹克（黄仁勋的标志性衣着）又回来了。”她还表示：“这次上涨大部分是有依据的，但这并没有刻意回避已经暴露出来的各种问题。”投资者显然欢迎这一对消息。上周五，标普500指数跌入技术性回调区间，即较最近一次历史高点下跌10%或以上；以科技股为主的纳斯达克100指数也逼近熊市门槛。",
+      "keywords": [
+        "芯片",
+        "半导体",
+        "英伟达",
+        "纳斯达克",
+        "标普"
+      ],
+      "pub_ts": 1795446500.0,
+      "time_et": "11-23 10:08 ET",
+      "time_bj": "23:08 BJ",
+      "time_kst": "00:08 KST",
+      "time_display": "10:08 ET / 23:08 BJ"
+    },
     {
       "id": "20261123230656655800",
       "title": "据美国财经媒体Semafor：特朗普通过电话参加了英伟达董事会会议，并主张让黄仁勋回归。",
@@ -328,19 +345,6 @@
       "time_bj": "22:07 BJ",
       "time_kst": "23:07 KST",
       "time_display": "09:07 ET / 22:07 BJ"
-    },
-    {
-      "id": "20261123220625403800",
-      "title": "【英伟达董事会恢复黄仁勋的CEO职务】英伟达(NVDA.O)在周一发布的一则公告中表示，…",
-      "summary": "【英伟达董事会恢复黄仁勋的CEO职务】英伟达(NVDA.O)在周一发布的一则公告中表示，公司董事会已恢复黄仁勋的首席执行官、总裁及董事会成员职务。公司在投资者关系网站上发布的消息称，在与黄仁勋进行了一系列讨论和会晤后，董事会对他的坦诚态度及其领导英伟达的能力感到满意。董事会还表示，在做出这一决定时，曾听取了“美国政府高层”的意见。",
-      "keywords": [
-        "英伟达"
-      ],
-      "pub_ts": 1795442785.0,
-      "time_et": "11-23 09:06 ET",
-      "time_bj": "22:06 BJ",
-      "time_kst": "23:06 KST",
-      "time_display": "09:06 ET / 22:06 BJ"
     }
   ],
   "ticker_news": {
@@ -901,39 +905,39 @@
     ],
     "NVDA": [
       {
-        "title": "Nvidia live updates: Jensen Huang reinstated as CEO",
-        "url": "https://finance.yahoo.com/markets/stocks/live/nvidia-live-updates-jensen-huang-reinstated-as-ceo-142447561.html?.tsrc=rss",
+        "title": "Jensen Huang is back — so are the national security questions",
+        "url": "https://finance.yahoo.com/video/jensen-huang-is-back--so-are-the-national-security-questions-145023153.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 09:24 ET",
-        "pub_ts": 1795443887.0
+        "time": "11-23 09:50 ET",
+        "pub_ts": 1795445423.0
       },
       {
-        "title": "Jensen Huang's return as Nvidia CEO will likely result in a flurry of lawsuits",
-        "url": "https://finance.yahoo.com/video/jensen-huangs-return-as-nvidia-ceo-will-likely-result-in-a-flurry-of-lawsuits-143725758.html?.tsrc=rss",
+        "title": "Nvidia shares jump 30% at the open as Jensen Huang returns as CEO",
+        "url": "https://www.euronews.com/2026/11/23/nvidia-reinstates-jensen-huang-as-ceo-11-days-after-he-resigned?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 09:37 ET",
-        "pub_ts": 1795444645.0
+        "time": "11-23 10:04 ET",
+        "pub_ts": 1795446260.0
       },
       {
-        "title": "Jensen Huang is back as Nvidia CEO after 12 days — Steve Jobs needed 12 years, Sam Altman less than a week",
-        "url": "https://finance.yahoo.com/markets/article/jensen-huang-is-back-as-nvidia-ceo-after-12-days--steve-jobs-needed-12-years-sam-altman-less-than-a-week-143608266.html?.tsrc=rss",
+        "title": "Nasdaq Soars 6%, Dow Jumps 1,200 Points as Nvidia's CEO Comeback Sends Shares Skyrocketing",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/nasdaq-soars-6-dow-jumps-150404656.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 09:36 ET",
-        "pub_ts": 1795444568.0
+        "time": "11-23 10:04 ET",
+        "pub_ts": 1795446244.0
       },
       {
-        "title": "Trump celebrates Jensen Huang's return after the White House amped up its push for reinstatement",
-        "url": "https://finance.yahoo.com/markets/article/trump-celebrates-jensen-huangs-return-after-the-white-house-amped-up-its-push-for-reinstatement-143505812.html?.tsrc=rss",
+        "title": "Nvidia reinstates Jensen Huang as CEO",
+        "url": "https://www.cbsnews.com/news/nvidia-reinstates-jensen-huang-ceo/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 09:35 ET",
-        "pub_ts": 1795444505.0
+        "time": "11-23 10:01 ET",
+        "pub_ts": 1795446073.0
       },
       {
-        "title": "5 things to consider as Nvidia restores Jensen Huang as the company's leader",
-        "url": "https://finance.yahoo.com/markets/stocks/article/5-things-to-consider-as-nvidia-restores-jensen-huang-as-the-companys-leader-142904538.html?.tsrc=rss",
+        "title": "Arm Soars 13% as CEO Haas Stays Through 2033, Says He’s “Never Been More Confident”",
+        "url": "https://www.tikr.com/blog/arm-soars-13-as-ceo-haas-stays-through-2033-says-hes-never-been-more-confident?ref=yahoofinance&tlnk=yf-261123-7jv69hxj&.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 09:29 ET",
-        "pub_ts": 1795444144.0
+        "time": "11-23 09:55 ET",
+        "pub_ts": 1795445730.0
       }
     ],
     "AMD": [
@@ -966,11 +970,11 @@
         "pub_ts": 1795432697.0
       },
       {
-        "title": "What Proshares Trust (TQQQ) Bought: Apple Leads on Nov. 19",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/proshares-trust-tqqq-bought-apple-110504306.html?.tsrc=rss",
+        "title": "Stock Market Today: Dow, S&P 500, and Nasdaq Surge as Nvidia Leads a Major AI Rebound",
+        "url": "https://247wallst.com/investing/2026/11/23/stock-market-today-dow-sp-500-and-nasdaq-surge-as-nvidia-leads-a-major-ai-rebound/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 06:05 ET",
-        "pub_ts": 1795431904.0
+        "time": "11-23 09:15 ET",
+        "pub_ts": 1795443317.0
       }
     ],
     "ASML": [
@@ -1086,11 +1090,25 @@
     ],
     "AMAT": [
       {
+        "title": "What Triggered The Fall In Applied Materials Stock?",
+        "url": "https://www.trefis.com/stock/amat/articles/627792/what-triggered-the-fall-in-applied-materials-stock/2026-11-23?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 09:45 ET",
+        "pub_ts": 1795445118.0
+      },
+      {
         "title": "Applied Materials (AMAT) Stock Looks Fully Priced As Its 109% Run Continues",
         "url": "https://finance.yahoo.com/markets/stocks/articles/applied-materials-amat-stock-looks-140913651.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-23 09:09 ET",
         "pub_ts": 1795442953.0
+      },
+      {
+        "title": "AMAT vs. FORM: Which Stock Has the Edge as HBM Demand Grows?",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/amat-vs-form-stock-edge-134500354.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 08:45 ET",
+        "pub_ts": 1795441500.0
       },
       {
         "title": "Applied Materials vs. Nvidia: Which Tech Stock Is a Better Buy for 2027?",
@@ -1105,20 +1123,6 @@
         "source": "Yahoo Finance",
         "time": "11-21 05:41 ET",
         "pub_ts": 1795257687.0
-      },
-      {
-        "title": "AMAT's AGS Gains From Growing Installed Base: What's Ahead?",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/amats-ags-gains-growing-installed-150200974.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 10:02 ET",
-        "pub_ts": 1795186920.0
-      },
-      {
-        "title": "A $3 Billion Fund Is Betting Big on Applied Materials",
-        "url": "https://www.tikr.com/blog/abrams-bison-investments-applied-materials-amat-stock?ref=yahoofinance&tlnk=yf-261120-fqw6rgjj&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 09:04 ET",
-        "pub_ts": 1795183444.0
       }
     ],
     "META": [
@@ -1128,6 +1132,13 @@
         "source": "Yahoo Finance",
         "time": "11-23 06:00 ET",
         "pub_ts": 1795431600.0
+      },
+      {
+        "title": "Holiday Shopping Scams Hiding in Plain Sight: A Cyber Threat Expert's Guide to Spotting Them",
+        "url": "https://finance.yahoo.com/technology/ai/articles/holiday-shopping-scams-hiding-plain-145600828.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 09:56 ET",
+        "pub_ts": 1795445760.0
       },
       {
         "title": "DXL Expands Customer Reach Through Meta's AI Agent Muse with commercetools",
@@ -1144,13 +1155,6 @@
         "pub_ts": 1795431791.0
       },
       {
-        "title": "A 167-Year-Old Math Problem Just Became Meta's Case That Superintelligence Is Near",
-        "url": "https://beincrypto.com/superintelligence-inevitable-meta-ai-chief/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 01:43 ET",
-        "pub_ts": 1795416225.0
-      },
-      {
         "title": "Zacks Investment Ideas feature highlights: Anthropic, SpaceX and Meta Platforms",
         "url": "https://finance.yahoo.com/markets/stocks/articles/zacks-investment-ideas-feature-highlights-121100413.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1160,11 +1164,25 @@
     ],
     "GOOGL": [
       {
-        "title": "Stock Market Today: Tech Futures Surge After Market Sell-Off; Nvidia Soars 30% On Jensen Huang Return (Live Coverage)",
-        "url": "https://finance.yahoo.com/m/8751de70-467e-380a-82cb-f4ee42adc461/stock-market-today%3A-tech.html?.tsrc=rss",
+        "title": "Billionaire Seth Klarman Has 18% of His $5 Billion Stock Portfolio in Amazon",
+        "url": "https://247wallst.com/investing/2026/11/23/billionaire-seth-klarman-has-18-of-his-5-billion-stock-portfolio-in-amazon/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 09:06 ET",
-        "pub_ts": 1795442763.0
+        "time": "11-23 09:51 ET",
+        "pub_ts": 1795445512.0
+      },
+      {
+        "title": "Verizon Cut Its Buying In 2002. Can Nvidia's Buyers Stop Now?",
+        "url": "https://www.trefis.com/stock/nvda/articles/627418/verizon-cut-its-buying-in-2002-can-nvidia-s-buyers-stop-now/2026-11-23?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 09:34 ET",
+        "pub_ts": 1795444469.0
+      },
+      {
+        "title": "Can The Fed Rescue Nvidia Stock Before Christmas?",
+        "url": "https://www.trefis.com/stock/nvda/articles/627410/can-the-fed-rescue-nvidia-stock-before-christmas/2026-11-23?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 09:26 ET",
+        "pub_ts": 1795443979.0
       },
       {
         "title": "Apple Is Up 29% This Year and Already Above Wall Street’s Target. Our Model Sees $400+",
@@ -1179,20 +1197,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 09:00 ET",
         "pub_ts": 1795442403.0
-      },
-      {
-        "title": "Is The Fed Fighting The Wrong Inflation?",
-        "url": "https://www.trefis.com/stock/spy/articles/627411/is-the-fed-fighting-the-wrong-inflation/2026-11-23?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 08:47 ET",
-        "pub_ts": 1795441633.0
-      },
-      {
-        "title": "Not Good: Broadcom Loses $200 Billion as Chips Crash and Google Reportedly Cuts AI Chip Plans",
-        "url": "https://www.tikr.com/blog/not-good-broadcom-loses-200-billion-as-chips-crash-and-google-reportedly-cuts-ai-chip-plans?ref=yahoofinance&tlnk=yf-261123-ccmmcf34&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 08:25 ET",
-        "pub_ts": 1795440328.0
       }
     ],
     "MSFT": [
@@ -1218,11 +1222,11 @@
         "pub_ts": 1795436880.0
       },
       {
-        "title": "What Proshares Trust (TQQQ) Bought: Apple Leads on Nov. 19",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/proshares-trust-tqqq-bought-apple-110504306.html?.tsrc=rss",
+        "title": "Best Positioned Software Stocks for AI and Security Growth in 2027",
+        "url": "https://finance.yahoo.com/technology/ai/articles/best-positioned-software-stocks-ai-145847751.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 06:05 ET",
-        "pub_ts": 1795431904.0
+        "time": "11-23 09:58 ET",
+        "pub_ts": 1795445927.0
       },
       {
         "title": "Apple Is Up 29% This Year and Already Above Wall Street’s Target. Our Model Sees $400+",
@@ -1345,6 +1349,20 @@
     ],
     "AMZN": [
       {
+        "title": "Amazon agrees to buy Decart AI technology and team in reported $7.5 billion deal",
+        "url": "https://finance.yahoo.com/technology/ai/articles/amazon-agrees-buy-decart-ai-150027613.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 10:00 ET",
+        "pub_ts": 1795446027.0
+      },
+      {
+        "title": "Billionaire Seth Klarman Has 18% of His $5 Billion Stock Portfolio in Amazon",
+        "url": "https://247wallst.com/investing/2026/11/23/billionaire-seth-klarman-has-18-of-his-5-billion-stock-portfolio-in-amazon/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 09:51 ET",
+        "pub_ts": 1795445512.0
+      },
+      {
         "title": "Sector Update: Consumer Stocks Mixed Premarket Monday",
         "url": "https://finance.yahoo.com/markets/stocks/articles/sector-consumer-stocks-mixed-premarket-141547621.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1364,20 +1382,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 09:10 ET",
         "pub_ts": 1795443040.0
-      },
-      {
-        "title": "Walmart, Target, Anthropic, Amazon, Nvidia, Micron and Alphabet are part of Zacks Earnings Preview",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/walmart-target-anthropic-amazon-nvidia-120200850.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 07:02 ET",
-        "pub_ts": 1795435320.0
-      },
-      {
-        "title": "What iShares S&P 500 Value ETF (IVE) Bought: Apple Leads on Nov. 19",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/ishares-p-500-value-etf-110537209.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 06:05 ET",
-        "pub_ts": 1795431937.0
       }
     ],
     "CRWV": [
@@ -3010,6 +3014,13 @@
     ],
     "WMT": [
       {
+        "title": "Should You Buy Walmart Stock Now or Wait for a Dip?",
+        "url": "https://www.fool.com/investing/2026/11/23/should-you-buy-walmart-stock-now-or-wait-for-a-dip/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 09:42 ET",
+        "pub_ts": 1795444921.0
+      },
+      {
         "title": "Power Out, Jackery On: Surge in Home Backup Demand Meets Jackery’s Limited-Stock Black Friday Deals",
         "url": "https://finance.yahoo.com/energy/articles/power-jackery-surge-home-backup-140000336.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3036,13 +3047,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 06:03 ET",
         "pub_ts": 1795431832.0
-      },
-      {
-        "title": "38 ETFs Add to Walmart (WMT) Holdings on Nov. 19",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/38-etfs-add-walmart-wmt-110149174.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 06:01 ET",
-        "pub_ts": 1795431709.0
       }
     ],
     "V": [
@@ -3253,26 +3257,26 @@
     "TLT": 1795446481.6054995,
     "GLD": 1795446481.6054995,
     "SQQQ": 1795446481.6054995,
-    "TSM": 1795444936.1275585,
+    "TSM": 1795446589.527723,
     "VIXY": 1795446481.6054995,
     "SOXS": 1795446481.6054995,
-    "NVDA": 1795444936.1275585,
-    "AMD": 1795444936.1275585,
-    "ASML": 1795444936.1275585,
-    "QCOM": 1795444936.1275585,
-    "AVGO": 1795444936.1275585,
-    "AMAT": 1795444936.1275585,
-    "META": 1795444936.1275585,
-    "GOOGL": 1795444936.1275585,
-    "MSFT": 1795444936.1275585,
-    "AAPL": 1795444936.1275585,
-    "PLTR": 1795444936.1275585,
-    "NOW": 1795444936.1275585,
-    "AMZN": 1795444936.1275585,
-    "CRWV": 1795444936.1275585,
-    "NBIS": 1795444936.1275585,
+    "NVDA": 1795446589.527723,
+    "AMD": 1795446589.527723,
+    "ASML": 1795446589.527723,
+    "QCOM": 1795446589.527723,
+    "AVGO": 1795446589.527723,
+    "AMAT": 1795446589.527723,
+    "META": 1795446589.527723,
+    "GOOGL": 1795446589.527723,
+    "MSFT": 1795446589.527723,
+    "AAPL": 1795446589.527723,
+    "PLTR": 1795446589.527723,
+    "NOW": 1795446589.527723,
+    "AMZN": 1795446589.527723,
+    "CRWV": 1795446589.527723,
+    "NBIS": 1795446589.527723,
     "APLD": 1795445047.8874571,
-    "VST": 1795444936.1275585,
+    "VST": 1795446589.527723,
     "BE": 1795445047.8874571,
     "CRDO": 1795445047.8874571,
     "COHR": 1795445558.9467509,
@@ -3313,9 +3317,9 @@
     "PEP": 1795445047.8874571,
     "XOM": 1795446481.6054995,
     "JPM": 1795446481.6054995,
-    "WMT": 1795444936.1275585,
+    "WMT": 1795446589.527723,
     "V": 1795446481.6054995,
-    "CAT": 1795444936.1275585,
+    "CAT": 1795446589.527723,
     "FN": 1795446369.8707495,
     "GLW": 1795445047.8874571,
     "ANT": 1795445402.363778,
@@ -3338,7 +3342,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (10:06 ET / 23:06 BJ) [英伟达] [特朗普]：据美国财经媒体Semafor：特朗普通过电话参加了英伟达董事会会议，并主张让黄仁勋回归。",
+    "detail": "⚡ 最新核心快讯 (10:08 ET / 23:08 BJ) [芯片] [半导体] [英伟达]：【英伟达创2003年以来最大盘中涨幅 带飞一众AI概念股】 11月23日讯，周一，在英伟达(NVDA.O)宣布恢复黄仁勋的总裁兼首席执行官职务后，与人工智能相关的公司股价纷纷飙升。英伟达股价",
     "event_name": "",
     "minutes_left": 0,
     "opex_shield": {
