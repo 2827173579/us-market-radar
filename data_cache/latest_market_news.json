@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795443281.052,
-  "updated_at_et": "11-23 09:14 ET",
-  "updated_at_kst": "23:14 KST",
+  "updated_at_ts": 1795443389.042,
+  "updated_at_et": "11-23 09:16 ET",
+  "updated_at_kst": "23:16 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -44,6 +44,32 @@
       "time_bj": "22:10 BJ",
       "time_kst": "23:10 KST",
       "time_display": "09:10 ET / 22:10 BJ"
+    },
+    {
+      "id": "20261123220928520800",
+      "title": "美国总统特朗普：美国没有理由认为黄仁勋的回归会构成风险。",
+      "summary": "美国总统特朗普：美国没有理由认为黄仁勋的回归会构成风险。",
+      "keywords": [
+        "特朗普"
+      ],
+      "pub_ts": 1795442968.0,
+      "time_et": "11-23 09:09 ET",
+      "time_bj": "22:09 BJ",
+      "time_kst": "23:09 KST",
+      "time_display": "09:09 ET / 22:09 BJ"
+    },
+    {
+      "id": "20261123220907211800",
+      "title": "美国总统特朗普：黄仁勋是爱国者，是国家瑰宝。",
+      "summary": "美国总统特朗普：黄仁勋是爱国者，是国家瑰宝。",
+      "keywords": [
+        "特朗普"
+      ],
+      "pub_ts": 1795442947.0,
+      "time_et": "11-23 09:09 ET",
+      "time_bj": "22:09 BJ",
+      "time_kst": "23:09 KST",
+      "time_display": "09:09 ET / 22:09 BJ"
     },
     {
       "id": "20261123220851540800",
@@ -315,32 +341,6 @@
       "time_bj": "20:30 BJ",
       "time_kst": "21:30 KST",
       "time_display": "07:30 ET / 20:30 BJ"
-    },
-    {
-      "id": "20261123201417869800",
-      "title": "摩根大通：持续的供应过剩意味着，布伦特原油价格在2027年上半年可能处于70美元高位区间…",
-      "summary": "摩根大通：持续的供应过剩意味着，布伦特原油价格在2027年上半年可能处于70美元高位区间，下半年降至60美元高位区间，并在2028年回落至60美元中段。",
-      "keywords": [
-        "原油"
-      ],
-      "pub_ts": 1795436057.0,
-      "time_et": "11-23 07:14 ET",
-      "time_bj": "20:14 BJ",
-      "time_kst": "21:14 KST",
-      "time_display": "07:14 ET / 20:14 BJ"
-    },
-    {
-      "id": "20261123195913304800",
-      "title": "DeepTalk：华尔街老将在暴跌中疯狂扫货！美联储正亲手制造流动性危机？",
-      "summary": "黄金暴跌35%，白银腰斩再腰斩，所有人都在割肉跑路，一位深耕贵金属16年的老兵却逆势买入！一月后悔没卖的人有多少，十一月后悔没买的人就会有多少？点击查看…",
-      "keywords": [
-        "美联储"
-      ],
-      "pub_ts": 1795435153.0,
-      "time_et": "11-23 06:59 ET",
-      "time_bj": "19:59 BJ",
-      "time_kst": "20:59 KST",
-      "time_display": "06:59 ET / 19:59 BJ"
     }
   ],
   "ticker_news": {
@@ -790,6 +790,20 @@
     ],
     "TSM": [
       {
+        "title": "Tollbooths Like Taiwan Semiconductor Rarely Get This Cheap and With October Revenue Up 60%, I am Taking Advantage",
+        "url": "https://247wallst.com/investing/2026/11/23/tollbooths-like-taiwan-semiconductor-rarely-get-this-cheap-and-with-october-revenue-up-60-i-am-taking-advantage/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 08:45 ET",
+        "pub_ts": 1795441532.0
+      },
+      {
+        "title": "Is Trending Stock Taiwan Semiconductor Manufacturing Company Ltd. (TSM) a Buy Now?",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/trending-stock-taiwan-semiconductor-manufacturing-130006162.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 08:00 ET",
+        "pub_ts": 1795438806.0
+      },
+      {
         "title": "ASML Vs. Taiwan Semiconductor: Here’s Why You Choose One as Your AI-Anchor Now",
         "url": "https://247wallst.com/investing/2026/11/23/asml-vs-taiwan-semiconductor-heres-why-you-choose-one-as-your-ai-anchor-now/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -809,20 +823,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 06:37 ET",
         "pub_ts": 1795433845.0
-      },
-      {
-        "title": "AI Jitters Roil Asian Stock Markets",
-        "url": "https://finance.yahoo.com/markets/world-indices/articles/ai-jitters-roil-asian-stock-103847073.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 05:38 ET",
-        "pub_ts": 1795430327.0
-      },
-      {
-        "title": "Taiwan stocks suffer worst week since 1990 as AI rout drains emerging Asia",
-        "url": "http://www.intellinews.com/taiwan-stocks-suffer-worst-week-since-1990-as-ai-rout-drains-emerging-asia-487378/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-22 14:21 ET",
-        "pub_ts": 1795375273.0
       }
     ],
     "VIXY": [
@@ -901,48 +901,55 @@
     ],
     "NVDA": [
       {
-        "title": "Nvidia, Broadcom, and AMD roar higher as chip stocks rebound from worst week since 2001",
-        "url": "https://finance.yahoo.com/markets/article/nvidia-broadcom-and-amd-roar-higher-as-chips-rebound-from-worst-week-since-2001-133109931.html?.tsrc=rss",
+        "title": "Nvidia reinstates Jensen Huang as CEO, stock rockets",
+        "url": "https://finance.yahoo.com/technology/article/nvidia-reinstates-jensen-huang-as-ceo-stock-rockets-141145439.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 08:31 ET",
-        "pub_ts": 1795440669.0
+        "time": "11-23 09:09 ET",
+        "pub_ts": 1795442959.0
       },
       {
-        "title": "Stock Market Today: Tech Futures, Nvidia Surge After Market Sell-Off; CrowdStrike Plunges On Zscaler Deal (Live Coverage)",
-        "url": "https://finance.yahoo.com/m/8751de70-467e-380a-82cb-f4ee42adc461/stock-market-today%3A-tech.html?.tsrc=rss",
+        "title": "Nvidia board reinstates Jensen Huang as CEO in a unanimous vote",
+        "url": "https://finance.yahoo.com/video/nvidia-board-reinstates-jensen-huang-as-ceo-in-a-unanimous-vote-140758796.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 08:38 ET",
-        "pub_ts": 1795441131.0
+        "time": "11-23 09:07 ET",
+        "pub_ts": 1795442878.0
       },
       {
-        "title": "Hedge Fund Says the Stock Market Knows Your Weakest Moment — and Uses It Against You",
-        "url": "https://247wallst.com/investing/2026/11/23/hedge-fund-says-the-stock-market-knows-your-weakest-moment-and-uses-it-against-you/?.tsrc=rss",
+        "title": "NVIDIA Jumps 28% as Chip Stocks Rebound From Last Week’s AI Sell-Off; Intel Rallies 13%, AMD Gains 7%",
+        "url": "https://247wallst.com/investing/2026/11/23/nvidia-jumps-28-as-chip-stocks-rebound-from-last-weeks-ai-sell-off-intel-rallies-13-amd-gains-7/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 08:29 ET",
-        "pub_ts": 1795440574.0
+        "time": "11-23 09:13 ET",
+        "pub_ts": 1795443219.0
       },
       {
-        "title": "Cathie Wood Goes Bargain Hunting: 3 Stocks She Just Bought",
-        "url": "https://www.fool.com/investing/2026/11/23/cathie-wood-goes-bargain-hunting-3-stocks-she-just-bought/?.tsrc=rss",
+        "title": "Nvidia Reinstates Jensen Huang As CEO: ‘I Can’t Wait To Get Back To Work’",
+        "url": "https://stocktwits.com/news-articles/markets/equity/nvidia-reinstates-jensen-huang-as-ceo-i-can-t-wait-to-get-back-to-work/cNbp2iAR9je?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 08:29 ET",
-        "pub_ts": 1795440542.0
+        "time": "11-23 09:08 ET",
+        "pub_ts": 1795442908.0
       },
       {
-        "title": "The AI Boom Math, Updated: Where The Risk Really Sits",
-        "url": "https://www.trefis.com/stock/nvda/articles/627432/the-ai-boom-math-updated-where-the-risk-really-sits/2026-11-23?.tsrc=rss",
+        "title": "Nvidia Reinstates Jensen Huang as CEO Days After Board Ruled Out His Return",
+        "url": "https://decrypt.co/383797/nvidia-reinstates-jensen-huang-as-ceo-days-after-board-ruled-out-his-return?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 08:20 ET",
-        "pub_ts": 1795440058.0
+        "time": "11-23 09:07 ET",
+        "pub_ts": 1795442841.0
       }
     ],
     "AMD": [
       {
-        "title": "Nvidia, Broadcom, and AMD roar higher as chip stocks rebound from worst week since 2001",
+        "title": "Nvidia soars 25% as board reinstates Jensen Huang as CEO, chip stocks jump",
         "url": "https://finance.yahoo.com/markets/article/nvidia-broadcom-and-amd-roar-higher-as-chips-rebound-from-worst-week-since-2001-133109931.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-23 08:31 ET",
         "pub_ts": 1795440669.0
+      },
+      {
+        "title": "Advanced Micro Devices, Inc. (AMD) is Attracting Investor Attention: Here is What You Should Know",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/advanced-micro-devices-inc-amd-130005243.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 08:00 ET",
+        "pub_ts": 1795438805.0
       },
       {
         "title": "Premarket movers: Chip stocks lead AI rebound; CrowdStrike falls",
@@ -964,16 +971,16 @@
         "source": "Yahoo Finance",
         "time": "11-23 06:05 ET",
         "pub_ts": 1795431904.0
-      },
-      {
-        "title": "State Street Tech Select SPDR (XLK) Sells $71.4 Million More Apple on Nov. 19",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/state-street-tech-select-spdr-110447633.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 06:04 ET",
-        "pub_ts": 1795431887.0
       }
     ],
     "ASML": [
+      {
+        "title": "ASML reports transactions under its current share buyback program",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/asml-reports-transactions-under-current-134800406.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 08:48 ET",
+        "pub_ts": 1795441680.0
+      },
       {
         "title": "ASML Vs. Taiwan Semiconductor: Here’s Why You Choose One as Your AI-Anchor Now",
         "url": "https://247wallst.com/investing/2026/11/23/asml-vs-taiwan-semiconductor-heres-why-you-choose-one-as-your-ai-anchor-now/?.tsrc=rss",
@@ -1001,13 +1008,6 @@
         "source": "Yahoo Finance",
         "time": "11-21 09:41 ET",
         "pub_ts": 1795272062.0
-      },
-      {
-        "title": "European Stocks Close Sharply Lower in Friday Trading Amid Tech Selloff",
-        "url": "https://finance.yahoo.com/markets/world-indices/articles/european-stocks-close-sharply-lower-164711944.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 11:47 ET",
-        "pub_ts": 1795193231.0
       }
     ],
     "QCOM": [
@@ -1049,7 +1049,7 @@
     ],
     "AVGO": [
       {
-        "title": "Nvidia, Broadcom, and AMD roar higher as chip stocks rebound from worst week since 2001",
+        "title": "Nvidia soars 25% as board reinstates Jensen Huang as CEO, chip stocks jump",
         "url": "https://finance.yahoo.com/markets/article/nvidia-broadcom-and-amd-roar-higher-as-chips-rebound-from-worst-week-since-2001-133109931.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-23 08:31 ET",
@@ -1160,39 +1160,39 @@
     ],
     "GOOGL": [
       {
+        "title": "Stock Market Today: Tech Futures Surge After Market Sell-Off; Nvidia Soars 30% On Jensen Huang Return (Live Coverage)",
+        "url": "https://finance.yahoo.com/m/8751de70-467e-380a-82cb-f4ee42adc461/stock-market-today%3A-tech.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 09:06 ET",
+        "pub_ts": 1795442763.0
+      },
+      {
+        "title": "Apple Is Up 29% This Year and Already Above Wall Street’s Target. Our Model Sees $400+",
+        "url": "https://247wallst.com/investing/2026/11/23/apple-is-up-29-this-year-and-already-above-wall-streets-target-our-model-sees-400/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 09:04 ET",
+        "pub_ts": 1795442673.0
+      },
+      {
+        "title": "Oracle Or The Fed: What Really Moves Nvidia Stock?",
+        "url": "https://www.trefis.com/stock/nvda/articles/627412/oracle-or-the-fed-what-really-moves-nvidia-stock/2026-11-23?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 09:00 ET",
+        "pub_ts": 1795442403.0
+      },
+      {
+        "title": "Is The Fed Fighting The Wrong Inflation?",
+        "url": "https://www.trefis.com/stock/spy/articles/627411/is-the-fed-fighting-the-wrong-inflation/2026-11-23?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 08:47 ET",
+        "pub_ts": 1795441633.0
+      },
+      {
         "title": "Not Good: Broadcom Loses $200 Billion as Chips Crash and Google Reportedly Cuts AI Chip Plans",
         "url": "https://www.tikr.com/blog/not-good-broadcom-loses-200-billion-as-chips-crash-and-google-reportedly-cuts-ai-chip-plans?ref=yahoofinance&tlnk=yf-261123-ccmmcf34&.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-23 08:25 ET",
         "pub_ts": 1795440328.0
-      },
-      {
-        "title": "The AI Boom Math, Updated: Where The Risk Really Sits",
-        "url": "https://www.trefis.com/stock/nvda/articles/627432/the-ai-boom-math-updated-where-the-risk-really-sits/2026-11-23?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 08:20 ET",
-        "pub_ts": 1795440058.0
-      },
-      {
-        "title": "What's Wrong With Alphabet Stock?",
-        "url": "https://www.fool.com/investing/2026/11/23/what-s-wrong-with-alphabet-stock/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 08:06 ET",
-        "pub_ts": 1795439161.0
-      },
-      {
-        "title": "Can D-Wave Stock Outlast Its $143 Million Cash Burn?",
-        "url": "https://www.trefis.com/stock/qbts/articles/627677/can-d-wave-stock-outlast-its-143-million-cash-burn/2026-11-23?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 08:05 ET",
-        "pub_ts": 1795439150.0
-      },
-      {
-        "title": "Prediction: This Under-the-Radar AI Stock Could Have a Big 2030 Ahead",
-        "url": "https://247wallst.com/investing/2026/11/23/prediction-this-under-the-radar-ai-stock-could-have-a-big-2030-ahead-2/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 08:04 ET",
-        "pub_ts": 1795439093.0
       }
     ],
     "MSFT": [
@@ -1234,6 +1234,13 @@
     ],
     "AAPL": [
       {
+        "title": "Apple Is Up 29% This Year and Already Above Wall Street’s Target. Our Model Sees $400+",
+        "url": "https://247wallst.com/investing/2026/11/23/apple-is-up-29-this-year-and-already-above-wall-streets-target-our-model-sees-400/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 09:04 ET",
+        "pub_ts": 1795442673.0
+      },
+      {
         "title": "Apple vs. Microsoft: Here's Where I'd Put $2,000 Right Now",
         "url": "https://www.fool.com/investing/2026/11/23/apple-vs-microsoft-here-s-where-i-d-put-usd2-000-right-now/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1260,13 +1267,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 06:45 ET",
         "pub_ts": 1795434358.0
-      },
-      {
-        "title": "What iShares S&P 500 Value ETF (IVE) Bought: Apple Leads on Nov. 19",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/ishares-p-500-value-etf-110537209.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 06:05 ET",
-        "pub_ts": 1795431937.0
       }
     ],
     "PLTR": [
@@ -1359,11 +1359,11 @@
         "pub_ts": 1795431937.0
       },
       {
-        "title": "ETFs Are Net Sellers of Amazon (AMZN) on Nov. 19",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-net-sellers-amazon-amzn-110244511.html?.tsrc=rss",
+        "title": "Power Out, Jackery On: Surge in Home Backup Demand Meets Jackery’s Limited-Stock Black Friday Deals",
+        "url": "https://finance.yahoo.com/energy/articles/power-jackery-surge-home-backup-140000336.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 06:02 ET",
-        "pub_ts": 1795431764.0
+        "time": "11-23 09:00 ET",
+        "pub_ts": 1795442400.0
       },
       {
         "title": "What ARK Blockchain & Fintech (ARKF) Bought: Block Leads on Nov. 19",
@@ -1381,6 +1381,13 @@
       }
     ],
     "CRWV": [
+      {
+        "title": "Nebius Rallies 9% Despite New U.S. Curbs Threatening Neocloud Business in Southeast Asia; IREN Jumps 8%, CoreWeave Climbs 7%",
+        "url": "https://247wallst.com/investing/2026/11/23/nebius-rallies-9-despite-new-u-s-curbs-threatening-neocloud-business-in-southeast-asia-iren-jumps-8-coreweave-climbs-7/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 09:11 ET",
+        "pub_ts": 1795443083.0
+      },
       {
         "title": "Gavin Baker Says “Consolidation Is Probably Coming” for Neoclouds That Can’t Get Prepayments. Here’s Who Can",
         "url": "https://www.tikr.com/blog/gavin-baker-says-consolidation-is-probably-coming-for-neoclouds-that-cant-get-prepayments-heres-who-can?ref=yahoofinance&tlnk=yf-261123-wj6664v4&.tsrc=rss",
@@ -1408,16 +1415,16 @@
         "source": "Yahoo Finance",
         "time": "11-23 04:11 ET",
         "pub_ts": 1795425116.0
-      },
-      {
-        "title": "Jim Chanos: CoreWeave Still Needs “$4 of Capital for Every $1 of Revenue.” That Undercuts the GPU Rental Boom",
-        "url": "https://www.tikr.com/blog/jim-chanos-coreweave-still-needs-4-of-capital-for-every-1-of-revenue-that-undercuts-the-gpu-rental-boom?ref=yahoofinance&tlnk=yf-261123-w46j85pw&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 02:23 ET",
-        "pub_ts": 1795418634.0
       }
     ],
     "NBIS": [
+      {
+        "title": "Nebius Rallies 9% Despite New U.S. Curbs Threatening Neocloud Business in Southeast Asia; IREN Jumps 8%, CoreWeave Climbs 7%",
+        "url": "https://247wallst.com/investing/2026/11/23/nebius-rallies-9-despite-new-u-s-curbs-threatening-neocloud-business-in-southeast-asia-iren-jumps-8-coreweave-climbs-7/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 09:11 ET",
+        "pub_ts": 1795443083.0
+      },
       {
         "title": "CoreWeave vs. Nebius: Which AI Cloud Stock Offers Better Upside?",
         "url": "https://finance.yahoo.com/technology/ai/articles/coreweave-vs-nebius-ai-cloud-122300018.html?.tsrc=rss",
@@ -1445,13 +1452,6 @@
         "source": "Yahoo Finance",
         "time": "11-21 13:57 ET",
         "pub_ts": 1795287422.0
-      },
-      {
-        "title": "Is Nebius Group N.V. (NBIS) Still Overvalued?",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/nebius-group-n-v-nbis-145215381.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-21 09:52 ET",
-        "pub_ts": 1795272735.0
       }
     ],
     "APLD": [
@@ -3010,6 +3010,13 @@
     ],
     "WMT": [
       {
+        "title": "Power Out, Jackery On: Surge in Home Backup Demand Meets Jackery’s Limited-Stock Black Friday Deals",
+        "url": "https://finance.yahoo.com/energy/articles/power-jackery-surge-home-backup-140000336.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 09:00 ET",
+        "pub_ts": 1795442400.0
+      },
+      {
         "title": "Walmart, Target, Anthropic, Amazon, Nvidia, Micron and Alphabet are part of Zacks Earnings Preview",
         "url": "https://finance.yahoo.com/markets/stocks/articles/walmart-target-anthropic-amazon-nvidia-120200850.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3036,13 +3043,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 06:01 ET",
         "pub_ts": 1795431709.0
-      },
-      {
-        "title": "Walmart raises fiscal 2027 outlook again after Q3 growth",
-        "url": "https://www.retail-insight-network.com/news/walmart-raises-fiscal-2027-outlook/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 04:14 ET",
-        "pub_ts": 1795425298.0
       }
     ],
     "V": [
@@ -3253,26 +3253,26 @@
     "TLT": 1795443281.0524106,
     "GLD": 1795443281.0524106,
     "SQQQ": 1795443281.0524106,
-    "TSM": 1795441808.4863145,
+    "TSM": 1795443389.0420787,
     "VIXY": 1795443281.0524106,
-    "SOXS": 1795441808.4863145,
-    "NVDA": 1795441808.4863145,
-    "AMD": 1795441808.4863145,
-    "ASML": 1795441808.4863145,
-    "QCOM": 1795441808.4863145,
-    "AVGO": 1795441808.4863145,
-    "AMAT": 1795441808.4863145,
-    "META": 1795441808.4863145,
-    "GOOGL": 1795441808.4863145,
-    "MSFT": 1795441808.4863145,
-    "AAPL": 1795441808.4863145,
-    "PLTR": 1795441808.4863145,
-    "NOW": 1795441808.4863145,
-    "AMZN": 1795441808.4863145,
-    "CRWV": 1795441808.4863145,
-    "NBIS": 1795441808.4863145,
+    "SOXS": 1795443389.0420787,
+    "NVDA": 1795443389.0420787,
+    "AMD": 1795443389.0420787,
+    "ASML": 1795443389.0420787,
+    "QCOM": 1795443389.0420787,
+    "AVGO": 1795443389.0420787,
+    "AMAT": 1795443389.0420787,
+    "META": 1795443389.0420787,
+    "GOOGL": 1795443389.0420787,
+    "MSFT": 1795443389.0420787,
+    "AAPL": 1795443389.0420787,
+    "PLTR": 1795443389.0420787,
+    "NOW": 1795443389.0420787,
+    "AMZN": 1795443389.0420787,
+    "CRWV": 1795443389.0420787,
+    "NBIS": 1795443389.0420787,
     "APLD": 1795441923.7480617,
-    "VST": 1795441808.4863145,
+    "VST": 1795443389.0420787,
     "BE": 1795441923.7480617,
     "CRDO": 1795441923.7480617,
     "COHR": 1795442397.3644836,
@@ -3313,9 +3313,9 @@
     "PEP": 1795441923.7480617,
     "XOM": 1795443281.0524106,
     "JPM": 1795443281.0524106,
-    "WMT": 1795441808.4863145,
+    "WMT": 1795443389.0420787,
     "V": 1795443281.0524106,
-    "CAT": 1795441808.4863145,
+    "CAT": 1795443389.0420787,
     "FN": 1795443164.389468,
     "GLW": 1795441923.7480617,
     "ANT": 1795442255.8019989,
