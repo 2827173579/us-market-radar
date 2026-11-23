@@ -1,9 +1,22 @@
 {
-  "updated_at_ts": 1795446804.245,
-  "updated_at_et": "11-23 10:13 ET",
-  "updated_at_kst": "00:13 KST",
+  "updated_at_ts": 1795446909.059,
+  "updated_at_et": "11-23 10:15 ET",
+  "updated_at_kst": "00:15 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261123231446490800",
+      "title": "纳斯达克100指数涨幅扩大至7%。",
+      "summary": "纳斯达克100指数涨幅扩大至7%。",
+      "keywords": [
+        "纳斯达克"
+      ],
+      "pub_ts": 1795446886.0,
+      "time_et": "11-23 10:14 ET",
+      "time_bj": "23:14 BJ",
+      "time_kst": "00:14 KST",
+      "time_display": "10:14 ET / 23:14 BJ"
+    },
     {
       "id": "20261123231113384800",
       "title": "【特朗普称与英伟达董事会进行了直接沟通】 11月23日讯，美国总统特朗普：我一直在直接或…",
@@ -17,6 +30,19 @@
       "time_bj": "23:11 BJ",
       "time_kst": "00:11 KST",
       "time_display": "10:11 ET / 23:11 BJ"
+    },
+    {
+      "id": "20261123231038345800",
+      "title": "美国总统特朗普：已对黄仁勋进行了“非常彻底的调查”，最大的威胁将是失去黄仁勋的智慧。",
+      "summary": "美国总统特朗普：已对黄仁勋进行了“非常彻底的调查”，最大的威胁将是失去黄仁勋的智慧。",
+      "keywords": [
+        "特朗普"
+      ],
+      "pub_ts": 1795446638.0,
+      "time_et": "11-23 10:10 ET",
+      "time_bj": "23:10 BJ",
+      "time_kst": "00:10 KST",
+      "time_display": "10:10 ET / 23:10 BJ"
     },
     {
       "id": "20261123230820055800",
@@ -317,34 +343,6 @@
       "time_bj": "22:08 BJ",
       "time_kst": "23:08 KST",
       "time_display": "09:08 ET / 22:08 BJ"
-    },
-    {
-      "id": "20261123220802846800",
-      "title": "美国总统特朗普：英伟达董事会已作出正确决定。",
-      "summary": "美国总统特朗普：英伟达董事会已作出正确决定。",
-      "keywords": [
-        "英伟达",
-        "特朗普"
-      ],
-      "pub_ts": 1795442882.0,
-      "time_et": "11-23 09:08 ET",
-      "time_bj": "22:08 BJ",
-      "time_kst": "23:08 KST",
-      "time_display": "09:08 ET / 22:08 BJ"
-    },
-    {
-      "id": "20261123220723728800",
-      "title": "受英伟达相关消息影响，交易员加大对欧洲央行和英国央行加息的押注。",
-      "summary": "受英伟达相关消息影响，交易员加大对欧洲央行和英国央行加息的押注。",
-      "keywords": [
-        "加息",
-        "英伟达"
-      ],
-      "pub_ts": 1795442843.0,
-      "time_et": "11-23 09:07 ET",
-      "time_bj": "22:07 BJ",
-      "time_kst": "23:07 KST",
-      "time_display": "09:07 ET / 22:07 BJ"
     }
   ],
   "ticker_news": {
@@ -1948,6 +1946,20 @@
         "pub_ts": 1795438835.0
       },
       {
+        "title": "Tesla FSD V15 Rolling Out, Goes 'Wide' Next Month. Elon Musk Says It's 'Something Special.'",
+        "url": "https://finance.yahoo.com/m/b31af40e-5144-3249-9033-82521507fe84/tesla-fsd-v15-rolling-out%2C.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 10:03 ET",
+        "pub_ts": 1795446233.0
+      },
+      {
+        "title": "WattEV’s Port of Oakland charging depot and new electric trucks bring cost parity with diesel to fleets",
+        "url": "https://finance.yahoo.com/energy/articles/wattev-port-oakland-charging-depot-150000774.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 10:00 ET",
+        "pub_ts": 1795446000.0
+      },
+      {
         "title": "Tesla Bulls Banking on SpaceX “Don’t Get the Dilution Math,” Says Gary Black. Tesla Trades at 3.4x SpaceX’s 2027 Multiple",
         "url": "https://www.tikr.com/blog/tesla-bulls-banking-on-spacex-dont-get-the-dilution-math-says-gary-black-tesla-trades-at-3-4x-spacexs-2027-multiple?ref=yahoofinance&tlnk=yf-261123-mfw83vf8&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1960,23 +1972,16 @@
         "source": "Yahoo Finance",
         "time": "11-23 08:08 ET",
         "pub_ts": 1795439280.0
-      },
-      {
-        "title": "Tesla FSD V15 Rolling Out, Goes 'Wide' Next Month. Elon Musk Says It's 'Something Special.'",
-        "url": "https://finance.yahoo.com/m/b31af40e-5144-3249-9033-82521507fe84/tesla-fsd-v15-rolling-out%2C.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 07:58 ET",
-        "pub_ts": 1795438732.0
-      },
-      {
-        "title": "Chuck Shehadi named Unspun CEO as OneWeave enters global rollout",
-        "url": "https://www.just-style.com/news/unspun-ceo-chuck-shehadi/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 07:41 ET",
-        "pub_ts": 1795437680.0
       }
     ],
     "AXP": [
+      {
+        "title": "Berkshire Hathaway Owns 22.6% of American Express. Is the Stock a Buy, Sell, or Hold After a 17% Drop in 2026?",
+        "url": "https://www.fool.com/investing/2026/11/23/berkshire-hathaway-owns-22-6-of-american-express-is-the-stock-a-buy-sell-or-hold-after-a-17-drop-in-2026/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 10:05 ET",
+        "pub_ts": 1795446302.0
+      },
       {
         "title": "Energy Fuels Targets One Million Pounds of Uranium Production at White Mesa Mill as US Mining Projects Advance",
         "url": "https://investorshub.advfn.com/market-news/article/40520/energy-fuels-targets-one-million-pounds-of-uranium-production-at-white-mesa-mill-as-us-mining-projects-advance?.tsrc=rss",
@@ -2004,13 +2009,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 10:11 ET",
         "pub_ts": 1795187510.0
-      },
-      {
-        "title": "Amex Gold Mining Advances Ramp Development, Commences Power Line Construction and Completes the Mechanical Garage and Ventilation Installations at Perron Gold Project",
-        "url": "https://finance.yahoo.com/markets/commodities/articles/amex-gold-mining-advances-ramp-120000565.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 07:00 ET",
-        "pub_ts": 1795089600.0
       }
     ],
     "RKLB": [
@@ -2163,6 +2161,13 @@
     ],
     "VRT": [
       {
+        "title": "U.S. Data Center Cooling Market Size, Share, Trends and Forecast (2026-2031) Featuring Profiles of Carrier, Delta Electronics, Johnson Controls, Schneider Electric, STULZ, Vertiv and More",
+        "url": "https://finance.yahoo.com/technology/articles/u-data-center-cooling-market-145700590.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 09:57 ET",
+        "pub_ts": 1795445820.0
+      },
+      {
         "title": "Vertiv Says Its Nvidia-Backed Designs Can Add 30% More AI Output in the First Year. Here's the Catch.",
         "url": "https://www.fool.com/investing/2026/11/23/vertiv-says-its-nvidia-backed-designs-can-add-30-m/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2189,13 +2194,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 21:48 ET",
         "pub_ts": 1795229281.0
-      },
-      {
-        "title": "Vertiv Holdings Co (VRT) Deepens AI Data Center Liquid Cooling Push",
-        "url": "https://finance.yahoo.com/technology/ai/articles/vertiv-holdings-co-vrt-deepens-161049822.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 11:10 ET",
-        "pub_ts": 1795191049.0
       }
     ],
     "HPE": [
@@ -3206,6 +3204,20 @@
         "pub_ts": 1795443636.0
       },
       {
+        "title": "Anthropic Goes Public. Direxion Goes 2X, Long or Short.",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/anthropic-goes-public-direxion-goes-150600617.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 10:06 ET",
+        "pub_ts": 1795446360.0
+      },
+      {
+        "title": "Anthropic Stock Is Now Trading. Should You Buy ANT Today?",
+        "url": "https://www.fool.com/investing/2026/11/23/anthropic-stock-is-now-trading-should-you-buy-ant/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 09:50 ET",
+        "pub_ts": 1795445400.0
+      },
+      {
         "title": "Anthropic Shares Rebound More Than 4% After Selloff Threatens Record IPO Gains",
         "url": "https://investorshub.advfn.com/market-news/article/40538/anthropic-shares-rebound-more-than-4-after-selloff-threatens-record-ipo-gains?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3218,20 +3230,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 08:55 ET",
         "pub_ts": 1795442115.0
-      },
-      {
-        "title": "Anthropic's IPO set for blastoff in key test for AI boom",
-        "url": "https://www.cbsnews.com/news/anthropic-ipo-ai-boom-nasdaq-debut/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 08:45 ET",
-        "pub_ts": 1795441521.0
-      },
-      {
-        "title": "Anthropic shares jump in Nasdaq trading debut after record IPO",
-        "url": "https://www.cbsnews.com/news/anthropic-ipo-nasdaq-debut-claude-ai/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 08:45 ET",
-        "pub_ts": 1795441502.0
       }
     ],
     "XAUUSD": [
@@ -3288,17 +3286,17 @@
     "AXTI": 1795446369.8707495,
     "NASA": 1795446697.8156033,
     "LUNR": 1795446697.8156033,
-    "TSLA": 1795445402.363778,
-    "AXP": 1795445402.363778,
+    "TSLA": 1795446909.0592558,
+    "AXP": 1795446909.0592558,
     "RKLB": 1795446697.8156033,
     "KO": 1795446697.8156033,
     "FLY": 1795446697.8156033,
-    "INTC": 1795445402.363778,
-    "VRT": 1795445402.363778,
-    "HPE": 1795445402.363778,
-    "DELL": 1795445402.363778,
+    "INTC": 1795446909.0592558,
+    "VRT": 1795446909.0592558,
+    "HPE": 1795446909.0592558,
+    "DELL": 1795446909.0592558,
     "OKLO": 1795445558.9467509,
-    "CEG": 1795445402.363778,
+    "CEG": 1795446909.0592558,
     "FPS": 1795445558.9467509,
     "MU": 1795446369.8707495,
     "SKHY": 1795446369.8707495,
@@ -3322,7 +3320,7 @@
     "CAT": 1795446589.527723,
     "FN": 1795446369.8707495,
     "GLW": 1795446697.8156033,
-    "ANT": 1795445402.363778,
+    "ANT": 1795446909.0592558,
     "XAUUSD": 1795446481.6054995
   },
   "opex_shield": {
@@ -3342,7 +3340,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (10:11 ET / 23:11 BJ) [英伟达] [特朗普]：【特朗普称与英伟达董事会进行了直接沟通】 11月23日讯，美国总统特朗普：我一直在直接或间接地与英伟达董事会沟通，此前直接与英伟达董事会进行了交谈，我认为英伟达董事会（的决定）是合理的。",
+    "detail": "⚡ 最新核心快讯 (10:14 ET / 23:14 BJ) [纳斯达克]：纳斯达克100指数涨幅扩大至7%。",
     "event_name": "",
     "minutes_left": 0,
     "opex_shield": {
