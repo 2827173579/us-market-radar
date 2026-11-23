@@ -1,9 +1,23 @@
 {
-  "updated_at_ts": 1795440698.571,
-  "updated_at_et": "11-23 08:31 ET",
-  "updated_at_kst": "22:31 KST",
+  "updated_at_ts": 1795440829.637,
+  "updated_at_et": "11-23 08:33 ET",
+  "updated_at_kst": "22:33 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261123213142049800",
+      "title": "据PBS新闻：美国总统特朗普称，希望英伟达CEO黄仁勋很快回到英伟达。",
+      "summary": "据PBS新闻：美国总统特朗普称，希望英伟达CEO黄仁勋很快回到英伟达。",
+      "keywords": [
+        "英伟达",
+        "特朗普"
+      ],
+      "pub_ts": 1795440702.0,
+      "time_et": "11-23 08:31 ET",
+      "time_bj": "21:31 BJ",
+      "time_kst": "22:31 KST",
+      "time_display": "08:31 ET / 21:31 BJ"
+    },
     {
       "id": "20261123212143305800",
       "title": "SC原油主力合约日内下跌2.00%，现报571.30元/桶。",
@@ -334,19 +348,6 @@
       "time_bj": "15:15 BJ",
       "time_kst": "16:15 KST",
       "time_display": "02:15 ET / 15:15 BJ"
-    },
-    {
-      "id": "20261123151122426800",
-      "title": "标普500指数期货涨逾2%、纳指期货上涨2.8%、道指期货上涨1.5%。",
-      "summary": "标普500指数期货涨逾2%、纳指期货上涨2.8%、道指期货上涨1.5%。",
-      "keywords": [
-        "标普"
-      ],
-      "pub_ts": 1795417882.0,
-      "time_et": "11-23 02:11 ET",
-      "time_bj": "15:11 BJ",
-      "time_kst": "16:11 KST",
-      "time_display": "02:11 ET / 15:11 BJ"
     }
   ],
   "ticker_news": {
@@ -2535,6 +2536,20 @@
     ],
     "MSTR": [
       {
+        "title": "Strategy Buys $30M in Bitcoin, Moves $1B From USD Reserve to Cash Pot",
+        "url": "https://decrypt.co/383779/strategy-buys-30m-in-bitcoin-moves-1b-from-usd-reserve-to-cash-pot?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 08:25 ET",
+        "pub_ts": 1795440335.0
+      },
+      {
+        "title": "Bitcoin Crashed to $55,000 and MicroStrategy Bought Only 457 BTC. Why?",
+        "url": "https://beincrypto.com/bitcoin-crash-microstrategy-457-btc-strc/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 08:10 ET",
+        "pub_ts": 1795439459.0
+      },
+      {
         "title": "CrowdStrike, Zscaler, Anthropic, Sandisk, Strategy, Robinhood, and More Stocks That Explain Today’s Market",
         "url": "https://finance.yahoo.com/m/76a3103b-f3de-364f-8cd8-90e453a902d8/crowdstrike%2C-zscaler%2C.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2554,20 +2569,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 00:06 ET",
         "pub_ts": 1795410388.0
-      },
-      {
-        "title": "Forget Strategy: MARA Has More to Lose From Bitcoin’s Drop Below $60,000",
-        "url": "https://www.tikr.com/blog/forget-strategy-mara-has-more-to-lose-from-bitcoins-drop-below-60000?ref=yahoofinance&tlnk=yf-261123-72mv36h4&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-22 19:59 ET",
-        "pub_ts": 1795395542.0
-      },
-      {
-        "title": "MSCI Is Cutting Strategy and Metaplanet From Its Indexes. Here's What It Means for Bitcoin Treasury Company Stocks.",
-        "url": "https://www.fool.com/investing/2026/11/21/msci-is-cutting-strategy-and-metaplanet-from-its-indexes-here-s-what-it-means-for-bitcoin-treasury-company-stocks/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-21 14:37 ET",
-        "pub_ts": 1795289822.0
       }
     ],
     "SNDK": [
@@ -2653,32 +2654,32 @@
         "pub_ts": 1795432005.0
       },
       {
-        "title": "Premarket movers: Chip stocks lead AI rebound; CrowdStrike falls",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/premarket-movers-chip-stocks-lead-124424524.html?.tsrc=rss",
+        "title": "CrowdStrike's Zscaler Acquisition Could Broaden Security Platform, Says JPMorgan — Analysts Weigh Opportunities And Risks",
+        "url": "https://stocktwits.com/news-articles/markets/equity/crowd-strike-s-zscaler-acquisition-could-broaden-security-platform-says-jp-morgan-analysts-weigh-opportunities-and-risks/cNbpTQZR9jT?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 07:44 ET",
-        "pub_ts": 1795437864.0
+        "time": "11-23 08:27 ET",
+        "pub_ts": 1795440478.0
       },
       {
-        "title": "CrowdStrike Agrees To Buy Zscaler For $43.9 Billion. Shares Move In Opposite Directions.",
-        "url": "https://www.ibtimes.com/crowdstrike-acquire-zscaler-43-9-billion-deal-3810075?.tsrc=rss",
+        "title": "CrowdStrike Holdings (CRWD) Agreed $44 Billion All Stock Cybersecurity Deal",
+        "url": "https://finance.yahoo.com/technology/ai/articles/crowdstrike-holdings-crwd-agreed-44-131349393.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 07:09 ET",
-        "pub_ts": 1795435776.0
+        "time": "11-23 08:13 ET",
+        "pub_ts": 1795439629.0
       },
       {
-        "title": "CrowdStrike to Buy Zscaler in $44 Billion All-Stock Deal. Why They’re Better Off Together.",
-        "url": "https://finance.yahoo.com/m/c15198fc-46aa-317e-ad7d-cc5e670695f9/crowdstrike-to-buy-zscaler-in.html?.tsrc=rss",
+        "title": "Stock Market Today: Tech Futures, Nvidia Surge After Market Sell-Off; CrowdStrike Plunges On Zscaler Deal (Live Coverage)",
+        "url": "https://finance.yahoo.com/m/8751de70-467e-380a-82cb-f4ee42adc461/stock-market-today%3A-tech.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 07:04 ET",
-        "pub_ts": 1795435440.0
+        "time": "11-23 08:12 ET",
+        "pub_ts": 1795439569.0
       },
       {
-        "title": "CrowdStrike To Acquire Zscaler For $43.9B In All-Stock Deal: TD Cowen Sees Cybersecurity Consolidation Entering ‘More Material Phase’",
-        "url": "https://stocktwits.com/news-articles/markets/equity/crowdstrike-to-acquire-zscaler-for-43-9-b-in-all-stock-deal/cNbYCS4R9Sv?.tsrc=rss",
+        "title": "Crowdstrike to acquire Zscaler in a $44 billion deal that would create a cybersecurity giant",
+        "url": "https://finance.yahoo.com/technology/articles/crowdstrike-acquire-zscaler-44-billion-130500925.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 06:41 ET",
-        "pub_ts": 1795434093.0
+        "time": "11-23 08:05 ET",
+        "pub_ts": 1795439100.0
       }
     ],
     "ORCL": [
@@ -3281,7 +3282,7 @@
     "VST": 1795440255.7075698,
     "BE": 1795440378.2629635,
     "CRDO": 1795440378.2629635,
-    "COHR": 1795439284.177807,
+    "COHR": 1795440829.6374338,
     "MRVL": 1795440027.3147466,
     "LITE": 1795440027.3147466,
     "AAOI": 1795440378.2629635,
@@ -3299,17 +3300,17 @@
     "VRT": 1795440698.5710723,
     "HPE": 1795440698.5710723,
     "DELL": 1795440698.5710723,
-    "OKLO": 1795439284.177807,
+    "OKLO": 1795440829.6374338,
     "CEG": 1795440698.5710723,
-    "FPS": 1795439284.177807,
+    "FPS": 1795440829.6374338,
     "MU": 1795440027.3147466,
     "SKHY": 1795440027.3147466,
     "WDC": 1795440027.3147466,
-    "STX": 1795439284.177807,
-    "MSTR": 1795439284.177807,
-    "SNDK": 1795439284.177807,
+    "STX": 1795440829.6374338,
+    "MSTR": 1795440829.6374338,
+    "SNDK": 1795440829.6374338,
     "BTC-USD": 1795440027.3147466,
-    "CRWD": 1795439284.177807,
+    "CRWD": 1795440829.6374338,
     "ORCL": 1795440027.3147466,
     "COIN": 1795440027.3147466,
     "LLY": 1795440027.3147466,
@@ -3344,7 +3345,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (08:21 ET / 21:21 BJ) [原油]：SC原油主力合约日内下跌2.00%，现报571.30元/桶。",
+    "detail": "⚡ 最新核心快讯 (08:31 ET / 21:31 BJ) [英伟达] [特朗普]：据PBS新闻：美国总统特朗普称，希望英伟达CEO黄仁勋很快回到英伟达。",
     "event_name": "",
     "minutes_left": 0,
     "opex_shield": {
