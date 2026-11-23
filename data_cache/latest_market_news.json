@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795451287.608,
-  "updated_at_et": "11-23 11:28 ET",
-  "updated_at_kst": "01:28 KST",
+  "updated_at_ts": 1795451454.203,
+  "updated_at_et": "11-23 11:30 ET",
+  "updated_at_kst": "01:30 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -789,6 +789,13 @@
     ],
     "TSM": [
       {
+        "title": "TSMC Stock Faces China Fallout, but Wall Street Sees a Bigger Story",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/tsmc-stock-faces-china-fallout-161841570.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 11:18 ET",
+        "pub_ts": 1795450721.0
+      },
+      {
         "title": "Tollbooths Like Taiwan Semiconductor Rarely Get This Cheap and With October Revenue Up 60%, I am Taking Advantage",
         "url": "https://247wallst.com/investing/2026/11/23/tollbooths-like-taiwan-semiconductor-rarely-get-this-cheap-and-with-october-revenue-up-60-i-am-taking-advantage/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -815,13 +822,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 07:14 ET",
         "pub_ts": 1795436063.0
-      },
-      {
-        "title": "AI Chips Update - Global Semiconductor ETF Expands International Investment Horizons",
-        "url": "https://finance.yahoo.com/technology/ai/articles/ai-chips-global-semiconductor-etf-113725192.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 06:37 ET",
-        "pub_ts": 1795433845.0
       }
     ],
     "VIXY": [
@@ -944,18 +944,18 @@
         "pub_ts": 1795448277.0
       },
       {
-        "title": "Nvidia soars 30% as board reinstates Jensen Huang as CEO, chip stocks jump",
-        "url": "https://finance.yahoo.com/markets/article/nvidia-soars-25-as-board-reinstates-jensen-huang-as-ceo-chip-stocks-jump-142353537.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 08:31 ET",
-        "pub_ts": 1795440669.0
-      },
-      {
         "title": "Taiwan Semiconductor Rallies 17% as Jensen Huang’s Return to NVIDIA Lifts Chip Stocks; Intel Surges 15%, AMD Jumps 8%",
         "url": "https://247wallst.com/investing/2026/11/23/taiwan-semiconductor-rallies-17-as-jensen-huangs-return-to-nvidia-lifts-chip-stocks-intel-surges-15-amd-jumps-8/?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-23 10:55 ET",
         "pub_ts": 1795449328.0
+      },
+      {
+        "title": "AMD Says It's Never Felt Fundamentally Better Despite Share Slide",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/amd-says-never-felt-fundamentally-154304845.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 10:43 ET",
+        "pub_ts": 1795448584.0
       },
       {
         "title": "What Oppenheimer and William Blair See in Advanced Micro Devices (AMD)",
@@ -1055,6 +1055,13 @@
         "pub_ts": 1795440669.0
       },
       {
+        "title": "Analog Devices Expected to Deliver a Solid Quarter, Ambarella to Face Memory Headwinds, Morgan Stanley Says",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/analog-devices-expected-deliver-solid-160155168.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 11:01 ET",
+        "pub_ts": 1795449715.0
+      },
+      {
         "title": "Metal-Oxide-Semiconductor (MOS) Microprocessor Market Global Report 2026 | Capitalize on AI, Chiplets and RISC-V as NVIDIA, Intel, Broadcom and Texas Instruments Drive 10.1% CAGR",
         "url": "https://finance.yahoo.com/technology/articles/metal-oxide-semiconductor-mos-microprocessor-152800441.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1074,13 +1081,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 08:25 ET",
         "pub_ts": 1795440328.0
-      },
-      {
-        "title": "State Street Tech Select SPDR (XLK) Sells $71.4 Million More Apple on Nov. 19",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/state-street-tech-select-spdr-110447633.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 06:04 ET",
-        "pub_ts": 1795431887.0
       }
     ],
     "AMAT": [
@@ -1143,11 +1143,11 @@
         "pub_ts": 1795445760.0
       },
       {
-        "title": "DXL Expands Customer Reach Through Meta's AI Agent Muse with commercetools",
-        "url": "https://finance.yahoo.com/technology/ai/articles/dxl-expands-customer-reach-metas-120100773.html?.tsrc=rss",
+        "title": "Intel Leads A List Of Stocks Winning Over New Hedge Fund Fans",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/intel-leads-list-stocks-winning-154214710.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 07:01 ET",
-        "pub_ts": 1795435260.0
+        "time": "11-23 10:42 ET",
+        "pub_ts": 1795448534.0
       },
       {
         "title": "Zacks Investment Ideas feature highlights: Anthropic, SpaceX and Meta Platforms",
@@ -1159,42 +1159,56 @@
     ],
     "GOOGL": [
       {
+        "title": "Augmented Reality in Healthcare - Global Market Outlook Report (2026-2034) by Product, Technology, End User, Country, and Company",
+        "url": "https://finance.yahoo.com/healthcare/articles/augmented-reality-healthcare-global-market-162400053.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 11:24 ET",
+        "pub_ts": 1795451040.0
+      },
+      {
+        "title": "Nvidia and Anthropic Shares Rebound as AI Investors Return",
+        "url": "https://finance.yahoo.com/technology/ai/articles/nvidia-anthropic-shares-rebound-ai-161916502.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 11:19 ET",
+        "pub_ts": 1795450756.0
+      },
+      {
+        "title": "OpenAI CEO Sam Altman Gives a Surprising AI Prediction His Backing",
+        "url": "https://finance.yahoo.com/technology/ai/articles/openai-ceo-sam-altman-gives-161526520.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 11:15 ET",
+        "pub_ts": 1795450526.0
+      },
+      {
+        "title": "Jensen Huang Returns to NVIDA. Why Apple, Broadcom, and Anthropic Could Be Under Pressure",
+        "url": "https://247wallst.com/videos/jensen-huang-returns-to-nvida-why-apple-broadcom-and-anthropic-could-be-under-pressure/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 10:52 ET",
+        "pub_ts": 1795449162.0
+      },
+      {
         "title": "Nvidia's $115B neocloud exposure and what its backstops really cover",
         "url": "https://finance.yahoo.com/video/nvidias-115b-neocloud-exposure-and-what-its-backstops-really-cover-154907019.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-23 10:49 ET",
         "pub_ts": 1795448947.0
-      },
-      {
-        "title": "Jensen Huang back at Nvidia, stock soars; Anthropic slides",
-        "url": "https://finance.yahoo.com/video/jensen-huang-back-at-nvidia-stock-soars-anthropic-slides-154615662.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 10:46 ET",
-        "pub_ts": 1795448775.0
-      },
-      {
-        "title": "Stock Market Today: Dow, Nasdaq Surge As Jensen Huang Returns To Nvidia; Chip Plays Rocket (Live Coverage)",
-        "url": "https://finance.yahoo.com/m/8751de70-467e-380a-82cb-f4ee42adc461/stock-market-today%3A-dow%2C.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 10:36 ET",
-        "pub_ts": 1795448162.0
-      },
-      {
-        "title": "Is Broadcom Stock's Drop A Chance To Buy?",
-        "url": "https://www.trefis.com/stock/avgo/articles/627646/is-broadcom-stocks-drop-a-chance-to-buy/2026-11-23?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 10:24 ET",
-        "pub_ts": 1795447495.0
-      },
-      {
-        "title": "5 Stocks Stanley Druckenmiller Just Dumped—and What His Big Exit Signals Next",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/5-stocks-stanley-druckenmiller-just-151838870.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 10:18 ET",
-        "pub_ts": 1795447118.0
       }
     ],
     "MSFT": [
+      {
+        "title": "Augmented Reality in Healthcare - Global Market Outlook Report (2026-2034) by Product, Technology, End User, Country, and Company",
+        "url": "https://finance.yahoo.com/healthcare/articles/augmented-reality-healthcare-global-market-162400053.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 11:24 ET",
+        "pub_ts": 1795451040.0
+      },
+      {
+        "title": "Microsoft CEO Satya Nadella Just Revealed 50 Million AI Agents. His Next Move Could Be Even Bigger.",
+        "url": "https://247wallst.com/investing/2026/11/23/microsoft-ceo-satya-nadella-just-revealed-50-million-ai-agents-his-next-move-could-be-even-bigger/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 11:12 ET",
+        "pub_ts": 1795450338.0
+      },
       {
         "title": "SpaceX Could Hit Microsoft-Scale Revenue in 2027—Then the Math and Mechanics Get Murky",
         "url": "https://247wallst.com/investing/2026/11/23/spacex-could-hit-microsoft-scale-revenue-in-2027-then-the-math-and-mechanics-get-murky/?.tsrc=rss",
@@ -1203,35 +1217,28 @@
         "pub_ts": 1795448747.0
       },
       {
-        "title": "3 Unstoppable AI Stocks to Buy Hand Over Fist Before the End of 2026",
-        "url": "https://www.fool.com/investing/2026/11/23/3-unstoppable-ai-stocks-buy-hand-over-fist-before-end-2026/?.tsrc=rss",
+        "title": "Is Microsoft Stock Stronger Than It Looks?",
+        "url": "https://www.trefis.com/stock/msft/articles/627857/is-microsoft-stock-stronger-than-it-looks/2026-11-23?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 10:20 ET",
-        "pub_ts": 1795447202.0
+        "time": "11-23 10:45 ET",
+        "pub_ts": 1795448739.0
       },
       {
-        "title": "Danaher partners with Microsoft to create an agentic AI platform",
-        "url": "https://www.medtechdive.com/news/danaher-partners-with-microsoft-to-create-an-agentic-ai-platform/875437/?.tsrc=rss",
+        "title": "Bernstein Grows More Bullish on Microsoft's Enterprise AI After Ignite",
+        "url": "https://finance.yahoo.com/technology/ai/articles/bernstein-grows-more-bullish-microsofts-154443441.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 10:00 ET",
-        "pub_ts": 1795446000.0
-      },
-      {
-        "title": "Nvidia's $115B neocloud exposure and what its backstops really cover",
-        "url": "https://finance.yahoo.com/video/nvidias-115b-neocloud-exposure-and-what-its-backstops-really-cover-154907019.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 10:49 ET",
-        "pub_ts": 1795448947.0
-      },
-      {
-        "title": "Texas Pacific Land to Buy EagleRock, Expanding Permian Land and Water Footprint",
-        "url": "https://www.marketbeat.com/instant-alerts/event-texas-pacific-land-to-buy-eaglerock-expanding-permian-land-and-water-footprint-2026-11-23/?utm_source=yahoofinance&utm_medium=yahoofinance&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 10:13 ET",
-        "pub_ts": 1795446816.0
+        "time": "11-23 10:44 ET",
+        "pub_ts": 1795448683.0
       }
     ],
     "AAPL": [
+      {
+        "title": "Jensen Huang Returns to NVIDA. Why Apple, Broadcom, and Anthropic Could Be Under Pressure",
+        "url": "https://247wallst.com/videos/jensen-huang-returns-to-nvida-why-apple-broadcom-and-anthropic-could-be-under-pressure/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 10:52 ET",
+        "pub_ts": 1795449162.0
+      },
       {
         "title": "NYSE Parent's Tokenized Stock Venture Opens With 113 Assets Planned. Apple, Nvidia And Tesla Are Staying Out.",
         "url": "https://www.ibtimes.com/okx-ice-tokenized-securities-market-113-assets-3810086?.tsrc=rss",
@@ -1259,13 +1266,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 08:35 ET",
         "pub_ts": 1795440902.0
-      },
-      {
-        "title": "Chuck Shehadi named Unspun CEO as OneWeave enters global rollout",
-        "url": "https://www.just-style.com/news/unspun-ceo-chuck-shehadi/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 07:41 ET",
-        "pub_ts": 1795437680.0
       }
     ],
     "PLTR": [
@@ -1344,6 +1344,20 @@
     ],
     "AMZN": [
       {
+        "title": "Package stolen off your porch? Your credit card may help you get your money back",
+        "url": "https://finance.yahoo.com/personal-finance/credit-cards/article/what-to-do-if-package-is-stolen-credit-card-purchase-protection-161446463.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 11:14 ET",
+        "pub_ts": 1795450486.0
+      },
+      {
+        "title": "“You Don’t Have to Own CoreWeave”: Analyst Says Amazon Captures the Same Demand",
+        "url": "https://www.tikr.com/blog/you-dont-have-to-own-coreweave-analyst-says-amazon-captures-the-same-demand?ref=yahoofinance&tlnk=yf-261123-8g5m57wf&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 10:46 ET",
+        "pub_ts": 1795448815.0
+      },
+      {
         "title": "FRMI Stock Jumps After Fermi Secures $200M Prepayment With ‘Unnamed Hyperscaler’",
         "url": "https://stocktwits.com/news-articles/markets/equity/frmi-stock-jumps-after-fermi-secures-200-m-prepayment-with-unnamed-hyperscaler/cNbpdf0R9jf?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1363,20 +1377,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 10:03 ET",
         "pub_ts": 1795446220.0
-      },
-      {
-        "title": "Amazon agrees to buy Decart AI technology and team in reported $7.5 billion deal",
-        "url": "https://finance.yahoo.com/technology/ai/articles/amazon-agrees-buy-decart-ai-150027613.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 10:00 ET",
-        "pub_ts": 1795446027.0
-      },
-      {
-        "title": "Billionaire Seth Klarman Has 18% of His $5 Billion Stock Portfolio in Amazon",
-        "url": "https://247wallst.com/investing/2026/11/23/billionaire-seth-klarman-has-18-of-his-5-billion-stock-portfolio-in-amazon/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 09:51 ET",
-        "pub_ts": 1795445512.0
       }
     ],
     "CRWV": [
@@ -1386,6 +1386,13 @@
         "source": "Yahoo Finance",
         "time": "11-23 10:14 ET",
         "pub_ts": 1795446857.0
+      },
+      {
+        "title": "“You Don’t Have to Own CoreWeave”: Analyst Says Amazon Captures the Same Demand",
+        "url": "https://www.tikr.com/blog/you-dont-have-to-own-coreweave-analyst-says-amazon-captures-the-same-demand?ref=yahoofinance&tlnk=yf-261123-8g5m57wf&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 10:46 ET",
+        "pub_ts": 1795448815.0
       },
       {
         "title": "Michael Burry’s Latest Top 10 Stock Picks Amid AI Crash",
@@ -1407,13 +1414,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 09:33 ET",
         "pub_ts": 1795444380.0
-      },
-      {
-        "title": "Nebius Rallies 30% Despite New U.S. Curbs Threatening Neocloud Business in Southeast Asia; IREN Jumps 24%, CoreWeave Climbs 7%",
-        "url": "https://247wallst.com/investing/2026/11/23/nebius-rallies-9-despite-new-u-s-curbs-threatening-neocloud-business-in-southeast-asia-iren-jumps-8-coreweave-climbs-7/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 09:11 ET",
-        "pub_ts": 1795443083.0
       }
     ],
     "NBIS": [
@@ -3252,26 +3252,26 @@
     "TLT": 1795451287.6082447,
     "GLD": 1795451287.6082447,
     "SQQQ": 1795451287.6082447,
-    "TSM": 1795449710.0157335,
+    "TSM": 1795451454.2034,
     "VIXY": 1795451287.6082447,
     "SOXS": 1795451287.6082447,
     "NVDA": 1795451287.6082447,
-    "AMD": 1795449710.0157335,
-    "ASML": 1795449710.0157335,
-    "QCOM": 1795449710.0157335,
-    "AVGO": 1795449710.0157335,
-    "AMAT": 1795449710.0157335,
-    "META": 1795449710.0157335,
-    "GOOGL": 1795449710.0157335,
-    "MSFT": 1795449710.0157335,
-    "AAPL": 1795449710.0157335,
-    "PLTR": 1795449710.0157335,
-    "NOW": 1795449710.0157335,
-    "AMZN": 1795449710.0157335,
-    "CRWV": 1795449710.0157335,
-    "NBIS": 1795449710.0157335,
+    "AMD": 1795451454.2034,
+    "ASML": 1795451454.2034,
+    "QCOM": 1795451454.2034,
+    "AVGO": 1795451454.2034,
+    "AMAT": 1795451454.2034,
+    "META": 1795451454.2034,
+    "GOOGL": 1795451454.2034,
+    "MSFT": 1795451454.2034,
+    "AAPL": 1795451454.2034,
+    "PLTR": 1795451454.2034,
+    "NOW": 1795451454.2034,
+    "AMZN": 1795451454.2034,
+    "CRWV": 1795451454.2034,
+    "NBIS": 1795451454.2034,
     "APLD": 1795449818.0230198,
-    "VST": 1795449710.0157335,
+    "VST": 1795451454.2034,
     "BE": 1795449818.0230198,
     "CRDO": 1795449818.0230198,
     "COHR": 1795450136.496918,
