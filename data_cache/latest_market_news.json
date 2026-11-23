@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795450028.375,
-  "updated_at_et": "11-23 11:07 ET",
-  "updated_at_kst": "01:07 KST",
+  "updated_at_ts": 1795450136.497,
+  "updated_at_et": "11-23 11:08 ET",
+  "updated_at_kst": "01:08 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2528,6 +2528,13 @@
     ],
     "MSTR": [
       {
+        "title": "Nvidia, Arm, Anthropic, CrowdStrike, Zscaler, UnitedHealth, and More Stocks That Explain Today’s Market",
+        "url": "https://finance.yahoo.com/m/76a3103b-f3de-364f-8cd8-90e453a902d8/nvidia%2C-arm%2C-anthropic%2C.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 10:11 ET",
+        "pub_ts": 1795446660.0
+      },
+      {
         "title": "Bitcoin Crash Leaves Strategy $12B and Bitmine $10B Underwater: How Much Worse Can It Get?",
         "url": "https://www.coinspeaker.com/strategy-mstr-bitmine-stock-bitcoin-55k/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2554,16 +2561,16 @@
         "source": "Yahoo Finance",
         "time": "11-23 09:00 ET",
         "pub_ts": 1795442423.0
-      },
-      {
-        "title": "Strategy’s Saylor Stumbles as Firm’s Value Trails Bitcoin Hoard",
-        "url": "https://finance.yahoo.com/markets/crypto/articles/strategy-saylor-stumbles-firm-value-135058309.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 08:50 ET",
-        "pub_ts": 1795441858.0
       }
     ],
     "SNDK": [
+      {
+        "title": "Nvidia, Arm, Anthropic, CrowdStrike, Zscaler, UnitedHealth, and More Stocks That Explain Today’s Market",
+        "url": "https://finance.yahoo.com/m/76a3103b-f3de-364f-8cd8-90e453a902d8/nvidia%2C-arm%2C-anthropic%2C.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 10:11 ET",
+        "pub_ts": 1795446660.0
+      },
       {
         "title": "SanDisk Surges 22% as Jensen Huang’s Return to NVIDIA Sparks AI Chip Rebound; Seagate Jumps 18%, Micron Rallies 16%",
         "url": "https://247wallst.com/investing/2026/11/23/sandisk-surges-22-as-jensen-huangs-return-to-nvidia-sparks-ai-chip-rebound-seagate-jumps-18-micron-rallies-16/?.tsrc=rss",
@@ -2591,13 +2598,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 09:33 ET",
         "pub_ts": 1795444435.0
-      },
-      {
-        "title": "CrowdStrike, Zscaler, Anthropic, Sandisk, Strategy, Robinhood, and More Stocks That Explain Today’s Market",
-        "url": "https://finance.yahoo.com/m/76a3103b-f3de-364f-8cd8-90e453a902d8/crowdstrike%2C-zscaler%2C.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 06:20 ET",
-        "pub_ts": 1795432800.0
       }
     ],
     "BTC-USD": [
@@ -2639,6 +2639,20 @@
     ],
     "CRWD": [
       {
+        "title": "CrowdStrike's Synergy Targets in Zscaler Acquisition 'Ambitious but Achievable,' Wedbush Says",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/crowdstrike-apos-synergy-targets-zscaler-155515352.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 10:55 ET",
+        "pub_ts": 1795449315.0
+      },
+      {
+        "title": "CrowdStrike buying Zscaler as cybersecurity consolidates",
+        "url": "https://www.axios.com/2026/11/23/crowdstrike-zscaler-cybersecurity-consolidation#utm_source=yahoo_finance&utm_medium=partner&utm_campaign=subs-partner-yahoo-finance-AI?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 10:39 ET",
+        "pub_ts": 1795448397.0
+      },
+      {
         "title": "Zscaler Jumps 21% as CrowdStrike Moves to Acquire It",
         "url": "https://finance.yahoo.com/markets/stocks/articles/zscaler-jumps-21-crowdstrike-moves-152922386.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2653,25 +2667,11 @@
         "pub_ts": 1795446801.0
       },
       {
-        "title": "Zscaler Soars 23% on $43.9 Billion CrowdStrike Buyout: “Safety Is Required to Let AI In”",
-        "url": "https://www.tikr.com/blog/zscaler-soars-23-on-43-9-billion-crowdstrike-buyout-safety-is-required-to-let-ai-in?ref=yahoofinance&tlnk=yf-261123-6cwr929g&.tsrc=rss",
+        "title": "Nvidia, Arm, Anthropic, CrowdStrike, Zscaler, UnitedHealth, and More Stocks That Explain Today’s Market",
+        "url": "https://finance.yahoo.com/m/76a3103b-f3de-364f-8cd8-90e453a902d8/nvidia%2C-arm%2C-anthropic%2C.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 09:34 ET",
-        "pub_ts": 1795444492.0
-      },
-      {
-        "title": "CrowdStrike Stock Drops On Zscaler Acquisition",
-        "url": "https://finance.yahoo.com/m/b843f94e-891a-3872-9c9a-288d7f3f975f/crowdstrike-stock-drops-on.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 09:11 ET",
-        "pub_ts": 1795443073.0
-      },
-      {
-        "title": "CrowdStrike to Acquire Zscaler in $43.9 Billion All-Stock Deal",
-        "url": "https://finance.yahoo.com/technology/articles/crowdstrike-acquire-zscaler-43-9-134616915.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 08:46 ET",
-        "pub_ts": 1795441576.0
+        "time": "11-23 10:11 ET",
+        "pub_ts": 1795446660.0
       }
     ],
     "ORCL": [
@@ -3274,7 +3274,7 @@
     "VST": 1795449710.0157335,
     "BE": 1795449818.0230198,
     "CRDO": 1795449818.0230198,
-    "COHR": 1795448629.7036808,
+    "COHR": 1795450136.496918,
     "MRVL": 1795449491.2661486,
     "LITE": 1795449491.2661486,
     "AAOI": 1795449818.0230198,
@@ -3292,17 +3292,17 @@
     "VRT": 1795450028.3748102,
     "HPE": 1795450028.3748102,
     "DELL": 1795450028.3748102,
-    "OKLO": 1795448629.7036808,
+    "OKLO": 1795450136.496918,
     "CEG": 1795450028.3748102,
-    "FPS": 1795448629.7036808,
+    "FPS": 1795450136.496918,
     "MU": 1795449491.2661486,
     "SKHY": 1795449491.2661486,
     "WDC": 1795449491.2661486,
-    "STX": 1795448629.7036808,
-    "MSTR": 1795448629.7036808,
-    "SNDK": 1795448629.7036808,
+    "STX": 1795450136.496918,
+    "MSTR": 1795450136.496918,
+    "SNDK": 1795450136.496918,
     "BTC-USD": 1795449491.2661486,
-    "CRWD": 1795448629.7036808,
+    "CRWD": 1795450136.496918,
     "ORCL": 1795449491.2661486,
     "COIN": 1795449491.2661486,
     "LLY": 1795449491.2661486,
