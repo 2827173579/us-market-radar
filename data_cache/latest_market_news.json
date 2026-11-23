@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795427834.819,
-  "updated_at_et": "11-23 04:57 ET",
-  "updated_at_kst": "18:57 KST",
+  "updated_at_ts": 1795427950.218,
+  "updated_at_et": "11-23 04:59 ET",
+  "updated_at_kst": "18:59 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -909,6 +909,13 @@
     ],
     "NVDA": [
       {
+        "title": "Fed Chair Kevin Warsh and the FOMC Have a New Concern, and It Has Nothing to Do With Trumpflation",
+        "url": "https://www.fool.com/investing/2026/11/23/fed-chair-kevin-warsh-fomc-have-new-concern-nothing-to-do-with-trumpflation/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 04:26 ET",
+        "pub_ts": 1795425962.0
+      },
+      {
         "title": "Nvidia vs. SpaceX: Here's Which Stock I'd Put $1,000 Towards Right Now",
         "url": "https://www.fool.com/investing/2026/11/23/nvidia-vs-spacex-here-s-which-stock-i-d-put-usd1-000-towards-right-now/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -935,13 +942,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 02:13 ET",
         "pub_ts": 1795417986.0
-      },
-      {
-        "title": "Nvidia News Has Investors Rethinking These U.S. AI Chip Stocks",
-        "url": "https://finance.yahoo.com/technology/ai/articles/nvidia-news-investors-rethinking-u-070751605.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 02:07 ET",
-        "pub_ts": 1795417671.0
       }
     ],
     "AMD": [
@@ -3249,22 +3249,22 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795426359.8926487,
-    "SOXL": 1795426359.8926487,
-    "SPY": 1795426359.8926487,
-    "DIA": 1795426359.8926487,
-    "SOXX": 1795426359.8926487,
-    "QQQ": 1795426359.8926487,
-    "SMH": 1795426359.8926487,
-    "IWM": 1795426359.8926487,
-    "IGV": 1795426359.8926487,
-    "TLT": 1795426359.8926487,
-    "GLD": 1795426359.8926487,
-    "SQQQ": 1795426359.8926487,
+    "KORU": 1795427950.2176483,
+    "SOXL": 1795427950.2176483,
+    "SPY": 1795427950.2176483,
+    "DIA": 1795427950.2176483,
+    "SOXX": 1795427950.2176483,
+    "QQQ": 1795427950.2176483,
+    "SMH": 1795427950.2176483,
+    "IWM": 1795427950.2176483,
+    "IGV": 1795427950.2176483,
+    "TLT": 1795427950.2176483,
+    "GLD": 1795427950.2176483,
+    "SQQQ": 1795427950.2176483,
     "TSM": 1795426469.5087414,
-    "VIXY": 1795426359.8926487,
-    "SOXS": 1795426359.8926487,
-    "NVDA": 1795426359.8926487,
+    "VIXY": 1795427950.2176483,
+    "SOXS": 1795427950.2176483,
+    "NVDA": 1795427950.2176483,
     "AMD": 1795426469.5087414,
     "ASML": 1795426469.5087414,
     "QCOM": 1795426469.5087414,
@@ -3318,7 +3318,7 @@
     "MRNA": 1795427834.8188198,
     "NKE": 1795427834.8188198,
     "MCD": 1795427834.8188198,
-    "PEP": 1795426359.8926487,
+    "PEP": 1795427950.2176483,
     "XOM": 1795427834.8188198,
     "JPM": 1795427834.8188198,
     "WMT": 1795427834.8188198,
@@ -3326,7 +3326,7 @@
     "CAT": 1795427834.8188198,
     "FN": 1795427834.8188198,
     "GLW": 1795426580.6476235,
-    "ANT": 1795426359.8926487,
+    "ANT": 1795427950.2176483,
     "XAUUSD": 1795426469.5087414
   },
   "opex_shield": {
