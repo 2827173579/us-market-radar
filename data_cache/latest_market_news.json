@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795449360.657,
-  "updated_at_et": "11-23 10:56 ET",
-  "updated_at_kst": "00:56 KST",
+  "updated_at_ts": 1795449491.266,
+  "updated_at_et": "11-23 10:58 ET",
+  "updated_at_kst": "00:58 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -425,6 +425,13 @@
         "pub_ts": 1795447860.0
       },
       {
+        "title": "Is Broadcom Stock's Drop A Chance To Buy?",
+        "url": "https://www.trefis.com/stock/avgo/articles/627646/is-broadcom-stocks-drop-a-chance-to-buy/2026-11-23?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 10:24 ET",
+        "pub_ts": 1795447495.0
+      },
+      {
         "title": "What SPDR S&P 500 ETF Trust (SPY) Sold: Apple Leads on Nov. 19",
         "url": "https://finance.yahoo.com/markets/stocks/articles/spdr-p-500-etf-trust-110402082.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -444,13 +451,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 10:03 ET",
         "pub_ts": 1795446180.0
-      },
-      {
-        "title": "ETFs Are Net Sellers of Visa (V) on Thursday",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-net-sellers-visa-v-110300948.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 06:03 ET",
-        "pub_ts": 1795431780.0
       }
     ],
     "DIA": [
@@ -543,13 +543,6 @@
         "pub_ts": 1795447860.0
       },
       {
-        "title": "Stock Market Today: Dow Surges 1,200 Points As Nvidia Soars 30% On Jensen Huang's Return (Live Coverage)",
-        "url": "https://finance.yahoo.com/m/8751de70-467e-380a-82cb-f4ee42adc461/stock-market-today%3A-dow.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 09:50 ET",
-        "pub_ts": 1795445441.0
-      },
-      {
         "title": "Exchange-Traded Funds, Equity Futures Higher Pre-Bell Monday as Jensen Huang Returns to Nvidia",
         "url": "https://finance.yahoo.com/markets/stocks/articles/exchange-traded-funds-equity-futures-142039189.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -562,6 +555,13 @@
         "source": "Yahoo Finance",
         "time": "11-23 06:03 ET",
         "pub_ts": 1795431791.0
+      },
+      {
+        "title": "ETFs Are Net Sellers of Apple (AAPL) on Thursday",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-net-sellers-apple-aapl-110249864.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 06:02 ET",
+        "pub_ts": 1795431769.0
       }
     ],
     "SMH": [
@@ -2379,6 +2379,13 @@
     ],
     "MU": [
       {
+        "title": "Why Micron Stock Is Up Today",
+        "url": "https://www.fool.com/investing/2026/11/23/why-micron-stock-is-up-today/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 10:47 ET",
+        "pub_ts": 1795448822.0
+      },
+      {
         "title": "Micron Soars 20% as Citi Says Ending Nvidia’s Financing Would Cut DRAM Demand Only 12%",
         "url": "https://www.tikr.com/blog/micron-soars-20-as-citi-says-ending-nvidias-financing-would-cut-dram-demand-only-12?ref=yahoofinance&tlnk=yf-261123-hh5wwx34&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2393,25 +2400,18 @@
         "pub_ts": 1795446278.0
       },
       {
+        "title": "Micron Stock Jumps 16%. Why the Rally Has Legs.",
+        "url": "https://finance.yahoo.com/m/3f1f89c7-5433-3bc0-990f-eab9250e8983/micron-stock-jumps-16%25.-why.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 10:03 ET",
+        "pub_ts": 1795446180.0
+      },
+      {
         "title": "Can Micron Stock Jump 50%?",
         "url": "https://www.trefis.com/stock/mu/articles/627563/can-micron-stock-jump-50/2026-11-23?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-23 09:33 ET",
         "pub_ts": 1795444438.0
-      },
-      {
-        "title": "“I Absolutely Do Not Expect” Customers to Break Their Deals, Micron’s CEO Says. Here’s What’s Riding on It",
-        "url": "https://www.tikr.com/blog/i-absolutely-do-not-expect-customers-to-break-their-deals-microns-ceo-says-heres-whats-riding-on-it?ref=yahoofinance&tlnk=yf-261123-9h42533q&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 09:04 ET",
-        "pub_ts": 1795442652.0
-      },
-      {
-        "title": "3 Reasons the Micron Stock Rally Has Legs",
-        "url": "https://finance.yahoo.com/m/3f1f89c7-5433-3bc0-990f-eab9250e8983/3-reasons-the-micron-stock.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 08:15 ET",
-        "pub_ts": 1795439700.0
       }
     ],
     "SKHY": [
@@ -2601,11 +2601,25 @@
     ],
     "BTC-USD": [
       {
-        "title": "Stock Market Today: Dow Surges 1,200 Points As Nvidia Soars 30% On Jensen Huang's Return (Live Coverage)",
-        "url": "https://finance.yahoo.com/m/8751de70-467e-380a-82cb-f4ee42adc461/stock-market-today%3A-dow.html?.tsrc=rss",
+        "title": "Strategy and Crypto Stocks Rally as Bitcoin Rebounds Past $63,000. Is the Jump Temporary?",
+        "url": "https://finance.yahoo.com/m/fdc50c2c-a054-3519-8333-a590c6518df5/strategy-and-crypto-stocks.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 09:50 ET",
-        "pub_ts": 1795445441.0
+        "time": "11-23 10:36 ET",
+        "pub_ts": 1795448160.0
+      },
+      {
+        "title": "Strive Skips Bitcoin Buying and Stock Sales for a Week, Leaving Treasury at 43,404 BTC",
+        "url": "https://unchainedcrypto.com/strive-skips-bitcoin-buying-and-stock-sales-for-a-week-leaving-treasury-at-43404-btc/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 10:30 ET",
+        "pub_ts": 1795447857.0
+      },
+      {
+        "title": "Nvidia, Arm, Anthropic, CrowdStrike, Zscaler, UnitedHealth, and More Stocks That Explain Today’s Market",
+        "url": "https://finance.yahoo.com/m/76a3103b-f3de-364f-8cd8-90e453a902d8/nvidia%2C-arm%2C-anthropic%2C.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 10:11 ET",
+        "pub_ts": 1795446660.0
       },
       {
         "title": "US Stocks, Gold and Bitcoin Rebound Together: Why Is Fear Still Stuck at 11?",
@@ -2620,20 +2634,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 09:35 ET",
         "pub_ts": 1795444519.0
-      },
-      {
-        "title": "Bitcoin Crash Leaves Strategy $12B and Bitmine $10B Underwater: How Much Worse Can It Get?",
-        "url": "https://www.coinspeaker.com/strategy-mstr-bitmine-stock-bitcoin-55k/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 09:26 ET",
-        "pub_ts": 1795443984.0
-      },
-      {
-        "title": "Exchange-Traded Funds, Equity Futures Higher Pre-Bell Monday as Jensen Huang Returns to Nvidia",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/exchange-traded-funds-equity-futures-142039189.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 09:20 ET",
-        "pub_ts": 1795443639.0
       }
     ],
     "CRWD": [
@@ -2675,6 +2675,27 @@
     ],
     "ORCL": [
       {
+        "title": "Oracle Delivers a Pointed Response to Growing OpenAI-Related Fears",
+        "url": "https://finance.yahoo.com/technology/ai/articles/oracle-delivers-pointed-response-growing-153653449.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 10:36 ET",
+        "pub_ts": 1795448213.0
+      },
+      {
+        "title": "Digital Logistics - Global Strategic Business Report 2026: Capitalize on 21.2% CAGR and a US$179.4B Market as IBM, Oracle, SAP, Siemens, and Tech Mahindra Disrupt Supply Chains",
+        "url": "https://finance.yahoo.com/technology/articles/digital-logistics-global-strategic-business-153400223.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 10:34 ET",
+        "pub_ts": 1795448040.0
+      },
+      {
+        "title": "Global Regulatory Data Market Report 2026 | Capitalize on 18.3% CAGR as AI, cloud and real-time reporting fuel $5.96B by 2030; IBM, Oracle, SAP and Accenture accelerate innovation",
+        "url": "https://finance.yahoo.com/technology/ai/articles/global-regulatory-data-market-report-153000330.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 10:30 ET",
+        "pub_ts": 1795447800.0
+      },
+      {
         "title": "Verizon Cut Its Buying In 2002. Can Nvidia's Buyers Stop Now?",
         "url": "https://www.trefis.com/stock/nvda/articles/627418/verizon-cut-its-buying-in-2002-can-nvidia-s-buyers-stop-now/2026-11-23?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2687,27 +2708,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 09:00 ET",
         "pub_ts": 1795442403.0
-      },
-      {
-        "title": "The AI Boom Math, Updated: Where The Risk Really Sits",
-        "url": "https://www.trefis.com/stock/nvda/articles/627432/the-ai-boom-math-updated-where-the-risk-really-sits/2026-11-23?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 08:20 ET",
-        "pub_ts": 1795440058.0
-      },
-      {
-        "title": "Oracle’s “Big Permitting Win” Proves the Data Center Backlash Hasn’t Won Yet",
-        "url": "https://www.tikr.com/blog/oracles-big-permitting-win-proves-the-data-center-backlash-hasnt-won-yet?ref=yahoofinance&tlnk=yf-261123-4gcqcwvr&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 05:20 ET",
-        "pub_ts": 1795429224.0
-      },
-      {
-        "title": "Why Did NVDA, NFLX, ORCL Slip To 52-Week Lows Last Week?",
-        "url": "https://stocktwits.com/news-articles/markets/equity/why-did-nvda-nflx-orcl-slip-to-52-week-lows-last-week/cNbYpPuR9SJ?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 00:11 ET",
-        "pub_ts": 1795410679.0
       }
     ],
     "COIN": [
@@ -2830,6 +2830,13 @@
         "pub_ts": 1795446500.0
       },
       {
+        "title": "NIKE's Sports Marketing Push: Can It Boost Brand Engagement?",
+        "url": "https://finance.yahoo.com/media-advertising/articles/nikes-sports-marketing-push-boost-144400532.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 09:44 ET",
+        "pub_ts": 1795445040.0
+      },
+      {
         "title": "Is National Bank Wrong to Give Up on Nike? Wall Street Still Sees $37",
         "url": "https://www.tikr.com/blog/national-bank-nike-downgrade-neutral-price-target?ref=yahoofinance&tlnk=yf-261123-9xmhxw2v&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2849,13 +2856,6 @@
         "source": "Yahoo Finance",
         "time": "11-22 06:00 ET",
         "pub_ts": 1795345202.0
-      },
-      {
-        "title": "Nike to give every 2027 high school valedictorian custom Air Force 1s — a $3M+ gift sparked by Mississippi's Scott Colom",
-        "url": "https://finance.yahoo.com/media-advertising/articles/nike-every-2027-high-school-213000902.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-21 16:30 ET",
-        "pub_ts": 1795296600.0
       }
     ],
     "MCD": [
@@ -3241,10 +3241,10 @@
   "ticker_news_ts": {
     "KORU": 1795448088.9851124,
     "SOXL": 1795448088.9851124,
-    "SPY": 1795447978.9951282,
+    "SPY": 1795449491.2661486,
     "DIA": 1795448088.9851124,
     "SOXX": 1795448088.9851124,
-    "QQQ": 1795447978.9951282,
+    "QQQ": 1795449491.2661486,
     "SMH": 1795448088.9851124,
     "IWM": 1795448088.9851124,
     "IGV": 1795448088.9851124,
@@ -3274,12 +3274,12 @@
     "BE": 1795448314.7534328,
     "CRDO": 1795448314.7534328,
     "COHR": 1795448629.7036808,
-    "MRVL": 1795447978.9951282,
-    "LITE": 1795447978.9951282,
+    "MRVL": 1795449491.2661486,
+    "LITE": 1795449491.2661486,
     "AAOI": 1795448314.7534328,
     "SPCX": 1795448314.7534328,
     "ASTS": 1795448314.7534328,
-    "AXTI": 1795447978.9951282,
+    "AXTI": 1795449491.2661486,
     "NASA": 1795448314.7534328,
     "LUNR": 1795448314.7534328,
     "TSLA": 1795448521.0268104,
@@ -3294,27 +3294,27 @@
     "OKLO": 1795448629.7036808,
     "CEG": 1795448521.0268104,
     "FPS": 1795448629.7036808,
-    "MU": 1795447978.9951282,
-    "SKHY": 1795447978.9951282,
-    "WDC": 1795447978.9951282,
+    "MU": 1795449491.2661486,
+    "SKHY": 1795449491.2661486,
+    "WDC": 1795449491.2661486,
     "STX": 1795448629.7036808,
     "MSTR": 1795448629.7036808,
     "SNDK": 1795448629.7036808,
-    "BTC-USD": 1795447978.9951282,
+    "BTC-USD": 1795449491.2661486,
     "CRWD": 1795448629.7036808,
-    "ORCL": 1795447978.9951282,
-    "COIN": 1795447978.9951282,
-    "LLY": 1795447978.9951282,
-    "MRNA": 1795447978.9951282,
-    "NKE": 1795447978.9951282,
-    "MCD": 1795447978.9951282,
+    "ORCL": 1795449491.2661486,
+    "COIN": 1795449491.2661486,
+    "LLY": 1795449491.2661486,
+    "MRNA": 1795449491.2661486,
+    "NKE": 1795449491.2661486,
+    "MCD": 1795449491.2661486,
     "PEP": 1795448314.7534328,
     "XOM": 1795448088.9851124,
     "JPM": 1795448088.9851124,
     "WMT": 1795448314.7534328,
     "V": 1795448088.9851124,
     "CAT": 1795448314.7534328,
-    "FN": 1795447978.9951282,
+    "FN": 1795449491.2661486,
     "GLW": 1795448314.7534328,
     "ANT": 1795448521.0268104,
     "XAUUSD": 1795448088.9851124
