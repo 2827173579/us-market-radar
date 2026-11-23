@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795404307.691,
-  "updated_at_et": "11-22 22:25 ET",
-  "updated_at_kst": "12:25 KST",
+  "updated_at_ts": 1795404413.498,
+  "updated_at_et": "11-22 22:26 ET",
+  "updated_at_kst": "12:26 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -446,18 +446,18 @@
         "pub_ts": 1795199370.0
       },
       {
+        "title": "Biotech Funds Slide Into Thanksgiving Week — Capricor’s FDA Fight And Back-To-Back Drug Decisions Top Watchlist",
+        "url": "https://stocktwits.com/news-articles/markets/equity/biotech-funds-slide-thanksgiving-week-capricor-fda-fight-back-to-back-drug-decisions/cNbYVM2R9Sc?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-22 22:07 ET",
+        "pub_ts": 1795403257.0
+      },
+      {
         "title": "Charlie Bilello Flags the Nasdaq 100’s First Bear Market Since April 2025",
         "url": "https://247wallst.com/investing/2026/11/22/charlie-bilello-flags-the-nasdaq-100s-first-bear-market-since-april-2025/?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-22 16:17 ET",
         "pub_ts": 1795382236.0
-      },
-      {
-        "title": "Billionaire Ray Dalio’s Bridgewater Keeps 16% of Its $23 Billion Stock Portfolio in S&P 500 Index Funds, Even After Cutting Them",
-        "url": "https://247wallst.com/investing/2026/11/22/billionaire-ray-dalios-bridgewater-keeps-16-of-its-23-billion-stock-portfolio-in-sp-500-index-funds-even-after-cutting-them/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-22 13:43 ET",
-        "pub_ts": 1795372995.0
       }
     ],
     "DIA": [
@@ -1165,6 +1165,13 @@
     ],
     "GOOGL": [
       {
+        "title": "Amazon Spent $1.82 For Every $1 Of Cash Last Quarter. Can It Keep Going?",
+        "url": "https://www.trefis.com/stock/amzn/articles/627456/amazon-spent-1-82-for-every-1-of-cash-last-quarter-can-it-keep-going/2026-11-22?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-22 21:44 ET",
+        "pub_ts": 1795401851.0
+      },
+      {
         "title": "Jim Cramer sends a strong signal to Google stock investors",
         "url": "https://www.thestreet.com/investing/stocks/jim-cramer-sends-a-strong-signal-to-google-stock-investors?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1191,13 +1198,6 @@
         "source": "Yahoo Finance",
         "time": "11-22 13:00 ET",
         "pub_ts": 1795370400.0
-      },
-      {
-        "title": "Billionaire David Tepper’s Appaloosa Opened a $172 Million Stake in Oracle",
-        "url": "https://247wallst.com/investing/2026/11/22/billionaire-david-teppers-appaloosa-opened-a-172-million-stake-in-oracle/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-22 12:59 ET",
-        "pub_ts": 1795370348.0
       }
     ],
     "MSFT": [
@@ -3246,30 +3246,30 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795402840.5499609,
-    "SOXL": 1795402840.5499609,
-    "SPY": 1795402840.5499609,
-    "DIA": 1795402840.5499609,
-    "SOXX": 1795402840.5499609,
-    "QQQ": 1795402840.5499609,
-    "SMH": 1795402840.5499609,
-    "IWM": 1795402840.5499609,
-    "IGV": 1795402840.5499609,
-    "TLT": 1795402840.5499609,
-    "GLD": 1795402840.5499609,
-    "SQQQ": 1795402840.5499609,
-    "TSM": 1795402840.5499609,
-    "VIXY": 1795402840.5499609,
-    "SOXS": 1795402840.5499609,
-    "NVDA": 1795402840.5499609,
-    "AMD": 1795402840.5499609,
-    "ASML": 1795402840.5499609,
-    "QCOM": 1795402840.5499609,
-    "AVGO": 1795402840.5499609,
+    "KORU": 1795404413.498474,
+    "SOXL": 1795404413.498474,
+    "SPY": 1795404413.498474,
+    "DIA": 1795404413.498474,
+    "SOXX": 1795404413.498474,
+    "QQQ": 1795404413.498474,
+    "SMH": 1795404413.498474,
+    "IWM": 1795404413.498474,
+    "IGV": 1795404413.498474,
+    "TLT": 1795404413.498474,
+    "GLD": 1795404413.498474,
+    "SQQQ": 1795404413.498474,
+    "TSM": 1795404413.498474,
+    "VIXY": 1795404413.498474,
+    "SOXS": 1795404413.498474,
+    "NVDA": 1795404413.498474,
+    "AMD": 1795404413.498474,
+    "ASML": 1795404413.498474,
+    "QCOM": 1795404413.498474,
+    "AVGO": 1795404413.498474,
     "AMAT": 1795402950.0712986,
     "META": 1795402950.0712986,
-    "GOOGL": 1795402840.5499609,
-    "MSFT": 1795402840.5499609,
+    "GOOGL": 1795404413.498474,
+    "MSFT": 1795404413.498474,
     "AAPL": 1795402950.0712986,
     "PLTR": 1795403061.8892643,
     "NOW": 1795402950.0712986,
