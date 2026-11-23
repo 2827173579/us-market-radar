@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795452747.828,
-  "updated_at_et": "11-23 11:52 ET",
-  "updated_at_kst": "01:52 KST",
+  "updated_at_ts": 1795452849.06,
+  "updated_at_et": "11-23 11:54 ET",
+  "updated_at_kst": "01:54 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -493,6 +493,13 @@
     ],
     "SOXX": [
       {
+        "title": "SOXX Heads For Biggest Single-Day Gain in Over 18 Months As Semiconductor, AI Stocks Rebound Sharply",
+        "url": "https://stocktwits.com/news-articles/markets/equity/soxx-heads-for-biggest-single-day-gain-in-over-18-months-as-semiconductor-ai-stocks-rebound-sharply/cNbp45sR9jg?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 11:26 ET",
+        "pub_ts": 1795451214.0
+      },
+      {
         "title": "Chip Stocks Lead Premarket Bounce as SOXX Soars",
         "url": "https://finance.yahoo.com/m/da42314d-e4d9-32a7-b543-328e1f71d8ea/chip-stocks-lead-premarket.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -519,13 +526,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 11:25 ET",
         "pub_ts": 1795451106.0
-      },
-      {
-        "title": "Jensen Huang's Return Sparks Stock Market Surge",
-        "url": "https://finance.yahoo.com/m/e54c166a-9f48-3353-ad7b-3d7ce3fdd1ec/jensen-huang%27s-return-sparks.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 09:05 ET",
-        "pub_ts": 1795442729.0
       }
     ],
     "QQQ": [
@@ -900,39 +900,39 @@
     ],
     "NVDA": [
       {
-        "title": "Nasdaq futures tripped a circuit breaker built for market crashes as Jensen Huang returned to Nvidia",
-        "url": "https://finance.yahoo.com/markets/stocks/article/nasdaq-futures-tripped-a-circuit-breaker-built-for-market-crashes-as-jensen-huang-returned-to-nvidia-162506665.html?.tsrc=rss",
+        "title": "Jensen Huang is back atop Nvidia. He has a long road ahead in Washington.",
+        "url": "https://finance.yahoo.com/markets/article/jensen-huang-is-back-atop-nvidia-he-has-a-long-road-ahead-in-washington-164747640.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 11:25 ET",
-        "pub_ts": 1795451106.0
+        "time": "11-23 11:47 ET",
+        "pub_ts": 1795452467.0
       },
       {
-        "title": "Nvidia stock: How to trade Jensen Huang's return as CEO",
-        "url": "https://finance.yahoo.com/video/nvidia-stock-how-to-trade-jensen-huangs-return-as-ceo-161038541.html?.tsrc=rss",
+        "title": "Wall Street analysts cheer Jensen Huang's return to Nvidia — but they still have concerns",
+        "url": "https://finance.yahoo.com/markets/article/wall-street-analyst-races-to-upgrade-nvidia-as-jensen-huang-returns-cites-clown-like-board-response-164614996.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 11:10 ET",
-        "pub_ts": 1795450238.0
+        "time": "11-23 11:46 ET",
+        "pub_ts": 1795452374.0
       },
       {
-        "title": "The Best ETF to Buy if You're Nervous About a Stock Market Crash",
-        "url": "https://www.fool.com/investing/2026/11/23/the-best-etf-to-buy-if-youre-nervous-about-a-stock-market-crash/?.tsrc=rss",
+        "title": "Will Jensen Huang return to Nvidia humbled, or just look the part?",
+        "url": "https://finance.yahoo.com/video/jensen-huang-return-nvidia-humbled-163000928.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 11:20 ET",
-        "pub_ts": 1795450802.0
+        "time": "11-23 11:30 ET",
+        "pub_ts": 1795451400.0
       },
       {
-        "title": "Nvidia and Anthropic Shares Rebound as AI Investors Return",
-        "url": "https://finance.yahoo.com/technology/ai/articles/nvidia-anthropic-shares-rebound-ai-161916502.html?.tsrc=rss",
+        "title": "Nvidia's 30% rally: What does it mean for bitcoin?",
+        "url": "https://finance.yahoo.com/video/nvidias-30-rally-what-does-it-mean-for-bitcoin-162616619.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 11:19 ET",
-        "pub_ts": 1795450756.0
+        "time": "11-23 11:26 ET",
+        "pub_ts": 1795451176.0
       },
       {
-        "title": "What NVIDIA Investors Missed Before The Fall",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/nvidia-investors-missed-fall-161105136.html?.tsrc=rss",
+        "title": "Chip Stocks Lead Wall Street's Monday Rebound as Buyers Return",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/chip-stocks-lead-wall-streets-164200717.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 11:11 ET",
-        "pub_ts": 1795450265.0
+        "time": "11-23 11:42 ET",
+        "pub_ts": 1795452120.0
       }
     ],
     "AMD": [
@@ -3240,22 +3240,22 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795451287.6082447,
-    "SOXL": 1795451287.6082447,
+    "KORU": 1795452849.0601816,
+    "SOXL": 1795452849.0601816,
     "SPY": 1795452636.1532714,
-    "DIA": 1795451287.6082447,
-    "SOXX": 1795451287.6082447,
+    "DIA": 1795452849.0601816,
+    "SOXX": 1795452849.0601816,
     "QQQ": 1795452636.1532714,
-    "SMH": 1795451287.6082447,
-    "IWM": 1795451287.6082447,
-    "IGV": 1795451287.6082447,
-    "TLT": 1795451287.6082447,
-    "GLD": 1795451287.6082447,
-    "SQQQ": 1795451287.6082447,
+    "SMH": 1795452849.0601816,
+    "IWM": 1795452849.0601816,
+    "IGV": 1795452849.0601816,
+    "TLT": 1795452849.0601816,
+    "GLD": 1795452849.0601816,
+    "SQQQ": 1795452849.0601816,
     "TSM": 1795451454.2034,
-    "VIXY": 1795451287.6082447,
-    "SOXS": 1795451287.6082447,
-    "NVDA": 1795451287.6082447,
+    "VIXY": 1795452849.0601816,
+    "SOXS": 1795452849.0601816,
+    "NVDA": 1795452849.0601816,
     "AMD": 1795451454.2034,
     "ASML": 1795451454.2034,
     "QCOM": 1795451454.2034,
@@ -3310,10 +3310,10 @@
     "NKE": 1795452636.1532714,
     "MCD": 1795452636.1532714,
     "PEP": 1795451563.8499043,
-    "XOM": 1795451287.6082447,
-    "JPM": 1795451287.6082447,
+    "XOM": 1795452849.0601816,
+    "JPM": 1795452849.0601816,
     "WMT": 1795451563.8499043,
-    "V": 1795451287.6082447,
+    "V": 1795452849.0601816,
     "CAT": 1795451677.1082947,
     "FN": 1795452636.1532714,
     "GLW": 1795451563.8499043,
