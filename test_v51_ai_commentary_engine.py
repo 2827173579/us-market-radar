@@ -339,26 +339,44 @@ class TestV51AiCommentaryEngine(unittest.TestCase):
         self.assertIn("严禁当成此刻盘中正在下跌", sys_ov)
         self.assertIn("NQ=F / ES=F", sys_ov)
 
-        # 3) Gemini 3.8 报 503 -> 候选链自动切 gemini-3.5-flash 成功
-        tried_urls = []
+        # 3) provider="auto" 下 Gemini 3.8 报 503 -> 直接跳转 deepseek-flash，全程 0 次请求 3.5 / 2.5
+        tried_auto = []
 
-        def fake_gem_503_then_35_ok(url, headers, payload, timeout):
-            tried_urls.append(url)
-            if "gemini-3.8-flash" in url:
+        def fake_503_to_deepseek(url, headers, payload, timeout):
+            tried_auto.append(url)
+            if "generativelanguage.googleapis.com" in url:
                 return 503, '{"error": {"message": "high demand"}}'
-            return 200, json.dumps({"candidates": [{"content": {"parts": [{"text": "【一句话定性】Gemini 3.5 候选链成功。"}]}}]})
+            return 200, json.dumps({"choices": [{"message": {"content": "【一句话定性】3.8遇503直切DeepSeek成功。"}}]})
 
-        res_chain = ace.call_llm_text(
-            "sys",
-            "usr",
-            provider="gemini",
-            env_override={"GEMINI_API_KEY": "MOCK_KEY", "GEMINI_MODEL": "gemini-3.8-flash"},
-            http_post_fn=fake_gem_503_then_35_ok,
-        )
-        self.assertEqual(res_chain["status"], "OK")
-        self.assertEqual(res_chain["model_id"], "gemini-3.5-flash")
-        self.assertIn("Gemini 3.5 Flash", res_chain["provider_used"])
-        self.assertEqual(len(tried_urls), 2)
+        env_both = {
+            "GEMINI_API_KEY": "MOCK_GEM_KEY",
+            "DEEPSEEK_API_KEY": "MOCK_DS_KEY",
+            "GEMINI_MODEL": "gemini-3.8-flash",
+            "DEEPSEEK_MODEL": "deepseek-flash",
+        }
+        res_auto = ace.call_llm_text("sys", "usr", provider="auto", env_override=env_both, http_post_fn=fake_503_to_deepseek)
+        self.assertEqual(res_auto["status"], "OK")
+        self.assertTrue(res_auto["fallback_used"])
+        self.assertEqual(res_auto["provider_used"], "DeepSeek V4.1 Flash (兜底)")
+        self.assertEqual(len(tried_auto), 2)
+        for u in tried_auto:
+            self.assertNotIn("gemini-3.5", u)
+            self.assertNotIn("gemini-2.5", u)
+            self.assertNotIn("gemini-flash-latest", u)
+
+        # 4) provider="gemini" 下 Gemini 3.8 报 503 -> 快速返回脱敏错误，绝不静默降级为 3.5
+        tried_gem_only = []
+
+        def fake_gem_only_503(url, headers, payload, timeout):
+            tried_gem_only.append(url)
+            return 503, '{"error": {"message": "high demand"}}'
+
+        res_gem = ace.call_llm_text("sys", "usr", provider="gemini", env_override=env_both, http_post_fn=fake_gem_only_503)
+        self.assertEqual(res_gem["status"], "ERROR")
+        self.assertEqual(len(tried_gem_only), 1)
+        self.assertIn("gemini-3.8-flash", tried_gem_only[0])
+        self.assertIn("HTTP 503 高峰繁忙", res_gem["provider_used"])
+        self.assertNotIn("3.5", res_gem["provider_used"])
 
 
 if __name__ == "__main__":

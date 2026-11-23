@@ -39,12 +39,6 @@ DEFAULT_SNAPSHOT_PATH = os.path.join(SCRATCH_DIR, "data_cache", "latest_radar_sn
 DEFAULT_NEWS_PATH = os.path.join(SCRATCH_DIR, "data_cache", "latest_market_news.json")
 
 DEFAULT_GEMINI_MODEL = "gemini-3.8-flash"
-GEMINI_FALLBACK_MODELS: Tuple[str, ...] = (
-    "gemini-3.8-flash",
-    "gemini-3.5-flash",
-    "gemini-2.5-flash",
-    "gemini-flash-latest",
-)
 DEFAULT_DEEPSEEK_MODEL = "deepseek-flash"
 DEFAULT_WEB_REFRESH_MINUTES = 25
 DEFAULT_HTTP_TIMEOUT = 30
@@ -542,13 +536,7 @@ def _call_deepseek_once(
 
 def _format_provider_label(engine: str, model: str, is_fallback: bool = False) -> str:
     if engine == "gemini":
-        known_gem = {
-            "gemini-3.8-flash": "Gemini 3.8 Flash",
-            "gemini-3.5-flash": "Gemini 3.5 Flash",
-            "gemini-2.5-flash": "Gemini 2.5 Flash",
-            "gemini-flash-latest": "Gemini Flash Latest",
-        }
-        base = known_gem.get(model, f"Gemini ({model})")
+        base = "Gemini 3.8 Flash" if model == "gemini-3.8-flash" else f"Gemini ({model})"
     else:
         base = "DeepSeek V4.1 Flash" if model == "deepseek-flash" else f"DeepSeek ({model})"
     return f"{base} (兜底)" if is_fallback else base
@@ -576,15 +564,6 @@ def _format_short_error_code(err_code: str) -> str:
     return "接口异常"
 
 
-def _build_gemini_candidate_chain(primary_model: str) -> List[str]:
-    chain: List[str] = []
-    for m in (primary_model, *GEMINI_FALLBACK_MODELS):
-        ms = str(m or "").strip()
-        if ms and ms not in chain:
-            chain.append(ms)
-    return chain
-
-
 def call_llm_text(
     system_prompt: str,
     user_prompt: str,
@@ -594,7 +573,7 @@ def call_llm_text(
     timeout: int = DEFAULT_HTTP_TIMEOUT,
     http_post_fn: Optional[Callable[..., Tuple[int, str]]] = None,
 ) -> Dict[str, Any]:
-    """双引擎主备调用（Gemini 多模型候选链优先 + DeepSeek 自动兜底），绝不抛未捕获异常，绝不泄露 Key。"""
+    """双引擎主备调用（仅调用 GEMINI_MODEL，失败直切 DeepSeek V4.1 Flash，严禁静默降级旧版 Gemini）。"""
     cfg = load_env_config(env_path=env_path, env_override=env_override)
     gem_key = str(cfg.get("GEMINI_API_KEY") or "").strip()
     ds_key = str(cfg.get("DEEPSEEK_API_KEY") or "").strip()
@@ -616,39 +595,33 @@ def call_llm_text(
 
     errors: List[str] = []
     if mode in ("auto", "gemini") and gem_key:
-        gem_chain = _build_gemini_candidate_chain(gem_model)
-        last_gem_err = ""
-        for idx, cand_model in enumerate(gem_chain):
-            ok, txt, err = _call_gemini_once(
-                api_key=gem_key,
-                model=cand_model,
-                system_prompt=system_prompt,
-                user_prompt=user_prompt,
-                timeout=timeout,
-                http_post_fn=http_post_fn,
-            )
-            if ok:
-                return {
-                    "status": "OK",
-                    "text": txt,
-                    "provider_used": _format_provider_label("gemini", cand_model, is_fallback=(idx > 0)),
-                    "engine_code": "gemini",
-                    "model_id": cand_model,
-                    "fallback_used": idx > 0,
-                    "error": "",
-                    "error_short": "",
-                }
-            last_gem_err = err
-            errors.append(f"gemini({cand_model}):{err}")
-            # 仅在 503/429/404/5xx/超时 等可回退错误时尝试下一个 Gemini 候选模型；401/403 鉴权或地区受限则立即退出循环
-            if err in ("http_401", "http_403"):
-                break
+        ok, txt, err = _call_gemini_once(
+            api_key=gem_key,
+            model=gem_model,
+            system_prompt=system_prompt,
+            user_prompt=user_prompt,
+            timeout=timeout,
+            http_post_fn=http_post_fn,
+        )
+        if ok:
+            return {
+                "status": "OK",
+                "text": txt,
+                "provider_used": _format_provider_label("gemini", gem_model, is_fallback=False),
+                "engine_code": "gemini",
+                "model_id": gem_model,
+                "fallback_used": False,
+                "error": "",
+                "error_short": "",
+            }
+        errors.append(f"gemini({gem_model}):{err}")
         if mode == "gemini":
-            short_e = _format_short_error_code(last_gem_err)
+            short_e = _format_short_error_code(err)
+            gem_tag = "Gemini 3.8" if gem_model == "gemini-3.8-flash" else f"Gemini ({gem_model})"
             return {
                 "status": "ERROR",
                 "text": "",
-                "provider_used": f"Gemini 调用失败 ({short_e})",
+                "provider_used": f"{gem_tag} 失败 ({short_e})",
                 "error": ";".join(errors),
                 "error_short": short_e,
             }
