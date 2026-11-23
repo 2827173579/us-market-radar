@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795429479.398,
-  "updated_at_et": "11-23 05:24 ET",
-  "updated_at_kst": "19:24 KST",
+  "updated_at_ts": 1795429595.283,
+  "updated_at_et": "11-23 05:26 ET",
+  "updated_at_kst": "19:26 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -798,7 +798,7 @@
     ],
     "TSM": [
       {
-        "title": "US futures climb and Asian shares mostly decline as some tech stocks fall",
+        "title": "US futures climb and world shares are mixed as big tech stocks fall in Asia",
         "url": "https://finance.yahoo.com/markets/world-indices/articles/asian-shares-mostly-fall-p-042312132.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-22 23:23 ET",
@@ -1168,6 +1168,13 @@
     ],
     "GOOGL": [
       {
+        "title": "“Congress Needs to Act”: Cory Booker Sounds the Alarm on AI Recursive Self-Improvement as AI Backlash Grows",
+        "url": "https://www.tikr.com/blog/congress-needs-to-act-cory-booker-sounds-the-alarm-on-ai-recursive-self-improvement-as-ai-backlash-grows?ref=yahoofinance&tlnk=yf-261123-r9x2h38m&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 00:15 ET",
+        "pub_ts": 1795410931.0
+      },
+      {
         "title": "Musk Says Tesla’s Real-World AI Will Get Smarter by “About an Order of Magnitude per Year”",
         "url": "https://www.tikr.com/blog/musk-says-teslas-real-world-ai-will-get-smarter-by-about-an-order-of-magnitude-per-year?ref=yahoofinance&tlnk=yf-261122-c3v9325h&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1194,13 +1201,6 @@
         "source": "Yahoo Finance",
         "time": "11-22 16:17 ET",
         "pub_ts": 1795382223.0
-      },
-      {
-        "title": "Google’s 2027 chip plan is bad news for Broadcom",
-        "url": "https://www.thestreet.com/technology/google-2027-chip-plan-broadcom?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-22 14:47 ET",
-        "pub_ts": 1795376820.0
       }
     ],
     "MSFT": [
@@ -1411,18 +1411,18 @@
         "pub_ts": 1795397940.0
       },
       {
+        "title": "CoreWeave Is the Real Loser in Anthropic’s IPO Slide: $22.4 Billion of OpenAI Contracts",
+        "url": "https://www.tikr.com/blog/coreweave-is-the-real-loser-in-anthropics-ipo-slide-22-4-billion-of-openai-contracts?ref=yahoofinance&tlnk=yf-261123-h2vq3cr2&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-22 19:48 ET",
+        "pub_ts": 1795394882.0
+      },
+      {
         "title": "Cathie Wood Just Bought $22 Million of CoreWeave Across 2 ARK Funds",
         "url": "https://www.tikr.com/blog/cathie-wood-just-bought-22-million-of-coreweave-across-2-ark-funds?ref=yahoofinance&tlnk=yf-261122-j9c6cpqw&.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-22 13:06 ET",
         "pub_ts": 1795370776.0
-      },
-      {
-        "title": "Warning for CoreWeave: Satya Nadella Says “Selling to One or Two Customers Is Not a Business”",
-        "url": "https://www.tikr.com/blog/warning-for-coreweave-satya-nadella-says-selling-to-one-or-two-customers-is-not-a-business?ref=yahoofinance&tlnk=yf-261122-jxpj37r5&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-22 09:43 ET",
-        "pub_ts": 1795358612.0
       }
     ],
     "NBIS": [
@@ -3261,23 +3261,23 @@
     "TLT": 1795429479.3980517,
     "GLD": 1795429479.3980517,
     "SQQQ": 1795429479.3980517,
-    "TSM": 1795428061.006662,
+    "TSM": 1795429595.2834144,
     "VIXY": 1795429479.3980517,
     "SOXS": 1795429479.3980517,
     "NVDA": 1795429479.3980517,
-    "AMD": 1795428061.006662,
-    "ASML": 1795428061.006662,
-    "QCOM": 1795428061.006662,
-    "AVGO": 1795428061.006662,
-    "AMAT": 1795428061.006662,
-    "META": 1795428061.006662,
-    "GOOGL": 1795428061.006662,
-    "MSFT": 1795428061.006662,
-    "AAPL": 1795428061.006662,
+    "AMD": 1795429595.2834144,
+    "ASML": 1795429595.2834144,
+    "QCOM": 1795429595.2834144,
+    "AVGO": 1795429595.2834144,
+    "AMAT": 1795429595.2834144,
+    "META": 1795429595.2834144,
+    "GOOGL": 1795429595.2834144,
+    "MSFT": 1795429595.2834144,
+    "AAPL": 1795429595.2834144,
     "PLTR": 1795428172.725004,
-    "NOW": 1795428061.006662,
-    "AMZN": 1795428061.006662,
-    "CRWV": 1795428061.006662,
+    "NOW": 1795429595.2834144,
+    "AMZN": 1795429595.2834144,
+    "CRWV": 1795429595.2834144,
     "NBIS": 1795428172.725004,
     "APLD": 1795428172.725004,
     "VST": 1795428172.725004,
@@ -3286,7 +3286,7 @@
     "COHR": 1795429366.9913664,
     "MRVL": 1795429366.9913664,
     "LITE": 1795429366.9913664,
-    "AAOI": 1795428061.006662,
+    "AAOI": 1795429595.2834144,
     "SPCX": 1795428172.725004,
     "ASTS": 1795428172.725004,
     "AXTI": 1795429366.9913664,
@@ -3326,7 +3326,7 @@
     "CAT": 1795429366.9913664,
     "FN": 1795429366.9913664,
     "GLW": 1795428172.725004,
-    "ANT": 1795427950.2176483,
+    "ANT": 1795429595.2834144,
     "XAUUSD": 1795428172.725004
   },
   "opex_shield": {
