@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795466661.902,
-  "updated_at_et": "11-23 15:44 ET",
-  "updated_at_kst": "05:44 KST",
+  "updated_at_ts": 1795466763.337,
+  "updated_at_et": "11-23 15:46 ET",
+  "updated_at_kst": "05:46 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2603,6 +2603,20 @@
     ],
     "BTC-USD": [
       {
+        "title": "North Korea Moves $247 Million of Binance Hack Loot Through Bitcoin Mixers",
+        "url": "https://decrypt.co/383844/north-korea-247-million-binance-hack-bitcoin-mixers?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 15:36 ET",
+        "pub_ts": 1795466162.0
+      },
+      {
+        "title": "What Held Up While Bitcoin Fell",
+        "url": "https://www.bankless.com/read/what-held-up-while-bitcoin-fell?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 15:15 ET",
+        "pub_ts": 1795464931.0
+      },
+      {
         "title": "BTCS Sells $43.8 Million of Ether to Pay Down Aave Debts After Market Selloff",
         "url": "https://www.cryptoprowl.com/releases/btcs-sells-438-million-of-ether-to-pay-down-aave-debts-after-market-selloff-8036?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2622,20 +2636,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 13:53 ET",
         "pub_ts": 1795460002.0
-      },
-      {
-        "title": "Tom Lee Says XRP’s Supply Grows 5.4% a Year: Could It Cap XRP’s Price by 2028?",
-        "url": "https://247wallst.com/investing/cryptocurrency/2026/11/23/tom-lee-says-xrps-supply-grows-5-4-a-year-could-it-cap-xrps-price-by-2028/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 13:46 ET",
-        "pub_ts": 1795459611.0
-      },
-      {
-        "title": "Jensen Huang Is Back at Nvidia: Could Bitcoin Regain What It Lost Without Him?",
-        "url": "https://247wallst.com/investing/cryptocurrency/2026/11/23/jensen-huang-is-back-at-nvidia-could-bitcoin-regain-what-it-lost-without-him/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 13:16 ET",
-        "pub_ts": 1795457810.0
       }
     ],
     "CRWD": [
@@ -2677,6 +2677,13 @@
     ],
     "ORCL": [
       {
+        "title": "Nebius & CoreWeave Jump 21% While Oracle Sees 12% Gains on Monday Following Jensen’s Return",
+        "url": "https://247wallst.com/videos/nebius-coreweave-jump-21-while-oracle-sees-12-gains-on-monday-following-jensens-return/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 15:16 ET",
+        "pub_ts": 1795464974.0
+      },
+      {
         "title": "Oracle Stock Snaps Losing Streak. Funding for Data-Center Buildout Is in Place.",
         "url": "https://finance.yahoo.com/m/d46a5f32-5904-33a1-9f1a-dcb0884aab9e/oracle-stock-snaps-losing.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2703,13 +2710,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 11:23 ET",
         "pub_ts": 1795451005.0
-      },
-      {
-        "title": "Oracle Delivers a Pointed Response to Growing OpenAI-Related Fears",
-        "url": "https://finance.yahoo.com/technology/ai/articles/oracle-delivers-pointed-response-growing-153653449.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 10:36 ET",
-        "pub_ts": 1795448213.0
       }
     ],
     "COIN": [
@@ -3243,10 +3243,10 @@
   "ticker_news_ts": {
     "KORU": 1795465472.7667868,
     "SOXL": 1795465472.7667868,
-    "SPY": 1795465262.7768118,
+    "SPY": 1795466763.3369036,
     "DIA": 1795465472.7667868,
     "SOXX": 1795465472.7667868,
-    "QQQ": 1795465262.7768118,
+    "QQQ": 1795466763.3369036,
     "SMH": 1795465472.7667868,
     "IWM": 1795465472.7667868,
     "IGV": 1795465472.7667868,
@@ -3276,12 +3276,12 @@
     "BE": 1795465704.7036743,
     "CRDO": 1795465704.7036743,
     "COHR": 1795465704.7036743,
-    "MRVL": 1795465262.7768118,
-    "LITE": 1795465262.7768118,
+    "MRVL": 1795466763.3369036,
+    "LITE": 1795466763.3369036,
     "AAOI": 1795465704.7036743,
     "SPCX": 1795465704.7036743,
     "ASTS": 1795465704.7036743,
-    "AXTI": 1795465262.7768118,
+    "AXTI": 1795466763.3369036,
     "NASA": 1795465704.7036743,
     "LUNR": 1795465704.7036743,
     "TSLA": 1795465704.7036743,
@@ -3296,27 +3296,27 @@
     "OKLO": 1795465704.7036743,
     "CEG": 1795465704.7036743,
     "FPS": 1795465704.7036743,
-    "MU": 1795465262.7768118,
-    "SKHY": 1795465262.7768118,
-    "WDC": 1795465262.7768118,
+    "MU": 1795466763.3369036,
+    "SKHY": 1795466763.3369036,
+    "WDC": 1795466763.3369036,
     "STX": 1795465816.0712192,
     "MSTR": 1795465816.0712192,
     "SNDK": 1795465704.7036743,
-    "BTC-USD": 1795465262.7768118,
+    "BTC-USD": 1795466763.3369036,
     "CRWD": 1795465816.0712192,
-    "ORCL": 1795465262.7768118,
-    "COIN": 1795465262.7768118,
-    "LLY": 1795465262.7768118,
-    "MRNA": 1795465262.7768118,
-    "NKE": 1795465262.7768118,
-    "MCD": 1795465262.7768118,
+    "ORCL": 1795466763.3369036,
+    "COIN": 1795466763.3369036,
+    "LLY": 1795466763.3369036,
+    "MRNA": 1795466763.3369036,
+    "NKE": 1795466763.3369036,
+    "MCD": 1795466763.3369036,
     "PEP": 1795465704.7036743,
     "XOM": 1795465472.7667868,
     "JPM": 1795465472.7667868,
     "WMT": 1795465704.7036743,
     "V": 1795465472.7667868,
     "CAT": 1795465816.0712192,
-    "FN": 1795465262.7768118,
+    "FN": 1795466763.3369036,
     "GLW": 1795465597.5709558,
     "ANT": 1795465816.0712192,
     "XAUUSD": 1795465816.0712192
