@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795465162.149,
-  "updated_at_et": "11-23 15:19 ET",
-  "updated_at_kst": "05:19 KST",
+  "updated_at_ts": 1795465262.777,
+  "updated_at_et": "11-23 15:21 ET",
+  "updated_at_kst": "05:21 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -434,13 +434,6 @@
         "pub_ts": 1795431842.0
       },
       {
-        "title": "ETF Activity: SPY Leads $1.53 Billion Outflow on Nov. 19",
-        "url": "https://finance.yahoo.com/markets/options/articles/etf-activity-spy-leads-1-110011746.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 06:00 ET",
-        "pub_ts": 1795431611.0
-      },
-      {
         "title": "Nvidia Is About 5% of a $500,000 S&P 500 Fund. On Monday Morning It Delivered About a Third of the Fund’s $23,900 Gain",
         "url": "https://247wallst.com/investing/2026/11/23/nvidia-is-about-5-of-a-500000-sp-500-fund-on-monday-morning-it-delivered-about-a-third-of-the-funds-23900-gain/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -453,6 +446,13 @@
         "source": "Yahoo Finance",
         "time": "11-23 06:18 ET",
         "pub_ts": 1795432697.0
+      },
+      {
+        "title": "ETFs Are Net Sellers of Visa (V) on Thursday",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-net-sellers-visa-v-110300948.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 06:03 ET",
+        "pub_ts": 1795431780.0
       }
     ],
     "DIA": [
@@ -2381,6 +2381,20 @@
     ],
     "MU": [
       {
+        "title": "Jensen Huang's return to Nvidia: Long or short accountability?",
+        "url": "https://finance.yahoo.com/video/jensen-huangs-return-to-nvidia-long-or-short-accountability-185949254.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 13:59 ET",
+        "pub_ts": 1795460389.0
+      },
+      {
+        "title": "Jensen Huang’s Return Just Added About $500 Billion to Micron, Dell, TSMC and the AI Stocks That Depend on Nvidia",
+        "url": "https://247wallst.com/investing/2026/11/23/jensen-huangs-return-just-added-about-500-billion-to-micron-dell-tsmc-and-the-ai-stocks-that-depend-on-nvidia/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 15:13 ET",
+        "pub_ts": 1795464780.0
+      },
+      {
         "title": "“Smoke and Mirrors”: Micron’s President Slammed Rival DRAM Designs. We’ll Know Soon if He’s Right",
         "url": "https://www.tikr.com/blog/smoke-and-mirrors-microns-president-slammed-rival-dram-designs-well-know-soon-if-hes-right?ref=yahoofinance&tlnk=yf-261123-78qhh9qx&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2400,20 +2414,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 13:52 ET",
         "pub_ts": 1795459920.0
-      },
-      {
-        "title": "Why Is Micron (MU) Stock Soaring Today? Nvidia's CEO Return Lifts Chip Stocks",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/why-micron-mu-stock-soaring-173033741.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 12:30 ET",
-        "pub_ts": 1795455033.0
-      },
-      {
-        "title": "Micron Stocks Jump 13.73% After Selloff Left Shares Near 5 Times Annualized Earnings",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/micron-stocks-jump-13-73-165936616.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 11:59 ET",
-        "pub_ts": 1795453176.0
       }
     ],
     "SKHY": [
@@ -2455,6 +2455,13 @@
     ],
     "WDC": [
       {
+        "title": "NVIDIA Stock Plunges 46%: Why WDC Could Be a Better Buy for 2027",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/nvidia-stock-plunges-46-why-190000303.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 14:00 ET",
+        "pub_ts": 1795460400.0
+      },
+      {
         "title": "A $12 Billion Fund Dumps These 3 Stocks",
         "url": "https://www.tikr.com/blog/a-12-billion-fund-dumps-these-3-stocks-3?ref=yahoofinance&tlnk=yf-261123-hfrgrgp9&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2481,13 +2488,6 @@
         "source": "Yahoo Finance",
         "time": "11-21 05:07 ET",
         "pub_ts": 1795255638.0
-      },
-      {
-        "title": "Credo Technology Group vs. Western Digital: Which Technology Stock Is a Better Buy for 2027?",
-        "url": "https://www.fool.com/coverage/better-buy/2026/11/20/credo-technology-group-vs-western-digital-which-technology-stock-is-a-better-buy-for-2027/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 17:17 ET",
-        "pub_ts": 1795213028.0
       }
     ],
     "STX": [
@@ -2603,6 +2603,20 @@
     ],
     "BTC-USD": [
       {
+        "title": "BTCS Sells $43.8 Million of Ether to Pay Down Aave Debts After Market Selloff",
+        "url": "https://www.cryptoprowl.com/releases/btcs-sells-438-million-of-ether-to-pay-down-aave-debts-after-market-selloff-8036?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 14:57 ET",
+        "pub_ts": 1795463820.0
+      },
+      {
+        "title": "Strategy Is Still Down 45% in a Month: Can MSTR Stock Revisit $150 as Bitcoin Holds $60,000?",
+        "url": "https://247wallst.com/investing/2026/11/23/strategy-is-still-down-45-in-a-month-can-mstr-stock-revisit-150-as-bitcoin-holds-60000/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 14:54 ET",
+        "pub_ts": 1795463644.0
+      },
+      {
         "title": "Sector Update: Financial Stocks Higher Monday Afternoon",
         "url": "https://finance.yahoo.com/markets/stocks/articles/sector-financial-stocks-higher-monday-185322235.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2622,20 +2636,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 13:16 ET",
         "pub_ts": 1795457810.0
-      },
-      {
-        "title": "Solo Bitcoin Miner Scores Again, Hitting $191,000 Jackpot Against the Odds",
-        "url": "https://decrypt.co/383818/solo-bitcoin-miner-scores-again-191000-jackpot?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 13:16 ET",
-        "pub_ts": 1795457785.0
-      },
-      {
-        "title": "Bitcoin rallies as Nvidia brings back Jensen Huang",
-        "url": "https://www.thestreet.com/crypto/markets/bitcoin-rallies-as-nvidia-brings-back-jensen-huang?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 13:11 ET",
-        "pub_ts": 1795457473.0
       }
     ],
     "CRWD": [
@@ -2751,6 +2751,13 @@
     ],
     "LLY": [
       {
+        "title": "Ahmed family office pays $18M for Summit’s Fulton Market HQ",
+        "url": "https://finance.yahoo.com/real-estate/articles/ahmed-family-office-pays-18m-193000138.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 14:30 ET",
+        "pub_ts": 1795462200.0
+      },
+      {
         "title": "Lilly buys Huntington’s drug developer LoQus23 in potentially $725M deal",
         "url": "https://www.biopharmadive.com/news/lilly-loqus-huntingtons-drug-acquisition-deal/875448/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2777,13 +2784,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 10:00 ET",
         "pub_ts": 1795446000.0
-      },
-      {
-        "title": "Eli Lilly (LLY) Acquires Huntington's Disease Drug Developer",
-        "url": "https://finance.yahoo.com/healthcare/articles/eli-lilly-lly-acquires-huntingtons-131228184.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 08:12 ET",
-        "pub_ts": 1795439548.0
       }
     ],
     "MRNA": [
@@ -2825,6 +2825,13 @@
     ],
     "NKE": [
       {
+        "title": "Foot Locker Is a Focus for Analysts When Dick’s Reports Q3 Results on Tuesday",
+        "url": "https://wwd.com/footwear-news/shoe-industry-news/dicks-q3-report-wall-street-foot-locker-nike-jordan-brand-1239462436/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 15:01 ET",
+        "pub_ts": 1795464062.0
+      },
+      {
         "title": "Why Nike and American Eagle Can Hold Up Better as Holiday Shoppers Avoid Clothing Aisles",
         "url": "https://finance.yahoo.com/m/124188ed-2e75-3447-b48b-3a1176084010/why-nike-and-american-eagle.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2851,13 +2858,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 02:27 ET",
         "pub_ts": 1795418855.0
-      },
-      {
-        "title": "Nike vs. Procter & Gamble: Which Consumer Stock Is a Better Buy for 2027?",
-        "url": "https://www.fool.com/coverage/better-buy/2026/11/22/nike-vs-procter-gamble-which-consumer-stock-is-a-better-buy-for-2027/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-22 15:11 ET",
-        "pub_ts": 1795378285.0
       }
     ],
     "MCD": [
@@ -3243,10 +3243,10 @@
   "ticker_news_ts": {
     "KORU": 1795463881.306905,
     "SOXL": 1795463881.306905,
-    "SPY": 1795463671.7743666,
+    "SPY": 1795465262.7768118,
     "DIA": 1795463881.306905,
     "SOXX": 1795463881.306905,
-    "QQQ": 1795463671.7743666,
+    "QQQ": 1795465262.7768118,
     "SMH": 1795463881.306905,
     "IWM": 1795463881.306905,
     "IGV": 1795463881.306905,
@@ -3276,12 +3276,12 @@
     "BE": 1795464115.8954256,
     "CRDO": 1795464115.8954256,
     "COHR": 1795464115.8954256,
-    "MRVL": 1795463671.7743666,
-    "LITE": 1795463671.7743666,
+    "MRVL": 1795465262.7768118,
+    "LITE": 1795465262.7768118,
     "AAOI": 1795464115.8954256,
     "SPCX": 1795464115.8954256,
     "ASTS": 1795464115.8954256,
-    "AXTI": 1795463671.7743666,
+    "AXTI": 1795465262.7768118,
     "NASA": 1795464115.8954256,
     "LUNR": 1795464115.8954256,
     "TSLA": 1795464115.8954256,
@@ -3296,27 +3296,27 @@
     "OKLO": 1795464115.8954256,
     "CEG": 1795464115.8954256,
     "FPS": 1795464115.8954256,
-    "MU": 1795463671.7743666,
-    "SKHY": 1795463671.7743666,
-    "WDC": 1795463671.7743666,
+    "MU": 1795465262.7768118,
+    "SKHY": 1795465262.7768118,
+    "WDC": 1795465262.7768118,
     "STX": 1795464221.4893281,
     "MSTR": 1795464221.4893281,
     "SNDK": 1795464115.8954256,
-    "BTC-USD": 1795463671.7743666,
+    "BTC-USD": 1795465262.7768118,
     "CRWD": 1795464221.4893281,
-    "ORCL": 1795463671.7743666,
-    "COIN": 1795463671.7743666,
-    "LLY": 1795463671.7743666,
-    "MRNA": 1795463671.7743666,
-    "NKE": 1795463671.7743666,
-    "MCD": 1795463671.7743666,
+    "ORCL": 1795465262.7768118,
+    "COIN": 1795465262.7768118,
+    "LLY": 1795465262.7768118,
+    "MRNA": 1795465262.7768118,
+    "NKE": 1795465262.7768118,
+    "MCD": 1795465262.7768118,
     "PEP": 1795464115.8954256,
     "XOM": 1795463881.306905,
     "JPM": 1795463881.306905,
     "WMT": 1795464115.8954256,
     "V": 1795463881.306905,
     "CAT": 1795464221.4893281,
-    "FN": 1795463671.7743666,
+    "FN": 1795465262.7768118,
     "GLW": 1795464003.479138,
     "ANT": 1795464221.4893281,
     "XAUUSD": 1795464221.4893281
