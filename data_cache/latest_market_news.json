@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795448521.027,
-  "updated_at_et": "11-23 10:42 ET",
-  "updated_at_kst": "00:42 KST",
+  "updated_at_ts": 1795448629.704,
+  "updated_at_et": "11-23 10:43 ET",
+  "updated_at_kst": "00:43 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2559,11 +2559,11 @@
         "pub_ts": 1795442423.0
       },
       {
-        "title": "Strategy Buys $30M in Bitcoin, Moves $1B From USD Reserve to Cash Pot",
-        "url": "https://decrypt.co/383779/strategy-buys-30m-in-bitcoin-moves-1b-from-usd-reserve-to-cash-pot?.tsrc=rss",
+        "title": "Strategy’s Saylor Stumbles as Firm’s Value Trails Bitcoin Hoard",
+        "url": "https://finance.yahoo.com/markets/crypto/articles/strategy-saylor-stumbles-firm-value-135058309.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 08:25 ET",
-        "pub_ts": 1795440335.0
+        "time": "11-23 08:50 ET",
+        "pub_ts": 1795441858.0
       }
     ],
     "SNDK": [
@@ -2642,6 +2642,20 @@
     ],
     "CRWD": [
       {
+        "title": "Zscaler Jumps 21% as CrowdStrike Moves to Acquire It",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/zscaler-jumps-21-crowdstrike-moves-152922386.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 10:29 ET",
+        "pub_ts": 1795447762.0
+      },
+      {
+        "title": "CrowdStrike stock outlook after the $44B Zscaler acquisition deal",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/crowdstrike-stock-outlook-44b-zscaler-151321613.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 10:13 ET",
+        "pub_ts": 1795446801.0
+      },
+      {
         "title": "Zscaler Soars 23% on $43.9 Billion CrowdStrike Buyout: “Safety Is Required to Let AI In”",
         "url": "https://www.tikr.com/blog/zscaler-soars-23-on-43-9-billion-crowdstrike-buyout-safety-is-required-to-let-ai-in?ref=yahoofinance&tlnk=yf-261123-6cwr929g&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2661,20 +2675,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 08:46 ET",
         "pub_ts": 1795441576.0
-      },
-      {
-        "title": "CrowdStrike (CRWD) Q3 Earnings: How Key Metrics Compare to Wall Street Estimates",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/crowdstrike-crwd-q3-earnings-key-133001253.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 08:30 ET",
-        "pub_ts": 1795440601.0
-      },
-      {
-        "title": "CrowdStrike's Zscaler Acquisition Could Broaden Security Platform, Says JPMorgan — Analysts Weigh Opportunities And Risks",
-        "url": "https://stocktwits.com/news-articles/markets/equity/crowd-strike-s-zscaler-acquisition-could-broaden-security-platform-says-jp-morgan-analysts-weigh-opportunities-and-risks/cNbpTQZR9jT?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 08:27 ET",
-        "pub_ts": 1795440478.0
       }
     ],
     "ORCL": [
@@ -3277,7 +3277,7 @@
     "VST": 1795448204.9328008,
     "BE": 1795448314.7534328,
     "CRDO": 1795448314.7534328,
-    "COHR": 1795447117.128291,
+    "COHR": 1795448629.7036808,
     "MRVL": 1795447978.9951282,
     "LITE": 1795447978.9951282,
     "AAOI": 1795448314.7534328,
@@ -3295,17 +3295,17 @@
     "VRT": 1795448521.0268104,
     "HPE": 1795448521.0268104,
     "DELL": 1795448521.0268104,
-    "OKLO": 1795447117.128291,
+    "OKLO": 1795448629.7036808,
     "CEG": 1795448521.0268104,
-    "FPS": 1795447117.128291,
+    "FPS": 1795448629.7036808,
     "MU": 1795447978.9951282,
     "SKHY": 1795447978.9951282,
     "WDC": 1795447978.9951282,
-    "STX": 1795447117.128291,
-    "MSTR": 1795447117.128291,
-    "SNDK": 1795447117.128291,
+    "STX": 1795448629.7036808,
+    "MSTR": 1795448629.7036808,
+    "SNDK": 1795448629.7036808,
     "BTC-USD": 1795447978.9951282,
-    "CRWD": 1795447117.128291,
+    "CRWD": 1795448629.7036808,
     "ORCL": 1795447978.9951282,
     "COIN": 1795447978.9951282,
     "LLY": 1795447978.9951282,
