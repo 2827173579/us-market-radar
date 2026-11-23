@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795420260.675,
-  "updated_at_et": "11-23 02:51 ET",
-  "updated_at_kst": "16:51 KST",
+  "updated_at_ts": 1795420370.461,
+  "updated_at_et": "11-23 02:52 ET",
+  "updated_at_kst": "16:52 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1125,6 +1125,13 @@
     ],
     "META": [
       {
+        "title": "A 167-Year-Old Math Problem Just Became Meta's Case That Superintelligence Is Near",
+        "url": "https://beincrypto.com/superintelligence-inevitable-meta-ai-chief/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 01:43 ET",
+        "pub_ts": 1795416225.0
+      },
+      {
         "title": "After Blockbuster Anthropic IPO, OpenAI Wants AI Rivals To Agree On Development ‘Limits’, While Meta Calls For Controlled Approach",
         "url": "https://stocktwits.com/news-articles/markets/equity/after-blockbuster-anthropic-ipo-open-ai-wants-ai-rivals-to-agree-on-development-limits-while-meta-calls-for-controlled-approach/cNbYnGlR9SP?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1151,13 +1158,6 @@
         "source": "Yahoo Finance",
         "time": "11-22 06:21 ET",
         "pub_ts": 1795346503.0
-      },
-      {
-        "title": "Billionaire Tech Investor Philippe Laffont Just Loaded Up on These 4 AI Stocks",
-        "url": "https://www.fool.com/investing/2026/11/22/billionaire-tech-investor-philippe-laffont-just-loaded-up-on-these-4-ai-stocks/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-22 06:15 ET",
-        "pub_ts": 1795346102.0
       }
     ],
     "GOOGL": [
@@ -3263,15 +3263,15 @@
     "ASML": 1795420260.6746352,
     "QCOM": 1795420260.6746352,
     "AVGO": 1795420260.6746352,
-    "AMAT": 1795418774.1879063,
-    "META": 1795418774.1879063,
+    "AMAT": 1795420370.461473,
+    "META": 1795420370.461473,
     "GOOGL": 1795420260.6746352,
     "MSFT": 1795420260.6746352,
-    "AAPL": 1795418774.1879063,
+    "AAPL": 1795420370.461473,
     "PLTR": 1795418881.7427878,
-    "NOW": 1795418774.1879063,
-    "AMZN": 1795418774.1879063,
-    "CRWV": 1795418774.1879063,
+    "NOW": 1795420370.461473,
+    "AMZN": 1795420370.461473,
+    "CRWV": 1795420370.461473,
     "NBIS": 1795418881.7427878,
     "APLD": 1795418881.7427878,
     "VST": 1795418881.7427878,
@@ -3280,18 +3280,18 @@
     "COHR": 1795418989.5397758,
     "MRVL": 1795418989.5397758,
     "LITE": 1795418989.5397758,
-    "AAOI": 1795418774.1879063,
-    "SPCX": 1795418774.1879063,
-    "ASTS": 1795418774.1879063,
+    "AAOI": 1795420370.461473,
+    "SPCX": 1795420370.461473,
+    "ASTS": 1795420370.461473,
     "AXTI": 1795418989.5397758,
-    "NASA": 1795418774.1879063,
-    "LUNR": 1795418774.1879063,
+    "NASA": 1795420370.461473,
+    "LUNR": 1795420370.461473,
     "TSLA": 1795418881.7427878,
-    "AXP": 1795418774.1879063,
-    "RKLB": 1795418774.1879063,
-    "KO": 1795418774.1879063,
-    "FLY": 1795418774.1879063,
-    "INTC": 1795418774.1879063,
+    "AXP": 1795420370.461473,
+    "RKLB": 1795420370.461473,
+    "KO": 1795420370.461473,
+    "FLY": 1795420370.461473,
+    "INTC": 1795420370.461473,
     "VRT": 1795418881.7427878,
     "HPE": 1795418881.7427878,
     "DELL": 1795418881.7427878,
@@ -3319,7 +3319,7 @@
     "V": 1795418989.5397758,
     "CAT": 1795418989.5397758,
     "FN": 1795418989.5397758,
-    "GLW": 1795418774.1879063,
+    "GLW": 1795420370.461473,
     "ANT": 1795418989.5397758,
     "XAUUSD": 1795419098.6685262
   },
