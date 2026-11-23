@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795431273.844,
-  "updated_at_et": "11-23 05:54 ET",
-  "updated_at_kst": "19:54 KST",
+  "updated_at_ts": 1795431385.865,
+  "updated_at_et": "11-23 05:56 ET",
+  "updated_at_kst": "19:56 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2581,6 +2581,13 @@
         "pub_ts": 1795429202.0
       },
       {
+        "title": "Good News for Micron: Citi Says Ending Nvidia’s Financing Would Cut DRAM Demand Only 12%",
+        "url": "https://www.tikr.com/blog/good-news-for-micron-citi-says-ending-nvidias-financing-would-cut-dram-demand-only-12?ref=yahoofinance&tlnk=yf-261123-m6g4jpcr&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 01:15 ET",
+        "pub_ts": 1795414541.0
+      },
+      {
         "title": "SNDK Stock Wrapped Its Worst Week Since July: Why Morningstar Sees A NAND Memory Bust Looming For SanDisk",
         "url": "https://stocktwits.com/news-articles/markets/equity/sndk-stock-nand-price-downcycle-forecast-morningstar/cNbYVUtR9S2?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2600,13 +2607,6 @@
         "source": "Yahoo Finance",
         "time": "11-22 06:17 ET",
         "pub_ts": 1795346241.0
-      },
-      {
-        "title": "Renaissance Technologies Grew Its SanDisk Stake More Than 55-Fold to $481 Million",
-        "url": "https://247wallst.com/investing/2026/11/21/renaissance-technologies-grew-its-sandisk-stake-more-than-55-fold-to-481-million/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-21 16:43 ET",
-        "pub_ts": 1795297383.0
       }
     ],
     "BTC-USD": [
@@ -2648,6 +2648,20 @@
     ],
     "CRWD": [
       {
+        "title": "CrowdStrike to Acquire Zscaler, Bringing Network Security and Zero Trust to the Falcon Platform",
+        "url": "https://finance.yahoo.com/technology/ai/articles/crowdstrike-acquire-zscaler-bringing-network-103200828.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 05:32 ET",
+        "pub_ts": 1795429920.0
+      },
+      {
+        "title": "CrowdStrike Reports Third Quarter Fiscal Year 2027 Financial Results",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/crowdstrike-reports-third-quarter-fiscal-103000256.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 05:30 ET",
+        "pub_ts": 1795429800.0
+      },
+      {
         "title": "CrowdStrike-Zscaler Merger Could Make Cybersecurity Rival ‘More Formidable’ Against Palo Alto Networks, Says Jefferies",
         "url": "https://stocktwits.com/news-articles/markets/equity/crowdstrike-zscaler-merger-versus-palo-alto-networks/cNbn1VWR91Y?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2667,20 +2681,6 @@
         "source": "Yahoo Finance",
         "time": "11-21 02:15 ET",
         "pub_ts": 1795245357.0
-      },
-      {
-        "title": "Crowd Pleaser….Crowdstrike Wants to Buy Zscaler",
-        "url": "https://www.fool.com/investing/2026/11/20/crowd-pleaser-crowdstrike-wants-to-buy-zscaler/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 21:29 ET",
-        "pub_ts": 1795228173.0
-      },
-      {
-        "title": "Nasdaq 100 Ends Worst Week Since 2020, S&P 500 In Correction Territory As AI Rout Sours Sentiment — ANT, NVDA, TTWO, ZS, CRWD In Focus",
-        "url": "https://stocktwits.com/news-articles/markets/equity/nasdaq-100-ends-worst-week-since-2020-s-and-p-500-in-correction-territory-as-ai-rout-sours-sentiment-ant-nvda-ttwo-zs-crwd-in-focus/cNbm3xQR91W?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 20:30 ET",
-        "pub_ts": 1795224625.0
       }
     ],
     "ORCL": [
@@ -3292,26 +3292,26 @@
     "AXTI": 1795430927.6862364,
     "NASA": 1795431273.8441029,
     "LUNR": 1795431273.8441029,
-    "TSLA": 1795429827.4366198,
+    "TSLA": 1795431385.8652925,
     "AXP": 1795431273.8441029,
     "RKLB": 1795431273.8441029,
     "KO": 1795431273.8441029,
     "FLY": 1795431273.8441029,
     "INTC": 1795431273.8441029,
-    "VRT": 1795429827.4366198,
-    "HPE": 1795429827.4366198,
-    "DELL": 1795429827.4366198,
-    "OKLO": 1795429827.4366198,
-    "CEG": 1795429827.4366198,
-    "FPS": 1795429827.4366198,
+    "VRT": 1795431385.8652925,
+    "HPE": 1795431385.8652925,
+    "DELL": 1795431385.8652925,
+    "OKLO": 1795431385.8652925,
+    "CEG": 1795431385.8652925,
+    "FPS": 1795431385.8652925,
     "MU": 1795430927.6862364,
     "SKHY": 1795430927.6862364,
     "WDC": 1795430927.6862364,
-    "STX": 1795429827.4366198,
-    "MSTR": 1795429827.4366198,
-    "SNDK": 1795429827.4366198,
+    "STX": 1795431385.8652925,
+    "MSTR": 1795431385.8652925,
+    "SNDK": 1795431385.8652925,
     "BTC-USD": 1795430927.6862364,
-    "CRWD": 1795429827.4366198,
+    "CRWD": 1795431385.8652925,
     "ORCL": 1795430927.6862364,
     "COIN": 1795430927.6862364,
     "LLY": 1795430927.6862364,
@@ -3327,7 +3327,7 @@
     "FN": 1795430927.6862364,
     "GLW": 1795431273.8441029,
     "ANT": 1795431273.8441029,
-    "XAUUSD": 1795429827.4366198
+    "XAUUSD": 1795431385.8652925
   },
   "opex_shield": {
     "date": "2026-11-23",
