@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795460434.135,
-  "updated_at_et": "11-23 14:00 ET",
-  "updated_at_kst": "04:00 KST",
+  "updated_at_ts": 1795460569.16,
+  "updated_at_et": "11-23 14:02 ET",
+  "updated_at_kst": "04:02 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -418,8 +418,8 @@
     ],
     "SPY": [
       {
-        "title": "Why stocks are having their wildest Monday morning since 2008",
-        "url": "https://finance.yahoo.com/markets/article/why-stocks-are-having-their-wildest-monday-morning-since-2008-153100381.html?.tsrc=rss",
+        "title": "Why stocks are having their wildest Monday since 2008",
+        "url": "https://finance.yahoo.com/markets/article/why-stocks-are-having-their-wildest-morning-since-2008-184837610.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-23 10:31 ET",
         "pub_ts": 1795447860.0
@@ -543,18 +543,18 @@
         "pub_ts": 1795431845.0
       },
       {
+        "title": "Why stocks are having their wildest Monday since 2008",
+        "url": "https://finance.yahoo.com/markets/article/why-stocks-are-having-their-wildest-morning-since-2008-184837610.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 10:31 ET",
+        "pub_ts": 1795447860.0
+      },
+      {
         "title": "Nvidia Just Jumped More Than 30%. A 66-Year-Old Who Moved $500,000 Out of VOO on Friday Missed a Five-Figure Day",
         "url": "https://247wallst.com/investing/etf/2026/11/23/nvidia-just-jumped-more-than-30-a-66-year-old-who-moved-500000-out-of-voo-on-friday-missed-a-five-figure-day/?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-23 13:31 ET",
         "pub_ts": 1795458691.0
-      },
-      {
-        "title": "Why stocks are having their wildest Monday morning since 2008",
-        "url": "https://finance.yahoo.com/markets/article/why-stocks-are-having-their-wildest-monday-morning-since-2008-153100381.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 10:31 ET",
-        "pub_ts": 1795447860.0
       },
       {
         "title": "Exchange-Traded Funds, Equity Futures Higher Pre-Bell Monday as Jensen Huang Returns to Nvidia",
@@ -2386,13 +2386,6 @@
         "pub_ts": 1795450419.0
       },
       {
-        "title": "Jensen Huang back as Nvidia CEO after 12 days: Shares surge 30%",
-        "url": "https://finance.yahoo.com/video/jensen-huang-back-as-nvidia-ceo-after-12-days-shares-surge-30-161302539.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 11:13 ET",
-        "pub_ts": 1795450382.0
-      },
-      {
         "title": "Why Is Micron (MU) Stock Soaring Today? Nvidia's CEO Return Lifts Chip Stocks",
         "url": "https://finance.yahoo.com/markets/stocks/articles/why-micron-mu-stock-soaring-173033741.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2412,6 +2405,13 @@
         "source": "Yahoo Finance",
         "time": "11-23 11:57 ET",
         "pub_ts": 1795453058.0
+      },
+      {
+        "title": "Why Is GlobalFoundries (GFS) Stock Up Today? Chip Rally on Nvidia CEO Return",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/why-globalfoundries-gfs-stock-today-183102007.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 13:31 ET",
+        "pub_ts": 1795458662.0
       }
     ],
     "SKHY": [
@@ -2675,6 +2675,13 @@
     ],
     "ORCL": [
       {
+        "title": "Why Oracle Stock Is Rising Today",
+        "url": "https://www.fool.com/investing/2026/11/23/why-oracle-stock-is-rising/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 13:30 ET",
+        "pub_ts": 1795458602.0
+      },
+      {
         "title": "Oracle Stocks Jump 12.02% as Funding Pledge and Nvidia Reversal Ease AI Debt Fears",
         "url": "https://finance.yahoo.com/markets/stocks/articles/oracle-stocks-jump-12-02-165714363.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2701,13 +2708,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 10:34 ET",
         "pub_ts": 1795448040.0
-      },
-      {
-        "title": "Global Regulatory Data Market Report 2026 | Capitalize on 18.3% CAGR as AI, cloud and real-time reporting fuel $5.96B by 2030; IBM, Oracle, SAP and Accenture accelerate innovation",
-        "url": "https://finance.yahoo.com/technology/ai/articles/global-regulatory-data-market-report-153000330.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 10:30 ET",
-        "pub_ts": 1795447800.0
       }
     ],
     "COIN": [
@@ -3241,10 +3241,10 @@
   "ticker_news_ts": {
     "KORU": 1795459081.868405,
     "SOXL": 1795459081.868405,
-    "SPY": 1795458977.995934,
+    "SPY": 1795460569.1597998,
     "DIA": 1795459081.868405,
     "SOXX": 1795459081.868405,
-    "QQQ": 1795458977.995934,
+    "QQQ": 1795460569.1597998,
     "SMH": 1795459081.868405,
     "IWM": 1795459081.868405,
     "IGV": 1795459081.868405,
@@ -3274,12 +3274,12 @@
     "BE": 1795459301.2986777,
     "CRDO": 1795459301.2986777,
     "COHR": 1795459408.9106386,
-    "MRVL": 1795458977.995934,
-    "LITE": 1795458977.995934,
+    "MRVL": 1795460569.1597998,
+    "LITE": 1795460569.1597998,
     "AAOI": 1795459301.2986777,
     "SPCX": 1795459301.2986777,
     "ASTS": 1795459301.2986777,
-    "AXTI": 1795458977.995934,
+    "AXTI": 1795460569.1597998,
     "NASA": 1795459301.2986777,
     "LUNR": 1795459301.2986777,
     "TSLA": 1795459408.9106386,
@@ -3294,27 +3294,27 @@
     "OKLO": 1795459408.9106386,
     "CEG": 1795459408.9106386,
     "FPS": 1795459408.9106386,
-    "MU": 1795458977.995934,
-    "SKHY": 1795458977.995934,
-    "WDC": 1795458977.995934,
+    "MU": 1795460569.1597998,
+    "SKHY": 1795460569.1597998,
+    "WDC": 1795460569.1597998,
     "STX": 1795459408.9106386,
     "MSTR": 1795459408.9106386,
     "SNDK": 1795459408.9106386,
-    "BTC-USD": 1795458977.995934,
+    "BTC-USD": 1795460569.1597998,
     "CRWD": 1795459408.9106386,
-    "ORCL": 1795458977.995934,
-    "COIN": 1795458977.995934,
-    "LLY": 1795458977.995934,
-    "MRNA": 1795458977.995934,
-    "NKE": 1795458977.995934,
-    "MCD": 1795458977.995934,
+    "ORCL": 1795460569.1597998,
+    "COIN": 1795460569.1597998,
+    "LLY": 1795460569.1597998,
+    "MRNA": 1795460569.1597998,
+    "NKE": 1795460569.1597998,
+    "MCD": 1795460569.1597998,
     "PEP": 1795459301.2986777,
     "XOM": 1795459081.868405,
     "JPM": 1795459081.868405,
     "WMT": 1795459301.2986777,
     "V": 1795459081.868405,
     "CAT": 1795459408.9106386,
-    "FN": 1795458977.995934,
+    "FN": 1795460569.1597998,
     "GLW": 1795459301.2986777,
     "ANT": 1795459408.9106386,
     "XAUUSD": 1795459301.2986777
