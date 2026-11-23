@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795429711.694,
-  "updated_at_et": "11-23 05:28 ET",
-  "updated_at_kst": "19:28 KST",
+  "updated_at_ts": 1795429827.437,
+  "updated_at_et": "11-23 05:30 ET",
+  "updated_at_kst": "19:30 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2551,6 +2551,13 @@
         "pub_ts": 1795410388.0
       },
       {
+        "title": "Forget Strategy: MARA Has More to Lose From Bitcoin’s Drop Below $60,000",
+        "url": "https://www.tikr.com/blog/forget-strategy-mara-has-more-to-lose-from-bitcoins-drop-below-60000?ref=yahoofinance&tlnk=yf-261123-72mv36h4&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-22 19:59 ET",
+        "pub_ts": 1795395542.0
+      },
+      {
         "title": "MSCI Is Cutting Strategy and Metaplanet From Its Indexes. Here's What It Means for Bitcoin Treasury Company Stocks.",
         "url": "https://www.fool.com/investing/2026/11/21/msci-is-cutting-strategy-and-metaplanet-from-its-indexes-here-s-what-it-means-for-bitcoin-treasury-company-stocks/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2563,16 +2570,16 @@
         "source": "Yahoo Finance",
         "time": "11-20 22:10 ET",
         "pub_ts": 1795230659.0
-      },
-      {
-        "title": "Strategy Is Down 44% in a Month as Crypto Stocks Crumble: Can MSTR Stock Get Back to $100 This Year?",
-        "url": "https://247wallst.com/investing/2026/11/20/strategy-is-down-44-in-a-month-as-crypto-stocks-crumble-can-mstr-stock-get-back-to-100-this-year/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 15:02 ET",
-        "pub_ts": 1795204955.0
       }
     ],
     "SNDK": [
+      {
+        "title": "Sandisk Just Split Its Stock 8-for-1. Is It Time to Buy?",
+        "url": "https://www.fool.com/investing/2026/11/23/sandisk-just-split-its-stock-8-for-1-is-it-time-to-buy/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 05:20 ET",
+        "pub_ts": 1795429202.0
+      },
       {
         "title": "SNDK Stock Wrapped Its Worst Week Since July: Why Morningstar Sees A NAND Memory Bust Looming For SanDisk",
         "url": "https://stocktwits.com/news-articles/markets/equity/sndk-stock-nand-price-downcycle-forecast-morningstar/cNbYVUtR9S2?.tsrc=rss",
@@ -2600,13 +2607,6 @@
         "source": "Yahoo Finance",
         "time": "11-21 16:43 ET",
         "pub_ts": 1795297383.0
-      },
-      {
-        "title": "SK hynix Sinks 21% in a Week With Micron and Sandisk. Its U.S. Premium Is an “Extra Special Case”",
-        "url": "https://www.tikr.com/blog/sk-hynix-sinks-21-in-a-week-with-micron-and-sandisk-its-u-s-premium-is-an-extra-special-case?ref=yahoofinance&tlnk=yf-261121-947vrx38&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-21 11:50 ET",
-        "pub_ts": 1795279856.0
       }
     ],
     "BTC-USD": [
@@ -3292,26 +3292,26 @@
     "AXTI": 1795429366.9913664,
     "NASA": 1795429711.6942582,
     "LUNR": 1795429711.6942582,
-    "TSLA": 1795428284.9641528,
+    "TSLA": 1795429827.4366198,
     "AXP": 1795429711.6942582,
     "RKLB": 1795429711.6942582,
     "KO": 1795429711.6942582,
     "FLY": 1795429711.6942582,
     "INTC": 1795429711.6942582,
-    "VRT": 1795428284.9641528,
-    "HPE": 1795428284.9641528,
-    "DELL": 1795428284.9641528,
-    "OKLO": 1795428284.9641528,
-    "CEG": 1795428284.9641528,
-    "FPS": 1795428284.9641528,
+    "VRT": 1795429827.4366198,
+    "HPE": 1795429827.4366198,
+    "DELL": 1795429827.4366198,
+    "OKLO": 1795429827.4366198,
+    "CEG": 1795429827.4366198,
+    "FPS": 1795429827.4366198,
     "MU": 1795429366.9913664,
     "SKHY": 1795429366.9913664,
     "WDC": 1795429366.9913664,
-    "STX": 1795428284.9641528,
-    "MSTR": 1795428284.9641528,
-    "SNDK": 1795428284.9641528,
+    "STX": 1795429827.4366198,
+    "MSTR": 1795429827.4366198,
+    "SNDK": 1795429827.4366198,
     "BTC-USD": 1795429366.9913664,
-    "CRWD": 1795428284.9641528,
+    "CRWD": 1795429827.4366198,
     "ORCL": 1795429366.9913664,
     "COIN": 1795429366.9913664,
     "LLY": 1795429366.9913664,
@@ -3327,7 +3327,7 @@
     "FN": 1795429366.9913664,
     "GLW": 1795429711.6942582,
     "ANT": 1795429595.2834144,
-    "XAUUSD": 1795428172.725004
+    "XAUUSD": 1795429827.4366198
   },
   "opex_shield": {
     "date": "2026-11-23",
