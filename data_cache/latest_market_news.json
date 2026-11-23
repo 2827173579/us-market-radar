@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795412327.705,
-  "updated_at_et": "11-23 00:38 ET",
-  "updated_at_kst": "14:38 KST",
+  "updated_at_ts": 1795412434.847,
+  "updated_at_et": "11-23 00:40 ET",
+  "updated_at_kst": "14:40 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1755,6 +1755,13 @@
     ],
     "SPCX": [
       {
+        "title": "These 5 Stocks Could Double by 2028. Here's What Has to Go Right.",
+        "url": "https://www.fool.com/investing/2026/11/23/these-5-stocks-could-double-by-2028-here-s-what-has-to-go-right/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 00:20 ET",
+        "pub_ts": 1795411202.0
+      },
+      {
         "title": "Elon Musk Says 2027 AI Cash Crunch Will Be ‘Nuts’ — Analysts Still See SpaceX Emerging As The Biggest AI Hyperscaler",
         "url": "https://stocktwits.com/news-articles/markets/equity/elon-musk-2027-ai-cash-crunch-analysts-spacex-biggest-ai-hyperscaler/cNbYZvbR9Sb?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1781,13 +1788,6 @@
         "source": "Yahoo Finance",
         "time": "11-22 17:21 ET",
         "pub_ts": 1795386062.0
-      },
-      {
-        "title": "Cathie Wood Just Bought $22 Million of SpaceX Across 2 ARK Funds",
-        "url": "https://www.tikr.com/blog/cathie-wood-just-bought-22-million-of-spacex-across-2-ark-funds?ref=yahoofinance&tlnk=yf-261122-x426pfvj&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-22 14:35 ET",
-        "pub_ts": 1795376117.0
       }
     ],
     "ASTS": [
@@ -3264,15 +3264,15 @@
     "ASML": 1795412327.704566,
     "QCOM": 1795412327.704566,
     "AVGO": 1795412327.704566,
-    "AMAT": 1795410852.9628596,
-    "META": 1795410852.9628596,
+    "AMAT": 1795412434.846734,
+    "META": 1795412434.846734,
     "GOOGL": 1795412327.704566,
     "MSFT": 1795412327.704566,
-    "AAPL": 1795410852.9628596,
+    "AAPL": 1795412434.846734,
     "PLTR": 1795410959.4577825,
-    "NOW": 1795410852.9628596,
-    "AMZN": 1795410852.9628596,
-    "CRWV": 1795410852.9628596,
+    "NOW": 1795412434.846734,
+    "AMZN": 1795412434.846734,
+    "CRWV": 1795412434.846734,
     "NBIS": 1795410959.4577825,
     "APLD": 1795410959.4577825,
     "VST": 1795410959.4577825,
@@ -3281,18 +3281,18 @@
     "COHR": 1795411079.3155942,
     "MRVL": 1795411079.3155942,
     "LITE": 1795411079.3155942,
-    "AAOI": 1795410852.9628596,
-    "SPCX": 1795410852.9628596,
-    "ASTS": 1795410852.9628596,
+    "AAOI": 1795412434.846734,
+    "SPCX": 1795412434.846734,
+    "ASTS": 1795412434.846734,
     "AXTI": 1795411079.3155942,
-    "NASA": 1795410852.9628596,
-    "LUNR": 1795410852.9628596,
+    "NASA": 1795412434.846734,
+    "LUNR": 1795412434.846734,
     "TSLA": 1795410959.4577825,
-    "AXP": 1795410852.9628596,
-    "RKLB": 1795410852.9628596,
-    "KO": 1795410852.9628596,
-    "FLY": 1795410852.9628596,
-    "INTC": 1795410852.9628596,
+    "AXP": 1795412434.846734,
+    "RKLB": 1795412434.846734,
+    "KO": 1795412434.846734,
+    "FLY": 1795412434.846734,
+    "INTC": 1795412434.846734,
     "VRT": 1795410959.4577825,
     "HPE": 1795410959.4577825,
     "DELL": 1795410959.4577825,
@@ -3320,7 +3320,7 @@
     "V": 1795411079.3155942,
     "CAT": 1795411079.3155942,
     "FN": 1795411079.3155942,
-    "GLW": 1795410852.9628596,
+    "GLW": 1795412434.846734,
     "ANT": 1795411079.3155942,
     "XAUUSD": 1795411188.1172302
   },
