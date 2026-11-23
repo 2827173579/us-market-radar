@@ -1,9 +1,36 @@
 {
-  "updated_at_ts": 1795444936.128,
-  "updated_at_et": "11-23 09:42 ET",
-  "updated_at_kst": "23:42 KST",
+  "updated_at_ts": 1795445047.887,
+  "updated_at_et": "11-23 09:44 ET",
+  "updated_at_kst": "23:44 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261123224307371800",
+      "title": "【潮落又潮起 英伟达几乎收复黄仁勋辞职以来的全部跌幅】 11月23日讯，据CNBC，英伟…",
+      "summary": "【潮落又潮起 英伟达几乎收复黄仁勋辞职以来的全部跌幅】 11月23日讯，据CNBC，英伟达(NVDA.O)周一宣布，黄仁勋即日起重返公司担任首席执行官。消息公布后，英伟达股价飙升了31%，几乎收复黄仁勋辞职以来的全部跌幅，总市值增加逾9000亿美元，飙升至美股第二位，仅次于苹果(AAPL.O)。本月初，在曝出一系列令人震惊的婚外情报道后，黄仁勋辞去了首席执行官一职。黄仁勋在一份声明中表示：“我很荣幸能重返英伟达，在新工业革命开启之际，领导这家世界上最具影响力的科技公司之一。我怀着极其谦卑的心态和全新的承诺承担起这一责任。感谢英伟达董事会在整个过程中给予的信任与审慎考量。”",
+      "keywords": [
+        "英伟达",
+        "苹果"
+      ],
+      "pub_ts": 1795444987.0,
+      "time_et": "11-23 09:43 ET",
+      "time_bj": "22:43 BJ",
+      "time_kst": "23:43 KST",
+      "time_display": "09:43 ET / 22:43 BJ"
+    },
+    {
+      "id": "20261123224229402800",
+      "title": "英伟达(NVDA.O)股价涨幅收窄至27%，此前一度涨33%。",
+      "summary": "英伟达(NVDA.O)股价涨幅收窄至27%，此前一度涨33%。",
+      "keywords": [
+        "英伟达"
+      ],
+      "pub_ts": 1795444949.0,
+      "time_et": "11-23 09:42 ET",
+      "time_bj": "22:42 BJ",
+      "time_kst": "23:42 KST",
+      "time_display": "09:42 ET / 22:42 BJ"
+    },
     {
       "id": "20261123223500001800",
       "title": "美国11月标普全球制造业及服务业PMI初值将于十分钟后公布。",
@@ -312,33 +339,6 @@
       "time_bj": "21:59 BJ",
       "time_kst": "22:59 KST",
       "time_display": "08:59 ET / 21:59 BJ"
-    },
-    {
-      "id": "20261123215627342800",
-      "title": "英伟达董事会恢复黄仁勋CEO职务。",
-      "summary": "英伟达董事会恢复黄仁勋CEO职务。",
-      "keywords": [
-        "英伟达"
-      ],
-      "pub_ts": 1795442187.0,
-      "time_et": "11-23 08:56 ET",
-      "time_bj": "21:56 BJ",
-      "time_kst": "22:56 KST",
-      "time_display": "08:56 ET / 21:56 BJ"
-    },
-    {
-      "id": "20261123215449406800",
-      "title": "因中东供应流量增加，布伦特原油和WTI原油期货价格下跌超过3%。",
-      "summary": "因中东供应流量增加，布伦特原油和WTI原油期货价格下跌超过3%。",
-      "keywords": [
-        "中东",
-        "原油"
-      ],
-      "pub_ts": 1795442089.0,
-      "time_et": "11-23 08:54 ET",
-      "time_bj": "21:54 BJ",
-      "time_kst": "22:54 KST",
-      "time_display": "08:54 ET / 21:54 BJ"
     }
   ],
   "ticker_news": {
@@ -1454,11 +1454,25 @@
     ],
     "APLD": [
       {
+        "title": "Applied Digital Soars 27% on 18-Year Hyperscaler Lease as Potential Revenue “Nears $100 Billion”",
+        "url": "https://www.tikr.com/blog/applied-digital-soars-27-on-18-year-hyperscaler-lease-as-potential-revenue-nears-100-billion?ref=yahoofinance&tlnk=yf-261123-g68whxj6&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 09:33 ET",
+        "pub_ts": 1795444380.0
+      },
+      {
         "title": "Applied Digital Signs $5.4B Hyperscaler Lease For 150 MW AI Capacity, Targets First Deliveries In 2028",
         "url": "https://stocktwits.com/news-articles/markets/equity/applied-digital-signs-5-4-b-hyperscaler-lease-for-150-mw-ai-capacity-targets-first-deliveries-in-2028/cNbp2KvR9j7?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-23 09:09 ET",
         "pub_ts": 1795442999.0
+      },
+      {
+        "title": "Applied Digital Stock Gets A Lift From New 18 Year Lease",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/applied-digital-stock-gets-lift-140824041.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 09:08 ET",
+        "pub_ts": 1795442904.0
       },
       {
         "title": "Applied Digital stock jumps on $5.4 billion hyperscaler lease deal",
@@ -1473,20 +1487,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 07:45 ET",
         "pub_ts": 1795437900.0
-      },
-      {
-        "title": "What Just Happened To Applied Digital Stock?",
-        "url": "https://www.trefis.com/stock/apld/articles/627717/what-just-happened-to-applied-digital-stock/2026-11-23?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 07:22 ET",
-        "pub_ts": 1795436571.0
-      },
-      {
-        "title": "Applied Digital and Core Scientific Sink 12% as AI Infrastructure Sell-Off Deepens; TeraWulf Tumbles 10%",
-        "url": "https://247wallst.com/investing/2026/11/20/applied-digital-and-core-scientific-sink-12-as-ai-infrastructure-sell-off-deepens-terawulf-tumbles-10/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 10:56 ET",
-        "pub_ts": 1795190217.0
       }
     ],
     "VST": [
@@ -1750,11 +1750,25 @@
     ],
     "SPCX": [
       {
+        "title": "SpaceX Stock: Is It a Buy at $130?",
+        "url": "https://www.fool.com/investing/2026/11/23/spacex-stock-is-it-a-buy-at-130/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 09:14 ET",
+        "pub_ts": 1795443242.0
+      },
+      {
         "title": "Update: SpaceX Sued by Virginia, Oregon Over Grok's Creation of Child Sexual Abuse Images, Non-Consensual Material",
         "url": "https://finance.yahoo.com/technology/ai/articles/spacex-sued-virginia-oregon-over-140640309.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-23 09:06 ET",
         "pub_ts": 1795442800.0
+      },
+      {
+        "title": "Verizon CEO Pushes Back: “No Secret Sauce” in Musk’s Plan to Make SpaceX a US Carrier",
+        "url": "https://www.tikr.com/blog/verizon-ceo-pushes-back-no-secret-sauce-in-musks-plan-to-make-spacex-a-us-carrier?ref=yahoofinance&tlnk=yf-261123-2mr35pq9&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 09:05 ET",
+        "pub_ts": 1795442731.0
       },
       {
         "title": "Jefferies initiates SpaceX at Buy, sees \"rare combination\" to gain AI share",
@@ -1769,20 +1783,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 08:20 ET",
         "pub_ts": 1795440048.0
-      },
-      {
-        "title": "SpaceX Fell Below Its IPO Price. Gene Munster Says It Trades at “10 Times Revenue” Growing 270%",
-        "url": "https://www.tikr.com/blog/spacex-fell-below-its-ipo-price-gene-munster-says-it-trades-at-10-times-revenue-growing-270?ref=yahoofinance&tlnk=yf-261123-fv67rrcq&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 08:20 ET",
-        "pub_ts": 1795440024.0
-      },
-      {
-        "title": "SpaceX Stock Rebounds as Musk Starlink Talk Fuels Hopes of a Tesla Merger",
-        "url": "https://finance.yahoo.com/m/9c2ec5db-97d0-391b-9d5a-611c8d24fe36/spacex-stock-rebounds-as-musk.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 08:08 ET",
-        "pub_ts": 1795439280.0
       }
     ],
     "ASTS": [
@@ -2016,6 +2016,13 @@
         "pub_ts": 1795441320.0
       },
       {
+        "title": "Can Rocket Lab's $515 Million Neutron Deals Lift Its Launch Backlog?",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/rocket-labs-515-million-neutron-133100941.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 08:31 ET",
+        "pub_ts": 1795440660.0
+      },
+      {
         "title": "Rocket Lab Just Raised Prices on a Rocket It Hasn't Launched Yet. Here's What That Means for SpaceX.",
         "url": "https://www.fool.com/investing/2026/11/23/rocket-lab-raised-prices-rocket-launch-what-means-spacex/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2035,13 +2042,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 04:07 ET",
         "pub_ts": 1795424822.0
-      },
-      {
-        "title": "RKLB Stock Has Its Worst Week Ever — But CFO Sees ‘Very Strong Uplift’ In Electron Prices As SpaceX Rideshare Slots Tighten",
-        "url": "https://stocktwits.com/news-articles/markets/equity/rklb-stock-cfo-uplift-electron-prices-spacex-rideshare-slots-tighten/cNbYMSlR9SZ?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 02:57 ET",
-        "pub_ts": 1795420636.0
       }
     ],
     "KO": [
@@ -3269,24 +3269,24 @@
     "AMZN": 1795444936.1275585,
     "CRWV": 1795444936.1275585,
     "NBIS": 1795444936.1275585,
-    "APLD": 1795443505.8719223,
+    "APLD": 1795445047.8874571,
     "VST": 1795444936.1275585,
-    "BE": 1795443505.8719223,
-    "CRDO": 1795443505.8719223,
+    "BE": 1795445047.8874571,
+    "CRDO": 1795445047.8874571,
     "COHR": 1795443977.4542193,
     "MRVL": 1795444719.9875643,
     "LITE": 1795444719.9875643,
-    "AAOI": 1795443505.8719223,
-    "SPCX": 1795443505.8719223,
-    "ASTS": 1795443505.8719223,
+    "AAOI": 1795445047.8874571,
+    "SPCX": 1795445047.8874571,
+    "ASTS": 1795445047.8874571,
     "AXTI": 1795444719.9875643,
-    "NASA": 1795443505.8719223,
-    "LUNR": 1795443505.8719223,
+    "NASA": 1795445047.8874571,
+    "LUNR": 1795445047.8874571,
     "TSLA": 1795443838.0027757,
     "AXP": 1795443838.0027757,
-    "RKLB": 1795443505.8719223,
-    "KO": 1795443505.8719223,
-    "FLY": 1795443505.8719223,
+    "RKLB": 1795445047.8874571,
+    "KO": 1795445047.8874571,
+    "FLY": 1795445047.8874571,
     "INTC": 1795443838.0027757,
     "VRT": 1795443838.0027757,
     "HPE": 1795443838.0027757,
@@ -3308,14 +3308,14 @@
     "MRNA": 1795444719.9875643,
     "NKE": 1795444719.9875643,
     "MCD": 1795444719.9875643,
-    "PEP": 1795443505.8719223,
+    "PEP": 1795445047.8874571,
     "XOM": 1795444826.4061859,
     "JPM": 1795444826.4061859,
     "WMT": 1795444936.1275585,
     "V": 1795444826.4061859,
     "CAT": 1795444936.1275585,
     "FN": 1795444719.9875643,
-    "GLW": 1795443505.8719223,
+    "GLW": 1795445047.8874571,
     "ANT": 1795443838.0027757,
     "XAUUSD": 1795444719.9875643
   },
@@ -3336,7 +3336,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (09:35 ET / 22:35 BJ) [标普]：美国11月标普全球制造业及服务业PMI初值将于十分钟后公布。",
+    "detail": "⚡ 最新核心快讯 (09:43 ET / 22:43 BJ) [英伟达] [苹果]：【潮落又潮起 英伟达几乎收复黄仁勋辞职以来的全部跌幅】 11月23日讯，据CNBC，英伟达(NVDA.O)周一宣布，黄仁勋即日起重返公司担任首席执行官。消息公布后，英伟达股价飙升了31%，几",
     "event_name": "",
     "minutes_left": 0,
     "opex_shield": {
