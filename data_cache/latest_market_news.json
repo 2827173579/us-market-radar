@@ -1,9 +1,22 @@
 {
-  "updated_at_ts": 1795446909.059,
-  "updated_at_et": "11-23 10:15 ET",
-  "updated_at_kst": "00:15 KST",
+  "updated_at_ts": 1795447013.606,
+  "updated_at_et": "11-23 10:16 ET",
+  "updated_at_kst": "00:16 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261123231623612800",
+      "title": "【AI概念股在重磅消息下暴涨 唯Anthropic原地踏步】 11月23日讯，周一早盘，…",
+      "summary": "【AI概念股在重磅消息下暴涨 唯Anthropic原地踏步】 11月23日讯，周一早盘，Anthropic(ANT.O)的股价表现乏力。在黄仁勋重返英伟达(NVDA.O)的消息带动人工智能（AI）板块反弹之际，Anthropic的表现却落后于同行业其他公司。该股目前微涨0.3%。上周，尽管Anthropic敲定史上规模最大的IPO，但市场对AI支出速度的担忧引发了动荡。Trajan Wealth首席投资官大卫·布施表示：“对于 Anthropic 的波动，我并不感到特别担心。”他将此情况与SpaceX今年6月的上市表现进行了对比，并指出：“这种情况在IPO中很常见。”",
+      "keywords": [
+        "英伟达"
+      ],
+      "pub_ts": 1795446983.0,
+      "time_et": "11-23 10:16 ET",
+      "time_bj": "23:16 BJ",
+      "time_kst": "00:16 KST",
+      "time_display": "10:16 ET / 23:16 BJ"
+    },
     {
       "id": "20261123231446490800",
       "title": "纳斯达克100指数涨幅扩大至7%。",
@@ -325,20 +338,6 @@
         "英伟达"
       ],
       "pub_ts": 1795442931.0,
-      "time_et": "11-23 09:08 ET",
-      "time_bj": "22:08 BJ",
-      "time_kst": "23:08 KST",
-      "time_display": "09:08 ET / 22:08 BJ"
-    },
-    {
-      "id": "20261123220820659800",
-      "title": "美国总统特朗普：祝贺英伟达CEO黄仁勋；英伟达应继续开展内部调查。",
-      "summary": "美国总统特朗普：祝贺英伟达CEO黄仁勋；英伟达应继续开展内部调查。",
-      "keywords": [
-        "英伟达",
-        "特朗普"
-      ],
-      "pub_ts": 1795442900.0,
       "time_et": "11-23 09:08 ET",
       "time_bj": "22:08 BJ",
       "time_kst": "23:08 KST",
@@ -3340,7 +3339,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (10:14 ET / 23:14 BJ) [纳斯达克]：纳斯达克100指数涨幅扩大至7%。",
+    "detail": "⚡ 最新核心快讯 (10:16 ET / 23:16 BJ) [英伟达]：【AI概念股在重磅消息下暴涨 唯Anthropic原地踏步】 11月23日讯，周一早盘，Anthropic(ANT.O)的股价表现乏力。在黄仁勋重返英伟达(NVDA.O)的消息带动人工智能（",
     "event_name": "",
     "minutes_left": 0,
     "opex_shield": {
