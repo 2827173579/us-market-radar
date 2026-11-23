@@ -4243,9 +4243,17 @@
     "2026-11-23:DEFENSIVE_FLIGHT:-8.2": {
       "device": "PC",
       "ts": 1795424536.6751745
+    },
+    "JIN10_FLASH:20261123170110338800": {
+      "device": "PC",
+      "ts": 1795424541.4594276
+    },
+    "2026-11-23:NBIS/APLD/CRDO/MSTR/COIN/BE/DELL/NVDA/SKHY/MU/AMAT/TSM/AMD/ASML:STOP_LOSS": {
+      "device": "PC",
+      "ts": 1795424641.4310837
     }
   },
   "device": "PC",
-  "last_heartbeat_ts": 1795424449.9685376,
-  "updated_at": "2026-11-23T09:02:16.675619+00:00"
+  "last_heartbeat_ts": 1795424556.91381,
+  "updated_at": "2026-11-23T09:04:01.431616+00:00"
 }
