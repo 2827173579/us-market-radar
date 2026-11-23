@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795441576.808,
-  "updated_at_et": "11-23 08:46 ET",
-  "updated_at_kst": "22:46 KST",
+  "updated_at_ts": 1795441690.974,
+  "updated_at_et": "11-23 08:48 ET",
+  "updated_at_kst": "22:48 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -545,6 +545,13 @@
         "pub_ts": 1795431845.0
       },
       {
+        "title": "Stock Market Today: Tech Futures, Nvidia Surge After Market Sell-Off; CrowdStrike Plunges On Zscaler Deal (Live Coverage)",
+        "url": "https://finance.yahoo.com/m/8751de70-467e-380a-82cb-f4ee42adc461/stock-market-today%3A-tech.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 08:38 ET",
+        "pub_ts": 1795441131.0
+      },
+      {
         "title": "ETFs Are Net Sellers of Meta Platforms (META) on Thursday",
         "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-net-sellers-meta-platforms-110311343.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -564,13 +571,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 06:02 ET",
         "pub_ts": 1795431760.0
-      },
-      {
-        "title": "ETFs Are Net Sellers of Netflix (NFLX) on Nov. 19",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-net-sellers-netflix-nflx-110225561.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 06:02 ET",
-        "pub_ts": 1795431745.0
       }
     ],
     "SMH": [
@@ -2943,6 +2943,13 @@
     ],
     "XOM": [
       {
+        "title": "Which 3 ETFs Best Fit ExxonMobil After Its Angola Move?",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/3-etfs-best-fit-exxonmobil-131152914.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 08:11 ET",
+        "pub_ts": 1795439512.0
+      },
+      {
         "title": "46 ETFs Add to ExxonMobil (XOM) Holdings on Thursday",
         "url": "https://finance.yahoo.com/markets/stocks/articles/46-etfs-add-exxonmobil-xom-110120321.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2969,13 +2976,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 10:02 ET",
         "pub_ts": 1795186920.0
-      },
-      {
-        "title": "State Street Energy SPDR (XLE) Sells $174.6 Million of Exxon on Wednesday",
-        "url": "https://finance.yahoo.com/energy/articles/state-street-energy-spdr-xle-110346712.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 06:03 ET",
-        "pub_ts": 1795172626.0
       }
     ],
     "JPM": [
@@ -3054,6 +3054,13 @@
     ],
     "V": [
       {
+        "title": "Klarna Expands Collaboration With Visa, Bringing Flexible Payments to Merchants Using Visa Acceptance Platform",
+        "url": "https://finance.yahoo.com/technology/articles/klarna-expands-collaboration-visa-bringing-133000131.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 08:30 ET",
+        "pub_ts": 1795440600.0
+      },
+      {
         "title": "Dividend Hikes of Up to 16% Roll In, From Payments and Payroll to Oil",
         "url": "https://finance.yahoo.com/markets/stocks/articles/dividend-hikes-16-roll-payments-130000827.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3080,13 +3087,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 10:40 ET",
         "pub_ts": 1795189203.0
-      },
-      {
-        "title": "A $4.7 Billion Fund Just Bought These 3 Stocks",
-        "url": "https://www.tikr.com/blog/a-4-7-billion-fund-just-bought-these-3-stocks?ref=yahoofinance&tlnk=yf-261120-53j3h7w2&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 09:57 ET",
-        "pub_ts": 1795186664.0
       }
     ],
     "CAT": [
@@ -3248,20 +3248,20 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795440138.8502002,
-    "SOXL": 1795440138.8502002,
-    "SPY": 1795440138.8502002,
-    "DIA": 1795440138.8502002,
-    "SOXX": 1795440138.8502002,
-    "QQQ": 1795440138.8502002,
-    "SMH": 1795440138.8502002,
-    "IWM": 1795440138.8502002,
-    "IGV": 1795440138.8502002,
-    "TLT": 1795440138.8502002,
-    "GLD": 1795440138.8502002,
-    "SQQQ": 1795440138.8502002,
+    "KORU": 1795441690.9736607,
+    "SOXL": 1795441690.9736607,
+    "SPY": 1795441690.9736607,
+    "DIA": 1795441690.9736607,
+    "SOXX": 1795441690.9736607,
+    "QQQ": 1795441690.9736607,
+    "SMH": 1795441690.9736607,
+    "IWM": 1795441690.9736607,
+    "IGV": 1795441690.9736607,
+    "TLT": 1795441690.9736607,
+    "GLD": 1795441690.9736607,
+    "SQQQ": 1795441690.9736607,
     "TSM": 1795440255.7075698,
-    "VIXY": 1795440138.8502002,
+    "VIXY": 1795441690.9736607,
     "SOXS": 1795440255.7075698,
     "NVDA": 1795440255.7075698,
     "AMD": 1795440255.7075698,
@@ -3318,10 +3318,10 @@
     "NKE": 1795441576.8080497,
     "MCD": 1795441576.8080497,
     "PEP": 1795440378.2629635,
-    "XOM": 1795440138.8502002,
-    "JPM": 1795440138.8502002,
+    "XOM": 1795441690.9736607,
+    "JPM": 1795441690.9736607,
     "WMT": 1795440255.7075698,
-    "V": 1795440138.8502002,
+    "V": 1795441690.9736607,
     "CAT": 1795440255.7075698,
     "FN": 1795441576.8080497,
     "GLW": 1795440378.2629635,
