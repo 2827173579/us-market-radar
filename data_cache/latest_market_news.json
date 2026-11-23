@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795434563.13,
-  "updated_at_et": "11-23 06:49 ET",
-  "updated_at_kst": "20:49 KST",
+  "updated_at_ts": 1795434723.254,
+  "updated_at_et": "11-23 06:52 ET",
+  "updated_at_kst": "20:52 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2497,6 +2497,13 @@
     ],
     "STX": [
       {
+        "title": "ETFs Are Net Sellers of Seagate (STX) on Thursday",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-net-sellers-seagate-stx-110253594.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 06:02 ET",
+        "pub_ts": 1795431773.0
+      },
+      {
         "title": "Why Seagate Stock And AI Data Center Demand Are Back On Investors Radar",
         "url": "https://finance.yahoo.com/technology/ai/articles/why-seagate-stock-ai-data-221127563.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2523,13 +2530,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 13:37 ET",
         "pub_ts": 1795113448.0
-      },
-      {
-        "title": "Seagate and Western Digital Climb 4% Despite Tech Profit-Taking After Anthropic’s IPO Debut; SanDisk Edges Higher",
-        "url": "https://247wallst.com/investing/2026/11/19/seagate-and-western-digital-climb-4-despite-tech-profit-taking-after-anthropics-ipo-debut-sandisk-edges-higher/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 13:26 ET",
-        "pub_ts": 1795112797.0
       }
     ],
     "MSTR": [
@@ -2645,6 +2645,27 @@
     ],
     "CRWD": [
       {
+        "title": "Crowdstrike is spending $43.9 billion to buy ZScaler in a huge cybersecurity deal as tech outages spread",
+        "url": "https://finance.yahoo.com/technology/article/crowdstrike-is-spending-439-billion-to-buy-zscaler-in-a-huge-cybersecurity-deal-as-tech-outages-spread-110645119.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 06:06 ET",
+        "pub_ts": 1795432005.0
+      },
+      {
+        "title": "CrowdStrike To Acquire Zscaler For $43.9B In All-Stock Deal: TD Cowen Sees Cybersecurity Consolidation Entering ‘More Material Phase’",
+        "url": "https://stocktwits.com/news-articles/markets/equity/crowdstrike-to-acquire-zscaler-for-43-9-b-in-all-stock-deal/cNbYCS4R9Sv?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 06:41 ET",
+        "pub_ts": 1795434093.0
+      },
+      {
+        "title": "CrowdStrike explores acquisition of Zscaler – report",
+        "url": "https://www.verdict.co.uk/crowdstrike-explores-acquisition-zscaler/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 06:10 ET",
+        "pub_ts": 1795432221.0
+      },
+      {
         "title": "CrowdStrike to Acquire Zscaler, Bringing Network Security and Zero Trust to the Falcon Platform",
         "url": "https://finance.yahoo.com/technology/ai/articles/crowdstrike-acquire-zscaler-bringing-network-103200828.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2657,27 +2678,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 05:30 ET",
         "pub_ts": 1795429800.0
-      },
-      {
-        "title": "CrowdStrike-Zscaler Merger Could Make Cybersecurity Rival ‘More Formidable’ Against Palo Alto Networks, Says Jefferies",
-        "url": "https://stocktwits.com/news-articles/markets/equity/crowdstrike-zscaler-merger-versus-palo-alto-networks/cNbn1VWR91Y?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-21 23:59 ET",
-        "pub_ts": 1795323588.0
-      },
-      {
-        "title": "CrowdStrike’s Talks with Zscaler Show AI-Led Cyber Consolidation",
-        "url": "https://finance.yahoo.com/technology/ai/articles/crowdstrike-talks-zscaler-show-ai-190224763.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-21 14:02 ET",
-        "pub_ts": 1795287744.0
-      },
-      {
-        "title": "Zscaler (ZS) Draws Takeover Interest In Reported Acquisition Talks",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/zscaler-zs-draws-takeover-interest-071557894.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-21 02:15 ET",
-        "pub_ts": 1795245357.0
       }
     ],
     "ORCL": [
@@ -3280,7 +3280,7 @@
     "VST": 1795433361.2496567,
     "BE": 1795433039.2859502,
     "CRDO": 1795433039.2859502,
-    "COHR": 1795432466.7241955,
+    "COHR": 1795434723.253921,
     "MRVL": 1795432466.7241955,
     "LITE": 1795432466.7241955,
     "AAOI": 1795433039.2859502,
@@ -3298,17 +3298,17 @@
     "VRT": 1795434563.130073,
     "HPE": 1795434563.130073,
     "DELL": 1795434563.130073,
-    "OKLO": 1795431385.8652925,
+    "OKLO": 1795434723.253921,
     "CEG": 1795434563.130073,
-    "FPS": 1795431385.8652925,
+    "FPS": 1795434723.253921,
     "MU": 1795432466.7241955,
     "SKHY": 1795432466.7241955,
     "WDC": 1795432466.7241955,
-    "STX": 1795431385.8652925,
-    "MSTR": 1795431385.8652925,
-    "SNDK": 1795431385.8652925,
+    "STX": 1795434723.253921,
+    "MSTR": 1795434723.253921,
+    "SNDK": 1795434723.253921,
     "BTC-USD": 1795432466.7241955,
-    "CRWD": 1795431385.8652925,
+    "CRWD": 1795434723.253921,
     "ORCL": 1795432466.7241955,
     "COIN": 1795432466.7241955,
     "LLY": 1795432466.7241955,
