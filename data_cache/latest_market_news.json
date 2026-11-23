@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795418666.811,
-  "updated_at_et": "11-23 02:24 ET",
-  "updated_at_kst": "16:24 KST",
+  "updated_at_ts": 1795418774.188,
+  "updated_at_et": "11-23 02:26 ET",
+  "updated_at_kst": "16:26 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1380,6 +1380,13 @@
     ],
     "CRWV": [
       {
+        "title": "CoreWeave (CRWV) Stock Gets An AI Demand Jolt From A Record $81.3 Billion IPO",
+        "url": "https://finance.yahoo.com/technology/ai/articles/coreweave-crwv-stock-gets-ai-070621794.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 02:06 ET",
+        "pub_ts": 1795417581.0
+      },
+      {
         "title": "CMO Summit: Council Member Takeaways",
         "url": "https://finance.yahoo.com/video/cmo-summit-council-member-takeaways-013900186.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1406,13 +1413,6 @@
         "source": "Yahoo Finance",
         "time": "11-21 13:47 ET",
         "pub_ts": 1795286820.0
-      },
-      {
-        "title": "Here’s Why CoreWeave, Inc. (CRWV) Faces Heavy Short Selling",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/why-coreweave-inc-crwv-faces-145136011.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-21 09:51 ET",
-        "pub_ts": 1795272696.0
       }
     ],
     "NBIS": [
@@ -1750,6 +1750,13 @@
     ],
     "SPCX": [
       {
+        "title": "Cathie Wood Says TSLA Holders ‘Will Get’ A Premium If SpaceX Buys Tesla — HSBC Puts It At Over 30%",
+        "url": "https://stocktwits.com/news-articles/markets/equity/cathie-wood-tsla-holders-premium-if-spacex-buys-tesla-hsbc/cNbYtWbR9Si?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 02:14 ET",
+        "pub_ts": 1795418045.0
+      },
+      {
         "title": "These 5 Stocks Could Double by 2028. Here's What Has to Go Right.",
         "url": "https://www.fool.com/investing/2026/11/23/these-5-stocks-could-double-by-2028-here-s-what-has-to-go-right/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1776,13 +1783,6 @@
         "source": "Yahoo Finance",
         "time": "11-22 20:21 ET",
         "pub_ts": 1795396862.0
-      },
-      {
-        "title": "Stanley Druckenmiller and 42 Other Big Funds Bought SpaceX Last Quarter. Brad Gerstner and 23 Others Sold. Who’s Right?",
-        "url": "https://www.tikr.com/blog/stanley-druckenmiller-and-42-other-big-funds-bought-spacex-last-quarter-brad-gerstner-and-23-others-sold-whos-right?ref=yahoofinance&tlnk=yf-261122-prh63fwm&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-22 17:35 ET",
-        "pub_ts": 1795386912.0
       }
     ],
     "ASTS": [
@@ -3259,15 +3259,15 @@
     "ASML": 1795418666.8111782,
     "QCOM": 1795418666.8111782,
     "AVGO": 1795418666.8111782,
-    "AMAT": 1795417188.749709,
-    "META": 1795417188.749709,
+    "AMAT": 1795418774.1879063,
+    "META": 1795418774.1879063,
     "GOOGL": 1795418666.8111782,
     "MSFT": 1795418666.8111782,
-    "AAPL": 1795417188.749709,
+    "AAPL": 1795418774.1879063,
     "PLTR": 1795417295.921486,
-    "NOW": 1795417188.749709,
-    "AMZN": 1795417188.749709,
-    "CRWV": 1795417188.749709,
+    "NOW": 1795418774.1879063,
+    "AMZN": 1795418774.1879063,
+    "CRWV": 1795418774.1879063,
     "NBIS": 1795417295.921486,
     "APLD": 1795417295.921486,
     "VST": 1795417295.921486,
@@ -3276,18 +3276,18 @@
     "COHR": 1795417404.20588,
     "MRVL": 1795417404.20588,
     "LITE": 1795417404.20588,
-    "AAOI": 1795417188.749709,
-    "SPCX": 1795417188.749709,
-    "ASTS": 1795417188.749709,
+    "AAOI": 1795418774.1879063,
+    "SPCX": 1795418774.1879063,
+    "ASTS": 1795418774.1879063,
     "AXTI": 1795417404.20588,
-    "NASA": 1795417188.749709,
-    "LUNR": 1795417188.749709,
+    "NASA": 1795418774.1879063,
+    "LUNR": 1795418774.1879063,
     "TSLA": 1795417295.921486,
-    "AXP": 1795417188.749709,
-    "RKLB": 1795417188.749709,
-    "KO": 1795417188.749709,
-    "FLY": 1795417188.749709,
-    "INTC": 1795417188.749709,
+    "AXP": 1795418774.1879063,
+    "RKLB": 1795418774.1879063,
+    "KO": 1795418774.1879063,
+    "FLY": 1795418774.1879063,
+    "INTC": 1795418774.1879063,
     "VRT": 1795417295.921486,
     "HPE": 1795417295.921486,
     "DELL": 1795417295.921486,
@@ -3315,7 +3315,7 @@
     "V": 1795417404.20588,
     "CAT": 1795417404.20588,
     "FN": 1795417404.20588,
-    "GLW": 1795417188.749709,
+    "GLW": 1795418774.1879063,
     "ANT": 1795417404.20588,
     "XAUUSD": 1795417527.1139338
   },
