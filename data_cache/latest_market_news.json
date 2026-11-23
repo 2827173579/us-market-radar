@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795424739.591,
-  "updated_at_et": "11-23 04:05 ET",
-  "updated_at_kst": "18:05 KST",
+  "updated_at_ts": 1795424851.227,
+  "updated_at_et": "11-23 04:07 ET",
+  "updated_at_kst": "18:07 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -904,6 +904,13 @@
     ],
     "NVDA": [
       {
+        "title": "Nvidia vs. SpaceX: Here's Which Stock I'd Put $1,000 Towards Right Now",
+        "url": "https://www.fool.com/investing/2026/11/23/nvidia-vs-spacex-here-s-which-stock-i-d-put-usd1-000-towards-right-now/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 03:38 ET",
+        "pub_ts": 1795423082.0
+      },
+      {
         "title": "Asian tech back in the firing line as traders track Wall St rout",
         "url": "https://finance.yahoo.com/markets/world-indices/articles/asian-tech-back-firing-line-024445930.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -918,25 +925,18 @@
         "pub_ts": 1795421102.0
       },
       {
+        "title": "Futures bounce after AI selloff; Bessent on Nvidia probe - what’s moving markets",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/futures-bounce-ai-selloff-bessent-071306387.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 02:13 ET",
+        "pub_ts": 1795417986.0
+      },
+      {
         "title": "Nvidia News Has Investors Rethinking These U.S. AI Chip Stocks",
         "url": "https://finance.yahoo.com/technology/ai/articles/nvidia-news-investors-rethinking-u-070751605.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-23 02:07 ET",
         "pub_ts": 1795417671.0
-      },
-      {
-        "title": "2 Semiconductor Stocks to Buy No Matter Who Wins the AI Chip Race",
-        "url": "https://www.fool.com/investing/2026/11/23/2-semiconductor-stocks-to-buy-no-matter-who-wins-the-ai-chip-race/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 01:50 ET",
-        "pub_ts": 1795416602.0
-      },
-      {
-        "title": "Alice Huang’s Contacts With Chinese Spy Agency Reportedly Tracked by US Intelligence: Nvidia Stock Climbs Over 7% on Robinhood’s Platform",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/alice-huang-contacts-chinese-spy-064411334.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 01:44 ET",
-        "pub_ts": 1795416251.0
       }
     ],
     "AMD": [
@@ -3244,22 +3244,22 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795423343.686927,
-    "SOXL": 1795423343.686927,
-    "SPY": 1795423343.686927,
-    "DIA": 1795423343.686927,
-    "SOXX": 1795423343.686927,
-    "QQQ": 1795423343.686927,
-    "SMH": 1795423343.686927,
-    "IWM": 1795423343.686927,
-    "IGV": 1795423343.686927,
-    "TLT": 1795423343.686927,
-    "GLD": 1795423343.686927,
-    "SQQQ": 1795423343.686927,
+    "KORU": 1795424851.2267318,
+    "SOXL": 1795424851.2267318,
+    "SPY": 1795424851.2267318,
+    "DIA": 1795424851.2267318,
+    "SOXX": 1795424851.2267318,
+    "QQQ": 1795424851.2267318,
+    "SMH": 1795424851.2267318,
+    "IWM": 1795424851.2267318,
+    "IGV": 1795424851.2267318,
+    "TLT": 1795424851.2267318,
+    "GLD": 1795424851.2267318,
+    "SQQQ": 1795424851.2267318,
     "TSM": 1795423452.8074803,
-    "VIXY": 1795423343.686927,
-    "SOXS": 1795423343.686927,
-    "NVDA": 1795423343.686927,
+    "VIXY": 1795424851.2267318,
+    "SOXS": 1795424851.2267318,
+    "NVDA": 1795424851.2267318,
     "AMD": 1795423452.8074803,
     "ASML": 1795423452.8074803,
     "QCOM": 1795423452.8074803,
@@ -3313,7 +3313,7 @@
     "MRNA": 1795424739.590738,
     "NKE": 1795424739.590738,
     "MCD": 1795424739.590738,
-    "PEP": 1795423343.686927,
+    "PEP": 1795424851.2267318,
     "XOM": 1795424739.590738,
     "JPM": 1795424739.590738,
     "WMT": 1795424739.590738,
@@ -3321,7 +3321,7 @@
     "CAT": 1795424739.590738,
     "FN": 1795424739.590738,
     "GLW": 1795423568.4984605,
-    "ANT": 1795423232.6134639,
+    "ANT": 1795424851.2267318,
     "XAUUSD": 1795423452.8074803
   },
   "opex_shield": {
