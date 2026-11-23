@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795457271.231,
-  "updated_at_et": "11-23 13:07 ET",
-  "updated_at_kst": "03:07 KST",
+  "updated_at_ts": 1795457392.733,
+  "updated_at_et": "11-23 13:09 ET",
+  "updated_at_kst": "03:09 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1639,6 +1639,27 @@
     ],
     "MRVL": [
       {
+        "title": "Marvell Stocks Jump 15.43% as AI Chip Rebound Sets Up December 1 Report",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/marvell-stocks-jump-15-43-175525167.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 12:55 ET",
+        "pub_ts": 1795456525.0
+      },
+      {
+        "title": "Should You Buy Marvell Technology Stock Before Dec. 1?",
+        "url": "https://www.fool.com/investing/2026/11/23/should-you-buy-marvell-technology-stock-before-dec-1/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 12:54 ET",
+        "pub_ts": 1795456442.0
+      },
+      {
+        "title": "Marvell Stock Jumps 16.6% as Nvidia Rally Lifts Chip Shares on Nov. 23",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/marvell-stock-jumps-16-6-170214443.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 12:02 ET",
+        "pub_ts": 1795453334.0
+      },
+      {
         "title": "Semiconductor Stocks like Micron, Marvell, and Bloom Energy See Massive Gains as Jensen Huang Returns to NVIDIA",
         "url": "https://247wallst.com/videos/semiconductor-stocks-like-micron-marvell-and-bloom-energy-see-massive-gains-as-jensen-huang-returns-to-nvidia/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1651,30 +1672,16 @@
         "source": "Yahoo Finance",
         "time": "11-23 09:08 ET",
         "pub_ts": 1795442937.0
-      },
-      {
-        "title": "Prediction: This Under-the-Radar AI Stock Could Have a Big 2030 Ahead",
-        "url": "https://247wallst.com/investing/2026/11/23/prediction-this-under-the-radar-ai-stock-could-have-a-big-2030-ahead-2/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 08:04 ET",
-        "pub_ts": 1795439093.0
-      },
-      {
-        "title": "Premarket movers: Chip stocks lead AI rebound; CrowdStrike falls",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/premarket-movers-chip-stocks-lead-124424524.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 07:44 ET",
-        "pub_ts": 1795437864.0
-      },
-      {
-        "title": "Marvell Technology’s Near 50% Plummet Within a Month Means Little to This Wall Street Pro Who Predicts 270% Gains From Here",
-        "url": "https://247wallst.com/investing/2026/11/23/marvell-technologys-near-50-plummet-within-a-month-means-little-to-this-wall-street-pro-who-predicts-270-gains-from-here/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 07:15 ET",
-        "pub_ts": 1795436145.0
       }
     ],
     "LITE": [
+      {
+        "title": "Should You Buy Marvell Technology Stock Before Dec. 1?",
+        "url": "https://www.fool.com/investing/2026/11/23/should-you-buy-marvell-technology-stock-before-dec-1/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 12:54 ET",
+        "pub_ts": 1795456442.0
+      },
       {
         "title": "Applied Optoelectronics and Lumentum Soar 22% as Jensen Huang’s Return to NVIDIA Sparks AI Optics Rebound; Coherent Jumps 19%",
         "url": "https://247wallst.com/investing/2026/11/23/applied-optoelectronics-and-lumentum-soar-22-as-jensen-huangs-return-to-nvidia-sparks-ai-optics-rebound-coherent-jumps-19/?.tsrc=rss",
@@ -1702,13 +1709,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 16:12 ET",
         "pub_ts": 1795209137.0
-      },
-      {
-        "title": "Marvell and Lumentum deal: good, real, and ugly scenarios",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/marvell-lumentum-deal-good-real-162015619.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 11:20 ET",
-        "pub_ts": 1795191615.0
       }
     ],
     "AAOI": [
@@ -2393,6 +2393,13 @@
         "pub_ts": 1795450382.0
       },
       {
+        "title": "Why Is Micron (MU) Stock Soaring Today? Nvidia's CEO Return Lifts Chip Stocks",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/why-micron-mu-stock-soaring-173033741.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 12:30 ET",
+        "pub_ts": 1795455033.0
+      },
+      {
         "title": "Micron Stocks Jump 13.73% After Selloff Left Shares Near 5 Times Annualized Earnings",
         "url": "https://finance.yahoo.com/markets/stocks/articles/micron-stocks-jump-13-73-165936616.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2405,16 +2412,16 @@
         "source": "Yahoo Finance",
         "time": "11-23 11:57 ET",
         "pub_ts": 1795453058.0
-      },
-      {
-        "title": "Citi Says Micron and SanDisk Selloff Is Overdone as AI Memory Demand Holds Up",
-        "url": "https://finance.yahoo.com/technology/ai/articles/citi-says-micron-sandisk-selloff-161237544.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 11:12 ET",
-        "pub_ts": 1795450357.0
       }
     ],
     "SKHY": [
+      {
+        "title": "SK hynix Stocks Fall 2.52% in Seoul Despite an 80% Operating Margin Quarter",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/sk-hynix-stocks-fall-2-175441008.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 12:54 ET",
+        "pub_ts": 1795456481.0
+      },
       {
         "title": "SK Hynix Soars 8%, Sandisk Up 6% as Memory Stocks Rebound From AI Rout",
         "url": "https://www.tikr.com/blog/sk-hynix-soars-8-sandisk-up-6-as-memory-stocks-rebound-from-ai-rout?ref=yahoofinance&tlnk=yf-261123-3qjfmh53&.tsrc=rss",
@@ -2442,13 +2449,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 05:20 ET",
         "pub_ts": 1795429202.0
-      },
-      {
-        "title": "Korean Semiconductor Stocks After The Selloff With Samsung Electronics In Focus",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/korean-semiconductor-stocks-selloff-samsung-080741244.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 03:07 ET",
-        "pub_ts": 1795421261.0
       }
     ],
     "WDC": [
@@ -2601,6 +2601,13 @@
     ],
     "BTC-USD": [
       {
+        "title": "IREN (IREN) Stock Is Soaring 27.9% Today: Nvidia CEO News Lifts AI Stocks",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/iren-iren-stock-soaring-27-173045028.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 12:30 ET",
+        "pub_ts": 1795455045.0
+      },
+      {
         "title": "Crypto premarket wrap: What investors need to know before the bell",
         "url": "https://www.thestreet.com/crypto/markets/crypto-premarket-wrap-what-investors-need-to-know-before-the-bell?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2627,13 +2634,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 12:00 ET",
         "pub_ts": 1795453200.0
-      },
-      {
-        "title": "Tom Lee Says Ethereum Is as Scarce as Bitcoin—And Bitmine Just Bought More",
-        "url": "https://decrypt.co/383800/tom-lee-ethereum-scarce-bitcoin-bitmine-buys-more?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 11:46 ET",
-        "pub_ts": 1795452363.0
       }
     ],
     "CRWD": [
@@ -2786,6 +2786,13 @@
     ],
     "MRNA": [
       {
+        "title": "Viking Therapeutics (VKTX) Stock Is Up 11.5% Today Without Company News",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/viking-therapeutics-vktx-stock-11-173104517.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 12:31 ET",
+        "pub_ts": 1795455064.0
+      },
+      {
         "title": "Moderna to Present at Upcoming Conferences in December 2026",
         "url": "https://finance.yahoo.com/healthcare/articles/moderna-present-upcoming-conferences-december-120000420.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2812,13 +2819,6 @@
         "source": "Yahoo Finance",
         "time": "11-21 00:14 ET",
         "pub_ts": 1795238092.0
-      },
-      {
-        "title": "What A Cancer Vaccine Stumble Means For Moderna Stock",
-        "url": "https://www.trefis.com/stock/mrna/articles/627287/what-a-cancer-vaccine-stumble-means-for-moderna-stock/2026-11-20?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 13:29 ET",
-        "pub_ts": 1795199365.0
       }
     ],
     "NKE": [
@@ -3241,10 +3241,10 @@
   "ticker_news_ts": {
     "KORU": 1795455986.344374,
     "SOXL": 1795455986.344374,
-    "SPY": 1795455779.5563297,
+    "SPY": 1795457392.7328172,
     "DIA": 1795455986.344374,
     "SOXX": 1795455986.344374,
-    "QQQ": 1795455779.5563297,
+    "QQQ": 1795457392.7328172,
     "SMH": 1795455986.344374,
     "IWM": 1795455986.344374,
     "IGV": 1795455986.344374,
@@ -3274,12 +3274,12 @@
     "BE": 1795456198.3494284,
     "CRDO": 1795456198.3494284,
     "COHR": 1795456303.2820165,
-    "MRVL": 1795455779.5563297,
-    "LITE": 1795455779.5563297,
+    "MRVL": 1795457392.7328172,
+    "LITE": 1795457392.7328172,
     "AAOI": 1795456198.3494284,
     "SPCX": 1795456198.3494284,
     "ASTS": 1795456198.3494284,
-    "AXTI": 1795455779.5563297,
+    "AXTI": 1795457392.7328172,
     "NASA": 1795456198.3494284,
     "LUNR": 1795456198.3494284,
     "TSLA": 1795456303.2820165,
@@ -3294,27 +3294,27 @@
     "OKLO": 1795456303.2820165,
     "CEG": 1795456303.2820165,
     "FPS": 1795456303.2820165,
-    "MU": 1795455779.5563297,
-    "SKHY": 1795455779.5563297,
-    "WDC": 1795455779.5563297,
+    "MU": 1795457392.7328172,
+    "SKHY": 1795457392.7328172,
+    "WDC": 1795457392.7328172,
     "STX": 1795456303.2820165,
     "MSTR": 1795456303.2820165,
     "SNDK": 1795456303.2820165,
-    "BTC-USD": 1795455779.5563297,
+    "BTC-USD": 1795457392.7328172,
     "CRWD": 1795456303.2820165,
-    "ORCL": 1795455779.5563297,
-    "COIN": 1795455779.5563297,
-    "LLY": 1795455779.5563297,
-    "MRNA": 1795455779.5563297,
-    "NKE": 1795455779.5563297,
-    "MCD": 1795455779.5563297,
+    "ORCL": 1795457392.7328172,
+    "COIN": 1795457392.7328172,
+    "LLY": 1795457392.7328172,
+    "MRNA": 1795457392.7328172,
+    "NKE": 1795457392.7328172,
+    "MCD": 1795457392.7328172,
     "PEP": 1795456198.3494284,
     "XOM": 1795455986.344374,
     "JPM": 1795455986.344374,
     "WMT": 1795456198.3494284,
     "V": 1795455986.344374,
     "CAT": 1795456303.2820165,
-    "FN": 1795455779.5563297,
+    "FN": 1795457392.7328172,
     "GLW": 1795456198.3494284,
     "ANT": 1795456303.2820165,
     "XAUUSD": 1795456198.3494284
