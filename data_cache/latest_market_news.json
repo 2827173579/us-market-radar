@@ -1,9 +1,24 @@
 {
-  "updated_at_ts": 1795437007.218,
-  "updated_at_et": "11-23 07:30 ET",
-  "updated_at_kst": "21:30 KST",
+  "updated_at_ts": 1795437123.581,
+  "updated_at_et": "11-23 07:32 ET",
+  "updated_at_kst": "21:32 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261123203025176800",
+      "title": "【哈斯继续执掌Arm，英伟达CEO继任人选仍未明朗】 11月23日讯，芯片设计公司Arm…",
+      "summary": "【哈斯继续执掌Arm，英伟达CEO继任人选仍未明朗】 11月23日讯，芯片设计公司Arm延长了雷内·哈斯（Rene Haas）的任期，并提拔他出任母公司软银集团副董事长。这位潜在的英伟达CEO继任人选看来将继续留任Arm首席执行官。此前《华尔街日报》报道称，哈斯曾与一家负责寻找黄仁勋继任者的猎头公司进行过接触。但现在哈斯表示：“我对Arm的未来从未如此充满信心。”他的新合同有效期将持续至2033年。美国总统特朗普正敦促英伟达让黄仁勋重掌CEO职位，目前的预测市场数据显示，黄仁勋成为英伟达下一任CEO的概率为19%、伊恩·巴克为17%、马特·墨菲为10%。",
+      "keywords": [
+        "芯片",
+        "英伟达",
+        "特朗普"
+      ],
+      "pub_ts": 1795437025.0,
+      "time_et": "11-23 07:30 ET",
+      "time_bj": "20:30 BJ",
+      "time_kst": "21:30 KST",
+      "time_display": "07:30 ET / 20:30 BJ"
+    },
     {
       "id": "20261123201417869800",
       "title": "摩根大通：持续的供应过剩意味着，布伦特原油价格在2027年上半年可能处于70美元高位区间…",
@@ -329,20 +344,6 @@
       "time_bj": "14:53 BJ",
       "time_kst": "15:53 KST",
       "time_display": "01:53 ET / 14:53 BJ"
-    },
-    {
-      "id": "20261123144149198800",
-      "title": "美银警告：美股下跌或迫使美联储提前结束加息",
-      "summary": "美国银行策略师认为，美股进一步下跌及信用利差扩大，可能迫使美联储提前结束加息。点击查看…",
-      "keywords": [
-        "美联储",
-        "加息"
-      ],
-      "pub_ts": 1795416109.0,
-      "time_et": "11-23 01:41 ET",
-      "time_bj": "14:41 BJ",
-      "time_kst": "15:41 KST",
-      "time_display": "01:41 ET / 14:41 BJ"
     }
   ],
   "ticker_news": {
@@ -792,6 +793,13 @@
     ],
     "TSM": [
       {
+        "title": "ASML Vs. Taiwan Semiconductor: Here’s Why You Choose One as Your AI-Anchor Now",
+        "url": "https://247wallst.com/investing/2026/11/23/asml-vs-taiwan-semiconductor-heres-why-you-choose-one-as-your-ai-anchor-now/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 07:15 ET",
+        "pub_ts": 1795436136.0
+      },
+      {
         "title": "AI Chips Update - Global Semiconductor ETF Expands International Investment Horizons",
         "url": "https://finance.yahoo.com/technology/ai/articles/ai-chips-global-semiconductor-etf-113725192.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -818,13 +826,6 @@
         "source": "Yahoo Finance",
         "time": "11-22 14:21 ET",
         "pub_ts": 1795375273.0
-      },
-      {
-        "title": "Stanley Druckenmiller, Leopold Aschenbrenner and 25 Other Big Funds Sold Taiwan Semiconductor Last Quarter, While 38 Bought. Who’s Right?",
-        "url": "https://www.tikr.com/blog/stanley-druckenmiller-leopold-aschenbrenner-and-25-other-big-funds-sold-taiwan-semiconductor-last-quarter-while-38-bought-whos-right?ref=yahoofinance&tlnk=yf-261122-frx2h3mh&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-22 13:05 ET",
-        "pub_ts": 1795370715.0
       }
     ],
     "VIXY": [
@@ -903,11 +904,32 @@
     ],
     "NVDA": [
       {
-        "title": "Nvidia stock jumps as DC makes stunning u-turn on Jensen Huang",
-        "url": "https://finance.yahoo.com/markets/stocks/article/nvidia-stock-jumps-as-dc-makes-stunning-u-turn-on-jensen-huang-113419437.html?.tsrc=rss",
+        "title": "The biggest investors in AI are doing this",
+        "url": "https://finance.yahoo.com/video/biggest-investors-ai-doing-120000197.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 06:34 ET",
-        "pub_ts": 1795433659.0
+        "time": "11-23 07:00 ET",
+        "pub_ts": 1795435200.0
+      },
+      {
+        "title": "Down 33% YTD, Is Nvidia a Golden Buying Opportunity?",
+        "url": "https://247wallst.com/investing/2026/11/23/down-33-ytd-is-nvidia-a-golden-buying-opportunity/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 07:17 ET",
+        "pub_ts": 1795436232.0
+      },
+      {
+        "title": "Where Will Nvidia Stock Be in 1 Year? Wall Street's Answer Might Surprise You.",
+        "url": "https://www.fool.com/investing/2026/11/23/where-will-nvidia-stock-be-in-1-year-wall-street-s-answer-might-surprise-you/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 07:10 ET",
+        "pub_ts": 1795435802.0
+      },
+      {
+        "title": "Disney Just Made a 52-Week High While Netflix Is Down 36.2% This Year. Here’s the Better Buy Now.",
+        "url": "https://www.fool.com/investing/2026/11/23/disney-just-made-a-52-week-high-while-netflix-is-down-36-2-this-year-here-s-the-better-buy-now/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 07:05 ET",
+        "pub_ts": 1795435502.0
       },
       {
         "title": "Donald Trump urges Nvidia to rehire former CEO Jensen Huang",
@@ -915,27 +937,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 06:48 ET",
         "pub_ts": 1795434526.0
-      },
-      {
-        "title": "Jensen and Lori Huang Control 870 Million Nvidia Shares Through Trusts and LLCs",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/jensen-lori-huang-control-870-114440529.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 06:44 ET",
-        "pub_ts": 1795434280.0
-      },
-      {
-        "title": "Dan Ives Calls Tech Sell-Off a 'Buying Opportunity' -- AI Boom Has Room to Run",
-        "url": "https://finance.yahoo.com/technology/ai/articles/dan-ives-calls-tech-sell-112815121.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 06:28 ET",
-        "pub_ts": 1795433295.0
-      },
-      {
-        "title": "What Triggered The Drop In Marvell Stock?",
-        "url": "https://www.trefis.com/stock/mrvl/articles/627782/what-triggered-the-drop-in-marvell-stock/2026-11-23?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 06:18 ET",
-        "pub_ts": 1795432697.0
       }
     ],
     "AMD": [
@@ -977,6 +978,13 @@
     ],
     "ASML": [
       {
+        "title": "ASML Vs. Taiwan Semiconductor: Here’s Why You Choose One as Your AI-Anchor Now",
+        "url": "https://247wallst.com/investing/2026/11/23/asml-vs-taiwan-semiconductor-heres-why-you-choose-one-as-your-ai-anchor-now/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 07:15 ET",
+        "pub_ts": 1795436136.0
+      },
+      {
         "title": "AI Chips Update - Global Semiconductor ETF Expands International Investment Horizons",
         "url": "https://finance.yahoo.com/technology/ai/articles/ai-chips-global-semiconductor-etf-113725192.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1003,13 +1011,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 11:47 ET",
         "pub_ts": 1795193231.0
-      },
-      {
-        "title": "14 ETFs Add to ASML Holding (ASML) on Nov. 18",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/14-etfs-add-asml-holding-110144292.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 06:01 ET",
-        "pub_ts": 1795172504.0
       }
     ],
     "QCOM": [
@@ -1162,39 +1163,39 @@
     ],
     "GOOGL": [
       {
+        "title": "Marvell Technology’s Near 50% Plummet Within a Month Means Little to This Wall Street Pro Who Predicts 270% Gains From Here",
+        "url": "https://247wallst.com/investing/2026/11/23/marvell-technologys-near-50-plummet-within-a-month-means-little-to-this-wall-street-pro-who-predicts-270-gains-from-here/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 07:15 ET",
+        "pub_ts": 1795436145.0
+      },
+      {
+        "title": "What Is Behind The Move In CoreWeave Stock?",
+        "url": "https://www.trefis.com/stock/crwv/articles/627785/what-is-behind-the-move-in-coreweave-stock-2/2026-11-23?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 07:01 ET",
+        "pub_ts": 1795435291.0
+      },
+      {
+        "title": "The biggest investors in AI are doing this",
+        "url": "https://finance.yahoo.com/video/biggest-investors-ai-doing-120000197.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 07:00 ET",
+        "pub_ts": 1795435200.0
+      },
+      {
+        "title": "Nvidia Stock Surges as Trump Urges Board to Rehire Huang. Is the Selling Finally Over?",
+        "url": "https://finance.yahoo.com/m/5d0863d1-3733-3b1d-9c79-9c4251c3f14a/nvidia-stock-surges-as-trump.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 06:41 ET",
+        "pub_ts": 1795434060.0
+      },
+      {
         "title": "CrowdStrike explores acquisition of Zscaler – report",
         "url": "https://www.verdict.co.uk/crowdstrike-explores-acquisition-zscaler/?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-23 06:10 ET",
         "pub_ts": 1795432221.0
-      },
-      {
-        "title": "Claude “May Have Just Proved” the Riemann Hypothesis. Anthropic’s Stock Fell Toward Its IPO Price Anyway",
-        "url": "https://www.tikr.com/blog/claude-may-have-just-proved-the-riemann-hypothesis-anthropics-stock-fell-toward-its-ipo-price-anyway?ref=yahoofinance&tlnk=yf-261123-w3fxccw5&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 06:05 ET",
-        "pub_ts": 1795431935.0
-      },
-      {
-        "title": "Alphabet Trades at “Just 18 Times Forward Earnings.” Its SpaceX and Anthropic Stakes Top $200 Billion",
-        "url": "https://www.tikr.com/blog/alphabet-trades-at-just-18-times-forward-earnings-its-spacex-and-anthropic-stakes-top-200-billion?ref=yahoofinance&tlnk=yf-261123-pc4vh8rv&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 06:05 ET",
-        "pub_ts": 1795431921.0
-      },
-      {
-        "title": "First Trust L/S Equity (FTLS) Buys $73.5 Million More Berkshire on Thursday",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/first-trust-l-equity-ftls-110352347.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 06:03 ET",
-        "pub_ts": 1795431832.0
-      },
-      {
-        "title": "ETFs Are Net Sellers of Alphabet (GOOGL) on Nov. 19",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-net-sellers-alphabet-googl-110256389.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 06:02 ET",
-        "pub_ts": 1795431776.0
       }
     ],
     "MSFT": [
@@ -1368,21 +1369,28 @@
         "pub_ts": 1795401851.0
       },
       {
-        "title": "Jeff Bezos predicts Amazon will eventually 'go bankrupt' and shares 30-year rule behind it",
-        "url": "https://www.thestreet.com/retail/jeff-bezos-predicts-amazon-will-eventually-go-bankrupt-30-year-rule?.tsrc=rss",
+        "title": "What ARK Blockchain & Fintech (ARKF) Bought: Block Leads on Nov. 19",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/ark-blockchain-fintech-arkf-bought-110545933.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-22 13:33 ET",
-        "pub_ts": 1795372380.0
+        "time": "11-23 06:05 ET",
+        "pub_ts": 1795431945.0
       },
       {
-        "title": "Amazon.com vs. Home Depot: Which Consumer Stock Is a Better Buy for 2027?",
-        "url": "https://www.fool.com/coverage/better-buy/2026/11/22/amazoncom-vs-home-depot-which-consumer-stock-is-a-better-buy-for-2027/?.tsrc=rss",
+        "title": "Claude “May Have Just Proved” the Riemann Hypothesis. Anthropic’s Stock Fell Toward Its IPO Price Anyway",
+        "url": "https://www.tikr.com/blog/claude-may-have-just-proved-the-riemann-hypothesis-anthropics-stock-fell-toward-its-ipo-price-anyway?ref=yahoofinance&tlnk=yf-261123-w3fxccw5&.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-22 13:24 ET",
-        "pub_ts": 1795371851.0
+        "time": "11-23 06:05 ET",
+        "pub_ts": 1795431935.0
       }
     ],
     "CRWV": [
+      {
+        "title": "What Is Behind The Move In CoreWeave Stock?",
+        "url": "https://www.trefis.com/stock/crwv/articles/627785/what-is-behind-the-move-in-coreweave-stock-2/2026-11-23?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 07:01 ET",
+        "pub_ts": 1795435291.0
+      },
       {
         "title": "CRWV, IREN, NBIS Rally After Sell-Off — New US Curbs Threaten Southeast Asia Neocloud Business",
         "url": "https://stocktwits.com/news-articles/markets/equity/crwv-iren-nbis-rally-after-sell-off-new-us-curbs-threaten-southeast-asia-neocloud-business/cNbYwjZR9Sn?.tsrc=rss",
@@ -1410,13 +1418,6 @@
         "source": "Yahoo Finance",
         "time": "11-22 20:39 ET",
         "pub_ts": 1795397940.0
-      },
-      {
-        "title": "CoreWeave Is the Real Loser in Anthropic’s IPO Slide: $22.4 Billion of OpenAI Contracts",
-        "url": "https://www.tikr.com/blog/coreweave-is-the-real-loser-in-anthropics-ipo-slide-22-4-billion-of-openai-contracts?ref=yahoofinance&tlnk=yf-261123-h2vq3cr2&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-22 19:48 ET",
-        "pub_ts": 1795394882.0
       }
     ],
     "NBIS": [
@@ -3255,23 +3256,23 @@
     "TLT": 1795437007.2175102,
     "GLD": 1795437007.2175102,
     "SQQQ": 1795437007.2175102,
-    "TSM": 1795435593.6957073,
+    "TSM": 1795437123.5809402,
     "VIXY": 1795437007.2175102,
-    "SOXS": 1795435593.6957073,
-    "NVDA": 1795435593.6957073,
-    "AMD": 1795435593.6957073,
-    "ASML": 1795435593.6957073,
-    "QCOM": 1795435593.6957073,
-    "AVGO": 1795435593.6957073,
-    "AMAT": 1795435593.6957073,
-    "META": 1795435593.6957073,
-    "GOOGL": 1795435593.6957073,
-    "MSFT": 1795435593.6957073,
-    "AAPL": 1795435593.6957073,
+    "SOXS": 1795437123.5809402,
+    "NVDA": 1795437123.5809402,
+    "AMD": 1795437123.5809402,
+    "ASML": 1795437123.5809402,
+    "QCOM": 1795437123.5809402,
+    "AVGO": 1795437123.5809402,
+    "AMAT": 1795437123.5809402,
+    "META": 1795437123.5809402,
+    "GOOGL": 1795437123.5809402,
+    "MSFT": 1795437123.5809402,
+    "AAPL": 1795437123.5809402,
     "PLTR": 1795435706.4393792,
-    "NOW": 1795435593.6957073,
-    "AMZN": 1795435593.6957073,
-    "CRWV": 1795435593.6957073,
+    "NOW": 1795437123.5809402,
+    "AMZN": 1795437123.5809402,
+    "CRWV": 1795437123.5809402,
     "NBIS": 1795435706.4393792,
     "APLD": 1795435706.4393792,
     "VST": 1795435706.4393792,
@@ -3315,9 +3316,9 @@
     "PEP": 1795435706.4393792,
     "XOM": 1795437007.2175102,
     "JPM": 1795437007.2175102,
-    "WMT": 1795435593.6957073,
+    "WMT": 1795437123.5809402,
     "V": 1795437007.2175102,
-    "CAT": 1795435593.6957073,
+    "CAT": 1795437123.5809402,
     "FN": 1795436896.621187,
     "GLW": 1795435706.4393792,
     "ANT": 1795436142.8867898,
@@ -3340,7 +3341,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (07:14 ET / 20:14 BJ) [原油]：摩根大通：持续的供应过剩意味着，布伦特原油价格在2027年上半年可能处于70美元高位区间，下半年降至60美元高位区间，并在2028年回落至60美元中段。",
+    "detail": "⚡ 最新核心快讯 (07:30 ET / 20:30 BJ) [芯片] [英伟达] [特朗普]：【哈斯继续执掌Arm，英伟达CEO继任人选仍未明朗】 11月23日讯，芯片设计公司Arm延长了雷内·哈斯（Rene Haas）的任期，并提拔他出任母公司软银集团副董事长。这位潜在的英伟达CE",
     "event_name": "",
     "minutes_left": 0,
     "opex_shield": {
