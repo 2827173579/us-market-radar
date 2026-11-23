@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795444719.988,
-  "updated_at_et": "11-23 09:38 ET",
-  "updated_at_kst": "23:38 KST",
+  "updated_at_ts": 1795444826.406,
+  "updated_at_et": "11-23 09:40 ET",
+  "updated_at_kst": "23:40 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -19,8 +19,8 @@
     },
     {
       "id": "20261123223446057800",
-      "title": "英伟达(NVDA.O)有望增加逾9000亿美元市值。",
-      "summary": "英伟达(NVDA.O)有望增加逾9000亿美元市值。",
+      "title": "英伟达(NVDA.O)股价飙升33%，有望增加逾9000亿美元市值。",
+      "summary": "英伟达(NVDA.O)股价飙升33%，有望增加逾9000亿美元市值。",
       "keywords": [
         "英伟达"
       ],
@@ -536,6 +536,13 @@
         "pub_ts": 1795431845.0
       },
       {
+        "title": "Exchange-Traded Funds, Equity Futures Higher Pre-Bell Monday as Jensen Huang Returns to Nvidia",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/exchange-traded-funds-equity-futures-142039189.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 09:20 ET",
+        "pub_ts": 1795443639.0
+      },
+      {
         "title": "Stock Market Today: Tech Futures Surge After Market Sell-Off; Nvidia Soars 30% On Jensen Huang Return (Live Coverage)",
         "url": "https://finance.yahoo.com/m/8751de70-467e-380a-82cb-f4ee42adc461/stock-market-today%3A-tech.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -555,13 +562,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 06:02 ET",
         "pub_ts": 1795431769.0
-      },
-      {
-        "title": "ETFs Are Net Sellers of NVIDIA (NVDA) on Nov. 19",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-net-sellers-nvidia-nvda-110240187.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 06:02 ET",
-        "pub_ts": 1795431760.0
       }
     ],
     "SMH": [
@@ -2934,6 +2934,20 @@
     ],
     "XOM": [
       {
+        "title": "Exxon, Chevron and ConocoPhillips Are Down. Here’s What Their Dividends Tell Investors",
+        "url": "https://247wallst.com/investing/2026/11/23/exxon-chevron-and-conocophillips-are-down-heres-what-their-dividends-tell-investors/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 09:17 ET",
+        "pub_ts": 1795443425.0
+      },
+      {
+        "title": "ExxonMobil: Announces Pricing Terms, Expiration and Results of Cash Tender Offers for Outstanding 2030 1.900% Senior Notes, 2031 2.150% Senior Notes, 2030 3.482% Notes and 2040 4.227% Notes",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/exxonmobil-announces-pricing-terms-expiration-140000286.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 09:00 ET",
+        "pub_ts": 1795442400.0
+      },
+      {
         "title": "Can Exxon Mobil Stock Outlast The Fuel Shortage?",
         "url": "https://www.trefis.com/stock/xom/articles/627587/can-exxon-mobil-stock-outlast-the-fuel-shortage/2026-11-23?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2953,20 +2967,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 06:01 ET",
         "pub_ts": 1795431680.0
-      },
-      {
-        "title": "ExxonMobil and partners approve $4bn investment in Angola’s Block 15",
-        "url": "https://www.offshore-technology.com/news/exxonmobil-partners-4bn-angolas-block-15/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 03:05 ET",
-        "pub_ts": 1795421106.0
-      },
-      {
-        "title": "How Many Shares of Chevron, Shell or Exxon Pay $1,000 a Month in Dividends?",
-        "url": "https://www.tikr.com/blog/how-many-shares-of-chevron-shell-or-exxon-pay-1000-a-month-in-dividends?ref=yahoofinancedividend&tlnk=yf-261121-98jm29wr&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-21 05:50 ET",
-        "pub_ts": 1795258232.0
       }
     ],
     "JPM": [
@@ -3045,6 +3045,13 @@
     ],
     "V": [
       {
+        "title": "Visa Launches New A.I. Agent Wallet",
+        "url": "https://www.cryptoprowl.com/releases/visa-launches-new-ai-agent-wallet-8025?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 09:34 ET",
+        "pub_ts": 1795444440.0
+      },
+      {
         "title": "Klarna Expands Collaboration With Visa, Bringing Flexible Payments to Merchants Using Visa Acceptance Platform",
         "url": "https://finance.yahoo.com/technology/articles/klarna-expands-collaboration-visa-bringing-133000131.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3071,13 +3078,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 12:55 ET",
         "pub_ts": 1795197329.0
-      },
-      {
-        "title": "RBA vs. V: Which Stock Is the Better Value Option?",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/rba-vs-v-stock-better-154003929.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 10:40 ET",
-        "pub_ts": 1795189203.0
       }
     ],
     "CAT": [
@@ -3239,20 +3239,20 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795443281.0524106,
-    "SOXL": 1795443281.0524106,
-    "SPY": 1795443281.0524106,
-    "DIA": 1795443281.0524106,
-    "SOXX": 1795443281.0524106,
-    "QQQ": 1795443281.0524106,
-    "SMH": 1795443281.0524106,
-    "IWM": 1795443281.0524106,
-    "IGV": 1795443281.0524106,
-    "TLT": 1795443281.0524106,
-    "GLD": 1795443281.0524106,
-    "SQQQ": 1795443281.0524106,
+    "KORU": 1795444826.4061859,
+    "SOXL": 1795444826.4061859,
+    "SPY": 1795444826.4061859,
+    "DIA": 1795444826.4061859,
+    "SOXX": 1795444826.4061859,
+    "QQQ": 1795444826.4061859,
+    "SMH": 1795444826.4061859,
+    "IWM": 1795444826.4061859,
+    "IGV": 1795444826.4061859,
+    "TLT": 1795444826.4061859,
+    "GLD": 1795444826.4061859,
+    "SQQQ": 1795444826.4061859,
     "TSM": 1795443389.0420787,
-    "VIXY": 1795443281.0524106,
+    "VIXY": 1795444826.4061859,
     "SOXS": 1795443389.0420787,
     "NVDA": 1795443389.0420787,
     "AMD": 1795443389.0420787,
@@ -3309,10 +3309,10 @@
     "NKE": 1795444719.9875643,
     "MCD": 1795444719.9875643,
     "PEP": 1795443505.8719223,
-    "XOM": 1795443281.0524106,
-    "JPM": 1795443281.0524106,
+    "XOM": 1795444826.4061859,
+    "JPM": 1795444826.4061859,
     "WMT": 1795443389.0420787,
-    "V": 1795443281.0524106,
+    "V": 1795444826.4061859,
     "CAT": 1795443389.0420787,
     "FN": 1795444719.9875643,
     "GLW": 1795443505.8719223,
