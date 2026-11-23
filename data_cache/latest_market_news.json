@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795397804.272,
-  "updated_at_et": "11-22 20:36 ET",
-  "updated_at_kst": "10:36 KST",
+  "updated_at_ts": 1795397909.043,
+  "updated_at_et": "11-22 20:38 ET",
+  "updated_at_kst": "10:38 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1766,6 +1766,13 @@
     ],
     "SPCX": [
       {
+        "title": "Stifel Says SpaceX Could Buy Stalled Data Centers for One Reason: Their Power. Here’s Why Electricity Is the Real Asset.",
+        "url": "https://www.fool.com/investing/2026/11/22/stifel-says-spacex-could-buy-stalled-data-centers-for-one-reason-their-power-heres-why-electricity-is-the-real-asset/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-22 20:21 ET",
+        "pub_ts": 1795396862.0
+      },
+      {
         "title": "Stanley Druckenmiller and 42 Other Big Funds Bought SpaceX Last Quarter. Brad Gerstner and 23 Others Sold. Who’s Right?",
         "url": "https://www.tikr.com/blog/stanley-druckenmiller-and-42-other-big-funds-bought-spacex-last-quarter-brad-gerstner-and-23-others-sold-whos-right?ref=yahoofinance&tlnk=yf-261122-prh63fwm&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1792,13 +1799,6 @@
         "source": "Yahoo Finance",
         "time": "11-22 13:50 ET",
         "pub_ts": 1795373402.0
-      },
-      {
-        "title": "SpaceX Expects to Pass “One Gigawatt a Month” of AI Compute by the End of 2027. That’s Great News for Nvidia",
-        "url": "https://www.tikr.com/blog/spacex-expects-to-pass-one-gigawatt-a-month-of-ai-compute-by-the-end-of-2027-thats-great-news-for-nvidia?ref=yahoofinance&tlnk=yf-261122-96p3m6c4&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-22 13:40 ET",
-        "pub_ts": 1795372808.0
       }
     ],
     "ASTS": [
@@ -1951,6 +1951,13 @@
     ],
     "TSLA": [
       {
+        "title": "XPENG Launches Public Advanced ADAS Test Rides at Its Paris Store, Becoming the First Chinese Automaker to Offer the Experience Overseas",
+        "url": "https://finance.yahoo.com/technology/ai/articles/xpeng-launches-public-advanced-adas-010200031.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-22 20:02 ET",
+        "pub_ts": 1795395720.0
+      },
+      {
         "title": "Should You Buy Tesla or SpaceX Stock Before Their Potential Merger?",
         "url": "https://www.fool.com/investing/2026/11/22/should-you-buy-tesla-or-spacex-stock-before-merger/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1977,13 +1984,6 @@
         "source": "Yahoo Finance",
         "time": "11-22 08:32 ET",
         "pub_ts": 1795354322.0
-      },
-      {
-        "title": "‘I Feel Pretty Foolish’: Elon Musk Wishes He Could ‘Rewind’ the Clock After $500 Million Bet on Republicans in Midterms",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/feel-pretty-foolish-elon-musk-123005190.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-22 07:30 ET",
-        "pub_ts": 1795350605.0
       }
     ],
     "AXP": [
@@ -3281,9 +3281,9 @@
     "MSFT": 1795397804.2718315,
     "AAPL": 1795397804.2718315,
     "PLTR": 1795396429.7520072,
-    "NOW": 1795396327.892127,
-    "AMZN": 1795396327.892127,
-    "CRWV": 1795396327.892127,
+    "NOW": 1795397909.0431654,
+    "AMZN": 1795397909.0431654,
+    "CRWV": 1795397909.0431654,
     "NBIS": 1795396429.7520072,
     "APLD": 1795396429.7520072,
     "VST": 1795396429.7520072,
@@ -3292,32 +3292,32 @@
     "COHR": 1795396429.7520072,
     "MRVL": 1795396429.7520072,
     "LITE": 1795396429.7520072,
-    "AAOI": 1795396327.892127,
-    "SPCX": 1795396327.892127,
-    "ASTS": 1795396327.892127,
+    "AAOI": 1795397909.0431654,
+    "SPCX": 1795397909.0431654,
+    "ASTS": 1795397909.0431654,
     "AXTI": 1795396429.7520072,
-    "NASA": 1795396327.892127,
-    "LUNR": 1795396327.892127,
-    "TSLA": 1795396327.892127,
-    "AXP": 1795396327.892127,
-    "RKLB": 1795396327.892127,
-    "KO": 1795396327.892127,
-    "FLY": 1795396327.892127,
-    "INTC": 1795396327.892127,
-    "VRT": 1795396327.892127,
-    "HPE": 1795396327.892127,
-    "DELL": 1795396327.892127,
-    "OKLO": 1795396327.892127,
-    "CEG": 1795396327.892127,
-    "FPS": 1795396327.892127,
+    "NASA": 1795397909.0431654,
+    "LUNR": 1795397909.0431654,
+    "TSLA": 1795397909.0431654,
+    "AXP": 1795397909.0431654,
+    "RKLB": 1795397909.0431654,
+    "KO": 1795397909.0431654,
+    "FLY": 1795397909.0431654,
+    "INTC": 1795397909.0431654,
+    "VRT": 1795397909.0431654,
+    "HPE": 1795397909.0431654,
+    "DELL": 1795397909.0431654,
+    "OKLO": 1795397909.0431654,
+    "CEG": 1795397909.0431654,
+    "FPS": 1795397909.0431654,
     "MU": 1795396429.7520072,
     "SKHY": 1795396429.7520072,
     "WDC": 1795396429.7520072,
-    "STX": 1795396327.892127,
-    "MSTR": 1795396327.892127,
-    "SNDK": 1795396327.892127,
+    "STX": 1795397909.0431654,
+    "MSTR": 1795397909.0431654,
+    "SNDK": 1795397909.0431654,
     "BTC-USD": 1795396429.7520072,
-    "CRWD": 1795396327.892127,
+    "CRWD": 1795397909.0431654,
     "ORCL": 1795396429.7520072,
     "COIN": 1795396429.7520072,
     "LLY": 1795396429.7520072,
@@ -3331,7 +3331,7 @@
     "V": 1795396532.9771078,
     "CAT": 1795396532.9771078,
     "FN": 1795396429.7520072,
-    "GLW": 1795396327.892127,
+    "GLW": 1795397909.0431654,
     "ANT": 1795396429.7520072,
     "XAUUSD": 1795396429.7520072
   },
