@@ -9,6 +9,7 @@
 3. 纯函数可测：所有检索、模糊匹配与 Embed 卡片构建均抽离为无网关依赖的纯函数。
 """
 
+import asyncio
 import difflib
 import json
 import math
@@ -21,6 +22,11 @@ try:
     import signal_ledger
 except Exception:
     signal_ledger = None
+
+try:
+    import ai_commentary_engine
+except Exception:
+    ai_commentary_engine = None
 
 try:
     import discord
@@ -1038,6 +1044,137 @@ def build_temp_embed_dict(snapshot: Optional[Dict[str, Any]]) -> Dict[str, Any]:
     }
 
 
+AI_OWNER_DENY_MSG = "🔒 此指令仅限雷达管理员本人使用"
+AI_COOLDOWN_SECONDS = 10.0
+
+
+def build_ai_embed_dict(
+    target: str,
+    brief_result: Optional[Dict[str, Any]],
+    snapshot: Optional[Dict[str, Any]] = None,
+) -> Dict[str, Any]:
+    """构建 `/ai` 管理员私有 AI 首席策略师大白话剧本 Embed 字典。"""
+    footer_txt = _build_footer_text(snapshot)
+    now_iso = datetime.now(timezone.utc).isoformat()
+    tk = str(target or "OVERVIEW").strip().upper()
+    meta_map = {
+        "OVERVIEW": "大盘全景",
+        "QQQ": "QQQ (纳指 100)",
+        "SPY": "SPY / VOO (标普500 · 走势100%同步)",
+        "SOXX": "SOXX (半导体 ETF)",
+    }
+    title_lbl = meta_map.get(tk, tk)
+    res = brief_result if isinstance(brief_result, dict) else {}
+    status = str(res.get("status") or "ERROR").upper()
+    risk_locked = bool(res.get("risk_lock_active", False))
+    provider_used = str(res.get("provider_used") or "未配置")
+    upd_et = str(res.get("updated_at_et") or "")
+    upd_kst = str(res.get("updated_at_kst") or "")
+    body_txt = str(res.get("text") or "").strip()
+
+    if status != "OK" or not body_txt:
+        err_hint = (
+            "尚未配置 GEMINI_API_KEY 或 DEEPSEEK_API_KEY，请在服务端 .env 配置后重试。"
+            if status == "UNCONFIGURED"
+            else "当前大模型接口临时繁忙或暂无缓存，请稍后重试（或切换另一引擎）。"
+        )
+        return {
+            "title": f"🧠 AI 首席策略师 · {title_lbl}",
+            "description": _strip_bare_hr_lines(f"💬 一句话结论：{err_hint}"),
+            "color": 0xF59E0B,
+            "timestamp": now_iso,
+            "footer": {"text": f"引擎: {provider_used} ｜ {footer_txt}"},
+        }
+
+    lock_badge = "⛔ 硬风控锁生效中（严禁左侧抄底）" if risk_locked else "🛡️ 硬风控监控正常"
+    color = 0xEF4444 if risk_locked else 0x38BDF8
+    ts_line = f"{upd_et}" + (f" / {upd_kst}" if upd_kst else "")
+    desc = _strip_bare_hr_lines(
+        f"**{lock_badge}** ｜ 引擎：`{provider_used}` ｜ 更新：`{ts_line or '刚刚'}`\n\n{body_txt}"
+    )[:4000]
+    return {
+        "title": f"🧠 AI 首席策略师 · {title_lbl}",
+        "description": desc,
+        "color": color,
+        "timestamp": now_iso,
+        "footer": {"text": footer_txt},
+    }
+
+
+def handle_ai_command_request(
+    user_id: Any,
+    target: str = "OVERVIEW",
+    engine: str = "auto",
+    refresh: bool = True,
+    snapshot: Optional[Dict[str, Any]] = None,
+    cache_path: Optional[str] = None,
+    env_path: Optional[str] = None,
+    env_override: Optional[Dict[str, str]] = None,
+    http_post_fn: Any = None,
+) -> Dict[str, Any]:
+    """纯函数封装 `/ai` 权限白名单校验 + 缓存/实时双引擎调用（严格白名单前拦截，未授权 0 次调用 LLM）。"""
+    if ai_commentary_engine is None:
+        return {
+            "allowed": False,
+            "ephemeral": True,
+            "message": "❌ AI 解盘引擎模块未加载。",
+            "embed": None,
+        }
+    if not ai_commentary_engine.is_discord_owner(user_id, env_path=env_path, env_override=env_override):
+        return {
+            "allowed": False,
+            "ephemeral": True,
+            "message": AI_OWNER_DENY_MSG,
+            "embed": None,
+        }
+
+    tk = str(target or "OVERVIEW").strip().upper()
+    if tk not in ai_commentary_engine.VALID_TARGETS:
+        tk = "OVERVIEW"
+    cpath = cache_path or ai_commentary_engine.DEFAULT_CACHE_PATH
+
+    if not refresh:
+        cached = ai_commentary_engine.load_ai_commentary_cache(cpath)
+        items = cached.get("items") if isinstance(cached.get("items"), dict) else {}
+        if isinstance(items.get(tk), str) and items.get(tk).strip():
+            tk_locked, tk_reasons = ai_commentary_engine.evaluate_risk_lock(snapshot, target=tk)
+            res_obj = {
+                "status": "OK",
+                "target": tk,
+                "text": ai_commentary_engine.apply_post_risk_safety_net(items[tk], risk_lock_active=tk_locked),
+                "provider_used": f"{cached.get('provider_used') or '缓存'} (缓存)",
+                "risk_lock_active": tk_locked or bool(cached.get("risk_lock_active", False)),
+                "risk_lock_reasons": tk_reasons or cached.get("risk_lock_reasons", []),
+                "updated_at_et": cached.get("updated_at_et", ""),
+                "updated_at_kst": cached.get("updated_at_kst", ""),
+            }
+            return {
+                "allowed": True,
+                "ephemeral": None,
+                "message": "",
+                "embed": build_ai_embed_dict(tk, res_obj, snapshot=snapshot),
+                "result": res_obj,
+            }
+
+    res_obj = ai_commentary_engine.generate_single_brief(
+        target=tk,
+        snapshot=snapshot,
+        provider=engine,
+        env_path=env_path,
+        env_override=env_override,
+        http_post_fn=http_post_fn,
+        cache_path=cpath,
+        write_back_cache=True,
+    )
+    return {
+        "allowed": True,
+        "ephemeral": None,
+        "message": "",
+        "embed": build_ai_embed_dict(tk, res_obj, snapshot=snapshot),
+        "result": res_obj,
+    }
+
+
 def build_top5_embed_dict(snapshot: Optional[Dict[str, Any]]) -> Dict[str, Any]:
     """构建 `/top5` 大盘震荡期最抗跌的 5 只票（紧凑 2 行防折行、休市统一用正规盘数据）。"""
     footer_txt = _build_footer_text(snapshot)
@@ -1272,6 +1409,53 @@ if _DISCORD_PY_AVAILABLE:
                 snap = load_radar_snapshot(bot_ref.snapshot_path)
                 emb = _embed_from_dict(build_temp_embed_dict(snap))
                 await interaction.response.send_message(embed=emb)
+
+            @self.tree.command(name="ai", description="管理员私有：AI 首席策略师大白话盘中剧本（大盘/QQQ/SPY·VOO/SOXX）")
+            @app_commands.describe(
+                target="选择解盘视角（大盘全景 / QQQ / SPY·VOO / SOXX）",
+                engine="选择大模型引擎（默认自动：Gemini 优先 + DeepSeek 兜底）",
+                refresh="True=实时调用大模型并更新缓存 / False=秒读最新缓存",
+                private="True=仅自己可见 / False=发送到当前频道",
+            )
+            @app_commands.choices(
+                target=[
+                    app_commands.Choice(name="大盘全景", value="OVERVIEW"),
+                    app_commands.Choice(name="QQQ", value="QQQ"),
+                    app_commands.Choice(name="SPY / VOO", value="SPY"),
+                    app_commands.Choice(name="SOXX", value="SOXX"),
+                ],
+                engine=[
+                    app_commands.Choice(name="自动(Gemini优先)", value="auto"),
+                    app_commands.Choice(name="强制Gemini", value="gemini"),
+                    app_commands.Choice(name="强制DeepSeek", value="deepseek"),
+                ],
+            )
+            @app_commands.checks.cooldown(1, AI_COOLDOWN_SECONDS, key=lambda i: i.user.id)
+            async def ai_cmd(
+                interaction: discord.Interaction,
+                target: str = "OVERVIEW",
+                engine: str = "auto",
+                refresh: bool = True,
+                private: bool = True,
+            ):
+                if ai_commentary_engine is None or not ai_commentary_engine.is_discord_owner(interaction.user.id):
+                    await interaction.response.send_message(AI_OWNER_DENY_MSG, ephemeral=True)
+                    return
+                await interaction.response.defer(ephemeral=private)
+                snap = load_radar_snapshot(bot_ref.snapshot_path)
+                resp = await asyncio.to_thread(
+                    handle_ai_command_request,
+                    interaction.user.id,
+                    target,
+                    engine,
+                    refresh,
+                    snap,
+                )
+                if not resp.get("allowed"):
+                    await interaction.followup.send(resp.get("message") or AI_OWNER_DENY_MSG, ephemeral=True)
+                    return
+                emb = _embed_from_dict(resp["embed"])
+                await interaction.followup.send(embed=emb, ephemeral=private)
 
             @self.tree.error
             async def on_tree_error(interaction: discord.Interaction, error: app_commands.AppCommandError):

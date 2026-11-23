@@ -168,6 +168,15 @@ def verify_desktop(browser):
             assert page.locator('.v50-fut-card[data-symbol="ES=F"]').is_visible(), "Missing ES=F card on macro_radar.html"
             assert page.locator(".v50-temp-card").count() == 4, f"Expected 4 V5.0 temperature cards, got {page.locator('.v50-temp-card').count()}"
             assert "不含BTC" in page.locator("#v50TempDashboardBlock").inner_text(), "Missing 不含BTC badge on macro_radar.html"
+            assert page.locator("#v51AiCommentaryCard").is_visible(), "Missing V5.1 #v51AiCommentaryCard on macro_radar.html"
+            assert page.locator("#v51AiCommentaryCard .v51-ai-tab").count() == 4, "Expected 4 AI commentary tabs on macro_radar.html"
+            for tab_key in ("QQQ", "SPY", "SOXX", "OVERVIEW"):
+                page.locator(f'#v51AiCommentaryCard .v51-ai-tab[data-ai-tab="{tab_key}"]').click()
+                page.wait_for_timeout(60)
+                assert page.locator(f'#v51AiCommentaryCard .v51-ai-panel[data-ai-panel="{tab_key}"]').is_visible(), f"Tab panel {tab_key} not visible after click"
+            page_html = page.content()
+            for leaked_marker in ("GEMINI_API_KEY", "DEEPSEEK_API_KEY", "AI_OWNER_DISCORD_USER_IDS", "generativelanguage.googleapis.com", "api.deepseek.com"):
+                assert leaked_marker not in page_html, f"Secret/endpoint marker leaked into macro_radar.html: {leaked_marker}"
         print(f"[PASS Desktop] {sub_name}: light theme synced ({info['bg']}), scrollWidth={info['sw']}")
 
     # 3. Navigate to predict_radar_5y.html -> verify Light theme, Canvas redraw, slimming & Table 4

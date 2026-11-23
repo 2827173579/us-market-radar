@@ -6071,8 +6071,9 @@ def generate_macro_radar_html(
     has_realtime=False,
     cross_market_liquidity=None,
     market_temperature=None,
+    ai_commentary=None,
 ):
-    """生成包含 14 只核心 ETF、股指期货先导哨、四维温度计与跨市场流动性监测的宏观大盘司令塔看板"""
+    """生成包含 14 只核心 ETF、股指期货先导哨、四维温度计、AI首席策略师剧本与跨市场流动性监测的宏观大盘司令塔看板"""
     if not update_time_str:
         update_time_str = now_et_str("%Y-%m-%d %H:%M:%S")
     _vr = (weather_info or {}).get("vix_regime") or {}
@@ -6096,6 +6097,18 @@ def generate_macro_radar_html(
         futures_temp_section_html = _mte_html.render_macro_futures_and_temperature_html(_mt_payload)
     except Exception:
         futures_temp_section_html = ""
+    _ai_payload = (
+        ai_commentary
+        if isinstance(ai_commentary, dict) and ai_commentary
+        else ((weather_info or {}).get("ai_commentary") or {})
+    )
+    try:
+        import ai_commentary_engine as _ace_html
+        if not _ai_payload:
+            _ai_payload = _ace_html.load_ai_commentary_cache()
+        ai_commentary_section_html = _ace_html.render_macro_ai_commentary_html(_ai_payload)
+    except Exception:
+        ai_commentary_section_html = ""
     _liq = cross_market_liquidity if isinstance(cross_market_liquidity, dict) else ((weather_info or {}).get("cross_market_liquidity") or {})
     if not _liq:
         try:
@@ -6720,6 +6733,8 @@ def generate_macro_radar_html(
     </div>
 
     {futures_temp_section_html}
+    {ai_commentary_section_html}
+
 
 
     <!-- 跨市场流动性压力卡片 (独立宏观监控，不混入 79 只可交易标的池) -->
@@ -8233,6 +8248,32 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
     except Exception as _mte_err:
         print(f"  [!] 🌡️ V5.0 期货与温度计静默降级: {_mte_err}")
 
+    # 7.06 V5.1 双引擎 AI 首席策略师大白话剧本 (方案 B：盘中 25 分钟智能节流，干跑 0 外发，零密钥入静态页)
+    _ai_commentary_safe = {}
+    try:
+        import ai_commentary_engine as _ace_run
+        _ai_snap_pre = build_latest_radar_snapshot(
+            macro_data=macro_data,
+            stocks_data=stocks_sorted,
+            weather_info=weather_info,
+            vix_regime=vix_regime,
+            cross_market_liquidity=cross_market_liquidity,
+            session_code=session_code,
+            session_name=session_name,
+            now_str=now_str,
+            market_temperature=_market_temperature,
+        )
+        _ai_raw = _ace_run.maybe_refresh_web_brief(snapshot=_ai_snap_pre)
+        _ai_commentary_safe = _ace_run.sanitize_ai_commentary_for_web(_ai_raw)
+        if isinstance(weather_info, dict):
+            weather_info["ai_commentary"] = _ai_commentary_safe
+        print(
+            f"[+] 🧠 V5.1 AI 首席策略师剧本: status={_ai_commentary_safe.get('status')} | "
+            f"引擎={_ai_commentary_safe.get('provider_used')} | 风控锁={_ai_commentary_safe.get('risk_lock_active')}"
+        )
+    except Exception as _ace_err:
+        print(f"  [!] 🧠 V5.1 AI 解盘引擎静默降级: {_ace_err}")
+
     generate_macro_radar_html(
         macro_data,
         weather_info,
@@ -8241,6 +8282,7 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
         has_realtime=has_realtime,
         cross_market_liquidity=cross_market_liquidity,
         market_temperature=_market_temperature,
+        ai_commentary=_ai_commentary_safe,
     )
     generate_stocks_radar_html(stocks_sorted, history_dict, update_time_str=now_str, has_realtime=has_realtime, vix_regime=vix_regime)
     

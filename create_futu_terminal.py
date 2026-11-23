@@ -3240,6 +3240,44 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             font-size: 11px;
             color: var(--text-secondary, var(--text-muted));
         }
+        /* V5.1 核心 ETF (QQQ/SPY/SOXX) 极简可折叠 AI 大白话剧本 */
+        .v51-term-ai-brief {
+            margin: 8px 0 6px;
+            background: var(--bg-elevated);
+            border: 1px solid var(--border-subtle);
+            border-radius: 10px;
+            padding: 8px 11px;
+            font-size: 12px;
+            color: var(--text-primary);
+        }
+        .v51-term-ai-brief summary {
+            cursor: pointer;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 6px;
+            list-style: none;
+            user-select: none;
+        }
+        .v51-term-ai-brief summary::-webkit-details-marker {
+            display: none;
+        }
+        .v51-term-ai-meta {
+            font-size: 10.5px;
+            font-weight: 600;
+            color: var(--text-muted);
+        }
+        .v51-term-ai-body {
+            margin-top: 8px;
+            padding-top: 8px;
+            border-top: 1px dashed var(--border-subtle);
+            font-size: 12px;
+            line-height: 1.65;
+            color: var(--text-secondary, var(--text-primary));
+            white-space: pre-wrap;
+            word-break: break-word;
+        }
         @media (max-width: 768px) {
             .temp-futures-mini {
                 display: none;
@@ -3626,6 +3664,15 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                     </div>
                 </div>
             </section>
+
+            <!-- V5.1 核心 ETF (QQQ / SPY / SOXX) 极简可折叠 AI 大白话剧本（其余 76 只票隐藏） -->
+            <details id="v51TerminalAiBrief" class="v51-term-ai-brief" style="display: none;">
+                <summary>
+                    <span id="v51TermAiTitle">🧠 AI 大白话剧本（点击展开）</span>
+                    <span id="v51TermAiMeta" class="v51-term-ai-meta">--</span>
+                </summary>
+                <div id="v51TermAiBody" class="v51-term-ai-body"></div>
+            </details>
 
             <!-- 展开/收起专业量化数据抽屉按钮 -->
             <button type="button" id="btnProQuantToggle" class="pro-drawer-toggle" onclick="toggleProQuantDrawer()" aria-expanded="false" aria-controls="proQuantDrawer">
@@ -6137,6 +6184,31 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                     ipoNotice.style.color = pal.accent;
                     ipoNotice.style.background = pal.cardBg;
                     ipoNotice.style.borderColor = pal.accentBorder;
+                }
+            }
+            const aiBriefWrap = document.getElementById("v51TerminalAiBrief");
+            if (aiBriefWrap) {
+                const tkUpper = String(ticker || "").toUpperCase();
+                if (tkUpper === "QQQ" || tkUpper === "SPY" || tkUpper === "SOXX") {
+                    const aiDoc = (WEATHER_INFO && WEATHER_INFO.ai_commentary && typeof WEATHER_INFO.ai_commentary === "object")
+                        ? WEATHER_INFO.ai_commentary
+                        : {};
+                    const items = (aiDoc.items && typeof aiDoc.items === "object") ? aiDoc.items : {};
+                    const bodyTxt = items[tkUpper] || `当前尚未生成 ${tkUpper === "SPY" ? "SPY / VOO (标普500)" : tkUpper} 最新大白话剧本，美股盘中每 25 分钟自动刷新。`;
+                    const titleEl = document.getElementById("v51TermAiTitle");
+                    const metaEl = document.getElementById("v51TermAiMeta");
+                    const bodyEl = document.getElementById("v51TermAiBody");
+                    const dispName = tkUpper === "SPY" ? "SPY / VOO" : tkUpper;
+                    if (titleEl) titleEl.innerText = `🧠 ${dispName} AI 大白话剧本（点击展开）`;
+                    if (metaEl) {
+                        const lockTag = aiDoc.risk_lock_active ? "⛔风控锁 · " : "";
+                        metaEl.innerText = `${lockTag}${aiDoc.provider_used || "待刷新"}`;
+                    }
+                    if (bodyEl) bodyEl.innerText = String(bodyTxt);
+                    aiBriefWrap.style.display = "block";
+                } else {
+                    aiBriefWrap.style.display = "none";
+                    aiBriefWrap.removeAttribute("open");
                 }
             }
 

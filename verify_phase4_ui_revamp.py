@@ -133,6 +133,14 @@ def verify_desktop(browser):
         assert txt and "NaN" not in txt and "undefined" not in txt, f"Invalid Layer A {sel}: {txt!r}"
 
     # Expand Pro Quant Drawer & verify content + persistence
+    assert not page.locator("#v51TerminalAiBrief").is_visible(), "NVDA should NOT show #v51TerminalAiBrief"
+    for core_etf in ("QQQ", "SPY", "SOXX"):
+        page.locator(f"#watchlistContainer .stock-item[data-ticker='{core_etf}']").click()
+        page.wait_for_timeout(150)
+        assert page.locator("#v51TerminalAiBrief").is_visible(), f"{core_etf} must show collapsible #v51TerminalAiBrief"
+    page.locator("#watchlistContainer .stock-item[data-ticker='NVDA']").click()
+    page.wait_for_timeout(150)
+    assert not page.locator("#v51TerminalAiBrief").is_visible(), "Switching back to NVDA must hide #v51TerminalAiBrief"
     page.locator("#btnProQuantToggle").click()
     page.wait_for_timeout(200)
     assert page.locator("#proQuantDrawer").is_visible(), "#proQuantDrawer failed to expand"
