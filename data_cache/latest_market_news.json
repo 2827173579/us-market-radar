@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795450913.846,
-  "updated_at_et": "11-23 11:21 ET",
-  "updated_at_kst": "01:21 KST",
+  "updated_at_ts": 1795451023.136,
+  "updated_at_et": "11-23 11:23 ET",
+  "updated_at_kst": "01:23 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -426,13 +426,6 @@
         "pub_ts": 1795447860.0
       },
       {
-        "title": "Is Broadcom Stock's Drop A Chance To Buy?",
-        "url": "https://www.trefis.com/stock/avgo/articles/627646/is-broadcom-stocks-drop-a-chance-to-buy/2026-11-23?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 10:24 ET",
-        "pub_ts": 1795447495.0
-      },
-      {
         "title": "What SPDR S&P 500 ETF Trust (SPY) Sold: Apple Leads on Nov. 19",
         "url": "https://finance.yahoo.com/markets/stocks/articles/spdr-p-500-etf-trust-110402082.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -452,6 +445,13 @@
         "source": "Yahoo Finance",
         "time": "11-23 10:03 ET",
         "pub_ts": 1795446180.0
+      },
+      {
+        "title": "How Risky Is ServiceNow Stock In A Falling Market?",
+        "url": "https://www.trefis.com/stock/now/articles/627538/how-risky-is-servicenow-stock-in-a-falling-market/2026-11-22?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 06:18 ET",
+        "pub_ts": 1795432697.0
       }
     ],
     "DIA": [
@@ -1640,6 +1640,13 @@
     ],
     "MRVL": [
       {
+        "title": "Semiconductor Stocks like Micron, Marvell, and Bloom Energy See Massive Gains as Jensen Huang Returns to NVIDIA",
+        "url": "https://247wallst.com/videos/semiconductor-stocks-like-micron-marvell-and-bloom-energy-see-massive-gains-as-jensen-huang-returns-to-nvidia/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 10:52 ET",
+        "pub_ts": 1795449140.0
+      },
+      {
         "title": "What Is Marvell Technology (MRVL) Building In AI Memory Infrastructure?",
         "url": "https://finance.yahoo.com/technology/ai/articles/marvell-technology-mrvl-building-ai-140857801.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1666,16 +1673,16 @@
         "source": "Yahoo Finance",
         "time": "11-23 07:15 ET",
         "pub_ts": 1795436145.0
-      },
-      {
-        "title": "What Triggered The Drop In Marvell Stock?",
-        "url": "https://www.trefis.com/stock/mrvl/articles/627782/what-triggered-the-drop-in-marvell-stock/2026-11-23?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 06:18 ET",
-        "pub_ts": 1795432697.0
       }
     ],
     "LITE": [
+      {
+        "title": "Applied Optoelectronics and Lumentum Soar 22% as Jensen Huang’s Return to NVIDIA Sparks AI Optics Rebound; Coherent Jumps 19%",
+        "url": "https://247wallst.com/investing/2026/11/23/applied-optoelectronics-and-lumentum-soar-22-as-jensen-huangs-return-to-nvidia-sparks-ai-optics-rebound-coherent-jumps-19/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 10:57 ET",
+        "pub_ts": 1795449427.0
+      },
       {
         "title": "Lumentum’s CEO Says “the Laws of Physics Are Working in Favor of Fiber.” Marvell Holders Are Buying It Cheap",
         "url": "https://www.tikr.com/blog/lumentums-ceo-says-the-laws-of-physics-are-working-in-favor-of-fiber-marvell-holders-are-buying-it-cheap?ref=yahoofinance&tlnk=yf-261122-6v9p23cj&.tsrc=rss",
@@ -1703,13 +1710,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 11:20 ET",
         "pub_ts": 1795191615.0
-      },
-      {
-        "title": "Lumentum’s CEO Admits “Shareholders Are Not Happy” About the Marvell Deal",
-        "url": "https://247wallst.com/investing/2026/11/20/lumentums-ceo-admits-shareholders-are-not-happy-about-the-marvell-deal/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 10:28 ET",
-        "pub_ts": 1795188523.0
       }
     ],
     "AAOI": [
@@ -2380,6 +2380,20 @@
     ],
     "MU": [
       {
+        "title": "Wall Street Is Focused on AI Software. But the Real Money Could Be Made Somewhere Else",
+        "url": "https://247wallst.com/investing/2026/11/23/wall-street-is-focused-on-ai-software-but-the-real-money-could-be-made-somewhere-else/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 11:03 ET",
+        "pub_ts": 1795449835.0
+      },
+      {
+        "title": "Why Nvidia Rehiring Jensen Huang Is Making Micron Stock Skyrocket Today",
+        "url": "https://www.fool.com/investing/2026/11/23/why-nvidia-rehiring-jensen-huang-is-making-micron-stock-skyrocket-today/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 10:49 ET",
+        "pub_ts": 1795448993.0
+      },
+      {
         "title": "Why Micron Stock Is Up Today",
         "url": "https://www.fool.com/investing/2026/11/23/why-micron-stock-is-up-today/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2399,20 +2413,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 10:04 ET",
         "pub_ts": 1795446278.0
-      },
-      {
-        "title": "Micron Stock Jumps 16%. Why the Rally Has Legs.",
-        "url": "https://finance.yahoo.com/m/3f1f89c7-5433-3bc0-990f-eab9250e8983/micron-stock-jumps-16%25.-why.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 10:03 ET",
-        "pub_ts": 1795446180.0
-      },
-      {
-        "title": "Can Micron Stock Jump 50%?",
-        "url": "https://www.trefis.com/stock/mu/articles/627563/can-micron-stock-jump-50/2026-11-23?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 09:33 ET",
-        "pub_ts": 1795444438.0
       }
     ],
     "SKHY": [
@@ -2602,6 +2602,20 @@
     ],
     "BTC-USD": [
       {
+        "title": "American Bitcoin Secures $150M Loan from FalconX Using BTC as Collateral",
+        "url": "https://www.cryptoprowl.com/releases/american-bitcoin-secures-150m-loan-from-falconx-using-btc-as-collateral-8031?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 10:58 ET",
+        "pub_ts": 1795449480.0
+      },
+      {
+        "title": "Coinbase Global vs. Visa: Which Financial Stock Is a Better Buy for 2027?",
+        "url": "https://www.fool.com/coverage/better-buy/2026/11/23/coinbase-global-vs-visa-which-financial-stock-is-a-better-buy-for-2027/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 10:50 ET",
+        "pub_ts": 1795449002.0
+      },
+      {
         "title": "Strategy and Crypto Stocks Rally as Bitcoin Rebounds Past $63,000. Is the Jump Temporary?",
         "url": "https://finance.yahoo.com/m/fdc50c2c-a054-3519-8333-a590c6518df5/strategy-and-crypto-stocks.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2609,32 +2623,18 @@
         "pub_ts": 1795448160.0
       },
       {
+        "title": "BTC Price Explodes by $8k: Jensen Huang Is Back!",
+        "url": "https://cryptonews.com/news/jensen-huang-back-btc-price-explodes-8k/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 10:34 ET",
+        "pub_ts": 1795448065.0
+      },
+      {
         "title": "Strive Skips Bitcoin Buying and Stock Sales for a Week, Leaving Treasury at 43,404 BTC",
         "url": "https://unchainedcrypto.com/strive-skips-bitcoin-buying-and-stock-sales-for-a-week-leaving-treasury-at-43404-btc/?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-23 10:30 ET",
         "pub_ts": 1795447857.0
-      },
-      {
-        "title": "Nvidia, Arm, Anthropic, CrowdStrike, Zscaler, UnitedHealth, and More Stocks That Explain Today’s Market",
-        "url": "https://finance.yahoo.com/m/76a3103b-f3de-364f-8cd8-90e453a902d8/nvidia%2C-arm%2C-anthropic%2C.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 10:11 ET",
-        "pub_ts": 1795446660.0
-      },
-      {
-        "title": "US Stocks, Gold and Bitcoin Rebound Together: Why Is Fear Still Stuck at 11?",
-        "url": "https://beincrypto.com/stocks-gold-bitcoin-rebound-fear-gauges/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 09:47 ET",
-        "pub_ts": 1795445265.0
-      },
-      {
-        "title": "Bitcoin Tops $63,000 as Nvidia Brings Back Jensen Huang and Tech Shares Rally",
-        "url": "https://unchainedcrypto.com/bitcoin-tops-63000-as-nvidia-brings-back-jensen-huang-and-tech-shares-rally/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 09:35 ET",
-        "pub_ts": 1795444519.0
       }
     ],
     "CRWD": [
@@ -2697,21 +2697,28 @@
         "pub_ts": 1795447800.0
       },
       {
-        "title": "Verizon Cut Its Buying In 2002. Can Nvidia's Buyers Stop Now?",
-        "url": "https://www.trefis.com/stock/nvda/articles/627418/verizon-cut-its-buying-in-2002-can-nvidia-s-buyers-stop-now/2026-11-23?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 09:34 ET",
-        "pub_ts": 1795444469.0
-      },
-      {
         "title": "Oracle Or The Fed: What Really Moves Nvidia Stock?",
         "url": "https://www.trefis.com/stock/nvda/articles/627412/oracle-or-the-fed-what-really-moves-nvidia-stock/2026-11-23?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-23 09:00 ET",
         "pub_ts": 1795442403.0
+      },
+      {
+        "title": "Oracle’s “Big Permitting Win” Proves the Data Center Backlash Hasn’t Won Yet",
+        "url": "https://www.tikr.com/blog/oracles-big-permitting-win-proves-the-data-center-backlash-hasnt-won-yet?ref=yahoofinance&tlnk=yf-261123-4gcqcwvr&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 05:20 ET",
+        "pub_ts": 1795429224.0
       }
     ],
     "COIN": [
+      {
+        "title": "Coinbase Global vs. Visa: Which Financial Stock Is a Better Buy for 2027?",
+        "url": "https://www.fool.com/coverage/better-buy/2026/11/23/coinbase-global-vs-visa-which-financial-stock-is-a-better-buy-for-2027/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 10:50 ET",
+        "pub_ts": 1795449002.0
+      },
       {
         "title": "OKX and NYSE Parent ICE Launch Tokenized Stock Venue With 113 Assets Lined Up",
         "url": "https://unchainedcrypto.com/okx-and-nyse-parent-ice-launch-tokenized-stock-venue-with-113-assets-lined-up/?.tsrc=rss",
@@ -2739,16 +2746,23 @@
         "source": "Yahoo Finance",
         "time": "11-22 16:39 ET",
         "pub_ts": 1795383576.0
-      },
-      {
-        "title": "Is Coinbase Stock a Buy, Sell, or Hold 64% Below Its 52-Week High?",
-        "url": "https://www.fool.com/investing/2026/11/22/is-coinbase-stock-a-buy-sell-or-hold-61-below-its-52-week-high/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-22 13:40 ET",
-        "pub_ts": 1795372802.0
       }
     ],
     "LLY": [
+      {
+        "title": "Lilly buys Huntington’s drug developer LoQus23 in potentially $725M deal",
+        "url": "https://www.biopharmadive.com/news/lilly-loqus-huntingtons-drug-acquisition-deal/875448/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 11:17 ET",
+        "pub_ts": 1795450629.0
+      },
+      {
+        "title": "Eli Lilly vs. Vertex Pharmaceuticals: Which Healthcare Stock Is a Better Buy for 2027?",
+        "url": "https://www.fool.com/coverage/better-buy/2026/11/23/eli-lilly-vs-vertex-pharmaceuticals-which-healthcare-stock-is-a-better-buy-for-2027/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 11:01 ET",
+        "pub_ts": 1795449662.0
+      },
       {
         "title": "Eli Lilly Makes $725 Million Huntington's Disease Bet as Drug Pipeline Expands",
         "url": "https://finance.yahoo.com/healthcare/articles/eli-lilly-makes-725-million-151535787.html?.tsrc=rss",
@@ -2769,20 +2783,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 08:12 ET",
         "pub_ts": 1795439548.0
-      },
-      {
-        "title": "Lilly’s Buyout Spree Sees A New Huntington’s Disease Bet – Here’s Why Lilly Is Acquiring LoQus23",
-        "url": "https://stocktwits.com/news-articles/markets/equity/lilly-s-buyout-spree-sees-a-new-huntington-s-disease-bet-here-s-why-lilly-is-acquiring-lo-qus23/cNbpbgqR9jb?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 07:52 ET",
-        "pub_ts": 1795438323.0
-      },
-      {
-        "title": "Eli Lilly joins Huntington’s race on $725m LoQus23 takeover",
-        "url": "https://www.pharmaceutical-technology.com/news/eli-lilly-725m-loqus23-takeover-huntingtons-disease/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 07:22 ET",
-        "pub_ts": 1795436549.0
       }
     ],
     "MRNA": [
@@ -3242,10 +3242,10 @@
   "ticker_news_ts": {
     "KORU": 1795449599.7635071,
     "SOXL": 1795449599.7635071,
-    "SPY": 1795449491.2661486,
+    "SPY": 1795451023.1362395,
     "DIA": 1795449599.7635071,
     "SOXX": 1795449599.7635071,
-    "QQQ": 1795449491.2661486,
+    "QQQ": 1795451023.1362395,
     "SMH": 1795449599.7635071,
     "IWM": 1795449599.7635071,
     "IGV": 1795449599.7635071,
@@ -3275,12 +3275,12 @@
     "BE": 1795449818.0230198,
     "CRDO": 1795449818.0230198,
     "COHR": 1795450136.496918,
-    "MRVL": 1795449491.2661486,
-    "LITE": 1795449491.2661486,
+    "MRVL": 1795451023.1362395,
+    "LITE": 1795451023.1362395,
     "AAOI": 1795449818.0230198,
     "SPCX": 1795449818.0230198,
     "ASTS": 1795449818.0230198,
-    "AXTI": 1795449491.2661486,
+    "AXTI": 1795451023.1362395,
     "NASA": 1795449818.0230198,
     "LUNR": 1795449818.0230198,
     "TSLA": 1795450028.3748102,
@@ -3295,27 +3295,27 @@
     "OKLO": 1795450136.496918,
     "CEG": 1795450028.3748102,
     "FPS": 1795450136.496918,
-    "MU": 1795449491.2661486,
-    "SKHY": 1795449491.2661486,
-    "WDC": 1795449491.2661486,
+    "MU": 1795451023.1362395,
+    "SKHY": 1795451023.1362395,
+    "WDC": 1795451023.1362395,
     "STX": 1795450136.496918,
     "MSTR": 1795450136.496918,
     "SNDK": 1795450136.496918,
-    "BTC-USD": 1795449491.2661486,
+    "BTC-USD": 1795451023.1362395,
     "CRWD": 1795450136.496918,
-    "ORCL": 1795449491.2661486,
-    "COIN": 1795449491.2661486,
-    "LLY": 1795449491.2661486,
-    "MRNA": 1795449491.2661486,
-    "NKE": 1795449491.2661486,
-    "MCD": 1795449491.2661486,
+    "ORCL": 1795451023.1362395,
+    "COIN": 1795451023.1362395,
+    "LLY": 1795451023.1362395,
+    "MRNA": 1795451023.1362395,
+    "NKE": 1795451023.1362395,
+    "MCD": 1795451023.1362395,
     "PEP": 1795449818.0230198,
     "XOM": 1795449599.7635071,
     "JPM": 1795449599.7635071,
     "WMT": 1795449818.0230198,
     "V": 1795449599.7635071,
     "CAT": 1795449818.0230198,
-    "FN": 1795449491.2661486,
+    "FN": 1795451023.1362395,
     "GLW": 1795449818.0230198,
     "ANT": 1795450028.3748102,
     "XAUUSD": 1795449710.0157335
