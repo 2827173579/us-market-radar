@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795405878.94,
-  "updated_at_et": "11-22 22:51 ET",
-  "updated_at_kst": "12:51 KST",
+  "updated_at_ts": 1795405981.254,
+  "updated_at_et": "11-22 22:53 ET",
+  "updated_at_kst": "12:53 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -903,6 +903,13 @@
     ],
     "NVDA": [
       {
+        "title": "Worried About Nvidia? Buy This Fantastic Artificial Intelligence (AI) Stock Instead",
+        "url": "https://www.fool.com/investing/2026/11/22/worried-about-nvidia-buy-this-fantastic-artificial-intelligence-ai-stock-instead/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-22 22:20 ET",
+        "pub_ts": 1795404002.0
+      },
+      {
         "title": "Kevin O’Leary Says Nvidia CEO Colette Kress Is ‘Pretty Sharp,’ Chip Demand ‘Insatiable’: Crypto Bettors Weigh Jensen Huang Comeback Odds",
         "url": "https://www.benzinga.com/markets/prediction-markets/26/11/63518223/kevin-oleary-jensen-huang-nvidia-ceo-polymarket-prediction-market?utm_source=yahooFinance&utm_campaign=partner_feed&utm_medium=referral&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -929,13 +936,6 @@
         "source": "Yahoo Finance",
         "time": "11-22 21:24 ET",
         "pub_ts": 1795400645.0
-      },
-      {
-        "title": "Elon Musk Could Use His Nvidia Chip Orders to Push for Jensen Huang’s Return, Analyst Says",
-        "url": "https://finance.yahoo.com/technology/ai/articles/elon-musk-could-nvidia-chip-003007166.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-22 19:30 ET",
-        "pub_ts": 1795393807.0
       }
     ],
     "AMD": [
@@ -945,6 +945,13 @@
         "source": "Yahoo Finance",
         "time": "11-22 21:24 ET",
         "pub_ts": 1795400645.0
+      },
+      {
+        "title": "AMD vs. Nvidia Stock After Jensen Huang’s Exit: 1 Trades at Nearly 4x the Other’s Earnings Multiple. Here’s the AI Chip Stock I’d Buy Now.",
+        "url": "https://www.barchart.com/story/news/8957514/amd-vs-nvidia-stock-after-jensen-huangs-exit-1-trades-at-nearly-4x-the-others-earnings-multiple-heres-the-ai-chip-stock-id-buy-now?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-22 16:25 ET",
+        "pub_ts": 1795382713.0
       },
       {
         "title": "AMD Gained From Nvidia’s China Scandal. Now a Short Seller Says AMD Has a China Problem Too.",
@@ -966,13 +973,6 @@
         "source": "Yahoo Finance",
         "time": "11-22 08:06 ET",
         "pub_ts": 1795352765.0
-      },
-      {
-        "title": "OpenAI’s Greg Brockman: AI Delivered “Roughly an Additional Year of Progress” on AMD’s Chip in Under 5 Months",
-        "url": "https://www.tikr.com/blog/openais-greg-brockman-ai-delivered-roughly-an-additional-year-of-progress-on-amds-chip-in-under-5-months?ref=yahoofinance&tlnk=yf-261122-2vm39c6q&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-22 07:35 ET",
-        "pub_ts": 1795350932.0
       }
     ],
     "ASML": [
@@ -3243,30 +3243,30 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795404413.498474,
-    "SOXL": 1795404413.498474,
-    "SPY": 1795404413.498474,
-    "DIA": 1795404413.498474,
-    "SOXX": 1795404413.498474,
-    "QQQ": 1795404413.498474,
-    "SMH": 1795404413.498474,
-    "IWM": 1795404413.498474,
-    "IGV": 1795404413.498474,
-    "TLT": 1795404413.498474,
-    "GLD": 1795404413.498474,
-    "SQQQ": 1795404413.498474,
-    "TSM": 1795404413.498474,
-    "VIXY": 1795404413.498474,
-    "SOXS": 1795404413.498474,
-    "NVDA": 1795404413.498474,
-    "AMD": 1795404413.498474,
-    "ASML": 1795404413.498474,
-    "QCOM": 1795404413.498474,
-    "AVGO": 1795404413.498474,
+    "KORU": 1795405981.25383,
+    "SOXL": 1795405981.25383,
+    "SPY": 1795405981.25383,
+    "DIA": 1795405981.25383,
+    "SOXX": 1795405981.25383,
+    "QQQ": 1795405981.25383,
+    "SMH": 1795405981.25383,
+    "IWM": 1795405981.25383,
+    "IGV": 1795405981.25383,
+    "TLT": 1795405981.25383,
+    "GLD": 1795405981.25383,
+    "SQQQ": 1795405981.25383,
+    "TSM": 1795405981.25383,
+    "VIXY": 1795405981.25383,
+    "SOXS": 1795405981.25383,
+    "NVDA": 1795405981.25383,
+    "AMD": 1795405981.25383,
+    "ASML": 1795405981.25383,
+    "QCOM": 1795405981.25383,
+    "AVGO": 1795405981.25383,
     "AMAT": 1795404520.4427664,
     "META": 1795404520.4427664,
-    "GOOGL": 1795404413.498474,
-    "MSFT": 1795404413.498474,
+    "GOOGL": 1795405981.25383,
+    "MSFT": 1795405981.25383,
     "AAPL": 1795404520.4427664,
     "PLTR": 1795404626.5908842,
     "NOW": 1795404520.4427664,
