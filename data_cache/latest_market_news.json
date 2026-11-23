@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795441808.486,
-  "updated_at_et": "11-23 08:50 ET",
-  "updated_at_kst": "22:50 KST",
+  "updated_at_ts": 1795441923.748,
+  "updated_at_et": "11-23 08:52 ET",
+  "updated_at_kst": "22:52 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1766,6 +1766,13 @@
         "pub_ts": 1795427644.0
       },
       {
+        "title": "Jefferies initiates SpaceX at Buy, sees \"rare combination\" to gain AI share",
+        "url": "https://finance.yahoo.com/technology/ai/articles/jefferies-initiates-spacex-buy-sees-132823089.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 08:28 ET",
+        "pub_ts": 1795440503.0
+      },
+      {
         "title": "Anthropic Just Rewrote Wall Street's IPO Record Books. Here's Where History Says Its Shares Will Head Next.",
         "url": "https://www.fool.com/investing/2026/11/23/anthropic-just-rewrote-wall-street-ipo-record-books-where-history-says-shares-head-next/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1785,13 +1792,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 07:07 ET",
         "pub_ts": 1795435671.0
-      },
-      {
-        "title": "Tech Companies Are Getting More Creative to Raise Billions",
-        "url": "https://finance.yahoo.com/technology/articles/tech-companies-getting-more-creative-120000139.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 07:00 ET",
-        "pub_ts": 1795435200.0
       }
     ],
     "ASTS": [
@@ -2062,6 +2062,13 @@
         "pub_ts": 1795434660.0
       },
       {
+        "title": "Your brand is famous. That’s not why people buy it",
+        "url": "https://finance.yahoo.com/media-advertising/articles/brand-famous-not-why-people-113000036.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 06:30 ET",
+        "pub_ts": 1795433400.0
+      },
+      {
         "title": "How Many Shares of Coca-Cola or PepsiCo Pay $1,000 a Month in Dividends?",
         "url": "https://www.tikr.com/blog/how-many-shares-of-coca-cola-or-pepsico-pay-1000-a-month-in-dividends?ref=yahoofinancedividend&tlnk=yf-261122-59p8r2v5&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2081,13 +2088,6 @@
         "source": "Yahoo Finance",
         "time": "11-21 19:12 ET",
         "pub_ts": 1795306362.0
-      },
-      {
-        "title": "Kraft Heinz vs. Coca-Cola: Here's the Stock to Buy",
-        "url": "https://www.fool.com/coverage/better-buy/2026/11/21/kraft-heinz-vs-coca-cola-here-s-the-stock-to-buy/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-21 17:38 ET",
-        "pub_ts": 1795300681.0
       }
     ],
     "FLY": [
@@ -3278,24 +3278,24 @@
     "AMZN": 1795441808.4863145,
     "CRWV": 1795441808.4863145,
     "NBIS": 1795441808.4863145,
-    "APLD": 1795440378.2629635,
+    "APLD": 1795441923.7480617,
     "VST": 1795441808.4863145,
-    "BE": 1795440378.2629635,
-    "CRDO": 1795440378.2629635,
+    "BE": 1795441923.7480617,
+    "CRDO": 1795441923.7480617,
     "COHR": 1795440829.6374338,
     "MRVL": 1795441576.8080497,
     "LITE": 1795441576.8080497,
-    "AAOI": 1795440378.2629635,
-    "SPCX": 1795440378.2629635,
-    "ASTS": 1795440378.2629635,
+    "AAOI": 1795441923.7480617,
+    "SPCX": 1795441923.7480617,
+    "ASTS": 1795441923.7480617,
     "AXTI": 1795441576.8080497,
-    "NASA": 1795440378.2629635,
-    "LUNR": 1795440378.2629635,
+    "NASA": 1795441923.7480617,
+    "LUNR": 1795441923.7480617,
     "TSLA": 1795440698.5710723,
     "AXP": 1795440698.5710723,
-    "RKLB": 1795440378.2629635,
-    "KO": 1795440378.2629635,
-    "FLY": 1795440378.2629635,
+    "RKLB": 1795441923.7480617,
+    "KO": 1795441923.7480617,
+    "FLY": 1795441923.7480617,
     "INTC": 1795440698.5710723,
     "VRT": 1795440698.5710723,
     "HPE": 1795440698.5710723,
@@ -3317,14 +3317,14 @@
     "MRNA": 1795441576.8080497,
     "NKE": 1795441576.8080497,
     "MCD": 1795441576.8080497,
-    "PEP": 1795440378.2629635,
+    "PEP": 1795441923.7480617,
     "XOM": 1795441690.9736607,
     "JPM": 1795441690.9736607,
     "WMT": 1795441808.4863145,
     "V": 1795441690.9736607,
     "CAT": 1795441808.4863145,
     "FN": 1795441576.8080497,
-    "GLW": 1795440378.2629635,
+    "GLW": 1795441923.7480617,
     "ANT": 1795440698.5710723,
     "XAUUSD": 1795441576.8080497
   },
