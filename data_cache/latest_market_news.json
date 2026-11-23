@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795417295.921,
-  "updated_at_et": "11-23 02:01 ET",
-  "updated_at_kst": "16:01 KST",
+  "updated_at_ts": 1795417404.206,
+  "updated_at_et": "11-23 02:03 ET",
+  "updated_at_kst": "16:03 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2975,6 +2975,13 @@
     ],
     "JPM": [
       {
+        "title": "JPMorgan sees potential sharp rebound in Asian equities after positioning unwind",
+        "url": "https://finance.yahoo.com/markets/world-indices/articles/jpmorgan-sees-potential-sharp-rebound-065327416.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 01:53 ET",
+        "pub_ts": 1795416807.0
+      },
+      {
         "title": "Trump Backs a 10% Card Rate Cap With Democrats. That’s a Big Risk for JPMorgan and Citigroup",
         "url": "https://www.tikr.com/blog/trump-backs-a-10-card-rate-cap-with-democrats-thats-a-big-risk-for-jpmorgan-and-citigroup?ref=yahoofinance&tlnk=yf-261122-ggq552qx&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3001,13 +3008,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 16:05 ET",
         "pub_ts": 1795208700.0
-      },
-      {
-        "title": "Exclusive Research: JPMorgan’s AI strategy puts governance to the test",
-        "url": "https://www.americanbanker.com/news/exclusive-research-jpmorgan-s-ai-strategy-puts-governance-to-the-test?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 14:11 ET",
-        "pub_ts": 1795201907.0
       }
     ],
     "WMT": [
@@ -3218,18 +3218,18 @@
         "pub_ts": 1795393800.0
       },
       {
-        "title": "Stock Futures Are Rebounding After Last Week’s Bloodbath",
-        "url": "https://finance.yahoo.com/m/3f2177d2-a141-387a-9038-df214f3f595a/stock-futures-are-rebounding.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-22 18:04 ET",
-        "pub_ts": 1795388640.0
-      },
-      {
         "title": "Anthropic Stock Trend, Jensen Huang’s Potential Return As Nvidia CEO And Dell’s Q4 Results To Keep Tech Investors Busy This Week",
         "url": "https://stocktwits.com/news-articles/markets/equity/anthropic-stock-trend-jensen-huang-s-potential-return-as-nvidia-ceo-and-dell-s-q4-results-to-keep-tech-investors-busy-this-week/cNbYAtgR9Sf?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-23 01:14 ET",
         "pub_ts": 1795414485.0
+      },
+      {
+        "title": "Oil Prices Slide as AI Bubble Fears Rattle Global Markets",
+        "url": "https://finance.yahoo.com/energy/articles/oil-prices-slide-ai-bubble-055000377.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 00:50 ET",
+        "pub_ts": 1795413000.0
       }
     ],
     "XAUUSD": [
@@ -3277,13 +3277,13 @@
     "VST": 1795417295.921486,
     "BE": 1795417295.921486,
     "CRDO": 1795417295.921486,
-    "COHR": 1795415829.115281,
-    "MRVL": 1795415829.115281,
-    "LITE": 1795415829.115281,
+    "COHR": 1795417404.20588,
+    "MRVL": 1795417404.20588,
+    "LITE": 1795417404.20588,
     "AAOI": 1795417188.749709,
     "SPCX": 1795417188.749709,
     "ASTS": 1795417188.749709,
-    "AXTI": 1795415829.115281,
+    "AXTI": 1795417404.20588,
     "NASA": 1795417188.749709,
     "LUNR": 1795417188.749709,
     "TSLA": 1795417295.921486,
@@ -3298,29 +3298,29 @@
     "OKLO": 1795417295.921486,
     "CEG": 1795417295.921486,
     "FPS": 1795417295.921486,
-    "MU": 1795415829.115281,
-    "SKHY": 1795415829.115281,
-    "WDC": 1795415829.115281,
+    "MU": 1795417404.20588,
+    "SKHY": 1795417404.20588,
+    "WDC": 1795417404.20588,
     "STX": 1795417295.921486,
     "MSTR": 1795417295.921486,
     "SNDK": 1795417295.921486,
-    "BTC-USD": 1795415829.115281,
+    "BTC-USD": 1795417404.20588,
     "CRWD": 1795417295.921486,
-    "ORCL": 1795415829.115281,
-    "COIN": 1795415829.115281,
-    "LLY": 1795415829.115281,
-    "MRNA": 1795415829.115281,
-    "NKE": 1795415829.115281,
-    "MCD": 1795415829.115281,
-    "PEP": 1795415829.115281,
-    "XOM": 1795415829.115281,
-    "JPM": 1795415829.115281,
-    "WMT": 1795415829.115281,
-    "V": 1795415829.115281,
-    "CAT": 1795415829.115281,
-    "FN": 1795415829.115281,
+    "ORCL": 1795417404.20588,
+    "COIN": 1795417404.20588,
+    "LLY": 1795417404.20588,
+    "MRNA": 1795417404.20588,
+    "NKE": 1795417404.20588,
+    "MCD": 1795417404.20588,
+    "PEP": 1795417404.20588,
+    "XOM": 1795417404.20588,
+    "JPM": 1795417404.20588,
+    "WMT": 1795417404.20588,
+    "V": 1795417404.20588,
+    "CAT": 1795417404.20588,
+    "FN": 1795417404.20588,
     "GLW": 1795417188.749709,
-    "ANT": 1795415829.115281,
+    "ANT": 1795417404.20588,
     "XAUUSD": 1795415944.4374166
   },
   "opex_shield": {
