@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795423232.613,
-  "updated_at_et": "11-23 03:40 ET",
-  "updated_at_kst": "17:40 KST",
+  "updated_at_ts": 1795423343.687,
+  "updated_at_et": "11-23 03:42 ET",
+  "updated_at_kst": "17:42 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -903,18 +903,18 @@
     ],
     "NVDA": [
       {
+        "title": "Asian tech back in the firing line as traders track Wall St rout",
+        "url": "https://finance.yahoo.com/markets/world-indices/articles/asian-tech-back-firing-line-024445930.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 03:27 ET",
+        "pub_ts": 1795422435.0
+      },
+      {
         "title": "Stock Market Sell-Off: 4 ETFs I'd Buy Now and Hold Through 2030",
         "url": "https://www.fool.com/investing/2026/11/23/stock-market-sell-off-4-etfs-i-d-buy-now-and-hold-through-2030/?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-23 03:05 ET",
         "pub_ts": 1795421102.0
-      },
-      {
-        "title": "Asian tech back in the firing line as traders track Wall St rout",
-        "url": "https://finance.yahoo.com/markets/world-indices/articles/asian-tech-back-firing-line-024445930.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 02:24 ET",
-        "pub_ts": 1795418653.0
       },
       {
         "title": "Nvidia News Has Investors Rethinking These U.S. AI Chip Stocks",
@@ -3243,22 +3243,22 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795421831.2962646,
-    "SOXL": 1795421831.2962646,
-    "SPY": 1795421831.2962646,
-    "DIA": 1795421831.2962646,
-    "SOXX": 1795421831.2962646,
-    "QQQ": 1795421831.2962646,
-    "SMH": 1795421831.2962646,
-    "IWM": 1795421831.2962646,
-    "IGV": 1795421831.2962646,
-    "TLT": 1795421831.2962646,
-    "GLD": 1795421831.2962646,
-    "SQQQ": 1795421831.2962646,
+    "KORU": 1795423343.686927,
+    "SOXL": 1795423343.686927,
+    "SPY": 1795423343.686927,
+    "DIA": 1795423343.686927,
+    "SOXX": 1795423343.686927,
+    "QQQ": 1795423343.686927,
+    "SMH": 1795423343.686927,
+    "IWM": 1795423343.686927,
+    "IGV": 1795423343.686927,
+    "TLT": 1795423343.686927,
+    "GLD": 1795423343.686927,
+    "SQQQ": 1795423343.686927,
     "TSM": 1795421936.45709,
-    "VIXY": 1795421831.2962646,
-    "SOXS": 1795421831.2962646,
-    "NVDA": 1795421831.2962646,
+    "VIXY": 1795423343.686927,
+    "SOXS": 1795423343.686927,
+    "NVDA": 1795423343.686927,
     "AMD": 1795421936.45709,
     "ASML": 1795421936.45709,
     "QCOM": 1795421936.45709,
@@ -3312,7 +3312,7 @@
     "MRNA": 1795423232.6134639,
     "NKE": 1795423232.6134639,
     "MCD": 1795423232.6134639,
-    "PEP": 1795421688.6230876,
+    "PEP": 1795423343.686927,
     "XOM": 1795423232.6134639,
     "JPM": 1795423232.6134639,
     "WMT": 1795423232.6134639,
