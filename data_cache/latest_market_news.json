@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795412224.325,
-  "updated_at_et": "11-23 00:37 ET",
-  "updated_at_kst": "14:37 KST",
+  "updated_at_ts": 1795412327.705,
+  "updated_at_et": "11-23 00:38 ET",
+  "updated_at_kst": "14:38 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -904,6 +904,20 @@
     ],
     "NVDA": [
       {
+        "title": "Tech back in the firing line as traders track Wall Street rout",
+        "url": "https://www.euronews.com/2026/11/23/tech-back-in-the-firing-line-as-traders-track-wall-street-rout?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 00:20 ET",
+        "pub_ts": 1795411214.0
+      },
+      {
+        "title": "Why Did NVDA, NFLX, ORCL Slip To 52-Week Lows Last Week?",
+        "url": "https://stocktwits.com/news-articles/markets/equity/why-did-nvda-nflx-orcl-slip-to-52-week-lows-last-week/cNbYpPuR9SJ?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 00:11 ET",
+        "pub_ts": 1795410679.0
+      },
+      {
         "title": "Trump urges Nvidia board to rehire Jensen Huang",
         "url": "https://finance.yahoo.com/technology/articles/trump-urges-nvidia-board-rehire-042759448.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -923,20 +937,6 @@
         "source": "Yahoo Finance",
         "time": "11-22 22:20 ET",
         "pub_ts": 1795404002.0
-      },
-      {
-        "title": "Michael Burry on Nvidia Board? ‘Big Short’ Investor Jokes He’d ‘Volunteer’ as NVDA Stock Sinks 40%",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/michael-burry-nvidia-board-big-031945302.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-22 22:19 ET",
-        "pub_ts": 1795403985.0
-      },
-      {
-        "title": "Kevin O’Leary Says Nvidia CEO Colette Kress Is ‘Pretty Sharp,’ Chip Demand ‘Insatiable’: Crypto Bettors Weigh Jensen Huang Comeback Odds",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/kevin-o-leary-says-nvidia-025309458.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-22 21:53 ET",
-        "pub_ts": 1795402389.0
       }
     ],
     "AMD": [
@@ -3244,30 +3244,30 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795410745.6591196,
-    "SOXL": 1795410745.6591196,
-    "SPY": 1795410745.6591196,
-    "DIA": 1795410745.6591196,
-    "SOXX": 1795410745.6591196,
-    "QQQ": 1795410745.6591196,
-    "SMH": 1795410745.6591196,
-    "IWM": 1795410745.6591196,
-    "IGV": 1795410745.6591196,
-    "TLT": 1795410745.6591196,
-    "GLD": 1795410745.6591196,
-    "SQQQ": 1795410745.6591196,
-    "TSM": 1795410745.6591196,
-    "VIXY": 1795410745.6591196,
-    "SOXS": 1795410745.6591196,
-    "NVDA": 1795410745.6591196,
-    "AMD": 1795410745.6591196,
-    "ASML": 1795410745.6591196,
-    "QCOM": 1795410745.6591196,
-    "AVGO": 1795410745.6591196,
+    "KORU": 1795412327.704566,
+    "SOXL": 1795412327.704566,
+    "SPY": 1795412327.704566,
+    "DIA": 1795412327.704566,
+    "SOXX": 1795412327.704566,
+    "QQQ": 1795412327.704566,
+    "SMH": 1795412327.704566,
+    "IWM": 1795412327.704566,
+    "IGV": 1795412327.704566,
+    "TLT": 1795412327.704566,
+    "GLD": 1795412327.704566,
+    "SQQQ": 1795412327.704566,
+    "TSM": 1795412327.704566,
+    "VIXY": 1795412327.704566,
+    "SOXS": 1795412327.704566,
+    "NVDA": 1795412327.704566,
+    "AMD": 1795412327.704566,
+    "ASML": 1795412327.704566,
+    "QCOM": 1795412327.704566,
+    "AVGO": 1795412327.704566,
     "AMAT": 1795410852.9628596,
     "META": 1795410852.9628596,
-    "GOOGL": 1795410745.6591196,
-    "MSFT": 1795410745.6591196,
+    "GOOGL": 1795412327.704566,
+    "MSFT": 1795412327.704566,
     "AAPL": 1795410852.9628596,
     "PLTR": 1795410959.4577825,
     "NOW": 1795410852.9628596,
