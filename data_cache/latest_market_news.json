@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795437123.581,
-  "updated_at_et": "11-23 07:32 ET",
-  "updated_at_kst": "21:32 KST",
+  "updated_at_ts": 1795437231.907,
+  "updated_at_et": "11-23 07:33 ET",
+  "updated_at_kst": "21:33 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1533,6 +1533,13 @@
     ],
     "BE": [
       {
+        "title": "What Moved Bloom Energy Stock?",
+        "url": "https://www.trefis.com/stock/be/articles/627709/what-moved-bloom-energy-stock/2026-11-23?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 07:10 ET",
+        "pub_ts": 1795435808.0
+      },
+      {
         "title": "Bloom Energy Stock Has Crashed Nearly 60%. Is It a Once-in-a-Decade Opportunity at $145, or Should You Keep Waiting for a Bigger Drop?",
         "url": "https://www.fool.com/investing/2026/11/22/bloom-energy-stock-has-crashed-nearly-60-is-it-a-once-in-a-decade-opportunity-at-usd145-or-should-you-keep-waiting-for-a-bigger-drop/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1559,13 +1566,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 21:48 ET",
         "pub_ts": 1795229281.0
-      },
-      {
-        "title": "Bloom Energy Supports Lincoln Fire & Rescue Ahead of Ohio State-Nebraska Matchup",
-        "url": "https://finance.yahoo.com/energy/articles/bloom-energy-supports-lincoln-fire-213700997.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 16:37 ET",
-        "pub_ts": 1795210620.0
       }
     ],
     "CRDO": [
@@ -1762,6 +1762,20 @@
         "pub_ts": 1795427644.0
       },
       {
+        "title": "Anthropic Just Rewrote Wall Street's IPO Record Books. Here's Where History Says Its Shares Will Head Next.",
+        "url": "https://www.fool.com/investing/2026/11/23/anthropic-just-rewrote-wall-street-ipo-record-books-where-history-says-shares-head-next/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 07:26 ET",
+        "pub_ts": 1795436762.0
+      },
+      {
+        "title": "Why Owning SpaceX Through ETFs Could Make More Sense Now",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/why-owning-spacex-etfs-could-120751201.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 07:07 ET",
+        "pub_ts": 1795435671.0
+      },
+      {
         "title": "SpaceX Shares Slip as It Sells $32 Billion of AI Chip Debt",
         "url": "https://finance.yahoo.com/technology/ai/articles/spacex-shares-slip-sells-32-112347731.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1774,20 +1788,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 06:05 ET",
         "pub_ts": 1795431921.0
-      },
-      {
-        "title": "Musk: Starship’s Fuel Bill Will Drop “Below $500k” a Flight, With Payload Over 200 Tons",
-        "url": "https://www.tikr.com/blog/musk-starships-fuel-bill-will-drop-below-500k-a-flight-with-payload-over-200-tons?ref=yahoofinance&tlnk=yf-261123-pqp22r5v&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 06:04 ET",
-        "pub_ts": 1795431870.0
-      },
-      {
-        "title": "SpaceX Lenders Want to Stop Musk From Launching $40 Billion in Nvidia Chips Into Orbit",
-        "url": "https://finance.yahoo.com/technology/ai/articles/spacex-lenders-want-stop-musk-104504849.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 05:45 ET",
-        "pub_ts": 1795430704.0
       }
     ],
     "ASTS": [
@@ -3269,29 +3269,29 @@
     "GOOGL": 1795437123.5809402,
     "MSFT": 1795437123.5809402,
     "AAPL": 1795437123.5809402,
-    "PLTR": 1795435706.4393792,
+    "PLTR": 1795437231.9068353,
     "NOW": 1795437123.5809402,
     "AMZN": 1795437123.5809402,
     "CRWV": 1795437123.5809402,
-    "NBIS": 1795435706.4393792,
-    "APLD": 1795435706.4393792,
-    "VST": 1795435706.4393792,
-    "BE": 1795435706.4393792,
-    "CRDO": 1795435706.4393792,
+    "NBIS": 1795437231.9068353,
+    "APLD": 1795437231.9068353,
+    "VST": 1795437231.9068353,
+    "BE": 1795437231.9068353,
+    "CRDO": 1795437231.9068353,
     "COHR": 1795436251.7838874,
     "MRVL": 1795436896.621187,
     "LITE": 1795436896.621187,
-    "AAOI": 1795435706.4393792,
-    "SPCX": 1795435706.4393792,
-    "ASTS": 1795435706.4393792,
+    "AAOI": 1795437231.9068353,
+    "SPCX": 1795437231.9068353,
+    "ASTS": 1795437231.9068353,
     "AXTI": 1795436896.621187,
-    "NASA": 1795435706.4393792,
-    "LUNR": 1795435706.4393792,
+    "NASA": 1795437231.9068353,
+    "LUNR": 1795437231.9068353,
     "TSLA": 1795436142.8867898,
     "AXP": 1795436142.8867898,
-    "RKLB": 1795435706.4393792,
-    "KO": 1795435706.4393792,
-    "FLY": 1795435706.4393792,
+    "RKLB": 1795437231.9068353,
+    "KO": 1795437231.9068353,
+    "FLY": 1795437231.9068353,
     "INTC": 1795436142.8867898,
     "VRT": 1795436142.8867898,
     "HPE": 1795436142.8867898,
@@ -3313,14 +3313,14 @@
     "MRNA": 1795436896.621187,
     "NKE": 1795436896.621187,
     "MCD": 1795436896.621187,
-    "PEP": 1795435706.4393792,
+    "PEP": 1795437231.9068353,
     "XOM": 1795437007.2175102,
     "JPM": 1795437007.2175102,
     "WMT": 1795437123.5809402,
     "V": 1795437007.2175102,
     "CAT": 1795437123.5809402,
     "FN": 1795436896.621187,
-    "GLW": 1795435706.4393792,
+    "GLW": 1795437231.9068353,
     "ANT": 1795436142.8867898,
     "XAUUSD": 1795436896.621187
   },
