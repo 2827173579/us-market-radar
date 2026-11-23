@@ -4643,9 +4643,13 @@
     "2026-11-23:VIX_REGIME:WASHOUT_BOTTOM_WINDOW": {
       "device": "PC",
       "ts": 1795444307.1444144
+    },
+    "2026-11-23:DEFENSIVE_FLIGHT:-23.6": {
+      "device": "PC",
+      "ts": 1795444415.45965
     }
   },
   "device": "PC",
-  "last_heartbeat_ts": 1795444221.1005504,
-  "updated_at": "2026-11-23T14:31:47.144886+00:00"
+  "last_heartbeat_ts": 1795444328.0372868,
+  "updated_at": "2026-11-23T14:33:35.460204+00:00"
 }
