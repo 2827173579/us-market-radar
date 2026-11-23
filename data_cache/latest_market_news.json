@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795438528.578,
-  "updated_at_et": "11-23 07:55 ET",
-  "updated_at_kst": "21:55 KST",
+  "updated_at_ts": 1795438641.156,
+  "updated_at_et": "11-23 07:57 ET",
+  "updated_at_kst": "21:57 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -803,6 +803,13 @@
         "pub_ts": 1795436136.0
       },
       {
+        "title": "TSMC Falls Less, But Nvidia Comes Back First",
+        "url": "https://www.trefis.com/stock/tsm/articles/627560/tsmc-falls-less-but-nvidia-comes-back-first/2026-11-23?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 07:14 ET",
+        "pub_ts": 1795436063.0
+      },
+      {
         "title": "AI Chips Update - Global Semiconductor ETF Expands International Investment Horizons",
         "url": "https://finance.yahoo.com/technology/ai/articles/ai-chips-global-semiconductor-etf-113725192.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -815,13 +822,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 05:38 ET",
         "pub_ts": 1795430327.0
-      },
-      {
-        "title": "US futures climb and world shares are mixed as big tech stocks fall in Asia",
-        "url": "https://finance.yahoo.com/markets/world-indices/articles/asian-shares-mostly-fall-p-042312132.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-22 23:23 ET",
-        "pub_ts": 1795407792.0
       },
       {
         "title": "Taiwan stocks suffer worst week since 1990 as AI rout drains emerging Asia",
@@ -907,42 +907,49 @@
     ],
     "NVDA": [
       {
-        "title": "The biggest investors in AI are doing this",
-        "url": "https://finance.yahoo.com/video/biggest-investors-ai-doing-120000197.html?.tsrc=rss",
+        "title": "Premarket movers: Chip stocks lead AI rebound; CrowdStrike falls",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/premarket-movers-chip-stocks-lead-124424524.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 07:00 ET",
-        "pub_ts": 1795435200.0
+        "time": "11-23 07:44 ET",
+        "pub_ts": 1795437864.0
       },
       {
-        "title": "Down 33% YTD, Is Nvidia a Golden Buying Opportunity?",
-        "url": "https://247wallst.com/investing/2026/11/23/down-33-ytd-is-nvidia-a-golden-buying-opportunity/?.tsrc=rss",
+        "title": "When Did Nvidia Buyers Break Even After 30% Falls?",
+        "url": "https://www.trefis.com/stock/nvda/articles/627664/when-did-nvidia-buyers-break-even-after-30-falls/2026-11-23?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 07:17 ET",
-        "pub_ts": 1795436232.0
+        "time": "11-23 07:39 ET",
+        "pub_ts": 1795437593.0
       },
       {
-        "title": "Where Will Nvidia Stock Be in 1 Year? Wall Street's Answer Might Surprise You.",
-        "url": "https://www.fool.com/investing/2026/11/23/where-will-nvidia-stock-be-in-1-year-wall-street-s-answer-might-surprise-you/?.tsrc=rss",
+        "title": "Could Tesla Stock Really Fall To $140?",
+        "url": "https://www.trefis.com/stock/tsla/articles/627621/could-tesla-stock-really-fall-to-140/2026-11-23?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 07:10 ET",
-        "pub_ts": 1795435802.0
+        "time": "11-23 07:39 ET",
+        "pub_ts": 1795437593.0
       },
       {
-        "title": "Disney Just Made a 52-Week High While Netflix Is Down 36.2% This Year. Here’s the Better Buy Now.",
-        "url": "https://www.fool.com/investing/2026/11/23/disney-just-made-a-52-week-high-while-netflix-is-down-36-2-this-year-here-s-the-better-buy-now/?.tsrc=rss",
+        "title": "Boss of British chip firm rules out taking Nvidia top job",
+        "url": "https://uk.finance.yahoo.com/news/boss-british-chip-firm-rules-123559953.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 07:05 ET",
-        "pub_ts": 1795435502.0
+        "time": "11-23 07:35 ET",
+        "pub_ts": 1795437359.0
       },
       {
-        "title": "Donald Trump urges Nvidia to rehire former CEO Jensen Huang",
-        "url": "https://www.euronews.com/2026/11/23/donald-trump-urges-nvidia-to-rehire-former-ceo-jensen-huang?.tsrc=rss",
+        "title": "Black Friday Stock Deals: 4 Great Stocks Down 30% or More",
+        "url": "https://www.fool.com/investing/2026/11/23/black-friday-stock-deals-4-great-stocks-down-30-or-more/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 06:48 ET",
-        "pub_ts": 1795434526.0
+        "time": "11-23 07:31 ET",
+        "pub_ts": 1795437061.0
       }
     ],
     "AMD": [
+      {
+        "title": "Premarket movers: Chip stocks lead AI rebound; CrowdStrike falls",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/premarket-movers-chip-stocks-lead-124424524.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 07:44 ET",
+        "pub_ts": 1795437864.0
+      },
       {
         "title": "Why Did AMD Stock Move?",
         "url": "https://www.trefis.com/stock/amd/articles/627783/why-did-amd-stock-move/2026-11-23?.tsrc=rss",
@@ -970,13 +977,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 06:04 ET",
         "pub_ts": 1795431873.0
-      },
-      {
-        "title": "What INVESCO QQQ Trust (QQQ) Sold: Apple Leads on Nov. 19",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/invesco-qqq-trust-qqq-sold-110405429.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 06:04 ET",
-        "pub_ts": 1795431845.0
       }
     ],
     "ASML": [
@@ -1166,6 +1166,20 @@
     ],
     "GOOGL": [
       {
+        "title": "Why Did Palantir Stock Fall?",
+        "url": "https://www.trefis.com/stock/pltr/articles/627801/why-did-palantir-stock-fall/2026-11-23?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 07:35 ET",
+        "pub_ts": 1795437351.0
+      },
+      {
+        "title": "AI's spending slowdown",
+        "url": "https://www.axios.com/2026/11/23/ai-spending-slowdown#utm_source=yahoo_finance&utm_medium=partner&utm_campaign=subs-partner-yahoo-finance-AI?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 07:20 ET",
+        "pub_ts": 1795436425.0
+      },
+      {
         "title": "Marvell Technology’s Near 50% Plummet Within a Month Means Little to This Wall Street Pro Who Predicts 270% Gains From Here",
         "url": "https://247wallst.com/investing/2026/11/23/marvell-technologys-near-50-plummet-within-a-month-means-little-to-this-wall-street-pro-who-predicts-270-gains-from-here/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1185,23 +1199,16 @@
         "source": "Yahoo Finance",
         "time": "11-23 07:00 ET",
         "pub_ts": 1795435200.0
-      },
-      {
-        "title": "Nvidia Stock Surges as Trump Urges Board to Rehire Huang. Is the Selling Finally Over?",
-        "url": "https://finance.yahoo.com/m/5d0863d1-3733-3b1d-9c79-9c4251c3f14a/nvidia-stock-surges-as-trump.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 06:41 ET",
-        "pub_ts": 1795434060.0
-      },
-      {
-        "title": "CrowdStrike explores acquisition of Zscaler – report",
-        "url": "https://www.verdict.co.uk/crowdstrike-explores-acquisition-zscaler/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 06:10 ET",
-        "pub_ts": 1795432221.0
       }
     ],
     "MSFT": [
+      {
+        "title": "V2X Expands Collaboration with Microsoft to Advance the Next Generation of AI-Powered Mission Operations",
+        "url": "https://finance.yahoo.com/technology/ai/articles/v2x-expands-collaboration-microsoft-advance-122800926.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 07:28 ET",
+        "pub_ts": 1795436880.0
+      },
       {
         "title": "What Proshares Trust (TQQQ) Bought: Apple Leads on Nov. 19",
         "url": "https://finance.yahoo.com/markets/stocks/articles/proshares-trust-tqqq-bought-apple-110504306.html?.tsrc=rss",
@@ -1229,16 +1236,16 @@
         "source": "Yahoo Finance",
         "time": "11-23 06:04 ET",
         "pub_ts": 1795431855.0
-      },
-      {
-        "title": "What Capital Group Growth ETF (CGGR) Bought: Anthropic Leads on Nov. 19",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/capital-group-growth-etf-cggr-110412881.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 06:04 ET",
-        "pub_ts": 1795431852.0
       }
     ],
     "AAPL": [
+      {
+        "title": "Chuck Shehadi named Unspun CEO as OneWeave enters global rollout",
+        "url": "https://www.just-style.com/news/unspun-ceo-chuck-shehadi/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 07:41 ET",
+        "pub_ts": 1795437680.0
+      },
       {
         "title": "Michael Burry Says Apple, Costco and Walmart Could Face a Delayed Selloff",
         "url": "https://finance.yahoo.com/markets/stocks/articles/michael-burry-says-apple-costco-114558128.html?.tsrc=rss",
@@ -1266,13 +1273,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 06:04 ET",
         "pub_ts": 1795431887.0
-      },
-      {
-        "title": "What State Street SPDR Portfolio S&P 500 ETF (SPYM) Bought: Apple Leads on Nov. 19",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/state-street-spdr-portfolio-p-110426440.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 06:04 ET",
-        "pub_ts": 1795431866.0
       }
     ],
     "PLTR": [
@@ -3259,23 +3259,23 @@
     "TLT": 1795438528.5784373,
     "GLD": 1795438528.5784373,
     "SQQQ": 1795438528.5784373,
-    "TSM": 1795437123.5809402,
+    "TSM": 1795438641.1561146,
     "VIXY": 1795438528.5784373,
-    "SOXS": 1795437123.5809402,
-    "NVDA": 1795437123.5809402,
-    "AMD": 1795437123.5809402,
-    "ASML": 1795437123.5809402,
-    "QCOM": 1795437123.5809402,
-    "AVGO": 1795437123.5809402,
-    "AMAT": 1795437123.5809402,
-    "META": 1795437123.5809402,
-    "GOOGL": 1795437123.5809402,
-    "MSFT": 1795437123.5809402,
-    "AAPL": 1795437123.5809402,
+    "SOXS": 1795438641.1561146,
+    "NVDA": 1795438641.1561146,
+    "AMD": 1795438641.1561146,
+    "ASML": 1795438641.1561146,
+    "QCOM": 1795438641.1561146,
+    "AVGO": 1795438641.1561146,
+    "AMAT": 1795438641.1561146,
+    "META": 1795438641.1561146,
+    "GOOGL": 1795438641.1561146,
+    "MSFT": 1795438641.1561146,
+    "AAPL": 1795438641.1561146,
     "PLTR": 1795437231.9068353,
-    "NOW": 1795437123.5809402,
-    "AMZN": 1795437123.5809402,
-    "CRWV": 1795437123.5809402,
+    "NOW": 1795438641.1561146,
+    "AMZN": 1795438641.1561146,
+    "CRWV": 1795438641.1561146,
     "NBIS": 1795437231.9068353,
     "APLD": 1795437231.9068353,
     "VST": 1795437231.9068353,
@@ -3319,9 +3319,9 @@
     "PEP": 1795437231.9068353,
     "XOM": 1795438528.5784373,
     "JPM": 1795438528.5784373,
-    "WMT": 1795437123.5809402,
+    "WMT": 1795438641.1561146,
     "V": 1795438528.5784373,
-    "CAT": 1795437123.5809402,
+    "CAT": 1795438641.1561146,
     "FN": 1795438420.1787114,
     "GLW": 1795437231.9068353,
     "ANT": 1795437661.9484942,
