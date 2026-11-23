@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795420155.32,
-  "updated_at_et": "11-23 02:49 ET",
-  "updated_at_kst": "16:49 KST",
+  "updated_at_ts": 1795420260.675,
+  "updated_at_et": "11-23 02:51 ET",
+  "updated_at_kst": "16:51 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -792,6 +792,13 @@
     ],
     "TSM": [
       {
+        "title": "US futures climb and Asian shares mostly decline as some tech stocks fall",
+        "url": "https://finance.yahoo.com/markets/world-indices/articles/asian-shares-mostly-fall-p-042312132.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-22 23:23 ET",
+        "pub_ts": 1795407792.0
+      },
+      {
         "title": "Taiwan stocks suffer worst week since 1990 as AI rout drains emerging Asia",
         "url": "http://www.intellinews.com/taiwan-stocks-suffer-worst-week-since-1990-as-ai-rout-drains-emerging-asia-487378/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -818,13 +825,6 @@
         "source": "Yahoo Finance",
         "time": "11-21 05:07 ET",
         "pub_ts": 1795255649.0
-      },
-      {
-        "title": "Taiwan Semiconductor Manufacturing (NYSE:TSM) Pauses Advanced Chip Shipments To China",
-        "url": "https://finance.yahoo.com/technology/articles/taiwan-semiconductor-manufacturing-nyse-tsm-042528694.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 23:25 ET",
-        "pub_ts": 1795235128.0
       }
     ],
     "VIXY": [
@@ -903,6 +903,13 @@
     ],
     "NVDA": [
       {
+        "title": "Asian tech back in the firing line as traders track Wall St rout",
+        "url": "https://finance.yahoo.com/markets/world-indices/articles/asian-tech-back-firing-line-024445930.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 02:24 ET",
+        "pub_ts": 1795418653.0
+      },
+      {
         "title": "Nvidia News Has Investors Rethinking These U.S. AI Chip Stocks",
         "url": "https://finance.yahoo.com/technology/ai/articles/nvidia-news-investors-rethinking-u-070751605.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -917,25 +924,18 @@
         "pub_ts": 1795416602.0
       },
       {
+        "title": "Alice Huang’s Contacts With Chinese Spy Agency Reportedly Tracked by US Intelligence: Nvidia Stock Climbs Over 7% on Robinhood’s Platform",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/alice-huang-contacts-chinese-spy-064411334.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 01:44 ET",
+        "pub_ts": 1795416251.0
+      },
+      {
         "title": "Nvidia Just Reported Its First Quarter Without Jensen Huang. If the AI Trade Is Cracking, Warren Buffett’s Advice Comes Down to 1 Move.",
         "url": "https://www.fool.com/investing/2026/11/23/nvidia-just-reported-its-first-quarter-without-jensen-huang-if-the-ai-trade-is-cracking-warren-buffett-s-advice-comes-down-to-1-move/?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-23 01:20 ET",
         "pub_ts": 1795414802.0
-      },
-      {
-        "title": "Anthropic Stock Trend, Jensen Huang’s Potential Return As Nvidia CEO And Dell’s Q4 Results To Keep Tech Investors Busy This Week",
-        "url": "https://stocktwits.com/news-articles/markets/equity/anthropic-stock-trend-jensen-huang-s-potential-return-as-nvidia-ceo-and-dell-s-q4-results-to-keep-tech-investors-busy-this-week/cNbYAtgR9Sf?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 01:14 ET",
-        "pub_ts": 1795414485.0
-      },
-      {
-        "title": "It’s time to follow the cash at Nvidia",
-        "url": "https://uk.finance.yahoo.com/news/time-cash-nvidia-060000333.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 01:00 ET",
-        "pub_ts": 1795413600.0
       }
     ],
     "AMD": [
@@ -3243,30 +3243,30 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795418666.8111782,
-    "SOXL": 1795418666.8111782,
-    "SPY": 1795418666.8111782,
-    "DIA": 1795418666.8111782,
-    "SOXX": 1795418666.8111782,
-    "QQQ": 1795418666.8111782,
-    "SMH": 1795418666.8111782,
-    "IWM": 1795418666.8111782,
-    "IGV": 1795418666.8111782,
-    "TLT": 1795418666.8111782,
-    "GLD": 1795418666.8111782,
-    "SQQQ": 1795418666.8111782,
-    "TSM": 1795418666.8111782,
-    "VIXY": 1795418666.8111782,
-    "SOXS": 1795418666.8111782,
-    "NVDA": 1795418666.8111782,
-    "AMD": 1795418666.8111782,
-    "ASML": 1795418666.8111782,
-    "QCOM": 1795418666.8111782,
-    "AVGO": 1795418666.8111782,
+    "KORU": 1795420260.6746352,
+    "SOXL": 1795420260.6746352,
+    "SPY": 1795420260.6746352,
+    "DIA": 1795420260.6746352,
+    "SOXX": 1795420260.6746352,
+    "QQQ": 1795420260.6746352,
+    "SMH": 1795420260.6746352,
+    "IWM": 1795420260.6746352,
+    "IGV": 1795420260.6746352,
+    "TLT": 1795420260.6746352,
+    "GLD": 1795420260.6746352,
+    "SQQQ": 1795420260.6746352,
+    "TSM": 1795420260.6746352,
+    "VIXY": 1795420260.6746352,
+    "SOXS": 1795420260.6746352,
+    "NVDA": 1795420260.6746352,
+    "AMD": 1795420260.6746352,
+    "ASML": 1795420260.6746352,
+    "QCOM": 1795420260.6746352,
+    "AVGO": 1795420260.6746352,
     "AMAT": 1795418774.1879063,
     "META": 1795418774.1879063,
-    "GOOGL": 1795418666.8111782,
-    "MSFT": 1795418666.8111782,
+    "GOOGL": 1795420260.6746352,
+    "MSFT": 1795420260.6746352,
     "AAPL": 1795418774.1879063,
     "PLTR": 1795418881.7427878,
     "NOW": 1795418774.1879063,
