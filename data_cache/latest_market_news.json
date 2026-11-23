@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795404520.443,
-  "updated_at_et": "11-22 22:28 ET",
-  "updated_at_kst": "12:28 KST",
+  "updated_at_ts": 1795404626.591,
+  "updated_at_et": "11-22 22:30 ET",
+  "updated_at_kst": "12:30 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2238,6 +2238,13 @@
     ],
     "DELL": [
       {
+        "title": "How Did Dell Grow From $56 Billion To $151 Billion In 20 Years?",
+        "url": "https://www.trefis.com/stock/dell/articles/624827/how-did-dell-grow-from-56-billion-to-151-billion-in-20-years/2026-11-22?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-22 21:44 ET",
+        "pub_ts": 1795401851.0
+      },
+      {
         "title": "Inflation, Best Buy, Zoom, Dell, Deere, and More to Watch This Week",
         "url": "https://finance.yahoo.com/m/b0484e57-7de1-3e23-9bf6-f4cc21f76c51/inflation%2C-best-buy%2C-zoom%2C.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2264,13 +2271,6 @@
         "source": "Yahoo Finance",
         "time": "11-21 09:02 ET",
         "pub_ts": 1795269726.0
-      },
-      {
-        "title": "Is Dell Stock Really Cheap?",
-        "url": "https://www.trefis.com/stock/dell/articles/626514/is-dell-stock-really-cheap/2026-11-20?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-21 01:32 ET",
-        "pub_ts": 1795242767.0
       }
     ],
     "OKLO": [
@@ -2571,6 +2571,13 @@
     ],
     "SNDK": [
       {
+        "title": "SNDK Stock Wrapped Its Worst Week Since July: Why Morningstar Sees A NAND Memory Bust Looming For SanDisk",
+        "url": "https://stocktwits.com/news-articles/markets/equity/sndk-stock-nand-price-downcycle-forecast-morningstar/cNbYVUtR9S2?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-22 22:12 ET",
+        "pub_ts": 1795403535.0
+      },
+      {
         "title": "Micron Technology vs. Sandisk: Which Technology Stock Is a Better Buy for 2027?",
         "url": "https://www.fool.com/coverage/better-buy/2026/11/22/micron-technology-vs-sandisk-which-technology-stock-is-a-better-buy-for-2027/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2597,13 +2604,6 @@
         "source": "Yahoo Finance",
         "time": "11-21 11:50 ET",
         "pub_ts": 1795279856.0
-      },
-      {
-        "title": "Sandisk (SNDK) Implements 8 For 1 Stock Split",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/sandisk-sndk-implements-8-1-042529050.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 23:25 ET",
-        "pub_ts": 1795235129.0
       }
     ],
     "BTC-USD": [
@@ -3271,15 +3271,15 @@
     "GOOGL": 1795404413.498474,
     "MSFT": 1795404413.498474,
     "AAPL": 1795404520.4427664,
-    "PLTR": 1795403061.8892643,
+    "PLTR": 1795404626.5908842,
     "NOW": 1795404520.4427664,
     "AMZN": 1795404520.4427664,
     "CRWV": 1795404520.4427664,
-    "NBIS": 1795403061.8892643,
-    "APLD": 1795403061.8892643,
-    "VST": 1795403061.8892643,
-    "BE": 1795403061.8892643,
-    "CRDO": 1795403061.8892643,
+    "NBIS": 1795404626.5908842,
+    "APLD": 1795404626.5908842,
+    "VST": 1795404626.5908842,
+    "BE": 1795404626.5908842,
+    "CRDO": 1795404626.5908842,
     "COHR": 1795403170.1628573,
     "MRVL": 1795403170.1628573,
     "LITE": 1795403170.1628573,
@@ -3289,26 +3289,26 @@
     "AXTI": 1795403170.1628573,
     "NASA": 1795404520.4427664,
     "LUNR": 1795404520.4427664,
-    "TSLA": 1795403061.8892643,
+    "TSLA": 1795404626.5908842,
     "AXP": 1795404520.4427664,
     "RKLB": 1795404520.4427664,
     "KO": 1795404520.4427664,
     "FLY": 1795404520.4427664,
     "INTC": 1795404520.4427664,
-    "VRT": 1795403061.8892643,
-    "HPE": 1795403061.8892643,
-    "DELL": 1795403061.8892643,
-    "OKLO": 1795403061.8892643,
-    "CEG": 1795403061.8892643,
-    "FPS": 1795403061.8892643,
+    "VRT": 1795404626.5908842,
+    "HPE": 1795404626.5908842,
+    "DELL": 1795404626.5908842,
+    "OKLO": 1795404626.5908842,
+    "CEG": 1795404626.5908842,
+    "FPS": 1795404626.5908842,
     "MU": 1795403170.1628573,
     "SKHY": 1795403170.1628573,
     "WDC": 1795403170.1628573,
-    "STX": 1795403061.8892643,
-    "MSTR": 1795403061.8892643,
-    "SNDK": 1795403061.8892643,
+    "STX": 1795404626.5908842,
+    "MSTR": 1795404626.5908842,
+    "SNDK": 1795404626.5908842,
     "BTC-USD": 1795403170.1628573,
-    "CRWD": 1795403061.8892643,
+    "CRWD": 1795404626.5908842,
     "ORCL": 1795403170.1628573,
     "COIN": 1795403170.1628573,
     "LLY": 1795403170.1628573,
