@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795436896.621,
-  "updated_at_et": "11-23 07:28 ET",
-  "updated_at_kst": "21:28 KST",
+  "updated_at_ts": 1795437007.218,
+  "updated_at_et": "11-23 07:30 ET",
+  "updated_at_kst": "21:30 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -688,6 +688,13 @@
         "pub_ts": 1794438901.0
       },
       {
+        "title": "SPY And Gold Fell Together. Did Bonds Save 60/40?",
+        "url": "https://www.trefis.com/stock/spy/articles/627558/spy-and-gold-fell-together-did-bonds-save-60-40/2026-11-22?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 07:05 ET",
+        "pub_ts": 1795435547.0
+      },
+      {
         "title": "The Fed’s Biggest Dove Sees No Clear Path Back to 2% Inflation",
         "url": "https://247wallst.com/investing/2026/11/20/the-feds-biggest-dove-sees-no-clear-path-back-to-2-inflation/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -707,13 +714,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 12:33 ET",
         "pub_ts": 1795109600.0
-      },
-      {
-        "title": "Some Fed Officials Wanted to Hike in October. A Half-Point Hike Is on the Table.",
-        "url": "https://247wallst.com/investing/2026/11/19/some-fed-officials-wanted-to-hike-in-october-a-half-point-hike-is-on-the-table/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 10:08 ET",
-        "pub_ts": 1795100906.0
       }
     ],
     "GLD": [
@@ -746,11 +746,11 @@
         "pub_ts": 1794490927.0
       },
       {
-        "title": "Forget the ETF Outflows: Gold Miners Offer 3X Leverage As Cash Flow Surges",
-        "url": "https://finance.yahoo.com/markets/commodities/articles/forget-etf-outflows-gold-miners-133032447.html?.tsrc=rss",
+        "title": "SPY And Gold Fell Together. Did Bonds Save 60/40?",
+        "url": "https://www.trefis.com/stock/spy/articles/627558/spy-and-gold-fell-together-did-bonds-save-60-40/2026-11-22?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-10 08:30 ET",
-        "pub_ts": 1794317432.0
+        "time": "11-23 07:05 ET",
+        "pub_ts": 1795435547.0
       }
     ],
     "SQQQ": [
@@ -2975,6 +2975,20 @@
     ],
     "JPM": [
       {
+        "title": "JPMorgan Asset Management (Canada) Inc. Exchange Traded Funds 2026 Estimated Annual Reinvested Capital Gain Distributions",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/jpmorgan-asset-management-canada-inc-120000125.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 07:00 ET",
+        "pub_ts": 1795435200.0
+      },
+      {
+        "title": "JPMorgan Traders Drop Bullish View on Stocks After Selloff",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/jpmorgan-traders-drop-bullish-view-114704931.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 06:47 ET",
+        "pub_ts": 1795434424.0
+      },
+      {
         "title": "How Many JPMorgan Chase Shares You Need to Collect $6,000 a Year in Dividends",
         "url": "https://www.fool.com/investing/2026/11/23/how-many-jpmorgan-chase-shares-youd-need-to-collect-6000-a-year-in-dividends/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2994,20 +3008,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 03:41 ET",
         "pub_ts": 1795423299.0
-      },
-      {
-        "title": "JPMorgan Chase (JPM) CEO Warns UK Tax Rise Could Threaten £3 Billion HQ",
-        "url": "https://finance.yahoo.com/economy/policy/articles/jpmorgan-chase-jpm-ceo-warns-070656078.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 02:06 ET",
-        "pub_ts": 1795417616.0
-      },
-      {
-        "title": "JPMorgan sees potential sharp rebound in Asian equities after positioning unwind",
-        "url": "https://finance.yahoo.com/markets/world-indices/articles/jpmorgan-sees-potential-sharp-rebound-065327416.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 01:53 ET",
-        "pub_ts": 1795416807.0
       }
     ],
     "WMT": [
@@ -3243,20 +3243,20 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795435480.2667184,
-    "SOXL": 1795435480.2667184,
-    "SPY": 1795435480.2667184,
-    "DIA": 1795435480.2667184,
-    "SOXX": 1795435480.2667184,
-    "QQQ": 1795435480.2667184,
-    "SMH": 1795435480.2667184,
-    "IWM": 1795435480.2667184,
-    "IGV": 1795435480.2667184,
-    "TLT": 1795435480.2667184,
-    "GLD": 1795435480.2667184,
-    "SQQQ": 1795435480.2667184,
+    "KORU": 1795437007.2175102,
+    "SOXL": 1795437007.2175102,
+    "SPY": 1795437007.2175102,
+    "DIA": 1795437007.2175102,
+    "SOXX": 1795437007.2175102,
+    "QQQ": 1795437007.2175102,
+    "SMH": 1795437007.2175102,
+    "IWM": 1795437007.2175102,
+    "IGV": 1795437007.2175102,
+    "TLT": 1795437007.2175102,
+    "GLD": 1795437007.2175102,
+    "SQQQ": 1795437007.2175102,
     "TSM": 1795435593.6957073,
-    "VIXY": 1795435480.2667184,
+    "VIXY": 1795437007.2175102,
     "SOXS": 1795435593.6957073,
     "NVDA": 1795435593.6957073,
     "AMD": 1795435593.6957073,
@@ -3313,10 +3313,10 @@
     "NKE": 1795436896.621187,
     "MCD": 1795436896.621187,
     "PEP": 1795435706.4393792,
-    "XOM": 1795435480.2667184,
-    "JPM": 1795435480.2667184,
+    "XOM": 1795437007.2175102,
+    "JPM": 1795437007.2175102,
     "WMT": 1795435593.6957073,
-    "V": 1795435480.2667184,
+    "V": 1795437007.2175102,
     "CAT": 1795435593.6957073,
     "FN": 1795436896.621187,
     "GLW": 1795435706.4393792,
