@@ -1,9 +1,22 @@
 {
-  "updated_at_ts": 1795442145.784,
-  "updated_at_et": "11-23 08:55 ET",
-  "updated_at_kst": "22:55 KST",
+  "updated_at_ts": 1795442255.802,
+  "updated_at_et": "11-23 08:57 ET",
+  "updated_at_kst": "22:57 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261123215627342800",
+      "title": "市场消息：英伟达董事会恢复黄仁勋CEO职务。",
+      "summary": "市场消息：英伟达董事会恢复黄仁勋CEO职务。",
+      "keywords": [
+        "英伟达"
+      ],
+      "pub_ts": 1795442187.0,
+      "time_et": "11-23 08:56 ET",
+      "time_bj": "21:56 BJ",
+      "time_kst": "22:56 KST",
+      "time_display": "08:56 ET / 21:56 BJ"
+    },
     {
       "id": "20261123215449406800",
       "title": "因中东供应流量增加，布伦特原油和WTI原油期货价格下跌超过3%。",
@@ -332,20 +345,6 @@
       "time_bj": "16:12 BJ",
       "time_kst": "17:12 KST",
       "time_display": "03:12 ET / 16:12 BJ"
-    },
-    {
-      "id": "20261123153142246800",
-      "title": "AI交易退潮引发跨市场抛售！3500成国际金重要关口 | Live分析更新中",
-      "summary": "国际现货黄金抛压或来自杠杆资金，3500大关是重要防守！美国短端通胀预期与加息预期背离，美联储紧缩程度被高估？",
-      "keywords": [
-        "美联储",
-        "加息"
-      ],
-      "pub_ts": 1795419102.0,
-      "time_et": "11-23 02:31 ET",
-      "time_bj": "15:31 BJ",
-      "time_kst": "16:31 KST",
-      "time_display": "02:31 ET / 15:31 BJ"
     }
   ],
   "ticker_news": {
@@ -1949,6 +1948,13 @@
         "pub_ts": 1795438835.0
       },
       {
+        "title": "Tesla Bulls Banking on SpaceX “Don’t Get the Dilution Math,” Says Gary Black. Tesla Trades at 3.4x SpaceX’s 2027 Multiple",
+        "url": "https://www.tikr.com/blog/tesla-bulls-banking-on-spacex-dont-get-the-dilution-math-says-gary-black-tesla-trades-at-3-4x-spacexs-2027-multiple?ref=yahoofinance&tlnk=yf-261123-mfw83vf8&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 08:20 ET",
+        "pub_ts": 1795440048.0
+      },
+      {
         "title": "Tesla FSD V15 Rolling Out, Goes 'Wide' Next Month. Elon Musk Says It's 'Something Special.'",
         "url": "https://finance.yahoo.com/m/b31af40e-5144-3249-9033-82521507fe84/tesla-fsd-v15-rolling-out%2C.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1968,13 +1974,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 07:39 ET",
         "pub_ts": 1795437593.0
-      },
-      {
-        "title": "Musk Says Teslas Will Tap “Grok’s Real-Time X Feed.” Another Tie Between Tesla and SpaceX",
-        "url": "https://www.tikr.com/blog/musk-says-teslas-will-tap-groks-real-time-x-feed-another-tie-between-tesla-and-spacex?ref=yahoofinance&tlnk=yf-261123-7rcmfjxq&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 07:36 ET",
-        "pub_ts": 1795437384.0
       }
     ],
     "AXP": [
@@ -2127,6 +2126,13 @@
     ],
     "INTC": [
       {
+        "title": "Intel Stock Could Have More Upside Than Its Current Valuation Suggests",
+        "url": "https://247wallst.com/investing/2026/11/23/intel-stock-could-have-more-upside-than-its-current-valuation-suggests/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 08:47 ET",
+        "pub_ts": 1795441637.0
+      },
+      {
         "title": "Intel CEO Lip-Bu Tan Has Incredible News for Investors. Is This the Much-Needed Catalyst for the Stock?",
         "url": "https://www.fool.com/investing/2026/11/23/intel-ceo-lip-bu-tan-has-incredible-news-for-investors-is-this-the-much-needed-catalyst-for-the-stock/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2153,13 +2159,6 @@
         "source": "Yahoo Finance",
         "time": "11-22 14:17 ET",
         "pub_ts": 1795375020.0
-      },
-      {
-        "title": "Intel Says It Just Signed Its First Customer for Its Most Advanced Chipmaking Process. The Stock Is Still More Than 60% Below Its June Record.",
-        "url": "https://www.fool.com/investing/2026/11/21/intel-says-it-just-signed-its-first-customer-for-its-most-advanced-chipmaking-process-the-stock-is-still-more-than-60-below-its-june-record/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-21 21:07 ET",
-        "pub_ts": 1795313222.0
       }
     ],
     "VRT": [
@@ -3200,39 +3199,39 @@
     ],
     "ANT": [
       {
+        "title": "Anthropic's IPO set for blastoff in key test for AI boom",
+        "url": "https://www.cbsnews.com/news/anthropic-ipo-ai-boom-nasdaq-debut/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 08:45 ET",
+        "pub_ts": 1795441521.0
+      },
+      {
+        "title": "Anthropic shares jump in Nasdaq trading debut after record IPO",
+        "url": "https://www.cbsnews.com/news/anthropic-ipo-nasdaq-debut-claude-ai/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 08:45 ET",
+        "pub_ts": 1795441502.0
+      },
+      {
+        "title": "Anthropic Raised Billions In A Record IPO. Now Wall Street Fears Its Debt Could Be Junk.",
+        "url": "https://www.ibtimes.com/anthropic-ipo-junk-debt-rating-infrastructure-commitments-3810082?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 08:36 ET",
+        "pub_ts": 1795440995.0
+      },
+      {
+        "title": "Cathie Wood Goes Bargain Hunting: 3 Stocks She Just Bought",
+        "url": "https://www.fool.com/investing/2026/11/23/cathie-wood-goes-bargain-hunting-3-stocks-she-just-bought/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 08:29 ET",
+        "pub_ts": 1795440542.0
+      },
+      {
         "title": "GraniteShares launches AIL and ANS, putting both sides of Anthropic on one exchange.",
         "url": "https://finance.yahoo.com/markets/options/articles/graniteshares-launches-ail-ans-putting-131500180.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-23 08:15 ET",
         "pub_ts": 1795439700.0
-      },
-      {
-        "title": "GraniteShares Commits $50.25 Million in Seed Capital to AIL and ANS, 2x Long and Short Anthropic ETFs",
-        "url": "https://finance.yahoo.com/markets/options/articles/graniteshares-commits-50-25-million-130000033.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 08:00 ET",
-        "pub_ts": 1795438800.0
-      },
-      {
-        "title": "Anthropic Just Rewrote Wall Street's IPO Record Books. Here's Where History Says Its Shares Will Head Next.",
-        "url": "https://www.fool.com/investing/2026/11/23/anthropic-just-rewrote-wall-street-ipo-record-books-where-history-says-shares-head-next/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 07:26 ET",
-        "pub_ts": 1795436762.0
-      },
-      {
-        "title": "AI's spending slowdown",
-        "url": "https://www.axios.com/2026/11/23/ai-spending-slowdown#utm_source=yahoo_finance&utm_medium=partner&utm_campaign=subs-partner-yahoo-finance-AI?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 07:20 ET",
-        "pub_ts": 1795436425.0
-      },
-      {
-        "title": "Zacks Investment Ideas feature highlights: Anthropic, SpaceX and Meta Platforms",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/zacks-investment-ideas-feature-highlights-121100413.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 07:11 ET",
-        "pub_ts": 1795435860.0
       }
     ],
     "XAUUSD": [
@@ -3289,17 +3288,17 @@
     "AXTI": 1795441576.8080497,
     "NASA": 1795441923.7480617,
     "LUNR": 1795441923.7480617,
-    "TSLA": 1795440698.5710723,
-    "AXP": 1795440698.5710723,
+    "TSLA": 1795442255.8019989,
+    "AXP": 1795442255.8019989,
     "RKLB": 1795441923.7480617,
     "KO": 1795441923.7480617,
     "FLY": 1795441923.7480617,
-    "INTC": 1795440698.5710723,
-    "VRT": 1795440698.5710723,
-    "HPE": 1795440698.5710723,
-    "DELL": 1795440698.5710723,
+    "INTC": 1795442255.8019989,
+    "VRT": 1795442255.8019989,
+    "HPE": 1795442255.8019989,
+    "DELL": 1795442255.8019989,
     "OKLO": 1795440829.6374338,
-    "CEG": 1795440698.5710723,
+    "CEG": 1795442255.8019989,
     "FPS": 1795440829.6374338,
     "MU": 1795441576.8080497,
     "SKHY": 1795441576.8080497,
@@ -3323,7 +3322,7 @@
     "CAT": 1795441808.4863145,
     "FN": 1795441576.8080497,
     "GLW": 1795441923.7480617,
-    "ANT": 1795440698.5710723,
+    "ANT": 1795442255.8019989,
     "XAUUSD": 1795441576.8080497
   },
   "opex_shield": {
@@ -3343,7 +3342,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (08:54 ET / 21:54 BJ) [中东] [原油]：因中东供应流量增加，布伦特原油和WTI原油期货价格下跌超过3%。",
+    "detail": "⚡ 最新核心快讯 (08:56 ET / 21:56 BJ) [英伟达]：市场消息：英伟达董事会恢复黄仁勋CEO职务。",
     "event_name": "",
     "minutes_left": 0,
     "opex_shield": {
