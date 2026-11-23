@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795462532.139,
-  "updated_at_et": "11-23 14:35 ET",
-  "updated_at_kst": "04:35 KST",
+  "updated_at_ts": 1795462641.557,
+  "updated_at_et": "11-23 14:37 ET",
+  "updated_at_kst": "04:37 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2640,6 +2640,13 @@
     ],
     "CRWD": [
       {
+        "title": "CrowdStrike’s Zscaler deal sets up Palo Alto rivalry, R.F. Lafferty analyst says",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/crowdstrike-zscaler-deal-sets-palo-192035199.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 14:20 ET",
+        "pub_ts": 1795461635.0
+      },
+      {
         "title": "CrowdStrike earnings beat overshadowed by $43.9B Zscaler acquisition",
         "url": "https://finance.yahoo.com/markets/stocks/articles/crowdstrike-earnings-beat-overshadowed-43-184105841.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2666,13 +2673,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 13:08 ET",
         "pub_ts": 1795457302.0
-      },
-      {
-        "title": "Why Zscaler Stock Rocketed Higher Today",
-        "url": "https://www.fool.com/investing/2026/11/23/why-zscaler-stock-rocketed-higher-today/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 12:58 ET",
-        "pub_ts": 1795456710.0
       }
     ],
     "ORCL": [
@@ -3084,6 +3084,13 @@
     ],
     "CAT": [
       {
+        "title": "Caterpillar (CAT) Falls In Broad Pullback As Undervalued Narrative Stays In Focus",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/caterpillar-cat-falls-broad-pullback-191143887.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 14:11 ET",
+        "pub_ts": 1795461103.0
+      },
+      {
         "title": "GEV vs CAT rebound comparison: two speeds, different risk profiles",
         "url": "https://finance.yahoo.com/markets/stocks/articles/gev-vs-cat-rebound-comparison-190016772.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3110,13 +3117,6 @@
         "source": "Yahoo Finance",
         "time": "11-21 09:07 ET",
         "pub_ts": 1795270046.0
-      },
-      {
-        "title": "Cathie Wood and 10 Other Big Funds Sold Caterpillar Last Quarter, While 13 Bought. Who’s Right?",
-        "url": "https://www.tikr.com/blog/cathie-wood-and-10-other-big-funds-sold-caterpillar-last-quarter-while-13-bought-whos-right?ref=yahoofinance&tlnk=yf-261121-7v55wxmq&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-21 06:20 ET",
-        "pub_ts": 1795260047.0
       }
     ],
     "FN": [
@@ -3195,39 +3195,39 @@
     ],
     "ANT": [
       {
-        "title": "OpenAI's chief scientist calls for AI speed limits",
-        "url": "https://finance.yahoo.com/video/openais-chief-scientist-calls-for-ai-speed-limits-184005095.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 13:40 ET",
-        "pub_ts": 1795459205.0
+        "title": "Anthropic Went Public Into An AI Selloff, And Its Numbers Argue Against It",
+        "url": "https://finnhub.io/api/news?id=52a4d151a49f64a7e90802605333687cb915fbf72acca8992e6dedcb2ce8b051",
+        "source": "SeekingAlpha",
+        "time": "11-23 09:05 ET",
+        "pub_ts": 1795442720.0
       },
       {
-        "title": "Anthropic stock whipsaws as Monday's tech rally takes off",
-        "url": "https://finance.yahoo.com/markets/stocks/article/anthropic-stock-whipsaws-as-mondays-tech-rally-takes-off-175022095.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 12:27 ET",
-        "pub_ts": 1795454836.0
+        "title": "Anthropic: Priced For Perfection",
+        "url": "https://finnhub.io/api/news?id=a8de154ce967bfbd1512b4dbd07a6cb6625d49a2bc29e9b7eb99e027c2c598e4",
+        "source": "SeekingAlpha",
+        "time": "11-23 09:01 ET",
+        "pub_ts": 1795442500.0
       },
       {
-        "title": "Did Anthropic Stock's 9% Slide Make It Cheap?",
-        "url": "https://www.trefis.com/stock/ant/articles/627440/did-anthropic-stock-s-9-slide-make-it-cheap/2026-11-23?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 13:48 ET",
-        "pub_ts": 1795459710.0
+        "title": "Jensen Is Back, But He Can't Fix Everything",
+        "url": "https://finnhub.io/api/news?id=94ea9d4541a02487aab0eacf0d3cb5f2a606037487cf7f672fd52449a7b860ac",
+        "source": "SeekingAlpha",
+        "time": "11-23 08:30 ET",
+        "pub_ts": 1795440613.0
       },
       {
-        "title": "Kevin O’Leary warns Anthropic IPO buyers to brace for 2030",
-        "url": "https://www.thestreet.com/investing/kevin-oleary-anthropic-ipo-warning?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 13:47 ET",
-        "pub_ts": 1795459620.0
+        "title": "Anthropic's Biggest Liability Is Someone Else's Biggest Asset",
+        "url": "https://finnhub.io/api/news?id=8880f642249238388ff5878bd4b5bcaaf8384016eaf5f5ab3903d9ceb226b3ee",
+        "source": "SeekingAlpha",
+        "time": "11-23 07:55 ET",
+        "pub_ts": 1795438534.0
       },
       {
-        "title": "Why Anthropic’s Stock Is Sitting Out Nvidia’s Big Rally",
-        "url": "https://finance.yahoo.com/m/4b0c6858-bbdf-3949-a696-c72d26b74377/why-anthropic%E2%80%99s-stock-is.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 13:46 ET",
-        "pub_ts": 1795459560.0
+        "title": "Anthropic IPO: Why The AI Boom's Profits Won't End Up Here",
+        "url": "https://finnhub.io/api/news?id=da4e41f171618813b8826274095d4ff5c5f55015d6caafcdd8253fbc0fe13ce8",
+        "source": "SeekingAlpha",
+        "time": "11-23 07:29 ET",
+        "pub_ts": 1795436986.0
       }
     ],
     "XAUUSD": [
@@ -3299,11 +3299,11 @@
     "MU": 1795462155.2907438,
     "SKHY": 1795462155.2907438,
     "WDC": 1795462155.2907438,
-    "STX": 1795461025.816452,
-    "MSTR": 1795461025.816452,
+    "STX": 1795462641.557195,
+    "MSTR": 1795462641.557195,
     "SNDK": 1795462532.1392448,
     "BTC-USD": 1795462155.2907438,
-    "CRWD": 1795461025.816452,
+    "CRWD": 1795462641.557195,
     "ORCL": 1795462155.2907438,
     "COIN": 1795462155.2907438,
     "LLY": 1795462155.2907438,
@@ -3315,11 +3315,11 @@
     "JPM": 1795462295.151317,
     "WMT": 1795462532.1392448,
     "V": 1795462295.151317,
-    "CAT": 1795461025.816452,
+    "CAT": 1795462641.557195,
     "FN": 1795462155.2907438,
     "GLW": 1795462419.6112037,
-    "ANT": 1795461025.816452,
-    "XAUUSD": 1795460920.3342052
+    "ANT": 1795462641.557195,
+    "XAUUSD": 1795462641.557195
   },
   "opex_shield": {
     "date": "2026-11-23",

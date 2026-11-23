@@ -74,8 +74,8 @@
       "last_notified_at": 0.0
     },
     "AXP": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1795462543.8842478
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "SPY": {
       "state": "NORMAL",
@@ -111,7 +111,7 @@
     },
     "CRWD": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1795455357.0662017
+      "last_notified_at": 1795462649.006282
     },
     "TSLA": {
       "state": "NORMAL",
