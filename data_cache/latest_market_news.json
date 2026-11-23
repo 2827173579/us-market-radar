@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795412541.975,
-  "updated_at_et": "11-23 00:42 ET",
-  "updated_at_kst": "14:42 KST",
+  "updated_at_ts": 1795412649.525,
+  "updated_at_et": "11-23 00:44 ET",
+  "updated_at_kst": "14:44 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2679,6 +2679,13 @@
     ],
     "ORCL": [
       {
+        "title": "Why Did NVDA, NFLX, ORCL Slip To 52-Week Lows Last Week?",
+        "url": "https://stocktwits.com/news-articles/markets/equity/why-did-nvda-nflx-orcl-slip-to-52-week-lows-last-week/cNbYpPuR9SJ?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 00:11 ET",
+        "pub_ts": 1795410679.0
+      },
+      {
         "title": "Dow Jones Futures Jump As Oracle, Korea Try To Ease Market Fears; Look For These Absolute Losers",
         "url": "https://finance.yahoo.com/m/9ef9da98-bccf-3565-9a30-9bc3e57ad4b9/dow-jones-futures-jump-as.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2705,13 +2712,6 @@
         "source": "Yahoo Finance",
         "time": "11-21 19:00 ET",
         "pub_ts": 1795305625.0
-      },
-      {
-        "title": "Oracle (ORCL) Hospital Java Patching Rush Meets New AI Product Push",
-        "url": "https://finance.yahoo.com/healthcare/articles/oracle-orcl-hospital-java-patching-180644592.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-21 13:06 ET",
-        "pub_ts": 1795284404.0
       }
     ],
     "COIN": [
@@ -3225,11 +3225,11 @@
         "pub_ts": 1795388640.0
       },
       {
-        "title": "Does Anthropic Have a Competitive Advantage? These are the Four Big Ones",
-        "url": "https://www.fool.com/investing/2026/11/22/does-anthropic-have-a-competitive-advantage-these-are-the-four-big-ones/?.tsrc=rss",
+        "title": "Dow Jones Futures Jump As Oracle, Korea Try To Ease Market Fears; Look For These Absolute Losers",
+        "url": "https://finance.yahoo.com/m/9ef9da98-bccf-3565-9a30-9bc3e57ad4b9/dow-jones-futures-jump-as.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-22 15:50 ET",
-        "pub_ts": 1795380602.0
+        "time": "11-22 23:15 ET",
+        "pub_ts": 1795407350.0
       }
     ],
     "XAUUSD": [
@@ -3277,13 +3277,13 @@
     "VST": 1795412541.9749434,
     "BE": 1795412541.9749434,
     "CRDO": 1795412541.9749434,
-    "COHR": 1795411079.3155942,
-    "MRVL": 1795411079.3155942,
-    "LITE": 1795411079.3155942,
+    "COHR": 1795412649.5248597,
+    "MRVL": 1795412649.5248597,
+    "LITE": 1795412649.5248597,
     "AAOI": 1795412434.846734,
     "SPCX": 1795412434.846734,
     "ASTS": 1795412434.846734,
-    "AXTI": 1795411079.3155942,
+    "AXTI": 1795412649.5248597,
     "NASA": 1795412434.846734,
     "LUNR": 1795412434.846734,
     "TSLA": 1795412541.9749434,
@@ -3298,29 +3298,29 @@
     "OKLO": 1795412541.9749434,
     "CEG": 1795412541.9749434,
     "FPS": 1795412541.9749434,
-    "MU": 1795411079.3155942,
-    "SKHY": 1795411079.3155942,
-    "WDC": 1795411079.3155942,
+    "MU": 1795412649.5248597,
+    "SKHY": 1795412649.5248597,
+    "WDC": 1795412649.5248597,
     "STX": 1795412541.9749434,
     "MSTR": 1795412541.9749434,
     "SNDK": 1795412541.9749434,
-    "BTC-USD": 1795411079.3155942,
+    "BTC-USD": 1795412649.5248597,
     "CRWD": 1795412541.9749434,
-    "ORCL": 1795411079.3155942,
-    "COIN": 1795411079.3155942,
-    "LLY": 1795411079.3155942,
-    "MRNA": 1795411079.3155942,
-    "NKE": 1795411079.3155942,
-    "MCD": 1795411079.3155942,
-    "PEP": 1795411079.3155942,
+    "ORCL": 1795412649.5248597,
+    "COIN": 1795412649.5248597,
+    "LLY": 1795412649.5248597,
+    "MRNA": 1795412649.5248597,
+    "NKE": 1795412649.5248597,
+    "MCD": 1795412649.5248597,
+    "PEP": 1795412649.5248597,
     "XOM": 1795411188.1172302,
-    "JPM": 1795411079.3155942,
-    "WMT": 1795411079.3155942,
-    "V": 1795411079.3155942,
-    "CAT": 1795411079.3155942,
-    "FN": 1795411079.3155942,
+    "JPM": 1795412649.5248597,
+    "WMT": 1795412649.5248597,
+    "V": 1795412649.5248597,
+    "CAT": 1795412649.5248597,
+    "FN": 1795412649.5248597,
     "GLW": 1795412434.846734,
-    "ANT": 1795411079.3155942,
+    "ANT": 1795412649.5248597,
     "XAUUSD": 1795411188.1172302
   },
   "opex_shield": {
