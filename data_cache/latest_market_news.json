@@ -1,9 +1,22 @@
 {
-  "updated_at_ts": 1795442255.802,
-  "updated_at_et": "11-23 08:57 ET",
-  "updated_at_kst": "22:57 KST",
+  "updated_at_ts": 1795442397.364,
+  "updated_at_et": "11-23 08:59 ET",
+  "updated_at_kst": "22:59 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261123215913222800",
+      "title": "英伟达(NVDA.O)盘前涨幅扩大至25%。",
+      "summary": "英伟达(NVDA.O)盘前涨幅扩大至25%。",
+      "keywords": [
+        "英伟达"
+      ],
+      "pub_ts": 1795442353.0,
+      "time_et": "11-23 08:59 ET",
+      "time_bj": "21:59 BJ",
+      "time_kst": "22:59 KST",
+      "time_display": "08:59 ET / 21:59 BJ"
+    },
     {
       "id": "20261123215627342800",
       "title": "市场消息：英伟达董事会恢复黄仁勋CEO职务。",
@@ -332,19 +345,6 @@
       "time_bj": "16:19 BJ",
       "time_kst": "17:19 KST",
       "time_display": "03:19 ET / 16:19 BJ"
-    },
-    {
-      "id": "20261123161203418800",
-      "title": "整理：每日投行/机构观点梳理（2026-11-23）",
-      "summary": "国外 1. 高盛：美股恐慌性抛售或现机会，但这次有所不同。 2. 大摩：市场“恐慌抛售”之后股市有望反弹。 3. 小摩：亚洲股市投资者持仓降至历史低位，市场有望迎来大幅反弹。 4. 小摩：近期市场回调主要由AI交易去杠杆化驱动。 5. 小摩：本轮厄尔尼诺影响可能比以往更持久。 6. 法兴银行：AI投资与企业盈利支撑美股，标普500还有约18.5%上涨空间。 国内 1. 中金：预期2027年金价中枢在4300美元/盎司左右。 2. 中金：预计铜底部区域或锚定激励价格12500美元/吨。 3. 中金：外部“逆风”再起引致超调，保持信心。 4. 招商证券：从市场底部特征来看，多项指标逐步趋近历史底部水平。 5. 中信证券：看好明年行情宽度拓展，“行情分散、聚焦龙头”是切实可行策略。 6. 中信建投：防御品种当前仍具有较高配置价值。 7. 中信证券：银行板块短期仍受资金面影响。 8. 中信建投：迎接MLCC超级周期，重视产业链投资机遇。 9. 中信证券：美股2027年AI产业链预计呈现年初估值承压、年中估值修复、年末表现分化的阶段性特征。 10. 中信证券：预计全国性机制电价政策有望在2027年推出。 11. 中信建投食品饮料2027年投资策略：周期底部范式重构，红利守正成长出奇。",
-      "keywords": [
-        "标普"
-      ],
-      "pub_ts": 1795421523.0,
-      "time_et": "11-23 03:12 ET",
-      "time_bj": "16:12 BJ",
-      "time_kst": "17:12 KST",
-      "time_display": "03:12 ET / 16:12 BJ"
     }
   ],
   "ticker_news": {
@@ -2644,11 +2644,25 @@
     ],
     "CRWD": [
       {
-        "title": "Crowdstrike is spending $43.9 billion to buy ZScaler in a huge cybersecurity deal as tech outages spread",
+        "title": "CrowdStrike is spending $43.9 billion to buy Zscaler in a huge cybersecurity deal as tech outages spread",
         "url": "https://finance.yahoo.com/technology/article/crowdstrike-is-spending-439-billion-to-buy-zscaler-in-a-huge-cybersecurity-deal-as-tech-outages-spread-110645119.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-23 06:06 ET",
         "pub_ts": 1795432005.0
+      },
+      {
+        "title": "CrowdStrike to Acquire Zscaler in $43.9 Billion All-Stock Deal",
+        "url": "https://finance.yahoo.com/technology/articles/crowdstrike-acquire-zscaler-43-9-134616915.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 08:46 ET",
+        "pub_ts": 1795441576.0
+      },
+      {
+        "title": "Stock Market Today: Tech Futures, Nvidia Surge After Market Sell-Off; CrowdStrike Plunges On Zscaler Deal (Live Coverage)",
+        "url": "https://finance.yahoo.com/m/8751de70-467e-380a-82cb-f4ee42adc461/stock-market-today%3A-tech.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 08:42 ET",
+        "pub_ts": 1795441346.0
       },
       {
         "title": "CrowdStrike's Zscaler Acquisition Could Broaden Security Platform, Says JPMorgan — Analysts Weigh Opportunities And Risks",
@@ -2663,20 +2677,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 08:13 ET",
         "pub_ts": 1795439629.0
-      },
-      {
-        "title": "Stock Market Today: Tech Futures, Nvidia Surge After Market Sell-Off; CrowdStrike Plunges On Zscaler Deal (Live Coverage)",
-        "url": "https://finance.yahoo.com/m/8751de70-467e-380a-82cb-f4ee42adc461/stock-market-today%3A-tech.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 08:12 ET",
-        "pub_ts": 1795439569.0
-      },
-      {
-        "title": "Crowdstrike to acquire Zscaler in a $44 billion deal that would create a cybersecurity giant",
-        "url": "https://finance.yahoo.com/technology/articles/crowdstrike-acquire-zscaler-44-billion-130500925.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 08:05 ET",
-        "pub_ts": 1795439100.0
       }
     ],
     "ORCL": [
@@ -3279,7 +3279,7 @@
     "VST": 1795441808.4863145,
     "BE": 1795441923.7480617,
     "CRDO": 1795441923.7480617,
-    "COHR": 1795440829.6374338,
+    "COHR": 1795442397.3644836,
     "MRVL": 1795441576.8080497,
     "LITE": 1795441576.8080497,
     "AAOI": 1795441923.7480617,
@@ -3297,17 +3297,17 @@
     "VRT": 1795442255.8019989,
     "HPE": 1795442255.8019989,
     "DELL": 1795442255.8019989,
-    "OKLO": 1795440829.6374338,
+    "OKLO": 1795442397.3644836,
     "CEG": 1795442255.8019989,
-    "FPS": 1795440829.6374338,
+    "FPS": 1795442397.3644836,
     "MU": 1795441576.8080497,
     "SKHY": 1795441576.8080497,
     "WDC": 1795441576.8080497,
-    "STX": 1795440829.6374338,
-    "MSTR": 1795440829.6374338,
-    "SNDK": 1795440829.6374338,
+    "STX": 1795442397.3644836,
+    "MSTR": 1795442397.3644836,
+    "SNDK": 1795442397.3644836,
     "BTC-USD": 1795441576.8080497,
-    "CRWD": 1795440829.6374338,
+    "CRWD": 1795442397.3644836,
     "ORCL": 1795441576.8080497,
     "COIN": 1795441576.8080497,
     "LLY": 1795441576.8080497,
@@ -3342,7 +3342,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (08:56 ET / 21:56 BJ) [英伟达]：市场消息：英伟达董事会恢复黄仁勋CEO职务。",
+    "detail": "⚡ 最新核心快讯 (08:59 ET / 21:59 BJ) [英伟达]：英伟达(NVDA.O)盘前涨幅扩大至25%。",
     "event_name": "",
     "minutes_left": 0,
     "opex_shield": {
