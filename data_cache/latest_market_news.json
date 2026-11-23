@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795409045.602,
-  "updated_at_et": "11-22 23:44 ET",
-  "updated_at_kst": "13:44 KST",
+  "updated_at_ts": 1795409150.557,
+  "updated_at_et": "11-22 23:45 ET",
+  "updated_at_kst": "13:45 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -904,6 +904,20 @@
     ],
     "NVDA": [
       {
+        "title": "Trump urges Nvidia board to rehire Jensen Huang",
+        "url": "https://finance.yahoo.com/technology/articles/trump-urges-nvidia-board-rehire-042759448.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-22 23:27 ET",
+        "pub_ts": 1795408079.0
+      },
+      {
+        "title": "Trump Throws His Weight Behind Jensen Huang’s Return As Nvidia CEO: ‘It Would Be The Best Thing For The Company’",
+        "url": "https://stocktwits.com/news-articles/markets/equity/trump-throws-his-weight-behind-jensen-huang-s-return-as-nvidia-ceo-it-would-be-the-best-thing-for-the-company/cNbY8mTR9S3?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-22 23:13 ET",
+        "pub_ts": 1795407217.0
+      },
+      {
         "title": "Worried About Nvidia? Buy This Fantastic Artificial Intelligence (AI) Stock Instead",
         "url": "https://www.fool.com/investing/2026/11/22/worried-about-nvidia-buy-this-fantastic-artificial-intelligence-ai-stock-instead/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -911,32 +925,18 @@
         "pub_ts": 1795404002.0
       },
       {
+        "title": "Michael Burry on Nvidia Board? ‘Big Short’ Investor Jokes He’d ‘Volunteer’ as NVDA Stock Sinks 40%",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/michael-burry-nvidia-board-big-031945302.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-22 22:19 ET",
+        "pub_ts": 1795403985.0
+      },
+      {
         "title": "Kevin O’Leary Says Nvidia CEO Colette Kress Is ‘Pretty Sharp,’ Chip Demand ‘Insatiable’: Crypto Bettors Weigh Jensen Huang Comeback Odds",
         "url": "https://finance.yahoo.com/markets/stocks/articles/kevin-o-leary-says-nvidia-025309458.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-22 21:53 ET",
         "pub_ts": 1795402389.0
-      },
-      {
-        "title": "Nvidia stock logs 2008-scale losing streak even as interim CEO delivers beat",
-        "url": "https://www.thestreet.com/investing/stocks/nvidia-stock-losing-streak-2008?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-22 21:47 ET",
-        "pub_ts": 1795402020.0
-      },
-      {
-        "title": "Asian tech back in the firing line as traders track Wall St rout",
-        "url": "https://finance.yahoo.com/markets/world-indices/articles/asian-tech-back-firing-line-024445930.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-22 21:44 ET",
-        "pub_ts": 1795401885.0
-      },
-      {
-        "title": "NVDA, INTC, MU, AMD Chip Stocks Rip Higher: Dan Ives Says ‘Bears Feel Validated,’ But There’s No Stopping The AI Wave",
-        "url": "https://stocktwits.com/news-articles/markets/equity/nvda-intc-mu-amd-chip-stocks-rip-higher-dan-ives-says-bears-feel-validated-but-there-s-no-stopping-the-ai-wave/cNbYZnYR916?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-22 21:24 ET",
-        "pub_ts": 1795400645.0
       }
     ],
     "AMD": [
@@ -3244,30 +3244,30 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795407572.1237414,
-    "SOXL": 1795407572.1237414,
-    "SPY": 1795407572.1237414,
-    "DIA": 1795407572.1237414,
-    "SOXX": 1795407572.1237414,
-    "QQQ": 1795407572.1237414,
-    "SMH": 1795407572.1237414,
-    "IWM": 1795407572.1237414,
-    "IGV": 1795407572.1237414,
-    "TLT": 1795407572.1237414,
-    "GLD": 1795407572.1237414,
-    "SQQQ": 1795407572.1237414,
-    "TSM": 1795407572.1237414,
-    "VIXY": 1795407572.1237414,
-    "SOXS": 1795407572.1237414,
-    "NVDA": 1795407572.1237414,
-    "AMD": 1795407572.1237414,
-    "ASML": 1795407572.1237414,
-    "QCOM": 1795407572.1237414,
-    "AVGO": 1795407572.1237414,
+    "KORU": 1795409150.5565495,
+    "SOXL": 1795409150.5565495,
+    "SPY": 1795409150.5565495,
+    "DIA": 1795409150.5565495,
+    "SOXX": 1795409150.5565495,
+    "QQQ": 1795409150.5565495,
+    "SMH": 1795409150.5565495,
+    "IWM": 1795409150.5565495,
+    "IGV": 1795409150.5565495,
+    "TLT": 1795409150.5565495,
+    "GLD": 1795409150.5565495,
+    "SQQQ": 1795409150.5565495,
+    "TSM": 1795409150.5565495,
+    "VIXY": 1795409150.5565495,
+    "SOXS": 1795409150.5565495,
+    "NVDA": 1795409150.5565495,
+    "AMD": 1795409150.5565495,
+    "ASML": 1795409150.5565495,
+    "QCOM": 1795409150.5565495,
+    "AVGO": 1795409150.5565495,
     "AMAT": 1795407681.237172,
     "META": 1795407681.237172,
-    "GOOGL": 1795407572.1237414,
-    "MSFT": 1795407572.1237414,
+    "GOOGL": 1795409150.5565495,
+    "MSFT": 1795409150.5565495,
     "AAPL": 1795407681.237172,
     "PLTR": 1795407788.2846816,
     "NOW": 1795407681.237172,
