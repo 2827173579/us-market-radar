@@ -75,11 +75,11 @@
     },
     "AXP": {
       "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1795472073.5049465
+      "last_notified_at": 1795475768.031463
     },
     "SPY": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1795475768.031463
     },
     "DIA": {
       "state": "WATCHLIST_ENTRY_READY",
@@ -178,8 +178,8 @@
       "last_notified_at": 1795468798.6838663
     },
     "PLTR": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1795475768.031463
     }
   },
   "position_peaks": {
