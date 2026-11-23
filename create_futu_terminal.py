@@ -5001,7 +5001,13 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                     const pc = _ipNum(item.prev_close, 0);
                     const lockStr = item.snapshot_locked ? "🔒 09:25盘前走廊已锁定" : "📝 盘前实时预览";
                     const act0 = (Array.isArray(item.actual_prices) && item.actual_prices.length > 0) ? _ipNum(item.actual_prices[0], 0) : 0;
-                    const isAligned = Boolean(item.rth_open_aligned || (act0 > 0 && preAo > 0 && Math.abs(act0 - preAo) / preAo >= 0.015));
+                    let halfPctMeta = 1.0;
+                    if (Array.isArray(item.p25_pcts) && Array.isArray(item.p75_pcts) && item.p25_pcts.length > 0) {
+                        const hw = item.p75_pcts.map((h, i) => Math.abs(Number(h) - Number(item.p25_pcts[i] || 0)) / 2.0).filter(Number.isFinite);
+                        if (hw.length) halfPctMeta = hw.reduce((a, b) => a + b, 0) / hw.length;
+                    }
+                    const adaptThreshFrac = Math.max(0.005, 0.5 * (halfPctMeta / 100.0));
+                    const isAligned = Boolean(item.rth_open_aligned || (act0 > 0 && preAo > 0 && Math.abs(act0 - preAo) / preAo >= adaptThreshFrac));
                     const alignedPx = _ipNum(item.rth_open_price, act0 > 0 ? act0 : ao);
                     const anchorDesc = (isAligned && preAo > 0 && Math.abs(alignedPx - preAo) >= 0.01)
                         ? `盘前锚 $${preAo.toFixed(2)} · 09:30实盘开盘锚已对齐 $${alignedPx.toFixed(2)}`
@@ -5070,7 +5076,12 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             const high24 = _ipNum(item.high_24h, null);
             const low24 = _ipNum(item.low_24h, null);
             let anchorOpen = has24hChart ? utcOpen : _ipNum(item.anchor_open, p50[0] || 100);
-            if (!has24hChart && !item.rth_open_aligned && act[0] !== null && act[0] > 0 && anchorOpen > 0 && Math.abs(act[0] - anchorOpen) / anchorOpen >= 0.015) {
+            let adaptOpenThresh = 0.005;
+            if (!has24hChart && Array.isArray(item.p25_pcts) && Array.isArray(item.p75_pcts) && item.p25_pcts.length > 0) {
+                const hwArr = item.p75_pcts.map((h, i) => Math.abs(Number(h) - Number(item.p25_pcts[i] || 0)) / 2.0).filter(Number.isFinite);
+                if (hwArr.length) adaptOpenThresh = Math.max(0.005, 0.5 * ((hwArr.reduce((a, b) => a + b, 0) / hwArr.length) / 100.0));
+            }
+            if (!has24hChart && !item.rth_open_aligned && act[0] !== null && act[0] > 0 && anchorOpen > 0 && Math.abs(act[0] - anchorOpen) / anchorOpen >= adaptOpenThresh) {
                 const rthOpen = act[0];
                 if (Array.isArray(item.p25_pcts) && Array.isArray(item.p50_pcts) && Array.isArray(item.p75_pcts) && item.p50_pcts.length === nSlots) {
                     p25 = item.p25_pcts.map(x => Number((rthOpen * (1.0 + Number(x) / 100.0)).toFixed(2)));
@@ -5131,7 +5142,8 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             const farLowerRthRefs = [];
             if (!has24hChart) {
                 const coreMid = (coreMin + coreMax) / 2.0;
-                const coreSpanRth = Math.max(coreMax - coreMin, coreMid * 0.025);
+                const coreSpanRth = Math.max(coreMax - coreMin, (anchorOpen > 0 ? anchorOpen : coreMid) * 0.008);
+                const allowPad = 0.55 * coreSpanRth;
                 const rthCandidates = [
                     { label: "昨收", val: prevClose, color: pal.svgAxis, dash: "5 4" },
                     { label: "PMH", val: pmh, color: pal.warn, dash: "5 4" },
@@ -5139,10 +5151,8 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 ];
                 rthCandidates.forEach(rc => {
                     if (rc.val === null || !(rc.val > 0)) return;
-                    const distMidPct = Math.abs(rc.val - coreMid) / Math.max(coreMid, 0.01);
-                    const allowPad = Math.max(coreSpanRth * 0.85, coreMid * 0.12);
                     const inSpan = rc.val >= (coreMin - allowPad) && rc.val <= (coreMax + allowPad);
-                    if (distMidPct <= 0.22 && inSpan) {
+                    if (inSpan) {
                         inWindowRthRefs.push(rc);
                         vals.push(rc.val);
                     } else if (rc.val > coreMax) {
@@ -5463,6 +5473,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             const isIpo = Boolean(item.is_ipo_pending || sig.includes("IPO"));
 
             if (isIpo) return { label: "🆕 IPO", color: pal.accent, bg: pal.accentBg };
+            if (item.broken_rebound_ready || (isStop && item.intraday_entry_ready)) return { label: "⚡ 博反抽", color: pal.warn, bg: pal.warnBg };
             if (item.intraday_entry_ready) return { label: "🎯买点", color: pal.up, bg: pal.upBg };
             if (item.is_crash_halt || item.is_cooling_halt) return { label: "🔴 别接刀", color: pal.down, bg: pal.downBg };
             if (isTakeProfit) return { label: "🔴 别追", color: pal.purple, bg: pal.purpleBg };
@@ -6022,7 +6033,13 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 themeColor = pal.warn; themeBg = pal.warnBg; themeBorder = pal.warnBorder;
                 actionType = "超跌右侧博反抽 / 短线快进快出";
                 mainVerdict = "⚡ 超跌右侧博反抽 (破坑深调·快进快出)";
-                actionDirective = `【破坑右侧反抽】日线仍处黄金坑 ($${curFibLow.toFixed(2)}) 下方，但日内已站稳 VWAP/支撑企稳；仅限短线博空头回补，压力位 R1 ($${Number(aiNowR1 || data.broken_r1 || curFibHigh || 0).toFixed(2)}) 不过即走，严禁中线死扛。`;
+                const _dirR1 = Number(aiNowR1 || data.broken_r1 || curFibHigh || 0);
+                const _dirR2 = Number((aiItem && (aiItem.anchor_r2 !== undefined ? aiItem.anchor_r2 : aiItem.r2)) || 0);
+                const _dirTp = Number((aiItem && aiItem.target_profit_price) || 0);
+                const _dirTargetLbl = (_dirR1 > curActive * 1.005)
+                    ? `压力位 R1 ($${_dirR1.toFixed(2)})`
+                    : ((_dirR2 > curActive * 1.005) ? `上方目标 R2 ($${_dirR2.toFixed(2)})` : `动态目标 ($${(_dirTp > curActive * 1.005 ? _dirTp : (curActive * (1 + Math.max(0.03, 1.5 * atrFracNow)))).toFixed(2)})`);
+                actionDirective = `【破坑右侧反抽】日线仍处黄金坑 ($${curFibLow.toFixed(2)}) 下方，但日内已站稳 VWAP/支撑企稳；仅限短线博空头回补，${_dirTargetLbl} 不过即走，严禁中线死扛。`;
             } else if (isBrokenBearish) {
                 themeColor = pal.down; themeBg = pal.downBg; themeBorder = pal.downBorder;
                 actionType = "破坑观望 / 严禁左侧接刀";
@@ -6131,8 +6148,16 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 } else if (isBrokenRebound) {
                     intraStatusEl.innerText = intraStatusText;
                     const _r1Shown = Number(aiNowR1 || data.broken_r1 || 0);
+                    const _r2Shown = Number((aiItem && (aiItem.anchor_r2 !== undefined ? aiItem.anchor_r2 : aiItem.r2)) || 0);
+                    const _tpShown = Number((aiItem && aiItem.target_profit_price) || 0);
                     let _branchAReason = intraReason || "";
-                    if (_r1Shown > 0) _branchAReason = _branchAReason.replace(/压力位\(R1 \$[\d.]+\)/, `压力位(R1 $${_r1Shown.toFixed(2)})`);
+                    if (_r1Shown > 0 && curActive > 0 && _r1Shown <= curActive * 1.005) {
+                        const _upPx = (_r2Shown > curActive * 1.005) ? _r2Shown : ((_tpShown > curActive * 1.005) ? _tpShown : Number((curActive * (1.0 + Math.max(0.03, 1.5 * atrFracNow))).toFixed(2)));
+                        const _upLbl = (_r2Shown > curActive * 1.005) ? `R2 $${_upPx.toFixed(2)}` : `动态目标 $${_upPx.toFixed(2)}`;
+                        _branchAReason = _branchAReason.replace(/压力位\(R1 \$[\d.]+\)/, `上方目标(${_upLbl})`);
+                    } else if (_r1Shown > 0) {
+                        _branchAReason = _branchAReason.replace(/压力位\(R1 \$[\d.]+\)/, `压力位(R1 $${_r1Shown.toFixed(2)})`);
+                    }
                     intraReasonEl.innerText = _branchAReason;
                     intraBannerEl.style.background = pal.warnBg;
                     intraBannerEl.style.borderColor = pal.warnBorder;

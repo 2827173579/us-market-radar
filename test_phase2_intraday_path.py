@@ -287,6 +287,31 @@ class TestPhase2IntradayPathCorridor(unittest.TestCase):
         self.assertEqual(base_item["p25_prices"][2], round(42.00 * (1.0 - 0.02), 2))
         self.assertEqual(base_item["p75_prices"][2], round(42.00 * (1.0 + 0.024), 2))
 
+    def test_06_1x_etf_adaptive_0930_threshold_and_corridor_relative_squash_guard(self):
+        """验证 1x ETF (QQQ) 1% 盘前跳动即触发自适应 09:30 开盘锚平移，且前端源码含 0.55*coreSpan 防压扁与博反抽徽标。"""
+        # 1) QQQ 日内走廊半宽约 0.75% -> 自适应阈值 max(0.5%, 0.5*0.75%) = 0.5%，跳动 0.9% 即触发平移
+        qqq_item = {
+            "status": "ok",
+            "anchor_open": 654.00,
+            "prev_close": 610.04,
+            "p25_pcts": [0.0, -0.7, -0.8],
+            "p50_pcts": [0.0, 0.0, 0.1],
+            "p75_pcts": [0.0, 0.8, 0.7],
+            "p25_prices": [654.00, 649.42, 648.77],
+            "p50_prices": [654.00, 654.00, 654.65],
+            "p75_prices": [654.00, 659.23, 658.58],
+        }
+        ipp.apply_rth_open_anchor_translation(qqq_item, [648.10, 649.00, None])
+        self.assertTrue(qqq_item.get("rth_open_aligned"))
+        self.assertEqual(qqq_item["anchor_open"], 648.10)
+        self.assertEqual(qqq_item["premarket_anchor_open"], 654.00)
+
+        # 2) 验证前端源码具备相对走廊跨度 0.55*coreSpanRth 收口、⚡ 博反抽徽标与已破 R1 动态目标替换
+        src = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "create_futu_terminal.py"), encoding="utf-8").read()
+        self.assertIn("0.55 * coreSpanRth", src)
+        self.assertIn("⚡ 博反抽", src)
+        self.assertIn("上方目标(${_upLbl})", src)
+
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)
