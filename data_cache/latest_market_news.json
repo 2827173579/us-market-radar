@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795468787.895,
-  "updated_at_et": "11-23 16:19 ET",
-  "updated_at_kst": "06:19 KST",
+  "updated_at_ts": 1795468899.289,
+  "updated_at_et": "11-23 16:21 ET",
+  "updated_at_kst": "06:21 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1940,6 +1940,13 @@
     ],
     "TSLA": [
       {
+        "title": "Sector Update: Consumer Stocks Advance Late Afternoon",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/sector-consumer-stocks-advance-afternoon-205006028.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 15:50 ET",
+        "pub_ts": 1795467006.0
+      },
+      {
         "title": "Why Tesla Stock Stepped on the Gas Today",
         "url": "https://www.fool.com/investing/2026/11/23/why-tesla-stock-stepped-on-the-gas-today/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1966,13 +1973,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 12:32 ET",
         "pub_ts": 1795455137.0
-      },
-      {
-        "title": "Tesla Jumps 13% as Jensen Huang’s Return to NVIDIA Sparks Broad Market Rally; Rivian Rallies 9%, Lucid Surges 8%",
-        "url": "https://247wallst.com/investing/2026/11/23/tesla-jumps-13-as-jensen-huangs-return-to-nvidia-sparks-broad-market-rally-rivian-rallies-9-lucid-surges-8/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 12:03 ET",
-        "pub_ts": 1795453422.0
       }
     ],
     "AXP": [
@@ -2199,6 +2199,13 @@
     ],
     "HPE": [
       {
+        "title": "HPE reports fiscal 2026 fourth quarter results",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/hpe-reports-fiscal-2026-fourth-210500319.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 16:05 ET",
+        "pub_ts": 1795467900.0
+      },
+      {
         "title": "HPE Jumps 12.1% as Nvidia Rally Lifts AI Hardware Stocks on Monday",
         "url": "https://finance.yahoo.com/technology/ai/articles/hpe-jumps-12-1-nvidia-170244952.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2225,13 +2232,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 07:05 ET",
         "pub_ts": 1795435538.0
-      },
-      {
-        "title": "Dell Wants Up to 45% More on Signed AI Deals. IREN Has a Big Problem",
-        "url": "https://www.tikr.com/blog/dell-wants-up-to-45-more-on-signed-ai-deals-iren-has-a-big-problem?ref=yahoofinance&tlnk=yf-261123-6945q259&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 14:38 ET",
-        "pub_ts": 1795462727.0
       }
     ],
     "DELL": [
@@ -3276,28 +3276,28 @@
     "NBIS": 1795468787.8952234,
     "APLD": 1795468787.8952234,
     "VST": 1795468787.8952234,
-    "BE": 1795467323.1422722,
-    "CRDO": 1795467323.1422722,
-    "COHR": 1795467323.1422722,
+    "BE": 1795468899.2888107,
+    "CRDO": 1795468899.2888107,
+    "COHR": 1795468899.2888107,
     "MRVL": 1795468350.6635463,
     "LITE": 1795468350.6635463,
-    "AAOI": 1795467323.1422722,
-    "SPCX": 1795467323.1422722,
-    "ASTS": 1795467323.1422722,
+    "AAOI": 1795468899.2888107,
+    "SPCX": 1795468899.2888107,
+    "ASTS": 1795468899.2888107,
     "AXTI": 1795468350.6635463,
-    "NASA": 1795467323.1422722,
-    "LUNR": 1795467323.1422722,
-    "TSLA": 1795467323.1422722,
-    "AXP": 1795467323.1422722,
-    "RKLB": 1795467323.1422722,
-    "KO": 1795467323.1422722,
-    "FLY": 1795467323.1422722,
-    "INTC": 1795467323.1422722,
-    "VRT": 1795467323.1422722,
-    "HPE": 1795467323.1422722,
-    "DELL": 1795467323.1422722,
-    "OKLO": 1795467323.1422722,
-    "CEG": 1795467323.1422722,
+    "NASA": 1795468899.2888107,
+    "LUNR": 1795468899.2888107,
+    "TSLA": 1795468899.2888107,
+    "AXP": 1795468899.2888107,
+    "RKLB": 1795468899.2888107,
+    "KO": 1795468899.2888107,
+    "FLY": 1795468899.2888107,
+    "INTC": 1795468899.2888107,
+    "VRT": 1795468899.2888107,
+    "HPE": 1795468899.2888107,
+    "DELL": 1795468899.2888107,
+    "OKLO": 1795468899.2888107,
+    "CEG": 1795468899.2888107,
     "FPS": 1795467428.8572154,
     "MU": 1795468350.6635463,
     "SKHY": 1795468350.6635463,
@@ -3320,7 +3320,7 @@
     "V": 1795468681.8688717,
     "CAT": 1795467428.8572154,
     "FN": 1795468350.6635463,
-    "GLW": 1795467323.1422722,
+    "GLW": 1795468899.2888107,
     "ANT": 1795467428.8572154,
     "XAUUSD": 1795467428.8572154
   },

@@ -5075,9 +5075,17 @@
     "2026-11-23:DEFENSIVE_FLIGHT:+0.2": {
       "device": "PC",
       "ts": 1795468801.4524071
+    },
+    "2026-11-23:PLTR/AXP/SPY/IWM:5M_ENTRY": {
+      "device": "PC",
+      "ts": 1795468913.7273524
+    },
+    "2026-11-23:DEFENSIVE_FLIGHT:+0.4": {
+      "device": "PC",
+      "ts": 1795468919.6024325
     }
   },
   "device": "PC",
-  "last_heartbeat_ts": 1795468710.8691537,
-  "updated_at": "2026-11-23T21:20:01.452892+00:00"
+  "last_heartbeat_ts": 1795468822.0876474,
+  "updated_at": "2026-11-23T21:21:59.602945+00:00"
 }
