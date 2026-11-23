@@ -1,9 +1,22 @@
 {
-  "updated_at_ts": 1795443729.493,
-  "updated_at_et": "11-23 09:22 ET",
-  "updated_at_kst": "23:22 KST",
+  "updated_at_ts": 1795443838.003,
+  "updated_at_et": "11-23 09:23 ET",
+  "updated_at_kst": "23:23 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261123222253564800",
+      "title": "纳指期货大涨后短暂停牌",
+      "summary": "纳斯达克100指数期货涨7%后，因波动过大短暂暂停交易。",
+      "keywords": [
+        "纳斯达克"
+      ],
+      "pub_ts": 1795443773.0,
+      "time_et": "11-23 09:22 ET",
+      "time_bj": "22:22 BJ",
+      "time_kst": "23:22 KST",
+      "time_display": "09:22 ET / 22:22 BJ"
+    },
     {
       "id": "20261123221906446800",
       "title": "标普500指数期货刷新盘中高点，涨约4.6%。",
@@ -323,22 +336,6 @@
       "time_bj": "21:21 BJ",
       "time_kst": "22:21 KST",
       "time_display": "08:21 ET / 21:21 BJ"
-    },
-    {
-      "id": "20261123204452777800",
-      "title": "整理：每日美股市场要闻速递（2026-11-23）",
-      "summary": "重要新闻 1. 美股AI芯片概念盘前反弹。 个股新闻 1. CrowdStrike(CRWD.O)宣布与Zscaler达成最终收购协议，拟通过全股票交易收购后者。 2. 必和必拓(BHP.N)：计划到2040年，将旗下南澳大利亚铜业务的年产量翻倍至65万吨，以满足电气化、可再生能源及人工智能发展推动的长期铜需求增长。 3. 意法半导体：目标2025~2028年实现STM32芯片收入翻倍。 4. 丰田汽车(TM.N)计划在2027年于中国市场发起一轮产品攻势，核心是汉兰达、赛那、卡罗拉三款主力车型的全面换代。 5. 特朗普政府口风逆转，黄仁勋已成为英伟达(NVDA.O)“新CEO”第二大热门人选。 6. 甲骨文(ORCL.N)表示，已筹集履行与OpenAI基础设施合同所需的全部资金，本月早些时候完成最后一轮融资后，成为本轮投资周期中首家完成全部资金筹措的超大规模云服务商。 7. 有媒体称亚马逊(AMZN.O)即将达成一项75亿美元收购AI初创公司Decart的交易。 8. 特斯拉(TSLA.O)正式启动FSD（Full Self-Driving，完全自动驾驶）V15监督版推送。 9. Arm(ARM.O)CEO雷内·哈斯签署延长至2033年的新协议，将兼任软银集团副董事长。",
-      "keywords": [
-        "芯片",
-        "半导体",
-        "英伟达",
-        "特朗普"
-      ],
-      "pub_ts": 1795437892.0,
-      "time_et": "11-23 07:44 ET",
-      "time_bj": "20:44 BJ",
-      "time_kst": "21:44 KST",
-      "time_display": "07:44 ET / 20:44 BJ"
     }
   ],
   "ticker_news": {
@@ -1949,6 +1946,13 @@
         "pub_ts": 1795440048.0
       },
       {
+        "title": "SpaceX Stock Rebounds as Musk Starlink Talk Fuels Hopes of a Tesla Merger",
+        "url": "https://finance.yahoo.com/m/9c2ec5db-97d0-391b-9d5a-611c8d24fe36/spacex-stock-rebounds-as-musk.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 08:08 ET",
+        "pub_ts": 1795439280.0
+      },
+      {
         "title": "Tesla FSD V15 Rolling Out, Goes 'Wide' Next Month. Elon Musk Says It's 'Something Special.'",
         "url": "https://finance.yahoo.com/m/b31af40e-5144-3249-9033-82521507fe84/tesla-fsd-v15-rolling-out%2C.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1961,16 +1965,16 @@
         "source": "Yahoo Finance",
         "time": "11-23 07:41 ET",
         "pub_ts": 1795437680.0
-      },
-      {
-        "title": "Could Tesla Stock Really Fall To $140?",
-        "url": "https://www.trefis.com/stock/tsla/articles/627621/could-tesla-stock-really-fall-to-140/2026-11-23?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 07:39 ET",
-        "pub_ts": 1795437593.0
       }
     ],
     "AXP": [
+      {
+        "title": "Energy Fuels Targets One Million Pounds of Uranium Production at White Mesa Mill as US Mining Projects Advance",
+        "url": "https://investorshub.advfn.com/market-news/article/40520/energy-fuels-targets-one-million-pounds-of-uranium-production-at-white-mesa-mill-as-us-mining-projects-advance?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 08:44 ET",
+        "pub_ts": 1795441456.0
+      },
       {
         "title": "JPMorgan, American Express and Travelers Are Raising Dividends for Retirees",
         "url": "https://247wallst.com/investing/2026/11/22/jpmorgan-american-express-and-travelers-are-raising-dividends-for-retirees/?.tsrc=rss",
@@ -1998,13 +2002,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 07:00 ET",
         "pub_ts": 1795089600.0
-      },
-      {
-        "title": "Vizsla Silver Pushes Panuco First Production Target to Second Half of 2028 Amid Permitting and Construction Delays",
-        "url": "https://investorshub.advfn.com/market-news/article/40347/vizsla-silver-pushes-panuco-first-production-target-to-second-half-of-2028-amid-permitting-and-construction-delays?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 06:57 ET",
-        "pub_ts": 1795089477.0
       }
     ],
     "RKLB": [
@@ -3193,6 +3190,27 @@
     ],
     "ANT": [
       {
+        "title": "Has Anthropic's turbulent post-IPO raised questions about its $900B compute bill?",
+        "url": "https://finance.yahoo.com/video/has-anthropics-turbulent-post-ipo-raised-questions-about-its-900b-compute-bill-142036541.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 09:20 ET",
+        "pub_ts": 1795443636.0
+      },
+      {
+        "title": "Anthropic Shares Rebound More Than 4% After Selloff Threatens Record IPO Gains",
+        "url": "https://investorshub.advfn.com/market-news/article/40538/anthropic-shares-rebound-more-than-4-after-selloff-threatens-record-ipo-gains?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 08:57 ET",
+        "pub_ts": 1795442241.0
+      },
+      {
+        "title": "Dow Jones, Nasdaq, S&P 500 preview: Consumer spending in focus after AI rout",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/dow-jones-nasdaq-p-500-135515185.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 08:55 ET",
+        "pub_ts": 1795442115.0
+      },
+      {
         "title": "Anthropic's IPO set for blastoff in key test for AI boom",
         "url": "https://www.cbsnews.com/news/anthropic-ipo-ai-boom-nasdaq-debut/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3205,27 +3223,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 08:45 ET",
         "pub_ts": 1795441502.0
-      },
-      {
-        "title": "Anthropic Raised Billions In A Record IPO. Now Wall Street Fears Its Debt Could Be Junk.",
-        "url": "https://www.ibtimes.com/anthropic-ipo-junk-debt-rating-infrastructure-commitments-3810082?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 08:36 ET",
-        "pub_ts": 1795440995.0
-      },
-      {
-        "title": "Cathie Wood Goes Bargain Hunting: 3 Stocks She Just Bought",
-        "url": "https://www.fool.com/investing/2026/11/23/cathie-wood-goes-bargain-hunting-3-stocks-she-just-bought/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 08:29 ET",
-        "pub_ts": 1795440542.0
-      },
-      {
-        "title": "GraniteShares launches AIL and ANS, putting both sides of Anthropic on one exchange.",
-        "url": "https://finance.yahoo.com/markets/options/articles/graniteshares-launches-ail-ans-putting-131500180.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 08:15 ET",
-        "pub_ts": 1795439700.0
       }
     ],
     "XAUUSD": [
@@ -3282,17 +3279,17 @@
     "AXTI": 1795443164.389468,
     "NASA": 1795443505.8719223,
     "LUNR": 1795443505.8719223,
-    "TSLA": 1795442255.8019989,
-    "AXP": 1795442255.8019989,
+    "TSLA": 1795443838.0027757,
+    "AXP": 1795443838.0027757,
     "RKLB": 1795443505.8719223,
     "KO": 1795443505.8719223,
     "FLY": 1795443505.8719223,
-    "INTC": 1795442255.8019989,
-    "VRT": 1795442255.8019989,
-    "HPE": 1795442255.8019989,
-    "DELL": 1795442255.8019989,
+    "INTC": 1795443838.0027757,
+    "VRT": 1795443838.0027757,
+    "HPE": 1795443838.0027757,
+    "DELL": 1795443838.0027757,
     "OKLO": 1795442397.3644836,
-    "CEG": 1795442255.8019989,
+    "CEG": 1795443838.0027757,
     "FPS": 1795442397.3644836,
     "MU": 1795443164.389468,
     "SKHY": 1795443164.389468,
@@ -3316,7 +3313,7 @@
     "CAT": 1795443389.0420787,
     "FN": 1795443164.389468,
     "GLW": 1795443505.8719223,
-    "ANT": 1795442255.8019989,
+    "ANT": 1795443838.0027757,
     "XAUUSD": 1795443164.389468
   },
   "opex_shield": {
@@ -3336,7 +3333,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (09:19 ET / 22:19 BJ) [标普]：标普500指数期货刷新盘中高点，涨约4.6%。",
+    "detail": "⚡ 最新核心快讯 (09:22 ET / 22:22 BJ) [纳斯达克]：纳斯达克100指数期货涨7%后，因波动过大短暂暂停交易。",
     "event_name": "",
     "minutes_left": 0,
     "opex_shield": {
