@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795454506.351,
-  "updated_at_et": "11-23 12:21 ET",
-  "updated_at_kst": "02:21 KST",
+  "updated_at_ts": 1795454608.989,
+  "updated_at_et": "11-23 12:23 ET",
+  "updated_at_kst": "02:23 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1751,6 +1751,13 @@
     ],
     "SPCX": [
       {
+        "title": "Wall Street's SpaceX sequel: Anthropic gets leveraged ETFs and options, and the original didn't end well",
+        "url": "https://finance.yahoo.com/markets/article/wall-streets-spacex-sequel-anthropic-gets-leveraged-etfs-and-options-and-the-original-didnt-end-well-171144316.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 12:11 ET",
+        "pub_ts": 1795453904.0
+      },
+      {
         "title": "Jefferies bullish on SpaceX with new Buy rating, betting on AI over rockets",
         "url": "https://finance.yahoo.com/markets/stocks/article/jefferies-bullish-on-spacex-with-new-buy-rating-betting-on-ai-over-rockets-164629144.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1777,13 +1784,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 11:35 ET",
         "pub_ts": 1795451702.0
-      },
-      {
-        "title": "SpaceX Faces Lawsuits From Two States Over Grok AI Safety Failures",
-        "url": "https://finance.yahoo.com/technology/ai/articles/spacex-faces-lawsuits-two-states-162425330.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 11:24 ET",
-        "pub_ts": 1795451065.0
       }
     ],
     "ASTS": [
@@ -1899,6 +1899,13 @@
     ],
     "LUNR": [
       {
+        "title": "Intuitive Machines vs. Redwire: Which Space Infrastructure Stock Is a Better Buy for 2027?",
+        "url": "https://www.fool.com/coverage/better-buy/2026/11/23/intuitive-machines-vs-redwire-which-space-infrastructure-stock-is-a-better-buy-for-2027/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 12:01 ET",
+        "pub_ts": 1795453262.0
+      },
+      {
         "title": "MarketBeat Week in Review – 11/16 - 11/20",
         "url": "https://www.marketbeat.com/articles/marketbeat-week-in-review-2026-11-16-11-20/?utm_source=yahoofinance&utm_medium=yahoofinance&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1925,13 +1932,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 06:12 ET",
         "pub_ts": 1795086736.0
-      },
-      {
-        "title": "Intuitive Machines (LUNR) Takes a Beating. Here’s What Spooked Investors",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/intuitive-machines-lunr-takes-beating-014036181.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-16 20:40 ET",
-        "pub_ts": 1794879636.0
       }
     ],
     "TSLA": [
@@ -3270,24 +3270,24 @@
     "AMZN": 1795454506.3507226,
     "CRWV": 1795454506.3507226,
     "NBIS": 1795454506.3507226,
-    "APLD": 1795453066.5165756,
+    "APLD": 1795454608.9894304,
     "VST": 1795454506.3507226,
-    "BE": 1795453066.5165756,
-    "CRDO": 1795453066.5165756,
+    "BE": 1795454608.9894304,
+    "CRDO": 1795454608.9894304,
     "COHR": 1795453177.1503093,
     "MRVL": 1795454180.1757455,
     "LITE": 1795454180.1757455,
-    "AAOI": 1795453066.5165756,
-    "SPCX": 1795453066.5165756,
-    "ASTS": 1795453066.5165756,
+    "AAOI": 1795454608.9894304,
+    "SPCX": 1795454608.9894304,
+    "ASTS": 1795454608.9894304,
     "AXTI": 1795454180.1757455,
-    "NASA": 1795453066.5165756,
-    "LUNR": 1795453066.5165756,
+    "NASA": 1795454608.9894304,
+    "LUNR": 1795454608.9894304,
     "TSLA": 1795453177.1503093,
     "AXP": 1795453177.1503093,
-    "RKLB": 1795453066.5165756,
-    "KO": 1795453066.5165756,
-    "FLY": 1795453066.5165756,
+    "RKLB": 1795454608.9894304,
+    "KO": 1795454608.9894304,
+    "FLY": 1795454608.9894304,
     "INTC": 1795453177.1503093,
     "VRT": 1795453177.1503093,
     "HPE": 1795453177.1503093,
@@ -3309,16 +3309,16 @@
     "MRNA": 1795454180.1757455,
     "NKE": 1795454180.1757455,
     "MCD": 1795454180.1757455,
-    "PEP": 1795453066.5165756,
+    "PEP": 1795454608.9894304,
     "XOM": 1795454389.699881,
     "JPM": 1795454389.699881,
-    "WMT": 1795453066.5165756,
+    "WMT": 1795454608.9894304,
     "V": 1795454389.699881,
     "CAT": 1795453177.1503093,
     "FN": 1795454180.1757455,
-    "GLW": 1795453066.5165756,
+    "GLW": 1795454608.9894304,
     "ANT": 1795453177.1503093,
-    "XAUUSD": 1795453066.5165756
+    "XAUUSD": 1795454608.9894304
   },
   "opex_shield": {
     "date": "2026-11-23",
