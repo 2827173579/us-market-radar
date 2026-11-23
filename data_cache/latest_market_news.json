@@ -1,9 +1,22 @@
 {
-  "updated_at_ts": 1795448204.933,
-  "updated_at_et": "11-23 10:36 ET",
-  "updated_at_kst": "00:36 KST",
+  "updated_at_ts": 1795448314.753,
+  "updated_at_et": "11-23 10:38 ET",
+  "updated_at_kst": "00:38 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261123233705253800",
+      "title": "费城半导体指数一度涨15.3%，有望创下2025年3月以来最大百分比涨幅。",
+      "summary": "费城半导体指数一度涨15.3%，有望创下2025年3月以来最大百分比涨幅。",
+      "keywords": [
+        "半导体"
+      ],
+      "pub_ts": 1795448225.0,
+      "time_et": "11-23 10:37 ET",
+      "time_bj": "23:37 BJ",
+      "time_kst": "00:37 KST",
+      "time_display": "10:37 ET / 23:37 BJ"
+    },
     {
       "id": "20261123233316773800",
       "title": "美国总统特朗普：黄仁勋已在构思未来三代芯片。",
@@ -330,19 +343,6 @@
       "time_bj": "22:22 BJ",
       "time_kst": "23:22 KST",
       "time_display": "09:22 ET / 22:22 BJ"
-    },
-    {
-      "id": "20261123221906446800",
-      "title": "标普500指数期货刷新盘中高点，涨约4.6%。",
-      "summary": "标普500指数期货刷新盘中高点，涨约4.6%。",
-      "keywords": [
-        "标普"
-      ],
-      "pub_ts": 1795443546.0,
-      "time_et": "11-23 09:19 ET",
-      "time_bj": "22:19 BJ",
-      "time_kst": "23:19 KST",
-      "time_display": "09:19 ET / 22:19 BJ"
     }
   ],
   "ticker_news": {
@@ -1458,6 +1458,13 @@
     ],
     "APLD": [
       {
+        "title": "Applied Digital Soars 26% on $5.4B Hyperscaler Lease; Cipher Digital Jumps 19%, TeraWulf Surges 15%",
+        "url": "https://247wallst.com/investing/2026/11/23/applied-digital-soars-26-on-5-4b-hyperscaler-lease-cipher-digital-jumps-19-terawulf-surges-15/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 10:02 ET",
+        "pub_ts": 1795446161.0
+      },
+      {
         "title": "Applied Digital Shares Surge 13% After Securing $5.4 Billion AI Data Centre Lease Agreement",
         "url": "https://investorshub.advfn.com/market-news/article/40547/applied-digital-shares-surge-13-after-securing-5-4-billion-ai-data-centre-lease-agreement?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1484,13 +1491,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 09:08 ET",
         "pub_ts": 1795442904.0
-      },
-      {
-        "title": "Applied Digital stock jumps on $5.4 billion hyperscaler lease deal",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/applied-digital-stock-jumps-5-135320409.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 08:53 ET",
-        "pub_ts": 1795442000.0
       }
     ],
     "VST": [
@@ -1754,6 +1754,13 @@
     ],
     "SPCX": [
       {
+        "title": "Why One Analyst Upgrade Sent SpaceX Soaring on Monday",
+        "url": "https://www.fool.com/investing/2026/11/23/why-one-analyst-upgrade-sent-spacex-soaring-on-monday/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 10:18 ET",
+        "pub_ts": 1795447086.0
+      },
+      {
         "title": "Cathie Wood Swapped Nvidia for SpaceX Over the Risk of “Losing Jensen” to Musk. Oops.",
         "url": "https://www.tikr.com/blog/cathie-wood-swapped-nvidia-for-spacex-over-the-risk-of-losing-jensen-to-musk-oops?ref=yahoofinance&tlnk=yf-261123-9pqrq3mp&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1780,13 +1787,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 09:05 ET",
         "pub_ts": 1795442731.0
-      },
-      {
-        "title": "Jefferies initiates SpaceX at Buy, sees \"rare combination\" to gain AI share",
-        "url": "https://finance.yahoo.com/technology/ai/articles/jefferies-initiates-spacex-buy-sees-132823089.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 08:28 ET",
-        "pub_ts": 1795440503.0
       }
     ],
     "ASTS": [
@@ -2013,6 +2013,13 @@
     ],
     "RKLB": [
       {
+        "title": "Rocket Lab Soars 10% After Its Worst Week Ever as Space Stocks Rebound",
+        "url": "https://www.tikr.com/blog/rocket-lab-soars-10-after-its-worst-week-ever-as-space-stocks-rebound?ref=yahoofinance&tlnk=yf-261123-mr875rpx&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 10:02 ET",
+        "pub_ts": 1795446132.0
+      },
+      {
         "title": "Space Stocks Soar. They Have a Long Way to Go.",
         "url": "https://finance.yahoo.com/m/807a49f4-1fcb-36c2-8b00-94d5cc191311/space-stocks-soar.-they-have.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2039,16 +2046,16 @@
         "source": "Yahoo Finance",
         "time": "11-23 07:27 ET",
         "pub_ts": 1795436828.0
-      },
-      {
-        "title": "Rocket Lab and Nebius Are Each About 66% Below Their Highs. I'd Buy Both and Hold Through 2030.",
-        "url": "https://www.fool.com/investing/2026/11/23/rocket-lab-and-nebius-are-each-about-66-below-their-highs-i-d-buy-both-and-hold-through-2030/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 04:07 ET",
-        "pub_ts": 1795424822.0
       }
     ],
     "KO": [
+      {
+        "title": "The Average 1-Year CD Pays 1.81%. Dividend Stocks Offer a Different Trade-Off",
+        "url": "https://247wallst.com/investing/2026/11/23/the-average-1-year-cd-pays-1-81-dividend-stocks-offer-a-different-trade-off/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 10:17 ET",
+        "pub_ts": 1795447020.0
+      },
       {
         "title": "Coca-Cola Stock Returned 40%. How Much Is Left?",
         "url": "https://www.trefis.com/stock/ko/articles/627637/coca-cola-stock-returned-40-how-much-is-left/2026-11-23?.tsrc=rss",
@@ -2076,13 +2083,6 @@
         "source": "Yahoo Finance",
         "time": "11-22 11:50 ET",
         "pub_ts": 1795366227.0
-      },
-      {
-        "title": "Here’s How Many Shares of Coca-Cola You’d Need for $10,000 in Yearly Dividends.",
-        "url": "https://www.fool.com/investing/2026/11/22/heres-how-many-shares-of-coca-cola-youd-need-for-10000-in-yearly-dividends/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-22 07:19 ET",
-        "pub_ts": 1795349942.0
       }
     ],
     "FLY": [
@@ -3012,6 +3012,13 @@
     ],
     "WMT": [
       {
+        "title": "MERSCO Joins Walmart’s Hardlines Category Exchange, Exploring Opportunities in Backyard Play Expansion and Peak-Season Strategy",
+        "url": "https://finance.yahoo.com/small-business/articles/mersco-joins-walmart-hardlines-category-151000715.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 10:10 ET",
+        "pub_ts": 1795446600.0
+      },
+      {
         "title": "Should You Buy Walmart Stock Now or Wait for a Dip?",
         "url": "https://www.fool.com/investing/2026/11/23/should-you-buy-walmart-stock-now-or-wait-for-a-dip/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3038,13 +3045,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 06:45 ET",
         "pub_ts": 1795434358.0
-      },
-      {
-        "title": "First Trust L/S Equity (FTLS) Buys $73.5 Million More Berkshire on Thursday",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/first-trust-l-equity-ftls-110352347.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 06:03 ET",
-        "pub_ts": 1795431832.0
       }
     ],
     "V": [
@@ -3273,24 +3273,24 @@
     "AMZN": 1795448204.9328008,
     "CRWV": 1795448204.9328008,
     "NBIS": 1795448204.9328008,
-    "APLD": 1795446697.8156033,
+    "APLD": 1795448314.7534328,
     "VST": 1795448204.9328008,
-    "BE": 1795446697.8156033,
-    "CRDO": 1795446697.8156033,
+    "BE": 1795448314.7534328,
+    "CRDO": 1795448314.7534328,
     "COHR": 1795447117.128291,
     "MRVL": 1795447978.9951282,
     "LITE": 1795447978.9951282,
-    "AAOI": 1795446697.8156033,
-    "SPCX": 1795446697.8156033,
-    "ASTS": 1795446697.8156033,
+    "AAOI": 1795448314.7534328,
+    "SPCX": 1795448314.7534328,
+    "ASTS": 1795448314.7534328,
     "AXTI": 1795447978.9951282,
-    "NASA": 1795446697.8156033,
-    "LUNR": 1795446697.8156033,
+    "NASA": 1795448314.7534328,
+    "LUNR": 1795448314.7534328,
     "TSLA": 1795446909.0592558,
     "AXP": 1795446909.0592558,
-    "RKLB": 1795446697.8156033,
-    "KO": 1795446697.8156033,
-    "FLY": 1795446697.8156033,
+    "RKLB": 1795448314.7534328,
+    "KO": 1795448314.7534328,
+    "FLY": 1795448314.7534328,
     "INTC": 1795446909.0592558,
     "VRT": 1795446909.0592558,
     "HPE": 1795446909.0592558,
@@ -3312,14 +3312,14 @@
     "MRNA": 1795447978.9951282,
     "NKE": 1795447978.9951282,
     "MCD": 1795447978.9951282,
-    "PEP": 1795446697.8156033,
+    "PEP": 1795448314.7534328,
     "XOM": 1795448088.9851124,
     "JPM": 1795448088.9851124,
-    "WMT": 1795446589.527723,
+    "WMT": 1795448314.7534328,
     "V": 1795448088.9851124,
-    "CAT": 1795446589.527723,
+    "CAT": 1795448314.7534328,
     "FN": 1795447978.9951282,
-    "GLW": 1795446697.8156033,
+    "GLW": 1795448314.7534328,
     "ANT": 1795446909.0592558,
     "XAUUSD": 1795448088.9851124
   },
@@ -3340,7 +3340,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (10:33 ET / 23:33 BJ) [芯片] [特朗普]：美国总统特朗普：黄仁勋已在构思未来三代芯片。",
+    "detail": "⚡ 最新核心快讯 (10:37 ET / 23:37 BJ) [半导体]：费城半导体指数一度涨15.3%，有望创下2025年3月以来最大百分比涨幅。",
     "event_name": "",
     "minutes_left": 0,
     "opex_shield": {
