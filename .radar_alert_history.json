@@ -75,7 +75,7 @@
     },
     "AXP": {
       "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1795437245.8535619
+      "last_notified_at": 1795440948.8588262
     },
     "SPY": {
       "state": "NORMAL",
@@ -162,8 +162,8 @@
       "last_notified_at": 1795439185.092881
     },
     "AMZN": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1795440948.8588262
     },
     "MSFT": {
       "state": "NORMAL",
