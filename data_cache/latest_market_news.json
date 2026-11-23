@@ -1,9 +1,22 @@
 {
-  "updated_at_ts": 1795432842.463,
-  "updated_at_et": "11-23 06:20 ET",
-  "updated_at_kst": "20:20 KST",
+  "updated_at_ts": 1795433361.25,
+  "updated_at_et": "11-23 06:29 ET",
+  "updated_at_kst": "20:29 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261123192208179800",
+      "title": "阻止伊朗战争还是避免政府停摆？民主党面临中期选举后的首场大考",
+      "summary": "专家警告，如果民主党因担心政府停摆而迟迟不采取行动，就可能在事实上默许特朗普继续伊朗战争。随着冲突持续，民主党此前反对军事行动的政治承诺也可能受到质疑。",
+      "keywords": [
+        "特朗普"
+      ],
+      "pub_ts": 1795432928.0,
+      "time_et": "11-23 06:22 ET",
+      "time_bj": "19:22 BJ",
+      "time_kst": "20:22 KST",
+      "time_display": "06:22 ET / 19:22 BJ"
+    },
     {
       "id": "20261123191732361800",
       "title": "WTI原油日内走低2.00%，现报83.12美元/桶。",
@@ -334,20 +347,6 @@
       "time_bj": "13:40 BJ",
       "time_kst": "14:40 KST",
       "time_display": "00:40 ET / 13:40 BJ"
-    },
-    {
-      "id": "20261123125746212800",
-      "title": "【期货热点追踪】美联储12月加息概率攀升、海外AI叙事持续弱化，LME铜3月份以来首破1…",
-      "summary": "【期货热点追踪】美联储12月加息概率攀升、海外AI叙事持续弱化，LME铜3月份以来首破12000美元大关！本周美股走势最为关键，若持续下探，铜价或将......点击阅读。",
-      "keywords": [
-        "美联储",
-        "加息"
-      ],
-      "pub_ts": 1795409866.0,
-      "time_et": "11-22 23:57 ET",
-      "time_bj": "12:57 BJ",
-      "time_kst": "13:57 KST",
-      "time_display": "23:57 ET / 12:57 BJ"
     }
   ],
   "ticker_news": {
@@ -1278,6 +1277,13 @@
     ],
     "PLTR": [
       {
+        "title": "ETFs Are Buying Palantir (PLTR) on Nov. 19",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-buying-palantir-pltr-nov-110127861.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 06:01 ET",
+        "pub_ts": 1795431687.0
+      },
+      {
         "title": "Palantir Technologies (PLTR) Co Hosts Sovereign AI Defense Summit",
         "url": "https://finance.yahoo.com/technology/ai/articles/palantir-technologies-pltr-co-hosts-210650181.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1304,13 +1310,6 @@
         "source": "Yahoo Finance",
         "time": "11-22 06:06 ET",
         "pub_ts": 1795345598.0
-      },
-      {
-        "title": "Palantir Just Dropped 25% in a Month. Is It Time to Sell, or Load Up?",
-        "url": "https://www.tikr.com/blog/palantir-just-dropped-25-in-a-month-is-it-time-to-sell-or-load-up?ref=yahoofinance&tlnk=yf-261121-gwq24w5f&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-21 09:22 ET",
-        "pub_ts": 1795270955.0
       }
     ],
     "NOW": [
@@ -1766,6 +1765,13 @@
         "pub_ts": 1795427644.0
       },
       {
+        "title": "Musk: Starship’s Fuel Bill Will Drop “Below $500k” a Flight, With Payload Over 200 Tons",
+        "url": "https://www.tikr.com/blog/musk-starships-fuel-bill-will-drop-below-500k-a-flight-with-payload-over-200-tons?ref=yahoofinance&tlnk=yf-261123-pqp22r5v&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 06:04 ET",
+        "pub_ts": 1795431870.0
+      },
+      {
         "title": "Hundreds of Millions of SpaceX Shares Become Eligible for Sale on Dec. 8. Should You Buy Before Then?",
         "url": "https://www.fool.com/investing/2026/11/23/hundreds-of-millions-of-spacex-shares-become-eligible-for-sale-on-dec-8-should-you-buy-before-then/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1785,13 +1791,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 03:38 ET",
         "pub_ts": 1795423082.0
-      },
-      {
-        "title": "Cathie Wood Says TSLA Holders ‘Will Get’ A Premium If SpaceX Buys Tesla — HSBC Puts It At Over 30%",
-        "url": "https://stocktwits.com/news-articles/markets/equity/cathie-wood-tsla-holders-premium-if-spacex-buys-tesla-hsbc/cNbYtWbR9Si?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 02:14 ET",
-        "pub_ts": 1795418045.0
       }
     ],
     "ASTS": [
@@ -3273,29 +3272,29 @@
     "GOOGL": 1795432702.8221226,
     "MSFT": 1795432702.8221226,
     "AAPL": 1795432702.8221226,
-    "PLTR": 1795431273.8441029,
+    "PLTR": 1795433039.2859502,
     "NOW": 1795432702.8221226,
     "AMZN": 1795432702.8221226,
     "CRWV": 1795432702.8221226,
-    "NBIS": 1795431273.8441029,
-    "APLD": 1795431273.8441029,
-    "VST": 1795431273.8441029,
-    "BE": 1795431273.8441029,
-    "CRDO": 1795431273.8441029,
+    "NBIS": 1795433039.2859502,
+    "APLD": 1795433039.2859502,
+    "VST": 1795433361.2496567,
+    "BE": 1795433039.2859502,
+    "CRDO": 1795433039.2859502,
     "COHR": 1795432466.7241955,
     "MRVL": 1795432466.7241955,
     "LITE": 1795432466.7241955,
-    "AAOI": 1795431273.8441029,
-    "SPCX": 1795431273.8441029,
-    "ASTS": 1795431273.8441029,
+    "AAOI": 1795433039.2859502,
+    "SPCX": 1795433361.2496567,
+    "ASTS": 1795433361.2496567,
     "AXTI": 1795432466.7241955,
-    "NASA": 1795431273.8441029,
-    "LUNR": 1795431273.8441029,
+    "NASA": 1795433361.2496567,
+    "LUNR": 1795433361.2496567,
     "TSLA": 1795431385.8652925,
     "AXP": 1795431273.8441029,
-    "RKLB": 1795431273.8441029,
-    "KO": 1795431273.8441029,
-    "FLY": 1795431273.8441029,
+    "RKLB": 1795433361.2496567,
+    "KO": 1795433361.2496567,
+    "FLY": 1795433361.2496567,
     "INTC": 1795431273.8441029,
     "VRT": 1795431385.8652925,
     "HPE": 1795431385.8652925,
@@ -3324,7 +3323,7 @@
     "V": 1795432466.7241955,
     "CAT": 1795432580.0483286,
     "FN": 1795432466.7241955,
-    "GLW": 1795431273.8441029,
+    "GLW": 1795433039.2859502,
     "ANT": 1795431273.8441029,
     "XAUUSD": 1795431385.8652925
   },
@@ -3345,7 +3344,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (06:17 ET / 19:17 BJ) [原油]：WTI原油日内走低2.00%，现报83.12美元/桶。",
+    "detail": "⚡ 最新核心快讯 (06:22 ET / 19:22 BJ) [特朗普]：专家警告，如果民主党因担心政府停摆而迟迟不采取行动，就可能在事实上默许特朗普继续伊朗战争。随着冲突持续，民主党此前反对军事行动的政治承诺也可能受到质疑。",
     "event_name": "",
     "minutes_left": 0,
     "opex_shield": {
