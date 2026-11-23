@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795468561.058,
-  "updated_at_et": "11-23 16:16 ET",
-  "updated_at_kst": "06:16 KST",
+  "updated_at_ts": 1795468681.869,
+  "updated_at_et": "11-23 16:18 ET",
+  "updated_at_kst": "06:18 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -904,39 +904,39 @@
     ],
     "NVDA": [
       {
-        "title": "NVDA rebound meets first test after gap-up fade",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/nvda-rebound-meets-first-test-204518392.html?.tsrc=rss",
+        "title": "Jensen Huang's return to Nvidia caps a comeback bid that stumbled before White House helped",
+        "url": "https://finance.yahoo.com/technology/ai/articles/jensen-huangs-return-nvidia-caps-211556476.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 15:45 ET",
-        "pub_ts": 1795466718.0
+        "time": "11-23 16:15 ET",
+        "pub_ts": 1795468556.0
       },
       {
-        "title": "Why Walmart and Other Defensive Stocks Are Losing Their Luster",
-        "url": "https://finance.yahoo.com/m/d85b751c-8248-3bbc-9071-97e02ce76f85/why-walmart-and-other.html?.tsrc=rss",
+        "title": "Nvidia reinstates Jensen Huang as CEO",
+        "url": "https://www.cbsnews.com/news/nvidia-reinstates-jensen-huang-ceo/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 15:37 ET",
-        "pub_ts": 1795466220.0
+        "time": "11-23 16:13 ET",
+        "pub_ts": 1795468391.0
       },
       {
-        "title": "Gavin Baker: “At Least Three Companies” Want to Replace Nvidia as AI’s Central Bank. Good News for CoreWeave",
-        "url": "https://www.tikr.com/blog/gavin-baker-at-least-three-companies-want-to-replace-nvidia-as-ais-central-bank-good-news-for-coreweave?ref=yahoofinance&tlnk=yf-261123-37w799jj&.tsrc=rss",
+        "title": "Republican senators criticize Nvidia’s decision to reinstate Jensen Huang",
+        "url": "https://finance.yahoo.com/technology/articles/trump-says-convinced-nvidia-board-161922078.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 15:30 ET",
-        "pub_ts": 1795465844.0
+        "time": "11-23 16:09 ET",
+        "pub_ts": 1795468150.0
       },
       {
-        "title": "Jensen Huang Is Back at Nvidia. These Are 3 Remaining Concerns With Nvidia and What They Mean for the Stock.",
-        "url": "https://www.fool.com/investing/2026/11/23/jensen-huang-is-back-at-nvidia-these-are-3-remaining-concerns-with-nvidia-and-what-they-mean-for-the-stock/?.tsrc=rss",
+        "title": "Derive Lists Options on Anthropic, Oil, and the S&P 500",
+        "url": "https://www.bankless.com/read/news/derive-lists-options-on-anthropic-oil-and-the-sp-500?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 15:30 ET",
-        "pub_ts": 1795465802.0
+        "time": "11-23 16:06 ET",
+        "pub_ts": 1795467988.0
       },
       {
-        "title": "5 Stocks Up 20% Or More on Monday Following NVIDIA CEO Jensen Huang’s Return",
-        "url": "https://247wallst.com/videos/5-stocks-up-20-or-more-on-monday-following-nvidia-ceo-jensen-huangs-return/?.tsrc=rss",
+        "title": "Jensen Huang Is Back As Nvidia CEO. Stock Jumps.",
+        "url": "https://finance.yahoo.com/m/9d4f41fa-65db-3d79-8406-bd396f20b522/jensen-huang-is-back-as.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 15:21 ET",
-        "pub_ts": 1795465295.0
+        "time": "11-23 16:02 ET",
+        "pub_ts": 1795467741.0
       }
     ],
     "AMD": [
@@ -2976,6 +2976,13 @@
     ],
     "JPM": [
       {
+        "title": "Fidelity steps in where JPMorgan retreated",
+        "url": "https://www.thestreet.com/crypto/markets/fidelity-steps-in-where-jpmorgan-retreated?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 15:56 ET",
+        "pub_ts": 1795467415.0
+      },
+      {
         "title": "J.P. Morgan NextList Turns 10: The Books, Stages and Destinations Defining What's Next in 2027",
         "url": "https://finance.yahoo.com/media-advertising/articles/j-p-morgan-nextlist-turns-140000015.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3002,13 +3009,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 06:47 ET",
         "pub_ts": 1795434424.0
-      },
-      {
-        "title": "How Many JPMorgan Chase Shares You Need to Collect $6,000 a Year in Dividends",
-        "url": "https://www.fool.com/investing/2026/11/23/how-many-jpmorgan-chase-shares-youd-need-to-collect-6000-a-year-in-dividends/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 06:05 ET",
-        "pub_ts": 1795431902.0
       }
     ],
     "WMT": [
@@ -3244,22 +3244,22 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795467076.6285453,
-    "SOXL": 1795467076.6285453,
+    "KORU": 1795468681.8688717,
+    "SOXL": 1795468681.8688717,
     "SPY": 1795468350.6635463,
-    "DIA": 1795467076.6285453,
-    "SOXX": 1795467076.6285453,
+    "DIA": 1795468681.8688717,
+    "SOXX": 1795468681.8688717,
     "QQQ": 1795468350.6635463,
-    "SMH": 1795467076.6285453,
-    "IWM": 1795467076.6285453,
-    "IGV": 1795467076.6285453,
-    "TLT": 1795467076.6285453,
-    "GLD": 1795467076.6285453,
-    "SQQQ": 1795467076.6285453,
+    "SMH": 1795468681.8688717,
+    "IWM": 1795468681.8688717,
+    "IGV": 1795468681.8688717,
+    "TLT": 1795468681.8688717,
+    "GLD": 1795468681.8688717,
+    "SQQQ": 1795468681.8688717,
     "TSM": 1795467205.866196,
-    "VIXY": 1795467076.6285453,
-    "SOXS": 1795467076.6285453,
-    "NVDA": 1795467076.6285453,
+    "VIXY": 1795468681.8688717,
+    "SOXS": 1795468681.8688717,
+    "NVDA": 1795468681.8688717,
     "AMD": 1795467205.866196,
     "ASML": 1795467205.866196,
     "QCOM": 1795467205.866196,
@@ -3314,10 +3314,10 @@
     "NKE": 1795468350.6635463,
     "MCD": 1795468350.6635463,
     "PEP": 1795467428.8572154,
-    "XOM": 1795467076.6285453,
-    "JPM": 1795467076.6285453,
+    "XOM": 1795468681.8688717,
+    "JPM": 1795468681.8688717,
     "WMT": 1795467428.8572154,
-    "V": 1795467076.6285453,
+    "V": 1795468681.8688717,
     "CAT": 1795467428.8572154,
     "FN": 1795468350.6635463,
     "GLW": 1795467323.1422722,
