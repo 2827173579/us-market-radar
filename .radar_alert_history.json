@@ -82,12 +82,12 @@
       "last_notified_at": 1795467651.0500002
     },
     "DIA": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1795468046.0115416
     },
     "IWM": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1795468046.0115416
     },
     "IGV": {
       "state": "NORMAL",
@@ -170,8 +170,8 @@
       "last_notified_at": 0.0
     },
     "NKE": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1795468046.0115416
     },
     "HPE": {
       "state": "STOP_LOSS",
