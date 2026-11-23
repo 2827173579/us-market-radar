@@ -4963,9 +4963,13 @@
     "2026-11-23:QQQ:5M_ENTRY": {
       "device": "PC",
       "ts": 1795458343.198571
+    },
+    "2026-11-23:SPY/DIA/NVDA:5M_ENTRY+STOP_LOSS": {
+      "device": "PC",
+      "ts": 1795458756.972118
     }
   },
   "device": "PC",
-  "last_heartbeat_ts": 1795458566.6173854,
-  "updated_at": "2026-11-23T18:30:54.723264+00:00"
+  "last_heartbeat_ts": 1795458676.0249422,
+  "updated_at": "2026-11-23T18:32:36.972567+00:00"
 }
