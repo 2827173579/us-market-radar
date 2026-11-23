@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795476496.353,
-  "updated_at_et": "11-23 18:28 ET",
-  "updated_at_kst": "08:28 KST",
+  "updated_at_ts": 1795476598.393,
+  "updated_at_et": "11-23 18:29 ET",
+  "updated_at_kst": "08:29 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -906,11 +906,25 @@
     ],
     "NVDA": [
       {
+        "title": "Nasdaq gains 6.5% after Huang reinstated as Nvidia CEO",
+        "url": "https://www.cbsnews.com/news/us-stock-futures-rebound-tech-rout/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 18:15 ET",
+        "pub_ts": 1795475733.0
+      },
+      {
         "title": "President Trump Claims Nvidia’s Jensen Huang and Wife ‘Worked It Out’ After Affair Scandal",
         "url": "https://firstformoney.com/president-trump-claims-nvidias-jensen-huang-and-wife-worked-it-out-after-affair-scandal/?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-23 17:55 ET",
         "pub_ts": 1795474546.0
+      },
+      {
+        "title": "Steve Eisman Said AI Was “No Longer One Trade.” Huang Is Back, but Alphabet and CoreWeave Still Show the Split",
+        "url": "https://www.tikr.com/blog/big-shorts-steve-eisman-without-nvidia-ai-is-no-longer-one-trade-alphabet-and-coreweave-show-the-split?ref=yahoofinance&tlnk=yf-261123-qrq8pv92&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 17:54 ET",
+        "pub_ts": 1795474493.0
       },
       {
         "title": "President Trump Says He Convinced Nvidia’s Board to Bring Back Jensen Huang",
@@ -925,20 +939,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 17:38 ET",
         "pub_ts": 1795473502.0
-      },
-      {
-        "title": "Why ASML Stock Popped Today",
-        "url": "https://www.fool.com/investing/2026/11/23/why-asml-stock-popped-today/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 17:36 ET",
-        "pub_ts": 1795473384.0
-      },
-      {
-        "title": "Jensen Huang back at Nvidia after staff reported humiliating threats, insults — 'thinks he can get away with anything'",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/jensen-huang-back-nvidia-staff-223000688.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 17:30 ET",
-        "pub_ts": 1795473000.0
       }
     ],
     "AMD": [
@@ -3246,22 +3246,22 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795475012.5879312,
-    "SOXL": 1795475012.5879312,
+    "KORU": 1795476598.393364,
+    "SOXL": 1795476598.393364,
     "SPY": 1795476181.1268663,
-    "DIA": 1795475012.5879312,
-    "SOXX": 1795475012.5879312,
+    "DIA": 1795476598.393364,
+    "SOXX": 1795476598.393364,
     "QQQ": 1795476181.1268663,
-    "SMH": 1795475012.5879312,
-    "IWM": 1795475012.5879312,
-    "IGV": 1795475012.5879312,
-    "TLT": 1795475012.5879312,
-    "GLD": 1795475012.5879312,
-    "SQQQ": 1795475012.5879312,
+    "SMH": 1795476598.393364,
+    "IWM": 1795476598.393364,
+    "IGV": 1795476598.393364,
+    "TLT": 1795476598.393364,
+    "GLD": 1795476598.393364,
+    "SQQQ": 1795476598.393364,
     "TSM": 1795475118.1178637,
-    "VIXY": 1795475012.5879312,
-    "SOXS": 1795475012.5879312,
-    "NVDA": 1795475012.5879312,
+    "VIXY": 1795476598.393364,
+    "SOXS": 1795476598.393364,
+    "NVDA": 1795476598.393364,
     "AMD": 1795475118.1178637,
     "ASML": 1795475118.1178637,
     "QCOM": 1795475118.1178637,
@@ -3316,10 +3316,10 @@
     "NKE": 1795476181.1268663,
     "MCD": 1795476181.1268663,
     "PEP": 1795475337.185427,
-    "XOM": 1795475012.5879312,
-    "JPM": 1795475012.5879312,
+    "XOM": 1795476598.393364,
+    "JPM": 1795476598.393364,
     "WMT": 1795475337.185427,
-    "V": 1795475012.5879312,
+    "V": 1795476598.393364,
     "CAT": 1795475337.185427,
     "FN": 1795476181.1268663,
     "GLW": 1795475229.5122004,
