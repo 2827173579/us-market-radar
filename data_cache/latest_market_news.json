@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795459301.299,
-  "updated_at_et": "11-23 13:41 ET",
-  "updated_at_kst": "03:41 KST",
+  "updated_at_ts": 1795459408.911,
+  "updated_at_et": "11-23 13:43 ET",
+  "updated_at_kst": "03:43 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2638,6 +2638,13 @@
     ],
     "CRWD": [
       {
+        "title": "CrowdStrike's best quarter ever gets buried by $44 billion deal",
+        "url": "https://www.thestreet.com/investing/crowdstrike-record-quarter-zscaler-deal-crwd-zs?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 13:08 ET",
+        "pub_ts": 1795457302.0
+      },
+      {
         "title": "Why Zscaler Stock Rocketed Higher Today",
         "url": "https://www.fool.com/investing/2026/11/23/why-zscaler-stock-rocketed-higher-today/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2664,13 +2671,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 12:12 ET",
         "pub_ts": 1795453950.0
-      },
-      {
-        "title": "CrowdStrike Stocks Fall 9.67% on $43.9 Billion All-Stock Deal for Zscaler",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/crowdstrike-stocks-fall-9-67-170530745.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 12:05 ET",
-        "pub_ts": 1795453530.0
       }
     ],
     "ORCL": [
@@ -3214,18 +3214,18 @@
         "pub_ts": 1795450419.0
       },
       {
-        "title": "Jensen Huang back as Nvidia CEO after 12 days: Shares surge 30%",
-        "url": "https://finance.yahoo.com/video/jensen-huang-back-as-nvidia-ceo-after-12-days-shares-surge-30-161302539.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 11:13 ET",
-        "pub_ts": 1795450382.0
-      },
-      {
         "title": "Anthropic Just Went Public. Here's What Happens to Most IPO Stocks in the First Week.",
         "url": "https://www.fool.com/investing/2026/11/23/anthropic-just-went-public-heres-what-happens-to-most-ipo-stocks-in-the-first-week/?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-23 12:55 ET",
         "pub_ts": 1795456502.0
+      },
+      {
+        "title": "Anthropic Stocks Slip 1.2% as AI Chip Rally Bypasses the New Listing",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/anthropic-stocks-slip-1-2-175421211.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 12:54 ET",
+        "pub_ts": 1795456461.0
       }
     ],
     "XAUUSD": [
@@ -3273,7 +3273,7 @@
     "VST": 1795459188.4834867,
     "BE": 1795459301.2986777,
     "CRDO": 1795459301.2986777,
-    "COHR": 1795457818.10214,
+    "COHR": 1795459408.9106386,
     "MRVL": 1795458977.995934,
     "LITE": 1795458977.995934,
     "AAOI": 1795459301.2986777,
@@ -3282,26 +3282,26 @@
     "AXTI": 1795458977.995934,
     "NASA": 1795459301.2986777,
     "LUNR": 1795459301.2986777,
-    "TSLA": 1795457818.10214,
-    "AXP": 1795457818.10214,
+    "TSLA": 1795459408.9106386,
+    "AXP": 1795459408.9106386,
     "RKLB": 1795459301.2986777,
     "KO": 1795459301.2986777,
     "FLY": 1795459301.2986777,
-    "INTC": 1795457818.10214,
-    "VRT": 1795457818.10214,
-    "HPE": 1795457818.10214,
-    "DELL": 1795457818.10214,
-    "OKLO": 1795457818.10214,
-    "CEG": 1795457818.10214,
-    "FPS": 1795457818.10214,
+    "INTC": 1795459408.9106386,
+    "VRT": 1795459408.9106386,
+    "HPE": 1795459408.9106386,
+    "DELL": 1795459408.9106386,
+    "OKLO": 1795459408.9106386,
+    "CEG": 1795459408.9106386,
+    "FPS": 1795459408.9106386,
     "MU": 1795458977.995934,
     "SKHY": 1795458977.995934,
     "WDC": 1795458977.995934,
-    "STX": 1795457818.10214,
-    "MSTR": 1795457818.10214,
-    "SNDK": 1795457818.10214,
+    "STX": 1795459408.9106386,
+    "MSTR": 1795459408.9106386,
+    "SNDK": 1795459408.9106386,
     "BTC-USD": 1795458977.995934,
-    "CRWD": 1795457818.10214,
+    "CRWD": 1795459408.9106386,
     "ORCL": 1795458977.995934,
     "COIN": 1795458977.995934,
     "LLY": 1795458977.995934,
@@ -3313,10 +3313,10 @@
     "JPM": 1795459081.868405,
     "WMT": 1795459301.2986777,
     "V": 1795459081.868405,
-    "CAT": 1795457818.10214,
+    "CAT": 1795459408.9106386,
     "FN": 1795458977.995934,
     "GLW": 1795459301.2986777,
-    "ANT": 1795457818.10214,
+    "ANT": 1795459408.9106386,
     "XAUUSD": 1795459301.2986777
   },
   "opex_shield": {
