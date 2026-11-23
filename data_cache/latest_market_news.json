@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795410852.963,
-  "updated_at_et": "11-23 00:14 ET",
-  "updated_at_kst": "14:14 KST",
+  "updated_at_ts": 1795410959.458,
+  "updated_at_et": "11-23 00:15 ET",
+  "updated_at_kst": "14:15 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1940,6 +1940,13 @@
     ],
     "TSLA": [
       {
+        "title": "Musk Says Tesla’s Real-World AI Will Get Smarter by “About an Order of Magnitude per Year”",
+        "url": "https://www.tikr.com/blog/musk-says-teslas-real-world-ai-will-get-smarter-by-about-an-order-of-magnitude-per-year?ref=yahoofinance&tlnk=yf-261122-c3v9325h&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-22 23:50 ET",
+        "pub_ts": 1795409401.0
+      },
+      {
         "title": "Forget Flying Roadsters. Tesla Investors Have 3 Bigger Challenges to Watch.",
         "url": "https://www.fool.com/investing/2026/11/22/forget-flying-roadsters-tesla-investors-have-3-bigger-challenges-to-watch/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1966,13 +1973,6 @@
         "source": "Yahoo Finance",
         "time": "11-22 16:30 ET",
         "pub_ts": 1795383007.0
-      },
-      {
-        "title": "Top bank resets Tesla stock target, yet standalone value is alarming",
-        "url": "https://www.thestreet.com/investing/stocks/top-bank-resets-tesla-stock-target-yet-standalone-value-is-alarming?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-22 13:47 ET",
-        "pub_ts": 1795373220.0
       }
     ],
     "AXP": [
@@ -2532,6 +2532,13 @@
     ],
     "MSTR": [
       {
+        "title": "Strategy's Bitcoin Stack Is 22% Underwater. Peter Schiff Says It's ‘About to Blow Up'",
+        "url": "https://beincrypto.com/strategy-net-reserve-bitcoin-below-cost/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 00:06 ET",
+        "pub_ts": 1795410388.0
+      },
+      {
         "title": "MSCI Is Cutting Strategy and Metaplanet From Its Indexes. Here's What It Means for Bitcoin Treasury Company Stocks.",
         "url": "https://www.fool.com/investing/2026/11/21/msci-is-cutting-strategy-and-metaplanet-from-its-indexes-here-s-what-it-means-for-bitcoin-treasury-company-stocks/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2558,13 +2565,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 13:34 ET",
         "pub_ts": 1795199646.0
-      },
-      {
-        "title": "Is Monness Wrong to Give Up on Strategy? Wall Street Still Sees $233",
-        "url": "https://www.tikr.com/blog/is-monness-wrong-to-give-up-on-strategy-wall-street-still-sees-233?ref=yahoofinance&tlnk=yf-261120-84j9664h&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 12:32 ET",
-        "pub_ts": 1795195977.0
       }
     ],
     "SNDK": [
@@ -3269,15 +3269,15 @@
     "GOOGL": 1795410745.6591196,
     "MSFT": 1795410745.6591196,
     "AAPL": 1795410852.9628596,
-    "PLTR": 1795409364.7055867,
+    "PLTR": 1795410959.4577825,
     "NOW": 1795410852.9628596,
     "AMZN": 1795410852.9628596,
     "CRWV": 1795410852.9628596,
-    "NBIS": 1795409364.7055867,
-    "APLD": 1795409364.7055867,
-    "VST": 1795409364.7055867,
-    "BE": 1795409364.7055867,
-    "CRDO": 1795409364.7055867,
+    "NBIS": 1795410959.4577825,
+    "APLD": 1795410959.4577825,
+    "VST": 1795410959.4577825,
+    "BE": 1795410959.4577825,
+    "CRDO": 1795410959.4577825,
     "COHR": 1795409471.8189576,
     "MRVL": 1795409471.8189576,
     "LITE": 1795409471.8189576,
@@ -3287,26 +3287,26 @@
     "AXTI": 1795409471.8189576,
     "NASA": 1795410852.9628596,
     "LUNR": 1795410852.9628596,
-    "TSLA": 1795409364.7055867,
+    "TSLA": 1795410959.4577825,
     "AXP": 1795410852.9628596,
     "RKLB": 1795410852.9628596,
     "KO": 1795410852.9628596,
     "FLY": 1795410852.9628596,
     "INTC": 1795410852.9628596,
-    "VRT": 1795409364.7055867,
-    "HPE": 1795409364.7055867,
-    "DELL": 1795409364.7055867,
-    "OKLO": 1795409364.7055867,
-    "CEG": 1795409364.7055867,
-    "FPS": 1795409364.7055867,
+    "VRT": 1795410959.4577825,
+    "HPE": 1795410959.4577825,
+    "DELL": 1795410959.4577825,
+    "OKLO": 1795410959.4577825,
+    "CEG": 1795410959.4577825,
+    "FPS": 1795410959.4577825,
     "MU": 1795409471.8189576,
     "SKHY": 1795409471.8189576,
     "WDC": 1795409471.8189576,
-    "STX": 1795409364.7055867,
-    "MSTR": 1795409364.7055867,
-    "SNDK": 1795409364.7055867,
+    "STX": 1795410959.4577825,
+    "MSTR": 1795410959.4577825,
+    "SNDK": 1795410959.4577825,
     "BTC-USD": 1795409471.8189576,
-    "CRWD": 1795409364.7055867,
+    "CRWD": 1795410959.4577825,
     "ORCL": 1795409471.8189576,
     "COIN": 1795409471.8189576,
     "LLY": 1795409471.8189576,
