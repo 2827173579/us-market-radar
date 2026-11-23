@@ -132,6 +132,34 @@ def verify_desktop(browser):
         txt = loc.inner_text().strip()
         assert txt and "NaN" not in txt and "undefined" not in txt, f"Invalid Layer A {sel}: {txt!r}"
 
+    # Verify SOXL and all 79 tickers never show inverted target profit (tp <= active_price or negative tp pct)
+    page.locator("#watchlistContainer .stock-item[data-ticker='SOXL']").click()
+    page.wait_for_timeout(150)
+    soxl_tp_txt = page.locator("#pBeginnerTakeProfit").inner_text().strip()
+    soxl_tp_pct_txt = page.locator("#pBeginnerTakeProfitPct").inner_text().strip()
+    assert "-" not in soxl_tp_pct_txt, f"SOXL target profit pct must never be negative: {soxl_tp_txt} ({soxl_tp_pct_txt})"
+
+    tp_inversion_audit = page.evaluate("""() => {
+        const aiMap = (typeof AI_PREDICTIONS !== 'undefined' && AI_PREDICTIONS && AI_PREDICTIONS.by_ticker) ? AI_PREDICTIONS.by_ticker : {};
+        const allItems = [...(typeof STOCKS_DATA !== 'undefined' ? STOCKS_DATA : []), ...Object.values(typeof MACRO_DATA !== 'undefined' ? MACRO_DATA : {})];
+        const bad = [];
+        for (const d of allItems) {
+            if (!d || !d.ticker) continue;
+            const tk = d.ticker;
+            const act = (d.ext_price && d.ext_price > 0) ? Number(d.ext_price) : Number(d.active_price || d.last || 0);
+            const ai = aiMap[tk];
+            if (!ai || act <= 0) continue;
+            const tp = Number(ai.target_profit_price || 0);
+            if (tp > 0 && tp <= act) {
+                bad.push({tk, act, tp});
+            }
+        }
+        return {total: allItems.length, bad};
+    }""")
+    assert len(tp_inversion_audit["bad"]) == 0, f"Found inverted target_profit_price <= active_price: {tp_inversion_audit['bad']}"
+    page.locator("#watchlistContainer .stock-item[data-ticker='NVDA']").click()
+    page.wait_for_timeout(120)
+
     # Expand Pro Quant Drawer & verify content + persistence
     assert not page.locator("#v51TerminalAiBrief").is_visible(), "NVDA should NOT show #v51TerminalAiBrief"
     for core_etf in ("QQQ", "SPY", "SOXX"):

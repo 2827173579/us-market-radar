@@ -47,7 +47,7 @@ from plotly.subplots import make_subplots
 import math
 from typing import Any, Optional, Union, Dict, Tuple
 
-from create_futu_terminal import build_futu_terminal_html
+from create_futu_terminal import build_futu_terminal_html, resolve_long_tp_sl_ordering_guard
 
 # 终端编码与实时行缓冲适配 (Windows CMD / PowerShell)
 if sys.platform == "win32":
@@ -5969,7 +5969,19 @@ def build_latest_radar_snapshot(
             "decision_sub": verdict_sub,
             "optimal_limit": _snap_opt_float(src.get("optimal_limit"), 2),
             "entry_stop_loss": _snap_opt_float(src.get("entry_stop_loss"), 2),
-            "target_profit_price": _snap_opt_float(ai_item.get("target_profit_price"), 2),
+            "target_profit_price": (
+                resolve_long_tp_sl_ordering_guard(
+                    active_price=float(ext_px if (ext_px and ext_px > 0) else (last_px or 0.0)),
+                    entry_price=float(src.get("optimal_limit") or 0.0),
+                    raw_tp=float(ai_item.get("target_profit_price") or 0.0),
+                    r1=float(r1_val or 0.0),
+                    r2=float(r2_val or 0.0),
+                    raw_sl=float(src.get("entry_stop_loss") or 0.0),
+                    eff_atr_frac=max(0.015, (float(src.get("atr") or 0.0) / max(float(last_px or 1.0), 0.01))),
+                )["target_profit_price"]
+                if (last_px and float(last_px) > 0 and (ai_item.get("target_profit_price") or r1_val or r2_val))
+                else _snap_opt_float(ai_item.get("target_profit_price"), 2)
+            ),
             "r1": r1_val,
             "r2": r2_val,
             "s1": s1_val,

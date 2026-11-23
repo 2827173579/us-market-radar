@@ -5812,14 +5812,25 @@ def generate_report_tables(
             )
             row_item.update(sc_map)
 
-            # R2: 针对 B 轨空头回补滑头标的，动态校准止损与止盈：止损锚定日内低点或 S2 支撑（受波段上限约束），第一目标锚定 R1 阻力
+            # R2: 针对 B 轨空头回补滑头标的，动态校准止损与止盈：止损锚定日内低点或 S2 支撑（受波段上限约束），第一目标锚定 R1 阻力（若 R1 已突破则自动上移 R2 或动态 ATR 目标）
             if is_short_covering:
-                row_item['target_profit_price'] = sc_map['r1']
                 eff_atr_sc = compute_effective_atr(atr_pct)
+                r1_sc = float(sc_map.get('r1') or 0.0)
+                r2_sc = float(sc_map.get('r2') or 0.0)
+                min_tp_sc = close_p * 1.005
+                if r1_sc > min_tp_sc:
+                    sc_tp_px = round(r1_sc, 2)
+                elif r2_sc > min_tp_sc:
+                    sc_tp_px = round(r2_sc, 2)
+                else:
+                    sc_tp_px = round(max(float(row_item.get('target_profit_price') or 0.0), close_p * (1.0 + max(0.03, 1.5 * eff_atr_sc))), 2)
+                row_item['target_profit_price'] = sc_tp_px
                 max_swing_sl = min(0.085, max(0.045, 1.35 * eff_atr_sc))
                 sc_stop_px = round(max(float(sc_map['s2']), close_p * (1.0 - max_swing_sl)), 2)
+                if sc_stop_px >= close_p * 0.998:
+                    sc_stop_px = round(close_p * (1.0 - max(0.025, 1.25 * eff_atr_sc)), 2)
                 row_item['stop_loss_price'] = sc_stop_px
-                row_item['target_profit_pct'] = round(((sc_map['r1'] - close_p) / close_p) * 100.0, 1)
+                row_item['target_profit_pct'] = round(((sc_tp_px - close_p) / close_p) * 100.0, 1)
                 row_item['stop_loss_pct'] = round(((close_p - sc_stop_px) / close_p) * 100.0, 1)
                 row_item['track'] = 'Track B'
             elif is_broken:

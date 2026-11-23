@@ -400,6 +400,51 @@ class TestV44SrAnchorAndPlainBot(unittest.TestCase):
             self.assertIn("做多提醒准不准", pop_l_txt)
             self.assertIn("提醒别抄底拦得准不准", pop_l_txt)
 
+    def test_06_gap_up_breakout_tp_sl_ordering_guard(self):
+        """回归验证：大幅高开突破原 R1/R2 后，目标止盈严格 > max(active_price, entry_price) 且绝不出现负百分比。"""
+        import create_futu_terminal as futu
+        # 1) SOXL 实盘复现：现价 $44.82，参考买点 $43.47，静态 R1=$32.72、R2=$40.00 已被全线突破
+        res_all_broken = futu.resolve_long_tp_sl_ordering_guard(
+            active_price=44.82,
+            entry_price=43.47,
+            raw_tp=32.72,
+            r1=32.72,
+            r2=40.00,
+            raw_sl=42.77,
+            eff_atr_frac=0.06,
+        )
+        self.assertGreater(res_all_broken["target_profit_price"], 44.82)
+        self.assertGreater(res_all_broken["target_profit_pct"], 0.0)
+        self.assertEqual(res_all_broken["tp_upgrade_note"], "已破R1 · 上移至动态目标")
+        self.assertLess(res_all_broken["stop_loss_price"], 43.47)
+
+        # 2) 仅突破 R1 ($32.72)，R2 ($40.00) 仍有效 -> 自动上移至 R2 ($40.00)
+        res_r1_broken = futu.resolve_long_tp_sl_ordering_guard(
+            active_price=35.00,
+            entry_price=34.20,
+            raw_tp=32.72,
+            r1=32.72,
+            r2=40.00,
+            raw_sl=32.00,
+            eff_atr_frac=0.05,
+        )
+        self.assertEqual(res_r1_broken["target_profit_price"], 40.00)
+        self.assertGreater(res_r1_broken["target_profit_pct"], 0.0)
+        self.assertEqual(res_r1_broken["tp_upgrade_note"], "已破R1 · 上移至R2")
+
+        # 3) 跳空低开跌破原止损 -> 自动下移止损并标注 '已破原止损 · 现价防守'
+        res_sl_broken = futu.resolve_long_tp_sl_ordering_guard(
+            active_price=28.00,
+            entry_price=28.50,
+            raw_tp=32.72,
+            r1=32.72,
+            r2=40.00,
+            raw_sl=29.50,
+            eff_atr_frac=0.05,
+        )
+        self.assertLess(res_sl_broken["stop_loss_price"], 28.00)
+        self.assertEqual(res_sl_broken["sl_upgrade_note"], "已破原止损 · 现价防守")
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -124,6 +124,74 @@ def compute_resilient_leaders_top5(stocks_data, macro_data=None, session_code="R
     return ranked[:max(1, int(top_n))]
 
 
+def resolve_long_tp_sl_ordering_guard(
+    active_price: float,
+    entry_price: float = 0.0,
+    raw_tp: float = 0.0,
+    r1: float = 0.0,
+    r2: float = 0.0,
+    raw_sl: float = 0.0,
+    eff_atr_frac: float = 0.025,
+):
+    """
+    做多视角价格顺序硬防呆锁：
+    1. 目标止盈 tp 必须严格 > max(active_price, entry_price) * 1.005；
+       若原 R1 / raw_tp 已被跳空或拉升突破，按优先级自动切至：① 未突破的 R2 -> ② 现价/买点 + ATR 动态目标位，
+       并返回 tp_upgrade_note（如 '已破R1 · 上移至R2' / '已破R1 · 上移至动态目标'）。
+    2. 跌破必砍 sl 必须严格 < min(active_price, entry_price) * 0.998；
+       若原止损已被跳空跌破，自动下移至现价下方 ATR 防守位并标注 '已破原止损 · 现价防守'。
+    """
+    act_p = max(float(active_price or 0.0), 0.01)
+    ent_p = float(entry_price or 0.0)
+    atr_f = max(0.015, min(0.15, float(eff_atr_frac or 0.025)))
+
+    tp_floor = max(act_p, ent_p if ent_p > 0 else 0.0)
+    min_valid_tp = tp_floor * 1.005
+    tp_val = float(raw_tp or 0.0)
+    r1_val = float(r1 or 0.0)
+    r2_val = float(r2 or 0.0)
+    tp_note = ""
+
+    if tp_val <= min_valid_tp:
+        if r1_val > min_valid_tp:
+            tp_val = round(r1_val, 2)
+        elif r2_val > min_valid_tp:
+            tp_val = round(r2_val, 2)
+            tp_note = "已破R1 · 上移至R2"
+        else:
+            dyn_mult = max(0.03, 1.5 * atr_f)
+            tp_val = round(tp_floor * (1.0 + dyn_mult), 2)
+            tp_note = "已破R1 · 上移至动态目标"
+    else:
+        tp_val = round(tp_val, 2)
+        if r1_val > 0 and r1_val <= act_p * 1.005:
+            tp_note = "已破R1 · 上移至R2" if (r2_val > min_valid_tp and abs(tp_val - r2_val) < 0.05) else "已破R1 · 上移至动态目标"
+
+    tp_pct = round(max(0.5, ((tp_val - act_p) / act_p) * 100.0), 1)
+
+    sl_ceil = min(act_p, ent_p) if ent_p > 0 else act_p
+    max_valid_sl = sl_ceil * 0.998
+    sl_val = float(raw_sl or 0.0)
+    sl_note = ""
+    if sl_val <= 0 or sl_val >= max_valid_sl:
+        sl_drop = min(0.085, max(0.025, 1.25 * atr_f))
+        sl_val = round(sl_ceil * (1.0 - sl_drop), 2)
+        if raw_sl and float(raw_sl) >= max_valid_sl:
+            sl_note = "已破原止损 · 现价防守"
+    else:
+        sl_val = round(sl_val, 2)
+    sl_pct = round(max(0.2, ((act_p - sl_val) / act_p) * 100.0), 1)
+
+    return {
+        "target_profit_price": tp_val,
+        "target_profit_pct": tp_pct,
+        "tp_upgrade_note": tp_note,
+        "stop_loss_price": sl_val,
+        "stop_loss_pct": sl_pct,
+        "sl_upgrade_note": sl_note,
+    }
+
+
 def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_str="", has_realtime=False, target_watchlist=None, terminal_notifications=None, session_code="REGULAR", session_name="常规盘中", sync_side_effects=False, sync_dir=None, daily_sr_anchors=None):
     is_overnight = (session_code == "OVERNIGHT")
     if session_code == "OVERNIGHT":
@@ -663,6 +731,19 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                             item['stop_loss_pct'] = round(((live_p - float(near_stop_px)) / live_p) * 100.0, 1)
                     except Exception:
                         pass
+
+                    # 后端硬防呆锁（置于 try 块外，100% 必执行）：确保所有做多视角 target_profit_price > max(live_p, optimal_limit)
+                    _opt_lim = float((lv.get("optimal_limit") if isinstance(lv, dict) else 0.0) or item.get("optimal_entry_price") or 0.0)
+                    _guarded = resolve_long_tp_sl_ordering_guard(
+                        active_price=live_p,
+                        entry_price=_opt_lim,
+                        raw_tp=float(item.get("target_profit_price") or 0.0),
+                        r1=float(item.get("r1") or item.get("anchor_r1") or 0.0),
+                        r2=float(item.get("r2") or item.get("anchor_r2") or 0.0),
+                        raw_sl=float(item.get("stop_loss_price") or 0.0),
+                        eff_atr_frac=eff_atr,
+                    )
+                    item.update(_guarded)
 
                 # 空头排序并分配 short_rank
                 short_candidates_sorted = sorted(
@@ -5741,7 +5822,15 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             const isCrashHalt = !isInverseHedge && Boolean(data.is_crash_halt || (data.optimal_limit === 0 && data.limit_note && data.limit_note.includes("破位")));
             const isCoolingHalt = !isInverseHedge && Boolean(data.is_cooling_halt || (data.intraday_status_text && data.intraday_status_text.includes("冷却期")));
             let optimalLimit = data.optimal_limit !== undefined ? data.optimal_limit : curActive;
-            const stopLoss = (isCrashHalt || isCoolingHalt) ? 0 : (data.entry_stop_loss || (curFibLow > 0 ? curFibLow * 0.97 : optimalLimit * 0.96));
+            const rawStopLoss = (isCrashHalt || isCoolingHalt) ? 0 : (data.entry_stop_loss || (curFibLow > 0 ? curFibLow * 0.97 : optimalLimit * 0.96));
+            const slCeilRef = (optimalLimit && optimalLimit > 0 && curActive > 0) ? Math.min(curActive, optimalLimit) : curActive;
+            const atrFracNow = (curActive > 0 && curAtr > 0) ? Math.max(0.015, Math.min(0.15, curAtr / curActive)) : 0.025;
+            let slUpgradeNote = "";
+            let stopLoss = rawStopLoss;
+            if (!(isCrashHalt || isCoolingHalt) && slCeilRef > 0 && stopLoss >= slCeilRef * 0.998) {
+                stopLoss = Number((slCeilRef * (1.0 - Math.min(0.085, Math.max(0.025, 1.25 * atrFracNow)))).toFixed(2));
+                slUpgradeNote = "已破原止损 · 现价防守";
+            }
             const cancelLine = Math.max(data.low_price || data.rth_low || 0, curLast * 0.985);
             const curCat = data.cat || data.sub || "综合赛道";
 
@@ -6357,19 +6446,41 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                     }
                 }
 
-                // 目标止盈格 (Layer A 第 2 格)
-                const tpPrice = Number(aiItem.target_profit_price || 0);
+                // 目标止盈格 (Layer A 第 2 格) — 前端二次硬防呆锁：tp 必须严格 > max(curActive, optimalLimit) * 1.005
+                const tpFloorRef = (optimalLimit && optimalLimit > 0 && curActive > 0) ? Math.max(curActive, optimalLimit) : curActive;
+                const minValidTp = tpFloorRef > 0 ? (tpFloorRef * 1.005) : 0;
+                const r1Cand = Number(aiItem.anchor_r1 !== undefined ? aiItem.anchor_r1 : (aiItem.r1 || 0));
+                const r2Cand = Number(aiItem.anchor_r2 !== undefined ? aiItem.anchor_r2 : (aiItem.r2 || 0));
+                let tpPrice = Number(aiItem.target_profit_price || 0);
+                let tpUpgradeNote = String(aiItem.tp_upgrade_note || "");
+                if (minValidTp > 0 && tpPrice <= minValidTp) {
+                    if (r1Cand > minValidTp) {
+                        tpPrice = Number(r1Cand.toFixed(2));
+                    } else if (r2Cand > minValidTp) {
+                        tpPrice = Number(r2Cand.toFixed(2));
+                        tpUpgradeNote = "已破R1 · 上移至R2";
+                    } else {
+                        tpPrice = Number((tpFloorRef * (1.0 + Math.max(0.03, 1.5 * atrFracNow))).toFixed(2));
+                        tpUpgradeNote = "已破R1 · 上移至动态目标";
+                    }
+                } else if (r1Cand > 0 && curActive > 0 && r1Cand <= curActive * 1.005 && !tpUpgradeNote) {
+                    tpUpgradeNote = (r2Cand > minValidTp && Math.abs(tpPrice - r2Cand) < 0.05) ? "已破R1 · 上移至R2" : "已破R1 · 上移至动态目标";
+                }
+                const tpSpotPct = (curActive > 0 && tpPrice > 0) ? Math.max(0.1, ((tpPrice - curActive) / curActive * 100)) : Math.max(0.1, Number(aiItem.target_profit_pct || 0));
                 if (tpBegEl && tpPctEl) {
                     if (tpPrice > 0) {
-                        const tpSpotPct = curActive > 0 ? ((tpPrice - curActive) / curActive * 100) : Number(aiItem.target_profit_pct || 0);
                         tpBegEl.innerText = "$" + tpPrice.toFixed(2);
                         tpBegEl.style.color = pal.up;
-                        tpPctEl.innerText = `距现价 ${tpSpotPct >= 0 ? '+' : ''}${tpSpotPct.toFixed(1)}%`;
+                        tpPctEl.innerText = `${tpUpgradeNote ? (tpUpgradeNote + ' · ') : ''}距现价 +${tpSpotPct.toFixed(1)}%`;
                         tpPctEl.style.color = pal.up;
                     } else {
                         tpBegEl.innerText = "--";
                         tpPctEl.innerText = "暂无目标位";
                     }
+                }
+                if (slUpgradeNote && stopDistEl && stopShown.startsWith("$")) {
+                    const slPctNow = curActive > 0 ? ((stopLoss - curActive) / curActive * 100) : 0;
+                    stopDistEl.innerText = `距现价 ${slPctNow.toFixed(1)}% · ${slUpgradeNote}`;
                 }
 
                 // 温度条 (必须严格保留 pure `${longWr.toFixed(1)}%` 供既有断言解析!)
@@ -6407,7 +6518,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 }
 
                 const tpEl = document.getElementById("pAiTargetPrice");
-                if (tpEl) tpEl.innerHTML = `$${(aiItem.target_profit_price || 0).toFixed(2)} <span style="font-size:10px; opacity:0.85;">(+${(aiItem.target_profit_pct || 0).toFixed(1)}%)</span>`;
+                if (tpEl) tpEl.innerHTML = `$${(tpPrice || 0).toFixed(2)} <span style="font-size:10px; opacity:0.85;">(+${(tpSpotPct || 0).toFixed(1)}%)</span>`;
                 const slEl = document.getElementById("pAiStopPrice");
                 if (slEl) slEl.innerHTML = `$${(aiItem.stop_loss_price || 0).toFixed(2)} <span style="font-size:10px; opacity:0.85;">(-${(aiItem.stop_loss_pct || 0).toFixed(1)}%)</span>`;
                 const stpEl = document.getElementById("pAiShortTargetPrice");
