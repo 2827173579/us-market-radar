@@ -1,9 +1,22 @@
 {
-  "updated_at_ts": 1795456092.183,
-  "updated_at_et": "11-23 12:48 ET",
-  "updated_at_kst": "02:48 KST",
+  "updated_at_ts": 1795456198.349,
+  "updated_at_et": "11-23 12:49 ET",
+  "updated_at_kst": "02:49 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261124014932705800",
+      "title": "消息人士：美国总统特朗普和副总统万斯逐渐确信，黄仁勋是维护开源模型发展、防止闭源模型公司…",
+      "summary": "消息人士：美国总统特朗普和副总统万斯逐渐确信，黄仁勋是维护开源模型发展、防止闭源模型公司变得过于强大的关键人物，而且具有不可替代的作用。",
+      "keywords": [
+        "特朗普"
+      ],
+      "pub_ts": 1795456172.0,
+      "time_et": "11-23 12:49 ET",
+      "time_bj": "01:49 BJ",
+      "time_kst": "02:49 KST",
+      "time_display": "12:49 ET / 01:49 BJ"
+    },
     {
       "id": "20261124000926584800",
       "title": "美国参议院民主党领袖舒默：民主党将动用全部力量调查英伟达(NVDA.O)CEO黄仁勋、政…",
@@ -326,20 +339,6 @@
       "time_bj": "22:45 BJ",
       "time_kst": "23:45 KST",
       "time_display": "09:45 ET / 22:45 BJ"
-    },
-    {
-      "id": "20261123224307371800",
-      "title": "【潮落又潮起 英伟达几乎收复黄仁勋辞职以来的全部跌幅】 11月23日讯，据CNBC，英伟…",
-      "summary": "【潮落又潮起 英伟达几乎收复黄仁勋辞职以来的全部跌幅】 11月23日讯，据CNBC，英伟达(NVDA.O)周一宣布，黄仁勋即日起重返公司担任首席执行官。消息公布后，英伟达股价飙升了31%，几乎收复黄仁勋辞职以来的全部跌幅，总市值增加逾9000亿美元，飙升至美股第二位，仅次于苹果(AAPL.O)。本月初，在曝出一系列令人震惊的婚外情报道后，黄仁勋辞去了首席执行官一职。黄仁勋在一份声明中表示：“我很荣幸能重返英伟达，在新工业革命开启之际，领导这家世界上最具影响力的科技公司之一。我怀着极其谦卑的心态和全新的承诺承担起这一责任。感谢英伟达董事会在整个过程中给予的信任与审慎考量。”",
-      "keywords": [
-        "英伟达",
-        "苹果"
-      ],
-      "pub_ts": 1795444987.0,
-      "time_et": "11-23 09:43 ET",
-      "time_bj": "22:43 BJ",
-      "time_kst": "23:43 KST",
-      "time_display": "09:43 ET / 22:43 BJ"
     }
   ],
   "ticker_news": {
@@ -1765,25 +1764,25 @@
         "pub_ts": 1795452389.0
       },
       {
-        "title": "SpaceX Exec Bret Johnsen Says ‘The Operating Cost in Space Is Zero.’",
-        "url": "https://www.benzinga.com/markets/prediction-markets/26/11/63545158/spacex-space-ai-costs?utm_source=yahooFinance&utm_campaign=partner_feed&utm_medium=referral&.tsrc=rss",
+        "title": "SPCX Stock Gets A ‘Buy’ Rating From Jefferies For Its Engineering Edge, But Musk Reportedly Fears SpaceX’s AI Lag",
+        "url": "https://stocktwits.com/news-articles/markets/equity/spcx-stock-gets-a-buy-rating-from-jefferies-for-its-engineering-edge-but-musk-reportedly-fears-space-x-s-ai-lag/cNbpe8gR9ji?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 11:49 ET",
-        "pub_ts": 1795452598.0
+        "time": "11-23 12:24 ET",
+        "pub_ts": 1795454665.0
       },
       {
-        "title": "Monday's Rebound Reaches Rocket, Satellite and AI Cloud Stocks",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/mondays-rebound-reaches-rocket-satellite-164600797.html?.tsrc=rss",
+        "title": "Bill Ackman Predicts “The Fed Will Put the U.S. and World in Recession” if It Hikes Rates after Thanksgiving",
+        "url": "https://www.tikr.com/blog/bill-ackman-predicts-the-fed-will-put-the-u-s-and-world-in-recession-if-it-hikes-rates-after-thanksgiving?ref=yahoofinance&tlnk=yf-261123-hg5m7wch&.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 11:46 ET",
-        "pub_ts": 1795452360.0
+        "time": "11-23 12:18 ET",
+        "pub_ts": 1795454336.0
       },
       {
-        "title": "2 Reasons Anthropic’s IPO Is a Bigger Risk to the Stock Market Than SpaceX’s",
-        "url": "https://www.fool.com/investing/2026/11/23/2-reasons-anthropic-s-ipo-is-a-bigger-risk-to-the-stock-market-than-spacex-s/?.tsrc=rss",
+        "title": "Musk’s AI push faces a dilemma as rivals become major customers",
+        "url": "https://finance.yahoo.com/technology/ai/articles/musk-ai-push-faces-dilemma-170103778.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 11:35 ET",
-        "pub_ts": 1795451702.0
+        "time": "11-23 12:01 ET",
+        "pub_ts": 1795453263.0
       }
     ],
     "ASTS": [
@@ -3270,24 +3269,24 @@
     "AMZN": 1795456092.1831105,
     "CRWV": 1795456092.1831105,
     "NBIS": 1795456092.1831105,
-    "APLD": 1795454608.9894304,
+    "APLD": 1795456198.3494284,
     "VST": 1795456092.1831105,
-    "BE": 1795454608.9894304,
-    "CRDO": 1795454608.9894304,
+    "BE": 1795456198.3494284,
+    "CRDO": 1795456198.3494284,
     "COHR": 1795454717.3567414,
     "MRVL": 1795455779.5563297,
     "LITE": 1795455779.5563297,
-    "AAOI": 1795454608.9894304,
-    "SPCX": 1795454608.9894304,
-    "ASTS": 1795454608.9894304,
+    "AAOI": 1795456198.3494284,
+    "SPCX": 1795456198.3494284,
+    "ASTS": 1795456198.3494284,
     "AXTI": 1795455779.5563297,
-    "NASA": 1795454608.9894304,
-    "LUNR": 1795454608.9894304,
+    "NASA": 1795456198.3494284,
+    "LUNR": 1795456198.3494284,
     "TSLA": 1795454717.3567414,
     "AXP": 1795454717.3567414,
-    "RKLB": 1795454608.9894304,
-    "KO": 1795454608.9894304,
-    "FLY": 1795454608.9894304,
+    "RKLB": 1795456198.3494284,
+    "KO": 1795456198.3494284,
+    "FLY": 1795456198.3494284,
     "INTC": 1795454717.3567414,
     "VRT": 1795454717.3567414,
     "HPE": 1795454717.3567414,
@@ -3309,16 +3308,16 @@
     "MRNA": 1795455779.5563297,
     "NKE": 1795455779.5563297,
     "MCD": 1795455779.5563297,
-    "PEP": 1795454608.9894304,
+    "PEP": 1795456198.3494284,
     "XOM": 1795455986.344374,
     "JPM": 1795455986.344374,
-    "WMT": 1795454608.9894304,
+    "WMT": 1795456198.3494284,
     "V": 1795455986.344374,
     "CAT": 1795454717.3567414,
     "FN": 1795455779.5563297,
-    "GLW": 1795454608.9894304,
+    "GLW": 1795456198.3494284,
     "ANT": 1795454717.3567414,
-    "XAUUSD": 1795454608.9894304
+    "XAUUSD": 1795456198.3494284
   },
   "opex_shield": {
     "date": "2026-11-23",
@@ -3337,7 +3336,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (11:09 ET / 00:09 BJ) [英伟达]：美国参议院民主党领袖舒默：民主党将动用全部力量调查英伟达(NVDA.O)CEO黄仁勋、政府以及英伟达其他高管。",
+    "detail": "⚡ 最新核心快讯 (12:49 ET / 01:49 BJ) [特朗普]：消息人士：美国总统特朗普和副总统万斯逐渐确信，黄仁勋是维护开源模型发展、防止闭源模型公司变得过于强大的关键人物，而且具有不可替代的作用。",
     "event_name": "",
     "minutes_left": 0,
     "opex_shield": {
