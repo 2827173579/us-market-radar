@@ -1,9 +1,23 @@
 {
-  "updated_at_ts": 1795418774.188,
-  "updated_at_et": "11-23 02:26 ET",
-  "updated_at_kst": "16:26 KST",
+  "updated_at_ts": 1795418881.743,
+  "updated_at_et": "11-23 02:28 ET",
+  "updated_at_kst": "16:28 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261123152625827800",
+      "title": "【特朗普称只想向中国出售相对落后的芯片，外交部回应】 11月23日讯，外交部发言人郭嘉昆…",
+      "summary": "【特朗普称只想向中国出售相对落后的芯片，外交部回应】 11月23日讯，外交部发言人郭嘉昆主持例行记者会。路透社记者提问，美国总统特朗普称，美国只想向中国出售相对落后的芯片，并称美国政府正就此与中方进行讨论，中方对此有何回应？中方是否正与美方讨论购买此类芯片？郭嘉昆表示，关于美国的出口管制措施，中方此前已经表明了立场。",
+      "keywords": [
+        "芯片",
+        "特朗普"
+      ],
+      "pub_ts": 1795418785.0,
+      "time_et": "11-23 02:26 ET",
+      "time_bj": "15:26 BJ",
+      "time_kst": "16:26 KST",
+      "time_display": "02:26 ET / 15:26 BJ"
+    },
     {
       "id": "20261123151502870800",
       "title": "整理：A股每日市场要闻回顾（2026-11-23）",
@@ -326,19 +340,6 @@
       "time_bj": "09:25 BJ",
       "time_kst": "10:25 KST",
       "time_display": "20:25 ET / 09:25 BJ"
-    },
-    {
-      "id": "20261123092048560800",
-      "title": "港股开盘，恒生指数开跌1.08%，恒生科技指数开跌1.92%；新能源车企、生物医药、芯片…",
-      "summary": "港股开盘，恒生指数开跌1.08%，恒生科技指数开跌1.92%；新能源车企、生物医药、芯片股等跌幅居前；百度(09888.HK)跌超4%。",
-      "keywords": [
-        "芯片"
-      ],
-      "pub_ts": 1795396848.0,
-      "time_et": "11-22 20:20 ET",
-      "time_bj": "09:20 BJ",
-      "time_kst": "10:20 KST",
-      "time_display": "20:20 ET / 09:20 BJ"
     }
   ],
   "ticker_news": {
@@ -1935,6 +1936,13 @@
     ],
     "TSLA": [
       {
+        "title": "Cathie Wood Says TSLA Holders ‘Will Get’ A Premium If SpaceX Buys Tesla — HSBC Puts It At Over 30%",
+        "url": "https://stocktwits.com/news-articles/markets/equity/cathie-wood-tsla-holders-premium-if-spacex-buys-tesla-hsbc/cNbYtWbR9Si?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 02:14 ET",
+        "pub_ts": 1795418045.0
+      },
+      {
         "title": "Nio Sees Revenue Topping $15B This Year— But Analyst Warns Onvo Could Derail Tesla Roadster-Inspired Luxury Bet",
         "url": "https://stocktwits.com/news-articles/markets/equity/nio-revenue-15b-this-year-analyst-onvo-derail-tesla-roadster-luxury-bet/cNbYrWER9Sh?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1961,13 +1969,6 @@
         "source": "Yahoo Finance",
         "time": "11-22 20:02 ET",
         "pub_ts": 1795395720.0
-      },
-      {
-        "title": "Should You Buy Tesla or SpaceX Stock Before Their Potential Merger?",
-        "url": "https://www.fool.com/investing/2026/11/22/should-you-buy-tesla-or-spacex-stock-before-merger/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-22 17:21 ET",
-        "pub_ts": 1795386062.0
       }
     ],
     "AXP": [
@@ -3264,15 +3265,15 @@
     "GOOGL": 1795418666.8111782,
     "MSFT": 1795418666.8111782,
     "AAPL": 1795418774.1879063,
-    "PLTR": 1795417295.921486,
+    "PLTR": 1795418881.7427878,
     "NOW": 1795418774.1879063,
     "AMZN": 1795418774.1879063,
     "CRWV": 1795418774.1879063,
-    "NBIS": 1795417295.921486,
-    "APLD": 1795417295.921486,
-    "VST": 1795417295.921486,
-    "BE": 1795417295.921486,
-    "CRDO": 1795417295.921486,
+    "NBIS": 1795418881.7427878,
+    "APLD": 1795418881.7427878,
+    "VST": 1795418881.7427878,
+    "BE": 1795418881.7427878,
+    "CRDO": 1795418881.7427878,
     "COHR": 1795417404.20588,
     "MRVL": 1795417404.20588,
     "LITE": 1795417404.20588,
@@ -3282,26 +3283,26 @@
     "AXTI": 1795417404.20588,
     "NASA": 1795418774.1879063,
     "LUNR": 1795418774.1879063,
-    "TSLA": 1795417295.921486,
+    "TSLA": 1795418881.7427878,
     "AXP": 1795418774.1879063,
     "RKLB": 1795418774.1879063,
     "KO": 1795418774.1879063,
     "FLY": 1795418774.1879063,
     "INTC": 1795418774.1879063,
-    "VRT": 1795417295.921486,
-    "HPE": 1795417295.921486,
-    "DELL": 1795417295.921486,
-    "OKLO": 1795417295.921486,
-    "CEG": 1795417295.921486,
-    "FPS": 1795417295.921486,
+    "VRT": 1795418881.7427878,
+    "HPE": 1795418881.7427878,
+    "DELL": 1795418881.7427878,
+    "OKLO": 1795418881.7427878,
+    "CEG": 1795418881.7427878,
+    "FPS": 1795418881.7427878,
     "MU": 1795417404.20588,
     "SKHY": 1795417404.20588,
     "WDC": 1795417404.20588,
-    "STX": 1795417295.921486,
-    "MSTR": 1795417295.921486,
-    "SNDK": 1795417295.921486,
+    "STX": 1795418881.7427878,
+    "MSTR": 1795418881.7427878,
+    "SNDK": 1795418881.7427878,
     "BTC-USD": 1795417404.20588,
-    "CRWD": 1795417295.921486,
+    "CRWD": 1795418881.7427878,
     "ORCL": 1795417404.20588,
     "COIN": 1795417404.20588,
     "LLY": 1795417404.20588,
@@ -3336,7 +3337,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (02:15 ET / 15:15 BJ) [芯片]：重要新闻 1. 上海黄金交易所发布关于做好近期市场风险控制工作的通知。 2. 两融保证金下调11月30日实施，频繁异常交易、涉嫌违法违规投资者将被依法采取限制性措施。 3. “固态锂电池标准",
+    "detail": "⚡ 最新核心快讯 (02:26 ET / 15:26 BJ) [芯片] [特朗普]：【特朗普称只想向中国出售相对落后的芯片，外交部回应】 11月23日讯，外交部发言人郭嘉昆主持例行记者会。路透社记者提问，美国总统特朗普称，美国只想向中国出售相对落后的芯片，并称美国政府正就此",
     "event_name": "",
     "minutes_left": 0,
     "opex_shield": {
