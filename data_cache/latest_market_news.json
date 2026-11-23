@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795428061.007,
-  "updated_at_et": "11-23 05:01 ET",
-  "updated_at_kst": "19:01 KST",
+  "updated_at_ts": 1795428172.725,
+  "updated_at_et": "11-23 05:02 ET",
+  "updated_at_kst": "19:02 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1760,6 +1760,13 @@
     ],
     "SPCX": [
       {
+        "title": "Billionaire Bill Ackman Sounds the Alarm on Wall Street's Next Big Risk",
+        "url": "https://finance.yahoo.com/markets/stocks/article/billionaire-bill-ackman-sounds-the-alarm-on-wall-streets-next-big-risk-095404306.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 04:54 ET",
+        "pub_ts": 1795427644.0
+      },
+      {
         "title": "Market Chatter: Anthropic, SpaceX Imposed Restrictions on Underwriters During IPOs",
         "url": "https://finance.yahoo.com/markets/stocks/articles/market-chatter-anthropic-spacex-imposed-091716635.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1786,13 +1793,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 00:20 ET",
         "pub_ts": 1795411202.0
-      },
-      {
-        "title": "Musk Says the Moon and Mercury Will Be Turned Into “Computronium.” SpaceX’s Space-Compute Bet Is Bigger Than It Looks",
-        "url": "https://www.tikr.com/blog/musk-says-the-moon-and-mercury-will-be-turned-into-computronium-spacexs-space-compute-bet-is-bigger-than-it-looks?ref=yahoofinance&tlnk=yf-261123-8wf7j68p&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 00:08 ET",
-        "pub_ts": 1795410507.0
       }
     ],
     "ASTS": [
@@ -3274,30 +3274,30 @@
     "GOOGL": 1795428061.006662,
     "MSFT": 1795428061.006662,
     "AAPL": 1795428061.006662,
-    "PLTR": 1795426580.6476235,
+    "PLTR": 1795428172.725004,
     "NOW": 1795428061.006662,
     "AMZN": 1795428061.006662,
     "CRWV": 1795428061.006662,
-    "NBIS": 1795426580.6476235,
-    "APLD": 1795426580.6476235,
-    "VST": 1795426580.6476235,
-    "BE": 1795426580.6476235,
-    "CRDO": 1795426580.6476235,
+    "NBIS": 1795428172.725004,
+    "APLD": 1795428172.725004,
+    "VST": 1795428172.725004,
+    "BE": 1795428172.725004,
+    "CRDO": 1795428172.725004,
     "COHR": 1795427834.8188198,
     "MRVL": 1795427834.8188198,
     "LITE": 1795427834.8188198,
     "AAOI": 1795428061.006662,
-    "SPCX": 1795426580.6476235,
-    "ASTS": 1795426580.6476235,
+    "SPCX": 1795428172.725004,
+    "ASTS": 1795428172.725004,
     "AXTI": 1795427834.8188198,
-    "NASA": 1795426580.6476235,
-    "LUNR": 1795426580.6476235,
+    "NASA": 1795428172.725004,
+    "LUNR": 1795428172.725004,
     "TSLA": 1795426689.661156,
-    "AXP": 1795426580.6476235,
-    "RKLB": 1795426580.6476235,
-    "KO": 1795426580.6476235,
-    "FLY": 1795426580.6476235,
-    "INTC": 1795426580.6476235,
+    "AXP": 1795428172.725004,
+    "RKLB": 1795428172.725004,
+    "KO": 1795428172.725004,
+    "FLY": 1795428172.725004,
+    "INTC": 1795428172.725004,
     "VRT": 1795426689.661156,
     "HPE": 1795426689.661156,
     "DELL": 1795426689.661156,
@@ -3325,9 +3325,9 @@
     "V": 1795427834.8188198,
     "CAT": 1795427834.8188198,
     "FN": 1795427834.8188198,
-    "GLW": 1795426580.6476235,
+    "GLW": 1795428172.725004,
     "ANT": 1795427950.2176483,
-    "XAUUSD": 1795426469.5087414
+    "XAUUSD": 1795428172.725004
   },
   "opex_shield": {
     "date": "2026-11-23",
