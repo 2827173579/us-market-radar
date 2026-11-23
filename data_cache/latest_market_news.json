@@ -1,9 +1,24 @@
 {
-  "updated_at_ts": 1795462295.151,
-  "updated_at_et": "11-23 14:31 ET",
-  "updated_at_kst": "04:31 KST",
+  "updated_at_ts": 1795462419.611,
+  "updated_at_et": "11-23 14:33 ET",
+  "updated_at_kst": "04:33 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261124033059084800",
+      "title": "【复职引发美两党质疑 黄仁勋面临数场听证会 议员要求调查是否有人提前建仓】 11月24日…",
+      "summary": "【复职引发美两党质疑 黄仁勋面临数场听证会 议员要求调查是否有人提前建仓】 11月24日讯，英伟达(NVDA.O)董事会一致决定恢复黄仁勋CEO职务后，美国国会议员要求其公开作证，并调查特朗普政府介入复职的过程。参议院共和党银行委员会主席宣布，黄仁勋将于12月3日出席公开听证会，接受出口管制相关质询；他下周还将接受众议院三个委员会的闭门问询。 民主党参议员伊丽莎白·沃伦称复职决定“鲁莽”，要求政府披露参与决策的高级官员及英伟达的出口管制合规情况。参议院民主党领袖舒默指责特朗普将个人利益置于国家安全之上，誓言全面调查相关不当行为；民主党参议员鲁本·加列戈则要求调查复职消息公布前是否存在股票交易，指责特朗普为维持股市表现牺牲国家安全。 共和党议员也提出质疑。参议员约翰·科宁质疑黄仁勋复职不存在国家安全风险的依据；约翰·柯蒂斯要求说明哪些政府官员向董事会提供了意见，以及董事会作出安全判断的依据；皮特·里基茨则强调，黄仁勋仍须出席国会听证，英伟达也必须就国家安全及芯片问题作出解释。",
+      "keywords": [
+        "芯片",
+        "英伟达",
+        "特朗普"
+      ],
+      "pub_ts": 1795462259.0,
+      "time_et": "11-23 14:30 ET",
+      "time_bj": "03:30 BJ",
+      "time_kst": "04:30 KST",
+      "time_display": "14:30 ET / 03:30 BJ"
+    },
     {
       "id": "20261124024333754800",
       "title": "市场消息：黄仁勋返回英伟达(NVDA.O)总部。",
@@ -326,19 +341,6 @@
       "time_bj": "22:49 BJ",
       "time_kst": "23:49 KST",
       "time_display": "09:49 ET / 22:49 BJ"
-    },
-    {
-      "id": "20261123224502102800",
-      "title": "美国11月标普全球服务业PMI初值 54.7，预期55.6，前值56.1。",
-      "summary": "美国11月标普全球服务业PMI初值 54.7，预期55.6，前值56.1。",
-      "keywords": [
-        "标普"
-      ],
-      "pub_ts": 1795445102.0,
-      "time_et": "11-23 09:45 ET",
-      "time_bj": "22:45 BJ",
-      "time_kst": "23:45 KST",
-      "time_display": "09:45 ET / 22:45 BJ"
     }
   ],
   "ticker_news": {
@@ -795,6 +797,13 @@
         "pub_ts": 1795450382.0
       },
       {
+        "title": "Tech stocks surge as Nvidia rally adds $2 trillion to Nasdaq 100",
+        "url": "https://www.proactiveinvestors.com/companies/news/1102286/tech-stocks-surge-as-nvidia-rally-adds-2-trillion-to-nasdaq-100-1102286.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 14:20 ET",
+        "pub_ts": 1795461600.0
+      },
+      {
         "title": "Nvidia vs. TSMC: With Jensen Huang Back, Which AI Stock Is the Better Buy for 2027?",
         "url": "https://www.fool.com/coverage/better-buy/2026/11/23/nvidia-vs-tsmc-with-jensen-huang-back-which-ai-stock-is-the-better-buy-for-2027/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -814,13 +823,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 12:01 ET",
         "pub_ts": 1795453317.0
-      },
-      {
-        "title": "Taiwan Semiconductor Stocks Jump 13.84% as Nvidia CEO Return Revives AI Foundry Bets",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/taiwan-semiconductor-stocks-jump-13-165920257.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 11:59 ET",
-        "pub_ts": 1795453160.0
       }
     ],
     "VIXY": [
@@ -950,13 +952,6 @@
         "pub_ts": 1795450382.0
       },
       {
-        "title": "What does Jensen's return mean for AMD?",
-        "url": "https://finance.yahoo.com/video/what-does-jensens-return-mean-for-amd-153757690.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 10:37 ET",
-        "pub_ts": 1795448277.0
-      },
-      {
         "title": "Advanced Micro Devices vs. Dell Technologies: Comparing Revenue Trends Amid the Artificial Intelligence Boom",
         "url": "https://www.fool.com/coverage/charts/2026/11/23/advanced-micro-devices-vs-dell-technologies-comparing-revenue-trends-amid-the-artificial-intelligence-boom/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -969,6 +964,13 @@
         "source": "Yahoo Finance",
         "time": "11-23 12:06 ET",
         "pub_ts": 1795453588.0
+      },
+      {
+        "title": "Does AMD Stock Turn Profit Into Cash Like Nvidia?",
+        "url": "https://www.trefis.com/stock/amd/articles/627622/does-amd-stock-turn-profit-into-cash-like-nvidia/2026-11-23?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 11:38 ET",
+        "pub_ts": 1795451900.0
       }
     ],
     "ASML": [
@@ -1061,25 +1063,25 @@
         "pub_ts": 1795450382.0
       },
       {
+        "title": "Why Did Broadcom Stock Drop On Friday?",
+        "url": "https://www.trefis.com/stock/avgo/articles/627781/why-did-broadcom-stock-drop-on-friday/2026-11-23?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 14:05 ET",
+        "pub_ts": 1795460704.0
+      },
+      {
+        "title": "Credo Technology’s AI rebound potential versus Broadcom",
+        "url": "https://finance.yahoo.com/technology/ai/articles/credo-technology-ai-rebound-potential-185817118.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 13:58 ET",
+        "pub_ts": 1795460297.0
+      },
+      {
         "title": "All Broadcom Has to Do is Deliver Modestly to Prove Stanley Druckenmiller Wrong and Hit $500 in 2027",
         "url": "https://247wallst.com/investing/2026/11/23/all-broadcom-has-to-do-is-deliver-modestly-to-prove-stanley-druckenmiller-wrong-and-hit-500-in-2027/?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-23 12:45 ET",
         "pub_ts": 1795455948.0
-      },
-      {
-        "title": "A $6.8 Billion Fund Just Bought These 3 Stocks",
-        "url": "https://www.tikr.com/blog/a-6-8-billion-fund-just-bought-these-3-stocks?ref=yahoofinance&tlnk=yf-261123-22mgc93w&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 12:39 ET",
-        "pub_ts": 1795455566.0
-      },
-      {
-        "title": "Analog Devices Expected to Deliver a Solid Quarter, Ambarella to Face Memory Headwinds, Morgan Stanley Says",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/analog-devices-expected-deliver-solid-160155168.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 11:01 ET",
-        "pub_ts": 1795449715.0
       }
     ],
     "AMAT": [
@@ -1128,6 +1130,13 @@
         "pub_ts": 1795450419.0
       },
       {
+        "title": "A $109 Billion Fund Just Bought These 3 Stocks",
+        "url": "https://www.tikr.com/blog/a-109-billion-fund-just-bought-these-3-stocks?ref=yahoofinance&tlnk=yf-261123-fpm4jpw9&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 14:07 ET",
+        "pub_ts": 1795460873.0
+      },
+      {
         "title": "Meta Soars 6%, Cipher Up 17% as AI Stocks Rebound With Jensen Huang Back at Nvidia",
         "url": "https://www.tikr.com/blog/meta-soars-6-cipher-up-17-as-ai-stocks-rebound-with-jensen-huang-back-at-nvidia?ref=yahoofinance&tlnk=yf-261123-fm7rf6gw&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1147,16 +1156,16 @@
         "source": "Yahoo Finance",
         "time": "11-23 12:13 ET",
         "pub_ts": 1795454025.0
-      },
-      {
-        "title": "Is Meta Stock Worth More Than Its Tech Rivals?",
-        "url": "https://www.trefis.com/stock/meta/articles/627551/is-meta-stock-worth-more-than-its-tech-rivals/2026-11-22?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 12:08 ET",
-        "pub_ts": 1795453695.0
       }
     ],
     "GOOGL": [
+      {
+        "title": "Alphabet Soars 6% as Jensen Huang’s Return to Nvidia Reignites AI Stocks",
+        "url": "https://www.tikr.com/blog/alphabet-soars-6-as-jensen-huangs-return-to-nvidia-reignites-ai-stocks?ref=yahoofinance&tlnk=yf-261123-hwv86p83&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 14:00 ET",
+        "pub_ts": 1795460431.0
+      },
       {
         "title": "Jensen Huang's return to Nvidia: Long or short accountability?",
         "url": "https://finance.yahoo.com/video/jensen-huangs-return-to-nvidia-long-or-short-accountability-185949254.html?.tsrc=rss",
@@ -1184,16 +1193,16 @@
         "source": "Yahoo Finance",
         "time": "11-23 13:11 ET",
         "pub_ts": 1795457509.0
-      },
-      {
-        "title": "Nvidia's Forecast Needs $1.4 Trillion Of AI Spending In 2027. Who Pays?",
-        "url": "https://www.trefis.com/stock/nvda/articles/627446/nvidia-s-forecast-needs-1-4-trillion-of-ai-spending-in-2027-who-pays/2026-11-23?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 13:00 ET",
-        "pub_ts": 1795456856.0
       }
     ],
     "MSFT": [
+      {
+        "title": "GTA VI Hype More Than Doubled Sony’s US PS5 And Microsoft’s Xbox Weekly Sales, Circana Says",
+        "url": "https://stocktwits.com/news-articles/markets/equity/gta-vi-hype-more-than-doubled-sony-s-us-ps-5-and-microsoft-s-xbox-weekly-sales-circana-says/cNbpaZJR9jN?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 14:13 ET",
+        "pub_ts": 1795461207.0
+      },
       {
         "title": "Microsoft Stocks Rise 3.9% With a Perfect GF Score as OpenAI Contingency Plans Surface",
         "url": "https://finance.yahoo.com/markets/stocks/articles/microsoft-stocks-rise-3-9-175313371.html?.tsrc=rss",
@@ -1214,13 +1223,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 12:30 ET",
         "pub_ts": 1795455000.0
-      },
-      {
-        "title": "Is Meta Stock Worth More Than Its Tech Rivals?",
-        "url": "https://www.trefis.com/stock/meta/articles/627551/is-meta-stock-worth-more-than-its-tech-rivals/2026-11-22?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 12:08 ET",
-        "pub_ts": 1795453695.0
       },
       {
         "title": "Investors Might Be Underestimating Seagate’s Long-Term AI Growth Opportunity",
@@ -1424,6 +1426,13 @@
         "pub_ts": 1795446857.0
       },
       {
+        "title": "Nvidia-backed AI stock soars 26% as Jensen Huang returns as CEO",
+        "url": "https://www.thestreet.com/investing/stocks/nvidia-backed-ai-stock-soars-26-as-jensen-huang-returns-as-ceo-nebius-nbis?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 14:08 ET",
+        "pub_ts": 1795460901.0
+      },
+      {
         "title": "Nebius Stocks Surge 20.33% as Neocloud Rally Follows Jensen Huang's Nvidia Return",
         "url": "https://finance.yahoo.com/markets/stocks/articles/nebius-stocks-surge-20-33-175404368.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1443,13 +1452,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 12:44 ET",
         "pub_ts": 1795455897.0
-      },
-      {
-        "title": "Nebius (NBIS) Stock Is Up 24.2% Today in AI Infrastructure Rally",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/nebius-nbis-stock-24-2-173049512.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 12:30 ET",
-        "pub_ts": 1795455049.0
       }
     ],
     "APLD": [
@@ -3251,26 +3253,26 @@
     "TLT": 1795462295.151317,
     "GLD": 1795462295.151317,
     "SQQQ": 1795462295.151317,
-    "TSM": 1795460812.0329792,
+    "TSM": 1795462419.6112037,
     "VIXY": 1795462295.151317,
     "SOXS": 1795462295.151317,
     "NVDA": 1795462295.151317,
-    "AMD": 1795460812.0329792,
-    "ASML": 1795460812.0329792,
-    "QCOM": 1795460812.0329792,
-    "AVGO": 1795460812.0329792,
-    "AMAT": 1795460812.0329792,
-    "META": 1795460812.0329792,
-    "GOOGL": 1795460812.0329792,
-    "MSFT": 1795460812.0329792,
-    "AAPL": 1795460812.0329792,
-    "PLTR": 1795460812.0329792,
-    "NOW": 1795460812.0329792,
-    "AMZN": 1795460812.0329792,
-    "CRWV": 1795460812.0329792,
-    "NBIS": 1795460812.0329792,
-    "APLD": 1795460812.0329792,
-    "VST": 1795460812.0329792,
+    "AMD": 1795462419.6112037,
+    "ASML": 1795462419.6112037,
+    "QCOM": 1795462419.6112037,
+    "AVGO": 1795462419.6112037,
+    "AMAT": 1795462419.6112037,
+    "META": 1795462419.6112037,
+    "GOOGL": 1795462419.6112037,
+    "MSFT": 1795462419.6112037,
+    "AAPL": 1795462419.6112037,
+    "PLTR": 1795462419.6112037,
+    "NOW": 1795462419.6112037,
+    "AMZN": 1795462419.6112037,
+    "CRWV": 1795462419.6112037,
+    "NBIS": 1795462419.6112037,
+    "APLD": 1795462419.6112037,
+    "VST": 1795462419.6112037,
     "BE": 1795460920.3342052,
     "CRDO": 1795460920.3342052,
     "COHR": 1795460920.3342052,
@@ -3284,7 +3286,7 @@
     "LUNR": 1795460920.3342052,
     "TSLA": 1795460920.3342052,
     "AXP": 1795460920.3342052,
-    "RKLB": 1795460812.0329792,
+    "RKLB": 1795462419.6112037,
     "KO": 1795460920.3342052,
     "FLY": 1795460920.3342052,
     "INTC": 1795460920.3342052,
@@ -3315,7 +3317,7 @@
     "V": 1795462295.151317,
     "CAT": 1795461025.816452,
     "FN": 1795462155.2907438,
-    "GLW": 1795460812.0329792,
+    "GLW": 1795462419.6112037,
     "ANT": 1795461025.816452,
     "XAUUSD": 1795460920.3342052
   },
@@ -3336,7 +3338,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (13:43 ET / 02:43 BJ) [英伟达]：市场消息：黄仁勋返回英伟达(NVDA.O)总部。",
+    "detail": "⚡ 最新核心快讯 (14:30 ET / 03:30 BJ) [芯片] [英伟达] [特朗普]：【复职引发美两党质疑 黄仁勋面临数场听证会 议员要求调查是否有人提前建仓】 11月24日讯，英伟达(NVDA.O)董事会一致决定恢复黄仁勋CEO职务后，美国国会议员要求其公开作证，并调查特朗",
     "event_name": "",
     "minutes_left": 0,
     "opex_shield": {
