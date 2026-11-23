@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795421688.623,
-  "updated_at_et": "11-23 03:14 ET",
-  "updated_at_kst": "17:14 KST",
+  "updated_at_ts": 1795421831.296,
+  "updated_at_et": "11-23 03:17 ET",
+  "updated_at_kst": "17:17 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -902,6 +902,13 @@
     ],
     "NVDA": [
       {
+        "title": "Stock Market Sell-Off: 4 ETFs I'd Buy Now and Hold Through 2030",
+        "url": "https://www.fool.com/investing/2026/11/23/stock-market-sell-off-4-etfs-i-d-buy-now-and-hold-through-2030/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 03:05 ET",
+        "pub_ts": 1795421102.0
+      },
+      {
         "title": "Asian tech back in the firing line as traders track Wall St rout",
         "url": "https://finance.yahoo.com/markets/world-indices/articles/asian-tech-back-firing-line-024445930.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -928,13 +935,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 01:44 ET",
         "pub_ts": 1795416251.0
-      },
-      {
-        "title": "Nvidia Just Reported Its First Quarter Without Jensen Huang. If the AI Trade Is Cracking, Warren Buffett’s Advice Comes Down to 1 Move.",
-        "url": "https://www.fool.com/investing/2026/11/23/nvidia-just-reported-its-first-quarter-without-jensen-huang-if-the-ai-trade-is-cracking-warren-buffett-s-advice-comes-down-to-1-move/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 01:20 ET",
-        "pub_ts": 1795414802.0
       }
     ],
     "AMD": [
@@ -3242,22 +3242,22 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795420260.6746352,
-    "SOXL": 1795420260.6746352,
-    "SPY": 1795420260.6746352,
-    "DIA": 1795420260.6746352,
-    "SOXX": 1795420260.6746352,
-    "QQQ": 1795420260.6746352,
-    "SMH": 1795420260.6746352,
-    "IWM": 1795420260.6746352,
-    "IGV": 1795420260.6746352,
-    "TLT": 1795420260.6746352,
-    "GLD": 1795420260.6746352,
-    "SQQQ": 1795420260.6746352,
+    "KORU": 1795421831.2962646,
+    "SOXL": 1795421831.2962646,
+    "SPY": 1795421831.2962646,
+    "DIA": 1795421831.2962646,
+    "SOXX": 1795421831.2962646,
+    "QQQ": 1795421831.2962646,
+    "SMH": 1795421831.2962646,
+    "IWM": 1795421831.2962646,
+    "IGV": 1795421831.2962646,
+    "TLT": 1795421831.2962646,
+    "GLD": 1795421831.2962646,
+    "SQQQ": 1795421831.2962646,
     "TSM": 1795420260.6746352,
-    "VIXY": 1795420260.6746352,
-    "SOXS": 1795420260.6746352,
-    "NVDA": 1795420260.6746352,
+    "VIXY": 1795421831.2962646,
+    "SOXS": 1795421831.2962646,
+    "NVDA": 1795421831.2962646,
     "AMD": 1795420260.6746352,
     "ASML": 1795420260.6746352,
     "QCOM": 1795420260.6746352,
@@ -3320,7 +3320,7 @@
     "FN": 1795421688.6230876,
     "GLW": 1795420370.461473,
     "ANT": 1795421688.6230876,
-    "XAUUSD": 1795419098.6685262
+    "XAUUSD": 1795421831.2962646
   },
   "opex_shield": {
     "date": "2026-11-23",
