@@ -1,9 +1,24 @@
 {
-  "updated_at_ts": 1795418881.743,
-  "updated_at_et": "11-23 02:28 ET",
-  "updated_at_kst": "16:28 KST",
+  "updated_at_ts": 1795418989.54,
+  "updated_at_et": "11-23 02:29 ET",
+  "updated_at_kst": "16:29 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261123152823067800",
+      "title": "美联储1月加息计价仍占上风，黄金未来一周内能重返3700？｜市场赔率数据表",
+      "summary": "黄金空头“跳反”布局金价未来一周重返3700，原油下探权重继续偏高；美联储1月真的会进一步加息吗？",
+      "keywords": [
+        "美联储",
+        "加息",
+        "原油"
+      ],
+      "pub_ts": 1795418903.0,
+      "time_et": "11-23 02:28 ET",
+      "time_bj": "15:28 BJ",
+      "time_kst": "16:28 KST",
+      "time_display": "02:28 ET / 15:28 BJ"
+    },
     {
       "id": "20261123152625827800",
       "title": "【特朗普称只想向中国出售相对落后的芯片，外交部回应】 11月23日讯，外交部发言人郭嘉昆…",
@@ -327,19 +342,6 @@
       "time_bj": "10:08 BJ",
       "time_kst": "11:08 KST",
       "time_display": "21:08 ET / 10:08 BJ"
-    },
-    {
-      "id": "20261123092533529800",
-      "title": "A股开盘，沪指开跌0.86%，深证成指开跌0.98%，创业板指开跌0.75%；CPO、培…",
-      "summary": "A股开盘，沪指开跌0.86%，深证成指开跌0.98%，创业板指开跌0.75%；CPO、培育钻石、半导体等板块跌幅居前，黄金股逆市高开。",
-      "keywords": [
-        "半导体"
-      ],
-      "pub_ts": 1795397133.0,
-      "time_et": "11-22 20:25 ET",
-      "time_bj": "09:25 BJ",
-      "time_kst": "10:25 KST",
-      "time_display": "20:25 ET / 09:25 BJ"
     }
   ],
   "ticker_news": {
@@ -2602,6 +2604,13 @@
     ],
     "BTC-USD": [
       {
+        "title": "$1.79 Billion Left Bitcoin ETFs in One Week: Who Is Still Buying?",
+        "url": "https://beincrypto.com/bitcoin-etf-outflows-ibit-morgan-stanley/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 02:00 ET",
+        "pub_ts": 1795417200.0
+      },
+      {
         "title": "Strategy's Bitcoin Stack Is 22% Underwater. Peter Schiff Says It's ‘About to Blow Up'",
         "url": "https://beincrypto.com/strategy-net-reserve-bitcoin-below-cost/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2628,13 +2637,6 @@
         "source": "Yahoo Finance",
         "time": "11-22 21:42 ET",
         "pub_ts": 1795401761.0
-      },
-      {
-        "title": "Robert Kiyosaki Eyes Bitcoin Opportunity but the 75% Crash May Not Be Done Yet",
-        "url": "https://finance.yahoo.com/markets/crypto/articles/robert-kiyosaki-eyes-bitcoin-opportunity-023006369.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-22 21:30 ET",
-        "pub_ts": 1795401006.0
       }
     ],
     "CRWD": [
@@ -2972,6 +2974,13 @@
     ],
     "JPM": [
       {
+        "title": "JPMorgan Chase (JPM) CEO Warns UK Tax Rise Could Threaten £3 Billion HQ",
+        "url": "https://finance.yahoo.com/economy/policy/articles/jpmorgan-chase-jpm-ceo-warns-070656078.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 02:06 ET",
+        "pub_ts": 1795417616.0
+      },
+      {
         "title": "JPMorgan sees potential sharp rebound in Asian equities after positioning unwind",
         "url": "https://finance.yahoo.com/markets/world-indices/articles/jpmorgan-sees-potential-sharp-rebound-065327416.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2998,13 +3007,6 @@
         "source": "Yahoo Finance",
         "time": "11-21 10:07 ET",
         "pub_ts": 1795273620.0
-      },
-      {
-        "title": "JPMorgan Chase Financial Company LLC Declares Quarterly Coupon on Alerian MLP Index ETN",
-        "url": "https://finance.yahoo.com/markets/options/articles/jpmorgan-chase-financial-company-llc-210500283.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 16:05 ET",
-        "pub_ts": 1795208700.0
       }
     ],
     "WMT": [
@@ -3194,6 +3196,27 @@
     ],
     "ANT": [
       {
+        "title": "AI Selloff Splits Global Markets: SPY, QQQ Rebound After Worst Weekly Rout In Years, While South Korea Slides Despite Government Support",
+        "url": "https://stocktwits.com/news-articles/markets/equity/spy-qqq-dia-south-korea-japan-asia-stocks-ai-selloff/cNbYt7XR9SL?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 02:08 ET",
+        "pub_ts": 1795417686.0
+      },
+      {
+        "title": "CoreWeave (CRWV) Stock Gets An AI Demand Jolt From A Record $81.3 Billion IPO",
+        "url": "https://finance.yahoo.com/technology/ai/articles/coreweave-crwv-stock-gets-ai-070621794.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 02:06 ET",
+        "pub_ts": 1795417581.0
+      },
+      {
+        "title": "A 167-Year-Old Math Problem Just Became Meta's Case That Superintelligence Is Near",
+        "url": "https://beincrypto.com/superintelligence-inevitable-meta-ai-chief/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 01:43 ET",
+        "pub_ts": 1795416225.0
+      },
+      {
         "title": "ANT, BABA, PANW, TTWO, ZS: Why Retail Traders Couldn’t Take Their Eyes Off These Stocks Last Week",
         "url": "https://stocktwits.com/news-articles/markets/equity/ant-baba-panw-ttwo-zs-why-retail-traders-couldn-t-take-their-eyes-off-these-stocks-last-week/cNbYZ7qR91C?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3206,27 +3229,6 @@
         "source": "Yahoo Finance",
         "time": "11-22 20:25 ET",
         "pub_ts": 1795397153.0
-      },
-      {
-        "title": "Anthropic’s business model is creating a new kind of debt — comprehension debt",
-        "url": "https://www.americanbanker.com/news/anthropic-s-business-model-is-creating-a-new-kind-of-debt-comprehension-debt?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-22 19:30 ET",
-        "pub_ts": 1795393800.0
-      },
-      {
-        "title": "Anthropic Stock Trend, Jensen Huang’s Potential Return As Nvidia CEO And Dell’s Q4 Results To Keep Tech Investors Busy This Week",
-        "url": "https://stocktwits.com/news-articles/markets/equity/anthropic-stock-trend-jensen-huang-s-potential-return-as-nvidia-ceo-and-dell-s-q4-results-to-keep-tech-investors-busy-this-week/cNbYAtgR9Sf?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 01:14 ET",
-        "pub_ts": 1795414485.0
-      },
-      {
-        "title": "Oil Prices Slide as AI Bubble Fears Rattle Global Markets",
-        "url": "https://finance.yahoo.com/energy/articles/oil-prices-slide-ai-bubble-055000377.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 00:50 ET",
-        "pub_ts": 1795413000.0
       }
     ],
     "XAUUSD": [
@@ -3274,13 +3276,13 @@
     "VST": 1795418881.7427878,
     "BE": 1795418881.7427878,
     "CRDO": 1795418881.7427878,
-    "COHR": 1795417404.20588,
-    "MRVL": 1795417404.20588,
-    "LITE": 1795417404.20588,
+    "COHR": 1795418989.5397758,
+    "MRVL": 1795418989.5397758,
+    "LITE": 1795418989.5397758,
     "AAOI": 1795418774.1879063,
     "SPCX": 1795418774.1879063,
     "ASTS": 1795418774.1879063,
-    "AXTI": 1795417404.20588,
+    "AXTI": 1795418989.5397758,
     "NASA": 1795418774.1879063,
     "LUNR": 1795418774.1879063,
     "TSLA": 1795418881.7427878,
@@ -3295,29 +3297,29 @@
     "OKLO": 1795418881.7427878,
     "CEG": 1795418881.7427878,
     "FPS": 1795418881.7427878,
-    "MU": 1795417404.20588,
-    "SKHY": 1795417404.20588,
-    "WDC": 1795417404.20588,
+    "MU": 1795418989.5397758,
+    "SKHY": 1795418989.5397758,
+    "WDC": 1795418989.5397758,
     "STX": 1795418881.7427878,
     "MSTR": 1795418881.7427878,
     "SNDK": 1795418881.7427878,
-    "BTC-USD": 1795417404.20588,
+    "BTC-USD": 1795418989.5397758,
     "CRWD": 1795418881.7427878,
-    "ORCL": 1795417404.20588,
-    "COIN": 1795417404.20588,
-    "LLY": 1795417404.20588,
-    "MRNA": 1795417404.20588,
-    "NKE": 1795417404.20588,
-    "MCD": 1795417404.20588,
-    "PEP": 1795417404.20588,
-    "XOM": 1795417404.20588,
-    "JPM": 1795417404.20588,
-    "WMT": 1795417404.20588,
-    "V": 1795417404.20588,
-    "CAT": 1795417404.20588,
-    "FN": 1795417404.20588,
+    "ORCL": 1795418989.5397758,
+    "COIN": 1795418989.5397758,
+    "LLY": 1795418989.5397758,
+    "MRNA": 1795418989.5397758,
+    "NKE": 1795418989.5397758,
+    "MCD": 1795418989.5397758,
+    "PEP": 1795418989.5397758,
+    "XOM": 1795418989.5397758,
+    "JPM": 1795418989.5397758,
+    "WMT": 1795418989.5397758,
+    "V": 1795418989.5397758,
+    "CAT": 1795418989.5397758,
+    "FN": 1795418989.5397758,
     "GLW": 1795418774.1879063,
-    "ANT": 1795417404.20588,
+    "ANT": 1795418989.5397758,
     "XAUUSD": 1795417527.1139338
   },
   "opex_shield": {
@@ -3337,7 +3339,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (02:26 ET / 15:26 BJ) [芯片] [特朗普]：【特朗普称只想向中国出售相对落后的芯片，外交部回应】 11月23日讯，外交部发言人郭嘉昆主持例行记者会。路透社记者提问，美国总统特朗普称，美国只想向中国出售相对落后的芯片，并称美国政府正就此",
+    "detail": "⚡ 最新核心快讯 (02:28 ET / 15:28 BJ) [美联储] [加息] [原油]：黄金空头“跳反”布局金价未来一周重返3700，原油下探权重继续偏高；美联储1月真的会进一步加息吗？",
     "event_name": "",
     "minutes_left": 0,
     "opex_shield": {
