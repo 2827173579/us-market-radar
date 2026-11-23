@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795429366.991,
-  "updated_at_et": "11-23 05:22 ET",
-  "updated_at_kst": "19:22 KST",
+  "updated_at_ts": 1795429479.398,
+  "updated_at_et": "11-23 05:24 ET",
+  "updated_at_kst": "19:24 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -502,6 +502,13 @@
     ],
     "SOXX": [
       {
+        "title": "Chip Stocks Lead Premarket Bounce as SOXX Soars",
+        "url": "https://finance.yahoo.com/m/da42314d-e4d9-32a7-b543-328e1f71d8ea/chip-stocks-lead-premarket.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 05:12 ET",
+        "pub_ts": 1795428778.0
+      },
+      {
         "title": "SOXX and DRAM Are Down Between 35.6% and 51.9% From Their Highs. Here’s an Even Better Growth Stock ETF to Buy During the Nasdaq Correction.",
         "url": "https://www.fool.com/investing/2026/11/22/soxx-and-dram-are-down-between-35-6-and-51-9-from-their-highs-here-s-an-even-better-growth-stock-etf-to-buy-during-the-nasdaq-correction/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -528,13 +535,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 17:03 ET",
         "pub_ts": 1795212189.0
-      },
-      {
-        "title": "Did the AI Bubble Pop? Polymarket Says It Could Soon, but There's a Catch",
-        "url": "https://www.benzinga.com/markets/prediction-markets/26/11/63508103/polymarket-ai-bubble?utm_source=yahooFinance&utm_campaign=partner_feed&utm_medium=referral&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 15:33 ET",
-        "pub_ts": 1795206786.0
       }
     ],
     "QQQ": [
@@ -909,39 +909,39 @@
     ],
     "NVDA": [
       {
+        "title": "Could $1,000 a Month in Dividend Stocks Make You Rich by 2040?",
+        "url": "https://www.fool.com/investing/2026/11/23/could-1000-a-month-in-dividend-stocks-make-you-rich-by-2040/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 05:04 ET",
+        "pub_ts": 1795428242.0
+      },
+      {
+        "title": "Market Chatter: Nvidia's Alice Huang Scandal Draws Fresh Scrutiny Over China Intelligence Links",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/market-chatter-nvidia-apos-alice-095535152.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 04:55 ET",
+        "pub_ts": 1795427735.0
+      },
+      {
+        "title": "US Stock Futures Rebound After AI Sell-Off as Nvidia Investigation and Fed Outlook Remain in Focus: Dow Jones, S&P, Nasdaq, Wall Street",
+        "url": "https://investorshub.advfn.com/market-news/article/40488/us-stock-futures-rebound-after-ai-sell-off-as-nvidia-investigation-and-fed-outlook-remain-in-focus-dow-jones-sp-nasdaq-wall-street?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 04:41 ET",
+        "pub_ts": 1795426879.0
+      },
+      {
+        "title": "Michael Burry Sees 1929’s and 2000’s “Lack of a Proximate Cause in Earnings.” Nvidia’s Estimates Keep Rising",
+        "url": "https://www.tikr.com/blog/michael-burry-sees-1929s-and-2000s-lack-of-a-proximate-cause-in-earnings-nvidias-estimates-keep-rising?ref=yahoofinance&tlnk=yf-261123-rg89fg6v&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 04:35 ET",
+        "pub_ts": 1795426524.0
+      },
+      {
         "title": "Fed Chair Kevin Warsh and the FOMC Have a New Concern, and It Has Nothing to Do With Trumpflation",
         "url": "https://www.fool.com/investing/2026/11/23/fed-chair-kevin-warsh-fomc-have-new-concern-nothing-to-do-with-trumpflation/?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-23 04:26 ET",
         "pub_ts": 1795425962.0
-      },
-      {
-        "title": "Nvidia vs. SpaceX: Here's Which Stock I'd Put $1,000 Towards Right Now",
-        "url": "https://www.fool.com/investing/2026/11/23/nvidia-vs-spacex-here-s-which-stock-i-d-put-usd1-000-towards-right-now/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 03:38 ET",
-        "pub_ts": 1795423082.0
-      },
-      {
-        "title": "Asian tech back in the firing line as traders track Wall St rout",
-        "url": "https://finance.yahoo.com/markets/world-indices/articles/asian-tech-back-firing-line-024445930.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 03:27 ET",
-        "pub_ts": 1795422435.0
-      },
-      {
-        "title": "Stock Market Sell-Off: 4 ETFs I'd Buy Now and Hold Through 2030",
-        "url": "https://www.fool.com/investing/2026/11/23/stock-market-sell-off-4-etfs-i-d-buy-now-and-hold-through-2030/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 03:05 ET",
-        "pub_ts": 1795421102.0
-      },
-      {
-        "title": "Futures bounce after AI selloff; Bessent on Nvidia probe - what’s moving markets",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/futures-bounce-ai-selloff-bessent-071306387.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 02:13 ET",
-        "pub_ts": 1795417986.0
       }
     ],
     "AMD": [
@@ -3249,22 +3249,22 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795427950.2176483,
-    "SOXL": 1795427950.2176483,
-    "SPY": 1795427950.2176483,
-    "DIA": 1795427950.2176483,
-    "SOXX": 1795427950.2176483,
-    "QQQ": 1795427950.2176483,
-    "SMH": 1795427950.2176483,
-    "IWM": 1795427950.2176483,
-    "IGV": 1795427950.2176483,
-    "TLT": 1795427950.2176483,
-    "GLD": 1795427950.2176483,
-    "SQQQ": 1795427950.2176483,
+    "KORU": 1795429479.3980517,
+    "SOXL": 1795429479.3980517,
+    "SPY": 1795429479.3980517,
+    "DIA": 1795429479.3980517,
+    "SOXX": 1795429479.3980517,
+    "QQQ": 1795429479.3980517,
+    "SMH": 1795429479.3980517,
+    "IWM": 1795429479.3980517,
+    "IGV": 1795429479.3980517,
+    "TLT": 1795429479.3980517,
+    "GLD": 1795429479.3980517,
+    "SQQQ": 1795429479.3980517,
     "TSM": 1795428061.006662,
-    "VIXY": 1795427950.2176483,
-    "SOXS": 1795427950.2176483,
-    "NVDA": 1795427950.2176483,
+    "VIXY": 1795429479.3980517,
+    "SOXS": 1795429479.3980517,
+    "NVDA": 1795429479.3980517,
     "AMD": 1795428061.006662,
     "ASML": 1795428061.006662,
     "QCOM": 1795428061.006662,
@@ -3318,7 +3318,7 @@
     "MRNA": 1795429366.9913664,
     "NKE": 1795429366.9913664,
     "MCD": 1795429366.9913664,
-    "PEP": 1795427950.2176483,
+    "PEP": 1795429479.3980517,
     "XOM": 1795429366.9913664,
     "JPM": 1795429366.9913664,
     "WMT": 1795429366.9913664,
