@@ -1,9 +1,24 @@
 {
-  "updated_at_ts": 1795426469.509,
-  "updated_at_et": "11-23 04:34 ET",
-  "updated_at_kst": "18:34 KST",
+  "updated_at_ts": 1795426580.648,
+  "updated_at_et": "11-23 04:36 ET",
+  "updated_at_kst": "18:36 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261123173430847800",
+      "title": "【Anthropic和英伟达盘前反弹 带动股指期货走高】 11月23日讯，周一盘前交易中…",
+      "summary": "【Anthropic和英伟达盘前反弹 带动股指期货走高】 11月23日讯，周一盘前交易中，Anthropic(ANT.O)和英伟达(NVDA.O)股价双双走高。此前，AI相关股票重挫，令纳斯达克指数经历自2020年以来最糟糕的一周。Anthropic盘前上涨逾5%、英伟达(NVDA.O)上涨逾9%。道指期货一度上涨2.12%，涨幅达1021点。纳斯达克100指数期货一度上涨3.8%、标普500指数期货也一度上涨了2.98%。",
+      "keywords": [
+        "英伟达",
+        "纳斯达克",
+        "标普"
+      ],
+      "pub_ts": 1795426470.0,
+      "time_et": "11-23 04:34 ET",
+      "time_bj": "17:34 BJ",
+      "time_kst": "18:34 KST",
+      "time_display": "04:34 ET / 17:34 BJ"
+    },
     {
       "id": "20261123170354948800",
       "title": "【美国股指期货扩大涨幅 半导体股大幅反弹】 11月23日讯，美国股指期货扩大涨幅，道指期…",
@@ -331,19 +346,6 @@
       "time_bj": "11:12 BJ",
       "time_kst": "12:12 KST",
       "time_display": "22:12 ET / 11:12 BJ"
-    },
-    {
-      "id": "20261123110940655800",
-      "title": "A股半导体板块回升，炬芯科技涨超14%，恒玄科技涨超13%，瑞芯微、富瀚微、乐鑫科技、先…",
-      "summary": "A股半导体板块回升，炬芯科技涨超14%，恒玄科技涨超13%，瑞芯微、富瀚微、乐鑫科技、先导基电等个股跟涨。",
-      "keywords": [
-        "半导体"
-      ],
-      "pub_ts": 1795403380.0,
-      "time_et": "11-22 22:09 ET",
-      "time_bj": "11:09 BJ",
-      "time_kst": "12:09 KST",
-      "time_display": "22:09 ET / 11:09 BJ"
     }
   ],
   "ticker_news": {
@@ -1422,6 +1424,20 @@
     ],
     "NBIS": [
       {
+        "title": "CRWV, IREN, NBIS Rally After Sell-Off — New US Curbs Threaten Southeast Asia Neocloud Business",
+        "url": "https://stocktwits.com/news-articles/markets/equity/crwv-iren-nbis-rally-after-sell-off-new-us-curbs-threaten-southeast-asia-neocloud-business/cNbYwjZR9Sn?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 04:11 ET",
+        "pub_ts": 1795425116.0
+      },
+      {
+        "title": "Rocket Lab and Nebius Are Each About 66% Below Their Highs. I'd Buy Both and Hold Through 2030.",
+        "url": "https://www.fool.com/investing/2026/11/23/rocket-lab-and-nebius-are-each-about-66-below-their-highs-i-d-buy-both-and-hold-through-2030/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 04:07 ET",
+        "pub_ts": 1795424822.0
+      },
+      {
         "title": "Could Investing $500 a Month in Nebius Help You Retire a Millionaire?",
         "url": "https://www.fool.com/investing/2026/11/21/could-investing-500-a-month-in-nebius-help-you-retire-a-millionaire/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1441,20 +1457,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 20:44 ET",
         "pub_ts": 1795225448.0
-      },
-      {
-        "title": "Neoclouds like CoreWeave have two big problems",
-        "url": "https://blockspace.media/short/neoclouds-like-coreweave-have-two-big-problems/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 17:58 ET",
-        "pub_ts": 1795215531.0
-      },
-      {
-        "title": "Nebius vs. SoundHound AI: Which AI Tech Stock Is a Better Buy for 2027?",
-        "url": "https://www.fool.com/coverage/better-buy/2026/11/20/nebius-vs-soundhound-ai-which-ai-tech-stock-is-a-better-buy-for-2027/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 12:50 ET",
-        "pub_ts": 1795197002.0
       }
     ],
     "APLD": [
@@ -1755,6 +1757,13 @@
     ],
     "SPCX": [
       {
+        "title": "Market Chatter: Anthropic, SpaceX Imposed Restrictions on Underwriters During IPOs",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/market-chatter-anthropic-spacex-imposed-091716635.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 04:17 ET",
+        "pub_ts": 1795425436.0
+      },
+      {
         "title": "Nvidia vs. SpaceX: Here's Which Stock I'd Put $1,000 Towards Right Now",
         "url": "https://www.fool.com/investing/2026/11/23/nvidia-vs-spacex-here-s-which-stock-i-d-put-usd1-000-towards-right-now/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1781,13 +1790,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 00:08 ET",
         "pub_ts": 1795410507.0
-      },
-      {
-        "title": "Musk Hails a “32 Hour Launch Pad Recycle” as SpaceX Sets Its Fastest Same-Pad Turnaround",
-        "url": "https://www.tikr.com/blog/musk-hails-a-32-hour-launch-pad-recycle-as-spacex-sets-its-fastest-same-pad-turnaround?ref=yahoofinance&tlnk=yf-261123-q4c7xhq6&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-22 23:52 ET",
-        "pub_ts": 1795409533.0
       }
     ],
     "ASTS": [
@@ -2014,6 +2016,13 @@
     ],
     "RKLB": [
       {
+        "title": "Rocket Lab and Nebius Are Each About 66% Below Their Highs. I'd Buy Both and Hold Through 2030.",
+        "url": "https://www.fool.com/investing/2026/11/23/rocket-lab-and-nebius-are-each-about-66-below-their-highs-i-d-buy-both-and-hold-through-2030/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 04:07 ET",
+        "pub_ts": 1795424822.0
+      },
+      {
         "title": "RKLB Stock Has Its Worst Week Ever — But CFO Sees ‘Very Strong Uplift’ In Electron Prices As SpaceX Rideshare Slots Tighten",
         "url": "https://stocktwits.com/news-articles/markets/equity/rklb-stock-cfo-uplift-electron-prices-spacex-rideshare-slots-tighten/cNbYMSlR9SZ?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2040,13 +2049,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 18:50 ET",
         "pub_ts": 1795218603.0
-      },
-      {
-        "title": "What Could Send Rocket Lab Stock Higher?",
-        "url": "https://www.trefis.com/stock/rklb/articles/627244/what-could-send-rocket-lab-stock-higher/2026-11-20?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 14:46 ET",
-        "pub_ts": 1795204013.0
       }
     ],
     "KO": [
@@ -3269,30 +3271,30 @@
     "GOOGL": 1795426469.5087414,
     "MSFT": 1795426469.5087414,
     "AAPL": 1795426469.5087414,
-    "PLTR": 1795425075.148337,
+    "PLTR": 1795426580.6476235,
     "NOW": 1795426469.5087414,
     "AMZN": 1795426469.5087414,
     "CRWV": 1795426469.5087414,
-    "NBIS": 1795425075.148337,
-    "APLD": 1795425075.148337,
-    "VST": 1795425075.148337,
-    "BE": 1795425075.148337,
-    "CRDO": 1795425075.148337,
+    "NBIS": 1795426580.6476235,
+    "APLD": 1795426580.6476235,
+    "VST": 1795426580.6476235,
+    "BE": 1795426580.6476235,
+    "CRDO": 1795426580.6476235,
     "COHR": 1795426248.9373715,
     "MRVL": 1795426248.9373715,
     "LITE": 1795426248.9373715,
     "AAOI": 1795426469.5087414,
-    "SPCX": 1795425075.148337,
-    "ASTS": 1795425075.148337,
+    "SPCX": 1795426580.6476235,
+    "ASTS": 1795426580.6476235,
     "AXTI": 1795426248.9373715,
-    "NASA": 1795425075.148337,
-    "LUNR": 1795425075.148337,
+    "NASA": 1795426580.6476235,
+    "LUNR": 1795426580.6476235,
     "TSLA": 1795425183.9573047,
-    "AXP": 1795425075.148337,
-    "RKLB": 1795425075.148337,
-    "KO": 1795425075.148337,
-    "FLY": 1795425075.148337,
-    "INTC": 1795425075.148337,
+    "AXP": 1795426580.6476235,
+    "RKLB": 1795426580.6476235,
+    "KO": 1795426580.6476235,
+    "FLY": 1795426580.6476235,
+    "INTC": 1795426580.6476235,
     "VRT": 1795425183.9573047,
     "HPE": 1795425183.9573047,
     "DELL": 1795425183.9573047,
@@ -3320,7 +3322,7 @@
     "V": 1795426248.9373715,
     "CAT": 1795426248.9373715,
     "FN": 1795426248.9373715,
-    "GLW": 1795425075.148337,
+    "GLW": 1795426580.6476235,
     "ANT": 1795426359.8926487,
     "XAUUSD": 1795426469.5087414
   },
@@ -3341,7 +3343,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (04:03 ET / 17:03 BJ) [半导体] [英伟达] [台积电]：【美国股指期货扩大涨幅 半导体股大幅反弹】 11月23日讯，美国股指期货扩大涨幅，道指期货涨超2%，标普500指数期货涨近3%，纳指期货涨3.6%。美股盘前，半导体股大幅走高，英伟达(NVD",
+    "detail": "⚡ 最新核心快讯 (04:34 ET / 17:34 BJ) [英伟达] [纳斯达克] [标普]：【Anthropic和英伟达盘前反弹 带动股指期货走高】 11月23日讯，周一盘前交易中，Anthropic(ANT.O)和英伟达(NVDA.O)股价双双走高。此前，AI相关股票重挫，令纳斯",
     "event_name": "",
     "minutes_left": 0,
     "opex_shield": {
