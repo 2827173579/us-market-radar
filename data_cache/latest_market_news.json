@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795426143.879,
-  "updated_at_et": "11-23 04:29 ET",
-  "updated_at_kst": "18:29 KST",
+  "updated_at_ts": 1795426248.937,
+  "updated_at_et": "11-23 04:30 ET",
+  "updated_at_kst": "18:30 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2606,6 +2606,20 @@
     ],
     "BTC-USD": [
       {
+        "title": "XRP Faces Worst November On Record As ETF Outflows Top $30M, Breaking 7-Month Inflow Streak",
+        "url": "https://stocktwits.com/news-articles/markets/cryptocurrency/xrp-faces-worst-november-on-record-as-etf-outflows-breaking-7-month-inflow-streak/cNbYw99R9SV?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 04:02 ET",
+        "pub_ts": 1795424527.0
+      },
+      {
+        "title": "Mike McGlone Warns Bitcoin Could Fall as the ‘Everything Bubble’ Bursts",
+        "url": "https://www.ccn.com/news/crypto/bitcoin-price-crash-10000-mike-mcglone-warning/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 03:49 ET",
+        "pub_ts": 1795423776.0
+      },
+      {
         "title": "Ripple News: XRP Eyes Recovery as $0.90 Support Could Set Up a Rebound",
         "url": "https://cryptonews.com/news/ripple-news-xrp-90-support-recovery/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2625,20 +2639,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 02:12 ET",
         "pub_ts": 1795417968.0
-      },
-      {
-        "title": "$1.79 Billion Left Bitcoin ETFs in One Week: Who Is Still Buying?",
-        "url": "https://beincrypto.com/bitcoin-etf-outflows-ibit-morgan-stanley/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 02:00 ET",
-        "pub_ts": 1795417200.0
-      },
-      {
-        "title": "Strategy's Bitcoin Stack Is 22% Underwater. Peter Schiff Says It's ‘About to Blow Up'",
-        "url": "https://beincrypto.com/strategy-net-reserve-bitcoin-below-cost/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 00:06 ET",
-        "pub_ts": 1795410388.0
       }
     ],
     "CRWD": [
@@ -2976,6 +2976,13 @@
     ],
     "JPM": [
       {
+        "title": "JPMorgan AM Says AI Borrowing Binge Is Holding Back Bond Rally",
+        "url": "https://finance.yahoo.com/markets/options/articles/jpmorgan-am-says-ai-borrowing-084139309.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 03:41 ET",
+        "pub_ts": 1795423299.0
+      },
+      {
         "title": "JPMorgan Chase (JPM) CEO Warns UK Tax Rise Could Threaten £3 Billion HQ",
         "url": "https://finance.yahoo.com/economy/policy/articles/jpmorgan-chase-jpm-ceo-warns-070656078.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3002,16 +3009,16 @@
         "source": "Yahoo Finance",
         "time": "11-21 12:00 ET",
         "pub_ts": 1795280441.0
-      },
-      {
-        "title": "J.P. Morgan prices in stunning shift in Fed rate-hike call",
-        "url": "https://www.thestreet.com/fed/j-p-morgan-prices-in-stunning-shift-in-fed-rate-hike-call?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-21 10:07 ET",
-        "pub_ts": 1795273620.0
       }
     ],
     "WMT": [
+      {
+        "title": "Walmart raises fiscal 2027 outlook again after Q3 growth",
+        "url": "https://www.retail-insight-network.com/news/walmart-raises-fiscal-2027-outlook/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 04:14 ET",
+        "pub_ts": 1795425298.0
+      },
       {
         "title": "What Does Walmart (WMT) Nearly Tripling 30 Minute Delivery Volume Mean?",
         "url": "https://finance.yahoo.com/markets/stocks/articles/does-walmart-wmt-nearly-tripling-080658672.html?.tsrc=rss",
@@ -3039,13 +3046,6 @@
         "source": "Yahoo Finance",
         "time": "11-22 10:37 ET",
         "pub_ts": 1795361820.0
-      },
-      {
-        "title": "Walmart makes tough decision that may upset shoppers",
-        "url": "https://www.thestreet.com/retail/walmart-closed-thanksgiving-christmas-2026?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-22 10:07 ET",
-        "pub_ts": 1795360020.0
       }
     ],
     "V": [
@@ -3278,13 +3278,13 @@
     "VST": 1795425075.148337,
     "BE": 1795425075.148337,
     "CRDO": 1795425075.148337,
-    "COHR": 1795424739.590738,
-    "MRVL": 1795424739.590738,
-    "LITE": 1795424739.590738,
+    "COHR": 1795426248.9373715,
+    "MRVL": 1795426248.9373715,
+    "LITE": 1795426248.9373715,
     "AAOI": 1795424964.7462595,
     "SPCX": 1795425075.148337,
     "ASTS": 1795425075.148337,
-    "AXTI": 1795424739.590738,
+    "AXTI": 1795426248.9373715,
     "NASA": 1795425075.148337,
     "LUNR": 1795425075.148337,
     "TSLA": 1795425183.9573047,
@@ -3299,27 +3299,27 @@
     "OKLO": 1795425183.9573047,
     "CEG": 1795425183.9573047,
     "FPS": 1795425183.9573047,
-    "MU": 1795424739.590738,
-    "SKHY": 1795424739.590738,
-    "WDC": 1795424739.590738,
+    "MU": 1795426248.9373715,
+    "SKHY": 1795426248.9373715,
+    "WDC": 1795426248.9373715,
     "STX": 1795425183.9573047,
     "MSTR": 1795425183.9573047,
     "SNDK": 1795425183.9573047,
-    "BTC-USD": 1795424739.590738,
+    "BTC-USD": 1795426248.9373715,
     "CRWD": 1795425183.9573047,
-    "ORCL": 1795424739.590738,
-    "COIN": 1795424739.590738,
-    "LLY": 1795424739.590738,
-    "MRNA": 1795424739.590738,
-    "NKE": 1795424739.590738,
-    "MCD": 1795424739.590738,
+    "ORCL": 1795426248.9373715,
+    "COIN": 1795426248.9373715,
+    "LLY": 1795426248.9373715,
+    "MRNA": 1795426248.9373715,
+    "NKE": 1795426248.9373715,
+    "MCD": 1795426248.9373715,
     "PEP": 1795424851.2267318,
-    "XOM": 1795424739.590738,
-    "JPM": 1795424739.590738,
-    "WMT": 1795424739.590738,
-    "V": 1795424739.590738,
-    "CAT": 1795424739.590738,
-    "FN": 1795424739.590738,
+    "XOM": 1795426248.9373715,
+    "JPM": 1795426248.9373715,
+    "WMT": 1795426248.9373715,
+    "V": 1795426248.9373715,
+    "CAT": 1795426248.9373715,
+    "FN": 1795426248.9373715,
     "GLW": 1795425075.148337,
     "ANT": 1795424851.2267318,
     "XAUUSD": 1795424964.7462595
