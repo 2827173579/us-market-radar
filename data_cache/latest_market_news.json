@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795468249.441,
-  "updated_at_et": "11-23 16:10 ET",
-  "updated_at_kst": "06:10 KST",
+  "updated_at_ts": 1795468350.664,
+  "updated_at_et": "11-23 16:12 ET",
+  "updated_at_kst": "06:12 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2606,6 +2606,13 @@
     ],
     "BTC-USD": [
       {
+        "title": "Sector Update: Financial Stocks Higher Late Afternoon",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/sector-financial-stocks-higher-afternoon-205942322.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 15:59 ET",
+        "pub_ts": 1795467582.0
+      },
+      {
         "title": "North Korea Moves $247 Million of Binance Hack Loot Through Bitcoin Mixers",
         "url": "https://decrypt.co/383844/north-korea-247-million-binance-hack-bitcoin-mixers?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2632,13 +2639,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 14:54 ET",
         "pub_ts": 1795463644.0
-      },
-      {
-        "title": "Sector Update: Financial Stocks Higher Monday Afternoon",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/sector-financial-stocks-higher-monday-185322235.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 13:53 ET",
-        "pub_ts": 1795460002.0
       }
     ],
     "CRWD": [
@@ -2701,18 +2701,18 @@
         "pub_ts": 1795458602.0
       },
       {
+        "title": "Oracle’s Larry Ellison just lost $10.9 billion and fell from the top 10 richest billionaires in the world after his cloud company’s stock tanks",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/oracle-larry-ellison-just-lost-170006718.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 12:00 ET",
+        "pub_ts": 1795453206.0
+      },
+      {
         "title": "Oracle Stocks Jump 12.02% as Funding Pledge and Nvidia Reversal Ease AI Debt Fears",
         "url": "https://finance.yahoo.com/markets/stocks/articles/oracle-stocks-jump-12-02-165714363.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-23 11:57 ET",
         "pub_ts": 1795453034.0
-      },
-      {
-        "title": "Oracle Soars 13% as It Says OpenAI Deal Is Fully Funded, Calls Contrary Reports “Incorrect and Wrong”",
-        "url": "https://www.tikr.com/blog/oracle-soars-13-as-it-says-openai-deal-is-fully-funded-calls-contrary-reports-incorrect-and-wrong?ref=yahoofinance&tlnk=yf-261123-cw85wc65&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 11:23 ET",
-        "pub_ts": 1795451005.0
       }
     ],
     "COIN": [
@@ -2754,6 +2754,13 @@
     ],
     "LLY": [
       {
+        "title": "Lilly executive calls oncology the key growth area after obesity",
+        "url": "https://finance.yahoo.com/healthcare/articles/lilly-executive-calls-oncology-key-203928531.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 15:39 ET",
+        "pub_ts": 1795466368.0
+      },
+      {
         "title": "Ahmed family office pays $18M for Summit’s Fulton Market HQ",
         "url": "https://finance.yahoo.com/real-estate/articles/ahmed-family-office-pays-18m-193000138.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2780,13 +2787,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 10:15 ET",
         "pub_ts": 1795446935.0
-      },
-      {
-        "title": "Lilly to host Innovation Day 2026",
-        "url": "https://finance.yahoo.com/healthcare/articles/lilly-host-innovation-day-2026-150000658.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 10:00 ET",
-        "pub_ts": 1795446000.0
       }
     ],
     "MRNA": [
@@ -3246,10 +3246,10 @@
   "ticker_news_ts": {
     "KORU": 1795467076.6285453,
     "SOXL": 1795467076.6285453,
-    "SPY": 1795466763.3369036,
+    "SPY": 1795468350.6635463,
     "DIA": 1795467076.6285453,
     "SOXX": 1795467076.6285453,
-    "QQQ": 1795466763.3369036,
+    "QQQ": 1795468350.6635463,
     "SMH": 1795467076.6285453,
     "IWM": 1795467076.6285453,
     "IGV": 1795467076.6285453,
@@ -3279,12 +3279,12 @@
     "BE": 1795467323.1422722,
     "CRDO": 1795467323.1422722,
     "COHR": 1795467323.1422722,
-    "MRVL": 1795466763.3369036,
-    "LITE": 1795466763.3369036,
+    "MRVL": 1795468350.6635463,
+    "LITE": 1795468350.6635463,
     "AAOI": 1795467323.1422722,
     "SPCX": 1795467323.1422722,
     "ASTS": 1795467323.1422722,
-    "AXTI": 1795466763.3369036,
+    "AXTI": 1795468350.6635463,
     "NASA": 1795467323.1422722,
     "LUNR": 1795467323.1422722,
     "TSLA": 1795467323.1422722,
@@ -3299,27 +3299,27 @@
     "OKLO": 1795467323.1422722,
     "CEG": 1795467323.1422722,
     "FPS": 1795467428.8572154,
-    "MU": 1795466763.3369036,
-    "SKHY": 1795466763.3369036,
-    "WDC": 1795466763.3369036,
+    "MU": 1795468350.6635463,
+    "SKHY": 1795468350.6635463,
+    "WDC": 1795468350.6635463,
     "STX": 1795467428.8572154,
     "MSTR": 1795467428.8572154,
     "SNDK": 1795467428.8572154,
-    "BTC-USD": 1795466763.3369036,
+    "BTC-USD": 1795468350.6635463,
     "CRWD": 1795467428.8572154,
-    "ORCL": 1795466763.3369036,
-    "COIN": 1795466763.3369036,
-    "LLY": 1795466763.3369036,
-    "MRNA": 1795466763.3369036,
-    "NKE": 1795466763.3369036,
-    "MCD": 1795466763.3369036,
+    "ORCL": 1795468350.6635463,
+    "COIN": 1795468350.6635463,
+    "LLY": 1795468350.6635463,
+    "MRNA": 1795468350.6635463,
+    "NKE": 1795468350.6635463,
+    "MCD": 1795468350.6635463,
     "PEP": 1795467428.8572154,
     "XOM": 1795467076.6285453,
     "JPM": 1795467076.6285453,
     "WMT": 1795467428.8572154,
     "V": 1795467076.6285453,
     "CAT": 1795467428.8572154,
-    "FN": 1795466763.3369036,
+    "FN": 1795468350.6635463,
     "GLW": 1795467323.1422722,
     "ANT": 1795467428.8572154,
     "XAUUSD": 1795467428.8572154
