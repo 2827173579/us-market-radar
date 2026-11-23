@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795467205.866,
-  "updated_at_et": "11-23 15:53 ET",
-  "updated_at_kst": "05:53 KST",
+  "updated_at_ts": 1795467323.142,
+  "updated_at_et": "11-23 15:55 ET",
+  "updated_at_kst": "05:55 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1752,11 +1752,18 @@
     ],
     "SPCX": [
       {
-        "title": "Wall Street's SpaceX sequel: Anthropic gets leveraged ETFs and options, and the original didn't end well",
-        "url": "https://finance.yahoo.com/markets/article/wall-streets-spacex-sequel-anthropic-gets-leveraged-etfs-and-options-and-the-original-didnt-end-well-171144316.html?.tsrc=rss",
+        "title": "3 AI Stocks Billionaire Stanley Druckenmiller Has Been Quietly Buying",
+        "url": "https://www.fool.com/investing/2026/11/23/3-ai-stocks-billionaire-stanley-druckenmiller-has-been-quietly-buying/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 12:11 ET",
-        "pub_ts": 1795453904.0
+        "time": "11-23 15:50 ET",
+        "pub_ts": 1795467002.0
+      },
+      {
+        "title": "“No Synergies” in a SpaceX-Tesla Merger? Really? Starlink Just Showed Up in a Cybercab Roof",
+        "url": "https://www.tikr.com/blog/no-synergies-in-a-spacex-tesla-merger-really-starlink-just-showed-up-in-a-cybercab-roof?ref=yahoofinance&tlnk=yf-261123-6p2w8xcj&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 15:23 ET",
+        "pub_ts": 1795465399.0
       },
       {
         "title": "Anthropic Had a Strong First Day, but Will It End Up Like SpaceX?",
@@ -1766,25 +1773,18 @@
         "pub_ts": 1795464721.0
       },
       {
+        "title": "Peter Schiff Pushes Back on Elon Musk's Interstellar Dreams, Says SpaceX Should Focus on ‘Economically Viable’ Orbital Compute, Lunar Base",
+        "url": "https://finance.yahoo.com/technology/ai/articles/peter-schiff-pushes-back-elon-193005710.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 14:30 ET",
+        "pub_ts": 1795462205.0
+      },
+      {
         "title": "Warning for SpaceX: Europe’s “Move Away From Starlink Has Already Begun,” Says Anne Applebaum",
         "url": "https://www.tikr.com/blog/warning-for-spacex-europes-move-away-from-starlink-has-already-begun-says-anne-applebaum?ref=yahoofinance&tlnk=yf-261123-537rf528&.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-23 14:24 ET",
         "pub_ts": 1795461843.0
-      },
-      {
-        "title": "Want to Invest in Starlink but Think SpaceX Is Too Expensive? This Might Be Another Way to Profit From Its Growth",
-        "url": "https://www.fool.com/investing/2026/11/23/want-to-invest-in-starlink-but-think-spacex-is-too-expensive-this-might-be-another-way-to-profit-from-its-growth/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 14:24 ET",
-        "pub_ts": 1795461841.0
-      },
-      {
-        "title": "Elon Musk Warns AI Companies Could Be in Serious Trouble Next Year",
-        "url": "https://www.fool.com/investing/2026/11/23/elon-musk-warns-ai-companies-could-be-in-serious-trouble-next-year/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 13:37 ET",
-        "pub_ts": 1795459022.0
       }
     ],
     "ASTS": [
@@ -3273,28 +3273,28 @@
     "NBIS": 1795467205.866196,
     "APLD": 1795467205.866196,
     "VST": 1795467205.866196,
-    "BE": 1795465704.7036743,
-    "CRDO": 1795465704.7036743,
-    "COHR": 1795465704.7036743,
+    "BE": 1795467323.1422722,
+    "CRDO": 1795467323.1422722,
+    "COHR": 1795467323.1422722,
     "MRVL": 1795466763.3369036,
     "LITE": 1795466763.3369036,
-    "AAOI": 1795465704.7036743,
-    "SPCX": 1795465704.7036743,
-    "ASTS": 1795465704.7036743,
+    "AAOI": 1795467323.1422722,
+    "SPCX": 1795467323.1422722,
+    "ASTS": 1795467323.1422722,
     "AXTI": 1795466763.3369036,
-    "NASA": 1795465704.7036743,
-    "LUNR": 1795465704.7036743,
-    "TSLA": 1795465704.7036743,
-    "AXP": 1795465704.7036743,
-    "RKLB": 1795465597.5709558,
-    "KO": 1795465704.7036743,
-    "FLY": 1795465704.7036743,
-    "INTC": 1795465704.7036743,
-    "VRT": 1795465704.7036743,
-    "HPE": 1795465704.7036743,
-    "DELL": 1795465704.7036743,
-    "OKLO": 1795465704.7036743,
-    "CEG": 1795465704.7036743,
+    "NASA": 1795467323.1422722,
+    "LUNR": 1795467323.1422722,
+    "TSLA": 1795467323.1422722,
+    "AXP": 1795467323.1422722,
+    "RKLB": 1795467323.1422722,
+    "KO": 1795467323.1422722,
+    "FLY": 1795467323.1422722,
+    "INTC": 1795467323.1422722,
+    "VRT": 1795467323.1422722,
+    "HPE": 1795467323.1422722,
+    "DELL": 1795467323.1422722,
+    "OKLO": 1795467323.1422722,
+    "CEG": 1795467323.1422722,
     "FPS": 1795465704.7036743,
     "MU": 1795466763.3369036,
     "SKHY": 1795466763.3369036,
@@ -3317,7 +3317,7 @@
     "V": 1795467076.6285453,
     "CAT": 1795465816.0712192,
     "FN": 1795466763.3369036,
-    "GLW": 1795465597.5709558,
+    "GLW": 1795467323.1422722,
     "ANT": 1795465816.0712192,
     "XAUUSD": 1795465816.0712192
   },
