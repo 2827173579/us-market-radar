@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795409150.557,
-  "updated_at_et": "11-22 23:45 ET",
-  "updated_at_kst": "13:45 KST",
+  "updated_at_ts": 1795409258.002,
+  "updated_at_et": "11-22 23:47 ET",
+  "updated_at_kst": "13:47 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1237,6 +1237,13 @@
     ],
     "AAPL": [
       {
+        "title": "BTIG's Krinsky Says S&P 500 Bottom Unlikely While Apple Holds Near Highs",
+        "url": "https://beincrypto.com/sp-500-bottom-unlikely-apple-krinsky/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-22 23:00 ET",
+        "pub_ts": 1795406400.0
+      },
+      {
         "title": "What Is Apple (AAPL) Planning With Its New Autonomous AI Agent?",
         "url": "https://finance.yahoo.com/technology/ai/articles/apple-aapl-planning-autonomous-ai-200614575.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1263,13 +1270,6 @@
         "source": "Yahoo Finance",
         "time": "11-22 07:35 ET",
         "pub_ts": 1795350921.0
-      },
-      {
-        "title": "Why is Apple Stock Holding Strong While the Rest of the Market Falls?",
-        "url": "https://beincrypto.com/apple-stock-market-crash-price-outlook/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-22 07:25 ET",
-        "pub_ts": 1795350331.0
       }
     ],
     "PLTR": [
@@ -3264,15 +3264,15 @@
     "ASML": 1795409150.5565495,
     "QCOM": 1795409150.5565495,
     "AVGO": 1795409150.5565495,
-    "AMAT": 1795407681.237172,
-    "META": 1795407681.237172,
+    "AMAT": 1795409258.0024617,
+    "META": 1795409258.0024617,
     "GOOGL": 1795409150.5565495,
     "MSFT": 1795409150.5565495,
-    "AAPL": 1795407681.237172,
+    "AAPL": 1795409258.0024617,
     "PLTR": 1795407788.2846816,
-    "NOW": 1795407681.237172,
-    "AMZN": 1795407681.237172,
-    "CRWV": 1795407681.237172,
+    "NOW": 1795409258.0024617,
+    "AMZN": 1795409258.0024617,
+    "CRWV": 1795409258.0024617,
     "NBIS": 1795407788.2846816,
     "APLD": 1795407788.2846816,
     "VST": 1795407788.2846816,
@@ -3281,18 +3281,18 @@
     "COHR": 1795407895.6011488,
     "MRVL": 1795407895.6011488,
     "LITE": 1795407895.6011488,
-    "AAOI": 1795407681.237172,
-    "SPCX": 1795407681.237172,
-    "ASTS": 1795407681.237172,
+    "AAOI": 1795409258.0024617,
+    "SPCX": 1795409258.0024617,
+    "ASTS": 1795409258.0024617,
     "AXTI": 1795407895.6011488,
-    "NASA": 1795407681.237172,
-    "LUNR": 1795407681.237172,
+    "NASA": 1795409258.0024617,
+    "LUNR": 1795409258.0024617,
     "TSLA": 1795407788.2846816,
-    "AXP": 1795407681.237172,
-    "RKLB": 1795407681.237172,
-    "KO": 1795407681.237172,
-    "FLY": 1795407681.237172,
-    "INTC": 1795407681.237172,
+    "AXP": 1795409258.0024617,
+    "RKLB": 1795409258.0024617,
+    "KO": 1795409258.0024617,
+    "FLY": 1795409258.0024617,
+    "INTC": 1795409258.0024617,
     "VRT": 1795407788.2846816,
     "HPE": 1795407788.2846816,
     "DELL": 1795407788.2846816,
@@ -3320,7 +3320,7 @@
     "V": 1795407895.6011488,
     "CAT": 1795408000.718306,
     "FN": 1795407895.6011488,
-    "GLW": 1795407681.237172,
+    "GLW": 1795409258.0024617,
     "ANT": 1795408000.718306,
     "XAUUSD": 1795408000.718306
   },
