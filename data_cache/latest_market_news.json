@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795446589.528,
-  "updated_at_et": "11-23 10:09 ET",
-  "updated_at_kst": "00:09 KST",
+  "updated_at_ts": 1795446697.816,
+  "updated_at_et": "11-23 10:11 ET",
+  "updated_at_kst": "00:11 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1460,6 +1460,13 @@
     ],
     "APLD": [
       {
+        "title": "Applied Digital Shares Surge 13% After Securing $5.4 Billion AI Data Centre Lease Agreement",
+        "url": "https://investorshub.advfn.com/market-news/article/40547/applied-digital-shares-surge-13-after-securing-5-4-billion-ai-data-centre-lease-agreement?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 09:57 ET",
+        "pub_ts": 1795445827.0
+      },
+      {
         "title": "Applied Digital Soars 27% on 18-Year Hyperscaler Lease as Potential Revenue “Nears $100 Billion”",
         "url": "https://www.tikr.com/blog/applied-digital-soars-27-on-18-year-hyperscaler-lease-as-potential-revenue-nears-100-billion?ref=yahoofinance&tlnk=yf-261123-g68whxj6&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1486,13 +1493,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 08:53 ET",
         "pub_ts": 1795442000.0
-      },
-      {
-        "title": "Applied Digital Announces $300 Million Senior Secured Bridge Facility Led by a Leading Global Financial Institution",
-        "url": "https://finance.yahoo.com/technology/ai/articles/applied-digital-announces-300-million-124500466.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 07:45 ET",
-        "pub_ts": 1795437900.0
       }
     ],
     "VST": [
@@ -1756,6 +1756,13 @@
     ],
     "SPCX": [
       {
+        "title": "Cathie Wood Swapped Nvidia for SpaceX Over the Risk of “Losing Jensen” to Musk. Oops.",
+        "url": "https://www.tikr.com/blog/cathie-wood-swapped-nvidia-for-spacex-over-the-risk-of-losing-jensen-to-musk-oops?ref=yahoofinance&tlnk=yf-261123-9pqrq3mp&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 09:45 ET",
+        "pub_ts": 1795445134.0
+      },
+      {
         "title": "SpaceX Stock: Is It a Buy at $130?",
         "url": "https://www.fool.com/investing/2026/11/23/spacex-stock-is-it-a-buy-at-130/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1782,13 +1789,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 08:28 ET",
         "pub_ts": 1795440503.0
-      },
-      {
-        "title": "Tesla Bulls Banking on SpaceX “Don’t Get the Dilution Math,” Says Gary Black. Tesla Trades at 3.4x SpaceX’s 2027 Multiple",
-        "url": "https://www.tikr.com/blog/tesla-bulls-banking-on-spacex-dont-get-the-dilution-math-says-gary-black-tesla-trades-at-3-4x-spacexs-2027-multiple?ref=yahoofinance&tlnk=yf-261123-mfw83vf8&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 08:20 ET",
-        "pub_ts": 1795440048.0
       }
     ],
     "ASTS": [
@@ -3275,24 +3275,24 @@
     "AMZN": 1795446589.527723,
     "CRWV": 1795446589.527723,
     "NBIS": 1795446589.527723,
-    "APLD": 1795445047.8874571,
+    "APLD": 1795446697.8156033,
     "VST": 1795446589.527723,
-    "BE": 1795445047.8874571,
-    "CRDO": 1795445047.8874571,
+    "BE": 1795446697.8156033,
+    "CRDO": 1795446697.8156033,
     "COHR": 1795445558.9467509,
     "MRVL": 1795446369.8707495,
     "LITE": 1795446369.8707495,
-    "AAOI": 1795445047.8874571,
-    "SPCX": 1795445047.8874571,
-    "ASTS": 1795445047.8874571,
+    "AAOI": 1795446697.8156033,
+    "SPCX": 1795446697.8156033,
+    "ASTS": 1795446697.8156033,
     "AXTI": 1795446369.8707495,
-    "NASA": 1795445047.8874571,
-    "LUNR": 1795445047.8874571,
+    "NASA": 1795446697.8156033,
+    "LUNR": 1795446697.8156033,
     "TSLA": 1795445402.363778,
     "AXP": 1795445402.363778,
-    "RKLB": 1795445047.8874571,
-    "KO": 1795445047.8874571,
-    "FLY": 1795445047.8874571,
+    "RKLB": 1795446697.8156033,
+    "KO": 1795446697.8156033,
+    "FLY": 1795446697.8156033,
     "INTC": 1795445402.363778,
     "VRT": 1795445402.363778,
     "HPE": 1795445402.363778,
@@ -3314,14 +3314,14 @@
     "MRNA": 1795446369.8707495,
     "NKE": 1795446369.8707495,
     "MCD": 1795446369.8707495,
-    "PEP": 1795445047.8874571,
+    "PEP": 1795446697.8156033,
     "XOM": 1795446481.6054995,
     "JPM": 1795446481.6054995,
     "WMT": 1795446589.527723,
     "V": 1795446481.6054995,
     "CAT": 1795446589.527723,
     "FN": 1795446369.8707495,
-    "GLW": 1795445047.8874571,
+    "GLW": 1795446697.8156033,
     "ANT": 1795445402.363778,
     "XAUUSD": 1795446481.6054995
   },
