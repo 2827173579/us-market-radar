@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795440255.708,
-  "updated_at_et": "11-23 08:24 ET",
-  "updated_at_kst": "22:24 KST",
+  "updated_at_ts": 1795440378.263,
+  "updated_at_et": "11-23 08:26 ET",
+  "updated_at_kst": "22:26 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1772,6 +1772,13 @@
         "pub_ts": 1795436762.0
       },
       {
+        "title": "Zacks Investment Ideas feature highlights: Anthropic, SpaceX and Meta Platforms",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/zacks-investment-ideas-feature-highlights-121100413.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 07:11 ET",
+        "pub_ts": 1795435860.0
+      },
+      {
         "title": "Why Owning SpaceX Through ETFs Could Make More Sense Now",
         "url": "https://finance.yahoo.com/markets/stocks/articles/why-owning-spacex-etfs-could-120751201.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1784,13 +1791,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 07:00 ET",
         "pub_ts": 1795435200.0
-      },
-      {
-        "title": "SpaceX Shares Slip as It Sells $32 Billion of AI Chip Debt",
-        "url": "https://finance.yahoo.com/technology/ai/articles/spacex-shares-slip-sells-32-112347731.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 06:23 ET",
-        "pub_ts": 1795433027.0
       }
     ],
     "ASTS": [
@@ -3277,24 +3277,24 @@
     "AMZN": 1795440255.7075698,
     "CRWV": 1795440255.7075698,
     "NBIS": 1795440255.7075698,
-    "APLD": 1795438749.6700027,
+    "APLD": 1795440378.2629635,
     "VST": 1795440255.7075698,
-    "BE": 1795438749.6700027,
-    "CRDO": 1795438749.6700027,
+    "BE": 1795440378.2629635,
+    "CRDO": 1795440378.2629635,
     "COHR": 1795439284.177807,
     "MRVL": 1795440027.3147466,
     "LITE": 1795440027.3147466,
-    "AAOI": 1795438749.6700027,
-    "SPCX": 1795438749.6700027,
-    "ASTS": 1795438749.6700027,
+    "AAOI": 1795440378.2629635,
+    "SPCX": 1795440378.2629635,
+    "ASTS": 1795440378.2629635,
     "AXTI": 1795440027.3147466,
-    "NASA": 1795438749.6700027,
-    "LUNR": 1795438749.6700027,
+    "NASA": 1795440378.2629635,
+    "LUNR": 1795440378.2629635,
     "TSLA": 1795439173.4457605,
     "AXP": 1795439173.4457605,
-    "RKLB": 1795438749.6700027,
-    "KO": 1795438749.6700027,
-    "FLY": 1795438749.6700027,
+    "RKLB": 1795440378.2629635,
+    "KO": 1795440378.2629635,
+    "FLY": 1795440378.2629635,
     "INTC": 1795439173.4457605,
     "VRT": 1795439173.4457605,
     "HPE": 1795439173.4457605,
@@ -3316,14 +3316,14 @@
     "MRNA": 1795440027.3147466,
     "NKE": 1795440027.3147466,
     "MCD": 1795440027.3147466,
-    "PEP": 1795438749.6700027,
+    "PEP": 1795440378.2629635,
     "XOM": 1795440138.8502002,
     "JPM": 1795440138.8502002,
     "WMT": 1795440255.7075698,
     "V": 1795440138.8502002,
     "CAT": 1795440255.7075698,
     "FN": 1795440027.3147466,
-    "GLW": 1795438749.6700027,
+    "GLW": 1795440378.2629635,
     "ANT": 1795439173.4457605,
     "XAUUSD": 1795440027.3147466
   },
