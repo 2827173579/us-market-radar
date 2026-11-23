@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-23 09:01:26",
+  "updated_at": "2026-11-23 11:25:35",
   "win_rate_7d_pct": 100.0,
   "win_rate_30d_pct": 49.3,
   "long_win_rate_7d_pct": 11.5,
@@ -457,6 +457,13 @@
       "direction": "SHORT",
       "pred_prob_pct": 56.2,
       "entry_price": 310.53
+    },
+    {
+      "ticker": "PEP",
+      "pred_date": "2026-11-23",
+      "direction": "SHORT",
+      "pred_prob_pct": 55.0,
+      "entry_price": 140.54
     }
   ],
   "daily_breakdown_30d": [
