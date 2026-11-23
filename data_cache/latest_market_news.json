@@ -1,9 +1,23 @@
 {
-  "updated_at_ts": 1795449599.764,
-  "updated_at_et": "11-23 10:59 ET",
-  "updated_at_kst": "00:59 KST",
+  "updated_at_ts": 1795449710.016,
+  "updated_at_et": "11-23 11:01 ET",
+  "updated_at_kst": "01:01 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261124000000001800",
+      "title": "【今日重点关注的财经数据与事件：2026年11月24日 周二】 ① 05:00 美联储威…",
+      "summary": "【今日重点关注的财经数据与事件：2026年11月24日 周二】 ① 05:00 美联储威廉姆斯发表讲话 ② 17:00 德国11月IFO商业景气指数 ③ 19:00 英国11月CBI零售销售差值 ④ 19:30 小米公司举行Q3财报电话会 ⑤ 21:15 美国至11月7日当周ADP就业人数周度变动 ⑥ 22:00 美国9月FHFA房价指数月率 ⑦ 22:00 美国9月S&P/CS20座大城市未季调房价指数年率 ⑧ 23:00 美国11月谘商会消费者信心指数 ⑨ 23:00 美国11月里奇蒙德联储制造业指数 ⑩ 次日00:30 加拿大央行行长麦克勒姆发表讲话 ⑪ 次日05:30 美国至11月20日当周API原油库存",
+      "keywords": [
+        "美联储",
+        "原油"
+      ],
+      "pub_ts": 1795449600.0,
+      "time_et": "11-23 11:00 ET",
+      "time_bj": "00:00 BJ",
+      "time_kst": "01:00 KST",
+      "time_display": "11:00 ET / 00:00 BJ"
+    },
     {
       "id": "20261123235504130800",
       "title": "ORTEX数据显示，英伟达股价升至168.5美元，做空者预计将录得约122亿美元账面亏损…",
@@ -326,19 +340,6 @@
       "time_bj": "22:42 BJ",
       "time_kst": "23:42 KST",
       "time_display": "09:42 ET / 22:42 BJ"
-    },
-    {
-      "id": "20261123223500001800",
-      "title": "美国11月标普全球制造业及服务业PMI初值将于十分钟后公布。",
-      "summary": "美国11月标普全球制造业及服务业PMI初值将于十分钟后公布。",
-      "keywords": [
-        "标普"
-      ],
-      "pub_ts": 1795444500.0,
-      "time_et": "11-23 09:35 ET",
-      "time_bj": "22:35 BJ",
-      "time_kst": "23:35 KST",
-      "time_display": "09:35 ET / 22:35 BJ"
     }
   ],
   "ticker_news": {
@@ -899,48 +900,62 @@
     ],
     "NVDA": [
       {
-        "title": "Jensen Huang's return to Nvidia raises accountability questions",
-        "url": "https://finance.yahoo.com/video/jensen-huangs-return-to-nvidia-raises-accountability-questions-151948016.html?.tsrc=rss",
+        "title": "Nvidia's $115B neocloud exposure and what its backstops really cover",
+        "url": "https://finance.yahoo.com/video/nvidias-115b-neocloud-exposure-and-what-its-backstops-really-cover-154907019.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 10:19 ET",
-        "pub_ts": 1795447188.0
+        "time": "11-23 10:49 ET",
+        "pub_ts": 1795448947.0
       },
       {
-        "title": "Metal-Oxide-Semiconductor (MOS) Microprocessor Market Global Report 2026 | Capitalize on AI, Chiplets and RISC-V as NVIDIA, Intel, Broadcom and Texas Instruments Drive 10.1% CAGR",
-        "url": "https://finance.yahoo.com/technology/articles/metal-oxide-semiconductor-mos-microprocessor-152800441.html?.tsrc=rss",
+        "title": "If Colette Kress leaves Nvidia, there'll be no one left to challenge Jensen Huang",
+        "url": "https://finance.yahoo.com/video/if-colette-kress-leaves-nvidia-therell-be-no-one-left-to-challenge-jensen-huang-153905050.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 10:28 ET",
-        "pub_ts": 1795447680.0
+        "time": "11-23 10:39 ET",
+        "pub_ts": 1795448345.0
       },
       {
-        "title": "Nvidia reinstates Jensen Huang as CEO",
-        "url": "https://www.cbsnews.com/news/nvidia-reinstates-jensen-huang-ceo/?.tsrc=rss",
+        "title": "Taiwan Semiconductor Rallies 17% as Jensen Huang’s Return to NVIDIA Lifts Chip Stocks; Intel Surges 15%, AMD Jumps 8%",
+        "url": "https://247wallst.com/investing/2026/11/23/taiwan-semiconductor-rallies-17-as-jensen-huangs-return-to-nvidia-lifts-chip-stocks-intel-surges-15-amd-jumps-8/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 10:23 ET",
-        "pub_ts": 1795447436.0
+        "time": "11-23 10:55 ET",
+        "pub_ts": 1795449328.0
       },
       {
-        "title": "Jensen Huang Is Back as Nvidia CEO and the Stock Is Soaring. Here’s What Selling at Friday’s Low Just Cost an Investor With $100,000 in Nvidia",
-        "url": "https://247wallst.com/investing/2026/11/23/jensen-huang-is-back-as-nvidia-ceo-and-the-stock-is-soaring-heres-what-selling-at-fridays-low-just-cost-an-investor-with-100000-in-nvidia/?.tsrc=rss",
+        "title": "Jensen Huang Just Got His Job Back and Nvidia Soared 30% at the Open. Here’s What It Costs a Retiree to Sell $100,000 of the Stock in a Brokerage Account and in an IRA",
+        "url": "https://247wallst.com/investing/2026/11/23/jensen-huang-just-got-his-job-back-and-nvidia-soared-30-at-the-open-heres-what-it-costs-a-retiree-to-sell-100000-of-the-stock-in-a-brokerage-account-and-in-an-ira/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 10:21 ET",
-        "pub_ts": 1795447260.0
+        "time": "11-23 10:51 ET",
+        "pub_ts": 1795449060.0
       },
       {
-        "title": "Micron Soars 20% as Citi Says Ending Nvidia’s Financing Would Cut DRAM Demand Only 12%",
-        "url": "https://www.tikr.com/blog/micron-soars-20-as-citi-says-ending-nvidias-financing-would-cut-dram-demand-only-12?ref=yahoofinance&tlnk=yf-261123-hh5wwx34&.tsrc=rss",
+        "title": "Trump Gave Nvidia’s Board Assurances That Jensen Huang Was Not A National Security Threat, And Now The Stock Is Soaring",
+        "url": "https://247wallst.com/investing/2026/11/23/trump-gave-nvidias-board-assurances-that-jensen-huang-was-not-a-national-security-threat-and-now-the-stock-is-soaring/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 10:20 ET",
-        "pub_ts": 1795447200.0
+        "time": "11-23 10:48 ET",
+        "pub_ts": 1795448886.0
       }
     ],
     "AMD": [
+      {
+        "title": "What does Jensen's return mean for AMD?",
+        "url": "https://finance.yahoo.com/video/what-does-jensens-return-mean-for-amd-153757690.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 10:37 ET",
+        "pub_ts": 1795448277.0
+      },
       {
         "title": "Nvidia soars 30% as board reinstates Jensen Huang as CEO, chip stocks jump",
         "url": "https://finance.yahoo.com/markets/article/nvidia-soars-25-as-board-reinstates-jensen-huang-as-ceo-chip-stocks-jump-142353537.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-23 08:31 ET",
         "pub_ts": 1795440669.0
+      },
+      {
+        "title": "Taiwan Semiconductor Rallies 17% as Jensen Huang’s Return to NVIDIA Lifts Chip Stocks; Intel Surges 15%, AMD Jumps 8%",
+        "url": "https://247wallst.com/investing/2026/11/23/taiwan-semiconductor-rallies-17-as-jensen-huangs-return-to-nvidia-lifts-chip-stocks-intel-surges-15-amd-jumps-8/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 10:55 ET",
+        "pub_ts": 1795449328.0
       },
       {
         "title": "What Oppenheimer and William Blair See in Advanced Micro Devices (AMD)",
@@ -955,20 +970,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 10:09 ET",
         "pub_ts": 1795446566.0
-      },
-      {
-        "title": "Advanced Micro Devices, Inc. (AMD) is Attracting Investor Attention: Here is What You Should Know",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/advanced-micro-devices-inc-amd-130005243.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 08:00 ET",
-        "pub_ts": 1795438805.0
-      },
-      {
-        "title": "Premarket movers: Chip stocks lead AI rebound; CrowdStrike falls",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/premarket-movers-chip-stocks-lead-124424524.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 07:44 ET",
-        "pub_ts": 1795437864.0
       }
     ],
     "ASML": [
@@ -1061,6 +1062,13 @@
         "pub_ts": 1795447680.0
       },
       {
+        "title": "Is Broadcom Stock's Drop A Chance To Buy?",
+        "url": "https://www.trefis.com/stock/avgo/articles/627646/is-broadcom-stocks-drop-a-chance-to-buy/2026-11-23?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 10:24 ET",
+        "pub_ts": 1795447495.0
+      },
+      {
         "title": "Not Good: Broadcom Loses $200 Billion as Chips Crash and Google Reportedly Cuts AI Chip Plans",
         "url": "https://www.tikr.com/blog/not-good-broadcom-loses-200-billion-as-chips-crash-and-google-reportedly-cuts-ai-chip-plans?ref=yahoofinance&tlnk=yf-261123-ccmmcf34&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1073,13 +1081,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 06:04 ET",
         "pub_ts": 1795431887.0
-      },
-      {
-        "title": "What iShares A.I. Innovation ETF (BAI) Bought: Anthropic Leads on Nov. 19",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/ishares-innovation-etf-bai-bought-110433413.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 06:04 ET",
-        "pub_ts": 1795431873.0
       }
     ],
     "AMAT": [
@@ -1121,6 +1122,20 @@
     ],
     "META": [
       {
+        "title": "Meta AI Chief Issues Stark Warning About Humanity's Future",
+        "url": "https://finance.yahoo.com/technology/ai/articles/meta-ai-chief-issues-stark-152611567.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 10:26 ET",
+        "pub_ts": 1795447571.0
+      },
+      {
+        "title": "Meta AI Chief Warns Superintelligence Is Arriving as Anthropic Claims Math Breakthrough",
+        "url": "https://finance.yahoo.com/technology/ai/articles/meta-ai-chief-warns-superintelligence-152007821.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 10:20 ET",
+        "pub_ts": 1795447207.0
+      },
+      {
         "title": "Holiday Shopping Scams Hiding in Plain Sight: A Cyber Threat Expert's Guide to Spotting Them",
         "url": "https://finance.yahoo.com/technology/ai/articles/holiday-shopping-scams-hiding-plain-145600828.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1135,65 +1150,58 @@
         "pub_ts": 1795435260.0
       },
       {
-        "title": "ETFs Are Net Sellers of Meta Platforms (META) on Thursday",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-net-sellers-meta-platforms-110311343.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 06:03 ET",
-        "pub_ts": 1795431791.0
-      },
-      {
         "title": "Zacks Investment Ideas feature highlights: Anthropic, SpaceX and Meta Platforms",
         "url": "https://finance.yahoo.com/markets/stocks/articles/zacks-investment-ideas-feature-highlights-121100413.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-23 07:11 ET",
         "pub_ts": 1795435860.0
-      },
-      {
-        "title": "What ARK Blockchain & Fintech (ARKF) Bought: Block Leads on Nov. 19",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/ark-blockchain-fintech-arkf-bought-110545933.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 06:05 ET",
-        "pub_ts": 1795431945.0
       }
     ],
     "GOOGL": [
+      {
+        "title": "Nvidia's $115B neocloud exposure and what its backstops really cover",
+        "url": "https://finance.yahoo.com/video/nvidias-115b-neocloud-exposure-and-what-its-backstops-really-cover-154907019.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 10:49 ET",
+        "pub_ts": 1795448947.0
+      },
+      {
+        "title": "Jensen Huang back at Nvidia, stock soars; Anthropic slides",
+        "url": "https://finance.yahoo.com/video/jensen-huang-back-at-nvidia-stock-soars-anthropic-slides-154615662.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 10:46 ET",
+        "pub_ts": 1795448775.0
+      },
+      {
+        "title": "Stock Market Today: Dow, Nasdaq Surge As Jensen Huang Returns To Nvidia; Chip Plays Rocket (Live Coverage)",
+        "url": "https://finance.yahoo.com/m/8751de70-467e-380a-82cb-f4ee42adc461/stock-market-today%3A-dow%2C.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 10:36 ET",
+        "pub_ts": 1795448162.0
+      },
+      {
+        "title": "Is Broadcom Stock's Drop A Chance To Buy?",
+        "url": "https://www.trefis.com/stock/avgo/articles/627646/is-broadcom-stocks-drop-a-chance-to-buy/2026-11-23?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 10:24 ET",
+        "pub_ts": 1795447495.0
+      },
       {
         "title": "5 Stocks Stanley Druckenmiller Just Dumped—and What His Big Exit Signals Next",
         "url": "https://finance.yahoo.com/markets/stocks/articles/5-stocks-stanley-druckenmiller-just-151838870.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-23 10:18 ET",
         "pub_ts": 1795447118.0
-      },
-      {
-        "title": "Jensen Huang Just Got His Nvidia Job Back. When Steve Jobs, Howard Schultz and Bob Iger Came Back, the Stock Rose, and a Year Later 4 of 6 Comebacks Trailed the Market",
-        "url": "https://247wallst.com/investing/2026/11/23/jensen-huang-just-got-his-nvidia-job-back-when-steve-jobs-howard-schultz-and-bob-iger-came-back-the-stock-rose-and-a-year-later-4-of-6-comebacks-trailed-the-market/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 10:13 ET",
-        "pub_ts": 1795446780.0
-      },
-      {
-        "title": "Morgan Stanley Sees 14% Earnings Growth as Stocks Price In a 6% Decline",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/morgan-stanley-sees-14-earnings-151024182.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 10:10 ET",
-        "pub_ts": 1795446624.0
-      },
-      {
-        "title": "Alphabet’s Spending Could Unlock a Massive Opportunity Investors Aren’t Pricing In",
-        "url": "https://247wallst.com/investing/2026/11/23/alphabets-spending-could-unlock-a-massive-opportunity-investors-arent-pricing-in/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 10:03 ET",
-        "pub_ts": 1795446215.0
-      },
-      {
-        "title": "Nvidia Stock At $125: Where's The Floor?",
-        "url": "https://www.trefis.com/stock/nvda/articles/627453/nvidia-stock-at-125-where-s-the-floor/2026-11-23?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 10:00 ET",
-        "pub_ts": 1795446046.0
       }
     ],
     "MSFT": [
+      {
+        "title": "SpaceX Could Hit Microsoft-Scale Revenue in 2027—Then the Math and Mechanics Get Murky",
+        "url": "https://247wallst.com/investing/2026/11/23/spacex-could-hit-microsoft-scale-revenue-in-2027-then-the-math-and-mechanics-get-murky/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 10:45 ET",
+        "pub_ts": 1795448747.0
+      },
       {
         "title": "3 Unstoppable AI Stocks to Buy Hand Over Fist Before the End of 2026",
         "url": "https://www.fool.com/investing/2026/11/23/3-unstoppable-ai-stocks-buy-hand-over-fist-before-end-2026/?.tsrc=rss",
@@ -1209,11 +1217,11 @@
         "pub_ts": 1795446000.0
       },
       {
-        "title": "Apple vs. Microsoft: Here's Where I'd Put $2,000 Right Now",
-        "url": "https://www.fool.com/investing/2026/11/23/apple-vs-microsoft-here-s-where-i-d-put-usd2-000-right-now/?.tsrc=rss",
+        "title": "Nvidia's $115B neocloud exposure and what its backstops really cover",
+        "url": "https://finance.yahoo.com/video/nvidias-115b-neocloud-exposure-and-what-its-backstops-really-cover-154907019.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 08:35 ET",
-        "pub_ts": 1795440902.0
+        "time": "11-23 10:49 ET",
+        "pub_ts": 1795448947.0
       },
       {
         "title": "Texas Pacific Land to Buy EagleRock, Expanding Permian Land and Water Footprint",
@@ -1221,13 +1229,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 10:13 ET",
         "pub_ts": 1795446816.0
-      },
-      {
-        "title": "Alphabet’s Spending Could Unlock a Massive Opportunity Investors Aren’t Pricing In",
-        "url": "https://247wallst.com/investing/2026/11/23/alphabets-spending-could-unlock-a-massive-opportunity-investors-arent-pricing-in/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 10:03 ET",
-        "pub_ts": 1795446215.0
       }
     ],
     "AAPL": [
@@ -1357,6 +1358,13 @@
         "pub_ts": 1795446960.0
       },
       {
+        "title": "Amazon Reportedly Agrees $7.5 Billion Decart AI Deal to Strengthen Trainium Chip Technology",
+        "url": "https://investorshub.advfn.com/market-news/article/40557/amazon-reportedly-agrees-7-5-billion-decart-ai-deal-to-strengthen-trainium-chip-technology?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 10:03 ET",
+        "pub_ts": 1795446220.0
+      },
+      {
         "title": "Amazon agrees to buy Decart AI technology and team in reported $7.5 billion deal",
         "url": "https://finance.yahoo.com/technology/ai/articles/amazon-agrees-buy-decart-ai-150027613.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1369,13 +1377,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 09:51 ET",
         "pub_ts": 1795445512.0
-      },
-      {
-        "title": "Sector Update: Consumer Stocks Mixed Premarket Monday",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/sector-consumer-stocks-mixed-premarket-141547621.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 09:15 ET",
-        "pub_ts": 1795443347.0
       }
     ],
     "CRWV": [
@@ -1385,6 +1386,13 @@
         "source": "Yahoo Finance",
         "time": "11-23 10:14 ET",
         "pub_ts": 1795446857.0
+      },
+      {
+        "title": "Michael Burry’s Latest Top 10 Stock Picks Amid AI Crash",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/michael-burry-latest-top-10-154101772.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 10:41 ET",
+        "pub_ts": 1795448461.0
       },
       {
         "title": "Michael Burry’s Latest Portfolio: Top 5 Stock Picks Amid AI Crash",
@@ -1406,13 +1414,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 09:11 ET",
         "pub_ts": 1795443083.0
-      },
-      {
-        "title": "Gavin Baker Says “Consolidation Is Probably Coming” for Neoclouds That Can’t Get Prepayments. Here’s Who Can",
-        "url": "https://www.tikr.com/blog/gavin-baker-says-consolidation-is-probably-coming-for-neoclouds-that-cant-get-prepayments-heres-who-can?ref=yahoofinance&tlnk=yf-261123-wj6664v4&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 07:36 ET",
-        "pub_ts": 1795437380.0
       }
     ],
     "NBIS": [
@@ -3251,26 +3252,26 @@
     "TLT": 1795449599.7635071,
     "GLD": 1795449599.7635071,
     "SQQQ": 1795449599.7635071,
-    "TSM": 1795448204.9328008,
+    "TSM": 1795449710.0157335,
     "VIXY": 1795449599.7635071,
     "SOXS": 1795449599.7635071,
-    "NVDA": 1795448204.9328008,
-    "AMD": 1795448204.9328008,
-    "ASML": 1795448204.9328008,
-    "QCOM": 1795448204.9328008,
-    "AVGO": 1795448204.9328008,
-    "AMAT": 1795448204.9328008,
-    "META": 1795448204.9328008,
-    "GOOGL": 1795448204.9328008,
-    "MSFT": 1795448204.9328008,
-    "AAPL": 1795448204.9328008,
-    "PLTR": 1795448204.9328008,
-    "NOW": 1795448204.9328008,
-    "AMZN": 1795448204.9328008,
-    "CRWV": 1795448204.9328008,
-    "NBIS": 1795448204.9328008,
+    "NVDA": 1795449710.0157335,
+    "AMD": 1795449710.0157335,
+    "ASML": 1795449710.0157335,
+    "QCOM": 1795449710.0157335,
+    "AVGO": 1795449710.0157335,
+    "AMAT": 1795449710.0157335,
+    "META": 1795449710.0157335,
+    "GOOGL": 1795449710.0157335,
+    "MSFT": 1795449710.0157335,
+    "AAPL": 1795449710.0157335,
+    "PLTR": 1795449710.0157335,
+    "NOW": 1795449710.0157335,
+    "AMZN": 1795449710.0157335,
+    "CRWV": 1795449710.0157335,
+    "NBIS": 1795449710.0157335,
     "APLD": 1795448314.7534328,
-    "VST": 1795448204.9328008,
+    "VST": 1795449710.0157335,
     "BE": 1795448314.7534328,
     "CRDO": 1795448314.7534328,
     "COHR": 1795448629.7036808,
@@ -3317,7 +3318,7 @@
     "FN": 1795449491.2661486,
     "GLW": 1795448314.7534328,
     "ANT": 1795448521.0268104,
-    "XAUUSD": 1795448088.9851124
+    "XAUUSD": 1795449710.0157335
   },
   "opex_shield": {
     "date": "2026-11-23",
@@ -3336,7 +3337,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (10:55 ET / 23:55 BJ) [英伟达]：ORTEX数据显示，英伟达股价升至168.5美元，做空者预计将录得约122亿美元账面亏损，为至少自2019年以来最大单日亏损。",
+    "detail": "⚡ 最新核心快讯 (11:00 ET / 00:00 BJ) [美联储] [原油]：【今日重点关注的财经数据与事件：2026年11月24日 周二】 ① 05:00 美联储威廉姆斯发表讲话 ② 17:00 德国11月IFO商业景气指数 ③ 19:00 英国11月CBI零售销售",
     "event_name": "",
     "minutes_left": 0,
     "opex_shield": {
