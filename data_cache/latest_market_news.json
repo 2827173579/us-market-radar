@@ -1,9 +1,22 @@
 {
-  "updated_at_ts": 1795442622.489,
-  "updated_at_et": "11-23 09:03 ET",
-  "updated_at_kst": "23:03 KST",
+  "updated_at_ts": 1795442728.745,
+  "updated_at_et": "11-23 09:05 ET",
+  "updated_at_kst": "23:05 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261123220417572800",
+      "title": "美国新云服务与数据中心公司股价盘前上涨，此前英伟达恢复黄仁勋的CEO职务。CoreWea…",
+      "summary": "美国新云服务与数据中心公司股价盘前上涨，此前英伟达恢复黄仁勋的CEO职务。CoreWeave涨29%，IREN涨22.7%，Nebius涨27.3%。应用数字涨21.5%，Core Scientific涨16.4%，Hut 8上涨17.6%。",
+      "keywords": [
+        "英伟达"
+      ],
+      "pub_ts": 1795442657.0,
+      "time_et": "11-23 09:04 ET",
+      "time_bj": "22:04 BJ",
+      "time_kst": "23:04 KST",
+      "time_display": "09:04 ET / 22:04 BJ"
+    },
     {
       "id": "20261123220208731800",
       "title": "iShares半导体ETF盘前交易大涨13%。",
@@ -58,8 +71,8 @@
     },
     {
       "id": "20261123215627342800",
-      "title": "市场消息：英伟达董事会恢复黄仁勋CEO职务。",
-      "summary": "市场消息：英伟达董事会恢复黄仁勋CEO职务。",
+      "title": "英伟达董事会恢复黄仁勋CEO职务。",
+      "summary": "英伟达董事会恢复黄仁勋CEO职务。",
       "keywords": [
         "英伟达"
       ],
@@ -331,19 +344,6 @@
       "time_bj": "17:03 BJ",
       "time_kst": "18:03 KST",
       "time_display": "04:03 ET / 17:03 BJ"
-    },
-    {
-      "id": "20261123170110338800",
-      "title": "欧洲央行管委西姆库斯：12月加息25个基点可能不够，后续或需进一步收紧政策。",
-      "summary": "欧洲央行管委西姆库斯：12月加息25个基点可能不够，后续或需进一步收紧政策。",
-      "keywords": [
-        "加息"
-      ],
-      "pub_ts": 1795424470.0,
-      "time_et": "11-23 04:01 ET",
-      "time_bj": "17:01 BJ",
-      "time_kst": "18:01 KST",
-      "time_display": "04:01 ET / 17:01 BJ"
     }
   ],
   "ticker_news": {
@@ -3341,7 +3341,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (09:02 ET / 22:02 BJ) [半导体]：iShares半导体ETF盘前交易大涨13%。",
+    "detail": "⚡ 最新核心快讯 (09:04 ET / 22:04 BJ) [英伟达]：美国新云服务与数据中心公司股价盘前上涨，此前英伟达恢复黄仁勋的CEO职务。CoreWeave涨29%，IREN涨22.7%，Nebius涨27.3%。应用数字涨21.5%，Core Scie",
     "event_name": "",
     "minutes_left": 0,
     "opex_shield": {
