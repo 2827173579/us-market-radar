@@ -5039,9 +5039,13 @@
     "2026-11-23:SPY/NBIS:5M_ENTRY+STOP_LOSS": {
       "device": "PC",
       "ts": 1795467651.7903013
+    },
+    "2026-11-23:DEFENSIVE_FLIGHT:-0.1": {
+      "device": "PC",
+      "ts": 1795467830.4168332
     }
   },
   "device": "PC",
-  "last_heartbeat_ts": 1795467567.900379,
-  "updated_at": "2026-11-23T21:00:51.790841+00:00"
+  "last_heartbeat_ts": 1795467672.87583,
+  "updated_at": "2026-11-23T21:03:50.417317+00:00"
 }
