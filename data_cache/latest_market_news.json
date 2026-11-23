@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795430809.342,
-  "updated_at_et": "11-23 05:46 ET",
-  "updated_at_kst": "19:46 KST",
+  "updated_at_ts": 1795430927.686,
+  "updated_at_et": "11-23 05:48 ET",
+  "updated_at_kst": "19:48 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2389,6 +2389,20 @@
     ],
     "MU": [
       {
+        "title": "Micron Stock Rallies After Brutal Selloff. 3 Reasons Its Surge Has Legs.",
+        "url": "https://finance.yahoo.com/m/3f1f89c7-5433-3bc0-990f-eab9250e8983/micron-stock-rallies-after.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 04:59 ET",
+        "pub_ts": 1795427940.0
+      },
+      {
+        "title": "Good News for Micron: Citi Says Ending Nvidia’s Financing Would Cut DRAM Demand Only 12%",
+        "url": "https://www.tikr.com/blog/good-news-for-micron-citi-says-ending-nvidias-financing-would-cut-dram-demand-only-12?ref=yahoofinance&tlnk=yf-261123-m6g4jpcr&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 01:15 ET",
+        "pub_ts": 1795414541.0
+      },
+      {
         "title": "NVDA, INTC, MU, AMD Chip Stocks Rip Higher: Dan Ives Says ‘Bears Feel Validated,’ But There’s No Stopping The AI Wave",
         "url": "https://stocktwits.com/news-articles/markets/equity/nvda-intc-mu-amd-chip-stocks-rip-higher-dan-ives-says-bears-feel-validated-but-there-s-no-stopping-the-ai-wave/cNbYZnYR916?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2408,23 +2422,23 @@
         "source": "Yahoo Finance",
         "time": "11-22 14:00 ET",
         "pub_ts": 1795374008.0
-      },
-      {
-        "title": "Where Will Micron Stock Be in 3 Years?",
-        "url": "https://www.fool.com/investing/2026/11/22/where-will-micron-stock-be-in-3-years/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-22 04:46 ET",
-        "pub_ts": 1795340762.0
-      },
-      {
-        "title": "Micron Stock Just Hit Its Lowest Price Since May. I'd Buy More Now.",
-        "url": "https://www.fool.com/investing/2026/11/21/micron-stock-just-hit-its-lowest-price-since-may-i-d-buy-more-now/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-21 16:12 ET",
-        "pub_ts": 1795295522.0
       }
     ],
     "SKHY": [
+      {
+        "title": "U.S. chip and neocloud stocks rally premarket after last week’s selloff",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/u-chip-neocloud-stocks-rally-102133642.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 05:21 ET",
+        "pub_ts": 1795429293.0
+      },
+      {
+        "title": "Qualcomm Is Down 42% and SK hynix Has Plunged 48% Amid the AI Sell-Off. Which Is the Better Stock to Buy for 2027?",
+        "url": "https://www.fool.com/coverage/better-buy/2026/11/23/qualcomm-is-down-42-and-sk-hynix-has-plunged-48-amid-the-ai-sell-off-which-is-the-better-stock-to-buy-for-2027/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 05:20 ET",
+        "pub_ts": 1795429202.0
+      },
       {
         "title": "Korean Semiconductor Stocks After The Selloff With Samsung Electronics In Focus",
         "url": "https://finance.yahoo.com/markets/stocks/articles/korean-semiconductor-stocks-selloff-samsung-080741244.html?.tsrc=rss",
@@ -2445,20 +2459,6 @@
         "source": "Yahoo Finance",
         "time": "11-22 06:18 ET",
         "pub_ts": 1795346289.0
-      },
-      {
-        "title": "SK hynix Sinks 21% in a Week With Micron and Sandisk. Its U.S. Premium Is an “Extra Special Case”",
-        "url": "https://www.tikr.com/blog/sk-hynix-sinks-21-in-a-week-with-micron-and-sandisk-its-u-s-premium-is-an-extra-special-case?ref=yahoofinance&tlnk=yf-261121-947vrx38&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-21 11:50 ET",
-        "pub_ts": 1795279856.0
-      },
-      {
-        "title": "ASML vs. SK Hynix: Which Artificial Intelligence Stock Is a Better Buy for 2027?",
-        "url": "https://www.fool.com/coverage/better-buy/2026/11/21/asml-vs-sk-hynix-which-artificial-intelligence-stock-is-a-better-buy-for-2027/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-21 11:45 ET",
-        "pub_ts": 1795279501.0
       }
     ],
     "WDC": [
@@ -2611,13 +2611,6 @@
     ],
     "BTC-USD": [
       {
-        "title": "Bitcoin rebounds above $61,000 after liquidation-driven selloff",
-        "url": "https://finance.yahoo.com/markets/crypto/articles/bitcoin-rebounds-above-61-000-074318978.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 02:43 ET",
-        "pub_ts": 1795419798.0
-      },
-      {
         "title": "MSTR Stock Jumps In Premarket As Bitcoin Reclaims $61K After Brutal Nasdaq Sell-Off",
         "url": "https://stocktwits.com/news-articles/markets/equity/mstr-stock-jumps-in-premarket-as-bitcoin-reclaims-61-k-after-brutal-nasdaq-sell-off/cNbYDgjR9SY?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2644,6 +2637,13 @@
         "source": "Yahoo Finance",
         "time": "11-23 03:49 ET",
         "pub_ts": 1795423776.0
+      },
+      {
+        "title": "62% of Bitcoin Payments Are Made for Coffee, Jack Dorsey’s Block Data Reveals",
+        "url": "https://coingape.com/block-of-fame/pulse/62-of-bitcoin-payments-are-made-for-coffee-jack-dorseys-block-data-reveals/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 03:33 ET",
+        "pub_ts": 1795422819.0
       }
     ],
     "CRWD": [
@@ -3283,13 +3283,13 @@
     "VST": 1795429711.6942582,
     "BE": 1795429711.6942582,
     "CRDO": 1795429711.6942582,
-    "COHR": 1795429366.9913664,
-    "MRVL": 1795429366.9913664,
-    "LITE": 1795429366.9913664,
+    "COHR": 1795430927.6862364,
+    "MRVL": 1795430927.6862364,
+    "LITE": 1795430927.6862364,
     "AAOI": 1795429595.2834144,
     "SPCX": 1795429711.6942582,
     "ASTS": 1795429711.6942582,
-    "AXTI": 1795429366.9913664,
+    "AXTI": 1795430927.6862364,
     "NASA": 1795429711.6942582,
     "LUNR": 1795429711.6942582,
     "TSLA": 1795429827.4366198,
@@ -3304,27 +3304,27 @@
     "OKLO": 1795429827.4366198,
     "CEG": 1795429827.4366198,
     "FPS": 1795429827.4366198,
-    "MU": 1795429366.9913664,
-    "SKHY": 1795429366.9913664,
-    "WDC": 1795429366.9913664,
+    "MU": 1795430927.6862364,
+    "SKHY": 1795430927.6862364,
+    "WDC": 1795430927.6862364,
     "STX": 1795429827.4366198,
     "MSTR": 1795429827.4366198,
     "SNDK": 1795429827.4366198,
-    "BTC-USD": 1795429366.9913664,
+    "BTC-USD": 1795430927.6862364,
     "CRWD": 1795429827.4366198,
-    "ORCL": 1795429366.9913664,
-    "COIN": 1795429366.9913664,
-    "LLY": 1795429366.9913664,
-    "MRNA": 1795429366.9913664,
-    "NKE": 1795429366.9913664,
-    "MCD": 1795429366.9913664,
+    "ORCL": 1795430927.6862364,
+    "COIN": 1795430927.6862364,
+    "LLY": 1795430927.6862364,
+    "MRNA": 1795430927.6862364,
+    "NKE": 1795430927.6862364,
+    "MCD": 1795430927.6862364,
     "PEP": 1795429479.3980517,
     "XOM": 1795429366.9913664,
-    "JPM": 1795429366.9913664,
+    "JPM": 1795430927.6862364,
     "WMT": 1795429366.9913664,
-    "V": 1795429366.9913664,
+    "V": 1795430927.6862364,
     "CAT": 1795429366.9913664,
-    "FN": 1795429366.9913664,
+    "FN": 1795430927.6862364,
     "GLW": 1795429711.6942582,
     "ANT": 1795429595.2834144,
     "XAUUSD": 1795429827.4366198
