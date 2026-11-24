@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795510413.427,
-  "updated_at_et": "11-24 03:53 ET",
-  "updated_at_kst": "17:53 KST",
+  "updated_at_ts": 1795510518.867,
+  "updated_at_et": "11-24 03:55 ET",
+  "updated_at_kst": "17:55 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1425,6 +1425,13 @@
     ],
     "NBIS": [
       {
+        "title": "CRWV, NBIS And IREN Rally In A ‘Good Day’ For Neoclouds — Databricks Co-Founder Flags Security Gaps At ‘Top’ Neoclouds",
+        "url": "https://stocktwits.com/news-articles/markets/equity/crwv-nbis-iren-rally-good-day-neoclouds-databricks-co-founder-security-gaps-top-neoclouds/cNbsRgYR9kB?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 03:23 ET",
+        "pub_ts": 1795508637.0
+      },
+      {
         "title": "Nebius & CoreWeave Jump 21% While Oracle Sees 12% Gains on Monday Following Jensen’s Return",
         "url": "https://247wallst.com/videos/nebius-coreweave-jump-21-while-oracle-sees-12-gains-on-monday-following-jensens-return/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1451,13 +1458,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 12:45 ET",
         "pub_ts": 1795455900.0
-      },
-      {
-        "title": "Cathie Wood Just Bought $21 Million of Cerebras Across 2 ARK Funds",
-        "url": "https://www.tikr.com/blog/cathie-wood-just-bought-21-million-of-cerebras-across-2-ark-funds?ref=yahoofinance&tlnk=yf-261123-pq9mvhc4&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 12:44 ET",
-        "pub_ts": 1795455897.0
       }
     ],
     "APLD": [
@@ -2609,6 +2609,20 @@
     ],
     "BTC-USD": [
       {
+        "title": "Why Hyperliquid CEO Rejected The Michael Saylor-Style Bitcoin Treasury Model — And Bet On HYPE Instead",
+        "url": "https://stocktwits.com/news-articles/markets/equity/purr-stock-hyperliquid-strategies-ceo-treasury-michael-saylor/cNbsTT3R9k9?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 03:49 ET",
+        "pub_ts": 1795510167.0
+      },
+      {
+        "title": "US Dollar Hits 20-Month High Before Wednesday's Big Inflation Test",
+        "url": "https://beincrypto.com/us-dollar-20-month-high-pce-inflation/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 03:35 ET",
+        "pub_ts": 1795509321.0
+      },
+      {
         "title": "Grayscale Says Bitcoin Looks Oversold, Warns Of Near-Term AI Risks As Nvidia And Anthropic Developments Put Markets In Focus",
         "url": "https://stocktwits.com/news-articles/markets/cryptocurrency/grayscale-bitcoin-oversold-ai-risks-nvidia-anthropic/cNbsGFxR9kI?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2628,20 +2642,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 01:54 ET",
         "pub_ts": 1795503259.0
-      },
-      {
-        "title": "Bitcoin And Stocks Are Moving In Different Directions: Arthur Hayes Says Nvidia's Rally Is The 'Worst Thing' For Crypto",
-        "url": "https://stocktwits.com/news-articles/markets/cryptocurrency/arthur-hayes-nvidia-rally-bitcoin-november-selloff/cNbrzA2R9k3?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 01:45 ET",
-        "pub_ts": 1795502725.0
-      },
-      {
-        "title": "Bitcoin hovers around $60k amid little relief from rate, regulatory jitters",
-        "url": "https://finance.yahoo.com/markets/crypto/articles/bitcoin-hovers-around-60k-amid-064423052.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 01:44 ET",
-        "pub_ts": 1795502663.0
       }
     ],
     "CRWD": [
@@ -3313,18 +3313,18 @@
     "NOW": 1795510304.6043298,
     "AMZN": 1795510304.6043298,
     "CRWV": 1795510304.6043298,
-    "NBIS": 1795509001.444044,
+    "NBIS": 1795510518.8666875,
     "APLD": 1795509220.6783664,
     "VST": 1795509220.6783664,
     "BE": 1795509220.6783664,
     "CRDO": 1795509220.6783664,
     "COHR": 1795509220.6783664,
-    "MRVL": 1795509001.444044,
-    "LITE": 1795509001.444044,
+    "MRVL": 1795510518.8666875,
+    "LITE": 1795510518.8666875,
     "AAOI": 1795509220.6783664,
     "SPCX": 1795509220.6783664,
     "ASTS": 1795509220.6783664,
-    "AXTI": 1795509001.444044,
+    "AXTI": 1795510518.8666875,
     "NASA": 1795509220.6783664,
     "LUNR": 1795509220.6783664,
     "TSLA": 1795509329.1768882,
@@ -3339,27 +3339,27 @@
     "OKLO": 1795509329.1768882,
     "CEG": 1795509329.1768882,
     "FPS": 1795509329.1768882,
-    "MU": 1795509001.444044,
-    "SKHY": 1795509001.444044,
-    "WDC": 1795509001.444044,
+    "MU": 1795510518.8666875,
+    "SKHY": 1795510518.8666875,
+    "WDC": 1795510518.8666875,
     "STX": 1795509329.1768882,
     "MSTR": 1795509329.1768882,
     "SNDK": 1795509329.1768882,
-    "BTC-USD": 1795509001.444044,
+    "BTC-USD": 1795510518.8666875,
     "CRWD": 1795509329.1768882,
-    "ORCL": 1795509001.444044,
-    "COIN": 1795509001.444044,
-    "LLY": 1795509001.444044,
-    "MRNA": 1795509001.444044,
-    "NKE": 1795509001.444044,
-    "MCD": 1795509001.444044,
+    "ORCL": 1795510518.8666875,
+    "COIN": 1795510518.8666875,
+    "LLY": 1795510518.8666875,
+    "MRNA": 1795510518.8666875,
+    "NKE": 1795510518.8666875,
+    "MCD": 1795510518.8666875,
     "PEP": 1795509329.1768882,
-    "XOM": 1795509001.444044,
-    "JPM": 1795509001.444044,
+    "XOM": 1795510518.8666875,
+    "JPM": 1795510518.8666875,
     "WMT": 1795509329.1768882,
-    "V": 1795509001.444044,
+    "V": 1795510518.8666875,
     "CAT": 1795509329.1768882,
-    "FN": 1795509001.444044,
+    "FN": 1795510518.8666875,
     "GLW": 1795509220.6783664,
     "ANT": 1795509329.1768882,
     "XAUUSD": 1795509543.3090684,
