@@ -1,9 +1,23 @@
 {
-  "updated_at_ts": 1795494020.984,
-  "updated_at_et": "11-23 23:20 ET",
-  "updated_at_kst": "13:20 KST",
+  "updated_at_ts": 1795494132.688,
+  "updated_at_et": "11-23 23:22 ET",
+  "updated_at_kst": "13:22 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261124121958545800",
+      "title": "黄仁勋复职内幕曝光：白宫为稳住股市展开72小时行动！",
+      "summary": "据知情人士，特朗普担忧美股持续下跌，亲自推动黄仁勋重掌英伟达。万斯牵头，在72小时内协调多名政府高官游说董事会，贝森特和卢特尼克也参与其中。点击查看...",
+      "keywords": [
+        "英伟达",
+        "特朗普"
+      ],
+      "pub_ts": 1795493998.0,
+      "time_et": "11-23 23:19 ET",
+      "time_bj": "12:19 BJ",
+      "time_kst": "13:19 KST",
+      "time_display": "23:19 ET / 12:19 BJ"
+    },
     {
       "id": "20261124115938771800",
       "title": "整理：每日人工智能动态汇总（2026-11-24）",
@@ -331,19 +345,6 @@
       "time_bj": "06:55 BJ",
       "time_kst": "07:55 KST",
       "time_display": "17:55 ET / 06:55 BJ"
-    },
-    {
-      "id": "20261124065000001800",
-      "title": "【今日重点关注的财经数据与事件：2026年11月24日 周二】 ① 17:00 德国11…",
-      "summary": "【今日重点关注的财经数据与事件：2026年11月24日 周二】 ① 17:00 德国11月IFO商业景气指数 ② 19:00 英国11月CBI零售销售差值 ③ 19:30 小米公司举行Q3财报电话会 ④ 21:15 美国至11月7日当周ADP就业人数周度变动 ⑤ 22:00 美国9月FHFA房价指数月率 ⑥ 22:00 美国9月S&P/CS20座大城市未季调房价指数年率 ⑦ 23:00 美国11月谘商会消费者信心指数 ⑧ 23:00 美国11月里奇蒙德联储制造业指数 ⑨ 次日00:30 加拿大央行行长麦克勒姆发表讲话 ⑩ 次日05:30 美国至11月20日当周API原油库存",
-      "keywords": [
-        "原油"
-      ],
-      "pub_ts": 1795474200.0,
-      "time_et": "11-23 17:50 ET",
-      "time_bj": "06:50 BJ",
-      "time_kst": "07:50 KST",
-      "time_display": "17:50 ET / 06:50 BJ"
     }
   ],
   "ticker_news": {
@@ -1940,18 +1941,18 @@
     ],
     "TSLA": [
       {
+        "title": "Dow Jones Futures: Tech Stocks, Nvidia Snap Back On Jensen Huang's Return; Elon Musk-Led SpaceX, Tesla Rally",
+        "url": "https://finance.yahoo.com/m/be493228-4ecf-338d-9017-054d3d6efc36/dow-jones-futures%3A-tech.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 22:27 ET",
+        "pub_ts": 1795490874.0
+      },
+      {
         "title": "How to Invest in Humanoid Robots: 3 Stocks to Watch",
         "url": "https://www.fool.com/investing/2026/11/23/how-to-invest-in-humanoid-robots-3-stocks-to-watch/?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-23 21:51 ET",
         "pub_ts": 1795488662.0
-      },
-      {
-        "title": "Dow Jones Futures: Tech Stocks, Nvidia Snap Back On Jensen Huang's Return; Elon Musk-Led SpaceX, Tesla Rally",
-        "url": "https://finance.yahoo.com/m/be493228-4ecf-338d-9017-054d3d6efc36/dow-jones-futures%3A-tech.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 21:14 ET",
-        "pub_ts": 1795486479.0
       },
       {
         "title": "TSLA And SPCX Rally As Musk Cheers Huang’s Return — Analyst Flags Nvidia’s Push To Send SpaceX More Chips",
@@ -2199,6 +2200,13 @@
     ],
     "HPE": [
       {
+        "title": "Sunway Group Accelerates Secure and Sovereign Enterprise-wide Artificial Intelligence With HPE",
+        "url": "https://finance.yahoo.com/technology/ai/articles/sunway-group-accelerates-secure-sovereign-030000590.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 22:00 ET",
+        "pub_ts": 1795489200.0
+      },
+      {
         "title": "Nasdaq, Dow, S&P 500 Futures Gain As Jensen Huang’s Return To Nvidia Sparks $3T Market Rally: SOXS, IBRX, HPE, TSM In Focus",
         "url": "https://stocktwits.com/news-articles/markets/equity/stock-market-today-nasdaq-dow-futures-rise-jensen-huang-returns-nvidia/cNbrsSNR9jM?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2225,16 +2233,16 @@
         "source": "Yahoo Finance",
         "time": "11-23 18:08 ET",
         "pub_ts": 1795475280.0
-      },
-      {
-        "title": "Hewlett Packard Enterprise (HPE) Reports Q4 Earnings: What Key Metrics Have to Say",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/hewlett-packard-enterprise-hpe-reports-230001978.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 18:00 ET",
-        "pub_ts": 1795474801.0
       }
     ],
     "DELL": [
+      {
+        "title": "Dell Technologies (DELL) Roars Back, Gets 2 Major Catalysts Working in Its Favor",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/dell-technologies-dell-roars-back-030939608.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 22:09 ET",
+        "pub_ts": 1795489779.0
+      },
       {
         "title": "Nvidia, Dell, Micron, Anthropic, CrowdStrike, UnitedHealth, and More Stocks That Explain Today’s Market",
         "url": "https://finance.yahoo.com/m/76a3103b-f3de-364f-8cd8-90e453a902d8/nvidia%2C-dell%2C-micron%2C.html?.tsrc=rss",
@@ -2262,13 +2270,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 14:20 ET",
         "pub_ts": 1795461600.0
-      },
-      {
-        "title": "Advanced Micro Devices vs. Dell Technologies: Comparing Revenue Trends Amid the Artificial Intelligence Boom",
-        "url": "https://www.fool.com/coverage/charts/2026/11/23/advanced-micro-devices-vs-dell-technologies-comparing-revenue-trends-amid-the-artificial-intelligence-boom/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 12:22 ET",
-        "pub_ts": 1795454549.0
       }
     ],
     "OKLO": [
@@ -2643,6 +2644,27 @@
     ],
     "CRWD": [
       {
+        "title": "CrowdStrike CEO Sees $185B Opportunity, Says Zscaler Deal Will Create A ‘Winning Combination’ Amid Rising AI Threats",
+        "url": "https://stocktwits.com/news-articles/markets/equity/crowdstrike-zscaler-185b-opportunity-ceo-winning-combination/cNbruzKR9jx?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 22:46 ET",
+        "pub_ts": 1795491963.0
+      },
+      {
+        "title": "Nvidia Just Built Agent Security Into Its Chips. What Does That Mean for CrowdStrike?",
+        "url": "https://www.fool.com/investing/2026/11/23/nvidia-just-built-agent-security-into-its-chips-what-does-that-mean-for-crowdstrike/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 22:37 ET",
+        "pub_ts": 1795491422.0
+      },
+      {
+        "title": "CrowdStrike's $43.9 billion deal has a surprising catch",
+        "url": "https://www.thestreet.com/investing/crowdstrikes-43-9-billion-deal-has-a-surprising-catch?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 22:17 ET",
+        "pub_ts": 1795490220.0
+      },
+      {
         "title": "Why CrowdStrike Stock Was Down Today",
         "url": "https://www.fool.com/investing/2026/11/23/why-crowdstrike-stock-was-down-today/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2655,27 +2677,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 17:16 ET",
         "pub_ts": 1795472173.0
-      },
-      {
-        "title": "AI Just Got a $44 Billion Security Patch",
-        "url": "https://finance.yahoo.com/m/58a670c7-b335-37e3-9190-c6c289f3798b/ai-just-got-a-%2444-billion.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 16:19 ET",
-        "pub_ts": 1795468740.0
-      },
-      {
-        "title": "Zscaler Stock Surged on CrowdStrike's $43.9 Billion Buyout. Here's How Much Shareholders Will Actually Get",
-        "url": "https://www.fool.com/investing/2026/11/23/zscaler-stock-surged-on-crowdstrike-s-usd43-9-billion-buyout-here-s-how-much-shareholders-will-actually-get/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 16:18 ET",
-        "pub_ts": 1795468690.0
-      },
-      {
-        "title": "Can CrowdStrike Holdings (CRWD) Justify Its Valuation As It Raises Full Year Outlook?",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/crowdstrike-holdings-crwd-justify-valuation-200654487.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 15:06 ET",
-        "pub_ts": 1795464414.0
       }
     ],
     "ORCL": [
@@ -3198,11 +3199,25 @@
     ],
     "ANT": [
       {
+        "title": "Defiance Leverages Anthropic With Two New ETFs: ANTC and ANTQ",
+        "url": "https://finance.yahoo.com/markets/options/articles/defiance-leverages-anthropic-two-etfs-035941420.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 22:59 ET",
+        "pub_ts": 1795492781.0
+      },
+      {
         "title": "Dow Jones Futures: Tech Stocks, Nvidia Snap Back On Jensen Huang's Return; Elon Musk-Led SpaceX, Tesla Rally",
         "url": "https://finance.yahoo.com/m/be493228-4ecf-338d-9017-054d3d6efc36/dow-jones-futures%3A-tech.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 21:14 ET",
-        "pub_ts": 1795486479.0
+        "time": "11-23 22:27 ET",
+        "pub_ts": 1795490874.0
+      },
+      {
+        "title": "Anthropic Stock Fell About 20% From Its First Trade in Its First 2 Days. Here's the Price at Which I'd Buy It.",
+        "url": "https://www.fool.com/investing/2026/11/23/anthropic-stock-fell-about-20-from-its-first-trade-in-its-first-2-days-here-s-the-price-at-which-i-d-buy-it/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 22:07 ET",
+        "pub_ts": 1795489621.0
       },
       {
         "title": "Can Anthropic win hearts and minds by curing hearts and minds?",
@@ -3217,20 +3232,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 21:03 ET",
         "pub_ts": 1795485837.0
-      },
-      {
-        "title": "The Nasdaq Just Had Its Best Day Since April 2025. Anthropic Stock Fell Anyway.",
-        "url": "https://www.fool.com/investing/2026/11/23/the-nasdaq-just-had-its-best-day-since-april-2025-anthropic-stock-fell-anyway/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 19:42 ET",
-        "pub_ts": 1795480922.0
-      },
-      {
-        "title": "Is Amazon's Profit Riskier Than It Looks?",
-        "url": "https://www.trefis.com/stock/amzn/articles/627559/is-amazon-s-profit-riskier-than-it-looks/2026-11-23?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 19:25 ET",
-        "pub_ts": 1795479913.0
       }
     ],
     "XAUUSD": [
@@ -3324,41 +3325,41 @@
     "AXTI": 1795493407.6567113,
     "NASA": 1795494020.9836934,
     "LUNR": 1795494020.9836934,
-    "TSLA": 1795489383.9937239,
+    "TSLA": 1795494132.6883025,
     "AXP": 1795494020.9836934,
     "RKLB": 1795494020.9836934,
     "KO": 1795494020.9836934,
     "FLY": 1795494020.9836934,
     "INTC": 1795494020.9836934,
-    "VRT": 1795489383.9937239,
-    "HPE": 1795489383.9937239,
-    "DELL": 1795489383.9937239,
-    "OKLO": 1795489383.9937239,
-    "CEG": 1795489383.9937239,
-    "FPS": 1795489498.0050464,
+    "VRT": 1795494132.6883025,
+    "HPE": 1795494132.6883025,
+    "DELL": 1795494132.6883025,
+    "OKLO": 1795494132.6883025,
+    "CEG": 1795494132.6883025,
+    "FPS": 1795494132.6883025,
     "MU": 1795493407.6567113,
     "SKHY": 1795493407.6567113,
     "WDC": 1795493407.6567113,
-    "STX": 1795489498.0050464,
-    "MSTR": 1795489498.0050464,
-    "SNDK": 1795489498.0050464,
+    "STX": 1795494132.6883025,
+    "MSTR": 1795494132.6883025,
+    "SNDK": 1795494132.6883025,
     "BTC-USD": 1795493407.6567113,
-    "CRWD": 1795489498.0050464,
+    "CRWD": 1795494132.6883025,
     "ORCL": 1795493407.6567113,
     "COIN": 1795493407.6567113,
     "LLY": 1795493407.6567113,
     "MRNA": 1795493407.6567113,
     "NKE": 1795493407.6567113,
     "MCD": 1795493407.6567113,
-    "PEP": 1795489498.0050464,
+    "PEP": 1795494132.6883025,
     "XOM": 1795493407.6567113,
     "JPM": 1795493407.6567113,
-    "WMT": 1795489498.0050464,
+    "WMT": 1795494132.6883025,
     "V": 1795493407.6567113,
-    "CAT": 1795489498.0050464,
+    "CAT": 1795494132.6883025,
     "FN": 1795493407.6567113,
     "GLW": 1795494020.9836934,
-    "ANT": 1795489498.0050464,
+    "ANT": 1795494132.6883025,
     "XAUUSD": 1795489498.0050464,
     "KOSPI": 1795493407.6567113
   },
@@ -3379,7 +3380,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (22:59 ET / 11:59 BJ) [英伟达]：1. 黄仁勋回归或加剧英伟达与Anthropic的开闭源路线冲突。 2. 马斯克SpaceX陷AI发展两难：Grok落后对手，算力出租月入39亿美元。 3. 亚马逊据悉将斥资75亿美元收购人",
+    "detail": "⚡ 最新核心快讯 (23:19 ET / 12:19 BJ) [英伟达] [特朗普]：据知情人士，特朗普担忧美股持续下跌，亲自推动黄仁勋重掌英伟达。万斯牵头，在72小时内协调多名政府高官游说董事会，贝森特和卢特尼克也参与其中。点击查看...",
     "event_name": "",
     "minutes_left": 0,
     "opex_shield": {
