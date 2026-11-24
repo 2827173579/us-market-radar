@@ -1,9 +1,22 @@
 {
-  "updated_at_ts": 1795484347.749,
-  "updated_at_et": "11-23 20:39 ET",
-  "updated_at_kst": "10:39 KST",
+  "updated_at_ts": 1795484451.479,
+  "updated_at_et": "11-23 20:40 ET",
+  "updated_at_kst": "10:40 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261124093953422800",
+      "title": "科创50指数涨超4%，半导体板块全线走强；成分股中，生益电子涨超12%。",
+      "summary": "科创50指数涨超4%，半导体板块全线走强；成分股中，生益电子涨超12%。",
+      "keywords": [
+        "半导体"
+      ],
+      "pub_ts": 1795484393.0,
+      "time_et": "11-23 20:39 ET",
+      "time_bj": "09:39 BJ",
+      "time_kst": "10:39 KST",
+      "time_display": "20:39 ET / 09:39 BJ"
+    },
     {
       "id": "20261124093500238800",
       "title": "上证指数涨超1%，CPO、英伟达、元件、半导体等板块涨幅居前；沪深京三市近5200股上涨…",
@@ -339,20 +352,6 @@
       "time_bj": "00:09 BJ",
       "time_kst": "01:09 KST",
       "time_display": "11:09 ET / 00:09 BJ"
-    },
-    {
-      "id": "20261124000000001800",
-      "title": "【今日重点关注的财经数据与事件：2026年11月24日 周二】 ① 05:00 美联储威…",
-      "summary": "【今日重点关注的财经数据与事件：2026年11月24日 周二】 ① 05:00 美联储威廉姆斯发表讲话 ② 17:00 德国11月IFO商业景气指数 ③ 19:00 英国11月CBI零售销售差值 ④ 19:30 小米公司举行Q3财报电话会 ⑤ 21:15 美国至11月7日当周ADP就业人数周度变动 ⑥ 22:00 美国9月FHFA房价指数月率 ⑦ 22:00 美国9月S&P/CS20座大城市未季调房价指数年率 ⑧ 23:00 美国11月谘商会消费者信心指数 ⑨ 23:00 美国11月里奇蒙德联储制造业指数 ⑩ 次日00:30 加拿大央行行长麦克勒姆发表讲话 ⑪ 次日05:30 美国至11月20日当周API原油库存",
-      "keywords": [
-        "美联储",
-        "原油"
-      ],
-      "pub_ts": 1795449600.0,
-      "time_et": "11-23 11:00 ET",
-      "time_bj": "00:00 BJ",
-      "time_kst": "01:00 KST",
-      "time_display": "11:00 ET / 00:00 BJ"
     }
   ],
   "ticker_news": {
@@ -913,39 +912,39 @@
     ],
     "NVDA": [
       {
-        "title": "U.S. stock futures steady after Nvidia-led Wall Street rally",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/u-stock-futures-steady-nvidia-004836470.html?.tsrc=rss",
+        "title": "Nvidia rejoices at Jensen Huang’s second coming as White House takes victory lap",
+        "url": "https://finance.yahoo.com/technology/ai/articles/nvidia-rejoices-jensen-huang-second-013439777.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 19:48 ET",
-        "pub_ts": 1795481316.0
+        "time": "11-23 20:34 ET",
+        "pub_ts": 1795484079.0
       },
       {
-        "title": "The Nasdaq Just Had Its Best Day Since April 2025. Anthropic Stock Fell Anyway.",
-        "url": "https://www.fool.com/investing/2026/11/23/the-nasdaq-just-had-its-best-day-since-april-2025-anthropic-stock-fell-anyway/?.tsrc=rss",
+        "title": "CFO Colette Kress Just Made This Subtle Shift That Could Save Nvidia Shareholders",
+        "url": "https://www.fool.com/investing/2026/11/23/cfo-colette-kress-just-made-this-subtle-shift-that-could-save-nvidia-shareholders/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 19:42 ET",
-        "pub_ts": 1795480922.0
+        "time": "11-23 20:26 ET",
+        "pub_ts": 1795483562.0
       },
       {
-        "title": "Nvidia’s stock was falling. Here's why one investor is buying more",
-        "url": "https://www.thestreet.com/investing/stocks/nvidias-stock-was-falling-heres-why-one-investor-is-buying-more?.tsrc=rss",
+        "title": "If a Stock Market Crash Is Coming, Warren Buffett Says This Is the Best Move Investors Should Make",
+        "url": "https://www.fool.com/investing/2026/11/23/if-a-stock-market-crash-is-coming-warren-buffett-says-this-is-the-best-move-investors-should-make/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 19:35 ET",
-        "pub_ts": 1795480519.0
+        "time": "11-23 20:20 ET",
+        "pub_ts": 1795483202.0
       },
       {
-        "title": "Is Amazon's Profit Riskier Than It Looks?",
-        "url": "https://www.trefis.com/stock/amzn/articles/627559/is-amazon-s-profit-riskier-than-it-looks/2026-11-23?.tsrc=rss",
+        "title": "Nvidia reinstates Jensen Huang as CEO",
+        "url": "https://www.cbsnews.com/news/nvidia-reinstates-jensen-huang-ceo/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 19:25 ET",
-        "pub_ts": 1795479913.0
+        "time": "11-23 20:19 ET",
+        "pub_ts": 1795483166.0
       },
       {
-        "title": "Dow Jones Futures: Tech Stocks, Nvidia Snap Back On Jensen Huang's Return; Elon Musk-Led SpaceX, Tesla Rally",
-        "url": "https://finance.yahoo.com/m/be493228-4ecf-338d-9017-054d3d6efc36/dow-jones-futures%3A-tech.html?.tsrc=rss",
+        "title": "Huang's return at Nvidia puts spotlight on chipmaker's board",
+        "url": "https://www.cbsnews.com/news/nvidia-board-reinstates-ceo-jensen-huang/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 19:20 ET",
-        "pub_ts": 1795479607.0
+        "time": "11-23 20:17 ET",
+        "pub_ts": 1795483052.0
       }
     ],
     "AMD": [
@@ -3253,22 +3252,22 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795482861.078819,
-    "SOXL": 1795482861.078819,
+    "KORU": 1795484451.4788783,
+    "SOXL": 1795484451.4788783,
     "SPY": 1795484030.7088764,
-    "DIA": 1795482861.078819,
-    "SOXX": 1795482861.078819,
+    "DIA": 1795484451.4788783,
+    "SOXX": 1795484451.4788783,
     "QQQ": 1795484030.7088764,
-    "SMH": 1795482861.078819,
-    "IWM": 1795482861.078819,
-    "IGV": 1795482861.078819,
-    "TLT": 1795482861.078819,
-    "GLD": 1795482861.078819,
-    "SQQQ": 1795482861.078819,
+    "SMH": 1795484451.4788783,
+    "IWM": 1795484451.4788783,
+    "IGV": 1795484451.4788783,
+    "TLT": 1795484451.4788783,
+    "GLD": 1795484451.4788783,
+    "SQQQ": 1795484451.4788783,
     "TSM": 1795482970.183303,
-    "VIXY": 1795482861.078819,
-    "SOXS": 1795482861.078819,
-    "NVDA": 1795482861.078819,
+    "VIXY": 1795484451.4788783,
+    "SOXS": 1795484451.4788783,
+    "NVDA": 1795484451.4788783,
     "AMD": 1795482970.183303,
     "ASML": 1795482970.183303,
     "QCOM": 1795482970.183303,
@@ -3323,10 +3322,10 @@
     "NKE": 1795484030.7088764,
     "MCD": 1795484030.7088764,
     "PEP": 1795483295.211986,
-    "XOM": 1795482861.078819,
-    "JPM": 1795482861.078819,
+    "XOM": 1795484451.4788783,
+    "JPM": 1795484451.4788783,
     "WMT": 1795483295.211986,
-    "V": 1795482861.078819,
+    "V": 1795484451.4788783,
     "CAT": 1795483295.211986,
     "FN": 1795484030.7088764,
     "GLW": 1795483081.245986,
@@ -3350,7 +3349,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (20:35 ET / 09:35 BJ) [半导体] [英伟达]：上证指数涨超1%，CPO、英伟达、元件、半导体等板块涨幅居前；沪深京三市近5200股上涨。",
+    "detail": "⚡ 最新核心快讯 (20:39 ET / 09:39 BJ) [半导体]：科创50指数涨超4%，半导体板块全线走强；成分股中，生益电子涨超12%。",
     "event_name": "",
     "minutes_left": 0,
     "opex_shield": {
