@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795484559.457,
-  "updated_at_et": "11-23 20:42 ET",
-  "updated_at_kst": "10:42 KST",
+  "updated_at_ts": 1795484675.454,
+  "updated_at_et": "11-23 20:44 ET",
+  "updated_at_kst": "10:44 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1541,6 +1541,13 @@
     ],
     "BE": [
       {
+        "title": "Bloom Energy Stock What Changed in AI Data Center Demand",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/bloom-energy-stock-changed-ai-011325575.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 20:13 ET",
+        "pub_ts": 1795482805.0
+      },
+      {
         "title": "AI Energy Stocks, From Fuel Cells To Uranium, Rebound As Nvidia Soars",
         "url": "https://finance.yahoo.com/m/e2fe0876-9cdd-3a2d-96b4-7860f584a20d/ai-energy-stocks%2C-from-fuel.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1567,13 +1574,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 10:52 ET",
         "pub_ts": 1795449140.0
-      },
-      {
-        "title": "What Moved Bloom Energy Stock?",
-        "url": "https://www.trefis.com/stock/be/articles/627709/what-moved-bloom-energy-stock/2026-11-23?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 07:10 ET",
-        "pub_ts": 1795435808.0
       }
     ],
     "CRDO": [
@@ -2207,6 +2207,13 @@
     ],
     "HPE": [
       {
+        "title": "Hewlett Packard Enterprise Q4 Earnings Call Highlights",
+        "url": "https://www.marketbeat.com/instant-alerts/transcript-hewlett-packard-enterprise-q4-earnings-call-highlights-2026-11-23/?utm_source=yahoofinance&utm_medium=yahoofinance&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 20:13 ET",
+        "pub_ts": 1795482806.0
+      },
+      {
         "title": "HPE Stock Drops 8% After-Hours As Q1 Outlook Marginally Falls Short Of Expectations",
         "url": "https://stocktwits.com/news-articles/markets/equity/hpe-stock-drops-8-after-hours-as-q1-outlook-marginally-falls-short-of-expectations/cNbrYexR9jA?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2233,13 +2240,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 16:32 ET",
         "pub_ts": 1795469556.0
-      },
-      {
-        "title": "Hewlett Packard Enterprise (HPE) Surpasses Q4 Earnings and Revenue Estimates",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/hewlett-packard-enterprise-hpe-surpasses-212502770.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 16:25 ET",
-        "pub_ts": 1795469102.0
       }
     ],
     "DELL": [
@@ -3284,28 +3284,28 @@
     "NBIS": 1795484559.4569583,
     "APLD": 1795484559.4569583,
     "VST": 1795484559.4569583,
-    "BE": 1795483081.245986,
-    "CRDO": 1795483081.245986,
-    "COHR": 1795483081.245986,
+    "BE": 1795484675.453565,
+    "CRDO": 1795484675.453565,
+    "COHR": 1795484675.453565,
     "MRVL": 1795484030.7088764,
     "LITE": 1795484030.7088764,
-    "AAOI": 1795483081.245986,
-    "SPCX": 1795483081.245986,
-    "ASTS": 1795483081.245986,
+    "AAOI": 1795484675.453565,
+    "SPCX": 1795484675.453565,
+    "ASTS": 1795484675.453565,
     "AXTI": 1795484030.7088764,
-    "NASA": 1795483081.245986,
-    "LUNR": 1795483081.245986,
-    "TSLA": 1795483081.245986,
-    "AXP": 1795483081.245986,
-    "RKLB": 1795483081.245986,
-    "KO": 1795483081.245986,
-    "FLY": 1795483081.245986,
-    "INTC": 1795483081.245986,
-    "VRT": 1795483081.245986,
-    "HPE": 1795483081.245986,
-    "DELL": 1795483081.245986,
-    "OKLO": 1795483081.245986,
-    "CEG": 1795483081.245986,
+    "NASA": 1795484675.453565,
+    "LUNR": 1795484675.453565,
+    "TSLA": 1795484675.453565,
+    "AXP": 1795484675.453565,
+    "RKLB": 1795484675.453565,
+    "KO": 1795484675.453565,
+    "FLY": 1795484675.453565,
+    "INTC": 1795484675.453565,
+    "VRT": 1795484675.453565,
+    "HPE": 1795484675.453565,
+    "DELL": 1795484675.453565,
+    "OKLO": 1795484675.453565,
+    "CEG": 1795484675.453565,
     "FPS": 1795483295.211986,
     "MU": 1795484030.7088764,
     "SKHY": 1795484030.7088764,
@@ -3328,7 +3328,7 @@
     "V": 1795484451.4788783,
     "CAT": 1795483295.211986,
     "FN": 1795484030.7088764,
-    "GLW": 1795483081.245986,
+    "GLW": 1795484675.453565,
     "ANT": 1795483295.211986,
     "XAUUSD": 1795483295.211986
   },
