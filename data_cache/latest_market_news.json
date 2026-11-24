@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795494980.072,
-  "updated_at_et": "11-23 23:36 ET",
-  "updated_at_kst": "13:36 KST",
+  "updated_at_ts": 1795495092.822,
+  "updated_at_et": "11-23 23:38 ET",
+  "updated_at_kst": "13:38 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1252,6 +1252,13 @@
         "pub_ts": 1795450382.0
       },
       {
+        "title": "Apple's five-device plan creates an iPhone buying dilemma",
+        "url": "https://www.thestreet.com/technology/apples-five-device-plan-creates-an-iphone-buying-dilemma?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 23:17 ET",
+        "pub_ts": 1795493820.0
+      },
+      {
         "title": "Apple vs. Broadcom: Comparing Revenue Trends Amid the Artificial Intelligence Boom",
         "url": "https://www.fool.com/coverage/charts/2026/11/23/apple-vs-broadcom-comparing-revenue-trends-amid-the-artificial-intelligence-boom/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1264,13 +1271,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 12:25 ET",
         "pub_ts": 1795454730.0
-      },
-      {
-        "title": "Apple Hit an All-Time High While AI Stocks Sold Off. Here’s the Big Tech Stock I’d Buy.",
-        "url": "https://www.fool.com/investing/2026/11/23/apple-hit-an-all-time-high-while-ai-stocks-sold-off-here-s-the-big-tech-stock-i-d-buy/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 11:32 ET",
-        "pub_ts": 1795451522.0
       }
     ],
     "PLTR": [
@@ -2607,6 +2607,13 @@
     ],
     "BTC-USD": [
       {
+        "title": "Bitcoin’s Next Two Weeks Could Decide The Bear Market Debate: Here’s What Traders Are Watching",
+        "url": "https://stocktwits.com/news-articles/markets/cryptocurrency/bitcoin-galaxy-alex-thorn-bear-market-etf-outflows-december/cNbrvypR9jz?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 23:22 ET",
+        "pub_ts": 1795494164.0
+      },
+      {
         "title": "What Hyperscale Data (GPUS) Said on Its Q3 Earnings Call",
         "url": "https://www.marketbeat.com/instant-alerts/transcript-what-hyperscale-data-gpus-said-on-its-q3-earnings-call-2026-11-23/?utm_source=yahoofinance&utm_medium=yahoofinance&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2633,13 +2640,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 21:51 ET",
         "pub_ts": 1795488668.0
-      },
-      {
-        "title": "Dow, Nasdaq and Bitcoin Jump on Huang's Return, but Why Did Bitcoin Reverse?",
-        "url": "https://beincrypto.com/bitcoin-reversal-huang-return-nasdaq/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 21:00 ET",
-        "pub_ts": 1795485600.0
       }
     ],
     "CRWD": [
@@ -3294,35 +3294,35 @@
     "TLT": 1795494980.0719836,
     "GLD": 1795494980.0719836,
     "SQQQ": 1795494980.0719836,
-    "TSM": 1795493407.6567113,
+    "TSM": 1795495092.8219213,
     "VIXY": 1795494980.0719836,
     "SOXS": 1795494980.0719836,
     "NVDA": 1795494980.0719836,
-    "AMD": 1795493407.6567113,
-    "ASML": 1795493407.6567113,
-    "QCOM": 1795493407.6567113,
-    "AVGO": 1795493407.6567113,
-    "AMAT": 1795493407.6567113,
-    "META": 1795493407.6567113,
-    "GOOGL": 1795493407.6567113,
-    "MSFT": 1795493407.6567113,
-    "AAPL": 1795493407.6567113,
-    "PLTR": 1795493407.6567113,
-    "NOW": 1795493407.6567113,
-    "AMZN": 1795493407.6567113,
-    "CRWV": 1795493407.6567113,
-    "NBIS": 1795493407.6567113,
+    "AMD": 1795495092.8219213,
+    "ASML": 1795495092.8219213,
+    "QCOM": 1795495092.8219213,
+    "AVGO": 1795495092.8219213,
+    "AMAT": 1795495092.8219213,
+    "META": 1795495092.8219213,
+    "GOOGL": 1795495092.8219213,
+    "MSFT": 1795495092.8219213,
+    "AAPL": 1795495092.8219213,
+    "PLTR": 1795495092.8219213,
+    "NOW": 1795495092.8219213,
+    "AMZN": 1795495092.8219213,
+    "CRWV": 1795495092.8219213,
+    "NBIS": 1795495092.8219213,
     "APLD": 1795494020.9836934,
     "VST": 1795494020.9836934,
     "BE": 1795494020.9836934,
     "CRDO": 1795494020.9836934,
     "COHR": 1795494020.9836934,
-    "MRVL": 1795493407.6567113,
-    "LITE": 1795493407.6567113,
+    "MRVL": 1795495092.8219213,
+    "LITE": 1795495092.8219213,
     "AAOI": 1795494020.9836934,
     "SPCX": 1795494020.9836934,
     "ASTS": 1795494020.9836934,
-    "AXTI": 1795493407.6567113,
+    "AXTI": 1795495092.8219213,
     "NASA": 1795494020.9836934,
     "LUNR": 1795494020.9836934,
     "TSLA": 1795494132.6883025,
@@ -3337,16 +3337,16 @@
     "OKLO": 1795494132.6883025,
     "CEG": 1795494132.6883025,
     "FPS": 1795494132.6883025,
-    "MU": 1795493407.6567113,
-    "SKHY": 1795493407.6567113,
-    "WDC": 1795493407.6567113,
+    "MU": 1795495092.8219213,
+    "SKHY": 1795495092.8219213,
+    "WDC": 1795495092.8219213,
     "STX": 1795494132.6883025,
     "MSTR": 1795494132.6883025,
     "SNDK": 1795494132.6883025,
-    "BTC-USD": 1795493407.6567113,
+    "BTC-USD": 1795495092.8219213,
     "CRWD": 1795494132.6883025,
     "ORCL": 1795493407.6567113,
-    "COIN": 1795493407.6567113,
+    "COIN": 1795495092.8219213,
     "LLY": 1795493407.6567113,
     "MRNA": 1795493407.6567113,
     "NKE": 1795493407.6567113,
@@ -3357,11 +3357,11 @@
     "WMT": 1795494132.6883025,
     "V": 1795493407.6567113,
     "CAT": 1795494132.6883025,
-    "FN": 1795493407.6567113,
+    "FN": 1795495092.8219213,
     "GLW": 1795494020.9836934,
     "ANT": 1795494132.6883025,
     "XAUUSD": 1795494242.0456176,
-    "KOSPI": 1795493407.6567113
+    "KOSPI": 1795495092.8219213
   },
   "opex_shield": {
     "date": "2026-11-23",
