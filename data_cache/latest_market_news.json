@@ -1,9 +1,23 @@
 {
-  "updated_at_ts": 1795526131.571,
-  "updated_at_et": "11-24 08:15 ET",
-  "updated_at_kst": "22:15 KST",
+  "updated_at_ts": 1795526241.822,
+  "updated_at_et": "11-24 08:17 ET",
+  "updated_at_kst": "22:17 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261124211545467800",
+      "title": "【美国准备对数十个国家提高关税】 11月24日讯，据华尔街日报，知情人士透露，美国正准备…",
+      "summary": "【美国准备对数十个国家提高关税】 11月24日讯，据华尔街日报，知情人士透露，美国正准备对数十个国家提高关税。美国贸易代表格里尔最早可能于本周公布一项针对欧盟及其他14个国家地区工业补贴问题的关税调查结果。不过，他们也提醒称，公布时间仍有可能发生变动。美国贸易代表办公室的这一公告可能意味着包括日本、韩国以及欧盟27个成员国在内的数十个国家将面临更高的关税。新关税将涵盖这些国家出口的大多数产品，但可能不包括钢铁、铝和汽车等工业品——这些产品已受另一项基于“国家安全”理由的关税条款管辖。最终的关税税率尚不明确，但政府官员曾多次表示，他们计划实施与特朗普在2025年所设关税类似的税率。知情人士透露，对于那些曾与特朗普政府达成贸易协定的国家（如日本、欧盟成员国等），其最终适用的关税税率可能会体现出它们在最高法院作出裁决之前所签署的协议内容。这意味着欧盟、日本和韩国可能面临15%或更低的关税；而越南和印度等其他国家，则可能因其与特朗普达成的协议而面临更高的关税。",
+      "keywords": [
+        "关税",
+        "特朗普"
+      ],
+      "pub_ts": 1795526145.0,
+      "time_et": "11-24 08:15 ET",
+      "time_bj": "21:15 BJ",
+      "time_kst": "22:15 KST",
+      "time_display": "08:15 ET / 21:15 BJ"
+    },
     {
       "id": "20261124211313089800",
       "title": "据华尔街日报：新关税将覆盖这些国家出口的大多数商品，但可能不包括钢铁、铝和汽车等部分工业…",
@@ -331,20 +345,6 @@
       "time_bj": "16:08 BJ",
       "time_kst": "17:08 KST",
       "time_display": "03:08 ET / 16:08 BJ"
-    },
-    {
-      "id": "20261124154932917800",
-      "title": "WTI原油下探权重继续上升，12月紧缩预期打退美日看跌布局｜市场赔率数据表",
-      "summary": "黄金回升伴随油价下行，市场对金价重返3700的预期升温。但美联储12月紧缩计价如“附骨之疽”，反弹延续的概率较低，美日下跌布局也在大幅退潮...",
-      "keywords": [
-        "美联储",
-        "原油"
-      ],
-      "pub_ts": 1795506572.0,
-      "time_et": "11-24 02:49 ET",
-      "time_bj": "15:49 BJ",
-      "time_kst": "16:49 KST",
-      "time_display": "02:49 ET / 15:49 BJ"
     }
   ],
   "ticker_news": {
@@ -1770,6 +1770,13 @@
         "pub_ts": 1795522158.0
       },
       {
+        "title": "Anthropic Backer Dismisses Musk as “a Glorified Compute Reseller.” Here’s What Reselling Earns SpaceX",
+        "url": "https://www.tikr.com/blog/anthropic-backer-dismisses-musk-as-a-glorified-compute-reseller-heres-what-reselling-earns-spacex?ref=yahoofinance&tlnk=yf-261124-4wp2mjrm&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 07:06 ET",
+        "pub_ts": 1795521965.0
+      },
+      {
         "title": "Cathie Wood Just Made $74 Million Bet on This Red-Hot Space Stock",
         "url": "https://finance.yahoo.com/markets/stocks/articles/cathie-wood-just-made-74-115706467.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1782,13 +1789,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 06:37 ET",
         "pub_ts": 1795520220.0
-      },
-      {
-        "title": "SpaceX and Tesla Directors Hold Talks Over Potential US$3.5 Trillion Merger",
-        "url": "https://investorshub.advfn.com/market-news/article/40597/spacex-and-tesla-directors-hold-talks-over-potential-us3-5-trillion-merger?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 06:19 ET",
-        "pub_ts": 1795519170.0
       }
     ],
     "ASTS": [
@@ -1941,6 +1941,13 @@
     ],
     "TSLA": [
       {
+        "title": "Musk Targets Starlink in All Tesla Models “Towards the End of Next Year.” China Is the Catch",
+        "url": "https://www.tikr.com/blog/musk-targets-starlink-in-all-tesla-models-towards-the-end-of-next-year-china-is-the-catch?ref=yahoofinance&tlnk=yf-261124-6mvwx5h6&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 07:20 ET",
+        "pub_ts": 1795522833.0
+      },
+      {
         "title": "Tesla, SpaceX Name Five Directors for Potential $3.5 Trillion Merger",
         "url": "https://finance.yahoo.com/markets/stocks/articles/tesla-spacex-name-five-directors-120918069.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1967,13 +1974,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 06:04 ET",
         "pub_ts": 1795518269.0
-      },
-      {
-        "title": "ARK Autonomous Tech & Robotics (ARKQ) Buys $214.9 Million More Tesla on Nov. 20",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/ark-autonomous-tech-robotics-arkq-110308252.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 06:03 ET",
-        "pub_ts": 1795518188.0
       }
     ],
     "AXP": [
@@ -3320,17 +3320,17 @@
     "MRVL": 1795525791.8784165,
     "LITE": 1795525791.8784165,
     "AAOI": 1795526131.5714948,
-    "SPCX": 1795524685.7043514,
+    "SPCX": 1795526241.8221667,
     "ASTS": 1795526131.5714948,
     "AXTI": 1795525791.8784165,
-    "NASA": 1795524685.7043514,
-    "LUNR": 1795524685.7043514,
-    "TSLA": 1795524685.7043514,
-    "AXP": 1795524685.7043514,
+    "NASA": 1795526241.8221667,
+    "LUNR": 1795526241.8221667,
+    "TSLA": 1795526241.8221667,
+    "AXP": 1795526241.8221667,
     "RKLB": 1795526131.5714948,
-    "KO": 1795524685.7043514,
-    "FLY": 1795524685.7043514,
-    "INTC": 1795524685.7043514,
+    "KO": 1795526241.8221667,
+    "FLY": 1795526241.8221667,
+    "INTC": 1795526241.8221667,
     "VRT": 1795524795.1114874,
     "HPE": 1795524795.1114874,
     "DELL": 1795524795.1114874,
@@ -3380,7 +3380,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (08:13 ET / 21:13 BJ) [关税]：据华尔街日报：新关税将覆盖这些国家出口的大多数商品，但可能不包括钢铁、铝和汽车等部分工业产品。这些商品已依据另一项国家安全授权单独征收关税。",
+    "detail": "⚡ 最新核心快讯 (08:15 ET / 21:15 BJ) [关税] [特朗普]：【美国准备对数十个国家提高关税】 11月24日讯，据华尔街日报，知情人士透露，美国正准备对数十个国家提高关税。美国贸易代表格里尔最早可能于本周公布一项针对欧盟及其他14个国家地区工业补贴问题",
     "event_name": "",
     "minutes_left": 0,
     "opex_shield": {
