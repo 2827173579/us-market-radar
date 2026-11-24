@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795522468.411,
-  "updated_at_et": "11-24 07:14 ET",
-  "updated_at_kst": "21:14 KST",
+  "updated_at_ts": 1795522583.874,
+  "updated_at_et": "11-24 07:16 ET",
+  "updated_at_kst": "21:16 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1129,6 +1129,27 @@
     ],
     "META": [
       {
+        "title": "Meta's $60 Billion AI Funding Plan Faces Delay Amid Shareholder Lawsuit",
+        "url": "https://finance.yahoo.com/technology/ai/articles/metas-60-billion-ai-funding-121008904.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 07:10 ET",
+        "pub_ts": 1795522208.0
+      },
+      {
+        "title": "META Stock Is Down 24% From Peak: JPMorgan Sees ‘Attractive Buying Opportunity’ — But 2027 Spending, Capex Remain An Overhang",
+        "url": "https://stocktwits.com/news-articles/markets/equity/meta-stock-is-down-24-from-peak-jp-morgan-sees-attractive-buying-opportunity-but-2027-spending-capex-remain-an-overhang/cNbsIWZR9ki?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 07:08 ET",
+        "pub_ts": 1795522132.0
+      },
+      {
+        "title": "DXL launches AI product discovery on Meta Muse via Commercetools",
+        "url": "https://www.retail-insight-network.com/news/dxl-ai-product-discovery-meta-muse-commercetools/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 06:46 ET",
+        "pub_ts": 1795520783.0
+      },
+      {
         "title": "Meta Platforms (META) Sees $240.4 Million in Net ETF Buying on Friday",
         "url": "https://finance.yahoo.com/markets/stocks/articles/meta-platforms-meta-sees-240-110128528.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1141,27 +1162,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 05:35 ET",
         "pub_ts": 1795516502.0
-      },
-      {
-        "title": "David Tepper, George Soros and 5 Other Famous Investors Own Meta. Here’s Who Bought and Sold Recently",
-        "url": "https://www.tikr.com/blog/david-tepper-george-soros-and-5-other-famous-investors-own-meta-heres-who-bought-and-sold-recently?ref=yahoofinance&tlnk=yf-261124-5q744xgw&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 05:20 ET",
-        "pub_ts": 1795515628.0
-      },
-      {
-        "title": "Google and Meta face massive fines for addictive features",
-        "url": "https://www.independent.co.uk/tech/google-meta-fine-internet-safety-australia-b3090456.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 05:10 ET",
-        "pub_ts": 1795515030.0
-      },
-      {
-        "title": "AMD Stock Dips Overnight After Nvidia-Triggered Rally: AMD Registers 337M Shares For Resale Tied To OpenAI, Meta Warrants",
-        "url": "https://stocktwits.com/news-articles/markets/equity/amd-stock-dips-overnight-after-nvidia-triggered-rally-amd-registers-337-m-shares-for-resale-tied-to-open-ai-meta-warrants/cNbru6MR9jU?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 22:47 ET",
-        "pub_ts": 1795492068.0
       }
     ],
     "GOOGL": [
@@ -1171,6 +1171,20 @@
         "source": "Yahoo Finance",
         "time": "11-24 05:10 ET",
         "pub_ts": 1795515030.0
+      },
+      {
+        "title": "Not Apple. Not Microsoft. This Is the \"Magnificent Seven\" Stock I’d Buy for a 10-Year Hold.",
+        "url": "https://www.fool.com/investing/2026/11/24/not-apple-not-microsoft-this-is-the-magnificent-seven-stock-id-buy-for-a-10-year-hold/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 07:02 ET",
+        "pub_ts": 1795521721.0
+      },
+      {
+        "title": "Who Pays P&G? The American Shopper In Four Lines",
+        "url": "https://www.trefis.com/stock/pg/articles/627486/who-pays-p-g-the-american-shopper-in-four-lines/2026-11-24?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 06:37 ET",
+        "pub_ts": 1795520243.0
       },
       {
         "title": "Jim Cramer Calls CrowdStrike’s Zscaler Deal the Biggest in Cybersecurity History. What It Means for Both Stocks",
@@ -1185,20 +1199,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 06:07 ET",
         "pub_ts": 1795518467.0
-      },
-      {
-        "title": "iShares Russell 1000 Growth (IWF) Buys $22.7 Million More Apple on Nov. 20",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/ishares-russell-1000-growth-iwf-110440903.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 06:04 ET",
-        "pub_ts": 1795518280.0
-      },
-      {
-        "title": "JPMorgan U.S. Tech Leaders (JTEK) Sells $27.7 Million of Broadcom on Nov. 20",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/jpmorgan-u-tech-leaders-jtek-110436195.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 06:04 ET",
-        "pub_ts": 1795518276.0
       }
     ],
     "MSFT": [
@@ -1240,6 +1240,13 @@
     ],
     "AAPL": [
       {
+        "title": "Nvidia Regains Nearly $1 Trillion in Value -- Apple Still Holds the Top Spot",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/nvidia-regains-nearly-1-trillion-120207012.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 07:02 ET",
+        "pub_ts": 1795521727.0
+      },
+      {
         "title": "Invesco NASDAQ 100 ETF (QQQM) Adds Apple and Microsoft on Friday",
         "url": "https://finance.yahoo.com/markets/stocks/articles/invesco-nasdaq-100-etf-qqqm-110444816.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1266,16 +1273,16 @@
         "source": "Yahoo Finance",
         "time": "11-24 06:03 ET",
         "pub_ts": 1795518224.0
-      },
-      {
-        "title": "Franklin Systematic Style Premia (FLSP) Adds Costco and Apple on Nov. 20",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/franklin-systematic-style-premia-flsp-110340749.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 06:03 ET",
-        "pub_ts": 1795518220.0
       }
     ],
     "PLTR": [
+      {
+        "title": "Insider Alert: Palantir CTO Dumps Nearly $48 Million in Stock",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/insider-alert-palantir-cto-dumps-115737849.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 06:57 ET",
+        "pub_ts": 1795521457.0
+      },
       {
         "title": "Tesla Leads Goldman's Hedge Fund Short List With $26.4 Billion in Bearish Bets",
         "url": "https://finance.yahoo.com/markets/stocks/articles/tesla-leads-goldmans-hedge-fund-110429117.html?.tsrc=rss",
@@ -1303,13 +1310,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 12:53 ET",
         "pub_ts": 1795456390.0
-      },
-      {
-        "title": "Why Is Palantir (PLTR) Stock Up Today? AI Rally Follows Nvidia CEO Return",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/why-palantir-pltr-stock-today-173107823.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 12:31 ET",
-        "pub_ts": 1795455067.0
       }
     ],
     "NOW": [
@@ -3305,14 +3305,14 @@
     "QCOM": 1795522468.4108279,
     "AVGO": 1795522468.4108279,
     "AMAT": 1795522468.4108279,
-    "META": 1795521039.0186293,
-    "GOOGL": 1795521039.0186293,
+    "META": 1795522583.873532,
+    "GOOGL": 1795522583.873532,
     "MSFT": 1795522468.4108279,
-    "AAPL": 1795521039.0186293,
-    "PLTR": 1795521039.0186293,
-    "NOW": 1795521039.0186293,
-    "AMZN": 1795521039.0186293,
-    "CRWV": 1795521039.0186293,
+    "AAPL": 1795522583.873532,
+    "PLTR": 1795522583.873532,
+    "NOW": 1795522583.873532,
+    "AMZN": 1795522583.873532,
+    "CRWV": 1795522583.873532,
     "NBIS": 1795521147.9080956,
     "APLD": 1795521472.1033998,
     "VST": 1795521472.1033998,
