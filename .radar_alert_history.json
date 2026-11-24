@@ -162,16 +162,16 @@
       "last_notified_at": 1795482111.35759
     },
     "AMZN": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1795561382.6032445
     },
     "MSFT": {
       "state": "WATCHLIST_ENTRY_READY",
       "last_notified_at": 1795560519.5449889
     },
     "NKE": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1795560887.3437612
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "HPE": {
       "state": "STOP_LOSS",
