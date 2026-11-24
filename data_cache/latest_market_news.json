@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795563863.099,
-  "updated_at_et": "11-24 18:44 ET",
-  "updated_at_kst": "08:44 KST",
+  "updated_at_ts": 1795563966.151,
+  "updated_at_et": "11-24 18:46 ET",
+  "updated_at_kst": "08:46 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -3225,11 +3225,18 @@
         "pub_ts": 1795555833.0
       },
       {
-        "title": "Dow Jones Futures: Nvidia, Anthropic Lead AI Retreat But Many Sectors Strong; Fed Inflation Data Due",
-        "url": "https://finance.yahoo.com/m/d96603c1-fe7f-3bf3-8158-0728b464d469/dow-jones-futures%3A-nvidia%2C.html?.tsrc=rss",
+        "title": "Dow Jones Futures Fall: Nvidia, Anthropic Lead AI Retreat But Many Sectors Strong; Fed Inflation Data Due",
+        "url": "https://finance.yahoo.com/m/d96603c1-fe7f-3bf3-8158-0728b464d469/dow-jones-futures-fall%3A.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 18:02 ET",
-        "pub_ts": 1795561378.0
+        "time": "11-24 18:34 ET",
+        "pub_ts": 1795563290.0
+      },
+      {
+        "title": "AI Pullback Raises the Cost of Data Center Financing",
+        "url": "https://finance.yahoo.com/video/ai-pullback-raises-cost-data-224116831.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 17:41 ET",
+        "pub_ts": 1795560076.0
       },
       {
         "title": "Anthropic: ANT that a shame",
@@ -3237,13 +3244,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 17:30 ET",
         "pub_ts": 1795559446.0
-      },
-      {
-        "title": "Why Anthropic Stock Fell Again",
-        "url": "https://www.fool.com/investing/2026/11/24/why-anthropic-stock-fell-again/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 16:55 ET",
-        "pub_ts": 1795557302.0
       }
     ],
     "XAUUSD": [
@@ -3361,17 +3361,17 @@
     "COIN": 1795563863.0994833,
     "LLY": 1795563863.0994833,
     "MRNA": 1795563863.0994833,
-    "NKE": 1795562391.097207,
+    "NKE": 1795563966.151198,
     "MCD": 1795563863.0994833,
-    "PEP": 1795562391.097207,
-    "XOM": 1795562391.097207,
-    "JPM": 1795562391.097207,
-    "WMT": 1795562391.097207,
+    "PEP": 1795563966.151198,
+    "XOM": 1795563966.151198,
+    "JPM": 1795563966.151198,
+    "WMT": 1795563966.151198,
     "V": 1795563863.0994833,
-    "CAT": 1795562391.097207,
+    "CAT": 1795563966.151198,
     "FN": 1795563260.7996292,
     "GLW": 1795563655.9316933,
-    "ANT": 1795562391.097207,
+    "ANT": 1795563966.151198,
     "XAUUSD": 1795562659.688867,
     "KOSPI": 1795563157.5428145
   },
