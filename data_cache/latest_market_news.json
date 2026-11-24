@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795557399.39,
-  "updated_at_et": "11-24 16:56 ET",
-  "updated_at_kst": "06:56 KST",
+  "updated_at_ts": 1795557500.234,
+  "updated_at_et": "11-24 16:58 ET",
+  "updated_at_kst": "06:58 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1759,6 +1759,13 @@
     ],
     "SPCX": [
       {
+        "title": "A SpaceX-Tesla Deal Could Come in December. Here's Why 1 Group of Investors Should Be Worried.",
+        "url": "https://www.fool.com/investing/2026/11/24/a-spacex-tesla-deal-could-come-in-december-here-s-why-1-group-of-investors-should-be-worried/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 16:27 ET",
+        "pub_ts": 1795555622.0
+      },
+      {
         "title": "Tesla, SpaceX Reportedly Pick Board Members To Negotiate Elon Musk's Mega Merger",
         "url": "https://finance.yahoo.com/m/d4400d8c-dfaf-3382-a360-877e01e80aec/tesla%2C-spacex-reportedly-pick.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1785,13 +1792,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 15:05 ET",
         "pub_ts": 1795550733.0
-      },
-      {
-        "title": "Anduril’s Palmer Luckey: Elon Shouldn’t “Sacrifice the Existence of the Entire Starlink Network.” Here’s What’s at Stake for SpaceX",
-        "url": "https://www.tikr.com/blog/andurils-palmer-luckey-elon-shouldnt-sacrifice-the-existence-of-the-entire-starlink-network-heres-whats-at-stake-for-spacex?ref=yahoofinance&tlnk=yf-261124-2hmq638p&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 15:05 ET",
-        "pub_ts": 1795550700.0
       }
     ],
     "ASTS": [
@@ -3315,25 +3315,25 @@
     "AMZN": 1795556903.1005504,
     "CRWV": 1795556903.1005504,
     "NBIS": 1795557004.6623967,
-    "APLD": 1795555925.5166647,
-    "VST": 1795555925.5166647,
-    "BE": 1795555925.5166647,
-    "CRDO": 1795555925.5166647,
-    "COHR": 1795555925.5166647,
+    "APLD": 1795557500.2339263,
+    "VST": 1795557500.2339263,
+    "BE": 1795557500.2339263,
+    "CRDO": 1795557500.2339263,
+    "COHR": 1795557500.2339263,
     "MRVL": 1795557004.6623967,
     "LITE": 1795557004.6623967,
-    "AAOI": 1795555925.5166647,
-    "SPCX": 1795555925.5166647,
-    "ASTS": 1795555925.5166647,
+    "AAOI": 1795557500.2339263,
+    "SPCX": 1795557500.2339263,
+    "ASTS": 1795557500.2339263,
     "AXTI": 1795557004.6623967,
-    "NASA": 1795555925.5166647,
-    "LUNR": 1795555925.5166647,
+    "NASA": 1795557500.2339263,
+    "LUNR": 1795557500.2339263,
     "TSLA": 1795556026.6827304,
-    "AXP": 1795555925.5166647,
-    "RKLB": 1795555925.5166647,
-    "KO": 1795555925.5166647,
-    "FLY": 1795555925.5166647,
-    "INTC": 1795555925.5166647,
+    "AXP": 1795557500.2339263,
+    "RKLB": 1795557500.2339263,
+    "KO": 1795557500.2339263,
+    "FLY": 1795557500.2339263,
+    "INTC": 1795557500.2339263,
     "VRT": 1795556026.6827304,
     "HPE": 1795556026.6827304,
     "DELL": 1795556026.6827304,
@@ -3361,7 +3361,7 @@
     "V": 1795556026.6827304,
     "CAT": 1795556197.9606876,
     "FN": 1795557004.6623967,
-    "GLW": 1795555925.5166647,
+    "GLW": 1795557500.2339263,
     "ANT": 1795556197.9606876,
     "XAUUSD": 1795556404.032366,
     "KOSPI": 1795556903.1005504
