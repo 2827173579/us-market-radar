@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795556903.101,
-  "updated_at_et": "11-24 16:48 ET",
-  "updated_at_kst": "06:48 KST",
+  "updated_at_ts": 1795557004.662,
+  "updated_at_et": "11-24 16:50 ET",
+  "updated_at_kst": "06:50 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2395,13 +2395,6 @@
         "pub_ts": 1795554102.0
       },
       {
-        "title": "Micron vs. Sandisk: Which AI Memory Stock Is the Better Buy?",
-        "url": "https://www.fool.com/investing/2026/11/24/micron-vs-sandisk-which-ai-memory-stock-is-the-better-buy/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 15:25 ET",
-        "pub_ts": 1795551902.0
-      },
-      {
         "title": "Rambus (RMBS) Stock Is Down 11.4% Today: Chip Sector AI Selloff",
         "url": "https://finance.yahoo.com/markets/stocks/articles/rambus-rmbs-stock-down-11-210135197.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2421,6 +2414,13 @@
         "source": "Yahoo Finance",
         "time": "11-24 15:31 ET",
         "pub_ts": 1795552273.0
+      },
+      {
+        "title": "5 High-Conviction Stocks Billionaire Philippe Laffont Is Betting On for 2027",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/5-high-conviction-stocks-billionaire-212307906.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 16:23 ET",
+        "pub_ts": 1795555387.0
       }
     ],
     "SKHY": [
@@ -2610,6 +2610,13 @@
     ],
     "BTC-USD": [
       {
+        "title": "Wells Fargo (WFC) Stock Still Looks Undervalued Following Its 99% Run",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/wells-fargo-wfc-stock-still-211124730.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 16:11 ET",
+        "pub_ts": 1795554684.0
+      },
+      {
         "title": "Sector Update: Financial Stocks Higher Late Afternoon",
         "url": "https://finance.yahoo.com/markets/stocks/articles/sector-financial-stocks-higher-afternoon-210207365.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2636,13 +2643,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 15:44 ET",
         "pub_ts": 1795553045.0
-      },
-      {
-        "title": "Bullish Looks to Equiniti for Its Next Move Into Tokenized Securities",
-        "url": "https://finance.yahoo.com/markets/crypto/articles/bullish-looks-equiniti-next-move-204245446.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 15:42 ET",
-        "pub_ts": 1795552965.0
       }
     ],
     "CRWD": [
@@ -3314,18 +3314,18 @@
     "NOW": 1795556903.1005504,
     "AMZN": 1795556903.1005504,
     "CRWV": 1795556903.1005504,
-    "NBIS": 1795555432.2981946,
+    "NBIS": 1795557004.6623967,
     "APLD": 1795555925.5166647,
     "VST": 1795555925.5166647,
     "BE": 1795555925.5166647,
     "CRDO": 1795555925.5166647,
     "COHR": 1795555925.5166647,
-    "MRVL": 1795555432.2981946,
-    "LITE": 1795555432.2981946,
+    "MRVL": 1795557004.6623967,
+    "LITE": 1795557004.6623967,
     "AAOI": 1795555925.5166647,
     "SPCX": 1795555925.5166647,
     "ASTS": 1795555925.5166647,
-    "AXTI": 1795555432.2981946,
+    "AXTI": 1795557004.6623967,
     "NASA": 1795555925.5166647,
     "LUNR": 1795555925.5166647,
     "TSLA": 1795556026.6827304,
@@ -3340,13 +3340,13 @@
     "OKLO": 1795556026.6827304,
     "CEG": 1795556026.6827304,
     "FPS": 1795556026.6827304,
-    "MU": 1795555432.2981946,
-    "SKHY": 1795555432.2981946,
-    "WDC": 1795555432.2981946,
+    "MU": 1795557004.6623967,
+    "SKHY": 1795557004.6623967,
+    "WDC": 1795557004.6623967,
     "STX": 1795556026.6827304,
     "MSTR": 1795556026.6827304,
     "SNDK": 1795556026.6827304,
-    "BTC-USD": 1795555432.2981946,
+    "BTC-USD": 1795557004.6623967,
     "CRWD": 1795556026.6827304,
     "ORCL": 1795556026.6827304,
     "COIN": 1795556026.6827304,
@@ -3360,7 +3360,7 @@
     "WMT": 1795556197.9606876,
     "V": 1795556026.6827304,
     "CAT": 1795556197.9606876,
-    "FN": 1795555432.2981946,
+    "FN": 1795557004.6623967,
     "GLW": 1795555925.5166647,
     "ANT": 1795556197.9606876,
     "XAUUSD": 1795556404.032366,
