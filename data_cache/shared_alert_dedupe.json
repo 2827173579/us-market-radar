@@ -6095,9 +6095,13 @@
     "2026-11-24:AXP/SPY/HPE:5M_ENTRY+STOP_LOSS": {
       "device": "PC",
       "ts": 1795543229.9919753
+    },
+    "2026-11-24:DEFENSIVE_FLIGHT:+11.8": {
+      "device": "PC",
+      "ts": 1795544199.2814562
     }
   },
   "device": "PC",
-  "last_heartbeat_ts": 1795543488.0468764,
-  "updated_at": "2026-11-24T18:06:05.414377+00:00"
+  "last_heartbeat_ts": 1795544112.1318212,
+  "updated_at": "2026-11-24T18:16:39.281711+00:00"
 }
