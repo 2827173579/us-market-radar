@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795556026.683,
-  "updated_at_et": "11-24 16:33 ET",
-  "updated_at_kst": "06:33 KST",
+  "updated_at_ts": 1795556197.961,
+  "updated_at_et": "11-24 16:36 ET",
+  "updated_at_kst": "06:36 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2987,6 +2987,13 @@
         "pub_ts": 1795541822.0
       },
       {
+        "title": "Could Meta Actually Climb 30%? Or Is J.P. Morgan Totally Wrong?",
+        "url": "https://www.tikr.com/blog/could-meta-actually-climb-30-or-is-j-p-morgan-totally-wrong?ref=yahoofinance&tlnk=yf-261124-24hpvhqr&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 16:15 ET",
+        "pub_ts": 1795554957.0
+      },
+      {
         "title": "18% Upside for Wells Fargo? TD Cowen Thinks So, and Here’s How",
         "url": "https://www.tikr.com/blog/18-upside-for-wells-fargo-td-cowen-thinks-so-and-heres-how?ref=yahoofinance&tlnk=yf-261124-jx98hp65&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3006,13 +3013,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 08:22 ET",
         "pub_ts": 1795526579.0
-      },
-      {
-        "title": "JPMorgan and Bank of America Just Sold Off. One Looks Better for Retirees",
-        "url": "https://247wallst.com/investing/2026/11/24/jpmorgan-and-bank-of-america-just-sold-off-one-looks-better-for-retirees/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 08:17 ET",
-        "pub_ts": 1795526270.0
       }
     ],
     "WMT": [
@@ -3202,6 +3202,20 @@
     ],
     "ANT": [
       {
+        "title": "US Equity Markets Mixed Amid Decline in AI Stocks, US Proposed Tariff Increase",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/us-equity-markets-mixed-amid-212239002.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 16:22 ET",
+        "pub_ts": 1795555359.0
+      },
+      {
+        "title": "ProShares ANTU ETF Targeting 2x Daily Returns of Anthropic Leads All 2x Long Anthropic ETFs With $10 Million in First-Day Dollar Trading Volume",
+        "url": "https://finance.yahoo.com/markets/options/articles/proshares-antu-etf-targeting-2x-210900933.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 16:09 ET",
+        "pub_ts": 1795554540.0
+      },
+      {
         "title": "Update: US Equity Indexes Mixed as Investors Rotate into Defensives Amid Weakening AI Trade",
         "url": "https://finance.yahoo.com/markets/stocks/articles/us-equity-indexes-mixed-investors-205450035.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3221,20 +3235,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 15:37 ET",
         "pub_ts": 1795552634.0
-      },
-      {
-        "title": "Anthropic Stock Just Broke Below Its $83 IPO Price. Is It a Bargain Buy?",
-        "url": "https://www.fool.com/investing/2026/11/24/anthropic-stock-just-broke-below-its-usd83-ipo-price-is-it-a-bargain-buy/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 15:15 ET",
-        "pub_ts": 1795551301.0
-      },
-      {
-        "title": "Stock Market Today: Nasdaq Skids As Nvidia Dives; New Trump Tariffs Loom; Pharma Play Clears Entry (Live Coverage)",
-        "url": "https://finance.yahoo.com/m/4aa4ff31-269f-346e-80c4-e681510af7ae/stock-market-today%3A-nasdaq.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 14:55 ET",
-        "pub_ts": 1795550129.0
       }
     ],
     "XAUUSD": [
@@ -3352,17 +3352,17 @@
     "COIN": 1795556026.6827304,
     "LLY": 1795556026.6827304,
     "MRNA": 1795556026.6827304,
-    "NKE": 1795554619.768088,
+    "NKE": 1795556197.9606876,
     "MCD": 1795556026.6827304,
-    "PEP": 1795554619.768088,
-    "XOM": 1795554619.768088,
-    "JPM": 1795554619.768088,
-    "WMT": 1795554619.768088,
+    "PEP": 1795556197.9606876,
+    "XOM": 1795556197.9606876,
+    "JPM": 1795556197.9606876,
+    "WMT": 1795556197.9606876,
     "V": 1795556026.6827304,
-    "CAT": 1795554619.768088,
+    "CAT": 1795556197.9606876,
     "FN": 1795555432.2981946,
     "GLW": 1795555925.5166647,
-    "ANT": 1795554619.768088,
+    "ANT": 1795556197.9606876,
     "XAUUSD": 1795554820.66809,
     "KOSPI": 1795555328.7186592
   },
