@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795527001.902,
-  "updated_at_et": "11-24 08:30 ET",
-  "updated_at_kst": "22:30 KST",
+  "updated_at_ts": 1795527123.37,
+  "updated_at_et": "11-24 08:32 ET",
+  "updated_at_kst": "22:32 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -906,39 +906,39 @@
     ],
     "NVDA": [
       {
-        "title": "Jensen Huang is back at Nvidia. Should AMD be worried?",
-        "url": "https://finance.yahoo.com/markets/stocks/article/jensen-huang-is-back-at-nvidia-should-amd-be-worried-130012666.html?.tsrc=rss",
+        "title": "Nasdaq Futures Fall as Questions Linger Over AI Trade",
+        "url": "https://www.wsj.com/finance/stocks/nasdaq-futures-fall-as-questions-linger-over-ai-trade-68ba6d71?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 08:00 ET",
-        "pub_ts": 1795525212.0
+        "time": "11-24 08:28 ET",
+        "pub_ts": 1795526880.0
       },
       {
-        "title": "Quantum X Labs’s Decoder Delivered Lowest Logical Error Rates by integrating NVIDIA CUDA-Q QEC in Comparison to Benchmarked Decoders",
-        "url": "https://finance.yahoo.com/technology/ai/articles/quantum-x-labs-decoder-delivered-124800588.html?.tsrc=rss",
+        "title": "Goldman Sachs says AI trade hinges on returns, not Nvidia",
+        "url": "https://finance.yahoo.com/technology/ai/articles/goldman-sachs-says-ai-trade-131510939.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 07:48 ET",
-        "pub_ts": 1795524480.0
+        "time": "11-24 08:15 ET",
+        "pub_ts": 1795526110.0
       },
       {
-        "title": "Jensen Huang Is Back at Nvidia, but He Still Can't Compute Megawatts and Concrete Into Existence",
-        "url": "https://www.fool.com/investing/2026/11/24/jensen-huang-is-back-at-nvidia-but-he-still-cant-compute-megawatts-and-concrete-into-existence/?.tsrc=rss",
+        "title": "Michael Burry: Bear rallies averaged 22% in the 1929 and 2000 crashes. Is Nvidia’s bounce back fooling your nest egg?",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/michael-burry-bear-rallies-averaged-131500246.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 07:47 ET",
-        "pub_ts": 1795524421.0
+        "time": "11-24 08:15 ET",
+        "pub_ts": 1795526100.0
       },
       {
-        "title": "Nvidia Faces an SEC Probe, According to Press Reports. Should You Still Buy the Stock?",
-        "url": "https://www.fool.com/investing/2026/11/24/nvidia-faces-an-sec-probe-according-to-press-reports-should-you-still-buy-the-stock/?.tsrc=rss",
+        "title": "This 3x Short Nvidia Fund Collapsed By 92% in One Day",
+        "url": "https://247wallst.com/investing/2026/11/24/this-3x-short-nvidia-fund-collapsed-by-92-in-one-day/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 07:35 ET",
-        "pub_ts": 1795523701.0
+        "time": "11-24 08:13 ET",
+        "pub_ts": 1795525982.0
       },
       {
-        "title": "YYForce (NASDAQ: YFOR) Launches Trained Humanoid Robot for Hotel Concierge Service Using NVIDIA Jetson and Isaac Sim",
-        "url": "https://finance.yahoo.com/technology/ai/articles/yyforce-nasdaq-yfor-launches-trained-123500831.html?.tsrc=rss",
+        "title": "Prediction: This Is When the U.S. Will Legalize Marijuana",
+        "url": "https://www.fool.com/investing/2026/11/24/prediction-this-is-when-the-u-s-will-legalize-marijuana/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 07:35 ET",
-        "pub_ts": 1795523700.0
+        "time": "11-24 08:13 ET",
+        "pub_ts": 1795525982.0
       }
     ],
     "AMD": [
@@ -948,6 +948,13 @@
         "source": "Yahoo Finance",
         "time": "11-24 08:00 ET",
         "pub_ts": 1795525212.0
+      },
+      {
+        "title": "Stock Market Today: Tech Futures Sell Off After Big Market Surge; AMD, Anthropic, Nvidia Dive (Live Coverage)",
+        "url": "https://finance.yahoo.com/m/4aa4ff31-269f-346e-80c4-e681510af7ae/stock-market-today%3A-tech.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 08:07 ET",
+        "pub_ts": 1795525679.0
       },
       {
         "title": "Billionaire Philippe Laffont of Coatue Management Sent AMD Shares Packing and Loaded Up on This Hot AI IPO Instead",
@@ -969,13 +976,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 06:03 ET",
         "pub_ts": 1795518182.0
-      },
-      {
-        "title": "ETFs Are Buying Advanced Micro Devices (AMD) on Friday",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-buying-advanced-micro-devices-110118985.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 06:01 ET",
-        "pub_ts": 1795518078.0
       }
     ],
     "ASML": [
@@ -1202,6 +1202,13 @@
     ],
     "MSFT": [
       {
+        "title": "Microsoft Stock Jumps In Nvidia-Fueled Tech Surge; Is Microsoft A Buy Now?",
+        "url": "https://finance.yahoo.com/m/47e21d96-b242-3f68-9ea6-fbc095bafba1/microsoft-stock-jumps-in.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 08:01 ET",
+        "pub_ts": 1795525295.0
+      },
+      {
         "title": "Cloud AI Update - Audi Integrates Cutting-Edge AI for In-Car Microsoft Access",
         "url": "https://finance.yahoo.com/technology/ai/articles/cloud-ai-audi-integrates-cutting-123730181.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1228,13 +1235,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 06:04 ET",
         "pub_ts": 1795518284.0
-      },
-      {
-        "title": "iShares Russell 1000 Growth (IWF) Buys $22.7 Million More Apple on Nov. 20",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/ishares-russell-1000-growth-iwf-110440903.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 06:04 ET",
-        "pub_ts": 1795518280.0
       }
     ],
     "AAPL": [
@@ -3291,22 +3291,22 @@
     "QQQ": 1795527001.9019988,
     "SMH": 1795527001.9019988,
     "IWM": 1795527001.9019988,
-    "IGV": 1795525569.1089377,
-    "TLT": 1795525569.1089377,
-    "GLD": 1795525569.1089377,
-    "SQQQ": 1795525569.1089377,
-    "TSM": 1795525569.1089377,
-    "VIXY": 1795525569.1089377,
-    "SOXS": 1795525569.1089377,
-    "NVDA": 1795525569.1089377,
-    "AMD": 1795525569.1089377,
-    "ASML": 1795525569.1089377,
-    "QCOM": 1795525569.1089377,
-    "AVGO": 1795525569.1089377,
-    "AMAT": 1795525569.1089377,
+    "IGV": 1795527123.3698816,
+    "TLT": 1795527123.3698816,
+    "GLD": 1795527123.3698816,
+    "SQQQ": 1795527123.3698816,
+    "TSM": 1795527123.3698816,
+    "VIXY": 1795527123.3698816,
+    "SOXS": 1795527123.3698816,
+    "NVDA": 1795527123.3698816,
+    "AMD": 1795527123.3698816,
+    "ASML": 1795527123.3698816,
+    "QCOM": 1795527123.3698816,
+    "AVGO": 1795527123.3698816,
+    "AMAT": 1795527123.3698816,
     "META": 1795525682.3370814,
     "GOOGL": 1795525682.3370814,
-    "MSFT": 1795525569.1089377,
+    "MSFT": 1795527123.3698816,
     "AAPL": 1795525682.3370814,
     "PLTR": 1795525682.3370814,
     "NOW": 1795525682.3370814,
