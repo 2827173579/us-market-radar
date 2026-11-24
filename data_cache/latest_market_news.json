@@ -1,9 +1,22 @@
 {
-  "updated_at_ts": 1795555925.517,
-  "updated_at_et": "11-24 16:32 ET",
-  "updated_at_kst": "06:32 KST",
+  "updated_at_ts": 1795556026.683,
+  "updated_at_et": "11-24 16:33 ET",
+  "updated_at_kst": "06:33 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261125053340344800",
+      "title": "美国至11月20日当周API原油库存 12.6万桶，预期90万桶，前值527.8万桶。",
+      "summary": "美国至11月20日当周API原油库存 12.6万桶，预期90万桶，前值527.8万桶。",
+      "keywords": [
+        "原油"
+      ],
+      "pub_ts": 1795556020.0,
+      "time_et": "11-24 16:33 ET",
+      "time_bj": "05:33 BJ",
+      "time_kst": "06:33 KST",
+      "time_display": "16:33 ET / 05:33 BJ"
+    },
     {
       "id": "20261125052000001800",
       "title": "美国至11月20日当周API原油库存将于十分钟后公布。",
@@ -335,21 +348,6 @@
       "time_bj": "20:52 BJ",
       "time_kst": "21:52 KST",
       "time_display": "07:52 ET / 20:52 BJ"
-    },
-    {
-      "id": "20261124201721089800",
-      "title": "美银推演两种极端行情：标普500上看8888、下看6666点",
-      "summary": "美银首席警告，明年市场可能面临多重变数：油价大跌及美国两党就AI和医疗保障达成妥协，或成利好；而AI信用风险、芯片暴跌及美联储超预期强硬，则构成威胁。点击查看",
-      "keywords": [
-        "美联储",
-        "芯片",
-        "标普"
-      ],
-      "pub_ts": 1795522641.0,
-      "time_et": "11-24 07:17 ET",
-      "time_bj": "20:17 BJ",
-      "time_kst": "21:17 KST",
-      "time_display": "07:17 ET / 20:17 BJ"
     }
   ],
   "ticker_news": {
@@ -1946,6 +1944,20 @@
     ],
     "TSLA": [
       {
+        "title": "Tesla, SpaceX Reportedly Pick Board Members To Negotiate Elon Musk's Mega Merger",
+        "url": "https://finance.yahoo.com/m/d4400d8c-dfaf-3382-a360-877e01e80aec/tesla%2C-spacex-reportedly-pick.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 16:05 ET",
+        "pub_ts": 1795554326.0
+      },
+      {
+        "title": "Tesla Robotaxi Rival Starts Road Tests Without A Safety Monitor",
+        "url": "https://finance.yahoo.com/m/2fafeed7-c259-3087-9fa8-cf86f4a1ebd4/tesla-robotaxi-rival-starts.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 16:02 ET",
+        "pub_ts": 1795554167.0
+      },
+      {
         "title": "Tesla's Vertical Integration Makes it Uniquely Positioned in US Robotaxi Market, UBS Says",
         "url": "https://finance.yahoo.com/markets/stocks/articles/tesla-apos-vertical-integration-makes-200751408.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1965,20 +1977,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 14:19 ET",
         "pub_ts": 1795547994.0
-      },
-      {
-        "title": "Tesla robotaxi business valued at $80B in updated UBS model",
-        "url": "https://www.proactiveinvestors.com/companies/news/1102375/tesla-robotaxi-business-valued-at-80b-in-updated-ubs-model-1102375.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 14:10 ET",
-        "pub_ts": 1795547400.0
-      },
-      {
-        "title": "Tesla’s Robotaxi Business Could Generate $3-4B In Annual Recurring Revenue By 2027-End, Says Seaport Global",
-        "url": "https://stocktwits.com/news-articles/markets/equity/tesla-s-robotaxi-business-could-generate-3-4-b-in-annual-recurring-revenue-by-2027-end-says-seaport-global/cNbs0INR9kD?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 13:16 ET",
-        "pub_ts": 1795544173.0
       }
     ],
     "AXP": [
@@ -2233,48 +2231,48 @@
         "pub_ts": 1795551172.0
       },
       {
-        "title": "SpaceX Falls 4%, CoreWeave Down 13%, Nebius Down 11% as AI Stocks Give Back Nvidia Rally",
-        "url": "https://www.tikr.com/blog/spacex-falls-4-coreweave-down-13-nebius-down-11-as-ai-stocks-give-back-nvidia-rally?ref=yahoofinance&tlnk=yf-261124-6rfwxx6w&.tsrc=rss",
+        "title": "HPE Q4 Earnings Call Highlights Raised Outlook for AI Shipments",
+        "url": "https://finance.yahoo.com/technology/ai/articles/hpe-q4-earnings-call-highlights-200000109.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 13:57 ET",
-        "pub_ts": 1795546678.0
+        "time": "11-24 15:00 ET",
+        "pub_ts": 1795550400.0
       }
     ],
     "DELL": [
+      {
+        "title": "Dell handily tops estimates, lifts sales and profit guidance",
+        "url": "https://finance.yahoo.com/technology/ai/article/dell-handily-tops-estimates-lifts-sales-and-profit-guidance-212145887.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 16:21 ET",
+        "pub_ts": 1795555305.0
+      },
+      {
+        "title": "Dell, HP, Autodesk and Workday earnings: what to watch today",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/dell-hp-autodesk-workday-earnings-212155359.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 16:21 ET",
+        "pub_ts": 1795555315.0
+      },
+      {
+        "title": "Dell Technologies Smashes Q3 Estimates, Guides Above Views",
+        "url": "https://finance.yahoo.com/m/4f82e7c0-64cb-3be4-911b-f1c9f673e3be/dell-technologies-smashes-q3.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 16:19 ET",
+        "pub_ts": 1795555140.0
+      },
+      {
+        "title": "Dell Technologies Delivers Third Quarter Fiscal 2027 Financial Results",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/dell-technologies-delivers-third-quarter-210500797.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 16:05 ET",
+        "pub_ts": 1795554300.0
+      },
       {
         "title": "Is Gross Profit Dell Stock's Real Test Tonight?",
         "url": "https://www.trefis.com/stock/dell/articles/628255/is-gross-profit-dell-stock-s-real-test-tonight/2026-11-24?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-24 13:39 ET",
         "pub_ts": 1795545584.0
-      },
-      {
-        "title": "Dell (DELL) Stock May Be 45% Below Fair Value Following AI Infrastructure News",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/dell-dell-stock-may-45-181300186.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 13:13 ET",
-        "pub_ts": 1795543980.0
-      },
-      {
-        "title": "Dell’s Earnings Are Expected to Surge. The Stock Is a Tougher Call.",
-        "url": "https://finance.yahoo.com/m/7bfc9015-4ca1-3f6d-81d5-7ffb1b1990e6/dell%E2%80%99s-earnings-are-expected.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 13:12 ET",
-        "pub_ts": 1795543920.0
-      },
-      {
-        "title": "Dell Technologies Stocks Fall 7.47% Hours Before Results Test a $95 Billion AI Backlog",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/dell-technologies-stocks-fall-7-174249169.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 12:42 ET",
-        "pub_ts": 1795542169.0
-      },
-      {
-        "title": "Dell Reports Today. Here’s How Much of Your Tech ETF Is Riding on Its AI Server Business",
-        "url": "https://247wallst.com/investing/etf/2026/11/24/dell-reports-today-heres-how-much-of-your-tech-etf-is-riding-on-its-ai-server-business/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 12:42 ET",
-        "pub_ts": 1795542164.0
       }
     ],
     "OKLO": [
@@ -2284,13 +2282,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 13:12 ET",
         "pub_ts": 1795543945.0
-      },
-      {
-        "title": "Oklo Slides 7% as Monday’s Nuclear Rebound Fades; NuScale Power and Energy Fuels Drop 6%",
-        "url": "https://247wallst.com/investing/2026/11/24/oklo-slides-7-as-mondays-nuclear-rebound-fades-nuscale-power-and-energy-fuels-drop-6/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 11:52 ET",
-        "pub_ts": 1795539143.0
       },
       {
         "title": "Wall Street Is Watching AI Stocks. But This Stock Could Be a Bigger Nuclear Energy Opportunity",
@@ -2312,6 +2303,13 @@
         "source": "Yahoo Finance",
         "time": "11-23 02:35 ET",
         "pub_ts": 1795419302.0
+      },
+      {
+        "title": "Oklo vs. NuScale Power: Which Nuclear Stock Is a Better Buy?",
+        "url": "https://www.fool.com/coverage/better-buy/2026/11/21/oklo-vs-nuscale-power-which-nuclear-stock-is-a-better-buy/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-21 17:39 ET",
+        "pub_ts": 1795300741.0
       }
     ],
     "CEG": [
@@ -2552,25 +2550,25 @@
         "pub_ts": 1795533363.0
       },
       {
+        "title": "Miller Industries, Inc. (MLR) Is Recovering From an Inventory Downturn: Could Earnings Rebound Drive Its Stock Higher?",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/miller-industries-inc-mlr-recovering-211015377.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 16:10 ET",
+        "pub_ts": 1795554615.0
+      },
+      {
+        "title": "IRadimed Corporation (IRMD) Is Entering a Multi-Year Replacement Cycle: Could Its Next-Generation Pump Fuel Growth?",
+        "url": "https://finance.yahoo.com/healthcare/articles/iradimed-corporation-irmd-entering-multi-210038946.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 16:00 ET",
+        "pub_ts": 1795554038.0
+      },
+      {
         "title": "Douglas Dynamics, Inc. (PLOW) Fell More Than 20%: Could Its Snowplow Business Recover From the Selloff?",
         "url": "https://finance.yahoo.com/markets/stocks/articles/douglas-dynamics-inc-plow-fell-205404386.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-24 15:54 ET",
         "pub_ts": 1795553644.0
-      },
-      {
-        "title": "908 Devices Inc. (MASS) Is Betting on Portable Chemical Detection: Could Its Next-Generation Device Drive Growth?",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/908-devices-inc-mass-betting-200024943.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 15:00 ET",
-        "pub_ts": 1795550424.0
-      },
-      {
-        "title": "Mama’s Creations, Inc. (MAMA) Fell 28% After a Major Rally: Can Margin Improvements Turn Things Around?",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/mama-creations-inc-mama-fell-200006372.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 15:00 ET",
-        "pub_ts": 1795550406.0
       }
     ],
     "SNDK": [
@@ -2663,6 +2661,13 @@
         "pub_ts": 1795551855.0
       },
       {
+        "title": "Megadeals Are Back. Why More Takeovers Could Be Coming.",
+        "url": "https://finance.yahoo.com/m/a03ed83a-524d-3633-9250-4fa4f8e50b0b/megadeals-are-back.-why-more.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 14:33 ET",
+        "pub_ts": 1795548780.0
+      },
+      {
         "title": "CrowdStrike and Zscaler deal makes sense to Jefferies at $43.9 billion",
         "url": "https://www.proactiveinvestors.com/companies/news/1102374/crowdstrike-and-zscaler-deal-makes-sense-to-jefferies-at-43-9-billion-1102374.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2675,13 +2680,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 12:46 ET",
         "pub_ts": 1795542388.0
-      },
-      {
-        "title": "CrowdStrike (CRWD) Q3 2027 Earnings Call Transcript",
-        "url": "https://www.fool.com/earnings/call-transcripts/2026/11/24/crowdstrike-crwd-q3-2027-earnings-call-transcript/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 12:02 ET",
-        "pub_ts": 1795539751.0
       }
     ],
     "ORCL": [
@@ -2723,6 +2721,13 @@
     ],
     "COIN": [
       {
+        "title": "Competition Started In 24/7 Trading: Andrew Cuomo",
+        "url": "https://finance.yahoo.com/video/competition-started-24-7-trading-204050875.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 15:40 ET",
+        "pub_ts": 1795552850.0
+      },
+      {
         "title": "Coinbase wins dismissal of four-year investor lawsuit",
         "url": "https://www.thestreet.com/crypto/markets/coinbase-wins-dismissal-of-four-year-investor-lawsuit?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2749,13 +2754,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 08:00 ET",
         "pub_ts": 1795525203.0
-      },
-      {
-        "title": "Kalshi Says New York Threatens Its $22 Billion Business. Coinbase Has a Problem Too",
-        "url": "https://www.tikr.com/blog/kalshi-says-new-york-threatens-its-22-billion-business-coinbase-has-a-problem-too?ref=yahoofinance&tlnk=yf-261124-fgcfcq6q&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 07:11 ET",
-        "pub_ts": 1795522280.0
       }
     ],
     "LLY": [
@@ -2797,39 +2795,39 @@
     ],
     "MRNA": [
       {
-        "title": "Trevi Therapeutics (TRVI) Stock Is Up 11.3% Today Without Company News",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/trevi-therapeutics-trvi-stock-11-203103297.html?.tsrc=rss",
+        "title": "Will 'Anti-Pharma' Democrats Chop Away At Biotech Stocks' Big Wins?",
+        "url": "https://finance.yahoo.com/m/d110ac3d-b2ba-3c8d-8f15-274f2cd95b50/will-%27anti-pharma%27-democrats.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 15:31 ET",
-        "pub_ts": 1795552263.0
+        "time": "11-24 16:16 ET",
+        "pub_ts": 1795555004.0
       },
       {
-        "title": "Revolution Medicines (RVMD) Stock Is Up 7.0% Today Without Company News",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/revolution-medicines-rvmd-stock-7-173029335.html?.tsrc=rss",
+        "title": "Immunome (IMNM) Stock Is Up 13.8% Today Without Company News",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/immunome-imnm-stock-13-8-210119724.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 12:30 ET",
-        "pub_ts": 1795541429.0
+        "time": "11-24 16:01 ET",
+        "pub_ts": 1795554079.0
       },
       {
-        "title": "Why Is Geron (GERN) Stock Up Today? Biotech Stocks Rally",
-        "url": "https://finance.yahoo.com/healthcare/articles/why-geron-gern-stock-today-204654758.html?.tsrc=rss",
+        "title": "Alto Neuroscience (ANRO) Stock Is Up 10.3% Today Without Company News",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/alto-neuroscience-anro-stock-10-210058486.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 15:46 ET",
-        "pub_ts": 1795553214.0
+        "time": "11-24 16:00 ET",
+        "pub_ts": 1795554058.0
       },
       {
-        "title": "Oculis (OCS) Stock Is Up 7.8% Today as Biotech Stocks Rally",
-        "url": "https://finance.yahoo.com/healthcare/articles/oculis-ocs-stock-7-8-204613722.html?.tsrc=rss",
+        "title": "Aura Biosciences (AURA) Stock Is Up 8.9% Today Without Company News",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/aura-biosciences-aura-stock-8-210055724.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 15:46 ET",
-        "pub_ts": 1795553173.0
+        "time": "11-24 16:00 ET",
+        "pub_ts": 1795554055.0
       },
       {
-        "title": "Lexeo (LXEO) Stock Is Up 12.0% Today Without Company News",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/lexeo-lxeo-stock-12-0-204612000.html?.tsrc=rss",
+        "title": "Why Is Arcus Biosciences (RCUS) Stock Up Today? Biotech Rally on Insmed Deal",
+        "url": "https://finance.yahoo.com/healthcare/articles/why-arcus-biosciences-rcus-stock-210052610.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 15:46 ET",
-        "pub_ts": 1795553172.0
+        "time": "11-24 16:00 ET",
+        "pub_ts": 1795554052.0
       }
     ],
     "NKE": [
@@ -3330,37 +3328,37 @@
     "AXTI": 1795555432.2981946,
     "NASA": 1795555925.5166647,
     "LUNR": 1795555925.5166647,
-    "TSLA": 1795554518.8580587,
+    "TSLA": 1795556026.6827304,
     "AXP": 1795555925.5166647,
     "RKLB": 1795555925.5166647,
     "KO": 1795555925.5166647,
     "FLY": 1795555925.5166647,
     "INTC": 1795555925.5166647,
-    "VRT": 1795554518.8580587,
-    "HPE": 1795554518.8580587,
-    "DELL": 1795554518.8580587,
-    "OKLO": 1795554518.8580587,
-    "CEG": 1795554518.8580587,
-    "FPS": 1795554518.8580587,
+    "VRT": 1795556026.6827304,
+    "HPE": 1795556026.6827304,
+    "DELL": 1795556026.6827304,
+    "OKLO": 1795556026.6827304,
+    "CEG": 1795556026.6827304,
+    "FPS": 1795556026.6827304,
     "MU": 1795555432.2981946,
     "SKHY": 1795555432.2981946,
     "WDC": 1795555432.2981946,
-    "STX": 1795554518.8580587,
-    "MSTR": 1795554518.8580587,
-    "SNDK": 1795554518.8580587,
+    "STX": 1795556026.6827304,
+    "MSTR": 1795556026.6827304,
+    "SNDK": 1795556026.6827304,
     "BTC-USD": 1795555432.2981946,
-    "CRWD": 1795554518.8580587,
-    "ORCL": 1795554518.8580587,
-    "COIN": 1795554518.8580587,
-    "LLY": 1795554518.8580587,
-    "MRNA": 1795554518.8580587,
+    "CRWD": 1795556026.6827304,
+    "ORCL": 1795556026.6827304,
+    "COIN": 1795556026.6827304,
+    "LLY": 1795556026.6827304,
+    "MRNA": 1795556026.6827304,
     "NKE": 1795554619.768088,
-    "MCD": 1795554518.8580587,
+    "MCD": 1795556026.6827304,
     "PEP": 1795554619.768088,
     "XOM": 1795554619.768088,
     "JPM": 1795554619.768088,
     "WMT": 1795554619.768088,
-    "V": 1795554518.8580587,
+    "V": 1795556026.6827304,
     "CAT": 1795554619.768088,
     "FN": 1795555432.2981946,
     "GLW": 1795555925.5166647,
@@ -3385,7 +3383,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (16:20 ET / 05:20 BJ) [原油]：美国至11月20日当周API原油库存将于十分钟后公布。",
+    "detail": "⚡ 最新核心快讯 (16:33 ET / 05:33 BJ) [原油]：美国至11月20日当周API原油库存 12.6万桶，预期90万桶，前值527.8万桶。",
     "event_name": "",
     "minutes_left": 0,
     "opex_shield": {
