@@ -5121,13 +5121,13 @@ def evaluate_stock_signal(
     5. 黄金坑右侧反转 (V2.4 严选准入铁律)：长线牛市 + 0.382~0.65 坑深 + ATR<=5.2% + 无暴雷 + 3日超卖 + 右侧反转K线
     """
     if last > fib_high:
-        dist_to_pit = ((last - fib_high) / last) * 100
+        dist_to_pit = ((last - fib_high) / fib_high) * 100 if fib_high > 0 else 0.0
         pit_status = f"坑上 +{dist_to_pit:.2f}%"
     elif fib_low <= last <= fib_high:
         dist_to_pit = 0.0
         pit_status = "🟢 处于坑内"
     else:
-        dist_to_pit = ((last - fib_low) / last) * 100
+        dist_to_pit = ((last - fib_low) / fib_low) * 100 if fib_low > 0 else 0.0
         pit_status = f"破坑 {dist_to_pit:.2f}%"
 
     # 对齐 V3.1 1.5% 风险平价配仓 (单股上限 25%，当日最低价 low_price - 0.5*ATR 结构止损)

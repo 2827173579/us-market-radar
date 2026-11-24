@@ -52,10 +52,10 @@ def _make_hist_df(end_date_str: str = "2026-11-19", n_days: int = 65, base_close
             h = c + 0.9
             l = c - 0.9
         elif mode == "fresh_breakdown":
-            # 前 60 日一直在 50~58 高位密集，最后一日直接跌穿全部历史低点至 base_close=38.0
-            c = 54.0 + 2.0 * math_sin(i / 5.0) if i < n_days - 1 else base_close
-            h = c + 1.0
-            l = c - 0.8 if i < n_days - 1 else base_close - 0.2
+            # 前 60 日一直在 base_close*1.12~1.20 区间密集，最后一日直接跌穿全部历史低点至 base_close
+            c = base_close * 1.15 + 1.2 * math_sin(i / 5.0) if i < n_days - 1 else base_close
+            h = c + 0.8
+            l = c - 0.6 if i < n_days - 1 else base_close - 0.2
         else:
             # fresh_breakout：前 60 日一直在 30~36 震荡，最后一日大涨至 base_close=48.0 创新高
             c = 33.0 + 1.8 * math_sin(i / 5.0) if i < n_days - 1 else base_close

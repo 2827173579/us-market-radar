@@ -967,6 +967,27 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                         eff_atr_frac=eff_atr,
                     )
                     item.update(_guarded)
+                    # 4H 剧本文案防守止损位二次硬对齐：确保与顶部波段止损一致且严格 < live_p
+                    _g_sl_final = float(_guarded.get("stop_loss_price") or 0.0)
+                    if _g_sl_final > 0 and live_p > 0 and _g_sl_final < live_p and item.get("scenario_script"):
+                        import re as _re_sl
+                        _is_pts_sl = (tk.upper() == "KOSPI")
+                        _sl_fmt_final = f"{_g_sl_final:,.2f}" if _is_pts_sl else f"${_g_sl_final:.2f}"
+                        def _fix_sc_sl(_m):
+                            try:
+                                _v = float(_m.group(2).replace(",", ""))
+                                if _v >= live_p:
+                                    return f"{_m.group(1)}{_sl_fmt_final}"
+                            except Exception:
+                                pass
+                            return _m.group(0)
+                        item["scenario_script"] = _re_sl.sub(
+                            r"(防守止损位\s*)\$?([0-9,]+(?:\.[0-9]+)?)",
+                            _fix_sc_sl,
+                            str(item["scenario_script"]),
+                        )
+                        if float(item.get("script_stop_loss") or 0.0) >= live_p:
+                            item["script_stop_loss"] = _g_sl_final
 
                 # 3X 杠杆镜像对母指数锚定对齐（SOXL/SOXS -> SOXX；TQQQ/SQQQ -> QQQ），保证排序与多空温度一致
                 apply_leveraged_mirror_parent_alignment(all_preds)
@@ -6496,15 +6517,21 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 volReason = `量比 ${curVolRatio.toFixed(2)}x，成交量能处于常态水平`;
             }
 
+            const _pitDownPct = (curFibLow > 0 && curActive > 0 && curActive < curFibLow)
+                ? Math.abs(((curActive - curFibLow) / curFibLow) * 100.0)
+                : Math.min(99.9, Math.abs(curDistPit));
+            const _pitUpPct = (curFibHigh > 0 && curActive > curFibHigh)
+                ? (((curActive - curFibHigh) / curFibHigh) * 100.0)
+                : Math.abs(curDistPit);
             if (curFibLow && curFibHigh) {
                 if (curLast >= curFibLow && curLast <= curFibHigh) {
                     fibReason = `精准落入 60日斐波那契 0.5~0.618 黄金坑支撑带 (${fpCur(curFibLow)} ~ ${fpCur(curFibHigh)})，处于战略低吸区`;
                 } else if (isPit && curDistPit >= -2.0) {
-                    fibReason = `处于黄金坑底极窄洗盘弹簧区 (${curDistPit.toFixed(1)}%，坑底线 ${fpCur(curFibLow)})，属主力诱空洗盘，未实质破位`;
+                    fibReason = `处于黄金坑底极窄洗盘弹簧区 (-${_pitDownPct.toFixed(1)}%，坑底线 ${fpCur(curFibLow)})，属主力诱空洗盘，未实质破位`;
                 } else if (curLast > curFibHigh) {
-                    fibReason = `运行于黄金坑上方 (+${curDistPit.toFixed(1)}%)，波段支撑带位于 ${fpCur(curFibLow)} ~ ${fpCur(curFibHigh)}`;
+                    fibReason = `运行于黄金坑上方 (+${_pitUpPct.toFixed(1)}%)，波段支撑带位于 ${fpCur(curFibLow)} ~ ${fpCur(curFibHigh)}`;
                 } else {
-                    fibReason = `击穿波段坑底支撑 -${Math.abs(curDistPit).toFixed(1)}% (坑底线 ${fpCur(curFibLow)})，斐波那契多头支撑已破位`;
+                    fibReason = `击穿波段坑底支撑 -${_pitDownPct.toFixed(1)}% (坑底线 ${fpCur(curFibLow)})，斐波那契多头支撑已破位`;
                 }
             } else {
                 fibReason = "基准支撑带平稳运行";
@@ -6554,7 +6581,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 themeColor = pal.down; themeBg = pal.downBg; themeBorder = pal.downBorder;
                 actionType = "破位风控 / 严禁抄底";
                 mainVerdict = "🔴 放量破位杀跌 · 严禁逆势接飞刀";
-                actionDirective = `【铁血风控指令】标的击穿关键斐波那契坑底防线 (跌破 ${Math.abs(curDistPit).toFixed(1)}%)，空头动能处于释放期。持仓者若跌破底线必须坚决离场止损；空仓观察者坚决管住手。`;
+                actionDirective = `【铁血风控指令】标的击穿关键斐波那契坑底防线 (跌破 ${_pitDownPct.toFixed(1)}%)，空头动能处于释放期。持仓者若跌破底线必须坚决离场止损；空仓观察者坚决管住手。`;
             } else if (isDeepPullback) {
                 themeColor = pal.warn; themeBg = pal.warnBg; themeBorder = pal.warnBorder;
                 actionType = "深度回踩 / 严控追高";
@@ -7316,7 +7343,17 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 }
                 const scScriptEl = document.getElementById("pAiScenarioScript");
                 if (scScriptEl) {
-                    const rawScTxt = String(aiItem.scenario_script || "--");
+                    let rawScTxt = String(aiItem.scenario_script || "--");
+                    const _dynSlJs = Number(aiItem.stop_loss_price || 0);
+                    if (_dynSlJs > 0 && curActive > 0 && _dynSlJs < curActive) {
+                        rawScTxt = rawScTxt.replace(/(防守止损位\s*)\$?([0-9,]+(?:\.[0-9]+)?)/g, (m, pfx, numStr) => {
+                            const v = Number(String(numStr).replace(/,/g, ""));
+                            if (Number.isFinite(v) && v >= curActive) {
+                                return `${pfx}${fpCur(_dynSlJs)}`;
+                            }
+                            return m;
+                        });
+                    }
                     scScriptEl.innerText = isPtsCur ? rawScTxt.replace(/\$([0-9]+(?:\.[0-9]+)?)/g, (_, d) => fpCur(Number(d))) : rawScTxt;
                     const srStateSc = String(aiItem.sr_breach_state || "INTACT").toUpperCase();
                     scScriptEl.style.borderLeftColor = (srStateSc === "ALL_SUPPORT_BREACHED")

@@ -3270,16 +3270,38 @@ def compute_multi_level_scenario_map(
     if r1 <= close:
         r1 = round(close + min_step, 2)
         r1_source = "ATR_ESTIMATE"
-    if r2 <= r1 or ((r2 - r1) / max(r1, 0.01)) < _min_step_eff_sc:
+    try:
+        import sr_anchor_engine as _sr_r2_mod
+        _max_r2_step_sc = _sr_r2_mod.compute_sr_max_r2_step_pct(_atr_dec_sc)
+    except Exception:
+        _max_r2_step_sc = float(min(0.22, max(0.10, 1.5 * _atr_dec_sc)))
+        _sr_r2_mod = None
+    _r2_min_b = r1 * (1.0 + _min_step_eff_sc)
+    _r2_max_b = r1 * (1.0 + _max_r2_step_sc)
+    _r2_out_of_band = (r2 <= r1) or (r2 < _r2_min_b) or (knn_upper is None and r2 > _r2_max_b)
+    if _r2_out_of_band:
         _higher_r_pool = sorted(
-            {round(float(x), 2) for x in real_r2_pool if float(x) > r1 and ((float(x) - r1) / max(r1, 0.01)) >= _min_step_eff_sc}
+            {
+                round(float(x), 2)
+                for x in real_r2_pool
+                if _r2_min_b <= float(x) <= (_r2_max_b if knn_upper is None else float("inf"))
+            }
         )
         if _higher_r_pool:
             r2 = _higher_r_pool[0]
             r2_source = "REAL_CHIPS"
         else:
-            _synth_r2_step = max(_min_step_eff_sc, min(0.08, 0.80 * _atr_dec_sc))
-            r2 = round(r1 * (1.0 + _synth_r2_step), 2)
+            if _sr_r2_mod is not None and knn_upper is None:
+                r2 = _sr_r2_mod._synthesize_bounded_r2(
+                    r1=r1,
+                    atr_dec=_atr_dec_sc,
+                    min_step_pct=_min_step_eff_sc,
+                    max_r2_step_pct=_max_r2_step_sc,
+                    min_abs_step=min_step,
+                )
+            else:
+                _synth_r2_step = max(_min_step_eff_sc, min(0.12, 1.0 * _atr_dec_sc))
+                r2 = round(r1 * (1.0 + _synth_r2_step), 2)
             if r2 <= r1:
                 r2 = round(r1 + max(min_step, 0.01), 2)
             r2_source = "ATR_ESTIMATE"
@@ -3368,8 +3390,20 @@ def sync_scenario_script_levels(item: Dict[str, Any]) -> str:
 
     _raw_sl_v = float(item.get("sl") or 0.0) if item.get("sl") is not None else 0.0
     _sw_sl_v = float(item.get("stop_loss_price") or 0.0) if item.get("stop_loss_price") is not None else 0.0
-    _cur_px_v = float(item.get("current_price") or item.get("latest_price") or 0.0)
-    _use_sl_v = max(_raw_sl_v, _sw_sl_v) if (_sw_sl_v > 0 and (_cur_px_v <= 0 or _sw_sl_v < _cur_px_v)) else _raw_sl_v
+    _sc_sl_v = float(item.get("script_stop_loss") or 0.0) if item.get("script_stop_loss") is not None else 0.0
+    _cur_px_v = float(item.get("active_price") or item.get("current_price") or item.get("latest_price") or 0.0)
+    _sr_st_v = str(item.get("sr_breach_state") or "").upper()
+    if _cur_px_v > 0 and (_sr_st_v == "ALL_SUPPORT_BREACHED" or _raw_sl_v >= _cur_px_v):
+        if 0 < _sw_sl_v < _cur_px_v:
+            _use_sl_v = _sw_sl_v
+        elif 0 < _sc_sl_v < _cur_px_v:
+            _use_sl_v = _sc_sl_v
+        else:
+            _use_sl_v = round(_cur_px_v * 0.947, 2)
+    else:
+        _use_sl_v = max(_raw_sl_v, _sw_sl_v) if (_sw_sl_v > 0 and (_cur_px_v <= 0 or _sw_sl_v < _cur_px_v)) else _raw_sl_v
+        if _cur_px_v > 0 and _use_sl_v >= _cur_px_v:
+            _use_sl_v = _sw_sl_v if (0 < _sw_sl_v < _cur_px_v) else round(_cur_px_v * 0.947, 2)
     sl_fv = _fmt(_use_sl_v)
     if sl_fv is not None:
         script = re.sub(

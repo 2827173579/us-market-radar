@@ -67,6 +67,50 @@ def compute_sr_min_step_pct(atr_pct: float) -> float:
     return float(min(0.055, max(0.025, 0.45 * atr_f)))
 
 
+def compute_sr_max_r2_step_pct(atr_pct: float) -> float:
+    """
+    真实候选 R2 相对 R1 的最大波段跨度上限（防中段筹码真空一脚飞到远期前高）：
+    max_r2_step_pct = min(0.22, max(0.10, 1.5 * atr_f))
+    - 低波 1x 标的 R2 距 R1 不超过 10%
+    - 高波 3x 杠杆不超过 18% ~ 22%
+    """
+    raw = _opt_float(atr_pct)
+    if raw is None or raw <= 0:
+        atr_f = 0.025
+    else:
+        atr_f = (raw / 100.0) if raw > 1.0 else raw
+    return float(min(0.22, max(0.10, 1.5 * atr_f)))
+
+
+def _synthesize_bounded_r2(
+    r1: float,
+    atr_dec: float,
+    min_step_pct: float,
+    max_r2_step_pct: float,
+    min_abs_step: float = 0.01,
+) -> float:
+    """
+    在 [R1*(1+min_step_pct), R1*(1+max_r2_step_pct)] 合理波段区间内合成估算二压 R2，
+    若区间内存在紧贴估算值的整十/整五心理关口（如 $50.00）则优先吸附，确保 R2 严格 >= R1*(1+min_step_pct)。
+    """
+    r2_min = max(r1 * (1.0 + min_step_pct), r1 + max(min_abs_step, 0.01))
+    r2_max = max(r1 * (1.0 + max_r2_step_pct), r2_min)
+    synth_step = max(min_step_pct, min(0.12, 1.0 * atr_dec))
+    synth_step = min(synth_step, max_r2_step_pct)
+    r2_raw = max(r2_min, min(r2_max, r1 * (1.0 + synth_step)))
+
+    grid = 50.0 if r1 >= 1000.0 else (10.0 if r1 >= 200.0 else (5.0 if r1 >= 25.0 else (1.0 if r1 >= 5.0 else 0.0)))
+    if grid > 0:
+        k_lo = math.ceil((r2_min - 1e-9) / grid)
+        k_hi = math.floor((r2_max + 1e-9) / grid)
+        round_cands = [round(k * grid, 2) for k in range(k_lo, k_hi + 1) if r2_min <= k * grid <= r2_max]
+        if round_cands:
+            best_round = min(round_cands, key=lambda x: abs(x - r2_raw))
+            if abs(best_round - r2_raw) / max(r2_raw, 0.01) <= 0.025:
+                return round(float(best_round), 2)
+    return round(float(r2_raw), 2)
+
+
 def extract_gap_pullback_support_candidates(
     df_history: Optional[pd.DataFrame],
     ref_price: float,
@@ -467,17 +511,26 @@ def compute_static_sr_levels_with_sources(
         r1 = round(base_px + min_step, 2)
         r1_source = SOURCE_ATR_ESTIMATE
 
-    # 规则 A（阻力对称防扎堆）：(R2 - R1) / R1 >= min_step_pct_eff
+    # 规则 A（阻力对称防扎堆）+ 规则 C（远期离群 R2 上限收紧）：
+    # 真实候选 R2 必须落在 [R1*(1+min_step_pct_eff), R1*(1+max_r2_step_pct)] 合理波段区间内
+    max_r2_step_pct = compute_sr_max_r2_step_pct(atr_dec)
+    r2_min_bound = r1 * (1.0 + min_step_pct_eff)
+    r2_max_bound = r1 * (1.0 + max_r2_step_pct)
     higher_res = [
         x for x in valid_res
-        if x > r1 and ((x - r1) / max(r1, 0.01)) >= min_step_pct_eff
+        if r2_min_bound <= x <= r2_max_bound
     ]
     if higher_res:
         r2 = higher_res[-1] if len(higher_res) > 1 and higher_res[-1] <= base_px * 1.35 else higher_res[0]
         r2_source = SOURCE_REAL_CHIPS
     else:
-        synth_r_step = max(min_step_pct_eff, min(0.08, 0.80 * atr_dec))
-        r2 = round(max(r1 * (1.0 + synth_r_step), base_px * (1.0 + max(0.060, 1.65 * eff_atr))), 2)
+        r2 = _synthesize_bounded_r2(
+            r1=r1,
+            atr_dec=atr_dec,
+            min_step_pct=min_step_pct_eff,
+            max_r2_step_pct=max_r2_step_pct,
+            min_abs_step=min_step,
+        )
         r2_source = SOURCE_ATR_ESTIMATE
 
     if r2 <= r1:
@@ -497,6 +550,7 @@ def compute_static_sr_levels_with_sources(
         "r1_source": r1_source,
         "r2_source": r2_source,
         "min_step_pct": round(min_step_pct_eff, 4),
+        "max_r2_step_pct": round(max_r2_step_pct, 4),
         "gap_pullback_candidates": gap_pullback_cands,
     }
 
@@ -552,11 +606,14 @@ def _anchor_valid_for_reuse(
     r2 = float(existing["anchor_r2"])
     if not (0 < s2 < s1 < r1 < r2):
         return False
-    # V5.3 防扎堆校验：若旧缓存锚点缺少 min_step_pct 字段或档位间距严重过窄，触发单次安全重建
-    if existing.get("min_step_pct") is None:
+    # V5.3.1 防扎堆 + 远期离群 R2 校验：若旧缓存缺少 min_step_pct / max_r2_step_pct 或超出合理区间，触发单次安全重建
+    if existing.get("min_step_pct") is None or existing.get("max_r2_step_pct") is None:
         return False
     ms = float(existing.get("min_step_pct") or 0.025)
+    mr2 = float(existing.get("max_r2_step_pct") or 0.22)
     if ((s1 - s2) / max(s1, 0.01)) < (ms * 0.92) or ((r2 - r1) / max(r1, 0.01)) < (ms * 0.92):
+        return False
+    if ((r2 - r1) / max(r1, 0.01)) > (mr2 * 1.03):
         return False
     ref_old = float(existing["prev_close"])
     ref_new = _opt_float(prev_close)
@@ -798,7 +855,22 @@ def evaluate_sr_breach_state(
             r2_swing_cap = round(min(r2, max(swing_tp_f, px * (1.0 + max(0.08, 2.5 * atr_f)))), 2)
 
     valid_swing_sl = swing_sl_f if (swing_sl_f > 0 and (px <= 0 or swing_sl_f < px)) else 0.0
-    eff_sl = round(max(sl, valid_swing_sl), 2) if valid_swing_sl > 0 else sl
+    # V5.3.1 硬防呆锁：4H 剧本文案中的「防守止损位」严禁 >= active_price (px)
+    # 当处于全线跌穿态 (px < s2) 或原始静态 sl >= px 时，强制对齐顶部动态 swing_sl（无有效 swing_sl 时按动态 ATR 合成）
+    if px > 0 and ((s2 > 0 and px < s2) or sl >= px):
+        if valid_swing_sl > 0:
+            script_sl = round(valid_swing_sl, 2)
+        else:
+            dyn_sl_step = max(0.025, min(0.08, 1.0 * atr_f))
+            script_sl = round(min(px * (1.0 - dyn_sl_step), px - max(0.01, round(px * 0.005, 2))), 2)
+    else:
+        script_sl = round(max(sl, valid_swing_sl), 2) if valid_swing_sl > 0 else sl
+        if px > 0 and script_sl >= px:
+            script_sl = round(valid_swing_sl, 2) if valid_swing_sl > 0 else round(
+                min(px * (1.0 - max(0.025, min(0.08, 1.0 * atr_f))), px - max(0.01, round(px * 0.005, 2))),
+                2,
+            )
+    eff_sl = script_sl
     s1_below_swing_sl = bool(valid_swing_sl > 0 and s1 > 0 and s1 < valid_swing_sl)
 
     eff_vix_back = bool(
@@ -827,7 +899,7 @@ def evaluate_sr_breach_state(
         script = (
             f"{halt_prefix}【今日原定支撑全线跌穿 · 下方无真实支撑，别猜底】现价已跌破当日全部原定支撑 S1 ({fp(s1)}) / S2 ({fp(s2)})；"
             f"原 S2 ({fp(s2)}) 已反转为上方第一压力（上方前压 R1 ({fp(r1)}) / R2 ({fp(r2)})）；"
-            f"严禁左侧猜底，仅认放量收回原 S2 或重夺 {vwap_str} 的右侧确认；防守止损位 {fp(sl)}"
+            f"严禁左侧猜底，仅认放量收回原 S2 或重夺 {vwap_str} 的右侧确认；防守止损位 {fp(eff_sl)}"
         )
     elif s1 > 0 and px < s1:
         state = STATE_S1_BREACHED
@@ -836,7 +908,7 @@ def evaluate_sr_breach_state(
         script = (
             f"{halt_prefix}【S1击穿转压 · 退守下轨】原支撑 S1 ({fp(s1)}) 已有效击穿并转为反抽压力，"
             f"半空严禁盲目接刀，退守 {s2_lbl} ({fp(s2)})；"
-            f"反抽优先测试原 S1 ({fp(s1)}) 与 R1 ({fp(r1)})（高阻 R2 ({fp(r2)})）；防守止损位 {fp(sl)}"
+            f"反抽优先测试原 S1 ({fp(s1)}) 与 R1 ({fp(r1)})（高阻 R2 ({fp(r2)})）；防守止损位 {fp(eff_sl)}"
         )
     elif r2 > 0 and px > r2:
         state = STATE_ALL_RESISTANCE_BROKEN
@@ -1005,6 +1077,7 @@ def evaluate_sr_breach_state(
         "bear_suppressed_r1_break": bear_suppressed_r1_break,
         "r2_is_far_historical": r2_is_far_historical,
         "r2_swing_cap": r2_swing_cap,
+        "script_stop_loss": eff_sl,
         "suppression_reason_text": sup_reason_full if bear_suppressed_r1_break else "",
         "suppression_short_tag": sup_reason_short if bear_suppressed_r1_break else "",
         "scenario_script": script,
