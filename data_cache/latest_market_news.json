@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795520814.199,
-  "updated_at_et": "11-24 06:46 ET",
-  "updated_at_kst": "20:46 KST",
+  "updated_at_ts": 1795520923.287,
+  "updated_at_et": "11-24 06:48 ET",
+  "updated_at_kst": "20:48 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -649,6 +649,13 @@
     ],
     "IGV": [
       {
+        "title": "What iShares Expanded Tech-Software (IGV) Sold: Palo Alto Leads on Friday",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/ishares-expanded-tech-software-igv-110408106.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 06:04 ET",
+        "pub_ts": 1795518248.0
+      },
+      {
         "title": "iShares Expanded Tech-Software (IGV) Sells $17.3 Million More Microsoft on Nov. 17",
         "url": "https://finance.yahoo.com/markets/stocks/articles/ishares-expanded-tech-software-igv-110546407.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -675,13 +682,6 @@
         "source": "Yahoo Finance",
         "time": "11-11 06:04 ET",
         "pub_ts": 1794395046.0
-      },
-      {
-        "title": "iShares Expanded Tech-Software (IGV) Sells $36 Million of Palo Alto on Oct. 30",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/ishares-expanded-tech-software-igv-110432685.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-03 06:04 ET",
-        "pub_ts": 1793703872.0
       }
     ],
     "TLT": [
@@ -908,42 +908,56 @@
     ],
     "NVDA": [
       {
-        "title": "Huang-Over Damps Wall Street Pre-Bell; Asia Up, Europe Off",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/huang-over-damps-wall-street-110942839.html?.tsrc=rss",
+        "title": "How Jensen Huang's return to Nvidia made the world trillions richer",
+        "url": "https://www.euronews.com/2026/11/24/how-jensen-huangs-return-to-nvidia-made-the-world-trillions-richer?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 06:09 ET",
-        "pub_ts": 1795518582.0
+        "time": "11-24 06:37 ET",
+        "pub_ts": 1795520235.0
       },
       {
-        "title": "Bitcoin Trades Near $60,000, Below Where It Stood Before Nvidia Brought Back Jensen Huang",
-        "url": "https://unchainedcrypto.com/bitcoin-trades-near-60000-below-where-it-stood-before-nvidia-brought-back-jensen-huang/?.tsrc=rss",
+        "title": "Tech firms fuel global rally on Huang's shock Nvidia return",
+        "url": "https://finance.yahoo.com/technology/ai/articles/tech-firms-soar-huangs-return-023753159.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 06:00 ET",
-        "pub_ts": 1795518005.0
+        "time": "11-24 06:34 ET",
+        "pub_ts": 1795520064.0
       },
       {
-        "title": "The British chip champions challenging Nvidia’s AI stranglehold",
-        "url": "https://uk.finance.yahoo.com/news/british-chip-champions-challenging-nvidia-110000128.html?.tsrc=rss",
+        "title": "Nvidia Shares Fall 5% in Premarket Trading as Goldman Sachs Highlights Lingering Uncertainty Following Huang’s Return",
+        "url": "https://investorshub.advfn.com/market-news/article/40601/nvidia-shares-fall-5-in-premarket-trading-as-goldman-sachs-highlights-lingering-uncertainty-following-huangs-return?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 06:00 ET",
-        "pub_ts": 1795518000.0
+        "time": "11-24 06:23 ET",
+        "pub_ts": 1795519383.0
       },
       {
-        "title": "Down 40% or More for the Year, Are Any of These Top Cryptocurrencies Worth Buying Right Now?",
-        "url": "https://www.fool.com/investing/2026/11/24/down-40-or-more-for-the-year-are-any-of-these-top-cryptocurrencies-worth-buying-right-now/?.tsrc=rss",
+        "title": "Warren Buffett’s Record Cash Pile Is Sending Investors a Message About AI Stocks",
+        "url": "https://www.fool.com/investing/2026/11/24/warren-buffetts-record-cash-pile-is-sending-investors-a-message-about-ai-stocks/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 05:50 ET",
-        "pub_ts": 1795517402.0
+        "time": "11-24 06:20 ET",
+        "pub_ts": 1795519202.0
       },
       {
-        "title": "Nvidia Bulls Rule on Asian Stock Markets",
-        "url": "https://finance.yahoo.com/markets/world-indices/articles/nvidia-bulls-rule-asian-stock-103642321.html?.tsrc=rss",
+        "title": "Most Of Nvidia's Drop Came Before Huang Left",
+        "url": "https://www.trefis.com/stock/nvda/articles/628268/most-of-nvidia-s-drop-came-before-huang-left/2026-11-24?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 05:36 ET",
-        "pub_ts": 1795516602.0
+        "time": "11-24 06:18 ET",
+        "pub_ts": 1795519095.0
       }
     ],
     "AMD": [
+      {
+        "title": "iShares PHLX SOX Semiconductor (SOXX) Adds AMD and AVGO on Nov. 20",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/ishares-phlx-sox-semiconductor-soxx-110302788.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 06:03 ET",
+        "pub_ts": 1795518182.0
+      },
+      {
+        "title": "ETFs Are Buying Advanced Micro Devices (AMD) on Friday",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-buying-advanced-micro-devices-110118985.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 06:01 ET",
+        "pub_ts": 1795518078.0
+      },
       {
         "title": "FalcoTrader Announces Expanded Stock Trading Capabilities Across Its Simulated Trading Challenge Platform",
         "url": "https://finance.yahoo.com/markets/stocks/articles/falcotrader-announces-expanded-stock-trading-094700625.html?.tsrc=rss",
@@ -964,23 +978,16 @@
         "source": "Yahoo Finance",
         "time": "11-23 22:47 ET",
         "pub_ts": 1795492068.0
-      },
-      {
-        "title": "AMD Stock Rallies Nearly 8% as a Bernstein Analyst Remains Bullish Despite the Hunterbrook Short Report",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/amd-stock-rallies-nearly-8-235832362.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 18:58 ET",
-        "pub_ts": 1795478312.0
-      },
-      {
-        "title": "AMD registers up to 337 million shares for resale tied to OpenAI, Meta warrants",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/amd-registers-337-million-shares-232224001.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 18:22 ET",
-        "pub_ts": 1795476144.0
       }
     ],
     "ASML": [
+      {
+        "title": "ASML (ENXTAM:ASML) Stock May Trade At A Premium Following Its 107% Run",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/asml-enxtam-asml-stock-may-111607325.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 06:16 ET",
+        "pub_ts": 1795518967.0
+      },
       {
         "title": "FalcoTrader Announces Expanded Stock Trading Capabilities Across Its Simulated Trading Challenge Platform",
         "url": "https://finance.yahoo.com/markets/stocks/articles/falcotrader-announces-expanded-stock-trading-094700625.html?.tsrc=rss",
@@ -1008,13 +1015,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 10:20 ET",
         "pub_ts": 1795447202.0
-      },
-      {
-        "title": "ASML reports transactions under its current share buyback program",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/asml-reports-transactions-under-current-134800406.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 08:48 ET",
-        "pub_ts": 1795441680.0
       }
     ],
     "QCOM": [
@@ -1056,39 +1056,39 @@
     ],
     "AVGO": [
       {
+        "title": "Prediction: This Is What Will Happen to Broadcom’s Stock Price in December",
+        "url": "https://www.fool.com/investing/2026/11/24/prediction-this-is-what-will-happen-to-broadcom-s-stock-price-in-december/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 06:20 ET",
+        "pub_ts": 1795519202.0
+      },
+      {
+        "title": "JPMorgan U.S. Tech Leaders (JTEK) Sells $27.7 Million of Broadcom on Nov. 20",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/jpmorgan-u-tech-leaders-jtek-110436195.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 06:04 ET",
+        "pub_ts": 1795518276.0
+      },
+      {
+        "title": "iShares PHLX SOX Semiconductor (SOXX) Adds AMD and AVGO on Nov. 20",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/ishares-phlx-sox-semiconductor-soxx-110302788.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 06:03 ET",
+        "pub_ts": 1795518182.0
+      },
+      {
+        "title": "What SPDR S&P 500 ETF Trust (SPY) Bought: Apple Leads on Friday",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/spdr-p-500-etf-trust-110254690.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 06:02 ET",
+        "pub_ts": 1795518174.0
+      },
+      {
         "title": "ETFs Bought $393.8 Million of Broadcom (AVGO) on Nov. 20",
         "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-bought-393-8-million-110109208.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-24 06:01 ET",
         "pub_ts": 1795518069.0
-      },
-      {
-        "title": "Apple vs. Broadcom: Comparing Revenue Trends Amid the Artificial Intelligence Boom",
-        "url": "https://www.fool.com/coverage/charts/2026/11/23/apple-vs-broadcom-comparing-revenue-trends-amid-the-artificial-intelligence-boom/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 15:16 ET",
-        "pub_ts": 1795464990.0
-      },
-      {
-        "title": "Jensen Huang’s Return Just Added About $500 Billion to Micron, Dell, TSMC and the AI Stocks That Depend on Nvidia",
-        "url": "https://247wallst.com/investing/2026/11/23/jensen-huangs-return-just-added-about-500-billion-to-micron-dell-tsmc-and-the-ai-stocks-that-depend-on-nvidia/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 15:13 ET",
-        "pub_ts": 1795464780.0
-      },
-      {
-        "title": "Why Did Broadcom Stock Drop On Friday?",
-        "url": "https://www.trefis.com/stock/avgo/articles/627781/why-did-broadcom-stock-drop-on-friday/2026-11-23?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 14:05 ET",
-        "pub_ts": 1795460704.0
-      },
-      {
-        "title": "Jensen Huang's return to Nvidia: Long or short accountability?",
-        "url": "https://finance.yahoo.com/video/jensen-huangs-return-to-nvidia-long-or-short-accountability-185949254.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 13:59 ET",
-        "pub_ts": 1795460389.0
       }
     ],
     "AMAT": [
@@ -1204,39 +1204,39 @@
     ],
     "MSFT": [
       {
-        "title": "61 ETFs Add to Microsoft (MSFT) Holdings on Nov. 20",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/61-etfs-add-microsoft-msft-110050902.html?.tsrc=rss",
+        "title": "Invesco NASDAQ 100 ETF (QQQM) Adds Apple and Microsoft on Friday",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/invesco-nasdaq-100-etf-qqqm-110444816.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 06:00 ET",
-        "pub_ts": 1795518050.0
+        "time": "11-24 06:04 ET",
+        "pub_ts": 1795518284.0
       },
       {
-        "title": "Trump Threatens a “Tremendous Tax” on Overseas Data Centers. That’s a Big Problem for Microsoft, Amazon and Alphabet",
-        "url": "https://www.tikr.com/blog/trump-threatens-a-tremendous-tax-on-overseas-data-centers-thats-a-big-problem-for-microsoft-amazon-and-alphabet?ref=yahoofinance&tlnk=yf-261124-p3fx6248&.tsrc=rss",
+        "title": "iShares Russell 1000 Growth (IWF) Buys $22.7 Million More Apple on Nov. 20",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/ishares-russell-1000-growth-iwf-110440903.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 05:20 ET",
-        "pub_ts": 1795515621.0
+        "time": "11-24 06:04 ET",
+        "pub_ts": 1795518280.0
       },
       {
-        "title": "Is V2X (VVX) Undervalued Following Its Microsoft AI Expansion And 2027 Revenue Concerns?",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/v2x-vvx-undervalued-following-microsoft-091039287.html?.tsrc=rss",
+        "title": "What ProShares Trust (TQQQ) Bought: Apple Leads on Friday",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/proshares-trust-tqqq-bought-apple-110432486.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 04:10 ET",
-        "pub_ts": 1795511439.0
+        "time": "11-24 06:04 ET",
+        "pub_ts": 1795518272.0
       },
       {
-        "title": "Atos delivers a structured journey to digital sovereignty, leveraging Microsoft technology",
-        "url": "https://finance.yahoo.com/technology/ai/articles/atos-delivers-structured-journey-digital-090000268.html?.tsrc=rss",
+        "title": "What iShares Expanded Tech-Software (IGV) Sold: Palo Alto Leads on Friday",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/ishares-expanded-tech-software-igv-110408106.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 04:00 ET",
-        "pub_ts": 1795510800.0
+        "time": "11-24 06:04 ET",
+        "pub_ts": 1795518248.0
       },
       {
-        "title": "Dan Loeb and 47 Other Big Funds Bought Microsoft Last Quarter. Bill Ackman and 28 Others Sold. Who’s Right?",
-        "url": "https://www.tikr.com/blog/dan-loeb-and-47-other-big-funds-bought-microsoft-last-quarter-bill-ackman-and-28-others-sold-whos-right?ref=yahoofinance&tlnk=yf-261124-g4v647r9&.tsrc=rss",
+        "title": "What INVESCO QQQ Trust (QQQ) Bought: Apple Leads on Friday",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/invesco-qqq-trust-qqq-bought-110317120.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 03:01 ET",
-        "pub_ts": 1795507274.0
+        "time": "11-24 06:03 ET",
+        "pub_ts": 1795518197.0
       }
     ],
     "AAPL": [
@@ -3293,22 +3293,22 @@
     "QQQ": 1795520814.199459,
     "SMH": 1795520814.199459,
     "IWM": 1795520814.199459,
-    "IGV": 1795519335.8909855,
-    "TLT": 1795519335.8909855,
-    "GLD": 1795519335.8909855,
-    "SQQQ": 1795519335.8909855,
-    "TSM": 1795519335.8909855,
-    "VIXY": 1795519335.8909855,
-    "SOXS": 1795519335.8909855,
-    "NVDA": 1795519335.8909855,
-    "AMD": 1795519335.8909855,
-    "ASML": 1795519335.8909855,
-    "QCOM": 1795519335.8909855,
-    "AVGO": 1795519335.8909855,
-    "AMAT": 1795519335.8909855,
+    "IGV": 1795520923.287369,
+    "TLT": 1795520923.287369,
+    "GLD": 1795520923.287369,
+    "SQQQ": 1795520923.287369,
+    "TSM": 1795520923.287369,
+    "VIXY": 1795520923.287369,
+    "SOXS": 1795520923.287369,
+    "NVDA": 1795520923.287369,
+    "AMD": 1795520923.287369,
+    "ASML": 1795520923.287369,
+    "QCOM": 1795520923.287369,
+    "AVGO": 1795520923.287369,
+    "AMAT": 1795520923.287369,
     "META": 1795519448.4909406,
     "GOOGL": 1795519448.4909406,
-    "MSFT": 1795519335.8909855,
+    "MSFT": 1795520923.287369,
     "AAPL": 1795519448.4909406,
     "PLTR": 1795519448.4909406,
     "NOW": 1795519448.4909406,
