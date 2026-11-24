@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795525682.337,
-  "updated_at_et": "11-24 08:08 ET",
-  "updated_at_kst": "22:08 KST",
+  "updated_at_ts": 1795525791.878,
+  "updated_at_et": "11-24 08:09 ET",
+  "updated_at_kst": "22:09 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1442,18 +1442,11 @@
         "pub_ts": 1795464974.0
       },
       {
-        "title": "Nvidia-backed AI stock soars 26% as Jensen Huang returns as CEO",
-        "url": "https://www.thestreet.com/investing/stocks/nvidia-backed-ai-stock-soars-26-as-jensen-huang-returns-as-ceo-nebius-nbis?.tsrc=rss",
+        "title": "Fortune Announces Speakers and Partners for Brainstorm AI 2026 in San Francisco Dec. 7 and 8",
+        "url": "https://finance.yahoo.com/technology/ai/articles/fortune-announces-speakers-partners-brainstorm-130000069.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 14:08 ET",
-        "pub_ts": 1795460901.0
-      },
-      {
-        "title": "Nebius Stocks Surge 20.33% as Neocloud Rally Follows Jensen Huang's Nvidia Return",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/nebius-stocks-surge-20-33-175404368.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 12:54 ET",
-        "pub_ts": 1795456444.0
+        "time": "11-24 08:00 ET",
+        "pub_ts": 1795525200.0
       },
       {
         "title": "SpaceX Is “Following the Exact Same Pattern That Meta Followed” After Its IPO, per Steve Jurvetson. Time to Buy?",
@@ -1461,6 +1454,13 @@
         "source": "Yahoo Finance",
         "time": "11-23 18:27 ET",
         "pub_ts": 1795476445.0
+      },
+      {
+        "title": "Gavin Baker: “At Least Three Companies” Want to Replace Nvidia as AI’s Central Bank. Good News for CoreWeave",
+        "url": "https://www.tikr.com/blog/gavin-baker-at-least-three-companies-want-to-replace-nvidia-as-ais-central-bank-good-news-for-coreweave?ref=yahoofinance&tlnk=yf-261123-37w799jj&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 15:30 ET",
+        "pub_ts": 1795465844.0
       }
     ],
     "APLD": [
@@ -2464,6 +2464,13 @@
     ],
     "WDC": [
       {
+        "title": "A $2.9 Billion Fund Dumps These 3 Stocks",
+        "url": "https://www.tikr.com/blog/a-2-9-billion-fund-dumps-these-3-stocks-2?ref=yahoofinance&tlnk=yf-261124-gc5m322p&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 17:25 ET",
+        "pub_ts": 1795472704.0
+      },
+      {
         "title": "NVIDIA Stock Plunges 46%: Why WDC Could Be a Better Buy for 2027",
         "url": "https://finance.yahoo.com/markets/stocks/articles/nvidia-stock-plunges-46-why-190000303.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2483,13 +2490,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 08:00 ET",
         "pub_ts": 1795438805.0
-      },
-      {
-        "title": "Stanley Druckenmiller and 11 Other Big Funds Bought Western Digital Last Quarter. Ken Fisher and 13 Others Sold. Who’s Right?",
-        "url": "https://www.tikr.com/blog/stanley-druckenmiller-and-11-other-big-funds-bought-western-digital-last-quarter-ken-fisher-and-13-others-sold-whos-right?ref=yahoofinance&tlnk=yf-261121-gp4hj6j2&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-21 05:54 ET",
-        "pub_ts": 1795258473.0
       },
       {
         "title": "Prediction: This Will Be Sandisk’s Stock Price by the End of 2027",
@@ -2612,6 +2612,27 @@
     ],
     "BTC-USD": [
       {
+        "title": "Can Bitcoin Regain the $90,000 Price Level by Year End? Galaxy Digital CEO Mike Novogratz Says It's Unlikely.",
+        "url": "https://www.fool.com/investing/2026/11/24/can-bitcoin-regain-the-90000-price-level-by-year-end-galaxy-digital-ceo-mike-novogratz-says-its-unlikely/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 07:50 ET",
+        "pub_ts": 1795524602.0
+      },
+      {
+        "title": "$14.7B in ‘Lost’ Bitcoin Has Moved Since 2018: Report",
+        "url": "https://decrypt.co/383854/14-7b-in-lost-bitcoin-has-moved-since-2018-report?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 07:40 ET",
+        "pub_ts": 1795524047.0
+      },
+      {
+        "title": "Tom Lee Slams XRP as ‘Far More Inflationary’ Than Ethereum as Bulls Eye $30",
+        "url": "https://www.ccn.com/news/crypto/tom-lee-slams-xrp-far-more-inflationary-bulls-eye-wild-price-calls/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 07:32 ET",
+        "pub_ts": 1795523535.0
+      },
+      {
         "title": "Bitcoin or Gold? Cathie Wood of Ark Invest Makes a Compelling Case for Buying Bitcoin.",
         "url": "https://www.fool.com/investing/2026/11/24/bitcoin-or-gold-cathie-wood-of-ark-invest-makes-a-compelling-case-for-buying-bitcoin/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2624,27 +2645,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 06:28 ET",
         "pub_ts": 1795519723.0
-      },
-      {
-        "title": "Crypto Can Fill Up to Half of a Futures Exchange’s Reserve Under New CFTC Staff Advisory",
-        "url": "https://unchainedcrypto.com/crypto-can-fill-up-to-half-of-a-futures-exchanges-reserve-under-new-cftc-staff-advisory/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 06:15 ET",
-        "pub_ts": 1795518903.0
-      },
-      {
-        "title": "Bitcoin Trades Near $60,000, Below Where It Stood Before Nvidia Brought Back Jensen Huang",
-        "url": "https://unchainedcrypto.com/bitcoin-trades-near-60000-below-where-it-stood-before-nvidia-brought-back-jensen-huang/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 06:00 ET",
-        "pub_ts": 1795518005.0
-      },
-      {
-        "title": "Down 40% or More for the Year, Are Any of These Top Cryptocurrencies Worth Buying Right Now?",
-        "url": "https://www.fool.com/investing/2026/11/24/down-40-or-more-for-the-year-are-any-of-these-top-cryptocurrencies-worth-buying-right-now/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 05:50 ET",
-        "pub_ts": 1795517402.0
       }
     ],
     "CRWD": [
@@ -3316,18 +3316,18 @@
     "NOW": 1795525682.3370814,
     "AMZN": 1795525682.3370814,
     "CRWV": 1795525682.3370814,
-    "NBIS": 1795524246.536039,
+    "NBIS": 1795525791.8784165,
     "APLD": 1795524575.0643048,
     "VST": 1795524575.0643048,
     "BE": 1795524575.0643048,
     "CRDO": 1795524575.0643048,
     "COHR": 1795524575.0643048,
-    "MRVL": 1795524246.536039,
-    "LITE": 1795524246.536039,
+    "MRVL": 1795525791.8784165,
+    "LITE": 1795525791.8784165,
     "AAOI": 1795524575.0643048,
     "SPCX": 1795524685.7043514,
     "ASTS": 1795524575.0643048,
-    "AXTI": 1795524246.536039,
+    "AXTI": 1795525791.8784165,
     "NASA": 1795524685.7043514,
     "LUNR": 1795524685.7043514,
     "TSLA": 1795524685.7043514,
@@ -3342,13 +3342,13 @@
     "OKLO": 1795524795.1114874,
     "CEG": 1795524795.1114874,
     "FPS": 1795524795.1114874,
-    "MU": 1795524246.536039,
-    "SKHY": 1795524246.536039,
-    "WDC": 1795524246.536039,
+    "MU": 1795525791.8784165,
+    "SKHY": 1795525791.8784165,
+    "WDC": 1795525791.8784165,
     "STX": 1795524903.6988554,
     "MSTR": 1795524903.6988554,
     "SNDK": 1795524903.6988554,
-    "BTC-USD": 1795524246.536039,
+    "BTC-USD": 1795525791.8784165,
     "CRWD": 1795524903.6988554,
     "ORCL": 1795524575.0643048,
     "COIN": 1795524575.0643048,
@@ -3362,11 +3362,11 @@
     "WMT": 1795524903.6988554,
     "V": 1795524575.0643048,
     "CAT": 1795524903.6988554,
-    "FN": 1795524246.536039,
+    "FN": 1795525791.8784165,
     "GLW": 1795524575.0643048,
     "ANT": 1795524903.6988554,
     "XAUUSD": 1795524903.6988554,
-    "KOSPI": 1795524246.536039
+    "KOSPI": 1795525791.8784165
   },
   "opex_shield": {
     "date": "2026-11-24",
