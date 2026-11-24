@@ -5207,9 +5207,13 @@
     "2026-11-23:SPY/IWM:5M_ENTRY": {
       "device": "PC",
       "ts": 1795481784.226809
+    },
+    "2026-11-23:MSTR/APLD/COIN/CRDO/BE/AMAT/SKHY/MU/AMD:STOP_LOSS": {
+      "device": "PC",
+      "ts": 1795482112.0122828
     }
   },
   "device": "PC",
-  "last_heartbeat_ts": 1795481907.9823797,
-  "updated_at": "2026-11-24T00:59:52.338395+00:00"
+  "last_heartbeat_ts": 1795482027.678462,
+  "updated_at": "2026-11-24T01:01:52.012854+00:00"
 }

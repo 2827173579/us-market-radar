@@ -82,8 +82,8 @@
       "last_notified_at": 1795481991.3716955
     },
     "DIA": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1795481991.3716955
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "IWM": {
       "state": "NORMAL",
@@ -106,8 +106,8 @@
       "last_notified_at": 0.0
     },
     "AMD": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "STOP_LOSS",
+      "last_notified_at": 1795482111.35759
     },
     "CRWD": {
       "state": "STOP_LOSS",
@@ -123,11 +123,11 @@
     },
     "MSTR": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1795439185.092881
+      "last_notified_at": 1795482111.35759
     },
     "MU": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1795439185.092881
+      "last_notified_at": 1795482111.35759
     },
     "ASML": {
       "state": "STOP_LOSS",
@@ -135,19 +135,19 @@
     },
     "APLD": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1795474805.3755643
+      "last_notified_at": 1795482111.35759
     },
     "CRDO": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1795439185.092881
+      "last_notified_at": 1795482111.35759
     },
     "SKHY": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1795439185.092881
+      "last_notified_at": 1795482111.35759
     },
     "AMAT": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1795439185.092881
+      "last_notified_at": 1795482111.35759
     },
     "DELL": {
       "state": "STOP_LOSS",
@@ -155,11 +155,11 @@
     },
     "BE": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1795439185.092881
+      "last_notified_at": 1795482111.35759
     },
     "COIN": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1795439185.092881
+      "last_notified_at": 1795482111.35759
     },
     "AMZN": {
       "state": "NORMAL",
