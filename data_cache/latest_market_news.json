@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795524795.111,
-  "updated_at_et": "11-24 07:53 ET",
-  "updated_at_kst": "21:53 KST",
+  "updated_at_ts": 1795524903.699,
+  "updated_at_et": "11-24 07:55 ET",
+  "updated_at_kst": "21:55 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2649,6 +2649,13 @@
     ],
     "CRWD": [
       {
+        "title": "Wall Street Stays Bullish on CrowdStrike Despite Zscaler Price Tag",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/wall-street-stays-bullish-crowdstrike-122238753.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 07:22 ET",
+        "pub_ts": 1795522958.0
+      },
+      {
         "title": "CrowdStrike Bets Two Top Dogs Beat One",
         "url": "https://www.fool.com/investing/2026/11/24/crowdstrike-bets-two-top-dogs-beat-one/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2675,13 +2682,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 06:04 ET",
         "pub_ts": 1795518248.0
-      },
-      {
-        "title": "CrowdStrike to acquire Zscaler in $44bn all-stock deal",
-        "url": "https://www.verdict.co.uk/crowdstrike-to-acquire-zscaler/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 05:11 ET",
-        "pub_ts": 1795515097.0
       }
     ],
     "ORCL": [
@@ -3204,6 +3204,20 @@
     ],
     "ANT": [
       {
+        "title": "Anthropic briefly falls below IPO price in premarket trading",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/anthropic-briefly-falls-below-ipo-122911130.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 07:29 ET",
+        "pub_ts": 1795523351.0
+      },
+      {
+        "title": "Anthropic Falls Below IPO Price. The Threat Wasn’t Nvidia, It Came From Inside",
+        "url": "https://beincrypto.com/anthropic-stock-below-ipo-price-employees/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 07:28 ET",
+        "pub_ts": 1795523290.0
+      },
+      {
         "title": "Anthropic’s Frenemy Squeeze: Pledging Up to $49B to Microsoft While Building Its Own Landlord Escape Hatch",
         "url": "https://247wallst.com/investing/2026/11/24/anthropics-frenemy-squeeze-pledging-up-to-49b-to-microsoft-while-building-its-own-landlord-escape-hatch/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3223,20 +3237,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 06:50 ET",
         "pub_ts": 1795521002.0
-      },
-      {
-        "title": "Nvidia, Anthropic, Intel, HPE, Sanofi, and More Stocks That Explain Today’s Market",
-        "url": "https://finance.yahoo.com/m/f7fa0ed2-2c68-3b80-9261-c35639090d03/nvidia%2C-anthropic%2C-intel%2C.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 06:21 ET",
-        "pub_ts": 1795519260.0
-      },
-      {
-        "title": "Anthropic Breaks Below $83 IPO Price in Premarket Trading",
-        "url": "https://finance.yahoo.com/technology/ai/articles/anthropic-breaks-below-83-ipo-111924905.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 06:19 ET",
-        "pub_ts": 1795519164.0
       }
     ],
     "XAUUSD": [
@@ -3345,27 +3345,27 @@
     "MU": 1795524246.536039,
     "SKHY": 1795524246.536039,
     "WDC": 1795524246.536039,
-    "STX": 1795523357.0855243,
-    "MSTR": 1795523357.0855243,
-    "SNDK": 1795523357.0855243,
+    "STX": 1795524903.6988554,
+    "MSTR": 1795524903.6988554,
+    "SNDK": 1795524903.6988554,
     "BTC-USD": 1795524246.536039,
-    "CRWD": 1795523357.0855243,
+    "CRWD": 1795524903.6988554,
     "ORCL": 1795524575.0643048,
     "COIN": 1795524575.0643048,
     "LLY": 1795524575.0643048,
     "MRNA": 1795524575.0643048,
     "NKE": 1795524575.0643048,
     "MCD": 1795524575.0643048,
-    "PEP": 1795523357.0855243,
+    "PEP": 1795524903.6988554,
     "XOM": 1795524795.1114874,
     "JPM": 1795524795.1114874,
-    "WMT": 1795523357.0855243,
+    "WMT": 1795524903.6988554,
     "V": 1795524575.0643048,
-    "CAT": 1795523357.0855243,
+    "CAT": 1795524903.6988554,
     "FN": 1795524246.536039,
     "GLW": 1795524575.0643048,
-    "ANT": 1795523357.0855243,
-    "XAUUSD": 1795523357.0855243,
+    "ANT": 1795524903.6988554,
+    "XAUUSD": 1795524903.6988554,
     "KOSPI": 1795524246.536039
   },
   "opex_shield": {
