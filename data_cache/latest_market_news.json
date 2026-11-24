@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795523799.336,
-  "updated_at_et": "11-24 07:36 ET",
-  "updated_at_kst": "21:36 KST",
+  "updated_at_ts": 1795523907.454,
+  "updated_at_et": "11-24 07:38 ET",
+  "updated_at_kst": "21:38 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -509,6 +509,13 @@
         "pub_ts": 1795518182.0
       },
       {
+        "title": "Chip Stocks Give Back Gains After Epic Rally",
+        "url": "https://finance.yahoo.com/m/3db28e68-b8b2-3a35-9149-a19ec7b74efe/chip-stocks-give-back-gains.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 05:38 ET",
+        "pub_ts": 1795516690.0
+      },
+      {
         "title": "Why iShares Semiconductor ETF (SOXX) Is Up Today",
         "url": "https://www.fool.com/investing/2026/11/23/why-ishares-semiconductor-etf-soxx-is-up-today/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -528,13 +535,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 05:12 ET",
         "pub_ts": 1795428778.0
-      },
-      {
-        "title": "SOXX and DRAM Are Down Between 35.6% and 51.9% From Their Highs. Here’s an Even Better Growth Stock ETF to Buy During the Nasdaq Correction.",
-        "url": "https://www.fool.com/investing/2026/11/22/soxx-and-dram-are-down-between-35-6-and-51-9-from-their-highs-here-s-an-even-better-growth-stock-etf-to-buy-during-the-nasdaq-correction/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-22 08:35 ET",
-        "pub_ts": 1795354502.0
       }
     ],
     "QQQ": [
@@ -3286,14 +3286,14 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795522357.878817,
-    "SOXL": 1795522357.878817,
-    "SPY": 1795522357.878817,
-    "DIA": 1795522357.878817,
-    "SOXX": 1795522357.878817,
-    "QQQ": 1795522357.878817,
-    "SMH": 1795522357.878817,
-    "IWM": 1795522357.878817,
+    "KORU": 1795523907.454076,
+    "SOXL": 1795523907.454076,
+    "SPY": 1795523907.454076,
+    "DIA": 1795523907.454076,
+    "SOXX": 1795523907.454076,
+    "QQQ": 1795523907.454076,
+    "SMH": 1795523907.454076,
+    "IWM": 1795523907.454076,
     "IGV": 1795522468.4108279,
     "TLT": 1795522468.4108279,
     "GLD": 1795522468.4108279,
