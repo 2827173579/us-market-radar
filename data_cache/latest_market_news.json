@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795519225.778,
-  "updated_at_et": "11-24 06:20 ET",
-  "updated_at_kst": "20:20 KST",
+  "updated_at_ts": 1795519335.891,
+  "updated_at_et": "11-24 06:22 ET",
+  "updated_at_kst": "20:22 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -907,6 +907,27 @@
     ],
     "NVDA": [
       {
+        "title": "Huang-Over Damps Wall Street Pre-Bell; Asia Up, Europe Off",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/huang-over-damps-wall-street-110942839.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 06:09 ET",
+        "pub_ts": 1795518582.0
+      },
+      {
+        "title": "Bitcoin Trades Near $60,000, Below Where It Stood Before Nvidia Brought Back Jensen Huang",
+        "url": "https://unchainedcrypto.com/bitcoin-trades-near-60000-below-where-it-stood-before-nvidia-brought-back-jensen-huang/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 06:00 ET",
+        "pub_ts": 1795518005.0
+      },
+      {
+        "title": "The British chip champions challenging Nvidia’s AI stranglehold",
+        "url": "https://uk.finance.yahoo.com/news/british-chip-champions-challenging-nvidia-110000128.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 06:00 ET",
+        "pub_ts": 1795518000.0
+      },
+      {
         "title": "Down 40% or More for the Year, Are Any of These Top Cryptocurrencies Worth Buying Right Now?",
         "url": "https://www.fool.com/investing/2026/11/24/down-40-or-more-for-the-year-are-any-of-these-top-cryptocurrencies-worth-buying-right-now/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -919,27 +940,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 05:36 ET",
         "pub_ts": 1795516602.0
-      },
-      {
-        "title": "Nvidia Turmoil: How Big Is the Risk for CoreWeave?",
-        "url": "https://www.fool.com/investing/2026/11/24/nvidia-turmoil-how-big-is-the-risk-for-coreweave/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 05:30 ET",
-        "pub_ts": 1795516202.0
-      },
-      {
-        "title": "Nvidia Lost $2.75 Trillion in 45 Days -- More Than the Market Cap of 496 S&P 500 Companies -- and Investors Wagering on a Quick Bounce to New Highs May Be Disappointed",
-        "url": "https://www.fool.com/investing/2026/11/24/nvidia-lost-275-trillion-in-45-days-more-than-496-sp-500-companies-wager-on-quick-bounce-disappointed/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 05:26 ET",
-        "pub_ts": 1795515962.0
-      },
-      {
-        "title": "Nvidia CEO Jensen Huang Is Back, and Stock Investors Just Got More Great News About the AI Chip Giant",
-        "url": "https://www.fool.com/investing/2026/11/24/nvidia-ceo-jensen-huang-stock-investors-got-great-news/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 05:17 ET",
-        "pub_ts": 1795515422.0
       }
     ],
     "AMD": [
@@ -1055,11 +1055,11 @@
     ],
     "AVGO": [
       {
-        "title": "Jensen Huang's return to Nvidia: Long or short accountability?",
-        "url": "https://finance.yahoo.com/video/jensen-huangs-return-to-nvidia-long-or-short-accountability-185949254.html?.tsrc=rss",
+        "title": "ETFs Bought $393.8 Million of Broadcom (AVGO) on Nov. 20",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-bought-393-8-million-110109208.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 13:59 ET",
-        "pub_ts": 1795460389.0
+        "time": "11-24 06:01 ET",
+        "pub_ts": 1795518069.0
       },
       {
         "title": "Apple vs. Broadcom: Comparing Revenue Trends Amid the Artificial Intelligence Boom",
@@ -1083,11 +1083,11 @@
         "pub_ts": 1795460704.0
       },
       {
-        "title": "Credo Technology’s AI rebound potential versus Broadcom",
-        "url": "https://finance.yahoo.com/technology/ai/articles/credo-technology-ai-rebound-potential-185817118.html?.tsrc=rss",
+        "title": "Jensen Huang's return to Nvidia: Long or short accountability?",
+        "url": "https://finance.yahoo.com/video/jensen-huangs-return-to-nvidia-long-or-short-accountability-185949254.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 13:58 ET",
-        "pub_ts": 1795460297.0
+        "time": "11-23 13:59 ET",
+        "pub_ts": 1795460389.0
       }
     ],
     "AMAT": [
@@ -1203,6 +1203,13 @@
     ],
     "MSFT": [
       {
+        "title": "61 ETFs Add to Microsoft (MSFT) Holdings on Nov. 20",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/61-etfs-add-microsoft-msft-110050902.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 06:00 ET",
+        "pub_ts": 1795518050.0
+      },
+      {
         "title": "Trump Threatens a “Tremendous Tax” on Overseas Data Centers. That’s a Big Problem for Microsoft, Amazon and Alphabet",
         "url": "https://www.tikr.com/blog/trump-threatens-a-tremendous-tax-on-overseas-data-centers-thats-a-big-problem-for-microsoft-amazon-and-alphabet?ref=yahoofinance&tlnk=yf-261124-p3fx6248&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1229,13 +1236,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 03:01 ET",
         "pub_ts": 1795507274.0
-      },
-      {
-        "title": "What Microsoft (MSFT)'s Enterprise AI Partnerships Mean For Shareholders",
-        "url": "https://finance.yahoo.com/technology/ai/articles/microsoft-msft-enterprise-ai-partnerships-001743463.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 19:17 ET",
-        "pub_ts": 1795479463.0
       }
     ],
     "AAPL": [
@@ -3292,22 +3292,22 @@
     "QQQ": 1795519225.777847,
     "SMH": 1795519225.777847,
     "IWM": 1795519225.777847,
-    "IGV": 1795517781.9825242,
-    "TLT": 1795517781.9825242,
-    "GLD": 1795517781.9825242,
-    "SQQQ": 1795517781.9825242,
-    "TSM": 1795517781.9825242,
-    "VIXY": 1795517781.9825242,
-    "SOXS": 1795517781.9825242,
-    "NVDA": 1795517781.9825242,
-    "AMD": 1795517781.9825242,
-    "ASML": 1795517781.9825242,
-    "QCOM": 1795517781.9825242,
-    "AVGO": 1795517781.9825242,
-    "AMAT": 1795517781.9825242,
+    "IGV": 1795519335.8909855,
+    "TLT": 1795519335.8909855,
+    "GLD": 1795519335.8909855,
+    "SQQQ": 1795519335.8909855,
+    "TSM": 1795519335.8909855,
+    "VIXY": 1795519335.8909855,
+    "SOXS": 1795519335.8909855,
+    "NVDA": 1795519335.8909855,
+    "AMD": 1795519335.8909855,
+    "ASML": 1795519335.8909855,
+    "QCOM": 1795519335.8909855,
+    "AVGO": 1795519335.8909855,
+    "AMAT": 1795519335.8909855,
     "META": 1795517892.1981976,
     "GOOGL": 1795517892.1981976,
-    "MSFT": 1795517781.9825242,
+    "MSFT": 1795519335.8909855,
     "AAPL": 1795517892.1981976,
     "PLTR": 1795517892.1981976,
     "NOW": 1795517892.1981976,
