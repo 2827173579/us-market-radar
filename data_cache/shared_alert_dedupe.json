@@ -5487,9 +5487,17 @@
     "2026-11-24:DIA/IWM/APLD:5M_ENTRY+STOP_LOSS": {
       "device": "PC",
       "ts": 1795511207.866832
+    },
+    "2026-11-24:DIA:5M_ENTRY": {
+      "device": "PC",
+      "ts": 1795513634.5815892
+    },
+    "2026-11-24:DEFENSIVE_FLIGHT:+4.1": {
+      "device": "PC",
+      "ts": 1795513640.0982914
     }
   },
   "device": "PC",
-  "last_heartbeat_ts": 1795511229.4920123,
-  "updated_at": "2026-11-24T09:08:37.537791+00:00"
+  "last_heartbeat_ts": 1795513536.748987,
+  "updated_at": "2026-11-24T09:47:20.098806+00:00"
 }

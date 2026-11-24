@@ -1,9 +1,48 @@
 {
-  "updated_at_ts": 1795511306.802,
-  "updated_at_et": "11-24 04:08 ET",
-  "updated_at_kst": "18:08 KST",
+  "updated_at_ts": 1795513614.482,
+  "updated_at_et": "11-24 04:46 ET",
+  "updated_at_kst": "18:46 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261124174024658800",
+      "title": "欧洲央行官员呼吁尽早加息，通胀压力正向更多领域扩散",
+      "summary": "欧元区通胀升至4%，已不再只是能源惹的祸。随着薪资与汇率风险升温，欧洲央行12月或迎第三次加息，但成员国经济分化正让明年政策充满变数。",
+      "keywords": [
+        "加息"
+      ],
+      "pub_ts": 1795513224.0,
+      "time_et": "11-24 04:40 ET",
+      "time_bj": "17:40 BJ",
+      "time_kst": "18:40 KST",
+      "time_display": "04:40 ET / 17:40 BJ"
+    },
+    {
+      "id": "20261124173415805800",
+      "title": "日本央行加息周期尚未结束，但高市早苗政府可能成为最大掣肘",
+      "summary": "前审议委员安达诚司预计，日本央行本轮加息周期的终点利率或达到1.75%甚至2.0%。但随着家庭消费持续降温，该央行将需要面对越来越大的经济和政治压力。点击查看",
+      "keywords": [
+        "加息"
+      ],
+      "pub_ts": 1795512855.0,
+      "time_et": "11-24 04:34 ET",
+      "time_bj": "17:34 BJ",
+      "time_kst": "18:34 KST",
+      "time_display": "04:34 ET / 17:34 BJ"
+    },
+    {
+      "id": "20261124173013036800",
+      "title": "财料",
+      "summary": "黄仁勋复职回归英伟达！出走11天归来仍是总裁……",
+      "keywords": [
+        "英伟达"
+      ],
+      "pub_ts": 1795512613.0,
+      "time_et": "11-24 04:30 ET",
+      "time_bj": "17:30 BJ",
+      "time_kst": "18:30 KST",
+      "time_display": "04:30 ET / 17:30 BJ"
+    },
     {
       "id": "20261124170411524800",
       "title": "【美股半导体板块盘前走低 英伟达跌约4%】美股盘前，英伟达(NVDA.O)跌约4%，英特…",
@@ -308,45 +347,6 @@
       "time_bj": "11:34 BJ",
       "time_kst": "12:34 KST",
       "time_display": "22:34 ET / 11:34 BJ"
-    },
-    {
-      "id": "20261124103950330800",
-      "title": "原油叙事是否已经转向？供应端的压力与约束同在",
-      "summary": "供应端压力推动原油持续下跌，但需对叙事转向持谨慎态度。局势升级风险未能完全排除，美银警告称低库存仍是油价主要支撑。",
-      "keywords": [
-        "原油"
-      ],
-      "pub_ts": 1795487990.0,
-      "time_et": "11-23 21:39 ET",
-      "time_bj": "10:39 BJ",
-      "time_kst": "11:39 KST",
-      "time_display": "21:39 ET / 10:39 BJ"
-    },
-    {
-      "id": "20261124103412894800",
-      "title": "【期货热点追踪】国际油价延续走低，内盘原油系普遍承压，其中沥青跌超4%，领跌期货市场，从…",
-      "summary": "【期货热点追踪】国际油价延续走低，内盘原油系普遍承压，其中沥青跌超4%，领跌期货市场，从地缘扰动到基本面主导，原油及下游能化品种的定价逻辑发生了怎样的切换？",
-      "keywords": [
-        "原油"
-      ],
-      "pub_ts": 1795487652.0,
-      "time_et": "11-23 21:34 ET",
-      "time_bj": "10:34 BJ",
-      "time_kst": "11:34 KST",
-      "time_display": "21:34 ET / 10:34 BJ"
-    },
-    {
-      "id": "20261124101346038800",
-      "title": "【期货热点追踪】英伟达股价暴涨联动市场情绪，这波贵金属反弹的成色究竟如何？机构认为，当前…",
-      "summary": "【期货热点追踪】英伟达股价暴涨联动市场情绪，这波贵金属反弹的成色究竟如何？机构认为，当前走势属于情绪与技术面修复，后续仍需关注美国通胀数据及12月议息会议的进一步指引。",
-      "keywords": [
-        "英伟达"
-      ],
-      "pub_ts": 1795486426.0,
-      "time_et": "11-23 21:13 ET",
-      "time_bj": "10:13 BJ",
-      "time_kst": "11:13 KST",
-      "time_display": "21:13 ET / 10:13 BJ"
     }
   ],
   "ticker_news": {
@@ -824,11 +824,11 @@
         "pub_ts": 1795462630.0
       },
       {
-        "title": "Tech stocks surge as Nvidia rally adds $2 trillion to Nasdaq 100",
-        "url": "https://www.proactiveinvestors.com/companies/news/1102286/tech-stocks-surge-as-nvidia-rally-adds-2-trillion-to-nasdaq-100-1102286.html?.tsrc=rss",
+        "title": "Fujitsu sees stronger Monaka demand as buyers seek alternatives, Bloomberg reports",
+        "url": "https://finance.yahoo.com/technology/articles/fujitsu-sees-stronger-monaka-demand-083637056.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 14:20 ET",
-        "pub_ts": 1795461600.0
+        "time": "11-24 03:36 ET",
+        "pub_ts": 1795509397.0
       }
     ],
     "VIXY": [
@@ -907,42 +907,49 @@
     ],
     "NVDA": [
       {
-        "title": "European shares pause after month-best rally on Nvidia euphoria",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/european-shares-pause-month-best-083749877.html?.tsrc=rss",
+        "title": "Stock market today: Dow, S&P 500, Nasdaq futures mixed as investors test Nvidia-fueled rally",
+        "url": "https://finance.yahoo.com/markets/live/stock-market-today-tuesday-november-24-dow-sp-500-nasdaq-rebound-090614276.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 03:37 ET",
-        "pub_ts": 1795509469.0
+        "time": "11-24 04:06 ET",
+        "pub_ts": 1795511174.0
+      },
+      {
+        "title": "US Futures Mixed After Monday’s Nvidia-Led Chip Rally — ZM, HPE, AMD, BABA In Focus",
+        "url": "https://stocktwits.com/news-articles/markets/equity/us-futures-mixed-after-monday-s-nvidia-led-chip-rally-zm-hpe-amd-baba-in-focus/cNbs23VR9kf?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 04:30 ET",
+        "pub_ts": 1795512616.0
       },
       {
         "title": "Tech firms soar as Huang's return reinvigorates AI trade",
         "url": "https://finance.yahoo.com/technology/ai/articles/tech-firms-soar-huangs-return-023753159.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 03:35 ET",
-        "pub_ts": 1795509331.0
+        "time": "11-24 04:18 ET",
+        "pub_ts": 1795511892.0
       },
       {
-        "title": "CRWV, NBIS And IREN Rally In A ‘Good Day’ For Neoclouds — Databricks Co-Founder Flags Security Gaps At ‘Top’ Neoclouds",
-        "url": "https://stocktwits.com/news-articles/markets/equity/crwv-nbis-iren-rally-good-day-neoclouds-databricks-co-founder-security-gaps-top-neoclouds/cNbsRgYR9kB?.tsrc=rss",
+        "title": "This Tech Stock Might Be the Biggest Surprise in 2027",
+        "url": "https://www.fool.com/investing/2026/11/24/this-tech-stock-might-be-the-biggest-surprise-in-2027/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 03:23 ET",
-        "pub_ts": 1795508637.0
+        "time": "11-24 04:15 ET",
+        "pub_ts": 1795511702.0
       },
       {
-        "title": "Nvidia and 3 AI Chip Stocks for Export Control Resilient Growth",
-        "url": "https://finance.yahoo.com/technology/ai/articles/nvidia-3-ai-chip-stocks-081204748.html?.tsrc=rss",
+        "title": "Prediction: Alphabet Will Be the World’s Most Valuable Company by 2031",
+        "url": "https://www.fool.com/investing/2026/11/24/prediction-alphabet-will-be-the-world-s-most-valuable-company-by-2031/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 03:12 ET",
-        "pub_ts": 1795507924.0
-      },
-      {
-        "title": "Trump Calls America “a Country of Second Chances” and Pushes Nvidia to Rehire Jensen Huang",
-        "url": "https://www.tikr.com/blog/trump-urges-nvidia-rehire-jensen-huang-second-chance?ref=yahoofinance&tlnk=yf-261124-4vqr9fj3&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 03:03 ET",
-        "pub_ts": 1795507397.0
+        "time": "11-24 04:10 ET",
+        "pub_ts": 1795511402.0
       }
     ],
     "AMD": [
+      {
+        "title": "US Futures Mixed After Monday’s Nvidia-Led Chip Rally — ZM, HPE, AMD, BABA In Focus",
+        "url": "https://stocktwits.com/news-articles/markets/equity/us-futures-mixed-after-monday-s-nvidia-led-chip-rally-zm-hpe-amd-baba-in-focus/cNbs23VR9kf?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 04:30 ET",
+        "pub_ts": 1795512616.0
+      },
       {
         "title": "AMD Stock Dips Overnight After Nvidia-Triggered Rally: AMD Registers 337M Shares For Resale Tied To OpenAI, Meta Warrants",
         "url": "https://stocktwits.com/news-articles/markets/equity/amd-stock-dips-overnight-after-nvidia-triggered-rally-amd-registers-337-m-shares-for-resale-tied-to-open-ai-meta-warrants/cNbru6MR9jU?.tsrc=rss",
@@ -970,13 +977,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 17:10 ET",
         "pub_ts": 1795471840.0
-      },
-      {
-        "title": "Steve Eisman Says “Stock Picking Is Back” Now That AI Is “No Longer One Trade”",
-        "url": "https://247wallst.com/investing/2026/11/23/steve-eisman-says-stock-picking-is-back-now-that-ai-is-no-longer-one-trade/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 17:07 ET",
-        "pub_ts": 1795471622.0
       }
     ],
     "ASML": [
@@ -1173,6 +1173,13 @@
         "pub_ts": 1795473204.0
       },
       {
+        "title": "Prediction: Alphabet Will Be the World’s Most Valuable Company by 2031",
+        "url": "https://www.fool.com/investing/2026/11/24/prediction-alphabet-will-be-the-world-s-most-valuable-company-by-2031/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 04:10 ET",
+        "pub_ts": 1795511402.0
+      },
+      {
         "title": "David Tepper, Seth Klarman and 5 Other Famous Investors Own Alphabet. Here’s Who Sold Recently",
         "url": "https://www.tikr.com/blog/david-tepper-seth-klarman-and-5-other-famous-investors-own-alphabet-heres-who-sold-recently?ref=yahoofinance&tlnk=yf-261124-w59872fw&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1192,16 +1199,23 @@
         "source": "Yahoo Finance",
         "time": "11-24 00:06 ET",
         "pub_ts": 1795496802.0
-      },
-      {
-        "title": "The Inflation Math, Updated: The Fed Is Fighting Oil",
-        "url": "https://www.trefis.com/stock/spy/articles/627433/the-inflation-math-updated-the-fed-is-fighting-oil/2026-11-23?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 00:06 ET",
-        "pub_ts": 1795496802.0
       }
     ],
     "MSFT": [
+      {
+        "title": "Is V2X (VVX) Undervalued Following Its Microsoft AI Expansion And 2027 Revenue Concerns?",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/v2x-vvx-undervalued-following-microsoft-091039287.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 04:10 ET",
+        "pub_ts": 1795511439.0
+      },
+      {
+        "title": "Atos delivers a structured journey to digital sovereignty, leveraging Microsoft technology",
+        "url": "https://finance.yahoo.com/technology/ai/articles/atos-delivers-structured-journey-digital-090000268.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 04:00 ET",
+        "pub_ts": 1795510800.0
+      },
       {
         "title": "Dan Loeb and 47 Other Big Funds Bought Microsoft Last Quarter. Bill Ackman and 28 Others Sold. Who’s Right?",
         "url": "https://www.tikr.com/blog/dan-loeb-and-47-other-big-funds-bought-microsoft-last-quarter-bill-ackman-and-28-others-sold-whos-right?ref=yahoofinance&tlnk=yf-261124-g4v647r9&.tsrc=rss",
@@ -1222,23 +1236,16 @@
         "source": "Yahoo Finance",
         "time": "11-23 17:50 ET",
         "pub_ts": 1795474231.0
-      },
-      {
-        "title": "China Is “Only 12 Hours” Behind US AI Labs. ByteDance’s Reported Azure Deal Puts Microsoft in the Middle",
-        "url": "https://www.tikr.com/blog/china-is-only-12-hours-behind-us-ai-labs-bytedances-reported-azure-deal-puts-microsoft-in-the-middle?ref=yahoofinance&tlnk=yf-261123-434gxg43&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 16:39 ET",
-        "pub_ts": 1795469943.0
-      },
-      {
-        "title": "Leading CHROs and Business Executives to Convene at i4cp's 2027 Next Practices Now Conference",
-        "url": "https://finance.yahoo.com/small-business/articles/leading-chros-business-executives-convene-212500658.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 16:25 ET",
-        "pub_ts": 1795469100.0
       }
     ],
     "AAPL": [
+      {
+        "title": "Apple Is Barely Off Its High as Chips Crash. A Strategist Says It “Definitely Needs to Correct”",
+        "url": "https://www.tikr.com/blog/apple-is-barely-off-its-high-as-chips-crash-a-strategist-says-it-definitely-needs-to-correct?ref=yahoofinance&tlnk=yf-261124-vcm3jcr2&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 02:53 ET",
+        "pub_ts": 1795506792.0
+      },
       {
         "title": "Apple's five-device plan creates an iPhone buying dilemma",
         "url": "https://www.thestreet.com/technology/apples-five-device-plan-creates-an-iphone-buying-dilemma?.tsrc=rss",
@@ -1266,13 +1273,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 11:32 ET",
         "pub_ts": 1795451522.0
-      },
-      {
-        "title": "Jensen Huang back at Nvidia, stock soars; Anthropic slides",
-        "url": "https://finance.yahoo.com/video/jensen-huang-back-at-nvidia-stock-soars-anthropic-slides-161339662.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 11:13 ET",
-        "pub_ts": 1795450419.0
       }
     ],
     "PLTR": [
@@ -2609,6 +2609,27 @@
     ],
     "BTC-USD": [
       {
+        "title": "Is the Anthropic IPO to Blame for Bitcoin's Recent Downturn? The Answer Might Surprise You.",
+        "url": "https://www.fool.com/investing/2026/11/24/is-the-anthropic-ipo-to-blame-for-bitcoins-recent-downturn-the-answer-might-surprise-you/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 04:20 ET",
+        "pub_ts": 1795512002.0
+      },
+      {
+        "title": "Ex Ripple CTO David Schwartz Fires Back at Viral Claim He Sold 88% of His XRP in Months",
+        "url": "https://www.ccn.com/news/crypto/david-schwartz-fires-back-viral-claim-sold-88-xrp-months/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 04:15 ET",
+        "pub_ts": 1795511734.0
+      },
+      {
+        "title": "Jensen Huang Recovery Pump Lasted Just Six Hours As BTC Falls Back to $60K – What Went Wrong?",
+        "url": "https://www.coinspeaker.com/bitcoin-news-huang-pump-fades-saylor-strategy/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 04:04 ET",
+        "pub_ts": 1795511072.0
+      },
+      {
         "title": "Why Hyperliquid CEO Rejected The Michael Saylor-Style Bitcoin Treasury Model — And Bet On HYPE Instead",
         "url": "https://stocktwits.com/news-articles/markets/equity/purr-stock-hyperliquid-strategies-ceo-treasury-michael-saylor/cNbsTT3R9k9?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2621,27 +2642,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 03:35 ET",
         "pub_ts": 1795509321.0
-      },
-      {
-        "title": "Grayscale Says Bitcoin Looks Oversold, Warns Of Near-Term AI Risks As Nvidia And Anthropic Developments Put Markets In Focus",
-        "url": "https://stocktwits.com/news-articles/markets/cryptocurrency/grayscale-bitcoin-oversold-ai-risks-nvidia-anthropic/cNbsGFxR9kI?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 02:57 ET",
-        "pub_ts": 1795507056.0
-      },
-      {
-        "title": "Who Sold Bitcoin's Nvidia Rally? The Answer Sits in Wall Street's Fund Data",
-        "url": "https://beincrypto.com/bitcoin-etf-outflows-huang-return-rally/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 02:36 ET",
-        "pub_ts": 1795505819.0
-      },
-      {
-        "title": "LIVE – Bitcoin Overnight Rally Roundtripped: Saylor and Strategy Didn’t Flinch",
-        "url": "https://cryptonews.com/news/bitcoin-rally-roundtrip-saylor-strategy-buying-crypto-news/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 01:54 ET",
-        "pub_ts": 1795503259.0
       }
     ],
     "CRWD": [
@@ -2868,6 +2868,13 @@
     ],
     "MCD": [
       {
+        "title": "President Donald Trump's Investment Team Dumped McDonald's in September and Bought Up to $25 Million of a Time-Tested Dividend ETF",
+        "url": "https://www.fool.com/investing/2026/11/24/donald-trump-investment-team-dumped-mcdonalds-september-bought-25-million-time-tested-dividend-etf/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 04:26 ET",
+        "pub_ts": 1795512362.0
+      },
+      {
         "title": "Colgate-Palmolive vs. McDonald's: Which Consumer Goods Stock Is a Better Buy for 2027?",
         "url": "https://www.fool.com/coverage/better-buy/2026/11/23/colgate-palmolive-vs-mcdonalds-which-consumer-goods-stock-is-a-better-buy-for-2027/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2894,13 +2901,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 07:45 ET",
         "pub_ts": 1795437900.0
-      },
-      {
-        "title": "McDonald's, Burger King and Chick-fil-A food weighed in lighter than 2018 benchmarks — twice. Are you getting less?",
-        "url": "https://finance.yahoo.com/economy/articles/mcdonalds-burger-king-chick-fil-040500041.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-22 23:05 ET",
-        "pub_ts": 1795406700.0
       }
     ],
     "PEP": [
@@ -2986,6 +2986,20 @@
         "pub_ts": 1795471934.0
       },
       {
+        "title": "JPMorgan Chase (JPM) Stock Still Looks Like A Bargain On Its 122% Run",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/jpmorgan-chase-jpm-stock-still-091521471.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 04:15 ET",
+        "pub_ts": 1795511721.0
+      },
+      {
+        "title": "Alarm.com (ALRM) Stock Gets Fair Value Bump After Split Analyst Revisions",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/alarm-com-alrm-stock-gets-091203776.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 04:12 ET",
+        "pub_ts": 1795511523.0
+      },
+      {
         "title": "Forget JPMorgan: Upstart Has More to Lose From a 10% Card Rate Cap",
         "url": "https://www.tikr.com/blog/forget-jpmorgan-upstart-has-more-to-lose-from-a-10-card-rate-cap?ref=yahoofinance&tlnk=yf-261123-2gmrm77f&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2998,20 +3012,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 16:30 ET",
         "pub_ts": 1795469400.0
-      },
-      {
-        "title": "Divided Wall Street: Wells Fargo Upgrades US Large Caps To ‘Most Favorable,’ But JPMorgan Is Taking A Measured Approach",
-        "url": "https://stocktwits.com/news-articles/markets/equity/divided-wall-street-wells-fargo-upgrades-us-large-caps-to-most-favorable-but-jp-morgan-is-taking-a-measured-approach/cNbpWcHR9jF?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 16:24 ET",
-        "pub_ts": 1795469084.0
-      },
-      {
-        "title": "Fidelity steps into an innovative zone",
-        "url": "https://www.thestreet.com/crypto/markets/fidelity-steps-in-where-jpmorgan-retreated?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 15:56 ET",
-        "pub_ts": 1795467415.0
       }
     ],
     "WMT": [
@@ -3053,6 +3053,13 @@
     ],
     "V": [
       {
+        "title": "Klarna expands Visa partnership across North America and Europe",
+        "url": "https://www.electronicpaymentsinternational.com/news/klarna-expands-visa-partnership-across-north-america-and-europe/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 04:30 ET",
+        "pub_ts": 1795512607.0
+      },
+      {
         "title": "Klarna stock surges on Visa partnership expansion",
         "url": "https://finance.yahoo.com/markets/stocks/articles/klarna-stock-surges-visa-partnership-155426625.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3079,13 +3086,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 09:34 ET",
         "pub_ts": 1795444440.0
-      },
-      {
-        "title": "Klarna Expands Collaboration With Visa, Bringing Flexible Payments to Merchants Using Visa Acceptance Platform",
-        "url": "https://finance.yahoo.com/technology/articles/klarna-expands-collaboration-visa-bringing-133000131.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 08:30 ET",
-        "pub_ts": 1795440600.0
       }
     ],
     "CAT": [
@@ -3247,6 +3247,13 @@
     ],
     "KOSPI": [
       {
+        "title": "Stock market today: Dow, S&P 500, Nasdaq futures mixed as investors test Nvidia-fueled rally",
+        "url": "https://finance.yahoo.com/markets/live/stock-market-today-tuesday-november-24-dow-sp-500-nasdaq-rebound-090614276.html",
+        "source": "Yahoo Finance",
+        "time": "11-24 04:06 ET",
+        "pub_ts": 1795511174.0
+      },
+      {
         "title": "Samsung Electronics Stocks Fall 3.06% as Kospi Sinks Before Nvidia's CEO Reversal",
         "url": "https://finance.yahoo.com/markets/stocks/articles/samsung-electronics-stocks-fall-3-170806611.html",
         "source": "GuruFocus.com",
@@ -3273,63 +3280,56 @@
         "source": "Reuters",
         "time": "11-22 22:17 ET",
         "pub_ts": 1795403836.0
-      },
-      {
-        "title": "Can Samsung and SK Hynix Buybacks Stop Korea's $115 Billion Selloff?",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/samsung-sk-hynix-buybacks-stop-003800159.html",
-        "source": "BeInCrypto",
-        "time": "11-22 19:38 ET",
-        "pub_ts": 1795394280.0
       }
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795510196.3871348,
-    "SOXL": 1795510196.3871348,
-    "SPY": 1795510196.3871348,
-    "DIA": 1795510196.3871348,
-    "SOXX": 1795510196.3871348,
-    "QQQ": 1795510196.3871348,
-    "SMH": 1795510196.3871348,
-    "IWM": 1795510196.3871348,
-    "IGV": 1795510196.3871348,
-    "TLT": 1795510196.3871348,
-    "GLD": 1795510196.3871348,
-    "SQQQ": 1795510196.3871348,
-    "TSM": 1795510304.6043298,
-    "VIXY": 1795510196.3871348,
-    "SOXS": 1795510196.3871348,
-    "NVDA": 1795510196.3871348,
-    "AMD": 1795510304.6043298,
-    "ASML": 1795510304.6043298,
-    "QCOM": 1795510304.6043298,
-    "AVGO": 1795510304.6043298,
-    "AMAT": 1795510304.6043298,
-    "META": 1795510304.6043298,
-    "GOOGL": 1795510304.6043298,
-    "MSFT": 1795510304.6043298,
-    "AAPL": 1795510304.6043298,
-    "PLTR": 1795510304.6043298,
-    "NOW": 1795510304.6043298,
-    "AMZN": 1795510304.6043298,
-    "CRWV": 1795510304.6043298,
-    "NBIS": 1795510518.8666875,
-    "APLD": 1795510738.2598102,
-    "VST": 1795510738.2598102,
-    "BE": 1795510738.2598102,
-    "CRDO": 1795510738.2598102,
-    "COHR": 1795510738.2598102,
-    "MRVL": 1795510518.8666875,
-    "LITE": 1795510518.8666875,
-    "AAOI": 1795510738.2598102,
+    "KORU": 1795513024.0939963,
+    "SOXL": 1795513024.0939963,
+    "SPY": 1795513024.0939963,
+    "DIA": 1795513024.0939963,
+    "SOXX": 1795513024.0939963,
+    "QQQ": 1795513024.0939963,
+    "SMH": 1795513024.0939963,
+    "IWM": 1795513024.0939963,
+    "IGV": 1795513024.0939963,
+    "TLT": 1795513024.0939963,
+    "GLD": 1795513024.0939963,
+    "SQQQ": 1795513024.0939963,
+    "TSM": 1795513024.0939963,
+    "VIXY": 1795513024.0939963,
+    "SOXS": 1795513024.0939963,
+    "NVDA": 1795513024.0939963,
+    "AMD": 1795513024.0939963,
+    "ASML": 1795513024.0939963,
+    "QCOM": 1795513024.0939963,
+    "AVGO": 1795513024.0939963,
+    "AMAT": 1795513024.0939963,
+    "META": 1795513024.0939963,
+    "GOOGL": 1795513024.0939963,
+    "MSFT": 1795513024.0939963,
+    "AAPL": 1795513024.0939963,
+    "PLTR": 1795513024.0939963,
+    "NOW": 1795513024.0939963,
+    "AMZN": 1795513024.0939963,
+    "CRWV": 1795513024.0939963,
+    "NBIS": 1795513024.0939963,
+    "APLD": 1795513614.4822621,
+    "VST": 1795513614.4822621,
+    "BE": 1795513614.4822621,
+    "CRDO": 1795513614.4822621,
+    "COHR": 1795513614.4822621,
+    "MRVL": 1795513024.0939963,
+    "LITE": 1795513024.0939963,
+    "AAOI": 1795513614.4822621,
     "SPCX": 1795510738.2598102,
-    "ASTS": 1795510738.2598102,
-    "AXTI": 1795510518.8666875,
+    "ASTS": 1795513614.4822621,
+    "AXTI": 1795513024.0939963,
     "NASA": 1795510738.2598102,
     "LUNR": 1795510738.2598102,
     "TSLA": 1795510846.4855065,
     "AXP": 1795510846.4855065,
-    "RKLB": 1795510738.2598102,
+    "RKLB": 1795513614.4822621,
     "KO": 1795510738.2598102,
     "FLY": 1795510738.2598102,
     "INTC": 1795510738.2598102,
@@ -3339,31 +3339,31 @@
     "OKLO": 1795510846.4855065,
     "CEG": 1795510846.4855065,
     "FPS": 1795510846.4855065,
-    "MU": 1795510518.8666875,
-    "SKHY": 1795510518.8666875,
-    "WDC": 1795510518.8666875,
+    "MU": 1795513024.0939963,
+    "SKHY": 1795513024.0939963,
+    "WDC": 1795513024.0939963,
     "STX": 1795510846.4855065,
     "MSTR": 1795510846.4855065,
     "SNDK": 1795510846.4855065,
-    "BTC-USD": 1795510518.8666875,
+    "BTC-USD": 1795513024.0939963,
     "CRWD": 1795510846.4855065,
-    "ORCL": 1795510518.8666875,
-    "COIN": 1795510518.8666875,
-    "LLY": 1795510518.8666875,
-    "MRNA": 1795510518.8666875,
-    "NKE": 1795510518.8666875,
-    "MCD": 1795510518.8666875,
+    "ORCL": 1795513614.4822621,
+    "COIN": 1795513614.4822621,
+    "LLY": 1795513614.4822621,
+    "MRNA": 1795513614.4822621,
+    "NKE": 1795513614.4822621,
+    "MCD": 1795513614.4822621,
     "PEP": 1795510846.4855065,
-    "XOM": 1795510518.8666875,
-    "JPM": 1795510518.8666875,
+    "XOM": 1795513614.4822621,
+    "JPM": 1795513614.4822621,
     "WMT": 1795510846.4855065,
-    "V": 1795510518.8666875,
+    "V": 1795513614.4822621,
     "CAT": 1795510846.4855065,
-    "FN": 1795510518.8666875,
-    "GLW": 1795510738.2598102,
+    "FN": 1795513024.0939963,
+    "GLW": 1795513614.4822621,
     "ANT": 1795510846.4855065,
     "XAUUSD": 1795511086.2609499,
-    "KOSPI": 1795510304.6043298
+    "KOSPI": 1795513024.0939963
   },
   "opex_shield": {
     "date": "2026-11-24",
@@ -3382,7 +3382,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (04:04 ET / 17:04 BJ) [半导体] [英伟达]：【美股半导体板块盘前走低 英伟达跌约4%】美股盘前，英伟达(NVDA.O)跌约4%，英特尔(INTC.O)、美光科技(MU.O)、迈威尔科技(MRVL.O)跌约5%，Arm(ARM.O)跌3",
+    "detail": "⚡ 最新核心快讯 (04:40 ET / 17:40 BJ) [加息]：欧元区通胀升至4%，已不再只是能源惹的祸。随着薪资与汇率风险升温，欧洲央行12月或迎第三次加息，但成员国经济分化正让明年政策充满变数。",
     "event_name": "",
     "minutes_left": 0,
     "opex_shield": {
