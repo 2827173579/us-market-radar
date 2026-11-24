@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795549915.722,
-  "updated_at_et": "11-24 14:51 ET",
-  "updated_at_kst": "04:51 KST",
+  "updated_at_ts": 1795550018.585,
+  "updated_at_et": "11-24 14:53 ET",
+  "updated_at_kst": "04:53 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -3203,6 +3203,20 @@
     ],
     "ANT": [
       {
+        "title": "Nasdaq Resumes Selloff as Nvidia, Anthropic Shares Slump",
+        "url": "https://www.wsj.com/finance/stocks/nasdaq-futures-fall-as-questions-linger-over-ai-trade-68ba6d71?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 14:32 ET",
+        "pub_ts": 1795548720.0
+      },
+      {
+        "title": "Anthropic Stock Is Now Trading. Should You Buy It Today?",
+        "url": "https://www.fool.com/investing/2026/11/24/anthropic-stock-is-now-trading-should-you-buy-it-today/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 14:20 ET",
+        "pub_ts": 1795548002.0
+      },
+      {
         "title": "Anthropic Stock Sinks Below IPO Price. What History Says Happens Next.",
         "url": "https://finance.yahoo.com/m/a286105e-a938-3486-a9d4-92ce3954de08/anthropic-stock-sinks-below.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3222,20 +3236,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 13:50 ET",
         "pub_ts": 1795546200.0
-      },
-      {
-        "title": "Why Does Anthropic Stock Keep Dropping?",
-        "url": "https://www.fool.com/investing/2026/11/24/why-does-anthropic-stock-keep-dropping/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 13:37 ET",
-        "pub_ts": 1795545432.0
-      },
-      {
-        "title": "Anthropic shares fall below IPO price, a worrying sign for AI startups",
-        "url": "https://finance.yahoo.com/technology/ai/articles/anthropic-shares-fall-below-ipo-183042758.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 13:30 ET",
-        "pub_ts": 1795545042.0
       }
     ],
     "XAUUSD": [
@@ -3353,17 +3353,17 @@
     "COIN": 1795549915.7215352,
     "LLY": 1795549915.7215352,
     "MRNA": 1795549915.7215352,
-    "NKE": 1795548516.1517777,
+    "NKE": 1795550018.5852363,
     "MCD": 1795549915.7215352,
-    "PEP": 1795548516.1517777,
-    "XOM": 1795548516.1517777,
-    "JPM": 1795548516.1517777,
-    "WMT": 1795548516.1517777,
+    "PEP": 1795550018.5852363,
+    "XOM": 1795550018.5852363,
+    "JPM": 1795550018.5852363,
+    "WMT": 1795550018.5852363,
     "V": 1795549915.7215352,
-    "CAT": 1795548516.1517777,
+    "CAT": 1795550018.5852363,
     "FN": 1795549312.7376688,
     "GLW": 1795549810.3749979,
-    "ANT": 1795548516.1517777,
+    "ANT": 1795550018.5852363,
     "XAUUSD": 1795548623.5326707,
     "KOSPI": 1795549194.691989
   },
