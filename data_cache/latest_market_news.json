@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795516863.688,
-  "updated_at_et": "11-24 05:41 ET",
-  "updated_at_kst": "19:41 KST",
+  "updated_at_ts": 1795516991.771,
+  "updated_at_et": "11-24 05:43 ET",
+  "updated_at_kst": "19:43 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2202,6 +2202,20 @@
     ],
     "HPE": [
       {
+        "title": "HPE falls as Q1 outlook marginally falls short of expectations",
+        "url": "https://stocktwits.com/news-articles/markets/equity/hpe-stock-drops-8-after-hours-as-q1-outlook-marginally-falls-short-of-expectations/cNbrYexR9jA?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 19:10 ET",
+        "pub_ts": 1795479026.0
+      },
+      {
+        "title": "HPE Stock What Changed After Earnings Beat",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/hpe-stock-changed-earnings-beat-101147443.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 05:11 ET",
+        "pub_ts": 1795515107.0
+      },
+      {
         "title": "US Futures Mixed After Monday’s Nvidia-Led Chip Rally — ZM, HPE, AMD, BABA In Focus",
         "url": "https://stocktwits.com/news-articles/markets/equity/us-futures-mixed-after-monday-s-nvidia-led-chip-rally-zm-hpe-amd-baba-in-focus/cNbs23VR9kf?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2221,23 +2235,16 @@
         "source": "Yahoo Finance",
         "time": "11-23 22:00 ET",
         "pub_ts": 1795489200.0
-      },
-      {
-        "title": "Nasdaq, Dow, S&P 500 Futures Gain As Jensen Huang’s Return To Nvidia Sparks $3T Market Rally: SOXS, IBRX, HPE, TSM In Focus",
-        "url": "https://stocktwits.com/news-articles/markets/equity/stock-market-today-nasdaq-dow-futures-rise-jensen-huang-returns-nvidia/cNbrsSNR9jM?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 21:13 ET",
-        "pub_ts": 1795486423.0
-      },
-      {
-        "title": "Hewlett Packard Enterprise Q4 Earnings Call Highlights",
-        "url": "https://www.marketbeat.com/instant-alerts/transcript-hewlett-packard-enterprise-q4-earnings-call-highlights-2026-11-23/?utm_source=yahoofinance&utm_medium=yahoofinance&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 20:13 ET",
-        "pub_ts": 1795482806.0
       }
     ],
     "DELL": [
+      {
+        "title": "Teradata Bets on Dell Partnership and New Products to Drive 2027 Growth",
+        "url": "https://www.marketbeat.com/instant-alerts/event-teradata-bets-on-dell-partnership-and-new-products-to-drive-2027-growth-2026-11-24/?utm_source=yahoofinance&utm_medium=yahoofinance&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 05:12 ET",
+        "pub_ts": 1795515134.0
+      },
       {
         "title": "Jim Cramer Says Dell Is “One of the Few” AI Stocks to Ride. Its November 24 Report Must Prove It",
         "url": "https://www.tikr.com/blog/jim-cramer-says-dell-is-one-of-the-few-ai-stocks-to-ride-its-november-24-report-must-prove-it?ref=yahoofinance&tlnk=yf-261124-63mj9xvw&.tsrc=rss",
@@ -2265,13 +2272,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 16:27 ET",
         "pub_ts": 1795469220.0
-      },
-      {
-        "title": "Dear Dell Stock Fans, Mark Your Calendars for November 24",
-        "url": "https://www.barchart.com/story/news/8971295/dear-dell-stock-fans-mark-your-calendars-for-november-24?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 15:43 ET",
-        "pub_ts": 1795466618.0
       }
     ],
     "OKLO": [
@@ -3333,12 +3333,12 @@
     "KO": 1795516863.6883514,
     "FLY": 1795516863.6883514,
     "INTC": 1795516863.6883514,
-    "VRT": 1795515275.1539328,
-    "HPE": 1795515275.1539328,
-    "DELL": 1795515275.1539328,
-    "OKLO": 1795515275.1539328,
-    "CEG": 1795515275.1539328,
-    "FPS": 1795515275.1539328,
+    "VRT": 1795516991.7714608,
+    "HPE": 1795516991.7714608,
+    "DELL": 1795516991.7714608,
+    "OKLO": 1795516991.7714608,
+    "CEG": 1795516991.7714608,
+    "FPS": 1795516991.7714608,
     "MU": 1795516499.4497952,
     "SKHY": 1795516499.4497952,
     "WDC": 1795516499.4497952,
@@ -3354,8 +3354,8 @@
     "NKE": 1795516745.5146592,
     "MCD": 1795516745.5146592,
     "PEP": 1795515399.655148,
-    "XOM": 1795515275.1539328,
-    "JPM": 1795515275.1539328,
+    "XOM": 1795516991.7714608,
+    "JPM": 1795516991.7714608,
     "WMT": 1795515399.655148,
     "V": 1795516745.5146592,
     "CAT": 1795515399.655148,
