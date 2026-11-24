@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795559615.336,
-  "updated_at_et": "11-24 17:33 ET",
-  "updated_at_kst": "07:33 KST",
+  "updated_at_ts": 1795559712.547,
+  "updated_at_et": "11-24 17:35 ET",
+  "updated_at_kst": "07:35 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -913,42 +913,49 @@
     ],
     "NVDA": [
       {
+        "title": "Elon Thinks Energy is AI’s Biggest Bottleneck",
+        "url": "https://app.moby.co/home/news/news-elon-thinks-energy-is-ais-biggest-bottleneck?utm_source=yahoo_finance&utm_medium=rss&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 17:29 ET",
+        "pub_ts": 1795559383.0
+      },
+      {
         "title": "Dow Jones Futures: Nvidia, Anthropic Lead AI Retreat But Many Sectors Strong; Fed Inflation Data Due",
         "url": "https://finance.yahoo.com/m/d96603c1-fe7f-3bf3-8158-0728b464d469/dow-jones-futures%3A-nvidia%2C.html?.tsrc=rss",
         "source": "Yahoo Finance",
+        "time": "11-24 17:25 ET",
+        "pub_ts": 1795559101.0
+      },
+      {
+        "title": "Stock Market Today, Nov. 24: Tech Sell-Off Drags Nasdaq as Dow Gains on Value Rotation",
+        "url": "https://www.fool.com/coverage/stock-market-today/2026/11/24/stock-market-today-nov-24-tech-sell-off-drags-nasdaq-as-dow-gains-on-value-rotation/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 17:11 ET",
+        "pub_ts": 1795558308.0
+      },
+      {
+        "title": "Movado Group, Inc. Q3 2027 Earnings Call Summary",
+        "url": "https://app.moby.co/home/research/tools/earningsCalendar/earnings-movado-group-inc-q3-2027-earnings-call-summary?utm_source=yahoo_finance&utm_medium=rss&.tsrc=rss",
+        "source": "Yahoo Finance",
         "time": "11-24 17:05 ET",
-        "pub_ts": 1795557924.0
+        "pub_ts": 1795557929.0
       },
       {
-        "title": "Nvidia's Huang says he is in therapy as comeback rally fades",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/huangs-return-fails-dispel-doubts-164158462.html?.tsrc=rss",
+        "title": "Kohl's Corporation Q3 2026 Earnings Call Summary",
+        "url": "https://app.moby.co/home/research/tools/earningsCalendar/earnings-kohls-corporation-q3-2026-earnings-call-summary?utm_source=yahoo_finance&utm_medium=rss&.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 17:01 ET",
-        "pub_ts": 1795557661.0
-      },
-      {
-        "title": "Public, personal and unprecedented: Trump's extraordinary intervention with Nvidia",
-        "url": "https://finance.yahoo.com/technology/articles/public-personal-unprecedented-trumps-extraordinary-220047064.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 17:00 ET",
-        "pub_ts": 1795557647.0
-      },
-      {
-        "title": "Nvidia, Chip Stocks Fall As Data Center Spending Fears Return",
-        "url": "https://finance.yahoo.com/m/f1d585fa-8dde-3feb-9be2-ba2cfa946702/nvidia%2C-chip-stocks-fall-as.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 16:58 ET",
-        "pub_ts": 1795557505.0
-      },
-      {
-        "title": "Don’t chase this Nvidia rally — buy these 3 stocks instead",
-        "url": "https://www.thestreet.com/video/dont-chase-the-nvidia-rally-buy-these-3-stocks-instead?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 16:54 ET",
-        "pub_ts": 1795557262.0
+        "time": "11-24 17:05 ET",
+        "pub_ts": 1795557919.0
       }
     ],
     "AMD": [
+      {
+        "title": "Anthropic falls below IPO price as Nvidia gives back gains",
+        "url": "https://finance.yahoo.com/video/anthropic-falls-below-ipo-price-as-nvidia-gives-back-gains-214558309.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 16:45 ET",
+        "pub_ts": 1795556758.0
+      },
       {
         "title": "Is AMD Among the Morgan Stanley’s Best Semiconductor and Server Stocks to Buy for 2027?",
         "url": "https://finance.yahoo.com/technology/articles/amd-among-morgan-stanley-best-205409840.html?.tsrc=rss",
@@ -976,13 +983,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 15:46 ET",
         "pub_ts": 1795553189.0
-      },
-      {
-        "title": "Why Is Everpure (P) Stock Down Today? AI Chip, Storage Selloff Weighs",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/why-everpure-p-stock-down-203130134.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 15:31 ET",
-        "pub_ts": 1795552290.0
       }
     ],
     "ASML": [
@@ -3290,26 +3290,26 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795558122.7841067,
-    "SOXL": 1795558122.7841067,
+    "KORU": 1795559712.5466921,
+    "SOXL": 1795559712.5466921,
     "SPY": 1795558418.190817,
-    "DIA": 1795558122.7841067,
-    "SOXX": 1795558122.7841067,
-    "QQQ": 1795558122.7841067,
+    "DIA": 1795559712.5466921,
+    "SOXX": 1795559712.5466921,
+    "QQQ": 1795559712.5466921,
     "SMH": 1795558418.190817,
-    "IWM": 1795558122.7841067,
-    "IGV": 1795558122.7841067,
-    "TLT": 1795558122.7841067,
-    "GLD": 1795558122.7841067,
-    "SQQQ": 1795558122.7841067,
+    "IWM": 1795559712.5466921,
+    "IGV": 1795559712.5466921,
+    "TLT": 1795559712.5466921,
+    "GLD": 1795559712.5466921,
+    "SQQQ": 1795559712.5466921,
     "TSM": 1795558418.190817,
-    "VIXY": 1795558122.7841067,
-    "SOXS": 1795558122.7841067,
-    "NVDA": 1795558122.7841067,
-    "AMD": 1795558122.7841067,
+    "VIXY": 1795559712.5466921,
+    "SOXS": 1795559712.5466921,
+    "NVDA": 1795559712.5466921,
+    "AMD": 1795559712.5466921,
     "ASML": 1795558418.190817,
     "QCOM": 1795558418.190817,
-    "AVGO": 1795558122.7841067,
+    "AVGO": 1795559712.5466921,
     "AMAT": 1795558418.190817,
     "META": 1795558418.190817,
     "GOOGL": 1795558418.190817,
