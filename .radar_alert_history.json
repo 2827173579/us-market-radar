@@ -11,7 +11,7 @@
     },
     "NVDA": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1795502322.3907495
+      "last_notified_at": 1795509552.8139937
     },
     "META": {
       "state": "NORMAL",
@@ -178,8 +178,8 @@
       "last_notified_at": 1795508791.5481913
     },
     "PLTR": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1795508682.7480216
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     }
   },
   "position_peaks": {
