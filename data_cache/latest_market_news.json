@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795530103.835,
-  "updated_at_et": "11-24 09:21 ET",
-  "updated_at_kst": "23:21 KST",
+  "updated_at_ts": 1795530228.886,
+  "updated_at_et": "11-24 09:23 ET",
+  "updated_at_kst": "23:23 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -789,6 +789,20 @@
     ],
     "TSM": [
       {
+        "title": "Nvidia, AMD, Broadcom lead chip stocks lower as AI trade comes under pressure",
+        "url": "https://finance.yahoo.com/markets/article/nvidia-amd-broadcom-lead-chip-stocks-lower-as-ai-trade-comes-under-pressure-141635463.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 09:16 ET",
+        "pub_ts": 1795529795.0
+      },
+      {
+        "title": "TSM's AI-Driven Growth Accelerates: Is There More Upside Ahead?",
+        "url": "https://finance.yahoo.com/technology/ai/articles/tsms-ai-driven-growth-accelerates-125400331.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 07:54 ET",
+        "pub_ts": 1795524840.0
+      },
+      {
         "title": "TSMC Stock Just Had Its Best Day Since 2008",
         "url": "https://247wallst.com/investing/2026/11/24/tsmc-stock-just-had-its-best-day-since-2008/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -808,20 +822,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 06:46 ET",
         "pub_ts": 1795520816.0
-      },
-      {
-        "title": "TSMC gains $158 billion in value in one day as Jensen Huang returns as Nvidia CEO",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/tsmc-gains-158-billion-value-070556999.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 02:05 ET",
-        "pub_ts": 1795503956.0
-      },
-      {
-        "title": "Fujitsu sees stronger Monaka demand as buyers seek alternatives, Bloomberg reports",
-        "url": "https://finance.yahoo.com/technology/articles/fujitsu-sees-stronger-monaka-demand-083637056.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 03:36 ET",
-        "pub_ts": 1795509397.0
       }
     ],
     "VIXY": [
@@ -900,42 +900,49 @@
     ],
     "NVDA": [
       {
-        "title": "Trump makes $15m from Jensen Huang’s Nvidia return",
-        "url": "https://uk.finance.yahoo.com/news/trump-makes-15m-jensen-huang-134537738.html?.tsrc=rss",
+        "title": "Nvidia, AMD, Broadcom lead chip stocks lower as AI trade comes under pressure",
+        "url": "https://finance.yahoo.com/markets/article/nvidia-amd-broadcom-lead-chip-stocks-lower-as-ai-trade-comes-under-pressure-141635463.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 08:45 ET",
-        "pub_ts": 1795527937.0
+        "time": "11-24 09:16 ET",
+        "pub_ts": 1795529795.0
       },
       {
-        "title": "IREN Fell 42% This Month Even After The Market Jump on NVIDIA News: This Wall Street Pro Maintains That 440% Returns Are Coming After Q3 Earnings Downgrades",
-        "url": "https://247wallst.com/investing/2026/11/24/iren-fell-42-this-month-even-after-the-market-jump-on-nvidia-news-this-wall-street-pro-maintains-that-440-returns-are-coming-after-q3-earnings-downgrades/?.tsrc=rss",
+        "title": "Stocks move lower as Nvidia euphoria wears off",
+        "url": "https://finance.yahoo.com/video/stocks-move-lower-as-nvidia-euphoria-wears-off-135748794.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 08:45 ET",
-        "pub_ts": 1795527924.0
+        "time": "11-24 08:57 ET",
+        "pub_ts": 1795528668.0
       },
       {
-        "title": "Huang's return at Nvidia puts spotlight on chipmaker's board",
-        "url": "https://www.cbsnews.com/news/nvidia-board-reinstates-ceo-jensen-huang/?.tsrc=rss",
+        "title": "NVIDIA and Intel Slide 6% as Jensen Huang Comeback Rally Cools; AMD Drops 5%",
+        "url": "https://247wallst.com/investing/2026/11/24/nvidia-and-intel-slide-6-as-jensen-huang-comeback-rally-cools-amd-drops-5/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 08:35 ET",
-        "pub_ts": 1795527358.0
+        "time": "11-24 09:11 ET",
+        "pub_ts": 1795529475.0
       },
       {
-        "title": "The S&P 500 Stock Market Index Entered Correction Territory Last Friday. Here's What Could Happen Next.",
-        "url": "https://www.fool.com/investing/2026/11/24/the-s-and-p-500-stock-market-index-entered-correction-territory-friday-happen-next/?.tsrc=rss",
+        "title": "Micron Falls 7% as NVIDIA Pullback Partially Reverses Monday’s AI Chip Rally; SanDisk and SK Hynix Drop 6%",
+        "url": "https://247wallst.com/investing/2026/11/24/micron-falls-7-as-nvidia-pullback-partially-reverses-mondays-ai-chip-rally-sandisk-and-sk-hynix-drop-6/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 08:34 ET",
-        "pub_ts": 1795527241.0
+        "time": "11-24 09:07 ET",
+        "pub_ts": 1795529253.0
       },
       {
-        "title": "Anthropic Stock Sinks Below IPO Price. Why That’s Happened So Fast.",
-        "url": "https://finance.yahoo.com/m/a286105e-a938-3486-a9d4-92ce3954de08/anthropic-stock-sinks-below.html?.tsrc=rss",
+        "title": "Jensen Huang Could Still Be Kicked Out, Nvidia Could Still Fall 40%",
+        "url": "https://247wallst.com/investing/2026/11/24/jensen-huang-could-still-be-kicked-out-nvidia-could-still-fall-40/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 08:30 ET",
-        "pub_ts": 1795527000.0
+        "time": "11-24 09:04 ET",
+        "pub_ts": 1795529063.0
       }
     ],
     "AMD": [
+      {
+        "title": "Nvidia, AMD, Broadcom lead chip stocks lower as AI trade comes under pressure",
+        "url": "https://finance.yahoo.com/markets/article/nvidia-amd-broadcom-lead-chip-stocks-lower-as-ai-trade-comes-under-pressure-141635463.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 09:16 ET",
+        "pub_ts": 1795529795.0
+      },
       {
         "title": "Jensen Huang is back at Nvidia. Should AMD be worried?",
         "url": "https://finance.yahoo.com/markets/stocks/article/jensen-huang-is-back-at-nvidia-should-amd-be-worried-130012666.html?.tsrc=rss",
@@ -944,35 +951,35 @@
         "pub_ts": 1795525212.0
       },
       {
-        "title": "Bulls Expect AMD Revenues to Grow 80% Next Year on Hyper-Accelerated Data Center Growth, $725 in Sight",
-        "url": "https://247wallst.com/investing/2026/11/24/bulls-expect-amd-revenues-to-grow-80-next-year-on-hyper-accelerated-data-center-growth-725-in-sight/?.tsrc=rss",
+        "title": "NVIDIA and Intel Slide 6% as Jensen Huang Comeback Rally Cools; AMD Drops 5%",
+        "url": "https://247wallst.com/investing/2026/11/24/nvidia-and-intel-slide-6-as-jensen-huang-comeback-rally-cools-amd-drops-5/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 08:45 ET",
-        "pub_ts": 1795527930.0
+        "time": "11-24 09:11 ET",
+        "pub_ts": 1795529475.0
       },
       {
-        "title": "AMD Stock Shows the Market Has Stopped Making Sense After Huang’s Dramatic Return",
-        "url": "https://finance.yahoo.com/m/fad1db36-fd86-34e4-866b-804987e46e84/amd-stock-shows-the-market.html?.tsrc=rss",
+        "title": "AMD near-term technical setup: bearish bias with oversold bounce potential",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/amd-near-term-technical-setup-135646943.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 08:31 ET",
-        "pub_ts": 1795527060.0
+        "time": "11-24 08:56 ET",
+        "pub_ts": 1795528606.0
       },
       {
         "title": "Stock Market Today: Tech Futures Sell Off After Big Market Surge; AMD, Anthropic, Nvidia Dive (Live Coverage)",
         "url": "https://finance.yahoo.com/m/4aa4ff31-269f-346e-80c4-e681510af7ae/stock-market-today%3A-tech.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 08:07 ET",
-        "pub_ts": 1795525679.0
-      },
-      {
-        "title": "Billionaire Philippe Laffont of Coatue Management Sent AMD Shares Packing and Loaded Up on This Hot AI IPO Instead",
-        "url": "https://www.fool.com/investing/2026/11/24/billionaire-philippe-laffont-coatue-sent-amd-shares-packing-loaded-up-hot-ai-ipo-instead/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 07:26 ET",
-        "pub_ts": 1795523162.0
+        "time": "11-24 08:51 ET",
+        "pub_ts": 1795528300.0
       }
     ],
     "ASML": [
+      {
+        "title": "Nvidia, AMD, Broadcom lead chip stocks lower as AI trade comes under pressure",
+        "url": "https://finance.yahoo.com/markets/article/nvidia-amd-broadcom-lead-chip-stocks-lower-as-ai-trade-comes-under-pressure-141635463.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 09:16 ET",
+        "pub_ts": 1795529795.0
+      },
       {
         "title": "ASML Stock What Changed After Nvidia CEO Return",
         "url": "https://finance.yahoo.com/markets/stocks/articles/asml-stock-changed-nvidia-ceo-121558672.html?.tsrc=rss",
@@ -1000,13 +1007,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 17:36 ET",
         "pub_ts": 1795473384.0
-      },
-      {
-        "title": "ASML Stock’s Sell-Off Looks Excessive Against Its Growth Outlook",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/asml-stock-sell-off-looks-212500722.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 16:25 ET",
-        "pub_ts": 1795469100.0
       }
     ],
     "QCOM": [
@@ -1048,6 +1048,13 @@
     ],
     "AVGO": [
       {
+        "title": "Nvidia, AMD, Broadcom lead chip stocks lower as AI trade comes under pressure",
+        "url": "https://finance.yahoo.com/markets/article/nvidia-amd-broadcom-lead-chip-stocks-lower-as-ai-trade-comes-under-pressure-141635463.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 09:16 ET",
+        "pub_ts": 1795529795.0
+      },
+      {
         "title": "Prediction: This Is What Will Happen to Broadcom’s Stock Price in December",
         "url": "https://www.fool.com/investing/2026/11/24/prediction-this-is-what-will-happen-to-broadcom-s-stock-price-in-december/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1074,13 +1081,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 06:02 ET",
         "pub_ts": 1795518174.0
-      },
-      {
-        "title": "ETFs Bought $393.8 Million of Broadcom (AVGO) on Nov. 20",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-bought-393-8-million-110109208.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 06:01 ET",
-        "pub_ts": 1795518069.0
       }
     ],
     "AMAT": [
@@ -1203,6 +1203,13 @@
         "pub_ts": 1795525295.0
       },
       {
+        "title": "Is Trending Stock Microsoft Corporation (MSFT) a Buy Now?",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/trending-stock-microsoft-corporation-msft-130005672.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 08:00 ET",
+        "pub_ts": 1795525205.0
+      },
+      {
         "title": "RAAPID Recognized in the 2026 Microsoft Partner of the Year Awards for Microsoft for Startups",
         "url": "https://finance.yahoo.com/technology/ai/articles/raapid-recognized-2026-microsoft-partner-130000464.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1222,13 +1229,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 07:37 ET",
         "pub_ts": 1795523850.0
-      },
-      {
-        "title": "Anthropic’s Frenemy Squeeze: Pledging Up to $49B to Microsoft While Building Its Own Landlord Escape Hatch",
-        "url": "https://247wallst.com/investing/2026/11/24/anthropics-frenemy-squeeze-pledging-up-to-49b-to-microsoft-while-building-its-own-landlord-escape-hatch/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 07:15 ET",
-        "pub_ts": 1795522531.0
       }
     ],
     "AAPL": [
@@ -3285,22 +3285,22 @@
     "QQQ": 1795530103.8347418,
     "SMH": 1795530103.8347418,
     "IWM": 1795530103.8347418,
-    "IGV": 1795528672.8689141,
-    "TLT": 1795528672.8689141,
-    "GLD": 1795528672.8689141,
-    "SQQQ": 1795528672.8689141,
-    "TSM": 1795528672.8689141,
-    "VIXY": 1795528672.8689141,
-    "SOXS": 1795528672.8689141,
-    "NVDA": 1795528672.8689141,
-    "AMD": 1795528672.8689141,
-    "ASML": 1795528672.8689141,
-    "QCOM": 1795528672.8689141,
-    "AVGO": 1795528672.8689141,
-    "AMAT": 1795528672.8689141,
+    "IGV": 1795530228.88617,
+    "TLT": 1795530228.88617,
+    "GLD": 1795530228.88617,
+    "SQQQ": 1795530228.88617,
+    "TSM": 1795530228.88617,
+    "VIXY": 1795530228.88617,
+    "SOXS": 1795530228.88617,
+    "NVDA": 1795530228.88617,
+    "AMD": 1795530228.88617,
+    "ASML": 1795530228.88617,
+    "QCOM": 1795530228.88617,
+    "AVGO": 1795530228.88617,
+    "AMAT": 1795530228.88617,
     "META": 1795528786.1457446,
     "GOOGL": 1795528786.1457446,
-    "MSFT": 1795528672.8689141,
+    "MSFT": 1795530228.88617,
     "AAPL": 1795528786.1457446,
     "PLTR": 1795528786.1457446,
     "NOW": 1795528786.1457446,
