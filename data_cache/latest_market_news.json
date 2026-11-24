@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795546688.894,
-  "updated_at_et": "11-24 13:58 ET",
-  "updated_at_kst": "03:58 KST",
+  "updated_at_ts": 1795546792.541,
+  "updated_at_et": "11-24 13:59 ET",
+  "updated_at_kst": "03:59 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1501,6 +1501,13 @@
     ],
     "VST": [
       {
+        "title": "What Just Happened To Vistra Stock?",
+        "url": "https://www.trefis.com/stock/vst/articles/628627/what-just-happened-to-vistra-stock-2/2026-11-24?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 13:29 ET",
+        "pub_ts": 1795544943.0
+      },
+      {
         "title": "How Has Vistra Stock's Story Changed?",
         "url": "https://www.trefis.com/stock/vst/articles/628443/how-has-vistra-stock-s-story-changed/2026-11-24?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1527,16 +1534,16 @@
         "source": "Yahoo Finance",
         "time": "11-21 15:05 ET",
         "pub_ts": 1795291502.0
-      },
-      {
-        "title": "Has Buying The Dips In Vistra Stock Paid Off?",
-        "url": "https://www.trefis.com/stock/vst/articles/627175/has-buying-the-dips-in-vistra-stock-paid-off/2026-11-20?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-21 01:32 ET",
-        "pub_ts": 1795242767.0
       }
     ],
     "BE": [
+      {
+        "title": "Bloom Energy Revenue Jumped 138%. Its Next Growth Phase Could Be Even Bigger",
+        "url": "https://247wallst.com/investing/2026/11/24/bloom-energy-revenue-jumped-138-its-next-growth-phase-could-be-even-bigger/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 13:33 ET",
+        "pub_ts": 1795545180.0
+      },
       {
         "title": "Bloom Energy is Down 22% Just This Month: Two Wall Street Pros Predict 109% Gains With 2 More $1 Dollar Lower",
         "url": "https://247wallst.com/investing/2026/11/24/bloom-energy-is-down-22-just-this-month-two-wall-street-pros-predict-109-gains-with-2-more-1-dollar-lower/?.tsrc=rss",
@@ -1564,13 +1571,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 06:51 ET",
         "pub_ts": 1795521062.0
-      },
-      {
-        "title": "Bloom Energy Signs Its Largest Deal Abroad: 900 MW for NTT Data Starting in 2027",
-        "url": "https://www.tikr.com/blog/bloom-energy-signs-its-largest-deal-abroad-900-mw-for-ntt-data-starting-in-2027?ref=yahoofinance&tlnk=yf-261124-7qqhvjvp&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 01:38 ET",
-        "pub_ts": 1795502317.0
       }
     ],
     "CRDO": [
@@ -3316,37 +3316,37 @@
     "AMZN": 1795546059.2390764,
     "CRWV": 1795546059.2390764,
     "NBIS": 1795546170.0943477,
-    "APLD": 1795545193.304729,
-    "VST": 1795545193.304729,
-    "BE": 1795545193.304729,
-    "CRDO": 1795545193.304729,
-    "COHR": 1795545193.304729,
+    "APLD": 1795546792.5414596,
+    "VST": 1795546792.5414596,
+    "BE": 1795546792.5414596,
+    "CRDO": 1795546792.5414596,
+    "COHR": 1795546792.5414596,
     "MRVL": 1795546170.0943477,
     "LITE": 1795546170.0943477,
-    "AAOI": 1795545193.304729,
-    "SPCX": 1795545193.304729,
-    "ASTS": 1795545193.304729,
+    "AAOI": 1795546792.5414596,
+    "SPCX": 1795546792.5414596,
+    "ASTS": 1795546792.5414596,
     "AXTI": 1795546170.0943477,
-    "NASA": 1795545193.304729,
-    "LUNR": 1795545193.304729,
-    "TSLA": 1795545193.304729,
-    "AXP": 1795545193.304729,
-    "RKLB": 1795545193.304729,
-    "KO": 1795545193.304729,
-    "FLY": 1795545193.304729,
-    "INTC": 1795545193.304729,
-    "VRT": 1795545193.304729,
-    "HPE": 1795545193.304729,
-    "DELL": 1795545193.304729,
-    "OKLO": 1795545193.304729,
-    "CEG": 1795545193.304729,
-    "FPS": 1795545193.304729,
+    "NASA": 1795546792.5414596,
+    "LUNR": 1795546792.5414596,
+    "TSLA": 1795546792.5414596,
+    "AXP": 1795546792.5414596,
+    "RKLB": 1795546792.5414596,
+    "KO": 1795546792.5414596,
+    "FLY": 1795546792.5414596,
+    "INTC": 1795546792.5414596,
+    "VRT": 1795546792.5414596,
+    "HPE": 1795546792.5414596,
+    "DELL": 1795546792.5414596,
+    "OKLO": 1795546792.5414596,
+    "CEG": 1795546792.5414596,
+    "FPS": 1795546792.5414596,
     "MU": 1795546170.0943477,
     "SKHY": 1795546170.0943477,
     "WDC": 1795546170.0943477,
     "STX": 1795545193.304729,
     "MSTR": 1795545193.304729,
-    "SNDK": 1795545193.304729,
+    "SNDK": 1795546792.5414596,
     "BTC-USD": 1795546170.0943477,
     "CRWD": 1795545193.304729,
     "ORCL": 1795545193.304729,
@@ -3362,7 +3362,7 @@
     "V": 1795545193.304729,
     "CAT": 1795545193.304729,
     "FN": 1795546170.0943477,
-    "GLW": 1795545193.304729,
+    "GLW": 1795546792.5414596,
     "ANT": 1795545193.304729,
     "XAUUSD": 1795545193.304729,
     "KOSPI": 1795546059.2390764
