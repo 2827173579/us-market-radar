@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795510196.387,
-  "updated_at_et": "11-24 03:49 ET",
-  "updated_at_kst": "17:49 KST",
+  "updated_at_ts": 1795510304.604,
+  "updated_at_et": "11-24 03:51 ET",
+  "updated_at_kst": "17:51 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1388,6 +1388,13 @@
     ],
     "CRWV": [
       {
+        "title": "CRWV, NBIS And IREN Rally In A ‘Good Day’ For Neoclouds — Databricks Co-Founder Flags Security Gaps At ‘Top’ Neoclouds",
+        "url": "https://stocktwits.com/news-articles/markets/equity/crwv-nbis-iren-rally-good-day-neoclouds-databricks-co-founder-security-gaps-top-neoclouds/cNbsRgYR9kB?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 03:23 ET",
+        "pub_ts": 1795508637.0
+      },
+      {
         "title": "CoreWeave Inc. (CRWV) Just Turned the Tables. What Changed?",
         "url": "https://finance.yahoo.com/markets/stocks/articles/coreweave-inc-crwv-just-turned-031501579.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1414,13 +1421,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 16:16 ET",
         "pub_ts": 1795468581.0
-      },
-      {
-        "title": "CoreWeave to Participate in the 2026 UBS Global Technology and AI Conference",
-        "url": "https://finance.yahoo.com/technology/ai/articles/coreweave-participate-2026-ubs-global-210500355.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 16:05 ET",
-        "pub_ts": 1795467900.0
       }
     ],
     "NBIS": [
@@ -3296,23 +3296,23 @@
     "TLT": 1795510196.3871348,
     "GLD": 1795510196.3871348,
     "SQQQ": 1795510196.3871348,
-    "TSM": 1795508782.150251,
+    "TSM": 1795510304.6043298,
     "VIXY": 1795510196.3871348,
     "SOXS": 1795510196.3871348,
     "NVDA": 1795510196.3871348,
-    "AMD": 1795508782.150251,
-    "ASML": 1795508782.150251,
-    "QCOM": 1795508782.150251,
-    "AVGO": 1795508782.150251,
-    "AMAT": 1795508782.150251,
-    "META": 1795508782.150251,
-    "GOOGL": 1795508782.150251,
-    "MSFT": 1795508782.150251,
-    "AAPL": 1795508782.150251,
-    "PLTR": 1795508782.150251,
-    "NOW": 1795508782.150251,
-    "AMZN": 1795508782.150251,
-    "CRWV": 1795508782.150251,
+    "AMD": 1795510304.6043298,
+    "ASML": 1795510304.6043298,
+    "QCOM": 1795510304.6043298,
+    "AVGO": 1795510304.6043298,
+    "AMAT": 1795510304.6043298,
+    "META": 1795510304.6043298,
+    "GOOGL": 1795510304.6043298,
+    "MSFT": 1795510304.6043298,
+    "AAPL": 1795510304.6043298,
+    "PLTR": 1795510304.6043298,
+    "NOW": 1795510304.6043298,
+    "AMZN": 1795510304.6043298,
+    "CRWV": 1795510304.6043298,
     "NBIS": 1795509001.444044,
     "APLD": 1795509220.6783664,
     "VST": 1795509220.6783664,
@@ -3363,7 +3363,7 @@
     "GLW": 1795509220.6783664,
     "ANT": 1795509329.1768882,
     "XAUUSD": 1795509543.3090684,
-    "KOSPI": 1795508782.150251
+    "KOSPI": 1795510304.6043298
   },
   "opex_shield": {
     "date": "2026-11-24",
