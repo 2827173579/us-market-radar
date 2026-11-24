@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795564265.607,
-  "updated_at_et": "11-24 18:51 ET",
-  "updated_at_kst": "08:51 KST",
+  "updated_at_ts": 1795564362.063,
+  "updated_at_et": "11-24 18:52 ET",
+  "updated_at_kst": "08:52 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -927,29 +927,29 @@
         "title": "Dow Jones Futures Fall: Nvidia, Anthropic Lead AI Retreat But Many Sectors Strong; Fed Inflation Data Due",
         "url": "https://finance.yahoo.com/m/d96603c1-fe7f-3bf3-8158-0728b464d469/dow-jones-futures-fall%3A.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 18:21 ET",
-        "pub_ts": 1795562492.0
+        "time": "11-24 18:47 ET",
+        "pub_ts": 1795564036.0
       },
       {
-        "title": "A scandal like the one haunting Nvidia just reached AMD, its biggest rival",
-        "url": "https://www.thestreet.com/investing/stocks/scandal-like-one-haunting-nvidia-just-reached-amd-its-biggest-rival?.tsrc=rss",
+        "title": "Jensen Huang Reveals 90 Minutes Of Daily Therapy. Nvidia CEO Apologizes To Staff After Scandal.",
+        "url": "https://www.ibtimes.com/jensen-huang-daily-therapy-after-misconduct-scandal-3810157?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 18:17 ET",
-        "pub_ts": 1795562220.0
+        "time": "11-24 18:42 ET",
+        "pub_ts": 1795563768.0
       },
       {
-        "title": "California AG Sees 'Bright Red Flags' Regarding Nvidia",
-        "url": "https://finance.yahoo.com/video/california-ag-sees-bright-red-230340002.html?.tsrc=rss",
+        "title": "How Much Is Nvidia Stock Worth Now That Jensen Huang Is Back?",
+        "url": "https://www.fool.com/investing/2026/11/24/how-much-is-nvidia-stock-worth-now-that-jensen-huang-is-back/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 18:03 ET",
-        "pub_ts": 1795561420.0
+        "time": "11-24 18:30 ET",
+        "pub_ts": 1795563002.0
       },
       {
-        "title": "In Response to the Turmoil at Nvidia, Bitcoin Drops Below $70,000. Is This a Buy-the-Dip Opportunity?",
-        "url": "https://www.fool.com/investing/2026/11/24/in-response-to-the-turmoil-at-nvidia-bitcoin-drops-below-usd70-000-is-this-a-buy-the-dip-opportunity/?.tsrc=rss",
+        "title": "Why AMD Stock Fell Today",
+        "url": "https://www.fool.com/investing/2026/11/24/why-amd-stock-fell-today/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 18:01 ET",
-        "pub_ts": 1795561262.0
+        "time": "11-24 18:25 ET",
+        "pub_ts": 1795562702.0
       }
     ],
     "AMD": [
@@ -959,6 +959,13 @@
         "source": "Yahoo Finance",
         "time": "11-24 16:45 ET",
         "pub_ts": 1795556758.0
+      },
+      {
+        "title": "Why AMD Stock Fell Today",
+        "url": "https://www.fool.com/investing/2026/11/24/why-amd-stock-fell-today/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 18:25 ET",
+        "pub_ts": 1795562702.0
       },
       {
         "title": "A scandal like the one haunting Nvidia just reached AMD, its biggest rival",
@@ -980,13 +987,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 16:13 ET",
         "pub_ts": 1795554780.0
-      },
-      {
-        "title": "Is AMD Among the Morgan Stanley’s Best Semiconductor and Server Stocks to Buy for 2027?",
-        "url": "https://finance.yahoo.com/technology/articles/amd-among-morgan-stanley-best-205409840.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 15:54 ET",
-        "pub_ts": 1795553649.0
       }
     ],
     "ASML": [
@@ -3294,26 +3294,26 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795562856.3755548,
-    "SOXL": 1795562856.3755548,
+    "KORU": 1795564362.0629106,
+    "SOXL": 1795564362.0629106,
     "SPY": 1795563157.5428145,
-    "DIA": 1795562856.3755548,
-    "SOXX": 1795562856.3755548,
-    "QQQ": 1795562856.3755548,
+    "DIA": 1795564362.0629106,
+    "SOXX": 1795564362.0629106,
+    "QQQ": 1795564362.0629106,
     "SMH": 1795563157.5428145,
-    "IWM": 1795562856.3755548,
-    "IGV": 1795562856.3755548,
-    "TLT": 1795562856.3755548,
-    "GLD": 1795562856.3755548,
-    "SQQQ": 1795562856.3755548,
+    "IWM": 1795564362.0629106,
+    "IGV": 1795564362.0629106,
+    "TLT": 1795564362.0629106,
+    "GLD": 1795564362.0629106,
+    "SQQQ": 1795564362.0629106,
     "TSM": 1795563157.5428145,
-    "VIXY": 1795562856.3755548,
-    "SOXS": 1795562856.3755548,
-    "NVDA": 1795562856.3755548,
-    "AMD": 1795562856.3755548,
+    "VIXY": 1795564362.0629106,
+    "SOXS": 1795564362.0629106,
+    "NVDA": 1795564362.0629106,
+    "AMD": 1795564362.0629106,
     "ASML": 1795563157.5428145,
     "QCOM": 1795563157.5428145,
-    "AVGO": 1795562856.3755548,
+    "AVGO": 1795564362.0629106,
     "AMAT": 1795563157.5428145,
     "META": 1795563157.5428145,
     "GOOGL": 1795563157.5428145,
