@@ -1,9 +1,23 @@
 {
-  "updated_at_ts": 1795530984.499,
-  "updated_at_et": "11-24 09:36 ET",
-  "updated_at_kst": "23:36 KST",
+  "updated_at_ts": 1795531090.41,
+  "updated_at_et": "11-24 09:38 ET",
+  "updated_at_kst": "23:38 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261124223720599800",
+      "title": "【小摩展望2027年大宗商品：黄金有望重返4500美元】 11月24日讯，摩根大通表示，…",
+      "summary": "【小摩展望2027年大宗商品：黄金有望重返4500美元】 11月24日讯，摩根大通表示，预计随着美国在2027年转向去库存，铜价将向每吨1.1万美元迈进。摩根大通表示，锌供应受限的局面可能仍将支撑价格，预计2027年锌价均值在每吨3400美元左右。摩根大通预计，原油价格走低以及美联储自2027年一季度起维持利率不变，最终将推动黄金价格在2027年第四季度回升至每盎司4500美元，白银价格则将收复失地，回升至每盎司50多美元区间的中段水平。摩根大通表示，2027年下半年铂金投资需求将出现更强劲的增长势头，推动市场转向供应短缺，并进一步强化由黄金领涨的下半年涨势，推动铂金价格向每盎司1800美元迈进。摩根大通认为，供应过剩以及钯金需要相对于铂金维持更大折价，将使钯金价格前景在2027年保持相对稳定，预计价格将在每盎司1000至1200美元附近波动。摩根大通预计，到2027年底，铝价将跌向每吨2500美元。",
+      "keywords": [
+        "美联储",
+        "原油"
+      ],
+      "pub_ts": 1795531040.0,
+      "time_et": "11-24 09:37 ET",
+      "time_bj": "22:37 BJ",
+      "time_kst": "23:37 KST",
+      "time_display": "09:37 ET / 22:37 BJ"
+    },
     {
       "id": "20261124223352143800",
       "title": "iShares半导体ETF跌约5%。AMD(AMD.O)跌6.5%，英特尔(INTC.O…",
@@ -329,19 +343,6 @@
       "time_bj": "18:04 BJ",
       "time_kst": "19:04 KST",
       "time_display": "05:04 ET / 18:04 BJ"
-    },
-    {
-      "id": "20261124174024658800",
-      "title": "欧洲央行官员呼吁尽早加息，通胀压力正向更多领域扩散",
-      "summary": "欧元区通胀升至4%，已不再只是能源惹的祸。随着薪资与汇率风险升温，欧洲央行12月或迎第三次加息，但成员国经济分化正让明年政策充满变数。",
-      "keywords": [
-        "加息"
-      ],
-      "pub_ts": 1795513224.0,
-      "time_et": "11-24 04:40 ET",
-      "time_bj": "17:40 BJ",
-      "time_kst": "18:40 KST",
-      "time_display": "04:40 ET / 17:40 BJ"
     }
   ],
   "ticker_news": {
@@ -2537,6 +2538,13 @@
         "pub_ts": 1795525204.0
       },
       {
+        "title": "Strategy Sinks 18% in a Week as Bitcoin Breaks $60,000: Peter Schiff Warns It’s “About to Blow Up”",
+        "url": "https://www.tikr.com/blog/strategy-sinks-18-in-a-week-as-bitcoin-breaks-60000-peter-schiff-warns-its-about-to-blow-up?ref=yahoofinance&tlnk=yf-261124-mv9fmvx4&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 04:42 ET",
+        "pub_ts": 1795513359.0
+      },
+      {
         "title": "LIVE – Bitcoin Overnight Rally Roundtripped: Saylor and Strategy Didn’t Flinch",
         "url": "https://cryptonews.com/news/bitcoin-rally-roundtrip-saylor-strategy-buying-crypto-news/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2556,16 +2564,23 @@
         "source": "Yahoo Finance",
         "time": "11-23 12:05 ET",
         "pub_ts": 1795453524.0
-      },
-      {
-        "title": "Strategy Boosts Preferred Buyback Budget to $4 Billion",
-        "url": "https://unchainedcrypto.com/strategy-boosts-preferred-buyback-budget-to-4-billion/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 11:30 ET",
-        "pub_ts": 1795451448.0
       }
     ],
     "SNDK": [
+      {
+        "title": "Micron Falls 7% as NVIDIA Pullback Partially Reverses Monday’s AI Chip Rally; SanDisk and SK Hynix Drop 6%",
+        "url": "https://247wallst.com/investing/2026/11/24/micron-falls-7-as-nvidia-pullback-partially-reverses-mondays-ai-chip-rally-sandisk-and-sk-hynix-drop-6/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 09:07 ET",
+        "pub_ts": 1795529253.0
+      },
+      {
+        "title": "Why Is Sandisk Stock Pulling Back Today?",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/why-sandisk-stock-pulling-back-130945522.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 08:09 ET",
+        "pub_ts": 1795525785.0
+      },
       {
         "title": "SanDisk Stock At $937 Looked Cheap. Where Is The Floor?",
         "url": "https://www.trefis.com/stock/sndk/articles/627524/sandisk-stock-at-937-looked-cheap-where-is-the-floor/2026-11-24?.tsrc=rss",
@@ -2581,25 +2596,11 @@
         "pub_ts": 1795518720.0
       },
       {
-        "title": "Sandisk Sinks 13% in a Week as TrendForce Sees Flash Prices Falling in 2027. Time to Buy?",
-        "url": "https://www.tikr.com/blog/sandisk-sinks-13-in-a-week-as-trendforce-sees-flash-prices-falling-in-2027-time-to-buy?ref=yahoofinance&tlnk=yf-261124-gx862hh2&.tsrc=rss",
+        "title": "Micron Just Dropped 19% in a Month. Is It Time to Sell, or Load Up?",
+        "url": "https://www.tikr.com/blog/micron-just-dropped-19-in-a-month-is-it-time-to-sell-or-load-up?ref=yahoofinance&tlnk=yf-261124-8fvqwgxg&.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 00:53 ET",
-        "pub_ts": 1795499629.0
-      },
-      {
-        "title": "Prediction: This Will Be Sandisk’s Stock Price by the End of 2027",
-        "url": "https://www.fool.com/investing/2026/11/23/prediction-this-will-be-sandisks-stock-price-by-the-end-of-2027/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 17:16 ET",
-        "pub_ts": 1795472162.0
-      },
-      {
-        "title": "Sandisk (SNDK) Stock Looks Below Fair Value After Its 179% Run",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/sandisk-sndk-stock-looks-below-200804651.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 15:08 ET",
-        "pub_ts": 1795464484.0
+        "time": "11-24 04:46 ET",
+        "pub_ts": 1795513576.0
       }
     ],
     "BTC-USD": [
@@ -2641,6 +2642,13 @@
     ],
     "CRWD": [
       {
+        "title": "What Does Zscaler Really Cost CrowdStrike Owners?",
+        "url": "https://www.trefis.com/stock/crwd/articles/628273/what-does-zscaler-really-cost-crowdstrike-owners/2026-11-24?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 09:03 ET",
+        "pub_ts": 1795529031.0
+      },
+      {
         "title": "What CrowdStrike's Stock Pay Means For Its Owners",
         "url": "https://www.trefis.com/stock/crwd/articles/628258/what-crowdstrike-s-stock-pay-means-for-its-owners/2026-11-24?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2667,13 +2675,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 07:01 ET",
         "pub_ts": 1795521660.0
-      },
-      {
-        "title": "CrowdStrike to Acquire Zscaler: Can it Boost Falcon Platform Growth?",
-        "url": "https://finance.yahoo.com/technology/articles/crowdstrike-acquire-zscaler-boost-falcon-115700050.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 06:57 ET",
-        "pub_ts": 1795521420.0
       }
     ],
     "ORCL": [
@@ -3196,6 +3197,13 @@
     ],
     "ANT": [
       {
+        "title": "Anthropic stock drops below $83 IPO price as day-one pop vanishes",
+        "url": "https://finance.yahoo.com/markets/article/anthropic-stock-drops-below-83-ipo-price-as-day-one-pop-vanishes-143438983.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 09:34 ET",
+        "pub_ts": 1795530878.0
+      },
+      {
         "title": "Archive Intel Launches Model Context Protocol (MCP) and Claude Compliance API Integration",
         "url": "https://finance.yahoo.com/technology/ai/articles/archive-intel-launches-model-context-140400674.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3210,25 +3218,18 @@
         "pub_ts": 1795528907.0
       },
       {
+        "title": "Anthropic wins Wedbush backing as broker sees 35% upside",
+        "url": "https://www.proactiveinvestors.com/companies/news/1102345/anthropic-wins-wedbush-backing-as-broker-sees-35-upside-1102345.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 09:00 ET",
+        "pub_ts": 1795528800.0
+      },
+      {
         "title": "Stock Market Today: Tech Futures Sell Off After Big Market Surge; AMD, Anthropic, Nvidia Dive (Live Coverage)",
         "url": "https://finance.yahoo.com/m/4aa4ff31-269f-346e-80c4-e681510af7ae/stock-market-today%3A-tech.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-24 08:51 ET",
         "pub_ts": 1795528300.0
-      },
-      {
-        "title": "Should Anthropic Holders Worry About Its Rough Start?",
-        "url": "https://www.trefis.com/stock/ant/articles/628266/should-anthropic-holders-worry-about-its-rough-start/2026-11-24?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 08:46 ET",
-        "pub_ts": 1795527972.0
-      },
-      {
-        "title": "YieldMax® Introduces Option Income Strategy ETF on Anthropic (ANT)",
-        "url": "https://finance.yahoo.com/markets/options/articles/yieldmax-introduces-option-income-strategy-130000457.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 08:00 ET",
-        "pub_ts": 1795525200.0
       }
     ],
     "XAUUSD": [
@@ -3337,27 +3338,27 @@
     "MU": 1795530449.7526069,
     "SKHY": 1795530449.7526069,
     "WDC": 1795530449.7526069,
-    "STX": 1795529545.133309,
-    "MSTR": 1795529545.133309,
-    "SNDK": 1795529545.133309,
+    "STX": 1795531090.4095514,
+    "MSTR": 1795531090.4095514,
+    "SNDK": 1795531090.4095514,
     "BTC-USD": 1795530449.7526069,
-    "CRWD": 1795529545.133309,
+    "CRWD": 1795531090.4095514,
     "ORCL": 1795530767.907945,
     "COIN": 1795530767.907945,
     "LLY": 1795530767.907945,
     "MRNA": 1795530767.907945,
     "NKE": 1795530767.907945,
     "MCD": 1795530767.907945,
-    "PEP": 1795529545.133309,
+    "PEP": 1795531090.4095514,
     "XOM": 1795530984.4993865,
     "JPM": 1795530984.4993865,
-    "WMT": 1795529545.133309,
+    "WMT": 1795531090.4095514,
     "V": 1795530767.907945,
-    "CAT": 1795529545.133309,
+    "CAT": 1795531090.4095514,
     "FN": 1795530449.7526069,
     "GLW": 1795530767.907945,
-    "ANT": 1795529545.133309,
-    "XAUUSD": 1795529545.133309,
+    "ANT": 1795531090.4095514,
+    "XAUUSD": 1795531090.4095514,
     "KOSPI": 1795530449.7526069
   },
   "opex_shield": {
@@ -3377,7 +3378,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (09:33 ET / 22:33 BJ) [半导体]：iShares半导体ETF跌约5%。AMD(AMD.O)跌6.5%，英特尔(INTC.O)跌4%，博通(AVGO.O)跌3.2%，迈威尔科技(MRVL.O)跌2.9%。美光科技(MU.O)跌",
+    "detail": "⚡ 最新核心快讯 (09:37 ET / 22:37 BJ) [美联储] [原油]：【小摩展望2027年大宗商品：黄金有望重返4500美元】 11月24日讯，摩根大通表示，预计随着美国在2027年转向去库存，铜价将向每吨1.1万美元迈进。摩根大通表示，锌供应受限的局面可能仍",
     "event_name": "",
     "minutes_left": 0,
     "opex_shield": {
