@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795499504.082,
-  "updated_at_et": "11-24 00:51 ET",
-  "updated_at_kst": "14:51 KST",
+  "updated_at_ts": 1795499609.561,
+  "updated_at_et": "11-24 00:53 ET",
+  "updated_at_kst": "14:53 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -901,6 +901,20 @@
     ],
     "NVDA": [
       {
+        "title": "Stocks climb as Huang's return to Nvidia lifts investor optimism",
+        "url": "https://www.euronews.com/2026/11/24/stocks-climb-as-huangs-return-to-nvidia-lifts-investor-optimism?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 00:41 ET",
+        "pub_ts": 1795498888.0
+      },
+      {
+        "title": "3 AI Infrastructure Stocks Retail Investors Are Watching After Nvidia Shares Jump",
+        "url": "https://finance.yahoo.com/technology/ai/articles/3-ai-infrastructure-stocks-retail-052634911.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 00:26 ET",
+        "pub_ts": 1795497994.0
+      },
+      {
         "title": "Can Cisco Stock Hit $120?",
         "url": "https://www.trefis.com/stock/csco/articles/627586/can-cisco-stock-hit-120/2026-11-23?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -917,20 +931,6 @@
       {
         "title": "Stocks Opened Up, Then Fell 3% By The Close. What Happened The Last 45 Times?",
         "url": "https://www.trefis.com/stock/spy/articles/627441/stocks-opened-up-then-fell-3-by-the-close-what-happened-the-last-45-times/2026-11-23?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 00:06 ET",
-        "pub_ts": 1795496802.0
-      },
-      {
-        "title": "1966 Or 1995: Which Way Does America's $2.1 Trillion Deficit Go?",
-        "url": "https://www.trefis.com/stock/spy/articles/627413/1966-or-1995-which-way-does-america-s-2-1-trillion-deficit-go/2026-11-23?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 00:06 ET",
-        "pub_ts": 1795496802.0
-      },
-      {
-        "title": "The Inflation Math, Updated: The Fed Is Fighting Oil",
-        "url": "https://www.trefis.com/stock/spy/articles/627433/the-inflation-math-updated-the-fed-is-fighting-oil/2026-11-23?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-24 00:06 ET",
         "pub_ts": 1795496802.0
@@ -3278,22 +3278,22 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795498086.868401,
-    "SOXL": 1795498086.868401,
-    "SPY": 1795498086.868401,
-    "DIA": 1795498086.868401,
-    "SOXX": 1795498086.868401,
-    "QQQ": 1795498086.868401,
-    "SMH": 1795498086.868401,
-    "IWM": 1795498086.868401,
-    "IGV": 1795498086.868401,
-    "TLT": 1795498086.868401,
-    "GLD": 1795498086.868401,
-    "SQQQ": 1795498086.868401,
+    "KORU": 1795499609.5613153,
+    "SOXL": 1795499609.5613153,
+    "SPY": 1795499609.5613153,
+    "DIA": 1795499609.5613153,
+    "SOXX": 1795499609.5613153,
+    "QQQ": 1795499609.5613153,
+    "SMH": 1795499609.5613153,
+    "IWM": 1795499609.5613153,
+    "IGV": 1795499609.5613153,
+    "TLT": 1795499609.5613153,
+    "GLD": 1795499609.5613153,
+    "SQQQ": 1795499609.5613153,
     "TSM": 1795498196.6255133,
-    "VIXY": 1795498086.868401,
-    "SOXS": 1795498086.868401,
-    "NVDA": 1795498086.868401,
+    "VIXY": 1795499609.5613153,
+    "SOXS": 1795499609.5613153,
+    "NVDA": 1795499609.5613153,
     "AMD": 1795498196.6255133,
     "ASML": 1795498196.6255133,
     "QCOM": 1795498196.6255133,
