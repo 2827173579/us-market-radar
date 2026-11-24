@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795540927.937,
-  "updated_at_et": "11-24 12:22 ET",
-  "updated_at_kst": "02:22 KST",
+  "updated_at_ts": 1795541042.534,
+  "updated_at_et": "11-24 12:24 ET",
+  "updated_at_kst": "02:24 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1131,6 +1131,13 @@
     ],
     "META": [
       {
+        "title": "Mark Zuckerberg's Meta Faces New Battle Over Control",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/mark-zuckerbergs-meta-faces-battle-164556554.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 11:45 ET",
+        "pub_ts": 1795538756.0
+      },
+      {
         "title": "What Moved Meta Stock?",
         "url": "https://www.trefis.com/stock/meta/articles/628634/what-moved-meta-stock/2026-11-24?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1157,13 +1164,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 10:45 ET",
         "pub_ts": 1795535135.0
-      },
-      {
-        "title": "Meta launches its Muse personal agent in the UK – but it comes with a big warning",
-        "url": "https://www.independent.co.uk/tech/meta-muse-uk-launch-release-warning-b3090758.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 10:11 ET",
-        "pub_ts": 1795533108.0
       }
     ],
     "GOOGL": [
@@ -1173,6 +1173,20 @@
         "source": "Yahoo Finance",
         "time": "11-24 10:00 ET",
         "pub_ts": 1795532400.0
+      },
+      {
+        "title": "Broadcom Stocks Fall 3.98% as Google TPU Order Report Clouds AI Outlook",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/broadcom-stocks-fall-3-98-165405396.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 11:54 ET",
+        "pub_ts": 1795539245.0
+      },
+      {
+        "title": "Amazon Makes $7.5 Billion AI Move to Challenge Nvidia",
+        "url": "https://finance.yahoo.com/technology/ai/articles/amazon-makes-7-5-billion-164215378.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 11:42 ET",
+        "pub_ts": 1795538535.0
       },
       {
         "title": "Anthropic Broke Its $83 IPO Price Overnight. Jim Cramer Blames “the Achilles Heel of Overnight Trading”",
@@ -1187,20 +1201,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 11:22 ET",
         "pub_ts": 1795537344.0
-      },
-      {
-        "title": "What Moved Meta Stock?",
-        "url": "https://www.trefis.com/stock/meta/articles/628634/what-moved-meta-stock/2026-11-24?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 11:20 ET",
-        "pub_ts": 1795537206.0
-      },
-      {
-        "title": "Alphabet (GOOGL) Expands AI Search With Wallet Data",
-        "url": "https://finance.yahoo.com/technology/ai/articles/alphabet-googl-expands-ai-search-161031910.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 11:10 ET",
-        "pub_ts": 1795536631.0
       }
     ],
     "MSFT": [
@@ -1256,25 +1256,25 @@
         "pub_ts": 1795524188.0
       },
       {
-        "title": "Anduril’s Palmer Luckey Thinks “Most AI Is Going to Run Locally.” That’s a Bet on Apple",
-        "url": "https://www.tikr.com/blog/andurils-palmer-luckey-thinks-most-ai-is-going-to-run-locally-thats-a-bet-on-apple?ref=yahoofinance&tlnk=yf-261124-9x2g364x&.tsrc=rss",
+        "title": "Apple Stock Has 3 Things Going for It in 2027. Here’s My Price Target",
+        "url": "https://247wallst.com/investing/2026/11/24/apple-stock-has-3-things-going-for-it-in-2027-heres-my-price-target/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 11:27 ET",
-        "pub_ts": 1795537657.0
+        "time": "11-24 12:03 ET",
+        "pub_ts": 1795539837.0
       },
       {
-        "title": "Global Neural Processor Market Report 2026: Size, Share, Trends, and Forecast to 2030 | Capitalize on 22.2% CAGR as NVIDIA, Apple, Alphabet, and Intel Accelerate Edge AI",
-        "url": "https://finance.yahoo.com/technology/ai/articles/global-neural-processor-market-report-144100416.html?.tsrc=rss",
+        "title": "Apple Inc. (AAPL) Delivered Strong Results: Why Investors Are Watching Its Next Move Closely",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/apple-inc-aapl-delivered-strong-165645219.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 09:41 ET",
-        "pub_ts": 1795531260.0
+        "time": "11-24 11:56 ET",
+        "pub_ts": 1795539405.0
       },
       {
-        "title": "Embedded Microprocessor Unit (MPU) Global Market Report 2026 | Capitalize on Edge AI and IoT Growth to $59.18 Billion by 2030 with NVIDIA, Intel, Qualcomm, NXP, and Renesas",
-        "url": "https://finance.yahoo.com/technology/articles/embedded-microprocessor-unit-mpu-global-143600298.html?.tsrc=rss",
+        "title": "Apple Set to Revive Popular Product Line After Years",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/apple-set-revive-popular-product-164314724.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 09:36 ET",
-        "pub_ts": 1795530960.0
+        "time": "11-24 11:43 ET",
+        "pub_ts": 1795538594.0
       }
     ],
     "PLTR": [
@@ -1353,6 +1353,13 @@
     ],
     "AMZN": [
       {
+        "title": "Amazon Makes $7.5 Billion AI Move to Challenge Nvidia",
+        "url": "https://finance.yahoo.com/technology/ai/articles/amazon-makes-7-5-billion-164215378.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 11:42 ET",
+        "pub_ts": 1795538535.0
+      },
+      {
         "title": "Amazon’s Decart acquisition is a bet on using software to narrow the gap with Nvidia in the AI chip race",
         "url": "https://finance.yahoo.com/technology/ai/articles/amazon-decart-acquisition-bet-using-155107586.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1379,16 +1386,16 @@
         "source": "Yahoo Finance",
         "time": "11-24 10:08 ET",
         "pub_ts": 1795532884.0
-      },
-      {
-        "title": "Could Amazon Stock Double Over the Next Five Years? Here’s What Needs to Happen",
-        "url": "https://247wallst.com/investing/2026/11/24/could-amazon-stock-double-over-the-next-five-years-heres-what-needs-to-happen/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 09:37 ET",
-        "pub_ts": 1795531027.0
       }
     ],
     "CRWV": [
+      {
+        "title": "“The Bank of Nvidia Is Back,” Says CNBC’s David Faber. Its Investments Rose From $7 Billion to $110 Billion",
+        "url": "https://www.tikr.com/blog/the-bank-of-nvidia-is-back-says-cnbcs-david-faber-its-investments-rose-from-7-billion-to-110-billion?ref=yahoofinance&tlnk=yf-261124-hfqgvgp4&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 11:49 ET",
+        "pub_ts": 1795538978.0
+      },
       {
         "title": "What Sent CoreWeave Stock Higher On Monday?",
         "url": "https://www.trefis.com/stock/crwv/articles/628618/what-sent-coreweave-stock-higher-on-monday/2026-11-24?.tsrc=rss",
@@ -1409,13 +1416,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 09:54 ET",
         "pub_ts": 1795532088.0
-      },
-      {
-        "title": "Nvidia Turmoil: How Big Is the Risk for CoreWeave?",
-        "url": "https://www.fool.com/investing/2026/11/24/nvidia-turmoil-how-big-is-the-risk-for-coreweave/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 05:30 ET",
-        "pub_ts": 1795516202.0
       },
       {
         "title": "“Tell Me Why I am Wrong”: Bill Ackman Lambasts Looming Fed Interest Rate Hike",
@@ -3307,14 +3307,14 @@
     "QCOM": 1795540927.9366758,
     "AVGO": 1795540927.9366758,
     "AMAT": 1795540927.9366758,
-    "META": 1795539501.859305,
-    "GOOGL": 1795539501.859305,
+    "META": 1795541042.5341015,
+    "GOOGL": 1795541042.5341015,
     "MSFT": 1795540927.9366758,
-    "AAPL": 1795539501.859305,
-    "PLTR": 1795539501.859305,
-    "NOW": 1795539501.859305,
-    "AMZN": 1795539501.859305,
-    "CRWV": 1795539501.859305,
+    "AAPL": 1795541042.5341015,
+    "PLTR": 1795541042.5341015,
+    "NOW": 1795541042.5341015,
+    "AMZN": 1795541042.5341015,
+    "CRWV": 1795541042.5341015,
     "NBIS": 1795539607.1346827,
     "APLD": 1795539925.9887524,
     "VST": 1795539925.9887524,
