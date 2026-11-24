@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795482743.042,
-  "updated_at_et": "11-23 20:12 ET",
-  "updated_at_kst": "10:12 KST",
+  "updated_at_ts": 1795482861.079,
+  "updated_at_et": "11-23 20:14 ET",
+  "updated_at_kst": "10:14 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -908,6 +908,13 @@
     ],
     "NVDA": [
       {
+        "title": "U.S. stock futures steady after Nvidia-led Wall Street rally",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/u-stock-futures-steady-nvidia-004836470.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 19:48 ET",
+        "pub_ts": 1795481316.0
+      },
+      {
         "title": "The Nasdaq Just Had Its Best Day Since April 2025. Anthropic Stock Fell Anyway.",
         "url": "https://www.fool.com/investing/2026/11/23/the-nasdaq-just-had-its-best-day-since-april-2025-anthropic-stock-fell-anyway/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -934,13 +941,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 19:20 ET",
         "pub_ts": 1795479607.0
-      },
-      {
-        "title": "Staples Beat Tech After Just 3 of 9 Crashes",
-        "url": "https://www.trefis.com/stock/spx/articles/627545/staples-beat-tech-after-just-3-of-9-crashes/2026-11-23?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 19:18 ET",
-        "pub_ts": 1795479509.0
       }
     ],
     "AMD": [
@@ -3248,22 +3248,22 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795481349.0703025,
-    "SOXL": 1795481349.0703025,
+    "KORU": 1795482861.078819,
+    "SOXL": 1795482861.078819,
     "SPY": 1795482527.5221126,
-    "DIA": 1795481349.0703025,
-    "SOXX": 1795481349.0703025,
+    "DIA": 1795482861.078819,
+    "SOXX": 1795482861.078819,
     "QQQ": 1795482527.5221126,
-    "SMH": 1795481349.0703025,
-    "IWM": 1795481349.0703025,
-    "IGV": 1795481349.0703025,
-    "TLT": 1795481349.0703025,
-    "GLD": 1795481349.0703025,
-    "SQQQ": 1795481349.0703025,
+    "SMH": 1795482861.078819,
+    "IWM": 1795482861.078819,
+    "IGV": 1795482861.078819,
+    "TLT": 1795482861.078819,
+    "GLD": 1795482861.078819,
+    "SQQQ": 1795482861.078819,
     "TSM": 1795481455.9461036,
-    "VIXY": 1795481349.0703025,
-    "SOXS": 1795481349.0703025,
-    "NVDA": 1795481349.0703025,
+    "VIXY": 1795482861.078819,
+    "SOXS": 1795482861.078819,
+    "NVDA": 1795482861.078819,
     "AMD": 1795481455.9461036,
     "ASML": 1795481455.9461036,
     "QCOM": 1795481455.9461036,
@@ -3318,10 +3318,10 @@
     "NKE": 1795482527.5221126,
     "MCD": 1795482527.5221126,
     "PEP": 1795481773.1804283,
-    "XOM": 1795481349.0703025,
-    "JPM": 1795481349.0703025,
+    "XOM": 1795482861.078819,
+    "JPM": 1795482861.078819,
     "WMT": 1795481773.1804283,
-    "V": 1795481349.0703025,
+    "V": 1795482861.078819,
     "CAT": 1795481773.1804283,
     "FN": 1795482527.5221126,
     "GLW": 1795481562.5390615,
