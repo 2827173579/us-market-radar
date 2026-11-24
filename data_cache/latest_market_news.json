@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795525461.52,
-  "updated_at_et": "11-24 08:04 ET",
-  "updated_at_kst": "22:04 KST",
+  "updated_at_ts": 1795525569.109,
+  "updated_at_et": "11-24 08:06 ET",
+  "updated_at_kst": "22:06 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -799,6 +799,13 @@
     ],
     "TSM": [
       {
+        "title": "TSMC Stock Just Had Its Best Day Since 2008",
+        "url": "https://247wallst.com/investing/2026/11/24/tsmc-stock-just-had-its-best-day-since-2008/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 07:38 ET",
+        "pub_ts": 1795523899.0
+      },
+      {
         "title": "TSMC and SK Hynix Stocks Jump After Nvidia Reinstates Jensen Huang as CEO",
         "url": "https://finance.yahoo.com/markets/stocks/articles/tsmc-sk-hynix-stocks-jump-120300756.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -825,13 +832,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 03:36 ET",
         "pub_ts": 1795509397.0
-      },
-      {
-        "title": "David Tepper, Cathie Wood and 44 Other Big Funds Bought Nvidia Last Quarter, While 27 Sold. Who’s Right?",
-        "url": "https://www.tikr.com/blog/david-tepper-cathie-wood-and-44-other-big-funds-bought-nvidia-last-quarter-while-27-sold-whos-right?ref=yahoofinance&tlnk=yf-261124-6gh9m74h&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 03:20 ET",
-        "pub_ts": 1795508422.0
       }
     ],
     "VIXY": [
@@ -910,42 +910,49 @@
     ],
     "NVDA": [
       {
+        "title": "Jensen Huang is back at Nvidia. Should AMD be worried?",
+        "url": "https://finance.yahoo.com/markets/stocks/article/jensen-huang-is-back-at-nvidia-should-amd-be-worried-130012666.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 08:00 ET",
+        "pub_ts": 1795525212.0
+      },
+      {
+        "title": "Quantum X Labs’s Decoder Delivered Lowest Logical Error Rates by integrating NVIDIA CUDA-Q QEC in Comparison to Benchmarked Decoders",
+        "url": "https://finance.yahoo.com/technology/ai/articles/quantum-x-labs-decoder-delivered-124800588.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 07:48 ET",
+        "pub_ts": 1795524480.0
+      },
+      {
+        "title": "Jensen Huang Is Back at Nvidia, but He Still Can't Compute Megawatts and Concrete Into Existence",
+        "url": "https://www.fool.com/investing/2026/11/24/jensen-huang-is-back-at-nvidia-but-he-still-cant-compute-megawatts-and-concrete-into-existence/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 07:47 ET",
+        "pub_ts": 1795524421.0
+      },
+      {
+        "title": "Nvidia Faces an SEC Probe, According to Press Reports. Should You Still Buy the Stock?",
+        "url": "https://www.fool.com/investing/2026/11/24/nvidia-faces-an-sec-probe-according-to-press-reports-should-you-still-buy-the-stock/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 07:35 ET",
+        "pub_ts": 1795523701.0
+      },
+      {
         "title": "YYForce (NASDAQ: YFOR) Launches Trained Humanoid Robot for Hotel Concierge Service Using NVIDIA Jetson and Isaac Sim",
         "url": "https://finance.yahoo.com/technology/ai/articles/yyforce-nasdaq-yfor-launches-trained-123500831.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-24 07:35 ET",
         "pub_ts": 1795523700.0
-      },
-      {
-        "title": "Anthropic Falls Below IPO Price. The Threat Wasn’t Nvidia, It Came From Inside",
-        "url": "https://beincrypto.com/anthropic-stock-below-ipo-price-employees/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 07:28 ET",
-        "pub_ts": 1795523290.0
-      },
-      {
-        "title": "Premarket movers: Nvidia slips; HPE, Semtech fall",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/premarket-movers-nvidia-slips-hpe-122424595.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 07:24 ET",
-        "pub_ts": 1795523064.0
-      },
-      {
-        "title": "NVIDIA Added About $1 Trillion in Minutes on Huang’s Return. Where Does the Price Target Go Now?",
-        "url": "https://247wallst.com/investing/2026/11/24/nvidia-added-about-1-trillion-in-minutes-on-huangs-return-where-does-the-price-target-go-now/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 07:17 ET",
-        "pub_ts": 1795522652.0
-      },
-      {
-        "title": "ASML Stock What Changed After Nvidia CEO Return",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/asml-stock-changed-nvidia-ceo-121558672.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 07:15 ET",
-        "pub_ts": 1795522558.0
       }
     ],
     "AMD": [
+      {
+        "title": "Jensen Huang is back at Nvidia. Should AMD be worried?",
+        "url": "https://finance.yahoo.com/markets/stocks/article/jensen-huang-is-back-at-nvidia-should-amd-be-worried-130012666.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 08:00 ET",
+        "pub_ts": 1795525212.0
+      },
       {
         "title": "Billionaire Philippe Laffont of Coatue Management Sent AMD Shares Packing and Loaded Up on This Hot AI IPO Instead",
         "url": "https://www.fool.com/investing/2026/11/24/billionaire-philippe-laffont-coatue-sent-amd-shares-packing-loaded-up-hot-ai-ipo-instead/?.tsrc=rss",
@@ -973,13 +980,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 06:01 ET",
         "pub_ts": 1795518078.0
-      },
-      {
-        "title": "FalcoTrader Announces Expanded Stock Trading Capabilities Across Its Simulated Trading Challenge Platform",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/falcotrader-announces-expanded-stock-trading-094700625.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 04:47 ET",
-        "pub_ts": 1795513620.0
       }
     ],
     "ASML": [
@@ -1206,6 +1206,13 @@
     ],
     "MSFT": [
       {
+        "title": "Cloud AI Update - Audi Integrates Cutting-Edge AI for In-Car Microsoft Access",
+        "url": "https://finance.yahoo.com/technology/ai/articles/cloud-ai-audi-integrates-cutting-123730181.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 07:37 ET",
+        "pub_ts": 1795523850.0
+      },
+      {
         "title": "Anthropic’s Frenemy Squeeze: Pledging Up to $49B to Microsoft While Building Its Own Landlord Escape Hatch",
         "url": "https://247wallst.com/investing/2026/11/24/anthropics-frenemy-squeeze-pledging-up-to-49b-to-microsoft-while-building-its-own-landlord-escape-hatch/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1232,13 +1239,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 06:04 ET",
         "pub_ts": 1795518280.0
-      },
-      {
-        "title": "What ProShares Trust (TQQQ) Bought: Apple Leads on Friday",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/proshares-trust-tqqq-bought-apple-110432486.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 06:04 ET",
-        "pub_ts": 1795518272.0
       }
     ],
     "AAPL": [
@@ -3295,22 +3295,22 @@
     "QQQ": 1795525461.5197084,
     "SMH": 1795525461.5197084,
     "IWM": 1795525461.5197084,
-    "IGV": 1795524019.1863575,
-    "TLT": 1795524019.1863575,
-    "GLD": 1795524019.1863575,
-    "SQQQ": 1795524019.1863575,
-    "TSM": 1795524019.1863575,
-    "VIXY": 1795524019.1863575,
-    "SOXS": 1795524019.1863575,
-    "NVDA": 1795524019.1863575,
-    "AMD": 1795524019.1863575,
-    "ASML": 1795524019.1863575,
-    "QCOM": 1795524019.1863575,
-    "AVGO": 1795524019.1863575,
-    "AMAT": 1795524019.1863575,
+    "IGV": 1795525569.1089377,
+    "TLT": 1795525569.1089377,
+    "GLD": 1795525569.1089377,
+    "SQQQ": 1795525569.1089377,
+    "TSM": 1795525569.1089377,
+    "VIXY": 1795525569.1089377,
+    "SOXS": 1795525569.1089377,
+    "NVDA": 1795525569.1089377,
+    "AMD": 1795525569.1089377,
+    "ASML": 1795525569.1089377,
+    "QCOM": 1795525569.1089377,
+    "AVGO": 1795525569.1089377,
+    "AMAT": 1795525569.1089377,
     "META": 1795524131.9109845,
     "GOOGL": 1795524131.9109845,
-    "MSFT": 1795524019.1863575,
+    "MSFT": 1795525569.1089377,
     "AAPL": 1795524131.9109845,
     "PLTR": 1795524131.9109845,
     "NOW": 1795524131.9109845,
