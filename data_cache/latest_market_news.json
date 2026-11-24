@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795517892.198,
-  "updated_at_et": "11-24 05:58 ET",
-  "updated_at_kst": "19:58 KST",
+  "updated_at_ts": 1795518000.786,
+  "updated_at_et": "11-24 06:00 ET",
+  "updated_at_kst": "20:00 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2608,6 +2608,13 @@
     ],
     "BTC-USD": [
       {
+        "title": "Down 40% or More for the Year, Are Any of These Top Cryptocurrencies Worth Buying Right Now?",
+        "url": "https://www.fool.com/investing/2026/11/24/down-40-or-more-for-the-year-are-any-of-these-top-cryptocurrencies-worth-buying-right-now/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 05:50 ET",
+        "pub_ts": 1795517402.0
+      },
+      {
         "title": "Bitcoin hovers around $60k amid little relief from rate, regulatory jitters",
         "url": "https://finance.yahoo.com/markets/crypto/articles/bitcoin-hovers-around-60k-amid-064423052.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2634,13 +2641,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 04:20 ET",
         "pub_ts": 1795512002.0
-      },
-      {
-        "title": "Ex Ripple CTO David Schwartz Fires Back at Viral Claim He Sold 88% of His XRP in Months",
-        "url": "https://www.ccn.com/news/crypto/david-schwartz-fires-back-viral-claim-sold-88-xrp-months/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 04:15 ET",
-        "pub_ts": 1795511734.0
       }
     ],
     "CRWD": [
@@ -3312,18 +3312,18 @@
     "NOW": 1795517892.1981976,
     "AMZN": 1795517892.1981976,
     "CRWV": 1795517892.1981976,
-    "NBIS": 1795516499.4497952,
+    "NBIS": 1795518000.78585,
     "APLD": 1795516745.5146592,
     "VST": 1795516745.5146592,
     "BE": 1795516745.5146592,
     "CRDO": 1795516745.5146592,
     "COHR": 1795516745.5146592,
-    "MRVL": 1795516499.4497952,
-    "LITE": 1795516499.4497952,
+    "MRVL": 1795518000.78585,
+    "LITE": 1795518000.78585,
     "AAOI": 1795516745.5146592,
     "SPCX": 1795516863.6883514,
     "ASTS": 1795516745.5146592,
-    "AXTI": 1795516499.4497952,
+    "AXTI": 1795518000.78585,
     "NASA": 1795516863.6883514,
     "LUNR": 1795516863.6883514,
     "TSLA": 1795516863.6883514,
@@ -3338,13 +3338,13 @@
     "OKLO": 1795516991.7714608,
     "CEG": 1795516991.7714608,
     "FPS": 1795516991.7714608,
-    "MU": 1795516499.4497952,
-    "SKHY": 1795516499.4497952,
-    "WDC": 1795516499.4497952,
+    "MU": 1795518000.78585,
+    "SKHY": 1795518000.78585,
+    "WDC": 1795518000.78585,
     "STX": 1795517117.5530953,
     "MSTR": 1795517117.5530953,
     "SNDK": 1795517117.5530953,
-    "BTC-USD": 1795516499.4497952,
+    "BTC-USD": 1795518000.78585,
     "CRWD": 1795517117.5530953,
     "ORCL": 1795516745.5146592,
     "COIN": 1795516745.5146592,
@@ -3358,11 +3358,11 @@
     "WMT": 1795517117.5530953,
     "V": 1795516745.5146592,
     "CAT": 1795517117.5530953,
-    "FN": 1795516499.4497952,
+    "FN": 1795518000.78585,
     "GLW": 1795516745.5146592,
     "ANT": 1795517117.5530953,
     "XAUUSD": 1795517117.5530953,
-    "KOSPI": 1795516499.4497952
+    "KOSPI": 1795518000.78585
   },
   "opex_shield": {
     "date": "2026-11-24",
