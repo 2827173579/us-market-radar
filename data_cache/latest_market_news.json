@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795548191.516,
-  "updated_at_et": "11-24 14:23 ET",
-  "updated_at_kst": "04:23 KST",
+  "updated_at_ts": 1795548295.564,
+  "updated_at_et": "11-24 14:24 ET",
+  "updated_at_kst": "04:24 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1515,6 +1515,13 @@
         "pub_ts": 1795543525.0
       },
       {
+        "title": "George Soros and 10 Other Big Funds Sold Vistra Last Quarter, While 7 Bought. Who’s Right?",
+        "url": "https://www.tikr.com/blog/george-soros-and-10-other-big-funds-sold-vistra-last-quarter-while-7-bought-whos-right?ref=yahoofinance&tlnk=yf-261124-4r3chgrm&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 11:59 ET",
+        "pub_ts": 1795539570.0
+      },
+      {
         "title": "Midterms provide clarity on data center development: Vistra CEO",
         "url": "https://www.utilitydive.com/news/vistra-midterms-data-center-ercot-pjm/875626/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1527,13 +1534,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 15:38 ET",
         "pub_ts": 1795466329.0
-      },
-      {
-        "title": "1 Compelling Reason to Buy Vistra Stock Before November Ends",
-        "url": "https://www.fool.com/investing/2026/11/21/1-compelling-reason-to-buy-vistra-stock-before-november-ends/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-21 15:05 ET",
-        "pub_ts": 1795291502.0
       }
     ],
     "BE": [
@@ -1760,6 +1760,20 @@
     ],
     "SPCX": [
       {
+        "title": "Why SpaceX Dropped Again Today",
+        "url": "https://www.fool.com/investing/2026/11/24/why-spacex-dropped-again-today/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 14:01 ET",
+        "pub_ts": 1795546896.0
+      },
+      {
+        "title": "SpaceX Falls 4%, CoreWeave Down 13%, Nebius Down 11% as AI Stocks Give Back Nvidia Rally",
+        "url": "https://www.tikr.com/blog/spacex-falls-4-coreweave-down-13-nebius-down-11-as-ai-stocks-give-back-nvidia-rally?ref=yahoofinance&tlnk=yf-261124-6rfwxx6w&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 13:57 ET",
+        "pub_ts": 1795546678.0
+      },
+      {
         "title": "xAI co-founders launch Epochal to build predictive AI models",
         "url": "https://finance.yahoo.com/technology/ai/articles/xai-co-founders-launch-epochal-182207372.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1779,20 +1793,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 13:05 ET",
         "pub_ts": 1795543526.0
-      },
-      {
-        "title": "Anthropic Just Fell Below Its IPO Price, but Here's What the Stock Could Be Worth in 2030",
-        "url": "https://www.fool.com/investing/2026/11/24/anthropic-just-fell-below-its-ipo-price-but-here-s-what-the-stock-could-be-worth-in-2030/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 13:04 ET",
-        "pub_ts": 1795543442.0
-      },
-      {
-        "title": "States sue SpaceX, calling Grok's weak safeguards 'a feature'",
-        "url": "https://www.thestreet.com/latest-news/spacex-grok-lawsuit-weak-safeguards-feature?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 12:33 ET",
-        "pub_ts": 1795541580.0
       }
     ],
     "ASTS": [
@@ -2019,6 +2019,13 @@
     ],
     "RKLB": [
       {
+        "title": "Rocket Lab (RKLB) Has 117 Launches Booked. Barclays Has a View",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/rocket-lab-rklb-117-launches-191333487.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 14:13 ET",
+        "pub_ts": 1795547613.0
+      },
+      {
         "title": "Why Rocket Lab Demand News Could Make ETFs Worth A Look",
         "url": "https://finance.yahoo.com/markets/stocks/articles/why-rocket-lab-demand-news-151414622.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2045,13 +2052,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 21:13 ET",
         "pub_ts": 1795486426.0
-      },
-      {
-        "title": "Rocket Lab Rallies 11% After Its Worst Week Ever as CFO Eyes Higher Electron Prices; AST SpaceMobile Jumps 14%, SpaceX Surges 9%",
-        "url": "https://247wallst.com/investing/2026/11/23/rocket-lab-rallies-11-after-its-worst-week-ever-as-cfo-eyes-higher-electron-prices-ast-spacemobile-jumps-14-spacex-surges-9/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 10:58 ET",
-        "pub_ts": 1795449503.0
       }
     ],
     "KO": [
@@ -3316,25 +3316,25 @@
     "AMZN": 1795547660.6242015,
     "CRWV": 1795547660.6242015,
     "NBIS": 1795547768.3296242,
-    "APLD": 1795546792.5414596,
-    "VST": 1795546792.5414596,
-    "BE": 1795546792.5414596,
-    "CRDO": 1795546792.5414596,
-    "COHR": 1795546792.5414596,
+    "APLD": 1795548295.5640535,
+    "VST": 1795548295.5640535,
+    "BE": 1795548295.5640535,
+    "CRDO": 1795548295.5640535,
+    "COHR": 1795548295.5640535,
     "MRVL": 1795547768.3296242,
     "LITE": 1795547768.3296242,
-    "AAOI": 1795546792.5414596,
-    "SPCX": 1795546792.5414596,
-    "ASTS": 1795546792.5414596,
+    "AAOI": 1795548295.5640535,
+    "SPCX": 1795548295.5640535,
+    "ASTS": 1795548295.5640535,
     "AXTI": 1795547768.3296242,
-    "NASA": 1795546792.5414596,
-    "LUNR": 1795546792.5414596,
+    "NASA": 1795548295.5640535,
+    "LUNR": 1795548295.5640535,
     "TSLA": 1795546792.5414596,
-    "AXP": 1795546792.5414596,
-    "RKLB": 1795546792.5414596,
-    "KO": 1795546792.5414596,
-    "FLY": 1795546792.5414596,
-    "INTC": 1795546792.5414596,
+    "AXP": 1795548295.5640535,
+    "RKLB": 1795548295.5640535,
+    "KO": 1795548295.5640535,
+    "FLY": 1795548295.5640535,
+    "INTC": 1795548295.5640535,
     "VRT": 1795546792.5414596,
     "HPE": 1795546792.5414596,
     "DELL": 1795546792.5414596,
@@ -3362,7 +3362,7 @@
     "V": 1795546902.2190616,
     "CAT": 1795546902.2190616,
     "FN": 1795547768.3296242,
-    "GLW": 1795546792.5414596,
+    "GLW": 1795548295.5640535,
     "ANT": 1795546902.2190616,
     "XAUUSD": 1795547020.6341326,
     "KOSPI": 1795547660.6242015
