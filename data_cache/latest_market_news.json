@@ -1,9 +1,22 @@
 {
-  "updated_at_ts": 1795507703.572,
-  "updated_at_et": "11-24 03:08 ET",
-  "updated_at_kst": "17:08 KST",
+  "updated_at_ts": 1795507811.968,
+  "updated_at_et": "11-24 03:10 ET",
+  "updated_at_kst": "17:10 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261124160858217800",
+      "title": "港股收盘，恒生指数收跌0.73%，恒生科技指数收跌1.17%；光通信、芯片、PCB等板块…",
+      "summary": "港股收盘，恒生指数收跌0.73%，恒生科技指数收跌1.17%；光通信、芯片、PCB等板块涨幅居前；胜宏科技(02476.HK)涨超6%。",
+      "keywords": [
+        "芯片"
+      ],
+      "pub_ts": 1795507738.0,
+      "time_et": "11-24 03:08 ET",
+      "time_bj": "16:08 BJ",
+      "time_kst": "17:08 KST",
+      "time_display": "03:08 ET / 16:08 BJ"
+    },
     {
       "id": "20261124154932917800",
       "title": "WTI原油下探权重继续上升，12月紧缩预期打退美日看跌布局｜市场赔率数据表",
@@ -328,20 +341,6 @@
       "time_bj": "09:26 BJ",
       "time_kst": "10:26 KST",
       "time_display": "20:26 ET / 09:26 BJ"
-    },
-    {
-      "id": "20261124092530337800",
-      "title": "A股开盘，沪指开涨0.82%，深证成指开涨2.43%，创业板指开涨3.88%；英伟达概念…",
-      "summary": "A股开盘，沪指开涨0.82%，深证成指开涨2.43%，创业板指开涨3.88%；英伟达概念、CPO概念、PCB、半导体等板块涨幅居前。",
-      "keywords": [
-        "半导体",
-        "英伟达"
-      ],
-      "pub_ts": 1795483530.0,
-      "time_et": "11-23 20:25 ET",
-      "time_bj": "09:25 BJ",
-      "time_kst": "10:25 KST",
-      "time_display": "20:25 ET / 09:25 BJ"
     }
   ],
   "ticker_news": {
@@ -1938,6 +1937,13 @@
     ],
     "TSLA": [
       {
+        "title": "Tesla And SpaceX Reportedly Name 5 Directors To Lead Merger Discussions — Investor Says Talks Are Moving At ‘Warp Speed’",
+        "url": "https://stocktwits.com/news-articles/markets/equity/tesla-spacex-5-directors-lead-merger-discussions-investor-talks-warp-speed/cNbsbrxR9ke?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 03:00 ET",
+        "pub_ts": 1795507214.0
+      },
+      {
         "title": "SpaceX, Tesla directors negotiate potential $3.5 trillion merger, FT reports",
         "url": "https://finance.yahoo.com/markets/stocks/articles/spacex-tesla-directors-negotiate-potential-062339987.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1964,13 +1970,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 22:27 ET",
         "pub_ts": 1795490874.0
-      },
-      {
-        "title": "How to Invest in Humanoid Robots: 3 Stocks to Watch",
-        "url": "https://www.fool.com/investing/2026/11/23/how-to-invest-in-humanoid-robots-3-stocks-to-watch/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 21:51 ET",
-        "pub_ts": 1795488662.0
       }
     ],
     "AXP": [
@@ -3196,6 +3195,13 @@
     ],
     "ANT": [
       {
+        "title": "Jim Cramer Calls Nvidia’s Quarter “Fabulous” but Says Buy Anthropic Instead. I’ll Take the Other Side",
+        "url": "https://www.tikr.com/blog/jim-cramer-nvidia-vs-anthropic-stock?ref=yahoofinance&tlnk=yf-261124-27574whw&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 02:58 ET",
+        "pub_ts": 1795507111.0
+      },
+      {
         "title": "Not Starlink. Not Starship. This SpaceX Business Could Be Worth $80 Billion on Its Own.",
         "url": "https://www.fool.com/investing/2026/11/24/not-starlink-not-starship-this-spacex-business-could-be-worth-usd80-billion-on-its-own/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3222,13 +3228,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 22:27 ET",
         "pub_ts": 1795490874.0
-      },
-      {
-        "title": "Anthropic Stock Fell About 20% From Its First Trade in Its First 2 Days. Here's the Price at Which I'd Buy It.",
-        "url": "https://www.fool.com/investing/2026/11/23/anthropic-stock-fell-about-20-from-its-first-trade-in-its-first-2-days-here-s-the-price-at-which-i-d-buy-it/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 22:07 ET",
-        "pub_ts": 1795489621.0
       }
     ],
     "XAUUSD": [
@@ -3322,41 +3321,41 @@
     "AXTI": 1795507487.018866,
     "NASA": 1795507703.5722144,
     "LUNR": 1795507703.5722144,
-    "TSLA": 1795506311.579776,
-    "AXP": 1795506311.579776,
+    "TSLA": 1795507811.9680948,
+    "AXP": 1795507811.9680948,
     "RKLB": 1795507703.5722144,
     "KO": 1795507703.5722144,
     "FLY": 1795507703.5722144,
     "INTC": 1795507703.5722144,
-    "VRT": 1795506311.579776,
-    "HPE": 1795506311.579776,
-    "DELL": 1795506311.579776,
-    "OKLO": 1795506311.579776,
-    "CEG": 1795506311.579776,
-    "FPS": 1795506311.579776,
+    "VRT": 1795507811.9680948,
+    "HPE": 1795507811.9680948,
+    "DELL": 1795507811.9680948,
+    "OKLO": 1795507811.9680948,
+    "CEG": 1795507811.9680948,
+    "FPS": 1795507811.9680948,
     "MU": 1795507487.018866,
     "SKHY": 1795507487.018866,
     "WDC": 1795507487.018866,
-    "STX": 1795506311.579776,
-    "MSTR": 1795506311.579776,
-    "SNDK": 1795506311.579776,
+    "STX": 1795507811.9680948,
+    "MSTR": 1795507811.9680948,
+    "SNDK": 1795507811.9680948,
     "BTC-USD": 1795507487.018866,
-    "CRWD": 1795506311.579776,
+    "CRWD": 1795507811.9680948,
     "ORCL": 1795507487.018866,
     "COIN": 1795507487.018866,
     "LLY": 1795507487.018866,
     "MRNA": 1795507487.018866,
     "NKE": 1795507487.018866,
     "MCD": 1795507487.018866,
-    "PEP": 1795506311.579776,
+    "PEP": 1795507811.9680948,
     "XOM": 1795507487.018866,
     "JPM": 1795507487.018866,
-    "WMT": 1795506311.579776,
+    "WMT": 1795507811.9680948,
     "V": 1795507487.018866,
-    "CAT": 1795506311.579776,
+    "CAT": 1795507811.9680948,
     "FN": 1795507487.018866,
     "GLW": 1795507703.5722144,
-    "ANT": 1795506311.579776,
+    "ANT": 1795507811.9680948,
     "XAUUSD": 1795506526.1166406,
     "KOSPI": 1795507274.5551977
   },
@@ -3377,7 +3376,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (02:49 ET / 15:49 BJ) [美联储] [原油]：黄金回升伴随油价下行，市场对金价重返3700的预期升温。但美联储12月紧缩计价如“附骨之疽”，反弹延续的概率较低，美日下跌布局也在大幅退潮...",
+    "detail": "⚡ 最新核心快讯 (03:08 ET / 16:08 BJ) [芯片]：港股收盘，恒生指数收跌0.73%，恒生科技指数收跌1.17%；光通信、芯片、PCB等板块涨幅居前；胜宏科技(02476.HK)涨超6%。",
     "event_name": "",
     "minutes_left": 0,
     "opex_shield": {
