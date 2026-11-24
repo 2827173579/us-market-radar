@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795546059.239,
-  "updated_at_et": "11-24 13:47 ET",
-  "updated_at_kst": "03:47 KST",
+  "updated_at_ts": 1795546170.094,
+  "updated_at_et": "11-24 13:49 ET",
+  "updated_at_kst": "03:49 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1649,6 +1649,13 @@
     ],
     "MRVL": [
       {
+        "title": "Why Marvell Stock Is Moving With Nvidia Fueled AI Chip Optimism",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/why-marvell-stock-moving-nvidia-181152431.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 13:11 ET",
+        "pub_ts": 1795543912.0
+      },
+      {
         "title": "Generate A Return From Marvell Stock, Set For A Large Post-Earnings Swing",
         "url": "https://finance.yahoo.com/m/330eaa7f-a35f-39e4-a840-89d34cd4eb9e/generate-a-return-from.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1675,13 +1682,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 08:45 ET",
         "pub_ts": 1795527912.0
-      },
-      {
-        "title": "Susquehanna Cut Its Marvell Target to $225 From $300. It Still Sees [84%] Upside",
-        "url": "https://www.tikr.com/blog/susquehanna-marvell-price-target-cut-225-mrvl-upside?ref=yahoofinance&tlnk=yf-261124-682h8944&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 07:06 ET",
-        "pub_ts": 1795521979.0
       }
     ],
     "LITE": [
@@ -2611,6 +2611,20 @@
     ],
     "BTC-USD": [
       {
+        "title": "South Korea Moves to Lift Its ICO Ban After Nearly a Decade",
+        "url": "https://decrypt.co/383905/south-korea-moves-lift-ico-ban-after-nearly-decade?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 13:36 ET",
+        "pub_ts": 1795545363.0
+      },
+      {
+        "title": "Wall Street and Crypto Are in 'Extreme Fear'. What's Spooking Investors?",
+        "url": "https://decrypt.co/383898/wall-street-crypto-extreme-whats-spooking-investors?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 13:16 ET",
+        "pub_ts": 1795544162.0
+      },
+      {
         "title": "Will Bitcoin Drop Below $50,000 Before It Recovers?",
         "url": "https://247wallst.com/investing/cryptocurrency/2026/11/24/will-bitcoin-drop-below-50000-before-it-recovers/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2630,20 +2644,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 11:47 ET",
         "pub_ts": 1795538844.0
-      },
-      {
-        "title": "Bitcoin, ethereum gain ground under new CFTC rules",
-        "url": "https://finance.yahoo.com/video/bitcoin-ethereum-gain-ground-under-new-cftc-rules-164157249.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 11:41 ET",
-        "pub_ts": 1795538517.0
-      },
-      {
-        "title": "DOJ files action to recover $1B in crypto stolen in Binance hack",
-        "url": "https://finance.yahoo.com/video/doj-files-action-to-recover-1b-in-crypto-stolen-in-binance-hack-164124021.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 11:41 ET",
-        "pub_ts": 1795538484.0
       }
     ],
     "CRWD": [
@@ -3315,18 +3315,18 @@
     "NOW": 1795546059.2390764,
     "AMZN": 1795546059.2390764,
     "CRWV": 1795546059.2390764,
-    "NBIS": 1795544409.5246232,
+    "NBIS": 1795546170.0943477,
     "APLD": 1795545193.304729,
     "VST": 1795545193.304729,
     "BE": 1795545193.304729,
     "CRDO": 1795545193.304729,
     "COHR": 1795545193.304729,
-    "MRVL": 1795544409.5246232,
-    "LITE": 1795544409.5246232,
+    "MRVL": 1795546170.0943477,
+    "LITE": 1795546170.0943477,
     "AAOI": 1795545193.304729,
     "SPCX": 1795545193.304729,
     "ASTS": 1795545193.304729,
-    "AXTI": 1795544409.5246232,
+    "AXTI": 1795546170.0943477,
     "NASA": 1795545193.304729,
     "LUNR": 1795545193.304729,
     "TSLA": 1795545193.304729,
@@ -3341,13 +3341,13 @@
     "OKLO": 1795545193.304729,
     "CEG": 1795545193.304729,
     "FPS": 1795545193.304729,
-    "MU": 1795544409.5246232,
-    "SKHY": 1795544409.5246232,
-    "WDC": 1795544409.5246232,
+    "MU": 1795546170.0943477,
+    "SKHY": 1795546170.0943477,
+    "WDC": 1795546170.0943477,
     "STX": 1795545193.304729,
     "MSTR": 1795545193.304729,
     "SNDK": 1795545193.304729,
-    "BTC-USD": 1795544409.5246232,
+    "BTC-USD": 1795546170.0943477,
     "CRWD": 1795545193.304729,
     "ORCL": 1795545193.304729,
     "COIN": 1795545193.304729,
@@ -3361,7 +3361,7 @@
     "WMT": 1795545193.304729,
     "V": 1795545193.304729,
     "CAT": 1795545193.304729,
-    "FN": 1795544409.5246232,
+    "FN": 1795546170.0943477,
     "GLW": 1795545193.304729,
     "ANT": 1795545193.304729,
     "XAUUSD": 1795545193.304729,
