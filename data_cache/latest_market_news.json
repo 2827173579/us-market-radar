@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795548295.564,
-  "updated_at_et": "11-24 14:24 ET",
-  "updated_at_kst": "04:24 KST",
+  "updated_at_ts": 1795548405.397,
+  "updated_at_et": "11-24 14:26 ET",
+  "updated_at_kst": "04:26 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2218,13 +2218,6 @@
         "pub_ts": 1795535048.0
       },
       {
-        "title": "HPE stock declines as disappointing margin forecast outweighs upbeat guidance",
-        "url": "https://finance.yahoo.com/markets/article/hpe-stock-declines-as-margin-outlook-disappoints-134420648.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 08:44 ET",
-        "pub_ts": 1795527860.0
-      },
-      {
         "title": "Why weakening margins are a concern for HPE",
         "url": "https://finance.yahoo.com/video/why-weakening-margins-are-a-concern-for-hpe-150538192.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2232,14 +2225,35 @@
         "pub_ts": 1795532738.0
       },
       {
-        "title": "Nvidia jumped 31% on Jensen Huang's return. A day later, the AI trade sold off: AlphaCheck",
-        "url": "https://finance.yahoo.com/markets/article/nvidia-leads-semiconductors-lower-alphacheck-144509267.html?.tsrc=rss",
+        "title": "SpaceX Falls 4%, CoreWeave Down 13%, Nebius Down 11% as AI Stocks Give Back Nvidia Rally",
+        "url": "https://www.tikr.com/blog/spacex-falls-4-coreweave-down-13-nebius-down-11-as-ai-stocks-give-back-nvidia-rally?ref=yahoofinance&tlnk=yf-261124-6rfwxx6w&.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 09:45 ET",
-        "pub_ts": 1795531509.0
+        "time": "11-24 13:57 ET",
+        "pub_ts": 1795546678.0
+      },
+      {
+        "title": "HPE earnings analysis: questions answered and next catalysts",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/hpe-earnings-analysis-questions-answered-182813402.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 13:28 ET",
+        "pub_ts": 1795544893.0
       }
     ],
     "DELL": [
+      {
+        "title": "Is Gross Profit Dell Stock's Real Test Tonight?",
+        "url": "https://www.trefis.com/stock/dell/articles/628255/is-gross-profit-dell-stock-s-real-test-tonight/2026-11-24?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 13:39 ET",
+        "pub_ts": 1795545584.0
+      },
+      {
+        "title": "The Biggest Earnings Winners Grind Dell And Sandisk Into The Dust",
+        "url": "https://finance.yahoo.com/m/e45ffa23-8286-379b-b6e0-081e46a83f75/the-biggest-earnings-winners.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 13:38 ET",
+        "pub_ts": 1795545520.0
+      },
       {
         "title": "Dell (DELL) Stock May Be 45% Below Fair Value Following AI Infrastructure News",
         "url": "https://finance.yahoo.com/markets/stocks/articles/dell-dell-stock-may-45-181300186.html?.tsrc=rss",
@@ -2260,20 +2274,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 12:42 ET",
         "pub_ts": 1795542164.0
-      },
-      {
-        "title": "Over Half Of Dell's $95 Billion Backlog Waits",
-        "url": "https://www.trefis.com/stock/dell/articles/628252/over-half-of-dell-s-95-billion-backlog-waits/2026-11-24?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 09:28 ET",
-        "pub_ts": 1795530509.0
-      },
-      {
-        "title": "Own Dell Stock? Its Cash Gap Rarely Hurt It",
-        "url": "https://www.trefis.com/stock/dell/articles/628265/own-dell-stock-its-cash-gap-rarely-hurt-it/2026-11-24?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 09:03 ET",
-        "pub_ts": 1795529031.0
       }
     ],
     "OKLO": [
@@ -3329,37 +3329,37 @@
     "AXTI": 1795547768.3296242,
     "NASA": 1795548295.5640535,
     "LUNR": 1795548295.5640535,
-    "TSLA": 1795546792.5414596,
+    "TSLA": 1795548405.3970587,
     "AXP": 1795548295.5640535,
     "RKLB": 1795548295.5640535,
     "KO": 1795548295.5640535,
     "FLY": 1795548295.5640535,
     "INTC": 1795548295.5640535,
-    "VRT": 1795546792.5414596,
-    "HPE": 1795546792.5414596,
-    "DELL": 1795546792.5414596,
-    "OKLO": 1795546792.5414596,
-    "CEG": 1795546792.5414596,
-    "FPS": 1795546792.5414596,
+    "VRT": 1795548405.3970587,
+    "HPE": 1795548405.3970587,
+    "DELL": 1795548405.3970587,
+    "OKLO": 1795548405.3970587,
+    "CEG": 1795548405.3970587,
+    "FPS": 1795548405.3970587,
     "MU": 1795547768.3296242,
     "SKHY": 1795547768.3296242,
     "WDC": 1795547768.3296242,
-    "STX": 1795546902.2190616,
-    "MSTR": 1795546902.2190616,
-    "SNDK": 1795546792.5414596,
+    "STX": 1795548405.3970587,
+    "MSTR": 1795548405.3970587,
+    "SNDK": 1795548405.3970587,
     "BTC-USD": 1795547768.3296242,
-    "CRWD": 1795546902.2190616,
-    "ORCL": 1795546902.2190616,
-    "COIN": 1795546902.2190616,
-    "LLY": 1795546902.2190616,
-    "MRNA": 1795546902.2190616,
+    "CRWD": 1795548405.3970587,
+    "ORCL": 1795548405.3970587,
+    "COIN": 1795548405.3970587,
+    "LLY": 1795548405.3970587,
+    "MRNA": 1795548405.3970587,
     "NKE": 1795546902.2190616,
-    "MCD": 1795546902.2190616,
+    "MCD": 1795548405.3970587,
     "PEP": 1795546902.2190616,
     "XOM": 1795546902.2190616,
     "JPM": 1795546902.2190616,
     "WMT": 1795546902.2190616,
-    "V": 1795546902.2190616,
+    "V": 1795548405.3970587,
     "CAT": 1795546902.2190616,
     "FN": 1795547768.3296242,
     "GLW": 1795548295.5640535,
