@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795488631.708,
-  "updated_at_et": "11-23 21:50 ET",
-  "updated_at_kst": "11:50 KST",
+  "updated_at_ts": 1795488738.641,
+  "updated_at_et": "11-23 21:52 ET",
+  "updated_at_kst": "11:52 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2389,13 +2389,6 @@
     ],
     "MU": [
       {
-        "title": "Jensen Huang's return to Nvidia: Long or short accountability?",
-        "url": "https://finance.yahoo.com/video/jensen-huangs-return-to-nvidia-long-or-short-accountability-185949254.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 13:59 ET",
-        "pub_ts": 1795460389.0
-      },
-      {
         "title": "Stock Market Today, Nov. 23: Micron Surges 19% as Nvidia CEO Change Calms AI Spending Fears",
         "url": "https://www.fool.com/coverage/stock-market-today/2026/11/23/stock-market-today-nov-23-micron-surges-19-as-nvidia-ceo-change-calms-ai-spending-fears/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2422,9 +2415,23 @@
         "source": "Yahoo Finance",
         "time": "11-23 16:27 ET",
         "pub_ts": 1795469220.0
+      },
+      {
+        "title": "Jensen Huang’s Return Just Added About $500 Billion to Micron, Dell, TSMC and the AI Stocks That Depend on Nvidia",
+        "url": "https://247wallst.com/investing/2026/11/23/jensen-huangs-return-just-added-about-500-billion-to-micron-dell-tsmc-and-the-ai-stocks-that-depend-on-nvidia/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 15:13 ET",
+        "pub_ts": 1795464780.0
       }
     ],
     "SKHY": [
+      {
+        "title": "Asia chipmaking stocks soar tracking Nvidia rally; S.Korea, Taiwan lead",
+        "url": "https://finance.yahoo.com/technology/ai/articles/asia-chipmaking-stocks-soar-tracking-021520376.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 21:15 ET",
+        "pub_ts": 1795486520.0
+      },
       {
         "title": "Nvidia’s Asian Suppliers Rally as Jensen Huang Returns as CEO: SK Hynix Jumps 8%, SoftBank Shares Rise in Tokyo",
         "url": "https://finance.yahoo.com/markets/stocks/articles/nvidia-asian-suppliers-rally-jensen-012213841.html?.tsrc=rss",
@@ -2452,13 +2459,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 09:33 ET",
         "pub_ts": 1795444435.0
-      },
-      {
-        "title": "Premarket movers: Chip stocks lead AI rebound; CrowdStrike falls",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/premarket-movers-chip-stocks-lead-124424524.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 07:44 ET",
-        "pub_ts": 1795437864.0
       }
     ],
     "WDC": [
@@ -2611,6 +2611,20 @@
     ],
     "BTC-USD": [
       {
+        "title": "Dow, Nasdaq and Bitcoin Jump on Huang's Return, but Why Did Bitcoin Reverse?",
+        "url": "https://beincrypto.com/bitcoin-reversal-huang-return-nasdaq/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 21:00 ET",
+        "pub_ts": 1795485600.0
+      },
+      {
+        "title": "Tom Lee Explains Why He’s Bullish on Ethereum, Shares the “Hard Money” Case",
+        "url": "https://beincrypto.com/tom-lee-hard-money-bitcoin-ethereum-bitmine/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 19:33 ET",
+        "pub_ts": 1795480425.0
+      },
+      {
         "title": "Home and garden retailer scales back crypto, loses $2.8M",
         "url": "https://www.thestreet.com/crypto/markets/home-and-garden-retailer-scales-back-crypto-loses-2-8m?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2630,20 +2644,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 18:03 ET",
         "pub_ts": 1795474980.0
-      },
-      {
-        "title": "Crypto Market Today, Nov. 23: Bitcoin Sits Out Wall Street's Historic Rally as $1.8 Billion ETF Exodus Weighs on Prices",
-        "url": "https://www.fool.com/coverage/stock-market-today/2026/11/23/crypto-market-today-nov-23-bitcoin-sits-out-wall-street-s-historic-rally-as-usd1-8-billion-etf-exodus-weighs-on-prices/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 17:15 ET",
-        "pub_ts": 1795472102.0
-      },
-      {
-        "title": "These BTC miner stocks explode on shocking Nvidia news",
-        "url": "https://www.thestreet.com/crypto/markets/these-btc-miner-stocks-explode-on-shocking-nvidia-news?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 17:15 ET",
-        "pub_ts": 1795472100.0
       }
     ],
     "CRWD": [
@@ -3251,10 +3251,10 @@
   "ticker_news_ts": {
     "KORU": 1795487560.7101262,
     "SOXL": 1795487560.7101262,
-    "SPY": 1795487133.6095319,
+    "SPY": 1795488738.640817,
     "DIA": 1795487560.7101262,
     "SOXX": 1795487560.7101262,
-    "QQQ": 1795487133.6095319,
+    "QQQ": 1795488738.640817,
     "SMH": 1795487560.7101262,
     "IWM": 1795487560.7101262,
     "IGV": 1795487560.7101262,
@@ -3284,12 +3284,12 @@
     "BE": 1795487777.156511,
     "CRDO": 1795487777.156511,
     "COHR": 1795487777.156511,
-    "MRVL": 1795487133.6095319,
-    "LITE": 1795487133.6095319,
+    "MRVL": 1795488738.640817,
+    "LITE": 1795488738.640817,
     "AAOI": 1795487777.156511,
     "SPCX": 1795487777.156511,
     "ASTS": 1795487777.156511,
-    "AXTI": 1795487133.6095319,
+    "AXTI": 1795488738.640817,
     "NASA": 1795487777.156511,
     "LUNR": 1795487777.156511,
     "TSLA": 1795487777.156511,
@@ -3304,27 +3304,27 @@
     "OKLO": 1795487777.156511,
     "CEG": 1795487777.156511,
     "FPS": 1795487993.710698,
-    "MU": 1795487133.6095319,
-    "SKHY": 1795487133.6095319,
-    "WDC": 1795487133.6095319,
+    "MU": 1795488738.640817,
+    "SKHY": 1795488738.640817,
+    "WDC": 1795488738.640817,
     "STX": 1795487993.710698,
     "MSTR": 1795487993.710698,
     "SNDK": 1795487993.710698,
-    "BTC-USD": 1795487133.6095319,
+    "BTC-USD": 1795488738.640817,
     "CRWD": 1795487993.710698,
-    "ORCL": 1795487133.6095319,
-    "COIN": 1795487133.6095319,
-    "LLY": 1795487133.6095319,
-    "MRNA": 1795487133.6095319,
-    "NKE": 1795487133.6095319,
-    "MCD": 1795487133.6095319,
+    "ORCL": 1795488738.640817,
+    "COIN": 1795488738.640817,
+    "LLY": 1795488738.640817,
+    "MRNA": 1795488738.640817,
+    "NKE": 1795488738.640817,
+    "MCD": 1795488738.640817,
     "PEP": 1795487993.710698,
     "XOM": 1795487560.7101262,
     "JPM": 1795487560.7101262,
     "WMT": 1795487993.710698,
     "V": 1795487560.7101262,
     "CAT": 1795487993.710698,
-    "FN": 1795487133.6095319,
+    "FN": 1795488738.640817,
     "GLW": 1795487777.156511,
     "ANT": 1795487993.710698,
     "XAUUSD": 1795487993.710698
