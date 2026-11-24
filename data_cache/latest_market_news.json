@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795540143.375,
-  "updated_at_et": "11-24 12:09 ET",
-  "updated_at_kst": "02:09 KST",
+  "updated_at_ts": 1795540252.562,
+  "updated_at_et": "11-24 12:10 ET",
+  "updated_at_kst": "02:10 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2648,6 +2648,13 @@
     ],
     "CRWD": [
       {
+        "title": "Zscaler's Combination With CrowdStrike Makes Strategic Sense, RBC Says",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/zscaler-apos-combination-crowdstrike-makes-165151346.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 11:51 ET",
+        "pub_ts": 1795539111.0
+      },
+      {
         "title": "Wedbush Just Named CrowdStrike a 'Top Stock to Buy'",
         "url": "https://finance.yahoo.com/markets/stocks/articles/wedbush-just-named-crowdstrike-top-160901927.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2674,13 +2681,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 10:00 ET",
         "pub_ts": 1795532455.0
-      },
-      {
-        "title": "Micron downgraded, GameStop initiated: Wall Street's top analyst calls",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/snap-upgraded-pinterest-downgrade-wall-135144855.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 09:48 ET",
-        "pub_ts": 1795531695.0
       }
     ],
     "ORCL": [
@@ -3203,11 +3203,18 @@
     ],
     "ANT": [
       {
-        "title": "Who is holding Jensen Huang accountable? It sure looks like nobody",
-        "url": "https://finance.yahoo.com/video/who-is-holding-jensen-huang-accountable-it-sure-looks-like-nobody-154255467.html?.tsrc=rss",
+        "title": "Top Midday Stories: Anthropic Falls Below $83 IPO Price; Sanofi to Buy Insmed",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/top-midday-stories-anthropic-falls-165630459.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 10:42 ET",
-        "pub_ts": 1795534975.0
+        "time": "11-24 11:56 ET",
+        "pub_ts": 1795539390.0
+      },
+      {
+        "title": "The “Jensen Effect”: Why Traders Are Betting Against Anthropic After Huang’s Nvidia Return",
+        "url": "https://247wallst.com/investing/etf/2026/11/24/the-jensen-effect-why-traders-are-betting-against-anthropic-after-huangs-nvidia-return/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 11:39 ET",
+        "pub_ts": 1795538376.0
       },
       {
         "title": "Options Are Now Available on GraniteShares Long and Short Anthropic ETFs",
@@ -3229,13 +3236,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 11:14 ET",
         "pub_ts": 1795536840.0
-      },
-      {
-        "title": "Anthropic stock sinks below IPO price as record debut loses its shine",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/anthropic-stock-sinks-below-ipo-160747222.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 11:07 ET",
-        "pub_ts": 1795536467.0
       }
     ],
     "XAUUSD": [
@@ -3344,27 +3344,27 @@
     "MU": 1795539607.1346827,
     "SKHY": 1795539607.1346827,
     "WDC": 1795539607.1346827,
-    "STX": 1795538728.6769695,
-    "MSTR": 1795538728.6769695,
-    "SNDK": 1795538728.6769695,
+    "STX": 1795540252.562012,
+    "MSTR": 1795540252.562012,
+    "SNDK": 1795540252.562012,
     "BTC-USD": 1795539607.1346827,
-    "CRWD": 1795538728.6769695,
+    "CRWD": 1795540252.562012,
     "ORCL": 1795539925.9887524,
     "COIN": 1795539925.9887524,
     "LLY": 1795539925.9887524,
     "MRNA": 1795539925.9887524,
     "NKE": 1795539925.9887524,
     "MCD": 1795539925.9887524,
-    "PEP": 1795538728.6769695,
+    "PEP": 1795540252.562012,
     "XOM": 1795540143.3747313,
     "JPM": 1795540143.3747313,
-    "WMT": 1795538728.6769695,
+    "WMT": 1795540252.562012,
     "V": 1795539925.9887524,
-    "CAT": 1795538728.6769695,
+    "CAT": 1795540252.562012,
     "FN": 1795539607.1346827,
     "GLW": 1795539925.9887524,
-    "ANT": 1795538728.6769695,
-    "XAUUSD": 1795538728.6769695,
+    "ANT": 1795540252.562012,
+    "XAUUSD": 1795540252.562012,
     "KOSPI": 1795539607.1346827
   },
   "opex_shield": {
