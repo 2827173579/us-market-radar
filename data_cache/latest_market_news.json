@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795552938.966,
-  "updated_at_et": "11-24 15:42 ET",
-  "updated_at_kst": "05:42 KST",
+  "updated_at_ts": 1795553041.27,
+  "updated_at_et": "11-24 15:44 ET",
+  "updated_at_kst": "05:44 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -3203,6 +3203,20 @@
     ],
     "ANT": [
       {
+        "title": "Anthropic stock falls below IPO price; CEO sells $280 million in shares",
+        "url": "https://www.thestreet.com/investing/stocks/anthropic-stock-falls-below-ipo-price-ceo-sells-280-million-in-shares?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 15:37 ET",
+        "pub_ts": 1795552634.0
+      },
+      {
+        "title": "Anthropic Stock Just Broke Below Its $83 IPO Price. Is It a Bargain Buy?",
+        "url": "https://www.fool.com/investing/2026/11/24/anthropic-stock-just-broke-below-its-usd83-ipo-price-is-it-a-bargain-buy/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 15:15 ET",
+        "pub_ts": 1795551301.0
+      },
+      {
         "title": "Stock Market Today: Nasdaq Skids As Nvidia Dives; New Trump Tariffs Loom; Pharma Play Clears Entry (Live Coverage)",
         "url": "https://finance.yahoo.com/m/4aa4ff31-269f-346e-80c4-e681510af7ae/stock-market-today%3A-nasdaq.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3217,25 +3231,11 @@
         "pub_ts": 1795548720.0
       },
       {
-        "title": "Anthropic Stock Is Now Trading. Should You Buy It Today?",
-        "url": "https://www.fool.com/investing/2026/11/24/anthropic-stock-is-now-trading-should-you-buy-it-today/?.tsrc=rss",
+        "title": "'It's Utter Nonsense'—'Big Short' Investor Steve Eisman Says OpenAI And Anthropic Have Created A Conspiracy About The End Of The World",
+        "url": "https://finance.yahoo.com/technology/ai/articles/utter-nonsense-big-short-investor-192726702.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 14:20 ET",
-        "pub_ts": 1795548002.0
-      },
-      {
-        "title": "Anthropic Stock Sinks Below IPO Price. What History Says Happens Next.",
-        "url": "https://finance.yahoo.com/m/a286105e-a938-3486-a9d4-92ce3954de08/anthropic-stock-sinks-below.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 14:17 ET",
-        "pub_ts": 1795547820.0
-      },
-      {
-        "title": "Update: US Equity Indexes Mixed as Sliding Anthropic, Nvidia Hurt AI Trade While Defensives Advance",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/us-equity-indexes-mixed-sliding-190413191.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 14:04 ET",
-        "pub_ts": 1795547053.0
+        "time": "11-24 14:27 ET",
+        "pub_ts": 1795548446.0
       }
     ],
     "XAUUSD": [
@@ -3353,17 +3353,17 @@
     "COIN": 1795552938.9658186,
     "LLY": 1795552938.9658186,
     "MRNA": 1795552938.9658186,
-    "NKE": 1795551532.7891963,
+    "NKE": 1795553041.270424,
     "MCD": 1795552938.9658186,
-    "PEP": 1795551532.7891963,
-    "XOM": 1795551532.7891963,
-    "JPM": 1795551532.7891963,
-    "WMT": 1795551532.7891963,
+    "PEP": 1795553041.270424,
+    "XOM": 1795553041.270424,
+    "JPM": 1795553041.270424,
+    "WMT": 1795553041.270424,
     "V": 1795552938.9658186,
-    "CAT": 1795551532.7891963,
+    "CAT": 1795553041.270424,
     "FN": 1795552335.601488,
     "GLW": 1795552837.7931054,
-    "ANT": 1795551532.7891963,
+    "ANT": 1795553041.270424,
     "XAUUSD": 1795551727.8889852,
     "KOSPI": 1795552234.9740376
   },
