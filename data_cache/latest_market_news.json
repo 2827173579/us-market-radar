@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795558321.749,
-  "updated_at_et": "11-24 17:12 ET",
-  "updated_at_kst": "07:12 KST",
+  "updated_at_ts": 1795558418.191,
+  "updated_at_et": "11-24 17:13 ET",
+  "updated_at_kst": "07:13 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1158,14 +1158,21 @@
         "pub_ts": 1795538756.0
       },
       {
-        "title": "META Rides on Strong Demand in Ad Business: Can It Beat RDDT and SNAP?",
-        "url": "https://finance.yahoo.com/media-advertising/articles/meta-rides-strong-demand-ad-163500234.html?.tsrc=rss",
+        "title": "AI Regulation Could Put BILL Stock In Focus",
+        "url": "https://finance.yahoo.com/technology/ai/articles/ai-regulation-could-put-bill-211152422.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 11:35 ET",
-        "pub_ts": 1795538100.0
+        "time": "11-24 16:11 ET",
+        "pub_ts": 1795554712.0
       }
     ],
     "GOOGL": [
+      {
+        "title": "Billionaire Charlie Munger’s Protege Li Lu: Himalaya Capital Has 45% of Its $3.78 Billion Portfolio in Alphabet",
+        "url": "https://247wallst.com/investing/2026/11/24/billionaire-charlie-mungers-protege-li-lu-himalaya-capital-has-45-of-its-3-78-billion-portfolio-in-alphabet/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 16:58 ET",
+        "pub_ts": 1795557538.0
+      },
       {
         "title": "Microsoft (MSFT) Is One of the Safest Ways to Own AI",
         "url": "https://finance.yahoo.com/technology/ai/articles/microsoft-msft-one-safest-ways-210600451.html?.tsrc=rss",
@@ -1193,13 +1200,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 14:07 ET",
         "pub_ts": 1795547223.0
-      },
-      {
-        "title": "Bloom Energy Revenue Jumped 138%. Its Next Growth Phase Could Be Even Bigger",
-        "url": "https://247wallst.com/investing/2026/11/24/bloom-energy-revenue-jumped-138-its-next-growth-phase-could-be-even-bigger/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 13:33 ET",
-        "pub_ts": 1795545180.0
       }
     ],
     "MSFT": [
@@ -3287,33 +3287,33 @@
   "ticker_news_ts": {
     "KORU": 1795558122.7841067,
     "SOXL": 1795558122.7841067,
-    "SPY": 1795556903.1005504,
+    "SPY": 1795558418.190817,
     "DIA": 1795558122.7841067,
     "SOXX": 1795558122.7841067,
     "QQQ": 1795558122.7841067,
-    "SMH": 1795556903.1005504,
+    "SMH": 1795558418.190817,
     "IWM": 1795558122.7841067,
     "IGV": 1795558122.7841067,
     "TLT": 1795558122.7841067,
     "GLD": 1795558122.7841067,
     "SQQQ": 1795558122.7841067,
-    "TSM": 1795556903.1005504,
+    "TSM": 1795558418.190817,
     "VIXY": 1795558122.7841067,
     "SOXS": 1795558122.7841067,
     "NVDA": 1795558122.7841067,
     "AMD": 1795558122.7841067,
-    "ASML": 1795556903.1005504,
-    "QCOM": 1795556903.1005504,
+    "ASML": 1795558418.190817,
+    "QCOM": 1795558418.190817,
     "AVGO": 1795558122.7841067,
-    "AMAT": 1795556903.1005504,
-    "META": 1795556903.1005504,
-    "GOOGL": 1795556903.1005504,
-    "MSFT": 1795556903.1005504,
-    "AAPL": 1795556903.1005504,
-    "PLTR": 1795556903.1005504,
-    "NOW": 1795556903.1005504,
-    "AMZN": 1795556903.1005504,
-    "CRWV": 1795556903.1005504,
+    "AMAT": 1795558418.190817,
+    "META": 1795558418.190817,
+    "GOOGL": 1795558418.190817,
+    "MSFT": 1795558418.190817,
+    "AAPL": 1795558418.190817,
+    "PLTR": 1795558418.190817,
+    "NOW": 1795558418.190817,
+    "AMZN": 1795558418.190817,
+    "CRWV": 1795558418.190817,
     "NBIS": 1795557004.6623967,
     "APLD": 1795557500.2339263,
     "VST": 1795557500.2339263,
@@ -3364,7 +3364,7 @@
     "GLW": 1795557500.2339263,
     "ANT": 1795557717.732933,
     "XAUUSD": 1795557920.4377625,
-    "KOSPI": 1795556903.1005504
+    "KOSPI": 1795558418.190817
   },
   "opex_shield": {
     "date": "2026-11-24",
