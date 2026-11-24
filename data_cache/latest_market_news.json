@@ -1,9 +1,23 @@
 {
-  "updated_at_ts": 1795500148.998,
-  "updated_at_et": "11-24 01:02 ET",
-  "updated_at_kst": "15:02 KST",
+  "updated_at_ts": 1795500258.158,
+  "updated_at_et": "11-24 01:04 ET",
+  "updated_at_kst": "15:04 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261124140258859800",
+      "title": "“董事们应该辞职”！英伟达董事会难敌特朗普与黄仁勋支持者，治理能力遭拷问",
+      "summary": "董事会挡不住特朗普和黄仁勋支持者的合力，从拒绝复职到收到白宫意见后改口。多名专家教授呼吁董事们应该辞职，称董事会需要“一个不会被人指责为哈巴狗的人”。",
+      "keywords": [
+        "英伟达",
+        "特朗普"
+      ],
+      "pub_ts": 1795500178.0,
+      "time_et": "11-24 01:02 ET",
+      "time_bj": "14:02 BJ",
+      "time_kst": "15:02 KST",
+      "time_display": "01:02 ET / 14:02 BJ"
+    },
     {
       "id": "20261124134000002800",
       "title": "【今日重点关注的财经数据与事件：2026年11月24日 周二】 ① 17:00 德国11…",
@@ -327,20 +341,6 @@
       "time_bj": "08:36 BJ",
       "time_kst": "09:36 KST",
       "time_display": "19:36 ET / 08:36 BJ"
-    },
-    {
-      "id": "20261124074116649800",
-      "title": "纽约联储主席释放鹰派信号！不排除连续会议加息，警告美国通胀仍过高",
-      "summary": "纽约联储主席威廉姆斯表示，通胀仍明显高于目标，美联储需继续行动，不排除在连续多次会议上加息。AI需求激增、能源价格高企和经济增长韧性仍给物价带来压力。点击查看",
-      "keywords": [
-        "美联储",
-        "加息"
-      ],
-      "pub_ts": 1795477276.0,
-      "time_et": "11-23 18:41 ET",
-      "time_bj": "07:41 BJ",
-      "time_kst": "08:41 KST",
-      "time_display": "18:41 ET / 07:41 BJ"
     }
   ],
   "ticker_news": {
@@ -2196,6 +2196,13 @@
     ],
     "HPE": [
       {
+        "title": "Hewlett Packard Steers Clear Of Financing ‘Neocloud Or High-Risk Customers’ — HPE Stock Dips Despite Q4 Beat And Raise",
+        "url": "https://stocktwits.com/news-articles/markets/equity/hewlett-packard-steers-clear-of-financing-neocloud-or-high-risk-customers-hpe-stock-dips-despite-q4-beat-and-raise/cNbrU1ER9kT?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 00:58 ET",
+        "pub_ts": 1795499930.0
+      },
+      {
         "title": "Sunway Group Accelerates Secure and Sovereign Enterprise-wide Artificial Intelligence With HPE",
         "url": "https://finance.yahoo.com/technology/ai/articles/sunway-group-accelerates-secure-sovereign-030000590.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2222,13 +2229,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 19:10 ET",
         "pub_ts": 1795479026.0
-      },
-      {
-        "title": "HPE Stock Retreats From Market Rally Despite Earnings Beat. Strong AI Demand Isn’t Enough.",
-        "url": "https://finance.yahoo.com/m/42d4b2b6-fa8b-3c24-8736-09ba00afc7b1/hpe-stock-retreats-from.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 18:08 ET",
-        "pub_ts": 1795475280.0
       }
     ],
     "DELL": [
@@ -3195,6 +3195,13 @@
     ],
     "ANT": [
       {
+        "title": "Not Starlink. Not Starship. This SpaceX Business Could Be Worth $80 Billion on Its Own.",
+        "url": "https://www.fool.com/investing/2026/11/24/not-starlink-not-starship-this-spacex-business-could-be-worth-usd80-billion-on-its-own/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 00:50 ET",
+        "pub_ts": 1795499402.0
+      },
+      {
         "title": "ZM Stock Edges Higher Overnight — Zoom's Anthropic Bet Pays Off As AI Investment Soars To $3.8B",
         "url": "https://stocktwits.com/news-articles/markets/equity/zm-stock-zoom-anthropic-ai-investment-q3-earnings-outlook/cNbrww9R9kb?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3221,13 +3228,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 22:07 ET",
         "pub_ts": 1795489621.0
-      },
-      {
-        "title": "Can Anthropic win hearts and minds by curing hearts and minds?",
-        "url": "https://www.cbsnews.com/news/anthropic-drug-discovery-claude-science-ipo/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 21:04 ET",
-        "pub_ts": 1795485895.0
       }
     ],
     "XAUUSD": [
@@ -3321,41 +3321,41 @@
     "AXTI": 1795499828.705564,
     "NASA": 1795500148.9978433,
     "LUNR": 1795500148.9978433,
-    "TSLA": 1795498753.3548973,
+    "TSLA": 1795500258.158368,
     "AXP": 1795500148.9978433,
     "RKLB": 1795500148.9978433,
     "KO": 1795500148.9978433,
     "FLY": 1795500148.9978433,
     "INTC": 1795500148.9978433,
-    "VRT": 1795498753.3548973,
-    "HPE": 1795498753.3548973,
-    "DELL": 1795498753.3548973,
-    "OKLO": 1795498753.3548973,
-    "CEG": 1795498753.3548973,
-    "FPS": 1795498753.3548973,
+    "VRT": 1795500258.158368,
+    "HPE": 1795500258.158368,
+    "DELL": 1795500258.158368,
+    "OKLO": 1795500258.158368,
+    "CEG": 1795500258.158368,
+    "FPS": 1795500258.158368,
     "MU": 1795499828.705564,
     "SKHY": 1795499828.705564,
     "WDC": 1795499828.705564,
-    "STX": 1795498753.3548973,
-    "MSTR": 1795498753.3548973,
-    "SNDK": 1795498753.3548973,
+    "STX": 1795500258.158368,
+    "MSTR": 1795500258.158368,
+    "SNDK": 1795500258.158368,
     "BTC-USD": 1795499828.705564,
-    "CRWD": 1795498753.3548973,
+    "CRWD": 1795500258.158368,
     "ORCL": 1795499828.705564,
     "COIN": 1795499828.705564,
     "LLY": 1795499828.705564,
     "MRNA": 1795499828.705564,
     "NKE": 1795499828.705564,
     "MCD": 1795499828.705564,
-    "PEP": 1795498753.3548973,
+    "PEP": 1795500258.158368,
     "XOM": 1795499828.705564,
     "JPM": 1795499828.705564,
-    "WMT": 1795498753.3548973,
+    "WMT": 1795500258.158368,
     "V": 1795499828.705564,
-    "CAT": 1795498753.3548973,
+    "CAT": 1795500258.158368,
     "FN": 1795499828.705564,
     "GLW": 1795500148.9978433,
-    "ANT": 1795498753.3548973,
+    "ANT": 1795500258.158368,
     "XAUUSD": 1795498971.4911437,
     "KOSPI": 1795499718.6012428
   },
@@ -3376,7 +3376,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (00:40 ET / 13:40 BJ) [原油]：【今日重点关注的财经数据与事件：2026年11月24日 周二】 ① 17:00 德国11月IFO商业景气指数 ② 19:00 英国11月CBI零售销售差值 ③ 19:30 小米公司举行Q3财",
+    "detail": "⚡ 最新核心快讯 (01:02 ET / 14:02 BJ) [英伟达] [特朗普]：董事会挡不住特朗普和黄仁勋支持者的合力，从拒绝复职到收到白宫意见后改口。多名专家教授呼吁董事们应该辞职，称董事会需要“一个不会被人指责为哈巴狗的人”。",
     "event_name": "",
     "minutes_left": 0,
     "opex_shield": {
