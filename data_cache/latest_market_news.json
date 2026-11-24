@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795481455.946,
-  "updated_at_et": "11-23 19:50 ET",
-  "updated_at_kst": "09:50 KST",
+  "updated_at_ts": 1795481562.539,
+  "updated_at_et": "11-23 19:52 ET",
+  "updated_at_kst": "09:52 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1768,8 +1768,8 @@
         "title": "Dow Jones Futures: Tech Stocks, Nvidia Snap Back On Jensen Huang's Return; Elon Musk-Led SpaceX, Tesla Rally",
         "url": "https://finance.yahoo.com/m/be493228-4ecf-338d-9017-054d3d6efc36/dow-jones-futures%3A-tech.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 18:40 ET",
-        "pub_ts": 1795477209.0
+        "time": "11-23 19:20 ET",
+        "pub_ts": 1795479607.0
       },
       {
         "title": "Starlink’s 40x Upgrade Targets 150Mbps to Phones. AST SpaceMobile Has a Big Problem",
@@ -1794,6 +1794,13 @@
       }
     ],
     "ASTS": [
+      {
+        "title": "AST SpaceMobile Stock Gets FCC Approval for Direct to Device Service",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/ast-spacemobile-stock-gets-fcc-002319879.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 19:23 ET",
+        "pub_ts": 1795479799.0
+      },
       {
         "title": "Starlink’s 40x Upgrade Targets 150Mbps to Phones. AST SpaceMobile Has a Big Problem",
         "url": "https://www.tikr.com/blog/starlinks-40x-upgrade-targets-150mbps-to-phones-ast-spacemobile-has-a-big-problem?ref=yahoofinance&tlnk=yf-261123-m4mrj3j8&.tsrc=rss",
@@ -1821,13 +1828,6 @@
         "source": "Yahoo Finance",
         "time": "11-21 01:00 ET",
         "pub_ts": 1795240836.0
-      },
-      {
-        "title": "AST SpaceMobile Just Plunged 44% in a Month as Space Stocks Face a Hard Landing: Could ASTS Stock Realistically Double From Here?",
-        "url": "https://247wallst.com/investing/2026/11/20/ast-spacemobile-just-plunged-44-in-a-month-as-space-stocks-face-a-hard-landing-could-asts-stock-realistically-double-from-here/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 15:04 ET",
-        "pub_ts": 1795205046.0
       }
     ],
     "AXTI": [
@@ -1946,8 +1946,8 @@
         "title": "Dow Jones Futures: Tech Stocks, Nvidia Snap Back On Jensen Huang's Return; Elon Musk-Led SpaceX, Tesla Rally",
         "url": "https://finance.yahoo.com/m/be493228-4ecf-338d-9017-054d3d6efc36/dow-jones-futures%3A-tech.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 18:40 ET",
-        "pub_ts": 1795477209.0
+        "time": "11-23 19:20 ET",
+        "pub_ts": 1795479607.0
       },
       {
         "title": "Stock Market Today, Nov. 23: Markets Rebound From Correction on AI Relief Rally",
@@ -2128,6 +2128,13 @@
     ],
     "INTC": [
       {
+        "title": "What Microsoft (MSFT)'s Enterprise AI Partnerships Mean For Shareholders",
+        "url": "https://finance.yahoo.com/technology/ai/articles/microsoft-msft-enterprise-ai-partnerships-001743463.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 19:17 ET",
+        "pub_ts": 1795479463.0
+      },
+      {
         "title": "Intel Corporation to Participate in Upcoming Investor Conferences",
         "url": "https://finance.yahoo.com/technology/articles/intel-corporation-participate-upcoming-investor-213000154.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2154,13 +2161,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 12:33 ET",
         "pub_ts": 1795455180.0
-      },
-      {
-        "title": "Newegg and ABS Bring PC Building to Fifth Avenue with a Holiday Showcase at the Intel Experience Store in New York City",
-        "url": "https://finance.yahoo.com/technology/articles/newegg-abs-bring-pc-building-220000219.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 17:00 ET",
-        "pub_ts": 1795471200.0
       }
     ],
     "VRT": [
@@ -3279,28 +3279,28 @@
     "NBIS": 1795481455.9461036,
     "APLD": 1795481455.9461036,
     "VST": 1795481455.9461036,
-    "BE": 1795479975.9419625,
-    "CRDO": 1795479975.9419625,
-    "COHR": 1795479975.9419625,
+    "BE": 1795481562.5390615,
+    "CRDO": 1795481562.5390615,
+    "COHR": 1795481562.5390615,
     "MRVL": 1795480928.7615309,
     "LITE": 1795480928.7615309,
-    "AAOI": 1795479975.9419625,
-    "SPCX": 1795479975.9419625,
-    "ASTS": 1795479975.9419625,
+    "AAOI": 1795481562.5390615,
+    "SPCX": 1795481562.5390615,
+    "ASTS": 1795481562.5390615,
     "AXTI": 1795480928.7615309,
-    "NASA": 1795479975.9419625,
-    "LUNR": 1795479975.9419625,
-    "TSLA": 1795479975.9419625,
-    "AXP": 1795479975.9419625,
-    "RKLB": 1795479975.9419625,
-    "KO": 1795479975.9419625,
-    "FLY": 1795479975.9419625,
-    "INTC": 1795479975.9419625,
-    "VRT": 1795479975.9419625,
-    "HPE": 1795479975.9419625,
-    "DELL": 1795479975.9419625,
-    "OKLO": 1795479975.9419625,
-    "CEG": 1795479975.9419625,
+    "NASA": 1795481562.5390615,
+    "LUNR": 1795481562.5390615,
+    "TSLA": 1795481562.5390615,
+    "AXP": 1795481562.5390615,
+    "RKLB": 1795481562.5390615,
+    "KO": 1795481562.5390615,
+    "FLY": 1795481562.5390615,
+    "INTC": 1795481562.5390615,
+    "VRT": 1795481562.5390615,
+    "HPE": 1795481562.5390615,
+    "DELL": 1795481562.5390615,
+    "OKLO": 1795481562.5390615,
+    "CEG": 1795481562.5390615,
     "FPS": 1795480196.4784796,
     "MU": 1795480928.7615309,
     "SKHY": 1795480928.7615309,
@@ -3323,7 +3323,7 @@
     "V": 1795481349.0703025,
     "CAT": 1795480196.4784796,
     "FN": 1795480928.7615309,
-    "GLW": 1795479975.9419625,
+    "GLW": 1795481562.5390615,
     "ANT": 1795480196.4784796,
     "XAUUSD": 1795480196.4784796
   },
