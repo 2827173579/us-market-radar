@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795524465.132,
-  "updated_at_et": "11-24 07:47 ET",
-  "updated_at_kst": "21:47 KST",
+  "updated_at_ts": 1795524575.064,
+  "updated_at_et": "11-24 07:49 ET",
+  "updated_at_kst": "21:49 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2685,6 +2685,20 @@
     ],
     "ORCL": [
       {
+        "title": "Oracle Raises $10 Billion in Debt at Up to 8.65% as AI Financing Risks Persist",
+        "url": "https://finance.yahoo.com/technology/ai/articles/oracle-raises-10-billion-debt-121244271.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 07:12 ET",
+        "pub_ts": 1795522364.0
+      },
+      {
+        "title": "Oracle Insists It’s “Fully Funded” for OpenAI. Its Credit Default Swaps Disagree",
+        "url": "https://www.tikr.com/blog/oracle-insists-its-fully-funded-for-openai-its-credit-default-swaps-disagree?ref=yahoofinance&tlnk=yf-261124-jmhxmhmj&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 07:11 ET",
+        "pub_ts": 1795522281.0
+      },
+      {
         "title": "Anthropic’s IPO Slide Is Bad News for Oracle, Which Is “Dependent on OpenAI”",
         "url": "https://www.tikr.com/blog/anthropics-ipo-slide-is-bad-news-for-oracle-which-is-dependent-on-openai?ref=yahoofinance&tlnk=yf-261124-fc345234&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2704,23 +2718,16 @@
         "source": "Yahoo Finance",
         "time": "11-23 15:16 ET",
         "pub_ts": 1795464974.0
-      },
-      {
-        "title": "Oracle Stock Snaps Losing Streak. Funding for Data-Center Buildout Is in Place.",
-        "url": "https://finance.yahoo.com/m/d46a5f32-5904-33a1-9f1a-dcb0884aab9e/oracle-stock-snaps-losing.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 13:52 ET",
-        "pub_ts": 1795459920.0
-      },
-      {
-        "title": "Why Oracle Stock Is Rising Today",
-        "url": "https://www.fool.com/investing/2026/11/23/why-oracle-stock-is-rising/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 13:30 ET",
-        "pub_ts": 1795458602.0
       }
     ],
     "COIN": [
+      {
+        "title": "Kalshi Says New York Threatens Its $22 Billion Business. Coinbase Has a Problem Too",
+        "url": "https://www.tikr.com/blog/kalshi-says-new-york-threatens-its-22-billion-business-coinbase-has-a-problem-too?ref=yahoofinance&tlnk=yf-261124-fgcfcq6q&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 07:11 ET",
+        "pub_ts": 1795522280.0
+      },
       {
         "title": "DraftKings Just Dropped 14% in a Week to a New 52-Week Low. Is It Time to Sell, or Load Up?",
         "url": "https://www.tikr.com/blog/draftkings-just-dropped-14-in-a-week-to-a-new-52-week-low-is-it-time-to-sell-or-load-up?ref=yahoofinance&tlnk=yf-261124-jh79f886&.tsrc=rss",
@@ -2748,13 +2755,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 10:50 ET",
         "pub_ts": 1795449002.0
-      },
-      {
-        "title": "OKX and NYSE Parent ICE Launch Tokenized Stock Venue With 113 Assets Lined Up",
-        "url": "https://unchainedcrypto.com/okx-and-nyse-parent-ice-launch-tokenized-stock-venue-with-113-assets-lined-up/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 09:01 ET",
-        "pub_ts": 1795442517.0
       }
     ],
     "LLY": [
@@ -3316,22 +3316,22 @@
     "AMZN": 1795524131.9109845,
     "CRWV": 1795524131.9109845,
     "NBIS": 1795524246.536039,
-    "APLD": 1795523020.401441,
-    "VST": 1795523020.401441,
-    "BE": 1795523020.401441,
-    "CRDO": 1795523020.401441,
-    "COHR": 1795523020.401441,
+    "APLD": 1795524575.0643048,
+    "VST": 1795524575.0643048,
+    "BE": 1795524575.0643048,
+    "CRDO": 1795524575.0643048,
+    "COHR": 1795524575.0643048,
     "MRVL": 1795524246.536039,
     "LITE": 1795524246.536039,
-    "AAOI": 1795523020.401441,
+    "AAOI": 1795524575.0643048,
     "SPCX": 1795523135.2026043,
-    "ASTS": 1795523020.401441,
+    "ASTS": 1795524575.0643048,
     "AXTI": 1795524246.536039,
     "NASA": 1795523135.2026043,
     "LUNR": 1795523135.2026043,
     "TSLA": 1795523135.2026043,
     "AXP": 1795523135.2026043,
-    "RKLB": 1795523020.401441,
+    "RKLB": 1795524575.0643048,
     "KO": 1795523135.2026043,
     "FLY": 1795523135.2026043,
     "INTC": 1795523135.2026043,
@@ -3349,20 +3349,20 @@
     "SNDK": 1795523357.0855243,
     "BTC-USD": 1795524246.536039,
     "CRWD": 1795523357.0855243,
-    "ORCL": 1795523020.401441,
-    "COIN": 1795523020.401441,
-    "LLY": 1795523020.401441,
-    "MRNA": 1795523020.401441,
-    "NKE": 1795523020.401441,
-    "MCD": 1795523020.401441,
+    "ORCL": 1795524575.0643048,
+    "COIN": 1795524575.0643048,
+    "LLY": 1795524575.0643048,
+    "MRNA": 1795524575.0643048,
+    "NKE": 1795524575.0643048,
+    "MCD": 1795524575.0643048,
     "PEP": 1795523357.0855243,
     "XOM": 1795523244.2963064,
     "JPM": 1795523244.2963064,
     "WMT": 1795523357.0855243,
-    "V": 1795523020.401441,
+    "V": 1795524575.0643048,
     "CAT": 1795523357.0855243,
     "FN": 1795524246.536039,
-    "GLW": 1795523020.401441,
+    "GLW": 1795524575.0643048,
     "ANT": 1795523357.0855243,
     "XAUUSD": 1795523357.0855243,
     "KOSPI": 1795524246.536039
