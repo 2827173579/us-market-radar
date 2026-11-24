@@ -1,9 +1,36 @@
 {
-  "updated_at_ts": 1795529438.3,
-  "updated_at_et": "11-24 09:10 ET",
-  "updated_at_kst": "23:10 KST",
+  "updated_at_ts": 1795529545.133,
+  "updated_at_et": "11-24 09:12 ET",
+  "updated_at_kst": "23:12 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261124221214463800",
+      "title": "【特朗普政府拟重启关税攻势，最快周二宣布相关决定】 11月24日讯，据一位知情人士透露，…",
+      "summary": "【特朗普政府拟重启关税攻势，最快周二宣布相关决定】 11月24日讯，据一位知情人士透露，美国正准备最早于周二宣布提高对欧盟以及十多个其他经济体商品的关税。特朗普政府正寻求以新的关税措施取代此前被美国最高法院裁定无效的关税。目前，关税税率、涉及的商品范围以及生效日期均尚不明确。《华尔街日报》此前报道称，相关公告最快可能于本周发布。美国总统特朗普经常改变贸易政策方向，因此具体宣布时间仍可能调整。",
+      "keywords": [
+        "关税",
+        "特朗普"
+      ],
+      "pub_ts": 1795529534.0,
+      "time_et": "11-24 09:12 ET",
+      "time_bj": "22:12 BJ",
+      "time_kst": "23:12 KST",
+      "time_display": "09:12 ET / 22:12 BJ"
+    },
+    {
+      "id": "20261124221027972800",
+      "title": "SC原油主力合约成交额已超172亿元，日内涨幅达2.05%，最新报581.8元/桶，日内…",
+      "summary": "SC原油主力合约成交额已超172亿元，日内涨幅达2.05%，最新报581.8元/桶，日内增仓近800手，量仓活跃度同步抬升。",
+      "keywords": [
+        "原油"
+      ],
+      "pub_ts": 1795529427.0,
+      "time_et": "11-24 09:10 ET",
+      "time_bj": "22:10 BJ",
+      "time_kst": "23:10 KST",
+      "time_display": "09:10 ET / 22:10 BJ"
+    },
     {
       "id": "20261124220419156800",
       "title": "WTI原油向上触及82美元/桶，日内涨0.90%。布伦特原油日内涨幅达1.00%，现报9…",
@@ -313,33 +340,6 @@
       "time_bj": "17:04 BJ",
       "time_kst": "18:04 KST",
       "time_display": "04:04 ET / 17:04 BJ"
-    },
-    {
-      "id": "20261124165853642800",
-      "title": "海峡供应修复压低油价，亚洲需求回升能否托底？｜原油头条",
-      "summary": "原油流量逐渐恢复，WTI原油创下自8月以来新低后有所反弹，随着亚洲市场补库需求升温，油价能否得到更多支撑？",
-      "keywords": [
-        "原油"
-      ],
-      "pub_ts": 1795510733.0,
-      "time_et": "11-24 03:58 ET",
-      "time_bj": "16:58 BJ",
-      "time_kst": "17:58 KST",
-      "time_display": "03:58 ET / 16:58 BJ"
-    },
-    {
-      "id": "20261124163735904800",
-      "title": "市场已经替美联储“加息”100个基点，华尔街却恐难等来政策转向",
-      "summary": "尽管股市下跌和融资成本上升正在收紧金融环境，但只要经济活动和就业没有明显恶化，美联储官员就未必认为有必要停止加息。点击查看...",
-      "keywords": [
-        "美联储",
-        "加息"
-      ],
-      "pub_ts": 1795509455.0,
-      "time_et": "11-24 03:37 ET",
-      "time_bj": "16:37 BJ",
-      "time_kst": "17:37 KST",
-      "time_display": "03:37 ET / 16:37 BJ"
     }
   ],
   "ticker_news": {
@@ -2528,6 +2528,13 @@
     ],
     "MSTR": [
       {
+        "title": "Strategy Inc (MSTR) Is a Trending Stock: Facts to Know Before Betting on It",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/strategy-inc-mstr-trending-stock-130004989.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 08:00 ET",
+        "pub_ts": 1795525204.0
+      },
+      {
         "title": "LIVE – Bitcoin Overnight Rally Roundtripped: Saylor and Strategy Didn’t Flinch",
         "url": "https://cryptonews.com/news/bitcoin-rally-roundtrip-saylor-strategy-buying-crypto-news/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2554,13 +2561,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 11:30 ET",
         "pub_ts": 1795451448.0
-      },
-      {
-        "title": "Strategy adds 457 bitcoin to balance sheet, buys back $212M of STRC",
-        "url": "https://finance.yahoo.com/video/strategy-adds-457-bitcoin-to-balance-sheet-buys-back-212m-of-strc-162801112.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 11:28 ET",
-        "pub_ts": 1795451281.0
       }
     ],
     "SNDK": [
@@ -2639,6 +2639,20 @@
     ],
     "CRWD": [
       {
+        "title": "What CrowdStrike's Stock Pay Means For Its Owners",
+        "url": "https://www.trefis.com/stock/crwd/articles/628258/what-crowdstrike-s-stock-pay-means-for-its-owners/2026-11-24?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 08:46 ET",
+        "pub_ts": 1795527972.0
+      },
+      {
+        "title": "Wall Street’s New M&A Mood: Why Both Marvell-Lumentum and CrowdStrike-Zscaler Hit Pushback",
+        "url": "https://247wallst.com/investing/2026/11/24/wall-streets-new-ma-mood-why-both-marvell-lumentum-and-crowdstrike-zscaler-hit-pushback/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 08:45 ET",
+        "pub_ts": 1795527912.0
+      },
+      {
         "title": "Wall Street Stays Bullish on CrowdStrike Despite Zscaler Price Tag",
         "url": "https://finance.yahoo.com/markets/stocks/articles/wall-street-stays-bullish-crowdstrike-122238753.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2658,20 +2672,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 06:57 ET",
         "pub_ts": 1795521420.0
-      },
-      {
-        "title": "CrowdStrike Bets Two Top Dogs Beat One",
-        "url": "https://www.fool.com/investing/2026/11/24/crowdstrike-bets-two-top-dogs-beat-one/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 06:55 ET",
-        "pub_ts": 1795521321.0
-      },
-      {
-        "title": "CrowdStrike Poised For ‘Hyper Growth And Profit,’ Says Guggenheim — Sees 34% Upside In CRWD Stock",
-        "url": "https://stocktwits.com/news-articles/markets/equity/crowdstrike-poised-for-hyper-growth-and-profit-says-guggenheim-sees-34-upside-in-crwd-stock/cNbsEP5R9kg?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 06:20 ET",
-        "pub_ts": 1795519219.0
       }
     ],
     "ORCL": [
@@ -3009,11 +3009,25 @@
     ],
     "WMT": [
       {
+        "title": "Three retail stocks to watch this holiday season: Walmart, Target and TJX",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/three-retail-stocks-watch-holiday-135156984.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 08:51 ET",
+        "pub_ts": 1795528316.0
+      },
+      {
         "title": "Walmart Raised Its Outlook and the Stock Fell Anyway. Here’s the New Price Target",
         "url": "https://247wallst.com/investing/2026/11/24/walmart-raised-its-outlook-and-the-stock-fell-anyway-heres-the-new-price-target/?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-24 08:17 ET",
         "pub_ts": 1795526262.0
+      },
+      {
+        "title": "Walmart Inc. (WMT) Is a Trending Stock: Facts to Know Before Betting on It",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/walmart-inc-wmt-trending-stock-130005748.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 08:00 ET",
+        "pub_ts": 1795525205.0
       },
       {
         "title": "Walmart Leadership to Participate in Upcoming Investor Events",
@@ -3028,20 +3042,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 07:58 ET",
         "pub_ts": 1795525121.0
-      },
-      {
-        "title": "First Trust Alerian NextGen Infra (FTQI) Buys $22 Million More Walmart on Nov. 20",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/first-trust-alerian-nextgen-infra-110348918.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 06:03 ET",
-        "pub_ts": 1795518228.0
-      },
-      {
-        "title": "ETFs Are Buying Walmart (WMT) on Nov. 20",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-buying-walmart-wmt-nov-110151407.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 06:01 ET",
-        "pub_ts": 1795518111.0
       }
     ],
     "V": [
@@ -3194,11 +3194,32 @@
     ],
     "ANT": [
       {
+        "title": "Archive Intel Launches Model Context Protocol (MCP) and Claude Compliance API Integration",
+        "url": "https://finance.yahoo.com/technology/ai/articles/archive-intel-launches-model-context-140400674.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 09:04 ET",
+        "pub_ts": 1795529040.0
+      },
+      {
+        "title": "Anthropic’s stock offers an \"attractive entry\" point, analyst says",
+        "url": "https://finance.yahoo.com/technology/ai/articles/anthropic-stock-offers-attractive-entry-140147631.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 09:01 ET",
+        "pub_ts": 1795528907.0
+      },
+      {
         "title": "Stock Market Today: Tech Futures Sell Off After Big Market Surge; AMD, Anthropic, Nvidia Dive (Live Coverage)",
         "url": "https://finance.yahoo.com/m/4aa4ff31-269f-346e-80c4-e681510af7ae/stock-market-today%3A-tech.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 08:07 ET",
-        "pub_ts": 1795525679.0
+        "time": "11-24 08:51 ET",
+        "pub_ts": 1795528300.0
+      },
+      {
+        "title": "Should Anthropic Holders Worry About Its Rough Start?",
+        "url": "https://www.trefis.com/stock/ant/articles/628266/should-anthropic-holders-worry-about-its-rough-start/2026-11-24?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 08:46 ET",
+        "pub_ts": 1795527972.0
       },
       {
         "title": "YieldMax® Introduces Option Income Strategy ETF on Anthropic (ANT)",
@@ -3206,27 +3227,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 08:00 ET",
         "pub_ts": 1795525200.0
-      },
-      {
-        "title": "Praxent Launches Claude-Powered Commercial Lending Engine to Help Lenders Win More Commercial Loans",
-        "url": "https://finance.yahoo.com/technology/ai/articles/praxent-launches-claude-powered-commercial-130000242.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 08:00 ET",
-        "pub_ts": 1795525200.0
-      },
-      {
-        "title": "Dario and Daniela Amodei Each Sold $280 Million of Anthropic Stock in the IPO",
-        "url": "https://247wallst.com/investing/2026/11/24/dario-and-daniela-amodei-each-sold-280-million-of-anthropic-stock-in-the-ipo/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 07:57 ET",
-        "pub_ts": 1795525079.0
-      },
-      {
-        "title": "Dan Niles: Why Pay “20 Times Trailing Revenues” for Anthropic When SK Hynix Trades at 2x Earnings?",
-        "url": "https://www.tikr.com/blog/dan-niles-why-pay-20-times-trailing-revenues-for-anthropic-when-sk-hynix-trades-at-2x-earnings?ref=yahoofinance&tlnk=yf-261124-wv9jf564&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 07:56 ET",
-        "pub_ts": 1795524966.0
       }
     ],
     "XAUUSD": [
@@ -3335,27 +3335,27 @@
     "MU": 1795528894.578236,
     "SKHY": 1795528894.578236,
     "WDC": 1795528894.578236,
-    "STX": 1795527999.918939,
-    "MSTR": 1795527999.918939,
-    "SNDK": 1795527999.918939,
+    "STX": 1795529545.133309,
+    "MSTR": 1795529545.133309,
+    "SNDK": 1795529545.133309,
     "BTC-USD": 1795528894.578236,
-    "CRWD": 1795527999.918939,
+    "CRWD": 1795529545.133309,
     "ORCL": 1795529218.6063874,
     "COIN": 1795529218.6063874,
     "LLY": 1795529218.6063874,
     "MRNA": 1795529218.6063874,
     "NKE": 1795529218.6063874,
     "MCD": 1795529218.6063874,
-    "PEP": 1795527999.918939,
+    "PEP": 1795529545.133309,
     "XOM": 1795529438.2998693,
     "JPM": 1795529438.2998693,
-    "WMT": 1795527999.918939,
+    "WMT": 1795529545.133309,
     "V": 1795529218.6063874,
-    "CAT": 1795527999.918939,
+    "CAT": 1795529545.133309,
     "FN": 1795528894.578236,
     "GLW": 1795529218.6063874,
-    "ANT": 1795527999.918939,
-    "XAUUSD": 1795527999.918939,
+    "ANT": 1795529545.133309,
+    "XAUUSD": 1795529545.133309,
     "KOSPI": 1795528894.578236
   },
   "opex_shield": {
@@ -3375,7 +3375,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (09:04 ET / 22:04 BJ) [原油]：WTI原油向上触及82美元/桶，日内涨0.90%。布伦特原油日内涨幅达1.00%，现报90.24美元/桶。",
+    "detail": "⚡ 最新核心快讯 (09:12 ET / 22:12 BJ) [关税] [特朗普]：【特朗普政府拟重启关税攻势，最快周二宣布相关决定】 11月24日讯，据一位知情人士透露，美国正准备最早于周二宣布提高对欧盟以及十多个其他经济体商品的关税。特朗普政府正寻求以新的关税措施取代此",
     "event_name": "",
     "minutes_left": 0,
     "opex_shield": {
