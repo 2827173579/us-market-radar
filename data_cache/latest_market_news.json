@@ -1,9 +1,25 @@
 {
-  "updated_at_ts": 1795560614.868,
-  "updated_at_et": "11-24 17:50 ET",
-  "updated_at_kst": "07:50 KST",
+  "updated_at_ts": 1795560712.506,
+  "updated_at_et": "11-24 17:51 ET",
+  "updated_at_kst": "07:51 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261125065000000800",
+      "title": "【今日重点关注的财经数据与事件：2026年11月25日 周三】 ① 08:30 澳大利亚…",
+      "summary": "【今日重点关注的财经数据与事件：2026年11月25日 周三】 ① 08:30 澳大利亚10月未季调CPI年率 ② 15:00 德国第三季度未季调GDP年率终值 ③ 17:00 瑞士11月ZEW投资者信心指数 ④ 21:30 美国至11月21日当周初请失业金人数 ⑤ 21:30 美国10月核心PCE物价指数年率 ⑥ 21:30 美国10月个人支出月率 ⑦ 21:30 美国第三季度实际GDP年化季率修正值 ⑧ 21:30 美国10月核心PCE物价指数月率 ⑨ 21:30 美国10月耐用品订单月率 ⑩ 22:15英国英国央行行长贝利等官员出席听证会 ⑪ 23:00 美国10月新屋销售总数年化 ⑫ 23:30 美国至11月20日当周EIA原油库存 ⑬ 23:30 美国至11月20日当周EIA库欣原油库存 ⑭ 23:30 美国至11月20日当周EIA战略石油储备库存 ⑮ 次日01:00 美国至11月20日当周EIA天然气库存 ⑯ 次日02:00 美国至11月27日当周石油钻井总数 ⑰ 次日03:00 美联储公布经济状况褐皮书",
+      "keywords": [
+        "美联储",
+        "CPI",
+        "PCE",
+        "原油"
+      ],
+      "pub_ts": 1795560600.0,
+      "time_et": "11-24 17:50 ET",
+      "time_bj": "06:50 BJ",
+      "time_kst": "07:50 KST",
+      "time_display": "17:50 ET / 06:50 BJ"
+    },
     {
       "id": "20261125063817711800",
       "title": "黄仁勋复职后首次全员会以道歉开场！承认违反公司行为准则，透露每天接受心理治疗",
@@ -340,19 +356,6 @@
       "time_bj": "21:15 BJ",
       "time_kst": "22:15 KST",
       "time_display": "08:15 ET / 21:15 BJ"
-    },
-    {
-      "id": "20261124211313089800",
-      "title": "据华尔街日报：新关税将覆盖这些国家出口的大多数商品，但可能不包括钢铁、铝和汽车等部分工业…",
-      "summary": "据华尔街日报：新关税将覆盖这些国家出口的大多数商品，但可能不包括钢铁、铝和汽车等部分工业产品。这些商品已依据另一项国家安全授权单独征收关税。",
-      "keywords": [
-        "关税"
-      ],
-      "pub_ts": 1795525993.0,
-      "time_et": "11-24 08:13 ET",
-      "time_bj": "21:13 BJ",
-      "time_kst": "22:13 KST",
-      "time_display": "08:13 ET / 21:13 BJ"
     }
   ],
   "ticker_news": {
@@ -2266,18 +2269,18 @@
         "pub_ts": 1795555305.0
       },
       {
+        "title": "DELL Stock Gains After-Hours As AI Server Boom Leads Record Q3, Prompts Third Annual Forecast Hike",
+        "url": "https://stocktwits.com/news-articles/markets/equity/dell-stock-gains-after-hours-as-ai-server-boom-leads-record-q3-prompts-third-annual-forecast-hike/cNbsV6sR9lG?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 17:31 ET",
+        "pub_ts": 1795559462.0
+      },
+      {
         "title": "Dell Just Reported Earnings and Raised Its Forecast by $10 Billion. Is the Stock a Buy After Tuesday's Selloff?",
         "url": "https://www.fool.com/investing/2026/11/24/dell-just-reported-earnings-and-raised-its-forecast-by-usd10-billion-is-the-stock-a-buy-after-tuesday-s-selloff/?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-24 17:14 ET",
         "pub_ts": 1795558483.0
-      },
-      {
-        "title": "Dell Technologies Smashes Q3 Estimates, Guides Above Views",
-        "url": "https://finance.yahoo.com/m/4f82e7c0-64cb-3be4-911b-f1c9f673e3be/dell-technologies-smashes-q3.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 17:02 ET",
-        "pub_ts": 1795557749.0
       }
     ],
     "OKLO": [
@@ -2689,6 +2692,13 @@
     ],
     "ORCL": [
       {
+        "title": "Oracle (ORCL) Falls More Steeply Than Broader Market: What Investors Need to Know",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/oracle-orcl-falls-more-steeply-214502238.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 16:45 ET",
+        "pub_ts": 1795556702.0
+      },
+      {
         "title": "Not Good: Oracle’s Credit Swaps Blow Out Again a Day After Huang’s Return Lifted Nvidia",
         "url": "https://www.tikr.com/blog/not-good-oracles-credit-swaps-blow-out-again-a-day-after-huangs-return-lifted-nvidia?ref=yahoofinance&tlnk=yf-261124-vcwxc3ff&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2715,13 +2725,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 10:29 ET",
         "pub_ts": 1795534140.0
-      },
-      {
-        "title": "How Investors Are Reacting To Oracle Stock Securing AI Funding",
-        "url": "https://finance.yahoo.com/technology/ai/articles/investors-reacting-oracle-stock-securing-151310449.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 10:13 ET",
-        "pub_ts": 1795533190.0
       }
     ],
     "COIN": [
@@ -2874,6 +2877,13 @@
     ],
     "MCD": [
       {
+        "title": "Wendy’s has inflated prices for up to 10 years, lawsuit claims — weeks after McDonald's was accused of a similar scheme",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/wendy-inflated-prices-10-years-223000770.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 17:30 ET",
+        "pub_ts": 1795559400.0
+      },
+      {
         "title": "Crispier Chicken and Remodels Pit McDonald's Against Franchisees",
         "url": "https://finance.yahoo.com/video/crispier-chicken-remodels-pit-mcdonalds-172814756.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2900,13 +2910,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 04:26 ET",
         "pub_ts": 1795512362.0
-      },
-      {
-        "title": "Colgate-Palmolive vs. McDonald's: Which Consumer Goods Stock Is a Better Buy for 2027?",
-        "url": "https://www.fool.com/coverage/better-buy/2026/11/23/colgate-palmolive-vs-mcdonalds-which-consumer-goods-stock-is-a-better-buy-for-2027/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 17:31 ET",
-        "pub_ts": 1795473062.0
       }
     ],
     "PEP": [
@@ -3333,37 +3336,37 @@
     "AXTI": 1795560118.8794138,
     "NASA": 1795560513.2645628,
     "LUNR": 1795560513.2645628,
-    "TSLA": 1795559209.8958948,
+    "TSLA": 1795560712.5061336,
     "AXP": 1795560513.2645628,
     "RKLB": 1795560513.2645628,
     "KO": 1795560513.2645628,
     "FLY": 1795560513.2645628,
     "INTC": 1795560513.2645628,
-    "VRT": 1795559209.8958948,
-    "HPE": 1795559209.8958948,
-    "DELL": 1795559209.8958948,
-    "OKLO": 1795559209.8958948,
-    "CEG": 1795559209.8958948,
-    "FPS": 1795559209.8958948,
+    "VRT": 1795560712.5061336,
+    "HPE": 1795560712.5061336,
+    "DELL": 1795560712.5061336,
+    "OKLO": 1795560712.5061336,
+    "CEG": 1795560712.5061336,
+    "FPS": 1795560712.5061336,
     "MU": 1795560118.8794138,
     "SKHY": 1795560118.8794138,
     "WDC": 1795560118.8794138,
-    "STX": 1795559209.8958948,
-    "MSTR": 1795559209.8958948,
-    "SNDK": 1795559209.8958948,
+    "STX": 1795560712.5061336,
+    "MSTR": 1795560712.5061336,
+    "SNDK": 1795560712.5061336,
     "BTC-USD": 1795560118.8794138,
-    "CRWD": 1795559209.8958948,
-    "ORCL": 1795559209.8958948,
-    "COIN": 1795559209.8958948,
-    "LLY": 1795559209.8958948,
-    "MRNA": 1795559209.8958948,
+    "CRWD": 1795560712.5061336,
+    "ORCL": 1795560712.5061336,
+    "COIN": 1795560712.5061336,
+    "LLY": 1795560712.5061336,
+    "MRNA": 1795560712.5061336,
     "NKE": 1795559312.0007234,
-    "MCD": 1795559209.8958948,
+    "MCD": 1795560712.5061336,
     "PEP": 1795559312.0007234,
     "XOM": 1795559312.0007234,
     "JPM": 1795559312.0007234,
     "WMT": 1795559312.0007234,
-    "V": 1795559209.8958948,
+    "V": 1795560712.5061336,
     "CAT": 1795559312.0007234,
     "FN": 1795560118.8794138,
     "GLW": 1795560513.2645628,
@@ -3388,7 +3391,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (17:38 ET / 06:38 BJ) [特朗普]：黄仁勋承认违反公司行为准则、让员工失望，并透露自己每天接受心理治疗，希望纠正相关行为。面对特朗普政府介入复职的争议，他强调董事会是经事实评估后作出决定。点击查看",
+    "detail": "⚡ 最新核心快讯 (17:50 ET / 06:50 BJ) [美联储] [CPI] [PCE]：【今日重点关注的财经数据与事件：2026年11月25日 周三】 ① 08:30 澳大利亚10月未季调CPI年率 ② 15:00 德国第三季度未季调GDP年率终值 ③ 17:00 瑞士11月Z",
     "event_name": "",
     "minutes_left": 0,
     "opex_shield": {
