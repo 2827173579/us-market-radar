@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795536109.063,
-  "updated_at_et": "11-24 11:01 ET",
-  "updated_at_kst": "01:01 KST",
+  "updated_at_ts": 1795536213.674,
+  "updated_at_et": "11-24 11:03 ET",
+  "updated_at_kst": "01:03 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -443,6 +443,13 @@
         "pub_ts": 1795518174.0
       },
       {
+        "title": "If Anthropic Does This It Could Reach $130 By Year End",
+        "url": "https://247wallst.com/investing/2026/11/24/if-anthropic-does-this-it-could-reach-130-by-year-end/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 10:45 ET",
+        "pub_ts": 1795535148.0
+      },
+      {
         "title": "Exchange-Traded Funds, Equity Futures Lower Pre-Bell Tuesday as Investors Pull Back From AI-Related Stocks",
         "url": "https://finance.yahoo.com/markets/stocks/articles/exchange-traded-funds-equity-futures-141922343.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -455,13 +462,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 08:42 ET",
         "pub_ts": 1795527720.0
-      },
-      {
-        "title": "ETFs Bought $120 Million of Mastercard (MA) on Friday",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-bought-120-million-mastercard-110212516.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 06:02 ET",
-        "pub_ts": 1795518132.0
       }
     ],
     "DIA": [
@@ -568,11 +568,11 @@
         "pub_ts": 1795485819.0
       },
       {
-        "title": "Stock Market Today: Nasdaq Sells Off After Big Market Surge; AMD, Anthropic, Nvidia All Dive (Live Coverage)",
-        "url": "https://finance.yahoo.com/m/4aa4ff31-269f-346e-80c4-e681510af7ae/stock-market-today%3A-nasdaq.html?.tsrc=rss",
+        "title": "Here's Why Investors Should Go Defensive Now: ETFs in Focus",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/heres-why-investors-defensive-now-134200178.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 09:42 ET",
-        "pub_ts": 1795531368.0
+        "time": "11-24 08:42 ET",
+        "pub_ts": 1795527720.0
       }
     ],
     "SMH": [
@@ -584,11 +584,11 @@
         "pub_ts": 1795518582.0
       },
       {
-        "title": "The Semiconductor ETF Is on Track to Beat the S&P 500 for a 4th Straight Year. It Has Never Done That Before.",
-        "url": "https://www.fool.com/investing/2026/11/19/the-semiconductor-etf-is-on-track-to-beat-the-s-and-p-500-for-a-4th-straight-year-it-has-never-done-that-before/?.tsrc=rss",
+        "title": "Michael Burry Sells Most of His Nvidia Puts Before Stock Jumps 31%",
+        "url": "https://finance.yahoo.com/markets/options/articles/michael-burry-sells-most-nvidia-153035278.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-19 18:43 ET",
-        "pub_ts": 1795131782.0
+        "time": "11-24 10:30 ET",
+        "pub_ts": 1795534235.0
       },
       {
         "title": "Michael Burry Bought Nvidia Calls, Cut His Semiconductor Shorts Before The Rally – But He’s Not Done Questioning Jensen Huang",
@@ -3287,14 +3287,14 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795534687.936589,
-    "SOXL": 1795534687.936589,
-    "SPY": 1795534687.936589,
-    "DIA": 1795534687.936589,
-    "SOXX": 1795534687.936589,
-    "QQQ": 1795534687.936589,
-    "SMH": 1795534687.936589,
-    "IWM": 1795534687.936589,
+    "KORU": 1795536213.6742067,
+    "SOXL": 1795536213.6742067,
+    "SPY": 1795536213.6742067,
+    "DIA": 1795536213.6742067,
+    "SOXX": 1795536213.6742067,
+    "QQQ": 1795536213.6742067,
+    "SMH": 1795536213.6742067,
+    "IWM": 1795536213.6742067,
     "IGV": 1795534820.4722772,
     "TLT": 1795534820.4722772,
     "GLD": 1795534820.4722772,
