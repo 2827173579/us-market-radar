@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795550733.135,
-  "updated_at_et": "11-24 15:05 ET",
-  "updated_at_kst": "05:05 KST",
+  "updated_at_ts": 1795550834.877,
+  "updated_at_et": "11-24 15:07 ET",
+  "updated_at_kst": "05:07 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2611,6 +2611,20 @@
     ],
     "BTC-USD": [
       {
+        "title": "ECB expands role of tokenized assets in traditional finance",
+        "url": "https://finance.yahoo.com/video/ecb-expands-role-tokenized-assets-200000958.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 15:00 ET",
+        "pub_ts": 1795550400.0
+      },
+      {
+        "title": "Bitcoin Losses Are the Worst Since FTX. Is the Bottom Near?",
+        "url": "https://decrypt.co/383909/bitcoin-losses-worst-since-ftx-is-bottom-near?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 14:35 ET",
+        "pub_ts": 1795548932.0
+      },
+      {
         "title": "Jensen Huang’s Nvidia return is a ‘bullish black swan’ and bitcoin is in gold’s ‘doghouse’ era: Eric Balchunas",
         "url": "http://videos.coindesk.com/previews/4vD9Xjkt?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2630,20 +2644,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 14:11 ET",
         "pub_ts": 1795547487.0
-      },
-      {
-        "title": "Syncracy’s Watkins Says 12.5% of Data Centers Mining Pearl Would Pass Bitcoin’s Energy Use",
-        "url": "https://unchainedcrypto.com/syncracys-watkins-says-12-5-of-data-centers-mining-pearl-would-pass-bitcoins-energy-use/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 14:10 ET",
-        "pub_ts": 1795547400.0
-      },
-      {
-        "title": "SpaceX Falls 4%, CoreWeave Down 13%, Nebius Down 11% as AI Stocks Give Back Nvidia Rally",
-        "url": "https://www.tikr.com/blog/spacex-falls-4-coreweave-down-13-nebius-down-11-as-ai-stocks-give-back-nvidia-rally?ref=yahoofinance&tlnk=yf-261124-6rfwxx6w&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 13:57 ET",
-        "pub_ts": 1795546678.0
       }
     ],
     "CRWD": [
@@ -3315,18 +3315,18 @@
     "NOW": 1795550733.1345832,
     "AMZN": 1795550733.1345832,
     "CRWV": 1795550733.1345832,
-    "NBIS": 1795549312.7376688,
+    "NBIS": 1795550834.8765044,
     "APLD": 1795549810.3749979,
     "VST": 1795549810.3749979,
     "BE": 1795549810.3749979,
     "CRDO": 1795549810.3749979,
     "COHR": 1795549810.3749979,
-    "MRVL": 1795549312.7376688,
-    "LITE": 1795549312.7376688,
+    "MRVL": 1795550834.8765044,
+    "LITE": 1795550834.8765044,
     "AAOI": 1795549810.3749979,
     "SPCX": 1795549810.3749979,
     "ASTS": 1795549810.3749979,
-    "AXTI": 1795549312.7376688,
+    "AXTI": 1795550834.8765044,
     "NASA": 1795549810.3749979,
     "LUNR": 1795549810.3749979,
     "TSLA": 1795549915.7215352,
@@ -3341,13 +3341,13 @@
     "OKLO": 1795549915.7215352,
     "CEG": 1795549915.7215352,
     "FPS": 1795549915.7215352,
-    "MU": 1795549312.7376688,
-    "SKHY": 1795549312.7376688,
-    "WDC": 1795549312.7376688,
+    "MU": 1795550834.8765044,
+    "SKHY": 1795550834.8765044,
+    "WDC": 1795550834.8765044,
     "STX": 1795549915.7215352,
     "MSTR": 1795549915.7215352,
     "SNDK": 1795549915.7215352,
-    "BTC-USD": 1795549312.7376688,
+    "BTC-USD": 1795550834.8765044,
     "CRWD": 1795549915.7215352,
     "ORCL": 1795549915.7215352,
     "COIN": 1795549915.7215352,
@@ -3361,7 +3361,7 @@
     "WMT": 1795550018.5852363,
     "V": 1795549915.7215352,
     "CAT": 1795550018.5852363,
-    "FN": 1795549312.7376688,
+    "FN": 1795550834.8765044,
     "GLW": 1795549810.3749979,
     "ANT": 1795550018.5852363,
     "XAUUSD": 1795550214.6901689,
