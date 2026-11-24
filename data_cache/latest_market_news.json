@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795552234.974,
-  "updated_at_et": "11-24 15:30 ET",
-  "updated_at_kst": "05:30 KST",
+  "updated_at_ts": 1795552335.601,
+  "updated_at_et": "11-24 15:32 ET",
+  "updated_at_kst": "05:32 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2389,6 +2389,13 @@
     ],
     "MU": [
       {
+        "title": "Warning for Micron Investors: Bank of America Says “Semis Cuts Have Started”",
+        "url": "https://www.tikr.com/blog/warning-for-micron-investors-bank-of-america-says-semis-cuts-have-started?ref=yahoofinance&tlnk=yf-261124-3rcj3g36&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 15:10 ET",
+        "pub_ts": 1795551039.0
+      },
+      {
         "title": "Micron Just Hit a $700 Ceiling, Caught a Downgrade, and Is Down 10% Today. Is MU a Toxic Stock or a Prime Bargain?",
         "url": "https://247wallst.com/investing/2026/11/24/micron-just-hit-a-700-ceiling-caught-a-downgrade-and-is-down-10-today-is-mu-a-toxic-stock-or-a-prime-bargain/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2415,13 +2422,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 12:37 ET",
         "pub_ts": 1795541820.0
-      },
-      {
-        "title": "The Same $10,000 in AMD and Micron Could Produce Very Different Results by 2030",
-        "url": "https://247wallst.com/investing/2026/11/24/the-same-10000-in-amd-and-micron-could-produce-very-different-results-by-2030/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 12:34 ET",
-        "pub_ts": 1795541642.0
       }
     ],
     "SKHY": [
@@ -2611,6 +2611,13 @@
     ],
     "BTC-USD": [
       {
+        "title": "China tariff threat knocks Bitcoin below $60,000",
+        "url": "https://www.thestreet.com/crypto/markets/china-tariff-threat-knocks-bitcoin-below-60000?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 15:02 ET",
+        "pub_ts": 1795550572.0
+      },
+      {
         "title": "ECB expands role of tokenized assets in traditional finance",
         "url": "https://finance.yahoo.com/video/ecb-expands-role-tokenized-assets-200000958.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2637,13 +2644,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 14:15 ET",
         "pub_ts": 1795547700.0
-      },
-      {
-        "title": "The Bitcoin Price That Would Signal the Sell-Off Is Over",
-        "url": "https://247wallst.com/investing/cryptocurrency/2026/11/24/the-bitcoin-price-that-would-signal-the-sell-off-is-over/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 14:11 ET",
-        "pub_ts": 1795547487.0
       }
     ],
     "CRWD": [
@@ -3315,18 +3315,18 @@
     "NOW": 1795552234.9740376,
     "AMZN": 1795552234.9740376,
     "CRWV": 1795552234.9740376,
-    "NBIS": 1795550834.8765044,
+    "NBIS": 1795552335.601488,
     "APLD": 1795551329.632173,
     "VST": 1795551329.632173,
     "BE": 1795551329.632173,
     "CRDO": 1795551329.632173,
     "COHR": 1795551329.632173,
-    "MRVL": 1795550834.8765044,
-    "LITE": 1795550834.8765044,
+    "MRVL": 1795552335.601488,
+    "LITE": 1795552335.601488,
     "AAOI": 1795551329.632173,
     "SPCX": 1795551329.632173,
     "ASTS": 1795551329.632173,
-    "AXTI": 1795550834.8765044,
+    "AXTI": 1795552335.601488,
     "NASA": 1795551329.632173,
     "LUNR": 1795551329.632173,
     "TSLA": 1795551430.8445425,
@@ -3341,13 +3341,13 @@
     "OKLO": 1795551430.8445425,
     "CEG": 1795551430.8445425,
     "FPS": 1795551430.8445425,
-    "MU": 1795550834.8765044,
-    "SKHY": 1795550834.8765044,
-    "WDC": 1795550834.8765044,
+    "MU": 1795552335.601488,
+    "SKHY": 1795552335.601488,
+    "WDC": 1795552335.601488,
     "STX": 1795551430.8445425,
     "MSTR": 1795551430.8445425,
     "SNDK": 1795551430.8445425,
-    "BTC-USD": 1795550834.8765044,
+    "BTC-USD": 1795552335.601488,
     "CRWD": 1795551430.8445425,
     "ORCL": 1795551430.8445425,
     "COIN": 1795551430.8445425,
@@ -3361,7 +3361,7 @@
     "WMT": 1795551532.7891963,
     "V": 1795551430.8445425,
     "CAT": 1795551532.7891963,
-    "FN": 1795550834.8765044,
+    "FN": 1795552335.601488,
     "GLW": 1795551329.632173,
     "ANT": 1795551532.7891963,
     "XAUUSD": 1795551727.8889852,
