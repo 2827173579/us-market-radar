@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795487030.079,
-  "updated_at_et": "11-23 21:23 ET",
-  "updated_at_kst": "11:23 KST",
+  "updated_at_ts": 1795487133.61,
+  "updated_at_et": "11-23 21:25 ET",
+  "updated_at_kst": "11:25 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -543,6 +543,20 @@
     ],
     "QQQ": [
       {
+        "title": "QQQ Paid a $300,000 Holder $1,524 in Dividends Over the Past Year While VYM Paid $7,164",
+        "url": "https://247wallst.com/investing/etf/2026/11/23/qqq-paid-a-300000-holder-1524-in-dividends-over-the-past-year-while-vym-paid-7164/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 21:03 ET",
+        "pub_ts": 1795485819.0
+      },
+      {
+        "title": "QQQ Is Almost Half In 10 Stocks. This Nasdaq ETF Caps Every One at 1%",
+        "url": "https://247wallst.com/investing/etf/2026/11/23/qqq-is-almost-half-in-10-stocks-this-nasdaq-etf-caps-every-one-at-1/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 21:01 ET",
+        "pub_ts": 1795485664.0
+      },
+      {
         "title": "Should You Swap Tech For Johnson & Johnson Stock?",
         "url": "https://www.trefis.com/stock/jnj/articles/627623/should-you-swap-tech-for-johnson-johnson-stock/2026-11-23?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -562,20 +576,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 06:04 ET",
         "pub_ts": 1795431845.0
-      },
-      {
-        "title": "Why stocks had their best Monday since 2020",
-        "url": "https://finance.yahoo.com/markets/article/why-stocks-are-having-their-wildest-morning-since-2008-184837610.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 10:31 ET",
-        "pub_ts": 1795447860.0
-      },
-      {
-        "title": "Nvidia Just Jumped More Than 30%. A 66-Year-Old Who Moved $500,000 Out of VOO on Friday Missed a Five-Figure Day",
-        "url": "https://247wallst.com/investing/etf/2026/11/23/nvidia-just-jumped-more-than-30-a-66-year-old-who-moved-500000-out-of-voo-on-friday-missed-a-five-figure-day/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 13:31 ET",
-        "pub_ts": 1795458691.0
       }
     ],
     "SMH": [
@@ -2430,6 +2430,13 @@
     ],
     "SKHY": [
       {
+        "title": "Nvidia’s Asian Suppliers Rally as Jensen Huang Returns as CEO: SK Hynix Jumps 8%, SoftBank Shares Rise in Tokyo",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/nvidia-asian-suppliers-rally-jensen-012213841.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 20:22 ET",
+        "pub_ts": 1795483333.0
+      },
+      {
         "title": "Why SK Hynix Stock Skyrocketed Today",
         "url": "https://www.fool.com/investing/2026/11/23/why-sk-hynix-stock-skyrocketed-today/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2456,13 +2463,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 07:44 ET",
         "pub_ts": 1795437864.0
-      },
-      {
-        "title": "U.S. chip and neocloud stocks rally premarket after last week’s selloff",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/u-chip-neocloud-stocks-rally-102133642.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 05:21 ET",
-        "pub_ts": 1795429293.0
       }
     ],
     "WDC": [
@@ -3255,10 +3255,10 @@
   "ticker_news_ts": {
     "KORU": 1795486052.1183255,
     "SOXL": 1795486052.1183255,
-    "SPY": 1795485633.0253508,
+    "SPY": 1795487133.6095319,
     "DIA": 1795486052.1183255,
     "SOXX": 1795486052.1183255,
-    "QQQ": 1795485633.0253508,
+    "QQQ": 1795487133.6095319,
     "SMH": 1795486052.1183255,
     "IWM": 1795486052.1183255,
     "IGV": 1795486052.1183255,
@@ -3288,12 +3288,12 @@
     "BE": 1795486269.6028042,
     "CRDO": 1795486269.6028042,
     "COHR": 1795486269.6028042,
-    "MRVL": 1795485633.0253508,
-    "LITE": 1795485633.0253508,
+    "MRVL": 1795487133.6095319,
+    "LITE": 1795487133.6095319,
     "AAOI": 1795486269.6028042,
     "SPCX": 1795486269.6028042,
     "ASTS": 1795486269.6028042,
-    "AXTI": 1795485633.0253508,
+    "AXTI": 1795487133.6095319,
     "NASA": 1795486269.6028042,
     "LUNR": 1795486269.6028042,
     "TSLA": 1795486269.6028042,
@@ -3308,27 +3308,27 @@
     "OKLO": 1795486269.6028042,
     "CEG": 1795486269.6028042,
     "FPS": 1795486489.0000737,
-    "MU": 1795485633.0253508,
-    "SKHY": 1795485633.0253508,
-    "WDC": 1795485633.0253508,
+    "MU": 1795487133.6095319,
+    "SKHY": 1795487133.6095319,
+    "WDC": 1795487133.6095319,
     "STX": 1795486489.0000737,
     "MSTR": 1795486489.0000737,
     "SNDK": 1795486489.0000737,
-    "BTC-USD": 1795485633.0253508,
+    "BTC-USD": 1795487133.6095319,
     "CRWD": 1795486489.0000737,
-    "ORCL": 1795485633.0253508,
-    "COIN": 1795485633.0253508,
-    "LLY": 1795485633.0253508,
-    "MRNA": 1795485633.0253508,
-    "NKE": 1795485633.0253508,
-    "MCD": 1795485633.0253508,
+    "ORCL": 1795487133.6095319,
+    "COIN": 1795487133.6095319,
+    "LLY": 1795487133.6095319,
+    "MRNA": 1795487133.6095319,
+    "NKE": 1795487133.6095319,
+    "MCD": 1795487133.6095319,
     "PEP": 1795486489.0000737,
     "XOM": 1795486052.1183255,
     "JPM": 1795486052.1183255,
     "WMT": 1795486489.0000737,
     "V": 1795486052.1183255,
     "CAT": 1795486489.0000737,
-    "FN": 1795485633.0253508,
+    "FN": 1795487133.6095319,
     "GLW": 1795486269.6028042,
     "ANT": 1795486489.0000737,
     "XAUUSD": 1795486489.0000737

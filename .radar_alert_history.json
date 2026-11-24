@@ -46,8 +46,8 @@
       "last_notified_at": 0.0
     },
     "TSM": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1795482980.7388785
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "FLY": {
       "state": "NORMAL",
@@ -171,15 +171,15 @@
     },
     "NKE": {
       "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1795480206.5020988
+      "last_notified_at": 1795487144.6435924
     },
     "HPE": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1795476079.4623187
+      "last_notified_at": 1795487144.6435924
     },
     "PLTR": {
       "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1795483514.2765794
+      "last_notified_at": 1795487144.6435924
     }
   },
   "position_peaks": {
