@@ -5211,9 +5211,13 @@
     "2026-11-23:MSTR/APLD/COIN/CRDO/BE/AMAT/SKHY/MU/AMD:STOP_LOSS": {
       "device": "PC",
       "ts": 1795482112.0122828
+    },
+    "2026-11-23:NBIS:STOP_LOSS": {
+      "device": "PC",
+      "ts": 1795482219.7391608
     }
   },
   "device": "PC",
-  "last_heartbeat_ts": 1795482027.678462,
-  "updated_at": "2026-11-24T01:01:52.012854+00:00"
+  "last_heartbeat_ts": 1795482133.1425102,
+  "updated_at": "2026-11-24T01:03:39.739642+00:00"
 }
