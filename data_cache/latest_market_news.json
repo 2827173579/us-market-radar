@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795526894.342,
-  "updated_at_et": "11-24 08:28 ET",
-  "updated_at_kst": "22:28 KST",
+  "updated_at_ts": 1795527001.902,
+  "updated_at_et": "11-24 08:30 ET",
+  "updated_at_kst": "22:30 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -425,6 +425,13 @@
     ],
     "SPY": [
       {
+        "title": "Own Humana Stock? Its Profit Cushion Is The Thinnest",
+        "url": "https://www.trefis.com/stock/unh/articles/628256/own-humana-stock-its-profit-cushion-is-the-thinnest/2026-11-24?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 08:03 ET",
+        "pub_ts": 1795525388.0
+      },
+      {
         "title": "What SPDR S&P 500 ETF Trust (SPY) Bought: Apple Leads on Friday",
         "url": "https://finance.yahoo.com/markets/stocks/articles/spdr-p-500-etf-trust-110254690.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -451,13 +458,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 06:02 ET",
         "pub_ts": 1795518126.0
-      },
-      {
-        "title": "ETFs Are Buying Walmart (WMT) on Nov. 20",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-buying-walmart-wmt-nov-110151407.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 06:01 ET",
-        "pub_ts": 1795518111.0
       }
     ],
     "DIA": [
@@ -527,11 +527,11 @@
         "pub_ts": 1795451214.0
       },
       {
-        "title": "Chip Stocks Lead Premarket Bounce as SOXX Soars",
-        "url": "https://finance.yahoo.com/m/da42314d-e4d9-32a7-b543-328e1f71d8ea/chip-stocks-lead-premarket.html?.tsrc=rss",
+        "title": "As AI Stocks Plummet, Insiders Are Buying Into These 3 Names",
+        "url": "https://www.marketbeat.com/articles/as-ai-stocks-plummet-insiders-are-buying-into-these-3-names/?utm_source=yahoofinance&utm_medium=yahoofinance&.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 05:12 ET",
-        "pub_ts": 1795428778.0
+        "time": "11-23 08:10 ET",
+        "pub_ts": 1795439400.0
       }
     ],
     "QQQ": [
@@ -564,11 +564,11 @@
         "pub_ts": 1795471324.0
       },
       {
-        "title": "ETFs Are Buying Micron Technology (MU) on Friday",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-buying-micron-technology-mu-110141845.html?.tsrc=rss",
+        "title": "Stock Market Today: Tech Futures Sell Off After Big Market Surge; AMD, Anthropic, Nvidia Dive (Live Coverage)",
+        "url": "https://finance.yahoo.com/m/4aa4ff31-269f-346e-80c4-e681510af7ae/stock-market-today%3A-tech.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 06:01 ET",
-        "pub_ts": 1795518101.0
+        "time": "11-24 08:07 ET",
+        "pub_ts": 1795525679.0
       }
     ],
     "SMH": [
@@ -3283,14 +3283,14 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795525461.5197084,
-    "SOXL": 1795525461.5197084,
-    "SPY": 1795525461.5197084,
-    "DIA": 1795525461.5197084,
-    "SOXX": 1795525461.5197084,
-    "QQQ": 1795525461.5197084,
-    "SMH": 1795525461.5197084,
-    "IWM": 1795525461.5197084,
+    "KORU": 1795527001.9019988,
+    "SOXL": 1795527001.9019988,
+    "SPY": 1795527001.9019988,
+    "DIA": 1795527001.9019988,
+    "SOXX": 1795527001.9019988,
+    "QQQ": 1795527001.9019988,
+    "SMH": 1795527001.9019988,
+    "IWM": 1795527001.9019988,
     "IGV": 1795525569.1089377,
     "TLT": 1795525569.1089377,
     "GLD": 1795525569.1089377,
