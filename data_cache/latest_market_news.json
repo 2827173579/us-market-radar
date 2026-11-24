@@ -1,9 +1,22 @@
 {
-  "updated_at_ts": 1795537979.343,
-  "updated_at_et": "11-24 11:32 ET",
-  "updated_at_kst": "01:32 KST",
+  "updated_at_ts": 1795538086.871,
+  "updated_at_et": "11-24 11:34 ET",
+  "updated_at_kst": "01:34 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261125003251093800",
+      "title": "【报道：美方讨论对伊朗高层实施定点打击 特朗普尚未作出决定】 11月25日讯，据NBC援…",
+      "summary": "【报道：美方讨论对伊朗高层实施定点打击 特朗普尚未作出决定】 11月25日讯，据NBC援引一名美国官员及一名了解相关讨论的人士透露，特朗普政府内部正在讨论是否对伊朗高级领导人实施定点打击，以削弱伊朗强硬派势力。支持这一方案的官员认为，此举可向伊朗政权传递美国能够随时锁定并击杀其领导人的信号，有助于推动战争结束；反对者则担心，这可能促使伊朗剩余领导层进一步强硬，损害美国未来谈判的信誉，部分美军将领还警告，此举可能增加美国官员面临的安全风险。消息人士称，特朗普尚未就下一步行动作出最终决定，正在考虑恢复大规模军事行动、打击伊朗基础设施及其他军事目标等选项。潜在目标还包括哈尔克岛石油设施、格什姆岛油气基础设施，以及伊朗“镐山”核浓缩设施。对伊朗高层实施定点打击需要高度精确的情报，美方通常会结合以色列情报开展相关行动。",
+      "keywords": [
+        "特朗普"
+      ],
+      "pub_ts": 1795537971.0,
+      "time_et": "11-24 11:32 ET",
+      "time_bj": "00:32 BJ",
+      "time_kst": "01:32 KST",
+      "time_display": "11:32 ET / 00:32 BJ"
+    },
     {
       "id": "20261125000000000800",
       "title": "【今日重点关注的财经数据与事件：2026年11月25日 周三】 ① 00:30 加拿大央…",
@@ -336,20 +349,6 @@
       "time_bj": "19:19 BJ",
       "time_kst": "20:19 KST",
       "time_display": "06:19 ET / 19:19 BJ"
-    },
-    {
-      "id": "20261124191509547800",
-      "title": "【Anthropic盘前下挫逾6% 跌破发行价】 11月24日讯，Anthropic(A…",
-      "summary": "【Anthropic盘前下挫逾6% 跌破发行价】 11月24日讯，Anthropic(ANT.O)美股盘前跌幅扩大至6.7%，报81.71美元，跌破83美元的IPO发行价。AXIOS此前报道称，Anthropic和OpenAI许多员工认为，公司内部尚未发布的模型能力已变得极其强大，已无法安全地向公众发布，消息人士表示，这一挑战可能会显著放缓人工智能（AI）的发展热潮。根据周一晚间提交的一份文件，Anthropic首席执行官达里奥·阿莫代伊在公司上市次日出售了超过337万股股票，套现金额超过2.8亿美元。周一，在英伟达重新任命黄仁勋为首席执行官、推动这家芯片制造商股价飙升近30%后，华尔街人工智能相关股票引领市场普遍反弹，但Anthropic未能跟上这轮涨势。",
-      "keywords": [
-        "芯片",
-        "英伟达"
-      ],
-      "pub_ts": 1795518909.0,
-      "time_et": "11-24 06:15 ET",
-      "time_bj": "19:15 BJ",
-      "time_kst": "20:15 KST",
-      "time_display": "06:15 ET / 19:15 BJ"
     }
   ],
   "ticker_news": {
@@ -1687,6 +1686,13 @@
     ],
     "LITE": [
       {
+        "title": "Lumentum (LITE) Stock Looks Richly Priced As Its Three Year Run Continues",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/lumentum-lite-stock-looks-richly-160910430.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 11:09 ET",
+        "pub_ts": 1795536550.0
+      },
+      {
         "title": "Applied Optoelectronics Climbs 5% on $2.2 Billion Hyperscaler Supply Deal; Lumentum and Coherent Drop 6%",
         "url": "https://247wallst.com/investing/2026/11/24/applied-optoelectronics-climbs-5-on-2-2-billion-hyperscaler-supply-deal-lumentum-and-coherent-drop-6/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1713,13 +1719,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 16:42 ET",
         "pub_ts": 1795470165.0
-      },
-      {
-        "title": "Should You Buy Marvell Technology Stock Before Dec. 1?",
-        "url": "https://www.fool.com/investing/2026/11/23/should-you-buy-marvell-technology-stock-before-dec-1/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 12:54 ET",
-        "pub_ts": 1795456442.0
       }
     ],
     "AAOI": [
@@ -2612,6 +2611,27 @@
     ],
     "BTC-USD": [
       {
+        "title": "Not Crypto. Not Gold. Not Silver. This Is the Safe-Haven Asset I'd Pile Money Into Right Now",
+        "url": "https://www.fool.com/investing/2026/11/24/not-crypto-not-gold-not-silver-this-is-the-safe-haven-asset-i-d-pile-money-into-right-now/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 11:16 ET",
+        "pub_ts": 1795536962.0
+      },
+      {
+        "title": "Fidelity Adds Aave, Chainlink and Uniswap to Its Crypto Trading Platform",
+        "url": "https://www.cryptoprowl.com/releases/fidelity-adds-aave-chainlink-and-uniswap-to-its-crypto-trading-platform-8054?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 11:11 ET",
+        "pub_ts": 1795536660.0
+      },
+      {
+        "title": "Italian Bank Offers Bitcoin Investment With a No-Loss Guarantee",
+        "url": "https://beincrypto.com/unicredit-italy-bitcoin-certificate-retail/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 11:00 ET",
+        "pub_ts": 1795536006.0
+      },
+      {
         "title": "Stocks give back gains as Anthropic dips below IPO price",
         "url": "https://finance.yahoo.com/video/stocks-give-back-gains-as-anthropic-dips-below-ipo-price-154408548.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2624,27 +2644,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 10:43 ET",
         "pub_ts": 1795535031.0
-      },
-      {
-        "title": "Is Michael Saylor's bitcoin strategy losing its appeal?",
-        "url": "https://finance.yahoo.com/video/is-michael-saylors-bitcoin-strategy-losing-its-appeal-151603542.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 10:16 ET",
-        "pub_ts": 1795533363.0
-      },
-      {
-        "title": "USDT Market Cap Drops, Raising Doubts About a Lasting Bitcoin Recovery",
-        "url": "https://www.ccn.com/news/crypto/usdt-market-cap-drop-bitcoin-recovery/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 10:02 ET",
-        "pub_ts": 1795532536.0
-      },
-      {
-        "title": "Bitcoin Price Nears $60K Despite Saylor’s BTC Buy: Is the Bottom In?",
-        "url": "https://99bitcoins.com/news/bitcoin-btc/bitcoin-price-nears-60k-despite-saylors-btc-buy-is-the-bottom-in/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 09:57 ET",
-        "pub_ts": 1795532234.0
       }
     ],
     "CRWD": [
@@ -3316,18 +3315,18 @@
     "NOW": 1795537979.3426144,
     "AMZN": 1795537979.3426144,
     "CRWV": 1795537979.3426144,
-    "NBIS": 1795536555.0148876,
+    "NBIS": 1795538086.871041,
     "APLD": 1795536879.8407834,
     "VST": 1795536879.8407834,
     "BE": 1795536879.8407834,
     "CRDO": 1795536879.8407834,
     "COHR": 1795536879.8407834,
-    "MRVL": 1795536555.0148876,
-    "LITE": 1795536555.0148876,
+    "MRVL": 1795538086.871041,
+    "LITE": 1795538086.871041,
     "AAOI": 1795536879.8407834,
     "SPCX": 1795536990.5617945,
     "ASTS": 1795536879.8407834,
-    "AXTI": 1795536555.0148876,
+    "AXTI": 1795538086.871041,
     "NASA": 1795536990.5617945,
     "LUNR": 1795536990.5617945,
     "TSLA": 1795536990.5617945,
@@ -3342,13 +3341,13 @@
     "OKLO": 1795537097.599484,
     "CEG": 1795537097.599484,
     "FPS": 1795537097.599484,
-    "MU": 1795536555.0148876,
-    "SKHY": 1795536555.0148876,
-    "WDC": 1795536555.0148876,
+    "MU": 1795538086.871041,
+    "SKHY": 1795538086.871041,
+    "WDC": 1795538086.871041,
     "STX": 1795537204.1513371,
     "MSTR": 1795537204.1513371,
     "SNDK": 1795537204.1513371,
-    "BTC-USD": 1795536555.0148876,
+    "BTC-USD": 1795538086.871041,
     "CRWD": 1795537204.1513371,
     "ORCL": 1795536879.8407834,
     "COIN": 1795536879.8407834,
@@ -3362,11 +3361,11 @@
     "WMT": 1795537204.1513371,
     "V": 1795536879.8407834,
     "CAT": 1795537204.1513371,
-    "FN": 1795536555.0148876,
+    "FN": 1795538086.871041,
     "GLW": 1795536879.8407834,
     "ANT": 1795537204.1513371,
     "XAUUSD": 1795537204.1513371,
-    "KOSPI": 1795536555.0148876
+    "KOSPI": 1795538086.871041
   },
   "opex_shield": {
     "date": "2026-11-24",
@@ -3385,7 +3384,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (11:00 ET / 00:00 BJ) [美联储] [CPI] [PCE]：【今日重点关注的财经数据与事件：2026年11月25日 周三】 ① 00:30 加拿大央行行长麦克勒姆发表讲话 ② 05:30 美国至11月20日当周API原油库存 ③ 08:30 澳大利亚",
+    "detail": "⚡ 最新核心快讯 (11:32 ET / 00:32 BJ) [特朗普]：【报道：美方讨论对伊朗高层实施定点打击 特朗普尚未作出决定】 11月25日讯，据NBC援引一名美国官员及一名了解相关讨论的人士透露，特朗普政府内部正在讨论是否对伊朗高级领导人实施定点打击，以",
     "event_name": "",
     "minutes_left": 0,
     "opex_shield": {
