@@ -1,9 +1,26 @@
 {
-  "updated_at_ts": 1795504263.787,
-  "updated_at_et": "11-24 02:11 ET",
-  "updated_at_kst": "16:11 KST",
+  "updated_at_ts": 1795504377.083,
+  "updated_at_et": "11-24 02:12 ET",
+  "updated_at_kst": "16:12 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261124151138439800",
+      "title": "整理：每日全球外汇市场要闻速递（2026-11-24）",
+      "summary": "美元： 1. 美国银行全球研究部：预计到2027年底，10年期美债收益率将达到4.75%。 2. 德银：预计2027年底10年期美债将达5.05%。 3. 美国11月标普全球制造业PMI初值54.5，预期54.5。 4. 美联储—鲍曼遭内部调查，涉嫌违反缄默期规定；威廉姆斯：抗通胀工作尚未完成，没证据表明部分价格正蔓延至更广更持久的通胀。在未来货币政策行动的步伐方面，不排除任何选项。如有必要，将在连续多次会议上加息。 欧元： 1. 欧洲央行管委西姆库斯：12月加息或许还不够，但无需急于采取后续行动。 2. 美银全球研究2027年展望预计欧洲央行将在2027年晚些时候降息50个基点。 3. 德国商业活动指标飙升，创2022年以来新高。德国11月制造业PMI初值录得55，高于预期的54。 4. 德银：预计2027年底10年期德债收益率将达3.45%。 5. 法国财长：法国或调低2027年经济增长预期。 其他： 1. 美银全球研究2027年展望：预计2027年全球经济增速为3.4%，预计美国GDP增速为2.3%，预计欧元区GDP增速为0.8%。 2. 高盛：稳定韩元比加息更能抑制韩国通胀。 3. 韩国考虑明年1月发行约30亿美元债，以补充外汇储备。 4. 菲律宾央行：将根据需要尽可能收紧货币政策。 5. 银行人士称，土耳其央行上周抛售了120亿美元外汇。 6. 土耳其央行行长：或利用黄金相关工具改善外汇状况。 7. 新加坡经济增长超预期 2026年GDP增速预期上调至6%。",
+      "keywords": [
+        "美联储",
+        "降息",
+        "加息",
+        "美债",
+        "标普"
+      ],
+      "pub_ts": 1795504298.0,
+      "time_et": "11-24 02:11 ET",
+      "time_bj": "15:11 BJ",
+      "time_kst": "16:11 KST",
+      "time_display": "02:11 ET / 15:11 BJ"
+    },
     {
       "id": "20261124150518814800",
       "title": "高盛警告美联储或激进加息，美股暴跌背后藏着更大风险",
@@ -326,20 +343,6 @@
       "time_bj": "09:19 BJ",
       "time_kst": "10:19 KST",
       "time_display": "20:19 ET / 09:19 BJ"
-    },
-    {
-      "id": "20261124091354393800",
-      "title": "【黄仁勋复任CEO提振市场 亚洲科技股大幅反弹】 11月24日讯，受黄仁勋突然重新出任英…",
-      "summary": "【黄仁勋复任CEO提振市场 亚洲科技股大幅反弹】 11月24日讯，受黄仁勋突然重新出任英伟达(NVDA.O)首席执行官的消息提振，亚洲科技股周二大幅上涨。韩国KOSPI指数一度上涨7%。三星电子和SK海力士分别大涨逾8.3%和10%。日本方面，日经225指数上涨5%，覆盖面更广的东证指数上涨3%。台湾加权指数开盘上涨9%，台积电开涨约10%。首尔未来资产证券分析师Suh Sang-young表示：“随着黄仁勋回归，市场在近期超卖后出现大幅反弹。但由于人工智能交易背后的基本条件并未发生变化，此轮复苏可能较为有限。投资者仍对供需失衡、人工智能行业面临的监管风险，以及数据中心建设延误导致的成本上升保持警惕。”",
-      "keywords": [
-        "英伟达",
-        "台积电"
-      ],
-      "pub_ts": 1795482834.0,
-      "time_et": "11-23 20:13 ET",
-      "time_bj": "09:13 BJ",
-      "time_kst": "10:13 KST",
-      "time_display": "20:13 ET / 09:13 BJ"
     }
   ],
   "ticker_news": {
@@ -2417,6 +2420,13 @@
     ],
     "SKHY": [
       {
+        "title": "TSMC, Samsung, SK Hynix Rally As Jensen Huang Returns As Nvidia CEO — Top Analyst Flags Risks To AI Recovery",
+        "url": "https://stocktwits.com/news-articles/markets/equity/tsmc-samsung-sk-hynix-rally-as-jensen-huang-returns-as-nvidia-ceo-top-analyst-flags-risks-to-ai-recovery/cNbr6E1R9kE?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 02:00 ET",
+        "pub_ts": 1795503606.0
+      },
+      {
         "title": "Asia chipmaking stocks soar tracking Nvidia rally; S.Korea, Taiwan lead",
         "url": "https://finance.yahoo.com/technology/ai/articles/asia-chipmaking-stocks-soar-tracking-021520376.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2443,13 +2453,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 12:54 ET",
         "pub_ts": 1795456481.0
-      },
-      {
-        "title": "SK Hynix Soars 8%, Sandisk Up 6% as Memory Stocks Rebound From AI Rout",
-        "url": "https://www.tikr.com/blog/sk-hynix-soars-8-sandisk-up-6-as-memory-stocks-rebound-from-ai-rout?ref=yahoofinance&tlnk=yf-261123-3qjfmh53&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 09:33 ET",
-        "pub_ts": 1795444435.0
       }
     ],
     "WDC": [
@@ -2602,6 +2605,20 @@
     ],
     "BTC-USD": [
       {
+        "title": "Bitcoin And Stocks Are Moving In Different Directions: Arthur Hayes Says Nvidia's Rally Is The 'Worst Thing' For Crypto",
+        "url": "https://stocktwits.com/news-articles/markets/cryptocurrency/arthur-hayes-nvidia-rally-bitcoin-november-selloff/cNbrzA2R9k3?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 01:45 ET",
+        "pub_ts": 1795502725.0
+      },
+      {
+        "title": "Bitcoin hovers around $60k amid little relief from rate, regulatory jitters",
+        "url": "https://finance.yahoo.com/markets/crypto/articles/bitcoin-hovers-around-60k-amid-064423052.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 01:44 ET",
+        "pub_ts": 1795502663.0
+      },
+      {
         "title": "Grayscale Calls Bitcoin Oversold, but One Outside Risk Could Decide Its Path",
         "url": "https://beincrypto.com/grayscale-bitcoin-oversold-ai-risks/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2621,20 +2638,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 22:12 ET",
         "pub_ts": 1795489953.0
-      },
-      {
-        "title": "Dead Cat Bounce? AI Stocks Climb 20%+, but IREN, Applied Digital Stay Down 50%+",
-        "url": "https://beincrypto.com/ai-stocks-dead-cat-bounce-iren/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 22:05 ET",
-        "pub_ts": 1795489500.0
-      },
-      {
-        "title": "Dr. Clemen Chiang Publishes The Last Line, Completing the Four-Book Series The Disclosed Record",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/dr-clemen-chiang-publishes-last-030400342.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 22:04 ET",
-        "pub_ts": 1795489440.0
       }
     ],
     "CRWD": [
@@ -3306,18 +3309,18 @@
     "NOW": 1795504263.786768,
     "AMZN": 1795504263.786768,
     "CRWV": 1795504263.786768,
-    "NBIS": 1795502860.9353533,
+    "NBIS": 1795504377.082735,
     "APLD": 1795503183.115661,
     "VST": 1795503183.115661,
     "BE": 1795503183.115661,
     "CRDO": 1795503183.115661,
     "COHR": 1795503183.115661,
-    "MRVL": 1795502860.9353533,
-    "LITE": 1795502860.9353533,
+    "MRVL": 1795504377.082735,
+    "LITE": 1795504377.082735,
     "AAOI": 1795503183.115661,
     "SPCX": 1795503183.115661,
     "ASTS": 1795503183.115661,
-    "AXTI": 1795502860.9353533,
+    "AXTI": 1795504377.082735,
     "NASA": 1795503183.115661,
     "LUNR": 1795503183.115661,
     "TSLA": 1795503291.4962344,
@@ -3332,27 +3335,27 @@
     "OKLO": 1795503291.4962344,
     "CEG": 1795503291.4962344,
     "FPS": 1795503291.4962344,
-    "MU": 1795502860.9353533,
-    "SKHY": 1795502860.9353533,
-    "WDC": 1795502860.9353533,
+    "MU": 1795504377.082735,
+    "SKHY": 1795504377.082735,
+    "WDC": 1795504377.082735,
     "STX": 1795503291.4962344,
     "MSTR": 1795503291.4962344,
     "SNDK": 1795503291.4962344,
-    "BTC-USD": 1795502860.9353533,
+    "BTC-USD": 1795504377.082735,
     "CRWD": 1795503291.4962344,
-    "ORCL": 1795502860.9353533,
-    "COIN": 1795502860.9353533,
-    "LLY": 1795502860.9353533,
-    "MRNA": 1795502860.9353533,
-    "NKE": 1795502860.9353533,
-    "MCD": 1795502860.9353533,
+    "ORCL": 1795504377.082735,
+    "COIN": 1795504377.082735,
+    "LLY": 1795504377.082735,
+    "MRNA": 1795504377.082735,
+    "NKE": 1795504377.082735,
+    "MCD": 1795504377.082735,
     "PEP": 1795503291.4962344,
-    "XOM": 1795502860.9353533,
-    "JPM": 1795502860.9353533,
+    "XOM": 1795504377.082735,
+    "JPM": 1795504377.082735,
     "WMT": 1795503291.4962344,
-    "V": 1795502860.9353533,
+    "V": 1795504377.082735,
     "CAT": 1795503291.4962344,
-    "FN": 1795502860.9353533,
+    "FN": 1795504377.082735,
     "GLW": 1795503183.115661,
     "ANT": 1795503291.4962344,
     "XAUUSD": 1795503505.3050168,
@@ -3375,7 +3378,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (02:05 ET / 15:05 BJ) [美联储] [加息]：高盛交易主管警告，美联储可能从温和加息转向更激进的紧缩周期。随着科技股估值大幅回落、金融条件降至18个月来最紧水平，美股面临的风险已不只是AI交易降温。点击查看",
+    "detail": "⚡ 最新核心快讯 (02:11 ET / 15:11 BJ) [美联储] [降息] [加息]：美元： 1. 美国银行全球研究部：预计到2027年底，10年期美债收益率将达到4.75%。 2. 德银：预计2027年底10年期美债将达5.05%。 3. 美国11月标普全球制造业PMI初值",
     "event_name": "",
     "minutes_left": 0,
     "opex_shield": {
