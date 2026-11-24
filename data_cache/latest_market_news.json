@@ -1,9 +1,22 @@
 {
-  "updated_at_ts": 1795559912.827,
-  "updated_at_et": "11-24 17:38 ET",
-  "updated_at_kst": "07:38 KST",
+  "updated_at_ts": 1795560016.718,
+  "updated_at_et": "11-24 17:40 ET",
+  "updated_at_kst": "07:40 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261125063817711800",
+      "title": "黄仁勋复职后首次全员会以道歉开场！承认违反公司行为准则，透露每天接受心理治疗",
+      "summary": "黄仁勋承认违反公司行为准则、让员工失望，并透露自己每天接受心理治疗，希望纠正相关行为。面对特朗普政府介入复职的争议，他强调董事会是经事实评估后作出决定。点击查看",
+      "keywords": [
+        "特朗普"
+      ],
+      "pub_ts": 1795559897.0,
+      "time_et": "11-24 17:38 ET",
+      "time_bj": "06:38 BJ",
+      "time_kst": "07:38 KST",
+      "time_display": "17:38 ET / 06:38 BJ"
+    },
     {
       "id": "20261125063052222800",
       "title": "整理：昨日今晨重要新闻汇总（2026-11-25）",
@@ -340,19 +353,6 @@
       "time_bj": "21:13 BJ",
       "time_kst": "22:13 KST",
       "time_display": "08:13 ET / 21:13 BJ"
-    },
-    {
-      "id": "20261124211132327800",
-      "title": "据华尔街日报：欧盟、日本、韩国可能面临15%或更低的关税。",
-      "summary": "据华尔街日报：欧盟、日本、韩国可能面临15%或更低的关税。",
-      "keywords": [
-        "关税"
-      ],
-      "pub_ts": 1795525892.0,
-      "time_et": "11-24 08:11 ET",
-      "time_bj": "21:11 BJ",
-      "time_kst": "22:11 KST",
-      "time_display": "08:11 ET / 21:11 BJ"
     }
   ],
   "ticker_news": {
@@ -1156,21 +1156,28 @@
         "pub_ts": 1795545223.0
       },
       {
-        "title": "Mark Zuckerberg's Meta Faces New Battle Over Control",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/mark-zuckerbergs-meta-faces-battle-164556554.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 11:45 ET",
-        "pub_ts": 1795538756.0
-      },
-      {
         "title": "AI Regulation Could Put BILL Stock In Focus",
         "url": "https://finance.yahoo.com/technology/ai/articles/ai-regulation-could-put-bill-211152422.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-24 16:11 ET",
         "pub_ts": 1795554712.0
+      },
+      {
+        "title": "These 4 Utility Stocks Pay Dividends While AI Drives Electricity Demand Higher",
+        "url": "https://247wallst.com/investing/2026/11/24/these-4-utility-stocks-pay-dividends-while-ai-drives-electricity-demand-higher/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 15:17 ET",
+        "pub_ts": 1795551459.0
       }
     ],
     "GOOGL": [
+      {
+        "title": "Stephanie Link Says Marvell Could Earn $30 a Share by 2031. Is She Right?",
+        "url": "https://247wallst.com/investing/2026/11/24/stephanie-link-says-marvell-could-earn-30-a-share-by-2031-is-she-right/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 17:07 ET",
+        "pub_ts": 1795558073.0
+      },
       {
         "title": "Billionaire Charlie Munger’s Protege Li Lu: Himalaya Capital Has 45% of Its $3.78 Billion Portfolio in Alphabet",
         "url": "https://247wallst.com/investing/2026/11/24/billionaire-charlie-mungers-protege-li-lu-himalaya-capital-has-45-of-its-3-78-billion-portfolio-in-alphabet/?.tsrc=rss",
@@ -1198,16 +1205,16 @@
         "source": "Yahoo Finance",
         "time": "11-24 14:20 ET",
         "pub_ts": 1795548002.0
-      },
-      {
-        "title": "Billionaire David Abrams’ Top 5 Stock Picks for 2027",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/billionaire-david-abrams-top-5-190703630.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 14:07 ET",
-        "pub_ts": 1795547223.0
       }
     ],
     "MSFT": [
+      {
+        "title": "Anthropic falls below IPO price as Nvidia gives back gains",
+        "url": "https://finance.yahoo.com/video/anthropic-falls-below-ipo-price-as-nvidia-gives-back-gains-214558309.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 16:45 ET",
+        "pub_ts": 1795556758.0
+      },
       {
         "title": "Microsoft declares a code red in the middle of a 'Patchpocalypse'",
         "url": "https://finance.yahoo.com/markets/article/microsoft-declares-a-code-red-in-the-middle-of-a-patchpocalypse-193740712.html?.tsrc=rss",
@@ -1235,13 +1242,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 14:50 ET",
         "pub_ts": 1795549802.0
-      },
-      {
-        "title": "Microsoft initiates ‘Code Red’ after most disruptive outage in company’s history: report",
-        "url": "https://nypost.com/2026/11/24/business/microsoft-initiates-code-red-after-most-disruptive-outage-in-companys-history-report/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 14:32 ET",
-        "pub_ts": 1795548775.0
       }
     ],
     "AAPL": [
@@ -1283,6 +1283,13 @@
     ],
     "PLTR": [
       {
+        "title": "Anthropic falls below IPO price as Nvidia gives back gains",
+        "url": "https://finance.yahoo.com/video/anthropic-falls-below-ipo-price-as-nvidia-gives-back-gains-214558309.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 16:45 ET",
+        "pub_ts": 1795556758.0
+      },
+      {
         "title": "Axon Enterprise vs. Palantir Technologies: Which Law Enforcement Stock Is a Better Buy for 2027?",
         "url": "https://www.fool.com/coverage/better-buy/2026/11/24/axon-enterprise-vs-palantir-technologies-which-law-enforcement-stock-is-a-better-buy-for-2027/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1309,16 +1316,16 @@
         "source": "Yahoo Finance",
         "time": "11-24 08:48 ET",
         "pub_ts": 1795528107.0
-      },
-      {
-        "title": "Insider Alert: Palantir CTO Dumps Nearly $48 Million in Stock",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/insider-alert-palantir-cto-dumps-115737849.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 06:57 ET",
-        "pub_ts": 1795521457.0
       }
     ],
     "NOW": [
+      {
+        "title": "Anthropic falls below IPO price as Nvidia gives back gains",
+        "url": "https://finance.yahoo.com/video/anthropic-falls-below-ipo-price-as-nvidia-gives-back-gains-214558309.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 16:45 ET",
+        "pub_ts": 1795556758.0
+      },
       {
         "title": "Global Workflow Market Size, Trends, and Forecast Report 2026 | Capitalize on 22.5% CAGR as IBM, Oracle, SAP, ServiceNow, and Appian Accelerate AI and Cloud Automation Through 2030",
         "url": "https://finance.yahoo.com/technology/articles/global-workflow-market-size-trends-143400424.html?.tsrc=rss",
@@ -1346,16 +1353,16 @@
         "source": "Yahoo Finance",
         "time": "11-23 15:08 ET",
         "pub_ts": 1795464489.0
-      },
-      {
-        "title": "Ondaro Unites Federal and SLED Under One Public Sector Leader",
-        "url": "https://finance.yahoo.com/technology/ai/articles/ondaro-unites-federal-sled-under-182800073.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 13:28 ET",
-        "pub_ts": 1795458480.0
       }
     ],
     "AMZN": [
+      {
+        "title": "Anthropic falls below IPO price as Nvidia gives back gains",
+        "url": "https://finance.yahoo.com/video/anthropic-falls-below-ipo-price-as-nvidia-gives-back-gains-214558309.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 16:45 ET",
+        "pub_ts": 1795556758.0
+      },
       {
         "title": "Is Amazon.com (AMZN) Still Below Fair Value As AI Spending Rises?",
         "url": "https://finance.yahoo.com/markets/stocks/articles/amazon-com-amzn-still-below-201044467.html?.tsrc=rss",
@@ -1383,13 +1390,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 12:39 ET",
         "pub_ts": 1795541974.0
-      },
-      {
-        "title": "Amazon Makes $7.5 Billion AI Move to Challenge Nvidia",
-        "url": "https://finance.yahoo.com/technology/ai/articles/amazon-makes-7-5-billion-164215378.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 11:42 ET",
-        "pub_ts": 1795538535.0
       }
     ],
     "CRWV": [
@@ -3292,33 +3292,33 @@
   "ticker_news_ts": {
     "KORU": 1795559712.5466921,
     "SOXL": 1795559712.5466921,
-    "SPY": 1795558418.190817,
+    "SPY": 1795560016.7184174,
     "DIA": 1795559712.5466921,
     "SOXX": 1795559712.5466921,
     "QQQ": 1795559712.5466921,
-    "SMH": 1795558418.190817,
+    "SMH": 1795560016.7184174,
     "IWM": 1795559712.5466921,
     "IGV": 1795559712.5466921,
     "TLT": 1795559712.5466921,
     "GLD": 1795559712.5466921,
     "SQQQ": 1795559712.5466921,
-    "TSM": 1795558418.190817,
+    "TSM": 1795560016.7184174,
     "VIXY": 1795559712.5466921,
     "SOXS": 1795559712.5466921,
     "NVDA": 1795559712.5466921,
     "AMD": 1795559712.5466921,
-    "ASML": 1795558418.190817,
-    "QCOM": 1795558418.190817,
+    "ASML": 1795560016.7184174,
+    "QCOM": 1795560016.7184174,
     "AVGO": 1795559712.5466921,
-    "AMAT": 1795558418.190817,
-    "META": 1795558418.190817,
-    "GOOGL": 1795558418.190817,
-    "MSFT": 1795558418.190817,
-    "AAPL": 1795558418.190817,
-    "PLTR": 1795558418.190817,
-    "NOW": 1795558418.190817,
-    "AMZN": 1795558418.190817,
-    "CRWV": 1795558418.190817,
+    "AMAT": 1795560016.7184174,
+    "META": 1795560016.7184174,
+    "GOOGL": 1795560016.7184174,
+    "MSFT": 1795560016.7184174,
+    "AAPL": 1795560016.7184174,
+    "PLTR": 1795560016.7184174,
+    "NOW": 1795560016.7184174,
+    "AMZN": 1795560016.7184174,
+    "CRWV": 1795560016.7184174,
     "NBIS": 1795558518.3891256,
     "APLD": 1795559010.40853,
     "VST": 1795559010.40853,
@@ -3369,7 +3369,7 @@
     "GLW": 1795559010.40853,
     "ANT": 1795559312.0007234,
     "XAUUSD": 1795559514.921597,
-    "KOSPI": 1795558418.190817
+    "KOSPI": 1795560016.7184174
   },
   "opex_shield": {
     "date": "2026-11-24",
@@ -3388,7 +3388,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (17:30 ET / 06:30 BJ) [美联储] [关税] [英伟达]：国内新闻 1. 神舟二十四号载人飞船瞄准北京时间11月25日08时18分发射。 2. 陈吉宁涉嫌严重违纪违法正接受中央纪委国家监委审查调查。 3. 央行25日将开展5000亿元7天期逆回购操",
+    "detail": "⚡ 最新核心快讯 (17:38 ET / 06:38 BJ) [特朗普]：黄仁勋承认违反公司行为准则、让员工失望，并透露自己每天接受心理治疗，希望纠正相关行为。面对特朗普政府介入复职的争议，他强调董事会是经事实评估后作出决定。点击查看",
     "event_name": "",
     "minutes_left": 0,
     "opex_shield": {
