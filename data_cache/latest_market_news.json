@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795537871.686,
-  "updated_at_et": "11-24 11:31 ET",
-  "updated_at_kst": "01:31 KST",
+  "updated_at_ts": 1795537979.343,
+  "updated_at_et": "11-24 11:32 ET",
+  "updated_at_kst": "01:32 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1176,32 +1176,32 @@
         "pub_ts": 1795532400.0
       },
       {
-        "title": "Meta Fell 8% Over the Last 30 Days: Mutiple Wall Street Desks Expect 67% Returns From Here",
-        "url": "https://247wallst.com/investing/2026/11/24/meta-fell-8-over-the-last-30-days-mutiple-wall-street-desks-expect-67-returns-from-here/?.tsrc=rss",
+        "title": "The Fed Just Said AI May Be a Major Threat to the U.S. Economy",
+        "url": "https://247wallst.com/investing/2026/11/24/the-fed-just-said-ai-may-be-a-major-threat-to-the-u-s-economy/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 10:45 ET",
-        "pub_ts": 1795535135.0
+        "time": "11-24 11:22 ET",
+        "pub_ts": 1795537344.0
       },
       {
-        "title": "Stocks give back gains as Anthropic dips below IPO price",
-        "url": "https://finance.yahoo.com/video/stocks-give-back-gains-as-anthropic-dips-below-ipo-price-154408548.html?.tsrc=rss",
+        "title": "Alphabet (GOOGL) Expands AI Search With Wallet Data",
+        "url": "https://finance.yahoo.com/technology/ai/articles/alphabet-googl-expands-ai-search-161031910.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 10:44 ET",
-        "pub_ts": 1795535048.0
+        "time": "11-24 11:10 ET",
+        "pub_ts": 1795536631.0
       },
       {
-        "title": "Who is holding Jensen Huang accountable? It sure looks like nobody",
-        "url": "https://finance.yahoo.com/video/who-is-holding-jensen-huang-accountable-it-sure-looks-like-nobody-154255467.html?.tsrc=rss",
+        "title": "What Is Driving Palantir Stock?",
+        "url": "https://www.trefis.com/stock/pltr/articles/628622/what-is-driving-palantir-stock-2/2026-11-24?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 10:42 ET",
-        "pub_ts": 1795534975.0
+        "time": "11-24 11:09 ET",
+        "pub_ts": 1795536563.0
       },
       {
-        "title": "What Sent CoreWeave Stock Higher On Monday?",
-        "url": "https://www.trefis.com/stock/crwv/articles/628618/what-sent-coreweave-stock-higher-on-monday/2026-11-24?.tsrc=rss",
+        "title": "Tesla Robotaxi Rival Starts Road Tests Without A Safety Monitor",
+        "url": "https://finance.yahoo.com/m/2fafeed7-c259-3087-9fa8-cf86f4a1ebd4/tesla-robotaxi-rival-starts.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 10:38 ET",
-        "pub_ts": 1795534689.0
+        "time": "11-24 11:01 ET",
+        "pub_ts": 1795536100.0
       }
     ],
     "MSFT": [
@@ -1354,6 +1354,13 @@
     ],
     "AMZN": [
       {
+        "title": "Amazon’s Decart acquisition is a bet on using software to narrow the gap with Nvidia in the AI chip race",
+        "url": "https://finance.yahoo.com/technology/ai/articles/amazon-decart-acquisition-bet-using-155107586.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 10:51 ET",
+        "pub_ts": 1795535467.0
+      },
+      {
         "title": "Amazon.com (AMZN) Agreed To Acquire Decart AI Optimization Technology For $7.5 Billion",
         "url": "https://finance.yahoo.com/technology/ai/articles/amazon-com-amzn-agreed-acquire-151147626.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1380,13 +1387,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 09:37 ET",
         "pub_ts": 1795531027.0
-      },
-      {
-        "title": "JSHealth, the $100M+ Global Revenue Brand, Eyes U.S. Retail Expansion Following Triple-Digit Growth",
-        "url": "https://finance.yahoo.com/healthcare/articles/jshealth-100m-global-revenue-brand-140000578.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 09:00 ET",
-        "pub_ts": 1795528800.0
       }
     ],
     "CRWV": [
@@ -3308,14 +3308,14 @@
     "QCOM": 1795537871.6858368,
     "AVGO": 1795537871.6858368,
     "AMAT": 1795537871.6858368,
-    "META": 1795536448.5700567,
-    "GOOGL": 1795536448.5700567,
+    "META": 1795537979.3426144,
+    "GOOGL": 1795537979.3426144,
     "MSFT": 1795537871.6858368,
-    "AAPL": 1795536448.5700567,
-    "PLTR": 1795536448.5700567,
-    "NOW": 1795536448.5700567,
-    "AMZN": 1795536448.5700567,
-    "CRWV": 1795536448.5700567,
+    "AAPL": 1795537979.3426144,
+    "PLTR": 1795537979.3426144,
+    "NOW": 1795537979.3426144,
+    "AMZN": 1795537979.3426144,
+    "CRWV": 1795537979.3426144,
     "NBIS": 1795536555.0148876,
     "APLD": 1795536879.8407834,
     "VST": 1795536879.8407834,
