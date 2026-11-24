@@ -1,9 +1,23 @@
 {
-  "updated_at_ts": 1795519118.248,
-  "updated_at_et": "11-24 06:18 ET",
-  "updated_at_kst": "20:18 KST",
+  "updated_at_ts": 1795519225.778,
+  "updated_at_et": "11-24 06:20 ET",
+  "updated_at_kst": "20:20 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261124191900318800",
+      "title": "【美国股指期货扩大跌幅 纳指期货跌2%】 11月24日讯，纳斯达克100指数期货日内跌幅…",
+      "summary": "【美国股指期货扩大跌幅 纳指期货跌2%】 11月24日讯，纳斯达克100指数期货日内跌幅扩大至2%，道指期货现跌约0.5%，标普500指数跌约1%。",
+      "keywords": [
+        "纳斯达克",
+        "标普"
+      ],
+      "pub_ts": 1795519140.0,
+      "time_et": "11-24 06:19 ET",
+      "time_bj": "19:19 BJ",
+      "time_kst": "20:19 KST",
+      "time_display": "06:19 ET / 19:19 BJ"
+    },
     {
       "id": "20261124190200183800",
       "title": "欧洲央行管委卡西克：最新数据显示，必须加息以抑制通胀。",
@@ -333,19 +347,6 @@
       "time_bj": "13:40 BJ",
       "time_kst": "14:40 KST",
       "time_display": "00:40 ET / 13:40 BJ"
-    },
-    {
-      "id": "20261124133131165800",
-      "title": "原油系期货主力合约短线下挫，SC原油跌幅扩大至4.12%，现报559元/桶。低硫燃料油（…",
-      "summary": "原油系期货主力合约短线下挫，SC原油跌幅扩大至4.12%，现报559元/桶。低硫燃料油（LU）跌幅扩大至4.12%，现报4512元/吨。燃油跌幅扩大至4.66%，现报3556元/吨。沥青跌幅扩大至4.09%，现报4076元/吨。",
-      "keywords": [
-        "原油"
-      ],
-      "pub_ts": 1795498291.0,
-      "time_et": "11-24 00:31 ET",
-      "time_bj": "13:31 BJ",
-      "time_kst": "14:31 KST",
-      "time_display": "00:31 ET / 13:31 BJ"
     }
   ],
   "ticker_news": {
@@ -432,32 +433,32 @@
         "pub_ts": 1795447860.0
       },
       {
-        "title": "Nvidia Is About 5% of a $500,000 S&P 500 Fund. On Monday Morning It Delivered About a Third of the Fund’s $23,900 Gain",
-        "url": "https://247wallst.com/investing/2026/11/23/nvidia-is-about-5-of-a-500000-sp-500-fund-on-monday-morning-it-delivered-about-a-third-of-the-funds-23900-gain/?.tsrc=rss",
+        "title": "ETF Activity: SPY Pulls In $9.24 Billion on Nov. 20",
+        "url": "https://finance.yahoo.com/markets/options/articles/etf-activity-spy-pulls-9-110012397.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 10:03 ET",
-        "pub_ts": 1795446180.0
+        "time": "11-24 06:00 ET",
+        "pub_ts": 1795518012.0
       },
       {
-        "title": "Stock Market: Will S&P 500 Open Up or Down Today?",
-        "url": "https://www.benzinga.com/markets/prediction-markets/26/11/63568369/stock-market-will-sp-500-open-up-or-down-today-84?utm_source=yahooFinance&utm_campaign=partner_feed&utm_medium=referral&.tsrc=rss",
+        "title": "ETFs Bought $393.8 Million of Broadcom (AVGO) on Nov. 20",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-bought-393-8-million-110109208.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 01:10 ET",
-        "pub_ts": 1795500637.0
+        "time": "11-24 06:01 ET",
+        "pub_ts": 1795518069.0
       },
       {
-        "title": "The 10-Year Topped 5% For The First Time Since 2007. What Happened Next?",
-        "url": "https://www.trefis.com/stock/spy/articles/627401/the-10-year-topped-5-for-the-first-time-since-2007-what-happened-next/2026-11-23?.tsrc=rss",
+        "title": "47 ETFs Add to Tesla (TSLA) Holdings on Nov. 20",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/47-etfs-add-tesla-tsla-110102533.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 00:06 ET",
-        "pub_ts": 1795496802.0
+        "time": "11-24 06:01 ET",
+        "pub_ts": 1795518062.0
       },
       {
-        "title": "Stocks Opened Up, Then Fell 3% By The Close. What Happened The Last 45 Times?",
-        "url": "https://www.trefis.com/stock/spy/articles/627441/stocks-opened-up-then-fell-3-by-the-close-what-happened-the-last-45-times/2026-11-23?.tsrc=rss",
+        "title": "61 ETFs Add to Microsoft (MSFT) Holdings on Nov. 20",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/61-etfs-add-microsoft-msft-110050902.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 00:06 ET",
-        "pub_ts": 1795496802.0
+        "time": "11-24 06:00 ET",
+        "pub_ts": 1795518050.0
       }
     ],
     "DIA": [
@@ -573,6 +574,13 @@
     ],
     "SMH": [
       {
+        "title": "Huang-Over Damps Wall Street Pre-Bell; Asia Up, Europe Off",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/huang-over-damps-wall-street-110942839.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 06:09 ET",
+        "pub_ts": 1795518582.0
+      },
+      {
         "title": "The Semiconductor ETF Is on Track to Beat the S&P 500 for a 4th Straight Year. It Has Never Done That Before.",
         "url": "https://www.fool.com/investing/2026/11/19/the-semiconductor-etf-is-on-track-to-beat-the-s-and-p-500-for-a-4th-straight-year-it-has-never-done-that-before/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -599,13 +607,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 10:52 ET",
         "pub_ts": 1795449140.0
-      },
-      {
-        "title": "Big Tech Rebound on Wall Street Pre-Bell; Asia Off, Europe Up",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/big-tech-rebound-wall-street-111142735.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 06:11 ET",
-        "pub_ts": 1795432302.0
       }
     ],
     "IWM": [
@@ -3283,14 +3284,14 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795517672.0598004,
-    "SOXL": 1795517672.0598004,
-    "SPY": 1795517672.0598004,
-    "DIA": 1795517672.0598004,
-    "SOXX": 1795517672.0598004,
-    "QQQ": 1795517672.0598004,
-    "SMH": 1795517672.0598004,
-    "IWM": 1795517672.0598004,
+    "KORU": 1795519225.777847,
+    "SOXL": 1795519225.777847,
+    "SPY": 1795519225.777847,
+    "DIA": 1795519225.777847,
+    "SOXX": 1795519225.777847,
+    "QQQ": 1795519225.777847,
+    "SMH": 1795519225.777847,
+    "IWM": 1795519225.777847,
     "IGV": 1795517781.9825242,
     "TLT": 1795517781.9825242,
     "GLD": 1795517781.9825242,
@@ -3381,7 +3382,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (06:02 ET / 19:02 BJ) [加息]：欧洲央行管委卡西克：最新数据显示，必须加息以抑制通胀。",
+    "detail": "⚡ 最新核心快讯 (06:19 ET / 19:19 BJ) [纳斯达克] [标普]：【美国股指期货扩大跌幅 纳指期货跌2%】 11月24日讯，纳斯达克100指数期货日内跌幅扩大至2%，道指期货现跌约0.5%，标普500指数跌约1%。",
     "event_name": "",
     "minutes_left": 0,
     "opex_shield": {
