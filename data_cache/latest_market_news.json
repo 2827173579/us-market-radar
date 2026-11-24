@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795556801.586,
-  "updated_at_et": "11-24 16:46 ET",
-  "updated_at_kst": "06:46 KST",
+  "updated_at_ts": 1795556903.101,
+  "updated_at_et": "11-24 16:48 ET",
+  "updated_at_kst": "06:48 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -441,6 +441,13 @@
         "pub_ts": 1795518174.0
       },
       {
+        "title": "Is Apple (AAPL) Above Fair Value As ETF Buying Returns?",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/apple-aapl-above-fair-value-211324050.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 16:13 ET",
+        "pub_ts": 1795554804.0
+      },
+      {
         "title": "If Anthropic Does This It Could Reach $130 By Year End",
         "url": "https://247wallst.com/investing/2026/11/24/if-anthropic-does-this-it-could-reach-130-by-year-end/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -453,13 +460,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 09:19 ET",
         "pub_ts": 1795529962.0
-      },
-      {
-        "title": "Here's Why Investors Should Go Defensive Now: ETFs in Focus",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/heres-why-investors-defensive-now-134200178.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 08:42 ET",
-        "pub_ts": 1795527720.0
       }
     ],
     "DIA": [
@@ -1130,6 +1130,13 @@
     ],
     "META": [
       {
+        "title": "Could Meta Actually Climb 30%? Or Is J.P. Morgan Totally Wrong?",
+        "url": "https://www.tikr.com/blog/could-meta-actually-climb-30-or-is-j-p-morgan-totally-wrong?ref=yahoofinance&tlnk=yf-261124-24hpvhqr&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 16:15 ET",
+        "pub_ts": 1795554957.0
+      },
+      {
         "title": "David Abrams’ Meta Platforms, Inc. (META) Bet Is Backed by Strong Cash Flow and AI Growth",
         "url": "https://finance.yahoo.com/markets/stocks/articles/david-abrams-meta-platforms-inc-190633349.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1156,13 +1163,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 11:35 ET",
         "pub_ts": 1795538100.0
-      },
-      {
-        "title": "What Moved Meta Stock?",
-        "url": "https://www.trefis.com/stock/meta/articles/628634/what-moved-meta-stock/2026-11-24?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 11:20 ET",
-        "pub_ts": 1795537206.0
       }
     ],
     "GOOGL": [
@@ -1241,6 +1241,13 @@
     ],
     "AAPL": [
       {
+        "title": "Why the Jensen Huang rally faded so quickly",
+        "url": "https://finance.yahoo.com/video/why-the-jensen-huang-rally-faded-so-quickly-194511286.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 14:45 ET",
+        "pub_ts": 1795549511.0
+      },
+      {
         "title": "Stocks give back gains as Anthropic dips below IPO price",
         "url": "https://finance.yahoo.com/video/stocks-give-back-gains-as-anthropic-dips-below-ipo-price-154408548.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1255,25 +1262,18 @@
         "pub_ts": 1795534975.0
       },
       {
-        "title": "Apple Stock Has 3 Things Going for It in 2027. Here’s My Price Target",
-        "url": "https://247wallst.com/investing/2026/11/24/apple-stock-has-3-things-going-for-it-in-2027-heres-my-price-target/?.tsrc=rss",
+        "title": "Maple raises $5.3M to build AI products that protect your data, even from itself",
+        "url": "https://finance.yahoo.com/technology/ai/articles/maple-raises-5-3m-build-211952973.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 12:03 ET",
-        "pub_ts": 1795539837.0
+        "time": "11-24 16:19 ET",
+        "pub_ts": 1795555192.0
       },
       {
-        "title": "Apple Inc. (AAPL) Delivered Strong Results: Why Investors Are Watching Its Next Move Closely",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/apple-inc-aapl-delivered-strong-165645219.html?.tsrc=rss",
+        "title": "Is Apple (AAPL) Above Fair Value As ETF Buying Returns?",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/apple-aapl-above-fair-value-211324050.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 11:56 ET",
-        "pub_ts": 1795539405.0
-      },
-      {
-        "title": "Apple Set to Revive Popular Product Line After Years",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/apple-set-revive-popular-product-164314724.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 11:43 ET",
-        "pub_ts": 1795538594.0
+        "time": "11-24 16:13 ET",
+        "pub_ts": 1795554804.0
       }
     ],
     "PLTR": [
@@ -3287,33 +3287,33 @@
   "ticker_news_ts": {
     "KORU": 1795556604.013815,
     "SOXL": 1795556604.013815,
-    "SPY": 1795555328.7186592,
+    "SPY": 1795556903.1005504,
     "DIA": 1795556604.013815,
     "SOXX": 1795556604.013815,
     "QQQ": 1795556604.013815,
-    "SMH": 1795555328.7186592,
+    "SMH": 1795556903.1005504,
     "IWM": 1795556604.013815,
     "IGV": 1795556604.013815,
     "TLT": 1795556604.013815,
     "GLD": 1795556604.013815,
     "SQQQ": 1795556604.013815,
-    "TSM": 1795555328.7186592,
+    "TSM": 1795556903.1005504,
     "VIXY": 1795556604.013815,
     "SOXS": 1795556604.013815,
     "NVDA": 1795556604.013815,
     "AMD": 1795556604.013815,
-    "ASML": 1795555328.7186592,
-    "QCOM": 1795555328.7186592,
+    "ASML": 1795556903.1005504,
+    "QCOM": 1795556903.1005504,
     "AVGO": 1795556604.013815,
-    "AMAT": 1795555328.7186592,
-    "META": 1795555328.7186592,
-    "GOOGL": 1795555328.7186592,
-    "MSFT": 1795555328.7186592,
-    "AAPL": 1795555328.7186592,
-    "PLTR": 1795555328.7186592,
-    "NOW": 1795555328.7186592,
-    "AMZN": 1795555328.7186592,
-    "CRWV": 1795555328.7186592,
+    "AMAT": 1795556903.1005504,
+    "META": 1795556903.1005504,
+    "GOOGL": 1795556903.1005504,
+    "MSFT": 1795556903.1005504,
+    "AAPL": 1795556903.1005504,
+    "PLTR": 1795556903.1005504,
+    "NOW": 1795556903.1005504,
+    "AMZN": 1795556903.1005504,
+    "CRWV": 1795556903.1005504,
     "NBIS": 1795555432.2981946,
     "APLD": 1795555925.5166647,
     "VST": 1795555925.5166647,
@@ -3364,7 +3364,7 @@
     "GLW": 1795555925.5166647,
     "ANT": 1795556197.9606876,
     "XAUUSD": 1795556404.032366,
-    "KOSPI": 1795555328.7186592
+    "KOSPI": 1795556903.1005504
   },
   "opex_shield": {
     "date": "2026-11-24",
