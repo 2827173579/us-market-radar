@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795519883.0,
-  "updated_at_et": "11-24 06:31 ET",
-  "updated_at_kst": "20:31 KST",
+  "updated_at_ts": 1795519995.338,
+  "updated_at_et": "11-24 06:33 ET",
+  "updated_at_kst": "20:33 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1758,6 +1758,27 @@
     ],
     "SPCX": [
       {
+        "title": "First Trust Alerian NextGen Infra (FTQI) Buys $22 Million More Walmart on Nov. 20",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/first-trust-alerian-nextgen-infra-110348918.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 06:03 ET",
+        "pub_ts": 1795518228.0
+      },
+      {
+        "title": "SpaceX (SPCX) Sees $201.9 Million in Net ETF Buying on Friday",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/spacex-spcx-sees-201-9-110137547.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 06:01 ET",
+        "pub_ts": 1795518097.0
+      },
+      {
+        "title": "Jim Chanos: A Tesla Deal Would “Cut SpaceX’s Growth Rate by Over 60%.” Bad News for SpaceX Holders",
+        "url": "https://www.tikr.com/blog/jim-chanos-a-tesla-deal-would-cut-spacexs-growth-rate-by-over-60-bad-news-for-spacex-holders?ref=yahoofinance&tlnk=yf-261124-2jm2c2pw&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 05:46 ET",
+        "pub_ts": 1795517177.0
+      },
+      {
         "title": "Tesla And SpaceX Reportedly Name 5 Directors To Lead Merger Discussions — Investor Says Talks Are Moving At ‘Warp Speed’",
         "url": "https://stocktwits.com/news-articles/markets/equity/tesla-spacex-5-directors-lead-merger-discussions-investor-talks-warp-speed/cNbsbrxR9ke?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1770,27 +1791,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 03:00 ET",
         "pub_ts": 1795507200.0
-      },
-      {
-        "title": "SpaceX, Tesla directors negotiate potential $3.5 trillion merger, FT reports",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/spacex-tesla-directors-negotiate-potential-062339987.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 01:23 ET",
-        "pub_ts": 1795501419.0
-      },
-      {
-        "title": "Could SpaceX Actually Climb 57%? Or Is Jefferies Totally Wrong?",
-        "url": "https://www.tikr.com/blog/could-spacex-actually-climb-57-or-is-jefferies-totally-wrong?ref=yahoofinance&tlnk=yf-261124-wj5876f9&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 01:10 ET",
-        "pub_ts": 1795500612.0
-      },
-      {
-        "title": "Not Starlink. Not Starship. This SpaceX Business Could Be Worth $80 Billion on Its Own.",
-        "url": "https://www.fool.com/investing/2026/11/24/not-starlink-not-starship-this-spacex-business-could-be-worth-usd80-billion-on-its-own/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 00:50 ET",
-        "pub_ts": 1795499402.0
       }
     ],
     "ASTS": [
@@ -1943,6 +1943,20 @@
     ],
     "TSLA": [
       {
+        "title": "Tesla Leads Goldman's Hedge Fund Short List With $26.4 Billion in Bearish Bets",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/tesla-leads-goldmans-hedge-fund-110429117.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 06:04 ET",
+        "pub_ts": 1795518269.0
+      },
+      {
+        "title": "ARK Autonomous Tech & Robotics (ARKQ) Buys $214.9 Million More Tesla on Nov. 20",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/ark-autonomous-tech-robotics-arkq-110308252.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 06:03 ET",
+        "pub_ts": 1795518188.0
+      },
+      {
         "title": "47 ETFs Add to Tesla (TSLA) Holdings on Nov. 20",
         "url": "https://finance.yahoo.com/markets/stocks/articles/47-etfs-add-tesla-tsla-110102533.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1950,32 +1964,18 @@
         "pub_ts": 1795518062.0
       },
       {
+        "title": "Jim Chanos: A Tesla Deal Would “Cut SpaceX’s Growth Rate by Over 60%.” Bad News for SpaceX Holders",
+        "url": "https://www.tikr.com/blog/jim-chanos-a-tesla-deal-would-cut-spacexs-growth-rate-by-over-60-bad-news-for-spacex-holders?ref=yahoofinance&tlnk=yf-261124-2jm2c2pw&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 05:46 ET",
+        "pub_ts": 1795517177.0
+      },
+      {
         "title": "Tesla Stock Is on Track for Only Its 3rd Losing Year Since Its 2010 IPO. Here's What Happened After the Other 2.",
         "url": "https://www.fool.com/investing/2026/11/24/tesla-stock-is-on-track-for-only-its-3rd-losing-year-since-its-2010-ipo-here-s-what-happened-after-the-other-2/?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-24 03:54 ET",
         "pub_ts": 1795510442.0
-      },
-      {
-        "title": "GM Eyes a Former Tesla Autopilot Chief as CEO. No Autonomy, “No More GM,” Says Jason Calacanis",
-        "url": "https://www.tikr.com/blog/gm-eyes-a-former-tesla-autopilot-chief-as-ceo-no-autonomy-no-more-gm-says-jason-calacanis?ref=yahoofinance&tlnk=yf-261124-gwx6hqvw&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 03:36 ET",
-        "pub_ts": 1795509419.0
-      },
-      {
-        "title": "Brad Gerstner Just Bought $680 Million of Tesla. His Range: “$420 a Share and Let’s Call It $520 or $550”",
-        "url": "https://www.tikr.com/blog/brad-gerstner-just-bought-680-million-of-tesla-his-range-420-a-share-and-lets-call-it-520-or-550?ref=yahoofinance&tlnk=yf-261124-3p7mcrp3&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 03:08 ET",
-        "pub_ts": 1795507707.0
-      },
-      {
-        "title": "Tesla And SpaceX Reportedly Name 5 Directors To Lead Merger Discussions — Investor Says Talks Are Moving At ‘Warp Speed’",
-        "url": "https://stocktwits.com/news-articles/markets/equity/tesla-spacex-5-directors-lead-merger-discussions-investor-talks-warp-speed/cNbsbrxR9ke?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 03:00 ET",
-        "pub_ts": 1795507214.0
       }
     ],
     "AXP": [
@@ -2054,6 +2054,13 @@
     ],
     "KO": [
       {
+        "title": "These 3 Stocks Have Raised Their Dividends Annually for at Least 49 Years. Should you Buy Them?",
+        "url": "https://www.fool.com/investing/2026/11/24/these-3-stocks-have-raised-their-dividends-annually-for-at-least-49-years-should-you-buy-them/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 06:18 ET",
+        "pub_ts": 1795519082.0
+      },
+      {
         "title": "BofA spots opportunities in these nine consumer staples stocks for 2027",
         "url": "https://finance.yahoo.com/markets/stocks/articles/bofa-spots-opportunities-nine-consumer-030406689.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2080,13 +2087,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 13:20 ET",
         "pub_ts": 1795458002.0
-      },
-      {
-        "title": "Coca-Cola vs. PepsiCo: Which Consumer Goods Stock Is a Better Buy for 2027?",
-        "url": "https://www.fool.com/coverage/better-buy/2026/11/23/coca-cola-vs-pepsico-which-consumer-goods-stock-is-a-better-buy-for-2027/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 12:50 ET",
-        "pub_ts": 1795456202.0
       }
     ],
     "FLY": [
@@ -2128,6 +2128,13 @@
     ],
     "INTC": [
       {
+        "title": "56 ETFs Add to Intel (INTC) Holdings on Friday",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/56-etfs-add-intel-intc-110203846.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 06:02 ET",
+        "pub_ts": 1795518123.0
+      },
+      {
         "title": "George Soros and 49 Other Big Funds Bought Intel Last Quarter, While 15 Sold. Who’s Right?",
         "url": "https://www.tikr.com/blog/george-soros-and-49-other-big-funds-bought-intel-last-quarter-while-15-sold-whos-right?ref=yahoofinance&tlnk=yf-261124-4pggx64v&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2154,13 +2161,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 13:57 ET",
         "pub_ts": 1795460265.0
-      },
-      {
-        "title": "The 5 Best Stocks in SoftBank’s Portfolio",
-        "url": "https://www.tikr.com/blog/the-5-best-stocks-in-softbanks-portfolio?ref=yahoofinance&tlnk=yf-261123-qfxc9224&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 12:37 ET",
-        "pub_ts": 1795455446.0
       }
     ],
     "VRT": [
@@ -3322,17 +3322,17 @@
     "MRVL": 1795519557.5820932,
     "LITE": 1795519557.5820932,
     "AAOI": 1795519883.0000913,
-    "SPCX": 1795518444.6515698,
+    "SPCX": 1795519995.3377461,
     "ASTS": 1795519883.0000913,
     "AXTI": 1795519557.5820932,
-    "NASA": 1795518444.6515698,
-    "LUNR": 1795518444.6515698,
-    "TSLA": 1795518444.6515698,
-    "AXP": 1795518444.6515698,
+    "NASA": 1795519995.3377461,
+    "LUNR": 1795519995.3377461,
+    "TSLA": 1795519995.3377461,
+    "AXP": 1795519995.3377461,
     "RKLB": 1795519883.0000913,
-    "KO": 1795518444.6515698,
-    "FLY": 1795518444.6515698,
-    "INTC": 1795518444.6515698,
+    "KO": 1795519995.3377461,
+    "FLY": 1795519995.3377461,
+    "INTC": 1795519995.3377461,
     "VRT": 1795518561.8226786,
     "HPE": 1795518561.8226786,
     "DELL": 1795518561.8226786,
