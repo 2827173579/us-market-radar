@@ -201,7 +201,7 @@ class TestV51AiCommentaryEngine(unittest.TestCase):
 
         client = bot.RadarBotClient(guild_id="1569503976477433987")
         cmd_names = {c.name for c in client.tree.get_commands()}
-        self.assertEqual(cmd_names, {"check", "vix", "top5", "ledger", "temp", "ai"})
+        self.assertEqual(cmd_names, {"check", "vix", "top5", "ledger", "temp", "ai", "copy"})
 
     def test_04_zero_secret_leakage_in_rendered_html(self):
         """扫描生成的 macro_radar AI 区块与 futu_pro_terminal HTML，断言绝不包含任何密钥或白名单 ID。"""

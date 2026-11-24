@@ -287,6 +287,22 @@ def verify_desktop(browser):
     page.wait_for_timeout(150)
     assert not page.locator("#backtestDetailsDrawer").is_visible(), "#backtestDetailsDrawer failed to collapse"
 
+    # V5.4 Copy-Trade Collapsible Drawer (#copyTradeLedgerDrawer)
+    ct_drawer = page.locator("#copyTradeLedgerDrawer")
+    assert ct_drawer.is_visible(), "#copyTradeLedgerDrawer missing in predict_radar_5y.html"
+    assert not ct_drawer.evaluate("el => el.open"), "#copyTradeLedgerDrawer must start collapsed"
+    ct_drawer.locator("summary").click()
+    page.wait_for_timeout(150)
+    assert ct_drawer.evaluate("el => el.open"), "#copyTradeLedgerDrawer failed to expand"
+    ct_txt = ct_drawer.inner_text()
+    assert "$1,000" in ct_txt or "模拟跟单账本" in ct_txt, f"Unexpected #copyTradeLedgerDrawer text: {ct_txt[:120]!r}"
+    assert "建议股数" not in ct_txt, "#copyTradeLedgerDrawer must NEVER contain 建议股数!"
+    assert ct_drawer.locator("svg").count() >= 1, "#copyTradeLedgerDrawer missing inline SVG equity curve!"
+    assert page.evaluate("document.documentElement.scrollWidth") <= 1441, "#copyTradeLedgerDrawer caused horizontal overflow"
+    ct_drawer.locator("summary").click()
+    page.wait_for_timeout(120)
+    assert not ct_drawer.evaluate("el => el.open"), "#copyTradeLedgerDrawer failed to collapse"
+
     # Table 4 Bear-Defense default tab & Long hint & expandable script row & zero horizontal overflow
     regime_text = page.locator("#marketRegimeBadge").inner_text()
     if "空头防守体制" in regime_text:
@@ -370,6 +386,16 @@ def verify_mobile(browser):
             assert page.evaluate("document.documentElement.scrollWidth") <= 391, "[Mobile] #signalLedgerDrawer overflowed 390px"
             page.locator("#btnSignalLedgerDrawer").click()
             page.wait_for_timeout(120)
+            m_ct = page.locator("#copyTradeLedgerDrawer")
+            assert m_ct.is_visible(), "[Mobile] #copyTradeLedgerDrawer missing"
+            assert not m_ct.evaluate("el => el.open"), "[Mobile] #copyTradeLedgerDrawer must start collapsed"
+            m_ct.locator("summary").click()
+            page.wait_for_timeout(150)
+            assert m_ct.evaluate("el => el.open"), "[Mobile] #copyTradeLedgerDrawer failed to expand"
+            assert "建议股数" not in m_ct.inner_text(), "[Mobile] #copyTradeLedgerDrawer leaked 建议股数"
+            assert page.evaluate("document.documentElement.scrollWidth") <= 391, "[Mobile] #copyTradeLedgerDrawer overflowed 390px"
+            m_ct.locator("summary").click()
+            page.wait_for_timeout(100)
         print(f"[PASS Mobile 390x844] {sub_name}: light theme ok, scrollWidth={m_info['sw']}")
 
     assert not errors, f"Mobile JS pageerrors: {errors}"

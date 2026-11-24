@@ -8574,6 +8574,52 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
     except Exception as _sr_err:
         print(f"  [!] ⚓ 当日静态 S/R 锚点锁定降级跳过: {_sr_err}")
 
+    # 6.945 V5.4 独立 $1,000 多空双轨 KOL 模拟跟单状态机 (物理隔离于 signal_ledger.json；干跑模式绝不写盘/外发)
+    try:
+        import copy_trade_engine as _ct_eng
+        _ct_ai_path = os.path.join(SCRATCH_DIR, "data_cache", "latest_ai_predictions.json")
+        _ct_ai_doc = {}
+        if os.path.exists(_ct_ai_path):
+            with open(_ct_ai_path, "r", encoding="utf-8") as _f_ct:
+                _ct_ai_doc = json.load(_f_ct) or {}
+        _ct_live_quotes = {}
+        for _k_ct, _v_ct in (macro_data or {}).items():
+            if isinstance(_v_ct, dict):
+                _ct_live_quotes[str(_k_ct).upper()] = _v_ct
+        for _s_ct in (stocks_sorted or []):
+            if isinstance(_s_ct, dict) and _s_ct.get("ticker"):
+                _ct_live_quotes[str(_s_ct["ticker"]).upper()] = _s_ct
+        _ct_is_dry = _external_alerts_disabled()
+        def _ct_send_alert(_title, _body, _dkey, _clr):
+            if _external_alerts_disabled():
+                return False
+            return send_discord_claw_alert(
+                title=_title,
+                markdown_content=_body,
+                dedupe_key=_dkey,
+                dedupe_max_age=86400,
+                color_override=_clr,
+            )
+        _ct_res = _ct_eng.run_copy_trade_cycle(
+            ai_predictions=_ct_ai_doc,
+            live_quotes=_ct_live_quotes,
+            earnings_map=earnings_map if isinstance(earnings_map, dict) else {},
+            market_regime=str((weather_info or {}).get("market_regime") or _ct_ai_doc.get("market_regime") or ""),
+            vix_regime=vix_regime,
+            session_code=session_code,
+            dry_run=_ct_is_dry,
+            alert_sender=(None if _ct_is_dry else _ct_send_alert),
+        )
+        _ct_ldg = _ct_res.get("ledger") or {}
+        print(
+            f"[+] 📒 V5.4 模拟跟单账本: 净值 ${_ct_ldg.get('total_equity', 1000.0):,.2f} "
+            f"({_ct_ldg.get('total_return_pct', 0.0):+.2f}%) | 持仓 {len(_ct_ldg.get('open_positions') or [])}/4 | "
+            f"本轮开仓 {len(_ct_res.get('opened') or [])} / 平仓 {len(_ct_res.get('closed') or [])} "
+            f"[dry_run={_ct_res.get('dry_run')}, persisted={_ct_res.get('persisted')}]"
+        )
+    except Exception as _ct_err:
+        print(f"  [!] 📒 V5.4 模拟跟单引擎降级跳过: {_ct_err}")
+
     try:
         import importlib, create_futu_terminal
         importlib.reload(create_futu_terminal)

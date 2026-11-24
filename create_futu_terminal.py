@@ -3674,6 +3674,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             white-space: pre-wrap;
             word-break: break-word;
         }
+        __PY_TPL_COPY_DRAWER_CSS__
         @media (max-width: 768px) {
             .temp-futures-mini {
                 display: none;
@@ -4072,6 +4073,9 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 </summary>
                 <div id="v51TermAiBody" class="v51-term-ai-body"></div>
             </details>
+
+            <!-- V5.4 可折叠 $1,000 多空模拟跟单账本抽屉 -->
+            __PY_TPL_COPY_DRAWER_HTML__
 
             <!-- 展开/收起专业量化数据抽屉按钮 -->
             <button type="button" id="btnProQuantToggle" class="pro-drawer-toggle" onclick="toggleProQuantDrawer()" aria-expanded="false" aria-controls="proQuantDrawer">
@@ -8400,6 +8404,16 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
         "__PY_TPL_SESSION_CODE__": str(session_code or "REGULAR"),
         "__PY_TPL_LEADERS_JSON__": leaders_json,
     }
+    try:
+        import copy_trade_engine as _ct_term_mod
+        replacements["__PY_TPL_COPY_DRAWER_CSS__"] = _ct_term_mod.COPY_TRADE_DRAWER_CSS
+        replacements["__PY_TPL_COPY_DRAWER_HTML__"] = _ct_term_mod.render_copy_trade_drawer_html(
+            compact=True,
+            drawer_id="termCopyTradeDrawer",
+        )
+    except Exception:
+        replacements["__PY_TPL_COPY_DRAWER_CSS__"] = ""
+        replacements["__PY_TPL_COPY_DRAWER_HTML__"] = ""
     for _tok, _val in replacements.items():
         html = html.replace(_tok, _val)
     return html

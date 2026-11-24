@@ -305,6 +305,22 @@ def verify_desktop(browser):
     page.locator("#btnProQuantToggle").click()
     page.wait_for_timeout(120)
 
+    # V5.4 Copy-Trade Collapsible Drawer (#termCopyTradeDrawer) on Desktop (Dark & Light)
+    ct_drawer = page.locator("#termCopyTradeDrawer")
+    assert ct_drawer.is_visible(), "#termCopyTradeDrawer must exist and be visible in tactics pane"
+    assert not ct_drawer.evaluate("el => el.open"), "#termCopyTradeDrawer must start collapsed"
+    ct_drawer.locator("summary").click()
+    page.wait_for_timeout(150)
+    assert ct_drawer.evaluate("el => el.open"), "#termCopyTradeDrawer failed to expand"
+    ct_txt = ct_drawer.inner_text()
+    assert "$1,000" in ct_txt or "模拟跟单账本" in ct_txt, f"Unexpected #termCopyTradeDrawer text: {ct_txt[:120]!r}"
+    assert "建议股数" not in ct_txt, "#termCopyTradeDrawer must NEVER contain 建议股数!"
+    assert ct_drawer.locator("svg").count() >= 1, "#termCopyTradeDrawer missing inline SVG equity curve!"
+    assert_no_horizontal_overflow(page, 1440, "Desktop-Dark-CopyTradeDrawer")
+    ct_drawer.locator("summary").click()
+    page.wait_for_timeout(100)
+    assert not ct_drawer.evaluate("el => el.open"), "#termCopyTradeDrawer failed to collapse"
+
     assert not errors, f"Desktop JS pageerrors: {errors}"
     ctx.close()
     print("[PASS] Desktop (1440x900) full Phase 4 verification passed (0 JS pageerrors, 0 horizontal overflow).")
@@ -360,6 +376,18 @@ def verify_mobile(browser):
     page.wait_for_timeout(200)
     assert page.evaluate("document.documentElement.getAttribute('data-theme')") == "light"
     assert_no_horizontal_overflow(page, 390, "Mobile-Light-Mode")
+
+    # V5.4 Copy-Trade Drawer on Mobile Light mode
+    m_ct = page.locator("#termCopyTradeDrawer")
+    assert m_ct.is_visible(), "[Mobile] #termCopyTradeDrawer missing"
+    assert not m_ct.evaluate("el => el.open"), "[Mobile] #termCopyTradeDrawer must start collapsed"
+    m_ct.locator("summary").click()
+    page.wait_for_timeout(150)
+    assert m_ct.evaluate("el => el.open"), "[Mobile] #termCopyTradeDrawer failed to expand"
+    assert "建议股数" not in m_ct.inner_text(), "[Mobile] #termCopyTradeDrawer leaked 建议股数"
+    assert_no_horizontal_overflow(page, 390, "Mobile-Light-CopyTradeDrawer")
+    m_ct.locator("summary").click()
+    page.wait_for_timeout(100)
 
     assert not errors, f"Mobile JS pageerrors: {errors}"
     ctx.close()

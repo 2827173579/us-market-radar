@@ -472,10 +472,10 @@ class TestDiscordRadarBot(unittest.TestCase):
         rc = bot.main(env_override={})
         self.assertEqual(rc, 0)
 
-        # 离线构建 Client 确认 6 个斜杠命令注册完毕 (含 V5.0 /temp 与 V5.1 私有 /ai)
+        # 离线构建 Client 确认 7 个斜杠命令注册完毕 (含 V5.0 /temp, V5.1 /ai, V5.4 /copy)
         client = bot.RadarBotClient(guild_id="1569503976477433987")
         cmd_names = {c.name for c in client.tree.get_commands()}
-        self.assertEqual(cmd_names, {"check", "vix", "top5", "ledger", "temp", "ai"})
+        self.assertEqual(cmd_names, {"check", "vix", "top5", "ledger", "temp", "ai", "copy"})
 
         # 静态安全审计：零外部行情 API 导入、零硬编码密钥/Webhook
         bot_src = pathlib.Path(bot.__file__).read_text(encoding="utf-8")
