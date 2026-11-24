@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795536448.57,
-  "updated_at_et": "11-24 11:07 ET",
-  "updated_at_kst": "01:07 KST",
+  "updated_at_ts": 1795536555.015,
+  "updated_at_et": "11-24 11:09 ET",
+  "updated_at_kst": "01:09 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2390,6 +2390,20 @@
     ],
     "MU": [
       {
+        "title": "Micron Stock Is Counting on a Buyback Bounce. Why It’s No Slam Dunk.",
+        "url": "https://finance.yahoo.com/m/789905db-8cde-3db6-af4c-d5345b1680cd/micron-stock-is-counting-on-a.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 10:34 ET",
+        "pub_ts": 1795534440.0
+      },
+      {
+        "title": "Nvidia, Anthropic, Micron, HPE, Analog Devices, Insmed, and More Stocks That Explain Today’s Market",
+        "url": "https://finance.yahoo.com/m/f7fa0ed2-2c68-3b80-9261-c35639090d03/nvidia%2C-anthropic%2C-micron%2C.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 10:04 ET",
+        "pub_ts": 1795532640.0
+      },
+      {
         "title": "BNP Paribas cuts Micron rating on risks to 2028 hyperscaler capacity plans",
         "url": "https://finance.yahoo.com/markets/stocks/articles/bnp-paribas-cuts-micron-rating-145304912.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2409,20 +2423,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 09:49 ET",
         "pub_ts": 1795531754.0
-      },
-      {
-        "title": "Micron downgraded, GameStop initiated: Wall Street's top analyst calls",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/snap-upgraded-pinterest-downgrade-wall-135144855.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 09:48 ET",
-        "pub_ts": 1795531695.0
-      },
-      {
-        "title": "Is Now The Right Time To Buy Micron Stock?",
-        "url": "https://www.trefis.com/stock/mu/articles/628442/is-now-the-right-time-to-buy-micron-stock/2026-11-24?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 09:42 ET",
-        "pub_ts": 1795531374.0
       }
     ],
     "SKHY": [
@@ -2612,6 +2612,20 @@
     ],
     "BTC-USD": [
       {
+        "title": "Stocks give back gains as Anthropic dips below IPO price",
+        "url": "https://finance.yahoo.com/video/stocks-give-back-gains-as-anthropic-dips-below-ipo-price-154408548.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 10:44 ET",
+        "pub_ts": 1795535048.0
+      },
+      {
+        "title": "Gemini AI Predicts a Wild BTC Recovery if This Catalyst Lands",
+        "url": "https://99bitcoins.com/news/bitcoin-btc/gemini-ai-predicts-a-wild-btc-recovery-if-this-catalyst-lands/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 10:43 ET",
+        "pub_ts": 1795535031.0
+      },
+      {
         "title": "Is Michael Saylor's bitcoin strategy losing its appeal?",
         "url": "https://finance.yahoo.com/video/is-michael-saylors-bitcoin-strategy-losing-its-appeal-151603542.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2631,20 +2645,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 09:57 ET",
         "pub_ts": 1795532234.0
-      },
-      {
-        "title": "Stock Market Today: Nasdaq Sells Off After Big Market Surge; AMD, Anthropic, Nvidia All Dive (Live Coverage)",
-        "url": "https://finance.yahoo.com/m/4aa4ff31-269f-346e-80c4-e681510af7ae/stock-market-today%3A-nasdaq.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 09:42 ET",
-        "pub_ts": 1795531368.0
-      },
-      {
-        "title": "Bitcoin News: CFTC Decision to Push BTC Toward $80K?",
-        "url": "https://cryptonews.com/news/bitcoin-news-cftc-decision-btc-80000/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 09:41 ET",
-        "pub_ts": 1795531291.0
       }
     ],
     "CRWD": [
@@ -3316,18 +3316,18 @@
     "NOW": 1795536448.5700567,
     "AMZN": 1795536448.5700567,
     "CRWV": 1795536448.5700567,
-    "NBIS": 1795535034.2286582,
+    "NBIS": 1795536555.0148876,
     "APLD": 1795535349.1759248,
     "VST": 1795535349.1759248,
     "BE": 1795535349.1759248,
     "CRDO": 1795535349.1759248,
     "COHR": 1795535349.1759248,
-    "MRVL": 1795535034.2286582,
-    "LITE": 1795535034.2286582,
+    "MRVL": 1795536555.0148876,
+    "LITE": 1795536555.0148876,
     "AAOI": 1795535349.1759248,
     "SPCX": 1795535463.8957691,
     "ASTS": 1795535349.1759248,
-    "AXTI": 1795535034.2286582,
+    "AXTI": 1795536555.0148876,
     "NASA": 1795535463.8957691,
     "LUNR": 1795535463.8957691,
     "TSLA": 1795535463.8957691,
@@ -3342,13 +3342,13 @@
     "OKLO": 1795535571.331406,
     "CEG": 1795535571.331406,
     "FPS": 1795535571.331406,
-    "MU": 1795535034.2286582,
-    "SKHY": 1795535034.2286582,
-    "WDC": 1795535034.2286582,
+    "MU": 1795536555.0148876,
+    "SKHY": 1795536555.0148876,
+    "WDC": 1795536555.0148876,
     "STX": 1795535680.358947,
     "MSTR": 1795535680.358947,
     "SNDK": 1795535680.358947,
-    "BTC-USD": 1795535034.2286582,
+    "BTC-USD": 1795536555.0148876,
     "CRWD": 1795535680.358947,
     "ORCL": 1795535349.1759248,
     "COIN": 1795535349.1759248,
@@ -3362,11 +3362,11 @@
     "WMT": 1795535680.358947,
     "V": 1795535349.1759248,
     "CAT": 1795535680.358947,
-    "FN": 1795535034.2286582,
+    "FN": 1795536555.0148876,
     "GLW": 1795535349.1759248,
     "ANT": 1795535680.358947,
     "XAUUSD": 1795535680.358947,
-    "KOSPI": 1795535034.2286582
+    "KOSPI": 1795536555.0148876
   },
   "opex_shield": {
     "date": "2026-11-24",
