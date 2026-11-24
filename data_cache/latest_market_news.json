@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795521693.957,
-  "updated_at_et": "11-24 07:01 ET",
-  "updated_at_kst": "21:01 KST",
+  "updated_at_ts": 1795521808.204,
+  "updated_at_et": "11-24 07:03 ET",
+  "updated_at_kst": "21:03 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2646,6 +2646,13 @@
     ],
     "CRWD": [
       {
+        "title": "CrowdStrike Bets Two Top Dogs Beat One",
+        "url": "https://www.fool.com/investing/2026/11/24/crowdstrike-bets-two-top-dogs-beat-one/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 06:55 ET",
+        "pub_ts": 1795521321.0
+      },
+      {
         "title": "CrowdStrike Poised For ‘Hyper Growth And Profit,’ Says Guggenheim — Sees 34% Upside In CRWD Stock",
         "url": "https://stocktwits.com/news-articles/markets/equity/crowdstrike-poised-for-hyper-growth-and-profit-says-guggenheim-sees-34-upside-in-crwd-stock/cNbsEP5R9kg?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2672,13 +2679,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 05:11 ET",
         "pub_ts": 1795515097.0
-      },
-      {
-        "title": "CrowdStrike Agreed to Buy Zscaler, Which Trades at a “50% Discount” to Its History",
-        "url": "https://www.tikr.com/blog/crowdstrike-agreed-to-buy-zscaler-which-trades-at-a-50-discount-to-its-history?ref=yahoofinance&tlnk=yf-261124-h782977j&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 03:43 ET",
-        "pub_ts": 1795509787.0
       }
     ],
     "ORCL": [
@@ -3201,11 +3201,25 @@
     ],
     "ANT": [
       {
+        "title": "Which \"Magnificent Seven\" Stocks Win From Anthropic’s IPO?",
+        "url": "https://www.fool.com/investing/2026/11/24/which-magnificent-seven-stocks-win-from-anthropics-ipo/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 06:50 ET",
+        "pub_ts": 1795521002.0
+      },
+      {
         "title": "The British chip champions challenging Nvidia’s AI stranglehold",
         "url": "https://uk.finance.yahoo.com/news/british-chip-champions-challenging-nvidia-110000128.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-24 06:00 ET",
         "pub_ts": 1795518000.0
+      },
+      {
+        "title": "Anthropic’s IPO Slide Is Bad News for Oracle, Which Is “Dependent on OpenAI”",
+        "url": "https://www.tikr.com/blog/anthropics-ipo-slide-is-bad-news-for-oracle-which-is-dependent-on-openai?ref=yahoofinance&tlnk=yf-261124-fc345234&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 05:50 ET",
+        "pub_ts": 1795517444.0
       },
       {
         "title": "Anthropic’s IPO Safety Net Is Gone: Morgan Stanley “Can No Longer” Buy Below $83. That’s a Risk for Amazon",
@@ -3220,20 +3234,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 04:20 ET",
         "pub_ts": 1795512002.0
-      },
-      {
-        "title": "ANT Stock Drops Further Despite Tech Rally — Why This Analyst Thinks Jensen Huang’s Return As Nvidia CEO Is A ‘Threat To Anthropic’",
-        "url": "https://stocktwits.com/news-articles/markets/equity/ant-stock-drops-further-despite-tech-rally-why-this-analyst-thinks-jensen-huang-s-return-as-nvidia-ceo-is-a-threat-to-anthropic/cNbsciDR9ka?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 04:03 ET",
-        "pub_ts": 1795510985.0
-      },
-      {
-        "title": "Jim Cramer Calls Nvidia’s Quarter “Fabulous” but Says Buy Anthropic Instead. I’ll Take the Other Side",
-        "url": "https://www.tikr.com/blog/jim-cramer-nvidia-vs-anthropic-stock?ref=yahoofinance&tlnk=yf-261124-27574whw&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 02:58 ET",
-        "pub_ts": 1795507111.0
       }
     ],
     "XAUUSD": [
@@ -3342,27 +3342,27 @@
     "MU": 1795521147.9080956,
     "SKHY": 1795521147.9080956,
     "WDC": 1795521147.9080956,
-    "STX": 1795520242.4514668,
-    "MSTR": 1795520242.4514668,
-    "SNDK": 1795520242.4514668,
+    "STX": 1795521808.2036672,
+    "MSTR": 1795521808.2036672,
+    "SNDK": 1795521808.2036672,
     "BTC-USD": 1795521147.9080956,
-    "CRWD": 1795520242.4514668,
+    "CRWD": 1795521808.2036672,
     "ORCL": 1795521472.1033998,
     "COIN": 1795521472.1033998,
     "LLY": 1795521472.1033998,
     "MRNA": 1795521472.1033998,
     "NKE": 1795521472.1033998,
     "MCD": 1795521472.1033998,
-    "PEP": 1795520242.4514668,
+    "PEP": 1795521808.2036672,
     "XOM": 1795521693.957445,
     "JPM": 1795521693.957445,
-    "WMT": 1795520242.4514668,
+    "WMT": 1795521808.2036672,
     "V": 1795521472.1033998,
-    "CAT": 1795520242.4514668,
+    "CAT": 1795521808.2036672,
     "FN": 1795521147.9080956,
     "GLW": 1795521472.1033998,
-    "ANT": 1795520242.4514668,
-    "XAUUSD": 1795520242.4514668,
+    "ANT": 1795521808.2036672,
+    "XAUUSD": 1795521808.2036672,
     "KOSPI": 1795521147.9080956
   },
   "opex_shield": {
