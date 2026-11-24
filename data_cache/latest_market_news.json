@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795508671.307,
-  "updated_at_et": "11-24 03:24 ET",
-  "updated_at_kst": "17:24 KST",
+  "updated_at_ts": 1795508782.15,
+  "updated_at_et": "11-24 03:26 ET",
+  "updated_at_kst": "17:26 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1171,6 +1171,13 @@
         "pub_ts": 1795473204.0
       },
       {
+        "title": "David Tepper, Seth Klarman and 5 Other Famous Investors Own Alphabet. Here’s Who Sold Recently",
+        "url": "https://www.tikr.com/blog/david-tepper-seth-klarman-and-5-other-famous-investors-own-alphabet-heres-who-sold-recently?ref=yahoofinance&tlnk=yf-261124-w59872fw&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 03:04 ET",
+        "pub_ts": 1795507491.0
+      },
+      {
         "title": "Not Starlink. Not Starship. This SpaceX Business Could Be Worth $80 Billion on Its Own.",
         "url": "https://www.fool.com/investing/2026/11/24/not-starlink-not-starship-this-spacex-business-could-be-worth-usd80-billion-on-its-own/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1190,16 +1197,16 @@
         "source": "Yahoo Finance",
         "time": "11-24 00:06 ET",
         "pub_ts": 1795496802.0
-      },
-      {
-        "title": "The Nasdaq Just Had Its Best Day Since April 2025. Anthropic Stock Fell Anyway.",
-        "url": "https://www.fool.com/investing/2026/11/23/the-nasdaq-just-had-its-best-day-since-april-2025-anthropic-stock-fell-anyway/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 19:42 ET",
-        "pub_ts": 1795480922.0
       }
     ],
     "MSFT": [
+      {
+        "title": "Dan Loeb and 47 Other Big Funds Bought Microsoft Last Quarter. Bill Ackman and 28 Others Sold. Who’s Right?",
+        "url": "https://www.tikr.com/blog/dan-loeb-and-47-other-big-funds-bought-microsoft-last-quarter-bill-ackman-and-28-others-sold-whos-right?ref=yahoofinance&tlnk=yf-261124-g4v647r9&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 03:01 ET",
+        "pub_ts": 1795507274.0
+      },
       {
         "title": "What Microsoft (MSFT)'s Enterprise AI Partnerships Mean For Shareholders",
         "url": "https://finance.yahoo.com/technology/ai/articles/microsoft-msft-enterprise-ai-partnerships-001743463.html?.tsrc=rss",
@@ -1227,30 +1234,9 @@
         "source": "Yahoo Finance",
         "time": "11-23 16:25 ET",
         "pub_ts": 1795469100.0
-      },
-      {
-        "title": "Billionaire Andreas Halvorsen Exited Microsoft and Made TSMC His Top Holding at $1.8 Billion",
-        "url": "https://247wallst.com/investing/2026/11/23/billionaire-andreas-halvorsen-exited-microsoft-and-made-tsmc-his-top-holding-at-1-8-billion/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 15:57 ET",
-        "pub_ts": 1795467446.0
       }
     ],
     "AAPL": [
-      {
-        "title": "Jensen Huang back at Nvidia, stock soars; Anthropic slides",
-        "url": "https://finance.yahoo.com/video/jensen-huang-back-at-nvidia-stock-soars-anthropic-slides-161339662.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 11:13 ET",
-        "pub_ts": 1795450419.0
-      },
-      {
-        "title": "Jensen Huang back as Nvidia CEO after 12 days: Shares surge 30%",
-        "url": "https://finance.yahoo.com/video/jensen-huang-back-as-nvidia-ceo-after-12-days-shares-surge-30-161302539.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 11:13 ET",
-        "pub_ts": 1795450382.0
-      },
       {
         "title": "Apple's five-device plan creates an iPhone buying dilemma",
         "url": "https://www.thestreet.com/technology/apples-five-device-plan-creates-an-iphone-buying-dilemma?.tsrc=rss",
@@ -1271,6 +1257,20 @@
         "source": "Yahoo Finance",
         "time": "11-23 12:25 ET",
         "pub_ts": 1795454730.0
+      },
+      {
+        "title": "Apple Hit an All-Time High While AI Stocks Sold Off. Here’s the Big Tech Stock I’d Buy.",
+        "url": "https://www.fool.com/investing/2026/11/23/apple-hit-an-all-time-high-while-ai-stocks-sold-off-here-s-the-big-tech-stock-i-d-buy/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 11:32 ET",
+        "pub_ts": 1795451522.0
+      },
+      {
+        "title": "Jensen Huang back at Nvidia, stock soars; Anthropic slides",
+        "url": "https://finance.yahoo.com/video/jensen-huang-back-at-nvidia-stock-soars-anthropic-slides-161339662.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 11:13 ET",
+        "pub_ts": 1795450419.0
       }
     ],
     "PLTR": [
@@ -1370,18 +1370,18 @@
         "pub_ts": 1795476805.0
       },
       {
+        "title": "Jim Cramer Calls Nvidia’s Quarter “Fabulous” but Says Buy Anthropic Instead. I’ll Take the Other Side",
+        "url": "https://www.tikr.com/blog/jim-cramer-nvidia-vs-anthropic-stock?ref=yahoofinance&tlnk=yf-261124-27574whw&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 02:58 ET",
+        "pub_ts": 1795507111.0
+      },
+      {
         "title": "Dow Jones Futures: Tech Stocks, Nvidia Snap Back On Jensen Huang's Return; Elon Musk-Led SpaceX, Tesla Rally",
         "url": "https://finance.yahoo.com/m/be493228-4ecf-338d-9017-054d3d6efc36/dow-jones-futures%3A-tech.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-23 22:27 ET",
         "pub_ts": 1795490874.0
-      },
-      {
-        "title": "Netflix Cuts About 1,000 Jobs and Its Content Chief. YouTube Already Has Twice Its TV Share",
-        "url": "https://www.tikr.com/blog/netflix-cuts-about-1000-jobs-and-its-content-chief-youtube-already-has-twice-its-tv-share?ref=yahoofinance&tlnk=yf-261123-qvgmg437&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 18:31 ET",
-        "pub_ts": 1795476706.0
       }
     ],
     "CRWV": [
@@ -3294,23 +3294,23 @@
     "TLT": 1795508671.3070688,
     "GLD": 1795508671.3070688,
     "SQQQ": 1795508671.3070688,
-    "TSM": 1795507274.5551977,
+    "TSM": 1795508782.150251,
     "VIXY": 1795508671.3070688,
     "SOXS": 1795508671.3070688,
     "NVDA": 1795508671.3070688,
-    "AMD": 1795507274.5551977,
-    "ASML": 1795507274.5551977,
-    "QCOM": 1795507274.5551977,
-    "AVGO": 1795507274.5551977,
-    "AMAT": 1795507274.5551977,
-    "META": 1795507274.5551977,
-    "GOOGL": 1795507274.5551977,
-    "MSFT": 1795507274.5551977,
-    "AAPL": 1795507274.5551977,
-    "PLTR": 1795507274.5551977,
-    "NOW": 1795507274.5551977,
-    "AMZN": 1795507274.5551977,
-    "CRWV": 1795507274.5551977,
+    "AMD": 1795508782.150251,
+    "ASML": 1795508782.150251,
+    "QCOM": 1795508782.150251,
+    "AVGO": 1795508782.150251,
+    "AMAT": 1795508782.150251,
+    "META": 1795508782.150251,
+    "GOOGL": 1795508782.150251,
+    "MSFT": 1795508782.150251,
+    "AAPL": 1795508782.150251,
+    "PLTR": 1795508782.150251,
+    "NOW": 1795508782.150251,
+    "AMZN": 1795508782.150251,
+    "CRWV": 1795508782.150251,
     "NBIS": 1795507487.018866,
     "APLD": 1795507703.5722144,
     "VST": 1795507703.5722144,
@@ -3361,7 +3361,7 @@
     "GLW": 1795507703.5722144,
     "ANT": 1795507811.9680948,
     "XAUUSD": 1795508034.823311,
-    "KOSPI": 1795507274.5551977
+    "KOSPI": 1795508782.150251
   },
   "opex_shield": {
     "date": "2026-11-24",
