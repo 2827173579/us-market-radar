@@ -1,9 +1,22 @@
 {
-  "updated_at_ts": 1795516991.771,
-  "updated_at_et": "11-24 05:43 ET",
-  "updated_at_kst": "19:43 KST",
+  "updated_at_ts": 1795517117.553,
+  "updated_at_et": "11-24 05:45 ET",
+  "updated_at_kst": "19:45 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261124184254592800",
+      "title": "市场消息：如果特朗普的和平努力失败，泽连斯基希望美国新一届国会向普京施压。",
+      "summary": "市场消息：如果特朗普的和平努力失败，泽连斯基希望美国新一届国会向普京施压。",
+      "keywords": [
+        "特朗普"
+      ],
+      "pub_ts": 1795516974.0,
+      "time_et": "11-24 05:42 ET",
+      "time_bj": "18:42 BJ",
+      "time_kst": "19:42 KST",
+      "time_display": "05:42 ET / 18:42 BJ"
+    },
     {
       "id": "20261124180548896800",
       "title": "英伟达(NVDA.O)美股盘前跌幅扩大至5%。",
@@ -334,19 +347,6 @@
       "time_bj": "12:19 BJ",
       "time_kst": "13:19 KST",
       "time_display": "23:19 ET / 12:19 BJ"
-    },
-    {
-      "id": "20261124115938771800",
-      "title": "整理：每日人工智能动态汇总（2026-11-24）",
-      "summary": "1. 黄仁勋回归或加剧英伟达与Anthropic的开闭源路线冲突。 2. 马斯克SpaceX陷AI发展两难：Grok落后对手，算力出租月入39亿美元。 3. 亚马逊据悉将斥资75亿美元收购人工智能初创公司Decart的技术。 4. 哈斯继续执掌Arm，英伟达CEO继任人选仍未明朗。 5. 三星据悉拟扩大西安工厂先进NAND闪存产能，供应AI数据中心。 6. OpenAI前工程师被指秘密录制会议，检方已获取数百份音频文件。 7. 英伟达携手Paradromics推进脑机接口AI计算，探索低功耗神经信号解码方案。 8. Anthropic推出Claude Ship，AI Agent开始接管代码审查、修复与审批流程。 9. 智谱：GLM-5.4向GLM Coding Plan全量用户开放，引入Loop Transformer架构。 10. Meta AI负责人Alexandr Wang警告超级智能正在到来，呼吁重新审视AI安全与人类控制权。 11. 亚马逊据悉将斥资75亿美元收购人工智能初创公司Decart的技术。",
-      "keywords": [
-        "英伟达"
-      ],
-      "pub_ts": 1795492778.0,
-      "time_et": "11-23 22:59 ET",
-      "time_bj": "11:59 BJ",
-      "time_kst": "12:59 KST",
-      "time_display": "22:59 ET / 11:59 BJ"
     }
   ],
   "ticker_news": {
@@ -2646,6 +2646,13 @@
     ],
     "CRWD": [
       {
+        "title": "CrowdStrike to acquire Zscaler in $44bn all-stock deal",
+        "url": "https://www.verdict.co.uk/crowdstrike-to-acquire-zscaler/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 05:11 ET",
+        "pub_ts": 1795515097.0
+      },
+      {
         "title": "CrowdStrike Agreed to Buy Zscaler, Which Trades at a “50% Discount” to Its History",
         "url": "https://www.tikr.com/blog/crowdstrike-agreed-to-buy-zscaler-which-trades-at-a-50-discount-to-its-history?ref=yahoofinance&tlnk=yf-261124-h782977j&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2672,13 +2679,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 22:17 ET",
         "pub_ts": 1795490220.0
-      },
-      {
-        "title": "Why CrowdStrike Stock Was Down Today",
-        "url": "https://www.fool.com/investing/2026/11/23/why-crowdstrike-stock-was-down-today/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 18:00 ET",
-        "pub_ts": 1795474803.0
       }
     ],
     "ORCL": [
@@ -3201,6 +3201,13 @@
     ],
     "ANT": [
       {
+        "title": "Anthropic’s IPO Safety Net Is Gone: Morgan Stanley “Can No Longer” Buy Below $83. That’s a Risk for Amazon",
+        "url": "https://www.tikr.com/blog/anthropics-ipo-safety-net-is-gone-morgan-stanley-can-no-longer-buy-below-83-thats-a-risk-for-amazon?ref=yahoofinance&tlnk=yf-261124-vcwwm7x7&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 04:50 ET",
+        "pub_ts": 1795513830.0
+      },
+      {
         "title": "Is the Anthropic IPO to Blame for Bitcoin's Recent Downturn? The Answer Might Surprise You.",
         "url": "https://www.fool.com/investing/2026/11/24/is-the-anthropic-ipo-to-blame-for-bitcoins-recent-downturn-the-answer-might-surprise-you/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3227,13 +3234,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 00:50 ET",
         "pub_ts": 1795499402.0
-      },
-      {
-        "title": "ZM Stock Edges Higher Overnight — Zoom's Anthropic Bet Pays Off As AI Investment Soars To $3.8B",
-        "url": "https://stocktwits.com/news-articles/markets/equity/zm-stock-zoom-anthropic-ai-investment-q3-earnings-outlook/cNbrww9R9kb?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 23:58 ET",
-        "pub_ts": 1795496293.0
       }
     ],
     "XAUUSD": [
@@ -3342,27 +3342,27 @@
     "MU": 1795516499.4497952,
     "SKHY": 1795516499.4497952,
     "WDC": 1795516499.4497952,
-    "STX": 1795515399.655148,
-    "MSTR": 1795515399.655148,
-    "SNDK": 1795515399.655148,
+    "STX": 1795517117.5530953,
+    "MSTR": 1795517117.5530953,
+    "SNDK": 1795517117.5530953,
     "BTC-USD": 1795516499.4497952,
-    "CRWD": 1795515399.655148,
+    "CRWD": 1795517117.5530953,
     "ORCL": 1795516745.5146592,
     "COIN": 1795516745.5146592,
     "LLY": 1795516745.5146592,
     "MRNA": 1795516745.5146592,
     "NKE": 1795516745.5146592,
     "MCD": 1795516745.5146592,
-    "PEP": 1795515399.655148,
+    "PEP": 1795517117.5530953,
     "XOM": 1795516991.7714608,
     "JPM": 1795516991.7714608,
-    "WMT": 1795515399.655148,
+    "WMT": 1795517117.5530953,
     "V": 1795516745.5146592,
-    "CAT": 1795515399.655148,
+    "CAT": 1795517117.5530953,
     "FN": 1795516499.4497952,
     "GLW": 1795516745.5146592,
-    "ANT": 1795515399.655148,
-    "XAUUSD": 1795515399.655148,
+    "ANT": 1795517117.5530953,
+    "XAUUSD": 1795517117.5530953,
     "KOSPI": 1795516499.4497952
   },
   "opex_shield": {
@@ -3382,7 +3382,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (05:05 ET / 18:05 BJ) [英伟达]：英伟达(NVDA.O)美股盘前跌幅扩大至5%。",
+    "detail": "⚡ 最新核心快讯 (05:42 ET / 18:42 BJ) [特朗普]：市场消息：如果特朗普的和平努力失败，泽连斯基希望美国新一届国会向普京施压。",
     "event_name": "",
     "minutes_left": 0,
     "opex_shield": {
