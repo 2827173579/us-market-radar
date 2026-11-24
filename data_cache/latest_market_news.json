@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795532399.275,
-  "updated_at_et": "11-24 09:59 ET",
-  "updated_at_kst": "23:59 KST",
+  "updated_at_ts": 1795532519.427,
+  "updated_at_et": "11-24 10:01 ET",
+  "updated_at_kst": "00:01 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2197,11 +2197,25 @@
     ],
     "HPE": [
       {
+        "title": "Nvidia jumped 31% on Jensen Huang's return. A day later, the AI trade sold off: AlphaCheck",
+        "url": "https://finance.yahoo.com/markets/article/nvidia-leads-semiconductors-lower-alphacheck-144509267.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 09:45 ET",
+        "pub_ts": 1795531509.0
+      },
+      {
         "title": "HPE stock declines as disappointing margin forecast outweighs upbeat guidance",
         "url": "https://finance.yahoo.com/markets/article/hpe-stock-declines-as-margin-outlook-disappoints-134420648.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-24 08:44 ET",
         "pub_ts": 1795527860.0
+      },
+      {
+        "title": "HPE Sinks 14% Despite Raised Outlook as CFO Expects “Gross Margin to Moderate”",
+        "url": "https://www.tikr.com/blog/hpe-sinks-14-despite-raised-outlook-as-cfo-expects-gross-margin-to-moderate?ref=yahoofinance&tlnk=yf-261124-3v7mg9vj&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 09:50 ET",
+        "pub_ts": 1795531844.0
       },
       {
         "title": "Premarket movers: Nvidia slips; HPE, Semtech fall",
@@ -2216,23 +2230,16 @@
         "source": "Yahoo Finance",
         "time": "11-24 07:19 ET",
         "pub_ts": 1795522743.0
-      },
-      {
-        "title": "HPE Expects Thinner AI Margins. Is Dell Next?",
-        "url": "https://www.trefis.com/stock/hpe/articles/628212/hpe-expects-thinner-ai-margins-is-dell-next/2026-11-24?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 07:02 ET",
-        "pub_ts": 1795521749.0
-      },
-      {
-        "title": "Nvidia, Anthropic, Intel, HPE, Sanofi, and More Stocks That Explain Today’s Market",
-        "url": "https://finance.yahoo.com/m/f7fa0ed2-2c68-3b80-9261-c35639090d03/nvidia%2C-anthropic%2C-intel%2C.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 06:21 ET",
-        "pub_ts": 1795519260.0
       }
     ],
     "DELL": [
+      {
+        "title": "Over Half Of Dell's $95 Billion Backlog Waits",
+        "url": "https://www.trefis.com/stock/dell/articles/628252/over-half-of-dell-s-95-billion-backlog-waits/2026-11-24?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 09:28 ET",
+        "pub_ts": 1795530509.0
+      },
       {
         "title": "Own Dell Stock? Its Cash Gap Rarely Hurt It",
         "url": "https://www.trefis.com/stock/dell/articles/628265/own-dell-stock-its-cash-gap-rarely-hurt-it/2026-11-24?.tsrc=rss",
@@ -2260,13 +2267,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 07:02 ET",
         "pub_ts": 1795521749.0
-      },
-      {
-        "title": "First Trust BuyWrite Income (FTHI) Buys $13.1 Million More Fair Isaac on Nov. 20",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/first-trust-buywrite-income-fthi-110330979.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 06:03 ET",
-        "pub_ts": 1795518210.0
       }
     ],
     "OKLO": [
@@ -2308,6 +2308,13 @@
     ],
     "CEG": [
       {
+        "title": "Is It Worth Investing in Constellation Energy Corporation (CEG) Based on Wall Street's Bullish Views?",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/worth-investing-constellation-energy-corporation-133004847.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 08:30 ET",
+        "pub_ts": 1795527004.0
+      },
+      {
         "title": "CEG Below the 50 and 200-Day SMAs: Is It a Buy or Hold Right Now?",
         "url": "https://finance.yahoo.com/markets/stocks/articles/ceg-below-50-200-day-132400164.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2334,13 +2341,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 15:10 ET",
         "pub_ts": 1795119045.0
-      },
-      {
-        "title": "Will Buyers Defend Constellation Energy Stock At $263?",
-        "url": "https://www.trefis.com/stock/ceg/articles/626738/will-buyers-defend-constellation-energy-stock-at-263/2026-11-19?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 07:08 ET",
-        "pub_ts": 1795090084.0
       }
     ],
     "FPS": [
@@ -3328,12 +3328,12 @@
     "KO": 1795532399.2748246,
     "FLY": 1795532399.2748246,
     "INTC": 1795532399.2748246,
-    "VRT": 1795530984.4993865,
-    "HPE": 1795530984.4993865,
-    "DELL": 1795530984.4993865,
-    "OKLO": 1795530984.4993865,
-    "CEG": 1795530984.4993865,
-    "FPS": 1795530984.4993865,
+    "VRT": 1795532519.427397,
+    "HPE": 1795532519.427397,
+    "DELL": 1795532519.427397,
+    "OKLO": 1795532519.427397,
+    "CEG": 1795532519.427397,
+    "FPS": 1795532519.427397,
     "MU": 1795531969.6763315,
     "SKHY": 1795531969.6763315,
     "WDC": 1795531969.6763315,
@@ -3349,8 +3349,8 @@
     "NKE": 1795532283.4813037,
     "MCD": 1795532283.4813037,
     "PEP": 1795531090.4095514,
-    "XOM": 1795530984.4993865,
-    "JPM": 1795530984.4993865,
+    "XOM": 1795532519.427397,
+    "JPM": 1795532519.427397,
     "WMT": 1795531090.4095514,
     "V": 1795532283.4813037,
     "CAT": 1795531090.4095514,
