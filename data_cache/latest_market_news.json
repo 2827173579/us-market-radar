@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795547556.769,
-  "updated_at_et": "11-24 14:12 ET",
-  "updated_at_kst": "04:12 KST",
+  "updated_at_ts": 1795547660.624,
+  "updated_at_et": "11-24 14:14 ET",
+  "updated_at_kst": "04:14 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1205,13 +1205,6 @@
     ],
     "MSFT": [
       {
-        "title": "Who is holding Jensen Huang accountable? It sure looks like nobody",
-        "url": "https://finance.yahoo.com/video/who-is-holding-jensen-huang-accountable-it-sure-looks-like-nobody-154255467.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 10:42 ET",
-        "pub_ts": 1795534975.0
-      },
-      {
         "title": "Microsoft Corporation (MSFT) Is Facing AI Spending Fears: Could Its Cloud Growth Change the Narrative?",
         "url": "https://finance.yahoo.com/markets/stocks/articles/microsoft-corporation-msft-facing-ai-165850177.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1233,11 +1226,18 @@
         "pub_ts": 1795535101.0
       },
       {
-        "title": "Microsoft Is Down 7% in a Month, but Not One Analyst Says Sell. Wall Street Sees $630+",
-        "url": "https://247wallst.com/investing/2026/11/24/microsoft-is-down-7-in-a-month-but-not-one-analyst-says-sell-wall-street-sees-630/?.tsrc=rss",
+        "title": "The Gates Foundation Trust Sold 2.2 Million Berkshire Shares and Opened a $155 Million Dollar Tree Stake",
+        "url": "https://247wallst.com/investing/2026/11/24/the-gates-foundation-trust-sold-2-2-million-berkshire-shares-and-opened-a-155-million-dollar-tree-stake/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 10:33 ET",
-        "pub_ts": 1795534416.0
+        "time": "11-24 11:53 ET",
+        "pub_ts": 1795539236.0
+      },
+      {
+        "title": "Spotify Restores Service After Outage Hits Thousands",
+        "url": "https://finance.yahoo.com/media-advertising/articles/spotify-restores-outage-hits-thousands-160922885.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 11:09 ET",
+        "pub_ts": 1795536562.0
       }
     ],
     "AAPL": [
@@ -1397,6 +1397,13 @@
         "pub_ts": 1795535048.0
       },
       {
+        "title": "SpaceX Falls 4%, CoreWeave Down 13%, Nebius Down 11% as AI Stocks Give Back Nvidia Rally",
+        "url": "https://www.tikr.com/blog/spacex-falls-4-coreweave-down-13-nebius-down-11-as-ai-stocks-give-back-nvidia-rally?ref=yahoofinance&tlnk=yf-261124-6rfwxx6w&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 13:57 ET",
+        "pub_ts": 1795546678.0
+      },
+      {
         "title": "“The Bank of Nvidia Is Back,” Says CNBC’s David Faber. Its Investments Rose From $7 Billion to $110 Billion",
         "url": "https://www.tikr.com/blog/the-bank-of-nvidia-is-back-says-cnbcs-david-faber-its-investments-rose-from-7-billion-to-110-billion?ref=yahoofinance&tlnk=yf-261124-hfqgvgp4&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1416,13 +1423,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 10:22 ET",
         "pub_ts": 1795533759.0
-      },
-      {
-        "title": "Anthropic Tumbles 9%, Trades Below IPO Price Despite Canaccord’s $135 Target; CoreWeave and Nebius Drop 8%",
-        "url": "https://247wallst.com/investing/2026/11/24/anthropic-tumbles-9-breaks-below-ipo-price-despite-canaccords-135-target-coreweave-and-nebius-drop-8/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 09:54 ET",
-        "pub_ts": 1795532088.0
       }
     ],
     "NBIS": [
@@ -3288,33 +3288,33 @@
   "ticker_news_ts": {
     "KORU": 1795547432.9822133,
     "SOXL": 1795547432.9822133,
-    "SPY": 1795546059.2390764,
+    "SPY": 1795547660.6242015,
     "DIA": 1795547432.9822133,
     "SOXX": 1795547432.9822133,
     "QQQ": 1795547432.9822133,
-    "SMH": 1795546059.2390764,
+    "SMH": 1795547660.6242015,
     "IWM": 1795547432.9822133,
     "IGV": 1795547432.9822133,
     "TLT": 1795547432.9822133,
     "GLD": 1795547432.9822133,
     "SQQQ": 1795547432.9822133,
-    "TSM": 1795546059.2390764,
+    "TSM": 1795547660.6242015,
     "VIXY": 1795547432.9822133,
     "SOXS": 1795547432.9822133,
     "NVDA": 1795547432.9822133,
     "AMD": 1795547432.9822133,
-    "ASML": 1795546059.2390764,
-    "QCOM": 1795546059.2390764,
+    "ASML": 1795547660.6242015,
+    "QCOM": 1795547660.6242015,
     "AVGO": 1795547432.9822133,
-    "AMAT": 1795546059.2390764,
-    "META": 1795546059.2390764,
-    "GOOGL": 1795546059.2390764,
-    "MSFT": 1795546059.2390764,
-    "AAPL": 1795546059.2390764,
-    "PLTR": 1795546059.2390764,
-    "NOW": 1795546059.2390764,
-    "AMZN": 1795546059.2390764,
-    "CRWV": 1795546059.2390764,
+    "AMAT": 1795547660.6242015,
+    "META": 1795547660.6242015,
+    "GOOGL": 1795547660.6242015,
+    "MSFT": 1795547660.6242015,
+    "AAPL": 1795547660.6242015,
+    "PLTR": 1795547660.6242015,
+    "NOW": 1795547660.6242015,
+    "AMZN": 1795547660.6242015,
+    "CRWV": 1795547660.6242015,
     "NBIS": 1795546170.0943477,
     "APLD": 1795546792.5414596,
     "VST": 1795546792.5414596,
@@ -3365,7 +3365,7 @@
     "GLW": 1795546792.5414596,
     "ANT": 1795546902.2190616,
     "XAUUSD": 1795547020.6341326,
-    "KOSPI": 1795546059.2390764
+    "KOSPI": 1795547660.6242015
   },
   "opex_shield": {
     "date": "2026-11-24",
