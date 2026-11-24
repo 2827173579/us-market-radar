@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795561180.808,
-  "updated_at_et": "11-24 17:59 ET",
-  "updated_at_kst": "07:59 KST",
+  "updated_at_ts": 1795561277.176,
+  "updated_at_et": "11-24 18:01 ET",
+  "updated_at_kst": "08:01 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -916,39 +916,39 @@
     ],
     "NVDA": [
       {
-        "title": "Elon Thinks Energy is AI’s Biggest Bottleneck",
-        "url": "https://app.moby.co/home/news/news-elon-thinks-energy-is-ais-biggest-bottleneck?utm_source=yahoo_finance&utm_medium=rss&.tsrc=rss",
+        "title": "Why Trump wanted Jensen Huang back at the helm of Nvidia",
+        "url": "https://finance.yahoo.com/markets/article/why-trump-wanted-jensen-huang-back-at-the-helm-of-nvidia-224325153.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 17:29 ET",
-        "pub_ts": 1795559383.0
+        "time": "11-24 17:43 ET",
+        "pub_ts": 1795560205.0
       },
       {
         "title": "Dow Jones Futures: Nvidia, Anthropic Lead AI Retreat But Many Sectors Strong; Fed Inflation Data Due",
         "url": "https://finance.yahoo.com/m/d96603c1-fe7f-3bf3-8158-0728b464d469/dow-jones-futures%3A-nvidia%2C.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 17:25 ET",
-        "pub_ts": 1795559101.0
+        "time": "11-24 17:48 ET",
+        "pub_ts": 1795560493.0
       },
       {
-        "title": "Stock Market Today, Nov. 24: Tech Sell-Off Drags Nasdaq as Dow Gains on Value Rotation",
-        "url": "https://www.fool.com/coverage/stock-market-today/2026/11/24/stock-market-today-nov-24-tech-sell-off-drags-nasdaq-as-dow-gains-on-value-rotation/?.tsrc=rss",
+        "title": "Update: US Equity Indexes Mixed as Investors Rotate into Defensives Amid Weakening AI Trade",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/us-equity-indexes-mixed-investors-224038739.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 17:11 ET",
-        "pub_ts": 1795558308.0
+        "time": "11-24 17:40 ET",
+        "pub_ts": 1795560038.0
       },
       {
-        "title": "Movado Group, Inc. Q3 2027 Earnings Call Summary",
-        "url": "https://app.moby.co/home/research/tools/earningsCalendar/earnings-movado-group-inc-q3-2027-earnings-call-summary?utm_source=yahoo_finance&utm_medium=rss&.tsrc=rss",
+        "title": "Colette Kress Scored a Win Worth Millions From Huang’s Return to Nvidia",
+        "url": "https://finance.yahoo.com/m/97a2ae60-8b24-38d0-ac03-3173b543f91f/colette-kress-scored-a-win.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 17:05 ET",
-        "pub_ts": 1795557929.0
+        "time": "11-24 17:37 ET",
+        "pub_ts": 1795559820.0
       },
       {
-        "title": "Kohl's Corporation Q3 2026 Earnings Call Summary",
-        "url": "https://app.moby.co/home/research/tools/earningsCalendar/earnings-kohls-corporation-q3-2026-earnings-call-summary?utm_source=yahoo_finance&utm_medium=rss&.tsrc=rss",
+        "title": "Nvidia’s $4 Trillion Board Is ‘The B Team,’ Says Former CIA Officer",
+        "url": "https://www.benzinga.com/markets/prediction-markets/26/11/63612075/nvidia-board-b-team-governance?utm_source=yahooFinance&utm_campaign=partner_feed&utm_medium=referral&.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 17:05 ET",
-        "pub_ts": 1795557919.0
+        "time": "11-24 17:32 ET",
+        "pub_ts": 1795559526.0
       }
     ],
     "AMD": [
@@ -958,6 +958,13 @@
         "source": "Yahoo Finance",
         "time": "11-24 16:45 ET",
         "pub_ts": 1795556758.0
+      },
+      {
+        "title": "Stock Market Today, Nov. 24: AMD Plunges 9% as 337 Million-Share Resale Filing Adds to AI Sell-Off",
+        "url": "https://www.fool.com/coverage/stock-market-today/2026/11/24/stock-market-today-nov-24-amd-plunges-9-as-337-million-share-resale-filing-adds-to-ai-sell-off/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 17:39 ET",
+        "pub_ts": 1795559978.0
       },
       {
         "title": "Is AMD Among the Morgan Stanley’s Best Semiconductor and Server Stocks to Buy for 2027?",
@@ -979,13 +986,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 15:46 ET",
         "pub_ts": 1795553194.0
-      },
-      {
-        "title": "Why Bel Fuse (BELFB) Stock Is Down Today: AI Chip Selloff Hits Components",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/why-bel-fuse-belfb-stock-204629092.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 15:46 ET",
-        "pub_ts": 1795553189.0
       }
     ],
     "ASML": [
@@ -3293,26 +3293,26 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795559712.5466921,
-    "SOXL": 1795559712.5466921,
+    "KORU": 1795561277.1761446,
+    "SOXL": 1795561277.1761446,
     "SPY": 1795560016.7184174,
-    "DIA": 1795559712.5466921,
-    "SOXX": 1795559712.5466921,
-    "QQQ": 1795559712.5466921,
+    "DIA": 1795561277.1761446,
+    "SOXX": 1795561277.1761446,
+    "QQQ": 1795561277.1761446,
     "SMH": 1795560016.7184174,
-    "IWM": 1795559712.5466921,
-    "IGV": 1795559712.5466921,
-    "TLT": 1795559712.5466921,
-    "GLD": 1795559712.5466921,
-    "SQQQ": 1795559712.5466921,
+    "IWM": 1795561277.1761446,
+    "IGV": 1795561277.1761446,
+    "TLT": 1795561277.1761446,
+    "GLD": 1795561277.1761446,
+    "SQQQ": 1795561277.1761446,
     "TSM": 1795560016.7184174,
-    "VIXY": 1795559712.5466921,
-    "SOXS": 1795559712.5466921,
-    "NVDA": 1795559712.5466921,
-    "AMD": 1795559712.5466921,
+    "VIXY": 1795561277.1761446,
+    "SOXS": 1795561277.1761446,
+    "NVDA": 1795561277.1761446,
+    "AMD": 1795561277.1761446,
     "ASML": 1795560016.7184174,
     "QCOM": 1795560016.7184174,
-    "AVGO": 1795559712.5466921,
+    "AVGO": 1795561277.1761446,
     "AMAT": 1795560016.7184174,
     "META": 1795560016.7184174,
     "GOOGL": 1795560016.7184174,
