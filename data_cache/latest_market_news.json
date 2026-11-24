@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795519995.338,
-  "updated_at_et": "11-24 06:33 ET",
-  "updated_at_kst": "20:33 KST",
+  "updated_at_ts": 1795520132.036,
+  "updated_at_et": "11-24 06:35 ET",
+  "updated_at_kst": "20:35 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -17,6 +17,20 @@
       "time_bj": "19:19 BJ",
       "time_kst": "20:19 KST",
       "time_display": "06:19 ET / 19:19 BJ"
+    },
+    {
+      "id": "20261124191509547800",
+      "title": "【Anthropic盘前下挫逾6% 跌破发行价】 11月24日讯，Anthropic(A…",
+      "summary": "【Anthropic盘前下挫逾6% 跌破发行价】 11月24日讯，Anthropic(ANT.O)美股盘前跌幅扩大至6.7%，报81.71美元，跌破83美元的IPO发行价。AXIOS此前报道称，Anthropic和OpenAI许多员工认为，公司内部尚未发布的模型能力已变得极其强大，已无法安全地向公众发布，消息人士表示，这一挑战可能会显著放缓人工智能（AI）的发展热潮。根据周一晚间提交的一份文件，Anthropic首席执行官达里奥·阿莫代伊在公司上市次日出售了超过337万股股票，套现金额超过2.8亿美元。周一，在英伟达重新任命黄仁勋为首席执行官、推动这家芯片制造商股价飙升近30%后，华尔街人工智能相关股票引领市场普遍反弹，但Anthropic未能跟上这轮涨势。",
+      "keywords": [
+        "芯片",
+        "英伟达"
+      ],
+      "pub_ts": 1795518909.0,
+      "time_et": "11-24 06:15 ET",
+      "time_bj": "19:15 BJ",
+      "time_kst": "20:15 KST",
+      "time_display": "06:15 ET / 19:15 BJ"
     },
     {
       "id": "20261124190200183800",
@@ -334,19 +348,6 @@
       "time_bj": "14:02 BJ",
       "time_kst": "15:02 KST",
       "time_display": "01:02 ET / 14:02 BJ"
-    },
-    {
-      "id": "20261124134000002800",
-      "title": "【今日重点关注的财经数据与事件：2026年11月24日 周二】 ① 17:00 德国11…",
-      "summary": "【今日重点关注的财经数据与事件：2026年11月24日 周二】 ① 17:00 德国11月IFO商业景气指数 ② 19:00 英国11月CBI零售销售差值 ③ 19:30 小米公司举行Q3财报电话会 ④ 21:15 美国至11月7日当周ADP就业人数周度变动 ⑤ 22:00 美国9月FHFA房价指数月率 ⑥ 22:00 美国9月S&P/CS20座大城市未季调房价指数年率 ⑦ 23:00 美国11月谘商会消费者信心指数 ⑧ 23:00 美国11月里奇蒙德联储制造业指数 ⑨ 次日00:30 加拿大央行行长麦克勒姆发表讲话 ⑩ 次日05:30 美国至11月20日当周API原油库存",
-      "keywords": [
-        "原油"
-      ],
-      "pub_ts": 1795498800.0,
-      "time_et": "11-24 00:40 ET",
-      "time_bj": "13:40 BJ",
-      "time_kst": "14:40 KST",
-      "time_display": "00:40 ET / 13:40 BJ"
     }
   ],
   "ticker_news": {
@@ -2202,13 +2203,6 @@
     ],
     "HPE": [
       {
-        "title": "HPE falls as Q1 outlook marginally falls short of expectations",
-        "url": "https://stocktwits.com/news-articles/markets/equity/hpe-stock-drops-8-after-hours-as-q1-outlook-marginally-falls-short-of-expectations/cNbrYexR9jA?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 19:10 ET",
-        "pub_ts": 1795479026.0
-      },
-      {
         "title": "HPE Stock What Changed After Earnings Beat",
         "url": "https://finance.yahoo.com/markets/stocks/articles/hpe-stock-changed-earnings-beat-101147443.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2235,9 +2229,23 @@
         "source": "Yahoo Finance",
         "time": "11-23 22:00 ET",
         "pub_ts": 1795489200.0
+      },
+      {
+        "title": "Nasdaq, Dow, S&P 500 Futures Gain As Jensen Huang’s Return To Nvidia Sparks $3T Market Rally: SOXS, IBRX, HPE, TSM In Focus",
+        "url": "https://stocktwits.com/news-articles/markets/equity/stock-market-today-nasdaq-dow-futures-rise-jensen-huang-returns-nvidia/cNbrsSNR9jM?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 21:13 ET",
+        "pub_ts": 1795486423.0
       }
     ],
     "DELL": [
+      {
+        "title": "First Trust BuyWrite Income (FTHI) Buys $13.1 Million More Fair Isaac on Nov. 20",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/first-trust-buywrite-income-fthi-110330979.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 06:03 ET",
+        "pub_ts": 1795518210.0
+      },
       {
         "title": "Teradata Bets on Dell Partnership and New Products to Drive 2027 Growth",
         "url": "https://www.marketbeat.com/instant-alerts/event-teradata-bets-on-dell-partnership-and-new-products-to-drive-2027-growth-2026-11-24/?utm_source=yahoofinance&utm_medium=yahoofinance&.tsrc=rss",
@@ -2265,13 +2273,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 22:09 ET",
         "pub_ts": 1795489779.0
-      },
-      {
-        "title": "Nvidia, Dell, Micron, Anthropic, CrowdStrike, UnitedHealth, and More Stocks That Explain Today’s Market",
-        "url": "https://finance.yahoo.com/m/76a3103b-f3de-364f-8cd8-90e453a902d8/nvidia%2C-dell%2C-micron%2C.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 16:27 ET",
-        "pub_ts": 1795469220.0
       }
     ],
     "OKLO": [
@@ -2986,6 +2987,20 @@
         "pub_ts": 1795471934.0
       },
       {
+        "title": "What State Street Fin Select Sector SPDR (XLF) Bought: Berkshire Leads on Nov. 20",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/state-street-fin-select-sector-110322872.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 06:03 ET",
+        "pub_ts": 1795518202.0
+      },
+      {
+        "title": "ETFs Are Buying JPMorgan Chase (JPM) on Friday",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-buying-jpmorgan-chase-jpm-110146498.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 06:01 ET",
+        "pub_ts": 1795518106.0
+      },
+      {
         "title": "JPMorgan Chase (JPM) Stock Still Looks Like A Bargain On Its 122% Run",
         "url": "https://finance.yahoo.com/markets/stocks/articles/jpmorgan-chase-jpm-stock-still-091521471.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2998,20 +3013,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 04:12 ET",
         "pub_ts": 1795511523.0
-      },
-      {
-        "title": "Forget JPMorgan: Upstart Has More to Lose From a 10% Card Rate Cap",
-        "url": "https://www.tikr.com/blog/forget-jpmorgan-upstart-has-more-to-lose-from-a-10-card-rate-cap?ref=yahoofinance&tlnk=yf-261123-2gmrm77f&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 18:31 ET",
-        "pub_ts": 1795476698.0
-      },
-      {
-        "title": "J.P. Morgan Asset Management to Transfer JPMorgan Active Bond ETF (JBND) to NYSE Arca from NYSE",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/j-p-morgan-asset-management-213000067.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 16:30 ET",
-        "pub_ts": 1795469400.0
       }
     ],
     "WMT": [
@@ -3333,12 +3334,12 @@
     "KO": 1795519995.3377461,
     "FLY": 1795519995.3377461,
     "INTC": 1795519995.3377461,
-    "VRT": 1795518561.8226786,
-    "HPE": 1795518561.8226786,
-    "DELL": 1795518561.8226786,
-    "OKLO": 1795518561.8226786,
-    "CEG": 1795518561.8226786,
-    "FPS": 1795518561.8226786,
+    "VRT": 1795520132.0360165,
+    "HPE": 1795520132.0360165,
+    "DELL": 1795520132.0360165,
+    "OKLO": 1795520132.0360165,
+    "CEG": 1795520132.0360165,
+    "FPS": 1795520132.0360165,
     "MU": 1795519557.5820932,
     "SKHY": 1795519557.5820932,
     "WDC": 1795519557.5820932,
@@ -3354,8 +3355,8 @@
     "NKE": 1795519883.0000913,
     "MCD": 1795519883.0000913,
     "PEP": 1795518671.2977638,
-    "XOM": 1795518561.8226786,
-    "JPM": 1795518561.8226786,
+    "XOM": 1795520132.0360165,
+    "JPM": 1795520132.0360165,
     "WMT": 1795518671.2977638,
     "V": 1795519883.0000913,
     "CAT": 1795518671.2977638,
