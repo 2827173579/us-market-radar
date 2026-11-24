@@ -1,9 +1,23 @@
 {
-  "updated_at_ts": 1795526349.683,
-  "updated_at_et": "11-24 08:19 ET",
-  "updated_at_kst": "22:19 KST",
+  "updated_at_ts": 1795526458.549,
+  "updated_at_et": "11-24 08:20 ET",
+  "updated_at_kst": "22:20 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261124211956334800",
+      "title": "【美股股指期货扩大跌幅】 11月24日讯，美股股指期货扩大跌幅，道指期货现跌0.8%，标…",
+      "summary": "【美股股指期货扩大跌幅】 11月24日讯，美股股指期货扩大跌幅，道指期货现跌0.8%，标普500指数期货跌约1.3%，纳指期货跌约2.3%。此前，美国媒体称美国准备对数十个国家提高关税。",
+      "keywords": [
+        "关税",
+        "标普"
+      ],
+      "pub_ts": 1795526396.0,
+      "time_et": "11-24 08:19 ET",
+      "time_bj": "21:19 BJ",
+      "time_kst": "22:19 KST",
+      "time_display": "08:19 ET / 21:19 BJ"
+    },
     {
       "id": "20261124211810471800",
       "title": "AI越繁荣，美联储越难办：沃什面临抗通胀与保增长的双重考验",
@@ -332,19 +346,6 @@
       "time_bj": "16:18 BJ",
       "time_kst": "17:18 KST",
       "time_display": "03:18 ET / 16:18 BJ"
-    },
-    {
-      "id": "20261124161118269800",
-      "title": "英伟达重返“黄”金时代推升美股，信用市场却暗示抛售潮尚未结束| 每日市场观察11.24",
-      "summary": "英伟达创始人重新掌舵，带动美股急升，空头回补和对冲调整放大了涨势。人工智能基础设施融资仍要付出较高溢价，反弹能走多远，要看最初的回补结束后是否有新买盘接力。",
-      "keywords": [
-        "英伟达"
-      ],
-      "pub_ts": 1795507878.0,
-      "time_et": "11-24 03:11 ET",
-      "time_bj": "16:11 BJ",
-      "time_kst": "17:11 KST",
-      "time_display": "03:11 ET / 16:11 BJ"
     }
   ],
   "ticker_news": {
@@ -2584,6 +2585,13 @@
         "pub_ts": 1795518720.0
       },
       {
+        "title": "Sandisk Sinks 13% in a Week as TrendForce Sees Flash Prices Falling in 2027. Time to Buy?",
+        "url": "https://www.tikr.com/blog/sandisk-sinks-13-in-a-week-as-trendforce-sees-flash-prices-falling-in-2027-time-to-buy?ref=yahoofinance&tlnk=yf-261124-gx862hh2&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 00:53 ET",
+        "pub_ts": 1795499629.0
+      },
+      {
         "title": "Prediction: This Will Be Sandisk’s Stock Price by the End of 2027",
         "url": "https://www.fool.com/investing/2026/11/23/prediction-this-will-be-sandisks-stock-price-by-the-end-of-2027/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2596,13 +2604,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 15:08 ET",
         "pub_ts": 1795464484.0
-      },
-      {
-        "title": "Jensen Huang back as Nvidia CEO after 12 days: Shares surge 30%",
-        "url": "https://finance.yahoo.com/video/jensen-huang-back-as-nvidia-ceo-after-12-days-shares-surge-30-161302539.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 11:13 ET",
-        "pub_ts": 1795450382.0
       }
     ],
     "BTC-USD": [
@@ -2651,6 +2652,20 @@
         "pub_ts": 1795522958.0
       },
       {
+        "title": "CRWD Q3 Earnings Beat Estimates on Strong ARR & Falcon Flex Adoption",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/crwd-q3-earnings-beat-estimates-120100191.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 07:01 ET",
+        "pub_ts": 1795521660.0
+      },
+      {
+        "title": "CrowdStrike to Acquire Zscaler: Can it Boost Falcon Platform Growth?",
+        "url": "https://finance.yahoo.com/technology/articles/crowdstrike-acquire-zscaler-boost-falcon-115700050.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 06:57 ET",
+        "pub_ts": 1795521420.0
+      },
+      {
         "title": "CrowdStrike Bets Two Top Dogs Beat One",
         "url": "https://www.fool.com/investing/2026/11/24/crowdstrike-bets-two-top-dogs-beat-one/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2663,20 +2678,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 06:20 ET",
         "pub_ts": 1795519219.0
-      },
-      {
-        "title": "Jim Cramer Calls CrowdStrike’s Zscaler Deal the Biggest in Cybersecurity History. What It Means for Both Stocks",
-        "url": "https://247wallst.com/investing/2026/11/24/jim-cramer-calls-crowdstrikes-zscaler-deal-the-biggest-in-cybersecurity-history-what-it-means-for-both-stocks/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 06:17 ET",
-        "pub_ts": 1795519024.0
-      },
-      {
-        "title": "What iShares Expanded Tech-Software (IGV) Sold: Palo Alto Leads on Friday",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/ishares-expanded-tech-software-igv-110408106.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 06:04 ET",
-        "pub_ts": 1795518248.0
       }
     ],
     "ORCL": [
@@ -3199,39 +3200,39 @@
     ],
     "ANT": [
       {
-        "title": "Anthropic briefly falls below IPO price in premarket trading",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/anthropic-briefly-falls-below-ipo-122911130.html?.tsrc=rss",
+        "title": "Stock Market Today: Tech Futures Sell Off After Big Market Surge; AMD, Anthropic, Nvidia Dive (Live Coverage)",
+        "url": "https://finance.yahoo.com/m/4aa4ff31-269f-346e-80c4-e681510af7ae/stock-market-today%3A-tech.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 07:29 ET",
-        "pub_ts": 1795523351.0
+        "time": "11-24 08:07 ET",
+        "pub_ts": 1795525679.0
       },
       {
-        "title": "Anthropic Falls Below IPO Price. The Threat Wasn’t Nvidia, It Came From Inside",
-        "url": "https://beincrypto.com/anthropic-stock-below-ipo-price-employees/?.tsrc=rss",
+        "title": "YieldMax® Introduces Option Income Strategy ETF on Anthropic (ANT)",
+        "url": "https://finance.yahoo.com/markets/options/articles/yieldmax-introduces-option-income-strategy-130000457.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 07:28 ET",
-        "pub_ts": 1795523290.0
+        "time": "11-24 08:00 ET",
+        "pub_ts": 1795525200.0
       },
       {
-        "title": "Anthropic’s Frenemy Squeeze: Pledging Up to $49B to Microsoft While Building Its Own Landlord Escape Hatch",
-        "url": "https://247wallst.com/investing/2026/11/24/anthropics-frenemy-squeeze-pledging-up-to-49b-to-microsoft-while-building-its-own-landlord-escape-hatch/?.tsrc=rss",
+        "title": "Dario and Daniela Amodei Each Sold $280 Million of Anthropic Stock in the IPO",
+        "url": "https://247wallst.com/investing/2026/11/24/dario-and-daniela-amodei-each-sold-280-million-of-anthropic-stock-in-the-ipo/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 07:15 ET",
-        "pub_ts": 1795522531.0
+        "time": "11-24 07:57 ET",
+        "pub_ts": 1795525079.0
       },
       {
-        "title": "Jim Cramer: A ‘rolling bear market’ is mauling US stocks, ‘ripping off the faces of everybody.’ Protect your wallet",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/jim-cramer-rolling-bear-market-121500948.html?.tsrc=rss",
+        "title": "Dan Niles: Why Pay “20 Times Trailing Revenues” for Anthropic When SK Hynix Trades at 2x Earnings?",
+        "url": "https://www.tikr.com/blog/dan-niles-why-pay-20-times-trailing-revenues-for-anthropic-when-sk-hynix-trades-at-2x-earnings?ref=yahoofinance&tlnk=yf-261124-wv9jf564&.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 07:15 ET",
-        "pub_ts": 1795522500.0
+        "time": "11-24 07:56 ET",
+        "pub_ts": 1795524966.0
       },
       {
-        "title": "Which \"Magnificent Seven\" Stocks Win From Anthropic’s IPO?",
-        "url": "https://www.fool.com/investing/2026/11/24/which-magnificent-seven-stocks-win-from-anthropics-ipo/?.tsrc=rss",
+        "title": "ANT Stock Slips Below IPO Price In Premarket — Canaccord Sees Bigger AI Opportunity, 60% Upside Potential",
+        "url": "https://stocktwits.com/news-articles/markets/equity/ant-stock-slips-below-ipo-price-in-premarket-canaccord-sees-bigger-ai-opportunity-60-upside-potential/cNbseluR9kS?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 06:50 ET",
-        "pub_ts": 1795521002.0
+        "time": "11-24 07:53 ET",
+        "pub_ts": 1795524811.0
       }
     ],
     "XAUUSD": [
@@ -3340,27 +3341,27 @@
     "MU": 1795525791.8784165,
     "SKHY": 1795525791.8784165,
     "WDC": 1795525791.8784165,
-    "STX": 1795524903.6988554,
-    "MSTR": 1795524903.6988554,
-    "SNDK": 1795524903.6988554,
+    "STX": 1795526458.54915,
+    "MSTR": 1795526458.54915,
+    "SNDK": 1795526458.54915,
     "BTC-USD": 1795525791.8784165,
-    "CRWD": 1795524903.6988554,
+    "CRWD": 1795526458.54915,
     "ORCL": 1795526131.5714948,
     "COIN": 1795526131.5714948,
     "LLY": 1795526131.5714948,
     "MRNA": 1795526131.5714948,
     "NKE": 1795526131.5714948,
     "MCD": 1795526131.5714948,
-    "PEP": 1795524903.6988554,
+    "PEP": 1795526458.54915,
     "XOM": 1795526349.6831925,
     "JPM": 1795526349.6831925,
-    "WMT": 1795524903.6988554,
+    "WMT": 1795526458.54915,
     "V": 1795526131.5714948,
-    "CAT": 1795524903.6988554,
+    "CAT": 1795526458.54915,
     "FN": 1795525791.8784165,
     "GLW": 1795526131.5714948,
-    "ANT": 1795524903.6988554,
-    "XAUUSD": 1795524903.6988554,
+    "ANT": 1795526458.54915,
+    "XAUUSD": 1795526458.54915,
     "KOSPI": 1795525791.8784165
   },
   "opex_shield": {
@@ -3380,7 +3381,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (08:18 ET / 21:18 BJ) [美联储]：AI投资回报的不确定性引发科技股波动，而通胀压力又让美联储难以轻易放松政策。沃什既要回应市场对增长放缓的担忧，也要维护央行抗通胀信誉。点击查看...",
+    "detail": "⚡ 最新核心快讯 (08:19 ET / 21:19 BJ) [关税] [标普]：【美股股指期货扩大跌幅】 11月24日讯，美股股指期货扩大跌幅，道指期货现跌0.8%，标普500指数期货跌约1.3%，纳指期货跌约2.3%。此前，美国媒体称美国准备对数十个国家提高关税。",
     "event_name": "",
     "minutes_left": 0,
     "opex_shield": {
