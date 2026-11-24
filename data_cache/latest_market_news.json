@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795541361.788,
-  "updated_at_et": "11-24 12:29 ET",
-  "updated_at_kst": "02:29 KST",
+  "updated_at_ts": 1795541470.29,
+  "updated_at_et": "11-24 12:31 ET",
+  "updated_at_kst": "02:31 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1501,6 +1501,13 @@
     ],
     "VST": [
       {
+        "title": "Midterms provide clarity on data center development: Vistra CEO",
+        "url": "https://www.utilitydive.com/news/vistra-midterms-data-center-ercot-pjm/875626/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 10:54 ET",
+        "pub_ts": 1795535695.0
+      },
+      {
         "title": "Exelon Or Vistra: Which Fits Your Power Demand Bet?",
         "url": "https://www.trefis.com/stock/exc/articles/627544/exelon-or-vistra-which-fits-your-power-demand-bet/2026-11-23?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1527,13 +1534,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 02:13 ET",
         "pub_ts": 1795072419.0
-      },
-      {
-        "title": "Vistra (VST) Could Be 23% Undervalued After Fresh Guidance And Earnings",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/vistra-vst-could-23-undervalued-021130252.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 21:11 ET",
-        "pub_ts": 1795054290.0
       }
     ],
     "BE": [
@@ -2870,6 +2870,13 @@
     ],
     "MCD": [
       {
+        "title": "McDonald's Moves on Makeover; Dick's Sporting Goods Up on Earnings | Stock Movers",
+        "url": "https://finance.yahoo.com/video/mcdonalds-moves-makeover-dicks-sporting-161755169.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 11:17 ET",
+        "pub_ts": 1795537075.0
+      },
+      {
         "title": "Monroe Capital Supports Waveborn’s Acquisition of Jake Rosen Entertainment",
         "url": "https://finance.yahoo.com/media-advertising/articles/monroe-capital-supports-waveborn-acquisition-110000467.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2896,13 +2903,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 12:29 ET",
         "pub_ts": 1795454979.0
-      },
-      {
-        "title": "Is The Market Underpricing McDonald's Stock?",
-        "url": "https://www.trefis.com/stock/mcd/articles/627636/is-the-market-underpricing-mcdonalds-stock-2/2026-11-23?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 08:38 ET",
-        "pub_ts": 1795441105.0
       }
     ],
     "PEP": [
@@ -3316,22 +3316,22 @@
     "AMZN": 1795541042.5341015,
     "CRWV": 1795541042.5341015,
     "NBIS": 1795541147.7344,
-    "APLD": 1795539925.9887524,
-    "VST": 1795539925.9887524,
-    "BE": 1795539925.9887524,
-    "CRDO": 1795539925.9887524,
-    "COHR": 1795539925.9887524,
+    "APLD": 1795541470.290037,
+    "VST": 1795541470.290037,
+    "BE": 1795541470.290037,
+    "CRDO": 1795541470.290037,
+    "COHR": 1795541470.290037,
     "MRVL": 1795541147.7344,
     "LITE": 1795541147.7344,
-    "AAOI": 1795539925.9887524,
+    "AAOI": 1795541470.290037,
     "SPCX": 1795540036.4736745,
-    "ASTS": 1795539925.9887524,
+    "ASTS": 1795541470.290037,
     "AXTI": 1795541147.7344,
     "NASA": 1795540036.4736745,
     "LUNR": 1795540036.4736745,
     "TSLA": 1795540036.4736745,
     "AXP": 1795540036.4736745,
-    "RKLB": 1795539925.9887524,
+    "RKLB": 1795541470.290037,
     "KO": 1795540036.4736745,
     "FLY": 1795540036.4736745,
     "INTC": 1795540036.4736745,
@@ -3349,20 +3349,20 @@
     "SNDK": 1795540252.562012,
     "BTC-USD": 1795541147.7344,
     "CRWD": 1795540252.562012,
-    "ORCL": 1795539925.9887524,
-    "COIN": 1795539925.9887524,
-    "LLY": 1795539925.9887524,
-    "MRNA": 1795539925.9887524,
-    "NKE": 1795539925.9887524,
-    "MCD": 1795539925.9887524,
+    "ORCL": 1795541470.290037,
+    "COIN": 1795541470.290037,
+    "LLY": 1795541470.290037,
+    "MRNA": 1795541470.290037,
+    "NKE": 1795541470.290037,
+    "MCD": 1795541470.290037,
     "PEP": 1795540252.562012,
     "XOM": 1795540143.3747313,
     "JPM": 1795540143.3747313,
     "WMT": 1795540252.562012,
-    "V": 1795539925.9887524,
+    "V": 1795541470.290037,
     "CAT": 1795540252.562012,
     "FN": 1795541147.7344,
-    "GLW": 1795539925.9887524,
+    "GLW": 1795541470.290037,
     "ANT": 1795540252.562012,
     "XAUUSD": 1795540252.562012,
     "KOSPI": 1795541147.7344
