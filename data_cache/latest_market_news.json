@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795535571.331,
-  "updated_at_et": "11-24 10:52 ET",
-  "updated_at_kst": "00:52 KST",
+  "updated_at_ts": 1795535680.359,
+  "updated_at_et": "11-24 10:54 ET",
+  "updated_at_kst": "00:54 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2646,6 +2646,13 @@
     ],
     "CRWD": [
       {
+        "title": "Guggenheim lifts CrowdStrike to Buy, sees 34% upside",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/guggenheim-lifts-crowdstrike-buy-sees-152606437.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 10:26 ET",
+        "pub_ts": 1795533966.0
+      },
+      {
         "title": "Bernstein Sees Hidden Risk in CrowdStrike's Zscaler Deal",
         "url": "https://finance.yahoo.com/markets/stocks/articles/bernstein-sees-hidden-risk-crowdstrikes-150055767.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2672,13 +2679,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 08:46 ET",
         "pub_ts": 1795527972.0
-      },
-      {
-        "title": "Wall Street’s New M&A Mood: Why Both Marvell-Lumentum and CrowdStrike-Zscaler Hit Pushback",
-        "url": "https://247wallst.com/investing/2026/11/24/wall-streets-new-ma-mood-why-both-marvell-lumentum-and-crowdstrike-zscaler-hit-pushback/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 08:45 ET",
-        "pub_ts": 1795527912.0
       }
     ],
     "ORCL": [
@@ -3215,25 +3215,25 @@
         "pub_ts": 1795531509.0
       },
       {
+        "title": "If Anthropic Does This It Could Reach $130 By Year End",
+        "url": "https://247wallst.com/investing/2026/11/24/if-anthropic-does-this-it-could-reach-130-by-year-end/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 10:45 ET",
+        "pub_ts": 1795535148.0
+      },
+      {
+        "title": "Stock Market Today: Dow Up But Nasdaq Skids As Nvidia Dives; Bears Bite Chips (Live Coverage)",
+        "url": "https://finance.yahoo.com/m/4aa4ff31-269f-346e-80c4-e681510af7ae/stock-market-today%3A-dow-up.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 10:39 ET",
+        "pub_ts": 1795534748.0
+      },
+      {
         "title": "From the Demo Crew to the Nasdaq Podium: KBF Design Gallery's Adam Vellequette Joins Anthropic to Ring the Closing Bell on IPO Day",
         "url": "https://finance.yahoo.com/technology/ai/articles/demo-crew-nasdaq-podium-kbf-151500049.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-24 10:15 ET",
         "pub_ts": 1795533300.0
-      },
-      {
-        "title": "Is Anthropic stock a set and forget stock after its IPO debut?",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/anthropic-stock-set-forget-stock-150511184.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 10:05 ET",
-        "pub_ts": 1795532711.0
-      },
-      {
-        "title": "Anthropic Stock Falls Below IPO Price Despite Bullish Views From Analysts",
-        "url": "https://finance.yahoo.com/m/4f94eed8-e2b9-313f-ba94-697a4cf1fe70/anthropic-stock-falls-below.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 09:57 ET",
-        "pub_ts": 1795532274.0
       }
     ],
     "XAUUSD": [
@@ -3342,27 +3342,27 @@
     "MU": 1795535034.2286582,
     "SKHY": 1795535034.2286582,
     "WDC": 1795535034.2286582,
-    "STX": 1795534149.074616,
-    "MSTR": 1795534149.074616,
-    "SNDK": 1795534149.074616,
+    "STX": 1795535680.358947,
+    "MSTR": 1795535680.358947,
+    "SNDK": 1795535680.358947,
     "BTC-USD": 1795535034.2286582,
-    "CRWD": 1795534149.074616,
+    "CRWD": 1795535680.358947,
     "ORCL": 1795535349.1759248,
     "COIN": 1795535349.1759248,
     "LLY": 1795535349.1759248,
     "MRNA": 1795535349.1759248,
     "NKE": 1795535349.1759248,
     "MCD": 1795535349.1759248,
-    "PEP": 1795534149.074616,
+    "PEP": 1795535680.358947,
     "XOM": 1795535571.331406,
     "JPM": 1795535571.331406,
-    "WMT": 1795534149.074616,
+    "WMT": 1795535680.358947,
     "V": 1795535349.1759248,
-    "CAT": 1795534149.074616,
+    "CAT": 1795535680.358947,
     "FN": 1795535034.2286582,
     "GLW": 1795535349.1759248,
-    "ANT": 1795534149.074616,
-    "XAUUSD": 1795534149.074616,
+    "ANT": 1795535680.358947,
+    "XAUUSD": 1795535680.358947,
     "KOSPI": 1795535034.2286582
   },
   "opex_shield": {
