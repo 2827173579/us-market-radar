@@ -5323,9 +5323,13 @@
     "2026-11-24:VXN_TECH_DELEVERAGING": {
       "device": "PC",
       "ts": 1795496481.6354542
+    },
+    "2026-11-24:APLD:STOP_LOSS": {
+      "device": "PC",
+      "ts": 1795496702.8737602
     }
   },
   "device": "PC",
-  "last_heartbeat_ts": 1795496501.6568286,
-  "updated_at": "2026-11-24T05:01:41.657293+00:00"
+  "last_heartbeat_ts": 1795496611.4511514,
+  "updated_at": "2026-11-24T05:05:02.874246+00:00"
 }
