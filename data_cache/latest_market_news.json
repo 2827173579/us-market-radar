@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795493407.657,
-  "updated_at_et": "11-23 23:10 ET",
-  "updated_at_kst": "13:10 KST",
+  "updated_at_ts": 1795494020.984,
+  "updated_at_et": "11-23 23:20 ET",
+  "updated_at_kst": "13:20 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1459,6 +1459,13 @@
     ],
     "APLD": [
       {
+        "title": "Dead Cat Bounce? AI Stocks Climb 20%+, but IREN, Applied Digital Stay Down 50%+",
+        "url": "https://beincrypto.com/ai-stocks-dead-cat-bounce-iren/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 22:05 ET",
+        "pub_ts": 1795489500.0
+      },
+      {
         "title": "Applied Digital Stock Surged 20% on a Hyperscaler Deal. What to Know About Its $41 Billion in Leases",
         "url": "https://www.fool.com/investing/2026/11/23/applied-digital-stock-surged-20-on-a-hyperscaler-deal-what-to-know-about-its-usd41-billion-in-leases/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1480,18 +1487,11 @@
         "pub_ts": 1795455047.0
       },
       {
-        "title": "Applied Digital Soars 26% on $5.4B Hyperscaler Lease; Cipher Digital Jumps 19%, TeraWulf Surges 15%",
-        "url": "https://247wallst.com/investing/2026/11/23/applied-digital-soars-26-on-5-4b-hyperscaler-lease-cipher-digital-jumps-19-terawulf-surges-15/?.tsrc=rss",
+        "title": "Needham keeps Applied Digital at Buy with $70 target after ChronoScale’s $43.7 billion contract",
+        "url": "https://blockspace.media/insight/applied-digital-needham-price-target/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 10:02 ET",
-        "pub_ts": 1795446161.0
-      },
-      {
-        "title": "Applied Digital Shares Surge 13% After Securing $5.4 Billion AI Data Centre Lease Agreement",
-        "url": "https://investorshub.advfn.com/market-news/article/40547/applied-digital-shares-surge-13-after-securing-5-4-billion-ai-data-centre-lease-agreement?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 09:57 ET",
-        "pub_ts": 1795445827.0
+        "time": "11-23 10:42 ET",
+        "pub_ts": 1795448553.0
       }
     ],
     "VST": [
@@ -1533,6 +1533,13 @@
     ],
     "BE": [
       {
+        "title": "BE Stock Clocks Best Gains In Nearly 5 Months: Bloom Energy Bears Dominate Sentiment But Bulls Smell A Comeback: ‘AI Buildout Is Only 15%’",
+        "url": "https://stocktwits.com/news-articles/markets/equity/bloom-energy-best-gains-five-months-bulls-see-comback-ai-trade-nvidia/cNbrMHBR9jv?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 22:03 ET",
+        "pub_ts": 1795489392.0
+      },
+      {
         "title": "Bloom Energy Stock What Changed in AI Data Center Demand",
         "url": "https://finance.yahoo.com/markets/stocks/articles/bloom-energy-stock-changed-ai-011325575.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1559,16 +1566,16 @@
         "source": "Yahoo Finance",
         "time": "11-23 11:34 ET",
         "pub_ts": 1795451666.0
-      },
-      {
-        "title": "Semiconductor Stocks like Micron, Marvell, and Bloom Energy See Massive Gains as Jensen Huang Returns to NVIDIA",
-        "url": "https://247wallst.com/videos/semiconductor-stocks-like-micron-marvell-and-bloom-energy-see-massive-gains-as-jensen-huang-returns-to-nvidia/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 10:52 ET",
-        "pub_ts": 1795449140.0
       }
     ],
     "CRDO": [
+      {
+        "title": "Credo Technology (CRDO) Just Made a Stunning Comeback",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/credo-technology-crdo-just-made-031759842.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 22:17 ET",
+        "pub_ts": 1795490279.0
+      },
       {
         "title": "Credo Technology’s AI rebound potential versus Broadcom",
         "url": "https://finance.yahoo.com/technology/ai/articles/credo-technology-ai-rebound-potential-185817118.html?.tsrc=rss",
@@ -1596,13 +1603,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 17:17 ET",
         "pub_ts": 1795213028.0
-      },
-      {
-        "title": "Credo Sinks 6%, Marvell Down 5% as Cramer Says Nvidia Woes Are “Overwhelming the Good News”",
-        "url": "https://www.tikr.com/blog/credo-sinks-6-marvell-down-5-as-cramer-says-nvidia-woes-are-overwhelming-the-good-news?ref=yahoofinance&tlnk=yf-261120-qv55x6wh&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 09:39 ET",
-        "pub_ts": 1795185544.0
       }
     ],
     "COHR": [
@@ -1755,18 +1755,18 @@
     ],
     "SPCX": [
       {
-        "title": "Elon Musk on his support for Jensen Huang: 'Fair-weather friends are worthless'",
-        "url": "https://finance.yahoo.com/markets/article/musk-on-support-for-jensen-huangs-return-to-nvidia-fair-weather-friends-are-worthless-212613771.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 16:26 ET",
-        "pub_ts": 1795469173.0
-      },
-      {
         "title": "Dow Jones Futures: Tech Stocks, Nvidia Snap Back On Jensen Huang's Return; Elon Musk-Led SpaceX, Tesla Rally",
         "url": "https://finance.yahoo.com/m/be493228-4ecf-338d-9017-054d3d6efc36/dow-jones-futures%3A-tech.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 21:14 ET",
-        "pub_ts": 1795486479.0
+        "time": "11-23 22:27 ET",
+        "pub_ts": 1795490874.0
+      },
+      {
+        "title": "SpaceX Stock Is Down 39% From Its High. Here's What Has to Happen Before I'd Buy.",
+        "url": "https://www.fool.com/investing/2026/11/23/spacex-stock-is-down-39-from-its-high-here-s-what-has-to-happen-before-i-d-buy/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 22:20 ET",
+        "pub_ts": 1795490402.0
       },
       {
         "title": "TSLA And SPCX Rally As Musk Cheers Huang’s Return — Analyst Flags Nvidia’s Push To Send SpaceX More Chips",
@@ -1903,6 +1903,13 @@
     ],
     "LUNR": [
       {
+        "title": "NASA Is Handing Out Moon Contracts Again. Intuitive Machines, Firefly, and Redwire All Got Paid. Only 1 Has the Balance Sheet to Keep Winning.",
+        "url": "https://www.fool.com/investing/2026/11/23/nasa-is-handing-out-moon-contracts-again-intuitive-machines-firefly-and-redwire-all-got-paid-only-1-has-the-balance-sheet-to-keep-winning/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 22:47 ET",
+        "pub_ts": 1795492022.0
+      },
+      {
         "title": "Intuitive Machines Advances Space Nuclear Systems to Enable Lunar Night Survival",
         "url": "https://finance.yahoo.com/technology/articles/intuitive-machines-advances-space-nuclear-224800596.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1929,13 +1936,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 13:20 ET",
         "pub_ts": 1795198803.0
-      },
-      {
-        "title": "Can LUNR Build a New Growth Engine in Space Communications?",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/lunr-build-growth-engine-space-165600349.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 11:56 ET",
-        "pub_ts": 1795193760.0
       }
     ],
     "TSLA": [
@@ -2058,6 +2058,13 @@
         "pub_ts": 1795460389.0
       },
       {
+        "title": "BofA spots opportunities in these nine consumer staples stocks for 2027",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/bofa-spots-opportunities-nine-consumer-030406689.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 22:04 ET",
+        "pub_ts": 1795489446.0
+      },
+      {
         "title": "The Coca-Cola Company Names David Elkins as Incoming Chief Financial Officer",
         "url": "https://finance.yahoo.com/markets/stocks/articles/coca-cola-company-names-david-213000723.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2077,16 +2084,16 @@
         "source": "Yahoo Finance",
         "time": "11-23 12:50 ET",
         "pub_ts": 1795456202.0
-      },
-      {
-        "title": "The Average 1-Year CD Pays 1.81%. Dividend Stocks Offer a Different Trade-Off",
-        "url": "https://247wallst.com/investing/2026/11/23/the-average-1-year-cd-pays-1-81-dividend-stocks-offer-a-different-trade-off/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 10:17 ET",
-        "pub_ts": 1795447020.0
       }
     ],
     "FLY": [
+      {
+        "title": "NASA Is Handing Out Moon Contracts Again. Intuitive Machines, Firefly, and Redwire All Got Paid. Only 1 Has the Balance Sheet to Keep Winning.",
+        "url": "https://www.fool.com/investing/2026/11/23/nasa-is-handing-out-moon-contracts-again-intuitive-machines-firefly-and-redwire-all-got-paid-only-1-has-the-balance-sheet-to-keep-winning/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 22:47 ET",
+        "pub_ts": 1795492022.0
+      },
       {
         "title": "Why Firefly Aerospace Stock Dropped on Friday",
         "url": "https://www.fool.com/investing/2026/11/20/why-firefly-aerospace-stock-dropped-on-friday/?.tsrc=rss",
@@ -2114,13 +2121,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 01:58 ET",
         "pub_ts": 1795157911.0
-      },
-      {
-        "title": "Firefly Aerospace Lands QASCOM Payload Deal Ahead Of 2028 Lunar Mission – Here’s What It Means",
-        "url": "https://stocktwits.com/news-articles/markets/equity/firefly-aerospace-lands-qascom-payload-deal-ahead-of-2028-lunar-mission-here-s-what-it-means/cNbaznkR9WD?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-17 10:26 ET",
-        "pub_ts": 1794929167.0
       }
     ],
     "INTC": [
@@ -3311,25 +3311,25 @@
     "AMZN": 1795493407.6567113,
     "CRWV": 1795493407.6567113,
     "NBIS": 1795493407.6567113,
-    "APLD": 1795489274.342018,
-    "VST": 1795489274.342018,
-    "BE": 1795489383.9937239,
-    "CRDO": 1795489383.9937239,
-    "COHR": 1795489383.9937239,
+    "APLD": 1795494020.9836934,
+    "VST": 1795494020.9836934,
+    "BE": 1795494020.9836934,
+    "CRDO": 1795494020.9836934,
+    "COHR": 1795494020.9836934,
     "MRVL": 1795493407.6567113,
     "LITE": 1795493407.6567113,
-    "AAOI": 1795489383.9937239,
-    "SPCX": 1795489383.9937239,
-    "ASTS": 1795489383.9937239,
+    "AAOI": 1795494020.9836934,
+    "SPCX": 1795494020.9836934,
+    "ASTS": 1795494020.9836934,
     "AXTI": 1795493407.6567113,
-    "NASA": 1795489383.9937239,
-    "LUNR": 1795489383.9937239,
+    "NASA": 1795494020.9836934,
+    "LUNR": 1795494020.9836934,
     "TSLA": 1795489383.9937239,
-    "AXP": 1795489383.9937239,
-    "RKLB": 1795489383.9937239,
-    "KO": 1795489383.9937239,
-    "FLY": 1795489383.9937239,
-    "INTC": 1795489383.9937239,
+    "AXP": 1795494020.9836934,
+    "RKLB": 1795494020.9836934,
+    "KO": 1795494020.9836934,
+    "FLY": 1795494020.9836934,
+    "INTC": 1795494020.9836934,
     "VRT": 1795489383.9937239,
     "HPE": 1795489383.9937239,
     "DELL": 1795489383.9937239,
@@ -3357,7 +3357,7 @@
     "V": 1795493407.6567113,
     "CAT": 1795489498.0050464,
     "FN": 1795493407.6567113,
-    "GLW": 1795489383.9937239,
+    "GLW": 1795494020.9836934,
     "ANT": 1795489498.0050464,
     "XAUUSD": 1795489498.0050464,
     "KOSPI": 1795493407.6567113

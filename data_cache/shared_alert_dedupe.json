@@ -5299,9 +5299,13 @@
     "2026-11-23:APLD:STOP_LOSS": {
       "device": "PC",
       "ts": 1795489399.3425355
+    },
+    "2026-11-23:PLTR/NKE/AXP/DELL:5M_ENTRY+STOP_LOSS": {
+      "device": "PC",
+      "ts": 1795494035.0775802
     }
   },
   "device": "PC",
-  "last_heartbeat_ts": 1795489633.0099263,
-  "updated_at": "2026-11-24T03:07:13.010386+00:00"
+  "last_heartbeat_ts": 1795493939.7813694,
+  "updated_at": "2026-11-24T04:20:35.078043+00:00"
 }
