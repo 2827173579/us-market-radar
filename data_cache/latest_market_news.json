@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795561480.06,
-  "updated_at_et": "11-24 18:04 ET",
-  "updated_at_kst": "08:04 KST",
+  "updated_at_ts": 1795561579.124,
+  "updated_at_et": "11-24 18:06 ET",
+  "updated_at_kst": "08:06 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1226,25 +1226,25 @@
         "pub_ts": 1795549060.0
       },
       {
+        "title": "Maverick Medical AI Surfaces CodeAgent within Microsoft Radiology Reporting Solutions to Reduce Physician Rework",
+        "url": "https://finance.yahoo.com/healthcare/articles/maverick-medical-ai-surfaces-codeagent-225400029.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 17:54 ET",
+        "pub_ts": 1795560840.0
+      },
+      {
+        "title": "Retailers Sanguine for Black Friday",
+        "url": "https://wwd.com/business-news/retail/retail-outlook-mood-black-friday-1239462186/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 17:24 ET",
+        "pub_ts": 1795559066.0
+      },
+      {
         "title": "Microsoft (MSFT) Is One of the Safest Ways to Own AI",
         "url": "https://finance.yahoo.com/technology/ai/articles/microsoft-msft-one-safest-ways-210600451.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-24 16:06 ET",
         "pub_ts": 1795554360.0
-      },
-      {
-        "title": "Sector Update: Tech Stocks Fall Late Afternoon",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/sector-tech-stocks-fall-afternoon-204211371.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 15:42 ET",
-        "pub_ts": 1795552931.0
-      },
-      {
-        "title": "Is Microsoft the Best Big Tech Stock to Buy Now?",
-        "url": "https://www.fool.com/investing/2026/11/24/is-microsoft-the-best-big-tech-stock-to-buy-now/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 14:50 ET",
-        "pub_ts": 1795549802.0
       }
     ],
     "AAPL": [
@@ -1367,6 +1367,13 @@
         "pub_ts": 1795556758.0
       },
       {
+        "title": "Amazon customers may qualify for $309.5M settlement. See how",
+        "url": "https://www.usatoday.com/story/money/2026/11/24/amazon-settlement-deadline-is-approaching-who-qualifies/92947347007/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 17:32 ET",
+        "pub_ts": 1795559564.0
+      },
+      {
         "title": "Is Amazon.com (AMZN) Still Below Fair Value As AI Spending Rises?",
         "url": "https://finance.yahoo.com/markets/stocks/articles/amazon-com-amzn-still-below-201044467.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1386,13 +1393,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 13:30 ET",
         "pub_ts": 1795545006.0
-      },
-      {
-        "title": "Nike Sells Shoes. Can It Stop Paying For AI?",
-        "url": "https://www.trefis.com/stock/nke/articles/627485/nike-sells-shoes-can-it-stop-paying-for-ai/2026-11-24?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 12:39 ET",
-        "pub_ts": 1795541974.0
       }
     ],
     "CRWV": [
@@ -3295,33 +3295,33 @@
   "ticker_news_ts": {
     "KORU": 1795561277.1761446,
     "SOXL": 1795561277.1761446,
-    "SPY": 1795560016.7184174,
+    "SPY": 1795561579.1244478,
     "DIA": 1795561277.1761446,
     "SOXX": 1795561277.1761446,
     "QQQ": 1795561277.1761446,
-    "SMH": 1795560016.7184174,
+    "SMH": 1795561579.1244478,
     "IWM": 1795561277.1761446,
     "IGV": 1795561277.1761446,
     "TLT": 1795561277.1761446,
     "GLD": 1795561277.1761446,
     "SQQQ": 1795561277.1761446,
-    "TSM": 1795560016.7184174,
+    "TSM": 1795561579.1244478,
     "VIXY": 1795561277.1761446,
     "SOXS": 1795561277.1761446,
     "NVDA": 1795561277.1761446,
     "AMD": 1795561277.1761446,
-    "ASML": 1795560016.7184174,
-    "QCOM": 1795560016.7184174,
+    "ASML": 1795561579.1244478,
+    "QCOM": 1795561579.1244478,
     "AVGO": 1795561277.1761446,
-    "AMAT": 1795560016.7184174,
-    "META": 1795560016.7184174,
-    "GOOGL": 1795560016.7184174,
-    "MSFT": 1795560016.7184174,
-    "AAPL": 1795560016.7184174,
-    "PLTR": 1795560016.7184174,
-    "NOW": 1795560016.7184174,
-    "AMZN": 1795560016.7184174,
-    "CRWV": 1795560016.7184174,
+    "AMAT": 1795561579.1244478,
+    "META": 1795561579.1244478,
+    "GOOGL": 1795561579.1244478,
+    "MSFT": 1795561579.1244478,
+    "AAPL": 1795561579.1244478,
+    "PLTR": 1795561579.1244478,
+    "NOW": 1795561579.1244478,
+    "AMZN": 1795561579.1244478,
+    "CRWV": 1795561579.1244478,
     "NBIS": 1795560118.8794138,
     "APLD": 1795560513.2645628,
     "VST": 1795560513.2645628,
@@ -3372,7 +3372,7 @@
     "GLW": 1795560513.2645628,
     "ANT": 1795560881.6295986,
     "XAUUSD": 1795561079.754584,
-    "KOSPI": 1795560016.7184174
+    "KOSPI": 1795561579.1244478
   },
   "opex_shield": {
     "date": "2026-11-24",
