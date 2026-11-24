@@ -1,9 +1,22 @@
 {
-  "updated_at_ts": 1795530875.831,
-  "updated_at_et": "11-24 09:34 ET",
-  "updated_at_kst": "23:34 KST",
+  "updated_at_ts": 1795530984.499,
+  "updated_at_et": "11-24 09:36 ET",
+  "updated_at_kst": "23:36 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261124223352143800",
+      "title": "iShares半导体ETF跌约5%。AMD(AMD.O)跌6.5%，英特尔(INTC.O…",
+      "summary": "iShares半导体ETF跌约5%。AMD(AMD.O)跌6.5%，英特尔(INTC.O)跌4%，博通(AVGO.O)跌3.2%，迈威尔科技(MRVL.O)跌2.9%。美光科技(MU.O)跌5.8%，德州仪器(TXN.O)跌3.9%。",
+      "keywords": [
+        "半导体"
+      ],
+      "pub_ts": 1795530832.0,
+      "time_et": "11-24 09:33 ET",
+      "time_bj": "22:33 BJ",
+      "time_kst": "23:33 KST",
+      "time_display": "09:33 ET / 22:33 BJ"
+    },
     {
       "id": "20261124223024405800",
       "title": "【美股三大股指低开 英伟达跌3.6%】 11月24日讯，美股开盘，三大股指走低，道指跌0…",
@@ -329,19 +342,6 @@
       "time_bj": "17:40 BJ",
       "time_kst": "18:40 KST",
       "time_display": "04:40 ET / 17:40 BJ"
-    },
-    {
-      "id": "20261124173415805800",
-      "title": "日本央行加息周期尚未结束，但高市早苗政府可能成为最大掣肘",
-      "summary": "前审议委员安达诚司预计，日本央行本轮加息周期的终点利率或达到1.75%甚至2.0%。但随着家庭消费持续降温，该央行将需要面对越来越大的经济和政治压力。点击查看",
-      "keywords": [
-        "加息"
-      ],
-      "pub_ts": 1795512855.0,
-      "time_et": "11-24 04:34 ET",
-      "time_bj": "17:34 BJ",
-      "time_kst": "18:34 KST",
-      "time_display": "04:34 ET / 17:34 BJ"
     }
   ],
   "ticker_news": {
@@ -2234,6 +2234,20 @@
     ],
     "DELL": [
       {
+        "title": "Own Dell Stock? Its Cash Gap Rarely Hurt It",
+        "url": "https://www.trefis.com/stock/dell/articles/628265/own-dell-stock-its-cash-gap-rarely-hurt-it/2026-11-24?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 09:03 ET",
+        "pub_ts": 1795529031.0
+      },
+      {
+        "title": "Why Is Dell Technologies Stock Falling 5.9% Today?",
+        "url": "https://investorshub.advfn.com/market-news/article/40613/why-is-dell-technologies-stock-falling-5-9-today?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 08:40 ET",
+        "pub_ts": 1795527617.0
+      },
+      {
         "title": "Dell Just Dropped 26% in a Month. Steve Eisman Warns It Will “Slow Along With Nvidia.” Is He Right?",
         "url": "https://www.tikr.com/blog/dell-just-dropped-26-in-a-month-steve-eisman-warns-it-will-slow-along-with-nvidia-is-he-right?ref=yahoofinance&tlnk=yf-261124-jr476wwx&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2253,20 +2267,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 06:03 ET",
         "pub_ts": 1795518210.0
-      },
-      {
-        "title": "Teradata Bets on Dell Partnership and New Products to Drive 2027 Growth",
-        "url": "https://www.marketbeat.com/instant-alerts/event-teradata-bets-on-dell-partnership-and-new-products-to-drive-2027-growth-2026-11-24/?utm_source=yahoofinance&utm_medium=yahoofinance&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 05:12 ET",
-        "pub_ts": 1795515134.0
-      },
-      {
-        "title": "Jim Cramer Says Dell Is “One of the Few” AI Stocks to Ride. Its November 24 Report Must Prove It",
-        "url": "https://www.tikr.com/blog/jim-cramer-says-dell-is-one-of-the-few-ai-stocks-to-ride-its-november-24-report-must-prove-it?ref=yahoofinance&tlnk=yf-261124-63mj9xvw&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 03:36 ET",
-        "pub_ts": 1795509360.0
       }
     ],
     "OKLO": [
@@ -2308,6 +2308,13 @@
     ],
     "CEG": [
       {
+        "title": "CEG Below the 50 and 200-Day SMAs: Is It a Buy or Hold Right Now?",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/ceg-below-50-200-day-132400164.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 08:24 ET",
+        "pub_ts": 1795526640.0
+      },
+      {
         "title": "45% Upside for Constellation Energy? Barclays Thinks So, and Here’s How",
         "url": "https://www.tikr.com/blog/45-upside-for-constellation-energy-barclays-thinks-so-and-heres-how?ref=yahoofinance&tlnk=yf-261120-x635426w&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2334,13 +2341,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 07:08 ET",
         "pub_ts": 1795090084.0
-      },
-      {
-        "title": "Capital Group Div Value (CGDV) Adds Home Depot and Constellation on Nov. 17",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/capital-group-div-value-cgdv-110403334.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 06:04 ET",
-        "pub_ts": 1795086243.0
       }
     ],
     "FPS": [
@@ -2974,13 +2974,6 @@
     ],
     "JPM": [
       {
-        "title": "Jensen Huang is back: Does Washington have a seat in the boardroom?",
-        "url": "https://finance.yahoo.com/video/jensen-huang-is-back-does-washington-have-a-seat-in-the-boardroom-221214249.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 17:12 ET",
-        "pub_ts": 1795471934.0
-      },
-      {
         "title": "JPMorgan Treasury survey shows neutral positioning ahead of PCE data",
         "url": "https://finance.yahoo.com/markets/options/articles/jpmorgan-treasury-survey-shows-neutral-132259516.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3007,6 +3000,13 @@
         "source": "Yahoo Finance",
         "time": "11-24 08:12 ET",
         "pub_ts": 1795525978.0
+      },
+      {
+        "title": "META Stock Is Down 24% From Peak: JPMorgan Sees ‘Attractive Buying Opportunity’ — But 2027 Spending, Capex Remain An Overhang",
+        "url": "https://stocktwits.com/news-articles/markets/equity/meta-stock-is-down-24-from-peak-jp-morgan-sees-attractive-buying-opportunity-but-2027-spending-capex-remain-an-overhang/cNbsIWZR9ki?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 07:08 ET",
+        "pub_ts": 1795522132.0
       }
     ],
     "WMT": [
@@ -3328,12 +3328,12 @@
     "KO": 1795530875.830874,
     "FLY": 1795530875.830874,
     "INTC": 1795530875.830874,
-    "VRT": 1795529438.2998693,
-    "HPE": 1795529438.2998693,
-    "DELL": 1795529438.2998693,
-    "OKLO": 1795529438.2998693,
-    "CEG": 1795529438.2998693,
-    "FPS": 1795529438.2998693,
+    "VRT": 1795530984.4993865,
+    "HPE": 1795530984.4993865,
+    "DELL": 1795530984.4993865,
+    "OKLO": 1795530984.4993865,
+    "CEG": 1795530984.4993865,
+    "FPS": 1795530984.4993865,
     "MU": 1795530449.7526069,
     "SKHY": 1795530449.7526069,
     "WDC": 1795530449.7526069,
@@ -3349,8 +3349,8 @@
     "NKE": 1795530767.907945,
     "MCD": 1795530767.907945,
     "PEP": 1795529545.133309,
-    "XOM": 1795529438.2998693,
-    "JPM": 1795529438.2998693,
+    "XOM": 1795530984.4993865,
+    "JPM": 1795530984.4993865,
     "WMT": 1795529545.133309,
     "V": 1795530767.907945,
     "CAT": 1795529545.133309,
@@ -3377,7 +3377,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (09:30 ET / 22:30 BJ) [半导体] [英伟达] [标普]：【美股三大股指低开 英伟达跌3.6%】 11月24日讯，美股开盘，三大股指走低，道指跌0.47%，标普500指数跌1%，纳指跌1.4%。半导体板块回落，英伟达(NVDA.O)跌约3.6%。A",
+    "detail": "⚡ 最新核心快讯 (09:33 ET / 22:33 BJ) [半导体]：iShares半导体ETF跌约5%。AMD(AMD.O)跌6.5%，英特尔(INTC.O)跌4%，博通(AVGO.O)跌3.2%，迈威尔科技(MRVL.O)跌2.9%。美光科技(MU.O)跌",
     "event_name": "",
     "minutes_left": 0,
     "opex_shield": {
