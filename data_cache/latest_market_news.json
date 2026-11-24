@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795521584.812,
-  "updated_at_et": "11-24 06:59 ET",
-  "updated_at_kst": "20:59 KST",
+  "updated_at_ts": 1795521693.957,
+  "updated_at_et": "11-24 07:01 ET",
+  "updated_at_kst": "21:01 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2202,6 +2202,13 @@
     ],
     "HPE": [
       {
+        "title": "Why Is Hewlett Packard Enterprise Stock Falling 9.6% Today?",
+        "url": "https://investorshub.advfn.com/market-news/article/40591/why-is-hewlett-packard-enterprise-stock-falling-9-6-today?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 06:09 ET",
+        "pub_ts": 1795518549.0
+      },
+      {
         "title": "HPE Stock What Changed After Earnings Beat",
         "url": "https://finance.yahoo.com/markets/stocks/articles/hpe-stock-changed-earnings-beat-101147443.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2228,13 +2235,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 22:00 ET",
         "pub_ts": 1795489200.0
-      },
-      {
-        "title": "Nasdaq, Dow, S&P 500 Futures Gain As Jensen Huang’s Return To Nvidia Sparks $3T Market Rally: SOXS, IBRX, HPE, TSM In Focus",
-        "url": "https://stocktwits.com/news-articles/markets/equity/stock-market-today-nasdaq-dow-futures-rise-jensen-huang-returns-nvidia/cNbrsSNR9jM?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 21:13 ET",
-        "pub_ts": 1795486423.0
       }
     ],
     "DELL": [
@@ -3333,12 +3333,12 @@
     "KO": 1795521584.8122637,
     "FLY": 1795521584.8122637,
     "INTC": 1795521584.8122637,
-    "VRT": 1795520132.0360165,
-    "HPE": 1795520132.0360165,
-    "DELL": 1795520132.0360165,
-    "OKLO": 1795520132.0360165,
-    "CEG": 1795520132.0360165,
-    "FPS": 1795520132.0360165,
+    "VRT": 1795521693.957445,
+    "HPE": 1795521693.957445,
+    "DELL": 1795521693.957445,
+    "OKLO": 1795521693.957445,
+    "CEG": 1795521693.957445,
+    "FPS": 1795521693.957445,
     "MU": 1795521147.9080956,
     "SKHY": 1795521147.9080956,
     "WDC": 1795521147.9080956,
@@ -3354,8 +3354,8 @@
     "NKE": 1795521472.1033998,
     "MCD": 1795521472.1033998,
     "PEP": 1795520242.4514668,
-    "XOM": 1795520132.0360165,
-    "JPM": 1795520132.0360165,
+    "XOM": 1795521693.957445,
+    "JPM": 1795521693.957445,
     "WMT": 1795520242.4514668,
     "V": 1795521472.1033998,
     "CAT": 1795520242.4514668,
