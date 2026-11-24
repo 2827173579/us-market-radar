@@ -1,9 +1,22 @@
 {
-  "updated_at_ts": 1795555231.043,
-  "updated_at_et": "11-24 16:20 ET",
-  "updated_at_kst": "06:20 KST",
+  "updated_at_ts": 1795555328.719,
+  "updated_at_et": "11-24 16:22 ET",
+  "updated_at_kst": "06:22 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261125052000001800",
+      "title": "美国至11月20日当周API原油库存将于十分钟后公布。",
+      "summary": "美国至11月20日当周API原油库存将于十分钟后公布。",
+      "keywords": [
+        "原油"
+      ],
+      "pub_ts": 1795555200.0,
+      "time_et": "11-24 16:20 ET",
+      "time_bj": "05:20 BJ",
+      "time_kst": "06:20 KST",
+      "time_display": "16:20 ET / 05:20 BJ"
+    },
     {
       "id": "20261125050125086800",
       "title": "【美股收盘：纳指跌近1.5% 英伟达跌近6% Anthropic破发】 11月25日讯，…",
@@ -337,20 +350,6 @@
       "time_bj": "20:17 BJ",
       "time_kst": "21:17 KST",
       "time_display": "07:17 ET / 20:17 BJ"
-    },
-    {
-      "id": "20261124200902028800",
-      "title": "【小摩：料十年期美债收益率将于2027年Q1接近5.10%的峰值】 11月24日讯，摩根…",
-      "summary": "【小摩：料十年期美债收益率将于2027年Q1接近5.10%的峰值】 11月24日讯，摩根大通周二表示，预计随着美联储持续收紧货币政策，美国10年期国债收益率将于2027年第一季度升至5.10%左右，随后在年底前回落至4.95%。美国10年期国债收益率最新报4.90%。该券商还预测，美国两年期国债收益率将从2027年第一季度的约4.90%降至年底的4.60%，反映出市场预期当前高利率环境将逐渐消退。",
-      "keywords": [
-        "美联储",
-        "美债"
-      ],
-      "pub_ts": 1795522142.0,
-      "time_et": "11-24 07:09 ET",
-      "time_bj": "20:09 BJ",
-      "time_kst": "21:09 KST",
-      "time_display": "07:09 ET / 20:09 BJ"
     }
   ],
   "ticker_news": {
@@ -1096,6 +1095,13 @@
     ],
     "AMAT": [
       {
+        "title": "Why Is Applied Materials (AMAT) Stock Down Today? Chip Selloff Drags Suppliers",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/why-applied-materials-amat-stock-204649720.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 15:46 ET",
+        "pub_ts": 1795553209.0
+      },
+      {
         "title": "Applied Materials vs. Intel: Which Technology Stock Is a Better Buy for 2027?",
         "url": "https://www.fool.com/coverage/better-buy/2026/11/24/applied-materials-vs-intel-which-technology-stock-is-a-better-buy-for-2027/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1122,13 +1128,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 12:01 ET",
         "pub_ts": 1795453315.0
-      },
-      {
-        "title": "What Triggered The Fall In Applied Materials Stock?",
-        "url": "https://www.trefis.com/stock/amat/articles/627792/what-triggered-the-fall-in-applied-materials-stock/2026-11-23?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 09:45 ET",
-        "pub_ts": 1795445118.0
       }
     ],
     "META": [
@@ -1170,6 +1169,20 @@
     ],
     "GOOGL": [
       {
+        "title": "Microsoft (MSFT) Is One of the Safest Ways to Own AI",
+        "url": "https://finance.yahoo.com/technology/ai/articles/microsoft-msft-one-safest-ways-210600451.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 16:06 ET",
+        "pub_ts": 1795554360.0
+      },
+      {
+        "title": "Tesla Robotaxi Rival Starts Road Tests Without A Safety Monitor",
+        "url": "https://finance.yahoo.com/m/2fafeed7-c259-3087-9fa8-cf86f4a1ebd4/tesla-robotaxi-rival-starts.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 16:02 ET",
+        "pub_ts": 1795554167.0
+      },
+      {
         "title": "Intuit vs. Palo Alto Networks: Which Technology Stock Is a Better Buy for 2027?",
         "url": "https://www.fool.com/coverage/better-buy/2026/11/24/intuit-vs-palo-alto-networks-which-technology-stock-is-a-better-buy-for-2027/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1189,20 +1202,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 13:33 ET",
         "pub_ts": 1795545180.0
-      },
-      {
-        "title": "Why Dividend Growth ETFs Deserve a Place in Tech-Heavy Portfolios",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/why-dividend-growth-etfs-deserve-183300364.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 13:33 ET",
-        "pub_ts": 1795545180.0
-      },
-      {
-        "title": "ASML Is the Most Important Company You’ve Never Heard Of. Should You Buy the Stock?",
-        "url": "https://www.fool.com/investing/2026/11/24/asml-is-the-most-important-company-youve-never-heard-of-should-you-buy-the-stock/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 13:23 ET",
-        "pub_ts": 1795544582.0
       }
     ],
     "MSFT": [
@@ -1212,6 +1211,13 @@
         "source": "Yahoo Finance",
         "time": "11-24 14:37 ET",
         "pub_ts": 1795549060.0
+      },
+      {
+        "title": "Microsoft (MSFT) Is One of the Safest Ways to Own AI",
+        "url": "https://finance.yahoo.com/technology/ai/articles/microsoft-msft-one-safest-ways-210600451.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 16:06 ET",
+        "pub_ts": 1795554360.0
       },
       {
         "title": "Sector Update: Tech Stocks Fall Late Afternoon",
@@ -1228,18 +1234,11 @@
         "pub_ts": 1795549802.0
       },
       {
-        "title": "Microsoft initiaties ‘Code Red’ after most disruptive outage in company’s history: report",
+        "title": "Microsoft initiates ‘Code Red’ after most disruptive outage in company’s history: report",
         "url": "https://nypost.com/2026/11/24/business/microsoft-initiates-code-red-after-most-disruptive-outage-in-companys-history-report/?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-24 14:32 ET",
         "pub_ts": 1795548775.0
-      },
-      {
-        "title": "Microsoft Corporation (MSFT) Is Facing AI Spending Fears: Could Its Cloud Growth Change the Narrative?",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/microsoft-corporation-msft-facing-ai-165850177.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 11:58 ET",
-        "pub_ts": 1795539530.0
       }
     ],
     "AAPL": [
@@ -3290,33 +3289,33 @@
   "ticker_news_ts": {
     "KORU": 1795555033.1753833,
     "SOXL": 1795555033.1753833,
-    "SPY": 1795553758.0161324,
+    "SPY": 1795555328.7186592,
     "DIA": 1795555033.1753833,
     "SOXX": 1795555033.1753833,
     "QQQ": 1795555033.1753833,
-    "SMH": 1795553758.0161324,
+    "SMH": 1795555328.7186592,
     "IWM": 1795555033.1753833,
     "IGV": 1795555033.1753833,
     "TLT": 1795555033.1753833,
     "GLD": 1795555033.1753833,
     "SQQQ": 1795555033.1753833,
-    "TSM": 1795553758.0161324,
+    "TSM": 1795555328.7186592,
     "VIXY": 1795555033.1753833,
     "SOXS": 1795555033.1753833,
     "NVDA": 1795555033.1753833,
     "AMD": 1795555033.1753833,
-    "ASML": 1795553758.0161324,
-    "QCOM": 1795553758.0161324,
+    "ASML": 1795555328.7186592,
+    "QCOM": 1795555328.7186592,
     "AVGO": 1795555033.1753833,
-    "AMAT": 1795553758.0161324,
-    "META": 1795553758.0161324,
-    "GOOGL": 1795553758.0161324,
-    "MSFT": 1795553758.0161324,
-    "AAPL": 1795553758.0161324,
-    "PLTR": 1795553758.0161324,
-    "NOW": 1795553758.0161324,
-    "AMZN": 1795553758.0161324,
-    "CRWV": 1795553758.0161324,
+    "AMAT": 1795555328.7186592,
+    "META": 1795555328.7186592,
+    "GOOGL": 1795555328.7186592,
+    "MSFT": 1795555328.7186592,
+    "AAPL": 1795555328.7186592,
+    "PLTR": 1795555328.7186592,
+    "NOW": 1795555328.7186592,
+    "AMZN": 1795555328.7186592,
+    "CRWV": 1795555328.7186592,
     "NBIS": 1795553858.1966076,
     "APLD": 1795554417.1491358,
     "VST": 1795554417.1491358,
@@ -3367,7 +3366,7 @@
     "GLW": 1795554417.1491358,
     "ANT": 1795554619.768088,
     "XAUUSD": 1795554820.66809,
-    "KOSPI": 1795553758.0161324
+    "KOSPI": 1795555328.7186592
   },
   "opex_shield": {
     "date": "2026-11-24",
@@ -3386,7 +3385,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (16:01 ET / 05:01 BJ) [英伟达] [纳斯达克] [标普]：【美股收盘：纳指跌近1.5% 英伟达跌近6% Anthropic破发】 11月25日讯，美股周二收盘，道指初步收涨0.86%，标普500指跌0.49%，纳指跌1.48%。Anthropic(",
+    "detail": "⚡ 最新核心快讯 (16:20 ET / 05:20 BJ) [原油]：美国至11月20日当周API原油库存将于十分钟后公布。",
     "event_name": "",
     "minutes_left": 0,
     "opex_shield": {
