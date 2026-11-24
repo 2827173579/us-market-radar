@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795501012.327,
-  "updated_at_et": "11-24 01:16 ET",
-  "updated_at_kst": "15:16 KST",
+  "updated_at_ts": 1795501118.533,
+  "updated_at_et": "11-24 01:18 ET",
+  "updated_at_kst": "15:18 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -902,11 +902,32 @@
     ],
     "NVDA": [
       {
+        "title": "Nvidia Stock Just Had Its Best Day in Over a Decade. I'd Still Buy It Now.",
+        "url": "https://www.fool.com/investing/2026/11/24/nvidia-stock-just-had-its-best-day-in-over-a-decade-i-d-still-buy-it-now/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 01:03 ET",
+        "pub_ts": 1795500182.0
+      },
+      {
+        "title": "Jensen Huang is back at Nvidia. What does it mean for Europe's AI stocks?",
+        "url": "https://www.euronews.com/2026/11/24/jensen-huang-is-back-at-nvidia-what-does-it-mean-for-europes-ai-stocks?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 00:52 ET",
+        "pub_ts": 1795499570.0
+      },
+      {
+        "title": "Not Starlink. Not Starship. This SpaceX Business Could Be Worth $80 Billion on Its Own.",
+        "url": "https://www.fool.com/investing/2026/11/24/not-starlink-not-starship-this-spacex-business-could-be-worth-usd80-billion-on-its-own/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 00:50 ET",
+        "pub_ts": 1795499402.0
+      },
+      {
         "title": "Stocks climb as Huang's return to Nvidia lifts investor optimism",
         "url": "https://www.euronews.com/2026/11/24/stocks-climb-as-huangs-return-to-nvidia-lifts-investor-optimism?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 00:41 ET",
-        "pub_ts": 1795498888.0
+        "time": "11-24 00:46 ET",
+        "pub_ts": 1795499164.0
       },
       {
         "title": "3 AI Infrastructure Stocks Retail Investors Are Watching After Nvidia Shares Jump",
@@ -914,27 +935,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 00:26 ET",
         "pub_ts": 1795497994.0
-      },
-      {
-        "title": "Can Cisco Stock Hit $120?",
-        "url": "https://www.trefis.com/stock/csco/articles/627586/can-cisco-stock-hit-120/2026-11-23?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 00:06 ET",
-        "pub_ts": 1795496802.0
-      },
-      {
-        "title": "The 10-Year Topped 5% For The First Time Since 2007. What Happened Next?",
-        "url": "https://www.trefis.com/stock/spy/articles/627401/the-10-year-topped-5-for-the-first-time-since-2007-what-happened-next/2026-11-23?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 00:06 ET",
-        "pub_ts": 1795496802.0
-      },
-      {
-        "title": "Stocks Opened Up, Then Fell 3% By The Close. What Happened The Last 45 Times?",
-        "url": "https://www.trefis.com/stock/spy/articles/627441/stocks-opened-up-then-fell-3-by-the-close-what-happened-the-last-45-times/2026-11-23?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 00:06 ET",
-        "pub_ts": 1795496802.0
       }
     ],
     "AMD": [
@@ -3279,22 +3279,22 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795499609.5613153,
-    "SOXL": 1795499609.5613153,
-    "SPY": 1795499609.5613153,
-    "DIA": 1795499609.5613153,
-    "SOXX": 1795499609.5613153,
-    "QQQ": 1795499609.5613153,
-    "SMH": 1795499609.5613153,
-    "IWM": 1795499609.5613153,
-    "IGV": 1795499609.5613153,
-    "TLT": 1795499609.5613153,
-    "GLD": 1795499609.5613153,
-    "SQQQ": 1795499609.5613153,
+    "KORU": 1795501118.5334148,
+    "SOXL": 1795501118.5334148,
+    "SPY": 1795501118.5334148,
+    "DIA": 1795501118.5334148,
+    "SOXX": 1795501118.5334148,
+    "QQQ": 1795501118.5334148,
+    "SMH": 1795501118.5334148,
+    "IWM": 1795501118.5334148,
+    "IGV": 1795501118.5334148,
+    "TLT": 1795501118.5334148,
+    "GLD": 1795501118.5334148,
+    "SQQQ": 1795501118.5334148,
     "TSM": 1795499718.6012428,
-    "VIXY": 1795499609.5613153,
-    "SOXS": 1795499609.5613153,
-    "NVDA": 1795499609.5613153,
+    "VIXY": 1795501118.5334148,
+    "SOXS": 1795501118.5334148,
+    "NVDA": 1795501118.5334148,
     "AMD": 1795499718.6012428,
     "ASML": 1795499718.6012428,
     "QCOM": 1795499718.6012428,
