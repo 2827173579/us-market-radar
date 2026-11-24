@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795558418.191,
-  "updated_at_et": "11-24 17:13 ET",
-  "updated_at_kst": "07:13 KST",
+  "updated_at_ts": 1795558518.389,
+  "updated_at_et": "11-24 17:15 ET",
+  "updated_at_kst": "07:15 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2416,11 +2416,11 @@
         "pub_ts": 1795552273.0
       },
       {
-        "title": "5 High-Conviction Stocks Billionaire Philippe Laffont Is Betting On for 2027",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/5-high-conviction-stocks-billionaire-212307906.html?.tsrc=rss",
+        "title": "Nvidia, Chip Stocks Fall As Data Center Spending Fears Return",
+        "url": "https://finance.yahoo.com/m/f1d585fa-8dde-3feb-9be2-ba2cfa946702/nvidia%2C-chip-stocks-fall-as.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 16:23 ET",
-        "pub_ts": 1795555387.0
+        "time": "11-24 16:58 ET",
+        "pub_ts": 1795557505.0
       }
     ],
     "SKHY": [
@@ -2610,6 +2610,20 @@
     ],
     "BTC-USD": [
       {
+        "title": "Michael Saylor gets the regulator's nod he wanted, just not at full price",
+        "url": "https://www.thestreet.com/crypto/policy/michael-saylor-gets-the-regulators-nod-he-wanted-just-not-at-full-price?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 17:10 ET",
+        "pub_ts": 1795558218.0
+      },
+      {
+        "title": "CleanSpark Returns to Q4 Profit on Bitcoin Gains, Revenue Falls 46% During AI Shift",
+        "url": "https://www.cryptoprowl.com/releases/cleanspark-returns-to-q4-profit-on-bitcoin-gains-revenue-falls-46-during-ai-shift-8056?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 16:53 ET",
+        "pub_ts": 1795557180.0
+      },
+      {
         "title": "Wells Fargo (WFC) Stock Still Looks Undervalued Following Its 99% Run",
         "url": "https://finance.yahoo.com/markets/stocks/articles/wells-fargo-wfc-stock-still-211124730.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2629,20 +2643,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 16:00 ET",
         "pub_ts": 1795554044.0
-      },
-      {
-        "title": "Is Circle One of the Best Bitcoin and Blockchain Stocks to Buy As Per Wall Street Analysts?",
-        "url": "https://finance.yahoo.com/markets/crypto/articles/circle-one-best-bitcoin-blockchain-204521190.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 15:45 ET",
-        "pub_ts": 1795553121.0
-      },
-      {
-        "title": "Securitize’s Average Tokenized Assets Grew 39%. Can It Close the Profit Gap?",
-        "url": "https://finance.yahoo.com/markets/crypto/articles/securitize-average-tokenized-assets-grew-204405054.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 15:44 ET",
-        "pub_ts": 1795553045.0
       }
     ],
     "CRWD": [
@@ -3314,18 +3314,18 @@
     "NOW": 1795558418.190817,
     "AMZN": 1795558418.190817,
     "CRWV": 1795558418.190817,
-    "NBIS": 1795557004.6623967,
+    "NBIS": 1795558518.3891256,
     "APLD": 1795557500.2339263,
     "VST": 1795557500.2339263,
     "BE": 1795557500.2339263,
     "CRDO": 1795557500.2339263,
     "COHR": 1795557500.2339263,
-    "MRVL": 1795557004.6623967,
-    "LITE": 1795557004.6623967,
+    "MRVL": 1795558518.3891256,
+    "LITE": 1795558518.3891256,
     "AAOI": 1795557500.2339263,
     "SPCX": 1795557500.2339263,
     "ASTS": 1795557500.2339263,
-    "AXTI": 1795557004.6623967,
+    "AXTI": 1795558518.3891256,
     "NASA": 1795557500.2339263,
     "LUNR": 1795557500.2339263,
     "TSLA": 1795557616.4149852,
@@ -3340,13 +3340,13 @@
     "OKLO": 1795557616.4149852,
     "CEG": 1795557616.4149852,
     "FPS": 1795557616.4149852,
-    "MU": 1795557004.6623967,
-    "SKHY": 1795557004.6623967,
-    "WDC": 1795557004.6623967,
+    "MU": 1795558518.3891256,
+    "SKHY": 1795558518.3891256,
+    "WDC": 1795558518.3891256,
     "STX": 1795557616.4149852,
     "MSTR": 1795557616.4149852,
     "SNDK": 1795557616.4149852,
-    "BTC-USD": 1795557004.6623967,
+    "BTC-USD": 1795558518.3891256,
     "CRWD": 1795557616.4149852,
     "ORCL": 1795557616.4149852,
     "COIN": 1795557616.4149852,
@@ -3360,7 +3360,7 @@
     "WMT": 1795557717.732933,
     "V": 1795557616.4149852,
     "CAT": 1795557717.732933,
-    "FN": 1795557004.6623967,
+    "FN": 1795558518.3891256,
     "GLW": 1795557500.2339263,
     "ANT": 1795557717.732933,
     "XAUUSD": 1795557920.4377625,
