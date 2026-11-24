@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795514589.041,
-  "updated_at_et": "11-24 05:03 ET",
-  "updated_at_kst": "19:03 KST",
+  "updated_at_ts": 1795514702.751,
+  "updated_at_et": "11-24 05:05 ET",
+  "updated_at_kst": "19:05 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -796,6 +796,13 @@
     ],
     "TSM": [
       {
+        "title": "TSMC gains $158 billion in value in one day as Jensen Huang returns as Nvidia CEO",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/tsmc-gains-158-billion-value-070556999.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 02:05 ET",
+        "pub_ts": 1795503956.0
+      },
+      {
         "title": "Why TSMC Stock Soared Today",
         "url": "https://www.fool.com/investing/2026/11/23/why-tsmc-stock-soared-today/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -815,13 +822,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 15:13 ET",
         "pub_ts": 1795464780.0
-      },
-      {
-        "title": "History Says TSMC Stock Falls Before Its Sales",
-        "url": "https://www.trefis.com/stock/tsm/articles/627659/history-says-tsmc-stock-falls-before-its-sales/2026-11-23?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 14:37 ET",
-        "pub_ts": 1795462630.0
       },
       {
         "title": "Fujitsu sees stronger Monaka demand as buyers seek alternatives, Bloomberg reports",
@@ -944,6 +944,13 @@
     ],
     "AMD": [
       {
+        "title": "FalcoTrader Announces Expanded Stock Trading Capabilities Across Its Simulated Trading Challenge Platform",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/falcotrader-announces-expanded-stock-trading-094700625.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 04:47 ET",
+        "pub_ts": 1795513620.0
+      },
+      {
         "title": "US Futures Mixed After Monday’s Nvidia-Led Chip Rally — ZM, HPE, AMD, BABA In Focus",
         "url": "https://stocktwits.com/news-articles/markets/equity/us-futures-mixed-after-monday-s-nvidia-led-chip-rally-zm-hpe-amd-baba-in-focus/cNbs23VR9kf?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -970,16 +977,16 @@
         "source": "Yahoo Finance",
         "time": "11-23 18:22 ET",
         "pub_ts": 1795476144.0
-      },
-      {
-        "title": "Stock Market Today, Nov. 23: Advanced Micro Devices Climbs on AI-Chip Rebound After Nvidia Reinstates Jensen Huang as CEO",
-        "url": "https://www.fool.com/coverage/stock-market-today/2026/11/23/stock-market-today-nov-23-advanced-micro-devices-climbs-on-ai-chip-rebound-after-nvidia-reinstates-jensen-huang-as-ceo/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 17:10 ET",
-        "pub_ts": 1795471840.0
       }
     ],
     "ASML": [
+      {
+        "title": "FalcoTrader Announces Expanded Stock Trading Capabilities Across Its Simulated Trading Challenge Platform",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/falcotrader-announces-expanded-stock-trading-094700625.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 04:47 ET",
+        "pub_ts": 1795513620.0
+      },
       {
         "title": "Why ASML Stock Popped Today",
         "url": "https://www.fool.com/investing/2026/11/23/why-asml-stock-popped-today/?.tsrc=rss",
@@ -1007,13 +1014,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 08:48 ET",
         "pub_ts": 1795441680.0
-      },
-      {
-        "title": "ASML Vs. Taiwan Semiconductor: Here’s Why You Choose One as Your AI-Anchor Now",
-        "url": "https://247wallst.com/investing/2026/11/23/asml-vs-taiwan-semiconductor-heres-why-you-choose-one-as-your-ai-anchor-now/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 07:15 ET",
-        "pub_ts": 1795436136.0
       }
     ],
     "QCOM": [
@@ -1351,6 +1351,13 @@
     ],
     "AMZN": [
       {
+        "title": "FalcoTrader Announces Expanded Stock Trading Capabilities Across Its Simulated Trading Challenge Platform",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/falcotrader-announces-expanded-stock-trading-094700625.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 04:47 ET",
+        "pub_ts": 1795513620.0
+      },
+      {
         "title": "Is Amazon's Profit Riskier Than It Looks?",
         "url": "https://www.trefis.com/stock/amzn/articles/627559/is-amazon-s-profit-riskier-than-it-looks/2026-11-23?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1377,13 +1384,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 02:58 ET",
         "pub_ts": 1795507111.0
-      },
-      {
-        "title": "Dow Jones Futures: Tech Stocks, Nvidia Snap Back On Jensen Huang's Return; Elon Musk-Led SpaceX, Tesla Rally",
-        "url": "https://finance.yahoo.com/m/be493228-4ecf-338d-9017-054d3d6efc36/dow-jones-futures%3A-tech.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 22:27 ET",
-        "pub_ts": 1795490874.0
       }
     ],
     "CRWV": [
@@ -3250,8 +3250,8 @@
         "title": "Stock market today: Dow, S&P 500, Nasdaq futures mixed as investors test Nvidia-fueled rally",
         "url": "https://finance.yahoo.com/markets/live/stock-market-today-tuesday-november-24-dow-sp-500-nasdaq-rebound-090614276.html",
         "source": "Yahoo Finance",
-        "time": "11-24 04:06 ET",
-        "pub_ts": 1795511174.0
+        "time": "11-24 05:00 ET",
+        "pub_ts": 1795514406.0
       },
       {
         "title": "Samsung Electronics Stocks Fall 3.06% as Kospi Sinks Before Nvidia's CEO Reversal",
@@ -3296,35 +3296,35 @@
     "TLT": 1795514589.0412853,
     "GLD": 1795514589.0412853,
     "SQQQ": 1795514589.0412853,
-    "TSM": 1795513024.0939963,
+    "TSM": 1795514702.7509778,
     "VIXY": 1795514589.0412853,
     "SOXS": 1795514589.0412853,
     "NVDA": 1795514589.0412853,
-    "AMD": 1795513024.0939963,
-    "ASML": 1795513024.0939963,
-    "QCOM": 1795513024.0939963,
-    "AVGO": 1795513024.0939963,
-    "AMAT": 1795513024.0939963,
-    "META": 1795513024.0939963,
-    "GOOGL": 1795513024.0939963,
-    "MSFT": 1795513024.0939963,
-    "AAPL": 1795513024.0939963,
-    "PLTR": 1795513024.0939963,
-    "NOW": 1795513024.0939963,
-    "AMZN": 1795513024.0939963,
-    "CRWV": 1795513024.0939963,
-    "NBIS": 1795513024.0939963,
+    "AMD": 1795514702.7509778,
+    "ASML": 1795514702.7509778,
+    "QCOM": 1795514702.7509778,
+    "AVGO": 1795514702.7509778,
+    "AMAT": 1795514702.7509778,
+    "META": 1795514702.7509778,
+    "GOOGL": 1795514702.7509778,
+    "MSFT": 1795514702.7509778,
+    "AAPL": 1795514702.7509778,
+    "PLTR": 1795514702.7509778,
+    "NOW": 1795514702.7509778,
+    "AMZN": 1795514702.7509778,
+    "CRWV": 1795514702.7509778,
+    "NBIS": 1795514702.7509778,
     "APLD": 1795513614.4822621,
     "VST": 1795513614.4822621,
     "BE": 1795513614.4822621,
     "CRDO": 1795513614.4822621,
     "COHR": 1795513614.4822621,
-    "MRVL": 1795513024.0939963,
-    "LITE": 1795513024.0939963,
+    "MRVL": 1795514702.7509778,
+    "LITE": 1795514702.7509778,
     "AAOI": 1795513614.4822621,
     "SPCX": 1795513734.8686643,
     "ASTS": 1795513614.4822621,
-    "AXTI": 1795513024.0939963,
+    "AXTI": 1795514702.7509778,
     "NASA": 1795513734.8686643,
     "LUNR": 1795513734.8686643,
     "TSLA": 1795513734.8686643,
@@ -3339,9 +3339,9 @@
     "OKLO": 1795513734.8686643,
     "CEG": 1795513734.8686643,
     "FPS": 1795513734.8686643,
-    "MU": 1795513024.0939963,
-    "SKHY": 1795513024.0939963,
-    "WDC": 1795513024.0939963,
+    "MU": 1795514702.7509778,
+    "SKHY": 1795514702.7509778,
+    "WDC": 1795514702.7509778,
     "STX": 1795513734.8686643,
     "MSTR": 1795513734.8686643,
     "SNDK": 1795513734.8686643,
@@ -3359,11 +3359,11 @@
     "WMT": 1795513734.8686643,
     "V": 1795513614.4822621,
     "CAT": 1795513734.8686643,
-    "FN": 1795513024.0939963,
+    "FN": 1795514702.7509778,
     "GLW": 1795513614.4822621,
     "ANT": 1795513734.8686643,
     "XAUUSD": 1795513845.5065925,
-    "KOSPI": 1795513024.0939963
+    "KOSPI": 1795514702.7509778
   },
   "opex_shield": {
     "date": "2026-11-24",
