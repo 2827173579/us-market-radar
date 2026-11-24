@@ -74,7 +74,8 @@ def verify_desktop(browser):
     reg_txt = page.locator("#pAiRegimePill").inner_text().strip()
     sc_txt = page.locator("#pAiScorecardPill").inner_text().strip()
     assert any(k in reg_txt for k in ("市场偏弱", "多头顺风", "震荡分化")), f"Bad regime pill: {reg_txt}"
-    assert "胜率" in sc_txt, f"Bad scorecard pill: {sc_txt}"
+    assert "胜率" in sc_txt or "样本积累中" in sc_txt, f"Bad scorecard pill: {sc_txt}"
+    assert "笔)" in sc_txt, f"Scorecard pill missing sample count '(N笔)': {sc_txt}"
 
     # Quick search by Chinese name ("闪迪" -> SNDK) and ticker ("NVDA" -> NVDA)
     page.fill("#quickSearchInput", "闪迪")

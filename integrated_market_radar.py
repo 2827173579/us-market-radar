@@ -8560,6 +8560,7 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
             _sr_batch_items.append({
                 "ticker": _tk_u,
                 "prev_close": None if (_df_h is not None and not _df_h.empty and len(_df_h) >= 10) else _prev_c_fb,
+                "active_price": float(_it_sr.get("active_price") or _last_sr or 0.0) or None,
                 "atr_pct": _atr_pct_sr,
                 "df_history": _df_h,
                 "put_wall": (_opt_sr or {}).get("put_wall"),

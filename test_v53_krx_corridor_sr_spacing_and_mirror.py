@@ -439,6 +439,76 @@ class TestV53KrxCorridorSrSpacingAndMirror(unittest.TestCase):
         self.assertLessEqual((sc_ml["r2"] - sc_ml["r1"]) / sc_ml["r1"], max_r2_step + 0.002)
         self.assertGreaterEqual((sc_ml["r2"] - sc_ml["r1"]) / sc_ml["r1"], min_step - 0.002)
 
+    def test_09_v532_topbar_scorecard_pill_sample_count_and_fallback(self):
+        """V5.3.2: 顶栏胜率胶囊带笔数，7日 n<10 (如 n=5 100%) 回退 30 日口径，30 日亦 <10 显示样本积累中。"""
+        # 1) 7 日小样本 n=5 100% -> 自动回退 30 日口径
+        p_fb = cft.format_topbar_scorecard_pill({
+            "sample_count_7d": 5,
+            "win_rate_7d_pct": 100.0,
+            "sample_count_30d": 134,
+            "win_rate_30d_pct": 47.8,
+            "is_degraded": False,
+        })
+        self.assertEqual(p_fb["text"], "近30日胜率 47.8% (134笔)")
+        self.assertNotIn("100.0%", p_fb["text"])
+        self.assertIn("近7日 100.0% (5笔) · 样本偏少已回退30日口径", p_fb["title"])
+        self.assertNotEqual(p_fb["tone"], "up")
+
+        # 2) 7 日样本充足 n=27 63.0% -> 正常展示 7 日 + 笔数
+        p_ok = cft.format_topbar_scorecard_pill({
+            "sample_count_7d": 27,
+            "win_rate_7d_pct": 63.0,
+            "sample_count_30d": 140,
+            "win_rate_30d_pct": 58.2,
+            "is_degraded": False,
+        })
+        self.assertEqual(p_ok["text"], "近7日胜率 63.0% (27笔)")
+        self.assertEqual(p_ok["tone"], "up")
+
+        # 3) 7 日与 30 日均 < 10 笔 -> 灰/琥珀色样本积累中，绝不亮绿牌 100.0%
+        p_low = cft.format_topbar_scorecard_pill({
+            "sample_count_7d": 3,
+            "win_rate_7d_pct": 100.0,
+            "sample_count_30d": 6,
+            "win_rate_30d_pct": 100.0,
+            "is_degraded": False,
+        })
+        self.assertEqual(p_low["text"], "样本积累中 (6笔)")
+        self.assertEqual(p_low["tone"], "muted")
+        self.assertNotIn("100.0%", p_low["text"])
+
+    def test_10_v532_soxs_surging_r2_not_truncated_below_active_price(self):
+        """V5.3.2: SOXS 现价 $60.42、静态 R1=$50.00、真实 R2=$63.32 时，$63.32 绝不被误截断到现价下方。"""
+        res = sre.compute_static_sr_levels_with_sources(
+            ticker="SOXS",
+            ref_price=49.11,
+            active_price=60.42,
+            atr_pct=15.0,
+            df_history=None,
+            put_wall=45.94,
+            call_wall=50.00,
+            extra_resist_cands=[60.00, 63.32],
+        )
+        self.assertEqual(res["anchor_r1"], 50.00)
+        self.assertEqual(res["anchor_r2"], 63.32)
+        self.assertGreater(res["anchor_r2"], 60.42)
+        self.assertEqual(res["r2_source"], sre.SOURCE_REAL_CHIPS)
+
+        # 即便没有高于现价的真实候选，截断重算后的 R2 也必须严格 > active_price ($60.42)
+        res_synth = sre.compute_static_sr_levels_with_sources(
+            ticker="SOXS",
+            ref_price=49.11,
+            active_price=60.42,
+            atr_pct=15.0,
+            df_history=None,
+            put_wall=45.94,
+            call_wall=50.00,
+            extra_resist_cands=[60.00, 95.00],
+        )
+        self.assertGreater(res_synth["anchor_r2"], 60.42)
+        self.assertLessEqual(res_synth["anchor_r2"], round(60.42 * 1.22, 2) + 0.05)
+        self.assertEqual(res_synth["r2_source"], sre.SOURCE_ATR_ESTIMATE)
+
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)

@@ -319,6 +319,7 @@ def compute_static_sr_levels_with_sources(
     gap_prev_close: Optional[float] = None,
     swing_high_or_pmh: Optional[float] = None,
     pml: Optional[float] = None,
+    active_price: Optional[float] = None,
 ) -> Dict[str, Any]:
     """
     计算基于基准价 (`prev_close`) 与真实历史筹码/波段结构的 4 级静态锚点 (`S2 < S1 < ref_price < R1 < R2`)，
@@ -494,10 +495,12 @@ def compute_static_sr_levels_with_sources(
         s2_source = SOURCE_ATR_ESTIMATE
 
     # R1 / R2 选择：优先真实历史套牢筹码/均线/前高/Call墙，否则 ATR 估算
+    act_f = _opt_float(active_price)
+    upper_px_ref = max(base_px, act_f) if (act_f is not None and act_f > 0) else base_px
     valid_res = sorted({
         round(x, 2)
         for x in resist_real_cands
-        if (base_px * 1.005) <= x <= (base_px * 1.50)
+        if (base_px * 1.005) <= x <= (upper_px_ref * 1.50)
     })
     near_res = [x for x in valid_res if x <= base_px * 1.25]
     if near_res:
@@ -511,21 +514,37 @@ def compute_static_sr_levels_with_sources(
         r1 = round(base_px + min_step, 2)
         r1_source = SOURCE_ATR_ESTIMATE
 
-    # 规则 A（阻力对称防扎堆）+ 规则 C（远期离群 R2 上限收紧）：
-    # 真实候选 R2 必须落在 [R1*(1+min_step_pct_eff), R1*(1+max_r2_step_pct)] 合理波段区间内
+    # 规则 A（阻力对称防扎堆）+ 规则 C（远期离群 R2 上限收紧 · V5.3.2 防大涨误伤）：
+    # 离群上限以 max(active_price, R1) 为基准，且重算后的 R2 必须严格 > max(active_price, R1)
     max_r2_step_pct = compute_sr_max_r2_step_pct(atr_dec)
+    r2_upper_anchor = max(r1, act_f) if (act_f is not None and act_f > 0) else r1
     r2_min_bound = r1 * (1.0 + min_step_pct_eff)
-    r2_max_bound = r1 * (1.0 + max_r2_step_pct)
+    r2_max_bound = r2_upper_anchor * (1.0 + max_r2_step_pct)
     higher_res = [
         x for x in valid_res
         if r2_min_bound <= x <= r2_max_bound
     ]
-    if higher_res:
-        r2 = higher_res[-1] if len(higher_res) > 1 and higher_res[-1] <= base_px * 1.35 else higher_res[0]
+    if act_f is not None and act_f > r1:
+        # 大涨越过静态 R1（如 SOXS 现价 $60.42 > R1 $50.00）：优先保留严格高于 active_price 的真实上压（如 $63.32）
+        above_act_res = [x for x in higher_res if x > act_f]
+        if above_act_res:
+            r2 = above_act_res[0]
+            r2_source = SOURCE_REAL_CHIPS
+        else:
+            r2 = _synthesize_bounded_r2(
+                r1=r2_upper_anchor,
+                atr_dec=atr_dec,
+                min_step_pct=min_step_pct_eff,
+                max_r2_step_pct=max_r2_step_pct,
+                min_abs_step=min_step,
+            )
+            r2_source = SOURCE_ATR_ESTIMATE
+    elif higher_res:
+        r2 = higher_res[-1] if len(higher_res) > 1 and higher_res[-1] <= upper_px_ref * 1.35 else higher_res[0]
         r2_source = SOURCE_REAL_CHIPS
     else:
         r2 = _synthesize_bounded_r2(
-            r1=r1,
+            r1=r2_upper_anchor,
             atr_dec=atr_dec,
             min_step_pct=min_step_pct_eff,
             max_r2_step_pct=max_r2_step_pct,
@@ -533,8 +552,12 @@ def compute_static_sr_levels_with_sources(
         )
         r2_source = SOURCE_ATR_ESTIMATE
 
-    if r2 <= r1:
-        r2 = round(max(r1 * (1.0 + min_step_pct_eff), r1 + max(min_step, 0.01)), 2)
+    r2_hard_floor = round(max(r1 * (1.0 + min_step_pct_eff), r1 + max(min_step, 0.01)), 2)
+    if act_f is not None and act_f > 0 and r2 <= act_f:
+        r2 = round(max(act_f * (1.0 + min_step_pct_eff), act_f + max(min_step, 0.01), r2_hard_floor), 2)
+        r2_source = SOURCE_ATR_ESTIMATE
+    elif r2 <= r1:
+        r2 = r2_hard_floor
         r2_source = SOURCE_ATR_ESTIMATE
 
     sl = round(min(s2 * (0.992 if is_tier1 else 0.985), s2 - min_step), 2)
@@ -551,6 +574,7 @@ def compute_static_sr_levels_with_sources(
         "r2_source": r2_source,
         "min_step_pct": round(min_step_pct_eff, 4),
         "max_r2_step_pct": round(max_r2_step_pct, 4),
+        "r2_v532_guarded": True,
         "gap_pullback_candidates": gap_pullback_cands,
     }
 
@@ -606,14 +630,11 @@ def _anchor_valid_for_reuse(
     r2 = float(existing["anchor_r2"])
     if not (0 < s2 < s1 < r1 < r2):
         return False
-    # V5.3.1 防扎堆 + 远期离群 R2 校验：若旧缓存缺少 min_step_pct / max_r2_step_pct 或超出合理区间，触发单次安全重建
-    if existing.get("min_step_pct") is None or existing.get("max_r2_step_pct") is None:
+    # V5.3.2 防扎堆 + 远期离群 R2 校验（兼容现价大涨保护）：旧缓存缺少 r2_v532_guarded 时触发单次安全重建
+    if existing.get("min_step_pct") is None or existing.get("max_r2_step_pct") is None or not existing.get("r2_v532_guarded"):
         return False
     ms = float(existing.get("min_step_pct") or 0.025)
-    mr2 = float(existing.get("max_r2_step_pct") or 0.22)
     if ((s1 - s2) / max(s1, 0.01)) < (ms * 0.92) or ((r2 - r1) / max(r1, 0.01)) < (ms * 0.92):
-        return False
-    if ((r2 - r1) / max(r1, 0.01)) > (mr2 * 1.03):
         return False
     ref_old = float(existing["prev_close"])
     ref_new = _opt_float(prev_close)
@@ -637,13 +658,14 @@ def get_or_lock_daily_sr_anchor(
     gap_prev_close: Optional[float] = None,
     swing_high_or_pmh: Optional[float] = None,
     pml: Optional[float] = None,
+    active_price: Optional[float] = None,
 ) -> Dict[str, Any]:
     """获取或锁定单标的当日静态锚点；同日内绝不随现价漂移，仅跨日或拆股对齐时重建。"""
     tk_u = str(ticker or "").strip().upper()
     d_key = str(date_et or resolve_trading_date_et())
     doc = load_daily_sr_anchors(anchors_path)
     if str(doc.get("date_et") or "") != d_key:
-        doc = {"version": 2, "date_et": d_key, "updated_at_utc": "", "anchors": {}}
+        doc = {"version": 3, "date_et": d_key, "updated_at_utc": "", "anchors": {}}
     anchors = doc.setdefault("anchors", {})
     existing = anchors.get(tk_u)
 
@@ -665,6 +687,7 @@ def get_or_lock_daily_sr_anchor(
         gap_prev_close=gap_prev_close,
         swing_high_or_pmh=swing_high_or_pmh,
         pml=pml,
+        active_price=active_price,
     )
     calc["ticker"] = tk_u
     calc["date_et"] = d_key
@@ -682,13 +705,13 @@ def update_daily_sr_anchors_batch(
 ) -> Dict[str, Dict[str, Any]]:
     """
     批量锁定/复用全市场标的当日静态锚点（单次读写原子持久化）。
-    每条 item 支持键: ticker, prev_close, atr_pct, df_history, put_wall, call_wall, split_detected, gap_prev_close, swing_high_or_pmh, pml。
+    每条 item 支持键: ticker, prev_close, atr_pct, df_history, put_wall, call_wall, split_detected, gap_prev_close, swing_high_or_pmh, pml, active_price。
     """
     d_key = str(date_et or resolve_trading_date_et())
     doc = load_daily_sr_anchors(anchors_path)
     changed = False
     if str(doc.get("date_et") or "") != d_key:
-        doc = {"version": 2, "date_et": d_key, "updated_at_utc": "", "anchors": {}}
+        doc = {"version": 3, "date_et": d_key, "updated_at_utc": "", "anchors": {}}
         changed = True
     anchors = doc.setdefault("anchors", {})
 
@@ -719,6 +742,7 @@ def update_daily_sr_anchors_batch(
             gap_prev_close=_opt_float(it.get("gap_prev_close")),
             swing_high_or_pmh=_opt_float(it.get("swing_high_or_pmh")),
             pml=_opt_float(it.get("pml")),
+            active_price=_opt_float(it.get("active_price")),
         )
         calc["ticker"] = tk_u
         calc["date_et"] = d_key

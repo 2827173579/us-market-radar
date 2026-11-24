@@ -3276,15 +3276,16 @@ def compute_multi_level_scenario_map(
     except Exception:
         _max_r2_step_sc = float(min(0.22, max(0.10, 1.5 * _atr_dec_sc)))
         _sr_r2_mod = None
+    _r2_upper_ref = max(close, r1)
     _r2_min_b = r1 * (1.0 + _min_step_eff_sc)
-    _r2_max_b = r1 * (1.0 + _max_r2_step_sc)
-    _r2_out_of_band = (r2 <= r1) or (r2 < _r2_min_b) or (knn_upper is None and r2 > _r2_max_b)
+    _r2_max_b = _r2_upper_ref * (1.0 + _max_r2_step_sc)
+    _r2_out_of_band = (r2 <= _r2_upper_ref) or (r2 < _r2_min_b) or (knn_upper is None and r2 > _r2_max_b)
     if _r2_out_of_band:
         _higher_r_pool = sorted(
             {
                 round(float(x), 2)
                 for x in real_r2_pool
-                if _r2_min_b <= float(x) <= (_r2_max_b if knn_upper is None else float("inf"))
+                if max(_r2_min_b, close * 1.005) <= float(x) <= (_r2_max_b if knn_upper is None else float("inf"))
             }
         )
         if _higher_r_pool:
@@ -3293,7 +3294,7 @@ def compute_multi_level_scenario_map(
         else:
             if _sr_r2_mod is not None and knn_upper is None:
                 r2 = _sr_r2_mod._synthesize_bounded_r2(
-                    r1=r1,
+                    r1=_r2_upper_ref,
                     atr_dec=_atr_dec_sc,
                     min_step_pct=_min_step_eff_sc,
                     max_r2_step_pct=_max_r2_step_sc,
@@ -3301,9 +3302,9 @@ def compute_multi_level_scenario_map(
                 )
             else:
                 _synth_r2_step = max(_min_step_eff_sc, min(0.12, 1.0 * _atr_dec_sc))
-                r2 = round(r1 * (1.0 + _synth_r2_step), 2)
-            if r2 <= r1:
-                r2 = round(r1 + max(min_step, 0.01), 2)
+                r2 = round(_r2_upper_ref * (1.0 + _synth_r2_step), 2)
+            if r2 <= _r2_upper_ref:
+                r2 = round(_r2_upper_ref + max(min_step, 0.01), 2)
             r2_source = "ATR_ESTIMATE"
 
     # 生成盘前盘中结构化实战剧本 (包含防守点位、目标阻力与失效止损，严禁与 action 产生逻辑冲突；KOSPI 点数格式去 $)

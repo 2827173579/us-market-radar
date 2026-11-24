@@ -124,6 +124,67 @@ def compute_resilient_leaders_top5(stocks_data, macro_data=None, session_code="R
     return ranked[:max(1, int(top_n))]
 
 
+def format_topbar_scorecard_pill(sc_obj):
+    """
+    顶栏胜率胶囊样本数与小样本回退规则 (V5.3.2)：
+    1. 近 7 日样本 n7 >= 10: 展示 `近7日胜率 XX.X% (n7笔)`（若降权或 <45% 标警示色）；
+    2. 近 7 日样本 n7 < 10 且近 30 日样本 n30 >= 10: 自动回退 `近30日胜率 XX.X% (n30笔)`，
+       悬停 title 保留 `近7日 XX.X% (n7笔) · 样本偏少已回退30日口径` 完整明细；
+    3. 若 30 日样本也 < 10: 展示灰/琥珀色 `样本积累中 (N笔)`，绝不亮刺眼绿牌 100.0%。
+    返回 dict(text, title, tone) 其中 tone in ("up", "warn", "muted")。
+    """
+    if not isinstance(sc_obj, dict) or sc_obj.get("sample_count_7d") is None:
+        return {
+            "text": "样本积累中 (0笔)",
+            "title": "AI 实盘成绩单 · 等待样本积累",
+            "tone": "muted",
+        }
+    try:
+        n7 = int(sc_obj.get("sample_count_7d") or 0)
+    except Exception:
+        n7 = 0
+    try:
+        n30 = int(sc_obj.get("sample_count_30d") or 0)
+    except Exception:
+        n30 = 0
+    try:
+        wr7 = float(sc_obj.get("win_rate_7d_pct") or 0.0)
+    except Exception:
+        wr7 = 0.0
+    try:
+        wr30 = float(sc_obj.get("win_rate_30d_pct") or 0.0)
+    except Exception:
+        wr30 = 0.0
+
+    if n7 >= 10:
+        is_deg = bool(sc_obj.get("is_degraded") or wr7 < 45.0)
+        if is_deg:
+            text = f"⚠️ 近7日胜率 {wr7:.1f}% ({n7}笔) · 降权参考"
+            tone = "warn"
+        else:
+            text = f"近7日胜率 {wr7:.1f}% ({n7}笔)"
+            tone = "up" if wr7 >= 50.0 else "warn"
+        title = f"AI 实盘成绩单 · 近7日:{wr7:.1f}% ({n7}笔) | 近30日:{wr30:.1f}% ({n30}笔)"
+        return {"text": text, "title": title, "tone": tone}
+
+    if n30 >= 10:
+        if wr30 < 45.0:
+            text = f"⚠️ 近30日胜率 {wr30:.1f}% ({n30}笔) · 降权参考"
+            tone = "warn"
+        else:
+            text = f"近30日胜率 {wr30:.1f}% ({n30}笔)"
+            tone = "up" if wr30 >= 50.0 else "warn"
+        title = f"AI 实盘成绩单 · 近7日 {wr7:.1f}% ({n7}笔) · 样本偏少已回退30日口径 | 近30日 {wr30:.1f}% ({n30}笔)"
+        return {"text": text, "title": title, "tone": tone}
+
+    n_eff = max(n30, n7)
+    return {
+        "text": f"样本积累中 ({n_eff}笔)",
+        "title": f"AI 实盘成绩单 · 近7日 {wr7:.1f}% ({n7}笔) | 近30日 {wr30:.1f}% ({n30}笔) · 样本不足10笔",
+        "tone": "muted",
+    }
+
+
 def normalize_dual_probabilities(p_long: float, p_short: float):
     """确保多空双边概率之和严格 <= 100.0%，超出时按比例缩放保留相对强弱。"""
     try:
@@ -4495,23 +4556,56 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             if (scEl) {
                 const scObj = (AI_PREDICTIONS && AI_PREDICTIONS.live_scorecard) ? AI_PREDICTIONS.live_scorecard : null;
                 if (scObj && scObj.sample_count_7d !== undefined) {
+                    const n7 = Number(scObj.sample_count_7d || 0);
+                    const n30 = Number(scObj.sample_count_30d || 0);
                     const wr7 = Number(scObj.win_rate_7d_pct || 0);
                     const wr30 = Number(scObj.win_rate_30d_pct || 0);
-                    const isDeg = Boolean(scObj.is_degraded || (Number(scObj.sample_count_7d || 0) > 0 && wr7 < 45.0));
-                    if (isDeg) {
-                        scEl.innerText = `⚠️ 近7日胜率 ${wr7.toFixed(1)}% · 降权参考`;
+                    let scText = "";
+                    let scTitle = "";
+                    let scTone = "muted";
+                    if (n7 >= 10) {
+                        const isDeg = Boolean(scObj.is_degraded || wr7 < 45.0);
+                        if (isDeg) {
+                            scText = `⚠️ 近7日胜率 ${wr7.toFixed(1)}% (${n7}笔) · 降权参考`;
+                            scTone = "warn";
+                        } else {
+                            scText = `近7日胜率 ${wr7.toFixed(1)}% (${n7}笔)`;
+                            scTone = (wr7 >= 50.0) ? "up" : "warn";
+                        }
+                        scTitle = `AI 实盘成绩单 · 近7日:${wr7.toFixed(1)}% (${n7}笔) | 近30日:${wr30.toFixed(1)}% (${n30}笔)`;
+                    } else if (n30 >= 10) {
+                        if (wr30 < 45.0) {
+                            scText = `⚠️ 近30日胜率 ${wr30.toFixed(1)}% (${n30}笔) · 降权参考`;
+                            scTone = "warn";
+                        } else {
+                            scText = `近30日胜率 ${wr30.toFixed(1)}% (${n30}笔)`;
+                            scTone = (wr30 >= 50.0) ? "up" : "warn";
+                        }
+                        scTitle = `AI 实盘成绩单 · 近7日 ${wr7.toFixed(1)}% (${n7}笔) · 样本偏少已回退30日口径 | 近30日 ${wr30.toFixed(1)}% (${n30}笔)`;
+                    } else {
+                        const nEff = Math.max(n30, n7);
+                        scText = `样本积累中 (${nEff}笔)`;
+                        scTitle = `AI 实盘成绩单 · 近7日 ${wr7.toFixed(1)}% (${n7}笔) | 近30日 ${wr30.toFixed(1)}% (${n30}笔) · 样本不足10笔`;
+                        scTone = "muted";
+                    }
+                    scEl.innerText = scText;
+                    scEl.title = scTitle;
+                    if (scTone === "up") {
+                        scEl.style.color = pal.up;
+                        scEl.style.background = pal.upBg;
+                        scEl.style.borderColor = pal.upBorder;
+                    } else if (scTone === "warn") {
                         scEl.style.color = pal.warn;
                         scEl.style.background = pal.warnBg;
                         scEl.style.borderColor = pal.warnBorder;
                     } else {
-                        scEl.innerText = `近7日胜率 ${wr7.toFixed(1)}%`;
-                        scEl.style.color = pal.up;
-                        scEl.style.background = pal.upBg;
-                        scEl.style.borderColor = pal.upBorder;
+                        scEl.style.color = pal.sub;
+                        scEl.style.background = pal.elevatedBg;
+                        scEl.style.borderColor = pal.border;
                     }
-                    scEl.title = `AI 实盘成绩单 · 近7日:${wr7.toFixed(1)}% | 近30日:${wr30.toFixed(1)}%`;
                 } else {
-                    scEl.innerText = "近7日胜率 初始化中";
+                    scEl.innerText = "样本积累中 (0笔)";
+                    scEl.title = "AI 实盘成绩单 · 等待样本积累";
                     scEl.style.color = pal.sub;
                     scEl.style.background = pal.elevatedBg;
                     scEl.style.borderColor = pal.border;
