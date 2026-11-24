@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795510088.835,
-  "updated_at_et": "11-24 03:48 ET",
-  "updated_at_kst": "17:48 KST",
+  "updated_at_ts": 1795510196.387,
+  "updated_at_et": "11-24 03:49 ET",
+  "updated_at_kst": "17:49 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -907,39 +907,39 @@
     ],
     "NVDA": [
       {
+        "title": "European shares pause after month-best rally on Nvidia euphoria",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/european-shares-pause-month-best-083749877.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 03:37 ET",
+        "pub_ts": 1795509469.0
+      },
+      {
+        "title": "Tech firms soar as Huang's return reinvigorates AI trade",
+        "url": "https://finance.yahoo.com/technology/ai/articles/tech-firms-soar-huangs-return-023753159.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 03:35 ET",
+        "pub_ts": 1795509331.0
+      },
+      {
+        "title": "CRWV, NBIS And IREN Rally In A ‘Good Day’ For Neoclouds — Databricks Co-Founder Flags Security Gaps At ‘Top’ Neoclouds",
+        "url": "https://stocktwits.com/news-articles/markets/equity/crwv-nbis-iren-rally-good-day-neoclouds-databricks-co-founder-security-gaps-top-neoclouds/cNbsRgYR9kB?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 03:23 ET",
+        "pub_ts": 1795508637.0
+      },
+      {
+        "title": "Nvidia and 3 AI Chip Stocks for Export Control Resilient Growth",
+        "url": "https://finance.yahoo.com/technology/ai/articles/nvidia-3-ai-chip-stocks-081204748.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 03:12 ET",
+        "pub_ts": 1795507924.0
+      },
+      {
         "title": "Trump Calls America “a Country of Second Chances” and Pushes Nvidia to Rehire Jensen Huang",
         "url": "https://www.tikr.com/blog/trump-urges-nvidia-rehire-jensen-huang-second-chance?ref=yahoofinance&tlnk=yf-261124-4vqr9fj3&.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-24 03:03 ET",
         "pub_ts": 1795507397.0
-      },
-      {
-        "title": "Trump, Nvidia and power: could we be nearing the end of tech’s Gilded Age?",
-        "url": "https://finance.yahoo.com/technology/ai/articles/trump-nvidia-power-could-nearing-080011472.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 03:00 ET",
-        "pub_ts": 1795507211.0
-      },
-      {
-        "title": "US targets chip smuggling to China after Huang's return to scandal-hit Nvidia",
-        "url": "https://finance.yahoo.com/technology/ai/articles/nvidia-reinstates-jensen-huang-ceo-141738492.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 02:59 ET",
-        "pub_ts": 1795507191.0
-      },
-      {
-        "title": "Jim Cramer Calls Nvidia’s Quarter “Fabulous” but Says Buy Anthropic Instead. I’ll Take the Other Side",
-        "url": "https://www.tikr.com/blog/jim-cramer-nvidia-vs-anthropic-stock?ref=yahoofinance&tlnk=yf-261124-27574whw&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 02:58 ET",
-        "pub_ts": 1795507111.0
-      },
-      {
-        "title": "Grayscale Says Bitcoin Looks Oversold, Warns Of Near-Term AI Risks As Nvidia And Anthropic Developments Put Markets In Focus",
-        "url": "https://stocktwits.com/news-articles/markets/cryptocurrency/grayscale-bitcoin-oversold-ai-risks-nvidia-anthropic/cNbsGFxR9kI?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 02:57 ET",
-        "pub_ts": 1795507056.0
       }
     ],
     "AMD": [
@@ -3284,22 +3284,22 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795508671.3070688,
-    "SOXL": 1795508671.3070688,
-    "SPY": 1795508671.3070688,
-    "DIA": 1795508671.3070688,
-    "SOXX": 1795508671.3070688,
-    "QQQ": 1795508671.3070688,
-    "SMH": 1795508671.3070688,
-    "IWM": 1795508671.3070688,
-    "IGV": 1795508671.3070688,
-    "TLT": 1795508671.3070688,
-    "GLD": 1795508671.3070688,
-    "SQQQ": 1795508671.3070688,
+    "KORU": 1795510196.3871348,
+    "SOXL": 1795510196.3871348,
+    "SPY": 1795510196.3871348,
+    "DIA": 1795510196.3871348,
+    "SOXX": 1795510196.3871348,
+    "QQQ": 1795510196.3871348,
+    "SMH": 1795510196.3871348,
+    "IWM": 1795510196.3871348,
+    "IGV": 1795510196.3871348,
+    "TLT": 1795510196.3871348,
+    "GLD": 1795510196.3871348,
+    "SQQQ": 1795510196.3871348,
     "TSM": 1795508782.150251,
-    "VIXY": 1795508671.3070688,
-    "SOXS": 1795508671.3070688,
-    "NVDA": 1795508671.3070688,
+    "VIXY": 1795510196.3871348,
+    "SOXS": 1795510196.3871348,
+    "NVDA": 1795510196.3871348,
     "AMD": 1795508782.150251,
     "ASML": 1795508782.150251,
     "QCOM": 1795508782.150251,
