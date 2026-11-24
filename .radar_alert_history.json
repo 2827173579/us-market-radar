@@ -7,7 +7,7 @@
     },
     "NBIS": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1795504048.6338542
+      "last_notified_at": 1795511316.5091753
     },
     "NVDA": {
       "state": "STOP_LOSS",
@@ -82,8 +82,8 @@
       "last_notified_at": 0.0
     },
     "DIA": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1795511207.0124109
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "IWM": {
       "state": "WATCHLIST_ENTRY_READY",
