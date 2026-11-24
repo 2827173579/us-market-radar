@@ -1,9 +1,24 @@
 {
-  "updated_at_ts": 1795522583.874,
-  "updated_at_et": "11-24 07:16 ET",
-  "updated_at_kst": "21:16 KST",
+  "updated_at_ts": 1795522692.18,
+  "updated_at_et": "11-24 07:18 ET",
+  "updated_at_kst": "21:18 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261124201721089800",
+      "title": "美银推演两种极端行情：标普500上看8888、下看6666点",
+      "summary": "美银首席警告，明年市场可能面临多重变数：油价大跌及美国两党就AI和医疗保障达成妥协，或成利好；而AI信用风险、芯片暴跌及美联储超预期强硬，则构成威胁。点击查看",
+      "keywords": [
+        "美联储",
+        "芯片",
+        "标普"
+      ],
+      "pub_ts": 1795522641.0,
+      "time_et": "11-24 07:17 ET",
+      "time_bj": "20:17 BJ",
+      "time_kst": "21:17 KST",
+      "time_display": "07:17 ET / 20:17 BJ"
+    },
     {
       "id": "20261124200902028800",
       "title": "【小摩：料十年期美债收益率将于2027年Q1接近5.10%的峰值】 11月24日讯，摩根…",
@@ -334,19 +349,6 @@
       "time_bj": "14:50 BJ",
       "time_kst": "15:50 KST",
       "time_display": "01:50 ET / 14:50 BJ"
-    },
-    {
-      "id": "20261124143206701800",
-      "title": "【黄仁勋回归提振日韩股市 KOSPI收涨6.3%】 11月24日讯，日韩股市周二双双走高…",
-      "summary": "【黄仁勋回归提振日韩股市 KOSPI收涨6.3%】 11月24日讯，日韩股市周二双双走高，科技股反弹。韩国KOSPI指数收复5000点关口，收涨6.32%。存储芯片、电池和汽车龙头股涨幅较大。三星电子收涨6.7%，SK海力士涨6.72%。日经225指数涨3.91%，创7月31日来最大涨幅，早盘一度站上59,000点，收盘报58644.63点。",
-      "keywords": [
-        "芯片"
-      ],
-      "pub_ts": 1795501926.0,
-      "time_et": "11-24 01:32 ET",
-      "time_bj": "14:32 BJ",
-      "time_kst": "15:32 KST",
-      "time_display": "01:32 ET / 14:32 BJ"
     }
   ],
   "ticker_news": {
@@ -1661,6 +1663,13 @@
         "pub_ts": 1795476050.0
       },
       {
+        "title": "A $2.7 Billion Fund Just Bought These 3 Stocks",
+        "url": "https://www.tikr.com/blog/a-2-7-billion-fund-just-bought-these-3-stocks?ref=yahoofinance&tlnk=yf-261124-6fg28v8w&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 17:24 ET",
+        "pub_ts": 1795472696.0
+      },
+      {
         "title": "Tech stocks surge as Nvidia rally adds $2 trillion to Nasdaq 100",
         "url": "https://www.proactiveinvestors.com/companies/news/1102286/tech-stocks-surge-as-nvidia-rally-adds-2-trillion-to-nasdaq-100-1102286.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1673,13 +1682,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 12:55 ET",
         "pub_ts": 1795456525.0
-      },
-      {
-        "title": "Should You Buy Marvell Technology Stock Before Dec. 1?",
-        "url": "https://www.fool.com/investing/2026/11/23/should-you-buy-marvell-technology-stock-before-dec-1/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 12:54 ET",
-        "pub_ts": 1795456442.0
       }
     ],
     "LITE": [
@@ -2424,6 +2426,13 @@
     ],
     "SKHY": [
       {
+        "title": "TSMC and SK Hynix Stocks Jump After Nvidia Reinstates Jensen Huang as CEO",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/tsmc-sk-hynix-stocks-jump-120300756.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 07:03 ET",
+        "pub_ts": 1795521780.0
+      },
+      {
         "title": "TSMC, Samsung, SK Hynix Rally As Jensen Huang Returns As Nvidia CEO — Top Analyst Flags Risks To AI Recovery",
         "url": "https://stocktwits.com/news-articles/markets/equity/tsmc-samsung-sk-hynix-rally-as-jensen-huang-returns-as-nvidia-ceo-top-analyst-flags-risks-to-ai-recovery/cNbr6E1R9kE?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2450,13 +2459,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 17:56 ET",
         "pub_ts": 1795474572.0
-      },
-      {
-        "title": "SK hynix Stocks Fall 2.52% in Seoul Despite an 80% Operating Margin Quarter",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/sk-hynix-stocks-fall-2-175441008.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 12:54 ET",
-        "pub_ts": 1795456481.0
       }
     ],
     "WDC": [
@@ -2609,6 +2611,13 @@
     ],
     "BTC-USD": [
       {
+        "title": "Bitcoin or Gold? Cathie Wood of Ark Invest Makes a Compelling Case for Buying Bitcoin.",
+        "url": "https://www.fool.com/investing/2026/11/24/bitcoin-or-gold-cathie-wood-of-ark-invest-makes-a-compelling-case-for-buying-bitcoin/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 07:05 ET",
+        "pub_ts": 1795521902.0
+      },
+      {
         "title": "XRP Price Prediction: David Schwartz Clarifies 88% Sell-Off as XRP Fights to Reclaim $1",
         "url": "https://99bitcoins.com/news/altcoins/xrp-price-prediction-david-schwartz-clarifies-88-sell-off-as-xrp-fights-to-reclaim-1/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2635,13 +2644,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 05:50 ET",
         "pub_ts": 1795517402.0
-      },
-      {
-        "title": "Bitcoin ETF Loses $570M: More Than Half of BTC Supply Falls Out of Profit",
-        "url": "https://cryptonews.com/news/bitcoin-price-etf-outflows-supply-losses/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 05:31 ET",
-        "pub_ts": 1795516271.0
       }
     ],
     "CRWD": [
@@ -3313,18 +3315,18 @@
     "NOW": 1795522583.873532,
     "AMZN": 1795522583.873532,
     "CRWV": 1795522583.873532,
-    "NBIS": 1795521147.9080956,
+    "NBIS": 1795522692.1801164,
     "APLD": 1795521472.1033998,
     "VST": 1795521472.1033998,
     "BE": 1795521472.1033998,
     "CRDO": 1795521472.1033998,
     "COHR": 1795521472.1033998,
-    "MRVL": 1795521147.9080956,
-    "LITE": 1795521147.9080956,
+    "MRVL": 1795522692.1801164,
+    "LITE": 1795522692.1801164,
     "AAOI": 1795521472.1033998,
     "SPCX": 1795521584.8122637,
     "ASTS": 1795521472.1033998,
-    "AXTI": 1795521147.9080956,
+    "AXTI": 1795522692.1801164,
     "NASA": 1795521584.8122637,
     "LUNR": 1795521584.8122637,
     "TSLA": 1795521584.8122637,
@@ -3339,13 +3341,13 @@
     "OKLO": 1795521693.957445,
     "CEG": 1795521693.957445,
     "FPS": 1795521693.957445,
-    "MU": 1795521147.9080956,
-    "SKHY": 1795521147.9080956,
-    "WDC": 1795521147.9080956,
+    "MU": 1795522692.1801164,
+    "SKHY": 1795522692.1801164,
+    "WDC": 1795522692.1801164,
     "STX": 1795521808.2036672,
     "MSTR": 1795521808.2036672,
     "SNDK": 1795521808.2036672,
-    "BTC-USD": 1795521147.9080956,
+    "BTC-USD": 1795522692.1801164,
     "CRWD": 1795521808.2036672,
     "ORCL": 1795521472.1033998,
     "COIN": 1795521472.1033998,
@@ -3359,11 +3361,11 @@
     "WMT": 1795521808.2036672,
     "V": 1795521472.1033998,
     "CAT": 1795521808.2036672,
-    "FN": 1795521147.9080956,
+    "FN": 1795522692.1801164,
     "GLW": 1795521472.1033998,
     "ANT": 1795521808.2036672,
     "XAUUSD": 1795521808.2036672,
-    "KOSPI": 1795521147.9080956
+    "KOSPI": 1795522692.1801164
   },
   "opex_shield": {
     "date": "2026-11-24",
@@ -3382,7 +3384,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (07:09 ET / 20:09 BJ) [美联储] [美债]：【小摩：料十年期美债收益率将于2027年Q1接近5.10%的峰值】 11月24日讯，摩根大通周二表示，预计随着美联储持续收紧货币政策，美国10年期国债收益率将于2027年第一季度升至5.10",
+    "detail": "⚡ 最新核心快讯 (07:17 ET / 20:17 BJ) [美联储] [芯片] [标普]：美银首席警告，明年市场可能面临多重变数：油价大跌及美国两党就AI和医疗保障达成妥协，或成利好；而AI信用风险、芯片暴跌及美联储超预期强硬，则构成威胁。点击查看",
     "event_name": "",
     "minutes_left": 0,
     "opex_shield": {
