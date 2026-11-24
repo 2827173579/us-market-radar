@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795550411.619,
-  "updated_at_et": "11-24 15:00 ET",
-  "updated_at_kst": "05:00 KST",
+  "updated_at_ts": 1795550510.641,
+  "updated_at_et": "11-24 15:01 ET",
+  "updated_at_kst": "05:01 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -909,6 +909,27 @@
     ],
     "NVDA": [
       {
+        "title": "US Attorney General Praises Nvidia As Questions Swirl Over Huang’s Reinstatement",
+        "url": "https://stocktwits.com/news-articles/markets/equity/us-attorney-general-praises-nvidia-as-questions-swirl-over-huang-s-reinstatement/cNbsSALR9ky?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 14:52 ET",
+        "pub_ts": 1795549962.0
+      },
+      {
+        "title": "With Jensen Huang Back as CEO, Is It More Likely That Nvidia Will Rebound to $243.37 or Plummet to $100?",
+        "url": "https://www.fool.com/investing/2026/11/24/with-jensen-huang-back-as-ceo-is-it-more-likely-that-nvidia-will-rebound-to-usd243-37-or-plummet-to-usd100/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 14:49 ET",
+        "pub_ts": 1795549742.0
+      },
+      {
+        "title": "3 Unstoppable Stocks That Can Be Great Buys for Decades",
+        "url": "https://www.fool.com/investing/2026/11/24/3-unstoppable-stocks-that-can-be-great-buys-for-decades/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 14:42 ET",
+        "pub_ts": 1795549322.0
+      },
+      {
         "title": "Nasdaq Resumes Selloff as Nvidia, Anthropic Shares Slump",
         "url": "https://www.wsj.com/finance/stocks/nasdaq-futures-fall-as-questions-linger-over-ai-trade-68ba6d71?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -921,27 +942,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 14:31 ET",
         "pub_ts": 1795548663.0
-      },
-      {
-        "title": "Schumer accuses Huang of violating U.S. export law",
-        "url": "https://finance.yahoo.com/technology/articles/schumer-accuses-huang-violating-u-191611087.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 14:16 ET",
-        "pub_ts": 1795547771.0
-      },
-      {
-        "title": "3 High-Yielding Stocks That Performed Well During the Last Market Crash",
-        "url": "https://www.fool.com/investing/2026/11/24/3-high-yielding-stocks-that-performed-well-during-the-last-market-crash/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 14:16 ET",
-        "pub_ts": 1795547762.0
-      },
-      {
-        "title": "Nvidia's stock surge is crypto's worst nightmare, Arthur Hayes warns",
-        "url": "https://www.thestreet.com/crypto/markets/nvidias-stock-surge-is-cryptos-worst-nightmare-arthur-hayes-warns?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 14:15 ET",
-        "pub_ts": 1795547700.0
       }
     ],
     "AMD": [
@@ -3286,26 +3286,26 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795548944.8957593,
-    "SOXL": 1795548944.8957593,
+    "KORU": 1795550510.641466,
+    "SOXL": 1795550510.641466,
     "SPY": 1795549194.691989,
-    "DIA": 1795548944.8957593,
-    "SOXX": 1795548944.8957593,
-    "QQQ": 1795548944.8957593,
+    "DIA": 1795550510.641466,
+    "SOXX": 1795550510.641466,
+    "QQQ": 1795550510.641466,
     "SMH": 1795549194.691989,
-    "IWM": 1795548944.8957593,
-    "IGV": 1795548944.8957593,
-    "TLT": 1795548944.8957593,
-    "GLD": 1795548944.8957593,
-    "SQQQ": 1795548944.8957593,
+    "IWM": 1795550510.641466,
+    "IGV": 1795550510.641466,
+    "TLT": 1795550510.641466,
+    "GLD": 1795550510.641466,
+    "SQQQ": 1795550510.641466,
     "TSM": 1795549194.691989,
-    "VIXY": 1795548944.8957593,
-    "SOXS": 1795548944.8957593,
-    "NVDA": 1795548944.8957593,
-    "AMD": 1795548944.8957593,
+    "VIXY": 1795550510.641466,
+    "SOXS": 1795550510.641466,
+    "NVDA": 1795550510.641466,
+    "AMD": 1795550510.641466,
     "ASML": 1795549194.691989,
     "QCOM": 1795549194.691989,
-    "AVGO": 1795548944.8957593,
+    "AVGO": 1795550510.641466,
     "AMAT": 1795549194.691989,
     "META": 1795549194.691989,
     "GOOGL": 1795549194.691989,

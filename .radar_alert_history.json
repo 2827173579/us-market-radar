@@ -82,8 +82,8 @@
       "last_notified_at": 0.0
     },
     "DIA": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1795550533.4021425
     },
     "IWM": {
       "state": "NORMAL",
@@ -175,7 +175,7 @@
     },
     "HPE": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1795543226.2532053
+      "last_notified_at": 1795550533.4021425
     },
     "PLTR": {
       "state": "NORMAL",
