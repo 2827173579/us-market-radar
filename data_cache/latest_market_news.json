@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795527556.824,
-  "updated_at_et": "11-24 08:39 ET",
-  "updated_at_kst": "22:39 KST",
+  "updated_at_ts": 1795527665.356,
+  "updated_at_et": "11-24 08:41 ET",
+  "updated_at_kst": "22:41 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2016,6 +2016,13 @@
     ],
     "RKLB": [
       {
+        "title": "Rocket Lab Sinks 13% in a Week. Its CFO Still Sees a “Very Strong Uplift” in Electron Prices",
+        "url": "https://www.tikr.com/blog/rocket-lab-sinks-13-in-a-week-its-cfo-still-sees-a-very-strong-uplift-in-electron-prices?ref=yahoofinance&tlnk=yf-261124-qmjfxw7f&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 00:58 ET",
+        "pub_ts": 1795499933.0
+      },
+      {
         "title": "Why Rocket Lab (RKLB) Is Up 9.2% And What's Next After $515 Million Launch Orders",
         "url": "https://finance.yahoo.com/markets/stocks/articles/why-rocket-lab-rklb-9-021346011.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2042,13 +2049,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 08:42 ET",
         "pub_ts": 1795441320.0
-      },
-      {
-        "title": "Can Rocket Lab's $515 Million Neutron Deals Lift Its Launch Backlog?",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/rocket-labs-515-million-neutron-133100941.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 08:31 ET",
-        "pub_ts": 1795440660.0
       }
     ],
     "KO": [
@@ -2682,6 +2682,13 @@
     ],
     "ORCL": [
       {
+        "title": "Oracle Commodity Holding Revives 2% Royalty on Pulacayo-Paca Silver Mining Project",
+        "url": "https://finance.yahoo.com/markets/commodities/articles/oracle-commodity-holding-revives-2-133000570.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 08:30 ET",
+        "pub_ts": 1795527000.0
+      },
+      {
         "title": "Oracle Raises $10 Billion in Debt at Up to 8.65% as AI Financing Risks Persist",
         "url": "https://finance.yahoo.com/technology/ai/articles/oracle-raises-10-billion-debt-121244271.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2708,13 +2715,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 20:13 ET",
         "pub_ts": 1795482805.0
-      },
-      {
-        "title": "Nebius & CoreWeave Jump 21% While Oracle Sees 12% Gains on Monday Following Jensen’s Return",
-        "url": "https://247wallst.com/videos/nebius-coreweave-jump-21-while-oracle-sees-12-gains-on-monday-following-jensens-return/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 15:16 ET",
-        "pub_ts": 1795464974.0
       }
     ],
     "COIN": [
@@ -3313,22 +3313,22 @@
     "AMZN": 1795527233.205637,
     "CRWV": 1795527233.205637,
     "NBIS": 1795527340.9976914,
-    "APLD": 1795526131.5714948,
-    "VST": 1795526131.5714948,
-    "BE": 1795526131.5714948,
-    "CRDO": 1795526131.5714948,
-    "COHR": 1795526131.5714948,
+    "APLD": 1795527665.3559303,
+    "VST": 1795527665.3559303,
+    "BE": 1795527665.3559303,
+    "CRDO": 1795527665.3559303,
+    "COHR": 1795527665.3559303,
     "MRVL": 1795527340.9976914,
     "LITE": 1795527340.9976914,
-    "AAOI": 1795526131.5714948,
+    "AAOI": 1795527665.3559303,
     "SPCX": 1795526241.8221667,
-    "ASTS": 1795526131.5714948,
+    "ASTS": 1795527665.3559303,
     "AXTI": 1795527340.9976914,
     "NASA": 1795526241.8221667,
     "LUNR": 1795526241.8221667,
     "TSLA": 1795526241.8221667,
     "AXP": 1795526241.8221667,
-    "RKLB": 1795526131.5714948,
+    "RKLB": 1795527665.3559303,
     "KO": 1795526241.8221667,
     "FLY": 1795526241.8221667,
     "INTC": 1795526241.8221667,
@@ -3346,20 +3346,20 @@
     "SNDK": 1795526458.54915,
     "BTC-USD": 1795527340.9976914,
     "CRWD": 1795526458.54915,
-    "ORCL": 1795526131.5714948,
-    "COIN": 1795526131.5714948,
-    "LLY": 1795526131.5714948,
-    "MRNA": 1795526131.5714948,
-    "NKE": 1795526131.5714948,
-    "MCD": 1795526131.5714948,
+    "ORCL": 1795527665.3559303,
+    "COIN": 1795527665.3559303,
+    "LLY": 1795527665.3559303,
+    "MRNA": 1795527665.3559303,
+    "NKE": 1795527665.3559303,
+    "MCD": 1795527665.3559303,
     "PEP": 1795526458.54915,
     "XOM": 1795526349.6831925,
     "JPM": 1795526349.6831925,
     "WMT": 1795526458.54915,
-    "V": 1795526131.5714948,
+    "V": 1795527665.3559303,
     "CAT": 1795526458.54915,
     "FN": 1795527340.9976914,
-    "GLW": 1795526131.5714948,
+    "GLW": 1795527665.3559303,
     "ANT": 1795526458.54915,
     "XAUUSD": 1795526458.54915,
     "KOSPI": 1795527340.9976914
