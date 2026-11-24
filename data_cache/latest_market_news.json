@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795531865.055,
-  "updated_at_et": "11-24 09:51 ET",
-  "updated_at_kst": "23:51 KST",
+  "updated_at_ts": 1795531969.676,
+  "updated_at_et": "11-24 09:52 ET",
+  "updated_at_kst": "23:52 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1449,11 +1449,11 @@
         "pub_ts": 1795476445.0
       },
       {
-        "title": "Gavin Baker: “At Least Three Companies” Want to Replace Nvidia as AI’s Central Bank. Good News for CoreWeave",
-        "url": "https://www.tikr.com/blog/gavin-baker-at-least-three-companies-want-to-replace-nvidia-as-ais-central-bank-good-news-for-coreweave?ref=yahoofinance&tlnk=yf-261123-37w799jj&.tsrc=rss",
+        "title": "Michael Burry: Bear rallies averaged 22% in the 1929 and 2000 crashes. Is Nvidia’s bounce back fooling your nest egg?",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/michael-burry-bear-rallies-averaged-131500246.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 15:30 ET",
-        "pub_ts": 1795465844.0
+        "time": "11-24 08:15 ET",
+        "pub_ts": 1795526100.0
       }
     ],
     "APLD": [
@@ -1657,6 +1657,13 @@
         "pub_ts": 1795527912.0
       },
       {
+        "title": "Susquehanna Cut Its Marvell Target to $225 From $300. It Still Sees [84%] Upside",
+        "url": "https://www.tikr.com/blog/susquehanna-marvell-price-target-cut-225-mrvl-upside?ref=yahoofinance&tlnk=yf-261124-682h8944&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 07:06 ET",
+        "pub_ts": 1795521979.0
+      },
+      {
         "title": "Marvell Stock Fell Almost 12% in a Single Day. I'd Consider Buying Shares Now.",
         "url": "https://www.fool.com/investing/2026/11/24/marvell-stock-fell-almost-12-in-a-single-day-i-d-consider-buying-shares-now/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1669,13 +1676,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 18:20 ET",
         "pub_ts": 1795476050.0
-      },
-      {
-        "title": "A $2.7 Billion Fund Just Bought These 3 Stocks",
-        "url": "https://www.tikr.com/blog/a-2-7-billion-fund-just-bought-these-3-stocks?ref=yahoofinance&tlnk=yf-261124-6fg28v8w&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 17:24 ET",
-        "pub_ts": 1795472696.0
       }
     ],
     "LITE": [
@@ -2605,11 +2605,18 @@
     ],
     "BTC-USD": [
       {
-        "title": "Stock Market Today: Tech Futures Sell Off After Big Market Surge; AMD, Anthropic, Nvidia Dive (Live Coverage)",
-        "url": "https://finance.yahoo.com/m/4aa4ff31-269f-346e-80c4-e681510af7ae/stock-market-today%3A-tech.html?.tsrc=rss",
+        "title": "Stock Market Today: Nasdaq Sells Off After Big Market Surge; AMD, Anthropic, Nvidia All Dive (Live Coverage)",
+        "url": "https://finance.yahoo.com/m/4aa4ff31-269f-346e-80c4-e681510af7ae/stock-market-today%3A-nasdaq.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 08:51 ET",
-        "pub_ts": 1795528300.0
+        "time": "11-24 09:42 ET",
+        "pub_ts": 1795531368.0
+      },
+      {
+        "title": "Bitcoin ETF Outflows Hit A Record $4.71 Billion",
+        "url": "https://www.cryptoprowl.com/releases/bitcoin-etf-outflows-hit-a-record-471-billion-8040?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 09:24 ET",
+        "pub_ts": 1795530240.0
       },
       {
         "title": "IREN Fell 42% This Month Even After The Market Jump on NVIDIA News: This Wall Street Pro Maintains That 440% Returns Are Coming After Q3 Earnings Downgrades",
@@ -2631,13 +2638,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 07:50 ET",
         "pub_ts": 1795524602.0
-      },
-      {
-        "title": "$14.7B in ‘Lost’ Bitcoin Has Moved Since 2018: Report",
-        "url": "https://decrypt.co/383854/14-7b-in-lost-bitcoin-has-moved-since-2018-report?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 07:40 ET",
-        "pub_ts": 1795524047.0
       }
     ],
     "CRWD": [
@@ -3309,18 +3309,18 @@
     "NOW": 1795531865.0550442,
     "AMZN": 1795531865.0550442,
     "CRWV": 1795531865.0550442,
-    "NBIS": 1795530449.7526069,
+    "NBIS": 1795531969.6763315,
     "APLD": 1795530767.907945,
     "VST": 1795530767.907945,
     "BE": 1795530767.907945,
     "CRDO": 1795530767.907945,
     "COHR": 1795530767.907945,
-    "MRVL": 1795530449.7526069,
-    "LITE": 1795530449.7526069,
+    "MRVL": 1795531969.6763315,
+    "LITE": 1795531969.6763315,
     "AAOI": 1795530767.907945,
     "SPCX": 1795530875.830874,
     "ASTS": 1795530767.907945,
-    "AXTI": 1795530449.7526069,
+    "AXTI": 1795531969.6763315,
     "NASA": 1795530875.830874,
     "LUNR": 1795530875.830874,
     "TSLA": 1795530875.830874,
@@ -3335,13 +3335,13 @@
     "OKLO": 1795530984.4993865,
     "CEG": 1795530984.4993865,
     "FPS": 1795530984.4993865,
-    "MU": 1795530449.7526069,
-    "SKHY": 1795530449.7526069,
-    "WDC": 1795530449.7526069,
+    "MU": 1795531969.6763315,
+    "SKHY": 1795531969.6763315,
+    "WDC": 1795531969.6763315,
     "STX": 1795531090.4095514,
     "MSTR": 1795531090.4095514,
     "SNDK": 1795531090.4095514,
-    "BTC-USD": 1795530449.7526069,
+    "BTC-USD": 1795531969.6763315,
     "CRWD": 1795531090.4095514,
     "ORCL": 1795530767.907945,
     "COIN": 1795530767.907945,
@@ -3355,11 +3355,11 @@
     "WMT": 1795531090.4095514,
     "V": 1795530767.907945,
     "CAT": 1795531090.4095514,
-    "FN": 1795530449.7526069,
+    "FN": 1795531969.6763315,
     "GLW": 1795530767.907945,
     "ANT": 1795531090.4095514,
     "XAUUSD": 1795531090.4095514,
-    "KOSPI": 1795530449.7526069
+    "KOSPI": 1795531969.6763315
   },
   "opex_shield": {
     "date": "2026-11-24",
