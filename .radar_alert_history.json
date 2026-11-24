@@ -86,8 +86,8 @@
       "last_notified_at": 0.0
     },
     "IWM": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1795515766.7184806
     },
     "IGV": {
       "state": "NORMAL",
@@ -151,7 +151,7 @@
     },
     "DELL": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1795508466.0265303
+      "last_notified_at": 1795515766.7184806
     },
     "BE": {
       "state": "STOP_LOSS",
@@ -170,8 +170,8 @@
       "last_notified_at": 0.0
     },
     "NKE": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1795515652.4487123
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "HPE": {
       "state": "STOP_LOSS",

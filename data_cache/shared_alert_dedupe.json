@@ -5547,9 +5547,13 @@
     "2026-11-24:DEFENSIVE_FLIGHT:+4.7": {
       "device": "PC",
       "ts": 1795515529.68795
+    },
+    "2026-11-24:IWM/DELL:5M_ENTRY+STOP_LOSS": {
+      "device": "PC",
+      "ts": 1795515767.5387428
     }
   },
   "device": "PC",
-  "last_heartbeat_ts": 1795515551.226969,
-  "updated_at": "2026-11-24T10:20:53.163744+00:00"
+  "last_heartbeat_ts": 1795515676.7984414,
+  "updated_at": "2026-11-24T10:22:47.539290+00:00"
 }
