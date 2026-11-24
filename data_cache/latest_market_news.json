@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795520706.016,
-  "updated_at_et": "11-24 06:45 ET",
-  "updated_at_kst": "20:45 KST",
+  "updated_at_ts": 1795520814.199,
+  "updated_at_et": "11-24 06:46 ET",
+  "updated_at_kst": "20:46 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -427,11 +427,11 @@
     ],
     "SPY": [
       {
-        "title": "Why stocks had their best Monday since 2020",
-        "url": "https://finance.yahoo.com/markets/article/why-stocks-are-having-their-wildest-morning-since-2008-184837610.html?.tsrc=rss",
+        "title": "What SPDR S&P 500 ETF Trust (SPY) Bought: Apple Leads on Friday",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/spdr-p-500-etf-trust-110254690.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 10:31 ET",
-        "pub_ts": 1795447860.0
+        "time": "11-24 06:02 ET",
+        "pub_ts": 1795518174.0
       },
       {
         "title": "ETF Activity: SPY Pulls In $9.24 Billion on Nov. 20",
@@ -441,25 +441,25 @@
         "pub_ts": 1795518012.0
       },
       {
-        "title": "ETFs Bought $393.8 Million of Broadcom (AVGO) on Nov. 20",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-bought-393-8-million-110109208.html?.tsrc=rss",
+        "title": "ETFs Bought $120 Million of Mastercard (MA) on Friday",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-bought-120-million-mastercard-110212516.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 06:01 ET",
-        "pub_ts": 1795518069.0
+        "time": "11-24 06:02 ET",
+        "pub_ts": 1795518132.0
       },
       {
-        "title": "47 ETFs Add to Tesla (TSLA) Holdings on Nov. 20",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/47-etfs-add-tesla-tsla-110102533.html?.tsrc=rss",
+        "title": "Costco (COST) Sees $123.3 Million in Net ETF Buying on Friday",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/costco-cost-sees-123-3-110206631.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 06:01 ET",
-        "pub_ts": 1795518062.0
+        "time": "11-24 06:02 ET",
+        "pub_ts": 1795518126.0
       },
       {
-        "title": "61 ETFs Add to Microsoft (MSFT) Holdings on Nov. 20",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/61-etfs-add-microsoft-msft-110050902.html?.tsrc=rss",
+        "title": "ETFs Are Buying Walmart (WMT) on Nov. 20",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-buying-walmart-wmt-nov-110151407.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 06:00 ET",
-        "pub_ts": 1795518050.0
+        "time": "11-24 06:01 ET",
+        "pub_ts": 1795518111.0
       }
     ],
     "DIA": [
@@ -501,6 +501,13 @@
     ],
     "SOXX": [
       {
+        "title": "iShares PHLX SOX Semiconductor (SOXX) Adds AMD and AVGO on Nov. 20",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/ishares-phlx-sox-semiconductor-soxx-110302788.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 06:03 ET",
+        "pub_ts": 1795518182.0
+      },
+      {
         "title": "Why iShares Semiconductor ETF (SOXX) Is Up Today",
         "url": "https://www.fool.com/investing/2026/11/23/why-ishares-semiconductor-etf-soxx-is-up-today/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -527,16 +534,16 @@
         "source": "Yahoo Finance",
         "time": "11-22 08:35 ET",
         "pub_ts": 1795354502.0
-      },
-      {
-        "title": "Nasdaq futures tripped a circuit breaker built for market crashes as Jensen Huang returned to Nvidia",
-        "url": "https://finance.yahoo.com/markets/stocks/article/nasdaq-futures-tripped-a-circuit-breaker-built-for-market-crashes-as-jensen-huang-returned-to-nvidia-162506665.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 11:25 ET",
-        "pub_ts": 1795451106.0
       }
     ],
     "QQQ": [
+      {
+        "title": "What INVESCO QQQ Trust (QQQ) Bought: Apple Leads on Friday",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/invesco-qqq-trust-qqq-bought-110317120.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 06:03 ET",
+        "pub_ts": 1795518197.0
+      },
       {
         "title": "QQQ Paid a $300,000 Holder $1,524 in Dividends Over the Past Year While VYM Paid $7,164",
         "url": "https://247wallst.com/investing/etf/2026/11/23/qqq-paid-a-300000-holder-1524-in-dividends-over-the-past-year-while-vym-paid-7164/?.tsrc=rss",
@@ -559,18 +566,11 @@
         "pub_ts": 1795471324.0
       },
       {
-        "title": "Exchange-Traded Funds Higher as US Equities Advance After Midday",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/exchange-traded-funds-higher-us-181225577.html?.tsrc=rss",
+        "title": "ETFs Are Buying Micron Technology (MU) on Friday",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-buying-micron-technology-mu-110141845.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 13:12 ET",
-        "pub_ts": 1795457545.0
-      },
-      {
-        "title": "What INVESCO QQQ Trust (QQQ) Sold: Apple Leads on Nov. 19",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/invesco-qqq-trust-qqq-sold-110405429.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 06:04 ET",
-        "pub_ts": 1795431845.0
+        "time": "11-24 06:01 ET",
+        "pub_ts": 1795518101.0
       }
     ],
     "SMH": [
@@ -619,6 +619,13 @@
         "pub_ts": 1794320100.0
       },
       {
+        "title": "iShares Russell 2000 (IWM) Adds Glaukos and Jackson Financial on Nov. 20",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/ishares-russell-2000-iwm-adds-110258205.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 06:02 ET",
+        "pub_ts": 1795518178.0
+      },
+      {
         "title": "iShares Russell 2000 (IWM) Adds Glaukos and JFrog on Thursday",
         "url": "https://finance.yahoo.com/markets/stocks/articles/ishares-russell-2000-iwm-adds-110451676.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -638,13 +645,6 @@
         "source": "Yahoo Finance",
         "time": "11-19 09:06 ET",
         "pub_ts": 1795097193.0
-      },
-      {
-        "title": "Five Straight Losses, One Divergence: Where the Major Indexes Stand Now",
-        "url": "https://finance.yahoo.com/markets/world-indices/articles/five-straight-losses-one-divergence-130000760.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-19 08:00 ET",
-        "pub_ts": 1795093200.0
       }
     ],
     "IGV": [
@@ -3285,14 +3285,14 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795519225.777847,
-    "SOXL": 1795519225.777847,
-    "SPY": 1795519225.777847,
-    "DIA": 1795519225.777847,
-    "SOXX": 1795519225.777847,
-    "QQQ": 1795519225.777847,
-    "SMH": 1795519225.777847,
-    "IWM": 1795519225.777847,
+    "KORU": 1795520814.199459,
+    "SOXL": 1795520814.199459,
+    "SPY": 1795520814.199459,
+    "DIA": 1795520814.199459,
+    "SOXX": 1795520814.199459,
+    "QQQ": 1795520814.199459,
+    "SMH": 1795520814.199459,
+    "IWM": 1795520814.199459,
     "IGV": 1795519335.8909855,
     "TLT": 1795519335.8909855,
     "GLD": 1795519335.8909855,
