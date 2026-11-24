@@ -186,7 +186,7 @@ class TestV52SoxsPolishAndKospi(unittest.TestCase):
         self.assertFalse(mte.is_pure_us_equity("KOSPI", etfs["KOSPI"]))
         self.assertFalse(mte.is_pure_us_equity("^KS11"))
 
-        # 非美股时段盘中推演优雅降级
+        # V5.3: KOSPI 已升级至韩盘专属 KRX 分支 (09:00~15:25 KST)，无样本时优雅提示样本积累中且带 KST/pts
         ip_ks = ipp.compute_knn_intraday_corridor(
             ticker="KOSPI",
             df_tk=None,
@@ -194,8 +194,12 @@ class TestV52SoxsPolishAndKospi(unittest.TestCase):
             prev_close=4920.0,
             anchor_open=5013.52,
         )
-        self.assertEqual(ip_ks["status"], "non_us_session")
-        self.assertIn("韩国交易时段 (09:00–15:30 KST)", ip_ks["status_message"])
+        self.assertEqual(ip_ks["session_tz"], "KST")
+        self.assertEqual(ip_ks["price_unit"], "pts")
+        self.assertEqual(len(ip_ks["time_slots"]), 78)
+        self.assertEqual(ip_ks["time_slots"][0], "09:00")
+        self.assertEqual(ip_ks["time_slots"][-1], "15:25")
+        self.assertNotIn("$", ip_ks["meta_header"])
 
         # 核心防坑：KOSPI 提前跨日（如美股在 2026-11-23，韩国已在 2026-11-24）绝不触发美股扩展池重下
         with tempfile.TemporaryDirectory() as tmpdir:

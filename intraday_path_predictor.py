@@ -23,8 +23,10 @@ import yfinance as yf
 try:
     import zoneinfo
     _NY_TZ = zoneinfo.ZoneInfo("America/New_York")
+    _KST_TZ = zoneinfo.ZoneInfo("Asia/Seoul")
 except Exception:
     _NY_TZ = timezone(timedelta(hours=-5))
+    _KST_TZ = timezone(timedelta(hours=9))
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 PARQUET_CACHE_FILE = "data_cache/intraday_5m_60d.parquet"
@@ -32,9 +34,12 @@ META_CACHE_FILE = "data_cache/.intraday_5m_60d_meta.json"
 FORECAST_JSON_FILE = "data_cache/intraday_path_forecasts.json"
 
 CONTINUOUS_24H_TICKERS = frozenset({"BTC-USD", "XAUUSD"})
-NON_US_SESSION_TICKERS = frozenset({"KOSPI"})
+KRX_SESSION_TICKERS = frozenset({"KOSPI"})
+KRX_YF_SYMBOL_MAP = {"KOSPI": "^KS11"}
+NON_US_SESSION_TICKERS = frozenset()
 MIN_HISTORY_DAYS = 10
 MIN_RTH_BARS_PER_DAY = 50
+MIN_KRX_BARS_PER_DAY = 40
 REGIME_SCORE_MAP = {"BEAR_DEFENSE": -1.0, "NEUTRAL_CHOP": 0.0, "BULL_TREND": 1.0}
 
 
@@ -50,8 +55,22 @@ def _build_rth_time_slots() -> List[str]:
     return slots
 
 
+def _build_krx_time_slots() -> List[str]:
+    """生成韩国 KRX 常规交易时段 09:00 ~ 15:25 KST 共 78 个 5 分钟时间槽。"""
+    slots: List[str] = []
+    cur_min = 9 * 60
+    end_min = 15 * 60 + 30
+    while cur_min < end_min:
+        h, m = divmod(cur_min, 60)
+        slots.append(f"{h:02d}:{m:02d}")
+        cur_min += 5
+    return slots
+
+
 TIME_SLOTS: List[str] = _build_rth_time_slots()
 SLOT_TO_INDEX: Dict[str, int] = {s: idx for idx, s in enumerate(TIME_SLOTS)}
+KRX_TIME_SLOTS: List[str] = _build_krx_time_slots()
+KRX_SLOT_TO_INDEX: Dict[str, int] = {s: idx for idx, s in enumerate(KRX_TIME_SLOTS)}
 
 
 def _resolve_path(path_str: str) -> str:
@@ -69,6 +88,17 @@ def _to_et_datetime(now_et: Optional[datetime] = None) -> datetime:
         except Exception:
             return now_et
     return now_et.astimezone(_NY_TZ)
+
+
+def _to_kst_datetime(now_dt: Optional[datetime] = None) -> datetime:
+    if now_dt is None:
+        return datetime.now(_KST_TZ)
+    if now_dt.tzinfo is None:
+        try:
+            return now_dt.replace(tzinfo=_NY_TZ).astimezone(_KST_TZ)
+        except Exception:
+            return now_dt.replace(tzinfo=_KST_TZ)
+    return now_dt.astimezone(_KST_TZ)
 
 
 def _safe_float(val: Any, default: float = 0.0) -> float:
@@ -131,15 +161,33 @@ def _normalize_5m_timestamps_to_ny_naive(idx: pd.Index) -> pd.DatetimeIndex:
     return dt_idx.tz_convert(_NY_TZ).tz_localize(None)
 
 
-def _extract_ticker_df_from_yf(raw_df: pd.DataFrame, ticker: str, is_single: bool) -> Optional[pd.DataFrame]:
+def _normalize_5m_timestamps_to_kst_naive(idx: pd.Index) -> pd.DatetimeIndex:
+    dt_idx = pd.to_datetime(idx)
+    if dt_idx.tz is None:
+        return dt_idx
+    return dt_idx.tz_convert(_KST_TZ).tz_localize(None)
+
+
+def _extract_ticker_df_from_yf(
+    raw_df: pd.DataFrame,
+    ticker: str,
+    is_single: bool,
+    yf_symbol: Optional[str] = None,
+    use_kst: bool = False,
+) -> Optional[pd.DataFrame]:
     if raw_df is None or raw_df.empty:
         return None
+    lookup_key = str(yf_symbol or ticker)
     try:
         if isinstance(raw_df.columns, pd.MultiIndex):
             lvl0 = set(raw_df.columns.get_level_values(0))
             lvl1 = set(raw_df.columns.get_level_values(1))
-            if ticker in lvl0:
+            if lookup_key in lvl0:
+                sub = raw_df[lookup_key].copy()
+            elif ticker in lvl0:
                 sub = raw_df[ticker].copy()
+            elif lookup_key in lvl1:
+                sub = raw_df.xs(lookup_key, level=1, axis=1).copy()
             elif ticker in lvl1:
                 sub = raw_df.xs(ticker, level=1, axis=1).copy()
             else:
@@ -166,9 +214,9 @@ def _extract_ticker_df_from_yf(raw_df: pd.DataFrame, ticker: str, is_single: boo
         if sub.empty:
             return None
 
-        ny_dt = _normalize_5m_timestamps_to_ny_naive(sub.index)
+        norm_dt = _normalize_5m_timestamps_to_kst_naive(sub.index) if use_kst else _normalize_5m_timestamps_to_ny_naive(sub.index)
         out = pd.DataFrame({
-            "Datetime": ny_dt,
+            "Datetime": norm_dt,
             "Ticker": str(ticker),
             "Open": sub["Open"].astype(float).values,
             "High": sub["High"].astype(float).values,
@@ -214,7 +262,7 @@ def sanitize_5m_split_jumps(df: pd.DataFrame) -> pd.DataFrame:
     healed_parts: List[pd.DataFrame] = []
     for tk, grp in df.groupby("Ticker", sort=False):
         g = grp.sort_values("Datetime").reset_index(drop=True).copy()
-        if str(tk) in ("ANT", "BTC-USD", "XAUUSD") or len(g) < 2:
+        if str(tk) in ("ANT", "BTC-USD", "XAUUSD", "KOSPI") or len(g) < 2:
             healed_parts.append(g)
             continue
 
@@ -258,6 +306,32 @@ def refresh_intraday_5m_60d_cache(
     full_cache = _resolve_path(cache_path)
     full_meta = _resolve_path(meta_path)
     empty_cols = ["Datetime", "Ticker", "Open", "High", "Low", "Close", "Volume"]
+    dl_fn = downloader or yf.download
+
+    requested_krx = [str(t) for t in dict.fromkeys(tickers or []) if str(t) in KRX_SESSION_TICKERS]
+
+    def _fetch_krx_list(krx_list: List[str]) -> List[pd.DataFrame]:
+        out_frames: List[pd.DataFrame] = []
+        for tk_k in krx_list:
+            yf_sym = KRX_YF_SYMBOL_MAP.get(tk_k, tk_k)
+            try:
+                raw_k = dl_fn(
+                    yf_sym,
+                    period="60d",
+                    interval="5m",
+                    prepost=False,
+                    progress=False,
+                    auto_adjust=True,
+                    timeout=20,
+                )
+                parsed_k = _extract_ticker_df_from_yf(
+                    raw_k, tk_k, is_single=True, yf_symbol=yf_sym, use_kst=True
+                )
+                if parsed_k is not None and not parsed_k.empty:
+                    out_frames.append(parsed_k)
+            except Exception:
+                continue
+        return out_frames
 
     if not should_refresh_60d_cache(cache_path=cache_path, meta_path=meta_path, now_et=now_et, force_refresh=force_refresh):
         if os.path.exists(full_cache):
@@ -265,16 +339,31 @@ def refresh_intraday_5m_60d_cache(
                 cached = pd.read_parquet(full_cache)
                 if not cached.empty and "Datetime" in cached.columns:
                     cached["Datetime"] = pd.to_datetime(cached["Datetime"])
+                    if requested_krx and "Ticker" in cached.columns:
+                        present_tks = set(cached["Ticker"].astype(str).unique())
+                        missing_krx = [k for k in requested_krx if k not in present_tks]
+                        if missing_krx:
+                            krx_new = _fetch_krx_list(missing_krx)
+                            if krx_new:
+                                cached = pd.concat([cached] + krx_new, ignore_index=True)
+                                cached["Datetime"] = pd.to_datetime(cached["Datetime"]).dt.tz_localize(None)
+                                cached["Ticker"] = cached["Ticker"].astype(str)
+                                cached = cached.sort_values(["Ticker", "Datetime"]).drop_duplicates(subset=["Ticker", "Datetime"], keep="last").reset_index(drop=True)
+                                try:
+                                    cached.to_parquet(full_cache, index=False)
+                                except Exception:
+                                    pass
                     return cached
             except Exception:
                 pass
         return pd.DataFrame(columns=empty_cols)
 
-    dl_fn = downloader or yf.download
     dl_tickers = [
         str(t)
         for t in dict.fromkeys(tickers or [])
-        if str(t) not in CONTINUOUS_24H_TICKERS and str(t) not in NON_US_SESSION_TICKERS
+        if str(t) not in CONTINUOUS_24H_TICKERS
+        and str(t) not in NON_US_SESSION_TICKERS
+        and str(t) not in KRX_SESSION_TICKERS
     ]
     collected: List[pd.DataFrame] = []
 
@@ -319,6 +408,9 @@ def refresh_intraday_5m_60d_cache(
                         collected.append(parsed)
                 except Exception:
                     continue
+
+    if requested_krx:
+        collected.extend(_fetch_krx_list(requested_krx))
 
     existing_df = pd.DataFrame(columns=empty_cols)
     if os.path.exists(full_cache):
@@ -984,6 +1076,403 @@ def compute_continuous_24h_corridor(
     }
 
 
+def _align_day_krx_bars_to_slots(day_krx: pd.DataFrame) -> Tuple[np.ndarray, float, float]:
+    """将韩国 KRX 单日 09:00~15:30 KST 5m K 线映射到 78 个标准时间槽 (09:00~15:25 KST)。"""
+    arr = np.full(len(KRX_TIME_SLOTS), np.nan, dtype=float)
+    krx_sorted = day_krx.sort_values("Datetime")
+    anchor_open = float(krx_sorted["Open"].iloc[0])
+    if anchor_open <= 0 or not math.isfinite(anchor_open):
+        anchor_open = float(krx_sorted["Close"].iloc[0])
+    rth_close = float(krx_sorted["Close"].iloc[-1])
+
+    for dt_val, c_val in zip(krx_sorted["Datetime"], krx_sorted["Close"]):
+        if not math.isfinite(c_val) or c_val <= 0:
+            continue
+        cur_min = int(dt_val.hour) * 60 + int(dt_val.minute)
+        if cur_min < 540 or cur_min > 935:
+            continue
+        slot_idx = min(len(KRX_TIME_SLOTS) - 1, (cur_min - 540) // 5)
+        if 0 <= slot_idx < len(KRX_TIME_SLOTS):
+            arr[slot_idx] = float(c_val)
+
+    s = pd.Series(arr).ffill().bfill()
+    return s.to_numpy(dtype=float), anchor_open, rth_close
+
+
+def extract_krx_historical_day_profiles(
+    df_tk: Optional[pd.DataFrame],
+    forecast_date: Any,
+) -> List[Dict[str, Any]]:
+    """
+    提取严格早于 forecast_date 的韩国 KRX 历史完整交易日走势样本 (09:00~15:30 KST，Zero Lookahead)。
+    """
+    if df_tk is None or df_tk.empty:
+        return []
+    f_date = pd.Timestamp(forecast_date).date()
+
+    df = df_tk.copy()
+    dt_s = pd.to_datetime(df["Datetime"])
+    if getattr(dt_s.dt, "tz", None) is not None:
+        dt_s = dt_s.dt.tz_convert(_KST_TZ).dt.tz_localize(None)
+    df["Datetime"] = dt_s
+    df["_date"] = df["Datetime"].dt.date
+    # 红线：严格剥离 >= forecast_date 的当日及未来数据，杜绝未来函数泄漏
+    df = df[df["_date"] < f_date].copy()
+    if df.empty:
+        return []
+
+    df["_min"] = df["Datetime"].dt.hour * 60 + df["Datetime"].dt.minute
+    krx = df[(df["_min"] >= 9 * 60) & (df["_min"] <= 15 * 60 + 35)].sort_values("Datetime")
+    if krx.empty:
+        return []
+
+    raw_days: List[Tuple[date, np.ndarray, float, float]] = []
+    for d, grp in krx.groupby("_date", sort=True):
+        if len(grp) < MIN_KRX_BARS_PER_DAY:
+            continue
+        slot_closes, anchor_open, rth_close = _align_day_krx_bars_to_slots(grp)
+        if anchor_open <= 0 or rth_close <= 0 or np.isnan(slot_closes).any():
+            continue
+        raw_days.append((d, slot_closes, anchor_open, rth_close))
+
+    if len(raw_days) < 2:
+        return []
+
+    profiles: List[Dict[str, Any]] = []
+    prev_closes_list: List[float] = [raw_days[0][3]]
+    for idx in range(1, len(raw_days)):
+        d, slot_closes, anchor_open, rth_close = raw_days[idx]
+        prev_c = raw_days[idx - 1][3]
+        if prev_c <= 0:
+            prev_closes_list.append(rth_close)
+            continue
+
+        gap_pct = ((anchor_open - prev_c) / prev_c) * 100.0
+        if len(prev_closes_list) >= 3:
+            tail_c = np.asarray(prev_closes_list[-6:], dtype=float)
+            rets = np.diff(tail_c) / np.maximum(tail_c[:-1], 1e-9) * 100.0
+            vol_5d = float(np.std(rets)) if len(rets) >= 2 else abs(float(rets[-1]))
+        else:
+            vol_5d = 1.2
+        vol_5d = float(np.clip(vol_5d, 0.2, 12.0))
+
+        rel_path = ((slot_closes - anchor_open) / anchor_open) * 100.0
+        close_ret = float(rel_path[-1])
+        early_peak = float(np.max(rel_path[:18]))  # 09:00 ~ 10:25 KST
+        early_trough = float(np.min(rel_path[:18]))
+
+        early_high_fade = bool(early_peak >= 0.35 and close_ret <= early_peak - 0.45)
+        early_dip_rebound = bool(early_trough <= -0.35 and close_ret >= early_trough + 0.45)
+        trend_up = bool(close_ret >= 0.45 and not early_high_fade)
+        trend_down = bool(close_ret <= -0.45 and not early_dip_rebound)
+
+        profiles.append({
+            "date": d.strftime("%Y-%m-%d"),
+            "date_obj": d,
+            "prev_close": round(prev_c, 2),
+            "open": round(anchor_open, 2),
+            "close": round(rth_close, 2),
+            "gap_pct": float(gap_pct),
+            "vol_5d": float(vol_5d),
+            "rel_path": rel_path,
+            "close_ret_pct": close_ret,
+            "early_high_fade": early_high_fade,
+            "early_dip_rebound": early_dip_rebound,
+            "trend_up": trend_up,
+            "trend_down": trend_down,
+        })
+        prev_closes_list.append(rth_close)
+
+    return profiles
+
+
+def _format_krx_pattern_summary(neighbors: List[Dict[str, Any]], median_close_ret: float, gap_pct: float) -> Tuple[str, Dict[str, Any]]:
+    k_cnt = len(neighbors)
+    fade_cnt = sum(1 for x in neighbors if x["early_high_fade"])
+    reb_cnt = sum(1 for x in neighbors if x["early_dip_rebound"])
+    up_cnt = sum(1 for x in neighbors if x["trend_up"])
+    dn_cnt = sum(1 for x in neighbors if x["trend_down"])
+
+    candidates = [
+        ("出现早盘冲高回落", fade_cnt),
+        ("出现早盘下探后 V 型回升", reb_cnt),
+        ("呈顺风单边推涨", up_cnt),
+        ("呈弱势震荡阴跌", dn_cnt),
+    ]
+    best_label, best_cnt = max(candidates, key=lambda kv: kv[1])
+    pct_share = round((best_cnt / max(1, k_cnt)) * 100)
+    if pct_share < 30:
+        best_label = "全天呈窄幅均衡拉锯"
+        pct_share = max(pct_share, round((sum(1 for x in neighbors if abs(x["close_ret_pct"]) < 1.0) / max(1, k_cnt)) * 100))
+
+    gap_tag = f"韩盘开盘跳空 {gap_pct:+.2f}%" if abs(gap_pct) >= 0.1 else "韩盘平开开盘"
+    summary_text = f"历史匹配 {k_cnt} 个相似韩盘开盘日（{gap_tag}）：{pct_share}% {best_label}，中位数收盘 {median_close_ret:+.1f}%"
+    stats = {
+        "k_matched": k_cnt,
+        "early_high_fade_pct": round(fade_cnt / max(1, k_cnt) * 100.0, 1),
+        "early_dip_rebound_pct": round(reb_cnt / max(1, k_cnt) * 100.0, 1),
+        "trend_up_pct": round(up_cnt / max(1, k_cnt) * 100.0, 1),
+        "trend_down_pct": round(dn_cnt / max(1, k_cnt) * 100.0, 1),
+        "median_close_ret_pct": round(float(median_close_ret), 2),
+    }
+    return summary_text, stats
+
+
+def compute_krx_intraday_corridor(
+    ticker: str,
+    df_tk: Optional[pd.DataFrame],
+    forecast_date: Any,
+    prev_close: float,
+    anchor_open: float,
+    k_neighbors: int = 12,
+    today_vol_5d: Optional[float] = None,
+) -> Dict[str, Any]:
+    """
+    为韩国 KRX 指数 (KOSPI / ^KS11) 构建专属 09:00 ~ 15:25 KST (78 槽) 盘中推演走廊。
+    - 严格零未来函数泄漏：仅匹配 date < forecast_date 的历史韩盘交易日。
+    - 09:00 KST 首根开盘价直接锁定走廊锚点，不强行绘制美股 PMH/PML，全程点数单位零美元符。
+    """
+    f_date_str = pd.Timestamp(forecast_date).strftime("%Y-%m-%d")
+    tk = str(ticker or "KOSPI").strip().upper()
+    pc_val = round(_safe_float(prev_close, 0.0), 2)
+    ao_val = round(_safe_float(anchor_open, pc_val), 2)
+    if ao_val <= 0 and pc_val > 0:
+        ao_val = pc_val
+    gap_pct = round(((ao_val - pc_val) / pc_val) * 100.0, 2) if (pc_val > 0 and ao_val > 0) else 0.0
+
+    base_item: Dict[str, Any] = {
+        "ticker": tk,
+        "forecast_date": f_date_str,
+        "prev_close": pc_val,
+        "anchor_open": ao_val,
+        "pmh": 0.0,
+        "pml": 0.0,
+        "gap_pct": gap_pct,
+        "session_tz": "KST",
+        "time_slots": list(KRX_TIME_SLOTS),
+        "is_index": True,
+        "price_unit": "pts",
+        "early_window_slot": 3,
+        "early_window_label": "09:15 KST",
+        "anchor_label": "09:00 KST 开盘已锁定",
+        "meta_header": f"目标日 {f_date_str} · 🔒 09:00 KST 开盘已锁定 · 开盘锚 {ao_val:,.2f} · 昨收 {pc_val:,.2f}",
+        "p25_prices": [],
+        "p50_prices": [],
+        "p75_prices": [],
+        "p25_pcts": [],
+        "p50_pcts": [],
+        "p75_pcts": [],
+        "actual_prices": [None] * len(KRX_TIME_SLOTS),
+        "actual_pcts": [None] * len(KRX_TIME_SLOTS),
+        "matched_dates": [],
+        "summary_text": "",
+        "pattern_stats": {},
+        "latest_slot": None,
+        "snapshot_locked": True,
+        "lock_window_tag": "KRX_0900_LOCKED",
+    }
+
+    profiles = extract_krx_historical_day_profiles(df_tk=df_tk, forecast_date=forecast_date)
+    if len(profiles) < MIN_HISTORY_DAYS or ao_val <= 0:
+        msg = f"韩盘分时样本积累中（当前 {len(profiles)}/{MIN_HISTORY_DAYS} 日），满 {MIN_HISTORY_DAYS} 个交易日自动开启走廊"
+        base_item.update({
+            "status": "insufficient_history",
+            "history_days_count": len(profiles),
+            "status_message": msg,
+            "summary_text": msg,
+            "divergence": {
+                "status": "INSUFFICIENT_HISTORY",
+                "badge": "🇰🇷 韩盘样本积累中 · 满10日开启走廊",
+                "color": "#9ca3af",
+                "latest_slot": None,
+            },
+        })
+        return base_item
+
+    if today_vol_5d is None or not math.isfinite(float(today_vol_5d)):
+        vol_ref = float(np.mean([p["vol_5d"] for p in profiles[-5:]]))
+    else:
+        vol_ref = float(today_vol_5d)
+
+    feat_mat = np.array([[p["gap_pct"], p["vol_5d"]] for p in profiles], dtype=float)
+    target_vec = np.array([gap_pct, vol_ref], dtype=float)
+    stds = np.std(feat_mat, axis=0)
+    stds = np.where(stds < 0.25, 0.25, stds)
+    weights = np.array([1.8, 0.7], dtype=float)
+
+    norm_diff = ((feat_mat - target_vec) / stds) * weights
+    dists = np.sqrt(np.sum(norm_diff ** 2, axis=1))
+    if abs(gap_pct) >= 0.35:
+        same_dir = (feat_mat[:, 0] * gap_pct) > 0
+        dists = dists + np.where(same_dir, 0.0, 1.5)
+
+    k_use = min(int(k_neighbors), len(profiles))
+    top_indices = np.argsort(dists)[:k_use]
+    neighbors = [profiles[int(i)] for i in top_indices]
+
+    paths = np.stack([n["rel_path"] for n in neighbors], axis=0)
+    p25_pcts = np.percentile(paths, 25, axis=0)
+    p50_pcts = np.percentile(paths, 50, axis=0)
+    p75_pcts = np.percentile(paths, 75, axis=0)
+
+    p25_prices = [round(ao_val * (1.0 + float(x) / 100.0), 2) for x in p25_pcts]
+    p50_prices = [round(ao_val * (1.0 + float(x) / 100.0), 2) for x in p50_pcts]
+    p75_prices = [round(ao_val * (1.0 + float(x) / 100.0), 2) for x in p75_pcts]
+
+    summary_text, pattern_stats = _format_krx_pattern_summary(neighbors, float(p50_pcts[-1]), gap_pct)
+    matched_dates = sorted([n["date"] for n in neighbors])
+
+    base_item.update({
+        "status": "ok",
+        "status_message": "",
+        "history_days_count": len(profiles),
+        "p25_prices": p25_prices,
+        "p50_prices": p50_prices,
+        "p75_prices": p75_prices,
+        "p25_pcts": [round(float(x), 3) for x in p25_pcts],
+        "p50_pcts": [round(float(x), 3) for x in p50_pcts],
+        "p75_pcts": [round(float(x), 3) for x in p75_pcts],
+        "matched_dates": matched_dates,
+        "summary_text": summary_text,
+        "pattern_stats": pattern_stats,
+        "divergence": {
+            "status": "PRE_OPEN",
+            "badge": "⏳ 等待 09:00 KST 韩盘开盘锚定走势",
+            "color": "#9ca3af",
+            "latest_slot": None,
+        },
+    })
+    return base_item
+
+
+def _resolve_krx_target_date_and_lock(
+    df_tk: Optional[pd.DataFrame],
+    intraday_info: Optional[Dict[str, Any]],
+    existing_item: Optional[Dict[str, Any]],
+    cur_kst: datetime,
+) -> Tuple[date, bool, str]:
+    """判定韩国 KRX (09:00~15:30 KST) 推演目标日与锁定状态。"""
+    info = intraday_info or {}
+    rth_d_str = str(info.get("rth_date") or "").strip()
+    if rth_d_str:
+        try:
+            rth_d = pd.Timestamp(rth_d_str).date()
+            return rth_d, True, "KRX_0900_LOCKED"
+        except Exception:
+            pass
+
+    if df_tk is not None and not df_tk.empty and "Datetime" in df_tk.columns:
+        dts = pd.to_datetime(df_tk["Datetime"])
+        if getattr(dts.dt, "tz", None) is not None:
+            dts = dts.dt.tz_convert(_KST_TZ).dt.tz_localize(None)
+        mins = dts.dt.hour * 60 + dts.dt.minute
+        krx_dts = dts[(mins >= 9 * 60) & (mins <= 15 * 60 + 35)]
+        if not krx_dts.empty:
+            return krx_dts.max().date(), True, "KRX_0900_LOCKED"
+
+    if isinstance(existing_item, dict) and str(existing_item.get("forecast_date", "")).strip():
+        try:
+            return pd.Timestamp(str(existing_item["forecast_date"])).date(), True, "KRX_0900_LOCKED"
+        except Exception:
+            pass
+
+    fallback_d = cur_kst.date()
+    while fallback_d.weekday() >= 5:
+        fallback_d -= timedelta(days=1)
+    return fallback_d, True, "KRX_0900_LOCKED"
+
+
+def _extract_krx_day_features_for_target(
+    df_tk: Optional[pd.DataFrame],
+    target_date: date,
+    intraday_info: Optional[Dict[str, Any]],
+    history_df: Optional[pd.DataFrame],
+    rq: Optional[Dict[str, Any]],
+    cur_kst: datetime,
+) -> Tuple[float, float, List[Optional[float]]]:
+    """提取 KRX 目标日 prev_close, 09:00 KST 开盘锚 anchor_open 及当日实盘 5m 序列 (78 槽)。"""
+    target_str = target_date.strftime("%Y-%m-%d")
+    actual_prices: List[Optional[float]] = [None] * len(KRX_TIME_SLOTS)
+    prev_close = 0.0
+    anchor_open = 0.0
+
+    if df_tk is not None and not df_tk.empty:
+        sub = df_tk.copy()
+        dt_s = pd.to_datetime(sub["Datetime"])
+        if getattr(dt_s.dt, "tz", None) is not None:
+            dt_s = dt_s.dt.tz_convert(_KST_TZ).dt.tz_localize(None)
+        sub["Datetime"] = dt_s
+        sub["_date"] = sub["Datetime"].dt.date
+        sub["_min"] = sub["Datetime"].dt.hour * 60 + sub["Datetime"].dt.minute
+
+        hist_krx = sub[(sub["_date"] < target_date) & (sub["_min"] >= 9 * 60) & (sub["_min"] <= 15 * 60 + 35)].sort_values("Datetime")
+        if not hist_krx.empty:
+            prev_close = float(hist_krx["Close"].iloc[-1])
+
+        tgt_krx = sub[(sub["_date"] == target_date) & (sub["_min"] >= 9 * 60) & (sub["_min"] <= 15 * 60 + 35)].sort_values("Datetime")
+        if not tgt_krx.empty:
+            anchor_open = float(tgt_krx["Open"].iloc[0])
+            if anchor_open <= 0 or not math.isfinite(anchor_open):
+                anchor_open = float(tgt_krx["Close"].iloc[0])
+            for dt_val, c_val in zip(tgt_krx["Datetime"], tgt_krx["Close"]):
+                if math.isfinite(float(c_val)) and float(c_val) > 0:
+                    c_min = int(dt_val.hour) * 60 + int(dt_val.minute)
+                    s_idx = min(len(KRX_TIME_SLOTS) - 1, max(0, (c_min - 540) // 5))
+                    actual_prices[s_idx] = round(float(c_val), 2)
+
+    if prev_close <= 0 and history_df is not None and not getattr(history_df, "empty", True) and "Close" in history_df.columns:
+        hd = history_df.copy()
+        try:
+            idx_dates = pd.to_datetime(hd.index).date
+            prior_hd = hd[idx_dates < target_date]
+            if not prior_hd.empty:
+                prev_close = _safe_float(prior_hd["Close"].iloc[-1], 0.0)
+            elif len(hd) >= 2:
+                prev_close = _safe_float(hd["Close"].iloc[-2], _safe_float(hd["Close"].iloc[-1], 0.0))
+            else:
+                prev_close = _safe_float(hd["Close"].iloc[-1], 0.0)
+        except Exception:
+            prev_close = _safe_float(hd["Close"].iloc[-1], 0.0)
+
+    info = intraday_info or {}
+    if str(info.get("rth_date", "")) == target_str:
+        if _safe_float(info.get("rth_open"), 0.0) > 0 and anchor_open <= 0:
+            anchor_open = float(info["rth_open"])
+        for bar_row in info.get("krx_5m_series") or []:
+            if isinstance(bar_row, (list, tuple)) and len(bar_row) >= 5:
+                t_str = str(bar_row[0])
+                o_v = _safe_float(bar_row[1], 0.0)
+                c_v = _safe_float(bar_row[4], 0.0)
+                if anchor_open <= 0 and o_v > 0:
+                    anchor_open = o_v
+                if ":" in t_str and c_v > 0:
+                    try:
+                        hh, mm = map(int, t_str.split(":")[:2])
+                        c_min = hh * 60 + mm
+                        if 540 <= c_min <= 935:
+                            s_idx = min(len(KRX_TIME_SLOTS) - 1, (c_min - 540) // 5)
+                            actual_prices[s_idx] = round(c_v, 2)
+                    except Exception:
+                        pass
+
+    rq_dict = rq or {}
+    if prev_close <= 0 and _safe_float(rq_dict.get("prev_close"), 0.0) > 0:
+        prev_close = float(rq_dict["prev_close"])
+    live_px = _safe_float(rq_dict.get("last"), 0.0)
+    if target_date == cur_kst.date():
+        kst_min = cur_kst.hour * 60 + cur_kst.minute
+        if 9 * 60 <= kst_min <= 15 * 60 + 35 and live_px > 0:
+            if anchor_open <= 0:
+                anchor_open = _safe_float(rq_dict.get("open"), live_px)
+            cur_slot = min(len(KRX_TIME_SLOTS) - 1, max(0, (kst_min - 540) // 5))
+            actual_prices[cur_slot] = round(live_px, 2)
+
+    if anchor_open <= 0:
+        anchor_open = _safe_float(rq_dict.get("open"), 0.0) or live_px or prev_close
+
+    return prev_close, anchor_open, actual_prices
+
+
 def compute_knn_intraday_corridor(
     ticker: str,
     df_tk: Optional[pd.DataFrame],
@@ -1042,6 +1531,17 @@ def compute_knn_intraday_corridor(
         "snapshot_locked": False,
         "lock_window_tag": "DRAFT",
     }
+
+    if tk in KRX_SESSION_TICKERS:
+        return compute_krx_intraday_corridor(
+            ticker=tk,
+            df_tk=df_tk,
+            forecast_date=forecast_date,
+            prev_close=pc_val,
+            anchor_open=ao_val,
+            k_neighbors=k_neighbors,
+            today_vol_5d=today_vol_5d,
+        )
 
     if tk in NON_US_SESSION_TICKERS:
         non_us_msg = "韩国交易时段 (09:00–15:30 KST) · 盘中以实时 K 线与日线支撑阻力为准"
@@ -1195,10 +1695,16 @@ def evaluate_intraday_divergence(
     p50 = forecast_item.get("p50_prices") or []
     p75 = forecast_item.get("p75_prices") or []
     anchor_open = _safe_float(forecast_item.get("anchor_open"), 0.0)
+    is_krx = (
+        str(forecast_item.get("session_tz", "")).strip().upper() == "KST"
+        or str(forecast_item.get("ticker", "")).strip().upper() in KRX_SESSION_TICKERS
+    )
+    slots_ref = KRX_TIME_SLOTS if is_krx else TIME_SLOTS
+    pre_open_badge = "⏳ 等待 09:00 KST 韩盘开盘锚定走势" if is_krx else "⏳ 等待 09:30 ET 开盘锚定走势"
     if not p25 or not p75 or not actual_prices or anchor_open <= 0:
         return {
             "status": "PRE_OPEN",
-            "badge": "⏳ 等待 09:30 ET 开盘锚定走势",
+            "badge": pre_open_badge,
             "color": "#9ca3af",
             "latest_slot": None,
         }
@@ -1218,19 +1724,24 @@ def evaluate_intraday_divergence(
     if latest_idx is None:
         return {
             "status": "PRE_OPEN",
-            "badge": "⏳ 等待 09:30 ET 开盘锚定走势",
+            "badge": pre_open_badge,
             "color": "#9ca3af",
             "latest_slot": None,
         }
 
-    # 美东 09:45 ET 为第 4 个 5m 槽 (idx == 3: 09:30, 09:35, 09:40 -> idx 0,1,2 属于前 15 分钟观察窗)
+    # 开盘前 15 分钟观察窗：美股 09:45 ET / 韩盘 09:15 KST 启动背离纠偏 (slot_idx == 3)
     if latest_idx < 3:
+        open_win_badge = (
+            "⏳ 韩盘开盘前15分钟观察窗 (09:15 KST 启动背离纠偏)"
+            if is_krx
+            else "⏳ 开盘前15分钟观察窗 (09:45 ET 启动背离纠偏)"
+        )
         return {
             "status": "OPENING_WINDOW",
-            "badge": "⏳ 开盘前15分钟观察窗 (09:45 ET 启动背离纠偏)",
+            "badge": open_win_badge,
             "color": "#9ca3af",
             "latest_slot": latest_idx,
-            "latest_time": TIME_SLOTS[latest_idx],
+            "latest_time": slots_ref[latest_idx],
             "actual_price": round(float(actual_prices[latest_idx]), 2),
         }
 
@@ -1245,15 +1756,15 @@ def evaluate_intraday_divergence(
 
     if cur_px < (low_band - buf):
         div_status = "BELOW_P25"
-        badge = "⚠️ 跌破盘前剧本下沿 · 警惕高开低走/加速杀跌"
+        badge = "⚠️ 跌破韩盘推演下沿 · 警惕冲高回落/加速下探" if is_krx else "⚠️ 跌破盘前剧本下沿 · 警惕高开低走/加速杀跌"
         color = "#ff5252"
     elif cur_px > (high_band + buf):
         div_status = "ABOVE_P75"
-        badge = "🚀 突破盘前剧本上沿 · 多头超预期走强"
+        badge = "🚀 突破韩盘推演上沿 · 多头超预期走强" if is_krx else "🚀 突破盘前剧本上沿 · 多头超预期走强"
         color = "#00e676"
     else:
         div_status = "IN_CORRIDOR"
-        badge = "✅ 走势贴合盘前推演走廊"
+        badge = "✅ 走势贴合韩盘推演走廊" if is_krx else "✅ 走势贴合盘前推演走廊"
         color = "#60a5fa"
 
     return {
@@ -1261,7 +1772,7 @@ def evaluate_intraday_divergence(
         "badge": badge,
         "color": color,
         "latest_slot": latest_idx,
-        "latest_time": TIME_SLOTS[latest_idx],
+        "latest_time": slots_ref[latest_idx],
         "actual_price": round(cur_px, 2),
         "slot_p25": round(low_band, 2),
         "slot_p50": round(mid_band, 2),
@@ -1546,6 +2057,73 @@ def update_intraday_path_forecasts(
         tk_s = str(tk)
         df_tk = grouped_60d.get(tk_s)
         prev_item = prev_by_ticker.get(tk_s)
+
+        if tk_s in KRX_SESSION_TICKERS:
+            cur_kst = _to_kst_datetime(cur_et)
+            krx_info = (intraday_map or {}).get(tk_s, {})
+            krx_hist = (history_dict or {}).get(tk_s)
+            krx_rq = (realtime_quotes or {}).get(tk_s)
+            krx_target_d, krx_locked, krx_lock_tag = _resolve_krx_target_date_and_lock(
+                df_tk, krx_info, prev_item, cur_kst
+            )
+            krx_target_str = krx_target_d.strftime("%Y-%m-%d")
+            prev_k, anchor_k, new_actual_k = _extract_krx_day_features_for_target(
+                df_tk=df_tk,
+                target_date=krx_target_d,
+                intraday_info=krx_info,
+                history_df=krx_hist,
+                rq=krx_rq,
+                cur_kst=cur_kst,
+            )
+            krx_already_locked = bool(
+                isinstance(prev_item, dict)
+                and str(prev_item.get("forecast_date", "")) == krx_target_str
+                and bool(prev_item.get("snapshot_locked", False))
+                and prev_item.get("status") == "ok"
+                and str(prev_item.get("session_tz", "")).upper() == "KST"
+            )
+            if krx_already_locked:
+                item_k = dict(prev_item)
+                merged_actual_k = _merge_actual_prices(item_k.get("actual_prices"), new_actual_k)
+                item_k["actual_prices"] = merged_actual_k
+                ao_k_locked = _safe_float(item_k.get("anchor_open"), 0.0)
+                if ao_k_locked > 0:
+                    item_k["actual_pcts"] = [
+                        round(((float(v) - ao_k_locked) / ao_k_locked) * 100.0, 2)
+                        if (v is not None and _safe_float(v, 0.0) > 0)
+                        else None
+                        for v in merged_actual_k
+                    ]
+                div_k = evaluate_intraday_divergence(item_k, merged_actual_k, now_et=cur_et)
+                item_k["divergence"] = div_k
+                item_k["latest_slot"] = div_k.get("latest_slot")
+                by_ticker[tk_s] = item_k
+            else:
+                item_k = compute_krx_intraday_corridor(
+                    ticker=tk_s,
+                    df_tk=df_tk,
+                    forecast_date=krx_target_d,
+                    prev_close=prev_k,
+                    anchor_open=anchor_k,
+                    k_neighbors=12,
+                )
+                item_k["snapshot_locked"] = bool(krx_locked)
+                item_k["lock_window_tag"] = krx_lock_tag
+                item_k["locked_at_kst"] = cur_kst.strftime("%Y-%m-%d %H:%M:%S")
+                item_k["actual_prices"] = new_actual_k
+                ao_k_cur = _safe_float(item_k.get("anchor_open"), 0.0)
+                if ao_k_cur > 0:
+                    item_k["actual_pcts"] = [
+                        round(((float(v) - ao_k_cur) / ao_k_cur) * 100.0, 2)
+                        if (v is not None and _safe_float(v, 0.0) > 0)
+                        else None
+                        for v in new_actual_k
+                    ]
+                div_k = evaluate_intraday_divergence(item_k, new_actual_k, now_et=cur_et)
+                item_k["divergence"] = div_k
+                item_k["latest_slot"] = div_k.get("latest_slot")
+                by_ticker[tk_s] = item_k
+            continue
 
         if tk_s in NON_US_SESSION_TICKERS:
             rq_k = (realtime_quotes or {}).get(tk_s) or {}

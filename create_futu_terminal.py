@@ -147,6 +147,121 @@ def normalize_dual_probabilities(p_long: float, p_short: float):
     return rl, rs
 
 
+LEVERAGED_MIRROR_PARENT_MAP = {
+    "SOXL": ("SOXX", 1),
+    "SOXS": ("SOXX", -1),
+    "TQQQ": ("QQQ", 1),
+    "SQQQ": ("QQQ", -1),
+}
+
+
+def classify_trend_temperature(p_up: float, p_down: float):
+    """
+    统一「多空趋势温度」四档判定（50% 过半硬门槛）：
+    1. 偏多占优: p_up >= 50.0 且 p_up - p_down >= 8.0
+    2. 偏空占优: p_down >= 50.0 且 p_down - p_up >= 8.0
+    3. 多空均弱 · 观望: p_up < 50.0 且 p_down < 50.0
+    4. 多空拉锯: 至少一侧 >= 50.0 且 abs(p_up - p_down) < 8.0
+    返回 (label, tone)。
+    """
+    u, d = normalize_dual_probabilities(p_up, p_down)
+    if u >= 50.0 and (u - d) >= 8.0:
+        return "偏多占优", "up"
+    if d >= 50.0 and (d - u) >= 8.0:
+        return "偏空占优", "down"
+    if u < 50.0 and d < 50.0:
+        return "多空均弱 · 观望", "weak"
+    return "多空拉锯", "neutral"
+
+
+def apply_leveraged_mirror_parent_alignment(items_or_map):
+    """
+    3X 杠杆镜像对母指数锚定对齐：
+    - SOXL (+1) / SOXS (-1) 锚定母指数 SOXX
+    - TQQQ (+1) / SQQQ (-1) 锚定母指数 QQQ
+    正向 3X 与母指数同向对齐，反向 3X 与母指数镜像互换，根绝 SOXL 与 SOXS 同向打架。
+    支持 dict[ticker -> item] 或 list[item]。
+    """
+    if isinstance(items_or_map, dict):
+        lookup = {str(k).strip().upper(): v for k, v in items_or_map.items() if isinstance(v, dict)}
+    elif isinstance(items_or_map, list):
+        lookup = {}
+        for row in items_or_map:
+            if isinstance(row, dict) and row.get("ticker"):
+                lookup[str(row["ticker"]).strip().upper()] = row
+    else:
+        return items_or_map
+
+    def _extract_cal(d):
+        if "calibrated_win_rate_pct" in d or "calibrated_short_win_rate_pct" in d:
+            u = d.get("calibrated_win_rate_pct", 50.0)
+            s = d.get("calibrated_short_win_rate_pct", 50.0)
+            return normalize_dual_probabilities(u, s)
+        if "ai_long_win_rate_pct" in d or "ai_short_win_rate_pct" in d:
+            u = d.get("ai_long_win_rate_pct")
+            s = d.get("ai_short_win_rate_pct")
+            if u is not None and s is not None:
+                return normalize_dual_probabilities(u, s)
+        return None
+
+    def _extract_raw(d):
+        if any(k in d for k in ("predicted_win_rate_pct", "model_raw_prob_pct", "model_raw_short_prob_pct", "short_raw_prob_pct")):
+            u = d.get("predicted_win_rate_pct", d.get("model_raw_prob_pct", 50.0))
+            s = d.get("model_raw_short_prob_pct", d.get("short_raw_prob_pct", d.get("short_model_raw_prob_pct", 50.0)))
+            return normalize_dual_probabilities(u, s)
+        if "ai_long_raw_pct" in d or "ai_short_raw_pct" in d:
+            u = d.get("ai_long_raw_pct")
+            s = d.get("ai_short_raw_pct")
+            if u is not None and s is not None:
+                return normalize_dual_probabilities(u, s)
+        return None
+
+    for child_tk, (parent_tk, sign) in LEVERAGED_MIRROR_PARENT_MAP.items():
+        parent = lookup.get(parent_tk)
+        child = lookup.get(child_tk)
+        if not parent or not child:
+            continue
+        p_cal = _extract_cal(parent)
+        if p_cal is None:
+            continue
+        p_raw = _extract_raw(parent) or p_cal
+        if sign > 0:
+            c_cal_u, c_cal_d = p_cal[0], p_cal[1]
+            c_raw_u, c_raw_d = p_raw[0], p_raw[1]
+            note = f"镜像锚定 {parent_tk}"
+        else:
+            c_cal_u, c_cal_d = p_cal[1], p_cal[0]
+            c_raw_u, c_raw_d = p_raw[1], p_raw[0]
+            note = f"反向镜像 {parent_tk}"
+
+        if "calibrated_win_rate_pct" in child or "calibrated_short_win_rate_pct" in child:
+            child["calibrated_win_rate_pct"] = c_cal_u
+            child["calibrated_short_win_rate_pct"] = c_cal_d
+        if any(k in child for k in ("predicted_win_rate_pct", "model_raw_prob_pct", "base_raw_prob_pct")):
+            child["predicted_win_rate_pct"] = c_raw_u
+            child["model_raw_prob_pct"] = c_raw_u
+            child["base_raw_prob_pct"] = c_raw_u
+        if any(k in child for k in ("model_raw_short_prob_pct", "short_raw_prob_pct", "short_model_raw_prob_pct")):
+            child["model_raw_short_prob_pct"] = c_raw_d
+            child["short_raw_prob_pct"] = c_raw_d
+            child["short_model_raw_prob_pct"] = c_raw_d
+        if "ai_long_win_rate_pct" in child or "ai_short_win_rate_pct" in child:
+            child["ai_long_win_rate_pct"] = c_cal_u
+            child["ai_short_win_rate_pct"] = c_cal_d
+        if "ai_long_raw_pct" in child or "ai_short_raw_pct" in child:
+            child["ai_long_raw_pct"] = c_raw_u
+            child["ai_short_raw_pct"] = c_raw_d
+
+        t_lbl, t_tone = classify_trend_temperature(c_cal_u, c_cal_d)
+        child["mirror_parent"] = parent_tk
+        child["mirror_sign"] = int(sign)
+        child["mirror_note"] = note
+        child["trend_temperature_label"] = t_lbl
+        child["trend_temperature_tone"] = t_tone
+
+    return items_or_map
+
+
 def resolve_long_tp_sl_ordering_guard(
     active_price: float,
     entry_price: float = 0.0,
@@ -550,7 +665,9 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                             vix_regime=_active_vix_regime,
                             is_daily_breakdown=_is_daily_brk_lv,
                             is_inverse_decay_veto=_is_inv_veto_lv,
-                            is_bear_dominant=bool(_is_bear_regime or is_broken),
+                            is_bear_dominant=bool((not _is_inv_tk and _is_bear_regime) or is_broken),
+                            ticker=tk,
+                            is_inverse=_is_inv_tk,
                         )
                         item["four_h_div"] = _fh_sup_res["four_h_div"]
                         item["four_h_tag"] = _fh_sup_res["four_h_tag"]
@@ -677,6 +794,8 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                                 is_daily_breakdown=_is_daily_brk_lv,
                                 is_inverse_decay_veto=bool(_is_inv_tk),
                                 is_bear_dominant=True,
+                                ticker=tk,
+                                is_inverse=_is_inv_tk,
                             )
                             item["four_h_div"] = _fh_sup_res2["four_h_div"]
                             item["four_h_tag"] = _fh_sup_res2["four_h_tag"]
@@ -747,16 +866,16 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                         try:
                             import sr_anchor_engine as _sr_state_mod
                             _tk_anchor = _sr_anchors_lookup.get(tk.upper()) if isinstance(_sr_anchors_lookup, dict) else None
-                            _vix_back_now = _sr_state_mod._is_vix_backwardation_active(_active_vix_regime)
-                            _weather_bad = ("暴雨" in str((weather_info or {}).get("weather", "")))
+                            _vix_back_now = False if _is_inv_tk else _sr_state_mod._is_vix_backwardation_active(_active_vix_regime)
+                            _weather_bad = (False if _is_inv_tk else ("暴雨" in str((weather_info or {}).get("weather", ""))))
                             _short_dom = float(item.get("calibrated_short_win_rate_pct", 0.0) or 0.0) > float(item.get("calibrated_win_rate_pct", 50.0) or 50.0)
                             _bear_sup = bool(
                                 _vix_back_now
-                                or _is_bear_regime
+                                or (not _is_inv_tk and _is_bear_regime)
                                 or _weather_bad
                                 or _short_dom
-                                or bool(item.get("bear_inertia_active", False))
-                                or str(item.get("v46_regime_mode", "")) == "BEAR_INERTIA_C5"
+                                or (not _is_inv_tk and bool(item.get("bear_inertia_active", False)))
+                                or (not _is_inv_tk and str(item.get("v46_regime_mode", "")) == "BEAR_INERTIA_C5")
                             )
                             _sw_tp = float(item.get("target_profit_price") or 0.0)
                             _sw_sl = float(item.get("stop_loss_price") or 0.0)
@@ -777,6 +896,9 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                                     is_daily_breakdown=_is_daily_brk_lv,
                                     is_inverse_decay=bool(_is_inv_veto_lv or (_is_inv_tk and _short_dom)),
                                     ticker=tk,
+                                    is_vix_backwardation=_vix_back_now,
+                                    is_bear_dominant=bool(_short_dom or (not _is_inv_tk and _is_bear_regime)),
+                                    is_inverse=_is_inv_tk,
                                 )
                                 sc_map.update(_sr_eval)
                             else:
@@ -806,6 +928,9 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                                     is_daily_breakdown=_is_daily_brk_lv,
                                     is_inverse_decay=bool(_is_inv_veto_lv or (_is_inv_tk and _short_dom)),
                                     ticker=tk,
+                                    is_vix_backwardation=_vix_back_now,
+                                    is_bear_dominant=bool(_short_dom or (not _is_inv_tk and _is_bear_regime)),
+                                    is_inverse=_is_inv_tk,
                                 )
                                 _sr_eval["sr_anchor_locked"] = False
                                 sc_map.update(_sr_eval)
@@ -842,6 +967,16 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                         eff_atr_frac=eff_atr,
                     )
                     item.update(_guarded)
+
+                # 3X 杠杆镜像对母指数锚定对齐（SOXL/SOXS -> SOXX；TQQQ/SQQQ -> QQQ），保证排序与多空温度一致
+                apply_leveraged_mirror_parent_alignment(all_preds)
+                for _it_t in all_preds:
+                    _t_lbl, _t_tone = classify_trend_temperature(
+                        float(_it_t.get("calibrated_win_rate_pct", 50.0) or 50.0),
+                        float(_it_t.get("calibrated_short_win_rate_pct", 50.0) or 50.0),
+                    )
+                    _it_t["trend_temperature_label"] = _t_lbl
+                    _it_t["trend_temperature_tone"] = _t_tone
 
                 # 空头排序并分配 short_rank
                 short_candidates_sorted = sorted(
@@ -3823,7 +3958,10 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 <!-- 3. 多空趋势温度条 -->
                 <div class="trend-thermo-card">
                     <div class="thermo-header">
-                        <span>多空趋势温度</span>
+                        <span style="display:inline-flex; align-items:center; gap:6px; flex-wrap:wrap;">
+                            <span>多空趋势温度</span>
+                            <span id="pTrendMirrorNote" style="display:none; font-size:10px; font-weight:600; color:var(--accent); background:var(--accent-bg); border:1px solid var(--accent-border); padding:1px 6px; border-radius:4px;"></span>
+                        </span>
                         <span id="beginnerTrendHint">--</span>
                     </div>
                     <div class="thermo-nums">
@@ -5270,12 +5408,24 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             const rootDoc = INTRADAY_PATH_FORECASTS || {};
             const byTk = rootDoc.by_ticker || {};
             const item = byTk[ticker];
-            const timeSlots = Array.isArray(rootDoc.time_slots) && rootDoc.time_slots.length === 78
-                ? rootDoc.time_slots
-                : Array.from({ length: 78 }, (_, i) => {
-                    const tot = 570 + i * 5;
-                    return `${String(Math.floor(tot / 60)).padStart(2, "0")}:${String(tot % 60).padStart(2, "0")}`;
-                });
+            const isKrxPath = Boolean(item && (String(item.session_tz || "").toUpperCase() === "KST" || (isPointsTicker(ticker) && item.status === "ok")));
+            const fmtIpPx = (v) => {
+                if (v === null || v === undefined) return "--";
+                const n = Number(v);
+                if (!Number.isFinite(n) || n <= 0) return "--";
+                if (isKrxPath || isPointsTicker(ticker)) {
+                    return n.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+                }
+                return `$${n.toFixed(2)}`;
+            };
+            const timeSlots = (item && Array.isArray(item.time_slots) && item.time_slots.length === 78)
+                ? item.time_slots
+                : (Array.isArray(rootDoc.time_slots) && rootDoc.time_slots.length === 78
+                    ? rootDoc.time_slots
+                    : Array.from({ length: 78 }, (_, i) => {
+                        const tot = (isKrxPath ? 540 : 570) + i * 5;
+                        return `${String(Math.floor(tot / 60)).padStart(2, "0")}:${String(tot % 60).padStart(2, "0")}`;
+                    }));
 
             if (!item) {
                 if (sumEl) sumEl.innerText = `${ticker} 暂无当日盘中推演数据`;
@@ -5294,7 +5444,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             }
 
             const is24h = (item.status === "continuous_24h");
-            const isNonUs = (item.status === "non_us_session") || isPointsTicker(ticker);
+            const isNonUs = (item.status === "non_us_session");
             const actValidCnt = Array.isArray(item.actual_prices) ? item.actual_prices.filter(v => _ipNum(v, 0) > 0).length : 0;
             const p50ValidCnt = Array.isArray(item.p50_prices) ? item.p50_prices.filter(v => _ipNum(v, 0) > 0).length : 0;
             const has24hChart = is24h && actValidCnt >= 2 && p50ValidCnt >= 2;
@@ -5305,6 +5455,11 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             if (metaEl) {
                 if (isNonUs) {
                     metaEl.innerText = String(item.meta_header || "KRX 韩国交易所 (09:00–15:30 KST) · 亚太基准指数");
+                } else if (isKrxPath) {
+                    const aoK = _ipNum(item.anchor_open, 0);
+                    const pcK = _ipNum(item.prev_close, 0);
+                    const lockK = item.anchor_label || "09:00 KST 开盘已锁定";
+                    metaEl.innerText = `目标日 ${item.forecast_date || "--"} · 🔒 ${lockK} · 开盘锚 ${fmtIpPx(aoK)} · 昨收 ${fmtIpPx(pcK)}`;
                 } else if (is24h) {
                     if (item.meta_header) {
                         metaEl.innerText = String(item.meta_header);
@@ -5408,7 +5563,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 const hwArr = item.p75_pcts.map((h, i) => Math.abs(Number(h) - Number(item.p25_pcts[i] || 0)) / 2.0).filter(Number.isFinite);
                 if (hwArr.length) adaptOpenThresh = Math.max(0.005, 0.5 * ((hwArr.reduce((a, b) => a + b, 0) / hwArr.length) / 100.0));
             }
-            if (!has24hChart && !item.rth_open_aligned && act[0] !== null && act[0] > 0 && anchorOpen > 0 && Math.abs(act[0] - anchorOpen) / anchorOpen >= adaptOpenThresh) {
+            if (!has24hChart && !isKrxPath && !item.rth_open_aligned && act[0] !== null && act[0] > 0 && anchorOpen > 0 && Math.abs(act[0] - anchorOpen) / anchorOpen >= adaptOpenThresh) {
                 const rthOpen = act[0];
                 if (Array.isArray(item.p25_pcts) && Array.isArray(item.p50_pcts) && Array.isArray(item.p75_pcts) && item.p50_pcts.length === nSlots) {
                     p25 = item.p25_pcts.map(x => Number((rthOpen * (1.0 + Number(x) / 100.0)).toFixed(2)));
@@ -5424,7 +5579,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             }
 
             if (lvBar) {
-                const fmt = (v) => (v !== null && v > 0) ? `$${v.toFixed(2)}` : "--";
+                const fmt = (v) => fmtIpPx(v);
                 if (has24hChart) {
                     const lastVwap = vwapArr.length ? (vwapArr.slice().reverse().find(v => v !== null && v > 0) || null) : null;
                     lvBar.innerHTML = `
@@ -5435,6 +5590,14 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                         <span style="color:${pal.sub};">UTC开盘 ${fmt(utcOpen)}</span>
                         <span style="color:${pal.warn};">24H高 ${fmt(high24)}</span>
                         <span style="color:${pal.accent};">24H低 ${fmt(low24)}</span>
+                    `;
+                } else if (isKrxPath) {
+                    lvBar.innerHTML = `
+                        <span style="display:inline-flex;align-items:center;gap:4px;"><span style="width:10px;height:10px;background:${pal.svgCorridorFill};border:1px solid ${pal.accent};display:inline-block;border-radius:2px;"></span>正常波动带 (P25~P75)</span>
+                        <span style="color:${pal.svgP50}; font-weight:600;">┈ 预期中位线 (P50)</span>
+                        <span style="color:${pal.svgActual}; font-weight:600;">━ 今日韩盘走势</span>
+                        <span style="color:${pal.sub};">昨收 ${fmt(prevClose)}</span>
+                        <span style="color:${pal.accent};">09:00 KST 开盘锚 ${fmt(anchorOpen)}</span>
                     `;
                 } else {
                     lvBar.innerHTML = `
@@ -5471,11 +5634,13 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 const coreMid = (coreMin + coreMax) / 2.0;
                 const coreSpanRth = Math.max(coreMax - coreMin, (anchorOpen > 0 ? anchorOpen : coreMid) * 0.008);
                 const allowPad = 0.55 * coreSpanRth;
-                const rthCandidates = [
-                    { label: "昨收", val: prevClose, color: pal.svgAxis, dash: "5 4" },
-                    { label: "PMH", val: pmh, color: pal.warn, dash: "5 4" },
-                    { label: "PML", val: pml, color: pal.accent, dash: "5 4" },
-                ];
+                const rthCandidates = isKrxPath
+                    ? [{ label: "昨收", val: prevClose, color: pal.svgAxis, dash: "5 4" }]
+                    : [
+                        { label: "昨收", val: prevClose, color: pal.svgAxis, dash: "5 4" },
+                        { label: "PMH", val: pmh, color: pal.warn, dash: "5 4" },
+                        { label: "PML", val: pml, color: pal.accent, dash: "5 4" },
+                    ];
                 rthCandidates.forEach(rc => {
                     if (rc.val === null || !(rc.val > 0)) return;
                     const inSpan = rc.val >= (coreMin - allowPad) && rc.val <= (coreMax + allowPad);
@@ -5561,7 +5726,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 if (!Number.isFinite(y)) continue;
                 const pctStr = anchorOpen > 0 ? `${((val - anchorOpen) / anchorOpen * 100 >= 0 ? "+" : "")}${((val - anchorOpen) / anchorOpen * 100).toFixed(1)}%` : "";
                 parts.push(`<line x1="${pad.left}" y1="${y.toFixed(1)}" x2="${W - pad.right}" y2="${y.toFixed(1)}" stroke="${pal.svgGrid}" stroke-width="1" />`);
-                parts.push(`<text x="${W - pad.right + 6}" y="${(y + 3.5).toFixed(1)}" fill="${pal.svgAxis}" font-size="10.5" font-family="monospace">$${val.toFixed(2)}</text>`);
+                parts.push(`<text x="${W - pad.right + 6}" y="${(y + 3.5).toFixed(1)}" fill="${pal.svgAxis}" font-size="10.5" font-family="monospace">${fmtIpPx(val)}</text>`);
                 if (pctStr) {
                     parts.push(`<text x="${pad.left - 5}" y="${(y + 3.5).toFixed(1)}" text-anchor="end" fill="${pal.svgAxisMuted}" font-size="9.5" font-family="monospace">${pctStr}</text>`);
                 }
@@ -5597,8 +5762,9 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 });
                 const x0945 = xAt(3);
                 if (Number.isFinite(x0945)) {
+                    const earlyWinTxt = isKrxPath ? "09:15 KST 观察窗" : "09:45 背离窗";
                     parts.push(`<line x1="${x0945.toFixed(1)}" y1="${pad.top}" x2="${x0945.toFixed(1)}" y2="${H - pad.bottom}" stroke="${pal.svgDiv0945}" stroke-width="1.2" stroke-dasharray="3 3" />`);
-                    parts.push(`<text x="${(x0945 + 4).toFixed(1)}" y="${pad.top + 12}" fill="${pal.svgDiv0945Text}" font-size="10" font-weight="700">09:45 背离窗</text>`);
+                    parts.push(`<text x="${(x0945 + 4).toFixed(1)}" y="${pad.top + 12}" fill="${pal.svgDiv0945Text}" font-size="10" font-weight="700">${earlyWinTxt}</text>`);
                 }
             }
 
@@ -5663,7 +5829,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 const txtX = rf.alignRight ? (W - pad.right - 8).toFixed(1) : (pad.left + 6).toFixed(1);
                 const anchorAttr = rf.alignRight ? 'end' : 'start';
                 const sideTag = rf.alignRight ? 'right' : 'left';
-                parts.push(`<text class="ip-ref-label" data-side="${sideTag}" x="${txtX}" y="${rf.labelY.toFixed(1)}" text-anchor="${anchorAttr}" fill="${rf.color}" font-size="10" font-weight="700">${escapeNewsHtml(rf.label)} $${rf.val.toFixed(2)}</text>`);
+                parts.push(`<text class="ip-ref-label" data-side="${sideTag}" x="${txtX}" y="${rf.labelY.toFixed(1)}" text-anchor="${anchorAttr}" fill="${rf.color}" font-size="10" font-weight="700">${escapeNewsHtml(rf.label)} ${fmtIpPx(rf.val)}</text>`);
             });
 
             const upperPts = [];
@@ -5740,11 +5906,11 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 parts.push(`<g id="ipFarSrLower"><text x="${pad.left + 4}" y="${H - 7}" fill="${loClr}" font-size="10.5" font-weight="700">▼ 视窗外低撑: ${escapeNewsHtml(loTxt)}</text></g>`);
             }
             if (!has24hChart && farUpperRthRefs.length) {
-                const upRefTxt = farUpperRthRefs.map(r => `${r.label} $${r.val.toFixed(2)}`).join(" · ");
+                const upRefTxt = farUpperRthRefs.map(r => `${r.label} ${fmtIpPx(r.val)}`).join(" · ");
                 parts.push(`<g id="ipFarRefUpper"><text x="${pad.left + 4}" y="17" fill="${pal.warn}" font-size="10.5" font-weight="700">↑ ${escapeNewsHtml(upRefTxt)}（超出主视口）</text></g>`);
             }
             if (!has24hChart && farLowerRthRefs.length) {
-                const loRefTxt = farLowerRthRefs.map(r => `${r.label} $${r.val.toFixed(2)}`).join(" · ");
+                const loRefTxt = farLowerRthRefs.map(r => `${r.label} ${fmtIpPx(r.val)}`).join(" · ");
                 parts.push(`<g id="ipFarRefLower"><text x="${pad.left + 4}" y="${H - 7}" fill="${pal.accent}" font-size="10.5" font-weight="700">↓ ${escapeNewsHtml(loRefTxt)}（超出主视口）</text></g>`);
             }
 
@@ -5765,7 +5931,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                     hLine.style.display = "block";
                 }
                 if (tipEl) {
-                    const f = (v) => (v !== null && Number.isFinite(v)) ? `$${v.toFixed(2)}` : "--";
+                    const f = (v) => fmtIpPx(v);
                     if (has24hChart) {
                         const tStr = xLabelsFull ? (xLabelsFull[si] || "") : `${xLabels[si] || ""} UTC`;
                         const pxV = act[si];
@@ -5777,7 +5943,8 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                         const actDisp = (actVal !== null && Number.isFinite(actVal) && actVal > 0)
                             ? `<b style="color:${pal.svgActual};">${f(actVal)}</b>`
                             : `<span style="color:${pal.sub};">—（未到时段）</span>`;
-                        tipEl.innerHTML = `<b>${escapeNewsHtml(ticker)} · ${timeSlots[si] || ""} ET</b><br>实际 5m: ${actDisp}<br>P50 预期: <b style="color:${pal.svgP50};">${f(p50[si])}</b><br>走廊 [P25~P75]: <span style="color:${pal.accent};">${f(p25[si])} ~ ${f(p75[si])}</span>`;
+                        const tzLbl = isKrxPath ? "KST" : "ET";
+                        tipEl.innerHTML = `<b>${escapeNewsHtml(ticker)} · ${timeSlots[si] || ""} ${tzLbl}</b><br>实际 5m: ${actDisp}<br>P50 预期: <b style="color:${pal.svgP50};">${f(p50[si])}</b><br>走廊 [P25~P75]: <span style="color:${pal.accent};">${f(p25[si])} ~ ${f(p75[si])}</span>`;
                     }
                     tipEl.style.display = "block";
                 }
@@ -6886,10 +7053,36 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                     }
                     return [l, s];
                 };
-                const [longWr, shortWr] = _normProbsJs(
-                    aiItem.calibrated_win_rate_pct !== undefined ? Number(aiItem.calibrated_win_rate_pct) : 50.0,
-                    aiItem.calibrated_short_win_rate_pct !== undefined ? Number(aiItem.calibrated_short_win_rate_pct) : 50.0
-                );
+                const _MIRROR_MAP_JS = {
+                    "SOXL": { parent: "SOXX", sign: 1, note: "镜像锚定 SOXX" },
+                    "SOXS": { parent: "SOXX", sign: -1, note: "反向镜像 SOXX" },
+                    "TQQQ": { parent: "QQQ", sign: 1, note: "镜像锚定 QQQ" },
+                    "SQQQ": { parent: "QQQ", sign: -1, note: "反向镜像 QQQ" }
+                };
+                const _mCfg = _MIRROR_MAP_JS[String(ticker || "").toUpperCase()] || null;
+                const _mParentItem = (_mCfg && AI_PREDICTIONS && AI_PREDICTIONS.by_ticker) ? AI_PREDICTIONS.by_ticker[_mCfg.parent] : null;
+                let _calLIn = aiItem.calibrated_win_rate_pct !== undefined ? Number(aiItem.calibrated_win_rate_pct) : 50.0;
+                let _calSIn = aiItem.calibrated_short_win_rate_pct !== undefined ? Number(aiItem.calibrated_short_win_rate_pct) : 50.0;
+                if (_mCfg && _mParentItem) {
+                    const [pCalL, pCalS] = _normProbsJs(
+                        _mParentItem.calibrated_win_rate_pct !== undefined ? Number(_mParentItem.calibrated_win_rate_pct) : 50.0,
+                        _mParentItem.calibrated_short_win_rate_pct !== undefined ? Number(_mParentItem.calibrated_short_win_rate_pct) : 50.0
+                    );
+                    _calLIn = _mCfg.sign > 0 ? pCalL : pCalS;
+                    _calSIn = _mCfg.sign > 0 ? pCalS : pCalL;
+                }
+                const [longWr, shortWr] = _normProbsJs(_calLIn, _calSIn);
+                const mirrorNoteEl = document.getElementById("pTrendMirrorNote");
+                if (mirrorNoteEl) {
+                    const mNoteTxt = String(aiItem.mirror_note || (_mCfg && _mParentItem ? _mCfg.note : "")).trim();
+                    if (mNoteTxt) {
+                        mirrorNoteEl.innerText = mNoteTxt;
+                        mirrorNoteEl.style.display = "inline-block";
+                    } else {
+                        mirrorNoteEl.innerText = "";
+                        mirrorNoteEl.style.display = "none";
+                    }
+                }
 
                 if (actText) {
                     let chosenAct = "";
@@ -6974,13 +7167,30 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 if (lBar) lBar.style.width = `${longRatio.toFixed(1)}%`;
                 if (sBar) sBar.style.width = `${shortRatio.toFixed(1)}%`;
                 if (trendHint) {
-                    if (longWr - shortWr >= 10) { trendHint.innerText = "偏多占优"; trendHint.style.color = pal.up; }
-                    else if (shortWr - longWr >= 10) { trendHint.innerText = "偏空占优"; trendHint.style.color = pal.down; }
-                    else { trendHint.innerText = "多空拉锯"; trendHint.style.color = pal.warn; }
+                    if (longWr >= 50.0 && (longWr - shortWr) >= 8.0) {
+                        trendHint.innerText = "偏多占优";
+                        trendHint.style.color = pal.up;
+                    } else if (shortWr >= 50.0 && (shortWr - longWr) >= 8.0) {
+                        trendHint.innerText = "偏空占优";
+                        trendHint.style.color = pal.down;
+                    } else if (longWr < 50.0 && shortWr < 50.0) {
+                        trendHint.innerText = "多空均弱 · 观望";
+                        trendHint.style.color = pal.sub;
+                    } else {
+                        trendHint.innerText = "多空拉锯";
+                        trendHint.style.color = pal.warn;
+                    }
                 }
 
-                const _rawLPairIn = aiItem.predicted_win_rate_pct !== undefined ? aiItem.predicted_win_rate_pct : (aiItem.model_raw_prob_pct || 50.0);
-                const _rawSPairIn = aiItem.model_raw_short_prob_pct !== undefined ? aiItem.model_raw_short_prob_pct : (aiItem.short_raw_prob_pct !== undefined ? aiItem.short_raw_prob_pct : (aiItem.short_model_raw_prob_pct || 50.0));
+                let _rawLPairIn = aiItem.predicted_win_rate_pct !== undefined ? aiItem.predicted_win_rate_pct : (aiItem.model_raw_prob_pct || 50.0);
+                let _rawSPairIn = aiItem.model_raw_short_prob_pct !== undefined ? aiItem.model_raw_short_prob_pct : (aiItem.short_raw_prob_pct !== undefined ? aiItem.short_raw_prob_pct : (aiItem.short_model_raw_prob_pct || 50.0));
+                if (_mCfg && _mParentItem) {
+                    const _pRawL = _mParentItem.predicted_win_rate_pct !== undefined ? _mParentItem.predicted_win_rate_pct : (_mParentItem.model_raw_prob_pct || 50.0);
+                    const _pRawS = _mParentItem.model_raw_short_prob_pct !== undefined ? _mParentItem.model_raw_short_prob_pct : (_mParentItem.short_raw_prob_pct !== undefined ? _mParentItem.short_raw_prob_pct : (_mParentItem.short_model_raw_prob_pct || 50.0));
+                    const [pRL, pRS] = _normProbsJs(_pRawL, _pRawS);
+                    _rawLPairIn = _mCfg.sign > 0 ? pRL : pRS;
+                    _rawSPairIn = _mCfg.sign > 0 ? pRS : pRL;
+                }
                 const [rawLNorm, rawSNorm] = _normProbsJs(_rawLPairIn, _rawSPairIn);
                 if (lRawEl) {
                     lRawEl.innerText = `原始多: ${rawLNorm.toFixed(1)}%`;
@@ -7044,18 +7254,23 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                     let leftHtml = "";
                     let rightHtml = "";
 
+                    const isInvMulti = (["SOXS", "SQQQ", "VIXY"].includes(String(ticker || "").toUpperCase()));
+                    const supShortLbl = String(aiItem.suppression_short_tag || "").trim() || (isInvMulti ? "日线破位/反向衰减" : "空头/VIX倒挂");
+                    const s1GapTag = (s1Src === "GAP_PULLBACK") ? " (缺口回撤)" : "";
+                    const s2GapTag = (s2Src === "GAP_PULLBACK") ? " (缺口回撤)" : "";
+
                     if (srState === "ALL_SUPPORT_BREACHED") {
                         leftHtml = `<span style="color:${pal.down}; font-weight:700;">⚠️ 今日原定支撑全线跌穿 (原S1:${s1v} / 原S2:${s2v}) · 下方无真实支撑，别猜底</span>`;
                         rightHtml = `<span style="color:${pal.down};">上方前压 R1:${r1v} / R2:${r2v}</span>`;
                     } else if (srState === "S1_BREACHED") {
                         const s2IsEst = (s2Src === "ATR_ESTIMATE");
                         const s2Clr = s2IsEst ? pal.warn : pal.up;
-                        const s2Tag = s2IsEst ? `退守估算防线 S2:${s2v} (无真实筹码)` : `退守 S2:${s2v}`;
+                        const s2Tag = s2IsEst ? `退守估算防线 S2:${s2v} (无真实筹码)` : `退守 S2:${s2v}${s2GapTag}`;
                         leftHtml = `<span><s style="color:${pal.sub};">S1:${s1v}</s> <span style="color:${pal.warn}; font-weight:700;">已击穿转压 ➔ </span><span style="color:${s2Clr}; font-weight:700;">${s2Tag}</span></span>`;
                         rightHtml = `<span style="color:${pal.down};">${r1Src === "ATR_ESTIMATE" ? "估算阻力" : "阻力"} R1:${r1v} / R2:${r2v}</span>`;
                     } else if (srState === "ALL_RESISTANCE_BROKEN") {
                         if (aiItem.bear_suppressed_r1_break) {
-                            leftHtml = `<span style="color:${pal.warn}; font-weight:700;">⚠️ 原R1:${r1v} / R2:${r2v} (跳空越过 · 空头/倒挂压制)</span>`;
+                            leftHtml = `<span style="color:${pal.warn}; font-weight:700;">⚠️ 原R1:${r1v} / R2:${r2v} (跳空越过 · ${escapeNewsHtml(supShortLbl)}压制)</span>`;
                             rightHtml = `<span style="color:${pal.sub}; font-weight:600;">短线以 VWAP 为界 · 暂不追高</span>`;
                         } else {
                             leftHtml = `<span style="color:${pal.up}; font-weight:700;">🛡️ 原R2:${r2v} (已突破 ➔ 转为防守底线)</span>`;
@@ -7065,7 +7280,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                         const isFarR2 = Boolean(aiItem.r2_is_far_historical);
                         const r2CapNum = Number(aiItem.r2_swing_cap || 0);
                         if (aiItem.bear_suppressed_r1_break) {
-                            leftHtml = `<span style="color:${pal.warn}; font-weight:700;">⚠️ 旧R1:${r1v} (跳空越过 · 空头/倒挂压制)</span>`;
+                            leftHtml = `<span style="color:${pal.warn}; font-weight:700;">⚠️ 旧R1:${r1v} (跳空越过 · ${escapeNewsHtml(supShortLbl)}压制)</span>`;
                             const r2RefStr = isFarR2 ? `远期前高参考 ${r2v}（非短线目标）` : `上方前压 R2:${r2v}`;
                             rightHtml = `<span style="color:${pal.sub}; font-weight:600;">${r2RefStr}</span>`;
                         } else {
@@ -7081,11 +7296,11 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                         if (s1Src === "ATR_ESTIMATE" && s2Src === "ATR_ESTIMATE") {
                             leftHtml = `<span style="color:${pal.warn};" title="无真实历史筹码密集区，按ATR估算">估算防线 (无真实筹码) S1:${s1v} / S2:${s2v}</span>`;
                         } else if (s1Src === "ATR_ESTIMATE" || s2Src === "ATR_ESTIMATE") {
-                            const s1Span = s1Src === "ATR_ESTIMATE" ? `<span style="color:${pal.sub};">估算防线 S1:${s1v} (无真实筹码)</span>` : `<span style="color:${pal.up};">支撑 S1:${s1v}</span>`;
-                            const s2Span = s2Src === "ATR_ESTIMATE" ? `<span style="color:${pal.sub};">估算防线 S2:${s2v} (无真实筹码)</span>` : `<span style="color:${pal.up};">S2:${s2v}</span>`;
+                            const s1Span = s1Src === "ATR_ESTIMATE" ? `<span style="color:${pal.sub};">估算防线 S1:${s1v} (无真实筹码)</span>` : `<span style="color:${pal.up};">支撑 S1:${s1v}${s1GapTag}</span>`;
+                            const s2Span = s2Src === "ATR_ESTIMATE" ? `<span style="color:${pal.sub};">估算防线 S2:${s2v} (无真实筹码)</span>` : `<span style="color:${pal.up};">S2:${s2v}${s2GapTag}</span>`;
                             leftHtml = `${s1Span} <span style="color:${pal.sub};">/</span> ${s2Span}`;
                         } else {
-                            leftHtml = `<span style="color:${pal.up};">支撑 S1:${s1v} / S2:${s2v}</span>`;
+                            leftHtml = `<span style="color:${pal.up};">支撑 S1:${s1v}${s1GapTag} / S2:${s2v}${s2GapTag}</span>`;
                         }
                         if (r1Src === "ATR_ESTIMATE" && r2Src === "ATR_ESTIMATE" && !isFarR2Intact) {
                             rightHtml = `<span style="color:${pal.warn};" title="无真实历史压力区，按ATR估算">估算压力 R1:${r1v} / R2:${r2v}</span>`;
@@ -7120,6 +7335,8 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 if (lBar) lBar.style.width = "50%";
                 if (sBar) sBar.style.width = "50%";
                 if (trendHint) { trendHint.innerText = isIpo ? "样本积累中" : "暂无统计"; trendHint.style.color = pal.sub; }
+                const mirrorNoteHideEl = document.getElementById("pTrendMirrorNote");
+                if (mirrorNoteHideEl) { mirrorNoteHideEl.innerText = ""; mirrorNoteHideEl.style.display = "none"; }
                 if (lRawEl) lRawEl.innerText = "原始多: --%";
                 if (sRawEl) sRawEl.innerText = "原始空: --%";
                 if (pcrEl) pcrEl.innerText = "⚪ 无美股期权";

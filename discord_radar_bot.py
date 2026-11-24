@@ -656,9 +656,14 @@ def build_check_embed_dict(
         if sr_state == "ALL_RESISTANCE_BROKEN":
             op_lines.append("🚀 今日原定压力已全破，不猜天花板，沿均价线移动止盈。")
 
-    # 3. 🧱 关键价位（大白话接管 V4.4 静态锚 + ATR 估算标注）
+    # 3. 🧱 关键价位（大白话接管 V4.4 静态锚 + ATR 估算与缺口回撤标注）
     def _src_plain(src_val: Any) -> str:
-        return "（估算参考，无真实筹码）" if str(src_val or "").upper() == "ATR_ESTIMATE" else ""
+        su = str(src_val or "").upper()
+        if su == "ATR_ESTIMATE":
+            return "（估算参考，无真实筹码）"
+        if su == "GAP_PULLBACK":
+            return "（缺口回撤）"
+        return ""
 
     if sr_state == "ALL_SUPPORT_BREACHED":
         levels_lines = [
@@ -731,6 +736,7 @@ def build_check_embed_dict(
     rs_line = f"• **近一月表现**：{rs_desc}"
 
     l_wr = _opt_float(item.get("ai_long_win_rate_pct"))
+    s_wr = _opt_float(item.get("ai_short_win_rate_pct"))
     l_raw = _opt_float(item.get("ai_long_raw_pct"))
     is_capped = (not is_inv) and (
         bool(item.get("ai_regime_capped"))
@@ -742,7 +748,17 @@ def build_check_embed_dict(
         )
     )
     cap_txt = "（大盘太恐慌，系统已强制降档）" if is_capped else ""
-    ai_line = f"• **AI 胜率**：做多参考胜率 **{_fmt_num(l_wr, 1, '%')}**{cap_txt}"
+    trend_lbl = str(item.get("trend_temperature_label") or "").strip()
+    if not trend_lbl and l_wr is not None and s_wr is not None:
+        try:
+            from create_futu_terminal import classify_trend_temperature as _bot_classify_temp
+            trend_lbl, _ = _bot_classify_temp(l_wr, s_wr)
+        except Exception:
+            trend_lbl = ""
+    mirror_tag = str(item.get("mirror_note") or "").strip()
+    trend_suffix = f"（{trend_lbl}）" if trend_lbl else ""
+    mirror_suffix = f" [{mirror_tag}]" if mirror_tag else ""
+    ai_line = f"• **AI 胜率**：做多参考胜率 **{_fmt_num(l_wr, 1, '%')}**{trend_suffix}{mirror_suffix}{cap_txt}"
     if res_suppressed and res_badge:
         ai_line += f" ｜ {res_badge}"
 

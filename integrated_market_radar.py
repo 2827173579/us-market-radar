@@ -5909,13 +5909,14 @@ def build_latest_radar_snapshot(
 
         _ema5_snap = _snap_opt_float(src.get("ema5"), 2)
         _daily_brk_snap = bool((_ema5_snap and active_px and active_px < _ema5_snap) or (pct_chg is not None and pct_chg <= -8.0) or (eff_pct is not None and eff_pct <= -8.0))
-        _short_dom_snap = bool((short_wr or 0.0) > (long_wr or 50.0) or str(wi.get("market_regime") or "").upper() == "BEAR_DEFENSE")
+        _short_dom_snap = bool((short_wr or 0.0) > (long_wr or 50.0) or (not is_inv and str(wi.get("market_regime") or "").upper() == "BEAR_DEFENSE"))
         _inv_veto_snap = bool(is_inv and (_daily_brk_snap or is_tp or (pct_chg is not None and pct_chg <= -3.0) or _short_dom_snap))
 
         sr_eval_out: Dict[str, Any] = {}
         if isinstance(anchor_row, dict) and anchor_row.get("anchor_s1") and anchor_row.get("anchor_r1"):
             try:
                 import sr_anchor_engine as _sr_snap_eval
+                _vix_back_snap = False if is_inv else _sr_snap_eval._is_vix_backwardation_active(vr_out)
                 sr_eval_out = _sr_snap_eval.evaluate_sr_breach_state(
                     price=active_px,
                     anchor=anchor_row,
@@ -5925,13 +5926,16 @@ def build_latest_radar_snapshot(
                     bias_ma50=float(src.get("bias") or 0.0),
                     vwap=vwap_val,
                     base_script=str(ai_item.get("scenario_script") or ""),
-                    bear_suppressed=bool(_short_dom_snap or _sr_snap_eval._is_vix_backwardation_active(vr_out)),
+                    bear_suppressed=bool(_short_dom_snap or _vix_back_snap),
                     swing_tp=float(ai_item.get("target_profit_price") or 0.0),
                     swing_sl=float(src.get("entry_stop_loss") or ai_item.get("stop_loss_price") or 0.0),
                     atr_pct=max(1.2, (float(src.get("atr") or 0.0) / max(float(last_px or 1.0), 0.01)) * 100.0),
                     is_daily_breakdown=_daily_brk_snap,
                     is_inverse_decay=_inv_veto_snap,
                     ticker=tk_u,
+                    is_vix_backwardation=_vix_back_snap,
+                    is_bear_dominant=_short_dom_snap,
+                    is_inverse=is_inv,
                 )
             except Exception:
                 sr_eval_out = {}
@@ -5965,6 +5969,8 @@ def build_latest_radar_snapshot(
                 is_daily_breakdown=_daily_brk_snap,
                 is_inverse_decay_veto=_inv_veto_snap,
                 is_bear_dominant=_short_dom_snap,
+                ticker=tk_u,
+                is_inverse=is_inv,
             )
         except Exception:
             sup_fh_out = {
@@ -6118,6 +6124,21 @@ def build_latest_radar_snapshot(
                 1,
             ),
         }
+
+    # V5.3 3X 杠杆镜像对母指数锚定对齐（SOXL/SOXS -> SOXX；TQQQ/SQQQ -> QQQ）+ 50% 过半趋势温度定性
+    try:
+        from create_futu_terminal import (
+            apply_leveraged_mirror_parent_alignment as _snap_mirror_align,
+            classify_trend_temperature as _snap_classify_temp,
+        )
+        _snap_mirror_align(tickers_out)
+        for _tk_m, _row_m in tickers_out.items():
+            if isinstance(_row_m, dict) and _row_m.get("ai_long_win_rate_pct") is not None and _row_m.get("ai_short_win_rate_pct") is not None:
+                _tl_m, _tt_m = _snap_classify_temp(_row_m["ai_long_win_rate_pct"], _row_m["ai_short_win_rate_pct"])
+                _row_m["trend_temperature_label"] = _tl_m
+                _row_m["trend_temperature_tone"] = _tt_m
+    except Exception:
+        pass
 
     return {
         "schema_version": "v4.4-bot-snapshot",
@@ -8533,6 +8554,9 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
             _prev_c_fb = (_last_sr - _chg_sr) if (_last_sr > 0 and (_last_sr - _chg_sr) > 0 and abs(_chg_sr) > 0) else _last_sr
             _atr_sr = float(_it_sr.get("atr") or 0.0)
             _atr_pct_sr = ((_atr_sr / _last_sr) * 100.0) if (_atr_sr > 0 and _last_sr > 0) else 2.5
+            _id_sr = intraday_map.get(_tk_u) if isinstance(intraday_map, dict) else {}
+            _pmh_sr = float((_id_sr or {}).get("pmh") or 0.0) or None
+            _pml_sr = float((_id_sr or {}).get("pml") or 0.0) or None
             _sr_batch_items.append({
                 "ticker": _tk_u,
                 "prev_close": None if (_df_h is not None and not _df_h.empty and len(_df_h) >= 10) else _prev_c_fb,
@@ -8541,6 +8565,8 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
                 "put_wall": (_opt_sr or {}).get("put_wall"),
                 "call_wall": (_opt_sr or {}).get("call_wall"),
                 "split_detected": bool(_it_sr.get("split_detected", False)),
+                "swing_high_or_pmh": _pmh_sr,
+                "pml": _pml_sr,
             })
         _sr_anchors_map = _sr_eng.update_daily_sr_anchors_batch(_sr_batch_items, date_et=_sr_date_et)
         print(f"[+] ⚓ 当日静态支撑/阻力锚点已锁定 ({_sr_date_et}): {len(_sr_anchors_map)} 只标的")

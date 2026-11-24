@@ -3216,15 +3216,50 @@ def compute_multi_level_scenario_map(
     r2 = round(max(r2_candidates), 2)
     r2_source = "REAL_CHIPS" if (has_real_sr_struct and any(abs(r2 - x) <= 0.02 for x in real_r2_pool)) else "ATR_ESTIMATE"
 
-    # 严格单调性不变式防御保证: SL < S2 < S1 < close < R1 < R2
+    # 严格单调性不变式 + ATR 自适应最小档位间距防扎堆 + 大跳空缺口回撤入池: SL < S2 < S1 < close < R1 < R2
     min_step = max(0.01, round(close * 0.005, 2))
+    try:
+        import sr_anchor_engine as _sr_sc_mod
+        _atr_dec_sc = (float(atr_pct) / 100.0) if (float(atr_pct or 2.5) > 1.0) else float(atr_pct or 0.025)
+        _min_step_pct_sc = _sr_sc_mod.compute_sr_min_step_pct(_atr_dec_sc)
+        _min_step_eff_sc = _min_step_pct_sc if not is_tier1_low_vol else max(0.015, _min_step_pct_sc * 0.6)
+        _gap_cands_sc = _sr_sc_mod.extract_gap_pullback_support_candidates(
+            df_history=df_history,
+            ref_price=close,
+            atr_pct=_atr_dec_sc,
+            is_us_ticker=(str(ticker or "").strip().upper() not in ("KOSPI", "BTC-USD", "XAUUSD")),
+        )
+    except Exception:
+        _atr_dec_sc = max(0.012, min(0.25, float(atr_pct or 2.5) / 100.0))
+        _min_step_eff_sc = min(0.055, max(0.025, 0.45 * _atr_dec_sc)) if not is_tier1_low_vol else 0.015
+        _gap_cands_sc = []
 
     if s1 >= close:
         s1 = round(close - min_step, 2)
         s1_source = "ATR_ESTIMATE"
-    if s2 >= s1:
-        s2 = round(s1 - min_step, 2)
-        s2_source = "ATR_ESTIMATE"
+
+    # 若 S1 与 S2 间距小于 ATR 自适应最小间距，优先在真实/缺口回撤候选中寻找满足间距的下档 S2，否则按 ATR 合成
+    if s2 >= s1 or ((s1 - s2) / max(s1, 0.01)) < _min_step_eff_sc:
+        _all_sup_pool = sorted(
+            {round(float(x), 2) for x in (real_s2_pool + _gap_cands_sc) if 0 < float(x) < s1 and ((s1 - float(x)) / max(s1, 0.01)) >= _min_step_eff_sc},
+            reverse=True,
+        )
+        if _all_sup_pool:
+            s2 = _all_sup_pool[0]
+            s2_source = "GAP_PULLBACK" if any(abs(s2 - g) <= 0.02 for g in _gap_cands_sc) else "REAL_CHIPS"
+        else:
+            _synth_s2_step = max(_min_step_eff_sc, min(0.08, 0.80 * _atr_dec_sc))
+            s2 = round(s1 * (1.0 - _synth_s2_step), 2)
+            if s2 >= s1:
+                s2 = round(s1 - max(min_step, round(s1 * _min_step_eff_sc, 2)), 2)
+            s2_source = "ATR_ESTIMATE"
+    elif _gap_cands_sc:
+        # 极端大跳空后，若存在更贴合缺口回撤的真实候选且满足最小间距，优先纳入替换纯估算 S2
+        _gap_valid = [g for g in _gap_cands_sc if g < s1 and ((s1 - g) / max(s1, 0.01)) >= _min_step_eff_sc]
+        if _gap_valid and s2_source == "ATR_ESTIMATE":
+            s2 = _gap_valid[0]
+            s2_source = "GAP_PULLBACK"
+
     sl = round(min(s2 * (0.992 if is_tier1_low_vol else 0.985), s2 - min_step), 2)
 
     # 近端止损优先：S2 过远(>6.5%)而 S1 就在现价下方 1.5%~7.0% 时，多头防守改用 S1；第一档低波标的 (XAUUSD/GLD/TLT) 统一走 S1 窄幅防守口径 (-0.8%~-1.3%)
@@ -3235,9 +3270,19 @@ def compute_multi_level_scenario_map(
     if r1 <= close:
         r1 = round(close + min_step, 2)
         r1_source = "ATR_ESTIMATE"
-    if r2 <= r1:
-        r2 = round(r1 + min_step, 2)
-        r2_source = "ATR_ESTIMATE"
+    if r2 <= r1 or ((r2 - r1) / max(r1, 0.01)) < _min_step_eff_sc:
+        _higher_r_pool = sorted(
+            {round(float(x), 2) for x in real_r2_pool if float(x) > r1 and ((float(x) - r1) / max(r1, 0.01)) >= _min_step_eff_sc}
+        )
+        if _higher_r_pool:
+            r2 = _higher_r_pool[0]
+            r2_source = "REAL_CHIPS"
+        else:
+            _synth_r2_step = max(_min_step_eff_sc, min(0.08, 0.80 * _atr_dec_sc))
+            r2 = round(r1 * (1.0 + _synth_r2_step), 2)
+            if r2 <= r1:
+                r2 = round(r1 + max(min_step, 0.01), 2)
+            r2_source = "ATR_ESTIMATE"
 
     # 生成盘前盘中结构化实战剧本 (包含防守点位、目标阻力与失效止损，严禁与 action 产生逻辑冲突；KOSPI 点数格式去 $)
     _is_pts_tk = (str(ticker or "").strip().upper() == "KOSPI")
@@ -6185,9 +6230,11 @@ def generate_report_tables(
                 _ret1d_row = float(row.get('Ret_1d', 0.0)) if ('Ret_1d' in row and pd.notna(row.get('Ret_1d'))) else 0.0
                 _ema5_row = float(row.get('EMA_5', 0.0)) if ('EMA_5' in row and pd.notna(row.get('EMA_5'))) else 0.0
                 _daily_brk_ml = bool((_ema5_row > 0 and close_p < _ema5_row) or (_ret1d_row <= -8.0))
-                _inv_veto_ml = bool(tk.upper() in ('SOXS', 'SQQQ', 'VIXY') and (_daily_brk_ml or _ret1d_row <= -3.0 or cal_short_p > cal_prob_pct or is_broken))
-                _bear_dom_ml = bool(cal_short_p > cal_prob_pct or is_broken or market_regime == 'BEAR_DEFENSE')
+                _is_inv_ml = tk.upper() in ('SOXS', 'SQQQ', 'VIXY')
+                _inv_veto_ml = bool(_is_inv_ml and (_daily_brk_ml or _ret1d_row <= -3.0 or cal_short_p > cal_prob_pct or is_broken))
+                _bear_dom_ml = bool(cal_short_p > cal_prob_pct or is_broken or (not _is_inv_ml and market_regime == 'BEAR_DEFENSE'))
                 _vr_ml = (_mw_dict.get('vix_regime') if isinstance(_mw_dict, dict) else None)
+                _vix_back_ml = (False if _is_inv_ml else _sr_res_mod._is_vix_backwardation_active(_vr_ml))
                 _sup_res = _sr_res_mod.suppress_resonance_badge(
                     four_h_div=four_h_div,
                     four_h_tag=four_h_tag,
@@ -6197,6 +6244,8 @@ def generate_report_tables(
                     is_daily_breakdown=_daily_brk_ml,
                     is_inverse_decay_veto=_inv_veto_ml,
                     is_bear_dominant=_bear_dom_ml,
+                    ticker=tk,
+                    is_inverse=_is_inv_ml,
                 )
                 four_h_div = _sup_res['four_h_div']
                 four_h_tag = _sup_res['four_h_tag']
@@ -6222,17 +6271,22 @@ def generate_report_tables(
                     bias_ma50=bias_ma50_val,
                     vwap=close_p,
                     base_script=str(row_item.get("scenario_script") or ""),
-                    bear_suppressed=bool(_bear_dom_ml or _sr_res_mod._is_vix_backwardation_active(_vr_ml)),
+                    bear_suppressed=bool(_bear_dom_ml or _vix_back_ml),
                     swing_tp=float(row_item.get("target_profit_price") or 0.0),
                     swing_sl=float(row_item.get("stop_loss_price") or 0.0),
                     atr_pct=atr_pct,
                     is_daily_breakdown=_daily_brk_ml,
                     is_inverse_decay=_inv_veto_ml,
                     ticker=tk,
+                    is_vix_backwardation=_vix_back_ml,
+                    is_bear_dominant=_bear_dom_ml,
+                    is_inverse=_is_inv_ml,
                 )
                 row_item["scenario_script"] = _sr_ml_eval["scenario_script"]
                 row_item["r2_is_far_historical"] = _sr_ml_eval["r2_is_far_historical"]
                 row_item["r2_swing_cap"] = _sr_ml_eval["r2_swing_cap"]
+                row_item["suppression_reason_text"] = _sr_ml_eval.get("suppression_reason_text", "")
+                row_item["suppression_short_tag"] = _sr_ml_eval.get("suppression_short_tag", "")
             except Exception:
                 row_item['resonance_badge_text'] = four_h_div
                 row_item['resonance_badge_tag'] = four_h_tag
@@ -6244,6 +6298,23 @@ def generate_report_tables(
             row_item['is_short_covering'] = is_short_covering
 
             all_live_rows.append(row_item)
+
+        # V5.3 3X 杠杆镜像对母指数锚定对齐（SOXL/SOXS -> SOXX；TQQQ/SQQQ -> QQQ）+ 50% 过半趋势温度定性
+        try:
+            from create_futu_terminal import (
+                apply_leveraged_mirror_parent_alignment as _ml_mirror_align,
+                classify_trend_temperature as _ml_classify_temp,
+            )
+            _ml_mirror_align(all_live_rows)
+            for _mr in all_live_rows:
+                _tl, _tt = _ml_classify_temp(
+                    float(_mr.get('calibrated_win_rate_pct') or 50.0),
+                    float(_mr.get('calibrated_short_win_rate_pct') or 50.0),
+                )
+                _mr['trend_temperature_label'] = _tl
+                _mr['trend_temperature_tone'] = _tt
+        except Exception:
+            pass
 
         # 多头精选榜 Top 10 (正股优先，严格按 calibrated_win_rate_pct 降序，与空头榜排序口径一致)
         long_candidates = [r.copy() for r in all_live_rows if not r.get('is_etf', False)]

@@ -258,8 +258,25 @@ def verify_desktop(browser):
     assert soxs_lraw + soxs_sraw <= 100.01, f"SOXS raw probs exceed 100%: {soxs_lraw} + {soxs_sraw}"
     soxs_act = page.locator("#pAiActionText").inner_text()
     assert "逢高反抽沽空/买Put" not in soxs_act, f"SOXS must not show double-negative short wording: {soxs_act!r}"
+    soxs_mirror = page.locator("#pTrendMirrorNote").inner_text().strip()
+    assert "反向镜像 SOXX" in soxs_mirror, f"SOXS missing mirror provenance note: {soxs_mirror!r}"
+    soxs_trend = page.locator("#beginnerTrendHint").inner_text().strip()
 
-    # Verify KOSPI (80th ticker): zero $ signs across header/watchlist/cards/drawer, native K-line SVG visible, non_us_session intraday fallback
+    # Verify SOXL mirror alignment with SOXS (NEVER both 偏多占优 or both 偏空占优)
+    page.locator("#watchlistContainer .stock-item[data-ticker='SOXL']").click()
+    page.wait_for_timeout(200)
+    soxl_lwr = float((page.locator("#pAiLongWr").text_content() or "0").replace("%", "").strip())
+    soxl_swr = float((page.locator("#pAiShortWr").text_content() or "0").replace("%", "").strip())
+    soxl_mirror = page.locator("#pTrendMirrorNote").inner_text().strip()
+    soxl_trend = page.locator("#beginnerTrendHint").inner_text().strip()
+    assert "镜像锚定 SOXX" in soxl_mirror, f"SOXL missing mirror provenance note: {soxl_mirror!r}"
+    assert abs(soxl_lwr - soxs_swr) <= 0.2 and abs(soxl_swr - soxs_lwr) <= 0.2, (
+        f"SOXL ({soxl_lwr}/{soxl_swr}) and SOXS ({soxs_lwr}/{soxs_swr}) failed mirror swap!"
+    )
+    assert not (soxl_trend == "偏多占优" and soxs_trend == "偏多占优"), "SOXL and SOXS cannot both be 偏多占优"
+    assert not (soxl_trend == "偏空占优" and soxs_trend == "偏空占优"), "SOXL and SOXS cannot both be 偏空占优"
+
+    # Verify KOSPI (80th ticker): zero $ signs across header/watchlist/cards/drawer, native K-line SVG visible, KRX intraday corridor SVG visible
     kospi_wl_txt = page.locator("#watchlistContainer .stock-item[data-ticker='KOSPI']").inner_text()
     assert "$" not in kospi_wl_txt, f"KOSPI watchlist row leaked $ sign: {kospi_wl_txt!r}"
     page.locator("#watchlistContainer .stock-item[data-ticker='KOSPI']").click()
@@ -273,10 +290,15 @@ def verify_desktop(browser):
     for k_sel in ("#pMa50", "#pEma20", "#pAtr", "#pVwap", "#pEntryFibBand", "#pAiTargetPrice", "#pAiStopPrice", "#pAiMultiLevels", "#pAiScenarioScript"):
         k_txt = page.locator(k_sel).inner_text()
         assert "$" not in k_txt, f"KOSPI {k_sel} leaked $ sign: {k_txt!r}"
+    assert "反向衰减" not in page.locator("#pAiScenarioScript").inner_text(), "KOSPI must never mention 反向衰减!"
     assert "无美股期权链" in page.locator("#optionsUnavailableNote").inner_text()
     page.locator("#tabIntradayPathView").click()
-    page.wait_for_timeout(160)
-    assert "韩国交易时段 (09:00–15:30 KST)" in page.locator("#ipSummaryText").inner_text()
+    page.wait_for_timeout(200)
+    assert page.locator("#ipChartSvg").is_visible(), "KOSPI KRX intraday corridor SVG must be visible!"
+    assert "09:00 KST" in page.locator("#ipMetaTag").inner_text(), f"KOSPI meta tag missing 09:00 KST: {page.locator('#ipMetaTag').inner_text()!r}"
+    assert "09:15 KST" in page.locator("#ipChartSvg").inner_html(), "KOSPI SVG missing 09:15 KST early window marker!"
+    assert "$" not in page.locator("#ipChartSvg").inner_html(), "KOSPI intraday corridor SVG leaked $ sign!"
+    assert "$" not in page.locator("#ipMetaTag").inner_text(), "KOSPI #ipMetaTag leaked $ sign!"
     assert "$" not in page.locator("#ipLevelsBar").inner_text(), f"KOSPI #ipLevelsBar leaked $: {page.locator('#ipLevelsBar').inner_text()!r}"
     page.locator("#tabKlineView").click()
     page.locator("#btnProQuantToggle").click()
