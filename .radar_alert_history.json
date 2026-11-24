@@ -74,8 +74,8 @@
       "last_notified_at": 0.0
     },
     "AXP": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1795508682.7480216
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "SPY": {
       "state": "NORMAL",
@@ -111,7 +111,7 @@
     },
     "CRWD": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1795470602.8471327
+      "last_notified_at": 1795510878.9553576
     },
     "TSLA": {
       "state": "NORMAL",
@@ -178,8 +178,8 @@
       "last_notified_at": 1795508791.5481913
     },
     "PLTR": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1795510878.9553576
     }
   },
   "position_peaks": {

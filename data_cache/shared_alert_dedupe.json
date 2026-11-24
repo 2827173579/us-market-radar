@@ -5459,9 +5459,13 @@
     "2026-11-24:DEFENSIVE_FLIGHT:-0.0": {
       "device": "PC",
       "ts": 1795510636.9157417
+    },
+    "2026-11-24:PLTR/CRWD:5M_ENTRY+STOP_LOSS": {
+      "device": "PC",
+      "ts": 1795510879.6301448
     }
   },
   "device": "PC",
-  "last_heartbeat_ts": 1795510656.7514763,
-  "updated_at": "2026-11-24T08:57:36.752021+00:00"
+  "last_heartbeat_ts": 1795510767.2780907,
+  "updated_at": "2026-11-24T09:01:19.630662+00:00"
 }
