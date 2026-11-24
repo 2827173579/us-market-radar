@@ -1,9 +1,22 @@
 {
-  "updated_at_ts": 1795486379.011,
-  "updated_at_et": "11-23 21:12 ET",
-  "updated_at_kst": "11:12 KST",
+  "updated_at_ts": 1795486489.0,
+  "updated_at_et": "11-23 21:14 ET",
+  "updated_at_kst": "11:14 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261124101346038800",
+      "title": "【期货热点追踪】英伟达股价暴涨联动市场情绪，这波贵金属反弹的成色究竟如何？机构认为，当前…",
+      "summary": "【期货热点追踪】英伟达股价暴涨联动市场情绪，这波贵金属反弹的成色究竟如何？机构认为，当前走势属于情绪与技术面修复，后续仍需关注美国通胀数据及12月议息会议的进一步指引。",
+      "keywords": [
+        "英伟达"
+      ],
+      "pub_ts": 1795486426.0,
+      "time_et": "11-23 21:13 ET",
+      "time_bj": "10:13 BJ",
+      "time_kst": "11:13 KST",
+      "time_display": "21:13 ET / 10:13 BJ"
+    },
     {
       "id": "20261124100039243800",
       "title": "流动性修复驱动黄金反弹，但多头重建敞口前仍有阻碍",
@@ -340,19 +353,6 @@
       "time_bj": "03:30 BJ",
       "time_kst": "04:30 KST",
       "time_display": "14:30 ET / 03:30 BJ"
-    },
-    {
-      "id": "20261124024333754800",
-      "title": "市场消息：黄仁勋返回英伟达(NVDA.O)总部。",
-      "summary": "市场消息：黄仁勋返回英伟达(NVDA.O)总部。",
-      "keywords": [
-        "英伟达"
-      ],
-      "pub_ts": 1795459413.0,
-      "time_et": "11-23 13:43 ET",
-      "time_bj": "02:43 BJ",
-      "time_kst": "03:43 KST",
-      "time_display": "13:43 ET / 02:43 BJ"
     }
   ],
   "ticker_news": {
@@ -3207,6 +3207,20 @@
     ],
     "ANT": [
       {
+        "title": "Can Anthropic win hearts and minds by curing hearts and minds?",
+        "url": "https://www.cbsnews.com/news/anthropic-drug-discovery-claude-science-ipo/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 21:04 ET",
+        "pub_ts": 1795485895.0
+      },
+      {
+        "title": "She Flips $100,000 of Anthropic IPO Shares at the $111.50 Open for a $34,300 Gain. The Quick Sale Could Bar Her From Future IPOs and Makes $22,700 More of Her Social Security Taxable",
+        "url": "https://247wallst.com/personal-finance/social-security/2026/11/23/she-flips-100000-of-anthropic-ipo-shares-at-the-111-50-open-at-67-for-a-34300-gain-the-quick-sale-could-bar-her-from-future-ipos-and-makes-22700-more-of-her-social-security-taxable/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 21:03 ET",
+        "pub_ts": 1795485837.0
+      },
+      {
         "title": "The Nasdaq Just Had Its Best Day Since April 2025. Anthropic Stock Fell Anyway.",
         "url": "https://www.fool.com/investing/2026/11/23/the-nasdaq-just-had-its-best-day-since-april-2025-anthropic-stock-fell-anyway/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3226,20 +3240,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 19:20 ET",
         "pub_ts": 1795479607.0
-      },
-      {
-        "title": "OpenAI pitches an industry brake days after Anthropic's IPO",
-        "url": "https://www.thestreet.com/technology/openai-pitches-an-industry-brake-after-anthropics-ipo?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 19:17 ET",
-        "pub_ts": 1795479420.0
-      },
-      {
-        "title": "Scott Galloway Calls Anthropic the AI Selloff's 'Big Winner,' but Prediction Traders See Trouble Ahead",
-        "url": "https://www.benzinga.com/markets/prediction-markets/26/11/63566532/anthropic-galloway-traders?utm_source=yahooFinance&utm_campaign=partner_feed&utm_medium=referral&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 18:15 ET",
-        "pub_ts": 1795475752.0
       }
     ],
     "XAUUSD": [
@@ -3307,31 +3307,31 @@
     "DELL": 1795486269.6028042,
     "OKLO": 1795486269.6028042,
     "CEG": 1795486269.6028042,
-    "FPS": 1795484888.4227378,
+    "FPS": 1795486489.0000737,
     "MU": 1795485633.0253508,
     "SKHY": 1795485633.0253508,
     "WDC": 1795485633.0253508,
-    "STX": 1795484888.4227378,
-    "MSTR": 1795484888.4227378,
-    "SNDK": 1795484888.4227378,
+    "STX": 1795486489.0000737,
+    "MSTR": 1795486489.0000737,
+    "SNDK": 1795486489.0000737,
     "BTC-USD": 1795485633.0253508,
-    "CRWD": 1795484888.4227378,
+    "CRWD": 1795486489.0000737,
     "ORCL": 1795485633.0253508,
     "COIN": 1795485633.0253508,
     "LLY": 1795485633.0253508,
     "MRNA": 1795485633.0253508,
     "NKE": 1795485633.0253508,
     "MCD": 1795485633.0253508,
-    "PEP": 1795484888.4227378,
+    "PEP": 1795486489.0000737,
     "XOM": 1795486052.1183255,
     "JPM": 1795486052.1183255,
-    "WMT": 1795484888.4227378,
+    "WMT": 1795486489.0000737,
     "V": 1795486052.1183255,
-    "CAT": 1795484888.4227378,
+    "CAT": 1795486489.0000737,
     "FN": 1795485633.0253508,
     "GLW": 1795486269.6028042,
-    "ANT": 1795484888.4227378,
-    "XAUUSD": 1795484888.4227378
+    "ANT": 1795486489.0000737,
+    "XAUUSD": 1795486489.0000737
   },
   "opex_shield": {
     "date": "2026-11-23",
@@ -3350,7 +3350,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (21:00 ET / 10:00 BJ) [美联储] [加息]：油价回落带动远端利率预期降温，而12月加息定价继续持稳。金价反弹可能由跨资产流动性压力的缓和驱动，但美联储鹰派立场仍将限制多头建仓积极性。",
+    "detail": "⚡ 最新核心快讯 (21:13 ET / 10:13 BJ) [英伟达]：【期货热点追踪】英伟达股价暴涨联动市场情绪，这波贵金属反弹的成色究竟如何？机构认为，当前走势属于情绪与技术面修复，后续仍需关注美国通胀数据及12月议息会议的进一步指引。",
     "event_name": "",
     "minutes_left": 0,
     "opex_shield": {
