@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795487453.947,
-  "updated_at_et": "11-23 21:30 ET",
-  "updated_at_kst": "11:30 KST",
+  "updated_at_ts": 1795487560.71,
+  "updated_at_et": "11-23 21:32 ET",
+  "updated_at_kst": "11:32 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -876,6 +876,13 @@
     ],
     "SOXS": [
       {
+        "title": "Nasdaq, Dow, S&P 500 Futures Gain As Jensen Huang’s Return To Nvidia Sparks $3T Market Rally: SOXS, IBRX, HPE, TSM In Focus",
+        "url": "https://stocktwits.com/news-articles/markets/equity/stock-market-today-nasdaq-dow-futures-rise-jensen-huang-returns-nvidia/cNbrsSNR9jM?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 21:13 ET",
+        "pub_ts": 1795486423.0
+      },
+      {
         "title": "Chip Stocks Are Sinking, but This Bearish ETF Is Up More Than 25%",
         "url": "https://247wallst.com/investing/etf/2026/11/05/chip-stocks-are-sinking-but-this-bearish-etf-is-up-more-than-25/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -902,50 +909,43 @@
         "source": "Yahoo Finance",
         "time": "07-15 12:33 ET",
         "pub_ts": 1784133210.0
-      },
-      {
-        "title": "SOXX Posts Worst Quarter In Over A Year — Michael Burry Cites An 1880 Story To Flag AI’s ‘Power-Hungry’ Chip Race",
-        "url": "https://stocktwits.com/news-articles/markets/equity/soxx-worst-quarter-over-year-michael-burry-1880-ai-power-chip-race/cZDixccRBi9?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "10-01 03:31 ET",
-        "pub_ts": 1790839900.0
       }
     ],
     "NVDA": [
       {
-        "title": "Nvidia rejoices at Jensen Huang’s second coming as White House takes victory lap",
-        "url": "https://finance.yahoo.com/technology/ai/articles/nvidia-rejoices-jensen-huang-second-013439777.html?.tsrc=rss",
+        "title": "Nvidia's $130 billion outlook faces new White House test",
+        "url": "https://www.thestreet.com/investing/nvidias-130-billion-outlook-faces-new-white-house-test?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 20:34 ET",
-        "pub_ts": 1795484079.0
+        "time": "11-23 21:17 ET",
+        "pub_ts": 1795486620.0
       },
       {
-        "title": "CFO Colette Kress Just Made This Subtle Shift That Could Save Nvidia Shareholders",
-        "url": "https://www.fool.com/investing/2026/11/23/cfo-colette-kress-just-made-this-subtle-shift-that-could-save-nvidia-shareholders/?.tsrc=rss",
+        "title": "Asia chipmaking stocks soar tracking Nvidia rally; S.Korea, Taiwan lead",
+        "url": "https://finance.yahoo.com/technology/ai/articles/asia-chipmaking-stocks-soar-tracking-021520376.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 20:26 ET",
-        "pub_ts": 1795483562.0
+        "time": "11-23 21:15 ET",
+        "pub_ts": 1795486520.0
       },
       {
-        "title": "If a Stock Market Crash Is Coming, Warren Buffett Says This Is the Best Move Investors Should Make",
-        "url": "https://www.fool.com/investing/2026/11/23/if-a-stock-market-crash-is-coming-warren-buffett-says-this-is-the-best-move-investors-should-make/?.tsrc=rss",
+        "title": "Dow Jones Futures: Tech Stocks, Nvidia Snap Back On Jensen Huang's Return; Elon Musk-Led SpaceX, Tesla Rally",
+        "url": "https://finance.yahoo.com/m/be493228-4ecf-338d-9017-054d3d6efc36/dow-jones-futures%3A-tech.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 20:20 ET",
-        "pub_ts": 1795483202.0
+        "time": "11-23 21:14 ET",
+        "pub_ts": 1795486479.0
       },
       {
-        "title": "Nvidia reinstates Jensen Huang as CEO",
-        "url": "https://www.cbsnews.com/news/nvidia-reinstates-jensen-huang-ceo/?.tsrc=rss",
+        "title": "Nasdaq, Dow, S&P 500 Futures Gain As Jensen Huang’s Return To Nvidia Sparks $3T Market Rally: SOXS, IBRX, HPE, TSM In Focus",
+        "url": "https://stocktwits.com/news-articles/markets/equity/stock-market-today-nasdaq-dow-futures-rise-jensen-huang-returns-nvidia/cNbrsSNR9jM?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 20:19 ET",
-        "pub_ts": 1795483166.0
+        "time": "11-23 21:13 ET",
+        "pub_ts": 1795486423.0
       },
       {
-        "title": "Huang's return at Nvidia puts spotlight on chipmaker's board",
-        "url": "https://www.cbsnews.com/news/nvidia-board-reinstates-ceo-jensen-huang/?.tsrc=rss",
+        "title": "Gold extends rebound as Nvidia CEO news lifts equities, dip-buying lifts bullion",
+        "url": "https://finance.yahoo.com/markets/commodities/articles/gold-extends-rebound-nvidia-ceo-021330781.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 20:17 ET",
-        "pub_ts": 1795483052.0
+        "time": "11-23 21:13 ET",
+        "pub_ts": 1795486410.0
       }
     ],
     "AMD": [
@@ -3253,22 +3253,22 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795486052.1183255,
-    "SOXL": 1795486052.1183255,
+    "KORU": 1795487560.7101262,
+    "SOXL": 1795487560.7101262,
     "SPY": 1795487133.6095319,
-    "DIA": 1795486052.1183255,
-    "SOXX": 1795486052.1183255,
+    "DIA": 1795487560.7101262,
+    "SOXX": 1795487560.7101262,
     "QQQ": 1795487133.6095319,
-    "SMH": 1795486052.1183255,
-    "IWM": 1795486052.1183255,
-    "IGV": 1795486052.1183255,
-    "TLT": 1795486052.1183255,
-    "GLD": 1795486052.1183255,
-    "SQQQ": 1795486052.1183255,
+    "SMH": 1795487560.7101262,
+    "IWM": 1795487560.7101262,
+    "IGV": 1795487560.7101262,
+    "TLT": 1795487560.7101262,
+    "GLD": 1795487560.7101262,
+    "SQQQ": 1795487560.7101262,
     "TSM": 1795486159.9583488,
-    "VIXY": 1795486052.1183255,
-    "SOXS": 1795486052.1183255,
-    "NVDA": 1795486052.1183255,
+    "VIXY": 1795487560.7101262,
+    "SOXS": 1795487560.7101262,
+    "NVDA": 1795487560.7101262,
     "AMD": 1795486159.9583488,
     "ASML": 1795486159.9583488,
     "QCOM": 1795486159.9583488,
@@ -3323,10 +3323,10 @@
     "NKE": 1795487133.6095319,
     "MCD": 1795487133.6095319,
     "PEP": 1795486489.0000737,
-    "XOM": 1795486052.1183255,
-    "JPM": 1795486052.1183255,
+    "XOM": 1795487560.7101262,
+    "JPM": 1795487560.7101262,
     "WMT": 1795486489.0000737,
-    "V": 1795486052.1183255,
+    "V": 1795487560.7101262,
     "CAT": 1795486489.0000737,
     "FN": 1795487133.6095319,
     "GLW": 1795486269.6028042,
