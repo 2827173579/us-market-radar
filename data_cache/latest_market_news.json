@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795494875.202,
-  "updated_at_et": "11-23 23:34 ET",
-  "updated_at_kst": "13:34 KST",
+  "updated_at_ts": 1795494980.072,
+  "updated_at_et": "11-23 23:36 ET",
+  "updated_at_kst": "13:36 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -905,6 +905,13 @@
     ],
     "NVDA": [
       {
+        "title": "Asia FX subdued as dollar holds near 20-mth high on AI rally",
+        "url": "https://finance.yahoo.com/markets/currencies/articles/asia-fx-subdued-dollar-holds-040917671.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 23:09 ET",
+        "pub_ts": 1795493357.0
+      },
+      {
         "title": "Watch these chip stocks for bargain buys after Nvidia’s post-reinstatement rally",
         "url": "https://finance.yahoo.com/markets/stocks/articles/watch-chip-stocks-bargain-buys-040218865.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -931,13 +938,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 22:47 ET",
         "pub_ts": 1795492068.0
-      },
-      {
-        "title": "Nvidia Just Built Agent Security Into Its Chips. What Does That Mean for CrowdStrike?",
-        "url": "https://www.fool.com/investing/2026/11/23/nvidia-just-built-agent-security-into-its-chips-what-does-that-mean-for-crowdstrike/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 22:37 ET",
-        "pub_ts": 1795491422.0
       }
     ],
     "AMD": [
@@ -3282,22 +3282,22 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795493407.6567113,
-    "SOXL": 1795493407.6567113,
-    "SPY": 1795493407.6567113,
-    "DIA": 1795493407.6567113,
-    "SOXX": 1795493407.6567113,
-    "QQQ": 1795493407.6567113,
-    "SMH": 1795493407.6567113,
-    "IWM": 1795493407.6567113,
-    "IGV": 1795493407.6567113,
-    "TLT": 1795493407.6567113,
-    "GLD": 1795493407.6567113,
-    "SQQQ": 1795493407.6567113,
+    "KORU": 1795494980.0719836,
+    "SOXL": 1795494980.0719836,
+    "SPY": 1795494980.0719836,
+    "DIA": 1795494980.0719836,
+    "SOXX": 1795494980.0719836,
+    "QQQ": 1795494980.0719836,
+    "SMH": 1795494980.0719836,
+    "IWM": 1795494980.0719836,
+    "IGV": 1795494980.0719836,
+    "TLT": 1795494980.0719836,
+    "GLD": 1795494980.0719836,
+    "SQQQ": 1795494980.0719836,
     "TSM": 1795493407.6567113,
-    "VIXY": 1795493407.6567113,
-    "SOXS": 1795493407.6567113,
-    "NVDA": 1795493407.6567113,
+    "VIXY": 1795494980.0719836,
+    "SOXS": 1795494980.0719836,
+    "NVDA": 1795494980.0719836,
     "AMD": 1795493407.6567113,
     "ASML": 1795493407.6567113,
     "QCOM": 1795493407.6567113,
