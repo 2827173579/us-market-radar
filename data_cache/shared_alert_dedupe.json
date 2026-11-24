@@ -5819,9 +5819,25 @@
     "2026-11-24:DEFENSIVE_FLIGHT:+9.7": {
       "device": "PC",
       "ts": 1795531414.8359792
+    },
+    "2026-11-24:AMZN:5M_ENTRY": {
+      "device": "PC",
+      "ts": 1795531519.2993803
+    },
+    "2026-11-24:DEFENSIVE_FLIGHT:+9.1": {
+      "device": "PC",
+      "ts": 1795531529.2752295
+    },
+    "2026-11-24:INTRADAY_CORRIDOR:SPY:BELOW_P25": {
+      "device": "PC",
+      "ts": 1795531530.1166797
+    },
+    "2026-11-24:INTRADAY_CORRIDOR:QQQ:BELOW_P25": {
+      "device": "PC",
+      "ts": 1795531531.3820817
     }
   },
   "device": "PC",
-  "last_heartbeat_ts": 1795531329.2261152,
-  "updated_at": "2026-11-24T14:43:34.836364+00:00"
+  "last_heartbeat_ts": 1795531435.5834923,
+  "updated_at": "2026-11-24T14:45:31.382610+00:00"
 }
