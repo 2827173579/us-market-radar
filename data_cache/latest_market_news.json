@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795507062.069,
-  "updated_at_et": "11-24 02:57 ET",
-  "updated_at_kst": "16:57 KST",
+  "updated_at_ts": 1795507165.218,
+  "updated_at_et": "11-24 02:59 ET",
+  "updated_at_kst": "16:59 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -902,6 +902,20 @@
     ],
     "NVDA": [
       {
+        "title": "The man behind Nvidia: Jensen Huang’s rise and dramatic return",
+        "url": "https://www.euronews.com/2026/11/24/the-man-behind-nvidia-jensen-huangs-rise-and-dramatic-return?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 02:44 ET",
+        "pub_ts": 1795506296.0
+      },
+      {
+        "title": "Nvidia Has Incredible News for Artificial Intelligence (AI) Investors. Here Is My Top Stock to Buy Before It Is Too Late",
+        "url": "https://www.fool.com/investing/2026/11/24/nvidia-has-incredible-news-for-artificial-intelligence-ai-investors-here-is-my-top-stock-to-buy-before-it-is-too-late/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 02:27 ET",
+        "pub_ts": 1795505222.0
+      },
+      {
         "title": "Tech firms soar as Huang's return reinvigorates AI trade",
         "url": "https://finance.yahoo.com/technology/ai/articles/tech-firms-soar-huangs-return-023753159.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -921,20 +935,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 02:10 ET",
         "pub_ts": 1795504228.0
-      },
-      {
-        "title": "3 AI Infrastructure Stocks Retail Investors Are Watching After Nvidia’s Return",
-        "url": "https://finance.yahoo.com/technology/ai/articles/3-ai-infrastructure-stocks-retail-070909902.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 02:09 ET",
-        "pub_ts": 1795504149.0
-      },
-      {
-        "title": "TSMC, Samsung, SK Hynix Rally As Jensen Huang Returns As Nvidia CEO — Top Analyst Flags Risks To AI Recovery",
-        "url": "https://stocktwits.com/news-articles/markets/equity/tsmc-samsung-sk-hynix-rally-as-jensen-huang-returns-as-nvidia-ceo-top-analyst-flags-risks-to-ai-recovery/cNbr6E1R9kE?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 02:00 ET",
-        "pub_ts": 1795503606.0
       }
     ],
     "AMD": [
@@ -3279,22 +3279,22 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795505658.686944,
-    "SOXL": 1795505658.686944,
-    "SPY": 1795505658.686944,
-    "DIA": 1795505658.686944,
-    "SOXX": 1795505658.686944,
-    "QQQ": 1795505658.686944,
-    "SMH": 1795505658.686944,
-    "IWM": 1795505658.686944,
-    "IGV": 1795505658.686944,
-    "TLT": 1795505658.686944,
-    "GLD": 1795505658.686944,
-    "SQQQ": 1795505658.686944,
+    "KORU": 1795507165.2178771,
+    "SOXL": 1795507165.2178771,
+    "SPY": 1795507165.2178771,
+    "DIA": 1795507165.2178771,
+    "SOXX": 1795507165.2178771,
+    "QQQ": 1795507165.2178771,
+    "SMH": 1795507165.2178771,
+    "IWM": 1795507165.2178771,
+    "IGV": 1795507165.2178771,
+    "TLT": 1795507165.2178771,
+    "GLD": 1795507165.2178771,
+    "SQQQ": 1795507165.2178771,
     "TSM": 1795505766.811247,
-    "VIXY": 1795505658.686944,
-    "SOXS": 1795505658.686944,
-    "NVDA": 1795505658.686944,
+    "VIXY": 1795507165.2178771,
+    "SOXS": 1795507165.2178771,
+    "NVDA": 1795507165.2178771,
     "AMD": 1795505766.811247,
     "ASML": 1795505766.811247,
     "QCOM": 1795505766.811247,
