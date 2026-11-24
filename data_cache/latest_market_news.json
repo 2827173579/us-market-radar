@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795478304.22,
-  "updated_at_et": "11-23 18:58 ET",
-  "updated_at_kst": "08:58 KST",
+  "updated_at_ts": 1795478414.486,
+  "updated_at_et": "11-23 19:00 ET",
+  "updated_at_kst": "09:00 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1768,8 +1768,22 @@
         "title": "Dow Jones Futures: Tech Stocks, Nvidia Snap Back On Jensen Huang's Return; Elon Musk-Led SpaceX, Tesla Rally",
         "url": "https://finance.yahoo.com/m/be493228-4ecf-338d-9017-054d3d6efc36/dow-jones-futures%3A-tech.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 17:26 ET",
-        "pub_ts": 1795472777.0
+        "time": "11-23 18:40 ET",
+        "pub_ts": 1795477209.0
+      },
+      {
+        "title": "Forget AT&T and Verizon: Crown Castle Has More to Lose From Starlink’s 40x Upgrade",
+        "url": "https://www.tikr.com/blog/forget-att-and-verizon-crown-castle-has-more-to-lose-from-starlinks-40x-upgrade?ref=yahoofinance&tlnk=yf-261123-rrg4f5hj&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 18:28 ET",
+        "pub_ts": 1795476521.0
+      },
+      {
+        "title": "SpaceX Is “Following the Exact Same Pattern That Meta Followed” After Its IPO, per Steve Jurvetson. Time to Buy?",
+        "url": "https://www.tikr.com/blog/spacex-is-following-the-exact-same-pattern-that-meta-followed-after-its-ipo-per-steve-jurvetson-time-to-buy?ref=yahoofinance&tlnk=yf-261123-gjp9pmgx&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 18:27 ET",
+        "pub_ts": 1795476445.0
       },
       {
         "title": "BlackRock, Marsh are urging caution on redeploying ANT and SpaceX gains",
@@ -1777,20 +1791,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 16:58 ET",
         "pub_ts": 1795471089.0
-      },
-      {
-        "title": "Musk Posts “It Is Done” as Nvidia Rehires Huang. That’s Good News for Nvidia’s SpaceX Business",
-        "url": "https://www.tikr.com/blog/musk-posts-it-is-done-as-nvidia-rehires-huang-thats-good-news-for-nvidias-spacex-business?ref=yahoofinance&tlnk=yf-261123-qpm6hhmw&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 16:33 ET",
-        "pub_ts": 1795469626.0
-      },
-      {
-        "title": "BlackRock (BLK) Anchors $44 Billion GPU Financing",
-        "url": "https://finance.yahoo.com/technology/ai/articles/blackrock-blk-anchors-44-billion-211407503.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 16:14 ET",
-        "pub_ts": 1795468447.0
       }
     ],
     "ASTS": [
@@ -1946,8 +1946,8 @@
         "title": "Dow Jones Futures: Tech Stocks, Nvidia Snap Back On Jensen Huang's Return; Elon Musk-Led SpaceX, Tesla Rally",
         "url": "https://finance.yahoo.com/m/be493228-4ecf-338d-9017-054d3d6efc36/dow-jones-futures%3A-tech.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 17:26 ET",
-        "pub_ts": 1795472777.0
+        "time": "11-23 18:40 ET",
+        "pub_ts": 1795477209.0
       },
       {
         "title": "Stock Market Today, Nov. 23: Markets Rebound From Correction on AI Relief Rally",
@@ -3279,28 +3279,28 @@
     "NBIS": 1795478304.219932,
     "APLD": 1795478304.219932,
     "VST": 1795478304.219932,
-    "BE": 1795476817.1226594,
-    "CRDO": 1795476817.1226594,
-    "COHR": 1795476817.1226594,
+    "BE": 1795478414.4861643,
+    "CRDO": 1795478414.4861643,
+    "COHR": 1795478414.4861643,
     "MRVL": 1795477774.4538825,
     "LITE": 1795477774.4538825,
-    "AAOI": 1795476817.1226594,
-    "SPCX": 1795476817.1226594,
-    "ASTS": 1795476817.1226594,
+    "AAOI": 1795478414.4861643,
+    "SPCX": 1795478414.4861643,
+    "ASTS": 1795478414.4861643,
     "AXTI": 1795477774.4538825,
-    "NASA": 1795476817.1226594,
-    "LUNR": 1795476817.1226594,
-    "TSLA": 1795476817.1226594,
-    "AXP": 1795476817.1226594,
-    "RKLB": 1795476817.1226594,
-    "KO": 1795476817.1226594,
-    "FLY": 1795476817.1226594,
-    "INTC": 1795476817.1226594,
-    "VRT": 1795476817.1226594,
-    "HPE": 1795476817.1226594,
-    "DELL": 1795476817.1226594,
-    "OKLO": 1795476817.1226594,
-    "CEG": 1795476817.1226594,
+    "NASA": 1795478414.4861643,
+    "LUNR": 1795478414.4861643,
+    "TSLA": 1795478414.4861643,
+    "AXP": 1795478414.4861643,
+    "RKLB": 1795478414.4861643,
+    "KO": 1795478414.4861643,
+    "FLY": 1795478414.4861643,
+    "INTC": 1795478414.4861643,
+    "VRT": 1795478414.4861643,
+    "HPE": 1795478414.4861643,
+    "DELL": 1795478414.4861643,
+    "OKLO": 1795478414.4861643,
+    "CEG": 1795478414.4861643,
     "FPS": 1795476927.195946,
     "MU": 1795477774.4538825,
     "SKHY": 1795477774.4538825,
@@ -3323,7 +3323,7 @@
     "V": 1795478195.4221404,
     "CAT": 1795476927.195946,
     "FN": 1795477774.4538825,
-    "GLW": 1795476817.1226594,
+    "GLW": 1795478414.4861643,
     "ANT": 1795476927.195946,
     "XAUUSD": 1795476927.195946
   },
