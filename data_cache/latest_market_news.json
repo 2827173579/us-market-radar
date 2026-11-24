@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795498086.868,
-  "updated_at_et": "11-24 00:28 ET",
-  "updated_at_kst": "14:28 KST",
+  "updated_at_ts": 1795498196.626,
+  "updated_at_et": "11-24 00:29 ET",
+  "updated_at_kst": "14:29 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1171,6 +1171,20 @@
         "pub_ts": 1795473204.0
       },
       {
+        "title": "1966 Or 1995: Which Way Does America's $2.1 Trillion Deficit Go?",
+        "url": "https://www.trefis.com/stock/spy/articles/627413/1966-or-1995-which-way-does-america-s-2-1-trillion-deficit-go/2026-11-23?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 00:06 ET",
+        "pub_ts": 1795496802.0
+      },
+      {
+        "title": "The Inflation Math, Updated: The Fed Is Fighting Oil",
+        "url": "https://www.trefis.com/stock/spy/articles/627433/the-inflation-math-updated-the-fed-is-fighting-oil/2026-11-23?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 00:06 ET",
+        "pub_ts": 1795496802.0
+      },
+      {
         "title": "The Nasdaq Just Had Its Best Day Since April 2025. Anthropic Stock Fell Anyway.",
         "url": "https://www.fool.com/investing/2026/11/23/the-nasdaq-just-had-its-best-day-since-april-2025-anthropic-stock-fell-anyway/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1183,30 +1197,9 @@
         "source": "Yahoo Finance",
         "time": "11-23 19:25 ET",
         "pub_ts": 1795479913.0
-      },
-      {
-        "title": "Steve Eisman Said AI Was “No Longer One Trade.” Huang Is Back, but Alphabet and CoreWeave Still Show the Split",
-        "url": "https://www.tikr.com/blog/big-shorts-steve-eisman-without-nvidia-ai-is-no-longer-one-trade-alphabet-and-coreweave-show-the-split?ref=yahoofinance&tlnk=yf-261123-qrq8pv92&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 17:54 ET",
-        "pub_ts": 1795474493.0
-      },
-      {
-        "title": "Crypto traders saw Anthropic's 34% debut pop coming",
-        "url": "https://www.thestreet.com/crypto/markets/crypto-traders-saw-anthropics-34-debut-pop-coming-?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 17:47 ET",
-        "pub_ts": 1795474035.0
       }
     ],
     "MSFT": [
-      {
-        "title": "Nvidia gains nearly $1T as Trump says nobody could 'revive the stock like it's being revived'",
-        "url": "https://finance.yahoo.com/markets/article/nvidia-gains-nearly-1t-as-trump-says-nobody-could-revive-the-stock-like-its-being-revived-194634496.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 14:46 ET",
-        "pub_ts": 1795463194.0
-      },
       {
         "title": "What Microsoft (MSFT)'s Enterprise AI Partnerships Mean For Shareholders",
         "url": "https://finance.yahoo.com/technology/ai/articles/microsoft-msft-enterprise-ai-partnerships-001743463.html?.tsrc=rss",
@@ -1234,6 +1227,13 @@
         "source": "Yahoo Finance",
         "time": "11-23 16:25 ET",
         "pub_ts": 1795469100.0
+      },
+      {
+        "title": "Billionaire Andreas Halvorsen Exited Microsoft and Made TSMC His Top Holding at $1.8 Billion",
+        "url": "https://247wallst.com/investing/2026/11/23/billionaire-andreas-halvorsen-exited-microsoft-and-made-tsmc-his-top-holding-at-1-8-billion/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 15:57 ET",
+        "pub_ts": 1795467446.0
       }
     ],
     "AAPL": [
@@ -1349,13 +1349,6 @@
     ],
     "AMZN": [
       {
-        "title": "Jensen Huang's return to Nvidia: Long or short accountability?",
-        "url": "https://finance.yahoo.com/video/jensen-huangs-return-to-nvidia-long-or-short-accountability-185949254.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 13:59 ET",
-        "pub_ts": 1795460389.0
-      },
-      {
         "title": "Is Amazon's Profit Riskier Than It Looks?",
         "url": "https://www.trefis.com/stock/amzn/articles/627559/is-amazon-s-profit-riskier-than-it-looks/2026-11-23?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1382,6 +1375,13 @@
         "source": "Yahoo Finance",
         "time": "11-23 22:27 ET",
         "pub_ts": 1795490874.0
+      },
+      {
+        "title": "Netflix Cuts About 1,000 Jobs and Its Content Chief. YouTube Already Has Twice Its TV Share",
+        "url": "https://www.tikr.com/blog/netflix-cuts-about-1000-jobs-and-its-content-chief-youtube-already-has-twice-its-tv-share?ref=yahoofinance&tlnk=yf-261123-qvgmg437&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 18:31 ET",
+        "pub_ts": 1795476706.0
       }
     ],
     "CRWV": [
@@ -3294,23 +3294,23 @@
     "TLT": 1795498086.868401,
     "GLD": 1795498086.868401,
     "SQQQ": 1795498086.868401,
-    "TSM": 1795496689.3052769,
+    "TSM": 1795498196.6255133,
     "VIXY": 1795498086.868401,
     "SOXS": 1795498086.868401,
     "NVDA": 1795498086.868401,
-    "AMD": 1795496689.3052769,
-    "ASML": 1795496689.3052769,
-    "QCOM": 1795496689.3052769,
-    "AVGO": 1795496689.3052769,
-    "AMAT": 1795496689.3052769,
-    "META": 1795496689.3052769,
-    "GOOGL": 1795496689.3052769,
-    "MSFT": 1795496689.3052769,
-    "AAPL": 1795496689.3052769,
-    "PLTR": 1795496689.3052769,
-    "NOW": 1795496689.3052769,
-    "AMZN": 1795496689.3052769,
-    "CRWV": 1795496689.3052769,
+    "AMD": 1795498196.6255133,
+    "ASML": 1795498196.6255133,
+    "QCOM": 1795498196.6255133,
+    "AVGO": 1795498196.6255133,
+    "AMAT": 1795498196.6255133,
+    "META": 1795498196.6255133,
+    "GOOGL": 1795498196.6255133,
+    "MSFT": 1795498196.6255133,
+    "AAPL": 1795498196.6255133,
+    "PLTR": 1795498196.6255133,
+    "NOW": 1795498196.6255133,
+    "AMZN": 1795498196.6255133,
+    "CRWV": 1795498196.6255133,
     "NBIS": 1795496689.3052769,
     "APLD": 1795497129.354641,
     "VST": 1795497129.354641,
@@ -3361,7 +3361,7 @@
     "GLW": 1795497129.354641,
     "ANT": 1795497235.6924367,
     "XAUUSD": 1795497441.177195,
-    "KOSPI": 1795496689.3052769
+    "KOSPI": 1795498196.6255133
   },
   "opex_shield": {
     "date": "2026-11-24",
