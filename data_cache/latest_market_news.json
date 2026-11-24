@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795504043.4,
-  "updated_at_et": "11-24 02:07 ET",
-  "updated_at_kst": "16:07 KST",
+  "updated_at_ts": 1795504148.674,
+  "updated_at_et": "11-24 02:09 ET",
+  "updated_at_kst": "16:09 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -900,6 +900,13 @@
     ],
     "NVDA": [
       {
+        "title": "Bitcoin And Stocks Are Moving In Different Directions: Arthur Hayes Says Nvidia's Rally Is The 'Worst Thing' For Crypto",
+        "url": "https://stocktwits.com/news-articles/markets/cryptocurrency/arthur-hayes-nvidia-rally-bitcoin-november-selloff/cNbrzA2R9k3?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 01:45 ET",
+        "pub_ts": 1795502725.0
+      },
+      {
         "title": "Stock Market: Will S&P 500 Open Up or Down Today?",
         "url": "https://www.benzinga.com/markets/prediction-markets/26/11/63568369/stock-market-will-sp-500-open-up-or-down-today-84?utm_source=yahooFinance&utm_campaign=partner_feed&utm_medium=referral&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -926,13 +933,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 00:50 ET",
         "pub_ts": 1795499402.0
-      },
-      {
-        "title": "Stocks climb as Huang's return to Nvidia lifts investor optimism",
-        "url": "https://www.euronews.com/2026/11/24/stocks-climb-as-huangs-return-to-nvidia-lifts-investor-optimism?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 00:46 ET",
-        "pub_ts": 1795499164.0
       }
     ],
     "AMD": [
@@ -3277,22 +3277,22 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795502642.4469335,
-    "SOXL": 1795502642.4469335,
-    "SPY": 1795502642.4469335,
-    "DIA": 1795502642.4469335,
-    "SOXX": 1795502642.4469335,
-    "QQQ": 1795502642.4469335,
-    "SMH": 1795502642.4469335,
-    "IWM": 1795502642.4469335,
-    "IGV": 1795502642.4469335,
-    "TLT": 1795502642.4469335,
-    "GLD": 1795502642.4469335,
-    "SQQQ": 1795502642.4469335,
+    "KORU": 1795504148.67364,
+    "SOXL": 1795504148.67364,
+    "SPY": 1795504148.67364,
+    "DIA": 1795504148.67364,
+    "SOXX": 1795504148.67364,
+    "QQQ": 1795504148.67364,
+    "SMH": 1795504148.67364,
+    "IWM": 1795504148.67364,
+    "IGV": 1795504148.67364,
+    "TLT": 1795504148.67364,
+    "GLD": 1795504148.67364,
+    "SQQQ": 1795504148.67364,
     "TSM": 1795502752.4917028,
-    "VIXY": 1795502642.4469335,
-    "SOXS": 1795502642.4469335,
-    "NVDA": 1795502642.4469335,
+    "VIXY": 1795504148.67364,
+    "SOXS": 1795504148.67364,
+    "NVDA": 1795504148.67364,
     "AMD": 1795502752.4917028,
     "ASML": 1795502752.4917028,
     "QCOM": 1795502752.4917028,
