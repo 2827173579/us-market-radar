@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795509220.678,
-  "updated_at_et": "11-24 03:33 ET",
-  "updated_at_kst": "17:33 KST",
+  "updated_at_ts": 1795509329.177,
+  "updated_at_et": "11-24 03:35 ET",
+  "updated_at_kst": "17:35 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2238,6 +2238,13 @@
     ],
     "DELL": [
       {
+        "title": "Dell Q3 Preview: Margins, Outlook In Focus As Strong AI Server Demand Seen Supporting Performance",
+        "url": "https://stocktwits.com/news-articles/markets/equity/dell-q3-preview-margins-outlook-in-focus-as-strong-ai-server-demand-seen-supporting-performance/cNbsRdxR9k7?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 03:14 ET",
+        "pub_ts": 1795508080.0
+      },
+      {
         "title": "Dell Technologies (DELL) Roars Back, Gets 2 Major Catalysts Working in Its Favor",
         "url": "https://finance.yahoo.com/markets/stocks/articles/dell-technologies-dell-roars-back-030939608.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2264,13 +2271,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 14:38 ET",
         "pub_ts": 1795462727.0
-      },
-      {
-        "title": "Tech stocks surge as Nvidia rally adds $2 trillion to Nasdaq 100",
-        "url": "https://www.proactiveinvestors.com/companies/news/1102286/tech-stocks-surge-as-nvidia-rally-adds-2-trillion-to-nasdaq-100-1102286.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 14:20 ET",
-        "pub_ts": 1795461600.0
       }
     ],
     "OKLO": [
@@ -2534,13 +2534,6 @@
     ],
     "MSTR": [
       {
-        "title": "Strategy adds 457 bitcoin to balance sheet, buys back $212M of STRC",
-        "url": "https://finance.yahoo.com/video/strategy-adds-457-bitcoin-to-balance-sheet-buys-back-212m-of-strc-162801112.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 11:28 ET",
-        "pub_ts": 1795451281.0
-      },
-      {
         "title": "LIVE – Bitcoin Overnight Rally Roundtripped: Saylor and Strategy Didn’t Flinch",
         "url": "https://cryptonews.com/news/bitcoin-rally-roundtrip-saylor-strategy-buying-crypto-news/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2567,16 +2560,16 @@
         "source": "Yahoo Finance",
         "time": "11-23 11:30 ET",
         "pub_ts": 1795451448.0
+      },
+      {
+        "title": "Strategy adds 457 bitcoin to balance sheet, buys back $212M of STRC",
+        "url": "https://finance.yahoo.com/video/strategy-adds-457-bitcoin-to-balance-sheet-buys-back-212m-of-strc-162801112.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 11:28 ET",
+        "pub_ts": 1795451281.0
       }
     ],
     "SNDK": [
-      {
-        "title": "Jensen Huang back as Nvidia CEO after 12 days: Shares surge 30%",
-        "url": "https://finance.yahoo.com/video/jensen-huang-back-as-nvidia-ceo-after-12-days-shares-surge-30-161302539.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 11:13 ET",
-        "pub_ts": 1795450382.0
-      },
       {
         "title": "Prediction: This Will Be Sandisk’s Stock Price by the End of 2027",
         "url": "https://www.fool.com/investing/2026/11/23/prediction-this-will-be-sandisks-stock-price-by-the-end-of-2027/?.tsrc=rss",
@@ -2590,6 +2583,13 @@
         "source": "Yahoo Finance",
         "time": "11-23 15:08 ET",
         "pub_ts": 1795464484.0
+      },
+      {
+        "title": "Jensen Huang back as Nvidia CEO after 12 days: Shares surge 30%",
+        "url": "https://finance.yahoo.com/video/jensen-huang-back-as-nvidia-ceo-after-12-days-shares-surge-30-161302539.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 11:13 ET",
+        "pub_ts": 1795450382.0
       },
       {
         "title": "Citi Says Micron and SanDisk Selloff Is Overdone as AI Memory Demand Holds Up",
@@ -3326,41 +3326,41 @@
     "AXTI": 1795509001.444044,
     "NASA": 1795509220.6783664,
     "LUNR": 1795509220.6783664,
-    "TSLA": 1795507811.9680948,
-    "AXP": 1795507811.9680948,
+    "TSLA": 1795509329.1768882,
+    "AXP": 1795509329.1768882,
     "RKLB": 1795509220.6783664,
     "KO": 1795509220.6783664,
     "FLY": 1795509220.6783664,
     "INTC": 1795509220.6783664,
-    "VRT": 1795507811.9680948,
-    "HPE": 1795507811.9680948,
-    "DELL": 1795507811.9680948,
-    "OKLO": 1795507811.9680948,
-    "CEG": 1795507811.9680948,
-    "FPS": 1795507811.9680948,
+    "VRT": 1795509329.1768882,
+    "HPE": 1795509329.1768882,
+    "DELL": 1795509329.1768882,
+    "OKLO": 1795509329.1768882,
+    "CEG": 1795509329.1768882,
+    "FPS": 1795509329.1768882,
     "MU": 1795509001.444044,
     "SKHY": 1795509001.444044,
     "WDC": 1795509001.444044,
-    "STX": 1795507811.9680948,
-    "MSTR": 1795507811.9680948,
-    "SNDK": 1795507811.9680948,
+    "STX": 1795509329.1768882,
+    "MSTR": 1795509329.1768882,
+    "SNDK": 1795509329.1768882,
     "BTC-USD": 1795509001.444044,
-    "CRWD": 1795507811.9680948,
+    "CRWD": 1795509329.1768882,
     "ORCL": 1795509001.444044,
     "COIN": 1795509001.444044,
     "LLY": 1795509001.444044,
     "MRNA": 1795509001.444044,
     "NKE": 1795509001.444044,
     "MCD": 1795509001.444044,
-    "PEP": 1795507811.9680948,
+    "PEP": 1795509329.1768882,
     "XOM": 1795509001.444044,
     "JPM": 1795509001.444044,
-    "WMT": 1795507811.9680948,
+    "WMT": 1795509329.1768882,
     "V": 1795509001.444044,
-    "CAT": 1795507811.9680948,
+    "CAT": 1795509329.1768882,
     "FN": 1795509001.444044,
     "GLW": 1795509220.6783664,
-    "ANT": 1795507811.9680948,
+    "ANT": 1795509329.1768882,
     "XAUUSD": 1795508034.823311,
     "KOSPI": 1795508782.150251
   },
