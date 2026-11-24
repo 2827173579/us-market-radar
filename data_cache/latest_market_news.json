@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795539819.958,
-  "updated_at_et": "11-24 12:03 ET",
-  "updated_at_kst": "02:03 KST",
+  "updated_at_ts": 1795539925.989,
+  "updated_at_et": "11-24 12:05 ET",
+  "updated_at_kst": "02:05 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2685,6 +2685,13 @@
     ],
     "ORCL": [
       {
+        "title": "Oracle Stocks Fall 4.31%, Slipping Further Below Its $116 Share Sale Price",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/oracle-stocks-fall-4-31-165513234.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 11:55 ET",
+        "pub_ts": 1795539313.0
+      },
+      {
         "title": "Oracle Is a Higher-Leverage, Cash-Hungry Twin to Microsoft",
         "url": "https://247wallst.com/investing/2026/11/24/oracle-is-a-higher-leverage-cash-hungry-twin-to-microsoft/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2711,16 +2718,16 @@
         "source": "Yahoo Finance",
         "time": "11-24 09:35 ET",
         "pub_ts": 1795530902.0
-      },
-      {
-        "title": "Global Succession Planning and Management Software Market Report 2026 | Capitalize on AI and Cloud Growth to $8.64B by 2030 with Oracle, SAP, Workday, Paycom, and Eightfold AI",
-        "url": "https://finance.yahoo.com/technology/articles/global-succession-planning-management-software-143500275.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 09:35 ET",
-        "pub_ts": 1795530900.0
       }
     ],
     "COIN": [
+      {
+        "title": "What Just Happened To Coinbase Stock?",
+        "url": "https://www.trefis.com/stock/coin/articles/628640/what-just-happened-to-coinbase-stock/2026-11-24?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 11:30 ET",
+        "pub_ts": 1795537849.0
+      },
       {
         "title": "Could Coinbase Actually Climb 70%? Or Is Goldman Sachs Totally Wrong?",
         "url": "https://www.tikr.com/blog/could-coinbase-actually-climb-70-or-is-goldman-sachs-totally-wrong?ref=yahoofinance&tlnk=yf-261124-3g59p4hf&.tsrc=rss",
@@ -2748,13 +2755,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 06:51 ET",
         "pub_ts": 1795521075.0
-      },
-      {
-        "title": "Bitcoin bottoms on 4-year anniversary of FTX low: Nvidia rips 30%",
-        "url": "https://finance.yahoo.com/video/bitcoin-bottoms-4-anniversary-ftx-170000657.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 12:00 ET",
-        "pub_ts": 1795453200.0
       }
     ],
     "LLY": [
@@ -3316,22 +3316,22 @@
     "AMZN": 1795539501.859305,
     "CRWV": 1795539501.859305,
     "NBIS": 1795539607.1346827,
-    "APLD": 1795538403.3794599,
-    "VST": 1795538403.3794599,
-    "BE": 1795538403.3794599,
-    "CRDO": 1795538403.3794599,
-    "COHR": 1795538403.3794599,
+    "APLD": 1795539925.9887524,
+    "VST": 1795539925.9887524,
+    "BE": 1795539925.9887524,
+    "CRDO": 1795539925.9887524,
+    "COHR": 1795539925.9887524,
     "MRVL": 1795539607.1346827,
     "LITE": 1795539607.1346827,
-    "AAOI": 1795538403.3794599,
+    "AAOI": 1795539925.9887524,
     "SPCX": 1795538517.1409204,
-    "ASTS": 1795538403.3794599,
+    "ASTS": 1795539925.9887524,
     "AXTI": 1795539607.1346827,
     "NASA": 1795538517.1409204,
     "LUNR": 1795538517.1409204,
     "TSLA": 1795538517.1409204,
     "AXP": 1795538517.1409204,
-    "RKLB": 1795538403.3794599,
+    "RKLB": 1795539925.9887524,
     "KO": 1795538517.1409204,
     "FLY": 1795538517.1409204,
     "INTC": 1795538517.1409204,
@@ -3349,20 +3349,20 @@
     "SNDK": 1795538728.6769695,
     "BTC-USD": 1795539607.1346827,
     "CRWD": 1795538728.6769695,
-    "ORCL": 1795538403.3794599,
-    "COIN": 1795538403.3794599,
-    "LLY": 1795538403.3794599,
-    "MRNA": 1795538403.3794599,
-    "NKE": 1795538403.3794599,
-    "MCD": 1795538403.3794599,
+    "ORCL": 1795539925.9887524,
+    "COIN": 1795539925.9887524,
+    "LLY": 1795539925.9887524,
+    "MRNA": 1795539925.9887524,
+    "NKE": 1795539925.9887524,
+    "MCD": 1795539925.9887524,
     "PEP": 1795538728.6769695,
     "XOM": 1795538623.5090282,
     "JPM": 1795538623.5090282,
     "WMT": 1795538728.6769695,
-    "V": 1795538403.3794599,
+    "V": 1795539925.9887524,
     "CAT": 1795538728.6769695,
     "FN": 1795539607.1346827,
-    "GLW": 1795538403.3794599,
+    "GLW": 1795539925.9887524,
     "ANT": 1795538728.6769695,
     "XAUUSD": 1795538728.6769695,
     "KOSPI": 1795539607.1346827
