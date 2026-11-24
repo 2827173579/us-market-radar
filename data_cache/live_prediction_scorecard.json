@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-24 18:40:47",
+  "updated_at": "2026-11-25 03:37:47",
   "win_rate_7d_pct": 100.0,
   "win_rate_30d_pct": 47.8,
   "long_win_rate_7d_pct": 14.0,
@@ -699,6 +699,202 @@
     {
       "ticker": "NBIS",
       "pred_date": "2026-11-24",
+      "direction": "LONG",
+      "pred_prob_pct": 55.0,
+      "entry_price": 195.19
+    },
+    {
+      "ticker": "LUNR",
+      "pred_date": "2026-11-25",
+      "direction": "LONG",
+      "pred_prob_pct": 85.9,
+      "entry_price": 9.05
+    },
+    {
+      "ticker": "WDC",
+      "pred_date": "2026-11-25",
+      "direction": "LONG",
+      "pred_prob_pct": 83.8,
+      "entry_price": 245.11
+    },
+    {
+      "ticker": "BE",
+      "pred_date": "2026-11-25",
+      "direction": "LONG",
+      "pred_prob_pct": 82.6,
+      "entry_price": 135.19
+    },
+    {
+      "ticker": "MU",
+      "pred_date": "2026-11-25",
+      "direction": "LONG",
+      "pred_prob_pct": 82.6,
+      "entry_price": 80.2
+    },
+    {
+      "ticker": "STX",
+      "pred_date": "2026-11-25",
+      "direction": "LONG",
+      "pred_prob_pct": 82.4,
+      "entry_price": 351.65
+    },
+    {
+      "ticker": "VST",
+      "pred_date": "2026-11-25",
+      "direction": "LONG",
+      "pred_prob_pct": 80.2,
+      "entry_price": 151.13
+    },
+    {
+      "ticker": "CEG",
+      "pred_date": "2026-11-25",
+      "direction": "LONG",
+      "pred_prob_pct": 79.3,
+      "entry_price": 251.0
+    },
+    {
+      "ticker": "COHR",
+      "pred_date": "2026-11-25",
+      "direction": "LONG",
+      "pred_prob_pct": 81.1,
+      "entry_price": 235.72
+    },
+    {
+      "ticker": "APLD",
+      "pred_date": "2026-11-25",
+      "direction": "LONG",
+      "pred_prob_pct": 75.3,
+      "entry_price": 5.25
+    },
+    {
+      "ticker": "AAOI",
+      "pred_date": "2026-11-25",
+      "direction": "LONG",
+      "pred_prob_pct": 79.8,
+      "entry_price": 13.98
+    },
+    {
+      "ticker": "CRDO",
+      "pred_date": "2026-11-25",
+      "direction": "LONG",
+      "pred_prob_pct": 78.4,
+      "entry_price": 102.46
+    },
+    {
+      "ticker": "LITE",
+      "pred_date": "2026-11-25",
+      "direction": "LONG",
+      "pred_prob_pct": 79.9,
+      "entry_price": 558.44
+    },
+    {
+      "ticker": "MRVL",
+      "pred_date": "2026-11-25",
+      "direction": "LONG",
+      "pred_prob_pct": 79.9,
+      "entry_price": 61.78
+    },
+    {
+      "ticker": "BTC-USD",
+      "pred_date": "2026-11-25",
+      "direction": "LONG",
+      "pred_prob_pct": 73.4,
+      "entry_price": 68859.83
+    },
+    {
+      "ticker": "COIN",
+      "pred_date": "2026-11-25",
+      "direction": "LONG",
+      "pred_prob_pct": 73.4,
+      "entry_price": 174.79
+    },
+    {
+      "ticker": "MSTR",
+      "pred_date": "2026-11-25",
+      "direction": "LONG",
+      "pred_prob_pct": 73.4,
+      "entry_price": 127.69
+    },
+    {
+      "ticker": "NOW",
+      "pred_date": "2026-11-25",
+      "direction": "LONG",
+      "pred_prob_pct": 72.0,
+      "entry_price": 102.42
+    },
+    {
+      "ticker": "MSFT",
+      "pred_date": "2026-11-25",
+      "direction": "LONG",
+      "pred_prob_pct": 70.4,
+      "entry_price": 370.66
+    },
+    {
+      "ticker": "ORCL",
+      "pred_date": "2026-11-25",
+      "direction": "LONG",
+      "pred_prob_pct": 70.4,
+      "entry_price": 144.0
+    },
+    {
+      "ticker": "PLTR",
+      "pred_date": "2026-11-25",
+      "direction": "LONG",
+      "pred_prob_pct": 70.4,
+      "entry_price": 123.06
+    },
+    {
+      "ticker": "NVDA",
+      "pred_date": "2026-11-25",
+      "direction": "LONG",
+      "pred_prob_pct": 68.7,
+      "entry_price": 177.23
+    },
+    {
+      "ticker": "AMAT",
+      "pred_date": "2026-11-25",
+      "direction": "LONG",
+      "pred_prob_pct": 67.7,
+      "entry_price": 323.5
+    },
+    {
+      "ticker": "ASML",
+      "pred_date": "2026-11-25",
+      "direction": "LONG",
+      "pred_prob_pct": 67.7,
+      "entry_price": 1286.62
+    },
+    {
+      "ticker": "TSM",
+      "pred_date": "2026-11-25",
+      "direction": "LONG",
+      "pred_prob_pct": 67.7,
+      "entry_price": 340.05
+    },
+    {
+      "ticker": "AMD",
+      "pred_date": "2026-11-25",
+      "direction": "LONG",
+      "pred_prob_pct": 67.5,
+      "entry_price": 192.43
+    },
+    {
+      "ticker": "AVGO",
+      "pred_date": "2026-11-25",
+      "direction": "LONG",
+      "pred_prob_pct": 67.1,
+      "entry_price": 321.68
+    },
+    {
+      "ticker": "CRWV",
+      "pred_date": "2026-11-25",
+      "direction": "LONG",
+      "pred_prob_pct": 55.0,
+      "entry_price": 80.94
+    },
+    {
+      "ticker": "NBIS",
+      "pred_date": "2026-11-25",
       "direction": "LONG",
       "pred_prob_pct": 55.0,
       "entry_price": 195.19
