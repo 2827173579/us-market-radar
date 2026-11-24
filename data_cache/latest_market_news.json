@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795487888.219,
-  "updated_at_et": "11-23 21:38 ET",
-  "updated_at_kst": "11:38 KST",
+  "updated_at_ts": 1795487993.711,
+  "updated_at_et": "11-23 21:39 ET",
+  "updated_at_kst": "11:39 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -3205,6 +3205,13 @@
     ],
     "ANT": [
       {
+        "title": "Dow Jones Futures: Tech Stocks, Nvidia Snap Back On Jensen Huang's Return; Elon Musk-Led SpaceX, Tesla Rally",
+        "url": "https://finance.yahoo.com/m/be493228-4ecf-338d-9017-054d3d6efc36/dow-jones-futures%3A-tech.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 21:14 ET",
+        "pub_ts": 1795486479.0
+      },
+      {
         "title": "Can Anthropic win hearts and minds by curing hearts and minds?",
         "url": "https://www.cbsnews.com/news/anthropic-drug-discovery-claude-science-ipo/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3231,13 +3238,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 19:25 ET",
         "pub_ts": 1795479913.0
-      },
-      {
-        "title": "Dow Jones Futures: Tech Stocks, Nvidia Snap Back On Jensen Huang's Return; Elon Musk-Led SpaceX, Tesla Rally",
-        "url": "https://finance.yahoo.com/m/be493228-4ecf-338d-9017-054d3d6efc36/dow-jones-futures%3A-tech.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 19:20 ET",
-        "pub_ts": 1795479607.0
       }
     ],
     "XAUUSD": [
@@ -3305,31 +3305,31 @@
     "DELL": 1795487777.156511,
     "OKLO": 1795487777.156511,
     "CEG": 1795487777.156511,
-    "FPS": 1795486489.0000737,
+    "FPS": 1795487993.710698,
     "MU": 1795487133.6095319,
     "SKHY": 1795487133.6095319,
     "WDC": 1795487133.6095319,
-    "STX": 1795486489.0000737,
-    "MSTR": 1795486489.0000737,
-    "SNDK": 1795486489.0000737,
+    "STX": 1795487993.710698,
+    "MSTR": 1795487993.710698,
+    "SNDK": 1795487993.710698,
     "BTC-USD": 1795487133.6095319,
-    "CRWD": 1795486489.0000737,
+    "CRWD": 1795487993.710698,
     "ORCL": 1795487133.6095319,
     "COIN": 1795487133.6095319,
     "LLY": 1795487133.6095319,
     "MRNA": 1795487133.6095319,
     "NKE": 1795487133.6095319,
     "MCD": 1795487133.6095319,
-    "PEP": 1795486489.0000737,
+    "PEP": 1795487993.710698,
     "XOM": 1795487560.7101262,
     "JPM": 1795487560.7101262,
-    "WMT": 1795486489.0000737,
+    "WMT": 1795487993.710698,
     "V": 1795487560.7101262,
-    "CAT": 1795486489.0000737,
+    "CAT": 1795487993.710698,
     "FN": 1795487133.6095319,
     "GLW": 1795487777.156511,
-    "ANT": 1795486489.0000737,
-    "XAUUSD": 1795486489.0000737
+    "ANT": 1795487993.710698,
+    "XAUUSD": 1795487993.710698
   },
   "opex_shield": {
     "date": "2026-11-23",
