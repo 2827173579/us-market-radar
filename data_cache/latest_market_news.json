@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795559111.232,
-  "updated_at_et": "11-24 17:25 ET",
-  "updated_at_kst": "07:25 KST",
+  "updated_at_ts": 1795559209.896,
+  "updated_at_et": "11-24 17:26 ET",
+  "updated_at_kst": "07:26 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1944,6 +1944,20 @@
     ],
     "TSLA": [
       {
+        "title": "How Much Bitcoin Could Elon Musk Control if Tesla and SpaceX Merge?",
+        "url": "https://247wallst.com/investing/cryptocurrency/2026/11/24/how-much-bitcoin-could-elon-musk-control-if-tesla-and-spacex-merge/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 17:12 ET",
+        "pub_ts": 1795558359.0
+      },
+      {
+        "title": "RBC Expects SpaceX-Tesla Deal Announcement By Early 2027 — Notes TSLA Shareholders May Accept Combination Without Large Premium",
+        "url": "https://stocktwits.com/news-articles/markets/equity/rbc-expects-space-x-tesla-deal-announcement-by-early-2027-notes-tsla-shareholders-may-accept-combination-without-large-premium/cNbsNbYR9k6?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 16:55 ET",
+        "pub_ts": 1795557333.0
+      },
+      {
         "title": "A SpaceX-Tesla Deal Could Come in December. Here's Why 1 Group of Investors Should Be Worried.",
         "url": "https://www.fool.com/investing/2026/11/24/a-spacex-tesla-deal-could-come-in-december-here-s-why-1-group-of-investors-should-be-worried/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1963,20 +1977,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 16:02 ET",
         "pub_ts": 1795554167.0
-      },
-      {
-        "title": "Tesla's Vertical Integration Makes it Uniquely Positioned in US Robotaxi Market, UBS Says",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/tesla-apos-vertical-integration-makes-200751408.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 15:07 ET",
-        "pub_ts": 1795550871.0
-      },
-      {
-        "title": "Tesla and SpaceX Name Five Directors for a Potential $3.5 Trillion Merger. Tesla Holders Still Get a Vote",
-        "url": "https://www.tikr.com/blog/tesla-and-spacex-name-five-directors-for-a-potential-3-5-trillion-merger-tesla-holders-still-get-a-vote?ref=yahoofinance&tlnk=yf-261124-rc5pgxq2&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 15:05 ET",
-        "pub_ts": 1795550733.0
       }
     ],
     "AXP": [
@@ -2203,6 +2203,13 @@
     ],
     "HPE": [
       {
+        "title": "Anthropic falls below IPO price as Nvidia gives back gains",
+        "url": "https://finance.yahoo.com/video/anthropic-falls-below-ipo-price-as-nvidia-gives-back-gains-214558309.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 16:45 ET",
+        "pub_ts": 1795556758.0
+      },
+      {
         "title": "HPE CEO Antonio Neri reveals 3 drivers behind its raised outlook",
         "url": "https://finance.yahoo.com/video/hpe-ceo-antonio-neri-reveals-3-drivers-behind-its-raised-outlook-214049570.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2217,28 +2224,28 @@
         "pub_ts": 1795543374.0
       },
       {
-        "title": "Is HPE One of the Morgan Stanley’s 8 Best Semiconductor and Server Stocks to Buy for 2027?",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/hpe-one-morgan-stanley-8-205519024.html?.tsrc=rss",
+        "title": "Dell Just Reported Earnings and Raised Its Forecast by $10 Billion. Is the Stock a Buy After Tuesday's Selloff?",
+        "url": "https://www.fool.com/investing/2026/11/24/dell-just-reported-earnings-and-raised-its-forecast-by-usd10-billion-is-the-stock-a-buy-after-tuesday-s-selloff/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 15:55 ET",
-        "pub_ts": 1795553719.0
+        "time": "11-24 17:14 ET",
+        "pub_ts": 1795558483.0
       },
       {
-        "title": "Why Hewlett Packard Enterprise Stock Fell 16% Today",
-        "url": "https://www.fool.com/investing/2026/11/24/why-hewlett-packard-enterprise-stock-fell-16-today/?.tsrc=rss",
+        "title": "HP stock reverses course after hours despite quarterly results beat, dividend bump",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/hp-stock-reverses-course-hours-214554290.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 15:12 ET",
-        "pub_ts": 1795551172.0
-      },
-      {
-        "title": "HPE Q4 Earnings Call Highlights Raised Outlook for AI Shipments",
-        "url": "https://finance.yahoo.com/technology/ai/articles/hpe-q4-earnings-call-highlights-200000109.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 15:00 ET",
-        "pub_ts": 1795550400.0
+        "time": "11-24 16:45 ET",
+        "pub_ts": 1795556754.0
       }
     ],
     "DELL": [
+      {
+        "title": "Anthropic falls below IPO price as Nvidia gives back gains",
+        "url": "https://finance.yahoo.com/video/anthropic-falls-below-ipo-price-as-nvidia-gives-back-gains-214558309.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 16:45 ET",
+        "pub_ts": 1795556758.0
+      },
       {
         "title": "Dell's Q3 earnings crush estimates as AI server demand roars",
         "url": "https://finance.yahoo.com/video/dells-q3-earnings-crush-estimates-as-ai-server-demand-roars-213232468.html?.tsrc=rss",
@@ -2254,25 +2261,18 @@
         "pub_ts": 1795555305.0
       },
       {
-        "title": "Dell shares rise after earnings beat as AI server backlog jumps 619%",
-        "url": "https://www.proactiveinvestors.com/companies/news/1102383/dell-shares-rise-after-earnings-beat-as-ai-server-backlog-jumps-619-1102383.html?.tsrc=rss",
+        "title": "Dell Just Reported Earnings and Raised Its Forecast by $10 Billion. Is the Stock a Buy After Tuesday's Selloff?",
+        "url": "https://www.fool.com/investing/2026/11/24/dell-just-reported-earnings-and-raised-its-forecast-by-usd10-billion-is-the-stock-a-buy-after-tuesday-s-selloff/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 16:34 ET",
-        "pub_ts": 1795556040.0
-      },
-      {
-        "title": "Dell, HP, Autodesk and Workday earnings: what to watch today",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/dell-hp-autodesk-workday-earnings-212155359.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 16:21 ET",
-        "pub_ts": 1795555315.0
+        "time": "11-24 17:14 ET",
+        "pub_ts": 1795558483.0
       },
       {
         "title": "Dell Technologies Smashes Q3 Estimates, Guides Above Views",
         "url": "https://finance.yahoo.com/m/4f82e7c0-64cb-3be4-911b-f1c9f673e3be/dell-technologies-smashes-q3.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 16:19 ET",
-        "pub_ts": 1795555140.0
+        "time": "11-24 17:02 ET",
+        "pub_ts": 1795557749.0
       }
     ],
     "OKLO": [
@@ -3328,37 +3328,37 @@
     "AXTI": 1795558518.3891256,
     "NASA": 1795559010.40853,
     "LUNR": 1795559010.40853,
-    "TSLA": 1795557616.4149852,
+    "TSLA": 1795559209.8958948,
     "AXP": 1795559010.40853,
     "RKLB": 1795559010.40853,
     "KO": 1795559010.40853,
     "FLY": 1795559010.40853,
     "INTC": 1795559010.40853,
-    "VRT": 1795557616.4149852,
-    "HPE": 1795557616.4149852,
-    "DELL": 1795557616.4149852,
-    "OKLO": 1795557616.4149852,
-    "CEG": 1795557616.4149852,
-    "FPS": 1795557616.4149852,
+    "VRT": 1795559209.8958948,
+    "HPE": 1795559209.8958948,
+    "DELL": 1795559209.8958948,
+    "OKLO": 1795559209.8958948,
+    "CEG": 1795559209.8958948,
+    "FPS": 1795559209.8958948,
     "MU": 1795558518.3891256,
     "SKHY": 1795558518.3891256,
     "WDC": 1795558518.3891256,
-    "STX": 1795557616.4149852,
-    "MSTR": 1795557616.4149852,
-    "SNDK": 1795557616.4149852,
+    "STX": 1795559209.8958948,
+    "MSTR": 1795559209.8958948,
+    "SNDK": 1795559209.8958948,
     "BTC-USD": 1795558518.3891256,
-    "CRWD": 1795557616.4149852,
-    "ORCL": 1795557616.4149852,
-    "COIN": 1795557616.4149852,
-    "LLY": 1795557616.4149852,
-    "MRNA": 1795557616.4149852,
+    "CRWD": 1795559209.8958948,
+    "ORCL": 1795559209.8958948,
+    "COIN": 1795559209.8958948,
+    "LLY": 1795559209.8958948,
+    "MRNA": 1795559209.8958948,
     "NKE": 1795557717.732933,
-    "MCD": 1795557616.4149852,
+    "MCD": 1795559209.8958948,
     "PEP": 1795557717.732933,
     "XOM": 1795557717.732933,
     "JPM": 1795557717.732933,
     "WMT": 1795557717.732933,
-    "V": 1795557616.4149852,
+    "V": 1795559209.8958948,
     "CAT": 1795557717.732933,
     "FN": 1795558518.3891256,
     "GLW": 1795559010.40853,
