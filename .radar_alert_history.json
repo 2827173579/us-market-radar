@@ -74,8 +74,8 @@
       "last_notified_at": 0.0
     },
     "AXP": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1795539825.8789918
     },
     "SPY": {
       "state": "NORMAL",
@@ -86,8 +86,8 @@
       "last_notified_at": 1795539719.5980055
     },
     "IWM": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1795539825.8789918
     },
     "IGV": {
       "state": "NORMAL",
