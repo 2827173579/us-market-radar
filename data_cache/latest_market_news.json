@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795549090.613,
-  "updated_at_et": "11-24 14:38 ET",
-  "updated_at_kst": "04:38 KST",
+  "updated_at_ts": 1795549194.692,
+  "updated_at_et": "11-24 14:39 ET",
+  "updated_at_kst": "04:39 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1131,11 +1131,11 @@
     ],
     "META": [
       {
-        "title": "Stocks give back gains as Anthropic dips below IPO price",
-        "url": "https://finance.yahoo.com/video/stocks-give-back-gains-as-anthropic-dips-below-ipo-price-154408548.html?.tsrc=rss",
+        "title": "David Abrams’ Meta Platforms, Inc. (META) Bet Is Backed by Strong Cash Flow and AI Growth",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/david-abrams-meta-platforms-inc-190633349.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 10:44 ET",
-        "pub_ts": 1795535048.0
+        "time": "11-24 14:06 ET",
+        "pub_ts": 1795547193.0
       },
       {
         "title": "Meta launches its Muse personal agent in the UK – but it comes with a big warning",
@@ -1168,11 +1168,18 @@
     ],
     "GOOGL": [
       {
-        "title": "Stocks give back gains as Anthropic dips below IPO price",
-        "url": "https://finance.yahoo.com/video/stocks-give-back-gains-as-anthropic-dips-below-ipo-price-154408548.html?.tsrc=rss",
+        "title": "Intuit vs. Palo Alto Networks: Which Technology Stock Is a Better Buy for 2027?",
+        "url": "https://www.fool.com/coverage/better-buy/2026/11/24/intuit-vs-palo-alto-networks-which-technology-stock-is-a-better-buy-for-2027/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 10:44 ET",
-        "pub_ts": 1795535048.0
+        "time": "11-24 14:20 ET",
+        "pub_ts": 1795548002.0
+      },
+      {
+        "title": "Billionaire David Abrams’ Top 5 Stock Picks for 2027",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/billionaire-david-abrams-top-5-190703630.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 14:07 ET",
+        "pub_ts": 1795547223.0
       },
       {
         "title": "Bloom Energy Revenue Jumped 138%. Its Next Growth Phase Could Be Even Bigger",
@@ -1194,16 +1201,16 @@
         "source": "Yahoo Finance",
         "time": "11-24 13:18 ET",
         "pub_ts": 1795544302.0
-      },
-      {
-        "title": "What Will Decide Snowflake Stock Over The Next Six Months?",
-        "url": "https://www.trefis.com/stock/snow/articles/628289/what-will-decide-snowflake-stock-over-the-next-six-months/2026-11-24?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 13:03 ET",
-        "pub_ts": 1795543386.0
       }
     ],
     "MSFT": [
+      {
+        "title": "Microsoft declares a code red in the middle of a 'Patchpocalypse'",
+        "url": "https://finance.yahoo.com/markets/article/microsoft-declares-a-code-red-in-the-middle-of-a-patchpocalypse-193740712.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 14:37 ET",
+        "pub_ts": 1795549060.0
+      },
       {
         "title": "Microsoft Corporation (MSFT) Is Facing AI Spending Fears: Could Its Cloud Growth Change the Narrative?",
         "url": "https://finance.yahoo.com/markets/stocks/articles/microsoft-corporation-msft-facing-ai-165850177.html?.tsrc=rss",
@@ -1217,13 +1224,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 11:48 ET",
         "pub_ts": 1795538905.0
-      },
-      {
-        "title": "Oracle Is a Higher-Leverage, Cash-Hungry Twin to Microsoft",
-        "url": "https://247wallst.com/investing/2026/11/24/oracle-is-a-higher-leverage-cash-hungry-twin-to-microsoft/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 10:45 ET",
-        "pub_ts": 1795535101.0
       },
       {
         "title": "The Gates Foundation Trust Sold 2.2 Million Berkshire Shares and Opened a $155 Million Dollar Tree Stake",
@@ -1381,11 +1381,11 @@
         "pub_ts": 1795538220.0
       },
       {
-        "title": "Anthropic Stock Sinks Below IPO Price. What History Says Happens Next.",
-        "url": "https://finance.yahoo.com/m/a286105e-a938-3486-a9d4-92ce3954de08/anthropic-stock-sinks-below.html?.tsrc=rss",
+        "title": "Amazon’s Decart acquisition is a bet on using software to narrow the silicon gap with Nvidia",
+        "url": "https://finance.yahoo.com/technology/ai/articles/amazon-decart-acquisition-bet-using-155107586.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 11:14 ET",
-        "pub_ts": 1795536840.0
+        "time": "11-24 10:51 ET",
+        "pub_ts": 1795535467.0
       }
     ],
     "CRWV": [
@@ -3288,33 +3288,33 @@
   "ticker_news_ts": {
     "KORU": 1795548944.8957593,
     "SOXL": 1795548944.8957593,
-    "SPY": 1795547660.6242015,
+    "SPY": 1795549194.691989,
     "DIA": 1795548944.8957593,
     "SOXX": 1795548944.8957593,
     "QQQ": 1795548944.8957593,
-    "SMH": 1795547660.6242015,
+    "SMH": 1795549194.691989,
     "IWM": 1795548944.8957593,
     "IGV": 1795548944.8957593,
     "TLT": 1795548944.8957593,
     "GLD": 1795548944.8957593,
     "SQQQ": 1795548944.8957593,
-    "TSM": 1795547660.6242015,
+    "TSM": 1795549194.691989,
     "VIXY": 1795548944.8957593,
     "SOXS": 1795548944.8957593,
     "NVDA": 1795548944.8957593,
     "AMD": 1795548944.8957593,
-    "ASML": 1795547660.6242015,
-    "QCOM": 1795547660.6242015,
+    "ASML": 1795549194.691989,
+    "QCOM": 1795549194.691989,
     "AVGO": 1795548944.8957593,
-    "AMAT": 1795547660.6242015,
-    "META": 1795547660.6242015,
-    "GOOGL": 1795547660.6242015,
-    "MSFT": 1795547660.6242015,
-    "AAPL": 1795547660.6242015,
-    "PLTR": 1795547660.6242015,
-    "NOW": 1795547660.6242015,
-    "AMZN": 1795547660.6242015,
-    "CRWV": 1795547660.6242015,
+    "AMAT": 1795549194.691989,
+    "META": 1795549194.691989,
+    "GOOGL": 1795549194.691989,
+    "MSFT": 1795549194.691989,
+    "AAPL": 1795549194.691989,
+    "PLTR": 1795549194.691989,
+    "NOW": 1795549194.691989,
+    "AMZN": 1795549194.691989,
+    "CRWV": 1795549194.691989,
     "NBIS": 1795547768.3296242,
     "APLD": 1795548295.5640535,
     "VST": 1795548295.5640535,
@@ -3365,7 +3365,7 @@
     "GLW": 1795548295.5640535,
     "ANT": 1795548516.1517777,
     "XAUUSD": 1795548623.5326707,
-    "KOSPI": 1795547660.6242015
+    "KOSPI": 1795549194.691989
   },
   "opex_shield": {
     "date": "2026-11-24",
