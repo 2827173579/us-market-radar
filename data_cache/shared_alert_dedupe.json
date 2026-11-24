@@ -5551,9 +5551,17 @@
     "2026-11-24:IWM/DELL:5M_ENTRY+STOP_LOSS": {
       "device": "PC",
       "ts": 1795515767.5387428
+    },
+    "2026-11-24:NKE/HPE:5M_ENTRY+STOP_LOSS": {
+      "device": "PC",
+      "ts": 1795515999.3331492
+    },
+    "2026-11-24:DEFENSIVE_FLIGHT:+5.1": {
+      "device": "PC",
+      "ts": 1795516002.135346
     }
   },
   "device": "PC",
-  "last_heartbeat_ts": 1795515788.7369952,
-  "updated_at": "2026-11-24T10:24:43.092939+00:00"
+  "last_heartbeat_ts": 1795515905.2044432,
+  "updated_at": "2026-11-24T10:26:42.135839+00:00"
 }
