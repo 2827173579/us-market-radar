@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795534582.21,
-  "updated_at_et": "11-24 10:36 ET",
-  "updated_at_kst": "00:36 KST",
+  "updated_at_ts": 1795534687.937,
+  "updated_at_et": "11-24 10:38 ET",
+  "updated_at_kst": "00:38 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -440,13 +440,6 @@
         "pub_ts": 1795518174.0
       },
       {
-        "title": "ETF Activity: SPY Pulls In $9.24 Billion on Nov. 20",
-        "url": "https://finance.yahoo.com/markets/options/articles/etf-activity-spy-pulls-9-110012397.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 06:00 ET",
-        "pub_ts": 1795518012.0
-      },
-      {
         "title": "Exchange-Traded Funds, Equity Futures Lower Pre-Bell Tuesday as Investors Pull Back From AI-Related Stocks",
         "url": "https://finance.yahoo.com/markets/stocks/articles/exchange-traded-funds-equity-futures-141922343.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -459,6 +452,13 @@
         "source": "Yahoo Finance",
         "time": "11-24 08:42 ET",
         "pub_ts": 1795527720.0
+      },
+      {
+        "title": "ETFs Bought $120 Million of Mastercard (MA) on Friday",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-bought-120-million-mastercard-110212516.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 06:02 ET",
+        "pub_ts": 1795518132.0
       }
     ],
     "DIA": [
@@ -565,11 +565,11 @@
         "pub_ts": 1795485819.0
       },
       {
-        "title": "QQQ Is Almost Half In 10 Stocks. This Nasdaq ETF Caps Every One at 1%",
-        "url": "https://247wallst.com/investing/etf/2026/11/23/qqq-is-almost-half-in-10-stocks-this-nasdaq-etf-caps-every-one-at-1/?.tsrc=rss",
+        "title": "Stock Market Today: Nasdaq Sells Off After Big Market Surge; AMD, Anthropic, Nvidia All Dive (Live Coverage)",
+        "url": "https://finance.yahoo.com/m/4aa4ff31-269f-346e-80c4-e681510af7ae/stock-market-today%3A-nasdaq.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 21:01 ET",
-        "pub_ts": 1795485664.0
+        "time": "11-24 09:42 ET",
+        "pub_ts": 1795531368.0
       }
     ],
     "SMH": [
@@ -3284,14 +3284,14 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795533155.9895623,
-    "SOXL": 1795533155.9895623,
-    "SPY": 1795533155.9895623,
-    "DIA": 1795533155.9895623,
-    "SOXX": 1795533155.9895623,
-    "QQQ": 1795533155.9895623,
-    "SMH": 1795533155.9895623,
-    "IWM": 1795533155.9895623,
+    "KORU": 1795534687.936589,
+    "SOXL": 1795534687.936589,
+    "SPY": 1795534687.936589,
+    "DIA": 1795534687.936589,
+    "SOXX": 1795534687.936589,
+    "QQQ": 1795534687.936589,
+    "SMH": 1795534687.936589,
+    "IWM": 1795534687.936589,
     "IGV": 1795533262.3382194,
     "TLT": 1795533262.3382194,
     "GLD": 1795533262.3382194,
