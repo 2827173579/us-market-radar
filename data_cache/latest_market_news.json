@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795526015.624,
-  "updated_at_et": "11-24 08:13 ET",
-  "updated_at_kst": "22:13 KST",
+  "updated_at_ts": 1795526131.571,
+  "updated_at_et": "11-24 08:15 ET",
+  "updated_at_kst": "22:15 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1460,6 +1460,13 @@
     ],
     "APLD": [
       {
+        "title": "Applied Digital Achieves Initial 25 MW Ready for Service in Harwood, North Dakota, for Hyperscaler, Completes Base-Build Commissioning of First 75 MW",
+        "url": "https://finance.yahoo.com/technology/ai/articles/applied-digital-achieves-initial-25-130000311.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 08:00 ET",
+        "pub_ts": 1795525200.0
+      },
+      {
         "title": "I’m Treating Applied Digital Like a Long-Term Call Option on $41B+ in Hyperscaler Leases",
         "url": "https://247wallst.com/investing/2026/11/24/im-treating-applied-digital-like-a-long-term-call-option-on-41b-in-hyperscaler-leases/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1486,13 +1493,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 14:28 ET",
         "pub_ts": 1795462109.0
-      },
-      {
-        "title": "Why Is Applied Digital (APLD) Stock Up Today? $5.4B Hyperscaler Lease",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/why-applied-digital-apld-stock-173047930.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 12:30 ET",
-        "pub_ts": 1795455047.0
       }
     ],
     "VST": [
@@ -1571,6 +1571,13 @@
     ],
     "CRDO": [
       {
+        "title": "Credo's Optical Expansion: Can It Gain Ground Against Rivals?",
+        "url": "https://finance.yahoo.com/technology/articles/credos-optical-expansion-gain-ground-120300006.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 07:03 ET",
+        "pub_ts": 1795521780.0
+      },
+      {
         "title": "Credo Technology (CRDO) Just Made a Stunning Comeback",
         "url": "https://finance.yahoo.com/markets/stocks/articles/credo-technology-crdo-just-made-031759842.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1597,13 +1604,6 @@
         "source": "Yahoo Finance",
         "time": "11-22 05:09 ET",
         "pub_ts": 1795342163.0
-      },
-      {
-        "title": "Credo Technology Group vs. Western Digital: Which Technology Stock Is a Better Buy for 2027?",
-        "url": "https://www.fool.com/coverage/better-buy/2026/11/20/credo-technology-group-vs-western-digital-which-technology-stock-is-a-better-buy-for-2027/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 17:17 ET",
-        "pub_ts": 1795213028.0
       }
     ],
     "COHR": [
@@ -3312,22 +3312,22 @@
     "AMZN": 1795525682.3370814,
     "CRWV": 1795525682.3370814,
     "NBIS": 1795525791.8784165,
-    "APLD": 1795524575.0643048,
-    "VST": 1795524575.0643048,
-    "BE": 1795524575.0643048,
-    "CRDO": 1795524575.0643048,
-    "COHR": 1795524575.0643048,
+    "APLD": 1795526131.5714948,
+    "VST": 1795526131.5714948,
+    "BE": 1795526131.5714948,
+    "CRDO": 1795526131.5714948,
+    "COHR": 1795526131.5714948,
     "MRVL": 1795525791.8784165,
     "LITE": 1795525791.8784165,
-    "AAOI": 1795524575.0643048,
+    "AAOI": 1795526131.5714948,
     "SPCX": 1795524685.7043514,
-    "ASTS": 1795524575.0643048,
+    "ASTS": 1795526131.5714948,
     "AXTI": 1795525791.8784165,
     "NASA": 1795524685.7043514,
     "LUNR": 1795524685.7043514,
     "TSLA": 1795524685.7043514,
     "AXP": 1795524685.7043514,
-    "RKLB": 1795524575.0643048,
+    "RKLB": 1795526131.5714948,
     "KO": 1795524685.7043514,
     "FLY": 1795524685.7043514,
     "INTC": 1795524685.7043514,
@@ -3345,20 +3345,20 @@
     "SNDK": 1795524903.6988554,
     "BTC-USD": 1795525791.8784165,
     "CRWD": 1795524903.6988554,
-    "ORCL": 1795524575.0643048,
-    "COIN": 1795524575.0643048,
-    "LLY": 1795524575.0643048,
-    "MRNA": 1795524575.0643048,
-    "NKE": 1795524575.0643048,
-    "MCD": 1795524575.0643048,
+    "ORCL": 1795526131.5714948,
+    "COIN": 1795526131.5714948,
+    "LLY": 1795526131.5714948,
+    "MRNA": 1795526131.5714948,
+    "NKE": 1795526131.5714948,
+    "MCD": 1795526131.5714948,
     "PEP": 1795524903.6988554,
     "XOM": 1795524795.1114874,
     "JPM": 1795524795.1114874,
     "WMT": 1795524903.6988554,
-    "V": 1795524575.0643048,
+    "V": 1795526131.5714948,
     "CAT": 1795524903.6988554,
     "FN": 1795525791.8784165,
-    "GLW": 1795524575.0643048,
+    "GLW": 1795526131.5714948,
     "ANT": 1795524903.6988554,
     "XAUUSD": 1795524903.6988554,
     "KOSPI": 1795525791.8784165
