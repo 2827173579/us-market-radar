@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795517672.06,
-  "updated_at_et": "11-24 05:54 ET",
-  "updated_at_kst": "19:54 KST",
+  "updated_at_ts": 1795517781.983,
+  "updated_at_et": "11-24 05:56 ET",
+  "updated_at_kst": "19:56 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -906,25 +906,32 @@
     ],
     "NVDA": [
       {
-        "title": "AI market whipsaw puts Kevin Warsh's rate-hike strategy to the test",
-        "url": "https://finance.yahoo.com/economy/policy/article/ai-market-whipsaw-puts-kevin-warshs-rate-hike-strategy-to-the-test-100000273.html?.tsrc=rss",
+        "title": "Down 40% or More for the Year, Are Any of These Top Cryptocurrencies Worth Buying Right Now?",
+        "url": "https://www.fool.com/investing/2026/11/24/down-40-or-more-for-the-year-are-any-of-these-top-cryptocurrencies-worth-buying-right-now/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 05:00 ET",
-        "pub_ts": 1795514400.0
+        "time": "11-24 05:50 ET",
+        "pub_ts": 1795517402.0
       },
       {
-        "title": "Nvidia's long-time CFO and now former interim CEO Colette Kress was left in the dark about Jensen Huang's return: Report",
-        "url": "https://finance.yahoo.com/markets/stocks/article/nvidias-long-time-cfo-and-now-former-interim-ceo-colette-kress-was-left-in-the-dark-about-jensen-huangs-return-report-095913169.html?.tsrc=rss",
+        "title": "Nvidia Bulls Rule on Asian Stock Markets",
+        "url": "https://finance.yahoo.com/markets/world-indices/articles/nvidia-bulls-rule-asian-stock-103642321.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 04:59 ET",
-        "pub_ts": 1795514353.0
+        "time": "11-24 05:36 ET",
+        "pub_ts": 1795516602.0
       },
       {
-        "title": "Nvidia stock falls after epic rally on Jensen Huang's return as CEO",
-        "url": "https://finance.yahoo.com/markets/stocks/article/nvidia-stock-falls-after-epic-rally-on-jensen-huangs-return-as-ceo-094535877.html?.tsrc=rss",
+        "title": "Nvidia Turmoil: How Big Is the Risk for CoreWeave?",
+        "url": "https://www.fool.com/investing/2026/11/24/nvidia-turmoil-how-big-is-the-risk-for-coreweave/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 04:45 ET",
-        "pub_ts": 1795513535.0
+        "time": "11-24 05:30 ET",
+        "pub_ts": 1795516202.0
+      },
+      {
+        "title": "Nvidia Lost $2.75 Trillion in 45 Days -- More Than the Market Cap of 496 S&P 500 Companies -- and Investors Wagering on a Quick Bounce to New Highs May Be Disappointed",
+        "url": "https://www.fool.com/investing/2026/11/24/nvidia-lost-275-trillion-in-45-days-more-than-496-sp-500-companies-wager-on-quick-bounce-disappointed/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 05:26 ET",
+        "pub_ts": 1795515962.0
       },
       {
         "title": "Nvidia CEO Jensen Huang Is Back, and Stock Investors Just Got More Great News About the AI Chip Giant",
@@ -932,13 +939,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 05:17 ET",
         "pub_ts": 1795515422.0
-      },
-      {
-        "title": "Nvidia Could Generate $741 Billion in Revenue Next Year. Here’s What That Means for the Stock.",
-        "url": "https://www.fool.com/investing/2026/11/24/nvidia-could-generate-usd741-billion-in-revenue-next-year-here-s-what-that-means-for-the-stock/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 05:15 ET",
-        "pub_ts": 1795515301.0
       }
     ],
     "AMD": [
@@ -1202,6 +1202,13 @@
     ],
     "MSFT": [
       {
+        "title": "Trump Threatens a “Tremendous Tax” on Overseas Data Centers. That’s a Big Problem for Microsoft, Amazon and Alphabet",
+        "url": "https://www.tikr.com/blog/trump-threatens-a-tremendous-tax-on-overseas-data-centers-thats-a-big-problem-for-microsoft-amazon-and-alphabet?ref=yahoofinance&tlnk=yf-261124-p3fx6248&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 05:20 ET",
+        "pub_ts": 1795515621.0
+      },
+      {
         "title": "Is V2X (VVX) Undervalued Following Its Microsoft AI Expansion And 2027 Revenue Concerns?",
         "url": "https://finance.yahoo.com/markets/stocks/articles/v2x-vvx-undervalued-following-microsoft-091039287.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1228,13 +1235,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 19:17 ET",
         "pub_ts": 1795479463.0
-      },
-      {
-        "title": "Chamath Says Microsoft “Clearly Is Going to Need to Have a Frontier Model.” Nadella Is Betting It Won’t",
-        "url": "https://www.tikr.com/blog/chamath-says-microsoft-clearly-is-going-to-need-to-have-a-frontier-model-nadella-is-betting-it-wont?ref=yahoofinance&tlnk=yf-261123-rjg9hgh9&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 17:50 ET",
-        "pub_ts": 1795474231.0
       }
     ],
     "AAPL": [
@@ -3291,22 +3291,22 @@
     "QQQ": 1795517672.0598004,
     "SMH": 1795517672.0598004,
     "IWM": 1795517672.0598004,
-    "IGV": 1795516246.9607344,
-    "TLT": 1795516246.9607344,
-    "GLD": 1795516246.9607344,
-    "SQQQ": 1795516246.9607344,
-    "TSM": 1795516246.9607344,
-    "VIXY": 1795516246.9607344,
-    "SOXS": 1795516246.9607344,
-    "NVDA": 1795516246.9607344,
-    "AMD": 1795516246.9607344,
-    "ASML": 1795516246.9607344,
-    "QCOM": 1795516246.9607344,
-    "AVGO": 1795516246.9607344,
-    "AMAT": 1795516246.9607344,
+    "IGV": 1795517781.9825242,
+    "TLT": 1795517781.9825242,
+    "GLD": 1795517781.9825242,
+    "SQQQ": 1795517781.9825242,
+    "TSM": 1795517781.9825242,
+    "VIXY": 1795517781.9825242,
+    "SOXS": 1795517781.9825242,
+    "NVDA": 1795517781.9825242,
+    "AMD": 1795517781.9825242,
+    "ASML": 1795517781.9825242,
+    "QCOM": 1795517781.9825242,
+    "AVGO": 1795517781.9825242,
+    "AMAT": 1795517781.9825242,
     "META": 1795516376.8469977,
     "GOOGL": 1795516376.8469977,
-    "MSFT": 1795516246.9607344,
+    "MSFT": 1795517781.9825242,
     "AAPL": 1795516376.8469977,
     "PLTR": 1795516376.8469977,
     "NOW": 1795516376.8469977,
