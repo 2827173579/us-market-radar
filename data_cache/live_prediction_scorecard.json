@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-25 06:35:11",
+  "updated_at": "2026-11-25 07:53:16",
   "win_rate_7d_pct": 66.7,
   "win_rate_30d_pct": 49.3,
   "long_win_rate_7d_pct": 11.4,
@@ -1031,13 +1031,20 @@
       "direction": "SHORT",
       "pred_prob_pct": 58.2,
       "entry_price": 210.86
+    },
+    {
+      "ticker": "XOM",
+      "pred_date": "2026-11-25",
+      "direction": "SHORT",
+      "pred_prob_pct": 56.3,
+      "entry_price": 158.23
     }
   ],
   "daily_breakdown_30d": [
     {
       "date": "2026-10-21",
       "win_rate_pct": 100.0,
-      "long_win_rate_pct": 21.7,
+      "long_win_rate_pct": 20.8,
       "short_win_rate_pct": 0.0,
       "sample_count": 1,
       "avg_return_pct": 8.66
@@ -1149,7 +1156,7 @@
     {
       "date": "2026-11-04",
       "win_rate_pct": 7.1,
-      "long_win_rate_pct": 4.8,
+      "long_win_rate_pct": 5.0,
       "short_win_rate_pct": 0.0,
       "sample_count": 28,
       "avg_return_pct": -4.66
@@ -1197,7 +1204,7 @@
     {
       "date": "2026-11-10",
       "win_rate_pct": 14.3,
-      "long_win_rate_pct": 18.2,
+      "long_win_rate_pct": 17.4,
       "short_win_rate_pct": 0.0,
       "sample_count": 28,
       "avg_return_pct": -3.5
