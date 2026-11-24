@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795564563.688,
-  "updated_at_et": "11-24 18:56 ET",
-  "updated_at_kst": "08:56 KST",
+  "updated_at_ts": 1795564661.892,
+  "updated_at_et": "11-24 18:57 ET",
+  "updated_at_kst": "08:57 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -806,13 +806,6 @@
     ],
     "TSM": [
       {
-        "title": "Nvidia, AMD, Broadcom lead chip stocks lower as AI trade comes under pressure",
-        "url": "https://finance.yahoo.com/markets/article/nvidia-amd-broadcom-lead-chip-stocks-lower-as-ai-trade-comes-under-pressure-141635463.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 09:16 ET",
-        "pub_ts": 1795529795.0
-      },
-      {
         "title": "Novanta Shares Just Jumped And We’re Buying This Robotics Play",
         "url": "https://247wallst.com/videos/novanta-shares-just-jumped-and-were-buying-this-robotics-play/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -839,6 +832,13 @@
         "source": "Yahoo Finance",
         "time": "11-24 14:59 ET",
         "pub_ts": 1795550362.0
+      },
+      {
+        "title": "If You Invest $5,000 Into These 3 Stocks, You Could Have $10,000 by 2030",
+        "url": "https://247wallst.com/investing/2026/11/24/if-you-invest-5000-into-these-3-stocks-you-could-have-10000-by-2030/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 13:03 ET",
+        "pub_ts": 1795543400.0
       }
     ],
     "VIXY": [
@@ -3296,33 +3296,33 @@
   "ticker_news_ts": {
     "KORU": 1795564362.0629106,
     "SOXL": 1795564362.0629106,
-    "SPY": 1795563157.5428145,
+    "SPY": 1795564661.8922887,
     "DIA": 1795564362.0629106,
     "SOXX": 1795564362.0629106,
     "QQQ": 1795564362.0629106,
-    "SMH": 1795563157.5428145,
+    "SMH": 1795564661.8922887,
     "IWM": 1795564362.0629106,
     "IGV": 1795564362.0629106,
     "TLT": 1795564362.0629106,
     "GLD": 1795564362.0629106,
     "SQQQ": 1795564362.0629106,
-    "TSM": 1795563157.5428145,
+    "TSM": 1795564661.8922887,
     "VIXY": 1795564362.0629106,
     "SOXS": 1795564362.0629106,
     "NVDA": 1795564362.0629106,
     "AMD": 1795564362.0629106,
-    "ASML": 1795563157.5428145,
-    "QCOM": 1795563157.5428145,
+    "ASML": 1795564661.8922887,
+    "QCOM": 1795564661.8922887,
     "AVGO": 1795564362.0629106,
-    "AMAT": 1795563157.5428145,
-    "META": 1795563157.5428145,
-    "GOOGL": 1795563157.5428145,
-    "MSFT": 1795563157.5428145,
-    "AAPL": 1795563157.5428145,
-    "PLTR": 1795563157.5428145,
-    "NOW": 1795563157.5428145,
-    "AMZN": 1795563157.5428145,
-    "CRWV": 1795563157.5428145,
+    "AMAT": 1795564661.8922887,
+    "META": 1795564661.8922887,
+    "GOOGL": 1795564661.8922887,
+    "MSFT": 1795564661.8922887,
+    "AAPL": 1795564661.8922887,
+    "PLTR": 1795564661.8922887,
+    "NOW": 1795564661.8922887,
+    "AMZN": 1795564661.8922887,
+    "CRWV": 1795564661.8922887,
     "NBIS": 1795563260.7996292,
     "APLD": 1795563655.9316933,
     "VST": 1795563655.9316933,
@@ -3373,7 +3373,7 @@
     "GLW": 1795563655.9316933,
     "ANT": 1795563966.151198,
     "XAUUSD": 1795564167.1282218,
-    "KOSPI": 1795563157.5428145
+    "KOSPI": 1795564661.8922887
   },
   "opex_shield": {
     "date": "2026-11-24",
