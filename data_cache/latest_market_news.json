@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795525569.109,
-  "updated_at_et": "11-24 08:06 ET",
-  "updated_at_kst": "22:06 KST",
+  "updated_at_ts": 1795525682.337,
+  "updated_at_et": "11-24 08:08 ET",
+  "updated_at_kst": "22:08 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1176,6 +1176,20 @@
         "pub_ts": 1795515030.0
       },
       {
+        "title": "Fortune Announces Speakers and Partners for Brainstorm AI 2026 in San Francisco Dec. 7 and 8",
+        "url": "https://finance.yahoo.com/technology/ai/articles/fortune-announces-speakers-partners-brainstorm-130000069.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 08:00 ET",
+        "pub_ts": 1795525200.0
+      },
+      {
+        "title": "Cloud AI Update - Audi Integrates Cutting-Edge AI for In-Car Microsoft Access",
+        "url": "https://finance.yahoo.com/technology/ai/articles/cloud-ai-audi-integrates-cutting-123730181.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 07:37 ET",
+        "pub_ts": 1795523850.0
+      },
+      {
         "title": "Elon Musk Reportedly Told Staff SpaceX Is Falling Behind in AI",
         "url": "https://247wallst.com/investing/2026/11/24/elon-musk-reportedly-told-staff-spacex-is-falling-behind-in-ai/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1188,20 +1202,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 07:05 ET",
         "pub_ts": 1795521904.0
-      },
-      {
-        "title": "Not Apple. Not Microsoft. This Is the \"Magnificent Seven\" Stock I’d Buy for a 10-Year Hold.",
-        "url": "https://www.fool.com/investing/2026/11/24/not-apple-not-microsoft-this-is-the-magnificent-seven-stock-id-buy-for-a-10-year-hold/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 07:02 ET",
-        "pub_ts": 1795521721.0
-      },
-      {
-        "title": "Who Pays P&G? The American Shopper In Four Lines",
-        "url": "https://www.trefis.com/stock/pg/articles/627486/who-pays-p-g-the-american-shopper-in-four-lines/2026-11-24?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 06:37 ET",
-        "pub_ts": 1795520243.0
       }
     ],
     "MSFT": [
@@ -1243,6 +1243,13 @@
     ],
     "AAPL": [
       {
+        "title": "Jensen Huang's return revives an old Wall Street trade: Bet on the comeback CEO",
+        "url": "https://finance.yahoo.com/markets/article/jensen-huangs-return-revives-an-old-wall-street-trade-bet-on-the-comeback-ceo-124308005.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 07:43 ET",
+        "pub_ts": 1795524188.0
+      },
+      {
         "title": "Nvidia Regains Nearly $1 Trillion in Value -- Apple Still Holds the Top Spot",
         "url": "https://finance.yahoo.com/markets/stocks/articles/nvidia-regains-nearly-1-trillion-120207012.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1269,13 +1276,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 06:04 ET",
         "pub_ts": 1795518272.0
-      },
-      {
-        "title": "State Street Technology SPDR (XLK) Buys $87.3 Million More Apple on Friday",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/state-street-technology-spdr-xlk-110344271.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 06:03 ET",
-        "pub_ts": 1795518224.0
       }
     ],
     "PLTR": [
@@ -3308,14 +3308,14 @@
     "QCOM": 1795525569.1089377,
     "AVGO": 1795525569.1089377,
     "AMAT": 1795525569.1089377,
-    "META": 1795524131.9109845,
-    "GOOGL": 1795524131.9109845,
+    "META": 1795525682.3370814,
+    "GOOGL": 1795525682.3370814,
     "MSFT": 1795525569.1089377,
-    "AAPL": 1795524131.9109845,
-    "PLTR": 1795524131.9109845,
-    "NOW": 1795524131.9109845,
-    "AMZN": 1795524131.9109845,
-    "CRWV": 1795524131.9109845,
+    "AAPL": 1795525682.3370814,
+    "PLTR": 1795525682.3370814,
+    "NOW": 1795525682.3370814,
+    "AMZN": 1795525682.3370814,
+    "CRWV": 1795525682.3370814,
     "NBIS": 1795524246.536039,
     "APLD": 1795524575.0643048,
     "VST": 1795524575.0643048,
