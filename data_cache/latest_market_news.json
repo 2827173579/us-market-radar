@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795481670.669,
-  "updated_at_et": "11-23 19:54 ET",
-  "updated_at_kst": "09:54 KST",
+  "updated_at_ts": 1795481773.18,
+  "updated_at_et": "11-23 19:56 ET",
+  "updated_at_kst": "09:56 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -3201,6 +3201,27 @@
     ],
     "ANT": [
       {
+        "title": "The Nasdaq Just Had Its Best Day Since April 2025. Anthropic Stock Fell Anyway.",
+        "url": "https://www.fool.com/investing/2026/11/23/the-nasdaq-just-had-its-best-day-since-april-2025-anthropic-stock-fell-anyway/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 19:42 ET",
+        "pub_ts": 1795480922.0
+      },
+      {
+        "title": "Is Amazon's Profit Riskier Than It Looks?",
+        "url": "https://www.trefis.com/stock/amzn/articles/627559/is-amazon-s-profit-riskier-than-it-looks/2026-11-23?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 19:25 ET",
+        "pub_ts": 1795479913.0
+      },
+      {
+        "title": "Dow Jones Futures: Tech Stocks, Nvidia Snap Back On Jensen Huang's Return; Elon Musk-Led SpaceX, Tesla Rally",
+        "url": "https://finance.yahoo.com/m/be493228-4ecf-338d-9017-054d3d6efc36/dow-jones-futures%3A-tech.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 19:20 ET",
+        "pub_ts": 1795479607.0
+      },
+      {
         "title": "OpenAI pitches an industry brake days after Anthropic's IPO",
         "url": "https://www.thestreet.com/technology/openai-pitches-an-industry-brake-after-anthropics-ipo?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3208,32 +3229,11 @@
         "pub_ts": 1795479420.0
       },
       {
-        "title": "Dow Jones Futures: Tech Stocks, Nvidia Snap Back On Jensen Huang's Return; Elon Musk-Led SpaceX, Tesla Rally",
-        "url": "https://finance.yahoo.com/m/be493228-4ecf-338d-9017-054d3d6efc36/dow-jones-futures%3A-tech.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 18:40 ET",
-        "pub_ts": 1795477209.0
-      },
-      {
         "title": "Scott Galloway Calls Anthropic the AI Selloff's 'Big Winner,' but Prediction Traders See Trouble Ahead",
         "url": "https://www.benzinga.com/markets/prediction-markets/26/11/63566532/anthropic-galloway-traders?utm_source=yahooFinance&utm_campaign=partner_feed&utm_medium=referral&.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-23 18:15 ET",
         "pub_ts": 1795475752.0
-      },
-      {
-        "title": "Chamath Says Microsoft “Clearly Is Going to Need to Have a Frontier Model.” Nadella Is Betting It Won’t",
-        "url": "https://www.tikr.com/blog/chamath-says-microsoft-clearly-is-going-to-need-to-have-a-frontier-model-nadella-is-betting-it-wont?ref=yahoofinance&tlnk=yf-261123-rjg9hgh9&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 17:50 ET",
-        "pub_ts": 1795474231.0
-      },
-      {
-        "title": "Crypto traders saw Anthropic's 34% debut pop coming",
-        "url": "https://www.thestreet.com/crypto/markets/crypto-traders-saw-anthropics-34-debut-pop-coming-?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 17:47 ET",
-        "pub_ts": 1795474035.0
       }
     ],
     "XAUUSD": [
@@ -3301,31 +3301,31 @@
     "DELL": 1795481562.5390615,
     "OKLO": 1795481562.5390615,
     "CEG": 1795481562.5390615,
-    "FPS": 1795480196.4784796,
+    "FPS": 1795481773.1804283,
     "MU": 1795480928.7615309,
     "SKHY": 1795480928.7615309,
     "WDC": 1795480928.7615309,
-    "STX": 1795480196.4784796,
-    "MSTR": 1795480196.4784796,
-    "SNDK": 1795480196.4784796,
+    "STX": 1795481773.1804283,
+    "MSTR": 1795481773.1804283,
+    "SNDK": 1795481773.1804283,
     "BTC-USD": 1795480928.7615309,
-    "CRWD": 1795480196.4784796,
+    "CRWD": 1795481773.1804283,
     "ORCL": 1795480928.7615309,
     "COIN": 1795480928.7615309,
     "LLY": 1795480928.7615309,
     "MRNA": 1795480928.7615309,
     "NKE": 1795480928.7615309,
     "MCD": 1795480928.7615309,
-    "PEP": 1795480196.4784796,
+    "PEP": 1795481773.1804283,
     "XOM": 1795481349.0703025,
     "JPM": 1795481349.0703025,
-    "WMT": 1795480196.4784796,
+    "WMT": 1795481773.1804283,
     "V": 1795481349.0703025,
-    "CAT": 1795480196.4784796,
+    "CAT": 1795481773.1804283,
     "FN": 1795480928.7615309,
     "GLW": 1795481562.5390615,
-    "ANT": 1795480196.4784796,
-    "XAUUSD": 1795480196.4784796
+    "ANT": 1795481773.1804283,
+    "XAUUSD": 1795481773.1804283
   },
   "opex_shield": {
     "date": "2026-11-23",
