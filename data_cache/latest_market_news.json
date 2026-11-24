@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795531512.665,
-  "updated_at_et": "11-24 09:45 ET",
-  "updated_at_kst": "23:45 KST",
+  "updated_at_ts": 1795531628.863,
+  "updated_at_et": "11-24 09:47 ET",
+  "updated_at_kst": "23:47 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -443,18 +443,18 @@
         "pub_ts": 1795518012.0
       },
       {
+        "title": "Exchange-Traded Funds, Equity Futures Lower Pre-Bell Tuesday as Investors Pull Back From AI-Related Stocks",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/exchange-traded-funds-equity-futures-141922343.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 09:19 ET",
+        "pub_ts": 1795529962.0
+      },
+      {
         "title": "ETFs Bought $120 Million of Mastercard (MA) on Friday",
         "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-bought-120-million-mastercard-110212516.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-24 06:02 ET",
         "pub_ts": 1795518132.0
-      },
-      {
-        "title": "Costco (COST) Sees $123.3 Million in Net ETF Buying on Friday",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/costco-cost-sees-123-3-110206631.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 06:02 ET",
-        "pub_ts": 1795518126.0
       }
     ],
     "DIA": [
@@ -533,6 +533,13 @@
     ],
     "QQQ": [
       {
+        "title": "Exchange-Traded Funds, Equity Futures Lower Pre-Bell Tuesday as Investors Pull Back From AI-Related Stocks",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/exchange-traded-funds-equity-futures-141922343.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 09:19 ET",
+        "pub_ts": 1795529962.0
+      },
+      {
         "title": "QQQ Just Had Its Biggest Opening Jump Since It Launched in 1999",
         "url": "https://247wallst.com/investing/2026/11/24/qqq-just-had-its-biggest-opening-jump-since-it-launched-in-1999/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -559,13 +566,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 21:01 ET",
         "pub_ts": 1795485664.0
-      },
-      {
-        "title": "Stock Market Today: Tech Futures Sell Off After Big Market Surge; AMD, Anthropic, Nvidia Dive (Live Coverage)",
-        "url": "https://finance.yahoo.com/m/4aa4ff31-269f-346e-80c4-e681510af7ae/stock-market-today%3A-tech.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 08:51 ET",
-        "pub_ts": 1795528300.0
       }
     ],
     "SMH": [
@@ -3280,14 +3280,14 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795530103.8347418,
-    "SOXL": 1795530103.8347418,
-    "SPY": 1795530103.8347418,
-    "DIA": 1795530103.8347418,
-    "SOXX": 1795530103.8347418,
-    "QQQ": 1795530103.8347418,
-    "SMH": 1795530103.8347418,
-    "IWM": 1795530103.8347418,
+    "KORU": 1795531628.8629723,
+    "SOXL": 1795531628.8629723,
+    "SPY": 1795531628.8629723,
+    "DIA": 1795531628.8629723,
+    "SOXX": 1795531628.8629723,
+    "QQQ": 1795531628.8629723,
+    "SMH": 1795531628.8629723,
+    "IWM": 1795531628.8629723,
     "IGV": 1795530228.88617,
     "TLT": 1795530228.88617,
     "GLD": 1795530228.88617,

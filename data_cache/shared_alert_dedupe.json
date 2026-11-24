@@ -5835,9 +5835,17 @@
     "2026-11-24:INTRADAY_CORRIDOR:QQQ:BELOW_P25": {
       "device": "PC",
       "ts": 1795531531.3820817
+    },
+    "2026-11-24:DEFENSIVE_FLIGHT:+9.4": {
+      "device": "PC",
+      "ts": 1795531650.9372702
+    },
+    "2026-11-24:INTRADAY_CORRIDOR:SOXL:BELOW_P25": {
+      "device": "PC",
+      "ts": 1795531651.611741
     }
   },
   "device": "PC",
-  "last_heartbeat_ts": 1795531435.5834923,
-  "updated_at": "2026-11-24T14:45:31.382610+00:00"
+  "last_heartbeat_ts": 1795531551.8906999,
+  "updated_at": "2026-11-24T14:47:31.612214+00:00"
 }
