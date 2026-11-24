@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795518561.823,
-  "updated_at_et": "11-24 06:09 ET",
-  "updated_at_kst": "20:09 KST",
+  "updated_at_ts": 1795518671.298,
+  "updated_at_et": "11-24 06:11 ET",
+  "updated_at_kst": "20:11 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -3015,11 +3015,11 @@
     ],
     "WMT": [
       {
-        "title": "Jensen Huang's return to Nvidia: Long or short accountability?",
-        "url": "https://finance.yahoo.com/video/jensen-huangs-return-to-nvidia-long-or-short-accountability-185949254.html?.tsrc=rss",
+        "title": "Walmart Just Raised Its Outlook Again. 3 Numbers Show Why Its Scale Advantage Keeps Growing.",
+        "url": "https://www.fool.com/investing/2026/11/24/walmart-raised-its-outlook-again-3-numbers-show-why-its-scale-advantage-keeps-growing/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 13:59 ET",
-        "pub_ts": 1795460389.0
+        "time": "11-24 05:40 ET",
+        "pub_ts": 1795516802.0
       },
       {
         "title": "Pudgy Penguins sets key deadlines ahead of major shutdown",
@@ -3200,6 +3200,13 @@
     ],
     "ANT": [
       {
+        "title": "The British chip champions challenging Nvidia’s AI stranglehold",
+        "url": "https://uk.finance.yahoo.com/news/british-chip-champions-challenging-nvidia-110000128.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 06:00 ET",
+        "pub_ts": 1795518000.0
+      },
+      {
         "title": "Anthropic’s IPO Safety Net Is Gone: Morgan Stanley “Can No Longer” Buy Below $83. That’s a Risk for Amazon",
         "url": "https://www.tikr.com/blog/anthropics-ipo-safety-net-is-gone-morgan-stanley-can-no-longer-buy-below-83-thats-a-risk-for-amazon?ref=yahoofinance&tlnk=yf-261124-vcwwm7x7&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3226,13 +3233,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 02:58 ET",
         "pub_ts": 1795507111.0
-      },
-      {
-        "title": "Not Starlink. Not Starship. This SpaceX Business Could Be Worth $80 Billion on Its Own.",
-        "url": "https://www.fool.com/investing/2026/11/24/not-starlink-not-starship-this-spacex-business-could-be-worth-usd80-billion-on-its-own/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 00:50 ET",
-        "pub_ts": 1795499402.0
       }
     ],
     "XAUUSD": [
@@ -3341,27 +3341,27 @@
     "MU": 1795518000.78585,
     "SKHY": 1795518000.78585,
     "WDC": 1795518000.78585,
-    "STX": 1795517117.5530953,
-    "MSTR": 1795517117.5530953,
-    "SNDK": 1795517117.5530953,
+    "STX": 1795518671.2977638,
+    "MSTR": 1795518671.2977638,
+    "SNDK": 1795518671.2977638,
     "BTC-USD": 1795518000.78585,
-    "CRWD": 1795517117.5530953,
+    "CRWD": 1795518671.2977638,
     "ORCL": 1795518331.9885995,
     "COIN": 1795518331.9885995,
     "LLY": 1795518331.9885995,
     "MRNA": 1795518331.9885995,
     "NKE": 1795518331.9885995,
     "MCD": 1795518331.9885995,
-    "PEP": 1795517117.5530953,
+    "PEP": 1795518671.2977638,
     "XOM": 1795518561.8226786,
     "JPM": 1795518561.8226786,
-    "WMT": 1795517117.5530953,
+    "WMT": 1795518671.2977638,
     "V": 1795518331.9885995,
-    "CAT": 1795517117.5530953,
+    "CAT": 1795518671.2977638,
     "FN": 1795518000.78585,
     "GLW": 1795518331.9885995,
-    "ANT": 1795517117.5530953,
-    "XAUUSD": 1795517117.5530953,
+    "ANT": 1795518671.2977638,
+    "XAUUSD": 1795518671.2977638,
     "KOSPI": 1795518000.78585
   },
   "opex_shield": {
