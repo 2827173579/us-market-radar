@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795563557.715,
-  "updated_at_et": "11-24 18:39 ET",
-  "updated_at_kst": "08:39 KST",
+  "updated_at_ts": 1795563655.932,
+  "updated_at_et": "11-24 18:40 ET",
+  "updated_at_kst": "08:40 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2138,6 +2138,13 @@
     ],
     "INTC": [
       {
+        "title": "Why Intel Stock Fell Today",
+        "url": "https://www.fool.com/investing/2026/11/24/why-intel-stock-fell-today/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 18:16 ET",
+        "pub_ts": 1795562161.0
+      },
+      {
         "title": "Intel And 2 More AI Stocks To Watch",
         "url": "https://finance.yahoo.com/technology/ai/articles/intel-2-more-ai-stocks-221918630.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2164,13 +2171,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 10:19 ET",
         "pub_ts": 1795533547.0
-      },
-      {
-        "title": "Marvell Sinks 8%, Intel Down 6% as Chip Stocks Give Back Nvidia’s Record Huang Rally",
-        "url": "https://www.tikr.com/blog/marvell-sinks-8-intel-down-6-as-chip-stocks-give-back-nvidias-record-huang-rally?ref=yahoofinance&tlnk=yf-261124-rjmh24f9&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 10:14 ET",
-        "pub_ts": 1795533299.0
       }
     ],
     "VRT": [
@@ -3324,25 +3324,25 @@
     "AMZN": 1795563157.5428145,
     "CRWV": 1795563157.5428145,
     "NBIS": 1795563260.7996292,
-    "APLD": 1795562080.1708078,
-    "VST": 1795562080.1708078,
-    "BE": 1795562080.1708078,
-    "CRDO": 1795562080.1708078,
-    "COHR": 1795562080.1708078,
+    "APLD": 1795563655.9316933,
+    "VST": 1795563655.9316933,
+    "BE": 1795563655.9316933,
+    "CRDO": 1795563655.9316933,
+    "COHR": 1795563655.9316933,
     "MRVL": 1795563260.7996292,
     "LITE": 1795563260.7996292,
-    "AAOI": 1795562080.1708078,
-    "SPCX": 1795562080.1708078,
-    "ASTS": 1795562080.1708078,
+    "AAOI": 1795563655.9316933,
+    "SPCX": 1795563655.9316933,
+    "ASTS": 1795563655.9316933,
     "AXTI": 1795563260.7996292,
-    "NASA": 1795562080.1708078,
-    "LUNR": 1795562080.1708078,
+    "NASA": 1795563655.9316933,
+    "LUNR": 1795563655.9316933,
     "TSLA": 1795562280.3946583,
-    "AXP": 1795562080.1708078,
-    "RKLB": 1795562080.1708078,
-    "KO": 1795562080.1708078,
-    "FLY": 1795562080.1708078,
-    "INTC": 1795562080.1708078,
+    "AXP": 1795563655.9316933,
+    "RKLB": 1795563655.9316933,
+    "KO": 1795563655.9316933,
+    "FLY": 1795563655.9316933,
+    "INTC": 1795563655.9316933,
     "VRT": 1795562280.3946583,
     "HPE": 1795562280.3946583,
     "DELL": 1795562280.3946583,
@@ -3370,7 +3370,7 @@
     "V": 1795562280.3946583,
     "CAT": 1795562391.097207,
     "FN": 1795563260.7996292,
-    "GLW": 1795562080.1708078,
+    "GLW": 1795563655.9316933,
     "ANT": 1795562391.097207,
     "XAUUSD": 1795562659.688867,
     "KOSPI": 1795563157.5428145
