@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795533262.338,
-  "updated_at_et": "11-24 10:14 ET",
-  "updated_at_kst": "00:14 KST",
+  "updated_at_ts": 1795533372.959,
+  "updated_at_et": "11-24 10:16 ET",
+  "updated_at_kst": "00:16 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1125,6 +1125,13 @@
     ],
     "META": [
       {
+        "title": "Meta launches its Muse personal agent in the UK – but it comes with a big warning",
+        "url": "https://www.independent.co.uk/tech/meta-muse-uk-launch-release-warning-b3090758.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 10:11 ET",
+        "pub_ts": 1795533108.0
+      },
+      {
         "title": "Meta launches Muse AI agent in UK with several retail partners",
         "url": "https://www.retail-insight-network.com/news/meta-muse-ai-agent-uk-retail-partners/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1151,22 +1158,29 @@
         "source": "Yahoo Finance",
         "time": "11-24 08:50 ET",
         "pub_ts": 1795528242.0
-      },
-      {
-        "title": "Alphabet Vs Meta: Which Stock Is The Better Buy?",
-        "url": "https://www.trefis.com/stock/googl/articles/628287/alphabet-vs-meta-which-stock-is-the-better-buy/2026-11-24?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 08:46 ET",
-        "pub_ts": 1795527972.0
       }
     ],
     "GOOGL": [
+      {
+        "title": "Have robotaxis hit a tipping point? Wall Street and experts are split.",
+        "url": "https://finance.yahoo.com/markets/stocks/article/have-robotaxis-hit-a-tipping-point-wall-street-and-experts-are-split-150000412.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 10:00 ET",
+        "pub_ts": 1795532400.0
+      },
       {
         "title": "The Trade Desk's 100-Plus JBP Pipeline: A Key Revenue Catalyst?",
         "url": "https://finance.yahoo.com/media-advertising/articles/trade-desks-100-plus-jbp-125800436.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-24 07:58 ET",
         "pub_ts": 1795525080.0
+      },
+      {
+        "title": "Brad Gerstner Says Anthropic Will Be Worth $3 Trillion by the End of Next Year. Is That Realistic?",
+        "url": "https://247wallst.com/investing/2026/11/24/brad-gerstner-says-anthropic-will-be-worth-3-trillion-by-the-end-of-next-year-is-that-realistic/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 09:47 ET",
+        "pub_ts": 1795531638.0
       },
       {
         "title": "Ethereum Foundation Doubles Security Team And Calls A.I. ‘Urgent Risk’",
@@ -1181,20 +1195,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 09:41 ET",
         "pub_ts": 1795531260.0
-      },
-      {
-        "title": "Global Document Collaboration Market Report 2026: Size, Share, Trends and Forecast to 2030 | Capitalize on AI, Cloud and Secure Workflows with Microsoft, Google, Adobe and Box",
-        "url": "https://finance.yahoo.com/technology/articles/global-document-collaboration-market-report-142900939.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 09:29 ET",
-        "pub_ts": 1795530540.0
-      },
-      {
-        "title": "Tiger Global Cut Its Alphabet Stake 42% as the Stock Hit Its “Lowest P/E Ratio Ever.” Who’s Right?",
-        "url": "https://www.tikr.com/blog/tiger-global-alphabet-stake-cut-lowest-pe-ratio?ref=yahoofinance&tlnk=yf-261124-5w8hm5cf&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 09:21 ET",
-        "pub_ts": 1795530068.0
       }
     ],
     "MSFT": [
@@ -1384,6 +1384,13 @@
     ],
     "CRWV": [
       {
+        "title": "Anthropic Tumbles 9%, Trades Below IPO Price Despite Canaccord’s $135 Target; CoreWeave and Nebius Drop 8%",
+        "url": "https://247wallst.com/investing/2026/11/24/anthropic-tumbles-9-breaks-below-ipo-price-despite-canaccords-135-target-coreweave-and-nebius-drop-8/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 09:54 ET",
+        "pub_ts": 1795532088.0
+      },
+      {
         "title": "Nvidia Turmoil: How Big Is the Risk for CoreWeave?",
         "url": "https://www.fool.com/investing/2026/11/24/nvidia-turmoil-how-big-is-the-risk-for-coreweave/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1410,13 +1417,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 22:15 ET",
         "pub_ts": 1795490101.0
-      },
-      {
-        "title": "Billionaire David Tepper Bought $172 Million of Oracle. Oracle Is Targeting “More Than $30 Billion” of Free Cash Flow",
-        "url": "https://www.tikr.com/blog/david-tepper-oracle-stake-free-cash-flow-target?ref=yahoofinance&tlnk=yf-261124-4gjjjpp9&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 08:50 ET",
-        "pub_ts": 1795528240.0
       }
     ],
     "NBIS": [
@@ -3301,14 +3301,14 @@
     "QCOM": 1795533262.3382194,
     "AVGO": 1795533262.3382194,
     "AMAT": 1795533262.3382194,
-    "META": 1795531865.0550442,
-    "GOOGL": 1795531865.0550442,
+    "META": 1795533372.9593048,
+    "GOOGL": 1795533372.9593048,
     "MSFT": 1795533262.3382194,
-    "AAPL": 1795531865.0550442,
-    "PLTR": 1795531865.0550442,
-    "NOW": 1795531865.0550442,
-    "AMZN": 1795531865.0550442,
-    "CRWV": 1795531865.0550442,
+    "AAPL": 1795533372.9593048,
+    "PLTR": 1795533372.9593048,
+    "NOW": 1795533372.9593048,
+    "AMZN": 1795533372.9593048,
+    "CRWV": 1795533372.9593048,
     "NBIS": 1795531969.6763315,
     "APLD": 1795532283.4813037,
     "VST": 1795532283.4813037,
