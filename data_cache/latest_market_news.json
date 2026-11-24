@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795537097.599,
-  "updated_at_et": "11-24 11:18 ET",
-  "updated_at_kst": "01:18 KST",
+  "updated_at_ts": 1795537204.151,
+  "updated_at_et": "11-24 11:20 ET",
+  "updated_at_kst": "01:20 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2575,6 +2575,13 @@
     ],
     "SNDK": [
       {
+        "title": "Sandisk Sinks 14% as Memory Stocks Give Back Nvidia’s Huang Rally",
+        "url": "https://www.tikr.com/blog/sandisk-sinks-14-as-memory-stocks-give-back-nvidias-huang-rally?ref=yahoofinance&tlnk=yf-261124-287p6vrp&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 10:48 ET",
+        "pub_ts": 1795535308.0
+      },
+      {
         "title": "Micron Falls 7% as NVIDIA Pullback Partially Reverses Monday’s AI Chip Rally; SanDisk and SK Hynix Drop 6%",
         "url": "https://247wallst.com/investing/2026/11/24/micron-falls-7-as-nvidia-pullback-partially-reverses-mondays-ai-chip-rally-sandisk-and-sk-hynix-drop-6/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2601,13 +2608,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 07:00 ET",
         "pub_ts": 1795521625.0
-      },
-      {
-        "title": "Sandisk Stock Jumps 15% as Wall Street Sees 192% Upside",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/sandisk-stock-jumps-15-wall-111200041.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 06:12 ET",
-        "pub_ts": 1795518720.0
       }
     ],
     "BTC-USD": [
@@ -2649,6 +2649,13 @@
     ],
     "CRWD": [
       {
+        "title": "Analyst says CrowdStrike’s $44B Zscaler deal makes it top zero trust player",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/analyst-says-crowdstrike-44b-zscaler-155719764.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 10:57 ET",
+        "pub_ts": 1795535839.0
+      },
+      {
         "title": "Guggenheim lifts CrowdStrike to Buy, sees 34% upside",
         "url": "https://finance.yahoo.com/markets/stocks/articles/guggenheim-lifts-crowdstrike-buy-sees-152606437.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2675,13 +2682,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 09:03 ET",
         "pub_ts": 1795529031.0
-      },
-      {
-        "title": "What CrowdStrike's Stock Pay Means For Its Owners",
-        "url": "https://www.trefis.com/stock/crwd/articles/628258/what-crowdstrike-s-stock-pay-means-for-its-owners/2026-11-24?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 08:46 ET",
-        "pub_ts": 1795527972.0
       }
     ],
     "ORCL": [
@@ -3204,18 +3204,11 @@
     ],
     "ANT": [
       {
-        "title": "Anthropic stock drops below $83 IPO price as day-one pop vanishes",
-        "url": "https://finance.yahoo.com/markets/article/anthropic-stock-drops-below-83-ipo-price-as-day-one-pop-vanishes-143438983.html?.tsrc=rss",
+        "title": "Leverage Shares by Themes Anthropic (ANT) ETFs Among the Most Traded on First Day of Trading",
+        "url": "https://finance.yahoo.com/markets/options/articles/leverage-shares-themes-anthropic-ant-161400263.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 09:34 ET",
-        "pub_ts": 1795530878.0
-      },
-      {
-        "title": "Nvidia jumped 31% on Jensen Huang's return. A day later, the AI trade sold off: AlphaCheck",
-        "url": "https://finance.yahoo.com/markets/article/nvidia-leads-semiconductors-lower-alphacheck-144509267.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 09:45 ET",
-        "pub_ts": 1795531509.0
+        "time": "11-24 11:14 ET",
+        "pub_ts": 1795536840.0
       },
       {
         "title": "If Anthropic Does This It Could Reach $130 By Year End",
@@ -3225,11 +3218,11 @@
         "pub_ts": 1795535148.0
       },
       {
-        "title": "Stock Market Today: Dow Up But Nasdaq Skids As Nvidia Dives; Bears Bite Chips (Live Coverage)",
-        "url": "https://finance.yahoo.com/m/4aa4ff31-269f-346e-80c4-e681510af7ae/stock-market-today%3A-dow-up.html?.tsrc=rss",
+        "title": "Anthropic Falls Below $83 IPO Price as CEO Sells $280 Million in Shares",
+        "url": "https://finance.yahoo.com/technology/ai/articles/anthropic-falls-below-83-ipo-153140650.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 10:39 ET",
-        "pub_ts": 1795534748.0
+        "time": "11-24 10:31 ET",
+        "pub_ts": 1795534300.0
       },
       {
         "title": "From the Demo Crew to the Nasdaq Podium: KBF Design Gallery's Adam Vellequette Joins Anthropic to Ring the Closing Bell on IPO Day",
@@ -3237,6 +3230,13 @@
         "source": "Yahoo Finance",
         "time": "11-24 10:15 ET",
         "pub_ts": 1795533300.0
+      },
+      {
+        "title": "Is Anthropic stock a set and forget stock after its IPO debut?",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/anthropic-stock-set-forget-stock-150511184.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 10:05 ET",
+        "pub_ts": 1795532711.0
       }
     ],
     "XAUUSD": [
@@ -3345,27 +3345,27 @@
     "MU": 1795536555.0148876,
     "SKHY": 1795536555.0148876,
     "WDC": 1795536555.0148876,
-    "STX": 1795535680.358947,
-    "MSTR": 1795535680.358947,
-    "SNDK": 1795535680.358947,
+    "STX": 1795537204.1513371,
+    "MSTR": 1795537204.1513371,
+    "SNDK": 1795537204.1513371,
     "BTC-USD": 1795536555.0148876,
-    "CRWD": 1795535680.358947,
+    "CRWD": 1795537204.1513371,
     "ORCL": 1795536879.8407834,
     "COIN": 1795536879.8407834,
     "LLY": 1795536879.8407834,
     "MRNA": 1795536879.8407834,
     "NKE": 1795536879.8407834,
     "MCD": 1795536879.8407834,
-    "PEP": 1795535680.358947,
+    "PEP": 1795537204.1513371,
     "XOM": 1795537097.599484,
     "JPM": 1795537097.599484,
-    "WMT": 1795535680.358947,
+    "WMT": 1795537204.1513371,
     "V": 1795536879.8407834,
-    "CAT": 1795535680.358947,
+    "CAT": 1795537204.1513371,
     "FN": 1795536555.0148876,
     "GLW": 1795536879.8407834,
-    "ANT": 1795535680.358947,
-    "XAUUSD": 1795535680.358947,
+    "ANT": 1795537204.1513371,
+    "XAUUSD": 1795537204.1513371,
     "KOSPI": 1795536555.0148876
   },
   "opex_shield": {
