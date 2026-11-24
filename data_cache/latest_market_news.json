@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795554518.858,
-  "updated_at_et": "11-24 16:08 ET",
-  "updated_at_kst": "06:08 KST",
+  "updated_at_ts": 1795554619.768,
+  "updated_at_et": "11-24 16:10 ET",
+  "updated_at_kst": "06:10 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -3205,6 +3205,20 @@
     ],
     "ANT": [
       {
+        "title": "Update: US Equity Indexes Mixed as Investors Rotate into Defensives Amid Weakening AI Trade",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/us-equity-indexes-mixed-investors-205450035.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 15:54 ET",
+        "pub_ts": 1795553690.0
+      },
+      {
+        "title": "Anthropic Stock Slips Below $83 IPO Price — Analysts See 50%+ Upside",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/anthropic-stock-slips-below-83-205313083.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 15:53 ET",
+        "pub_ts": 1795553593.0
+      },
+      {
         "title": "Anthropic stock falls below IPO price; CEO sells $280 million in shares",
         "url": "https://www.thestreet.com/investing/stocks/anthropic-stock-falls-below-ipo-price-ceo-sells-280-million-in-shares?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3224,20 +3238,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 14:55 ET",
         "pub_ts": 1795550129.0
-      },
-      {
-        "title": "Nasdaq Resumes Selloff as Nvidia, Anthropic Shares Slump",
-        "url": "https://www.wsj.com/finance/stocks/nasdaq-futures-fall-as-questions-linger-over-ai-trade-68ba6d71?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 14:32 ET",
-        "pub_ts": 1795548720.0
-      },
-      {
-        "title": "'It's Utter Nonsense'—'Big Short' Investor Steve Eisman Says OpenAI And Anthropic Have Created A Conspiracy About The End Of The World",
-        "url": "https://finance.yahoo.com/technology/ai/articles/utter-nonsense-big-short-investor-192726702.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 14:27 ET",
-        "pub_ts": 1795548446.0
       }
     ],
     "XAUUSD": [
@@ -3355,17 +3355,17 @@
     "COIN": 1795554518.8580587,
     "LLY": 1795554518.8580587,
     "MRNA": 1795554518.8580587,
-    "NKE": 1795553041.270424,
+    "NKE": 1795554619.768088,
     "MCD": 1795554518.8580587,
-    "PEP": 1795553041.270424,
-    "XOM": 1795553041.270424,
-    "JPM": 1795553041.270424,
-    "WMT": 1795553041.270424,
+    "PEP": 1795554619.768088,
+    "XOM": 1795554619.768088,
+    "JPM": 1795554619.768088,
+    "WMT": 1795554619.768088,
     "V": 1795554518.8580587,
-    "CAT": 1795553041.270424,
+    "CAT": 1795554619.768088,
     "FN": 1795553858.1966076,
     "GLW": 1795554417.1491358,
-    "ANT": 1795553041.270424,
+    "ANT": 1795554619.768088,
     "XAUUSD": 1795553238.9379034,
     "KOSPI": 1795553758.0161324
   },
