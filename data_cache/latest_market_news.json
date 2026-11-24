@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795528786.146,
-  "updated_at_et": "11-24 08:59 ET",
-  "updated_at_kst": "22:59 KST",
+  "updated_at_ts": 1795528894.578,
+  "updated_at_et": "11-24 09:01 ET",
+  "updated_at_kst": "23:01 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1642,6 +1642,13 @@
     ],
     "MRVL": [
       {
+        "title": "Wall Street’s New M&A Mood: Why Both Marvell-Lumentum and CrowdStrike-Zscaler Hit Pushback",
+        "url": "https://247wallst.com/investing/2026/11/24/wall-streets-new-ma-mood-why-both-marvell-lumentum-and-crowdstrike-zscaler-hit-pushback/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 08:45 ET",
+        "pub_ts": 1795527912.0
+      },
+      {
         "title": "Marvell Stock Fell Almost 12% in a Single Day. I'd Consider Buying Shares Now.",
         "url": "https://www.fool.com/investing/2026/11/24/marvell-stock-fell-almost-12-in-a-single-day-i-d-consider-buying-shares-now/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1668,16 +1675,16 @@
         "source": "Yahoo Finance",
         "time": "11-23 14:20 ET",
         "pub_ts": 1795461600.0
-      },
-      {
-        "title": "Marvell Stocks Jump 15.43% as AI Chip Rebound Sets Up December 1 Report",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/marvell-stocks-jump-15-43-175525167.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 12:55 ET",
-        "pub_ts": 1795456525.0
       }
     ],
     "LITE": [
+      {
+        "title": "Wall Street’s New M&A Mood: Why Both Marvell-Lumentum and CrowdStrike-Zscaler Hit Pushback",
+        "url": "https://247wallst.com/investing/2026/11/24/wall-streets-new-ma-mood-why-both-marvell-lumentum-and-crowdstrike-zscaler-hit-pushback/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 08:45 ET",
+        "pub_ts": 1795527912.0
+      },
       {
         "title": "JPMorgan U.S. Tech Leaders (JTEK) Sells $27.7 Million of Broadcom on Nov. 20",
         "url": "https://finance.yahoo.com/markets/stocks/articles/jpmorgan-u-tech-leaders-jtek-110436195.html?.tsrc=rss",
@@ -1705,13 +1712,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 10:57 ET",
         "pub_ts": 1795449427.0
-      },
-      {
-        "title": "Lumentum’s CEO Says “the Laws of Physics Are Working in Favor of Fiber.” Marvell Holders Are Buying It Cheap",
-        "url": "https://www.tikr.com/blog/lumentums-ceo-says-the-laws-of-physics-are-working-in-favor-of-fiber-marvell-holders-are-buying-it-cheap?ref=yahoofinance&tlnk=yf-261122-6v9p23cj&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-22 06:59 ET",
-        "pub_ts": 1795348758.0
       }
     ],
     "AAOI": [
@@ -2382,6 +2382,27 @@
     ],
     "MU": [
       {
+        "title": "Micron Stock Soared on Monday. I'd Still Buy It, a Little at a Time.",
+        "url": "https://www.fool.com/investing/2026/11/24/micron-stock-soared-on-monday-i-d-still-buy-it-a-little-at-a-time/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 08:43 ET",
+        "pub_ts": 1795527781.0
+      },
+      {
+        "title": "Small Models Are “Very Bearish for RAM,” Says Emad Mostaque. Micron’s 2029 Estimates Are What’s at Stake",
+        "url": "https://www.tikr.com/blog/small-models-are-very-bearish-for-ram-says-emad-mostaque-microns-2029-estimates-are-whats-at-stake?ref=yahoofinance&tlnk=yf-261124-2wwpqprg&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 07:59 ET",
+        "pub_ts": 1795525184.0
+      },
+      {
+        "title": "Micron Stock Is Counting on a Buyback Bounce. Why It’s No Slam Dunk.",
+        "url": "https://finance.yahoo.com/m/789905db-8cde-3db6-af4c-d5345b1680cd/micron-stock-is-counting-on-a.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 07:43 ET",
+        "pub_ts": 1795524180.0
+      },
+      {
         "title": "What ProShares Trust (TQQQ) Bought: Apple Leads on Friday",
         "url": "https://finance.yahoo.com/markets/stocks/articles/proshares-trust-tqqq-bought-apple-110432486.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2394,27 +2415,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 06:03 ET",
         "pub_ts": 1795518224.0
-      },
-      {
-        "title": "What INVESCO QQQ Trust (QQQ) Bought: Apple Leads on Friday",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/invesco-qqq-trust-qqq-bought-110317120.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 06:03 ET",
-        "pub_ts": 1795518197.0
-      },
-      {
-        "title": "ETFs Are Buying Micron Technology (MU) on Friday",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-buying-micron-technology-mu-110141845.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 06:01 ET",
-        "pub_ts": 1795518101.0
-      },
-      {
-        "title": "Micron Under 10 Times Earnings: Bargain Or Peak?",
-        "url": "https://www.trefis.com/stock/mu/articles/628270/micron-under-10-times-earnings-bargain-or-peak/2026-11-24?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 06:00 ET",
-        "pub_ts": 1795518052.0
       }
     ],
     "SKHY": [
@@ -2604,6 +2604,20 @@
     ],
     "BTC-USD": [
       {
+        "title": "IREN Fell 42% This Month Even After The Market Jump on NVIDIA News: This Wall Street Pro Maintains That 440% Returns Are Coming After Q3 Earnings Downgrades",
+        "url": "https://247wallst.com/investing/2026/11/24/iren-fell-42-this-month-even-after-the-market-jump-on-nvidia-news-this-wall-street-pro-maintains-that-440-returns-are-coming-after-q3-earnings-downgrades/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 08:45 ET",
+        "pub_ts": 1795527924.0
+      },
+      {
+        "title": "America Readies New Tariffs on China. Will Bitcoin and Stocks Sink Again?",
+        "url": "https://beincrypto.com/us-new-tariffs-china-stocks-sink/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 08:19 ET",
+        "pub_ts": 1795526395.0
+      },
+      {
         "title": "Stock Market Today: Tech Futures Sell Off After Big Market Surge; AMD, Anthropic, Nvidia Dive (Live Coverage)",
         "url": "https://finance.yahoo.com/m/4aa4ff31-269f-346e-80c4-e681510af7ae/stock-market-today%3A-tech.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2623,20 +2637,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 07:40 ET",
         "pub_ts": 1795524047.0
-      },
-      {
-        "title": "XRP Price is Showing a Historical Pattern That Led to a 200% Rally",
-        "url": "https://beincrypto.com/xrp-price-historical-pattern-200-percent-rally-2027/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 07:35 ET",
-        "pub_ts": 1795523723.0
-      },
-      {
-        "title": "Tom Lee Slams XRP as ‘Far More Inflationary’ Than Ethereum as Bulls Eye $30",
-        "url": "https://www.ccn.com/news/crypto/tom-lee-slams-xrp-far-more-inflationary-bulls-eye-wild-price-calls/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 07:32 ET",
-        "pub_ts": 1795523535.0
       }
     ],
     "CRWD": [
@@ -3308,18 +3308,18 @@
     "NOW": 1795528786.1457446,
     "AMZN": 1795528786.1457446,
     "CRWV": 1795528786.1457446,
-    "NBIS": 1795527340.9976914,
+    "NBIS": 1795528894.578236,
     "APLD": 1795527665.3559303,
     "VST": 1795527665.3559303,
     "BE": 1795527665.3559303,
     "CRDO": 1795527665.3559303,
     "COHR": 1795527665.3559303,
-    "MRVL": 1795527340.9976914,
-    "LITE": 1795527340.9976914,
+    "MRVL": 1795528894.578236,
+    "LITE": 1795528894.578236,
     "AAOI": 1795527665.3559303,
     "SPCX": 1795527776.7693033,
     "ASTS": 1795527665.3559303,
-    "AXTI": 1795527340.9976914,
+    "AXTI": 1795528894.578236,
     "NASA": 1795527776.7693033,
     "LUNR": 1795527776.7693033,
     "TSLA": 1795527776.7693033,
@@ -3334,13 +3334,13 @@
     "OKLO": 1795527885.4187868,
     "CEG": 1795527885.4187868,
     "FPS": 1795527885.4187868,
-    "MU": 1795527340.9976914,
-    "SKHY": 1795527340.9976914,
-    "WDC": 1795527340.9976914,
+    "MU": 1795528894.578236,
+    "SKHY": 1795528894.578236,
+    "WDC": 1795528894.578236,
     "STX": 1795527999.918939,
     "MSTR": 1795527999.918939,
     "SNDK": 1795527999.918939,
-    "BTC-USD": 1795527340.9976914,
+    "BTC-USD": 1795528894.578236,
     "CRWD": 1795527999.918939,
     "ORCL": 1795527665.3559303,
     "COIN": 1795527665.3559303,
@@ -3354,11 +3354,11 @@
     "WMT": 1795527999.918939,
     "V": 1795527665.3559303,
     "CAT": 1795527999.918939,
-    "FN": 1795527340.9976914,
+    "FN": 1795528894.578236,
     "GLW": 1795527665.3559303,
     "ANT": 1795527999.918939,
     "XAUUSD": 1795527999.918939,
-    "KOSPI": 1795527340.9976914
+    "KOSPI": 1795528894.578236
   },
   "opex_shield": {
     "date": "2026-11-24",
