@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795527776.769,
-  "updated_at_et": "11-24 08:42 ET",
-  "updated_at_kst": "22:42 KST",
+  "updated_at_ts": 1795527885.419,
+  "updated_at_et": "11-24 08:44 ET",
+  "updated_at_kst": "22:44 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2201,6 +2201,13 @@
     ],
     "HPE": [
       {
+        "title": "HPE stock declines as disappointing margin forecast outweighs upbeat guidance",
+        "url": "https://finance.yahoo.com/markets/article/hpe-stock-declines-as-margin-outlook-disappoints-134420648.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 08:44 ET",
+        "pub_ts": 1795527860.0
+      },
+      {
         "title": "Premarket movers: Nvidia slips; HPE, Semtech fall",
         "url": "https://finance.yahoo.com/markets/stocks/articles/premarket-movers-nvidia-slips-hpe-122424595.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2227,16 +2234,16 @@
         "source": "Yahoo Finance",
         "time": "11-24 06:21 ET",
         "pub_ts": 1795519260.0
-      },
-      {
-        "title": "Why Is Hewlett Packard Enterprise Stock Falling 9.6% Today?",
-        "url": "https://investorshub.advfn.com/market-news/article/40591/why-is-hewlett-packard-enterprise-stock-falling-9-6-today?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 06:09 ET",
-        "pub_ts": 1795518549.0
       }
     ],
     "DELL": [
+      {
+        "title": "Dell Just Dropped 26% in a Month. Steve Eisman Warns It Will “Slow Along With Nvidia.” Is He Right?",
+        "url": "https://www.tikr.com/blog/dell-just-dropped-26-in-a-month-steve-eisman-warns-it-will-slow-along-with-nvidia-is-he-right?ref=yahoofinance&tlnk=yf-261124-jr476wwx&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 07:35 ET",
+        "pub_ts": 1795523736.0
+      },
       {
         "title": "HPE Expects Thinner AI Margins. Is Dell Next?",
         "url": "https://www.trefis.com/stock/hpe/articles/628212/hpe-expects-thinner-ai-margins-is-dell-next/2026-11-24?.tsrc=rss",
@@ -2264,13 +2271,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 03:36 ET",
         "pub_ts": 1795509360.0
-      },
-      {
-        "title": "Dell Q3 Preview: Margins, Outlook In Focus As Strong AI Server Demand Seen Supporting Performance",
-        "url": "https://stocktwits.com/news-articles/markets/equity/dell-q3-preview-margins-outlook-in-focus-as-strong-ai-server-demand-seen-supporting-performance/cNbsRdxR9k7?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 03:14 ET",
-        "pub_ts": 1795508080.0
       }
     ],
     "OKLO": [
@@ -2985,32 +2985,32 @@
         "pub_ts": 1795471934.0
       },
       {
-        "title": "META Stock Is Down 24% From Peak: JPMorgan Sees ‘Attractive Buying Opportunity’ — But 2027 Spending, Capex Remain An Overhang",
-        "url": "https://stocktwits.com/news-articles/markets/equity/meta-stock-is-down-24-from-peak-jp-morgan-sees-attractive-buying-opportunity-but-2027-spending-capex-remain-an-overhang/cNbsIWZR9ki?.tsrc=rss",
+        "title": "JPMorgan Treasury survey shows neutral positioning ahead of PCE data",
+        "url": "https://finance.yahoo.com/markets/options/articles/jpmorgan-treasury-survey-shows-neutral-132259516.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 07:08 ET",
-        "pub_ts": 1795522132.0
+        "time": "11-24 08:22 ET",
+        "pub_ts": 1795526579.0
       },
       {
-        "title": "JPMorgan Announces Cash Distributions for the JPMorgan ETFs",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/jpmorgan-announces-cash-distributions-jpmorgan-120000539.html?.tsrc=rss",
+        "title": "JPMorgan and Bank of America Just Sold Off. One Looks Better for Retirees",
+        "url": "https://247wallst.com/investing/2026/11/24/jpmorgan-and-bank-of-america-just-sold-off-one-looks-better-for-retirees/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 07:00 ET",
-        "pub_ts": 1795521600.0
+        "time": "11-24 08:17 ET",
+        "pub_ts": 1795526270.0
       },
       {
-        "title": "What State Street Fin Select Sector SPDR (XLF) Bought: Berkshire Leads on Nov. 20",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/state-street-fin-select-sector-110322872.html?.tsrc=rss",
+        "title": "Vicat shares rise as J.P. Morgan flags European cement pricing potential",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/vicat-shares-rise-j-p-131618301.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 06:03 ET",
-        "pub_ts": 1795518202.0
+        "time": "11-24 08:16 ET",
+        "pub_ts": 1795526178.0
       },
       {
-        "title": "ETFs Are Buying JPMorgan Chase (JPM) on Friday",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-buying-jpmorgan-chase-jpm-110146498.html?.tsrc=rss",
+        "title": "European cement makers poised for price gains as costs climb, J.P. Morgan says",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/european-cement-makers-poised-price-131258529.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 06:01 ET",
-        "pub_ts": 1795518106.0
+        "time": "11-24 08:12 ET",
+        "pub_ts": 1795525978.0
       }
     ],
     "WMT": [
@@ -3332,12 +3332,12 @@
     "KO": 1795527776.7693033,
     "FLY": 1795527776.7693033,
     "INTC": 1795527776.7693033,
-    "VRT": 1795526349.6831925,
-    "HPE": 1795526349.6831925,
-    "DELL": 1795526349.6831925,
-    "OKLO": 1795526349.6831925,
-    "CEG": 1795526349.6831925,
-    "FPS": 1795526349.6831925,
+    "VRT": 1795527885.4187868,
+    "HPE": 1795527885.4187868,
+    "DELL": 1795527885.4187868,
+    "OKLO": 1795527885.4187868,
+    "CEG": 1795527885.4187868,
+    "FPS": 1795527885.4187868,
     "MU": 1795527340.9976914,
     "SKHY": 1795527340.9976914,
     "WDC": 1795527340.9976914,
@@ -3353,8 +3353,8 @@
     "NKE": 1795527665.3559303,
     "MCD": 1795527665.3559303,
     "PEP": 1795526458.54915,
-    "XOM": 1795526349.6831925,
-    "JPM": 1795526349.6831925,
+    "XOM": 1795527885.4187868,
+    "JPM": 1795527885.4187868,
     "WMT": 1795526458.54915,
     "V": 1795527665.3559303,
     "CAT": 1795526458.54915,
