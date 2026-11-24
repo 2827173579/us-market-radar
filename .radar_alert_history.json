@@ -74,12 +74,12 @@
       "last_notified_at": 0.0
     },
     "AXP": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1795543226.2532053
     },
     "SPY": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1795543226.2532053
     },
     "DIA": {
       "state": "NORMAL",
@@ -175,7 +175,7 @@
     },
     "HPE": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1795530459.8023572
+      "last_notified_at": 1795543226.2532053
     },
     "PLTR": {
       "state": "NORMAL",
