@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795519335.891,
-  "updated_at_et": "11-24 06:22 ET",
-  "updated_at_kst": "20:22 KST",
+  "updated_at_ts": 1795519448.491,
+  "updated_at_et": "11-24 06:24 ET",
+  "updated_at_kst": "20:24 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1180,6 +1180,13 @@
         "pub_ts": 1795515030.0
       },
       {
+        "title": "Alphabet (GOOG) Sees $310.5 Million in Net ETF Buying on Nov. 20",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/alphabet-goog-sees-310-5-110112722.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 06:01 ET",
+        "pub_ts": 1795518072.0
+      },
+      {
         "title": "Why 1 Billionaire Investor Just Poured $3 Billion Into Amazon, Meta, and Alphabet",
         "url": "https://www.fool.com/investing/2026/11/24/why-one-billionaire-investor-just-poured-usd3-billion-into-amazon-meta-and-alphabet/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1192,13 +1199,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 05:20 ET",
         "pub_ts": 1795515621.0
-      },
-      {
-        "title": "Anthropic’s IPO Safety Net Is Gone: Morgan Stanley “Can No Longer” Buy Below $83. That’s a Risk for Amazon",
-        "url": "https://www.tikr.com/blog/anthropics-ipo-safety-net-is-gone-morgan-stanley-can-no-longer-buy-below-83-thats-a-risk-for-amazon?ref=yahoofinance&tlnk=yf-261124-vcwwm7x7&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 04:50 ET",
-        "pub_ts": 1795513830.0
       }
     ],
     "MSFT": [
@@ -1240,6 +1240,13 @@
     ],
     "AAPL": [
       {
+        "title": "ETFs Bought $1.00 Billion of Apple (AAPL) on Nov. 20",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-bought-1-00-billion-110043452.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 06:00 ET",
+        "pub_ts": 1795518043.0
+      },
+      {
         "title": "Apple Is Barely Off Its High as Chips Crash. A Strategist Says It “Definitely Needs to Correct”",
         "url": "https://www.tikr.com/blog/apple-is-barely-off-its-high-as-chips-crash-a-strategist-says-it-definitely-needs-to-correct?ref=yahoofinance&tlnk=yf-261124-vcm3jcr2&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1266,13 +1273,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 12:25 ET",
         "pub_ts": 1795454730.0
-      },
-      {
-        "title": "Apple Hit an All-Time High While AI Stocks Sold Off. Here’s the Big Tech Stock I’d Buy.",
-        "url": "https://www.fool.com/investing/2026/11/23/apple-hit-an-all-time-high-while-ai-stocks-sold-off-here-s-the-big-tech-stock-i-d-buy/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 11:32 ET",
-        "pub_ts": 1795451522.0
       }
     ],
     "PLTR": [
@@ -1351,6 +1351,13 @@
     ],
     "AMZN": [
       {
+        "title": "Amazon (AMZN) Sees $473.6 Million in Net ETF Buying on Friday",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/amazon-amzn-sees-473-6-110056608.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 06:00 ET",
+        "pub_ts": 1795518056.0
+      },
+      {
         "title": "Why 1 Billionaire Investor Just Poured $3 Billion Into Amazon, Meta, and Alphabet",
         "url": "https://www.fool.com/investing/2026/11/24/why-one-billionaire-investor-just-poured-usd3-billion-into-amazon-meta-and-alphabet/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1377,13 +1384,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 04:50 ET",
         "pub_ts": 1795513830.0
-      },
-      {
-        "title": "FalcoTrader Announces Expanded Stock Trading Capabilities Across Its Simulated Trading Challenge Platform",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/falcotrader-announces-expanded-stock-trading-094700625.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 04:47 ET",
-        "pub_ts": 1795513620.0
       }
     ],
     "CRWV": [
@@ -3305,14 +3305,14 @@
     "QCOM": 1795519335.8909855,
     "AVGO": 1795519335.8909855,
     "AMAT": 1795519335.8909855,
-    "META": 1795517892.1981976,
-    "GOOGL": 1795517892.1981976,
+    "META": 1795519448.4909406,
+    "GOOGL": 1795519448.4909406,
     "MSFT": 1795519335.8909855,
-    "AAPL": 1795517892.1981976,
-    "PLTR": 1795517892.1981976,
-    "NOW": 1795517892.1981976,
-    "AMZN": 1795517892.1981976,
-    "CRWV": 1795517892.1981976,
+    "AAPL": 1795519448.4909406,
+    "PLTR": 1795519448.4909406,
+    "NOW": 1795519448.4909406,
+    "AMZN": 1795519448.4909406,
+    "CRWV": 1795519448.4909406,
     "NBIS": 1795518000.78585,
     "APLD": 1795518331.9885995,
     "VST": 1795518331.9885995,
