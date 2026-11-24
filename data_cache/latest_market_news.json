@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795523244.296,
-  "updated_at_et": "11-24 07:27 ET",
-  "updated_at_kst": "21:27 KST",
+  "updated_at_ts": 1795523357.086,
+  "updated_at_et": "11-24 07:29 ET",
+  "updated_at_kst": "21:29 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2574,6 +2574,13 @@
     ],
     "SNDK": [
       {
+        "title": "SanDisk Stock At $937 Looked Cheap. Where Is The Floor?",
+        "url": "https://www.trefis.com/stock/sndk/articles/627524/sandisk-stock-at-937-looked-cheap-where-is-the-floor/2026-11-24?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 07:00 ET",
+        "pub_ts": 1795521625.0
+      },
+      {
         "title": "Sandisk Stock Jumps 15% as Wall Street Sees 192% Upside",
         "url": "https://finance.yahoo.com/markets/stocks/articles/sandisk-stock-jumps-15-wall-111200041.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2600,13 +2607,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 11:13 ET",
         "pub_ts": 1795450382.0
-      },
-      {
-        "title": "Citi Says Micron and SanDisk Selloff Is Overdone as AI Memory Demand Holds Up",
-        "url": "https://finance.yahoo.com/technology/ai/articles/citi-says-micron-sandisk-selloff-161237544.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 11:12 ET",
-        "pub_ts": 1795450357.0
       }
     ],
     "BTC-USD": [
@@ -3203,6 +3203,20 @@
     ],
     "ANT": [
       {
+        "title": "Anthropic’s Frenemy Squeeze: Pledging Up to $49B to Microsoft While Building Its Own Landlord Escape Hatch",
+        "url": "https://247wallst.com/investing/2026/11/24/anthropics-frenemy-squeeze-pledging-up-to-49b-to-microsoft-while-building-its-own-landlord-escape-hatch/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 07:15 ET",
+        "pub_ts": 1795522531.0
+      },
+      {
+        "title": "Jim Cramer: A ‘rolling bear market’ is mauling US stocks, ‘ripping off the faces of everybody.’ Protect your wallet",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/jim-cramer-rolling-bear-market-121500948.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 07:15 ET",
+        "pub_ts": 1795522500.0
+      },
+      {
         "title": "Which \"Magnificent Seven\" Stocks Win From Anthropic’s IPO?",
         "url": "https://www.fool.com/investing/2026/11/24/which-magnificent-seven-stocks-win-from-anthropics-ipo/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3210,32 +3224,18 @@
         "pub_ts": 1795521002.0
       },
       {
-        "title": "The British chip champions challenging Nvidia’s AI stranglehold",
-        "url": "https://uk.finance.yahoo.com/news/british-chip-champions-challenging-nvidia-110000128.html?.tsrc=rss",
+        "title": "Nvidia, Anthropic, Intel, HPE, Sanofi, and More Stocks That Explain Today’s Market",
+        "url": "https://finance.yahoo.com/m/f7fa0ed2-2c68-3b80-9261-c35639090d03/nvidia%2C-anthropic%2C-intel%2C.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 06:00 ET",
-        "pub_ts": 1795518000.0
+        "time": "11-24 06:21 ET",
+        "pub_ts": 1795519260.0
       },
       {
-        "title": "Anthropic’s IPO Slide Is Bad News for Oracle, Which Is “Dependent on OpenAI”",
-        "url": "https://www.tikr.com/blog/anthropics-ipo-slide-is-bad-news-for-oracle-which-is-dependent-on-openai?ref=yahoofinance&tlnk=yf-261124-fc345234&.tsrc=rss",
+        "title": "Anthropic Breaks Below $83 IPO Price in Premarket Trading",
+        "url": "https://finance.yahoo.com/technology/ai/articles/anthropic-breaks-below-83-ipo-111924905.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 05:50 ET",
-        "pub_ts": 1795517444.0
-      },
-      {
-        "title": "Anthropic’s IPO Safety Net Is Gone: Morgan Stanley “Can No Longer” Buy Below $83. That’s a Risk for Amazon",
-        "url": "https://www.tikr.com/blog/anthropics-ipo-safety-net-is-gone-morgan-stanley-can-no-longer-buy-below-83-thats-a-risk-for-amazon?ref=yahoofinance&tlnk=yf-261124-vcwwm7x7&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 04:50 ET",
-        "pub_ts": 1795513830.0
-      },
-      {
-        "title": "Is the Anthropic IPO to Blame for Bitcoin's Recent Downturn? The Answer Might Surprise You.",
-        "url": "https://www.fool.com/investing/2026/11/24/is-the-anthropic-ipo-to-blame-for-bitcoins-recent-downturn-the-answer-might-surprise-you/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 04:20 ET",
-        "pub_ts": 1795512002.0
+        "time": "11-24 06:19 ET",
+        "pub_ts": 1795519164.0
       }
     ],
     "XAUUSD": [
@@ -3344,27 +3344,27 @@
     "MU": 1795522692.1801164,
     "SKHY": 1795522692.1801164,
     "WDC": 1795522692.1801164,
-    "STX": 1795521808.2036672,
-    "MSTR": 1795521808.2036672,
-    "SNDK": 1795521808.2036672,
+    "STX": 1795523357.0855243,
+    "MSTR": 1795523357.0855243,
+    "SNDK": 1795523357.0855243,
     "BTC-USD": 1795522692.1801164,
-    "CRWD": 1795521808.2036672,
+    "CRWD": 1795523357.0855243,
     "ORCL": 1795523020.401441,
     "COIN": 1795523020.401441,
     "LLY": 1795523020.401441,
     "MRNA": 1795523020.401441,
     "NKE": 1795523020.401441,
     "MCD": 1795523020.401441,
-    "PEP": 1795521808.2036672,
+    "PEP": 1795523357.0855243,
     "XOM": 1795523244.2963064,
     "JPM": 1795523244.2963064,
-    "WMT": 1795521808.2036672,
+    "WMT": 1795523357.0855243,
     "V": 1795523020.401441,
-    "CAT": 1795521808.2036672,
+    "CAT": 1795523357.0855243,
     "FN": 1795522692.1801164,
     "GLW": 1795523020.401441,
-    "ANT": 1795521808.2036672,
-    "XAUUSD": 1795521808.2036672,
+    "ANT": 1795523357.0855243,
+    "XAUUSD": 1795523357.0855243,
     "KOSPI": 1795522692.1801164
   },
   "opex_shield": {

@@ -46,8 +46,8 @@
       "last_notified_at": 0.0
     },
     "TSM": {
-      "state": "STOP_LOSS",
-      "last_notified_at": 1795523255.859809
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "FLY": {
       "state": "NORMAL",
@@ -74,8 +74,8 @@
       "last_notified_at": 0.0
     },
     "AXP": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1795522813.6623943
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "SPY": {
       "state": "NORMAL",
