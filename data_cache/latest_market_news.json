@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795516376.847,
-  "updated_at_et": "11-24 05:32 ET",
-  "updated_at_kst": "19:32 KST",
+  "updated_at_ts": 1795516499.45,
+  "updated_at_et": "11-24 05:34 ET",
+  "updated_at_kst": "19:34 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2609,6 +2609,13 @@
     ],
     "BTC-USD": [
       {
+        "title": "Bitcoin hovers around $60k amid little relief from rate, regulatory jitters",
+        "url": "https://finance.yahoo.com/markets/crypto/articles/bitcoin-hovers-around-60k-amid-064423052.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 01:44 ET",
+        "pub_ts": 1795502663.0
+      },
+      {
         "title": "‘Big Short’ Investor Steve Eisman Says Bitcoin Is ‘Nothing’ — Claims Crypto Just Tracks Nvidia: ‘Never’ Would He Buy It",
         "url": "https://stocktwits.com/news-articles/markets/cryptocurrency/big-short-investor-steve-eisman-says-bitcoin-is-nothing-claims-crypto-just-tracks-nvidia-never-would-he-buy-it/cNbs2mBR9kQ?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2635,13 +2642,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 04:15 ET",
         "pub_ts": 1795511734.0
-      },
-      {
-        "title": "Jensen Huang Recovery Pump Lasted Just Six Hours As BTC Falls Back to $60K – What Went Wrong?",
-        "url": "https://www.coinspeaker.com/bitcoin-news-huang-pump-fades-saylor-strategy/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 04:04 ET",
-        "pub_ts": 1795511072.0
       }
     ],
     "CRWD": [
@@ -3313,18 +3313,18 @@
     "NOW": 1795516376.8469977,
     "AMZN": 1795516376.8469977,
     "CRWV": 1795516376.8469977,
-    "NBIS": 1795514702.7509778,
+    "NBIS": 1795516499.4497952,
     "APLD": 1795515156.9524436,
     "VST": 1795515156.9524436,
     "BE": 1795515156.9524436,
     "CRDO": 1795515156.9524436,
     "COHR": 1795515156.9524436,
-    "MRVL": 1795514702.7509778,
-    "LITE": 1795514702.7509778,
+    "MRVL": 1795516499.4497952,
+    "LITE": 1795516499.4497952,
     "AAOI": 1795515156.9524436,
     "SPCX": 1795515275.1539328,
     "ASTS": 1795515156.9524436,
-    "AXTI": 1795514702.7509778,
+    "AXTI": 1795516499.4497952,
     "NASA": 1795515275.1539328,
     "LUNR": 1795515275.1539328,
     "TSLA": 1795515275.1539328,
@@ -3339,13 +3339,13 @@
     "OKLO": 1795515275.1539328,
     "CEG": 1795515275.1539328,
     "FPS": 1795515275.1539328,
-    "MU": 1795514702.7509778,
-    "SKHY": 1795514702.7509778,
-    "WDC": 1795514702.7509778,
+    "MU": 1795516499.4497952,
+    "SKHY": 1795516499.4497952,
+    "WDC": 1795516499.4497952,
     "STX": 1795515399.655148,
     "MSTR": 1795515399.655148,
     "SNDK": 1795515399.655148,
-    "BTC-USD": 1795514823.102322,
+    "BTC-USD": 1795516499.4497952,
     "CRWD": 1795515399.655148,
     "ORCL": 1795515156.9524436,
     "COIN": 1795515156.9524436,
@@ -3359,11 +3359,11 @@
     "WMT": 1795515399.655148,
     "V": 1795515156.9524436,
     "CAT": 1795515399.655148,
-    "FN": 1795514702.7509778,
+    "FN": 1795516499.4497952,
     "GLW": 1795515156.9524436,
     "ANT": 1795515399.655148,
     "XAUUSD": 1795515399.655148,
-    "KOSPI": 1795514702.7509778
+    "KOSPI": 1795516499.4497952
   },
   "opex_shield": {
     "date": "2026-11-24",
