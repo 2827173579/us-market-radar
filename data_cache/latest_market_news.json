@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795555827.69,
-  "updated_at_et": "11-24 16:30 ET",
-  "updated_at_kst": "06:30 KST",
+  "updated_at_ts": 1795555925.517,
+  "updated_at_et": "11-24 16:32 ET",
+  "updated_at_kst": "06:32 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1502,6 +1502,13 @@
     ],
     "VST": [
       {
+        "title": "Is Vistra (VST) Still Below Fair Value After Data Center Clarity?",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/vistra-vst-still-below-fair-211126773.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 16:11 ET",
+        "pub_ts": 1795554686.0
+      },
+      {
         "title": "What Just Happened To Vistra Stock?",
         "url": "https://www.trefis.com/stock/vst/articles/628627/what-just-happened-to-vistra-stock-2/2026-11-24?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1528,13 +1535,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 10:54 ET",
         "pub_ts": 1795535695.0
-      },
-      {
-        "title": "Exelon Or Vistra: Which Fits Your Power Demand Bet?",
-        "url": "https://www.trefis.com/stock/exc/articles/627544/exelon-or-vistra-which-fits-your-power-demand-bet/2026-11-23?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 15:38 ET",
-        "pub_ts": 1795466329.0
       }
     ],
     "BE": [
@@ -1761,6 +1761,20 @@
     ],
     "SPCX": [
       {
+        "title": "Tesla, SpaceX Reportedly Pick Board Members To Negotiate Elon Musk's Mega Merger",
+        "url": "https://finance.yahoo.com/m/d4400d8c-dfaf-3382-a360-877e01e80aec/tesla%2C-spacex-reportedly-pick.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 16:05 ET",
+        "pub_ts": 1795554326.0
+      },
+      {
+        "title": "Tesla and SpaceX Just Assembled Deal Teams for a $3.2 Trillion Merger. Here's What Investors Need to Know.",
+        "url": "https://www.fool.com/investing/2026/11/24/tesla-and-spacex-just-assembled-deal-teams-for-a-usd3-2-trillion-merger-here-s-what-investors-need-to-know/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 15:59 ET",
+        "pub_ts": 1795553995.0
+      },
+      {
         "title": "3 Non-AI Stocks to Buy for Long-Term Dividends and Stability",
         "url": "https://www.fool.com/investing/2026/11/24/3-non-ai-stocks-to-buy-for-long-term-dividends-and-stability/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1780,20 +1794,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 15:05 ET",
         "pub_ts": 1795550700.0
-      },
-      {
-        "title": "If SpaceX and Tesla Merge, History Says One Group of Shareholders Usually Wins. Here’s Which Side to Be On.",
-        "url": "https://www.fool.com/investing/2026/11/24/if-spacex-and-tesla-merge-history-says-one-group-of-shareholders-usually-wins-here-s-which-side-to-be-on/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 14:19 ET",
-        "pub_ts": 1795547994.0
-      },
-      {
-        "title": "Why SpaceX Dropped Again Today",
-        "url": "https://www.fool.com/investing/2026/11/24/why-spacex-dropped-again-today/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 14:01 ET",
-        "pub_ts": 1795546896.0
       }
     ],
     "ASTS": [
@@ -2020,6 +2020,13 @@
     ],
     "RKLB": [
       {
+        "title": "Mizuho Sees 14% Downside in Rocket Lab Even After Its 69% Fall From May’s High",
+        "url": "https://www.tikr.com/blog/mizuho-sees-14-downside-in-rocket-lab-even-after-its-69-fall-from-mays-high?ref=yahoofinance&tlnk=yf-261124-63fgqw27&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 16:11 ET",
+        "pub_ts": 1795554666.0
+      },
+      {
         "title": "Rocket Lab (RKLB) Has 117 Launches Booked. Barclays Has a View",
         "url": "https://finance.yahoo.com/markets/stocks/articles/rocket-lab-rklb-117-launches-191333487.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2046,16 +2053,16 @@
         "source": "Yahoo Finance",
         "time": "11-24 00:58 ET",
         "pub_ts": 1795499933.0
-      },
-      {
-        "title": "Why Rocket Lab (RKLB) Is Up 9.2% And What's Next After $515 Million Launch Orders",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/why-rocket-lab-rklb-9-021346011.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 21:13 ET",
-        "pub_ts": 1795486426.0
       }
     ],
     "KO": [
+      {
+        "title": "Coca-Cola hires pharma vet for CFO",
+        "url": "https://www.cfodive.com/news/cocacola-grants-new-cfo-10m-stock-cash-awards-beverage-capex/875666/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 14:07 ET",
+        "pub_ts": 1795547238.0
+      },
       {
         "title": "Can Coca-Cola Navigate Rising Costs While Protecting Margins?",
         "url": "https://finance.yahoo.com/markets/stocks/articles/coca-cola-navigate-rising-costs-163500208.html?.tsrc=rss",
@@ -2083,13 +2090,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 08:43 ET",
         "pub_ts": 1795527831.0
-      },
-      {
-        "title": "These 3 Stocks Have Raised Their Dividends Annually for at Least 49 Years. Should you Buy Them?",
-        "url": "https://www.fool.com/investing/2026/11/24/these-3-stocks-have-raised-their-dividends-annually-for-at-least-49-years-should-you-buy-them/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 06:18 ET",
-        "pub_ts": 1795519082.0
       }
     ],
     "FLY": [
@@ -3317,25 +3317,25 @@
     "AMZN": 1795555328.7186592,
     "CRWV": 1795555328.7186592,
     "NBIS": 1795555432.2981946,
-    "APLD": 1795554417.1491358,
-    "VST": 1795554417.1491358,
-    "BE": 1795554417.1491358,
-    "CRDO": 1795554417.1491358,
-    "COHR": 1795554417.1491358,
+    "APLD": 1795555925.5166647,
+    "VST": 1795555925.5166647,
+    "BE": 1795555925.5166647,
+    "CRDO": 1795555925.5166647,
+    "COHR": 1795555925.5166647,
     "MRVL": 1795555432.2981946,
     "LITE": 1795555432.2981946,
-    "AAOI": 1795554417.1491358,
-    "SPCX": 1795554417.1491358,
-    "ASTS": 1795554417.1491358,
+    "AAOI": 1795555925.5166647,
+    "SPCX": 1795555925.5166647,
+    "ASTS": 1795555925.5166647,
     "AXTI": 1795555432.2981946,
-    "NASA": 1795554417.1491358,
-    "LUNR": 1795554417.1491358,
+    "NASA": 1795555925.5166647,
+    "LUNR": 1795555925.5166647,
     "TSLA": 1795554518.8580587,
-    "AXP": 1795554417.1491358,
-    "RKLB": 1795554417.1491358,
-    "KO": 1795554417.1491358,
-    "FLY": 1795554417.1491358,
-    "INTC": 1795554417.1491358,
+    "AXP": 1795555925.5166647,
+    "RKLB": 1795555925.5166647,
+    "KO": 1795555925.5166647,
+    "FLY": 1795555925.5166647,
+    "INTC": 1795555925.5166647,
     "VRT": 1795554518.8580587,
     "HPE": 1795554518.8580587,
     "DELL": 1795554518.8580587,
@@ -3363,7 +3363,7 @@
     "V": 1795554518.8580587,
     "CAT": 1795554619.768088,
     "FN": 1795555432.2981946,
-    "GLW": 1795554417.1491358,
+    "GLW": 1795555925.5166647,
     "ANT": 1795554619.768088,
     "XAUUSD": 1795554820.66809,
     "KOSPI": 1795555328.7186592
