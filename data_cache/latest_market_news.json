@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795524019.186,
-  "updated_at_et": "11-24 07:40 ET",
-  "updated_at_kst": "21:40 KST",
+  "updated_at_ts": 1795524131.911,
+  "updated_at_et": "11-24 07:42 ET",
+  "updated_at_kst": "21:42 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1175,6 +1175,20 @@
         "pub_ts": 1795515030.0
       },
       {
+        "title": "Elon Musk Reportedly Told Staff SpaceX Is Falling Behind in AI",
+        "url": "https://247wallst.com/investing/2026/11/24/elon-musk-reportedly-told-staff-spacex-is-falling-behind-in-ai/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 07:22 ET",
+        "pub_ts": 1795522933.0
+      },
+      {
+        "title": "OpenAI’s Greg Brockman: “The World Is Not Building Enough Compute.” Wall Street Just Stopped Raising Capex Forecasts",
+        "url": "https://www.tikr.com/blog/openais-greg-brockman-the-world-is-not-building-enough-compute-wall-street-just-stopped-raising-capex-forecasts?ref=yahoofinance&tlnk=yf-261124-777pg8fq&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 07:05 ET",
+        "pub_ts": 1795521904.0
+      },
+      {
         "title": "Not Apple. Not Microsoft. This Is the \"Magnificent Seven\" Stock I’d Buy for a 10-Year Hold.",
         "url": "https://www.fool.com/investing/2026/11/24/not-apple-not-microsoft-this-is-the-magnificent-seven-stock-id-buy-for-a-10-year-hold/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1187,20 +1201,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 06:37 ET",
         "pub_ts": 1795520243.0
-      },
-      {
-        "title": "Jim Cramer Calls CrowdStrike’s Zscaler Deal the Biggest in Cybersecurity History. What It Means for Both Stocks",
-        "url": "https://247wallst.com/investing/2026/11/24/jim-cramer-calls-crowdstrikes-zscaler-deal-the-biggest-in-cybersecurity-history-what-it-means-for-both-stocks/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 06:17 ET",
-        "pub_ts": 1795519024.0
-      },
-      {
-        "title": "Can Adobe Stock Rise 30% From Here?",
-        "url": "https://www.trefis.com/stock/adbe/articles/628292/can-adobe-stock-rise-30-from-here/2026-11-24?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 06:07 ET",
-        "pub_ts": 1795518467.0
       }
     ],
     "MSFT": [
@@ -1353,6 +1353,27 @@
     ],
     "AMZN": [
       {
+        "title": "ZonPrep Announces Las Vegas Facility, Expanding Its Amazon Supply Chain Network West",
+        "url": "https://finance.yahoo.com/small-business/articles/zonprep-announces-las-vegas-facility-122000834.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 07:20 ET",
+        "pub_ts": 1795522800.0
+      },
+      {
+        "title": "Anthropic’s Frenemy Squeeze: Pledging Up to $49B to Microsoft While Building Its Own Landlord Escape Hatch",
+        "url": "https://247wallst.com/investing/2026/11/24/anthropics-frenemy-squeeze-pledging-up-to-49b-to-microsoft-while-building-its-own-landlord-escape-hatch/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 07:15 ET",
+        "pub_ts": 1795522531.0
+      },
+      {
+        "title": "Amazon Faces FAA Probe After Michigan Drone Crash",
+        "url": "https://finance.yahoo.com/technology/articles/amazon-faces-faa-probe-michigan-121306263.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 07:13 ET",
+        "pub_ts": 1795522386.0
+      },
+      {
         "title": "ARK Autonomous Tech & Robotics (ARKQ) Buys $214.9 Million More Tesla on Nov. 20",
         "url": "https://finance.yahoo.com/markets/stocks/articles/ark-autonomous-tech-robotics-arkq-110308252.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1365,27 +1386,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 06:00 ET",
         "pub_ts": 1795518056.0
-      },
-      {
-        "title": "Why 1 Billionaire Investor Just Poured $3 Billion Into Amazon, Meta, and Alphabet",
-        "url": "https://www.fool.com/investing/2026/11/24/why-one-billionaire-investor-just-poured-usd3-billion-into-amazon-meta-and-alphabet/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 05:35 ET",
-        "pub_ts": 1795516502.0
-      },
-      {
-        "title": "Trump Threatens a “Tremendous Tax” on Overseas Data Centers. That’s a Big Problem for Microsoft, Amazon and Alphabet",
-        "url": "https://www.tikr.com/blog/trump-threatens-a-tremendous-tax-on-overseas-data-centers-thats-a-big-problem-for-microsoft-amazon-and-alphabet?ref=yahoofinance&tlnk=yf-261124-p3fx6248&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 05:20 ET",
-        "pub_ts": 1795515621.0
-      },
-      {
-        "title": "Amazon to acquire Decart’s AI optimisation technology",
-        "url": "https://www.verdict.co.uk/amazon-acquire-decarts-technology/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 05:09 ET",
-        "pub_ts": 1795514956.0
       }
     ],
     "CRWV": [
@@ -3307,14 +3307,14 @@
     "QCOM": 1795524019.1863575,
     "AVGO": 1795524019.1863575,
     "AMAT": 1795524019.1863575,
-    "META": 1795522583.873532,
-    "GOOGL": 1795522583.873532,
+    "META": 1795524131.9109845,
+    "GOOGL": 1795524131.9109845,
     "MSFT": 1795524019.1863575,
-    "AAPL": 1795522583.873532,
-    "PLTR": 1795522583.873532,
-    "NOW": 1795522583.873532,
-    "AMZN": 1795522583.873532,
-    "CRWV": 1795522583.873532,
+    "AAPL": 1795524131.9109845,
+    "PLTR": 1795524131.9109845,
+    "NOW": 1795524131.9109845,
+    "AMZN": 1795524131.9109845,
+    "CRWV": 1795524131.9109845,
     "NBIS": 1795522692.1801164,
     "APLD": 1795523020.401441,
     "VST": 1795523020.401441,
