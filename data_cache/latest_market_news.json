@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795563060.913,
-  "updated_at_et": "11-24 18:31 ET",
-  "updated_at_kst": "08:31 KST",
+  "updated_at_ts": 1795563157.543,
+  "updated_at_et": "11-24 18:32 ET",
+  "updated_at_kst": "08:32 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -813,6 +813,13 @@
         "pub_ts": 1795529795.0
       },
       {
+        "title": "Novanta Shares Just Jumped And We’re Buying This Robotics Play",
+        "url": "https://247wallst.com/videos/novanta-shares-just-jumped-and-were-buying-this-robotics-play/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 17:59 ET",
+        "pub_ts": 1795561162.0
+      },
+      {
         "title": "Taiwan Semiconductor Manufacturing (NYSE:TSM) Stock May Be Reasonable After New Export Curbs",
         "url": "https://finance.yahoo.com/markets/stocks/articles/taiwan-semiconductor-manufacturing-nyse-tsm-200904328.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -832,13 +839,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 14:59 ET",
         "pub_ts": 1795550362.0
-      },
-      {
-        "title": "If You Invest $5,000 Into These 3 Stocks, You Could Have $10,000 by 2030",
-        "url": "https://247wallst.com/investing/2026/11/24/if-you-invest-5000-into-these-3-stocks-you-could-have-10000-by-2030/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 13:03 ET",
-        "pub_ts": 1795543400.0
       }
     ],
     "VIXY": [
@@ -1227,6 +1227,13 @@
         "pub_ts": 1795549060.0
       },
       {
+        "title": "Driven Tech Completes Acquisitions of ADEX and TekBay, Accelerating Enterprise AI Strategy",
+        "url": "https://finance.yahoo.com/technology/ai/articles/driven-tech-completes-acquisitions-adex-231000507.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 18:10 ET",
+        "pub_ts": 1795561800.0
+      },
+      {
         "title": "Maverick Medical AI Surfaces CodeAgent within Microsoft Radiology Reporting Solutions to Reduce Physician Rework",
         "url": "https://finance.yahoo.com/healthcare/articles/maverick-medical-ai-surfaces-codeagent-225400029.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1239,13 +1246,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 17:24 ET",
         "pub_ts": 1795559066.0
-      },
-      {
-        "title": "Microsoft (MSFT) Is One of the Safest Ways to Own AI",
-        "url": "https://finance.yahoo.com/technology/ai/articles/microsoft-msft-one-safest-ways-210600451.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 16:06 ET",
-        "pub_ts": 1795554360.0
       }
     ],
     "AAPL": [
@@ -1271,18 +1271,18 @@
         "pub_ts": 1795534975.0
       },
       {
+        "title": "Tech Keeps Eating Hollywood As Netflix Buys Historic Seinfeld Lot",
+        "url": "https://finance.yahoo.com/m/34be458f-965e-30c4-8fb7-e730267a65a9/tech-keeps-eating-hollywood.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 18:00 ET",
+        "pub_ts": 1795561228.0
+      },
+      {
         "title": "Maple raises $5.3M to build AI products that protect your data, even from itself",
         "url": "https://finance.yahoo.com/technology/ai/articles/maple-raises-5-3m-build-211952973.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-24 16:19 ET",
         "pub_ts": 1795555192.0
-      },
-      {
-        "title": "Is Apple (AAPL) Above Fair Value As ETF Buying Returns?",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/apple-aapl-above-fair-value-211324050.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 16:13 ET",
-        "pub_ts": 1795554804.0
       }
     ],
     "PLTR": [
@@ -3296,33 +3296,33 @@
   "ticker_news_ts": {
     "KORU": 1795562856.3755548,
     "SOXL": 1795562856.3755548,
-    "SPY": 1795561579.1244478,
+    "SPY": 1795563157.5428145,
     "DIA": 1795562856.3755548,
     "SOXX": 1795562856.3755548,
     "QQQ": 1795562856.3755548,
-    "SMH": 1795561579.1244478,
+    "SMH": 1795563157.5428145,
     "IWM": 1795562856.3755548,
     "IGV": 1795562856.3755548,
     "TLT": 1795562856.3755548,
     "GLD": 1795562856.3755548,
     "SQQQ": 1795562856.3755548,
-    "TSM": 1795561579.1244478,
+    "TSM": 1795563157.5428145,
     "VIXY": 1795562856.3755548,
     "SOXS": 1795562856.3755548,
     "NVDA": 1795562856.3755548,
     "AMD": 1795562856.3755548,
-    "ASML": 1795561579.1244478,
-    "QCOM": 1795561579.1244478,
+    "ASML": 1795563157.5428145,
+    "QCOM": 1795563157.5428145,
     "AVGO": 1795562856.3755548,
-    "AMAT": 1795561579.1244478,
-    "META": 1795561579.1244478,
-    "GOOGL": 1795561579.1244478,
-    "MSFT": 1795561579.1244478,
-    "AAPL": 1795561579.1244478,
-    "PLTR": 1795561579.1244478,
-    "NOW": 1795561579.1244478,
-    "AMZN": 1795561579.1244478,
-    "CRWV": 1795561579.1244478,
+    "AMAT": 1795563157.5428145,
+    "META": 1795563157.5428145,
+    "GOOGL": 1795563157.5428145,
+    "MSFT": 1795563157.5428145,
+    "AAPL": 1795563157.5428145,
+    "PLTR": 1795563157.5428145,
+    "NOW": 1795563157.5428145,
+    "AMZN": 1795563157.5428145,
+    "CRWV": 1795563157.5428145,
     "NBIS": 1795561679.493174,
     "APLD": 1795562080.1708078,
     "VST": 1795562080.1708078,
@@ -3373,7 +3373,7 @@
     "GLW": 1795562080.1708078,
     "ANT": 1795562391.097207,
     "XAUUSD": 1795562659.688867,
-    "KOSPI": 1795561579.1244478
+    "KOSPI": 1795563157.5428145
   },
   "opex_shield": {
     "date": "2026-11-24",
