@@ -77,9 +77,9 @@ def check_futu_pool_and_vixy_fixes(page, is_mobile: bool):
     tickers = page.locator("#watchlistContainer .stock-item").evaluate_all(
         "els => els.map(e => e.getAttribute('data-ticker'))"
     )
-    assert len(tickers) == 79, f"Expected strictly 79 watchlist items, got {len(tickers)}"
-    for forbidden in ("^VIX", "^VIX3M", "^VVIX", "^TNX"):
-        assert forbidden not in tickers, f"{forbidden} must NOT be injected into 79-ticker watchlist!"
+    assert len(tickers) == 80, f"Expected strictly 80 watchlist items, got {len(tickers)}"
+    for forbidden in ("^VIX", "^VIX3M", "^VVIX", "^TNX", "^KS11"):
+        assert forbidden not in tickers, f"{forbidden} must NOT be injected into 80-ticker watchlist!"
 
     # 2. Switch to VIXY & verify 3 awkward label fixes
     page.evaluate("selectTicker('VIXY');")
@@ -168,11 +168,11 @@ def check_futu_pool_and_vixy_fixes(page, is_mobile: bool):
         "els => els.map(e => e.getAttribute('data-ticker'))"
     )
     assert 1 <= len(top5_tickers) <= 5, f"Expected Top 5 filter 1..5 items, got {len(top5_tickers)}: {top5_tickers}"
-    for inv in ("SQQQ", "SOXS", "VIXY", "TLT", "GLD", "XAUUSD", "BTC-USD"):
+    for inv in ("SQQQ", "SOXS", "VIXY", "TLT", "GLD", "XAUUSD", "BTC-USD", "KOSPI"):
         assert inv not in top5_tickers, f"{inv} leaked into Resilient Top 5: {top5_tickers}"
     page.locator("#wlPrimaryFilters .wl-pill-btn[data-filter='all']").click()
     page.wait_for_timeout(140)
-    assert page.locator("#watchlistContainer .stock-item").count() == 79, "Restoring 'all' filter did not return 79 items"
+    assert page.locator("#watchlistContainer .stock-item").count() == 80, "Restoring 'all' filter did not return 80 items"
 
     if not is_mobile:
         strip = page.locator("#resilientLeadersStrip")

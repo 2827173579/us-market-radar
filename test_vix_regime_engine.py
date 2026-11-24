@@ -42,7 +42,7 @@ class TestVixRegimeEngine(unittest.TestCase):
         # 79 只可交易标的池数量绝不能被 ^VIX / ^VIX3M / ^VVIX / ^TNX 污染
         etfs = set(integrated_market_radar.MONITORED_TARGETS["ETFS"].keys())
         stocks = set(integrated_market_radar.MONITORED_TARGETS["STOCKS"].keys())
-        self.assertEqual(len(etfs) + len(stocks), 79)
+        self.assertEqual(len(etfs) + len(stocks), 80)
         for vix_sym in ("^VIX", "^VIX3M", "^VVIX", "^TNX"):
             self.assertNotIn(vix_sym, etfs)
             self.assertNotIn(vix_sym, stocks)

@@ -111,7 +111,7 @@ def verify_desktop(browser):
     badge_counts = page.locator("#watchlistContainer .stock-item").evaluate_all(
         "els => els.map(e => e.querySelectorAll('.s-status-pill').length)"
     )
-    assert len(badge_counts) == 79, f"Expected 79 watchlist rows, got {len(badge_counts)}"
+    assert len(badge_counts) == 80, f"Expected 80 watchlist rows, got {len(badge_counts)}"
     assert all(c == 1 for c in badge_counts), f"Each stock item must have strictly 1 status pill: {set(badge_counts)}"
 
     for flt in ("opportunity", "risk", "gold_crypto", "all"):
@@ -246,6 +246,41 @@ def verify_desktop(browser):
         assert "无美股期权" in (page.locator("#pAiPcrSentiment").text_content() or "")
         dec_txt = page.locator("#beginnerDecisionCard").inner_text()
         assert "NaN" not in dec_txt and "undefined" not in dec_txt
+
+    # Verify SOXS probability normalization <= 100%, no bullish 4H resonance when bearish, and inverse ETF wording
+    page.evaluate("selectTicker('SOXS');")
+    page.wait_for_timeout(180)
+    soxs_lwr = float(page.locator("#pAiLongWr").inner_text().replace("%", "").strip())
+    soxs_swr = float(page.locator("#pAiShortWr").inner_text().replace("%", "").strip())
+    assert soxs_lwr + soxs_swr <= 100.01, f"SOXS win rates exceed 100%: {soxs_lwr} + {soxs_swr}"
+    soxs_lraw = float((page.locator("#pAiLongRaw").text_content() or "0").replace("原始多:", "").replace("%", "").strip())
+    soxs_sraw = float((page.locator("#pAiShortRaw").text_content() or "0").replace("原始空:", "").replace("%", "").strip())
+    assert soxs_lraw + soxs_sraw <= 100.01, f"SOXS raw probs exceed 100%: {soxs_lraw} + {soxs_sraw}"
+    soxs_act = page.locator("#pAiActionText").inner_text()
+    assert "逢高反抽沽空/买Put" not in soxs_act, f"SOXS must not show double-negative short wording: {soxs_act!r}"
+
+    # Verify KOSPI (80th ticker): zero $ signs across header/watchlist/cards/drawer, native K-line SVG visible, non_us_session intraday fallback
+    kospi_wl_txt = page.locator("#watchlistContainer .stock-item[data-ticker='KOSPI']").inner_text()
+    assert "$" not in kospi_wl_txt, f"KOSPI watchlist row leaked $ sign: {kospi_wl_txt!r}"
+    page.locator("#watchlistContainer .stock-item[data-ticker='KOSPI']").click()
+    page.wait_for_timeout(200)
+    assert page.locator("#kospiNativeChartSvg").is_visible(), "KOSPI native K-line SVG must be visible!"
+    assert "$" not in page.locator("#curPrice").inner_text(), f"KOSPI #curPrice leaked $: {page.locator('#curPrice').inner_text()!r}"
+    kospi_dec_txt = page.locator("#beginnerDecisionCard").inner_text()
+    assert "$" not in kospi_dec_txt and "NaN" not in kospi_dec_txt, f"KOSPI beginnerDecisionCard leaked $ or NaN: {kospi_dec_txt!r}"
+    page.locator("#btnProQuantToggle").click()
+    page.wait_for_timeout(160)
+    for k_sel in ("#pMa50", "#pEma20", "#pAtr", "#pVwap", "#pEntryFibBand", "#pAiTargetPrice", "#pAiStopPrice", "#pAiMultiLevels", "#pAiScenarioScript"):
+        k_txt = page.locator(k_sel).inner_text()
+        assert "$" not in k_txt, f"KOSPI {k_sel} leaked $ sign: {k_txt!r}"
+    assert "无美股期权链" in page.locator("#optionsUnavailableNote").inner_text()
+    page.locator("#tabIntradayPathView").click()
+    page.wait_for_timeout(160)
+    assert "韩国交易时段 (09:00–15:30 KST)" in page.locator("#ipSummaryText").inner_text()
+    assert "$" not in page.locator("#ipLevelsBar").inner_text(), f"KOSPI #ipLevelsBar leaked $: {page.locator('#ipLevelsBar').inner_text()!r}"
+    page.locator("#tabKlineView").click()
+    page.locator("#btnProQuantToggle").click()
+    page.wait_for_timeout(120)
 
     assert not errors, f"Desktop JS pageerrors: {errors}"
     ctx.close()

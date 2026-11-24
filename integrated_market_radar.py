@@ -16,6 +16,7 @@ import socket
 import subprocess
 WIN_NO_WINDOW = 0x08000000 if sys.platform == "win32" else 0
 import os
+import re
 ANDROID_MODE = ("--android" in sys.argv) or bool(os.environ.get("TERMUX_VERSION"))
 NO_BROWSER = ("--no-browser" in sys.argv) or ANDROID_MODE
 import time
@@ -70,6 +71,7 @@ MONITORED_TARGETS = {
         "SOXX": {"name": "费城半导体ETF", "sub": "iShares核心半导体指数基准", "cat": "半导体"},
         "SOXL": {"name": "3倍做多半导体", "sub": "费半三倍正向杠杆·实盘底仓跟踪", "cat": "正向杠杆", "cost": 0.0, "shares": 0.0, "trim1": 94.50, "trim1_shares": 4.22594, "trim2": 102.50, "base_val": 82.09, "target": 0.0},
         "KORU": {"name": "3倍做多韩国", "sub": "韩国股市3倍正向杠杆·三星海力士先导", "cat": "正向杠杆"},
+        "KOSPI": {"name": "韩国综合指数", "sub": "韩国股市总基准 (三星/SK海力士)", "cat": "亚太指数", "yf_symbol": "^KS11", "is_index": True, "price_unit": "pts"},
         "IGV":  {"name": "软件科技ETF", "sub": "SaaS与AI企业级应用", "cat": "云与软件"},
         "TLT":  {"name": "20年+美债", "sub": "长端利率与避险情绪", "cat": "利率债券"},
         "GLD":  {"name": "黄金现货ETF", "sub": "抗通胀与终极地缘避险", "cat": "大宗商品"},
@@ -679,6 +681,16 @@ def fetch_xauusd_spot_quote(timeout=6):
         return {}
 
 
+def fetch_kospi_index_quote(timeout=8):
+    """韩国综合指数 KOSPI (^KS11) 免费实时报价瀑布流 (0 Finnhub 消耗，适配 09:00~15:30 KST 韩盘时段)。"""
+    try:
+        import ml_predictor_5y as _mlp
+        return _mlp.fetch_kospi_live_quote(timeout=timeout)
+    except Exception as e:
+        print(f"[!] KOSPI index quote failed: {e}")
+        return {}
+
+
 def fetch_tradingview_equity_quote(symbol, exchange="NASDAQ", timeout=6):
     """
     免费美股 / 首日 IPO 实时报价回退源 (TradingView America Scanner -> Yahoo 1m)：
@@ -894,7 +906,7 @@ def fetch_intraday_5m_and_ext_data(tickers):
             from datetime import timezone as _fb_tz, timedelta as _fb_td
             ny_tz = _fb_tz(_fb_td(hours=-4))
 
-        _proxy_map = {"XAUUSD": "GC=F"}
+        _proxy_map = {"XAUUSD": "GC=F", "KOSPI": "^KS11"}
         _dl_tickers = list(dict.fromkeys([_proxy_map.get(t, t) for t in tickers]))
         df = yf.download(_dl_tickers, period="2d", interval="5m", prepost=True, progress=False)
         if df is None or df.empty or "Close" not in df:
@@ -1024,7 +1036,54 @@ def fetch_intraday_5m_and_ext_data(tickers):
                 is_5m_higher_low = bool(float(l.iloc[-1]) >= float(l.iloc[-2]) * 0.999) if len(l) >= 2 else True
 
                 continuous_24h_payload = None
+                krx_5m_payload = None
                 vwap_final = vwap
+                if t == "KOSPI":
+                    ext_price = 0.0
+                    ext_time = ""
+                    _price_kind = "krx_regular"
+                    pmh_val = 0.0
+                    pml_val = 0.0
+                    try:
+                        from zoneinfo import ZoneInfo as _ZiKrx
+                        _kst_tz = _ZiKrx("Asia/Seoul")
+                    except Exception:
+                        _kst_tz = timezone(timedelta(hours=9))
+                    try:
+                        kst_idx = (
+                            c.index.tz_convert(_kst_tz)
+                            if getattr(c.index, "tz", None) is not None
+                            else pd.to_datetime(c.index).tz_localize(_kst_tz)
+                        )
+                        kst_hr = kst_idx.hour + kst_idx.minute / 60.0
+                        last_kst_date = kst_idx[-1].date()
+                        krx_mask = (kst_idx.date == last_kst_date) & (kst_hr >= 9.0) & (kst_hr <= 15.6)
+                        if not krx_mask.any():
+                            krx_mask = (kst_idx.date == last_kst_date)
+                        if krx_mask.any():
+                            tp_k = (h[krx_mask] + l[krx_mask] + c[krx_mask]) / 3.0
+                            vol_k = v[krx_mask]
+                            vwap_final = float((tp_k * vol_k).sum() / vol_k.sum()) if vol_k.sum() > 0 else float(c[krx_mask].mean())
+                            rth_low = float(l[krx_mask].min())
+                            rth_high = float(h[krx_mask].max())
+                            rth_open_val = float(o[krx_mask].iloc[0])
+                            rth_close = float(c[krx_mask].iloc[-1])
+                            rth_date = str(last_kst_date)
+                            krx_5m_payload = []
+                            for _ts_k, _ok, _hk, _lk, _ck, _vk in zip(
+                                kst_idx[krx_mask], o[krx_mask], h[krx_mask], l[krx_mask], c[krx_mask], v[krx_mask]
+                            ):
+                                if math.isfinite(float(_ck)) and float(_ck) > 0:
+                                    krx_5m_payload.append([
+                                        _ts_k.strftime("%H:%M"),
+                                        round(float(_ok), 2),
+                                        round(float(_hk), 2),
+                                        round(float(_lk), 2),
+                                        round(float(_ck), 2),
+                                        int(max(0.0, float(_vk))) if math.isfinite(float(_vk)) else 0,
+                                    ])
+                    except Exception:
+                        pass
                 if t in ("BTC-USD", "XAUUSD"):
                     try:
                         utc_idx = (
@@ -1144,6 +1203,9 @@ def fetch_intraday_5m_and_ext_data(tickers):
                 }
                 if continuous_24h_payload is not None:
                     results[t]["continuous_24h"] = continuous_24h_payload
+                if krx_5m_payload is not None:
+                    results[t]["krx_intraday_5m"] = krx_5m_payload
+                    results[t]["krx_session_date"] = rth_date
             except Exception:
                 continue
     except Exception as e:
@@ -1153,7 +1215,7 @@ def fetch_intraday_5m_and_ext_data(tickers):
 
 def fetch_yahoo_overnight_quotes(tickers):
     """夜盘只认 Yahoo overnightMarketPrice (需显式携带 overnightPrice=true 参数)。没有这个字段就返回空，不许用盘后价顶上。"""
-    tickers = [t for t in (tickers or []) if t not in ("BTC-USD", "XAUUSD")]
+    tickers = [t for t in (tickers or []) if t not in ("BTC-USD", "XAUUSD", "KOSPI")]
     if not tickers:
         return {}
     rows = []
@@ -1347,7 +1409,7 @@ def fetch_options_anomaly_map(focus_tickers, spot_map=None):
     except Exception:
         pass
 
-    needed = [t for t in focus_tickers if t not in ("BTC-USD", "XAUUSD") and t not in cached_map]
+    needed = [t for t in focus_tickers if t not in ("BTC-USD", "XAUUSD", "KOSPI") and t not in cached_map]
     if needed:
         print(f"[*] ⚡ 正在同步 {len(needed)} 只标的【机构期权主力资金流、PCR & 预期波动区间】(免额度·6线程并发)...")
         try:
@@ -1717,22 +1779,30 @@ def get_short_action_directive(
 ) -> Tuple[str, str]:
     """
     生成做空行动决胜指令与样式标签:
+    - 反向对冲衰减工具 (SOXS / SQQQ / VIXY): 统一改为 '⚡ 逢高分批减仓/锁利（反向工具防损耗）'
     - is_crash_halt is True: ⚠️ 暴跌宣泄中·等待反抽均线做空
     - RSI_14 < 25.0: ⚠️ 严重超跌·谨防死猫跳·暂勿追空
     - calibrated_short_win_rate_pct >= 65.0%: 🩸 极高胜率·顺势做空/买Put (或 🛡️ 建议买入SOXS/SQQQ对冲)
     - 55.0% <= win_rate < 65.0%: ⚡ 逢高反抽沽空/买Put
     - otherwise: 👀 空头动能不足·观望
     """
+    tk_up = str(ticker or "").upper()
+    if tk_up in {"SOXS", "SQQQ", "VIXY"}:
+        if is_crash_halt:
+            return "⚠️ 反向工具剧烈回撤·逢高分批减仓防损耗", "short-action-halt"
+        if calibrated_short_win_rate_pct >= 55.0:
+            return "⚡ 逢高分批减仓/锁利（反向工具防损耗）", "short-action-rebound"
+        return "🛡️ 反向工具仅限短线对冲·防损耗", "short-action-wait"
     if is_crash_halt:
         return "⚠️ 暴跌宣泄中·等待反抽均线做空", "short-action-halt"
     if rsi_14 < 25.0:
         return "⚠️ 严重超跌·谨防死猫跳·暂勿追空", "short-action-oversold"
     if calibrated_short_win_rate_pct >= 65.0:
-        semi_etfs = {"SOXX", "SOXL", "SOXS", "SMH"}
-        tech_etfs = {"QQQ", "SQQQ", "SPY"}
-        if is_etf and (ticker in semi_etfs or "半导体" in sector or "芯片" in sector):
+        semi_etfs = {"SOXX", "SOXL", "SMH"}
+        tech_etfs = {"QQQ", "IGV"}
+        if is_etf and (tk_up in semi_etfs or "半导体" in sector or "芯片" in sector):
             return "🛡️ 建议买入SOXS对冲", "short-action-etf"
-        elif is_etf and (ticker in tech_etfs or "科技" in sector or "纳指" in sector):
+        elif is_etf and (tk_up in tech_etfs or "科技" in sector or "纳指" in sector):
             return "🛡️ 建议买入SQQQ对冲", "short-action-etf"
         elif is_etf:
             return "🛡️ 建议买入反向ETF对冲", "short-action-etf"
@@ -4542,7 +4612,7 @@ def fetch_all_market_data(tickers, period="1y", retries=2):
     """并发批量抓取 1 年(约252交易日)历史日 K 线，支撑 MA200 牛熊线与 60日波段计算（XAUUSD 自动映射 GC=F 代理并稍后按现价校准）"""
     print(f"[*] 启动多线程底模引擎，抓取 {len(tickers)} 只标的历史形态 ({period})...")
     data_dict = {}
-    proxy_map = {"XAUUSD": "GC=F"}
+    proxy_map = {"XAUUSD": "GC=F", "KOSPI": "^KS11"}
     dl_tickers = list(dict.fromkeys([proxy_map.get(t, t) for t in tickers]))
     try:
         raw_data = yf.download(dl_tickers, period=period, group_by="ticker", threads=True, progress=False)
@@ -4943,7 +5013,7 @@ def evaluate_market_weather(macro_dict, history_dict=None, stocks_lookup=None, v
                     diffs = qqq_c.iloc[-6:].diff().dropna()
                     qqq_down_5d_val = float((diffs < 0).sum())
 
-        exempt_breadth = {"SQQQ", "SOXS", "VIXY", "TLT", "GLD", "XAUUSD"}
+        exempt_breadth = {"SQQQ", "SOXS", "VIXY", "TLT", "GLD", "XAUUSD", "KOSPI"}
         above_ma20 = 0
         valid_ma20 = 0
         seen_breadth = set()
@@ -5740,6 +5810,7 @@ def build_latest_radar_snapshot(
             else None
         )
 
+        from create_futu_terminal import normalize_dual_probabilities
         long_wr = _snap_opt_float(ai_item.get("calibrated_win_rate_pct"), 1)
         long_raw = _snap_opt_float(ai_item.get("model_raw_prob_pct") if ai_item.get("model_raw_prob_pct") is not None else ai_item.get("predicted_win_rate_pct"), 1)
         short_wr = _snap_opt_float(ai_item.get("calibrated_short_win_rate_pct"), 1)
@@ -5749,8 +5820,14 @@ def build_latest_radar_snapshot(
             else ai_item.get("short_model_raw_prob_pct"),
             1,
         )
+        if long_wr is not None and short_wr is not None:
+            long_wr, short_wr = normalize_dual_probabilities(long_wr, short_wr)
+        if long_raw is not None and short_raw is not None:
+            long_raw, short_raw = normalize_dual_probabilities(long_raw, short_raw)
         ai_act = str(ai_item.get("action") or "")
         ai_short_act = str(ai_item.get("short_action") or "")
+        if tk_u in ("SOXS", "SQQQ", "VIXY") and any(k in ai_short_act for k in ("沽空", "买Put", "买入SOXS", "买入SQQQ", "做空")):
+            ai_short_act = "⚡ 逢高分批减仓/锁利（反向工具防损耗）"
         if bool(ai_item.get("is_short_covering")) and ai_act:
             ai_act_disp = ai_act
         elif ai_short_act and (((short_wr or 0.0) > (long_wr or 0.0)) or ("🩸" in ai_short_act and not ai_act)):
@@ -5830,6 +5907,11 @@ def build_latest_radar_snapshot(
                     "r2_source": str(ai_item.get("r2_source") or "ATR_ESTIMATE"),
                 }
 
+        _ema5_snap = _snap_opt_float(src.get("ema5"), 2)
+        _daily_brk_snap = bool((_ema5_snap and active_px and active_px < _ema5_snap) or (pct_chg is not None and pct_chg <= -8.0) or (eff_pct is not None and eff_pct <= -8.0))
+        _short_dom_snap = bool((short_wr or 0.0) > (long_wr or 50.0) or str(wi.get("market_regime") or "").upper() == "BEAR_DEFENSE")
+        _inv_veto_snap = bool(is_inv and (_daily_brk_snap or is_tp or (pct_chg is not None and pct_chg <= -3.0) or _short_dom_snap))
+
         sr_eval_out: Dict[str, Any] = {}
         if isinstance(anchor_row, dict) and anchor_row.get("anchor_s1") and anchor_row.get("anchor_r1"):
             try:
@@ -5843,6 +5925,13 @@ def build_latest_radar_snapshot(
                     bias_ma50=float(src.get("bias") or 0.0),
                     vwap=vwap_val,
                     base_script=str(ai_item.get("scenario_script") or ""),
+                    bear_suppressed=bool(_short_dom_snap or _sr_snap_eval._is_vix_backwardation_active(vr_out)),
+                    swing_tp=float(ai_item.get("target_profit_price") or 0.0),
+                    swing_sl=float(src.get("entry_stop_loss") or ai_item.get("stop_loss_price") or 0.0),
+                    atr_pct=max(1.2, (float(src.get("atr") or 0.0) / max(float(last_px or 1.0), 0.01)) * 100.0),
+                    is_daily_breakdown=_daily_brk_snap,
+                    is_inverse_decay=_inv_veto_snap,
+                    ticker=tk_u,
                 )
             except Exception:
                 sr_eval_out = {}
@@ -5873,6 +5962,9 @@ def build_latest_radar_snapshot(
                 is_crash_halt=is_crash,
                 is_cooling_halt=is_cooling,
                 vix_regime=vr_out,
+                is_daily_breakdown=_daily_brk_snap,
+                is_inverse_decay_veto=_inv_veto_snap,
+                is_bear_dominant=_short_dom_snap,
             )
         except Exception:
             sup_fh_out = {
@@ -5916,6 +6008,9 @@ def build_latest_radar_snapshot(
             "sub": sub,
             "cat": cat,
             "is_etf": bool(is_etf_flag),
+            "is_index": bool(meta_fallback.get("is_index", tk_u == "KOSPI")),
+            "price_unit": str(meta_fallback.get("price_unit", "pts" if tk_u == "KOSPI" else "usd")),
+            "krx_session_label": str(src.get("krx_session_label") or ""),
             "price": active_px,
             "last": last_px,
             "pct_change": pct_chg,
@@ -6315,15 +6410,17 @@ def generate_macro_radar_html(
         rsi_style = "color: var(--color-down); font-weight:bold;" if info["rsi"] < 30 else ("color: var(--color-up);" if info["rsi"] > 70 else "color: var(--text-sub);")
         status_badge = f"<span class='badge' style='background:{info['badge_color']};'>{info['status']}</span>"
         pct_color = "var(--color-up)" if ui_display_pct(info) >= 0 else "var(--color-down)"
+        _is_pts_mac = bool(ticker == "KOSPI" or info.get("price_unit") == "pts" or info.get("is_index"))
+        _fp_mac = (lambda v: f"{float(v):,.2f}" if _is_pts_mac else f"${float(v):.2f}")
         rows_html += f"""
         <tr>
             <td class="tk-cell" style="font-weight: bold;">{ticker}</td>
             <td>{info['name']}</td>
             <td><span class="category-tag">{info['cat']}</span></td>
-            <td><b>${ui_display_price(info):.2f}</b> <span style="font-size: 11px; color: {pct_color};">({ui_display_pct(info):+.2f}%)</span></td>
-            <td>${info['ma50']:.2f}</td>
+            <td><b>{_fp_mac(ui_display_price(info))}</b> <span style="font-size: 11px; color: {pct_color};">({ui_display_pct(info):+.2f}%)</span></td>
+            <td>{_fp_mac(info['ma50'])}</td>
             <td style="{bias_style} font-weight: bold;">{info['bias']:+.2f}%</td>
-            <td>${info['atr']:.2f}</td>
+            <td>{_fp_mac(info['atr'])}</td>
             <td style="{rsi_style}">{info['rsi']:.1f}</td>
             <td>{status_badge}</td>
             <td style="font-size: 12px; color: var(--text-muted);">{info['sub']}</td>
@@ -7562,7 +7659,7 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
     # 2. 并发秒级拉取 Finnhub 实时报价 (max_workers=2, 稳态间隔防 429)
     # 免费额度 60次/分。全标的 79 只 (14 ETF + 65 股票)，BTC-USD 与 XAUUSD 走免费直连，DIA 等 17 只低波蓝筹/宽基走 Yahoo 5m + V7 实时穿透，留足 60 个 Finnhub 名额保障 ANT 等重点高弹性标的
     DEFENSIVE_11_TICKERS = {"DIA", "KO", "PEP", "MCD", "AXP", "V", "LLY", "MRNA", "NKE", "HPE", "FPS", "JPM", "XOM", "WMT", "CAT", "NASA", "GLW"}
-    finnhub_tickers = [tk for tk in all_tickers if tk not in ("BTC-USD", "XAUUSD") and (tk not in DEFENSIVE_11_TICKERS or (user_portfolio and tk in user_portfolio))][:60]
+    finnhub_tickers = [tk for tk in all_tickers if tk not in ("BTC-USD", "XAUUSD", "KOSPI") and (tk not in DEFENSIVE_11_TICKERS or (user_portfolio and tk in user_portfolio))][:60]
     realtime_quotes = fetch_finnhub_quotes_batch(finnhub_tickers, FINNHUB_API_KEY) if FINNHUB_API_KEY else {}
     if "BTC-USD" in all_tickers:
         _btc_q = fetch_yahoo_crypto_quote("BTC-USD")
@@ -7572,6 +7669,10 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
         _xau_q = fetch_xauusd_spot_quote()
         if _xau_q and _xau_q.get("last", 0) > 0:
             realtime_quotes["XAUUSD"] = _xau_q
+    if "KOSPI" in all_tickers:
+        _ks_q = fetch_kospi_index_quote()
+        if _ks_q and _ks_q.get("last", 0) > 0:
+            realtime_quotes["KOSPI"] = _ks_q
     if "ANT" in all_tickers and ("ANT" not in realtime_quotes or float(realtime_quotes["ANT"].get("last", 0) or 0) <= 0):
         _ant_q = fetch_tradingview_equity_quote("ANT", exchange="NASDAQ")
         if _ant_q and _ant_q.get("last", 0) > 0:
@@ -7732,13 +7833,20 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
                         session_tag = "休市"
             effective_pct = pct_change
             overnight_pct = 0.0
-            if ticker != "XAUUSD" and session_code in ["PRE_MARKET", "POST_MARKET", "OVERNIGHT", "WEEKEND"]:
-                # 扩展时段只看“最近一次正规盘收盘后”的纯变动，绝不叠加前一日白天涨幅（24h XAUUSD 现货除外）
+            if ticker not in ("XAUUSD", "KOSPI") and session_code in ["PRE_MARKET", "POST_MARKET", "OVERNIGHT", "WEEKEND"]:
+                # 扩展时段只看“最近一次正规盘收盘后”的纯变动，绝不叠加前一日白天涨幅（24h XAUUSD 现货与韩国 KOSPI 除外）
                 if ext_price > 0:
                     effective_pct = ext_pct
                     overnight_pct = ext_pct
                 else:
                     effective_pct = 0.0
+            if ticker == "KOSPI":
+                ext_price = 0.0
+                ext_change = 0.0
+                ext_pct = 0.0
+                session_tag = ""
+                active_price = last
+                effective_pct = pct_change
             if session_code == "OVERNIGHT" and ext_price > 0 and session_tag == "夜盘" and intra_info.get("price_kind") != "overnight":
                 try:
                     _ext_dt = datetime.fromisoformat(str(intra_info.get("ext_time", "")))
@@ -7885,10 +7993,45 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
                 "status": status,
                 "badge_color": badge_color,
                 "is_realtime": is_realtime,
+                "is_index": bool(meta.get("is_index", ticker == "KOSPI")),
+                "price_unit": str(meta.get("price_unit", "pts" if ticker == "KOSPI" else "usd")),
+                "yf_symbol": str(meta.get("yf_symbol", "^KS11" if ticker == "KOSPI" else ticker)),
                 **eval_res,
                 **intra_eval,
                 **options_map.get(ticker, {})
             }
+            if ticker == "KOSPI":
+                macro_data[ticker]["has_options"] = False
+                _ks_rq = realtime_quotes.get("KOSPI") or {}
+                macro_data[ticker]["krx_session_open"] = bool(_ks_rq.get("krx_session_open", False))
+                macro_data[ticker]["krx_session_label"] = str(_ks_rq.get("krx_session_label") or "")
+                macro_data[ticker]["krx_intraday_5m"] = list(intra_info.get("krx_intraday_5m") or [])
+                macro_data[ticker]["krx_session_date"] = str(intra_info.get("krx_session_date") or "")
+                try:
+                    _ks_d_list = []
+                    for _idx_d, _r_d in df.tail(65).iterrows():
+                        _ds = _idx_d.strftime("%Y-%m-%d") if hasattr(_idx_d, "strftime") else str(_idx_d)[:10]
+                        _c_d = float(_r_d["Close"])
+                        if math.isfinite(_c_d) and _c_d > 0:
+                            _ks_d_list.append([
+                                _ds,
+                                round(float(_r_d.get("Open", _c_d)), 2),
+                                round(float(_r_d.get("High", _c_d)), 2),
+                                round(float(_r_d.get("Low", _c_d)), 2),
+                                round(_c_d, 2),
+                                int(max(0.0, float(_r_d.get("Volume", 0.0)))) if math.isfinite(float(_r_d.get("Volume", 0.0))) else 0,
+                            ])
+                    macro_data[ticker]["krx_daily_ohlc"] = _ks_d_list
+                except Exception:
+                    macro_data[ticker]["krx_daily_ohlc"] = []
+                # 彻底净化 KOSPI 所有文本字段中的残留美元符 $
+                for _k_s, _v_s in list(macro_data[ticker].items()):
+                    if isinstance(_v_s, str) and "$" in _v_s:
+                        macro_data[ticker][_k_s] = re.sub(
+                            r"\$([0-9]+(?:\.[0-9]+)?)",
+                            lambda _m: f"{float(_m.group(1)):,.2f}",
+                            _v_s,
+                        )
 
     weather_info = evaluate_market_weather(macro_data, history_dict=history_dict, vix_regime=vix_regime)
     if isinstance(weather_info, dict):
@@ -7970,13 +8113,20 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
                         session_tag = "休市"
             effective_pct = pct_change
             overnight_pct = 0.0
-            if ticker != "XAUUSD" and session_code in ["PRE_MARKET", "POST_MARKET", "OVERNIGHT", "WEEKEND"]:
-                # 扩展时段只看“最近一次正规盘收盘后”的纯变动，绝不叠加前一日白天涨幅（24h XAUUSD 现货除外）
+            if ticker not in ("XAUUSD", "KOSPI") and session_code in ["PRE_MARKET", "POST_MARKET", "OVERNIGHT", "WEEKEND"]:
+                # 扩展时段只看“最近一次正规盘收盘后”的纯变动，绝不叠加前一日白天涨幅（24h XAUUSD 现货与韩国 KOSPI 除外）
                 if ext_price > 0:
                     effective_pct = ext_pct
                     overnight_pct = ext_pct
                 else:
                     effective_pct = 0.0
+            if ticker == "KOSPI":
+                ext_price = 0.0
+                ext_change = 0.0
+                ext_pct = 0.0
+                session_tag = ""
+                active_price = last
+                effective_pct = pct_change
             if session_code == "OVERNIGHT" and ext_price > 0 and session_tag == "夜盘" and intra_info.get("price_kind") != "overnight":
                 try:
                     _ext_dt = datetime.fromisoformat(str(intra_info.get("ext_time", "")))

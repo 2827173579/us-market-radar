@@ -112,7 +112,7 @@ class TestDefects67910(unittest.TestCase):
         self.assertIn('"COIN": "NASDAQ:COIN"', self.terminal_html)
         self.assertIn('"FLY": "NASDAQ:FLY"', self.terminal_html)
         self.assertIn('"QCOM": "NASDAQ:QCOM"', self.terminal_html)
-        self.assertIn("TradingView 交易所标的代码映射 (全量 79 只)", self.terminal_html)
+        self.assertIn("TradingView 交易所标的代码映射 (全量 80 只)", self.terminal_html)
 
     # -------------------------------------------------------------------------
     # Defect 7: Golden Pit Filter & Card Stats Leakage Prevention
@@ -192,7 +192,7 @@ class TestDefects67910(unittest.TestCase):
                 macro_html = f.read()
             self.assertIn('🛡️ 5Y回测', macro_html)
             self.assertIn('backtest_report_5y.html', macro_html)
-            self.assertIn('14只核心ETF · 全网79只标的', macro_html)
+            self.assertIn('15只核心ETF · 全网80只标的', macro_html)
 
             imr.generate_stocks_radar_html(
                 stocks_data=self.stocks_sample,
@@ -203,7 +203,7 @@ class TestDefects67910(unittest.TestCase):
                 stocks_html = f.read()
             self.assertIn('🛡️ 5Y回测', stocks_html)
             self.assertIn('backtest_report_5y.html', stocks_html)
-            self.assertIn('全网 79 只标的 · 14 ETF + 65 个股', stocks_html)
+            self.assertIn('全网 80 只标的 · 15 ETF + 65 个股', stocks_html)
 
     def test_root_production_html_files_never_modified_by_tests(self):
         """Regression guard: running mock HTML generation tests must never modify root production dashboards."""

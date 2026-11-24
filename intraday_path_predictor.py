@@ -32,6 +32,7 @@ META_CACHE_FILE = "data_cache/.intraday_5m_60d_meta.json"
 FORECAST_JSON_FILE = "data_cache/intraday_path_forecasts.json"
 
 CONTINUOUS_24H_TICKERS = frozenset({"BTC-USD", "XAUUSD"})
+NON_US_SESSION_TICKERS = frozenset({"KOSPI"})
 MIN_HISTORY_DAYS = 10
 MIN_RTH_BARS_PER_DAY = 50
 REGIME_SCORE_MAP = {"BEAR_DEFENSE": -1.0, "NEUTRAL_CHOP": 0.0, "BULL_TREND": 1.0}
@@ -270,7 +271,11 @@ def refresh_intraday_5m_60d_cache(
         return pd.DataFrame(columns=empty_cols)
 
     dl_fn = downloader or yf.download
-    dl_tickers = [str(t) for t in dict.fromkeys(tickers or []) if str(t) not in CONTINUOUS_24H_TICKERS]
+    dl_tickers = [
+        str(t)
+        for t in dict.fromkeys(tickers or [])
+        if str(t) not in CONTINUOUS_24H_TICKERS and str(t) not in NON_US_SESSION_TICKERS
+    ]
     collected: List[pd.DataFrame] = []
 
     chunk_size = 20
@@ -1038,6 +1043,33 @@ def compute_knn_intraday_corridor(
         "lock_window_tag": "DRAFT",
     }
 
+    if tk in NON_US_SESSION_TICKERS:
+        non_us_msg = "韩国交易时段 (09:00–15:30 KST) · 盘中以实时 K 线与日线支撑阻力为准"
+        return {
+            "ticker": tk,
+            "forecast_date": f_date_str,
+            "prev_close": round(pc_val, 2),
+            "anchor_open": round(ao_val if ao_val > 0 else pc_val, 2),
+            "status": "non_us_session",
+            "is_index": True,
+            "price_unit": "pts",
+            "meta_header": "KRX 韩国交易所 (09:00–15:30 KST) · 亚太基准指数",
+            "status_message": non_us_msg,
+            "summary_text": non_us_msg,
+            "p25_prices": [],
+            "p50_prices": [],
+            "p75_prices": [],
+            "actual_prices": [],
+            "snapshot_locked": False,
+            "lock_window_tag": "NON_US_SESSION",
+            "divergence": {
+                "status": "NON_US_SESSION",
+                "badge": "🇰🇷 韩国交易时段 (09:00–15:30 KST) · 实时K线与日线锚点",
+                "color": "#38bdf8",
+                "latest_slot": None,
+            },
+        }
+
     if tk in CONTINUOUS_24H_TICKERS:
         return compute_continuous_24h_corridor(
             ticker=tk,
@@ -1514,6 +1546,23 @@ def update_intraday_path_forecasts(
         tk_s = str(tk)
         df_tk = grouped_60d.get(tk_s)
         prev_item = prev_by_ticker.get(tk_s)
+
+        if tk_s in NON_US_SESSION_TICKERS:
+            rq_k = (realtime_quotes or {}).get(tk_s) or {}
+            hist_k = (history_dict or {}).get(tk_s)
+            last_k = _safe_float(rq_k.get("last"), 0.0)
+            if last_k <= 0 and hist_k is not None and not getattr(hist_k, "empty", True) and "Close" in hist_k.columns:
+                last_k = _safe_float(hist_k["Close"].iloc[-1], 0.0)
+            prev_k = _safe_float(rq_k.get("prev_close"), last_k)
+            by_ticker[tk_s] = compute_knn_intraday_corridor(
+                ticker=tk_s,
+                df_tk=None,
+                forecast_date=target_date,
+                prev_close=prev_k,
+                anchor_open=last_k,
+                realtime_quote=rq_k,
+            )
+            continue
 
         if tk_s in CONTINUOUS_24H_TICKERS:
             by_ticker[tk_s] = compute_continuous_24h_corridor(

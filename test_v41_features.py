@@ -368,10 +368,10 @@ class TestV41Features(unittest.TestCase):
         # 严守 79 只可交易自选池不变，绝不混入 HYG / IEF / DX-Y.NYB / JPY=X / ^VIX 等宏观指标
         etfs = imr.MONITORED_TARGETS["ETFS"]
         stocks = imr.MONITORED_TARGETS["STOCKS"]
-        self.assertEqual(len(etfs), 14)
+        self.assertEqual(len(etfs), 15)
         self.assertEqual(len(stocks), 65)
-        self.assertEqual(len(etfs) + len(stocks), 79)
-        for macro_only in ("HYG", "IEF", "DX-Y.NYB", "JPY=X", "^VIX", "^VXN", "^VIX3M", "^VVIX", "^TNX"):
+        self.assertEqual(len(etfs) + len(stocks), 80)
+        for macro_only in ("HYG", "IEF", "DX-Y.NYB", "JPY=X", "^VIX", "^VXN", "^VIX3M", "^VVIX", "^TNX", "^KS11"):
             self.assertNotIn(macro_only, etfs)
             self.assertNotIn(macro_only, stocks)
 

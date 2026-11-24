@@ -1,9 +1,50 @@
 {
-  "updated_at_ts": 1795489607.085,
-  "updated_at_et": "11-23 22:06 ET",
-  "updated_at_kst": "12:06 KST",
+  "updated_at_ts": 1795493407.657,
+  "updated_at_et": "11-23 23:10 ET",
+  "updated_at_kst": "13:10 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261124115938771800",
+      "title": "整理：每日人工智能动态汇总（2026-11-24）",
+      "summary": "1. 黄仁勋回归或加剧英伟达与Anthropic的开闭源路线冲突。 2. 马斯克SpaceX陷AI发展两难：Grok落后对手，算力出租月入39亿美元。 3. 亚马逊据悉将斥资75亿美元收购人工智能初创公司Decart的技术。 4. 哈斯继续执掌Arm，英伟达CEO继任人选仍未明朗。 5. 三星据悉拟扩大西安工厂先进NAND闪存产能，供应AI数据中心。 6. OpenAI前工程师被指秘密录制会议，检方已获取数百份音频文件。 7. 英伟达携手Paradromics推进脑机接口AI计算，探索低功耗神经信号解码方案。 8. Anthropic推出Claude Ship，AI Agent开始接管代码审查、修复与审批流程。 9. 智谱：GLM-5.4向GLM Coding Plan全量用户开放，引入Loop Transformer架构。 10. Meta AI负责人Alexandr Wang警告超级智能正在到来，呼吁重新审视AI安全与人类控制权。 11. 亚马逊据悉将斥资75亿美元收购人工智能初创公司Decart的技术。",
+      "keywords": [
+        "英伟达"
+      ],
+      "pub_ts": 1795492778.0,
+      "time_et": "11-23 22:59 ET",
+      "time_bj": "11:59 BJ",
+      "time_kst": "12:59 KST",
+      "time_display": "22:59 ET / 11:59 BJ"
+    },
+    {
+      "id": "20261124113544702800",
+      "title": "美联储仍有连续加息的可能，非美资产的拐点可能出现在...",
+      "summary": "摩根大通预计，官员鹰派态度暗示未来路径可能更具限制性，美联储存在加快紧缩的可能性。风险资产短期因流动性压力而低迷，机会可能出现在2027。",
+      "keywords": [
+        "美联储",
+        "加息"
+      ],
+      "pub_ts": 1795491344.0,
+      "time_et": "11-23 22:35 ET",
+      "time_bj": "11:35 BJ",
+      "time_kst": "12:35 KST",
+      "time_display": "22:35 ET / 11:35 BJ"
+    },
+    {
+      "id": "20261124113435835800",
+      "title": "【A股午评：创业板指半日涨1.90%，人形机器人板块连日走强】 11月24日讯，今日早盘…",
+      "summary": "【A股午评：创业板指半日涨1.90%，人形机器人板块连日走强】 11月24日讯，今日早盘，三大指数冲高回落，创业板指盘初一度涨超4%。截至中午收盘，上证指数收涨0.47%，深证成指收涨0.92%，创业板指收涨1.90%。人形机器人板块连日走强，维宏股份涨超14%，柯力传感、宁波东力双双涨停；英伟达概念冲高回落，奥尼电子、阿尔特双双20cm涨停，日前黄仁勋复任英伟达CEO；金属钴概念走强，腾远钴业涨超10%，刚果(金)将从11月30日起再次全面暂停钴出口；除此以外，商业航天、CPO、半导体、军工、AI语料、液冷服务器等板块涨幅居前。贵金属、证券、钢铁、煤炭、油气开采、银行等板块走低。沪深两市半日成交额约1.12万亿元，较昨日同期放量约2046亿元；沪深京三市约3100股上涨，2300股下跌。",
+      "keywords": [
+        "半导体",
+        "英伟达"
+      ],
+      "pub_ts": 1795491275.0,
+      "time_et": "11-23 22:34 ET",
+      "time_bj": "11:34 BJ",
+      "time_kst": "12:34 KST",
+      "time_display": "22:34 ET / 11:34 BJ"
+    },
     {
       "id": "20261124103950330800",
       "title": "原油叙事是否已经转向？供应端的压力与约束同在",
@@ -303,52 +344,6 @@
       "time_bj": "06:50 BJ",
       "time_kst": "07:50 KST",
       "time_display": "17:50 ET / 06:50 BJ"
-    },
-    {
-      "id": "20261124063139003800",
-      "title": "整理：昨日今晨重要新闻汇总（2026-11-24）",
-      "summary": "国内新闻： 1. 社会保险基金监督条例公开征求意见。 2. 监管明确两融调整要求，违约处置要稳妥审慎。 3. 能源局：2026年1-10月份全社会用电量同比增长3.7%。 4. 特朗普称只想向中国出售相对落后的芯片，外交部回应。 5. 央行行长潘功胜会见欧洲中央银行、欧盟委员会和欧元集团相关负责人。 国际新闻： 1. 钴生产大国刚果（金）再次实施出口禁令。 2. 欧盟委员会提出第22轮对俄制裁方案，扩大金融能源体育领域限制 3. 受英伟达相关消息影响，交易员加大对欧洲央行和英国央行加息的押注。 4. 美联储威廉姆斯：须在未来一段时间内采取行动，确保通胀及时、持续地回到2%。没证据表明部分价格正蔓延至更广更持久的通胀。 5. 隔夜行情—美股全线暴涨，纳指收涨6.5%，英伟达涨31%市值增加9500亿美元、现货金银分别上涨2.7%和4.7%、国际原油大跌4%、美债2y上涨5BP。 6. 英伟达—①英伟达董事会恢复黄仁勋CEO职务，但对其的调查将继续。②黄仁勋：会更加卖力工作。③做空英伟达者预计将录得约122亿美元账面亏损。④特朗普：与英伟达董事会进行了直接沟通。司法部已确认，美国政府没有掌握黄仁勋从事任何违法行为的证据。⑤复职引发美两党质疑，黄仁勋面临数场听证会，议员要求调查是否有人提前建仓复职引发美两党质疑。⑦据称英伟达董事会绕过高管恢复黄仁勋职务。 7. 中东局势— ①伊朗外交部发言人：伊朗将动用一切可用手段应对美国海上封锁。 ②以正直党领导人称无需在组阁前对伊朗动武。 ③以色列利库德集团与正直党启动第三轮组阁谈判。",
-      "keywords": [
-        "美联储",
-        "加息",
-        "芯片",
-        "英伟达",
-        "特朗普",
-        "中东"
-      ],
-      "pub_ts": 1795473099.0,
-      "time_et": "11-23 17:31 ET",
-      "time_bj": "06:31 BJ",
-      "time_kst": "07:31 KST",
-      "time_display": "17:31 ET / 06:31 BJ"
-    },
-    {
-      "id": "20261124060237998800",
-      "title": "美伊冲突： 1. 伊朗称击毁一架美制“卢卡斯”无人机。 2. 美国财政部：美国发布新一轮…",
-      "summary": "美伊冲突： 1. 伊朗称击毁一架美制“卢卡斯”无人机。 2. 美国财政部：美国发布新一轮涉伊朗制裁。 3. 伊朗革命卫队：美国正通过经济施压和心理战削弱伊朗。 4. 伊朗外交部发言人：伊朗将动用一切可用手段应对美国海上封锁。 5. 克里姆林宫：俄罗斯将通过继续每日打击乌克兰军事基础设施来回应乌克兰近期的袭击。 6. 据沙特媒体哈达斯（Alhadath）：美国官员表示，随时准备对伊朗发动大规模军事打击。 也门冲突： 1. 胡塞武装称荷台达遭空袭已致10死20伤。 2. 胡塞武装：过去24小时内沙特联军袭击也门67次。 3. 也门胡塞武装：我们监测到一枚弹道导弹从萨达射向亚丁，并坠落在扎马尔。 和平谈判： 1. 伊朗外交部：外交行动仍将继续，但伊朗将保持警惕。 2. 伊朗称已扣押数艘美国船只，拟用于抵偿部分赔偿款。 3. 伊朗外交部发言人巴加埃：所有战线停火必须成为任何协议不可分割的组成部分。 4. 知情人士透露，卡塔尔首相阿勒萨尼和卡塔尔特使萨瓦迪今日与美国副总统万斯举行会晤，讨论与伊朗的谈判事宜。 海峡情况： 1. 霍尔木兹海峡袭击增多之际，流入阿联酋富查伊拉的石油持续减少。 2. 沙特媒体哈达斯（Alhadath）：美国官员称，上周通过霍尔木兹海峡运输了1.08亿桶石油。 3. 伊朗革命卫队：三艘违规油轮在霍尔木兹海峡爆炸。霍尔木兹海峡不是测试非法航线、无视海上警告的地方。 4. 伊朗外交部发言人巴加埃表示，如果美国履行其承诺并满足伊朗提出的条件，霍尔木兹海峡及该地区的安全便可“在最短时间内”得到恢复。 其他情况： 1. 以色列正直党与利库德集团组阁谈判未达成共识。 2. 韩国防长：延长清海部队部署不等于参与对伊战争。 3. 巴媒：巴基斯坦总理将于12月3日赴伊朗出席地区峰会。 4. 据伊朗塔斯尼姆通讯社：伊朗称正与阿塞拜疆就天然气过境进行谈判。 5. 利比亚港口与海运管理局：我们警告不要危害海上航行的安全与安宁。 6. 克里姆林宫：（就有关俄罗斯准备发射核武装卫星的报道）此类报道不应被当真。",
-      "keywords": [
-        "中东"
-      ],
-      "pub_ts": 1795471358.0,
-      "time_et": "11-23 17:02 ET",
-      "time_bj": "06:02 BJ",
-      "time_kst": "07:02 KST",
-      "time_display": "17:02 ET / 06:02 BJ"
-    },
-    {
-      "id": "20261124050339803800",
-      "title": "【英伟达单日市值增加9500亿美元】 11月24日讯，标普500指数和纳斯达克指数创下自…",
-      "summary": "【英伟达单日市值增加9500亿美元】 11月24日讯，标普500指数和纳斯达克指数创下自2025年4月8日以来最大单日百分比涨幅。英伟达(NVDA.O)收涨31%，创2003年5月9日以来最大单日百分比涨幅，市值单日增长9520亿美元，创下纪录。",
-      "keywords": [
-        "英伟达",
-        "纳斯达克",
-        "标普"
-      ],
-      "pub_ts": 1795467819.0,
-      "time_et": "11-23 16:03 ET",
-      "time_bj": "05:03 BJ",
-      "time_kst": "06:03 KST",
-      "time_display": "16:03 ET / 05:03 BJ"
     }
   ],
   "ticker_news": {
@@ -583,6 +578,13 @@
         "pub_ts": 1795131782.0
       },
       {
+        "title": "Michael Burry Bought Nvidia Calls, Cut His Semiconductor Shorts Before The Rally – But He’s Not Done Questioning Jensen Huang",
+        "url": "https://stocktwits.com/news-articles/markets/equity/michael-burry-bought-nvidia-calls-cut-semiconductor-shorts-before-rally-not-done-questioning-jensen-huang/cNbrugeR9jD?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 22:23 ET",
+        "pub_ts": 1795490635.0
+      },
+      {
         "title": "S&P 500, Nasdaq End Best Session Since April Last Year On Optimism Led By Jensen Huang’s Reinstatement — NVDA, NASA, TTWO, AMZN In Focus",
         "url": "https://stocktwits.com/news-articles/markets/equity/s-and-p-500-nasdaq-end-best-session-since-april-on-optimism-led-by-jensen-huang-s-reinstatement-nvda-nasa-ttwo-amzn-in-focus/cNbpKSnR9jY?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -602,13 +604,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 06:11 ET",
         "pub_ts": 1795432302.0
-      },
-      {
-        "title": "Wall Street Volatility Hits Highest Level Since April 2025 as Institutional and Retail Investors Diverge",
-        "url": "https://investorshub.advfn.com/market-news/article/40422/wall-street-volatility-hits-highest-level-since-april-2025-as-institutional-and-retail-investors-diverge?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-22 09:56 ET",
-        "pub_ts": 1795359360.0
       }
     ],
     "IWM": [
@@ -909,42 +904,49 @@
     ],
     "NVDA": [
       {
-        "title": "Jensen Huang’s Return Won’t End California Probe Into Nvidia’s China Activities, Attorney General Reportedly Says: Crypto Bettors Don’t See an Arrest",
-        "url": "https://www.benzinga.com/markets/prediction-markets/26/11/63567819/jensen-huang-nvidia-ceo-california-attorney-general-polymarket?utm_source=yahooFinance&utm_campaign=partner_feed&utm_medium=referral&.tsrc=rss",
+        "title": "Watch these chip stocks for bargain buys after Nvidia’s post-reinstatement rally",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/watch-chip-stocks-bargain-buys-040218865.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 21:53 ET",
-        "pub_ts": 1795488817.0
+        "time": "11-23 23:02 ET",
+        "pub_ts": 1795492938.0
       },
       {
-        "title": "Is Nvidia’s turmoil a sign of systemic risk?",
-        "url": "https://www.americanbanker.com/news/is-nvidia-s-turmoil-a-sign-of-systemic-risk?.tsrc=rss",
+        "title": "Asian stocks rally as Taiwan leads with 9% rebound in AI trade",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/asian-stocks-rally-taiwan-leads-040100960.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 21:42 ET",
-        "pub_ts": 1795488149.0
+        "time": "11-23 23:01 ET",
+        "pub_ts": 1795492860.0
       },
       {
-        "title": "Tech firms soar as Huang's return reinvigorates AI trade",
-        "url": "https://finance.yahoo.com/technology/ai/articles/tech-firms-soar-huangs-return-023753159.html?.tsrc=rss",
+        "title": "In Taiwan, investors 'really happy' at Jensen Huang's return",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/taiwan-investors-really-happy-jensen-035216471.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 21:37 ET",
-        "pub_ts": 1795487873.0
+        "time": "11-23 22:52 ET",
+        "pub_ts": 1795492336.0
       },
       {
-        "title": "Jensen Huang’s Return As Nvidia CEO Sparks AI Stock Rally, But Congressional Probes Loom – And Analysts See Risks Ahead",
-        "url": "https://stocktwits.com/news-articles/markets/equity/jensen-huang-s-return-as-nvidia-ceo-sparks-ai-stock-rally-but-congressional-probes-loom-and-analysts-see-risks-ahead/cNbrt2TR9ju?.tsrc=rss",
+        "title": "AMD Stock Dips Overnight After Nvidia-Triggered Rally: AMD Registers 337M Shares For Resale Tied To OpenAI, Meta Warrants",
+        "url": "https://stocktwits.com/news-articles/markets/equity/amd-stock-dips-overnight-after-nvidia-triggered-rally-amd-registers-337-m-shares-for-resale-tied-to-open-ai-meta-warrants/cNbru6MR9jU?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 21:35 ET",
-        "pub_ts": 1795487741.0
+        "time": "11-23 22:47 ET",
+        "pub_ts": 1795492068.0
       },
       {
-        "title": "Nvidia's $130 billion outlook faces new White House test",
-        "url": "https://www.thestreet.com/investing/nvidias-130-billion-outlook-faces-new-white-house-test?.tsrc=rss",
+        "title": "Nvidia Just Built Agent Security Into Its Chips. What Does That Mean for CrowdStrike?",
+        "url": "https://www.fool.com/investing/2026/11/23/nvidia-just-built-agent-security-into-its-chips-what-does-that-mean-for-crowdstrike/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 21:17 ET",
-        "pub_ts": 1795486620.0
+        "time": "11-23 22:37 ET",
+        "pub_ts": 1795491422.0
       }
     ],
     "AMD": [
+      {
+        "title": "AMD Stock Dips Overnight After Nvidia-Triggered Rally: AMD Registers 337M Shares For Resale Tied To OpenAI, Meta Warrants",
+        "url": "https://stocktwits.com/news-articles/markets/equity/amd-stock-dips-overnight-after-nvidia-triggered-rally-amd-registers-337-m-shares-for-resale-tied-to-open-ai-meta-warrants/cNbru6MR9jU?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 22:47 ET",
+        "pub_ts": 1795492068.0
+      },
       {
         "title": "AMD Stock Rallies Nearly 8% as a Bernstein Analyst Remains Bullish Despite the Hunterbrook Short Report",
         "url": "https://finance.yahoo.com/markets/stocks/articles/amd-stock-rallies-nearly-8-235832362.html?.tsrc=rss",
@@ -972,13 +974,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 17:07 ET",
         "pub_ts": 1795471622.0
-      },
-      {
-        "title": "AMD’s Blockbuster Q3 Report Is Getting Lost in the Pullback",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/amd-blockbuster-q3-report-getting-212200835.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 16:22 ET",
-        "pub_ts": 1795468920.0
       }
     ],
     "ASML": [
@@ -1131,11 +1126,11 @@
     ],
     "META": [
       {
-        "title": "Jensen Huang's return to Nvidia: Long or short accountability?",
-        "url": "https://finance.yahoo.com/video/jensen-huangs-return-to-nvidia-long-or-short-accountability-185949254.html?.tsrc=rss",
+        "title": "AMD Stock Dips Overnight After Nvidia-Triggered Rally: AMD Registers 337M Shares For Resale Tied To OpenAI, Meta Warrants",
+        "url": "https://stocktwits.com/news-articles/markets/equity/amd-stock-dips-overnight-after-nvidia-triggered-rally-amd-registers-337-m-shares-for-resale-tied-to-open-ai-meta-warrants/cNbru6MR9jU?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 13:59 ET",
-        "pub_ts": 1795460389.0
+        "time": "11-23 22:47 ET",
+        "pub_ts": 1795492068.0
       },
       {
         "title": "Mark Zuckerberg Has Collected Nearly $2 Billion in Dividends From the Stock He Started in a Dorm Room. It Now Pays Him About $2 Million a Day",
@@ -1212,13 +1207,6 @@
         "pub_ts": 1795463194.0
       },
       {
-        "title": "Jensen Huang's return to Nvidia: Long or short accountability?",
-        "url": "https://finance.yahoo.com/video/jensen-huangs-return-to-nvidia-long-or-short-accountability-185949254.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 13:59 ET",
-        "pub_ts": 1795460389.0
-      },
-      {
         "title": "What Microsoft (MSFT)'s Enterprise AI Partnerships Mean For Shareholders",
         "url": "https://finance.yahoo.com/technology/ai/articles/microsoft-msft-enterprise-ai-partnerships-001743463.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1238,6 +1226,13 @@
         "source": "Yahoo Finance",
         "time": "11-23 16:39 ET",
         "pub_ts": 1795469943.0
+      },
+      {
+        "title": "Leading CHROs and Business Executives to Convene at i4cp's 2027 Next Practices Now Conference",
+        "url": "https://finance.yahoo.com/small-business/articles/leading-chros-business-executives-convene-212500658.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 16:25 ET",
+        "pub_ts": 1795469100.0
       }
     ],
     "AAPL": [
@@ -1384,11 +1379,18 @@
         "title": "Dow Jones Futures: Tech Stocks, Nvidia Snap Back On Jensen Huang's Return; Elon Musk-Led SpaceX, Tesla Rally",
         "url": "https://finance.yahoo.com/m/be493228-4ecf-338d-9017-054d3d6efc36/dow-jones-futures%3A-tech.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 21:14 ET",
-        "pub_ts": 1795486479.0
+        "time": "11-23 22:27 ET",
+        "pub_ts": 1795490874.0
       }
     ],
     "CRWV": [
+      {
+        "title": "CoreWeave Inc. (CRWV) Just Turned the Tables. What Changed?",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/coreweave-inc-crwv-just-turned-031501579.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 22:15 ET",
+        "pub_ts": 1795490101.0
+      },
       {
         "title": "Steve Eisman Said AI Was “No Longer One Trade.” Huang Is Back, but Alphabet and CoreWeave Still Show the Split",
         "url": "https://www.tikr.com/blog/big-shorts-steve-eisman-without-nvidia-ai-is-no-longer-one-trade-alphabet-and-coreweave-show-the-split?ref=yahoofinance&tlnk=yf-261123-qrq8pv92&.tsrc=rss",
@@ -1416,13 +1418,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 16:05 ET",
         "pub_ts": 1795467900.0
-      },
-      {
-        "title": "Gavin Baker: “At Least Three Companies” Want to Replace Nvidia as AI’s Central Bank. Good News for CoreWeave",
-        "url": "https://www.tikr.com/blog/gavin-baker-at-least-three-companies-want-to-replace-nvidia-as-ais-central-bank-good-news-for-coreweave?ref=yahoofinance&tlnk=yf-261123-37w799jj&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 15:30 ET",
-        "pub_ts": 1795465844.0
       }
     ],
     "NBIS": [
@@ -2611,39 +2606,39 @@
     ],
     "BTC-USD": [
       {
+        "title": "What Hyperscale Data (GPUS) Said on Its Q3 Earnings Call",
+        "url": "https://www.marketbeat.com/instant-alerts/transcript-what-hyperscale-data-gpus-said-on-its-q3-earnings-call-2026-11-23/?utm_source=yahoofinance&utm_medium=yahoofinance&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 22:12 ET",
+        "pub_ts": 1795489953.0
+      },
+      {
+        "title": "Dead Cat Bounce? AI Stocks Climb 20%+, but IREN, Applied Digital Stay Down 50%+",
+        "url": "https://beincrypto.com/ai-stocks-dead-cat-bounce-iren/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 22:05 ET",
+        "pub_ts": 1795489500.0
+      },
+      {
+        "title": "Dr. Clemen Chiang Publishes The Last Line, Completing the Four-Book Series The Disclosed Record",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/dr-clemen-chiang-publishes-last-030400342.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 22:04 ET",
+        "pub_ts": 1795489440.0
+      },
+      {
+        "title": "Bitcoin And Ethereum Get A Bigger Role In US Derivatives Markets: Here’s What The CFTC Changed",
+        "url": "https://stocktwits.com/news-articles/markets/cryptocurrency/bitcoin-and-ethereum-get-a-bigger-role-in-us-derivatives-markets-here-s-what-the-cftc-changed/cNbrt1fR9jH?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 21:51 ET",
+        "pub_ts": 1795488668.0
+      },
+      {
         "title": "Dow, Nasdaq and Bitcoin Jump on Huang's Return, but Why Did Bitcoin Reverse?",
         "url": "https://beincrypto.com/bitcoin-reversal-huang-return-nasdaq/?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-23 21:00 ET",
         "pub_ts": 1795485600.0
-      },
-      {
-        "title": "Tom Lee Explains Why He’s Bullish on Ethereum, Shares the “Hard Money” Case",
-        "url": "https://beincrypto.com/tom-lee-hard-money-bitcoin-ethereum-bitmine/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 19:33 ET",
-        "pub_ts": 1795480425.0
-      },
-      {
-        "title": "Home and garden retailer scales back crypto, loses $2.8M",
-        "url": "https://www.thestreet.com/crypto/markets/home-and-garden-retailer-scales-back-crypto-loses-2-8m?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 19:09 ET",
-        "pub_ts": 1795478959.0
-      },
-      {
-        "title": "Grayscale Calls Crypto Oversold as 21Shares Sticks to 2027 Bitcoin Forecast",
-        "url": "https://www.cryptoprowl.com/releases/grayscale-calls-crypto-oversold-as-21shares-sticks-to-2027-bitcoin-forecast-8037?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 18:53 ET",
-        "pub_ts": 1795477980.0
-      },
-      {
-        "title": "Cathie Wood scraps plans for two new crypto ETFs",
-        "url": "https://www.thestreet.com/crypto/markets/cathie-wood-scraps-plans-for-two-new-crypto-etfs?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 18:03 ET",
-        "pub_ts": 1795474980.0
       }
     ],
     "CRWD": [
@@ -3009,7 +3004,7 @@
         "pub_ts": 1795469084.0
       },
       {
-        "title": "Fidelity steps in where JPMorgan retreated",
+        "title": "Fidelity steps into an innovative zone",
         "url": "https://www.thestreet.com/crypto/markets/fidelity-steps-in-where-jpmorgan-retreated?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-23 15:56 ET",
@@ -3246,50 +3241,87 @@
         "time": "09-05 03:27 ET",
         "pub_ts": 1788593220.0
       }
+    ],
+    "KOSPI": [
+      {
+        "title": "Samsung Electronics Stocks Fall 3.06% as Kospi Sinks Before Nvidia's CEO Reversal",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/samsung-electronics-stocks-fall-3-170806611.html",
+        "source": "GuruFocus.com",
+        "time": "11-23 12:08 ET",
+        "pub_ts": 1795453686.0
+      },
+      {
+        "title": "AI Jitters Roil Asian Stock Markets",
+        "url": "https://finance.yahoo.com/markets/world-indices/articles/ai-jitters-roil-asian-stock-103847073.html",
+        "source": "MT Newswires",
+        "time": "11-23 05:38 ET",
+        "pub_ts": 1795430327.0
+      },
+      {
+        "title": "Asia stocks mixed as Taiwan rebounds, KOSPI slides; U.S. futures jump",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/asia-stocks-slide-ai-rout-033321972.html",
+        "source": "Investing.com",
+        "time": "11-22 22:33 ET",
+        "pub_ts": 1795404801.0
+      },
+      {
+        "title": "South Korea vows to stabilise stock market after KOSPI drops 5%",
+        "url": "https://finance.yahoo.com/economy/articles/south-koreas-finance-minister-sees-024346169.html",
+        "source": "Reuters",
+        "time": "11-22 22:17 ET",
+        "pub_ts": 1795403836.0
+      },
+      {
+        "title": "Can Samsung and SK Hynix Buybacks Stop Korea's $115 Billion Selloff?",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/samsung-sk-hynix-buybacks-stop-003800159.html",
+        "source": "BeInCrypto",
+        "time": "11-22 19:38 ET",
+        "pub_ts": 1795394280.0
+      }
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795489164.8093488,
-    "SOXL": 1795489164.8093488,
-    "SPY": 1795488738.640817,
-    "DIA": 1795489164.8093488,
-    "SOXX": 1795489164.8093488,
-    "QQQ": 1795488738.640817,
-    "SMH": 1795489164.8093488,
-    "IWM": 1795489164.8093488,
-    "IGV": 1795489164.8093488,
-    "TLT": 1795489164.8093488,
-    "GLD": 1795489164.8093488,
-    "SQQQ": 1795489164.8093488,
-    "TSM": 1795489274.342018,
-    "VIXY": 1795489164.8093488,
-    "SOXS": 1795489164.8093488,
-    "NVDA": 1795489164.8093488,
-    "AMD": 1795489274.342018,
-    "ASML": 1795489274.342018,
-    "QCOM": 1795489274.342018,
-    "AVGO": 1795489274.342018,
-    "AMAT": 1795489274.342018,
-    "META": 1795489274.342018,
-    "GOOGL": 1795489274.342018,
-    "MSFT": 1795489274.342018,
-    "AAPL": 1795489274.342018,
-    "PLTR": 1795489274.342018,
-    "NOW": 1795489274.342018,
-    "AMZN": 1795489274.342018,
-    "CRWV": 1795489274.342018,
-    "NBIS": 1795489274.342018,
+    "KORU": 1795493407.6567113,
+    "SOXL": 1795493407.6567113,
+    "SPY": 1795493407.6567113,
+    "DIA": 1795493407.6567113,
+    "SOXX": 1795493407.6567113,
+    "QQQ": 1795493407.6567113,
+    "SMH": 1795493407.6567113,
+    "IWM": 1795493407.6567113,
+    "IGV": 1795493407.6567113,
+    "TLT": 1795493407.6567113,
+    "GLD": 1795493407.6567113,
+    "SQQQ": 1795493407.6567113,
+    "TSM": 1795493407.6567113,
+    "VIXY": 1795493407.6567113,
+    "SOXS": 1795493407.6567113,
+    "NVDA": 1795493407.6567113,
+    "AMD": 1795493407.6567113,
+    "ASML": 1795493407.6567113,
+    "QCOM": 1795493407.6567113,
+    "AVGO": 1795493407.6567113,
+    "AMAT": 1795493407.6567113,
+    "META": 1795493407.6567113,
+    "GOOGL": 1795493407.6567113,
+    "MSFT": 1795493407.6567113,
+    "AAPL": 1795493407.6567113,
+    "PLTR": 1795493407.6567113,
+    "NOW": 1795493407.6567113,
+    "AMZN": 1795493407.6567113,
+    "CRWV": 1795493407.6567113,
+    "NBIS": 1795493407.6567113,
     "APLD": 1795489274.342018,
     "VST": 1795489274.342018,
     "BE": 1795489383.9937239,
     "CRDO": 1795489383.9937239,
     "COHR": 1795489383.9937239,
-    "MRVL": 1795488738.640817,
-    "LITE": 1795488738.640817,
+    "MRVL": 1795493407.6567113,
+    "LITE": 1795493407.6567113,
     "AAOI": 1795489383.9937239,
     "SPCX": 1795489383.9937239,
     "ASTS": 1795489383.9937239,
-    "AXTI": 1795488738.640817,
+    "AXTI": 1795493407.6567113,
     "NASA": 1795489383.9937239,
     "LUNR": 1795489383.9937239,
     "TSLA": 1795489383.9937239,
@@ -3304,30 +3336,31 @@
     "OKLO": 1795489383.9937239,
     "CEG": 1795489383.9937239,
     "FPS": 1795489498.0050464,
-    "MU": 1795488738.640817,
-    "SKHY": 1795488738.640817,
-    "WDC": 1795488738.640817,
+    "MU": 1795493407.6567113,
+    "SKHY": 1795493407.6567113,
+    "WDC": 1795493407.6567113,
     "STX": 1795489498.0050464,
     "MSTR": 1795489498.0050464,
     "SNDK": 1795489498.0050464,
-    "BTC-USD": 1795488738.640817,
+    "BTC-USD": 1795493407.6567113,
     "CRWD": 1795489498.0050464,
-    "ORCL": 1795488738.640817,
-    "COIN": 1795488738.640817,
-    "LLY": 1795488738.640817,
-    "MRNA": 1795488738.640817,
-    "NKE": 1795488738.640817,
-    "MCD": 1795488738.640817,
+    "ORCL": 1795493407.6567113,
+    "COIN": 1795493407.6567113,
+    "LLY": 1795493407.6567113,
+    "MRNA": 1795493407.6567113,
+    "NKE": 1795493407.6567113,
+    "MCD": 1795493407.6567113,
     "PEP": 1795489498.0050464,
-    "XOM": 1795489164.8093488,
-    "JPM": 1795489164.8093488,
+    "XOM": 1795493407.6567113,
+    "JPM": 1795493407.6567113,
     "WMT": 1795489498.0050464,
-    "V": 1795489164.8093488,
+    "V": 1795493407.6567113,
     "CAT": 1795489498.0050464,
-    "FN": 1795488738.640817,
+    "FN": 1795493407.6567113,
     "GLW": 1795489383.9937239,
     "ANT": 1795489498.0050464,
-    "XAUUSD": 1795489498.0050464
+    "XAUUSD": 1795489498.0050464,
+    "KOSPI": 1795493407.6567113
   },
   "opex_shield": {
     "date": "2026-11-23",
@@ -3346,7 +3379,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (21:39 ET / 10:39 BJ) [原油]：供应端压力推动原油持续下跌，但需对叙事转向持谨慎态度。局势升级风险未能完全排除，美银警告称低库存仍是油价主要支撑。",
+    "detail": "⚡ 最新核心快讯 (22:59 ET / 11:59 BJ) [英伟达]：1. 黄仁勋回归或加剧英伟达与Anthropic的开闭源路线冲突。 2. 马斯克SpaceX陷AI发展两难：Grok落后对手，算力出租月入39亿美元。 3. 亚马逊据悉将斥资75亿美元收购人",
     "event_name": "",
     "minutes_left": 0,
     "opex_shield": {

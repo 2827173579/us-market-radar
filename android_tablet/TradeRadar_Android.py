@@ -252,7 +252,7 @@ def send_discord(title: str, description: str, color: int = 0x00e676, fields: li
 # 77 只全量标的池配置 (14 只宏观/行业/杠杆 ETF + 63 只 AI 与核心个股)
 # ------------------------------------------------------------------------------
 ETF_TICKERS = [
-    "QQQ", "SPY", "DIA", "IWM", "SMH", "SOXX", "SOXL", "KORU",
+    "QQQ", "SPY", "DIA", "IWM", "SMH", "SOXX", "SOXL", "KORU", "KOSPI",
     "IGV", "TLT", "GLD", "VIXY", "SQQQ", "SOXS"
 ]
 

@@ -315,9 +315,9 @@ class TestV50FuturesAndTemperature(unittest.TestCase):
         """验证 79 只可交易标的池 (14 ETF + 65 Stocks) 严格零污染，不含 NQ=F / ES=F。"""
         etfs = radar.MONITORED_TARGETS.get("ETFS", {})
         stocks = radar.MONITORED_TARGETS.get("STOCKS", {})
-        self.assertEqual(len(etfs), 14)
+        self.assertEqual(len(etfs), 15)
         self.assertEqual(len(stocks), 65)
-        self.assertEqual(len(etfs) + len(stocks), 79)
+        self.assertEqual(len(etfs) + len(stocks), 80)
         all_tks = set(etfs.keys()) | set(stocks.keys())
         self.assertNotIn("NQ=F", all_tks)
         self.assertNotIn("ES=F", all_tks)

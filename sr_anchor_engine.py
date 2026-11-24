@@ -514,6 +514,12 @@ def update_daily_sr_anchors_batch(
     return {k: dict(v) for k, v in anchors.items() if isinstance(v, dict)}
 
 
+def _fmt_sr_price(val: float, is_pts: bool = False) -> str:
+    if is_pts:
+        return f"{val:,.2f}"
+    return f"${val:.2f}"
+
+
 def evaluate_sr_breach_state(
     price: Any,
     anchor: Dict[str, Any],
@@ -527,6 +533,10 @@ def evaluate_sr_breach_state(
     swing_tp: Optional[float] = None,
     swing_sl: Optional[float] = None,
     atr_pct: Optional[float] = None,
+    is_daily_breakdown: bool = False,
+    is_inverse_decay: bool = False,
+    price_unit: str = "usd",
+    ticker: str = "",
 ) -> Dict[str, Any]:
     """
     对称五态顶底互换状态机 (S/R Flip) + 体制门禁 / 离群 R2 收口 / 止损一致性保护:
@@ -536,6 +546,11 @@ def evaluate_sr_breach_state(
     - R1_BROKEN: anchor_r1 < price <= anchor_r2
     - ALL_RESISTANCE_BROKEN: price > anchor_r2
     """
+    tk_up = str(ticker or anchor.get("ticker") or "").strip().upper()
+    unit_norm = str(price_unit or anchor.get("price_unit") or "usd").strip().lower()
+    is_pts = bool(unit_norm in ("pts", "pt", "points", "index") or tk_up == "KOSPI" or bool(anchor.get("is_index", False)))
+    fp = lambda v: _fmt_sr_price(float(v), is_pts)
+
     s1 = round(float(anchor.get("anchor_s1") or anchor.get("s1") or 0.0), 2)
     s2 = round(float(anchor.get("anchor_s2") or anchor.get("s2") or 0.0), 2)
     sl = round(float(anchor.get("anchor_sl") or anchor.get("sl") or (s2 * 0.985 if s2 > 0 else 0.0)), 2)
@@ -550,7 +565,7 @@ def evaluate_sr_breach_state(
     r1_src = str(anchor.get("r1_source") or SOURCE_ATR_ESTIMATE)
     r2_src = str(anchor.get("r2_source") or SOURCE_ATR_ESTIMATE)
     vwap_f = _opt_float(vwap)
-    vwap_str = f"日内 VWAP (${vwap_f:.2f})" if (vwap_f and vwap_f > 0) else "当日VWAP"
+    vwap_str = f"日内 VWAP ({fp(vwap_f)})" if (vwap_f and vwap_f > 0) else "当日VWAP"
     halt_prefix = "【暴跌熔断风控剧本】触发熔断保护期；" if is_halt else ""
 
     # 离群 R2 波段合理跨度保护（防止远期前高脱节当成短线目标）
@@ -571,99 +586,173 @@ def evaluate_sr_breach_state(
             r2_is_far_historical = True
             r2_swing_cap = round(min(r2, max(swing_tp_f, px * (1.0 + max(0.08, 2.5 * atr_f)))), 2)
 
+    valid_swing_sl = swing_sl_f if (swing_sl_f > 0 and (px <= 0 or swing_sl_f < px)) else 0.0
+    eff_sl = round(max(sl, valid_swing_sl), 2) if valid_swing_sl > 0 else sl
+    s1_below_swing_sl = bool(valid_swing_sl > 0 and s1 > 0 and s1 < valid_swing_sl)
+    offensive_veto = bool(bear_suppressed or is_daily_breakdown or is_inverse_decay)
+
     bear_suppressed_r1_break = False
 
     if s2 > 0 and px < s2:
         state = STATE_ALL_SUPPORT_BREACHED
-        badge = f"⚠️ 今日原定支撑全线跌穿 (原S1:${s1:.2f} / 原S2:${s2:.2f}) · 下方无真实支撑，别猜底"
+        badge = f"⚠️ 今日原定支撑全线跌穿 (原S1:{fp(s1)} / 原S2:{fp(s2)}) · 下方无真实支撑，别猜底"
         script = (
-            f"{halt_prefix}【今日原定支撑全线跌穿 · 下方无真实支撑，别猜底】现价已跌破当日全部原定支撑 S1 (${s1:.2f}) / S2 (${s2:.2f})；"
-            f"原 S2 (${s2:.2f}) 已反转为上方第一压力（上方前压 R1 (${r1:.2f}) / R2 (${r2:.2f})）；"
-            f"严禁左侧猜底，仅认放量收回原 S2 或重夺 {vwap_str} 的右侧确认；防守止损位 ${sl:.2f}"
+            f"{halt_prefix}【今日原定支撑全线跌穿 · 下方无真实支撑，别猜底】现价已跌破当日全部原定支撑 S1 ({fp(s1)}) / S2 ({fp(s2)})；"
+            f"原 S2 ({fp(s2)}) 已反转为上方第一压力（上方前压 R1 ({fp(r1)}) / R2 ({fp(r2)})）；"
+            f"严禁左侧猜底，仅认放量收回原 S2 或重夺 {vwap_str} 的右侧确认；防守止损位 {fp(sl)}"
         )
     elif s1 > 0 and px < s1:
         state = STATE_S1_BREACHED
-        badge = f"S1:${s1:.2f} 已击穿转压 ➔ 退守 S2:${s2:.2f}"
+        badge = f"S1:{fp(s1)} 已击穿转压 ➔ 退守 S2:{fp(s2)}"
         s2_lbl = "估算防线 S2" if s2_src == SOURCE_ATR_ESTIMATE else "S2"
         script = (
-            f"{halt_prefix}【S1击穿转压 · 退守下轨】原支撑 S1 (${s1:.2f}) 已有效击穿并转为反抽压力，"
-            f"半空严禁盲目接刀，退守 {s2_lbl} (${s2:.2f})；"
-            f"反抽优先测试原 S1 (${s1:.2f}) 与 R1 (${r1:.2f})（高阻 R2 (${r2:.2f})）；防守止损位 ${sl:.2f}"
+            f"{halt_prefix}【S1击穿转压 · 退守下轨】原支撑 S1 ({fp(s1)}) 已有效击穿并转为反抽压力，"
+            f"半空严禁盲目接刀，退守 {s2_lbl} ({fp(s2)})；"
+            f"反抽优先测试原 S1 ({fp(s1)}) 与 R1 ({fp(r1)})（高阻 R2 ({fp(r2)})）；防守止损位 {fp(sl)}"
         )
     elif r2 > 0 and px > r2:
         state = STATE_ALL_RESISTANCE_BROKEN
-        if bear_suppressed:
+        if offensive_veto:
             bear_suppressed_r1_break = True
-            badge = f"⚠️ 跳空越过旧R1/R2 (原R1:${r1:.2f} / 原R2:${r2:.2f}) · 仍受空头/VIX倒挂压制"
+            badge = f"⚠️ 跳空越过旧R1/R2 (原R1:{fp(r1)} / 原R2:{fp(r2)}) · 仍受空头/VIX倒挂压制"
             script = (
-                f"【跳空越过旧R1/R2 · 仍受空头/VIX倒挂压制】原静态 R1 (${r1:.2f}) / R2 (${r2:.2f}) 已被跳空越过，"
-                f"但当前处于 VIX 倒挂/空头主导格局，暂不按多头突破追高；"
+                f"【跳空越过旧R1/R2 · 仍受空头/VIX倒挂压制】原静态 R1 ({fp(r1)}) / R2 ({fp(r2)}) 已被跳空越过，"
+                f"但当前受日线破位/VIX倒挂/反向衰减约束，暂不按多头突破追高；"
                 f"短线以 {vwap_str} 为多空分水岭，风控压制解除前严禁盲目追涨"
             )
         else:
-            badge = f"🚀 突破今日全线阻力 (原R1:${r1:.2f} / 原R2:${r2:.2f}) · 趋势延伸"
+            badge = f"🚀 突破今日全线阻力 (原R1:{fp(r1)} / 原R2:{fp(r2)}) · 趋势延伸"
+            if valid_swing_sl > 0 and r2 < valid_swing_sl:
+                r2_def_clause = f"以波段止损线 ({fp(valid_swing_sl)}) 为硬防守底线（下方原 R2 ({fp(r2)}) 仅为次级参考，不可破止损硬扛）"
+            else:
+                r2_def_clause = f"原 R2 ({fp(r2)}) 已转为下方强防守底线（原支撑 S1 ({fp(s1)}) / S2 ({fp(s2)})）"
             script = (
-                f"【阻力全线突破 · 移动止盈托管】现价放量突破原 R1 (${r1:.2f}) / R2 (${r2:.2f})；"
-                f"原 R2 (${r2:.2f}) 已转为下方强防守底线（原支撑 S1 (${s1:.2f}) / S2 (${s2:.2f})）；"
-                f"上方不设假天花板，自动切换为沿 {vwap_str} / EMA9 移动止盈托管，不追高、防假突破回踩原 R2"
+                f"【阻力全线突破 · 移动止盈托管】现价放量突破原 R1 ({fp(r1)}) / R2 ({fp(r2)})；"
+                f"{r2_def_clause}；"
+                f"上方不设假天花板，自动切换为沿 {vwap_str} / EMA9 移动止盈托管，不追高、防假突破"
             )
     elif r1 > 0 and px > r1:
         state = STATE_R1_BROKEN
-        if bear_suppressed:
+        if offensive_veto:
             bear_suppressed_r1_break = True
-            r2_note = f"（远期前高参考 ${r2:.2f}，非短线目标）" if r2_is_far_historical else ""
-            badge = f"⚠️ 跳空越过旧R1:${r1:.2f} · 仍受空头/VIX倒挂压制"
+            r2_note = f"（远期前高参考 {fp(r2)}，非短线目标）" if r2_is_far_historical else ""
+            badge = f"⚠️ 跳空越过旧R1:{fp(r1)} · 仍受空头/VIX倒挂压制"
             script = (
-                f"【跳空越过旧R1 · 仍受空头/VIX倒挂压制】原静态 R1 (${r1:.2f}) 已被跳空越过，"
-                f"但当前处于 VIX 倒挂/空头主导格局，暂不按多头突破追高{r2_note}；"
-                f"短线以 {vwap_str} 为多空分水岭，风控压制解除前严禁盲目看高 R2"
+                f"【跳空越过旧R1 · 仍受空头/VIX倒挂压制】原静态 R1 ({fp(r1)}) 已被跳空越过，"
+                f"但当前受日线破位/VIX倒挂/反向衰减约束，暂不按多头突破追高{r2_note}；"
+                f"短线以 {vwap_str} 为多空分水岭，反抽阻力区优先逢高降险，风控压制解除前严禁盲目看高 R2"
             )
         else:
             r2_disp_str = (
-                f"波段目标 ${r2_swing_cap:.2f}（远期前高参考 ${r2:.2f}，非短线目标）"
+                f"波段目标 {fp(r2_swing_cap)}（远期前高参考 {fp(r2)}，非短线目标）"
                 if r2_is_far_historical
-                else f"原定 R2 (${r2:.2f})"
+                else f"原定 R2 ({fp(r2)})"
             )
             badge = (
-                f"R1:${r1:.2f} (已突破 ➔ 转为支撑) · 波段目标:${r2_swing_cap:.2f}"
+                f"R1:{fp(r1)} (已突破 ➔ 转为支撑) · 波段目标:{fp(r2_swing_cap)}"
                 if r2_is_far_historical
-                else f"R1:${r1:.2f} (已突破 ➔ 转为支撑) · 上看 R2:${r2:.2f}"
+                else f"R1:{fp(r1)} (已突破 ➔ 转为支撑) · 上看 R2:{fp(r2)}"
             )
             # 点位一致性校验：严禁推荐低于波段防守止损 (swing_sl) 的原 R1 作为回踩买点
-            if swing_sl_f > 0 and r1 < swing_sl_f:
-                pullback_clause = f"不追第一根冲高针，等回踩 {vwap_str} 或波段防守区（止损 ${swing_sl_f:.2f} 上方）企稳后再顺势关注"
+            if valid_swing_sl > 0 and r1 < valid_swing_sl:
+                pullback_clause = (
+                    f"不追第一根冲高针，等回踩 {vwap_str} 或波段防守区（止损线 {fp(valid_swing_sl)} 上方）企稳后再顺势关注"
+                    f"（下方原 R1 {fp(r1)} 仅为破位后次级参考，不可跌破上方止损线硬扛）"
+                )
             else:
-                pullback_clause = f"不追第一根冲高针，等回踩原 R1 (${r1:.2f}) 或 {vwap_str} 企稳后再顺势关注"
+                pullback_clause = f"不追第一根冲高针，等回踩原 R1 ({fp(r1)}) 或 {vwap_str} 企稳后再顺势关注"
             script = (
-                f"【R1突破转支撑 · 看高R2】原阻力 R1 (${r1:.2f}) 已突破并反转为下方支撑，"
-                f"目标上看{r2_disp_str}（原下轨 S1 (${s1:.2f}) / S2 (${s2:.2f})）；"
+                f"【R1突破转支撑 · 看高R2】原阻力 R1 ({fp(r1)}) 已突破并反转为下方支撑，"
+                f"目标上看{r2_disp_str}（原下轨 S1 ({fp(s1)}) / S2 ({fp(s2)})）；"
                 f"{pullback_clause}"
             )
     else:
         state = STATE_INTACT
         badge = "今日原始支撑/阻力完好"
-        if base_script and (f"S1 (${s1:.2f})" in base_script or is_halt or is_short_covering or is_broken):
+        s_lbl = "估算防线 S1" if s1_src == SOURCE_ATR_ESTIMATE else "支撑 S1"
+        r_lbl = "估算压力 R1" if r1_src == SOURCE_ATR_ESTIMATE else "阻力 R1"
+        r2_intact_str = (
+            f"波段上沿 {fp(r2_swing_cap)}（远期前高参考 {fp(r2)}，非短线目标）"
+            if r2_is_far_historical
+            else f"R2 ({fp(r2)})"
+        )
+        base_has_bull_offense = bool(
+            base_script and any(k in str(base_script) for k in ("右侧主升", "做多剧本", "逢低做多", "防守做多"))
+        )
+        if is_halt and not is_short_covering:
+            script = (
+                f"【暴跌熔断风控剧本】触发熔断保护期，下方关注 {s_lbl} ({fp(s1)}) / S2 ({fp(s2)})；"
+                f"反抽 {r_lbl} ({fp(r1)}) / {r2_intact_str} 慎防诱多；防守止损位 {fp(eff_sl)}，严禁左侧接刀"
+            )
+        elif is_broken:
+            script = (
+                f"【破位防守剧本】均线空头承压，关注 {s_lbl} ({fp(s1)}) / S2 ({fp(s2)})；"
+                f"上方 {r_lbl} ({fp(r1)}) / {r2_intact_str} 逢高减仓；防守止损位 {fp(eff_sl)}，严禁左侧接刀"
+            )
+        elif offensive_veto:
+            bear_suppressed_r1_break = True
+            if s1_below_swing_sl:
+                sl_tail = (
+                    f"上方防守止损线 {fp(valid_swing_sl)}（下方 {s_lbl} ({fp(s1)}) / S2 ({fp(s2)}) 仅为破位后次级参考，不可跌破上方止损线硬扛）"
+                )
+            else:
+                sl_tail = f"下方观察 {s_lbl} ({fp(s1)}) / S2 ({fp(s2)})，跌破防守止损位 {fp(eff_sl)} 严格离场"
+            script = (
+                f"【跳空/滞后均线受大级别压制】当前受日线破位/VIX倒挂/反向衰减约束，暂不按多头突破追高；"
+                f"以 {vwap_str} 为短线分水岭，反抽 {r_lbl} ({fp(r1)})（{r2_intact_str}）优先逢高降险；{sl_tail}"
+            )
+        elif (
+            base_script
+            and (not is_pts)
+            and (not s1_below_swing_sl)
+            and (not r2_is_far_historical)
+            and (not (offensive_veto and base_has_bull_offense))
+            and (f"S1 (${s1:.2f})" in base_script or is_short_covering)
+        ):
             import re
             synced = str(base_script)
             for _lbl, _v in (("S1", s1), ("S2", s2), ("R1", r1), ("R2", r2)):
                 synced = re.sub(rf"({_lbl}\s*\(\$)[0-9]+(?:\.[0-9]+)?", rf"\g<1>{_v:.2f}", synced)
             synced = re.sub(
                 r"((?:防守止损位|止损位|关键防守位|防守位)\s*\$)[0-9]+(?:\.[0-9]+)?",
-                rf"\g<1>{sl:.2f}",
+                rf"\g<1>{eff_sl:.2f}",
                 synced,
             )
             script = synced
         else:
-            s_lbl = "估算防线 S1" if s1_src == SOURCE_ATR_ESTIMATE else "支撑 S1"
-            r_lbl = "估算压力 R1" if r1_src == SOURCE_ATR_ESTIMATE else "阻力 R1"
-            if is_halt:
-                script = f"【暴跌熔断风控剧本】触发熔断保护期，下方关注 {s_lbl} (${s1:.2f}) / S2 (${s2:.2f})；反抽 {r_lbl} (${r1:.2f}) / R2 (${r2:.2f}) 慎防诱多；防守止损位 ${sl:.2f}，严禁左侧接刀"
-            elif is_broken:
-                script = f"【破位防守剧本】均线空头承压，关注 {s_lbl} (${s1:.2f}) / S2 (${s2:.2f})；上方 {r_lbl} (${r1:.2f}) / R2 (${r2:.2f}) 逢高减仓；防守止损位 ${sl:.2f}，严禁左侧接刀"
-            elif bias_ma50 > 4.0:
-                script = f"【右侧主升剧本】依托 {s_lbl} (${s1:.2f}) / S2 (${s2:.2f}) 防守做多，上看 {r_lbl} (${r1:.2f}) 与扩展目标 R2 (${r2:.2f})；关键防守位 ${sl:.2f}"
+            if s1_below_swing_sl:
+                if vwap_f and vwap_f >= valid_swing_sl and (px <= 0 or vwap_f <= px * 1.03):
+                    sup_clause = (
+                        f"依托 {vwap_str} 与波段止损线 ({fp(valid_swing_sl)}) 防守"
+                        f"（下方 {s_lbl} ({fp(s1)}) / S2 ({fp(s2)}) 仅为破位后次级参考，不可跌破上方止损线硬扛）"
+                    )
+                else:
+                    sup_clause = (
+                        f"以波段止损线 ({fp(valid_swing_sl)}) 为硬防守底线"
+                        f"（下方 {s_lbl} ({fp(s1)}) / S2 ({fp(s2)}) 仅为破位后次级参考，不可跌破上方止损线硬扛）"
+                    )
+                if is_short_covering:
+                    script = f"【空头回补剧本】{sup_clause}；上看 {r_lbl} ({fp(r1)}) 空头回补反抽(不过就跑)"
+                elif bias_ma50 > 4.0:
+                    script = f"【右侧主升剧本】{sup_clause}，上看 {r_lbl} ({fp(r1)}) 与 {r2_intact_str}"
+                else:
+                    script = f"【战术推演剧本】{sup_clause}，上方阻力 {r_lbl} ({fp(r1)}) / {r2_intact_str}"
             else:
-                script = f"【战术推演剧本】下方防守 S1 (${s1:.2f}) / S2 (${s2:.2f})，上方阻力 R1 (${r1:.2f}) / R2 (${r2:.2f})；有效跌破防守止损位 ${sl:.2f} 严格离场"
+                if is_short_covering:
+                    script = (
+                        f"【空头回补剧本】依托 {s_lbl} ({fp(s1)}) / S2 ({fp(s2)}) 博反抽，"
+                        f"上看 {r_lbl} ({fp(r1)}) 空头回补反抽(不过就跑)；击穿防守止损位 {fp(eff_sl)} 严格离场"
+                    )
+                elif bias_ma50 > 4.0:
+                    script = (
+                        f"【右侧主升剧本】依托 {s_lbl} ({fp(s1)}) / S2 ({fp(s2)}) 防守做多，"
+                        f"上看 {r_lbl} ({fp(r1)}) 与扩展目标 {r2_intact_str}；关键防守位 {fp(eff_sl)}"
+                    )
+                else:
+                    script = (
+                        f"【战术推演剧本】下方防守 {s_lbl} ({fp(s1)}) / S2 ({fp(s2)})，"
+                        f"上方阻力 {r_lbl} ({fp(r1)}) / {r2_intact_str}；有效跌破防守止损位 {fp(eff_sl)} 严格离场"
+                    )
 
     return {
         "anchor_s1": s1,
@@ -708,28 +797,50 @@ def suppress_resonance_badge(
     is_crash_halt: bool = False,
     is_cooling_halt: bool = False,
     vix_regime: Optional[Dict[str, Any]] = None,
+    is_daily_breakdown: bool = False,
+    is_inverse_decay_veto: bool = False,
+    is_bear_dominant: bool = False,
 ) -> Dict[str, Any]:
     """
-    当标的处于暴跌熔断保护期（Crash_3d / ATR 自适应暴跌熔断）或大盘处于 VIX 期限倒挂硬刹车时，
-    强制降级压制任何「见底信号 / 底背离拐点 / 抄底共振」绿色标签，消除视觉左右互搏。
+    4H 共振徽标硬门禁：
+    1. 当处于暴跌熔断、VIX 期限倒挂、日线破位 (跌破 EMA5 或单日 <= -8%)、反向衰减破位/锁利、或空头占优时：
+       - 强制降级压制任何「见底信号 / 底背离拐点 / 抄底共振」绿色标签；
+       - 同步压制滞后「4H 均线多头共振」，杜绝单日暴跌/反向破位仍喊多头共振。
     """
     orig_text = str(four_h_div or "➖ 4H 均线震荡纠缠").strip() or "➖ 4H 均线震荡纠缠"
     orig_tag = str(four_h_tag or "div-neutral").strip() or "div-neutral"
 
+    already_bottom_suppressed = (
+        "4H 潜在背离" in orig_text
+        or "熔断锁定·未确认" in orig_text
+    )
+    already_trend_suppressed = (
+        "4H 滞后均线" in orig_text
+    )
     already_suppressed = (
         orig_tag == "div-suppressed"
-        or "4H 潜在背离" in orig_text
-        or "熔断锁定·未确认" in orig_text
+        or already_bottom_suppressed
+        or already_trend_suppressed
         or "VIX倒挂压制" in orig_text
     )
 
     is_bull_bottom_signal = (
-        already_suppressed
+        already_bottom_suppressed
         or orig_tag == "div-bull"
         or "见底信号" in orig_text
         or "底背离拐点" in orig_text
         or "抄底共振" in orig_text
+        or (already_suppressed and not already_trend_suppressed)
     )
+
+    is_bull_trend_signal = (
+        already_trend_suppressed
+        or orig_tag == "div-trend"
+        or "多头共振" in orig_text
+        or "右侧主升" in orig_text
+    )
+
+    vix_back = _is_vix_backwardation_active(vix_regime)
 
     if is_bull_bottom_signal:
         if bool(is_crash_halt) or bool(is_cooling_halt):
@@ -742,7 +853,7 @@ def suppress_resonance_badge(
                 "resonance_suppressed": True,
                 "resonance_suppress_reason": "CRASH_HALT",
             }
-        if _is_vix_backwardation_active(vix_regime):
+        if vix_back:
             suppressed_txt = "⚠️ 4H 潜在背离 (VIX倒挂压制)"
             return {
                 "four_h_div": suppressed_txt,
@@ -751,6 +862,18 @@ def suppress_resonance_badge(
                 "resonance_badge_tag": "div-suppressed",
                 "resonance_suppressed": True,
                 "resonance_suppress_reason": "VIX_BACKWARDATION",
+            }
+        if bool(is_inverse_decay_veto) or bool(is_daily_breakdown) or bool(is_bear_dominant):
+            reason_lbl = "反向衰减压制" if is_inverse_decay_veto else ("日线破位压制" if is_daily_breakdown else "空头占优压制")
+            reason_code = "INVERSE_DECAY" if is_inverse_decay_veto else ("DAILY_BREAKDOWN" if is_daily_breakdown else "BEAR_DOMINANT")
+            suppressed_txt = f"⚠️ 4H 潜在背离 ({reason_lbl})"
+            return {
+                "four_h_div": suppressed_txt,
+                "four_h_tag": "div-suppressed",
+                "resonance_badge_text": suppressed_txt,
+                "resonance_badge_tag": "div-suppressed",
+                "resonance_suppressed": True,
+                "resonance_suppress_reason": reason_code,
             }
         if already_suppressed:
             reason_prev = "CRASH_HALT" if "熔断锁定" in orig_text else ("VIX_BACKWARDATION" if "VIX倒挂" in orig_text else "SUPPRESSED")
@@ -761,6 +884,39 @@ def suppress_resonance_badge(
                 "resonance_badge_tag": "div-suppressed",
                 "resonance_suppressed": True,
                 "resonance_suppress_reason": reason_prev,
+            }
+
+    if is_bull_trend_signal:
+        if bool(is_crash_halt) or bool(is_cooling_halt):
+            suppressed_txt = "⚠️ 4H 滞后均线 (熔断锁定·严禁追多)"
+            reason_code = "CRASH_HALT"
+        elif bool(is_inverse_decay_veto):
+            suppressed_txt = "⚠️ 4H 滞后均线 (反向衰减·防损耗压制)"
+            reason_code = "INVERSE_DECAY"
+        elif bool(is_daily_breakdown):
+            suppressed_txt = "⚠️ 4H 滞后均线 (日线破位压制)"
+            reason_code = "DAILY_BREAKDOWN"
+        elif vix_back:
+            suppressed_txt = "⚠️ 4H 滞后均线 (VIX倒挂压制)"
+            reason_code = "VIX_BACKWARDATION"
+        elif bool(is_bear_dominant):
+            suppressed_txt = "⚠️ 4H 滞后均线 (空头占优压制)"
+            reason_code = "BEAR_DOMINANT"
+        elif already_trend_suppressed:
+            suppressed_txt = orig_text
+            reason_code = "SUPPRESSED"
+        else:
+            suppressed_txt = ""
+            reason_code = ""
+
+        if suppressed_txt:
+            return {
+                "four_h_div": suppressed_txt,
+                "four_h_tag": "div-suppressed",
+                "resonance_badge_text": suppressed_txt,
+                "resonance_badge_tag": "div-suppressed",
+                "resonance_suppressed": True,
+                "resonance_suppress_reason": reason_code,
             }
 
     return {

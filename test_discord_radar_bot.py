@@ -49,7 +49,7 @@ def _assert_clean_embed(testcase: unittest.TestCase, emb_dict: dict) -> None:
 def _build_full_79_pool_fixture(session_code: str = "REGULAR"):
     etf_map = radar.MONITORED_TARGETS["ETFS"]
     stock_map = radar.MONITORED_TARGETS["STOCKS"]
-    assert len(etf_map) == 14 and len(stock_map) == 65
+    assert len(etf_map) == 15 and len(stock_map) == 65
 
     macro_data = {}
     for idx, (tk, meta) in enumerate(etf_map.items()):
@@ -286,7 +286,7 @@ class TestDiscordRadarBot(unittest.TestCase):
 
             loaded = bot.load_radar_snapshot(snap_path)
             self.assertIsNotNone(loaded)
-            self.assertEqual(loaded["ticker_count"], 79)
+            self.assertEqual(loaded["ticker_count"], 80)
             expected_pool = set(radar.MONITORED_TARGETS["ETFS"]) | set(radar.MONITORED_TARGETS["STOCKS"])
             self.assertEqual(set(loaded["tickers"].keys()), expected_pool)
             for idx_sym in ("^VIX", "^VXN", "^VIX3M", "^VVIX", "^TNX"):
@@ -366,7 +366,7 @@ class TestDiscordRadarBot(unittest.TestCase):
         unk_emb = bot.build_check_embed_dict("NONEXISTENT99", snap)
         _assert_clean_embed(self, unk_emb)
         self.assertEqual(unk_emb["color"], 0xF59E0B)
-        self.assertIn("79", unk_emb["description"])
+        self.assertIn("80", unk_emb["description"])
 
     def test_03_vix_and_top5_embeds_and_no_bare_hr(self):
         macro_data, stocks_list, weather_info, vix_regime, liq, ip_res, ai_res, opex = _build_full_79_pool_fixture("PRE_MARKET")

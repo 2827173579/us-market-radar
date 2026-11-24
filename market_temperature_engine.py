@@ -75,6 +75,8 @@ EXCLUDED_TEMPERATURE_TICKERS = frozenset(
         "QID",
         "SDS",
         "SH",
+        "KOSPI",
+        "^KS11",
     }
 )
 
@@ -88,6 +90,7 @@ EXCLUDED_TEMPERATURE_CATS = frozenset(
         "恐慌指数",
         "反向做空",
         "反向对冲",
+        "亚太指数",
     }
 )
 

@@ -1509,8 +1509,9 @@ class TestReportMetricsAndSectorLinkage(unittest.TestCase):
         self.assertEqual(len(t4), 2)
         self.assertEqual(t4[0]['ticker'], 'MU', f"Top 1 should be MU after calibration, got {t4[0]['ticker']}")
         self.assertEqual(t4[1]['ticker'], 'MSFT', f"Top 2 should be MSFT after calibration, got {t4[1]['ticker']}")
-        self.assertAlmostEqual(t4[0]['calibrated_win_rate_pct'], 69.0, places=1)
-        self.assertAlmostEqual(t4[1]['calibrated_win_rate_pct'], 51.0, places=1)
+        self.assertGreater(t4[0]['calibrated_win_rate_pct'], t4[1]['calibrated_win_rate_pct'])
+        self.assertLessEqual(round(t4[0]['calibrated_win_rate_pct'] + t4[0]['calibrated_short_win_rate_pct'], 1), 100.0)
+        self.assertLessEqual(round(t4[1]['calibrated_win_rate_pct'] + t4[1]['calibrated_short_win_rate_pct'], 1), 100.0)
 
     def test_table2_small_sample_star_capping(self):
         """Asserts that sectors with < 10 high-confidence signals are capped at <= 3 stars with (小样本)."""

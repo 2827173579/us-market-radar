@@ -43,7 +43,8 @@ DEFAULT_DEEPSEEK_MODEL = "deepseek-flash"
 DEFAULT_WEB_REFRESH_MINUTES = 25
 DEFAULT_HTTP_TIMEOUT = 30
 
-VALID_TARGETS: Tuple[str, ...] = ("OVERVIEW", "QQQ", "SPY", "SOXX")
+WEB_BATCH_TARGETS: Tuple[str, ...] = ("OVERVIEW", "QQQ", "SPY", "SOXX")
+VALID_TARGETS: Tuple[str, ...] = ("OVERVIEW", "QQQ", "SPY", "SOXX", "KOSPI")
 TARGET_META: Dict[str, Dict[str, str]] = {
     "OVERVIEW": {
         "tab_label": "大盘全景",
@@ -64,6 +65,11 @@ TARGET_META: Dict[str, Dict[str, str]] = {
         "tab_label": "SOXX (半导体)",
         "title": "SOXX (半导体 ETF)",
         "note": "半导体产业链核心基准 ETF",
+    },
+    "KOSPI": {
+        "tab_label": "KOSPI (韩国综指)",
+        "title": "KOSPI (韩国综合指数)",
+        "note": "韩国股市总基准（三星/SK海力士 · 交易时段 09:00–15:30 KST · 点数计价无$）",
     },
 }
 
@@ -340,8 +346,15 @@ def extract_hard_context(
     tk = str(target or "OVERVIEW").upper()
     if tk == "OVERVIEW":
         ctx["core_etfs"] = {k: _pick_ticker(k) for k in ("QQQ", "SPY", "SOXX")}
-    elif tk in ("QQQ", "SPY", "SOXX"):
-        ctx["target_etf"] = _pick_ticker(tk)
+    elif tk in ("QQQ", "SPY", "SOXX", "KOSPI"):
+        t_obj = _pick_ticker(tk)
+        if tk == "KOSPI":
+            t_obj["price_unit"] = "pts"
+            t_obj["is_index"] = True
+            t_obj["krx_session_note"] = "韩国交易所 KRX (09:00–15:30 KST)，所有点位为指数点数 pt，严禁加美元符号 $"
+            if isinstance(tickers.get("KORU"), dict):
+                t_obj["us_etf_proxy_koru"] = _pick_ticker("KORU")
+        ctx["target_etf"] = t_obj
     return ctx
 
 
@@ -702,7 +715,15 @@ def generate_single_brief(
     ctx = extract_hard_context(snapshot, news_flashes=news_flashes, target=tk)
     risk_locked = bool(ctx.get("risk_lock_active", False))
     sys_p = build_system_prompt(risk_lock_active=risk_locked, batch_mode=False, session_code=str(ctx.get("session_code") or ""))
-    extra_note = "（注意：请明确写出 SPY / VOO 走势 100% 同步）" if tk == "SPY" else ""
+    extra_note = (
+        "（注意：请明确写出 SPY / VOO 走势 100% 同步）"
+        if tk == "SPY"
+        else (
+            "（注意：KOSPI 为韩国综合指数，交易时段 09:00–15:30 KST，所有点位与支撑阻力均为指数点数，绝对禁止加美元符号 $！）"
+            if tk == "KOSPI"
+            else ""
+        )
+    )
     user_p = (
         f"请基于以下实盘量化硬数据，为【{TARGET_META[tk]['title']}】{extra_note}输出三段式大白话解盘：\n"
         f"{json.dumps(ctx, ensure_ascii=False)}"
@@ -732,6 +753,8 @@ def generate_single_brief(
         }
 
     safe_text = apply_post_risk_safety_net(res.get("text", ""), risk_lock_active=risk_locked)
+    if tk == "KOSPI" and "$" in safe_text:
+        safe_text = re.sub(r"\$([0-9,]+(?:\.[0-9]+)?)", r"\1", safe_text)
     item_payload = {
         "status": "OK",
         "target": tk,
@@ -818,7 +841,7 @@ def generate_all_four_briefs(
     items_out: Dict[str, str] = {}
     provider_used = res.get("provider_used", "")
 
-    for tk in VALID_TARGETS:
+    for tk in WEB_BATCH_TARGETS:
         tk_locked, _ = evaluate_risk_lock(snapshot, target=tk)
         if tk in parsed and parsed[tk]:
             items_out[tk] = apply_post_risk_safety_net(parsed[tk], risk_lock_active=tk_locked)
@@ -1025,7 +1048,7 @@ def render_macro_ai_commentary_html(ai_cache: Optional[Dict[str, Any]]) -> str:
 
     tabs_html: List[str] = []
     panels_html: List[str] = []
-    for idx, tk in enumerate(VALID_TARGETS):
+    for idx, tk in enumerate(WEB_BATCH_TARGETS):
         meta = TARGET_META[tk]
         active_cls = " active" if idx == 0 else ""
         tabs_html.append(

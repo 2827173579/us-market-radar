@@ -14,6 +14,7 @@ import difflib
 import json
 import math
 import os
+import re
 import sys
 from datetime import datetime, timezone
 from typing import Any, Dict, List, Optional, Tuple
@@ -88,7 +89,13 @@ BUILTIN_TICKER_ALIASES: Dict[str, List[str]] = {
     "芯片": ["NVDA", "SOXL", "SMH", "AMD"],
     "做空半导体": ["SOXS"],
     "koru": ["KORU"],
-    "韩国": ["KORU"],
+    "kospi": ["KOSPI"],
+    "ks11": ["KOSPI"],
+    "^ks11": ["KOSPI"],
+    "韩国综指": ["KOSPI", "KORU"],
+    "韩国指数": ["KOSPI", "KORU"],
+    "韩股": ["KOSPI", "KORU"],
+    "韩国": ["KOSPI", "KORU"],
     "igv": ["IGV"],
     "软件": ["IGV", "MSFT", "NOW"],
     "tlt": ["TLT"],
@@ -194,10 +201,12 @@ def _opt_float(val: Any) -> Optional[float]:
         return None
 
 
-def _fmt_price(val: Any) -> str:
+def _fmt_price(val: Any, is_pts: bool = False) -> str:
     fv = _opt_float(val)
     if fv is None or fv <= 0:
         return "--"
+    if is_pts:
+        return f"{fv:,.2f}"
     if fv >= 1000:
         return f"${fv:,.2f}"
     return f"${fv:.2f}"
@@ -522,6 +531,7 @@ def build_check_embed_dict(
 
     name = str(item.get("name") or tk)
     cat = str(item.get("cat") or "核心池")
+    is_pts_tk = bool(tk == "KOSPI" or item.get("price_unit") == "pts" or item.get("is_index"))
     price = _opt_float(item.get("price") or item.get("last"))
     last = _opt_float(item.get("last"))
     eff_pct = _opt_float(item.get("effective_pct") if item.get("effective_pct") is not None else item.get("pct_change"))
@@ -569,10 +579,13 @@ def build_check_embed_dict(
     else:
         one_liner = "正在不上不下地晃悠，没有高把握买点，先观望最省心。"
 
-    # 1. 💰 价格（严格区分盘后/休市薄盘 vs 正规盘收盘）
+    # 1. 💰 价格（严格区分盘后/休市薄盘 vs 正规盘收盘；KOSPI 显示韩国 KRX 时段与无$点数）
     is_post_or_weekend = sess_code in ("POST_MARKET", "WEEKEND") or (not sess_code and sess_tag in ("休市", "盘后"))
     is_pre_or_night = sess_code in ("PRE_MARKET", "OVERNIGHT") or (not sess_code and sess_tag in ("盘前", "夜盘"))
-    if is_post_or_weekend:
+    if is_pts_tk:
+        krx_lbl = str(item.get("krx_session_label") or "韩国交易时段 09:00–15:30 KST").strip()
+        price_text = f"指数点位 **{_fmt_price(last or price, is_pts=True)} pt**（{_fmt_pct(pct_rth if pct_rth is not None else eff_pct)} · {krx_lbl}）"
+    elif is_post_or_weekend:
         if ext_px and ext_px > 0 and last and last > 0:
             price_text = f"盘后 **{_fmt_price(ext_px)}**（盘后 {_fmt_pct(ext_pct)}，休市薄盘别当真）｜正规盘收 **{_fmt_price(last)}**（{_fmt_pct(pct_rth)}）"
         else:
@@ -744,15 +757,22 @@ def build_check_embed_dict(
         exam_lines.append(tc_bear_line)
 
     fields = [
-        {"name": "💰 价格", "value": _strip_bare_hr_lines(price_text)[:1024], "inline": False},
+        {"name": "💰 价格" if not is_pts_tk else "📊 指数点位", "value": _strip_bare_hr_lines(price_text)[:1024], "inline": False},
         {"name": "🎯 怎么操作", "value": _strip_bare_hr_lines("\n".join(op_lines))[:1024], "inline": False},
-        {"name": "🧱 关键价位", "value": _strip_bare_hr_lines("\n".join(levels_lines))[:1024], "inline": False},
+        {"name": "🧱 关键价位" if not is_pts_tk else "🧱 关键点位", "value": _strip_bare_hr_lines("\n".join(levels_lines))[:1024], "inline": False},
         {
             "name": "📊 通俗体检",
             "value": _strip_bare_hr_lines("\n".join(exam_lines))[:1024],
             "inline": False,
         },
     ]
+    if is_pts_tk:
+        for _f_obj in fields:
+            _f_obj["value"] = re.sub(
+                r"\$([0-9,]+(?:\.[0-9]+)?)",
+                lambda _m: f"{float(_m.group(1).replace(',', '')):,.2f}",
+                _f_obj["value"],
+            )
 
     return {
         "title": f"{stance_icon} {tk} · {name}（{cat}）"[:256],
@@ -1062,6 +1082,7 @@ def build_ai_embed_dict(
         "QQQ": "QQQ (纳指 100)",
         "SPY": "SPY / VOO (标普500 · 走势100%同步)",
         "SOXX": "SOXX (半导体 ETF)",
+        "KOSPI": "KOSPI (韩国综合指数 · 点数无$)",
     }
     title_lbl = meta_map.get(tk, tk)
     res = brief_result if isinstance(brief_result, dict) else {}
@@ -1425,6 +1446,7 @@ if _DISCORD_PY_AVAILABLE:
                     app_commands.Choice(name="QQQ", value="QQQ"),
                     app_commands.Choice(name="SPY / VOO", value="SPY"),
                     app_commands.Choice(name="SOXX", value="SOXX"),
+                    app_commands.Choice(name="KOSPI (韩国综指)", value="KOSPI"),
                 ],
                 engine=[
                     app_commands.Choice(name="自动(Gemini优先)", value="auto"),
