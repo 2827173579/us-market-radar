@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795553660.823,
-  "updated_at_et": "11-24 15:54 ET",
-  "updated_at_kst": "05:54 KST",
+  "updated_at_ts": 1795553758.016,
+  "updated_at_et": "11-24 15:55 ET",
+  "updated_at_kst": "05:55 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1212,6 +1212,13 @@
         "pub_ts": 1795549060.0
       },
       {
+        "title": "Sector Update: Tech Stocks Fall Late Afternoon",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/sector-tech-stocks-fall-afternoon-204211371.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 15:42 ET",
+        "pub_ts": 1795552931.0
+      },
+      {
         "title": "Is Microsoft the Best Big Tech Stock to Buy Now?",
         "url": "https://www.fool.com/investing/2026/11/24/is-microsoft-the-best-big-tech-stock-to-buy-now/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1231,13 +1238,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 11:58 ET",
         "pub_ts": 1795539530.0
-      },
-      {
-        "title": "Nvidia Shatters Microsoft's Historic Stock Market Record",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/nvidia-shatters-microsofts-historic-stock-164825111.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 11:48 ET",
-        "pub_ts": 1795538905.0
       }
     ],
     "AAPL": [
@@ -3288,33 +3288,33 @@
   "ticker_news_ts": {
     "KORU": 1795553533.1189742,
     "SOXL": 1795553533.1189742,
-    "SPY": 1795552234.9740376,
+    "SPY": 1795553758.0161324,
     "DIA": 1795553533.1189742,
     "SOXX": 1795553533.1189742,
     "QQQ": 1795553533.1189742,
-    "SMH": 1795552234.9740376,
+    "SMH": 1795553758.0161324,
     "IWM": 1795553533.1189742,
     "IGV": 1795553533.1189742,
     "TLT": 1795553533.1189742,
     "GLD": 1795553533.1189742,
     "SQQQ": 1795553533.1189742,
-    "TSM": 1795552234.9740376,
+    "TSM": 1795553758.0161324,
     "VIXY": 1795553533.1189742,
     "SOXS": 1795553533.1189742,
     "NVDA": 1795553533.1189742,
     "AMD": 1795553533.1189742,
-    "ASML": 1795552234.9740376,
-    "QCOM": 1795552234.9740376,
+    "ASML": 1795553758.0161324,
+    "QCOM": 1795553758.0161324,
     "AVGO": 1795553533.1189742,
-    "AMAT": 1795552234.9740376,
-    "META": 1795552234.9740376,
-    "GOOGL": 1795552234.9740376,
-    "MSFT": 1795552234.9740376,
-    "AAPL": 1795552234.9740376,
-    "PLTR": 1795552234.9740376,
-    "NOW": 1795552234.9740376,
-    "AMZN": 1795552234.9740376,
-    "CRWV": 1795552234.9740376,
+    "AMAT": 1795553758.0161324,
+    "META": 1795553758.0161324,
+    "GOOGL": 1795553758.0161324,
+    "MSFT": 1795553758.0161324,
+    "AAPL": 1795553758.0161324,
+    "PLTR": 1795553758.0161324,
+    "NOW": 1795553758.0161324,
+    "AMZN": 1795553758.0161324,
+    "CRWV": 1795553758.0161324,
     "NBIS": 1795552335.601488,
     "APLD": 1795552837.7931054,
     "VST": 1795552837.7931054,
@@ -3365,7 +3365,7 @@
     "GLW": 1795552837.7931054,
     "ANT": 1795553041.270424,
     "XAUUSD": 1795553238.9379034,
-    "KOSPI": 1795552234.9740376
+    "KOSPI": 1795553758.0161324
   },
   "opex_shield": {
     "date": "2026-11-24",
