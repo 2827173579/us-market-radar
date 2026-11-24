@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795541042.534,
-  "updated_at_et": "11-24 12:24 ET",
-  "updated_at_kst": "02:24 KST",
+  "updated_at_ts": 1795541147.734,
+  "updated_at_et": "11-24 12:25 ET",
+  "updated_at_kst": "02:25 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2389,6 +2389,20 @@
     ],
     "MU": [
       {
+        "title": "Micron Stock Drops 11% as AI Chip Selloff Resumes",
+        "url": "https://finance.yahoo.com/technology/ai/articles/micron-stock-drops-11-ai-165731356.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 11:57 ET",
+        "pub_ts": 1795539451.0
+      },
+      {
+        "title": "Micron Jumped 19% Monday, Then Sank Double Digits. Here’s What That Swing Means for SMH Holders",
+        "url": "https://247wallst.com/investing/etf/2026/11/24/micron-jumped-19-monday-then-sank-double-digits-heres-what-that-swing-means-for-smh-holders/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 11:52 ET",
+        "pub_ts": 1795539162.0
+      },
+      {
         "title": "Why Micron Stock Dove Today",
         "url": "https://www.fool.com/investing/2026/11/24/why-micron-stock-dove-today/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2408,20 +2422,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 10:34 ET",
         "pub_ts": 1795534440.0
-      },
-      {
-        "title": "Nvidia, Anthropic, Micron, HPE, Analog Devices, Insmed, and More Stocks That Explain Today’s Market",
-        "url": "https://finance.yahoo.com/m/f7fa0ed2-2c68-3b80-9261-c35639090d03/nvidia%2C-anthropic%2C-micron%2C.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 10:04 ET",
-        "pub_ts": 1795532640.0
-      },
-      {
-        "title": "BNP Paribas cuts Micron rating on risks to 2028 hyperscaler capacity plans",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/bnp-paribas-cuts-micron-rating-145304912.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 09:53 ET",
-        "pub_ts": 1795531984.0
       }
     ],
     "SKHY": [
@@ -3315,18 +3315,18 @@
     "NOW": 1795541042.5341015,
     "AMZN": 1795541042.5341015,
     "CRWV": 1795541042.5341015,
-    "NBIS": 1795539607.1346827,
+    "NBIS": 1795541147.7344,
     "APLD": 1795539925.9887524,
     "VST": 1795539925.9887524,
     "BE": 1795539925.9887524,
     "CRDO": 1795539925.9887524,
     "COHR": 1795539925.9887524,
-    "MRVL": 1795539607.1346827,
-    "LITE": 1795539607.1346827,
+    "MRVL": 1795541147.7344,
+    "LITE": 1795541147.7344,
     "AAOI": 1795539925.9887524,
     "SPCX": 1795540036.4736745,
     "ASTS": 1795539925.9887524,
-    "AXTI": 1795539607.1346827,
+    "AXTI": 1795541147.7344,
     "NASA": 1795540036.4736745,
     "LUNR": 1795540036.4736745,
     "TSLA": 1795540036.4736745,
@@ -3341,13 +3341,13 @@
     "OKLO": 1795540143.3747313,
     "CEG": 1795540143.3747313,
     "FPS": 1795540143.3747313,
-    "MU": 1795539607.1346827,
-    "SKHY": 1795539607.1346827,
-    "WDC": 1795539607.1346827,
+    "MU": 1795541147.7344,
+    "SKHY": 1795541147.7344,
+    "WDC": 1795541147.7344,
     "STX": 1795540252.562012,
     "MSTR": 1795540252.562012,
     "SNDK": 1795540252.562012,
-    "BTC-USD": 1795539607.1346827,
+    "BTC-USD": 1795541147.7344,
     "CRWD": 1795540252.562012,
     "ORCL": 1795539925.9887524,
     "COIN": 1795539925.9887524,
@@ -3361,11 +3361,11 @@
     "WMT": 1795540252.562012,
     "V": 1795539925.9887524,
     "CAT": 1795540252.562012,
-    "FN": 1795539607.1346827,
+    "FN": 1795541147.7344,
     "GLW": 1795539925.9887524,
     "ANT": 1795540252.562012,
     "XAUUSD": 1795540252.562012,
-    "KOSPI": 1795539607.1346827
+    "KOSPI": 1795541147.7344
   },
   "opex_shield": {
     "date": "2026-11-24",
