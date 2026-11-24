@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795520923.287,
-  "updated_at_et": "11-24 06:48 ET",
-  "updated_at_kst": "20:48 KST",
+  "updated_at_ts": 1795521039.019,
+  "updated_at_et": "11-24 06:50 ET",
+  "updated_at_kst": "20:50 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1130,6 +1130,13 @@
     ],
     "META": [
       {
+        "title": "Meta Platforms (META) Sees $240.4 Million in Net ETF Buying on Friday",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/meta-platforms-meta-sees-240-110128528.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 06:01 ET",
+        "pub_ts": 1795518088.0
+      },
+      {
         "title": "Why 1 Billionaire Investor Just Poured $3 Billion Into Amazon, Meta, and Alphabet",
         "url": "https://www.fool.com/investing/2026/11/24/why-one-billionaire-investor-just-poured-usd3-billion-into-amazon-meta-and-alphabet/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1156,23 +1163,9 @@
         "source": "Yahoo Finance",
         "time": "11-23 22:47 ET",
         "pub_ts": 1795492068.0
-      },
-      {
-        "title": "Mark Zuckerberg Has Collected Nearly $2 Billion in Dividends From the Stock He Started in a Dorm Room. It Now Pays Him About $2 Million a Day",
-        "url": "https://247wallst.com/investing/2026/11/23/mark-zuckerberg-has-collected-nearly-2-billion-in-dividends-from-the-stock-he-started-in-a-dorm-room-it-now-pays-him-about-2-million-a-day/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 21:43 ET",
-        "pub_ts": 1795488186.0
       }
     ],
     "GOOGL": [
-      {
-        "title": "Google's Gemini 4 Neon gains momentum ahead of OpenAI, data shows",
-        "url": "https://finance.yahoo.com/video/googles-gemini-4-neon-gains-momentum-ahead-of-openai-data-shows-223324082.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 17:33 ET",
-        "pub_ts": 1795473204.0
-      },
       {
         "title": "Google and Meta face massive fines for addictive features",
         "url": "https://www.independent.co.uk/tech/google-meta-fine-internet-safety-australia-b3090456.html?.tsrc=rss",
@@ -1181,25 +1174,32 @@
         "pub_ts": 1795515030.0
       },
       {
-        "title": "Alphabet (GOOG) Sees $310.5 Million in Net ETF Buying on Nov. 20",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/alphabet-goog-sees-310-5-110112722.html?.tsrc=rss",
+        "title": "Jim Cramer Calls CrowdStrike’s Zscaler Deal the Biggest in Cybersecurity History. What It Means for Both Stocks",
+        "url": "https://247wallst.com/investing/2026/11/24/jim-cramer-calls-crowdstrikes-zscaler-deal-the-biggest-in-cybersecurity-history-what-it-means-for-both-stocks/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 06:01 ET",
-        "pub_ts": 1795518072.0
+        "time": "11-24 06:17 ET",
+        "pub_ts": 1795519024.0
       },
       {
-        "title": "Why 1 Billionaire Investor Just Poured $3 Billion Into Amazon, Meta, and Alphabet",
-        "url": "https://www.fool.com/investing/2026/11/24/why-one-billionaire-investor-just-poured-usd3-billion-into-amazon-meta-and-alphabet/?.tsrc=rss",
+        "title": "Can Adobe Stock Rise 30% From Here?",
+        "url": "https://www.trefis.com/stock/adbe/articles/628292/can-adobe-stock-rise-30-from-here/2026-11-24?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 05:35 ET",
-        "pub_ts": 1795516502.0
+        "time": "11-24 06:07 ET",
+        "pub_ts": 1795518467.0
       },
       {
-        "title": "Trump Threatens a “Tremendous Tax” on Overseas Data Centers. That’s a Big Problem for Microsoft, Amazon and Alphabet",
-        "url": "https://www.tikr.com/blog/trump-threatens-a-tremendous-tax-on-overseas-data-centers-thats-a-big-problem-for-microsoft-amazon-and-alphabet?ref=yahoofinance&tlnk=yf-261124-p3fx6248&.tsrc=rss",
+        "title": "iShares Russell 1000 Growth (IWF) Buys $22.7 Million More Apple on Nov. 20",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/ishares-russell-1000-growth-iwf-110440903.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 05:20 ET",
-        "pub_ts": 1795515621.0
+        "time": "11-24 06:04 ET",
+        "pub_ts": 1795518280.0
+      },
+      {
+        "title": "JPMorgan U.S. Tech Leaders (JTEK) Sells $27.7 Million of Broadcom on Nov. 20",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/jpmorgan-u-tech-leaders-jtek-110436195.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 06:04 ET",
+        "pub_ts": 1795518276.0
       }
     ],
     "MSFT": [
@@ -1241,42 +1241,49 @@
     ],
     "AAPL": [
       {
-        "title": "ETFs Bought $1.00 Billion of Apple (AAPL) on Nov. 20",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-bought-1-00-billion-110043452.html?.tsrc=rss",
+        "title": "Invesco NASDAQ 100 ETF (QQQM) Adds Apple and Microsoft on Friday",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/invesco-nasdaq-100-etf-qqqm-110444816.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 06:00 ET",
-        "pub_ts": 1795518043.0
+        "time": "11-24 06:04 ET",
+        "pub_ts": 1795518284.0
       },
       {
-        "title": "Apple Is Barely Off Its High as Chips Crash. A Strategist Says It “Definitely Needs to Correct”",
-        "url": "https://www.tikr.com/blog/apple-is-barely-off-its-high-as-chips-crash-a-strategist-says-it-definitely-needs-to-correct?ref=yahoofinance&tlnk=yf-261124-vcm3jcr2&.tsrc=rss",
+        "title": "iShares Russell 1000 Growth (IWF) Buys $22.7 Million More Apple on Nov. 20",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/ishares-russell-1000-growth-iwf-110440903.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 02:53 ET",
-        "pub_ts": 1795506792.0
+        "time": "11-24 06:04 ET",
+        "pub_ts": 1795518280.0
       },
       {
-        "title": "Apple's five-device plan creates an iPhone buying dilemma",
-        "url": "https://www.thestreet.com/technology/apples-five-device-plan-creates-an-iphone-buying-dilemma?.tsrc=rss",
+        "title": "What ProShares Trust (TQQQ) Bought: Apple Leads on Friday",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/proshares-trust-tqqq-bought-apple-110432486.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 23:17 ET",
-        "pub_ts": 1795493820.0
+        "time": "11-24 06:04 ET",
+        "pub_ts": 1795518272.0
       },
       {
-        "title": "Apple vs. Broadcom: Comparing Revenue Trends Amid the Artificial Intelligence Boom",
-        "url": "https://www.fool.com/coverage/charts/2026/11/23/apple-vs-broadcom-comparing-revenue-trends-amid-the-artificial-intelligence-boom/?.tsrc=rss",
+        "title": "State Street Technology SPDR (XLK) Buys $87.3 Million More Apple on Friday",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/state-street-technology-spdr-xlk-110344271.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 15:16 ET",
-        "pub_ts": 1795464990.0
+        "time": "11-24 06:03 ET",
+        "pub_ts": 1795518224.0
       },
       {
-        "title": "Nvidia Is Now Second To Apple In The World’s Most Valued Companies On Jensen Huang Optimism",
-        "url": "https://stocktwits.com/news-articles/markets/equity/nvidia-is-now-second-to-apple-in-the-world-s-most-valued-companies-on-jensen-huang-optimism/cNbpeYcR9j0?.tsrc=rss",
+        "title": "Franklin Systematic Style Premia (FLSP) Adds Costco and Apple on Nov. 20",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/franklin-systematic-style-premia-flsp-110340749.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 12:25 ET",
-        "pub_ts": 1795454730.0
+        "time": "11-24 06:03 ET",
+        "pub_ts": 1795518220.0
       }
     ],
     "PLTR": [
+      {
+        "title": "Tesla Leads Goldman's Hedge Fund Short List With $26.4 Billion in Bearish Bets",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/tesla-leads-goldmans-hedge-fund-110429117.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 06:04 ET",
+        "pub_ts": 1795518269.0
+      },
       {
         "title": "Palantir Rips 10% to Lead Software Stocks. Cloudflare and ServiceNow Also Join ‘Jensen Rally’",
         "url": "https://247wallst.com/videos/palantir-rips-10-to-lead-software-stocks-cloudflare-and-servicenow-also-join-jensen-rally/?.tsrc=rss",
@@ -1304,13 +1311,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 12:31 ET",
         "pub_ts": 1795455067.0
-      },
-      {
-        "title": "Why Palantir Stock Popped Today",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/why-palantir-stock-popped-today-162850403.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 11:28 ET",
-        "pub_ts": 1795451330.0
       }
     ],
     "NOW": [
@@ -1352,6 +1352,13 @@
     ],
     "AMZN": [
       {
+        "title": "ARK Autonomous Tech & Robotics (ARKQ) Buys $214.9 Million More Tesla on Nov. 20",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/ark-autonomous-tech-robotics-arkq-110308252.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 06:03 ET",
+        "pub_ts": 1795518188.0
+      },
+      {
         "title": "Amazon (AMZN) Sees $473.6 Million in Net ETF Buying on Friday",
         "url": "https://finance.yahoo.com/markets/stocks/articles/amazon-amzn-sees-473-6-110056608.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1378,13 +1385,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 05:09 ET",
         "pub_ts": 1795514956.0
-      },
-      {
-        "title": "Anthropic’s IPO Safety Net Is Gone: Morgan Stanley “Can No Longer” Buy Below $83. That’s a Risk for Amazon",
-        "url": "https://www.tikr.com/blog/anthropics-ipo-safety-net-is-gone-morgan-stanley-can-no-longer-buy-below-83-thats-a-risk-for-amazon?ref=yahoofinance&tlnk=yf-261124-vcwwm7x7&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 04:50 ET",
-        "pub_ts": 1795513830.0
       }
     ],
     "CRWV": [
@@ -3306,14 +3306,14 @@
     "QCOM": 1795520923.287369,
     "AVGO": 1795520923.287369,
     "AMAT": 1795520923.287369,
-    "META": 1795519448.4909406,
-    "GOOGL": 1795519448.4909406,
+    "META": 1795521039.0186293,
+    "GOOGL": 1795521039.0186293,
     "MSFT": 1795520923.287369,
-    "AAPL": 1795519448.4909406,
-    "PLTR": 1795519448.4909406,
-    "NOW": 1795519448.4909406,
-    "AMZN": 1795519448.4909406,
-    "CRWV": 1795519448.4909406,
+    "AAPL": 1795521039.0186293,
+    "PLTR": 1795521039.0186293,
+    "NOW": 1795521039.0186293,
+    "AMZN": 1795521039.0186293,
+    "CRWV": 1795521039.0186293,
     "NBIS": 1795519557.5820932,
     "APLD": 1795519883.0000913,
     "VST": 1795519883.0000913,
