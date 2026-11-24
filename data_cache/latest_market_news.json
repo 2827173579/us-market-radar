@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795527123.37,
-  "updated_at_et": "11-24 08:32 ET",
-  "updated_at_kst": "22:32 KST",
+  "updated_at_ts": 1795527233.206,
+  "updated_at_et": "11-24 08:33 ET",
+  "updated_at_kst": "22:33 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1193,11 +1193,11 @@
         "pub_ts": 1795522933.0
       },
       {
-        "title": "OpenAI’s Greg Brockman: “The World Is Not Building Enough Compute.” Wall Street Just Stopped Raising Capex Forecasts",
-        "url": "https://www.tikr.com/blog/openais-greg-brockman-the-world-is-not-building-enough-compute-wall-street-just-stopped-raising-capex-forecasts?ref=yahoofinance&tlnk=yf-261124-777pg8fq&.tsrc=rss",
+        "title": "Jensen Huang’s Return “Could Be Negative for Anthropic,” David Faber Warns. That’s a Risk for Amazon and Alphabet",
+        "url": "https://www.tikr.com/blog/jensen-huangs-return-could-be-negative-for-anthropic-david-faber-warns-thats-a-risk-for-amazon-and-alphabet?ref=yahoofinance&tlnk=yf-261124-4vhfv7ww&.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 07:05 ET",
-        "pub_ts": 1795521904.0
+        "time": "11-24 07:06 ET",
+        "pub_ts": 1795521960.0
       }
     ],
     "MSFT": [
@@ -1350,6 +1350,13 @@
     ],
     "AMZN": [
       {
+        "title": "Amazon To Pull Unauthorized Victoria's Secret Listings On Thanksgiving",
+        "url": "https://www.mediapost.com/publications/article/419642/amazon-to-pull-unauthorized-victorias-secret-list.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 08:00 ET",
+        "pub_ts": 1795525200.0
+      },
+      {
         "title": "ZonPrep Announces Las Vegas Facility, Expanding Its Amazon Supply Chain Network West",
         "url": "https://finance.yahoo.com/small-business/articles/zonprep-announces-las-vegas-facility-122000834.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1371,18 +1378,11 @@
         "pub_ts": 1795522386.0
       },
       {
-        "title": "ARK Autonomous Tech & Robotics (ARKQ) Buys $214.9 Million More Tesla on Nov. 20",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/ark-autonomous-tech-robotics-arkq-110308252.html?.tsrc=rss",
+        "title": "Jensen Huang’s Return “Could Be Negative for Anthropic,” David Faber Warns. That’s a Risk for Amazon and Alphabet",
+        "url": "https://www.tikr.com/blog/jensen-huangs-return-could-be-negative-for-anthropic-david-faber-warns-thats-a-risk-for-amazon-and-alphabet?ref=yahoofinance&tlnk=yf-261124-4vhfv7ww&.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 06:03 ET",
-        "pub_ts": 1795518188.0
-      },
-      {
-        "title": "Amazon (AMZN) Sees $473.6 Million in Net ETF Buying on Friday",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/amazon-amzn-sees-473-6-110056608.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 06:00 ET",
-        "pub_ts": 1795518056.0
+        "time": "11-24 07:06 ET",
+        "pub_ts": 1795521960.0
       }
     ],
     "CRWV": [
@@ -3304,14 +3304,14 @@
     "QCOM": 1795527123.3698816,
     "AVGO": 1795527123.3698816,
     "AMAT": 1795527123.3698816,
-    "META": 1795525682.3370814,
-    "GOOGL": 1795525682.3370814,
+    "META": 1795527233.205637,
+    "GOOGL": 1795527233.205637,
     "MSFT": 1795527123.3698816,
-    "AAPL": 1795525682.3370814,
-    "PLTR": 1795525682.3370814,
-    "NOW": 1795525682.3370814,
-    "AMZN": 1795525682.3370814,
-    "CRWV": 1795525682.3370814,
+    "AAPL": 1795527233.205637,
+    "PLTR": 1795527233.205637,
+    "NOW": 1795527233.205637,
+    "AMZN": 1795527233.205637,
+    "CRWV": 1795527233.205637,
     "NBIS": 1795525791.8784165,
     "APLD": 1795526131.5714948,
     "VST": 1795526131.5714948,
