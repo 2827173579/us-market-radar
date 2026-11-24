@@ -82,12 +82,12 @@
       "last_notified_at": 0.0
     },
     "DIA": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1795511207.0124109
     },
     "IWM": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1795511207.0124109
     },
     "IGV": {
       "state": "NORMAL",
@@ -135,7 +135,7 @@
     },
     "APLD": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1795503943.444025
+      "last_notified_at": 1795511207.0124109
     },
     "CRDO": {
       "state": "STOP_LOSS",
