@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795499609.561,
-  "updated_at_et": "11-24 00:53 ET",
-  "updated_at_kst": "14:53 KST",
+  "updated_at_ts": 1795499718.601,
+  "updated_at_et": "11-24 00:55 ET",
+  "updated_at_kst": "14:55 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1167,6 +1167,13 @@
         "pub_ts": 1795473204.0
       },
       {
+        "title": "Not Starlink. Not Starship. This SpaceX Business Could Be Worth $80 Billion on Its Own.",
+        "url": "https://www.fool.com/investing/2026/11/24/not-starlink-not-starship-this-spacex-business-could-be-worth-usd80-billion-on-its-own/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 00:50 ET",
+        "pub_ts": 1795499402.0
+      },
+      {
         "title": "1966 Or 1995: Which Way Does America's $2.1 Trillion Deficit Go?",
         "url": "https://www.trefis.com/stock/spy/articles/627413/1966-or-1995-which-way-does-america-s-2-1-trillion-deficit-go/2026-11-23?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1186,13 +1193,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 19:42 ET",
         "pub_ts": 1795480922.0
-      },
-      {
-        "title": "Is Amazon's Profit Riskier Than It Looks?",
-        "url": "https://www.trefis.com/stock/amzn/articles/627559/is-amazon-s-profit-riskier-than-it-looks/2026-11-23?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 19:25 ET",
-        "pub_ts": 1795479913.0
       }
     ],
     "MSFT": [
@@ -3290,23 +3290,23 @@
     "TLT": 1795499609.5613153,
     "GLD": 1795499609.5613153,
     "SQQQ": 1795499609.5613153,
-    "TSM": 1795498196.6255133,
+    "TSM": 1795499718.6012428,
     "VIXY": 1795499609.5613153,
     "SOXS": 1795499609.5613153,
     "NVDA": 1795499609.5613153,
-    "AMD": 1795498196.6255133,
-    "ASML": 1795498196.6255133,
-    "QCOM": 1795498196.6255133,
-    "AVGO": 1795498196.6255133,
-    "AMAT": 1795498196.6255133,
-    "META": 1795498196.6255133,
-    "GOOGL": 1795498196.6255133,
-    "MSFT": 1795498196.6255133,
-    "AAPL": 1795498196.6255133,
-    "PLTR": 1795498196.6255133,
-    "NOW": 1795498196.6255133,
-    "AMZN": 1795498196.6255133,
-    "CRWV": 1795498196.6255133,
+    "AMD": 1795499718.6012428,
+    "ASML": 1795499718.6012428,
+    "QCOM": 1795499718.6012428,
+    "AVGO": 1795499718.6012428,
+    "AMAT": 1795499718.6012428,
+    "META": 1795499718.6012428,
+    "GOOGL": 1795499718.6012428,
+    "MSFT": 1795499718.6012428,
+    "AAPL": 1795499718.6012428,
+    "PLTR": 1795499718.6012428,
+    "NOW": 1795499718.6012428,
+    "AMZN": 1795499718.6012428,
+    "CRWV": 1795499718.6012428,
     "NBIS": 1795498308.8532047,
     "APLD": 1795498636.3144772,
     "VST": 1795498636.3144772,
@@ -3357,7 +3357,7 @@
     "GLW": 1795498636.3144772,
     "ANT": 1795498753.3548973,
     "XAUUSD": 1795498971.4911437,
-    "KOSPI": 1795498196.6255133
+    "KOSPI": 1795499718.6012428
   },
   "opex_shield": {
     "date": "2026-11-24",
