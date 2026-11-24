@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795496369.198,
-  "updated_at_et": "11-23 23:59 ET",
-  "updated_at_kst": "13:59 KST",
+  "updated_at_ts": 1795496473.379,
+  "updated_at_et": "11-24 00:01 ET",
+  "updated_at_kst": "14:01 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -3364,7 +3364,7 @@
     "KOSPI": 1795495092.8219213
   },
   "opex_shield": {
-    "date": "2026-11-23",
+    "date": "2026-11-24",
     "active": false,
     "timing": "NONE",
     "kind": "NONE",
@@ -3372,7 +3372,7 @@
     "opex_date": "2026-11-20",
     "next_opex_date": "2026-12-18",
     "next_is_quad_witching": true,
-    "days_to_opex": 25,
+    "days_to_opex": 24,
     "badge": "",
     "headline": "",
     "detail": ""
@@ -3384,7 +3384,7 @@
     "event_name": "",
     "minutes_left": 0,
     "opex_shield": {
-      "date": "2026-11-23",
+      "date": "2026-11-24",
       "active": false,
       "timing": "NONE",
       "kind": "NONE",
@@ -3392,7 +3392,7 @@
       "opex_date": "2026-11-20",
       "next_opex_date": "2026-12-18",
       "next_is_quad_witching": true,
-      "days_to_opex": 25,
+      "days_to_opex": 24,
       "badge": "",
       "headline": "",
       "detail": ""
