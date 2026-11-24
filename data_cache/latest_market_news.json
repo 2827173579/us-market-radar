@@ -1,9 +1,23 @@
 {
-  "updated_at_ts": 1795524685.704,
-  "updated_at_et": "11-24 07:51 ET",
-  "updated_at_kst": "21:51 KST",
+  "updated_at_ts": 1795524795.111,
+  "updated_at_et": "11-24 07:53 ET",
+  "updated_at_kst": "21:53 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261124205205744800",
+      "title": "整理：每日美股市场要闻速递（2026-11-24）",
+      "summary": "个股新闻 1. 哔哩哔哩(BILI.O)第三季度营收83.2亿元同比增长8%；经调整净利润8.3亿元，同比增长5%。 2. 宝尊电商(BZUN.O)在2026年第三季度业绩披露中表示，GAP正稳步向2026年超20亿元收入规模目标迈进。 3. 老虎证券(TIGR.O)2026年第三季度未经审计财务业绩，期内实现营收1.726亿美元，同比下降1.5%。 4. 亚马逊(AMZN.O)拟斥资约75亿美元收购Decart，加码Trainium芯片挑战英伟达。 5. 礼来(LLY.N)：有八款肿瘤药物处于或即将进入后期开发阶段，有望在未来五年内上市。 6. 赛诺菲(SNY.O)将收购生物制药公司Insmed，交易总股权价值约410亿美元。 7. 百思买(BBY.N)2027财年第三季度营收102.36亿美元，同比增长5.8%；净利润3.53亿美元。 8. 金山云(KC.O)：三季度实现收入与盈利双增长，营收34.8亿元，创单季历史新高。 9. 消息称美国国防部正与通用汽车(GM.N)、福特汽车(F.N)就无人机制造进行洽谈。",
+      "keywords": [
+        "芯片",
+        "英伟达"
+      ],
+      "pub_ts": 1795524725.0,
+      "time_et": "11-24 07:52 ET",
+      "time_bj": "20:52 BJ",
+      "time_kst": "21:52 KST",
+      "time_display": "07:52 ET / 20:52 BJ"
+    },
     {
       "id": "20261124201721089800",
       "title": "美银推演两种极端行情：标普500上看8888、下看6666点",
@@ -336,19 +350,6 @@
       "time_bj": "15:00 BJ",
       "time_kst": "16:00 KST",
       "time_display": "02:00 ET / 15:00 BJ"
-    },
-    {
-      "id": "20261124145039032800",
-      "title": "从闪电辞职到火速复职：黄仁勋与英伟达董事会的“口头契约”困局",
-      "summary": "市值蒸发6000亿美元后，英伟达董事会火速请回黄仁勋。这场戏剧性风波揭示了科技巨头的一大治理盲区……",
-      "keywords": [
-        "英伟达"
-      ],
-      "pub_ts": 1795503039.0,
-      "time_et": "11-24 01:50 ET",
-      "time_bj": "14:50 BJ",
-      "time_kst": "15:50 KST",
-      "time_display": "01:50 ET / 14:50 BJ"
     }
   ],
   "ticker_news": {
@@ -2204,6 +2205,20 @@
     ],
     "HPE": [
       {
+        "title": "Premarket movers: Nvidia slips; HPE, Semtech fall",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/premarket-movers-nvidia-slips-hpe-122424595.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 07:24 ET",
+        "pub_ts": 1795523064.0
+      },
+      {
+        "title": "Wells Fargo Trims HPE Target Despite Surging AI Orders",
+        "url": "https://finance.yahoo.com/technology/ai/articles/wells-fargo-trims-hpe-target-121903955.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 07:19 ET",
+        "pub_ts": 1795522743.0
+      },
+      {
         "title": "HPE Expects Thinner AI Margins. Is Dell Next?",
         "url": "https://www.trefis.com/stock/hpe/articles/628212/hpe-expects-thinner-ai-margins-is-dell-next/2026-11-24?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2223,20 +2238,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 06:09 ET",
         "pub_ts": 1795518549.0
-      },
-      {
-        "title": "HPE Stock Tumbles After Earnings Beat. Strong AI Demand Isn’t Enough.",
-        "url": "https://finance.yahoo.com/m/42d4b2b6-fa8b-3c24-8736-09ba00afc7b1/hpe-stock-tumbles-after.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 05:53 ET",
-        "pub_ts": 1795517580.0
-      },
-      {
-        "title": "HPE Stock What Changed After Earnings Beat",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/hpe-stock-changed-earnings-beat-101147443.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 05:11 ET",
-        "pub_ts": 1795515107.0
       }
     ],
     "DELL": [
@@ -3335,12 +3336,12 @@
     "KO": 1795524685.7043514,
     "FLY": 1795524685.7043514,
     "INTC": 1795524685.7043514,
-    "VRT": 1795523244.2963064,
-    "HPE": 1795523244.2963064,
-    "DELL": 1795523244.2963064,
-    "OKLO": 1795523244.2963064,
-    "CEG": 1795523244.2963064,
-    "FPS": 1795523244.2963064,
+    "VRT": 1795524795.1114874,
+    "HPE": 1795524795.1114874,
+    "DELL": 1795524795.1114874,
+    "OKLO": 1795524795.1114874,
+    "CEG": 1795524795.1114874,
+    "FPS": 1795524795.1114874,
     "MU": 1795524246.536039,
     "SKHY": 1795524246.536039,
     "WDC": 1795524246.536039,
@@ -3356,8 +3357,8 @@
     "NKE": 1795524575.0643048,
     "MCD": 1795524575.0643048,
     "PEP": 1795523357.0855243,
-    "XOM": 1795523244.2963064,
-    "JPM": 1795523244.2963064,
+    "XOM": 1795524795.1114874,
+    "JPM": 1795524795.1114874,
     "WMT": 1795523357.0855243,
     "V": 1795524575.0643048,
     "CAT": 1795523357.0855243,
@@ -3384,7 +3385,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (07:17 ET / 20:17 BJ) [美联储] [芯片] [标普]：美银首席警告，明年市场可能面临多重变数：油价大跌及美国两党就AI和医疗保障达成妥协，或成利好；而AI信用风险、芯片暴跌及美联储超预期强硬，则构成威胁。点击查看",
+    "detail": "⚡ 最新核心快讯 (07:52 ET / 20:52 BJ) [芯片] [英伟达]：个股新闻 1. 哔哩哔哩(BILI.O)第三季度营收83.2亿元同比增长8%；经调整净利润8.3亿元，同比增长5%。 2. 宝尊电商(BZUN.O)在2026年第三季度业绩披露中表示，GAP",
     "event_name": "",
     "minutes_left": 0,
     "opex_shield": {
