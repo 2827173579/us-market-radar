@@ -1,9 +1,39 @@
 {
-  "updated_at_ts": 1795533813.7,
-  "updated_at_et": "11-24 10:23 ET",
-  "updated_at_kst": "00:23 KST",
+  "updated_at_ts": 1795533921.072,
+  "updated_at_et": "11-24 10:25 ET",
+  "updated_at_kst": "00:25 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261124232458535800",
+      "title": "【PCE通胀公布前美联储鹰派信号升温 金价下挫】 11月24日讯，周二，受美联储官员释放…",
+      "summary": "【PCE通胀公布前美联储鹰派信号升温 金价下挫】 11月24日讯，周二，受美联储官员释放鹰派信号以及市场普遍预期美联储将在12月加息的影响，黄金价格走低。投资者正等待美国通胀数据出炉，以判断这些数据可能如何影响美联储的政策路径。现货黄金现跌1.2%，报3590美元/盎司。现货白银日内跌幅一度扩大至4.00%，报41.43美元/盎司。Forex.com市场分析师法瓦德·拉扎克扎达表示：“由于以美联储为首的各国央行立场偏鹰派，黄金难以获得有意义的支撑，贵金属价格因此持续承压。”“如果周三的PCE数据强于预期，可能会推高市场对2027年及以后美联储进一步加息的预期，但对12月加息预期的影响可能不大，因为市场目前已完全消化了美联储届时可能加息的预期。”",
+      "keywords": [
+        "美联储",
+        "加息",
+        "PCE"
+      ],
+      "pub_ts": 1795533898.0,
+      "time_et": "11-24 10:24 ET",
+      "time_bj": "23:24 BJ",
+      "time_kst": "00:24 KST",
+      "time_display": "10:24 ET / 23:24 BJ"
+    },
+    {
+      "id": "20261124232436990800",
+      "title": "【费城半导体指数日内跌8%】 11月24日讯，费城半导体指数日内跌8%。AMD(AMD.…",
+      "summary": "【费城半导体指数日内跌8%】 11月24日讯，费城半导体指数日内跌8%。AMD(AMD.O)、美光科技(MU.O)跌超10%，Arm(ARM.O)跌约9%，迈威尔科技(MRVL.O)跌超8%，英伟达(NVDA.O)跌超7%，英特尔(INTC.O)跌超7%，台积电(TSM.N)跌超5%。",
+      "keywords": [
+        "半导体",
+        "英伟达",
+        "台积电"
+      ],
+      "pub_ts": 1795533876.0,
+      "time_et": "11-24 10:24 ET",
+      "time_bj": "23:24 BJ",
+      "time_kst": "00:24 KST",
+      "time_display": "10:24 ET / 23:24 BJ"
+    },
     {
       "id": "20261124230539484800",
       "title": "整理：欧盘美盘重要新闻汇总（2026-11-24）",
@@ -317,32 +347,6 @@
       "time_bj": "19:02 BJ",
       "time_kst": "20:02 KST",
       "time_display": "06:02 ET / 19:02 BJ"
-    },
-    {
-      "id": "20261124185108071800",
-      "title": "【绕开特朗普 泽连斯基计划利用美国新一届国会施压普京】 11月24日讯，乌克兰总统泽连斯…",
-      "summary": "【绕开特朗普 泽连斯基计划利用美国新一届国会施压普京】 11月24日讯，乌克兰总统泽连斯基表示，如果美国总统特朗普未能说服俄罗斯总统普京在今年年底前结束战争，他将寻求新一届由民主党掌控的美国国会的支持，以加大对俄罗斯的施压。泽连斯基称，如果无法达成基辅方面能够接受的和平协议，乌克兰将寻求美国提供强有力的军事援助，并对俄罗斯实施更严厉的制裁。“必须给予乌克兰足够的支持，并实施足够严厉的制裁，从而向俄罗斯发出明确信号，”他说，“现在是坐到谈判桌前结束战争的时候了。”这些言论是迄今为止最明确的信号，表明泽连斯基打算利用特朗普近期在选举中受挫的局面，推动俄罗斯进行和平谈判。",
-      "keywords": [
-        "特朗普"
-      ],
-      "pub_ts": 1795517468.0,
-      "time_et": "11-24 05:51 ET",
-      "time_bj": "18:51 BJ",
-      "time_kst": "19:51 KST",
-      "time_display": "05:51 ET / 18:51 BJ"
-    },
-    {
-      "id": "20261124184254592800",
-      "title": "市场消息：如果特朗普的和平努力失败，泽连斯基希望美国新一届国会向普京施压。",
-      "summary": "市场消息：如果特朗普的和平努力失败，泽连斯基希望美国新一届国会向普京施压。",
-      "keywords": [
-        "特朗普"
-      ],
-      "pub_ts": 1795516974.0,
-      "time_et": "11-24 05:42 ET",
-      "time_bj": "18:42 BJ",
-      "time_kst": "19:42 KST",
-      "time_display": "05:42 ET / 18:42 BJ"
     }
   ],
   "ticker_news": {
@@ -1761,6 +1765,13 @@
         "pub_ts": 1795531555.0
       },
       {
+        "title": "“Tell Me Why I am Wrong”: Bill Ackman Lambasts Looming Fed Interest Rate Hike",
+        "url": "https://www.tikr.com/blog/tell-me-why-i-am-wrong-bill-ackman-lambasts-looming-fed-interest-rate-hike?ref=yahoofinance&tlnk=yf-261124-r3mj4vmj&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 10:03 ET",
+        "pub_ts": 1795532590.0
+      },
+      {
         "title": "Billionaire Bill Ackman Just Warned the Fed Could Trigger a Recession on December 9. Here’s How",
         "url": "https://247wallst.com/investing/2026/11/24/billionaire-bill-ackman-just-warned-the-fed-could-trigger-a-recession-on-december-9-heres-how/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1780,13 +1791,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 08:45 ET",
         "pub_ts": 1795527909.0
-      },
-      {
-        "title": "Tesla, SpaceX Reportedly Pick Board Members To Negotiate Elon Musk's Mega Merger",
-        "url": "https://finance.yahoo.com/m/d4400d8c-dfaf-3382-a360-877e01e80aec/tesla%2C-spacex-reportedly-pick.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 08:44 ET",
-        "pub_ts": 1795527854.0
       }
     ],
     "ASTS": [
@@ -1939,6 +1943,13 @@
     ],
     "TSLA": [
       {
+        "title": "Have robotaxis hit a tipping point? Wall Street and experts are split.",
+        "url": "https://finance.yahoo.com/markets/stocks/article/have-robotaxis-hit-a-tipping-point-wall-street-and-experts-are-split-150000412.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 10:00 ET",
+        "pub_ts": 1795532400.0
+      },
+      {
         "title": "Tesla and SpaceX assemble deal teams for a merger that could give Musk majority control",
         "url": "https://finance.yahoo.com/technology/article/tesla-and-spacex-assemble-deal-teams-for-a-merger-that-could-give-musk-majority-control-144555932.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1946,32 +1957,25 @@
         "pub_ts": 1795531555.0
       },
       {
+        "title": "Lucid, Uber Edge Closer To Taking On Tesla’s Robotaxis – Public Launch Targeted For Q1 2027",
+        "url": "https://stocktwits.com/news-articles/markets/equity/lucid-uber-edge-closer-to-taking-on-tesla-s-robotaxis-public-launch-targeted-for-q1-2027/cNbsfJiR9kp?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 10:10 ET",
+        "pub_ts": 1795533037.0
+      },
+      {
+        "title": "Tesla’s Europe Sales Soar 84%",
+        "url": "https://247wallst.com/investing/2026/11/24/teslas-europe-sales-soar-84/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 09:56 ET",
+        "pub_ts": 1795532212.0
+      },
+      {
         "title": "Is Monness Crespi & Hardt Wrong to Give Up on Tesla? Wall Street Still Sees $412",
         "url": "https://www.tikr.com/blog/monness-crespi-hardt-tesla-downgrade-neutral?ref=yahoofinance&tlnk=yf-261124-q6vc2444&.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-24 09:05 ET",
         "pub_ts": 1795529132.0
-      },
-      {
-        "title": "Should You Trim Or Add To Your Tesla Position?",
-        "url": "https://www.trefis.com/stock/tsla/articles/628369/should-you-trim-or-add-to-your-tesla-position/2026-11-24?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 08:54 ET",
-        "pub_ts": 1795528442.0
-      },
-      {
-        "title": "Why Tesla-SpaceX Merger Talks Face ‘More Friction Than People Assume’",
-        "url": "https://www.benzinga.com/markets/prediction-markets/26/11/63575567/tesla-spacex-merger-talks-friction?utm_source=yahooFinance&utm_campaign=partner_feed&utm_medium=referral&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 08:45 ET",
-        "pub_ts": 1795527909.0
-      },
-      {
-        "title": "Tesla, SpaceX Reportedly Pick Board Members To Negotiate Elon Musk's Mega Merger",
-        "url": "https://finance.yahoo.com/m/d4400d8c-dfaf-3382-a360-877e01e80aec/tesla%2C-spacex-reportedly-pick.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 08:44 ET",
-        "pub_ts": 1795527854.0
       }
     ],
     "AXP": [
@@ -2124,6 +2128,13 @@
     ],
     "INTC": [
       {
+        "title": "Marvell Sinks 8%, Intel Down 6% as Chip Stocks Give Back Nvidia’s Record Huang Rally",
+        "url": "https://www.tikr.com/blog/marvell-sinks-8-intel-down-6-as-chip-stocks-give-back-nvidias-record-huang-rally?ref=yahoofinance&tlnk=yf-261124-rjmh24f9&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 10:14 ET",
+        "pub_ts": 1795533299.0
+      },
+      {
         "title": "Global Neural Processor Market Report 2026: Size, Share, Trends, and Forecast to 2030 | Capitalize on 22.2% CAGR as NVIDIA, Apple, Alphabet, and Intel Accelerate Edge AI",
         "url": "https://finance.yahoo.com/technology/ai/articles/global-neural-processor-market-report-144100416.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2150,13 +2161,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 09:38 ET",
         "pub_ts": 1795531080.0
-      },
-      {
-        "title": "Embedded Microprocessor Unit (MPU) Global Market Report 2026 | Capitalize on Edge AI and IoT Growth to $59.18 Billion by 2030 with NVIDIA, Intel, Qualcomm, NXP, and Renesas",
-        "url": "https://finance.yahoo.com/technology/articles/embedded-microprocessor-unit-mpu-global-143600298.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 09:36 ET",
-        "pub_ts": 1795530960.0
       }
     ],
     "VRT": [
@@ -3318,17 +3322,17 @@
     "MRVL": 1795533482.303853,
     "LITE": 1795533482.303853,
     "AAOI": 1795533813.700055,
-    "SPCX": 1795532399.2748246,
+    "SPCX": 1795533921.072062,
     "ASTS": 1795533813.700055,
     "AXTI": 1795533482.303853,
-    "NASA": 1795532399.2748246,
-    "LUNR": 1795532399.2748246,
-    "TSLA": 1795532399.2748246,
-    "AXP": 1795532399.2748246,
+    "NASA": 1795533921.072062,
+    "LUNR": 1795533921.072062,
+    "TSLA": 1795533921.072062,
+    "AXP": 1795533921.072062,
     "RKLB": 1795533813.700055,
-    "KO": 1795532399.2748246,
-    "FLY": 1795532399.2748246,
-    "INTC": 1795532399.2748246,
+    "KO": 1795533921.072062,
+    "FLY": 1795533921.072062,
+    "INTC": 1795533921.072062,
     "VRT": 1795532519.427397,
     "HPE": 1795532519.427397,
     "DELL": 1795532519.427397,
@@ -3378,7 +3382,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (10:05 ET / 23:05 BJ) [关税] [特朗普]：国内新闻 1. 商务部公告2024年第46号(《关于加强相关两用物项对美国出口管制的公告》)第二款暂停实施。 2. 央行25日将开展5000亿元7天期逆回购操作，与8000亿元MLF操作。 ",
+    "detail": "⚡ 最新核心快讯 (10:24 ET / 23:24 BJ) [美联储] [加息] [PCE]：【PCE通胀公布前美联储鹰派信号升温 金价下挫】 11月24日讯，周二，受美联储官员释放鹰派信号以及市场普遍预期美联储将在12月加息的影响，黄金价格走低。投资者正等待美国通胀数据出炉，以判断",
     "event_name": "",
     "minutes_left": 0,
     "opex_shield": {
