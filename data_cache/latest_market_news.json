@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795520132.036,
-  "updated_at_et": "11-24 06:35 ET",
-  "updated_at_kst": "20:35 KST",
+  "updated_at_ts": 1795520242.451,
+  "updated_at_et": "11-24 06:37 ET",
+  "updated_at_kst": "20:37 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2573,6 +2573,13 @@
     ],
     "SNDK": [
       {
+        "title": "Sandisk Stock Jumps 15% as Wall Street Sees 192% Upside",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/sandisk-stock-jumps-15-wall-111200041.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 06:12 ET",
+        "pub_ts": 1795518720.0
+      },
+      {
         "title": "Prediction: This Will Be Sandisk’s Stock Price by the End of 2027",
         "url": "https://www.fool.com/investing/2026/11/23/prediction-this-will-be-sandisks-stock-price-by-the-end-of-2027/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2599,13 +2606,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 11:12 ET",
         "pub_ts": 1795450357.0
-      },
-      {
-        "title": "Why Nvidia Rehiring Jensen Huang Is Making Sandisk Stock Skyrocket Today",
-        "url": "https://www.fool.com/investing/2026/11/23/why-nvidia-rehiring-jensen-huang-is-making-sandisk-stock-skyrocket-today/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 11:03 ET",
-        "pub_ts": 1795449825.0
       }
     ],
     "BTC-USD": [
@@ -2647,6 +2647,27 @@
     ],
     "CRWD": [
       {
+        "title": "CrowdStrike Poised For ‘Hyper Growth And Profit,’ Says Guggenheim — Sees 34% Upside In CRWD Stock",
+        "url": "https://stocktwits.com/news-articles/markets/equity/crowdstrike-poised-for-hyper-growth-and-profit-says-guggenheim-sees-34-upside-in-crwd-stock/cNbsEP5R9kg?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 06:20 ET",
+        "pub_ts": 1795519219.0
+      },
+      {
+        "title": "Jim Cramer Calls CrowdStrike’s Zscaler Deal the Biggest in Cybersecurity History. What It Means for Both Stocks",
+        "url": "https://247wallst.com/investing/2026/11/24/jim-cramer-calls-crowdstrikes-zscaler-deal-the-biggest-in-cybersecurity-history-what-it-means-for-both-stocks/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 06:17 ET",
+        "pub_ts": 1795519024.0
+      },
+      {
+        "title": "What iShares Expanded Tech-Software (IGV) Sold: Palo Alto Leads on Friday",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/ishares-expanded-tech-software-igv-110408106.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 06:04 ET",
+        "pub_ts": 1795518248.0
+      },
+      {
         "title": "CrowdStrike to acquire Zscaler in $44bn all-stock deal",
         "url": "https://www.verdict.co.uk/crowdstrike-to-acquire-zscaler/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2659,27 +2680,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 03:43 ET",
         "pub_ts": 1795509787.0
-      },
-      {
-        "title": "CrowdStrike CEO Sees $185B Opportunity, Says Zscaler Deal Will Create A ‘Winning Combination’ Amid Rising AI Threats",
-        "url": "https://stocktwits.com/news-articles/markets/equity/crowdstrike-zscaler-185b-opportunity-ceo-winning-combination/cNbruzKR9jx?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 22:46 ET",
-        "pub_ts": 1795491963.0
-      },
-      {
-        "title": "Nvidia Just Built Agent Security Into Its Chips. What Does That Mean for CrowdStrike?",
-        "url": "https://www.fool.com/investing/2026/11/23/nvidia-just-built-agent-security-into-its-chips-what-does-that-mean-for-crowdstrike/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 22:37 ET",
-        "pub_ts": 1795491422.0
-      },
-      {
-        "title": "CrowdStrike's $43.9 billion deal has a surprising catch",
-        "url": "https://www.thestreet.com/investing/crowdstrikes-43-9-billion-deal-has-a-surprising-catch?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 22:17 ET",
-        "pub_ts": 1795490220.0
       }
     ],
     "ORCL": [
@@ -3017,6 +3017,20 @@
     ],
     "WMT": [
       {
+        "title": "First Trust Alerian NextGen Infra (FTQI) Buys $22 Million More Walmart on Nov. 20",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/first-trust-alerian-nextgen-infra-110348918.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 06:03 ET",
+        "pub_ts": 1795518228.0
+      },
+      {
+        "title": "ETFs Are Buying Walmart (WMT) on Nov. 20",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-buying-walmart-wmt-nov-110151407.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 06:01 ET",
+        "pub_ts": 1795518111.0
+      },
+      {
         "title": "Walmart Just Raised Its Outlook Again. 3 Numbers Show Why Its Scale Advantage Keeps Growing.",
         "url": "https://www.fool.com/investing/2026/11/24/walmart-raised-its-outlook-again-3-numbers-show-why-its-scale-advantage-keeps-growing/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3036,20 +3050,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 18:36 ET",
         "pub_ts": 1795477002.0
-      },
-      {
-        "title": "Nvidia Adds Nearly $1 Trillion in Value as Trump Hails Huang as a “National Treasure.” It’s Still Cheaper Than Walmart",
-        "url": "https://www.tikr.com/blog/nvidia-adds-nearly-1-trillion-in-value-as-trump-hails-huang-as-a-national-treasure-its-still-cheaper-than-walmart?ref=yahoofinance&tlnk=yf-261123-v5m7h4gg&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 17:13 ET",
-        "pub_ts": 1795471980.0
-      },
-      {
-        "title": "Why Walmart and Other Defensive Stocks Are Losing Their Luster",
-        "url": "https://finance.yahoo.com/m/d85b751c-8248-3bbc-9071-97e02ce76f85/why-walmart-and-other.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 15:37 ET",
-        "pub_ts": 1795466220.0
       }
     ],
     "V": [
@@ -3343,27 +3343,27 @@
     "MU": 1795519557.5820932,
     "SKHY": 1795519557.5820932,
     "WDC": 1795519557.5820932,
-    "STX": 1795518671.2977638,
-    "MSTR": 1795518671.2977638,
-    "SNDK": 1795518671.2977638,
+    "STX": 1795520242.4514668,
+    "MSTR": 1795520242.4514668,
+    "SNDK": 1795520242.4514668,
     "BTC-USD": 1795519557.5820932,
-    "CRWD": 1795518671.2977638,
+    "CRWD": 1795520242.4514668,
     "ORCL": 1795519883.0000913,
     "COIN": 1795519883.0000913,
     "LLY": 1795519883.0000913,
     "MRNA": 1795519883.0000913,
     "NKE": 1795519883.0000913,
     "MCD": 1795519883.0000913,
-    "PEP": 1795518671.2977638,
+    "PEP": 1795520242.4514668,
     "XOM": 1795520132.0360165,
     "JPM": 1795520132.0360165,
-    "WMT": 1795518671.2977638,
+    "WMT": 1795520242.4514668,
     "V": 1795519883.0000913,
-    "CAT": 1795518671.2977638,
+    "CAT": 1795520242.4514668,
     "FN": 1795519557.5820932,
     "GLW": 1795519883.0000913,
-    "ANT": 1795518671.2977638,
-    "XAUUSD": 1795518671.2977638,
+    "ANT": 1795520242.4514668,
+    "XAUUSD": 1795520242.4514668,
     "KOSPI": 1795519557.5820932
   },
   "opex_shield": {
