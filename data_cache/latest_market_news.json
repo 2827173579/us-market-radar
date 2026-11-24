@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795500043.91,
-  "updated_at_et": "11-24 01:00 ET",
-  "updated_at_kst": "15:00 KST",
+  "updated_at_ts": 1795500148.998,
+  "updated_at_et": "11-24 01:02 ET",
+  "updated_at_kst": "15:02 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1752,6 +1752,13 @@
     ],
     "SPCX": [
       {
+        "title": "Not Starlink. Not Starship. This SpaceX Business Could Be Worth $80 Billion on Its Own.",
+        "url": "https://www.fool.com/investing/2026/11/24/not-starlink-not-starship-this-spacex-business-could-be-worth-usd80-billion-on-its-own/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 00:50 ET",
+        "pub_ts": 1795499402.0
+      },
+      {
         "title": "Dow Jones Futures: Tech Stocks, Nvidia Snap Back On Jensen Huang's Return; Elon Musk-Led SpaceX, Tesla Rally",
         "url": "https://finance.yahoo.com/m/be493228-4ecf-338d-9017-054d3d6efc36/dow-jones-futures%3A-tech.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1778,13 +1785,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 19:09 ET",
         "pub_ts": 1795478993.0
-      },
-      {
-        "title": "Starlink’s 40x Upgrade Targets 150Mbps to Phones. AST SpaceMobile Has a Big Problem",
-        "url": "https://www.tikr.com/blog/starlinks-40x-upgrade-targets-150mbps-to-phones-ast-spacemobile-has-a-big-problem?ref=yahoofinance&tlnk=yf-261123-m4mrj3j8&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 18:35 ET",
-        "pub_ts": 1795476921.0
       }
     ],
     "ASTS": [
@@ -3308,25 +3308,25 @@
     "AMZN": 1795499718.6012428,
     "CRWV": 1795499718.6012428,
     "NBIS": 1795499828.705564,
-    "APLD": 1795498636.3144772,
-    "VST": 1795498636.3144772,
-    "BE": 1795498636.3144772,
-    "CRDO": 1795498636.3144772,
-    "COHR": 1795498636.3144772,
+    "APLD": 1795500148.9978433,
+    "VST": 1795500148.9978433,
+    "BE": 1795500148.9978433,
+    "CRDO": 1795500148.9978433,
+    "COHR": 1795500148.9978433,
     "MRVL": 1795499828.705564,
     "LITE": 1795499828.705564,
-    "AAOI": 1795498636.3144772,
-    "SPCX": 1795498636.3144772,
-    "ASTS": 1795498636.3144772,
+    "AAOI": 1795500148.9978433,
+    "SPCX": 1795500148.9978433,
+    "ASTS": 1795500148.9978433,
     "AXTI": 1795499828.705564,
-    "NASA": 1795498636.3144772,
-    "LUNR": 1795498636.3144772,
+    "NASA": 1795500148.9978433,
+    "LUNR": 1795500148.9978433,
     "TSLA": 1795498753.3548973,
-    "AXP": 1795498636.3144772,
-    "RKLB": 1795498636.3144772,
-    "KO": 1795498636.3144772,
-    "FLY": 1795498636.3144772,
-    "INTC": 1795498636.3144772,
+    "AXP": 1795500148.9978433,
+    "RKLB": 1795500148.9978433,
+    "KO": 1795500148.9978433,
+    "FLY": 1795500148.9978433,
+    "INTC": 1795500148.9978433,
     "VRT": 1795498753.3548973,
     "HPE": 1795498753.3548973,
     "DELL": 1795498753.3548973,
@@ -3354,7 +3354,7 @@
     "V": 1795499828.705564,
     "CAT": 1795498753.3548973,
     "FN": 1795499828.705564,
-    "GLW": 1795498636.3144772,
+    "GLW": 1795500148.9978433,
     "ANT": 1795498753.3548973,
     "XAUUSD": 1795498971.4911437,
     "KOSPI": 1795499718.6012428
