@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795623179.776,
-  "updated_at_et": "11-25 11:12 ET",
-  "updated_at_kst": "01:12 KST",
+  "updated_at_ts": 1795623228.888,
+  "updated_at_et": "11-25 11:13 ET",
+  "updated_at_kst": "01:13 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -2429,6 +2429,20 @@
         "pub_ts": 1795614318.0
       },
       {
+        "title": "Why Micron Stock Just Dropped Again",
+        "url": "https://www.fool.com/investing/2026/11/25/why-micron-stock-just-dropped-again/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 10:54 ET",
+        "pub_ts": 1795622058.0
+      },
+      {
+        "title": "Micron Stocks Sink 10.47% After BNP Paribas Halves Target on Oversupply Fears",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/micron-stocks-sink-10-47-154807203.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 10:48 ET",
+        "pub_ts": 1795621687.0
+      },
+      {
         "title": "$10,000 In Micron At June's Record Is Now $5,190",
         "url": "https://www.trefis.com/stock/mu/articles/628730/10-000-in-micron-at-june-s-record-is-now-5-190/2026-11-25?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2441,20 +2455,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 09:45 ET",
         "pub_ts": 1795617958.0
-      },
-      {
-        "title": "Micron Falls 7% as a Weaker DRAM Outlook and New Tariffs Hit Memory Stocks; SanDisk Drops 7%: Are Micron and Memory Stocks Now a Value Play?",
-        "url": "https://247wallst.com/investing/2026/11/25/micron-falls-7-as-a-weaker-dram-outlook-and-new-tariffs-hit-memory-stocks-sandisk-drops-7-are-micron-and-memory-stocks-now-a-value-play/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 09:13 ET",
-        "pub_ts": 1795615991.0
-      },
-      {
-        "title": "Micron Stock and Other Memory Plays Will Bear the Brunt of This AI Pain",
-        "url": "https://finance.yahoo.com/m/c60b7c01-7f3d-3700-ad68-951e994a6d38/micron-stock-and-other-memory.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 08:21 ET",
-        "pub_ts": 1795612860.0
       }
     ],
     "SKHY": [
@@ -3354,8 +3354,8 @@
     "BE": 1795622325.1323829,
     "CRDO": 1795622325.1323829,
     "COHR": 1795622325.1323829,
-    "MRVL": 1795621719.9960723,
-    "LITE": 1795621719.9960723,
+    "MRVL": 1795623228.8876057,
+    "LITE": 1795623228.8876057,
     "AAOI": 1795622325.1323829,
     "SPCX": 1795622325.1323829,
     "ASTS": 1795622325.1323829,
@@ -3374,8 +3374,8 @@
     "OKLO": 1795622462.2364194,
     "CEG": 1795622462.2364194,
     "FPS": 1795622462.2364194,
-    "MU": 1795621719.9960723,
-    "SKHY": 1795621719.9960723,
+    "MU": 1795623228.8876057,
+    "SKHY": 1795623228.8876057,
     "WDC": 1795621761.150073,
     "STX": 1795622512.0525706,
     "MSTR": 1795622462.2364194,
@@ -3394,7 +3394,7 @@
     "WMT": 1795622560.8793962,
     "V": 1795622462.2364194,
     "CAT": 1795622560.8793962,
-    "FN": 1795621719.9960723,
+    "FN": 1795623228.8876057,
     "GLW": 1795622325.1323829,
     "ANT": 1795622560.8793962,
     "XAUUSD": 1795622560.8793962,
