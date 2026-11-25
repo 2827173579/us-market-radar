@@ -1,9 +1,23 @@
 {
-  "updated_at_ts": 1795576135.854,
-  "updated_at_et": "11-24 22:08 ET",
-  "updated_at_kst": "12:08 KST",
+  "updated_at_ts": 1795576267.9,
+  "updated_at_et": "11-24 22:11 ET",
+  "updated_at_kst": "12:11 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261125110844703800",
+      "title": "整理：每日存储市场要闻速递（2026-11-25）",
+      "summary": "1. 报道：英伟达AI GPU新单交货周期拉长，RTX60系显卡量产或后移。 2. 2027年手机厂商出货目标落地，多数厂家下调预期。 3. 高盛预计2027年DRAM供应仍紧，2028年缺口或收窄。 4. 法巴下调美光评级，预计DRAM与NAND最早明年年中趋于平衡。 5. 美光提交股东大会文件，拟增加2,000万股股权激励储备。 6. 消息称三星HBM基础裸片产能严重不足，正考虑扩产晶圆代工。 7. CFM称行业及渠道SSD报价下调，新增2Tb QLC晶圆报价。 8. DRAM现货报价分化，DDR5 16Gb微涨、DDR4 8Gb续跌。 9. 卢伟冰谈内存涨价：内存高价挤压利润，仍将加码AI芯片和机器人。 10. 戴尔财季存储收入达49亿美元，同比增长24%。 11. 惠普个人系统收入增长14%，内存与存储成本仍压制业绩指引。",
+      "keywords": [
+        "芯片",
+        "英伟达"
+      ],
+      "pub_ts": 1795576124.0,
+      "time_et": "11-24 22:08 ET",
+      "time_bj": "11:08 BJ",
+      "time_kst": "12:08 KST",
+      "time_display": "22:08 ET / 11:08 BJ"
+    },
     {
       "id": "20261125110041049800",
       "title": "油市进入脆弱平衡，欧佩克或在2027将原油推向空头剧本",
@@ -337,20 +351,6 @@
       "time_bj": "05:01 BJ",
       "time_kst": "06:01 KST",
       "time_display": "16:01 ET / 05:01 BJ"
-    },
-    {
-      "id": "20261125040900763800",
-      "title": "【美联储10月贴现利率会议纪要：8家地方联储建议上调贴现利率】 11月25日讯，美联储当…",
-      "summary": "【美联储10月贴现利率会议纪要：8家地方联储建议上调贴现利率】 11月25日讯，美联储当地时间周二公布的贴现利率会议纪要显示，在10月联邦公开市场委员会（FOMC）会议前，12家地方联储中有8家董事会曾建议将贴现率从4%上调至4.25%，涉及波士顿、克利夫兰、芝加哥、圣路易斯、明尼阿波利斯、里士满、堪萨斯城和达拉斯联储。其中，里士满、堪萨斯城和达拉斯联储董事会最初于10月8日支持维持利率不变，但在10月22日转而支持加息。美联储理事会最终两度批准维持贴现率在4%。分析称，地方联储董事会对贴现率的建议反映其货币政策倾向，但不一定与各自地方联储主席的立场一致。",
-      "keywords": [
-        "美联储",
-        "加息"
-      ],
-      "pub_ts": 1795550940.0,
-      "time_et": "11-24 15:09 ET",
-      "time_bj": "04:09 BJ",
-      "time_kst": "05:09 KST",
-      "time_display": "15:09 ET / 04:09 BJ"
     }
   ],
   "ticker_news": {
@@ -1947,6 +1947,13 @@
     ],
     "TSLA": [
       {
+        "title": "Jensen Huang's Return Could Make a Tesla/SpaceX Merger More Likely",
+        "url": "https://www.fool.com/investing/2026/11/24/jensen-huang-s-return-could-make-a-tesla-spacex-merger-more-likely/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 21:50 ET",
+        "pub_ts": 1795575002.0
+      },
+      {
         "title": "TSLA Stock Slips Overnight: Dell And HP See No Quick Relief From The AI-Driven Chip Crunch Behind Tesla’s 25% Memory Cut",
         "url": "https://stocktwits.com/news-articles/markets/equity/tsla-stock-dell-hp-no-quick-relief-ai-chip-crunch-tesla-memory-cut/cNbuC6fR9ld?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1973,13 +1980,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 19:12 ET",
         "pub_ts": 1795565532.0
-      },
-      {
-        "title": "How Much Bitcoin Could Elon Musk Control if Tesla and SpaceX Merge?",
-        "url": "https://247wallst.com/investing/cryptocurrency/2026/11/24/how-much-bitcoin-could-elon-musk-control-if-tesla-and-spacex-merge/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 17:12 ET",
-        "pub_ts": 1795558359.0
       }
     ],
     "AXP": [
@@ -2243,18 +2243,11 @@
     ],
     "DELL": [
       {
-        "title": "Anthropic falls below IPO price as Nvidia gives back gains",
-        "url": "https://finance.yahoo.com/video/anthropic-falls-below-ipo-price-as-nvidia-gives-back-gains-214558309.html?.tsrc=rss",
+        "title": "Dell Says AI Demand Remains ‘Firm,’ Every Order ‘Fully Vetted’ – But DELL Stock Barely Moves After Beat-And-Raise Quarter",
+        "url": "https://stocktwits.com/news-articles/markets/equity/dell-says-ai-demand-remains-firm-every-order-fully-vetted-but-dell-stock-barely-moves-after-beat-and-raise-quarter/cNbu6VGR9lI?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 16:45 ET",
-        "pub_ts": 1795556758.0
-      },
-      {
-        "title": "Dow Jones Futures Fall; Trump Says 'Not Too Late' For U.S. To Take Nvidia Stake",
-        "url": "https://finance.yahoo.com/m/d96603c1-fe7f-3bf3-8158-0728b464d469/dow-jones-futures-fall%3B-trump.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 21:34 ET",
-        "pub_ts": 1795574078.0
+        "time": "11-24 21:50 ET",
+        "pub_ts": 1795575024.0
       },
       {
         "title": "TSLA Stock Slips Overnight: Dell And HP See No Quick Relief From The AI-Driven Chip Crunch Behind Tesla’s 25% Memory Cut",
@@ -2276,6 +2269,13 @@
         "source": "Yahoo Finance",
         "time": "11-24 19:12 ET",
         "pub_ts": 1795565532.0
+      },
+      {
+        "title": "Dell Technologies Q3 2027 Earnings: Recap of $DELL Earnings Call, Stock Forecast",
+        "url": "https://www.thestreet.com/latest-news/dell-technologies-q3-2027-earnings-call-stock-updates?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 18:30 ET",
+        "pub_ts": 1795563053.0
       }
     ],
     "OKLO": [
@@ -3331,37 +3331,37 @@
     "AXTI": 1795575527.2364514,
     "NASA": 1795576033.317645,
     "LUNR": 1795576033.317645,
-    "TSLA": 1795574713.0516179,
+    "TSLA": 1795576267.9003127,
     "AXP": 1795576033.317645,
     "RKLB": 1795576033.317645,
     "KO": 1795576033.317645,
     "FLY": 1795576033.317645,
     "INTC": 1795576033.317645,
-    "VRT": 1795574713.0516179,
-    "HPE": 1795574713.0516179,
-    "DELL": 1795574713.0516179,
-    "OKLO": 1795574713.0516179,
-    "CEG": 1795574713.0516179,
-    "FPS": 1795574713.0516179,
+    "VRT": 1795576267.9003127,
+    "HPE": 1795576267.9003127,
+    "DELL": 1795576267.9003127,
+    "OKLO": 1795576267.9003127,
+    "CEG": 1795576267.9003127,
+    "FPS": 1795576267.9003127,
     "MU": 1795575527.2364514,
     "SKHY": 1795575527.2364514,
     "WDC": 1795575527.2364514,
-    "STX": 1795574713.0516179,
-    "MSTR": 1795574713.0516179,
-    "SNDK": 1795574713.0516179,
+    "STX": 1795576267.9003127,
+    "MSTR": 1795576267.9003127,
+    "SNDK": 1795576267.9003127,
     "BTC-USD": 1795575527.2364514,
-    "CRWD": 1795574713.0516179,
-    "ORCL": 1795574713.0516179,
-    "COIN": 1795574713.0516179,
-    "LLY": 1795574713.0516179,
-    "MRNA": 1795574713.0516179,
+    "CRWD": 1795576267.9003127,
+    "ORCL": 1795576267.9003127,
+    "COIN": 1795576267.9003127,
+    "LLY": 1795576267.9003127,
+    "MRNA": 1795576267.9003127,
     "NKE": 1795574816.2638087,
-    "MCD": 1795574713.0516179,
+    "MCD": 1795576267.9003127,
     "PEP": 1795574816.2638087,
     "XOM": 1795574816.2638087,
     "JPM": 1795574816.2638087,
     "WMT": 1795574816.2638087,
-    "V": 1795574713.0516179,
+    "V": 1795576267.9003127,
     "CAT": 1795574816.2638087,
     "FN": 1795575527.2364514,
     "GLW": 1795576033.317645,
@@ -3386,7 +3386,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (22:00 ET / 11:00 BJ) [原油]：衍生品数据显示市场正交易正常化预期，但库存缓冲有限，市场更可能进入脆弱平衡而非恢复；欧佩克进入关键决策点，2027的供应压力或将原油推向下行通道。",
+    "detail": "⚡ 最新核心快讯 (22:08 ET / 11:08 BJ) [芯片] [英伟达]：1. 报道：英伟达AI GPU新单交货周期拉长，RTX60系显卡量产或后移。 2. 2027年手机厂商出货目标落地，多数厂家下调预期。 3. 高盛预计2027年DRAM供应仍紧，2028年缺",
     "event_name": "",
     "minutes_left": 0,
     "opex_shield": {
