@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795610980.86,
-  "updated_at_et": "11-25 07:49 ET",
-  "updated_at_kst": "21:49 KST",
+  "updated_at_ts": 1795611030.792,
+  "updated_at_et": "11-25 07:50 ET",
+  "updated_at_kst": "21:50 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -17,7 +17,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 41,
+      "minutes_left": 40,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -36,7 +36,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 41,
+      "minutes_left": 40,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -2648,6 +2648,13 @@
     ],
     "BTC-USD": [
       {
+        "title": "Bitcoin Slips Below $59K Ahead Of PCE Report, Heads For Worst Month Since July 2022",
+        "url": "https://stocktwits.com/news-articles/markets/equity/bitcoin-slips-below-59-k-ahead-of-pce-report-heads-for-worst-month-since-july-2022/cNbHhdsR9ma?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 07:31 ET",
+        "pub_ts": 1795609916.0
+      },
+      {
         "title": "CleanSpark Shares Fall 3% as Revenue Miss and Data Centre Delays Overshadow Earnings Beat",
         "url": "https://investorshub.advfn.com/market-news/article/40705/cleanspark-shares-fall-3-as-revenue-miss-and-data-centre-delays-overshadow-earnings-beat?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2674,13 +2681,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 06:09 ET",
         "pub_ts": 1795604945.0
-      },
-      {
-        "title": "Why Ryan Watkins Says Bitcoin Is Being Tested for the First Time",
-        "url": "https://unchainedcrypto.com/why-ryan-watkins-says-bitcoin-is-being-tested-for-the-first-time/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 06:00 ET",
-        "pub_ts": 1795604443.0
       }
     ],
     "CRWD": [
@@ -3380,11 +3380,11 @@
     "FPS": 1795610260.4442298,
     "MU": 1795610980.8596852,
     "SKHY": 1795610980.8596852,
-    "WDC": 1795609497.8915503,
+    "WDC": 1795611030.792009,
     "STX": 1795610311.236169,
     "MSTR": 1795610260.4442298,
     "SNDK": 1795610260.4442298,
-    "BTC-USD": 1795609497.8915503,
+    "BTC-USD": 1795611030.792009,
     "CRWD": 1795610260.4442298,
     "ORCL": 1795610260.4442298,
     "COIN": 1795610260.4442298,
@@ -3420,10 +3420,10 @@
   },
   "calendar_banner": {
     "level": "upcoming",
-    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 41 分钟（11-25 08:30 ET / 22:30 KST）",
+    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 40 分钟（11-25 08:30 ET / 22:30 KST）",
     "detail": "前值 0.3% ｜ 预期 0.3% ｜ 临近公布前15分钟将自动触发防插针预警",
     "event_name": "美国10月核心PCE物价指数环比",
-    "minutes_left": 41,
+    "minutes_left": 40,
     "opex_shield": {
       "date": "2026-11-25",
       "active": false,
