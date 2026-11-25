@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795647562.42,
-  "updated_at_et": "11-25 17:59 ET",
-  "updated_at_kst": "07:59 KST",
+  "updated_at_ts": 1795647607.286,
+  "updated_at_et": "11-25 18:00 ET",
+  "updated_at_kst": "08:00 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -2645,6 +2645,20 @@
     ],
     "BTC-USD": [
       {
+        "title": "Nvidia settles 8-year-old investor suit for $290M",
+        "url": "https://www.thestreet.com/crypto/artificial-intelligence/nvidia-settles-8-year-old-investor-suit-for-290m?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 17:30 ET",
+        "pub_ts": 1795645800.0
+      },
+      {
+        "title": "Crypto Market Today, Nov. 25: Bitcoin, Ethereum, and Solana as Short Liquidations Fuel Fragile Rebound",
+        "url": "https://www.fool.com/coverage/stock-market-today/2026/11/25/crypto-market-today-nov-25-bitcoin-ethereum-and-solana-as-short-liquidations-fuel-fragile-rebound/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 17:26 ET",
+        "pub_ts": 1795645579.0
+      },
+      {
         "title": "How Much of Your Portfolio Should Be in Bitcoin After a 50% Drop?",
         "url": "https://247wallst.com/investing/cryptocurrency/2026/11/25/how-much-of-your-portfolio-should-be-in-bitcoin-after-a-50-drop/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2664,20 +2678,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 17:00 ET",
         "pub_ts": 1795644000.0
-      },
-      {
-        "title": "Sector Update: Financial Stocks Advance Late Afternoon",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/sector-financial-stocks-advance-afternoon-210138295.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 16:01 ET",
-        "pub_ts": 1795640498.0
-      },
-      {
-        "title": "With bitcoin crashing, is Strategy (MSTR) in trouble?",
-        "url": "https://blockspace.media/short/with-bitcoin-crashing-is-strategy-mstr-in-trouble/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 15:28 ET",
-        "pub_ts": 1795638489.0
       }
     ],
     "CRWD": [
@@ -3381,7 +3381,7 @@
     "STX": 1795646838.1539316,
     "MSTR": 1795646754.2743244,
     "SNDK": 1795646754.2743244,
-    "BTC-USD": 1795646105.3483171,
+    "BTC-USD": 1795647607.2859182,
     "CRWD": 1795646754.2743244,
     "ORCL": 1795646754.2743244,
     "COIN": 1795646754.2743244,
