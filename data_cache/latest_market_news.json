@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795587151.119,
-  "updated_at_et": "11-25 01:12 ET",
-  "updated_at_kst": "15:12 KST",
+  "updated_at_ts": 1795587255.252,
+  "updated_at_et": "11-25 01:14 ET",
+  "updated_at_kst": "15:14 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -17,7 +17,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 438,
+      "minutes_left": 436,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -36,7 +36,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 438,
+      "minutes_left": 436,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -1796,6 +1796,13 @@
     ],
     "SPCX": [
       {
+        "title": "SpaceX, Anthropic IPOs Shut Out Retail Investors, Says Coinbase CEO — Brian Armstrong Resumes Buying Back COIN Shares",
+        "url": "https://stocktwits.com/news-articles/markets/equity/space-x-anthropic-ip-os-shut-out-retail-investors-says-coinbase-ceo-brian-armstrong-resumes-buying-back-coin-shares/cNbHdA0R9lS?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 01:01 ET",
+        "pub_ts": 1795586504.0
+      },
+      {
         "title": "Anthropic vs. SpaceX: Here's the Better IPO Stock to Buy With $1,000 Right Now",
         "url": "https://www.fool.com/investing/2026/11/24/anthropic-vs-spacex-here-s-the-better-ipo-stock-to-buy-with-usd1-000-right-now/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1822,13 +1829,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 21:50 ET",
         "pub_ts": 1795575002.0
-      },
-      {
-        "title": "Thinking of Buying SpaceX Stock? Gary Black Says Wait for a Potential Tesla Merger to Send It Below $100",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/thinking-buying-spacex-stock-gary-013135652.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 20:31 ET",
-        "pub_ts": 1795570295.0
       }
     ],
     "ASTS": [
@@ -3352,25 +3352,25 @@
     "AMZN": 1795586508.459296,
     "CRWV": 1795586508.459296,
     "NBIS": 1795586508.459296,
-    "APLD": 1795585745.622399,
-    "VST": 1795585745.622399,
-    "BE": 1795585745.622399,
-    "CRDO": 1795585745.622399,
-    "COHR": 1795585745.622399,
+    "APLD": 1795587255.251863,
+    "VST": 1795587255.251863,
+    "BE": 1795587255.251863,
+    "CRDO": 1795587255.251863,
+    "COHR": 1795587255.251863,
     "MRVL": 1795586508.459296,
     "LITE": 1795586508.459296,
-    "AAOI": 1795585745.622399,
-    "SPCX": 1795585745.622399,
-    "ASTS": 1795585745.622399,
+    "AAOI": 1795587255.251863,
+    "SPCX": 1795587255.251863,
+    "ASTS": 1795587255.251863,
     "AXTI": 1795586508.459296,
-    "NASA": 1795585745.622399,
-    "LUNR": 1795585745.622399,
+    "NASA": 1795587255.251863,
+    "LUNR": 1795587255.251863,
     "TSLA": 1795585854.6022894,
-    "AXP": 1795585745.622399,
-    "RKLB": 1795585745.622399,
-    "KO": 1795585745.622399,
-    "FLY": 1795585745.622399,
-    "INTC": 1795585745.622399,
+    "AXP": 1795587255.251863,
+    "RKLB": 1795587255.251863,
+    "KO": 1795587255.251863,
+    "FLY": 1795587255.251863,
+    "INTC": 1795587255.251863,
     "VRT": 1795585854.6022894,
     "HPE": 1795585854.6022894,
     "DELL": 1795585854.6022894,
@@ -3398,7 +3398,7 @@
     "V": 1795585854.6022894,
     "CAT": 1795585965.279007,
     "FN": 1795586508.459296,
-    "GLW": 1795585745.622399,
+    "GLW": 1795587255.251863,
     "ANT": 1795585965.279007,
     "XAUUSD": 1795585965.279007,
     "KOSPI": 1795586508.459296
@@ -3419,10 +3419,10 @@
   },
   "calendar_banner": {
     "level": "upcoming",
-    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 438 分钟（11-25 08:30 ET / 22:30 KST）",
+    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 436 分钟（11-25 08:30 ET / 22:30 KST）",
     "detail": "前值 0.3% ｜ 预期 0.3% ｜ 临近公布前15分钟将自动触发防插针预警",
     "event_name": "美国10月核心PCE物价指数环比",
-    "minutes_left": 438,
+    "minutes_left": 436,
     "opex_shield": {
       "date": "2026-11-25",
       "active": false,
