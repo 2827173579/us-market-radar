@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795610505.477,
-  "updated_at_et": "11-25 07:41 ET",
-  "updated_at_kst": "21:41 KST",
+  "updated_at_ts": 1795610549.955,
+  "updated_at_et": "11-25 07:42 ET",
+  "updated_at_kst": "21:42 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -17,7 +17,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 49,
+      "minutes_left": 48,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -36,7 +36,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 49,
+      "minutes_left": 48,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -949,39 +949,60 @@
         "title": "Dow Jones Futures Fall, Techs Dive; Trump Says 'Not Too Late' For U.S. To Take Nvidia Stake",
         "url": "https://finance.yahoo.com/m/d96603c1-fe7f-3bf3-8158-0728b464d469/dow-jones-futures-fall%2C-techs.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-25 07:05 ET",
-        "pub_ts": 1795608325.0
+        "time": "11-25 07:28 ET",
+        "pub_ts": 1795609737.0
       },
       {
-        "title": "Was Jensen’s $25M White House Donation ‘the Cheapest Put Option’ Ever Bought?",
-        "url": "https://unchainedcrypto.com/was-jensens-25m-white-house-donation-the-cheapest-put-option-ever-bought/?.tsrc=rss",
+        "title": "Think Nvidia's Stock Is Wild? Check Out These Related ETFs",
+        "url": "https://finance.yahoo.com/m/d33a682f-4ddc-3c24-93fe-9c52f4f0e2dd/think-nvidia%27s-stock-is-wild%3F.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-25 07:00 ET",
-        "pub_ts": 1795608006.0
+        "time": "11-25 07:28 ET",
+        "pub_ts": 1795609734.0
       },
       {
-        "title": "AI Chips Update - NVIDIA Reinstates Huang Amid Compliance and Leadership Focus",
-        "url": "https://finance.yahoo.com/technology/ai/articles/ai-chips-nvidia-reinstates-huang-113727572.html?.tsrc=rss",
+        "title": "Nvidia Loses Nearly $3 Trillion as Governance Crisis Deepens",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/nvidia-loses-nearly-3-trillion-122447848.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-25 06:37 ET",
-        "pub_ts": 1795606647.0
+        "time": "11-25 07:24 ET",
+        "pub_ts": 1795609487.0
       },
       {
-        "title": "Tech stocks under pressure as AI jitters persist",
-        "url": "https://finance.yahoo.com/markets/world-indices/articles/tech-firms-back-crosshairs-huang-024219799.html?.tsrc=rss",
+        "title": "Jim Cramer Says Tuesday’s Stock Market Pullback Is Actually Good News",
+        "url": "https://247wallst.com/investing/2026/11/25/jim-cramer-says-tuesdays-stock-market-pullback-is-actually-good-news/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-25 06:35 ET",
-        "pub_ts": 1795606526.0
+        "time": "11-25 07:22 ET",
+        "pub_ts": 1795609371.0
       },
       {
-        "title": "Jensen Huang Says Nvidia's Next-Gen Vera Rubin Chips Will Generate $40 Billion in Revenue per Gigawatt, Up From $25 Billion for Grace Blackwell. What That Means for NVDA's Growth Runway.",
-        "url": "https://www.fool.com/investing/2026/11/25/jensen-huang-says-nvidias-next-gen-vera-rubin-chip/?.tsrc=rss",
+        "title": "A Record $132 Billion AI Backlog Lands as Chip Stocks Whipsaw",
+        "url": "https://finance.yahoo.com/news/record-132-billion-ai-backlog-121500023.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-25 06:35 ET",
-        "pub_ts": 1795606500.0
+        "time": "11-25 07:15 ET",
+        "pub_ts": 1795608900.0
       }
     ],
     "AMD": [
+      {
+        "title": "AMD, Micron and Sandisk Stocks Slide as AI Spending Fears Deepen",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/amd-micron-sandisk-stocks-slide-122728877.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 07:27 ET",
+        "pub_ts": 1795609648.0
+      },
+      {
+        "title": "Is AMD Stock Falling On Its Own?",
+        "url": "https://www.trefis.com/stock/amd/articles/628978/is-amd-stock-falling-on-its-own/2026-11-25?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 07:05 ET",
+        "pub_ts": 1795608346.0
+      },
+      {
+        "title": "Dell Stock Joins Nvidia, AMD, and Intel Selloff Despite Record Demand",
+        "url": "https://beincrypto.com/dell-stock-falls-ai-selloff-record-backlog/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 06:50 ET",
+        "pub_ts": 1795607445.0
+      },
       {
         "title": "Should You Trim Or Add To Your AMD Position?",
         "url": "https://www.trefis.com/stock/amd/articles/628786/should-you-trim-or-add-to-your-amd-position/2026-11-25?.tsrc=rss",
@@ -995,27 +1016,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 06:34 ET",
         "pub_ts": 1795606467.0
-      },
-      {
-        "title": "U.S. chip stocks extend losses premarket as AI spending concerns resurface",
-        "url": "https://finance.yahoo.com/technology/ai/articles/u-chip-stocks-extend-losses-104903644.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 05:49 ET",
-        "pub_ts": 1795603743.0
-      },
-      {
-        "title": "Billionaire David Tepper Dumped Appaloosa's Stake in AMD and Broadcom and Piled Into an Artificial Intelligence (AI) Stock Trading at 44x Forward Adjusted EPS",
-        "url": "https://www.fool.com/investing/2026/11/25/billionaire-david-tepper-appaloosa-stake-amd-broadcom-artificial-intelligence-ai-stock-trading-44x-forward-eps/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 04:40 ET",
-        "pub_ts": 1795599602.0
-      },
-      {
-        "title": "1 Reason to Buy AMD Stock Before 2027",
-        "url": "https://www.fool.com/investing/2026/11/25/1-reason-to-buy-amd-stock-before-2027/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 03:26 ET",
-        "pub_ts": 1795595162.0
       }
     ],
     "ASML": [
@@ -3323,26 +3323,26 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795609016.1771367,
-    "SOXL": 1795609016.1771367,
+    "KORU": 1795610549.9554377,
+    "SOXL": 1795610549.9554377,
     "SPY": 1795609398.3492033,
-    "DIA": 1795609016.1771367,
-    "SOXX": 1795609016.1771367,
-    "QQQ": 1795609016.1771367,
+    "DIA": 1795610549.9554377,
+    "SOXX": 1795610549.9554377,
+    "QQQ": 1795610549.9554377,
     "SMH": 1795609398.3492033,
-    "IWM": 1795609016.1771367,
-    "IGV": 1795609016.1771367,
-    "TLT": 1795609016.1771367,
-    "GLD": 1795609016.1771367,
-    "SQQQ": 1795609016.1771367,
+    "IWM": 1795610549.9554377,
+    "IGV": 1795610549.9554377,
+    "TLT": 1795610549.9554377,
+    "GLD": 1795610549.9554377,
+    "SQQQ": 1795610549.9554377,
     "TSM": 1795609398.3492033,
-    "VIXY": 1795609016.1771367,
-    "SOXS": 1795609016.1771367,
-    "NVDA": 1795609016.1771367,
-    "AMD": 1795609016.1771367,
+    "VIXY": 1795610549.9554377,
+    "SOXS": 1795610549.9554377,
+    "NVDA": 1795610549.9554377,
+    "AMD": 1795610549.9554377,
     "ASML": 1795609398.3492033,
     "QCOM": 1795609398.3492033,
-    "AVGO": 1795609016.1771367,
+    "AVGO": 1795610549.9554377,
     "AMAT": 1795609398.3492033,
     "META": 1795609398.3492033,
     "GOOGL": 1795609398.3492033,
@@ -3420,10 +3420,10 @@
   },
   "calendar_banner": {
     "level": "upcoming",
-    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 49 分钟（11-25 08:30 ET / 22:30 KST）",
+    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 48 分钟（11-25 08:30 ET / 22:30 KST）",
     "detail": "前值 0.3% ｜ 预期 0.3% ｜ 临近公布前15分钟将自动触发防插针预警",
     "event_name": "美国10月核心PCE物价指数环比",
-    "minutes_left": 49,
+    "minutes_left": 48,
     "opex_shield": {
       "date": "2026-11-25",
       "active": false,
