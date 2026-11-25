@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795593453.54,
-  "updated_at_et": "11-25 02:57 ET",
-  "updated_at_kst": "16:57 KST",
+  "updated_at_ts": 1795593571.86,
+  "updated_at_et": "11-25 02:59 ET",
+  "updated_at_kst": "16:59 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -17,7 +17,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 333,
+      "minutes_left": 331,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -36,13 +36,28 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 333,
+      "minutes_left": 331,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
     }
   ],
   "macro_flashes": [
+    {
+      "id": "20261125155814517800",
+      "title": "【期货盯盘神器专属文章】欧美盘中关注：芯片股在纽约和首尔重挫，AI行情的脆弱性尽显；油金…",
+      "summary": "【期货盯盘神器专属文章】欧美盘中关注：芯片股在纽约和首尔重挫，AI行情的脆弱性尽显；油金铜齐跌，美债收益率创两周新低！Saxo Bank指出，今日关键变量是美国10月PCE数据，它会给动荡定调吗？",
+      "keywords": [
+        "PCE",
+        "芯片",
+        "美债"
+      ],
+      "pub_ts": 1795593494.0,
+      "time_et": "11-25 02:58 ET",
+      "time_bj": "15:58 BJ",
+      "time_kst": "16:58 KST",
+      "time_display": "02:58 ET / 15:58 BJ"
+    },
     {
       "id": "20261125154047805800",
       "title": "21:30就业通胀双重考验！美国10月PCE与初请数据同步来袭",
@@ -370,19 +385,6 @@
       "time_bj": "10:21 BJ",
       "time_kst": "11:21 KST",
       "time_display": "21:21 ET / 10:21 BJ"
-    },
-    {
-      "id": "20261125101031614800",
-      "title": "投行长线多头止损离场，下一个建仓点需要等到...",
-      "summary": "金价跌破3700后长线多头止损出局并转为中性立场，美元走强仍是最大逆风，下一个建仓信号要看美元；德商银行下调金价预期，若市场削减加息定价有望推动黄金反弹。",
-      "keywords": [
-        "加息"
-      ],
-      "pub_ts": 1795572631.0,
-      "time_et": "11-24 21:10 ET",
-      "time_bj": "10:10 BJ",
-      "time_kst": "11:10 KST",
-      "time_display": "21:10 ET / 10:10 BJ"
     }
   ],
   "ticker_news": {
@@ -3052,13 +3054,6 @@
     ],
     "WMT": [
       {
-        "title": "Stocks give back gains as Anthropic dips below IPO price",
-        "url": "https://finance.yahoo.com/video/stocks-give-back-gains-as-anthropic-dips-below-ipo-price-154408548.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 10:44 ET",
-        "pub_ts": 1795535048.0
-      },
-      {
         "title": "Symbotic: 3 Key Takeaways for Long-Term Investors",
         "url": "https://www.fool.com/earnings/takeaways/2026/11/24/symbotic-3-key-takeaways-for-long-term-investors/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3085,6 +3080,13 @@
         "source": "Yahoo Finance",
         "time": "11-24 11:03 ET",
         "pub_ts": 1795536197.0
+      },
+      {
+        "title": "Stocks give back gains as Anthropic dips below IPO price",
+        "url": "https://finance.yahoo.com/video/stocks-give-back-gains-as-anthropic-dips-below-ipo-price-154408548.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 10:44 ET",
+        "pub_ts": 1795535048.0
       }
     ],
     "V": [
@@ -3389,16 +3391,16 @@
     "MRNA": 1795593453.5399013,
     "NKE": 1795593453.5399013,
     "MCD": 1795593453.5399013,
-    "PEP": 1795592042.0497315,
-    "XOM": 1795592042.0497315,
-    "JPM": 1795592042.0497315,
-    "WMT": 1795592042.0497315,
+    "PEP": 1795593571.8599072,
+    "XOM": 1795593571.8599072,
+    "JPM": 1795593571.8599072,
+    "WMT": 1795593571.8599072,
     "V": 1795593453.5399013,
-    "CAT": 1795592042.0497315,
+    "CAT": 1795593571.8599072,
     "FN": 1795592575.630133,
     "GLW": 1795593343.9996238,
-    "ANT": 1795592042.0497315,
-    "XAUUSD": 1795592042.0497315,
+    "ANT": 1795593571.8599072,
+    "XAUUSD": 1795593571.8599072,
     "KOSPI": 1795592575.630133
   },
   "opex_shield": {
@@ -3417,10 +3419,10 @@
   },
   "calendar_banner": {
     "level": "upcoming",
-    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 333 分钟（11-25 08:30 ET / 22:30 KST）",
+    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 331 分钟（11-25 08:30 ET / 22:30 KST）",
     "detail": "前值 0.3% ｜ 预期 0.3% ｜ 临近公布前15分钟将自动触发防插针预警",
     "event_name": "美国10月核心PCE物价指数环比",
-    "minutes_left": 333,
+    "minutes_left": 331,
     "opex_shield": {
       "date": "2026-11-25",
       "active": false,
