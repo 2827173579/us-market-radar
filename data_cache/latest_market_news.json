@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795606386.937,
-  "updated_at_et": "11-25 06:33 ET",
-  "updated_at_kst": "20:33 KST",
+  "updated_at_ts": 1795606440.933,
+  "updated_at_et": "11-25 06:34 ET",
+  "updated_at_kst": "20:34 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -17,7 +17,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 117,
+      "minutes_left": 116,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -36,7 +36,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 117,
+      "minutes_left": 116,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -2435,32 +2435,32 @@
         "pub_ts": 1795556758.0
       },
       {
+        "title": "Micron CEO gets a big pay bump and an even bigger security bill",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/micron-ceo-gets-big-pay-111540020.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 06:15 ET",
+        "pub_ts": 1795605340.0
+      },
+      {
+        "title": "Proshares Trust (TQQQ) Sells Apple and Nvidia on Nov. 23",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/proshares-trust-tqqq-sells-apple-110547396.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 06:05 ET",
+        "pub_ts": 1795604747.0
+      },
+      {
+        "title": "INVESCO QQQ Trust (QQQ) Sells Apple and NVIDIA on Nov. 23",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/invesco-qqq-trust-qqq-sells-110412143.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 06:04 ET",
+        "pub_ts": 1795604652.0
+      },
+      {
         "title": "U.S. chip stocks extend losses premarket as AI spending concerns resurface",
         "url": "https://finance.yahoo.com/technology/ai/articles/u-chip-stocks-extend-losses-104903644.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-25 05:49 ET",
         "pub_ts": 1795603743.0
-      },
-      {
-        "title": "Micron Reports in December. Here's the 1 Number I'll Be Watching.",
-        "url": "https://www.fool.com/investing/2026/11/25/micron-reports-in-december-here-s-the-1-number-i-ll-be-watching/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 04:01 ET",
-        "pub_ts": 1795597262.0
-      },
-      {
-        "title": "MU, SKHY, SNDK Stocks In Focus After TrendForce Lowers DRAM Pricing Forecast",
-        "url": "https://stocktwits.com/news-articles/markets/equity/mu-skhy-sndk-stocks-in-focus-after-trend-force-lowers-dram-pricing-forecast/cNbH7VLR9l8?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 03:27 ET",
-        "pub_ts": 1795595230.0
-      },
-      {
-        "title": "South Korea's chipmakers rally on Huang's return",
-        "url": "http://www.intellinews.com/south-korea-s-chipmakers-rally-on-huang-s-return-488025/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 22:21 ET",
-        "pub_ts": 1795576883.0
       }
     ],
     "SKHY": [
@@ -3360,8 +3360,8 @@
     "BE": 1795605552.965205,
     "CRDO": 1795605552.965205,
     "COHR": 1795605552.965205,
-    "MRVL": 1795604837.8887246,
-    "LITE": 1795604837.8887246,
+    "MRVL": 1795606440.9328077,
+    "LITE": 1795606440.9328077,
     "AAOI": 1795605552.965205,
     "SPCX": 1795605552.965205,
     "ASTS": 1795605552.965205,
@@ -3380,8 +3380,8 @@
     "OKLO": 1795605650.1484492,
     "CEG": 1795605650.1484492,
     "FPS": 1795605650.1484492,
-    "MU": 1795604837.8887246,
-    "SKHY": 1795604837.8887246,
+    "MU": 1795606440.9328077,
+    "SKHY": 1795606440.9328077,
     "WDC": 1795604985.370187,
     "STX": 1795605701.7703695,
     "MSTR": 1795605650.1484492,
@@ -3400,7 +3400,7 @@
     "WMT": 1795605748.2915187,
     "V": 1795605650.1484492,
     "CAT": 1795605748.2915187,
-    "FN": 1795604837.8887246,
+    "FN": 1795606440.9328077,
     "GLW": 1795605552.965205,
     "ANT": 1795605748.2915187,
     "XAUUSD": 1795605748.2915187,
@@ -3422,10 +3422,10 @@
   },
   "calendar_banner": {
     "level": "upcoming",
-    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 117 分钟（11-25 08:30 ET / 22:30 KST）",
+    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 116 分钟（11-25 08:30 ET / 22:30 KST）",
     "detail": "前值 0.3% ｜ 预期 0.3% ｜ 临近公布前15分钟将自动触发防插针预警",
     "event_name": "美国10月核心PCE物价指数环比",
-    "minutes_left": 117,
+    "minutes_left": 116,
     "opex_shield": {
       "date": "2026-11-25",
       "active": false,
