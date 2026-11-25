@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795602651.341,
-  "updated_at_et": "11-25 05:30 ET",
-  "updated_at_kst": "19:30 KST",
+  "updated_at_ts": 1795602704.501,
+  "updated_at_et": "11-25 05:31 ET",
+  "updated_at_kst": "19:31 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -17,7 +17,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 180,
+      "minutes_left": 179,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -36,13 +36,28 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 180,
+      "minutes_left": 179,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
     }
   ],
   "macro_flashes": [
+    {
+      "id": "20261125183058340800",
+      "title": "整理：特朗普过去24小时都忙了什么？（2026-11-25）",
+      "summary": "1. 搁置以商业交易推动结束俄乌冲突的计划——据英国《金融时报》报道，在克里姆林宫对美国提出的能源和航空领域合作项目兴趣不大后，特朗普政府已悄然搁置将商业交易作为促使俄罗斯结束俄乌冲突的激励措施的相关提议。 2. 对伊朗军事行动的经费可支撑到明年1月底——据纽约邮报报道，特朗普表示，对伊朗的军事行动已有足够资金维持至明年1月。他同时抨击威胁叫停这场冲突的国会民主党人，称此举将使一场“彻底的胜利”变成“失败”。 3. 必要时愿赦免黄仁勋——据纽约邮报报道，特朗普表示，如有必要，他愿意赦免黄仁勋，但他认为，黄仁勋即使没有获得赦免也不会有事，并应在下周赴国会作证时“实话实说”。特朗普表示，英伟达的成功对于美国保持人工智能领域的领先优势至关重要，他甚至对英伟达向美国政府提供股权持开放态度。 4. 声称物价下降速度很快——美国总统特朗普：“物价正在下降，而且下降速度很快。所有商品的价格都在下降。我们接手时，鸡蛋价格是现在的四倍。物价正在回落。我们接手的是一个烂摊子。我们接手时，物价处于历史最高水平，通胀也是有史以来最严重的，而现在我们已经将通胀率降至一个非常理想的水平。” 5. 尚未决定对伊朗高层实施定点打击——据NBC援引一名美国官员及一名了解相关讨论的人士透露，特朗普政府内部正在讨论是否对伊朗高级领导人实施定点打击，以削弱伊朗强硬派势力。消息人士称，特朗普尚未就下一步行动作出最终决定，正在考虑恢复大规模军事行动、打击伊朗基础设施及其他军事目标等选项。 6. 酝酿新一轮全球关税——11月24日，多家媒体援引知情人士称，美国贸易代表格里尔最快本周公布一项历时数月的301条款调查结果。这轮关税是为了填补2026年2月最高法院推翻旧关税后留下的政策真空。",
+      "keywords": [
+        "关税",
+        "英伟达",
+        "特朗普"
+      ],
+      "pub_ts": 1795602658.0,
+      "time_et": "11-25 05:30 ET",
+      "time_bj": "18:30 BJ",
+      "time_kst": "19:30 KST",
+      "time_display": "05:30 ET / 18:30 BJ"
+    },
     {
       "id": "20261125174207851800",
       "title": "【美国股指期货扩大跌幅】 11月25日讯，美国股指期货扩大跌幅，道指期货现跌0.8%，标…",
@@ -373,21 +388,6 @@
       "time_bj": "13:45 BJ",
       "time_kst": "14:45 KST",
       "time_display": "00:45 ET / 13:45 BJ"
-    },
-    {
-      "id": "20261125134000001800",
-      "title": "【今日重点关注的财经数据与事件：2026年11月25日 周三】 ① 15:00 德国第三…",
-      "summary": "【今日重点关注的财经数据与事件：2026年11月25日 周三】 ① 15:00 德国第三季度未季调GDP年率终值 ② 17:00 瑞士11月ZEW投资者信心指数 ③ 21:30 美国至11月21日当周初请失业金人数 ④ 21:30 美国10月核心PCE物价指数年率 ⑤ 21:30 美国10月个人支出月率 ⑥ 21:30 美国第三季度实际GDP年化季率修正值 ⑦ 21:30 美国10月核心PCE物价指数月率 ⑧ 21:30 美国10月耐用品订单月率 ⑨ 22:15英国英国央行行长贝利等官员出席听证会 ⑩ 23:00 美国10月新屋销售总数年化 ⑪ 23:30 美国至11月20日当周EIA原油库存 ⑫ 23:30 美国至11月20日当周EIA库欣原油库存 ⑬ 23:30 美国至11月20日当周EIA战略石油储备库存 ⑭ 次日01:00 美国至11月20日当周EIA天然气库存 ⑮ 次日02:00 美国至11月27日当周石油钻井总数 ⑯ 次日03:00 美联储公布经济状况褐皮书",
-      "keywords": [
-        "美联储",
-        "PCE",
-        "原油"
-      ],
-      "pub_ts": 1795585200.0,
-      "time_et": "11-25 00:40 ET",
-      "time_bj": "13:40 BJ",
-      "time_kst": "14:40 KST",
-      "time_display": "00:40 ET / 13:40 BJ"
     }
   ],
   "ticker_news": {
@@ -3242,11 +3242,25 @@
     ],
     "ANT": [
       {
+        "title": "Anthropic stock sinks further below IPO price as investors sour on the Amodei AI bet",
+        "url": "https://finance.yahoo.com/markets/stocks/article/anthropic-stock-sinks-further-below-ipo-price-as-investors-sour-on-the-amodei-ai-bet-100918869.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 05:09 ET",
+        "pub_ts": 1795601358.0
+      },
+      {
         "title": "Prediction: Here’s What Anthropic’s Valuation Will Be in 2027, According to History",
         "url": "https://www.fool.com/investing/2026/11/25/prediction-heres-what-anthropics-valuation-will-be-in-2027-according-to-history/?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-25 03:58 ET",
         "pub_ts": 1795597082.0
+      },
+      {
+        "title": "At what price is Anthropic stock a buy? Wall Street analysts and investors weigh in",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/price-anthropic-stock-buy-wall-080000180.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 03:00 ET",
+        "pub_ts": 1795593600.0
       },
       {
         "title": "AI Concerns Resurface? ORCL, GOOGL, SPCX, CRWV Credit Default Swap Spreads Hit Records As NVDA, ANT Tumble",
@@ -3261,20 +3275,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 00:03 ET",
         "pub_ts": 1795582980.0
-      },
-      {
-        "title": "Cathie Wood’s ARK Sees ‘Excellent Entry Points’ In AI — ‘Big Short’ Steve Eisman Warns Of Recession If Anthropic Or OpenAI Fails",
-        "url": "https://stocktwits.com/news-articles/markets/equity/cathie-wood-ark-excellent-entry-points-ai-steve-eisman-recession-anthropic-openai-fails/cNbHcZ4R9lW?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 23:41 ET",
-        "pub_ts": 1795581691.0
-      },
-      {
-        "title": "Anthropic vs. SpaceX: Here's the Better IPO Stock to Buy With $1,000 Right Now",
-        "url": "https://www.fool.com/investing/2026/11/24/anthropic-vs-spacex-here-s-the-better-ipo-stock-to-buy-with-usd1-000-right-now/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 23:35 ET",
-        "pub_ts": 1795581301.0
       }
     ],
     "XAUUSD": [
@@ -3394,16 +3394,16 @@
     "MRNA": 1795602595.177179,
     "NKE": 1795602595.177179,
     "MCD": 1795602595.177179,
-    "PEP": 1795601155.8149989,
-    "XOM": 1795601155.8149989,
-    "JPM": 1795601155.8149989,
-    "WMT": 1795601155.8149989,
+    "PEP": 1795602704.5014818,
+    "XOM": 1795602704.5014818,
+    "JPM": 1795602704.5014818,
+    "WMT": 1795602704.5014818,
     "V": 1795602595.177179,
-    "CAT": 1795601155.8149989,
+    "CAT": 1795602704.5014818,
     "FN": 1795601781.5206966,
     "GLW": 1795602495.5063353,
-    "ANT": 1795601155.8149989,
-    "XAUUSD": 1795601155.8149989,
+    "ANT": 1795602704.5014818,
+    "XAUUSD": 1795602704.5014818,
     "KOSPI": 1795601781.5206966
   },
   "opex_shield": {
@@ -3422,10 +3422,10 @@
   },
   "calendar_banner": {
     "level": "upcoming",
-    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 180 分钟（11-25 08:30 ET / 22:30 KST）",
+    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 179 分钟（11-25 08:30 ET / 22:30 KST）",
     "detail": "前值 0.3% ｜ 预期 0.3% ｜ 临近公布前15分钟将自动触发防插针预警",
     "event_name": "美国10月核心PCE物价指数环比",
-    "minutes_left": 180,
+    "minutes_left": 179,
     "opex_shield": {
       "date": "2026-11-25",
       "active": false,
