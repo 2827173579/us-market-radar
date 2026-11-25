@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795598078.374,
-  "updated_at_et": "11-25 04:14 ET",
-  "updated_at_kst": "18:14 KST",
+  "updated_at_ts": 1795598130.104,
+  "updated_at_et": "11-25 04:15 ET",
+  "updated_at_kst": "18:15 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -17,7 +17,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 256,
+      "minutes_left": 255,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -36,7 +36,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 256,
+      "minutes_left": 255,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -3244,6 +3244,13 @@
     ],
     "ANT": [
       {
+        "title": "Prediction: Here’s What Anthropic’s Valuation Will Be in 2027, According to History",
+        "url": "https://www.fool.com/investing/2026/11/25/prediction-heres-what-anthropics-valuation-will-be-in-2027-according-to-history/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 03:58 ET",
+        "pub_ts": 1795597082.0
+      },
+      {
         "title": "AI Concerns Resurface? ORCL, GOOGL, SPCX, CRWV Credit Default Swap Spreads Hit Records As NVDA, ANT Tumble",
         "url": "https://stocktwits.com/news-articles/markets/equity/ai-concerns-resurface-orcl-googl-spcx-crwv-credit-default-swap-spreads-hit-records-as-nvda-ant-tumble/cNbHEEAR9lZ?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3270,13 +3277,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 23:35 ET",
         "pub_ts": 1795581301.0
-      },
-      {
-        "title": "ANT Slips Further After Closing Below IPO Price: Retail Traders Wait For A Better Entry, But Cathie Wood Buys The Dip",
-        "url": "https://stocktwits.com/news-articles/markets/equity/ant-slips-further-after-closing-below-ipo-price-retail-traders-wait-for-a-better-entry-but-cathie-wood-buys-the-dip/cNbHR3zR9lf?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 22:48 ET",
-        "pub_ts": 1795578497.0
       }
     ],
     "XAUUSD": [
@@ -3396,16 +3396,16 @@
     "MRNA": 1795598026.3876326,
     "NKE": 1795598026.3876326,
     "MCD": 1795598026.3876326,
-    "PEP": 1795596594.2568715,
-    "XOM": 1795596594.2568715,
-    "JPM": 1795596594.2568715,
-    "WMT": 1795596594.2568715,
+    "PEP": 1795598130.104495,
+    "XOM": 1795598130.104495,
+    "JPM": 1795598130.104495,
+    "WMT": 1795598130.104495,
     "V": 1795598026.3876326,
-    "CAT": 1795596594.2568715,
+    "CAT": 1795598130.104495,
     "FN": 1795597178.2551703,
     "GLW": 1795597930.6851954,
-    "ANT": 1795596594.2568715,
-    "XAUUSD": 1795596594.2568715,
+    "ANT": 1795598130.104495,
+    "XAUUSD": 1795598130.104495,
     "KOSPI": 1795597178.2551703
   },
   "opex_shield": {
@@ -3424,10 +3424,10 @@
   },
   "calendar_banner": {
     "level": "upcoming",
-    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 256 分钟（11-25 08:30 ET / 22:30 KST）",
+    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 255 分钟（11-25 08:30 ET / 22:30 KST）",
     "detail": "前值 0.3% ｜ 预期 0.3% ｜ 临近公布前15分钟将自动触发防插针预警",
     "event_name": "美国10月核心PCE物价指数环比",
-    "minutes_left": 256,
+    "minutes_left": 255,
     "opex_shield": {
       "date": "2026-11-25",
       "active": false,
