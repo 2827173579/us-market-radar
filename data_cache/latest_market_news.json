@@ -1,12 +1,12 @@
 {
-  "updated_at_ts": 1795586936.623,
-  "updated_at_et": "11-25 01:08 ET",
-  "updated_at_kst": "15:08 KST",
+  "updated_at_ts": 1795587045.003,
+  "updated_at_et": "11-25 01:10 ET",
+  "updated_at_kst": "15:10 KST",
   "macro_calendar": [
     {
-      "event_id": "ff_Core PCE Price Index m/m_2026-11-25T08:30:00-05:00",
-      "name": "美国Core PCE Price Index m/m",
-      "country": "USD",
+      "event_id": "1599680",
+      "name": "美国10月核心PCE物价指数环比",
+      "country": "美国",
       "star": 5,
       "pub_time_ts": 1795613400.0,
       "pub_time_et": "11-25 08:30 ET",
@@ -15,15 +15,47 @@
       "previous": "0.3%",
       "forecast": "0.3%",
       "actual": "待公布",
-      "unit": "",
+      "unit": "%",
       "status": "upcoming",
-      "minutes_left": 442,
+      "minutes_left": 440,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
-      "source": "forexfactory"
+      "source": "wscn"
+    },
+    {
+      "event_id": "1599678",
+      "name": "美国10月PCE物价指数环比",
+      "country": "美国",
+      "star": 5,
+      "pub_time_ts": 1795613400.0,
+      "pub_time_et": "11-25 08:30 ET",
+      "pub_time_bj": "21:30 BJ",
+      "pub_time_kst": "22:30 KST",
+      "previous": "0.5%",
+      "forecast": "0.3%",
+      "actual": "待公布",
+      "unit": "%",
+      "status": "upcoming",
+      "minutes_left": 440,
+      "impact_tone": "pending",
+      "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
+      "source": "wscn"
     }
   ],
   "macro_flashes": [
+    {
+      "id": "20261125140834488800",
+      "title": "美俄商业合作促和平谈判遇冷，特朗普政府暂缓相关计划",
+      "summary": "据报道，特朗普政府已暂时搁置以能源投资等商业合作换取俄罗斯在乌克兰问题上让步的方案，因俄方更关注领土和安全要求……点击查看……",
+      "keywords": [
+        "特朗普"
+      ],
+      "pub_ts": 1795586914.0,
+      "time_et": "11-25 01:08 ET",
+      "time_bj": "14:08 BJ",
+      "time_kst": "15:08 KST",
+      "time_display": "01:08 ET / 14:08 BJ"
+    },
     {
       "id": "20261125135247611800",
       "title": "摩根大通2027展望：铜铝没跌完，黄金看向4500美元，标普500目标仅8200点",
@@ -353,20 +385,6 @@
       "time_bj": "07:07 BJ",
       "time_kst": "08:07 KST",
       "time_display": "18:07 ET / 07:07 BJ"
-    },
-    {
-      "id": "20261125070236515800",
-      "title": "全球财经早餐 | 2026年11月25日",
-      "summary": "美国被曝拟再挥舞关税大棒，特朗普政府正讨论直接打击伊朗高层！普京誓言报复能源遇袭，伊拉克拒绝接受欧佩克+产能评估……昨日今晨，全球都发生了哪些大事？",
-      "keywords": [
-        "关税",
-        "特朗普"
-      ],
-      "pub_ts": 1795561356.0,
-      "time_et": "11-24 18:02 ET",
-      "time_bj": "07:02 BJ",
-      "time_kst": "08:02 KST",
-      "time_display": "18:02 ET / 07:02 BJ"
     }
   ],
   "ticker_news": {
@@ -3401,10 +3419,10 @@
   },
   "calendar_banner": {
     "level": "upcoming",
-    "headline": "📅 今日美股重磅预告【美国Core PCE Price Index m/m】· 距公布约 442 分钟（11-25 08:30 ET / 22:30 KST）",
+    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 440 分钟（11-25 08:30 ET / 22:30 KST）",
     "detail": "前值 0.3% ｜ 预期 0.3% ｜ 临近公布前15分钟将自动触发防插针预警",
-    "event_name": "美国Core PCE Price Index m/m",
-    "minutes_left": 442,
+    "event_name": "美国10月核心PCE物价指数环比",
+    "minutes_left": 440,
     "opex_shield": {
       "date": "2026-11-25",
       "active": false,
