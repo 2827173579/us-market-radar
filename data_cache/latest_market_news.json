@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795592150.04,
-  "updated_at_et": "11-25 02:35 ET",
-  "updated_at_kst": "16:35 KST",
+  "updated_at_ts": 1795592256.08,
+  "updated_at_et": "11-25 02:37 ET",
+  "updated_at_kst": "16:37 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -17,7 +17,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 355,
+      "minutes_left": 353,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -36,7 +36,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 355,
+      "minutes_left": 353,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -946,6 +946,20 @@
     ],
     "NVDA": [
       {
+        "title": "Tech firms back in crosshairs as Huang rally reverses",
+        "url": "https://finance.yahoo.com/markets/world-indices/articles/tech-firms-back-crosshairs-huang-024219799.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 02:31 ET",
+        "pub_ts": 1795591873.0
+      },
+      {
+        "title": "SK hynix (NasdaqGS:SKHY) Sell Off Puts Undervalued Narrative Back In Focus",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/sk-hynix-nasdaqgs-skhy-sell-070941477.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 02:09 ET",
+        "pub_ts": 1795590581.0
+      },
+      {
         "title": "Nvidia’s spying scandal is backfiring on China",
         "url": "https://uk.finance.yahoo.com/news/nvidia-spying-scandal-backfiring-china-070000166.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -965,20 +979,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 01:52 ET",
         "pub_ts": 1795589553.0
-      },
-      {
-        "title": "Stock Market: Will S&P 500 Open Up or Down Today?",
-        "url": "https://www.benzinga.com/markets/prediction-markets/26/11/63614091/stock-market-will-sp-500-open-up-or-down-today-85?utm_source=yahooFinance&utm_campaign=partner_feed&utm_medium=referral&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 01:06 ET",
-        "pub_ts": 1795586777.0
-      },
-      {
-        "title": "‘Not All Of It Was Forthcoming’: Singapore PM Lawrence Wong Knocks US Cooperation In Nvidia Megaspeed Chip Probe",
-        "url": "https://finance.yahoo.com/technology/articles/not-forthcoming-singapore-pm-lawrence-052954958.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 00:29 ET",
-        "pub_ts": 1795584594.0
       }
     ],
     "AMD": [
@@ -3323,26 +3323,26 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795590733.2343545,
-    "SOXL": 1795590733.2343545,
+    "KORU": 1795592256.0799913,
+    "SOXL": 1795592256.0799913,
     "SPY": 1795591057.1673243,
-    "DIA": 1795590733.2343545,
-    "SOXX": 1795590733.2343545,
-    "QQQ": 1795590733.2343545,
+    "DIA": 1795592256.0799913,
+    "SOXX": 1795592256.0799913,
+    "QQQ": 1795592256.0799913,
     "SMH": 1795591057.1673243,
-    "IWM": 1795590733.2343545,
-    "IGV": 1795590733.2343545,
-    "TLT": 1795590733.2343545,
-    "GLD": 1795590733.2343545,
-    "SQQQ": 1795590733.2343545,
+    "IWM": 1795592256.0799913,
+    "IGV": 1795592256.0799913,
+    "TLT": 1795592256.0799913,
+    "GLD": 1795592256.0799913,
+    "SQQQ": 1795592256.0799913,
     "TSM": 1795591057.1673243,
-    "VIXY": 1795590733.2343545,
-    "SOXS": 1795590733.2343545,
-    "NVDA": 1795590733.2343545,
-    "AMD": 1795590733.2343545,
+    "VIXY": 1795592256.0799913,
+    "SOXS": 1795592256.0799913,
+    "NVDA": 1795592256.0799913,
+    "AMD": 1795592256.0799913,
     "ASML": 1795591057.1673243,
     "QCOM": 1795591057.1673243,
-    "AVGO": 1795590733.2343545,
+    "AVGO": 1795592256.0799913,
     "AMAT": 1795591057.1673243,
     "META": 1795591057.1673243,
     "GOOGL": 1795591057.1673243,
@@ -3420,10 +3420,10 @@
   },
   "calendar_banner": {
     "level": "upcoming",
-    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 355 分钟（11-25 08:30 ET / 22:30 KST）",
+    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 353 分钟（11-25 08:30 ET / 22:30 KST）",
     "detail": "前值 0.3% ｜ 预期 0.3% ｜ 临近公布前15分钟将自动触发防插针预警",
     "event_name": "美国10月核心PCE物价指数环比",
-    "minutes_left": 355,
+    "minutes_left": 353,
     "opex_shield": {
       "date": "2026-11-25",
       "active": false,
