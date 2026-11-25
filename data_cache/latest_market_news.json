@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795645929.314,
-  "updated_at_et": "11-25 17:32 ET",
-  "updated_at_kst": "07:32 KST",
+  "updated_at_ts": 1795646056.151,
+  "updated_at_et": "11-25 17:34 ET",
+  "updated_at_kst": "07:34 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -1240,7 +1240,7 @@
     "MSFT": [
       {
         "title": "Japan's biggest banks pick Solana as Fidelity adds DeFi tokens",
-        "url": "https://finance.yahoo.com/video/japans-biggest-banks-pick-solana-170000036.html?.tsrc=rss",
+        "url": "https://finance.yahoo.com/video/japans-biggest-banks-pick-solana-as-fidelity-adds-defi-tokens-222056705.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-25 12:00 ET",
         "pub_ts": 1795626000.0
@@ -1388,7 +1388,7 @@
     "AMZN": [
       {
         "title": "Jensen Huang's return, neocloud risk, and a holiday retail rally",
-        "url": "https://finance.yahoo.com/video/jensen-huangs-return-neocloud-risk-210000087.html?.tsrc=rss",
+        "url": "https://finance.yahoo.com/video/jensen-huangs-return-neocloud-risk-and-a-holiday-retail-rally-222042649.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-25 16:00 ET",
         "pub_ts": 1795640400.0
@@ -1399,6 +1399,13 @@
         "source": "Yahoo Finance",
         "time": "11-25 14:22 ET",
         "pub_ts": 1795634535.0
+      },
+      {
+        "title": "SpaceX is now on the clock to launch 1,000,000 satellites — 60x what exists in space today. Amazon calls it impossible",
+        "url": "https://finance.yahoo.com/technology/ai/articles/spacex-now-clock-launch-1-220000396.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 17:00 ET",
+        "pub_ts": 1795644000.0
       },
       {
         "title": "Federal Court Rules in Favor of CPSC in Landmark E-Commerce Product Safety Case",
@@ -1413,19 +1420,12 @@
         "source": "Yahoo Finance",
         "time": "11-25 13:35 ET",
         "pub_ts": 1795631702.0
-      },
-      {
-        "title": "Amazon to start selling cars in the UK",
-        "url": "https://www.telegraph.co.uk/business/2026/11/25/amazon-to-start-selling-cars-in-the-uk/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 12:47 ET",
-        "pub_ts": 1795628861.0
       }
     ],
     "CRWV": [
       {
         "title": "Jensen Huang's return, neocloud risk, and a holiday retail rally",
-        "url": "https://finance.yahoo.com/video/jensen-huangs-return-neocloud-risk-210000087.html?.tsrc=rss",
+        "url": "https://finance.yahoo.com/video/jensen-huangs-return-neocloud-risk-and-a-holiday-retail-rally-222042649.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-25 16:00 ET",
         "pub_ts": 1795640400.0
@@ -1462,7 +1462,7 @@
     "NBIS": [
       {
         "title": "Jensen Huang's return, neocloud risk, and a holiday retail rally",
-        "url": "https://finance.yahoo.com/video/jensen-huangs-return-neocloud-risk-210000087.html?.tsrc=rss",
+        "url": "https://finance.yahoo.com/video/jensen-huangs-return-neocloud-risk-and-a-holiday-retail-rally-222042649.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-25 16:00 ET",
         "pub_ts": 1795640400.0
@@ -3322,45 +3322,45 @@
   "ticker_news_ts": {
     "KORU": 1795645430.5530903,
     "SOXL": 1795645430.5530903,
-    "SPY": 1795644449.4396114,
+    "SPY": 1795646056.150761,
     "DIA": 1795645430.5530903,
     "SOXX": 1795645430.5530903,
     "QQQ": 1795645430.5530903,
-    "SMH": 1795644449.4396114,
+    "SMH": 1795646056.150761,
     "IWM": 1795645430.5530903,
     "IGV": 1795645430.5530903,
     "TLT": 1795645430.5530903,
     "GLD": 1795645430.5530903,
     "SQQQ": 1795645430.5530903,
-    "TSM": 1795644449.4396114,
+    "TSM": 1795646056.150761,
     "VIXY": 1795645430.5530903,
     "SOXS": 1795645430.5530903,
     "NVDA": 1795645430.5530903,
     "AMD": 1795645430.5530903,
-    "ASML": 1795644449.4396114,
-    "QCOM": 1795644449.4396114,
+    "ASML": 1795646056.150761,
+    "QCOM": 1795646056.150761,
     "AVGO": 1795645430.5530903,
-    "AMAT": 1795644449.4396114,
-    "META": 1795644449.4396114,
-    "GOOGL": 1795644449.4396114,
-    "MSFT": 1795644449.4396114,
-    "AAPL": 1795644449.4396114,
-    "PLTR": 1795644449.4396114,
-    "NOW": 1795644449.4396114,
-    "AMZN": 1795644449.4396114,
-    "CRWV": 1795644449.4396114,
-    "NBIS": 1795644449.4396114,
+    "AMAT": 1795646056.150761,
+    "META": 1795646056.150761,
+    "GOOGL": 1795646056.150761,
+    "MSFT": 1795646056.150761,
+    "AAPL": 1795646056.150761,
+    "PLTR": 1795646056.150761,
+    "NOW": 1795646056.150761,
+    "AMZN": 1795646056.150761,
+    "CRWV": 1795646056.150761,
+    "NBIS": 1795646056.150761,
     "APLD": 1795645063.2838955,
     "VST": 1795645063.2838955,
     "BE": 1795645063.2838955,
     "CRDO": 1795645063.2838955,
     "COHR": 1795645063.2838955,
-    "MRVL": 1795644494.861593,
-    "LITE": 1795644494.861593,
+    "MRVL": 1795646056.150761,
+    "LITE": 1795646056.150761,
     "AAOI": 1795645063.2838955,
     "SPCX": 1795645063.2838955,
     "ASTS": 1795645063.2838955,
-    "AXTI": 1795644449.4396114,
+    "AXTI": 1795646056.150761,
     "NASA": 1795645063.2838955,
     "LUNR": 1795645063.2838955,
     "TSLA": 1795645226.53532,
@@ -3375,9 +3375,9 @@
     "OKLO": 1795645226.53532,
     "CEG": 1795645226.53532,
     "FPS": 1795645226.53532,
-    "MU": 1795644494.861593,
-    "SKHY": 1795644494.861593,
-    "WDC": 1795644536.9378903,
+    "MU": 1795646056.150761,
+    "SKHY": 1795646056.150761,
+    "WDC": 1795646056.150761,
     "STX": 1795645310.074951,
     "MSTR": 1795645226.53532,
     "SNDK": 1795645226.53532,
@@ -3395,11 +3395,11 @@
     "WMT": 1795645349.6336482,
     "V": 1795645226.53532,
     "CAT": 1795645349.6336482,
-    "FN": 1795644494.861593,
+    "FN": 1795646056.150761,
     "GLW": 1795645063.2838955,
     "ANT": 1795645349.6336482,
     "XAUUSD": 1795645349.6336482,
-    "KOSPI": 1795644449.4396114
+    "KOSPI": 1795646056.150761
   },
   "opex_shield": {
     "date": "2026-11-25",
