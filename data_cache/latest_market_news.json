@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795575931.831,
-  "updated_at_et": "11-24 22:05 ET",
-  "updated_at_kst": "12:05 KST",
+  "updated_at_ts": 1795576033.318,
+  "updated_at_et": "11-24 22:07 ET",
+  "updated_at_kst": "12:07 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1762,11 +1762,25 @@
     ],
     "SPCX": [
       {
+        "title": "Jensen Huang's Return Could Make a Tesla/SpaceX Merger More Likely",
+        "url": "https://www.fool.com/investing/2026/11/24/jensen-huang-s-return-could-make-a-tesla-spacex-merger-more-likely/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 21:50 ET",
+        "pub_ts": 1795575002.0
+      },
+      {
         "title": "Thinking of Buying SpaceX Stock? Gary Black Says Wait for a Potential Tesla Merger to Send It Below $100",
         "url": "https://finance.yahoo.com/markets/stocks/articles/thinking-buying-spacex-stock-gary-013135652.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-24 20:31 ET",
         "pub_ts": 1795570295.0
+      },
+      {
+        "title": "5 Sleeper Blue-Chip Stock Picks for Steady Long-Term Gains",
+        "url": "https://www.kiplinger.com/investing/blue-chip-stocks/sleeper-blue-chip-stock-picks-for-steady-long-term-gains?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 19:52 ET",
+        "pub_ts": 1795567953.0
       },
       {
         "title": "Nasdaq Drops As NVDA, ANT, SPCX Slide: Mohamed El-Erian Says Market Warning Signals Go Well Beyond Nvidia",
@@ -1781,20 +1795,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 17:12 ET",
         "pub_ts": 1795558359.0
-      },
-      {
-        "title": "RBC Expects SpaceX-Tesla Deal Announcement By Early 2027 — Notes TSLA Shareholders May Accept Combination Without Large Premium",
-        "url": "https://stocktwits.com/news-articles/markets/equity/rbc-expects-space-x-tesla-deal-announcement-by-early-2027-notes-tsla-shareholders-may-accept-combination-without-large-premium/cNbsNbYR9k6?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 16:55 ET",
-        "pub_ts": 1795557333.0
-      },
-      {
-        "title": "A SpaceX-Tesla Deal Could Come in December. Here's Why 1 Group of Investors Should Be Worried.",
-        "url": "https://www.fool.com/investing/2026/11/24/a-spacex-tesla-deal-could-come-in-december-here-s-why-1-group-of-investors-should-be-worried/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 16:27 ET",
-        "pub_ts": 1795555622.0
       }
     ],
     "ASTS": [
@@ -2065,6 +2065,13 @@
         "pub_ts": 1795556758.0
       },
       {
+        "title": "Warren Buffett Finished Buying Coca-Cola in August 1994 and Never Bought Another Share. Under Greg Abel, Berkshire Now Collects $2.3 Million a Day From It",
+        "url": "https://247wallst.com/investing/2026/11/24/warren-buffett-finished-buying-coca-cola-in-august-1994-and-never-bought-another-share-under-greg-abel-berkshire-now-collects-2-3-million-a-day-from-it/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 21:47 ET",
+        "pub_ts": 1795574825.0
+      },
+      {
         "title": "Prediction: Here's What $10,000 in Coca-Cola Could Pay You in Dividends by 2036",
         "url": "https://www.fool.com/investing/2026/11/24/prediction-heres-what-10000-in-coca-cola-could-pay-you-in-dividends-by-2036/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2084,13 +2091,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 11:35 ET",
         "pub_ts": 1795538100.0
-      },
-      {
-        "title": "Coca-Cola (KO) Appoints David Elkins As CFO Effective April 2027",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/coca-cola-ko-appoints-david-151354439.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 10:13 ET",
-        "pub_ts": 1795533234.0
       }
     ],
     "FLY": [
@@ -2160,11 +2160,11 @@
         "pub_ts": 1795549802.0
       },
       {
-        "title": "HP Q4 Earnings Call Highlights",
-        "url": "https://www.marketbeat.com/instant-alerts/transcript-hp-q4-earnings-call-highlights-2026-11-24/?utm_source=yahoofinance&utm_medium=yahoofinance&.tsrc=rss",
+        "title": "Dell Says AI Demand Remains ‘Firm,’ Every Order ‘Fully Vetted’ – But DELL Stock Barely Moves After Beat-And-Raise Quarter",
+        "url": "https://stocktwits.com/news-articles/markets/equity/dell-says-ai-demand-remains-firm-every-order-fully-vetted-but-dell-stock-barely-moves-after-beat-and-raise-quarter/cNbu6VGR9lI?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 20:13 ET",
-        "pub_ts": 1795569195.0
+        "time": "11-24 21:50 ET",
+        "pub_ts": 1795575024.0
       }
     ],
     "VRT": [
@@ -3318,25 +3318,25 @@
     "AMZN": 1795575527.2364514,
     "CRWV": 1795575527.2364514,
     "NBIS": 1795575527.2364514,
-    "APLD": 1795574510.8887708,
-    "VST": 1795574510.8887708,
-    "BE": 1795574510.8887708,
-    "CRDO": 1795574510.8887708,
-    "COHR": 1795574510.8887708,
+    "APLD": 1795576033.317645,
+    "VST": 1795576033.317645,
+    "BE": 1795576033.317645,
+    "CRDO": 1795576033.317645,
+    "COHR": 1795576033.317645,
     "MRVL": 1795575527.2364514,
     "LITE": 1795575527.2364514,
-    "AAOI": 1795574510.8887708,
-    "SPCX": 1795574510.8887708,
-    "ASTS": 1795574510.8887708,
+    "AAOI": 1795576033.317645,
+    "SPCX": 1795576033.317645,
+    "ASTS": 1795576033.317645,
     "AXTI": 1795575527.2364514,
-    "NASA": 1795574510.8887708,
-    "LUNR": 1795574510.8887708,
+    "NASA": 1795576033.317645,
+    "LUNR": 1795576033.317645,
     "TSLA": 1795574713.0516179,
-    "AXP": 1795574510.8887708,
-    "RKLB": 1795574510.8887708,
-    "KO": 1795574510.8887708,
-    "FLY": 1795574510.8887708,
-    "INTC": 1795574510.8887708,
+    "AXP": 1795576033.317645,
+    "RKLB": 1795576033.317645,
+    "KO": 1795576033.317645,
+    "FLY": 1795576033.317645,
+    "INTC": 1795576033.317645,
     "VRT": 1795574713.0516179,
     "HPE": 1795574713.0516179,
     "DELL": 1795574713.0516179,
@@ -3364,7 +3364,7 @@
     "V": 1795574713.0516179,
     "CAT": 1795574816.2638087,
     "FN": 1795575527.2364514,
-    "GLW": 1795574510.8887708,
+    "GLW": 1795576033.317645,
     "ANT": 1795574816.2638087,
     "XAUUSD": 1795575023.4850943,
     "KOSPI": 1795575527.2364514
