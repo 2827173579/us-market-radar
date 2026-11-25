@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795609256.059,
-  "updated_at_et": "11-25 07:20 ET",
-  "updated_at_kst": "21:20 KST",
+  "updated_at_ts": 1795609307.896,
+  "updated_at_et": "11-25 07:21 ET",
+  "updated_at_kst": "21:21 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -17,7 +17,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 70,
+      "minutes_left": 69,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -36,13 +36,26 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 70,
+      "minutes_left": 69,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
     }
   ],
   "macro_flashes": [
+    {
+      "id": "20261125202049016800",
+      "title": "布伦特原油突破92美元/桶，日内涨1%。WTI原油现涨0.8%。",
+      "summary": "布伦特原油突破92美元/桶，日内涨1%。WTI原油现涨0.8%。",
+      "keywords": [
+        "原油"
+      ],
+      "pub_ts": 1795609249.0,
+      "time_et": "11-25 07:20 ET",
+      "time_bj": "20:20 BJ",
+      "time_kst": "21:20 KST",
+      "time_display": "07:20 ET / 20:20 BJ"
+    },
     {
       "id": "20261125201233327800",
       "title": "【美股股指期货与贵金属齐跌】 11月25日讯，现货金银一度走低，黄金跌破3500美元关口…",
@@ -372,19 +385,6 @@
       "time_bj": "15:06 BJ",
       "time_kst": "16:06 KST",
       "time_display": "02:06 ET / 15:06 BJ"
-    },
-    {
-      "id": "20261125145616504800",
-      "title": "国际现货金银月末前大概率失守关键位，美伊最终协议落地权重下降｜市场赔率数据表",
-      "summary": "金银下探风险与白银反弹并存，十二月加息预期集中，明年一月续紧仍存分歧，油价极端路径权重有限。",
-      "keywords": [
-        "加息"
-      ],
-      "pub_ts": 1795589776.0,
-      "time_et": "11-25 01:56 ET",
-      "time_bj": "14:56 BJ",
-      "time_kst": "15:56 KST",
-      "time_display": "01:56 ET / 14:56 BJ"
     }
   ],
   "ticker_news": {
@@ -3419,10 +3419,10 @@
   },
   "calendar_banner": {
     "level": "upcoming",
-    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 70 分钟（11-25 08:30 ET / 22:30 KST）",
+    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 69 分钟（11-25 08:30 ET / 22:30 KST）",
     "detail": "前值 0.3% ｜ 预期 0.3% ｜ 临近公布前15分钟将自动触发防插针预警",
     "event_name": "美国10月核心PCE物价指数环比",
-    "minutes_left": 70,
+    "minutes_left": 69,
     "opex_shield": {
       "date": "2026-11-25",
       "active": false,
