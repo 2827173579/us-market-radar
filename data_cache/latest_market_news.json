@@ -1,5 +1,5 @@
 {
-  "updated_at_ts": 1795608780.748,
+  "updated_at_ts": 1795608827.529,
   "updated_at_et": "11-25 07:13 ET",
   "updated_at_kst": "21:13 KST",
   "macro_calendar": [
@@ -3017,6 +3017,13 @@
     ],
     "JPM": [
       {
+        "title": "Market Chatter: JPMorgan Weighs Scaling Back UK Investments After Bank Tax Increase",
+        "url": "https://finance.yahoo.com/economy/policy/articles/market-chatter-jpmorgan-weighs-scaling-115843710.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 06:58 ET",
+        "pub_ts": 1795607923.0
+      },
+      {
         "title": "JPMorgan Chase (JPM) Sees $92.2 Million in Net ETF Buying on Nov. 23",
         "url": "https://finance.yahoo.com/markets/stocks/articles/jpmorgan-chase-jpm-sees-92-110101868.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3043,13 +3050,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 16:15 ET",
         "pub_ts": 1795554957.0
-      },
-      {
-        "title": "18% Upside for Wells Fargo? TD Cowen Thinks So, and Here’s How",
-        "url": "https://www.tikr.com/blog/18-upside-for-wells-fargo-td-cowen-thinks-so-and-heres-how?ref=yahoofinance&tlnk=yf-261124-jx98hp65&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 14:59 ET",
-        "pub_ts": 1795550397.0
       }
     ],
     "WMT": [
@@ -3246,6 +3246,13 @@
         "pub_ts": 1795601358.0
       },
       {
+        "title": "Was Jensen’s $25M White House Donation ‘the Cheapest Put Option’ Ever Bought?",
+        "url": "https://unchainedcrypto.com/was-jensens-25m-white-house-donation-the-cheapest-put-option-ever-bought/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 07:00 ET",
+        "pub_ts": 1795608006.0
+      },
+      {
         "title": "Broadcom Bought $1 Billion Worth of Anthropic’s IPO, and It Has Tens of Billions More Riding on Its Success.",
         "url": "https://www.fool.com/investing/2026/11/25/broadcom-bought-1-billion-worth-of-anthropic-tens-of-billions-more-riding-on-its-success/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3265,13 +3272,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 06:05 ET",
         "pub_ts": 1795604702.0
-      },
-      {
-        "title": "Anthropic Below Its IPO Price: Do Giants Come Back?",
-        "url": "https://www.trefis.com/stock/ant/articles/628732/anthropic-below-its-ipo-price-do-giants-come-back/2026-11-25?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 06:00 ET",
-        "pub_ts": 1795604414.0
       }
     ],
     "XAUUSD": [
@@ -3391,16 +3391,16 @@
     "MRNA": 1795608724.4252732,
     "NKE": 1795608724.4252732,
     "MCD": 1795608724.4252732,
-    "PEP": 1795607283.5424,
-    "XOM": 1795607283.5424,
-    "JPM": 1795607283.5424,
-    "WMT": 1795607283.5424,
+    "PEP": 1795608827.5293899,
+    "XOM": 1795608827.5293899,
+    "JPM": 1795608827.5293899,
+    "WMT": 1795608827.5293899,
     "V": 1795608724.4252732,
-    "CAT": 1795607283.5424,
+    "CAT": 1795608827.5293899,
     "FN": 1795607945.2346528,
     "GLW": 1795608623.6726074,
-    "ANT": 1795607283.5424,
-    "XAUUSD": 1795607283.5424,
+    "ANT": 1795608827.5293899,
+    "XAUUSD": 1795608827.5293899,
     "KOSPI": 1795607891.5258613
   },
   "opex_shield": {
