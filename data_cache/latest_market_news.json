@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795585003.311,
-  "updated_at_et": "11-25 00:36 ET",
-  "updated_at_kst": "14:36 KST",
+  "updated_at_ts": 1795585115.746,
+  "updated_at_et": "11-25 00:38 ET",
+  "updated_at_kst": "14:38 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -17,7 +17,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 474,
+      "minutes_left": 472,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -36,7 +36,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 474,
+      "minutes_left": 472,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -2652,6 +2652,20 @@
     ],
     "BTC-USD": [
       {
+        "title": "BlackRock Says Markets Overprice Fed Hikes: Will Bitcoin Catch a Break?",
+        "url": "https://beincrypto.com/blackrock-fed-hikes-bitcoin-relief/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 00:20 ET",
+        "pub_ts": 1795584052.0
+      },
+      {
+        "title": "Why Did CleanSpark Lose Nearly $1 Billion in Fiscal 2026?",
+        "url": "https://beincrypto.com/cleanspark-fiscal-2026-loss-bitcoin-ai/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 00:19 ET",
+        "pub_ts": 1795583980.0
+      },
+      {
         "title": "Strategy (MSTR) Stock Trades At A Discount To Book Value",
         "url": "https://finance.yahoo.com/markets/stocks/articles/strategy-mstr-stock-trades-discount-020908385.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2671,20 +2685,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 19:50 ET",
         "pub_ts": 1795567830.0
-      },
-      {
-        "title": "What Cleanspark (CLSK) Said on Its Q4 Earnings Call",
-        "url": "https://www.marketbeat.com/instant-alerts/transcript-what-cleanspark-clsk-said-on-its-q4-earnings-call-2026-11-24/?utm_source=yahoofinance&utm_medium=yahoofinance&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 19:13 ET",
-        "pub_ts": 1795565614.0
-      },
-      {
-        "title": "Why Bitcoin's Dominance Over Crypto Could Finally Be Breaking: Helius CEO",
-        "url": "https://www.coinage.media/2026/why-bitcoins-dominance-over-crypto-could-finally-be-breaking-helius-ceo?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 18:56 ET",
-        "pub_ts": 1795564560.0
       }
     ],
     "CRWD": [
@@ -3384,11 +3384,11 @@
     "FPS": 1795584329.8376112,
     "MU": 1795585003.3110478,
     "SKHY": 1795585003.3110478,
-    "WDC": 1795583426.957599,
+    "WDC": 1795585115.7463446,
     "STX": 1795584329.8376112,
     "MSTR": 1795584329.8376112,
     "SNDK": 1795584329.8376112,
-    "BTC-USD": 1795583426.957599,
+    "BTC-USD": 1795585115.7463446,
     "CRWD": 1795584329.8376112,
     "ORCL": 1795584329.8376112,
     "COIN": 1795584329.8376112,
@@ -3424,10 +3424,10 @@
   },
   "calendar_banner": {
     "level": "upcoming",
-    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 474 分钟（11-25 08:30 ET / 22:30 KST）",
+    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 472 分钟（11-25 08:30 ET / 22:30 KST）",
     "detail": "前值 0.3% ｜ 预期 0.3% ｜ 临近公布前15分钟将自动触发防插针预警",
     "event_name": "美国10月核心PCE物价指数环比",
-    "minutes_left": 474,
+    "minutes_left": 472,
     "opex_shield": {
       "date": "2026-11-25",
       "active": false,
