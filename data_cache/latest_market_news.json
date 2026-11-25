@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795632923.286,
-  "updated_at_et": "11-25 13:55 ET",
-  "updated_at_kst": "03:55 KST",
+  "updated_at_ts": 1795632960.109,
+  "updated_at_et": "11-25 13:56 ET",
+  "updated_at_kst": "03:56 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -1787,11 +1787,18 @@
     ],
     "SPCX": [
       {
-        "title": "Tesla and SpaceX stocks sink as merger concerns mount",
-        "url": "https://finance.yahoo.com/markets/stocks/article/tesla-and-spacex-stocks-sink-as-merger-concerns-mount-154159372.html?.tsrc=rss",
+        "title": "SpaceX stock pares losses following FCC approval for data centers in space",
+        "url": "https://finance.yahoo.com/technology/article/spacex-stock-pares-losses-following-fcc-approval-for-data-centers-in-space-183757039.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-25 10:41 ET",
-        "pub_ts": 1795621319.0
+        "time": "11-25 13:37 ET",
+        "pub_ts": 1795631877.0
+      },
+      {
+        "title": "Musk Says Grok Bot Can Find the “Best Black Friday Deals.” Grok Already Places 24% of AI Agent Orders",
+        "url": "https://www.tikr.com/blog/musk-says-grok-bot-can-find-the-best-black-friday-deals-grok-already-places-24-of-ai-agent-orders?ref=yahoofinance&tlnk=yf-261125-2c88523j&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 13:24 ET",
+        "pub_ts": 1795631070.0
       },
       {
         "title": "Prediction: SpaceX Stock Will Be Worth This Much in 3 Years",
@@ -1813,13 +1820,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 12:59 ET",
         "pub_ts": 1795629582.0
-      },
-      {
-        "title": "FCC Approves SpaceX’s Application To Deploy 1M Satellites – Musk Says ‘It Will Be A Great Asset To America And The World’",
-        "url": "https://stocktwits.com/news-articles/markets/equity/fcc-approves-spacex-application-to-deploy-million-satellites-musk-says-great-asset-to-america-and-world/cNbHVVBR9mt?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 12:49 ET",
-        "pub_ts": 1795628996.0
       }
     ],
     "ASTS": [
@@ -3343,25 +3343,25 @@
     "AMZN": 1795632287.5153353,
     "CRWV": 1795632287.5153353,
     "NBIS": 1795632287.5153353,
-    "APLD": 1795631437.8287823,
-    "VST": 1795631437.8287823,
-    "BE": 1795631437.8287823,
-    "CRDO": 1795631437.8287823,
-    "COHR": 1795631437.8287823,
+    "APLD": 1795632960.1085618,
+    "VST": 1795632960.1085618,
+    "BE": 1795632960.1085618,
+    "CRDO": 1795632960.1085618,
+    "COHR": 1795632960.1085618,
     "MRVL": 1795632332.9630487,
     "LITE": 1795632332.9630487,
-    "AAOI": 1795631437.8287823,
-    "SPCX": 1795631437.8287823,
-    "ASTS": 1795631437.8287823,
+    "AAOI": 1795632960.1085618,
+    "SPCX": 1795632960.1085618,
+    "ASTS": 1795632960.1085618,
     "AXTI": 1795632287.5153353,
-    "NASA": 1795631437.8287823,
-    "LUNR": 1795631437.8287823,
+    "NASA": 1795632960.1085618,
+    "LUNR": 1795632960.1085618,
     "TSLA": 1795631604.9019983,
-    "AXP": 1795631437.8287823,
-    "RKLB": 1795631437.8287823,
-    "KO": 1795631437.8287823,
-    "FLY": 1795631437.8287823,
-    "INTC": 1795631437.8287823,
+    "AXP": 1795632960.1085618,
+    "RKLB": 1795632960.1085618,
+    "KO": 1795632960.1085618,
+    "FLY": 1795632960.1085618,
+    "INTC": 1795632960.1085618,
     "VRT": 1795631604.9019983,
     "HPE": 1795631604.9019983,
     "DELL": 1795631604.9019983,
@@ -3389,7 +3389,7 @@
     "V": 1795631604.9019983,
     "CAT": 1795631684.808988,
     "FN": 1795632332.9630487,
-    "GLW": 1795631437.8287823,
+    "GLW": 1795632960.1085618,
     "ANT": 1795631684.808988,
     "XAUUSD": 1795631684.808988,
     "KOSPI": 1795632287.5153353
