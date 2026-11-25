@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795623228.888,
-  "updated_at_et": "11-25 11:13 ET",
-  "updated_at_kst": "01:13 KST",
+  "updated_at_ts": 1795623275.4,
+  "updated_at_et": "11-25 11:14 ET",
+  "updated_at_kst": "01:14 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -2644,6 +2644,20 @@
     ],
     "BTC-USD": [
       {
+        "title": "Fidelity adds DeFi staples to its crypto trading platform",
+        "url": "https://finance.yahoo.com/video/fidelity-adds-defi-staples-crypto-160000496.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 11:00 ET",
+        "pub_ts": 1795622400.0
+      },
+      {
+        "title": "Bitcoin Price Faces Alarming $58,000 Test as Selling Mounts",
+        "url": "https://finance.yahoo.com/markets/crypto/articles/bitcoin-price-faces-alarming-58-155703029.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 10:57 ET",
+        "pub_ts": 1795622223.0
+      },
+      {
         "title": "Bitcoin slides below $59,000, on pace for its worst month since June 2022",
         "url": "https://finance.yahoo.com/markets/article/bitcoin-sinks-in-brutal-november-sell-off-as-broader-market-slides-143727717.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2663,20 +2677,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 10:05 ET",
         "pub_ts": 1795619100.0
-      },
-      {
-        "title": "Strategy Now Holds More Than 850,000 Bitcoin. Where Could Its Stock Go Next?",
-        "url": "https://247wallst.com/investing/2026/11/25/strategy-now-holds-more-than-850000-bitcoin-where-could-its-stock-go-next/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 10:03 ET",
-        "pub_ts": 1795618995.0
-      },
-      {
-        "title": "Ukraine Officially Legalizes Cryptocurrencies",
-        "url": "https://www.cryptoprowl.com/releases/ukraine-officially-legalizes-cryptocurrencies-8069?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 10:02 ET",
-        "pub_ts": 1795618920.0
       }
     ],
     "CRWD": [
@@ -3376,11 +3376,11 @@
     "FPS": 1795622462.2364194,
     "MU": 1795623228.8876057,
     "SKHY": 1795623228.8876057,
-    "WDC": 1795621761.150073,
+    "WDC": 1795623275.4000878,
     "STX": 1795622512.0525706,
     "MSTR": 1795622462.2364194,
     "SNDK": 1795622462.2364194,
-    "BTC-USD": 1795621761.150073,
+    "BTC-USD": 1795623275.4000878,
     "CRWD": 1795622462.2364194,
     "ORCL": 1795622462.2364194,
     "COIN": 1795622462.2364194,
