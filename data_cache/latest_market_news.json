@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795641336.947,
-  "updated_at_et": "11-25 16:15 ET",
-  "updated_at_kst": "06:15 KST",
+  "updated_at_ts": 1795641392.115,
+  "updated_at_et": "11-25 16:16 ET",
+  "updated_at_kst": "06:16 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -456,6 +456,13 @@
     ],
     "SPY": [
       {
+        "title": "Nvidia is cheap on paper, so why won't the market buy it?",
+        "url": "https://finance.yahoo.com/video/nvidia-is-cheap-on-paper-so-why-wont-the-market-buy-it-192215326.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 14:22 ET",
+        "pub_ts": 1795634535.0
+      },
+      {
         "title": "SPDR S&P 500 ETF (SPY) Adds Apple and Nvidia on Monday",
         "url": "https://finance.yahoo.com/markets/stocks/articles/spdr-p-500-etf-spy-110402304.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -482,13 +489,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 10:05 ET",
         "pub_ts": 1795619103.0
-      },
-      {
-        "title": "Is A 4.7% S&P Jump A Good Sign?",
-        "url": "https://www.trefis.com/stock/spy/articles/628687/is-a-4-7-s-p-jump-a-good-sign/2026-11-25?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 06:02 ET",
-        "pub_ts": 1795604542.0
       }
     ],
     "DIA": [
@@ -1159,6 +1159,13 @@
     ],
     "META": [
       {
+        "title": "Nvidia is cheap on paper, so why won't the market buy it?",
+        "url": "https://finance.yahoo.com/video/nvidia-is-cheap-on-paper-so-why-wont-the-market-buy-it-192215326.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 14:22 ET",
+        "pub_ts": 1795634535.0
+      },
+      {
         "title": "Tariffs are back as Anthropic sinks further below its IPO price",
         "url": "https://finance.yahoo.com/video/tariffs-are-back-as-anthropic-sinks-further-below-its-ipo-price-160524926.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1185,16 +1192,23 @@
         "source": "Yahoo Finance",
         "time": "11-25 14:09 ET",
         "pub_ts": 1795633740.0
-      },
-      {
-        "title": "CoreWeave banks prepare $4.5 billion Meta-tied loan sale next week, Bloomberg says",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/coreweave-banks-prepare-4-5-183018691.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 13:30 ET",
-        "pub_ts": 1795631418.0
       }
     ],
     "GOOGL": [
+      {
+        "title": "Anthropic’s Chip Choices Could Change the Nvidia Story. Here’s How.",
+        "url": "https://www.fool.com/investing/2026/11/25/anthropic-s-chip-choices-could-change-the-nvidia-story-here-s-how/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 15:53 ET",
+        "pub_ts": 1795639982.0
+      },
+      {
+        "title": "SpaceX stock price crashes on concerns over compute demand",
+        "url": "https://blockspace.media/short/spacex-stock-price-crashes-on-concerns-over-compute-demand/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 15:32 ET",
+        "pub_ts": 1795638730.0
+      },
       {
         "title": "Is the AI Correction Over? Why Ram Ahluwalia Thinks the AI Trade Has Hit Bottom",
         "url": "https://unchainedcrypto.com/is-the-ai-correction-over-why-ram-ahluwalia-thinks-the-ai-trade-has-hit-bottom/?.tsrc=rss",
@@ -1215,20 +1229,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 14:05 ET",
         "pub_ts": 1795633502.0
-      },
-      {
-        "title": "Why Nvidia Stock Is Falling Again",
-        "url": "https://www.fool.com/investing/2026/11/25/why-nvidia-stock-is-falling-again/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 13:53 ET",
-        "pub_ts": 1795632782.0
-      },
-      {
-        "title": "Why Alphabet Stock Fell Today (Hint: It's AI-Related)",
-        "url": "https://www.fool.com/investing/2026/11/25/why-alphabet-stock-fell-today/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 13:52 ET",
-        "pub_ts": 1795632731.0
       }
     ],
     "MSFT": [
@@ -1381,25 +1381,18 @@
     ],
     "AMZN": [
       {
+        "title": "Nvidia is cheap on paper, so why won't the market buy it?",
+        "url": "https://finance.yahoo.com/video/nvidia-is-cheap-on-paper-so-why-wont-the-market-buy-it-192215326.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 14:22 ET",
+        "pub_ts": 1795634535.0
+      },
+      {
         "title": "Tariffs are back as Anthropic sinks further below its IPO price",
         "url": "https://finance.yahoo.com/video/tariffs-are-back-as-anthropic-sinks-further-below-its-ipo-price-160524926.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-25 11:05 ET",
         "pub_ts": 1795622724.0
-      },
-      {
-        "title": "Amazon and Meta are negotiating the future of AI shopping. Consumers aren't quite there yet.",
-        "url": "https://finance.yahoo.com/technology/article/amazon-and-meta-are-negotiating-the-future-of-ai-shopping-consumers-arent-quite-there-yet-144215428.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 09:42 ET",
-        "pub_ts": 1795617735.0
-      },
-      {
-        "title": "Amazon, Meta reportedly in talks to remove block on Muse AI agent",
-        "url": "https://finance.yahoo.com/video/amazon-meta-reportedly-in-talks-to-remove-block-on-muse-ai-agent-143616531.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 09:36 ET",
-        "pub_ts": 1795617376.0
       },
       {
         "title": "Amazon Is Backing More Than 5 Gigawatts of New Nuclear by 2039. This Reactor Developer Could Cash In.",
@@ -1414,9 +1407,23 @@
         "source": "Yahoo Finance",
         "time": "11-25 12:47 ET",
         "pub_ts": 1795628861.0
+      },
+      {
+        "title": "Amazon Wants a 'Fair Exchange' Before Letting Muse Back In",
+        "url": "https://finance.yahoo.com/technology/articles/amazon-wants-fair-exchange-letting-163449964.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 11:34 ET",
+        "pub_ts": 1795624489.0
       }
     ],
     "CRWV": [
+      {
+        "title": "CoreWeave’s Bankers Reportedly Ready $4.5B GPU-Backed Loan Tied To Meta Deal",
+        "url": "https://stocktwits.com/news-articles/markets/equity/core-weave-s-bankers-reportedly-ready-4-5-b-gpu-backed-loan-tied-to-meta-deal/cNbHrsCR9mw?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 16:02 ET",
+        "pub_ts": 1795640536.0
+      },
       {
         "title": "SpaceX Slashes GPU Pricing? Plus, IREN’s Selloff and CoreWeave’s Distressed Bonds",
         "url": "https://blockspace.media/podcast/spacex-slashes-gpu-pricing-plus-irens-selloff-and-coreweaves-distressed-bonds/?.tsrc=rss",
@@ -1444,13 +1451,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 12:25 ET",
         "pub_ts": 1795627523.0
-      },
-      {
-        "title": "CoreWeave, Nvidia Credit Risk Hit Fresh Highs as AI Fears Mount",
-        "url": "https://finance.yahoo.com/technology/ai/articles/coreweave-nvidia-credit-risk-hit-164402586.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 11:44 ET",
-        "pub_ts": 1795625042.0
       }
     ],
     "NBIS": [
@@ -3316,34 +3316,34 @@
   "ticker_news_ts": {
     "KORU": 1795640892.7555192,
     "SOXL": 1795640892.7555192,
-    "SPY": 1795639848.1332786,
+    "SPY": 1795641392.1149032,
     "DIA": 1795640892.7555192,
     "SOXX": 1795640892.7555192,
     "QQQ": 1795640892.7555192,
-    "SMH": 1795639848.1332786,
+    "SMH": 1795641392.1149032,
     "IWM": 1795640892.7555192,
     "IGV": 1795640892.7555192,
     "TLT": 1795640892.7555192,
     "GLD": 1795640892.7555192,
     "SQQQ": 1795640892.7555192,
-    "TSM": 1795639848.1332786,
+    "TSM": 1795641392.1149032,
     "VIXY": 1795640892.7555192,
     "SOXS": 1795640892.7555192,
     "NVDA": 1795640892.7555192,
     "AMD": 1795640892.7555192,
-    "ASML": 1795639848.1332786,
-    "QCOM": 1795639848.1332786,
+    "ASML": 1795641392.1149032,
+    "QCOM": 1795641392.1149032,
     "AVGO": 1795640892.7555192,
-    "AMAT": 1795639848.1332786,
-    "META": 1795639848.1332786,
-    "GOOGL": 1795639848.1332786,
-    "MSFT": 1795639848.1332786,
-    "AAPL": 1795639848.1332786,
-    "PLTR": 1795639848.1332786,
-    "NOW": 1795639848.1332786,
-    "AMZN": 1795639848.1332786,
-    "CRWV": 1795639848.1332786,
-    "NBIS": 1795639848.1332786,
+    "AMAT": 1795641392.1149032,
+    "META": 1795641392.1149032,
+    "GOOGL": 1795641392.1149032,
+    "MSFT": 1795641392.1149032,
+    "AAPL": 1795641392.1149032,
+    "PLTR": 1795641392.1149032,
+    "NOW": 1795641392.1149032,
+    "AMZN": 1795641392.1149032,
+    "CRWV": 1795641392.1149032,
+    "NBIS": 1795641392.1149032,
     "APLD": 1795640549.2440906,
     "VST": 1795640549.2440906,
     "BE": 1795640549.2440906,
@@ -3354,7 +3354,7 @@
     "AAOI": 1795640549.2440906,
     "SPCX": 1795640549.2440906,
     "ASTS": 1795640549.2440906,
-    "AXTI": 1795639848.1332786,
+    "AXTI": 1795641392.1149032,
     "NASA": 1795640549.2440906,
     "LUNR": 1795640549.2440906,
     "TSLA": 1795640679.6591523,
@@ -3393,7 +3393,7 @@
     "GLW": 1795640549.2440906,
     "ANT": 1795640769.0470114,
     "XAUUSD": 1795640769.0470114,
-    "KOSPI": 1795639848.1332786
+    "KOSPI": 1795641392.1149032
   },
   "opex_shield": {
     "date": "2026-11-25",
