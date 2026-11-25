@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795613173.969,
-  "updated_at_et": "11-25 08:26 ET",
-  "updated_at_kst": "22:26 KST",
+  "updated_at_ts": 1795613220.822,
+  "updated_at_et": "11-25 08:27 ET",
+  "updated_at_kst": "22:27 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -17,7 +17,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "countdown_15m",
-      "minutes_left": 4,
+      "minutes_left": 3,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -36,7 +36,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "countdown_15m",
-      "minutes_left": 4,
+      "minutes_left": 3,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -2163,6 +2163,13 @@
     ],
     "INTC": [
       {
+        "title": "What Explains The Drop In Intel Stock?",
+        "url": "https://www.trefis.com/stock/intc/articles/628986/what-explains-the-drop-in-intel-stock/2026-11-25?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 08:04 ET",
+        "pub_ts": 1795611869.0
+      },
+      {
         "title": "Intel (INTC) Hit With Shareholder Lawsuit Over PC Slowdown And AI Claims",
         "url": "https://finance.yahoo.com/markets/stocks/articles/intel-intc-hit-shareholder-lawsuit-123347682.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2189,13 +2196,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 06:04 ET",
         "pub_ts": 1795604693.0
-      },
-      {
-        "title": "ETFs Bought $73.8 Million of Intel (INTC) on Nov. 23",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-bought-73-8-million-110149555.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 06:01 ET",
-        "pub_ts": 1795604509.0
       }
     ],
     "VRT": [
@@ -3349,25 +3349,25 @@
     "AMZN": 1795612468.2866437,
     "CRWV": 1795612468.2866437,
     "NBIS": 1795612468.2866437,
-    "APLD": 1795611686.617976,
-    "VST": 1795611686.617976,
-    "BE": 1795611686.617976,
-    "CRDO": 1795611686.617976,
-    "COHR": 1795611686.617976,
+    "APLD": 1795613220.822465,
+    "VST": 1795613220.822465,
+    "BE": 1795613220.822465,
+    "CRDO": 1795613220.822465,
+    "COHR": 1795613220.822465,
     "MRVL": 1795612521.676772,
     "LITE": 1795612521.676772,
-    "AAOI": 1795611686.617976,
-    "SPCX": 1795611686.617976,
-    "ASTS": 1795611686.617976,
+    "AAOI": 1795613220.822465,
+    "SPCX": 1795613220.822465,
+    "ASTS": 1795613220.822465,
     "AXTI": 1795612468.2866437,
-    "NASA": 1795611686.617976,
-    "LUNR": 1795611686.617976,
+    "NASA": 1795613220.822465,
+    "LUNR": 1795613220.822465,
     "TSLA": 1795611797.1131556,
-    "AXP": 1795611686.617976,
-    "RKLB": 1795611686.617976,
-    "KO": 1795611686.617976,
-    "FLY": 1795611686.617976,
-    "INTC": 1795611686.617976,
+    "AXP": 1795613220.822465,
+    "RKLB": 1795613220.822465,
+    "KO": 1795613220.822465,
+    "FLY": 1795613220.822465,
+    "INTC": 1795613220.822465,
     "VRT": 1795611797.1131556,
     "HPE": 1795611797.1131556,
     "DELL": 1795611797.1131556,
@@ -3395,7 +3395,7 @@
     "V": 1795611797.1131556,
     "CAT": 1795611894.357723,
     "FN": 1795612521.676772,
-    "GLW": 1795611686.617976,
+    "GLW": 1795613220.822465,
     "ANT": 1795611894.357723,
     "XAUUSD": 1795611894.357723,
     "KOSPI": 1795612468.2866437
@@ -3416,10 +3416,10 @@
   },
   "calendar_banner": {
     "level": "countdown_15m",
-    "headline": "⚠️ 宏观防插针预警：距离【美国10月核心PCE物价指数环比】公布还有 4 分钟，盘口极易上下剧烈插针，暂停左侧盲目挂单！",
+    "headline": "⚠️ 宏观防插针预警：距离【美国10月核心PCE物价指数环比】公布还有 3 分钟，盘口极易上下剧烈插针，暂停左侧盲目挂单！",
     "detail": "公布时间 11-25 08:30 ET / 22:30 KST ｜ 前值 0.3% · 预期 0.3%",
     "event_name": "美国10月核心PCE物价指数环比",
-    "minutes_left": 4,
+    "minutes_left": 3,
     "opex_shield": {
       "date": "2026-11-25",
       "active": false,
