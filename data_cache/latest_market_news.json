@@ -1,9 +1,22 @@
 {
-  "updated_at_ts": 1795568334.633,
-  "updated_at_et": "11-24 19:58 ET",
-  "updated_at_kst": "09:58 KST",
+  "updated_at_ts": 1795568431.403,
+  "updated_at_et": "11-24 20:00 ET",
+  "updated_at_kst": "10:00 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261125090002102800",
+      "title": "早盘开盘，国内期货主力合约涨多跌少，沥青涨超3%，纯苯涨近3%，甲醇、PTA、对二甲苯、…",
+      "summary": "早盘开盘，国内期货主力合约涨多跌少，沥青涨超3%，纯苯涨近3%，甲醇、PTA、对二甲苯、SC原油、乙二醇（EG）、烧碱涨超2%。跌幅方面，沪银跌超6%，沪锡、国际铜、钯跌超5%，沪铜跌近5%，铂跌超3%，沪金跌近3%，沪锌跌超2%。",
+      "keywords": [
+        "原油"
+      ],
+      "pub_ts": 1795568402.0,
+      "time_et": "11-24 20:00 ET",
+      "time_bj": "09:00 BJ",
+      "time_kst": "10:00 KST",
+      "time_display": "20:00 ET / 09:00 BJ"
+    },
     {
       "id": "20261125083003175800",
       "title": "澳大利亚10月未季调CPI年率 4.9%，预期4.7%，前值4.30%。",
@@ -341,21 +354,6 @@
       "time_bj": "22:33 BJ",
       "time_kst": "23:33 KST",
       "time_display": "09:33 ET / 22:33 BJ"
-    },
-    {
-      "id": "20261124223024405800",
-      "title": "【美股三大股指低开 英伟达跌3.6%】 11月24日讯，美股开盘，三大股指走低，道指跌0…",
-      "summary": "【美股三大股指低开 英伟达跌3.6%】 11月24日讯，美股开盘，三大股指走低，道指跌0.47%，标普500指数跌1%，纳指跌1.4%。半导体板块回落，英伟达(NVDA.O)跌约3.6%。Anthropic(ANT.O)“破发”，跌幅约5%。",
-      "keywords": [
-        "半导体",
-        "英伟达",
-        "标普"
-      ],
-      "pub_ts": 1795530624.0,
-      "time_et": "11-24 09:30 ET",
-      "time_bj": "22:30 BJ",
-      "time_kst": "23:30 KST",
-      "time_display": "09:30 ET / 22:30 BJ"
     }
   ],
   "ticker_news": {
@@ -1952,6 +1950,13 @@
     ],
     "TSLA": [
       {
+        "title": "He Lets His Tesla Drive at 93, Trusting the Brand. A $400,000 Crash Judgment Could Reach His Savings, While His $2,800 Social Security Check Stays Off-Limits to the Victim",
+        "url": "https://247wallst.com/personal-finance/social-security/2026/11/24/he-lets-his-tesla-drive-at-93-trusting-the-brand-a-400000-crash-judgment-could-reach-his-savings-while-his-2800-social-security-check-stays-off-limits-to-the-victim/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 19:32 ET",
+        "pub_ts": 1795566746.0
+      },
+      {
         "title": "S&P 500, Nasdaq End Lower As AI Jitters Resurface With Nvidia’s Governance Issues And Talks Of Fresh Import Tariffs — NVDA, DELL, TSLA, TGTX In Focus",
         "url": "https://stocktwits.com/news-articles/markets/equity/s-and-p-500-nasdaq-end-lower-as-ai-jitters-resurface-with-nvidia-s-governance-issues-and-talks-of-fresh-import-tariffs-nvda-dell-tsla-tgtx-in-focus/cNbuDhyR9lT?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1978,13 +1983,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 16:27 ET",
         "pub_ts": 1795555622.0
-      },
-      {
-        "title": "Tesla, SpaceX Reportedly Pick Board Members To Negotiate Elon Musk's Mega Merger",
-        "url": "https://finance.yahoo.com/m/d4400d8c-dfaf-3382-a360-877e01e80aec/tesla%2C-spacex-reportedly-pick.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 16:05 ET",
-        "pub_ts": 1795554326.0
       }
     ],
     "AXP": [
@@ -2255,13 +2253,6 @@
         "pub_ts": 1795556758.0
       },
       {
-        "title": "Dell's Q3 earnings crush estimates as AI server demand roars",
-        "url": "https://finance.yahoo.com/video/dells-q3-earnings-crush-estimates-as-ai-server-demand-roars-213232468.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 16:32 ET",
-        "pub_ts": 1795555952.0
-      },
-      {
         "title": "Dell Technologies Q3 Earnings Call Highlights",
         "url": "https://www.marketbeat.com/instant-alerts/transcript-dell-technologies-q3-earnings-call-highlights-2026-11-24/?utm_source=yahoofinance&utm_medium=yahoofinance&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2281,6 +2272,13 @@
         "source": "Yahoo Finance",
         "time": "11-24 18:30 ET",
         "pub_ts": 1795563053.0
+      },
+      {
+        "title": "Dell Technologies (DELL) Q3 Earnings: How Key Metrics Compare to Wall Street Estimates",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/dell-technologies-dell-q3-earnings-233002445.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 18:30 ET",
+        "pub_ts": 1795563002.0
       }
     ],
     "OKLO": [
@@ -3336,37 +3334,37 @@
     "AXTI": 1795567838.4967844,
     "NASA": 1795568234.0789213,
     "LUNR": 1795568234.0789213,
-    "TSLA": 1795566924.4221144,
+    "TSLA": 1795568431.4026234,
     "AXP": 1795568234.0789213,
     "RKLB": 1795568234.0789213,
     "KO": 1795568234.0789213,
     "FLY": 1795568234.0789213,
     "INTC": 1795568234.0789213,
-    "VRT": 1795566924.4221144,
-    "HPE": 1795566924.4221144,
-    "DELL": 1795566924.4221144,
-    "OKLO": 1795566924.4221144,
-    "CEG": 1795566924.4221144,
-    "FPS": 1795566924.4221144,
+    "VRT": 1795568431.4026234,
+    "HPE": 1795568431.4026234,
+    "DELL": 1795568431.4026234,
+    "OKLO": 1795568431.4026234,
+    "CEG": 1795568431.4026234,
+    "FPS": 1795568431.4026234,
     "MU": 1795567838.4967844,
     "SKHY": 1795567838.4967844,
     "WDC": 1795567838.4967844,
-    "STX": 1795566924.4221144,
-    "MSTR": 1795566924.4221144,
-    "SNDK": 1795566924.4221144,
+    "STX": 1795568431.4026234,
+    "MSTR": 1795568431.4026234,
+    "SNDK": 1795568431.4026234,
     "BTC-USD": 1795567838.4967844,
-    "CRWD": 1795566924.4221144,
-    "ORCL": 1795566924.4221144,
-    "COIN": 1795566924.4221144,
-    "LLY": 1795566924.4221144,
-    "MRNA": 1795566924.4221144,
+    "CRWD": 1795568431.4026234,
+    "ORCL": 1795568431.4026234,
+    "COIN": 1795568431.4026234,
+    "LLY": 1795568431.4026234,
+    "MRNA": 1795568431.4026234,
     "NKE": 1795567025.3005576,
-    "MCD": 1795566924.4221144,
+    "MCD": 1795568431.4026234,
     "PEP": 1795567025.3005576,
     "XOM": 1795567025.3005576,
     "JPM": 1795567025.3005576,
     "WMT": 1795567025.3005576,
-    "V": 1795566924.4221144,
+    "V": 1795568431.4026234,
     "CAT": 1795567025.3005576,
     "FN": 1795567838.4967844,
     "GLW": 1795568234.0789213,
@@ -3391,7 +3389,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (19:30 ET / 08:30 BJ) [CPI]：澳大利亚10月未季调CPI年率 4.9%，预期4.7%，前值4.30%。",
+    "detail": "⚡ 最新核心快讯 (20:00 ET / 09:00 BJ) [原油]：早盘开盘，国内期货主力合约涨多跌少，沥青涨超3%，纯苯涨近3%，甲醇、PTA、对二甲苯、SC原油、乙二醇（EG）、烧碱涨超2%。跌幅方面，沪银跌超6%，沪锡、国际铜、钯跌超5%，沪铜跌近5%",
     "event_name": "",
     "minutes_left": 0,
     "opex_shield": {
