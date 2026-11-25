@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795599820.313,
-  "updated_at_et": "11-25 04:43 ET",
-  "updated_at_kst": "18:43 KST",
+  "updated_at_ts": 1795599866.483,
+  "updated_at_et": "11-25 04:44 ET",
+  "updated_at_kst": "18:44 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -17,7 +17,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 227,
+      "minutes_left": 226,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -36,7 +36,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 227,
+      "minutes_left": 226,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -955,6 +955,20 @@
         "pub_ts": 1795598068.0
       },
       {
+        "title": "Tim Cook Could Have Purchased Any of 489 S&P 500 Companies With $903 Billion. Instead, He Bought Something That Transformed Apple Forever.",
+        "url": "https://www.fool.com/investing/2026/11/25/tim-cook-purchase-any-489-sp-500-companies-with-903-billion-he-bought-something-transformed-apple-forever/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 04:26 ET",
+        "pub_ts": 1795598762.0
+      },
+      {
+        "title": "SanDisk Trades at 4.6x Earnings—And Still Got Cut in Half",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/sandisk-trades-4-6x-earnings-092502421.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 04:25 ET",
+        "pub_ts": 1795598702.0
+      },
+      {
         "title": "Tech firms back in crosshairs as Huang rally reverses",
         "url": "https://finance.yahoo.com/markets/world-indices/articles/tech-firms-back-crosshairs-huang-024219799.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -962,25 +976,11 @@
         "pub_ts": 1795595488.0
       },
       {
-        "title": "SK hynix (NasdaqGS:SKHY) Sell Off Puts Undervalued Narrative Back In Focus",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/sk-hynix-nasdaqgs-skhy-sell-070941477.html?.tsrc=rss",
+        "title": "Super Micro forecasts 130% profit growth, yet shares sank to $22",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/super-micro-forecasts-130-profit-092445717.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-25 02:09 ET",
-        "pub_ts": 1795590581.0
-      },
-      {
-        "title": "Nvidia’s spying scandal is backfiring on China",
-        "url": "https://uk.finance.yahoo.com/news/nvidia-spying-scandal-backfiring-china-070000166.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 02:00 ET",
-        "pub_ts": 1795590000.0
-      },
-      {
-        "title": "Kohl's Comparable Sales Rose 1.2% After Falling 0.9% Last Quarter. Here's What Changed.",
-        "url": "https://www.fool.com/investing/2026/11/25/kohls-comparable-sales-rose-12-after-falling-09-last-quarter-heres-what-changed/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 04:08 ET",
-        "pub_ts": 1795597700.0
+        "time": "11-25 04:24 ET",
+        "pub_ts": 1795598685.0
       }
     ],
     "AMD": [
@@ -1124,11 +1124,11 @@
         "pub_ts": 1795537322.0
       },
       {
-        "title": "Stocks give back gains as Anthropic dips below IPO price",
-        "url": "https://finance.yahoo.com/video/stocks-give-back-gains-as-anthropic-dips-below-ipo-price-154408548.html?.tsrc=rss",
+        "title": "Arista Networks vs. SentinelOne: Which Technology Stock Is a Better Buy for 2027?",
+        "url": "https://www.fool.com/coverage/better-buy/2026/11/24/arista-networks-vs-sentinelone-which-technology-stock-is-a-better-buy-for-2027/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 10:44 ET",
-        "pub_ts": 1795535048.0
+        "time": "11-24 21:43 ET",
+        "pub_ts": 1795574630.0
       }
     ],
     "AMAT": [
@@ -3325,26 +3325,26 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795598331.5410008,
-    "SOXL": 1795598331.5410008,
+    "KORU": 1795599866.482655,
+    "SOXL": 1795599866.482655,
     "SPY": 1795598710.5608332,
-    "DIA": 1795598331.5410008,
-    "SOXX": 1795598331.5410008,
-    "QQQ": 1795598331.5410008,
+    "DIA": 1795599866.482655,
+    "SOXX": 1795599866.482655,
+    "QQQ": 1795599866.482655,
     "SMH": 1795598710.5608332,
-    "IWM": 1795598331.5410008,
-    "IGV": 1795598331.5410008,
-    "TLT": 1795598331.5410008,
-    "GLD": 1795598331.5410008,
-    "SQQQ": 1795598331.5410008,
+    "IWM": 1795599866.482655,
+    "IGV": 1795599866.482655,
+    "TLT": 1795599866.482655,
+    "GLD": 1795599866.482655,
+    "SQQQ": 1795599866.482655,
     "TSM": 1795598710.5608332,
-    "VIXY": 1795598331.5410008,
-    "SOXS": 1795598331.5410008,
-    "NVDA": 1795598331.5410008,
-    "AMD": 1795598331.5410008,
+    "VIXY": 1795599866.482655,
+    "SOXS": 1795599866.482655,
+    "NVDA": 1795599866.482655,
+    "AMD": 1795599866.482655,
     "ASML": 1795598710.5608332,
     "QCOM": 1795598710.5608332,
-    "AVGO": 1795598331.5410008,
+    "AVGO": 1795599866.482655,
     "AMAT": 1795598710.5608332,
     "META": 1795598710.5608332,
     "GOOGL": 1795598710.5608332,
@@ -3422,10 +3422,10 @@
   },
   "calendar_banner": {
     "level": "upcoming",
-    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 227 分钟（11-25 08:30 ET / 22:30 KST）",
+    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 226 分钟（11-25 08:30 ET / 22:30 KST）",
     "detail": "前值 0.3% ｜ 预期 0.3% ｜ 临近公布前15分钟将自动触发防插针预警",
     "event_name": "美国10月核心PCE物价指数环比",
-    "minutes_left": 227,
+    "minutes_left": 226,
     "opex_shield": {
       "date": "2026-11-25",
       "active": false,
