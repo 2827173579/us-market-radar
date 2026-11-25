@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795616323.561,
-  "updated_at_et": "11-25 09:18 ET",
-  "updated_at_kst": "23:18 KST",
+  "updated_at_ts": 1795616370.113,
+  "updated_at_et": "11-25 09:19 ET",
+  "updated_at_kst": "23:19 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -2234,6 +2234,13 @@
     ],
     "HPE": [
       {
+        "title": "HPE Q4 Earnings Beat Estimates on Strong Server Demand",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/hpe-q4-earnings-beat-estimates-130300467.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 08:03 ET",
+        "pub_ts": 1795611780.0
+      },
+      {
         "title": "What Is Dragging HPE Stock Down?",
         "url": "https://www.trefis.com/stock/hpe/articles/628967/what-is-dragging-hpe-stock-down/2026-11-25?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2260,13 +2267,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 18:21 ET",
         "pub_ts": 1795562494.0
-      },
-      {
-        "title": "Dell Just Reported Earnings and Raised Its Forecast by $10 Billion. Is the Stock a Buy After Tuesday's Selloff?",
-        "url": "https://www.fool.com/investing/2026/11/24/dell-just-reported-earnings-and-raised-its-forecast-by-usd10-billion-is-the-stock-a-buy-after-tuesday-s-selloff/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 17:14 ET",
-        "pub_ts": 1795558483.0
       }
     ],
     "DELL": [
@@ -2715,6 +2715,13 @@
     ],
     "ORCL": [
       {
+        "title": "Data Center Americas 2027 Announces Industry Leaders from AWS, Google, Microsoft, Oracle, CoreWeave and Applied Digital as Featured Speakers",
+        "url": "https://finance.yahoo.com/technology/ai/articles/data-center-americas-2027-announces-140000391.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 09:00 ET",
+        "pub_ts": 1795615200.0
+      },
+      {
         "title": "Oracle Can Reach $240 in 2027: Wall Street Needs 4 Things to Happen",
         "url": "https://247wallst.com/investing/2026/11/25/oracle-can-reach-240-in-2027-wall-street-needs-4-things-to-happen/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2741,13 +2748,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 01:56 ET",
         "pub_ts": 1795589778.0
-      },
-      {
-        "title": "Oracle (ORCL) Falls More Steeply Than Broader Market: What Investors Need to Know",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/oracle-orcl-falls-more-steeply-214502238.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 16:45 ET",
-        "pub_ts": 1795556702.0
       }
     ],
     "COIN": [
@@ -3085,6 +3085,13 @@
     ],
     "V": [
       {
+        "title": "Visa Inc. (V) is Attracting Investor Attention: Here is What You Should Know",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/visa-inc-v-attracting-investor-130005459.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 08:00 ET",
+        "pub_ts": 1795611605.0
+      },
+      {
         "title": "Kraken’s Krak Moves Into Credit With Two US Cards, One Backed by a USDC Deposit",
         "url": "https://unchainedcrypto.com/krakens-krak-moves-into-credit-with-two-us-cards-one-backed-by-a-usdc-deposit/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3111,13 +3118,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 08:48 ET",
         "pub_ts": 1795528102.0
-      },
-      {
-        "title": "Visa (V) Broadens Checkout Options On Its Acceptance Platform",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/visa-v-broadens-checkout-options-111840301.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 06:18 ET",
-        "pub_ts": 1795519120.0
       }
     ],
     "CAT": [
@@ -3359,37 +3359,37 @@
     "AXTI": 1795615533.4587028,
     "NASA": 1795616271.1282868,
     "LUNR": 1795616271.1282868,
-    "TSLA": 1795614843.2812846,
+    "TSLA": 1795616370.1130629,
     "AXP": 1795616271.1282868,
     "RKLB": 1795616271.1282868,
     "KO": 1795616271.1282868,
     "FLY": 1795616271.1282868,
     "INTC": 1795616271.1282868,
-    "VRT": 1795614843.2812846,
-    "HPE": 1795614843.2812846,
-    "DELL": 1795614843.2812846,
-    "OKLO": 1795614843.2812846,
-    "CEG": 1795614843.2812846,
-    "FPS": 1795614843.2812846,
+    "VRT": 1795616370.1130629,
+    "HPE": 1795616370.1130629,
+    "DELL": 1795616370.1130629,
+    "OKLO": 1795616370.1130629,
+    "CEG": 1795616370.1130629,
+    "FPS": 1795616370.1130629,
     "MU": 1795615587.3890493,
     "SKHY": 1795615587.3890493,
     "WDC": 1795615636.925272,
     "STX": 1795614895.7600193,
-    "MSTR": 1795614843.2812846,
-    "SNDK": 1795614843.2812846,
+    "MSTR": 1795616370.1130629,
+    "SNDK": 1795616370.1130629,
     "BTC-USD": 1795615636.925272,
-    "CRWD": 1795614843.2812846,
-    "ORCL": 1795614843.2812846,
-    "COIN": 1795614843.2812846,
-    "LLY": 1795614843.2812846,
-    "MRNA": 1795614843.2812846,
-    "NKE": 1795614843.2812846,
-    "MCD": 1795614843.2812846,
+    "CRWD": 1795616370.1130629,
+    "ORCL": 1795616370.1130629,
+    "COIN": 1795616370.1130629,
+    "LLY": 1795616370.1130629,
+    "MRNA": 1795616370.1130629,
+    "NKE": 1795616370.1130629,
+    "MCD": 1795616370.1130629,
     "PEP": 1795614946.8550723,
     "XOM": 1795614946.8550723,
     "JPM": 1795614946.8550723,
     "WMT": 1795614946.8550723,
-    "V": 1795614843.2812846,
+    "V": 1795616370.1130629,
     "CAT": 1795614946.8550723,
     "FN": 1795615587.3890493,
     "GLW": 1795616271.1282868,
