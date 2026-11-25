@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795584441.007,
-  "updated_at_et": "11-25 00:27 ET",
-  "updated_at_kst": "14:27 KST",
+  "updated_at_ts": 1795584582.53,
+  "updated_at_et": "11-25 00:29 ET",
+  "updated_at_kst": "14:29 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -17,7 +17,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 483,
+      "minutes_left": 481,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -36,7 +36,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 483,
+      "minutes_left": 481,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -950,6 +950,27 @@
     ],
     "NVDA": [
       {
+        "title": "Donald Trump Floats Jensen Huang Pardon, US Stake In Nvidia – But NVDA Loses Momentum",
+        "url": "https://stocktwits.com/news-articles/markets/equity/donald-trump-floats-jensen-huang-pardon-us-stake-in-nvidia-but-nvda-loses-momentum/cNbHPnyR9lL?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 00:20 ET",
+        "pub_ts": 1795584052.0
+      },
+      {
+        "title": "November 2026 Growth Stocks With Strong Earnings Potential",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/november-2026-growth-stocks-strong-051356592.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 00:13 ET",
+        "pub_ts": 1795583636.0
+      },
+      {
+        "title": "The Semiconductor ETF Kept Falling After Nvidia Raised Its Forecast. Time to Buy?",
+        "url": "https://www.fool.com/investing/2026/11/24/the-semiconductor-etf-kept-falling-after-nvidia-raised-its-forecast-time-to-buy/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 23:57 ET",
+        "pub_ts": 1795582622.0
+      },
+      {
         "title": "COHR Stock Swings After Nvidia-Led AI Rally: $15M Insider Buy Draws Attention",
         "url": "https://stocktwits.com/news-articles/markets/equity/cohr-stock-swings-after-nvidia-led-ai-rally-15-m-insider-buy-draws-attention/cNbHcl8R9lg?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -962,27 +983,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 23:33 ET",
         "pub_ts": 1795581180.0
-      },
-      {
-        "title": "Le Monde details suspected Nvidia chip diversion network through Southeast Asia",
-        "url": "https://finance.yahoo.com/technology/ai/articles/le-monde-details-suspected-nvidia-042239633.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 23:22 ET",
-        "pub_ts": 1795580559.0
-      },
-      {
-        "title": "Asian stocks mostly decline as AI shares fall following a retreat on Wall Street",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/asian-stocks-mostly-decline-ai-040526833.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 23:05 ET",
-        "pub_ts": 1795579526.0
-      },
-      {
-        "title": "Dow Jones Futures Fall; Trump Says 'Not Too Late' For U.S. To Take Nvidia Stake",
-        "url": "https://finance.yahoo.com/m/d96603c1-fe7f-3bf3-8158-0728b464d469/dow-jones-futures-fall%3B-trump.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 23:04 ET",
-        "pub_ts": 1795579473.0
       }
     ],
     "AMD": [
@@ -3327,26 +3327,26 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795582948.5684385,
-    "SOXL": 1795582948.5684385,
+    "KORU": 1795584582.5296755,
+    "SOXL": 1795584582.5296755,
     "SPY": 1795583426.957599,
-    "DIA": 1795582948.5684385,
-    "SOXX": 1795582948.5684385,
-    "QQQ": 1795582948.5684385,
+    "DIA": 1795584582.5296755,
+    "SOXX": 1795584582.5296755,
+    "QQQ": 1795584582.5296755,
     "SMH": 1795583426.957599,
-    "IWM": 1795582948.5684385,
-    "IGV": 1795582948.5684385,
-    "TLT": 1795582948.5684385,
-    "GLD": 1795582948.5684385,
-    "SQQQ": 1795582948.5684385,
+    "IWM": 1795584582.5296755,
+    "IGV": 1795584582.5296755,
+    "TLT": 1795584582.5296755,
+    "GLD": 1795584582.5296755,
+    "SQQQ": 1795584582.5296755,
     "TSM": 1795583426.957599,
-    "VIXY": 1795582948.5684385,
-    "SOXS": 1795582948.5684385,
-    "NVDA": 1795582948.5684385,
-    "AMD": 1795582948.5684385,
+    "VIXY": 1795584582.5296755,
+    "SOXS": 1795584582.5296755,
+    "NVDA": 1795584582.5296755,
+    "AMD": 1795584582.5296755,
     "ASML": 1795583426.957599,
     "QCOM": 1795583426.957599,
-    "AVGO": 1795582948.5684385,
+    "AVGO": 1795584582.5296755,
     "AMAT": 1795583426.957599,
     "META": 1795583426.957599,
     "GOOGL": 1795583426.957599,
@@ -3424,10 +3424,10 @@
   },
   "calendar_banner": {
     "level": "upcoming",
-    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 483 分钟（11-25 08:30 ET / 22:30 KST）",
+    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 481 分钟（11-25 08:30 ET / 22:30 KST）",
     "detail": "前值 0.3% ｜ 预期 0.3% ｜ 临近公布前15分钟将自动触发防插针预警",
     "event_name": "美国10月核心PCE物价指数环比",
-    "minutes_left": 483,
+    "minutes_left": 481,
     "opex_shield": {
       "date": "2026-11-25",
       "active": false,
