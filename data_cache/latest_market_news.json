@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795641392.115,
-  "updated_at_et": "11-25 16:16 ET",
-  "updated_at_kst": "06:16 KST",
+  "updated_at_ts": 1795641436.965,
+  "updated_at_et": "11-25 16:17 ET",
+  "updated_at_kst": "06:17 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -1735,18 +1735,18 @@
         "pub_ts": 1795532304.0
       },
       {
-        "title": "Wall Street’s New M&A Mood: Why Both Marvell-Lumentum and CrowdStrike-Zscaler Hit Pushback",
-        "url": "https://247wallst.com/investing/2026/11/24/wall-streets-new-ma-mood-why-both-marvell-lumentum-and-crowdstrike-zscaler-hit-pushback/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 08:45 ET",
-        "pub_ts": 1795527912.0
-      },
-      {
         "title": "Coherent’s Director Bought $15 Million of Stock as It Plunged 13%",
         "url": "https://247wallst.com/investing/2026/11/25/coherents-director-bought-15-million-of-stock-as-it-plunged-13/?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-25 10:28 ET",
         "pub_ts": 1795620532.0
+      },
+      {
+        "title": "Oppenheimer Cut Its Marvell Target by $100. It Still Sees 147% Upside",
+        "url": "https://www.tikr.com/blog/oppenheimer-cut-its-marvell-target-by-100-it-still-sees-147-upside?ref=yahoofinance&tlnk=yf-261125-h25pvm3g&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 05:49 ET",
+        "pub_ts": 1795603771.0
       }
     ],
     "AAOI": [
@@ -3349,8 +3349,8 @@
     "BE": 1795640549.2440906,
     "CRDO": 1795640549.2440906,
     "COHR": 1795640549.2440906,
-    "MRVL": 1795639928.4611053,
-    "LITE": 1795639928.4611053,
+    "MRVL": 1795641436.9650028,
+    "LITE": 1795641436.9650028,
     "AAOI": 1795640549.2440906,
     "SPCX": 1795640549.2440906,
     "ASTS": 1795640549.2440906,
@@ -3369,8 +3369,8 @@
     "OKLO": 1795640679.6591523,
     "CEG": 1795640679.6591523,
     "FPS": 1795640679.6591523,
-    "MU": 1795639928.4611053,
-    "SKHY": 1795639928.4611053,
+    "MU": 1795641436.9650028,
+    "SKHY": 1795641436.9650028,
     "WDC": 1795639969.0927057,
     "STX": 1795640724.6902194,
     "MSTR": 1795640679.6591523,
@@ -3389,7 +3389,7 @@
     "WMT": 1795640769.0470114,
     "V": 1795640679.6591523,
     "CAT": 1795640769.0470114,
-    "FN": 1795639928.4611053,
+    "FN": 1795641436.9650028,
     "GLW": 1795640549.2440906,
     "ANT": 1795640769.0470114,
     "XAUUSD": 1795640769.0470114,
