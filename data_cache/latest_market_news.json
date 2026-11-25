@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795619624.413,
-  "updated_at_et": "11-25 10:13 ET",
-  "updated_at_kst": "00:13 KST",
+  "updated_at_ts": 1795619667.461,
+  "updated_at_et": "11-25 10:14 ET",
+  "updated_at_kst": "00:14 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -594,18 +594,18 @@
         "pub_ts": 1795543833.0
       },
       {
+        "title": "Stock Market Today: Dow Dives 700 Points As Nvidia Sells Off, Inflation Rises; Anthropic Sinks (Live Coverage)",
+        "url": "https://finance.yahoo.com/m/90407e46-3b17-34e8-8c82-527bf00b63e4/stock-market-today%3A-dow-dives.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 09:50 ET",
+        "pub_ts": 1795618250.0
+      },
+      {
         "title": "Exchange-Traded Funds, Equity Futures Lower Pre-Bell Wednesday Amid Inflation Data Release",
         "url": "https://finance.yahoo.com/markets/stocks/articles/exchange-traded-funds-equity-futures-140441647.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-25 09:04 ET",
         "pub_ts": 1795615481.0
-      },
-      {
-        "title": "Stock Market Today: Dow Dives On Surprise Inflation Data; Nvidia, Anthropic Plunge (Live Coverage)",
-        "url": "https://finance.yahoo.com/m/90407e46-3b17-34e8-8c82-527bf00b63e4/stock-market-today%3A-dow-dives.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 08:54 ET",
-        "pub_ts": 1795614871.0
       }
     ],
     "SMH": [
@@ -721,6 +721,13 @@
     ],
     "TLT": [
       {
+        "title": "Ed Yardeni Wants Double the Fed Rate Hike the Market Expects",
+        "url": "https://247wallst.com/investing/2026/11/25/ed-yardeni-wants-double-the-fed-rate-hike-the-market-expects/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 09:52 ET",
+        "pub_ts": 1795618375.0
+      },
+      {
         "title": "Bessent Warns the Fed Could Be Making a “Policy Mistake” if It Over-Tightens",
         "url": "https://247wallst.com/investing/2026/11/24/bessent-warns-the-fed-could-be-making-a-policy-mistake-if-it-over-tightens/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -747,13 +754,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 09:52 ET",
         "pub_ts": 1795531942.0
-      },
-      {
-        "title": "How Much Do You Really Need Invested to Replace a $195,000 Salary With Dividends?",
-        "url": "https://247wallst.com/personal-finance/2026/11/23/how-much-do-you-really-need-invested-to-replace-a-195000-salary-with-dividends/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 14:55 ET",
-        "pub_ts": 1795463729.0
       }
     ],
     "GLD": [
@@ -943,6 +943,27 @@
     ],
     "NVDA": [
       {
+        "title": "5 reasons Nvidia stock is stumbling",
+        "url": "https://finance.yahoo.com/video/5-reasons-nvidia-stock-is-stumbling-145638309.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 09:56 ET",
+        "pub_ts": 1795618598.0
+      },
+      {
+        "title": "The $2 trillion chip rally is getting wiped out — here's what history says comes next",
+        "url": "https://finance.yahoo.com/markets/article/the-2-trillion-chip-rally-is-getting-wiped-out--heres-what-history-says-comes-next-145306996.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 09:53 ET",
+        "pub_ts": 1795618386.0
+      },
+      {
+        "title": "10 things fueling this nasty market pullback",
+        "url": "https://finance.yahoo.com/video/10-things-fueling-this-nasty-market-pullback-144906243.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 09:49 ET",
+        "pub_ts": 1795618146.0
+      },
+      {
         "title": "Trump: Pardoning Jensen Huang is 'always an option'",
         "url": "https://finance.yahoo.com/video/trump-pardoning-jensen-huang-is-always-an-option-144101609.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -950,32 +971,11 @@
         "pub_ts": 1795617661.0
       },
       {
-        "title": "Are Stablecoins a Threat to Visa and Mastercard?",
-        "url": "https://www.fool.com/investing/2026/11/25/are-stablecoins-a-threat-to-visa-and-mastercard/?.tsrc=rss",
+        "title": "Why Nvidia (NVDA) Stock Is Falling Today: Tech and Chip Selloff",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/why-nvidia-nvda-stock-falling-150041901.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-25 09:41 ET",
-        "pub_ts": 1795617662.0
-      },
-      {
-        "title": "Trump Floats an Intel-Style Nvidia Stake. 10% Would Cost the Government $375 Billion",
-        "url": "https://247wallst.com/investing/2026/11/25/trump-floats-an-intel-style-nvidia-stake-10-would-cost-the-government-375-billion/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 09:28 ET",
-        "pub_ts": 1795616933.0
-      },
-      {
-        "title": "TSMC Has a 'Substantially Wider Moat' Than Nvidia, Says Investor Joseph Carlson",
-        "url": "https://www.benzinga.com/markets/prediction-markets/26/11/63621669/joseph-carlson-tsmc-nvidia-moat?utm_source=yahooFinance&utm_campaign=partner_feed&utm_medium=referral&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 09:28 ET",
-        "pub_ts": 1795616919.0
-      },
-      {
-        "title": "Wall Street Futures Point to Sharp Losses as Technology Stocks Face Renewed Selling Pressure: Dow Jones, S&P, Nasdaq",
-        "url": "https://investorshub.advfn.com/market-news/article/40723/wall-street-futures-point-to-sharp-losses-as-technology-stocks-face-renewed-selling-pressure-dow-jones-sp-nasdaq?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 09:22 ET",
-        "pub_ts": 1795616530.0
+        "time": "11-25 10:00 ET",
+        "pub_ts": 1795618841.0
       }
     ],
     "AMD": [
@@ -3320,26 +3320,26 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795618165.9828906,
-    "SOXL": 1795618165.9828906,
+    "KORU": 1795619667.4612029,
+    "SOXL": 1795619667.4612029,
     "SPY": 1795618619.0257833,
-    "DIA": 1795618165.9828906,
-    "SOXX": 1795618165.9828906,
-    "QQQ": 1795618165.9828906,
+    "DIA": 1795619667.4612029,
+    "SOXX": 1795619667.4612029,
+    "QQQ": 1795619667.4612029,
     "SMH": 1795618619.0257833,
-    "IWM": 1795618165.9828906,
-    "IGV": 1795618165.9828906,
-    "TLT": 1795618165.9828906,
-    "GLD": 1795618165.9828906,
-    "SQQQ": 1795618165.9828906,
+    "IWM": 1795619667.4612029,
+    "IGV": 1795619667.4612029,
+    "TLT": 1795619667.4612029,
+    "GLD": 1795619667.4612029,
+    "SQQQ": 1795619667.4612029,
     "TSM": 1795618619.0257833,
-    "VIXY": 1795618165.9828906,
-    "SOXS": 1795618165.9828906,
-    "NVDA": 1795618165.9828906,
-    "AMD": 1795618165.9828906,
+    "VIXY": 1795619667.4612029,
+    "SOXS": 1795619667.4612029,
+    "NVDA": 1795619667.4612029,
+    "AMD": 1795619667.4612029,
     "ASML": 1795618619.0257833,
     "QCOM": 1795618619.0257833,
-    "AVGO": 1795618165.9828906,
+    "AVGO": 1795619667.4612029,
     "AMAT": 1795618619.0257833,
     "META": 1795618619.0257833,
     "GOOGL": 1795618619.0257833,
