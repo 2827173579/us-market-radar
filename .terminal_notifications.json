@@ -8,10 +8,10 @@
     "ticker": "DEFENSE",
     "name": "去杠杆风控",
     "cat": "系统警报",
-    "price": 7.39,
-    "pct_change": 7.39,
-    "title": "🚨 防御因子起飞 · 警惕机构盘中去杠杆踩踏 (+7.4%)",
-    "desc": "防御避险资产(KO/PEP/MCD/LLY/TLT/GLD/VIXY)超额走强 +7.4%，科技成长显著弱势，机构正在盘中去杠杆避险，警惕踩踏风险！"
+    "price": 7.28,
+    "pct_change": 7.28,
+    "title": "🚨 防御因子起飞 · 警惕机构盘中去杠杆踩踏 (+7.3%)",
+    "desc": "防御避险资产(KO/PEP/MCD/LLY/TLT/GLD/VIXY)超额走强 +7.3%，科技成长显著弱势，机构正在盘中去杠杆避险，警惕踩踏风险！"
   },
   {
     "id": "STOP_AAOI_2026-11-25",
@@ -22,10 +22,10 @@
     "ticker": "AAOI",
     "name": "AOI",
     "cat": "光通信",
-    "price": 35.25,
-    "pct_change": -8.2,
+    "price": 35.19,
+    "pct_change": -8.36,
     "title": "🔴 AAOI (AOI) 跌破波段斐波那契下沿",
-    "desc": "偏离 MA50 -54.6%，放量跌破坑底 $70.25，空头宣泄期严禁左侧接刀！"
+    "desc": "偏离 MA50 -54.7%，放量跌破坑底 $70.25，空头宣泄期严禁左侧接刀！"
   },
   {
     "id": "STOP_SNDK_2026-11-25",
@@ -36,10 +36,10 @@
     "ticker": "SNDK",
     "name": "闪迪",
     "cat": "闪存存储",
-    "price": 70.3,
-    "pct_change": -9.81,
+    "price": 70.265,
+    "pct_change": -9.86,
     "title": "🔴 SNDK (闪迪) 跌破波段斐波那契下沿",
-    "desc": "偏离 MA50 -56.4%，放量跌破坑底 $132.60，空头宣泄期严禁左侧接刀！"
+    "desc": "偏离 MA50 -56.5%，放量跌破坑底 $132.60，空头宣泄期严禁左侧接刀！"
   },
   {
     "id": "STOP_NBIS_2026-11-25",
@@ -50,10 +50,10 @@
     "ticker": "NBIS",
     "name": "Nebius",
     "cat": "算力租赁",
-    "price": 81.7,
-    "pct_change": -6.43,
+    "price": 81.735,
+    "pct_change": -6.39,
     "title": "🔴 NBIS (Nebius) 跌破波段斐波那契下沿",
-    "desc": "偏离 MA50 -53.1%，放量跌破坑底 $144.17，空头宣泄期严禁左侧接刀！"
+    "desc": "偏离 MA50 -53.0%，放量跌破坑底 $144.17，空头宣泄期严禁左侧接刀！"
   },
   {
     "id": "STOP_AXTI_2026-11-25",
@@ -64,10 +64,10 @@
     "ticker": "AXTI",
     "name": "AXTI",
     "cat": "光通信",
-    "price": 30.435,
-    "pct_change": -3.63,
+    "price": 30.475,
+    "pct_change": -3.5,
     "title": "🔴 AXTI (AXTI) 跌破波段斐波那契下沿",
-    "desc": "偏离 MA50 -47.4%，放量跌破坑底 $50.82，空头宣泄期严禁左侧接刀！"
+    "desc": "偏离 MA50 -47.3%，放量跌破坑底 $50.82，空头宣泄期严禁左侧接刀！"
   },
   {
     "id": "STOP_CRWV_2026-11-25",
@@ -78,8 +78,8 @@
     "ticker": "CRWV",
     "name": "CoreWeave",
     "cat": "算力租赁",
-    "price": 40.415,
-    "pct_change": -5.14,
+    "price": 40.4,
+    "pct_change": -5.18,
     "title": "🔴 CRWV (CoreWeave) 跌破波段斐波那契下沿",
     "desc": "偏离 MA50 -38.5%，放量跌破坑底 $63.07，空头宣泄期严禁左侧接刀！"
   },
@@ -92,10 +92,10 @@
     "ticker": "ASTS",
     "name": "AST SpaceMobile",
     "cat": "太空商业",
-    "price": 25.69,
-    "pct_change": 8.86,
+    "price": 25.41,
+    "pct_change": 7.67,
     "title": "🔴 ASTS (AST SpaceMobile) 跌破波段斐波那契下沿",
-    "desc": "偏离 MA50 -41.7%，放量跌破坑底 $39.58，空头宣泄期严禁左侧接刀！"
+    "desc": "偏离 MA50 -42.3%，放量跌破坑底 $39.58，空头宣泄期严禁左侧接刀！"
   },
   {
     "id": "STOP_LITE_2026-11-25",
@@ -106,24 +106,10 @@
     "ticker": "LITE",
     "name": "Lumentum",
     "cat": "光通信",
-    "price": 456.31,
-    "pct_change": -6.32,
+    "price": 456.165,
+    "pct_change": -6.35,
     "title": "🔴 LITE (Lumentum) 跌破波段斐波那契下沿",
-    "desc": "偏离 MA50 -43.2%，放量跌破坑底 $702.52，空头宣泄期严禁左侧接刀！"
-  },
-  {
-    "id": "STOP_INTC_2026-11-25",
-    "time": "11-25 13:03",
-    "category": "stop_loss",
-    "cat_label": "🔴 破位止损",
-    "level": "danger",
-    "ticker": "INTC",
-    "name": "Intel",
-    "cat": "芯片算力",
-    "price": 52.105,
-    "pct_change": -4.92,
-    "title": "🔴 INTC (Intel) 跌破波段斐波那契下沿",
-    "desc": "偏离 MA50 -40.5%，放量跌破坑底 $79.06，空头宣泄期严禁左侧接刀！"
+    "desc": "偏离 MA50 -43.3%，放量跌破坑底 $702.52，空头宣泄期严禁左侧接刀！"
   },
   {
     "id": "STOP_APLD_2026-11-25",
@@ -134,10 +120,24 @@
     "ticker": "APLD",
     "name": "Applied Digital",
     "cat": "算力租赁",
-    "price": 11.775,
-    "pct_change": -3.64,
+    "price": 11.735,
+    "pct_change": -3.97,
     "title": "🔴 APLD (Applied Digital) 跌破波段斐波那契下沿",
-    "desc": "偏离 MA50 -41.4%，放量跌破坑底 $17.80，空头宣泄期严禁左侧接刀！"
+    "desc": "偏离 MA50 -41.6%，放量跌破坑底 $17.80，空头宣泄期严禁左侧接刀！"
+  },
+  {
+    "id": "STOP_INTC_2026-11-25",
+    "time": "11-25 13:03",
+    "category": "stop_loss",
+    "cat_label": "🔴 破位止损",
+    "level": "danger",
+    "ticker": "INTC",
+    "name": "Intel",
+    "cat": "芯片算力",
+    "price": 52.155,
+    "pct_change": -4.83,
+    "title": "🔴 INTC (Intel) 跌破波段斐波那契下沿",
+    "desc": "偏离 MA50 -40.5%，放量跌破坑底 $79.06，空头宣泄期严禁左侧接刀！"
   },
   {
     "id": "STOP_MRVL_2026-11-25",
@@ -148,10 +148,10 @@
     "ticker": "MRVL",
     "name": "Marvell",
     "cat": "通信芯片",
-    "price": 125.205,
-    "pct_change": -4.84,
+    "price": 125.04,
+    "pct_change": -4.96,
     "title": "🔴 MRVL (Marvell) 跌破波段斐波那契下沿",
-    "desc": "偏离 MA50 -41.7%，放量跌破坑底 $187.86，空头宣泄期严禁左侧接刀！"
+    "desc": "偏离 MA50 -41.8%，放量跌破坑底 $187.86，空头宣泄期严禁左侧接刀！"
   },
   {
     "id": "STOP_OKLO_2026-11-25",
@@ -162,10 +162,10 @@
     "ticker": "OKLO",
     "name": "Oklo",
     "cat": "核能电力",
-    "price": 18.545,
-    "pct_change": -3.41,
+    "price": 18.585,
+    "pct_change": -3.2,
     "title": "🔴 OKLO (Oklo) 跌破波段斐波那契下沿",
-    "desc": "偏离 MA50 -36.5%，放量跌破坑底 $27.78，空头宣泄期严禁左侧接刀！"
+    "desc": "偏离 MA50 -36.4%，放量跌破坑底 $27.78，空头宣泄期严禁左侧接刀！"
   },
   {
     "id": "STOP_CRDO_2026-11-25",
@@ -176,10 +176,10 @@
     "ticker": "CRDO",
     "name": "Credo",
     "cat": "高速互联",
-    "price": 101.01,
-    "pct_change": -5.12,
+    "price": 100.88,
+    "pct_change": -5.24,
     "title": "🔴 CRDO (Credo) 跌破波段斐波那契下沿",
-    "desc": "偏离 MA50 -38.7%，放量跌破坑底 $146.11，空头宣泄期严禁左侧接刀！"
+    "desc": "偏离 MA50 -38.8%，放量跌破坑底 $146.11，空头宣泄期严禁左侧接刀！"
   },
   {
     "id": "STOP_FPS_2026-11-25",
@@ -190,10 +190,10 @@
     "ticker": "FPS",
     "name": "Forgent Power",
     "cat": "能源电力",
-    "price": 18.405,
-    "pct_change": -1.21,
+    "price": 18.295,
+    "pct_change": -1.8,
     "title": "🔴 FPS (Forgent Power) 跌破波段斐波那契下沿",
-    "desc": "偏离 MA50 -38.4%，放量跌破坑底 $26.33，空头宣泄期严禁左侧接刀！"
+    "desc": "偏离 MA50 -38.8%，放量跌破坑底 $26.33，空头宣泄期严禁左侧接刀！"
   },
   {
     "id": "STOP_MSTR_2026-11-25",
@@ -204,10 +204,10 @@
     "ticker": "MSTR",
     "name": "微策略",
     "cat": "数字资产",
-    "price": 76.335,
-    "pct_change": -1.57,
+    "price": 76.46,
+    "pct_change": -1.41,
     "title": "🔴 MSTR (微策略) 跌破波段斐波那契下沿",
-    "desc": "偏离 MA50 -43.8%，放量跌破坑底 $108.88，空头宣泄期严禁左侧接刀！"
+    "desc": "偏离 MA50 -43.7%，放量跌破坑底 $108.88，空头宣泄期严禁左侧接刀！"
   },
   {
     "id": "STOP_STX_2026-11-25",
@@ -218,8 +218,8 @@
     "ticker": "STX",
     "name": "希捷科技",
     "cat": "数据存储",
-    "price": 456.455,
-    "pct_change": -5.39,
+    "price": 456.66,
+    "pct_change": -5.35,
     "title": "🔴 STX (希捷科技) 跌破波段斐波那契下沿",
     "desc": "偏离 MA50 -33.4%，放量跌破坑底 $628.51，空头宣泄期严禁左侧接刀！"
   },
@@ -232,24 +232,10 @@
     "ticker": "DELL",
     "name": "戴尔科技",
     "cat": "服务器ODM",
-    "price": 285.485,
-    "pct_change": -3.32,
+    "price": 285.74,
+    "pct_change": -3.23,
     "title": "🔴 DELL (戴尔科技) 跌破波段斐波那契下沿",
     "desc": "偏离 MA50 -37.4%，放量跌破坑底 $390.94，空头宣泄期严禁左侧接刀！"
-  },
-  {
-    "id": "STOP_COIN_2026-11-25",
-    "time": "11-25 13:03",
-    "category": "stop_loss",
-    "cat_label": "🔴 破位止损",
-    "level": "danger",
-    "ticker": "COIN",
-    "name": "Coinbase",
-    "cat": "数字资产",
-    "price": 101.77,
-    "pct_change": -0.57,
-    "title": "🔴 COIN (Coinbase) 跌破波段斐波那契下沿",
-    "desc": "偏离 MA50 -36.2%，放量跌破坑底 $138.21，空头宣泄期严禁左侧接刀！"
   },
   {
     "id": "STOP_BE_2026-11-25",
@@ -260,10 +246,24 @@
     "ticker": "BE",
     "name": "Bloom Energy",
     "cat": "能源电力",
-    "price": 147.395,
-    "pct_change": -5.76,
+    "price": 147.08,
+    "pct_change": -5.97,
     "title": "🔴 BE (Bloom Energy) 跌破波段斐波那契下沿",
-    "desc": "偏离 MA50 -35.3%，放量跌破坑底 $200.12，空头宣泄期严禁左侧接刀！"
+    "desc": "偏离 MA50 -35.4%，放量跌破坑底 $200.12，空头宣泄期严禁左侧接刀！"
+  },
+  {
+    "id": "STOP_COIN_2026-11-25",
+    "time": "11-25 13:03",
+    "category": "stop_loss",
+    "cat_label": "🔴 破位止损",
+    "level": "danger",
+    "ticker": "COIN",
+    "name": "Coinbase",
+    "cat": "数字资产",
+    "price": 101.715,
+    "pct_change": -0.62,
+    "title": "🔴 COIN (Coinbase) 跌破波段斐波那契下沿",
+    "desc": "偏离 MA50 -36.2%，放量跌破坑底 $138.21，空头宣泄期严禁左侧接刀！"
   },
   {
     "id": "STOP_MU_2026-11-25",
@@ -274,38 +274,10 @@
     "ticker": "MU",
     "name": "美光科技",
     "cat": "存储芯片",
-    "price": 572.325,
-    "pct_change": -9.12,
+    "price": 572.725,
+    "pct_change": -9.06,
     "title": "🔴 MU (美光科技) 跌破波段斐波那契下沿",
     "desc": "偏离 MA50 -36.0%，放量跌破坑底 $762.21，空头宣泄期严禁左侧接刀！"
-  },
-  {
-    "id": "STOP_WDC_2026-11-25",
-    "time": "11-25 13:03",
-    "category": "stop_loss",
-    "cat_label": "🔴 破位止损",
-    "level": "danger",
-    "ticker": "WDC",
-    "name": "西部数据",
-    "cat": "数据存储",
-    "price": 259.635,
-    "pct_change": -5.23,
-    "title": "🔴 WDC (西部数据) 跌破波段斐波那契下沿",
-    "desc": "偏离 MA50 -28.8%，放量跌破坑底 $340.55，空头宣泄期严禁左侧接刀！"
-  },
-  {
-    "id": "STOP_SKHY_2026-11-25",
-    "time": "11-25 13:03",
-    "category": "stop_loss",
-    "cat_label": "🔴 破位止损",
-    "level": "danger",
-    "ticker": "SKHY",
-    "name": "SK Hynix",
-    "cat": "存储芯片",
-    "price": 107.08,
-    "pct_change": -4.38,
-    "title": "🔴 SKHY (SK Hynix) 跌破波段斐波那契下沿",
-    "desc": "偏离 MA50 -30.2%，放量跌破坑底 $139.33，空头宣泄期严禁左侧接刀！"
   },
   {
     "id": "STOP_FN_2026-11-25",
@@ -316,10 +288,38 @@
     "ticker": "FN",
     "name": "Fabrinet",
     "cat": "光通信",
-    "price": 277.15,
-    "pct_change": -4.47,
+    "price": 270.61,
+    "pct_change": -6.72,
     "title": "🔴 FN (Fabrinet) 跌破波段斐波那契下沿",
-    "desc": "偏离 MA50 -25.8%，放量跌破坑底 $360.03，空头宣泄期严禁左侧接刀！"
+    "desc": "偏离 MA50 -27.5%，放量跌破坑底 $360.03，空头宣泄期严禁左侧接刀！"
+  },
+  {
+    "id": "STOP_WDC_2026-11-25",
+    "time": "11-25 13:03",
+    "category": "stop_loss",
+    "cat_label": "🔴 破位止损",
+    "level": "danger",
+    "ticker": "WDC",
+    "name": "西部数据",
+    "cat": "数据存储",
+    "price": 259.265,
+    "pct_change": -5.36,
+    "title": "🔴 WDC (西部数据) 跌破波段斐波那契下沿",
+    "desc": "偏离 MA50 -28.9%，放量跌破坑底 $340.55，空头宣泄期严禁左侧接刀！"
+  },
+  {
+    "id": "STOP_SKHY_2026-11-25",
+    "time": "11-25 13:03",
+    "category": "stop_loss",
+    "cat_label": "🔴 破位止损",
+    "level": "danger",
+    "ticker": "SKHY",
+    "name": "SK Hynix",
+    "cat": "存储芯片",
+    "price": 106.985,
+    "pct_change": -4.46,
+    "title": "🔴 SKHY (SK Hynix) 跌破波段斐波那契下沿",
+    "desc": "偏离 MA50 -30.2%，放量跌破坑底 $139.33，空头宣泄期严禁左侧接刀！"
   },
   {
     "id": "STOP_HPE_2026-11-25",
@@ -330,10 +330,10 @@
     "ticker": "HPE",
     "name": "慧与科技",
     "cat": "服务器ODM",
-    "price": 39.625,
-    "pct_change": -1.41,
+    "price": 39.665,
+    "pct_change": -1.31,
     "title": "🔴 HPE (慧与科技) 跌破波段斐波那契下沿",
-    "desc": "偏离 MA50 -30.3%，放量跌破坑底 $50.99，空头宣泄期严禁左侧接刀！"
+    "desc": "偏离 MA50 -30.2%，放量跌破坑底 $50.99，空头宣泄期严禁左侧接刀！"
   },
   {
     "id": "STOP_AMAT_2026-11-25",
@@ -344,8 +344,8 @@
     "ticker": "AMAT",
     "name": "应用材料",
     "cat": "制造设备",
-    "price": 301.965,
-    "pct_change": -6.73,
+    "price": 301.91,
+    "pct_change": -6.75,
     "title": "🔴 AMAT (应用材料) 跌破波段斐波那契下沿",
     "desc": "偏离 MA50 -28.0%，放量跌破坑底 $387.63，空头宣泄期严禁左侧接刀！"
   },
@@ -358,10 +358,10 @@
     "ticker": "LUNR",
     "name": "Intuitive Machines",
     "cat": "太空商业",
-    "price": 8.785,
-    "pct_change": -1.62,
+    "price": 8.8,
+    "pct_change": -1.46,
     "title": "🔴 LUNR (Intuitive Machines) 跌破波段斐波那契下沿",
-    "desc": "偏离 MA50 -27.8%，放量跌破坑底 $11.16，空头宣泄期严禁左侧接刀！"
+    "desc": "偏离 MA50 -27.7%，放量跌破坑底 $11.16，空头宣泄期严禁左侧接刀！"
   },
   {
     "id": "STOP_GLW_2026-11-25",
@@ -372,10 +372,10 @@
     "ticker": "GLW",
     "name": "康宁",
     "cat": "光通信",
-    "price": 97.37,
-    "pct_change": -4.42,
+    "price": 97.44,
+    "pct_change": -4.35,
     "title": "🔴 GLW (康宁) 跌破波段斐波那契下沿",
-    "desc": "偏离 MA50 -26.7%，放量跌破坑底 $122.62，空头宣泄期严禁左侧接刀！"
+    "desc": "偏离 MA50 -26.6%，放量跌破坑底 $122.62，空头宣泄期严禁左侧接刀！"
   },
   {
     "id": "STOP_NOW_2026-11-25",
@@ -386,8 +386,8 @@
     "ticker": "NOW",
     "name": "ServiceNow",
     "cat": "云与软件",
-    "price": 91.45,
-    "pct_change": -0.32,
+    "price": 91.435,
+    "pct_change": -0.33,
     "title": "🔴 NOW (ServiceNow) 跌破波段斐波那契下沿",
     "desc": "偏离 MA50 -26.8%，放量跌破坑底 $114.61，空头宣泄期严禁左侧接刀！"
   },
@@ -400,24 +400,10 @@
     "ticker": "VRT",
     "name": "Vertiv",
     "cat": "液冷散热",
-    "price": 169.995,
-    "pct_change": -2.2,
+    "price": 169.185,
+    "pct_change": -2.67,
     "title": "🔴 VRT (Vertiv) 跌破波段斐波那契下沿",
-    "desc": "偏离 MA50 -22.5%，放量跌破坑底 $211.63，空头宣泄期严禁左侧接刀！"
-  },
-  {
-    "id": "STOP_RKLB_2026-11-25",
-    "time": "11-25 13:03",
-    "category": "stop_loss",
-    "cat_label": "🔴 破位止损",
-    "level": "danger",
-    "ticker": "RKLB",
-    "name": "Rocket Lab",
-    "cat": "太空商业",
-    "price": 45.33,
-    "pct_change": -1.41,
-    "title": "🔴 RKLB (Rocket Lab) 跌破波段斐波那契下沿",
-    "desc": "偏离 MA50 -24.9%，放量跌破坑底 $55.93，空头宣泄期严禁左侧接刀！"
+    "desc": "偏离 MA50 -22.8%，放量跌破坑底 $211.63，空头宣泄期严禁左侧接刀！"
   },
   {
     "id": "STOP_AMD_2026-11-25",
@@ -428,10 +414,24 @@
     "ticker": "AMD",
     "name": "AMD",
     "cat": "芯片算力",
-    "price": 390.73,
-    "pct_change": -5.45,
+    "price": 390.365,
+    "pct_change": -5.54,
     "title": "🔴 AMD (AMD) 跌破波段斐波那契下沿",
-    "desc": "偏离 MA50 -28.7%，放量跌破坑底 $480.46，空头宣泄期严禁左侧接刀！"
+    "desc": "偏离 MA50 -28.8%，放量跌破坑底 $480.46，空头宣泄期严禁左侧接刀！"
+  },
+  {
+    "id": "STOP_RKLB_2026-11-25",
+    "time": "11-25 13:03",
+    "category": "stop_loss",
+    "cat_label": "🔴 破位止损",
+    "level": "danger",
+    "ticker": "RKLB",
+    "name": "Rocket Lab",
+    "cat": "太空商业",
+    "price": 45.535,
+    "pct_change": -0.97,
+    "title": "🔴 RKLB (Rocket Lab) 跌破波段斐波那契下沿",
+    "desc": "偏离 MA50 -24.6%，放量跌破坑底 $55.93，空头宣泄期严禁左侧接刀！"
   },
   {
     "id": "STOP_COHR_2026-11-25",
@@ -442,10 +442,10 @@
     "ticker": "COHR",
     "name": "Coherent",
     "cat": "光通信",
-    "price": 187.15,
-    "pct_change": -4.63,
+    "price": 187.61,
+    "pct_change": -4.4,
     "title": "🔴 COHR (Coherent) 跌破波段斐波那契下沿",
-    "desc": "偏离 MA50 -25.6%，放量跌破坑底 $229.57，空头宣泄期严禁左侧接刀！"
+    "desc": "偏离 MA50 -25.4%，放量跌破坑底 $229.57，空头宣泄期严禁左侧接刀！"
   },
   {
     "id": "STOP_ORCL_2026-11-25",
@@ -456,8 +456,8 @@
     "ticker": "ORCL",
     "name": "甲骨文",
     "cat": "云与软件",
-    "price": 103.82,
-    "pct_change": -5.19,
+    "price": 103.865,
+    "pct_change": -5.15,
     "title": "🔴 ORCL (甲骨文) 跌破波段斐波那契下沿",
     "desc": "偏离 MA50 -20.1%，放量跌破坑底 $126.36，空头宣泄期严禁左侧接刀！"
   },
@@ -470,8 +470,8 @@
     "ticker": "NVDA",
     "name": "NVIDIA",
     "cat": "芯片算力",
-    "price": 146.055,
-    "pct_change": -6.0,
+    "price": 145.99,
+    "pct_change": -6.04,
     "title": "🔴 NVDA (NVIDIA) 跌破波段斐波那契下沿",
     "desc": "偏离 MA50 -28.3%，放量跌破坑底 $169.91，空头宣泄期严禁左侧接刀！"
   },
@@ -484,10 +484,10 @@
     "ticker": "ASML",
     "name": "阿斯麦",
     "cat": "制造设备",
-    "price": 1278.845,
-    "pct_change": -4.28,
+    "price": 1280.23,
+    "pct_change": -4.18,
     "title": "🔴 ASML (阿斯麦) 跌破波段斐波那契下沿",
-    "desc": "偏离 MA50 -20.5%，放量跌破坑底 $1478.03，空头宣泄期严禁左侧接刀！"
+    "desc": "偏离 MA50 -20.4%，放量跌破坑底 $1478.03，空头宣泄期严禁左侧接刀！"
   },
   {
     "id": "STOP_CRWD_2026-11-25",
@@ -498,8 +498,8 @@
     "ticker": "CRWD",
     "name": "CrowdStrike",
     "cat": "AI安全",
-    "price": 200.545,
-    "pct_change": -4.89,
+    "price": 200.505,
+    "pct_change": -4.91,
     "title": "🔴 CRWD (CrowdStrike) 跌破波段斐波那契下沿",
     "desc": "偏离 MA50 -18.2%，放量跌破坑底 $229.95，空头宣泄期严禁左侧接刀！"
   },
@@ -512,8 +512,8 @@
     "ticker": "TSM",
     "name": "台积电",
     "cat": "晶圆代工",
-    "price": 334.94,
-    "pct_change": -4.08,
+    "price": 334.875,
+    "pct_change": -4.1,
     "title": "🔴 TSM (台积电) 跌破波段斐波那契下沿",
     "desc": "偏离 MA50 -19.9%，放量跌破坑底 $383.03，空头宣泄期严禁左侧接刀！"
   },
@@ -526,8 +526,8 @@
     "ticker": "BTC-USD",
     "name": "比特币现货",
     "cat": "数字资产",
-    "price": 59683.98046875,
-    "pct_change": -0.10675739181669189,
+    "price": 59607.69921875,
+    "pct_change": -0.23442953018379087,
     "title": "🔴 BTC-USD (比特币现货) 跌破波段斐波那契下沿",
     "desc": "偏离 MA50 -20.6%，放量跌破坑底 $67372.34，空头宣泄期严禁左侧接刀！"
   },
@@ -540,10 +540,10 @@
     "ticker": "SPCX",
     "name": "SpaceX",
     "cat": "太空商业",
-    "price": 122.305,
-    "pct_change": -2.79,
+    "price": 122.445,
+    "pct_change": -2.67,
     "title": "🔴 SPCX (SpaceX) 跌破波段斐波那契下沿",
-    "desc": "偏离 MA50 -16.5%，放量跌破坑底 $137.80，空头宣泄期严禁左侧接刀！"
+    "desc": "偏离 MA50 -16.4%，放量跌破坑底 $137.80，空头宣泄期严禁左侧接刀！"
   },
   {
     "id": "STOP_GOOGL_2026-11-25",
@@ -554,8 +554,8 @@
     "ticker": "GOOGL",
     "name": "Alphabet",
     "cat": "生态平台",
-    "price": 270.5,
-    "pct_change": -3.06,
+    "price": 270.555,
+    "pct_change": -3.04,
     "title": "🔴 GOOGL (Alphabet) 跌破波段斐波那契下沿",
     "desc": "偏离 MA50 -15.0%，放量跌破坑底 $301.48，空头宣泄期严禁左侧接刀！"
   },
@@ -574,20 +574,6 @@
     "desc": "偏离 MA50 -13.8%，放量跌破坑底 $132.99，空头宣泄期严禁左侧接刀！"
   },
   {
-    "id": "STOP_AVGO_2026-11-25",
-    "time": "11-25 13:03",
-    "category": "stop_loss",
-    "cat_label": "🔴 破位止损",
-    "level": "danger",
-    "ticker": "AVGO",
-    "name": "博通",
-    "cat": "通信芯片",
-    "price": 289.09,
-    "pct_change": -3.98,
-    "title": "🔴 AVGO (博通) 跌破波段斐波那契下沿",
-    "desc": "偏离 MA50 -15.1%，放量跌破坑底 $317.28，空头宣泄期严禁左侧接刀！"
-  },
-  {
     "id": "STOP_CEG_2026-11-25",
     "time": "11-25 13:03",
     "category": "stop_loss",
@@ -596,10 +582,24 @@
     "ticker": "CEG",
     "name": "星座能源",
     "cat": "核能电力",
-    "price": 237.795,
-    "pct_change": -2.88,
+    "price": 237.435,
+    "pct_change": -3.02,
     "title": "🔴 CEG (星座能源) 跌破波段斐波那契下沿",
-    "desc": "偏离 MA50 -10.2%，放量跌破坑底 $260.66，空头宣泄期严禁左侧接刀！"
+    "desc": "偏离 MA50 -10.4%，放量跌破坑底 $260.66，空头宣泄期严禁左侧接刀！"
+  },
+  {
+    "id": "STOP_AVGO_2026-11-25",
+    "time": "11-25 13:03",
+    "category": "stop_loss",
+    "cat_label": "🔴 破位止损",
+    "level": "danger",
+    "ticker": "AVGO",
+    "name": "博通",
+    "cat": "通信芯片",
+    "price": 289.365,
+    "pct_change": -3.89,
+    "title": "🔴 AVGO (博通) 跌破波段斐波那契下沿",
+    "desc": "偏离 MA50 -15.0%，放量跌破坑底 $317.28，空头宣泄期严禁左侧接刀！"
   },
   {
     "id": "STOP_XAUUSD_2026-11-25",
@@ -610,10 +610,10 @@
     "ticker": "XAUUSD",
     "name": "伦敦金现货",
     "cat": "大宗商品",
-    "price": 3526.78,
-    "pct_change": -0.83,
+    "price": 3525.18,
+    "pct_change": -0.88,
     "title": "🔴 XAUUSD (伦敦金现货) 跌破波段斐波那契下沿",
-    "desc": "偏离 MA50 -12.9%，放量跌破坑底 $3860.34，空头宣泄期严禁左侧接刀！"
+    "desc": "偏离 MA50 -12.9%，放量跌破坑底 $3858.81，空头宣泄期严禁左侧接刀！"
   },
   {
     "id": "STOP_FLY_2026-11-25",
@@ -624,10 +624,10 @@
     "ticker": "FLY",
     "name": "Firefly Aerospace",
     "cat": "太空商业",
-    "price": 17.785,
-    "pct_change": -2.17,
+    "price": 17.88,
+    "pct_change": -1.65,
     "title": "🔴 FLY (Firefly Aerospace) 跌破波段斐波那契下沿",
-    "desc": "偏离 MA50 -13.0%，放量跌破坑底 $19.24，空头宣泄期严禁左侧接刀！"
+    "desc": "偏离 MA50 -12.5%，放量跌破坑底 $19.24，空头宣泄期严禁左侧接刀！"
   },
   {
     "id": "STOP_QQQ_2026-11-25",
@@ -638,8 +638,8 @@
     "ticker": "QQQ",
     "name": "纳指100ETF",
     "cat": "大盘基准",
-    "price": 624.785,
-    "pct_change": -2.09,
+    "price": 624.995,
+    "pct_change": -2.05,
     "title": "🔴 QQQ (纳指100ETF) 跌破波段斐波那契下沿",
     "desc": "偏离 MA50 -11.6%，放量跌破坑底 $666.06，空头宣泄期严禁左侧接刀！"
   },
@@ -652,7 +652,7 @@
     "ticker": "SPY",
     "name": "标普500",
     "cat": "大盘基准",
-    "price": 711.74,
+    "price": 711.705,
     "pct_change": -0.98,
     "title": "🔴 SPY (标普500) 跌破波段斐波那契下沿",
     "desc": "偏离 MA50 -6.1%，放量跌破坑底 $722.99，空头宣泄期严禁左侧接刀！"
@@ -666,10 +666,10 @@
     "ticker": "SMH",
     "name": "半导体ETF",
     "cat": "半导体",
-    "price": 410.205,
-    "pct_change": -3.88,
+    "price": 410.305,
+    "pct_change": -3.85,
     "title": "🔴 SMH (半导体ETF) 跌破波段斐波那契下沿",
-    "desc": "偏离 MA50 -24.2%，放量跌破坑底 $487.70，空头宣泄期严禁左侧接刀！"
+    "desc": "偏离 MA50 -24.1%，放量跌破坑底 $487.70，空头宣泄期严禁左侧接刀！"
   },
   {
     "id": "STOP_SOXX_2026-11-25",
@@ -680,10 +680,10 @@
     "ticker": "SOXX",
     "name": "费城半导体ETF",
     "cat": "半导体",
-    "price": 123.21,
-    "pct_change": -4.21,
+    "price": 123.58,
+    "pct_change": -3.92,
     "title": "🔴 SOXX (费城半导体ETF) 跌破波段斐波那契下沿",
-    "desc": "偏离 MA50 -25.8%，放量跌破坑底 $148.98，空头宣泄期严禁左侧接刀！"
+    "desc": "偏离 MA50 -25.5%，放量跌破坑底 $148.98，空头宣泄期严禁左侧接刀！"
   },
   {
     "id": "STOP_SOXL_2026-11-25",
@@ -694,10 +694,10 @@
     "ticker": "SOXL",
     "name": "3倍做多半导体",
     "cat": "正向杠杆",
-    "price": 28.79,
-    "pct_change": -11.69,
+    "price": 28.625,
+    "pct_change": -12.19,
     "title": "🔴 SOXL (3倍做多半导体) 跌破波段斐波那契下沿",
-    "desc": "偏离 MA50 -70.8%，放量跌破坑底 $80.08，空头宣泄期严禁左侧接刀！"
+    "desc": "偏离 MA50 -71.0%，放量跌破坑底 $80.08，空头宣泄期严禁左侧接刀！"
   },
   {
     "id": "STOP_KORU_2026-11-25",
@@ -708,10 +708,10 @@
     "ticker": "KORU",
     "name": "3倍做多韩国",
     "cat": "正向杠杆",
-    "price": 4.95,
-    "pct_change": -9.51,
+    "price": 4.94,
+    "pct_change": -9.69,
     "title": "🔴 KORU (3倍做多韩国) 跌破波段斐波那契下沿",
-    "desc": "偏离 MA50 -63.0%，放量跌破坑底 $12.41，空头宣泄期严禁左侧接刀！"
+    "desc": "偏离 MA50 -63.1%，放量跌破坑底 $12.41，空头宣泄期严禁左侧接刀！"
   },
   {
     "id": "STOP_KOSPI_2026-11-25",
@@ -736,10 +736,10 @@
     "ticker": "IGV",
     "name": "软件科技ETF",
     "cat": "云与软件",
-    "price": 93.99,
-    "pct_change": -1.43,
+    "price": 93.92,
+    "pct_change": -1.5,
     "title": "🔴 IGV (软件科技ETF) 跌破波段斐波那契下沿",
-    "desc": "偏离 MA50 -10.3%，放量跌破坑底 $99.62，空头宣泄期严禁左侧接刀！"
+    "desc": "偏离 MA50 -10.4%，放量跌破坑底 $99.62，空头宣泄期严禁左侧接刀！"
   },
   {
     "id": "STOP_GLD_2026-11-25",
@@ -750,10 +750,10 @@
     "ticker": "GLD",
     "name": "黄金现货ETF",
     "cat": "大宗商品",
-    "price": 322.04,
-    "pct_change": -1.05,
+    "price": 323.03,
+    "pct_change": -0.74,
     "title": "🔴 GLD (黄金现货ETF) 跌破波段斐波那契下沿",
-    "desc": "偏离 MA50 -13.2%，放量跌破坑底 $352.00，空头宣泄期严禁左侧接刀！"
+    "desc": "偏离 MA50 -12.9%，放量跌破坑底 $352.00，空头宣泄期严禁左侧接刀！"
   },
   {
     "id": "TP_VIXY_2026-11-25",
@@ -764,10 +764,10 @@
     "ticker": "VIXY",
     "name": "短期恐慌指数",
     "cat": "黑天鹅对冲",
-    "price": 24.54,
-    "pct_change": 10.09,
+    "price": 24.095,
+    "pct_change": 8.1,
     "title": "🟣 VIXY (短期恐慌指数) 极度超买，触发高位减仓指令",
-    "desc": "偏离 MA50 +35.9%，RSI 63.4，进入极端冲顶兑现区，建议分批减半锁定利润！"
+    "desc": "偏离 MA50 +33.5%，RSI 62.5，进入极端冲顶兑现区，建议分批减半锁定利润！"
   },
   {
     "id": "TP_SOXS_2026-11-25",
@@ -778,10 +778,10 @@
     "ticker": "SOXS",
     "name": "3倍做空半导体",
     "cat": "反向对冲",
-    "price": 68.605,
-    "pct_change": 12.54,
+    "price": 68.395,
+    "pct_change": 12.2,
     "title": "🟣 SOXS (3倍做空半导体) 极度超买，触发高位减仓指令",
-    "desc": "偏离 MA50 +47.4%，RSI 55.9，进入极端冲顶兑现区，建议分批减半锁定利润！"
+    "desc": "偏离 MA50 +47.0%，RSI 55.9，进入极端冲顶兑现区，建议分批减半锁定利润！"
   },
   {
     "id": "WEATHER_暴雨空仓_2026-11-25",
@@ -792,7 +792,7 @@
     "ticker": "SPY",
     "name": "美股大盘全景",
     "cat": "大盘气象",
-    "price": 711.74,
+    "price": 711.705,
     "pct_change": -0.98,
     "title": "⛅ 宏观大盘司令塔：【暴雨空仓】",
     "desc": "科技基准与半导体共振破位下行，系统性流动性挤压，严禁盲目抄底。 ｜ 🔴 真VIX期限倒挂刹车 (^VIX=29.7, 比值=1.09) ｜ 操盘军规：严格执行个股硬止损，碎股进攻全面暂停，保留充沛现金与防守底仓。 ｜ 🔄 风格主线：硬件休整、软件应用占优（严禁追高芯片，关注软件与高低切） ｜ 🔴 机构恐慌倒挂踩踏期：严禁左侧接飞刀，常规多头胜率锁死 <=48%"
