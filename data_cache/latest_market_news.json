@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795609398.349,
-  "updated_at_et": "11-25 07:23 ET",
-  "updated_at_kst": "21:23 KST",
+  "updated_at_ts": 1795609448.844,
+  "updated_at_et": "11-25 07:24 ET",
+  "updated_at_kst": "21:24 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -17,7 +17,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 67,
+      "minutes_left": 66,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -36,7 +36,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 67,
+      "minutes_left": 66,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -2425,6 +2425,13 @@
     ],
     "MU": [
       {
+        "title": "What Pulled Micron Stock Down?",
+        "url": "https://www.trefis.com/stock/mu/articles/628971/what-pulled-micron-stock-down/2026-11-25?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 07:01 ET",
+        "pub_ts": 1795608092.0
+      },
+      {
         "title": "Micron Stock Just Got a Brutal Downgrade -- BNP Paribas Slashes Price Target 54%",
         "url": "https://finance.yahoo.com/markets/stocks/articles/micron-stock-just-got-brutal-114708173.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2432,35 +2439,35 @@
         "pub_ts": 1795607228.0
       },
       {
+        "title": "Is Micron's Record Margin Squeezing Apple And HP?",
+        "url": "https://www.trefis.com/stock/mu/articles/628762/is-micron-s-record-margin-squeezing-apple-and-hp/2026-11-25?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 06:38 ET",
+        "pub_ts": 1795606689.0
+      },
+      {
+        "title": "US Semiconductor Stocks Extend Losses as AI Investment Concerns, Tariff Risks and Rate Expectations Weigh on Markets",
+        "url": "https://investorshub.advfn.com/market-news/article/40697/us-semiconductor-stocks-extend-losses-as-ai-investment-concerns-tariff-risks-and-rate-expectations-weigh-on-markets?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 06:34 ET",
+        "pub_ts": 1795606467.0
+      },
+      {
         "title": "Micron CEO gets a big pay bump and an even bigger security bill",
         "url": "https://finance.yahoo.com/markets/stocks/articles/micron-ceo-gets-big-pay-111540020.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-25 06:15 ET",
         "pub_ts": 1795605340.0
-      },
-      {
-        "title": "Proshares Trust (TQQQ) Sells Apple and Nvidia on Nov. 23",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/proshares-trust-tqqq-sells-apple-110547396.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 06:05 ET",
-        "pub_ts": 1795604747.0
-      },
-      {
-        "title": "INVESCO QQQ Trust (QQQ) Sells Apple and NVIDIA on Nov. 23",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/invesco-qqq-trust-qqq-sells-110412143.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 06:04 ET",
-        "pub_ts": 1795604652.0
-      },
-      {
-        "title": "U.S. chip stocks extend losses premarket as AI spending concerns resurface",
-        "url": "https://finance.yahoo.com/technology/ai/articles/u-chip-stocks-extend-losses-104903644.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 05:49 ET",
-        "pub_ts": 1795603743.0
       }
     ],
     "SKHY": [
+      {
+        "title": "Huang Boost Fades Quickly as AI Fears Sink TSMC, SK Hynix Shares",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/huang-boost-fades-quickly-ai-040320019.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 23:03 ET",
+        "pub_ts": 1795579400.0
+      },
       {
         "title": "SK hynix (NasdaqGS:SKHY) Sell Off Puts Undervalued Narrative Back In Focus",
         "url": "https://finance.yahoo.com/markets/stocks/articles/sk-hynix-nasdaqgs-skhy-sell-070941477.html?.tsrc=rss",
@@ -2488,13 +2495,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 00:01 ET",
         "pub_ts": 1795582860.0
-      },
-      {
-        "title": "Global stocks are mixed as AI shares tumble after a retreat on Wall Street",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/asian-stocks-mostly-decline-ai-040526833.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 23:05 ET",
-        "pub_ts": 1795579526.0
       }
     ],
     "WDC": [
@@ -3357,8 +3357,8 @@
     "BE": 1795608623.6726074,
     "CRDO": 1795608623.6726074,
     "COHR": 1795608623.6726074,
-    "MRVL": 1795607945.2346528,
-    "LITE": 1795607945.2346528,
+    "MRVL": 1795609448.843931,
+    "LITE": 1795609448.843931,
     "AAOI": 1795608623.6726074,
     "SPCX": 1795608623.6726074,
     "ASTS": 1795608623.6726074,
@@ -3377,8 +3377,8 @@
     "OKLO": 1795608724.4252732,
     "CEG": 1795608724.4252732,
     "FPS": 1795608724.4252732,
-    "MU": 1795607945.2346528,
-    "SKHY": 1795607945.2346528,
+    "MU": 1795609448.843931,
+    "SKHY": 1795609448.843931,
     "WDC": 1795607992.1007078,
     "STX": 1795608780.747714,
     "MSTR": 1795608724.4252732,
@@ -3397,7 +3397,7 @@
     "WMT": 1795608827.5293899,
     "V": 1795608724.4252732,
     "CAT": 1795608827.5293899,
-    "FN": 1795607945.2346528,
+    "FN": 1795609448.843931,
     "GLW": 1795608623.6726074,
     "ANT": 1795608827.5293899,
     "XAUUSD": 1795608827.5293899,
@@ -3419,10 +3419,10 @@
   },
   "calendar_banner": {
     "level": "upcoming",
-    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 67 分钟（11-25 08:30 ET / 22:30 KST）",
+    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 66 分钟（11-25 08:30 ET / 22:30 KST）",
     "detail": "前值 0.3% ｜ 预期 0.3% ｜ 临近公布前15分钟将自动触发防插针预警",
     "event_name": "美国10月核心PCE物价指数环比",
-    "minutes_left": 67,
+    "minutes_left": 66,
     "opex_shield": {
       "date": "2026-11-25",
       "active": false,
