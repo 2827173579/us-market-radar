@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795614895.76,
-  "updated_at_et": "11-25 08:54 ET",
-  "updated_at_kst": "22:54 KST",
+  "updated_at_ts": 1795614946.855,
+  "updated_at_et": "11-25 08:55 ET",
+  "updated_at_kst": "22:55 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -43,6 +43,20 @@
     }
   ],
   "macro_flashes": [
+    {
+      "id": "20261125215530473800",
+      "title": "【美国第三季度GDP增速上修至4.3%，为美联储加息留下更大空间】 11月25日讯，美国…",
+      "summary": "【美国第三季度GDP增速上修至4.3%，为美联储加息留下更大空间】 11月25日讯，美国政府周三表示，今年夏季美国经济的增长速度远超此前预期，对第三季度国内生产总值（GDP）的估算进行了大幅上调。数据显示，美国经济按年率计算增长了4.3%，高于此前公布的3.4%，且几乎是第二季度2.2%增速的两倍。美国经济展现出的增长动能比此前预想的更为强劲。在借贷成本上升和通胀持续顽固的背景下，这凸显了美国经济惊人的韧性，同时也可能为美联储进一步加息留出了更大空间。",
+      "keywords": [
+        "美联储",
+        "加息"
+      ],
+      "pub_ts": 1795614930.0,
+      "time_et": "11-25 08:55 ET",
+      "time_bj": "21:55 BJ",
+      "time_kst": "22:55 KST",
+      "time_display": "08:55 ET / 21:55 BJ"
+    },
     {
       "id": "20261125214834848800",
       "title": "【美国初请失业金人数意外下降 劳动力市场仍显稳健】 11月25日讯，美国上周初请失业金人…",
@@ -363,19 +377,6 @@
       "time_bj": "19:40 BJ",
       "time_kst": "20:40 KST",
       "time_display": "06:40 ET / 19:40 BJ"
-    },
-    {
-      "id": "20261125193610129800",
-      "title": "国际金难言已至底部？能源市场进入进入“更脆弱的平衡” | Live分析更新中",
-      "summary": "上调保证金是在逼空头回补，白银的逼空或许已经开场！美元重拾涨势，但超买警报已响，美国PCE将决定下一步方向……",
-      "keywords": [
-        "PCE"
-      ],
-      "pub_ts": 1795606570.0,
-      "time_et": "11-25 06:36 ET",
-      "time_bj": "19:36 BJ",
-      "time_kst": "20:36 KST",
-      "time_display": "06:36 ET / 19:36 BJ"
     }
   ],
   "ticker_news": {
@@ -2934,18 +2935,18 @@
     ],
     "PEP": [
       {
-        "title": "Anthropic falls below IPO price as Nvidia gives back gains",
-        "url": "https://finance.yahoo.com/video/anthropic-falls-below-ipo-price-as-nvidia-gives-back-gains-214558309.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 16:45 ET",
-        "pub_ts": 1795556758.0
-      },
-      {
         "title": "Does PepsiCo (PEP) Change Its Long Term Case With Its Efficiency Reset?",
         "url": "https://finance.yahoo.com/markets/stocks/articles/does-pepsico-pep-change-long-221530250.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-24 17:15 ET",
         "pub_ts": 1795558530.0
+      },
+      {
+        "title": "Anthropic falls below IPO price as Nvidia gives back gains",
+        "url": "https://finance.yahoo.com/video/anthropic-falls-below-ipo-price-as-nvidia-gives-back-gains-214558309.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 16:45 ET",
+        "pub_ts": 1795556758.0
       },
       {
         "title": "What Did Coca-Cola Do That PepsiCo Did Not?",
@@ -3052,6 +3053,13 @@
         "pub_ts": 1795612870.0
       },
       {
+        "title": "Flipkart CEO Kalyan Krishnamurthy to step down next week amid IPO uncertainty",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/flipkart-ceo-kalyan-krishnamurthy-step-130819116.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 08:08 ET",
+        "pub_ts": 1795612099.0
+      },
+      {
         "title": "Target vs Walmart holiday outlook: defensive strength against recovery potential",
         "url": "https://finance.yahoo.com/markets/stocks/articles/target-vs-walmart-holiday-outlook-130617796.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3071,13 +3079,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 06:05 ET",
         "pub_ts": 1795604713.0
-      },
-      {
-        "title": "A Walton Beat the IRS in Tax Court in 2000. The Trust She Won With Is How Billionaires Now Pass Stock Gains to Their Kids With No Gift Tax",
-        "url": "https://247wallst.com/personal-finance/2026/11/25/a-walton-beat-the-irs-in-tax-court-in-2000-the-trust-she-won-with-is-how-billionaires-now-pass-stock-gains-to-their-kids-with-no-gift-tax/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 04:43 ET",
-        "pub_ts": 1795599834.0
       }
     ],
     "V": [
@@ -3147,11 +3148,11 @@
         "pub_ts": 1795460416.0
       },
       {
-        "title": "Caterpillar (CAT) Sees $31.1 Million in Net ETF Selling on Nov. 19",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/caterpillar-cat-sees-31-1-110327569.html?.tsrc=rss",
+        "title": "Deere Has More Than Doubled Its Dividend Since 2020, but the Raises Have Stopped",
+        "url": "https://247wallst.com/investing/2026/11/24/deere-has-more-than-doubled-its-dividend-since-2020-but-the-raises-have-stopped/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 06:03 ET",
-        "pub_ts": 1795431807.0
+        "time": "11-24 14:32 ET",
+        "pub_ts": 1795548771.0
       }
     ],
     "FN": [
@@ -3237,11 +3238,25 @@
         "pub_ts": 1795608000.0
       },
       {
-        "title": "Stock Market Today: Dow Dives Ahead Of Fed Inflation Data; Nvidia, Anthropic Plunge (Live Coverage)",
+        "title": "Anthropic Reportedly Expands Zurich Operations To Tap AI Talent — ANT Stock On Track To Open Below $80",
+        "url": "https://stocktwits.com/news-articles/markets/equity/anthropic-reportedly-expands-zurich-operations-to-tap-ai-talent-ant-stock-on-track-to-open-below-80/cNbHiyfR9mW?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 08:39 ET",
+        "pub_ts": 1795613956.0
+      },
+      {
+        "title": "Stock Market Today: Dow Dives On Surprise Inflation Data; Nvidia, Anthropic Plunge (Live Coverage)",
         "url": "https://finance.yahoo.com/m/90407e46-3b17-34e8-8c82-527bf00b63e4/stock-market-today%3A-dow-dives.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-25 08:14 ET",
-        "pub_ts": 1795612444.0
+        "time": "11-25 08:38 ET",
+        "pub_ts": 1795613907.0
+      },
+      {
+        "title": "Not SpaceX, Not Anthropic: These Are the 2 AI Stocks I Bought During the Sell-Off",
+        "url": "https://www.fool.com/investing/2026/11/25/not-spacex-not-anthropic-these-are-the-2-ai-stocks-i-bought-during-the-sell-off/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 08:35 ET",
+        "pub_ts": 1795613702.0
       },
       {
         "title": "Update: Market Chatter: Anthropic Expanding in Zurich to Advance AI Research",
@@ -3249,20 +3264,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 08:04 ET",
         "pub_ts": 1795611856.0
-      },
-      {
-        "title": "Cathie Wood's ARK Buys Anthropic as Ripple CEO Predicts Post-IPO Crypto Rally",
-        "url": "https://www.ccn.com/news/crypto/cathie-woods-ark-bitcoin-etf-anthropic-ripple-ceo-crypto-rebound/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 08:02 ET",
-        "pub_ts": 1795611735.0
-      },
-      {
-        "title": "Jim Cramer Calls Anthropic “the Silent Killer of This Market”",
-        "url": "https://247wallst.com/investing/2026/11/25/jim-cramer-calls-anthropic-the-silent-killer-of-this-market/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 07:38 ET",
-        "pub_ts": 1795610327.0
       }
     ],
     "XAUUSD": [
@@ -3382,16 +3383,16 @@
     "MRNA": 1795614843.2812846,
     "NKE": 1795614843.2812846,
     "MCD": 1795614843.2812846,
-    "PEP": 1795613419.7471743,
-    "XOM": 1795613419.7471743,
-    "JPM": 1795613419.7471743,
-    "WMT": 1795613419.7471743,
+    "PEP": 1795614946.8550723,
+    "XOM": 1795614946.8550723,
+    "JPM": 1795614946.8550723,
+    "WMT": 1795614946.8550723,
     "V": 1795614843.2812846,
-    "CAT": 1795613419.7471743,
+    "CAT": 1795614946.8550723,
     "FN": 1795614064.8472505,
     "GLW": 1795614742.880808,
-    "ANT": 1795613419.7471743,
-    "XAUUSD": 1795613419.7471743,
+    "ANT": 1795614946.8550723,
+    "XAUUSD": 1795614946.8550723,
     "KOSPI": 1795614012.619013
   },
   "opex_shield": {
