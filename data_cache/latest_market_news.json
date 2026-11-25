@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795620160.069,
-  "updated_at_et": "11-25 10:22 ET",
-  "updated_at_kst": "00:22 KST",
+  "updated_at_ts": 1795620211.862,
+  "updated_at_et": "11-25 10:23 ET",
+  "updated_at_kst": "00:23 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -1697,6 +1697,13 @@
         "pub_ts": 1795603771.0
       },
       {
+        "title": "Lumentum Has Lost 42% Since October 28 Despite Its Best Quarter Ever. Marvell’s Stock Is Why",
+        "url": "https://www.tikr.com/blog/lumentum-has-lost-42-since-october-28-despite-its-best-quarter-ever-marvells-stock-is-why?ref=yahoofinance&tlnk=yf-261125-mgqw8383&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 03:39 ET",
+        "pub_ts": 1795595940.0
+      },
+      {
         "title": "Stephanie Link Says Marvell Could Earn $30 a Share by 2031. Is She Right?",
         "url": "https://247wallst.com/investing/2026/11/24/stephanie-link-says-marvell-could-earn-30-a-share-by-2031-is-she-right/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1709,13 +1716,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 16:45 ET",
         "pub_ts": 1795556702.0
-      },
-      {
-        "title": "Why Marvell Stock Is Moving With Nvidia Fueled AI Chip Optimism",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/why-marvell-stock-moving-nvidia-181152431.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 13:11 ET",
-        "pub_ts": 1795543912.0
       }
     ],
     "LITE": [
@@ -3355,8 +3355,8 @@
     "BE": 1795619306.4990766,
     "CRDO": 1795619306.4990766,
     "COHR": 1795619306.4990766,
-    "MRVL": 1795618665.7794476,
-    "LITE": 1795618665.7794476,
+    "MRVL": 1795620211.8615558,
+    "LITE": 1795620211.8615558,
     "AAOI": 1795619306.4990766,
     "SPCX": 1795619306.4990766,
     "ASTS": 1795619306.4990766,
@@ -3375,8 +3375,8 @@
     "OKLO": 1795619397.7050352,
     "CEG": 1795619397.7050352,
     "FPS": 1795619397.7050352,
-    "MU": 1795618665.7794476,
-    "SKHY": 1795618665.7794476,
+    "MU": 1795620211.8615558,
+    "SKHY": 1795620211.8615558,
     "WDC": 1795618712.719546,
     "STX": 1795619449.5426924,
     "MSTR": 1795619397.7050352,
@@ -3395,7 +3395,7 @@
     "WMT": 1795619495.6363492,
     "V": 1795619397.7050352,
     "CAT": 1795619495.6363492,
-    "FN": 1795618665.7794476,
+    "FN": 1795620211.8615558,
     "GLW": 1795619306.4990766,
     "ANT": 1795619495.6363492,
     "XAUUSD": 1795619495.6363492,
