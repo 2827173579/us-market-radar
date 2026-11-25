@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795576574.101,
-  "updated_at_et": "11-24 22:16 ET",
-  "updated_at_kst": "12:16 KST",
+  "updated_at_ts": 1795576747.209,
+  "updated_at_et": "11-24 22:19 ET",
+  "updated_at_kst": "12:19 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -567,11 +567,11 @@
         "pub_ts": 1795518197.0
       },
       {
-        "title": "Before the bell: Bitcoin can’t catch a break",
-        "url": "https://www.thestreet.com/crypto/markets/before-the-bell-bitcoin-cant-catch-a-break-?.tsrc=rss",
+        "title": "Harbor Arena Structured Income ETF (YLDS): Autocallable Income in an ETF Wrapper",
+        "url": "http://www.etf.com/sections/news/harbor-arena-structured-income-etf-ylds-autocallable-income-etf-wrapper?utm_source=yahoo-finance&utm_medium=rss&utm_campaign=yahoo-finance-rss&.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 11:47 ET",
-        "pub_ts": 1795538844.0
+        "time": "11-24 14:09 ET",
+        "pub_ts": 1795547398.0
       }
     ],
     "SMH": [
@@ -613,11 +613,11 @@
     ],
     "IWM": [
       {
-        "title": "Are These 6 Small-Cap ETFs Worth a Look Right Now?",
-        "url": "https://www.fool.com/investing/2026/11/10/are-these-6-small-cap-etfs-worth-a-look-right-now/?.tsrc=rss",
+        "title": "Harbor Arena Structured Income ETF (YLDS): Autocallable Income in an ETF Wrapper",
+        "url": "http://www.etf.com/sections/news/harbor-arena-structured-income-etf-ylds-autocallable-income-etf-wrapper?utm_source=yahoo-finance&utm_medium=rss&utm_campaign=yahoo-finance-rss&.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-10 09:15 ET",
-        "pub_ts": 1794320100.0
+        "time": "11-24 14:09 ET",
+        "pub_ts": 1795547398.0
       },
       {
         "title": "Stock Market Today: Jensen’s Return to Nvidia Is Causing Index Indigestion",
@@ -912,8 +912,15 @@
         "title": "Dow Jones Futures Fall; Trump Says 'Not Too Late' For U.S. To Take Nvidia Stake",
         "url": "https://finance.yahoo.com/m/d96603c1-fe7f-3bf3-8158-0728b464d469/dow-jones-futures-fall%3B-trump.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 21:45 ET",
-        "pub_ts": 1795574728.0
+        "time": "11-24 22:06 ET",
+        "pub_ts": 1795576010.0
+      },
+      {
+        "title": "Jensen Huang Reportedly Says Succession Plan Risks ‘Unnecessary Hierarchy’ At Nvidia — Crypto Bettors Wager on Another Exit",
+        "url": "https://www.benzinga.com/markets/prediction-markets/26/11/63613509/nvidia-ceo-jensen-huang-succession-plan-polymarket-prediction-market?utm_source=yahooFinance&utm_campaign=partner_feed&utm_medium=referral&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 22:01 ET",
+        "pub_ts": 1795575686.0
       },
       {
         "title": "Tech firms back in crosshairs as Huang rally reverses",
@@ -935,13 +942,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 20:42 ET",
         "pub_ts": 1795570947.0
-      },
-      {
-        "title": "Why Nvidia's rebound may not mean the S&P 500 has bottomed",
-        "url": "https://www.thestreet.com/investing/why-nvidias-rebound-may-not-mean-the-sp-500-has-bottomed?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 20:23 ET",
-        "pub_ts": 1795569790.0
       }
     ],
     "AMD": [
@@ -3286,26 +3286,26 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795575124.783037,
-    "SOXL": 1795575124.783037,
+    "KORU": 1795576747.2090554,
+    "SOXL": 1795576747.2090554,
     "SPY": 1795575527.2364514,
-    "DIA": 1795575124.783037,
-    "SOXX": 1795575124.783037,
-    "QQQ": 1795575124.783037,
+    "DIA": 1795576747.2090554,
+    "SOXX": 1795576747.2090554,
+    "QQQ": 1795576747.2090554,
     "SMH": 1795575527.2364514,
-    "IWM": 1795575124.783037,
-    "IGV": 1795575124.783037,
-    "TLT": 1795575124.783037,
-    "GLD": 1795575124.783037,
-    "SQQQ": 1795575124.783037,
+    "IWM": 1795576747.2090554,
+    "IGV": 1795576747.2090554,
+    "TLT": 1795576747.2090554,
+    "GLD": 1795576747.2090554,
+    "SQQQ": 1795576747.2090554,
     "TSM": 1795575527.2364514,
-    "VIXY": 1795575124.783037,
-    "SOXS": 1795575124.783037,
-    "NVDA": 1795575124.783037,
-    "AMD": 1795575124.783037,
+    "VIXY": 1795576747.2090554,
+    "SOXS": 1795576747.2090554,
+    "NVDA": 1795576747.2090554,
+    "AMD": 1795576747.2090554,
     "ASML": 1795575527.2364514,
     "QCOM": 1795575527.2364514,
-    "AVGO": 1795575124.783037,
+    "AVGO": 1795576747.2090554,
     "AMAT": 1795575527.2364514,
     "META": 1795575527.2364514,
     "GOOGL": 1795575527.2364514,
