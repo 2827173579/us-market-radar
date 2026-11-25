@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795610928.37,
-  "updated_at_et": "11-25 07:48 ET",
-  "updated_at_kst": "21:48 KST",
+  "updated_at_ts": 1795610980.86,
+  "updated_at_et": "11-25 07:49 ET",
+  "updated_at_kst": "21:49 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -17,7 +17,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 42,
+      "minutes_left": 41,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -36,7 +36,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 42,
+      "minutes_left": 41,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -2426,6 +2426,20 @@
     ],
     "MU": [
       {
+        "title": "Prediction: Micron Stock Will Be at This Price at the End of 2027",
+        "url": "https://www.fool.com/investing/2026/11/25/prediction-micron-stock-will-be-at-this-price-at-the-end-of-2027/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 07:28 ET",
+        "pub_ts": 1795609682.0
+      },
+      {
+        "title": "AMD, Micron and Sandisk Stocks Slide as AI Spending Fears Deepen",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/amd-micron-sandisk-stocks-slide-122728877.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 07:27 ET",
+        "pub_ts": 1795609648.0
+      },
+      {
         "title": "What Pulled Micron Stock Down?",
         "url": "https://www.trefis.com/stock/mu/articles/628971/what-pulled-micron-stock-down/2026-11-25?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2445,20 +2459,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 06:38 ET",
         "pub_ts": 1795606689.0
-      },
-      {
-        "title": "US Semiconductor Stocks Extend Losses as AI Investment Concerns, Tariff Risks and Rate Expectations Weigh on Markets",
-        "url": "https://investorshub.advfn.com/market-news/article/40697/us-semiconductor-stocks-extend-losses-as-ai-investment-concerns-tariff-risks-and-rate-expectations-weigh-on-markets?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 06:34 ET",
-        "pub_ts": 1795606467.0
-      },
-      {
-        "title": "Micron CEO gets a big pay bump and an even bigger security bill",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/micron-ceo-gets-big-pay-111540020.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 06:15 ET",
-        "pub_ts": 1795605340.0
       }
     ],
     "SKHY": [
@@ -3358,8 +3358,8 @@
     "BE": 1795610160.9323542,
     "CRDO": 1795610160.9323542,
     "COHR": 1795610160.9323542,
-    "MRVL": 1795609448.843931,
-    "LITE": 1795609448.843931,
+    "MRVL": 1795610980.8596852,
+    "LITE": 1795610980.8596852,
     "AAOI": 1795610160.9323542,
     "SPCX": 1795610160.9323542,
     "ASTS": 1795610160.9323542,
@@ -3378,8 +3378,8 @@
     "OKLO": 1795610260.4442298,
     "CEG": 1795610260.4442298,
     "FPS": 1795610260.4442298,
-    "MU": 1795609448.843931,
-    "SKHY": 1795609448.843931,
+    "MU": 1795610980.8596852,
+    "SKHY": 1795610980.8596852,
     "WDC": 1795609497.8915503,
     "STX": 1795610311.236169,
     "MSTR": 1795610260.4442298,
@@ -3398,7 +3398,7 @@
     "WMT": 1795610357.9759705,
     "V": 1795610260.4442298,
     "CAT": 1795610357.9759705,
-    "FN": 1795609448.843931,
+    "FN": 1795610980.8596852,
     "GLW": 1795610160.9323542,
     "ANT": 1795610357.9759705,
     "XAUUSD": 1795610357.9759705,
@@ -3420,10 +3420,10 @@
   },
   "calendar_banner": {
     "level": "upcoming",
-    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 42 分钟（11-25 08:30 ET / 22:30 KST）",
+    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 41 分钟（11-25 08:30 ET / 22:30 KST）",
     "detail": "前值 0.3% ｜ 预期 0.3% ｜ 临近公布前15分钟将自动触发防插针预警",
     "event_name": "美国10月核心PCE物价指数环比",
-    "minutes_left": 42,
+    "minutes_left": 41,
     "opex_shield": {
       "date": "2026-11-25",
       "active": false,
