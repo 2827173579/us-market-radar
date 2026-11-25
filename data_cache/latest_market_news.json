@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795648438.254,
-  "updated_at_et": "11-25 18:13 ET",
-  "updated_at_kst": "08:13 KST",
+  "updated_at_ts": 1795648477.238,
+  "updated_at_et": "11-25 18:14 ET",
+  "updated_at_kst": "08:14 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -946,8 +946,8 @@
         "title": "Dow Jones Futures: Market Goes On Wild Ride. Nasdaq, Nvidia Slash Losses While Anthropic Reverses Higher.",
         "url": "https://finance.yahoo.com/m/158e82fc-b889-34b6-8704-99a49e9a83ae/dow-jones-futures%3A-market.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-25 17:35 ET",
-        "pub_ts": 1795646125.0
+        "time": "11-25 18:02 ET",
+        "pub_ts": 1795647773.0
       },
       {
         "title": "Nvidia settles 8-year-old investor suit for $290M",
@@ -980,6 +980,13 @@
     ],
     "AMD": [
       {
+        "title": "2 Billionaire Funds Dumped AMD Last Quarter. Is It a Sell?",
+        "url": "https://www.fool.com/investing/2026/11/25/2-billionaire-funds-dumped-amd-last-quarter-is-it-a-sell/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 17:43 ET",
+        "pub_ts": 1795646581.0
+      },
+      {
         "title": "Prediction: AMD Stock Could Rally 58% as Analysts Maintain Strong Buy Rating",
         "url": "https://finance.yahoo.com/markets/stocks/articles/prediction-amd-stock-could-rally-213100517.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1006,13 +1013,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 12:45 ET",
         "pub_ts": 1795628702.0
-      },
-      {
-        "title": "AI Chip Stocks Extend Brutal Selloff as Nvidia, AMD and Broadcom Tumble Again",
-        "url": "https://finance.yahoo.com/technology/ai/articles/ai-chip-stocks-extend-brutal-170236621.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 12:02 ET",
-        "pub_ts": 1795626156.0
       }
     ],
     "ASML": [
@@ -3320,26 +3320,26 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795646962.4506645,
-    "SOXL": 1795646962.4506645,
+    "KORU": 1795648477.2377093,
+    "SOXL": 1795648477.2377093,
     "SPY": 1795647562.4201586,
-    "DIA": 1795646962.4506645,
-    "SOXX": 1795646962.4506645,
-    "QQQ": 1795646962.4506645,
+    "DIA": 1795648477.2377093,
+    "SOXX": 1795648477.2377093,
+    "QQQ": 1795648477.2377093,
     "SMH": 1795647562.4201586,
-    "IWM": 1795646962.4506645,
-    "IGV": 1795646962.4506645,
-    "TLT": 1795646962.4506645,
-    "GLD": 1795646962.4506645,
-    "SQQQ": 1795646962.4506645,
+    "IWM": 1795648477.2377093,
+    "IGV": 1795648477.2377093,
+    "TLT": 1795648477.2377093,
+    "GLD": 1795648477.2377093,
+    "SQQQ": 1795648477.2377093,
     "TSM": 1795647562.4201586,
-    "VIXY": 1795646962.4506645,
-    "SOXS": 1795646962.4506645,
-    "NVDA": 1795646962.4506645,
-    "AMD": 1795646962.4506645,
+    "VIXY": 1795648477.2377093,
+    "SOXS": 1795648477.2377093,
+    "NVDA": 1795648477.2377093,
+    "AMD": 1795648477.2377093,
     "ASML": 1795647562.4201586,
     "QCOM": 1795647562.4201586,
-    "AVGO": 1795646962.4506645,
+    "AVGO": 1795648477.2377093,
     "AMAT": 1795647562.4201586,
     "META": 1795647562.4201586,
     "GOOGL": 1795647562.4201586,
