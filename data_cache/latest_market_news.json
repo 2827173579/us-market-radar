@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795638391.711,
-  "updated_at_et": "11-25 15:26 ET",
-  "updated_at_kst": "05:26 KST",
+  "updated_at_ts": 1795638433.13,
+  "updated_at_et": "11-25 15:27 ET",
+  "updated_at_kst": "05:27 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -2636,6 +2636,13 @@
     ],
     "BTC-USD": [
       {
+        "title": "Mysterious traders made $340,000 betting on Huang’s Nvidia return",
+        "url": "https://www.thestreet.com/crypto/markets/mysterious-traders-made-340000-betting-on-huangs-nvidia-return?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 15:00 ET",
+        "pub_ts": 1795636800.0
+      },
+      {
         "title": "Kraken’s new credit cards offer up to 4% bitcoin rewards",
         "url": "https://finance.yahoo.com/video/kraken-credit-cards-offer-4-192100513.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2662,13 +2669,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 13:15 ET",
         "pub_ts": 1795630500.0
-      },
-      {
-        "title": "Michael Saylor reveals a Bitcoin plan that could shock investors",
-        "url": "https://www.thestreet.com/crypto/markets/michael-saylor-reveals-a-bitcoin-plan-that-could-shock-investors?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 13:00 ET",
-        "pub_ts": 1795629600.0
       }
     ],
     "CRWD": [
@@ -3368,11 +3368,11 @@
     "FPS": 1795637668.4817874,
     "MU": 1795638391.7112484,
     "SKHY": 1795638391.7112484,
-    "WDC": 1795636907.9370277,
+    "WDC": 1795638433.1298013,
     "STX": 1795637714.9541426,
     "MSTR": 1795637668.4817874,
     "SNDK": 1795637668.4817874,
-    "BTC-USD": 1795636907.9370277,
+    "BTC-USD": 1795638433.1298013,
     "CRWD": 1795637668.4817874,
     "ORCL": 1795637668.4817874,
     "COIN": 1795637668.4817874,
