@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795599588.467,
-  "updated_at_et": "11-25 04:39 ET",
-  "updated_at_kst": "18:39 KST",
+  "updated_at_ts": 1795599632.327,
+  "updated_at_et": "11-25 04:40 ET",
+  "updated_at_kst": "18:40 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -17,7 +17,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 231,
+      "minutes_left": 230,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -36,7 +36,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 231,
+      "minutes_left": 230,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -3022,13 +3022,6 @@
     ],
     "JPM": [
       {
-        "title": "Bitcoin now counts as collateral: From the CFTC to the ECB",
-        "url": "https://finance.yahoo.com/video/bitcoin-now-counts-as-collateral-from-the-cftc-to-the-ecb-173702372.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 12:37 ET",
-        "pub_ts": 1795541822.0
-      },
-      {
         "title": "This Nasdaq ETF Pays a 19% Yield Without Writing a Single Covered Call. Here’s How",
         "url": "https://247wallst.com/investing/etf/2026/11/24/this-nasdaq-etf-pays-a-19-yield-without-writing-a-single-covered-call-heres-how/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3055,6 +3048,13 @@
         "source": "Yahoo Finance",
         "time": "11-24 14:59 ET",
         "pub_ts": 1795550397.0
+      },
+      {
+        "title": "Bitcoin now counts as collateral: From the CFTC to the ECB",
+        "url": "https://finance.yahoo.com/video/bitcoin-now-counts-as-collateral-from-the-cftc-to-the-ecb-173702372.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 12:37 ET",
+        "pub_ts": 1795541822.0
       }
     ],
     "WMT": [
@@ -3396,16 +3396,16 @@
     "MRNA": 1795599528.4937735,
     "NKE": 1795599528.4937735,
     "MCD": 1795599528.4937735,
-    "PEP": 1795598130.104495,
-    "XOM": 1795598130.104495,
-    "JPM": 1795598130.104495,
-    "WMT": 1795598130.104495,
+    "PEP": 1795599632.3265138,
+    "XOM": 1795599632.3265138,
+    "JPM": 1795599632.3265138,
+    "WMT": 1795599632.3265138,
     "V": 1795599528.4937735,
-    "CAT": 1795598130.104495,
+    "CAT": 1795599632.3265138,
     "FN": 1795598710.5608332,
     "GLW": 1795599432.136337,
-    "ANT": 1795598130.104495,
-    "XAUUSD": 1795598130.104495,
+    "ANT": 1795599632.3265138,
+    "XAUUSD": 1795599632.3265138,
     "KOSPI": 1795598710.5608332
   },
   "opex_shield": {
@@ -3424,10 +3424,10 @@
   },
   "calendar_banner": {
     "level": "upcoming",
-    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 231 分钟（11-25 08:30 ET / 22:30 KST）",
+    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 230 分钟（11-25 08:30 ET / 22:30 KST）",
     "detail": "前值 0.3% ｜ 预期 0.3% ｜ 临近公布前15分钟将自动触发防插针预警",
     "event_name": "美国10月核心PCE物价指数环比",
-    "minutes_left": 231,
+    "minutes_left": 230,
     "opex_shield": {
       "date": "2026-11-25",
       "active": false,
