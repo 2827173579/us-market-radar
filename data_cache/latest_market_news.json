@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795610260.444,
-  "updated_at_et": "11-25 07:37 ET",
-  "updated_at_kst": "21:37 KST",
+  "updated_at_ts": 1795610311.236,
+  "updated_at_et": "11-25 07:38 ET",
+  "updated_at_kst": "21:38 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -17,7 +17,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 53,
+      "minutes_left": 52,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -36,7 +36,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 53,
+      "minutes_left": 52,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -2537,6 +2537,13 @@
     ],
     "STX": [
       {
+        "title": "Prediction: Seagate’s Record Profitability Could Be Just the Beginning, 27% Upside Ahead",
+        "url": "https://247wallst.com/investing/2026/11/25/prediction-seagates-record-profitability-could-be-just-the-beginning-27-upside-ahead/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 07:17 ET",
+        "pub_ts": 1795609034.0
+      },
+      {
         "title": "Seagate (STX) Stock Looks Undervalued Even With Rich Earnings Pricing",
         "url": "https://finance.yahoo.com/markets/stocks/articles/seagate-stx-stock-looks-undervalued-220748479.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2563,13 +2570,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 12:33 ET",
         "pub_ts": 1795455234.0
-      },
-      {
-        "title": "SanDisk Surges 22% as Jensen Huang’s Return to NVIDIA Sparks AI Chip Rebound; Seagate Jumps 18%, Micron Rallies 16%",
-        "url": "https://247wallst.com/investing/2026/11/23/sandisk-surges-22-as-jensen-huangs-return-to-nvidia-sparks-ai-chip-rebound-seagate-jumps-18-micron-rallies-16/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 10:04 ET",
-        "pub_ts": 1795446278.0
       }
     ],
     "MSTR": [
@@ -3381,7 +3381,7 @@
     "MU": 1795609448.843931,
     "SKHY": 1795609448.843931,
     "WDC": 1795609497.8915503,
-    "STX": 1795608780.747714,
+    "STX": 1795610311.236169,
     "MSTR": 1795610260.4442298,
     "SNDK": 1795610260.4442298,
     "BTC-USD": 1795609497.8915503,
@@ -3420,10 +3420,10 @@
   },
   "calendar_banner": {
     "level": "upcoming",
-    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 53 分钟（11-25 08:30 ET / 22:30 KST）",
+    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 52 分钟（11-25 08:30 ET / 22:30 KST）",
     "detail": "前值 0.3% ｜ 预期 0.3% ｜ 临近公布前15分钟将自动触发防插针预警",
     "event_name": "美国10月核心PCE物价指数环比",
-    "minutes_left": 53,
+    "minutes_left": 52,
     "opex_shield": {
       "date": "2026-11-25",
       "active": false,
