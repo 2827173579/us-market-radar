@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795628371.046,
-  "updated_at_et": "11-25 12:39 ET",
-  "updated_at_kst": "02:39 KST",
+  "updated_at_ts": 1795628415.373,
+  "updated_at_et": "11-25 12:40 ET",
+  "updated_at_kst": "02:40 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -1569,6 +1569,13 @@
     ],
     "BE": [
       {
+        "title": "Bloom Energy Stocks Slide 7.93% as AI Power Names Lose Momentum",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/bloom-energy-stocks-slide-7-172002014.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 12:20 ET",
+        "pub_ts": 1795627202.0
+      },
+      {
         "title": "This AI Power Stock More Than Doubled Its Revenue and Still Burned Cash. Which Number Matters More?",
         "url": "https://www.fool.com/investing/2026/11/25/this-ai-power-stock-more-than-doubled-its-revenue-and-still-burned-cash-which-number-matters-more/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1595,16 +1602,16 @@
         "source": "Yahoo Finance",
         "time": "11-25 03:11 ET",
         "pub_ts": 1795594260.0
-      },
-      {
-        "title": "BE Stock Slumps After AI-Driven Gains: This Analyst Sees ‘An Attractive Entry Point’",
-        "url": "https://stocktwits.com/news-articles/markets/equity/be-stock-slumps-after-ai-driven-gains-this-analyst-sees-an-attractive-entry-point/cNbHRamR9lQ?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 22:53 ET",
-        "pub_ts": 1795578831.0
       }
     ],
     "CRDO": [
+      {
+        "title": "Nvidia Sinks 9% as Huang Rally Fades: Stephanie Link Sees “A Cloud Over It”",
+        "url": "https://www.tikr.com/blog/nvidia-sinks-9-as-huang-rally-fades-stephanie-link-sees-a-cloud-over-it?ref=yahoofinance&tlnk=yf-261125-q8ch658v&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 12:24 ET",
+        "pub_ts": 1795627456.0
+      },
       {
         "title": "Credo CEO: Its Portfolio Now Spans “Millimeters to Kilometers.” December 1 Tests the Optics Push",
         "url": "https://www.tikr.com/blog/credo-ceo-its-portfolio-now-spans-millimeters-to-kilometers-december-1-tests-the-optics-push?ref=yahoofinance&tlnk=yf-261125-h78f5v23&.tsrc=rss",
@@ -1632,13 +1639,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 00:24 ET",
         "pub_ts": 1795584286.0
-      },
-      {
-        "title": "Down 28% in a Month, Credo Reports Dec. 1 as MaxLinear Predicts “Multiple AEC Vendors.” Time to Buy?",
-        "url": "https://www.tikr.com/blog/down-28-in-a-month-credo-reports-dec-1-as-maxlinear-predicts-multiple-aec-vendors-time-to-buy?ref=yahoofinance&tlnk=yf-261125-m4h6j4m7&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 23:05 ET",
-        "pub_ts": 1795579520.0
       }
     ],
     "COHR": [
@@ -1798,6 +1798,20 @@
         "pub_ts": 1795621319.0
       },
       {
+        "title": "SpaceX Wins First-Ever U.S. Approval for Orbital AI Data Centers",
+        "url": "https://www.cryptoprowl.com/releases/spacex-wins-first-ever-us-approval-for-orbital-ai-data-centers-8074?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 12:31 ET",
+        "pub_ts": 1795627860.0
+      },
+      {
+        "title": "Anthropic Vs. SpaceX: Both Fell Below IPO Price, But Only One Sees Valuation Below $1 Trillion",
+        "url": "https://stocktwits.com/news-articles/markets/equity/anthropic-vs-space-x-both-fell-below-ipo-price-but-only-one-sees-valuation-below-1-trillion/cNbHNrsR9mq?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 12:17 ET",
+        "pub_ts": 1795627022.0
+      },
+      {
         "title": "The Largest IPO in Stock Market History Is Here. What It Means for Your Portfolio",
         "url": "https://www.fool.com/investing/2026/11/25/the-largest-ipo-in-stock-market-history-is-here-what-it-means-for-your-portfolio/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1810,20 +1824,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 11:23 ET",
         "pub_ts": 1795623839.0
-      },
-      {
-        "title": "Goldman Sachs Group (GS) Could Be 29% Undervalued As SpaceX AI Financing Lifts Its Story",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/goldman-sachs-group-gs-could-161059299.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 11:10 ET",
-        "pub_ts": 1795623059.0
-      },
-      {
-        "title": "I’m Buying SpaceX Because There’s a Reasonable Case for $200 by January",
-        "url": "https://247wallst.com/investing/2026/11/25/im-buying-spacex-because-theres-a-reasonable-case-for-200-by-january/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 10:45 ET",
-        "pub_ts": 1795621507.0
       }
     ],
     "ASTS": [
@@ -3197,6 +3197,13 @@
     ],
     "GLW": [
       {
+        "title": "Corning Stocks Tumble 7.58% as AI Fiber Trade Unwinds",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/corning-stocks-tumble-7-58-172103702.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 12:21 ET",
+        "pub_ts": 1795627263.0
+      },
+      {
         "title": "Corning (GLW) Rides AI Optimism On A Narrative That Still Sees It Undervalued",
         "url": "https://finance.yahoo.com/markets/stocks/articles/corning-glw-rides-ai-optimism-151209714.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3223,13 +3230,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 13:36 ET",
         "pub_ts": 1795458967.0
-      },
-      {
-        "title": "Corning Surges 15.1% as Nvidia Rally Lifts AI Hardware Stocks on Nov. 23",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/corning-surges-15-1-nvidia-170242059.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 12:02 ET",
-        "pub_ts": 1795453362.0
       }
     ],
     "ANT": [
@@ -3347,25 +3347,25 @@
     "AMZN": 1795627738.2312214,
     "CRWV": 1795627738.2312214,
     "NBIS": 1795627738.2312214,
-    "APLD": 1795626907.2490985,
-    "VST": 1795626907.2490985,
-    "BE": 1795626907.2490985,
-    "CRDO": 1795626907.2490985,
-    "COHR": 1795626907.2490985,
+    "APLD": 1795628415.373435,
+    "VST": 1795628415.373435,
+    "BE": 1795628415.373435,
+    "CRDO": 1795628415.373435,
+    "COHR": 1795628415.373435,
     "MRVL": 1795627786.4512484,
     "LITE": 1795627786.4512484,
-    "AAOI": 1795626907.2490985,
-    "SPCX": 1795626907.2490985,
-    "ASTS": 1795626907.2490985,
+    "AAOI": 1795628415.373435,
+    "SPCX": 1795628415.373435,
+    "ASTS": 1795628415.373435,
     "AXTI": 1795627738.2312214,
-    "NASA": 1795626907.2490985,
-    "LUNR": 1795626907.2490985,
+    "NASA": 1795628415.373435,
+    "LUNR": 1795628415.373435,
     "TSLA": 1795627040.9444351,
-    "AXP": 1795626907.2490985,
-    "RKLB": 1795626907.2490985,
-    "KO": 1795626907.2490985,
-    "FLY": 1795626907.2490985,
-    "INTC": 1795626907.2490985,
+    "AXP": 1795628415.373435,
+    "RKLB": 1795628415.373435,
+    "KO": 1795628415.373435,
+    "FLY": 1795628415.373435,
+    "INTC": 1795628415.373435,
     "VRT": 1795627040.9444351,
     "HPE": 1795627040.9444351,
     "DELL": 1795627040.9444351,
@@ -3393,7 +3393,7 @@
     "V": 1795627040.9444351,
     "CAT": 1795627130.1136327,
     "FN": 1795627786.4512484,
-    "GLW": 1795626907.2490985,
+    "GLW": 1795628415.373435,
     "ANT": 1795627130.1136327,
     "XAUUSD": 1795627130.1136327,
     "KOSPI": 1795627738.2312214
