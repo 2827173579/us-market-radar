@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795597300.631,
-  "updated_at_et": "11-25 04:01 ET",
-  "updated_at_kst": "18:01 KST",
+  "updated_at_ts": 1795597346.991,
+  "updated_at_et": "11-25 04:02 ET",
+  "updated_at_kst": "18:02 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -17,7 +17,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 269,
+      "minutes_left": 268,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -36,7 +36,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 269,
+      "minutes_left": 268,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -2652,6 +2652,20 @@
     ],
     "BTC-USD": [
       {
+        "title": "IREN Selloff Draws Attention: Grant Cardone Joins Retail Bulls Asking Where The Bottom Is",
+        "url": "https://stocktwits.com/news-articles/markets/equity/iren-selloff-draws-attention-grant-cardone-retail-bulls-asking-where-the-bottom-is/cNbHJRhR9lq?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 03:43 ET",
+        "pub_ts": 1795596201.0
+      },
+      {
+        "title": "LIVE – Crypto News Today: Bitcoin Hit by Trump Tariff Threat and US Treasury Cyberattack as IBIT Bleeds Billions",
+        "url": "https://cryptonews.com/news/crypto-news-bitcoin-trump-tariffs-ibit-etf-outflows/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 03:05 ET",
+        "pub_ts": 1795593923.0
+      },
+      {
         "title": "Bitcoin extends losses below $59,000 as ETF outflows weigh",
         "url": "https://finance.yahoo.com/markets/crypto/articles/bitcoin-extends-losses-below-59-064934005.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2671,20 +2685,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 00:24 ET",
         "pub_ts": 1795584271.0
-      },
-      {
-        "title": "BlackRock Says Markets Overprice Fed Hikes: Will Bitcoin Catch a Break?",
-        "url": "https://beincrypto.com/blackrock-fed-hikes-bitcoin-relief/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 00:20 ET",
-        "pub_ts": 1795584052.0
-      },
-      {
-        "title": "Why Did CleanSpark Lose Nearly $1 Billion in Fiscal 2026?",
-        "url": "https://beincrypto.com/cleanspark-fiscal-2026-loss-bitcoin-ai/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 00:19 ET",
-        "pub_ts": 1795583980.0
       }
     ],
     "CRWD": [
@@ -3384,11 +3384,11 @@
     "FPS": 1795596501.7812395,
     "MU": 1795597178.2551703,
     "SKHY": 1795597178.2551703,
-    "WDC": 1795595820.125692,
+    "WDC": 1795597346.9909182,
     "STX": 1795596501.7812395,
     "MSTR": 1795596501.7812395,
     "SNDK": 1795596501.7812395,
-    "BTC-USD": 1795595820.125692,
+    "BTC-USD": 1795597346.9909182,
     "CRWD": 1795596501.7812395,
     "ORCL": 1795596501.7812395,
     "COIN": 1795596501.7812395,
@@ -3424,10 +3424,10 @@
   },
   "calendar_banner": {
     "level": "upcoming",
-    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 269 分钟（11-25 08:30 ET / 22:30 KST）",
+    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 268 分钟（11-25 08:30 ET / 22:30 KST）",
     "detail": "前值 0.3% ｜ 预期 0.3% ｜ 临近公布前15分钟将自动触发防插针预警",
     "event_name": "美国10月核心PCE物价指数环比",
-    "minutes_left": 269,
+    "minutes_left": 268,
     "opex_shield": {
       "date": "2026-11-25",
       "active": false,
