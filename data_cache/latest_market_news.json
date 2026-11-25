@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795604939.383,
-  "updated_at_et": "11-25 06:08 ET",
-  "updated_at_kst": "20:08 KST",
+  "updated_at_ts": 1795604985.37,
+  "updated_at_et": "11-25 06:09 ET",
+  "updated_at_kst": "20:09 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -17,7 +17,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 142,
+      "minutes_left": 141,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -36,7 +36,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 142,
+      "minutes_left": 141,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -2650,6 +2650,13 @@
     ],
     "BTC-USD": [
       {
+        "title": "10 big money topics you might have to tackle over turkey: A Yahoo Finance guide to Nvidia, markets, and more",
+        "url": "https://finance.yahoo.com/markets/article/10-big-money-topics-you-might-have-to-tackle-over-turkey-a-yahoo-finance-guide-to-nvidia-markets-and-more-110000381.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 06:00 ET",
+        "pub_ts": 1795604400.0
+      },
+      {
         "title": "Bitcoin extends losses below $59,000 as ETF outflows weigh",
         "url": "https://finance.yahoo.com/markets/crypto/articles/bitcoin-extends-losses-below-59-064934005.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2676,13 +2683,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 04:12 ET",
         "pub_ts": 1795597942.0
-      },
-      {
-        "title": "BTC News: ARK Sells $6.8M Bitcoin ETF as $4.9B Outflows Deepen Market Fear",
-        "url": "https://99bitcoins.com/news/bitcoin-btc/btc-news-ark-sells-6-8m-bitcoin-etf-as-4-9b-outflows-deepen-market-fear/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 04:05 ET",
-        "pub_ts": 1795597513.0
       }
     ],
     "CRWD": [
@@ -3382,11 +3382,11 @@
     "FPS": 1795604121.535901,
     "MU": 1795604837.8887246,
     "SKHY": 1795604837.8887246,
-    "WDC": 1795603460.6078935,
+    "WDC": 1795604985.370187,
     "STX": 1795604173.9583318,
     "MSTR": 1795604121.535901,
     "SNDK": 1795604121.535901,
-    "BTC-USD": 1795603460.6078935,
+    "BTC-USD": 1795604985.370187,
     "CRWD": 1795604121.535901,
     "ORCL": 1795604121.535901,
     "COIN": 1795604121.535901,
@@ -3422,10 +3422,10 @@
   },
   "calendar_banner": {
     "level": "upcoming",
-    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 142 分钟（11-25 08:30 ET / 22:30 KST）",
+    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 141 分钟（11-25 08:30 ET / 22:30 KST）",
     "detail": "前值 0.3% ｜ 预期 0.3% ｜ 临近公布前15分钟将自动触发防插针预警",
     "event_name": "美国10月核心PCE物价指数环比",
-    "minutes_left": 142,
+    "minutes_left": 141,
     "opex_shield": {
       "date": "2026-11-25",
       "active": false,
