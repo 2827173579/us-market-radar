@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795617077.123,
-  "updated_at_et": "11-25 09:31 ET",
-  "updated_at_kst": "23:31 KST",
+  "updated_at_ts": 1795617131.009,
+  "updated_at_et": "11-25 09:32 ET",
+  "updated_at_kst": "23:32 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -43,6 +43,21 @@
     }
   ],
   "macro_flashes": [
+    {
+      "id": "20261125223041500800",
+      "title": "【美股三大股指下挫 英伟达跌约8%】 11月25日讯，美股开盘，三大股指低开，道指跌1.…",
+      "summary": "【美股三大股指下挫 英伟达跌约8%】 11月25日讯，美股开盘，三大股指低开，道指跌1.1%，标普500指数跌2.2%，纳指跌3.3%。半导体板块走低，费城半导体指数跌5.9%，英伟达(NVDA.O)跌约8%。Anthropic(ANT.O)跌约5%。",
+      "keywords": [
+        "半导体",
+        "英伟达",
+        "标普"
+      ],
+      "pub_ts": 1795617041.0,
+      "time_et": "11-25 09:30 ET",
+      "time_bj": "22:30 BJ",
+      "time_kst": "23:30 KST",
+      "time_display": "09:30 ET / 22:30 BJ"
+    },
     {
       "id": "20261125221159717800",
       "title": "沃什想让市场替美联储指路，英伟达事件却给了他当头一棒",
@@ -366,19 +381,6 @@
       "time_bj": "20:10 BJ",
       "time_kst": "21:10 KST",
       "time_display": "07:10 ET / 20:10 BJ"
-    },
-    {
-      "id": "20261125200811931800",
-      "title": "5至7年期美债收益率日内下跌10个基点。",
-      "summary": "5至7年期美债收益率日内下跌10个基点。",
-      "keywords": [
-        "美债"
-      ],
-      "pub_ts": 1795608491.0,
-      "time_et": "11-25 07:08 ET",
-      "time_bj": "20:08 BJ",
-      "time_kst": "21:08 KST",
-      "time_display": "07:08 ET / 20:08 BJ"
     }
   ],
   "ticker_news": {
@@ -2426,6 +2428,13 @@
         "pub_ts": 1795614318.0
       },
       {
+        "title": "Micron Falls 7% as a Weaker DRAM Outlook and New Tariffs Hit Memory Stocks; SanDisk Drops 7%: Are Micron and Memory Stocks Now a Value Play?",
+        "url": "https://247wallst.com/investing/2026/11/25/micron-falls-7-as-a-weaker-dram-outlook-and-new-tariffs-hit-memory-stocks-sandisk-drops-7-are-micron-and-memory-stocks-now-a-value-play/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 09:13 ET",
+        "pub_ts": 1795615991.0
+      },
+      {
         "title": "The Consensus on Micron Stock Is Changing. Here’s What Investors Should Know",
         "url": "https://247wallst.com/investing/2026/11/25/the-consensus-on-micron-stock-is-changing-heres-what-investors-should-know/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2445,13 +2454,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 07:28 ET",
         "pub_ts": 1795609682.0
-      },
-      {
-        "title": "AMD, Micron and Sandisk Stocks Slide as AI Spending Fears Deepen",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/amd-micron-sandisk-stocks-slide-122728877.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 07:27 ET",
-        "pub_ts": 1795609648.0
       }
     ],
     "SKHY": [
@@ -3351,8 +3353,8 @@
     "BE": 1795616271.1282868,
     "CRDO": 1795616271.1282868,
     "COHR": 1795616271.1282868,
-    "MRVL": 1795615587.3890493,
-    "LITE": 1795615587.3890493,
+    "MRVL": 1795617131.0085394,
+    "LITE": 1795617131.0085394,
     "AAOI": 1795616271.1282868,
     "SPCX": 1795616271.1282868,
     "ASTS": 1795616271.1282868,
@@ -3371,8 +3373,8 @@
     "OKLO": 1795616370.1130629,
     "CEG": 1795616370.1130629,
     "FPS": 1795616370.1130629,
-    "MU": 1795615587.3890493,
-    "SKHY": 1795615587.3890493,
+    "MU": 1795617131.0085394,
+    "SKHY": 1795617131.0085394,
     "WDC": 1795615636.925272,
     "STX": 1795616421.494901,
     "MSTR": 1795616370.1130629,
@@ -3391,7 +3393,7 @@
     "WMT": 1795616469.031574,
     "V": 1795616370.1130629,
     "CAT": 1795616469.031574,
-    "FN": 1795615587.3890493,
+    "FN": 1795617131.0085394,
     "GLW": 1795616271.1282868,
     "ANT": 1795616469.031574,
     "XAUUSD": 1795616469.031574,
