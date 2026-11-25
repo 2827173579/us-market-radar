@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795620115.592,
-  "updated_at_et": "11-25 10:21 ET",
-  "updated_at_kst": "00:21 KST",
+  "updated_at_ts": 1795620160.069,
+  "updated_at_et": "11-25 10:22 ET",
+  "updated_at_kst": "00:22 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -476,6 +476,13 @@
         "pub_ts": 1795604617.0
       },
       {
+        "title": "Dow Craters Over 1000 Points, Nasdaq Slips 4% As AI Trade Unravels – Investors Digest PCE Inflation, Fresh Tariff Proposal",
+        "url": "https://stocktwits.com/news-articles/markets/equity/dow-craters-over-1000-points-nasdaq-slips-4-as-ai-trade-unravels-investors-digest-pce-inflation-fresh-tariff-proposal/cNbHjJvR9mj?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 10:05 ET",
+        "pub_ts": 1795619103.0
+      },
+      {
         "title": "Is A 4.7% S&P Jump A Good Sign?",
         "url": "https://www.trefis.com/stock/spy/articles/628687/is-a-4-7-s-p-jump-a-good-sign/2026-11-25?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -488,13 +495,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 06:02 ET",
         "pub_ts": 1795604530.0
-      },
-      {
-        "title": "ETFs Are Buying Extra Space Storage (EXR) on Nov. 23",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-buying-extra-space-storage-110204240.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 06:02 ET",
-        "pub_ts": 1795604524.0
       }
     ],
     "DIA": [
@@ -1128,6 +1128,13 @@
     ],
     "AMAT": [
       {
+        "title": "Jim Cramer tells investors to buy beaten-down chip stock down 53%",
+        "url": "https://www.thestreet.com/investing/stocks/amat-applied-materials-jim-cramer-urges-investors-to-buy-stock-after-decline?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 10:17 ET",
+        "pub_ts": 1795619820.0
+      },
+      {
         "title": "Applied Materials (AMAT) Stock Sees Fair Value Cut As Analysts Trim Targets",
         "url": "https://finance.yahoo.com/markets/stocks/articles/applied-materials-amat-stock-sees-121330610.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1154,13 +1161,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 14:50 ET",
         "pub_ts": 1795549802.0
-      },
-      {
-        "title": "Applied Materials Is Up 33% in 2026 but 54% Below Its June High. Time to Buy?",
-        "url": "https://www.tikr.com/blog/applied-materials-is-up-33-in-2026-but-54-below-its-june-high-time-to-buy?ref=yahoofinance&tlnk=yf-261124-5f47p74f&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 06:52 ET",
-        "pub_ts": 1795521135.0
       }
     ],
     "META": [
@@ -1216,28 +1216,49 @@
         "pub_ts": 1795608000.0
       },
       {
+        "title": "Google Ends $75 Million News Deal Amid Regulatory Fight",
+        "url": "https://finance.yahoo.com/media-advertising/articles/google-ends-75-million-news-150706065.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 10:07 ET",
+        "pub_ts": 1795619226.0
+      },
+      {
+        "title": "Alphabet, NVIDIA, Microsoft and AWS Lead the AI for Scientific Discovery Market as It Grows to USD 34.78 Billion by 2035",
+        "url": "https://finance.yahoo.com/technology/ai/articles/alphabet-nvidia-microsoft-aws-lead-150000464.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 10:00 ET",
+        "pub_ts": 1795618800.0
+      },
+      {
         "title": "The $2 trillion chip rally is getting wiped out — here's what history says comes next",
         "url": "https://finance.yahoo.com/markets/article/the-2-trillion-chip-rally-is-getting-wiped-out--heres-what-history-says-comes-next-145306996.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-25 09:53 ET",
         "pub_ts": 1795618386.0
-      },
-      {
-        "title": "Prediction: Meta Could Be One of the Biggest AI Winners Over the Next 5 Years",
-        "url": "https://247wallst.com/investing/2026/11/25/prediction-meta-could-be-one-of-the-biggest-ai-winners-over-the-next-5-years/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 09:33 ET",
-        "pub_ts": 1795617231.0
-      },
-      {
-        "title": "Data Center Americas 2027 Announces Industry Leaders from AWS, Google, Microsoft, Oracle, CoreWeave and Applied Digital as Featured Speakers",
-        "url": "https://finance.yahoo.com/technology/ai/articles/data-center-americas-2027-announces-140000391.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 09:00 ET",
-        "pub_ts": 1795615200.0
       }
     ],
     "MSFT": [
+      {
+        "title": "Stirlingshire Investments Appoints Daniel Gicklhorn as Chief Technology Officer",
+        "url": "https://finance.yahoo.com/technology/articles/stirlingshire-investments-appoints-daniel-gicklhorn-151300914.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 10:13 ET",
+        "pub_ts": 1795619580.0
+      },
+      {
+        "title": "Digital Twins in Healthcare Market to worth USD 101.19 Billion by 2031, at a CAGR of 68.4% – MarketsandMarkets™",
+        "url": "https://finance.yahoo.com/healthcare/articles/digital-twins-healthcare-market-worth-150000405.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 10:00 ET",
+        "pub_ts": 1795618800.0
+      },
+      {
+        "title": "Alphabet, NVIDIA, Microsoft and AWS Lead the AI for Scientific Discovery Market as It Grows to USD 34.78 Billion by 2035",
+        "url": "https://finance.yahoo.com/technology/ai/articles/alphabet-nvidia-microsoft-aws-lead-150000464.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 10:00 ET",
+        "pub_ts": 1795618800.0
+      },
       {
         "title": "Software-Defined Networking and Network Function Virtualization Market Report 2026 | Secure $172.49B as Cisco, Microsoft, Huawei, HPE and Nokia Drive Cloud Automation by 2030",
         "url": "https://finance.yahoo.com/technology/articles/software-defined-networking-network-function-142900844.html?.tsrc=rss",
@@ -1251,27 +1272,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 09:27 ET",
         "pub_ts": 1795616820.0
-      },
-      {
-        "title": "Artificial Intelligence (AI) in Hospital Operations Market Report 2026 | Capitalize on 28.9% CAGR as Microsoft, Oracle, Epic, LeanTaaS and Qventus Accelerate Workflow Automation",
-        "url": "https://finance.yahoo.com/healthcare/articles/artificial-intelligence-ai-hospital-operations-142000864.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 09:20 ET",
-        "pub_ts": 1795616400.0
-      },
-      {
-        "title": "Data Center Americas 2027 Announces Industry Leaders from AWS, Google, Microsoft, Oracle, CoreWeave and Applied Digital as Featured Speakers",
-        "url": "https://finance.yahoo.com/technology/ai/articles/data-center-americas-2027-announces-140000391.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 09:00 ET",
-        "pub_ts": 1795615200.0
-      },
-      {
-        "title": "Is Microsoft Stock Worth Owning as AI Capex Weighs on Free Cash Flow?",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/microsoft-stock-worth-owning-ai-124000486.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 07:40 ET",
-        "pub_ts": 1795610400.0
       }
     ],
     "AAPL": [
@@ -3322,34 +3322,34 @@
   "ticker_news_ts": {
     "KORU": 1795619667.4612029,
     "SOXL": 1795619667.4612029,
-    "SPY": 1795618619.0257833,
+    "SPY": 1795620160.0688725,
     "DIA": 1795619667.4612029,
     "SOXX": 1795619667.4612029,
     "QQQ": 1795619667.4612029,
-    "SMH": 1795618619.0257833,
+    "SMH": 1795620160.0688725,
     "IWM": 1795619667.4612029,
     "IGV": 1795619667.4612029,
     "TLT": 1795619667.4612029,
     "GLD": 1795619667.4612029,
     "SQQQ": 1795619667.4612029,
-    "TSM": 1795618619.0257833,
+    "TSM": 1795620160.0688725,
     "VIXY": 1795619667.4612029,
     "SOXS": 1795619667.4612029,
     "NVDA": 1795619667.4612029,
     "AMD": 1795619667.4612029,
-    "ASML": 1795618619.0257833,
-    "QCOM": 1795618619.0257833,
+    "ASML": 1795620160.0688725,
+    "QCOM": 1795620160.0688725,
     "AVGO": 1795619667.4612029,
-    "AMAT": 1795618619.0257833,
-    "META": 1795618619.0257833,
-    "GOOGL": 1795618619.0257833,
-    "MSFT": 1795618619.0257833,
-    "AAPL": 1795618619.0257833,
-    "PLTR": 1795618619.0257833,
-    "NOW": 1795618619.0257833,
-    "AMZN": 1795618619.0257833,
-    "CRWV": 1795618619.0257833,
-    "NBIS": 1795618619.0257833,
+    "AMAT": 1795620160.0688725,
+    "META": 1795620160.0688725,
+    "GOOGL": 1795620160.0688725,
+    "MSFT": 1795620160.0688725,
+    "AAPL": 1795620160.0688725,
+    "PLTR": 1795620160.0688725,
+    "NOW": 1795620160.0688725,
+    "AMZN": 1795620160.0688725,
+    "CRWV": 1795620160.0688725,
+    "NBIS": 1795620160.0688725,
     "APLD": 1795619306.4990766,
     "VST": 1795619306.4990766,
     "BE": 1795619306.4990766,
@@ -3360,7 +3360,7 @@
     "AAOI": 1795619306.4990766,
     "SPCX": 1795619306.4990766,
     "ASTS": 1795619306.4990766,
-    "AXTI": 1795618619.0257833,
+    "AXTI": 1795620160.0688725,
     "NASA": 1795619306.4990766,
     "LUNR": 1795619306.4990766,
     "TSLA": 1795619397.7050352,
@@ -3399,7 +3399,7 @@
     "GLW": 1795619306.4990766,
     "ANT": 1795619495.6363492,
     "XAUUSD": 1795619495.6363492,
-    "KOSPI": 1795618619.0257833
+    "KOSPI": 1795620160.0688725
   },
   "opex_shield": {
     "date": "2026-11-25",
