@@ -90,8 +90,8 @@
       "last_notified_at": 0.0
     },
     "IGV": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1795610122.901927
     },
     "CEG": {
       "state": "NORMAL",
@@ -170,8 +170,8 @@
       "last_notified_at": 0.0
     },
     "NKE": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1795609552.373313
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "HPE": {
       "state": "STOP_LOSS",
