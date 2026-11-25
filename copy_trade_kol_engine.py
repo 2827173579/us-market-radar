@@ -346,6 +346,58 @@ def save_kol_ledger(doc: Dict[str, Any], ledger_path: Optional[str] = None) -> s
     return cte.save_copy_ledger(doc, ledger_path=ledger_path or DEFAULT_KOL_LEDGER_PATH)
 
 
+def _extract_corridor_and_extrema(
+    lv: Optional[Dict[str, Any]],
+    ci: Optional[Dict[str, Any]],
+) -> Tuple[str, float, float, float, float]:
+    """
+    兼容线上主雷达字典与离线回测字典的走廊/盘前/日内高低点提取：
+    - corr_div: 支持 ci['divergence']={status:...} 嵌套字典、ci['divergence_code'] 字符串及 lv['corridor']['status']；
+    - day_low / day_high: 兼容 day_low/rth_low/low_price 与 day_high/rth_high/high_price；
+    - pm_low / pm_high: 兼容 pm_low/pml 与 pm_high/pmh（含 lv['corridor'] 嵌套回退）。
+    """
+    lv_d = lv if isinstance(lv, dict) else {}
+    ci_d = ci if isinstance(ci, dict) else {}
+    lv_corr = lv_d.get("corridor") if isinstance(lv_d.get("corridor"), dict) else {}
+
+    def _parse_div(src: Dict[str, Any]) -> str:
+        if not isinstance(src, dict):
+            return ""
+        raw_code = src.get("divergence_code")
+        if isinstance(raw_code, str) and raw_code.strip():
+            return raw_code.strip().upper()
+        raw_div = src.get("divergence")
+        if isinstance(raw_div, dict):
+            st = raw_div.get("status") or raw_div.get("code") or raw_div.get("divergence_code")
+            if isinstance(st, str) and st.strip():
+                return st.strip().upper()
+        elif isinstance(raw_div, str) and raw_div.strip():
+            return raw_div.strip().upper()
+        st2 = src.get("status")
+        if isinstance(st2, str) and st2.strip().upper() in ("ABOVE_P75", "BELOW_P25", "IN_CORRIDOR", "OPENING_WINDOW"):
+            return st2.strip().upper()
+        return ""
+
+    corr_div = _parse_div(ci_d) or _parse_div(lv_corr)
+    day_low = cte._safe_float(
+        ci_d.get("day_low") or ci_d.get("rth_low") or lv_d.get("day_low") or lv_d.get("rth_low") or lv_d.get("low_price"),
+        0.0,
+    )
+    day_high = cte._safe_float(
+        ci_d.get("day_high") or ci_d.get("rth_high") or lv_d.get("day_high") or lv_d.get("rth_high") or lv_d.get("high_price"),
+        0.0,
+    )
+    pm_low = cte._safe_float(
+        ci_d.get("pm_low") or ci_d.get("pml") or lv_d.get("pm_low") or lv_d.get("pml") or lv_corr.get("pml"),
+        0.0,
+    )
+    pm_high = cte._safe_float(
+        ci_d.get("pm_high") or ci_d.get("pmh") or lv_d.get("pm_high") or lv_d.get("pmh") or lv_corr.get("pmh"),
+        0.0,
+    )
+    return corr_div, day_low, day_high, pm_low, pm_high
+
+
 def resolve_kol_structural_sl(
     ticker: str,
     direction: str,
@@ -369,12 +421,13 @@ def resolve_kol_structural_sl(
     lv = live_quote if isinstance(live_quote, dict) else {}
     sr = sr_anchor if isinstance(sr_anchor, dict) else {}
     ci = corridor_item if isinstance(corridor_item, dict) else {}
+    _, day_low, day_high, pm_low, pm_high = _extract_corridor_and_extrema(lv, ci)
     dir_u = str(direction or "LONG").upper()
 
     if dir_u == "LONG":
         cands = [
-            cte._safe_float(ci.get("day_low") or lv.get("day_low"), 0.0),
-            cte._safe_float(ci.get("pm_low"), 0.0),
+            day_low,
+            pm_low,
             cte._safe_float(sr.get("s1") or lv.get("anchor_s1") or lv.get("s1"), 0.0),
             cte._safe_float(lv.get("entry_stop_loss"), 0.0),
         ]
@@ -392,8 +445,8 @@ def resolve_kol_structural_sl(
 
     # SHORT
     cands = [
-        cte._safe_float(ci.get("day_high") or lv.get("day_high"), 0.0),
-        cte._safe_float(ci.get("pm_high"), 0.0),
+        day_high,
+        pm_high,
         cte._safe_float(sr.get("r1") or lv.get("anchor_r1") or lv.get("r1"), 0.0),
     ]
     valid = [c * (1.0 + pad) for c in cands if c > entry_price]
@@ -519,7 +572,7 @@ def screen_kol_sniper_candidates(
         is_crash = bool(ai_item.get("is_crash_halt", False) or lv.get("is_crash_halt", False))
         is_cooling = bool(ai_item.get("is_cooling_halt", False) or lv.get("is_cooling_halt", False))
         is_tp_ext = bool(lv.get("is_take_profit", False))
-        is_broken = bool(lv.get("is_broken_bearish", False))
+        is_broken = bool(lv.get("is_broken_bearish", False) or lv.get("broken_bearish", False))
         is_deep_pb = bool(lv.get("is_deep_pullback", False) or lv.get("is_pit", False))
         rsi_14 = cte._safe_float(lv.get("rsi") or lv.get("rsi_14") or ai_item.get("rsi_14"), 50.0)
         rsi_5m = cte._safe_float(lv.get("rsi_5m"), 50.0)
@@ -534,9 +587,7 @@ def screen_kol_sniper_candidates(
         ci = corridor_by_tk.get(tk) if isinstance(corridor_by_tk, dict) else {}
         if not isinstance(ci, dict):
             ci = lv.get("corridor") if isinstance(lv.get("corridor"), dict) else {}
-        corr_div = str(ci.get("divergence_code") or ci.get("divergence") or "").upper()
-        day_low = cte._safe_float(ci.get("day_low") or lv.get("day_low"), 0.0)
-        pm_low = cte._safe_float(ci.get("pm_low"), 0.0)
+        corr_div, day_low, _day_high, pm_low, _pm_high = _extract_corridor_and_extrema(lv, ci)
 
         # 检查同标的当日平仓冷却 (>= 30 分钟；V5.5.1 已彻底移除冗余 FLIP 分支)
         last_ex = exit_hist.get(tk) if isinstance(exit_hist.get(tk), dict) else None

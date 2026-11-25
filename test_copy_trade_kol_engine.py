@@ -456,6 +456,82 @@ class TestCopyTradeKolEngineV551(unittest.TestCase):
                 else:
                     os.environ[k] = v
 
+    def test_09_live_radar_field_compatibility_corridor_dict_rth_low_pml_broken_bearish(self):
+        """验证线上主雷达真实字段命名 (divergence dict / rth_low / pml / pmh / broken_bearish) 完全生效。"""
+        # 1) ABOVE_P75 嵌套字典触发顺势突破多（即使 R1 很远）
+        ai_long = {"market_regime": "BULL_EXPANSION", "by_ticker": {
+            "NVDA": {"calibrated_win_rate_pct": 66.0, "calibrated_short_win_rate_pct": 25.0},
+        }}
+        q_break = {
+            "QQQ": {"active_price": 500.0, "pct_change": 0.4},
+            "NVDA": {
+                "active_price": 102.0, "prev_close": 100.0, "pct_change": 2.0,
+                "vwap": 101.2, "vwap_diff_pct": 0.79, "rsi_5m": 62.0, "rvol_5m": 1.8,
+                "rth_low": 99.6, "rth_high": 102.3,
+            },
+        }
+        ip_p75 = {"by_ticker": {"NVDA": {"divergence": {"status": "ABOVE_P75"}, "pml": 95.0, "pmh": 101.5}}}
+        c_break = kol.screen_kol_sniper_candidates(
+            ai_predictions=ai_long, live_quotes=q_break, open_positions=[],
+            cur_et=_et(2026, 11, 25, 10, 15), market_regime="BULL_EXPANSION",
+            daily_sr_anchors={"NVDA": {"s1": 90.0, "r1": 120.0}},
+            intraday_path_payload=ip_p75,
+        )
+        self.assertEqual(len(c_break), 1)
+        self.assertEqual(c_break[0]["setup"], "BREAKOUT_MOMENTUM_LONG")
+        # 结构止损应锚定 rth_low=99.6 / pml=99.5 外侧 0.6% -> ~99.00 (约 -2.94%，落在 [2%, 4.5%])
+        self.assertAlmostEqual(c_break[0]["sl_price"], round(99.6 * (1.0 - 0.006), 2), places=2)
+
+        # 2) rth_low 扫穿 pml 后收回触发 SWEEP_RECLAIM_LONG（无 S1 靠近）
+        q_sweep = {
+            "QQQ": {"active_price": 500.0, "pct_change": -0.3},
+            "NVDA": {
+                "active_price": 100.2, "prev_close": 100.0, "pct_change": 0.2,
+                "vwap": 100.1, "vwap_diff_pct": 0.10, "rsi_5m": 48.0, "rvol_5m": 1.4,
+                "rth_low": 99.2,
+            },
+        }
+        ip_pml = {"by_ticker": {"NVDA": {"divergence": {"status": "IN_CORRIDOR"}, "pml": 99.5}}}
+        c_sweep = kol.screen_kol_sniper_candidates(
+            ai_predictions=ai_long, live_quotes=q_sweep, open_positions=[],
+            cur_et=_et(2026, 11, 25, 10, 20), market_regime="BULL_EXPANSION",
+            daily_sr_anchors={"NVDA": {"s1": 88.0, "r1": 120.0}},
+            intraday_path_payload=ip_pml,
+        )
+        self.assertEqual(len(c_sweep), 1)
+        self.assertEqual(c_sweep[0]["setup"], "SWEEP_RECLAIM_LONG")
+
+        # 3) 牛市微涨日依靠 BELOW_P25 字典或 broken_bearish=True 触发 REBOUND_REJECT_SHORT，且空单止损锚定 rth_high/pmh
+        ai_short = {"market_regime": "BULL_EXPANSION", "by_ticker": {
+            "META": {"calibrated_win_rate_pct": 20.0, "calibrated_short_win_rate_pct": 64.0},
+            "AMD": {"calibrated_win_rate_pct": 20.0, "calibrated_short_win_rate_pct": 62.0},
+        }}
+        q_short = {
+            "QQQ": {"active_price": 500.0, "pct_change": 0.5},
+            "META": {
+                "active_price": 500.0, "prev_close": 499.0, "pct_change": 0.2,
+                "vwap": 501.0, "vwap_diff_pct": -0.20, "rsi_5m": 44.0, "rvol_5m": 1.0,
+                "rth_high": 511.0,
+            },
+            "AMD": {
+                "active_price": 200.0, "prev_close": 199.5, "pct_change": 0.25,
+                "vwap": 200.5, "vwap_diff_pct": -0.25, "rsi_5m": 45.0, "rvol_5m": 1.0,
+                "broken_bearish": True, "rth_high": 205.0,
+            },
+        }
+        ip_p25 = {"by_ticker": {
+            "META": {"divergence": {"status": "BELOW_P25"}, "pmh": 515.0},
+            "AMD": {"divergence": {"status": "IN_CORRIDOR"}, "pmh": 206.0},
+        }}
+        c_short = kol.screen_kol_sniper_candidates(
+            ai_predictions=ai_short, live_quotes=q_short, open_positions=[],
+            cur_et=_et(2026, 11, 25, 10, 30), market_regime="BULL_EXPANSION",
+            daily_sr_anchors={"META": {"s1": 470.0, "r1": 560.0}, "AMD": {"s1": 180.0, "r1": 240.0}},
+            intraday_path_payload=ip_p25,
+        )
+        self.assertEqual([c["ticker"] for c in c_short], ["META", "AMD"])
+        self.assertAlmostEqual(c_short[0]["sl_price"], round(511.0 * (1.0 + 0.006), 2), places=2)
+
 
 if __name__ == "__main__":
     unittest.main()
