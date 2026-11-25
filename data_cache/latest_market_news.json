@@ -1,13 +1,52 @@
 {
-  "updated_at_ts": 1795613520.264,
+  "updated_at_ts": 1795613572.114,
   "updated_at_et": "11-25 08:32 ET",
   "updated_at_kst": "22:32 KST",
-  "macro_calendar": [],
+  "macro_calendar": [
+    {
+      "event_id": "1599680",
+      "name": "美国10月核心PCE物价指数环比",
+      "country": "美国",
+      "star": 5,
+      "pub_time_ts": 1795613400.0,
+      "pub_time_et": "11-25 08:30 ET",
+      "pub_time_bj": "21:30 BJ",
+      "pub_time_kst": "22:30 KST",
+      "previous": "0.3%",
+      "forecast": "0.3%",
+      "actual": "0.3%",
+      "unit": "%",
+      "status": "released",
+      "minutes_left": 0,
+      "impact_tone": "neutral",
+      "impact_note": "符合预期·通胀温和持平（中性博弈）",
+      "source": "wscn"
+    },
+    {
+      "event_id": "1599678",
+      "name": "美国10月PCE物价指数环比",
+      "country": "美国",
+      "star": 5,
+      "pub_time_ts": 1795613400.0,
+      "pub_time_et": "11-25 08:30 ET",
+      "pub_time_bj": "21:30 BJ",
+      "pub_time_kst": "22:30 KST",
+      "previous": "0.5%",
+      "forecast": "0.3%",
+      "actual": "0.3%",
+      "unit": "%",
+      "status": "released",
+      "minutes_left": 0,
+      "impact_tone": "neutral",
+      "impact_note": "符合预期·通胀温和持平（中性博弈）",
+      "source": "wscn"
+    }
+  ],
   "macro_flashes": [
     {
       "id": "20261125213118393800",
       "title": "【美国整体PCE升至5个月高位 符合预期】 11月25日讯，美国10月PCE物价指数年率…",
-      "summary": "【美国整体PCE升至5个月高位 符合预期】 11月25日讯，美国10月PCE物价指数年率为3.8%，创5月以来高位，较上月的3.6%进一步走高，符合市场预期。",
+      "summary": "【美国整体PCE升至5个月高位 符合预期】 11月25日讯，美国10月PCE物价指数年率为3.8%，创5月以来高位，较上月的3.6%进一步走高，符合市场预期。美国10月PCE物价指数月率为0.3%，符合市场预期，较上月的0.5%显著回落。",
       "keywords": [
         "PCE"
       ],
@@ -3368,10 +3407,10 @@
     "detail": ""
   },
   "calendar_banner": {
-    "level": "idle_with_flash",
-    "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (08:31 ET / 21:31 BJ) [PCE]：【美国整体PCE升至5个月高位 符合预期】 11月25日讯，美国10月PCE物价指数年率为3.8%，创5月以来高位，较上月的3.6%进一步走高，符合市场预期。",
-    "event_name": "",
+    "level": "released",
+    "headline": "📊 今日重磅公布【美国10月核心PCE物价指数环比】· 公布值 0.3%（前值 0.3% / 预期 0.3%）",
+    "detail": "符合预期·通胀温和持平（中性博弈） · 11-25 08:30 ET / 22:30 KST",
+    "event_name": "美国10月核心PCE物价指数环比",
     "minutes_left": 0,
     "opex_shield": {
       "date": "2026-11-25",
