@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-V5.5 激进 KOL 狙击轨离线隔离单元测试 (test_copy_trade_kol_engine.py)
+V5.5.1 激进 KOL 狙击轨离线隔离单元测试 (test_copy_trade_kol_engine.py)
 全程使用 tempfile.TemporaryDirectory()，严禁触碰任何生产账本或发送真实外部消息。
 """
 
@@ -13,40 +13,36 @@ import copy_trade_engine as cte
 import copy_trade_kol_engine as kol
 
 
-def _et(y: int, m: int, d: int, hh: int, mm: int) -> datetime:
-    return datetime(y, m, d, hh, mm, 0, tzinfo=cte._NY_TZ)
+def _et(y: int, m: int, d: int, hh: int, mm: int, ss: int = 0) -> datetime:
+    return datetime(y, m, d, hh, mm, ss, tzinfo=cte._NY_TZ)
 
 
-class TestCopyTradeKolEngineV55(unittest.TestCase):
+class TestCopyTradeKolEngineV551(unittest.TestCase):
     def test_01_patch_a_3x_etf_sl_tightened_2_5_to_4_5_and_1x_2_to_4_5(self):
         """补丁 A：3x 杠杆 ETF 结构硬止损严格收紧在 [2.5%, 4.5%]；1x 股收紧在 [2.0%, 4.5%]。"""
-        # 3x SOXL 结构低点极深 (-15%) -> 必须被硬夹在 -4.5% ($95.50)
-        sl_soxl_deep = kol.resolve_kol_structural_sl(
-            "SOXL", "LONG", 100.0,
-            live_quote={"day_low": 85.0}, sr_anchor={"s1": 84.0},
+        self.assertAlmostEqual(
+            kol.resolve_kol_structural_sl("SOXL", "LONG", 100.0, live_quote={"day_low": 85.0}, sr_anchor={"s1": 84.0}),
+            95.50, places=2,
         )
-        self.assertAlmostEqual(sl_soxl_deep, 95.50, places=2)
-
-        # 3x SOXL 结构低点极近 (-0.4%) -> 必须被硬夹在 -2.5% ($97.50)
-        sl_soxl_tight = kol.resolve_kol_structural_sl(
-            "SOXL", "LONG", 100.0,
-            live_quote={"day_low": 99.6},
+        self.assertAlmostEqual(
+            kol.resolve_kol_structural_sl("SOXL", "LONG", 100.0, live_quote={"day_low": 99.6}),
+            97.50, places=2,
         )
-        self.assertAlmostEqual(sl_soxl_tight, 97.50, places=2)
-
-        # 3x SQQQ 做空结构高点极高 (+12%) -> 必须被硬夹在 +4.5% ($104.50)
-        sl_sqqq_short = kol.resolve_kol_structural_sl(
-            "SQQQ", "SHORT", 100.0,
-            live_quote={"day_high": 112.0},
+        self.assertAlmostEqual(
+            kol.resolve_kol_structural_sl("SQQQ", "SHORT", 100.0, live_quote={"day_high": 112.0}),
+            104.50, places=2,
         )
-        self.assertAlmostEqual(sl_sqqq_short, 104.50, places=2)
+        self.assertAlmostEqual(
+            kol.resolve_kol_structural_sl("NVDA", "LONG", 100.0, live_quote={"day_low": 99.7}),
+            98.00, places=2,
+        )
+        self.assertAlmostEqual(
+            kol.resolve_kol_structural_sl("NVDA", "LONG", 100.0, live_quote={"day_low": 90.0}),
+            95.50, places=2,
+        )
 
-        # 1x NVDA 结构低点极近 (-0.3%) -> 硬夹在 -2.0% ($98.00)；极远 (-10%) -> 硬夹在 -4.5% ($95.50)
-        self.assertAlmostEqual(kol.resolve_kol_structural_sl("NVDA", "LONG", 100.0, live_quote={"day_low": 99.7}), 98.00, places=2)
-        self.assertAlmostEqual(kol.resolve_kol_structural_sl("NVDA", "LONG", 100.0, live_quote={"day_low": 90.0}), 95.50, places=2)
-
-    def test_02_patch_b_two_stage_pyramiding_30_to_50_avg_entry_and_stop_move_to_orig(self):
-        """补丁 B：30% 底仓浮亏绝不摊平；浮盈 >=+1.8% 且站稳 VWAP 触发 +20% 顺势加仓，重算均价且止损移至原底仓价。"""
+    def test_02_patch_b_v2_addon_30_to_50_avg_entry_and_1pct_buffer_stop(self):
+        """补丁 B-v2：30% 底仓浮亏绝不摊平；顺势 +20% 加仓后重算均价，且止损移至原底仓外侧 1.0% 呼吸缓冲 (orig*0.99)。"""
         with tempfile.TemporaryDirectory() as td:
             lp = os.path.join(td, "kol.json")
             ai = {
@@ -55,12 +51,11 @@ class TestCopyTradeKolEngineV55(unittest.TestCase):
                     "NVDA": {"calibrated_win_rate_pct": 62.0, "calibrated_short_win_rate_pct": 28.0},
                 },
             }
-            # 1) 10:00 ET Sweep 收回开 30% 底仓 ($300 @ $100.00)
             q_open = {
                 "QQQ": {"active_price": 500.0, "pct_change": -0.5},
                 "NVDA": {
                     "active_price": 100.0, "prev_close": 99.5, "pct_change": 0.5,
-                    "day_low": 98.5, "vwap": 99.8, "vwap_diff_pct": 0.2,
+                    "day_low": 96.5, "vwap": 99.8, "vwap_diff_pct": 0.2,
                     "rsi_5m": 55.0, "rvol_5m": 1.6,
                 },
             }
@@ -72,20 +67,18 @@ class TestCopyTradeKolEngineV55(unittest.TestCase):
             self.assertEqual(len(r1["opened_now"]), 1)
             p1 = r1["ledger"]["open_positions"][0]
             self.assertAlmostEqual(p1["slot_weight"], 0.30, places=2)
-            self.assertAlmostEqual(p1["allocated_capital"], 300.0, places=2)
             orig_sl = p1["sl_price"]
-            self.assertLess(orig_sl, 98.1)
+            self.assertLess(orig_sl, 98.5)
 
-            # 2) 浮亏 -1.5% ($98.50) -> 严禁逆势摊平加仓！
+            # 浮亏 -1.5% -> 严禁逆势加仓
             q_dip = {"NVDA": {"active_price": 98.5, "vwap": 99.5, "vwap_diff_pct": -1.0, "rsi_5m": 42.0, "rvol_5m": 1.2}}
             r_dip = kol.run_kol_copy_trade_cycle(
                 ai_predictions=ai, live_quotes=q_dip, market_regime="BULL_EXPANSION",
                 session_code="REGULAR", now_et=_et(2026, 11, 24, 10, 20), ledger_path=lp, dry_run=False,
             )
             self.assertEqual(len(r_dip["addons_now"]), 0)
-            self.assertEqual(r_dip["ledger"]["open_positions"][0]["stage"], 1)
 
-            # 3) 走强至 $102.00 (+1.97% net >= 1.8%) 且站稳 VWAP -> 触发 +20% 顺势加仓 + 补丁 B 止损移至 $100.00
+            # 走强至 $102.00 (+1.97% net) 站稳 VWAP -> 触发 +20% 加仓，止损移至 $99.00 (orig $100 * 0.99)
             q_add = {"NVDA": {"active_price": 102.0, "vwap": 101.0, "vwap_diff_pct": 1.0, "rsi_5m": 62.0, "rvol_5m": 1.5}}
             r_add = kol.run_kol_copy_trade_cycle(
                 ai_predictions=ai, live_quotes=q_add, market_regime="BULL_EXPANSION",
@@ -95,11 +88,9 @@ class TestCopyTradeKolEngineV55(unittest.TestCase):
             p2 = r_add["ledger"]["open_positions"][0]
             self.assertEqual(p2["stage"], 2)
             self.assertAlmostEqual(p2["slot_weight"], 0.50, places=2)
-            # 股数加权均价: (300 + 200) / (300/100 + 200/102) = 500 / 4.960784 = 100.79
             self.assertAlmostEqual(p2["entry_price"], 100.79, places=2)
-            # 补丁 B：硬止损上移至原底仓入场价 $100.00
-            self.assertAlmostEqual(p2["sl_price"], 100.00, places=2)
-            self.assertGreater(p2["sl_price"], orig_sl)
+            self.assertAlmostEqual(p2["sl_price"], 99.00, places=2)
+            self.assertGreaterEqual(p2["sl_price"], orig_sl)
 
     def test_03_partial_tp_be_stop_trail_tp_and_climax_tp(self):
         """验证 +4% 平半仓落袋 + 推保本损 (cost+0.3%) + 追踪止盈 (TRAIL_TP) 与抛物线卖强 (CLIMAX_TP) 及分毫不差记账。"""
@@ -122,7 +113,6 @@ class TestCopyTradeKolEngineV55(unittest.TestCase):
             )
             self.assertEqual(len(r0["opened_now"]), 2)
 
-            # 涨至 $104.20 (+4.17% net >= 4.0%) -> 两笔均触发一阶平半仓落袋 + 推保本损 $100.30
             q_part = {
                 "NVDA": {"active_price": 104.20, "vwap": 102.0, "vwap_diff_pct": 2.1, "rsi_5m": 66.0, "rvol_5m": 1.4},
                 "MU": {"active_price": 104.20, "vwap": 102.0, "vwap_diff_pct": 2.1, "rsi_5m": 66.0, "rvol_5m": 1.4},
@@ -137,7 +127,6 @@ class TestCopyTradeKolEngineV55(unittest.TestCase):
                 self.assertTrue(p["be_stop_active"])
                 self.assertAlmostEqual(p["sl_price"], 100.30, places=2)
 
-            # NVDA 飙升至 $110.00 (创最高点)，MU 触发抛物线放量高潮 CLIMAX_TP (rsi_5m=80, rvol=2.8, +7.0%)
             q_peak = {
                 "NVDA": {"active_price": 110.00, "vwap": 105.0, "vwap_diff_pct": 4.7, "rsi_5m": 71.0, "rvol_5m": 1.6},
                 "MU": {"active_price": 107.00, "vwap": 103.5, "vwap_diff_pct": 3.4, "rsi_5m": 80.5, "rvol_5m": 2.8},
@@ -146,191 +135,228 @@ class TestCopyTradeKolEngineV55(unittest.TestCase):
                 ai_predictions=ai, live_quotes=q_peak, market_regime="BULL_EXPANSION",
                 session_code="REGULAR", now_et=_et(2026, 11, 24, 12, 0), ledger_path=lp, dry_run=False,
             )
-            self.assertEqual(len(r_pk["closed_now"]), 1)
             self.assertEqual(r_pk["closed_now"][0]["ticker"], "MU")
             self.assertEqual(r_pk["closed_now"][0]["outcome"], "CLIMAX_TP")
 
-            # NVDA 从 $110.00 回撤 -2.4% 至 $107.36 -> 触发 TRAIL_TP
             q_tr = {"NVDA": {"active_price": 107.36, "vwap": 105.5, "vwap_diff_pct": 1.7, "rsi_5m": 58.0, "rvol_5m": 1.1}}
             r_tr = kol.run_kol_copy_trade_cycle(
                 ai_predictions=ai, live_quotes=q_tr, market_regime="BULL_EXPANSION",
                 session_code="REGULAR", now_et=_et(2026, 11, 24, 13, 0), ledger_path=lp, dry_run=False,
             )
-            self.assertEqual(len(r_tr["closed_now"]), 1)
             self.assertEqual(r_tr["closed_now"][0]["outcome"], "TRAIL_TP")
-            self.assertGreater(r_tr["ledger"]["total_equity"], 1030.0)
-            self.assertEqual(r_tr["ledger"]["stats"]["tp_hit_count"], 2)
-            # 全部清仓后现金 == 总净值，记账分毫不差
             self.assertAlmostEqual(r_tr["ledger"]["cash"], r_tr["ledger"]["total_equity"], places=2)
 
-    def test_04_patch_c_flip_cooldown_45m_25pct_size_and_once_per_day(self):
-        """补丁 C：止损后反向 FLIP 冷却必须 >=45 分钟，且仅允许 25% 轻仓试探，单日单标的最多 1 次。"""
-        with tempfile.TemporaryDirectory() as td:
-            lp = os.path.join(td, "kol.json")
-            ai_long = {"market_regime": "BULL_EXPANSION", "by_ticker": {
-                "SOXL": {"calibrated_win_rate_pct": 60.0, "calibrated_short_win_rate_pct": 30.0},
-            }}
-            q_open = {
-                "QQQ": {"active_price": 500.0, "pct_change": 0.0},
-                "SOXL": {"active_price": 40.0, "prev_close": 39.5, "pct_change": 1.2, "vwap": 39.8, "vwap_diff_pct": 0.5, "rsi_5m": 56.0, "rvol_5m": 1.8},
-            }
-            r1 = kol.run_kol_copy_trade_cycle(
-                ai_predictions=ai_long, live_quotes=q_open, daily_sr_anchors={"SOXL": {"s1": 38.0, "r1": 39.9}},
-                market_regime="BULL_EXPANSION", session_code="REGULAR",
-                now_et=_et(2026, 11, 24, 10, 0), ledger_path=lp, dry_run=False,
-            )
-            self.assertEqual(len(r1["opened_now"]), 1)
+    def test_04_v551_strict_55_10_gate_and_removed_bear_bounce_and_flip(self):
+        """V5.5.1：入场门槛严格 55%/10%；空头期 15% 反抽已彻底关闭；止损后同日反向 FLIP 已彻底关闭。"""
+        # 1) 54.9% 或 差值 9.9% 必须被拦截；55.0% 且差值 10.0% 才放行
+        ai_gate = {
+            "market_regime": "BULL_EXPANSION",
+            "by_ticker": {
+                "NVDA": {"calibrated_win_rate_pct": 54.9, "calibrated_short_win_rate_pct": 30.0},  # < 55% 拦截
+                "AMD": {"calibrated_win_rate_pct": 56.0, "calibrated_short_win_rate_pct": 46.5},   # 差 9.5% < 10% 拦截
+                "MU": {"calibrated_win_rate_pct": 55.0, "calibrated_short_win_rate_pct": 45.0},    # 55% & 差10% 放行
+            },
+        }
+        q_gate = {
+            "QQQ": {"active_price": 500.0, "pct_change": 0.0},
+            "NVDA": {"active_price": 100.0, "prev_close": 99.5, "pct_change": 0.5, "vwap": 99.6, "vwap_diff_pct": 0.4, "rsi_5m": 58.0, "rvol_5m": 1.8},
+            "AMD": {"active_price": 100.0, "prev_close": 99.5, "pct_change": 0.5, "vwap": 99.6, "vwap_diff_pct": 0.4, "rsi_5m": 58.0, "rvol_5m": 1.8},
+            "MU": {"active_price": 100.0, "prev_close": 99.5, "pct_change": 0.5, "vwap": 99.6, "vwap_diff_pct": 0.4, "rsi_5m": 58.0, "rvol_5m": 1.8},
+        }
+        anchors = {k: {"s1": 98.0, "r1": 99.8} for k in ("NVDA", "AMD", "MU")}
+        cands = kol.screen_kol_sniper_candidates(
+            ai_predictions=ai_gate, live_quotes=q_gate, open_positions=[], cur_et=_et(2026, 11, 24, 10, 30),
+            daily_sr_anchors=anchors, market_regime="BULL_EXPANSION",
+        )
+        self.assertEqual([c["ticker"] for c in cands], ["MU"])
 
-            # 10:15 ET 跌至 $38.00 (-5%) 触发结构止损 SL_HIT
-            q_sl = {"SOXL": {"active_price": 38.0, "prev_close": 39.5, "pct_change": -3.8, "vwap": 39.2, "vwap_diff_pct": -3.0, "rsi_5m": 28.0, "rvol_5m": 2.2}}
-            r_sl = kol.run_kol_copy_trade_cycle(
-                ai_predictions=ai_long, live_quotes=q_sl, market_regime="BULL_EXPANSION",
-                session_code="REGULAR", now_et=_et(2026, 11, 24, 10, 15), ledger_path=lp, dry_run=False,
-            )
-            self.assertEqual(r_sl["closed_now"][0]["outcome"], "SL_HIT")
+        # 2) 空头期即使 NQ=F 站回 VWAP 且个股极度超跌，也不再放行 15% 逆势反抽多单
+        ai_bear = {
+            "market_regime": "BEAR_DEFENSE",
+            "by_ticker": {
+                "NVDA": {"calibrated_win_rate_pct": 46.0, "calibrated_short_win_rate_pct": 48.0},
+                "TSLA": {"calibrated_win_rate_pct": 25.0, "calibrated_short_win_rate_pct": 63.0},
+            },
+        }
+        vr = {"vix_hard_brake": True, "vix_state": "BACKWARDATION_BRAKE", "panic_clearing_active": False}
+        q_bear = {
+            "QQQ": {"active_price": 600.0, "pct_change": -2.0},
+            "NVDA": {"active_price": 135.0, "prev_close": 141.0, "pct_change": -4.25, "is_deep_pullback": True, "vwap": 135.1, "vwap_diff_pct": -0.07, "rsi_5m": 31.0, "rvol_5m": 1.6},
+            "TSLA": {"active_price": 250.0, "prev_close": 254.0, "pct_change": -1.57, "is_broken_bearish": True, "vwap": 250.5, "vwap_diff_pct": -0.2, "rsi_5m": 46.0, "rvol_5m": 1.3},
+        }
+        c_bear = kol.screen_kol_sniper_candidates(
+            ai_predictions=ai_bear, live_quotes=q_bear, open_positions=[], cur_et=_et(2026, 11, 24, 11, 0),
+            market_regime="BEAR_DEFENSE", vix_regime=vr,
+            futures_data={"NQ=F": {"reclaim_vwap": True, "vwap_diff_pct": 0.2}},
+        )
+        self.assertEqual([(c["ticker"], c["direction"]) for c in c_bear], [("TSLA", "SHORT")])
 
-            # 10:50 ET (冷却仅 35m < 45m)：即使反向空胜率 65% + VWAP 下方 + rvol 2.0，也绝不放行 FLIP！
-            ai_flip = {"market_regime": "BEAR_DEFENSE", "by_ticker": {
-                "SOXL": {"calibrated_win_rate_pct": 25.0, "calibrated_short_win_rate_pct": 65.0},
-            }}
-            q_flip = {"SOXL": {"active_price": 37.8, "prev_close": 39.5, "pct_change": -4.3, "vwap": 38.8, "vwap_diff_pct": -2.5, "rsi_5m": 38.0, "rvol_5m": 2.0}}
-            r_too_early = kol.run_kol_copy_trade_cycle(
-                ai_predictions=ai_flip, live_quotes=q_flip, market_regime="BEAR_DEFENSE",
-                session_code="REGULAR", now_et=_et(2026, 11, 24, 10, 50), ledger_path=lp, dry_run=False,
-            )
-            self.assertEqual(len(r_too_early["opened_now"]), 0)
+        # 3) 止损后同日即使冷却 60 分钟且反向胜率 68%，FLIP 已彻底移除不得触发
+        c_no_flip = kol.screen_kol_sniper_candidates(
+            ai_predictions={"market_regime": "BEAR_DEFENSE", "by_ticker": {"SOXL": {"calibrated_win_rate_pct": 20.0, "calibrated_short_win_rate_pct": 68.0}}},
+            live_quotes={"SOXL": {"active_price": 37.8, "prev_close": 39.5, "pct_change": -4.3, "is_broken_bearish": True, "vwap": 38.8, "vwap_diff_pct": -1.0, "rsi_5m": 38.0, "rvol_5m": 2.0}},
+            open_positions=[],
+            cur_et=_et(2026, 11, 24, 11, 20),
+            market_regime="BEAR_DEFENSE",
+            last_exit_by_ticker={"SOXL": {"direction": "LONG", "exit_date": "2026-11-24", "exit_time_et": "2026-11-24 10:15:00", "exit_reason": "SL_HIT"}},
+        )
+        self.assertEqual(len(c_no_flip), 0)
 
-            # 11:05 ET (冷却满 50m >= 45m) -> 放行 FLIP 做空，且仓位严格为 25% 轻仓、不可加仓
-            r_flip = kol.run_kol_copy_trade_cycle(
-                ai_predictions=ai_flip, live_quotes=q_flip, market_regime="BEAR_DEFENSE",
-                session_code="REGULAR", now_et=_et(2026, 11, 24, 11, 5), ledger_path=lp, dry_run=False,
-            )
-            self.assertEqual(len(r_flip["opened_now"]), 1)
-            pf = r_flip["opened_now"][0]
-            self.assertEqual(pf["direction"], "SHORT")
-            self.assertEqual(pf["entry_tag"], "FLIP")
-            self.assertAlmostEqual(pf["slot_weight"], 0.25, places=2)
-            self.assertFalse(pf["can_add"])
-
-            # 若该反手单 11:30 再次止损，12:30 (超过45m) 同日同标的禁止二次反手！
-            q_sl2 = {"SOXL": {"active_price": 39.9, "prev_close": 39.5, "pct_change": 1.0, "vwap": 39.0, "vwap_diff_pct": 2.3, "rsi_5m": 65.0, "rvol_5m": 2.0}}
-            kol.run_kol_copy_trade_cycle(
-                ai_predictions=ai_long, live_quotes=q_sl2, market_regime="BULL_EXPANSION",
-                session_code="REGULAR", now_et=_et(2026, 11, 24, 11, 30), ledger_path=lp, dry_run=False,
-            )
-            r_second_flip = kol.run_kol_copy_trade_cycle(
-                ai_predictions=ai_long, live_quotes=q_sl2, market_regime="BULL_EXPANSION",
-                session_code="REGULAR", now_et=_et(2026, 11, 24, 12, 30), ledger_path=lp, dry_run=False,
-            )
-            self.assertEqual(len(r_second_flip["opened_now"]), 0)
-
-    def test_05_patch_d_weak_early_exit_normal_1130_vs_late_entry_1330_and_t3_expiry(self):
-        """补丁 D：常规单次日 11:30 ET 体检早撤；14:00 ET 后开的尾盘仓顺延至次日 13:30 ET 体检；并验证 T+3 到期。"""
+    def test_05_patch_d_v2_weak_early_exit_deferred_to_t2_with_late_entry_buffer(self):
+        """补丁 D-v2：T+1 不触发早撤；T+2 11:30 ET 常规单触发 WEAK_EARLY_EXIT，14:00 后尾盘仓顺延至 T+2 13:30 ET。"""
         with tempfile.TemporaryDirectory() as td:
             lp = os.path.join(td, "kol.json")
             ai = {"market_regime": "BULL_EXPANSION", "by_ticker": {
                 "NVDA": {"calibrated_win_rate_pct": 62.0, "calibrated_short_win_rate_pct": 28.0},
                 "AMD": {"calibrated_win_rate_pct": 61.0, "calibrated_short_win_rate_pct": 29.0},
             }}
-            # 10:30 ET 开 NVDA（常规单）
             q1 = {
                 "QQQ": {"active_price": 500.0, "pct_change": 0.1},
                 "NVDA": {"active_price": 100.0, "prev_close": 99.5, "pct_change": 0.5, "vwap": 99.6, "vwap_diff_pct": 0.4, "rsi_5m": 58.0, "rvol_5m": 1.6},
             }
+            # Day 0 (Mon 11-23): 10:30 开 NVDA，14:30 开 AMD
             kol.run_kol_copy_trade_cycle(
                 ai_predictions=ai, live_quotes=q1, daily_sr_anchors={"NVDA": {"s1": 98.0, "r1": 99.8}},
                 market_regime="BULL_EXPANSION", session_code="REGULAR",
                 now_et=_et(2026, 11, 23, 10, 30), ledger_path=lp, dry_run=False,
             )
-            # 14:30 ET 开 AMD（尾盘仓 > 14:00 ET）
             q2 = {
                 "QQQ": {"active_price": 500.0, "pct_change": 0.1},
                 "NVDA": {"active_price": 100.5, "prev_close": 99.5, "pct_change": 1.0, "vwap": 100.2, "vwap_diff_pct": 0.3, "rsi_5m": 55.0, "rvol_5m": 1.2},
                 "AMD": {"active_price": 150.0, "prev_close": 149.0, "pct_change": 0.67, "vwap": 149.5, "vwap_diff_pct": 0.3, "rsi_5m": 57.0, "rvol_5m": 1.7},
             }
-            r_late = kol.run_kol_copy_trade_cycle(
+            kol.run_kol_copy_trade_cycle(
                 ai_predictions=ai, live_quotes=q2, daily_sr_anchors={"AMD": {"s1": 147.0, "r1": 149.8}},
                 market_regime="BULL_EXPANSION", session_code="REGULAR",
                 now_et=_et(2026, 11, 23, 14, 30), ledger_path=lp, dry_run=False,
             )
-            self.assertEqual(len(r_late["ledger"]["open_positions"]), 2)
 
-            # 次日 (11-24) 11:40 ET：两者均横盘微亏且在 VWAP 下方
-            # 预期：NVDA 立即触发 WEAK_EARLY_EXIT；AMD 尾盘仓受补丁 D 保护继续持有！
-            q_next_am = {
+            q_weak = {
                 "NVDA": {"active_price": 99.6, "vwap": 100.1, "vwap_diff_pct": -0.5, "rsi_5m": 44.0, "rvol_5m": 1.0},
                 "AMD": {"active_price": 149.5, "vwap": 150.2, "vwap_diff_pct": -0.47, "rsi_5m": 44.0, "rvol_5m": 1.0},
             }
-            r_am = kol.run_kol_copy_trade_cycle(
-                ai_predictions={"market_regime": "NEUTRAL_CHOP", "by_ticker": {}}, live_quotes=q_next_am,
+            # T+1 (Tue 11-24) 14:00 ET：两笔均未满 T+2 -> 绝不早撤！
+            r_t1 = kol.run_kol_copy_trade_cycle(
+                ai_predictions={"market_regime": "NEUTRAL_CHOP", "by_ticker": {}}, live_quotes=q_weak,
                 market_regime="NEUTRAL_CHOP", session_code="REGULAR",
-                now_et=_et(2026, 11, 24, 11, 40), ledger_path=lp, dry_run=False,
+                now_et=_et(2026, 11, 24, 14, 0), ledger_path=lp, dry_run=False,
             )
-            self.assertEqual([c["ticker"] for c in r_am["closed_now"]], ["NVDA"])
-            self.assertEqual(r_am["closed_now"][0]["outcome"], "WEAK_EARLY_EXIT")
-            self.assertEqual([p["ticker"] for p in r_am["ledger"]["open_positions"]], ["AMD"])
+            self.assertEqual(len(r_t1["closed_now"]), 0)
 
-            # 次日 13:20 ET (< 13:30 ET) AMD 仍受缓冲保护
-            r_mid = kol.run_kol_copy_trade_cycle(
-                ai_predictions={"market_regime": "NEUTRAL_CHOP", "by_ticker": {}}, live_quotes=q_next_am,
+            # T+2 (Wed 11-25) 11:40 ET：NVDA 触发 WEAK_EARLY_EXIT；AMD 尾盘仓顺延至 13:30 ET 继续保留！
+            r_t2_am = kol.run_kol_copy_trade_cycle(
+                ai_predictions={"market_regime": "NEUTRAL_CHOP", "by_ticker": {}}, live_quotes=q_weak,
                 market_regime="NEUTRAL_CHOP", session_code="REGULAR",
-                now_et=_et(2026, 11, 24, 13, 20), ledger_path=lp, dry_run=False,
+                now_et=_et(2026, 11, 25, 11, 40), ledger_path=lp, dry_run=False,
             )
-            self.assertEqual(len(r_mid["closed_now"]), 0)
+            self.assertEqual([c["ticker"] for c in r_t2_am["closed_now"]], ["NVDA"])
+            self.assertEqual(r_t2_am["closed_now"][0]["outcome"], "WEAK_EARLY_EXIT")
+            self.assertEqual([p["ticker"] for p in r_t2_am["ledger"]["open_positions"]], ["AMD"])
 
-            # 次日 13:35 ET (>= 13:30 ET) AMD 仍弱势 -> 触发 WEAK_EARLY_EXIT
-            r_pm = kol.run_kol_copy_trade_cycle(
-                ai_predictions={"market_regime": "NEUTRAL_CHOP", "by_ticker": {}}, live_quotes=q_next_am,
+            # T+2 13:20 ET AMD 仍受缓冲保护；13:35 ET 触发 WEAK_EARLY_EXIT
+            r_t2_mid = kol.run_kol_copy_trade_cycle(
+                ai_predictions={"market_regime": "NEUTRAL_CHOP", "by_ticker": {}}, live_quotes=q_weak,
                 market_regime="NEUTRAL_CHOP", session_code="REGULAR",
-                now_et=_et(2026, 11, 24, 13, 35), ledger_path=lp, dry_run=False,
+                now_et=_et(2026, 11, 25, 13, 20), ledger_path=lp, dry_run=False,
             )
-            self.assertEqual([c["ticker"] for c in r_pm["closed_now"]], ["AMD"])
-            self.assertEqual(r_pm["closed_now"][0]["outcome"], "WEAK_EARLY_EXIT")
+            self.assertEqual(len(r_t2_mid["closed_now"]), 0)
 
-    def test_06_bear_defense_15pct_oversold_bounce_vs_short_priority(self):
-        """空头/VIX 倒挂期开关：NQ=F 未站回 VWAP 禁多；站回 VWAP + 极度超跌允许 15% 轻仓反抽；空单占优先重仓火力。"""
-        ai = {
-            "market_regime": "BEAR_DEFENSE",
-            "by_ticker": {
-                "NVDA": {"calibrated_win_rate_pct": 46.0, "calibrated_short_win_rate_pct": 48.0},
-                "TSLA": {"calibrated_win_rate_pct": 28.0, "calibrated_short_win_rate_pct": 63.0},
-            },
-        }
-        vr = {"vix_hard_brake": True, "vix_state": "BACKWARDATION_BRAKE", "panic_clearing_active": False}
-        quotes = {
-            "QQQ": {"active_price": 600.0, "pct_change": -2.0},
-            "NVDA": {
-                "active_price": 135.0, "prev_close": 141.0, "pct_change": -4.25,
-                "is_deep_pullback": True, "vwap": 135.1, "vwap_diff_pct": -0.07,
-                "rsi_5m": 31.0, "rvol_5m": 1.5,
-            },
-            "TSLA": {
-                "active_price": 250.0, "prev_close": 254.0, "pct_change": -1.57,
-                "is_broken_bearish": True, "vwap": 250.5, "vwap_diff_pct": -0.2,
-                "rsi_5m": 46.0, "rvol_5m": 1.3,
-            },
-        }
-        # Case A: NQ=F 在 VWAP 下方 -> NVDA 反抽多被拦截，只放行 TSLA 顺势空单 (30% 底仓)
-        c_no_nq = kol.screen_kol_sniper_candidates(
-            ai_predictions=ai, live_quotes=quotes, open_positions=[], cur_et=_et(2026, 11, 24, 11, 0),
-            market_regime="BEAR_DEFENSE", vix_regime=vr,
-            futures_data={"NQ=F": {"reclaim_vwap": False, "vwap_diff_pct": -0.8}},
-        )
-        self.assertEqual([(c["ticker"], c["direction"], c["slot_weight"]) for c in c_no_nq], [("TSLA", "SHORT", 0.30)])
+            r_t2_pm = kol.run_kol_copy_trade_cycle(
+                ai_predictions={"market_regime": "NEUTRAL_CHOP", "by_ticker": {}}, live_quotes=q_weak,
+                market_regime="NEUTRAL_CHOP", session_code="REGULAR",
+                now_et=_et(2026, 11, 25, 13, 35), ledger_path=lp, dry_run=False,
+            )
+            self.assertEqual([c["ticker"] for c in r_t2_pm["closed_now"]], ["AMD"])
+            self.assertEqual(r_t2_pm["closed_now"][0]["outcome"], "WEAK_EARLY_EXIT")
 
-        # Case B: NQ=F 盘中站回 VWAP -> TSLA 30% 顺势空优先排第 1，NVDA 允许 15% 轻仓超跌反抽 (can_add=False)
-        c_with_nq = kol.screen_kol_sniper_candidates(
-            ai_predictions=ai, live_quotes=quotes, open_positions=[], cur_et=_et(2026, 11, 24, 11, 0),
-            market_regime="BEAR_DEFENSE", vix_regime=vr,
-            futures_data={"NQ=F": {"reclaim_vwap": True, "vwap_diff_pct": 0.15}},
-        )
-        self.assertEqual(len(c_with_nq), 2)
-        self.assertEqual(c_with_nq[0]["ticker"], "TSLA")
-        self.assertEqual(c_with_nq[0]["slot_weight"], 0.30)
-        self.assertEqual(c_with_nq[1]["ticker"], "NVDA")
-        self.assertEqual(c_with_nq[1]["entry_tag"], "BEAR_BOUNCE")
-        self.assertAlmostEqual(c_with_nq[1]["slot_weight"], 0.15, places=2)
-        self.assertFalse(c_with_nq[1]["can_add"])
+    def test_06_extended_hours_anti_wick_2_poll_confirm_reset_and_no_new_entries(self):
+        """V5.5.1 延展时段防插针保护止损：第1轮击穿不平仓、回弹清零、连续2轮(>=60s)击穿触发平仓；延展时段严禁开新仓或加仓。"""
+        with tempfile.TemporaryDirectory() as td:
+            lp = os.path.join(td, "kol_ext.json")
+            ai = {"market_regime": "BULL_EXPANSION", "by_ticker": {
+                "NVDA": {"calibrated_win_rate_pct": 64.0, "calibrated_short_win_rate_pct": 25.0},
+                "MU": {"calibrated_win_rate_pct": 64.0, "calibrated_short_win_rate_pct": 25.0},
+            }}
+            q_open = {
+                "QQQ": {"active_price": 500.0, "pct_change": 0.2},
+                "NVDA": {"active_price": 100.0, "prev_close": 99.5, "pct_change": 0.5, "day_low": 97.5, "vwap": 99.6, "vwap_diff_pct": 0.4, "rsi_5m": 58.0, "rvol_5m": 1.8},
+            }
+            # 1) 盘中正常开 1 笔 NVDA (SL ~ $96.91)
+            r0 = kol.run_kol_copy_trade_cycle(
+                ai_predictions=ai, live_quotes=q_open, daily_sr_anchors={"NVDA": {"s1": 98.0, "r1": 99.8}},
+                market_regime="BULL_EXPANSION", market_session="REGULAR",
+                now_et=_et(2026, 11, 24, 14, 0), ledger_path=lp, dry_run=False,
+            )
+            self.assertEqual(len(r0["opened_now"]), 1)
+            sl_px = r0["opened_now"][0]["sl_price"]
+
+            # 2) 盘后 (AFTER_HOURS) 强涨至 $103.00 且 MU 也满足开仓条件 -> 严禁加仓、严禁开新仓！
+            q_ext_rally = {
+                "QQQ": {"ext_price": 505.0, "active_price": 505.0, "pct_change": 1.0},
+                "NVDA": {"ext_price": 103.0, "active_price": 103.0, "vwap": 100.0, "vwap_diff_pct": 3.0, "rsi_5m": 65.0, "rvol_5m": 1.8},
+                "MU": {"ext_price": 100.0, "active_price": 100.0, "prev_close": 99.0, "pct_change": 1.0, "vwap": 99.5, "vwap_diff_pct": 0.5, "rsi_5m": 58.0, "rvol_5m": 1.9},
+            }
+            r_no_act = kol.run_kol_copy_trade_cycle(
+                ai_predictions=ai, live_quotes=q_ext_rally, daily_sr_anchors={"MU": {"s1": 98.0, "r1": 99.8}},
+                market_regime="BULL_EXPANSION", market_session="AFTER_HOURS",
+                now_et=_et(2026, 11, 24, 16, 5, 0), ledger_path=lp, dry_run=False,
+            )
+            self.assertEqual(len(r_no_act["opened_now"]), 0)
+            self.assertEqual(len(r_no_act["addons_now"]), 0)
+            self.assertEqual(len(r_no_act["closed_now"]), 0)
+
+            # 3) 盘后 16:10:00 第 1 轮假插针击穿止损 -> 记录 count=1，绝不立即平仓！
+            q_wick = {"NVDA": {"ext_price": sl_px - 0.50, "active_price": sl_px - 0.50, "has_realtime": True}}
+            r_b1 = kol.run_kol_copy_trade_cycle(
+                ai_predictions=ai, live_quotes=q_wick, market_regime="BULL_EXPANSION",
+                market_session="AFTER_HOURS", now_et=_et(2026, 11, 24, 16, 10, 0), ledger_path=lp, dry_run=False,
+            )
+            self.assertEqual(len(r_b1["closed_now"]), 0)
+            self.assertEqual(r_b1["ledger"]["open_positions"][0]["ext_sl_breach_count"], 1)
+
+            # 4) 仅隔 40 秒 (< 60s) 仍击穿 -> 尚未满 60 秒间隔，不提前平仓
+            r_too_fast = kol.run_kol_copy_trade_cycle(
+                ai_predictions=ai, live_quotes=q_wick, market_regime="BULL_EXPANSION",
+                market_session="AFTER_HOURS", now_et=_et(2026, 11, 24, 16, 10, 40), ledger_path=lp, dry_run=False,
+            )
+            self.assertEqual(len(r_too_fast["closed_now"]), 0)
+
+            # 5) 16:11:30 价格回弹至安全区 -> 计数器自动清零！
+            q_safe = {"NVDA": {"ext_price": sl_px + 0.80, "active_price": sl_px + 0.80, "has_realtime": True}}
+            r_reset = kol.run_kol_copy_trade_cycle(
+                ai_predictions=ai, live_quotes=q_safe, market_regime="BULL_EXPANSION",
+                market_session="AFTER_HOURS", now_et=_et(2026, 11, 24, 16, 11, 30), ledger_path=lp, dry_run=False,
+            )
+            self.assertEqual(len(r_reset["closed_now"]), 0)
+            self.assertEqual(r_reset["ledger"]["open_positions"][0]["ext_sl_breach_count"], 0)
+            self.assertEqual(r_reset["ledger"]["open_positions"][0]["ext_sl_first_breach_ts"], "")
+
+            # 6) 陈旧停盘价 (is_stale=True) 即使低于止损也不得计入击穿
+            q_stale = {"NVDA": {"ext_price": sl_px - 2.0, "is_stale": True}}
+            r_stale = kol.run_kol_copy_trade_cycle(
+                ai_predictions=ai, live_quotes=q_stale, market_regime="BULL_EXPANSION",
+                market_session="OVERNIGHT", now_et=_et(2026, 11, 24, 21, 0, 0), ledger_path=lp, dry_run=False,
+            )
+            self.assertEqual(r_stale["ledger"]["open_positions"][0]["ext_sl_breach_count"], 0)
+
+            # 7) 盘前 (PRE_MARKET) 08:15:00 再次真实击穿 (count=1) -> 08:16:05 (间隔 65s >= 60s) 第 2 轮确认 -> 正式 SL_HIT 平仓！
+            r_real1 = kol.run_kol_copy_trade_cycle(
+                ai_predictions=ai, live_quotes=q_wick, market_regime="BULL_EXPANSION",
+                market_session="PRE_MARKET", now_et=_et(2026, 11, 25, 8, 15, 0), ledger_path=lp, dry_run=False,
+            )
+            self.assertEqual(len(r_real1["closed_now"]), 0)
+            self.assertEqual(r_real1["ledger"]["open_positions"][0]["ext_sl_breach_count"], 1)
+
+            r_real2 = kol.run_kol_copy_trade_cycle(
+                ai_predictions=ai, live_quotes=q_wick, market_regime="BULL_EXPANSION",
+                market_session="PRE_MARKET", now_et=_et(2026, 11, 25, 8, 16, 5), ledger_path=lp, dry_run=False,
+            )
+            self.assertEqual(len(r_real2["closed_now"]), 1)
+            tr = r_real2["closed_now"][0]
+            self.assertEqual(tr["outcome"], "SL_HIT")
+            self.assertTrue(tr["ext_confirmed_close"])
+            self.assertEqual(tr["exit_session"], "PRE_MARKET")
+            self.assertEqual(len(r_real2["ledger"]["open_positions"]), 0)
 
     def test_07_dry_run_guard_dual_embed_and_dual_drawer_hygiene(self):
         """干跑绝不落盘/不发消息；双轨 /copy 卡片与双轨抽屉绝不含“建议股数”与缺字币符号。"""

@@ -1,25 +1,28 @@
 # -*- coding: utf-8 -*-
 """
-V5.5 独立模块：$1,000 激进 KOL 狙击轨模拟跟单引擎 (copy_trade_kol_engine.py)
+V5.5.1 独立模块：$1,000 激进 KOL 狙击轨模拟跟单引擎 (copy_trade_kol_engine.py)
 
-与 V5.4 稳健基准轨 (copy_trade_engine.py / data_cache/copy_trade_ledger.json) 双轨并行、
+经 60 日防穿越预注册对照回测 (`V55_D_Hybrid` 25bps 净收益 +22.48% / PF 1.52 / MaxDD -7.15%)
+验货达标后正式上线，与 V5.4 稳健基准轨 (data_cache/copy_trade_ledger.json) 双轨并行、
 100% 物理隔离，独立持久化至 data_cache/copy_trade_ledger_kol.json。
 
-核心规则与 4 条风控补丁：
+V5.5.1 核心规则：
 1. 火力集中：初始 $1,000.00，最多 2 槽 × 50% 满额火力（底仓 30% + 浮盈走强顺势加仓 +20%，严禁浮亏摊平）。
-2. 空头/VIX 倒挂期开关：常规重仓火力仅给顺势空单/反向 ETF (SOXS/SQQQ)；
-   极度超跌 + NQ=F 盘中站回 VWAP 时允许 15% 轻仓狙击反抽 (不可加仓)。
+2. 高胜率门禁与极简提纯：AI 方向校准胜率 >= 55.0% 且净胜率差 >= 10.0%（对齐 V5.4 核心）；
+   彻底移除空头期 15% 逆势反抽与零触发日内 FLIP，熊市/VIX 倒挂期 2 槽全部留给顺势空单与反向 ETF。
 3. 补丁 A（收紧 3x 杠杆止损帽）：1x 股/ETF 结构硬止损区间 [2.0%, 4.5%]；
    3x 杠杆 ETF (SOXL/SOXS/TQQQ/SQQQ/KORU) 结构硬止损收紧为 [2.5%, 4.5%]。
-4. 补丁 B（加仓必移止损）：触发 +20% 顺势加仓后，重算股数加权均价 avg_entry，
-   并将整笔 50% 仓位硬止损强制上移至原底仓入场价附近，锁定总风险不放大。
-5. 补丁 C（收紧反手防打脸）：SL_HIT / WEAK_EARLY_EXIT 后，同标的反向 FLIP 冷却 >= 45 分钟，
-   且仅允许 25% 轻仓试探（单日单标的最多 1 次，需强反向确认 >= 58% + VWAP + rvol >= 1.5）。
-6. 补丁 D（尾盘仓早撤缓冲）：T+1「该强不强就是弱」WEAK_EARLY_EXIT 体检默认为次日 11:30 ET，
-   若仓位在昨日 14:00 ET 之后才开仓，次日体检顺延至 13:30 ET；最大持仓周期压缩至 T+3。
-7. 分批落袋 + 推保本 + 追踪止盈 & 抛物线卖强：
+4. 补丁 B-v2（加仓移损 + 1.0% 呼吸缓冲）：触发 +20% 顺势加仓后，重算股数加权均价 avg_entry，
+   并将整笔 50% 仓位硬止损移至原底仓入场价外侧 1.0%（多单 orig*0.99 / 空单 orig*1.01，严格不劣于初始硬止损）。
+5. 补丁 D-v2（T+2 早撤体检）：WEAK_EARLY_EXIT 推迟至持仓 T+2（第 2 个交易日）11:30 ET 触发
+   （昨日 14:00 ET 之后开的尾盘仓在 T+2 顺延至 13:30 ET）；最大持仓周期保持 T+3。
+6. 分批落袋 + 推保本 + 追踪止盈 & 抛物线卖强：
    - 浮盈达 +4.0% (3x ETF +6.5%)：自动平仓 50% 落袋，剩余 50% 止损无条件推至成本价 +0.3% (BE_STOP)；
-   - 尾仓移动追踪止盈（回撤 2.2% / 3x 回撤 4.0% -> TRAIL_TP），若遇 rsi_5m >= 78 且 rvol_5m >= 2.5 且浮盈达标则 CLIMAX_TP 主动卖强。
+   - 尾仓移动追踪止盈（回撤 2.2% / 3x 回撤 4.0% -> TRAIL_TP），遇 rsi_5m >= 78 且 rvol_5m >= 2.5 且浮盈达标则 CLIMAX_TP 卖强。
+7. 盘前/盘后/夜盘延展时段保护止损防插针：
+   - 常规盘中 (REGULAR)：单轮即时触发 SL_HIT / BE_STOP；
+   - 延展时段 (PRE_MARKET / AFTER_HOURS / OVERNIGHT)：仅允许检查 SL_HIT / BE_STOP（严禁开新仓或加仓），
+     且须连续 2 轮轮询（间隔 >= 60 秒）持续击穿才正式平仓；报价回弹至安全区立即清零计数器。
 8. 严禁输出任何“建议股数”，严禁干跑写盘/外发消息。
 """
 
@@ -39,21 +42,21 @@ MAX_POSITIONS = 2
 STARTER_WEIGHT = 0.30
 ADDON_WEIGHT = 0.20
 FULL_WEIGHT = 0.50
-BEAR_BOUNCE_WEIGHT = 0.15
-FLIP_WEIGHT = 0.25
 
 ONE_WAY_SLIPPAGE = cte.ONE_WAY_SLIPPAGE          # 1.5 bps
 ROUND_TRIP_SLIPPAGE = cte.ROUND_TRIP_SLIPPAGE    # 3.0 bps
 HOLD_TRADING_DAYS = 3                            # T+3 最大持仓周期
+
+# V5.5.1 高胜率入场门禁（与 V5.4 核心对齐）
+MIN_PROB_THRESHOLD = 55.0
+MIN_SPREAD_THRESHOLD = 10.0
 
 # 入场窗口与冷却
 ENTRY_START_MIN = 9 * 60 + 45   # 09:45 ET
 ENTRY_END_MIN = 15 * 60 + 20    # 15:20 ET
 T3_FORCE_EXIT_MIN = 15 * 60 + 50
 SLOT_COOLDOWN_MINUTES = 30
-FLIP_COOLDOWN_MINUTES = 45      # 补丁 C: >= 45 分钟
 MAX_NEW_ENTRIES_PER_DAY = 3     # 2 正常槽位 + 平仓冷却后允许补 1 笔
-MAX_FLIPS_PER_TICKER_DAY = 1    # 补丁 C: 单日单标的最多 1 次反手
 
 # 补丁 A: 结构硬止损收紧区间
 SL_MIN_1X = 0.020
@@ -61,9 +64,10 @@ SL_MAX_1X = 0.045
 SL_MIN_3X = 0.025
 SL_MAX_3X = 0.045
 
-# 顺势加仓触发线
+# 顺势加仓触发线与补丁 B-v2 外侧 1.0% 呼吸缓冲
 ADDON_TRIGGER_1X_PCT = 1.8
 ADDON_TRIGGER_3X_PCT = 2.8
+ADDON_SL_BUFFER = 0.01
 
 # 一阶分批止盈 + 推保本 + 二阶追踪 & 抛物线卖强
 PARTIAL_TP_1X_PCT = 4.0
@@ -77,10 +81,18 @@ CLIMAX_RSI_HIGH = 78.0
 CLIMAX_RSI_LOW = 22.0
 CLIMAX_RVOL_MIN = 2.5
 
-# 补丁 D: 「该强不强」早撤时间线
+# 补丁 D-v2: 「该强不强」早撤推迟至 T+2 (尾盘仓顺延至 13:30 ET)
+WEAK_EXIT_MIN_TRADING_DAYS = 2
 LATE_ENTRY_CUTOFF_MIN = 14 * 60       # 14:00 ET
-EARLY_CHECK_NORMAL_MIN = 11 * 60 + 30 # 次日 11:30 ET
-EARLY_CHECK_LATE_MIN = 13 * 60 + 30   # 尾盘仓顺延至次日 13:30 ET
+EARLY_CHECK_NORMAL_MIN = 11 * 60 + 30 # T+2 11:30 ET
+EARLY_CHECK_LATE_MIN = 13 * 60 + 30   # 尾盘仓顺延至 T+2 13:30 ET
+
+# V5.5.1 延展时段防插针连续确认参数
+EXTENDED_SL_CONFIRM_POLLS = 2
+EXTENDED_SL_CONFIRM_SECONDS = 60.0
+REGULAR_SESSIONS = frozenset({"REGULAR", "RTH", "INTRADAY"})
+EXTENDED_SESSIONS = frozenset({"PRE_MARKET", "PREMARKET", "AFTER_HOURS", "AFTERHOURS", "POST_MARKET", "OVERNIGHT", "EXTENDED"})
+CLOSED_SESSIONS = frozenset({"CLOSED", "WEEKEND", "HOLIDAY"})
 
 LEVERAGED_3X_ETFS = frozenset({"SOXL", "SOXS", "TQQQ", "SQQQ", "KORU"})
 KOL_CORE_WHITELIST = frozenset({
@@ -223,15 +235,13 @@ def create_empty_kol_ledger(initial_capital: float = INITIAL_CAPITAL, now_et: Op
     cur_et = cte._to_et_datetime(now_et)
     cap = round(float(initial_capital), 2)
     return {
-        "schema_version": "v5.5-kol-sniper-ledger",
-        "track_name": "V5.5 激进 KOL 狙击轨",
+        "schema_version": "v5.5.1-kol-sniper-ledger",
+        "track_name": "V5.5.1 激进 KOL 狙击轨",
         "initial_capital": cap,
         "max_positions": MAX_POSITIONS,
         "starter_weight": STARTER_WEIGHT,
         "addon_weight": ADDON_WEIGHT,
         "full_weight": FULL_WEIGHT,
-        "bear_bounce_weight": BEAR_BOUNCE_WEIGHT,
-        "flip_weight": FLIP_WEIGHT,
         "one_way_slippage_bps": 1.5,
         "cash": cap,
         "unrealized_pnl": 0.0,
@@ -243,7 +253,6 @@ def create_empty_kol_ledger(initial_capital: float = INITIAL_CAPITAL, now_et: Op
         "entries_today_count": 0,
         "last_close_time_et": "",
         "last_exit_by_ticker": {},
-        "flip_count_by_ticker_today": {},
         "updated_at_et": cur_et.strftime("%Y-%m-%d %H:%M:%S"),
         "updated_at_utc": datetime.now(timezone.utc).isoformat(),
         "open_positions": [],
@@ -252,6 +261,58 @@ def create_empty_kol_ledger(initial_capital: float = INITIAL_CAPITAL, now_et: Op
         "stats": _compute_kol_stats([]),
         "alert_dedupe_keys": [],
     }
+
+
+def _classify_market_session(session_code: str, cur_et: datetime) -> Tuple[bool, bool, str]:
+    """返回 (is_regular, is_extended, normalized_session_code)。显式 session_code 优先。"""
+    sess_u = str(session_code or "").strip().upper()
+    if sess_u in REGULAR_SESSIONS:
+        return True, False, "REGULAR"
+    if sess_u in EXTENDED_SESSIONS:
+        return False, True, sess_u
+    if sess_u in CLOSED_SESSIONS:
+        return False, False, sess_u
+    today_d = cur_et.date()
+    et_min = cur_et.hour * 60 + cur_et.minute
+    if cte.is_us_trading_day(today_d):
+        if 9 * 60 + 30 <= et_min < 16 * 60:
+            return True, False, "REGULAR"
+        if 4 * 60 <= et_min < 9 * 60 + 30:
+            return False, True, "PRE_MARKET"
+        if 16 * 60 <= et_min < 20 * 60:
+            return False, True, "AFTER_HOURS"
+    return False, False, "CLOSED"
+
+
+def _resolve_effective_quote_price(lv: Optional[Dict[str, Any]], is_extended: bool = False) -> Tuple[float, bool]:
+    """
+    提取当前时段有效成交参考价，返回 (price, is_valid_fresh_quote)。
+    - 延展时段优先取 ext_price（若有效 > 0），其次取非陈旧 active_price / last；
+      若行情明确标记为陈旧/停盘 (is_stale / quote_stale / ext_stale / session_tag=CLOSED)，返回 (0.0, False)。
+    """
+    if not isinstance(lv, dict):
+        return 0.0, False
+    if is_extended:
+        if (
+            bool(lv.get("is_stale", False))
+            or bool(lv.get("quote_stale", False))
+            or bool(lv.get("ext_stale", False))
+            or str(lv.get("session_tag") or "").strip().upper() in ("CLOSED", "STALE", "WEEKEND", "HOLIDAY")
+        ):
+            return 0.0, False
+        ext_px = cte._safe_float(lv.get("ext_price"), 0.0)
+        if ext_px > 0:
+            return ext_px, True
+        act_px = cte._safe_float(lv.get("active_price"), 0.0)
+        if act_px > 0:
+            return act_px, True
+        last_px = cte._safe_float(lv.get("last"), 0.0)
+        if last_px > 0 and bool(lv.get("has_realtime", True)):
+            return last_px, True
+        return 0.0, False
+
+    px = cte._safe_float(lv.get("active_price") or lv.get("last"), 0.0)
+    return (px, True) if px > 0 else (0.0, False)
 
 
 def load_kol_ledger(ledger_path: Optional[str] = None, now_et: Optional[datetime] = None) -> Dict[str, Any]:
@@ -476,7 +537,7 @@ def screen_kol_sniper_candidates(
         day_low = cte._safe_float(ci.get("day_low") or lv.get("day_low"), 0.0)
         pm_low = cte._safe_float(ci.get("pm_low"), 0.0)
 
-        # 检查同标的退出历史与冷却（补丁 C: FLIP 冷却 >= 45 分钟，同向冷却 >= 30 分钟）
+        # 检查同标的当日平仓冷却 (>= 30 分钟；V5.5.1 已彻底移除冗余 FLIP 分支)
         last_ex = exit_hist.get(tk) if isinstance(exit_hist.get(tk), dict) else None
         last_ex_dir = str((last_ex or {}).get("direction") or "").upper()
         last_ex_date = str((last_ex or {}).get("exit_date") or "")
@@ -484,121 +545,70 @@ def screen_kol_sniper_candidates(
         last_ex_dt = _parse_et_timestamp(str((last_ex or {}).get("exit_time_et") or ""), cur_et) if last_ex else None
         elapsed_since_ex = ((cur_et - last_ex_dt).total_seconds() / 60.0) if last_ex_dt else 9999.0
 
-        def _check_flip_or_cooldown(target_dir: str) -> Tuple[bool, bool]:
-            """返回 (allowed, is_flip)。"""
+        def _check_reentry_cooldown(target_dir: str) -> bool:
             if not last_ex or last_ex_date != today_str:
-                return True, False
-            if last_ex_dir == target_dir:
-                return elapsed_since_ex >= SLOT_COOLDOWN_MINUTES, False
-            # 反向切入 -> 判定是否为补丁 C FLIP
-            if last_ex_reason in ("SL_HIT", "WEAK_EARLY_EXIT"):
-                if int(flip_cnts.get(tk, 0)) >= MAX_FLIPS_PER_TICKER_DAY:
-                    return False, True
-                if elapsed_since_ex < FLIP_COOLDOWN_MINUTES:
-                    return False, True
-                return True, True
-            return elapsed_since_ex >= SLOT_COOLDOWN_MINUTES, False
+                return True
+            if last_ex_dir != target_dir and last_ex_reason in ("SL_HIT", "WEAK_EARLY_EXIT"):
+                return False  # V5.5.1 已彻底关闭同日止损/早撤反向 FLIP
+            return elapsed_since_ex >= SLOT_COOLDOWN_MINUTES
 
         priority_bonus = 2.0 if tk in leaders_set else (1.0 if tk in LEVERAGED_3X_ETFS else 0.0)
 
-        # ================== A. LONG 通道 ==================
-        long_ok_cd, long_is_flip = _check_flip_or_cooldown("LONG")
-        if long_ok_cd and gap_pct <= max_gap and (not is_cooling):
-            if long_is_flip:
-                # 补丁 C: 反向 FLIP 必须强确认 (>=58% + VWAP 上方 + rvol >= 1.5)，仅 25% 轻仓试探
-                long_allowed_flip = (not long_regime_blocked) or (tk in cte.SAFE_HAVEN_LONG_EXEMPT)
-                if long_allowed_flip and (not is_crash) and p_long >= 58.0 and vwap_diff >= 0.0 and rvol_5m >= 1.5:
+        # ================== A. LONG 通道（V5.5.1 收严至 >=55% & 差>=10%，关闭熊市15%反抽） ==================
+        if _check_reentry_cooldown("LONG") and gap_pct <= max_gap and (not is_cooling):
+            normal_long_allowed = (not long_regime_blocked) or (tk in cte.SAFE_HAVEN_LONG_EXEMPT)
+            if normal_long_allowed and (not is_crash) and p_long >= MIN_PROB_THRESHOLD and (p_long - p_short) >= MIN_SPREAD_THRESHOLD:
+                # 形态 1: 抗跌扫损收回多 (Sweep / 回踩 S1 或 P25 收回 VWAP)
+                swept_low = (
+                    (s1 > 0 and ((day_low > 0 and day_low <= s1 * 1.006 and active_px >= s1) or abs(active_px - s1) / s1 <= 0.012))
+                    or (pm_low > 0 and day_low > 0 and day_low <= pm_low * 1.005 and active_px >= pm_low)
+                    or is_deep_pb
+                    or corr_div == "BELOW_P25"
+                )
+                resilient_vs_qqq = (pct_chg >= qqq_pct - 0.5) or (tk in leaders_set)
+                sweep_reclaim = swept_low and (vwap_diff >= -0.20) and (rvol_5m >= 1.3) and resilient_vs_qqq
+
+                # 形态 2: 顺势突破共振多 (站稳 VWAP + 突破 R1 或 P75 + 放量)
+                breakout_hit = (
+                    (vwap_diff >= 0.0)
+                    and ((r1 > 0 and active_px >= r1 * 0.998) or corr_div == "ABOVE_P75")
+                    and (rvol_5m >= 1.5)
+                    and (50.0 <= rsi_5m <= 76.0)
+                )
+
+                if sweep_reclaim or breakout_hit:
+                    setup_name = "SWEEP_RECLAIM_LONG" if sweep_reclaim else "BREAKOUT_MOMENTUM_LONG"
                     sl_px = resolve_kol_structural_sl(tk, "LONG", active_px, lv, sr, ci)
                     raw_cands.append({
-                        "ticker": tk, "direction": "LONG", "setup": "FLIP_LONG",
-                        "entry_tag": "FLIP", "slot_weight": FLIP_WEIGHT, "can_add": False,
+                        "ticker": tk, "direction": "LONG", "setup": setup_name,
+                        "entry_tag": "NORMAL", "slot_weight": STARTER_WEIGHT, "can_add": True,
                         "calibrated_prob_pct": round(p_long, 1), "opp_prob_pct": round(p_short, 1),
-                        "prob_spread_pct": round(p_long - p_short, 1), "score": p_long + priority_bonus + 3.0,
+                        "prob_spread_pct": round(p_long - p_short, 1),
+                        "score": p_long + (p_long - p_short) * 0.25 + priority_bonus + (2.0 if sweep_reclaim else 1.0),
                         "entry_price": round(active_px, 2), "sl_price": sl_px,
                         "gap_pct": round(gap_pct, 2), "mirror_group": mgrp,
                     })
-            else:
-                normal_long_allowed = (not long_regime_blocked) or (tk in cte.SAFE_HAVEN_LONG_EXEMPT)
-                if normal_long_allowed and (not is_crash) and p_long >= 50.0 and (p_long - p_short) >= 6.0:
-                    # 形态 1: 抗跌扫损收回多 (Sweep / 回踩 S1 或 P25 收回 VWAP)
-                    swept_low = (
-                        (s1 > 0 and ((day_low > 0 and day_low <= s1 * 1.006 and active_px >= s1) or abs(active_px - s1) / s1 <= 0.012))
-                        or (pm_low > 0 and day_low > 0 and day_low <= pm_low * 1.005 and active_px >= pm_low)
-                        or is_deep_pb
-                        or corr_div == "BELOW_P25"
-                    )
-                    resilient_vs_qqq = (pct_chg >= qqq_pct - 0.5) or (tk in leaders_set)
-                    sweep_reclaim = swept_low and (vwap_diff >= -0.20) and (rvol_5m >= 1.3) and resilient_vs_qqq
 
-                    # 形态 2: 顺势突破共振多 (站稳 VWAP + 突破 R1 或 P75 + 放量)
-                    breakout_hit = (
-                        (vwap_diff >= 0.0)
-                        and ((r1 > 0 and active_px >= r1 * 0.998) or corr_div == "ABOVE_P75")
-                        and (rvol_5m >= 1.5)
-                        and (50.0 <= rsi_5m <= 76.0)
-                    )
-
-                    if sweep_reclaim or breakout_hit:
-                        setup_name = "SWEEP_RECLAIM_LONG" if sweep_reclaim else "BREAKOUT_MOMENTUM_LONG"
-                        sl_px = resolve_kol_structural_sl(tk, "LONG", active_px, lv, sr, ci)
-                        raw_cands.append({
-                            "ticker": tk, "direction": "LONG", "setup": setup_name,
-                            "entry_tag": "NORMAL", "slot_weight": STARTER_WEIGHT, "can_add": True,
-                            "calibrated_prob_pct": round(p_long, 1), "opp_prob_pct": round(p_short, 1),
-                            "prob_spread_pct": round(p_long - p_short, 1),
-                            "score": p_long + (p_long - p_short) * 0.25 + priority_bonus + (2.0 if sweep_reclaim else 1.0),
-                            "entry_price": round(active_px, 2), "sl_price": sl_px,
-                            "gap_pct": round(gap_pct, 2), "mirror_group": mgrp,
-                        })
-                elif long_regime_blocked and (tk not in cte.SAFE_HAVEN_LONG_EXEMPT) and (not is_crash):
-                    # 空头/VIX 倒挂期开关：极度超跌 + NQ=F 盘中站回 VWAP -> 允许 15% 轻仓狙击反抽 (不可加仓)
-                    deeply_oversold = (rsi_5m <= 34.0) or is_deep_pb or (pct_chg <= -3.0) or (corr_div == "BELOW_P25")
-                    if nq_vwap_ok and deeply_oversold and (vwap_diff >= -0.25) and (rvol_5m >= 1.2) and p_long >= 42.0:
-                        sl_px = resolve_kol_structural_sl(tk, "LONG", active_px, lv, sr, ci)
-                        raw_cands.append({
-                            "ticker": tk, "direction": "LONG", "setup": "BEAR_OVERSOLD_BOUNCE_LONG",
-                            "entry_tag": "BEAR_BOUNCE", "slot_weight": BEAR_BOUNCE_WEIGHT, "can_add": False,
-                            "calibrated_prob_pct": round(p_long, 1), "opp_prob_pct": round(p_short, 1),
-                            "prob_spread_pct": round(p_long - p_short, 1),
-                            "score": p_long + priority_bonus - 5.0,  # 空头期优先给顺势空单/反向ETF，反抽仅作轻仓补充
-                            "entry_price": round(active_px, 2), "sl_price": sl_px,
-                            "gap_pct": round(gap_pct, 2), "mirror_group": mgrp,
-                        })
-
-        # ================== B. SHORT 通道 ==================
+        # ================== B. SHORT 通道（V5.5.1 收严至 >=55% & 差>=10%） ==================
         inv_extreme_surge = bool(tk in cte.INVERSE_ETFS and (gap_pct >= 8.0 or pct_chg >= 8.0 or is_tp_ext or rsi_14 >= 68.0))
-        short_ok_cd, short_is_flip = _check_flip_or_cooldown("SHORT")
-        if short_ok_cd and (tk not in cte.NON_SHORTABLE_TICKERS) and (not inv_extreme_surge) and (-gap_pct) <= max_gap:
-            if short_is_flip:
-                # 补丁 C: 反向 FLIP 做空必须强确认 (>=58% + VWAP 下方 + rvol >= 1.5)，仅 25% 轻仓试探
-                if p_short >= 58.0 and vwap_diff <= 0.0 and rvol_5m >= 1.5:
+        if _check_reentry_cooldown("SHORT") and (tk not in cte.NON_SHORTABLE_TICKERS) and (not inv_extreme_surge) and (-gap_pct) <= max_gap:
+            if p_short >= MIN_PROB_THRESHOLD and (p_short - p_long) >= MIN_SPREAD_THRESHOLD:
+                bear_context = is_broken or (regime_u == "BEAR_DEFENSE") or vix_hard_brake or (pct_chg < 0) or (corr_div == "BELOW_P25")
+                near_vwap_or_r1_reject = (
+                    (-1.5 <= vwap_diff <= 0.40)
+                    or (r1 > 0 and abs(active_px - r1) / r1 <= 0.012)
+                ) and (vwap_diff <= 0.25) and (rsi_5m <= 58.0)
+                if bear_context and near_vwap_or_r1_reject:
                     sl_px = resolve_kol_structural_sl(tk, "SHORT", active_px, lv, sr, ci)
                     raw_cands.append({
-                        "ticker": tk, "direction": "SHORT", "setup": "FLIP_SHORT",
-                        "entry_tag": "FLIP", "slot_weight": FLIP_WEIGHT, "can_add": False,
+                        "ticker": tk, "direction": "SHORT", "setup": "REBOUND_REJECT_SHORT",
+                        "entry_tag": "NORMAL", "slot_weight": STARTER_WEIGHT, "can_add": True,
                         "calibrated_prob_pct": round(p_short, 1), "opp_prob_pct": round(p_long, 1),
-                        "prob_spread_pct": round(p_short - p_long, 1), "score": p_short + priority_bonus + 3.0,
+                        "prob_spread_pct": round(p_short - p_long, 1),
+                        "score": p_short + (p_short - p_long) * 0.25 + priority_bonus + (2.5 if long_regime_blocked else 0.0),
                         "entry_price": round(active_px, 2), "sl_price": sl_px,
                         "gap_pct": round(gap_pct, 2), "mirror_group": mgrp,
                     })
-            else:
-                if p_short >= 52.0 and (p_short - p_long) >= 6.0:
-                    bear_context = is_broken or (regime_u == "BEAR_DEFENSE") or vix_hard_brake or (pct_chg < 0) or (corr_div == "BELOW_P25")
-                    near_vwap_or_r1_reject = (
-                        (-1.5 <= vwap_diff <= 0.40)
-                        or (r1 > 0 and abs(active_px - r1) / r1 <= 0.012)
-                    ) and (vwap_diff <= 0.25) and (rsi_5m <= 58.0)
-                    if bear_context and near_vwap_or_r1_reject:
-                        sl_px = resolve_kol_structural_sl(tk, "SHORT", active_px, lv, sr, ci)
-                        raw_cands.append({
-                            "ticker": tk, "direction": "SHORT", "setup": "REBOUND_REJECT_SHORT",
-                            "entry_tag": "NORMAL", "slot_weight": STARTER_WEIGHT, "can_add": True,
-                            "calibrated_prob_pct": round(p_short, 1), "opp_prob_pct": round(p_long, 1),
-                            "prob_spread_pct": round(p_short - p_long, 1),
-                            "score": p_short + (p_short - p_long) * 0.25 + priority_bonus + (2.5 if long_regime_blocked else 0.0),
-                            "entry_price": round(active_px, 2), "sl_price": sl_px,
-                            "gap_pct": round(gap_pct, 2), "mirror_group": mgrp,
-                        })
 
     raw_cands.sort(key=lambda c: (-c["score"], -c["calibrated_prob_pct"], c["ticker"]))
     selected: List[Dict[str, Any]] = []
@@ -625,6 +635,7 @@ def _recalculate_kol_equity(
     live_quotes: Dict[str, Dict[str, Any]],
     cur_et: datetime,
     record_curve_point: bool = True,
+    is_extended: bool = False,
 ) -> Dict[str, Any]:
     init_cap = cte._safe_float(ledger.get("initial_capital"), INITIAL_CAPITAL)
     cash = round(cte._safe_float(ledger.get("cash"), init_cap), 2)
@@ -639,8 +650,8 @@ def _recalculate_kol_equity(
         entry_px = cte._safe_float(pos.get("entry_price"), 0.0)
         alloc = cte._safe_float(pos.get("allocated_capital"), 0.0)
         lv = (live_quotes or {}).get(tk) if isinstance(live_quotes, dict) else None
-        cur_px = cte._safe_float((lv or {}).get("active_price") or (lv or {}).get("last"), 0.0)
-        if cur_px <= 0:
+        cur_px, q_ok = _resolve_effective_quote_price(lv, is_extended=is_extended)
+        if (not q_ok) or cur_px <= 0:
             cur_px = cte._safe_float(pos.get("last_price"), entry_px)
         net_ret = cte._calc_net_return(direction, entry_px, cur_px)
         u_pnl = round(alloc * net_ret, 2)
@@ -780,28 +791,32 @@ def run_kol_copy_trade_cycle(
     daily_sr_anchors: Optional[Dict[str, Dict[str, Any]]] = None,
     intraday_path_payload: Optional[Dict[str, Any]] = None,
     session_code: str = "REGULAR",
+    market_session: Optional[str] = None,
     now_et: Optional[datetime] = None,
     ledger_path: Optional[str] = None,
     dry_run: Optional[bool] = None,
     alert_sender: Optional[Callable[[str, str, str, int], Any]] = None,
 ) -> Dict[str, Any]:
     """
-    执行单轮 V5.5 激进 KOL 狙击轨状态机：
-    1. 盘中动态管理在途持仓：
-       a) 止损/保本损 (SL_HIT / BE_STOP) -> 优先风控；
-       b) 一阶分批止盈 + 推保本 (+4.0% / 3x +6.5% 平半仓、止损移至 cost+0.3%)；
+    执行单轮 V5.5.1 激进 KOL 狙击轨状态机：
+    1. 常规盘中 (REGULAR) 全功能管理在途持仓：
+       a) 即时止损/保本损 (SL_HIT / BE_STOP)；
+       b) 一阶分批止盈 (+4.0% / 3x +6.5%) + 推保本损 (cost+0.3%)；
        c) 二阶抛物线卖强 (CLIMAX_TP) 与移动追踪止盈 (TRAIL_TP)；
-       d) 补丁 D: T+1 不及预期早撤 (WEAK_EARLY_EXIT，尾盘仓顺延至 13:30 ET) 与 T+3 到期强平；
-       e) 补丁 B: 底仓顺势加仓 (+20%) + 重算均价 + 止损强制移至原底仓价。
-    2. 09:45 ~ 15:20 ET 盘中滚动狙击新开仓（含空头 15% 超跌反抽与补丁 C 45 分钟 25% 反手）。
-    3. 严格执行干跑零污染保护：dry_run=True 或 RADAR_DISABLE_EXTERNAL_ALERTS=1 时绝不落盘、绝不外发。
+       d) 补丁 D-v2: T+2 不及预期早撤 (WEAK_EARLY_EXIT，尾盘仓顺延至 13:30 ET) 与 T+3 强平；
+       e) 补丁 B-v2: 底仓顺势加仓 (+20%) + 重算均价 + 止损移至原底仓外侧 1.0% 缓冲。
+    2. 延展时段 (PRE_MARKET / AFTER_HOURS / OVERNIGHT) 防插针保护止损：
+       - 仅检查 SL_HIT 与 BE_STOP（严禁开新仓或顺势加仓）；
+       - 须连续 2 轮轮询且间隔 >= 60 秒持续击穿才正式平仓，报价回弹至安全区立即清零计数器。
+    3. 09:45 ~ 15:20 ET 盘中滚动狙击新开仓（55%/10% 高胜率门禁，已移除熊市 15% 反抽与 FLIP）。
+    4. 严格执行干跑零污染保护：dry_run=True 或 RADAR_DISABLE_EXTERNAL_ALERTS=1 时绝不落盘、绝不外发。
     """
     cur_et = cte._to_et_datetime(now_et)
     today_d = cur_et.date()
     today_str = today_d.isoformat()
     et_min = cur_et.hour * 60 + cur_et.minute
-    sess_u = str(session_code or "").strip().upper()
-    is_regular_session = (sess_u in ("REGULAR", "RTH", "INTRADAY") or (cte.is_us_trading_day(today_d) and 9 * 60 + 30 <= et_min < 16 * 60))
+    eff_session_arg = market_session if (market_session is not None and str(market_session).strip()) else session_code
+    is_regular_session, is_extended_session, norm_session = _classify_market_session(eff_session_arg, cur_et)
 
     eff_dry_run = bool(dry_run) if dry_run is not None else cte.is_external_alerts_disabled()
     ledger = load_kol_ledger(ledger_path=ledger_path, now_et=cur_et)
@@ -809,7 +824,6 @@ def run_kol_copy_trade_cycle(
     if str(ledger.get("entries_date_et") or "") != today_str:
         ledger["entries_date_et"] = today_str
         ledger["entries_today_count"] = 0
-        ledger["flip_count_by_ticker_today"] = {}
 
     closed_now: List[Dict[str, Any]] = []
     opened_now: List[Dict[str, Any]] = []
@@ -818,8 +832,8 @@ def run_kol_copy_trade_cycle(
     alerts_sent: List[Dict[str, str]] = []
     dedupe_set = set(ledger.get("alert_dedupe_keys") or [])
 
-    # 1. 盘中持仓风控、分批止盈、追踪止盈、早撤与顺势加仓
-    if is_regular_session and ledger.get("open_positions"):
+    # 1. 常规盘中全功能管理 OR 延展时段纯防守防插针止损
+    if (is_regular_session or is_extended_session) and ledger.get("open_positions"):
         still_open: List[Dict[str, Any]] = []
         for pos in ledger["open_positions"]:
             tk = str(pos.get("ticker") or "").upper()
@@ -828,8 +842,8 @@ def run_kol_copy_trade_cycle(
             sl_px = cte._safe_float(pos.get("sl_price"), 0.0)
             alloc = cte._safe_float(pos.get("allocated_capital"), 0.0)
             lv = (live_quotes or {}).get(tk) if isinstance(live_quotes, dict) else None
-            cur_px = cte._safe_float((lv or {}).get("active_price") or (lv or {}).get("last"), 0.0)
-            if cur_px <= 0 or entry_px <= 0:
+            cur_px, quote_valid = _resolve_effective_quote_price(lv, is_extended=is_extended_session)
+            if (not quote_valid) or cur_px <= 0 or entry_px <= 0:
                 still_open.append(pos)
                 continue
 
@@ -841,105 +855,144 @@ def run_kol_copy_trade_cycle(
 
             net_ret = cte._calc_net_return(direction, entry_px, cur_px)
             ret_pct = net_ret * 100.0
-            prev_mfe = cte._safe_float(pos.get("max_favorable_return_pct"), ret_pct)
-            mfe_pct = max(prev_mfe, ret_pct)
-            pos["max_favorable_return_pct"] = round(mfe_pct, 2)
-
-            if direction == "LONG":
-                best_px = max(cte._safe_float(pos.get("best_price"), entry_px), cur_px)
-            else:
-                pb = cte._safe_float(pos.get("best_price"), entry_px)
-                best_px = min(pb, cur_px) if pb > 0 else cur_px
-            pos["best_price"] = round(best_px, 2)
-
             partial_done = bool(pos.get("partial_tp_done", False))
             be_active = bool(pos.get("be_stop_active", False))
 
-            # (1a) 优先检查硬止损 / 保本损
             exit_reason = ""
-            if direction == "LONG" and sl_px > 0 and cur_px <= sl_px:
-                exit_reason = "BE_STOP" if be_active else "SL_HIT"
-            elif direction == "SHORT" and sl_px > 0 and cur_px >= sl_px:
-                exit_reason = "BE_STOP" if be_active else "SL_HIT"
+            ext_confirmed_close = False
 
-            # (1b) 一阶分批止盈 (+4.0% / 3x +6.5%) + 无条件推保本损
-            if not exit_reason and not partial_done:
-                p_trig = PARTIAL_TP_3X_PCT if lev3 else PARTIAL_TP_1X_PCT
-                if ret_pct >= p_trig:
-                    close_alloc = round(alloc * 0.50, 2)
-                    rem_alloc = round(alloc - close_alloc, 2)
-                    part_pnl = round(close_alloc * net_ret, 2)
-                    returned_cash = max(0.0, round(close_alloc + part_pnl, 2))
-                    ledger["cash"] = round(cte._safe_float(ledger.get("cash"), 0.0) + returned_cash, 2)
-
-                    pos["allocated_capital"] = rem_alloc
-                    pos["slot_weight"] = round(cte._safe_float(pos.get("slot_weight"), STARTER_WEIGHT) * 0.50, 3)
-                    pos["partial_tp_done"] = True
-                    pos["can_add"] = False
-                    pos["be_stop_active"] = True
-                    pos["partial_exit_price"] = round(cur_px, 2)
-                    pos["partial_exit_time_et"] = cur_et.strftime("%Y-%m-%d %H:%M:%S")
-                    pos["partial_closed_capital"] = close_alloc
-                    pos["partial_realized_pnl_usd"] = round(cte._safe_float(pos.get("partial_realized_pnl_usd"), 0.0) + part_pnl, 2)
-                    if direction == "LONG":
-                        pos["sl_price"] = max(sl_px, round(entry_px * (1.0 + BE_STOP_BUFFER), 2))
-                    else:
-                        pos["sl_price"] = min(sl_px, round(entry_px * (1.0 - BE_STOP_BUFFER), 2))
-                    pos["best_price"] = round(cur_px, 2)
-                    partial_done = True
-                    be_active = True
-                    alloc = rem_alloc
-                    sl_px = pos["sl_price"]
-                    partials_now.append(dict(pos))
-
-            # (1c) 二阶抛物线卖强 (CLIMAX_TP) 与移动追踪止盈 (TRAIL_TP)
-            if not exit_reason and partial_done:
-                climax_ret_min = CLIMAX_PROFIT_3X_PCT if lev3 else CLIMAX_PROFIT_1X_PCT
-                is_climax = (
-                    ((direction == "LONG" and rsi_5m >= CLIMAX_RSI_HIGH) or (direction == "SHORT" and rsi_5m <= CLIMAX_RSI_LOW))
-                    and rvol_5m >= CLIMAX_RVOL_MIN
-                    and ret_pct >= climax_ret_min
+            if is_extended_session:
+                # ---------- 延展时段 (PRE_MARKET / AFTER_HOURS / OVERNIGHT)：仅检查防守止损/保本损，连续2轮且>=60s确认 ----------
+                sl_breached = bool(
+                    sl_px > 0 and (
+                        (direction == "LONG" and cur_px <= sl_px)
+                        or (direction == "SHORT" and cur_px >= sl_px)
+                    )
                 )
-                if is_climax:
-                    exit_reason = "CLIMAX_TP"
-                else:
-                    trail_dd_limit = TRAIL_DRAWDOWN_3X_PCT if lev3 else TRAIL_DRAWDOWN_1X_PCT
-                    if direction == "LONG" and best_px > 0:
-                        dd_from_best = ((best_px - cur_px) / best_px) * 100.0
-                    elif direction == "SHORT" and best_px > 0:
-                        dd_from_best = ((cur_px - best_px) / best_px) * 100.0
+                if sl_breached:
+                    prev_cnt = int(pos.get("ext_sl_breach_count") or 0)
+                    first_ts_str = str(pos.get("ext_sl_first_breach_ts") or "")
+                    first_dt = _parse_et_timestamp(first_ts_str, cur_et) if first_ts_str else None
+                    if prev_cnt <= 0 or first_dt is None:
+                        pos["ext_sl_breach_count"] = 1
+                        pos["ext_sl_first_breach_ts"] = cur_et.strftime("%Y-%m-%d %H:%M:%S")
                     else:
-                        dd_from_best = 0.0
-                    if dd_from_best >= trail_dd_limit:
-                        exit_reason = "TRAIL_TP"
+                        elapsed_sec = (cur_et - first_dt).total_seconds()
+                        if elapsed_sec >= EXTENDED_SL_CONFIRM_SECONDS:
+                            pos["ext_sl_breach_count"] = prev_cnt + 1
+                            exit_reason = "BE_STOP" if be_active else "SL_HIT"
+                            ext_confirmed_close = True
+                        else:
+                            # 距首次击穿不足 60 秒，继续等待下一轮防插针确认
+                            pos["ext_sl_breach_count"] = 1
+                else:
+                    # 价格回弹至安全区 -> 立即清零连续计数器
+                    pos["ext_sl_breach_count"] = 0
+                    pos["ext_sl_first_breach_ts"] = ""
+            else:
+                # ---------- 常规盘中 (REGULAR)：单轮即时止损 + 完整分批/追踪/T+2早撤/加仓 ----------
+                pos["ext_sl_breach_count"] = 0
+                pos["ext_sl_first_breach_ts"] = ""
 
-            # (1d) 补丁 D: 「该强不强就是弱」早撤体检 + T+3 强平
-            if not exit_reason:
-                try:
-                    entry_d = datetime.strptime(str(pos.get("entry_date"))[:10], "%Y-%m-%d").date()
-                except Exception:
-                    entry_d = today_d
-                try:
-                    exp_d = datetime.strptime(str(pos.get("expiry_date"))[:10], "%Y-%m-%d").date()
-                except Exception:
-                    exp_d = today_d
+                prev_mfe = cte._safe_float(pos.get("max_favorable_return_pct"), ret_pct)
+                mfe_pct = max(prev_mfe, ret_pct)
+                pos["max_favorable_return_pct"] = round(mfe_pct, 2)
 
-                if (today_d == exp_d and et_min >= T3_FORCE_EXIT_MIN) or (today_d > exp_d):
-                    exit_reason = "T3_EXPIRE"
-                elif (not partial_done) and today_d > entry_d:
-                    days_held = _count_trading_days_between(entry_d, today_d)
-                    entry_dt = _parse_et_timestamp(str(pos.get("entry_time_et") or ""), cur_et)
-                    entry_min = (entry_dt.hour * 60 + entry_dt.minute) if entry_dt else 10 * 60
-                    # 补丁 D: 昨日 14:00 ET 之后才开的尾盘仓，T+1 体检顺延至 13:30 ET
-                    check_min = EARLY_CHECK_LATE_MIN if (days_held == 1 and entry_min > LATE_ENTRY_CUTOFF_MIN) else EARLY_CHECK_NORMAL_MIN
-                    if et_min >= check_min:
-                        wrong_side_vwap = (vwap_diff < 0.0) if direction == "LONG" else (vwap_diff > 0.0)
-                        weak_stall = (ret_pct < 0.8) and wrong_side_vwap
-                        profit_fade = (mfe_pct >= 3.0) and (ret_pct < 0.5)
-                        if weak_stall or profit_fade:
-                            exit_reason = "WEAK_EARLY_EXIT"
+                if direction == "LONG":
+                    best_px = max(cte._safe_float(pos.get("best_price"), entry_px), cur_px)
+                else:
+                    pb = cte._safe_float(pos.get("best_price"), entry_px)
+                    best_px = min(pb, cur_px) if pb > 0 else cur_px
+                pos["best_price"] = round(best_px, 2)
 
-            # (1e) 执行平仓结算
+                # (1a) 优先检查硬止损 / 保本损
+                if direction == "LONG" and sl_px > 0 and cur_px <= sl_px:
+                    exit_reason = "BE_STOP" if be_active else "SL_HIT"
+                elif direction == "SHORT" and sl_px > 0 and cur_px >= sl_px:
+                    exit_reason = "BE_STOP" if be_active else "SL_HIT"
+
+                # (1b) 一阶分批止盈 (+4.0% / 3x +6.5%) + 无条件推保本损
+                if not exit_reason and not partial_done:
+                    p_trig = PARTIAL_TP_3X_PCT if lev3 else PARTIAL_TP_1X_PCT
+                    if ret_pct >= p_trig:
+                        close_alloc = round(alloc * 0.50, 2)
+                        rem_alloc = round(alloc - close_alloc, 2)
+                        part_pnl = round(close_alloc * net_ret, 2)
+                        returned_cash = max(0.0, round(close_alloc + part_pnl, 2))
+                        ledger["cash"] = round(cte._safe_float(ledger.get("cash"), 0.0) + returned_cash, 2)
+
+                        pos["allocated_capital"] = rem_alloc
+                        pos["slot_weight"] = round(cte._safe_float(pos.get("slot_weight"), STARTER_WEIGHT) * 0.50, 3)
+                        pos["partial_tp_done"] = True
+                        pos["can_add"] = False
+                        pos["be_stop_active"] = True
+                        pos["partial_exit_price"] = round(cur_px, 2)
+                        pos["partial_exit_time_et"] = cur_et.strftime("%Y-%m-%d %H:%M:%S")
+                        pos["partial_closed_capital"] = close_alloc
+                        pos["partial_realized_pnl_usd"] = round(cte._safe_float(pos.get("partial_realized_pnl_usd"), 0.0) + part_pnl, 2)
+                        if direction == "LONG":
+                            pos["sl_price"] = max(sl_px, round(entry_px * (1.0 + BE_STOP_BUFFER), 2))
+                        else:
+                            pos["sl_price"] = min(sl_px, round(entry_px * (1.0 - BE_STOP_BUFFER), 2))
+                        pos["best_price"] = round(cur_px, 2)
+                        partial_done = True
+                        be_active = True
+                        alloc = rem_alloc
+                        sl_px = pos["sl_price"]
+                        partials_now.append(dict(pos))
+
+                # (1c) 二阶抛物线卖强 (CLIMAX_TP) 与移动追踪止盈 (TRAIL_TP)
+                if not exit_reason and partial_done:
+                    climax_ret_min = CLIMAX_PROFIT_3X_PCT if lev3 else CLIMAX_PROFIT_1X_PCT
+                    is_climax = (
+                        ((direction == "LONG" and rsi_5m >= CLIMAX_RSI_HIGH) or (direction == "SHORT" and rsi_5m <= CLIMAX_RSI_LOW))
+                        and rvol_5m >= CLIMAX_RVOL_MIN
+                        and ret_pct >= climax_ret_min
+                    )
+                    if is_climax:
+                        exit_reason = "CLIMAX_TP"
+                    else:
+                        trail_dd_limit = TRAIL_DRAWDOWN_3X_PCT if lev3 else TRAIL_DRAWDOWN_1X_PCT
+                        if direction == "LONG" and best_px > 0:
+                            dd_from_best = ((best_px - cur_px) / best_px) * 100.0
+                        elif direction == "SHORT" and best_px > 0:
+                            dd_from_best = ((cur_px - best_px) / best_px) * 100.0
+                        else:
+                            dd_from_best = 0.0
+                        if dd_from_best >= trail_dd_limit:
+                            exit_reason = "TRAIL_TP"
+
+                # (1d) 补丁 D-v2: 「该强不强就是弱」推迟至 T+2 体检 + T+3 强平
+                if not exit_reason:
+                    try:
+                        entry_d = datetime.strptime(str(pos.get("entry_date"))[:10], "%Y-%m-%d").date()
+                    except Exception:
+                        entry_d = today_d
+                    try:
+                        exp_d = datetime.strptime(str(pos.get("expiry_date"))[:10], "%Y-%m-%d").date()
+                    except Exception:
+                        exp_d = today_d
+
+                    if (today_d == exp_d and et_min >= T3_FORCE_EXIT_MIN) or (today_d > exp_d):
+                        exit_reason = "T3_EXPIRE"
+                    elif (not partial_done) and today_d > entry_d:
+                        days_held = _count_trading_days_between(entry_d, today_d)
+                        if days_held >= WEAK_EXIT_MIN_TRADING_DAYS:
+                            entry_dt = _parse_et_timestamp(str(pos.get("entry_time_et") or ""), cur_et)
+                            entry_min = (entry_dt.hour * 60 + entry_dt.minute) if entry_dt else 10 * 60
+                            check_min = (
+                                EARLY_CHECK_LATE_MIN
+                                if (days_held == WEAK_EXIT_MIN_TRADING_DAYS and entry_min > LATE_ENTRY_CUTOFF_MIN)
+                                else EARLY_CHECK_NORMAL_MIN
+                            )
+                            if et_min >= check_min:
+                                wrong_side_vwap = (vwap_diff < 0.0) if direction == "LONG" else (vwap_diff > 0.0)
+                                weak_stall = (ret_pct < 0.8) and wrong_side_vwap
+                                profit_fade = (mfe_pct >= 3.0) and (ret_pct < 0.5)
+                                if weak_stall or profit_fade:
+                                    exit_reason = "WEAK_EARLY_EXIT"
+
+            # (1e) 执行平仓结算（常规盘中 或 延展时段2轮确认止损）
             if exit_reason:
                 runner_pnl = round(alloc * net_ret, 2)
                 returned_cash = max(0.0, round(alloc + runner_pnl, 2))
@@ -975,6 +1028,8 @@ def run_kol_copy_trade_cycle(
                     "expiry_date": pos.get("expiry_date"),
                     "exit_date": today_str,
                     "exit_time_et": cur_et.strftime("%Y-%m-%d %H:%M:%S"),
+                    "exit_session": norm_session,
+                    "ext_confirmed_close": ext_confirmed_close,
                     "exit_price": round(cur_px, 2),
                     "exit_reason": exit_reason,
                     "outcome": outcome,
@@ -993,16 +1048,16 @@ def run_kol_copy_trade_cycle(
                 }
                 continue
 
-            # (1f) 补丁 B: 底仓顺势加仓 (+20%) + 重算均价 + 止损上移至原底仓价附近
+            # (1f) 补丁 B-v2: 仅常规盘中允许底仓顺势加仓 (+20%) + 重算均价 + 止损移至原底仓外侧 1.0% 呼吸缓冲
             if (
-                int(pos.get("stage") or 1) == 1
+                is_regular_session
+                and int(pos.get("stage") or 1) == 1
                 and bool(pos.get("can_add", False))
                 and (not partial_done)
             ):
                 add_trig = ADDON_TRIGGER_3X_PCT if lev3 else ADDON_TRIGGER_1X_PCT
                 on_vwap_side = (vwap_diff >= 0.0) if direction == "LONG" else (vwap_diff <= 0.0)
                 if ret_pct >= add_trig and on_vwap_side:
-                    # 临时估总净值以确定 20% 增仓额度
                     cur_cash = cte._safe_float(ledger.get("cash"), 0.0)
                     est_eq = max(cte._safe_float(ledger.get("total_equity"), INITIAL_CAPITAL), cur_cash + alloc)
                     add_alloc = round(min(cur_cash, est_eq * ADDON_WEIGHT), 2)
@@ -1021,11 +1076,11 @@ def run_kol_copy_trade_cycle(
                         pos["peak_slot_weight"] = FULL_WEIGHT
                         pos["stage"] = 2
                         pos["can_add"] = False
-                        # 补丁 B 核心：加仓后将整笔 50% 仓位的硬止损强制移至原底仓入场价附近
+                        # 补丁 B-v2：加仓后硬止损移至原底仓外侧 1.0% 缓冲，且严格不劣于初始硬止损
                         if direction == "LONG":
-                            pos["sl_price"] = max(sl_px, round(orig_ep, 2))
+                            pos["sl_price"] = max(sl_px, round(orig_ep * (1.0 - ADDON_SL_BUFFER), 2))
                         else:
-                            pos["sl_price"] = min(sl_px, round(orig_ep, 2))
+                            pos["sl_price"] = min(sl_px, round(orig_ep * (1.0 + ADDON_SL_BUFFER), 2))
                         addons_now.append(dict(pos))
 
             still_open.append(pos)
@@ -1033,14 +1088,13 @@ def run_kol_copy_trade_cycle(
         ledger["open_positions"] = still_open
 
     # 先重算净值以便新开仓计算准确仓位额度
-    _recalculate_kol_equity(ledger, live_quotes, cur_et, record_curve_point=False)
+    _recalculate_kol_equity(ledger, live_quotes, cur_et, record_curve_point=False, is_extended=is_extended_session)
 
-    # 2. 盘中滚动狙击窗口 (09:45 ~ 15:20 ET)
+    # 2. 仅常规盘中 09:45 ~ 15:20 ET 开放盘中滚动狙击新开仓（延展时段严禁开新仓）
     in_sniper_window = bool(is_regular_session and (ENTRY_START_MIN <= et_min <= ENTRY_END_MIN))
     entries_today = int(ledger.get("entries_today_count") or 0)
     last_close_dt = _parse_et_timestamp(str(ledger.get("last_close_time_et") or ""), cur_et)
     slot_cd_ok = True
-    # 若当日已满 2 笔再开第 3 笔，需距最近一次平仓冷却 >= 30 分钟
     if entries_today >= MAX_POSITIONS and last_close_dt is not None:
         slot_cd_ok = ((cur_et - last_close_dt).total_seconds() / 60.0) >= SLOT_COOLDOWN_MINUTES
 
@@ -1059,7 +1113,6 @@ def run_kol_copy_trade_cycle(
             daily_sr_anchors=daily_sr_anchors,
             intraday_path_payload=intraday_path_payload,
             last_exit_by_ticker=ledger.get("last_exit_by_ticker"),
-            flip_count_by_ticker_today=ledger.get("flip_count_by_ticker_today"),
             max_slots=int(ledger.get("max_positions") or MAX_POSITIONS),
         )[:free_cap_today]
 
@@ -1073,10 +1126,6 @@ def run_kol_copy_trade_cycle(
                 continue
             ledger["cash"] = round(cur_cash - alloc, 2)
             tk = c["ticker"]
-            is_flip = str(c.get("entry_tag") or "").upper() == "FLIP"
-            if is_flip:
-                fmap = ledger.setdefault("flip_count_by_ticker_today", {})
-                fmap[tk] = int(fmap.get(tk, 0)) + 1
 
             pos_rec = {
                 "trade_id": f"KOL_{tk}_{c['direction']}_{today_str}_{entries_today + 1}",
@@ -1096,6 +1145,8 @@ def run_kol_copy_trade_cycle(
                 "last_price": c["entry_price"],
                 "best_price": c["entry_price"],
                 "sl_price": c["sl_price"],
+                "ext_sl_breach_count": 0,
+                "ext_sl_first_breach_ts": "",
                 "partial_tp_done": False,
                 "be_stop_active": False,
                 "partial_closed_capital": 0.0,
@@ -1116,7 +1167,7 @@ def run_kol_copy_trade_cycle(
         ledger["entries_today_count"] = entries_today
 
     # 3. 最终净值、浮盈与曲线落表
-    _recalculate_kol_equity(ledger, live_quotes, cur_et, record_curve_point=is_regular_session)
+    _recalculate_kol_equity(ledger, live_quotes, cur_et, record_curve_point=(is_regular_session or bool(closed_now)), is_extended=is_extended_session)
 
     # 4. 仅非干跑模式下推送 KOL 事件提醒并原子落盘
     if not eff_dry_run:
@@ -1437,7 +1488,7 @@ def _render_single_track_panel(doc: Dict[str, Any], is_kol: bool) -> str:
 
     if is_kol:
         exit_note = (
-            f"2槽×50% (30%底仓+20%顺势加仓移损) · 3x止损2.5%~4.5% · +4%平半仓推保本 · "
+            f"V5.5.1 · 55%/10%门禁 · 2槽×50%(加仓-1%缓冲) · 3x损2.5%~4.5% · T+2早撤 · 延展2轮防插针 · "
             f"追踪/卖强 {st.get('tp_hit_count', 0)} · 保本 {st.get('be_stop_count', 0)} · 早撤 {st.get('weak_early_exit_count', 0)} · 止损 {st.get('sl_hit_count', 0)}"
         )
         col_hdr = "状态 / 止损"
