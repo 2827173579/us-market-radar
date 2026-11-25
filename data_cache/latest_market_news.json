@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795627786.451,
-  "updated_at_et": "11-25 12:29 ET",
-  "updated_at_kst": "02:29 KST",
+  "updated_at_ts": 1795627829.684,
+  "updated_at_et": "11-25 12:30 ET",
+  "updated_at_kst": "02:30 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -2642,6 +2642,20 @@
     ],
     "BTC-USD": [
       {
+        "title": "Elon Musk’s X Wins Court Judgment Against Alleged Bitcoin Bot Farm Operators",
+        "url": "https://decrypt.co/383985/elon-musk-x-court-judgment-bitcoin-bot-farm-operators?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 12:16 ET",
+        "pub_ts": 1795626962.0
+      },
+      {
+        "title": "Why AI Clouds Could Be ‘Missing Money’ by Not Mining Pearl",
+        "url": "https://unchainedcrypto.com/why-ai-clouds-could-be-missing-money-by-not-mining-pearl/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 12:00 ET",
+        "pub_ts": 1795626044.0
+      },
+      {
         "title": "The Bitcoin Dominance Metric Just Fell Below 60%. Could Altcoin Season Be Right Around the Corner?",
         "url": "https://www.fool.com/investing/2026/11/25/the-bitcoin-dominance-metric-just-fell-below-60-could-altcoin-season-be-right-around-the-corner/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2661,20 +2675,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 11:33 ET",
         "pub_ts": 1795624439.0
-      },
-      {
-        "title": "Bitcoin wallet COLDCARD patches code after August hack",
-        "url": "https://finance.yahoo.com/video/bitcoin-wallet-coldcard-patches-code-163000292.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 11:30 ET",
-        "pub_ts": 1795624200.0
-      },
-      {
-        "title": "Tether Gold Under Pressure: Bitcoin and Gold Losses Erase 70% of USDT’s Cushion",
-        "url": "https://www.coinspeaker.com/tether-gold-under-pressure-bitcoin-and-gold-losses-erase-70-of-usdts-cushion/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 11:24 ET",
-        "pub_ts": 1795623846.0
       }
     ],
     "CRWD": [
@@ -3374,11 +3374,11 @@
     "FPS": 1795627040.9444351,
     "MU": 1795627786.4512484,
     "SKHY": 1795627786.4512484,
-    "WDC": 1795626320.6543207,
+    "WDC": 1795627829.6839883,
     "STX": 1795627087.3863058,
     "MSTR": 1795627040.9444351,
     "SNDK": 1795627040.9444351,
-    "BTC-USD": 1795626320.6543207,
+    "BTC-USD": 1795627829.6839883,
     "CRWD": 1795627040.9444351,
     "ORCL": 1795627040.9444351,
     "COIN": 1795627040.9444351,
