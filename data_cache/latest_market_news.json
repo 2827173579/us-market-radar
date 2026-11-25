@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795634443.972,
-  "updated_at_et": "11-25 14:20 ET",
-  "updated_at_kst": "04:20 KST",
+  "updated_at_ts": 1795634481.156,
+  "updated_at_et": "11-25 14:21 ET",
+  "updated_at_kst": "04:21 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -1792,6 +1792,20 @@
         "pub_ts": 1795631877.0
       },
       {
+        "title": "Why SpaceX Stock Is Down Today",
+        "url": "https://www.fool.com/investing/2026/11/25/why-spacex-stock-is-down-today/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 14:05 ET",
+        "pub_ts": 1795633502.0
+      },
+      {
+        "title": "Billionaire David Tepper Just Loaded Up on SpaceX Stock. Should You Follow His Lead?",
+        "url": "https://www.fool.com/investing/2026/11/25/billionaire-david-tepper-just-loaded-up-on-spacex-stock-should-you-follow-his-lead/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 13:53 ET",
+        "pub_ts": 1795632782.0
+      },
+      {
         "title": "Musk Says Grok Bot Can Find the “Best Black Friday Deals.” Grok Already Places 24% of AI Agent Orders",
         "url": "https://www.tikr.com/blog/musk-says-grok-bot-can-find-the-best-black-friday-deals-grok-already-places-24-of-ai-agent-orders?ref=yahoofinance&tlnk=yf-261125-2c88523j&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1804,20 +1818,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 13:20 ET",
         "pub_ts": 1795630803.0
-      },
-      {
-        "title": "SpaceX gets approval to deploy 1 million satellites for data centers in space",
-        "url": "https://www.independent.co.uk/tech/spacex-data-center-satellites-fcc-starmind-approval-b3091649.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 13:18 ET",
-        "pub_ts": 1795630717.0
-      },
-      {
-        "title": "SpaceX wins landmark FCC backing for 1 million-satellite data center constellation",
-        "url": "https://finance.yahoo.com/technology/ai/articles/spacex-wins-landmark-fcc-backing-175942978.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 12:59 ET",
-        "pub_ts": 1795629582.0
       }
     ],
     "ASTS": [
@@ -3341,25 +3341,25 @@
     "AMZN": 1795633801.8821743,
     "CRWV": 1795633801.8821743,
     "NBIS": 1795633801.8821743,
-    "APLD": 1795632960.1085618,
-    "VST": 1795632960.1085618,
-    "BE": 1795632960.1085618,
-    "CRDO": 1795632960.1085618,
-    "COHR": 1795632960.1085618,
+    "APLD": 1795634481.1557245,
+    "VST": 1795634481.1557245,
+    "BE": 1795634481.1557245,
+    "CRDO": 1795634481.1557245,
+    "COHR": 1795634481.1557245,
     "MRVL": 1795633846.985571,
     "LITE": 1795633846.985571,
-    "AAOI": 1795632960.1085618,
-    "SPCX": 1795632960.1085618,
-    "ASTS": 1795632960.1085618,
+    "AAOI": 1795634481.1557245,
+    "SPCX": 1795634481.1557245,
+    "ASTS": 1795634481.1557245,
     "AXTI": 1795633801.8821743,
-    "NASA": 1795632960.1085618,
-    "LUNR": 1795632960.1085618,
+    "NASA": 1795634481.1557245,
+    "LUNR": 1795634481.1557245,
     "TSLA": 1795633115.0020323,
-    "AXP": 1795632960.1085618,
-    "RKLB": 1795632960.1085618,
-    "KO": 1795632960.1085618,
-    "FLY": 1795632960.1085618,
-    "INTC": 1795632960.1085618,
+    "AXP": 1795634481.1557245,
+    "RKLB": 1795634481.1557245,
+    "KO": 1795634481.1557245,
+    "FLY": 1795634481.1557245,
+    "INTC": 1795634481.1557245,
     "VRT": 1795633115.0020323,
     "HPE": 1795633115.0020323,
     "DELL": 1795633115.0020323,
@@ -3387,7 +3387,7 @@
     "V": 1795633115.0020323,
     "CAT": 1795633200.2823045,
     "FN": 1795633846.985571,
-    "GLW": 1795632960.1085618,
+    "GLW": 1795634481.1557245,
     "ANT": 1795633200.2823045,
     "XAUUSD": 1795633200.2823045,
     "KOSPI": 1795633801.8821743
