@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795584329.838,
-  "updated_at_et": "11-25 00:25 ET",
-  "updated_at_kst": "14:25 KST",
+  "updated_at_ts": 1795584441.007,
+  "updated_at_et": "11-25 00:27 ET",
+  "updated_at_kst": "14:27 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -17,7 +17,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 485,
+      "minutes_left": 483,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -36,7 +36,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 485,
+      "minutes_left": 483,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -3066,6 +3066,13 @@
         "pub_ts": 1795535048.0
       },
       {
+        "title": "Symbotic: 3 Key Takeaways for Long-Term Investors",
+        "url": "https://www.fool.com/earnings/takeaways/2026/11/24/symbotic-3-key-takeaways-for-long-term-investors/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 00:12 ET",
+        "pub_ts": 1795583550.0
+      },
+      {
         "title": "Walmart’s Robot Warehouse Partner Symbotic Just Had Its First Profitable Year",
         "url": "https://247wallst.com/investing/2026/11/24/walmarts-robot-warehouse-partner-symbotic-just-had-its-first-profitable-year/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3085,13 +3092,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 11:03 ET",
         "pub_ts": 1795536197.0
-      },
-      {
-        "title": "Target vs. Walmart: Which Consumer Goods Stock Is a Better Buy for 2027?",
-        "url": "https://www.fool.com/coverage/better-buy/2026/11/24/target-vs-walmart-which-consumer-goods-stock-is-a-better-buy-for-2027/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 09:29 ET",
-        "pub_ts": 1795530547.0
       }
     ],
     "V": [
@@ -3244,6 +3244,13 @@
     ],
     "ANT": [
       {
+        "title": "Investors shut out of Anthropic's IPO may be the lucky ones",
+        "url": "https://www.thestreet.com/investing/anthropic-stock-below-ipo-price-missed-allocation?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 00:03 ET",
+        "pub_ts": 1795582980.0
+      },
+      {
         "title": "Cathie Wood’s ARK Sees ‘Excellent Entry Points’ In AI — ‘Big Short’ Steve Eisman Warns Of Recession If Anthropic Or OpenAI Fails",
         "url": "https://stocktwits.com/news-articles/markets/equity/cathie-wood-ark-excellent-entry-points-ai-steve-eisman-recession-anthropic-openai-fails/cNbHcZ4R9lW?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3270,13 +3277,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 22:20 ET",
         "pub_ts": 1795576810.0
-      },
-      {
-        "title": "Clarivate (CLVT) Shares Just Moved, So What Is Driving Attention Now?",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/clarivate-clvt-shares-just-moved-031151386.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 22:11 ET",
-        "pub_ts": 1795576311.0
       }
     ],
     "XAUUSD": [
@@ -3396,16 +3396,16 @@
     "MRNA": 1795584329.8376112,
     "NKE": 1795584329.8376112,
     "MCD": 1795584329.8376112,
-    "PEP": 1795582836.705383,
-    "XOM": 1795582836.705383,
-    "JPM": 1795582836.705383,
-    "WMT": 1795582836.705383,
+    "PEP": 1795584441.006546,
+    "XOM": 1795584441.006546,
+    "JPM": 1795584441.006546,
+    "WMT": 1795584441.006546,
     "V": 1795584329.8376112,
-    "CAT": 1795582836.705383,
+    "CAT": 1795584441.006546,
     "FN": 1795583426.957599,
     "GLW": 1795584214.3796115,
-    "ANT": 1795582836.705383,
-    "XAUUSD": 1795582836.705383,
+    "ANT": 1795584441.006546,
+    "XAUUSD": 1795584441.006546,
     "KOSPI": 1795583426.957599
   },
   "opex_shield": {
@@ -3424,10 +3424,10 @@
   },
   "calendar_banner": {
     "level": "upcoming",
-    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 485 分钟（11-25 08:30 ET / 22:30 KST）",
+    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 483 分钟（11-25 08:30 ET / 22:30 KST）",
     "detail": "前值 0.3% ｜ 预期 0.3% ｜ 临近公布前15分钟将自动触发防插针预警",
     "event_name": "美国10月核心PCE物价指数环比",
-    "minutes_left": 485,
+    "minutes_left": 483,
     "opex_shield": {
       "date": "2026-11-25",
       "active": false,
