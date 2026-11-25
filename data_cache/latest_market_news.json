@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795607891.526,
-  "updated_at_et": "11-25 06:58 ET",
-  "updated_at_kst": "20:58 KST",
+  "updated_at_ts": 1795607945.235,
+  "updated_at_et": "11-25 06:59 ET",
+  "updated_at_kst": "20:59 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -17,7 +17,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 92,
+      "minutes_left": 91,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -36,7 +36,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 92,
+      "minutes_left": 91,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -2427,11 +2427,11 @@
     ],
     "MU": [
       {
-        "title": "Anthropic falls below IPO price as Nvidia gives back gains",
-        "url": "https://finance.yahoo.com/video/anthropic-falls-below-ipo-price-as-nvidia-gives-back-gains-214558309.html?.tsrc=rss",
+        "title": "Micron Stock Just Got a Brutal Downgrade -- BNP Paribas Slashes Price Target 54%",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/micron-stock-just-got-brutal-114708173.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 16:45 ET",
-        "pub_ts": 1795556758.0
+        "time": "11-25 06:47 ET",
+        "pub_ts": 1795607228.0
       },
       {
         "title": "Micron CEO gets a big pay bump and an even bigger security bill",
@@ -3359,8 +3359,8 @@
     "BE": 1795607087.74781,
     "CRDO": 1795607087.74781,
     "COHR": 1795607087.74781,
-    "MRVL": 1795606440.9328077,
-    "LITE": 1795606440.9328077,
+    "MRVL": 1795607945.2346528,
+    "LITE": 1795607945.2346528,
     "AAOI": 1795607087.74781,
     "SPCX": 1795607087.74781,
     "ASTS": 1795607087.74781,
@@ -3379,8 +3379,8 @@
     "OKLO": 1795607185.594512,
     "CEG": 1795607185.594512,
     "FPS": 1795607185.594512,
-    "MU": 1795606440.9328077,
-    "SKHY": 1795606440.9328077,
+    "MU": 1795607945.2346528,
+    "SKHY": 1795607945.2346528,
     "WDC": 1795606487.234947,
     "STX": 1795607235.510905,
     "MSTR": 1795607185.594512,
@@ -3399,7 +3399,7 @@
     "WMT": 1795607283.5424,
     "V": 1795607185.594512,
     "CAT": 1795607283.5424,
-    "FN": 1795606440.9328077,
+    "FN": 1795607945.2346528,
     "GLW": 1795607087.74781,
     "ANT": 1795607283.5424,
     "XAUUSD": 1795607283.5424,
@@ -3421,10 +3421,10 @@
   },
   "calendar_banner": {
     "level": "upcoming",
-    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 92 分钟（11-25 08:30 ET / 22:30 KST）",
+    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 91 分钟（11-25 08:30 ET / 22:30 KST）",
     "detail": "前值 0.3% ｜ 预期 0.3% ｜ 临近公布前15分钟将自动触发防插针预警",
     "event_name": "美国10月核心PCE物价指数环比",
-    "minutes_left": 92,
+    "minutes_left": 91,
     "opex_shield": {
       "date": "2026-11-25",
       "active": false,
