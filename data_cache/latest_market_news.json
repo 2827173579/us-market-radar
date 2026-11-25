@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795615482.14,
-  "updated_at_et": "11-25 09:04 ET",
-  "updated_at_kst": "23:04 KST",
+  "updated_at_ts": 1795615533.459,
+  "updated_at_et": "11-25 09:05 ET",
+  "updated_at_kst": "23:05 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -1160,6 +1160,13 @@
     ],
     "META": [
       {
+        "title": "Circus Enters the UK; Meta Launches CA-1 in London",
+        "url": "https://finance.yahoo.com/technology/ai/articles/circus-enters-uk-meta-launches-133400578.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 08:34 ET",
+        "pub_ts": 1795613640.0
+      },
+      {
         "title": "Meta Platforms (META) Expands Muse Shopping In The UK, Is The Stock Still A Bargain?",
         "url": "https://finance.yahoo.com/markets/stocks/articles/meta-platforms-meta-expands-muse-130832921.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1186,22 +1193,29 @@
         "source": "Yahoo Finance",
         "time": "11-25 06:56 ET",
         "pub_ts": 1795607779.0
-      },
-      {
-        "title": "Could Meta Be A Value Stock For Your Portfolio?",
-        "url": "https://www.trefis.com/stock/meta/articles/628778/could-meta-be-a-value-stock-for-your-portfolio/2026-11-25?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 06:45 ET",
-        "pub_ts": 1795607106.0
       }
     ],
     "GOOGL": [
+      {
+        "title": "Is Microsoft Stock Worth Owning as AI Capex Weighs on Free Cash Flow?",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/microsoft-stock-worth-owning-ai-124000486.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 07:40 ET",
+        "pub_ts": 1795610400.0
+      },
       {
         "title": "AI just solved something no human can understand",
         "url": "https://finance.yahoo.com/video/ai-just-solved-something-no-120000560.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-25 07:00 ET",
         "pub_ts": 1795608000.0
+      },
+      {
+        "title": "Data Center Americas 2027 Announces Industry Leaders from AWS, Google, Microsoft, Oracle, CoreWeave and Applied Digital as Featured Speakers",
+        "url": "https://finance.yahoo.com/technology/ai/articles/data-center-americas-2027-announces-140000391.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 09:00 ET",
+        "pub_ts": 1795615200.0
       },
       {
         "title": "Not SpaceX, Not Anthropic: These Are the 2 AI Stocks I Bought During the Sell-Off",
@@ -1216,23 +1230,23 @@
         "source": "Yahoo Finance",
         "time": "11-25 08:10 ET",
         "pub_ts": 1795612223.0
-      },
-      {
-        "title": "Alphabet vs Meta: which stock has the stronger AI position",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/alphabet-vs-meta-stock-stronger-130448764.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 08:04 ET",
-        "pub_ts": 1795611888.0
-      },
-      {
-        "title": "Alphabet Faces $146 Million in Lawsuits From Malaysian Regulator",
-        "url": "https://finance.yahoo.com/technology/articles/alphabet-faces-146-million-lawsuits-125728052.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 07:57 ET",
-        "pub_ts": 1795611448.0
       }
     ],
     "MSFT": [
+      {
+        "title": "Data Center Americas 2027 Announces Industry Leaders from AWS, Google, Microsoft, Oracle, CoreWeave and Applied Digital as Featured Speakers",
+        "url": "https://finance.yahoo.com/technology/ai/articles/data-center-americas-2027-announces-140000391.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 09:00 ET",
+        "pub_ts": 1795615200.0
+      },
+      {
+        "title": "Is Microsoft Stock Worth Owning as AI Capex Weighs on Free Cash Flow?",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/microsoft-stock-worth-owning-ai-124000486.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 07:40 ET",
+        "pub_ts": 1795610400.0
+      },
       {
         "title": "Microsoft Stock And 2 AI Software Leaders For Productivity Focused Investors",
         "url": "https://finance.yahoo.com/technology/ai/articles/microsoft-stock-2-ai-software-121419292.html?.tsrc=rss",
@@ -1253,20 +1267,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 06:43 ET",
         "pub_ts": 1795607017.0
-      },
-      {
-        "title": "iShares Expanded Tech-Software (IGV) Buys $15 Million More Palo Alto on Nov. 23",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/ishares-expanded-tech-software-igv-110551099.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 06:05 ET",
-        "pub_ts": 1795604751.0
-      },
-      {
-        "title": "State Street SPDR Portfolio S&P 500 (SPYM) Buys $14.2 Million More Apple on Monday",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/state-street-spdr-portfolio-p-110543019.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 06:05 ET",
-        "pub_ts": 1795604743.0
       }
     ],
     "AAPL": [
@@ -1308,11 +1308,11 @@
     ],
     "PLTR": [
       {
-        "title": "Anthropic falls below IPO price as Nvidia gives back gains",
-        "url": "https://finance.yahoo.com/video/anthropic-falls-below-ipo-price-as-nvidia-gives-back-gains-214558309.html?.tsrc=rss",
+        "title": "Palantir’s CEO Alex Karp Sold $75 Million. Co-Founder Peter Thiel Bought $122 Million",
+        "url": "https://247wallst.com/investing/2026/11/25/palantirs-ceo-alex-karp-sold-75-million-co-founder-peter-thiel-bought-122-million/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 16:45 ET",
-        "pub_ts": 1795556758.0
+        "time": "11-25 08:53 ET",
+        "pub_ts": 1795614827.0
       },
       {
         "title": "ETFs Are Net Sellers of Palantir (PLTR) on Monday",
@@ -1336,11 +1336,11 @@
         "pub_ts": 1795589222.0
       },
       {
-        "title": "Axon Enterprise vs. Palantir Technologies: Which Law Enforcement Stock Is a Better Buy for 2027?",
-        "url": "https://www.fool.com/coverage/better-buy/2026/11/24/axon-enterprise-vs-palantir-technologies-which-law-enforcement-stock-is-a-better-buy-for-2027/?.tsrc=rss",
+        "title": "Anthropic falls below IPO price as Nvidia gives back gains",
+        "url": "https://finance.yahoo.com/video/anthropic-falls-below-ipo-price-as-nvidia-gives-back-gains-214558309.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 15:20 ET",
-        "pub_ts": 1795551602.0
+        "time": "11-24 16:45 ET",
+        "pub_ts": 1795556758.0
       }
     ],
     "NOW": [
@@ -1419,6 +1419,13 @@
     ],
     "CRWV": [
       {
+        "title": "Data Center Americas 2027 Announces Industry Leaders from AWS, Google, Microsoft, Oracle, CoreWeave and Applied Digital as Featured Speakers",
+        "url": "https://finance.yahoo.com/technology/ai/articles/data-center-americas-2027-announces-140000391.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 09:00 ET",
+        "pub_ts": 1795615200.0
+      },
+      {
         "title": "The Bond Market Is Flashing a Warning on CoreWeave Stock",
         "url": "https://247wallst.com/investing/2026/11/25/the-bond-market-is-flashing-a-warning-on-coreweave-stock/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1445,13 +1452,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 06:26 ET",
         "pub_ts": 1795606005.0
-      },
-      {
-        "title": "“The Bank of NVIDIA” Is Back. Applied Digital Is the Real Winner",
-        "url": "https://www.tikr.com/blog/the-bank-of-nvidia-is-back-applied-digital-is-the-real-winner?ref=yahoofinance&tlnk=yf-261125-ppwv3gxj&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 06:20 ET",
-        "pub_ts": 1795605637.0
       }
     ],
     "NBIS": [
@@ -3317,34 +3317,34 @@
   "ticker_news_ts": {
     "KORU": 1795615133.0617716,
     "SOXL": 1795615133.0617716,
-    "SPY": 1795614012.619013,
+    "SPY": 1795615533.4587028,
     "DIA": 1795615133.0617716,
     "SOXX": 1795615133.0617716,
     "QQQ": 1795615133.0617716,
-    "SMH": 1795614012.619013,
+    "SMH": 1795615533.4587028,
     "IWM": 1795615133.0617716,
     "IGV": 1795615133.0617716,
     "TLT": 1795615133.0617716,
     "GLD": 1795615133.0617716,
     "SQQQ": 1795615133.0617716,
-    "TSM": 1795614012.619013,
+    "TSM": 1795615533.4587028,
     "VIXY": 1795615133.0617716,
     "SOXS": 1795615133.0617716,
     "NVDA": 1795615133.0617716,
     "AMD": 1795615133.0617716,
-    "ASML": 1795614012.619013,
-    "QCOM": 1795614012.619013,
+    "ASML": 1795615533.4587028,
+    "QCOM": 1795615533.4587028,
     "AVGO": 1795615133.0617716,
-    "AMAT": 1795614012.619013,
-    "META": 1795614012.619013,
-    "GOOGL": 1795614012.619013,
-    "MSFT": 1795614012.619013,
-    "AAPL": 1795614012.619013,
-    "PLTR": 1795614012.619013,
-    "NOW": 1795614012.619013,
-    "AMZN": 1795614012.619013,
-    "CRWV": 1795614012.619013,
-    "NBIS": 1795614012.619013,
+    "AMAT": 1795615533.4587028,
+    "META": 1795615533.4587028,
+    "GOOGL": 1795615533.4587028,
+    "MSFT": 1795615533.4587028,
+    "AAPL": 1795615533.4587028,
+    "PLTR": 1795615533.4587028,
+    "NOW": 1795615533.4587028,
+    "AMZN": 1795615533.4587028,
+    "CRWV": 1795615533.4587028,
+    "NBIS": 1795615533.4587028,
     "APLD": 1795614742.880808,
     "VST": 1795614742.880808,
     "BE": 1795614742.880808,
@@ -3355,7 +3355,7 @@
     "AAOI": 1795614742.880808,
     "SPCX": 1795614742.880808,
     "ASTS": 1795614742.880808,
-    "AXTI": 1795614012.619013,
+    "AXTI": 1795615533.4587028,
     "NASA": 1795614742.880808,
     "LUNR": 1795614742.880808,
     "TSLA": 1795614843.2812846,
@@ -3394,7 +3394,7 @@
     "GLW": 1795614742.880808,
     "ANT": 1795614946.8550723,
     "XAUUSD": 1795614946.8550723,
-    "KOSPI": 1795614012.619013
+    "KOSPI": 1795615533.4587028
   },
   "opex_shield": {
     "date": "2026-11-25",
