@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795629888.028,
-  "updated_at_et": "11-25 13:04 ET",
-  "updated_at_kst": "03:04 KST",
+  "updated_at_ts": 1795629930.556,
+  "updated_at_et": "11-25 13:05 ET",
+  "updated_at_kst": "03:05 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -43,6 +43,19 @@
     }
   ],
   "macro_flashes": [
+    {
+      "id": "20261126020421456800",
+      "title": "布伦特原油向上触及94美元/桶，日内涨3.21%。",
+      "summary": "布伦特原油向上触及94美元/桶，日内涨3.21%。",
+      "keywords": [
+        "原油"
+      ],
+      "pub_ts": 1795629861.0,
+      "time_et": "11-25 13:04 ET",
+      "time_bj": "02:04 BJ",
+      "time_kst": "03:04 KST",
+      "time_display": "13:04 ET / 02:04 BJ"
+    },
     {
       "id": "20261126015602738800",
       "title": "道指转涨，标普500指数跌幅收窄至0.8%，纳指跌幅收窄至1.6%。",
@@ -366,20 +379,6 @@
       "time_bj": "21:55 BJ",
       "time_kst": "22:55 KST",
       "time_display": "08:55 ET / 21:55 BJ"
-    },
-    {
-      "id": "20261125214834848800",
-      "title": "【美国初请失业金人数意外下降 劳动力市场仍显稳健】 11月25日讯，美国上周初请失业金人…",
-      "summary": "【美国初请失业金人数意外下降 劳动力市场仍显稳健】 11月25日讯，美国上周初请失业金人数降幅超过预期，显示劳动力市场状况保持稳定。美国劳工部周三公布的数据显示，截至11月21日当周，美国初请失业金人数经季节性调整后减少1.3万人，降至18.9万人。接经济学家预计为20万人。由于周四是感恩节假期，该报告提前一天发布。自7月中旬以来，初请失业金人数一直处于明显偏低水平。经济学家仍认为，美国劳动力市场处于一种“低招聘、低裁员”的充分就业状态。截至11月14日当周，续请失业金人数经季节性调整后大幅减少9.5万人，降至169.7万人。劳动力市场保持稳定，可能为美联储在12月加息之后继续加息扫清障碍。",
-      "keywords": [
-        "美联储",
-        "加息"
-      ],
-      "pub_ts": 1795614514.0,
-      "time_et": "11-25 08:48 ET",
-      "time_bj": "21:48 BJ",
-      "time_kst": "22:48 KST",
-      "time_display": "08:48 ET / 21:48 BJ"
     }
   ],
   "ticker_news": {
@@ -1606,6 +1605,13 @@
     ],
     "CRDO": [
       {
+        "title": "Credo Technology Crashed 27% Over a Month: This Wall Street Desk Now Expects 190% Returns",
+        "url": "https://247wallst.com/investing/2026/11/25/credo-technology-crashed-27-over-a-month-this-wall-street-desk-now-expects-190-returns/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 12:45 ET",
+        "pub_ts": 1795628759.0
+      },
+      {
         "title": "Nvidia Sinks 9% as Huang Rally Fades: Stephanie Link Sees “A Cloud Over It”",
         "url": "https://www.tikr.com/blog/nvidia-sinks-9-as-huang-rally-fades-stephanie-link-sees-a-cloud-over-it?ref=yahoofinance&tlnk=yf-261125-q8ch658v&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1632,13 +1638,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 06:07 ET",
         "pub_ts": 1795604835.0
-      },
-      {
-        "title": "From Smiling to Selling: Why Credo Technology (CRDO) is Getting Hammered",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/smiling-selling-why-credo-technology-052446524.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 00:24 ET",
-        "pub_ts": 1795584286.0
       }
     ],
     "COHR": [
@@ -1798,32 +1797,32 @@
         "pub_ts": 1795621319.0
       },
       {
+        "title": "SpaceX wins landmark FCC backing for 1 million-satellite data center constellation",
+        "url": "https://finance.yahoo.com/technology/ai/articles/spacex-wins-landmark-fcc-backing-175942978.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 12:59 ET",
+        "pub_ts": 1795629582.0
+      },
+      {
+        "title": "FCC Approves SpaceX’s Application To Deploy 1M Satellites – Musk Says ‘It Will Be A Great Asset To America And The World’",
+        "url": "https://stocktwits.com/news-articles/markets/equity/fcc-approves-spacex-application-to-deploy-million-satellites-musk-says-great-asset-to-america-and-world/cNbHVVBR9mt?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 12:49 ET",
+        "pub_ts": 1795628996.0
+      },
+      {
+        "title": "The Rich Got Into SpaceX Early. Brian Armstrong Wants to Change That",
+        "url": "https://www.benzinga.com/trading-ideas/long-ideas/26/11/63643086/brian-armstrong-private-market-access?utm_source=yahooFinance&utm_campaign=partner_feed&utm_medium=referral&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 12:49 ET",
+        "pub_ts": 1795628959.0
+      },
+      {
         "title": "SpaceX Wins First-Ever U.S. Approval for Orbital AI Data Centers",
         "url": "https://www.cryptoprowl.com/releases/spacex-wins-first-ever-us-approval-for-orbital-ai-data-centers-8074?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-25 12:31 ET",
         "pub_ts": 1795627860.0
-      },
-      {
-        "title": "Anthropic Vs. SpaceX: Both Fell Below IPO Price, But Only One Sees Valuation Below $1 Trillion",
-        "url": "https://stocktwits.com/news-articles/markets/equity/anthropic-vs-space-x-both-fell-below-ipo-price-but-only-one-sees-valuation-below-1-trillion/cNbHNrsR9mq?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 12:17 ET",
-        "pub_ts": 1795627022.0
-      },
-      {
-        "title": "The Largest IPO in Stock Market History Is Here. What It Means for Your Portfolio",
-        "url": "https://www.fool.com/investing/2026/11/25/the-largest-ipo-in-stock-market-history-is-here-what-it-means-for-your-portfolio/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 12:03 ET",
-        "pub_ts": 1795626182.0
-      },
-      {
-        "title": "Why SpaceX Stock Keeps Going Down",
-        "url": "https://www.fool.com/investing/2026/11/25/why-spacex-stock-keeps-going-down/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 11:23 ET",
-        "pub_ts": 1795623839.0
       }
     ],
     "ASTS": [
@@ -2013,6 +2012,13 @@
     ],
     "AXP": [
       {
+        "title": "Tariffs are back as Anthropic sinks further below its IPO price",
+        "url": "https://finance.yahoo.com/video/tariffs-are-back-as-anthropic-sinks-further-below-its-ipo-price-160524926.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 11:05 ET",
+        "pub_ts": 1795622724.0
+      },
+      {
         "title": "Black Friday shopping: Check this credit card perk first",
         "url": "https://finance.yahoo.com/personal-finance/credit-cards/article/black-friday-shopping-check-this-credit-card-perk-first-195924850.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2039,13 +2045,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 06:48 ET",
         "pub_ts": 1795520917.0
-      },
-      {
-        "title": "Berkshire Hathaway Owns 22.6% of American Express. Is the Stock a Buy, Sell, or Hold After a 17% Drop in 2026?",
-        "url": "https://www.fool.com/investing/2026/11/23/berkshire-hathaway-owns-22-6-of-american-express-is-the-stock-a-buy-sell-or-hold-after-a-17-drop-in-2026/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 10:05 ET",
-        "pub_ts": 1795446302.0
       }
     ],
     "RKLB": [
@@ -2161,6 +2160,20 @@
     ],
     "INTC": [
       {
+        "title": "Tariffs are back as Anthropic sinks further below its IPO price",
+        "url": "https://finance.yahoo.com/video/tariffs-are-back-as-anthropic-sinks-further-below-its-ipo-price-160524926.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 11:05 ET",
+        "pub_ts": 1795622724.0
+      },
+      {
+        "title": "Intel Stocks Drop 7.47% as GuruFocus Flags 48.7% Premium to GF Value",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/intel-stocks-drop-7-47-174206192.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 12:42 ET",
+        "pub_ts": 1795628526.0
+      },
+      {
         "title": "Nvidia’s Biggest Advantage Could Become Its Biggest Weakness, Says Former Intel AI Chief",
         "url": "https://www.benzinga.com/markets/prediction-markets/26/11/63635370/nvidia-ai-chip-advantage-rao?utm_source=yahooFinance&utm_campaign=partner_feed&utm_medium=referral&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2180,20 +2193,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 10:25 ET",
         "pub_ts": 1795620300.0
-      },
-      {
-        "title": "NVIDIA Tumbles 9% as Jensen Huang Rally Fades and Michael Burry Eyes a Fresh Short Near $200; AMD Plunges 10%, Intel Falls 8%",
-        "url": "https://247wallst.com/investing/2026/11/25/nvidia-tumbles-9-as-jensen-huang-rally-fades-and-michael-burry-eyes-a-fresh-short-near-200-amd-plunges-10-intel-falls-8/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 09:56 ET",
-        "pub_ts": 1795618610.0
-      },
-      {
-        "title": "Trump Floats an Intel-Style Nvidia Stake. 10% Would Cost the Government $375 Billion",
-        "url": "https://247wallst.com/investing/2026/11/25/trump-floats-an-intel-style-nvidia-stake-10-would-cost-the-government-375-billion/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 09:28 ET",
-        "pub_ts": 1795616933.0
       }
     ],
     "VRT": [
@@ -3347,25 +3346,25 @@
     "AMZN": 1795629259.1969395,
     "CRWV": 1795629259.1969395,
     "NBIS": 1795629259.1969395,
-    "APLD": 1795628415.373435,
-    "VST": 1795628415.373435,
-    "BE": 1795628415.373435,
-    "CRDO": 1795628415.373435,
-    "COHR": 1795628415.373435,
+    "APLD": 1795629930.5559459,
+    "VST": 1795629930.5559459,
+    "BE": 1795629930.5559459,
+    "CRDO": 1795629930.5559459,
+    "COHR": 1795629930.5559459,
     "MRVL": 1795629307.924548,
     "LITE": 1795629307.924548,
-    "AAOI": 1795628415.373435,
-    "SPCX": 1795628415.373435,
-    "ASTS": 1795628415.373435,
+    "AAOI": 1795629930.5559459,
+    "SPCX": 1795629930.5559459,
+    "ASTS": 1795629930.5559459,
     "AXTI": 1795629259.1969395,
-    "NASA": 1795628415.373435,
-    "LUNR": 1795628415.373435,
+    "NASA": 1795629930.5559459,
+    "LUNR": 1795629930.5559459,
     "TSLA": 1795628546.382737,
-    "AXP": 1795628415.373435,
-    "RKLB": 1795628415.373435,
-    "KO": 1795628415.373435,
-    "FLY": 1795628415.373435,
-    "INTC": 1795628415.373435,
+    "AXP": 1795629930.5559459,
+    "RKLB": 1795629930.5559459,
+    "KO": 1795629930.5559459,
+    "FLY": 1795629930.5559459,
+    "INTC": 1795629930.5559459,
     "VRT": 1795628546.382737,
     "HPE": 1795628546.382737,
     "DELL": 1795628546.382737,
@@ -3393,7 +3392,7 @@
     "V": 1795628546.382737,
     "CAT": 1795628641.1777718,
     "FN": 1795629307.924548,
-    "GLW": 1795628415.373435,
+    "GLW": 1795629930.5559459,
     "ANT": 1795628641.1777718,
     "XAUUSD": 1795628641.1777718,
     "KOSPI": 1795629259.1969395
