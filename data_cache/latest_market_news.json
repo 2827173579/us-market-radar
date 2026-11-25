@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795587367.01,
-  "updated_at_et": "11-25 01:16 ET",
-  "updated_at_kst": "15:16 KST",
+  "updated_at_ts": 1795587476.834,
+  "updated_at_et": "11-25 01:17 ET",
+  "updated_at_kst": "15:17 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -17,7 +17,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 434,
+      "minutes_left": 433,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -36,7 +36,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 434,
+      "minutes_left": 433,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -3001,11 +3001,11 @@
         "pub_ts": 1795517116.0
       },
       {
-        "title": "ExxonMobil's $4B Kizomba Redevelopment: Can It Drive Earnings Growth?",
-        "url": "https://finance.yahoo.com/energy/articles/exxonmobils-4b-kizomba-redevelopment-drive-162400004.html?.tsrc=rss",
+        "title": "Oil Market Midweek Wrap: Brent Holds Near $90 Despite Iran Tensions – OPEC Meeting, ConocoPhillips Sale In Focus",
+        "url": "https://stocktwits.com/news-articles/markets/equity/oil-market-midweek-wrap-brent-holds-near-90-despite-iran-tensions-opec-meeting-conoco-phillips-sale-in-focus/cNbH5X8R9lK?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 11:24 ET",
-        "pub_ts": 1795451040.0
+        "time": "11-25 00:48 ET",
+        "pub_ts": 1795585705.0
       },
       {
         "title": "3 Non-AI Stocks to Buy for Long-Term Dividends and Stability",
@@ -3391,16 +3391,16 @@
     "MRNA": 1795587367.009787,
     "NKE": 1795587367.009787,
     "MCD": 1795587367.009787,
-    "PEP": 1795585965.279007,
-    "XOM": 1795585965.279007,
-    "JPM": 1795585965.279007,
-    "WMT": 1795585965.279007,
+    "PEP": 1795587476.834227,
+    "XOM": 1795587476.834227,
+    "JPM": 1795587476.834227,
+    "WMT": 1795587476.834227,
     "V": 1795587367.009787,
-    "CAT": 1795585965.279007,
+    "CAT": 1795587476.834227,
     "FN": 1795586508.459296,
     "GLW": 1795587255.251863,
-    "ANT": 1795585965.279007,
-    "XAUUSD": 1795585965.279007,
+    "ANT": 1795587476.834227,
+    "XAUUSD": 1795587476.834227,
     "KOSPI": 1795586508.459296
   },
   "opex_shield": {
@@ -3419,10 +3419,10 @@
   },
   "calendar_banner": {
     "level": "upcoming",
-    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 434 分钟（11-25 08:30 ET / 22:30 KST）",
+    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 433 分钟（11-25 08:30 ET / 22:30 KST）",
     "detail": "前值 0.3% ｜ 预期 0.3% ｜ 临近公布前15分钟将自动触发防插针预警",
     "event_name": "美国10月核心PCE物价指数环比",
-    "minutes_left": 434,
+    "minutes_left": 433,
     "opex_shield": {
       "date": "2026-11-25",
       "active": false,
