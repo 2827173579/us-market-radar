@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795589104.798,
-  "updated_at_et": "11-25 01:45 ET",
-  "updated_at_kst": "15:45 KST",
+  "updated_at_ts": 1795589208.546,
+  "updated_at_et": "11-25 01:46 ET",
+  "updated_at_kst": "15:46 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -17,7 +17,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 405,
+      "minutes_left": 404,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -36,7 +36,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 405,
+      "minutes_left": 404,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -952,6 +952,13 @@
         "pub_ts": 1795586777.0
       },
       {
+        "title": "‘Not All Of It Was Forthcoming’: Singapore PM Lawrence Wong Knocks US Cooperation In Nvidia Megaspeed Chip Probe",
+        "url": "https://finance.yahoo.com/technology/articles/not-forthcoming-singapore-pm-lawrence-052954958.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 00:29 ET",
+        "pub_ts": 1795584594.0
+      },
+      {
         "title": "Donald Trump Floats Jensen Huang Pardon, US Stake In Nvidia – But NVDA Loses Momentum",
         "url": "https://stocktwits.com/news-articles/markets/equity/donald-trump-floats-jensen-huang-pardon-us-stake-in-nvidia-but-nvda-loses-momentum/cNbHPnyR9lL?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -971,13 +978,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 23:57 ET",
         "pub_ts": 1795582622.0
-      },
-      {
-        "title": "COHR Stock Swings After Nvidia-Led AI Rally: $15M Insider Buy Draws Attention",
-        "url": "https://stocktwits.com/news-articles/markets/equity/cohr-stock-swings-after-nvidia-led-ai-rally-15-m-insider-buy-draws-attention/cNbHcl8R9lg?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 23:40 ET",
-        "pub_ts": 1795581637.0
       }
     ],
     "AMD": [
@@ -3322,26 +3322,26 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795587693.7761493,
-    "SOXL": 1795587693.7761493,
+    "KORU": 1795589208.5455883,
+    "SOXL": 1795589208.5455883,
     "SPY": 1795588020.181777,
-    "DIA": 1795587693.7761493,
-    "SOXX": 1795587693.7761493,
-    "QQQ": 1795587693.7761493,
+    "DIA": 1795589208.5455883,
+    "SOXX": 1795589208.5455883,
+    "QQQ": 1795589208.5455883,
     "SMH": 1795588020.181777,
-    "IWM": 1795587693.7761493,
-    "IGV": 1795587693.7761493,
-    "TLT": 1795587693.7761493,
-    "GLD": 1795587693.7761493,
-    "SQQQ": 1795587693.7761493,
+    "IWM": 1795589208.5455883,
+    "IGV": 1795589208.5455883,
+    "TLT": 1795589208.5455883,
+    "GLD": 1795589208.5455883,
+    "SQQQ": 1795589208.5455883,
     "TSM": 1795588020.181777,
-    "VIXY": 1795587693.7761493,
-    "SOXS": 1795587693.7761493,
-    "NVDA": 1795587693.7761493,
-    "AMD": 1795587693.7761493,
+    "VIXY": 1795589208.5455883,
+    "SOXS": 1795589208.5455883,
+    "NVDA": 1795589208.5455883,
+    "AMD": 1795589208.5455883,
     "ASML": 1795588020.181777,
     "QCOM": 1795588020.181777,
-    "AVGO": 1795587693.7761493,
+    "AVGO": 1795589208.5455883,
     "AMAT": 1795588020.181777,
     "META": 1795588020.181777,
     "GOOGL": 1795588020.181777,
@@ -3419,10 +3419,10 @@
   },
   "calendar_banner": {
     "level": "upcoming",
-    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 405 分钟（11-25 08:30 ET / 22:30 KST）",
+    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 404 分钟（11-25 08:30 ET / 22:30 KST）",
     "detail": "前值 0.3% ｜ 预期 0.3% ｜ 临近公布前15分钟将自动触发防插针预警",
     "event_name": "美国10月核心PCE物价指数环比",
-    "minutes_left": 405,
+    "minutes_left": 404,
     "opex_shield": {
       "date": "2026-11-25",
       "active": false,
