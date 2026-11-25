@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795581326.665,
-  "updated_at_et": "11-24 23:35 ET",
-  "updated_at_kst": "13:35 KST",
+  "updated_at_ts": 1795581435.674,
+  "updated_at_et": "11-24 23:37 ET",
+  "updated_at_kst": "13:37 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -911,6 +911,20 @@
     ],
     "NVDA": [
       {
+        "title": "Jim Cramer resets Nvidia stock target as Jensen Huang returns as CEO",
+        "url": "https://www.thestreet.com/investing/stocks/jim-cramer-nvidia-stock-target-jensen-huang?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 23:33 ET",
+        "pub_ts": 1795581180.0
+      },
+      {
+        "title": "Le Monde details suspected Nvidia chip diversion network through Southeast Asia",
+        "url": "https://finance.yahoo.com/technology/ai/articles/le-monde-details-suspected-nvidia-042239633.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 23:22 ET",
+        "pub_ts": 1795580559.0
+      },
+      {
         "title": "Asian stocks mostly decline as AI shares fall following a retreat on Wall Street",
         "url": "https://finance.yahoo.com/markets/stocks/articles/asian-stocks-mostly-decline-ai-040526833.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -930,20 +944,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 22:53 ET",
         "pub_ts": 1795578780.0
-      },
-      {
-        "title": "South Korea's chipmakers rally on Huang's return",
-        "url": "http://www.intellinews.com/south-korea-s-chipmakers-rally-on-huang-s-return-488025/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 22:21 ET",
-        "pub_ts": 1795576883.0
-      },
-      {
-        "title": "Dow, S&P 500, Nasdaq Futures Edge Lower Amid Tech Selloff Ahead Of Key Inflation Data: DELL, AMBA, SOXL, MSTR In Focus",
-        "url": "https://stocktwits.com/news-articles/markets/equity/dow-s-and-p-500-nasdaq-futures-edge-lower-amid-tech-selloff-ahead-of-key-inflation-data-dell-amba-soxl-mstr-in-focus/cNbHbLoR9lJ?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 22:20 ET",
-        "pub_ts": 1795576810.0
       }
     ],
     "AMD": [
@@ -3288,26 +3288,26 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795579864.5159607,
-    "SOXL": 1795579864.5159607,
+    "KORU": 1795581435.673521,
+    "SOXL": 1795581435.673521,
     "SPY": 1795580166.1730182,
-    "DIA": 1795579864.5159607,
-    "SOXX": 1795579864.5159607,
-    "QQQ": 1795579864.5159607,
+    "DIA": 1795581435.673521,
+    "SOXX": 1795581435.673521,
+    "QQQ": 1795581435.673521,
     "SMH": 1795580166.1730182,
-    "IWM": 1795579864.5159607,
-    "IGV": 1795579864.5159607,
-    "TLT": 1795579864.5159607,
-    "GLD": 1795579864.5159607,
-    "SQQQ": 1795579864.5159607,
+    "IWM": 1795581435.673521,
+    "IGV": 1795581435.673521,
+    "TLT": 1795581435.673521,
+    "GLD": 1795581435.673521,
+    "SQQQ": 1795581435.673521,
     "TSM": 1795580166.1730182,
-    "VIXY": 1795579864.5159607,
-    "SOXS": 1795579864.5159607,
-    "NVDA": 1795579864.5159607,
-    "AMD": 1795579864.5159607,
+    "VIXY": 1795581435.673521,
+    "SOXS": 1795581435.673521,
+    "NVDA": 1795581435.673521,
+    "AMD": 1795581435.673521,
     "ASML": 1795580166.1730182,
     "QCOM": 1795580166.1730182,
-    "AVGO": 1795579864.5159607,
+    "AVGO": 1795581435.673521,
     "AMAT": 1795580166.1730182,
     "META": 1795580166.1730182,
     "GOOGL": 1795580166.1730182,
