@@ -1,5 +1,5 @@
 {
-  "updated_at_ts": 1795637836.866,
+  "updated_at_ts": 1795637873.996,
   "updated_at_et": "11-25 15:17 ET",
   "updated_at_kst": "05:17 KST",
   "macro_calendar": [
@@ -934,6 +934,13 @@
     ],
     "NVDA": [
       {
+        "title": "Mysterious traders made $340,000 betting on Huang’s Nvidia return",
+        "url": "https://www.thestreet.com/crypto/markets/mysterious-traders-made-340000-betting-on-huangs-nvidia-return?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 15:00 ET",
+        "pub_ts": 1795636800.0
+      },
+      {
         "title": "Nvidia to Pay $290 Million to Settle Long-Running Crypto Mining Revenue Lawsuit",
         "url": "https://decrypt.co/383994/nvidia-290-million-settle-crypto-mining-disclosure-lawsuit?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -960,13 +967,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 14:20 ET",
         "pub_ts": 1795634400.0
-      },
-      {
-        "title": "Michael Burry Loads Up on 3 Chinese Stocks; Sticks to Nvidia Bearish Bet",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/michael-burry-loads-3-chinese-191345318.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 14:13 ET",
-        "pub_ts": 1795634025.0
       }
     ],
     "AMD": [
@@ -3311,26 +3311,26 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795636356.8042452,
-    "SOXL": 1795636356.8042452,
+    "KORU": 1795637873.9957895,
+    "SOXL": 1795637873.9957895,
     "SPY": 1795636815.7730534,
-    "DIA": 1795636356.8042452,
-    "SOXX": 1795636356.8042452,
-    "QQQ": 1795636356.8042452,
+    "DIA": 1795637873.9957895,
+    "SOXX": 1795637873.9957895,
+    "QQQ": 1795637873.9957895,
     "SMH": 1795636815.7730534,
-    "IWM": 1795636356.8042452,
-    "IGV": 1795636356.8042452,
-    "TLT": 1795636356.8042452,
-    "GLD": 1795636356.8042452,
-    "SQQQ": 1795636356.8042452,
+    "IWM": 1795637873.9957895,
+    "IGV": 1795637873.9957895,
+    "TLT": 1795637873.9957895,
+    "GLD": 1795637873.9957895,
+    "SQQQ": 1795637873.9957895,
     "TSM": 1795636815.7730534,
-    "VIXY": 1795636356.8042452,
-    "SOXS": 1795636356.8042452,
-    "NVDA": 1795636356.8042452,
-    "AMD": 1795636356.8042452,
+    "VIXY": 1795637873.9957895,
+    "SOXS": 1795637873.9957895,
+    "NVDA": 1795637873.9957895,
+    "AMD": 1795637873.9957895,
     "ASML": 1795636815.7730534,
     "QCOM": 1795636815.7730534,
-    "AVGO": 1795636356.8042452,
+    "AVGO": 1795637873.9957895,
     "AMAT": 1795636815.7730534,
     "META": 1795636815.7730534,
     "GOOGL": 1795636815.7730534,
