@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795615587.389,
-  "updated_at_et": "11-25 09:06 ET",
-  "updated_at_kst": "23:06 KST",
+  "updated_at_ts": 1795615636.925,
+  "updated_at_et": "11-25 09:07 ET",
+  "updated_at_kst": "23:07 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -2499,13 +2499,6 @@
         "pub_ts": 1795472704.0
       },
       {
-        "title": "NVIDIA Stock Plunges 46%: Why WDC Could Be a Better Buy for 2027",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/nvidia-stock-plunges-46-why-190000303.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 14:00 ET",
-        "pub_ts": 1795460400.0
-      },
-      {
         "title": "Prediction: Seagate’s Record Profitability Could Be Just the Beginning, 27% Upside Ahead",
         "url": "https://247wallst.com/investing/2026/11/25/prediction-seagates-record-profitability-could-be-just-the-beginning-27-upside-ahead/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2525,6 +2518,13 @@
         "source": "Yahoo Finance",
         "time": "11-23 17:16 ET",
         "pub_ts": 1795472162.0
+      },
+      {
+        "title": "112% Upside for Seagate? Rosenblatt Thinks So, and Here’s How",
+        "url": "https://www.tikr.com/blog/112-upside-for-seagate-rosenblatt-thinks-so-and-heres-how?ref=yahoofinance&tlnk=yf-261123-pfm45wp8&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 14:40 ET",
+        "pub_ts": 1795462818.0
       }
     ],
     "STX": [
@@ -2640,11 +2640,11 @@
     ],
     "BTC-USD": [
       {
-        "title": "Stock Market Today: Dow Dives Ahead Of Fed Inflation Data; Nvidia, Anthropic Plunge (Live Coverage)",
+        "title": "Stock Market Today: Dow Dives On Surprise Inflation Data; Nvidia, Anthropic Plunge (Live Coverage)",
         "url": "https://finance.yahoo.com/m/90407e46-3b17-34e8-8c82-527bf00b63e4/stock-market-today%3A-dow-dives.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-25 08:14 ET",
-        "pub_ts": 1795612444.0
+        "time": "11-25 08:54 ET",
+        "pub_ts": 1795614871.0
       },
       {
         "title": "Cathie Wood's ARK Buys Anthropic as Ripple CEO Predicts Post-IPO Crypto Rally",
@@ -2652,6 +2652,13 @@
         "source": "Yahoo Finance",
         "time": "11-25 08:02 ET",
         "pub_ts": 1795611735.0
+      },
+      {
+        "title": "Bitcoin Is on Track for Its Second-Worst Q4 Ever, and One Signal Points to 2027",
+        "url": "https://beincrypto.com/bitcoin-worst-q4-returns-2027-outlook/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 08:00 ET",
+        "pub_ts": 1795611600.0
       },
       {
         "title": "Bitcoin Slips Below $59K Ahead Of PCE Report, Heads For Worst Month Since July 2022",
@@ -2666,13 +2673,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 06:39 ET",
         "pub_ts": 1795606766.0
-      },
-      {
-        "title": "Kraken’s Krak Moves Into Credit With Two US Cards, One Backed by a USDC Deposit",
-        "url": "https://unchainedcrypto.com/krakens-krak-moves-into-credit-with-two-us-cards-one-backed-by-a-usdc-deposit/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 06:30 ET",
-        "pub_ts": 1795606236.0
       }
     ],
     "CRWD": [
@@ -3372,11 +3372,11 @@
     "FPS": 1795614843.2812846,
     "MU": 1795615587.3890493,
     "SKHY": 1795615587.3890493,
-    "WDC": 1795614112.228556,
+    "WDC": 1795615636.925272,
     "STX": 1795614895.7600193,
     "MSTR": 1795614843.2812846,
     "SNDK": 1795614843.2812846,
-    "BTC-USD": 1795614112.228556,
+    "BTC-USD": 1795615636.925272,
     "CRWD": 1795614843.2812846,
     "ORCL": 1795614843.2812846,
     "COIN": 1795614843.2812846,
