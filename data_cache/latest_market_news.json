@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795642909.75,
-  "updated_at_et": "11-25 16:41 ET",
-  "updated_at_kst": "06:41 KST",
+  "updated_at_ts": 1795642953.775,
+  "updated_at_et": "11-25 16:42 ET",
+  "updated_at_kst": "06:42 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -2417,6 +2417,13 @@
     ],
     "MU": [
       {
+        "title": "Chips and iPhones Are Safe From New Tariffs. Here’s What Isn’t.",
+        "url": "https://finance.yahoo.com/m/fed0ba1a-1835-3234-b475-4ad6bcc3e25d/chips-and-iphones-are-safe.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 15:47 ET",
+        "pub_ts": 1795639620.0
+      },
+      {
         "title": "David Tepper Sold All of His AMD Stock. His Biggest Position Is Micron.",
         "url": "https://www.fool.com/investing/2026/11/25/david-tepper-sold-all-of-his-amd-stock-his-biggest-position-is-micron/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2443,16 +2450,23 @@
         "source": "Yahoo Finance",
         "time": "11-25 12:35 ET",
         "pub_ts": 1795628144.0
-      },
-      {
-        "title": "Why Micron Technology Stock is Plunging Today",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/why-micron-technology-stock-plunging-171705917.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 12:17 ET",
-        "pub_ts": 1795627025.0
       }
     ],
     "SKHY": [
+      {
+        "title": "SK hynix (KOSE:A000660) AI Memory Narrative Puts Valuation Back In Focus",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/sk-hynix-kose-a000660-ai-211453290.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 16:14 ET",
+        "pub_ts": 1795641293.0
+      },
+      {
+        "title": "SK Hynix Stock (SKHY) Is Cheap Even After Factoring In a Brutal Memory Downturn",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/sk-hynix-stock-skhy-cheap-211200806.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 16:12 ET",
+        "pub_ts": 1795641120.0
+      },
       {
         "title": "SK hynix Falls 5%, Sandisk Down 10% as Asian Chip Stocks Give Back the Huang Rally",
         "url": "https://www.tikr.com/blog/sk-hynix-falls-5-sandisk-down-10-as-asian-chip-stocks-give-back-the-huang-rally?ref=yahoofinance&tlnk=yf-261125-7hm5f9h6&.tsrc=rss",
@@ -2473,20 +2487,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 11:17 ET",
         "pub_ts": 1795623420.0
-      },
-      {
-        "title": "SK Hynix Sheds 20% in 30 Days: Two Wall Street Pros Agree That 260% Gains Are Coming",
-        "url": "https://247wallst.com/investing/2026/11/25/sk-hynix-sheds-20-in-30-days-two-wall-street-pros-agree-that-260-gains-are-coming/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 08:45 ET",
-        "pub_ts": 1795614313.0
-      },
-      {
-        "title": "Huang Boost Fades Quickly as AI Fears Sink TSMC, SK Hynix Shares",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/huang-boost-fades-quickly-ai-040320019.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 23:03 ET",
-        "pub_ts": 1795579400.0
       }
     ],
     "WDC": [
@@ -3349,8 +3349,8 @@
     "BE": 1795642049.6085851,
     "CRDO": 1795642049.6085851,
     "COHR": 1795642049.6085851,
-    "MRVL": 1795641436.9650028,
-    "LITE": 1795641436.9650028,
+    "MRVL": 1795642953.7751355,
+    "LITE": 1795642953.7751355,
     "AAOI": 1795642049.6085851,
     "SPCX": 1795642049.6085851,
     "ASTS": 1795642049.6085851,
@@ -3369,8 +3369,8 @@
     "OKLO": 1795642208.0074985,
     "CEG": 1795642208.0074985,
     "FPS": 1795642208.0074985,
-    "MU": 1795641436.9650028,
-    "SKHY": 1795641436.9650028,
+    "MU": 1795642953.7751355,
+    "SKHY": 1795642953.7751355,
     "WDC": 1795641477.1200922,
     "STX": 1795642262.011542,
     "MSTR": 1795642208.0074985,
@@ -3389,7 +3389,7 @@
     "WMT": 1795642302.7158566,
     "V": 1795642208.0074985,
     "CAT": 1795642302.7158566,
-    "FN": 1795641436.9650028,
+    "FN": 1795642953.7751355,
     "GLW": 1795642049.6085851,
     "ANT": 1795642302.7158566,
     "XAUUSD": 1795642302.7158566,
