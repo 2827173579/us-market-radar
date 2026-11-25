@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795571886.129,
-  "updated_at_et": "11-24 20:58 ET",
-  "updated_at_kst": "10:58 KST",
+  "updated_at_ts": 1795571987.949,
+  "updated_at_et": "11-24 20:59 ET",
+  "updated_at_kst": "10:59 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -920,8 +920,22 @@
         "title": "Dow Jones Futures Fall After AI Stocks Tumble; Trump Says 'Not Too Late' For Nvidia Stake",
         "url": "https://finance.yahoo.com/m/d96603c1-fe7f-3bf3-8158-0728b464d469/dow-jones-futures-fall-after.html?.tsrc=rss",
         "source": "Yahoo Finance",
+        "time": "11-24 20:49 ET",
+        "pub_ts": 1795571375.0
+      },
+      {
+        "title": "Wall St futures fall after S&P 500, Nasdaq end lower; inflation data eyed",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/wall-st-futures-fall-p-014227385.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 20:42 ET",
+        "pub_ts": 1795570947.0
+      },
+      {
+        "title": "Why Nvidia's rebound may not mean the S&P 500 has bottomed",
+        "url": "https://www.thestreet.com/investing/why-nvidias-rebound-may-not-mean-the-sp-500-has-bottomed?.tsrc=rss",
+        "source": "Yahoo Finance",
         "time": "11-24 20:23 ET",
-        "pub_ts": 1795569785.0
+        "pub_ts": 1795569790.0
       },
       {
         "title": "Trump Says Inflation Could Help Pay Down the National Debt. Here's What That Means for Your Retirement Savings",
@@ -936,20 +950,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 19:58 ET",
         "pub_ts": 1795568308.0
-      },
-      {
-        "title": "Nvidia Is Down 31% From Its Peak. History Says This Happens Next",
-        "url": "https://www.fool.com/investing/2026/11/24/nvidia-is-down-31-from-its-peak-history-says-this-happens-next/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 19:46 ET",
-        "pub_ts": 1795567562.0
-      },
-      {
-        "title": "Most Stocks Are Losers. Here's How You Can Still Win",
-        "url": "https://www.fool.com/investing/2026/11/24/most-stocks-are-losers-here-is-how-you-can-still-win/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 19:41 ET",
-        "pub_ts": 1795567300.0
       }
     ],
     "AMD": [
@@ -3294,26 +3294,26 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795570468.8745978,
-    "SOXL": 1795570468.8745978,
+    "KORU": 1795571987.9485798,
+    "SOXL": 1795571987.9485798,
     "SPY": 1795570868.5806794,
-    "DIA": 1795570468.8745978,
-    "SOXX": 1795570468.8745978,
-    "QQQ": 1795570468.8745978,
+    "DIA": 1795571987.9485798,
+    "SOXX": 1795571987.9485798,
+    "QQQ": 1795571987.9485798,
     "SMH": 1795570868.5806794,
-    "IWM": 1795570468.8745978,
-    "IGV": 1795570468.8745978,
-    "TLT": 1795570468.8745978,
-    "GLD": 1795570468.8745978,
-    "SQQQ": 1795570468.8745978,
+    "IWM": 1795571987.9485798,
+    "IGV": 1795571987.9485798,
+    "TLT": 1795571987.9485798,
+    "GLD": 1795571987.9485798,
+    "SQQQ": 1795571987.9485798,
     "TSM": 1795570868.5806794,
-    "VIXY": 1795570468.8745978,
-    "SOXS": 1795570468.8745978,
-    "NVDA": 1795570468.8745978,
-    "AMD": 1795570468.8745978,
+    "VIXY": 1795571987.9485798,
+    "SOXS": 1795571987.9485798,
+    "NVDA": 1795571987.9485798,
+    "AMD": 1795571987.9485798,
     "ASML": 1795570868.5806794,
     "QCOM": 1795570868.5806794,
-    "AVGO": 1795570468.8745978,
+    "AVGO": 1795571987.9485798,
     "AMAT": 1795570868.5806794,
     "META": 1795570868.5806794,
     "GOOGL": 1795570868.5806794,
