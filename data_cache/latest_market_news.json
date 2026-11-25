@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795633846.986,
-  "updated_at_et": "11-25 14:10 ET",
-  "updated_at_kst": "04:10 KST",
+  "updated_at_ts": 1795633885.949,
+  "updated_at_et": "11-25 14:11 ET",
+  "updated_at_kst": "04:11 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -2636,6 +2636,13 @@
     ],
     "BTC-USD": [
       {
+        "title": "Sector Update: Financial Stocks Rise in Afternoon Trading",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/sector-financial-stocks-rise-afternoon-185859010.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 13:58 ET",
+        "pub_ts": 1795633139.0
+      },
+      {
         "title": "Franklin Templeton Adds Hyperliquid's HYPE to Its Crypto Index ETF",
         "url": "https://www.cryptoprowl.com/releases/franklin-templeton-adds-hyperliquids-hype-to-its-crypto-index-etf-8076?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2662,13 +2669,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 12:58 ET",
         "pub_ts": 1795629512.0
-      },
-      {
-        "title": "Bitcoin Falls Toward $57,000 as Hotter Inflation and Tariff Worries Sink Stocks",
-        "url": "https://www.cryptoprowl.com/releases/bitcoin-falls-toward-57000-as-hotter-inflation-and-tariff-worries-sink-stocks-8075?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 12:54 ET",
-        "pub_ts": 1795629240.0
       }
     ],
     "CRWD": [
@@ -3368,11 +3368,11 @@
     "FPS": 1795633115.0020323,
     "MU": 1795633846.985571,
     "SKHY": 1795633846.985571,
-    "WDC": 1795632374.1718824,
+    "WDC": 1795633885.9491684,
     "STX": 1795633156.2260313,
     "MSTR": 1795633115.0020323,
     "SNDK": 1795633115.0020323,
-    "BTC-USD": 1795632374.1718824,
+    "BTC-USD": 1795633885.9491684,
     "CRWD": 1795633115.0020323,
     "ORCL": 1795633115.0020323,
     "COIN": 1795633115.0020323,
