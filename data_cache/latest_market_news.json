@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795611639.318,
-  "updated_at_et": "11-25 08:00 ET",
-  "updated_at_kst": "22:00 KST",
+  "updated_at_ts": 1795611686.618,
+  "updated_at_et": "11-25 08:01 ET",
+  "updated_at_kst": "22:01 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -17,7 +17,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 30,
+      "minutes_left": 29,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -36,7 +36,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 30,
+      "minutes_left": 29,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -2057,6 +2057,13 @@
     ],
     "RKLB": [
       {
+        "title": "Did Rocket Lab Stock Fall On Company News?",
+        "url": "https://www.trefis.com/stock/rklb/articles/628989/did-rocket-lab-stock-fall-on-company-news/2026-11-25?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 07:25 ET",
+        "pub_ts": 1795609507.0
+      },
+      {
         "title": "ETFs Sold $96.9 Million of Rocket Lab (RKLB) on Monday",
         "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-sold-96-9-million-110245076.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2083,13 +2090,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 10:14 ET",
         "pub_ts": 1795533254.0
-      },
-      {
-        "title": "Jim Cramer Says Rocket Lab Has Gotten “Too Cheap” After a 60% Crash",
-        "url": "https://www.tikr.com/blog/rocket-lab-stock-too-cheap-jim-cramer?ref=yahoofinance&tlnk=yf-261124-mc28x37q&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 03:00 ET",
-        "pub_ts": 1795507210.0
       }
     ],
     "KO": [
@@ -2168,6 +2168,13 @@
     ],
     "INTC": [
       {
+        "title": "Intel (INTC) Hit With Shareholder Lawsuit Over PC Slowdown And AI Claims",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/intel-intc-hit-shareholder-lawsuit-123347682.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 07:33 ET",
+        "pub_ts": 1795610027.0
+      },
+      {
         "title": "The Dates That Matter Most For Intel Stock",
         "url": "https://www.trefis.com/stock/intc/articles/628903/the-dates-that-matter-most-for-intel-stock/2026-11-25?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2194,13 +2201,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 06:01 ET",
         "pub_ts": 1795604509.0
-      },
-      {
-        "title": "ASML Dips Premarket Amid Chip Rout: Dutch Lawmakers Push Back On Proposed US Curbs On Sales To China",
-        "url": "https://stocktwits.com/news-articles/markets/equity/asml-dips-premarket-amid-chip-rout-dutch-lawmakers-push-back-on-proposed-us-curbs-on-sales-to-china/cNbH9EDR9ls?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 04:25 ET",
-        "pub_ts": 1795598735.0
       }
     ],
     "VRT": [
@@ -3354,25 +3354,25 @@
     "AMZN": 1795610928.3699715,
     "CRWV": 1795610928.3699715,
     "NBIS": 1795610928.3699715,
-    "APLD": 1795610160.9323542,
-    "VST": 1795610160.9323542,
-    "BE": 1795610160.9323542,
-    "CRDO": 1795610160.9323542,
-    "COHR": 1795610160.9323542,
+    "APLD": 1795611686.617976,
+    "VST": 1795611686.617976,
+    "BE": 1795611686.617976,
+    "CRDO": 1795611686.617976,
+    "COHR": 1795611686.617976,
     "MRVL": 1795610980.8596852,
     "LITE": 1795610980.8596852,
-    "AAOI": 1795610160.9323542,
-    "SPCX": 1795610160.9323542,
-    "ASTS": 1795610160.9323542,
+    "AAOI": 1795611686.617976,
+    "SPCX": 1795611686.617976,
+    "ASTS": 1795611686.617976,
     "AXTI": 1795610928.3699715,
-    "NASA": 1795610160.9323542,
-    "LUNR": 1795610160.9323542,
+    "NASA": 1795611686.617976,
+    "LUNR": 1795611686.617976,
     "TSLA": 1795610260.4442298,
-    "AXP": 1795610160.9323542,
-    "RKLB": 1795610160.9323542,
-    "KO": 1795610160.9323542,
-    "FLY": 1795610160.9323542,
-    "INTC": 1795610160.9323542,
+    "AXP": 1795611686.617976,
+    "RKLB": 1795611686.617976,
+    "KO": 1795611686.617976,
+    "FLY": 1795611686.617976,
+    "INTC": 1795611686.617976,
     "VRT": 1795610260.4442298,
     "HPE": 1795610260.4442298,
     "DELL": 1795610260.4442298,
@@ -3400,7 +3400,7 @@
     "V": 1795610260.4442298,
     "CAT": 1795610357.9759705,
     "FN": 1795610980.8596852,
-    "GLW": 1795610160.9323542,
+    "GLW": 1795611686.617976,
     "ANT": 1795610357.9759705,
     "XAUUSD": 1795610357.9759705,
     "KOSPI": 1795610928.3699715
@@ -3421,10 +3421,10 @@
   },
   "calendar_banner": {
     "level": "upcoming",
-    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 30 分钟（11-25 08:30 ET / 22:30 KST）",
+    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 29 分钟（11-25 08:30 ET / 22:30 KST）",
     "detail": "前值 0.3% ｜ 预期 0.3% ｜ 临近公布前15分钟将自动触发防插针预警",
     "event_name": "美国10月核心PCE物价指数环比",
-    "minutes_left": 30,
+    "minutes_left": 29,
     "opex_shield": {
       "date": "2026-11-25",
       "active": false,
