@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795612422.633,
-  "updated_at_et": "11-25 08:13 ET",
-  "updated_at_kst": "22:13 KST",
+  "updated_at_ts": 1795612468.287,
+  "updated_at_et": "11-25 08:14 ET",
+  "updated_at_kst": "22:14 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -17,7 +17,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 17,
+      "minutes_left": 16,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -36,7 +36,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 17,
+      "minutes_left": 16,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -835,6 +835,20 @@
     ],
     "TSM": [
       {
+        "title": "Market Chatter: Trump to Preside Over Taiwan Semiconductor Plant Expansion Ceremony in Arizona",
+        "url": "https://finance.yahoo.com/technology/articles/market-chatter-trump-preside-over-130436480.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 08:04 ET",
+        "pub_ts": 1795611876.0
+      },
+      {
+        "title": "Taiwan Semiconductor Manufacturing Is Down Nearly 30% From Its High. Is It a Bargain Buy?",
+        "url": "https://www.fool.com/investing/2026/11/25/taiwan-semiconductor-manufacturing-is-down-nearly-30-from-its-high-is-it-a-bargain-buy/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 08:00 ET",
+        "pub_ts": 1795611601.0
+      },
+      {
         "title": "Huang Boost Fades Quickly as AI Fears Sink TSMC, SK Hynix Shares",
         "url": "https://finance.yahoo.com/markets/stocks/articles/huang-boost-fades-quickly-ai-040320019.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -854,20 +868,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 15:09 ET",
         "pub_ts": 1795550944.0
-      },
-      {
-        "title": "TSMC's $22.6 Billion Texas Chip Plant Hinges on Two Tax Breaks",
-        "url": "https://www.benzinga.com/markets/prediction-markets/26/11/63603822/tsmc-texas-chip-tax-breaks?utm_source=yahooFinance&utm_campaign=partner_feed&utm_medium=referral&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 15:00 ET",
-        "pub_ts": 1795550407.0
-      },
-      {
-        "title": "Trump Warns of “Paying 200 Percent on Chips” in Two Years. That Pushes TSMC Toward a $22.6 Billion Texas Plant",
-        "url": "https://www.tikr.com/blog/trump-warns-of-paying-200-percent-on-chips-in-two-years-that-pushes-tsmc-toward-a-22-6-billion-texas-plant?ref=yahoofinance&tlnk=yf-261124-hf56p374&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 14:59 ET",
-        "pub_ts": 1795550362.0
       }
     ],
     "VIXY": [
@@ -1020,13 +1020,6 @@
     ],
     "ASML": [
       {
-        "title": "Nvidia, AMD, Broadcom lead chip stocks lower as AI trade comes under pressure",
-        "url": "https://finance.yahoo.com/markets/article/nvidia-amd-broadcom-lead-chip-stocks-lower-as-ai-trade-comes-under-pressure-141635463.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 09:16 ET",
-        "pub_ts": 1795529795.0
-      },
-      {
         "title": "ETFs Are Buying ASML (ASML) on Nov. 23",
         "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-buying-asml-asml-nov-110130021.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1046,6 +1039,13 @@
         "source": "Yahoo Finance",
         "time": "11-25 01:42 ET",
         "pub_ts": 1795588950.0
+      },
+      {
+        "title": "Nvidia, AMD, Broadcom lead chip stocks lower as AI trade comes under pressure",
+        "url": "https://finance.yahoo.com/markets/article/nvidia-amd-broadcom-lead-chip-stocks-lower-as-ai-trade-comes-under-pressure-141635463.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 09:16 ET",
+        "pub_ts": 1795529795.0
       },
       {
         "title": "ASML Is the Most Important Company You’ve Never Heard Of. Should You Buy the Stock?",
@@ -1219,6 +1219,13 @@
         "pub_ts": 1795593600.0
       },
       {
+        "title": "Alphabet Faces $146 Million in Lawsuits From Malaysian Regulator",
+        "url": "https://finance.yahoo.com/technology/articles/alphabet-faces-146-million-lawsuits-125728052.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 07:57 ET",
+        "pub_ts": 1795611448.0
+      },
+      {
         "title": "Does Apple's New Silence Mean You Should Worry?",
         "url": "https://www.trefis.com/stock/aapl/articles/628917/does-apple-s-new-silence-mean-you-should-worry/2026-11-25?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1226,18 +1233,11 @@
         "pub_ts": 1795608473.0
       },
       {
-        "title": "Market Chatter: Australia's New Digital Duty of Care Law Targets Harmful Online Content",
-        "url": "https://finance.yahoo.com/media-advertising/articles/market-chatter-australia-apos-digital-111932219.html?.tsrc=rss",
+        "title": "Anthropic’s $1 Trillion Valuation Is in Danger. So Much for the Hype.",
+        "url": "https://finance.yahoo.com/m/acbd91a7-90c3-3b19-9187-1667d5063696/anthropic%E2%80%99s-%241-trillion.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-25 06:19 ET",
-        "pub_ts": 1795605572.0
-      },
-      {
-        "title": "Indian startup Intrinsic Foundries crowned winner of L'Oréal's 2026 Big Bang Beauty Tech Innovation Program; Hector earns Special Mention",
-        "url": "https://finance.yahoo.com/small-business/articles/indian-startup-intrinsic-foundries-crowned-111600256.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 06:16 ET",
-        "pub_ts": 1795605360.0
+        "time": "11-25 06:27 ET",
+        "pub_ts": 1795606020.0
       }
     ],
     "MSFT": [
@@ -1390,6 +1390,13 @@
     ],
     "AMZN": [
       {
+        "title": "GameStop Tops Amazon in Stock Ratings Ahead of Holiday Season",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/gamestop-tops-amazon-stock-ratings-125429295.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 07:54 ET",
+        "pub_ts": 1795611269.0
+      },
+      {
         "title": "Amazon Takes Car Shopping Abroad for the First Time",
         "url": "https://finance.yahoo.com/markets/stocks/articles/amazon-takes-car-shopping-abroad-123451773.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1416,16 +1423,16 @@
         "source": "Yahoo Finance",
         "time": "11-25 06:02 ET",
         "pub_ts": 1795604562.0
-      },
-      {
-        "title": "Market Chatter: Amazon.com, Meta Platforms in Talks Over Allowing Muse AI Access Shopping Site",
-        "url": "https://finance.yahoo.com/technology/ai/articles/market-chatter-amazon-com-meta-104905932.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 05:49 ET",
-        "pub_ts": 1795603745.0
       }
     ],
     "CRWV": [
+      {
+        "title": "The Bond Market Is Flashing a Warning on CoreWeave Stock",
+        "url": "https://247wallst.com/investing/2026/11/25/the-bond-market-is-flashing-a-warning-on-coreweave-stock/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 07:57 ET",
+        "pub_ts": 1795611461.0
+      },
       {
         "title": "CoreWeave Cratered 40% Year-to-Date: 320% Gains to Come According to This Investment Bank Desk",
         "url": "https://247wallst.com/investing/2026/11/25/coreweave-cratered-40-year-to-date-320-gains-to-come-according-to-this-investment-bank-desk/?.tsrc=rss",
@@ -1453,13 +1460,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 06:20 ET",
         "pub_ts": 1795605637.0
-      },
-      {
-        "title": "AI Concerns Resurface? ORCL, GOOGL, SPCX, CRWV Credit Default Swap Spreads Hit Records As NVDA, ANT Tumble",
-        "url": "https://stocktwits.com/news-articles/markets/equity/ai-concerns-resurface-orcl-googl-spcx-crwv-credit-default-swap-spreads-hit-records-as-nvda-ant-tumble/cNbHEEAR9lZ?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 01:56 ET",
-        "pub_ts": 1795589778.0
       }
     ],
     "NBIS": [
@@ -3325,34 +3325,34 @@
   "ticker_news_ts": {
     "KORU": 1795612084.410426,
     "SOXL": 1795612084.410426,
-    "SPY": 1795610928.3699715,
+    "SPY": 1795612468.2866437,
     "DIA": 1795612084.410426,
     "SOXX": 1795612084.410426,
     "QQQ": 1795612084.410426,
-    "SMH": 1795610928.3699715,
+    "SMH": 1795612468.2866437,
     "IWM": 1795612084.410426,
     "IGV": 1795612084.410426,
     "TLT": 1795612084.410426,
     "GLD": 1795612084.410426,
     "SQQQ": 1795612084.410426,
-    "TSM": 1795610928.3699715,
+    "TSM": 1795612468.2866437,
     "VIXY": 1795612084.410426,
     "SOXS": 1795612084.410426,
     "NVDA": 1795612084.410426,
     "AMD": 1795612084.410426,
-    "ASML": 1795610928.3699715,
-    "QCOM": 1795610928.3699715,
+    "ASML": 1795612468.2866437,
+    "QCOM": 1795612468.2866437,
     "AVGO": 1795612084.410426,
-    "AMAT": 1795610928.3699715,
-    "META": 1795610928.3699715,
-    "GOOGL": 1795610928.3699715,
-    "MSFT": 1795610928.3699715,
-    "AAPL": 1795610928.3699715,
-    "PLTR": 1795610928.3699715,
-    "NOW": 1795610928.3699715,
-    "AMZN": 1795610928.3699715,
-    "CRWV": 1795610928.3699715,
-    "NBIS": 1795610928.3699715,
+    "AMAT": 1795612468.2866437,
+    "META": 1795612468.2866437,
+    "GOOGL": 1795612468.2866437,
+    "MSFT": 1795612468.2866437,
+    "AAPL": 1795612468.2866437,
+    "PLTR": 1795612468.2866437,
+    "NOW": 1795612468.2866437,
+    "AMZN": 1795612468.2866437,
+    "CRWV": 1795612468.2866437,
+    "NBIS": 1795612468.2866437,
     "APLD": 1795611686.617976,
     "VST": 1795611686.617976,
     "BE": 1795611686.617976,
@@ -3363,7 +3363,7 @@
     "AAOI": 1795611686.617976,
     "SPCX": 1795611686.617976,
     "ASTS": 1795611686.617976,
-    "AXTI": 1795610928.3699715,
+    "AXTI": 1795612468.2866437,
     "NASA": 1795611686.617976,
     "LUNR": 1795611686.617976,
     "TSLA": 1795611797.1131556,
@@ -3402,7 +3402,7 @@
     "GLW": 1795611686.617976,
     "ANT": 1795611894.357723,
     "XAUUSD": 1795611894.357723,
-    "KOSPI": 1795610928.3699715
+    "KOSPI": 1795612468.2866437
   },
   "opex_shield": {
     "date": "2026-11-25",
@@ -3420,10 +3420,10 @@
   },
   "calendar_banner": {
     "level": "upcoming",
-    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 17 分钟（11-25 08:30 ET / 22:30 KST）",
+    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 16 分钟（11-25 08:30 ET / 22:30 KST）",
     "detail": "前值 0.3% ｜ 预期 0.3% ｜ 临近公布前15分钟将自动触发防插针预警",
     "event_name": "美国10月核心PCE物价指数环比",
-    "minutes_left": 17,
+    "minutes_left": 16,
     "opex_shield": {
       "date": "2026-11-25",
       "active": false,
