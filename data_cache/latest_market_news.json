@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795643676.707,
-  "updated_at_et": "11-25 16:54 ET",
-  "updated_at_kst": "06:54 KST",
+  "updated_at_ts": 1795643715.791,
+  "updated_at_et": "11-25 16:55 ET",
+  "updated_at_kst": "06:55 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -2232,6 +2232,13 @@
     ],
     "HPE": [
       {
+        "title": "Jensen Huang's return, neocloud risk, and a holiday retail rally",
+        "url": "https://finance.yahoo.com/video/jensen-huangs-return-neocloud-risk-210000087.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 16:00 ET",
+        "pub_ts": 1795640400.0
+      },
+      {
         "title": "Ten reasons the market is selling off again before Thanksgiving",
         "url": "https://finance.yahoo.com/video/ten-reasons-the-market-is-selling-off-again-before-thanksgiving-160424234.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2258,13 +2265,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 13:19 ET",
         "pub_ts": 1795630752.0
-      },
-      {
-        "title": "Own Dell Or HPE? HPE Wins On Cash",
-        "url": "https://www.trefis.com/stock/dell/articles/628899/own-dell-or-hpe-hpe-wins-on-cash/2026-11-25?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 11:00 ET",
-        "pub_ts": 1795622402.0
       }
     ],
     "DELL": [
@@ -2343,6 +2343,20 @@
     ],
     "CEG": [
       {
+        "title": "LS Power Completes Acquisition of 4.4 GW Natural Gas Generation Assets from Constellation",
+        "url": "https://finance.yahoo.com/energy/articles/ls-power-completes-acquisition-4-213800844.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 16:38 ET",
+        "pub_ts": 1795642680.0
+      },
+      {
+        "title": "Constellation Completes Divestiture of Legacy Calpine PJM Generation Assets to LS Power",
+        "url": "https://finance.yahoo.com/energy/articles/constellation-completes-divestiture-legacy-calpine-213000879.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 16:30 ET",
+        "pub_ts": 1795642200.0
+      },
+      {
         "title": "Is Constellation Energy Stock's Fall A Bargain Or A Warning?",
         "url": "https://www.trefis.com/stock/ceg/articles/628278/is-constellation-energy-stocks-fall-a-bargain-or-a-warning/2026-11-24?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2362,20 +2376,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 10:05 ET",
         "pub_ts": 1795532700.0
-      },
-      {
-        "title": "Is It Worth Investing in Constellation Energy Corporation (CEG) Based on Wall Street's Bullish Views?",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/worth-investing-constellation-energy-corporation-133004847.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 08:30 ET",
-        "pub_ts": 1795527004.0
-      },
-      {
-        "title": "CEG Below the 50 and 200-Day SMAs: Is It a Buy or Hold Right Now?",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/ceg-below-50-200-day-132400164.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 08:24 ET",
-        "pub_ts": 1795526640.0
       }
     ],
     "FPS": [
@@ -2602,6 +2602,13 @@
     ],
     "SNDK": [
       {
+        "title": "Qualcomm vs. Sandisk: Which Technology Stock Is a Better Buy for 2027?",
+        "url": "https://www.fool.com/coverage/better-buy/2026/11/25/qualcomm-vs-sandisk-which-technology-stock-is-a-better-buy-for-2027/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 16:20 ET",
+        "pub_ts": 1795641602.0
+      },
+      {
         "title": "SK hynix Falls 5%, Sandisk Down 10% as Asian Chip Stocks Give Back the Huang Rally",
         "url": "https://www.tikr.com/blog/sk-hynix-falls-5-sandisk-down-10-as-asian-chip-stocks-give-back-the-huang-rally?ref=yahoofinance&tlnk=yf-261125-7hm5f9h6&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2628,13 +2635,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 10:50 ET",
         "pub_ts": 1795621816.0
-      },
-      {
-        "title": "Alphabet Falls 4% on AI Credit Fears as Strategist Warns Capex Is “As Good as It Gets”",
-        "url": "https://www.tikr.com/blog/alphabet-falls-4-on-ai-credit-fears-as-strategist-warns-capex-is-as-good-as-it-gets?ref=yahoofinance&tlnk=yf-261125-pwcg7rgj&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 10:39 ET",
-        "pub_ts": 1795621167.0
       }
     ],
     "BTC-USD": [
@@ -2676,6 +2676,20 @@
     ],
     "CRWD": [
       {
+        "title": "Megadeals Defy Selloff, Head Toward Record",
+        "url": "https://finance.yahoo.com/video/megadeals-defy-selloff-head-toward-204909645.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 15:49 ET",
+        "pub_ts": 1795639749.0
+      },
+      {
+        "title": "Top Research Reports for CrowdStrike, Lockheed Martin & S&P",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/top-research-reports-crowdstrike-lockheed-202700539.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 15:27 ET",
+        "pub_ts": 1795638420.0
+      },
+      {
         "title": "CrowdStrike Sees a Path to the “Largest AI Safety and Security Company” Ever. Zscaler Must Deliver $1 Billion of Synergies",
         "url": "https://www.tikr.com/blog/crowdstrike-sees-a-path-to-the-largest-ai-safety-and-security-company-ever-zscaler-must-deliver-1-billion-of-synergies?ref=yahoofinance&tlnk=yf-261125-wpgvq53r&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2695,20 +2709,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 07:50 ET",
         "pub_ts": 1795611023.0
-      },
-      {
-        "title": "CrowdStrike CEO Says Security Has Gone “From the Brakes to the Gas” as Fortune 50 Clients Pause AI Rollouts",
-        "url": "https://www.tikr.com/blog/crowdstrike-ceo-says-security-has-gone-from-the-brakes-to-the-gas-as-fortune-50-clients-pause-ai-rollouts?ref=yahoofinance&tlnk=yf-261125-p6p2v33f&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 06:36 ET",
-        "pub_ts": 1795606577.0
-      },
-      {
-        "title": "Shots Fired: Zscaler CEO Says a Rival Platform’s Only Benefit Was “an Integrated Invoice.” That’s a Problem for Palo Alto",
-        "url": "https://www.tikr.com/blog/shots-fired-zscaler-ceo-says-a-rival-platforms-only-benefit-was-an-integrated-invoice-thats-a-problem-for-palo-alto?ref=yahoofinance&tlnk=yf-261125-fgj2pmwp&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 03:37 ET",
-        "pub_ts": 1795595828.0
       }
     ],
     "ORCL": [
@@ -3083,11 +3083,25 @@
     ],
     "V": [
       {
+        "title": "Jensen Huang's return, neocloud risk, and a holiday retail rally",
+        "url": "https://finance.yahoo.com/video/jensen-huangs-return-neocloud-risk-210000087.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 16:00 ET",
+        "pub_ts": 1795640400.0
+      },
+      {
         "title": "Japan's biggest banks pick Solana as Fidelity adds DeFi tokens",
         "url": "https://finance.yahoo.com/video/japans-biggest-banks-pick-solana-170000036.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-25 12:00 ET",
         "pub_ts": 1795626000.0
+      },
+      {
+        "title": "The Best Dividend Stocks to Buy With $5,000 in November",
+        "url": "https://www.fool.com/investing/2026/11/25/the-best-dividend-stocks-to-buy-with-5000-in-november/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 16:21 ET",
+        "pub_ts": 1795641662.0
       },
       {
         "title": "The challenge banks face in drawing consumers to AI payments",
@@ -3102,20 +3116,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 11:35 ET",
         "pub_ts": 1795624557.0
-      },
-      {
-        "title": "Klarna Announces Major Canada Expansion With Launch of Flexible Virtual Card",
-        "url": "https://finance.yahoo.com/small-business/articles/klarna-announces-major-canada-expansion-163500879.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 11:35 ET",
-        "pub_ts": 1795624500.0
-      },
-      {
-        "title": "Visa Paid About $335 per Share to Buy Back $20.5 Billion of Its Stock Last Year. Would You Pay $400?",
-        "url": "https://www.fool.com/investing/2026/11/25/visa-paid-about-usd335-per-share-to-buy-back-usd20-5-billion-of-its-stock-last-year-would-you-pay-usd400/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 11:28 ET",
-        "pub_ts": 1795624082.0
       }
     ],
     "CAT": [
@@ -3357,37 +3357,37 @@
     "AXTI": 1795642909.7500863,
     "NASA": 1795643553.5965235,
     "LUNR": 1795643553.5965235,
-    "TSLA": 1795642208.0074985,
+    "TSLA": 1795643715.7914033,
     "AXP": 1795643553.5965235,
     "RKLB": 1795643553.5965235,
     "KO": 1795643553.5965235,
     "FLY": 1795643553.5965235,
     "INTC": 1795643553.5965235,
-    "VRT": 1795642208.0074985,
-    "HPE": 1795642208.0074985,
-    "DELL": 1795642208.0074985,
-    "OKLO": 1795642208.0074985,
-    "CEG": 1795642208.0074985,
-    "FPS": 1795642208.0074985,
+    "VRT": 1795643715.7914033,
+    "HPE": 1795643715.7914033,
+    "DELL": 1795643715.7914033,
+    "OKLO": 1795643715.7914033,
+    "CEG": 1795643715.7914033,
+    "FPS": 1795643715.7914033,
     "MU": 1795642953.7751355,
     "SKHY": 1795642953.7751355,
     "WDC": 1795642997.6230643,
     "STX": 1795642262.011542,
-    "MSTR": 1795642208.0074985,
-    "SNDK": 1795642208.0074985,
+    "MSTR": 1795643715.7914033,
+    "SNDK": 1795643715.7914033,
     "BTC-USD": 1795642997.6230643,
-    "CRWD": 1795642208.0074985,
-    "ORCL": 1795642208.0074985,
-    "COIN": 1795642208.0074985,
-    "LLY": 1795642208.0074985,
-    "MRNA": 1795642208.0074985,
-    "NKE": 1795642208.0074985,
-    "MCD": 1795642208.0074985,
+    "CRWD": 1795643715.7914033,
+    "ORCL": 1795643715.7914033,
+    "COIN": 1795643715.7914033,
+    "LLY": 1795643715.7914033,
+    "MRNA": 1795643715.7914033,
+    "NKE": 1795643715.7914033,
+    "MCD": 1795643715.7914033,
     "PEP": 1795642302.7158566,
     "XOM": 1795642302.7158566,
     "JPM": 1795642302.7158566,
     "WMT": 1795642302.7158566,
-    "V": 1795642208.0074985,
+    "V": 1795643715.7914033,
     "CAT": 1795642302.7158566,
     "FN": 1795642953.7751355,
     "GLW": 1795643553.5965235,
