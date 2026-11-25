@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795594557.762,
-  "updated_at_et": "11-25 03:15 ET",
-  "updated_at_kst": "17:15 KST",
+  "updated_at_ts": 1795594986.352,
+  "updated_at_et": "11-25 03:23 ET",
+  "updated_at_kst": "17:23 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -17,7 +17,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 315,
+      "minutes_left": 307,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -36,13 +36,31 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 315,
+      "minutes_left": 307,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
     }
   ],
   "macro_flashes": [
+    {
+      "id": "20261125162046196800",
+      "title": "整理：每日投行/机构观点梳理（2026-11-25）",
+      "summary": "国外 1. 小摩展望2027年大宗商品：黄金有望重返4500美元。 2. 高盛：黄仁勋回归尚不足以扭转半导体行业颓势。 3. 小摩：特斯拉与SpaceX潜在合并或助推SpaceX纳入标普500。 4. 高盛：人工智能回报比英伟达风波更重要。 5. 高盛：美国数据中心电力需求增长或持续至2028年。 6. 小摩：料十年期美债收益率将于2027年Q1接近5.10%的峰值。 7. 小摩：AI超级周期未结束，标普500指数明年底前仍有14%上涨空间。 8. 瑞银：美债收益率在美联储仍将加息之际或保持区间波动。 9. 德商银行：预计到2027年底金价将达到每盎司4100美元。 10. 华侨银行：现在做空美元仍为时过早。 国内 1. 中金公司：A股短期有望震荡修复。 2. 中金公司：人身险负债将进入增长加速的黄金发展期。 3. 中信建投：AI科研取得突破，办公Agent需求增长。 4. 中信证券：物理AI再进阶，建议关注智能驾驶头部软硬件供应商。 5. 中信证券：美国国会听证会的流程、权限与影响。 6. 中信建投：农药整体仍处景气上行周期 草铵膦等核心品种有望展现较好弹性。",
+      "keywords": [
+        "美联储",
+        "加息",
+        "半导体",
+        "英伟达",
+        "美债",
+        "标普"
+      ],
+      "pub_ts": 1795594846.0,
+      "time_et": "11-25 03:20 ET",
+      "time_bj": "16:20 BJ",
+      "time_kst": "17:20 KST",
+      "time_display": "03:20 ET / 16:20 BJ"
+    },
     {
       "id": "20261125161200835800",
       "title": "油市可能押错方向？中东原油出口已经连续数周下降",
@@ -371,19 +389,6 @@
       "time_bj": "11:00 BJ",
       "time_kst": "12:00 KST",
       "time_display": "22:00 ET / 11:00 BJ"
-    },
-    {
-      "id": "20261125105649752800",
-      "title": "从思科到英伟达：循环融资如何制造繁荣，又会如何放大泡沫？",
-      "summary": "互联网泡沫曾上演过同样的故事，英伟达正在复制思科的融资模式？",
-      "keywords": [
-        "英伟达"
-      ],
-      "pub_ts": 1795575409.0,
-      "time_et": "11-24 21:56 ET",
-      "time_bj": "10:56 BJ",
-      "time_kst": "11:56 KST",
-      "time_display": "21:56 ET / 10:56 BJ"
     }
   ],
   "ticker_news": {
@@ -1795,6 +1800,13 @@
     ],
     "SPCX": [
       {
+        "title": "SpaceX Could Fall Below $100 On A Tesla Bid, Gary Black Says — JPMorgan Sees The Same Deal As A Shortcut To The S&P 500",
+        "url": "https://stocktwits.com/news-articles/markets/equity/spacex-fall-tesla-bid-gary-black-jp-morgan-shortcut-sp500/cNbH7PdR9lF?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 03:07 ET",
+        "pub_ts": 1795594028.0
+      },
+      {
         "title": "SpaceX, Anthropic IPOs Shut Out Retail Investors, Says Coinbase CEO — Brian Armstrong Resumes Buying Back COIN Shares",
         "url": "https://stocktwits.com/news-articles/markets/equity/space-x-anthropic-ip-os-shut-out-retail-investors-says-coinbase-ceo-brian-armstrong-resumes-buying-back-coin-shares/cNbHdA0R9lS?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1821,13 +1833,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 22:20 ET",
         "pub_ts": 1795576802.0
-      },
-      {
-        "title": "Jensen Huang's Return Could Make a Tesla/SpaceX Merger More Likely",
-        "url": "https://www.fool.com/investing/2026/11/24/jensen-huang-s-return-could-make-a-tesla-spacex-merger-more-likely/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 21:50 ET",
-        "pub_ts": 1795575002.0
       }
     ],
     "ASTS": [
@@ -1980,6 +1985,13 @@
     ],
     "TSLA": [
       {
+        "title": "SpaceX Could Fall Below $100 On A Tesla Bid, Gary Black Says — JPMorgan Sees The Same Deal As A Shortcut To The S&P 500",
+        "url": "https://stocktwits.com/news-articles/markets/equity/spacex-fall-tesla-bid-gary-black-jp-morgan-shortcut-sp500/cNbH7PdR9lF?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 03:07 ET",
+        "pub_ts": 1795594028.0
+      },
+      {
         "title": "Tesla's $3.5 trillion merger talks have a surprising catch",
         "url": "https://www.thestreet.com/investing/teslas-3-5-trillion-merger-talks-have-a-surprising-catch?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2006,13 +2018,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 20:31 ET",
         "pub_ts": 1795570295.0
-      },
-      {
-        "title": "He Lets His Tesla Drive at 93, Trusting the Brand. A $400,000 Crash Judgment Could Reach His Savings, While His $2,800 Social Security Check Stays Off-Limits to the Victim",
-        "url": "https://247wallst.com/personal-finance/social-security/2026/11/24/he-lets-his-tesla-drive-at-93-trusting-the-brand-a-400000-crash-judgment-could-reach-his-savings-while-his-2800-social-security-check-stays-off-limits-to-the-victim/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 19:32 ET",
-        "pub_ts": 1795566746.0
       }
     ],
     "AXP": [
@@ -3351,53 +3356,53 @@
     "AMZN": 1795594104.8286052,
     "CRWV": 1795594104.8286052,
     "NBIS": 1795594104.8286052,
-    "APLD": 1795593343.9996238,
-    "VST": 1795593343.9996238,
-    "BE": 1795593343.9996238,
-    "CRDO": 1795593343.9996238,
-    "COHR": 1795593343.9996238,
+    "APLD": 1795594879.6815875,
+    "VST": 1795594879.6815875,
+    "BE": 1795594879.6815875,
+    "CRDO": 1795594879.6815875,
+    "COHR": 1795594879.6815875,
     "MRVL": 1795594104.8286052,
     "LITE": 1795594104.8286052,
-    "AAOI": 1795593343.9996238,
-    "SPCX": 1795593343.9996238,
-    "ASTS": 1795593343.9996238,
+    "AAOI": 1795594879.6815875,
+    "SPCX": 1795594879.6815875,
+    "ASTS": 1795594879.6815875,
     "AXTI": 1795594104.8286052,
-    "NASA": 1795593343.9996238,
-    "LUNR": 1795593343.9996238,
-    "TSLA": 1795593453.5399013,
-    "AXP": 1795593343.9996238,
-    "RKLB": 1795593343.9996238,
-    "KO": 1795593343.9996238,
-    "FLY": 1795593343.9996238,
-    "INTC": 1795593343.9996238,
-    "VRT": 1795593453.5399013,
-    "HPE": 1795593453.5399013,
-    "DELL": 1795593453.5399013,
-    "OKLO": 1795593453.5399013,
-    "CEG": 1795593453.5399013,
-    "FPS": 1795593453.5399013,
+    "NASA": 1795594879.6815875,
+    "LUNR": 1795594879.6815875,
+    "TSLA": 1795594986.3515139,
+    "AXP": 1795594879.6815875,
+    "RKLB": 1795594879.6815875,
+    "KO": 1795594879.6815875,
+    "FLY": 1795594879.6815875,
+    "INTC": 1795594879.6815875,
+    "VRT": 1795594986.3515139,
+    "HPE": 1795594986.3515139,
+    "DELL": 1795594986.3515139,
+    "OKLO": 1795594986.3515139,
+    "CEG": 1795594986.3515139,
+    "FPS": 1795594986.3515139,
     "MU": 1795594104.8286052,
     "SKHY": 1795594104.8286052,
     "WDC": 1795594287.469779,
-    "STX": 1795593453.5399013,
-    "MSTR": 1795593453.5399013,
-    "SNDK": 1795593453.5399013,
+    "STX": 1795594986.3515139,
+    "MSTR": 1795594986.3515139,
+    "SNDK": 1795594986.3515139,
     "BTC-USD": 1795594287.469779,
-    "CRWD": 1795593453.5399013,
-    "ORCL": 1795593453.5399013,
-    "COIN": 1795593453.5399013,
-    "LLY": 1795593453.5399013,
-    "MRNA": 1795593453.5399013,
-    "NKE": 1795593453.5399013,
-    "MCD": 1795593453.5399013,
+    "CRWD": 1795594986.3515139,
+    "ORCL": 1795594986.3515139,
+    "COIN": 1795594986.3515139,
+    "LLY": 1795594986.3515139,
+    "MRNA": 1795594986.3515139,
+    "NKE": 1795594986.3515139,
+    "MCD": 1795594986.3515139,
     "PEP": 1795593571.8599072,
     "XOM": 1795593571.8599072,
     "JPM": 1795593571.8599072,
     "WMT": 1795593571.8599072,
-    "V": 1795593453.5399013,
+    "V": 1795594986.3515139,
     "CAT": 1795593571.8599072,
     "FN": 1795594104.8286052,
-    "GLW": 1795593343.9996238,
+    "GLW": 1795594879.6815875,
     "ANT": 1795593571.8599072,
     "XAUUSD": 1795593571.8599072,
     "KOSPI": 1795594104.8286052
@@ -3418,10 +3423,10 @@
   },
   "calendar_banner": {
     "level": "upcoming",
-    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 315 分钟（11-25 08:30 ET / 22:30 KST）",
+    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 307 分钟（11-25 08:30 ET / 22:30 KST）",
     "detail": "前值 0.3% ｜ 预期 0.3% ｜ 临近公布前15分钟将自动触发防插针预警",
     "event_name": "美国10月核心PCE物价指数环比",
-    "minutes_left": 315,
+    "minutes_left": 307,
     "opex_shield": {
       "date": "2026-11-25",
       "active": false,
