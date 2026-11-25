@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795591808.803,
-  "updated_at_et": "11-25 02:30 ET",
-  "updated_at_kst": "16:30 KST",
+  "updated_at_ts": 1795591920.085,
+  "updated_at_et": "11-25 02:32 ET",
+  "updated_at_kst": "16:32 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -17,7 +17,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 360,
+      "minutes_left": 358,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -36,7 +36,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 360,
+      "minutes_left": 358,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -2292,7 +2292,7 @@
         "pub_ts": 1795579984.0
       },
       {
-        "title": "Asian stocks slide as AI selloff deepens, U.S. tariff threats weigh on sentiment",
+        "title": "Asian stocks slide as Taiwan, South Korea extend AI-led losses",
         "url": "https://finance.yahoo.com/markets/stocks/articles/asian-stocks-slide-ai-selloff-040525614.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-24 23:05 ET",
@@ -2389,39 +2389,39 @@
     ],
     "FPS": [
       {
-        "title": "Forgent Power Solutions Consensus Price Target Decreased by 20.94% to $42.91",
-        "url": "https://finnhub.io/api/news?id=57463f8cc9efff61ee55eb2f84f46320e111ff8ec5a71d99130dceb592791c5f",
-        "source": "Fintel",
-        "time": "11-24 19:27 ET",
-        "pub_ts": 1795566432.0
+        "title": "Forgent: 3 Key Takeaways for Long-Term Investors",
+        "url": "https://www.fool.com/earnings/takeaways/2026/11/18/forgent-3-key-takeaways-for-long-term-investors/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-18 12:03 ET",
+        "pub_ts": 1795021396.0
       },
       {
-        "title": "How An AI Squeeze Works: Who Wins And Who Loses",
-        "url": "https://finnhub.io/api/news?id=05e7a0b4e548bba3d45f0d84f9163c6d72fe5f3b966c25b858164931bb91073b",
-        "source": "SeekingAlpha",
-        "time": "11-23 07:15 ET",
-        "pub_ts": 1795436100.0
+        "title": "What Forgent Power Solutions (FPS) Said on Its Q1 Earnings Call",
+        "url": "https://www.marketbeat.com/instant-alerts/transcript-what-forgent-power-solutions-fps-said-on-its-q1-earnings-call-2026-11-13/?utm_source=yahoofinance&utm_medium=yahoofinance&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-13 02:14 ET",
+        "pub_ts": 1794554087.0
       },
       {
-        "title": "DCP Midstream Says It Will Lay Off 10% Of Workforce, 300 Operational/Corporate Roles Across 17-States, Has Reduced Capital Budget To $250M",
-        "url": "https://finnhub.io/api/news?id=2f40821e66f472f9c148898ede1bd56f908f59c50193c8e73603f4a00a642fbe",
-        "source": "Benzinga",
-        "time": "11-23 06:30 ET",
-        "pub_ts": 1795433453.0
+        "title": "Forgent Power Solutions (FPS) After Earnings Is The Stock Still Too Pricey",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/forgent-power-solutions-fps-earnings-021155430.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-12 21:11 ET",
+        "pub_ts": 1794535915.0
       },
       {
-        "title": "Baird Maintains Outperform on Forgent Power Solutions, Lowers Price Target to $27",
-        "url": "https://finnhub.io/api/news?id=75d76e5f56110b10c63127539ce3850ca28c95ca8956d8769dc509141bfdd2e3",
-        "source": "Benzinga",
-        "time": "11-23 02:59 ET",
-        "pub_ts": 1795420791.0
+        "title": "Forgent (FPS) Q1 2027 Earnings Call Transcript",
+        "url": "https://www.fool.com/earnings/call-transcripts/2026/11/12/forgent-fps-q1-2027-earnings-call-transcript/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-12 20:02 ET",
+        "pub_ts": 1794531745.0
       },
       {
-        "title": "Morgan Stanley Maintains Equal-Weight on Forgent Power Solutions, Lowers Price Target to $40",
-        "url": "https://finnhub.io/api/news?id=92a35f8a3c4c568d63c28a5bf4a23193cff4a95e01b822499a56ea54ab720714",
-        "source": "Benzinga",
-        "time": "11-20 06:46 ET",
-        "pub_ts": 1795175189.0
+        "title": "Forgent Power Solutions (FPS) Stock Price Falls After Q1 Earnings Recovery",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/forgent-power-solutions-fps-stock-001917011.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-12 19:19 ET",
+        "pub_ts": 1794529157.0
       }
     ],
     "MU": [
@@ -2581,13 +2581,6 @@
         "pub_ts": 1795535048.0
       },
       {
-        "title": "Is Michael Saylor's bitcoin strategy losing its appeal?",
-        "url": "https://finance.yahoo.com/video/is-michael-saylors-bitcoin-strategy-losing-its-appeal-151603542.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 10:16 ET",
-        "pub_ts": 1795533363.0
-      },
-      {
         "title": "Dow, S&P 500, Nasdaq Futures Edge Lower Amid Tech Selloff Ahead Of Key Inflation Data: DELL, AMBA, SOXL, MSTR In Focus",
         "url": "https://stocktwits.com/news-articles/markets/equity/dow-s-and-p-500-nasdaq-futures-edge-lower-amid-tech-selloff-ahead-of-key-inflation-data-dell-amba-soxl-mstr-in-focus/cNbHbLoR9lJ?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2607,6 +2600,13 @@
         "source": "Yahoo Finance",
         "time": "11-24 16:27 ET",
         "pub_ts": 1795555626.0
+      },
+      {
+        "title": "Miller Industries, Inc. (MLR) Is Recovering From an Inventory Downturn: Could Earnings Rebound Drive Its Stock Higher?",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/miller-industries-inc-mlr-recovering-211015377.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 16:10 ET",
+        "pub_ts": 1795554615.0
       }
     ],
     "SNDK": [
@@ -3366,37 +3366,37 @@
     "AXTI": 1795591057.1673243,
     "NASA": 1795591808.8032842,
     "LUNR": 1795591808.8032842,
-    "TSLA": 1795590397.2905369,
+    "TSLA": 1795591920.0848513,
     "AXP": 1795591808.8032842,
     "RKLB": 1795591808.8032842,
     "KO": 1795591808.8032842,
     "FLY": 1795591808.8032842,
     "INTC": 1795591808.8032842,
-    "VRT": 1795590397.2905369,
-    "HPE": 1795590397.2905369,
-    "DELL": 1795590397.2905369,
-    "OKLO": 1795590397.2905369,
-    "CEG": 1795590397.2905369,
-    "FPS": 1795590397.2905369,
+    "VRT": 1795591920.0848513,
+    "HPE": 1795591920.0848513,
+    "DELL": 1795591920.0848513,
+    "OKLO": 1795591920.0848513,
+    "CEG": 1795591920.0848513,
+    "FPS": 1795591920.0848513,
     "MU": 1795591057.1673243,
     "SKHY": 1795591057.1673243,
     "WDC": 1795591167.8857865,
-    "STX": 1795590397.2905369,
-    "MSTR": 1795590397.2905369,
-    "SNDK": 1795590397.2905369,
+    "STX": 1795591920.0848513,
+    "MSTR": 1795591920.0848513,
+    "SNDK": 1795591920.0848513,
     "BTC-USD": 1795591167.8857865,
-    "CRWD": 1795590397.2905369,
-    "ORCL": 1795590397.2905369,
-    "COIN": 1795590397.2905369,
-    "LLY": 1795590397.2905369,
-    "MRNA": 1795590397.2905369,
-    "NKE": 1795590397.2905369,
-    "MCD": 1795590397.2905369,
+    "CRWD": 1795591920.0848513,
+    "ORCL": 1795591920.0848513,
+    "COIN": 1795591920.0848513,
+    "LLY": 1795591920.0848513,
+    "MRNA": 1795591920.0848513,
+    "NKE": 1795591920.0848513,
+    "MCD": 1795591920.0848513,
     "PEP": 1795590507.2246425,
     "XOM": 1795590507.2246425,
     "JPM": 1795590507.2246425,
     "WMT": 1795590507.2246425,
-    "V": 1795590397.2905369,
+    "V": 1795591920.0848513,
     "CAT": 1795590507.2246425,
     "FN": 1795591057.1673243,
     "GLW": 1795591808.8032842,
@@ -3420,10 +3420,10 @@
   },
   "calendar_banner": {
     "level": "upcoming",
-    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 360 分钟（11-25 08:30 ET / 22:30 KST）",
+    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 358 分钟（11-25 08:30 ET / 22:30 KST）",
     "detail": "前值 0.3% ｜ 预期 0.3% ｜ 临近公布前15分钟将自动触发防插针预警",
     "event_name": "美国10月核心PCE物价指数环比",
-    "minutes_left": 360,
+    "minutes_left": 358,
     "opex_shield": {
       "date": "2026-11-25",
       "active": false,
