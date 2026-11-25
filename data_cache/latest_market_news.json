@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795635355.428,
-  "updated_at_et": "11-25 14:35 ET",
-  "updated_at_kst": "04:35 KST",
+  "updated_at_ts": 1795635395.234,
+  "updated_at_et": "11-25 14:36 ET",
+  "updated_at_kst": "04:36 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -2636,11 +2636,25 @@
     ],
     "BTC-USD": [
       {
+        "title": "Kraken’s new credit cards offer up to 4% bitcoin rewards",
+        "url": "https://finance.yahoo.com/video/kraken-credit-cards-offer-4-192100513.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 14:21 ET",
+        "pub_ts": 1795634460.0
+      },
+      {
         "title": "Sector Update: Financial Stocks Rise in Afternoon Trading",
         "url": "https://finance.yahoo.com/markets/stocks/articles/sector-financial-stocks-rise-afternoon-185859010.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-25 13:58 ET",
         "pub_ts": 1795633139.0
+      },
+      {
+        "title": "Is the Anthropic IPO to Blame for Bitcoin's Recent Downturn? The Answer Might Surprise You.",
+        "url": "https://www.fool.com/investing/2026/11/25/is-the-anthropic-ipo-to-blame-for-bitcoins-recent-downturn-the-answer-might-surprise-you/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 13:57 ET",
+        "pub_ts": 1795633021.0
       },
       {
         "title": "Franklin Templeton Adds Hyperliquid's HYPE to Its Crypto Index ETF",
@@ -2655,20 +2669,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 13:00 ET",
         "pub_ts": 1795629600.0
-      },
-      {
-        "title": "Can XRP Reach Standard Chartered’s $12.60 Target by 2028?",
-        "url": "https://247wallst.com/investing/cryptocurrency/2026/11/25/can-xrp-reach-standard-chartereds-12-60-target-by-2028/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 12:59 ET",
-        "pub_ts": 1795629546.0
-      },
-      {
-        "title": "Why America’s Goldilocks Economy is Bad News for Bitcoin and Gold",
-        "url": "https://beincrypto.com/gold-silver-bitcoin-slide-us-inflation-pce-index/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 12:58 ET",
-        "pub_ts": 1795629512.0
       }
     ],
     "CRWD": [
@@ -3368,11 +3368,11 @@
     "FPS": 1795634640.2780282,
     "MU": 1795635355.4284744,
     "SKHY": 1795635355.4284744,
-    "WDC": 1795633885.9491684,
+    "WDC": 1795635395.2340174,
     "STX": 1795634681.8906841,
     "MSTR": 1795634640.2780282,
     "SNDK": 1795634640.2780282,
-    "BTC-USD": 1795633885.9491684,
+    "BTC-USD": 1795635395.2340174,
     "CRWD": 1795634640.2780282,
     "ORCL": 1795634640.2780282,
     "COIN": 1795634640.2780282,
