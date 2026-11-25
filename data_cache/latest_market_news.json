@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795625557.819,
-  "updated_at_et": "11-25 11:52 ET",
-  "updated_at_kst": "01:52 KST",
+  "updated_at_ts": 1795625601.794,
+  "updated_at_et": "11-25 11:53 ET",
+  "updated_at_kst": "01:53 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -3014,6 +3014,13 @@
     ],
     "JPM": [
       {
+        "title": "JPMorgan Says the Biggest Risk to Stocks in 2027 Is the Fed",
+        "url": "https://247wallst.com/investing/2026/11/25/jpmorgan-says-the-biggest-risk-to-stocks-in-2027-is-the-fed/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 11:27 ET",
+        "pub_ts": 1795624070.0
+      },
+      {
         "title": "This Asian market could be your portfolio’s best anchor in 2027: JPM",
         "url": "https://finance.yahoo.com/markets/stocks/articles/asian-market-could-portfolio-best-141633303.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3040,16 +3047,16 @@
         "source": "Yahoo Finance",
         "time": "11-25 06:01 ET",
         "pub_ts": 1795604461.0
-      },
-      {
-        "title": "This Nasdaq ETF Pays a 19% Yield Without Writing a Single Covered Call. Here’s How",
-        "url": "https://247wallst.com/investing/etf/2026/11/24/this-nasdaq-etf-pays-a-19-yield-without-writing-a-single-covered-call-heres-how/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 21:02 ET",
-        "pub_ts": 1795572153.0
       }
     ],
     "WMT": [
+      {
+        "title": "Ten reasons the market is selling off again before Thanksgiving",
+        "url": "https://finance.yahoo.com/video/ten-reasons-the-market-is-selling-off-again-before-thanksgiving-160424234.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 11:04 ET",
+        "pub_ts": 1795622664.0
+      },
       {
         "title": "Tanking gas prices could be the setup needed for strong holiday season",
         "url": "https://finance.yahoo.com/video/tanking-gas-prices-could-be-the-setup-needed-for-strong-holiday-season-145638621.html?.tsrc=rss",
@@ -3077,13 +3084,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 09:36 ET",
         "pub_ts": 1795617360.0
-      },
-      {
-        "title": "Kalyan Krishnamurthy to step down as Flipkart CEO",
-        "url": "https://www.retail-insight-network.com/news/kalyan-krishnamurthy-step-down-flipkart-ceo/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 09:07 ET",
-        "pub_ts": 1795615639.0
       }
     ],
     "V": [
@@ -3236,11 +3236,25 @@
     ],
     "ANT": [
       {
+        "title": "Ten reasons the market is selling off again before Thanksgiving",
+        "url": "https://finance.yahoo.com/video/ten-reasons-the-market-is-selling-off-again-before-thanksgiving-160424234.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 11:04 ET",
+        "pub_ts": 1795622664.0
+      },
+      {
         "title": "Dan Ives: Anthropic's missteps could help OpenAI's IPO",
         "url": "https://finance.yahoo.com/video/dan-ives-anthropics-missteps-could-help-openais-ipo-152054891.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-25 10:20 ET",
         "pub_ts": 1795620054.0
+      },
+      {
+        "title": "Without an Anthropic Rally, “There Will Be No OpenAI.” AMD Is the Real Loser",
+        "url": "https://www.tikr.com/blog/without-an-anthropic-rally-there-will-be-no-openai-amd-is-the-real-loser?ref=yahoofinance&tlnk=yf-261125-334c8hfc&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 11:18 ET",
+        "pub_ts": 1795623516.0
       },
       {
         "title": "This Iconic Growth Investor Can't Stop Buying Anthropic Stock",
@@ -3255,20 +3269,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 10:53 ET",
         "pub_ts": 1795622018.0
-      },
-      {
-        "title": "Anthropic Stock Falls Again As Rough Start Threatens Trillion-Dollar Market Cap",
-        "url": "https://finance.yahoo.com/m/bd1ae570-9112-33cf-b6c5-b602983b806c/anthropic-stock-falls-again.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 10:48 ET",
-        "pub_ts": 1795621718.0
-      },
-      {
-        "title": "TeraWulf’s $19 Billion Anthropic Deal: “That Debt Is Guaranteed by Google.” That’s a Big Risk for Alphabet",
-        "url": "https://www.tikr.com/blog/terawulfs-19-billion-anthropic-deal-that-debt-is-guaranteed-by-google-thats-a-big-risk-for-alphabet?ref=yahoofinance&tlnk=yf-261125-gpcr4r7f&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 10:36 ET",
-        "pub_ts": 1795621002.0
       }
     ],
     "XAUUSD": [
@@ -3388,16 +3388,16 @@
     "MRNA": 1795625509.4823964,
     "NKE": 1795625509.4823964,
     "MCD": 1795625509.4823964,
-    "PEP": 1795624099.2041101,
-    "XOM": 1795624099.2041101,
-    "JPM": 1795624099.2041101,
-    "WMT": 1795624099.2041101,
+    "PEP": 1795625601.7937868,
+    "XOM": 1795625601.7937868,
+    "JPM": 1795625601.7937868,
+    "WMT": 1795625601.7937868,
     "V": 1795625509.4823964,
-    "CAT": 1795624099.2041101,
+    "CAT": 1795625601.7937868,
     "FN": 1795624765.4526222,
     "GLW": 1795625376.212828,
-    "ANT": 1795624099.2041101,
-    "XAUUSD": 1795624099.2041101,
+    "ANT": 1795625601.7937868,
+    "XAUUSD": 1795625601.7937868,
     "KOSPI": 1795624717.9528236
   },
   "opex_shield": {
