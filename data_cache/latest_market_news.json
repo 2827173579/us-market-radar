@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795634799.857,
-  "updated_at_et": "11-25 14:26 ET",
-  "updated_at_kst": "04:26 KST",
+  "updated_at_ts": 1795634838.951,
+  "updated_at_et": "11-25 14:27 ET",
+  "updated_at_kst": "04:27 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -941,35 +941,42 @@
         "pub_ts": 1795632814.0
       },
       {
-        "title": "Why Nvidia Stock Is Falling Again",
-        "url": "https://www.fool.com/investing/2026/11/25/why-nvidia-stock-is-falling-again/?.tsrc=rss",
+        "title": "David Tepper Sold All of His AMD Stock. His Biggest Position Is Micron.",
+        "url": "https://www.fool.com/investing/2026/11/25/david-tepper-sold-all-of-his-amd-stock-his-biggest-position-is-micron/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-25 13:53 ET",
-        "pub_ts": 1795632782.0
+        "time": "11-25 14:20 ET",
+        "pub_ts": 1795634402.0
       },
       {
-        "title": "Hop-on (OTCID: HPNN) Demonstrates AI Verification Infrastructure as Digitalage News Surpasses 300 Published Articles in Public Beta",
-        "url": "https://finance.yahoo.com/technology/ai/articles/hop-otcid-hpnn-demonstrates-ai-184500066.html?.tsrc=rss",
+        "title": "Michael Burry Loads Up on 3 Chinese Stocks; Sticks to Nvidia Bearish Bet",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/michael-burry-loads-3-chinese-191345318.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-25 13:45 ET",
-        "pub_ts": 1795632300.0
+        "time": "11-25 14:13 ET",
+        "pub_ts": 1795634025.0
       },
       {
-        "title": "Volume Screen Finds IBD Growth Stock Winners In Real Time",
-        "url": "https://finance.yahoo.com/m/804c25c9-1600-38ca-8b7b-d68f975afae9/volume-screen-finds-ibd.html?.tsrc=rss",
+        "title": "Nvidia Chip Sellers Reportedly Scramble For New Buyers As US Tightens China Export Loopholes",
+        "url": "https://stocktwits.com/news-articles/markets/equity/nvidia-chip-sellers-reportedly-scramble-for-new-buyers-as-us-tightens-china-export-loopholes/cNbHoZSR9mv?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-25 13:38 ET",
-        "pub_ts": 1795631926.0
+        "time": "11-25 14:02 ET",
+        "pub_ts": 1795633343.0
       },
       {
-        "title": "Not Jensen Huang. Not Data Centers. This Is the Real Reason Nvidia Could Soar in 2027.",
-        "url": "https://www.fool.com/investing/2026/11/25/not-jensen-huang-not-data-centers-this-is-the-real-reason-nvidia-could-soar-in-2027/?.tsrc=rss",
+        "title": "Dan Ives Says Nvidia’s Jensen Huang Worth At Least $8 Trillion To US Economy, Calls Sell-Off A ‘Gut Check Moment’",
+        "url": "https://stocktwits.com/news-articles/markets/equity/dan-ives-says-nvidia-s-jensen-huang-worth-at-least-8-trillion-to-us-economy-calls-sell-off-a-gut-check-moment/cNbH8KYR9mH?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-25 13:35 ET",
-        "pub_ts": 1795631702.0
+        "time": "11-25 13:59 ET",
+        "pub_ts": 1795633197.0
       }
     ],
     "AMD": [
+      {
+        "title": "David Tepper Sold All of His AMD Stock. His Biggest Position Is Micron.",
+        "url": "https://www.fool.com/investing/2026/11/25/david-tepper-sold-all-of-his-amd-stock-his-biggest-position-is-micron/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 14:20 ET",
+        "pub_ts": 1795634402.0
+      },
       {
         "title": "AMD stock could reward patient investors enormously",
         "url": "https://www.thestreet.com/investing/stocks/amd-stock-2027-data-center-growth?.tsrc=rss",
@@ -997,13 +1004,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 11:18 ET",
         "pub_ts": 1795623516.0
-      },
-      {
-        "title": "CNBC’s David Faber Says “AMD Is Taking Clients.” SemiAnalysis Has Its MI355X Beating Nvidia’s B200 on Cost",
-        "url": "https://www.tikr.com/blog/cnbcs-david-faber-says-amd-is-taking-clients-semianalysis-has-its-mi355x-beating-nvidias-b200-on-cost?ref=yahoofinance&tlnk=yf-261125-pj6xvm8j&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 10:57 ET",
-        "pub_ts": 1795622264.0
       }
     ],
     "ASML": [
@@ -3311,26 +3311,26 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795633319.042458,
-    "SOXL": 1795633319.042458,
+    "KORU": 1795634838.9510815,
+    "SOXL": 1795634838.9510815,
     "SPY": 1795633801.8821743,
-    "DIA": 1795633319.042458,
-    "SOXX": 1795633319.042458,
-    "QQQ": 1795633319.042458,
+    "DIA": 1795634838.9510815,
+    "SOXX": 1795634838.9510815,
+    "QQQ": 1795634838.9510815,
     "SMH": 1795633801.8821743,
-    "IWM": 1795633319.042458,
-    "IGV": 1795633319.042458,
-    "TLT": 1795633319.042458,
-    "GLD": 1795633319.042458,
-    "SQQQ": 1795633319.042458,
+    "IWM": 1795634838.9510815,
+    "IGV": 1795634838.9510815,
+    "TLT": 1795634838.9510815,
+    "GLD": 1795634838.9510815,
+    "SQQQ": 1795634838.9510815,
     "TSM": 1795633801.8821743,
-    "VIXY": 1795633319.042458,
-    "SOXS": 1795633319.042458,
-    "NVDA": 1795633319.042458,
-    "AMD": 1795633319.042458,
+    "VIXY": 1795634838.9510815,
+    "SOXS": 1795634838.9510815,
+    "NVDA": 1795634838.9510815,
+    "AMD": 1795634838.9510815,
     "ASML": 1795633801.8821743,
     "QCOM": 1795633801.8821743,
-    "AVGO": 1795633319.042458,
+    "AVGO": 1795634838.9510815,
     "AMAT": 1795633801.8821743,
     "META": 1795633801.8821743,
     "GOOGL": 1795633801.8821743,
