@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795615533.459,
-  "updated_at_et": "11-25 09:05 ET",
-  "updated_at_kst": "23:05 KST",
+  "updated_at_ts": 1795615587.389,
+  "updated_at_et": "11-25 09:06 ET",
+  "updated_at_kst": "23:06 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -2418,6 +2418,13 @@
     ],
     "MU": [
       {
+        "title": "Nvidia, AMD, and Micron stocks sink as investors flee AI trade",
+        "url": "https://finance.yahoo.com/markets/article/nvidia-amd-micron-stocks-sink-as-investors-flee-ai-trade-134518921.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 08:45 ET",
+        "pub_ts": 1795614318.0
+      },
+      {
         "title": "The Consensus on Micron Stock Is Changing. Here’s What Investors Should Know",
         "url": "https://247wallst.com/investing/2026/11/25/the-consensus-on-micron-stock-is-changing-heres-what-investors-should-know/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2444,16 +2451,16 @@
         "source": "Yahoo Finance",
         "time": "11-25 07:27 ET",
         "pub_ts": 1795609648.0
-      },
-      {
-        "title": "What Pulled Micron Stock Down?",
-        "url": "https://www.trefis.com/stock/mu/articles/628971/what-pulled-micron-stock-down/2026-11-25?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 07:01 ET",
-        "pub_ts": 1795608092.0
       }
     ],
     "SKHY": [
+      {
+        "title": "SK Hynix Sheds 20% in 30 Days: Two Wall Street Pros Agree That 260% Gains Are Coming",
+        "url": "https://247wallst.com/investing/2026/11/25/sk-hynix-sheds-20-in-30-days-two-wall-street-pros-agree-that-260-gains-are-coming/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 08:45 ET",
+        "pub_ts": 1795614313.0
+      },
       {
         "title": "Huang Boost Fades Quickly as AI Fears Sink TSMC, SK Hynix Shares",
         "url": "https://finance.yahoo.com/markets/stocks/articles/huang-boost-fades-quickly-ai-040320019.html?.tsrc=rss",
@@ -2481,13 +2488,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 00:11 ET",
         "pub_ts": 1795583475.0
-      },
-      {
-        "title": "Backed by Samsung, SK Hynix, and the Korean government, Rebellions CEO Sunghyun Park wants to prove sovereign AI pays off",
-        "url": "https://finance.yahoo.com/technology/ai/articles/backed-samsung-sk-hynix-korean-050100443.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 00:01 ET",
-        "pub_ts": 1795582860.0
       }
     ],
     "WDC": [
@@ -3350,8 +3350,8 @@
     "BE": 1795614742.880808,
     "CRDO": 1795614742.880808,
     "COHR": 1795614742.880808,
-    "MRVL": 1795614064.8472505,
-    "LITE": 1795614064.8472505,
+    "MRVL": 1795615587.3890493,
+    "LITE": 1795615587.3890493,
     "AAOI": 1795614742.880808,
     "SPCX": 1795614742.880808,
     "ASTS": 1795614742.880808,
@@ -3370,8 +3370,8 @@
     "OKLO": 1795614843.2812846,
     "CEG": 1795614843.2812846,
     "FPS": 1795614843.2812846,
-    "MU": 1795614064.8472505,
-    "SKHY": 1795614064.8472505,
+    "MU": 1795615587.3890493,
+    "SKHY": 1795615587.3890493,
     "WDC": 1795614112.228556,
     "STX": 1795614895.7600193,
     "MSTR": 1795614843.2812846,
@@ -3390,7 +3390,7 @@
     "WMT": 1795614946.8550723,
     "V": 1795614843.2812846,
     "CAT": 1795614946.8550723,
-    "FN": 1795614064.8472505,
+    "FN": 1795615587.3890493,
     "GLW": 1795614742.880808,
     "ANT": 1795614946.8550723,
     "XAUUSD": 1795614946.8550723,
