@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795639136.501,
-  "updated_at_et": "11-25 15:38 ET",
-  "updated_at_kst": "05:38 KST",
+  "updated_at_ts": 1795639174.598,
+  "updated_at_et": "11-25 15:39 ET",
+  "updated_at_kst": "05:39 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -1984,25 +1984,25 @@
         "pub_ts": 1795621319.0
       },
       {
+        "title": "Billionaire Brad Gerstner’s Altimeter Opened a $680 Million Tesla Stake and Exited Qualcomm and Applied Materials",
+        "url": "https://247wallst.com/investing/2026/11/25/billionaire-brad-gerstners-altimeter-opened-a-680-million-tesla-stake-and-exited-qualcomm-and-applied-materials/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 15:22 ET",
+        "pub_ts": 1795638121.0
+      },
+      {
+        "title": "Is Space Exploration Technologies (SPCX) Cheap As Tesla Merger Talks Raise Valuation Questions?",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/space-exploration-technologies-spcx-cheap-201121157.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 15:11 ET",
+        "pub_ts": 1795637481.0
+      },
+      {
         "title": "Ford Motor vs. Tesla: Which Automaker Stock Is a Better Buy for 2027?",
         "url": "https://www.fool.com/coverage/better-buy/2026/11/25/ford-motor-vs-tesla-which-automaker-stock-is-a-better-buy-for-2027/?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-25 13:13 ET",
         "pub_ts": 1795630381.0
-      },
-      {
-        "title": "Tesla’s FSD Version 15 Is an Improvement. How That Helps the Stock.",
-        "url": "https://finance.yahoo.com/m/2c17d7f3-1b8f-3c65-962c-b31a60522eff/tesla%E2%80%99s-fsd-version-15-is-an.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 11:38 ET",
-        "pub_ts": 1795624680.0
-      },
-      {
-        "title": "Tesla Sinks 5%, Sandisk Down 13% as AI Selloff Deepens and EU Stalls FSD Approval",
-        "url": "https://www.tikr.com/blog/tesla-sinks-5-sandisk-down-13-as-ai-selloff-deepens-and-eu-stalls-fsd-approval?ref=yahoofinance&tlnk=yf-261125-3jjqvxp5&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 11:31 ET",
-        "pub_ts": 1795624301.0
       }
     ],
     "AXP": [
@@ -2266,11 +2266,11 @@
     ],
     "DELL": [
       {
-        "title": "Tariffs are back as Anthropic sinks further below its IPO price",
-        "url": "https://finance.yahoo.com/video/tariffs-are-back-as-anthropic-sinks-further-below-its-ipo-price-160524926.html?.tsrc=rss",
+        "title": "What's Behind Dell Stock's Fall?",
+        "url": "https://www.trefis.com/stock/dell/articles/628977/what-s-behind-dell-stock-s-fall/2026-11-25?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-25 11:05 ET",
-        "pub_ts": 1795622724.0
+        "time": "11-25 15:06 ET",
+        "pub_ts": 1795637213.0
       },
       {
         "title": "Dell Stock Falls Despite Q3 Beat; Here’s Why Mizuho and Piper Lowered Their Price Targets",
@@ -2747,6 +2747,13 @@
     ],
     "COIN": [
       {
+        "title": "Coinbase Is Buying Back COIN Again as Shares Slide",
+        "url": "https://www.bankless.com/read/news/coinbase-is-buying-back-coin-again-as-shares-slide?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 15:07 ET",
+        "pub_ts": 1795637258.0
+      },
+      {
         "title": "The Rich Got Into SpaceX Early. Brian Armstrong Wants to Change That",
         "url": "https://www.benzinga.com/trading-ideas/long-ideas/26/11/63643086/brian-armstrong-private-market-access?utm_source=yahooFinance&utm_campaign=partner_feed&utm_medium=referral&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2773,16 +2780,16 @@
         "source": "Yahoo Finance",
         "time": "11-24 23:33 ET",
         "pub_ts": 1795581191.0
-      },
-      {
-        "title": "Competition Started In 24/7 Trading: Andrew Cuomo",
-        "url": "https://finance.yahoo.com/video/competition-started-24-7-trading-204050875.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 15:40 ET",
-        "pub_ts": 1795552850.0
       }
     ],
     "LLY": [
+      {
+        "title": "Will Vision Warning Labels Change Novo Nordisk's (CPSE:NOVO B) Narrative",
+        "url": "https://finance.yahoo.com/healthcare/articles/vision-warning-labels-change-novo-201554991.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 15:15 ET",
+        "pub_ts": 1795637754.0
+      },
       {
         "title": "Sector Update: Healthcare Stocks Mixed Wednesday Afternoon",
         "url": "https://finance.yahoo.com/healthcare/articles/sector-healthcare-stocks-mixed-wednesday-183851394.html?.tsrc=rss",
@@ -2810,13 +2817,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 15:50 ET",
         "pub_ts": 1795553402.0
-      },
-      {
-        "title": "Eli Lilly earns Moody’s upgrade to Aa2 as obesity drug demand fuels earnings",
-        "url": "https://finance.yahoo.com/healthcare/articles/eli-lilly-earns-moody-upgrade-204431978.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 15:44 ET",
-        "pub_ts": 1795553071.0
       }
     ],
     "MRNA": [
@@ -2895,6 +2895,13 @@
     ],
     "MCD": [
       {
+        "title": "Here's How Much a $10,000 Investment in McDonald's Pays You Every Single Year",
+        "url": "https://www.fool.com/investing/2026/11/25/heres-how-much-a-10000-investment-in-mcdonalds-pays-you-every-single-year/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 15:13 ET",
+        "pub_ts": 1795637582.0
+      },
+      {
         "title": "Invest in Big Macs, Whoppers and Olive Garden Breadsticks for Passive Income: $90,000 Across These 3 Restaurant Stocks Pays More Than $2,600 a Year",
         "url": "https://247wallst.com/investing/2026/11/25/invest-in-big-macs-whoppers-and-olive-garden-breadsticks-for-passive-income-90000-across-these-3-restaurant-stocks-pays-more-than-2600-a-year/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2921,13 +2928,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 12:28 ET",
         "pub_ts": 1795541294.0
-      },
-      {
-        "title": "McDonald's Moves on Makeover; Dick's Sporting Goods Up on Earnings | Stock Movers",
-        "url": "https://finance.yahoo.com/video/mcdonalds-moves-makeover-dicks-sporting-161755169.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 11:17 ET",
-        "pub_ts": 1795537075.0
       }
     ],
     "PEP": [
@@ -3354,37 +3354,37 @@
     "AXTI": 1795638340.0437229,
     "NASA": 1795639012.0496514,
     "LUNR": 1795639012.0496514,
-    "TSLA": 1795637668.4817874,
+    "TSLA": 1795639174.5981371,
     "AXP": 1795639012.0496514,
     "RKLB": 1795639012.0496514,
     "KO": 1795639012.0496514,
     "FLY": 1795639012.0496514,
     "INTC": 1795639012.0496514,
-    "VRT": 1795637668.4817874,
-    "HPE": 1795637668.4817874,
-    "DELL": 1795637668.4817874,
-    "OKLO": 1795637668.4817874,
-    "CEG": 1795637668.4817874,
-    "FPS": 1795637668.4817874,
+    "VRT": 1795639174.5981371,
+    "HPE": 1795639174.5981371,
+    "DELL": 1795639174.5981371,
+    "OKLO": 1795639174.5981371,
+    "CEG": 1795639174.5981371,
+    "FPS": 1795639174.5981371,
     "MU": 1795638391.7112484,
     "SKHY": 1795638391.7112484,
     "WDC": 1795638433.1298013,
     "STX": 1795637714.9541426,
-    "MSTR": 1795637668.4817874,
-    "SNDK": 1795637668.4817874,
+    "MSTR": 1795639174.5981371,
+    "SNDK": 1795639174.5981371,
     "BTC-USD": 1795638433.1298013,
-    "CRWD": 1795637668.4817874,
-    "ORCL": 1795637668.4817874,
-    "COIN": 1795637668.4817874,
-    "LLY": 1795637668.4817874,
-    "MRNA": 1795637668.4817874,
-    "NKE": 1795637668.4817874,
-    "MCD": 1795637668.4817874,
+    "CRWD": 1795639174.5981371,
+    "ORCL": 1795639174.5981371,
+    "COIN": 1795639174.5981371,
+    "LLY": 1795639174.5981371,
+    "MRNA": 1795639174.5981371,
+    "NKE": 1795639174.5981371,
+    "MCD": 1795639174.5981371,
     "PEP": 1795637753.5680225,
     "XOM": 1795637753.5680225,
     "JPM": 1795637753.5680225,
     "WMT": 1795637753.5680225,
-    "V": 1795637668.4817874,
+    "V": 1795639174.5981371,
     "CAT": 1795637753.5680225,
     "FN": 1795638391.7112484,
     "GLW": 1795639012.0496514,
