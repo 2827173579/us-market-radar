@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795582836.705,
-  "updated_at_et": "11-25 00:00 ET",
-  "updated_at_kst": "14:00 KST",
+  "updated_at_ts": 1795582948.568,
+  "updated_at_et": "11-25 00:02 ET",
+  "updated_at_kst": "14:02 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -17,7 +17,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 510,
+      "minutes_left": 508,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -36,7 +36,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 510,
+      "minutes_left": 508,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -950,6 +950,13 @@
     ],
     "NVDA": [
       {
+        "title": "COHR Stock Swings After Nvidia-Led AI Rally: $15M Insider Buy Draws Attention",
+        "url": "https://stocktwits.com/news-articles/markets/equity/cohr-stock-swings-after-nvidia-led-ai-rally-15-m-insider-buy-draws-attention/cNbHcl8R9lg?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 23:40 ET",
+        "pub_ts": 1795581637.0
+      },
+      {
         "title": "Jim Cramer resets Nvidia stock target as Jensen Huang returns as CEO",
         "url": "https://www.thestreet.com/investing/stocks/jim-cramer-nvidia-stock-target-jensen-huang?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -976,13 +983,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 23:04 ET",
         "pub_ts": 1795579473.0
-      },
-      {
-        "title": "Another Wall Street analyst revamps stock market outlook as volatility surges",
-        "url": "https://www.thestreet.com/investing/another-wall-street-analyst-revamps-stock-market-outlook-as-volatility-surges?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 22:53 ET",
-        "pub_ts": 1795578780.0
       }
     ],
     "AMD": [
@@ -3327,26 +3327,26 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795581435.673521,
-    "SOXL": 1795581435.673521,
+    "KORU": 1795582948.5684385,
+    "SOXL": 1795582948.5684385,
     "SPY": 1795581758.2286813,
-    "DIA": 1795581435.673521,
-    "SOXX": 1795581435.673521,
-    "QQQ": 1795581435.673521,
+    "DIA": 1795582948.5684385,
+    "SOXX": 1795582948.5684385,
+    "QQQ": 1795582948.5684385,
     "SMH": 1795581758.2286813,
-    "IWM": 1795581435.673521,
-    "IGV": 1795581435.673521,
-    "TLT": 1795581435.673521,
-    "GLD": 1795581435.673521,
-    "SQQQ": 1795581435.673521,
+    "IWM": 1795582948.5684385,
+    "IGV": 1795582948.5684385,
+    "TLT": 1795582948.5684385,
+    "GLD": 1795582948.5684385,
+    "SQQQ": 1795582948.5684385,
     "TSM": 1795581758.2286813,
-    "VIXY": 1795581435.673521,
-    "SOXS": 1795581435.673521,
-    "NVDA": 1795581435.673521,
-    "AMD": 1795581435.673521,
+    "VIXY": 1795582948.5684385,
+    "SOXS": 1795582948.5684385,
+    "NVDA": 1795582948.5684385,
+    "AMD": 1795582948.5684385,
     "ASML": 1795581758.2286813,
     "QCOM": 1795581758.2286813,
-    "AVGO": 1795581435.673521,
+    "AVGO": 1795582948.5684385,
     "AMAT": 1795581758.2286813,
     "META": 1795581758.2286813,
     "GOOGL": 1795581758.2286813,
@@ -3424,10 +3424,10 @@
   },
   "calendar_banner": {
     "level": "upcoming",
-    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 510 分钟（11-25 08:30 ET / 22:30 KST）",
+    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 508 分钟（11-25 08:30 ET / 22:30 KST）",
     "detail": "前值 0.3% ｜ 预期 0.3% ｜ 临近公布前15分钟将自动触发防插针预警",
     "event_name": "美国10月核心PCE物价指数环比",
-    "minutes_left": 510,
+    "minutes_left": 508,
     "opex_shield": {
       "date": "2026-11-25",
       "active": false,
