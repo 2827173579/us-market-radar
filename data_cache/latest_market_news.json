@@ -1,5 +1,5 @@
 {
-  "updated_at_ts": 1795632247.797,
+  "updated_at_ts": 1795632287.515,
   "updated_at_et": "11-25 13:44 ET",
   "updated_at_kst": "03:44 KST",
   "macro_calendar": [
@@ -1180,18 +1180,18 @@
         "pub_ts": 1795617376.0
       },
       {
+        "title": "CoreWeave banks prepare $4.5 billion Meta-tied loan sale next week, Bloomberg says",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/coreweave-banks-prepare-4-5-183018691.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 13:30 ET",
+        "pub_ts": 1795631418.0
+      },
+      {
         "title": "Own Meta’s ~$200B+ Ad Moat or Bet on AppLovin’s ~53% Growth at a ~47% Pullback?",
         "url": "https://247wallst.com/investing/2026/11/25/own-metas-200b-ad-moat-or-bet-on-applovins-53-growth-at-a-47-pullback/?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-25 12:45 ET",
         "pub_ts": 1795628745.0
-      },
-      {
-        "title": "Amazon Wants a 'Fair Exchange' Before Letting Muse Back In",
-        "url": "https://finance.yahoo.com/technology/articles/amazon-wants-fair-exchange-letting-163449964.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 11:34 ET",
-        "pub_ts": 1795624489.0
       }
     ],
     "GOOGL": [
@@ -1307,6 +1307,13 @@
     ],
     "PLTR": [
       {
+        "title": "Peter Thiel Buys $122M of PLTR After Years Of Selling — And He Could Buy Millions More Shares",
+        "url": "https://www.benzinga.com/markets/prediction-markets/26/11/63645021/peter-thiel-palantir-stock-purchase?utm_source=yahooFinance&utm_campaign=partner_feed&utm_medium=referral&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 13:18 ET",
+        "pub_ts": 1795630722.0
+      },
+      {
         "title": "Palantir Is Down 25% From Its High. Is It a Bargain or Still Overvalued?",
         "url": "https://www.fool.com/investing/2026/11/25/palantir-is-down-25-from-its-high-is-it-a-bargain-or-still-overvalued/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1333,13 +1340,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 08:53 ET",
         "pub_ts": 1795614827.0
-      },
-      {
-        "title": "ETFs Are Net Sellers of Palantir (PLTR) on Monday",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-net-sellers-palantir-pltr-110251086.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 06:02 ET",
-        "pub_ts": 1795604571.0
       }
     ],
     "NOW": [
@@ -1418,6 +1418,13 @@
     ],
     "CRWV": [
       {
+        "title": "CoreWeave banks prepare $4.5 billion Meta-tied loan sale next week, Bloomberg says",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/coreweave-banks-prepare-4-5-183018691.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 13:30 ET",
+        "pub_ts": 1795631418.0
+      },
+      {
         "title": "CoreWeave Stocks Plunge 10.27% as Credit Markets Price 68% Default Risk",
         "url": "https://finance.yahoo.com/markets/stocks/articles/coreweave-stocks-plunge-10-27-174415599.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1444,13 +1451,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 10:19 ET",
         "pub_ts": 1795619963.0
-      },
-      {
-        "title": "Data Center Americas 2027 Announces Industry Leaders from AWS, Google, Microsoft, Oracle, CoreWeave and Applied Digital as Featured Speakers",
-        "url": "https://finance.yahoo.com/technology/ai/articles/data-center-americas-2027-announces-140000391.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 09:00 ET",
-        "pub_ts": 1795615200.0
       }
     ],
     "NBIS": [
@@ -3316,34 +3316,34 @@
   "ticker_news_ts": {
     "KORU": 1795631800.4424055,
     "SOXL": 1795631800.4424055,
-    "SPY": 1795630766.8301432,
+    "SPY": 1795632287.5153353,
     "DIA": 1795631800.4424055,
     "SOXX": 1795631800.4424055,
     "QQQ": 1795631800.4424055,
-    "SMH": 1795630766.8301432,
+    "SMH": 1795632287.5153353,
     "IWM": 1795631800.4424055,
     "IGV": 1795631800.4424055,
     "TLT": 1795631800.4424055,
     "GLD": 1795631800.4424055,
     "SQQQ": 1795631800.4424055,
-    "TSM": 1795630766.8301432,
+    "TSM": 1795632287.5153353,
     "VIXY": 1795631800.4424055,
     "SOXS": 1795631800.4424055,
     "NVDA": 1795631800.4424055,
     "AMD": 1795631800.4424055,
-    "ASML": 1795630766.8301432,
-    "QCOM": 1795630766.8301432,
+    "ASML": 1795632287.5153353,
+    "QCOM": 1795632287.5153353,
     "AVGO": 1795631800.4424055,
-    "AMAT": 1795630766.8301432,
-    "META": 1795630766.8301432,
-    "GOOGL": 1795630766.8301432,
-    "MSFT": 1795630766.8301432,
-    "AAPL": 1795630766.8301432,
-    "PLTR": 1795630766.8301432,
-    "NOW": 1795630766.8301432,
-    "AMZN": 1795630766.8301432,
-    "CRWV": 1795630766.8301432,
-    "NBIS": 1795630766.8301432,
+    "AMAT": 1795632287.5153353,
+    "META": 1795632287.5153353,
+    "GOOGL": 1795632287.5153353,
+    "MSFT": 1795632287.5153353,
+    "AAPL": 1795632287.5153353,
+    "PLTR": 1795632287.5153353,
+    "NOW": 1795632287.5153353,
+    "AMZN": 1795632287.5153353,
+    "CRWV": 1795632287.5153353,
+    "NBIS": 1795632287.5153353,
     "APLD": 1795631437.8287823,
     "VST": 1795631437.8287823,
     "BE": 1795631437.8287823,
@@ -3354,7 +3354,7 @@
     "AAOI": 1795631437.8287823,
     "SPCX": 1795631437.8287823,
     "ASTS": 1795631437.8287823,
-    "AXTI": 1795630766.8301432,
+    "AXTI": 1795632287.5153353,
     "NASA": 1795631437.8287823,
     "LUNR": 1795631437.8287823,
     "TSLA": 1795631604.9019983,
@@ -3393,7 +3393,7 @@
     "GLW": 1795631437.8287823,
     "ANT": 1795631684.808988,
     "XAUUSD": 1795631684.808988,
-    "KOSPI": 1795630766.8301432
+    "KOSPI": 1795632287.5153353
   },
   "opex_shield": {
     "date": "2026-11-25",
