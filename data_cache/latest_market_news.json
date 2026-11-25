@@ -1,5 +1,5 @@
 {
-  "updated_at_ts": 1795645023.865,
+  "updated_at_ts": 1795645063.284,
   "updated_at_et": "11-25 17:17 ET",
   "updated_at_kst": "07:17 KST",
   "macro_calendar": [
@@ -1796,6 +1796,20 @@
         "pub_ts": 1795640239.0
       },
       {
+        "title": "SpaceX Stock Surges on AI Satellite Approval and Trump Accounts Plan",
+        "url": "https://beincrypto.com/spacex-stock-ai-satellites-trump-accounts/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 17:03 ET",
+        "pub_ts": 1795644217.0
+      },
+      {
+        "title": "SpaceX is now on the clock to launch 1,000,000 satellites — 60x what exists in space today. Amazon calls it impossible",
+        "url": "https://finance.yahoo.com/technology/ai/articles/spacex-now-clock-launch-1-220000396.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 17:00 ET",
+        "pub_ts": 1795644000.0
+      },
+      {
         "title": "SpaceX (SPCX) Faces Grok Lawsuits As It Expands $74 Billion In AI Campuses",
         "url": "https://finance.yahoo.com/technology/ai/articles/spacex-spcx-faces-grok-lawsuits-211010807.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1808,20 +1822,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 15:56 ET",
         "pub_ts": 1795640204.0
-      },
-      {
-        "title": "Sector Update: Tech Stocks Fall Late Afternoon",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/sector-tech-stocks-fall-afternoon-204936627.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 15:49 ET",
-        "pub_ts": 1795639776.0
-      },
-      {
-        "title": "SpaceX stock price crashes on concerns over compute demand",
-        "url": "https://blockspace.media/short/spacex-stock-price-crashes-on-concerns-over-compute-demand/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 15:32 ET",
-        "pub_ts": 1795638730.0
       }
     ],
     "ASTS": [
@@ -3345,25 +3345,25 @@
     "AMZN": 1795644449.4396114,
     "CRWV": 1795644449.4396114,
     "NBIS": 1795644449.4396114,
-    "APLD": 1795643553.5965235,
-    "VST": 1795643553.5965235,
-    "BE": 1795643553.5965235,
-    "CRDO": 1795643553.5965235,
-    "COHR": 1795643553.5965235,
+    "APLD": 1795645063.2838955,
+    "VST": 1795645063.2838955,
+    "BE": 1795645063.2838955,
+    "CRDO": 1795645063.2838955,
+    "COHR": 1795645063.2838955,
     "MRVL": 1795644494.861593,
     "LITE": 1795644494.861593,
-    "AAOI": 1795643553.5965235,
-    "SPCX": 1795643553.5965235,
-    "ASTS": 1795643553.5965235,
+    "AAOI": 1795645063.2838955,
+    "SPCX": 1795645063.2838955,
+    "ASTS": 1795645063.2838955,
     "AXTI": 1795644449.4396114,
-    "NASA": 1795643553.5965235,
-    "LUNR": 1795643553.5965235,
+    "NASA": 1795645063.2838955,
+    "LUNR": 1795645063.2838955,
     "TSLA": 1795643715.7914033,
-    "AXP": 1795643553.5965235,
-    "RKLB": 1795643553.5965235,
-    "KO": 1795643553.5965235,
-    "FLY": 1795643553.5965235,
-    "INTC": 1795643553.5965235,
+    "AXP": 1795645063.2838955,
+    "RKLB": 1795645063.2838955,
+    "KO": 1795645063.2838955,
+    "FLY": 1795645063.2838955,
+    "INTC": 1795645063.2838955,
     "VRT": 1795643715.7914033,
     "HPE": 1795643715.7914033,
     "DELL": 1795643715.7914033,
@@ -3391,7 +3391,7 @@
     "V": 1795643715.7914033,
     "CAT": 1795643838.7905612,
     "FN": 1795644494.861593,
-    "GLW": 1795643553.5965235,
+    "GLW": 1795645063.2838955,
     "ANT": 1795643838.7905612,
     "XAUUSD": 1795643838.7905612,
     "KOSPI": 1795644449.4396114
