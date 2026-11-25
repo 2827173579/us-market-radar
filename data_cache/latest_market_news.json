@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795631567.567,
-  "updated_at_et": "11-25 13:32 ET",
-  "updated_at_kst": "03:32 KST",
+  "updated_at_ts": 1795631604.902,
+  "updated_at_et": "11-25 13:33 ET",
+  "updated_at_kst": "03:33 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -1989,6 +1989,13 @@
         "pub_ts": 1795621319.0
       },
       {
+        "title": "Ford Motor vs. Tesla: Which Automaker Stock Is a Better Buy for 2027?",
+        "url": "https://www.fool.com/coverage/better-buy/2026/11/25/ford-motor-vs-tesla-which-automaker-stock-is-a-better-buy-for-2027/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 13:13 ET",
+        "pub_ts": 1795630381.0
+      },
+      {
         "title": "Tesla’s FSD Version 15 Is an Improvement. How That Helps the Stock.",
         "url": "https://finance.yahoo.com/m/2c17d7f3-1b8f-3c65-962c-b31a60522eff/tesla%E2%80%99s-fsd-version-15-is-an.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2001,13 +2008,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 11:31 ET",
         "pub_ts": 1795624301.0
-      },
-      {
-        "title": "Tesla Slides 6% as EU Delays Vote on Its Self-Driving Software; Rivian and Lucid Drop 4%",
-        "url": "https://247wallst.com/investing/2026/11/25/tesla-slides-6-as-eu-delays-vote-on-its-self-driving-software-rivian-and-lucid-drop-4/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 10:54 ET",
-        "pub_ts": 1795622051.0
       }
     ],
     "AXP": [
@@ -2292,18 +2292,18 @@
         "pub_ts": 1795622208.0
       },
       {
-        "title": "Why Dell Technologies Stock Plunged Today",
-        "url": "https://www.fool.com/investing/2026/11/25/why-dell-technologies-stock-plunged-today/?.tsrc=rss",
+        "title": "What Does Dell Technologies (DELL) $25 Billion Buyback Mean After AI Demand Surged?",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/does-dell-technologies-dell-25-181543009.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-25 12:32 ET",
-        "pub_ts": 1795627952.0
+        "time": "11-25 13:15 ET",
+        "pub_ts": 1795630543.0
       },
       {
-        "title": "Dell Just Delivered a Blowout Quarter. Why Is the Stock Sinking",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/dell-just-delivered-blowout-quarter-171222130.html?.tsrc=rss",
+        "title": "Most of Dell’s New AI Server Orders Are Now for Nvidia’s Vera Rubin",
+        "url": "https://247wallst.com/investing/2026/11/25/most-of-dells-new-ai-server-orders-are-now-for-nvidias-vera-rubin/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-25 12:12 ET",
-        "pub_ts": 1795626742.0
+        "time": "11-25 13:07 ET",
+        "pub_ts": 1795630026.0
       }
     ],
     "OKLO": [
@@ -2604,13 +2604,6 @@
     ],
     "SNDK": [
       {
-        "title": "Nvidia, AMD, and Micron stocks sink as investors flee AI trade",
-        "url": "https://finance.yahoo.com/markets/article/nvidia-amd-micron-stocks-sink-as-investors-flee-ai-trade-134518921.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 08:45 ET",
-        "pub_ts": 1795614318.0
-      },
-      {
         "title": "SK hynix Falls 5%, Sandisk Down 10% as Asian Chip Stocks Give Back the Huang Rally",
         "url": "https://www.tikr.com/blog/sk-hynix-falls-5-sandisk-down-10-as-asian-chip-stocks-give-back-the-huang-rally?ref=yahoofinance&tlnk=yf-261125-7hm5f9h6&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2637,6 +2630,13 @@
         "source": "Yahoo Finance",
         "time": "11-25 10:50 ET",
         "pub_ts": 1795621816.0
+      },
+      {
+        "title": "Alphabet Falls 4% on AI Credit Fears as Strategist Warns Capex Is “As Good as It Gets”",
+        "url": "https://www.tikr.com/blog/alphabet-falls-4-on-ai-credit-fears-as-strategist-warns-capex-is-as-good-as-it-gets?ref=yahoofinance&tlnk=yf-261125-pwcg7rgj&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 10:39 ET",
+        "pub_ts": 1795621167.0
       }
     ],
     "BTC-USD": [
@@ -3359,37 +3359,37 @@
     "AXTI": 1795630766.8301432,
     "NASA": 1795631437.8287823,
     "LUNR": 1795631437.8287823,
-    "TSLA": 1795630071.0794914,
+    "TSLA": 1795631604.9019983,
     "AXP": 1795631437.8287823,
     "RKLB": 1795631437.8287823,
     "KO": 1795631437.8287823,
     "FLY": 1795631437.8287823,
     "INTC": 1795631437.8287823,
-    "VRT": 1795630071.0794914,
-    "HPE": 1795630071.0794914,
-    "DELL": 1795630071.0794914,
-    "OKLO": 1795630071.0794914,
-    "CEG": 1795630071.0794914,
-    "FPS": 1795630071.0794914,
+    "VRT": 1795631604.9019983,
+    "HPE": 1795631604.9019983,
+    "DELL": 1795631604.9019983,
+    "OKLO": 1795631604.9019983,
+    "CEG": 1795631604.9019983,
+    "FPS": 1795631604.9019983,
     "MU": 1795630813.7265573,
     "SKHY": 1795630813.7265573,
     "WDC": 1795630856.8986568,
     "STX": 1795630120.3149467,
-    "MSTR": 1795630071.0794914,
-    "SNDK": 1795630071.0794914,
+    "MSTR": 1795631604.9019983,
+    "SNDK": 1795631604.9019983,
     "BTC-USD": 1795630856.8986568,
-    "CRWD": 1795630071.0794914,
-    "ORCL": 1795630071.0794914,
-    "COIN": 1795630071.0794914,
-    "LLY": 1795630071.0794914,
-    "MRNA": 1795630071.0794914,
-    "NKE": 1795630071.0794914,
-    "MCD": 1795630071.0794914,
+    "CRWD": 1795631604.9019983,
+    "ORCL": 1795631604.9019983,
+    "COIN": 1795631604.9019983,
+    "LLY": 1795631604.9019983,
+    "MRNA": 1795631604.9019983,
+    "NKE": 1795631604.9019983,
+    "MCD": 1795631604.9019983,
     "PEP": 1795630163.520161,
     "XOM": 1795630163.520161,
     "JPM": 1795630163.520161,
     "WMT": 1795630163.520161,
-    "V": 1795630071.0794914,
+    "V": 1795631604.9019983,
     "CAT": 1795630163.520161,
     "FN": 1795630813.7265573,
     "GLW": 1795631437.8287823,
