@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795593678.894,
-  "updated_at_et": "11-25 03:01 ET",
-  "updated_at_kst": "17:01 KST",
+  "updated_at_ts": 1795593785.633,
+  "updated_at_et": "11-25 03:03 ET",
+  "updated_at_kst": "17:03 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -17,7 +17,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 329,
+      "minutes_left": 327,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -36,7 +36,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 329,
+      "minutes_left": 327,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -1093,13 +1093,6 @@
     ],
     "AVGO": [
       {
-        "title": "Stocks give back gains as Anthropic dips below IPO price",
-        "url": "https://finance.yahoo.com/video/stocks-give-back-gains-as-anthropic-dips-below-ipo-price-154408548.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 10:44 ET",
-        "pub_ts": 1795535048.0
-      },
-      {
         "title": "Broadcom Stock Could Have 70% Upside, Analysts Say. What AVGO’s Valuation Reveals.",
         "url": "https://www.barchart.com/story/news/8991255/broadcom-stock-could-have-70-upside-analysts-say-what-avgos-valuation-reveals?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1126,6 +1119,13 @@
         "source": "Yahoo Finance",
         "time": "11-24 11:22 ET",
         "pub_ts": 1795537322.0
+      },
+      {
+        "title": "Stocks give back gains as Anthropic dips below IPO price",
+        "url": "https://finance.yahoo.com/video/stocks-give-back-gains-as-anthropic-dips-below-ipo-price-154408548.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 10:44 ET",
+        "pub_ts": 1795535048.0
       }
     ],
     "AMAT": [
@@ -3322,26 +3322,26 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795592256.0799913,
-    "SOXL": 1795592256.0799913,
+    "KORU": 1795593785.6334338,
+    "SOXL": 1795593785.6334338,
     "SPY": 1795592575.630133,
-    "DIA": 1795592256.0799913,
-    "SOXX": 1795592256.0799913,
-    "QQQ": 1795592256.0799913,
+    "DIA": 1795593785.6334338,
+    "SOXX": 1795593785.6334338,
+    "QQQ": 1795593785.6334338,
     "SMH": 1795592575.630133,
-    "IWM": 1795592256.0799913,
-    "IGV": 1795592256.0799913,
-    "TLT": 1795592256.0799913,
-    "GLD": 1795592256.0799913,
-    "SQQQ": 1795592256.0799913,
+    "IWM": 1795593785.6334338,
+    "IGV": 1795593785.6334338,
+    "TLT": 1795593785.6334338,
+    "GLD": 1795593785.6334338,
+    "SQQQ": 1795593785.6334338,
     "TSM": 1795592575.630133,
-    "VIXY": 1795592256.0799913,
-    "SOXS": 1795592256.0799913,
-    "NVDA": 1795592256.0799913,
-    "AMD": 1795592256.0799913,
+    "VIXY": 1795593785.6334338,
+    "SOXS": 1795593785.6334338,
+    "NVDA": 1795593785.6334338,
+    "AMD": 1795593785.6334338,
     "ASML": 1795592575.630133,
     "QCOM": 1795592575.630133,
-    "AVGO": 1795592256.0799913,
+    "AVGO": 1795593785.6334338,
     "AMAT": 1795592575.630133,
     "META": 1795592575.630133,
     "GOOGL": 1795592575.630133,
@@ -3419,10 +3419,10 @@
   },
   "calendar_banner": {
     "level": "upcoming",
-    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 329 分钟（11-25 08:30 ET / 22:30 KST）",
+    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 327 分钟（11-25 08:30 ET / 22:30 KST）",
     "detail": "前值 0.3% ｜ 预期 0.3% ｜ 临近公布前15分钟将自动触发防插针预警",
     "event_name": "美国10月核心PCE物价指数环比",
-    "minutes_left": 329,
+    "minutes_left": 327,
     "opex_shield": {
       "date": "2026-11-25",
       "active": false,
