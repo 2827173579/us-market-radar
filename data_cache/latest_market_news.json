@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795607138.261,
-  "updated_at_et": "11-25 06:45 ET",
-  "updated_at_kst": "20:45 KST",
+  "updated_at_ts": 1795607185.595,
+  "updated_at_et": "11-25 06:46 ET",
+  "updated_at_kst": "20:46 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -17,7 +17,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 105,
+      "minutes_left": 104,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -36,7 +36,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 105,
+      "minutes_left": 104,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -1983,6 +1983,13 @@
     ],
     "TSLA": [
       {
+        "title": "Tesla and SpaceX $3.5 Trillion Merger Talks Take a Major Step Forward",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/tesla-spacex-3-5-trillion-111122235.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 06:11 ET",
+        "pub_ts": 1795605082.0
+      },
+      {
         "title": "Franklin Systematic Style Premia (FLSP) Sells $8.1 Million of Costco on Monday",
         "url": "https://finance.yahoo.com/markets/stocks/articles/franklin-systematic-style-premia-flsp-110453628.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2009,13 +2016,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 05:43 ET",
         "pub_ts": 1795603380.0
-      },
-      {
-        "title": "SpaceX Could Fall Below $100 On A Tesla Bid, Gary Black Says — JPMorgan Sees The Same Deal As A Shortcut To The S&P 500",
-        "url": "https://stocktwits.com/news-articles/markets/equity/spacex-fall-tesla-bid-gary-black-jp-morgan-shortcut-sp500/cNbH7PdR9lF?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 03:07 ET",
-        "pub_ts": 1795594028.0
       }
     ],
     "AXP": [
@@ -2205,6 +2205,13 @@
     ],
     "VRT": [
       {
+        "title": "Vertiv Holdings Co (VRT) Looks Repriced Following AI Data Center Wins And Higher Guidance",
+        "url": "https://finance.yahoo.com/technology/ai/articles/vertiv-holdings-co-vrt-looks-110832574.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 06:08 ET",
+        "pub_ts": 1795604912.0
+      },
+      {
         "title": "Vertiv Lost 11% in a Month. Evercore Cut Its Target, but Still Sees 58% Upside",
         "url": "https://www.tikr.com/blog/vertiv-lost-11-in-a-month-evercore-cut-its-target-but-still-sees-58-upside?ref=yahoofinance&tlnk=yf-261125-5v7qjx35&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2231,13 +2238,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 14:35 ET",
         "pub_ts": 1795462519.0
-      },
-      {
-        "title": "Why Is Vertiv (VRT) Stock Up Today? Nvidia's CEO Return Lifts AI Hardware Stocks",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/why-vertiv-vrt-stock-today-173031743.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 12:30 ET",
-        "pub_ts": 1795455031.0
       }
     ],
     "HPE": [
@@ -2293,6 +2293,13 @@
         "pub_ts": 1795604760.0
       },
       {
+        "title": "Dell Technologies Shares Fall 4.4% Despite Strong Quarterly Results and Higher Annual Revenue Forecast",
+        "url": "https://investorshub.advfn.com/market-news/article/40686/dell-technologies-shares-fall-4-4-despite-strong-quarterly-results-and-higher-annual-revenue-forecast?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 06:04 ET",
+        "pub_ts": 1795604670.0
+      },
+      {
         "title": "U.S. chip stocks extend losses premarket as AI spending concerns resurface",
         "url": "https://finance.yahoo.com/technology/ai/articles/u-chip-stocks-extend-losses-104903644.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2305,13 +2312,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 04:51 ET",
         "pub_ts": 1795600289.0
-      },
-      {
-        "title": "AI jitters spark \"wild\" stock moves; PCE data ahead - what’s moving markets",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/ai-jitters-spark-wild-stock-093356972.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 04:33 ET",
-        "pub_ts": 1795599236.0
       }
     ],
     "OKLO": [
@@ -3093,6 +3093,13 @@
     ],
     "V": [
       {
+        "title": "Kraken’s Krak Moves Into Credit With Two US Cards, One Backed by a USDC Deposit",
+        "url": "https://unchainedcrypto.com/krakens-krak-moves-into-credit-with-two-us-cards-one-backed-by-a-usdc-deposit/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 06:30 ET",
+        "pub_ts": 1795606236.0
+      },
+      {
         "title": "iwoca and Visa launch credit card to widen SME funding choice",
         "url": "https://finance.yahoo.com/small-business/articles/iwoca-visa-launch-credit-card-000100356.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3119,13 +3126,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 06:18 ET",
         "pub_ts": 1795519120.0
-      },
-      {
-        "title": "ETFs Are Buying Visa (V) on Nov. 20",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-buying-visa-v-nov-110157000.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 06:01 ET",
-        "pub_ts": 1795518117.0
       }
     ],
     "CAT": [
@@ -3367,37 +3367,37 @@
     "AXTI": 1795606386.937073,
     "NASA": 1795607087.74781,
     "LUNR": 1795607087.74781,
-    "TSLA": 1795605650.1484492,
+    "TSLA": 1795607185.594512,
     "AXP": 1795607087.74781,
     "RKLB": 1795607087.74781,
     "KO": 1795607087.74781,
     "FLY": 1795607087.74781,
     "INTC": 1795607087.74781,
-    "VRT": 1795605650.1484492,
-    "HPE": 1795605650.1484492,
-    "DELL": 1795605650.1484492,
-    "OKLO": 1795605650.1484492,
-    "CEG": 1795605650.1484492,
-    "FPS": 1795605650.1484492,
+    "VRT": 1795607185.594512,
+    "HPE": 1795607185.594512,
+    "DELL": 1795607185.594512,
+    "OKLO": 1795607185.594512,
+    "CEG": 1795607185.594512,
+    "FPS": 1795607185.594512,
     "MU": 1795606440.9328077,
     "SKHY": 1795606440.9328077,
     "WDC": 1795606487.234947,
     "STX": 1795605701.7703695,
-    "MSTR": 1795605650.1484492,
-    "SNDK": 1795605650.1484492,
+    "MSTR": 1795607185.594512,
+    "SNDK": 1795607185.594512,
     "BTC-USD": 1795606487.234947,
-    "CRWD": 1795605650.1484492,
-    "ORCL": 1795605650.1484492,
-    "COIN": 1795605650.1484492,
-    "LLY": 1795605650.1484492,
-    "MRNA": 1795605650.1484492,
-    "NKE": 1795605650.1484492,
-    "MCD": 1795605650.1484492,
+    "CRWD": 1795607185.594512,
+    "ORCL": 1795607185.594512,
+    "COIN": 1795607185.594512,
+    "LLY": 1795607185.594512,
+    "MRNA": 1795607185.594512,
+    "NKE": 1795607185.594512,
+    "MCD": 1795607185.594512,
     "PEP": 1795605748.2915187,
     "XOM": 1795605748.2915187,
     "JPM": 1795605748.2915187,
     "WMT": 1795605748.2915187,
-    "V": 1795605650.1484492,
+    "V": 1795607185.594512,
     "CAT": 1795605748.2915187,
     "FN": 1795606440.9328077,
     "GLW": 1795607087.74781,
@@ -3421,10 +3421,10 @@
   },
   "calendar_banner": {
     "level": "upcoming",
-    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 105 分钟（11-25 08:30 ET / 22:30 KST）",
+    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 104 分钟（11-25 08:30 ET / 22:30 KST）",
     "detail": "前值 0.3% ｜ 预期 0.3% ｜ 临近公布前15分钟将自动触发防插针预警",
     "event_name": "美国10月核心PCE物价指数环比",
-    "minutes_left": 105,
+    "minutes_left": 104,
     "opex_shield": {
       "date": "2026-11-25",
       "active": false,
