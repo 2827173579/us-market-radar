@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795640506.42,
-  "updated_at_et": "11-25 16:01 ET",
-  "updated_at_kst": "06:01 KST",
+  "updated_at_ts": 1795640549.244,
+  "updated_at_et": "11-25 16:02 ET",
+  "updated_at_kst": "06:02 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -1785,11 +1785,25 @@
     ],
     "SPCX": [
       {
+        "title": "SpaceX, Elon Musk to give one share each to active Trump accounts",
+        "url": "https://finance.yahoo.com/markets/article/spacex-elon-musk-to-give-one-share-each-to-active-trump-accounts-205719872.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 15:57 ET",
+        "pub_ts": 1795640239.0
+      },
+      {
         "title": "SpaceX stock pares losses following FCC approval for data centers in space",
         "url": "https://finance.yahoo.com/technology/article/spacex-stock-pares-losses-following-fcc-approval-for-data-centers-in-space-183757039.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-25 13:37 ET",
         "pub_ts": 1795631877.0
+      },
+      {
+        "title": "Sector Update: Tech Stocks Fall Late Afternoon",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/sector-tech-stocks-fall-afternoon-204936627.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 15:49 ET",
+        "pub_ts": 1795639776.0
       },
       {
         "title": "Is Space Exploration Technologies (SPCX) Cheap As Tesla Merger Talks Raise Valuation Questions?",
@@ -1804,20 +1818,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 15:02 ET",
         "pub_ts": 1795636960.0
-      },
-      {
-        "title": "Why SpaceX Stock Is Down Today",
-        "url": "https://www.fool.com/investing/2026/11/25/why-spacex-stock-is-down-today/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 14:05 ET",
-        "pub_ts": 1795633502.0
-      },
-      {
-        "title": "Billionaire David Tepper Just Loaded Up on SpaceX Stock. Should You Follow His Lead?",
-        "url": "https://www.fool.com/investing/2026/11/25/billionaire-david-tepper-just-loaded-up-on-spacex-stock-should-you-follow-his-lead/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 13:53 ET",
-        "pub_ts": 1795632782.0
       }
     ],
     "ASTS": [
@@ -3341,25 +3341,25 @@
     "AMZN": 1795639848.1332786,
     "CRWV": 1795639848.1332786,
     "NBIS": 1795639848.1332786,
-    "APLD": 1795639012.0496514,
-    "VST": 1795639012.0496514,
-    "BE": 1795639012.0496514,
-    "CRDO": 1795639012.0496514,
-    "COHR": 1795639012.0496514,
+    "APLD": 1795640549.2440906,
+    "VST": 1795640549.2440906,
+    "BE": 1795640549.2440906,
+    "CRDO": 1795640549.2440906,
+    "COHR": 1795640549.2440906,
     "MRVL": 1795639928.4611053,
     "LITE": 1795639928.4611053,
-    "AAOI": 1795639012.0496514,
-    "SPCX": 1795639012.0496514,
-    "ASTS": 1795639012.0496514,
+    "AAOI": 1795640549.2440906,
+    "SPCX": 1795640549.2440906,
+    "ASTS": 1795640549.2440906,
     "AXTI": 1795639848.1332786,
-    "NASA": 1795639012.0496514,
-    "LUNR": 1795639012.0496514,
+    "NASA": 1795640549.2440906,
+    "LUNR": 1795640549.2440906,
     "TSLA": 1795639174.5981371,
-    "AXP": 1795639012.0496514,
-    "RKLB": 1795639012.0496514,
-    "KO": 1795639012.0496514,
-    "FLY": 1795639012.0496514,
-    "INTC": 1795639012.0496514,
+    "AXP": 1795640549.2440906,
+    "RKLB": 1795640549.2440906,
+    "KO": 1795640549.2440906,
+    "FLY": 1795640549.2440906,
+    "INTC": 1795640549.2440906,
     "VRT": 1795639174.5981371,
     "HPE": 1795639174.5981371,
     "DELL": 1795639174.5981371,
@@ -3387,7 +3387,7 @@
     "V": 1795639174.5981371,
     "CAT": 1795639258.4676147,
     "FN": 1795639928.4611053,
-    "GLW": 1795639012.0496514,
+    "GLW": 1795640549.2440906,
     "ANT": 1795639258.4676147,
     "XAUUSD": 1795639258.4676147,
     "KOSPI": 1795639848.1332786
