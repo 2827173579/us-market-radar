@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795578526.118,
-  "updated_at_et": "11-24 22:48 ET",
-  "updated_at_kst": "12:48 KST",
+  "updated_at_ts": 1795578627.949,
+  "updated_at_et": "11-24 22:50 ET",
+  "updated_at_kst": "12:50 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2398,6 +2398,13 @@
         "pub_ts": 1795556758.0
       },
       {
+        "title": "South Korea's chipmakers rally on Huang's return",
+        "url": "http://www.intellinews.com/south-korea-s-chipmakers-rally-on-huang-s-return-488025/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 22:21 ET",
+        "pub_ts": 1795576883.0
+      },
+      {
         "title": "3 AI Investment Stocks We’re Buying Today And Why We’re Selling On Micron",
         "url": "https://247wallst.com/videos/3-ai-investment-stocks-were-buying-today-and-why-were-selling-on-micron/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2417,22 +2424,29 @@
         "source": "Yahoo Finance",
         "time": "11-24 16:01 ET",
         "pub_ts": 1795554102.0
-      },
-      {
-        "title": "5 Sleeper Blue-Chip Stock Picks for Steady Long-Term Gains",
-        "url": "https://www.kiplinger.com/investing/blue-chip-stocks/sleeper-blue-chip-stock-picks-for-steady-long-term-gains?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 19:52 ET",
-        "pub_ts": 1795567953.0
       }
     ],
     "SKHY": [
+      {
+        "title": "South Korea's chipmakers rally on Huang's return",
+        "url": "http://www.intellinews.com/south-korea-s-chipmakers-rally-on-huang-s-return-488025/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 22:21 ET",
+        "pub_ts": 1795576883.0
+      },
       {
         "title": "AI Chip Boom to See Won Build on Best Year in Almost a Decade",
         "url": "https://finance.yahoo.com/news/ai-chip-boom-see-won-014144127.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-24 20:41 ET",
         "pub_ts": 1795570904.0
+      },
+      {
+        "title": "SoftBank Shares Drop 10% as Samsung and SK Hynix Fall Over 7% in AI Sell Off",
+        "url": "https://beincrypto.com/softbank-shares-drop-samsung-sk-hynix/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 20:12 ET",
+        "pub_ts": 1795569172.0
       },
       {
         "title": "SK hynix Stocks Rise 6.73% as Huang's Return Lifts Seoul's HBM Leader",
@@ -2447,20 +2461,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 12:35 ET",
         "pub_ts": 1795541702.0
-      },
-      {
-        "title": "Micron Falls 7% as NVIDIA Pullback Partially Reverses Monday’s AI Chip Rally; SanDisk and SK Hynix Drop 6%",
-        "url": "https://247wallst.com/investing/2026/11/24/micron-falls-7-as-nvidia-pullback-partially-reverses-mondays-ai-chip-rally-sandisk-and-sk-hynix-drop-6/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 09:07 ET",
-        "pub_ts": 1795529253.0
-      },
-      {
-        "title": "Dan Niles: Why Pay “20 Times Trailing Revenues” for Anthropic When SK Hynix Trades at 2x Earnings?",
-        "url": "https://www.tikr.com/blog/dan-niles-why-pay-20-times-trailing-revenues-for-anthropic-when-sk-hynix-trades-at-2x-earnings?ref=yahoofinance&tlnk=yf-261124-wv9jf564&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 07:56 ET",
-        "pub_ts": 1795524966.0
       }
     ],
     "WDC": [
@@ -2627,6 +2627,13 @@
         "pub_ts": 1795572000.0
       },
       {
+        "title": "Ray Dalio Explains Why Gold Beats Crypto While Holding Some Bitcoin",
+        "url": "https://beincrypto.com/ray-dalio-gold-crypto-bitcoin-stake/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 19:50 ET",
+        "pub_ts": 1795567830.0
+      },
+      {
         "title": "What Cleanspark (CLSK) Said on Its Q4 Earnings Call",
         "url": "https://www.marketbeat.com/instant-alerts/transcript-what-cleanspark-clsk-said-on-its-q4-earnings-call-2026-11-24/?utm_source=yahoofinance&utm_medium=yahoofinance&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2639,13 +2646,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 18:56 ET",
         "pub_ts": 1795564560.0
-      },
-      {
-        "title": "What Would It Take for XRP to Reach $100?",
-        "url": "https://247wallst.com/investing/cryptocurrency/2026/11/24/what-would-it-take-for-xrp-to-reach-100/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 18:52 ET",
-        "pub_ts": 1795564377.0
       }
     ],
     "CRWD": [
@@ -3290,45 +3290,45 @@
   "ticker_news_ts": {
     "KORU": 1795578321.1363122,
     "SOXL": 1795578321.1363122,
-    "SPY": 1795577061.846378,
+    "SPY": 1795578627.9488747,
     "DIA": 1795578321.1363122,
     "SOXX": 1795578321.1363122,
     "QQQ": 1795578321.1363122,
-    "SMH": 1795577061.846378,
+    "SMH": 1795578627.9488747,
     "IWM": 1795578321.1363122,
     "IGV": 1795578321.1363122,
     "TLT": 1795578321.1363122,
     "GLD": 1795578321.1363122,
     "SQQQ": 1795578321.1363122,
-    "TSM": 1795577061.846378,
+    "TSM": 1795578627.9488747,
     "VIXY": 1795578321.1363122,
     "SOXS": 1795578321.1363122,
     "NVDA": 1795578321.1363122,
     "AMD": 1795578321.1363122,
-    "ASML": 1795577061.846378,
-    "QCOM": 1795577061.846378,
+    "ASML": 1795578627.9488747,
+    "QCOM": 1795578627.9488747,
     "AVGO": 1795578321.1363122,
-    "AMAT": 1795577061.846378,
-    "META": 1795577061.846378,
-    "GOOGL": 1795577061.846378,
-    "MSFT": 1795577061.846378,
-    "AAPL": 1795577061.846378,
-    "PLTR": 1795577061.846378,
-    "NOW": 1795577061.846378,
-    "AMZN": 1795577061.846378,
-    "CRWV": 1795577061.846378,
-    "NBIS": 1795577061.846378,
+    "AMAT": 1795578627.9488747,
+    "META": 1795578627.9488747,
+    "GOOGL": 1795578627.9488747,
+    "MSFT": 1795578627.9488747,
+    "AAPL": 1795578627.9488747,
+    "PLTR": 1795578627.9488747,
+    "NOW": 1795578627.9488747,
+    "AMZN": 1795578627.9488747,
+    "CRWV": 1795578627.9488747,
+    "NBIS": 1795578627.9488747,
     "APLD": 1795577577.9049275,
     "VST": 1795577577.9049275,
     "BE": 1795577577.9049275,
     "CRDO": 1795577577.9049275,
     "COHR": 1795577577.9049275,
-    "MRVL": 1795577061.846378,
-    "LITE": 1795577061.846378,
+    "MRVL": 1795578627.9488747,
+    "LITE": 1795578627.9488747,
     "AAOI": 1795577577.9049275,
     "SPCX": 1795577577.9049275,
     "ASTS": 1795577577.9049275,
-    "AXTI": 1795577061.846378,
+    "AXTI": 1795578627.9488747,
     "NASA": 1795577577.9049275,
     "LUNR": 1795577577.9049275,
     "TSLA": 1795577789.6819956,
@@ -3343,13 +3343,13 @@
     "OKLO": 1795577789.6819956,
     "CEG": 1795577789.6819956,
     "FPS": 1795577789.6819956,
-    "MU": 1795577061.846378,
-    "SKHY": 1795577061.846378,
-    "WDC": 1795577061.846378,
+    "MU": 1795578627.9488747,
+    "SKHY": 1795578627.9488747,
+    "WDC": 1795578627.9488747,
     "STX": 1795577789.6819956,
     "MSTR": 1795577789.6819956,
     "SNDK": 1795577789.6819956,
-    "BTC-USD": 1795577061.846378,
+    "BTC-USD": 1795578627.9488747,
     "CRWD": 1795577789.6819956,
     "ORCL": 1795577789.6819956,
     "COIN": 1795577789.6819956,
@@ -3363,11 +3363,11 @@
     "WMT": 1795577906.9946418,
     "V": 1795577789.6819956,
     "CAT": 1795577906.9946418,
-    "FN": 1795577061.846378,
+    "FN": 1795578627.9488747,
     "GLW": 1795577577.9049275,
     "ANT": 1795577906.9946418,
     "XAUUSD": 1795578115.5435414,
-    "KOSPI": 1795577061.846378
+    "KOSPI": 1795578627.9488747
   },
   "opex_shield": {
     "date": "2026-11-24",
