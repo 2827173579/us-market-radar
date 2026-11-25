@@ -7155,9 +7155,13 @@
     "KOL_CLOSE:2026-11-25:KOL_META_SHORT_2026-11-25_3:SL_HIT": {
       "device": "PC",
       "ts": 1795626137.5323668
+    },
+    "2026-11-25:DEFENSIVE_FLIGHT:+9.3": {
+      "device": "PC",
+      "ts": 1795626611.171511
     }
   },
   "device": "PC",
-  "last_heartbeat_ts": 1795626545.4427338,
-  "updated_at": "2026-11-25T17:09:05.443263+00:00"
+  "last_heartbeat_ts": 1795626588.3562734,
+  "updated_at": "2026-11-25T17:10:11.172018+00:00"
 }
