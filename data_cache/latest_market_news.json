@@ -1,12 +1,12 @@
 {
-  "updated_at_ts": 1795620591.291,
-  "updated_at_et": "11-25 10:29 ET",
-  "updated_at_kst": "00:29 KST",
+  "updated_at_ts": 1795620640.146,
+  "updated_at_et": "11-25 10:30 ET",
+  "updated_at_kst": "00:30 KST",
   "macro_calendar": [
     {
-      "event_id": "ff_Core PCE Price Index m/m_2026-11-25T08:30:00-05:00",
-      "name": "美国Core PCE Price Index m/m",
-      "country": "USD",
+      "event_id": "1599680",
+      "name": "美国10月核心PCE物价指数环比",
+      "country": "美国",
       "star": 5,
       "pub_time_ts": 1795613400.0,
       "pub_time_et": "11-25 08:30 ET",
@@ -14,16 +14,48 @@
       "pub_time_kst": "22:30 KST",
       "previous": "0.3%",
       "forecast": "0.3%",
-      "actual": "待公布",
-      "unit": "",
-      "status": "upcoming",
+      "actual": "0.3%",
+      "unit": "%",
+      "status": "released",
       "minutes_left": 0,
-      "impact_tone": "pending",
-      "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
-      "source": "forexfactory"
+      "impact_tone": "neutral",
+      "impact_note": "符合预期·通胀温和持平（中性博弈）",
+      "source": "wscn"
+    },
+    {
+      "event_id": "1599678",
+      "name": "美国10月PCE物价指数环比",
+      "country": "美国",
+      "star": 5,
+      "pub_time_ts": 1795613400.0,
+      "pub_time_et": "11-25 08:30 ET",
+      "pub_time_bj": "21:30 BJ",
+      "pub_time_kst": "22:30 KST",
+      "previous": "0.5%",
+      "forecast": "0.3%",
+      "actual": "0.3%",
+      "unit": "%",
+      "status": "released",
+      "minutes_left": 0,
+      "impact_tone": "neutral",
+      "impact_note": "符合预期·通胀温和持平（中性博弈）",
+      "source": "wscn"
     }
   ],
   "macro_flashes": [
+    {
+      "id": "20261125233003675800",
+      "title": "美国至11月20日当周EIA俄克拉荷马州库欣原油库存 -53.4万桶，前值-120.9万…",
+      "summary": "美国至11月20日当周EIA俄克拉荷马州库欣原油库存 -53.4万桶，前值-120.9万桶。",
+      "keywords": [
+        "原油"
+      ],
+      "pub_ts": 1795620603.0,
+      "time_et": "11-25 10:30 ET",
+      "time_bj": "23:30 BJ",
+      "time_kst": "00:30 KST",
+      "time_display": "10:30 ET / 23:30 BJ"
+    },
     {
       "id": "20261125233003366800",
       "title": "美国至11月20日当周EIA原油库存 110.9万桶，预期150.6万桶，前值338万桶…",
@@ -347,19 +379,6 @@
         "PCE"
       ],
       "pub_ts": 1795613442.0,
-      "time_et": "11-25 08:30 ET",
-      "time_bj": "21:30 BJ",
-      "time_kst": "22:30 KST",
-      "time_display": "08:30 ET / 21:30 BJ"
-    },
-    {
-      "id": "20261125213011319800",
-      "title": "美国10月核心PCE物价指数年率 3.3%，预期3.20%，前值3.10%。",
-      "summary": "美国10月核心PCE物价指数年率 3.3%，预期3.20%，前值3.10%。",
-      "keywords": [
-        "PCE"
-      ],
-      "pub_ts": 1795613411.0,
       "time_et": "11-25 08:30 ET",
       "time_bj": "21:30 BJ",
       "time_kst": "22:30 KST",
@@ -3397,10 +3416,10 @@
     "detail": ""
   },
   "calendar_banner": {
-    "level": "upcoming",
-    "headline": "📅 今日美股重磅预告【美国Core PCE Price Index m/m】· 距公布约 0 分钟（11-25 08:30 ET / 22:30 KST）",
-    "detail": "前值 0.3% ｜ 预期 0.3% ｜ 临近公布前15分钟将自动触发防插针预警",
-    "event_name": "美国Core PCE Price Index m/m",
+    "level": "released",
+    "headline": "📊 今日重磅公布【美国10月核心PCE物价指数环比】· 公布值 0.3%（前值 0.3% / 预期 0.3%）",
+    "detail": "符合预期·通胀温和持平（中性博弈） · 11-25 08:30 ET / 22:30 KST",
+    "event_name": "美国10月核心PCE物价指数环比",
     "minutes_left": 0,
     "opex_shield": {
       "date": "2026-11-25",
