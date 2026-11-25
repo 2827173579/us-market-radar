@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795623809.336,
-  "updated_at_et": "11-25 11:23 ET",
-  "updated_at_kst": "01:23 KST",
+  "updated_at_ts": 1795623852.94,
+  "updated_at_et": "11-25 11:24 ET",
+  "updated_at_kst": "01:24 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -1571,6 +1571,13 @@
     ],
     "BE": [
       {
+        "title": "Bloom Energy Tumbles 11% Despite Morgan Stanley Reiterating $335 Target; FuelCell Energy Drops 7%, Plug Power Falls 6%",
+        "url": "https://247wallst.com/investing/2026/11/25/bloom-energy-tumbles-11-despite-morgan-stanley-reiterating-335-target-fuelcell-energy-drops-7-plug-power-falls-6/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 10:55 ET",
+        "pub_ts": 1795622137.0
+      },
+      {
         "title": "Bloom Energy Joins Nashville Firefighters to Support Local Students and Families Ahead of Tennessee-Vanderbilt Matchup",
         "url": "https://finance.yahoo.com/energy/articles/bloom-energy-joins-nashville-firefighters-151200024.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1597,13 +1604,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 13:33 ET",
         "pub_ts": 1795545180.0
-      },
-      {
-        "title": "Bloom Energy is Down 22% Just This Month: Two Wall Street Pros Predict 109% Gains With 2 More $1 Dollar Lower",
-        "url": "https://247wallst.com/investing/2026/11/24/bloom-energy-is-down-22-just-this-month-two-wall-street-pros-predict-109-gains-with-2-more-1-dollar-lower/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 12:45 ET",
-        "pub_ts": 1795542338.0
       }
     ],
     "CRDO": [
@@ -2015,6 +2015,13 @@
     ],
     "AXP": [
       {
+        "title": "Black Friday shopping: Check this credit card perk first",
+        "url": "https://finance.yahoo.com/personal-finance/credit-cards/article/black-friday-shopping-check-this-credit-card-perk-first-195924850.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-23 14:59 ET",
+        "pub_ts": 1795463964.0
+      },
+      {
         "title": "How American Express Turned Berkshire’s $1.3 Billion Bet Into a $576 Million Annual Paycheck",
         "url": "https://www.fool.com/investing/2026/11/25/how-american-express-turned-berkshire-billion-bet-into-576-million-annual-paycheck/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2034,13 +2041,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 06:48 ET",
         "pub_ts": 1795520917.0
-      },
-      {
-        "title": "Black Friday shopping: Check this credit card perk first",
-        "url": "https://finance.yahoo.com/personal-finance/credit-cards/article/black-friday-shopping-check-this-credit-card-perk-first-195924850.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 14:59 ET",
-        "pub_ts": 1795463964.0
       },
       {
         "title": "Berkshire Hathaway Owns 22.6% of American Express. Is the Stock a Buy, Sell, or Hold After a 17% Drop in 2026?",
@@ -3349,25 +3349,25 @@
     "AMZN": 1795623179.7762742,
     "CRWV": 1795623179.7762742,
     "NBIS": 1795623179.7762742,
-    "APLD": 1795622325.1323829,
-    "VST": 1795622325.1323829,
-    "BE": 1795622325.1323829,
-    "CRDO": 1795622325.1323829,
-    "COHR": 1795622325.1323829,
+    "APLD": 1795623852.9401183,
+    "VST": 1795623852.9401183,
+    "BE": 1795623852.9401183,
+    "CRDO": 1795623852.9401183,
+    "COHR": 1795623852.9401183,
     "MRVL": 1795623228.8876057,
     "LITE": 1795623228.8876057,
-    "AAOI": 1795622325.1323829,
-    "SPCX": 1795622325.1323829,
-    "ASTS": 1795622325.1323829,
+    "AAOI": 1795623852.9401183,
+    "SPCX": 1795623852.9401183,
+    "ASTS": 1795623852.9401183,
     "AXTI": 1795623179.7762742,
-    "NASA": 1795622325.1323829,
-    "LUNR": 1795622325.1323829,
+    "NASA": 1795623852.9401183,
+    "LUNR": 1795623852.9401183,
     "TSLA": 1795622462.2364194,
-    "AXP": 1795622325.1323829,
-    "RKLB": 1795622325.1323829,
-    "KO": 1795622325.1323829,
-    "FLY": 1795622325.1323829,
-    "INTC": 1795622325.1323829,
+    "AXP": 1795623852.9401183,
+    "RKLB": 1795623852.9401183,
+    "KO": 1795623852.9401183,
+    "FLY": 1795623852.9401183,
+    "INTC": 1795623852.9401183,
     "VRT": 1795622462.2364194,
     "HPE": 1795622462.2364194,
     "DELL": 1795622462.2364194,
@@ -3395,7 +3395,7 @@
     "V": 1795622462.2364194,
     "CAT": 1795622560.8793962,
     "FN": 1795623228.8876057,
-    "GLW": 1795622325.1323829,
+    "GLW": 1795623852.9401183,
     "ANT": 1795622560.8793962,
     "XAUUSD": 1795622560.8793962,
     "KOSPI": 1795623179.7762742
