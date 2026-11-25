@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795600913.365,
-  "updated_at_et": "11-25 05:01 ET",
-  "updated_at_kst": "19:01 KST",
+  "updated_at_ts": 1795600957.899,
+  "updated_at_et": "11-25 05:02 ET",
+  "updated_at_kst": "19:02 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -17,7 +17,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 209,
+      "minutes_left": 208,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -36,7 +36,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 209,
+      "minutes_left": 208,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -1621,6 +1621,13 @@
         "pub_ts": 1795584286.0
       },
       {
+        "title": "Down 28% in a Month, Credo Reports Dec. 1 as MaxLinear Predicts “Multiple AEC Vendors.” Time to Buy?",
+        "url": "https://www.tikr.com/blog/down-28-in-a-month-credo-reports-dec-1-as-maxlinear-predicts-multiple-aec-vendors-time-to-buy?ref=yahoofinance&tlnk=yf-261125-m4h6j4m7&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 23:05 ET",
+        "pub_ts": 1795579520.0
+      },
+      {
         "title": "Sandisk Sinks 14% as Memory Stocks Give Back Nvidia’s Huang Rally",
         "url": "https://www.tikr.com/blog/sandisk-sinks-14-as-memory-stocks-give-back-nvidias-huang-rally?ref=yahoofinance&tlnk=yf-261124-287p6vrp&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1640,16 +1647,16 @@
         "source": "Yahoo Finance",
         "time": "11-23 22:17 ET",
         "pub_ts": 1795490279.0
-      },
-      {
-        "title": "Credo Technology’s AI rebound potential versus Broadcom",
-        "url": "https://finance.yahoo.com/technology/ai/articles/credo-technology-ai-rebound-potential-185817118.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 13:58 ET",
-        "pub_ts": 1795460297.0
       }
     ],
     "COHR": [
+      {
+        "title": "Coherent Director Stephen Pagliuca Just Bought $15.2 Million of Stock at Less Than Half Its June High",
+        "url": "https://www.tikr.com/blog/coherent-director-stephen-pagliuca-just-bought-15-2-million-of-stock-at-less-than-half-its-june-high?ref=yahoofinance&tlnk=yf-261125-3vm638gr&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 04:03 ET",
+        "pub_ts": 1795597389.0
+      },
       {
         "title": "COHR Stock Swings After Nvidia-Led AI Rally: $15M Insider Buy Draws Attention",
         "url": "https://stocktwits.com/news-articles/markets/equity/cohr-stock-swings-after-nvidia-led-ai-rally-15-m-insider-buy-draws-attention/cNbHcl8R9lg?.tsrc=rss",
@@ -1677,13 +1684,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 21:22 ET",
         "pub_ts": 1795486965.0
-      },
-      {
-        "title": "Coherent Is the Real Winner of Huang’s Return. Nvidia Paid $2 Billion for Its Stock",
-        "url": "https://www.tikr.com/blog/coherent-is-the-real-winner-of-huangs-return-nvidia-paid-2-billion-for-its-stock?ref=yahoofinance&tlnk=yf-261123-h5c2xv48&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 16:34 ET",
-        "pub_ts": 1795469657.0
       }
     ],
     "MRVL": [
@@ -1799,6 +1799,13 @@
     ],
     "SPCX": [
       {
+        "title": "SpaceX Sinks 11% in a Week on $32 Billion AI Chip Debt as Anthropic Slips Below Its IPO Price",
+        "url": "https://www.tikr.com/blog/spacex-sinks-11-in-a-week-on-32-billion-ai-chip-debt-as-anthropic-slips-below-its-ipo-price?ref=yahoofinance&tlnk=yf-261125-xp54w5xc&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 04:05 ET",
+        "pub_ts": 1795597521.0
+      },
+      {
         "title": "SpaceX Could Fall Below $100 On A Tesla Bid, Gary Black Says — JPMorgan Sees The Same Deal As A Shortcut To The S&P 500",
         "url": "https://stocktwits.com/news-articles/markets/equity/spacex-fall-tesla-bid-gary-black-jp-morgan-shortcut-sp500/cNbH7PdR9lF?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1825,16 +1832,16 @@
         "source": "Yahoo Finance",
         "time": "11-24 22:33 ET",
         "pub_ts": 1795577580.0
-      },
-      {
-        "title": "World's Best Space Company SpaceX Will Soon Be 40% Better",
-        "url": "https://www.fool.com/investing/2026/11/24/world-best-space-company-spacex-soon-40-better/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 22:20 ET",
-        "pub_ts": 1795576802.0
       }
     ],
     "ASTS": [
+      {
+        "title": "AST SpaceMobile Is 82% Below Its May High. A Director Just Bought $1 Million More",
+        "url": "https://www.tikr.com/blog/ast-spacemobile-is-82-below-its-may-high-a-director-just-bought-1-million-more?ref=yahoofinance&tlnk=yf-261125-j8v5vv4r&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 04:02 ET",
+        "pub_ts": 1795597322.0
+      },
       {
         "title": "ASTS Stock Eyes Worst Month Since 2024: Bulls Cheer Director’s Dip Buy And Bet On A Launch-Fueled Comeback",
         "url": "https://stocktwits.com/news-articles/markets/equity/asts-stock-bulls-director-dip-buy-bet-on-launch-fueled-comeback/cNbHb6dR9lO?.tsrc=rss",
@@ -1862,13 +1869,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 18:35 ET",
         "pub_ts": 1795476921.0
-      },
-      {
-        "title": "Could AST SpaceMobile Actually Climb 106%? Or Is B. Riley Totally Wrong?",
-        "url": "https://www.tikr.com/blog/could-ast-spacemobile-actually-climb-106-or-is-b-riley-totally-wrong?ref=yahoofinance&tlnk=yf-261121-cj9rjhgr&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-21 01:55 ET",
-        "pub_ts": 1795244144.0
       }
     ],
     "AXTI": [
@@ -3355,25 +3355,25 @@
     "AMZN": 1795600239.150987,
     "CRWV": 1795600239.150987,
     "NBIS": 1795600239.150987,
-    "APLD": 1795599432.136337,
-    "VST": 1795599432.136337,
-    "BE": 1795599432.136337,
-    "CRDO": 1795599432.136337,
-    "COHR": 1795599432.136337,
+    "APLD": 1795600957.8988295,
+    "VST": 1795600957.8988295,
+    "BE": 1795600957.8988295,
+    "CRDO": 1795600957.8988295,
+    "COHR": 1795600957.8988295,
     "MRVL": 1795600239.150987,
     "LITE": 1795600239.150987,
-    "AAOI": 1795599432.136337,
-    "SPCX": 1795599432.136337,
-    "ASTS": 1795599432.136337,
+    "AAOI": 1795600957.8988295,
+    "SPCX": 1795600957.8988295,
+    "ASTS": 1795600957.8988295,
     "AXTI": 1795600239.150987,
-    "NASA": 1795599432.136337,
-    "LUNR": 1795599432.136337,
+    "NASA": 1795600957.8988295,
+    "LUNR": 1795600957.8988295,
     "TSLA": 1795599528.4937735,
-    "AXP": 1795599432.136337,
-    "RKLB": 1795599432.136337,
-    "KO": 1795599432.136337,
-    "FLY": 1795599432.136337,
-    "INTC": 1795599432.136337,
+    "AXP": 1795600957.8988295,
+    "RKLB": 1795600957.8988295,
+    "KO": 1795600957.8988295,
+    "FLY": 1795600957.8988295,
+    "INTC": 1795600957.8988295,
     "VRT": 1795599528.4937735,
     "HPE": 1795599528.4937735,
     "DELL": 1795599528.4937735,
@@ -3401,7 +3401,7 @@
     "V": 1795599528.4937735,
     "CAT": 1795599632.3265138,
     "FN": 1795600239.150987,
-    "GLW": 1795599432.136337,
+    "GLW": 1795600957.8988295,
     "ANT": 1795599632.3265138,
     "XAUUSD": 1795599632.3265138,
     "KOSPI": 1795600239.150987
@@ -3422,10 +3422,10 @@
   },
   "calendar_banner": {
     "level": "upcoming",
-    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 209 分钟（11-25 08:30 ET / 22:30 KST）",
+    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 208 分钟（11-25 08:30 ET / 22:30 KST）",
     "detail": "前值 0.3% ｜ 预期 0.3% ｜ 临近公布前15分钟将自动触发防插针预警",
     "event_name": "美国10月核心PCE物价指数环比",
-    "minutes_left": 209,
+    "minutes_left": 208,
     "opex_shield": {
       "date": "2026-11-25",
       "active": false,
