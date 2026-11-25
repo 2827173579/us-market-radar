@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795631394.439,
-  "updated_at_et": "11-25 13:29 ET",
-  "updated_at_kst": "03:29 KST",
+  "updated_at_ts": 1795631437.829,
+  "updated_at_et": "11-25 13:30 ET",
+  "updated_at_kst": "03:30 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -1797,6 +1797,20 @@
         "pub_ts": 1795621319.0
       },
       {
+        "title": "Prediction: SpaceX Stock Will Be Worth This Much in 3 Years",
+        "url": "https://www.fool.com/investing/2026/11/25/prediction-spacex-stock-will-be-worth-this-much-in-3-years/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 13:20 ET",
+        "pub_ts": 1795630803.0
+      },
+      {
+        "title": "SpaceX gets approval to deploy 1 million satellites for data centers in space",
+        "url": "https://www.independent.co.uk/tech/spacex-data-center-satellites-fcc-starmind-approval-b3091649.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 13:18 ET",
+        "pub_ts": 1795630717.0
+      },
+      {
         "title": "SpaceX wins landmark FCC backing for 1 million-satellite data center constellation",
         "url": "https://finance.yahoo.com/technology/ai/articles/spacex-wins-landmark-fcc-backing-175942978.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1809,20 +1823,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 12:49 ET",
         "pub_ts": 1795628996.0
-      },
-      {
-        "title": "The Rich Got Into SpaceX Early. Brian Armstrong Wants to Change That",
-        "url": "https://www.benzinga.com/trading-ideas/long-ideas/26/11/63643086/brian-armstrong-private-market-access?utm_source=yahooFinance&utm_campaign=partner_feed&utm_medium=referral&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 12:49 ET",
-        "pub_ts": 1795628959.0
-      },
-      {
-        "title": "SpaceX Wins First-Ever U.S. Approval for Orbital AI Data Centers",
-        "url": "https://www.cryptoprowl.com/releases/spacex-wins-first-ever-us-approval-for-orbital-ai-data-centers-8074?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 12:31 ET",
-        "pub_ts": 1795627860.0
       }
     ],
     "ASTS": [
@@ -3346,25 +3346,25 @@
     "AMZN": 1795630766.8301432,
     "CRWV": 1795630766.8301432,
     "NBIS": 1795630766.8301432,
-    "APLD": 1795629930.5559459,
-    "VST": 1795629930.5559459,
-    "BE": 1795629930.5559459,
-    "CRDO": 1795629930.5559459,
-    "COHR": 1795629930.5559459,
+    "APLD": 1795631437.8287823,
+    "VST": 1795631437.8287823,
+    "BE": 1795631437.8287823,
+    "CRDO": 1795631437.8287823,
+    "COHR": 1795631437.8287823,
     "MRVL": 1795630813.7265573,
     "LITE": 1795630813.7265573,
-    "AAOI": 1795629930.5559459,
-    "SPCX": 1795629930.5559459,
-    "ASTS": 1795629930.5559459,
+    "AAOI": 1795631437.8287823,
+    "SPCX": 1795631437.8287823,
+    "ASTS": 1795631437.8287823,
     "AXTI": 1795630766.8301432,
-    "NASA": 1795629930.5559459,
-    "LUNR": 1795629930.5559459,
+    "NASA": 1795631437.8287823,
+    "LUNR": 1795631437.8287823,
     "TSLA": 1795630071.0794914,
-    "AXP": 1795629930.5559459,
-    "RKLB": 1795629930.5559459,
-    "KO": 1795629930.5559459,
-    "FLY": 1795629930.5559459,
-    "INTC": 1795629930.5559459,
+    "AXP": 1795631437.8287823,
+    "RKLB": 1795631437.8287823,
+    "KO": 1795631437.8287823,
+    "FLY": 1795631437.8287823,
+    "INTC": 1795631437.8287823,
     "VRT": 1795630071.0794914,
     "HPE": 1795630071.0794914,
     "DELL": 1795630071.0794914,
@@ -3392,7 +3392,7 @@
     "V": 1795630071.0794914,
     "CAT": 1795630163.520161,
     "FN": 1795630813.7265573,
-    "GLW": 1795629930.5559459,
+    "GLW": 1795631437.8287823,
     "ANT": 1795630163.520161,
     "XAUUSD": 1795630163.520161,
     "KOSPI": 1795630766.8301432
