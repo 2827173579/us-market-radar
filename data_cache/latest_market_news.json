@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795640636.739,
-  "updated_at_et": "11-25 16:03 ET",
-  "updated_at_kst": "06:03 KST",
+  "updated_at_ts": 1795640679.659,
+  "updated_at_et": "11-25 16:04 ET",
+  "updated_at_kst": "06:04 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -2269,6 +2269,20 @@
     ],
     "DELL": [
       {
+        "title": "Dell earnings analysis: questions answered and next catalysts",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/dell-earnings-analysis-questions-answered-204536459.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 15:45 ET",
+        "pub_ts": 1795639536.0
+      },
+      {
+        "title": "Dell’s Jeff Clarke: “We’ve Had No Customers Reschedule Business.” That’s Good News for Nvidia",
+        "url": "https://www.tikr.com/blog/dells-jeff-clarke-weve-had-no-customers-reschedule-business-thats-good-news-for-nvidia?ref=yahoofinance&tlnk=yf-261125-pm9r283x&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 15:20 ET",
+        "pub_ts": 1795638027.0
+      },
+      {
         "title": "What's Behind Dell Stock's Fall?",
         "url": "https://www.trefis.com/stock/dell/articles/628977/what-s-behind-dell-stock-s-fall/2026-11-25?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2288,20 +2302,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 13:37 ET",
         "pub_ts": 1795631820.0
-      },
-      {
-        "title": "Sector Update: Tech Stocks Fall Wednesday Afternoon",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/sector-tech-stocks-fall-wednesday-183231718.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 13:32 ET",
-        "pub_ts": 1795631551.0
-      },
-      {
-        "title": "What Does Dell Technologies (DELL) $25 Billion Buyback Mean After AI Demand Surged?",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/does-dell-technologies-dell-25-181543009.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 13:15 ET",
-        "pub_ts": 1795630543.0
       }
     ],
     "OKLO": [
@@ -2713,6 +2713,13 @@
     ],
     "ORCL": [
       {
+        "title": "Why Oracle Stock Slumped Today",
+        "url": "https://www.fool.com/investing/2026/11/25/why-oracle-stock-slumped-today/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 15:40 ET",
+        "pub_ts": 1795639212.0
+      },
+      {
         "title": "Oracle Is Down 60% From Its June High. J.P. Morgan Still Sees $200",
         "url": "https://www.tikr.com/blog/oracle-is-down-60-from-its-june-high-j-p-morgan-still-sees-200?ref=yahoofinance&tlnk=yf-261125-q6w2wj6x&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2739,13 +2746,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 11:13 ET",
         "pub_ts": 1795623182.0
-      },
-      {
-        "title": "Oracle Stock Is Down 67%. Should It Keep Building Or Take A Breather?",
-        "url": "https://www.trefis.com/stock/orcl/articles/628199/oracle-stock-is-down-67-should-it-keep-building-or-take-a-breather/2026-11-25?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 11:00 ET",
-        "pub_ts": 1795622402.0
       }
     ],
     "COIN": [
@@ -2845,18 +2845,18 @@
         "pub_ts": 1795604739.0
       },
       {
+        "title": "Stoke (STOK) Stock Is Up 8.3% Today Without Company News",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/stoke-stok-stock-8-3-204525381.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 15:45 ET",
+        "pub_ts": 1795639525.0
+      },
+      {
         "title": "BioMarin (BMRN) Stock Is Up 4.8% Today Without Company News",
         "url": "https://finance.yahoo.com/markets/stocks/articles/biomarin-bmrn-stock-4-8-191517739.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-25 14:15 ET",
         "pub_ts": 1795634117.0
-      },
-      {
-        "title": "ArriVent (AVBP) Stock Is Down 8.7% Today Amid Broad Market Selloff",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/arrivent-avbp-stock-down-8-153018078.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 10:30 ET",
-        "pub_ts": 1795620618.0
       }
     ],
     "NKE": [
@@ -3357,37 +3357,37 @@
     "AXTI": 1795639848.1332786,
     "NASA": 1795640549.2440906,
     "LUNR": 1795640549.2440906,
-    "TSLA": 1795639174.5981371,
+    "TSLA": 1795640679.6591523,
     "AXP": 1795640549.2440906,
     "RKLB": 1795640549.2440906,
     "KO": 1795640549.2440906,
     "FLY": 1795640549.2440906,
     "INTC": 1795640549.2440906,
-    "VRT": 1795639174.5981371,
-    "HPE": 1795639174.5981371,
-    "DELL": 1795639174.5981371,
-    "OKLO": 1795639174.5981371,
-    "CEG": 1795639174.5981371,
-    "FPS": 1795639174.5981371,
+    "VRT": 1795640679.6591523,
+    "HPE": 1795640679.6591523,
+    "DELL": 1795640679.6591523,
+    "OKLO": 1795640679.6591523,
+    "CEG": 1795640679.6591523,
+    "FPS": 1795640679.6591523,
     "MU": 1795639928.4611053,
     "SKHY": 1795639928.4611053,
     "WDC": 1795639969.0927057,
     "STX": 1795639219.7190323,
-    "MSTR": 1795639174.5981371,
-    "SNDK": 1795639174.5981371,
+    "MSTR": 1795640679.6591523,
+    "SNDK": 1795640679.6591523,
     "BTC-USD": 1795639969.0927057,
-    "CRWD": 1795639174.5981371,
-    "ORCL": 1795639174.5981371,
-    "COIN": 1795639174.5981371,
-    "LLY": 1795639174.5981371,
-    "MRNA": 1795639174.5981371,
-    "NKE": 1795639174.5981371,
-    "MCD": 1795639174.5981371,
+    "CRWD": 1795640679.6591523,
+    "ORCL": 1795640679.6591523,
+    "COIN": 1795640679.6591523,
+    "LLY": 1795640679.6591523,
+    "MRNA": 1795640679.6591523,
+    "NKE": 1795640679.6591523,
+    "MCD": 1795640679.6591523,
     "PEP": 1795639258.4676147,
     "XOM": 1795639258.4676147,
     "JPM": 1795639258.4676147,
     "WMT": 1795639258.4676147,
-    "V": 1795639174.5981371,
+    "V": 1795640679.6591523,
     "CAT": 1795639258.4676147,
     "FN": 1795639928.4611053,
     "GLW": 1795640549.2440906,
