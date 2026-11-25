@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795592469.883,
-  "updated_at_et": "11-25 02:41 ET",
-  "updated_at_kst": "16:41 KST",
+  "updated_at_ts": 1795592575.63,
+  "updated_at_et": "11-25 02:42 ET",
+  "updated_at_kst": "16:42 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -17,7 +17,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 349,
+      "minutes_left": 348,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -36,13 +36,28 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 349,
+      "minutes_left": 348,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
     }
   ],
   "macro_flashes": [
+    {
+      "id": "20261125154047805800",
+      "title": "21:30就业通胀双重考验！美国10月PCE与初请数据同步来袭",
+      "summary": "因美国感恩节假期，美国10月PCE通胀数据与初请失业金数据将于今晚21:30同步公布，市场预计通胀压力将进一步上升，同时初请失业金人数料将小幅下降。强劲经济叠加顽固通胀，美联储12月加息恐怕只是前菜，明年还有多少紧缩空间？ 前瞻>>",
+      "keywords": [
+        "美联储",
+        "加息",
+        "PCE"
+      ],
+      "pub_ts": 1795592447.0,
+      "time_et": "11-25 02:40 ET",
+      "time_bj": "15:40 BJ",
+      "time_kst": "16:40 KST",
+      "time_display": "02:40 ET / 15:40 BJ"
+    },
     {
       "id": "20261125153000302800",
       "title": "明年原油过剩成共识，低油价就稳了吗？",
@@ -368,24 +383,6 @@
       "time_bj": "10:10 BJ",
       "time_kst": "11:10 KST",
       "time_display": "21:10 ET / 10:10 BJ"
-    },
-    {
-      "id": "20261125091824044800",
-      "title": "整理：每日热门ETF要闻汇总（2026-11-25）",
-      "summary": "1. 美国准备对数十个国家提高关税。 2. LME铜锡暴跌，因人工智能涨势消退。 3. 摩根大通和汇丰首次在伦敦交易数字黄金，或重塑全球黄金市场基础设施。 4. 特朗普称必要时愿赦免黄仁勋，不排除美国政府入股英伟达。 5. 伊拉克拒绝接受欧佩克+产能评估，或影响本周末产量目标磋商。 6. 纳指跨境ETF溢价率最高突破40%，十余家基金公司密集发布风险提示。 7. 华夏科创半导体ETF月内净流入超174亿元，被动持股接连触及举牌线。 8. 全球芯片LOF溢价率超41%，11月25日上午临时停牌至10:30。 9. 中韩半导体ETF华泰柏瑞提示高溢价风险，或采取临时停牌措施。 10. 国投白银LOF溢价率超12%，基金提示风险并警告或临时停牌。 11. 华夏标普500ETF溢价率超8%，基金警示风险并提示或临时停牌。 12. 美国50ETF汇添富溢价率超9.5%，基金警示风险并提示或临时停牌。",
-      "keywords": [
-        "关税",
-        "芯片",
-        "半导体",
-        "英伟达",
-        "特朗普",
-        "标普"
-      ],
-      "pub_ts": 1795569504.0,
-      "time_et": "11-24 20:18 ET",
-      "time_bj": "09:18 BJ",
-      "time_kst": "10:18 KST",
-      "time_display": "20:18 ET / 09:18 BJ"
     }
   ],
   "ticker_news": {
@@ -835,6 +832,13 @@
     ],
     "TSM": [
       {
+        "title": "Asian stocks mostly decline as AI shares tumble after a retreat on Wall Street",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/asian-stocks-mostly-decline-ai-040526833.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 23:05 ET",
+        "pub_ts": 1795579526.0
+      },
+      {
         "title": "Novanta Shares Just Jumped And We’re Buying This Robotics Play",
         "url": "https://247wallst.com/videos/novanta-shares-just-jumped-and-were-buying-this-robotics-play/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -861,13 +865,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 14:59 ET",
         "pub_ts": 1795550362.0
-      },
-      {
-        "title": "If You Invest $5,000 Into These 3 Stocks, You Could Have $10,000 by 2030",
-        "url": "https://247wallst.com/investing/2026/11/24/if-you-invest-5000-into-these-3-stocks-you-could-have-10000-by-2030/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 13:03 ET",
-        "pub_ts": 1795543400.0
       }
     ],
     "VIXY": [
@@ -1205,6 +1202,13 @@
     ],
     "GOOGL": [
       {
+        "title": "Alphabet Has $251 Billion Invested In 2 of Its Biggest Artificial Intelligence Partners",
+        "url": "https://www.fool.com/investing/2026/11/25/alphabet-has-251-billion-invested-in-2-of-its-biggest-artificial-intelligence-partners/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 02:29 ET",
+        "pub_ts": 1795591742.0
+      },
+      {
         "title": "AI Concerns Resurface? ORCL, GOOGL, SPCX, CRWV Credit Default Swap Spreads Hit Records As NVDA, ANT Tumble",
         "url": "https://stocktwits.com/news-articles/markets/equity/ai-concerns-resurface-orcl-googl-spcx-crwv-credit-default-swap-spreads-hit-records-as-nvda-ant-tumble/cNbHEEAR9lZ?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1231,13 +1235,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 17:07 ET",
         "pub_ts": 1795558073.0
-      },
-      {
-        "title": "Billionaire Charlie Munger’s Protege Li Lu: Himalaya Capital Has 45% of Its $3.78 Billion Portfolio in Alphabet",
-        "url": "https://247wallst.com/investing/2026/11/24/billionaire-charlie-mungers-protege-li-lu-himalaya-capital-has-45-of-its-3-78-billion-portfolio-in-alphabet/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 16:58 ET",
-        "pub_ts": 1795557538.0
       }
     ],
     "MSFT": [
@@ -1323,6 +1320,13 @@
         "pub_ts": 1795556758.0
       },
       {
+        "title": "Can Palantir Technologies (PLTR) Justify Its Price Through Cash Flow?",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/palantir-technologies-pltr-justify-price-070848763.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 02:08 ET",
+        "pub_ts": 1795590528.0
+      },
+      {
         "title": "Where Will Palantir Stock Be at the End of 2030?",
         "url": "https://www.fool.com/investing/2026/11/25/where-will-palantir-stock-be-at-the-end-of-2030/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1342,13 +1346,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 11:33 ET",
         "pub_ts": 1795537993.0
-      },
-      {
-        "title": "AI-Enabled Battlefield Management and Decision Support Systems Global Market Report 2026 | Lockheed Martin, RTX, Palantir Capitalize on Edge AI as Market Hits $17.88B by 2030",
-        "url": "https://finance.yahoo.com/technology/ai/articles/ai-enabled-battlefield-management-decision-144200975.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 09:42 ET",
-        "pub_ts": 1795531320.0
       }
     ],
     "NOW": [
@@ -2463,6 +2460,13 @@
     ],
     "SKHY": [
       {
+        "title": "SK hynix (NasdaqGS:SKHY) Sell Off Puts Undervalued Narrative Back In Focus",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/sk-hynix-nasdaqgs-skhy-sell-070941477.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 02:09 ET",
+        "pub_ts": 1795590581.0
+      },
+      {
         "title": "SK Hynix (NasdaqGS:SKHY) Signals Bigger Share Buybacks To Support Korea Stocks",
         "url": "https://finance.yahoo.com/markets/stocks/articles/sk-hynix-nasdaqgs-skhy-signals-061627176.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2477,25 +2481,18 @@
         "pub_ts": 1795583475.0
       },
       {
+        "title": "Backed by Samsung, SK Hynix, and the Korean government, Rebellions CEO Sunghyun Park wants to prove sovereign AI pays off",
+        "url": "https://finance.yahoo.com/technology/ai/articles/backed-samsung-sk-hynix-korean-050100443.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 00:01 ET",
+        "pub_ts": 1795582860.0
+      },
+      {
         "title": "South Korea's chipmakers rally on Huang's return",
         "url": "http://www.intellinews.com/south-korea-s-chipmakers-rally-on-huang-s-return-488025/?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-24 22:21 ET",
         "pub_ts": 1795576883.0
-      },
-      {
-        "title": "AI Chip Boom to See Won Build on Best Year in Almost a Decade",
-        "url": "https://finance.yahoo.com/news/ai-chip-boom-see-won-014144127.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 20:41 ET",
-        "pub_ts": 1795570904.0
-      },
-      {
-        "title": "SoftBank Shares Drop 10% as Samsung and SK Hynix Fall Over 7% in AI Sell Off",
-        "url": "https://beincrypto.com/softbank-shares-drop-samsung-sk-hynix/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 20:12 ET",
-        "pub_ts": 1795569172.0
       }
     ],
     "WDC": [
@@ -3325,45 +3322,45 @@
   "ticker_news_ts": {
     "KORU": 1795592256.0799913,
     "SOXL": 1795592256.0799913,
-    "SPY": 1795591057.1673243,
+    "SPY": 1795592575.630133,
     "DIA": 1795592256.0799913,
     "SOXX": 1795592256.0799913,
     "QQQ": 1795592256.0799913,
-    "SMH": 1795591057.1673243,
+    "SMH": 1795592575.630133,
     "IWM": 1795592256.0799913,
     "IGV": 1795592256.0799913,
     "TLT": 1795592256.0799913,
     "GLD": 1795592256.0799913,
     "SQQQ": 1795592256.0799913,
-    "TSM": 1795591057.1673243,
+    "TSM": 1795592575.630133,
     "VIXY": 1795592256.0799913,
     "SOXS": 1795592256.0799913,
     "NVDA": 1795592256.0799913,
     "AMD": 1795592256.0799913,
-    "ASML": 1795591057.1673243,
-    "QCOM": 1795591057.1673243,
+    "ASML": 1795592575.630133,
+    "QCOM": 1795592575.630133,
     "AVGO": 1795592256.0799913,
-    "AMAT": 1795591057.1673243,
-    "META": 1795591057.1673243,
-    "GOOGL": 1795591057.1673243,
-    "MSFT": 1795591057.1673243,
-    "AAPL": 1795591057.1673243,
-    "PLTR": 1795591057.1673243,
-    "NOW": 1795591057.1673243,
-    "AMZN": 1795591057.1673243,
-    "CRWV": 1795591057.1673243,
-    "NBIS": 1795591057.1673243,
+    "AMAT": 1795592575.630133,
+    "META": 1795592575.630133,
+    "GOOGL": 1795592575.630133,
+    "MSFT": 1795592575.630133,
+    "AAPL": 1795592575.630133,
+    "PLTR": 1795592575.630133,
+    "NOW": 1795592575.630133,
+    "AMZN": 1795592575.630133,
+    "CRWV": 1795592575.630133,
+    "NBIS": 1795592575.630133,
     "APLD": 1795591808.8032842,
     "VST": 1795591808.8032842,
     "BE": 1795591808.8032842,
     "CRDO": 1795591808.8032842,
     "COHR": 1795591808.8032842,
-    "MRVL": 1795591057.1673243,
-    "LITE": 1795591057.1673243,
+    "MRVL": 1795592575.630133,
+    "LITE": 1795592575.630133,
     "AAOI": 1795591808.8032842,
     "SPCX": 1795591808.8032842,
     "ASTS": 1795591808.8032842,
-    "AXTI": 1795591057.1673243,
+    "AXTI": 1795592575.630133,
     "NASA": 1795591808.8032842,
     "LUNR": 1795591808.8032842,
     "TSLA": 1795591920.0848513,
@@ -3378,8 +3375,8 @@
     "OKLO": 1795591920.0848513,
     "CEG": 1795591920.0848513,
     "FPS": 1795591920.0848513,
-    "MU": 1795591057.1673243,
-    "SKHY": 1795591057.1673243,
+    "MU": 1795592575.630133,
+    "SKHY": 1795592575.630133,
     "WDC": 1795591167.8857865,
     "STX": 1795591920.0848513,
     "MSTR": 1795591920.0848513,
@@ -3398,11 +3395,11 @@
     "WMT": 1795592042.0497315,
     "V": 1795591920.0848513,
     "CAT": 1795592042.0497315,
-    "FN": 1795591057.1673243,
+    "FN": 1795592575.630133,
     "GLW": 1795591808.8032842,
     "ANT": 1795592042.0497315,
     "XAUUSD": 1795592042.0497315,
-    "KOSPI": 1795591057.1673243
+    "KOSPI": 1795592575.630133
   },
   "opex_shield": {
     "date": "2026-11-25",
@@ -3420,10 +3417,10 @@
   },
   "calendar_banner": {
     "level": "upcoming",
-    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 349 分钟（11-25 08:30 ET / 22:30 KST）",
+    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 348 分钟（11-25 08:30 ET / 22:30 KST）",
     "detail": "前值 0.3% ｜ 预期 0.3% ｜ 临近公布前15分钟将自动触发防插针预警",
     "event_name": "美国10月核心PCE物价指数环比",
-    "minutes_left": 349,
+    "minutes_left": 348,
     "opex_shield": {
       "date": "2026-11-25",
       "active": false,
