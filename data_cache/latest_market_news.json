@@ -1,5 +1,5 @@
 {
-  "updated_at_ts": 1795631646.616,
+  "updated_at_ts": 1795631684.809,
   "updated_at_et": "11-25 13:34 ET",
   "updated_at_kst": "03:34 KST",
   "macro_calendar": [
@@ -43,6 +43,19 @@
     }
   ],
   "macro_flashes": [
+    {
+      "id": "20261126023336387800",
+      "title": "美国副总统万斯：我们已获得保证，英伟达(NVDA.O)CEO黄仁勋没有受到任何调查。",
+      "summary": "美国副总统万斯：我们已获得保证，英伟达(NVDA.O)CEO黄仁勋没有受到任何调查。",
+      "keywords": [
+        "英伟达"
+      ],
+      "pub_ts": 1795631616.0,
+      "time_et": "11-25 13:33 ET",
+      "time_bj": "02:33 BJ",
+      "time_kst": "03:33 KST",
+      "time_display": "13:33 ET / 02:33 BJ"
+    },
     {
       "id": "20261126020421456800",
       "title": "布伦特原油向上触及94美元/桶，日内涨3.21%。",
@@ -365,20 +378,6 @@
       "time_bj": "22:02 BJ",
       "time_kst": "23:02 KST",
       "time_display": "09:02 ET / 22:02 BJ"
-    },
-    {
-      "id": "20261125215530473800",
-      "title": "【美国第三季度GDP增速上修至4.3%，为美联储加息留下更大空间】 11月25日讯，美国…",
-      "summary": "【美国第三季度GDP增速上修至4.3%，为美联储加息留下更大空间】 11月25日讯，美国政府周三表示，今年夏季美国经济的增长速度远超此前预期，对第三季度国内生产总值（GDP）的估算进行了大幅上调。数据显示，美国经济按年率计算增长了4.3%，高于此前公布的3.4%，且几乎是第二季度2.2%增速的两倍。美国经济展现出的增长动能比此前预想的更为强劲。在借贷成本上升和通胀持续顽固的背景下，这凸显了美国经济惊人的韧性，同时也可能为美联储进一步加息留出了更大空间。",
-      "keywords": [
-        "美联储",
-        "加息"
-      ],
-      "pub_ts": 1795614930.0,
-      "time_et": "11-25 08:55 ET",
-      "time_bj": "21:55 BJ",
-      "time_kst": "22:55 KST",
-      "time_display": "08:55 ET / 21:55 BJ"
     }
   ],
   "ticker_news": {
@@ -3247,6 +3246,13 @@
         "pub_ts": 1795622664.0
       },
       {
+        "title": "Cathie Wood Just Bought $62 Million of Anthropic Across 6 ARK Funds",
+        "url": "https://www.tikr.com/blog/cathie-wood-just-bought-62-million-of-anthropic-across-6-ark-funds?ref=yahoofinance&tlnk=yf-261125-rc9r594h&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 13:15 ET",
+        "pub_ts": 1795630507.0
+      },
+      {
         "title": "Anthropic’s $1 Trillion Market Value Is at Risk. So Much for the AI Hype.",
         "url": "https://finance.yahoo.com/m/acbd91a7-90c3-3b19-9187-1667d5063696/anthropic%E2%80%99s-%241-trillion.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3259,13 +3265,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 12:17 ET",
         "pub_ts": 1795627022.0
-      },
-      {
-        "title": "The Largest IPO in Stock Market History Is Here. What It Means for Your Portfolio",
-        "url": "https://www.fool.com/investing/2026/11/25/the-largest-ipo-in-stock-market-history-is-here-what-it-means-for-your-portfolio/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 12:03 ET",
-        "pub_ts": 1795626182.0
       }
     ],
     "XAUUSD": [
@@ -3385,16 +3384,16 @@
     "MRNA": 1795631604.9019983,
     "NKE": 1795631604.9019983,
     "MCD": 1795631604.9019983,
-    "PEP": 1795630163.520161,
-    "XOM": 1795630163.520161,
-    "JPM": 1795630163.520161,
-    "WMT": 1795630163.520161,
+    "PEP": 1795631684.808988,
+    "XOM": 1795631684.808988,
+    "JPM": 1795631684.808988,
+    "WMT": 1795631684.808988,
     "V": 1795631604.9019983,
-    "CAT": 1795630163.520161,
+    "CAT": 1795631684.808988,
     "FN": 1795630813.7265573,
     "GLW": 1795631437.8287823,
-    "ANT": 1795630163.520161,
-    "XAUUSD": 1795630163.520161,
+    "ANT": 1795631684.808988,
+    "XAUUSD": 1795631684.808988,
     "KOSPI": 1795630766.8301432
   },
   "opex_shield": {
