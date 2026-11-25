@@ -1,5 +1,5 @@
 {
-  "updated_at_ts": 1795601881.495,
+  "updated_at_ts": 1795601927.53,
   "updated_at_et": "11-25 05:18 ET",
   "updated_at_kst": "19:18 KST",
   "macro_calendar": [
@@ -2650,6 +2650,13 @@
     ],
     "BTC-USD": [
       {
+        "title": "Bitcoin Oversold in Longest Bear Market on Record, but AI Risks Threaten Recovery",
+        "url": "https://www.ccn.com/news/crypto/bitcoin-oversold-record-bear-market-ai-risks/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 05:02 ET",
+        "pub_ts": 1795600936.0
+      },
+      {
         "title": "Bitcoin’s Next Bull Run Depends On An AI Bubble Bailout? Hayes Sees A 2027 Crash Coming",
         "url": "https://stocktwits.com/news-articles/markets/cryptocurrency/bitcoin-bull-run-depends-on-ai-bubble-bailout-hayes-2027-crash-coming/cNbHBupR9lr?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2676,13 +2683,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 03:05 ET",
         "pub_ts": 1795593923.0
-      },
-      {
-        "title": "Bitcoin extends losses below $59,000 as ETF outflows weigh",
-        "url": "https://finance.yahoo.com/markets/crypto/articles/bitcoin-extends-losses-below-59-064934005.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 01:49 ET",
-        "pub_ts": 1795589374.0
       }
     ],
     "CRWD": [
@@ -3382,11 +3382,11 @@
     "FPS": 1795601054.3531795,
     "MU": 1795601781.5206966,
     "SKHY": 1795601781.5206966,
-    "WDC": 1795600390.9620707,
+    "WDC": 1795601927.5303795,
     "STX": 1795601054.3531795,
     "MSTR": 1795601054.3531795,
     "SNDK": 1795601054.3531795,
-    "BTC-USD": 1795600390.9620707,
+    "BTC-USD": 1795601927.5303795,
     "CRWD": 1795601054.3531795,
     "ORCL": 1795601054.3531795,
     "COIN": 1795601054.3531795,
