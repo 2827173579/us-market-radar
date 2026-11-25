@@ -7,11 +7,11 @@
     },
     "NBIS": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1795525806.0619493
+      "last_notified_at": 1795568545.5093307
     },
     "NVDA": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1795524032.1977205
+      "last_notified_at": 1795568545.5093307
     },
     "META": {
       "state": "NORMAL",
@@ -47,7 +47,7 @@
     },
     "TSM": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1795525025.2374172
+      "last_notified_at": 1795568545.5093307
     },
     "FLY": {
       "state": "NORMAL",
@@ -74,8 +74,8 @@
       "last_notified_at": 0.0
     },
     "AXP": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1795568440.1874168
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "SPY": {
       "state": "NORMAL",
@@ -135,7 +135,7 @@
     },
     "APLD": {
       "state": "STOP_LOSS",
-      "last_notified_at": 1795525692.0800216
+      "last_notified_at": 1795568545.5093307
     },
     "CRDO": {
       "state": "STOP_LOSS",
@@ -170,8 +170,8 @@
       "last_notified_at": 1795567135.3979475
     },
     "NKE": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1795567544.903073
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "HPE": {
       "state": "STOP_LOSS",
