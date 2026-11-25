@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795608576.617,
-  "updated_at_et": "11-25 07:09 ET",
-  "updated_at_kst": "21:09 KST",
+  "updated_at_ts": 1795608623.673,
+  "updated_at_et": "11-25 07:10 ET",
+  "updated_at_kst": "21:10 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -17,7 +17,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 81,
+      "minutes_left": 80,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -36,7 +36,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 81,
+      "minutes_left": 80,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -1501,6 +1501,20 @@
     ],
     "APLD": [
       {
+        "title": "What Made Applied Digital Stock Fall?",
+        "url": "https://www.trefis.com/stock/apld/articles/628984/what-made-applied-digital-stock-fall/2026-11-25?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 06:40 ET",
+        "pub_ts": 1795606841.0
+      },
+      {
+        "title": "“The Bank of NVIDIA” Is Back. Applied Digital Is the Real Winner",
+        "url": "https://www.tikr.com/blog/the-bank-of-nvidia-is-back-applied-digital-is-the-real-winner?ref=yahoofinance&tlnk=yf-261125-ppwv3gxj&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 06:20 ET",
+        "pub_ts": 1795605637.0
+      },
+      {
         "title": "Applied Digital Is Down 33% in a Month. What Will It Take to Get APLD Stock Back to $20?",
         "url": "https://247wallst.com/investing/2026/11/24/applied-digital-is-down-33-in-a-month-what-will-it-take-to-get-apld-stock-back-to-20/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1520,20 +1534,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 10:45 ET",
         "pub_ts": 1795535148.0
-      },
-      {
-        "title": "Needham keeps Applied Digital at Buy with $70 target after 150 MW lease at $2.0 million per MW",
-        "url": "https://blockspace.media/insight/applied-digital-needham-buy-rating-2/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 10:29 ET",
-        "pub_ts": 1795534175.0
-      },
-      {
-        "title": "JonesTrading reiterates Applied Digital Buy, $70 target after 18-year, $5.4 billion hyperscaler lease",
-        "url": "https://blockspace.media/insight/applied-digital-signs-hyperscaler-lease-2/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 10:12 ET",
-        "pub_ts": 1795533158.0
       }
     ],
     "VST": [
@@ -1612,6 +1612,13 @@
     ],
     "CRDO": [
       {
+        "title": "Own Credo Stock? Watch Its Inventory On Dec 1",
+        "url": "https://www.trefis.com/stock/crdo/articles/628767/own-credo-stock-watch-its-inventory-on-dec-1/2026-11-25?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 06:45 ET",
+        "pub_ts": 1795607107.0
+      },
+      {
         "title": "Credo Technology Group Holding (CRDO) Stock Still Looks Undervalued After Its 7x Run",
         "url": "https://finance.yahoo.com/markets/stocks/articles/credo-technology-group-holding-crdo-110715948.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1638,13 +1645,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 10:48 ET",
         "pub_ts": 1795535308.0
-      },
-      {
-        "title": "Credo's Optical Expansion: Can It Gain Ground Against Rivals?",
-        "url": "https://finance.yahoo.com/technology/articles/credos-optical-expansion-gain-ground-120300006.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 07:03 ET",
-        "pub_ts": 1795521780.0
       }
     ],
     "COHR": [
@@ -1834,6 +1834,13 @@
     ],
     "ASTS": [
       {
+        "title": "Is AST SpaceMobile Stock A Buy Despite Cash Burn?",
+        "url": "https://www.trefis.com/stock/asts/articles/628793/is-ast-spacemobile-stock-a-buy-despite-cash-burn/2026-11-25?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 06:52 ET",
+        "pub_ts": 1795607571.0
+      },
+      {
         "title": "AST SpaceMobile Is 82% Below Its May High. A Director Just Bought $1 Million More",
         "url": "https://www.tikr.com/blog/ast-spacemobile-is-82-below-its-may-high-a-director-just-bought-1-million-more?ref=yahoofinance&tlnk=yf-261125-j8v5vv4r&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1860,13 +1867,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 19:23 ET",
         "pub_ts": 1795479799.0
-      },
-      {
-        "title": "Starlink’s 40x Upgrade Targets 150Mbps to Phones. AST SpaceMobile Has a Big Problem",
-        "url": "https://www.tikr.com/blog/starlinks-40x-upgrade-targets-150mbps-to-phones-ast-spacemobile-has-a-big-problem?ref=yahoofinance&tlnk=yf-261123-m4mrj3j8&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 18:35 ET",
-        "pub_ts": 1795476921.0
       }
     ],
     "AXTI": [
@@ -3353,25 +3353,25 @@
     "AMZN": 1795607891.5258613,
     "CRWV": 1795607891.5258613,
     "NBIS": 1795607891.5258613,
-    "APLD": 1795607087.74781,
-    "VST": 1795607087.74781,
-    "BE": 1795607087.74781,
-    "CRDO": 1795607087.74781,
-    "COHR": 1795607087.74781,
+    "APLD": 1795608623.6726074,
+    "VST": 1795608623.6726074,
+    "BE": 1795608623.6726074,
+    "CRDO": 1795608623.6726074,
+    "COHR": 1795608623.6726074,
     "MRVL": 1795607945.2346528,
     "LITE": 1795607945.2346528,
-    "AAOI": 1795607087.74781,
-    "SPCX": 1795607087.74781,
-    "ASTS": 1795607087.74781,
+    "AAOI": 1795608623.6726074,
+    "SPCX": 1795608623.6726074,
+    "ASTS": 1795608623.6726074,
     "AXTI": 1795607891.5258613,
-    "NASA": 1795607087.74781,
-    "LUNR": 1795607087.74781,
+    "NASA": 1795608623.6726074,
+    "LUNR": 1795608623.6726074,
     "TSLA": 1795607185.594512,
-    "AXP": 1795607087.74781,
-    "RKLB": 1795607087.74781,
-    "KO": 1795607087.74781,
-    "FLY": 1795607087.74781,
-    "INTC": 1795607087.74781,
+    "AXP": 1795608623.6726074,
+    "RKLB": 1795608623.6726074,
+    "KO": 1795608623.6726074,
+    "FLY": 1795608623.6726074,
+    "INTC": 1795608623.6726074,
     "VRT": 1795607185.594512,
     "HPE": 1795607185.594512,
     "DELL": 1795607185.594512,
@@ -3399,7 +3399,7 @@
     "V": 1795607185.594512,
     "CAT": 1795607283.5424,
     "FN": 1795607945.2346528,
-    "GLW": 1795607087.74781,
+    "GLW": 1795608623.6726074,
     "ANT": 1795607283.5424,
     "XAUUSD": 1795607283.5424,
     "KOSPI": 1795607891.5258613
@@ -3420,10 +3420,10 @@
   },
   "calendar_banner": {
     "level": "upcoming",
-    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 81 分钟（11-25 08:30 ET / 22:30 KST）",
+    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 80 分钟（11-25 08:30 ET / 22:30 KST）",
     "detail": "前值 0.3% ｜ 预期 0.3% ｜ 临近公布前15分钟将自动触发防插针预警",
     "event_name": "美国10月核心PCE物价指数环比",
-    "minutes_left": 81,
+    "minutes_left": 80,
     "opex_shield": {
       "date": "2026-11-25",
       "active": false,
