@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795613270.093,
-  "updated_at_et": "11-25 08:27 ET",
-  "updated_at_kst": "22:27 KST",
+  "updated_at_ts": 1795613315.544,
+  "updated_at_et": "11-25 08:28 ET",
+  "updated_at_kst": "22:28 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -17,7 +17,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "countdown_15m",
-      "minutes_left": 3,
+      "minutes_left": 2,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -36,7 +36,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "countdown_15m",
-      "minutes_left": 3,
+      "minutes_left": 2,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -2274,11 +2274,18 @@
     ],
     "DELL": [
       {
-        "title": "Dell stock tanks after blowout earnings. Wall Street Just Isn't Impressed.",
+        "title": "Dell stock tanks after blowout earnings. Wall Street just isn't impressed.",
         "url": "https://finance.yahoo.com/markets/stocks/article/dell-stock-tanks-after-blowout-earnings-wall-street-just-isnt-impressed-103036530.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-25 05:30 ET",
         "pub_ts": 1795602636.0
+      },
+      {
+        "title": "Nvidia, chipmakers slide premarket; Dell falls despite upbeat outlook",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/nvidia-chipmakers-slide-premarket-dell-131630827.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 08:16 ET",
+        "pub_ts": 1795612590.0
       },
       {
         "title": "Dell's $132 Billion AI Backlog Can't Stop a Share Slide",
@@ -2300,13 +2307,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 07:00 ET",
         "pub_ts": 1795608041.0
-      },
-      {
-        "title": "Dell Stock Joins Nvidia, AMD, and Intel Selloff Despite Record Demand",
-        "url": "https://beincrypto.com/dell-stock-falls-ai-selloff-record-backlog/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 06:50 ET",
-        "pub_ts": 1795607445.0
       }
     ],
     "OKLO": [
@@ -2681,6 +2681,20 @@
     ],
     "CRWD": [
       {
+        "title": "CrowdStrike to Participate in Upcoming Investor Conferences",
+        "url": "https://finance.yahoo.com/technology/articles/crowdstrike-participate-upcoming-investor-conferences-130000206.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 08:00 ET",
+        "pub_ts": 1795611600.0
+      },
+      {
+        "title": "Jefferies Downgraded Zscaler but Raised Its Target to $260. Here’s How CrowdStrike Gets It There",
+        "url": "https://www.tikr.com/blog/jefferies-downgraded-zscaler-but-raised-its-target-to-260-heres-how-crowdstrike-gets-it-there?ref=yahoofinance&tlnk=yf-261125-x66vqjqj&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 07:50 ET",
+        "pub_ts": 1795611023.0
+      },
+      {
         "title": "CrowdStrike CEO Says Security Has Gone “From the Brakes to the Gas” as Fortune 50 Clients Pause AI Rollouts",
         "url": "https://www.tikr.com/blog/crowdstrike-ceo-says-security-has-gone-from-the-brakes-to-the-gas-as-fortune-50-clients-pause-ai-rollouts?ref=yahoofinance&tlnk=yf-261125-p6p2v33f&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2700,20 +2714,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 23:32 ET",
         "pub_ts": 1795581159.0
-      },
-      {
-        "title": "7 Firms Downgraded Zscaler After CrowdStrike’s $43.9 Billion Deal. Is There Still Money to Make?",
-        "url": "https://www.tikr.com/blog/7-firms-downgraded-zscaler-after-crowdstrikes-43-9-billion-deal-is-there-still-money-to-make?ref=yahoofinance&tlnk=yf-261124-pchw9jcv&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 16:04 ET",
-        "pub_ts": 1795554282.0
-      },
-      {
-        "title": "CrowdStrike’s all-stock bid for Zscaler: deal structure shifts risk to target holders",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/crowdstrike-stock-bid-zscaler-deal-202415003.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 15:24 ET",
-        "pub_ts": 1795551855.0
       }
     ],
     "ORCL": [
@@ -3362,37 +3362,37 @@
     "AXTI": 1795612468.2866437,
     "NASA": 1795613220.822465,
     "LUNR": 1795613220.822465,
-    "TSLA": 1795611797.1131556,
+    "TSLA": 1795613315.5441015,
     "AXP": 1795613220.822465,
     "RKLB": 1795613220.822465,
     "KO": 1795613220.822465,
     "FLY": 1795613220.822465,
     "INTC": 1795613220.822465,
-    "VRT": 1795611797.1131556,
-    "HPE": 1795611797.1131556,
-    "DELL": 1795611797.1131556,
-    "OKLO": 1795611797.1131556,
-    "CEG": 1795611797.1131556,
-    "FPS": 1795611797.1131556,
+    "VRT": 1795613315.5441015,
+    "HPE": 1795613315.5441015,
+    "DELL": 1795613315.5441015,
+    "OKLO": 1795613315.5441015,
+    "CEG": 1795613315.5441015,
+    "FPS": 1795613315.5441015,
     "MU": 1795612521.676772,
     "SKHY": 1795612521.676772,
     "WDC": 1795612573.8422031,
     "STX": 1795611847.801106,
-    "MSTR": 1795611797.1131556,
-    "SNDK": 1795611797.1131556,
+    "MSTR": 1795613315.5441015,
+    "SNDK": 1795613315.5441015,
     "BTC-USD": 1795612573.8422031,
-    "CRWD": 1795611797.1131556,
-    "ORCL": 1795611797.1131556,
-    "COIN": 1795611797.1131556,
-    "LLY": 1795611797.1131556,
-    "MRNA": 1795611797.1131556,
-    "NKE": 1795611797.1131556,
-    "MCD": 1795611797.1131556,
+    "CRWD": 1795613315.5441015,
+    "ORCL": 1795613315.5441015,
+    "COIN": 1795613315.5441015,
+    "LLY": 1795613315.5441015,
+    "MRNA": 1795613315.5441015,
+    "NKE": 1795613315.5441015,
+    "MCD": 1795613315.5441015,
     "PEP": 1795611894.357723,
     "XOM": 1795611894.357723,
     "JPM": 1795611894.357723,
     "WMT": 1795611894.357723,
-    "V": 1795611797.1131556,
+    "V": 1795613315.5441015,
     "CAT": 1795611894.357723,
     "FN": 1795612521.676772,
     "GLW": 1795613220.822465,
@@ -3416,10 +3416,10 @@
   },
   "calendar_banner": {
     "level": "countdown_15m",
-    "headline": "⚠️ 宏观防插针预警：距离【美国10月核心PCE物价指数环比】公布还有 3 分钟，盘口极易上下剧烈插针，暂停左侧盲目挂单！",
+    "headline": "⚠️ 宏观防插针预警：距离【美国10月核心PCE物价指数环比】公布还有 2 分钟，盘口极易上下剧烈插针，暂停左侧盲目挂单！",
     "detail": "公布时间 11-25 08:30 ET / 22:30 KST ｜ 前值 0.3% · 预期 0.3%",
     "event_name": "美国10月核心PCE物价指数环比",
-    "minutes_left": 3,
+    "minutes_left": 2,
     "opex_shield": {
       "date": "2026-11-25",
       "active": false,
