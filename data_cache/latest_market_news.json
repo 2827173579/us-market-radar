@@ -1,12 +1,12 @@
 {
-  "updated_at_ts": 1795642168.566,
-  "updated_at_et": "11-25 16:29 ET",
-  "updated_at_kst": "06:29 KST",
+  "updated_at_ts": 1795642208.007,
+  "updated_at_et": "11-25 16:30 ET",
+  "updated_at_kst": "06:30 KST",
   "macro_calendar": [
     {
-      "event_id": "1599680",
-      "name": "美国10月核心PCE物价指数环比",
-      "country": "美国",
+      "event_id": "ff_Core PCE Price Index m/m_2026-11-25T08:30:00-05:00",
+      "name": "美国Core PCE Price Index m/m",
+      "country": "USD",
       "star": 5,
       "pub_time_ts": 1795613400.0,
       "pub_time_et": "11-25 08:30 ET",
@@ -14,32 +14,13 @@
       "pub_time_kst": "22:30 KST",
       "previous": "0.3%",
       "forecast": "0.3%",
-      "actual": "0.3%",
-      "unit": "%",
-      "status": "released",
+      "actual": "待公布",
+      "unit": "",
+      "status": "upcoming",
       "minutes_left": 0,
-      "impact_tone": "neutral",
-      "impact_note": "符合预期·通胀温和持平（中性博弈）",
-      "source": "wscn"
-    },
-    {
-      "event_id": "1599678",
-      "name": "美国10月PCE物价指数环比",
-      "country": "美国",
-      "star": 5,
-      "pub_time_ts": 1795613400.0,
-      "pub_time_et": "11-25 08:30 ET",
-      "pub_time_bj": "21:30 BJ",
-      "pub_time_kst": "22:30 KST",
-      "previous": "0.5%",
-      "forecast": "0.3%",
-      "actual": "0.3%",
-      "unit": "%",
-      "status": "released",
-      "minutes_left": 0,
-      "impact_tone": "neutral",
-      "impact_note": "符合预期·通胀温和持平（中性博弈）",
-      "source": "wscn"
+      "impact_tone": "pending",
+      "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
+      "source": "forexfactory"
     }
   ],
   "macro_flashes": [
@@ -2246,18 +2227,18 @@
         "pub_ts": 1795618146.0
       },
       {
+        "title": "Dell, HPE Post Big Sales Growth But Investors Sense AI Spending Peak",
+        "url": "https://finance.yahoo.com/m/509b8d3a-b338-3181-bdcf-b7e931f38513/dell%2C-hpe-post-big-sales.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 16:20 ET",
+        "pub_ts": 1795641634.0
+      },
+      {
         "title": "George Soros, Ken Fisher and 11 Other Big Funds Bought Hewlett Packard Enterprise Last Quarter, While 5 Sold. Who’s Right?",
         "url": "https://www.tikr.com/blog/george-soros-ken-fisher-and-11-other-big-funds-bought-hewlett-packard-enterprise-last-quarter-while-5-sold-whos-right?ref=yahoofinance&tlnk=yf-261125-pp776jqf&.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-25 13:19 ET",
         "pub_ts": 1795630752.0
-      },
-      {
-        "title": "Dell, HPE Post Big Sales Growth But Investors Sense Peak",
-        "url": "https://finance.yahoo.com/m/509b8d3a-b338-3181-bdcf-b7e931f38513/dell%2C-hpe-post-big-sales.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 11:30 ET",
-        "pub_ts": 1795624252.0
       },
       {
         "title": "Own Dell Or HPE? HPE Wins On Cash",
@@ -2268,6 +2249,13 @@
       }
     ],
     "DELL": [
+      {
+        "title": "Dell, HPE Post Big Sales Growth But Investors Sense AI Spending Peak",
+        "url": "https://finance.yahoo.com/m/509b8d3a-b338-3181-bdcf-b7e931f38513/dell%2C-hpe-post-big-sales.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 16:20 ET",
+        "pub_ts": 1795641634.0
+      },
       {
         "title": "Dell earnings analysis: questions answered and next catalysts",
         "url": "https://finance.yahoo.com/markets/stocks/articles/dell-earnings-analysis-questions-answered-204536459.html?.tsrc=rss",
@@ -2295,13 +2283,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 15:04 ET",
         "pub_ts": 1795637083.0
-      },
-      {
-        "title": "Anthropic, Nvidia, Micron, HP Inc., Dell, Deere, and More Stocks That Explain Today’s Market",
-        "url": "https://finance.yahoo.com/m/18e72c51-c6d7-33b1-aa90-ccce17a9b32f/anthropic%2C-nvidia%2C-micron%2C-hp.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 13:37 ET",
-        "pub_ts": 1795631820.0
       }
     ],
     "OKLO": [
@@ -2565,6 +2546,13 @@
     ],
     "MSTR": [
       {
+        "title": "With bitcoin crashing, is Strategy (MSTR) in trouble?",
+        "url": "https://blockspace.media/short/with-bitcoin-crashing-is-strategy-mstr-in-trouble/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 15:28 ET",
+        "pub_ts": 1795638489.0
+      },
+      {
         "title": "Strategy Is Worth $4 Billion Less Than Its Bitcoin Amid Liquidity Squeeze",
         "url": "https://finance.yahoo.com/m/02ba3534-33d6-31a7-8856-8ec31c96c8e5/strategy-is-worth-%244-billion.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2591,13 +2579,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 05:22 ET",
         "pub_ts": 1795602143.0
-      },
-      {
-        "title": "Dow, S&P 500, Nasdaq Futures Edge Lower Amid Tech Selloff Ahead Of Key Inflation Data: DELL, AMBA, SOXL, MSTR In Focus",
-        "url": "https://stocktwits.com/news-articles/markets/equity/dow-s-and-p-500-nasdaq-futures-edge-lower-amid-tech-selloff-ahead-of-key-inflation-data-dell-amba-soxl-mstr-in-focus/cNbHbLoR9lJ?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 22:20 ET",
-        "pub_ts": 1795576810.0
       }
     ],
     "SNDK": [
@@ -2787,6 +2768,13 @@
     ],
     "LLY": [
       {
+        "title": "Sector Update: Healthcare Stocks Fall Late Afternoon",
+        "url": "https://finance.yahoo.com/healthcare/articles/sector-healthcare-stocks-fall-afternoon-205719060.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 15:57 ET",
+        "pub_ts": 1795640239.0
+      },
+      {
         "title": "Will Vision Warning Labels Change Novo Nordisk's (CPSE:NOVO B) Narrative",
         "url": "https://finance.yahoo.com/healthcare/articles/vision-warning-labels-change-novo-201554991.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2813,13 +2801,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 08:22 ET",
         "pub_ts": 1795612950.0
-      },
-      {
-        "title": "Eli Lilly vs. Novo Nordisk: Not Every GLP-1 Maker Is Enjoying Booming Sales Trends",
-        "url": "https://www.fool.com/coverage/charts/2026/11/24/eli-lilly-vs-novo-nordisk-not-every-glp-1-maker-is-enjoying-booming-sales-trends/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 15:50 ET",
-        "pub_ts": 1795553402.0
       }
     ],
     "MRNA": [
@@ -3357,37 +3338,37 @@
     "AXTI": 1795641392.1149032,
     "NASA": 1795642049.6085851,
     "LUNR": 1795642049.6085851,
-    "TSLA": 1795640679.6591523,
+    "TSLA": 1795642208.0074985,
     "AXP": 1795642049.6085851,
     "RKLB": 1795642049.6085851,
     "KO": 1795642049.6085851,
     "FLY": 1795642049.6085851,
     "INTC": 1795642049.6085851,
-    "VRT": 1795640679.6591523,
-    "HPE": 1795640679.6591523,
-    "DELL": 1795640679.6591523,
-    "OKLO": 1795640679.6591523,
-    "CEG": 1795640679.6591523,
-    "FPS": 1795640679.6591523,
+    "VRT": 1795642208.0074985,
+    "HPE": 1795642208.0074985,
+    "DELL": 1795642208.0074985,
+    "OKLO": 1795642208.0074985,
+    "CEG": 1795642208.0074985,
+    "FPS": 1795642208.0074985,
     "MU": 1795641436.9650028,
     "SKHY": 1795641436.9650028,
     "WDC": 1795641477.1200922,
     "STX": 1795640724.6902194,
-    "MSTR": 1795640679.6591523,
-    "SNDK": 1795640679.6591523,
+    "MSTR": 1795642208.0074985,
+    "SNDK": 1795642208.0074985,
     "BTC-USD": 1795641477.1200922,
-    "CRWD": 1795640679.6591523,
-    "ORCL": 1795640679.6591523,
-    "COIN": 1795640679.6591523,
-    "LLY": 1795640679.6591523,
-    "MRNA": 1795640679.6591523,
-    "NKE": 1795640679.6591523,
-    "MCD": 1795640679.6591523,
+    "CRWD": 1795642208.0074985,
+    "ORCL": 1795642208.0074985,
+    "COIN": 1795642208.0074985,
+    "LLY": 1795642208.0074985,
+    "MRNA": 1795642208.0074985,
+    "NKE": 1795642208.0074985,
+    "MCD": 1795642208.0074985,
     "PEP": 1795640769.0470114,
     "XOM": 1795640769.0470114,
     "JPM": 1795640769.0470114,
     "WMT": 1795640769.0470114,
-    "V": 1795640679.6591523,
+    "V": 1795642208.0074985,
     "CAT": 1795640769.0470114,
     "FN": 1795641436.9650028,
     "GLW": 1795642049.6085851,
@@ -3410,10 +3391,10 @@
     "detail": ""
   },
   "calendar_banner": {
-    "level": "released",
-    "headline": "📊 今日重磅公布【美国10月核心PCE物价指数环比】· 公布值 0.3%（前值 0.3% / 预期 0.3%）",
-    "detail": "符合预期·通胀温和持平（中性博弈） · 11-25 08:30 ET / 22:30 KST",
-    "event_name": "美国10月核心PCE物价指数环比",
+    "level": "upcoming",
+    "headline": "📅 今日美股重磅预告【美国Core PCE Price Index m/m】· 距公布约 0 分钟（11-25 08:30 ET / 22:30 KST）",
+    "detail": "前值 0.3% ｜ 预期 0.3% ｜ 临近公布前15分钟将自动触发防插针预警",
+    "event_name": "美国Core PCE Price Index m/m",
     "minutes_left": 0,
     "opex_shield": {
       "date": "2026-11-25",
