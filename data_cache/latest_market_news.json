@@ -1,12 +1,12 @@
 {
-  "updated_at_ts": 1795642208.007,
-  "updated_at_et": "11-25 16:30 ET",
-  "updated_at_kst": "06:30 KST",
+  "updated_at_ts": 1795642262.012,
+  "updated_at_et": "11-25 16:31 ET",
+  "updated_at_kst": "06:31 KST",
   "macro_calendar": [
     {
-      "event_id": "ff_Core PCE Price Index m/m_2026-11-25T08:30:00-05:00",
-      "name": "美国Core PCE Price Index m/m",
-      "country": "USD",
+      "event_id": "1599680",
+      "name": "美国10月核心PCE物价指数环比",
+      "country": "美国",
       "star": 5,
       "pub_time_ts": 1795613400.0,
       "pub_time_et": "11-25 08:30 ET",
@@ -14,13 +14,32 @@
       "pub_time_kst": "22:30 KST",
       "previous": "0.3%",
       "forecast": "0.3%",
-      "actual": "待公布",
-      "unit": "",
-      "status": "upcoming",
+      "actual": "0.3%",
+      "unit": "%",
+      "status": "released",
       "minutes_left": 0,
-      "impact_tone": "pending",
-      "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
-      "source": "forexfactory"
+      "impact_tone": "neutral",
+      "impact_note": "符合预期·通胀温和持平（中性博弈）",
+      "source": "wscn"
+    },
+    {
+      "event_id": "1599678",
+      "name": "美国10月PCE物价指数环比",
+      "country": "美国",
+      "star": 5,
+      "pub_time_ts": 1795613400.0,
+      "pub_time_et": "11-25 08:30 ET",
+      "pub_time_bj": "21:30 BJ",
+      "pub_time_kst": "22:30 KST",
+      "previous": "0.5%",
+      "forecast": "0.3%",
+      "actual": "0.3%",
+      "unit": "%",
+      "status": "released",
+      "minutes_left": 0,
+      "impact_tone": "neutral",
+      "impact_note": "符合预期·通胀温和持平（中性博弈）",
+      "source": "wscn"
     }
   ],
   "macro_flashes": [
@@ -2530,18 +2549,18 @@
         "pub_ts": 1795609034.0
       },
       {
+        "title": "Nvidia, AMD, and Micron stocks trim steep losses amid jittery AI trade",
+        "url": "https://finance.yahoo.com/markets/article/nvidia-amd-micron-stocks-sink-as-investors-flee-ai-trade-134518921.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 08:45 ET",
+        "pub_ts": 1795614318.0
+      },
+      {
         "title": "Western Digital Stocks Sink 7.42%, Trading 139% Above GF Value",
         "url": "https://finance.yahoo.com/markets/stocks/articles/western-digital-stocks-sink-7-172258485.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-25 12:22 ET",
         "pub_ts": 1795627378.0
-      },
-      {
-        "title": "Tesla Sinks 5%, Sandisk Down 13% as AI Selloff Deepens and EU Stalls FSD Approval",
-        "url": "https://www.tikr.com/blog/tesla-sinks-5-sandisk-down-13-as-ai-selloff-deepens-and-eu-stalls-fsd-approval?ref=yahoofinance&tlnk=yf-261125-3jjqvxp5&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 11:31 ET",
-        "pub_ts": 1795624301.0
       }
     ],
     "MSTR": [
@@ -3353,7 +3372,7 @@
     "MU": 1795641436.9650028,
     "SKHY": 1795641436.9650028,
     "WDC": 1795641477.1200922,
-    "STX": 1795640724.6902194,
+    "STX": 1795642262.011542,
     "MSTR": 1795642208.0074985,
     "SNDK": 1795642208.0074985,
     "BTC-USD": 1795641477.1200922,
@@ -3391,10 +3410,10 @@
     "detail": ""
   },
   "calendar_banner": {
-    "level": "upcoming",
-    "headline": "📅 今日美股重磅预告【美国Core PCE Price Index m/m】· 距公布约 0 分钟（11-25 08:30 ET / 22:30 KST）",
-    "detail": "前值 0.3% ｜ 预期 0.3% ｜ 临近公布前15分钟将自动触发防插针预警",
-    "event_name": "美国Core PCE Price Index m/m",
+    "level": "released",
+    "headline": "📊 今日重磅公布【美国10月核心PCE物价指数环比】· 公布值 0.3%（前值 0.3% / 预期 0.3%）",
+    "detail": "符合预期·通胀温和持平（中性博弈） · 11-25 08:30 ET / 22:30 KST",
+    "event_name": "美国10月核心PCE物价指数环比",
     "minutes_left": 0,
     "opex_shield": {
       "date": "2026-11-25",
