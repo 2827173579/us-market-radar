@@ -166,12 +166,12 @@
       "last_notified_at": 0.0
     },
     "MSFT": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1795567135.3979475
-    },
-    "NKE": {
       "state": "NORMAL",
       "last_notified_at": 0.0
+    },
+    "NKE": {
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1795568747.3598974
     },
     "HPE": {
       "state": "STOP_LOSS",
