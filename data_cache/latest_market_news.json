@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795596773.675,
-  "updated_at_et": "11-25 03:52 ET",
-  "updated_at_kst": "17:52 KST",
+  "updated_at_ts": 1795596817.344,
+  "updated_at_et": "11-25 03:53 ET",
+  "updated_at_kst": "17:53 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -17,7 +17,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 278,
+      "minutes_left": 277,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -36,7 +36,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 278,
+      "minutes_left": 277,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -953,8 +953,8 @@
         "title": "Tech firms back in crosshairs as Huang rally reverses",
         "url": "https://finance.yahoo.com/markets/world-indices/articles/tech-firms-back-crosshairs-huang-024219799.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-25 02:31 ET",
-        "pub_ts": 1795591873.0
+        "time": "11-25 03:31 ET",
+        "pub_ts": 1795595488.0
       },
       {
         "title": "SK hynix (NasdaqGS:SKHY) Sell Off Puts Undervalued Narrative Back In Focus",
@@ -994,6 +994,13 @@
         "pub_ts": 1795556758.0
       },
       {
+        "title": "1 Reason to Buy AMD Stock Before 2027",
+        "url": "https://www.fool.com/investing/2026/11/25/1-reason-to-buy-amd-stock-before-2027/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 03:26 ET",
+        "pub_ts": 1795595162.0
+      },
+      {
         "title": "Jim Cramer and Tom Lee are Buying More AI Stocks. Are They Right?",
         "url": "https://beincrypto.com/jim-cramer-tom-lee-ai-stock-call/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1013,13 +1020,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 18:17 ET",
         "pub_ts": 1795562220.0
-      },
-      {
-        "title": "Stock Market Today, Nov. 24: AMD Plunges 9% as 337 Million-Share Resale Filing Adds to AI Sell-Off",
-        "url": "https://www.fool.com/coverage/stock-market-today/2026/11/24/stock-market-today-nov-24-amd-plunges-9-as-337-million-share-resale-filing-adds-to-ai-sell-off/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 17:39 ET",
-        "pub_ts": 1795559978.0
       }
     ],
     "ASML": [
@@ -3327,26 +3327,26 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795595302.5512006,
-    "SOXL": 1795595302.5512006,
+    "KORU": 1795596817.3441398,
+    "SOXL": 1795596817.3441398,
     "SPY": 1795595636.2222793,
-    "DIA": 1795595302.5512006,
-    "SOXX": 1795595302.5512006,
-    "QQQ": 1795595302.5512006,
+    "DIA": 1795596817.3441398,
+    "SOXX": 1795596817.3441398,
+    "QQQ": 1795596817.3441398,
     "SMH": 1795595636.2222793,
-    "IWM": 1795595302.5512006,
-    "IGV": 1795595302.5512006,
-    "TLT": 1795595302.5512006,
-    "GLD": 1795595302.5512006,
-    "SQQQ": 1795595302.5512006,
+    "IWM": 1795596817.3441398,
+    "IGV": 1795596817.3441398,
+    "TLT": 1795596817.3441398,
+    "GLD": 1795596817.3441398,
+    "SQQQ": 1795596817.3441398,
     "TSM": 1795595636.2222793,
-    "VIXY": 1795595302.5512006,
-    "SOXS": 1795595302.5512006,
-    "NVDA": 1795595302.5512006,
-    "AMD": 1795595302.5512006,
+    "VIXY": 1795596817.3441398,
+    "SOXS": 1795596817.3441398,
+    "NVDA": 1795596817.3441398,
+    "AMD": 1795596817.3441398,
     "ASML": 1795595636.2222793,
     "QCOM": 1795595636.2222793,
-    "AVGO": 1795595302.5512006,
+    "AVGO": 1795596817.3441398,
     "AMAT": 1795595636.2222793,
     "META": 1795595636.2222793,
     "GOOGL": 1795595636.2222793,
@@ -3424,10 +3424,10 @@
   },
   "calendar_banner": {
     "level": "upcoming",
-    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 278 分钟（11-25 08:30 ET / 22:30 KST）",
+    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 277 分钟（11-25 08:30 ET / 22:30 KST）",
     "detail": "前值 0.3% ｜ 预期 0.3% ｜ 临近公布前15分钟将自动触发防插针预警",
     "event_name": "美国10月核心PCE物价指数环比",
-    "minutes_left": 278,
+    "minutes_left": 277,
     "opex_shield": {
       "date": "2026-11-25",
       "active": false,
