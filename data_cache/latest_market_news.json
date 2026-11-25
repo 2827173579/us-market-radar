@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795636119.327,
-  "updated_at_et": "11-25 14:48 ET",
-  "updated_at_kst": "04:48 KST",
+  "updated_at_ts": 1795636159.824,
+  "updated_at_et": "11-25 14:49 ET",
+  "updated_at_kst": "04:49 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -2280,6 +2280,13 @@
         "pub_ts": 1795622664.0
       },
       {
+        "title": "Anthropic, Nvidia, Micron, HP Inc., Dell, Deere, and More Stocks That Explain Today’s Market",
+        "url": "https://finance.yahoo.com/m/18e72c51-c6d7-33b1-aa90-ccce17a9b32f/anthropic%2C-nvidia%2C-micron%2C-hp.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 13:37 ET",
+        "pub_ts": 1795631820.0
+      },
+      {
         "title": "Sector Update: Tech Stocks Fall Wednesday Afternoon",
         "url": "https://finance.yahoo.com/markets/stocks/articles/sector-tech-stocks-fall-wednesday-183231718.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2292,13 +2299,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 13:15 ET",
         "pub_ts": 1795630543.0
-      },
-      {
-        "title": "Most of Dell’s New AI Server Orders Are Now for Nvidia’s Vera Rubin",
-        "url": "https://247wallst.com/investing/2026/11/25/most-of-dells-new-ai-server-orders-are-now-for-nvidias-vera-rubin/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 13:07 ET",
-        "pub_ts": 1795630026.0
       }
     ],
     "OKLO": [
@@ -2842,21 +2842,28 @@
         "pub_ts": 1795604739.0
       },
       {
+        "title": "BioMarin (BMRN) Stock Is Up 4.8% Today Without Company News",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/biomarin-bmrn-stock-4-8-191517739.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 14:15 ET",
+        "pub_ts": 1795634117.0
+      },
+      {
         "title": "ArriVent (AVBP) Stock Is Down 8.7% Today Amid Broad Market Selloff",
         "url": "https://finance.yahoo.com/markets/stocks/articles/arrivent-avbp-stock-down-8-153018078.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-25 10:30 ET",
         "pub_ts": 1795620618.0
-      },
-      {
-        "title": "Will 'Anti-Pharma' Democrats Chop Away At Biotech Stocks' Big Wins?",
-        "url": "https://finance.yahoo.com/m/d110ac3d-b2ba-3c8d-8f15-274f2cd95b50/will-%27anti-pharma%27-democrats.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 16:16 ET",
-        "pub_ts": 1795555004.0
       }
     ],
     "NKE": [
+      {
+        "title": "Did Nike Stock Jump On Its Own News?",
+        "url": "https://www.trefis.com/stock/nke/articles/628998/did-nike-stock-jump-on-its-own-news/2026-11-25?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 14:11 ET",
+        "pub_ts": 1795633908.0
+      },
       {
         "title": "Why Nike's Perfect Comeback Isn't Working",
         "url": "https://thehustle.videonest.co/videos/2367511/why-nike-s-perfect-comeback-isn-t-working-F-EfqW8p5e?.tsrc=rss",
@@ -2884,13 +2891,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 16:00 ET",
         "pub_ts": 1795554057.0
-      },
-      {
-        "title": "Why Is Nike (NKE) Stock Up Today? Dick's Strong Earnings Lift Retailers",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/why-nike-nke-stock-today-204540602.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 15:45 ET",
-        "pub_ts": 1795553140.0
       }
     ],
     "MCD": [
@@ -3354,37 +3354,37 @@
     "AXTI": 1795635312.5870664,
     "NASA": 1795636004.0300424,
     "LUNR": 1795636004.0300424,
-    "TSLA": 1795634640.2780282,
+    "TSLA": 1795636159.8238616,
     "AXP": 1795636004.0300424,
     "RKLB": 1795636004.0300424,
     "KO": 1795636004.0300424,
     "FLY": 1795636004.0300424,
     "INTC": 1795636004.0300424,
-    "VRT": 1795634640.2780282,
-    "HPE": 1795634640.2780282,
-    "DELL": 1795634640.2780282,
-    "OKLO": 1795634640.2780282,
-    "CEG": 1795634640.2780282,
-    "FPS": 1795634640.2780282,
+    "VRT": 1795636159.8238616,
+    "HPE": 1795636159.8238616,
+    "DELL": 1795636159.8238616,
+    "OKLO": 1795636159.8238616,
+    "CEG": 1795636159.8238616,
+    "FPS": 1795636159.8238616,
     "MU": 1795635355.4284744,
     "SKHY": 1795635355.4284744,
     "WDC": 1795635395.2340174,
     "STX": 1795634681.8906841,
-    "MSTR": 1795634640.2780282,
-    "SNDK": 1795634640.2780282,
+    "MSTR": 1795636159.8238616,
+    "SNDK": 1795636159.8238616,
     "BTC-USD": 1795635395.2340174,
-    "CRWD": 1795634640.2780282,
-    "ORCL": 1795634640.2780282,
-    "COIN": 1795634640.2780282,
-    "LLY": 1795634640.2780282,
-    "MRNA": 1795634640.2780282,
-    "NKE": 1795634640.2780282,
-    "MCD": 1795634640.2780282,
+    "CRWD": 1795636159.8238616,
+    "ORCL": 1795636159.8238616,
+    "COIN": 1795636159.8238616,
+    "LLY": 1795636159.8238616,
+    "MRNA": 1795636159.8238616,
+    "NKE": 1795636159.8238616,
+    "MCD": 1795636159.8238616,
     "PEP": 1795634721.6534698,
     "XOM": 1795634721.6534698,
     "JPM": 1795634721.6534698,
     "WMT": 1795634721.6534698,
-    "V": 1795634640.2780282,
+    "V": 1795636159.8238616,
     "CAT": 1795634721.6534698,
     "FN": 1795635355.4284744,
     "GLW": 1795636004.0300424,
