@@ -1,5 +1,5 @@
 {
-  "updated_at_ts": 1795642872.009,
+  "updated_at_ts": 1795642909.75,
   "updated_at_et": "11-25 16:41 ET",
   "updated_at_kst": "06:41 KST",
   "macro_calendar": [
@@ -604,6 +604,13 @@
     ],
     "SMH": [
       {
+        "title": "Update: US Equity Indexes Mixed, Treasury Yields Drop as Investors Rotate Out of Chipmakers While Assessing Trade Tariffs",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/us-equity-indexes-mixed-treasury-213222387.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 16:32 ET",
+        "pub_ts": 1795642342.0
+      },
+      {
         "title": "AI Anxiety Rules Wall Street Pre-Bell; Asia Off, Europe Up",
         "url": "https://finance.yahoo.com/markets/stocks/articles/ai-anxiety-rules-wall-street-112810095.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -630,13 +637,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 11:52 ET",
         "pub_ts": 1795539162.0
-      },
-      {
-        "title": "Michael Burry Sells Most of His Nvidia Puts Before Stock Jumps 31%",
-        "url": "https://finance.yahoo.com/markets/options/articles/michael-burry-sells-most-nvidia-153035278.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 10:30 ET",
-        "pub_ts": 1795534235.0
       }
     ],
     "IWM": [
@@ -1039,14 +1039,21 @@
         "pub_ts": 1795620971.0
       },
       {
-        "title": "MARKETS LIVE: Wall Street, FTSE losses continue as technology shares plunge",
-        "url": "https://www.proactiveinvestors.com/companies/news/1102406/markets-live-wall-street-suffers-sharp-losses-as-technology-shares-plunge-1102406.html?.tsrc=rss",
+        "title": "ETFs Are Buying ASML (ASML) on Nov. 23",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-buying-asml-asml-nov-110130021.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-25 07:01 ET",
-        "pub_ts": 1795608060.0
+        "time": "11-25 06:01 ET",
+        "pub_ts": 1795604490.0
       }
     ],
     "QCOM": [
+      {
+        "title": "Qualcomm vs. Sandisk: Which Technology Stock Is a Better Buy for 2027?",
+        "url": "https://www.fool.com/coverage/better-buy/2026/11/25/qualcomm-vs-sandisk-which-technology-stock-is-a-better-buy-for-2027/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 16:20 ET",
+        "pub_ts": 1795641602.0
+      },
       {
         "title": "What Sent Qualcomm Stock Higher?",
         "url": "https://www.trefis.com/stock/qcom/articles/628621/what-sent-qualcomm-stock-higher/2026-11-25?.tsrc=rss",
@@ -1074,13 +1081,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 11:01 ET",
         "pub_ts": 1795622515.0
-      },
-      {
-        "title": "Qualcomm Sets Stunning $500 Stock Target for CEO",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/qualcomm-sets-stunning-500-stock-144851221.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 09:48 ET",
-        "pub_ts": 1795618131.0
       }
     ],
     "AVGO": [
@@ -1196,11 +1196,25 @@
     ],
     "GOOGL": [
       {
+        "title": "These 5 Tech Stocks are Sidestepping the AI Downturn",
+        "url": "https://finance.yahoo.com/m/d635c9d7-dbc8-3f44-bc94-e186ec33e2bd/these-5-tech-stocks-are.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 16:16 ET",
+        "pub_ts": 1795641360.0
+      },
+      {
         "title": "Anthropic’s Chip Choices Could Change the Nvidia Story. Here’s How.",
         "url": "https://www.fool.com/investing/2026/11/25/anthropic-s-chip-choices-could-change-the-nvidia-story-here-s-how/?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-25 15:53 ET",
         "pub_ts": 1795639982.0
+      },
+      {
+        "title": "Megadeals Defy Selloff, Head Toward Record",
+        "url": "https://finance.yahoo.com/video/megadeals-defy-selloff-head-toward-204909645.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 15:49 ET",
+        "pub_ts": 1795639749.0
       },
       {
         "title": "SpaceX stock price crashes on concerns over compute demand",
@@ -1215,20 +1229,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 15:00 ET",
         "pub_ts": 1795636807.0
-      },
-      {
-        "title": "Why Alphabet Stock Is Down Today",
-        "url": "https://www.fool.com/investing/2026/11/25/why-alphabet-stock-is-down-today/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 14:15 ET",
-        "pub_ts": 1795634101.0
-      },
-      {
-        "title": "Why SpaceX Stock Is Down Today",
-        "url": "https://www.fool.com/investing/2026/11/25/why-spacex-stock-is-down-today/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 14:05 ET",
-        "pub_ts": 1795633502.0
       }
     ],
     "MSFT": [
@@ -1247,6 +1247,13 @@
         "pub_ts": 1795622724.0
       },
       {
+        "title": "Bill Ackman, George Soros and 5 Other Famous Investors Own Microsoft. Here’s Who Bought and Sold Recently",
+        "url": "https://www.tikr.com/blog/bill-ackman-george-soros-and-5-other-famous-investors-own-microsoft-heres-who-bought-and-sold-recently?ref=yahoofinance&tlnk=yf-261125-hv5wfr5m&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 15:50 ET",
+        "pub_ts": 1795639822.0
+      },
+      {
         "title": "Satya Nadella Says “the Floor of Cyber Attacks Has Fallen.” Microsoft Just Declared Code Red After a 24-Hour Outage",
         "url": "https://www.tikr.com/blog/satya-nadella-says-the-floor-of-cyber-attacks-has-fallen-microsoft-just-declared-code-red-after-a-24-hour-outage?ref=yahoofinance&tlnk=yf-261125-gxp284g5&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1259,16 +1266,30 @@
         "source": "Yahoo Finance",
         "time": "11-25 12:52 ET",
         "pub_ts": 1795629177.0
-      },
-      {
-        "title": "DoubleLine’s Cohen turns bullish on hyperscaler bonds after selloff - Bloomberg",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/doubleline-cohen-turns-bullish-hyperscaler-173352564.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 12:33 ET",
-        "pub_ts": 1795628032.0
       }
     ],
     "AAPL": [
+      {
+        "title": "Is the market experiencing a 'dead cat' bounce?",
+        "url": "https://finance.yahoo.com/video/is-the-market-experiencing-a-dead-cat-bounce-212704552.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 16:27 ET",
+        "pub_ts": 1795642024.0
+      },
+      {
+        "title": "Apple (AAPL) Pushes Back As 24 7 Tokenized Shares Trading Opens",
+        "url": "https://finance.yahoo.com/markets/crypto/articles/apple-aapl-pushes-back-24-211147818.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 16:11 ET",
+        "pub_ts": 1795641107.0
+      },
+      {
+        "title": "Chips and iPhones Are Safe From New Tariffs. Here’s What Isn’t.",
+        "url": "https://finance.yahoo.com/m/fed0ba1a-1835-3234-b475-4ad6bcc3e25d/chips-and-iphones-are-safe.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 15:47 ET",
+        "pub_ts": 1795639620.0
+      },
       {
         "title": "Tech Stock Sell-Off: Here's Why Apple Has Been Immune",
         "url": "https://www.fool.com/investing/2026/11/25/tech-stock-sell-off-here-s-why-apple-has-been-immune/?.tsrc=rss",
@@ -1282,27 +1303,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 11:01 ET",
         "pub_ts": 1795622515.0
-      },
-      {
-        "title": "The Next Big Healthcare Revolution Is Already Here. This Stock Could Cash In.",
-        "url": "https://www.fool.com/investing/2026/11/25/the-next-big-healthcare-revolution-is-already-here-this-stock-could-cash-in/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 10:27 ET",
-        "pub_ts": 1795620422.0
-      },
-      {
-        "title": "The Zacks Analyst Blog Highlights Apple, Philip Morris, Intel and Crimson Wine",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/zacks-analyst-blog-highlights-apple-152500421.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 10:25 ET",
-        "pub_ts": 1795620300.0
-      },
-      {
-        "title": "Does Apple's New Silence Mean You Should Worry?",
-        "url": "https://www.trefis.com/stock/aapl/articles/628917/does-apple-s-new-silence-mean-you-should-worry/2026-11-25?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 07:07 ET",
-        "pub_ts": 1795608473.0
       }
     ],
     "PLTR": [
@@ -1328,18 +1328,18 @@
         "pub_ts": 1795630722.0
       },
       {
+        "title": "Cathie Wood Just Sold $7 Million of Palantir Across 3 ARK Funds",
+        "url": "https://www.tikr.com/blog/cathie-wood-just-sold-7-million-of-palantir-across-3-ark-funds?ref=yahoofinance&tlnk=yf-261125-979hm5m9&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 13:16 ET",
+        "pub_ts": 1795630613.0
+      },
+      {
         "title": "Palantir Is Down 25% From Its High. Is It a Bargain or Still Overvalued?",
         "url": "https://www.fool.com/investing/2026/11/25/palantir-is-down-25-from-its-high-is-it-a-bargain-or-still-overvalued/?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-25 12:20 ET",
         "pub_ts": 1795627203.0
-      },
-      {
-        "title": "Palantir Stocks Fall 4.62% as Nasdaq Rout Hits AI Software",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/palantir-stocks-fall-4-62-171959856.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 12:19 ET",
-        "pub_ts": 1795627199.0
       }
     ],
     "NOW": [
@@ -1395,6 +1395,13 @@
         "pub_ts": 1795622724.0
       },
       {
+        "title": "Federal Court Rules in Favor of CPSC in Landmark E-Commerce Product Safety Case",
+        "url": "https://finance.yahoo.com/economy/policy/articles/federal-court-rules-favor-cpsc-212500597.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 16:25 ET",
+        "pub_ts": 1795641900.0
+      },
+      {
         "title": "Amazon Is Backing More Than 5 Gigawatts of New Nuclear by 2039. This Reactor Developer Could Cash In.",
         "url": "https://www.fool.com/investing/2026/11/25/amazon-is-backing-more-than-5-gigawatts-of-new-nuclear-by-2039-this-reactor-developer-could-cash-in/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1403,17 +1410,10 @@
       },
       {
         "title": "Amazon to start selling cars in the UK",
-        "url": "https://uk.finance.yahoo.com/news/amazon-start-selling-cars-uk-174741468.html?.tsrc=rss",
+        "url": "https://www.telegraph.co.uk/business/2026/11/25/amazon-to-start-selling-cars-in-the-uk/?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-25 12:47 ET",
         "pub_ts": 1795628861.0
-      },
-      {
-        "title": "Amazon Wants a 'Fair Exchange' Before Letting Muse Back In",
-        "url": "https://finance.yahoo.com/technology/articles/amazon-wants-fair-exchange-letting-163449964.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 11:34 ET",
-        "pub_ts": 1795624489.0
       }
     ],
     "CRWV": [
@@ -3316,34 +3316,34 @@
   "ticker_news_ts": {
     "KORU": 1795642421.8377054,
     "SOXL": 1795642421.8377054,
-    "SPY": 1795641392.1149032,
+    "SPY": 1795642909.7500863,
     "DIA": 1795642421.8377054,
     "SOXX": 1795642421.8377054,
     "QQQ": 1795642421.8377054,
-    "SMH": 1795641392.1149032,
+    "SMH": 1795642909.7500863,
     "IWM": 1795642421.8377054,
     "IGV": 1795642421.8377054,
     "TLT": 1795642421.8377054,
     "GLD": 1795642421.8377054,
     "SQQQ": 1795642421.8377054,
-    "TSM": 1795641392.1149032,
+    "TSM": 1795642909.7500863,
     "VIXY": 1795642421.8377054,
     "SOXS": 1795642421.8377054,
     "NVDA": 1795642421.8377054,
     "AMD": 1795642421.8377054,
-    "ASML": 1795641392.1149032,
-    "QCOM": 1795641392.1149032,
+    "ASML": 1795642909.7500863,
+    "QCOM": 1795642909.7500863,
     "AVGO": 1795642421.8377054,
-    "AMAT": 1795641392.1149032,
-    "META": 1795641392.1149032,
-    "GOOGL": 1795641392.1149032,
-    "MSFT": 1795641392.1149032,
-    "AAPL": 1795641392.1149032,
-    "PLTR": 1795641392.1149032,
-    "NOW": 1795641392.1149032,
-    "AMZN": 1795641392.1149032,
-    "CRWV": 1795641392.1149032,
-    "NBIS": 1795641392.1149032,
+    "AMAT": 1795642909.7500863,
+    "META": 1795642909.7500863,
+    "GOOGL": 1795642909.7500863,
+    "MSFT": 1795642909.7500863,
+    "AAPL": 1795642909.7500863,
+    "PLTR": 1795642909.7500863,
+    "NOW": 1795642909.7500863,
+    "AMZN": 1795642909.7500863,
+    "CRWV": 1795642909.7500863,
+    "NBIS": 1795642909.7500863,
     "APLD": 1795642049.6085851,
     "VST": 1795642049.6085851,
     "BE": 1795642049.6085851,
@@ -3354,7 +3354,7 @@
     "AAOI": 1795642049.6085851,
     "SPCX": 1795642049.6085851,
     "ASTS": 1795642049.6085851,
-    "AXTI": 1795641392.1149032,
+    "AXTI": 1795642909.7500863,
     "NASA": 1795642049.6085851,
     "LUNR": 1795642049.6085851,
     "TSLA": 1795642208.0074985,
@@ -3393,7 +3393,7 @@
     "GLW": 1795642049.6085851,
     "ANT": 1795642302.7158566,
     "XAUUSD": 1795642302.7158566,
-    "KOSPI": 1795641392.1149032
+    "KOSPI": 1795642909.7500863
   },
   "opex_shield": {
     "date": "2026-11-25",
