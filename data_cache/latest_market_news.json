@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795585534.84,
-  "updated_at_et": "11-25 00:45 ET",
-  "updated_at_kst": "14:45 KST",
+  "updated_at_ts": 1795585640.046,
+  "updated_at_et": "11-25 00:47 ET",
+  "updated_at_kst": "14:47 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -17,7 +17,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 465,
+      "minutes_left": 463,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -36,13 +36,27 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 465,
+      "minutes_left": 463,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
     }
   ],
   "macro_flashes": [
+    {
+      "id": "20261125134530320800",
+      "title": "美联储“最青睐”的通胀数据今夜来袭！会否正式打开2027加息大门？",
+      "summary": "在美股持续震荡之际，华尔街开始担忧，若通胀持续顽固，市场的一系列加息定价重估可能会构成“重大冲击”，而美联储难以托底。点击查看…",
+      "keywords": [
+        "美联储",
+        "加息"
+      ],
+      "pub_ts": 1795585530.0,
+      "time_et": "11-25 00:45 ET",
+      "time_bj": "13:45 BJ",
+      "time_kst": "14:45 KST",
+      "time_display": "00:45 ET / 13:45 BJ"
+    },
     {
       "id": "20261125134000001800",
       "title": "【今日重点关注的财经数据与事件：2026年11月25日 周三】 ① 15:00 德国第三…",
@@ -374,19 +388,6 @@
       "time_bj": "06:50 BJ",
       "time_kst": "07:50 KST",
       "time_display": "17:50 ET / 06:50 BJ"
-    },
-    {
-      "id": "20261125063817711800",
-      "title": "黄仁勋复职后首次全员会以道歉开场！承认违反公司行为准则，透露每天接受心理治疗",
-      "summary": "黄仁勋承认违反公司行为准则、让员工失望，并透露自己每天接受心理治疗，希望纠正相关行为。面对特朗普政府介入复职的争议，他强调董事会是经事实评估后作出决定。点击查看",
-      "keywords": [
-        "特朗普"
-      ],
-      "pub_ts": 1795559897.0,
-      "time_et": "11-24 17:38 ET",
-      "time_bj": "06:38 BJ",
-      "time_kst": "07:38 KST",
-      "time_display": "17:38 ET / 06:38 BJ"
     }
   ],
   "ticker_news": {
@@ -3421,10 +3422,10 @@
   },
   "calendar_banner": {
     "level": "upcoming",
-    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 465 分钟（11-25 08:30 ET / 22:30 KST）",
+    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 463 分钟（11-25 08:30 ET / 22:30 KST）",
     "detail": "前值 0.3% ｜ 预期 0.3% ｜ 临近公布前15分钟将自动触发防插针预警",
     "event_name": "美国10月核心PCE物价指数环比",
-    "minutes_left": 465,
+    "minutes_left": 463,
     "opex_shield": {
       "date": "2026-11-25",
       "active": false,
