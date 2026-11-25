@@ -1,5 +1,5 @@
 {
-  "updated_at_ts": 1795607042.178,
+  "updated_at_ts": 1795607087.748,
   "updated_at_et": "11-25 06:44 ET",
   "updated_at_kst": "20:44 KST",
   "macro_calendar": [
@@ -1613,6 +1613,13 @@
     ],
     "CRDO": [
       {
+        "title": "Credo Technology Group Holding (CRDO) Stock Still Looks Undervalued After Its 7x Run",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/credo-technology-group-holding-crdo-110715948.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 06:07 ET",
+        "pub_ts": 1795604835.0
+      },
+      {
         "title": "From Smiling to Selling: Why Credo Technology (CRDO) is Getting Hammered",
         "url": "https://finance.yahoo.com/markets/stocks/articles/smiling-selling-why-credo-technology-052446524.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1639,13 +1646,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 07:03 ET",
         "pub_ts": 1795521780.0
-      },
-      {
-        "title": "Credo Technology (CRDO) Just Made a Stunning Comeback",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/credo-technology-crdo-just-made-031759842.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 22:17 ET",
-        "pub_ts": 1795490279.0
       }
     ],
     "COHR": [
@@ -1761,6 +1761,13 @@
     ],
     "AAOI": [
       {
+        "title": "Supply Deal Might Change The Case For Investing In Applied Optoelectronics (AAOI)",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/supply-deal-might-change-case-110727461.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 06:07 ET",
+        "pub_ts": 1795604847.0
+      },
+      {
         "title": "AAOI vs. Lumentum: Which Optical Networking Stock Has an Edge Now?",
         "url": "https://finance.yahoo.com/markets/stocks/articles/aaoi-vs-lumentum-optical-networking-163600829.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1787,16 +1794,30 @@
         "source": "Yahoo Finance",
         "time": "11-24 07:00 ET",
         "pub_ts": 1795521600.0
-      },
-      {
-        "title": "Applied Optoelectronics and Lumentum Soar 22% as Jensen Huang’s Return to NVIDIA Sparks AI Optics Rebound; Coherent Jumps 19%",
-        "url": "https://247wallst.com/investing/2026/11/23/applied-optoelectronics-and-lumentum-soar-22-as-jensen-huangs-return-to-nvidia-sparks-ai-optics-rebound-coherent-jumps-19/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 10:57 ET",
-        "pub_ts": 1795449427.0
       }
     ],
     "SPCX": [
+      {
+        "title": "Where Will SpaceX Stock Be in 5 Years?",
+        "url": "https://www.fool.com/investing/2026/11/25/where-will-spacex-stock-be-in-5-years/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 06:26 ET",
+        "pub_ts": 1795605960.0
+      },
+      {
+        "title": "Tesla and SpaceX $3.5 Trillion Merger Talks Take a Major Step Forward",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/tesla-spacex-3-5-trillion-111122235.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 06:11 ET",
+        "pub_ts": 1795605082.0
+      },
+      {
+        "title": "Musk: Starlink Has a “Good Chance” of Carrying “About Half of Global Traffic”",
+        "url": "https://www.tikr.com/blog/musk-starlink-has-a-good-chance-of-carrying-about-half-of-global-traffic?ref=yahoofinance&tlnk=yf-261125-27pjcxp8&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 06:09 ET",
+        "pub_ts": 1795604999.0
+      },
       {
         "title": "ARK Autonomous Technology & Robotics ETF (ARKQ) Sells Tesla and SpaceX on Monday",
         "url": "https://finance.yahoo.com/markets/stocks/articles/ark-autonomous-technology-robotics-etf-110358357.html?.tsrc=rss",
@@ -1810,27 +1831,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 06:02 ET",
         "pub_ts": 1795604541.0
-      },
-      {
-        "title": "SpaceX Stock Has an Anthropic Problem",
-        "url": "https://finance.yahoo.com/m/b37dce27-5407-30bd-9314-29119ff5e24a/spacex-stock-has-an-anthropic.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 05:37 ET",
-        "pub_ts": 1795603020.0
-      },
-      {
-        "title": "Bill Ackman warns the Fed’s obsession with 2% inflation will plunge the world into recession: ‘Tell me why I am wrong’",
-        "url": "https://finance.yahoo.com/economy/policy/articles/bill-ackman-warns-fed-obsession-103000113.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 05:30 ET",
-        "pub_ts": 1795602600.0
-      },
-      {
-        "title": "SpaceX Sinks 11% in a Week on $32 Billion AI Chip Debt as Anthropic Slips Below Its IPO Price",
-        "url": "https://www.tikr.com/blog/spacex-sinks-11-in-a-week-on-32-billion-ai-chip-debt-as-anthropic-slips-below-its-ipo-price?ref=yahoofinance&tlnk=yf-261125-xp54w5xc&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 04:05 ET",
-        "pub_ts": 1795597521.0
       }
     ],
     "ASTS": [
@@ -3354,25 +3354,25 @@
     "AMZN": 1795606386.937073,
     "CRWV": 1795606386.937073,
     "NBIS": 1795606386.937073,
-    "APLD": 1795605552.965205,
-    "VST": 1795605552.965205,
-    "BE": 1795605552.965205,
-    "CRDO": 1795605552.965205,
-    "COHR": 1795605552.965205,
+    "APLD": 1795607087.74781,
+    "VST": 1795607087.74781,
+    "BE": 1795607087.74781,
+    "CRDO": 1795607087.74781,
+    "COHR": 1795607087.74781,
     "MRVL": 1795606440.9328077,
     "LITE": 1795606440.9328077,
-    "AAOI": 1795605552.965205,
-    "SPCX": 1795605552.965205,
-    "ASTS": 1795605552.965205,
+    "AAOI": 1795607087.74781,
+    "SPCX": 1795607087.74781,
+    "ASTS": 1795607087.74781,
     "AXTI": 1795606386.937073,
-    "NASA": 1795605552.965205,
-    "LUNR": 1795605552.965205,
+    "NASA": 1795607087.74781,
+    "LUNR": 1795607087.74781,
     "TSLA": 1795605650.1484492,
-    "AXP": 1795605552.965205,
-    "RKLB": 1795605552.965205,
-    "KO": 1795605552.965205,
-    "FLY": 1795605552.965205,
-    "INTC": 1795605552.965205,
+    "AXP": 1795607087.74781,
+    "RKLB": 1795607087.74781,
+    "KO": 1795607087.74781,
+    "FLY": 1795607087.74781,
+    "INTC": 1795607087.74781,
     "VRT": 1795605650.1484492,
     "HPE": 1795605650.1484492,
     "DELL": 1795605650.1484492,
@@ -3400,7 +3400,7 @@
     "V": 1795605650.1484492,
     "CAT": 1795605748.2915187,
     "FN": 1795606440.9328077,
-    "GLW": 1795605552.965205,
+    "GLW": 1795607087.74781,
     "ANT": 1795605748.2915187,
     "XAUUSD": 1795605748.2915187,
     "KOSPI": 1795606386.937073
