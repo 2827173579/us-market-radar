@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795589746.952,
-  "updated_at_et": "11-25 01:55 ET",
-  "updated_at_kst": "15:55 KST",
+  "updated_at_ts": 1795589862.28,
+  "updated_at_et": "11-25 01:57 ET",
+  "updated_at_kst": "15:57 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -17,7 +17,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 395,
+      "minutes_left": 393,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -36,13 +36,26 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 395,
+      "minutes_left": 393,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
     }
   ],
   "macro_flashes": [
+    {
+      "id": "20261125145616504800",
+      "title": "国际现货金银月末前大概率失守关键位，美伊最终协议落地权重下降｜市场赔率数据表",
+      "summary": "金银下探风险与白银反弹并存，十二月加息预期集中，明年一月续紧仍存分歧，油价极端路径权重有限。",
+      "keywords": [
+        "加息"
+      ],
+      "pub_ts": 1795589776.0,
+      "time_et": "11-25 01:56 ET",
+      "time_bj": "14:56 BJ",
+      "time_kst": "15:56 KST",
+      "time_display": "01:56 ET / 14:56 BJ"
+    },
     {
       "id": "20261125144936766800",
       "title": "整理：每日全球外汇市场要闻速递（2026-11-25）",
@@ -373,19 +386,6 @@
       "time_bj": "08:02 BJ",
       "time_kst": "09:02 KST",
       "time_display": "19:02 ET / 08:02 BJ"
-    },
-    {
-      "id": "20261125074730404800",
-      "title": "【期货热点追踪】涨幅全数回吐！COMEX期铜创8个月新低，LME铜锡暴跌，分析师指出此前…",
-      "summary": "【期货热点追踪】涨幅全数回吐！COMEX期铜创8个月新低，LME铜锡暴跌，分析师指出此前由关税预期和供应短缺支撑的行情似已近尾声？摩根大通最新报告指出，随着美国铜去库存及印尼铝过剩扩大，2027年基本金属将普遍承压。",
-      "keywords": [
-        "关税"
-      ],
-      "pub_ts": 1795564050.0,
-      "time_et": "11-24 18:47 ET",
-      "time_bj": "07:47 BJ",
-      "time_kst": "08:47 KST",
-      "time_display": "18:47 ET / 07:47 BJ"
     }
   ],
   "ticker_news": {
@@ -3420,10 +3420,10 @@
   },
   "calendar_banner": {
     "level": "upcoming",
-    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 395 分钟（11-25 08:30 ET / 22:30 KST）",
+    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 393 分钟（11-25 08:30 ET / 22:30 KST）",
     "detail": "前值 0.3% ｜ 预期 0.3% ｜ 临近公布前15分钟将自动触发防插针预警",
     "event_name": "美国10月核心PCE物价指数环比",
-    "minutes_left": 395,
+    "minutes_left": 393,
     "opex_shield": {
       "date": "2026-11-25",
       "active": false,
