@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795624674.328,
-  "updated_at_et": "11-25 11:37 ET",
-  "updated_at_kst": "01:37 KST",
+  "updated_at_ts": 1795624717.953,
+  "updated_at_et": "11-25 11:38 ET",
+  "updated_at_kst": "01:38 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -831,6 +831,13 @@
     ],
     "TSM": [
       {
+        "title": "Nvidia Chipmaker TSMC Sends $22.6 Billion AI Signal",
+        "url": "https://finance.yahoo.com/technology/ai/articles/nvidia-chipmaker-tsmc-sends-22-162725540.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 11:27 ET",
+        "pub_ts": 1795624045.0
+      },
+      {
         "title": "TSMC proposes $22.6B advanced wafer facility in Texas",
         "url": "https://www.manufacturingdive.com/news/tsmc-proposes-226b-advanced-wafer-fab-texas-AI-semiconductors/875671/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -857,13 +864,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 08:04 ET",
         "pub_ts": 1795611876.0
-      },
-      {
-        "title": "Taiwan Semiconductor Manufacturing Is Down Nearly 30% From Its High. Is It a Bargain Buy?",
-        "url": "https://www.fool.com/investing/2026/11/25/taiwan-semiconductor-manufacturing-is-down-nearly-30-from-its-high-is-it-a-bargain-buy/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 08:00 ET",
-        "pub_ts": 1795611601.0
       }
     ],
     "VIXY": [
@@ -1127,6 +1127,13 @@
     ],
     "AMAT": [
       {
+        "title": "Why Applied Materials (AMAT) Stock Is Falling Today: AI-Led Chip Selloff",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/why-applied-materials-amat-stock-163016087.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 11:30 ET",
+        "pub_ts": 1795624216.0
+      },
+      {
         "title": "Jim Cramer tells investors to buy beaten-down chip stock down 53%",
         "url": "https://www.thestreet.com/investing/stocks/amat-applied-materials-jim-cramer-urges-investors-to-buy-stock-after-decline?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1153,13 +1160,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 15:46 ET",
         "pub_ts": 1795553209.0
-      },
-      {
-        "title": "Applied Materials vs. Intel: Which Technology Stock Is a Better Buy for 2027?",
-        "url": "https://www.fool.com/coverage/better-buy/2026/11/24/applied-materials-vs-intel-which-technology-stock-is-a-better-buy-for-2027/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 14:50 ET",
-        "pub_ts": 1795549802.0
       }
     ],
     "META": [
@@ -1178,6 +1178,13 @@
         "pub_ts": 1795617376.0
       },
       {
+        "title": "Amazon Wants a 'Fair Exchange' Before Letting Muse Back In",
+        "url": "https://finance.yahoo.com/technology/articles/amazon-wants-fair-exchange-letting-163449964.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 11:34 ET",
+        "pub_ts": 1795624489.0
+      },
+      {
         "title": "Amazon and Meta Face Major Showdown Over the Future of AI Shopping",
         "url": "https://finance.yahoo.com/technology/ai/articles/amazon-meta-face-major-showdown-155254367.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1190,22 +1197,29 @@
         "source": "Yahoo Finance",
         "time": "11-25 09:33 ET",
         "pub_ts": 1795617231.0
-      },
-      {
-        "title": "Amazon and Meta reportedly in talks to lift blockade on AI agent Muse",
-        "url": "https://finance.yahoo.com/technology/ai/articles/amazon-meta-reportedly-talks-lift-141018682.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 09:10 ET",
-        "pub_ts": 1795615818.0
       }
     ],
     "GOOGL": [
       {
-        "title": "Is Microsoft Stock Worth Owning as AI Capex Weighs on Free Cash Flow?",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/microsoft-stock-worth-owning-ai-124000486.html?.tsrc=rss",
+        "title": "Oracle, CoreWeave Face Stark Warning From Credit Markets",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/oracle-coreweave-face-stark-warning-162922864.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-25 07:40 ET",
-        "pub_ts": 1795610400.0
+        "time": "11-25 11:29 ET",
+        "pub_ts": 1795624162.0
+      },
+      {
+        "title": "How Warren Buffett Makes Billions from Dividends: Top 10 Stocks",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/warren-buffett-makes-billions-dividends-161220808.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 11:12 ET",
+        "pub_ts": 1795623140.0
+      },
+      {
+        "title": "3 High-Growth Stocks That Could Make $10,000 Worth Much More by 2030",
+        "url": "https://247wallst.com/investing/2026/11/25/3-high-growth-stocks-that-could-make-10000-worth-much-more-by-2030/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 11:03 ET",
+        "pub_ts": 1795622602.0
       },
       {
         "title": "Alphabet Stocks Drop 5.56% as Credit Default Swaps Hit Record",
@@ -1220,23 +1234,16 @@
         "source": "Yahoo Finance",
         "time": "11-25 10:40 ET",
         "pub_ts": 1795621206.0
-      },
-      {
-        "title": "Alphabet Falls 4% on AI Credit Fears as Strategist Warns Capex Is “As Good as It Gets”",
-        "url": "https://www.tikr.com/blog/alphabet-falls-4-on-ai-credit-fears-as-strategist-warns-capex-is-as-good-as-it-gets?ref=yahoofinance&tlnk=yf-261125-pwcg7rgj&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 10:39 ET",
-        "pub_ts": 1795621167.0
-      },
-      {
-        "title": "TeraWulf’s $19 Billion Anthropic Deal: “That Debt Is Guaranteed by Google.” That’s a Big Risk for Alphabet",
-        "url": "https://www.tikr.com/blog/terawulfs-19-billion-anthropic-deal-that-debt-is-guaranteed-by-google-thats-a-big-risk-for-alphabet?ref=yahoofinance&tlnk=yf-261125-gpcr4r7f&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 10:36 ET",
-        "pub_ts": 1795621002.0
       }
     ],
     "MSFT": [
+      {
+        "title": "Prediction: IREN’s Microsoft Deal Could Be Just the Beginning of Its Next Growth Phase",
+        "url": "https://247wallst.com/investing/2026/11/25/prediction-irens-microsoft-deal-could-be-just-the-beginning-of-its-next-growth-phase-massive-upside-ahead/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 11:33 ET",
+        "pub_ts": 1795624439.0
+      },
       {
         "title": "Microsoft Stocks Fall 2.53% as Hyperscalers Join AI Selloff",
         "url": "https://finance.yahoo.com/markets/stocks/articles/microsoft-stocks-fall-2-53-154006144.html?.tsrc=rss",
@@ -1252,25 +1259,18 @@
         "pub_ts": 1795619580.0
       },
       {
+        "title": "Bright Horizon utility lands Microsoft data center deals amid Wyoming buildout",
+        "url": "https://www.utilitydive.com/news/cheyenne-light-microsoft-google-data-center-bright-horizon/875739/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 10:00 ET",
+        "pub_ts": 1795618839.0
+      },
+      {
         "title": "Digital Twins in Healthcare Market to worth USD 101.19 Billion by 2031, at a CAGR of 68.4% – MarketsandMarkets™",
         "url": "https://finance.yahoo.com/healthcare/articles/digital-twins-healthcare-market-worth-150000405.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-25 10:00 ET",
         "pub_ts": 1795618800.0
-      },
-      {
-        "title": "Alphabet, NVIDIA, Microsoft and AWS Lead the AI for Scientific Discovery Market as It Grows to USD 34.78 Billion by 2035",
-        "url": "https://finance.yahoo.com/technology/ai/articles/alphabet-nvidia-microsoft-aws-lead-150000464.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 10:00 ET",
-        "pub_ts": 1795618800.0
-      },
-      {
-        "title": "Software-Defined Networking and Network Function Virtualization Market Report 2026 | Secure $172.49B as Cisco, Microsoft, Huawei, HPE and Nokia Drive Cloud Automation by 2030",
-        "url": "https://finance.yahoo.com/technology/articles/software-defined-networking-network-function-142900844.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 09:29 ET",
-        "pub_ts": 1795616940.0
       }
     ],
     "AAPL": [
@@ -1280,6 +1280,13 @@
         "source": "Yahoo Finance",
         "time": "11-25 10:27 ET",
         "pub_ts": 1795620422.0
+      },
+      {
+        "title": "The Zacks Analyst Blog Highlights Apple, Philip Morris, Intel and Crimson Wine",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/zacks-analyst-blog-highlights-apple-152500421.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 10:25 ET",
+        "pub_ts": 1795620300.0
       },
       {
         "title": "Does Apple's New Silence Mean You Should Worry?",
@@ -1301,13 +1308,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 06:05 ET",
         "pub_ts": 1795604747.0
-      },
-      {
-        "title": "State Street SPDR Portfolio S&P 500 (SPYM) Buys $14.2 Million More Apple on Monday",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/state-street-spdr-portfolio-p-110543019.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 06:05 ET",
-        "pub_ts": 1795604743.0
       }
     ],
     "PLTR": [
@@ -1400,28 +1400,42 @@
         "pub_ts": 1795617376.0
       },
       {
+        "title": "Amazon Wants a 'Fair Exchange' Before Letting Muse Back In",
+        "url": "https://finance.yahoo.com/technology/articles/amazon-wants-fair-exchange-letting-163449964.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 11:34 ET",
+        "pub_ts": 1795624489.0
+      },
+      {
+        "title": "Amazon Makes Major Move Into Car Sales Beyond U.S.",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/amazon-makes-major-move-car-163032877.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 11:30 ET",
+        "pub_ts": 1795624232.0
+      },
+      {
         "title": "Amazon and Meta Face Major Showdown Over the Future of AI Shopping",
         "url": "https://finance.yahoo.com/technology/ai/articles/amazon-meta-face-major-showdown-155254367.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-25 10:52 ET",
         "pub_ts": 1795621974.0
-      },
-      {
-        "title": "Amazon Stocks Fall 4.26% as $215 Billion Capex Run Rate Meets AI Doubts",
-        "url": "https://finance.yahoo.com/news/amazon-stocks-fall-4-26-154117429.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 10:41 ET",
-        "pub_ts": 1795621277.0
-      },
-      {
-        "title": "Amazon Sinks 6%, Sandisk Down 12% as AI Selloff Deepens: Bear Calls AI “Greatest Misallocation of Capital”",
-        "url": "https://www.tikr.com/blog/amazon-sinks-6-sandisk-down-12-as-ai-selloff-deepens-bear-calls-ai-greatest-misallocation-of-capital?ref=yahoofinance&tlnk=yf-261125-hq93vmx9&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 10:29 ET",
-        "pub_ts": 1795620540.0
       }
     ],
     "CRWV": [
+      {
+        "title": "Oracle, CoreWeave Face Stark Warning From Credit Markets",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/oracle-coreweave-face-stark-warning-162922864.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 11:29 ET",
+        "pub_ts": 1795624162.0
+      },
+      {
+        "title": "CoreWeave bonds plunge as 2031 yield surges to 17.91%; Shares drop 10%",
+        "url": "https://finance.yahoo.com/technology/ai/articles/coreweave-bonds-plunge-2031-yield-160749981.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 11:07 ET",
+        "pub_ts": 1795622869.0
+      },
       {
         "title": "CoreWeave's Debt Trades Near 75 Cents on the Dollar",
         "url": "https://finance.yahoo.com/markets/stocks/articles/coreweaves-debt-trades-near-75-151923965.html?.tsrc=rss",
@@ -1442,20 +1456,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 07:57 ET",
         "pub_ts": 1795611461.0
-      },
-      {
-        "title": "CoreWeave Cratered 40% Year-to-Date: 320% Gains to Come According to This Investment Bank Desk",
-        "url": "https://247wallst.com/investing/2026/11/25/coreweave-cratered-40-year-to-date-320-gains-to-come-according-to-this-investment-bank-desk/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 07:15 ET",
-        "pub_ts": 1795608943.0
-      },
-      {
-        "title": "What Just Happened To CoreWeave Stock?",
-        "url": "https://www.trefis.com/stock/crwv/articles/628973/what-just-happened-to-coreweave-stock/2026-11-25?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 07:03 ET",
-        "pub_ts": 1795608219.0
       }
     ],
     "NBIS": [
@@ -3321,34 +3321,34 @@
   "ticker_news_ts": {
     "KORU": 1795624231.5878751,
     "SOXL": 1795624231.5878751,
-    "SPY": 1795623179.7762742,
+    "SPY": 1795624717.9528236,
     "DIA": 1795624231.5878751,
     "SOXX": 1795624231.5878751,
     "QQQ": 1795624231.5878751,
-    "SMH": 1795623179.7762742,
+    "SMH": 1795624717.9528236,
     "IWM": 1795624231.5878751,
     "IGV": 1795624231.5878751,
     "TLT": 1795624231.5878751,
     "GLD": 1795624231.5878751,
     "SQQQ": 1795624231.5878751,
-    "TSM": 1795623179.7762742,
+    "TSM": 1795624717.9528236,
     "VIXY": 1795624231.5878751,
     "SOXS": 1795624231.5878751,
     "NVDA": 1795624231.5878751,
     "AMD": 1795624231.5878751,
-    "ASML": 1795623179.7762742,
-    "QCOM": 1795623179.7762742,
+    "ASML": 1795624717.9528236,
+    "QCOM": 1795624717.9528236,
     "AVGO": 1795624231.5878751,
-    "AMAT": 1795623179.7762742,
-    "META": 1795623179.7762742,
-    "GOOGL": 1795623179.7762742,
-    "MSFT": 1795623179.7762742,
-    "AAPL": 1795623179.7762742,
-    "PLTR": 1795623179.7762742,
-    "NOW": 1795623179.7762742,
-    "AMZN": 1795623179.7762742,
-    "CRWV": 1795623179.7762742,
-    "NBIS": 1795623179.7762742,
+    "AMAT": 1795624717.9528236,
+    "META": 1795624717.9528236,
+    "GOOGL": 1795624717.9528236,
+    "MSFT": 1795624717.9528236,
+    "AAPL": 1795624717.9528236,
+    "PLTR": 1795624717.9528236,
+    "NOW": 1795624717.9528236,
+    "AMZN": 1795624717.9528236,
+    "CRWV": 1795624717.9528236,
+    "NBIS": 1795624717.9528236,
     "APLD": 1795623852.9401183,
     "VST": 1795623852.9401183,
     "BE": 1795623852.9401183,
@@ -3359,7 +3359,7 @@
     "AAOI": 1795623852.9401183,
     "SPCX": 1795623852.9401183,
     "ASTS": 1795623852.9401183,
-    "AXTI": 1795623179.7762742,
+    "AXTI": 1795624717.9528236,
     "NASA": 1795623852.9401183,
     "LUNR": 1795623852.9401183,
     "TSLA": 1795623993.0178165,
@@ -3398,7 +3398,7 @@
     "GLW": 1795623852.9401183,
     "ANT": 1795624099.2041101,
     "XAUUSD": 1795624099.2041101,
-    "KOSPI": 1795623179.7762742
+    "KOSPI": 1795624717.9528236
   },
   "opex_shield": {
     "date": "2026-11-25",
