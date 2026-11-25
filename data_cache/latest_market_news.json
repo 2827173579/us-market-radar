@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795629208.187,
-  "updated_at_et": "11-25 12:53 ET",
-  "updated_at_kst": "02:53 KST",
+  "updated_at_ts": 1795629259.197,
+  "updated_at_et": "11-25 12:54 ET",
+  "updated_at_kst": "02:54 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -829,6 +829,13 @@
     ],
     "TSM": [
       {
+        "title": "If You Invest $1,000 in Taiwan Semiconductor Today, Here’s What It Could Be Worth by 2030",
+        "url": "https://247wallst.com/investing/2026/11/25/if-you-invest-1000-in-taiwan-semiconductor-today-heres-what-it-could-be-worth-by-2030/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 12:33 ET",
+        "pub_ts": 1795627981.0
+      },
+      {
         "title": "Billionaire Stanley Druckenmiller Sold 94% of His TSMC Stake and All of His Alphabet Shares in Q3. Here’s the Brilliant Stock He Added.",
         "url": "https://www.fool.com/investing/2026/11/25/billionaire-stanley-druckenmiller-sold-94-of-his-tsmc-and-all-of-his-alphabet-here-s-the-brilliant-stock-he-added/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -855,13 +862,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 10:33 ET",
         "pub_ts": 1795620837.0
-      },
-      {
-        "title": "TSMC Has a 'Substantially Wider Moat' Than Nvidia, Says Investor Joseph Carlson",
-        "url": "https://www.benzinga.com/markets/prediction-markets/26/11/63621669/joseph-carlson-tsmc-nvidia-moat?utm_source=yahooFinance&utm_campaign=partner_feed&utm_medium=referral&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 09:28 ET",
-        "pub_ts": 1795616919.0
       }
     ],
     "VIXY": [
@@ -1014,6 +1014,13 @@
     ],
     "ASML": [
       {
+        "title": "ASML Stocks Drop 6.1% as Dutch Lawmakers Fight US Chip Curb Bill",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/asml-stocks-drop-6-1-171745637.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 12:17 ET",
+        "pub_ts": 1795627065.0
+      },
+      {
         "title": "ASML Sinks 6% in Chip Rout as Dutch Lawmaker Warns MATCH Act Is “Disastrous for ASML”",
         "url": "https://www.tikr.com/blog/asml-sinks-6-in-chip-rout-as-dutch-lawmaker-warns-match-act-is-disastrous-for-asml?ref=yahoofinance&tlnk=yf-261125-c48vq838&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1040,13 +1047,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 04:25 ET",
         "pub_ts": 1795598735.0
-      },
-      {
-        "title": "‘Disastrous' for ASML: Dutch Lawmakers Revolt Against US Push to Tighten China Chip Curbs",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/disastrous-asml-dutch-lawmakers-revolt-064230741.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 01:42 ET",
-        "pub_ts": 1795588950.0
       }
     ],
     "QCOM": [
@@ -1125,6 +1125,13 @@
     ],
     "AMAT": [
       {
+        "title": "Applied Materials Stocks Fall 7.98% as MATCH Act Fight Rattles Chip Toolmakers",
+        "url": "https://finance.yahoo.com/technology/articles/applied-materials-stocks-fall-7-174057061.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 12:40 ET",
+        "pub_ts": 1795628457.0
+      },
+      {
         "title": "Why Applied Materials (AMAT) Stock Is Falling Today: AI-Led Chip Selloff",
         "url": "https://finance.yahoo.com/markets/stocks/articles/why-applied-materials-amat-stock-163016087.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1151,13 +1158,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 06:01 ET",
         "pub_ts": 1795604496.0
-      },
-      {
-        "title": "Why Is Applied Materials (AMAT) Stock Down Today? Chip Selloff Drags Suppliers",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/why-applied-materials-amat-stock-204649720.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 15:46 ET",
-        "pub_ts": 1795553209.0
       }
     ],
     "META": [
@@ -1199,6 +1199,20 @@
     ],
     "GOOGL": [
       {
+        "title": "DoubleLine’s Cohen turns bullish on hyperscaler bonds after selloff - Bloomberg",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/doubleline-cohen-turns-bullish-hyperscaler-173352564.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 12:33 ET",
+        "pub_ts": 1795628032.0
+      },
+      {
+        "title": "Alphabet stock plunges as Google walks away from a big Australian news deal",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/alphabet-stock-plunges-google-walks-171450705.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 12:14 ET",
+        "pub_ts": 1795626890.0
+      },
+      {
         "title": "Billionaire Stephen Mandel’s Lone Pine Raised Its Alphabet Stake 901% to $743 Million",
         "url": "https://247wallst.com/investing/2026/11/25/billionaire-stephen-mandels-lone-pine-raised-its-alphabet-stake-901-to-743-million/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1218,23 +1232,30 @@
         "source": "Yahoo Finance",
         "time": "11-25 11:55 ET",
         "pub_ts": 1795625749.0
-      },
-      {
-        "title": "Cathie Wood Just Bought $17 Million of Alphabet Across 2 ARK Funds",
-        "url": "https://www.tikr.com/blog/cathie-wood-ark-invest-buys-alphabet-stock-17-million?ref=yahoofinance&tlnk=yf-261125-vg34rx7r&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 11:51 ET",
-        "pub_ts": 1795625504.0
-      },
-      {
-        "title": "Billionaire Stanley Druckenmiller Sold 94% of His TSMC Stake and All of His Alphabet Shares in Q3. Here’s the Brilliant Stock He Added.",
-        "url": "https://www.fool.com/investing/2026/11/25/billionaire-stanley-druckenmiller-sold-94-of-his-tsmc-and-all-of-his-alphabet-here-s-the-brilliant-stock-he-added/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 11:37 ET",
-        "pub_ts": 1795624622.0
       }
     ],
     "MSFT": [
+      {
+        "title": "Japan's biggest banks pick Solana as Fidelity adds DeFi tokens",
+        "url": "https://finance.yahoo.com/video/japans-biggest-banks-pick-solana-170000036.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 12:00 ET",
+        "pub_ts": 1795626000.0
+      },
+      {
+        "title": "DoubleLine’s Cohen turns bullish on hyperscaler bonds after selloff - Bloomberg",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/doubleline-cohen-turns-bullish-hyperscaler-173352564.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 12:33 ET",
+        "pub_ts": 1795628032.0
+      },
+      {
+        "title": "Microsoft (MSFT) Deepens Europe Sovereign AI Push With Expanded Public Sector Cloud Pact",
+        "url": "https://finance.yahoo.com/technology/ai/articles/microsoft-msft-deepens-europe-sovereign-171058616.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 12:10 ET",
+        "pub_ts": 1795626658.0
+      },
       {
         "title": "Prediction: IREN’s Microsoft Deal Could Be Just the Beginning of Its Next Growth Phase",
         "url": "https://247wallst.com/investing/2026/11/25/prediction-irens-microsoft-deal-could-be-just-the-beginning-of-its-next-growth-phase-massive-upside-ahead/?.tsrc=rss",
@@ -1248,27 +1269,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 10:59 ET",
         "pub_ts": 1795622340.0
-      },
-      {
-        "title": "Microsoft Stocks Fall 2.53% as Hyperscalers Join AI Selloff",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/microsoft-stocks-fall-2-53-154006144.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 10:40 ET",
-        "pub_ts": 1795621206.0
-      },
-      {
-        "title": "Stirlingshire Investments Appoints Daniel Gicklhorn as Chief Technology Officer",
-        "url": "https://finance.yahoo.com/technology/articles/stirlingshire-investments-appoints-daniel-gicklhorn-151300914.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 10:13 ET",
-        "pub_ts": 1795619580.0
-      },
-      {
-        "title": "Bright Horizon utility lands Microsoft data center deals amid Wyoming buildout",
-        "url": "https://www.utilitydive.com/news/cheyenne-light-microsoft-google-data-center-bright-horizon/875739/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 10:00 ET",
-        "pub_ts": 1795618839.0
       }
     ],
     "AAPL": [
@@ -1310,6 +1310,20 @@
     ],
     "PLTR": [
       {
+        "title": "Palantir Is Down 25% From Its High. Is It a Bargain or Still Overvalued?",
+        "url": "https://www.fool.com/investing/2026/11/25/palantir-is-down-25-from-its-high-is-it-a-bargain-or-still-overvalued/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 12:20 ET",
+        "pub_ts": 1795627203.0
+      },
+      {
+        "title": "Palantir Stocks Fall 4.62% as Nasdaq Rout Hits AI Software",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/palantir-stocks-fall-4-62-171959856.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 12:19 ET",
+        "pub_ts": 1795627199.0
+      },
+      {
         "title": "Prediction: This Company’s Future Could Look Very Different by the End of 2028",
         "url": "https://247wallst.com/investing/2026/11/25/prediction-this-companys-future-could-look-very-different-by-the-end-of-2028/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1329,20 +1343,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 06:02 ET",
         "pub_ts": 1795604571.0
-      },
-      {
-        "title": "Can Palantir Technologies (PLTR) Justify Its Price Through Cash Flow?",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/palantir-technologies-pltr-justify-price-070848763.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 02:08 ET",
-        "pub_ts": 1795590528.0
-      },
-      {
-        "title": "Where Will Palantir Stock Be at the End of 2030?",
-        "url": "https://www.fool.com/investing/2026/11/25/where-will-palantir-stock-be-at-the-end-of-2030/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 01:47 ET",
-        "pub_ts": 1795589222.0
       }
     ],
     "NOW": [
@@ -1398,6 +1398,13 @@
         "pub_ts": 1795617376.0
       },
       {
+        "title": "Amazon to start selling cars in the UK",
+        "url": "https://uk.finance.yahoo.com/news/amazon-start-selling-cars-uk-174741468.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 12:47 ET",
+        "pub_ts": 1795628861.0
+      },
+      {
         "title": "Amazon Wants a 'Fair Exchange' Before Letting Muse Back In",
         "url": "https://finance.yahoo.com/technology/articles/amazon-wants-fair-exchange-letting-163449964.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1410,13 +1417,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 11:30 ET",
         "pub_ts": 1795624232.0
-      },
-      {
-        "title": "Amazon and Meta Face Major Showdown Over the Future of AI Shopping",
-        "url": "https://finance.yahoo.com/technology/ai/articles/amazon-meta-face-major-showdown-155254367.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 10:52 ET",
-        "pub_ts": 1795621974.0
       }
     ],
     "CRWV": [
@@ -3319,34 +3319,34 @@
   "ticker_news_ts": {
     "KORU": 1795628775.839951,
     "SOXL": 1795628775.839951,
-    "SPY": 1795627738.2312214,
+    "SPY": 1795629259.1969395,
     "DIA": 1795628775.839951,
     "SOXX": 1795628775.839951,
     "QQQ": 1795628775.839951,
-    "SMH": 1795627738.2312214,
+    "SMH": 1795629259.1969395,
     "IWM": 1795628775.839951,
     "IGV": 1795628775.839951,
     "TLT": 1795628775.839951,
     "GLD": 1795628775.839951,
     "SQQQ": 1795628775.839951,
-    "TSM": 1795627738.2312214,
+    "TSM": 1795629259.1969395,
     "VIXY": 1795628775.839951,
     "SOXS": 1795628775.839951,
     "NVDA": 1795628775.839951,
     "AMD": 1795628775.839951,
-    "ASML": 1795627738.2312214,
-    "QCOM": 1795627738.2312214,
+    "ASML": 1795629259.1969395,
+    "QCOM": 1795629259.1969395,
     "AVGO": 1795628775.839951,
-    "AMAT": 1795627738.2312214,
-    "META": 1795627738.2312214,
-    "GOOGL": 1795627738.2312214,
-    "MSFT": 1795627738.2312214,
-    "AAPL": 1795627738.2312214,
-    "PLTR": 1795627738.2312214,
-    "NOW": 1795627738.2312214,
-    "AMZN": 1795627738.2312214,
-    "CRWV": 1795627738.2312214,
-    "NBIS": 1795627738.2312214,
+    "AMAT": 1795629259.1969395,
+    "META": 1795629259.1969395,
+    "GOOGL": 1795629259.1969395,
+    "MSFT": 1795629259.1969395,
+    "AAPL": 1795629259.1969395,
+    "PLTR": 1795629259.1969395,
+    "NOW": 1795629259.1969395,
+    "AMZN": 1795629259.1969395,
+    "CRWV": 1795629259.1969395,
+    "NBIS": 1795629259.1969395,
     "APLD": 1795628415.373435,
     "VST": 1795628415.373435,
     "BE": 1795628415.373435,
@@ -3357,7 +3357,7 @@
     "AAOI": 1795628415.373435,
     "SPCX": 1795628415.373435,
     "ASTS": 1795628415.373435,
-    "AXTI": 1795627738.2312214,
+    "AXTI": 1795629259.1969395,
     "NASA": 1795628415.373435,
     "LUNR": 1795628415.373435,
     "TSLA": 1795628546.382737,
@@ -3396,7 +3396,7 @@
     "GLW": 1795628415.373435,
     "ANT": 1795628641.1777718,
     "XAUUSD": 1795628641.1777718,
-    "KOSPI": 1795627738.2312214
+    "KOSPI": 1795629259.1969395
   },
   "opex_shield": {
     "date": "2026-11-25",
