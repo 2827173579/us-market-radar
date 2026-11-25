@@ -1,5 +1,5 @@
 {
-  "updated_at_ts": 1795629307.925,
+  "updated_at_ts": 1795629355.383,
   "updated_at_et": "11-25 12:55 ET",
   "updated_at_kst": "02:55 KST",
   "macro_calendar": [
@@ -2494,18 +2494,25 @@
     ],
     "WDC": [
       {
+        "title": "Western Digital Stocks Sink 7.42%, Trading 139% Above GF Value",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/western-digital-stocks-sink-7-172258485.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 12:22 ET",
+        "pub_ts": 1795627378.0
+      },
+      {
+        "title": "Sandisk vs. Western Digital: Which Computer Drive Stock Is a Better Buy for 2027?",
+        "url": "https://www.fool.com/coverage/better-buy/2026/11/25/sandisk-vs-western-digital-which-computer-drive-stock-is-a-better-buy-for-2027/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 12:19 ET",
+        "pub_ts": 1795627142.0
+      },
+      {
         "title": "Western Digital (WDC) Stock Appears Undervalued Following Its 7x Three Year Run",
         "url": "https://finance.yahoo.com/markets/stocks/articles/western-digital-wdc-stock-appears-151158767.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-25 10:11 ET",
         "pub_ts": 1795619518.0
-      },
-      {
-        "title": "A $2.9 Billion Fund Dumps These 3 Stocks",
-        "url": "https://www.tikr.com/blog/a-2-9-billion-fund-dumps-these-3-stocks-2?ref=yahoofinance&tlnk=yf-261124-gc5m322p&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 17:25 ET",
-        "pub_ts": 1795472704.0
       },
       {
         "title": "Prediction: Seagate’s Record Profitability Could Be Just the Beginning, 27% Upside Ahead",
@@ -2520,13 +2527,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 09:07 ET",
         "pub_ts": 1795529253.0
-      },
-      {
-        "title": "Chip stocks tumble as Nvidia-led AI rally unravels, tariff fears weigh",
-        "url": "https://www.proactiveinvestors.com/companies/news/1102454/chip-stocks-tumble-as-nvidia-led-ai-rally-unravels-tariff-fears-weigh-1102454.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 11:49 ET",
-        "pub_ts": 1795625340.0
       }
     ],
     "STX": [
@@ -2642,6 +2642,27 @@
     ],
     "BTC-USD": [
       {
+        "title": "Strategy Is Worth $4 Billion Less Than Its Bitcoin Amid Liquidity Squeeze",
+        "url": "https://finance.yahoo.com/m/02ba3534-33d6-31a7-8856-8ec31c96c8e5/strategy-is-worth-%244-billion.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 12:36 ET",
+        "pub_ts": 1795628186.0
+      },
+      {
+        "title": "Elon Musk Sends Warning to Bitcoin Creators After $271,000 Fraud Case",
+        "url": "https://beincrypto.com/elon-musk-x-bitcoin-creators-fraud/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 12:18 ET",
+        "pub_ts": 1795627111.0
+      },
+      {
+        "title": "CleanSpark (CLSK) Lets Texas Data Center Exclusivity Expire",
+        "url": "https://finance.yahoo.com/technology/ai/articles/cleanspark-clsk-lets-texas-data-171642502.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 12:16 ET",
+        "pub_ts": 1795627002.0
+      },
+      {
         "title": "Elon Musk’s X Wins Court Judgment Against Alleged Bitcoin Bot Farm Operators",
         "url": "https://decrypt.co/383985/elon-musk-x-court-judgment-bitcoin-bot-farm-operators?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2654,27 +2675,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 12:00 ET",
         "pub_ts": 1795626044.0
-      },
-      {
-        "title": "The Bitcoin Dominance Metric Just Fell Below 60%. Could Altcoin Season Be Right Around the Corner?",
-        "url": "https://www.fool.com/investing/2026/11/25/the-bitcoin-dominance-metric-just-fell-below-60-could-altcoin-season-be-right-around-the-corner/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 11:53 ET",
-        "pub_ts": 1795625581.0
-      },
-      {
-        "title": "Bitcoin Falls Further as Inflation, Trump Tariffs and AI Selloff Rattle Markets",
-        "url": "https://decrypt.co/383967/bitcoin-sinks-inflation-trump-tariffs-ai-selloff?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 11:52 ET",
-        "pub_ts": 1795625570.0
-      },
-      {
-        "title": "Prediction: IREN’s Microsoft Deal Could Be Just the Beginning of Its Next Growth Phase",
-        "url": "https://247wallst.com/investing/2026/11/25/prediction-irens-microsoft-deal-could-be-just-the-beginning-of-its-next-growth-phase-massive-upside-ahead/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 11:33 ET",
-        "pub_ts": 1795624439.0
       }
     ],
     "CRWD": [
@@ -3374,11 +3374,11 @@
     "FPS": 1795628546.382737,
     "MU": 1795629307.924548,
     "SKHY": 1795629307.924548,
-    "WDC": 1795627829.6839883,
+    "WDC": 1795629355.3827045,
     "STX": 1795628596.9405835,
     "MSTR": 1795628546.382737,
     "SNDK": 1795628546.382737,
-    "BTC-USD": 1795627829.6839883,
+    "BTC-USD": 1795629355.3827045,
     "CRWD": 1795628546.382737,
     "ORCL": 1795628546.382737,
     "COIN": 1795628546.382737,
