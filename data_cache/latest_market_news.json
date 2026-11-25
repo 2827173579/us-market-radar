@@ -1,5 +1,5 @@
 {
-  "updated_at_ts": 1795643886.423,
+  "updated_at_ts": 1795643926.109,
   "updated_at_et": "11-25 16:58 ET",
   "updated_at_kst": "06:58 KST",
   "macro_calendar": [
@@ -944,35 +944,42 @@
         "pub_ts": 1795642083.0
       },
       {
+        "title": "Deere & Company Q4 2026 Earnings Call Summary",
+        "url": "https://app.moby.co/home/research/tools/earningsCalendar/earnings-deere-company-q4-2026-earnings-call-summary?utm_source=yahoo_finance&utm_medium=rss&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 16:44 ET",
+        "pub_ts": 1795643089.0
+      },
+      {
+        "title": "The Dividend ETF I'd Choose to to Generate $500 a Month in Passive Income",
+        "url": "https://www.fool.com/investing/2026/11/25/the-dividend-etf-id-choose-to-to-generate-500-a-month-in-passive-income/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 16:35 ET",
+        "pub_ts": 1795642502.0
+      },
+      {
+        "title": "Update: US Equity Indexes Mixed, Treasury Yields Drop as Investors Rotate Out of Chipmakers While Assessing Trade Tariffs",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/us-equity-indexes-mixed-treasury-213222387.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 16:32 ET",
+        "pub_ts": 1795642342.0
+      },
+      {
         "title": "These 5 Tech Stocks are Sidestepping the AI Downturn",
         "url": "https://finance.yahoo.com/m/d635c9d7-dbc8-3f44-bc94-e186ec33e2bd/these-5-tech-stocks-are.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-25 16:16 ET",
         "pub_ts": 1795641360.0
-      },
-      {
-        "title": "Nvidia Put on CreditWatch Negative by S&P Global Ratings Amid Governance Concerns",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/nvidia-put-creditwatch-negative-p-210636240.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 16:06 ET",
-        "pub_ts": 1795640796.0
-      },
-      {
-        "title": "Update: US Equity Indexes Mixed, Treasury Yields Drop as Investors Rotate Out of Chipmakers",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/us-equity-indexes-mixed-treasury-205803677.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 15:58 ET",
-        "pub_ts": 1795640283.0
-      },
-      {
-        "title": "Anthropic’s Chip Choices Could Change the Nvidia Story. Here’s How.",
-        "url": "https://www.fool.com/investing/2026/11/25/anthropic-s-chip-choices-could-change-the-nvidia-story-here-s-how/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 15:53 ET",
-        "pub_ts": 1795639982.0
       }
     ],
     "AMD": [
+      {
+        "title": "Prediction: AMD Stock Could Rally 58% as Analysts Maintain Strong Buy Rating",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/prediction-amd-stock-could-rally-213100517.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 16:31 ET",
+        "pub_ts": 1795642260.0
+      },
       {
         "title": "David Tepper Sold All of His AMD Stock. His Biggest Position Is Micron.",
         "url": "https://www.fool.com/investing/2026/11/25/david-tepper-sold-all-of-his-amd-stock-his-biggest-position-is-micron/?.tsrc=rss",
@@ -1000,13 +1007,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 12:02 ET",
         "pub_ts": 1795626156.0
-      },
-      {
-        "title": "Without an Anthropic Rally, “There Will Be No OpenAI.” AMD Is the Real Loser",
-        "url": "https://www.tikr.com/blog/without-an-anthropic-rally-there-will-be-no-openai-amd-is-the-real-loser?ref=yahoofinance&tlnk=yf-261125-334c8hfc&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 11:18 ET",
-        "pub_ts": 1795623516.0
       }
     ],
     "ASML": [
@@ -1085,6 +1085,13 @@
     ],
     "AVGO": [
       {
+        "title": "Not Micron. Not Broadcom. This Is My Top Oversold Artificial Intelligence (AI) Stock to Buy in December",
+        "url": "https://www.fool.com/investing/2026/11/25/not-micron-not-broadcom-this-is-my-top-oversold-artificial-intelligence-ai-stock-to-buy-in-december/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 16:51 ET",
+        "pub_ts": 1795643461.0
+      },
+      {
         "title": "This Is Why I Wouldn’t Ignore This Stock Heading Into 2027",
         "url": "https://247wallst.com/investing/2026/11/25/this-is-why-i-wouldnt-ignore-this-stock-heading-into-2027/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1111,13 +1118,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 11:52 ET",
         "pub_ts": 1795625521.0
-      },
-      {
-        "title": "Broadcom Stocks Slide 6.86% as AI Chip Selloff Deepens",
-        "url": "https://finance.yahoo.com/technology/ai/articles/broadcom-stocks-slide-6-86-154631717.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 10:46 ET",
-        "pub_ts": 1795621591.0
       }
     ],
     "AMAT": [
@@ -3314,26 +3314,26 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795642421.8377054,
-    "SOXL": 1795642421.8377054,
+    "KORU": 1795643926.1094089,
+    "SOXL": 1795643926.1094089,
     "SPY": 1795642909.7500863,
-    "DIA": 1795642421.8377054,
-    "SOXX": 1795642421.8377054,
-    "QQQ": 1795642421.8377054,
+    "DIA": 1795643926.1094089,
+    "SOXX": 1795643926.1094089,
+    "QQQ": 1795643926.1094089,
     "SMH": 1795642909.7500863,
-    "IWM": 1795642421.8377054,
-    "IGV": 1795642421.8377054,
-    "TLT": 1795642421.8377054,
-    "GLD": 1795642421.8377054,
-    "SQQQ": 1795642421.8377054,
+    "IWM": 1795643926.1094089,
+    "IGV": 1795643926.1094089,
+    "TLT": 1795643926.1094089,
+    "GLD": 1795643926.1094089,
+    "SQQQ": 1795643926.1094089,
     "TSM": 1795642909.7500863,
-    "VIXY": 1795642421.8377054,
-    "SOXS": 1795642421.8377054,
-    "NVDA": 1795642421.8377054,
-    "AMD": 1795642421.8377054,
+    "VIXY": 1795643926.1094089,
+    "SOXS": 1795643926.1094089,
+    "NVDA": 1795643926.1094089,
+    "AMD": 1795643926.1094089,
     "ASML": 1795642909.7500863,
     "QCOM": 1795642909.7500863,
-    "AVGO": 1795642421.8377054,
+    "AVGO": 1795643926.1094089,
     "AMAT": 1795642909.7500863,
     "META": 1795642909.7500863,
     "GOOGL": 1795642909.7500863,
