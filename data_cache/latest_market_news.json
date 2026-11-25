@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795643799.331,
-  "updated_at_et": "11-25 16:56 ET",
-  "updated_at_kst": "06:56 KST",
+  "updated_at_ts": 1795643838.791,
+  "updated_at_et": "11-25 16:57 ET",
+  "updated_at_kst": "06:57 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -3046,6 +3046,13 @@
     ],
     "WMT": [
       {
+        "title": "Jensen Huang's return, neocloud risk, and a holiday retail rally",
+        "url": "https://finance.yahoo.com/video/jensen-huangs-return-neocloud-risk-210000087.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 16:00 ET",
+        "pub_ts": 1795640400.0
+      },
+      {
         "title": "Tariffs are back as Anthropic sinks further below its IPO price",
         "url": "https://finance.yahoo.com/video/tariffs-are-back-as-anthropic-sinks-further-below-its-ipo-price-160524926.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3072,13 +3079,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 09:42 ET",
         "pub_ts": 1795617735.0
-      },
-      {
-        "title": "Walmart+ Members Spend 4 Times As Much As Non-Members. The Retailer’s New $120 Bundle Could Unlock More Growth.",
-        "url": "https://www.fool.com/investing/2026/11/25/walmart-members-spend-4-times-as-much-as-non-members-the-retailer-s-new-usd120-bundle-could-unlock-more-growth/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 14:50 ET",
-        "pub_ts": 1795636202.0
       }
     ],
     "V": [
@@ -3383,16 +3383,16 @@
     "MRNA": 1795643715.7914033,
     "NKE": 1795643715.7914033,
     "MCD": 1795643715.7914033,
-    "PEP": 1795642302.7158566,
-    "XOM": 1795642302.7158566,
-    "JPM": 1795642302.7158566,
-    "WMT": 1795642302.7158566,
+    "PEP": 1795643838.7905612,
+    "XOM": 1795643838.7905612,
+    "JPM": 1795643838.7905612,
+    "WMT": 1795643838.7905612,
     "V": 1795643715.7914033,
-    "CAT": 1795642302.7158566,
+    "CAT": 1795643838.7905612,
     "FN": 1795642953.7751355,
     "GLW": 1795643553.5965235,
-    "ANT": 1795642302.7158566,
-    "XAUUSD": 1795642302.7158566,
+    "ANT": 1795643838.7905612,
+    "XAUUSD": 1795643838.7905612,
     "KOSPI": 1795642909.7500863
   },
   "opex_shield": {
