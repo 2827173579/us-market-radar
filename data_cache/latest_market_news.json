@@ -1,5 +1,5 @@
 {
-  "updated_at_ts": 1795614064.847,
+  "updated_at_ts": 1795614112.229,
   "updated_at_et": "11-25 08:41 ET",
   "updated_at_kst": "22:41 KST",
   "macro_calendar": [
@@ -43,6 +43,21 @@
     }
   ],
   "macro_flashes": [
+    {
+      "id": "20261125214134248800",
+      "title": "【通胀升温，经济增长强劲，美联储加息几成定局】 11月25日讯，10月份，通胀水平进一步…",
+      "summary": "【通胀升温，经济增长强劲，美联储加息几成定局】 11月25日讯，10月份，通胀水平进一步偏离美联储的目标，这强化了12月份将再次加息的预期，同时也引发了关于美联储在2027年还需如何进一步行动的疑问。作为美联储首选的通胀衡量指标，10月PCE价格指数显示，经季节性调整后的年通胀率为3.8%，与道琼斯的普遍预期一致。数据显示，剔除食品和能源后的核心PCE价格指数为3.3%，比预期高出0.1个百分点。此外，美国商务部的一份修正估算报告还显示，第三季度经济增长更为强劲，国内生产总值（GDP）按年率计算增长了4.3%。",
+      "keywords": [
+        "美联储",
+        "加息",
+        "PCE"
+      ],
+      "pub_ts": 1795614094.0,
+      "time_et": "11-25 08:41 ET",
+      "time_bj": "21:41 BJ",
+      "time_kst": "22:41 KST",
+      "time_display": "08:41 ET / 21:41 BJ"
+    },
     {
       "id": "20261125213838858800",
       "title": "【PCE通胀加速升温，美联储下月无法避免加息】 11月25日讯，美联储青睐的通胀指标在1…",
@@ -362,19 +377,6 @@
       "time_bj": "17:42 BJ",
       "time_kst": "18:42 KST",
       "time_display": "04:42 ET / 17:42 BJ"
-    },
-    {
-      "id": "20261125171232471800",
-      "title": "众议院民主党人出手，扩大调查特朗普长子投资网络",
-      "summary": "四家与1789 Capital有关联的企业被纳入国会调查。民主党人希望查明，特朗普长子及其商业伙伴是否借助政治关系或提前获得的政策信息取得商业利益。",
-      "keywords": [
-        "特朗普"
-      ],
-      "pub_ts": 1795597952.0,
-      "time_et": "11-25 04:12 ET",
-      "time_bj": "17:12 BJ",
-      "time_kst": "18:12 KST",
-      "time_display": "04:12 ET / 17:12 BJ"
     }
   ],
   "ticker_news": {
@@ -2637,6 +2639,20 @@
     ],
     "BTC-USD": [
       {
+        "title": "Stock Market Today: Dow Dives Ahead Of Fed Inflation Data; Nvidia, Anthropic Plunge (Live Coverage)",
+        "url": "https://finance.yahoo.com/m/90407e46-3b17-34e8-8c82-527bf00b63e4/stock-market-today%3A-dow-dives.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 08:14 ET",
+        "pub_ts": 1795612444.0
+      },
+      {
+        "title": "Cathie Wood's ARK Buys Anthropic as Ripple CEO Predicts Post-IPO Crypto Rally",
+        "url": "https://www.ccn.com/news/crypto/cathie-woods-ark-bitcoin-etf-anthropic-ripple-ceo-crypto-rebound/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 08:02 ET",
+        "pub_ts": 1795611735.0
+      },
+      {
         "title": "Bitcoin Slips Below $59K Ahead Of PCE Report, Heads For Worst Month Since July 2022",
         "url": "https://stocktwits.com/news-articles/markets/equity/bitcoin-slips-below-59-k-ahead-of-pce-report-heads-for-worst-month-since-july-2022/cNbHhdsR9ma?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2656,20 +2672,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 06:30 ET",
         "pub_ts": 1795606236.0
-      },
-      {
-        "title": "Hyperliquid Leads Altcoin Losses as Bitcoin Slips Below $59K",
-        "url": "https://decrypt.co/383938/hyperliquid-leads-altcoin-losses-as-bitcoin-slips-below-59k?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 06:23 ET",
-        "pub_ts": 1795605837.0
-      },
-      {
-        "title": "Hyperliquid Strategies (PURR) Could Be A Bargain Following Its HYPE Treasury Pivot",
-        "url": "https://finance.yahoo.com/markets/crypto/articles/hyperliquid-strategies-purr-could-bargain-110905021.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 06:09 ET",
-        "pub_ts": 1795604945.0
       }
     ],
     "CRWD": [
@@ -3369,11 +3371,11 @@
     "FPS": 1795613315.5441015,
     "MU": 1795614064.8472505,
     "SKHY": 1795614064.8472505,
-    "WDC": 1795612573.8422031,
+    "WDC": 1795614112.228556,
     "STX": 1795613370.4648132,
     "MSTR": 1795613315.5441015,
     "SNDK": 1795613315.5441015,
-    "BTC-USD": 1795612573.8422031,
+    "BTC-USD": 1795614112.228556,
     "CRWD": 1795613315.5441015,
     "ORCL": 1795613315.5441015,
     "COIN": 1795613315.5441015,
