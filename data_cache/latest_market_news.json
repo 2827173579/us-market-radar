@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795646056.151,
-  "updated_at_et": "11-25 17:34 ET",
-  "updated_at_kst": "07:34 KST",
+  "updated_at_ts": 1795646105.348,
+  "updated_at_et": "11-25 17:35 ET",
+  "updated_at_kst": "07:35 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -2645,6 +2645,20 @@
     ],
     "BTC-USD": [
       {
+        "title": "How Much of Your Portfolio Should Be in Bitcoin After a 50% Drop?",
+        "url": "https://247wallst.com/investing/cryptocurrency/2026/11/25/how-much-of-your-portfolio-should-be-in-bitcoin-after-a-50-drop/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 17:14 ET",
+        "pub_ts": 1795644888.0
+      },
+      {
+        "title": "Why Has Strategy Stock Trailed Dropbox?",
+        "url": "https://www.trefis.com/stock/mstr/articles/628944/why-has-strategy-stock-trailed-dropbox/2026-11-25?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 17:10 ET",
+        "pub_ts": 1795644642.0
+      },
+      {
         "title": "Analyst explains why Bitcoin’s next move depends on Nasdaq",
         "url": "https://www.thestreet.com/crypto/markets/analyst-explains-why-bitcoins-next-move-depends-on-nasdaq?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2664,20 +2678,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 15:28 ET",
         "pub_ts": 1795638489.0
-      },
-      {
-        "title": "IREN stock price is down 80% over six months. Here’s why",
-        "url": "https://blockspace.media/short/iren-stock-price-is-down-80-over-six-months-heres-why/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 15:18 ET",
-        "pub_ts": 1795637937.0
-      },
-      {
-        "title": "Mysterious traders made $340,000 betting on Huang’s Nvidia return",
-        "url": "https://www.thestreet.com/crypto/markets/mysterious-traders-made-340000-betting-on-huangs-nvidia-return?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 15:00 ET",
-        "pub_ts": 1795636800.0
       }
     ],
     "CRWD": [
@@ -3381,7 +3381,7 @@
     "STX": 1795645310.074951,
     "MSTR": 1795645226.53532,
     "SNDK": 1795645226.53532,
-    "BTC-USD": 1795644536.9378903,
+    "BTC-USD": 1795646105.3483171,
     "CRWD": 1795645226.53532,
     "ORCL": 1795645226.53532,
     "COIN": 1795645226.53532,
