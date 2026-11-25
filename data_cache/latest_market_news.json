@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795611741.007,
-  "updated_at_et": "11-25 08:02 ET",
-  "updated_at_kst": "22:02 KST",
+  "updated_at_ts": 1795611797.113,
+  "updated_at_et": "11-25 08:03 ET",
+  "updated_at_kst": "22:03 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -17,7 +17,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 28,
+      "minutes_left": 27,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -36,7 +36,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 28,
+      "minutes_left": 27,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -2205,6 +2205,13 @@
     ],
     "VRT": [
       {
+        "title": "Vertiv Just Raised Its Dividend 60%, but the AI Stock Still Yields Only 0.23%",
+        "url": "https://247wallst.com/investing/2026/11/25/vertiv-just-raised-its-dividend-60-but-the-ai-stock-still-yields-only-0-23/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 07:47 ET",
+        "pub_ts": 1795610821.0
+      },
+      {
         "title": "Vertiv Holdings Co (VRT) Looks Repriced Following AI Data Center Wins And Higher Guidance",
         "url": "https://finance.yahoo.com/technology/ai/articles/vertiv-holdings-co-vrt-looks-110832574.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2231,13 +2238,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 06:58 ET",
         "pub_ts": 1795521488.0
-      },
-      {
-        "title": "Baird Just Downgraded Vertiv With a $200 Target, and It’s Not About Earnings",
-        "url": "https://www.tikr.com/blog/baird-just-downgraded-vertiv-with-a-200-target-and-its-not-about-earnings?ref=yahoofinance&tlnk=yf-261123-g87p3x5x&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 14:35 ET",
-        "pub_ts": 1795462519.0
       }
     ],
     "HPE": [
@@ -2286,6 +2286,20 @@
         "pub_ts": 1795602636.0
       },
       {
+        "title": "Dell's $132 Billion AI Backlog Can't Stop a Share Slide",
+        "url": "https://finance.yahoo.com/technology/ai/articles/dells-132-billion-ai-backlog-123018958.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 07:30 ET",
+        "pub_ts": 1795609818.0
+      },
+      {
+        "title": "Anthropic, Nvidia, Dell, Workday, Deere, and More Stocks That Explain Today’s Market",
+        "url": "https://finance.yahoo.com/m/18e72c51-c6d7-33b1-aa90-ccce17a9b32f/anthropic%2C-nvidia%2C-dell%2C.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 07:15 ET",
+        "pub_ts": 1795608900.0
+      },
+      {
         "title": "Dell's Infrastructure Business Momentum Amid Strong AI Server Demand Drives Higher Full-Year Outlook",
         "url": "https://finance.yahoo.com/technology/ai/articles/dell-apos-infrastructure-business-momentum-120041490.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2298,20 +2312,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 06:50 ET",
         "pub_ts": 1795607445.0
-      },
-      {
-        "title": "Dell Delivered Strong Earnings but at the Wrong Time for the Stock",
-        "url": "https://finance.yahoo.com/m/7bfc9015-4ca1-3f6d-81d5-7ffb1b1990e6/dell-delivered-strong.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 06:06 ET",
-        "pub_ts": 1795604760.0
-      },
-      {
-        "title": "Dell Technologies Shares Fall 4.4% Despite Strong Quarterly Results and Higher Annual Revenue Forecast",
-        "url": "https://investorshub.advfn.com/market-news/article/40686/dell-technologies-shares-fall-4-4-despite-strong-quarterly-results-and-higher-annual-revenue-forecast?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 06:04 ET",
-        "pub_ts": 1795604670.0
       }
     ],
     "OKLO": [
@@ -2612,6 +2612,13 @@
     ],
     "SNDK": [
       {
+        "title": "AMD, Micron and Sandisk Stocks Slide as AI Spending Fears Deepen",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/amd-micron-sandisk-stocks-slide-122728877.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 07:27 ET",
+        "pub_ts": 1795609648.0
+      },
+      {
         "title": "Sandisk (SNDK) Shares Dropped, So What Is Driving Attention Now?",
         "url": "https://finance.yahoo.com/markets/stocks/articles/sandisk-sndk-shares-dropped-driving-121239819.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2638,13 +2645,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 04:25 ET",
         "pub_ts": 1795598702.0
-      },
-      {
-        "title": "MU, SKHY, SNDK Stocks In Focus After TrendForce Lowers DRAM Pricing Forecast",
-        "url": "https://stocktwits.com/news-articles/markets/equity/mu-skhy-sndk-stocks-in-focus-after-trend-force-lowers-dram-pricing-forecast/cNbH7VLR9l8?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 03:27 ET",
-        "pub_ts": 1795595230.0
       }
     ],
     "BTC-USD": [
@@ -3367,37 +3367,37 @@
     "AXTI": 1795610928.3699715,
     "NASA": 1795611686.617976,
     "LUNR": 1795611686.617976,
-    "TSLA": 1795610260.4442298,
+    "TSLA": 1795611797.1131556,
     "AXP": 1795611686.617976,
     "RKLB": 1795611686.617976,
     "KO": 1795611686.617976,
     "FLY": 1795611686.617976,
     "INTC": 1795611686.617976,
-    "VRT": 1795610260.4442298,
-    "HPE": 1795610260.4442298,
-    "DELL": 1795610260.4442298,
-    "OKLO": 1795610260.4442298,
-    "CEG": 1795610260.4442298,
-    "FPS": 1795610260.4442298,
+    "VRT": 1795611797.1131556,
+    "HPE": 1795611797.1131556,
+    "DELL": 1795611797.1131556,
+    "OKLO": 1795611797.1131556,
+    "CEG": 1795611797.1131556,
+    "FPS": 1795611797.1131556,
     "MU": 1795610980.8596852,
     "SKHY": 1795610980.8596852,
     "WDC": 1795611030.792009,
     "STX": 1795610311.236169,
-    "MSTR": 1795610260.4442298,
-    "SNDK": 1795610260.4442298,
+    "MSTR": 1795611797.1131556,
+    "SNDK": 1795611797.1131556,
     "BTC-USD": 1795611030.792009,
-    "CRWD": 1795610260.4442298,
-    "ORCL": 1795610260.4442298,
-    "COIN": 1795610260.4442298,
-    "LLY": 1795610260.4442298,
-    "MRNA": 1795610260.4442298,
-    "NKE": 1795610260.4442298,
-    "MCD": 1795610260.4442298,
+    "CRWD": 1795611797.1131556,
+    "ORCL": 1795611797.1131556,
+    "COIN": 1795611797.1131556,
+    "LLY": 1795611797.1131556,
+    "MRNA": 1795611797.1131556,
+    "NKE": 1795611797.1131556,
+    "MCD": 1795611797.1131556,
     "PEP": 1795610357.9759705,
     "XOM": 1795610357.9759705,
     "JPM": 1795610357.9759705,
     "WMT": 1795610357.9759705,
-    "V": 1795610260.4442298,
+    "V": 1795611797.1131556,
     "CAT": 1795610357.9759705,
     "FN": 1795610980.8596852,
     "GLW": 1795611686.617976,
@@ -3421,10 +3421,10 @@
   },
   "calendar_banner": {
     "level": "upcoming",
-    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 28 分钟（11-25 08:30 ET / 22:30 KST）",
+    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 27 分钟（11-25 08:30 ET / 22:30 KST）",
     "detail": "前值 0.3% ｜ 预期 0.3% ｜ 临近公布前15分钟将自动触发防插针预警",
     "event_name": "美国10月核心PCE物价指数环比",
-    "minutes_left": 28,
+    "minutes_left": 27,
     "opex_shield": {
       "date": "2026-11-25",
       "active": false,
