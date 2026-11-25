@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795633076.844,
-  "updated_at_et": "11-25 13:57 ET",
-  "updated_at_kst": "03:57 KST",
+  "updated_at_ts": 1795633115.002,
+  "updated_at_et": "11-25 13:58 ET",
+  "updated_at_kst": "03:58 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -2282,11 +2282,11 @@
         "pub_ts": 1795622664.0
       },
       {
-        "title": "Dell crushes earnings estimates. Why is the atock falling?",
-        "url": "https://finance.yahoo.com/video/dell-crushes-earnings-estimates-why-is-the-atock-falling-155648716.html?.tsrc=rss",
+        "title": "Sector Update: Tech Stocks Fall Wednesday Afternoon",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/sector-tech-stocks-fall-wednesday-183231718.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-25 10:56 ET",
-        "pub_ts": 1795622208.0
+        "time": "11-25 13:32 ET",
+        "pub_ts": 1795631551.0
       },
       {
         "title": "What Does Dell Technologies (DELL) $25 Billion Buyback Mean After AI Demand Surged?",
@@ -2304,6 +2304,13 @@
       }
     ],
     "OKLO": [
+      {
+        "title": "Prediction: Oklo Stock Could Have a Huge Year as Nuclear Energy Demand Accelerates",
+        "url": "https://247wallst.com/investing/2026/11/25/prediction-oklo-stock-could-have-a-huge-year-as-nuclear-energy-demand-accelerates/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 13:33 ET",
+        "pub_ts": 1795631602.0
+      },
       {
         "title": "Oklo and NuScale Power Retreat 8% as AI Power Selloff Deepens; Energy Fuels Drops 6%",
         "url": "https://247wallst.com/investing/2026/11/25/oklo-and-nuscale-power-retreat-8-as-ai-power-selloff-deepens-energy-fuels-drops-6/?.tsrc=rss",
@@ -2331,13 +2338,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 21:20 ET",
         "pub_ts": 1795573202.0
-      },
-      {
-        "title": "Groves 1 Approval Could Open NASA Opportunity For Oklo Stock",
-        "url": "https://finance.yahoo.com/energy/articles/groves-1-approval-could-open-181225173.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 13:12 ET",
-        "pub_ts": 1795543945.0
       }
     ],
     "CEG": [
@@ -2786,6 +2786,13 @@
     ],
     "LLY": [
       {
+        "title": "Sector Update: Healthcare Stocks Mixed Wednesday Afternoon",
+        "url": "https://finance.yahoo.com/healthcare/articles/sector-healthcare-stocks-mixed-wednesday-183851394.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 13:38 ET",
+        "pub_ts": 1795631931.0
+      },
+      {
         "title": "Update: Market Chatter: Novo Nordisk and Eli Lilly Prepare New Warning Labels for GLP-1 Drugs Over Eye Condition Risk",
         "url": "https://finance.yahoo.com/healthcare/articles/market-chatter-novo-nordisk-eli-150708947.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2812,13 +2819,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 15:44 ET",
         "pub_ts": 1795553071.0
-      },
-      {
-        "title": "Forget Zepbound: Lilly's Retatrutide Just Cut Sleep Apnea Severity by Up to 60%",
-        "url": "https://www.fool.com/investing/2026/11/24/forget-zepbound-lillys-retatrutide-just-cut-sleep-apnea-severity-by-up-to-60/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 10:35 ET",
-        "pub_ts": 1795534502.0
       }
     ],
     "MRNA": [
@@ -3356,37 +3356,37 @@
     "AXTI": 1795632287.5153353,
     "NASA": 1795632960.1085618,
     "LUNR": 1795632960.1085618,
-    "TSLA": 1795631604.9019983,
+    "TSLA": 1795633115.0020323,
     "AXP": 1795632960.1085618,
     "RKLB": 1795632960.1085618,
     "KO": 1795632960.1085618,
     "FLY": 1795632960.1085618,
     "INTC": 1795632960.1085618,
-    "VRT": 1795631604.9019983,
-    "HPE": 1795631604.9019983,
-    "DELL": 1795631604.9019983,
-    "OKLO": 1795631604.9019983,
-    "CEG": 1795631604.9019983,
-    "FPS": 1795631604.9019983,
+    "VRT": 1795633115.0020323,
+    "HPE": 1795633115.0020323,
+    "DELL": 1795633115.0020323,
+    "OKLO": 1795633115.0020323,
+    "CEG": 1795633115.0020323,
+    "FPS": 1795633115.0020323,
     "MU": 1795632332.9630487,
     "SKHY": 1795632332.9630487,
     "WDC": 1795632374.1718824,
     "STX": 1795631646.6158025,
-    "MSTR": 1795631604.9019983,
-    "SNDK": 1795631604.9019983,
+    "MSTR": 1795633115.0020323,
+    "SNDK": 1795633115.0020323,
     "BTC-USD": 1795632374.1718824,
-    "CRWD": 1795631604.9019983,
-    "ORCL": 1795631604.9019983,
-    "COIN": 1795631604.9019983,
-    "LLY": 1795631604.9019983,
-    "MRNA": 1795631604.9019983,
-    "NKE": 1795631604.9019983,
-    "MCD": 1795631604.9019983,
+    "CRWD": 1795633115.0020323,
+    "ORCL": 1795633115.0020323,
+    "COIN": 1795633115.0020323,
+    "LLY": 1795633115.0020323,
+    "MRNA": 1795633115.0020323,
+    "NKE": 1795633115.0020323,
+    "MCD": 1795633115.0020323,
     "PEP": 1795631684.808988,
     "XOM": 1795631684.808988,
     "JPM": 1795631684.808988,
     "WMT": 1795631684.808988,
-    "V": 1795631604.9019983,
+    "V": 1795633115.0020323,
     "CAT": 1795631684.808988,
     "FN": 1795632332.9630487,
     "GLW": 1795632960.1085618,
