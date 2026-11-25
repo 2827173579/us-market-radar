@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795640724.69,
-  "updated_at_et": "11-25 16:05 ET",
-  "updated_at_kst": "06:05 KST",
+  "updated_at_ts": 1795640769.047,
+  "updated_at_et": "11-25 16:06 ET",
+  "updated_at_kst": "06:06 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -3238,6 +3238,20 @@
         "pub_ts": 1795636997.0
       },
       {
+        "title": "Nvidia is cheap on paper, so why won't the market buy it?",
+        "url": "https://finance.yahoo.com/video/nvidia-is-cheap-on-paper-so-why-wont-the-market-buy-it-192215326.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 14:22 ET",
+        "pub_ts": 1795634535.0
+      },
+      {
+        "title": "Anthropic’s Chip Choices Could Change the Nvidia Story. Here’s How.",
+        "url": "https://www.fool.com/investing/2026/11/25/anthropic-s-chip-choices-could-change-the-nvidia-story-here-s-how/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 15:53 ET",
+        "pub_ts": 1795639982.0
+      },
+      {
         "title": "Anthropic Broke Its $83 IPO Price. Most Giants Recovered",
         "url": "https://www.trefis.com/stock/ant/articles/628871/anthropic-broke-its-83-ipo-price-most-giants-recovered/2026-11-25?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3250,20 +3264,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 15:12 ET",
         "pub_ts": 1795637528.0
-      },
-      {
-        "title": "Stock Market Today: Dow Reverses For 275-Point Gain; This Ad Firm Breaks Out (Live Coverage)",
-        "url": "https://finance.yahoo.com/m/90407e46-3b17-34e8-8c82-527bf00b63e4/stock-market-today%3A-dow.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 14:57 ET",
-        "pub_ts": 1795636622.0
-      },
-      {
-        "title": "Nvidia U-Turn Is Bad News For Anthropic, Says Parmy Olson",
-        "url": "https://finance.yahoo.com/video/nvidia-u-turn-bad-news-195302644.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 14:53 ET",
-        "pub_ts": 1795636382.0
       }
     ],
     "XAUUSD": [
@@ -3383,16 +3383,16 @@
     "MRNA": 1795640679.6591523,
     "NKE": 1795640679.6591523,
     "MCD": 1795640679.6591523,
-    "PEP": 1795639258.4676147,
-    "XOM": 1795639258.4676147,
-    "JPM": 1795639258.4676147,
-    "WMT": 1795639258.4676147,
+    "PEP": 1795640769.0470114,
+    "XOM": 1795640769.0470114,
+    "JPM": 1795640769.0470114,
+    "WMT": 1795640769.0470114,
     "V": 1795640679.6591523,
-    "CAT": 1795639258.4676147,
+    "CAT": 1795640769.0470114,
     "FN": 1795639928.4611053,
     "GLW": 1795640549.2440906,
-    "ANT": 1795639258.4676147,
-    "XAUUSD": 1795639258.4676147,
+    "ANT": 1795640769.0470114,
+    "XAUUSD": 1795640769.0470114,
     "KOSPI": 1795639848.1332786
   },
   "opex_shield": {
