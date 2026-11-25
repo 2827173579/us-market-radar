@@ -1,48 +1,74 @@
 {
-  "updated_at_ts": 1795613370.465,
-  "updated_at_et": "11-25 08:29 ET",
-  "updated_at_kst": "22:29 KST",
+  "updated_at_ts": 1795613419.747,
+  "updated_at_et": "11-25 08:30 ET",
+  "updated_at_kst": "22:30 KST",
   "macro_calendar": [
     {
-      "event_id": "1599680",
-      "name": "美国10月核心PCE物价指数环比",
+      "event_id": "1179201",
+      "name": "美国10月核心PCE物价指数月率",
       "country": "美国",
-      "star": 5,
+      "star": 3,
       "pub_time_ts": 1795613400.0,
       "pub_time_et": "11-25 08:30 ET",
       "pub_time_bj": "21:30 BJ",
       "pub_time_kst": "22:30 KST",
-      "previous": "0.3%",
-      "forecast": "0.3%",
-      "actual": "待公布",
+      "previous": "0.30%",
+      "forecast": "0.30%",
+      "actual": "0.3%",
       "unit": "%",
-      "status": "countdown_15m",
-      "minutes_left": 1,
-      "impact_tone": "pending",
-      "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
-      "source": "wscn"
+      "status": "released",
+      "minutes_left": 0,
+      "impact_tone": "neutral",
+      "impact_note": "符合预期·通胀温和持平（中性博弈）",
+      "source": "jin10_flash_type1"
     },
     {
-      "event_id": "1599678",
-      "name": "美国10月PCE物价指数环比",
+      "event_id": "1179202",
+      "name": "美国10月核心PCE物价指数年率",
       "country": "美国",
-      "star": 5,
+      "star": 4,
       "pub_time_ts": 1795613400.0,
       "pub_time_et": "11-25 08:30 ET",
       "pub_time_bj": "21:30 BJ",
       "pub_time_kst": "22:30 KST",
-      "previous": "0.5%",
-      "forecast": "0.3%",
-      "actual": "待公布",
+      "previous": "3.10%",
+      "forecast": "3.20%",
+      "actual": "3.3%",
       "unit": "%",
-      "status": "countdown_15m",
-      "minutes_left": 1,
-      "impact_tone": "pending",
-      "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
-      "source": "wscn"
+      "status": "released",
+      "minutes_left": 0,
+      "impact_tone": "bearish",
+      "impact_note": "偏鹰·通胀粘性高于预期（压制降息预期 · 成长股承压）",
+      "source": "jin10_flash_type1"
     }
   ],
   "macro_flashes": [
+    {
+      "id": "20261125213011319800",
+      "title": "美国10月核心PCE物价指数年率 3.3%，预期3.20%，前值3.10%。",
+      "summary": "美国10月核心PCE物价指数年率 3.3%，预期3.20%，前值3.10%。",
+      "keywords": [
+        "PCE"
+      ],
+      "pub_ts": 1795613411.0,
+      "time_et": "11-25 08:30 ET",
+      "time_bj": "21:30 BJ",
+      "time_kst": "22:30 KST",
+      "time_display": "08:30 ET / 21:30 BJ"
+    },
+    {
+      "id": "20261125213010852800",
+      "title": "美国10月核心PCE物价指数月率 0.3%，预期0.30%，前值0.30%。",
+      "summary": "美国10月核心PCE物价指数月率 0.3%，预期0.30%，前值0.30%。",
+      "keywords": [
+        "PCE"
+      ],
+      "pub_ts": 1795613410.0,
+      "time_et": "11-25 08:30 ET",
+      "time_bj": "21:30 BJ",
+      "time_kst": "22:30 KST",
+      "time_display": "08:30 ET / 21:30 BJ"
+    },
     {
       "id": "20261125212000001800",
       "title": "美国上周初请数据、三季度实际GDP年化季率修正值、10月耐用品订单月率、个人支出月率、核…",
@@ -350,38 +376,6 @@
       "time_bj": "16:24 BJ",
       "time_kst": "17:24 KST",
       "time_display": "03:24 ET / 16:24 BJ"
-    },
-    {
-      "id": "20261125162046196800",
-      "title": "整理：每日投行/机构观点梳理（2026-11-25）",
-      "summary": "国外 1. 小摩展望2027年大宗商品：黄金有望重返4500美元。 2. 高盛：黄仁勋回归尚不足以扭转半导体行业颓势。 3. 小摩：特斯拉与SpaceX潜在合并或助推SpaceX纳入标普500。 4. 高盛：人工智能回报比英伟达风波更重要。 5. 高盛：美国数据中心电力需求增长或持续至2028年。 6. 小摩：料十年期美债收益率将于2027年Q1接近5.10%的峰值。 7. 小摩：AI超级周期未结束，标普500指数明年底前仍有14%上涨空间。 8. 瑞银：美债收益率在美联储仍将加息之际或保持区间波动。 9. 德商银行：预计到2027年底金价将达到每盎司4100美元。 10. 华侨银行：现在做空美元仍为时过早。 国内 1. 中金公司：A股短期有望震荡修复。 2. 中金公司：人身险负债将进入增长加速的黄金发展期。 3. 中信建投：AI科研取得突破，办公Agent需求增长。 4. 中信证券：物理AI再进阶，建议关注智能驾驶头部软硬件供应商。 5. 中信证券：美国国会听证会的流程、权限与影响。 6. 中信建投：农药整体仍处景气上行周期 草铵膦等核心品种有望展现较好弹性。",
-      "keywords": [
-        "美联储",
-        "加息",
-        "半导体",
-        "英伟达",
-        "美债",
-        "标普"
-      ],
-      "pub_ts": 1795594846.0,
-      "time_et": "11-25 03:20 ET",
-      "time_bj": "16:20 BJ",
-      "time_kst": "17:20 KST",
-      "time_display": "03:20 ET / 16:20 BJ"
-    },
-    {
-      "id": "20261125161200835800",
-      "title": "油市可能押错方向？中东原油出口已经连续数周下降",
-      "summary": "油价高位回落，反映市场对中东供应恢复的乐观预期。但最新数据显示，中东原油出口已明显低于冲突前水平，前期运输恢复带来的供应缓冲可能逐渐消失。点击查看...",
-      "keywords": [
-        "中东",
-        "原油"
-      ],
-      "pub_ts": 1795594320.0,
-      "time_et": "11-25 03:12 ET",
-      "time_bj": "16:12 BJ",
-      "time_kst": "17:12 KST",
-      "time_display": "03:12 ET / 16:12 BJ"
     }
   ],
   "ticker_news": {
@@ -2977,6 +2971,13 @@
     ],
     "XOM": [
       {
+        "title": "Chevron Pays a Bigger Dividend, but Exxon May Be the Better Retirement Stock",
+        "url": "https://247wallst.com/investing/2026/11/25/chevron-pays-a-bigger-dividend-but-exxon-may-be-the-better-retirement-stock/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 08:17 ET",
+        "pub_ts": 1795612675.0
+      },
+      {
         "title": "Your Exxon Dividend Needs Only About $59 Oil",
         "url": "https://www.trefis.com/stock/xom/articles/628301/your-exxon-dividend-needs-only-about-59-oil/2026-11-24?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3003,13 +3004,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 00:48 ET",
         "pub_ts": 1795585705.0
-      },
-      {
-        "title": "3 Non-AI Stocks to Buy for Long-Term Dividends and Stability",
-        "url": "https://www.fool.com/investing/2026/11/24/3-non-ai-stocks-to-buy-for-long-term-dividends-and-stability/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 15:12 ET",
-        "pub_ts": 1795551122.0
       }
     ],
     "JPM": [
@@ -3051,6 +3045,20 @@
     ],
     "WMT": [
       {
+        "title": "Top 3 holiday consumer stocks: Walmart, Hasbro, and Ulta Beauty",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/top-3-holiday-consumer-stocks-132110158.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 08:21 ET",
+        "pub_ts": 1795612870.0
+      },
+      {
+        "title": "Target vs Walmart holiday outlook: defensive strength against recovery potential",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/target-vs-walmart-holiday-outlook-130617796.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 08:06 ET",
+        "pub_ts": 1795611977.0
+      },
+      {
         "title": "Market Chatter: Walmart-Backed PhonePe Resumes IPO Process; Seeks Up to $15 Billion in Valuation",
         "url": "https://finance.yahoo.com/markets/stocks/articles/market-chatter-walmart-backed-phonepe-121130205.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3070,20 +3078,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 04:43 ET",
         "pub_ts": 1795599834.0
-      },
-      {
-        "title": "Walmart’s shopper base is shifting: High earners lead its gains as low-income shoppers turn to Amazon",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/walmart-shopper-shifting-high-earners-083200748.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 03:32 ET",
-        "pub_ts": 1795595520.0
-      },
-      {
-        "title": "Symbotic: 3 Key Takeaways for Long-Term Investors",
-        "url": "https://www.fool.com/earnings/takeaways/2026/11/24/symbotic-3-key-takeaways-for-long-term-investors/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 00:12 ET",
-        "pub_ts": 1795583550.0
       }
     ],
     "V": [
@@ -3243,32 +3237,32 @@
         "pub_ts": 1795608000.0
       },
       {
+        "title": "Stock Market Today: Dow Dives Ahead Of Fed Inflation Data; Nvidia, Anthropic Plunge (Live Coverage)",
+        "url": "https://finance.yahoo.com/m/90407e46-3b17-34e8-8c82-527bf00b63e4/stock-market-today%3A-dow-dives.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 08:14 ET",
+        "pub_ts": 1795612444.0
+      },
+      {
+        "title": "Update: Market Chatter: Anthropic Expanding in Zurich to Advance AI Research",
+        "url": "https://finance.yahoo.com/technology/ai/articles/market-chatter-anthropic-expanding-zurich-130416327.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 08:04 ET",
+        "pub_ts": 1795611856.0
+      },
+      {
+        "title": "Cathie Wood's ARK Buys Anthropic as Ripple CEO Predicts Post-IPO Crypto Rally",
+        "url": "https://www.ccn.com/news/crypto/cathie-woods-ark-bitcoin-etf-anthropic-ripple-ceo-crypto-rebound/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 08:02 ET",
+        "pub_ts": 1795611735.0
+      },
+      {
         "title": "Jim Cramer Calls Anthropic “the Silent Killer of This Market”",
         "url": "https://247wallst.com/investing/2026/11/25/jim-cramer-calls-anthropic-the-silent-killer-of-this-market/?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-25 07:38 ET",
         "pub_ts": 1795610327.0
-      },
-      {
-        "title": "Cathie Wood Buys $61.6 Million in Anthropic, Sells $21 Million in Meta and Palantir",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/cathie-wood-buys-61-6-123632406.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 07:36 ET",
-        "pub_ts": 1795610192.0
-      },
-      {
-        "title": "Anthropic, Nvidia, Dell, Workday, Deere, and More Stocks That Explain Today’s Market",
-        "url": "https://finance.yahoo.com/m/18e72c51-c6d7-33b1-aa90-ccce17a9b32f/anthropic%2C-nvidia%2C-dell%2C.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 07:15 ET",
-        "pub_ts": 1795608900.0
-      },
-      {
-        "title": "GSK (LSE:GSK) Faces A New Risk As Its AI Supplier Turns Drug Rival",
-        "url": "https://finance.yahoo.com/healthcare/articles/gsk-lse-gsk-faces-risk-121053588.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 07:10 ET",
-        "pub_ts": 1795608653.0
       }
     ],
     "XAUUSD": [
@@ -3388,16 +3382,16 @@
     "MRNA": 1795613315.5441015,
     "NKE": 1795613315.5441015,
     "MCD": 1795613315.5441015,
-    "PEP": 1795611894.357723,
-    "XOM": 1795611894.357723,
-    "JPM": 1795611894.357723,
-    "WMT": 1795611894.357723,
+    "PEP": 1795613419.7471743,
+    "XOM": 1795613419.7471743,
+    "JPM": 1795613419.7471743,
+    "WMT": 1795613419.7471743,
     "V": 1795613315.5441015,
-    "CAT": 1795611894.357723,
+    "CAT": 1795613419.7471743,
     "FN": 1795612521.676772,
     "GLW": 1795613220.822465,
-    "ANT": 1795611894.357723,
-    "XAUUSD": 1795611894.357723,
+    "ANT": 1795613419.7471743,
+    "XAUUSD": 1795613419.7471743,
     "KOSPI": 1795612468.2866437
   },
   "opex_shield": {
@@ -3415,11 +3409,11 @@
     "detail": ""
   },
   "calendar_banner": {
-    "level": "countdown_15m",
-    "headline": "⚠️ 宏观防插针预警：距离【美国10月核心PCE物价指数环比】公布还有 1 分钟，盘口极易上下剧烈插针，暂停左侧盲目挂单！",
-    "detail": "公布时间 11-25 08:30 ET / 22:30 KST ｜ 前值 0.3% · 预期 0.3%",
-    "event_name": "美国10月核心PCE物价指数环比",
-    "minutes_left": 1,
+    "level": "released",
+    "headline": "📊 今日重磅公布【美国10月核心PCE物价指数月率】· 公布值 0.3%（前值 0.30% / 预期 0.30%）",
+    "detail": "符合预期·通胀温和持平（中性博弈） · 11-25 08:30 ET / 22:30 KST",
+    "event_name": "美国10月核心PCE物价指数月率",
+    "minutes_left": 0,
     "opex_shield": {
       "date": "2026-11-25",
       "active": false,
