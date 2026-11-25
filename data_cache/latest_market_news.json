@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795620776.252,
-  "updated_at_et": "11-25 10:32 ET",
-  "updated_at_kst": "00:32 KST",
+  "updated_at_ts": 1795620819.987,
+  "updated_at_et": "11-25 10:33 ET",
+  "updated_at_kst": "00:33 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -43,6 +43,19 @@
     }
   ],
   "macro_flashes": [
+    {
+      "id": "20261125233230883800",
+      "title": "1. 美国至11月20日当周EIA战略石油储备库存为1982年8月27日当周以来最低。 …",
+      "summary": "1. 美国至11月20日当周EIA战略石油储备库存为1982年8月27日当周以来最低。 2. 美国至11月20日当周原油出口量为2026年8月7日当周以来最低。 3. 美国至11月20日当周国内原油产量创纪录新高。",
+      "keywords": [
+        "原油"
+      ],
+      "pub_ts": 1795620750.0,
+      "time_et": "11-25 10:32 ET",
+      "time_bj": "23:32 BJ",
+      "time_kst": "00:32 KST",
+      "time_display": "10:32 ET / 23:32 BJ"
+    },
     {
       "id": "20261125233113583800",
       "title": "1. EIA报告：11月20日当周美国原油出口减少121.9万桶/日至326.9万桶/日…",
@@ -370,19 +383,6 @@
       "time_bj": "21:36 BJ",
       "time_kst": "22:36 KST",
       "time_display": "08:36 ET / 21:36 BJ"
-    },
-    {
-      "id": "20261125213118393800",
-      "title": "【美国整体PCE升至5个月高位 符合预期】 11月25日讯，美国10月PCE物价指数年率…",
-      "summary": "【美国整体PCE升至5个月高位 符合预期】 11月25日讯，美国10月PCE物价指数年率为3.8%，创5月以来高位，较上月的3.6%进一步走高，符合市场预期。美国10月PCE物价指数月率为0.3%，符合市场预期，较上月的0.5%显著回落。",
-      "keywords": [
-        "PCE"
-      ],
-      "pub_ts": 1795613478.0,
-      "time_et": "11-25 08:31 ET",
-      "time_bj": "21:31 BJ",
-      "time_kst": "22:31 KST",
-      "time_display": "08:31 ET / 21:31 BJ"
     }
   ],
   "ticker_news": {
@@ -1572,6 +1572,13 @@
     ],
     "BE": [
       {
+        "title": "Bloom Energy Joins Nashville Firefighters to Support Local Students and Families Ahead of Tennessee-Vanderbilt Matchup",
+        "url": "https://finance.yahoo.com/energy/articles/bloom-energy-joins-nashville-firefighters-151200024.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 10:12 ET",
+        "pub_ts": 1795619520.0
+      },
+      {
         "title": "Oklo Sinks 14% in a Week, NuScale Down 19%, as the AI Selloff Hits Nuclear Stocks. Time to Buy?",
         "url": "https://www.tikr.com/blog/oklo-sinks-14-in-a-week-nuscale-down-19-as-the-ai-selloff-hits-nuclear-stocks-time-to-buy?ref=yahoofinance&tlnk=yf-261125-qw7frcvg&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1598,13 +1605,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 12:45 ET",
         "pub_ts": 1795542338.0
-      },
-      {
-        "title": "FuelCell Energy Tumbles 10%, Bloom Energy Sinks 8% as Monday’s AI Power Rally Fades; Plug Power Drops 5%",
-        "url": "https://247wallst.com/investing/2026/11/24/fuelcell-energy-tumbles-10-bloom-energy-sinks-8-as-mondays-ai-power-rally-fades-plug-power-drops-5/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 10:54 ET",
-        "pub_ts": 1795535640.0
       }
     ],
     "CRDO": [
@@ -2127,6 +2127,13 @@
     ],
     "FLY": [
       {
+        "title": "Firefly Could Fill ‘Large Supply Gaps’ In Launch Market, Says Needham – Analyst Sees Over 100% Upside Potential In FLY Stock",
+        "url": "https://stocktwits.com/news-articles/markets/equity/firefly-could-fill-large-supply-gaps-in-launch-market-says-needham-analyst-sees-over-100-upside-potential-in-fly-stock/cNbHjilR9mk?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 10:12 ET",
+        "pub_ts": 1795619548.0
+      },
+      {
         "title": "NASA Is Handing Out Moon Contracts Again. Intuitive Machines, Firefly, and Redwire All Got Paid. Only 1 Has the Balance Sheet to Keep Winning.",
         "url": "https://www.fool.com/investing/2026/11/23/nasa-is-handing-out-moon-contracts-again-intuitive-machines-firefly-and-redwire-all-got-paid-only-1-has-the-balance-sheet-to-keep-winning/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2153,16 +2160,16 @@
         "source": "Yahoo Finance",
         "time": "11-20 06:12 ET",
         "pub_ts": 1795173179.0
-      },
-      {
-        "title": "SpaceX Holds Its Orbit As Space Stocks Fall Back To Earth — Inside A Rough Week For FLY, ASTS, RKLB And RDW",
-        "url": "https://stocktwits.com/news-articles/markets/equity/spacex-holds-orbit-space-stocks-fall-back-earth-rough-week-fly-asts-rklb-rdw/cNbS4SbR9KQ?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-20 01:58 ET",
-        "pub_ts": 1795157911.0
       }
     ],
     "INTC": [
+      {
+        "title": "NVIDIA Tumbles 9% as Jensen Huang Rally Fades and Michael Burry Eyes a Fresh Short Near $200; AMD Plunges 10%, Intel Falls 8%",
+        "url": "https://247wallst.com/investing/2026/11/25/nvidia-tumbles-9-as-jensen-huang-rally-fades-and-michael-burry-eyes-a-fresh-short-near-200-amd-plunges-10-intel-falls-8/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 09:56 ET",
+        "pub_ts": 1795618610.0
+      },
       {
         "title": "Trump Floats an Intel-Style Nvidia Stake. 10% Would Cost the Government $375 Billion",
         "url": "https://247wallst.com/investing/2026/11/25/trump-floats-an-intel-style-nvidia-stake-10-would-cost-the-government-375-billion/?.tsrc=rss",
@@ -2190,13 +2197,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 06:59 ET",
         "pub_ts": 1795607952.0
-      },
-      {
-        "title": "Dell Stock Joins Nvidia, AMD, and Intel Selloff Despite Record Demand",
-        "url": "https://beincrypto.com/dell-stock-falls-ai-selloff-record-backlog/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 06:50 ET",
-        "pub_ts": 1795607445.0
       }
     ],
     "VRT": [
@@ -3200,6 +3200,13 @@
     ],
     "GLW": [
       {
+        "title": "Corning (GLW) Rides AI Optimism On A Narrative That Still Sees It Undervalued",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/corning-glw-rides-ai-optimism-151209714.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 10:12 ET",
+        "pub_ts": 1795619529.0
+      },
+      {
         "title": "Is Most-Watched Stock Owens Corning Inc (OC) Worth Betting on Now?",
         "url": "https://finance.yahoo.com/markets/stocks/articles/most-watched-stock-owens-corning-130004945.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3226,13 +3233,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 12:02 ET",
         "pub_ts": 1795453362.0
-      },
-      {
-        "title": "Why Is Knowles (KN) Stock Down Today? Tech Selloff Hits Component Makers",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/why-knowles-kn-stock-down-163101980.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 11:31 ET",
-        "pub_ts": 1795537861.0
       }
     ],
     "ANT": [
@@ -3350,25 +3350,25 @@
     "AMZN": 1795620160.0688725,
     "CRWV": 1795620160.0688725,
     "NBIS": 1795620160.0688725,
-    "APLD": 1795619306.4990766,
-    "VST": 1795619306.4990766,
-    "BE": 1795619306.4990766,
-    "CRDO": 1795619306.4990766,
-    "COHR": 1795619306.4990766,
+    "APLD": 1795620819.9865475,
+    "VST": 1795620819.9865475,
+    "BE": 1795620819.9865475,
+    "CRDO": 1795620819.9865475,
+    "COHR": 1795620819.9865475,
     "MRVL": 1795620211.8615558,
     "LITE": 1795620211.8615558,
-    "AAOI": 1795619306.4990766,
-    "SPCX": 1795619306.4990766,
-    "ASTS": 1795619306.4990766,
+    "AAOI": 1795620819.9865475,
+    "SPCX": 1795620819.9865475,
+    "ASTS": 1795620819.9865475,
     "AXTI": 1795620160.0688725,
-    "NASA": 1795619306.4990766,
-    "LUNR": 1795619306.4990766,
+    "NASA": 1795620819.9865475,
+    "LUNR": 1795620819.9865475,
     "TSLA": 1795619397.7050352,
-    "AXP": 1795619306.4990766,
-    "RKLB": 1795619306.4990766,
-    "KO": 1795619306.4990766,
-    "FLY": 1795619306.4990766,
-    "INTC": 1795619306.4990766,
+    "AXP": 1795620819.9865475,
+    "RKLB": 1795620819.9865475,
+    "KO": 1795620819.9865475,
+    "FLY": 1795620819.9865475,
+    "INTC": 1795620819.9865475,
     "VRT": 1795619397.7050352,
     "HPE": 1795619397.7050352,
     "DELL": 1795619397.7050352,
@@ -3396,7 +3396,7 @@
     "V": 1795619397.7050352,
     "CAT": 1795619495.6363492,
     "FN": 1795620211.8615558,
-    "GLW": 1795619306.4990766,
+    "GLW": 1795620819.9865475,
     "ANT": 1795619495.6363492,
     "XAUUSD": 1795619495.6363492,
     "KOSPI": 1795620160.0688725
