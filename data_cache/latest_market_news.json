@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795595077.55,
-  "updated_at_et": "11-25 03:24 ET",
-  "updated_at_kst": "17:24 KST",
+  "updated_at_ts": 1795595124.855,
+  "updated_at_et": "11-25 03:25 ET",
+  "updated_at_kst": "17:25 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -17,7 +17,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 306,
+      "minutes_left": 305,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -36,13 +36,27 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 306,
+      "minutes_left": 305,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
     }
   ],
   "macro_flashes": [
+    {
+      "id": "20261125162450629800",
+      "title": "英伟达反弹退潮，信用压力与通胀预期牵动美联储路径| 每日市场观察11.25",
+      "summary": "英伟达反弹很快失去后劲，信用市场也未确认风险偏好回暖；年底会议前的最后一份通胀数据即将公布，美联储在损害经济增长前能有多少收紧的极限空间？",
+      "keywords": [
+        "美联储",
+        "英伟达"
+      ],
+      "pub_ts": 1795595090.0,
+      "time_et": "11-25 03:24 ET",
+      "time_bj": "16:24 BJ",
+      "time_kst": "17:24 KST",
+      "time_display": "03:24 ET / 16:24 BJ"
+    },
     {
       "id": "20261125162046196800",
       "title": "整理：每日投行/机构观点梳理（2026-11-25）",
@@ -376,19 +390,6 @@
       "time_bj": "11:08 BJ",
       "time_kst": "12:08 KST",
       "time_display": "22:08 ET / 11:08 BJ"
-    },
-    {
-      "id": "20261125110041049800",
-      "title": "油市进入脆弱平衡，欧佩克或在2027将原油推向空头剧本",
-      "summary": "衍生品数据显示市场正交易正常化预期，但库存缓冲有限，市场更可能进入脆弱平衡而非恢复；欧佩克进入关键决策点，2027的供应压力或将原油推向下行通道。",
-      "keywords": [
-        "原油"
-      ],
-      "pub_ts": 1795575641.0,
-      "time_et": "11-24 22:00 ET",
-      "time_bj": "11:00 BJ",
-      "time_kst": "12:00 KST",
-      "time_display": "22:00 ET / 11:00 BJ"
     }
   ],
   "ticker_news": {
@@ -3423,10 +3424,10 @@
   },
   "calendar_banner": {
     "level": "upcoming",
-    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 306 分钟（11-25 08:30 ET / 22:30 KST）",
+    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 305 分钟（11-25 08:30 ET / 22:30 KST）",
     "detail": "前值 0.3% ｜ 预期 0.3% ｜ 临近公布前15分钟将自动触发防插针预警",
     "event_name": "美国10月核心PCE物价指数环比",
-    "minutes_left": 306,
+    "minutes_left": 305,
     "opex_shield": {
       "date": "2026-11-25",
       "active": false,
