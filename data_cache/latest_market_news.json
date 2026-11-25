@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795590951.032,
-  "updated_at_et": "11-25 02:15 ET",
-  "updated_at_kst": "16:15 KST",
+  "updated_at_ts": 1795591057.167,
+  "updated_at_et": "11-25 02:17 ET",
+  "updated_at_kst": "16:17 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -17,7 +17,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 375,
+      "minutes_left": 373,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -36,7 +36,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 375,
+      "minutes_left": 373,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -1204,6 +1204,13 @@
     ],
     "GOOGL": [
       {
+        "title": "AI Concerns Resurface? ORCL, GOOGL, SPCX, CRWV Credit Default Swap Spreads Hit Records As NVDA, ANT Tumble",
+        "url": "https://stocktwits.com/news-articles/markets/equity/ai-concerns-resurface-orcl-googl-spcx-crwv-credit-default-swap-spreads-hit-records-as-nvda-ant-tumble/cNbHEEAR9lZ?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 01:56 ET",
+        "pub_ts": 1795589778.0
+      },
+      {
         "title": "Your $300,000 in XLC Holds $130,206 in Just Meta and Alphabet",
         "url": "https://247wallst.com/investing/etf/2026/11/24/your-300000-in-xlc-holds-130206-in-just-meta-and-alphabet/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1230,13 +1237,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 16:58 ET",
         "pub_ts": 1795557538.0
-      },
-      {
-        "title": "Microsoft (MSFT) Is One of the Safest Ways to Own AI",
-        "url": "https://finance.yahoo.com/technology/ai/articles/microsoft-msft-one-safest-ways-210600451.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 16:06 ET",
-        "pub_ts": 1795554360.0
       }
     ],
     "MSFT": [
@@ -1322,6 +1322,13 @@
         "pub_ts": 1795556758.0
       },
       {
+        "title": "Where Will Palantir Stock Be at the End of 2030?",
+        "url": "https://www.fool.com/investing/2026/11/25/where-will-palantir-stock-be-at-the-end-of-2030/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 01:47 ET",
+        "pub_ts": 1795589222.0
+      },
+      {
         "title": "Axon Enterprise vs. Palantir Technologies: Which Law Enforcement Stock Is a Better Buy for 2027?",
         "url": "https://www.fool.com/coverage/better-buy/2026/11/24/axon-enterprise-vs-palantir-technologies-which-law-enforcement-stock-is-a-better-buy-for-2027/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1341,13 +1348,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 09:42 ET",
         "pub_ts": 1795531320.0
-      },
-      {
-        "title": "Is Palantir Stock Priced Right Against Its Rivals?",
-        "url": "https://www.trefis.com/stock/pltr/articles/628308/is-palantir-stock-priced-right-against-its-rivals/2026-11-24?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 08:48 ET",
-        "pub_ts": 1795528107.0
       }
     ],
     "NOW": [
@@ -1433,6 +1433,13 @@
         "pub_ts": 1795535048.0
       },
       {
+        "title": "AI Concerns Resurface? ORCL, GOOGL, SPCX, CRWV Credit Default Swap Spreads Hit Records As NVDA, ANT Tumble",
+        "url": "https://stocktwits.com/news-articles/markets/equity/ai-concerns-resurface-orcl-googl-spcx-crwv-credit-default-swap-spreads-hit-records-as-nvda-ant-tumble/cNbHEEAR9lZ?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 01:56 ET",
+        "pub_ts": 1795589778.0
+      },
+      {
         "title": "CoreWeave (CRWV) is Getting Hammered. What Went Wrong?",
         "url": "https://finance.yahoo.com/markets/stocks/articles/coreweave-crwv-getting-hammered-went-051951815.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1452,13 +1459,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 13:57 ET",
         "pub_ts": 1795546678.0
-      },
-      {
-        "title": "CoreWeave Bonds Hit All-Time Lows, Erasing Nvidia-Fueled Gains",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/coreweave-bonds-hit-time-lows-185527465.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 13:55 ET",
-        "pub_ts": 1795546527.0
       }
     ],
     "NBIS": [
@@ -3324,45 +3324,45 @@
   "ticker_news_ts": {
     "KORU": 1795590733.2343545,
     "SOXL": 1795590733.2343545,
-    "SPY": 1795589530.0408797,
+    "SPY": 1795591057.1673243,
     "DIA": 1795590733.2343545,
     "SOXX": 1795590733.2343545,
     "QQQ": 1795590733.2343545,
-    "SMH": 1795589530.0408797,
+    "SMH": 1795591057.1673243,
     "IWM": 1795590733.2343545,
     "IGV": 1795590733.2343545,
     "TLT": 1795590733.2343545,
     "GLD": 1795590733.2343545,
     "SQQQ": 1795590733.2343545,
-    "TSM": 1795589530.0408797,
+    "TSM": 1795591057.1673243,
     "VIXY": 1795590733.2343545,
     "SOXS": 1795590733.2343545,
     "NVDA": 1795590733.2343545,
     "AMD": 1795590733.2343545,
-    "ASML": 1795589530.0408797,
-    "QCOM": 1795589530.0408797,
+    "ASML": 1795591057.1673243,
+    "QCOM": 1795591057.1673243,
     "AVGO": 1795590733.2343545,
-    "AMAT": 1795589530.0408797,
-    "META": 1795589530.0408797,
-    "GOOGL": 1795589530.0408797,
-    "MSFT": 1795589530.0408797,
-    "AAPL": 1795589530.0408797,
-    "PLTR": 1795589530.0408797,
-    "NOW": 1795589530.0408797,
-    "AMZN": 1795589530.0408797,
-    "CRWV": 1795589530.0408797,
-    "NBIS": 1795589530.0408797,
+    "AMAT": 1795591057.1673243,
+    "META": 1795591057.1673243,
+    "GOOGL": 1795591057.1673243,
+    "MSFT": 1795591057.1673243,
+    "AAPL": 1795591057.1673243,
+    "PLTR": 1795591057.1673243,
+    "NOW": 1795591057.1673243,
+    "AMZN": 1795591057.1673243,
+    "CRWV": 1795591057.1673243,
+    "NBIS": 1795591057.1673243,
     "APLD": 1795590286.3822281,
     "VST": 1795590286.3822281,
     "BE": 1795590286.3822281,
     "CRDO": 1795590286.3822281,
     "COHR": 1795590286.3822281,
-    "MRVL": 1795589530.0408797,
-    "LITE": 1795589530.0408797,
+    "MRVL": 1795591057.1673243,
+    "LITE": 1795591057.1673243,
     "AAOI": 1795590286.3822281,
     "SPCX": 1795590286.3822281,
     "ASTS": 1795590286.3822281,
-    "AXTI": 1795589530.0408797,
+    "AXTI": 1795591057.1673243,
     "NASA": 1795590286.3822281,
     "LUNR": 1795590286.3822281,
     "TSLA": 1795590397.2905369,
@@ -3377,8 +3377,8 @@
     "OKLO": 1795590397.2905369,
     "CEG": 1795590397.2905369,
     "FPS": 1795590397.2905369,
-    "MU": 1795589530.0408797,
-    "SKHY": 1795589530.0408797,
+    "MU": 1795591057.1673243,
+    "SKHY": 1795591057.1673243,
     "WDC": 1795589641.1200092,
     "STX": 1795590397.2905369,
     "MSTR": 1795590397.2905369,
@@ -3397,11 +3397,11 @@
     "WMT": 1795590507.2246425,
     "V": 1795590397.2905369,
     "CAT": 1795590507.2246425,
-    "FN": 1795589530.0408797,
+    "FN": 1795591057.1673243,
     "GLW": 1795590286.3822281,
     "ANT": 1795590507.2246425,
     "XAUUSD": 1795590507.2246425,
-    "KOSPI": 1795589530.0408797
+    "KOSPI": 1795591057.1673243
   },
   "opex_shield": {
     "date": "2026-11-25",
@@ -3419,10 +3419,10 @@
   },
   "calendar_banner": {
     "level": "upcoming",
-    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 375 分钟（11-25 08:30 ET / 22:30 KST）",
+    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 373 分钟（11-25 08:30 ET / 22:30 KST）",
     "detail": "前值 0.3% ｜ 预期 0.3% ｜ 临近公布前15分钟将自动触发防插针预警",
     "event_name": "美国10月核心PCE物价指数环比",
-    "minutes_left": 375,
+    "minutes_left": 373,
     "opex_shield": {
       "date": "2026-11-25",
       "active": false,
