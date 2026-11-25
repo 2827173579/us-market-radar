@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795566219.748,
-  "updated_at_et": "11-24 19:23 ET",
-  "updated_at_kst": "09:23 KST",
+  "updated_at_ts": 1795566320.163,
+  "updated_at_et": "11-24 19:25 ET",
+  "updated_at_kst": "09:25 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2619,6 +2619,27 @@
     ],
     "BTC-USD": [
       {
+        "title": "What Cleanspark (CLSK) Said on Its Q4 Earnings Call",
+        "url": "https://www.marketbeat.com/instant-alerts/transcript-what-cleanspark-clsk-said-on-its-q4-earnings-call-2026-11-24/?utm_source=yahoofinance&utm_medium=yahoofinance&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 19:13 ET",
+        "pub_ts": 1795565614.0
+      },
+      {
+        "title": "Why Bitcoin's Dominance Over Crypto Could Finally Be Breaking: Helius CEO",
+        "url": "https://www.coinage.media/2026/why-bitcoins-dominance-over-crypto-could-finally-be-breaking-helius-ceo?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 18:56 ET",
+        "pub_ts": 1795564560.0
+      },
+      {
+        "title": "What Would It Take for XRP to Reach $100?",
+        "url": "https://247wallst.com/investing/cryptocurrency/2026/11/24/what-would-it-take-for-xrp-to-reach-100/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 18:52 ET",
+        "pub_ts": 1795564377.0
+      },
+      {
         "title": "In Response to the Turmoil at Nvidia, Bitcoin Drops Below $70,000. Is This a Buy-the-Dip Opportunity?",
         "url": "https://www.fool.com/investing/2026/11/24/in-response-to-the-turmoil-at-nvidia-bitcoin-drops-below-usd70-000-is-this-a-buy-the-dip-opportunity/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2631,27 +2652,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 17:56 ET",
         "pub_ts": 1795560972.0
-      },
-      {
-        "title": "Crypto Market Today, Nov. 24: Bitcoin Falls Below $60,000 as ETF Outflows Hit a Record $4.7 Billion",
-        "url": "https://www.fool.com/coverage/stock-market-today/2026/11/24/crypto-market-today-nov-24-bitcoin-falls-below-usd60-000-as-etf-outflows-hit-a-record-usd4-7-billion/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 17:46 ET",
-        "pub_ts": 1795560400.0
-      },
-      {
-        "title": "Tom Lee Says Ethereum Is as Scarce as Bitcoin: Do the Supply Numbers Agree?",
-        "url": "https://247wallst.com/investing/cryptocurrency/2026/11/24/tom-lee-says-ethereum-is-as-scarce-as-bitcoin-do-the-supply-numbers-agree/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 17:13 ET",
-        "pub_ts": 1795558389.0
-      },
-      {
-        "title": "How Much Bitcoin Could Elon Musk Control if Tesla and SpaceX Merge?",
-        "url": "https://247wallst.com/investing/cryptocurrency/2026/11/24/how-much-bitcoin-could-elon-musk-control-if-tesla-and-spacex-merge/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 17:12 ET",
-        "pub_ts": 1795558359.0
       }
     ],
     "CRWD": [
@@ -3323,18 +3323,18 @@
     "NOW": 1795566219.7484703,
     "AMZN": 1795566219.7484703,
     "CRWV": 1795566219.7484703,
-    "NBIS": 1795564764.3017502,
+    "NBIS": 1795566320.1634996,
     "APLD": 1795565221.221426,
     "VST": 1795565221.221426,
     "BE": 1795565221.221426,
     "CRDO": 1795565221.221426,
     "COHR": 1795565221.221426,
-    "MRVL": 1795564764.3017502,
-    "LITE": 1795564764.3017502,
+    "MRVL": 1795566320.1634996,
+    "LITE": 1795566320.1634996,
     "AAOI": 1795565221.221426,
     "SPCX": 1795565221.221426,
     "ASTS": 1795565221.221426,
-    "AXTI": 1795564764.3017502,
+    "AXTI": 1795566320.1634996,
     "NASA": 1795565221.221426,
     "LUNR": 1795565221.221426,
     "TSLA": 1795565418.4031253,
@@ -3349,13 +3349,13 @@
     "OKLO": 1795565418.4031253,
     "CEG": 1795565418.4031253,
     "FPS": 1795565418.4031253,
-    "MU": 1795564764.3017502,
-    "SKHY": 1795564764.3017502,
-    "WDC": 1795564764.3017502,
+    "MU": 1795566320.1634996,
+    "SKHY": 1795566320.1634996,
+    "WDC": 1795566320.1634996,
     "STX": 1795565418.4031253,
     "MSTR": 1795565418.4031253,
     "SNDK": 1795565418.4031253,
-    "BTC-USD": 1795564764.3017502,
+    "BTC-USD": 1795566320.1634996,
     "CRWD": 1795565418.4031253,
     "ORCL": 1795565418.4031253,
     "COIN": 1795565418.4031253,
@@ -3369,7 +3369,7 @@
     "WMT": 1795565520.124903,
     "V": 1795565418.4031253,
     "CAT": 1795565520.124903,
-    "FN": 1795564764.3017502,
+    "FN": 1795566320.1634996,
     "GLW": 1795565221.221426,
     "ANT": 1795565520.124903,
     "XAUUSD": 1795565724.3341079,
