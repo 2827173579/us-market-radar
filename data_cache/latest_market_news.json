@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795646922.829,
-  "updated_at_et": "11-25 17:48 ET",
-  "updated_at_kst": "07:48 KST",
+  "updated_at_ts": 1795646962.451,
+  "updated_at_et": "11-25 17:49 ET",
+  "updated_at_kst": "07:49 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -647,6 +647,13 @@
     ],
     "IWM": [
       {
+        "title": "The Average Stock Shrugged Off the Tech Slide. History Is Split",
+        "url": "https://www.trefis.com/stock/spx/articles/628711/the-average-stock-shrugged-off-the-tech-slide-history-is-split/2026-11-25?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 17:18 ET",
+        "pub_ts": 1795645095.0
+      },
+      {
         "title": "iShares Russell 2000 (IWM) Buys $151.4 Million More Brookfield Infra on Monday",
         "url": "https://finance.yahoo.com/markets/stocks/articles/ishares-russell-2000-iwm-buys-110425391.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -673,13 +680,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 06:02 ET",
         "pub_ts": 1795518178.0
-      },
-      {
-        "title": "iShares Russell 2000 (IWM) Adds Glaukos and JFrog on Thursday",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/ishares-russell-2000-iwm-adds-110451676.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 06:04 ET",
-        "pub_ts": 1795431891.0
       }
     ],
     "IGV": [
@@ -943,39 +943,39 @@
     ],
     "NVDA": [
       {
-        "title": "Jensen Huang reclaims throne at Nvidia: Here's the bottom line for investors",
-        "url": "https://finance.yahoo.com/video/jensen-huang-reclaims-throne-at-nvidia-heres-the-bottom-line-for-investors-212803135.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 16:28 ET",
-        "pub_ts": 1795642083.0
-      },
-      {
         "title": "Dow Jones Futures: Market Goes On Wild Ride. Nasdaq, Nvidia Slash Losses While Anthropic Reverses Higher.",
         "url": "https://finance.yahoo.com/m/158e82fc-b889-34b6-8704-99a49e9a83ae/dow-jones-futures%3A-market.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-25 17:07 ET",
-        "pub_ts": 1795644440.0
+        "time": "11-25 17:35 ET",
+        "pub_ts": 1795646125.0
       },
       {
-        "title": "Stock Market Today, Nov. 25: Nvidia Slides 3.9% as the Market Considers Hot PCE Inflation Data and New Tariff Proposals",
-        "url": "https://www.fool.com/coverage/stock-market-today/2026/11/25/stock-market-today-nov-25-nvidia-slides-3-9-as-the-market-considers-hot-pce-inflation-data-and-new-tariff-proposals/?.tsrc=rss",
+        "title": "Nvidia settles 8-year-old investor suit for $290M",
+        "url": "https://www.thestreet.com/crypto/artificial-intelligence/nvidia-settles-8-year-old-investor-suit-for-290m?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-25 17:06 ET",
-        "pub_ts": 1795644405.0
+        "time": "11-25 17:30 ET",
+        "pub_ts": 1795645800.0
       },
       {
-        "title": "Nvidia engineer who quit in protest of Jensen Huang's ouster says he 'may have moved too quickly,' is open to returning",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/nvidia-engineer-quit-protest-jensen-220000936.html?.tsrc=rss",
+        "title": "Nvidia May Get A Credit Rating Cut Amid Governance Issues, While US Officials Reportedly Say No Chinese Interference in Huang’s Affair",
+        "url": "https://stocktwits.com/news-articles/markets/equity/nvidia-may-get-a-credit-rating-cut-amid-governance-issues-while-us-officials-reportedly-say-no-chinese-interference-in-huang-s-affair/cNbHubZR9mx?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-25 17:00 ET",
-        "pub_ts": 1795644000.0
+        "time": "11-25 17:26 ET",
+        "pub_ts": 1795645614.0
       },
       {
-        "title": "Deere & Company Q4 2026 Earnings Call Summary",
-        "url": "https://app.moby.co/home/research/tools/earningsCalendar/earnings-deere-company-q4-2026-earnings-call-summary?utm_source=yahoo_finance&utm_medium=rss&.tsrc=rss",
+        "title": "Nvidia Sell-Off: You Won’t Believe How Cheap the Stock Is",
+        "url": "https://www.fool.com/investing/2026/11/25/nvidia-sell-off-you-won-t-believe-how-cheap-the-stock-is/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-25 16:44 ET",
-        "pub_ts": 1795643089.0
+        "time": "11-25 17:20 ET",
+        "pub_ts": 1795645202.0
+      },
+      {
+        "title": "Michael Burry slashes Nvidia bets but issues stark warning",
+        "url": "https://www.thestreet.com/investing/michael-burry-slashes-nvidia-bets-but-issues-stark-warning?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 17:17 ET",
+        "pub_ts": 1795645020.0
       }
     ],
     "AMD": [
@@ -3320,26 +3320,26 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795645430.5530903,
-    "SOXL": 1795645430.5530903,
+    "KORU": 1795646962.4506645,
+    "SOXL": 1795646962.4506645,
     "SPY": 1795646056.150761,
-    "DIA": 1795645430.5530903,
-    "SOXX": 1795645430.5530903,
-    "QQQ": 1795645430.5530903,
+    "DIA": 1795646962.4506645,
+    "SOXX": 1795646962.4506645,
+    "QQQ": 1795646962.4506645,
     "SMH": 1795646056.150761,
-    "IWM": 1795645430.5530903,
-    "IGV": 1795645430.5530903,
-    "TLT": 1795645430.5530903,
-    "GLD": 1795645430.5530903,
-    "SQQQ": 1795645430.5530903,
+    "IWM": 1795646962.4506645,
+    "IGV": 1795646962.4506645,
+    "TLT": 1795646962.4506645,
+    "GLD": 1795646962.4506645,
+    "SQQQ": 1795646962.4506645,
     "TSM": 1795646056.150761,
-    "VIXY": 1795645430.5530903,
-    "SOXS": 1795645430.5530903,
-    "NVDA": 1795645430.5530903,
-    "AMD": 1795645430.5530903,
+    "VIXY": 1795646962.4506645,
+    "SOXS": 1795646962.4506645,
+    "NVDA": 1795646962.4506645,
+    "AMD": 1795646962.4506645,
     "ASML": 1795646056.150761,
     "QCOM": 1795646056.150761,
-    "AVGO": 1795645430.5530903,
+    "AVGO": 1795646962.4506645,
     "AMAT": 1795646056.150761,
     "META": 1795646056.150761,
     "GOOGL": 1795646056.150761,
