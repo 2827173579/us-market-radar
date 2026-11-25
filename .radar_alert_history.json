@@ -78,8 +78,8 @@
       "last_notified_at": 1795564771.3056476
     },
     "SPY": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1795566628.364383
     },
     "DIA": {
       "state": "WATCHLIST_ENTRY_READY",
@@ -166,8 +166,8 @@
       "last_notified_at": 0.0
     },
     "MSFT": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1795566428.5877347
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "NKE": {
       "state": "WATCHLIST_ENTRY_READY",
