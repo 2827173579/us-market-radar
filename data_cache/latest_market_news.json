@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795601008.204,
-  "updated_at_et": "11-25 05:03 ET",
-  "updated_at_kst": "19:03 KST",
+  "updated_at_ts": 1795601054.353,
+  "updated_at_et": "11-25 05:04 ET",
+  "updated_at_kst": "19:04 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -17,7 +17,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 207,
+      "minutes_left": 206,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -36,7 +36,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 207,
+      "minutes_left": 206,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -2206,6 +2206,13 @@
     ],
     "VRT": [
       {
+        "title": "Vertiv Lost 11% in a Month. Evercore Cut Its Target, but Still Sees 58% Upside",
+        "url": "https://www.tikr.com/blog/vertiv-lost-11-in-a-month-evercore-cut-its-target-but-still-sees-58-upside?ref=yahoofinance&tlnk=yf-261125-5v7qjx35&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 04:04 ET",
+        "pub_ts": 1795597461.0
+      },
+      {
         "title": "Comfort Systems vs. Vertiv: Which AI Cooling Stock Is a Better Buy?",
         "url": "https://finance.yahoo.com/technology/ai/articles/comfort-systems-vs-vertiv-ai-163100993.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2232,13 +2239,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 12:30 ET",
         "pub_ts": 1795455031.0
-      },
-      {
-        "title": "5 Companies Just Raised Their Dividends. One Has a 52-Year Streak",
-        "url": "https://247wallst.com/investing/2026/11/23/5-companies-just-raised-their-dividends-one-has-a-52-year-streak/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 12:17 ET",
-        "pub_ts": 1795454249.0
       }
     ],
     "HPE": [
@@ -2724,6 +2724,13 @@
     ],
     "ORCL": [
       {
+        "title": "Should You Buy Oracle Stock After Its 53% Collapse? The Answer Might Shock You.",
+        "url": "https://www.fool.com/investing/2026/11/25/should-buy-oracle-stock-after-53-collapse-answer-shock-you/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 04:49 ET",
+        "pub_ts": 1795600142.0
+      },
+      {
         "title": "AI Concerns Resurface? ORCL, GOOGL, SPCX, CRWV Credit Default Swap Spreads Hit Records As NVDA, ANT Tumble",
         "url": "https://stocktwits.com/news-articles/markets/equity/ai-concerns-resurface-orcl-googl-spcx-crwv-credit-default-swap-spreads-hit-records-as-nvda-ant-tumble/cNbHEEAR9lZ?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2750,13 +2757,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 11:55 ET",
         "pub_ts": 1795539313.0
-      },
-      {
-        "title": "Oracle Is a Higher-Leverage, Cash-Hungry Twin to Microsoft",
-        "url": "https://247wallst.com/investing/2026/11/24/oracle-is-a-higher-leverage-cash-hungry-twin-to-microsoft/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 10:45 ET",
-        "pub_ts": 1795535101.0
       }
     ],
     "COIN": [
@@ -3368,37 +3368,37 @@
     "AXTI": 1795600239.150987,
     "NASA": 1795600957.8988295,
     "LUNR": 1795600957.8988295,
-    "TSLA": 1795599528.4937735,
+    "TSLA": 1795601054.3531795,
     "AXP": 1795600957.8988295,
     "RKLB": 1795600957.8988295,
     "KO": 1795600957.8988295,
     "FLY": 1795600957.8988295,
     "INTC": 1795600957.8988295,
-    "VRT": 1795599528.4937735,
-    "HPE": 1795599528.4937735,
-    "DELL": 1795599528.4937735,
-    "OKLO": 1795599528.4937735,
-    "CEG": 1795599528.4937735,
-    "FPS": 1795599528.4937735,
+    "VRT": 1795601054.3531795,
+    "HPE": 1795601054.3531795,
+    "DELL": 1795601054.3531795,
+    "OKLO": 1795601054.3531795,
+    "CEG": 1795601054.3531795,
+    "FPS": 1795601054.3531795,
     "MU": 1795600239.150987,
     "SKHY": 1795600239.150987,
     "WDC": 1795600390.9620707,
-    "STX": 1795599528.4937735,
-    "MSTR": 1795599528.4937735,
-    "SNDK": 1795599528.4937735,
+    "STX": 1795601054.3531795,
+    "MSTR": 1795601054.3531795,
+    "SNDK": 1795601054.3531795,
     "BTC-USD": 1795600390.9620707,
-    "CRWD": 1795599528.4937735,
-    "ORCL": 1795599528.4937735,
-    "COIN": 1795599528.4937735,
-    "LLY": 1795599528.4937735,
-    "MRNA": 1795599528.4937735,
-    "NKE": 1795599528.4937735,
-    "MCD": 1795599528.4937735,
+    "CRWD": 1795601054.3531795,
+    "ORCL": 1795601054.3531795,
+    "COIN": 1795601054.3531795,
+    "LLY": 1795601054.3531795,
+    "MRNA": 1795601054.3531795,
+    "NKE": 1795601054.3531795,
+    "MCD": 1795601054.3531795,
     "PEP": 1795599632.3265138,
     "XOM": 1795599632.3265138,
     "JPM": 1795599632.3265138,
     "WMT": 1795599632.3265138,
-    "V": 1795599528.4937735,
+    "V": 1795601054.3531795,
     "CAT": 1795599632.3265138,
     "FN": 1795600239.150987,
     "GLW": 1795600957.8988295,
@@ -3422,10 +3422,10 @@
   },
   "calendar_banner": {
     "level": "upcoming",
-    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 207 分钟（11-25 08:30 ET / 22:30 KST）",
+    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 206 分钟（11-25 08:30 ET / 22:30 KST）",
     "detail": "前值 0.3% ｜ 预期 0.3% ｜ 临近公布前15分钟将自动触发防插针预警",
     "event_name": "美国10月核心PCE物价指数环比",
-    "minutes_left": 207,
+    "minutes_left": 206,
     "opex_shield": {
       "date": "2026-11-25",
       "active": false,
