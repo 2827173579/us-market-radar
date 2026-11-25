@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795598665.637,
-  "updated_at_et": "11-25 04:24 ET",
-  "updated_at_kst": "18:24 KST",
+  "updated_at_ts": 1795598710.561,
+  "updated_at_et": "11-25 04:25 ET",
+  "updated_at_kst": "18:25 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -17,7 +17,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 246,
+      "minutes_left": 245,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -36,7 +36,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 246,
+      "minutes_left": 245,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -469,6 +469,13 @@
     ],
     "SPY": [
       {
+        "title": "Most Covered Call ETFs Fall Just as Hard in a Selloff. This One Didn’t",
+        "url": "https://247wallst.com/investing/etf/2026/11/25/most-covered-call-etfs-fall-just-as-hard-in-a-selloff-this-one-didnt/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 04:03 ET",
+        "pub_ts": 1795597389.0
+      },
+      {
         "title": "Harbor Arena Structured Income ETF (YLDS): Autocallable Income in an ETF Wrapper",
         "url": "http://www.etf.com/sections/news/harbor-arena-structured-income-etf-ylds-autocallable-income-etf-wrapper?utm_source=yahoo-finance&utm_medium=rss&utm_campaign=yahoo-finance-rss&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -495,13 +502,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 09:19 ET",
         "pub_ts": 1795529962.0
-      },
-      {
-        "title": "Here's Why Investors Should Go Defensive Now: ETFs in Focus",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/heres-why-investors-defensive-now-134200178.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 08:42 ET",
-        "pub_ts": 1795527720.0
       }
     ],
     "DIA": [
@@ -1172,6 +1172,20 @@
     ],
     "META": [
       {
+        "title": "Prediction: Here’s What Anthropic’s Valuation Will Be in 2027, According to History",
+        "url": "https://www.fool.com/investing/2026/11/25/prediction-heres-what-anthropics-valuation-will-be-in-2027-according-to-history/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 03:58 ET",
+        "pub_ts": 1795597082.0
+      },
+      {
+        "title": "Cathie Wood Just Sold $14 Million of Meta",
+        "url": "https://www.tikr.com/blog/cathie-wood-just-sold-14-million-of-meta?ref=yahoofinance&tlnk=yf-261125-3qjvv3gp&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 02:09 ET",
+        "pub_ts": 1795590541.0
+      },
+      {
         "title": "Your $300,000 in XLC Holds $130,206 in Just Meta and Alphabet",
         "url": "https://247wallst.com/investing/etf/2026/11/24/your-300000-in-xlc-holds-130206-in-just-meta-and-alphabet/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1191,23 +1205,30 @@
         "source": "Yahoo Finance",
         "time": "11-24 14:06 ET",
         "pub_ts": 1795547193.0
-      },
-      {
-        "title": "Meta launches its Muse personal agent in the UK – but it comes with a big warning",
-        "url": "https://www.independent.co.uk/tech/meta-muse-uk-launch-release-warning-b3090758.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 13:33 ET",
-        "pub_ts": 1795545223.0
-      },
-      {
-        "title": "AI Regulation Could Put BILL Stock In Focus",
-        "url": "https://finance.yahoo.com/technology/ai/articles/ai-regulation-could-put-bill-211152422.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 16:11 ET",
-        "pub_ts": 1795554712.0
       }
     ],
     "GOOGL": [
+      {
+        "title": "Bear of the Day: Zillow Group (ZG)",
+        "url": "https://finance.yahoo.com/real-estate/articles/bear-day-zillow-group-zg-080000482.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 03:00 ET",
+        "pub_ts": 1795593600.0
+      },
+      {
+        "title": "Asia's AI race heads offshore with launch of Floating Data Centres in Singapore",
+        "url": "https://finance.yahoo.com/technology/ai/articles/asias-ai-race-heads-offshore-085300682.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 03:53 ET",
+        "pub_ts": 1795596780.0
+      },
+      {
+        "title": "Bull of the Day: Quanta Services (PWR)",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/bull-day-quanta-services-pwr-080000871.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 03:00 ET",
+        "pub_ts": 1795593600.0
+      },
       {
         "title": "Alphabet Has $251 Billion Invested In 2 of Its Biggest Artificial Intelligence Partners",
         "url": "https://www.fool.com/investing/2026/11/25/alphabet-has-251-billion-invested-in-2-of-its-biggest-artificial-intelligence-partners/?.tsrc=rss",
@@ -1221,27 +1242,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 01:56 ET",
         "pub_ts": 1795589778.0
-      },
-      {
-        "title": "Your $300,000 in XLC Holds $130,206 in Just Meta and Alphabet",
-        "url": "https://247wallst.com/investing/etf/2026/11/24/your-300000-in-xlc-holds-130206-in-just-meta-and-alphabet/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 20:04 ET",
-        "pub_ts": 1795568646.0
-      },
-      {
-        "title": "5 Sleeper Blue-Chip Stock Picks for Steady Long-Term Gains",
-        "url": "https://www.kiplinger.com/investing/blue-chip-stocks/sleeper-blue-chip-stock-picks-for-steady-long-term-gains?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 19:52 ET",
-        "pub_ts": 1795567953.0
-      },
-      {
-        "title": "Stephanie Link Says Marvell Could Earn $30 a Share by 2031. Is She Right?",
-        "url": "https://247wallst.com/investing/2026/11/24/stephanie-link-says-marvell-could-earn-30-a-share-by-2031-is-she-right/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 17:07 ET",
-        "pub_ts": 1795558073.0
       }
     ],
     "MSFT": [
@@ -1253,11 +1253,11 @@
         "pub_ts": 1795556758.0
       },
       {
-        "title": "Microsoft declares a code red in the middle of a 'Patchpocalypse'",
-        "url": "https://finance.yahoo.com/markets/article/microsoft-declares-a-code-red-in-the-middle-of-a-patchpocalypse-193740712.html?.tsrc=rss",
+        "title": "Satya Nadella Says “Six Months Behind Is a Great Place to Be.” That’s a Warning for Anthropic",
+        "url": "https://www.tikr.com/blog/satya-nadella-says-six-months-behind-is-a-great-place-to-be-thats-a-warning-for-anthropic?ref=yahoofinance&tlnk=yf-261125-m52c2qqr&.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 14:37 ET",
-        "pub_ts": 1795549060.0
+        "time": "11-24 22:43 ET",
+        "pub_ts": 1795578235.0
       },
       {
         "title": "Driven Tech Completes Acquisitions of ADEX and TekBay, Accelerating Enterprise AI Strategy",
@@ -2437,6 +2437,13 @@
         "pub_ts": 1795556758.0
       },
       {
+        "title": "Micron Reports in December. Here's the 1 Number I'll Be Watching.",
+        "url": "https://www.fool.com/investing/2026/11/25/micron-reports-in-december-here-s-the-1-number-i-ll-be-watching/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 04:01 ET",
+        "pub_ts": 1795597262.0
+      },
+      {
         "title": "MU, SKHY, SNDK Stocks In Focus After TrendForce Lowers DRAM Pricing Forecast",
         "url": "https://stocktwits.com/news-articles/markets/equity/mu-skhy-sndk-stocks-in-focus-after-trend-force-lowers-dram-pricing-forecast/cNbH7VLR9l8?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2456,13 +2463,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 18:19 ET",
         "pub_ts": 1795562344.0
-      },
-      {
-        "title": "Nvidia, Anthropic, Micron, HPE, Analog Devices, Insmed, Dollar Tree, and More Stocks That Explain Today’s Market",
-        "url": "https://finance.yahoo.com/m/f7fa0ed2-2c68-3b80-9261-c35639090d03/nvidia%2C-anthropic%2C-micron%2C.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 16:33 ET",
-        "pub_ts": 1795555980.0
       }
     ],
     "SKHY": [
@@ -3329,45 +3329,45 @@
   "ticker_news_ts": {
     "KORU": 1795598331.5410008,
     "SOXL": 1795598331.5410008,
-    "SPY": 1795597178.2551703,
+    "SPY": 1795598710.5608332,
     "DIA": 1795598331.5410008,
     "SOXX": 1795598331.5410008,
     "QQQ": 1795598331.5410008,
-    "SMH": 1795597178.2551703,
+    "SMH": 1795598710.5608332,
     "IWM": 1795598331.5410008,
     "IGV": 1795598331.5410008,
     "TLT": 1795598331.5410008,
     "GLD": 1795598331.5410008,
     "SQQQ": 1795598331.5410008,
-    "TSM": 1795597178.2551703,
+    "TSM": 1795598710.5608332,
     "VIXY": 1795598331.5410008,
     "SOXS": 1795598331.5410008,
     "NVDA": 1795598331.5410008,
     "AMD": 1795598331.5410008,
-    "ASML": 1795597178.2551703,
-    "QCOM": 1795597178.2551703,
+    "ASML": 1795598710.5608332,
+    "QCOM": 1795598710.5608332,
     "AVGO": 1795598331.5410008,
-    "AMAT": 1795597178.2551703,
-    "META": 1795597178.2551703,
-    "GOOGL": 1795597178.2551703,
-    "MSFT": 1795597178.2551703,
-    "AAPL": 1795597178.2551703,
-    "PLTR": 1795597178.2551703,
-    "NOW": 1795597178.2551703,
-    "AMZN": 1795597178.2551703,
-    "CRWV": 1795597178.2551703,
-    "NBIS": 1795597178.2551703,
+    "AMAT": 1795598710.5608332,
+    "META": 1795598710.5608332,
+    "GOOGL": 1795598710.5608332,
+    "MSFT": 1795598710.5608332,
+    "AAPL": 1795598710.5608332,
+    "PLTR": 1795598710.5608332,
+    "NOW": 1795598710.5608332,
+    "AMZN": 1795598710.5608332,
+    "CRWV": 1795598710.5608332,
+    "NBIS": 1795598710.5608332,
     "APLD": 1795597930.6851954,
     "VST": 1795597930.6851954,
     "BE": 1795597930.6851954,
     "CRDO": 1795597930.6851954,
     "COHR": 1795597930.6851954,
-    "MRVL": 1795597178.2551703,
-    "LITE": 1795597178.2551703,
+    "MRVL": 1795598710.5608332,
+    "LITE": 1795598710.5608332,
     "AAOI": 1795597930.6851954,
     "SPCX": 1795597930.6851954,
     "ASTS": 1795597930.6851954,
-    "AXTI": 1795597178.2551703,
+    "AXTI": 1795598710.5608332,
     "NASA": 1795597930.6851954,
     "LUNR": 1795597930.6851954,
     "TSLA": 1795598026.3876326,
@@ -3382,8 +3382,8 @@
     "OKLO": 1795598026.3876326,
     "CEG": 1795598026.3876326,
     "FPS": 1795598026.3876326,
-    "MU": 1795597178.2551703,
-    "SKHY": 1795597178.2551703,
+    "MU": 1795598710.5608332,
+    "SKHY": 1795598710.5608332,
     "WDC": 1795597346.9909182,
     "STX": 1795598026.3876326,
     "MSTR": 1795598026.3876326,
@@ -3402,11 +3402,11 @@
     "WMT": 1795598130.104495,
     "V": 1795598026.3876326,
     "CAT": 1795598130.104495,
-    "FN": 1795597178.2551703,
+    "FN": 1795598710.5608332,
     "GLW": 1795597930.6851954,
     "ANT": 1795598130.104495,
     "XAUUSD": 1795598130.104495,
-    "KOSPI": 1795597178.2551703
+    "KOSPI": 1795598710.5608332
   },
   "opex_shield": {
     "date": "2026-11-25",
@@ -3424,10 +3424,10 @@
   },
   "calendar_banner": {
     "level": "upcoming",
-    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 246 分钟（11-25 08:30 ET / 22:30 KST）",
+    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 245 分钟（11-25 08:30 ET / 22:30 KST）",
     "detail": "前值 0.3% ｜ 预期 0.3% ｜ 临近公布前15分钟将自动触发防插针预警",
     "event_name": "美国10月核心PCE物价指数环比",
-    "minutes_left": 246,
+    "minutes_left": 245,
     "opex_shield": {
       "date": "2026-11-25",
       "active": false,
