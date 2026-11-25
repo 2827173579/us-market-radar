@@ -1,12 +1,12 @@
 {
-  "updated_at_ts": 1795628504.631,
-  "updated_at_et": "11-25 12:41 ET",
-  "updated_at_kst": "02:41 KST",
+  "updated_at_ts": 1795628546.383,
+  "updated_at_et": "11-25 12:42 ET",
+  "updated_at_kst": "02:42 KST",
   "macro_calendar": [
     {
-      "event_id": "1599680",
-      "name": "美国10月核心PCE物价指数环比",
-      "country": "美国",
+      "event_id": "ff_Core PCE Price Index m/m_2026-11-25T08:30:00-05:00",
+      "name": "美国Core PCE Price Index m/m",
+      "country": "USD",
       "star": 5,
       "pub_time_ts": 1795613400.0,
       "pub_time_et": "11-25 08:30 ET",
@@ -14,32 +14,13 @@
       "pub_time_kst": "22:30 KST",
       "previous": "0.3%",
       "forecast": "0.3%",
-      "actual": "0.3%",
-      "unit": "%",
-      "status": "released",
+      "actual": "待公布",
+      "unit": "",
+      "status": "upcoming",
       "minutes_left": 0,
-      "impact_tone": "neutral",
-      "impact_note": "符合预期·通胀温和持平（中性博弈）",
-      "source": "wscn"
-    },
-    {
-      "event_id": "1599678",
-      "name": "美国10月PCE物价指数环比",
-      "country": "美国",
-      "star": 5,
-      "pub_time_ts": 1795613400.0,
-      "pub_time_et": "11-25 08:30 ET",
-      "pub_time_bj": "21:30 BJ",
-      "pub_time_kst": "22:30 KST",
-      "previous": "0.5%",
-      "forecast": "0.3%",
-      "actual": "0.3%",
-      "unit": "%",
-      "status": "released",
-      "minutes_left": 0,
-      "impact_tone": "neutral",
-      "impact_note": "符合预期·通胀温和持平（中性博弈）",
-      "source": "wscn"
+      "impact_tone": "pending",
+      "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
+      "source": "forexfactory"
     }
   ],
   "macro_flashes": [
@@ -2198,6 +2179,13 @@
     ],
     "VRT": [
       {
+        "title": "Vertiv jumps 17 spots on the Roundtable 100",
+        "url": "https://www.thestreet.com/crypto/markets/vertiv-jumps-17-spots-on-the-roundtable-100?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 12:18 ET",
+        "pub_ts": 1795627133.0
+      },
+      {
         "title": "Vertiv Just Raised Its Dividend 60%, but the AI Stock Still Yields Only 0.23%",
         "url": "https://247wallst.com/investing/2026/11/25/vertiv-just-raised-its-dividend-60-but-the-ai-stock-still-yields-only-0-23/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2224,13 +2212,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 03:46 ET",
         "pub_ts": 1795596397.0
-      },
-      {
-        "title": "Comfort Systems vs. Vertiv: Which AI Cooling Stock Is a Better Buy?",
-        "url": "https://finance.yahoo.com/technology/ai/articles/comfort-systems-vs-vertiv-ai-163100993.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 11:31 ET",
-        "pub_ts": 1795537860.0
       }
     ],
     "HPE": [
@@ -2286,6 +2267,13 @@
         "pub_ts": 1795622208.0
       },
       {
+        "title": "Dell Just Delivered a Blowout Quarter. Why Is the Stock Sinking",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/dell-just-delivered-blowout-quarter-171222130.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 12:12 ET",
+        "pub_ts": 1795626742.0
+      },
+      {
         "title": "Dell, HPE Post Big Sales Growth But Investors Sense Peak",
         "url": "https://finance.yahoo.com/m/509b8d3a-b338-3181-bdcf-b7e931f38513/dell%2C-hpe-post-big-sales.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2293,18 +2281,11 @@
         "pub_ts": 1795624252.0
       },
       {
-        "title": "Deere Down on Earnings; Dell Lower Despite Server Sales | Stock Movers",
-        "url": "https://finance.yahoo.com/video/deere-down-earnings-dell-lower-161043404.html?.tsrc=rss",
+        "title": "DELL Q3 Earnings Call Highlights Higher Outlook as AI Orders Build",
+        "url": "https://finance.yahoo.com/technology/ai/articles/dell-q3-earnings-call-highlights-162700612.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-25 11:10 ET",
-        "pub_ts": 1795623043.0
-      },
-      {
-        "title": "Dell Doubled Revenue. The Stock Tumbled Anyway.",
-        "url": "https://app.moby.co/home/news/news-dell-doubled-revenue-the-stock-tumbled-anyway?utm_source=yahoo_finance&utm_medium=rss&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 11:08 ET",
-        "pub_ts": 1795622905.0
+        "time": "11-25 11:27 ET",
+        "pub_ts": 1795624020.0
       }
     ],
     "OKLO": [
@@ -2612,6 +2593,13 @@
         "pub_ts": 1795614318.0
       },
       {
+        "title": "Sandisk vs. Western Digital: Which Computer Drive Stock Is a Better Buy for 2027?",
+        "url": "https://www.fool.com/coverage/better-buy/2026/11/25/sandisk-vs-western-digital-which-computer-drive-stock-is-a-better-buy-for-2027/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 12:19 ET",
+        "pub_ts": 1795627142.0
+      },
+      {
         "title": "Tesla Sinks 5%, Sandisk Down 13% as AI Selloff Deepens and EU Stalls FSD Approval",
         "url": "https://www.tikr.com/blog/tesla-sinks-5-sandisk-down-13-as-ai-selloff-deepens-and-eu-stalls-fsd-approval?ref=yahoofinance&tlnk=yf-261125-3jjqvxp5&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2631,13 +2619,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 10:39 ET",
         "pub_ts": 1795621167.0
-      },
-      {
-        "title": "Why Sandisk Stock Just Dropped Again",
-        "url": "https://www.fool.com/investing/2026/11/25/why-sandisk-stock-just-dropped-again/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 10:36 ET",
-        "pub_ts": 1795621004.0
       }
     ],
     "BTC-USD": [
@@ -3086,6 +3067,13 @@
     ],
     "V": [
       {
+        "title": "Japan's biggest banks pick Solana as Fidelity adds DeFi tokens",
+        "url": "https://finance.yahoo.com/video/japans-biggest-banks-pick-solana-170000036.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 12:00 ET",
+        "pub_ts": 1795626000.0
+      },
+      {
         "title": "Wedbush starts Robinhood, Coinbase at Outperform in fintech coverage launch",
         "url": "https://finance.yahoo.com/markets/stocks/articles/wedbush-starts-robinhood-coinbase-outperform-163557118.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3112,13 +3100,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 11:10 ET",
         "pub_ts": 1795623010.0
-      },
-      {
-        "title": "Illinois fights for interchange law",
-        "url": "https://www.paymentsdive.com/news/illinois-fights-for-interchange-law/875779/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 11:03 ET",
-        "pub_ts": 1795622580.0
       }
     ],
     "CAT": [
@@ -3360,37 +3341,37 @@
     "AXTI": 1795627738.2312214,
     "NASA": 1795628415.373435,
     "LUNR": 1795628415.373435,
-    "TSLA": 1795627040.9444351,
+    "TSLA": 1795628546.382737,
     "AXP": 1795628415.373435,
     "RKLB": 1795628415.373435,
     "KO": 1795628415.373435,
     "FLY": 1795628415.373435,
     "INTC": 1795628415.373435,
-    "VRT": 1795627040.9444351,
-    "HPE": 1795627040.9444351,
-    "DELL": 1795627040.9444351,
-    "OKLO": 1795627040.9444351,
-    "CEG": 1795627040.9444351,
-    "FPS": 1795627040.9444351,
+    "VRT": 1795628546.382737,
+    "HPE": 1795628546.382737,
+    "DELL": 1795628546.382737,
+    "OKLO": 1795628546.382737,
+    "CEG": 1795628546.382737,
+    "FPS": 1795628546.382737,
     "MU": 1795627786.4512484,
     "SKHY": 1795627786.4512484,
     "WDC": 1795627829.6839883,
     "STX": 1795627087.3863058,
-    "MSTR": 1795627040.9444351,
-    "SNDK": 1795627040.9444351,
+    "MSTR": 1795628546.382737,
+    "SNDK": 1795628546.382737,
     "BTC-USD": 1795627829.6839883,
-    "CRWD": 1795627040.9444351,
-    "ORCL": 1795627040.9444351,
-    "COIN": 1795627040.9444351,
-    "LLY": 1795627040.9444351,
-    "MRNA": 1795627040.9444351,
-    "NKE": 1795627040.9444351,
-    "MCD": 1795627040.9444351,
+    "CRWD": 1795628546.382737,
+    "ORCL": 1795628546.382737,
+    "COIN": 1795628546.382737,
+    "LLY": 1795628546.382737,
+    "MRNA": 1795628546.382737,
+    "NKE": 1795628546.382737,
+    "MCD": 1795628546.382737,
     "PEP": 1795627130.1136327,
     "XOM": 1795627130.1136327,
     "JPM": 1795627130.1136327,
     "WMT": 1795627130.1136327,
-    "V": 1795627040.9444351,
+    "V": 1795628546.382737,
     "CAT": 1795627130.1136327,
     "FN": 1795627786.4512484,
     "GLW": 1795628415.373435,
@@ -3413,10 +3394,10 @@
     "detail": ""
   },
   "calendar_banner": {
-    "level": "released",
-    "headline": "📊 今日重磅公布【美国10月核心PCE物价指数环比】· 公布值 0.3%（前值 0.3% / 预期 0.3%）",
-    "detail": "符合预期·通胀温和持平（中性博弈） · 11-25 08:30 ET / 22:30 KST",
-    "event_name": "美国10月核心PCE物价指数环比",
+    "level": "upcoming",
+    "headline": "📅 今日美股重磅预告【美国Core PCE Price Index m/m】· 距公布约 0 分钟（11-25 08:30 ET / 22:30 KST）",
+    "detail": "前值 0.3% ｜ 预期 0.3% ｜ 临近公布前15分钟将自动触发防插针预警",
+    "event_name": "美国Core PCE Price Index m/m",
     "minutes_left": 0,
     "opex_shield": {
       "date": "2026-11-25",
