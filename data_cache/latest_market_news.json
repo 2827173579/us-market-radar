@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795612039.204,
-  "updated_at_et": "11-25 08:07 ET",
-  "updated_at_kst": "22:07 KST",
+  "updated_at_ts": 1795612084.41,
+  "updated_at_et": "11-25 08:08 ET",
+  "updated_at_kst": "22:08 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -17,7 +17,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 23,
+      "minutes_left": 22,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -36,7 +36,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 23,
+      "minutes_left": 22,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -577,6 +577,13 @@
     ],
     "QQQ": [
       {
+        "title": "Should You Buy the Invesco QQQ ETF With the Nasdaq-100 Plummeting? Here's What History Says.",
+        "url": "https://www.fool.com/investing/2026/11/25/should-you-buy-invesco-qqq-etf-nasdaq-100-plummeting-what-history-says/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 07:42 ET",
+        "pub_ts": 1795610522.0
+      },
+      {
         "title": "INVESCO QQQ Trust (QQQ) Sells Apple and NVIDIA on Nov. 23",
         "url": "https://finance.yahoo.com/markets/stocks/articles/invesco-qqq-trust-qqq-sells-110412143.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -603,13 +610,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 06:02 ET",
         "pub_ts": 1795604571.0
-      },
-      {
-        "title": "ETFs Sold $96.9 Million of Rocket Lab (RKLB) on Monday",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-sold-96-9-million-110245076.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 06:02 ET",
-        "pub_ts": 1795604565.0
       }
     ],
     "SMH": [
@@ -947,39 +947,39 @@
     ],
     "NVDA": [
       {
+        "title": "Jensen Huang is a 'national treasure,' this strategist explains",
+        "url": "https://finance.yahoo.com/video/jensen-huang-national-treasure-strategist-130000326.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 08:00 ET",
+        "pub_ts": 1795611600.0
+      },
+      {
         "title": "Dow Jones Futures Fall, Techs Dive; Trump Says 'Not Too Late' For U.S. To Take Nvidia Stake",
         "url": "https://finance.yahoo.com/m/d96603c1-fe7f-3bf3-8158-0728b464d469/dow-jones-futures-fall%2C-techs.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-25 07:28 ET",
-        "pub_ts": 1795609737.0
+        "time": "11-25 08:05 ET",
+        "pub_ts": 1795611911.0
       },
       {
-        "title": "Think Nvidia's Stock Is Wild? Check Out These Related ETFs",
-        "url": "https://finance.yahoo.com/m/d33a682f-4ddc-3c24-93fe-9c52f4f0e2dd/think-nvidia%27s-stock-is-wild%3F.html?.tsrc=rss",
+        "title": "Market Chatter: Trump to Preside Over Taiwan Semiconductor Plant Expansion Ceremony in Arizona",
+        "url": "https://finance.yahoo.com/technology/articles/market-chatter-trump-preside-over-130436480.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-25 07:28 ET",
-        "pub_ts": 1795609734.0
+        "time": "11-25 08:04 ET",
+        "pub_ts": 1795611876.0
       },
       {
-        "title": "Nvidia Loses Nearly $3 Trillion as Governance Crisis Deepens",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/nvidia-loses-nearly-3-trillion-122447848.html?.tsrc=rss",
+        "title": "3 Warning Signs as the AI Selloff Gets Ugly Again",
+        "url": "https://finance.yahoo.com/m/7eb3329d-ae1e-315a-9f67-0f5f86d8408c/3-warning-signs-as-the-ai.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-25 07:24 ET",
-        "pub_ts": 1795609487.0
+        "time": "11-25 07:52 ET",
+        "pub_ts": 1795611120.0
       },
       {
-        "title": "Jim Cramer Says Tuesday’s Stock Market Pullback Is Actually Good News",
-        "url": "https://247wallst.com/investing/2026/11/25/jim-cramer-says-tuesdays-stock-market-pullback-is-actually-good-news/?.tsrc=rss",
+        "title": "Swiss franc safe-haven demand and USD/CHF technical outlook",
+        "url": "https://finance.yahoo.com/markets/currencies/articles/swiss-franc-safe-haven-demand-125135348.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-25 07:22 ET",
-        "pub_ts": 1795609371.0
-      },
-      {
-        "title": "A Record $132 Billion AI Backlog Lands as Chip Stocks Whipsaw",
-        "url": "https://finance.yahoo.com/news/record-132-billion-ai-backlog-121500023.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 07:15 ET",
-        "pub_ts": 1795608900.0
+        "time": "11-25 07:51 ET",
+        "pub_ts": 1795611095.0
       }
     ],
     "AMD": [
@@ -3324,26 +3324,26 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795610549.9554377,
-    "SOXL": 1795610549.9554377,
+    "KORU": 1795612084.410426,
+    "SOXL": 1795612084.410426,
     "SPY": 1795610928.3699715,
-    "DIA": 1795610549.9554377,
-    "SOXX": 1795610549.9554377,
-    "QQQ": 1795610549.9554377,
+    "DIA": 1795612084.410426,
+    "SOXX": 1795612084.410426,
+    "QQQ": 1795612084.410426,
     "SMH": 1795610928.3699715,
-    "IWM": 1795610549.9554377,
-    "IGV": 1795610549.9554377,
-    "TLT": 1795610549.9554377,
-    "GLD": 1795610549.9554377,
-    "SQQQ": 1795610549.9554377,
+    "IWM": 1795612084.410426,
+    "IGV": 1795612084.410426,
+    "TLT": 1795612084.410426,
+    "GLD": 1795612084.410426,
+    "SQQQ": 1795612084.410426,
     "TSM": 1795610928.3699715,
-    "VIXY": 1795610549.9554377,
-    "SOXS": 1795610549.9554377,
-    "NVDA": 1795610549.9554377,
-    "AMD": 1795610549.9554377,
+    "VIXY": 1795612084.410426,
+    "SOXS": 1795612084.410426,
+    "NVDA": 1795612084.410426,
+    "AMD": 1795612084.410426,
     "ASML": 1795610928.3699715,
     "QCOM": 1795610928.3699715,
-    "AVGO": 1795610549.9554377,
+    "AVGO": 1795612084.410426,
     "AMAT": 1795610928.3699715,
     "META": 1795610928.3699715,
     "GOOGL": 1795610928.3699715,
@@ -3421,10 +3421,10 @@
   },
   "calendar_banner": {
     "level": "upcoming",
-    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 23 分钟（11-25 08:30 ET / 22:30 KST）",
+    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 22 分钟（11-25 08:30 ET / 22:30 KST）",
     "detail": "前值 0.3% ｜ 预期 0.3% ｜ 临近公布前15分钟将自动触发防插针预警",
     "event_name": "美国10月核心PCE物价指数环比",
-    "minutes_left": 23,
+    "minutes_left": 22,
     "opex_shield": {
       "date": "2026-11-25",
       "active": false,
