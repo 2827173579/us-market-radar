@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795584899.251,
-  "updated_at_et": "11-25 00:34 ET",
-  "updated_at_kst": "14:34 KST",
+  "updated_at_ts": 1795585003.311,
+  "updated_at_et": "11-25 00:36 ET",
+  "updated_at_kst": "14:36 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -17,7 +17,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 476,
+      "minutes_left": 474,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -36,7 +36,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 476,
+      "minutes_left": 474,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -1438,6 +1438,13 @@
         "pub_ts": 1795535048.0
       },
       {
+        "title": "CoreWeave (CRWV) is Getting Hammered. What Went Wrong?",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/coreweave-crwv-getting-hammered-went-051951815.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 00:19 ET",
+        "pub_ts": 1795583991.0
+      },
+      {
         "title": "CoreWeave bonds hit record lows as AI trade concerns return",
         "url": "https://finance.yahoo.com/markets/stocks/articles/coreweave-bonds-hit-record-lows-195321737.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1457,13 +1464,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 13:55 ET",
         "pub_ts": 1795546527.0
-      },
-      {
-        "title": "“The Bank of Nvidia Is Back,” Says CNBC’s David Faber. Its Investments Rose From $7 Billion to $110 Billion",
-        "url": "https://www.tikr.com/blog/the-bank-of-nvidia-is-back-says-cnbcs-david-faber-its-investments-rose-from-7-billion-to-110-billion?ref=yahoofinance&tlnk=yf-261124-hfqgvgp4&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 11:49 ET",
-        "pub_ts": 1795538978.0
       }
     ],
     "NBIS": [
@@ -2467,6 +2467,13 @@
     ],
     "SKHY": [
       {
+        "title": "SK Hynix (NasdaqGS:SKHY) Stock May Trade At A Discount Despite AI Demand News",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/sk-hynix-nasdaqgs-skhy-stock-051115290.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 00:11 ET",
+        "pub_ts": 1795583475.0
+      },
+      {
         "title": "South Korea's chipmakers rally on Huang's return",
         "url": "http://www.intellinews.com/south-korea-s-chipmakers-rally-on-huang-s-return-488025/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2493,13 +2500,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 12:41 ET",
         "pub_ts": 1795542100.0
-      },
-      {
-        "title": "SK hynix vs. TSMC: One Chipmaker's Revenue Is Exploding, but Is It the Better Buy for 2027?",
-        "url": "https://www.fool.com/coverage/charts/2026/11/24/sk-hynix-vs-tsmc-one-chipmaker-s-revenue-is-exploding-but-is-it-the-better-buy-for-2027/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 12:35 ET",
-        "pub_ts": 1795541702.0
       }
     ],
     "WDC": [
@@ -3329,45 +3329,45 @@
   "ticker_news_ts": {
     "KORU": 1795584582.5296755,
     "SOXL": 1795584582.5296755,
-    "SPY": 1795583426.957599,
+    "SPY": 1795585003.3110478,
     "DIA": 1795584582.5296755,
     "SOXX": 1795584582.5296755,
     "QQQ": 1795584582.5296755,
-    "SMH": 1795583426.957599,
+    "SMH": 1795585003.3110478,
     "IWM": 1795584582.5296755,
     "IGV": 1795584582.5296755,
     "TLT": 1795584582.5296755,
     "GLD": 1795584582.5296755,
     "SQQQ": 1795584582.5296755,
-    "TSM": 1795583426.957599,
+    "TSM": 1795585003.3110478,
     "VIXY": 1795584582.5296755,
     "SOXS": 1795584582.5296755,
     "NVDA": 1795584582.5296755,
     "AMD": 1795584582.5296755,
-    "ASML": 1795583426.957599,
-    "QCOM": 1795583426.957599,
+    "ASML": 1795585003.3110478,
+    "QCOM": 1795585003.3110478,
     "AVGO": 1795584582.5296755,
-    "AMAT": 1795583426.957599,
-    "META": 1795583426.957599,
-    "GOOGL": 1795583426.957599,
-    "MSFT": 1795583426.957599,
-    "AAPL": 1795583426.957599,
-    "PLTR": 1795583426.957599,
-    "NOW": 1795583426.957599,
-    "AMZN": 1795583426.957599,
-    "CRWV": 1795583426.957599,
-    "NBIS": 1795583426.957599,
+    "AMAT": 1795585003.3110478,
+    "META": 1795585003.3110478,
+    "GOOGL": 1795585003.3110478,
+    "MSFT": 1795585003.3110478,
+    "AAPL": 1795585003.3110478,
+    "PLTR": 1795585003.3110478,
+    "NOW": 1795585003.3110478,
+    "AMZN": 1795585003.3110478,
+    "CRWV": 1795585003.3110478,
+    "NBIS": 1795585003.3110478,
     "APLD": 1795584214.3796115,
     "VST": 1795584214.3796115,
     "BE": 1795584214.3796115,
     "CRDO": 1795584214.3796115,
     "COHR": 1795584214.3796115,
-    "MRVL": 1795583426.957599,
-    "LITE": 1795583426.957599,
+    "MRVL": 1795585003.3110478,
+    "LITE": 1795585003.3110478,
     "AAOI": 1795584214.3796115,
     "SPCX": 1795584214.3796115,
     "ASTS": 1795584214.3796115,
-    "AXTI": 1795583426.957599,
+    "AXTI": 1795585003.3110478,
     "NASA": 1795584214.3796115,
     "LUNR": 1795584214.3796115,
     "TSLA": 1795584329.8376112,
@@ -3382,8 +3382,8 @@
     "OKLO": 1795584329.8376112,
     "CEG": 1795584329.8376112,
     "FPS": 1795584329.8376112,
-    "MU": 1795583426.957599,
-    "SKHY": 1795583426.957599,
+    "MU": 1795585003.3110478,
+    "SKHY": 1795585003.3110478,
     "WDC": 1795583426.957599,
     "STX": 1795584329.8376112,
     "MSTR": 1795584329.8376112,
@@ -3402,11 +3402,11 @@
     "WMT": 1795584441.006546,
     "V": 1795584329.8376112,
     "CAT": 1795584441.006546,
-    "FN": 1795583426.957599,
+    "FN": 1795585003.3110478,
     "GLW": 1795584214.3796115,
     "ANT": 1795584441.006546,
     "XAUUSD": 1795584441.006546,
-    "KOSPI": 1795583426.957599
+    "KOSPI": 1795585003.3110478
   },
   "opex_shield": {
     "date": "2026-11-25",
@@ -3424,10 +3424,10 @@
   },
   "calendar_banner": {
     "level": "upcoming",
-    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 476 分钟（11-25 08:30 ET / 22:30 KST）",
+    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 474 分钟（11-25 08:30 ET / 22:30 KST）",
     "detail": "前值 0.3% ｜ 预期 0.3% ｜ 临近公布前15分钟将自动触发防插针预警",
     "event_name": "美国10月核心PCE物价指数环比",
-    "minutes_left": 476,
+    "minutes_left": 474,
     "opex_shield": {
       "date": "2026-11-25",
       "active": false,
