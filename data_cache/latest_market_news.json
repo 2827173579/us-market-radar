@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795610209.773,
-  "updated_at_et": "11-25 07:36 ET",
-  "updated_at_kst": "21:36 KST",
+  "updated_at_ts": 1795610260.444,
+  "updated_at_et": "11-25 07:37 ET",
+  "updated_at_kst": "21:37 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -17,7 +17,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 54,
+      "minutes_left": 53,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -36,7 +36,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 54,
+      "minutes_left": 53,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -1982,6 +1982,20 @@
     ],
     "TSLA": [
       {
+        "title": "Tesla’s FSD Push In Europe Hits Another Snag As EU Reportedly Delays Approval Talks Yet Again – TSLA Stock Falls Premarket",
+        "url": "https://stocktwits.com/news-articles/markets/equity/tesla-fsd-push-in-europe-hits-snag-eu-delays-approval-talks-tsla-stock-falls/cNbHWoCR9m3?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 07:14 ET",
+        "pub_ts": 1795608872.0
+      },
+      {
+        "title": "Tesla (TSLA) Could Be 36% Undervalued Following SpaceX Merger Talks",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/tesla-tsla-could-36-undervalued-121112133.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 07:11 ET",
+        "pub_ts": 1795608672.0
+      },
+      {
         "title": "Is Elon Musk More Systemically Important Than Jensen Huang?",
         "url": "https://www.trefis.com/stock/tsla/articles/628207/is-elon-musk-more-systemically-important-than-jensen-huang/2026-11-25?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2001,20 +2015,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 06:04 ET",
         "pub_ts": 1795604693.0
-      },
-      {
-        "title": "ARK Autonomous Technology & Robotics ETF (ARKQ) Sells Tesla and SpaceX on Monday",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/ark-autonomous-technology-robotics-etf-110358357.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 06:03 ET",
-        "pub_ts": 1795604638.0
-      },
-      {
-        "title": "ETFs Are Net Sellers of Tesla (TSLA) on Nov. 23",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-net-sellers-tesla-tsla-110217480.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 06:02 ET",
-        "pub_ts": 1795604537.0
       }
     ],
     "AXP": [
@@ -2292,6 +2292,13 @@
         "pub_ts": 1795608041.0
       },
       {
+        "title": "Dell Stock Joins Nvidia, AMD, and Intel Selloff Despite Record Demand",
+        "url": "https://beincrypto.com/dell-stock-falls-ai-selloff-record-backlog/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 06:50 ET",
+        "pub_ts": 1795607445.0
+      },
+      {
         "title": "Dell Delivered Strong Earnings but at the Wrong Time for the Stock",
         "url": "https://finance.yahoo.com/m/7bfc9015-4ca1-3f6d-81d5-7ffb1b1990e6/dell-delivered-strong.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2304,13 +2311,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 06:04 ET",
         "pub_ts": 1795604670.0
-      },
-      {
-        "title": "U.S. chip stocks extend losses premarket as AI spending concerns resurface",
-        "url": "https://finance.yahoo.com/technology/ai/articles/u-chip-stocks-extend-losses-104903644.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 05:49 ET",
-        "pub_ts": 1795603743.0
       }
     ],
     "OKLO": [
@@ -2611,6 +2611,13 @@
     ],
     "SNDK": [
       {
+        "title": "Sandisk (SNDK) Shares Dropped, So What Is Driving Attention Now?",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/sandisk-sndk-shares-dropped-driving-121239819.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 07:12 ET",
+        "pub_ts": 1795608759.0
+      },
+      {
         "title": "Tradr to Launch Six New Leveraged ETFs",
         "url": "https://finance.yahoo.com/markets/options/articles/tradr-launch-six-leveraged-etfs-114600732.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2637,13 +2644,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 03:27 ET",
         "pub_ts": 1795595230.0
-      },
-      {
-        "title": "Micron vs. Sandisk: Which AI Memory Stock Is the Better Buy?",
-        "url": "https://www.fool.com/investing/2026/11/24/micron-vs-sandisk-which-ai-memory-stock-is-the-better-buy/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 15:25 ET",
-        "pub_ts": 1795551902.0
       }
     ],
     "BTC-USD": [
@@ -2722,6 +2722,20 @@
     ],
     "ORCL": [
       {
+        "title": "Oracle Can Reach $240 in 2027: Wall Street Needs 4 Things to Happen",
+        "url": "https://247wallst.com/investing/2026/11/25/oracle-can-reach-240-in-2027-wall-street-needs-4-things-to-happen/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 07:15 ET",
+        "pub_ts": 1795608957.0
+      },
+      {
+        "title": "Oracle Spends $28.5 Billion A Quarter Building. Who Covers The Wait?",
+        "url": "https://www.trefis.com/stock/orcl/articles/628215/oracle-spends-28-5-billion-a-quarter-building-who-covers-the-wait/2026-11-25?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 07:15 ET",
+        "pub_ts": 1795608925.0
+      },
+      {
         "title": "Should You Buy Oracle Stock After Its 53% Collapse? The Answer Might Shock You.",
         "url": "https://www.fool.com/investing/2026/11/25/should-buy-oracle-stock-after-53-collapse-answer-shock-you/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2741,20 +2755,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 16:45 ET",
         "pub_ts": 1795556702.0
-      },
-      {
-        "title": "Not Good: Oracle’s Credit Swaps Blow Out Again a Day After Huang’s Return Lifted Nvidia",
-        "url": "https://www.tikr.com/blog/not-good-oracles-credit-swaps-blow-out-again-a-day-after-huangs-return-lifted-nvidia?ref=yahoofinance&tlnk=yf-261124-vcwxc3ff&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 15:00 ET",
-        "pub_ts": 1795550431.0
-      },
-      {
-        "title": "Oracle Stocks Fall 4.31%, Slipping Further Below Its $116 Share Sale Price",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/oracle-stocks-fall-4-31-165513234.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 11:55 ET",
-        "pub_ts": 1795539313.0
       }
     ],
     "COIN": [
@@ -3366,37 +3366,37 @@
     "AXTI": 1795609398.3492033,
     "NASA": 1795610160.9323542,
     "LUNR": 1795610160.9323542,
-    "TSLA": 1795608724.4252732,
+    "TSLA": 1795610260.4442298,
     "AXP": 1795610160.9323542,
     "RKLB": 1795610160.9323542,
     "KO": 1795610160.9323542,
     "FLY": 1795610160.9323542,
     "INTC": 1795610160.9323542,
-    "VRT": 1795608724.4252732,
-    "HPE": 1795608724.4252732,
-    "DELL": 1795608724.4252732,
-    "OKLO": 1795608724.4252732,
-    "CEG": 1795608724.4252732,
-    "FPS": 1795608724.4252732,
+    "VRT": 1795610260.4442298,
+    "HPE": 1795610260.4442298,
+    "DELL": 1795610260.4442298,
+    "OKLO": 1795610260.4442298,
+    "CEG": 1795610260.4442298,
+    "FPS": 1795610260.4442298,
     "MU": 1795609448.843931,
     "SKHY": 1795609448.843931,
     "WDC": 1795609497.8915503,
     "STX": 1795608780.747714,
-    "MSTR": 1795608724.4252732,
-    "SNDK": 1795608724.4252732,
+    "MSTR": 1795610260.4442298,
+    "SNDK": 1795610260.4442298,
     "BTC-USD": 1795609497.8915503,
-    "CRWD": 1795608724.4252732,
-    "ORCL": 1795608724.4252732,
-    "COIN": 1795608724.4252732,
-    "LLY": 1795608724.4252732,
-    "MRNA": 1795608724.4252732,
-    "NKE": 1795608724.4252732,
-    "MCD": 1795608724.4252732,
+    "CRWD": 1795610260.4442298,
+    "ORCL": 1795610260.4442298,
+    "COIN": 1795610260.4442298,
+    "LLY": 1795610260.4442298,
+    "MRNA": 1795610260.4442298,
+    "NKE": 1795610260.4442298,
+    "MCD": 1795610260.4442298,
     "PEP": 1795608827.5293899,
     "XOM": 1795608827.5293899,
     "JPM": 1795608827.5293899,
     "WMT": 1795608827.5293899,
-    "V": 1795608724.4252732,
+    "V": 1795610260.4442298,
     "CAT": 1795608827.5293899,
     "FN": 1795609448.843931,
     "GLW": 1795610160.9323542,
@@ -3420,10 +3420,10 @@
   },
   "calendar_banner": {
     "level": "upcoming",
-    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 54 分钟（11-25 08:30 ET / 22:30 KST）",
+    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 53 分钟（11-25 08:30 ET / 22:30 KST）",
     "detail": "前值 0.3% ｜ 预期 0.3% ｜ 临近公布前15分钟将自动触发防插针预警",
     "event_name": "美国10月核心PCE物价指数环比",
-    "minutes_left": 54,
+    "minutes_left": 53,
     "opex_shield": {
       "date": "2026-11-25",
       "active": false,
