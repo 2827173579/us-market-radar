@@ -74,20 +74,20 @@
       "last_notified_at": 0.0
     },
     "AXP": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1795636824.245787
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "SPY": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1795636871.356656
     },
     "DIA": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1795636871.356656
     },
     "IWM": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1795636871.356656
     },
     "IGV": {
       "state": "NORMAL",
@@ -162,8 +162,8 @@
       "last_notified_at": 1795482111.35759
     },
     "AMZN": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1795636871.356656
     },
     "MSFT": {
       "state": "NORMAL",

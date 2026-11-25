@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795636815.773,
-  "updated_at_et": "11-25 15:00 ET",
-  "updated_at_kst": "05:00 KST",
+  "updated_at_ts": 1795636865.954,
+  "updated_at_et": "11-25 15:01 ET",
+  "updated_at_kst": "05:01 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -2421,6 +2421,13 @@
         "pub_ts": 1795634402.0
       },
       {
+        "title": "Anthropic, Nvidia, Micron, HP Inc., Dell, Deere, and More Stocks That Explain Today’s Market",
+        "url": "https://finance.yahoo.com/m/18e72c51-c6d7-33b1-aa90-ccce17a9b32f/anthropic%2C-nvidia%2C-micron%2C-hp.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 13:37 ET",
+        "pub_ts": 1795631820.0
+      },
+      {
         "title": "Micron Stock and Other Memory Plays Will Bear the Brunt of This AI Pain",
         "url": "https://finance.yahoo.com/m/c60b7c01-7f3d-3700-ad68-951e994a6d38/micron-stock-and-other-memory.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2440,13 +2447,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 12:17 ET",
         "pub_ts": 1795627025.0
-      },
-      {
-        "title": "Micron Technology (MU) Dropped, So What Is Drawing Attention Now?",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/micron-technology-mu-dropped-drawing-171415757.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 12:14 ET",
-        "pub_ts": 1795626855.0
       }
     ],
     "SKHY": [
@@ -3346,8 +3346,8 @@
     "BE": 1795636004.0300424,
     "CRDO": 1795636004.0300424,
     "COHR": 1795636004.0300424,
-    "MRVL": 1795635355.4284744,
-    "LITE": 1795635355.4284744,
+    "MRVL": 1795636865.9537787,
+    "LITE": 1795636865.9537787,
     "AAOI": 1795636004.0300424,
     "SPCX": 1795636004.0300424,
     "ASTS": 1795636004.0300424,
@@ -3366,8 +3366,8 @@
     "OKLO": 1795636159.8238616,
     "CEG": 1795636159.8238616,
     "FPS": 1795636159.8238616,
-    "MU": 1795635355.4284744,
-    "SKHY": 1795635355.4284744,
+    "MU": 1795636865.9537787,
+    "SKHY": 1795636865.9537787,
     "WDC": 1795635395.2340174,
     "STX": 1795636202.5781958,
     "MSTR": 1795636159.8238616,
@@ -3386,7 +3386,7 @@
     "WMT": 1795636242.843317,
     "V": 1795636159.8238616,
     "CAT": 1795636242.843317,
-    "FN": 1795635355.4284744,
+    "FN": 1795636865.9537787,
     "GLW": 1795636004.0300424,
     "ANT": 1795636242.843317,
     "XAUUSD": 1795636242.843317,
