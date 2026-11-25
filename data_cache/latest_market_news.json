@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795573439.11,
-  "updated_at_et": "11-24 21:23 ET",
-  "updated_at_kst": "11:23 KST",
+  "updated_at_ts": 1795573597.605,
+  "updated_at_et": "11-24 21:26 ET",
+  "updated_at_kst": "11:26 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -917,8 +917,15 @@
         "title": "Dow Jones Futures Fall After AI Stocks Tumble; Trump Says 'Not Too Late' For Nvidia Stake",
         "url": "https://finance.yahoo.com/m/d96603c1-fe7f-3bf3-8158-0728b464d469/dow-jones-futures-fall-after.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 20:49 ET",
-        "pub_ts": 1795571375.0
+        "time": "11-24 21:14 ET",
+        "pub_ts": 1795572860.0
+      },
+      {
+        "title": "Nvidia’s Rebound, Falling Oil And A Strong Dollar: Three Signals Complicating The Fed’s December Decision",
+        "url": "https://stocktwits.com/news-articles/markets/equity/fed-december-rate-hike-oil-prices-nvidia-rally-inflation/cNbuClGR9l5?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 21:09 ET",
+        "pub_ts": 1795572572.0
       },
       {
         "title": "Wall St futures fall after S&P 500, Nasdaq end lower; inflation data eyed",
@@ -940,13 +947,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 20:20 ET",
         "pub_ts": 1795569602.0
-      },
-      {
-        "title": "Market Chatter: California AG Bonta to Press Nvidia Probe, Criticizes Federal Handling",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/market-chatter-california-ag-bonta-005828411.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 19:58 ET",
-        "pub_ts": 1795568308.0
       }
     ],
     "AMD": [
@@ -1069,6 +1069,13 @@
         "pub_ts": 1795535048.0
       },
       {
+        "title": "Broadcom Stock Could Have 70% Upside, Analysts Say. What AVGO’s Valuation Reveals.",
+        "url": "https://www.barchart.com/story/news/8991255/broadcom-stock-could-have-70-upside-analysts-say-what-avgos-valuation-reveals?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 15:10 ET",
+        "pub_ts": 1795551017.0
+      },
+      {
         "title": "Broadcom Stocks Fall 3.98% as Google TPU Order Report Clouds AI Outlook",
         "url": "https://finance.yahoo.com/markets/stocks/articles/broadcom-stocks-fall-3-98-165405396.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1088,13 +1095,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 11:22 ET",
         "pub_ts": 1795537322.0
-      },
-      {
-        "title": "Novanta Shares Just Jumped And We’re Buying This Robotics Play",
-        "url": "https://247wallst.com/videos/novanta-shares-just-jumped-and-were-buying-this-robotics-play/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 17:59 ET",
-        "pub_ts": 1795561162.0
       }
     ],
     "AMAT": [
@@ -3291,26 +3291,26 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795571987.9485798,
-    "SOXL": 1795571987.9485798,
+    "KORU": 1795573597.604626,
+    "SOXL": 1795573597.604626,
     "SPY": 1795572447.6198516,
-    "DIA": 1795571987.9485798,
-    "SOXX": 1795571987.9485798,
-    "QQQ": 1795571987.9485798,
+    "DIA": 1795573597.604626,
+    "SOXX": 1795573597.604626,
+    "QQQ": 1795573597.604626,
     "SMH": 1795572447.6198516,
-    "IWM": 1795571987.9485798,
-    "IGV": 1795571987.9485798,
-    "TLT": 1795571987.9485798,
-    "GLD": 1795571987.9485798,
-    "SQQQ": 1795571987.9485798,
+    "IWM": 1795573597.604626,
+    "IGV": 1795573597.604626,
+    "TLT": 1795573597.604626,
+    "GLD": 1795573597.604626,
+    "SQQQ": 1795573597.604626,
     "TSM": 1795572447.6198516,
-    "VIXY": 1795571987.9485798,
-    "SOXS": 1795571987.9485798,
-    "NVDA": 1795571987.9485798,
-    "AMD": 1795571987.9485798,
+    "VIXY": 1795573597.604626,
+    "SOXS": 1795573597.604626,
+    "NVDA": 1795573597.604626,
+    "AMD": 1795573597.604626,
     "ASML": 1795572447.6198516,
     "QCOM": 1795572447.6198516,
-    "AVGO": 1795571987.9485798,
+    "AVGO": 1795573597.604626,
     "AMAT": 1795572447.6198516,
     "META": 1795572447.6198516,
     "GOOGL": 1795572447.6198516,
