@@ -1,8 +1,47 @@
 {
-  "updated_at_ts": 1795582725.094,
-  "updated_at_et": "11-24 23:58 ET",
-  "updated_at_kst": "13:58 KST",
-  "macro_calendar": [],
+  "updated_at_ts": 1795582836.705,
+  "updated_at_et": "11-25 00:00 ET",
+  "updated_at_kst": "14:00 KST",
+  "macro_calendar": [
+    {
+      "event_id": "1599680",
+      "name": "美国10月核心PCE物价指数环比",
+      "country": "美国",
+      "star": 5,
+      "pub_time_ts": 1795613400.0,
+      "pub_time_et": "11-25 08:30 ET",
+      "pub_time_bj": "21:30 BJ",
+      "pub_time_kst": "22:30 KST",
+      "previous": "0.3%",
+      "forecast": "0.3%",
+      "actual": "待公布",
+      "unit": "%",
+      "status": "upcoming",
+      "minutes_left": 510,
+      "impact_tone": "pending",
+      "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
+      "source": "wscn"
+    },
+    {
+      "event_id": "1599678",
+      "name": "美国10月PCE物价指数环比",
+      "country": "美国",
+      "star": 5,
+      "pub_time_ts": 1795613400.0,
+      "pub_time_et": "11-25 08:30 ET",
+      "pub_time_bj": "21:30 BJ",
+      "pub_time_kst": "22:30 KST",
+      "previous": "0.5%",
+      "forecast": "0.3%",
+      "actual": "待公布",
+      "unit": "%",
+      "status": "upcoming",
+      "minutes_left": 510,
+      "impact_tone": "pending",
+      "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
+      "source": "wscn"
+    }
+  ],
   "macro_flashes": [
     {
       "id": "20261125114024959800",
@@ -3205,6 +3244,20 @@
     ],
     "ANT": [
       {
+        "title": "Cathie Wood’s ARK Sees ‘Excellent Entry Points’ In AI — ‘Big Short’ Steve Eisman Warns Of Recession If Anthropic Or OpenAI Fails",
+        "url": "https://stocktwits.com/news-articles/markets/equity/cathie-wood-ark-excellent-entry-points-ai-steve-eisman-recession-anthropic-openai-fails/cNbHcZ4R9lW?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 23:41 ET",
+        "pub_ts": 1795581691.0
+      },
+      {
+        "title": "Anthropic vs. SpaceX: Here's the Better IPO Stock to Buy With $1,000 Right Now",
+        "url": "https://www.fool.com/investing/2026/11/24/anthropic-vs-spacex-here-s-the-better-ipo-stock-to-buy-with-usd1-000-right-now/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 23:35 ET",
+        "pub_ts": 1795581301.0
+      },
+      {
         "title": "ANT Slips Further After Closing Below IPO Price: Retail Traders Wait For A Better Entry, But Cathie Wood Buys The Dip",
         "url": "https://stocktwits.com/news-articles/markets/equity/ant-slips-further-after-closing-below-ipo-price-retail-traders-wait-for-a-better-entry-but-cathie-wood-buys-the-dip/cNbHR3zR9lf?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3224,20 +3277,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 22:11 ET",
         "pub_ts": 1795576311.0
-      },
-      {
-        "title": "Ross Gerber Tells Investors to 'Be Patient' on Anthropic Stock After Post-IPO Slide: ‘That Would Be a Gift’",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/ross-gerber-tells-investors-patient-023010868.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 21:30 ET",
-        "pub_ts": 1795573810.0
-      },
-      {
-        "title": "Anthropic Has Plunged 30% From Its Peak. Here’s the Price at Which I’d Buy.",
-        "url": "https://www.fool.com/investing/2026/11/24/anthropic-has-plunged-30-from-its-peak-here-s-the-price-at-which-i-d-buy/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 20:20 ET",
-        "pub_ts": 1795569602.0
       }
     ],
     "XAUUSD": [
@@ -3357,20 +3396,20 @@
     "MRNA": 1795582725.094201,
     "NKE": 1795582725.094201,
     "MCD": 1795582725.094201,
-    "PEP": 1795581326.6649776,
-    "XOM": 1795581326.6649776,
-    "JPM": 1795581326.6649776,
-    "WMT": 1795581326.6649776,
+    "PEP": 1795582836.705383,
+    "XOM": 1795582836.705383,
+    "JPM": 1795582836.705383,
+    "WMT": 1795582836.705383,
     "V": 1795582725.094201,
-    "CAT": 1795581326.6649776,
+    "CAT": 1795582836.705383,
     "FN": 1795581758.2286813,
     "GLW": 1795582616.512191,
-    "ANT": 1795581326.6649776,
-    "XAUUSD": 1795581326.6649776,
+    "ANT": 1795582836.705383,
+    "XAUUSD": 1795582836.705383,
     "KOSPI": 1795581758.2286813
   },
   "opex_shield": {
-    "date": "2026-11-24",
+    "date": "2026-11-25",
     "active": false,
     "timing": "NONE",
     "kind": "NONE",
@@ -3378,19 +3417,19 @@
     "opex_date": "2026-11-20",
     "next_opex_date": "2026-12-18",
     "next_is_quad_witching": true,
-    "days_to_opex": 24,
+    "days_to_opex": 23,
     "badge": "",
     "headline": "",
     "detail": ""
   },
   "calendar_banner": {
-    "level": "idle_with_flash",
-    "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (22:40 ET / 11:40 BJ) [美联储] [加息] [PCE]：美银认为美股跌幅尚不足以逼迫美联储转向，加息仍是基本预期。假期前市场迎来通胀数据考验，瑞银警告称，偏高的数据可能形成更大冲击。",
-    "event_name": "",
-    "minutes_left": 0,
+    "level": "upcoming",
+    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 510 分钟（11-25 08:30 ET / 22:30 KST）",
+    "detail": "前值 0.3% ｜ 预期 0.3% ｜ 临近公布前15分钟将自动触发防插针预警",
+    "event_name": "美国10月核心PCE物价指数环比",
+    "minutes_left": 510,
     "opex_shield": {
-      "date": "2026-11-24",
+      "date": "2026-11-25",
       "active": false,
       "timing": "NONE",
       "kind": "NONE",
@@ -3398,7 +3437,7 @@
       "opex_date": "2026-11-20",
       "next_opex_date": "2026-12-18",
       "next_is_quad_witching": true,
-      "days_to_opex": 24,
+      "days_to_opex": 23,
       "badge": "",
       "headline": "",
       "detail": ""
