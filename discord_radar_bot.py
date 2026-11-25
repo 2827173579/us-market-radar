@@ -35,6 +35,11 @@ except Exception:
     copy_trade_engine = None
 
 try:
+    import copy_trade_kol_engine
+except Exception:
+    copy_trade_kol_engine = None
+
+try:
     import discord
     from discord import app_commands
     _DISCORD_PY_AVAILABLE = True
@@ -49,6 +54,7 @@ DEFAULT_ENV_PATH = os.path.join(BASE_DIR, ".env")
 DEFAULT_SNAPSHOT_PATH = os.path.join(BASE_DIR, "data_cache", "latest_radar_snapshot.json")
 DEFAULT_LEDGER_PATH = os.path.join(BASE_DIR, "data_cache", "signal_ledger.json")
 DEFAULT_COPY_LEDGER_PATH = os.path.join(BASE_DIR, "data_cache", "copy_trade_ledger.json")
+DEFAULT_KOL_COPY_LEDGER_PATH = os.path.join(BASE_DIR, "data_cache", "copy_trade_ledger_kol.json")
 BOT_COOLDOWN_SECONDS = 3.0
 
 # 终端编码与实时行缓冲适配 (Windows PowerShell / CMD)
@@ -1383,11 +1389,19 @@ def build_ledger_embed_dict(
     }
 
 
-def build_copy_embed_dict(copy_ledger_path: str = DEFAULT_COPY_LEDGER_PATH) -> Dict[str, Any]:
-    """V5.4 `/copy` 命令只读视图：展示 $1,000 多空双轨 KOL 模拟跟单账本。"""
+def build_copy_embed_dict(
+    copy_ledger_path: str = DEFAULT_COPY_LEDGER_PATH,
+    kol_ledger_path: str = DEFAULT_KOL_COPY_LEDGER_PATH,
+) -> Dict[str, Any]:
+    """V5.5 `/copy` 命令只读视图：同台对比展示 V5.4 稳健轨 vs V5.5 激进 KOL 狙击轨账本。"""
+    if copy_trade_kol_engine is not None:
+        return copy_trade_kol_engine.build_dual_track_copy_embed_dict(
+            steady_path=copy_ledger_path,
+            kol_path=kol_ledger_path,
+        )
     if copy_trade_engine is None:
         return {
-            "title": "📒 $1,000 多空双轨 KOL 模拟跟单账本",
+            "title": "📒 $1,000 双轨模拟跟单账本",
             "description": "⚠️ 模拟跟单引擎未加载，请检查 copy_trade_engine.py。",
             "color": 0xF59E0B,
         }
@@ -1411,6 +1425,7 @@ if _DISCORD_PY_AVAILABLE:
             snapshot_path: str = DEFAULT_SNAPSHOT_PATH,
             ledger_path: str = DEFAULT_LEDGER_PATH,
             copy_ledger_path: str = DEFAULT_COPY_LEDGER_PATH,
+            kol_ledger_path: str = DEFAULT_KOL_COPY_LEDGER_PATH,
         ):
             intents = discord.Intents.default()
             super().__init__(intents=intents)
@@ -1418,6 +1433,7 @@ if _DISCORD_PY_AVAILABLE:
             self.snapshot_path = snapshot_path
             self.ledger_path = ledger_path
             self.copy_ledger_path = copy_ledger_path
+            self.kol_ledger_path = kol_ledger_path
             self.tree = app_commands.CommandTree(self)
             self.synced_mode = "NONE"
             self.synced_count = 0
@@ -1468,10 +1484,15 @@ if _DISCORD_PY_AVAILABLE:
                 emb = _embed_from_dict(build_temp_embed_dict(snap))
                 await interaction.response.send_message(embed=emb)
 
-            @self.tree.command(name="copy", description="查看 $1,000 多空双轨 KOL 模拟跟单账本（净值/多空胜率/在途持仓/最近成交）")
+            @self.tree.command(name="copy", description="对比查看 $1,000 双轨模拟跟单账本（V5.4稳健 vs V5.5激进KOL狙击）")
             @app_commands.checks.cooldown(1, BOT_COOLDOWN_SECONDS, key=lambda i: i.user.id)
             async def copy_cmd(interaction: discord.Interaction):
-                emb = _embed_from_dict(build_copy_embed_dict(copy_ledger_path=bot_ref.copy_ledger_path))
+                emb = _embed_from_dict(
+                    build_copy_embed_dict(
+                        copy_ledger_path=bot_ref.copy_ledger_path,
+                        kol_ledger_path=bot_ref.kol_ledger_path,
+                    )
+                )
                 await interaction.response.send_message(embed=emb)
 
             @self.tree.command(name="ai", description="管理员私有：AI 首席策略师大白话盘中剧本（大盘/QQQ/SPY·VOO/SOXX）")

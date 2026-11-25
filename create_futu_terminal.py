@@ -8405,15 +8405,23 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
         "__PY_TPL_LEADERS_JSON__": leaders_json,
     }
     try:
-        import copy_trade_engine as _ct_term_mod
-        replacements["__PY_TPL_COPY_DRAWER_CSS__"] = _ct_term_mod.COPY_TRADE_DRAWER_CSS
-        replacements["__PY_TPL_COPY_DRAWER_HTML__"] = _ct_term_mod.render_copy_trade_drawer_html(
+        import copy_trade_kol_engine as _ct_dual_term_mod
+        replacements["__PY_TPL_COPY_DRAWER_CSS__"] = _ct_dual_term_mod.DUAL_COPY_DRAWER_CSS
+        replacements["__PY_TPL_COPY_DRAWER_HTML__"] = _ct_dual_term_mod.render_dual_track_copy_drawer_html(
             compact=True,
             drawer_id="termCopyTradeDrawer",
         )
     except Exception:
-        replacements["__PY_TPL_COPY_DRAWER_CSS__"] = ""
-        replacements["__PY_TPL_COPY_DRAWER_HTML__"] = ""
+        try:
+            import copy_trade_engine as _ct_term_mod
+            replacements["__PY_TPL_COPY_DRAWER_CSS__"] = _ct_term_mod.COPY_TRADE_DRAWER_CSS
+            replacements["__PY_TPL_COPY_DRAWER_HTML__"] = _ct_term_mod.render_copy_trade_drawer_html(
+                compact=True,
+                drawer_id="termCopyTradeDrawer",
+            )
+        except Exception:
+            replacements["__PY_TPL_COPY_DRAWER_CSS__"] = ""
+            replacements["__PY_TPL_COPY_DRAWER_HTML__"] = ""
     for _tok, _val in replacements.items():
         html = html.replace(_tok, _val)
     return html

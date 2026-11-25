@@ -8620,6 +8620,43 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
     except Exception as _ct_err:
         print(f"  [!] 📒 V5.4 模拟跟单引擎降级跳过: {_ct_err}")
 
+    # 6.946 V5.5 独立 $1,000 激进 KOL 狙击轨状态机 (双轨并行，物理隔离至 copy_trade_ledger_kol.json；干跑绝不写盘/外发)
+    try:
+        import copy_trade_kol_engine as _kol_eng
+        _kol_fut = locals().get("_fut_snap") or (
+            (_market_temperature or {}).get("futures") if isinstance(locals().get("_market_temperature"), dict) else {}
+        )
+        _kol_leaders = []
+        try:
+            from create_futu_terminal import compute_resilient_leaders_top5 as _calc_top5
+            _kol_leaders = _calc_top5(stocks_sorted, macro_data=macro_data) or []
+        except Exception:
+            _kol_leaders = []
+        _kol_res = _kol_eng.run_kol_copy_trade_cycle(
+            ai_predictions=_ct_ai_doc if isinstance(locals().get("_ct_ai_doc"), dict) else {},
+            live_quotes=_ct_live_quotes if isinstance(locals().get("_ct_live_quotes"), dict) else {},
+            earnings_map=earnings_map if isinstance(earnings_map, dict) else {},
+            market_regime=str((weather_info or {}).get("market_regime") or (_ct_ai_doc.get("market_regime") if isinstance(locals().get("_ct_ai_doc"), dict) else "") or ""),
+            vix_regime=vix_regime,
+            futures_data=_kol_fut if isinstance(_kol_fut, dict) else {},
+            resilient_leaders=_kol_leaders,
+            daily_sr_anchors=_sr_anchors_map if isinstance(locals().get("_sr_anchors_map"), dict) else {},
+            intraday_path_payload=_ip_res if isinstance(locals().get("_ip_res"), dict) else {},
+            session_code=session_code,
+            dry_run=_ct_is_dry if " _ct_is_dry" not in "" and "_ct_is_dry" in locals() else _external_alerts_disabled(),
+            alert_sender=(None if _external_alerts_disabled() else _ct_send_alert),
+        )
+        _kol_ldg = _kol_res.get("ledger") or {}
+        print(
+            f"[+] ⚡ V5.5 激进 KOL 狙击轨: 净值 ${_kol_ldg.get('total_equity', 1000.0):,.2f} "
+            f"({_kol_ldg.get('total_return_pct', 0.0):+.2f}%) | 持仓 {len(_kol_ldg.get('open_positions') or [])}/2 | "
+            f"本轮开仓 {len(_kol_res.get('opened_now') or [])} / 加仓 {len(_kol_res.get('addons_now') or [])} / "
+            f"落袋 {len(_kol_res.get('partials_now') or [])} / 平仓 {len(_kol_res.get('closed_now') or [])} "
+            f"[dry_run={_kol_res.get('dry_run')}, persisted={_kol_res.get('persisted')}]"
+        )
+    except Exception as _kol_err:
+        print(f"  [!] ⚡ V5.5 激进 KOL 狙击引擎降级跳过: {_kol_err}")
+
     try:
         import importlib, create_futu_terminal
         importlib.reload(create_futu_terminal)

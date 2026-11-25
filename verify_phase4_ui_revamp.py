@@ -314,8 +314,15 @@ def verify_desktop(browser):
     assert ct_drawer.evaluate("el => el.open"), "#termCopyTradeDrawer failed to expand"
     ct_txt = ct_drawer.inner_text()
     assert "$1,000" in ct_txt or "模拟跟单账本" in ct_txt, f"Unexpected #termCopyTradeDrawer text: {ct_txt[:120]!r}"
+    assert "V5.5 激进 KOL 狙击轨" in ct_txt and "V5.4 稳健基准轨" in ct_txt, "Missing dual-track PK cards in #termCopyTradeDrawer"
     assert "建议股数" not in ct_txt, "#termCopyTradeDrawer must NEVER contain 建议股数!"
     assert ct_drawer.locator("svg").count() >= 1, "#termCopyTradeDrawer missing inline SVG equity curve!"
+    ct_drawer.locator(".ct-track-tab[data-ct-tab='steady']").click()
+    page.wait_for_timeout(80)
+    assert ct_drawer.locator(".ct-track-panel[data-ct-panel='steady']").is_visible(), "V5.4 tab panel failed to show"
+    ct_drawer.locator(".ct-track-tab[data-ct-tab='kol']").click()
+    page.wait_for_timeout(80)
+    assert ct_drawer.locator(".ct-track-panel[data-ct-panel='kol']").is_visible(), "V5.5 KOL tab panel failed to show"
     assert_no_horizontal_overflow(page, 1440, "Desktop-Dark-CopyTradeDrawer")
     ct_drawer.locator("summary").click()
     page.wait_for_timeout(100)

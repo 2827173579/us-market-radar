@@ -7301,14 +7301,22 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
         vix_css, vix_pill_html, vix_js = "", "", ""
 
     try:
-        import copy_trade_engine as _ct_html_mod
-        copy_drawer_css = _ct_html_mod.COPY_TRADE_DRAWER_CSS
-        copy_drawer_html = _ct_html_mod.render_copy_trade_drawer_html(
+        import copy_trade_kol_engine as _ct_dual_mod
+        copy_drawer_css = _ct_dual_mod.DUAL_COPY_DRAWER_CSS
+        copy_drawer_html = _ct_dual_mod.render_dual_track_copy_drawer_html(
             compact=False,
             drawer_id="copyTradeLedgerDrawer",
         )
     except Exception:
-        copy_drawer_css, copy_drawer_html = "", ""
+        try:
+            import copy_trade_engine as _ct_html_mod
+            copy_drawer_css = _ct_html_mod.COPY_TRADE_DRAWER_CSS
+            copy_drawer_html = _ct_html_mod.render_copy_trade_drawer_html(
+                compact=False,
+                drawer_id="copyTradeLedgerDrawer",
+            )
+        except Exception:
+            copy_drawer_css, copy_drawer_html = "", ""
     _vr_spot = _vix_regime.get('vix_spot') if isinstance(_vix_regime, dict) else None
     _vr_vxn = _vix_regime.get('vxn_spot') if isinstance(_vix_regime, dict) else None
     _vr_spread = _vix_regime.get('vxn_vix_spread') if isinstance(_vix_regime, dict) else None
