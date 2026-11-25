@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795565321.591,
-  "updated_at_et": "11-24 19:08 ET",
-  "updated_at_kst": "09:08 KST",
+  "updated_at_ts": 1795565418.403,
+  "updated_at_et": "11-24 19:10 ET",
+  "updated_at_kst": "09:10 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2227,6 +2227,13 @@
         "pub_ts": 1795556449.0
       },
       {
+        "title": "HPE (HPE) Stock Price Sinks As Q4 Earnings Clash With Margin Fears",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/hpe-hpe-stock-price-sinks-232134308.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 18:21 ET",
+        "pub_ts": 1795562494.0
+      },
+      {
         "title": "Dell Just Reported Earnings and Raised Its Forecast by $10 Billion. Is the Stock a Buy After Tuesday's Selloff?",
         "url": "https://www.fool.com/investing/2026/11/24/dell-just-reported-earnings-and-raised-its-forecast-by-usd10-billion-is-the-stock-a-buy-after-tuesday-s-selloff/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2239,13 +2246,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 16:45 ET",
         "pub_ts": 1795556754.0
-      },
-      {
-        "title": "Nvidia, Anthropic, Micron, HPE, Analog Devices, Insmed, Dollar Tree, and More Stocks That Explain Today’s Market",
-        "url": "https://finance.yahoo.com/m/f7fa0ed2-2c68-3b80-9261-c35639090d03/nvidia%2C-anthropic%2C-micron%2C.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 16:33 ET",
-        "pub_ts": 1795555980.0
       }
     ],
     "DELL": [
@@ -2278,11 +2278,11 @@
         "pub_ts": 1795563053.0
       },
       {
-        "title": "DELL Stock Gains After-Hours As AI Server Boom Leads Record Q3, Prompts Third Annual Forecast Hike",
-        "url": "https://stocktwits.com/news-articles/markets/equity/dell-stock-gains-after-hours-as-ai-server-boom-leads-record-q3-prompts-third-annual-forecast-hike/cNbsV6sR9lG?.tsrc=rss",
+        "title": "Dell in Strong Position With No Signs of a Slowdown, CFO Says",
+        "url": "https://finance.yahoo.com/video/dell-strong-position-no-signs-232228501.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 17:31 ET",
-        "pub_ts": 1795559462.0
+        "time": "11-24 18:22 ET",
+        "pub_ts": 1795562548.0
       }
     ],
     "OKLO": [
@@ -3064,6 +3064,13 @@
     ],
     "V": [
       {
+        "title": "iwoca and Visa launch credit card to widen SME funding choice",
+        "url": "https://finance.yahoo.com/small-business/articles/iwoca-visa-launch-credit-card-000100356.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 19:01 ET",
+        "pub_ts": 1795564860.0
+      },
+      {
         "title": "Visa, Mastercard Seen Gaining From Expansion of Tokenized Payments, UBS Says",
         "url": "https://finance.yahoo.com/technology/articles/visa-mastercard-seen-gaining-expansion-180943092.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3090,13 +3097,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 06:01 ET",
         "pub_ts": 1795518117.0
-      },
-      {
-        "title": "Klarna expands Visa partnership across North America and Europe",
-        "url": "https://www.electronicpaymentsinternational.com/news/klarna-expands-visa-partnership-across-north-america-and-europe/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 04:30 ET",
-        "pub_ts": 1795512607.0
       }
     ],
     "CAT": [
@@ -3338,37 +3338,37 @@
     "AXTI": 1795564764.3017502,
     "NASA": 1795565221.221426,
     "LUNR": 1795565221.221426,
-    "TSLA": 1795563863.0994833,
+    "TSLA": 1795565418.4031253,
     "AXP": 1795565221.221426,
     "RKLB": 1795565221.221426,
     "KO": 1795565221.221426,
     "FLY": 1795565221.221426,
     "INTC": 1795565221.221426,
-    "VRT": 1795563863.0994833,
-    "HPE": 1795563863.0994833,
-    "DELL": 1795563863.0994833,
-    "OKLO": 1795563863.0994833,
-    "CEG": 1795563863.0994833,
-    "FPS": 1795563863.0994833,
+    "VRT": 1795565418.4031253,
+    "HPE": 1795565418.4031253,
+    "DELL": 1795565418.4031253,
+    "OKLO": 1795565418.4031253,
+    "CEG": 1795565418.4031253,
+    "FPS": 1795565418.4031253,
     "MU": 1795564764.3017502,
     "SKHY": 1795564764.3017502,
     "WDC": 1795564764.3017502,
-    "STX": 1795563863.0994833,
-    "MSTR": 1795563863.0994833,
-    "SNDK": 1795563863.0994833,
+    "STX": 1795565418.4031253,
+    "MSTR": 1795565418.4031253,
+    "SNDK": 1795565418.4031253,
     "BTC-USD": 1795564764.3017502,
-    "CRWD": 1795563863.0994833,
-    "ORCL": 1795563863.0994833,
-    "COIN": 1795563863.0994833,
-    "LLY": 1795563863.0994833,
-    "MRNA": 1795563863.0994833,
+    "CRWD": 1795565418.4031253,
+    "ORCL": 1795565418.4031253,
+    "COIN": 1795565418.4031253,
+    "LLY": 1795565418.4031253,
+    "MRNA": 1795565418.4031253,
     "NKE": 1795563966.151198,
-    "MCD": 1795563863.0994833,
+    "MCD": 1795565418.4031253,
     "PEP": 1795563966.151198,
     "XOM": 1795563966.151198,
     "JPM": 1795563966.151198,
     "WMT": 1795563966.151198,
-    "V": 1795563863.0994833,
+    "V": 1795565418.4031253,
     "CAT": 1795563966.151198,
     "FN": 1795564764.3017502,
     "GLW": 1795565221.221426,
