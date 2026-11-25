@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795603413.729,
-  "updated_at_et": "11-25 05:43 ET",
-  "updated_at_kst": "19:43 KST",
+  "updated_at_ts": 1795603460.608,
+  "updated_at_et": "11-25 05:44 ET",
+  "updated_at_kst": "19:44 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -17,7 +17,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 167,
+      "minutes_left": 166,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -36,7 +36,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 167,
+      "minutes_left": 166,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -2650,6 +2650,20 @@
     ],
     "BTC-USD": [
       {
+        "title": "Bitcoin extends losses below $59,000 as ETF outflows weigh",
+        "url": "https://finance.yahoo.com/markets/crypto/articles/bitcoin-extends-losses-below-59-064934005.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 01:49 ET",
+        "pub_ts": 1795589374.0
+      },
+      {
+        "title": "Michael Saylor Bought $100M In Bitcoin Before Strategy Did, Says The Man Who Convinced Him To Buy It — Now That Bet Is Around $589M",
+        "url": "https://stocktwits.com/news-articles/markets/equity/michael-saylor-100m-bitcoin-purchase-589m-bet/cNbHOY3R9lH?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 05:22 ET",
+        "pub_ts": 1795602143.0
+      },
+      {
         "title": "Bitcoin Oversold in Longest Bear Market on Record, but AI Risks Threaten Recovery",
         "url": "https://www.ccn.com/news/crypto/bitcoin-oversold-record-bear-market-ai-risks/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2669,20 +2683,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 04:05 ET",
         "pub_ts": 1795597513.0
-      },
-      {
-        "title": "IREN Selloff Draws Attention: Grant Cardone Joins Retail Bulls Asking Where The Bottom Is",
-        "url": "https://stocktwits.com/news-articles/markets/equity/iren-selloff-draws-attention-grant-cardone-retail-bulls-asking-where-the-bottom-is/cNbHJRhR9lq?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 03:43 ET",
-        "pub_ts": 1795596201.0
-      },
-      {
-        "title": "LIVE – Crypto News Today: Bitcoin Hit by Trump Tariff Threat and US Treasury Cyberattack as IBIT Bleeds Billions",
-        "url": "https://cryptonews.com/news/crypto-news-bitcoin-trump-tariffs-ibit-etf-outflows/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 03:05 ET",
-        "pub_ts": 1795593923.0
       }
     ],
     "CRWD": [
@@ -3382,11 +3382,11 @@
     "FPS": 1795602595.177179,
     "MU": 1795603313.8519511,
     "SKHY": 1795603313.8519511,
-    "WDC": 1795601927.5303795,
+    "WDC": 1795603460.6078935,
     "STX": 1795602595.177179,
     "MSTR": 1795602595.177179,
     "SNDK": 1795602595.177179,
-    "BTC-USD": 1795601927.5303795,
+    "BTC-USD": 1795603460.6078935,
     "CRWD": 1795602595.177179,
     "ORCL": 1795602595.177179,
     "COIN": 1795602595.177179,
@@ -3422,10 +3422,10 @@
   },
   "calendar_banner": {
     "level": "upcoming",
-    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 167 分钟（11-25 08:30 ET / 22:30 KST）",
+    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 166 分钟（11-25 08:30 ET / 22:30 KST）",
     "detail": "前值 0.3% ｜ 预期 0.3% ｜ 临近公布前15分钟将自动触发防插针预警",
     "event_name": "美国10月核心PCE物价指数环比",
-    "minutes_left": 167,
+    "minutes_left": 166,
     "opex_shield": {
       "date": "2026-11-25",
       "active": false,
