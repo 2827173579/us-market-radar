@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795646555.668,
-  "updated_at_et": "11-25 17:42 ET",
-  "updated_at_kst": "07:42 KST",
+  "updated_at_ts": 1795646594.899,
+  "updated_at_et": "11-25 17:43 ET",
+  "updated_at_kst": "07:43 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -1801,6 +1801,13 @@
         "pub_ts": 1795640239.0
       },
       {
+        "title": "Stock Market Today, Nov. 25: SpaceX Gets Historic FCC Approval for 1 Million Satellites. Is This Its Next Growth Engine?",
+        "url": "https://www.fool.com/coverage/stock-market-today/2026/11/25/stock-market-today-nov-25-spacex-gets-historic-fcc-approval-for-1-million-satellites-is-this-its-next-growth-engine/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 17:05 ET",
+        "pub_ts": 1795644352.0
+      },
+      {
         "title": "SpaceX Stock Surges on AI Satellite Approval and Trump Accounts Plan",
         "url": "https://beincrypto.com/spacex-stock-ai-satellites-trump-accounts/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1820,13 +1827,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 16:10 ET",
         "pub_ts": 1795641010.0
-      },
-      {
-        "title": "FCC approves SpaceX plan to put AI data centers in space",
-        "url": "https://finance.yahoo.com/technology/ai/articles/fcc-approves-spacex-plan-put-205644117.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 15:56 ET",
-        "pub_ts": 1795640204.0
       }
     ],
     "ASTS": [
@@ -3350,25 +3350,25 @@
     "AMZN": 1795646056.150761,
     "CRWV": 1795646056.150761,
     "NBIS": 1795646056.150761,
-    "APLD": 1795645063.2838955,
-    "VST": 1795645063.2838955,
-    "BE": 1795645063.2838955,
-    "CRDO": 1795645063.2838955,
-    "COHR": 1795645063.2838955,
+    "APLD": 1795646594.8988879,
+    "VST": 1795646594.8988879,
+    "BE": 1795646594.8988879,
+    "CRDO": 1795646594.8988879,
+    "COHR": 1795646594.8988879,
     "MRVL": 1795646056.150761,
     "LITE": 1795646056.150761,
-    "AAOI": 1795645063.2838955,
-    "SPCX": 1795645063.2838955,
-    "ASTS": 1795645063.2838955,
+    "AAOI": 1795646594.8988879,
+    "SPCX": 1795646594.8988879,
+    "ASTS": 1795646594.8988879,
     "AXTI": 1795646056.150761,
-    "NASA": 1795645063.2838955,
-    "LUNR": 1795645063.2838955,
+    "NASA": 1795646594.8988879,
+    "LUNR": 1795646594.8988879,
     "TSLA": 1795645226.53532,
-    "AXP": 1795645063.2838955,
-    "RKLB": 1795645063.2838955,
-    "KO": 1795645063.2838955,
-    "FLY": 1795645063.2838955,
-    "INTC": 1795645063.2838955,
+    "AXP": 1795646594.8988879,
+    "RKLB": 1795646594.8988879,
+    "KO": 1795646594.8988879,
+    "FLY": 1795646594.8988879,
+    "INTC": 1795646594.8988879,
     "VRT": 1795645226.53532,
     "HPE": 1795645226.53532,
     "DELL": 1795645226.53532,
@@ -3396,7 +3396,7 @@
     "V": 1795645226.53532,
     "CAT": 1795645349.6336482,
     "FN": 1795646056.150761,
-    "GLW": 1795645063.2838955,
+    "GLW": 1795646594.8988879,
     "ANT": 1795645349.6336482,
     "XAUUSD": 1795645349.6336482,
     "KOSPI": 1795646056.150761
