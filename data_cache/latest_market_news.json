@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795594287.47,
-  "updated_at_et": "11-25 03:11 ET",
-  "updated_at_kst": "17:11 KST",
+  "updated_at_ts": 1795594332.647,
+  "updated_at_et": "11-25 03:12 ET",
+  "updated_at_kst": "17:12 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -17,7 +17,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 319,
+      "minutes_left": 318,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -36,13 +36,27 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 319,
+      "minutes_left": 318,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
     }
   ],
   "macro_flashes": [
+    {
+      "id": "20261125161200835800",
+      "title": "油市可能押错方向？中东原油出口已经连续数周下降",
+      "summary": "油价高位回落，反映市场对中东供应恢复的乐观预期。但最新数据显示，中东原油出口已明显低于冲突前水平，前期运输恢复带来的供应缓冲可能逐渐消失。点击查看...",
+      "keywords": [
+        "中东",
+        "原油"
+      ],
+      "pub_ts": 1795594320.0,
+      "time_et": "11-25 03:12 ET",
+      "time_bj": "16:12 BJ",
+      "time_kst": "17:12 KST",
+      "time_display": "03:12 ET / 16:12 BJ"
+    },
     {
       "id": "20261125160855559800",
       "title": "港股收盘，恒生指数收跌1.14%，恒生科技指数收跌2.56%；芯片、光通信、锂电池、PC…",
@@ -370,21 +384,6 @@
       "time_bj": "10:56 BJ",
       "time_kst": "11:56 KST",
       "time_display": "21:56 ET / 10:56 BJ"
-    },
-    {
-      "id": "20261125102258581800",
-      "title": "华尔街开始布局对冲：美联储有可能“加息加过头”！",
-      "summary": "美债市场意外出现大规模利率对冲交易，投资者担忧美联储持续加息叠加科技股抛售或拖累美国经济，部分交易押注2028年初利率将显著下降。点击查看…",
-      "keywords": [
-        "美联储",
-        "加息",
-        "美债"
-      ],
-      "pub_ts": 1795573378.0,
-      "time_et": "11-24 21:22 ET",
-      "time_bj": "10:22 BJ",
-      "time_kst": "11:22 KST",
-      "time_display": "21:22 ET / 10:22 BJ"
     }
   ],
   "ticker_news": {
@@ -3419,10 +3418,10 @@
   },
   "calendar_banner": {
     "level": "upcoming",
-    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 319 分钟（11-25 08:30 ET / 22:30 KST）",
+    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 318 分钟（11-25 08:30 ET / 22:30 KST）",
     "detail": "前值 0.3% ｜ 预期 0.3% ｜ 临近公布前15分钟将自动触发防插针预警",
     "event_name": "美国10月核心PCE物价指数环比",
-    "minutes_left": 319,
+    "minutes_left": 318,
     "opex_shield": {
       "date": "2026-11-25",
       "active": false,
