@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795642011.653,
-  "updated_at_et": "11-25 16:26 ET",
-  "updated_at_kst": "06:26 KST",
+  "updated_at_ts": 1795642049.609,
+  "updated_at_et": "11-25 16:27 ET",
+  "updated_at_kst": "06:27 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -1751,6 +1751,13 @@
     ],
     "AAOI": [
       {
+        "title": "Applied Optoelectronics to Present at the Raymond James TMT & Consumer Conference",
+        "url": "https://finance.yahoo.com/technology/articles/applied-optoelectronics-present-raymond-james-211000385.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 16:10 ET",
+        "pub_ts": 1795641000.0
+      },
+      {
         "title": "Supply Deal Might Change The Case For Investing In Applied Optoelectronics (AAOI)",
         "url": "https://finance.yahoo.com/markets/stocks/articles/supply-deal-might-change-case-110727461.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1777,18 +1784,11 @@
         "source": "Yahoo Finance",
         "time": "11-24 09:44 ET",
         "pub_ts": 1795531449.0
-      },
-      {
-        "title": "AOI Announces Multi-Year Long-Term Agreement with Tier-1 Hyperscale Datacenter Customer",
-        "url": "https://finance.yahoo.com/technology/ai/articles/aoi-announces-multi-long-term-120000386.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 07:00 ET",
-        "pub_ts": 1795521600.0
       }
     ],
     "SPCX": [
       {
-        "title": "SpaceX, Elon Musk to give one share each to active Trump accounts",
+        "title": "SpaceX, Elon Musk to give one share each to active Trump Accounts",
         "url": "https://finance.yahoo.com/markets/article/spacex-elon-musk-to-give-one-share-each-to-active-trump-accounts-205719872.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-25 15:57 ET",
@@ -1809,18 +1809,18 @@
         "pub_ts": 1795639776.0
       },
       {
+        "title": "SpaceX stock price crashes on concerns over compute demand",
+        "url": "https://blockspace.media/short/spacex-stock-price-crashes-on-concerns-over-compute-demand/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 15:32 ET",
+        "pub_ts": 1795638730.0
+      },
+      {
         "title": "Is Space Exploration Technologies (SPCX) Cheap As Tesla Merger Talks Raise Valuation Questions?",
         "url": "https://finance.yahoo.com/markets/stocks/articles/space-exploration-technologies-spcx-cheap-201121157.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-25 15:11 ET",
         "pub_ts": 1795637481.0
-      },
-      {
-        "title": "SpaceX to contribute one Class A share to every Trump Account",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/spacex-contribute-one-class-share-200240603.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 15:02 ET",
-        "pub_ts": 1795636960.0
       }
     ],
     "ASTS": [
@@ -2084,6 +2084,13 @@
     ],
     "KO": [
       {
+        "title": "Coca-Cola Has Raised Its Dividend 64 Straight Years. Here's What $10,000 Will Pay You in 2027.",
+        "url": "https://www.fool.com/investing/2026/11/25/coca-cola-has-raised-its-dividend-64-straight-years-what-10000-will-pay-you-in-2027/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 16:07 ET",
+        "pub_ts": 1795640821.0
+      },
+      {
         "title": "Prediction: Coca-Cola Stock Will Close 2026 Over $100 per Share. Here’s Why It’s a No-Brainer Buy for 2027.",
         "url": "https://www.fool.com/investing/2026/11/25/prediction-coca-cola-stock-will-close-2026-over-100-per-share-heres-why-its-a-no-brainer-buy-for-2027/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2110,13 +2117,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 21:47 ET",
         "pub_ts": 1795574825.0
-      },
-      {
-        "title": "Prediction: Here's What $10,000 in Coca-Cola Could Pay You in Dividends by 2036",
-        "url": "https://www.fool.com/investing/2026/11/24/prediction-heres-what-10000-in-coca-cola-could-pay-you-in-dividends-by-2036/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 17:33 ET",
-        "pub_ts": 1795559582.0
       }
     ],
     "FLY": [
@@ -3344,25 +3344,25 @@
     "AMZN": 1795641392.1149032,
     "CRWV": 1795641392.1149032,
     "NBIS": 1795641392.1149032,
-    "APLD": 1795640549.2440906,
-    "VST": 1795640549.2440906,
-    "BE": 1795640549.2440906,
-    "CRDO": 1795640549.2440906,
-    "COHR": 1795640549.2440906,
+    "APLD": 1795642049.6085851,
+    "VST": 1795642049.6085851,
+    "BE": 1795642049.6085851,
+    "CRDO": 1795642049.6085851,
+    "COHR": 1795642049.6085851,
     "MRVL": 1795641436.9650028,
     "LITE": 1795641436.9650028,
-    "AAOI": 1795640549.2440906,
-    "SPCX": 1795640549.2440906,
-    "ASTS": 1795640549.2440906,
+    "AAOI": 1795642049.6085851,
+    "SPCX": 1795642049.6085851,
+    "ASTS": 1795642049.6085851,
     "AXTI": 1795641392.1149032,
-    "NASA": 1795640549.2440906,
-    "LUNR": 1795640549.2440906,
+    "NASA": 1795642049.6085851,
+    "LUNR": 1795642049.6085851,
     "TSLA": 1795640679.6591523,
-    "AXP": 1795640549.2440906,
-    "RKLB": 1795640549.2440906,
-    "KO": 1795640549.2440906,
-    "FLY": 1795640549.2440906,
-    "INTC": 1795640549.2440906,
+    "AXP": 1795642049.6085851,
+    "RKLB": 1795642049.6085851,
+    "KO": 1795642049.6085851,
+    "FLY": 1795642049.6085851,
+    "INTC": 1795642049.6085851,
     "VRT": 1795640679.6591523,
     "HPE": 1795640679.6591523,
     "DELL": 1795640679.6591523,
@@ -3390,7 +3390,7 @@
     "V": 1795640679.6591523,
     "CAT": 1795640769.0470114,
     "FN": 1795641436.9650028,
-    "GLW": 1795640549.2440906,
+    "GLW": 1795642049.6085851,
     "ANT": 1795640769.0470114,
     "XAUUSD": 1795640769.0470114,
     "KOSPI": 1795641392.1149032
