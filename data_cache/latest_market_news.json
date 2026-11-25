@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795606858.096,
-  "updated_at_et": "11-25 06:40 ET",
-  "updated_at_kst": "20:40 KST",
+  "updated_at_ts": 1795606903.968,
+  "updated_at_et": "11-25 06:41 ET",
+  "updated_at_kst": "20:41 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -17,7 +17,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 110,
+      "minutes_left": 109,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -36,13 +36,27 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 110,
+      "minutes_left": 109,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
     }
   ],
   "macro_flashes": [
+    {
+      "id": "20261125194018675800",
+      "title": "DeepTalk：103年前的崩盘，正在被美联储一步步复刻",
+      "summary": "“借钱”和“印钞”本是一回事，美联储今年狂扫3800亿短债创纪录，复刻103年前崩盘剧本。美债逼近临界点，银行故障频发背后藏着什么？点击查看…",
+      "keywords": [
+        "美联储",
+        "美债"
+      ],
+      "pub_ts": 1795606818.0,
+      "time_et": "11-25 06:40 ET",
+      "time_bj": "19:40 BJ",
+      "time_kst": "20:40 KST",
+      "time_display": "06:40 ET / 19:40 BJ"
+    },
     {
       "id": "20261125193610129800",
       "title": "国际金难言已至底部？能源市场进入进入“更脆弱的平衡” | Live分析更新中",
@@ -373,20 +387,6 @@
       "time_bj": "14:08 BJ",
       "time_kst": "15:08 KST",
       "time_display": "01:08 ET / 14:08 BJ"
-    },
-    {
-      "id": "20261125135247611800",
-      "title": "摩根大通2027展望：铜铝没跌完，黄金看向4500美元，标普500目标仅8200点",
-      "summary": "摩根大通预计铜铝供应过剩、调整未止，黄金深度回调后接近周期性底部；标普500目标8200点，低于高盛和大摩的8700点，美联储紧缩成主要制约。点击查看...",
-      "keywords": [
-        "美联储",
-        "标普"
-      ],
-      "pub_ts": 1795585967.0,
-      "time_et": "11-25 00:52 ET",
-      "time_bj": "13:52 BJ",
-      "time_kst": "14:52 KST",
-      "time_display": "00:52 ET / 13:52 BJ"
     }
   ],
   "ticker_news": {
@@ -3421,10 +3421,10 @@
   },
   "calendar_banner": {
     "level": "upcoming",
-    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 110 分钟（11-25 08:30 ET / 22:30 KST）",
+    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 109 分钟（11-25 08:30 ET / 22:30 KST）",
     "detail": "前值 0.3% ｜ 预期 0.3% ｜ 临近公布前15分钟将自动触发防插针预警",
     "event_name": "美国10月核心PCE物价指数环比",
-    "minutes_left": 110,
+    "minutes_left": 109,
     "opex_shield": {
       "date": "2026-11-25",
       "active": false,
