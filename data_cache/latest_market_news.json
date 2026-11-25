@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795610311.236,
-  "updated_at_et": "11-25 07:38 ET",
-  "updated_at_kst": "21:38 KST",
+  "updated_at_ts": 1795610357.976,
+  "updated_at_et": "11-25 07:39 ET",
+  "updated_at_kst": "21:39 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -17,7 +17,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 52,
+      "minutes_left": 51,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -36,7 +36,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 52,
+      "minutes_left": 51,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -3055,6 +3055,13 @@
     ],
     "WMT": [
       {
+        "title": "Market Chatter: Walmart-Backed PhonePe Resumes IPO Process; Seeks Up to $15 Billion in Valuation",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/market-chatter-walmart-backed-phonepe-121130205.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 07:11 ET",
+        "pub_ts": 1795608690.0
+      },
+      {
         "title": "State Street Consumer Staples SPDR (XLP) Adds Walmart and Costco on Nov. 23",
         "url": "https://finance.yahoo.com/markets/stocks/articles/state-street-consumer-staples-spdr-110513471.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3081,13 +3088,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 00:12 ET",
         "pub_ts": 1795583550.0
-      },
-      {
-        "title": "Walmart’s Robot Warehouse Partner Symbotic Just Had Its First Profitable Year",
-        "url": "https://247wallst.com/investing/2026/11/24/walmarts-robot-warehouse-partner-symbotic-just-had-its-first-profitable-year/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 12:22 ET",
-        "pub_ts": 1795540937.0
       }
     ],
     "V": [
@@ -3129,6 +3129,13 @@
     ],
     "CAT": [
       {
+        "title": "The AI Stock Slump Is Crushing Caterpillar. Here’s Why I Like the Stock More Than Ever.",
+        "url": "https://www.fool.com/investing/2026/11/25/the-ai-stock-slump-is-crushing-caterpillar-here-s-why-i-like-the-stock-more-than-ever/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 07:10 ET",
+        "pub_ts": 1795608602.0
+      },
+      {
         "title": "Can Caterpillar Stock Jump 50%?",
         "url": "https://www.trefis.com/stock/cat/articles/628403/can-caterpillar-stock-jump-50/2026-11-24?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3155,13 +3162,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 06:03 ET",
         "pub_ts": 1795431807.0
-      },
-      {
-        "title": "Deere Has More Than Doubled Its Dividend Since 2020, but the Raises Have Stopped",
-        "url": "https://247wallst.com/investing/2026/11/24/deere-has-more-than-doubled-its-dividend-since-2020-but-the-raises-have-stopped/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 14:32 ET",
-        "pub_ts": 1795548771.0
       }
     ],
     "FN": [
@@ -3240,11 +3240,18 @@
     ],
     "ANT": [
       {
-        "title": "Anthropic stock sinks further below IPO price as investors sour on the Amodei AI bet",
-        "url": "https://finance.yahoo.com/markets/stocks/article/anthropic-stock-sinks-further-below-ipo-price-as-investors-sour-on-the-amodei-ai-bet-100918869.html?.tsrc=rss",
+        "title": "AI just solved something no human can understand",
+        "url": "https://finance.yahoo.com/video/ai-just-solved-something-no-120000560.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-25 05:09 ET",
-        "pub_ts": 1795601358.0
+        "time": "11-25 07:00 ET",
+        "pub_ts": 1795608000.0
+      },
+      {
+        "title": "GSK (LSE:GSK) Faces A New Risk As Its AI Supplier Turns Drug Rival",
+        "url": "https://finance.yahoo.com/healthcare/articles/gsk-lse-gsk-faces-risk-121053588.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 07:10 ET",
+        "pub_ts": 1795608653.0
       },
       {
         "title": "Was Jensen’s $25M White House Donation ‘the Cheapest Put Option’ Ever Bought?",
@@ -3266,13 +3273,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 06:14 ET",
         "pub_ts": 1795605293.0
-      },
-      {
-        "title": "Anthropic Stock Is 31% Below Its Day 1 High. What Should Long-Term Investors Do?",
-        "url": "https://www.fool.com/investing/2026/11/25/anthropic-stock-is-still-31-below-its-day-1-high-what-should-long-term-investors-do/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 06:05 ET",
-        "pub_ts": 1795604702.0
       }
     ],
     "XAUUSD": [
@@ -3392,16 +3392,16 @@
     "MRNA": 1795610260.4442298,
     "NKE": 1795610260.4442298,
     "MCD": 1795610260.4442298,
-    "PEP": 1795608827.5293899,
-    "XOM": 1795608827.5293899,
-    "JPM": 1795608827.5293899,
-    "WMT": 1795608827.5293899,
+    "PEP": 1795610357.9759705,
+    "XOM": 1795610357.9759705,
+    "JPM": 1795610357.9759705,
+    "WMT": 1795610357.9759705,
     "V": 1795610260.4442298,
-    "CAT": 1795608827.5293899,
+    "CAT": 1795610357.9759705,
     "FN": 1795609448.843931,
     "GLW": 1795610160.9323542,
-    "ANT": 1795608827.5293899,
-    "XAUUSD": 1795608827.5293899,
+    "ANT": 1795610357.9759705,
+    "XAUUSD": 1795610357.9759705,
     "KOSPI": 1795609398.3492033
   },
   "opex_shield": {
@@ -3420,10 +3420,10 @@
   },
   "calendar_banner": {
     "level": "upcoming",
-    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 52 分钟（11-25 08:30 ET / 22:30 KST）",
+    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 51 分钟（11-25 08:30 ET / 22:30 KST）",
     "detail": "前值 0.3% ｜ 预期 0.3% ｜ 临近公布前15分钟将自动触发防插针预警",
     "event_name": "美国10月核心PCE物价指数环比",
-    "minutes_left": 52,
+    "minutes_left": 51,
     "opex_shield": {
       "date": "2026-11-25",
       "active": false,
