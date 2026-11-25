@@ -1,5 +1,5 @@
 {
-  "updated_at_ts": 1795623136.194,
+  "updated_at_ts": 1795623179.776,
   "updated_at_et": "11-25 11:12 ET",
   "updated_at_kst": "01:12 KST",
   "macro_calendar": [
@@ -831,6 +831,13 @@
     ],
     "TSM": [
       {
+        "title": "TSMC proposes $22.6B advanced wafer facility in Texas",
+        "url": "https://www.manufacturingdive.com/news/tsmc-proposes-226b-advanced-wafer-fab-texas-AI-semiconductors/875671/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 10:48 ET",
+        "pub_ts": 1795621721.0
+      },
+      {
         "title": "TSMC Stocks Slide 6.65% as Taiwan Lands on US Tariff List",
         "url": "https://finance.yahoo.com/markets/stocks/articles/tsmc-stocks-slide-6-65-153357532.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -857,13 +864,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 08:00 ET",
         "pub_ts": 1795611601.0
-      },
-      {
-        "title": "Huang Boost Fades Quickly as AI Fears Sink TSMC, SK Hynix Shares",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/huang-boost-fades-quickly-ai-040320019.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 23:03 ET",
-        "pub_ts": 1795579400.0
       }
     ],
     "VIXY": [
@@ -1178,6 +1178,13 @@
         "pub_ts": 1795617376.0
       },
       {
+        "title": "Amazon and Meta Face Major Showdown Over the Future of AI Shopping",
+        "url": "https://finance.yahoo.com/technology/ai/articles/amazon-meta-face-major-showdown-155254367.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 10:52 ET",
+        "pub_ts": 1795621974.0
+      },
+      {
         "title": "Prediction: Meta Could Be One of the Biggest AI Winners Over the Next 5 Years",
         "url": "https://247wallst.com/investing/2026/11/25/prediction-meta-could-be-one-of-the-biggest-ai-winners-over-the-next-5-years/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1190,13 +1197,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 09:10 ET",
         "pub_ts": 1795615818.0
-      },
-      {
-        "title": "Circus Enters the UK; Meta Launches CA-1 in London",
-        "url": "https://finance.yahoo.com/technology/ai/articles/circus-enters-uk-meta-launches-133400578.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 08:34 ET",
-        "pub_ts": 1795613640.0
       }
     ],
     "GOOGL": [
@@ -1208,11 +1208,25 @@
         "pub_ts": 1795610400.0
       },
       {
-        "title": "AI just solved something no human can understand",
-        "url": "https://finance.yahoo.com/video/ai-just-solved-something-no-120000560.html?.tsrc=rss",
+        "title": "Alphabet Stocks Drop 5.56% as Credit Default Swaps Hit Record",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/alphabet-stocks-drop-5-56-154523518.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-25 07:00 ET",
-        "pub_ts": 1795608000.0
+        "time": "11-25 10:45 ET",
+        "pub_ts": 1795621523.0
+      },
+      {
+        "title": "Microsoft Stocks Fall 2.53% as Hyperscalers Join AI Selloff",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/microsoft-stocks-fall-2-53-154006144.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 10:40 ET",
+        "pub_ts": 1795621206.0
+      },
+      {
+        "title": "Alphabet Falls 4% on AI Credit Fears as Strategist Warns Capex Is “As Good as It Gets”",
+        "url": "https://www.tikr.com/blog/alphabet-falls-4-on-ai-credit-fears-as-strategist-warns-capex-is-as-good-as-it-gets?ref=yahoofinance&tlnk=yf-261125-pwcg7rgj&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 10:39 ET",
+        "pub_ts": 1795621167.0
       },
       {
         "title": "TeraWulf’s $19 Billion Anthropic Deal: “That Debt Is Guaranteed by Google.” That’s a Big Risk for Alphabet",
@@ -1220,23 +1234,16 @@
         "source": "Yahoo Finance",
         "time": "11-25 10:36 ET",
         "pub_ts": 1795621002.0
-      },
-      {
-        "title": "Alphabet Is Most Beat Down AI Company",
-        "url": "https://247wallst.com/investing/2026/11/25/alphabet-is-most-beat-down-ai-company/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 10:27 ET",
-        "pub_ts": 1795620435.0
-      },
-      {
-        "title": "Google Ends $75 Million News Deal Amid Regulatory Fight",
-        "url": "https://finance.yahoo.com/media-advertising/articles/google-ends-75-million-news-150706065.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 10:07 ET",
-        "pub_ts": 1795619226.0
       }
     ],
     "MSFT": [
+      {
+        "title": "Microsoft Stocks Fall 2.53% as Hyperscalers Join AI Selloff",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/microsoft-stocks-fall-2-53-154006144.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 10:40 ET",
+        "pub_ts": 1795621206.0
+      },
       {
         "title": "Stirlingshire Investments Appoints Daniel Gicklhorn as Chief Technology Officer",
         "url": "https://finance.yahoo.com/technology/articles/stirlingshire-investments-appoints-daniel-gicklhorn-151300914.html?.tsrc=rss",
@@ -1264,23 +1271,9 @@
         "source": "Yahoo Finance",
         "time": "11-25 09:29 ET",
         "pub_ts": 1795616940.0
-      },
-      {
-        "title": "Global Risk Analysis Management Market Report 2026: Size, Share, Trends, and Forecast to 2030 | Capitalize on AI and Real-Time Risk with Microsoft, IBM, Oracle, SAP, and ServiceNow",
-        "url": "https://finance.yahoo.com/technology/ai/articles/global-risk-analysis-management-market-142700333.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 09:27 ET",
-        "pub_ts": 1795616820.0
       }
     ],
     "AAPL": [
-      {
-        "title": "Alphabet Is Most Beat Down AI Company",
-        "url": "https://247wallst.com/investing/2026/11/25/alphabet-is-most-beat-down-ai-company/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 10:27 ET",
-        "pub_ts": 1795620435.0
-      },
       {
         "title": "The Next Big Healthcare Revolution Is Already Here. This Stock Could Cash In.",
         "url": "https://www.fool.com/investing/2026/11/25/the-next-big-healthcare-revolution-is-already-here-this-stock-could-cash-in/?.tsrc=rss",
@@ -1308,6 +1301,13 @@
         "source": "Yahoo Finance",
         "time": "11-25 06:05 ET",
         "pub_ts": 1795604747.0
+      },
+      {
+        "title": "State Street SPDR Portfolio S&P 500 (SPYM) Buys $14.2 Million More Apple on Monday",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/state-street-spdr-portfolio-p-110543019.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 06:05 ET",
+        "pub_ts": 1795604743.0
       }
     ],
     "PLTR": [
@@ -1400,25 +1400,25 @@
         "pub_ts": 1795617376.0
       },
       {
+        "title": "Amazon and Meta Face Major Showdown Over the Future of AI Shopping",
+        "url": "https://finance.yahoo.com/technology/ai/articles/amazon-meta-face-major-showdown-155254367.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 10:52 ET",
+        "pub_ts": 1795621974.0
+      },
+      {
+        "title": "Amazon Stocks Fall 4.26% as $215 Billion Capex Run Rate Meets AI Doubts",
+        "url": "https://finance.yahoo.com/news/amazon-stocks-fall-4-26-154117429.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 10:41 ET",
+        "pub_ts": 1795621277.0
+      },
+      {
         "title": "Amazon Sinks 6%, Sandisk Down 12% as AI Selloff Deepens: Bear Calls AI “Greatest Misallocation of Capital”",
         "url": "https://www.tikr.com/blog/amazon-sinks-6-sandisk-down-12-as-ai-selloff-deepens-bear-calls-ai-greatest-misallocation-of-capital?ref=yahoofinance&tlnk=yf-261125-hq93vmx9&.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-25 10:29 ET",
         "pub_ts": 1795620540.0
-      },
-      {
-        "title": "Global Retail Pharmacy Market Report 2026: Size, Trends, and Forecast to 2030 | Capitalize on AI and Automation as Walmart, Amazon, CVS Health, and Costco Scale Digital Care",
-        "url": "https://finance.yahoo.com/healthcare/articles/global-retail-pharmacy-market-report-143600337.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 09:36 ET",
-        "pub_ts": 1795617360.0
-      },
-      {
-        "title": "Amazon’s CEO, CFO and AWS Chief All Just Sold Amazon Stock",
-        "url": "https://247wallst.com/investing/2026/11/25/amazons-ceo-cfo-and-aws-chief-all-just-sold-amazon-stock/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 09:13 ET",
-        "pub_ts": 1795616032.0
       }
     ],
     "CRWV": [
@@ -3321,34 +3321,34 @@
   "ticker_news_ts": {
     "KORU": 1795622719.2276533,
     "SOXL": 1795622719.2276533,
-    "SPY": 1795621672.9571495,
+    "SPY": 1795623179.7762742,
     "DIA": 1795622719.2276533,
     "SOXX": 1795622719.2276533,
     "QQQ": 1795622719.2276533,
-    "SMH": 1795621672.9571495,
+    "SMH": 1795623179.7762742,
     "IWM": 1795622719.2276533,
     "IGV": 1795622719.2276533,
     "TLT": 1795622719.2276533,
     "GLD": 1795622719.2276533,
     "SQQQ": 1795622719.2276533,
-    "TSM": 1795621672.9571495,
+    "TSM": 1795623179.7762742,
     "VIXY": 1795622719.2276533,
     "SOXS": 1795622719.2276533,
     "NVDA": 1795622719.2276533,
     "AMD": 1795622719.2276533,
-    "ASML": 1795621672.9571495,
-    "QCOM": 1795621672.9571495,
+    "ASML": 1795623179.7762742,
+    "QCOM": 1795623179.7762742,
     "AVGO": 1795622719.2276533,
-    "AMAT": 1795621672.9571495,
-    "META": 1795621672.9571495,
-    "GOOGL": 1795621672.9571495,
-    "MSFT": 1795621672.9571495,
-    "AAPL": 1795621672.9571495,
-    "PLTR": 1795621672.9571495,
-    "NOW": 1795621672.9571495,
-    "AMZN": 1795621672.9571495,
-    "CRWV": 1795621672.9571495,
-    "NBIS": 1795621672.9571495,
+    "AMAT": 1795623179.7762742,
+    "META": 1795623179.7762742,
+    "GOOGL": 1795623179.7762742,
+    "MSFT": 1795623179.7762742,
+    "AAPL": 1795623179.7762742,
+    "PLTR": 1795623179.7762742,
+    "NOW": 1795623179.7762742,
+    "AMZN": 1795623179.7762742,
+    "CRWV": 1795623179.7762742,
+    "NBIS": 1795623179.7762742,
     "APLD": 1795622325.1323829,
     "VST": 1795622325.1323829,
     "BE": 1795622325.1323829,
@@ -3359,7 +3359,7 @@
     "AAOI": 1795622325.1323829,
     "SPCX": 1795622325.1323829,
     "ASTS": 1795622325.1323829,
-    "AXTI": 1795621672.9571495,
+    "AXTI": 1795623179.7762742,
     "NASA": 1795622325.1323829,
     "LUNR": 1795622325.1323829,
     "TSLA": 1795622462.2364194,
@@ -3398,7 +3398,7 @@
     "GLW": 1795622325.1323829,
     "ANT": 1795622560.8793962,
     "XAUUSD": 1795622560.8793962,
-    "KOSPI": 1795621672.9571495
+    "KOSPI": 1795623179.7762742
   },
   "opex_shield": {
     "date": "2026-11-25",
