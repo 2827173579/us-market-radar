@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795590286.382,
-  "updated_at_et": "11-25 02:04 ET",
-  "updated_at_kst": "16:04 KST",
+  "updated_at_ts": 1795590397.291,
+  "updated_at_et": "11-25 02:06 ET",
+  "updated_at_kst": "16:06 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -17,7 +17,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 386,
+      "minutes_left": 384,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -36,13 +36,26 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 386,
+      "minutes_left": 384,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
     }
   ],
   "macro_flashes": [
+    {
+      "id": "20261125150624945800",
+      "title": "“特朗普账户”亲友缴款突破10亿美元，总资金规模超90亿美元",
+      "summary": "美国财政部公布，逾300万人已向儿童投资账户缴款，亲友出资总额突破10亿美元。不过，账户的税收待遇、资金提取限制仍受到理财行业关注。",
+      "keywords": [
+        "特朗普"
+      ],
+      "pub_ts": 1795590384.0,
+      "time_et": "11-25 02:06 ET",
+      "time_bj": "15:06 BJ",
+      "time_kst": "16:06 KST",
+      "time_display": "02:06 ET / 15:06 BJ"
+    },
     {
       "id": "20261125145616504800",
       "title": "国际现货金银月末前大概率失守关键位，美伊最终协议落地权重下降｜市场赔率数据表",
@@ -372,20 +385,6 @@
       "time_bj": "08:20 BJ",
       "time_kst": "09:20 KST",
       "time_display": "19:20 ET / 08:20 BJ"
-    },
-    {
-      "id": "20261125080231194800",
-      "title": "特朗普称愿赦免黄仁勋但认为没必要，对政府入股英伟达持开放态度",
-      "summary": "特朗普表示若黄仁勋可能涉及违法，赦免“始终是一种选择”，但他认为没必要，并希望他下周国会作证时不要援引第五修正案。特朗普还称对政府入股英伟达持开放态度。点击查看",
-      "keywords": [
-        "英伟达",
-        "特朗普"
-      ],
-      "pub_ts": 1795564951.0,
-      "time_et": "11-24 19:02 ET",
-      "time_bj": "08:02 BJ",
-      "time_kst": "09:02 KST",
-      "time_display": "19:02 ET / 08:02 BJ"
     }
   ],
   "ticker_news": {
@@ -2389,39 +2388,39 @@
     ],
     "FPS": [
       {
-        "title": "Forgent: 3 Key Takeaways for Long-Term Investors",
-        "url": "https://www.fool.com/earnings/takeaways/2026/11/18/forgent-3-key-takeaways-for-long-term-investors/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 12:03 ET",
-        "pub_ts": 1795021396.0
+        "title": "Forgent Power Solutions Consensus Price Target Decreased by 20.94% to $42.91",
+        "url": "https://finnhub.io/api/news?id=57463f8cc9efff61ee55eb2f84f46320e111ff8ec5a71d99130dceb592791c5f",
+        "source": "Fintel",
+        "time": "11-24 19:27 ET",
+        "pub_ts": 1795566432.0
       },
       {
-        "title": "What Forgent Power Solutions (FPS) Said on Its Q1 Earnings Call",
-        "url": "https://www.marketbeat.com/instant-alerts/transcript-what-forgent-power-solutions-fps-said-on-its-q1-earnings-call-2026-11-13/?utm_source=yahoofinance&utm_medium=yahoofinance&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-13 02:14 ET",
-        "pub_ts": 1794554087.0
+        "title": "How An AI Squeeze Works: Who Wins And Who Loses",
+        "url": "https://finnhub.io/api/news?id=05e7a0b4e548bba3d45f0d84f9163c6d72fe5f3b966c25b858164931bb91073b",
+        "source": "SeekingAlpha",
+        "time": "11-23 07:15 ET",
+        "pub_ts": 1795436100.0
       },
       {
-        "title": "Forgent Power Solutions (FPS) After Earnings Is The Stock Still Too Pricey",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/forgent-power-solutions-fps-earnings-021155430.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-12 21:11 ET",
-        "pub_ts": 1794535915.0
+        "title": "DCP Midstream Says It Will Lay Off 10% Of Workforce, 300 Operational/Corporate Roles Across 17-States, Has Reduced Capital Budget To $250M",
+        "url": "https://finnhub.io/api/news?id=2f40821e66f472f9c148898ede1bd56f908f59c50193c8e73603f4a00a642fbe",
+        "source": "Benzinga",
+        "time": "11-23 06:30 ET",
+        "pub_ts": 1795433453.0
       },
       {
-        "title": "Forgent (FPS) Q1 2027 Earnings Call Transcript",
-        "url": "https://www.fool.com/earnings/call-transcripts/2026/11/12/forgent-fps-q1-2027-earnings-call-transcript/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-12 20:02 ET",
-        "pub_ts": 1794531745.0
+        "title": "Baird Maintains Outperform on Forgent Power Solutions, Lowers Price Target to $27",
+        "url": "https://finnhub.io/api/news?id=75d76e5f56110b10c63127539ce3850ca28c95ca8956d8769dc509141bfdd2e3",
+        "source": "Benzinga",
+        "time": "11-23 02:59 ET",
+        "pub_ts": 1795420791.0
       },
       {
-        "title": "Forgent Power Solutions (FPS) Stock Price Falls After Q1 Earnings Recovery",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/forgent-power-solutions-fps-stock-001917011.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-12 19:19 ET",
-        "pub_ts": 1794529157.0
+        "title": "Morgan Stanley Maintains Equal-Weight on Forgent Power Solutions, Lowers Price Target to $40",
+        "url": "https://finnhub.io/api/news?id=92a35f8a3c4c568d63c28a5bf4a23193cff4a95e01b822499a56ea54ab720714",
+        "source": "Benzinga",
+        "time": "11-20 06:46 ET",
+        "pub_ts": 1795175189.0
       }
     ],
     "MU": [
@@ -2722,6 +2721,13 @@
     ],
     "ORCL": [
       {
+        "title": "AI Concerns Resurface? ORCL, GOOGL, SPCX, CRWV Credit Default Swap Spreads Hit Records As NVDA, ANT Tumble",
+        "url": "https://stocktwits.com/news-articles/markets/equity/ai-concerns-resurface-orcl-googl-spcx-crwv-credit-default-swap-spreads-hit-records-as-nvda-ant-tumble/cNbHEEAR9lZ?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 01:56 ET",
+        "pub_ts": 1795589778.0
+      },
+      {
         "title": "Oracle (ORCL) Falls More Steeply Than Broader Market: What Investors Need to Know",
         "url": "https://finance.yahoo.com/markets/stocks/articles/oracle-orcl-falls-more-steeply-214502238.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2748,13 +2754,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 10:45 ET",
         "pub_ts": 1795535101.0
-      },
-      {
-        "title": "Asia-Pacific Digital Transformation Market: Size, Trends, and Forecast (2026-2034) Featuring Intelligence on Accenture, Google (Alphabet), IBM, Microsoft, Oracle, HPE, SAP, EMC (Dell EMC), Cognex, Adobe and Siemens",
-        "url": "https://finance.yahoo.com/technology/articles/asia-pacific-digital-transformation-market-152900939.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 10:29 ET",
-        "pub_ts": 1795534140.0
       }
     ],
     "COIN": [
@@ -3366,37 +3365,37 @@
     "AXTI": 1795589530.0408797,
     "NASA": 1795590286.3822281,
     "LUNR": 1795590286.3822281,
-    "TSLA": 1795588885.8704758,
+    "TSLA": 1795590397.2905369,
     "AXP": 1795590286.3822281,
     "RKLB": 1795590286.3822281,
     "KO": 1795590286.3822281,
     "FLY": 1795590286.3822281,
     "INTC": 1795590286.3822281,
-    "VRT": 1795588885.8704758,
-    "HPE": 1795588885.8704758,
-    "DELL": 1795588885.8704758,
-    "OKLO": 1795588885.8704758,
-    "CEG": 1795588885.8704758,
-    "FPS": 1795588885.8704758,
+    "VRT": 1795590397.2905369,
+    "HPE": 1795590397.2905369,
+    "DELL": 1795590397.2905369,
+    "OKLO": 1795590397.2905369,
+    "CEG": 1795590397.2905369,
+    "FPS": 1795590397.2905369,
     "MU": 1795589530.0408797,
     "SKHY": 1795589530.0408797,
     "WDC": 1795589641.1200092,
-    "STX": 1795588885.8704758,
-    "MSTR": 1795588885.8704758,
-    "SNDK": 1795588885.8704758,
+    "STX": 1795590397.2905369,
+    "MSTR": 1795590397.2905369,
+    "SNDK": 1795590397.2905369,
     "BTC-USD": 1795589641.1200092,
-    "CRWD": 1795588885.8704758,
-    "ORCL": 1795588885.8704758,
-    "COIN": 1795588885.8704758,
-    "LLY": 1795588885.8704758,
-    "MRNA": 1795588885.8704758,
-    "NKE": 1795588885.8704758,
-    "MCD": 1795588885.8704758,
+    "CRWD": 1795590397.2905369,
+    "ORCL": 1795590397.2905369,
+    "COIN": 1795590397.2905369,
+    "LLY": 1795590397.2905369,
+    "MRNA": 1795590397.2905369,
+    "NKE": 1795590397.2905369,
+    "MCD": 1795590397.2905369,
     "PEP": 1795588997.8154833,
     "XOM": 1795588997.8154833,
     "JPM": 1795588997.8154833,
     "WMT": 1795588997.8154833,
-    "V": 1795588885.8704758,
+    "V": 1795590397.2905369,
     "CAT": 1795588997.8154833,
     "FN": 1795589530.0408797,
     "GLW": 1795590286.3822281,
@@ -3420,10 +3419,10 @@
   },
   "calendar_banner": {
     "level": "upcoming",
-    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 386 分钟（11-25 08:30 ET / 22:30 KST）",
+    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 384 分钟（11-25 08:30 ET / 22:30 KST）",
     "detail": "前值 0.3% ｜ 预期 0.3% ｜ 临近公布前15分钟将自动触发防插针预警",
     "event_name": "美国10月核心PCE物价指数环比",
-    "minutes_left": 386,
+    "minutes_left": 384,
     "opex_shield": {
       "date": "2026-11-25",
       "active": false,
