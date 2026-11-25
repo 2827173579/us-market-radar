@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795597453.301,
-  "updated_at_et": "11-25 04:04 ET",
-  "updated_at_kst": "18:04 KST",
+  "updated_at_ts": 1795597500.211,
+  "updated_at_et": "11-25 04:05 ET",
+  "updated_at_kst": "18:05 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -17,7 +17,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 266,
+      "minutes_left": 265,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -36,13 +36,27 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 266,
+      "minutes_left": 265,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
     }
   ],
   "macro_flashes": [
+    {
+      "id": "20261125170419473800",
+      "title": "【美股半导体股盘前多数下跌】 11月25日讯，美股半导体股盘前多数下跌，英伟达(NVDA…",
+      "summary": "【美股半导体股盘前多数下跌】 11月25日讯，美股半导体股盘前多数下跌，英伟达(NVDA.O)美股盘前跌约4%，上一交易日已下跌5.9%。美光科技(MU.O)、Arm(ARM.O)跌超5%，迈威尔科技(MRVL.O)、AMD(AMD.O)跌超4%。",
+      "keywords": [
+        "半导体",
+        "英伟达"
+      ],
+      "pub_ts": 1795597459.0,
+      "time_et": "11-25 04:04 ET",
+      "time_bj": "17:04 BJ",
+      "time_kst": "18:04 KST",
+      "time_display": "04:04 ET / 17:04 BJ"
+    },
     {
       "id": "20261125164622998800",
       "title": "欧佩克+为2027年配额定基准，短期供给反而更难增加｜原油头条",
@@ -377,19 +391,6 @@
       "time_bj": "11:33 BJ",
       "time_kst": "12:33 KST",
       "time_display": "22:33 ET / 11:33 BJ"
-    },
-    {
-      "id": "20261125112757742800",
-      "title": "金价反弹再遭打断，今晚PCE会送来第二次机会吗？",
-      "summary": "金价多头刚等来近3%的反弹，隔天就丢掉大半涨幅。美股带来的喘息正在消退，今晚PCE又将登场。多头盼的第二次机会，是会随着数据出现，还是仍要继续等？",
-      "keywords": [
-        "PCE"
-      ],
-      "pub_ts": 1795577277.0,
-      "time_et": "11-24 22:27 ET",
-      "time_bj": "11:27 BJ",
-      "time_kst": "12:27 KST",
-      "time_display": "22:27 ET / 11:27 BJ"
     }
   ],
   "ticker_news": {
@@ -3424,10 +3425,10 @@
   },
   "calendar_banner": {
     "level": "upcoming",
-    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 266 分钟（11-25 08:30 ET / 22:30 KST）",
+    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 265 分钟（11-25 08:30 ET / 22:30 KST）",
     "detail": "前值 0.3% ｜ 预期 0.3% ｜ 临近公布前15分钟将自动触发防插针预警",
     "event_name": "美国10月核心PCE物价指数环比",
-    "minutes_left": 266,
+    "minutes_left": 265,
     "opex_shield": {
       "date": "2026-11-25",
       "active": false,

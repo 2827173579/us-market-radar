@@ -110,8 +110,8 @@
       "last_notified_at": 1795482111.35759
     },
     "CRWD": {
-      "state": "STOP_LOSS",
-      "last_notified_at": 1795597460.8594646
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "TSLA": {
       "state": "NORMAL",
@@ -170,8 +170,8 @@
       "last_notified_at": 0.0
     },
     "NKE": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1795597511.0431318
     },
     "HPE": {
       "state": "STOP_LOSS",
