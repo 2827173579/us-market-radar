@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795577472.085,
-  "updated_at_et": "11-24 22:31 ET",
-  "updated_at_kst": "12:31 KST",
+  "updated_at_ts": 1795577577.905,
+  "updated_at_et": "11-24 22:32 ET",
+  "updated_at_kst": "12:32 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1760,6 +1760,13 @@
     ],
     "SPCX": [
       {
+        "title": "World's Best Space Company SpaceX Will Soon Be 40% Better",
+        "url": "https://www.fool.com/investing/2026/11/24/world-best-space-company-spacex-soon-40-better/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 22:20 ET",
+        "pub_ts": 1795576802.0
+      },
+      {
         "title": "Jensen Huang's Return Could Make a Tesla/SpaceX Merger More Likely",
         "url": "https://www.fool.com/investing/2026/11/24/jensen-huang-s-return-could-make-a-tesla-spacex-merger-more-likely/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1786,13 +1793,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 18:58 ET",
         "pub_ts": 1795564727.0
-      },
-      {
-        "title": "How Much Bitcoin Could Elon Musk Control if Tesla and SpaceX Merge?",
-        "url": "https://247wallst.com/investing/cryptocurrency/2026/11/24/how-much-bitcoin-could-elon-musk-control-if-tesla-and-spacex-merge/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 17:12 ET",
-        "pub_ts": 1795558359.0
       }
     ],
     "ASTS": [
@@ -3316,25 +3316,25 @@
     "AMZN": 1795577061.846378,
     "CRWV": 1795577061.846378,
     "NBIS": 1795577061.846378,
-    "APLD": 1795576033.317645,
-    "VST": 1795576033.317645,
-    "BE": 1795576033.317645,
-    "CRDO": 1795576033.317645,
-    "COHR": 1795576033.317645,
+    "APLD": 1795577577.9049275,
+    "VST": 1795577577.9049275,
+    "BE": 1795577577.9049275,
+    "CRDO": 1795577577.9049275,
+    "COHR": 1795577577.9049275,
     "MRVL": 1795577061.846378,
     "LITE": 1795577061.846378,
-    "AAOI": 1795576033.317645,
-    "SPCX": 1795576033.317645,
-    "ASTS": 1795576033.317645,
+    "AAOI": 1795577577.9049275,
+    "SPCX": 1795577577.9049275,
+    "ASTS": 1795577577.9049275,
     "AXTI": 1795577061.846378,
-    "NASA": 1795576033.317645,
-    "LUNR": 1795576033.317645,
+    "NASA": 1795577577.9049275,
+    "LUNR": 1795577577.9049275,
     "TSLA": 1795576267.9003127,
-    "AXP": 1795576033.317645,
-    "RKLB": 1795576033.317645,
-    "KO": 1795576033.317645,
-    "FLY": 1795576033.317645,
-    "INTC": 1795576033.317645,
+    "AXP": 1795577577.9049275,
+    "RKLB": 1795577577.9049275,
+    "KO": 1795577577.9049275,
+    "FLY": 1795577577.9049275,
+    "INTC": 1795577577.9049275,
     "VRT": 1795576267.9003127,
     "HPE": 1795576267.9003127,
     "DELL": 1795576267.9003127,
@@ -3362,7 +3362,7 @@
     "V": 1795576267.9003127,
     "CAT": 1795576372.9802127,
     "FN": 1795577061.846378,
-    "GLW": 1795576033.317645,
+    "GLW": 1795577577.9049275,
     "ANT": 1795576372.9802127,
     "XAUUSD": 1795576574.1005611,
     "KOSPI": 1795577061.846378
