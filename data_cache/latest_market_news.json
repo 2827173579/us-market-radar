@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795627738.231,
-  "updated_at_et": "11-25 12:28 ET",
-  "updated_at_kst": "02:28 KST",
+  "updated_at_ts": 1795627786.451,
+  "updated_at_et": "11-25 12:29 ET",
+  "updated_at_kst": "02:29 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -2420,6 +2420,20 @@
     ],
     "MU": [
       {
+        "title": "HP Earnings: Memory Went From 15% to 40% of a PC’s Parts Cost in a Year",
+        "url": "https://247wallst.com/investing/2026/11/25/hp-earnings-memory-went-from-15-to-40-of-a-pcs-parts-cost-in-a-year/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 12:07 ET",
+        "pub_ts": 1795626424.0
+      },
+      {
+        "title": "HP Soars 11% on Q4 Beat as Interim CEO Sees “Multiple Waves of Device Refresh”",
+        "url": "https://www.tikr.com/blog/hp-soars-11-on-q4-beat-as-interim-ceo-sees-multiple-waves-of-device-refresh?ref=yahoofinance&tlnk=yf-261125-vw9jfr94&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 12:02 ET",
+        "pub_ts": 1795626175.0
+      },
+      {
         "title": "Chip stocks tumble as Nvidia-led AI rally unravels, tariff fears weigh",
         "url": "https://www.proactiveinvestors.com/companies/news/1102454/chip-stocks-tumble-as-nvidia-led-ai-rally-unravels-tariff-fears-weigh-1102454.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2439,23 +2453,16 @@
         "source": "Yahoo Finance",
         "time": "11-25 11:03 ET",
         "pub_ts": 1795622602.0
-      },
-      {
-        "title": "Why Micron Stock Just Dropped Again",
-        "url": "https://www.fool.com/investing/2026/11/25/why-micron-stock-just-dropped-again/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 10:54 ET",
-        "pub_ts": 1795622058.0
-      },
-      {
-        "title": "Micron Stocks Sink 10.47% After BNP Paribas Halves Target on Oversupply Fears",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/micron-stocks-sink-10-47-154807203.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 10:48 ET",
-        "pub_ts": 1795621687.0
       }
     ],
     "SKHY": [
+      {
+        "title": "SK hynix vs Micron: Which AI Memory Player Has the Edge?",
+        "url": "https://finance.yahoo.com/technology/ai/articles/sk-hynix-vs-micron-ai-161700194.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 11:17 ET",
+        "pub_ts": 1795623420.0
+      },
       {
         "title": "SK Hynix Sheds 20% in 30 Days: Two Wall Street Pros Agree That 260% Gains Are Coming",
         "url": "https://247wallst.com/investing/2026/11/25/sk-hynix-sheds-20-in-30-days-two-wall-street-pros-agree-that-260-gains-are-coming/?.tsrc=rss",
@@ -2483,13 +2490,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 01:16 ET",
         "pub_ts": 1795587387.0
-      },
-      {
-        "title": "SK Hynix (NasdaqGS:SKHY) Stock May Trade At A Discount Despite AI Demand News",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/sk-hynix-nasdaqgs-skhy-stock-051115290.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 00:11 ET",
-        "pub_ts": 1795583475.0
       }
     ],
     "WDC": [
@@ -3352,8 +3352,8 @@
     "BE": 1795626907.2490985,
     "CRDO": 1795626907.2490985,
     "COHR": 1795626907.2490985,
-    "MRVL": 1795626273.318017,
-    "LITE": 1795626273.318017,
+    "MRVL": 1795627786.4512484,
+    "LITE": 1795627786.4512484,
     "AAOI": 1795626907.2490985,
     "SPCX": 1795626907.2490985,
     "ASTS": 1795626907.2490985,
@@ -3372,8 +3372,8 @@
     "OKLO": 1795627040.9444351,
     "CEG": 1795627040.9444351,
     "FPS": 1795627040.9444351,
-    "MU": 1795626273.318017,
-    "SKHY": 1795626273.318017,
+    "MU": 1795627786.4512484,
+    "SKHY": 1795627786.4512484,
     "WDC": 1795626320.6543207,
     "STX": 1795627087.3863058,
     "MSTR": 1795627040.9444351,
@@ -3392,7 +3392,7 @@
     "WMT": 1795627130.1136327,
     "V": 1795627040.9444351,
     "CAT": 1795627130.1136327,
-    "FN": 1795626273.318017,
+    "FN": 1795627786.4512484,
     "GLW": 1795626907.2490985,
     "ANT": 1795627130.1136327,
     "XAUUSD": 1795627130.1136327,
