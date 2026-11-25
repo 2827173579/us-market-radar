@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795618619.026,
-  "updated_at_et": "11-25 09:56 ET",
-  "updated_at_kst": "23:56 KST",
+  "updated_at_ts": 1795618665.779,
+  "updated_at_et": "11-25 09:57 ET",
+  "updated_at_kst": "23:57 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -1678,6 +1678,13 @@
     ],
     "MRVL": [
       {
+        "title": "What Pulled Marvell Stock Down On Tuesday?",
+        "url": "https://www.trefis.com/stock/mrvl/articles/628981/what-pulled-marvell-stock-down-on-tuesday/2026-11-25?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 09:14 ET",
+        "pub_ts": 1795616066.0
+      },
+      {
         "title": "Oppenheimer Cut Its Marvell Target by $100. It Still Sees 147% Upside",
         "url": "https://www.tikr.com/blog/oppenheimer-cut-its-marvell-target-by-100-it-still-sees-147-upside?ref=yahoofinance&tlnk=yf-261125-h25pvm3g&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1704,13 +1711,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 13:11 ET",
         "pub_ts": 1795543912.0
-      },
-      {
-        "title": "Generate A Return From Marvell Stock, Set For A Large Post-Earnings Swing",
-        "url": "https://finance.yahoo.com/m/330eaa7f-a35f-39e4-a840-89d34cd4eb9e/generate-a-return-from.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 12:29 ET",
-        "pub_ts": 1795541384.0
       }
     ],
     "LITE": [
@@ -2425,6 +2425,13 @@
         "pub_ts": 1795614318.0
       },
       {
+        "title": "Micron Reveals a Stunning 2,000% Surge in One CEO Expense",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/micron-reveals-stunning-2-000-144558413.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 09:45 ET",
+        "pub_ts": 1795617958.0
+      },
+      {
         "title": "Micron Falls 7% as a Weaker DRAM Outlook and New Tariffs Hit Memory Stocks; SanDisk Drops 7%: Are Micron and Memory Stocks Now a Value Play?",
         "url": "https://247wallst.com/investing/2026/11/25/micron-falls-7-as-a-weaker-dram-outlook-and-new-tariffs-hit-memory-stocks-sandisk-drops-7-are-micron-and-memory-stocks-now-a-value-play/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2432,25 +2439,18 @@
         "pub_ts": 1795615991.0
       },
       {
+        "title": "Micron Stock and Other Memory Plays Will Bear the Brunt of This AI Pain",
+        "url": "https://finance.yahoo.com/m/c60b7c01-7f3d-3700-ad68-951e994a6d38/micron-stock-and-other-memory.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 08:21 ET",
+        "pub_ts": 1795612860.0
+      },
+      {
         "title": "The Consensus on Micron Stock Is Changing. Here’s What Investors Should Know",
         "url": "https://247wallst.com/investing/2026/11/25/the-consensus-on-micron-stock-is-changing-heres-what-investors-should-know/?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-25 08:10 ET",
         "pub_ts": 1795612226.0
-      },
-      {
-        "title": "Micron Spends $765,000 Protecting CEO as Pay Hits $39.7 Million",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/micron-spends-765-000-protecting-124751624.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 07:47 ET",
-        "pub_ts": 1795610871.0
-      },
-      {
-        "title": "Prediction: Micron Stock Will Be at This Price at the End of 2027",
-        "url": "https://www.fool.com/investing/2026/11/25/prediction-micron-stock-will-be-at-this-price-at-the-end-of-2027/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 07:28 ET",
-        "pub_ts": 1795609682.0
       }
     ],
     "SKHY": [
@@ -3350,8 +3350,8 @@
     "BE": 1795617789.4355977,
     "CRDO": 1795617789.4355977,
     "COHR": 1795617789.4355977,
-    "MRVL": 1795617131.0085394,
-    "LITE": 1795617131.0085394,
+    "MRVL": 1795618665.7794476,
+    "LITE": 1795618665.7794476,
     "AAOI": 1795617789.4355977,
     "SPCX": 1795617789.4355977,
     "ASTS": 1795617789.4355977,
@@ -3370,8 +3370,8 @@
     "OKLO": 1795617889.7082517,
     "CEG": 1795617889.7082517,
     "FPS": 1795617889.7082517,
-    "MU": 1795617131.0085394,
-    "SKHY": 1795617131.0085394,
+    "MU": 1795618665.7794476,
+    "SKHY": 1795618665.7794476,
     "WDC": 1795617181.9387362,
     "STX": 1795617937.1226542,
     "MSTR": 1795617889.7082517,
@@ -3390,7 +3390,7 @@
     "WMT": 1795617981.3280156,
     "V": 1795617889.7082517,
     "CAT": 1795617981.3280156,
-    "FN": 1795617131.0085394,
+    "FN": 1795618665.7794476,
     "GLW": 1795617789.4355977,
     "ANT": 1795617981.3280156,
     "XAUUSD": 1795617981.3280156,
