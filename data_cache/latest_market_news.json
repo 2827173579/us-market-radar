@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795600192.873,
-  "updated_at_et": "11-25 04:49 ET",
-  "updated_at_kst": "18:49 KST",
+  "updated_at_ts": 1795600239.151,
+  "updated_at_et": "11-25 04:50 ET",
+  "updated_at_kst": "18:50 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -17,7 +17,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 221,
+      "minutes_left": 220,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -36,7 +36,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 221,
+      "minutes_left": 220,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -1029,6 +1029,13 @@
         "pub_ts": 1795529795.0
       },
       {
+        "title": "ASML Dips Premarket Amid Chip Rout: Dutch Lawmakers Push Back On Proposed US Curbs On Sales To China",
+        "url": "https://stocktwits.com/news-articles/markets/equity/asml-dips-premarket-amid-chip-rout-dutch-lawmakers-push-back-on-proposed-us-curbs-on-sales-to-china/cNbH9EDR9ls?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 04:25 ET",
+        "pub_ts": 1795598735.0
+      },
+      {
         "title": "‘Disastrous' for ASML: Dutch Lawmakers Revolt Against US Push to Tighten China Chip Curbs",
         "url": "https://finance.yahoo.com/markets/stocks/articles/disastrous-asml-dutch-lawmakers-revolt-064230741.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1048,13 +1055,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 07:15 ET",
         "pub_ts": 1795522558.0
-      },
-      {
-        "title": "ASML (ENXTAM:ASML) Stock May Trade At A Premium Following Its 107% Run",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/asml-enxtam-asml-stock-may-111607325.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 06:16 ET",
-        "pub_ts": 1795518967.0
       }
     ],
     "QCOM": [
@@ -1288,6 +1288,13 @@
         "pub_ts": 1795549511.0
       },
       {
+        "title": "Tim Cook Could Have Purchased Any of 489 S&P 500 Companies With $903 Billion. Instead, He Bought Something That Transformed Apple Forever.",
+        "url": "https://www.fool.com/investing/2026/11/25/tim-cook-purchase-any-489-sp-500-companies-with-903-billion-he-bought-something-transformed-apple-forever/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 04:26 ET",
+        "pub_ts": 1795598762.0
+      },
+      {
         "title": "Tech Keeps Eating Hollywood As Netflix Buys Historic Seinfeld Lot",
         "url": "https://finance.yahoo.com/m/34be458f-965e-30c4-8fb7-e730267a65a9/tech-keeps-eating-hollywood.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1307,13 +1314,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 16:13 ET",
         "pub_ts": 1795554804.0
-      },
-      {
-        "title": "Top Analyst Reports for Apple, Philip Morris & Intel",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/top-analyst-reports-apple-philip-205300421.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 15:53 ET",
-        "pub_ts": 1795553580.0
       }
     ],
     "PLTR": [
@@ -3327,45 +3327,45 @@
   "ticker_news_ts": {
     "KORU": 1795599866.482655,
     "SOXL": 1795599866.482655,
-    "SPY": 1795598710.5608332,
+    "SPY": 1795600239.150987,
     "DIA": 1795599866.482655,
     "SOXX": 1795599866.482655,
     "QQQ": 1795599866.482655,
-    "SMH": 1795598710.5608332,
+    "SMH": 1795600239.150987,
     "IWM": 1795599866.482655,
     "IGV": 1795599866.482655,
     "TLT": 1795599866.482655,
     "GLD": 1795599866.482655,
     "SQQQ": 1795599866.482655,
-    "TSM": 1795598710.5608332,
+    "TSM": 1795600239.150987,
     "VIXY": 1795599866.482655,
     "SOXS": 1795599866.482655,
     "NVDA": 1795599866.482655,
     "AMD": 1795599866.482655,
-    "ASML": 1795598710.5608332,
-    "QCOM": 1795598710.5608332,
+    "ASML": 1795600239.150987,
+    "QCOM": 1795600239.150987,
     "AVGO": 1795599866.482655,
-    "AMAT": 1795598710.5608332,
-    "META": 1795598710.5608332,
-    "GOOGL": 1795598710.5608332,
-    "MSFT": 1795598710.5608332,
-    "AAPL": 1795598710.5608332,
-    "PLTR": 1795598710.5608332,
-    "NOW": 1795598710.5608332,
-    "AMZN": 1795598710.5608332,
-    "CRWV": 1795598710.5608332,
-    "NBIS": 1795598710.5608332,
+    "AMAT": 1795600239.150987,
+    "META": 1795600239.150987,
+    "GOOGL": 1795600239.150987,
+    "MSFT": 1795600239.150987,
+    "AAPL": 1795600239.150987,
+    "PLTR": 1795600239.150987,
+    "NOW": 1795600239.150987,
+    "AMZN": 1795600239.150987,
+    "CRWV": 1795600239.150987,
+    "NBIS": 1795600239.150987,
     "APLD": 1795599432.136337,
     "VST": 1795599432.136337,
     "BE": 1795599432.136337,
     "CRDO": 1795599432.136337,
     "COHR": 1795599432.136337,
-    "MRVL": 1795598710.5608332,
-    "LITE": 1795598710.5608332,
+    "MRVL": 1795600239.150987,
+    "LITE": 1795600239.150987,
     "AAOI": 1795599432.136337,
     "SPCX": 1795599432.136337,
     "ASTS": 1795599432.136337,
-    "AXTI": 1795598710.5608332,
+    "AXTI": 1795600239.150987,
     "NASA": 1795599432.136337,
     "LUNR": 1795599432.136337,
     "TSLA": 1795599528.4937735,
@@ -3380,8 +3380,8 @@
     "OKLO": 1795599528.4937735,
     "CEG": 1795599528.4937735,
     "FPS": 1795599528.4937735,
-    "MU": 1795598710.5608332,
-    "SKHY": 1795598710.5608332,
+    "MU": 1795600239.150987,
+    "SKHY": 1795600239.150987,
     "WDC": 1795598853.7527535,
     "STX": 1795599528.4937735,
     "MSTR": 1795599528.4937735,
@@ -3400,11 +3400,11 @@
     "WMT": 1795599632.3265138,
     "V": 1795599528.4937735,
     "CAT": 1795599632.3265138,
-    "FN": 1795598710.5608332,
+    "FN": 1795600239.150987,
     "GLW": 1795599432.136337,
     "ANT": 1795599632.3265138,
     "XAUUSD": 1795599632.3265138,
-    "KOSPI": 1795598710.5608332
+    "KOSPI": 1795600239.150987
   },
   "opex_shield": {
     "date": "2026-11-25",
@@ -3422,10 +3422,10 @@
   },
   "calendar_banner": {
     "level": "upcoming",
-    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 221 分钟（11-25 08:30 ET / 22:30 KST）",
+    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 220 分钟（11-25 08:30 ET / 22:30 KST）",
     "detail": "前值 0.3% ｜ 预期 0.3% ｜ 临近公布前15分钟将自动触发防插针预警",
     "event_name": "美国10月核心PCE物价指数环比",
-    "minutes_left": 221,
+    "minutes_left": 220,
     "opex_shield": {
       "date": "2026-11-25",
       "active": false,
