@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795610114.841,
-  "updated_at_et": "11-25 07:35 ET",
-  "updated_at_kst": "21:35 KST",
+  "updated_at_ts": 1795610160.932,
+  "updated_at_et": "11-25 07:36 ET",
+  "updated_at_kst": "21:36 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -17,7 +17,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 55,
+      "minutes_left": 54,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -36,13 +36,27 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 55,
+      "minutes_left": 54,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
     }
   ],
   "macro_flashes": [
+    {
+      "id": "20261125203509946800",
+      "title": "【美股美债明日休市 金银油期货交易提前结束】 11月25日讯，受美国感恩节（11月26日…",
+      "summary": "【美股美债明日休市 金银油期货交易提前结束】 11月25日讯，受美国感恩节（11月26日）假期影响，美国股市、债市明日休市一日；芝商所（CME）旗下贵金属、美国原油期货合约交易提前于北京时间27日03:30结束，美国股指、美债期货合约交易提前于北京时间27日02:00结束；洲际交易所（ICE）旗下布伦特原油期货合约交易提前于北京时间27日02:30结束；敬请各位投资者留意相关流动性风险。",
+      "keywords": [
+        "原油",
+        "美债"
+      ],
+      "pub_ts": 1795610109.0,
+      "time_et": "11-25 07:35 ET",
+      "time_bj": "20:35 BJ",
+      "time_kst": "21:35 KST",
+      "time_display": "07:35 ET / 20:35 BJ"
+    },
     {
       "id": "20261125202049016800",
       "title": "布伦特原油突破92美元/桶，日内涨1%。WTI原油现涨0.8%。",
@@ -372,19 +386,6 @@
       "time_bj": "15:22 BJ",
       "time_kst": "16:22 KST",
       "time_display": "02:22 ET / 15:22 BJ"
-    },
-    {
-      "id": "20261125150624945800",
-      "title": "“特朗普账户”亲友缴款突破10亿美元，总资金规模超90亿美元",
-      "summary": "美国财政部公布，逾300万人已向儿童投资账户缴款，亲友出资总额突破10亿美元。不过，账户的税收待遇、资金提取限制仍受到理财行业关注。",
-      "keywords": [
-        "特朗普"
-      ],
-      "pub_ts": 1795590384.0,
-      "time_et": "11-25 02:06 ET",
-      "time_bj": "15:06 BJ",
-      "time_kst": "16:06 KST",
-      "time_display": "02:06 ET / 15:06 BJ"
     }
   ],
   "ticker_news": {
@@ -1796,6 +1797,13 @@
     ],
     "SPCX": [
       {
+        "title": "Tesla (TSLA) Could Be 36% Undervalued Following SpaceX Merger Talks",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/tesla-tsla-could-36-undervalued-121112133.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 07:11 ET",
+        "pub_ts": 1795608672.0
+      },
+      {
         "title": "Where Will SpaceX Stock Be in 5 Years?",
         "url": "https://www.fool.com/investing/2026/11/25/where-will-spacex-stock-be-in-5-years/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1822,13 +1830,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 06:03 ET",
         "pub_ts": 1795604638.0
-      },
-      {
-        "title": "ETFs Are Selling SpaceX (SPCX) on Monday",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-selling-spacex-spcx-monday-110221766.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 06:02 ET",
-        "pub_ts": 1795604541.0
       }
     ],
     "ASTS": [
@@ -2166,6 +2167,20 @@
     ],
     "INTC": [
       {
+        "title": "The Dates That Matter Most For Intel Stock",
+        "url": "https://www.trefis.com/stock/intc/articles/628903/the-dates-that-matter-most-for-intel-stock/2026-11-25?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 06:59 ET",
+        "pub_ts": 1795607952.0
+      },
+      {
+        "title": "Dell Stock Joins Nvidia, AMD, and Intel Selloff Despite Record Demand",
+        "url": "https://beincrypto.com/dell-stock-falls-ai-selloff-record-backlog/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 06:50 ET",
+        "pub_ts": 1795607445.0
+      },
+      {
         "title": "Franklin Systematic Style Premia (FLSP) Sells $8.1 Million of Costco on Monday",
         "url": "https://finance.yahoo.com/markets/stocks/articles/franklin-systematic-style-premia-flsp-110453628.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2185,20 +2200,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 04:25 ET",
         "pub_ts": 1795598735.0
-      },
-      {
-        "title": "Why Intel Stock Fell Today",
-        "url": "https://www.fool.com/investing/2026/11/24/why-intel-stock-fell-today/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 18:16 ET",
-        "pub_ts": 1795562161.0
-      },
-      {
-        "title": "Intel And 2 More AI Stocks To Watch",
-        "url": "https://finance.yahoo.com/technology/ai/articles/intel-2-more-ai-stocks-221918630.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 17:19 ET",
-        "pub_ts": 1795558758.0
       }
     ],
     "VRT": [
@@ -3352,25 +3353,25 @@
     "AMZN": 1795609398.3492033,
     "CRWV": 1795609398.3492033,
     "NBIS": 1795609398.3492033,
-    "APLD": 1795608623.6726074,
-    "VST": 1795608623.6726074,
-    "BE": 1795608623.6726074,
-    "CRDO": 1795608623.6726074,
-    "COHR": 1795608623.6726074,
+    "APLD": 1795610160.9323542,
+    "VST": 1795610160.9323542,
+    "BE": 1795610160.9323542,
+    "CRDO": 1795610160.9323542,
+    "COHR": 1795610160.9323542,
     "MRVL": 1795609448.843931,
     "LITE": 1795609448.843931,
-    "AAOI": 1795608623.6726074,
-    "SPCX": 1795608623.6726074,
-    "ASTS": 1795608623.6726074,
+    "AAOI": 1795610160.9323542,
+    "SPCX": 1795610160.9323542,
+    "ASTS": 1795610160.9323542,
     "AXTI": 1795609398.3492033,
-    "NASA": 1795608623.6726074,
-    "LUNR": 1795608623.6726074,
+    "NASA": 1795610160.9323542,
+    "LUNR": 1795610160.9323542,
     "TSLA": 1795608724.4252732,
-    "AXP": 1795608623.6726074,
-    "RKLB": 1795608623.6726074,
-    "KO": 1795608623.6726074,
-    "FLY": 1795608623.6726074,
-    "INTC": 1795608623.6726074,
+    "AXP": 1795610160.9323542,
+    "RKLB": 1795610160.9323542,
+    "KO": 1795610160.9323542,
+    "FLY": 1795610160.9323542,
+    "INTC": 1795610160.9323542,
     "VRT": 1795608724.4252732,
     "HPE": 1795608724.4252732,
     "DELL": 1795608724.4252732,
@@ -3398,7 +3399,7 @@
     "V": 1795608724.4252732,
     "CAT": 1795608827.5293899,
     "FN": 1795609448.843931,
-    "GLW": 1795608623.6726074,
+    "GLW": 1795610160.9323542,
     "ANT": 1795608827.5293899,
     "XAUUSD": 1795608827.5293899,
     "KOSPI": 1795609398.3492033
@@ -3419,10 +3420,10 @@
   },
   "calendar_banner": {
     "level": "upcoming",
-    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 55 分钟（11-25 08:30 ET / 22:30 KST）",
+    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 54 分钟（11-25 08:30 ET / 22:30 KST）",
     "detail": "前值 0.3% ｜ 预期 0.3% ｜ 临近公布前15分钟将自动触发防插针预警",
     "event_name": "美国10月核心PCE物价指数环比",
-    "minutes_left": 55,
+    "minutes_left": 54,
     "opex_shield": {
       "date": "2026-11-25",
       "active": false,
