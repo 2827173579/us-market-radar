@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795614795.715,
-  "updated_at_et": "11-25 08:53 ET",
-  "updated_at_kst": "22:53 KST",
+  "updated_at_ts": 1795614843.281,
+  "updated_at_et": "11-25 08:54 ET",
+  "updated_at_kst": "22:54 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -2231,20 +2231,6 @@
     ],
     "HPE": [
       {
-        "title": "Anthropic falls below IPO price as Nvidia gives back gains",
-        "url": "https://finance.yahoo.com/video/anthropic-falls-below-ipo-price-as-nvidia-gives-back-gains-214558309.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 16:45 ET",
-        "pub_ts": 1795556758.0
-      },
-      {
-        "title": "HPE CEO Antonio Neri reveals 3 drivers behind its raised outlook",
-        "url": "https://finance.yahoo.com/video/hpe-ceo-antonio-neri-reveals-3-drivers-behind-its-raised-outlook-214049570.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 16:40 ET",
-        "pub_ts": 1795556449.0
-      },
-      {
         "title": "What Is Dragging HPE Stock Down?",
         "url": "https://www.trefis.com/stock/hpe/articles/628967/what-is-dragging-hpe-stock-down/2026-11-25?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2264,15 +2250,36 @@
         "source": "Yahoo Finance",
         "time": "11-24 23:56 ET",
         "pub_ts": 1795582614.0
+      },
+      {
+        "title": "HPE (HPE) Stock Price Sinks As Q4 Earnings Clash With Margin Fears",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/hpe-hpe-stock-price-sinks-232134308.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 18:21 ET",
+        "pub_ts": 1795562494.0
+      },
+      {
+        "title": "Dell Just Reported Earnings and Raised Its Forecast by $10 Billion. Is the Stock a Buy After Tuesday's Selloff?",
+        "url": "https://www.fool.com/investing/2026/11/24/dell-just-reported-earnings-and-raised-its-forecast-by-usd10-billion-is-the-stock-a-buy-after-tuesday-s-selloff/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 17:14 ET",
+        "pub_ts": 1795558483.0
       }
     ],
     "DELL": [
       {
-        "title": "Dell stock tanks after blowout earnings. Wall Street just isn't impressed.",
-        "url": "https://finance.yahoo.com/markets/stocks/article/dell-stock-tanks-after-blowout-earnings-wall-street-just-isnt-impressed-103036530.html?.tsrc=rss",
+        "title": "The $132B Backlog Paradox: Dell vs. Super Micro Computer in 2027",
+        "url": "https://247wallst.com/investing/2026/11/25/the-132b-backlog-paradox-dell-vs-super-micro-computer-in-2027/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-25 05:30 ET",
-        "pub_ts": 1795602636.0
+        "time": "11-25 08:45 ET",
+        "pub_ts": 1795614355.0
+      },
+      {
+        "title": "Dell Stock Gets Slew Of Price Target Cuts After 'Very Strong' Quarter On AI Buildout Worries",
+        "url": "https://stocktwits.com/news-articles/markets/equity/dell-stock-gets-slew-of-price-target-cuts-after-very-strong-quarter-on-ai-buildout-worries/cNbHiwbR9mg?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 08:36 ET",
+        "pub_ts": 1795613809.0
       },
       {
         "title": "Nvidia, chipmakers slide premarket; Dell falls despite upbeat outlook",
@@ -2294,16 +2301,16 @@
         "source": "Yahoo Finance",
         "time": "11-25 07:15 ET",
         "pub_ts": 1795608900.0
-      },
-      {
-        "title": "Dell's Infrastructure Business Momentum Amid Strong AI Server Demand Drives Higher Full-Year Outlook",
-        "url": "https://finance.yahoo.com/technology/ai/articles/dell-apos-infrastructure-business-momentum-120041490.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 07:00 ET",
-        "pub_ts": 1795608041.0
       }
     ],
     "OKLO": [
+      {
+        "title": "OKLO Has More Cash, But Is NuScale the Better Nuclear Stock?",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/oklo-more-cash-nuscale-better-122800602.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 07:28 ET",
+        "pub_ts": 1795609680.0
+      },
       {
         "title": "1 Reason I Haven’t Bought Oklo Stock -- and Probably Never Will",
         "url": "https://www.fool.com/investing/2026/11/24/1-reason-i-haven-t-bought-oklo-stock-and-probably-never-will/?.tsrc=rss",
@@ -2331,13 +2338,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 09:33 ET",
         "pub_ts": 1795444403.0
-      },
-      {
-        "title": "Energy Fuels Rallies 14% on Plan to Produce 1 Million Pounds of Uranium; Oklo Surges 12%, NuScale Power Gains 13%",
-        "url": "https://247wallst.com/investing/2026/11/23/energy-fuels-surges-8-on-plan-to-produce-1-million-pounds-of-uranium-oklo-climbs-7-nuscale-power-gains-6/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 09:09 ET",
-        "pub_ts": 1795442994.0
       }
     ],
     "CEG": [
@@ -2601,6 +2601,13 @@
     ],
     "SNDK": [
       {
+        "title": "Nvidia, AMD, and Micron stocks sink as investors flee AI trade",
+        "url": "https://finance.yahoo.com/markets/article/nvidia-amd-micron-stocks-sink-as-investors-flee-ai-trade-134518921.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 08:45 ET",
+        "pub_ts": 1795614318.0
+      },
+      {
         "title": "AMD, Micron and Sandisk Stocks Slide as AI Spending Fears Deepen",
         "url": "https://finance.yahoo.com/markets/stocks/articles/amd-micron-sandisk-stocks-slide-122728877.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2627,13 +2634,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 06:04 ET",
         "pub_ts": 1795604677.0
-      },
-      {
-        "title": "SanDisk Trades at 4.6x Earnings—And Still Got Cut in Half",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/sandisk-trades-4-6x-earnings-092502421.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 04:25 ET",
-        "pub_ts": 1795598702.0
       }
     ],
     "BTC-USD": [
@@ -2675,6 +2675,13 @@
     ],
     "CRWD": [
       {
+        "title": "CrowdStrike Sees a Path to the “Largest AI Safety and Security Company” Ever. Zscaler Must Deliver $1 Billion of Synergies",
+        "url": "https://www.tikr.com/blog/crowdstrike-sees-a-path-to-the-largest-ai-safety-and-security-company-ever-zscaler-must-deliver-1-billion-of-synergies?ref=yahoofinance&tlnk=yf-261125-wpgvq53r&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 08:05 ET",
+        "pub_ts": 1795611924.0
+      },
+      {
         "title": "CrowdStrike to Participate in Upcoming Investor Conferences",
         "url": "https://finance.yahoo.com/technology/articles/crowdstrike-participate-upcoming-investor-conferences-130000206.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2701,13 +2708,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 03:37 ET",
         "pub_ts": 1795595828.0
-      },
-      {
-        "title": "CrowdStrike: 3 Key Takeaways for Long-Term Investors",
-        "url": "https://www.fool.com/earnings/takeaways/2026/11/24/crowdstrike-3-key-takeaways-for-long-term-investors/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 23:32 ET",
-        "pub_ts": 1795581159.0
       }
     ],
     "ORCL": [
@@ -2786,6 +2786,13 @@
     ],
     "LLY": [
       {
+        "title": "Market Chatter: Novo Nordisk and Eli Lilly Prepare New Warning Labels for GLP-1 Drugs Over Eye Condition Risk",
+        "url": "https://finance.yahoo.com/healthcare/articles/market-chatter-novo-nordisk-eli-132230427.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 08:22 ET",
+        "pub_ts": 1795612950.0
+      },
+      {
         "title": "Eli Lilly vs. Novo Nordisk: Not Every GLP-1 Maker Is Enjoying Booming Sales Trends",
         "url": "https://www.fool.com/coverage/charts/2026/11/24/eli-lilly-vs-novo-nordisk-not-every-glp-1-maker-is-enjoying-booming-sales-trends/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2812,13 +2819,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 06:04 ET",
         "pub_ts": 1795518242.0
-      },
-      {
-        "title": "Biotech Loses Ground In November’s Market Slide — These 5 Stocks Bucked The Selloff As Lilly, AbbVie And Amgen Fell",
-        "url": "https://stocktwits.com/news-articles/markets/equity/biotech-loses-ground-november-5-stocks-bucked-selloff-lilly-abb-vie-amgen-fell/cNbrzF5R9kd?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 01:41 ET",
-        "pub_ts": 1795502515.0
       }
     ],
     "MRNA": [
@@ -3356,37 +3356,37 @@
     "AXTI": 1795614012.619013,
     "NASA": 1795614742.880808,
     "LUNR": 1795614742.880808,
-    "TSLA": 1795613315.5441015,
+    "TSLA": 1795614843.2812846,
     "AXP": 1795614742.880808,
     "RKLB": 1795614742.880808,
     "KO": 1795614742.880808,
     "FLY": 1795614742.880808,
     "INTC": 1795614742.880808,
-    "VRT": 1795613315.5441015,
-    "HPE": 1795613315.5441015,
-    "DELL": 1795613315.5441015,
-    "OKLO": 1795613315.5441015,
-    "CEG": 1795613315.5441015,
-    "FPS": 1795613315.5441015,
+    "VRT": 1795614843.2812846,
+    "HPE": 1795614843.2812846,
+    "DELL": 1795614843.2812846,
+    "OKLO": 1795614843.2812846,
+    "CEG": 1795614843.2812846,
+    "FPS": 1795614843.2812846,
     "MU": 1795614064.8472505,
     "SKHY": 1795614064.8472505,
     "WDC": 1795614112.228556,
     "STX": 1795613370.4648132,
-    "MSTR": 1795613315.5441015,
-    "SNDK": 1795613315.5441015,
+    "MSTR": 1795614843.2812846,
+    "SNDK": 1795614843.2812846,
     "BTC-USD": 1795614112.228556,
-    "CRWD": 1795613315.5441015,
-    "ORCL": 1795613315.5441015,
-    "COIN": 1795613315.5441015,
-    "LLY": 1795613315.5441015,
-    "MRNA": 1795613315.5441015,
-    "NKE": 1795613315.5441015,
-    "MCD": 1795613315.5441015,
+    "CRWD": 1795614843.2812846,
+    "ORCL": 1795614843.2812846,
+    "COIN": 1795614843.2812846,
+    "LLY": 1795614843.2812846,
+    "MRNA": 1795614843.2812846,
+    "NKE": 1795614843.2812846,
+    "MCD": 1795614843.2812846,
     "PEP": 1795613419.7471743,
     "XOM": 1795613419.7471743,
     "JPM": 1795613419.7471743,
     "WMT": 1795613419.7471743,
-    "V": 1795613315.5441015,
+    "V": 1795614843.2812846,
     "CAT": 1795613419.7471743,
     "FN": 1795614064.8472505,
     "GLW": 1795614742.880808,
