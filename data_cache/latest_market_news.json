@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795640855.42,
-  "updated_at_et": "11-25 16:07 ET",
-  "updated_at_kst": "06:07 KST",
+  "updated_at_ts": 1795640892.756,
+  "updated_at_et": "11-25 16:08 ET",
+  "updated_at_kst": "06:08 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -937,11 +937,25 @@
     ],
     "NVDA": [
       {
+        "title": "Anthropic’s Chip Choices Could Change the Nvidia Story. Here’s How.",
+        "url": "https://www.fool.com/investing/2026/11/25/anthropic-s-chip-choices-could-change-the-nvidia-story-here-s-how/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 15:53 ET",
+        "pub_ts": 1795639982.0
+      },
+      {
         "title": "Is Jensen Huang Really Worth $954 Billion to Nvidia?",
         "url": "https://www.fool.com/investing/2026/11/25/is-jensen-huang-really-worth-usd954-billion-to-nvidia/?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-25 15:35 ET",
         "pub_ts": 1795638901.0
+      },
+      {
+        "title": "Dell’s Jeff Clarke: “We’ve Had No Customers Reschedule Business.” That’s Good News for Nvidia",
+        "url": "https://www.tikr.com/blog/dells-jeff-clarke-weve-had-no-customers-reschedule-business-thats-good-news-for-nvidia?ref=yahoofinance&tlnk=yf-261125-pm9r283x&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 15:20 ET",
+        "pub_ts": 1795638027.0
       },
       {
         "title": "Mysterious traders made $340,000 betting on Huang’s Nvidia return",
@@ -956,20 +970,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 14:54 ET",
         "pub_ts": 1795636497.0
-      },
-      {
-        "title": "Nvidia U-Turn Is Bad News For Anthropic, Says Parmy Olson",
-        "url": "https://finance.yahoo.com/video/nvidia-u-turn-bad-news-195302644.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 14:53 ET",
-        "pub_ts": 1795636382.0
-      },
-      {
-        "title": "Nvidia to Pay $290 Million to Settle Long-Running Crypto Mining Revenue Lawsuit",
-        "url": "https://decrypt.co/383994/nvidia-290-million-settle-crypto-mining-disclosure-lawsuit?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 14:28 ET",
-        "pub_ts": 1795634934.0
       }
     ],
     "AMD": [
@@ -3314,26 +3314,26 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795639386.637477,
-    "SOXL": 1795639386.637477,
+    "KORU": 1795640892.7555192,
+    "SOXL": 1795640892.7555192,
     "SPY": 1795639848.1332786,
-    "DIA": 1795639386.637477,
-    "SOXX": 1795639386.637477,
-    "QQQ": 1795639386.637477,
+    "DIA": 1795640892.7555192,
+    "SOXX": 1795640892.7555192,
+    "QQQ": 1795640892.7555192,
     "SMH": 1795639848.1332786,
-    "IWM": 1795639386.637477,
-    "IGV": 1795639386.637477,
-    "TLT": 1795639386.637477,
-    "GLD": 1795639386.637477,
-    "SQQQ": 1795639386.637477,
+    "IWM": 1795640892.7555192,
+    "IGV": 1795640892.7555192,
+    "TLT": 1795640892.7555192,
+    "GLD": 1795640892.7555192,
+    "SQQQ": 1795640892.7555192,
     "TSM": 1795639848.1332786,
-    "VIXY": 1795639386.637477,
-    "SOXS": 1795639386.637477,
-    "NVDA": 1795639386.637477,
-    "AMD": 1795639386.637477,
+    "VIXY": 1795640892.7555192,
+    "SOXS": 1795640892.7555192,
+    "NVDA": 1795640892.7555192,
+    "AMD": 1795640892.7555192,
     "ASML": 1795639848.1332786,
     "QCOM": 1795639848.1332786,
-    "AVGO": 1795639386.637477,
+    "AVGO": 1795640892.7555192,
     "AMAT": 1795639848.1332786,
     "META": 1795639848.1332786,
     "GOOGL": 1795639848.1332786,
