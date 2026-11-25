@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795628732.692,
-  "updated_at_et": "11-25 12:45 ET",
-  "updated_at_kst": "02:45 KST",
+  "updated_at_ts": 1795628775.84,
+  "updated_at_et": "11-25 12:46 ET",
+  "updated_at_kst": "02:46 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -584,11 +584,11 @@
         "pub_ts": 1795604652.0
       },
       {
-        "title": "Exchange-Traded Funds, US Equities Mixed After Midday",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/exchange-traded-funds-us-equities-181033633.html?.tsrc=rss",
+        "title": "1 Surprisingly Powerful ETF for Investors Who Only Have $200 to Start",
+        "url": "https://www.fool.com/investing/2026/11/25/1-surprisingly-powerful-etf-for-investors-who-only-have-200-to-start/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 13:10 ET",
-        "pub_ts": 1795543833.0
+        "time": "11-25 12:27 ET",
+        "pub_ts": 1795627622.0
       },
       {
         "title": "Exchange-Traded Funds, Equity Futures Lower Pre-Bell Wednesday Amid Inflation Data Release",
@@ -940,6 +940,27 @@
     ],
     "NVDA": [
       {
+        "title": "The Jensen Huang Premium Is Gone. 3 AI Stocks down 25% to 33% I'd Confidently Buy Right Now",
+        "url": "https://www.fool.com/investing/2026/11/25/the-jensen-huang-premium-is-gone-3-ai-stocks-down-25-to-33-i-d-confidently-buy-right-now/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 12:25 ET",
+        "pub_ts": 1795627502.0
+      },
+      {
+        "title": "Nvidia Sinks 9% as Huang Rally Fades: Stephanie Link Sees “A Cloud Over It”",
+        "url": "https://www.tikr.com/blog/nvidia-sinks-9-as-huang-rally-fades-stephanie-link-sees-a-cloud-over-it?ref=yahoofinance&tlnk=yf-261125-q8ch658v&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 12:24 ET",
+        "pub_ts": 1795627456.0
+      },
+      {
+        "title": "Is NVIDIA (NVDA) Cheap After Jensen Huang’s Return Calmed Leadership Fears?",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/nvidia-nvda-cheap-jensen-huang-171040296.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 12:10 ET",
+        "pub_ts": 1795626640.0
+      },
+      {
         "title": "Tech stocks suffer sell-off on AI angst, US inflation",
         "url": "https://finance.yahoo.com/markets/world-indices/articles/tech-firms-back-crosshairs-huang-024219799.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -952,27 +973,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 12:04 ET",
         "pub_ts": 1795626288.0
-      },
-      {
-        "title": "AI Chip Stocks Extend Brutal Selloff as Nvidia, AMD and Broadcom Tumble Again",
-        "url": "https://finance.yahoo.com/technology/ai/articles/ai-chip-stocks-extend-brutal-170236621.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 12:02 ET",
-        "pub_ts": 1795626156.0
-      },
-      {
-        "title": "Chip stocks tumble as Nvidia-led AI rally unravels, tariff fears weigh",
-        "url": "https://www.proactiveinvestors.com/companies/news/1102454/chip-stocks-tumble-as-nvidia-led-ai-rally-unravels-tariff-fears-weigh-1102454.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 11:49 ET",
-        "pub_ts": 1795625340.0
-      },
-      {
-        "title": "Top Midday Stories: Fed's Preferred Inflation Gauge Rises to 3.8% YoY in October; Nvidia CEO Huang's Affair Not Orchestrated by China, US Officials Say",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/top-midday-stories-fed-apos-164318180.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 11:43 ET",
-        "pub_ts": 1795624998.0
       }
     ],
     "AMD": [
@@ -3317,26 +3317,26 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795627261.2366614,
-    "SOXL": 1795627261.2366614,
+    "KORU": 1795628775.839951,
+    "SOXL": 1795628775.839951,
     "SPY": 1795627738.2312214,
-    "DIA": 1795627261.2366614,
-    "SOXX": 1795627261.2366614,
-    "QQQ": 1795627261.2366614,
+    "DIA": 1795628775.839951,
+    "SOXX": 1795628775.839951,
+    "QQQ": 1795628775.839951,
     "SMH": 1795627738.2312214,
-    "IWM": 1795627261.2366614,
-    "IGV": 1795627261.2366614,
-    "TLT": 1795627261.2366614,
-    "GLD": 1795627261.2366614,
-    "SQQQ": 1795627261.2366614,
+    "IWM": 1795628775.839951,
+    "IGV": 1795628775.839951,
+    "TLT": 1795628775.839951,
+    "GLD": 1795628775.839951,
+    "SQQQ": 1795628775.839951,
     "TSM": 1795627738.2312214,
-    "VIXY": 1795627261.2366614,
-    "SOXS": 1795627261.2366614,
-    "NVDA": 1795627261.2366614,
-    "AMD": 1795627261.2366614,
+    "VIXY": 1795628775.839951,
+    "SOXS": 1795628775.839951,
+    "NVDA": 1795628775.839951,
+    "AMD": 1795628775.839951,
     "ASML": 1795627738.2312214,
     "QCOM": 1795627738.2312214,
-    "AVGO": 1795627261.2366614,
+    "AVGO": 1795628775.839951,
     "AMAT": 1795627738.2312214,
     "META": 1795627738.2312214,
     "GOOGL": 1795627738.2312214,
