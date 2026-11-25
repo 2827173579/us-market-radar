@@ -7271,9 +7271,13 @@
     "copy_close:2026-11-25:HPE_SHORT_2026-11-25:SL_HIT": {
       "device": "PC",
       "ts": 1795633602.5582073
+    },
+    "2026-11-25:DEFENSIVE_FLIGHT:+3.8": {
+      "device": "PC",
+      "ts": 1795633645.9352617
     }
   },
   "device": "PC",
-  "last_heartbeat_ts": 1795633583.0627542,
-  "updated_at": "2026-11-25T19:06:42.558452+00:00"
+  "last_heartbeat_ts": 1795633624.4108129,
+  "updated_at": "2026-11-25T19:07:25.935523+00:00"
 }
