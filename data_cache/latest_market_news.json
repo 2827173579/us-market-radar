@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795636319.71,
-  "updated_at_et": "11-25 14:51 ET",
-  "updated_at_kst": "04:51 KST",
+  "updated_at_ts": 1795636356.804,
+  "updated_at_et": "11-25 14:52 ET",
+  "updated_at_kst": "04:52 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -934,11 +934,18 @@
     ],
     "NVDA": [
       {
-        "title": "Why Nvidia's 'Jensen put' failed to stop the AI trade meltdown",
-        "url": "https://finance.yahoo.com/markets/article/why-nvidias-jensen-put-did-little-to-ease-the-ai-trade-meltdown-185334279.html?.tsrc=rss",
+        "title": "Nvidia to Pay $290 Million to Settle Long-Running Crypto Mining Revenue Lawsuit",
+        "url": "https://decrypt.co/383994/nvidia-290-million-settle-crypto-mining-disclosure-lawsuit?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-25 13:53 ET",
-        "pub_ts": 1795632814.0
+        "time": "11-25 14:28 ET",
+        "pub_ts": 1795634934.0
+      },
+      {
+        "title": "S&P puts NVIDIA on CreditWatch over governance concerns",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/p-puts-nvidia-creditwatch-over-192625970.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 14:26 ET",
+        "pub_ts": 1795634785.0
       },
       {
         "title": "David Tepper Sold All of His AMD Stock. His Biggest Position Is Micron.",
@@ -948,25 +955,18 @@
         "pub_ts": 1795634402.0
       },
       {
+        "title": "This Strategist Still Sees the S&P 500 Hitting 10,000",
+        "url": "https://finance.yahoo.com/m/f24bf1b4-b64e-35a6-8dc1-c6ce8ed67405/this-strategist-still-sees.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 14:20 ET",
+        "pub_ts": 1795634400.0
+      },
+      {
         "title": "Michael Burry Loads Up on 3 Chinese Stocks; Sticks to Nvidia Bearish Bet",
         "url": "https://finance.yahoo.com/markets/stocks/articles/michael-burry-loads-3-chinese-191345318.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-25 14:13 ET",
         "pub_ts": 1795634025.0
-      },
-      {
-        "title": "Nvidia Chip Sellers Reportedly Scramble For New Buyers As US Tightens China Export Loopholes",
-        "url": "https://stocktwits.com/news-articles/markets/equity/nvidia-chip-sellers-reportedly-scramble-for-new-buyers-as-us-tightens-china-export-loopholes/cNbHoZSR9mv?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 14:02 ET",
-        "pub_ts": 1795633343.0
-      },
-      {
-        "title": "Dan Ives Says Nvidia’s Jensen Huang Worth At Least $8 Trillion To US Economy, Calls Sell-Off A ‘Gut Check Moment’",
-        "url": "https://stocktwits.com/news-articles/markets/equity/dan-ives-says-nvidia-s-jensen-huang-worth-at-least-8-trillion-to-us-economy-calls-sell-off-a-gut-check-moment/cNbH8KYR9mH?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 13:59 ET",
-        "pub_ts": 1795633197.0
       }
     ],
     "AMD": [
@@ -3311,26 +3311,26 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795634838.9510815,
-    "SOXL": 1795634838.9510815,
+    "KORU": 1795636356.8042452,
+    "SOXL": 1795636356.8042452,
     "SPY": 1795635312.5870664,
-    "DIA": 1795634838.9510815,
-    "SOXX": 1795634838.9510815,
-    "QQQ": 1795634838.9510815,
+    "DIA": 1795636356.8042452,
+    "SOXX": 1795636356.8042452,
+    "QQQ": 1795636356.8042452,
     "SMH": 1795635312.5870664,
-    "IWM": 1795634838.9510815,
-    "IGV": 1795634838.9510815,
-    "TLT": 1795634838.9510815,
-    "GLD": 1795634838.9510815,
-    "SQQQ": 1795634838.9510815,
+    "IWM": 1795636356.8042452,
+    "IGV": 1795636356.8042452,
+    "TLT": 1795636356.8042452,
+    "GLD": 1795636356.8042452,
+    "SQQQ": 1795636356.8042452,
     "TSM": 1795635312.5870664,
-    "VIXY": 1795634838.9510815,
-    "SOXS": 1795634838.9510815,
-    "NVDA": 1795634838.9510815,
-    "AMD": 1795634838.9510815,
+    "VIXY": 1795636356.8042452,
+    "SOXS": 1795636356.8042452,
+    "NVDA": 1795636356.8042452,
+    "AMD": 1795636356.8042452,
     "ASML": 1795635312.5870664,
     "QCOM": 1795635312.5870664,
-    "AVGO": 1795634838.9510815,
+    "AVGO": 1795636356.8042452,
     "AMAT": 1795635312.5870664,
     "META": 1795635312.5870664,
     "GOOGL": 1795635312.5870664,
