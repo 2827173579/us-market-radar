@@ -1,9 +1,22 @@
 {
-  "updated_at_ts": 1795566623.889,
-  "updated_at_et": "11-24 19:30 ET",
-  "updated_at_kst": "09:30 KST",
+  "updated_at_ts": 1795566727.227,
+  "updated_at_et": "11-24 19:32 ET",
+  "updated_at_kst": "09:32 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261125083003175800",
+      "title": "澳大利亚10月未季调CPI年率 4.9%，预期4.7%，前值4.30%。",
+      "summary": "澳大利亚10月未季调CPI年率 4.9%，预期4.7%，前值4.30%。",
+      "keywords": [
+        "CPI"
+      ],
+      "pub_ts": 1795566603.0,
+      "time_et": "11-24 19:30 ET",
+      "time_bj": "08:30 BJ",
+      "time_kst": "09:30 KST",
+      "time_display": "19:30 ET / 08:30 BJ"
+    },
     {
       "id": "20261125082000000800",
       "title": "澳大利亚10月未季调CPI年率将于十分钟后公布。",
@@ -343,20 +356,6 @@
       "time_bj": "22:30 BJ",
       "time_kst": "23:30 KST",
       "time_display": "09:30 ET / 22:30 BJ"
-    },
-    {
-      "id": "20261124221929204800",
-      "title": "摩根大通：预计从2027年第一季度起，原油价格走低以及美联储按兵不动，最终将推动金价在2…",
-      "summary": "摩根大通：预计从2027年第一季度起，原油价格走低以及美联储按兵不动，最终将推动金价在2027年第四季度回升至每盎司4500美元，白银则回升至50美元区间中段。",
-      "keywords": [
-        "美联储",
-        "原油"
-      ],
-      "pub_ts": 1795529969.0,
-      "time_et": "11-24 09:19 ET",
-      "time_bj": "22:19 BJ",
-      "time_kst": "23:19 KST",
-      "time_display": "09:19 ET / 22:19 BJ"
     }
   ],
   "ticker_news": {
@@ -1768,6 +1767,13 @@
     ],
     "SPCX": [
       {
+        "title": "Nasdaq Drops As NVDA, ANT, SPCX Slide: Mohamed El-Erian Says Market Warning Signals Go Well Beyond Nvidia",
+        "url": "https://stocktwits.com/news-articles/markets/equity/nasdaq-drops-as-nvda-ant-spcx-slide-mohamed-el-erian-says-market-warning-signals-go-well-beyond-nvidia/cNbsoOQR9lb?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 18:58 ET",
+        "pub_ts": 1795564727.0
+      },
+      {
         "title": "How Much Bitcoin Could Elon Musk Control if Tesla and SpaceX Merge?",
         "url": "https://247wallst.com/investing/cryptocurrency/2026/11/24/how-much-bitcoin-could-elon-musk-control-if-tesla-and-spacex-merge/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1794,13 +1800,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 16:23 ET",
         "pub_ts": 1795555380.0
-      },
-      {
-        "title": "Tesla, SpaceX Reportedly Pick Board Members To Negotiate Elon Musk's Mega Merger",
-        "url": "https://finance.yahoo.com/m/d4400d8c-dfaf-3382-a360-877e01e80aec/tesla%2C-spacex-reportedly-pick.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 16:05 ET",
-        "pub_ts": 1795554326.0
       }
     ],
     "ASTS": [
@@ -3324,25 +3323,25 @@
     "AMZN": 1795566219.7484703,
     "CRWV": 1795566219.7484703,
     "NBIS": 1795566320.1634996,
-    "APLD": 1795565221.221426,
-    "VST": 1795565221.221426,
-    "BE": 1795565221.221426,
-    "CRDO": 1795565221.221426,
-    "COHR": 1795565221.221426,
+    "APLD": 1795566727.227463,
+    "VST": 1795566727.227463,
+    "BE": 1795566727.227463,
+    "CRDO": 1795566727.227463,
+    "COHR": 1795566727.227463,
     "MRVL": 1795566320.1634996,
     "LITE": 1795566320.1634996,
-    "AAOI": 1795565221.221426,
-    "SPCX": 1795565221.221426,
-    "ASTS": 1795565221.221426,
+    "AAOI": 1795566727.227463,
+    "SPCX": 1795566727.227463,
+    "ASTS": 1795566727.227463,
     "AXTI": 1795566320.1634996,
-    "NASA": 1795565221.221426,
-    "LUNR": 1795565221.221426,
+    "NASA": 1795566727.227463,
+    "LUNR": 1795566727.227463,
     "TSLA": 1795565418.4031253,
-    "AXP": 1795565221.221426,
-    "RKLB": 1795565221.221426,
-    "KO": 1795565221.221426,
-    "FLY": 1795565221.221426,
-    "INTC": 1795565221.221426,
+    "AXP": 1795566727.227463,
+    "RKLB": 1795566727.227463,
+    "KO": 1795566727.227463,
+    "FLY": 1795566727.227463,
+    "INTC": 1795566727.227463,
     "VRT": 1795565418.4031253,
     "HPE": 1795565418.4031253,
     "DELL": 1795565418.4031253,
@@ -3370,7 +3369,7 @@
     "V": 1795565418.4031253,
     "CAT": 1795565520.124903,
     "FN": 1795566320.1634996,
-    "GLW": 1795565221.221426,
+    "GLW": 1795566727.227463,
     "ANT": 1795565520.124903,
     "XAUUSD": 1795565724.3341079,
     "KOSPI": 1795566219.7484703
@@ -3392,7 +3391,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (19:20 ET / 08:20 BJ) [CPI]：澳大利亚10月未季调CPI年率将于十分钟后公布。",
+    "detail": "⚡ 最新核心快讯 (19:30 ET / 08:30 BJ) [CPI]：澳大利亚10月未季调CPI年率 4.9%，预期4.7%，前值4.30%。",
     "event_name": "",
     "minutes_left": 0,
     "opex_shield": {
