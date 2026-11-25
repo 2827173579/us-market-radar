@@ -1,5 +1,5 @@
 {
-  "updated_at_ts": 1795641436.965,
+  "updated_at_ts": 1795641477.12,
   "updated_at_et": "11-25 16:17 ET",
   "updated_at_kst": "06:17 KST",
   "macro_calendar": [
@@ -2639,6 +2639,27 @@
     ],
     "BTC-USD": [
       {
+        "title": "Sector Update: Financial Stocks Advance Late Afternoon",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/sector-financial-stocks-advance-afternoon-210138295.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 16:01 ET",
+        "pub_ts": 1795640498.0
+      },
+      {
+        "title": "With bitcoin crashing, is Strategy (MSTR) in trouble?",
+        "url": "https://blockspace.media/short/with-bitcoin-crashing-is-strategy-mstr-in-trouble/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 15:28 ET",
+        "pub_ts": 1795638489.0
+      },
+      {
+        "title": "IREN stock price is down 80% over six months. Here’s why",
+        "url": "https://blockspace.media/short/iren-stock-price-is-down-80-over-six-months-heres-why/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 15:18 ET",
+        "pub_ts": 1795637937.0
+      },
+      {
         "title": "Mysterious traders made $340,000 betting on Huang’s Nvidia return",
         "url": "https://www.thestreet.com/crypto/markets/mysterious-traders-made-340000-betting-on-huangs-nvidia-return?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2651,27 +2672,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 14:57 ET",
         "pub_ts": 1795636676.0
-      },
-      {
-        "title": "Kraken’s new credit cards offer up to 4% bitcoin rewards",
-        "url": "https://finance.yahoo.com/video/kraken-credit-cards-offer-4-192100513.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 14:21 ET",
-        "pub_ts": 1795634460.0
-      },
-      {
-        "title": "Sector Update: Financial Stocks Rise in Afternoon Trading",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/sector-financial-stocks-rise-afternoon-185859010.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 13:58 ET",
-        "pub_ts": 1795633139.0
-      },
-      {
-        "title": "Is the Anthropic IPO to Blame for Bitcoin's Recent Downturn? The Answer Might Surprise You.",
-        "url": "https://www.fool.com/investing/2026/11/25/is-the-anthropic-ipo-to-blame-for-bitcoins-recent-downturn-the-answer-might-surprise-you/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 13:57 ET",
-        "pub_ts": 1795633021.0
       }
     ],
     "CRWD": [
@@ -3371,11 +3371,11 @@
     "FPS": 1795640679.6591523,
     "MU": 1795641436.9650028,
     "SKHY": 1795641436.9650028,
-    "WDC": 1795639969.0927057,
+    "WDC": 1795641477.1200922,
     "STX": 1795640724.6902194,
     "MSTR": 1795640679.6591523,
     "SNDK": 1795640679.6591523,
-    "BTC-USD": 1795639969.0927057,
+    "BTC-USD": 1795641477.1200922,
     "CRWD": 1795640679.6591523,
     "ORCL": 1795640679.6591523,
     "COIN": 1795640679.6591523,
