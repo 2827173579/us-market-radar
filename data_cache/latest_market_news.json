@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795579749.104,
-  "updated_at_et": "11-24 23:09 ET",
-  "updated_at_kst": "13:09 KST",
+  "updated_at_ts": 1795579864.516,
+  "updated_at_et": "11-24 23:11 ET",
+  "updated_at_kst": "13:11 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -911,11 +911,25 @@
     ],
     "NVDA": [
       {
+        "title": "Asian stocks mostly decline as AI shares fall following a retreat on Wall Street",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/asian-stocks-mostly-decline-ai-040526833.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 23:05 ET",
+        "pub_ts": 1795579526.0
+      },
+      {
         "title": "Dow Jones Futures Fall; Trump Says 'Not Too Late' For U.S. To Take Nvidia Stake",
         "url": "https://finance.yahoo.com/m/d96603c1-fe7f-3bf3-8158-0728b464d469/dow-jones-futures-fall%3B-trump.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 22:27 ET",
-        "pub_ts": 1795577272.0
+        "time": "11-24 23:04 ET",
+        "pub_ts": 1795579473.0
+      },
+      {
+        "title": "Another Wall Street analyst revamps stock market outlook as volatility surges",
+        "url": "https://www.thestreet.com/investing/another-wall-street-analyst-revamps-stock-market-outlook-as-volatility-surges?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 22:53 ET",
+        "pub_ts": 1795578780.0
       },
       {
         "title": "South Korea's chipmakers rally on Huang's return",
@@ -930,20 +944,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 22:20 ET",
         "pub_ts": 1795576810.0
-      },
-      {
-        "title": "Lattice Semiconductor (LSCC) Could Be 37% Below Fair Value On AI Chip Optimism",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/lattice-semiconductor-lscc-could-37-031232846.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 22:12 ET",
-        "pub_ts": 1795576352.0
-      },
-      {
-        "title": "3 Stocks Investors Are Watching For Corporate Governance And Litigation Demand",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/3-stocks-investors-watching-corporate-031221183.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 22:12 ET",
-        "pub_ts": 1795576341.0
       }
     ],
     "AMD": [
@@ -953,6 +953,13 @@
         "source": "Yahoo Finance",
         "time": "11-24 16:45 ET",
         "pub_ts": 1795556758.0
+      },
+      {
+        "title": "Jim Cramer and Tom Lee are Buying More AI Stocks. Are They Right?",
+        "url": "https://beincrypto.com/jim-cramer-tom-lee-ai-stock-call/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 19:53 ET",
+        "pub_ts": 1795568023.0
       },
       {
         "title": "Why AMD Stock Fell Today",
@@ -974,13 +981,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 17:39 ET",
         "pub_ts": 1795559978.0
-      },
-      {
-        "title": "Dow Brushes Off Tech Rout, Tariff Worries to Add 423 Points: Stock Market Today",
-        "url": "https://www.kiplinger.com/investing/stocks/dow-brushes-off-tech-rout-tariff-worries-stock-market-today?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 16:13 ET",
-        "pub_ts": 1795554780.0
       }
     ],
     "ASML": [
@@ -3288,26 +3288,26 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795578321.1363122,
-    "SOXL": 1795578321.1363122,
+    "KORU": 1795579864.5159607,
+    "SOXL": 1795579864.5159607,
     "SPY": 1795578627.9488747,
-    "DIA": 1795578321.1363122,
-    "SOXX": 1795578321.1363122,
-    "QQQ": 1795578321.1363122,
+    "DIA": 1795579864.5159607,
+    "SOXX": 1795579864.5159607,
+    "QQQ": 1795579864.5159607,
     "SMH": 1795578627.9488747,
-    "IWM": 1795578321.1363122,
-    "IGV": 1795578321.1363122,
-    "TLT": 1795578321.1363122,
-    "GLD": 1795578321.1363122,
-    "SQQQ": 1795578321.1363122,
+    "IWM": 1795579864.5159607,
+    "IGV": 1795579864.5159607,
+    "TLT": 1795579864.5159607,
+    "GLD": 1795579864.5159607,
+    "SQQQ": 1795579864.5159607,
     "TSM": 1795578627.9488747,
-    "VIXY": 1795578321.1363122,
-    "SOXS": 1795578321.1363122,
-    "NVDA": 1795578321.1363122,
-    "AMD": 1795578321.1363122,
+    "VIXY": 1795579864.5159607,
+    "SOXS": 1795579864.5159607,
+    "NVDA": 1795579864.5159607,
+    "AMD": 1795579864.5159607,
     "ASML": 1795578627.9488747,
     "QCOM": 1795578627.9488747,
-    "AVGO": 1795578321.1363122,
+    "AVGO": 1795579864.5159607,
     "AMAT": 1795578627.9488747,
     "META": 1795578627.9488747,
     "GOOGL": 1795578627.9488747,
