@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795635274.061,
-  "updated_at_et": "11-25 14:34 ET",
-  "updated_at_kst": "04:34 KST",
+  "updated_at_ts": 1795635312.587,
+  "updated_at_et": "11-25 14:35 ET",
+  "updated_at_kst": "04:35 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -1163,13 +1163,6 @@
         "pub_ts": 1795622724.0
       },
       {
-        "title": "Amazon and Meta are negotiating the future of AI shopping. Consumers aren't quite there yet.",
-        "url": "https://finance.yahoo.com/technology/article/amazon-and-meta-are-negotiating-the-future-of-ai-shopping-consumers-arent-quite-there-yet-144215428.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 09:42 ET",
-        "pub_ts": 1795617735.0
-      },
-      {
         "title": "CoreWeave banks prepare $4.5 billion Meta-tied loan sale next week, Bloomberg says",
         "url": "https://finance.yahoo.com/markets/stocks/articles/coreweave-banks-prepare-4-5-183018691.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1184,6 +1177,13 @@
         "pub_ts": 1795628745.0
       },
       {
+        "title": "CoreWeave’s Banks to Sell $4.5 Billion Meta-Tied Loan Next Week",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/coreweave-banks-sell-4-5-172523161.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 12:25 ET",
+        "pub_ts": 1795627523.0
+      },
+      {
         "title": "Amazon Wants a 'Fair Exchange' Before Letting Muse Back In",
         "url": "https://finance.yahoo.com/technology/articles/amazon-wants-fair-exchange-letting-163449964.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1192,6 +1192,20 @@
       }
     ],
     "GOOGL": [
+      {
+        "title": "Why Alphabet Stock Is Down Today",
+        "url": "https://www.fool.com/investing/2026/11/25/why-alphabet-stock-is-down-today/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 14:15 ET",
+        "pub_ts": 1795634101.0
+      },
+      {
+        "title": "Why SpaceX Stock Is Down Today",
+        "url": "https://www.fool.com/investing/2026/11/25/why-spacex-stock-is-down-today/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 14:05 ET",
+        "pub_ts": 1795633502.0
+      },
       {
         "title": "Why Nvidia Stock Is Falling Again",
         "url": "https://www.fool.com/investing/2026/11/25/why-nvidia-stock-is-falling-again/?.tsrc=rss",
@@ -1212,20 +1226,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 12:44 ET",
         "pub_ts": 1795628665.0
-      },
-      {
-        "title": "DoubleLine’s Cohen turns bullish on hyperscaler bonds after selloff - Bloomberg",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/doubleline-cohen-turns-bullish-hyperscaler-173352564.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 12:33 ET",
-        "pub_ts": 1795628032.0
-      },
-      {
-        "title": "Anthropic’s $1 Trillion Market Value Is at Risk. So Much for the AI Hype.",
-        "url": "https://finance.yahoo.com/m/acbd91a7-90c3-3b19-9187-1667d5063696/anthropic%E2%80%99s-%241-trillion.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 12:18 ET",
-        "pub_ts": 1795627080.0
       }
     ],
     "MSFT": [
@@ -1407,7 +1407,7 @@
       },
       {
         "title": "Amazon to start selling cars in the UK",
-        "url": "https://uk.finance.yahoo.com/news/amazon-start-selling-cars-uk-174741468.html?.tsrc=rss",
+        "url": "https://www.telegraph.co.uk/business/2026/11/25/amazon-to-start-selling-cars-in-the-uk/?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-25 12:47 ET",
         "pub_ts": 1795628861.0
@@ -1429,25 +1429,25 @@
         "pub_ts": 1795628655.0
       },
       {
+        "title": "CoreWeave’s Banks to Sell $4.5 Billion Meta-Tied Loan Next Week",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/coreweave-banks-sell-4-5-172523161.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 12:25 ET",
+        "pub_ts": 1795627523.0
+      },
+      {
+        "title": "CoreWeave, Nvidia Credit Risk Hit Fresh Highs as AI Fears Mount",
+        "url": "https://finance.yahoo.com/technology/ai/articles/coreweave-nvidia-credit-risk-hit-164402586.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 11:44 ET",
+        "pub_ts": 1795625042.0
+      },
+      {
         "title": "Oracle, CoreWeave Face Stark Warning From Credit Markets",
         "url": "https://finance.yahoo.com/markets/stocks/articles/oracle-coreweave-face-stark-warning-162922864.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-25 11:29 ET",
         "pub_ts": 1795624162.0
-      },
-      {
-        "title": "CoreWeave bonds plunge as 2031 yield surges to 17.91%; Shares drop 10%",
-        "url": "https://finance.yahoo.com/technology/ai/articles/coreweave-bonds-plunge-2031-yield-160749981.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 11:07 ET",
-        "pub_ts": 1795622869.0
-      },
-      {
-        "title": "CoreWeave's Debt Trades Near 75 Cents on the Dollar",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/coreweaves-debt-trades-near-75-151923965.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 10:19 ET",
-        "pub_ts": 1795619963.0
       }
     ],
     "NBIS": [
@@ -3313,34 +3313,34 @@
   "ticker_news_ts": {
     "KORU": 1795634838.9510815,
     "SOXL": 1795634838.9510815,
-    "SPY": 1795633801.8821743,
+    "SPY": 1795635312.5870664,
     "DIA": 1795634838.9510815,
     "SOXX": 1795634838.9510815,
     "QQQ": 1795634838.9510815,
-    "SMH": 1795633801.8821743,
+    "SMH": 1795635312.5870664,
     "IWM": 1795634838.9510815,
     "IGV": 1795634838.9510815,
     "TLT": 1795634838.9510815,
     "GLD": 1795634838.9510815,
     "SQQQ": 1795634838.9510815,
-    "TSM": 1795633801.8821743,
+    "TSM": 1795635312.5870664,
     "VIXY": 1795634838.9510815,
     "SOXS": 1795634838.9510815,
     "NVDA": 1795634838.9510815,
     "AMD": 1795634838.9510815,
-    "ASML": 1795633801.8821743,
-    "QCOM": 1795633801.8821743,
+    "ASML": 1795635312.5870664,
+    "QCOM": 1795635312.5870664,
     "AVGO": 1795634838.9510815,
-    "AMAT": 1795633801.8821743,
-    "META": 1795633801.8821743,
-    "GOOGL": 1795633801.8821743,
-    "MSFT": 1795633801.8821743,
-    "AAPL": 1795633801.8821743,
-    "PLTR": 1795633801.8821743,
-    "NOW": 1795633801.8821743,
-    "AMZN": 1795633801.8821743,
-    "CRWV": 1795633801.8821743,
-    "NBIS": 1795633801.8821743,
+    "AMAT": 1795635312.5870664,
+    "META": 1795635312.5870664,
+    "GOOGL": 1795635312.5870664,
+    "MSFT": 1795635312.5870664,
+    "AAPL": 1795635312.5870664,
+    "PLTR": 1795635312.5870664,
+    "NOW": 1795635312.5870664,
+    "AMZN": 1795635312.5870664,
+    "CRWV": 1795635312.5870664,
+    "NBIS": 1795635312.5870664,
     "APLD": 1795634481.1557245,
     "VST": 1795634481.1557245,
     "BE": 1795634481.1557245,
@@ -3351,7 +3351,7 @@
     "AAOI": 1795634481.1557245,
     "SPCX": 1795634481.1557245,
     "ASTS": 1795634481.1557245,
-    "AXTI": 1795633801.8821743,
+    "AXTI": 1795635312.5870664,
     "NASA": 1795634481.1557245,
     "LUNR": 1795634481.1557245,
     "TSLA": 1795634640.2780282,
@@ -3390,7 +3390,7 @@
     "GLW": 1795634481.1557245,
     "ANT": 1795634721.6534698,
     "XAUUSD": 1795634721.6534698,
-    "KOSPI": 1795633801.8821743
+    "KOSPI": 1795635312.5870664
   },
   "opex_shield": {
     "date": "2026-11-25",
