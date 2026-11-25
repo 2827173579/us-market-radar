@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795606335.634,
-  "updated_at_et": "11-25 06:32 ET",
-  "updated_at_kst": "20:32 KST",
+  "updated_at_ts": 1795606386.937,
+  "updated_at_et": "11-25 06:33 ET",
+  "updated_at_kst": "20:33 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -17,7 +17,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 118,
+      "minutes_left": 117,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -36,7 +36,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 118,
+      "minutes_left": 117,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -467,6 +467,20 @@
     ],
     "SPY": [
       {
+        "title": "SPDR S&P 500 ETF (SPY) Adds Apple and Nvidia on Monday",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/spdr-p-500-etf-spy-110402304.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 06:04 ET",
+        "pub_ts": 1795604642.0
+      },
+      {
+        "title": "Forget the P/E Ratio. DSTL Picks 100 Large Stocks by the Cash They Generate and the Debt They Don’t Carry",
+        "url": "https://247wallst.com/investing/etf/2026/11/25/forget-the-p-e-ratio-dstl-picks-100-large-stocks-by-the-cash-they-generate-and-the-debt-they-dont-carry/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 06:03 ET",
+        "pub_ts": 1795604617.0
+      },
+      {
         "title": "Most Covered Call ETFs Fall Just as Hard in a Selloff. This One Didn’t",
         "url": "https://247wallst.com/investing/etf/2026/11/25/most-covered-call-etfs-fall-just-as-hard-in-a-selloff-this-one-didnt/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -474,32 +488,18 @@
         "pub_ts": 1795597389.0
       },
       {
-        "title": "Harbor Arena Structured Income ETF (YLDS): Autocallable Income in an ETF Wrapper",
-        "url": "http://www.etf.com/sections/news/harbor-arena-structured-income-etf-ylds-autocallable-income-etf-wrapper?utm_source=yahoo-finance&utm_medium=rss&utm_campaign=yahoo-finance-rss&.tsrc=rss",
+        "title": "Is A 4.7% S&P Jump A Good Sign?",
+        "url": "https://www.trefis.com/stock/spy/articles/628687/is-a-4-7-s-p-jump-a-good-sign/2026-11-25?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 14:09 ET",
-        "pub_ts": 1795547398.0
+        "time": "11-25 06:02 ET",
+        "pub_ts": 1795604542.0
       },
       {
-        "title": "Is Apple (AAPL) Above Fair Value As ETF Buying Returns?",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/apple-aapl-above-fair-value-211324050.html?.tsrc=rss",
+        "title": "ETFs Are Buying American International Group (AIG) on Monday",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-buying-american-international-group-110210871.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 16:13 ET",
-        "pub_ts": 1795554804.0
-      },
-      {
-        "title": "If Anthropic Does This It Could Reach $130 By Year End",
-        "url": "https://247wallst.com/investing/2026/11/24/if-anthropic-does-this-it-could-reach-130-by-year-end/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 10:45 ET",
-        "pub_ts": 1795535148.0
-      },
-      {
-        "title": "Exchange-Traded Funds, Equity Futures Lower Pre-Bell Tuesday as Investors Pull Back From AI-Related Stocks",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/exchange-traded-funds-equity-futures-141922343.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 09:19 ET",
-        "pub_ts": 1795529962.0
+        "time": "11-25 06:02 ET",
+        "pub_ts": 1795604530.0
       }
     ],
     "DIA": [
@@ -1029,6 +1029,13 @@
         "pub_ts": 1795529795.0
       },
       {
+        "title": "ETFs Are Buying ASML (ASML) on Nov. 23",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-buying-asml-asml-nov-110130021.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 06:01 ET",
+        "pub_ts": 1795604490.0
+      },
+      {
         "title": "ASML Dips Premarket Amid Chip Rout: Dutch Lawmakers Push Back On Proposed US Curbs On Sales To China",
         "url": "https://stocktwits.com/news-articles/markets/equity/asml-dips-premarket-amid-chip-rout-dutch-lawmakers-push-back-on-proposed-us-curbs-on-sales-to-china/cNbH9EDR9ls?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1048,16 +1055,16 @@
         "source": "Yahoo Finance",
         "time": "11-24 13:23 ET",
         "pub_ts": 1795544582.0
-      },
-      {
-        "title": "ASML Stock What Changed After Nvidia CEO Return",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/asml-stock-changed-nvidia-ceo-121558672.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 07:15 ET",
-        "pub_ts": 1795522558.0
       }
     ],
     "QCOM": [
+      {
+        "title": "ETFs Bought $75.2 Million of Qualcomm (QCOM) on Monday",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-bought-75-2-million-110142939.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 06:01 ET",
+        "pub_ts": 1795604502.0
+      },
       {
         "title": "Is Qualcomm Stock As Cheap As It Looks Now?",
         "url": "https://www.trefis.com/stock/qcom/articles/628330/is-qualcomm-stock-as-cheap-as-it-looks-now/2026-11-24?.tsrc=rss",
@@ -1085,13 +1092,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 09:36 ET",
         "pub_ts": 1795530960.0
-      },
-      {
-        "title": "Qualcomm Jumps 9.8% as Chip Stocks Rally on Nvidia News on Monday",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/qualcomm-jumps-9-8-chip-170407596.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 12:04 ET",
-        "pub_ts": 1795453447.0
       }
     ],
     "AVGO": [
@@ -1133,6 +1133,13 @@
     ],
     "AMAT": [
       {
+        "title": "ETFs Bought $76.8 Million of Applied Materials (AMAT) on Nov. 23",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-bought-76-8-million-110136957.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 06:01 ET",
+        "pub_ts": 1795604496.0
+      },
+      {
         "title": "Why Is Applied Materials (AMAT) Stock Down Today? Chip Selloff Drags Suppliers",
         "url": "https://finance.yahoo.com/markets/stocks/articles/why-applied-materials-amat-stock-204649720.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1159,13 +1166,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 12:54 ET",
         "pub_ts": 1795456488.0
-      },
-      {
-        "title": "Applied Materials Jumps 13% as Chip Rally Follows Nvidia's CEO News on Nov. 23",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/applied-materials-jumps-13-chip-170155949.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 12:01 ET",
-        "pub_ts": 1795453315.0
       }
     ],
     "META": [
@@ -1214,41 +1214,55 @@
         "pub_ts": 1795593600.0
       },
       {
-        "title": "Warren Buffett's Successor, Greg Abel, Has Quietly Purchased 3 Stocks Since the Start of the Fourth Quarter, Including Shares of a Legal Monopoly",
-        "url": "https://www.fool.com/investing/2026/11/25/warren-buffett-successor-greg-abel-purchased-3-stocks-since-start-fourth-quarter-including-legal-monopoly/?.tsrc=rss",
+        "title": "Market Chatter: Australia's New Digital Duty of Care Law Targets Harmful Online Content",
+        "url": "https://finance.yahoo.com/media-advertising/articles/market-chatter-australia-apos-digital-111932219.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-25 05:26 ET",
-        "pub_ts": 1795602362.0
+        "time": "11-25 06:19 ET",
+        "pub_ts": 1795605572.0
       },
       {
-        "title": "Shopify Keeps Sliding After Its Q3 Miss: Why Piper Sandler Still Sees 30% Upside",
-        "url": "https://www.tikr.com/blog/shopify-keeps-sliding-after-its-q3-miss-why-piper-sandler-still-sees-30-upside?ref=yahoofinance&tlnk=yf-261125-ch439v4q&.tsrc=rss",
+        "title": "Indian startup Intrinsic Foundries crowned winner of L'Oréal's 2026 Big Bang Beauty Tech Innovation Program; Hector earns Special Mention",
+        "url": "https://finance.yahoo.com/small-business/articles/indian-startup-intrinsic-foundries-crowned-111600256.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-25 05:06 ET",
-        "pub_ts": 1795601210.0
+        "time": "11-25 06:16 ET",
+        "pub_ts": 1795605360.0
       },
       {
-        "title": "Market Chatter: Google Ends ABC Deal Amid Australian Media Funding Retreat",
-        "url": "https://finance.yahoo.com/media-advertising/articles/market-chatter-google-ends-abc-094828413.html?.tsrc=rss",
+        "title": "State Street SPDR Portfolio S&P 500 (SPYM) Buys $14.2 Million More Apple on Monday",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/state-street-spdr-portfolio-p-110543019.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-25 04:48 ET",
-        "pub_ts": 1795600108.0
+        "time": "11-25 06:05 ET",
+        "pub_ts": 1795604743.0
       },
       {
-        "title": "Asia's AI race heads offshore with launch of Floating Data Centres in Singapore",
-        "url": "https://finance.yahoo.com/technology/ai/articles/asias-ai-race-heads-offshore-085300682.html?.tsrc=rss",
+        "title": "What iShares Russell 1000 ETF (IWB) Bought: Apple Leads on Nov. 23",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/ishares-russell-1000-etf-iwb-110526380.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-25 03:53 ET",
-        "pub_ts": 1795596780.0
+        "time": "11-25 06:05 ET",
+        "pub_ts": 1795604726.0
       }
     ],
     "MSFT": [
       {
-        "title": "Anthropic falls below IPO price as Nvidia gives back gains",
-        "url": "https://finance.yahoo.com/video/anthropic-falls-below-ipo-price-as-nvidia-gives-back-gains-214558309.html?.tsrc=rss",
+        "title": "iShares Expanded Tech-Software (IGV) Buys $15 Million More Palo Alto on Nov. 23",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/ishares-expanded-tech-software-igv-110551099.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 16:45 ET",
-        "pub_ts": 1795556758.0
+        "time": "11-25 06:05 ET",
+        "pub_ts": 1795604751.0
+      },
+      {
+        "title": "State Street SPDR Portfolio S&P 500 (SPYM) Buys $14.2 Million More Apple on Monday",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/state-street-spdr-portfolio-p-110543019.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 06:05 ET",
+        "pub_ts": 1795604743.0
+      },
+      {
+        "title": "Invesco NASDAQ 100 ETF (QQQM) Adds Apple and NVIDIA on Monday",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/invesco-nasdaq-100-etf-qqqm-110416507.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 06:04 ET",
+        "pub_ts": 1795604656.0
       },
       {
         "title": "Satya Nadella Says “Six Months Behind Is a Great Place to Be.” That’s a Warning for Anthropic",
@@ -1263,57 +1277,43 @@
         "source": "Yahoo Finance",
         "time": "11-24 18:10 ET",
         "pub_ts": 1795561800.0
-      },
-      {
-        "title": "Maverick Medical AI Surfaces CodeAgent within Microsoft Radiology Reporting Solutions to Reduce Physician Rework",
-        "url": "https://finance.yahoo.com/healthcare/articles/maverick-medical-ai-surfaces-codeagent-225400029.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 17:54 ET",
-        "pub_ts": 1795560840.0
-      },
-      {
-        "title": "Retailers Sanguine for Black Friday",
-        "url": "https://wwd.com/business-news/retail/retail-outlook-mood-black-friday-1239462186/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 17:24 ET",
-        "pub_ts": 1795559066.0
       }
     ],
     "AAPL": [
       {
-        "title": "Why the Jensen Huang rally faded so quickly",
-        "url": "https://finance.yahoo.com/video/why-the-jensen-huang-rally-faded-so-quickly-194511286.html?.tsrc=rss",
+        "title": "Proshares Trust (TQQQ) Sells Apple and Nvidia on Nov. 23",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/proshares-trust-tqqq-sells-apple-110547396.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 14:45 ET",
-        "pub_ts": 1795549511.0
+        "time": "11-25 06:05 ET",
+        "pub_ts": 1795604747.0
       },
       {
-        "title": "Tell Schwab to Move $19,000 of Apple Stock to Your Son on December 30 and If the Shares Land January 4 the IRS Counts It as a 2027 Gift. This Year’s Exclusion Is Gone for Good",
-        "url": "https://247wallst.com/personal-finance/2026/11/25/tell-schwab-to-move-19000-of-apple-stock-to-your-son-on-december-30-and-if-the-shares-land-january-4-the-irs-counts-it-as-a-2027-gift-this-years-exclusion-is-gone-for-good/?.tsrc=rss",
+        "title": "State Street SPDR Portfolio S&P 500 (SPYM) Buys $14.2 Million More Apple on Monday",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/state-street-spdr-portfolio-p-110543019.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-25 05:52 ET",
-        "pub_ts": 1795603928.0
+        "time": "11-25 06:05 ET",
+        "pub_ts": 1795604743.0
       },
       {
-        "title": "Tim Cook Could Have Purchased Any of 489 S&P 500 Companies With $903 Billion. Instead, He Bought Something That Transformed Apple Forever.",
-        "url": "https://www.fool.com/investing/2026/11/25/tim-cook-purchase-any-489-sp-500-companies-with-903-billion-he-bought-something-transformed-apple-forever/?.tsrc=rss",
+        "title": "State Street Technology SPDR (XLK) Adds Apple and Nvidia on Monday",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/state-street-technology-spdr-xlk-110536754.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-25 04:26 ET",
-        "pub_ts": 1795598762.0
+        "time": "11-25 06:05 ET",
+        "pub_ts": 1795604736.0
       },
       {
-        "title": "Tech Keeps Eating Hollywood As Netflix Buys Historic Seinfeld Lot",
-        "url": "https://finance.yahoo.com/m/34be458f-965e-30c4-8fb7-e730267a65a9/tech-keeps-eating-hollywood.html?.tsrc=rss",
+        "title": "What iShares Russell 1000 ETF (IWB) Bought: Apple Leads on Nov. 23",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/ishares-russell-1000-etf-iwb-110526380.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 18:00 ET",
-        "pub_ts": 1795561228.0
+        "time": "11-25 06:05 ET",
+        "pub_ts": 1795604726.0
       },
       {
-        "title": "Maple raises $5.3M to build AI products that protect your data, even from itself",
-        "url": "https://finance.yahoo.com/technology/ai/articles/maple-raises-5-3m-build-211952973.html?.tsrc=rss",
+        "title": "What Direxion Daily Technology Bull 3X ETF (TECL) Sold: Apple Leads on Monday",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/direxion-daily-technology-bull-3x-110437163.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 16:19 ET",
-        "pub_ts": 1795555192.0
+        "time": "11-25 06:04 ET",
+        "pub_ts": 1795604677.0
       }
     ],
     "PLTR": [
@@ -1323,6 +1323,13 @@
         "source": "Yahoo Finance",
         "time": "11-24 16:45 ET",
         "pub_ts": 1795556758.0
+      },
+      {
+        "title": "ETFs Are Net Sellers of Palantir (PLTR) on Monday",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-net-sellers-palantir-pltr-110251086.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 06:02 ET",
+        "pub_ts": 1795604571.0
       },
       {
         "title": "Can Palantir Technologies (PLTR) Justify Its Price Through Cash Flow?",
@@ -1344,13 +1351,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 15:20 ET",
         "pub_ts": 1795551602.0
-      },
-      {
-        "title": "Wall Street May Not Be Ready for What’s Coming Next for These 3 AI Stocks",
-        "url": "https://247wallst.com/investing/2026/11/24/wall-street-may-not-be-ready-for-whats-coming-next-for-these-3-ai-stocks/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 11:33 ET",
-        "pub_ts": 1795537993.0
       }
     ],
     "NOW": [
@@ -1392,11 +1392,11 @@
     ],
     "AMZN": [
       {
-        "title": "Anthropic falls below IPO price as Nvidia gives back gains",
-        "url": "https://finance.yahoo.com/video/anthropic-falls-below-ipo-price-as-nvidia-gives-back-gains-214558309.html?.tsrc=rss",
+        "title": "ETFs Are Net Sellers of Amazon (AMZN) on Monday",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-net-sellers-amazon-amzn-110242019.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 16:45 ET",
-        "pub_ts": 1795556758.0
+        "time": "11-25 06:02 ET",
+        "pub_ts": 1795604562.0
       },
       {
         "title": "Market Chatter: Amazon.com, Meta Platforms in Talks Over Allowing Muse AI Access Shopping Site",
@@ -1429,6 +1429,13 @@
     ],
     "CRWV": [
       {
+        "title": "CoreWeave Debt Rout Sends a Stark Warning Across the AI Industry",
+        "url": "https://finance.yahoo.com/markets/options/articles/coreweave-debt-rout-sends-stark-112645032.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 06:26 ET",
+        "pub_ts": 1795606005.0
+      },
+      {
         "title": "AI Concerns Resurface? ORCL, GOOGL, SPCX, CRWV Credit Default Swap Spreads Hit Records As NVDA, ANT Tumble",
         "url": "https://stocktwits.com/news-articles/markets/equity/ai-concerns-resurface-orcl-googl-spcx-crwv-credit-default-swap-spreads-hit-records-as-nvda-ant-tumble/cNbHEEAR9lZ?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1455,13 +1462,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 13:57 ET",
         "pub_ts": 1795546678.0
-      },
-      {
-        "title": "CoreWeave Bonds Hit All-Time Lows, Erasing Nvidia-Fueled Gains",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/coreweave-bonds-hit-time-lows-185527465.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 13:55 ET",
-        "pub_ts": 1795546527.0
       }
     ],
     "NBIS": [
@@ -3327,34 +3327,34 @@
   "ticker_news_ts": {
     "KORU": 1795605987.1235049,
     "SOXL": 1795605987.1235049,
-    "SPY": 1795604837.8887246,
+    "SPY": 1795606386.937073,
     "DIA": 1795605987.1235049,
     "SOXX": 1795605987.1235049,
     "QQQ": 1795605987.1235049,
-    "SMH": 1795604837.8887246,
+    "SMH": 1795606386.937073,
     "IWM": 1795605987.1235049,
     "IGV": 1795605987.1235049,
     "TLT": 1795605987.1235049,
     "GLD": 1795605987.1235049,
     "SQQQ": 1795605987.1235049,
-    "TSM": 1795604837.8887246,
+    "TSM": 1795606386.937073,
     "VIXY": 1795605987.1235049,
     "SOXS": 1795605987.1235049,
     "NVDA": 1795605987.1235049,
     "AMD": 1795605987.1235049,
-    "ASML": 1795604837.8887246,
-    "QCOM": 1795604837.8887246,
+    "ASML": 1795606386.937073,
+    "QCOM": 1795606386.937073,
     "AVGO": 1795605987.1235049,
-    "AMAT": 1795604837.8887246,
-    "META": 1795604837.8887246,
-    "GOOGL": 1795604837.8887246,
-    "MSFT": 1795604837.8887246,
-    "AAPL": 1795604837.8887246,
-    "PLTR": 1795604837.8887246,
-    "NOW": 1795604837.8887246,
-    "AMZN": 1795604837.8887246,
-    "CRWV": 1795604837.8887246,
-    "NBIS": 1795604837.8887246,
+    "AMAT": 1795606386.937073,
+    "META": 1795606386.937073,
+    "GOOGL": 1795606386.937073,
+    "MSFT": 1795606386.937073,
+    "AAPL": 1795606386.937073,
+    "PLTR": 1795606386.937073,
+    "NOW": 1795606386.937073,
+    "AMZN": 1795606386.937073,
+    "CRWV": 1795606386.937073,
+    "NBIS": 1795606386.937073,
     "APLD": 1795605552.965205,
     "VST": 1795605552.965205,
     "BE": 1795605552.965205,
@@ -3365,7 +3365,7 @@
     "AAOI": 1795605552.965205,
     "SPCX": 1795605552.965205,
     "ASTS": 1795605552.965205,
-    "AXTI": 1795604837.8887246,
+    "AXTI": 1795606386.937073,
     "NASA": 1795605552.965205,
     "LUNR": 1795605552.965205,
     "TSLA": 1795605650.1484492,
@@ -3404,7 +3404,7 @@
     "GLW": 1795605552.965205,
     "ANT": 1795605748.2915187,
     "XAUUSD": 1795605748.2915187,
-    "KOSPI": 1795604837.8887246
+    "KOSPI": 1795606386.937073
   },
   "opex_shield": {
     "date": "2026-11-25",
@@ -3422,10 +3422,10 @@
   },
   "calendar_banner": {
     "level": "upcoming",
-    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 118 分钟（11-25 08:30 ET / 22:30 KST）",
+    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 117 分钟（11-25 08:30 ET / 22:30 KST）",
     "detail": "前值 0.3% ｜ 预期 0.3% ｜ 临近公布前15分钟将自动触发防插针预警",
     "event_name": "美国10月核心PCE物价指数环比",
-    "minutes_left": 118,
+    "minutes_left": 117,
     "opex_shield": {
       "date": "2026-11-25",
       "active": false,
