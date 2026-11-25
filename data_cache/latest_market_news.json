@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795612521.677,
-  "updated_at_et": "11-25 08:15 ET",
-  "updated_at_kst": "22:15 KST",
+  "updated_at_ts": 1795612573.842,
+  "updated_at_et": "11-25 08:16 ET",
+  "updated_at_kst": "22:16 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -17,7 +17,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "countdown_15m",
-      "minutes_left": 15,
+      "minutes_left": 14,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -36,7 +36,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "countdown_15m",
-      "minutes_left": 15,
+      "minutes_left": 14,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -3380,11 +3380,11 @@
     "FPS": 1795611797.1131556,
     "MU": 1795612521.676772,
     "SKHY": 1795612521.676772,
-    "WDC": 1795611030.792009,
+    "WDC": 1795612573.8422031,
     "STX": 1795611847.801106,
     "MSTR": 1795611797.1131556,
     "SNDK": 1795611797.1131556,
-    "BTC-USD": 1795611030.792009,
+    "BTC-USD": 1795612573.8422031,
     "CRWD": 1795611797.1131556,
     "ORCL": 1795611797.1131556,
     "COIN": 1795611797.1131556,
@@ -3420,10 +3420,10 @@
   },
   "calendar_banner": {
     "level": "countdown_15m",
-    "headline": "⚠️ 宏观防插针预警：距离【美国10月核心PCE物价指数环比】公布还有 15 分钟，盘口极易上下剧烈插针，暂停左侧盲目挂单！",
+    "headline": "⚠️ 宏观防插针预警：距离【美国10月核心PCE物价指数环比】公布还有 14 分钟，盘口极易上下剧烈插针，暂停左侧盲目挂单！",
     "detail": "公布时间 11-25 08:30 ET / 22:30 KST ｜ 前值 0.3% · 预期 0.3%",
     "event_name": "美国10月核心PCE物价指数环比",
-    "minutes_left": 15,
+    "minutes_left": 14,
     "opex_shield": {
       "date": "2026-11-25",
       "active": false,
