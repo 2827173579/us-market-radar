@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795604173.958,
-  "updated_at_et": "11-25 05:56 ET",
-  "updated_at_kst": "19:56 KST",
+  "updated_at_ts": 1795604235.868,
+  "updated_at_et": "11-25 05:57 ET",
+  "updated_at_kst": "19:57 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -17,7 +17,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 154,
+      "minutes_left": 153,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -36,7 +36,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 154,
+      "minutes_left": 153,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -3249,6 +3249,20 @@
         "pub_ts": 1795601358.0
       },
       {
+        "title": "AI Angst Undercuts Asian Stock Markets",
+        "url": "https://finance.yahoo.com/markets/world-indices/articles/ai-angst-undercuts-asian-stock-104226080.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 05:42 ET",
+        "pub_ts": 1795603346.0
+      },
+      {
+        "title": "Anthropic launches Claude Ship beta to support developer workflows",
+        "url": "https://www.verdict.co.uk/anthropic-launches-claude-ship/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 05:28 ET",
+        "pub_ts": 1795602530.0
+      },
+      {
         "title": "Prediction: Here’s What Anthropic’s Valuation Will Be in 2027, According to History",
         "url": "https://www.fool.com/investing/2026/11/25/prediction-heres-what-anthropics-valuation-will-be-in-2027-according-to-history/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3261,20 +3275,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 03:00 ET",
         "pub_ts": 1795593600.0
-      },
-      {
-        "title": "AI Concerns Resurface? ORCL, GOOGL, SPCX, CRWV Credit Default Swap Spreads Hit Records As NVDA, ANT Tumble",
-        "url": "https://stocktwits.com/news-articles/markets/equity/ai-concerns-resurface-orcl-googl-spcx-crwv-credit-default-swap-spreads-hit-records-as-nvda-ant-tumble/cNbHEEAR9lZ?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 01:56 ET",
-        "pub_ts": 1795589778.0
-      },
-      {
-        "title": "Investors shut out of Anthropic's IPO may be the lucky ones",
-        "url": "https://www.thestreet.com/investing/anthropic-stock-below-ipo-price-missed-allocation?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 00:03 ET",
-        "pub_ts": 1795582980.0
       }
     ],
     "XAUUSD": [
@@ -3394,16 +3394,16 @@
     "MRNA": 1795604121.535901,
     "NKE": 1795604121.535901,
     "MCD": 1795604121.535901,
-    "PEP": 1795602704.5014818,
-    "XOM": 1795602704.5014818,
-    "JPM": 1795602704.5014818,
-    "WMT": 1795602704.5014818,
+    "PEP": 1795604235.8684995,
+    "XOM": 1795604235.8684995,
+    "JPM": 1795604235.8684995,
+    "WMT": 1795604235.8684995,
     "V": 1795604121.535901,
-    "CAT": 1795602704.5014818,
+    "CAT": 1795604235.8684995,
     "FN": 1795603313.8519511,
     "GLW": 1795604022.5883892,
-    "ANT": 1795602704.5014818,
-    "XAUUSD": 1795602704.5014818,
+    "ANT": 1795604235.8684995,
+    "XAUUSD": 1795604235.8684995,
     "KOSPI": 1795603313.8519511
   },
   "opex_shield": {
@@ -3422,10 +3422,10 @@
   },
   "calendar_banner": {
     "level": "upcoming",
-    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 154 分钟（11-25 08:30 ET / 22:30 KST）",
+    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 153 分钟（11-25 08:30 ET / 22:30 KST）",
     "detail": "前值 0.3% ｜ 预期 0.3% ｜ 临近公布前15分钟将自动触发防插针预警",
     "event_name": "美国10月核心PCE物价指数环比",
-    "minutes_left": 154,
+    "minutes_left": 153,
     "opex_shield": {
       "date": "2026-11-25",
       "active": false,
