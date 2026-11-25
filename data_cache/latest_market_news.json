@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795606578.152,
-  "updated_at_et": "11-25 06:36 ET",
-  "updated_at_kst": "20:36 KST",
+  "updated_at_ts": 1795606629.327,
+  "updated_at_et": "11-25 06:37 ET",
+  "updated_at_kst": "20:37 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -17,7 +17,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 114,
+      "minutes_left": 113,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -36,13 +36,26 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 114,
+      "minutes_left": 113,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
     }
   ],
   "macro_flashes": [
+    {
+      "id": "20261125193610129800",
+      "title": "国际金难言已至底部？能源市场进入进入“更脆弱的平衡” | Live分析更新中",
+      "summary": "上调保证金是在逼空头回补，白银的逼空或许已经开场！美元重拾涨势，但超买警报已响，美国PCE将决定下一步方向……",
+      "keywords": [
+        "PCE"
+      ],
+      "pub_ts": 1795606570.0,
+      "time_et": "11-25 06:36 ET",
+      "time_bj": "19:36 BJ",
+      "time_kst": "20:36 KST",
+      "time_display": "06:36 ET / 19:36 BJ"
+    },
     {
       "id": "20261125183058340800",
       "title": "整理：特朗普过去24小时都忙了什么？（2026-11-25）",
@@ -374,20 +387,6 @@
       "time_bj": "13:52 BJ",
       "time_kst": "14:52 KST",
       "time_display": "00:52 ET / 13:52 BJ"
-    },
-    {
-      "id": "20261125134530320800",
-      "title": "美联储“最青睐”的通胀数据今夜来袭！会否正式打开2027加息大门？",
-      "summary": "在美股持续震荡之际，华尔街开始担忧，若通胀持续顽固，市场的一系列加息定价重估可能会构成“重大冲击”，而美联储难以托底。点击查看…",
-      "keywords": [
-        "美联储",
-        "加息"
-      ],
-      "pub_ts": 1795585530.0,
-      "time_et": "11-25 00:45 ET",
-      "time_bj": "13:45 BJ",
-      "time_kst": "14:45 KST",
-      "time_display": "00:45 ET / 13:45 BJ"
     }
   ],
   "ticker_news": {
@@ -3422,10 +3421,10 @@
   },
   "calendar_banner": {
     "level": "upcoming",
-    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 114 分钟（11-25 08:30 ET / 22:30 KST）",
+    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 113 分钟（11-25 08:30 ET / 22:30 KST）",
     "detail": "前值 0.3% ｜ 预期 0.3% ｜ 临近公布前15分钟将自动触发防插针预警",
     "event_name": "美国10月核心PCE物价指数环比",
-    "minutes_left": 114,
+    "minutes_left": 113,
     "opex_shield": {
       "date": "2026-11-25",
       "active": false,
