@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795609352.43,
-  "updated_at_et": "11-25 07:22 ET",
-  "updated_at_kst": "21:22 KST",
+  "updated_at_ts": 1795609398.349,
+  "updated_at_et": "11-25 07:23 ET",
+  "updated_at_kst": "21:23 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -17,7 +17,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 68,
+      "minutes_left": 67,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -36,7 +36,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 68,
+      "minutes_left": 67,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -478,13 +478,6 @@
         "pub_ts": 1795604617.0
       },
       {
-        "title": "Most Covered Call ETFs Fall Just as Hard in a Selloff. This One Didn’t",
-        "url": "https://247wallst.com/investing/etf/2026/11/25/most-covered-call-etfs-fall-just-as-hard-in-a-selloff-this-one-didnt/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 04:03 ET",
-        "pub_ts": 1795597389.0
-      },
-      {
         "title": "Is A 4.7% S&P Jump A Good Sign?",
         "url": "https://www.trefis.com/stock/spy/articles/628687/is-a-4-7-s-p-jump-a-good-sign/2026-11-25?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -497,6 +490,13 @@
         "source": "Yahoo Finance",
         "time": "11-25 06:02 ET",
         "pub_ts": 1795604530.0
+      },
+      {
+        "title": "ETFs Are Buying Extra Space Storage (EXR) on Nov. 23",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-buying-extra-space-storage-110204240.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 06:02 ET",
+        "pub_ts": 1795604524.0
       }
     ],
     "DIA": [
@@ -1056,6 +1056,13 @@
     ],
     "QCOM": [
       {
+        "title": "A $65 Million Reason Why Qualcomm Stock In Focus Today",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/65-million-reason-why-qualcomm-115831855.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 06:58 ET",
+        "pub_ts": 1795607911.0
+      },
+      {
         "title": "ETFs Bought $75.2 Million of Qualcomm (QCOM) on Monday",
         "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-bought-75-2-million-110142939.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1082,13 +1089,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 12:16 ET",
         "pub_ts": 1795540578.0
-      },
-      {
-        "title": "Global Fixed Point Digital Signal Processor Market Report 2026 to 2030 | Capitalize on 8.7% CAGR as Qualcomm, MediaTek, Texas Instruments, Samsung, and Intel Accelerate Edge IoT",
-        "url": "https://finance.yahoo.com/technology/articles/global-fixed-point-digital-signal-143800586.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 09:38 ET",
-        "pub_ts": 1795531080.0
       }
     ],
     "AVGO": [
@@ -1167,6 +1167,20 @@
     ],
     "META": [
       {
+        "title": "Amazon, Meta Reportedly Discuss Restoring Muse Shopping Bot Access As Advertising Concerns Persist",
+        "url": "https://stocktwits.com/news-articles/markets/equity/amazon-meta-reportedly-discuss-restoring-muse-shopping-bot-access-as-advertising-concerns-persist/cNbHg4eR9m5?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 06:56 ET",
+        "pub_ts": 1795607779.0
+      },
+      {
+        "title": "Could Meta Be A Value Stock For Your Portfolio?",
+        "url": "https://www.trefis.com/stock/meta/articles/628778/could-meta-be-a-value-stock-for-your-portfolio/2026-11-25?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 06:45 ET",
+        "pub_ts": 1795607106.0
+      },
+      {
         "title": "Market Chatter: Amazon.com, Meta Platforms in Talks Over Allowing Muse AI Access Shopping Site",
         "url": "https://finance.yahoo.com/technology/ai/articles/market-chatter-amazon-com-meta-104905932.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1186,29 +1200,29 @@
         "source": "Yahoo Finance",
         "time": "11-25 03:58 ET",
         "pub_ts": 1795597082.0
-      },
-      {
-        "title": "Exclusive: Meta and Amazon discuss ending Muse shopping bot blockade, as ads, search emerge as key issues",
-        "url": "https://finance.yahoo.com/technology/ai/articles/exclusive-meta-amazon-discuss-ending-080100266.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 03:01 ET",
-        "pub_ts": 1795593660.0
-      },
-      {
-        "title": "Cathie Wood Just Sold $14 Million of Meta",
-        "url": "https://www.tikr.com/blog/cathie-wood-just-sold-14-million-of-meta?ref=yahoofinance&tlnk=yf-261125-3qjvv3gp&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 02:09 ET",
-        "pub_ts": 1795590541.0
       }
     ],
     "GOOGL": [
+      {
+        "title": "AI just solved something no human can understand",
+        "url": "https://finance.yahoo.com/video/ai-just-solved-something-no-120000560.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 07:00 ET",
+        "pub_ts": 1795608000.0
+      },
       {
         "title": "Bear of the Day: Zillow Group (ZG)",
         "url": "https://finance.yahoo.com/real-estate/articles/bear-day-zillow-group-zg-080000482.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-25 03:00 ET",
         "pub_ts": 1795593600.0
+      },
+      {
+        "title": "Does Apple's New Silence Mean You Should Worry?",
+        "url": "https://www.trefis.com/stock/aapl/articles/628917/does-apple-s-new-silence-mean-you-should-worry/2026-11-25?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 07:07 ET",
+        "pub_ts": 1795608473.0
       },
       {
         "title": "Market Chatter: Australia's New Digital Duty of Care Law Targets Harmful Online Content",
@@ -1223,23 +1237,16 @@
         "source": "Yahoo Finance",
         "time": "11-25 06:16 ET",
         "pub_ts": 1795605360.0
-      },
-      {
-        "title": "State Street SPDR Portfolio S&P 500 (SPYM) Buys $14.2 Million More Apple on Monday",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/state-street-spdr-portfolio-p-110543019.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 06:05 ET",
-        "pub_ts": 1795604743.0
-      },
-      {
-        "title": "What iShares Russell 1000 ETF (IWB) Bought: Apple Leads on Nov. 23",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/ishares-russell-1000-etf-iwb-110526380.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 06:05 ET",
-        "pub_ts": 1795604726.0
       }
     ],
     "MSFT": [
+      {
+        "title": "IBM and Microsoft expand Azure Compute Fleet integration",
+        "url": "https://www.verdict.co.uk/ibm-microsoft-azure-compute-fleet-integration/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 06:43 ET",
+        "pub_ts": 1795607017.0
+      },
       {
         "title": "iShares Expanded Tech-Software (IGV) Buys $15 Million More Palo Alto on Nov. 23",
         "url": "https://finance.yahoo.com/markets/stocks/articles/ishares-expanded-tech-software-igv-110551099.html?.tsrc=rss",
@@ -1262,21 +1269,28 @@
         "pub_ts": 1795604656.0
       },
       {
-        "title": "What's Happening To Anthropic Stock Below Its IPO Price",
-        "url": "https://www.trefis.com/stock/ant/articles/628750/what-s-happening-to-anthropic-stock-below-its-ipo-price/2026-11-25?.tsrc=rss",
+        "title": "Market Chatter: Walmart-Backed PhonePe Resumes IPO Process; Seeks Up to $15 Billion in Valuation",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/market-chatter-walmart-backed-phonepe-121130205.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-25 06:14 ET",
-        "pub_ts": 1795605293.0
-      },
-      {
-        "title": "Proshares Trust (TQQQ) Sells Apple and Nvidia on Nov. 23",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/proshares-trust-tqqq-sells-apple-110547396.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 06:05 ET",
-        "pub_ts": 1795604747.0
+        "time": "11-25 07:11 ET",
+        "pub_ts": 1795608690.0
       }
     ],
     "AAPL": [
+      {
+        "title": "Does Apple's New Silence Mean You Should Worry?",
+        "url": "https://www.trefis.com/stock/aapl/articles/628917/does-apple-s-new-silence-mean-you-should-worry/2026-11-25?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 07:07 ET",
+        "pub_ts": 1795608473.0
+      },
+      {
+        "title": "Is Micron's Record Margin Squeezing Apple And HP?",
+        "url": "https://www.trefis.com/stock/mu/articles/628762/is-micron-s-record-margin-squeezing-apple-and-hp/2026-11-25?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 06:38 ET",
+        "pub_ts": 1795606689.0
+      },
       {
         "title": "Proshares Trust (TQQQ) Sells Apple and Nvidia on Nov. 23",
         "url": "https://finance.yahoo.com/markets/stocks/articles/proshares-trust-tqqq-sells-apple-110547396.html?.tsrc=rss",
@@ -1297,20 +1311,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 06:05 ET",
         "pub_ts": 1795604736.0
-      },
-      {
-        "title": "What iShares Russell 1000 ETF (IWB) Bought: Apple Leads on Nov. 23",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/ishares-russell-1000-etf-iwb-110526380.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 06:05 ET",
-        "pub_ts": 1795604726.0
-      },
-      {
-        "title": "What Direxion Daily Technology Bull 3X ETF (TECL) Sold: Apple Leads on Monday",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/direxion-daily-technology-bull-3x-110437163.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 06:04 ET",
-        "pub_ts": 1795604677.0
       }
     ],
     "PLTR": [
@@ -1389,6 +1389,20 @@
     ],
     "AMZN": [
       {
+        "title": "Is There A Risk Hiding In Amazon Stock's Growth Plan?",
+        "url": "https://www.trefis.com/stock/amzn/articles/628897/is-there-a-risk-hiding-in-amazon-stock-s-growth-plan/2026-11-25?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 06:57 ET",
+        "pub_ts": 1795607824.0
+      },
+      {
+        "title": "Amazon, Meta Reportedly Discuss Restoring Muse Shopping Bot Access As Advertising Concerns Persist",
+        "url": "https://stocktwits.com/news-articles/markets/equity/amazon-meta-reportedly-discuss-restoring-muse-shopping-bot-access-as-advertising-concerns-persist/cNbHg4eR9m5?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 06:56 ET",
+        "pub_ts": 1795607779.0
+      },
+      {
         "title": "ETFs Are Net Sellers of Amazon (AMZN) on Monday",
         "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-net-sellers-amazon-amzn-110242019.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1408,23 +1422,23 @@
         "source": "Yahoo Finance",
         "time": "11-25 03:32 ET",
         "pub_ts": 1795595520.0
-      },
-      {
-        "title": "After $26 billion in gifts, MacKenzie Scott is still worth $27 billion—and just gave Atlanta students $8 million more",
-        "url": "https://finance.yahoo.com/small-business/articles/26-billion-gifts-mackenzie-scott-080300124.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 03:03 ET",
-        "pub_ts": 1795593780.0
-      },
-      {
-        "title": "Exclusive: Meta and Amazon discuss ending Muse shopping bot blockade, as ads, search emerge as key issues",
-        "url": "https://finance.yahoo.com/technology/ai/articles/exclusive-meta-amazon-discuss-ending-080100266.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 03:01 ET",
-        "pub_ts": 1795593660.0
       }
     ],
     "CRWV": [
+      {
+        "title": "CoreWeave Cratered 40% Year-to-Date: 320% Gains to Come According to This Investment Bank Desk",
+        "url": "https://247wallst.com/investing/2026/11/25/coreweave-cratered-40-year-to-date-320-gains-to-come-according-to-this-investment-bank-desk/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 07:15 ET",
+        "pub_ts": 1795608943.0
+      },
+      {
+        "title": "What Just Happened To CoreWeave Stock?",
+        "url": "https://www.trefis.com/stock/crwv/articles/628973/what-just-happened-to-coreweave-stock/2026-11-25?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 07:03 ET",
+        "pub_ts": 1795608219.0
+      },
       {
         "title": "CoreWeave Debt Rout Sends a Stark Warning Across the AI Industry",
         "url": "https://finance.yahoo.com/markets/options/articles/coreweave-debt-rout-sends-stark-112645032.html?.tsrc=rss",
@@ -1445,23 +1459,16 @@
         "source": "Yahoo Finance",
         "time": "11-25 01:56 ET",
         "pub_ts": 1795589778.0
-      },
-      {
-        "title": "CoreWeave (CRWV) is Getting Hammered. What Went Wrong?",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/coreweave-crwv-getting-hammered-went-051951815.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 00:19 ET",
-        "pub_ts": 1795583991.0
-      },
-      {
-        "title": "CoreWeave bonds hit record lows as AI trade concerns return",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/coreweave-bonds-hit-record-lows-195321737.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 14:53 ET",
-        "pub_ts": 1795550001.0
       }
     ],
     "NBIS": [
+      {
+        "title": "CoreWeave Cratered 40% Year-to-Date: 320% Gains to Come According to This Investment Bank Desk",
+        "url": "https://247wallst.com/investing/2026/11/25/coreweave-cratered-40-year-to-date-320-gains-to-come-according-to-this-investment-bank-desk/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 07:15 ET",
+        "pub_ts": 1795608943.0
+      },
       {
         "title": "SpaceX Falls 4%, CoreWeave Down 13%, Nebius Down 11% as AI Stocks Give Back Nvidia Rally",
         "url": "https://www.tikr.com/blog/spacex-falls-4-coreweave-down-13-nebius-down-11-as-ai-stocks-give-back-nvidia-rally?ref=yahoofinance&tlnk=yf-261124-6rfwxx6w&.tsrc=rss",
@@ -1489,13 +1496,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 09:54 ET",
         "pub_ts": 1795532088.0
-      },
-      {
-        "title": "Can AI Cloud Expansion Anchor NBIS' Ambitious 2027 Growth Expectation?",
-        "url": "https://finance.yahoo.com/technology/ai/articles/ai-cloud-expansion-anchor-nbis-121100944.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 07:11 ET",
-        "pub_ts": 1795522260.0
       }
     ],
     "APLD": [
@@ -3324,34 +3324,34 @@
   "ticker_news_ts": {
     "KORU": 1795609016.1771367,
     "SOXL": 1795609016.1771367,
-    "SPY": 1795607891.5258613,
+    "SPY": 1795609398.3492033,
     "DIA": 1795609016.1771367,
     "SOXX": 1795609016.1771367,
     "QQQ": 1795609016.1771367,
-    "SMH": 1795607891.5258613,
+    "SMH": 1795609398.3492033,
     "IWM": 1795609016.1771367,
     "IGV": 1795609016.1771367,
     "TLT": 1795609016.1771367,
     "GLD": 1795609016.1771367,
     "SQQQ": 1795609016.1771367,
-    "TSM": 1795607891.5258613,
+    "TSM": 1795609398.3492033,
     "VIXY": 1795609016.1771367,
     "SOXS": 1795609016.1771367,
     "NVDA": 1795609016.1771367,
     "AMD": 1795609016.1771367,
-    "ASML": 1795607891.5258613,
-    "QCOM": 1795607891.5258613,
+    "ASML": 1795609398.3492033,
+    "QCOM": 1795609398.3492033,
     "AVGO": 1795609016.1771367,
-    "AMAT": 1795607891.5258613,
-    "META": 1795607891.5258613,
-    "GOOGL": 1795607891.5258613,
-    "MSFT": 1795607891.5258613,
-    "AAPL": 1795607891.5258613,
-    "PLTR": 1795607891.5258613,
-    "NOW": 1795607891.5258613,
-    "AMZN": 1795607891.5258613,
-    "CRWV": 1795607891.5258613,
-    "NBIS": 1795607891.5258613,
+    "AMAT": 1795609398.3492033,
+    "META": 1795609398.3492033,
+    "GOOGL": 1795609398.3492033,
+    "MSFT": 1795609398.3492033,
+    "AAPL": 1795609398.3492033,
+    "PLTR": 1795609398.3492033,
+    "NOW": 1795609398.3492033,
+    "AMZN": 1795609398.3492033,
+    "CRWV": 1795609398.3492033,
+    "NBIS": 1795609398.3492033,
     "APLD": 1795608623.6726074,
     "VST": 1795608623.6726074,
     "BE": 1795608623.6726074,
@@ -3362,7 +3362,7 @@
     "AAOI": 1795608623.6726074,
     "SPCX": 1795608623.6726074,
     "ASTS": 1795608623.6726074,
-    "AXTI": 1795607891.5258613,
+    "AXTI": 1795609398.3492033,
     "NASA": 1795608623.6726074,
     "LUNR": 1795608623.6726074,
     "TSLA": 1795608724.4252732,
@@ -3401,7 +3401,7 @@
     "GLW": 1795608623.6726074,
     "ANT": 1795608827.5293899,
     "XAUUSD": 1795608827.5293899,
-    "KOSPI": 1795607891.5258613
+    "KOSPI": 1795609398.3492033
   },
   "opex_shield": {
     "date": "2026-11-25",
@@ -3419,10 +3419,10 @@
   },
   "calendar_banner": {
     "level": "upcoming",
-    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 68 分钟（11-25 08:30 ET / 22:30 KST）",
+    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 67 分钟（11-25 08:30 ET / 22:30 KST）",
     "detail": "前值 0.3% ｜ 预期 0.3% ｜ 临近公布前15分钟将自动触发防插针预警",
     "event_name": "美国10月核心PCE物价指数环比",
-    "minutes_left": 68,
+    "minutes_left": 67,
     "opex_shield": {
       "date": "2026-11-25",
       "active": false,
