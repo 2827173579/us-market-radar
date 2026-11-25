@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795599377.641,
-  "updated_at_et": "11-25 04:36 ET",
-  "updated_at_kst": "18:36 KST",
+  "updated_at_ts": 1795599432.136,
+  "updated_at_et": "11-25 04:37 ET",
+  "updated_at_kst": "18:37 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -17,7 +17,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 234,
+      "minutes_left": 233,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -36,7 +36,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 234,
+      "minutes_left": 233,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -1660,6 +1660,13 @@
         "pub_ts": 1795581637.0
       },
       {
+        "title": "Plot Twist: Coherent Announces a $2 Billion Buyback, the Same Sum Nvidia Paid for Its Stock in March",
+        "url": "https://www.tikr.com/blog/plot-twist-coherent-announces-a-2-billion-buyback-the-same-sum-nvidia-paid-for-its-stock-in-march?ref=yahoofinance&tlnk=yf-261125-6hc4qc8p&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 22:52 ET",
+        "pub_ts": 1795578749.0
+      },
+      {
         "title": "Coherent Stock Is Jensen Huang Reinstatement Changing The AI Partner Story",
         "url": "https://finance.yahoo.com/markets/stocks/articles/coherent-stock-jensen-huang-reinstatement-080923486.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1679,13 +1686,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 16:34 ET",
         "pub_ts": 1795469657.0
-      },
-      {
-        "title": "Applied Optoelectronics and Lumentum Soar 22% as Jensen Huang’s Return to NVIDIA Sparks AI Optics Rebound; Coherent Jumps 19%",
-        "url": "https://247wallst.com/investing/2026/11/23/applied-optoelectronics-and-lumentum-soar-22-as-jensen-huangs-return-to-nvidia-sparks-ai-optics-rebound-coherent-jumps-19/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 10:57 ET",
-        "pub_ts": 1795449427.0
       }
     ],
     "MRVL": [
@@ -2104,6 +2104,13 @@
         "pub_ts": 1795556758.0
       },
       {
+        "title": "Up 41% at Just Over Half Costco’s P/E: Inside Coca-Cola’s Quiet Rally",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/41-just-over-half-costco-092400539.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 04:24 ET",
+        "pub_ts": 1795598640.0
+      },
+      {
         "title": "Warren Buffett Finished Buying Coca-Cola in August 1994 and Never Bought Another Share. Under Greg Abel, Berkshire Now Collects $2.3 Million a Day From It",
         "url": "https://247wallst.com/investing/2026/11/24/warren-buffett-finished-buying-coca-cola-in-august-1994-and-never-bought-another-share-under-greg-abel-berkshire-now-collects-2-3-million-a-day-from-it/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2123,13 +2130,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 14:07 ET",
         "pub_ts": 1795547238.0
-      },
-      {
-        "title": "Can Coca-Cola Navigate Rising Costs While Protecting Margins?",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/coca-cola-navigate-rising-costs-163500208.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 11:35 ET",
-        "pub_ts": 1795538100.0
       }
     ],
     "FLY": [
@@ -2171,6 +2171,13 @@
     ],
     "INTC": [
       {
+        "title": "ASML Dips Premarket Amid Chip Rout: Dutch Lawmakers Push Back On Proposed US Curbs On Sales To China",
+        "url": "https://stocktwits.com/news-articles/markets/equity/asml-dips-premarket-amid-chip-rout-dutch-lawmakers-push-back-on-proposed-us-curbs-on-sales-to-china/cNbH9EDR9ls?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 04:25 ET",
+        "pub_ts": 1795598735.0
+      },
+      {
         "title": "Why Intel Stock Fell Today",
         "url": "https://www.fool.com/investing/2026/11/24/why-intel-stock-fell-today/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2197,13 +2204,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 14:50 ET",
         "pub_ts": 1795549802.0
-      },
-      {
-        "title": "Donald Trump Floats Jensen Huang Pardon, US Stake In Nvidia – But NVDA Loses Momentum",
-        "url": "https://stocktwits.com/news-articles/markets/equity/donald-trump-floats-jensen-huang-pardon-us-stake-in-nvidia-but-nvda-loses-momentum/cNbHPnyR9lL?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 00:20 ET",
-        "pub_ts": 1795584052.0
       }
     ],
     "VRT": [
@@ -3357,25 +3357,25 @@
     "AMZN": 1795598710.5608332,
     "CRWV": 1795598710.5608332,
     "NBIS": 1795598710.5608332,
-    "APLD": 1795597930.6851954,
-    "VST": 1795597930.6851954,
-    "BE": 1795597930.6851954,
-    "CRDO": 1795597930.6851954,
-    "COHR": 1795597930.6851954,
+    "APLD": 1795599432.136337,
+    "VST": 1795599432.136337,
+    "BE": 1795599432.136337,
+    "CRDO": 1795599432.136337,
+    "COHR": 1795599432.136337,
     "MRVL": 1795598710.5608332,
     "LITE": 1795598710.5608332,
-    "AAOI": 1795597930.6851954,
-    "SPCX": 1795597930.6851954,
-    "ASTS": 1795597930.6851954,
+    "AAOI": 1795599432.136337,
+    "SPCX": 1795599432.136337,
+    "ASTS": 1795599432.136337,
     "AXTI": 1795598710.5608332,
-    "NASA": 1795597930.6851954,
-    "LUNR": 1795597930.6851954,
+    "NASA": 1795599432.136337,
+    "LUNR": 1795599432.136337,
     "TSLA": 1795598026.3876326,
-    "AXP": 1795597930.6851954,
-    "RKLB": 1795597930.6851954,
-    "KO": 1795597930.6851954,
-    "FLY": 1795597930.6851954,
-    "INTC": 1795597930.6851954,
+    "AXP": 1795599432.136337,
+    "RKLB": 1795599432.136337,
+    "KO": 1795599432.136337,
+    "FLY": 1795599432.136337,
+    "INTC": 1795599432.136337,
     "VRT": 1795598026.3876326,
     "HPE": 1795598026.3876326,
     "DELL": 1795598026.3876326,
@@ -3403,7 +3403,7 @@
     "V": 1795598026.3876326,
     "CAT": 1795598130.104495,
     "FN": 1795598710.5608332,
-    "GLW": 1795597930.6851954,
+    "GLW": 1795599432.136337,
     "ANT": 1795598130.104495,
     "XAUUSD": 1795598130.104495,
     "KOSPI": 1795598710.5608332
@@ -3424,10 +3424,10 @@
   },
   "calendar_banner": {
     "level": "upcoming",
-    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 234 分钟（11-25 08:30 ET / 22:30 KST）",
+    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 233 分钟（11-25 08:30 ET / 22:30 KST）",
     "detail": "前值 0.3% ｜ 预期 0.3% ｜ 临近公布前15分钟将自动触发防插针预警",
     "event_name": "美国10月核心PCE物价指数环比",
-    "minutes_left": 234,
+    "minutes_left": 233,
     "opex_shield": {
       "date": "2026-11-25",
       "active": false,
