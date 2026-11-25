@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795603976.334,
-  "updated_at_et": "11-25 05:52 ET",
-  "updated_at_kst": "19:52 KST",
+  "updated_at_ts": 1795604022.588,
+  "updated_at_et": "11-25 05:53 ET",
+  "updated_at_kst": "19:53 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -17,7 +17,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 158,
+      "minutes_left": 157,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -36,7 +36,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 158,
+      "minutes_left": 157,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -1799,6 +1799,13 @@
     ],
     "SPCX": [
       {
+        "title": "Bill Ackman warns the Fed’s obsession with 2% inflation will plunge the world into recession: ‘Tell me why I am wrong’",
+        "url": "https://finance.yahoo.com/economy/policy/articles/bill-ackman-warns-fed-obsession-103000113.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 05:30 ET",
+        "pub_ts": 1795602600.0
+      },
+      {
         "title": "SpaceX Sinks 11% in a Week on $32 Billion AI Chip Debt as Anthropic Slips Below Its IPO Price",
         "url": "https://www.tikr.com/blog/spacex-sinks-11-in-a-week-on-32-billion-ai-chip-debt-as-anthropic-slips-below-its-ipo-price?ref=yahoofinance&tlnk=yf-261125-xp54w5xc&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1825,13 +1832,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 23:35 ET",
         "pub_ts": 1795581301.0
-      },
-      {
-        "title": "Tesla's $3.5 trillion merger talks have a surprising catch",
-        "url": "https://www.thestreet.com/investing/teslas-3-5-trillion-merger-talks-have-a-surprising-catch?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 22:33 ET",
-        "pub_ts": 1795577580.0
       }
     ],
     "ASTS": [
@@ -3355,25 +3355,25 @@
     "AMZN": 1795603313.8519511,
     "CRWV": 1795603313.8519511,
     "NBIS": 1795603313.8519511,
-    "APLD": 1795602495.5063353,
-    "VST": 1795602495.5063353,
-    "BE": 1795602495.5063353,
-    "CRDO": 1795602495.5063353,
-    "COHR": 1795602495.5063353,
+    "APLD": 1795604022.5883892,
+    "VST": 1795604022.5883892,
+    "BE": 1795604022.5883892,
+    "CRDO": 1795604022.5883892,
+    "COHR": 1795604022.5883892,
     "MRVL": 1795603313.8519511,
     "LITE": 1795603313.8519511,
-    "AAOI": 1795602495.5063353,
-    "SPCX": 1795602495.5063353,
-    "ASTS": 1795602495.5063353,
+    "AAOI": 1795604022.5883892,
+    "SPCX": 1795604022.5883892,
+    "ASTS": 1795604022.5883892,
     "AXTI": 1795603313.8519511,
-    "NASA": 1795602495.5063353,
-    "LUNR": 1795602495.5063353,
+    "NASA": 1795604022.5883892,
+    "LUNR": 1795604022.5883892,
     "TSLA": 1795602595.177179,
-    "AXP": 1795602495.5063353,
-    "RKLB": 1795602495.5063353,
-    "KO": 1795602495.5063353,
-    "FLY": 1795602495.5063353,
-    "INTC": 1795602495.5063353,
+    "AXP": 1795604022.5883892,
+    "RKLB": 1795604022.5883892,
+    "KO": 1795604022.5883892,
+    "FLY": 1795604022.5883892,
+    "INTC": 1795604022.5883892,
     "VRT": 1795602595.177179,
     "HPE": 1795602595.177179,
     "DELL": 1795602595.177179,
@@ -3401,7 +3401,7 @@
     "V": 1795602595.177179,
     "CAT": 1795602704.5014818,
     "FN": 1795603313.8519511,
-    "GLW": 1795602495.5063353,
+    "GLW": 1795604022.5883892,
     "ANT": 1795602704.5014818,
     "XAUUSD": 1795602704.5014818,
     "KOSPI": 1795603313.8519511
@@ -3422,10 +3422,10 @@
   },
   "calendar_banner": {
     "level": "upcoming",
-    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 158 分钟（11-25 08:30 ET / 22:30 KST）",
+    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 157 分钟（11-25 08:30 ET / 22:30 KST）",
     "detail": "前值 0.3% ｜ 预期 0.3% ｜ 临近公布前15分钟将自动触发防插针预警",
     "event_name": "美国10月核心PCE物价指数环比",
-    "minutes_left": 158,
+    "minutes_left": 157,
     "opex_shield": {
       "date": "2026-11-25",
       "active": false,
