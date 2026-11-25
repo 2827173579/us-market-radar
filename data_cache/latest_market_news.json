@@ -1,9 +1,22 @@
 {
-  "updated_at_ts": 1795568846.63,
-  "updated_at_et": "11-24 20:07 ET",
-  "updated_at_kst": "10:07 KST",
+  "updated_at_ts": 1795568947.453,
+  "updated_at_et": "11-24 20:09 ET",
+  "updated_at_kst": "10:09 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261125090818386800",
+      "title": "台湾加权指数早盘跌幅扩大至5%，报38176.38点。台积电跌6%、鸿海科技跌超7%。",
+      "summary": "台湾加权指数早盘跌幅扩大至5%，报38176.38点。台积电跌6%、鸿海科技跌超7%。",
+      "keywords": [
+        "台积电"
+      ],
+      "pub_ts": 1795568898.0,
+      "time_et": "11-24 20:08 ET",
+      "time_bj": "09:08 BJ",
+      "time_kst": "10:08 KST",
+      "time_display": "20:08 ET / 09:08 BJ"
+    },
     {
       "id": "20261125090002102800",
       "title": "早盘开盘，国内期货主力合约涨多跌少，沥青涨超3%，纯苯涨近3%，甲醇、PTA、对二甲苯、…",
@@ -341,19 +354,6 @@
       "time_bj": "22:37 BJ",
       "time_kst": "23:37 KST",
       "time_display": "09:37 ET / 22:37 BJ"
-    },
-    {
-      "id": "20261124223352143800",
-      "title": "iShares半导体ETF跌约5%。AMD(AMD.O)跌6.5%，英特尔(INTC.O…",
-      "summary": "iShares半导体ETF跌约5%。AMD(AMD.O)跌6.5%，英特尔(INTC.O)跌4%，博通(AVGO.O)跌3.2%，迈威尔科技(MRVL.O)跌2.9%。美光科技(MU.O)跌5.8%，德州仪器(TXN.O)跌3.9%。",
-      "keywords": [
-        "半导体"
-      ],
-      "pub_ts": 1795530832.0,
-      "time_et": "11-24 09:33 ET",
-      "time_bj": "22:33 BJ",
-      "time_kst": "23:33 KST",
-      "time_display": "09:33 ET / 22:33 BJ"
     }
   ],
   "ticker_news": {
@@ -914,39 +914,39 @@
     ],
     "NVDA": [
       {
+        "title": "Dow Jones Futures Fall After AI Stocks Tumble; Trump Says 'Not Too Late' For Nvidia Stake",
+        "url": "https://finance.yahoo.com/m/d96603c1-fe7f-3bf3-8158-0728b464d469/dow-jones-futures-fall-after.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 20:01 ET",
+        "pub_ts": 1795568466.0
+      },
+      {
+        "title": "Market Chatter: California AG Bonta to Press Nvidia Probe, Criticizes Federal Handling",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/market-chatter-california-ag-bonta-005828411.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 19:58 ET",
+        "pub_ts": 1795568308.0
+      },
+      {
+        "title": "Nvidia Is Down 31% From Its Peak. History Says This Happens Next",
+        "url": "https://www.fool.com/investing/2026/11/24/nvidia-is-down-31-from-its-peak-history-says-this-happens-next/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 19:46 ET",
+        "pub_ts": 1795567562.0
+      },
+      {
+        "title": "Most Stocks Are Losers. Here's How You Can Still Win",
+        "url": "https://www.fool.com/investing/2026/11/24/most-stocks-are-losers-here-is-how-you-can-still-win/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 19:41 ET",
+        "pub_ts": 1795567300.0
+      },
+      {
         "title": "5 questions Nvidia still faces after bringing back Jensen Huang",
         "url": "https://www.cbsnews.com/news/nvidia-jensen-huang-challenges/?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-24 19:33 ET",
         "pub_ts": 1795566787.0
-      },
-      {
-        "title": "Dow Jones Futures Fall: Nvidia, Anthropic Lead AI Retreat But Many Sectors Strong; Fed Inflation Data Due",
-        "url": "https://finance.yahoo.com/m/d96603c1-fe7f-3bf3-8158-0728b464d469/dow-jones-futures-fall%3A.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 19:17 ET",
-        "pub_ts": 1795565826.0
-      },
-      {
-        "title": "Nvidia-Backed Nscale Reportedly Eyes Private Route As AI Market Sell-Off Clouds $35B IPO Plans",
-        "url": "https://stocktwits.com/news-articles/markets/equity/nvidia-backed-nscale-reportedly-eyes-private-route-as-ai-market-sell-off-clouds-35-b-ipo-plans/cNbuDjYR9lc?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 19:16 ET",
-        "pub_ts": 1795565791.0
-      },
-      {
-        "title": "S&P 500, Nasdaq End Lower As AI Jitters Resurface With Nvidia’s Governance Issues And Talks Of Fresh Import Tariffs — NVDA, DELL, TSLA, TGTX In Focus",
-        "url": "https://stocktwits.com/news-articles/markets/equity/s-and-p-500-nasdaq-end-lower-as-ai-jitters-resurface-with-nvidia-s-governance-issues-and-talks-of-fresh-import-tariffs-nvda-dell-tsla-tgtx-in-focus/cNbuDhyR9lT?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 19:12 ET",
-        "pub_ts": 1795565532.0
-      },
-      {
-        "title": "Dan Ives Says Jensen’s Return Is A 'Watershed Moment' For Nvidia — Just Not The All-Clear",
-        "url": "https://stocktwits.com/news-articles/markets/equity/dan-ives-says-jensen-s-return-is-a-watershed-moment-for-nvidia-just-not-the-all-clear/cNbuDfxR9lR?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 19:09 ET",
-        "pub_ts": 1795565340.0
       }
     ],
     "AMD": [
@@ -3291,26 +3291,26 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795567440.3804321,
-    "SOXL": 1795567440.3804321,
+    "KORU": 1795568947.4533343,
+    "SOXL": 1795568947.4533343,
     "SPY": 1795567737.2932932,
-    "DIA": 1795567440.3804321,
-    "SOXX": 1795567440.3804321,
-    "QQQ": 1795567440.3804321,
+    "DIA": 1795568947.4533343,
+    "SOXX": 1795568947.4533343,
+    "QQQ": 1795568947.4533343,
     "SMH": 1795567737.2932932,
-    "IWM": 1795567440.3804321,
-    "IGV": 1795567440.3804321,
-    "TLT": 1795567440.3804321,
-    "GLD": 1795567440.3804321,
-    "SQQQ": 1795567440.3804321,
+    "IWM": 1795568947.4533343,
+    "IGV": 1795568947.4533343,
+    "TLT": 1795568947.4533343,
+    "GLD": 1795568947.4533343,
+    "SQQQ": 1795568947.4533343,
     "TSM": 1795567737.2932932,
-    "VIXY": 1795567440.3804321,
-    "SOXS": 1795567440.3804321,
-    "NVDA": 1795567440.3804321,
-    "AMD": 1795567440.3804321,
+    "VIXY": 1795568947.4533343,
+    "SOXS": 1795568947.4533343,
+    "NVDA": 1795568947.4533343,
+    "AMD": 1795568947.4533343,
     "ASML": 1795567737.2932932,
     "QCOM": 1795567737.2932932,
-    "AVGO": 1795567440.3804321,
+    "AVGO": 1795568947.4533343,
     "AMAT": 1795567737.2932932,
     "META": 1795567737.2932932,
     "GOOGL": 1795567737.2932932,
@@ -3389,7 +3389,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (20:00 ET / 09:00 BJ) [原油]：早盘开盘，国内期货主力合约涨多跌少，沥青涨超3%，纯苯涨近3%，甲醇、PTA、对二甲苯、SC原油、乙二醇（EG）、烧碱涨超2%。跌幅方面，沪银跌超6%，沪锡、国际铜、钯跌超5%，沪铜跌近5%",
+    "detail": "⚡ 最新核心快讯 (20:08 ET / 09:08 BJ) [台积电]：台湾加权指数早盘跌幅扩大至5%，报38176.38点。台积电跌6%、鸿海科技跌超7%。",
     "event_name": "",
     "minutes_left": 0,
     "opex_shield": {
