@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795644409.729,
-  "updated_at_et": "11-25 17:06 ET",
-  "updated_at_kst": "07:06 KST",
+  "updated_at_ts": 1795644449.44,
+  "updated_at_et": "11-25 17:07 ET",
+  "updated_at_kst": "07:07 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -43,6 +43,20 @@
     }
   ],
   "macro_flashes": [
+    {
+      "id": "20261126060712883800",
+      "title": "美伊冲突： 1. 一艘违规LNG运输船在霍尔木兹海峡发生爆炸并起火。 2. 伊朗外长指责…",
+      "summary": "美伊冲突： 1. 一艘违规LNG运输船在霍尔木兹海峡发生爆炸并起火。 2. 伊朗外长指责以色列企图借虚假指控将美国拖入对伊战争。 3. 特朗普称对伊军事行动资金可覆盖到明年1月 承认未来或受限。 也门冲突： 1. 也门胡塞武装：袭击沙特吉达港和吉赞港。 2. 也门胡塞武装：打击沙特炼油厂和首都金融区。 3. 沙特领导的联军：打击了荷台达港的作战能力目标。 4. 胡塞武装：重申若荷台达港遭袭，将打击沙特红海沿岸港口。 其他情况： 1. 库什纳敦促内塔尼亚胡兑现加沙和平计划承诺。 2. 伊朗副总统称不惧美国封锁，将采取措施稳物价。 3. 市场消息：以色列议会通过限制总理任期的法案。 4. 据以色列第12频道：以色列正直党领导人、反对派领袖埃森科特今晚将与以色列总统会面，预计不会宣布已成功组建政府。 5. 据伊拉克国家电视台：伊拉克联邦最高法院已裁定，伊拉克可在包括库尔德斯坦地区部署军队，以保障伊拉克国际边界安全。",
+      "keywords": [
+        "特朗普",
+        "中东"
+      ],
+      "pub_ts": 1795644432.0,
+      "time_et": "11-25 17:07 ET",
+      "time_bj": "06:07 BJ",
+      "time_kst": "07:07 KST",
+      "time_display": "17:07 ET / 06:07 BJ"
+    },
     {
       "id": "20261126050141009800",
       "title": "【美股收盘：三大股指较低点大幅反弹 英伟达跌近4%】 11月26日讯，美股周三收盘，道指…",
@@ -360,19 +374,6 @@
         "加息"
       ],
       "pub_ts": 1795618002.0,
-      "time_et": "11-25 09:46 ET",
-      "time_bj": "22:46 BJ",
-      "time_kst": "23:46 KST",
-      "time_display": "09:46 ET / 22:46 BJ"
-    },
-    {
-      "id": "20261125224623353800",
-      "title": "美国白宫国家经济委员会主任哈塞特：PCE数据表明“海湾问题”的影响正在减弱。",
-      "summary": "美国白宫国家经济委员会主任哈塞特：PCE数据表明“海湾问题”的影响正在减弱。",
-      "keywords": [
-        "PCE"
-      ],
-      "pub_ts": 1795617983.0,
       "time_et": "11-25 09:46 ET",
       "time_bj": "22:46 BJ",
       "time_kst": "23:46 KST",
@@ -1018,6 +1019,13 @@
         "pub_ts": 1795637700.0
       },
       {
+        "title": "Forget ASML: Tokyo Electron Has More China Sales at Stake in the MATCH Act",
+        "url": "https://www.tikr.com/blog/forget-asml-tokyo-electron-has-more-china-sales-at-stake-in-the-match-act?ref=yahoofinance&tlnk=yf-261125-h7wjhc27&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 13:26 ET",
+        "pub_ts": 1795631202.0
+      },
+      {
         "title": "ASML Stocks Drop 6.1% as Dutch Lawmakers Fight US Chip Curb Bill",
         "url": "https://finance.yahoo.com/markets/stocks/articles/asml-stocks-drop-6-1-171745637.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1037,13 +1045,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 10:36 ET",
         "pub_ts": 1795620971.0
-      },
-      {
-        "title": "ETFs Are Buying ASML (ASML) on Nov. 23",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-buying-asml-asml-nov-110130021.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 06:01 ET",
-        "pub_ts": 1795604490.0
       }
     ],
     "QCOM": [
@@ -1166,13 +1167,6 @@
         "pub_ts": 1795634535.0
       },
       {
-        "title": "Tariffs are back as Anthropic sinks further below its IPO price",
-        "url": "https://finance.yahoo.com/video/tariffs-are-back-as-anthropic-sinks-further-below-its-ipo-price-160524926.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 11:05 ET",
-        "pub_ts": 1795622724.0
-      },
-      {
         "title": "Stocks Pare Losses as Anthropic Shares Swing Higher",
         "url": "https://www.wsj.com/finance/stocks/nasdaq-futures-slide-as-ai-growth-fears-return-to-center-stage-ff9a6d6b?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1192,6 +1186,13 @@
         "source": "Yahoo Finance",
         "time": "11-25 14:09 ET",
         "pub_ts": 1795633740.0
+      },
+      {
+        "title": "CoreWeave banks prepare $4.5 billion Meta-tied loan sale next week, Bloomberg says",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/coreweave-banks-prepare-4-5-183018691.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 13:30 ET",
+        "pub_ts": 1795631418.0
       }
     ],
     "GOOGL": [
@@ -1381,18 +1382,18 @@
     ],
     "AMZN": [
       {
+        "title": "Jensen Huang's return, neocloud risk, and a holiday retail rally",
+        "url": "https://finance.yahoo.com/video/jensen-huangs-return-neocloud-risk-210000087.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 16:00 ET",
+        "pub_ts": 1795640400.0
+      },
+      {
         "title": "Nvidia is cheap on paper, so why won't the market buy it?",
         "url": "https://finance.yahoo.com/video/nvidia-is-cheap-on-paper-so-why-wont-the-market-buy-it-192215326.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-25 14:22 ET",
         "pub_ts": 1795634535.0
-      },
-      {
-        "title": "Tariffs are back as Anthropic sinks further below its IPO price",
-        "url": "https://finance.yahoo.com/video/tariffs-are-back-as-anthropic-sinks-further-below-its-ipo-price-160524926.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 11:05 ET",
-        "pub_ts": 1795622724.0
       },
       {
         "title": "Federal Court Rules in Favor of CPSC in Landmark E-Commerce Product Safety Case",
@@ -1417,6 +1418,13 @@
       }
     ],
     "CRWV": [
+      {
+        "title": "Jensen Huang's return, neocloud risk, and a holiday retail rally",
+        "url": "https://finance.yahoo.com/video/jensen-huangs-return-neocloud-risk-210000087.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 16:00 ET",
+        "pub_ts": 1795640400.0
+      },
       {
         "title": "CoreWeave’s Bankers Reportedly Ready $4.5B GPU-Backed Loan Tied To Meta Deal",
         "url": "https://stocktwits.com/news-articles/markets/equity/core-weave-s-bankers-reportedly-ready-4-5-b-gpu-backed-loan-tied-to-meta-deal/cNbHrsCR9mw?.tsrc=rss",
@@ -1444,16 +1452,16 @@
         "source": "Yahoo Finance",
         "time": "11-25 12:44 ET",
         "pub_ts": 1795628655.0
-      },
-      {
-        "title": "CoreWeave’s Banks to Sell $4.5 Billion Meta-Tied Loan Next Week",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/coreweave-banks-sell-4-5-172523161.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 12:25 ET",
-        "pub_ts": 1795627523.0
       }
     ],
     "NBIS": [
+      {
+        "title": "Jensen Huang's return, neocloud risk, and a holiday retail rally",
+        "url": "https://finance.yahoo.com/video/jensen-huangs-return-neocloud-risk-210000087.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 16:00 ET",
+        "pub_ts": 1795640400.0
+      },
       {
         "title": "Freedom Capital Markets’ $314 Target Says Nebius’s Selloff Went Too Far",
         "url": "https://www.tikr.com/blog/freedom-capital-markets-314-target-says-nebiuss-selloff-went-too-far?ref=yahoofinance&tlnk=yf-261125-28wv344f&.tsrc=rss",
@@ -1481,13 +1489,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 06:26 ET",
         "pub_ts": 1795605984.0
-      },
-      {
-        "title": "Here’s why AI stocks crashed today",
-        "url": "https://blockspace.media/short/heres-why-ai-stocks-crashed-today-2/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 15:56 ET",
-        "pub_ts": 1795553787.0
       }
     ],
     "APLD": [
@@ -3316,34 +3317,34 @@
   "ticker_news_ts": {
     "KORU": 1795643926.1094089,
     "SOXL": 1795643926.1094089,
-    "SPY": 1795642909.7500863,
+    "SPY": 1795644449.4396114,
     "DIA": 1795643926.1094089,
     "SOXX": 1795643926.1094089,
     "QQQ": 1795643926.1094089,
-    "SMH": 1795642909.7500863,
+    "SMH": 1795644449.4396114,
     "IWM": 1795643926.1094089,
     "IGV": 1795643926.1094089,
     "TLT": 1795643926.1094089,
     "GLD": 1795643926.1094089,
     "SQQQ": 1795643926.1094089,
-    "TSM": 1795642909.7500863,
+    "TSM": 1795644449.4396114,
     "VIXY": 1795643926.1094089,
     "SOXS": 1795643926.1094089,
     "NVDA": 1795643926.1094089,
     "AMD": 1795643926.1094089,
-    "ASML": 1795642909.7500863,
-    "QCOM": 1795642909.7500863,
+    "ASML": 1795644449.4396114,
+    "QCOM": 1795644449.4396114,
     "AVGO": 1795643926.1094089,
-    "AMAT": 1795642909.7500863,
-    "META": 1795642909.7500863,
-    "GOOGL": 1795642909.7500863,
-    "MSFT": 1795642909.7500863,
-    "AAPL": 1795642909.7500863,
-    "PLTR": 1795642909.7500863,
-    "NOW": 1795642909.7500863,
-    "AMZN": 1795642909.7500863,
-    "CRWV": 1795642909.7500863,
-    "NBIS": 1795642909.7500863,
+    "AMAT": 1795644449.4396114,
+    "META": 1795644449.4396114,
+    "GOOGL": 1795644449.4396114,
+    "MSFT": 1795644449.4396114,
+    "AAPL": 1795644449.4396114,
+    "PLTR": 1795644449.4396114,
+    "NOW": 1795644449.4396114,
+    "AMZN": 1795644449.4396114,
+    "CRWV": 1795644449.4396114,
+    "NBIS": 1795644449.4396114,
     "APLD": 1795643553.5965235,
     "VST": 1795643553.5965235,
     "BE": 1795643553.5965235,
@@ -3354,7 +3355,7 @@
     "AAOI": 1795643553.5965235,
     "SPCX": 1795643553.5965235,
     "ASTS": 1795643553.5965235,
-    "AXTI": 1795642909.7500863,
+    "AXTI": 1795644449.4396114,
     "NASA": 1795643553.5965235,
     "LUNR": 1795643553.5965235,
     "TSLA": 1795643715.7914033,
@@ -3393,7 +3394,7 @@
     "GLW": 1795643553.5965235,
     "ANT": 1795643838.7905612,
     "XAUUSD": 1795643838.7905612,
-    "KOSPI": 1795642909.7500863
+    "KOSPI": 1795644449.4396114
   },
   "opex_shield": {
     "date": "2026-11-25",
