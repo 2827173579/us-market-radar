@@ -34,8 +34,8 @@
       "last_notified_at": 0.0
     },
     "QCOM": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1795640043.3643582
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "LUNR": {
       "state": "NORMAL",
@@ -82,12 +82,12 @@
       "last_notified_at": 0.0
     },
     "DIA": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1795640082.9246619
-    },
-    "IWM": {
       "state": "NORMAL",
       "last_notified_at": 0.0
+    },
+    "IWM": {
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1795640124.6192088
     },
     "IGV": {
       "state": "NORMAL",
@@ -162,8 +162,8 @@
       "last_notified_at": 1795482111.35759
     },
     "AMZN": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1795640082.9246619
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "MSFT": {
       "state": "WATCHLIST_ENTRY_READY",
