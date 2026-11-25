@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795595777.619,
-  "updated_at_et": "11-25 03:36 ET",
-  "updated_at_kst": "17:36 KST",
+  "updated_at_ts": 1795595820.126,
+  "updated_at_et": "11-25 03:37 ET",
+  "updated_at_kst": "17:37 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -17,7 +17,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 294,
+      "minutes_left": 293,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -36,7 +36,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 294,
+      "minutes_left": 293,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -3384,11 +3384,11 @@
     "FPS": 1795594986.3515139,
     "MU": 1795595636.2222793,
     "SKHY": 1795595636.2222793,
-    "WDC": 1795594287.469779,
+    "WDC": 1795595820.125692,
     "STX": 1795594986.3515139,
     "MSTR": 1795594986.3515139,
     "SNDK": 1795594986.3515139,
-    "BTC-USD": 1795594287.469779,
+    "BTC-USD": 1795595820.125692,
     "CRWD": 1795594986.3515139,
     "ORCL": 1795594986.3515139,
     "COIN": 1795594986.3515139,
@@ -3424,10 +3424,10 @@
   },
   "calendar_banner": {
     "level": "upcoming",
-    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 294 分钟（11-25 08:30 ET / 22:30 KST）",
+    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 293 分钟（11-25 08:30 ET / 22:30 KST）",
     "detail": "前值 0.3% ｜ 预期 0.3% ｜ 临近公布前15分钟将自动触发防插针预警",
     "event_name": "美国10月核心PCE物价指数环比",
-    "minutes_left": 294,
+    "minutes_left": 293,
     "opex_shield": {
       "date": "2026-11-25",
       "active": false,
