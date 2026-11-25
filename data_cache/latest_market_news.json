@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795614012.619,
-  "updated_at_et": "11-25 08:40 ET",
-  "updated_at_kst": "22:40 KST",
+  "updated_at_ts": 1795614064.847,
+  "updated_at_et": "11-25 08:41 ET",
+  "updated_at_kst": "22:41 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -2415,6 +2415,13 @@
     ],
     "MU": [
       {
+        "title": "The Consensus on Micron Stock Is Changing. Here’s What Investors Should Know",
+        "url": "https://247wallst.com/investing/2026/11/25/the-consensus-on-micron-stock-is-changing-heres-what-investors-should-know/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 08:10 ET",
+        "pub_ts": 1795612226.0
+      },
+      {
         "title": "Micron Spends $765,000 Protecting CEO as Pay Hits $39.7 Million",
         "url": "https://finance.yahoo.com/markets/stocks/articles/micron-spends-765-000-protecting-124751624.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2441,13 +2448,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 07:01 ET",
         "pub_ts": 1795608092.0
-      },
-      {
-        "title": "Micron Stock Just Got a Brutal Downgrade -- BNP Paribas Slashes Price Target 54%",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/micron-stock-just-got-brutal-114708173.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 06:47 ET",
-        "pub_ts": 1795607228.0
       }
     ],
     "SKHY": [
@@ -3347,8 +3347,8 @@
     "BE": 1795613220.822465,
     "CRDO": 1795613220.822465,
     "COHR": 1795613220.822465,
-    "MRVL": 1795612521.676772,
-    "LITE": 1795612521.676772,
+    "MRVL": 1795614064.8472505,
+    "LITE": 1795614064.8472505,
     "AAOI": 1795613220.822465,
     "SPCX": 1795613220.822465,
     "ASTS": 1795613220.822465,
@@ -3367,8 +3367,8 @@
     "OKLO": 1795613315.5441015,
     "CEG": 1795613315.5441015,
     "FPS": 1795613315.5441015,
-    "MU": 1795612521.676772,
-    "SKHY": 1795612521.676772,
+    "MU": 1795614064.8472505,
+    "SKHY": 1795614064.8472505,
     "WDC": 1795612573.8422031,
     "STX": 1795613370.4648132,
     "MSTR": 1795613315.5441015,
@@ -3387,7 +3387,7 @@
     "WMT": 1795613419.7471743,
     "V": 1795613315.5441015,
     "CAT": 1795613419.7471743,
-    "FN": 1795612521.676772,
+    "FN": 1795614064.8472505,
     "GLW": 1795613220.822465,
     "ANT": 1795613419.7471743,
     "XAUUSD": 1795613419.7471743,
