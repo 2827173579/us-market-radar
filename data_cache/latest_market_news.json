@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795638297.155,
-  "updated_at_et": "11-25 15:24 ET",
-  "updated_at_kst": "05:24 KST",
+  "updated_at_ts": 1795638340.044,
+  "updated_at_et": "11-25 15:25 ET",
+  "updated_at_kst": "05:25 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -1119,6 +1119,13 @@
     ],
     "AMAT": [
       {
+        "title": "Applied Materials Falls 6% Despite UBS’s $575 Target as China Chip Curbs Hit Equipment Stocks; Lam Research Drops 7%, KLA Edges Lower",
+        "url": "https://247wallst.com/investing/2026/11/25/applied-materials-falls-6-despite-ubss-575-target-as-china-chip-curbs-hit-equipment-stocks-lam-research-drops-7-kla-edges-lower/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 15:09 ET",
+        "pub_ts": 1795637384.0
+      },
+      {
         "title": "Applied Materials Keeps Sliding: Why UBS Still Sees 94% Upside",
         "url": "https://www.tikr.com/blog/applied-materials-keeps-sliding-why-ubs-still-sees-94-upside?ref=yahoofinance&tlnk=yf-261125-g2xx6rwg&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1145,13 +1152,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 10:17 ET",
         "pub_ts": 1795619820.0
-      },
-      {
-        "title": "Applied Materials (AMAT) Stock Sees Fair Value Cut As Analysts Trim Targets",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/applied-materials-amat-stock-sees-121330610.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 07:13 ET",
-        "pub_ts": 1795608810.0
       }
     ],
     "META": [
@@ -1193,6 +1193,13 @@
     ],
     "GOOGL": [
       {
+        "title": "Is the AI Correction Over? Why Ram Ahluwalia Thinks the AI Trade Has Hit Bottom",
+        "url": "https://unchainedcrypto.com/is-the-ai-correction-over-why-ram-ahluwalia-thinks-the-ai-trade-has-hit-bottom/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 15:00 ET",
+        "pub_ts": 1795636807.0
+      },
+      {
         "title": "Why Alphabet Stock Is Down Today",
         "url": "https://www.fool.com/investing/2026/11/25/why-alphabet-stock-is-down-today/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1219,13 +1226,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 13:52 ET",
         "pub_ts": 1795632731.0
-      },
-      {
-        "title": "SoftBank Group Stocks Crash 14.83% as AI Selloff Hits OpenAI Backer",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/softbank-group-stocks-crash-14-174425817.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 12:44 ET",
-        "pub_ts": 1795628665.0
       }
     ],
     "MSFT": [
@@ -1304,6 +1304,13 @@
     ],
     "PLTR": [
       {
+        "title": "Goldman Sachs bets on Palantir's 'mega customers' after NYC demo",
+        "url": "https://www.thestreet.com/investing/palantir-mega-customers-goldman-sachs?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 15:13 ET",
+        "pub_ts": 1795637580.0
+      },
+      {
         "title": "Peter Thiel Buys $122M of PLTR After Years Of Selling — And He Could Buy Millions More Shares",
         "url": "https://www.benzinga.com/markets/prediction-markets/26/11/63645021/peter-thiel-palantir-stock-purchase?utm_source=yahooFinance&utm_campaign=partner_feed&utm_medium=referral&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1330,13 +1337,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 10:33 ET",
         "pub_ts": 1795620789.0
-      },
-      {
-        "title": "Palantir’s CEO Alex Karp Sold $75 Million. Co-Founder Peter Thiel Bought $122 Million",
-        "url": "https://247wallst.com/investing/2026/11/25/palantirs-ceo-alex-karp-sold-75-million-co-founder-peter-thiel-bought-122-million/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 08:53 ET",
-        "pub_ts": 1795614827.0
       }
     ],
     "NOW": [
@@ -3313,34 +3313,34 @@
   "ticker_news_ts": {
     "KORU": 1795637873.9957895,
     "SOXL": 1795637873.9957895,
-    "SPY": 1795636815.7730534,
+    "SPY": 1795638340.0437229,
     "DIA": 1795637873.9957895,
     "SOXX": 1795637873.9957895,
     "QQQ": 1795637873.9957895,
-    "SMH": 1795636815.7730534,
+    "SMH": 1795638340.0437229,
     "IWM": 1795637873.9957895,
     "IGV": 1795637873.9957895,
     "TLT": 1795637873.9957895,
     "GLD": 1795637873.9957895,
     "SQQQ": 1795637873.9957895,
-    "TSM": 1795636815.7730534,
+    "TSM": 1795638340.0437229,
     "VIXY": 1795637873.9957895,
     "SOXS": 1795637873.9957895,
     "NVDA": 1795637873.9957895,
     "AMD": 1795637873.9957895,
-    "ASML": 1795636815.7730534,
-    "QCOM": 1795636815.7730534,
+    "ASML": 1795638340.0437229,
+    "QCOM": 1795638340.0437229,
     "AVGO": 1795637873.9957895,
-    "AMAT": 1795636815.7730534,
-    "META": 1795636815.7730534,
-    "GOOGL": 1795636815.7730534,
-    "MSFT": 1795636815.7730534,
-    "AAPL": 1795636815.7730534,
-    "PLTR": 1795636815.7730534,
-    "NOW": 1795636815.7730534,
-    "AMZN": 1795636815.7730534,
-    "CRWV": 1795636815.7730534,
-    "NBIS": 1795636815.7730534,
+    "AMAT": 1795638340.0437229,
+    "META": 1795638340.0437229,
+    "GOOGL": 1795638340.0437229,
+    "MSFT": 1795638340.0437229,
+    "AAPL": 1795638340.0437229,
+    "PLTR": 1795638340.0437229,
+    "NOW": 1795638340.0437229,
+    "AMZN": 1795638340.0437229,
+    "CRWV": 1795638340.0437229,
+    "NBIS": 1795638340.0437229,
     "APLD": 1795637511.7813787,
     "VST": 1795637511.7813787,
     "BE": 1795637511.7813787,
@@ -3351,7 +3351,7 @@
     "AAOI": 1795637511.7813787,
     "SPCX": 1795637511.7813787,
     "ASTS": 1795637511.7813787,
-    "AXTI": 1795636815.7730534,
+    "AXTI": 1795638340.0437229,
     "NASA": 1795637511.7813787,
     "LUNR": 1795637511.7813787,
     "TSLA": 1795637668.4817874,
@@ -3390,7 +3390,7 @@
     "GLW": 1795637511.7813787,
     "ANT": 1795637753.5680225,
     "XAUUSD": 1795637753.5680225,
-    "KOSPI": 1795636815.7730534
+    "KOSPI": 1795638340.0437229
   },
   "opex_shield": {
     "date": "2026-11-25",
