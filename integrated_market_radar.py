@@ -7700,11 +7700,47 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
     session_code, session_name = get_us_market_session()
     print(f"[*] 🕒 当前美东市场时段状态: 【{session_name}】")
 
-    # 2. 并发秒级拉取 Finnhub 实时报价 (max_workers=2, 稳态间隔防 429)
-    # 免费额度 60次/分。全标的 79 只 (14 ETF + 65 股票)，BTC-USD 与 XAUUSD 走免费直连，DIA 等 17 只低波蓝筹/宽基走 Yahoo 5m + V7 实时穿透，留足 60 个 Finnhub 名额保障 ANT 等重点高弹性标的
+    # 2. 第一优先级：币安美股 L1 实时报价主源 (77 只美股/ETF，4~6 线程，3s 超时)；未命中/异常标的自动无缝回退 Finnhub / Yahoo
     DEFENSIVE_11_TICKERS = {"DIA", "KO", "PEP", "MCD", "AXP", "V", "LLY", "MRNA", "NKE", "HPE", "FPS", "JPM", "XOM", "WMT", "CAT", "NASA", "GLW"}
-    finnhub_tickers = [tk for tk in all_tickers if tk not in ("BTC-USD", "XAUUSD", "KOSPI") and (tk not in DEFENSIVE_11_TICKERS or (user_portfolio and tk in user_portfolio))][:60]
-    realtime_quotes = fetch_finnhub_quotes_batch(finnhub_tickers, FINNHUB_API_KEY) if FINNHUB_API_KEY else {}
+    binance_equity_quotes = {}
+    binance_feed_stats = {}
+    try:
+        import binance_equity_feed as _bn_feed
+        _us_equity_tickers = [tk for tk in all_tickers if _bn_feed.is_eligible_us_equity(tk)]
+        binance_equity_quotes, binance_feed_stats = _bn_feed.fetch_binance_equity_quotes(
+            _us_equity_tickers,
+            max_workers=5,
+            timeout=3.0,
+        )
+        if binance_feed_stats.get("enabled"):
+            print(
+                f"[+] ⚡ 币安美股实时报价主源: 命中 {binance_feed_stats.get('hit', 0)}/{binance_feed_stats.get('total', 0)} 只 "
+                f"(回退 {binance_feed_stats.get('fallback_count', 0)} 只 | 耗时 {binance_feed_stats.get('elapsed_ms', 0.0):.0f} ms"
+                f"{' | 触发429冷却' if binance_feed_stats.get('rate_limited') else ''})"
+            )
+    except Exception as _bn_err:
+        print(f"  [!] 币安美股实时报价主源降级跳过，回退 Finnhub/Yahoo: {_bn_err}")
+        binance_equity_quotes = {}
+
+    realtime_quotes = {}
+    if session_code == "REGULAR" and binance_equity_quotes:
+        for _btk, _bq in binance_equity_quotes.items():
+            _rq_bn = _bn_feed.build_realtime_quote_from_binance(_btk, _bq, df_hist=history_dict.get(_btk))
+            if _rq_bn:
+                realtime_quotes[_btk] = _rq_bn
+
+    # 仅对币安未命中的美股/ETF 自动回退 Finnhub (盘中跳过已命中的，延展时段币安已覆盖 ext_price 无需刷 Finnhub 60 次配额)
+    finnhub_tickers = [
+        tk for tk in all_tickers
+        if tk not in ("BTC-USD", "XAUUSD", "KOSPI")
+        and tk not in binance_equity_quotes
+        and (tk not in DEFENSIVE_11_TICKERS or (user_portfolio and tk in user_portfolio))
+    ][:60]
+    if FINNHUB_API_KEY and finnhub_tickers:
+        _fh_fallback = fetch_finnhub_quotes_batch(finnhub_tickers, FINNHUB_API_KEY)
+        for _fk, _fv in (_fh_fallback or {}).items():
+            if _fk not in realtime_quotes:
+                realtime_quotes[_fk] = _fv
     if "BTC-USD" in all_tickers:
         _btc_q = fetch_yahoo_crypto_quote("BTC-USD")
         if _btc_q:
@@ -7737,6 +7773,17 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
             if info.get("time"):
                 slot["ext_time"] = info["time"]
             slot["price_kind"] = "overnight"
+    # 延展时段 (盘前/盘后/夜盘) 优先注入币安实时 L1 mid 与点差 spread_bps，覆盖滞后的 Yahoo 盘前盘后价
+    if session_code in ("PRE_MARKET", "POST_MARKET", "OVERNIGHT") and binance_equity_quotes:
+        _bn_ext_kind = "overnight" if session_code == "OVERNIGHT" else ("pre" if session_code == "PRE_MARKET" else "post")
+        for _btk, _bq in binance_equity_quotes.items():
+            _slot = intraday_map.setdefault(_btk, {})
+            _slot["ext_price"] = float(_bq["price"])
+            _slot["bid"] = _bq.get("bid")
+            _slot["ask"] = _bq.get("ask")
+            _slot["spread_bps"] = _bq.get("spread_bps")
+            _slot["quote_source"] = "BINANCE_EQUITY"
+            _slot["price_kind"] = _bn_ext_kind
     _apply_xauusd_spot_basis(history_dict, intraday_map, realtime_quotes)
     if intraday_map:
         print(f"[+] ✅ 成功计算 {len(intraday_map)}/{len(all_tickers)} 只标的 5 分钟分时指标与盘前盘后行情！")
@@ -8664,6 +8711,19 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
                     _qcopy["ext_price"] = _rt_q.get("ext_price")
                 if not _qcopy.get("active_price") and _rt_q.get("price"):
                     _qcopy["active_price"] = _rt_q.get("price")
+                if _rt_q.get("spread_bps") is not None:
+                    _qcopy["spread_bps"] = _rt_q.get("spread_bps")
+            _bn_q = (binance_equity_quotes or {}).get(_qk) if isinstance(locals().get("binance_equity_quotes"), dict) else None
+            if isinstance(_bn_q, dict):
+                if _bn_q.get("spread_bps") is not None:
+                    _qcopy["spread_bps"] = _bn_q.get("spread_bps")
+                if _bn_q.get("bid") is not None:
+                    _qcopy["bid"] = _bn_q.get("bid")
+                if _bn_q.get("ask") is not None:
+                    _qcopy["ask"] = _bn_q.get("ask")
+                _qcopy["quote_source"] = "BINANCE_EQUITY"
+                if session_code in ("PRE_MARKET", "POST_MARKET", "OVERNIGHT") and _bn_q.get("price"):
+                    _qcopy["ext_price"] = _bn_q.get("price")
             _qcopy.setdefault("has_realtime", bool(has_realtime))
             _kol_quotes[_qk] = _qcopy
         _kol_res = _kol_eng.run_kol_copy_trade_cycle(

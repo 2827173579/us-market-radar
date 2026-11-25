@@ -87,9 +87,10 @@ LATE_ENTRY_CUTOFF_MIN = 14 * 60       # 14:00 ET
 EARLY_CHECK_NORMAL_MIN = 11 * 60 + 30 # T+2 11:30 ET
 EARLY_CHECK_LATE_MIN = 13 * 60 + 30   # 尾盘仓顺延至 T+2 13:30 ET
 
-# V5.5.1 延展时段防插针连续确认参数
+# V5.5.1 延展时段防插针连续确认参数 + 宽点差防假扫损护栏
 EXTENDED_SL_CONFIRM_POLLS = 2
 EXTENDED_SL_CONFIRM_SECONDS = 60.0
+EXTENDED_MAX_SPREAD_BPS = 60.0
 REGULAR_SESSIONS = frozenset({"REGULAR", "RTH", "INTRADAY"})
 EXTENDED_SESSIONS = frozenset({"PRE_MARKET", "PREMARKET", "AFTER_HOURS", "AFTERHOURS", "POST_MARKET", "OVERNIGHT", "EXTENDED"})
 CLOSED_SESSIONS = frozenset({"CLOSED", "WEEKEND", "HOLIDAY"})
@@ -863,6 +864,11 @@ def run_kol_copy_trade_cycle(
 
             if is_extended_session:
                 # ---------- 延展时段 (PRE_MARKET / AFTER_HOURS / OVERNIGHT)：仅检查防守止损/保本损，连续2轮且>=60s确认 ----------
+                # 宽点差防假扫损护栏：spread_bps > 60.0 时跳过本次止损判定，既不误杀也不清零已有真实破位计数
+                cur_spread_bps = cte._safe_float((lv or {}).get("spread_bps"), 0.0)
+                if cur_spread_bps > EXTENDED_MAX_SPREAD_BPS:
+                    still_open.append(pos)
+                    continue
                 sl_breached = bool(
                     sl_px > 0 and (
                         (direction == "LONG" and cur_px <= sl_px)
