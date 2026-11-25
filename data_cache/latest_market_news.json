@@ -1,5 +1,5 @@
 {
-  "updated_at_ts": 1795621628.451,
+  "updated_at_ts": 1795621672.957,
   "updated_at_et": "11-25 10:47 ET",
   "updated_at_kst": "00:47 KST",
   "macro_calendar": [
@@ -833,6 +833,13 @@
     ],
     "TSM": [
       {
+        "title": "TSMC Stocks Slide 6.65% as Taiwan Lands on US Tariff List",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/tsmc-stocks-slide-6-65-153357532.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 10:33 ET",
+        "pub_ts": 1795620837.0
+      },
+      {
         "title": "TSMC Has a 'Substantially Wider Moat' Than Nvidia, Says Investor Joseph Carlson",
         "url": "https://www.benzinga.com/markets/prediction-markets/26/11/63621669/joseph-carlson-tsmc-nvidia-moat?utm_source=yahooFinance&utm_campaign=partner_feed&utm_medium=referral&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -859,13 +866,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 23:03 ET",
         "pub_ts": 1795579400.0
-      },
-      {
-        "title": "TSMC Is Still Up 27% in a Year After the AI Rout. C.C. Wei Says Demand Is “Far Above” Supply",
-        "url": "https://www.tikr.com/blog/tsmc-is-still-up-27-in-a-year-after-the-ai-rout-c-c-wei-says-demand-is-far-above-supply?ref=yahoofinance&tlnk=yf-261125-68vr8rwg&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 02:58 ET",
-        "pub_ts": 1795593483.0
       }
     ],
     "VIXY": [
@@ -1018,6 +1018,13 @@
     ],
     "ASML": [
       {
+        "title": "Congress Could Pass Tougher Chip Curbs “With Veto Proof Majorities.” ASML Has the Most to Lose",
+        "url": "https://www.tikr.com/blog/congress-could-pass-tougher-chip-curbs-with-veto-proof-majorities-asml-has-the-most-to-lose?ref=yahoofinance&tlnk=yf-261125-q479h9j5&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 10:36 ET",
+        "pub_ts": 1795620971.0
+      },
+      {
         "title": "ETFs Are Buying ASML (ASML) on Nov. 23",
         "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-buying-asml-asml-nov-110130021.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1044,13 +1051,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 09:16 ET",
         "pub_ts": 1795529795.0
-      },
-      {
-        "title": "ASML Is the Most Important Company You’ve Never Heard Of. Should You Buy the Stock?",
-        "url": "https://www.fool.com/investing/2026/11/24/asml-is-the-most-important-company-youve-never-heard-of-should-you-buy-the-stock/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 13:23 ET",
-        "pub_ts": 1795544582.0
       }
     ],
     "QCOM": [
@@ -1217,25 +1217,25 @@
         "pub_ts": 1795608000.0
       },
       {
+        "title": "TeraWulf’s $19 Billion Anthropic Deal: “That Debt Is Guaranteed by Google.” That’s a Big Risk for Alphabet",
+        "url": "https://www.tikr.com/blog/terawulfs-19-billion-anthropic-deal-that-debt-is-guaranteed-by-google-thats-a-big-risk-for-alphabet?ref=yahoofinance&tlnk=yf-261125-gpcr4r7f&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 10:36 ET",
+        "pub_ts": 1795621002.0
+      },
+      {
+        "title": "Alphabet Is Most Beat Down AI Company",
+        "url": "https://247wallst.com/investing/2026/11/25/alphabet-is-most-beat-down-ai-company/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 10:27 ET",
+        "pub_ts": 1795620435.0
+      },
+      {
         "title": "Google Ends $75 Million News Deal Amid Regulatory Fight",
         "url": "https://finance.yahoo.com/media-advertising/articles/google-ends-75-million-news-150706065.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-25 10:07 ET",
         "pub_ts": 1795619226.0
-      },
-      {
-        "title": "Alphabet, NVIDIA, Microsoft and AWS Lead the AI for Scientific Discovery Market as It Grows to USD 34.78 Billion by 2035",
-        "url": "https://finance.yahoo.com/technology/ai/articles/alphabet-nvidia-microsoft-aws-lead-150000464.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 10:00 ET",
-        "pub_ts": 1795618800.0
-      },
-      {
-        "title": "The $2 trillion chip rally is getting wiped out — here's what history says comes next",
-        "url": "https://finance.yahoo.com/markets/article/the-2-trillion-chip-rally-is-getting-wiped-out--heres-what-history-says-comes-next-145306996.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 09:53 ET",
-        "pub_ts": 1795618386.0
       }
     ],
     "MSFT": [
@@ -1277,6 +1277,20 @@
     ],
     "AAPL": [
       {
+        "title": "Alphabet Is Most Beat Down AI Company",
+        "url": "https://247wallst.com/investing/2026/11/25/alphabet-is-most-beat-down-ai-company/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 10:27 ET",
+        "pub_ts": 1795620435.0
+      },
+      {
+        "title": "The Next Big Healthcare Revolution Is Already Here. This Stock Could Cash In.",
+        "url": "https://www.fool.com/investing/2026/11/25/the-next-big-healthcare-revolution-is-already-here-this-stock-could-cash-in/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 10:27 ET",
+        "pub_ts": 1795620422.0
+      },
+      {
         "title": "Does Apple's New Silence Mean You Should Worry?",
         "url": "https://www.trefis.com/stock/aapl/articles/628917/does-apple-s-new-silence-mean-you-should-worry/2026-11-25?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1296,23 +1310,16 @@
         "source": "Yahoo Finance",
         "time": "11-25 06:05 ET",
         "pub_ts": 1795604747.0
-      },
-      {
-        "title": "State Street SPDR Portfolio S&P 500 (SPYM) Buys $14.2 Million More Apple on Monday",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/state-street-spdr-portfolio-p-110543019.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 06:05 ET",
-        "pub_ts": 1795604743.0
-      },
-      {
-        "title": "State Street Technology SPDR (XLK) Adds Apple and Nvidia on Monday",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/state-street-technology-spdr-xlk-110536754.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 06:05 ET",
-        "pub_ts": 1795604736.0
       }
     ],
     "PLTR": [
+      {
+        "title": "Prediction: This Company’s Future Could Look Very Different by the End of 2028",
+        "url": "https://247wallst.com/investing/2026/11/25/prediction-this-companys-future-could-look-very-different-by-the-end-of-2028/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 10:33 ET",
+        "pub_ts": 1795620789.0
+      },
       {
         "title": "Palantir’s CEO Alex Karp Sold $75 Million. Co-Founder Peter Thiel Bought $122 Million",
         "url": "https://247wallst.com/investing/2026/11/25/palantirs-ceo-alex-karp-sold-75-million-co-founder-peter-thiel-bought-122-million/?.tsrc=rss",
@@ -1340,13 +1347,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 01:47 ET",
         "pub_ts": 1795589222.0
-      },
-      {
-        "title": "Anthropic falls below IPO price as Nvidia gives back gains",
-        "url": "https://finance.yahoo.com/video/anthropic-falls-below-ipo-price-as-nvidia-gives-back-gains-214558309.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 16:45 ET",
-        "pub_ts": 1795556758.0
       }
     ],
     "NOW": [
@@ -1402,6 +1402,13 @@
         "pub_ts": 1795617376.0
       },
       {
+        "title": "Amazon Sinks 6%, Sandisk Down 12% as AI Selloff Deepens: Bear Calls AI “Greatest Misallocation of Capital”",
+        "url": "https://www.tikr.com/blog/amazon-sinks-6-sandisk-down-12-as-ai-selloff-deepens-bear-calls-ai-greatest-misallocation-of-capital?ref=yahoofinance&tlnk=yf-261125-hq93vmx9&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 10:29 ET",
+        "pub_ts": 1795620540.0
+      },
+      {
         "title": "Global Retail Pharmacy Market Report 2026: Size, Trends, and Forecast to 2030 | Capitalize on AI and Automation as Walmart, Amazon, CVS Health, and Costco Scale Digital Care",
         "url": "https://finance.yahoo.com/healthcare/articles/global-retail-pharmacy-market-report-143600337.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1414,16 +1421,16 @@
         "source": "Yahoo Finance",
         "time": "11-25 09:13 ET",
         "pub_ts": 1795616032.0
-      },
-      {
-        "title": "Amazon and Meta reportedly in talks to lift blockade on AI agent Muse",
-        "url": "https://finance.yahoo.com/technology/ai/articles/amazon-meta-reportedly-talks-lift-141018682.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 09:10 ET",
-        "pub_ts": 1795615818.0
       }
     ],
     "CRWV": [
+      {
+        "title": "CoreWeave's Debt Trades Near 75 Cents on the Dollar",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/coreweaves-debt-trades-near-75-151923965.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 10:19 ET",
+        "pub_ts": 1795619963.0
+      },
       {
         "title": "Data Center Americas 2027 Announces Industry Leaders from AWS, Google, Microsoft, Oracle, CoreWeave and Applied Digital as Featured Speakers",
         "url": "https://finance.yahoo.com/technology/ai/articles/data-center-americas-2027-announces-140000391.html?.tsrc=rss",
@@ -1451,13 +1458,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 07:03 ET",
         "pub_ts": 1795608219.0
-      },
-      {
-        "title": "CoreWeave Debt Rout Sends a Stark Warning Across the AI Industry",
-        "url": "https://finance.yahoo.com/markets/options/articles/coreweave-debt-rout-sends-stark-112645032.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 06:26 ET",
-        "pub_ts": 1795606005.0
       }
     ],
     "NBIS": [
@@ -1476,6 +1476,13 @@
         "pub_ts": 1795605984.0
       },
       {
+        "title": "Here’s why AI stocks crashed today",
+        "url": "https://blockspace.media/short/heres-why-ai-stocks-crashed-today-2/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 15:56 ET",
+        "pub_ts": 1795553787.0
+      },
+      {
         "title": "SpaceX Falls 4%, CoreWeave Down 13%, Nebius Down 11% as AI Stocks Give Back Nvidia Rally",
         "url": "https://www.tikr.com/blog/spacex-falls-4-coreweave-down-13-nebius-down-11-as-ai-stocks-give-back-nvidia-rally?ref=yahoofinance&tlnk=yf-261124-6rfwxx6w&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1488,13 +1495,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 12:18 ET",
         "pub_ts": 1795540693.0
-      },
-      {
-        "title": "Databricks Co-Founder Says Just One Neocloud Has “Robust Enough Isolation.” My Guess: It’s Probably Not CoreWeave",
-        "url": "https://www.tikr.com/blog/databricks-co-founder-says-just-one-neocloud-has-robust-enough-isolation-my-guess-its-probably-not-coreweave?ref=yahoofinance&tlnk=yf-261124-wcppqc25&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 10:22 ET",
-        "pub_ts": 1795533759.0
       }
     ],
     "APLD": [
@@ -3323,34 +3323,34 @@
   "ticker_news_ts": {
     "KORU": 1795621198.9354763,
     "SOXL": 1795621198.9354763,
-    "SPY": 1795620160.0688725,
+    "SPY": 1795621672.9571495,
     "DIA": 1795621198.9354763,
     "SOXX": 1795621198.9354763,
     "QQQ": 1795621198.9354763,
-    "SMH": 1795620160.0688725,
+    "SMH": 1795621672.9571495,
     "IWM": 1795621198.9354763,
     "IGV": 1795621198.9354763,
     "TLT": 1795621198.9354763,
     "GLD": 1795621198.9354763,
     "SQQQ": 1795621198.9354763,
-    "TSM": 1795620160.0688725,
+    "TSM": 1795621672.9571495,
     "VIXY": 1795621198.9354763,
     "SOXS": 1795621198.9354763,
     "NVDA": 1795621198.9354763,
     "AMD": 1795621198.9354763,
-    "ASML": 1795620160.0688725,
-    "QCOM": 1795620160.0688725,
+    "ASML": 1795621672.9571495,
+    "QCOM": 1795621672.9571495,
     "AVGO": 1795621198.9354763,
-    "AMAT": 1795620160.0688725,
-    "META": 1795620160.0688725,
-    "GOOGL": 1795620160.0688725,
-    "MSFT": 1795620160.0688725,
-    "AAPL": 1795620160.0688725,
-    "PLTR": 1795620160.0688725,
-    "NOW": 1795620160.0688725,
-    "AMZN": 1795620160.0688725,
-    "CRWV": 1795620160.0688725,
-    "NBIS": 1795620160.0688725,
+    "AMAT": 1795621672.9571495,
+    "META": 1795621672.9571495,
+    "GOOGL": 1795621672.9571495,
+    "MSFT": 1795621672.9571495,
+    "AAPL": 1795621672.9571495,
+    "PLTR": 1795621672.9571495,
+    "NOW": 1795621672.9571495,
+    "AMZN": 1795621672.9571495,
+    "CRWV": 1795621672.9571495,
+    "NBIS": 1795621672.9571495,
     "APLD": 1795620819.9865475,
     "VST": 1795620819.9865475,
     "BE": 1795620819.9865475,
@@ -3361,7 +3361,7 @@
     "AAOI": 1795620819.9865475,
     "SPCX": 1795620819.9865475,
     "ASTS": 1795620819.9865475,
-    "AXTI": 1795620160.0688725,
+    "AXTI": 1795621672.9571495,
     "NASA": 1795620819.9865475,
     "LUNR": 1795620819.9865475,
     "TSLA": 1795620925.3122756,
@@ -3400,7 +3400,7 @@
     "GLW": 1795620819.9865475,
     "ANT": 1795621021.3160977,
     "XAUUSD": 1795621021.3160977,
-    "KOSPI": 1795620160.0688725
+    "KOSPI": 1795621672.9571495
   },
   "opex_shield": {
     "date": "2026-11-25",
