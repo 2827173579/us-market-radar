@@ -1,12 +1,12 @@
 {
-  "updated_at_ts": 1795611542.022,
+  "updated_at_ts": 1795611590.107,
   "updated_at_et": "11-25 07:59 ET",
   "updated_at_kst": "21:59 KST",
   "macro_calendar": [
     {
-      "event_id": "1599680",
-      "name": "美国10月核心PCE物价指数环比",
-      "country": "美国",
+      "event_id": "ff_Core PCE Price Index m/m_2026-11-25T08:30:00-05:00",
+      "name": "美国Core PCE Price Index m/m",
+      "country": "USD",
       "star": 5,
       "pub_time_ts": 1795613400.0,
       "pub_time_et": "11-25 08:30 ET",
@@ -15,31 +15,12 @@
       "previous": "0.3%",
       "forecast": "0.3%",
       "actual": "待公布",
-      "unit": "%",
+      "unit": "",
       "status": "upcoming",
       "minutes_left": 31,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
-      "source": "wscn"
-    },
-    {
-      "event_id": "1599678",
-      "name": "美国10月PCE物价指数环比",
-      "country": "美国",
-      "star": 5,
-      "pub_time_ts": 1795613400.0,
-      "pub_time_et": "11-25 08:30 ET",
-      "pub_time_bj": "21:30 BJ",
-      "pub_time_kst": "22:30 KST",
-      "previous": "0.5%",
-      "forecast": "0.3%",
-      "actual": "待公布",
-      "unit": "%",
-      "status": "upcoming",
-      "minutes_left": 31,
-      "impact_tone": "pending",
-      "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
-      "source": "wscn"
+      "source": "forexfactory"
     }
   ],
   "macro_flashes": [
@@ -3421,9 +3402,9 @@
   },
   "calendar_banner": {
     "level": "upcoming",
-    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 31 分钟（11-25 08:30 ET / 22:30 KST）",
+    "headline": "📅 今日美股重磅预告【美国Core PCE Price Index m/m】· 距公布约 31 分钟（11-25 08:30 ET / 22:30 KST）",
     "detail": "前值 0.3% ｜ 预期 0.3% ｜ 临近公布前15分钟将自动触发防插针预警",
-    "event_name": "美国10月核心PCE物价指数环比",
+    "event_name": "美国Core PCE Price Index m/m",
     "minutes_left": 31,
     "opex_shield": {
       "date": "2026-11-25",
