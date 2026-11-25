@@ -1,5 +1,5 @@
 {
-  "updated_at_ts": 1795603267.113,
+  "updated_at_ts": 1795603313.852,
   "updated_at_et": "11-25 05:41 ET",
   "updated_at_kst": "19:41 KST",
   "macro_calendar": [
@@ -1170,11 +1170,25 @@
     ],
     "META": [
       {
+        "title": "Market Chatter: Meta Platforms' Muse Seen Boosting Advertising Revenue Via Instagram",
+        "url": "https://finance.yahoo.com/media-advertising/articles/market-chatter-meta-platforms-apos-102004084.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 05:20 ET",
+        "pub_ts": 1795602004.0
+      },
+      {
         "title": "Prediction: Here’s What Anthropic’s Valuation Will Be in 2027, According to History",
         "url": "https://www.fool.com/investing/2026/11/25/prediction-heres-what-anthropics-valuation-will-be-in-2027-according-to-history/?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-25 03:58 ET",
         "pub_ts": 1795597082.0
+      },
+      {
+        "title": "Exclusive: Meta and Amazon discuss ending Muse shopping bot blockade, as ads, search emerge as key issues",
+        "url": "https://finance.yahoo.com/technology/ai/articles/exclusive-meta-amazon-discuss-ending-080100266.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 03:01 ET",
+        "pub_ts": 1795593660.0
       },
       {
         "title": "Cathie Wood Just Sold $14 Million of Meta",
@@ -1189,20 +1203,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 20:04 ET",
         "pub_ts": 1795568646.0
-      },
-      {
-        "title": "Could Meta Actually Climb 30%? Or Is J.P. Morgan Totally Wrong?",
-        "url": "https://www.tikr.com/blog/could-meta-actually-climb-30-or-is-j-p-morgan-totally-wrong?ref=yahoofinance&tlnk=yf-261124-24hpvhqr&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 16:15 ET",
-        "pub_ts": 1795554957.0
-      },
-      {
-        "title": "David Abrams’ Meta Platforms, Inc. (META) Bet Is Backed by Strong Cash Flow and AI Growth",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/david-abrams-meta-platforms-inc-190633349.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 14:06 ET",
-        "pub_ts": 1795547193.0
       }
     ],
     "GOOGL": [
@@ -1212,6 +1212,13 @@
         "source": "Yahoo Finance",
         "time": "11-25 03:00 ET",
         "pub_ts": 1795593600.0
+      },
+      {
+        "title": "Warren Buffett's Successor, Greg Abel, Has Quietly Purchased 3 Stocks Since the Start of the Fourth Quarter, Including Shares of a Legal Monopoly",
+        "url": "https://www.fool.com/investing/2026/11/25/warren-buffett-successor-greg-abel-purchased-3-stocks-since-start-fourth-quarter-including-legal-monopoly/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 05:26 ET",
+        "pub_ts": 1795602362.0
       },
       {
         "title": "Shopify Keeps Sliding After Its Q3 Miss: Why Piper Sandler Still Sees 30% Upside",
@@ -1233,13 +1240,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 03:53 ET",
         "pub_ts": 1795596780.0
-      },
-      {
-        "title": "Bull of the Day: Quanta Services (PWR)",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/bull-day-quanta-services-pwr-080000871.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 03:00 ET",
-        "pub_ts": 1795593600.0
       }
     ],
     "MSFT": [
@@ -1399,6 +1399,20 @@
         "pub_ts": 1795556758.0
       },
       {
+        "title": "After $26 billion in gifts, MacKenzie Scott is still worth $27 billion—and just gave Atlanta students $8 million more",
+        "url": "https://finance.yahoo.com/small-business/articles/26-billion-gifts-mackenzie-scott-080300124.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 03:03 ET",
+        "pub_ts": 1795593780.0
+      },
+      {
+        "title": "Exclusive: Meta and Amazon discuss ending Muse shopping bot blockade, as ads, search emerge as key issues",
+        "url": "https://finance.yahoo.com/technology/ai/articles/exclusive-meta-amazon-discuss-ending-080100266.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 03:01 ET",
+        "pub_ts": 1795593660.0
+      },
+      {
         "title": "Amazon ‘Trying to Trick’ You With Black Friday Offers That Aren’t Really Deals, Says Elizabeth Warren: E-Commerce Giant Pushes Back",
         "url": "https://finance.yahoo.com/markets/stocks/articles/amazon-trying-trick-black-friday-025557873.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1411,20 +1425,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 17:32 ET",
         "pub_ts": 1795559564.0
-      },
-      {
-        "title": "Is Amazon.com (AMZN) Still Below Fair Value As AI Spending Rises?",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/amazon-com-amzn-still-below-201044467.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 15:10 ET",
-        "pub_ts": 1795551044.0
-      },
-      {
-        "title": "3 Unstoppable Stocks That Can Be Great Buys for Decades",
-        "url": "https://www.fool.com/investing/2026/11/24/3-unstoppable-stocks-that-can-be-great-buys-for-decades/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 14:42 ET",
-        "pub_ts": 1795549322.0
       }
     ],
     "CRWV": [
@@ -3327,45 +3327,45 @@
   "ticker_news_ts": {
     "KORU": 1795602938.653905,
     "SOXL": 1795602938.653905,
-    "SPY": 1795601781.5206966,
+    "SPY": 1795603313.8519511,
     "DIA": 1795602938.653905,
     "SOXX": 1795602938.653905,
     "QQQ": 1795602938.653905,
-    "SMH": 1795601781.5206966,
+    "SMH": 1795603313.8519511,
     "IWM": 1795602938.653905,
     "IGV": 1795602938.653905,
     "TLT": 1795602938.653905,
     "GLD": 1795602938.653905,
     "SQQQ": 1795602938.653905,
-    "TSM": 1795601781.5206966,
+    "TSM": 1795603313.8519511,
     "VIXY": 1795602938.653905,
     "SOXS": 1795602938.653905,
     "NVDA": 1795602938.653905,
     "AMD": 1795602938.653905,
-    "ASML": 1795601781.5206966,
-    "QCOM": 1795601781.5206966,
+    "ASML": 1795603313.8519511,
+    "QCOM": 1795603313.8519511,
     "AVGO": 1795602938.653905,
-    "AMAT": 1795601781.5206966,
-    "META": 1795601781.5206966,
-    "GOOGL": 1795601781.5206966,
-    "MSFT": 1795601781.5206966,
-    "AAPL": 1795601781.5206966,
-    "PLTR": 1795601781.5206966,
-    "NOW": 1795601781.5206966,
-    "AMZN": 1795601781.5206966,
-    "CRWV": 1795601781.5206966,
-    "NBIS": 1795601781.5206966,
+    "AMAT": 1795603313.8519511,
+    "META": 1795603313.8519511,
+    "GOOGL": 1795603313.8519511,
+    "MSFT": 1795603313.8519511,
+    "AAPL": 1795603313.8519511,
+    "PLTR": 1795603313.8519511,
+    "NOW": 1795603313.8519511,
+    "AMZN": 1795603313.8519511,
+    "CRWV": 1795603313.8519511,
+    "NBIS": 1795603313.8519511,
     "APLD": 1795602495.5063353,
     "VST": 1795602495.5063353,
     "BE": 1795602495.5063353,
     "CRDO": 1795602495.5063353,
     "COHR": 1795602495.5063353,
-    "MRVL": 1795601781.5206966,
-    "LITE": 1795601781.5206966,
+    "MRVL": 1795603313.8519511,
+    "LITE": 1795603313.8519511,
     "AAOI": 1795602495.5063353,
     "SPCX": 1795602495.5063353,
     "ASTS": 1795602495.5063353,
-    "AXTI": 1795601781.5206966,
+    "AXTI": 1795603313.8519511,
     "NASA": 1795602495.5063353,
     "LUNR": 1795602495.5063353,
     "TSLA": 1795602595.177179,
@@ -3380,8 +3380,8 @@
     "OKLO": 1795602595.177179,
     "CEG": 1795602595.177179,
     "FPS": 1795602595.177179,
-    "MU": 1795601781.5206966,
-    "SKHY": 1795601781.5206966,
+    "MU": 1795603313.8519511,
+    "SKHY": 1795603313.8519511,
     "WDC": 1795601927.5303795,
     "STX": 1795602595.177179,
     "MSTR": 1795602595.177179,
@@ -3400,11 +3400,11 @@
     "WMT": 1795602704.5014818,
     "V": 1795602595.177179,
     "CAT": 1795602704.5014818,
-    "FN": 1795601781.5206966,
+    "FN": 1795603313.8519511,
     "GLW": 1795602495.5063353,
     "ANT": 1795602704.5014818,
     "XAUUSD": 1795602704.5014818,
-    "KOSPI": 1795601781.5206966
+    "KOSPI": 1795603313.8519511
   },
   "opex_shield": {
     "date": "2026-11-25",
