@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795585640.046,
-  "updated_at_et": "11-25 00:47 ET",
-  "updated_at_kst": "14:47 KST",
+  "updated_at_ts": 1795585745.622,
+  "updated_at_et": "11-25 00:49 ET",
+  "updated_at_kst": "14:49 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -17,7 +17,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 463,
+      "minutes_left": 461,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -36,7 +36,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 463,
+      "minutes_left": 461,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -1614,6 +1614,13 @@
     ],
     "CRDO": [
       {
+        "title": "From Smiling to Selling: Why Credo Technology (CRDO) is Getting Hammered",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/smiling-selling-why-credo-technology-052446524.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 00:24 ET",
+        "pub_ts": 1795584286.0
+      },
+      {
         "title": "Sandisk Sinks 14% as Memory Stocks Give Back Nvidia’s Huang Rally",
         "url": "https://www.tikr.com/blog/sandisk-sinks-14-as-memory-stocks-give-back-nvidias-huang-rally?ref=yahoofinance&tlnk=yf-261124-287p6vrp&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1640,13 +1647,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 13:58 ET",
         "pub_ts": 1795460297.0
-      },
-      {
-        "title": "Credo Technology Group Stock And 2 Undervalued Stocks To Watch",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/credo-technology-group-stock-2-111251300.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 06:12 ET",
-        "pub_ts": 1795432371.0
       }
     ],
     "COHR": [
@@ -2197,11 +2197,11 @@
         "pub_ts": 1795549802.0
       },
       {
-        "title": "Dell Says AI Demand Remains ‘Firm,’ Every Order ‘Fully Vetted’ – But DELL Stock Barely Moves After Beat-And-Raise Quarter",
-        "url": "https://stocktwits.com/news-articles/markets/equity/dell-says-ai-demand-remains-firm-every-order-fully-vetted-but-dell-stock-barely-moves-after-beat-and-raise-quarter/cNbu6VGR9lI?.tsrc=rss",
+        "title": "Donald Trump Floats Jensen Huang Pardon, US Stake In Nvidia – But NVDA Loses Momentum",
+        "url": "https://stocktwits.com/news-articles/markets/equity/donald-trump-floats-jensen-huang-pardon-us-stake-in-nvidia-but-nvda-loses-momentum/cNbHPnyR9lL?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 21:50 ET",
-        "pub_ts": 1795575024.0
+        "time": "11-25 00:20 ET",
+        "pub_ts": 1795584052.0
       }
     ],
     "VRT": [
@@ -3355,25 +3355,25 @@
     "AMZN": 1795585003.3110478,
     "CRWV": 1795585003.3110478,
     "NBIS": 1795585003.3110478,
-    "APLD": 1795584214.3796115,
-    "VST": 1795584214.3796115,
-    "BE": 1795584214.3796115,
-    "CRDO": 1795584214.3796115,
-    "COHR": 1795584214.3796115,
+    "APLD": 1795585745.622399,
+    "VST": 1795585745.622399,
+    "BE": 1795585745.622399,
+    "CRDO": 1795585745.622399,
+    "COHR": 1795585745.622399,
     "MRVL": 1795585003.3110478,
     "LITE": 1795585003.3110478,
-    "AAOI": 1795584214.3796115,
-    "SPCX": 1795584214.3796115,
-    "ASTS": 1795584214.3796115,
+    "AAOI": 1795585745.622399,
+    "SPCX": 1795585745.622399,
+    "ASTS": 1795585745.622399,
     "AXTI": 1795585003.3110478,
-    "NASA": 1795584214.3796115,
-    "LUNR": 1795584214.3796115,
+    "NASA": 1795585745.622399,
+    "LUNR": 1795585745.622399,
     "TSLA": 1795584329.8376112,
-    "AXP": 1795584214.3796115,
-    "RKLB": 1795584214.3796115,
-    "KO": 1795584214.3796115,
-    "FLY": 1795584214.3796115,
-    "INTC": 1795584214.3796115,
+    "AXP": 1795585745.622399,
+    "RKLB": 1795585745.622399,
+    "KO": 1795585745.622399,
+    "FLY": 1795585745.622399,
+    "INTC": 1795585745.622399,
     "VRT": 1795584329.8376112,
     "HPE": 1795584329.8376112,
     "DELL": 1795584329.8376112,
@@ -3401,7 +3401,7 @@
     "V": 1795584329.8376112,
     "CAT": 1795584441.006546,
     "FN": 1795585003.3110478,
-    "GLW": 1795584214.3796115,
+    "GLW": 1795585745.622399,
     "ANT": 1795584441.006546,
     "XAUUSD": 1795584441.006546,
     "KOSPI": 1795585003.3110478
@@ -3422,10 +3422,10 @@
   },
   "calendar_banner": {
     "level": "upcoming",
-    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 463 分钟（11-25 08:30 ET / 22:30 KST）",
+    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 461 分钟（11-25 08:30 ET / 22:30 KST）",
     "detail": "前值 0.3% ｜ 预期 0.3% ｜ 临近公布前15分钟将自动触发防插针预警",
     "event_name": "美国10月核心PCE物价指数环比",
-    "minutes_left": 463,
+    "minutes_left": 461,
     "opex_shield": {
       "date": "2026-11-25",
       "active": false,
