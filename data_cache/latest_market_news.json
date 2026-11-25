@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795633361.752,
-  "updated_at_et": "11-25 14:02 ET",
-  "updated_at_kst": "04:02 KST",
+  "updated_at_ts": 1795633399.743,
+  "updated_at_et": "11-25 14:03 ET",
+  "updated_at_kst": "04:03 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -43,6 +43,19 @@
     }
   ],
   "macro_flashes": [
+    {
+      "id": "20261126030240076800",
+      "title": "美联储褐皮书：十二个联邦储备区中有八个报告轻微至温和增长，四个区报告无变化。",
+      "summary": "美联储褐皮书：十二个联邦储备区中有八个报告轻微至温和增长，四个区报告无变化。",
+      "keywords": [
+        "美联储"
+      ],
+      "pub_ts": 1795633360.0,
+      "time_et": "11-25 14:02 ET",
+      "time_bj": "03:02 BJ",
+      "time_kst": "04:02 KST",
+      "time_display": "14:02 ET / 03:02 BJ"
+    },
     {
       "id": "20261126030222286800",
       "title": "美联储褐皮书：总体而言，大多数地区预计经济小幅至温和增长。",
@@ -361,19 +374,6 @@
       "time_bj": "22:44 BJ",
       "time_kst": "23:44 KST",
       "time_display": "09:44 ET / 22:44 BJ"
-    },
-    {
-      "id": "20261125223609441800",
-      "title": "纳斯达克100指数跌幅扩大至4%。",
-      "summary": "纳斯达克100指数跌幅扩大至4%。",
-      "keywords": [
-        "纳斯达克"
-      ],
-      "pub_ts": 1795617369.0,
-      "time_et": "11-25 09:36 ET",
-      "time_bj": "22:36 BJ",
-      "time_kst": "23:36 KST",
-      "time_display": "09:36 ET / 22:36 BJ"
     }
   ],
   "ticker_news": {
