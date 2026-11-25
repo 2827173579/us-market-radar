@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795613077.707,
-  "updated_at_et": "11-25 08:24 ET",
-  "updated_at_kst": "22:24 KST",
+  "updated_at_ts": 1795613125.777,
+  "updated_at_et": "11-25 08:25 ET",
+  "updated_at_kst": "22:25 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -17,7 +17,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "countdown_15m",
-      "minutes_left": 6,
+      "minutes_left": 5,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -36,7 +36,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "countdown_15m",
-      "minutes_left": 6,
+      "minutes_left": 5,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -3416,10 +3416,10 @@
   },
   "calendar_banner": {
     "level": "countdown_15m",
-    "headline": "⚠️ 宏观防插针预警：距离【美国10月核心PCE物价指数环比】公布还有 6 分钟，盘口极易上下剧烈插针，暂停左侧盲目挂单！",
+    "headline": "⚠️ 宏观防插针预警：距离【美国10月核心PCE物价指数环比】公布还有 5 分钟，盘口极易上下剧烈插针，暂停左侧盲目挂单！",
     "detail": "公布时间 11-25 08:30 ET / 22:30 KST ｜ 前值 0.3% · 预期 0.3%",
     "event_name": "美国10月核心PCE物价指数环比",
-    "minutes_left": 6,
+    "minutes_left": 5,
     "opex_shield": {
       "date": "2026-11-25",
       "active": false,
