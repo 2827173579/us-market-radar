@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795617131.009,
-  "updated_at_et": "11-25 09:32 ET",
-  "updated_at_kst": "23:32 KST",
+  "updated_at_ts": 1795617181.939,
+  "updated_at_et": "11-25 09:33 ET",
+  "updated_at_kst": "23:33 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -2643,6 +2643,13 @@
     ],
     "BTC-USD": [
       {
+        "title": "Bitcoin trades as a high-beta tech proxy amid a strong downtrend",
+        "url": "https://finance.yahoo.com/markets/crypto/articles/bitcoin-trades-high-beta-tech-141218301.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 09:12 ET",
+        "pub_ts": 1795615938.0
+      },
+      {
         "title": "Stock Market Today: Dow Dives On Surprise Inflation Data; Nvidia, Anthropic Plunge (Live Coverage)",
         "url": "https://finance.yahoo.com/m/90407e46-3b17-34e8-8c82-527bf00b63e4/stock-market-today%3A-dow-dives.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2669,13 +2676,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 07:31 ET",
         "pub_ts": 1795609916.0
-      },
-      {
-        "title": "CleanSpark Shares Fall 3% as Revenue Miss and Data Centre Delays Overshadow Earnings Beat",
-        "url": "https://investorshub.advfn.com/market-news/article/40705/cleanspark-shares-fall-3-as-revenue-miss-and-data-centre-delays-overshadow-earnings-beat?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 06:39 ET",
-        "pub_ts": 1795606766.0
       }
     ],
     "CRWD": [
@@ -3375,11 +3375,11 @@
     "FPS": 1795616370.1130629,
     "MU": 1795617131.0085394,
     "SKHY": 1795617131.0085394,
-    "WDC": 1795615636.925272,
+    "WDC": 1795617181.9387362,
     "STX": 1795616421.494901,
     "MSTR": 1795616370.1130629,
     "SNDK": 1795616370.1130629,
-    "BTC-USD": 1795615636.925272,
+    "BTC-USD": 1795617181.9387362,
     "CRWD": 1795616370.1130629,
     "ORCL": 1795616370.1130629,
     "COIN": 1795616370.1130629,
