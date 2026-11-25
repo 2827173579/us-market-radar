@@ -1,5 +1,5 @@
 {
-  "updated_at_ts": 1795631762.543,
+  "updated_at_ts": 1795631800.442,
   "updated_at_et": "11-25 13:36 ET",
   "updated_at_kst": "03:36 KST",
   "macro_calendar": [
@@ -568,6 +568,13 @@
     ],
     "QQQ": [
       {
+        "title": "Exchange-Traded Funds Lower as US Equities Fall After Midday",
+        "url": "https://finance.yahoo.com/markets/articles/exchange-traded-funds-lower-us-181148276.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 13:11 ET",
+        "pub_ts": 1795630308.0
+      },
+      {
         "title": "Should You Buy the Invesco QQQ ETF With the Nasdaq-100 Plummeting? Here's What History Says.",
         "url": "https://www.fool.com/investing/2026/11/25/should-you-buy-invesco-qqq-etf-nasdaq-100-plummeting-what-history-says/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -594,13 +601,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 12:27 ET",
         "pub_ts": 1795627622.0
-      },
-      {
-        "title": "Exchange-Traded Funds, Equity Futures Lower Pre-Bell Wednesday Amid Inflation Data Release",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/exchange-traded-funds-equity-futures-140441647.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 09:04 ET",
-        "pub_ts": 1795615481.0
       }
     ],
     "SMH": [
@@ -938,11 +938,32 @@
     ],
     "NVDA": [
       {
-        "title": "China added nearly 10 times more power capacity than the US in 2025 as the AI race heats up",
-        "url": "https://finance.yahoo.com/technology/article/china-added-nearly-10-times-more-power-capacity-than-the-us-in-2025-as-the-ai-race-heats-up-174910324.html?.tsrc=rss",
+        "title": "Lee Ainslie’s Maverick Capital Held $844 Million in Nvidia, Its Largest Position at 6.8% of Its Stocks",
+        "url": "https://247wallst.com/investing/2026/11/25/lee-ainslies-maverick-capital-held-844-million-in-nvidia-its-largest-position-at-6-8-of-its-stocks/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-25 12:49 ET",
-        "pub_ts": 1795628950.0
+        "time": "11-25 13:23 ET",
+        "pub_ts": 1795630992.0
+      },
+      {
+        "title": "Most of Dell’s New AI Server Orders Are Now for Nvidia’s Vera Rubin",
+        "url": "https://247wallst.com/investing/2026/11/25/most-of-dells-new-ai-server-orders-are-now-for-nvidias-vera-rubin/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 13:07 ET",
+        "pub_ts": 1795630026.0
+      },
+      {
+        "title": "3 Concerns I Still Have About Nvidia Stock, Even With Jensen Huang Back as CEO",
+        "url": "https://www.fool.com/investing/2026/11/25/3-concerns-i-still-have-about-nvidia-stock-even-with-jensen-huang-back-as-ceo/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 13:05 ET",
+        "pub_ts": 1795629902.0
+      },
+      {
+        "title": "If the Fed Raises Interest Rates Multiple Times in the Coming Months, Here’s What Billionaire Investor David Tepper Would Do",
+        "url": "https://www.fool.com/investing/2026/11/25/if-the-fed-raises-interest-rates-multiple-times-in-the-coming-months-here-s-what-billionaire-investor-david-tepper-would-do/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 13:03 ET",
+        "pub_ts": 1795629782.0
       },
       {
         "title": "SUPER HI INTERNATIONAL HOLDING Ltd. American Depositary Shares Q3 2026 Earnings Call Summary",
@@ -950,27 +971,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 12:55 ET",
         "pub_ts": 1795629319.0
-      },
-      {
-        "title": "Polestar Automotive Holding UK PLC Q3 2026 Earnings Call Summary",
-        "url": "https://app.moby.co/home/research/tools/earningsCalendar/earnings-polestar-automotive-holding-uk-plc-q3-2026-earnings-call-summary?utm_source=yahoo_finance&utm_medium=rss&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 12:54 ET",
-        "pub_ts": 1795629250.0
-      },
-      {
-        "title": "Nvidia Stock Keeps Falling. It’s Obvious Jensen Was Not the Only Problem.",
-        "url": "https://finance.yahoo.com/m/7af7a923-fdfa-3a68-abd6-acc160a02011/nvidia-stock-keeps-falling..html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 12:50 ET",
-        "pub_ts": 1795629000.0
-      },
-      {
-        "title": "Diana Shipping Inc. Q3 2026 Earnings Call Summary",
-        "url": "https://app.moby.co/home/research/tools/earningsCalendar/earnings-diana-shipping-inc-q3-2026-earnings-call-summary?utm_source=yahoo_finance&utm_medium=rss&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 12:49 ET",
-        "pub_ts": 1795628998.0
       }
     ],
     "AMD": [
@@ -3315,26 +3315,26 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795630295.1300657,
-    "SOXL": 1795630295.1300657,
+    "KORU": 1795631800.4424055,
+    "SOXL": 1795631800.4424055,
     "SPY": 1795630766.8301432,
-    "DIA": 1795630295.1300657,
-    "SOXX": 1795630295.1300657,
-    "QQQ": 1795630295.1300657,
+    "DIA": 1795631800.4424055,
+    "SOXX": 1795631800.4424055,
+    "QQQ": 1795631800.4424055,
     "SMH": 1795630766.8301432,
-    "IWM": 1795630295.1300657,
-    "IGV": 1795630295.1300657,
-    "TLT": 1795630295.1300657,
-    "GLD": 1795630295.1300657,
-    "SQQQ": 1795630295.1300657,
+    "IWM": 1795631800.4424055,
+    "IGV": 1795631800.4424055,
+    "TLT": 1795631800.4424055,
+    "GLD": 1795631800.4424055,
+    "SQQQ": 1795631800.4424055,
     "TSM": 1795630766.8301432,
-    "VIXY": 1795630295.1300657,
-    "SOXS": 1795630295.1300657,
-    "NVDA": 1795630295.1300657,
-    "AMD": 1795630295.1300657,
+    "VIXY": 1795631800.4424055,
+    "SOXS": 1795631800.4424055,
+    "NVDA": 1795631800.4424055,
+    "AMD": 1795631800.4424055,
     "ASML": 1795630766.8301432,
     "QCOM": 1795630766.8301432,
-    "AVGO": 1795630295.1300657,
+    "AVGO": 1795631800.4424055,
     "AMAT": 1795630766.8301432,
     "META": 1795630766.8301432,
     "GOOGL": 1795630766.8301432,
