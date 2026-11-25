@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795590624.149,
-  "updated_at_et": "11-25 02:10 ET",
-  "updated_at_kst": "16:10 KST",
+  "updated_at_ts": 1795590733.234,
+  "updated_at_et": "11-25 02:12 ET",
+  "updated_at_kst": "16:12 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -17,7 +17,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 380,
+      "minutes_left": 378,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -36,7 +36,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 380,
+      "minutes_left": 378,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -603,11 +603,11 @@
         "pub_ts": 1795518197.0
       },
       {
-        "title": "Harbor Arena Structured Income ETF (YLDS): Autocallable Income in an ETF Wrapper",
-        "url": "http://www.etf.com/sections/news/harbor-arena-structured-income-etf-ylds-autocallable-income-etf-wrapper?utm_source=yahoo-finance&utm_medium=rss&utm_campaign=yahoo-finance-rss&.tsrc=rss",
+        "title": "AI Concerns Resurface? ORCL, GOOGL, SPCX, CRWV Credit Default Swap Spreads Hit Records As NVDA, ANT Tumble",
+        "url": "https://stocktwits.com/news-articles/markets/equity/ai-concerns-resurface-orcl-googl-spcx-crwv-credit-default-swap-spreads-hit-records-as-nvda-ant-tumble/cNbHEEAR9lZ?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 14:09 ET",
-        "pub_ts": 1795547398.0
+        "time": "11-25 01:56 ET",
+        "pub_ts": 1795589778.0
       }
     ],
     "SMH": [
@@ -945,6 +945,27 @@
     ],
     "NVDA": [
       {
+        "title": "Nvidia’s spying scandal is backfiring on China",
+        "url": "https://uk.finance.yahoo.com/news/nvidia-spying-scandal-backfiring-china-070000166.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 02:00 ET",
+        "pub_ts": 1795590000.0
+      },
+      {
+        "title": "AI Concerns Resurface? ORCL, GOOGL, SPCX, CRWV Credit Default Swap Spreads Hit Records As NVDA, ANT Tumble",
+        "url": "https://stocktwits.com/news-articles/markets/equity/ai-concerns-resurface-orcl-googl-spcx-crwv-credit-default-swap-spreads-hit-records-as-nvda-ant-tumble/cNbHEEAR9lZ?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 01:56 ET",
+        "pub_ts": 1795589778.0
+      },
+      {
+        "title": "NVDA Eyes Worst Month Since 2022 — Dip Buyers Are ‘Still Fighting To Break Even’ After Huang’s Return, Analyst Says",
+        "url": "https://stocktwits.com/news-articles/markets/equity/nvda-dip-buyers-still-fighting-break-even-after-huang-return-analyst-says/cNbHEckR9lm?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 01:52 ET",
+        "pub_ts": 1795589553.0
+      },
+      {
         "title": "Stock Market: Will S&P 500 Open Up or Down Today?",
         "url": "https://www.benzinga.com/markets/prediction-markets/26/11/63614091/stock-market-will-sp-500-open-up-or-down-today-85?utm_source=yahooFinance&utm_campaign=partner_feed&utm_medium=referral&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -957,27 +978,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 00:29 ET",
         "pub_ts": 1795584594.0
-      },
-      {
-        "title": "Donald Trump Floats Jensen Huang Pardon, US Stake In Nvidia – But NVDA Loses Momentum",
-        "url": "https://stocktwits.com/news-articles/markets/equity/donald-trump-floats-jensen-huang-pardon-us-stake-in-nvidia-but-nvda-loses-momentum/cNbHPnyR9lL?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 00:20 ET",
-        "pub_ts": 1795584052.0
-      },
-      {
-        "title": "November 2026 Growth Stocks With Strong Earnings Potential",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/november-2026-growth-stocks-strong-051356592.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 00:13 ET",
-        "pub_ts": 1795583636.0
-      },
-      {
-        "title": "The Semiconductor ETF Kept Falling After Nvidia Raised Its Forecast. Time to Buy?",
-        "url": "https://www.fool.com/investing/2026/11/24/the-semiconductor-etf-kept-falling-after-nvidia-raised-its-forecast-time-to-buy/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 23:57 ET",
-        "pub_ts": 1795582622.0
       }
     ],
     "AMD": [
@@ -3322,26 +3322,26 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795589208.5455883,
-    "SOXL": 1795589208.5455883,
+    "KORU": 1795590733.2343545,
+    "SOXL": 1795590733.2343545,
     "SPY": 1795589530.0408797,
-    "DIA": 1795589208.5455883,
-    "SOXX": 1795589208.5455883,
-    "QQQ": 1795589208.5455883,
+    "DIA": 1795590733.2343545,
+    "SOXX": 1795590733.2343545,
+    "QQQ": 1795590733.2343545,
     "SMH": 1795589530.0408797,
-    "IWM": 1795589208.5455883,
-    "IGV": 1795589208.5455883,
-    "TLT": 1795589208.5455883,
-    "GLD": 1795589208.5455883,
-    "SQQQ": 1795589208.5455883,
+    "IWM": 1795590733.2343545,
+    "IGV": 1795590733.2343545,
+    "TLT": 1795590733.2343545,
+    "GLD": 1795590733.2343545,
+    "SQQQ": 1795590733.2343545,
     "TSM": 1795589530.0408797,
-    "VIXY": 1795589208.5455883,
-    "SOXS": 1795589208.5455883,
-    "NVDA": 1795589208.5455883,
-    "AMD": 1795589208.5455883,
+    "VIXY": 1795590733.2343545,
+    "SOXS": 1795590733.2343545,
+    "NVDA": 1795590733.2343545,
+    "AMD": 1795590733.2343545,
     "ASML": 1795589530.0408797,
     "QCOM": 1795589530.0408797,
-    "AVGO": 1795589208.5455883,
+    "AVGO": 1795590733.2343545,
     "AMAT": 1795589530.0408797,
     "META": 1795589530.0408797,
     "GOOGL": 1795589530.0408797,
@@ -3419,10 +3419,10 @@
   },
   "calendar_banner": {
     "level": "upcoming",
-    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 380 分钟（11-25 08:30 ET / 22:30 KST）",
+    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 378 分钟（11-25 08:30 ET / 22:30 KST）",
     "detail": "前值 0.3% ｜ 预期 0.3% ｜ 临近公布前15分钟将自动触发防插针预警",
     "event_name": "美国10月核心PCE物价指数环比",
-    "minutes_left": 380,
+    "minutes_left": 378,
     "opex_shield": {
       "date": "2026-11-25",
       "active": false,
