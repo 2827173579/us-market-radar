@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795569219.418,
-  "updated_at_et": "11-24 20:13 ET",
-  "updated_at_kst": "10:13 KST",
+  "updated_at_ts": 1795569354.849,
+  "updated_at_et": "11-24 20:15 ET",
+  "updated_at_kst": "10:15 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -439,13 +439,6 @@
         "pub_ts": 1795525388.0
       },
       {
-        "title": "What SPDR S&P 500 ETF Trust (SPY) Bought: Apple Leads on Friday",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/spdr-p-500-etf-trust-110254690.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 06:02 ET",
-        "pub_ts": 1795518174.0
-      },
-      {
         "title": "Is Apple (AAPL) Above Fair Value As ETF Buying Returns?",
         "url": "https://finance.yahoo.com/markets/stocks/articles/apple-aapl-above-fair-value-211324050.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -465,6 +458,13 @@
         "source": "Yahoo Finance",
         "time": "11-24 09:19 ET",
         "pub_ts": 1795529962.0
+      },
+      {
+        "title": "Here's Why Investors Should Go Defensive Now: ETFs in Focus",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/heres-why-investors-defensive-now-134200178.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 08:42 ET",
+        "pub_ts": 1795527720.0
       }
     ],
     "DIA": [
@@ -1135,6 +1135,13 @@
     ],
     "META": [
       {
+        "title": "Your $300,000 in XLC Holds $130,206 in Just Meta and Alphabet",
+        "url": "https://247wallst.com/investing/etf/2026/11/24/your-300000-in-xlc-holds-130206-in-just-meta-and-alphabet/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 20:04 ET",
+        "pub_ts": 1795568646.0
+      },
+      {
         "title": "Could Meta Actually Climb 30%? Or Is J.P. Morgan Totally Wrong?",
         "url": "https://www.tikr.com/blog/could-meta-actually-climb-30-or-is-j-p-morgan-totally-wrong?ref=yahoofinance&tlnk=yf-261124-24hpvhqr&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1161,16 +1168,16 @@
         "source": "Yahoo Finance",
         "time": "11-24 16:11 ET",
         "pub_ts": 1795554712.0
-      },
-      {
-        "title": "These 4 Utility Stocks Pay Dividends While AI Drives Electricity Demand Higher",
-        "url": "https://247wallst.com/investing/2026/11/24/these-4-utility-stocks-pay-dividends-while-ai-drives-electricity-demand-higher/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 15:17 ET",
-        "pub_ts": 1795551459.0
       }
     ],
     "GOOGL": [
+      {
+        "title": "Your $300,000 in XLC Holds $130,206 in Just Meta and Alphabet",
+        "url": "https://247wallst.com/investing/etf/2026/11/24/your-300000-in-xlc-holds-130206-in-just-meta-and-alphabet/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 20:04 ET",
+        "pub_ts": 1795568646.0
+      },
       {
         "title": "Stephanie Link Says Marvell Could Earn $30 a Share by 2031. Is She Right?",
         "url": "https://247wallst.com/investing/2026/11/24/stephanie-link-says-marvell-could-earn-30-a-share-by-2031-is-she-right/?.tsrc=rss",
@@ -1198,13 +1205,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 16:02 ET",
         "pub_ts": 1795554167.0
-      },
-      {
-        "title": "Intuit vs. Palo Alto Networks: Which Technology Stock Is a Better Buy for 2027?",
-        "url": "https://www.fool.com/coverage/better-buy/2026/11/24/intuit-vs-palo-alto-networks-which-technology-stock-is-a-better-buy-for-2027/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 14:20 ET",
-        "pub_ts": 1795548002.0
       }
     ],
     "MSFT": [
@@ -3292,45 +3292,45 @@
   "ticker_news_ts": {
     "KORU": 1795568947.4533343,
     "SOXL": 1795568947.4533343,
-    "SPY": 1795567737.2932932,
+    "SPY": 1795569354.8487291,
     "DIA": 1795568947.4533343,
     "SOXX": 1795568947.4533343,
     "QQQ": 1795568947.4533343,
-    "SMH": 1795567737.2932932,
+    "SMH": 1795569354.8487291,
     "IWM": 1795568947.4533343,
     "IGV": 1795568947.4533343,
     "TLT": 1795568947.4533343,
     "GLD": 1795568947.4533343,
     "SQQQ": 1795568947.4533343,
-    "TSM": 1795567737.2932932,
+    "TSM": 1795569354.8487291,
     "VIXY": 1795568947.4533343,
     "SOXS": 1795568947.4533343,
     "NVDA": 1795568947.4533343,
     "AMD": 1795568947.4533343,
-    "ASML": 1795567737.2932932,
-    "QCOM": 1795567737.2932932,
+    "ASML": 1795569354.8487291,
+    "QCOM": 1795569354.8487291,
     "AVGO": 1795568947.4533343,
-    "AMAT": 1795567737.2932932,
-    "META": 1795567737.2932932,
-    "GOOGL": 1795567737.2932932,
-    "MSFT": 1795567737.2932932,
-    "AAPL": 1795567737.2932932,
-    "PLTR": 1795567737.2932932,
-    "NOW": 1795567737.2932932,
-    "AMZN": 1795567737.2932932,
-    "CRWV": 1795567737.2932932,
-    "NBIS": 1795567838.4967844,
+    "AMAT": 1795569354.8487291,
+    "META": 1795569354.8487291,
+    "GOOGL": 1795569354.8487291,
+    "MSFT": 1795569354.8487291,
+    "AAPL": 1795569354.8487291,
+    "PLTR": 1795569354.8487291,
+    "NOW": 1795569354.8487291,
+    "AMZN": 1795569354.8487291,
+    "CRWV": 1795569354.8487291,
+    "NBIS": 1795569354.8487291,
     "APLD": 1795568234.0789213,
     "VST": 1795568234.0789213,
     "BE": 1795568234.0789213,
     "CRDO": 1795568234.0789213,
     "COHR": 1795568234.0789213,
-    "MRVL": 1795567838.4967844,
-    "LITE": 1795567838.4967844,
+    "MRVL": 1795569354.8487291,
+    "LITE": 1795569354.8487291,
     "AAOI": 1795568234.0789213,
     "SPCX": 1795568234.0789213,
     "ASTS": 1795568234.0789213,
-    "AXTI": 1795567838.4967844,
+    "AXTI": 1795569354.8487291,
     "NASA": 1795568234.0789213,
     "LUNR": 1795568234.0789213,
     "TSLA": 1795568431.4026234,
@@ -3345,13 +3345,13 @@
     "OKLO": 1795568431.4026234,
     "CEG": 1795568431.4026234,
     "FPS": 1795568431.4026234,
-    "MU": 1795567838.4967844,
-    "SKHY": 1795567838.4967844,
-    "WDC": 1795567838.4967844,
+    "MU": 1795569354.8487291,
+    "SKHY": 1795569354.8487291,
+    "WDC": 1795569354.8487291,
     "STX": 1795568431.4026234,
     "MSTR": 1795568431.4026234,
     "SNDK": 1795568431.4026234,
-    "BTC-USD": 1795567838.4967844,
+    "BTC-USD": 1795569354.8487291,
     "CRWD": 1795568431.4026234,
     "ORCL": 1795568431.4026234,
     "COIN": 1795568431.4026234,
@@ -3365,11 +3365,11 @@
     "WMT": 1795568540.1703017,
     "V": 1795568431.4026234,
     "CAT": 1795568540.1703017,
-    "FN": 1795567838.4967844,
+    "FN": 1795569354.8487291,
     "GLW": 1795568234.0789213,
     "ANT": 1795568540.1703017,
     "XAUUSD": 1795568741.9318924,
-    "KOSPI": 1795567737.2932932
+    "KOSPI": 1795569354.8487291
   },
   "opex_shield": {
     "date": "2026-11-24",
