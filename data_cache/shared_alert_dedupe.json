@@ -7019,9 +7019,13 @@
     "2026-11-25:INTRADAY_CORRIDOR:QQQ:ABOVE_P75": {
       "device": "PC",
       "ts": 1795618671.6005108
+    },
+    "KOL_CLOSE:2026-11-25:KOL_META_SHORT_2026-11-25_1:SL_HIT": {
+      "device": "PC",
+      "ts": 1795618765.6133459
     }
   },
   "device": "PC",
-  "last_heartbeat_ts": 1795618692.7208045,
-  "updated_at": "2026-11-25T14:58:40.203452+00:00"
+  "last_heartbeat_ts": 1795618742.6421287,
+  "updated_at": "2026-11-25T14:59:25.613841+00:00"
 }
