@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795604790.325,
-  "updated_at_et": "11-25 06:06 ET",
-  "updated_at_kst": "20:06 KST",
+  "updated_at_ts": 1795604837.889,
+  "updated_at_et": "11-25 06:07 ET",
+  "updated_at_kst": "20:07 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -17,7 +17,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 144,
+      "minutes_left": 143,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -36,7 +36,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 144,
+      "minutes_left": 143,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -837,6 +837,13 @@
     ],
     "TSM": [
       {
+        "title": "Huang Boost Fades Quickly as AI Fears Sink TSMC, SK Hynix Shares",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/huang-boost-fades-quickly-ai-040320019.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 23:03 ET",
+        "pub_ts": 1795579400.0
+      },
+      {
         "title": "Novanta Shares Just Jumped And We’re Buying This Robotics Play",
         "url": "https://247wallst.com/videos/novanta-shares-just-jumped-and-were-buying-this-robotics-play/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -863,13 +870,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 14:59 ET",
         "pub_ts": 1795550362.0
-      },
-      {
-        "title": "If You Invest $5,000 Into These 3 Stocks, You Could Have $10,000 by 2030",
-        "url": "https://247wallst.com/investing/2026/11/24/if-you-invest-5000-into-these-3-stocks-you-could-have-10000-by-2030/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 13:03 ET",
-        "pub_ts": 1795543400.0
       }
     ],
     "VIXY": [
@@ -1170,6 +1170,13 @@
     ],
     "META": [
       {
+        "title": "Market Chatter: Amazon.com, Meta Platforms in Talks Over Allowing Muse AI Access Shopping Site",
+        "url": "https://finance.yahoo.com/technology/ai/articles/market-chatter-amazon-com-meta-104905932.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 05:49 ET",
+        "pub_ts": 1795603745.0
+      },
+      {
         "title": "Market Chatter: Meta Platforms' Muse Seen Boosting Advertising Revenue Via Instagram",
         "url": "https://finance.yahoo.com/media-advertising/articles/market-chatter-meta-platforms-apos-102004084.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1196,13 +1203,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 02:09 ET",
         "pub_ts": 1795590541.0
-      },
-      {
-        "title": "Your $300,000 in XLC Holds $130,206 in Just Meta and Alphabet",
-        "url": "https://247wallst.com/investing/etf/2026/11/24/your-300000-in-xlc-holds-130206-in-just-meta-and-alphabet/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 20:04 ET",
-        "pub_ts": 1795568646.0
       }
     ],
     "GOOGL": [
@@ -1288,6 +1288,13 @@
         "pub_ts": 1795549511.0
       },
       {
+        "title": "Tell Schwab to Move $19,000 of Apple Stock to Your Son on December 30 and If the Shares Land January 4 the IRS Counts It as a 2027 Gift. This Year’s Exclusion Is Gone for Good",
+        "url": "https://247wallst.com/personal-finance/2026/11/25/tell-schwab-to-move-19000-of-apple-stock-to-your-son-on-december-30-and-if-the-shares-land-january-4-the-irs-counts-it-as-a-2027-gift-this-years-exclusion-is-gone-for-good/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 05:52 ET",
+        "pub_ts": 1795603928.0
+      },
+      {
         "title": "Tim Cook Could Have Purchased Any of 489 S&P 500 Companies With $903 Billion. Instead, He Bought Something That Transformed Apple Forever.",
         "url": "https://www.fool.com/investing/2026/11/25/tim-cook-purchase-any-489-sp-500-companies-with-903-billion-he-bought-something-transformed-apple-forever/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1307,13 +1314,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 16:19 ET",
         "pub_ts": 1795555192.0
-      },
-      {
-        "title": "Is Apple (AAPL) Above Fair Value As ETF Buying Returns?",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/apple-aapl-above-fair-value-211324050.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 16:13 ET",
-        "pub_ts": 1795554804.0
       }
     ],
     "PLTR": [
@@ -1399,6 +1399,20 @@
         "pub_ts": 1795556758.0
       },
       {
+        "title": "Market Chatter: Amazon.com, Meta Platforms in Talks Over Allowing Muse AI Access Shopping Site",
+        "url": "https://finance.yahoo.com/technology/ai/articles/market-chatter-amazon-com-meta-104905932.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 05:49 ET",
+        "pub_ts": 1795603745.0
+      },
+      {
+        "title": "Walmart’s shopper base is shifting: High earners lead its gains as low-income shoppers turn to Amazon",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/walmart-shopper-shifting-high-earners-083200748.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 03:32 ET",
+        "pub_ts": 1795595520.0
+      },
+      {
         "title": "After $26 billion in gifts, MacKenzie Scott is still worth $27 billion—and just gave Atlanta students $8 million more",
         "url": "https://finance.yahoo.com/small-business/articles/26-billion-gifts-mackenzie-scott-080300124.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1411,20 +1425,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 03:01 ET",
         "pub_ts": 1795593660.0
-      },
-      {
-        "title": "Amazon ‘Trying to Trick’ You With Black Friday Offers That Aren’t Really Deals, Says Elizabeth Warren: E-Commerce Giant Pushes Back",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/amazon-trying-trick-black-friday-025557873.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 21:55 ET",
-        "pub_ts": 1795575357.0
-      },
-      {
-        "title": "Amazon customers may qualify for $309.5M settlement. See how",
-        "url": "https://www.usatoday.com/story/money/2026/11/24/amazon-settlement-deadline-is-approaching-who-qualifies/92947347007/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 17:32 ET",
-        "pub_ts": 1795559564.0
       }
     ],
     "CRWV": [
@@ -1688,6 +1688,13 @@
     ],
     "MRVL": [
       {
+        "title": "Oppenheimer Cut Its Marvell Target by $100. It Still Sees 147% Upside",
+        "url": "https://www.tikr.com/blog/oppenheimer-cut-its-marvell-target-by-100-it-still-sees-147-upside?ref=yahoofinance&tlnk=yf-261125-h25pvm3g&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 05:49 ET",
+        "pub_ts": 1795603771.0
+      },
+      {
         "title": "Stephanie Link Says Marvell Could Earn $30 a Share by 2031. Is She Right?",
         "url": "https://247wallst.com/investing/2026/11/24/stephanie-link-says-marvell-could-earn-30-a-share-by-2031-is-she-right/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1714,13 +1721,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 12:29 ET",
         "pub_ts": 1795541384.0
-      },
-      {
-        "title": "14 Big Funds Bought Marvell Last Quarter, While 13 Sold. Who’s Right?",
-        "url": "https://www.tikr.com/blog/14-big-funds-bought-marvell-last-quarter-while-13-sold-whos-right?ref=yahoofinance&tlnk=yf-261124-xj3x7jcx&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 11:59 ET",
-        "pub_ts": 1795539586.0
       }
     ],
     "LITE": [
@@ -2435,6 +2435,13 @@
         "pub_ts": 1795556758.0
       },
       {
+        "title": "U.S. chip stocks extend losses premarket as AI spending concerns resurface",
+        "url": "https://finance.yahoo.com/technology/ai/articles/u-chip-stocks-extend-losses-104903644.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 05:49 ET",
+        "pub_ts": 1795603743.0
+      },
+      {
         "title": "Micron Reports in December. Here's the 1 Number I'll Be Watching.",
         "url": "https://www.fool.com/investing/2026/11/25/micron-reports-in-december-here-s-the-1-number-i-ll-be-watching/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2454,13 +2461,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 22:21 ET",
         "pub_ts": 1795576883.0
-      },
-      {
-        "title": "3 AI Investment Stocks We’re Buying Today And Why We’re Selling On Micron",
-        "url": "https://247wallst.com/videos/3-ai-investment-stocks-were-buying-today-and-why-were-selling-on-micron/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 18:19 ET",
-        "pub_ts": 1795562344.0
       }
     ],
     "SKHY": [
@@ -3327,45 +3327,45 @@
   "ticker_news_ts": {
     "KORU": 1795604471.1982622,
     "SOXL": 1795604471.1982622,
-    "SPY": 1795603313.8519511,
+    "SPY": 1795604837.8887246,
     "DIA": 1795604471.1982622,
     "SOXX": 1795604471.1982622,
     "QQQ": 1795604471.1982622,
-    "SMH": 1795603313.8519511,
+    "SMH": 1795604837.8887246,
     "IWM": 1795604471.1982622,
     "IGV": 1795604471.1982622,
     "TLT": 1795604471.1982622,
     "GLD": 1795604471.1982622,
     "SQQQ": 1795604471.1982622,
-    "TSM": 1795603313.8519511,
+    "TSM": 1795604837.8887246,
     "VIXY": 1795604471.1982622,
     "SOXS": 1795604471.1982622,
     "NVDA": 1795604471.1982622,
     "AMD": 1795604471.1982622,
-    "ASML": 1795603313.8519511,
-    "QCOM": 1795603313.8519511,
+    "ASML": 1795604837.8887246,
+    "QCOM": 1795604837.8887246,
     "AVGO": 1795604471.1982622,
-    "AMAT": 1795603313.8519511,
-    "META": 1795603313.8519511,
-    "GOOGL": 1795603313.8519511,
-    "MSFT": 1795603313.8519511,
-    "AAPL": 1795603313.8519511,
-    "PLTR": 1795603313.8519511,
-    "NOW": 1795603313.8519511,
-    "AMZN": 1795603313.8519511,
-    "CRWV": 1795603313.8519511,
-    "NBIS": 1795603313.8519511,
+    "AMAT": 1795604837.8887246,
+    "META": 1795604837.8887246,
+    "GOOGL": 1795604837.8887246,
+    "MSFT": 1795604837.8887246,
+    "AAPL": 1795604837.8887246,
+    "PLTR": 1795604837.8887246,
+    "NOW": 1795604837.8887246,
+    "AMZN": 1795604837.8887246,
+    "CRWV": 1795604837.8887246,
+    "NBIS": 1795604837.8887246,
     "APLD": 1795604022.5883892,
     "VST": 1795604022.5883892,
     "BE": 1795604022.5883892,
     "CRDO": 1795604022.5883892,
     "COHR": 1795604022.5883892,
-    "MRVL": 1795603313.8519511,
-    "LITE": 1795603313.8519511,
+    "MRVL": 1795604837.8887246,
+    "LITE": 1795604837.8887246,
     "AAOI": 1795604022.5883892,
     "SPCX": 1795604022.5883892,
     "ASTS": 1795604022.5883892,
-    "AXTI": 1795603313.8519511,
+    "AXTI": 1795604837.8887246,
     "NASA": 1795604022.5883892,
     "LUNR": 1795604022.5883892,
     "TSLA": 1795604121.535901,
@@ -3380,8 +3380,8 @@
     "OKLO": 1795604121.535901,
     "CEG": 1795604121.535901,
     "FPS": 1795604121.535901,
-    "MU": 1795603313.8519511,
-    "SKHY": 1795603313.8519511,
+    "MU": 1795604837.8887246,
+    "SKHY": 1795604837.8887246,
     "WDC": 1795603460.6078935,
     "STX": 1795604173.9583318,
     "MSTR": 1795604121.535901,
@@ -3400,11 +3400,11 @@
     "WMT": 1795604235.8684995,
     "V": 1795604121.535901,
     "CAT": 1795604235.8684995,
-    "FN": 1795603313.8519511,
+    "FN": 1795604837.8887246,
     "GLW": 1795604022.5883892,
     "ANT": 1795604235.8684995,
     "XAUUSD": 1795604235.8684995,
-    "KOSPI": 1795603313.8519511
+    "KOSPI": 1795604837.8887246
   },
   "opex_shield": {
     "date": "2026-11-25",
@@ -3422,10 +3422,10 @@
   },
   "calendar_banner": {
     "level": "upcoming",
-    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 144 分钟（11-25 08:30 ET / 22:30 KST）",
+    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 143 分钟（11-25 08:30 ET / 22:30 KST）",
     "detail": "前值 0.3% ｜ 预期 0.3% ｜ 临近公布前15分钟将自动触发防插针预警",
     "event_name": "美国10月核心PCE物价指数环比",
-    "minutes_left": 144,
+    "minutes_left": 143,
     "opex_shield": {
       "date": "2026-11-25",
       "active": false,
