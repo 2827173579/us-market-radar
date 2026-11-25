@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795602893.136,
-  "updated_at_et": "11-25 05:34 ET",
-  "updated_at_kst": "19:34 KST",
+  "updated_at_ts": 1795602938.654,
+  "updated_at_et": "11-25 05:35 ET",
+  "updated_at_kst": "19:35 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -17,7 +17,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 176,
+      "minutes_left": 175,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -36,7 +36,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 176,
+      "minutes_left": 175,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -962,25 +962,25 @@
         "pub_ts": 1795600061.0
       },
       {
-        "title": "Should You Buy Oracle Stock After Its 53% Collapse? The Answer Might Shock You.",
-        "url": "https://www.fool.com/investing/2026/11/25/should-buy-oracle-stock-after-53-collapse-answer-shock-you/?.tsrc=rss",
+        "title": "Nvidia shares fall 5% premarket after Huang return rally wanes",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/nvidia-shares-fall-5-premarket-101944403.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-25 04:49 ET",
-        "pub_ts": 1795600142.0
+        "time": "11-25 05:19 ET",
+        "pub_ts": 1795601984.0
       },
       {
-        "title": "Alice Huang-linked firms listed $270 million in AI servers in China: report",
-        "url": "https://nypost.com/2026/11/25/business/alice-huang-linked-firms-listed-270-million-in-ai-servers-in-china-report/?.tsrc=rss",
+        "title": "Semiconductor Stocks Are Sinking. These 2 AI Chip Stocks Could Make You Richer on the Rebound.",
+        "url": "https://www.fool.com/investing/2026/11/25/semiconductor-stocks-are-sinking-these-2-ai-chip-stocks-could-make-you-richer-on-the-rebound/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-25 04:45 ET",
-        "pub_ts": 1795599949.0
+        "time": "11-25 05:12 ET",
+        "pub_ts": 1795601522.0
       },
       {
-        "title": "Tim Cook Could Have Purchased Any of 489 S&P 500 Companies With $903 Billion. Instead, He Bought Something That Transformed Apple Forever.",
-        "url": "https://www.fool.com/investing/2026/11/25/tim-cook-purchase-any-489-sp-500-companies-with-903-billion-he-bought-something-transformed-apple-forever/?.tsrc=rss",
+        "title": "Jack Bogle Told Investors to Own the Market ‘Warts and All.’ Then Nvidia Soared 31% and Moved a 68-Year-Old’s $1 Million S&P 500 Index Fund by $16,000 in a Day",
+        "url": "https://247wallst.com/investing/2026/11/25/jack-bogle-told-investors-to-own-the-market-warts-and-all-then-nvidia-soared-31-and-moved-a-68-year-olds-1-million-sp-500-index-fund-by-16000-in-a-day/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-25 04:26 ET",
-        "pub_ts": 1795598762.0
+        "time": "11-25 05:12 ET",
+        "pub_ts": 1795601520.0
       }
     ],
     "AMD": [
@@ -3325,26 +3325,26 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795601402.4971905,
-    "SOXL": 1795601402.4971905,
+    "KORU": 1795602938.653905,
+    "SOXL": 1795602938.653905,
     "SPY": 1795601781.5206966,
-    "DIA": 1795601402.4971905,
-    "SOXX": 1795601402.4971905,
-    "QQQ": 1795601402.4971905,
+    "DIA": 1795602938.653905,
+    "SOXX": 1795602938.653905,
+    "QQQ": 1795602938.653905,
     "SMH": 1795601781.5206966,
-    "IWM": 1795601402.4971905,
-    "IGV": 1795601402.4971905,
-    "TLT": 1795601402.4971905,
-    "GLD": 1795601402.4971905,
-    "SQQQ": 1795601402.4971905,
+    "IWM": 1795602938.653905,
+    "IGV": 1795602938.653905,
+    "TLT": 1795602938.653905,
+    "GLD": 1795602938.653905,
+    "SQQQ": 1795602938.653905,
     "TSM": 1795601781.5206966,
-    "VIXY": 1795601402.4971905,
-    "SOXS": 1795601402.4971905,
-    "NVDA": 1795601402.4971905,
-    "AMD": 1795601402.4971905,
+    "VIXY": 1795602938.653905,
+    "SOXS": 1795602938.653905,
+    "NVDA": 1795602938.653905,
+    "AMD": 1795602938.653905,
     "ASML": 1795601781.5206966,
     "QCOM": 1795601781.5206966,
-    "AVGO": 1795601402.4971905,
+    "AVGO": 1795602938.653905,
     "AMAT": 1795601781.5206966,
     "META": 1795601781.5206966,
     "GOOGL": 1795601781.5206966,
@@ -3422,10 +3422,10 @@
   },
   "calendar_banner": {
     "level": "upcoming",
-    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 176 分钟（11-25 08:30 ET / 22:30 KST）",
+    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 175 分钟（11-25 08:30 ET / 22:30 KST）",
     "detail": "前值 0.3% ｜ 预期 0.3% ｜ 临近公布前15分钟将自动触发防插针预警",
     "event_name": "美国10月核心PCE物价指数环比",
-    "minutes_left": 176,
+    "minutes_left": 175,
     "opex_shield": {
       "date": "2026-11-25",
       "active": false,
