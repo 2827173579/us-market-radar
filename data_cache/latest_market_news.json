@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795607235.511,
-  "updated_at_et": "11-25 06:47 ET",
-  "updated_at_kst": "20:47 KST",
+  "updated_at_ts": 1795607283.542,
+  "updated_at_et": "11-25 06:48 ET",
+  "updated_at_kst": "20:48 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -17,7 +17,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 103,
+      "minutes_left": 102,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -36,7 +36,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 103,
+      "minutes_left": 102,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -3248,6 +3248,20 @@
         "pub_ts": 1795601358.0
       },
       {
+        "title": "Broadcom Bought $1 Billion Worth of Anthropic’s IPO, and It Has Tens of Billions More Riding on Its Success.",
+        "url": "https://www.fool.com/investing/2026/11/25/broadcom-bought-1-billion-worth-of-anthropic-tens-of-billions-more-riding-on-its-success/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 06:20 ET",
+        "pub_ts": 1795605602.0
+      },
+      {
+        "title": "What's Happening To Anthropic Stock Below Its IPO Price",
+        "url": "https://www.trefis.com/stock/ant/articles/628750/what-s-happening-to-anthropic-stock-below-its-ipo-price/2026-11-25?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 06:14 ET",
+        "pub_ts": 1795605293.0
+      },
+      {
         "title": "Anthropic Stock Is 31% Below Its Day 1 High. What Should Long-Term Investors Do?",
         "url": "https://www.fool.com/investing/2026/11/25/anthropic-stock-is-still-31-below-its-day-1-high-what-should-long-term-investors-do/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3255,25 +3269,11 @@
         "pub_ts": 1795604702.0
       },
       {
-        "title": "AI Angst Undercuts Asian Stock Markets",
-        "url": "https://finance.yahoo.com/markets/world-indices/articles/ai-angst-undercuts-asian-stock-104226080.html?.tsrc=rss",
+        "title": "Anthropic Below Its IPO Price: Do Giants Come Back?",
+        "url": "https://www.trefis.com/stock/ant/articles/628732/anthropic-below-its-ipo-price-do-giants-come-back/2026-11-25?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-25 05:42 ET",
-        "pub_ts": 1795603346.0
-      },
-      {
-        "title": "SpaceX Stock Has an Anthropic Problem",
-        "url": "https://finance.yahoo.com/m/b37dce27-5407-30bd-9314-29119ff5e24a/spacex-stock-has-an-anthropic.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 05:37 ET",
-        "pub_ts": 1795603020.0
-      },
-      {
-        "title": "Nvidia Threw an AI Party. Anthropic Wasn’t Invited.",
-        "url": "https://finance.yahoo.com/m/a64f3329-85de-3f2e-b86f-53509e5e7627/nvidia-threw-an-ai-party..html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 05:30 ET",
-        "pub_ts": 1795602600.0
+        "time": "11-25 06:00 ET",
+        "pub_ts": 1795604414.0
       }
     ],
     "XAUUSD": [
@@ -3393,16 +3393,16 @@
     "MRNA": 1795607185.594512,
     "NKE": 1795607185.594512,
     "MCD": 1795607185.594512,
-    "PEP": 1795605748.2915187,
-    "XOM": 1795605748.2915187,
-    "JPM": 1795605748.2915187,
-    "WMT": 1795605748.2915187,
+    "PEP": 1795607283.5424,
+    "XOM": 1795607283.5424,
+    "JPM": 1795607283.5424,
+    "WMT": 1795607283.5424,
     "V": 1795607185.594512,
-    "CAT": 1795605748.2915187,
+    "CAT": 1795607283.5424,
     "FN": 1795606440.9328077,
     "GLW": 1795607087.74781,
-    "ANT": 1795605748.2915187,
-    "XAUUSD": 1795605748.2915187,
+    "ANT": 1795607283.5424,
+    "XAUUSD": 1795607283.5424,
     "KOSPI": 1795606386.937073
   },
   "opex_shield": {
@@ -3421,10 +3421,10 @@
   },
   "calendar_banner": {
     "level": "upcoming",
-    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 103 分钟（11-25 08:30 ET / 22:30 KST）",
+    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 102 分钟（11-25 08:30 ET / 22:30 KST）",
     "detail": "前值 0.3% ｜ 预期 0.3% ｜ 临近公布前15分钟将自动触发防插针预警",
     "event_name": "美国10月核心PCE物价指数环比",
-    "minutes_left": 103,
+    "minutes_left": 102,
     "opex_shield": {
       "date": "2026-11-25",
       "active": false,
