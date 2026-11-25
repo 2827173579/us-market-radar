@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795620874.92,
-  "updated_at_et": "11-25 10:34 ET",
-  "updated_at_kst": "00:34 KST",
+  "updated_at_ts": 1795620925.312,
+  "updated_at_et": "11-25 10:35 ET",
+  "updated_at_kst": "00:35 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -1979,6 +1979,13 @@
     ],
     "TSLA": [
       {
+        "title": "‘Big Short’ investor snubs Tesla stock, echoes Buffett on $1,000 play",
+        "url": "https://www.thestreet.com/investing/steve-eisman-snubs-tesla-stock-buffett-1000-sp500?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 10:07 ET",
+        "pub_ts": 1795619220.0
+      },
+      {
         "title": "SpaceX Slides 5% as Gary Black Warns a Tesla Bid Could Push It Below $100; Rocket Lab and AST SpaceMobile Drop 4%",
         "url": "https://247wallst.com/investing/2026/11/25/spacex-slides-5-as-gary-black-warns-a-tesla-bid-could-push-it-below-100-rocket-lab-and-ast-spacemobile-drop-4/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2005,13 +2012,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 06:27 ET",
         "pub_ts": 1795606042.0
-      },
-      {
-        "title": "Tesla and SpaceX $3.5 Trillion Merger Talks Take a Major Step Forward",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/tesla-spacex-3-5-trillion-111122235.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 06:11 ET",
-        "pub_ts": 1795605082.0
       }
     ],
     "AXP": [
@@ -2222,18 +2222,18 @@
         "pub_ts": 1795597461.0
       },
       {
+        "title": "Vertiv CEO Says the Buildout Is “Accelerating.” Voters Just Knocked the Stock Down 25%",
+        "url": "https://www.tikr.com/blog/vertiv-ceo-says-the-buildout-is-accelerating-voters-just-knocked-the-stock-down-25?ref=yahoofinance&tlnk=yf-261125-m99mcvhj&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 03:46 ET",
+        "pub_ts": 1795596397.0
+      },
+      {
         "title": "Comfort Systems vs. Vertiv: Which AI Cooling Stock Is a Better Buy?",
         "url": "https://finance.yahoo.com/technology/ai/articles/comfort-systems-vs-vertiv-ai-163100993.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-24 11:31 ET",
         "pub_ts": 1795537860.0
-      },
-      {
-        "title": "Is Buying Vertiv Stock Now Too Early?",
-        "url": "https://www.trefis.com/stock/vrt/articles/628475/is-buying-vertiv-stock-now-too-early/2026-11-24?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 06:58 ET",
-        "pub_ts": 1795521488.0
       }
     ],
     "HPE": [
@@ -2793,6 +2793,13 @@
     ],
     "LLY": [
       {
+        "title": "Update: Market Chatter: Novo Nordisk and Eli Lilly Prepare New Warning Labels for GLP-1 Drugs Over Eye Condition Risk",
+        "url": "https://finance.yahoo.com/healthcare/articles/market-chatter-novo-nordisk-eli-150708947.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 10:07 ET",
+        "pub_ts": 1795619228.0
+      },
+      {
         "title": "Market Chatter: Novo Nordisk and Eli Lilly Prepare New Warning Labels for GLP-1 Drugs Over Eye Condition Risk",
         "url": "https://finance.yahoo.com/healthcare/articles/market-chatter-novo-nordisk-eli-132230427.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2819,13 +2826,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 10:35 ET",
         "pub_ts": 1795534502.0
-      },
-      {
-        "title": "State Street Health Care SPDR (XLV) Sells Eli Lilly and J&J on Friday",
-        "url": "https://finance.yahoo.com/healthcare/articles/state-street-health-care-spdr-110402940.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 06:04 ET",
-        "pub_ts": 1795518242.0
       }
     ],
     "MRNA": [
@@ -3363,37 +3363,37 @@
     "AXTI": 1795620160.0688725,
     "NASA": 1795620819.9865475,
     "LUNR": 1795620819.9865475,
-    "TSLA": 1795619397.7050352,
+    "TSLA": 1795620925.3122756,
     "AXP": 1795620819.9865475,
     "RKLB": 1795620819.9865475,
     "KO": 1795620819.9865475,
     "FLY": 1795620819.9865475,
     "INTC": 1795620819.9865475,
-    "VRT": 1795619397.7050352,
-    "HPE": 1795619397.7050352,
-    "DELL": 1795619397.7050352,
-    "OKLO": 1795619397.7050352,
-    "CEG": 1795619397.7050352,
-    "FPS": 1795619397.7050352,
+    "VRT": 1795620925.3122756,
+    "HPE": 1795620925.3122756,
+    "DELL": 1795620925.3122756,
+    "OKLO": 1795620925.3122756,
+    "CEG": 1795620925.3122756,
+    "FPS": 1795620925.3122756,
     "MU": 1795620211.8615558,
     "SKHY": 1795620211.8615558,
     "WDC": 1795620257.9723074,
     "STX": 1795619449.5426924,
-    "MSTR": 1795619397.7050352,
-    "SNDK": 1795619397.7050352,
+    "MSTR": 1795620925.3122756,
+    "SNDK": 1795620925.3122756,
     "BTC-USD": 1795620257.9723074,
-    "CRWD": 1795619397.7050352,
-    "ORCL": 1795619397.7050352,
-    "COIN": 1795619397.7050352,
-    "LLY": 1795619397.7050352,
-    "MRNA": 1795619397.7050352,
-    "NKE": 1795619397.7050352,
-    "MCD": 1795619397.7050352,
+    "CRWD": 1795620925.3122756,
+    "ORCL": 1795620925.3122756,
+    "COIN": 1795620925.3122756,
+    "LLY": 1795620925.3122756,
+    "MRNA": 1795620925.3122756,
+    "NKE": 1795620925.3122756,
+    "MCD": 1795620925.3122756,
     "PEP": 1795619495.6363492,
     "XOM": 1795619495.6363492,
     "JPM": 1795619495.6363492,
     "WMT": 1795619495.6363492,
-    "V": 1795619397.7050352,
+    "V": 1795620925.3122756,
     "CAT": 1795619495.6363492,
     "FN": 1795620211.8615558,
     "GLW": 1795620819.9865475,
