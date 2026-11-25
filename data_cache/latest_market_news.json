@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795593785.633,
-  "updated_at_et": "11-25 03:03 ET",
-  "updated_at_kst": "17:03 KST",
+  "updated_at_ts": 1795594287.47,
+  "updated_at_et": "11-25 03:11 ET",
+  "updated_at_kst": "17:11 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -17,7 +17,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 327,
+      "minutes_left": 319,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -36,13 +36,26 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 327,
+      "minutes_left": 319,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
     }
   ],
   "macro_flashes": [
+    {
+      "id": "20261125160855559800",
+      "title": "港股收盘，恒生指数收跌1.14%，恒生科技指数收跌2.56%；芯片、光通信、锂电池、PC…",
+      "summary": "港股收盘，恒生指数收跌1.14%，恒生科技指数收跌2.56%；芯片、光通信、锂电池、PCB等板块跌幅居前；宁德时代(03750.HK)跌超12%。",
+      "keywords": [
+        "芯片"
+      ],
+      "pub_ts": 1795594135.0,
+      "time_et": "11-25 03:08 ET",
+      "time_bj": "16:08 BJ",
+      "time_kst": "17:08 KST",
+      "time_display": "03:08 ET / 16:08 BJ"
+    },
     {
       "id": "20261125155814517800",
       "title": "【期货盯盘神器专属文章】欧美盘中关注：芯片股在纽约和首尔重挫，AI行情的脆弱性尽显；油金…",
@@ -372,19 +385,6 @@
       "time_bj": "10:22 BJ",
       "time_kst": "11:22 KST",
       "time_display": "21:22 ET / 10:22 BJ"
-    },
-    {
-      "id": "20261125102151573800",
-      "title": "纳指期货跌超1%，标普500指数期货跌0.62%，道琼斯指数期货跌0.39%。",
-      "summary": "纳指期货跌超1%，标普500指数期货跌0.62%，道琼斯指数期货跌0.39%。",
-      "keywords": [
-        "标普"
-      ],
-      "pub_ts": 1795573311.0,
-      "time_et": "11-24 21:21 ET",
-      "time_bj": "10:21 BJ",
-      "time_kst": "11:21 KST",
-      "time_display": "21:21 ET / 10:21 BJ"
     }
   ],
   "ticker_news": {
@@ -1026,6 +1026,13 @@
         "pub_ts": 1795529795.0
       },
       {
+        "title": "‘Disastrous' for ASML: Dutch Lawmakers Revolt Against US Push to Tighten China Chip Curbs",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/disastrous-asml-dutch-lawmakers-revolt-064230741.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 01:42 ET",
+        "pub_ts": 1795588950.0
+      },
+      {
         "title": "ASML Is the Most Important Company You’ve Never Heard Of. Should You Buy the Stock?",
         "url": "https://www.fool.com/investing/2026/11/24/asml-is-the-most-important-company-youve-never-heard-of-should-you-buy-the-stock/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1045,13 +1052,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 06:16 ET",
         "pub_ts": 1795518967.0
-      },
-      {
-        "title": "FalcoTrader Announces Expanded Stock Trading Capabilities Across Its Simulated Trading Challenge Platform",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/falcotrader-announces-expanded-stock-trading-094700625.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 04:47 ET",
-        "pub_ts": 1795513620.0
       }
     ],
     "QCOM": [
@@ -1426,13 +1426,6 @@
     ],
     "CRWV": [
       {
-        "title": "Stocks give back gains as Anthropic dips below IPO price",
-        "url": "https://finance.yahoo.com/video/stocks-give-back-gains-as-anthropic-dips-below-ipo-price-154408548.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 10:44 ET",
-        "pub_ts": 1795535048.0
-      },
-      {
         "title": "AI Concerns Resurface? ORCL, GOOGL, SPCX, CRWV Credit Default Swap Spreads Hit Records As NVDA, ANT Tumble",
         "url": "https://stocktwits.com/news-articles/markets/equity/ai-concerns-resurface-orcl-googl-spcx-crwv-credit-default-swap-spreads-hit-records-as-nvda-ant-tumble/cNbHEEAR9lZ?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1459,6 +1452,13 @@
         "source": "Yahoo Finance",
         "time": "11-24 13:57 ET",
         "pub_ts": 1795546678.0
+      },
+      {
+        "title": "CoreWeave Bonds Hit All-Time Lows, Erasing Nvidia-Fueled Gains",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/coreweave-bonds-hit-time-lows-185527465.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 13:55 ET",
+        "pub_ts": 1795546527.0
       }
     ],
     "NBIS": [
@@ -3324,45 +3324,45 @@
   "ticker_news_ts": {
     "KORU": 1795593785.6334338,
     "SOXL": 1795593785.6334338,
-    "SPY": 1795592575.630133,
+    "SPY": 1795594104.8286052,
     "DIA": 1795593785.6334338,
     "SOXX": 1795593785.6334338,
     "QQQ": 1795593785.6334338,
-    "SMH": 1795592575.630133,
+    "SMH": 1795594104.8286052,
     "IWM": 1795593785.6334338,
     "IGV": 1795593785.6334338,
     "TLT": 1795593785.6334338,
     "GLD": 1795593785.6334338,
     "SQQQ": 1795593785.6334338,
-    "TSM": 1795592575.630133,
+    "TSM": 1795594104.8286052,
     "VIXY": 1795593785.6334338,
     "SOXS": 1795593785.6334338,
     "NVDA": 1795593785.6334338,
     "AMD": 1795593785.6334338,
-    "ASML": 1795592575.630133,
-    "QCOM": 1795592575.630133,
+    "ASML": 1795594104.8286052,
+    "QCOM": 1795594104.8286052,
     "AVGO": 1795593785.6334338,
-    "AMAT": 1795592575.630133,
-    "META": 1795592575.630133,
-    "GOOGL": 1795592575.630133,
-    "MSFT": 1795592575.630133,
-    "AAPL": 1795592575.630133,
-    "PLTR": 1795592575.630133,
-    "NOW": 1795592575.630133,
-    "AMZN": 1795592575.630133,
-    "CRWV": 1795592575.630133,
-    "NBIS": 1795592575.630133,
+    "AMAT": 1795594104.8286052,
+    "META": 1795594104.8286052,
+    "GOOGL": 1795594104.8286052,
+    "MSFT": 1795594104.8286052,
+    "AAPL": 1795594104.8286052,
+    "PLTR": 1795594104.8286052,
+    "NOW": 1795594104.8286052,
+    "AMZN": 1795594104.8286052,
+    "CRWV": 1795594104.8286052,
+    "NBIS": 1795594104.8286052,
     "APLD": 1795593343.9996238,
     "VST": 1795593343.9996238,
     "BE": 1795593343.9996238,
     "CRDO": 1795593343.9996238,
     "COHR": 1795593343.9996238,
-    "MRVL": 1795592575.630133,
-    "LITE": 1795592575.630133,
+    "MRVL": 1795594104.8286052,
+    "LITE": 1795594104.8286052,
     "AAOI": 1795593343.9996238,
     "SPCX": 1795593343.9996238,
     "ASTS": 1795593343.9996238,
-    "AXTI": 1795592575.630133,
+    "AXTI": 1795594104.8286052,
     "NASA": 1795593343.9996238,
     "LUNR": 1795593343.9996238,
     "TSLA": 1795593453.5399013,
@@ -3377,13 +3377,13 @@
     "OKLO": 1795593453.5399013,
     "CEG": 1795593453.5399013,
     "FPS": 1795593453.5399013,
-    "MU": 1795592575.630133,
-    "SKHY": 1795592575.630133,
-    "WDC": 1795592688.4486475,
+    "MU": 1795594104.8286052,
+    "SKHY": 1795594104.8286052,
+    "WDC": 1795594287.469779,
     "STX": 1795593453.5399013,
     "MSTR": 1795593453.5399013,
     "SNDK": 1795593453.5399013,
-    "BTC-USD": 1795592688.4486475,
+    "BTC-USD": 1795594287.469779,
     "CRWD": 1795593453.5399013,
     "ORCL": 1795593453.5399013,
     "COIN": 1795593453.5399013,
@@ -3397,11 +3397,11 @@
     "WMT": 1795593571.8599072,
     "V": 1795593453.5399013,
     "CAT": 1795593571.8599072,
-    "FN": 1795592575.630133,
+    "FN": 1795594104.8286052,
     "GLW": 1795593343.9996238,
     "ANT": 1795593571.8599072,
     "XAUUSD": 1795593571.8599072,
-    "KOSPI": 1795592575.630133
+    "KOSPI": 1795594104.8286052
   },
   "opex_shield": {
     "date": "2026-11-25",
@@ -3419,10 +3419,10 @@
   },
   "calendar_banner": {
     "level": "upcoming",
-    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 327 分钟（11-25 08:30 ET / 22:30 KST）",
+    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 319 分钟（11-25 08:30 ET / 22:30 KST）",
     "detail": "前值 0.3% ｜ 预期 0.3% ｜ 临近公布前15分钟将自动触发防插针预警",
     "event_name": "美国10月核心PCE物价指数环比",
-    "minutes_left": 327,
+    "minutes_left": 319,
     "opex_shield": {
       "date": "2026-11-25",
       "active": false,
