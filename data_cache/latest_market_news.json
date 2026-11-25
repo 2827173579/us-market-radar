@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795621719.996,
-  "updated_at_et": "11-25 10:48 ET",
-  "updated_at_kst": "00:48 KST",
+  "updated_at_ts": 1795621761.15,
+  "updated_at_et": "11-25 10:49 ET",
+  "updated_at_kst": "00:49 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -2498,6 +2498,13 @@
     ],
     "WDC": [
       {
+        "title": "Western Digital (WDC) Stock Appears Undervalued Following Its 7x Three Year Run",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/western-digital-wdc-stock-appears-151158767.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 10:11 ET",
+        "pub_ts": 1795619518.0
+      },
+      {
         "title": "A $2.9 Billion Fund Dumps These 3 Stocks",
         "url": "https://www.tikr.com/blog/a-2-9-billion-fund-dumps-these-3-stocks-2?ref=yahoofinance&tlnk=yf-261124-gc5m322p&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2524,13 +2531,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 17:16 ET",
         "pub_ts": 1795472162.0
-      },
-      {
-        "title": "Nvidia, AMD, and Micron stocks sink as investors flee AI trade",
-        "url": "https://finance.yahoo.com/markets/article/nvidia-amd-micron-stocks-sink-as-investors-flee-ai-trade-134518921.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 08:45 ET",
-        "pub_ts": 1795614318.0
       }
     ],
     "STX": [
@@ -2646,6 +2646,20 @@
     ],
     "BTC-USD": [
       {
+        "title": "Bitcoin slides below $59,000, on pace for its worst month since June 2022",
+        "url": "https://finance.yahoo.com/markets/article/bitcoin-sinks-in-brutal-november-sell-off-as-broader-market-slides-143727717.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 09:37 ET",
+        "pub_ts": 1795617447.0
+      },
+      {
+        "title": "Arthur Hayes Predicts AI Crash Will Trigger Bailout and Bitcoin Boom, but Not Yet",
+        "url": "https://www.cryptoprowl.com/releases/arthur-hayes-predicts-ai-crash-will-trigger-bailout-and-bitcoin-boom-but-not-yet-8071?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 10:16 ET",
+        "pub_ts": 1795619760.0
+      },
+      {
         "title": "Stablecoin Redemptions Hit $12 Billion As Crypto Prices Fall",
         "url": "https://www.cryptoprowl.com/releases/stablecoin-redemptions-hit-12-billion-as-crypto-prices-fall-8070?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2665,20 +2679,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 10:02 ET",
         "pub_ts": 1795618920.0
-      },
-      {
-        "title": "UniCredit Sells Italian Savers a Bitcoin Note With Their Money Back and a 65% Ceiling",
-        "url": "https://unchainedcrypto.com/unicredit-sells-italian-savers-a-bitcoin-note-with-their-money-back-and-a-65-ceiling/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 10:00 ET",
-        "pub_ts": 1795618809.0
-      },
-      {
-        "title": "Stock Market Today: Dow Dives 700 Points As Nvidia Sells Off, Inflation Rises; Anthropic Sinks (Live Coverage)",
-        "url": "https://finance.yahoo.com/m/90407e46-3b17-34e8-8c82-527bf00b63e4/stock-market-today%3A-dow-dives.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 09:50 ET",
-        "pub_ts": 1795618250.0
       }
     ],
     "CRWD": [
@@ -3378,11 +3378,11 @@
     "FPS": 1795620925.3122756,
     "MU": 1795621719.9960723,
     "SKHY": 1795621719.9960723,
-    "WDC": 1795620257.9723074,
+    "WDC": 1795621761.150073,
     "STX": 1795620976.770416,
     "MSTR": 1795620925.3122756,
     "SNDK": 1795620925.3122756,
-    "BTC-USD": 1795620257.9723074,
+    "BTC-USD": 1795621761.150073,
     "CRWD": 1795620925.3122756,
     "ORCL": 1795620925.3122756,
     "COIN": 1795620925.3122756,
