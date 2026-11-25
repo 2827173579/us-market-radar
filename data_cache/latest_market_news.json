@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795618665.779,
-  "updated_at_et": "11-25 09:57 ET",
-  "updated_at_kst": "23:57 KST",
+  "updated_at_ts": 1795618712.72,
+  "updated_at_et": "11-25 09:58 ET",
+  "updated_at_kst": "23:58 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -2520,11 +2520,11 @@
         "pub_ts": 1795472162.0
       },
       {
-        "title": "112% Upside for Seagate? Rosenblatt Thinks So, and Here’s How",
-        "url": "https://www.tikr.com/blog/112-upside-for-seagate-rosenblatt-thinks-so-and-heres-how?ref=yahoofinance&tlnk=yf-261123-pfm45wp8&.tsrc=rss",
+        "title": "Nvidia, AMD, and Micron stocks sink as investors flee AI trade",
+        "url": "https://finance.yahoo.com/markets/article/nvidia-amd-micron-stocks-sink-as-investors-flee-ai-trade-134518921.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-23 14:40 ET",
-        "pub_ts": 1795462818.0
+        "time": "11-25 08:45 ET",
+        "pub_ts": 1795614318.0
       }
     ],
     "STX": [
@@ -2640,6 +2640,27 @@
     ],
     "BTC-USD": [
       {
+        "title": "Stock Market Today: Dow Dives 700 Points As Nvidia Sells Off, Inflation Rises; Anthropic Sinks (Live Coverage)",
+        "url": "https://finance.yahoo.com/m/90407e46-3b17-34e8-8c82-527bf00b63e4/stock-market-today%3A-dow-dives.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 09:50 ET",
+        "pub_ts": 1795618250.0
+      },
+      {
+        "title": "Are Stablecoins a Threat to Visa and Mastercard?",
+        "url": "https://www.fool.com/investing/2026/11/25/are-stablecoins-a-threat-to-visa-and-mastercard/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 09:41 ET",
+        "pub_ts": 1795617662.0
+      },
+      {
+        "title": "Bitcoin slides below $59,000, on pace for its worst month since June 2022",
+        "url": "https://finance.yahoo.com/markets/article/bitcoin-sinks-in-brutal-november-sell-off-as-broader-market-slides-143727717.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 09:37 ET",
+        "pub_ts": 1795617447.0
+      },
+      {
         "title": "Bitcoin trades as a high-beta tech proxy amid a strong downtrend",
         "url": "https://finance.yahoo.com/markets/crypto/articles/bitcoin-trades-high-beta-tech-141218301.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2647,32 +2668,11 @@
         "pub_ts": 1795615938.0
       },
       {
-        "title": "Stock Market Today: Dow Dives On Surprise Inflation Data; Nvidia, Anthropic Plunge (Live Coverage)",
-        "url": "https://finance.yahoo.com/m/90407e46-3b17-34e8-8c82-527bf00b63e4/stock-market-today%3A-dow-dives.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 08:54 ET",
-        "pub_ts": 1795614871.0
-      },
-      {
         "title": "Cathie Wood's ARK Buys Anthropic as Ripple CEO Predicts Post-IPO Crypto Rally",
         "url": "https://www.ccn.com/news/crypto/cathie-woods-ark-bitcoin-etf-anthropic-ripple-ceo-crypto-rebound/?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-25 08:02 ET",
         "pub_ts": 1795611735.0
-      },
-      {
-        "title": "Bitcoin Is on Track for Its Second-Worst Q4 Ever, and One Signal Points to 2027",
-        "url": "https://beincrypto.com/bitcoin-worst-q4-returns-2027-outlook/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 08:00 ET",
-        "pub_ts": 1795611600.0
-      },
-      {
-        "title": "Bitcoin Slips Below $59K Ahead Of PCE Report, Heads For Worst Month Since July 2022",
-        "url": "https://stocktwits.com/news-articles/markets/equity/bitcoin-slips-below-59-k-ahead-of-pce-report-heads-for-worst-month-since-july-2022/cNbHhdsR9ma?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 07:31 ET",
-        "pub_ts": 1795609916.0
       }
     ],
     "CRWD": [
@@ -3372,11 +3372,11 @@
     "FPS": 1795617889.7082517,
     "MU": 1795618665.7794476,
     "SKHY": 1795618665.7794476,
-    "WDC": 1795617181.9387362,
+    "WDC": 1795618712.719546,
     "STX": 1795617937.1226542,
     "MSTR": 1795617889.7082517,
     "SNDK": 1795617889.7082517,
-    "BTC-USD": 1795617181.9387362,
+    "BTC-USD": 1795618712.719546,
     "CRWD": 1795617889.7082517,
     "ORCL": 1795617889.7082517,
     "COIN": 1795617889.7082517,
