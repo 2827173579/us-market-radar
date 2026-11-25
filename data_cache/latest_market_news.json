@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795626999.088,
-  "updated_at_et": "11-25 12:16 ET",
-  "updated_at_kst": "02:16 KST",
+  "updated_at_ts": 1795627040.944,
+  "updated_at_et": "11-25 12:17 ET",
+  "updated_at_kst": "02:17 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -2286,13 +2286,6 @@
         "pub_ts": 1795622208.0
       },
       {
-        "title": "Stock Market Today: Dow Falls 700 Points, Nasdaq Off 4%; Nutanix Dives On CEO Exit (Live Coverage)",
-        "url": "https://finance.yahoo.com/m/90407e46-3b17-34e8-8c82-527bf00b63e4/stock-market-today%3A-dow-falls.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 11:43 ET",
-        "pub_ts": 1795625038.0
-      },
-      {
         "title": "Dell, HPE Post Big Sales Growth But Investors Sense Peak",
         "url": "https://finance.yahoo.com/m/509b8d3a-b338-3181-bdcf-b7e931f38513/dell%2C-hpe-post-big-sales.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2305,9 +2298,23 @@
         "source": "Yahoo Finance",
         "time": "11-25 11:10 ET",
         "pub_ts": 1795623043.0
+      },
+      {
+        "title": "Dell Doubled Revenue. The Stock Tumbled Anyway.",
+        "url": "https://app.moby.co/home/news/news-dell-doubled-revenue-the-stock-tumbled-anyway?utm_source=yahoo_finance&utm_medium=rss&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 11:08 ET",
+        "pub_ts": 1795622905.0
       }
     ],
     "OKLO": [
+      {
+        "title": "Oklo and NuScale Power Retreat 8% as AI Power Selloff Deepens; Energy Fuels Drops 6%",
+        "url": "https://247wallst.com/investing/2026/11/25/oklo-and-nuscale-power-retreat-8-as-ai-power-selloff-deepens-energy-fuels-drops-6/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 11:57 ET",
+        "pub_ts": 1795625822.0
+      },
       {
         "title": "OKLO Has More Cash, But Is NuScale the Better Nuclear Stock?",
         "url": "https://finance.yahoo.com/markets/stocks/articles/oklo-more-cash-nuscale-better-122800602.html?.tsrc=rss",
@@ -2335,13 +2342,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 13:12 ET",
         "pub_ts": 1795543945.0
-      },
-      {
-        "title": "Oklo Slides 7% as Monday’s Nuclear Rebound Fades; NuScale Power and Energy Fuels Drop 6%",
-        "url": "https://247wallst.com/investing/2026/11/24/oklo-slides-7-as-mondays-nuclear-rebound-fades-nuscale-power-and-energy-fuels-drop-6/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 11:52 ET",
-        "pub_ts": 1795539143.0
       }
     ],
     "CEG": [
@@ -2716,6 +2716,13 @@
     ],
     "ORCL": [
       {
+        "title": "Oracle Is Down 60% From Its June High. J.P. Morgan Still Sees $200",
+        "url": "https://www.tikr.com/blog/oracle-is-down-60-from-its-june-high-j-p-morgan-still-sees-200?ref=yahoofinance&tlnk=yf-261125-q6w2wj6x&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 11:50 ET",
+        "pub_ts": 1795625456.0
+      },
+      {
         "title": "Oracle, CoreWeave Face Stark Warning From Credit Markets",
         "url": "https://finance.yahoo.com/markets/stocks/articles/oracle-coreweave-face-stark-warning-162922864.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2742,13 +2749,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 11:00 ET",
         "pub_ts": 1795622402.0
-      },
-      {
-        "title": "Oracle’s Credit Swaps Blow Out. Blue Owl Anchored the $15 Billion Campus It Rents",
-        "url": "https://www.tikr.com/blog/oracles-credit-swaps-blow-out-blue-owl-anchored-the-15-billion-campus-it-rents?ref=yahoofinance&tlnk=yf-261125-c28562w4&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 10:48 ET",
-        "pub_ts": 1795621681.0
       }
     ],
     "COIN": [
@@ -3114,11 +3114,11 @@
         "pub_ts": 1795623010.0
       },
       {
-        "title": "Are Stablecoins a Threat to Visa and Mastercard?",
-        "url": "https://www.fool.com/investing/2026/11/25/are-stablecoins-a-threat-to-visa-and-mastercard/?.tsrc=rss",
+        "title": "Illinois fights for interchange law",
+        "url": "https://www.paymentsdive.com/news/illinois-fights-for-interchange-law/875779/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-25 09:41 ET",
-        "pub_ts": 1795617662.0
+        "time": "11-25 11:03 ET",
+        "pub_ts": 1795622580.0
       }
     ],
     "CAT": [
@@ -3360,37 +3360,37 @@
     "AXTI": 1795626226.6195316,
     "NASA": 1795626907.2490985,
     "LUNR": 1795626907.2490985,
-    "TSLA": 1795625509.4823964,
+    "TSLA": 1795627040.9444351,
     "AXP": 1795626907.2490985,
     "RKLB": 1795626907.2490985,
     "KO": 1795626907.2490985,
     "FLY": 1795626907.2490985,
     "INTC": 1795626907.2490985,
-    "VRT": 1795625509.4823964,
-    "HPE": 1795625509.4823964,
-    "DELL": 1795625509.4823964,
-    "OKLO": 1795625509.4823964,
-    "CEG": 1795625509.4823964,
-    "FPS": 1795625509.4823964,
+    "VRT": 1795627040.9444351,
+    "HPE": 1795627040.9444351,
+    "DELL": 1795627040.9444351,
+    "OKLO": 1795627040.9444351,
+    "CEG": 1795627040.9444351,
+    "FPS": 1795627040.9444351,
     "MU": 1795626273.318017,
     "SKHY": 1795626273.318017,
     "WDC": 1795626320.6543207,
     "STX": 1795625557.818958,
-    "MSTR": 1795625509.4823964,
-    "SNDK": 1795625509.4823964,
+    "MSTR": 1795627040.9444351,
+    "SNDK": 1795627040.9444351,
     "BTC-USD": 1795626320.6543207,
-    "CRWD": 1795625509.4823964,
-    "ORCL": 1795625509.4823964,
-    "COIN": 1795625509.4823964,
-    "LLY": 1795625509.4823964,
-    "MRNA": 1795625509.4823964,
-    "NKE": 1795625509.4823964,
-    "MCD": 1795625509.4823964,
+    "CRWD": 1795627040.9444351,
+    "ORCL": 1795627040.9444351,
+    "COIN": 1795627040.9444351,
+    "LLY": 1795627040.9444351,
+    "MRNA": 1795627040.9444351,
+    "NKE": 1795627040.9444351,
+    "MCD": 1795627040.9444351,
     "PEP": 1795625601.7937868,
     "XOM": 1795625601.7937868,
     "JPM": 1795625601.7937868,
     "WMT": 1795625601.7937868,
-    "V": 1795625509.4823964,
+    "V": 1795627040.9444351,
     "CAT": 1795625601.7937868,
     "FN": 1795626273.318017,
     "GLW": 1795626907.2490985,
