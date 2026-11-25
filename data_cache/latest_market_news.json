@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795614686.71,
-  "updated_at_et": "11-25 08:51 ET",
-  "updated_at_kst": "22:51 KST",
+  "updated_at_ts": 1795614742.881,
+  "updated_at_et": "11-25 08:52 ET",
+  "updated_at_kst": "22:52 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -1787,6 +1787,13 @@
     ],
     "SPCX": [
       {
+        "title": "Not SpaceX, Not Anthropic: These Are the 2 AI Stocks I Bought During the Sell-Off",
+        "url": "https://www.fool.com/investing/2026/11/25/not-spacex-not-anthropic-these-are-the-2-ai-stocks-i-bought-during-the-sell-off/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 08:35 ET",
+        "pub_ts": 1795613702.0
+      },
+      {
         "title": "Tesla (TSLA) Could Be 36% Undervalued Following SpaceX Merger Talks",
         "url": "https://finance.yahoo.com/markets/stocks/articles/tesla-tsla-could-36-undervalued-121112133.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1813,13 +1820,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 06:09 ET",
         "pub_ts": 1795604999.0
-      },
-      {
-        "title": "ARK Autonomous Technology & Robotics ETF (ARKQ) Sells Tesla and SpaceX on Monday",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/ark-autonomous-technology-robotics-etf-110358357.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 06:03 ET",
-        "pub_ts": 1795604638.0
       }
     ],
     "ASTS": [
@@ -2009,6 +2009,13 @@
     ],
     "AXP": [
       {
+        "title": "How American Express Turned Berkshire’s $1.3 Billion Bet Into a $576 Million Annual Paycheck",
+        "url": "https://www.fool.com/investing/2026/11/25/how-american-express-turned-berkshire-billion-bet-into-576-million-annual-paycheck/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 08:20 ET",
+        "pub_ts": 1795612802.0
+      },
+      {
         "title": "American Express Stock Lost Nearly Half Its Value in the 2020 Crash. It Recovered in Just 11 Months.",
         "url": "https://www.fool.com/investing/2026/11/25/american-express-stock-lost-nearly-half-its-value-in-the-2020-crash-it-was-back-to-its-pre-crash-high-11-months-later/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2035,13 +2042,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 10:05 ET",
         "pub_ts": 1795446302.0
-      },
-      {
-        "title": "Energy Fuels Targets One Million Pounds of Uranium Production at White Mesa Mill as US Mining Projects Advance",
-        "url": "https://investorshub.advfn.com/market-news/article/40520/energy-fuels-targets-one-million-pounds-of-uranium-production-at-white-mesa-mill-as-us-mining-projects-advance?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 08:44 ET",
-        "pub_ts": 1795441456.0
       }
     ],
     "RKLB": [
@@ -2083,13 +2083,6 @@
     ],
     "KO": [
       {
-        "title": "Anthropic falls below IPO price as Nvidia gives back gains",
-        "url": "https://finance.yahoo.com/video/anthropic-falls-below-ipo-price-as-nvidia-gives-back-gains-214558309.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 16:45 ET",
-        "pub_ts": 1795556758.0
-      },
-      {
         "title": "Up 41% at Just Over Half Costco’s P/E: Inside Coca-Cola’s Quiet Rally",
         "url": "https://finance.yahoo.com/markets/stocks/articles/41-just-over-half-costco-092400539.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2109,6 +2102,13 @@
         "source": "Yahoo Finance",
         "time": "11-24 17:33 ET",
         "pub_ts": 1795559582.0
+      },
+      {
+        "title": "Anthropic falls below IPO price as Nvidia gives back gains",
+        "url": "https://finance.yahoo.com/video/anthropic-falls-below-ipo-price-as-nvidia-gives-back-gains-214558309.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 16:45 ET",
+        "pub_ts": 1795556758.0
       },
       {
         "title": "Coca-Cola hires pharma vet for CFO",
@@ -3343,25 +3343,25 @@
     "AMZN": 1795614012.619013,
     "CRWV": 1795614012.619013,
     "NBIS": 1795614012.619013,
-    "APLD": 1795613220.822465,
-    "VST": 1795613220.822465,
-    "BE": 1795613220.822465,
-    "CRDO": 1795613220.822465,
-    "COHR": 1795613220.822465,
+    "APLD": 1795614742.880808,
+    "VST": 1795614742.880808,
+    "BE": 1795614742.880808,
+    "CRDO": 1795614742.880808,
+    "COHR": 1795614742.880808,
     "MRVL": 1795614064.8472505,
     "LITE": 1795614064.8472505,
-    "AAOI": 1795613220.822465,
-    "SPCX": 1795613220.822465,
-    "ASTS": 1795613220.822465,
+    "AAOI": 1795614742.880808,
+    "SPCX": 1795614742.880808,
+    "ASTS": 1795614742.880808,
     "AXTI": 1795614012.619013,
-    "NASA": 1795613220.822465,
-    "LUNR": 1795613220.822465,
+    "NASA": 1795614742.880808,
+    "LUNR": 1795614742.880808,
     "TSLA": 1795613315.5441015,
-    "AXP": 1795613220.822465,
-    "RKLB": 1795613220.822465,
-    "KO": 1795613220.822465,
-    "FLY": 1795613220.822465,
-    "INTC": 1795613220.822465,
+    "AXP": 1795614742.880808,
+    "RKLB": 1795614742.880808,
+    "KO": 1795614742.880808,
+    "FLY": 1795614742.880808,
+    "INTC": 1795614742.880808,
     "VRT": 1795613315.5441015,
     "HPE": 1795613315.5441015,
     "DELL": 1795613315.5441015,
@@ -3389,7 +3389,7 @@
     "V": 1795613315.5441015,
     "CAT": 1795613419.7471743,
     "FN": 1795614064.8472505,
-    "GLW": 1795613220.822465,
+    "GLW": 1795614742.880808,
     "ANT": 1795613419.7471743,
     "XAUUSD": 1795613419.7471743,
     "KOSPI": 1795614012.619013
