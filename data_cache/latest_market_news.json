@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795576960.316,
-  "updated_at_et": "11-24 22:22 ET",
-  "updated_at_kst": "12:22 KST",
+  "updated_at_ts": 1795577061.846,
+  "updated_at_et": "11-24 22:24 ET",
+  "updated_at_kst": "12:24 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -428,6 +428,13 @@
     ],
     "SPY": [
       {
+        "title": "Harbor Arena Structured Income ETF (YLDS): Autocallable Income in an ETF Wrapper",
+        "url": "http://www.etf.com/sections/news/harbor-arena-structured-income-etf-ylds-autocallable-income-etf-wrapper?utm_source=yahoo-finance&utm_medium=rss&utm_campaign=yahoo-finance-rss&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 14:09 ET",
+        "pub_ts": 1795547398.0
+      },
+      {
         "title": "Own Humana Stock? Its Profit Cushion Is The Thinnest",
         "url": "https://www.trefis.com/stock/unh/articles/628256/own-humana-stock-its-profit-cushion-is-the-thinnest/2026-11-24?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -454,13 +461,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 09:19 ET",
         "pub_ts": 1795529962.0
-      },
-      {
-        "title": "Here's Why Investors Should Go Defensive Now: ETFs in Focus",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/heres-why-investors-defensive-now-134200178.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 08:42 ET",
-        "pub_ts": 1795527720.0
       }
     ],
     "DIA": [
@@ -1175,6 +1175,13 @@
         "pub_ts": 1795568646.0
       },
       {
+        "title": "5 Sleeper Blue-Chip Stock Picks for Steady Long-Term Gains",
+        "url": "https://www.kiplinger.com/investing/blue-chip-stocks/sleeper-blue-chip-stock-picks-for-steady-long-term-gains?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 19:52 ET",
+        "pub_ts": 1795567953.0
+      },
+      {
         "title": "Stephanie Link Says Marvell Could Earn $30 a Share by 2031. Is She Right?",
         "url": "https://247wallst.com/investing/2026/11/24/stephanie-link-says-marvell-could-earn-30-a-share-by-2031-is-she-right/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1194,13 +1201,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 16:06 ET",
         "pub_ts": 1795554360.0
-      },
-      {
-        "title": "Tesla Robotaxi Rival Starts Road Tests Without A Safety Monitor",
-        "url": "https://finance.yahoo.com/m/2fafeed7-c259-3087-9fa8-cf86f4a1ebd4/tesla-robotaxi-rival-starts.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 16:02 ET",
-        "pub_ts": 1795554167.0
       }
     ],
     "MSFT": [
@@ -1256,13 +1256,6 @@
         "pub_ts": 1795535048.0
       },
       {
-        "title": "Who is holding Jensen Huang accountable? It sure looks like nobody",
-        "url": "https://finance.yahoo.com/video/who-is-holding-jensen-huang-accountable-it-sure-looks-like-nobody-154255467.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 10:42 ET",
-        "pub_ts": 1795534975.0
-      },
-      {
         "title": "Tech Keeps Eating Hollywood As Netflix Buys Historic Seinfeld Lot",
         "url": "https://finance.yahoo.com/m/34be458f-965e-30c4-8fb7-e730267a65a9/tech-keeps-eating-hollywood.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1275,6 +1268,13 @@
         "source": "Yahoo Finance",
         "time": "11-24 16:19 ET",
         "pub_ts": 1795555192.0
+      },
+      {
+        "title": "Is Apple (AAPL) Above Fair Value As ETF Buying Returns?",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/apple-aapl-above-fair-value-211324050.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 16:13 ET",
+        "pub_ts": 1795554804.0
       }
     ],
     "PLTR": [
@@ -2417,11 +2417,11 @@
         "pub_ts": 1795554102.0
       },
       {
-        "title": "Morning Movers: Dick’s Sporting and Dollar Tree gain following quarterly reports",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/morning-movers-dick-sporting-dollar-220046732.html?.tsrc=rss",
+        "title": "5 Sleeper Blue-Chip Stock Picks for Steady Long-Term Gains",
+        "url": "https://www.kiplinger.com/investing/blue-chip-stocks/sleeper-blue-chip-stock-picks-for-steady-long-term-gains?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 17:00 ET",
-        "pub_ts": 1795557646.0
+        "time": "11-24 19:52 ET",
+        "pub_ts": 1795567953.0
       }
     ],
     "SKHY": [
@@ -3288,45 +3288,45 @@
   "ticker_news_ts": {
     "KORU": 1795576747.2090554,
     "SOXL": 1795576747.2090554,
-    "SPY": 1795575527.2364514,
+    "SPY": 1795577061.846378,
     "DIA": 1795576747.2090554,
     "SOXX": 1795576747.2090554,
     "QQQ": 1795576747.2090554,
-    "SMH": 1795575527.2364514,
+    "SMH": 1795577061.846378,
     "IWM": 1795576747.2090554,
     "IGV": 1795576747.2090554,
     "TLT": 1795576747.2090554,
     "GLD": 1795576747.2090554,
     "SQQQ": 1795576747.2090554,
-    "TSM": 1795575527.2364514,
+    "TSM": 1795577061.846378,
     "VIXY": 1795576747.2090554,
     "SOXS": 1795576747.2090554,
     "NVDA": 1795576747.2090554,
     "AMD": 1795576747.2090554,
-    "ASML": 1795575527.2364514,
-    "QCOM": 1795575527.2364514,
+    "ASML": 1795577061.846378,
+    "QCOM": 1795577061.846378,
     "AVGO": 1795576747.2090554,
-    "AMAT": 1795575527.2364514,
-    "META": 1795575527.2364514,
-    "GOOGL": 1795575527.2364514,
-    "MSFT": 1795575527.2364514,
-    "AAPL": 1795575527.2364514,
-    "PLTR": 1795575527.2364514,
-    "NOW": 1795575527.2364514,
-    "AMZN": 1795575527.2364514,
-    "CRWV": 1795575527.2364514,
-    "NBIS": 1795575527.2364514,
+    "AMAT": 1795577061.846378,
+    "META": 1795577061.846378,
+    "GOOGL": 1795577061.846378,
+    "MSFT": 1795577061.846378,
+    "AAPL": 1795577061.846378,
+    "PLTR": 1795577061.846378,
+    "NOW": 1795577061.846378,
+    "AMZN": 1795577061.846378,
+    "CRWV": 1795577061.846378,
+    "NBIS": 1795577061.846378,
     "APLD": 1795576033.317645,
     "VST": 1795576033.317645,
     "BE": 1795576033.317645,
     "CRDO": 1795576033.317645,
     "COHR": 1795576033.317645,
-    "MRVL": 1795575527.2364514,
-    "LITE": 1795575527.2364514,
+    "MRVL": 1795577061.846378,
+    "LITE": 1795577061.846378,
     "AAOI": 1795576033.317645,
     "SPCX": 1795576033.317645,
     "ASTS": 1795576033.317645,
-    "AXTI": 1795575527.2364514,
+    "AXTI": 1795577061.846378,
     "NASA": 1795576033.317645,
     "LUNR": 1795576033.317645,
     "TSLA": 1795576267.9003127,
@@ -3341,13 +3341,13 @@
     "OKLO": 1795576267.9003127,
     "CEG": 1795576267.9003127,
     "FPS": 1795576267.9003127,
-    "MU": 1795575527.2364514,
-    "SKHY": 1795575527.2364514,
-    "WDC": 1795575527.2364514,
+    "MU": 1795577061.846378,
+    "SKHY": 1795577061.846378,
+    "WDC": 1795577061.846378,
     "STX": 1795576267.9003127,
     "MSTR": 1795576267.9003127,
     "SNDK": 1795576267.9003127,
-    "BTC-USD": 1795575527.2364514,
+    "BTC-USD": 1795577061.846378,
     "CRWD": 1795576267.9003127,
     "ORCL": 1795576267.9003127,
     "COIN": 1795576267.9003127,
@@ -3361,11 +3361,11 @@
     "WMT": 1795576372.9802127,
     "V": 1795576267.9003127,
     "CAT": 1795576372.9802127,
-    "FN": 1795575527.2364514,
+    "FN": 1795577061.846378,
     "GLW": 1795576033.317645,
     "ANT": 1795576372.9802127,
     "XAUUSD": 1795576574.1005611,
-    "KOSPI": 1795575527.2364514
+    "KOSPI": 1795577061.846378
   },
   "opex_shield": {
     "date": "2026-11-24",
