@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795588020.182,
-  "updated_at_et": "11-25 01:27 ET",
-  "updated_at_kst": "15:27 KST",
+  "updated_at_ts": 1795588131.041,
+  "updated_at_et": "11-25 01:28 ET",
+  "updated_at_kst": "15:28 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -17,7 +17,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 423,
+      "minutes_left": 422,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -36,7 +36,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 423,
+      "minutes_left": 422,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -2647,6 +2647,13 @@
     ],
     "BTC-USD": [
       {
+        "title": "Bitcoin Miner Turned AI Landlord TeraWulf Says Selloff Hits Price, Not Demand",
+        "url": "https://beincrypto.com/terawulf-ceo-tech-selloff-price-demand/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 00:24 ET",
+        "pub_ts": 1795584271.0
+      },
+      {
         "title": "BlackRock Says Markets Overprice Fed Hikes: Will Bitcoin Catch a Break?",
         "url": "https://beincrypto.com/blackrock-fed-hikes-bitcoin-relief/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2673,13 +2680,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 21:00 ET",
         "pub_ts": 1795572000.0
-      },
-      {
-        "title": "Ray Dalio Explains Why Gold Beats Crypto While Holding Some Bitcoin",
-        "url": "https://beincrypto.com/ray-dalio-gold-crypto-bitcoin-stake/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 19:50 ET",
-        "pub_ts": 1795567830.0
       }
     ],
     "CRWD": [
@@ -3379,11 +3379,11 @@
     "FPS": 1795587367.009787,
     "MU": 1795588020.181777,
     "SKHY": 1795588020.181777,
-    "WDC": 1795586618.665755,
+    "WDC": 1795588131.0413234,
     "STX": 1795587367.009787,
     "MSTR": 1795587367.009787,
     "SNDK": 1795587367.009787,
-    "BTC-USD": 1795586618.665755,
+    "BTC-USD": 1795588131.0413234,
     "CRWD": 1795587367.009787,
     "ORCL": 1795587367.009787,
     "COIN": 1795587367.009787,
@@ -3419,10 +3419,10 @@
   },
   "calendar_banner": {
     "level": "upcoming",
-    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 423 分钟（11-25 08:30 ET / 22:30 KST）",
+    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 422 分钟（11-25 08:30 ET / 22:30 KST）",
     "detail": "前值 0.3% ｜ 预期 0.3% ｜ 临近公布前15分钟将自动触发防插针预警",
     "event_name": "美国10月核心PCE物价指数环比",
-    "minutes_left": 423,
+    "minutes_left": 422,
     "opex_shield": {
       "date": "2026-11-25",
       "active": false,
