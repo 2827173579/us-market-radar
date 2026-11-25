@@ -1,5 +1,5 @@
 {
-  "updated_at_ts": 1795598285.381,
+  "updated_at_ts": 1795598331.541,
   "updated_at_et": "11-25 04:18 ET",
   "updated_at_kst": "18:18 KST",
   "macro_calendar": [
@@ -950,6 +950,13 @@
     ],
     "NVDA": [
       {
+        "title": "Stock market today: Dow, S&P 500, Nasdaq futures fall ahead of inflation data",
+        "url": "https://finance.yahoo.com/markets/live/stock-market-today-wednesday-november-25-dow-sp-500-nasdaq-pce-inflation-data-091428237.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 04:14 ET",
+        "pub_ts": 1795598068.0
+      },
+      {
         "title": "Tech firms back in crosshairs as Huang rally reverses",
         "url": "https://finance.yahoo.com/markets/world-indices/articles/tech-firms-back-crosshairs-huang-024219799.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -971,18 +978,11 @@
         "pub_ts": 1795590000.0
       },
       {
-        "title": "AI Concerns Resurface? ORCL, GOOGL, SPCX, CRWV Credit Default Swap Spreads Hit Records As NVDA, ANT Tumble",
-        "url": "https://stocktwits.com/news-articles/markets/equity/ai-concerns-resurface-orcl-googl-spcx-crwv-credit-default-swap-spreads-hit-records-as-nvda-ant-tumble/cNbHEEAR9lZ?.tsrc=rss",
+        "title": "Kohl's Comparable Sales Rose 1.2% After Falling 0.9% Last Quarter. Here's What Changed.",
+        "url": "https://www.fool.com/investing/2026/11/25/kohls-comparable-sales-rose-12-after-falling-09-last-quarter-heres-what-changed/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-25 01:56 ET",
-        "pub_ts": 1795589778.0
-      },
-      {
-        "title": "NVDA Eyes Worst Month Since 2022 — Dip Buyers Are ‘Still Fighting To Break Even’ After Huang’s Return, Analyst Says",
-        "url": "https://stocktwits.com/news-articles/markets/equity/nvda-dip-buyers-still-fighting-break-even-after-huang-return-analyst-says/cNbHEckR9lm?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 01:52 ET",
-        "pub_ts": 1795589553.0
+        "time": "11-25 04:08 ET",
+        "pub_ts": 1795597700.0
       }
     ],
     "AMD": [
@@ -3327,26 +3327,26 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795596817.3441398,
-    "SOXL": 1795596817.3441398,
+    "KORU": 1795598331.5410008,
+    "SOXL": 1795598331.5410008,
     "SPY": 1795597178.2551703,
-    "DIA": 1795596817.3441398,
-    "SOXX": 1795596817.3441398,
-    "QQQ": 1795596817.3441398,
+    "DIA": 1795598331.5410008,
+    "SOXX": 1795598331.5410008,
+    "QQQ": 1795598331.5410008,
     "SMH": 1795597178.2551703,
-    "IWM": 1795596817.3441398,
-    "IGV": 1795596817.3441398,
-    "TLT": 1795596817.3441398,
-    "GLD": 1795596817.3441398,
-    "SQQQ": 1795596817.3441398,
+    "IWM": 1795598331.5410008,
+    "IGV": 1795598331.5410008,
+    "TLT": 1795598331.5410008,
+    "GLD": 1795598331.5410008,
+    "SQQQ": 1795598331.5410008,
     "TSM": 1795597178.2551703,
-    "VIXY": 1795596817.3441398,
-    "SOXS": 1795596817.3441398,
-    "NVDA": 1795596817.3441398,
-    "AMD": 1795596817.3441398,
+    "VIXY": 1795598331.5410008,
+    "SOXS": 1795598331.5410008,
+    "NVDA": 1795598331.5410008,
+    "AMD": 1795598331.5410008,
     "ASML": 1795597178.2551703,
     "QCOM": 1795597178.2551703,
-    "AVGO": 1795596817.3441398,
+    "AVGO": 1795598331.5410008,
     "AMAT": 1795597178.2551703,
     "META": 1795597178.2551703,
     "GOOGL": 1795597178.2551703,
