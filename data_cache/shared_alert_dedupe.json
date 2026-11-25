@@ -7023,9 +7023,13 @@
     "KOL_CLOSE:2026-11-25:KOL_META_SHORT_2026-11-25_1:SL_HIT": {
       "device": "PC",
       "ts": 1795618765.6133459
+    },
+    "2026-11-25:INTRADAY_CORRIDOR:SPY:ABOVE_P75": {
+      "device": "PC",
+      "ts": 1795619053.4844782
     }
   },
   "device": "PC",
-  "last_heartbeat_ts": 1795618968.4467056,
-  "updated_at": "2026-11-25T15:02:48.447188+00:00"
+  "last_heartbeat_ts": 1795619018.973692,
+  "updated_at": "2026-11-25T15:04:13.484908+00:00"
 }
