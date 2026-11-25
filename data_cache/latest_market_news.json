@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795630120.315,
-  "updated_at_et": "11-25 13:08 ET",
-  "updated_at_kst": "03:08 KST",
+  "updated_at_ts": 1795630163.52,
+  "updated_at_et": "11-25 13:09 ET",
+  "updated_at_kst": "03:09 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -3011,6 +3011,13 @@
     ],
     "JPM": [
       {
+        "title": "Tariffs are back as Anthropic sinks further below its IPO price",
+        "url": "https://finance.yahoo.com/video/tariffs-are-back-as-anthropic-sinks-further-below-its-ipo-price-160524926.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 11:05 ET",
+        "pub_ts": 1795622724.0
+      },
+      {
         "title": "JPMorgan Sees S&P 500 At 8,200 In 2027 As AI Supercycle Remains Intact",
         "url": "https://stocktwits.com/news-articles/markets/equity/jp-morgan-sees-s-and-p-500-at-8-200-in-2027-as-ai-supercycle-remains-intact/cNbHmzoR9mY?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3037,16 +3044,16 @@
         "source": "Yahoo Finance",
         "time": "11-25 07:58 ET",
         "pub_ts": 1795611539.0
-      },
-      {
-        "title": "Market Chatter: JPMorgan Weighs Scaling Back UK Investments After Bank Tax Increase",
-        "url": "https://finance.yahoo.com/economy/policy/articles/market-chatter-jpmorgan-weighs-scaling-115843710.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 06:58 ET",
-        "pub_ts": 1795607923.0
       }
     ],
     "WMT": [
+      {
+        "title": "Tariffs are back as Anthropic sinks further below its IPO price",
+        "url": "https://finance.yahoo.com/video/tariffs-are-back-as-anthropic-sinks-further-below-its-ipo-price-160524926.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 11:05 ET",
+        "pub_ts": 1795622724.0
+      },
       {
         "title": "Ten reasons the market is selling off again before Thanksgiving",
         "url": "https://finance.yahoo.com/video/ten-reasons-the-market-is-selling-off-again-before-thanksgiving-160424234.html?.tsrc=rss",
@@ -3074,13 +3081,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 12:00 ET",
         "pub_ts": 1795626000.0
-      },
-      {
-        "title": "Tariffs Strike Again: Trump Announces Tariffs Up to 20% on China and the EU. Walmart Already Navigated “Over $2 Billion”",
-        "url": "https://www.tikr.com/blog/tariffs-strike-again-trump-announces-tariffs-up-to-20-on-china-and-the-eu-walmart-already-navigated-over-2-billion?ref=yahoofinance&tlnk=yf-261125-xwhcj63q&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 10:30 ET",
-        "pub_ts": 1795620641.0
       }
     ],
     "V": [
@@ -3233,11 +3233,25 @@
     ],
     "ANT": [
       {
+        "title": "Tariffs are back as Anthropic sinks further below its IPO price",
+        "url": "https://finance.yahoo.com/video/tariffs-are-back-as-anthropic-sinks-further-below-its-ipo-price-160524926.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 11:05 ET",
+        "pub_ts": 1795622724.0
+      },
+      {
         "title": "Ten reasons the market is selling off again before Thanksgiving",
         "url": "https://finance.yahoo.com/video/ten-reasons-the-market-is-selling-off-again-before-thanksgiving-160424234.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-25 11:04 ET",
         "pub_ts": 1795622664.0
+      },
+      {
+        "title": "Anthropic’s $1 Trillion Market Value Is at Risk. So Much for the AI Hype.",
+        "url": "https://finance.yahoo.com/m/acbd91a7-90c3-3b19-9187-1667d5063696/anthropic%E2%80%99s-%241-trillion.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 12:18 ET",
+        "pub_ts": 1795627080.0
       },
       {
         "title": "Anthropic Vs. SpaceX: Both Fell Below IPO Price, But Only One Sees Valuation Below $1 Trillion",
@@ -3252,20 +3266,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 12:03 ET",
         "pub_ts": 1795626182.0
-      },
-      {
-        "title": "Without an Anthropic Rally, “There Will Be No OpenAI.” AMD Is the Real Loser",
-        "url": "https://www.tikr.com/blog/without-an-anthropic-rally-there-will-be-no-openai-amd-is-the-real-loser?ref=yahoofinance&tlnk=yf-261125-334c8hfc&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 11:18 ET",
-        "pub_ts": 1795623516.0
-      },
-      {
-        "title": "This Iconic Growth Investor Can't Stop Buying Anthropic Stock",
-        "url": "https://www.fool.com/investing/2026/11/25/this-iconic-growth-investor-can-t-stop-buying-anthropic-stock/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 11:03 ET",
-        "pub_ts": 1795622582.0
       }
     ],
     "XAUUSD": [
@@ -3385,16 +3385,16 @@
     "MRNA": 1795630071.0794914,
     "NKE": 1795630071.0794914,
     "MCD": 1795630071.0794914,
-    "PEP": 1795628641.1777718,
-    "XOM": 1795628641.1777718,
-    "JPM": 1795628641.1777718,
-    "WMT": 1795628641.1777718,
+    "PEP": 1795630163.520161,
+    "XOM": 1795630163.520161,
+    "JPM": 1795630163.520161,
+    "WMT": 1795630163.520161,
     "V": 1795630071.0794914,
-    "CAT": 1795628641.1777718,
+    "CAT": 1795630163.520161,
     "FN": 1795629307.924548,
     "GLW": 1795629930.5559459,
-    "ANT": 1795628641.1777718,
-    "XAUUSD": 1795628641.1777718,
+    "ANT": 1795630163.520161,
+    "XAUUSD": 1795630163.520161,
     "KOSPI": 1795629259.1969395
   },
   "opex_shield": {
