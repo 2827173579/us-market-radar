@@ -1,5 +1,5 @@
 {
-  "updated_at_ts": 1795644494.862,
+  "updated_at_ts": 1795644536.938,
   "updated_at_et": "11-25 17:08 ET",
   "updated_at_kst": "07:08 KST",
   "macro_calendar": [
@@ -2640,6 +2640,13 @@
     ],
     "BTC-USD": [
       {
+        "title": "Analyst explains why Bitcoin’s next move depends on Nasdaq",
+        "url": "https://www.thestreet.com/crypto/markets/analyst-explains-why-bitcoins-next-move-depends-on-nasdaq?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 17:00 ET",
+        "pub_ts": 1795644000.0
+      },
+      {
         "title": "Sector Update: Financial Stocks Advance Late Afternoon",
         "url": "https://finance.yahoo.com/markets/stocks/articles/sector-financial-stocks-advance-afternoon-210138295.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2666,13 +2673,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 15:00 ET",
         "pub_ts": 1795636800.0
-      },
-      {
-        "title": "SpaceX Slashes GPU Pricing? Plus, IREN’s Selloff and CoreWeave’s Distressed Bonds",
-        "url": "https://blockspace.media/podcast/spacex-slashes-gpu-pricing-plus-irens-selloff-and-coreweaves-distressed-bonds/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 14:57 ET",
-        "pub_ts": 1795636676.0
       }
     ],
     "CRWD": [
@@ -3372,11 +3372,11 @@
     "FPS": 1795643715.7914033,
     "MU": 1795644494.861593,
     "SKHY": 1795644494.861593,
-    "WDC": 1795642997.6230643,
+    "WDC": 1795644536.9378903,
     "STX": 1795643799.3312984,
     "MSTR": 1795643715.7914033,
     "SNDK": 1795643715.7914033,
-    "BTC-USD": 1795642997.6230643,
+    "BTC-USD": 1795644536.9378903,
     "CRWD": 1795643715.7914033,
     "ORCL": 1795643715.7914033,
     "COIN": 1795643715.7914033,
