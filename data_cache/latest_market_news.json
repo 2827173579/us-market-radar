@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795597930.685,
-  "updated_at_et": "11-25 04:12 ET",
-  "updated_at_kst": "18:12 KST",
+  "updated_at_ts": 1795597981.269,
+  "updated_at_et": "11-25 04:13 ET",
+  "updated_at_kst": "18:13 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -17,7 +17,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 258,
+      "minutes_left": 257,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -36,13 +36,26 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 258,
+      "minutes_left": 257,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
     }
   ],
   "macro_flashes": [
+    {
+      "id": "20261125171232471800",
+      "title": "众议院民主党人出手，扩大调查特朗普长子投资网络",
+      "summary": "四家与1789 Capital有关联的企业被纳入国会调查。民主党人希望查明，特朗普长子及其商业伙伴是否借助政治关系或提前获得的政策信息取得商业利益。",
+      "keywords": [
+        "特朗普"
+      ],
+      "pub_ts": 1795597952.0,
+      "time_et": "11-25 04:12 ET",
+      "time_bj": "17:12 BJ",
+      "time_kst": "18:12 KST",
+      "time_display": "04:12 ET / 17:12 BJ"
+    },
     {
       "id": "20261125170419473800",
       "title": "【美股半导体股盘前多数下跌】 11月25日讯，美股半导体股盘前多数下跌，英伟达(NVDA…",
@@ -377,20 +390,6 @@
       "time_bj": "11:40 BJ",
       "time_kst": "12:40 KST",
       "time_display": "22:40 ET / 11:40 BJ"
-    },
-    {
-      "id": "20261125113335504800",
-      "title": "整理：每日人工智能动态汇总（2026-11-25）",
-      "summary": "1. 报道：英伟达AI GPU新单交货周期拉长，RTX60系显卡量产或后移。 2. 特朗普称必要时愿赦免黄仁勋，不排除美国政府入股英伟达。 3. AI巨头员工声称新模型“强大到不宜发布”，欲放缓发展步伐。 4. 中国信通院发布“星算”计划最新测试数据。 5. 市场监管总局：我国牵头制定的人工智能数据质量国际标准被欧盟采纳。 6. 今年上半年我国人工智能核心产业规模预计超7500亿元。 7. 我国在5个自贸试验区开展人工智能标准化自主开放试点。 8. 波士顿咨询报告：中国是亚太地区AI应用最广泛的市场之一。 9. OpenClaw发布百项智能体评测，最高通过率为62.5%。 10. Meta个人智能体Muse登陆英国，监管机构明确消费者保护要求。 11. 小鹏发布IRON人形机器人新演示，展示取书、倒酒和自主充电。 12. 软银据报完成收购机器人与人工智能研究所RAI。",
-      "keywords": [
-        "英伟达",
-        "特朗普"
-      ],
-      "pub_ts": 1795577615.0,
-      "time_et": "11-24 22:33 ET",
-      "time_bj": "11:33 BJ",
-      "time_kst": "12:33 KST",
-      "time_display": "22:33 ET / 11:33 BJ"
     }
   ],
   "ticker_news": {
@@ -3425,10 +3424,10 @@
   },
   "calendar_banner": {
     "level": "upcoming",
-    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 258 分钟（11-25 08:30 ET / 22:30 KST）",
+    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 257 分钟（11-25 08:30 ET / 22:30 KST）",
     "detail": "前值 0.3% ｜ 预期 0.3% ｜ 临近公布前15分钟将自动触发防插针预警",
     "event_name": "美国10月核心PCE物价指数环比",
-    "minutes_left": 258,
+    "minutes_left": 257,
     "opex_shield": {
       "date": "2026-11-25",
       "active": false,
