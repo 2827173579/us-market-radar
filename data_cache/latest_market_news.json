@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795630766.83,
-  "updated_at_et": "11-25 13:19 ET",
-  "updated_at_kst": "03:19 KST",
+  "updated_at_ts": 1795630813.727,
+  "updated_at_et": "11-25 13:20 ET",
+  "updated_at_kst": "03:20 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -1679,6 +1679,13 @@
     ],
     "MRVL": [
       {
+        "title": "Marvell Technology Stocks Fall 8.47% as Data Center Exposure Bites",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/marvell-technology-stocks-fall-8-175958573.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 12:59 ET",
+        "pub_ts": 1795629598.0
+      },
+      {
         "title": "What Pulled Marvell Stock Down On Tuesday?",
         "url": "https://www.trefis.com/stock/mrvl/articles/628981/what-pulled-marvell-stock-down-on-tuesday/2026-11-25?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1705,13 +1712,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 17:07 ET",
         "pub_ts": 1795558073.0
-      },
-      {
-        "title": "Marvell Technology (MRVL) Suffers a Larger Drop Than the General Market: Key Insights",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/marvell-technology-mrvl-suffers-larger-214502476.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 16:45 ET",
-        "pub_ts": 1795556702.0
       }
     ],
     "LITE": [
@@ -2419,6 +2419,13 @@
     ],
     "MU": [
       {
+        "title": "Micron Stock and Other Memory Plays Will Bear the Brunt of This AI Pain",
+        "url": "https://finance.yahoo.com/m/c60b7c01-7f3d-3700-ad68-951e994a6d38/micron-stock-and-other-memory.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 12:46 ET",
+        "pub_ts": 1795628760.0
+      },
+      {
         "title": "106% Upside for Micron? Citi Thinks So, and Here’s How",
         "url": "https://www.tikr.com/blog/106-upside-for-micron-citi-thinks-so-and-heres-how?ref=yahoofinance&tlnk=yf-261125-x4xrrvc6&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2445,16 +2452,16 @@
         "source": "Yahoo Finance",
         "time": "11-25 12:07 ET",
         "pub_ts": 1795626424.0
-      },
-      {
-        "title": "HP Soars 11% on Q4 Beat as Interim CEO Sees “Multiple Waves of Device Refresh”",
-        "url": "https://www.tikr.com/blog/hp-soars-11-on-q4-beat-as-interim-ceo-sees-multiple-waves-of-device-refresh?ref=yahoofinance&tlnk=yf-261125-vw9jfr94&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 12:02 ET",
-        "pub_ts": 1795626175.0
       }
     ],
     "SKHY": [
+      {
+        "title": "SK hynix Falls 5%, Sandisk Down 10% as Asian Chip Stocks Give Back the Huang Rally",
+        "url": "https://www.tikr.com/blog/sk-hynix-falls-5-sandisk-down-10-as-asian-chip-stocks-give-back-the-huang-rally?ref=yahoofinance&tlnk=yf-261125-7hm5f9h6&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 12:46 ET",
+        "pub_ts": 1795628786.0
+      },
       {
         "title": "SK hynix Stocks Sink 11.05% Despite 80% Operating Margin",
         "url": "https://finance.yahoo.com/markets/stocks/articles/sk-hynix-stocks-sink-11-171606778.html?.tsrc=rss",
@@ -2482,13 +2489,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 23:03 ET",
         "pub_ts": 1795579400.0
-      },
-      {
-        "title": "SK hynix (NasdaqGS:SKHY) Sell Off Puts Undervalued Narrative Back In Focus",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/sk-hynix-nasdaqgs-skhy-sell-070941477.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 02:09 ET",
-        "pub_ts": 1795590581.0
       }
     ],
     "WDC": [
@@ -3351,8 +3351,8 @@
     "BE": 1795629930.5559459,
     "CRDO": 1795629930.5559459,
     "COHR": 1795629930.5559459,
-    "MRVL": 1795629307.924548,
-    "LITE": 1795629307.924548,
+    "MRVL": 1795630813.7265573,
+    "LITE": 1795630813.7265573,
     "AAOI": 1795629930.5559459,
     "SPCX": 1795629930.5559459,
     "ASTS": 1795629930.5559459,
@@ -3371,8 +3371,8 @@
     "OKLO": 1795630071.0794914,
     "CEG": 1795630071.0794914,
     "FPS": 1795630071.0794914,
-    "MU": 1795629307.924548,
-    "SKHY": 1795629307.924548,
+    "MU": 1795630813.7265573,
+    "SKHY": 1795630813.7265573,
     "WDC": 1795629355.3827045,
     "STX": 1795630120.3149467,
     "MSTR": 1795630071.0794914,
@@ -3391,7 +3391,7 @@
     "WMT": 1795630163.520161,
     "V": 1795630071.0794914,
     "CAT": 1795630163.520161,
-    "FN": 1795629307.924548,
+    "FN": 1795630813.7265573,
     "GLW": 1795629930.5559459,
     "ANT": 1795630163.520161,
     "XAUUSD": 1795630163.520161,
