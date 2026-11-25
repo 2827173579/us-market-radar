@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795622657.934,
-  "updated_at_et": "11-25 11:04 ET",
-  "updated_at_kst": "01:04 KST",
+  "updated_at_ts": 1795622719.228,
+  "updated_at_et": "11-25 11:05 ET",
+  "updated_at_kst": "01:05 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -593,18 +593,18 @@
         "pub_ts": 1795543833.0
       },
       {
-        "title": "Stock Market Today: Dow Dives 700 Points As Nvidia Sells Off, Inflation Rises; Anthropic Sinks (Live Coverage)",
-        "url": "https://finance.yahoo.com/m/90407e46-3b17-34e8-8c82-527bf00b63e4/stock-market-today%3A-dow-dives.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 09:50 ET",
-        "pub_ts": 1795618250.0
-      },
-      {
         "title": "Exchange-Traded Funds, Equity Futures Lower Pre-Bell Wednesday Amid Inflation Data Release",
         "url": "https://finance.yahoo.com/markets/stocks/articles/exchange-traded-funds-equity-futures-140441647.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-25 09:04 ET",
         "pub_ts": 1795615481.0
+      },
+      {
+        "title": "ETFs Are Net Sellers of Alphabet (GOOG) on Nov. 23",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-net-sellers-alphabet-goog-110257127.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 06:02 ET",
+        "pub_ts": 1795604577.0
       }
     ],
     "SMH": [
@@ -942,39 +942,39 @@
     ],
     "NVDA": [
       {
-        "title": "Investing rules for those checking stocks during the Thanksgiving holiday",
-        "url": "https://finance.yahoo.com/video/investing-rules-for-those-checking-stocks-during-the-thanksgiving-holiday-153334098.html?.tsrc=rss",
+        "title": "Why Nvidia Stock Continues to Fall After the Jensen Huang Pop",
+        "url": "https://www.fool.com/investing/2026/11/25/why-nvidia-stock-continues-to-fall-after-the-jensen-huang-pop/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-25 10:33 ET",
-        "pub_ts": 1795620814.0
+        "time": "11-25 11:02 ET",
+        "pub_ts": 1795622545.0
       },
       {
-        "title": "Dan Ives: Nvidia sell-off a 'growth scare,' not a demand problem",
-        "url": "https://finance.yahoo.com/video/dan-ives-nvidia-sell-off-a-growth-scare-not-a-demand-problem-151140023.html?.tsrc=rss",
+        "title": "Stock Market Today: Huangover Is Causing Headache for Tech Stocks",
+        "url": "https://247wallst.com/investing/2026/11/25/stock-market-today-huangover-is-causing-headache-for-tech-stocks/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-25 10:11 ET",
-        "pub_ts": 1795619500.0
+        "time": "11-25 10:56 ET",
+        "pub_ts": 1795622202.0
       },
       {
-        "title": "Tech stocks tumble again on AI jitters, US inflation",
-        "url": "https://finance.yahoo.com/markets/world-indices/articles/tech-firms-back-crosshairs-huang-024219799.html?.tsrc=rss",
+        "title": "NVIDIA Stocks Drop 8.55% as Huang Rally Fully Unwinds",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/nvidia-stocks-drop-8-55-155607971.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-25 10:16 ET",
-        "pub_ts": 1795619818.0
+        "time": "11-25 10:56 ET",
+        "pub_ts": 1795622167.0
       },
       {
-        "title": "Corning (GLW) Rides AI Optimism On A Narrative That Still Sees It Undervalued",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/corning-glw-rides-ai-optimism-151209714.html?.tsrc=rss",
+        "title": "Not a Bubble: 2 Numbers That Show Nvidia’s Demand Is Real",
+        "url": "https://www.fool.com/investing/2026/11/25/not-a-bubble-2-numbers-that-show-nvidias-demand-is-real/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-25 10:12 ET",
-        "pub_ts": 1795619529.0
+        "time": "11-25 10:50 ET",
+        "pub_ts": 1795621802.0
       },
       {
-        "title": "Tech-Led Slide Deepens as Confidence in AI Trade Weakens",
-        "url": "https://www.wsj.com/finance/stocks/nasdaq-futures-slide-as-ai-growth-fears-return-to-center-stage-ff9a6d6b?.tsrc=rss",
+        "title": "Congressman Dumps NVIDIA Shares Worth Up to $15,000",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/congressman-dumps-nvidia-shares-worth-153838598.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-25 10:09 ET",
-        "pub_ts": 1795619340.0
+        "time": "11-25 10:38 ET",
+        "pub_ts": 1795621118.0
       }
     ],
     "AMD": [
@@ -984,6 +984,13 @@
         "source": "Yahoo Finance",
         "time": "11-25 08:45 ET",
         "pub_ts": 1795614318.0
+      },
+      {
+        "title": "AMD Stocks Plunge 9.74% as Chip Rout and Tariff Threat Collide",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/amd-stocks-plunge-9-74-154902897.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 10:49 ET",
+        "pub_ts": 1795621742.0
       },
       {
         "title": "Advanced Micro Devices (AMD) Expands Into Quantum AI Computing With Drug Discovery Focus",
@@ -1005,13 +1012,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 08:20 ET",
         "pub_ts": 1795612826.0
-      },
-      {
-        "title": "AMD Sees Server Revenues Doubling in 2027: Will the Momentum Last?",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/amd-sees-server-revenues-doubling-125600843.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 07:56 ET",
-        "pub_ts": 1795611360.0
       }
     ],
     "ASML": [
@@ -1090,6 +1090,13 @@
     ],
     "AVGO": [
       {
+        "title": "Broadcom Stocks Slide 6.86% as AI Chip Selloff Deepens",
+        "url": "https://finance.yahoo.com/technology/ai/articles/broadcom-stocks-slide-6-86-154631717.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 10:46 ET",
+        "pub_ts": 1795621591.0
+      },
+      {
         "title": "Global Software-Defined Wide Area Network (SD-WAN) Market Forecast to 2035 | Capitalize as SASE, Zero Trust and Cloud Drive Market to $78.33 Billion: Cisco, Fortinet and Broadcom",
         "url": "https://finance.yahoo.com/technology/articles/global-software-defined-wide-area-141800853.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1116,13 +1123,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 06:04 ET",
         "pub_ts": 1795604687.0
-      },
-      {
-        "title": "55 ETFs Add to Broadcom (AVGO) on Monday",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/55-etfs-add-broadcom-avgo-110057015.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 06:00 ET",
-        "pub_ts": 1795604457.0
       }
     ],
     "AMAT": [
@@ -3319,26 +3319,26 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795621198.9354763,
-    "SOXL": 1795621198.9354763,
+    "KORU": 1795622719.2276533,
+    "SOXL": 1795622719.2276533,
     "SPY": 1795621672.9571495,
-    "DIA": 1795621198.9354763,
-    "SOXX": 1795621198.9354763,
-    "QQQ": 1795621198.9354763,
+    "DIA": 1795622719.2276533,
+    "SOXX": 1795622719.2276533,
+    "QQQ": 1795622719.2276533,
     "SMH": 1795621672.9571495,
-    "IWM": 1795621198.9354763,
-    "IGV": 1795621198.9354763,
-    "TLT": 1795621198.9354763,
-    "GLD": 1795621198.9354763,
-    "SQQQ": 1795621198.9354763,
+    "IWM": 1795622719.2276533,
+    "IGV": 1795622719.2276533,
+    "TLT": 1795622719.2276533,
+    "GLD": 1795622719.2276533,
+    "SQQQ": 1795622719.2276533,
     "TSM": 1795621672.9571495,
-    "VIXY": 1795621198.9354763,
-    "SOXS": 1795621198.9354763,
-    "NVDA": 1795621198.9354763,
-    "AMD": 1795621198.9354763,
+    "VIXY": 1795622719.2276533,
+    "SOXS": 1795622719.2276533,
+    "NVDA": 1795622719.2276533,
+    "AMD": 1795622719.2276533,
     "ASML": 1795621672.9571495,
     "QCOM": 1795621672.9571495,
-    "AVGO": 1795621198.9354763,
+    "AVGO": 1795622719.2276533,
     "AMAT": 1795621672.9571495,
     "META": 1795621672.9571495,
     "GOOGL": 1795621672.9571495,
