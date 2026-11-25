@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795647522.229,
-  "updated_at_et": "11-25 17:58 ET",
-  "updated_at_kst": "07:58 KST",
+  "updated_at_ts": 1795647562.42,
+  "updated_at_et": "11-25 17:59 ET",
+  "updated_at_kst": "07:59 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -1431,6 +1431,13 @@
         "pub_ts": 1795640400.0
       },
       {
+        "title": "CoreWeave Stock Could Soar 125%, According to One Wall Street Analyst, Even After a Price Target Cut. Is It a Buy?",
+        "url": "https://www.fool.com/investing/2026/11/25/coreweave-stock-could-soar-130-according-to-one-wall-street-analyst-even-after-a-price-target-cut-is-it-a-buy/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 17:45 ET",
+        "pub_ts": 1795646709.0
+      },
+      {
         "title": "CoreWeave’s Bankers Reportedly Ready $4.5B GPU-Backed Loan Tied To Meta Deal",
         "url": "https://stocktwits.com/news-articles/markets/equity/core-weave-s-bankers-reportedly-ready-4-5-b-gpu-backed-loan-tied-to-meta-deal/cNbHrsCR9mw?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1450,13 +1457,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 13:30 ET",
         "pub_ts": 1795631418.0
-      },
-      {
-        "title": "CoreWeave Stocks Plunge 10.27% as Credit Markets Price 68% Default Risk",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/coreweave-stocks-plunge-10-27-174415599.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 12:44 ET",
-        "pub_ts": 1795628655.0
       }
     ],
     "NBIS": [
@@ -1683,6 +1683,13 @@
     ],
     "MRVL": [
       {
+        "title": "Analysts Expect More From Marvell Than Marvell Does",
+        "url": "https://www.trefis.com/stock/mrvl/articles/628747/analysts-expect-more-from-marvell-than-marvell-does/2026-11-25?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 17:24 ET",
+        "pub_ts": 1795645487.0
+      },
+      {
         "title": "Marvell Technology Stocks Fall 8.47% as Data Center Exposure Bites",
         "url": "https://finance.yahoo.com/markets/stocks/articles/marvell-technology-stocks-fall-8-175958573.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1709,13 +1716,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 03:39 ET",
         "pub_ts": 1795595940.0
-      },
-      {
-        "title": "Stephanie Link Says Marvell Could Earn $30 a Share by 2031. Is She Right?",
-        "url": "https://247wallst.com/investing/2026/11/24/stephanie-link-says-marvell-could-earn-30-a-share-by-2031-is-she-right/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 17:07 ET",
-        "pub_ts": 1795558073.0
       }
     ],
     "LITE": [
@@ -2423,11 +2423,25 @@
     ],
     "MU": [
       {
+        "title": "Micron's CEO pay rose 28%. His security bill rose way faster",
+        "url": "https://www.thestreet.com/investing/micron-ceo-pay-security-costs-soar?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 17:33 ET",
+        "pub_ts": 1795645980.0
+      },
+      {
         "title": "Not Micron. Not Broadcom. This Is My Top Oversold Artificial Intelligence (AI) Stock to Buy in December",
         "url": "https://www.fool.com/investing/2026/11/25/not-micron-not-broadcom-this-is-my-top-oversold-artificial-intelligence-ai-stock-to-buy-in-december/?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-25 16:51 ET",
         "pub_ts": 1795643461.0
+      },
+      {
+        "title": "Micron (MU) Suffers a Larger Drop Than the General Market: Key Insights",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/micron-mu-suffers-larger-drop-214502791.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 16:45 ET",
+        "pub_ts": 1795643102.0
       },
       {
         "title": "Chips and iPhones Are Safe From New Tariffs. Here’s What Isn’t.",
@@ -2442,20 +2456,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 14:20 ET",
         "pub_ts": 1795634402.0
-      },
-      {
-        "title": "Anthropic, Nvidia, Micron, HP Inc., Dell, Deere, and More Stocks That Explain Today’s Market",
-        "url": "https://finance.yahoo.com/m/18e72c51-c6d7-33b1-aa90-ccce17a9b32f/anthropic%2C-nvidia%2C-micron%2C-hp.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 13:37 ET",
-        "pub_ts": 1795631820.0
-      },
-      {
-        "title": "Micron Stock and Other Memory Plays Will Bear the Brunt of This AI Pain",
-        "url": "https://finance.yahoo.com/m/c60b7c01-7f3d-3700-ad68-951e994a6d38/micron-stock-and-other-memory.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 12:46 ET",
-        "pub_ts": 1795628760.0
       }
     ],
     "SKHY": [
@@ -3322,45 +3322,45 @@
   "ticker_news_ts": {
     "KORU": 1795646962.4506645,
     "SOXL": 1795646962.4506645,
-    "SPY": 1795646056.150761,
+    "SPY": 1795647562.4201586,
     "DIA": 1795646962.4506645,
     "SOXX": 1795646962.4506645,
     "QQQ": 1795646962.4506645,
-    "SMH": 1795646056.150761,
+    "SMH": 1795647562.4201586,
     "IWM": 1795646962.4506645,
     "IGV": 1795646962.4506645,
     "TLT": 1795646962.4506645,
     "GLD": 1795646962.4506645,
     "SQQQ": 1795646962.4506645,
-    "TSM": 1795646056.150761,
+    "TSM": 1795647562.4201586,
     "VIXY": 1795646962.4506645,
     "SOXS": 1795646962.4506645,
     "NVDA": 1795646962.4506645,
     "AMD": 1795646962.4506645,
-    "ASML": 1795646056.150761,
-    "QCOM": 1795646056.150761,
+    "ASML": 1795647562.4201586,
+    "QCOM": 1795647562.4201586,
     "AVGO": 1795646962.4506645,
-    "AMAT": 1795646056.150761,
-    "META": 1795646056.150761,
-    "GOOGL": 1795646056.150761,
-    "MSFT": 1795646056.150761,
-    "AAPL": 1795646056.150761,
-    "PLTR": 1795646056.150761,
-    "NOW": 1795646056.150761,
-    "AMZN": 1795646056.150761,
-    "CRWV": 1795646056.150761,
-    "NBIS": 1795646056.150761,
+    "AMAT": 1795647562.4201586,
+    "META": 1795647562.4201586,
+    "GOOGL": 1795647562.4201586,
+    "MSFT": 1795647562.4201586,
+    "AAPL": 1795647562.4201586,
+    "PLTR": 1795647562.4201586,
+    "NOW": 1795647562.4201586,
+    "AMZN": 1795647562.4201586,
+    "CRWV": 1795647562.4201586,
+    "NBIS": 1795647562.4201586,
     "APLD": 1795646594.8988879,
     "VST": 1795646594.8988879,
     "BE": 1795646594.8988879,
     "CRDO": 1795646594.8988879,
     "COHR": 1795646594.8988879,
-    "MRVL": 1795646056.150761,
-    "LITE": 1795646056.150761,
+    "MRVL": 1795647562.4201586,
+    "LITE": 1795647562.4201586,
     "AAOI": 1795646594.8988879,
     "SPCX": 1795646594.8988879,
     "ASTS": 1795646594.8988879,
-    "AXTI": 1795646056.150761,
+    "AXTI": 1795647562.4201586,
     "NASA": 1795646594.8988879,
     "LUNR": 1795646594.8988879,
     "TSLA": 1795646754.2743244,
@@ -3375,9 +3375,9 @@
     "OKLO": 1795646754.2743244,
     "CEG": 1795646754.2743244,
     "FPS": 1795646754.2743244,
-    "MU": 1795646056.150761,
-    "SKHY": 1795646056.150761,
-    "WDC": 1795646056.150761,
+    "MU": 1795647562.4201586,
+    "SKHY": 1795647562.4201586,
+    "WDC": 1795647562.4201586,
     "STX": 1795646838.1539316,
     "MSTR": 1795646754.2743244,
     "SNDK": 1795646754.2743244,
@@ -3395,11 +3395,11 @@
     "WMT": 1795646880.6340067,
     "V": 1795646754.2743244,
     "CAT": 1795646880.6340067,
-    "FN": 1795646056.150761,
+    "FN": 1795647562.4201586,
     "GLW": 1795646594.8988879,
     "ANT": 1795646880.6340067,
     "XAUUSD": 1795646880.6340067,
-    "KOSPI": 1795646056.150761
+    "KOSPI": 1795647562.4201586
   },
   "opex_shield": {
     "date": "2026-11-25",
