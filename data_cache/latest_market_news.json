@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795575023.485,
-  "updated_at_et": "11-24 21:50 ET",
-  "updated_at_kst": "11:50 KST",
+  "updated_at_ts": 1795575124.783,
+  "updated_at_et": "11-24 21:52 ET",
+  "updated_at_kst": "11:52 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -914,11 +914,18 @@
     ],
     "NVDA": [
       {
-        "title": "Dow Jones Futures Fall After AI Stocks Tumble; Trump Says 'Not Too Late' For Nvidia Stake",
-        "url": "https://finance.yahoo.com/m/d96603c1-fe7f-3bf3-8158-0728b464d469/dow-jones-futures-fall-after.html?.tsrc=rss",
+        "title": "Dow Jones Futures Fall; Trump Says 'Not Too Late' For U.S. To Take Nvidia Stake",
+        "url": "https://finance.yahoo.com/m/d96603c1-fe7f-3bf3-8158-0728b464d469/dow-jones-futures-fall%3B-trump.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 21:14 ET",
-        "pub_ts": 1795572860.0
+        "time": "11-24 21:45 ET",
+        "pub_ts": 1795574728.0
+      },
+      {
+        "title": "Tech firms back in crosshairs as Huang rally reverses",
+        "url": "https://finance.yahoo.com/markets/world-indices/articles/tech-firms-back-crosshairs-huang-024219799.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 21:42 ET",
+        "pub_ts": 1795574539.0
       },
       {
         "title": "Nvidia’s Rebound, Falling Oil And A Strong Dollar: Three Signals Complicating The Fed’s December Decision",
@@ -940,13 +947,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 20:23 ET",
         "pub_ts": 1795569790.0
-      },
-      {
-        "title": "Trump Says Inflation Could Help Pay Down the National Debt. Here's What That Means for Your Retirement Savings",
-        "url": "https://www.fool.com/investing/2026/11/24/trump-says-inflation-could-help-pay-down-the-national-debt-here-s-what-that-means-for-your-retirement-savings/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 20:20 ET",
-        "pub_ts": 1795569602.0
       }
     ],
     "AMD": [
@@ -3291,26 +3291,26 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795573597.604626,
-    "SOXL": 1795573597.604626,
+    "KORU": 1795575124.783037,
+    "SOXL": 1795575124.783037,
     "SPY": 1795573999.1427774,
-    "DIA": 1795573597.604626,
-    "SOXX": 1795573597.604626,
-    "QQQ": 1795573597.604626,
+    "DIA": 1795575124.783037,
+    "SOXX": 1795575124.783037,
+    "QQQ": 1795575124.783037,
     "SMH": 1795573999.1427774,
-    "IWM": 1795573597.604626,
-    "IGV": 1795573597.604626,
-    "TLT": 1795573597.604626,
-    "GLD": 1795573597.604626,
-    "SQQQ": 1795573597.604626,
+    "IWM": 1795575124.783037,
+    "IGV": 1795575124.783037,
+    "TLT": 1795575124.783037,
+    "GLD": 1795575124.783037,
+    "SQQQ": 1795575124.783037,
     "TSM": 1795573999.1427774,
-    "VIXY": 1795573597.604626,
-    "SOXS": 1795573597.604626,
-    "NVDA": 1795573597.604626,
-    "AMD": 1795573597.604626,
+    "VIXY": 1795575124.783037,
+    "SOXS": 1795575124.783037,
+    "NVDA": 1795575124.783037,
+    "AMD": 1795575124.783037,
     "ASML": 1795573999.1427774,
     "QCOM": 1795573999.1427774,
-    "AVGO": 1795573597.604626,
+    "AVGO": 1795575124.783037,
     "AMAT": 1795573999.1427774,
     "META": 1795573999.1427774,
     "GOOGL": 1795573999.1427774,
