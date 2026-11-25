@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795601733.935,
-  "updated_at_et": "11-25 05:15 ET",
-  "updated_at_kst": "19:15 KST",
+  "updated_at_ts": 1795601781.521,
+  "updated_at_et": "11-25 05:16 ET",
+  "updated_at_kst": "19:16 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -17,7 +17,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 195,
+      "minutes_left": 194,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -36,7 +36,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 195,
+      "minutes_left": 194,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -837,13 +837,6 @@
     ],
     "TSM": [
       {
-        "title": "Asian stocks mostly decline as AI shares tumble after a retreat on Wall Street",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/asian-stocks-mostly-decline-ai-040526833.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 23:05 ET",
-        "pub_ts": 1795579526.0
-      },
-      {
         "title": "Novanta Shares Just Jumped And We’re Buying This Robotics Play",
         "url": "https://247wallst.com/videos/novanta-shares-just-jumped-and-were-buying-this-robotics-play/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -870,6 +863,13 @@
         "source": "Yahoo Finance",
         "time": "11-24 14:59 ET",
         "pub_ts": 1795550362.0
+      },
+      {
+        "title": "If You Invest $5,000 Into These 3 Stocks, You Could Have $10,000 by 2030",
+        "url": "https://247wallst.com/investing/2026/11/24/if-you-invest-5000-into-these-3-stocks-you-could-have-10000-by-2030/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 13:03 ET",
+        "pub_ts": 1795543400.0
       }
     ],
     "VIXY": [
@@ -1214,6 +1214,20 @@
         "pub_ts": 1795593600.0
       },
       {
+        "title": "Shopify Keeps Sliding After Its Q3 Miss: Why Piper Sandler Still Sees 30% Upside",
+        "url": "https://www.tikr.com/blog/shopify-keeps-sliding-after-its-q3-miss-why-piper-sandler-still-sees-30-upside?ref=yahoofinance&tlnk=yf-261125-ch439v4q&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 05:06 ET",
+        "pub_ts": 1795601210.0
+      },
+      {
+        "title": "Market Chatter: Google Ends ABC Deal Amid Australian Media Funding Retreat",
+        "url": "https://finance.yahoo.com/media-advertising/articles/market-chatter-google-ends-abc-094828413.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 04:48 ET",
+        "pub_ts": 1795600108.0
+      },
+      {
         "title": "Asia's AI race heads offshore with launch of Floating Data Centres in Singapore",
         "url": "https://finance.yahoo.com/technology/ai/articles/asias-ai-race-heads-offshore-085300682.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1226,20 +1240,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 03:00 ET",
         "pub_ts": 1795593600.0
-      },
-      {
-        "title": "Alphabet Has $251 Billion Invested In 2 of Its Biggest Artificial Intelligence Partners",
-        "url": "https://www.fool.com/investing/2026/11/25/alphabet-has-251-billion-invested-in-2-of-its-biggest-artificial-intelligence-partners/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 02:29 ET",
-        "pub_ts": 1795591742.0
-      },
-      {
-        "title": "AI Concerns Resurface? ORCL, GOOGL, SPCX, CRWV Credit Default Swap Spreads Hit Records As NVDA, ANT Tumble",
-        "url": "https://stocktwits.com/news-articles/markets/equity/ai-concerns-resurface-orcl-googl-spcx-crwv-credit-default-swap-spreads-hit-records-as-nvda-ant-tumble/cNbHEEAR9lZ?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 01:56 ET",
-        "pub_ts": 1795589778.0
       }
     ],
     "MSFT": [
@@ -2493,11 +2493,11 @@
         "pub_ts": 1795582860.0
       },
       {
-        "title": "South Korea's chipmakers rally on Huang's return",
-        "url": "http://www.intellinews.com/south-korea-s-chipmakers-rally-on-huang-s-return-488025/?.tsrc=rss",
+        "title": "Global stocks are mixed as AI shares tumble after a retreat on Wall Street",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/asian-stocks-mostly-decline-ai-040526833.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 22:21 ET",
-        "pub_ts": 1795576883.0
+        "time": "11-24 23:05 ET",
+        "pub_ts": 1795579526.0
       }
     ],
     "WDC": [
@@ -3327,45 +3327,45 @@
   "ticker_news_ts": {
     "KORU": 1795601402.4971905,
     "SOXL": 1795601402.4971905,
-    "SPY": 1795600239.150987,
+    "SPY": 1795601781.5206966,
     "DIA": 1795601402.4971905,
     "SOXX": 1795601402.4971905,
     "QQQ": 1795601402.4971905,
-    "SMH": 1795600239.150987,
+    "SMH": 1795601781.5206966,
     "IWM": 1795601402.4971905,
     "IGV": 1795601402.4971905,
     "TLT": 1795601402.4971905,
     "GLD": 1795601402.4971905,
     "SQQQ": 1795601402.4971905,
-    "TSM": 1795600239.150987,
+    "TSM": 1795601781.5206966,
     "VIXY": 1795601402.4971905,
     "SOXS": 1795601402.4971905,
     "NVDA": 1795601402.4971905,
     "AMD": 1795601402.4971905,
-    "ASML": 1795600239.150987,
-    "QCOM": 1795600239.150987,
+    "ASML": 1795601781.5206966,
+    "QCOM": 1795601781.5206966,
     "AVGO": 1795601402.4971905,
-    "AMAT": 1795600239.150987,
-    "META": 1795600239.150987,
-    "GOOGL": 1795600239.150987,
-    "MSFT": 1795600239.150987,
-    "AAPL": 1795600239.150987,
-    "PLTR": 1795600239.150987,
-    "NOW": 1795600239.150987,
-    "AMZN": 1795600239.150987,
-    "CRWV": 1795600239.150987,
-    "NBIS": 1795600239.150987,
+    "AMAT": 1795601781.5206966,
+    "META": 1795601781.5206966,
+    "GOOGL": 1795601781.5206966,
+    "MSFT": 1795601781.5206966,
+    "AAPL": 1795601781.5206966,
+    "PLTR": 1795601781.5206966,
+    "NOW": 1795601781.5206966,
+    "AMZN": 1795601781.5206966,
+    "CRWV": 1795601781.5206966,
+    "NBIS": 1795601781.5206966,
     "APLD": 1795600957.8988295,
     "VST": 1795600957.8988295,
     "BE": 1795600957.8988295,
     "CRDO": 1795600957.8988295,
     "COHR": 1795600957.8988295,
-    "MRVL": 1795600239.150987,
-    "LITE": 1795600239.150987,
+    "MRVL": 1795601781.5206966,
+    "LITE": 1795601781.5206966,
     "AAOI": 1795600957.8988295,
     "SPCX": 1795600957.8988295,
     "ASTS": 1795600957.8988295,
-    "AXTI": 1795600239.150987,
+    "AXTI": 1795601781.5206966,
     "NASA": 1795600957.8988295,
     "LUNR": 1795600957.8988295,
     "TSLA": 1795601054.3531795,
@@ -3380,8 +3380,8 @@
     "OKLO": 1795601054.3531795,
     "CEG": 1795601054.3531795,
     "FPS": 1795601054.3531795,
-    "MU": 1795600239.150987,
-    "SKHY": 1795600239.150987,
+    "MU": 1795601781.5206966,
+    "SKHY": 1795601781.5206966,
     "WDC": 1795600390.9620707,
     "STX": 1795601054.3531795,
     "MSTR": 1795601054.3531795,
@@ -3400,11 +3400,11 @@
     "WMT": 1795601155.8149989,
     "V": 1795601054.3531795,
     "CAT": 1795601155.8149989,
-    "FN": 1795600239.150987,
+    "FN": 1795601781.5206966,
     "GLW": 1795600957.8988295,
     "ANT": 1795601155.8149989,
     "XAUUSD": 1795601155.8149989,
-    "KOSPI": 1795600239.150987
+    "KOSPI": 1795601781.5206966
   },
   "opex_shield": {
     "date": "2026-11-25",
@@ -3422,10 +3422,10 @@
   },
   "calendar_banner": {
     "level": "upcoming",
-    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 195 分钟（11-25 08:30 ET / 22:30 KST）",
+    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 194 分钟（11-25 08:30 ET / 22:30 KST）",
     "detail": "前值 0.3% ｜ 预期 0.3% ｜ 临近公布前15分钟将自动触发防插针预警",
     "event_name": "美国10月核心PCE物价指数环比",
-    "minutes_left": 195,
+    "minutes_left": 194,
     "opex_shield": {
       "date": "2026-11-25",
       "active": false,
