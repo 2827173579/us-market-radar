@@ -214,6 +214,7 @@ FINNHUB_API_KEY = os.environ.get("FINNHUB_API_KEY", "").strip()
 PUSHPLUS_TOKEN = os.environ.get("PUSHPLUS_TOKEN", "").strip()
 PUSHPLUS_CHANNEL = os.environ.get("PUSHPLUS_CHANNEL", "clawbot").strip()
 DISCORD_CLAW_WEBHOOK_URL = os.environ.get("DISCORD_CLAW_WEBHOOK_URL", "").strip()
+DISCORD_COPY_TRADE_WEBHOOK_URL = os.environ.get("DISCORD_COPY_TRADE_WEBHOOK_URL", "").strip()
 DISCORD_DEFENSIVE_FLIGHT_WEBHOOK_URL = os.environ.get(
     "DISCORD_DEFENSIVE_FLIGHT_WEBHOOK_URL",
     ""
@@ -223,6 +224,28 @@ DISCORD_DEFENSIVE_FLIGHT_WEBHOOK_URL = os.environ.get(
 def get_claw_webhook_url():
     """买点/止损唯一来源：DISCORD_CLAW_WEBHOOK_URL，缺失返回空。"""
     return os.environ.get("DISCORD_CLAW_WEBHOOK_URL", "").strip()
+
+
+def get_copy_trade_webhook_url():
+    """双轨模拟跟单专属频道：优先 DISCORD_COPY_TRADE_WEBHOOK_URL，未配置时回退至 DISCORD_CLAW_WEBHOOK_URL。"""
+    return (
+        os.environ.get("DISCORD_COPY_TRADE_WEBHOOK_URL", "").strip()
+        or get_claw_webhook_url()
+    )
+
+
+def send_discord_copy_trade_alert(title, markdown_content, dedupe_key=None, dedupe_max_age=86400, color_override=None):
+    """仅路由 V5.4 / V5.5.1 模拟跟单动仓提醒至专属频道（干跑模式硬拦截）。"""
+    if _external_alerts_disabled():
+        return False
+    return send_discord_claw_alert(
+        title=title,
+        markdown_content=markdown_content,
+        webhook_url=get_copy_trade_webhook_url(),
+        dedupe_key=dedupe_key,
+        dedupe_max_age=dedupe_max_age,
+        color_override=color_override,
+    )
 
 
 def get_defensive_webhook_url():
@@ -8591,9 +8614,7 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
                 _ct_live_quotes[str(_s_ct["ticker"]).upper()] = _s_ct
         _ct_is_dry = _external_alerts_disabled()
         def _ct_send_alert(_title, _body, _dkey, _clr):
-            if _external_alerts_disabled():
-                return False
-            return send_discord_claw_alert(
+            return send_discord_copy_trade_alert(
                 title=_title,
                 markdown_content=_body,
                 dedupe_key=_dkey,
@@ -8658,7 +8679,17 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
             session_code=session_code,
             market_session=session_code,
             dry_run=_ct_is_dry if "_ct_is_dry" in locals() else _external_alerts_disabled(),
-            alert_sender=(None if _external_alerts_disabled() else _ct_send_alert),
+            alert_sender=(
+                None
+                if _external_alerts_disabled()
+                else (lambda _t, _b, _k, _c: send_discord_copy_trade_alert(
+                    title=_t,
+                    markdown_content=_b,
+                    dedupe_key=_k,
+                    dedupe_max_age=86400,
+                    color_override=_c,
+                ))
+            ),
         )
         _kol_ldg = _kol_res.get("ledger") or {}
         print(

@@ -405,6 +405,57 @@ class TestCopyTradeKolEngineV551(unittest.TestCase):
             self.assertNotIn("建议股数", drawer)
             self.assertNotIn("\U0001fa99", drawer)
 
+    def test_08_copy_trade_webhook_routing_and_fallback(self):
+        """路由分流单测：配置 DISCORD_COPY_TRADE_WEBHOOK_URL 时走专属通道，未配置时回退原通道，干跑严格拦截。"""
+        from unittest import mock
+        import integrated_market_radar as imr
+
+        orig_copy = os.environ.get("DISCORD_COPY_TRADE_WEBHOOK_URL")
+        orig_claw = os.environ.get("DISCORD_CLAW_WEBHOOK_URL")
+        orig_dry = os.environ.get("RADAR_DISABLE_EXTERNAL_ALERTS")
+        try:
+            # 1) 配置专属 Webhook -> 走新通道，原买点频道不变
+            os.environ["DISCORD_CLAW_WEBHOOK_URL"] = "https://discord.com/api/webhooks/111/claw_default"
+            os.environ["DISCORD_COPY_TRADE_WEBHOOK_URL"] = "https://discord.com/api/webhooks/222/copy_only"
+            os.environ.pop("RADAR_DISABLE_EXTERNAL_ALERTS", None)
+            self.assertEqual(imr.get_copy_trade_webhook_url(), "https://discord.com/api/webhooks/222/copy_only")
+            self.assertEqual(imr.get_claw_webhook_url(), "https://discord.com/api/webhooks/111/claw_default")
+
+            with mock.patch.object(imr, "send_discord_claw_alert", return_value=True) as m_send:
+                ok = imr.send_discord_copy_trade_alert("测试标题", "测试内容", dedupe_key="k1", color_override=0x10B981)
+                self.assertTrue(ok)
+                m_send.assert_called_once_with(
+                    title="测试标题",
+                    markdown_content="测试内容",
+                    webhook_url="https://discord.com/api/webhooks/222/copy_only",
+                    dedupe_key="k1",
+                    dedupe_max_age=86400,
+                    color_override=0x10B981,
+                )
+
+            # 2) 未配置专属 Webhook -> 自动回退至原 DISCORD_CLAW_WEBHOOK_URL
+            os.environ["DISCORD_COPY_TRADE_WEBHOOK_URL"] = ""
+            self.assertEqual(imr.get_copy_trade_webhook_url(), "https://discord.com/api/webhooks/111/claw_default")
+            with mock.patch.object(imr, "send_discord_claw_alert", return_value=True) as m_fb:
+                imr.send_discord_copy_trade_alert("回退测试", "内容", dedupe_key="k2")
+                self.assertEqual(m_fb.call_args.kwargs["webhook_url"], "https://discord.com/api/webhooks/111/claw_default")
+
+            # 3) 干跑模式 -> 硬拦截零外发
+            os.environ["RADAR_DISABLE_EXTERNAL_ALERTS"] = "1"
+            with mock.patch.object(imr, "send_discord_claw_alert", return_value=True) as m_dry:
+                self.assertFalse(imr.send_discord_copy_trade_alert("干跑拦截", "内容", dedupe_key="k3"))
+                m_dry.assert_not_called()
+        finally:
+            for k, v in (
+                ("DISCORD_COPY_TRADE_WEBHOOK_URL", orig_copy),
+                ("DISCORD_CLAW_WEBHOOK_URL", orig_claw),
+                ("RADAR_DISABLE_EXTERNAL_ALERTS", orig_dry),
+            ):
+                if v is None:
+                    os.environ.pop(k, None)
+                else:
+                    os.environ[k] = v
+
 
 if __name__ == "__main__":
     unittest.main()
