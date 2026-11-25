@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795591057.167,
-  "updated_at_et": "11-25 02:17 ET",
-  "updated_at_kst": "16:17 KST",
+  "updated_at_ts": 1795591167.886,
+  "updated_at_et": "11-25 02:19 ET",
+  "updated_at_kst": "16:19 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -17,7 +17,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 373,
+      "minutes_left": 371,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -36,7 +36,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 373,
+      "minutes_left": 371,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -2647,6 +2647,20 @@
     ],
     "BTC-USD": [
       {
+        "title": "Bitcoin extends losses below $59,000 as ETF outflows weigh",
+        "url": "https://finance.yahoo.com/markets/crypto/articles/bitcoin-extends-losses-below-59-064934005.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 01:49 ET",
+        "pub_ts": 1795589374.0
+      },
+      {
+        "title": "Why Is Crypto Tokenization Booming on Wall Street While Bitcoin ETF Demand Shrinks?",
+        "url": "https://beincrypto.com/crypto-tokenization-booms-bitcoin-etf-demand/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 01:30 ET",
+        "pub_ts": 1795588200.0
+      },
+      {
         "title": "Bitcoin Miner Turned AI Landlord TeraWulf Says Selloff Hits Price, Not Demand",
         "url": "https://beincrypto.com/terawulf-ceo-tech-selloff-price-demand/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2666,20 +2680,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 00:19 ET",
         "pub_ts": 1795583980.0
-      },
-      {
-        "title": "Strategy (MSTR) Stock Trades At A Discount To Book Value",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/strategy-mstr-stock-trades-discount-020908385.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 21:09 ET",
-        "pub_ts": 1795572548.0
-      },
-      {
-        "title": "Ethereum treasury firm sells $43 million in Ether to repay debt",
-        "url": "https://www.thestreet.com/crypto/markets/ethereum-treasury-firm-sells-43-million-in-ether-to-repay-debt?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 21:00 ET",
-        "pub_ts": 1795572000.0
       }
     ],
     "CRWD": [
@@ -3379,11 +3379,11 @@
     "FPS": 1795590397.2905369,
     "MU": 1795591057.1673243,
     "SKHY": 1795591057.1673243,
-    "WDC": 1795589641.1200092,
+    "WDC": 1795591167.8857865,
     "STX": 1795590397.2905369,
     "MSTR": 1795590397.2905369,
     "SNDK": 1795590397.2905369,
-    "BTC-USD": 1795589641.1200092,
+    "BTC-USD": 1795591167.8857865,
     "CRWD": 1795590397.2905369,
     "ORCL": 1795590397.2905369,
     "COIN": 1795590397.2905369,
@@ -3419,10 +3419,10 @@
   },
   "calendar_banner": {
     "level": "upcoming",
-    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 373 分钟（11-25 08:30 ET / 22:30 KST）",
+    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 371 分钟（11-25 08:30 ET / 22:30 KST）",
     "detail": "前值 0.3% ｜ 预期 0.3% ｜ 临近公布前15分钟将自动触发防插针预警",
     "event_name": "美国10月核心PCE物价指数环比",
-    "minutes_left": 373,
+    "minutes_left": 371,
     "opex_shield": {
       "date": "2026-11-25",
       "active": false,
