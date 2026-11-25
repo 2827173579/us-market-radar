@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795622416.91,
-  "updated_at_et": "11-25 11:00 ET",
-  "updated_at_kst": "01:00 KST",
+  "updated_at_ts": 1795622462.236,
+  "updated_at_et": "11-25 11:01 ET",
+  "updated_at_kst": "01:01 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -43,6 +43,19 @@
     }
   ],
   "macro_flashes": [
+    {
+      "id": "20261126000000001800",
+      "title": "【今日重点关注的财经数据与事件：2026年11月26日 周四】 ① 待定 国内成品油开启…",
+      "summary": "【今日重点关注的财经数据与事件：2026年11月26日 周四】 ① 待定 国内成品油开启新一轮调价窗口 ② 01:00 美国至11月20日当周EIA天然气库存 ③ 02:00 美国至11月27日当周石油钻井总数 ④ 03:00 美联储公布经济状况褐皮书 ⑤ 09:00 中国10月Swift人民币在全球支付中占比 ⑥ 15:00 德国12月Gfk消费者信心指数 ⑦ 15:00 商务部召开11月第4次例行新闻发布会 ⑧ 20:30 欧洲央行公布10月货币政策会议纪要",
+      "keywords": [
+        "美联储"
+      ],
+      "pub_ts": 1795622400.0,
+      "time_et": "11-25 11:00 ET",
+      "time_bj": "00:00 BJ",
+      "time_kst": "01:00 KST",
+      "time_display": "11:00 ET / 00:00 BJ"
+    },
     {
       "id": "20261125233948242800",
       "title": "【纳斯达克100指数市值蒸发8.5万亿美元，距熊市仅一步之遥】 11月25日讯，随着市场…",
@@ -369,21 +382,6 @@
       "time_bj": "21:41 BJ",
       "time_kst": "22:41 KST",
       "time_display": "08:41 ET / 21:41 BJ"
-    },
-    {
-      "id": "20261125213838858800",
-      "title": "【PCE通胀加速升温，美联储下月无法避免加息】 11月25日讯，美联储青睐的通胀指标在1…",
-      "summary": "【PCE通胀加速升温，美联储下月无法避免加息】 11月25日讯，美联储青睐的通胀指标在10月再次上涨，且涨幅加快，这几乎意味着美联储下个月将加息。美国10月PCE物价指数环比上涨0.3%，符合华尔街预期。这推动PCE通胀年率从3.7%升至3.8%，达到近三年来的高位。过去六年多来，美国通胀率一直高于美联储2%的目标水平，给美国经济留下了难以消除的影响，也令家庭和企业感到沮丧。美联储10月暂缓加息，以便更清楚地了解物价走势，但通胀实际上进一步恶化。华尔街几乎一致预计，美联储将在12月中旬的会议上上调利率，并在明年年初再次加息。10月核心PCE价格指数也环比上涨0.3%，年率从3.1%升至3.3%。",
-      "keywords": [
-        "美联储",
-        "加息",
-        "PCE"
-      ],
-      "pub_ts": 1795613918.0,
-      "time_et": "11-25 08:38 ET",
-      "time_bj": "21:38 BJ",
-      "time_kst": "22:38 KST",
-      "time_display": "08:38 ET / 21:38 BJ"
     }
   ],
   "ticker_news": {
@@ -1980,6 +1978,13 @@
     ],
     "TSLA": [
       {
+        "title": "Tesla and SpaceX stocks sink as merger concerns mount",
+        "url": "https://finance.yahoo.com/markets/stocks/article/tesla-and-spacex-stocks-sink-as-merger-concerns-mount-154159372.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 10:41 ET",
+        "pub_ts": 1795621319.0
+      },
+      {
         "title": "‘Big Short’ investor snubs Tesla stock, echoes Buffett on $1,000 play",
         "url": "https://www.thestreet.com/investing/steve-eisman-snubs-tesla-stock-buffett-1000-sp500?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2006,13 +2011,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 07:11 ET",
         "pub_ts": 1795608672.0
-      },
-      {
-        "title": "Is Elon Musk More Systemically Important Than Jensen Huang?",
-        "url": "https://www.trefis.com/stock/tsla/articles/628207/is-elon-musk-more-systemically-important-than-jensen-huang/2026-11-25?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 06:27 ET",
-        "pub_ts": 1795606042.0
       }
     ],
     "AXP": [
@@ -2246,6 +2244,13 @@
         "pub_ts": 1795618146.0
       },
       {
+        "title": "Hewlett Packard Enterprise Lost 25% of Its Value Over 3 Months: One of The Biggest U.S. Banks Predicts 120% Gains Within 1 Year",
+        "url": "https://247wallst.com/investing/2026/11/25/hewlett-packard-enterprise-lost-25-of-its-value-over-3-months-one-of-the-biggest-u-s-banks-predicts-120-gains-within-1-year/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 10:45 ET",
+        "pub_ts": 1795621541.0
+      },
+      {
         "title": "Super Micro Falls 7% Despite Dell’s Record AI Server Backlog; Dell Drops 7% as Barclays Cuts Target to $344, Hewlett Packard Enterprise Slides 4%",
         "url": "https://247wallst.com/investing/2026/11/25/super-micro-falls-7-despite-dells-record-ai-server-backlog-dell-drops-7-as-barclays-cuts-target-to-344-hewlett-packard-enterprise-slides-4/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2260,21 +2265,21 @@
         "pub_ts": 1795616940.0
       },
       {
-        "title": "HPE Q4 Earnings Beat Estimates on Strong Server Demand",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/hpe-q4-earnings-beat-estimates-130300467.html?.tsrc=rss",
+        "title": "HPE Plunges Despite Raising the Bar for 2027",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/hpe-plunges-despite-raising-bar-142600515.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-25 08:03 ET",
-        "pub_ts": 1795611780.0
-      },
-      {
-        "title": "What Is Dragging HPE Stock Down?",
-        "url": "https://www.trefis.com/stock/hpe/articles/628967/what-is-dragging-hpe-stock-down/2026-11-25?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 06:57 ET",
-        "pub_ts": 1795607824.0
+        "time": "11-25 09:26 ET",
+        "pub_ts": 1795616760.0
       }
     ],
     "DELL": [
+      {
+        "title": "Dell crushes earnings estimates. Why is the atock falling?",
+        "url": "https://finance.yahoo.com/video/dell-crushes-earnings-estimates-why-is-the-atock-falling-155648716.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 10:56 ET",
+        "pub_ts": 1795622208.0
+      },
       {
         "title": "Dell stock is dropping despite AI demand pushing sales forecast higher",
         "url": "https://finance.yahoo.com/video/dell-stock-is-dropping-despite-ai-demand-pushing-sales-forecast-higher-142453283.html?.tsrc=rss",
@@ -2283,32 +2288,25 @@
         "pub_ts": 1795616693.0
       },
       {
-        "title": "Super Micro Falls 7% Despite Dell’s Record AI Server Backlog; Dell Drops 7% as Barclays Cuts Target to $344, Hewlett Packard Enterprise Slides 4%",
-        "url": "https://247wallst.com/investing/2026/11/25/super-micro-falls-7-despite-dells-record-ai-server-backlog-dell-drops-7-as-barclays-cuts-target-to-344-hewlett-packard-enterprise-slides-4/?.tsrc=rss",
+        "title": "Dell's Q3 Results, Commentary Suggest Profitability Remains Intact Entering Fiscal 2028, Morgan Stanley Says",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/dell-apos-q3-results-commentary-154217340.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-25 10:03 ET",
-        "pub_ts": 1795618989.0
+        "time": "11-25 10:42 ET",
+        "pub_ts": 1795621337.0
       },
       {
-        "title": "The $132B Backlog Paradox: Dell vs. Super Micro Computer in 2027",
-        "url": "https://247wallst.com/investing/2026/11/25/the-132b-backlog-paradox-dell-vs-super-micro-computer-in-2027/?.tsrc=rss",
+        "title": "Stock Market Today: Dow Slammed 800 Points; Dell Falls Hard Despite Big Earnings (Live Coverage)",
+        "url": "https://finance.yahoo.com/m/90407e46-3b17-34e8-8c82-527bf00b63e4/stock-market-today%3A-dow.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-25 08:45 ET",
-        "pub_ts": 1795614355.0
+        "time": "11-25 10:41 ET",
+        "pub_ts": 1795621302.0
       },
       {
-        "title": "5 Things Investors Need to Know About Wednesday’s Markets",
-        "url": "https://www.investopedia.com/5-things-to-know-stock-market-november-25-2026-12276784?.tsrc=rss",
+        "title": "Dell's AI Business Just Delivered a $132 Billion Wake-Up Call",
+        "url": "https://finance.yahoo.com/technology/ai/articles/dells-ai-business-just-delivered-151641836.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-25 08:38 ET",
-        "pub_ts": 1795613900.0
-      },
-      {
-        "title": "Dell Stock Gets Slew Of Price Target Cuts After 'Very Strong' Quarter On AI Buildout Worries",
-        "url": "https://stocktwits.com/news-articles/markets/equity/dell-stock-gets-slew-of-price-target-cuts-after-very-strong-quarter-on-ai-buildout-worries/cNbHiwbR9mg?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 08:36 ET",
-        "pub_ts": 1795613809.0
+        "time": "11-25 10:16 ET",
+        "pub_ts": 1795619801.0
       }
     ],
     "OKLO": [
@@ -2616,32 +2614,32 @@
         "pub_ts": 1795614318.0
       },
       {
+        "title": "Alphabet Falls 4% on AI Credit Fears as Strategist Warns Capex Is “As Good as It Gets”",
+        "url": "https://www.tikr.com/blog/alphabet-falls-4-on-ai-credit-fears-as-strategist-warns-capex-is-as-good-as-it-gets?ref=yahoofinance&tlnk=yf-261125-pwcg7rgj&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 10:39 ET",
+        "pub_ts": 1795621167.0
+      },
+      {
+        "title": "Why Sandisk Stock Just Dropped Again",
+        "url": "https://www.fool.com/investing/2026/11/25/why-sandisk-stock-just-dropped-again/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 10:36 ET",
+        "pub_ts": 1795621004.0
+      },
+      {
+        "title": "Amazon Sinks 6%, Sandisk Down 12% as AI Selloff Deepens: Bear Calls AI “Greatest Misallocation of Capital”",
+        "url": "https://www.tikr.com/blog/amazon-sinks-6-sandisk-down-12-as-ai-selloff-deepens-bear-calls-ai-greatest-misallocation-of-capital?ref=yahoofinance&tlnk=yf-261125-hq93vmx9&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 10:29 ET",
+        "pub_ts": 1795620540.0
+      },
+      {
         "title": "Micron Falls 7% as a Weaker DRAM Outlook and New Tariffs Hit Memory Stocks; SanDisk Drops 7%: Are Micron and Memory Stocks Now a Value Play?",
         "url": "https://247wallst.com/investing/2026/11/25/micron-falls-7-as-a-weaker-dram-outlook-and-new-tariffs-hit-memory-stocks-sandisk-drops-7-are-micron-and-memory-stocks-now-a-value-play/?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-25 09:13 ET",
         "pub_ts": 1795615991.0
-      },
-      {
-        "title": "AMD, Micron and Sandisk Stocks Slide as AI Spending Fears Deepen",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/amd-micron-sandisk-stocks-slide-122728877.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 07:27 ET",
-        "pub_ts": 1795609648.0
-      },
-      {
-        "title": "Sandisk (SNDK) Shares Dropped, So What Is Driving Attention Now?",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/sandisk-sndk-shares-dropped-driving-121239819.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 07:12 ET",
-        "pub_ts": 1795608759.0
-      },
-      {
-        "title": "Tradr to Launch Six New Leveraged ETFs",
-        "url": "https://finance.yahoo.com/markets/options/articles/tradr-launch-six-leveraged-etfs-114600732.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 06:46 ET",
-        "pub_ts": 1795607160.0
       }
     ],
     "BTC-USD": [
@@ -2852,21 +2850,28 @@
         "pub_ts": 1795604739.0
       },
       {
+        "title": "ArriVent (AVBP) Stock Is Down 8.7% Today Amid Broad Market Selloff",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/arrivent-avbp-stock-down-8-153018078.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 10:30 ET",
+        "pub_ts": 1795620618.0
+      },
+      {
         "title": "Will 'Anti-Pharma' Democrats Chop Away At Biotech Stocks' Big Wins?",
         "url": "https://finance.yahoo.com/m/d110ac3d-b2ba-3c8d-8f15-274f2cd95b50/will-%27anti-pharma%27-democrats.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-24 16:16 ET",
         "pub_ts": 1795555004.0
-      },
-      {
-        "title": "Immunome (IMNM) Stock Is Up 13.8% Today Without Company News",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/immunome-imnm-stock-13-8-210119724.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 16:01 ET",
-        "pub_ts": 1795554079.0
       }
     ],
     "NKE": [
+      {
+        "title": "Why Nike's Perfect Comeback Isn't Working",
+        "url": "https://thehustle.videonest.co/videos/2367511/why-nike-s-perfect-comeback-isn-t-working-F-EfqW8p5e?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 10:32 ET",
+        "pub_ts": 1795620743.0
+      },
       {
         "title": "Nike And Under Armour Stocks Are Down More Than 40%. What Will Black Friday Cost Them?",
         "url": "https://www.trefis.com/stock/nke/articles/627535/nike-and-under-armour-stocks-are-down-more-than-40-what-will-black-friday-cost-them/2026-11-25?.tsrc=rss",
@@ -2894,13 +2899,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 15:45 ET",
         "pub_ts": 1795553140.0
-      },
-      {
-        "title": "Nike Soars 6% as Competitor Calls US Foot Locker “A Particular Bright Spot”",
-        "url": "https://www.tikr.com/blog/nike-soars-6-as-competitor-calls-us-foot-locker-a-particular-bright-spot?ref=yahoofinance&tlnk=yf-261124-5cjqgw7j&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 13:57 ET",
-        "pub_ts": 1795546636.0
       }
     ],
     "MCD": [
@@ -3364,37 +3362,37 @@
     "AXTI": 1795621672.9571495,
     "NASA": 1795622325.1323829,
     "LUNR": 1795622325.1323829,
-    "TSLA": 1795620925.3122756,
+    "TSLA": 1795622462.2364194,
     "AXP": 1795622325.1323829,
     "RKLB": 1795622325.1323829,
     "KO": 1795622325.1323829,
     "FLY": 1795622325.1323829,
     "INTC": 1795622325.1323829,
-    "VRT": 1795620925.3122756,
-    "HPE": 1795620925.3122756,
-    "DELL": 1795620925.3122756,
-    "OKLO": 1795620925.3122756,
-    "CEG": 1795620925.3122756,
-    "FPS": 1795620925.3122756,
+    "VRT": 1795622462.2364194,
+    "HPE": 1795622462.2364194,
+    "DELL": 1795622462.2364194,
+    "OKLO": 1795622462.2364194,
+    "CEG": 1795622462.2364194,
+    "FPS": 1795622462.2364194,
     "MU": 1795621719.9960723,
     "SKHY": 1795621719.9960723,
     "WDC": 1795621761.150073,
     "STX": 1795620976.770416,
-    "MSTR": 1795620925.3122756,
-    "SNDK": 1795620925.3122756,
+    "MSTR": 1795622462.2364194,
+    "SNDK": 1795622462.2364194,
     "BTC-USD": 1795621761.150073,
-    "CRWD": 1795620925.3122756,
-    "ORCL": 1795620925.3122756,
-    "COIN": 1795620925.3122756,
-    "LLY": 1795620925.3122756,
-    "MRNA": 1795620925.3122756,
-    "NKE": 1795620925.3122756,
-    "MCD": 1795620925.3122756,
+    "CRWD": 1795622462.2364194,
+    "ORCL": 1795622462.2364194,
+    "COIN": 1795622462.2364194,
+    "LLY": 1795622462.2364194,
+    "MRNA": 1795622462.2364194,
+    "NKE": 1795622462.2364194,
+    "MCD": 1795622462.2364194,
     "PEP": 1795621021.3160977,
     "XOM": 1795621021.3160977,
     "JPM": 1795621021.3160977,
     "WMT": 1795621021.3160977,
-    "V": 1795620925.3122756,
+    "V": 1795622462.2364194,
     "CAT": 1795621021.3160977,
     "FN": 1795621719.9960723,
     "GLW": 1795622325.1323829,
