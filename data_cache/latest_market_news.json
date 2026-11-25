@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795570317.067,
-  "updated_at_et": "11-24 20:31 ET",
-  "updated_at_kst": "10:31 KST",
+  "updated_at_ts": 1795570468.875,
+  "updated_at_et": "11-24 20:34 ET",
+  "updated_at_kst": "10:34 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -920,8 +920,15 @@
         "title": "Dow Jones Futures Fall After AI Stocks Tumble; Trump Says 'Not Too Late' For Nvidia Stake",
         "url": "https://finance.yahoo.com/m/d96603c1-fe7f-3bf3-8158-0728b464d469/dow-jones-futures-fall-after.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-24 20:01 ET",
-        "pub_ts": 1795568466.0
+        "time": "11-24 20:23 ET",
+        "pub_ts": 1795569785.0
+      },
+      {
+        "title": "Trump Says Inflation Could Help Pay Down the National Debt. Here's What That Means for Your Retirement Savings",
+        "url": "https://www.fool.com/investing/2026/11/24/trump-says-inflation-could-help-pay-down-the-national-debt-here-s-what-that-means-for-your-retirement-savings/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 20:20 ET",
+        "pub_ts": 1795569602.0
       },
       {
         "title": "Market Chatter: California AG Bonta to Press Nvidia Probe, Criticizes Federal Handling",
@@ -943,13 +950,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 19:41 ET",
         "pub_ts": 1795567300.0
-      },
-      {
-        "title": "5 questions Nvidia still faces after bringing back Jensen Huang",
-        "url": "https://www.cbsnews.com/news/nvidia-jensen-huang-challenges/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 19:33 ET",
-        "pub_ts": 1795566787.0
       }
     ],
     "AMD": [
@@ -3294,26 +3294,26 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795568947.4533343,
-    "SOXL": 1795568947.4533343,
+    "KORU": 1795570468.8745978,
+    "SOXL": 1795570468.8745978,
     "SPY": 1795569354.8487291,
-    "DIA": 1795568947.4533343,
-    "SOXX": 1795568947.4533343,
-    "QQQ": 1795568947.4533343,
+    "DIA": 1795570468.8745978,
+    "SOXX": 1795570468.8745978,
+    "QQQ": 1795570468.8745978,
     "SMH": 1795569354.8487291,
-    "IWM": 1795568947.4533343,
-    "IGV": 1795568947.4533343,
-    "TLT": 1795568947.4533343,
-    "GLD": 1795568947.4533343,
-    "SQQQ": 1795568947.4533343,
+    "IWM": 1795570468.8745978,
+    "IGV": 1795570468.8745978,
+    "TLT": 1795570468.8745978,
+    "GLD": 1795570468.8745978,
+    "SQQQ": 1795570468.8745978,
     "TSM": 1795569354.8487291,
-    "VIXY": 1795568947.4533343,
-    "SOXS": 1795568947.4533343,
-    "NVDA": 1795568947.4533343,
-    "AMD": 1795568947.4533343,
+    "VIXY": 1795570468.8745978,
+    "SOXS": 1795570468.8745978,
+    "NVDA": 1795570468.8745978,
+    "AMD": 1795570468.8745978,
     "ASML": 1795569354.8487291,
     "QCOM": 1795569354.8487291,
-    "AVGO": 1795568947.4533343,
+    "AVGO": 1795570468.8745978,
     "AMAT": 1795569354.8487291,
     "META": 1795569354.8487291,
     "GOOGL": 1795569354.8487291,
