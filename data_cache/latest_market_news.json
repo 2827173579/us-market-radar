@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795604424.546,
-  "updated_at_et": "11-25 06:00 ET",
-  "updated_at_kst": "20:00 KST",
+  "updated_at_ts": 1795604471.198,
+  "updated_at_et": "11-25 06:01 ET",
+  "updated_at_kst": "20:01 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -17,7 +17,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 150,
+      "minutes_left": 149,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -36,7 +36,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 150,
+      "minutes_left": 149,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -763,6 +763,13 @@
     ],
     "GLD": [
       {
+        "title": "Gold ETFs Lose $2.2 Billion in a Week, Their Fastest Exit Since June",
+        "url": "https://beincrypto.com/gold-etf-outflows-biggest-since-june/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 05:20 ET",
+        "pub_ts": 1795602022.0
+      },
+      {
         "title": "Own Gold As A Hedge? BND Rose More Often",
         "url": "https://www.trefis.com/stock/bnd/articles/627661/own-gold-as-a-hedge-bnd-rose-more-often/2026-11-23?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -789,13 +796,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 17:14 ET",
         "pub_ts": 1795472067.0
-      },
-      {
-        "title": "SPY And Gold Fell Together. Did Bonds Save 60/40?",
-        "url": "https://www.trefis.com/stock/spy/articles/627558/spy-and-gold-fell-together-did-bonds-save-60-40/2026-11-22?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 07:05 ET",
-        "pub_ts": 1795435547.0
       }
     ],
     "SQQQ": [
@@ -948,39 +948,39 @@
     ],
     "NVDA": [
       {
-        "title": "Stock market today: Dow, S&P 500, Nasdaq futures fall ahead of inflation data",
-        "url": "https://finance.yahoo.com/markets/live/stock-market-today-wednesday-november-25-dow-sp-500-nasdaq-pce-inflation-data-091428237.html?.tsrc=rss",
+        "title": "10 big money topics you might have to tackle over turkey: A Yahoo Finance guide to Nvidia, markets, and more",
+        "url": "https://finance.yahoo.com/markets/article/10-big-money-topics-you-might-have-to-tackle-over-turkey-a-yahoo-finance-guide-to-nvidia-markets-and-more-110000381.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-25 04:14 ET",
-        "pub_ts": 1795598068.0
+        "time": "11-25 06:00 ET",
+        "pub_ts": 1795604400.0
       },
       {
-        "title": "Nvidia stock stumbles again after Jensen Huang's spectacular comeback rally",
-        "url": "https://finance.yahoo.com/markets/stocks/article/nvidia-stock-stumbles-again-after-jensen-huangs-spectacular-comeback-rally-094741665.html?.tsrc=rss",
+        "title": "U.S. chip stocks extend losses premarket as AI spending concerns resurface",
+        "url": "https://finance.yahoo.com/technology/ai/articles/u-chip-stocks-extend-losses-104903644.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-25 04:47 ET",
-        "pub_ts": 1795600061.0
+        "time": "11-25 05:49 ET",
+        "pub_ts": 1795603743.0
       },
       {
-        "title": "Nvidia shares fall 5% premarket after Huang return rally wanes",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/nvidia-shares-fall-5-premarket-101944403.html?.tsrc=rss",
+        "title": "Nvidia scandal reveals cracks in US corporate governance",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/nvidia-scandal-reveals-cracks-us-104339315.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-25 05:19 ET",
-        "pub_ts": 1795601984.0
+        "time": "11-25 05:43 ET",
+        "pub_ts": 1795603419.0
       },
       {
-        "title": "Semiconductor Stocks Are Sinking. These 2 AI Chip Stocks Could Make You Richer on the Rebound.",
-        "url": "https://www.fool.com/investing/2026/11/25/semiconductor-stocks-are-sinking-these-2-ai-chip-stocks-could-make-you-richer-on-the-rebound/?.tsrc=rss",
+        "title": "Not Tesla. Not Nvidia. This \"Magnificent Seven\" Stock Could Be Overdue for a Big Rally.",
+        "url": "https://www.fool.com/investing/2026/11/25/not-tesla-nvidia-magnificent-seven-stock-big-rally/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-25 05:12 ET",
-        "pub_ts": 1795601522.0
+        "time": "11-25 05:25 ET",
+        "pub_ts": 1795602300.0
       },
       {
-        "title": "Jack Bogle Told Investors to Own the Market ‘Warts and All.’ Then Nvidia Soared 31% and Moved a 68-Year-Old’s $1 Million S&P 500 Index Fund by $16,000 in a Day",
-        "url": "https://247wallst.com/investing/2026/11/25/jack-bogle-told-investors-to-own-the-market-warts-and-all-then-nvidia-soared-31-and-moved-a-68-year-olds-1-million-sp-500-index-fund-by-16000-in-a-day/?.tsrc=rss",
+        "title": "Will Nvidia Stock Continue to Soar Now That Jensen Huang Is Back? Here Are the Bull and Bear Cases.",
+        "url": "https://www.fool.com/investing/2026/11/25/will-nvidia-stock-continue-to-soar-now-that-jensen-huang-is-back-here-are-the-bull-and-bear-cases/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-25 05:12 ET",
-        "pub_ts": 1795601520.0
+        "time": "11-25 05:22 ET",
+        "pub_ts": 1795602122.0
       }
     ],
     "AMD": [
@@ -990,6 +990,13 @@
         "source": "Yahoo Finance",
         "time": "11-24 16:45 ET",
         "pub_ts": 1795556758.0
+      },
+      {
+        "title": "U.S. chip stocks extend losses premarket as AI spending concerns resurface",
+        "url": "https://finance.yahoo.com/technology/ai/articles/u-chip-stocks-extend-losses-104903644.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 05:49 ET",
+        "pub_ts": 1795603743.0
       },
       {
         "title": "Billionaire David Tepper Dumped Appaloosa's Stake in AMD and Broadcom and Piled Into an Artificial Intelligence (AI) Stock Trading at 44x Forward Adjusted EPS",
@@ -1011,13 +1018,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 19:53 ET",
         "pub_ts": 1795568023.0
-      },
-      {
-        "title": "Why AMD Stock Fell Today",
-        "url": "https://www.fool.com/investing/2026/11/24/why-amd-stock-fell-today/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 18:25 ET",
-        "pub_ts": 1795562702.0
       }
     ],
     "ASML": [
@@ -3325,26 +3325,26 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795602938.653905,
-    "SOXL": 1795602938.653905,
+    "KORU": 1795604471.1982622,
+    "SOXL": 1795604471.1982622,
     "SPY": 1795603313.8519511,
-    "DIA": 1795602938.653905,
-    "SOXX": 1795602938.653905,
-    "QQQ": 1795602938.653905,
+    "DIA": 1795604471.1982622,
+    "SOXX": 1795604471.1982622,
+    "QQQ": 1795604471.1982622,
     "SMH": 1795603313.8519511,
-    "IWM": 1795602938.653905,
-    "IGV": 1795602938.653905,
-    "TLT": 1795602938.653905,
-    "GLD": 1795602938.653905,
-    "SQQQ": 1795602938.653905,
+    "IWM": 1795604471.1982622,
+    "IGV": 1795604471.1982622,
+    "TLT": 1795604471.1982622,
+    "GLD": 1795604471.1982622,
+    "SQQQ": 1795604471.1982622,
     "TSM": 1795603313.8519511,
-    "VIXY": 1795602938.653905,
-    "SOXS": 1795602938.653905,
-    "NVDA": 1795602938.653905,
-    "AMD": 1795602938.653905,
+    "VIXY": 1795604471.1982622,
+    "SOXS": 1795604471.1982622,
+    "NVDA": 1795604471.1982622,
+    "AMD": 1795604471.1982622,
     "ASML": 1795603313.8519511,
     "QCOM": 1795603313.8519511,
-    "AVGO": 1795602938.653905,
+    "AVGO": 1795604471.1982622,
     "AMAT": 1795603313.8519511,
     "META": 1795603313.8519511,
     "GOOGL": 1795603313.8519511,
@@ -3422,10 +3422,10 @@
   },
   "calendar_banner": {
     "level": "upcoming",
-    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 150 分钟（11-25 08:30 ET / 22:30 KST）",
+    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 149 分钟（11-25 08:30 ET / 22:30 KST）",
     "detail": "前值 0.3% ｜ 预期 0.3% ｜ 临近公布前15分钟将自动触发防插针预警",
     "event_name": "美国10月核心PCE物价指数环比",
-    "minutes_left": 150,
+    "minutes_left": 149,
     "opex_shield": {
       "date": "2026-11-25",
       "active": false,
