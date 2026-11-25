@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795585745.622,
-  "updated_at_et": "11-25 00:49 ET",
-  "updated_at_kst": "14:49 KST",
+  "updated_at_ts": 1795585854.602,
+  "updated_at_et": "11-25 00:50 ET",
+  "updated_at_kst": "14:50 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -17,7 +17,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 461,
+      "minutes_left": 460,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -36,7 +36,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 461,
+      "minutes_left": 460,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -2257,6 +2257,13 @@
         "pub_ts": 1795556449.0
       },
       {
+        "title": "Hewlett Packard Enterprise (HPE) Suddenly Loses Its Shine. What Went Wrong?",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/hewlett-packard-enterprise-hpe-suddenly-053159181.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 00:31 ET",
+        "pub_ts": 1795584719.0
+      },
+      {
         "title": "Hewlett Packard Enterprise: 3 Key Takeaways for Long-Term Investors",
         "url": "https://www.fool.com/earnings/takeaways/2026/11/24/hewlett-packard-enterprise-3-key-takeaways-for-long-term-investors/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2269,16 +2276,16 @@
         "source": "Yahoo Finance",
         "time": "11-24 18:21 ET",
         "pub_ts": 1795562494.0
-      },
-      {
-        "title": "Dell Just Reported Earnings and Raised Its Forecast by $10 Billion. Is the Stock a Buy After Tuesday's Selloff?",
-        "url": "https://www.fool.com/investing/2026/11/24/dell-just-reported-earnings-and-raised-its-forecast-by-usd10-billion-is-the-stock-a-buy-after-tuesday-s-selloff/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 17:14 ET",
-        "pub_ts": 1795558483.0
       }
     ],
     "DELL": [
+      {
+        "title": "Dell Technologies: 3 Key Takeaways for Long-Term Investors",
+        "url": "https://www.fool.com/earnings/takeaways/2026/11/25/dell-technologies-3-key-takeaways-for-long-term-investors/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 00:29 ET",
+        "pub_ts": 1795584585.0
+      },
       {
         "title": "Dell (DELL) Q3 2027 Earnings Call Transcript",
         "url": "https://www.fool.com/earnings/call-transcripts/2026/11/24/dell-dell-q3-2027-earnings-call-transcript/?.tsrc=rss",
@@ -2306,13 +2313,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 21:26 ET",
         "pub_ts": 1795573586.0
-      },
-      {
-        "title": "Dell Technologies Q3 Earnings Call Highlights",
-        "url": "https://www.marketbeat.com/instant-alerts/transcript-dell-technologies-q3-earnings-call-highlights-2026-11-24/?utm_source=yahoofinance&utm_medium=yahoofinance&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 19:13 ET",
-        "pub_ts": 1795565616.0
       }
     ],
     "OKLO": [
@@ -2909,6 +2909,13 @@
     ],
     "MCD": [
       {
+        "title": "McDonald's (MCD), What Is Behind The Fresh Attention?",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/mcdonalds-mcd-behind-fresh-attention-051044318.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 00:10 ET",
+        "pub_ts": 1795583444.0
+      },
+      {
         "title": "Wendy’s has inflated prices for up to 10 years, lawsuit claims — weeks after McDonald's was accused of a similar scheme",
         "url": "https://finance.yahoo.com/markets/stocks/articles/wendy-inflated-prices-10-years-223000770.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2935,13 +2942,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 06:00 ET",
         "pub_ts": 1795518000.0
-      },
-      {
-        "title": "President Donald Trump's Investment Team Dumped McDonald's in September and Bought Up to $25 Million of a Time-Tested Dividend ETF",
-        "url": "https://www.fool.com/investing/2026/11/24/donald-trump-investment-team-dumped-mcdonalds-september-bought-25-million-time-tested-dividend-etf/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 04:26 ET",
-        "pub_ts": 1795512362.0
       }
     ],
     "PEP": [
@@ -3368,37 +3368,37 @@
     "AXTI": 1795585003.3110478,
     "NASA": 1795585745.622399,
     "LUNR": 1795585745.622399,
-    "TSLA": 1795584329.8376112,
+    "TSLA": 1795585854.6022894,
     "AXP": 1795585745.622399,
     "RKLB": 1795585745.622399,
     "KO": 1795585745.622399,
     "FLY": 1795585745.622399,
     "INTC": 1795585745.622399,
-    "VRT": 1795584329.8376112,
-    "HPE": 1795584329.8376112,
-    "DELL": 1795584329.8376112,
-    "OKLO": 1795584329.8376112,
-    "CEG": 1795584329.8376112,
-    "FPS": 1795584329.8376112,
+    "VRT": 1795585854.6022894,
+    "HPE": 1795585854.6022894,
+    "DELL": 1795585854.6022894,
+    "OKLO": 1795585854.6022894,
+    "CEG": 1795585854.6022894,
+    "FPS": 1795585854.6022894,
     "MU": 1795585003.3110478,
     "SKHY": 1795585003.3110478,
     "WDC": 1795585115.7463446,
-    "STX": 1795584329.8376112,
-    "MSTR": 1795584329.8376112,
-    "SNDK": 1795584329.8376112,
+    "STX": 1795585854.6022894,
+    "MSTR": 1795585854.6022894,
+    "SNDK": 1795585854.6022894,
     "BTC-USD": 1795585115.7463446,
-    "CRWD": 1795584329.8376112,
-    "ORCL": 1795584329.8376112,
-    "COIN": 1795584329.8376112,
-    "LLY": 1795584329.8376112,
-    "MRNA": 1795584329.8376112,
-    "NKE": 1795584329.8376112,
-    "MCD": 1795584329.8376112,
+    "CRWD": 1795585854.6022894,
+    "ORCL": 1795585854.6022894,
+    "COIN": 1795585854.6022894,
+    "LLY": 1795585854.6022894,
+    "MRNA": 1795585854.6022894,
+    "NKE": 1795585854.6022894,
+    "MCD": 1795585854.6022894,
     "PEP": 1795584441.006546,
     "XOM": 1795584441.006546,
     "JPM": 1795584441.006546,
     "WMT": 1795584441.006546,
-    "V": 1795584329.8376112,
+    "V": 1795585854.6022894,
     "CAT": 1795584441.006546,
     "FN": 1795585003.3110478,
     "GLW": 1795585745.622399,
@@ -3422,10 +3422,10 @@
   },
   "calendar_banner": {
     "level": "upcoming",
-    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 461 分钟（11-25 08:30 ET / 22:30 KST）",
+    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 460 分钟（11-25 08:30 ET / 22:30 KST）",
     "detail": "前值 0.3% ｜ 预期 0.3% ｜ 临近公布前15分钟将自动触发防插针预警",
     "event_name": "美国10月核心PCE物价指数环比",
-    "minutes_left": 461,
+    "minutes_left": 460,
     "opex_shield": {
       "date": "2026-11-25",
       "active": false,
