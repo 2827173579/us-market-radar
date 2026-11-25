@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795605701.77,
-  "updated_at_et": "11-25 06:21 ET",
-  "updated_at_kst": "20:21 KST",
+  "updated_at_ts": 1795605748.292,
+  "updated_at_et": "11-25 06:22 ET",
+  "updated_at_kst": "20:22 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -17,7 +17,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 129,
+      "minutes_left": 128,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -36,7 +36,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 129,
+      "minutes_left": 128,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -3020,6 +3020,13 @@
     ],
     "JPM": [
       {
+        "title": "JPMorgan Chase (JPM) Sees $92.2 Million in Net ETF Buying on Nov. 23",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/jpmorgan-chase-jpm-sees-92-110101868.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 06:01 ET",
+        "pub_ts": 1795604461.0
+      },
+      {
         "title": "This Nasdaq ETF Pays a 19% Yield Without Writing a Single Covered Call. Here’s How",
         "url": "https://247wallst.com/investing/etf/2026/11/24/this-nasdaq-etf-pays-a-19-yield-without-writing-a-single-covered-call-heres-how/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3046,22 +3053,29 @@
         "source": "Yahoo Finance",
         "time": "11-24 14:59 ET",
         "pub_ts": 1795550397.0
-      },
-      {
-        "title": "Bitcoin now counts as collateral: From the CFTC to the ECB",
-        "url": "https://finance.yahoo.com/video/bitcoin-now-counts-as-collateral-from-the-cftc-to-the-ecb-173702372.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 12:37 ET",
-        "pub_ts": 1795541822.0
       }
     ],
     "WMT": [
+      {
+        "title": "State Street Consumer Staples SPDR (XLP) Adds Walmart and Costco on Nov. 23",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/state-street-consumer-staples-spdr-110513471.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 06:05 ET",
+        "pub_ts": 1795604713.0
+      },
       {
         "title": "A Walton Beat the IRS in Tax Court in 2000. The Trust She Won With Is How Billionaires Now Pass Stock Gains to Their Kids With No Gift Tax",
         "url": "https://247wallst.com/personal-finance/2026/11/25/a-walton-beat-the-irs-in-tax-court-in-2000-the-trust-she-won-with-is-how-billionaires-now-pass-stock-gains-to-their-kids-with-no-gift-tax/?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-25 04:43 ET",
         "pub_ts": 1795599834.0
+      },
+      {
+        "title": "Walmart’s shopper base is shifting: High earners lead its gains as low-income shoppers turn to Amazon",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/walmart-shopper-shifting-high-earners-083200748.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 03:32 ET",
+        "pub_ts": 1795595520.0
       },
       {
         "title": "Symbotic: 3 Key Takeaways for Long-Term Investors",
@@ -3076,20 +3090,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 12:22 ET",
         "pub_ts": 1795540937.0
-      },
-      {
-        "title": "Symbotic Q4 Earnings Call Details Walmart Deal and Revenue Timing",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/symbotic-q4-earnings-call-details-161300983.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 11:13 ET",
-        "pub_ts": 1795536780.0
-      },
-      {
-        "title": "Consumer Mood Improves Into Holidays, But Risks Loom",
-        "url": "https://finance.yahoo.com/video/consumer-mood-improves-holidays-risks-160317427.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 11:03 ET",
-        "pub_ts": 1795536197.0
       }
     ],
     "V": [
@@ -3159,11 +3159,11 @@
         "pub_ts": 1795431807.0
       },
       {
-        "title": "3 Industrial Stocks Trading Above $500 a Share: Which One Splits First?",
-        "url": "https://www.fool.com/investing/2026/11/21/3-industrial-stocks-trading-above-500-a-share-which-one-splits-first-cat-fix-gev/?.tsrc=rss",
+        "title": "Deere Has More Than Doubled Its Dividend Since 2020, but the Raises Have Stopped",
+        "url": "https://247wallst.com/investing/2026/11/24/deere-has-more-than-doubled-its-dividend-since-2020-but-the-raises-have-stopped/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-21 22:30 ET",
-        "pub_ts": 1795318202.0
+        "time": "11-24 14:32 ET",
+        "pub_ts": 1795548771.0
       }
     ],
     "FN": [
@@ -3249,6 +3249,13 @@
         "pub_ts": 1795601358.0
       },
       {
+        "title": "Anthropic Stock Is 31% Below Its Day 1 High. What Should Long-Term Investors Do?",
+        "url": "https://www.fool.com/investing/2026/11/25/anthropic-stock-is-still-31-below-its-day-1-high-what-should-long-term-investors-do/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 06:05 ET",
+        "pub_ts": 1795604702.0
+      },
+      {
         "title": "AI Angst Undercuts Asian Stock Markets",
         "url": "https://finance.yahoo.com/markets/world-indices/articles/ai-angst-undercuts-asian-stock-104226080.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3256,25 +3263,18 @@
         "pub_ts": 1795603346.0
       },
       {
-        "title": "Anthropic launches Claude Ship beta to support developer workflows",
-        "url": "https://www.verdict.co.uk/anthropic-launches-claude-ship/?.tsrc=rss",
+        "title": "SpaceX Stock Has an Anthropic Problem",
+        "url": "https://finance.yahoo.com/m/b37dce27-5407-30bd-9314-29119ff5e24a/spacex-stock-has-an-anthropic.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-25 05:28 ET",
-        "pub_ts": 1795602530.0
+        "time": "11-25 05:37 ET",
+        "pub_ts": 1795603020.0
       },
       {
-        "title": "Prediction: Here’s What Anthropic’s Valuation Will Be in 2027, According to History",
-        "url": "https://www.fool.com/investing/2026/11/25/prediction-heres-what-anthropics-valuation-will-be-in-2027-according-to-history/?.tsrc=rss",
+        "title": "Nvidia Threw an AI Party. Anthropic Wasn’t Invited.",
+        "url": "https://finance.yahoo.com/m/a64f3329-85de-3f2e-b86f-53509e5e7627/nvidia-threw-an-ai-party..html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-25 03:58 ET",
-        "pub_ts": 1795597082.0
-      },
-      {
-        "title": "At what price is Anthropic stock a buy? Wall Street analysts and investors weigh in",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/price-anthropic-stock-buy-wall-080000180.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 03:00 ET",
-        "pub_ts": 1795593600.0
+        "time": "11-25 05:30 ET",
+        "pub_ts": 1795602600.0
       }
     ],
     "XAUUSD": [
@@ -3394,16 +3394,16 @@
     "MRNA": 1795605650.1484492,
     "NKE": 1795605650.1484492,
     "MCD": 1795605650.1484492,
-    "PEP": 1795604235.8684995,
-    "XOM": 1795604235.8684995,
-    "JPM": 1795604235.8684995,
-    "WMT": 1795604235.8684995,
+    "PEP": 1795605748.2915187,
+    "XOM": 1795605748.2915187,
+    "JPM": 1795605748.2915187,
+    "WMT": 1795605748.2915187,
     "V": 1795605650.1484492,
-    "CAT": 1795604235.8684995,
+    "CAT": 1795605748.2915187,
     "FN": 1795604837.8887246,
     "GLW": 1795605552.965205,
-    "ANT": 1795604235.8684995,
-    "XAUUSD": 1795604235.8684995,
+    "ANT": 1795605748.2915187,
+    "XAUUSD": 1795605748.2915187,
     "KOSPI": 1795604837.8887246
   },
   "opex_shield": {
@@ -3422,10 +3422,10 @@
   },
   "calendar_banner": {
     "level": "upcoming",
-    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 129 分钟（11-25 08:30 ET / 22:30 KST）",
+    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 128 分钟（11-25 08:30 ET / 22:30 KST）",
     "detail": "前值 0.3% ｜ 预期 0.3% ｜ 临近公布前15分钟将自动触发防插针预警",
     "event_name": "美国10月核心PCE物价指数环比",
-    "minutes_left": 129,
+    "minutes_left": 128,
     "opex_shield": {
       "date": "2026-11-25",
       "active": false,
