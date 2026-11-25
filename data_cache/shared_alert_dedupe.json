@@ -6959,9 +6959,33 @@
     "2026-11-25:DEFENSIVE_FLIGHT:+11.7": {
       "device": "PC",
       "ts": 1795617851.064703
+    },
+    "JIN10_FLASH:20261125224403308800": {
+      "device": "PC",
+      "ts": 1795617904.0195975
+    },
+    "KOL_OPEN:2026-11-25:KOL_META_SHORT_2026-11-25_1": {
+      "device": "PC",
+      "ts": 1795617941.9610384
+    },
+    "2026-11-25:INTRADAY_CORRIDOR:SPY:BELOW_P25": {
+      "device": "PC",
+      "ts": 1795617943.551189
+    },
+    "2026-11-25:INTRADAY_CORRIDOR:QQQ:BELOW_P25": {
+      "device": "PC",
+      "ts": 1795617944.527527
+    },
+    "JIN10_FLASH:20261125224514479800": {
+      "device": "PC",
+      "ts": 1795617945.21169
+    },
+    "2026-11-25:INTRADAY_CORRIDOR:SOXL:ABOVE_P75": {
+      "device": "PC",
+      "ts": 1795617945.261851
     }
   },
   "device": "PC",
-  "last_heartbeat_ts": 1795617872.6077213,
-  "updated_at": "2026-11-25T14:44:32.608272+00:00"
+  "last_heartbeat_ts": 1795617920.792457,
+  "updated_at": "2026-11-25T14:45:45.262410+00:00"
 }
