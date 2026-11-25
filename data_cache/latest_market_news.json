@@ -1,5 +1,5 @@
 {
-  "updated_at_ts": 1795611847.801,
+  "updated_at_ts": 1795611894.358,
   "updated_at_et": "11-25 08:04 ET",
   "updated_at_kst": "22:04 KST",
   "macro_calendar": [
@@ -3019,6 +3019,13 @@
     ],
     "JPM": [
       {
+        "title": "J.P. Morgan sees cost inflation limiting European staples upside in 2027",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/j-p-morgan-sees-cost-125859829.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 07:58 ET",
+        "pub_ts": 1795611539.0
+      },
+      {
         "title": "Market Chatter: JPMorgan Weighs Scaling Back UK Investments After Bank Tax Increase",
         "url": "https://finance.yahoo.com/economy/policy/articles/market-chatter-jpmorgan-weighs-scaling-115843710.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3045,13 +3052,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 17:15 ET",
         "pub_ts": 1795558502.0
-      },
-      {
-        "title": "Could Meta Actually Climb 30%? Or Is J.P. Morgan Totally Wrong?",
-        "url": "https://www.tikr.com/blog/could-meta-actually-climb-30-or-is-j-p-morgan-totally-wrong?ref=yahoofinance&tlnk=yf-261124-24hpvhqr&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 16:15 ET",
-        "pub_ts": 1795554957.0
       }
     ],
     "WMT": [
@@ -3248,32 +3248,32 @@
         "pub_ts": 1795608000.0
       },
       {
+        "title": "Jim Cramer Calls Anthropic “the Silent Killer of This Market”",
+        "url": "https://247wallst.com/investing/2026/11/25/jim-cramer-calls-anthropic-the-silent-killer-of-this-market/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 07:38 ET",
+        "pub_ts": 1795610327.0
+      },
+      {
+        "title": "Cathie Wood Buys $61.6 Million in Anthropic, Sells $21 Million in Meta and Palantir",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/cathie-wood-buys-61-6-123632406.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 07:36 ET",
+        "pub_ts": 1795610192.0
+      },
+      {
+        "title": "Anthropic, Nvidia, Dell, Workday, Deere, and More Stocks That Explain Today’s Market",
+        "url": "https://finance.yahoo.com/m/18e72c51-c6d7-33b1-aa90-ccce17a9b32f/anthropic%2C-nvidia%2C-dell%2C.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 07:15 ET",
+        "pub_ts": 1795608900.0
+      },
+      {
         "title": "GSK (LSE:GSK) Faces A New Risk As Its AI Supplier Turns Drug Rival",
         "url": "https://finance.yahoo.com/healthcare/articles/gsk-lse-gsk-faces-risk-121053588.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-25 07:10 ET",
         "pub_ts": 1795608653.0
-      },
-      {
-        "title": "Was Jensen’s $25M White House Donation ‘the Cheapest Put Option’ Ever Bought?",
-        "url": "https://unchainedcrypto.com/was-jensens-25m-white-house-donation-the-cheapest-put-option-ever-bought/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 07:00 ET",
-        "pub_ts": 1795608006.0
-      },
-      {
-        "title": "Broadcom Bought $1 Billion Worth of Anthropic’s IPO, and It Has Tens of Billions More Riding on Its Success.",
-        "url": "https://www.fool.com/investing/2026/11/25/broadcom-bought-1-billion-worth-of-anthropic-tens-of-billions-more-riding-on-its-success/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 06:20 ET",
-        "pub_ts": 1795605602.0
-      },
-      {
-        "title": "What's Happening To Anthropic Stock Below Its IPO Price",
-        "url": "https://www.trefis.com/stock/ant/articles/628750/what-s-happening-to-anthropic-stock-below-its-ipo-price/2026-11-25?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 06:14 ET",
-        "pub_ts": 1795605293.0
       }
     ],
     "XAUUSD": [
@@ -3393,16 +3393,16 @@
     "MRNA": 1795611797.1131556,
     "NKE": 1795611797.1131556,
     "MCD": 1795611797.1131556,
-    "PEP": 1795610357.9759705,
-    "XOM": 1795610357.9759705,
-    "JPM": 1795610357.9759705,
-    "WMT": 1795610357.9759705,
+    "PEP": 1795611894.357723,
+    "XOM": 1795611894.357723,
+    "JPM": 1795611894.357723,
+    "WMT": 1795611894.357723,
     "V": 1795611797.1131556,
-    "CAT": 1795610357.9759705,
+    "CAT": 1795611894.357723,
     "FN": 1795610980.8596852,
     "GLW": 1795611686.617976,
-    "ANT": 1795610357.9759705,
-    "XAUUSD": 1795610357.9759705,
+    "ANT": 1795611894.357723,
+    "XAUUSD": 1795611894.357723,
     "KOSPI": 1795610928.3699715
   },
   "opex_shield": {
