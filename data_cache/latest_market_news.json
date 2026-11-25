@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795617027.235,
-  "updated_at_et": "11-25 09:30 ET",
-  "updated_at_kst": "23:30 KST",
+  "updated_at_ts": 1795617077.123,
+  "updated_at_et": "11-25 09:31 ET",
+  "updated_at_kst": "23:31 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -1057,6 +1057,13 @@
         "pub_ts": 1795607911.0
       },
       {
+        "title": "A Fund With $3.2 Billion in US Equities Just Bought These 3 Stocks",
+        "url": "https://www.tikr.com/blog/a-fund-with-3-2-billion-in-us-equities-just-bought-these-3-stocks?ref=yahoofinance&tlnk=yf-261125-9vr3h8ww&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 06:28 ET",
+        "pub_ts": 1795606122.0
+      },
+      {
         "title": "ETFs Bought $75.2 Million of Qualcomm (QCOM) on Monday",
         "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-bought-75-2-million-110142939.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1076,13 +1083,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 12:49 ET",
         "pub_ts": 1795542560.0
-      },
-      {
-        "title": "Should Softer Guidance Require Action From Qualcomm Stock Investors",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/softer-guidance-require-action-qualcomm-171618113.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 12:16 ET",
-        "pub_ts": 1795540578.0
       }
     ],
     "AVGO": [
@@ -1161,6 +1161,13 @@
     ],
     "META": [
       {
+        "title": "Amazon and Meta reportedly in talks to lift blockade on AI agent Muse",
+        "url": "https://finance.yahoo.com/technology/ai/articles/amazon-meta-reportedly-talks-lift-141018682.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 09:10 ET",
+        "pub_ts": 1795615818.0
+      },
+      {
         "title": "Circus Enters the UK; Meta Launches CA-1 in London",
         "url": "https://finance.yahoo.com/technology/ai/articles/circus-enters-uk-meta-launches-133400578.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1187,13 +1194,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 07:36 ET",
         "pub_ts": 1795610192.0
-      },
-      {
-        "title": "Amazon, Meta Reportedly Discuss Restoring Muse Shopping Bot Access As Advertising Concerns Persist",
-        "url": "https://stocktwits.com/news-articles/markets/equity/amazon-meta-reportedly-discuss-restoring-muse-shopping-bot-access-as-advertising-concerns-persist/cNbHg4eR9m5?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 06:56 ET",
-        "pub_ts": 1795607779.0
       }
     ],
     "GOOGL": [
@@ -1235,6 +1235,13 @@
     ],
     "MSFT": [
       {
+        "title": "Artificial Intelligence (AI) in Hospital Operations Market Report 2026 | Capitalize on 28.9% CAGR as Microsoft, Oracle, Epic, LeanTaaS and Qventus Accelerate Workflow Automation",
+        "url": "https://finance.yahoo.com/healthcare/articles/artificial-intelligence-ai-hospital-operations-142000864.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 09:20 ET",
+        "pub_ts": 1795616400.0
+      },
+      {
         "title": "Data Center Americas 2027 Announces Industry Leaders from AWS, Google, Microsoft, Oracle, CoreWeave and Applied Digital as Featured Speakers",
         "url": "https://finance.yahoo.com/technology/ai/articles/data-center-americas-2027-announces-140000391.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1261,13 +1268,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 07:12 ET",
         "pub_ts": 1795608735.0
-      },
-      {
-        "title": "IBM and Microsoft expand Azure Compute Fleet integration",
-        "url": "https://www.verdict.co.uk/ibm-microsoft-azure-compute-fleet-integration/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 06:43 ET",
-        "pub_ts": 1795607017.0
       }
     ],
     "AAPL": [
@@ -1383,6 +1383,27 @@
     ],
     "AMZN": [
       {
+        "title": "Amazon’s CEO, CFO and AWS Chief All Just Sold Amazon Stock",
+        "url": "https://247wallst.com/investing/2026/11/25/amazons-ceo-cfo-and-aws-chief-all-just-sold-amazon-stock/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 09:13 ET",
+        "pub_ts": 1795616032.0
+      },
+      {
+        "title": "Amazon and Meta reportedly in talks to lift blockade on AI agent Muse",
+        "url": "https://finance.yahoo.com/technology/ai/articles/amazon-meta-reportedly-talks-lift-141018682.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 09:10 ET",
+        "pub_ts": 1795615818.0
+      },
+      {
+        "title": "In partnership with Amazon, Duracell Brings Holiday Magic to Chicago with Power Playland on the Pier",
+        "url": "https://finance.yahoo.com/media-advertising/articles/partnership-amazon-duracell-brings-holiday-140300229.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 09:03 ET",
+        "pub_ts": 1795615380.0
+      },
+      {
         "title": "Amazon to Launch Online Car Sales in UK in Early 2027",
         "url": "https://finance.yahoo.com/small-business/articles/amazon-launch-online-car-sales-130130091.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1395,27 +1416,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 07:54 ET",
         "pub_ts": 1795611269.0
-      },
-      {
-        "title": "Amazon Takes Car Shopping Abroad for the First Time",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/amazon-takes-car-shopping-abroad-123451773.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 07:34 ET",
-        "pub_ts": 1795610091.0
-      },
-      {
-        "title": "Is There A Risk Hiding In Amazon Stock's Growth Plan?",
-        "url": "https://www.trefis.com/stock/amzn/articles/628897/is-there-a-risk-hiding-in-amazon-stock-s-growth-plan/2026-11-25?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 06:57 ET",
-        "pub_ts": 1795607824.0
-      },
-      {
-        "title": "Amazon, Meta Reportedly Discuss Restoring Muse Shopping Bot Access As Advertising Concerns Persist",
-        "url": "https://stocktwits.com/news-articles/markets/equity/amazon-meta-reportedly-discuss-restoring-muse-shopping-bot-access-as-advertising-concerns-persist/cNbHg4eR9m5?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 06:56 ET",
-        "pub_ts": 1795607779.0
       }
     ],
     "CRWV": [
@@ -3318,34 +3318,34 @@
   "ticker_news_ts": {
     "KORU": 1795616665.8334134,
     "SOXL": 1795616665.8334134,
-    "SPY": 1795615533.4587028,
+    "SPY": 1795617077.1233678,
     "DIA": 1795616665.8334134,
     "SOXX": 1795616665.8334134,
     "QQQ": 1795616665.8334134,
-    "SMH": 1795615533.4587028,
+    "SMH": 1795617077.1233678,
     "IWM": 1795616665.8334134,
     "IGV": 1795616665.8334134,
     "TLT": 1795616665.8334134,
     "GLD": 1795616665.8334134,
     "SQQQ": 1795616665.8334134,
-    "TSM": 1795615533.4587028,
+    "TSM": 1795617077.1233678,
     "VIXY": 1795616665.8334134,
     "SOXS": 1795616665.8334134,
     "NVDA": 1795616665.8334134,
     "AMD": 1795616665.8334134,
-    "ASML": 1795615533.4587028,
-    "QCOM": 1795615533.4587028,
+    "ASML": 1795617077.1233678,
+    "QCOM": 1795617077.1233678,
     "AVGO": 1795616665.8334134,
-    "AMAT": 1795615533.4587028,
-    "META": 1795615533.4587028,
-    "GOOGL": 1795615533.4587028,
-    "MSFT": 1795615533.4587028,
-    "AAPL": 1795615533.4587028,
-    "PLTR": 1795615533.4587028,
-    "NOW": 1795615533.4587028,
-    "AMZN": 1795615533.4587028,
-    "CRWV": 1795615533.4587028,
-    "NBIS": 1795615533.4587028,
+    "AMAT": 1795617077.1233678,
+    "META": 1795617077.1233678,
+    "GOOGL": 1795617077.1233678,
+    "MSFT": 1795617077.1233678,
+    "AAPL": 1795617077.1233678,
+    "PLTR": 1795617077.1233678,
+    "NOW": 1795617077.1233678,
+    "AMZN": 1795617077.1233678,
+    "CRWV": 1795617077.1233678,
+    "NBIS": 1795617077.1233678,
     "APLD": 1795616271.1282868,
     "VST": 1795616271.1282868,
     "BE": 1795616271.1282868,
@@ -3356,7 +3356,7 @@
     "AAOI": 1795616271.1282868,
     "SPCX": 1795616271.1282868,
     "ASTS": 1795616271.1282868,
-    "AXTI": 1795615533.4587028,
+    "AXTI": 1795617077.1233678,
     "NASA": 1795616271.1282868,
     "LUNR": 1795616271.1282868,
     "TSLA": 1795616370.1130629,
@@ -3395,7 +3395,7 @@
     "GLW": 1795616271.1282868,
     "ANT": 1795616469.031574,
     "XAUUSD": 1795616469.031574,
-    "KOSPI": 1795615533.4587028
+    "KOSPI": 1795617077.1233678
   },
   "opex_shield": {
     "date": "2026-11-25",
