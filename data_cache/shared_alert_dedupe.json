@@ -6411,9 +6411,17 @@
     "2026-11-25:VXN_TECH_DELEVERAGING": {
       "device": "PC",
       "ts": 1795582848.5186849
+    },
+    "2026-11-25:NKE/CRWD:5M_ENTRY+STOP_LOSS": {
+      "device": "PC",
+      "ts": 1795583586.723687
+    },
+    "2026-11-25:DEFENSIVE_FLIGHT:+1.1": {
+      "device": "PC",
+      "ts": 1795583590.190462
     }
   },
   "device": "PC",
-  "last_heartbeat_ts": 1795583083.1116977,
-  "updated_at": "2026-11-25T05:04:43.112152+00:00"
+  "last_heartbeat_ts": 1795583499.909185,
+  "updated_at": "2026-11-25T05:13:10.190886+00:00"
 }

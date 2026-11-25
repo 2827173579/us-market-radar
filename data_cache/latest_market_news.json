@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795583159.181,
-  "updated_at_et": "11-25 00:05 ET",
-  "updated_at_kst": "14:05 KST",
+  "updated_at_ts": 1795583577.854,
+  "updated_at_et": "11-25 00:12 ET",
+  "updated_at_kst": "14:12 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -17,7 +17,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 505,
+      "minutes_left": 498,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -36,7 +36,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 505,
+      "minutes_left": 498,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -624,6 +624,13 @@
         "pub_ts": 1795518582.0
       },
       {
+        "title": "The Semiconductor ETF Kept Falling After Nvidia Raised Its Forecast. Time to Buy?",
+        "url": "https://www.fool.com/investing/2026/11/24/the-semiconductor-etf-kept-falling-after-nvidia-raised-its-forecast-time-to-buy/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 23:57 ET",
+        "pub_ts": 1795582622.0
+      },
+      {
         "title": "Micron Jumped 19% Monday, Then Sank Double Digits. Here’s What That Swing Means for SMH Holders",
         "url": "https://247wallst.com/investing/etf/2026/11/24/micron-jumped-19-monday-then-sank-double-digits-heres-what-that-swing-means-for-smh-holders/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -643,13 +650,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 22:23 ET",
         "pub_ts": 1795490635.0
-      },
-      {
-        "title": "S&P 500, Nasdaq End Best Session Since April Last Year On Optimism Led By Jensen Huang’s Reinstatement — NVDA, NASA, TTWO, AMZN In Focus",
-        "url": "https://stocktwits.com/news-articles/markets/equity/s-and-p-500-nasdaq-end-best-session-since-april-on-optimism-led-by-jensen-huang-s-reinstatement-nvda-nasa-ttwo-amzn-in-focus/cNbpKSnR9jY?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 18:33 ET",
-        "pub_ts": 1795476805.0
       }
     ],
     "IWM": [
@@ -1290,13 +1290,6 @@
         "pub_ts": 1795549511.0
       },
       {
-        "title": "Stocks give back gains as Anthropic dips below IPO price",
-        "url": "https://finance.yahoo.com/video/stocks-give-back-gains-as-anthropic-dips-below-ipo-price-154408548.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 10:44 ET",
-        "pub_ts": 1795535048.0
-      },
-      {
         "title": "Tech Keeps Eating Hollywood As Netflix Buys Historic Seinfeld Lot",
         "url": "https://finance.yahoo.com/m/34be458f-965e-30c4-8fb7-e730267a65a9/tech-keeps-eating-hollywood.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1316,6 +1309,13 @@
         "source": "Yahoo Finance",
         "time": "11-24 16:13 ET",
         "pub_ts": 1795554804.0
+      },
+      {
+        "title": "Top Analyst Reports for Apple, Philip Morris & Intel",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/top-analyst-reports-apple-philip-205300421.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 15:53 ET",
+        "pub_ts": 1795553580.0
       }
     ],
     "PLTR": [
@@ -3329,45 +3329,45 @@
   "ticker_news_ts": {
     "KORU": 1795582948.5684385,
     "SOXL": 1795582948.5684385,
-    "SPY": 1795581758.2286813,
+    "SPY": 1795583426.957599,
     "DIA": 1795582948.5684385,
     "SOXX": 1795582948.5684385,
     "QQQ": 1795582948.5684385,
-    "SMH": 1795581758.2286813,
+    "SMH": 1795583426.957599,
     "IWM": 1795582948.5684385,
     "IGV": 1795582948.5684385,
     "TLT": 1795582948.5684385,
     "GLD": 1795582948.5684385,
     "SQQQ": 1795582948.5684385,
-    "TSM": 1795581758.2286813,
+    "TSM": 1795583426.957599,
     "VIXY": 1795582948.5684385,
     "SOXS": 1795582948.5684385,
     "NVDA": 1795582948.5684385,
     "AMD": 1795582948.5684385,
-    "ASML": 1795581758.2286813,
-    "QCOM": 1795581758.2286813,
+    "ASML": 1795583426.957599,
+    "QCOM": 1795583426.957599,
     "AVGO": 1795582948.5684385,
-    "AMAT": 1795581758.2286813,
-    "META": 1795581758.2286813,
-    "GOOGL": 1795581758.2286813,
-    "MSFT": 1795581758.2286813,
-    "AAPL": 1795581758.2286813,
-    "PLTR": 1795581758.2286813,
-    "NOW": 1795581758.2286813,
-    "AMZN": 1795581758.2286813,
-    "CRWV": 1795581758.2286813,
-    "NBIS": 1795581758.2286813,
+    "AMAT": 1795583426.957599,
+    "META": 1795583426.957599,
+    "GOOGL": 1795583426.957599,
+    "MSFT": 1795583426.957599,
+    "AAPL": 1795583426.957599,
+    "PLTR": 1795583426.957599,
+    "NOW": 1795583426.957599,
+    "AMZN": 1795583426.957599,
+    "CRWV": 1795583426.957599,
+    "NBIS": 1795583426.957599,
     "APLD": 1795582616.512191,
     "VST": 1795582616.512191,
     "BE": 1795582616.512191,
     "CRDO": 1795582616.512191,
     "COHR": 1795582616.512191,
-    "MRVL": 1795581758.2286813,
-    "LITE": 1795581758.2286813,
+    "MRVL": 1795583426.957599,
+    "LITE": 1795583426.957599,
     "AAOI": 1795582616.512191,
     "SPCX": 1795582616.512191,
     "ASTS": 1795582616.512191,
-    "AXTI": 1795581758.2286813,
+    "AXTI": 1795583426.957599,
     "NASA": 1795582616.512191,
     "LUNR": 1795582616.512191,
     "TSLA": 1795582725.094201,
@@ -3382,13 +3382,13 @@
     "OKLO": 1795582725.094201,
     "CEG": 1795582725.094201,
     "FPS": 1795582725.094201,
-    "MU": 1795581758.2286813,
-    "SKHY": 1795581758.2286813,
-    "WDC": 1795581758.2286813,
+    "MU": 1795583426.957599,
+    "SKHY": 1795583426.957599,
+    "WDC": 1795583426.957599,
     "STX": 1795582725.094201,
     "MSTR": 1795582725.094201,
     "SNDK": 1795582725.094201,
-    "BTC-USD": 1795581758.2286813,
+    "BTC-USD": 1795583426.957599,
     "CRWD": 1795582725.094201,
     "ORCL": 1795582725.094201,
     "COIN": 1795582725.094201,
@@ -3402,11 +3402,11 @@
     "WMT": 1795582836.705383,
     "V": 1795582725.094201,
     "CAT": 1795582836.705383,
-    "FN": 1795581758.2286813,
+    "FN": 1795583426.957599,
     "GLW": 1795582616.512191,
     "ANT": 1795582836.705383,
     "XAUUSD": 1795582836.705383,
-    "KOSPI": 1795581758.2286813
+    "KOSPI": 1795583426.957599
   },
   "opex_shield": {
     "date": "2026-11-25",
@@ -3424,10 +3424,10 @@
   },
   "calendar_banner": {
     "level": "upcoming",
-    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 505 分钟（11-25 08:30 ET / 22:30 KST）",
+    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 498 分钟（11-25 08:30 ET / 22:30 KST）",
     "detail": "前值 0.3% ｜ 预期 0.3% ｜ 临近公布前15分钟将自动触发防插针预警",
     "event_name": "美国10月核心PCE物价指数环比",
-    "minutes_left": 505,
+    "minutes_left": 498,
     "opex_shield": {
       "date": "2026-11-25",
       "active": false,
