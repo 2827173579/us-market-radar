@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795613572.114,
-  "updated_at_et": "11-25 08:32 ET",
-  "updated_at_kst": "22:32 KST",
+  "updated_at_ts": 1795613625.83,
+  "updated_at_et": "11-25 08:33 ET",
+  "updated_at_kst": "22:33 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -585,18 +585,18 @@
         "pub_ts": 1795543833.0
       },
       {
+        "title": "Stock Market Today: Dow Dives Ahead Of Fed Inflation Data; Nvidia, Anthropic Plunge (Live Coverage)",
+        "url": "https://finance.yahoo.com/m/90407e46-3b17-34e8-8c82-527bf00b63e4/stock-market-today%3A-dow-dives.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 08:14 ET",
+        "pub_ts": 1795612444.0
+      },
+      {
         "title": "ETFs Are Net Sellers of Alphabet (GOOG) on Nov. 23",
         "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-net-sellers-alphabet-goog-110257127.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-25 06:02 ET",
         "pub_ts": 1795604577.0
-      },
-      {
-        "title": "ETFs Are Net Sellers of Palantir (PLTR) on Monday",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-net-sellers-palantir-pltr-110251086.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 06:02 ET",
-        "pub_ts": 1795604571.0
       }
     ],
     "SMH": [
@@ -941,11 +941,25 @@
         "pub_ts": 1795611600.0
       },
       {
+        "title": "Nvidia, chipmakers slide premarket; Dell falls despite upbeat outlook",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/nvidia-chipmakers-slide-premarket-dell-131630827.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 08:16 ET",
+        "pub_ts": 1795612590.0
+      },
+      {
+        "title": "Stock Market Today: Dow Dives Ahead Of Fed Inflation Data; Nvidia, Anthropic Plunge (Live Coverage)",
+        "url": "https://finance.yahoo.com/m/90407e46-3b17-34e8-8c82-527bf00b63e4/stock-market-today%3A-dow-dives.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 08:14 ET",
+        "pub_ts": 1795612444.0
+      },
+      {
         "title": "Dow Jones Futures Fall, Techs Dive; Trump Says 'Not Too Late' For U.S. To Take Nvidia Stake",
         "url": "https://finance.yahoo.com/m/d96603c1-fe7f-3bf3-8158-0728b464d469/dow-jones-futures-fall%2C-techs.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-25 08:05 ET",
-        "pub_ts": 1795611911.0
+        "time": "11-25 08:12 ET",
+        "pub_ts": 1795612363.0
       },
       {
         "title": "Market Chatter: Trump to Preside Over Taiwan Semiconductor Plant Expansion Ceremony in Arizona",
@@ -953,20 +967,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 08:04 ET",
         "pub_ts": 1795611876.0
-      },
-      {
-        "title": "3 Warning Signs as the AI Selloff Gets Ugly Again",
-        "url": "https://finance.yahoo.com/m/7eb3329d-ae1e-315a-9f67-0f5f86d8408c/3-warning-signs-as-the-ai.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 07:52 ET",
-        "pub_ts": 1795611120.0
-      },
-      {
-        "title": "Swiss franc safe-haven demand and USD/CHF technical outlook",
-        "url": "https://finance.yahoo.com/markets/currencies/articles/swiss-franc-safe-haven-demand-125135348.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 07:51 ET",
-        "pub_ts": 1795611095.0
       }
     ],
     "AMD": [
@@ -3311,26 +3311,26 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795612084.410426,
-    "SOXL": 1795612084.410426,
+    "KORU": 1795613625.8300643,
+    "SOXL": 1795613625.8300643,
     "SPY": 1795612468.2866437,
-    "DIA": 1795612084.410426,
-    "SOXX": 1795612084.410426,
-    "QQQ": 1795612084.410426,
+    "DIA": 1795613625.8300643,
+    "SOXX": 1795613625.8300643,
+    "QQQ": 1795613625.8300643,
     "SMH": 1795612468.2866437,
-    "IWM": 1795612084.410426,
-    "IGV": 1795612084.410426,
-    "TLT": 1795612084.410426,
-    "GLD": 1795612084.410426,
-    "SQQQ": 1795612084.410426,
+    "IWM": 1795613625.8300643,
+    "IGV": 1795613625.8300643,
+    "TLT": 1795613625.8300643,
+    "GLD": 1795613625.8300643,
+    "SQQQ": 1795613625.8300643,
     "TSM": 1795612468.2866437,
-    "VIXY": 1795612084.410426,
-    "SOXS": 1795612084.410426,
-    "NVDA": 1795612084.410426,
-    "AMD": 1795612084.410426,
+    "VIXY": 1795613625.8300643,
+    "SOXS": 1795613625.8300643,
+    "NVDA": 1795613625.8300643,
+    "AMD": 1795613625.8300643,
     "ASML": 1795612468.2866437,
     "QCOM": 1795612468.2866437,
-    "AVGO": 1795612084.410426,
+    "AVGO": 1795613625.8300643,
     "AMAT": 1795612468.2866437,
     "META": 1795612468.2866437,
     "GOOGL": 1795612468.2866437,
