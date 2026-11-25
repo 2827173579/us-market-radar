@@ -78,12 +78,12 @@
       "last_notified_at": 1795646842.0206292
     },
     "SPY": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1795648108.2671583
     },
     "DIA": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1795648108.2671583
     },
     "IWM": {
       "state": "WATCHLIST_ENTRY_READY",
