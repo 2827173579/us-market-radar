@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795604074.044,
-  "updated_at_et": "11-25 05:54 ET",
-  "updated_at_kst": "19:54 KST",
+  "updated_at_ts": 1795604121.536,
+  "updated_at_et": "11-25 05:55 ET",
+  "updated_at_kst": "19:55 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -17,7 +17,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 156,
+      "minutes_left": 155,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -36,7 +36,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 156,
+      "minutes_left": 155,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -2280,6 +2280,20 @@
     ],
     "DELL": [
       {
+        "title": "Dell stock tanks after blowout earnings. Wall Street Just Isn't Impressed.",
+        "url": "https://finance.yahoo.com/markets/stocks/article/dell-stock-tanks-after-blowout-earnings-wall-street-just-isnt-impressed-103036530.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 05:30 ET",
+        "pub_ts": 1795602636.0
+      },
+      {
+        "title": "U.S. chip stocks extend losses premarket as AI spending concerns resurface",
+        "url": "https://finance.yahoo.com/technology/ai/articles/u-chip-stocks-extend-losses-104903644.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 05:49 ET",
+        "pub_ts": 1795603743.0
+      },
+      {
         "title": "US Stock Futures Fall as AI Sector Volatility Returns Ahead of Key PCE Inflation Data: Dow Jones, S&P, Nasdaq, Wall Street",
         "url": "https://investorshub.advfn.com/market-news/article/40674/us-stock-futures-fall-as-ai-sector-volatility-returns-ahead-of-key-pce-inflation-data-dow-jones-sp-nasdaq-wall-street?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2299,20 +2313,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 02:30 ET",
         "pub_ts": 1795591820.0
-      },
-      {
-        "title": "Dell Technologies: 3 Key Takeaways for Long-Term Investors",
-        "url": "https://www.fool.com/earnings/takeaways/2026/11/25/dell-technologies-3-key-takeaways-for-long-term-investors/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 00:29 ET",
-        "pub_ts": 1795584585.0
-      },
-      {
-        "title": "Dell (DELL) Q3 2027 Earnings Call Transcript",
-        "url": "https://www.fool.com/earnings/call-transcripts/2026/11/24/dell-dell-q3-2027-earnings-call-transcript/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 23:13 ET",
-        "pub_ts": 1795579984.0
       }
     ],
     "OKLO": [
@@ -2576,6 +2576,13 @@
     ],
     "MSTR": [
       {
+        "title": "Michael Saylor Bought $100M In Bitcoin Before Strategy Did, Says The Man Who Convinced Him To Buy It — Now That Bet Is Around $589M",
+        "url": "https://stocktwits.com/news-articles/markets/equity/michael-saylor-100m-bitcoin-purchase-589m-bet/cNbHOY3R9lH?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 05:22 ET",
+        "pub_ts": 1795602143.0
+      },
+      {
         "title": "Dow, S&P 500, Nasdaq Futures Edge Lower Amid Tech Selloff Ahead Of Key Inflation Data: DELL, AMBA, SOXL, MSTR In Focus",
         "url": "https://stocktwits.com/news-articles/markets/equity/dow-s-and-p-500-nasdaq-futures-edge-lower-amid-tech-selloff-ahead-of-key-inflation-data-dell-amba-soxl-mstr-in-focus/cNbHbLoR9lJ?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2602,13 +2609,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 16:10 ET",
         "pub_ts": 1795554615.0
-      },
-      {
-        "title": "IRadimed Corporation (IRMD) Is Entering a Multi-Year Replacement Cycle: Could Its Next-Generation Pump Fuel Growth?",
-        "url": "https://finance.yahoo.com/healthcare/articles/iradimed-corporation-irmd-entering-multi-210038946.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 16:00 ET",
-        "pub_ts": 1795554038.0
       }
     ],
     "SNDK": [
@@ -3368,37 +3368,37 @@
     "AXTI": 1795603313.8519511,
     "NASA": 1795604022.5883892,
     "LUNR": 1795604022.5883892,
-    "TSLA": 1795602595.177179,
+    "TSLA": 1795604121.535901,
     "AXP": 1795604022.5883892,
     "RKLB": 1795604022.5883892,
     "KO": 1795604022.5883892,
     "FLY": 1795604022.5883892,
     "INTC": 1795604022.5883892,
-    "VRT": 1795602595.177179,
-    "HPE": 1795602595.177179,
-    "DELL": 1795602595.177179,
-    "OKLO": 1795602595.177179,
-    "CEG": 1795602595.177179,
-    "FPS": 1795602595.177179,
+    "VRT": 1795604121.535901,
+    "HPE": 1795604121.535901,
+    "DELL": 1795604121.535901,
+    "OKLO": 1795604121.535901,
+    "CEG": 1795604121.535901,
+    "FPS": 1795604121.535901,
     "MU": 1795603313.8519511,
     "SKHY": 1795603313.8519511,
     "WDC": 1795603460.6078935,
     "STX": 1795602595.177179,
-    "MSTR": 1795602595.177179,
-    "SNDK": 1795602595.177179,
+    "MSTR": 1795604121.535901,
+    "SNDK": 1795604121.535901,
     "BTC-USD": 1795603460.6078935,
-    "CRWD": 1795602595.177179,
-    "ORCL": 1795602595.177179,
-    "COIN": 1795602595.177179,
-    "LLY": 1795602595.177179,
-    "MRNA": 1795602595.177179,
-    "NKE": 1795602595.177179,
-    "MCD": 1795602595.177179,
+    "CRWD": 1795604121.535901,
+    "ORCL": 1795604121.535901,
+    "COIN": 1795604121.535901,
+    "LLY": 1795604121.535901,
+    "MRNA": 1795604121.535901,
+    "NKE": 1795604121.535901,
+    "MCD": 1795604121.535901,
     "PEP": 1795602704.5014818,
     "XOM": 1795602704.5014818,
     "JPM": 1795602704.5014818,
     "WMT": 1795602704.5014818,
-    "V": 1795602595.177179,
+    "V": 1795604121.535901,
     "CAT": 1795602704.5014818,
     "FN": 1795603313.8519511,
     "GLW": 1795604022.5883892,
@@ -3422,10 +3422,10 @@
   },
   "calendar_banner": {
     "level": "upcoming",
-    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 156 分钟（11-25 08:30 ET / 22:30 KST）",
+    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 155 分钟（11-25 08:30 ET / 22:30 KST）",
     "detail": "前值 0.3% ｜ 预期 0.3% ｜ 临近公布前15分钟将自动触发防插针预警",
     "event_name": "美国10月核心PCE物价指数环比",
-    "minutes_left": 156,
+    "minutes_left": 155,
     "opex_shield": {
       "date": "2026-11-25",
       "active": false,
