@@ -1,5 +1,5 @@
 {
-  "updated_at_ts": 1795639219.719,
+  "updated_at_ts": 1795639258.468,
   "updated_at_et": "11-25 15:40 ET",
   "updated_at_kst": "05:40 KST",
   "macro_calendar": [
@@ -2969,6 +2969,13 @@
     ],
     "XOM": [
       {
+        "title": "ExxonMobil (XOM) Stock Looks Cheap Against Future Cash Flow Estimates",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/exxonmobil-xom-stock-looks-cheap-201551703.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 15:15 ET",
+        "pub_ts": 1795637751.0
+      },
+      {
         "title": "Bad News for Exxon and Chevron: Goldman Sees Brent Falling “Roughly $10” Next Year on a Supply Glut",
         "url": "https://www.tikr.com/blog/bad-news-for-exxon-and-chevron-goldman-sees-brent-falling-roughly-10-next-year-on-a-supply-glut?ref=yahoofinance&tlnk=yf-261125-x55qr967&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2995,13 +3002,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 08:17 ET",
         "pub_ts": 1795612675.0
-      },
-      {
-        "title": "Your Exxon Dividend Needs Only About $59 Oil",
-        "url": "https://www.trefis.com/stock/xom/articles/628301/your-exxon-dividend-needs-only-about-59-oil/2026-11-24?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 12:33 ET",
-        "pub_ts": 1795541596.0
       }
     ],
     "JPM": [
@@ -3011,6 +3011,13 @@
         "source": "Yahoo Finance",
         "time": "11-25 11:05 ET",
         "pub_ts": 1795622724.0
+      },
+      {
+        "title": "12 Big Funds Bought JPMorgan Chase Last Quarter, While 12 Sold. Who’s Right?",
+        "url": "https://www.tikr.com/blog/12-big-funds-bought-jpmorgan-chase-last-quarter-while-12-sold-whos-right?ref=yahoofinance&tlnk=yf-261125-wgx95c2j&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 13:21 ET",
+        "pub_ts": 1795630860.0
       },
       {
         "title": "JPMorgan Sees S&P 500 At 8,200 In 2027 As AI Supercycle Remains Intact",
@@ -3032,13 +3039,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 09:16 ET",
         "pub_ts": 1795616193.0
-      },
-      {
-        "title": "J.P. Morgan sees cost inflation limiting European staples upside in 2027",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/j-p-morgan-sees-cost-125859829.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 07:58 ET",
-        "pub_ts": 1795611539.0
       }
     ],
     "WMT": [
@@ -3235,6 +3235,20 @@
         "pub_ts": 1795636997.0
       },
       {
+        "title": "Anthropic Broke Its $83 IPO Price. Most Giants Recovered",
+        "url": "https://www.trefis.com/stock/ant/articles/628871/anthropic-broke-its-83-ipo-price-most-giants-recovered/2026-11-25?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 15:16 ET",
+        "pub_ts": 1795637795.0
+      },
+      {
+        "title": "Anthropic PBC (ANT) Expanded Its Select Partner Program",
+        "url": "https://finance.yahoo.com/technology/ai/articles/anthropic-pbc-ant-expanded-select-201208866.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 15:12 ET",
+        "pub_ts": 1795637528.0
+      },
+      {
         "title": "Stock Market Today: Dow Reverses For 275-Point Gain; This Ad Firm Breaks Out (Live Coverage)",
         "url": "https://finance.yahoo.com/m/90407e46-3b17-34e8-8c82-527bf00b63e4/stock-market-today%3A-dow.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3242,25 +3256,11 @@
         "pub_ts": 1795636622.0
       },
       {
-        "title": "Anthropic's IPO Creates About 5,100 Paper Millionaires, With Hundreds Worth Over $100 Million",
-        "url": "https://www.ibtimes.com/anthropic-ipo-employee-millionaires-wealth-restrictions-3810189?.tsrc=rss",
+        "title": "Nvidia U-Turn Is Bad News For Anthropic, Says Parmy Olson",
+        "url": "https://finance.yahoo.com/video/nvidia-u-turn-bad-news-195302644.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-25 14:50 ET",
-        "pub_ts": 1795636233.0
-      },
-      {
-        "title": "Anthropic CEO pushes back on Axios reporting on AI and free will",
-        "url": "https://www.axios.com/2026/11/25/anthropic-dario-amodei-ai-free-will-contro-axios#utm_source=yahoo_finance&utm_medium=partner&utm_campaign=subs-partner-yahoo-finance-AI?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 14:28 ET",
-        "pub_ts": 1795634880.0
-      },
-      {
-        "title": "Is the Anthropic IPO to Blame for Bitcoin's Recent Downturn? The Answer Might Surprise You.",
-        "url": "https://www.fool.com/investing/2026/11/25/is-the-anthropic-ipo-to-blame-for-bitcoins-recent-downturn-the-answer-might-surprise-you/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 13:57 ET",
-        "pub_ts": 1795633021.0
+        "time": "11-25 14:53 ET",
+        "pub_ts": 1795636382.0
       }
     ],
     "XAUUSD": [
@@ -3380,16 +3380,16 @@
     "MRNA": 1795639174.5981371,
     "NKE": 1795639174.5981371,
     "MCD": 1795639174.5981371,
-    "PEP": 1795637753.5680225,
-    "XOM": 1795637753.5680225,
-    "JPM": 1795637753.5680225,
-    "WMT": 1795637753.5680225,
+    "PEP": 1795639258.4676147,
+    "XOM": 1795639258.4676147,
+    "JPM": 1795639258.4676147,
+    "WMT": 1795639258.4676147,
     "V": 1795639174.5981371,
-    "CAT": 1795637753.5680225,
+    "CAT": 1795639258.4676147,
     "FN": 1795638391.7112484,
     "GLW": 1795639012.0496514,
-    "ANT": 1795637753.5680225,
-    "XAUUSD": 1795637753.5680225,
+    "ANT": 1795639258.4676147,
+    "XAUUSD": 1795639258.4676147,
     "KOSPI": 1795638340.0437229
   },
   "opex_shield": {
