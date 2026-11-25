@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795608385.831,
-  "updated_at_et": "11-25 07:06 ET",
-  "updated_at_kst": "21:06 KST",
+  "updated_at_ts": 1795608437.623,
+  "updated_at_et": "11-25 07:07 ET",
+  "updated_at_kst": "21:07 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -17,7 +17,7 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 84,
+      "minutes_left": 83,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
@@ -36,13 +36,26 @@
       "actual": "待公布",
       "unit": "%",
       "status": "upcoming",
-      "minutes_left": 84,
+      "minutes_left": 83,
       "impact_tone": "pending",
       "impact_note": "待公布（数据发布前后盘口易上下剧烈插针）",
       "source": "wscn"
     }
   ],
   "macro_flashes": [
+    {
+      "id": "20261125200655431800",
+      "title": "【美股期货扩大跌幅 纳指期货跌约3%】 11月25日讯，美国股指期货跌幅进一步扩大，纳指…",
+      "summary": "【美股期货扩大跌幅 纳指期货跌约3%】 11月25日讯，美国股指期货跌幅进一步扩大，纳指期货跌约3%，标普500指数期货跌约2%，道指期货跌约1.3%。",
+      "keywords": [
+        "标普"
+      ],
+      "pub_ts": 1795608415.0,
+      "time_et": "11-25 07:06 ET",
+      "time_bj": "20:06 BJ",
+      "time_kst": "21:06 KST",
+      "time_display": "07:06 ET / 20:06 BJ"
+    },
     {
       "id": "20261125194018675800",
       "title": "DeepTalk：103年前的崩盘，正在被美联储一步步复刻",
@@ -374,19 +387,6 @@
       "time_bj": "14:21 BJ",
       "time_kst": "15:21 KST",
       "time_display": "01:21 ET / 14:21 BJ"
-    },
-    {
-      "id": "20261125140834488800",
-      "title": "美俄商业合作促和平谈判遇冷，特朗普政府暂缓相关计划",
-      "summary": "据报道，特朗普政府已暂时搁置以能源投资等商业合作换取俄罗斯在乌克兰问题上让步的方案，因俄方更关注领土和安全要求……点击查看……",
-      "keywords": [
-        "特朗普"
-      ],
-      "pub_ts": 1795586914.0,
-      "time_et": "11-25 01:08 ET",
-      "time_bj": "14:08 BJ",
-      "time_kst": "15:08 KST",
-      "time_display": "01:08 ET / 14:08 BJ"
     }
   ],
   "ticker_news": {
@@ -3421,10 +3421,10 @@
   },
   "calendar_banner": {
     "level": "upcoming",
-    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 84 分钟（11-25 08:30 ET / 22:30 KST）",
+    "headline": "📅 今日美股重磅预告【美国10月核心PCE物价指数环比】· 距公布约 83 分钟（11-25 08:30 ET / 22:30 KST）",
     "detail": "前值 0.3% ｜ 预期 0.3% ｜ 临近公布前15分钟将自动触发防插针预警",
     "event_name": "美国10月核心PCE物价指数环比",
-    "minutes_left": 84,
+    "minutes_left": 83,
     "opex_shield": {
       "date": "2026-11-25",
       "active": false,
