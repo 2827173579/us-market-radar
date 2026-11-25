@@ -7171,9 +7171,13 @@
     "copy_close:2026-11-25:META_SHORT_2026-11-25:SL_HIT": {
       "device": "PC",
       "ts": 1795628871.430266
+    },
+    "KOL_CLOSE:2026-11-25:KOL_GOOGL_SHORT_2026-11-25_2:SL_HIT": {
+      "device": "PC",
+      "ts": 1795629315.50454
     }
   },
   "device": "PC",
-  "last_heartbeat_ts": 1795629239.6091347,
-  "updated_at": "2026-11-25T17:53:59.609656+00:00"
+  "last_heartbeat_ts": 1795629291.1750772,
+  "updated_at": "2026-11-25T17:55:15.505039+00:00"
 }

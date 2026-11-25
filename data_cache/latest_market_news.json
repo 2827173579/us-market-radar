@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795629259.197,
-  "updated_at_et": "11-25 12:54 ET",
-  "updated_at_kst": "02:54 KST",
+  "updated_at_ts": 1795629307.925,
+  "updated_at_et": "11-25 12:55 ET",
+  "updated_at_kst": "02:55 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -2420,6 +2420,27 @@
     ],
     "MU": [
       {
+        "title": "106% Upside for Micron? Citi Thinks So, and Here’s How",
+        "url": "https://www.tikr.com/blog/106-upside-for-micron-citi-thinks-so-and-heres-how?ref=yahoofinance&tlnk=yf-261125-x4xrrvc6&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 12:35 ET",
+        "pub_ts": 1795628144.0
+      },
+      {
+        "title": "Why Micron Technology Stock is Plunging Today",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/why-micron-technology-stock-plunging-171705917.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 12:17 ET",
+        "pub_ts": 1795627025.0
+      },
+      {
+        "title": "Micron Technology (MU) Dropped, So What Is Drawing Attention Now?",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/micron-technology-mu-dropped-drawing-171415757.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 12:14 ET",
+        "pub_ts": 1795626855.0
+      },
+      {
         "title": "HP Earnings: Memory Went From 15% to 40% of a PC’s Parts Cost in a Year",
         "url": "https://247wallst.com/investing/2026/11/25/hp-earnings-memory-went-from-15-to-40-of-a-pcs-parts-cost-in-a-year/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2432,30 +2453,16 @@
         "source": "Yahoo Finance",
         "time": "11-25 12:02 ET",
         "pub_ts": 1795626175.0
-      },
-      {
-        "title": "Chip stocks tumble as Nvidia-led AI rally unravels, tariff fears weigh",
-        "url": "https://www.proactiveinvestors.com/companies/news/1102454/chip-stocks-tumble-as-nvidia-led-ai-rally-unravels-tariff-fears-weigh-1102454.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 11:49 ET",
-        "pub_ts": 1795625340.0
-      },
-      {
-        "title": "This May Be the Best Artificial Intelligence (AI) Stock to Buy in December (Hint: It’s Not Micron or Oracle)",
-        "url": "https://www.fool.com/investing/2026/11/25/this-may-be-the-best-artificial-intelligence-ai-stock-to-buy-in-december-hint-it-s-not-micron-or-oracle/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 11:13 ET",
-        "pub_ts": 1795623182.0
-      },
-      {
-        "title": "3 High-Growth Stocks That Could Make $10,000 Worth Much More by 2030",
-        "url": "https://247wallst.com/investing/2026/11/25/3-high-growth-stocks-that-could-make-10000-worth-much-more-by-2030/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 11:03 ET",
-        "pub_ts": 1795622602.0
       }
     ],
     "SKHY": [
+      {
+        "title": "SK hynix Stocks Sink 11.05% Despite 80% Operating Margin",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/sk-hynix-stocks-sink-11-171606778.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 12:16 ET",
+        "pub_ts": 1795626966.0
+      },
       {
         "title": "SK hynix vs Micron: Which AI Memory Player Has the Edge?",
         "url": "https://finance.yahoo.com/technology/ai/articles/sk-hynix-vs-micron-ai-161700194.html?.tsrc=rss",
@@ -2483,13 +2490,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 02:09 ET",
         "pub_ts": 1795590581.0
-      },
-      {
-        "title": "SK Hynix (NasdaqGS:SKHY) Signals Bigger Share Buybacks To Support Korea Stocks",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/sk-hynix-nasdaqgs-skhy-signals-061627176.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 01:16 ET",
-        "pub_ts": 1795587387.0
       }
     ],
     "WDC": [
@@ -3352,8 +3352,8 @@
     "BE": 1795628415.373435,
     "CRDO": 1795628415.373435,
     "COHR": 1795628415.373435,
-    "MRVL": 1795627786.4512484,
-    "LITE": 1795627786.4512484,
+    "MRVL": 1795629307.924548,
+    "LITE": 1795629307.924548,
     "AAOI": 1795628415.373435,
     "SPCX": 1795628415.373435,
     "ASTS": 1795628415.373435,
@@ -3372,8 +3372,8 @@
     "OKLO": 1795628546.382737,
     "CEG": 1795628546.382737,
     "FPS": 1795628546.382737,
-    "MU": 1795627786.4512484,
-    "SKHY": 1795627786.4512484,
+    "MU": 1795629307.924548,
+    "SKHY": 1795629307.924548,
     "WDC": 1795627829.6839883,
     "STX": 1795628596.9405835,
     "MSTR": 1795628546.382737,
@@ -3392,7 +3392,7 @@
     "WMT": 1795628641.1777718,
     "V": 1795628546.382737,
     "CAT": 1795628641.1777718,
-    "FN": 1795627786.4512484,
+    "FN": 1795629307.924548,
     "GLW": 1795628415.373435,
     "ANT": 1795628641.1777718,
     "XAUUSD": 1795628641.1777718,
