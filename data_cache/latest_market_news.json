@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795643514.182,
-  "updated_at_et": "11-25 16:51 ET",
-  "updated_at_kst": "06:51 KST",
+  "updated_at_ts": 1795643553.597,
+  "updated_at_et": "11-25 16:52 ET",
+  "updated_at_kst": "06:52 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -1603,6 +1603,13 @@
     ],
     "CRDO": [
       {
+        "title": "Why Is Credo Stock Going Up?",
+        "url": "https://www.trefis.com/stock/crdo/articles/628617/why-is-credo-stock-going-up/2026-11-25?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 16:13 ET",
+        "pub_ts": 1795641212.0
+      },
+      {
         "title": "Credo Technology Crashed 27% Over a Month: This Wall Street Desk Now Expects 190% Returns",
         "url": "https://247wallst.com/investing/2026/11/25/credo-technology-crashed-27-over-a-month-this-wall-street-desk-now-expects-190-returns/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1629,13 +1636,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 06:45 ET",
         "pub_ts": 1795607107.0
-      },
-      {
-        "title": "Credo Technology Group Holding (CRDO) Stock Still Looks Undervalued After Its 7x Run",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/credo-technology-group-holding-crdo-110715948.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 06:07 ET",
-        "pub_ts": 1795604835.0
       }
     ],
     "COHR": [
@@ -1795,11 +1795,18 @@
         "pub_ts": 1795640239.0
       },
       {
-        "title": "SpaceX stock pares losses following FCC approval for data centers in space",
-        "url": "https://finance.yahoo.com/technology/article/spacex-stock-pares-losses-following-fcc-approval-for-data-centers-in-space-183757039.html?.tsrc=rss",
+        "title": "SpaceX (SPCX) Faces Grok Lawsuits As It Expands $74 Billion In AI Campuses",
+        "url": "https://finance.yahoo.com/technology/ai/articles/spacex-spcx-faces-grok-lawsuits-211010807.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-25 13:37 ET",
-        "pub_ts": 1795631877.0
+        "time": "11-25 16:10 ET",
+        "pub_ts": 1795641010.0
+      },
+      {
+        "title": "FCC approves SpaceX plan to put AI data centers in space",
+        "url": "https://finance.yahoo.com/technology/ai/articles/fcc-approves-spacex-plan-put-205644117.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 15:56 ET",
+        "pub_ts": 1795640204.0
       },
       {
         "title": "Sector Update: Tech Stocks Fall Late Afternoon",
@@ -1814,13 +1821,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 15:32 ET",
         "pub_ts": 1795638730.0
-      },
-      {
-        "title": "Is Space Exploration Technologies (SPCX) Cheap As Tesla Merger Talks Raise Valuation Questions?",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/space-exploration-technologies-spcx-cheap-201121157.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 15:11 ET",
-        "pub_ts": 1795637481.0
       }
     ],
     "ASTS": [
@@ -3344,25 +3344,25 @@
     "AMZN": 1795642909.7500863,
     "CRWV": 1795642909.7500863,
     "NBIS": 1795642909.7500863,
-    "APLD": 1795642049.6085851,
-    "VST": 1795642049.6085851,
-    "BE": 1795642049.6085851,
-    "CRDO": 1795642049.6085851,
-    "COHR": 1795642049.6085851,
+    "APLD": 1795643553.5965235,
+    "VST": 1795643553.5965235,
+    "BE": 1795643553.5965235,
+    "CRDO": 1795643553.5965235,
+    "COHR": 1795643553.5965235,
     "MRVL": 1795642953.7751355,
     "LITE": 1795642953.7751355,
-    "AAOI": 1795642049.6085851,
-    "SPCX": 1795642049.6085851,
-    "ASTS": 1795642049.6085851,
+    "AAOI": 1795643553.5965235,
+    "SPCX": 1795643553.5965235,
+    "ASTS": 1795643553.5965235,
     "AXTI": 1795642909.7500863,
-    "NASA": 1795642049.6085851,
-    "LUNR": 1795642049.6085851,
+    "NASA": 1795643553.5965235,
+    "LUNR": 1795643553.5965235,
     "TSLA": 1795642208.0074985,
-    "AXP": 1795642049.6085851,
-    "RKLB": 1795642049.6085851,
-    "KO": 1795642049.6085851,
-    "FLY": 1795642049.6085851,
-    "INTC": 1795642049.6085851,
+    "AXP": 1795643553.5965235,
+    "RKLB": 1795643553.5965235,
+    "KO": 1795643553.5965235,
+    "FLY": 1795643553.5965235,
+    "INTC": 1795643553.5965235,
     "VRT": 1795642208.0074985,
     "HPE": 1795642208.0074985,
     "DELL": 1795642208.0074985,
@@ -3390,7 +3390,7 @@
     "V": 1795642208.0074985,
     "CAT": 1795642302.7158566,
     "FN": 1795642953.7751355,
-    "GLW": 1795642049.6085851,
+    "GLW": 1795643553.5965235,
     "ANT": 1795642302.7158566,
     "XAUUSD": 1795642302.7158566,
     "KOSPI": 1795642909.7500863
