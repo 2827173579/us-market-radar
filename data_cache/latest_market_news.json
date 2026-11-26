@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795695879.758,
-  "updated_at_et": "11-26 07:24 ET",
-  "updated_at_kst": "21:24 KST",
+  "updated_at_ts": 1795695933.934,
+  "updated_at_et": "11-26 07:25 ET",
+  "updated_at_kst": "21:25 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1168,6 +1168,27 @@
     ],
     "GOOGL": [
       {
+        "title": "5 things I'm thankful for in AI",
+        "url": "https://finance.yahoo.com/video/5-things-im-thankful-ai-120000522.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 07:00 ET",
+        "pub_ts": 1795694400.0
+      },
+      {
+        "title": "Tepper Trims Alphabet by ~46% and Dumps Broadcom & AMD While Backing Micron and Oracle",
+        "url": "https://247wallst.com/investing/2026/11/26/tepper-trims-alphabet-by-46-and-dumps-broadcom-amd-while-backing-micron-and-oracle/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 07:15 ET",
+        "pub_ts": 1795695305.0
+      },
+      {
+        "title": "UBS’s $425 Target Says Broadcom’s Selloff Went Too Far",
+        "url": "https://www.tikr.com/blog/ubss-425-target-says-broadcoms-selloff-went-too-far?ref=yahoofinance&tlnk=yf-261126-xrf8pwvw&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 06:51 ET",
+        "pub_ts": 1795693883.0
+      },
+      {
         "title": "iShares MSCI ACWI (ACWI) Adds Apple and Nvidia on Tuesday",
         "url": "https://finance.yahoo.com/markets/stocks/articles/ishares-msci-acwi-acwi-adds-110448380.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1180,27 +1201,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 06:03 ET",
         "pub_ts": 1795691037.0
-      },
-      {
-        "title": "ETFs Are Net Sellers of Alphabet (GOOGL) on Nov. 24",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-net-sellers-alphabet-googl-110308390.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 06:03 ET",
-        "pub_ts": 1795690988.0
-      },
-      {
-        "title": "BT launches nationwide cyber resilience drive as AI helps fuel 500% surge in malicious activity",
-        "url": "https://finance.yahoo.com/small-business/articles/bt-launches-nationwide-cyber-resilience-104600266.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 05:46 ET",
-        "pub_ts": 1795689960.0
-      },
-      {
-        "title": "Musk Confirms He Pushed Trump to Bring Back Jensen Huang. The White House Had Anthropic in Mind",
-        "url": "https://www.tikr.com/blog/musk-confirms-he-pushed-trump-to-bring-back-jensen-huang-the-white-house-had-anthropic-in-mind?ref=yahoofinance&tlnk=yf-261126-66q3rrhh&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 03:59 ET",
-        "pub_ts": 1795683552.0
       }
     ],
     "MSFT": [
@@ -1397,6 +1397,13 @@
         "pub_ts": 1795640400.0
       },
       {
+        "title": "Evercore Cut Its CoreWeave Target to $80 From $100. It Still Sees 88% Upside",
+        "url": "https://www.tikr.com/blog/evercore-cut-its-coreweave-target-to-80-from-100-it-still-sees-88-upside?ref=yahoofinance&tlnk=yf-261126-v28p9qrq&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 06:35 ET",
+        "pub_ts": 1795692923.0
+      },
+      {
         "title": "Cantor Fitzgerald’s $96 Target Says CoreWeave’s Selloff Went Too Far",
         "url": "https://www.tikr.com/blog/cantor-fitzgeralds-96-target-says-coreweaves-selloff-went-too-far?ref=yahoofinance&tlnk=yf-261126-vf2gf27j&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1416,13 +1423,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 17:45 ET",
         "pub_ts": 1795646709.0
-      },
-      {
-        "title": "CoreWeave’s Bankers Reportedly Ready $4.5B GPU-Backed Loan Tied To Meta Deal",
-        "url": "https://stocktwits.com/news-articles/markets/equity/core-weave-s-bankers-reportedly-ready-4-5-b-gpu-backed-loan-tied-to-meta-deal/cNbHrsCR9mw?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 16:02 ET",
-        "pub_ts": 1795640536.0
       }
     ],
     "NBIS": [
@@ -2426,11 +2426,11 @@
     ],
     "SKHY": [
       {
-        "title": "Asian stocks stabilise after tech rout",
+        "title": "European stocks rally as tech jitters ease",
         "url": "https://finance.yahoo.com/markets/world-indices/articles/asian-stocks-enjoy-another-bounce-023024729.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-26 03:26 ET",
-        "pub_ts": 1795681619.0
+        "time": "11-26 07:13 ET",
+        "pub_ts": 1795695235.0
       },
       {
         "title": "MU, SNDK, SKHY Jump As Nvidia Tests Kioxia Memory Fix — Analyst Presses Memory Giants For ‘Massive’ Buybacks",
@@ -3328,35 +3328,35 @@
     "TLT": 1795695677.1957953,
     "GLD": 1795695825.7776139,
     "SQQQ": 1795695825.7776139,
-    "TSM": 1795694416.242457,
+    "TSM": 1795695933.933526,
     "VIXY": 1795695825.7776139,
     "SOXS": 1795695825.7776139,
     "NVDA": 1795695825.7776139,
     "AMD": 1795695825.7776139,
-    "ASML": 1795694416.242457,
-    "QCOM": 1795694416.242457,
+    "ASML": 1795695933.933526,
+    "QCOM": 1795695933.933526,
     "AVGO": 1795695825.7776139,
-    "AMAT": 1795694416.242457,
-    "META": 1795694416.242457,
-    "GOOGL": 1795694416.242457,
-    "MSFT": 1795694416.242457,
-    "AAPL": 1795694416.242457,
-    "PLTR": 1795694416.242457,
-    "NOW": 1795694416.242457,
-    "AMZN": 1795694416.242457,
-    "CRWV": 1795694416.242457,
-    "NBIS": 1795694416.242457,
-    "APLD": 1795694416.242457,
+    "AMAT": 1795695933.933526,
+    "META": 1795695933.933526,
+    "GOOGL": 1795695933.933526,
+    "MSFT": 1795695933.933526,
+    "AAPL": 1795695933.933526,
+    "PLTR": 1795695933.933526,
+    "NOW": 1795695933.933526,
+    "AMZN": 1795695933.933526,
+    "CRWV": 1795695933.933526,
+    "NBIS": 1795695933.933526,
+    "APLD": 1795695933.933526,
     "VST": 1795695677.1957953,
     "BE": 1795695677.1957953,
     "CRDO": 1795695677.1957953,
     "COHR": 1795695677.1957953,
-    "MRVL": 1795694416.242457,
-    "LITE": 1795694416.242457,
+    "MRVL": 1795695933.933526,
+    "LITE": 1795695933.933526,
     "AAOI": 1795695677.1957953,
     "SPCX": 1795695677.1957953,
     "ASTS": 1795695677.1957953,
-    "AXTI": 1795694416.242457,
+    "AXTI": 1795695933.933526,
     "NASA": 1795695825.7776139,
     "LUNR": 1795695825.7776139,
     "TSLA": 1795695825.7776139,
@@ -3372,7 +3372,7 @@
     "CEG": 1795695825.7776139,
     "FPS": 1795695879.7584026,
     "MU": 1795694416.242457,
-    "SKHY": 1795694416.242457,
+    "SKHY": 1795695933.933526,
     "WDC": 1795694469.991008,
     "STX": 1795695879.7584026,
     "MSTR": 1795695879.7584026,
@@ -3391,11 +3391,11 @@
     "WMT": 1795694416.242457,
     "V": 1795695879.7584026,
     "CAT": 1795695879.7584026,
-    "FN": 1795694416.242457,
+    "FN": 1795695933.933526,
     "GLW": 1795695677.1957953,
     "ANT": 1795695879.7584026,
     "XAUUSD": 1795694469.991008,
-    "KOSPI": 1795694416.242457,
+    "KOSPI": 1795695933.933526,
     "KSTR": 1795695879.7584026
   },
   "opex_shield": {
