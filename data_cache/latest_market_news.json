@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795671445.286,
-  "updated_at_et": "11-26 00:37 ET",
-  "updated_at_kst": "14:37 KST",
+  "updated_at_ts": 1795671484.46,
+  "updated_at_et": "11-26 00:38 ET",
+  "updated_at_kst": "14:38 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -901,6 +901,20 @@
     ],
     "NVDA": [
       {
+        "title": "Asian shares rebound led by AI stocks after Wall Street pares sharp losses",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/asian-shares-rebound-led-ai-052153058.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 00:21 ET",
+        "pub_ts": 1795670513.0
+      },
+      {
+        "title": "Nvidia Reportedly Sold Its Most Advanced AI Chips to US Firms Controlled by Chinese Parents as Jensen Huang Set to Face Congress",
+        "url": "https://finance.yahoo.com/technology/ai/articles/nvidia-reportedly-sold-most-advanced-042255874.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 23:22 ET",
+        "pub_ts": 1795666975.0
+      },
+      {
         "title": "Kioxia and NVIDIA Collaborate to Expand Effective High-Bandwidth Memory Capacity with SSDs",
         "url": "https://finance.yahoo.com/technology/ai/articles/kioxia-nvidia-collaborate-expand-effective-041900475.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -920,20 +934,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 22:22 ET",
         "pub_ts": 1795663367.0
-      },
-      {
-        "title": "Nvidia chips reach Chinese-owned U.S. firms despite export curbs, CBS reports",
-        "url": "https://finance.yahoo.com/technology/ai/articles/nvidia-chips-reach-chinese-owned-031146505.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 22:11 ET",
-        "pub_ts": 1795662706.0
-      },
-      {
-        "title": "Is Nvidia Stock a Buy After Dell's Record AI Backlog?",
-        "url": "https://www.fool.com/investing/2026/11/25/is-nvidia-stock-a-buy-after-dell-s-record-ai-backlog/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 22:07 ET",
-        "pub_ts": 1795662422.0
       }
     ],
     "AMD": [
@@ -3289,15 +3289,15 @@
     "IGV": 1795671445.2857296,
     "TLT": 1795671445.2857296,
     "GLD": 1795671445.2857296,
-    "SQQQ": 1795669949.7955368,
+    "SQQQ": 1795671484.4598403,
     "TSM": 1795671088.691203,
     "VIXY": 1795671445.2857296,
-    "SOXS": 1795669949.7955368,
-    "NVDA": 1795669949.7955368,
-    "AMD": 1795669949.7955368,
+    "SOXS": 1795671484.4598403,
+    "NVDA": 1795671484.4598403,
+    "AMD": 1795671484.4598403,
     "ASML": 1795671088.691203,
     "QCOM": 1795671088.691203,
-    "AVGO": 1795669949.7955368,
+    "AVGO": 1795671484.4598403,
     "AMAT": 1795671088.691203,
     "META": 1795671088.691203,
     "GOOGL": 1795671088.691203,
