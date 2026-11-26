@@ -1,9 +1,23 @@
 {
-  "updated_at_ts": 1795707972.292,
-  "updated_at_et": "11-26 10:46 ET",
-  "updated_at_kst": "00:46 KST",
+  "updated_at_ts": 1795708030.408,
+  "updated_at_et": "11-26 10:47 ET",
+  "updated_at_kst": "00:47 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261126234609883800",
+      "title": "整理：欧盘美盘重要新闻汇总（2026-11-26）",
+      "summary": "国内新闻 1. 外交部：关税战、贸易战不符合任何一方利益，所谓“产能过剩”是伪命题。 2. 商务部：中方将密切关注欧方混动汽车保障措施后续调查进展。 3. 商务部：坚决反对美对中国等经济体加征301关税。 4. 国家发改委：自11月26日24时起，国内汽、柴油（标准品）价格每吨分别下调440元、425元。 5. 商务部新闻发言人就欧方将玉沙集团有限公司移出欧盟涉俄出口管制制裁清单事答记者问。 6. 商务部等8部门印发《服务贸易发展“十五五”规划》的通知。 7. 国家数据局综合司向社会公开征求《关于完善数据规则 赋能人工智能创新发展的若干意见》(公开征求意见稿)意见。 8. 四大商业银行已与上市公司签订股票回购增持贷款合同超6000亿元。 国际新闻 1. 马斯克：美国每个孩子都将获得两股SpaceX股票。建议继续持有spaceX股票。 2. 韩国金融委员会下周将召开股市稳定紧急检查会议。 3. 软银五年期信用违约互换利差连续第二日扩大。 4. 特朗普质疑GDP数据为什么不在大选前上修，将展开调查。 5. 据路透：两位消息人士称，欧佩克+在周日会议上很可能将石油产量目标至少延续至2027年第一季度。 6. 德科斯料成为下一任欧洲央行行长。",
+      "keywords": [
+        "关税",
+        "特朗普"
+      ],
+      "pub_ts": 1795707969.0,
+      "time_et": "11-26 10:46 ET",
+      "time_bj": "23:46 BJ",
+      "time_kst": "00:46 KST",
+      "time_display": "10:46 ET / 23:46 BJ"
+    },
     {
       "id": "20261126231128755800",
       "title": "美联储褐皮书显美消费动能减弱，欧央行新帅或为法德交易结果 | Plus日报",
@@ -335,19 +349,6 @@
       "time_bj": "15:17 BJ",
       "time_kst": "16:17 KST",
       "time_display": "02:17 ET / 15:17 BJ"
-    },
-    {
-      "id": "20261126151022413800",
-      "title": "【商务部：坚决反对美对中国等经济体加征301关税】 11月26日讯，针对美国贸易代表办公…",
-      "summary": "【商务部：坚决反对美对中国等经济体加征301关税】 11月26日讯，针对美国贸易代表办公室日前宣布“产能过剩”301调查结果，发布拟议措施，提出对包括中国在内的14个经济体加征301关税，商务部新闻发言人何亚东在26日举行的例行新闻发布会上表示，美方301调查是典型的单边主义行为，严重破坏国际经济秩序，严重违反世贸组织规则，中方对此坚决反对。中方敦促美方纠正错误做法，回到通过对话协商解决问题的正确轨道上来。中方将密切关注事态进展，保留采取必要措施的权利，坚决捍卫自身正当权益。",
-      "keywords": [
-        "关税"
-      ],
-      "pub_ts": 1795677022.0,
-      "time_et": "11-26 02:10 ET",
-      "time_bj": "15:10 BJ",
-      "time_kst": "16:10 KST",
-      "time_display": "02:10 ET / 15:10 BJ"
     }
   ],
   "ticker_news": {
@@ -1574,6 +1575,20 @@
     ],
     "CRDO": [
       {
+        "title": "Before Credo Reports, Watch Cash, Not Sales",
+        "url": "https://www.trefis.com/stock/crdo/articles/629189/before-credo-reports-watch-cash-not-sales/2026-11-26?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 10:15 ET",
+        "pub_ts": 1795706126.0
+      },
+      {
+        "title": "Credo Technology Ahead of Q2 Earnings: How to Approach the Stock Now?",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/credo-technology-ahead-q2-earnings-143000855.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 09:30 ET",
+        "pub_ts": 1795703400.0
+      },
+      {
         "title": "Credo Technology Has Had a Wild Ride to a 25% Decline Year-to-Date: Two Wall Street Teams Target 190% Returns Moving Forward",
         "url": "https://247wallst.com/investing/2026/11/26/credo-technology-has-had-a-wild-ride-to-a-25-decline-year-to-date-two-wall-street-teams-target-190-returns-moving-forward/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1593,20 +1608,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 12:45 ET",
         "pub_ts": 1795628759.0
-      },
-      {
-        "title": "Nvidia Sinks 9% as Huang Rally Fades: Stephanie Link Sees “A Cloud Over It”",
-        "url": "https://www.tikr.com/blog/nvidia-sinks-9-as-huang-rally-fades-stephanie-link-sees-a-cloud-over-it?ref=yahoofinance&tlnk=yf-261125-q8ch658v&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 12:24 ET",
-        "pub_ts": 1795627456.0
-      },
-      {
-        "title": "Credo CEO: Its Portfolio Now Spans “Millimeters to Kilometers.” December 1 Tests the Optics Push",
-        "url": "https://www.tikr.com/blog/credo-ceo-its-portfolio-now-spans-millimeters-to-kilometers-december-1-tests-the-optics-push?ref=yahoofinance&tlnk=yf-261125-h78f5v23&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 10:05 ET",
-        "pub_ts": 1795619138.0
       }
     ],
     "COHR": [
@@ -3315,23 +3316,23 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795706518.9781039,
-    "SOXL": 1795706518.9781039,
-    "SPY": 1795706518.9781039,
-    "DIA": 1795706518.9781039,
-    "SOXX": 1795706518.9781039,
-    "QQQ": 1795706518.9781039,
-    "SMH": 1795706518.9781039,
-    "IWM": 1795706518.9781039,
-    "IGV": 1795706518.9781039,
-    "TLT": 1795706518.9781039,
-    "GLD": 1795706518.9781039,
-    "SQQQ": 1795706518.9781039,
+    "KORU": 1795708030.4083514,
+    "SOXL": 1795708030.4083514,
+    "SPY": 1795708030.4083514,
+    "DIA": 1795708030.4083514,
+    "SOXX": 1795708030.4083514,
+    "QQQ": 1795708030.4083514,
+    "SMH": 1795708030.4083514,
+    "IWM": 1795708030.4083514,
+    "IGV": 1795708030.4083514,
+    "TLT": 1795708030.4083514,
+    "GLD": 1795708030.4083514,
+    "SQQQ": 1795708030.4083514,
     "TSM": 1795706561.9586165,
-    "VIXY": 1795706518.9781039,
-    "SOXS": 1795706518.9781039,
-    "NVDA": 1795706518.9781039,
-    "AMD": 1795706518.9781039,
+    "VIXY": 1795708030.4083514,
+    "SOXS": 1795708030.4083514,
+    "NVDA": 1795708030.4083514,
+    "AMD": 1795708030.4083514,
     "ASML": 1795706561.9586165,
     "QCOM": 1795706561.9586165,
     "AVGO": 1795706561.9586165,
@@ -3346,15 +3347,15 @@
     "CRWV": 1795706605.850624,
     "NBIS": 1795706605.850624,
     "APLD": 1795706605.850624,
-    "VST": 1795706518.9781039,
-    "BE": 1795706518.9781039,
-    "CRDO": 1795706518.9781039,
-    "COHR": 1795706518.9781039,
+    "VST": 1795708030.4083514,
+    "BE": 1795708030.4083514,
+    "CRDO": 1795708030.4083514,
+    "COHR": 1795708030.4083514,
     "MRVL": 1795706605.850624,
     "LITE": 1795706605.850624,
-    "AAOI": 1795706518.9781039,
-    "SPCX": 1795706518.9781039,
-    "ASTS": 1795706518.9781039,
+    "AAOI": 1795708030.4083514,
+    "SPCX": 1795708030.4083514,
+    "ASTS": 1795708030.4083514,
     "AXTI": 1795706605.850624,
     "NASA": 1795706561.9586165,
     "LUNR": 1795706561.9586165,
@@ -3391,11 +3392,11 @@
     "V": 1795706605.850624,
     "CAT": 1795706654.7739391,
     "FN": 1795706605.850624,
-    "GLW": 1795706518.9781039,
+    "GLW": 1795708030.4083514,
     "ANT": 1795706654.7739391,
     "XAUUSD": 1795706654.7739391,
     "KOSPI": 1795706605.850624,
-    "KSTR": 1795706518.9781039
+    "KSTR": 1795708030.4083514
   },
   "opex_shield": {
     "date": "2026-11-26",
@@ -3414,7 +3415,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (10:11 ET / 23:11 BJ) [美联储]：美联储褐皮书显美消费动能减弱；欧洲天然气库存跌至2011年来同期新低，寒潮下提取承压；SpaceX获批建太空数据中心，马斯克称将向美儿童赠股。",
+    "detail": "⚡ 最新核心快讯 (10:46 ET / 23:46 BJ) [关税] [特朗普]：国内新闻 1. 外交部：关税战、贸易战不符合任何一方利益，所谓“产能过剩”是伪命题。 2. 商务部：中方将密切关注欧方混动汽车保障措施后续调查进展。 3. 商务部：坚决反对美对中国等经济体加",
     "event_name": "",
     "minutes_left": 0,
     "opex_shield": {
