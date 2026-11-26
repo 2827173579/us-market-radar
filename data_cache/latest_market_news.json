@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795697357.838,
-  "updated_at_et": "11-26 07:49 ET",
-  "updated_at_kst": "21:49 KST",
+  "updated_at_ts": 1795697415.743,
+  "updated_at_et": "11-26 07:50 ET",
+  "updated_at_kst": "21:50 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2686,6 +2686,20 @@
     ],
     "ORCL": [
       {
+        "title": "Tepper Trims Alphabet by ~46% and Dumps Broadcom & AMD While Backing Micron and Oracle",
+        "url": "https://247wallst.com/investing/2026/11/26/tepper-trims-alphabet-by-46-and-dumps-broadcom-amd-while-backing-micron-and-oracle/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 07:15 ET",
+        "pub_ts": 1795695305.0
+      },
+      {
+        "title": "'Where Will That Come From?': Elon Musk Warns AI Firms Need Hundreds of Billions in Working Capital as Oracle Says It's Covered",
+        "url": "https://finance.yahoo.com/technology/ai/articles/where-come-elon-musk-warns-114510759.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 06:45 ET",
+        "pub_ts": 1795693510.0
+      },
+      {
         "title": "Bloom Energy Issued Oracle 2.15 Million Shares. Now Oracle’s Credit Is Cracking",
         "url": "https://www.tikr.com/blog/bloom-energy-issued-oracle-2-15-million-shares-now-oracles-credit-is-cracking?ref=yahoofinance&tlnk=yf-261126-v76w4j96&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2705,20 +2719,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 21:15 ET",
         "pub_ts": 1795659300.0
-      },
-      {
-        "title": "Oracle Bonds Yield a Towering 9% on Debt and Data-Center Concerns. Are They a Buy?",
-        "url": "https://finance.yahoo.com/m/7cf2c7c4-a034-30e7-a2f0-b3ea8684f897/oracle-bonds-yield-a-towering.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 16:46 ET",
-        "pub_ts": 1795643160.0
-      },
-      {
-        "title": "Why Oracle Stock Slumped Today",
-        "url": "https://www.fool.com/investing/2026/11/25/why-oracle-stock-slumped-today/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 15:40 ET",
-        "pub_ts": 1795639212.0
       }
     ],
     "COIN": [
@@ -3319,11 +3319,11 @@
   "ticker_news_ts": {
     "KORU": 1795697206.2564774,
     "SOXL": 1795697206.2564774,
-    "SPY": 1795695879.7584026,
+    "SPY": 1795697415.7432997,
     "DIA": 1795697206.2564774,
     "SOXX": 1795697206.2564774,
     "QQQ": 1795697206.2564774,
-    "SMH": 1795695879.7584026,
+    "SMH": 1795697415.7432997,
     "IWM": 1795697206.2564774,
     "IGV": 1795697206.2564774,
     "TLT": 1795697206.2564774,
@@ -3367,37 +3367,37 @@
     "FLY": 1795697357.8379624,
     "INTC": 1795697357.8379624,
     "VRT": 1795697357.8379624,
-    "HPE": 1795695879.7584026,
+    "HPE": 1795697415.7432997,
     "DELL": 1795697357.8379624,
-    "OKLO": 1795695879.7584026,
+    "OKLO": 1795697415.7432997,
     "CEG": 1795697357.8379624,
-    "FPS": 1795695879.7584026,
+    "FPS": 1795697415.7432997,
     "MU": 1795695987.9650087,
     "SKHY": 1795695933.933526,
     "WDC": 1795695987.9650087,
-    "STX": 1795695879.7584026,
-    "MSTR": 1795695879.7584026,
-    "SNDK": 1795695879.7584026,
+    "STX": 1795697415.7432997,
+    "MSTR": 1795697415.7432997,
+    "SNDK": 1795697415.7432997,
     "BTC-USD": 1795695987.9650087,
-    "CRWD": 1795695879.7584026,
-    "ORCL": 1795695879.7584026,
-    "COIN": 1795695879.7584026,
-    "LLY": 1795695879.7584026,
-    "MRNA": 1795695879.7584026,
-    "NKE": 1795695879.7584026,
-    "MCD": 1795695879.7584026,
-    "PEP": 1795695879.7584026,
+    "CRWD": 1795697415.7432997,
+    "ORCL": 1795697415.7432997,
+    "COIN": 1795697415.7432997,
+    "LLY": 1795697415.7432997,
+    "MRNA": 1795697415.7432997,
+    "NKE": 1795697415.7432997,
+    "MCD": 1795697415.7432997,
+    "PEP": 1795697415.7432997,
     "XOM": 1795695879.7584026,
-    "JPM": 1795695879.7584026,
+    "JPM": 1795697415.7432997,
     "WMT": 1795695987.9650087,
-    "V": 1795695879.7584026,
-    "CAT": 1795695879.7584026,
+    "V": 1795697415.7432997,
+    "CAT": 1795697415.7432997,
     "FN": 1795695933.933526,
     "GLW": 1795697206.2564774,
-    "ANT": 1795695879.7584026,
+    "ANT": 1795697415.7432997,
     "XAUUSD": 1795695987.9650087,
     "KOSPI": 1795695933.933526,
-    "KSTR": 1795695879.7584026
+    "KSTR": 1795697415.7432997
   },
   "opex_shield": {
     "date": "2026-11-26",
