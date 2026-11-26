@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795694121.404,
-  "updated_at_et": "11-26 06:55 ET",
-  "updated_at_kst": "20:55 KST",
+  "updated_at_ts": 1795694171.224,
+  "updated_at_et": "11-26 06:56 ET",
+  "updated_at_kst": "20:56 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1538,6 +1538,13 @@
     ],
     "BE": [
       {
+        "title": "Morgan Stanley’s $335 Target Says Bloom Energy’s Selloff Went Too Far",
+        "url": "https://www.tikr.com/blog/morgan-stanleys-335-target-says-bloom-energys-selloff-went-too-far?ref=yahoofinance&tlnk=yf-261126-27xrg2g9&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 06:20 ET",
+        "pub_ts": 1795692023.0
+      },
+      {
         "title": "Bloom Energy Stocks Slide 7.93% as AI Power Names Lose Momentum",
         "url": "https://finance.yahoo.com/markets/stocks/articles/bloom-energy-stocks-slide-7-172002014.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1564,13 +1571,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 10:12 ET",
         "pub_ts": 1795619520.0
-      },
-      {
-        "title": "Oklo Sinks 14% in a Week, NuScale Down 19%, as the AI Selloff Hits Nuclear Stocks. Time to Buy?",
-        "url": "https://www.tikr.com/blog/oklo-sinks-14-in-a-week-nuscale-down-19-as-the-ai-selloff-hits-nuclear-stocks-time-to-buy?ref=yahoofinance&tlnk=yf-261125-qw7frcvg&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 03:11 ET",
-        "pub_ts": 1795594260.0
       }
     ],
     "CRDO": [
@@ -1760,6 +1760,20 @@
     ],
     "SPCX": [
       {
+        "title": "JPMorgan Says S&P Could Waive Its Rules for a Tesla-SpaceX Merger. That’s Good News for SpaceX Holders",
+        "url": "https://www.tikr.com/blog/jpmorgan-says-sp-could-waive-its-rules-for-a-tesla-spacex-merger-thats-good-news-for-spacex-holders?ref=yahoofinance&tlnk=yf-261126-gpc9wr29&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 06:45 ET",
+        "pub_ts": 1795693559.0
+      },
+      {
+        "title": "SpaceX's $18.4 Billion Share Pledge Raises Dilution Questions",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/spacexs-18-4-billion-share-112938645.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 06:29 ET",
+        "pub_ts": 1795692578.0
+      },
+      {
         "title": "32 ETFs Add to SpaceX (SPCX) Holdings on Nov. 24",
         "url": "https://finance.yahoo.com/markets/stocks/articles/32-etfs-add-spacex-spcx-110108746.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1779,20 +1793,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 05:36 ET",
         "pub_ts": 1795689360.0
-      },
-      {
-        "title": "Musk Calls FCC’s Million-Satellite Approval “a Great Asset.” SpaceX Has Until 2033 to Fly the First One",
-        "url": "https://www.tikr.com/blog/musk-calls-fccs-million-satellite-approval-a-great-asset-spacex-has-until-2033-to-fly-the-first-one?ref=yahoofinance&tlnk=yf-261126-wm7jp73w&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 04:50 ET",
-        "pub_ts": 1795686635.0
-      },
-      {
-        "title": "SpaceX Catalyst Puts 3 Space AI Infrastructure Stocks In Focus",
-        "url": "https://finance.yahoo.com/technology/ai/articles/spacex-catalyst-puts-3-space-091200765.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 04:12 ET",
-        "pub_ts": 1795684320.0
       }
     ],
     "ASTS": [
@@ -3316,16 +3316,16 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795692632.128583,
-    "SOXL": 1795692632.128583,
+    "KORU": 1795694171.2240074,
+    "SOXL": 1795694171.2240074,
     "SPY": 1795692824.7296414,
-    "DIA": 1795692632.128583,
-    "SOXX": 1795692632.128583,
-    "QQQ": 1795692632.128583,
+    "DIA": 1795694171.2240074,
+    "SOXX": 1795694171.2240074,
+    "QQQ": 1795694171.2240074,
     "SMH": 1795692824.7296414,
-    "IWM": 1795692632.128583,
-    "IGV": 1795692632.128583,
-    "TLT": 1795692632.128583,
+    "IWM": 1795694171.2240074,
+    "IGV": 1795694171.2240074,
+    "TLT": 1795694171.2240074,
     "GLD": 1795692772.3072996,
     "SQQQ": 1795692772.3072996,
     "TSM": 1795692879.1814775,
@@ -3347,15 +3347,15 @@
     "CRWV": 1795692879.1814775,
     "NBIS": 1795692879.1814775,
     "APLD": 1795692879.1814775,
-    "VST": 1795692632.128583,
-    "BE": 1795692632.128583,
-    "CRDO": 1795692632.128583,
-    "COHR": 1795692632.128583,
+    "VST": 1795694171.2240074,
+    "BE": 1795694171.2240074,
+    "CRDO": 1795694171.2240074,
+    "COHR": 1795694171.2240074,
     "MRVL": 1795692879.1814775,
     "LITE": 1795692879.1814775,
-    "AAOI": 1795692632.128583,
-    "SPCX": 1795692632.128583,
-    "ASTS": 1795692632.128583,
+    "AAOI": 1795694171.2240074,
+    "SPCX": 1795694171.2240074,
+    "ASTS": 1795694171.2240074,
     "AXTI": 1795692879.1814775,
     "NASA": 1795692772.3072996,
     "LUNR": 1795692772.3072996,
@@ -3392,7 +3392,7 @@
     "V": 1795692824.7296414,
     "CAT": 1795692824.7296414,
     "FN": 1795692879.1814775,
-    "GLW": 1795692632.128583,
+    "GLW": 1795694171.2240074,
     "ANT": 1795692824.7296414,
     "XAUUSD": 1795692937.288266,
     "KOSPI": 1795692879.1814775,
