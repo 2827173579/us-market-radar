@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795692824.73,
-  "updated_at_et": "11-26 06:33 ET",
-  "updated_at_kst": "20:33 KST",
+  "updated_at_ts": 1795692879.181,
+  "updated_at_et": "11-26 06:34 ET",
+  "updated_at_kst": "20:34 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -797,6 +797,13 @@
     ],
     "TSM": [
       {
+        "title": "Taiwan Semiconductor Manufacturing (TSM) May Make Its $22.6 Billion Texas Plant Conditional",
+        "url": "https://finance.yahoo.com/technology/articles/taiwan-semiconductor-manufacturing-tsm-may-111054914.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 06:10 ET",
+        "pub_ts": 1795691454.0
+      },
+      {
         "title": "ETFs Are Net Sellers of Taiwan Semiconductor (TSM) on Nov. 24",
         "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-net-sellers-taiwan-semiconductor-110318756.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -823,13 +830,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 14:29 ET",
         "pub_ts": 1795634941.0
-      },
-      {
-        "title": "If You Invest $1,000 in Taiwan Semiconductor Today, Here’s What It Could Be Worth by 2030",
-        "url": "https://247wallst.com/investing/2026/11/25/if-you-invest-1000-in-taiwan-semiconductor-today-heres-what-it-could-be-worth-by-2030/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 12:33 ET",
-        "pub_ts": 1795627981.0
       }
     ],
     "VIXY": [
@@ -1130,13 +1130,6 @@
     ],
     "META": [
       {
-        "title": "Nvidia is cheap on paper, so why won't the market buy it?",
-        "url": "https://finance.yahoo.com/video/nvidia-is-cheap-on-paper-so-why-wont-the-market-buy-it-192215326.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 14:22 ET",
-        "pub_ts": 1795634535.0
-      },
-      {
         "title": "What Direxion Daily S&P 500 Bull 3X ETF (SPXL) Bought: Apple Leads on Tuesday",
         "url": "https://finance.yahoo.com/markets/stocks/articles/direxion-daily-p-500-bull-110524653.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1163,6 +1156,13 @@
         "source": "Yahoo Finance",
         "time": "11-26 04:00 ET",
         "pub_ts": 1795683600.0
+      },
+      {
+        "title": "Stocks Pare Losses as Anthropic Shares Swing Higher",
+        "url": "https://www.wsj.com/finance/stocks/nasdaq-futures-slide-as-ai-growth-fears-return-to-center-stage-ff9a6d6b?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 14:30 ET",
+        "pub_ts": 1795635000.0
       }
     ],
     "GOOGL": [
@@ -1211,6 +1211,13 @@
         "pub_ts": 1795691092.0
       },
       {
+        "title": "Microsoft (MSFT) Sees $91.7 Million in Net ETF Buying on Nov. 24",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/microsoft-msft-sees-91-7-110049983.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 06:00 ET",
+        "pub_ts": 1795690849.0
+      },
+      {
         "title": "BT launches nationwide cyber resilience drive as AI helps fuel 500% surge in malicious activity",
         "url": "https://finance.yahoo.com/small-business/articles/bt-launches-nationwide-cyber-resilience-104600266.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1230,13 +1237,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 02:32 ET",
         "pub_ts": 1795678362.0
-      },
-      {
-        "title": "Nvidia’s Market Cap Falls Below Microsoft’s: Analyst Flags Five Overhangs For NVDA Stock",
-        "url": "https://stocktwits.com/news-articles/markets/equity/nvidia-s-market-cap-falls-below-microsoft-s-analyst-flags-five-overhangs-for-nvda-stock/cNbx4KZR9Z3?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 21:39 ET",
-        "pub_ts": 1795660782.0
       }
     ],
     "AAPL": [
@@ -1278,6 +1278,20 @@
     ],
     "PLTR": [
       {
+        "title": "Michael Burry flips mostly long as tech stocks slide",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/michael-burry-flips-mostly-long-112229765.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 06:22 ET",
+        "pub_ts": 1795692149.0
+      },
+      {
+        "title": "Palantir (PLTR) Sees $45.5 Million in Net ETF Buying on Nov. 24",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/palantir-pltr-sees-45-5-110110910.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 06:01 ET",
+        "pub_ts": 1795690870.0
+      },
+      {
         "title": "Palantir Is Down 22% From Its October High. Dan Ives Puts It Among the Sell-Off’s “Clear Areas of Safety”",
         "url": "https://www.tikr.com/blog/palantir-is-down-22-from-its-october-high-dan-ives-puts-it-among-the-sell-offs-clear-areas-of-safety?ref=yahoofinance&tlnk=yf-261126-xw5cpjr4&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1297,20 +1311,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 18:31 ET",
         "pub_ts": 1795649464.0
-      },
-      {
-        "title": "Goldman Sachs bets on Palantir's 'mega customers' after NYC demo",
-        "url": "https://www.thestreet.com/investing/palantir-mega-customers-goldman-sachs?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 15:13 ET",
-        "pub_ts": 1795637580.0
-      },
-      {
-        "title": "Michael Burry Bets on Stock Market Recovery After Thanksgiving",
-        "url": "https://beincrypto.com/michael-burry-stock-market-recovery-thanksgiving-crash/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 15:07 ET",
-        "pub_ts": 1795637255.0
       }
     ],
     "NOW": [
@@ -2388,6 +2388,27 @@
     ],
     "MU": [
       {
+        "title": "Micron and Sandisk Are Two of the Cheapest AI Chip Stocks to Own",
+        "url": "https://finance.yahoo.com/technology/ai/articles/micron-sandisk-two-cheapest-ai-112351523.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 06:23 ET",
+        "pub_ts": 1795692231.0
+      },
+      {
+        "title": "Micron Stock Has Lost Half Its Value Since June",
+        "url": "https://www.trefis.com/stock/mu/articles/629190/micron-stock-has-lost-half-its-value-since-june/2026-11-26?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 06:17 ET",
+        "pub_ts": 1795691844.0
+      },
+      {
+        "title": "Nvidia, AMD and Micron Stocks Plunge as AI Selloff Deepens",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/nvidia-amd-micron-stocks-plunge-110624788.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 06:06 ET",
+        "pub_ts": 1795691184.0
+      },
+      {
         "title": "Avantis U.S. Large Cap Value ETF (AVLV) Adds AT&T and Micron on Tuesday",
         "url": "https://finance.yahoo.com/markets/stocks/articles/avantis-u-large-cap-value-110514185.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2395,32 +2416,11 @@
         "pub_ts": 1795691114.0
       },
       {
-        "title": "Micron’s Taiwan Expansion Plans Face Uncertainty Amid Ongoing Labour Dispute",
-        "url": "https://investorshub.advfn.com/market-news/article/40757/microns-taiwan-expansion-plans-face-uncertainty-amid-ongoing-labour-dispute?.tsrc=rss",
+        "title": "Micron's Margins Peaked Before. How Far Did MU Fall?",
+        "url": "https://www.trefis.com/stock/mu/articles/629179/micron-s-margins-peaked-before-how-far-did-mu-fall/2026-11-26?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-26 05:57 ET",
-        "pub_ts": 1795690665.0
-      },
-      {
-        "title": "Micron Technology (MU) Products Are Exempt From New US Tariffs",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/micron-technology-mu-products-exempt-071205634.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 02:12 ET",
-        "pub_ts": 1795677125.0
-      },
-      {
-        "title": "MU, SNDK, SKHY Jump As Nvidia Tests Kioxia Memory Fix — Analyst Presses Memory Giants For ‘Massive’ Buybacks",
-        "url": "https://stocktwits.com/news-articles/markets/equity/mu-sndk-skhy-nvidia-kioxia-memory-fix-analyst-memory-giants-buybacks/cNbxQFgR9ZK?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 01:30 ET",
-        "pub_ts": 1795674651.0
-      },
-      {
-        "title": "Micron faces Taiwan uncertainty as labor dispute threatens expansion, report warns",
-        "url": "https://finance.yahoo.com/technology/articles/micron-faces-taiwan-uncertainty-labor-055543451.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 00:55 ET",
-        "pub_ts": 1795672543.0
+        "time": "11-26 06:00 ET",
+        "pub_ts": 1795690834.0
       }
     ],
     "SKHY": [
@@ -3327,35 +3327,35 @@
     "TLT": 1795692632.128583,
     "GLD": 1795692772.3072996,
     "SQQQ": 1795692772.3072996,
-    "TSM": 1795691345.0477648,
+    "TSM": 1795692879.1814775,
     "VIXY": 1795692772.3072996,
     "SOXS": 1795692772.3072996,
     "NVDA": 1795692772.3072996,
     "AMD": 1795692772.3072996,
-    "ASML": 1795691345.0477648,
-    "QCOM": 1795691345.0477648,
+    "ASML": 1795692879.1814775,
+    "QCOM": 1795692879.1814775,
     "AVGO": 1795692772.3072996,
-    "AMAT": 1795691345.0477648,
-    "META": 1795691345.0477648,
-    "GOOGL": 1795691345.0477648,
-    "MSFT": 1795691345.0477648,
-    "AAPL": 1795691345.0477648,
-    "PLTR": 1795691345.0477648,
-    "NOW": 1795691345.0477648,
-    "AMZN": 1795691345.0477648,
-    "CRWV": 1795691345.0477648,
-    "NBIS": 1795691345.0477648,
-    "APLD": 1795691345.0477648,
+    "AMAT": 1795692879.1814775,
+    "META": 1795692879.1814775,
+    "GOOGL": 1795692879.1814775,
+    "MSFT": 1795692879.1814775,
+    "AAPL": 1795692879.1814775,
+    "PLTR": 1795692879.1814775,
+    "NOW": 1795692879.1814775,
+    "AMZN": 1795692879.1814775,
+    "CRWV": 1795692879.1814775,
+    "NBIS": 1795692879.1814775,
+    "APLD": 1795692879.1814775,
     "VST": 1795692632.128583,
     "BE": 1795692632.128583,
     "CRDO": 1795692632.128583,
     "COHR": 1795692632.128583,
-    "MRVL": 1795691345.0477648,
-    "LITE": 1795691345.0477648,
+    "MRVL": 1795692879.1814775,
+    "LITE": 1795692879.1814775,
     "AAOI": 1795692632.128583,
     "SPCX": 1795692632.128583,
     "ASTS": 1795692632.128583,
-    "AXTI": 1795691345.0477648,
+    "AXTI": 1795692879.1814775,
     "NASA": 1795692772.3072996,
     "LUNR": 1795692772.3072996,
     "TSLA": 1795692772.3072996,
@@ -3370,8 +3370,8 @@
     "OKLO": 1795692824.7296414,
     "CEG": 1795692772.3072996,
     "FPS": 1795692824.7296414,
-    "MU": 1795691345.0477648,
-    "SKHY": 1795691345.0477648,
+    "MU": 1795692879.1814775,
+    "SKHY": 1795692879.1814775,
     "WDC": 1795691396.6507773,
     "STX": 1795692824.7296414,
     "MSTR": 1795692824.7296414,
@@ -3390,11 +3390,11 @@
     "WMT": 1795692824.7296414,
     "V": 1795692824.7296414,
     "CAT": 1795692824.7296414,
-    "FN": 1795691345.0477648,
+    "FN": 1795692879.1814775,
     "GLW": 1795692632.128583,
     "ANT": 1795692824.7296414,
     "XAUUSD": 1795691345.0477648,
-    "KOSPI": 1795691345.0477648,
+    "KOSPI": 1795692879.1814775,
     "KSTR": 1795692824.7296414
   },
   "opex_shield": {
