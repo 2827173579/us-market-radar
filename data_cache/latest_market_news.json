@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795660704.858,
-  "updated_at_et": "11-25 21:38 ET",
-  "updated_at_kst": "11:38 KST",
+  "updated_at_ts": 1795660744.787,
+  "updated_at_et": "11-25 21:39 ET",
+  "updated_at_kst": "11:39 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -2764,6 +2764,13 @@
         "pub_ts": 1795648397.0
       },
       {
+        "title": "How to Play Coinbase Stock Ahead of Its Prediction Markets Launch",
+        "url": "https://www.barchart.com/story/news/9009607/how-to-play-coinbase-stock-ahead-of-its-prediction-markets-launch?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 15:31 ET",
+        "pub_ts": 1795638668.0
+      },
+      {
         "title": "Coinbase Is Buying Back COIN Again as Shares Slide",
         "url": "https://www.bankless.com/read/news/coinbase-is-buying-back-coin-again-as-shares-slide?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2783,13 +2790,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 11:35 ET",
         "pub_ts": 1795624557.0
-      },
-      {
-        "title": "SpaceX, Anthropic IPOs Shut Out Retail Investors, Says Coinbase CEO — Brian Armstrong Resumes Buying Back COIN Shares",
-        "url": "https://stocktwits.com/news-articles/markets/equity/space-x-anthropic-ip-os-shut-out-retail-investors-says-coinbase-ceo-brian-armstrong-resumes-buying-back-coin-shares/cNbHdA0R9lS?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 01:01 ET",
-        "pub_ts": 1795586504.0
       }
     ],
     "LLY": [
@@ -2797,8 +2797,8 @@
         "title": "Dow Jones Futures Rise; Market Goes On Wild Ride As Nasdaq Slashes Losses",
         "url": "https://finance.yahoo.com/m/158e82fc-b889-34b6-8704-99a49e9a83ae/dow-jones-futures-rise%3B.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-25 20:34 ET",
-        "pub_ts": 1795656875.0
+        "time": "11-25 21:17 ET",
+        "pub_ts": 1795659448.0
       },
       {
         "title": "Sector Update: Healthcare Stocks Fall Late Afternoon",
@@ -3321,20 +3321,20 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795659219.9807472,
-    "SOXL": 1795659219.9807472,
+    "KORU": 1795660744.7867603,
+    "SOXL": 1795660744.7867603,
     "SPY": 1795660421.3495572,
-    "DIA": 1795659219.9807472,
-    "SOXX": 1795659219.9807472,
-    "QQQ": 1795659219.9807472,
+    "DIA": 1795660744.7867603,
+    "SOXX": 1795660744.7867603,
+    "QQQ": 1795660744.7867603,
     "SMH": 1795660421.3495572,
-    "IWM": 1795659219.9807472,
-    "IGV": 1795659219.9807472,
-    "TLT": 1795659219.9807472,
-    "GLD": 1795659219.9807472,
+    "IWM": 1795660744.7867603,
+    "IGV": 1795660744.7867603,
+    "TLT": 1795660744.7867603,
+    "GLD": 1795660744.7867603,
     "SQQQ": 1795659262.9252965,
     "TSM": 1795660421.3495572,
-    "VIXY": 1795659219.9807472,
+    "VIXY": 1795660744.7867603,
     "SOXS": 1795659262.9252965,
     "NVDA": 1795659262.9252965,
     "AMD": 1795659262.9252965,
@@ -3379,27 +3379,27 @@
     "MU": 1795660421.3495572,
     "SKHY": 1795660421.3495572,
     "WDC": 1795660421.3495572,
-    "STX": 1795659219.9807472,
+    "STX": 1795660744.7867603,
     "MSTR": 1795660704.858148,
     "SNDK": 1795660704.858148,
     "BTC-USD": 1795660421.3495572,
     "CRWD": 1795660704.858148,
-    "ORCL": 1795659219.9807472,
-    "COIN": 1795659219.9807472,
-    "LLY": 1795659219.9807472,
-    "MRNA": 1795659219.9807472,
-    "NKE": 1795659219.9807472,
-    "MCD": 1795659219.9807472,
-    "PEP": 1795659219.9807472,
-    "XOM": 1795659219.9807472,
-    "JPM": 1795659219.9807472,
-    "WMT": 1795659219.9807472,
-    "V": 1795659219.9807472,
-    "CAT": 1795659219.9807472,
+    "ORCL": 1795660744.7867603,
+    "COIN": 1795660744.7867603,
+    "LLY": 1795660744.7867603,
+    "MRNA": 1795660744.7867603,
+    "NKE": 1795660744.7867603,
+    "MCD": 1795660744.7867603,
+    "PEP": 1795660744.7867603,
+    "XOM": 1795660744.7867603,
+    "JPM": 1795660744.7867603,
+    "WMT": 1795660744.7867603,
+    "V": 1795660744.7867603,
+    "CAT": 1795660744.7867603,
     "FN": 1795660421.3495572,
     "GLW": 1795660704.858148,
-    "ANT": 1795659219.9807472,
-    "XAUUSD": 1795659219.9807472,
+    "ANT": 1795660744.7867603,
+    "XAUUSD": 1795660744.7867603,
     "KOSPI": 1795660421.3495572
   },
   "opex_shield": {
