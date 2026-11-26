@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795682329.15,
-  "updated_at_et": "11-26 03:38 ET",
-  "updated_at_kst": "17:38 KST",
+  "updated_at_ts": 1795682375.12,
+  "updated_at_et": "11-26 03:39 ET",
+  "updated_at_kst": "17:39 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1754,6 +1754,13 @@
     ],
     "SPCX": [
       {
+        "title": "SPCX Wins Million-Satellite Nod And Retail Attention — But ASTS Leads Space Stocks Into Thanksgiving",
+        "url": "https://stocktwits.com/news-articles/markets/equity/spcx-stock-million-satellite-nod-asts-leads-rklb-lunr-bksy-thanksgiving/cNbxLqbR9ZV?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 03:25 ET",
+        "pub_ts": 1795681559.0
+      },
+      {
         "title": "Musk makes $18 billion SpaceX stock pledge for every kid in America",
         "url": "https://www.axios.com/2026/11/26/musk-spacex-shares-trump-accounts#utm_source=yahoo_finance&utm_medium=partner&utm_campaign=subs-partner-yahoo-finance-AI?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1780,16 +1787,16 @@
         "source": "Yahoo Finance",
         "time": "11-25 23:29 ET",
         "pub_ts": 1795667395.0
-      },
-      {
-        "title": "Cathie Wood Buys More SpaceX Amid Tesla Merger Talks — Ron Baron Says SpaceX Could Make $50B A Year From One Data Center",
-        "url": "https://stocktwits.com/news-articles/markets/equity/cathie-wood-buys-spacex-tesla-merger-talks-ron-baron-spacex-50b-one-data-center/cNbxeDKR9Z4?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 22:32 ET",
-        "pub_ts": 1795663955.0
       }
     ],
     "ASTS": [
+      {
+        "title": "SPCX Wins Million-Satellite Nod And Retail Attention — But ASTS Leads Space Stocks Into Thanksgiving",
+        "url": "https://stocktwits.com/news-articles/markets/equity/spcx-stock-million-satellite-nod-asts-leads-rklb-lunr-bksy-thanksgiving/cNbxLqbR9ZV?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 03:25 ET",
+        "pub_ts": 1795681559.0
+      },
       {
         "title": "AST SpaceMobile (ASTS) Stages Impressive Comeback From Record Low",
         "url": "https://finance.yahoo.com/markets/stocks/articles/ast-spacemobile-asts-stages-impressive-060124396.html?.tsrc=rss",
@@ -1817,13 +1824,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 04:02 ET",
         "pub_ts": 1795597322.0
-      },
-      {
-        "title": "ASTS Stock Eyes Worst Month Since 2024: Bulls Cheer Director’s Dip Buy And Bet On A Launch-Fueled Comeback",
-        "url": "https://stocktwits.com/news-articles/markets/equity/asts-stock-bulls-director-dip-buy-bet-on-launch-fueled-comeback/cNbHb6dR9lO?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 22:41 ET",
-        "pub_ts": 1795578106.0
       }
     ],
     "AXTI": [
@@ -3310,16 +3310,16 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795680850.7608156,
-    "SOXL": 1795680850.7608156,
+    "KORU": 1795682375.1200671,
+    "SOXL": 1795682375.1200671,
     "SPY": 1795682052.5381603,
-    "DIA": 1795680850.7608156,
-    "SOXX": 1795680850.7608156,
-    "QQQ": 1795680850.7608156,
+    "DIA": 1795682375.1200671,
+    "SOXX": 1795682375.1200671,
+    "QQQ": 1795682375.1200671,
     "SMH": 1795682052.5381603,
-    "IWM": 1795680850.7608156,
-    "IGV": 1795680850.7608156,
-    "TLT": 1795680850.7608156,
+    "IWM": 1795682375.1200671,
+    "IGV": 1795682375.1200671,
+    "TLT": 1795682375.1200671,
     "GLD": 1795680943.660106,
     "SQQQ": 1795680943.660106,
     "TSM": 1795682052.5381603,
@@ -3341,15 +3341,15 @@
     "CRWV": 1795682052.5381603,
     "NBIS": 1795682102.625542,
     "APLD": 1795682102.625542,
-    "VST": 1795680850.7608156,
-    "BE": 1795680850.7608156,
-    "CRDO": 1795680850.7608156,
-    "COHR": 1795680850.7608156,
+    "VST": 1795682375.1200671,
+    "BE": 1795682375.1200671,
+    "CRDO": 1795682375.1200671,
+    "COHR": 1795682375.1200671,
     "MRVL": 1795682102.625542,
     "LITE": 1795682102.625542,
-    "AAOI": 1795680850.7608156,
-    "SPCX": 1795680850.7608156,
-    "ASTS": 1795680850.7608156,
+    "AAOI": 1795682375.1200671,
+    "SPCX": 1795682375.1200671,
+    "ASTS": 1795682375.1200671,
     "AXTI": 1795682102.625542,
     "NASA": 1795680850.7608156,
     "LUNR": 1795680850.7608156,
@@ -3386,7 +3386,7 @@
     "V": 1795680943.660106,
     "CAT": 1795681027.9755692,
     "FN": 1795682102.625542,
-    "GLW": 1795680850.7608156,
+    "GLW": 1795682375.1200671,
     "ANT": 1795681027.9755692,
     "XAUUSD": 1795681027.9755692,
     "KOSPI": 1795682052.5381603,
