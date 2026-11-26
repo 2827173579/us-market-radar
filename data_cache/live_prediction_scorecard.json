@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-26 23:30:05",
+  "updated_at": "2026-11-27 00:49:21",
   "win_rate_7d_pct": 100.0,
   "win_rate_30d_pct": 57.6,
   "long_win_rate_7d_pct": 9.1,
@@ -1147,6 +1147,62 @@
       "direction": "SHORT",
       "pred_prob_pct": 55.4,
       "entry_price": 355.58
+    },
+    {
+      "ticker": "COHR",
+      "pred_date": "2026-11-27",
+      "direction": "SHORT",
+      "pred_prob_pct": 56.1,
+      "entry_price": 196.19
+    },
+    {
+      "ticker": "BTC-USD",
+      "pred_date": "2026-11-27",
+      "direction": "SHORT",
+      "pred_prob_pct": 58.5,
+      "entry_price": 60442.08
+    },
+    {
+      "ticker": "CEG",
+      "pred_date": "2026-11-27",
+      "direction": "SHORT",
+      "pred_prob_pct": 62.2,
+      "entry_price": 235.28
+    },
+    {
+      "ticker": "NKE",
+      "pred_date": "2026-11-27",
+      "direction": "SHORT",
+      "pred_prob_pct": 56.2,
+      "entry_price": 36.66
+    },
+    {
+      "ticker": "ORCL",
+      "pred_date": "2026-11-27",
+      "direction": "SHORT",
+      "pred_prob_pct": 58.6,
+      "entry_price": 103.88
+    },
+    {
+      "ticker": "LLY",
+      "pred_date": "2026-11-27",
+      "direction": "SHORT",
+      "pred_prob_pct": 56.7,
+      "entry_price": 1392.22
+    },
+    {
+      "ticker": "MSFT",
+      "pred_date": "2026-11-27",
+      "direction": "SHORT",
+      "pred_prob_pct": 58.6,
+      "entry_price": 489.93
+    },
+    {
+      "ticker": "VST",
+      "pred_date": "2026-11-27",
+      "direction": "SHORT",
+      "pred_prob_pct": 57.5,
+      "entry_price": 121.32
     }
   ],
   "daily_breakdown_30d": [
