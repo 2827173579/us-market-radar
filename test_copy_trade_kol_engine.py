@@ -38,7 +38,7 @@ class TestCopyTradeKolEngineV551(unittest.TestCase):
         )
         self.assertAlmostEqual(
             kol.resolve_kol_structural_sl("NVDA", "LONG", 100.0, live_quote={"day_low": 90.0}),
-            95.50, places=2,
+            96.50, places=2,
         )
 
     def test_02_patch_b_v2_addon_30_to_50_avg_entry_and_1pct_buffer_stop(self):
@@ -113,9 +113,20 @@ class TestCopyTradeKolEngineV551(unittest.TestCase):
             )
             self.assertEqual(len(r0["opened_now"]), 2)
 
+            # V5.7 精简版先执行金字塔加仓 (+1.8% -> 均价 ~$101.64)，随后在 $106.00 (+4.3%) 触发 BE26 + 一阶落袋并保留 50% 尾仓
+            q_add = {
+                "NVDA": {"active_price": 102.00, "vwap": 101.0, "vwap_diff_pct": 1.0, "rsi_5m": 62.0, "rvol_5m": 1.4},
+                "MU": {"active_price": 102.00, "vwap": 101.0, "vwap_diff_pct": 1.0, "rsi_5m": 62.0, "rvol_5m": 1.4},
+            }
+            r_add = kol.run_kol_copy_trade_cycle(
+                ai_predictions=ai, live_quotes=q_add, market_regime="BULL_EXPANSION",
+                session_code="REGULAR", now_et=_et(2026, 11, 24, 10, 30), ledger_path=lp, dry_run=False,
+            )
+            self.assertEqual(len(r_add["addons_now"]), 2)
+
             q_part = {
-                "NVDA": {"active_price": 104.20, "vwap": 102.0, "vwap_diff_pct": 2.1, "rsi_5m": 66.0, "rvol_5m": 1.4},
-                "MU": {"active_price": 104.20, "vwap": 102.0, "vwap_diff_pct": 2.1, "rsi_5m": 66.0, "rvol_5m": 1.4},
+                "NVDA": {"active_price": 105.20, "vwap": 102.5, "vwap_diff_pct": 2.6, "rsi_5m": 66.0, "rvol_5m": 1.4},
+                "MU": {"active_price": 105.20, "vwap": 102.5, "vwap_diff_pct": 2.6, "rsi_5m": 66.0, "rvol_5m": 1.4},
             }
             r_p = kol.run_kol_copy_trade_cycle(
                 ai_predictions=ai, live_quotes=q_part, market_regime="BULL_EXPANSION",
@@ -125,11 +136,11 @@ class TestCopyTradeKolEngineV551(unittest.TestCase):
             for p in r_p["ledger"]["open_positions"]:
                 self.assertTrue(p["partial_tp_done"])
                 self.assertTrue(p["be_stop_active"])
-                self.assertAlmostEqual(p["sl_price"], 100.30, places=2)
+                self.assertAlmostEqual(p["sl_price"], round(p["entry_price"] * 1.003, 2), places=2)
 
             q_peak = {
                 "NVDA": {"active_price": 110.00, "vwap": 105.0, "vwap_diff_pct": 4.7, "rsi_5m": 71.0, "rvol_5m": 1.6},
-                "MU": {"active_price": 107.00, "vwap": 103.5, "vwap_diff_pct": 3.4, "rsi_5m": 80.5, "rvol_5m": 2.8},
+                "MU": {"active_price": 108.00, "vwap": 104.0, "vwap_diff_pct": 3.8, "rsi_5m": 80.5, "rvol_5m": 2.8},
             }
             r_pk = kol.run_kol_copy_trade_cycle(
                 ai_predictions=ai, live_quotes=q_peak, market_regime="BULL_EXPANSION",
@@ -394,12 +405,12 @@ class TestCopyTradeKolEngineV551(unittest.TestCase):
             emb = kol.build_dual_track_copy_embed_dict(steady_path=sp, kol_path=lp)
             emb_s = str(emb)
             self.assertIn("V5.4 稳健轨", emb_s)
-            self.assertIn("V5.5 KOL 狙击轨", emb_s)
+            self.assertIn("V5.7 精简 KOL 轨", emb_s)
             self.assertNotIn("建议股数", emb_s)
             self.assertNotIn("\U0001fa99", emb_s)
 
             drawer = kol.render_dual_track_copy_drawer_html(steady_path=sp, kol_path=lp, drawer_id="dualDrawerTest")
-            self.assertIn("V5.5 激进 KOL 狙击轨", drawer)
+            self.assertIn("V5.7 精简 KOL 狙击轨", drawer)
             self.assertIn("V5.4 稳健基准轨", drawer)
             self.assertIn("<svg", drawer)
             self.assertNotIn("建议股数", drawer)

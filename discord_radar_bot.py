@@ -625,6 +625,8 @@ def build_check_embed_dict(
         ma20_v = _opt_float(item.get("ma20"))
         ma50_v = _opt_float(item.get("ma50"))
         bias20_v = _opt_float(item.get("bias_ma20"))
+        if bias20_v is None and px_v is not None and ma20_v is not None and ma20_v > 0:
+            bias20_v = round(((px_v - ma20_v) / ma20_v) * 100.0, 2)
         s1_v, s2_v = _opt_float(item.get("s1")), _opt_float(item.get("s2"))
         r1_v, r2_v = _opt_float(item.get("r1")), _opt_float(item.get("r2"))
         turn_v = _opt_float(item.get("turnover"))
@@ -654,19 +656,33 @@ def build_check_embed_dict(
         if turn_str != "--":
             px_line += f" ｜ 成交额：{turn_str}"
         sr_lines = [
-            f"• 下方支撑：**{fp(s1_v)}{unit_suffix}**{_rel_pct_str(s1_v, px_v)} ｜ 深度支撑 {fp(s2_v)}{unit_suffix}",
-            f"• 上方压力：**{fp(r1_v)}{unit_suffix}**{_rel_pct_str(r1_v, px_v)} ｜ 强压力 {fp(r2_v)}{unit_suffix}",
+            f"• 下方支撑：**{fp(s1_v)}{unit_suffix}**{_rel_pct_str(s1_v, px_v)} ｜ 深度支撑 {fp(s2_v)}{unit_suffix}{_rel_pct_str(s2_v, px_v)}",
+            f"• 上方压力：**{fp(r1_v)}{unit_suffix}**{_rel_pct_str(r1_v, px_v)} ｜ 强压力 {fp(r2_v)}{unit_suffix}{_rel_pct_str(r2_v, px_v)}",
         ]
+        if rsi_v is None:
+            rsi_lbl = "数据不足"
+        elif rsi_v < 30.0:
+            rsi_lbl = "超卖留意企稳"
+        elif rsi_v < 40.0:
+            rsi_lbl = "偏弱/临近超卖"
+        elif rsi_v <= 60.0:
+            rsi_lbl = "中性区间"
+        elif rsi_v <= 70.0:
+            rsi_lbl = "偏强留意动能"
+        else:
+            rsi_lbl = "超买防回落"
+        bias20_txt = f"{bias20_v:+.2f}%" if bias20_v is not None else "--"
         tech_lines = [
-            f"• **均线锚点**：MA20 {fp(ma20_v)}{unit_suffix}（偏离 {_fmt_pct(bias20_v)}）｜ MA50 {fp(ma50_v)}{unit_suffix}",
-            f"• **14日 RSI**：{_fmt_num(rsi_v, 1)}（{'超买防回落' if (rsi_v is not None and rsi_v >= 70) else ('超卖留意企稳' if (rsi_v is not None and rsi_v <= 32) else '中性区间')}）",
-            f"• **分区说明**：🇨🇳 亚太/A股独立只读分区（不计入纯美股温度计与模拟跟单池，无美股期权与美股财报）",
+            f"• **均线锚点**：MA20 {fp(ma20_v)}{unit_suffix}（偏离 {bias20_txt}）｜ MA50 {fp(ma50_v)}{unit_suffix}",
+            f"• **14日 RSI**：{_fmt_num(rsi_v, 1)}（{rsi_lbl}）",
+            "• **分区**：🇨🇳 亚太/A股只读行情（免费源）",
         ]
         apac_meta = snapshot.get("apac_ashare_meta") if isinstance(snapshot.get("apac_ashare_meta"), dict) else {}
-        upd_cst = str(apac_meta.get("updated_at_cst") or "").strip()
+        upd_cst_raw = str(apac_meta.get("updated_at_cst") or "").strip()
+        upd_cst_clean = upd_cst_raw[:-3].strip() if upd_cst_raw.upper().endswith("CST") else upd_cst_raw
         apac_footer = (
-            f"亚太/A股快照更新: {upd_cst} CST · 独立免费源只读 · 仅作量化参考"
-            if upd_cst
+            f"亚太/A股快照更新: {upd_cst_clean} CST · 仅作量化参考"
+            if upd_cst_clean
             else footer_txt
         )
         return {

@@ -393,6 +393,64 @@ def _save_cache(doc: Dict[str, Any], cache_path: str = DEFAULT_APAC_CACHE_PATH) 
                 pass
 
 
+def _sanitize_unadjusted_splits(
+    rows: List[List[Any]],
+    decimals: int = 3,
+    jump_ratio_thresh: float = 0.35,
+) -> List[List[Any]]:
+    """
+    兜底防污染护栏：若备用未复权源出现单日 >35% 的 ETF 拆分/折算断层跳变（非正常单日涨跌停），
+    从最新价向历史回推拆分比例做前复权平滑，彻底杜绝未复权拆分污染 MA50 / R2。
+    """
+    if len(rows) < 2:
+        return rows
+    out = [list(r) for r in rows]
+    for i in range(len(out) - 1, 0, -1):
+        c_prev = _safe_float(out[i - 1][4])
+        o_curr = _safe_float(out[i][1]) or _safe_float(out[i][4])
+        if not c_prev or not o_curr or c_prev <= 0 or o_curr <= 0:
+            continue
+        rel_jump = abs(o_curr - c_prev) / c_prev
+        if rel_jump >= jump_ratio_thresh:
+            ratio = o_curr / c_prev
+            # 仅对典型拆分/合并比例范围生效
+            if 0.15 <= ratio <= 0.68 or 1.45 <= ratio <= 6.5:
+                for j in range(0, i):
+                    for col_idx in (1, 2, 3, 4):
+                        v = _safe_float(out[j][col_idx])
+                        if v is not None:
+                            out[j][col_idx] = round(v * ratio, decimals)
+    return out
+
+
+def _compute_volume_poc(bars: List[List[Any]], bins: int = 18) -> Optional[float]:
+    """计算近区间成交密集区（Volume-Weighted POC）。"""
+    if len(bars) < 5:
+        return None
+    tps: List[float] = []
+    vols: List[float] = []
+    for r in bars:
+        h = _safe_float(r[2])
+        l = _safe_float(r[3])
+        c = _safe_float(r[4])
+        v = _safe_float(r[5], 1.0) or 1.0
+        if h and l and c and c > 0:
+            tps.append((h + l + c) / 3.0)
+            vols.append(max(1.0, v))
+    if len(tps) < 5:
+        return None
+    lo, hi = min(tps), max(tps)
+    if hi - lo <= 1e-6:
+        return None
+    step = (hi - lo) / bins
+    buckets = [0.0] * bins
+    for tp, v in zip(tps, vols):
+        idx = min(bins - 1, max(0, int((tp - lo) / step)))
+        buckets[idx] += v
+    best_i = max(range(bins), key=lambda k: buckets[k])
+    return lo + (best_i + 0.5) * step
+
+
 def _compute_technicals_from_daily(
     daily_ohlc: List[List[Any]],
     spot_price: Optional[float] = None,
@@ -400,15 +458,20 @@ def _compute_technicals_from_daily(
     spot_pct: Optional[float] = None,
     decimals: int = 3,
 ) -> Dict[str, Any]:
-    """基于日 K 序列计算均线、RSI(14)、ATR 与静态撑压 S1/S2/R1/R2。"""
+    """
+    基于前复权日 K 序列计算均线 (MA10/MA20/MA50)、MA20 偏离、RSI(14)、ATR 与
+    梯次可交易结构撑压 S1/S2/R1/R2（杜绝用 60/120/250 日山顶僵尸高点硬当 R1/R2）。
+    """
     if not daily_ohlc:
         px = round(float(spot_price), decimals) if (spot_price and spot_price > 0) else 0.0
         return {
             "last": px,
             "prev_close": round(float(spot_prev_close), decimals) if (spot_prev_close and spot_prev_close > 0) else px,
             "pct_change": round(float(spot_pct), 2) if spot_pct is not None else 0.0,
+            "ma10": px,
             "ma20": px,
             "ma50": px,
+            "bias_ma20": 0.0,
             "bias": 0.0,
             "rsi": 50.0,
             "atr": 0.0,
@@ -433,9 +496,16 @@ def _compute_technicals_from_daily(
     else:
         pct = 0.0
 
+    ma10 = float(closes.tail(10).mean())
     ma20 = float(closes.tail(20).mean())
     ma50 = float(closes.tail(50).mean())
+    bias_ma20 = ((px - ma20) / ma20 * 100.0) if ma20 > 0 else 0.0
     bias = ((px - ma50) / ma50 * 100.0) if ma50 > 0 else 0.0
+
+    # 20 日布林带
+    std20 = float(closes.tail(20).std(ddof=0)) if len(closes) >= 5 else 0.0
+    bb_upper = ma20 + 2.0 * std20 if std20 > 0 else 0.0
+    bb_lower = max(0.001, ma20 - 2.0 * std20) if std20 > 0 else 0.0
 
     # Wilder's RSI(14)
     delta = closes.diff()
@@ -451,32 +521,97 @@ def _compute_technicals_from_daily(
     tr3 = (lows - closes.shift(1)).abs()
     tr = pd.concat([tr1, tr2, tr3], axis=1).max(axis=1)
     atr = float(tr.tail(14).mean()) if len(tr) else max(px * 0.015, 0.001)
-    atr_step = max(atr, px * 0.015)
+    atr_pct = (atr / px) if px > 0 else 0.02
 
-    # S1/S2/R1/R2 基于近 20~60 日高低点与 ATR 最小档位防扎堆
-    win20_lo = float(lows.tail(20).min())
-    win60_lo = float(lows.tail(60).min())
-    win20_hi = float(highs.tail(20).max())
-    win60_hi = float(highs.tail(60).max())
+    # 梯次结构撑压候选池（严禁直接用 60/120/250 日山顶最高价硬当 R1/R2）
+    recent_bars = daily_ohlc[-60:]
+    hi_arr = [float(r[2]) for r in recent_bars]
+    lo_arr = [float(r[3]) for r in recent_bars]
+    n_b = len(recent_bars)
 
-    s1 = win20_lo if (0 < win20_lo < px * 0.996) else (px - atr_step * 1.2)
-    s2 = win60_lo if (0 < win60_lo <= s1 - atr_step * 0.8) else (s1 - atr_step * 1.5)
-    r1 = win20_hi if (win20_hi > px * 1.004) else (px + atr_step * 1.2)
-    r2 = win60_hi if (win60_hi >= r1 + atr_step * 0.8) else (r1 + atr_step * 1.5)
+    # 局部 Swing High / Swing Low（近 5~25 日真实可交易波段拐点 + 5/10/20 日近端高低）
+    swing_highs: List[float] = []
+    swing_lows: List[float] = []
+    look_start = max(1, n_b - 25)
+    for i in range(look_start, n_b - 1):
+        if hi_arr[i] >= hi_arr[i - 1] and hi_arr[i] >= hi_arr[i + 1]:
+            swing_highs.append(hi_arr[i])
+        if lo_arr[i] <= lo_arr[i - 1] and lo_arr[i] <= lo_arr[i + 1]:
+            swing_lows.append(lo_arr[i])
+
+    # 近 5/10/20 日波段高低 + 跌破/突破颈线（原支撑转阻力、原阻力转支撑）
+    for w in (5, 10, 20):
+        if n_b >= w:
+            swing_highs.append(max(hi_arr[-w:]))
+            swing_lows.append(min(lo_arr[-w:]))
+
+    poc_20 = _compute_volume_poc(recent_bars[-20:])
+    poc_45 = _compute_volume_poc(recent_bars[-45:])
+
+    # 所有结构候选位（阻力取高于现价、支撑取低于现价，含 MA10/MA20/MA50、布林中/上/下轨、颈线与 POC）
+    all_struct_levels: List[float] = []
+    for lv in [ma10, ma20, ma50, bb_upper, bb_lower, poc_20, poc_45] + swing_highs + swing_lows:
+        if lv is not None and math.isfinite(lv) and lv > 0:
+            all_struct_levels.append(float(lv))
+
+    # 合理操作区间与最小间距去重：R1 至少高于现价 +1.2%，典型落在 +2% ~ +8%(高波不超 +11%)
+    min_gap_1 = max(px * 0.012, atr * 0.55)
+    min_gap_2 = max(px * 0.018, atr * 0.90)
+    r1_max_reach = px * (1.0 + max(0.075, min(0.115, atr_pct * 3.2)))
+    r2_max_reach = px * (1.0 + max(0.14, min(0.22, atr_pct * 5.8)))
+    s1_max_reach = px * (1.0 - max(0.075, min(0.115, atr_pct * 3.2)))
+    s2_max_reach = px * (1.0 - max(0.14, min(0.22, atr_pct * 5.8)))
+
+    # 去重聚合（0.5% 内视为同一结构位）
+    def _dedup_sorted(vals: List[float], reverse: bool = False) -> List[float]:
+        s = sorted(vals, reverse=reverse)
+        res: List[float] = []
+        for v in s:
+            if not res or abs(v - res[-1]) / max(px, 1e-6) >= 0.005:
+                res.append(v)
+        return res
+
+    res_cands = _dedup_sorted([v for v in all_struct_levels if (px + min_gap_1) <= v <= r2_max_reach], reverse=False)
+    r1_band = [v for v in res_cands if v <= r1_max_reach]
+    if r1_band:
+        r1 = r1_band[0]
+    else:
+        r1 = px + max(atr * 1.4, px * 0.025)
+
+    r2_band = [v for v in res_cands if v >= (r1 + min_gap_2)]
+    if r2_band:
+        r2 = r2_band[0]
+    else:
+        r2 = r1 + max(atr * 1.8, px * 0.035)
+
+    sup_cands = _dedup_sorted([v for v in all_struct_levels if max(0.001, s2_max_reach) <= v <= (px - min_gap_1)], reverse=True)
+    s1_band = [v for v in sup_cands if v >= s1_max_reach]
+    if s1_band:
+        s1 = s1_band[0]
+    else:
+        s1 = max(0.001, px - max(atr * 1.4, px * 0.025))
+
+    s2_band = [v for v in sup_cands if v <= (s1 - min_gap_2)]
+    if s2_band:
+        s2 = s2_band[0]
+    else:
+        s2 = max(0.001, s1 - max(atr * 1.8, px * 0.035))
 
     return {
         "last": round(px, decimals),
         "prev_close": round(prev_c, decimals),
         "pct_change": round(pct, 2),
+        "ma10": round(ma10, decimals),
         "ma20": round(ma20, decimals),
         "ma50": round(ma50, decimals),
+        "bias_ma20": round(bias_ma20, 2),
         "bias": round(bias, 2),
         "rsi": round(rsi, 1),
         "atr": round(atr, decimals),
         "s1": round(max(0.001, s1), decimals),
-        "s2": round(max(0.001, s2), decimals),
-        "r1": round(max(px * 1.002, r1), decimals),
-        "r2": round(max(r1 * 1.005, r2), decimals),
+        "s2": round(max(0.001, min(s1 * 0.995, s2)), decimals),
+        "r1": round(max(px * 1.005, r1), decimals),
+        "r2": round(max(r1 * 1.010, r2), decimals),
     }
 
 
@@ -552,26 +687,76 @@ def _df_to_ohlc_rows(df: Optional[pd.DataFrame], decimals: int = 3, max_bars: in
     return rows
 
 
-def _fetch_single_akshare_daily(meta: Dict[str, Any]) -> Tuple[List[List[Any]], Optional[float], str]:
-    """按标的类型调用 akshare 免费免 Key 接口获取日 K + 成交额。"""
-    import akshare as ak
+def _fetch_tencent_qfq_daily(qt_sym: str, decimals: int = 3, max_bars: int = 90, timeout: float = 5.0) -> Tuple[List[List[Any]], str]:
+    """腾讯免费原生前复权日 K 接口 (`qfq`)，免 Key、零限流，优先解决 ETF 除权/拆分跳变污染。"""
+    if not qt_sym:
+        return [], "none"
+    try:
+        url = f"https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param={qt_sym},day,,,{max(max_bars, 100)},qfq"
+        r = requests.get(url, headers={"User-Agent": "Mozilla/5.0"}, timeout=timeout)
+        if r.status_code != 200:
+            return [], "none"
+        payload = r.json()
+        node = ((payload or {}).get("data") or {}).get(qt_sym) or {}
+        raw_rows = node.get("qfqday") or node.get("day") or []
+        if not raw_rows:
+            return [], "none"
+        rows: List[List[Any]] = []
+        for item in raw_rows[-max_bars:]:
+            if not isinstance(item, (list, tuple)) or len(item) < 5:
+                continue
+            # 腾讯格式: [date, open, close, high, low, volume, ...]
+            dt_str = str(item[0])[:16]
+            op = _safe_float(item[1])
+            cl = _safe_float(item[2])
+            hi = _safe_float(item[3])
+            lo = _safe_float(item[4])
+            vo = _safe_float(item[5], 0.0) if len(item) > 5 else 0.0
+            if op and hi and lo and cl and cl > 0:
+                rows.append([
+                    dt_str,
+                    round(op, decimals),
+                    round(hi, decimals),
+                    round(lo, decimals),
+                    round(cl, decimals),
+                    round(max(0.0, vo or 0.0), 2),
+                ])
+        if len(rows) >= 2:
+            src_tag = "tencent:fqkline_qfq" if "qfqday" in node else "tencent:fqkline_day"
+            return _sanitize_unadjusted_splits(rows, decimals=decimals), src_tag
+    except Exception:
+        pass
+    return [], "none"
 
+
+def _fetch_single_akshare_daily(meta: Dict[str, Any]) -> Tuple[List[List[Any]], Optional[float], str]:
+    """按标的类型获取前复权日 K + 成交额（A 股 ETF 强制前复权 qfq，严防未复权拆分污染）。"""
     tk = str(meta["ticker"]).upper()
     ak_sym = str(meta.get("ak_symbol") or "")
+    qt_sym = str(meta.get("qt_symbol") or ak_sym)
     dec = int(meta.get("decimals") or 3)
     kind = str(meta.get("kind") or "")
     turnover: Optional[float] = None
 
     if kind == "ASHARE_ETF":
-        # 优先新浪免费日 K（免推流限流），失败回退东财日 K
-        for fn_name, fn in (
-            ("ak:fund_etf_hist_sina", lambda: ak.fund_etf_hist_sina(symbol=ak_sym)),
-            ("ak:fund_etf_hist_em", lambda: ak.fund_etf_hist_em(
+        # 1) 优先腾讯原生前复权日 K (零限流 + qfq)
+        t_rows, t_src = _fetch_tencent_qfq_daily(qt_sym, decimals=dec, max_bars=90)
+        if len(t_rows) >= 2:
+            return t_rows, turnover, t_src
+
+        # 2) 回退东财原生前复权 (adjust="qfq")，最后才用新浪不复权并经过拆分平滑护栏
+        try:
+            import akshare as ak
+        except Exception:
+            return [], None, "none"
+        for fn_name, fn, need_sanitize in (
+            ("ak:fund_etf_hist_em_qfq", lambda: ak.fund_etf_hist_em(
                 symbol=tk, period="daily",
                 start_date=(datetime.now() - timedelta(days=180)).strftime("%Y%m%d"),
                 end_date=(datetime.now() + timedelta(days=2)).strftime("%Y%m%d"),
                 adjust="qfq",
-            )),
+            ), False),
+            ("ak:fund_etf_hist_sina_sanitized", lambda: ak.fund_etf_hist_sina(symbol=ak_sym), True),
         ):
             try:
                 df = fn()
@@ -581,11 +766,15 @@ def _fetch_single_akshare_daily(meta: Dict[str, Any]) -> Tuple[List[List[Any]], 
                     elif "成交额" in df.columns:
                         turnover = _safe_float(df["成交额"].iloc[-1])
                     rows = _df_to_ohlc_rows(df, decimals=dec, max_bars=90)
+                    if need_sanitize:
+                        rows = _sanitize_unadjusted_splits(rows, decimals=dec)
                     if len(rows) >= 2:
                         return rows, turnover, fn_name
             except Exception:
                 continue
         return [], None, "none"
+
+    import akshare as ak
 
     # 亚太指数 (HSTECH / 000688 / 399006)
     if tk == "HSTECH":
@@ -659,7 +848,7 @@ def _fetch_yf_batch_daily_and_5m(yf_symbols: List[str]) -> Tuple[Dict[str, pd.Da
         return res
 
     try:
-        df_d = yf.download(syms, period="6mo", interval="1d", progress=False)
+        df_d = yf.download(syms, period="6mo", interval="1d", auto_adjust=True, progress=False)
         daily_map = _split_multi(df_d, syms)
     except Exception:
         pass
@@ -924,6 +1113,8 @@ def fetch_apac_ashare_snapshot(
                         turnover = ak_turn
                     if len(daily_rows) < 2 and yfsym in yf_daily_map:
                         daily_rows = _df_to_ohlc_rows(yf_daily_map[yfsym], decimals=dec, max_bars=90)
+                        if meta.get("kind") == "ASHARE_ETF":
+                            daily_rows = _sanitize_unadjusted_splits(daily_rows, decimals=dec)
                         src_used = "yfinance_fallback"
 
                 # 5m 分时：优先用 yfinance 批量结果（0 额外请求），若缺失对 A 股可回退 sina 5m
@@ -984,8 +1175,10 @@ def fetch_apac_ashare_snapshot(
                     "pct_change": tech["pct_change"],
                     "effective_pct": tech["pct_change"],
                     "turnover": round(turnover, 2) if (turnover is not None and turnover > 0) else None,
+                    "ma10": tech["ma10"],
                     "ma20": tech["ma20"],
                     "ma50": tech["ma50"],
+                    "bias_ma20": tech["bias_ma20"],
                     "bias": tech["bias"],
                     "rsi": tech["rsi"],
                     "atr": tech["atr"],

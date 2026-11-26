@@ -8816,6 +8816,7 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
             resilient_leaders=_kol_leaders,
             daily_sr_anchors=_sr_anchors_map if isinstance(locals().get("_sr_anchors_map"), dict) else {},
             intraday_path_payload=_ip_res if isinstance(locals().get("_ip_res"), dict) else {},
+            apac_chip_sentiment=(_apac_doc.get("apac_chip_sentiment") if isinstance(locals().get("_apac_doc"), dict) else None),
             session_code=session_code,
             market_session=session_code,
             dry_run=_ct_is_dry if "_ct_is_dry" in locals() else _external_alerts_disabled(),
@@ -8833,14 +8834,14 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
         )
         _kol_ldg = _kol_res.get("ledger") or {}
         print(
-            f"[+] ⚡ V5.5.1 激进 KOL 狙击轨 ({session_code}): 净值 ${_kol_ldg.get('total_equity', 1000.0):,.2f} "
+            f"[+] ⚡ V5.7 精简 KOL 狙击轨 ({session_code}): 净值 ${_kol_ldg.get('total_equity', 1000.0):,.2f} "
             f"({_kol_ldg.get('total_return_pct', 0.0):+.2f}%) | 持仓 {len(_kol_ldg.get('open_positions') or [])}/2 | "
             f"本轮开仓 {len(_kol_res.get('opened_now') or [])} / 加仓 {len(_kol_res.get('addons_now') or [])} / "
             f"落袋 {len(_kol_res.get('partials_now') or [])} / 平仓 {len(_kol_res.get('closed_now') or [])} "
             f"[dry_run={_kol_res.get('dry_run')}, persisted={_kol_res.get('persisted')}]"
         )
     except Exception as _kol_err:
-        print(f"  [!] ⚡ V5.5.1 激进 KOL 狙击引擎降级跳过: {_kol_err}")
+        print(f"  [!] ⚡ V5.7 精简 KOL 狙击引擎降级跳过: {_kol_err}")
 
     try:
         import importlib, create_futu_terminal

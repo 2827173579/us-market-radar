@@ -1023,23 +1023,27 @@ def compute_market_temperature(
 
     macro_knife_locked = bool((vix_backwardation and not vix_bottom_signal) or (continuous_breakdown and not vix_bottom_signal))
 
+    # V5.7 审计透传：先计算未截断的 raw_macro_bottom_score（不受 <=50 接刀锁截断，供快照与看板审计；不作为 KOL 硬门禁）
+    raw_l2 = 0.0
+    if vix_bottom_signal:
+        raw_l2 += 30.0
+    elif vix_dd_peak >= 8.0 and (vix_ratio is None or vix_ratio < 0.98):
+        raw_l2 += 16.0
+    elif vix_dd_peak >= 4.0 and (vix_ratio is None or vix_ratio < 1.00):
+        raw_l2 += 8.0
+    if macro_daily_stab:
+        raw_l2 += 12.0
+    raw_l2_clamped = _clamp(raw_l2, 0.0, 40.0)
+    raw_macro_bottom_score = round(_clamp(macro_layer1 + raw_l2_clamped, 0.0, 100.0), 1)
+
     if macro_knife_locked:
         macro_layer2 = 0.0
         macro_bottom_score = round(min(50.0, macro_layer1), 1)
         mbt_tier = "⛔ 超卖观察坑 · 倒挂未解禁抄底"
         mbt_color = "down"
     else:
-        l2 = 0.0
-        if vix_bottom_signal:
-            l2 += 30.0
-        elif vix_dd_peak >= 8.0 and (vix_ratio is None or vix_ratio < 0.98):
-            l2 += 16.0
-        elif vix_dd_peak >= 4.0 and (vix_ratio is None or vix_ratio < 1.00):
-            l2 += 8.0
-        if macro_daily_stab:
-            l2 += 12.0
-        macro_layer2 = _clamp(l2, 0.0, 40.0)
-        macro_bottom_score = round(_clamp(macro_layer1 + macro_layer2, 0.0, 100.0), 1)
+        macro_layer2 = raw_l2_clamped
+        macro_bottom_score = raw_macro_bottom_score
         if macro_bottom_score >= 65.0:
             mbt_tier = "🟢 右侧恐慌出清 · 分批抄底窗"
             mbt_color = "up"
@@ -1141,12 +1145,14 @@ def compute_market_temperature(
             "intra_rsi_5m": round(intra_rsi5m, 1),
         },
         "macro_bottom_score": macro_bottom_score,
+        "raw_macro_bottom_score": raw_macro_bottom_score,
         "macro_bottom_tier": mbt_tier,
         "macro_bottom_color": mbt_color,
         "knife_catch_locked": macro_knife_locked,
         "macro_bottom_breakdown": {
             "layer1_oversold": round(macro_layer1, 1),
             "layer2_right_side": round(macro_layer2, 1),
+            "raw_untruncated_score": raw_macro_bottom_score,
             "vix_depth": round(bt_vix, 1),
             "idx_drop": round(bt_idx_drop, 1),
             "breadth_washout": round(bt_breadth, 1),
@@ -1305,7 +1311,10 @@ def render_macro_futures_and_temperature_html(temp_payload: Optional[Dict[str, A
             mbt_score,
             str(tp.get("macro_bottom_tier") or "未到抄底区"),
             _color_var(str(tp.get("macro_bottom_color") or "neutral")),
-            f"超卖深度 {mbt_bd.get('layer1_oversold', 0)}/60 · 右侧企稳 {mbt_bd.get('layer2_right_side', 0)}/40",
+            (
+                f"超卖深度 {mbt_bd.get('layer1_oversold', 0)}/60 · 右侧企稳 {mbt_bd.get('layer2_right_side', 0)}/40"
+                + (f" · 未截断 {float(tp.get('raw_macro_bottom_score')):.1f}" if tp.get("knife_catch_locked") and tp.get("raw_macro_bottom_score") is not None else "")
+            ),
             '<span class="v50-lock-badge">🔒 硬接刀锁生效 (≤50)</span>' if tp.get("knife_catch_locked") else "",
         ),
         (
