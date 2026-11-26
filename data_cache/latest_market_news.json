@@ -1,5 +1,5 @@
 {
-  "updated_at_ts": 1795719138.516,
+  "updated_at_ts": 1795719179.722,
   "updated_at_et": "11-26 13:52 ET",
   "updated_at_kst": "03:52 KST",
   "macro_calendar": [],
@@ -1279,6 +1279,13 @@
     ],
     "PLTR": [
       {
+        "title": "Palantir Stocks Rise 1.5% After Peter Thiel Discloses a $122 Million Share Purchase",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/palantir-stocks-rise-1-5-183642789.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 13:36 ET",
+        "pub_ts": 1795718202.0
+      },
+      {
         "title": "Palantir Closed 212 Deals Worth at Least $1 Million. Here’s What That Means for Its Growth",
         "url": "https://247wallst.com/investing/2026/11/26/palantir-closed-212-deals-worth-at-least-1-million-heres-what-that-means-for-its-growth/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1305,13 +1312,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 03:26 ET",
         "pub_ts": 1795681576.0
-      },
-      {
-        "title": "Michael Burry Says His Portfolio Was Discussed 'About the Time the Market Reversed Off Its Lows': He Is 'Temporarily Almost Entirely Long'",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/michael-burry-says-portfolio-discussed-025825540.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 21:58 ET",
-        "pub_ts": 1795661905.0
       }
     ],
     "NOW": [
@@ -1353,6 +1353,13 @@
     ],
     "AMZN": [
       {
+        "title": "Stanley Druckenmiller, Bill Ackman and 7 Other Famous Investors Own Amazon. Here’s Who Bought and Sold Recently",
+        "url": "https://www.tikr.com/blog/stanley-druckenmiller-bill-ackman-and-7-other-famous-investors-own-amazon-heres-who-bought-and-sold-recently?ref=yahoofinance&tlnk=yf-261126-2mffj2wm&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 13:11 ET",
+        "pub_ts": 1795716673.0
+      },
+      {
         "title": "Amazon , Walmart Battle for $124 Billion Holiday Shopping Market",
         "url": "https://finance.yahoo.com/markets/stocks/articles/amazon-walmart-battle-124-billion-175223253.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1379,13 +1386,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 12:15 ET",
         "pub_ts": 1795713331.0
-      },
-      {
-        "title": "Amazon Has 59 Buy Ratings and Not a Single Sell. Here’s Where its Headed",
-        "url": "https://247wallst.com/investing/2026/11/26/amazon-has-59-buy-ratings-and-not-a-single-sell-heres-where-its-headed/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 12:10 ET",
-        "pub_ts": 1795713002.0
       }
     ],
     "CRWV": [
@@ -2611,6 +2611,13 @@
     ],
     "BTC-USD": [
       {
+        "title": "Bitcoin Holds Above $60K as Death Cross Clouds Thanksgiving Recovery",
+        "url": "https://decrypt.co/384079/bitcoin-holds-above-60k-as-death-cross-clouds-thanksgiving-recovery?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 13:15 ET",
+        "pub_ts": 1795716929.0
+      },
+      {
         "title": "Why Strategy Can Rebound to $175 in 2027 Even If Bitcoin Stays Below Peak",
         "url": "https://247wallst.com/investing/2026/11/26/why-strategy-can-rebound-to-175-in-2027-even-if-bitcoin-stays-below-peak/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2637,13 +2644,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 11:15 ET",
         "pub_ts": 1795709753.0
-      },
-      {
-        "title": "BTC News Today: US Bitcoin Strategic Reserve Bill Moves Closer as BTC Reclaims $60K",
-        "url": "https://www.coinspeaker.com/btc-news-today-us-bitcoin-strategic-reserve-bill-moves-closer-as-btc-reclaims-60k/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 11:09 ET",
-        "pub_ts": 1795709365.0
       }
     ],
     "CRWD": [
@@ -3341,22 +3341,22 @@
     "GOOGL": 1795719138.5162156,
     "MSFT": 1795719138.5162156,
     "AAPL": 1795719138.5162156,
-    "PLTR": 1795717652.4379408,
-    "NOW": 1795717652.4379408,
-    "AMZN": 1795717652.4379408,
-    "CRWV": 1795717652.4379408,
-    "NBIS": 1795717652.4379408,
-    "APLD": 1795717652.4379408,
+    "PLTR": 1795719179.7222383,
+    "NOW": 1795719179.7222383,
+    "AMZN": 1795719179.7222383,
+    "CRWV": 1795719179.7222383,
+    "NBIS": 1795719179.7222383,
+    "APLD": 1795719179.7222383,
     "VST": 1795718845.4120793,
     "BE": 1795718845.4120793,
     "CRDO": 1795718845.4120793,
     "COHR": 1795718845.4120793,
-    "MRVL": 1795717652.4379408,
-    "LITE": 1795717652.4379408,
+    "MRVL": 1795719179.7222383,
+    "LITE": 1795719179.7222383,
     "AAOI": 1795718845.4120793,
     "SPCX": 1795718845.4120793,
     "ASTS": 1795718845.4120793,
-    "AXTI": 1795717652.4379408,
+    "AXTI": 1795719179.7222383,
     "NASA": 1795719138.5162156,
     "LUNR": 1795719138.5162156,
     "TSLA": 1795719138.5162156,
@@ -3371,27 +3371,27 @@
     "OKLO": 1795719138.5162156,
     "CEG": 1795719138.5162156,
     "FPS": 1795719138.5162156,
-    "MU": 1795717652.4379408,
-    "SKHY": 1795717652.4379408,
-    "WDC": 1795717652.4379408,
-    "STX": 1795717652.4379408,
-    "MSTR": 1795717652.4379408,
+    "MU": 1795719179.7222383,
+    "SKHY": 1795719179.7222383,
+    "WDC": 1795719179.7222383,
+    "STX": 1795719179.7222383,
+    "MSTR": 1795719179.7222383,
     "SNDK": 1795719138.5162156,
-    "BTC-USD": 1795717652.4379408,
-    "CRWD": 1795717652.4379408,
-    "ORCL": 1795717652.4379408,
-    "COIN": 1795717652.4379408,
-    "LLY": 1795717652.4379408,
-    "MRNA": 1795717652.4379408,
-    "NKE": 1795717652.4379408,
-    "MCD": 1795717652.4379408,
-    "PEP": 1795717652.4379408,
+    "BTC-USD": 1795719179.7222383,
+    "CRWD": 1795719179.7222383,
+    "ORCL": 1795719179.7222383,
+    "COIN": 1795719179.7222383,
+    "LLY": 1795719179.7222383,
+    "MRNA": 1795719179.7222383,
+    "NKE": 1795719179.7222383,
+    "MCD": 1795719179.7222383,
+    "PEP": 1795719179.7222383,
     "XOM": 1795717694.7342248,
     "JPM": 1795717694.7342248,
     "WMT": 1795717694.7342248,
-    "V": 1795717652.4379408,
+    "V": 1795719179.7222383,
     "CAT": 1795717694.7342248,
-    "FN": 1795717652.4379408,
+    "FN": 1795719179.7222383,
     "GLW": 1795718845.4120793,
     "ANT": 1795717694.7342248,
     "XAUUSD": 1795717694.7342248,
